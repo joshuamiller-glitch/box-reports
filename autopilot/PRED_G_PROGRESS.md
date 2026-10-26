@@ -1,0 +1,1 @@
+2026-10-24T00:42:14Z predG ROUND 1 DONE: rows/G_round1.json written (480 cells, 0 promising, 475 dead, 5 WF-only). Best holdout pooled F-R +15 stacked 0.699 (G4) vs baseline 0.703; cond-entry AUC ~0.5. Rounds 2 (G3) and 3 (G6) preregistered, queued.

@@ -1,0 +1,1325 @@
+# AUTOPILOT LIVE STATUS  2026-10-26T20:59:57Z  load 15.35 / 32 cores   (48h ends 2026-10-17T21:52Z)
+
+- A10 done 2026-10-16
+- A1 done 2026-10-16
+- A2 done 2026-10-16
+- A3 done 2026-10-16
+- A5 done 2026-10-16
+- A6 done 2026-10-16
+- A7 done 2026-10-16
+- A8 done 2026-10-16
+- A9 done 2026-10-16
+- B10 | DONE | B10 (clean-only) overnight Asia/London specialists ES/RTY/GC/CL/ZN/YM/BTC: NO (in-sample clean structure on ES/CL/YM/BTC, none passes H1+H2; best BTC  | 18:00Z
+- B11 | DONE | B11 (clean-only) ORB / prior-day-level breakouts+fades ES/RTY/GC/CL/ZN/YM/BTC: LEAD (gate 3 only) CL OR15 15m fade hold-to-close (+0.21/+0.16/+0.34 at | 19:01Z
+- B12 DONE NO best clean uplift@20% +0.063 (HM H4 R1); 0 FOUND 0 LEAD; report REPORT_B12.md
+- B14 | DONE | NO (0 FOUND, 0 LEAD): skip30 uplift +0.19/+0.35/-0.58 clean/H1/H2, shuffle null p=0.31 | -
+- B15 done 2026-10-16
+- B16 | DONE | NO | best clean uplift -0.23
+- B17 DONE: NO (H2 -0.23, plateau 0/4) - REPORT_B17.md
+- B18 DONE: NO (clean -0.14..-0.36 all cells) - REPORT_B18.md
+- B19 | DONE | NO (FOUND 0, LEAD 0; clean +0.65 but H1/H2 negative) | 15:35Z
+- B1 | DONE | B1 FINAL (clean-only, incl. YM): ST/HM/WT 5-30m ATR-trail equal-R on ES/RTY/GC/CL/ZN/YM/BTC/ETH: LEAD BTC 10m WT trail x3 (uplift +0.19/+0.31/+0.15 at | 18:00Z
+- 2026-10-16T14:27:01Z DONE B2: **NO (LEAD-standalone only) - best B2 cell P10_h1_k2: standalone 2013-2026 Sharpe 0.94 (own-null rank 1.00 in 2013-22 and the pair window) but additive uplift at 20% share only 0.15/-0.27/0.28 on clean/H1/H2 (gate +0.10) and bootstrap lo -0.05; FOUND 0. B2-D 36 cells, B2-M 36 cells, runtime ~2 min e
+- 2026-10-16T14:27:01Z DONE B3: **NO - trend on NQ/ES, NQ/RTY, ES/RTY ratios: 48 cells, only 2 pass the 2013-22 development screen (daily TSM20 on NQ/RTY and NQ/ES); best all-in additive uplift 0.00 at 20% share (NQ_RTY_D_TSM20), clean/H1/H2 -0.09/-0.04/0.29; own-null rank 0.82; all 30-minute cells lose to cost (mean 2013-22 Sharp
+- B4 | DONE | B4 (clean-only) VWAP/SD-band fade ES/RTY/GC/CL/ZN/YM/BTC: LEAD (gate-3 only) on BTC 10m/5m 2.5-sigma RTH-anchor cells (uplift +0.14/+0.27/+0.15, +0.11 | 18:00Z
+- 2026-10-16T14:27:01Z DONE B5: **NO - 8 pre-registered commodity/rates seasonal sleeves (no selection): none beats its random-date null in BOTH 2013-22 and the pair window; best all-in additive uplift 0.16 at 20% (GC_A: GC long Jan-Feb, 2013-26 Sharpe 0.59, 2013-22 null rank 0.98, pair-window rank 0.85, bootstrap lo -0.00); equal
+- 2026-10-16T14:27:01Z DONE B6: **NO - B6: 128 cells (96 reversal COM/RATES/BOTH, 32 continuation); only 2 cells pass the 2013-22 screen (RV z>=2 1-day fade on COM+RATES, hold 1; CT m>=1.5 ATR hold 5); both beat their own null on 2013-22 (ranks 1.00/0.99) and then fail it in the pair window (0.86/0.84); additive uplift at 20% clea
+- B7 | DONE | B7 (clean-only) time-exit-only books ES/RTY/GC/CL/ZN/YM/BTC: LEAD GC 5m ST(14,2) flip FADE, 240-min hold no stop (uplift +0.23/+1.28/+1.00 at 20%, boo | 18:37Z
+- B8 | DONE NO | 24 cells | uplift N=13 20% add +0.02/0.00/0.00 vs static +0.19/+0.50/+0.32 | FOUND 0
+- B8WT done NO 2026-10-16T15:58:31Z
+- B9 | DONE | NO: headline 50/150 sizing clean Sharpe uplift -0.52 (best of 12 cells -0.27); inside random-size null
+- BASKET DONE 2026-10-16 verdict NO (FOUND 0, LEAD 0); spend 26.80 USD; report outputs/autopilot/REPORT_BASKET.md
+- BI1 | DONE | BI1 (same-half-hour return persistence (Heston-Korajczyk-Sadka) (BI batch)): NO; 0 gate-3 cells of 20 selected | 09:54Z
+- BI2 | DONE | BI2 (overnight/RTH tug-of-war (BI batch)): NO; 0 gate-3 cells of 9 selected | 09:56Z
+- BI3 | DONE | BI3 (intraday NQ/ES relative-move mean reversion (BI batch)): NO; 0 gate-3 cells of 20 selected | 10:10Z
+- BI4 | DONE | BI4 (high-volume-day premium (BI batch)): NO; 0 gate-3 cells of 7 selected | 10:13Z
+- BI5 | DONE | BI5 (prior-week high/low break or rejection (BI batch)): NO; 0 gate-3 cells of 11 selected | 10:18Z
+- BI6 | DONE | BI6 (daily cross-index lead-lag (BI batch)): NO; 0 gate-3 cells of 5 selected | 10:24Z
+- BI7 | DONE | BI7 (semi-monthly payday windows (BI batch)): NO; 0 gate-3 cells of 0 selected | 10:28Z
+- BI8 | DONE | BI8 (range-shock day next-day drift (BI batch)): NO; 0 gate-3 cells of 4 selected | 10:30Z
+- BI8B done NO (long beta)
+- BJ10 | DONE | BJ10 (Globex volume share and overnight move (BJ batch)): NO; 0 gate-3 cells of 3 selected | 11:02Z
+- BJ1 | DONE | BJ1 (FOMC-cycle weeks (BJ batch)): NO; 0 gate-3 cells of 4 selected | 10:42Z
+- BJ2 | DONE | BJ2 (power-hour momentum (BJ batch)): LEAD; 1 gate-3 cells of 11 selected | 10:46Z
+- BJ3 | DONE | BJ3 (RTH-open magnet fade (BJ batch)): NO; 0 gate-3 cells of 3 selected | 10:48Z
+- BJ4 | DONE | BJ4 (open location vs prior-day range (BJ batch)): NO; 0 gate-3 cells of 5 selected | 10:49Z
+- BJ5 | DONE | BJ5 (prior-day close vs RTH VWAP (BJ batch)): NO; 0 gate-3 cells of 3 selected | 10:52Z
+- BJ6 | DONE | BJ6 (VIX-settlement Wednesday (BJ batch)): NO; 0 gate-3 cells of 14 selected | 10:54Z
+- BJ7 | DONE | BJ7 (lunar cycle (BJ batch)): NO; 0 gate-3 cells of 3 selected | 10:56Z
+- BJ8 | DONE | BJ8 (month-of-year (Nov-Apr) (BJ batch)): LEAD; 1 gate-3 cells of 9 selected | 10:59Z
+- BJ9 | DONE | BJ9 (opening-drive continuation (BJ batch)): NO; 0 gate-3 cells of 11 selected | 11:01Z
+- BATCH BJ done: BJ2 LEAD (weak), all others NO
+- BQ2 done NO clean +0.12 H1 -1.01 H2 -0.63
+- BM10 | DONE | BM10 (overnight persistence (BM batch)): NO; 0 gate-3 cells of 4 selected | 11:51Z
+- BM11 | DONE | BM11 (BM1 replication probe on all outrights at shifted clocks (BL3)): LEAD; 1 gate-3 cells of 17 selected | 12:03Z
+- BM12 | DONE | BM12 (BM1 reference-price test (BL3)): LEAD; 2 gate-3 cells of 8 selected | 11:58Z
+- BM13 | DONE | BM13 (BM1 reference test, small thresholds for VWAP references (BL3 amendment 1)): LEAD; 2 gate-3 cells of 10 selected | 12:05Z
+- BM1 | DONE | BM1 (LETF end-of-day rebalancing (BM batch)): LEAD; 1 gate-3 cells of 16 selected | 11:22Z
+- BM2 | DONE | BM2 (Amihud illiquidity day (BM batch)): NO; 0 gate-3 cells of 13 selected | 11:26Z
+- BM3 | DONE | BM3 (Faber SMA timing (BM batch)): NO; 0 gate-3 cells of 6 selected | 11:30Z
+- BM4 | DONE | BM4 (weekly reversal (BM batch)): NO; 0 gate-3 cells of 9 selected | 11:34Z
+- BM5 | DONE | BM5 (monthly reversal/continuation at month start (BM batch)): NO; 0 gate-3 cells of 5 selected | 11:36Z
+- BM6 | DONE | BM6 (ADR exhaustion (BM batch)): LEAD; 2 gate-3 cells of 13 selected | 11:39Z
+- BM7 | DONE | BM7 (high/low time order (BM batch)): NO; 0 gate-3 cells of 2 selected | 11:42Z
+- BM8 | DONE | BM8 (up-day fraction (BM batch)): NO; 0 gate-3 cells of 11 selected | 11:46Z
+- BM9 | DONE | BM9 (daily z-score reversion (BM batch)): NO; 0 gate-3 cells of 3 selected | 11:49Z
+- BL3 done: Q5ENS withdrawn; BM1 NQ-only confirmed, BM13 NQ sess_vwap 0.25 cleaner cell
+- BQ1 | DONE | NO | 10:54Z
+- BQ2 | DONE | NO | 10:54Z
+- C10_S1 | DONE | FOUND 0, LEAD 0 | -
+- C11_DIP ERA re-issue: FOUND (small-sample 23 trades; replication RC+RD hold, RA/RB thin; ERA FLAG positive pre-2023)
+- C11_HM DONE NO: HM-health size switch uplift +0.20/-0.32/-0.23 (clean/H1/H2); fails null, bootstrap, plateau, 2x slip; REPORT_C11_HM.md
+- C1-F1 | DONE: 0 FOUND, 0 LEAD (all instruments lose after costs) | 8/8 | report outputs/autopilot/REPORT_C1_F1.md
+- C1_F2 | DONE | FOUND 0 (NO; tilt loses to static blend) | -
+- C1_F3 | DONE: FOUND 0 / LEAD 0 / NO 40 | report REPORT_C1_F3.md
+- C1_F4 | DONE 480/480 cells, 10 selected | survivors 0 (H2 uplift fails) | -
+- C1_F5 | DONE | 54/54 cells | 0 FOUND (0 pass gate 3) | report written
+- C1_F6 | DONE | 28/28 cells | 0 survivors, 0 leads | NO (best clean cell vix90 x1.5: clean +0.12, H1 +0.02, H2 -0.12)
+- C1_F7 | DONE 18/18 cells x ES,RTY | FOUND 0; RTY H240/8/.55 weak standalone lead | ETA done
+- C2_G1 | DONE | FOUND 0 (23/23 cells lose vs live exits; trend edge lives in runners)
+- C2_G2 | random-removal null done (200); label-shuffle null running | 0/100 | ~15 min
+- C2_G3 | DONE | FOUND 0 (54/54 NO; 0 beat own null; holdout 1/36 reverses in pair window) | -
+- C2_G4 | DONE | FOUND 0 (no sleeve beats own null in both 2013-22 and pair window) | -
+- C3_H1 | DONE | FOUND 0 (NO; 8 cells, none beats own null on 2013-22; RTY pending data) | -
+- C3_H23 | DONE (H2 + H3 reports written) | 2/2 | pair no edge 2013-22 (Sharpe -0.78); 5-min family no edge (Sharpe +0.07, uplift ~0) | -
+- C4_K1 | DONE | 0/27 selected on clean; FOUND 0 LEAD 0 (diagnostic: extension helps raw trades, killed by the day lock) | -
+- C5_M1 | DONE | FOUND 0 LEAD 0 (NO) | -
+- C6_N1 | DONE | FOUND 0 (NO; no state variable separates pair weeks across eras) | - | 22:52Z
+- C6_N2_h1 | DONE compute 36s | 22:50Z
+- C6_N2 | DONE | FOUND 0 (RTY ML OOS Sharpe -0.25/-0.04; C3-H1 RTY NO) | -
+- C7_P1 | DONE | FOUND 0 (31 selected cells, 0 pass; report REPORT_C7_P1.md) | 23:09Z
+- C8_Q1 | DONE | era diagnostic: no tested statistic explains the pair edge | 23:14Z
+- C8_Q2 | DONE | FOUND 0 (NO; 20 selected cells, 160 rows; gross edge < cost; no +0.10 on all spans) | 23:14Z
+- C9_R1 | DONE | FOUND 0 LEAD 0 (0/6 registered cells pass development or gate 3) | -
+- D30 done 2026-10-16
+- D31 done 2026-10-16
+- D32 done 2026-10-16
+- D33 done 2026-10-16
+- D34 done 2026-10-16
+- D35 done 2026-10-16
+- D36 done 2026-10-16
+- D37 done 2026-10-16
+- 2026-10-16T17:36:48Z DRIVERS DONE: REPORT_DRIVERS.md written; EXEC_SUMMARY statement inserted; LEAD only
+- E1 done 2026-10-16
+- E2 done 2026-10-16
+- E3 done 2026-10-16
+- E4 done 2026-10-16
+- E7 done 2026-10-16
+- 2026-10-16T15:57:19Z DONE ERA-RETRO + C11-DIP-REP2
+- 2026-10-25T05:39:16Z EXT week 202643 DONE (see REPORT_EXT_1019_1024.md)
+- POWER2 done: REPORT_POWER2.md, harness ready
+- FV15A run done 177s sel FE_W30_q2.0
+- FV15B run done 102s sel VE_k4_r1
+- FV15C run done 371s sel T_ALIGN30_N
+- FV15D run done 456s sel S_PDFLOW_LOW_x0.5
+- FV15E run done 320s sel ML_a10_FB_RISK
+- FVG_GCCL done
+- G0a DONE: NO (clean +0.32 H1 -1.40 H2 -1.84, plateau 0/2) - REPORT_G0a.md
+- G0b DONE: NO (clean +0.16 H1 -0.91 H2 -0.77, plateau 0/6) - REPORT_G0b.md
+- G0c DONE: NO (clean +0.05 H1 -0.27 H2 -0.64, plateau 0/2) - REPORT_G0c.md
+- G10-1 DONE NO 2026-10-16T16:39:08Z
+- G10-2 DONE NO 2026-10-16T16:39:08Z
+- G10-3 DONE NO 2026-10-16T16:39:08Z
+- G11-A | DONE | NO | clean +0.005 / H1 +1.14 / H2 -0.41
+- G11-B | DONE | NO | clean +0.19 / H1 +0.01 / H2 +0.27, worst wk -7%, plateau 0/2
+- G11-C | DONE | NO | best clean -0.31 (all 32 negative)
+- 2026-10-16T15:57:19Z DONE G1: **NO - realised-vol-regime timing, 9 instruments (GAPMAP D08 H5/H6): best selected cell G1_('hi', 0.67)_1_h5_GC: standalone Sharpe 2013-22 0.14, pair window 0.93, own-null rank pair window 0.94; additive uplift at 20% clean/H1/H2 +0.18/+0.58/-0.10, b
+- 2026-10-16T15:57:19Z DONE G2: **NO - cross-asset drivers into BTC and VX (GAPMAP D07 H5/H6): best selected cell G2_GC_10_1_h5_BTC: standalone Sharpe 2013-22 0.05, pair window 1.56, own-null rank pair window 1.00; additive uplift at 20% clean/H1/H2 +0.38/-0.37/+0.21, bootstrap lo 
+- 2026-10-16T15:57:19Z DONE G3: **NO - event-week / event-day drift in GC CL ZN BTC (GAPMAP D10 H5/H6): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 1.56 (G3_CPI_week_long_h5_CL), pair window never read; FOUND 0.**
+- 2026-10-16T15:57:19Z DONE G4: **NO - BTC calendar sleeves (GAPMAP D06 H5/H6): best selected cell G4_dow_3_short_h1_BTC: standalone Sharpe 2013-22 0.23, pair window 1.15, own-null rank pair window 0.99; additive uplift at 20% clean/H1/H2 +0.13/+0.98/-0.12, bootstrap lo -0.02; FOUN
+- 2026-10-16T15:57:19Z DONE G5: **NO - BTC weekly price patterns (GAPMAP D11 H6): best selected cell G5_tsm_4_follow_h5_BTC: standalone Sharpe 2013-22 -0.08, pair window 0.83, own-null rank pair window 0.95; additive uplift at 20% clean/H1/H2 +0.38/-0.12/-0.22, bootstrap lo -0.01; 
+- G6a | done | NO | 16:43Z
+- G6A | runs done, selected GLX_A_m1.5 | 933s
+- G6b | done | NO | 16:43Z
+- G6B | runs done, selected MON_m0.5 | 878s
+- G6c | done | NO | 16:43Z
+- G6C | runs done, selected fri_1500 | 728s
+- G8-A | DONE | NO | up clean/H1/H2 +0.14/+0.40/-0.46
+- G8-B | DONE | NO | up clean/H1/H2 +0.37/-0.21/-0.41
+- G8-C | DONE | NO | up clean/H1/H2 +0.39/-1.50/-0.38
+- G8-D | DONE | NO | up clean/H1/H2 +0.28/-2.01/-0.65
+- G8-E | ALL DONE (report to write) | up clean/H1/H2 +0.38/-0.11/-0.36 | 2274s
+- GC_FADE_V2 | DONE | LEAD stays; battery R3 fails (day session only, 0/5 other commodities), alt-months ensemble fails | 21:35Z
+- H0a DONE: NO (clean -0.12 H1 +0.06 H2 +0.17, plateau 0/2) - REPORT_H0a.md
+- H0b DONE: NO (clean +0.19 H1 -0.29 H2 -0.24, plateau 1/4) - REPORT_H0b.md
+- H0c DONE: NO (clean +0.12 H1 -0.53 H2 -0.26, plateau 0/4) - REPORT_H0c.md
+- H0d DONE: NO (clean +0.04 H1 -0.80 H2 -0.90, plateau 0/2) - REPORT_H0d.md
+- H10-A done NO
+- H10-B done NO
+- H10-C done NO
+- H11-A done NO
+- H11-B done NO (near-miss)
+- H11-C done NO
+- H6A | NO | WOM2_m0.5 +0.14/-1.39/-0.32 | REPORT_H6a.md
+- H6A | runs done, selected WOM2_m0.5 | 598s
+- H6B | NO | QEND_m1.5 +0.15/-0.19/-0.04 | REPORT_H6b.md
+- H6B | runs done, selected QEND_m1.5 | 887s
+- H6C | NO | HOLADJ_m0.5 -0.01/-0.38/-0.01 | REPORT_H6c.md
+- H6C | runs done, selected HOLADJ_m0.5 | 517s
+- H7-A done 2026-10-16T18:25:55Z NO
+- H7-B done 2026-10-16T18:25:55Z NO
+- H7-C done 2026-10-16T18:25:55Z NO
+- H8-A | DONE | NO | up clean/H1/H2 +0.04/-0.32/+0.00
+- H8-B | DONE | NO | up clean/H1/H2 +0.05/-0.17/+0.03
+- H8-C | DONE | NO | up clean/H1/H2 +0.13/-0.00/+0.36
+- I10 done 2026-10-16
+- I1 done 2026-10-16
+- I2 done 2026-10-16
+- I3 done 2026-10-16
+- I4 done 2026-10-16
+- I5 done 2026-10-16
+- I6 done 2026-10-16
+- I7 done 2026-10-16
+- I8 done 2026-10-16
+- I9 done 2026-10-16
+- FVG follow-ups done (REF v2 regenerated)
+- J0A | done NO | 2026-10-16T19:09:47Z
+- J0B | done NO | 2026-10-16T19:09:47Z
+- J0C | done NO | 2026-10-16T19:09:47Z
+- J10 done 2026-10-16
+- J11-A | DONE | NO | up clean/H1/H2 +0.06/-0.66/-0.26
+- J11-B | DONE | NO | up clean/H1/H2 -0.01/+0.00/+0.07
+- J11-C | DONE | NO | up clean/H1/H2 +0.00/+0.00/+0.07
+- J1 done 2026-10-16
+- J2 done 2026-10-16
+- J3 done 2026-10-16
+- J4 done 2026-10-16
+- J4X done 2026-10-16
+- J5 done 2026-10-16
+- J5W_A done NO A2_T2 +0.05/+0.30/+0.35
+- J5W_B done NO B_T1_K120 +0.18/+0.57/-0.16
+- J5W_C done NO C_T1_M4 +0.15/+0.37/-0.16
+- J5W_D done NO D_T1 +0.20/+0.41/+0.16
+- J5W run done 1523s sel {'A': 'A2_T2', 'B': 'B_T1_K120', 'C': 'C_T1_M4', 'D': 'D_T1'}
+- J6a | done 19:09Z
+- J6A | runs done, selected b15k1_m0.0 | 434s
+- J6b | done 19:09Z
+- J6B | runs done, selected h30k1_m0.5 | 518s
+- J6c | done 19:09Z
+- J6C | runs done, selected S2_X40 | 484s
+- J6 done 2026-10-16
+- ALLDONE
+- J7 done 2026-10-16
+- J7V run done 556s sel W10_DOWN
+- J7V done NO
+- J8 done 2026-10-16
+- J9A run done 473s sel L60_ALIGN_UP
+- J9B run done 395s sel k16_W60_HALF
+- J9C run done 316s sel L30_CHASE_DOWN
+- J9P-A done NO
+- J9P-B done NO
+- J9P-C done NO
+- J9 done 2026-10-16
+- done NO
+- K10 done 2026-10-16
+- K11 DONE NO clean/H1/H2 -0.02/-0.20/-0.09
+- done NO
+- K13 DONE NO clean/H1/H2 -0.14/-1.07/-0.05
+- K14 DONE NO clean/H1/H2 +0.20/-0.51/-0.57
+- K16 DONE NO clean/H1/H2 -0.14/+0.07/-0.44
+- done NO
+- done NO
+- done NO
+- K19 DONE: NO (clean +0.10 H1 -0.27 H2 -1.88, plateau 0/4) - REPORT_K19.md
+- K1 done 2026-10-16
+- K20 DONE: NO (clean -0.06 H1 +0.04 H2 -0.17, plateau 0/4) - REPORT_K20.md
+- K21 DONE: NO (clean -0.13 H1 -0.25 H2 -0.58, plateau 0/2) - REPORT_K21.md
+- K22 DONE: NO (clean +0.02 H1 -0.42 H2 -0.33, plateau 0/4) - REPORT_K22.md
+- K23 DONE: NO (clean -0.14 H1 +0.30 H2 +0.84, plateau 1/4) - REPORT_K23.md
+- K24 DONE: NO (clean +0.12 H1 +0.02 H2 -0.20, plateau 0/2) - REPORT_K24.md
+- K25 DONE: NO (clean +0.08 H1 +0.32 H2 -0.37, plateau 2/2) - REPORT_K25.md
+- K26 DONE: NO (clean -0.36 H1 -0.04 H2 -0.09, plateau 0/2) - REPORT_K26.md
+- K27 DONE: NO (clean -0.04 H1 -0.07 H2 -0.04, plateau 0/4) - REPORT_K27.md
+- K2 done 2026-10-16
+- K3 done 2026-10-16
+- K4P done 2026-10-16
+- K4 done 2026-10-16
+- K4V2 done 2026-10-16
+- K5 done 2026-10-16
+- K6 done 2026-10-16
+- K7 done 2026-10-16
+- K84 | DONE | K84 GBM direction sleeve NQ/ES (price vs price+flow features, 15/30/60m time exits): NO (OOS AUC 0.52; one NQ cell passes clean rule at chance, uplift | 19:55Z
+- K8 done 2026-10-16
+- done LEAD
+- done NO; K96b LEAD
+- done NO
+- K9 done 2026-10-16
+- K_CURE | DONE | NO (0 of 90 variants beat random-removal p95 on both H1 and H2) | 21:35Z
+- K | DONE | LEAD-weak, fails null and transfer (whipsaw skip +0.24/+0.21/+0.20) | 20:54Z
+- L10 done 2026-10-16
+- L2 done 2026-10-16
+- L3 done 2026-10-16
+- L4 done 2026-10-16
+- L5 done 2026-10-16
+- L6 done 2026-10-16
+- L7 done 2026-10-16
+- L8 done 2026-10-16
+- L90 | DONE | NO composite ES+NQ signals on ES | 20:54Z
+- L91 | DONE | L91 pair-style ST/HM/WT on NKD Asia hours: NO (0 cells pass clean rule; best clean Sharpe +0.16) | 20:34Z
+- L92 | DONE | NO BTC wide-trail cure (ensemble H2 uplift -0.02) | 20:54Z
+- L93 | DONE | LEAD strong, replication not met (GC fade ensemble +0.20/+0.95/+0.83) | 20:54Z
+- L9 done 2026-10-16
+- 2026-10-16T16:04:58Z DONE N1: **NO - cash-close bar (15:30) follow/fade into 16:00 bar: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.13 (N1_0.3_fade), pair window never read; FOUND 0.**
+- 2026-10-16T16:04:58Z DONE N2: **NO - macro event bars (FOMC 14:00, NFP/CPI 08:30) follow/fade to the day end: best selected cell N2_NFP_fade: standalone Sharpe 2013-22 -0.07, pair window 0.74, own-null rank pair window 0.98; additive uplift at 20% clean/H1/H2 
+- 2026-10-16T16:04:58Z DONE N3: **LEAD (not FOUND) - VX curve slope (backwardation/flat) -> long ES NQ RTY: best selected cell N3_flat_h1_NQ: standalone Sharpe 2013-22 0.54, pair window 1.20, own-null rank pair window 0.99; additive uplift at 20% clean/H1/H2 +0.
+- 2026-10-16T16:04:58Z DONE N4: **NO - risk-driver lead (6J, 6A, HG) -> ES+NQ: best selected cell N4_HG_5_1_h5_EQ2: standalone Sharpe 2013-22 -0.44, pair window 0.49, own-null rank pair window 0.80; additive uplift at 20% clean/H1/H2 +0.20/-0.31/-0.03, bootstrap
+- 2026-10-16T16:04:58Z DONE N5: **NO - copper/gold ratio -> ES / ZN: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.57 (N5_10_h5_ES), pair window never read; FOUND 0.**
+- 2026-10-16T16:04:58Z DONE N6: **NO - overnight-range position at RTH open: best selected cell N6_0.15_follow_END: standalone Sharpe 2013-22 0.06, pair window 0.49, own-null rank pair window 0.95; additive uplift at 20% clean/H1/H2 +0.07/+0.29/-0.09, bootstrap 
+- 2026-10-16T16:04:58Z DONE N7: **NO - weekly-range position -> next-week follow/fade: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.33 (N7_0.2_fade_h5_ALL26), pair window never read; FOUND 0.*
+- OPT0DTE DONE NO 0/304 FOUND 2026-10-16T18:25:28Z
+- OPTIONS | DONE | FOUND 0, LEAD 0 | spend 414.44
+- P1B DONE 2026-10-16: ensemble scaled brackets NO (2013-22 Sharpe a/real -1.25, scaled-cost -0.19, gross +0.26; uplift @20% -0.27/-0.04/+0.06); ES dip lead scaling-invariant (2013-22 Sharpe 0.17-0.24, 42 trades). a = faithful.
+- P2 DONE 2026-10-16: NO. 13-yr Sharpe gain is 2013-22 no-edge avoidance; 2023-26 effect +0.32 (a_real, CI [-0.08,+0.78]) / -0.04 (fixed_real, CI [-0.38,+0.24]); false stand-down 2024-26 -$264k/-$259k; H1/H2 rules inactive; selection-aware null p=0.54/0.03.
+- PA10 run done 486s sel d2_TWO
+- PA10 | DONE | NO | clean +0.21 H1 -0.62 H2 -0.67
+- done LEAD (non-virgin, gates fail)
+- PA4_NKD regenerated NO
+- PA4 run done 418s sel L60_ALIGN_UP
+- done NO
+- PA5 run done 543s sel L60_TWO_V
+- done NO near-miss
+- done NO
+- done NO
+- PA8 run done 496s sel H12_TWO
+- PA8 | DONE | NO | d12 clean +0.22 H1 -0.24 H2 -0.65
+- PA9 run done 32s sel L60_WITH_ONLY
+- PA9 | DONE | NO | best clean -0.06
+- PULLBACK DONE 2026-10-16T20:27:21Z: REPORT_PULLBACK.md written. FOUND 0, LEAD 1 weak (NQ 15m PSAR). Respect: 0/41 levels. Pair-side 0/44. Chance gate-3 rate null worlds 2.8% per top cell.
+- PX1 run done 741s
+- PX1 NO (W60_MEAN1 +0.24/+0.29/-0.16; ES/RTY +0.09/+0.00)
+- null 334.68623208999634
+- }
+- PX20 run done 335s sel W30_SKIP
+- PX20 | DONE | NO | clean +0.23 H1 -0.91 H2 -0.28
+- null 285.5835020542145
+- }
+- PX21 run done 286s sel W60_SKIP
+- PX21 | DONE | NO | clean +0.11 H1 -1.86 H2 -0.43
+- null 217.54104685783386
+- }
+- PX22 run done 218s sel W60_SKIP
+- PX22 | DONE | NO | clean +0.49 H1 -1.08 H2 -2.33
+- null 285.03299713134766
+- }
+- PX23 run done 285s sel W30_HALF
+- PX23 | DONE | NO | clean -0.40 H1 +0.49 H2 -0.70
+- null 277.67684149742126
+- }
+- PX24 run done 278s sel L360_COUNTER_DOWN
+- PX24 | DONE | NO | clean +0.06 H1 +0.24 H2 +0.07
+- null 284.164342880249
+- }
+- PX25 run done 284s sel RNG_HIGH_UP
+- PX25 | DONE | NO | clean +0.03 H1 +0.51 H2 -0.03
+- null 304.3696086406708
+- }
+- PX26 run done 304s sel ALIGN_COUNTER_DOWN
+- PX26 | DONE | NO | clean +0.17 H1 +0.13 H2 +0.08
+- null 418.51420283317566
+- }
+- PX27 run done 419s sel W30_HIGH_UP
+- PX27 | DONE | NO | clean +0.25 H1 -0.56 H2 -0.23
+- PX30 DONE NO
+- 2026-10-16T22:49:36Z DONE PX31: NO - C1 ENS4 macro12 uplift@20% +0.08/+0.24/+0.05, all-in +0.11, 0/3 replication legs; FOUND 0.
+- PX32 | DONE | NO | E81 add20 clean +0.15 H1 -0.14 H2 -0.02; plateau 5/12; repl 0/3
+- PX33 done 2026-10-16: NO (0 FOUND, 0 LEAD); report outputs/autopilot/REPORT_PX33.md
+- 2026-10-16T22:49:29Z DONE PX34: NO - N3R VX ladder cure fails (uplift +0.08/+0.11/+0.26, nulls fail, replication 1/3); FOUND 0.
+- PY10 run done 1605s sel L10_L0.25
+- PY10 | NO | OVERNIGHT-GAP TILT WITH REGIME-FLIPPED SIGN; selected L10_L0.25 clean/H1/H2 +0.02/+0.31/-0.16, all-in +0.01, boot [-0.24,+0.27], own-null rank 0.79, sel-corrected rank 0.70, plateau 0.25, 2x slip H2 -0.19, H0 +0.02, legs 1; failed g1, g2, g3, g3b, g4, g5, g6, g7, g8, g9; H1/H2 non-virgin | REPORT_PY10.md
+- c4 4452.43958234787
+- PY1 run done 4452s sel CHG_N_b0.3
+- PY1 NO CHG_N_b0.3 -0.06/-0.47/-0.98 (VIX level and 5d change continuous linear tilt, 12 cells) DONE PY1
+- RTY CHG_N_b0.3 {'clean': -0.172, 'H1': 0.262, 'H2': 0.474, 'all': 0.027}
+- c4 4235.239876270294
+- }
+- PY2 run done 4235s sel VXS_P_b0.2
+- PY2 NO VXS_P_b0.2 -0.03/-1.04/-0.46 (term slope VIX3M/VIX and VX M2/M1 continuous linear tilt, 12 cells) DONE PY2
+- RTY VXS_N_b0.3 {'clean': -0.006, 'H1': -0.269, 'H2': -0.244, 'all': -0.093}
+- c4 2336.2741661071777
+- }
+- PY3 run done 2336s sel SKEW_P_b0.1
+- PY3 NO SKEW_P_b0.1 +0.05/+0.92/+0.57 (VVIX and SKEW continuous linear tilt, 12 cells) DONE PY3
+- RTY SKEW_N_b0.3 {'clean': 0.077, 'H1': -0.068, 'H2': -0.241, 'all': -0.028}
+- sc 29 VR60_N_a0.25 {'clean': 0.05, 'H1': -0.5, 'H2': 0.38, 'all': 0.06}
+- PY4 run done 3196s sel VR60_N_a0.25
+- PY4 NO (see REPORT_PY4.md) DONE
+- sc 29 RV20_P_a0.25 {'clean': 0.51, 'H1': -0.27, 'H2': -0.17, 'all': 0.25}
+- PY5 run done 3093s sel GAP_N_a0.5
+- PY5 NO (see REPORT_PY5.md) DONE
+- sc 29 H1_P_a0.5 {'clean': 0.11, 'H1': -0.48, 'H2': -2.11, 'all': -0.44}
+- PY6 run done 1948s sel H2_N_a0.25
+- PY6 NO (see REPORT_PY6.md) DONE
+- PY7 run done 1745s sel W45_L0.5
+- PY7 | NO | TWO-FEATURE SHRUNK TILT; selected W45_L0.5 clean/H1/H2 +0.28/-0.77/+0.50, all-in +0.17, boot [-0.27,+0.61], own-null rank 0.84, sel-corrected rank 0.88, plateau 0.50, 2x slip H2 +0.11, H0 +0.53, legs 1; failed g1, g3, g3b, g4, g5, g6, g7, g9; H1/H2 non-virgin | REPORT_PY7.md
+- PY8 run done 1793s sel ST_m0.0
+- PY8 | NO | MINUTE-OF-HOUR ENTRY SKIP x BOOK SPLIT; selected ST_m0.0 clean/H1/H2 +0.14/+0.40/-0.42, all-in +0.04, boot [-0.24,+0.35], own-null rank 0.93, sel-corrected rank 0.93, plateau 0.00, 2x slip H2 -0.33, H0 -0.61, legs 0; failed g1, g3, g3b, g4, g5, g6, g7, g8, g9; H1/H2 non-virgin | REPORT_PY8.md
+- PY9 run done 2502s sel X20_HALF_NEXT
+- PY9 | NO | AFTERNOON WHIPSAW HALT; selected X20_HALF_NEXT clean/H1/H2 +0.05/-0.08/-0.81, all-in -0.16, boot [-0.35,+0.01], own-null rank 0.65, sel-corrected rank 0.80, plateau 0.00, 2x slip H2 -0.51, H0 +0.00, legs 0; failed g1, g3, g3b, g4, g5, g6, g7, g9; H1/H2 non-virgin | REPORT_PY9.md
+- PZ1 run done 447s sel TS20_N_l0.5
+- PZ1 | NO | NQ 20-DAY REGIME SIZE TILT; selected TS20_N_l0.5 clean/H1/H2 +0.06/-0.37/-1.46, all-in -0.32, boot [-0.91,+0.27], own-null rank 0.90, sel-corrected rank 0.34, plateau 0.00, 2x slip H2 -1.92, H0 -0.43, ES/RTY all-in +0.26/+0.04, legs 1; failed g1, g2, g3, g3b, g4, g5, g6, g7, g9; H1/H2 non-virgin | REPORT_PZ1.md
+- PZ2 run done 202s sel PSTOP_FLAT
+- PZ2 | NO | PARTNER-BOOK EVENT EXITS; selected PSTOP_FLAT clean/H1/H2 -0.11/+0.47/+0.63, all-in +0.15, boot [-0.09,+0.38], own-null rank 0.79, sel-corrected rank 0.07, plateau 0.50, 2x slip H2 +0.25, H0 +0.16, ES/RTY all-in +0.01/+0.08, legs 2; failed g1, g2, g3, g3b, g4, g5, g6; H1/H2 non-virgin | REPORT_PZ2.md
+- PZ3 run done 222s sel UW0.2_HALF
+- PZ3 | NO | PARTNER OPEN-P&L STATE AT ENTRY; selected UW0.2_HALF clean/H1/H2 -0.12/+0.78/+0.21, all-in +0.09, boot [-0.03,+0.24], own-null rank 0.31, sel-corrected rank 0.04, plateau 0.50, 2x slip H2 +0.20, H0 -0.03, ES/RTY all-in +0.04/-0.01, legs 0; failed g1, g2, g3, g3b, g4, g5, g6, g7, g9; H1/H2 non-virgin | REPORT_PZ3.md
+- PZ4 run done 454s sel DISP20_N_l0.5
+- PZ4 | NO | MONTH-LEVEL CROSS-INDEX STATE TILT; selected DISP20_N_l0.5 clean/H1/H2 +0.09/+0.59/+0.47, all-in +0.27, boot [-0.28,+0.85], own-null rank 0.91, sel-corrected rank 0.40, plateau 0.25, 2x slip H2 +0.05, H0 +0.01, ES/RTY all-in +0.05/+0.26, legs 1; failed g1, g2, g3, g3b, g4, g5, g6, g7, g9; H1/H2 non-virgin | REPORT_PZ4.md
+- PZ5 | MONITOR | live-weeks forward monitor ap_pz5_forward.py -> watch/FORWARD_OVERLAYS.md re-scores N2X10 (H11-B), J6a, PA5, PX1, PX26, K96b on weeks after watermark 20261013 (0 new weeks today; all six reproduce their parent H2/all-in uplifts; back-test with watermark 20260901 exercised the new-week logic, 7 weeks); promotion reading unchanged (>=8 weeks, +0.10, net>0, worst week) | watch/FORWARD_OVERLAYS.md
+- Q10A | DONE | Q10A (Q10A: B7 grid on grains (ZC, ZS, ZW)): NO; 0 gate-3 cells of 5 selected | 02:09Z
+- Q10B | DONE | Q10B (Q10B: B1 grid on grains (ZC, ZS, ZW)): NO; 0 gate-3 cells of 0 selected | 02:28Z
+- Q11 | DONE | Q11 (Q11: volatility-burst (bar range > k x its recent mean, bar direction) with/against, time exit): NO; 0 gate-3 cells of 60 selected | 03:45Z
+- Q12 | DONE | Q12 (Q12: Bollinger-band cross-out (n, k) with/against, time exit): LEAD; 1 gate-3 cells of 49 selected | 04:53Z
+- Q13 | DONE | Q13 (Q13: N consecutive same-direction closes, with/against, time exit): NO; 0 gate-3 cells of 56 selected | 06:30Z
+- Q14 | DONE | Q14 (Q14: range-squeeze breakout of the n-bar range, with/against, time exit): LEAD; 1 gate-3 cells of 35 selected | 04:03Z
+- Q15 | DONE | Q15 (Q15: volume-spike bar (volume > k x recent mean), bar direction with/against, time exit): NO; 0 gate-3 cells of 63 selected | 05:28Z
+- Q16 | DONE | Q16 (Q16: time-of-day drift buckets (long or short at each 30-minute start 08:00-14:30 ET, hold 30/60/120 min)): NO; 0 gate-3 cells of 28 selected | 03:18Z
+- Q17A | DONE | Q17A (Q17A: B7 grid on livestock (HE, LE)): NO; 0 gate-3 cells of 2 selected | 05:49Z
+- Q17B | DONE | Q17B (Q17B: B1 grid on livestock (HE, LE)): NO; 0 gate-3 cells of 10 selected | 06:03Z
+- Q17C | DONE | Q17C (Q17C: B11 grid on livestock (HE, LE)): NO; 0 gate-3 cells of 10 selected | 06:13Z
+- Q18 | DONE | Q18 (Q18: distance from the RTH open in ADR20 units, with/against, time exit): NO; 0 gate-3 cells of 52 selected | 07:26Z
+- Q19 | DONE | Q19 (Q19: EMA distance z (in bar ATRs) cross-out, with/against, time exit): NO; 0 gate-3 cells of 44 selected | 04:29Z
+- Q1A | DONE | Q1A NQ VWAP-band fade - NO (best H1/H2 uplifts +0.42/+0.05) | 21:38Z
+- Q1B | DONE | Q1B NQ 10m ST flip WITH, 180-min hold - LEAD (uplift +0.26/+0.34/+0.18 at 20%, boot lo +0.04, 2x-slip +0.23; fails plateau 0.67, replication 1 of 4) | 21:38Z
+- Q1C | DONE | Q1C NQ overnight books - NO | 21:38Z
+- Q1D | DONE | Q1D NQ ORB/prior-day levels - LEAD gate-3 only (PD break WITH +0.11/+0.15/+0.46; fails worst-week, plateau, boot) | 21:38Z
+- Q20_ENS | DONE | NO (combined clean uplift -0.03) | 05:50Z
+- Q20 | DONE | Q20 (Q20: distance from the prior-day close in ADR20 units, with/against, time exit): LEAD; 1 gate-3 cells of 60 selected | 05:33Z
+- Q21 | DONE | Q21 (Q21: scheduled-release windows (FOMC 14:00, NFP/CPI 08:30): 5-min post-release return, trade with/against for 15-60 min): NO; 0 gate-3 cells of 6 | 08:29Z
+- Q22 | DONE | Q22 (Q22: cross-market dislocation convergence (synthetic dollar-neutral spreads, Bollinger cross-out, time exit)): NO; 0 gate-3 cells of 0 selected | 10:18Z
+- Q23 | DONE | Q23 (Q23: settlement-window drift: with/against the day direction from 30/15 minutes before the instrument settlement): NO; 0 gate-3 cells of 17 selec | 09:03Z
+- Q24 | DONE | Q24 (Q24: Sunday-open week structure: first-hour return of the week traded with/against for 2-12 h): NO; 0 gate-3 cells of 21 selected | 08:07Z
+- Q25 | DONE | NO | 07:35Z
+- Q26 | DONE | NO | 07:35Z
+- Q27 | DONE | Q27 (Q27: round-number reaction: break or reject of a round level, with/against, time exit): NO; 0 gate-3 cells of 22 selected | 10:23Z
+- Q28 | DONE | Q28 (Q28: daily maintenance-break gap (Mon-Thu 18:00 reopen vs previous close), with/against): NO; 0 gate-3 cells of 7 selected | 08:35Z
+- Q29 | DONE | Q29 (Q29: London-to-New-York handoff: London return sign traded at the RTH open with/against): LEAD; 1 gate-3 cells of 40 selected | 09:07Z
+- Q2 | DONE | Q2 (Q2: B7 grid on metals/energy (SI, HG, PL, HO, RB, NG)): LEAD; 2 gate-3 cells of 48 selected | 22:10Z
+- Q30 | DONE | Q30 (Q30: Friday-afternoon position squaring: week-to-date return traded 13:00-16:00 ET with/against): NO; 0 gate-3 cells of 12 selected | 09:44Z
+- Q31 | DONE | NO | 10:54Z
+- Q32 | DONE | Q32 (Q32: morning-range state -> afternoon: narrow/wide first-90-minute range, trade with/against the open-to-11:00 direction): NO; 0 gate-3 cells of  | 10:53Z
+- Q33 | DONE | Q33 (Q33: intraday time-series momentum on 10 markets: open-to-window-end return traded with/against to the afternoon): NO; 0 gate-3 cells of 24 selec | 11:10Z
+- Q34 | DONE | Q34 (Q34: overnight (Globex) return sign traded with/against through the RTH day): LEAD; 5 gate-3 cells of 28 selected | 11:26Z
+- Q35 | DONE | Q35 (Q35: prior-day-level break conditioned on yesterday range state (contraction/expansion)): NO; 0 gate-3 cells of 22 selected | 11:03Z
+- Q36 | DONE | Q36 (Q36: opening-range breakout with relative-volume confirmation): NO; 0 gate-3 cells of 14 selected | 11:40Z
+- Q37 | DONE | Q37 (Q37: prior-week high/low breakouts (with/fade)): NO; 0 gate-3 cells of 10 selected | 11:39Z
+- Q38 | DONE | Q38 (Q38: time-at-extreme: new day high/low after N bars since the previous extreme, with/against): NO; 0 gate-3 cells of 19 selected | 11:52Z
+- Q3 | DONE | Q3 (Q3: B1 grid on metals/energy (SI, HG, PL, HO, RB, NG)): NO; 0 gate-3 cells of 32 selected | 22:45Z
+- Q40 | DONE | NO rescue | 10:41Z
+- Q4A | DONE | Q4A (Q4A: B4 grid on metals/energy (SI, HG, PL, HO, RB, NG)): NO; 0 gate-3 cells of 12 selected | 23:43Z
+- Q4B | DONE | Q4B (Q4B: B10 grid on metals/energy (SI, HG, PL, HO, RB, NG)): NO; 0 gate-3 cells of 30 selected | 00:27Z
+- Q4C | DONE | Q4C (Q4C: B11 grid on metals/energy (SI, HG, PL, HO, RB, NG)): LEAD; 1 gate-3 cells of 48 selected | 01:17Z
+- 2026-10-16T16:04:58Z DONE Q5ENS: **LEAD-weak (not FOUND-PENDING): ensemble pair-window Sharpe 0.87; additive uplift at 20% share 0.22/0.16/0.02 on clean/H1/H2 (all-in 0.18) - H2 +0.02 fails the +0.10 gate; plateau on the ensemble weights 1.00 (7 of 7 leave-one-gr
+- Q5 | DONE | Q5 (Q5: B7 grid on FX (6E, 6J, 6B, 6A, 6C)): NO; 0 gate-3 cells of 16 selected | 21:46Z
+- Q6 | DONE | Q6 (Q6: B1 grid on FX (6E, 6J, 6B, 6A, 6C)): NO; 0 gate-3 cells of 1 selected | 22:16Z
+- Q7A | DONE | Q7A (Q7A: B4 grid on FX (6E, 6J, 6B, 6A, 6C)): NO; 0 gate-3 cells of 1 selected | 22:41Z
+- Q7B | DONE | Q7B (Q7B: B10 grid on FX (6E, 6J, 6B, 6A, 6C)): NO; 0 gate-3 cells of 0 selected | 23:21Z
+- Q7C | DONE | Q7C (Q7C: B11 grid on FX (6E, 6J, 6B, 6A, 6C)): NO; 0 gate-3 cells of 0 selected | 00:04Z
+- Q8A | DONE | Q8A (Q8A: B4 grid on ETH (ETH)): NO; 0 gate-3 cells of 4 selected | 00:08Z
+- Q8B | DONE | Q8B (Q8B: B7 grid on ETH (ETH)): NO; 0 gate-3 cells of 10 selected | 00:14Z
+- Q8C | DONE | Q8C (Q8C: B10 grid on ETH (ETH)): NO; 0 gate-3 cells of 10 selected | 00:16Z
+- Q8D | DONE | Q8D (Q8D: B11 grid on ETH (ETH)): LEAD; 2 gate-3 cells of 10 selected | 00:20Z
+- Q8E | DONE | Q8E (Q8E: B1 grid on ETH (ETH)): NO; 0 gate-3 cells of 10 selected | 00:24Z
+- Q9A | DONE | Q9A (Q9A: B1 grid on rates (ZB, ZF, ZT)): NO; 0 gate-3 cells of 0 selected | 01:07Z
+- Q9B | DONE | Q9B (Q9B: B7 grid on rates (ZB, ZF, ZT)): NO; 0 gate-3 cells of 0 selected | 01:38Z
+- Q9C | DONE | Q9C (Q9C: B11 grid on rates (ZB, ZF, ZT)): NO; 0 gate-3 cells of 0 selected | 01:50Z
+- 2026-10-16T22:46:06Z DONE R10 (regenerated by worker I): **NO - 2-4 week macro REVERSAL, monthly rebalance: best selected cell R10_15_TS_h19_MACRO12: standalone Sharpe 2013-22 0.27, pair window -0.27, own-null rank pair window 0.33; additive uplift at 20% c
+- R12P done
+- R12 done 2026-10-16
+- R14 done 2026-10-16
+- 2026-10-16T22:46:06Z DONE R1 (regenerated by worker I): **NO - realised-kurtosis jump-regime reversal: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.00 (R1_20_6_h3_SCR), pair window neve
+- 2026-10-16T22:46:06Z DONE R2 (regenerated by worker I): **NO - Asian-range London breakout with longer exits (path): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.08 (R2_2_2.0), pair win
+- 2026-10-16T22:46:06Z DONE R3 (regenerated by worker I): **NO - 30-min failed-breakout reversal, 16 markets: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -4.00 (R3_40_h8_M16), pair window n
+- 2026-10-16T22:46:06Z DONE R4 (regenerated by worker I): **NO - 30-min skew reversal, 16 markets: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -3.75 (R4_120_1.25_h8_M16), pair window never 
+- 2026-10-16T15:26:49Z DONE R5: **NO - 30-min close-streak fade/follow, 16 markets: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -4.09 (R5_4_follow_h8_M16), pair window never read; FOUND 0.**
+- 2026-10-16T15:26:49Z DONE R6: **NO - 30-min vol-contraction momentum, 16 markets: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -5.68 (R6_0.6_60_h8_M16), pair window never read; FOUND 0.**
+- 2026-10-16T15:26:49Z DONE R7: **NO - 30-min outside-bar follow/fade, 16 markets: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -3.86 (R7_fade_h8_M16), pair window never read; FOUND 0.**
+- 2026-10-16T15:26:49Z DONE R8: **NO - 30-min bar-gap-and-go/fade, 16 markets: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -2.09 (R8_fade_h8_M16), pair window never read; FOUND 0.**
+- 2026-10-16T22:46:06Z DONE R9 (regenerated by worker I): **NO - 2-4 week macro momentum, monthly rebalance (TS and XS): best selected cell R9_20_XS_h19_MACRO12: standalone Sharpe 2013-22 0.27, pair window 0.74, own-null rank pair window 0.94; additive uplif
+- REGIME | DONE | break not identified; no driver; regime watch series written | 12:04Z
+- RU1 done
+- RU3 done
+- RV1 done
+- RW10 done 2026-10-16
+- RW11 done 2026-10-16
+- RW12P done 2026-10-16
+- RW12 done 2026-10-16
+- RW13 done 2026-10-16
+- RW14 done 2026-10-16
+- RW15 done 2026-10-16
+- RW1 done 2026-10-16
+- RW2 done 2026-10-16
+- RW3 done 2026-10-16
+- RW4 done 2026-10-16
+- RW5 done 2026-10-16
+- RW6 done 2026-10-16
+- RW7 done 2026-10-16
+- RW8 done 2026-10-16
+- RW9 done 2026-10-16
+- RX10 done 2026-10-16
+- RX11 done 2026-10-16 NO
+- RX1 done 2026-10-16 LEAD
+- RX2 done 2026-10-16 LEAD
+- RX3 done 2026-10-16 LEAD
+- RX4 done 2026-10-16
+- RX5 done 2026-10-16 LEAD
+- RX6 done 2026-10-16 NO
+- RX7P done FOUND-PENDING (all gates pass; replication short)
+- RX7 done 2026-10-16 FOUND-PENDING-REPLICATION
+- RX8 done 2026-10-16 LEAD
+- RX9 done 2026-10-16
+- RY10 done 2026-10-17
+- RY1 done 2026-10-17 NO
+- RY2 done 2026-10-17
+- RY3 done 2026-10-17
+- RY4 done 2026-10-17 NO
+- RY5 done
+- RY6 done 2026-10-16 LEAD
+- RY7 done
+- RY8 done 2026-10-17
+- RY9 done 2026-10-17 FOUND-PENDING-REPLICATION
+- RZ1 done 2026-10-17
+- RZ2 done 2026-10-17
+- RZ3 done 2026-10-17 NO
+- RZ5 done
+- RZ6 done
+- RZ7 done
+- RZ8 done 2026-10-17 NO
+- RZ9 done
+- 2026-10-16T15:21:37Z DONE S10: **NO - Monday -> Tuesday reversal/continuation by asset class: best selected cell S10_fade_h1_EQ: standalone Sharpe 2013-22 0.53, pair window -0.07, own-null rank pair window 0.43; additive uplift at 20% clean/H1/H2 +0.02/-0.28/+0.05, bootstrap lo -0
+- 2026-10-16T15:21:37Z DONE S1: **NO - post-open drift per asset class (30-min path): best selected cell S1_EQ_follow_h4: standalone Sharpe 2013-22 0.57, pair window -0.27, own-null rank pair window 0.50; additive uplift at 20% clean/H1/H2 +0.01/-0.13/-0.44, bootstrap lo -0.31; FOU
+- 2026-10-16T15:21:37Z DONE S2: **NO - Asian-range -> London-session breakout (path-resolved): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.40 (S2_END_ATR), pair window never read; FOUND 0.**
+- 2026-10-16T15:21:37Z DONE S3: **NO - realised-skew reversal: best selected cell S3_60_1.25_h5_ALL26: standalone Sharpe 2013-22 0.19, pair window 0.55, own-null rank pair window 0.92; additive uplift at 20% clean/H1/H2 +0.00/+1.00/-0.10, bootstrap lo -0.10; FOUND 0.**
+- 2026-10-16T15:21:37Z DONE S4: **NO - carry momentum (change in roll yield), cross-sectional: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.72 (S4_40_h10_ALL26), pair window never read; FOUND 0.**
+- 2026-10-16T15:21:37Z DONE S5: **NO - price-volume divergence (low-volume breakouts fail): best selected cell S5_20_1.0_h5_SCR: standalone Sharpe 2013-22 0.20, pair window 0.09, own-null rank pair window 0.60; additive uplift at 20% clean/H1/H2 +0.14/-0.48/-0.14, bootstrap lo -0.2
+- 2026-10-16T15:21:37Z DONE S6: **NO - weekend flight-to-quality leg (ES Friday shock -> ZN/ZB/GC/6J): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.42 (S6_0.5), pair window never read; FOUND 0.**
+- 2026-10-16T15:21:37Z DONE S7: **NO - month-end / quarter-end rebalancing flows (NQ ES RTY, 30-min): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.42 (S7_840_0.5_follow_Q), pair window never read; FOUND 0.**
+- 2026-10-16T15:21:37Z DONE S8: **NO - options-expiry week / day / Monday after: best selected cell S8_mon_h1_NQ: standalone Sharpe 2013-22 0.43, pair window 1.76, own-null rank pair window 1.00; additive uplift at 20% clean/H1/H2 +0.40/+0.07/-0.08, bootstrap lo +0.07; FOUND 0.**
+- 2026-10-16T15:21:37Z DONE S9: **NO - roll-week drift: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.51 (S9_long_h5_ZN), pair window never read; FOUND 0.**
+- done NO
+- SE2 | DONE | analysis + tolerances NO FOUND
+- SK | DONE
+- SW10 | DONE | SW10 (signed-volume imbalance persistence proxy from 1-min bars (D01/D02 H2/H3)): LEAD; 3 gate-3 cells of 41 selected | 03:41Z
+- SW11 | DONE | SW11 (frozen LightGBM direction model, 5/15/30-min horizons (D12 H1/H2)): NO; 0 gate-3 cells of 0 selected | 03:50Z
+- SW12 | DONE | SW12 (frozen LightGBM direction model, 60/120/240-min horizons (D12 H3)): NO; 0 gate-3 cells of 9 selected | 04:08Z
+- SW13 | DONE | SW13 (frozen daily LightGBM on RTH-open features, open-to-close direction (D12 H4)): LEAD; 1 gate-3 cells of 18 selected | 04:02Z
+- SW14 | DONE | SW14 (intraday-vol-regime gating (trailing 60-min range / ADR20) of trend and fade signals (D08 H2/H3)): LEAD; 1 gate-3 cells of 54 selected | 04:24Z
+- SW15 | DONE | SW15 (1-minute price patterns with 1-10 minute holds (D11 H1)): NO; 0 gate-3 cells of 0 selected | 04:56Z
+- SW16 | DONE | SW16 (scheduled-release event bars with 1-4 h holds (D10 H3/H4)): LEAD; 4 gate-3 cells of 59 selected | 05:03Z
+- SW17 | DONE | SW17 (intraday reference-state x clock anchor (D06/D02 H2/H3)): LEAD; 1 gate-3 cells of 52 selected | 05:19Z
+- SW18 | DONE | SW18 (long-window lead-lag, L = 30/60/120 min (D07 H3)): LEAD; 4 gate-3 cells of 52 selected | 06:02Z
+- SW19 | DONE | SW19 (prior-day VWAP / volume-profile POC / settlement-close level crossings (D01/D11 H3/H4)): LEAD; 2 gate-3 cells of 34 selected | 06:03Z
+- SW1 | DONE | SW1 (regime-gated trend sleeves: ST/Donchian/EMA-cross entries only after a high or low prior-day-range day (D08 H3/H4)): LEAD; 3 gate-3 cells of 60 s | 00:26Z
+- SW20 | DONE | SW20 (multi-day RTH flow persistence (D02 H5)): LEAD; 5 gate-3 cells of 56 selected | 06:11Z
+- SW21 | DONE | SW21 (the live pair engine (ST ATR120/2.0/EMA200 and HM 20/55 on 1-min; scaled to 5-min) as standalone sleeves on the other instruments (D00 M1-M3)):  | 06:35Z
+- SW22 | DONE | SW22 (daily option-state (gamma panel) direction sleeves (D03 H5 M1-M3)): LEAD; 2 gate-3 cells of 38 selected | 06:35Z
+- SW23 | DONE | SW23 (return-persistence (lag-1 autocorrelation) regime gating of trend and fade signals (D02 H2/H3)): NO; 0 gate-3 cells of 42 selected | 07:03Z
+- SW24 | DONE | SW24 (pooled-transfer frozen LightGBM (trained on the other seven instruments only) direction models, 15/60/120 min (D12 H1-H3)): NO; 0 gate-3 cells o | 08:33Z
+- SW25 | DONE | SW25 (real aggressor-flow imbalance persistence on NQ and ES (D01/D02 H2/H3)): NO; 0 gate-3 cells of 15 selected | 07:17Z
+- SW26 | DONE | SW26 (correlation-gated lead-lag catch-up (D07 H2)): NO; 0 gate-3 cells of 31 selected | 07:39Z
+- SW27 | DONE | SW27 (unscheduled 1-minute jump shocks, follow or fade (D08/D10 H1)): NO; 0 gate-3 cells of 18 selected | 07:38Z
+- SW28 | DONE | SW28 (opening-activity regime x first-15-min / gap direction (D08 H4)): LEAD; 1 gate-3 cells of 20 selected | 07:44Z
+- SW29 | DONE | SW29 (session-specific effectiveness of bar signals: asia / europe / RTH-AM / RTH-PM windows (D06 H3)): LEAD; 1 gate-3 cells of 49 selected | 08:12Z
+- SW2 | DONE | SW2 (regime-gated fade sleeves: VWAP-band and RSI fades after a high or low prior-day-range day (D08 H3/H4)): NO; 0 gate-3 cells of 59 selected | 00:54Z
+- SW30 | DONE | SW30 (VIX-state gating of equity-index trend/fade sleeves (D08 H3)): NO; 0 gate-3 cells of 11 selected | 08:22Z
+- SW31 | DONE | SW31 (pair-internal regime states at daily horizon (1-min ST/HM trend state, daily EMA20/5d/20d) as multi-day sleeves (D00 H5 M1-M3)): LEAD; 3 gate-3  | 09:10Z
+- SW32 | DONE | SW32 (the live pair's own recent daily P&L as the state of an NQ sleeve (D00 H5 M1-M3, NQ only)): LEAD; 1 gate-3 cells of 10 selected | 09:02Z
+- SW33 | DONE | SW33 (scheduled-release event bars on BTC (D10 H2-H4 M1-M3, BTC only)): NO; 0 gate-3 cells of 9 selected | 08:59Z
+- SW34 | DONE | SW34 (weekly-horizon frozen LightGBM on daily features, own instrument (D12 H6 M1-M3)): LEAD; 5 gate-3 cells of 46 selected | 09:48Z
+- SW35 | DONE | SW35 (weekly-horizon POOLED-TRANSFER frozen LightGBM (trained on the other seven instruments only) (D12 H6 M1-M3)): NO; 0 gate-3 cells of 3 selected | 09:55Z
+- SW36 | DONE | SW36 (simple weekly-horizon rules, non-ML twin of SW34 (D00/D08/D12 H6)): LEAD; 2 gate-3 cells of 75 selected | 09:49Z
+- SW3 | DONE | SW3 (compression-then-expansion breakout sleeves (D08 H2/H3)): NO; 0 gate-3 cells of 20 selected | 01:20Z
+- SW4 | DONE | SW4 (RTH-open entries gated by the overnight range percentile (D08 H4)): LEAD; 5 gate-3 cells of 69 selected | 01:28Z
+- SW5 | DONE | SW5 (clock-anchored short-hold sleeves (D06 H1/H2)): LEAD; 1 gate-3 cells of 59 selected | 00:19Z
+- SW6 | DONE | SW6 (relative-volume spike bar continuation/reversal (D02 H1-H3, D01)): LEAD; 2 gate-3 cells of 29 selected | 01:46Z
+- SW7 | DONE | SW7 (scheduled-release event bars: weekly Thursday 08:30 claims, NFP, CPI, FOMC (D10 H1/H2)): NO; 0 gate-3 cells of 26 selected | 01:47Z
+- SW8 | DONE | SW8 (lead-lag catch-up between related instruments (D07 H1/H2)): LEAD; 1 gate-3 cells of 24 selected | 02:45Z
+- SW9 | DONE | SW9 (overnight cross-asset driver move -> RTH direction (D07 H4)): LEAD; 10 gate-3 cells of 75 selected | 02:50Z
+- SWEEP | DONE | SW1-SW30 complete, FOUND 0, FOUND-PENDING 1 (SW4), 16 LEAD families | 08:34Z
+- SX1 run done 442s sel O:zgd_N_l0.5
+- SX1 | NO | WEEKLY+ OPTION-STATE SIZE TILT; selected O:zgd_N_l0.5 clean/H1/H2 +0.22/+0.08/-1.37, all-in -0.22, boot [-0.74,+0.31], own-null rank 0.97, sel-corrected rank 0.76, plateau 0.00, 2x slip H2 -1.75, H0 +0.50, ES/RTY all-in +0.29/-0.03, legs 1; failed g1, g3, g3b, g4, g5, g6, g7, g9; H1/H2 non-virgin | REPORT_SX1.md
+- SX2 run done 762s sel X:CL_V_N_l0.25
+- SX2 | NO | WEEKLY+ CROSS-ASSET STATE SIZE TILT; selected X:CL_V_N_l0.25 clean/H1/H2 -0.02/-0.87/-0.05, all-in -0.14, boot [-0.62,+0.29], own-null rank 0.88, sel-corrected rank 0.00, plateau 0.00, 2x slip H2 -0.31, H0 -0.26, ES/RTY all-in +0.01/+0.02, legs 1; failed g1, g2, g3, g3b, g4, g5, g6, g7, g9; H1/H2 non-virgin | REPORT_SX2.md
+- SX3 run done 614s sel X:CL_V_1
+- SX3 | NO | STATE-TAIL HALF-SIZE RULE; selected X:CL_V_1 clean/H1/H2 +0.09/-0.17/-0.90, all-in -0.14, boot [-0.66,+0.37], own-null rank 0.95, sel-corrected rank 0.24, plateau 0.00, 2x slip H2 -1.09, H0 -0.22, ES/RTY all-in +0.00/+0.01, legs 1; failed g1, g2, g3, g3b, g4, g5, g6, g7, g9; H1/H2 non-virgin | REPORT_SX3.md
+- 2026-10-16T15:11:56Z DONE T1b: **NO - session-aligned weekend-gap fade/follow, 150-trade floor (T1b amendment): best selected cell T1_0.25_1_fade: standalone Sharpe 2013-22 0.56, pair window 0.83, own-null rank pair window 0.99; additive uplift at 20% clean/H1/H2 +0.15/-0.16/+0.18
+- 2026-10-16T15:11:56Z DONE T1: **NO - session-aligned weekend-gap fade/follow (30-min path, 6 markets): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.62 (T1_1.0_4_fade), pair window never read; FOUND 0.**
+- 2026-10-16T15:11:56Z DONE T2: **NO - weekend-gap fade only when breadth is low: best selected cell T2_4_h3_SCR: standalone Sharpe 2013-22 0.63, pair window -1.55, own-null rank pair window 0.00; additive uplift at 20% clean/H1/H2 -0.19/-0.56/-0.43, bootstrap lo -0.48; FOUND 0.**
+- 2026-10-16T15:11:56Z DONE T3: **NO - weekend-gap follow when breadth is high: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.32 (T3_6_h3_SCR), pair window never read; FOUND 0.**
+- 2026-10-16T15:11:56Z DONE T4: **NO - weekend carry by Friday z (30-min): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.62 (T4_0.5_follow), pair window never read; FOUND 0.**
+- 2026-10-16T15:11:56Z DONE T5: **NO - pre-holiday drift (ES NQ RTY YM): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.13 (T5_1_h1_RTY), pair window never read; FOUND 0.**
+- 2026-10-16T15:11:56Z DONE T6: **NO - weekend-gap fade by asset class: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.58 (T6__h1_MET), pair window never read; FOUND 0.**
+- 2026-10-16T15:07:54Z DONE U1: **NO - degenerate: the live pair has an open position in 57-81% of clean-window days at every 30-minute slot from 18:30 to 16:30 ET (minimum 26% at slot 34 = 10:30 ET), so the only 'pair-flat' slots (open position in < 15% of days) are 18:00-18:30 ET
+- 2026-10-16T15:07:54Z DONE U2: **NO (hedge-type LEAD-weak, not FOUND) - book pair-window Sharpe 1.15 vs random-entry null p95 0.71 but below the selection-corrected percentile (1.17 at 1-0.05/6; null max 1.30); additive uplift at 20% clean/H1/H2/all +0.26/-0.26/+0.44/+0.23, bootst
+- 2026-10-16T15:07:54Z DONE U3: **NO observable known at the signal-day close separates H1's failing trades (clean-selected rule uplift in H1 stays -0.49..-0.27); the finding is structural: the 'gap fade' (Z3/W6/V3/V4/V10) is a WEEKEND-GAP fade - 534 of 598 2013-22 trades, 101 of 1
+- 2026-10-16T15:02:00Z DONE V10: **NO - gap fade conditioned on ZN 5-day range regime: best selected cell V10_('hi', 0.67)_h1_ALL26: standalone Sharpe 2013-22 0.60, pair window 0.46, own-null rank pair window 0.95; additive uplift at 20% clean/H1/H2 -0.05/-0.23/+0.20, bootstrap lo -
+- 2026-10-16T15:02:00Z DONE V1: **NO - 30-min lead-lag among NQ/ES/RTY: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.06 (V1_NQ_2.5_h2_ES), pair window never read; FOUND 0.**
+- 2026-10-16T15:02:00Z DONE V2: **NO - FOMC+NFP event-day drift: best selected cell V2_long_1_h1_NQ: standalone Sharpe 2013-22 0.73, pair window 0.00, own-null rank pair window 0.50; additive uplift at 20% clean/H1/H2 +0.15/-0.31/-0.27, bootstrap lo -0.24; FOUND 0.**
+- 2026-10-16T15:02:00Z DONE V3: **NO - gap fade conditioned on own-vol regime: best selected cell V3_('hi', 0.67)_h1_ALL26: standalone Sharpe 2013-22 0.40, pair window 1.02, own-null rank pair window 0.99; additive uplift at 20% clean/H1/H2 +0.19/-0.52/+0.56, bootstrap lo -0.05; FO
+- 2026-10-16T15:02:00Z DONE V4: **NO - gap fade with/against EMA50 trend: best selected cell V4_0.25_against_h1_SCR: standalone Sharpe 2013-22 0.81, pair window 0.82, own-null rank pair window 0.95; additive uplift at 20% clean/H1/H2 +0.20/-0.53/+0.27, bootstrap lo -0.10; FOUND 0.*
+- 2026-10-16T15:02:00Z DONE V5: **NO - equity-index relative strength (ES NQ RTY YM): best selected cell V5_5_rev_h10_EQ: standalone Sharpe 2013-22 0.22, pair window 0.83, own-null rank pair window 0.96; additive uplift at 20% clean/H1/H2 +0.33/+0.01/-0.24, bootstrap lo -0.04; FOUN
+- 2026-10-16T15:02:00Z DONE V6: **NO - FX cross-sectional momentum/reversal: best selected cell V6_20_rev_h10_FX: standalone Sharpe 2013-22 0.41, pair window 0.46, own-null rank pair window 0.87; additive uplift at 20% clean/H1/H2 -0.01/+0.15/+0.24, bootstrap lo -0.10; FOUND 0.**
+- 2026-10-16T15:02:00Z DONE V7: **NO - commodity cross-sectional momentum/reversal: best selected cell V7_60_mom_h10_COM: standalone Sharpe 2013-22 0.11, pair window -0.36, own-null rank pair window 0.36; additive uplift at 20% clean/H1/H2 -0.12/-0.47/-0.02, bootstrap lo -0.33; FOU
+- 2026-10-16T15:02:00Z DONE V8: **NO - post-event continuation/fade: best selected cell V8_follow_h1_GC: standalone Sharpe 2013-22 0.80, pair window 0.24, own-null rank pair window 0.67; additive uplift at 20% clean/H1/H2 +0.04/+0.08/-0.01, bootstrap lo -0.09; FOUND 0.**
+- 2026-10-16T15:02:00Z DONE V9: **NO - low-vol-regime mean reversion: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.21 (V9_2.0_0.33_h5_SCR), pair window never read; FOUND 0.**
+- 2026-10-16T14:51:49Z DONE W1: **NO - opening-range breakout, path-resolved 30-min (6 markets): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.47 (W1_660_ATR), pair window never read; FOUND 0.**
+- 2026-10-16T14:51:49Z DONE W2: **NO - session-block momentum/reversal: best selected cell W2_b_follow_0.5: standalone Sharpe 2013-22 0.27, pair window 0.33, own-null rank pair window 0.89; additive uplift at 20% clean/H1/H2 -0.03/+0.36/+0.17, bootstrap lo -0.10; FOUND 0.**
+- 2026-10-16T14:51:49Z DONE W3: **NO - flight-to-quality: ES shock -> ZN/ZB/GC/6J: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.17 (W3_1.5_h1_GC), pair window never read; FOUND 0.**
+- 2026-10-16T14:51:49Z DONE W4: **NO - weekday x asset-class sleeves (dev-signed): best selected cell W4_2_EQ_h1_EQ: standalone Sharpe 2013-22 0.45, pair window 0.08, own-null rank pair window 0.67; additive uplift at 20% clean/H1/H2 -0.02/+0.29/-0.30, bootstrap lo -0.25; FOUND 0.*
+- 2026-10-16T14:51:49Z DONE W5: **NO - time-of-day displacement vs prior close: best selected cell W5_840_1.25_follow: standalone Sharpe 2013-22 0.12, pair window -0.55, own-null rank pair window 0.38; additive uplift at 20% clean/H1/H2 -0.19/-0.05/+0.03, bootstrap lo -0.25; FOUND 
+- 2026-10-16T14:51:49Z DONE W6: **LEAD-weak (same family as Z3; not FOUND) - gap-size-conditioned gap fade: best selected cell W6_0.25_h1_SCR: standalone Sharpe 2013-22 0.63, pair window 0.77, own-null rank pair window 0.93; additive uplift at 20% clean/H1/H2 +0.14/-0.69/+0.37, boo
+- 2026-10-16T14:51:49Z DONE W8: **NO - bond momentum -> equity lead-lag: best selected cell W8_10_1_h5_NQ: standalone Sharpe 2013-22 0.58, pair window 0.31, own-null rank pair window 0.73; additive uplift at 20% clean/H1/H2 +0.08/+0.29/-0.20, bootstrap lo -0.12; FOUND 0.**
+- WT2 done: LEAD, 0 FOUND
+- WT done 2026-10-16T15:15Z: LEAD (separate-account sleeve), 0 FOUND; report outputs/autopilot/REPORT_WT.md
+- DONE X1-REP: NO for pair uplift (clean-only cell h2_k2_SCR capped k=0.84: +0.09/-0.05/0.00); standalone replicates in split-sample; FDR chance-pass 0/210
+- 2026-10-16T14:27:01Z DONE X1: **LEAD (not FOUND) - X1 cost-screened compression breakout, 1-day hold, ATR stop 2-3, 16 screened markets: standalone Sharpe 2013-22 1.35 (10 of 10 years positive), pair window 1.33 (clean 0.67 / H1 1.17 / H2 3.35), own random-entry null rank 1.00 in both; additive uplift at 20% share +0.12/+0.23/+0
+- 2026-10-16T14:27:01Z DONE X2: **NO - range-regime fade (ER20 <= 0.25/0.35): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.12 (X2_1_2_0.25_h1_ALL26), pair window never read; FOUND 0.**
+- 2026-10-16T14:27:01Z DONE X3: **NO - trend-aligned continuation after >= 1.5/2.0 ATR days: best selected cell X3_1.5_h5_ALL26: standalone Sharpe 2013-22 0.45, pair window 0.31, own-null rank pair window 0.82; additive uplift at 20% clean/H1/H2 -0.02/-0.03/+0.11, bootstrap lo -0.25; FOUND 0.**
+- 2026-10-16T14:27:01Z DONE X4: **NO - X4 gold Jan-Feb long does not replicate: SI_A 2013-26 Sharpe 0.11 (2013-22 null rank 0.80, pair-window rank 0.49), PL_A 0.22 (ranks 0.99/0.31); additive uplift at 20% SI +0.01/-0.25/+0.23, PL -0.11/-0.09/+0.12 (clean/H1/H2); FOUND 0, GC_A reference unchanged.**
+- 2026-10-16T14:27:01Z DONE X5: **NO - daily-candle follow-through (body ratio >= 0.6/0.8, range >= 1.0/1.5 ATR): best selected cell X5_0.8_1.5_h3_COM+RATES: standalone Sharpe 2013-22 0.42, pair window -0.16, own-null rank pair window 0.63; additive uplift at 20% clean/H1/H2 +0.16/-0.26/-0.40, bootstrap lo -0.24; FOUND 0.**
+- X_BOOT | DONE | see REPORT_X_BOOT.md
+- 2026-10-16T14:37:27Z DONE Y10: **NO - 30-min range-expansion bar follow/fade: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.75 (Y10_3.0_follow_h8_M6), pair window never read; FOUND 0.**
+- 2026-10-16T14:37:27Z DONE Y1: **NO - close-streak fade/follow (N=3,4): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.02 (Y1_4_follow_h3_SCR), pair window never read; FOUND 0.**
+- 2026-10-16T14:37:27Z DONE Y2: **NO - vol-contraction momentum (ATR5/ATR20 <= 0.6/0.8): best selected cell Y2_0.6_20_h5_SCR: standalone Sharpe 2013-22 0.34, pair window -0.27, own-null rank pair window 0.32; additive uplift at 20% clean/H1/H2 +0.05/-0.32/-0.16, bootstrap lo -0.23;
+- 2026-10-16T14:37:27Z DONE Y3: **NO - 52-week-extreme proximity follow: best selected cell Y3_1.0_h5_SCR: standalone Sharpe 2013-22 0.78, pair window -0.13, own-null rank pair window 0.52; additive uplift at 20% clean/H1/H2 -0.12/+0.43/-0.09, bootstrap lo -0.24; FOUND 0.**
+- 2026-10-16T14:37:27Z DONE Y4: **NO - short Donchian (10/20/40) close breakout: best selected cell Y4_40_h5_SCR: standalone Sharpe 2013-22 0.26, pair window 0.05, own-null rank pair window 0.68; additive uplift at 20% clean/H1/H2 -0.01/-0.20/+0.02, bootstrap lo -0.20; FOUND 0.**
+- 2026-10-16T14:37:27Z DONE Y5: **NO - volume-spike follow/fade: best selected cell Y5_1.5_fade_h1_SCR: standalone Sharpe 2013-22 0.04, pair window 0.07, own-null rank pair window 0.86; additive uplift at 20% clean/H1/H2 -0.05/+0.01/-0.14, bootstrap lo -0.25; FOUND 0.**
+- 2026-10-16T14:37:27Z DONE Y6: **LEAD (same family as X1, not independent evidence; not FOUND) - depth-of-compression breakouts (ID2/NR4/NR7ID): best selected cell Y6_NR4_3.0_h1_SCR: standalone Sharpe 2013-22 1.46, pair window 1.51, own-null rank pair window 1.00; additive uplift 
+- 2026-10-16T14:37:27Z DONE Y7: **NO - X1 breakouts filtered by EMA20 trend (with/against): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.11 (Y7_against_2.0_h1_SCR), pair window never read; FOUND 0.**
+- 2026-10-16T14:37:27Z DONE Y8: **NO - 30-min overreaction fade/follow: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.29 (Y8_3.5_follow_h2_M6), pair window never read; FOUND 0.**
+- 2026-10-16T14:37:27Z DONE Y9: **NO - cross-sectional 26-market rank reversal/momentum: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.20 (Y9_5_mom_h5_ALL26), pair window never read; FOUND 0.**
+- 2026-10-16T14:44:17Z DONE Z10: **NO - vol-surge trend (ATR5/ATR20 >= 1.3/1.6): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.05 (Z10_1.3_20_h5_ALL26), pair window never read; FOUND 0.**
+- 2026-10-16T14:44:17Z DONE Z1: **NO - X1 does NOT survive path-resolved execution: on the same markets, ET-session label days with true first-touch resolution on 30-min bars give 2013-22 Sharpe 0.2-0.4 (vs 0.9-1.0 in the daily UTC-day bars) and pair-window Sharpe -0.6..0.0 (vs +0.
+- 2026-10-16T14:44:17Z DONE Z2: **NO - weekly-compression close breakout (NR7w / inside week): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe 0.30 (Z2_IDw_h3_SCR), pair window never read; FOUND 0.**
+- 2026-10-16T14:44:17Z DONE Z3: **LEAD-weak (hedge-type; not FOUND) - gap-and-go / gap fade: best selected cell Z3_fade_h3_SCR: standalone Sharpe 2013-22 0.31, pair window 0.91, own-null rank pair window 0.96; additive uplift at 20% clean/H1/H2 +0.20/-0.40/+0.39, bootstrap lo -0.05
+- 2026-10-16T14:44:17Z DONE Z4: **NO - failed-breakout reversal (turtle soup): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.32 (Z4_20_h5_SCR), pair window never read; FOUND 0.**
+- 2026-10-16T14:44:17Z DONE Z5: **NO - outside-day follow/fade by close location: no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.12 (Z5_fade_h3_SCR), pair window never read; FOUND 0.**
+- 2026-10-16T14:44:25Z DONE Z6: **NO - expansion-then-compression path-resolved breakout (inside day after wide day): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -
+- 2026-10-16T14:44:17Z DONE Z8: **NO - daily spread z-score fade/follow (8 related-futures pairs): no cell passes the 2013-22 development screen (>= 300 trades and >= 7 of 10 positive years); best 2013-22 Sharpe -0.25 (Z8_2.5_fade_h5_SPR), pair window never read; FOUND 0.**
+- 2026-10-16T14:44:17Z DONE Z9: **NO - Z9 30-min prior-day high/low break (all days / narrow / wide prior day, stop 1-2 ATR, 6 markets, path-resolved): no cell passes the 2013-22 screen; best 2013-22 Sharpe 0.16, mean -0.53; FOUND 0.**
+
+## reports
+- autopilot/REPORT_0900_ENTRIES.md
+- autopilot/REPORT_A10.md
+- autopilot/REPORT_A1.md
+- autopilot/REPORT_A2.md
+- autopilot/REPORT_A3.md
+- autopilot/REPORT_A5.md
+- autopilot/REPORT_A6.md
+- autopilot/REPORT_A7.md
+- autopilot/REPORT_A8.md
+- autopilot/REPORT_A9.md
+- autopilot/REPORT_ASSEMBLY_20261016T1628Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T1737Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T1752Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T1827Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T1911Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T1932Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T1946Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T2028Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T2053Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T2105Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T2119Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T2246Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T2318Z.md
+- autopilot/REPORT_ASSEMBLY_20261016T2348Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0019Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0036Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0057Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0115Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0132Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0147Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0201Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0246Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0302Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0342Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0403Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0420Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0436Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0504Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0522Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0605Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0622Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0638Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T0703Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T1448Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T1456Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T1518Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T1526Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T1632Z.md
+- autopilot/REPORT_ASSEMBLY_20261017T1643Z.md
+- autopilot/REPORT_ASSEMBLY_20261018T0447Z.md
+- autopilot/REPORT_ASSEMBLY_20261018T1651Z.md
+- autopilot/REPORT_ASSEMBLY_20261019T0454Z.md
+- autopilot/REPORT_ASSEMBLY_20261019T1658Z.md
+- autopilot/REPORT_ASSEMBLY_20261020T0501Z.md
+- autopilot/REPORT_ASSEMBLY_20261020T1707Z.md
+- autopilot/REPORT_ASSEMBLY_20261021T0512Z.md
+- autopilot/REPORT_ASSEMBLY_20261021T1717Z.md
+- autopilot/REPORT_ASSEMBLY_20261022T0522Z.md
+- autopilot/REPORT_ASSEMBLY_20261022T1725Z.md
+- autopilot/REPORT_ASSEMBLY_20261023T0531Z.md
+- autopilot/REPORT_ASSEMBLY_20261023T1735Z.md
+- autopilot/REPORT_ASSEMBLY_20261024T0540Z.md
+- autopilot/REPORT_ASSEMBLY_20261024T1744Z.md
+- autopilot/REPORT_ASSEMBLY_20261025T0549Z.md
+- autopilot/REPORT_ASSEMBLY_20261025T1753Z.md
+- autopilot/REPORT_ASSEMBLY_20261026T0556Z.md
+- autopilot/REPORT_ASSEMBLY_20261026T1759Z.md
+- autopilot/REPORT_ASSEMBLY.md
+- autopilot/REPORT_ASSEMBLY_PREHOLD.md
+- autopilot/REPORT_B10.md
+- autopilot/REPORT_B11.md
+- autopilot/REPORT_B12.md
+- autopilot/REPORT_B14.md
+- autopilot/REPORT_B15.md
+- autopilot/REPORT_B16.md
+- autopilot/REPORT_B17.md
+- autopilot/REPORT_B18.md
+- autopilot/REPORT_B19.md
+- autopilot/REPORT_B1_legacy2013.md
+- autopilot/REPORT_B1.md
+- autopilot/REPORT_B2.md
+- autopilot/REPORT_B3.md
+- autopilot/REPORT_B4_legacy2013.md
+- autopilot/REPORT_B4.md
+- autopilot/REPORT_B5.md
+- autopilot/REPORT_B6.md
+- autopilot/REPORT_B7.md
+- autopilot/REPORT_B8.md
+- autopilot/REPORT_B8WT.md
+- autopilot/REPORT_B9.md
+- autopilot/REPORT_BACKLOG.md
+- autopilot/REPORT_BASIS_AUDIT.md
+- autopilot/REPORT_BASIS_RESCORE.md
+- autopilot/REPORT_BASKET.md
+- autopilot/REPORT_BENCH3.md
+- autopilot/REPORT_BI10.md
+- autopilot/REPORT_BI1.md
+- autopilot/REPORT_BI2.md
+- autopilot/REPORT_BI3.md
+- autopilot/REPORT_BI4.md
+- autopilot/REPORT_BI5.md
+- autopilot/REPORT_BI6.md
+- autopilot/REPORT_BI7.md
+- autopilot/REPORT_BI8B.md
+- autopilot/REPORT_BI8.md
+- autopilot/REPORT_BI9.md
+- autopilot/REPORT_BJ10.md
+- autopilot/REPORT_BJ1.md
+- autopilot/REPORT_BJ2.md
+- autopilot/REPORT_BJ3.md
+- autopilot/REPORT_BJ4.md
+- autopilot/REPORT_BJ5.md
+- autopilot/REPORT_BJ6.md
+- autopilot/REPORT_BJ7.md
+- autopilot/REPORT_BJ8.md
+- autopilot/REPORT_BJ9.md
+- autopilot/REPORT_BK10.md
+- autopilot/REPORT_BK11_SPLITAUDIT.md
+- autopilot/REPORT_BK1.md
+- autopilot/REPORT_BK1_PREHOLD.md
+- autopilot/REPORT_BK1_SETB.md
+- autopilot/REPORT_BK2.md
+- autopilot/REPORT_BK3.md
+- autopilot/REPORT_BK4.md
+- autopilot/REPORT_BK5.md
+- autopilot/REPORT_BK6.md
+- autopilot/REPORT_BK7.md
+- autopilot/REPORT_BK8.md
+- autopilot/REPORT_BK9.md
+- autopilot/REPORT_BL1.md
+- autopilot/REPORT_BL2.md
+- autopilot/REPORT_BL3.md
+- autopilot/REPORT_BM10.md
+- autopilot/REPORT_BM11.md
+- autopilot/REPORT_BM12.md
+- autopilot/REPORT_BM13.md
+- autopilot/REPORT_BM1.md
+- autopilot/REPORT_BM2.md
+- autopilot/REPORT_BM3.md
+- autopilot/REPORT_BM4.md
+- autopilot/REPORT_BM5.md
+- autopilot/REPORT_BM6.md
+- autopilot/REPORT_BM7.md
+- autopilot/REPORT_BM8.md
+- autopilot/REPORT_BM9.md
+- autopilot/REPORT_BQ1.md
+- autopilot/REPORT_BQ2.md
+- autopilot/REPORT_C10_S1.md
+- autopilot/REPORT_C11_DIP.md
+- autopilot/REPORT_C11_HM.md
+- autopilot/REPORT_C11_REP2.md
+- autopilot/REPORT_C1_F1.md
+- autopilot/REPORT_C1_F2.md
+- autopilot/REPORT_C1_F3.md
+- autopilot/REPORT_C1_F4.md
+- autopilot/REPORT_C1_F5.md
+- autopilot/REPORT_C1_F6.md
+- autopilot/REPORT_C1_F7.md
+- autopilot/REPORT_C2_G1.md
+- autopilot/REPORT_C2_G3.md
+- autopilot/REPORT_C2_G4.md
+- autopilot/REPORT_C3_H1.md
+- autopilot/REPORT_C3_H2.md
+- autopilot/REPORT_C3_H3.md
+- autopilot/REPORT_C4_K1.md
+- autopilot/REPORT_C5_M1.md
+- autopilot/REPORT_C6_N1.md
+- autopilot/REPORT_C6_N2.md
+- autopilot/REPORT_C7_P1.md
+- autopilot/REPORT_C8_Q1.md
+- autopilot/REPORT_C8_Q2.md
+- autopilot/REPORT_C9_R1.md
+- autopilot/REPORT_CODEPACK_EXACT.md
+- autopilot/REPORT_CONTROL2.md
+- autopilot/REPORT_CONTROL.md
+- autopilot/REPORT_D30.md
+- autopilot/REPORT_D31.md
+- autopilot/REPORT_D32.md
+- autopilot/REPORT_D33.md
+- autopilot/REPORT_D34.md
+- autopilot/REPORT_D35.md
+- autopilot/REPORT_D36.md
+- autopilot/REPORT_D37.md
+- autopilot/REPORT_DAYRULES.md
+- autopilot/REPORT_DDMIN.md
+- autopilot/REPORT_DRIVERS.md
+- autopilot/REPORT_DS2_15.md
+- autopilot/REPORT_DS2_300.md
+- autopilot/REPORT_DS2_50.md
+- autopilot/REPORT_DS2_FIRM.md
+- autopilot/REPORT_DS2_FIRM_V3.md
+- autopilot/REPORT_DS2_FIRM_V4.md
+- autopilot/REPORT_DS2_FIRM_V5.md
+- autopilot/REPORT_DS2_FIRM_V6.md
+- autopilot/REPORT_DS2_L2.md
+- autopilot/REPORT_DS2_SESSION.md
+- autopilot/REPORT_E1.md
+- autopilot/REPORT_E2.md
+- autopilot/REPORT_E3.md
+- autopilot/REPORT_E4.md
+- autopilot/REPORT_E7.md
+- autopilot/REPORT_ENSEMBLE.md
+- autopilot/REPORT_ERA_RETRO.md
+- autopilot/REPORT_EXT_1019_1024.md
+- autopilot/REPORT_EXTENSION_20261017.md
+- autopilot/REPORT_EXTENSION_RESCORE.md
+- autopilot/REPORT_FA1.md
+- autopilot/REPORT_FA2.md
+- autopilot/REPORT_FA3.md
+- autopilot/REPORT_FA4.md
+- autopilot/REPORT_FAILPRED.md
+- autopilot/REPORT_FAILPRED_PROFILE.md
+- autopilot/REPORT_FAILPRED_STEP2.md
+- autopilot/REPORT_FAILPRED_STEP2_PREHOLD.md
+- autopilot/REPORT_FAMILIES.md
+- autopilot/REPORT_FORWARD_TH.md
+- autopilot/REPORT_FOURTH_BOOK.md
+- autopilot/REPORT_FVG_GCCL.md
+- autopilot/REPORT_FVG_REALIZABLE.md
+- autopilot/REPORT_G0a.md
+- autopilot/REPORT_G0b.md
+- autopilot/REPORT_G0c.md
+- autopilot/REPORT_G10_1.md
+- autopilot/REPORT_G10_2.md
+- autopilot/REPORT_G10_3.md
+- autopilot/REPORT_G11_A.md
+- autopilot/REPORT_G11_B.md
+- autopilot/REPORT_G11_C.md
+- autopilot/REPORT_G1.md
+- autopilot/REPORT_G2.md
+- autopilot/REPORT_G3.md
+- autopilot/REPORT_G4.md
+- autopilot/REPORT_G5.md
+- autopilot/REPORT_G6a.md
+- autopilot/REPORT_G6b.md
+- autopilot/REPORT_G6c.md
+- autopilot/REPORT_G8_A.md
+- autopilot/REPORT_G8_B.md
+- autopilot/REPORT_G8_C.md
+- autopilot/REPORT_G8_D.md
+- autopilot/REPORT_G8_E.md
+- autopilot/REPORT_GC_FADE_R5.md
+- autopilot/REPORT_GC_FADE_V2.md
+- autopilot/REPORT_H0a.md
+- autopilot/REPORT_H0b.md
+- autopilot/REPORT_H0c.md
+- autopilot/REPORT_H0d.md
+- autopilot/REPORT_H10_A.md
+- autopilot/REPORT_H10_B.md
+- autopilot/REPORT_H10_C.md
+- autopilot/REPORT_H11_A.md
+- autopilot/REPORT_H11_B.md
+- autopilot/REPORT_H11_C.md
+- autopilot/REPORT_H6a.md
+- autopilot/REPORT_H6b.md
+- autopilot/REPORT_H6c.md
+- autopilot/REPORT_H7_A.md
+- autopilot/REPORT_H7_B.md
+- autopilot/REPORT_H7_C.md
+- autopilot/REPORT_H8_A.md
+- autopilot/REPORT_H8_B.md
+- autopilot/REPORT_H8_C.md
+- autopilot/REPORT_I10.md
+- autopilot/REPORT_I1_devsel.md
+- autopilot/REPORT_I1.md
+- autopilot/REPORT_I2_devsel.md
+- autopilot/REPORT_I2.md
+- autopilot/REPORT_I3_devsel.md
+- autopilot/REPORT_I3.md
+- autopilot/REPORT_I4_devsel.md
+- autopilot/REPORT_I4.md
+- autopilot/REPORT_I5_devsel.md
+- autopilot/REPORT_I5E.md
+- autopilot/REPORT_I5F.md
+- autopilot/REPORT_I5G.md
+- autopilot/REPORT_I5H.md
+- autopilot/REPORT_I5I.md
+- autopilot/REPORT_I5J.md
+- autopilot/REPORT_I5M2.md
+- autopilot/REPORT_I5.md
+- autopilot/REPORT_I6.md
+- autopilot/REPORT_I7.md
+- autopilot/REPORT_I8_devsel.md
+- autopilot/REPORT_I8.md
+- autopilot/REPORT_I9_devsel.md
+- autopilot/REPORT_I9.md
+- autopilot/REPORT_ICT.md
+- autopilot/REPORT_IDEAS50K_N2N4N6.md
+- autopilot/REPORT_IDEAS50K_N3N7N8.md
+- autopilot/REPORT_IDEAS50K_N5_FINAL.md
+- autopilot/REPORT_IDEAS50K_N9.md
+- autopilot/REPORT_J0A.md
+- autopilot/REPORT_J0B.md
+- autopilot/REPORT_J0C.md
+- autopilot/REPORT_J10_firstpass_dataerr.md
+- autopilot/REPORT_J10.md
+- autopilot/REPORT_J11_A.md
+- autopilot/REPORT_J11_B.md
+- autopilot/REPORT_J11_C.md
+- autopilot/REPORT_J1.md
+- autopilot/REPORT_J2.md
+- autopilot/REPORT_J3.md
+- autopilot/REPORT_J4.md
+- autopilot/REPORT_J4X.md
+- autopilot/REPORT_J5.md
+- autopilot/REPORT_J5W_A.md
+- autopilot/REPORT_J5W_B.md
+- autopilot/REPORT_J5W_C.md
+- autopilot/REPORT_J5W_D.md
+- autopilot/REPORT_J6a.md
+- autopilot/REPORT_J6b.md
+- autopilot/REPORT_J6c.md
+- autopilot/REPORT_J6.md
+- autopilot/REPORT_J7.md
+- autopilot/REPORT_J7V.md
+- autopilot/REPORT_J8.md
+- autopilot/REPORT_J9.md
+- autopilot/REPORT_J9P_A.md
+- autopilot/REPORT_J9P_B.md
+- autopilot/REPORT_J9P_C.md
+- autopilot/REPORT_K100.md
+- autopilot/REPORT_K10.md
+- autopilot/REPORT_K11.md
+- autopilot/REPORT_K12.md
+- autopilot/REPORT_K13.md
+- autopilot/REPORT_K14.md
+- autopilot/REPORT_K16.md
+- autopilot/REPORT_K17.md
+- autopilot/REPORT_K18.md
+- autopilot/REPORT_K19.md
+- autopilot/REPORT_K1.md
+- autopilot/REPORT_K20.md
+- autopilot/REPORT_K21.md
+- autopilot/REPORT_K22.md
+- autopilot/REPORT_K23.md
+- autopilot/REPORT_K24.md
+- autopilot/REPORT_K25.md
+- autopilot/REPORT_K26.md
+- autopilot/REPORT_K27.md
+- autopilot/REPORT_K2.md
+- autopilot/REPORT_K3.md
+- autopilot/REPORT_K4_ALTERNATIVES.md
+- autopilot/REPORT_K4_EXACT.md
+- autopilot/REPORT_K4_LIVE.md
+- autopilot/REPORT_K4_M2.md
+- autopilot/REPORT_K4.md
+- autopilot/REPORT_K4P.md
+- autopilot/REPORT_K4V2.md
+- autopilot/REPORT_K5.md
+- autopilot/REPORT_K6.md
+- autopilot/REPORT_K7.md
+- autopilot/REPORT_K84.md
+- autopilot/REPORT_K8.md
+- autopilot/REPORT_K96b.md
+- autopilot/REPORT_K96.md
+- autopilot/REPORT_K99.md
+- autopilot/REPORT_K9.md
+- autopilot/REPORT_K_CURE.md
+- autopilot/REPORT_K.md
+- autopilot/REPORT_L10.md
+- autopilot/REPORT_L2_FOUND_A.md
+- autopilot/REPORT_L2.md
+- autopilot/REPORT_L2_PAIR.md
+- autopilot/REPORT_L2_S4.md
+- autopilot/REPORT_L2_SH.md
+- autopilot/REPORT_L3.md
+- autopilot/REPORT_L4.md
+- autopilot/REPORT_L5.md
+- autopilot/REPORT_L6.md
+- autopilot/REPORT_L7.md
+- autopilot/REPORT_L8.md
+- autopilot/REPORT_L90.md
+- autopilot/REPORT_L91.md
+- autopilot/REPORT_L92.md
+- autopilot/REPORT_L93.md
+- autopilot/REPORT_L9.md
+- autopilot/REPORT_LEAGUE_FIX.md
+- autopilot/REPORT_LIVE_AUDIT2.md
+- autopilot/REPORT_LIVE_AUDIT.md
+- autopilot/REPORT_M2A.md
+- autopilot/REPORT_M2B.md
+- autopilot/REPORT_M2C.md
+- autopilot/REPORT_M2REPL2.md
+- autopilot/REPORT_M2REPL3.md
+- autopilot/REPORT_M2REPL.md
+- autopilot/REPORT_MONEY_GATES56.md
+- autopilot/REPORT_MONEY.md
+- autopilot/REPORT_N1.md
+- autopilot/REPORT_N1RT_FLAG.md
+- autopilot/REPORT_N2.md
+- autopilot/REPORT_N3.md
+- autopilot/REPORT_N4.md
+- autopilot/REPORT_N5.md
+- autopilot/REPORT_N6.md
+- autopilot/REPORT_N7.md
+- autopilot/REPORT_NETBOOK.md
+- autopilot/REPORT_OPT0DTE.md
+- autopilot/REPORT_OPTIONS.md
+- autopilot/REPORT_P1B.md
+- autopilot/REPORT_P1_DECOMP.md
+- autopilot/REPORT_P1.md
+- autopilot/REPORT_P2.md
+- autopilot/REPORT_PA10.md
+- autopilot/REPORT_PA3.md
+- autopilot/REPORT_PA4.md
+- autopilot/REPORT_PA4_NKD.md
+- autopilot/REPORT_PA5.md
+- autopilot/REPORT_PA6.md
+- autopilot/REPORT_PA7.md
+- autopilot/REPORT_PA8.md
+- autopilot/REPORT_PA9.md
+- autopilot/REPORT_PAIR_XENGINE.md
+- autopilot/REPORT_PBDAY.md
+- autopilot/REPORT_PORTFOLIO_14.md
+- autopilot/REPORT_PORTFOLIO.md
+- autopilot/REPORT_PORTFOLIO_REFRESH.md
+- autopilot/REPORT_POWER2.md
+- autopilot/REPORT_POWER.md
+- autopilot/REPORT_PULLBACK.md
+- autopilot/REPORT_PX1.md
+- autopilot/REPORT_PX20.md
+- autopilot/REPORT_PX21.md
+- autopilot/REPORT_PX22.md
+- autopilot/REPORT_PX23.md
+- autopilot/REPORT_PX24.md
+- autopilot/REPORT_PX25.md
+- autopilot/REPORT_PX26.md
+- autopilot/REPORT_PX27.md
+- autopilot/REPORT_PX30.md
+- autopilot/REPORT_PX31.md
+- autopilot/REPORT_PX32.md
+- autopilot/REPORT_PX33.md
+- autopilot/REPORT_PX34.md
+- autopilot/REPORT_PX_L2ES.md
+- autopilot/REPORT_PY10.md
+- autopilot/REPORT_PY1.md
+- autopilot/REPORT_PY2.md
+- autopilot/REPORT_PY3.md
+- autopilot/REPORT_PY4.md
+- autopilot/REPORT_PY5.md
+- autopilot/REPORT_PY6.md
+- autopilot/REPORT_PY7.md
+- autopilot/REPORT_PY8.md
+- autopilot/REPORT_PY9.md
+- autopilot/REPORT_PZ1_L2RTY.md
+- autopilot/REPORT_PZ1.md
+- autopilot/REPORT_PZ2.md
+- autopilot/REPORT_PZ3.md
+- autopilot/REPORT_PZ4.md
+- autopilot/REPORT_PZ5.md
+- autopilot/REPORT_Q10A.md
+- autopilot/REPORT_Q10B.md
+- autopilot/REPORT_Q11.md
+- autopilot/REPORT_Q12.md
+- autopilot/REPORT_Q13.md
+- autopilot/REPORT_Q14.md
+- autopilot/REPORT_Q15.md
+- autopilot/REPORT_Q16.md
+- autopilot/REPORT_Q17A.md
+- autopilot/REPORT_Q17B.md
+- autopilot/REPORT_Q17C.md
+- autopilot/REPORT_Q18.md
+- autopilot/REPORT_Q18_VOID_lookahead.md
+- autopilot/REPORT_Q19.md
+- autopilot/REPORT_Q1A.md
+- autopilot/REPORT_Q1B.md
+- autopilot/REPORT_Q1C.md
+- autopilot/REPORT_Q1D.md
+- autopilot/REPORT_Q20_ENS.md
+- autopilot/REPORT_Q20.md
+- autopilot/REPORT_Q21.md
+- autopilot/REPORT_Q22.md
+- autopilot/REPORT_Q23.md
+- autopilot/REPORT_Q24.md
+- autopilot/REPORT_Q25.md
+- autopilot/REPORT_Q26.md
+- autopilot/REPORT_Q27.md
+- autopilot/REPORT_Q28.md
+- autopilot/REPORT_Q29.md
+- autopilot/REPORT_Q2.md
+- autopilot/REPORT_Q30.md
+- autopilot/REPORT_Q31.md
+- autopilot/REPORT_Q32.md
+- autopilot/REPORT_Q33.md
+- autopilot/REPORT_Q34.md
+- autopilot/REPORT_Q35.md
+- autopilot/REPORT_Q36.md
+- autopilot/REPORT_Q37.md
+- autopilot/REPORT_Q38.md
+- autopilot/REPORT_Q3.md
+- autopilot/REPORT_Q40.md
+- autopilot/REPORT_Q4A.md
+- autopilot/REPORT_Q4B.md
+- autopilot/REPORT_Q4C.md
+- autopilot/REPORT_Q5ENS.md
+- autopilot/REPORT_Q5.md
+- autopilot/REPORT_Q6.md
+- autopilot/REPORT_Q7A.md
+- autopilot/REPORT_Q7B.md
+- autopilot/REPORT_Q7C.md
+- autopilot/REPORT_Q8A.md
+- autopilot/REPORT_Q8B.md
+- autopilot/REPORT_Q8C.md
+- autopilot/REPORT_Q8D.md
+- autopilot/REPORT_Q8E.md
+- autopilot/REPORT_Q9A.md
+- autopilot/REPORT_Q9B.md
+- autopilot/REPORT_Q9C.md
+- autopilot/REPORT_R10_b2356.md
+- autopilot/REPORT_R1_b2356.md
+- autopilot/REPORT_R2_b2356.md
+- autopilot/REPORT_R3_b2356.md
+- autopilot/REPORT_R4_b2356.md
+- autopilot/REPORT_R5.md
+- autopilot/REPORT_R6.md
+- autopilot/REPORT_R7.md
+- autopilot/REPORT_R8.md
+- autopilot/REPORT_R9_b2356.md
+- autopilot/REPORT_REGIME.md
+- autopilot/REPORT_RENKO_RANGE_VERIFY.md
+- autopilot/REPORT_RU1.md
+- autopilot/REPORT_RU2_CL.md
+- autopilot/REPORT_RU2_GC.md
+- autopilot/REPORT_RU2_HO.md
+- autopilot/REPORT_RU2_NG.md
+- autopilot/REPORT_RU2_RB.md
+- autopilot/REPORT_RU2_SI.md
+- autopilot/REPORT_RU3.md
+- autopilot/REPORT_RUNNER_GRID.md
+- autopilot/REPORT_RV1.md
+- autopilot/REPORT_RW10.md
+- autopilot/REPORT_RW11.md
+- autopilot/REPORT_RW12.md
+- autopilot/REPORT_RW12P.md
+- autopilot/REPORT_RW13.md
+- autopilot/REPORT_RW14.md
+- autopilot/REPORT_RW15.md
+- autopilot/REPORT_RW1.md
+- autopilot/REPORT_RW2.md
+- autopilot/REPORT_RW3.md
+- autopilot/REPORT_RW4.md
+- autopilot/REPORT_RW5.md
+- autopilot/REPORT_RW6.md
+- autopilot/REPORT_RW7.md
+- autopilot/REPORT_RW8.md
+- autopilot/REPORT_RW9.md
+- autopilot/REPORT_RX10.md
+- autopilot/REPORT_RX11.md
+- autopilot/REPORT_RX1.md
+- autopilot/REPORT_RX2.md
+- autopilot/REPORT_RX3.md
+- autopilot/REPORT_RX4.md
+- autopilot/REPORT_RX5.md
+- autopilot/REPORT_RX6.md
+- autopilot/REPORT_RX7.md
+- autopilot/REPORT_RX7P.md
+- autopilot/REPORT_RX8.md
+- autopilot/REPORT_RX9.md
+- autopilot/REPORT_RY10.md
+- autopilot/REPORT_RY1.md
+- autopilot/REPORT_RY2.md
+- autopilot/REPORT_RY3.md
+- autopilot/REPORT_RY4.md
+- autopilot/REPORT_RY5.md
+- autopilot/REPORT_RY6.md
+- autopilot/REPORT_RY7.md
+- autopilot/REPORT_RY8.md
+- autopilot/REPORT_RY9.md
+- autopilot/REPORT_RZ10.md
+- autopilot/REPORT_RZ1_6E.md
+- autopilot/REPORT_RZ1_CL.md
+- autopilot/REPORT_RZ1_ES.md
+- autopilot/REPORT_RZ1_GC.md
+- autopilot/REPORT_RZ1.md
+- autopilot/REPORT_RZ1_RTY.md
+- autopilot/REPORT_RZ1_YM.md
+- autopilot/REPORT_RZ1_ZN.md
+- autopilot/REPORT_RZ2_BTC.md
+- autopilot/REPORT_RZ2_ETH.md
+- autopilot/REPORT_RZ2.md
+- autopilot/REPORT_RZ3.md
+- autopilot/REPORT_RZ4.md
+- autopilot/REPORT_RZ5.md
+- autopilot/REPORT_RZ6.md
+- autopilot/REPORT_RZ7.md
+- autopilot/REPORT_RZ8.md
+- autopilot/REPORT_RZ9.md
+- autopilot/REPORT_S10.md
+- autopilot/REPORT_S1.md
+- autopilot/REPORT_S2.md
+- autopilot/REPORT_S3.md
+- autopilot/REPORT_S4.md
+- autopilot/REPORT_S5.md
+- autopilot/REPORT_S6.md
+- autopilot/REPORT_S7.md
+- autopilot/REPORT_S8.md
+- autopilot/REPORT_S9.md
+- autopilot/REPORT_SD.md
+- autopilot/REPORT_SE1.md
+- autopilot/REPORT_SE2.md
+- autopilot/REPORT_SI1.md
+- autopilot/REPORT_SK.md
+- autopilot/REPORT_SMOOTH.md
+- autopilot/REPORT_STRUCT48_HB.md
+- autopilot/REPORT_STRUCT48_HB_PREHOLD.md
+- autopilot/REPORT_STRUCT48.md
+- autopilot/REPORT_STRUCT48_T1.md
+- autopilot/REPORT_STRUCT48_T1_PREHOLD.md
+- autopilot/REPORT_STRUCT48_T2.md
+- autopilot/REPORT_STRUCT48_T2_SO2.md
+- autopilot/REPORT_STRUCT48_T2_SO.md
+- autopilot/REPORT_STRUCT48_T3_10b.md
+- autopilot/REPORT_STRUCT48_T3_1.md
+- autopilot/REPORT_STRUCT48_T3_2.md
+- autopilot/REPORT_STRUCT48_T3_2_PREHOLD.md
+- autopilot/REPORT_STRUCT48_T3_3.md
+- autopilot/REPORT_STRUCT48_T3_5.md
+- autopilot/REPORT_STRUCT48_T3_5_PREHOLD.md
+- autopilot/REPORT_STRUCT48_T3_6.md
+- autopilot/REPORT_STRUCT48_T3_7.md
+- autopilot/REPORT_STRUCT48_T3_8.md
+- autopilot/REPORT_STRUCT48_T3_9.md
+- autopilot/REPORT_STRUCT48_T3.md
+- autopilot/REPORT_STRUCT48_T4.md
+- autopilot/REPORT_STRUCT48_T4_PREHOLD.md
+- autopilot/REPORT_SW10.md
+- autopilot/REPORT_SW11.md
+- autopilot/REPORT_SW12.md
+- autopilot/REPORT_SW13.md
+- autopilot/REPORT_SW14.md
+- autopilot/REPORT_SW15.md
+- autopilot/REPORT_SW16.md
+- autopilot/REPORT_SW17.md
+- autopilot/REPORT_SW18.md
+- autopilot/REPORT_SW19.md
+- autopilot/REPORT_SW1.md
+- autopilot/REPORT_SW20.md
+- autopilot/REPORT_SW21.md
+- autopilot/REPORT_SW22.md
+- autopilot/REPORT_SW23.md
+- autopilot/REPORT_SW24.md
+- autopilot/REPORT_SW25.md
+- autopilot/REPORT_SW26.md
+- autopilot/REPORT_SW27.md
+- autopilot/REPORT_SW28.md
+- autopilot/REPORT_SW29.md
+- autopilot/REPORT_SW2.md
+- autopilot/REPORT_SW30.md
+- autopilot/REPORT_SW31.md
+- autopilot/REPORT_SW32.md
+- autopilot/REPORT_SW33.md
+- autopilot/REPORT_SW34.md
+- autopilot/REPORT_SW35.md
+- autopilot/REPORT_SW36.md
+- autopilot/REPORT_SW3.md
+- autopilot/REPORT_SW4.md
+- autopilot/REPORT_SW5.md
+- autopilot/REPORT_SW6.md
+- autopilot/REPORT_SW7.md
+- autopilot/REPORT_SW8.md
+- autopilot/REPORT_SW9.md
+- autopilot/REPORT_SX1.md
+- autopilot/REPORT_SX2.md
+- autopilot/REPORT_SX3.md
+- autopilot/REPORT_T1b.md
+- autopilot/REPORT_T1.md
+- autopilot/REPORT_T2.md
+- autopilot/REPORT_T3.md
+- autopilot/REPORT_T4.md
+- autopilot/REPORT_T5.md
+- autopilot/REPORT_T6.md
+- autopilot/REPORT_TH_AUDIT.md
+- autopilot/REPORT_TH_TICK.md
+- autopilot/REPORT_U1.md
+- autopilot/REPORT_U2.md
+- autopilot/REPORT_U3.md
+- autopilot/REPORT_V10.md
+- autopilot/REPORT_V1.md
+- autopilot/REPORT_V2.md
+- autopilot/REPORT_V3.md
+- autopilot/REPORT_V4.md
+- autopilot/REPORT_V5.md
+- autopilot/REPORT_V6.md
+- autopilot/REPORT_V7.md
+- autopilot/REPORT_V8.md
+- autopilot/REPORT_V9.md
+- autopilot/REPORT_W1.md
+- autopilot/REPORT_W2.md
+- autopilot/REPORT_W3.md
+- autopilot/REPORT_W4.md
+- autopilot/REPORT_W5.md
+- autopilot/REPORT_W6.md
+- autopilot/REPORT_W8.md
+- autopilot/REPORT_WEEKGB.md
+- autopilot/REPORT_WT2.md
+- autopilot/REPORT_WT.md
+- autopilot/REPORT_X1.md
+- autopilot/REPORT_X1_REP.md
+- autopilot/REPORT_X2.md
+- autopilot/REPORT_X3.md
+- autopilot/REPORT_X4.md
+- autopilot/REPORT_X5.md
+- autopilot/REPORT_X_BOOT.md
+- autopilot/REPORT_Y10.md
+- autopilot/REPORT_Y1.md
+- autopilot/REPORT_Y2.md
+- autopilot/REPORT_Y3.md
+- autopilot/REPORT_Y4.md
+- autopilot/REPORT_Y5.md
+- autopilot/REPORT_Y6.md
+- autopilot/REPORT_Y7.md
+- autopilot/REPORT_Y8.md
+- autopilot/REPORT_Y9.md
+- autopilot/REPORT_Z10.md
+- autopilot/REPORT_Z1.md
+- autopilot/REPORT_Z2.md
+- autopilot/REPORT_Z3.md
+- autopilot/REPORT_Z4.md
+- autopilot/REPORT_Z5.md
+- autopilot/REPORT_Z6.md
+- autopilot/REPORT_Z8.md
+- autopilot/REPORT_Z9.md
+
+## spend
+committed 7188.6184 of 8000
+1-min bar files: 376/364

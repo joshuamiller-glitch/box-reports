@@ -1,0 +1,76 @@
+# REPORT ASSEMBLY 20261016T1737Z  (daemon)
+
+Portfolio assembly over the book LIBRARY, pre-registered in PREREG_AUTOPILOT.md (section ASSEMBLY). Selection on CLEAN (2023-08..2025-07) weekly Sharpe only; H1 (2025-08-01..2026-02-06) and H2 (2026-02-07..2026-10-13) read once for the top 10 and the marked rows. UNTOUCHED never read.
+
+**Headline.** Best stage-1 clean plateau-passing weekly Sharpe in the library at T=16: **6.30**; expected best-of-search by chance (timing-destroyed library, 100 replicates): mean 6.86, p50 6.87, p95 7.35, real rank 0.01. Edge-destroyed null (N2, 30 reps): mean 6.63, p95 6.92.
+Best portfolio (stage 2, T=16): V5P2/c1174 x6, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x3, B1CO/ETH_2 x4, T3S1_G_G_bb1/BB_009_p0_atr15 x3; clean/H1/H2 weekly Sharpe 6.09/-0.82/-2.68 versus live pair 8/8 1.46/2.83/2.26.
+
+## 1. Pool and pre-filter (pre-registered rule)
+
+- Library rows 32070, loaded 32070, eligible (active, not WITHDRAWN, full clean coverage) 31918, after de-duplication (|corr|>=0.95) 28280, WITHDRAWN excluded 0.
+- Pool = ST, HM, WT-10 + all leads (70 on the deduped set) + top 150 others by clean standalone Sharpe = **222 books**. WT-10 book(s) in pool: WT10.
+- Stage-1 feasible subsets searched at T=16: 1,745,431 (k=2,3,4 books, all integer allocations summing to 16 with >=1 contract each, plateau: all +-1-contract transfers keep >=75%).
+
+## 2. Method and approximations (as pre-registered)
+
+- Unit: stored book series / 8 per contract-equivalent. Accounts: max 2; NQ_INTRADAY books net, so ST/HM share one account (live) and any other NQ_INTRADAY book sits in a different account; OTHER_INSTR books ride in account 1.
+- ST/HM block = EXACT corrected-engine series for that (wST,wHM) mix at R_acct = 9600*(wST+wHM)/16 (b11_nt8 bookscale grid, library/work/pairgrid.npz). All other members: stored series x contracts/8 through a DAY-LEVEL account approximation (day P&L capped at +8R_acct, week cumulative floored at -8R_acct with remaining days of that week zeroed, R_acct = 9600*contracts/16); the 2R/67% give-back and -2R day stop need intraday paths and are NOT applied; exact B11 re-simulation is only possible for ST/HM mixes.
+- Stage 1 selects on the linear (unlocked, standalone-series) clean weekly Sharpe; stage 2 re-scores the top 2000 with the exact block + approximation and re-checks the plateau with the same engine; rank on stage-2 clean Sharpe; distinct book sets and weekly corr < 0.98 to higher-ranked rows.
+- Stored series are at the stored cost model of each book (1 tick/side + commission unless the book note says otherwise); margin proxy = contracts x $1,500 (intraday) or $21,000 (multi-day) - unverified proxy.
+
+## 3. Top portfolios, T = 16 contracts-equivalent (primary)
+
+| # | members (contracts) | accounts | clean Sh | H1 Sh | H2 Sh | worst wk (all) | max DD (all) | CVaR5 wk | worst-decile wks: mean / corr w pair | margin proxy | flags |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **LIVE PAIR** 8/8 | ST x8, HM x8 | A1[ST8/HM8] | 1.46 | 2.83 | 2.26 | -82.5k | 280k | -79.2k | -78.2k / 1.00 | 24k |  |
+| **LIVE PAIR + WT-10 (separate acct)** | ST x6, HM x6, WT10 x4 | A1[ST6/HM6] ; A2[WT-10 x4] | 1.98 | 3.41 | 2.47 | -77.1k | 170k | -68.0k | -55.6k / -0.09 | 24k |  |
+| 1 | V5P2/c1174 x6, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x3, B1CO/ETH_2 x4, T3S1_G_G_bb1/BB_009_p0_atr15 x3 | A1[V5P2/c1174 x6]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x3+B1CO/ETH_2 x4 ; A2[T3S1_G_G_bb1/BB_009_p0_atr15 x3] | 6.09 | -0.82 | -2.68 | -76.8k | 855k | -66.8k | -0.8k / 0.34 | 24k |  s1=5.63 plateau>=0.92 |
+| 2 | T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_none x3, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4, B1CO/ETH_2 x6, T3S1_G_G_bb1/BB_009_p0_atr15 x3 | A1[T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_none x3]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4+B1CO/ETH_2 x6 ; A2[T3S1_G_G_bb1/BB_009_p0_atr15 x3] | 6.07 | -0.33 | -2.06 | -76.8k | 803k | -70.4k | -0.3k / 0.35 | 24k |  s1=5.78 plateau>=0.83 |
+| 3 | T3S1_G_G_bb3/BB_054_p1_ts120 x4, T3S1_G_G_v1/G_G5_obv_n120_tf1_e200_delta x4, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4, C10S1_CL/60_st_10_2_brk_1.5_all_0 x4 | A1[T3S1_G_G_bb3/BB_054_p1_ts120 x4]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4+C10S1_CL/60_st_10_2_brk_1.5_all_0 x4 ; A2[T3S1_G_G_v1/G_G5_obv_n120_tf1_e200_delta x4] | 6.05 | -0.72 | -0.20 | -76.8k | 492k | -68.2k | 4.0k / 0.28 | 24k |  s1=6.07 plateau>=0.90 |
+| 4 | T3S1_G_G_bb1/BB_009_p0_atr15 x3, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4, B1CO/ETH_2 x5, T3S1_BOOKS_H/H_HM_1min1 x4 | A1[T3S1_BOOKS_H/H_HM_1min1 x4]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4+B1CO/ETH_2 x5 ; A2[T3S1_G_G_bb1/BB_009_p0_atr15 x3] | 6.05 | 0.67 | -1.47 | -76.8k | 625k | -69.6k | -7.1k / 0.13 | 24k |  s1=5.83 plateau>=0.85 |
+| 5 | WThist/ATR10_m3_ema0_tf10_X1 x6, T3S1_G_G_bb6/BB_110_p2_ts30 x3, C10S1_ZN/240_ema_20_60_opp_0_all_0 x3, B1CO/BTC_1 x4 | A1[WThist/ATR10_m3_ema0_tf10_X1 x6]+C10S1_ZN/240_ema_20_60_opp_0_all_0 x3+B1CO/BTC_1 x4 ; A2[T3S1_G_G_bb6/BB_110_p2_ts30 x3] | 6.05 | 2.95 | -0.52 | -68.6k | 208k | -46.5k | 4.8k / 0.06 | 24k |  s1=5.86 plateau>=0.91 |
+| 6 | T3S1_G_G_bb3/BB_054_p1_ts120 x5, T3S1_BOOKS_B/B_WT_20_1.5_50 x4, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4, C10S1_ZN/240_ema_20_60_brk_1.5_all_0 x3 | A1[T3S1_G_G_bb3/BB_054_p1_ts120 x5]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4+C10S1_ZN/240_ema_20_60_brk_1.5_all_0 x3 ; A2[T3S1_BOOKS_B/B_WT_20_1.5_50 x4] | 6.03 | 0.32 | -1.14 | -76.8k | 517k | -70.1k | 2.6k / 0.25 | 24k |  s1=5.98 plateau>=0.89 |
+| 7 | T3S1_G_G_bb3/BB_054_p1_ts120 x4, T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_none x4, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4, C10S1_CL/60_st_10_2_brk_1.5_all_0 x4 | A1[T3S1_G_G_bb3/BB_054_p1_ts120 x4]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x4+C10S1_CL/60_st_10_2_brk_1.5_all_0 x4 ; A2[T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_none x4] | 6.03 | -0.88 | -0.27 | -76.8k | 518k | -72.9k | 5.8k / 0.19 | 24k |  s1=6.13 plateau>=0.92 |
+| 8 | WThist/ATR10_m3_ema0_tf10_X1 x5, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x3, C10S1_ZN/240_ema_20_60_brk_1.5_all_0 x3, B1CO/ETH_6 x5 | A1[WThist/ATR10_m3_ema0_tf10_X1 x5]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x3+C10S1_ZN/240_ema_20_60_brk_1.5_all_0 x3+B1CO/ETH_6 x5 | 6.00 | -0.51 | -2.25 | -76.8k | 860k | -72.8k | 5.2k / 0.21 | 24k |  s1=6.00 plateau>=0.94 |
+| 9 | WThist/ATR10_m3_ema0_tf10_X1 x5, T3S1_G_G_bb6/BB_110_p2_ts30 x4, B1CO/BTC_1 x4, C7P1_GC/5_rsi_14_30_opp_0_day_1 x3 | A1[WThist/ATR10_m3_ema0_tf10_X1 x5]+B1CO/BTC_1 x4+C7P1_GC/5_rsi_14_30_opp_0_day_1 x3 ; A2[T3S1_G_G_bb6/BB_110_p2_ts30 x4] | 5.99 | 1.04 | -0.77 | -76.8k | 401k | -63.0k | -4.5k / 0.09 | 24k |  s1=5.75 plateau>=0.88 |
+| 10 | WThist/ATR10_m3_ema0_tf10_X1 x6, T3S1_G_G_bb6/BB_110_p2_ts30 x4, C10S1_ZN/240_ema_20_60_opp_0_all_0 x3, C7P1_GC/5_rsi_14_30_opp_0_day_1 x3 | A1[WThist/ATR10_m3_ema0_tf10_X1 x6]+C10S1_ZN/240_ema_20_60_opp_0_all_0 x3+C7P1_GC/5_rsi_14_30_opp_0_day_1 x3 ; A2[T3S1_G_G_bb6/BB_110_p2_ts30 x4] | 5.98 | 0.24 | -0.96 | -76.8k | 366k | -61.7k | -2.7k / 0.18 | 24k |  s1=5.82 plateau>=0.94 |
+
+## 4. Top portfolios, T = 12 contracts-equivalent
+
+| # | members (contracts) | accounts | clean Sh | H1 Sh | H2 Sh | worst wk (all) | max DD (all) | CVaR5 wk | worst-decile wks: mean / corr w pair | margin proxy | flags |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **LIVE PAIR** 6/6 | ST x6, HM x6 | A1[ST6/HM6] | 1.46 | 2.83 | 2.26 | -61.9k | 210k | -59.4k | -58.7k / 1.00 | 18k |  |
+| **LIVE PAIR + WT-10 (separate acct)** | ST x5, HM x5, WT10 x2 | A1[ST5/HM5] ; A2[WT-10 x2] | 1.79 | 3.23 | 2.42 | -57.9k | 136k | -53.3k | -47.4k / -0.03 | 18k |  |
+| 1 | WThist/ATR10_m3_ema0_tf10_X1 x4, T3S1_G_G_bb6/BB_110_p2_ts30 x3, C10S1_ZN/240_ema_20_60_brk_3.0_all_0 x2, B1CO/BTC_1 x3 | A1[WThist/ATR10_m3_ema0_tf10_X1 x4]+C10S1_ZN/240_ema_20_60_brk_3.0_all_0 x2+B1CO/BTC_1 x3 ; A2[T3S1_G_G_bb6/BB_110_p2_ts30 x3] | 6.20 | 2.50 | -0.44 | -50.8k | 159k | -35.4k | 5.4k / 0.14 | 18k |  s1=5.78 plateau>=0.89 |
+| 2 | WThist/ATR10_m3_ema0_tf10_X1 x4, T3S1_G_G_bb6/BB_110_p2_ts30 x3, C10S1_CL/60_st_10_2_brk_1.5_all_0 x2, B1CO/BTC_1 x3 | A1[WThist/ATR10_m3_ema0_tf10_X1 x4]+C10S1_CL/60_st_10_2_brk_1.5_all_0 x2+B1CO/BTC_1 x3 ; A2[T3S1_G_G_bb6/BB_110_p2_ts30 x3] | 6.07 | 2.12 | 0.00 | -57.6k | 399k | -42.5k | 2.7k / 0.07 | 18k |  s1=5.61 plateau>=0.84 |
+| 3 | T3S1_G_G_bb1/BB_009_p0_atr15 x2, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x2, B1CO/ETH_2 x3, V5P2/c1174 x5 | A1[V5P2/c1174 x5]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x2+B1CO/ETH_2 x3 ; A2[T3S1_G_G_bb1/BB_009_p0_atr15 x2] | 6.07 | -0.81 | -3.04 | -57.6k | 659k | -48.9k | -0.8k / 0.34 | 18k |  s1=5.65 plateau>=0.89 |
+| 4 | T3S1_G_G_bb3/BB_054_p1_ts120 x3, T3S1_G_G_v1/G_G5_obv_n120_tf1_e200_delta x3, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x3, C10S1_CL/60_st_10_2_brk_1.5_all_0 x3 | A1[T3S1_G_G_bb3/BB_054_p1_ts120 x3]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x3+C10S1_CL/60_st_10_2_brk_1.5_all_0 x3 ; A2[T3S1_G_G_v1/G_G5_obv_n120_tf1_e200_delta x3] | 6.05 | -0.72 | -0.20 | -57.6k | 369k | -51.1k | 3.0k / 0.28 | 18k |  s1=6.07 plateau>=0.89 |
+| 5 | T3S1_G_G_bb3/BB_054_p1_ts120 x3, C10S1_CL/60_st_10_2_brk_1.5_all_0 x3, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x3, T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_none x3 | A1[T3S1_G_G_bb3/BB_054_p1_ts120 x3]+C10S1_CL/60_st_10_2_brk_1.5_all_0 x3+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x3 ; A2[T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_none x3] | 6.03 | -0.88 | -0.27 | -57.6k | 389k | -54.7k | 4.3k / 0.19 | 18k |  s1=6.13 plateau>=0.90 |
+
+## 5. Top portfolios, T = 20 contracts-equivalent
+
+| # | members (contracts) | accounts | clean Sh | H1 Sh | H2 Sh | worst wk (all) | max DD (all) | CVaR5 wk | worst-decile wks: mean / corr w pair | margin proxy | flags |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **LIVE PAIR** 10/10 | ST x10, HM x10 | A1[ST10/HM10] | 1.46 | 2.83 | 2.26 | -103.2k | 350k | -99.0k | -97.8k / 1.00 | 30k |  |
+| **LIVE PAIR + WT-10 (separate acct)** | ST x8, HM x8, WT10 x4 | A1[ST8/HM8] ; A2[WT-10 x4] | 1.87 | 3.30 | 2.45 | -96.5k | 215k | -87.2k | -75.2k / -0.06 | 30k |  |
+| 1 | WThist/ATR10_m3_ema0_tf10_X1 x7, T3S1_G_G_bb6/BB_110_p2_ts30 x4, C10S1_ZN/240_ema_20_60_opp_0_all_0 x3, B1CO/BTC_1 x6 | A1[WThist/ATR10_m3_ema0_tf10_X1 x7]+C10S1_ZN/240_ema_20_60_opp_0_all_0 x3+B1CO/BTC_1 x6 ; A2[T3S1_G_G_bb6/BB_110_p2_ts30 x4] | 6.18 | 3.20 | -0.60 | -83.3k | 273k | -56.7k | 5.5k / 0.04 | 30k |  s1=5.88 plateau>=0.94 |
+| 2 | T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_none x4, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x5, B1CO/ETH_2 x7, T3S1_G_G_bb1/BB_009_p0_atr15 x4 | A1[T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_none x4]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x5+B1CO/ETH_2 x7 ; A2[T3S1_G_G_bb1/BB_009_p0_atr15 x4] | 6.13 | -0.37 | -1.99 | -96.0k | 976k | -87.8k | 0.1k / 0.35 | 30k |  s1=5.80 plateau>=0.84 |
+| 3 | T3S1_BOOKS_H/H_HM_1min1 x4, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x5, B1CO/ETH_2 x7, T3S1_G_G_bb1/BB_009_p0_atr15 x4 | A1[T3S1_BOOKS_H/H_HM_1min1 x4]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x5+B1CO/ETH_2 x7 ; A2[T3S1_G_G_bb1/BB_009_p0_atr15 x4] | 6.11 | 0.47 | -1.59 | -96.0k | 816k | -86.4k | -7.0k / 0.18 | 30k |  s1=5.85 plateau>=0.84 |
+| 4 | T3S1_G_G_bb3/BB_054_p1_ts120 x6, T3S1_BOOKS_B/B_WT_20_1.5_50 x5, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x5, C10S1_ZN/240_ema_20_60_brk_1.5_all_0 x4 | A1[T3S1_G_G_bb3/BB_054_p1_ts120 x6]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x5+C10S1_ZN/240_ema_20_60_brk_1.5_all_0 x4 ; A2[T3S1_BOOKS_B/B_WT_20_1.5_50 x5] | 6.06 | 0.28 | -1.17 | -96.0k | 651k | -87.7k | 2.9k / 0.26 | 30k |  s1=6.00 plateau>=0.89 |
+| 5 | T3S1_G_G_bb3/BB_054_p1_ts120 x5, T3S1_G_G_v1/G_G5_obv_n120_tf1_e200_delta x5, C10S1_GC/60_macd_12_26_brk_3.0_all_0 x5, C10S1_CL/60_st_10_2_brk_1.5_all_0 x5 | A1[T3S1_G_G_bb3/BB_054_p1_ts120 x5]+C10S1_GC/60_macd_12_26_brk_3.0_all_0 x5+C10S1_CL/60_st_10_2_brk_1.5_all_0 x5 ; A2[T3S1_G_G_v1/G_G5_obv_n120_tf1_e200_delta x5] | 6.05 | -0.72 | -0.20 | -96.0k | 615k | -85.2k | 5.0k / 0.28 | 30k |  s1=6.07 plateau>=0.91 |
+
+## 6. Chance expectation (own null)
+
+- N1 timing-destroyed library (100 reps, independent circular shift per book, same pre-filter and plateau): best-of-search stage-1 clean Sharpe mean 6.86, sd 0.28, p95 7.35, max 7.73; real 6.30 (rank 0.01).
+- N2 edge-destroyed (weekly random sign flip of de-meaned books, 30 reps): mean 6.63, p95 6.92.
+- Reading: N1 keeps each book's own edge and destroys only the alignment between books, so it measures how much of the best portfolio Sharpe is combination/diversification luck given the pool; N2 measures pure selection noise.
+
+## 7. Stage-1 context
+
+- T=16: best stage-1 6.30, top-5 stage-1 values 6.30, 6.30, 6.30, 6.25, 6.25
+- T=12: best stage-1 6.25, top-5 stage-1 values 6.25, 6.25, 6.25, 6.24, 6.24
+- T=20: best stage-1 6.32, top-5 stage-1 values 6.32, 6.32, 6.32, 6.27, 6.27
+
+Runtime 4.2 min. Pool books (first 60 by clean Sharpe): C10S1_GC/60_macd_12_26_brk_3.0_all_0 (2.70), T3S1_BOOKS_B/B_HM_20_55_150 (2.65), T3S1_BOOKS_H/H_HM_1min1 (2.64), T3S1_BOOKS_B/B_HM_20_55_200 (2.63), T3S1_G_G_v1/G_G5_obv_n120_tf1_e200_delta (2.58), C10S1_6J/60_ema_9_21_time_8_all_1 (2.56), T3S1_G_G_v1/G_G6_fvg_n20_tf5_e200_t5 (2.55), T3S1_BOOKS_B/B_WT_30_1.5_50 (2.53), T3S1_BOOKS_B/B_WT_20_1.5_50 (2.52), T3S1_G_G_v1/G_G4_roc_n60_tf1_e200_adx20 (2.50), T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_delta (2.49), S8ALL/S8_mon_h1_RTY (2.47), T3S1_BOOKS_B/B_ST_120_2.0_150 (2.47), T3S1_G_G_bb3/BB_054_p1_ts120 (2.45), T3S1_G_G_v1/G_G5_obv_n120_tf1_eNone_none (2.42), T3S1_G_G_v1/G_G6_fvg_n20_tf5_eNone_none (2.41), T3S1_G_G_bb1/BB_169_p2_ts30 (2.41), B1CO/BTC_1 (2.40), T3S1_G_G_v1/G_G4_stochrsi_n14_lo30_hi80_tf5_e200_adx20 (2.38), S8ALL/S8_mon_h1_YM (2.37), T3S1_BOOKS_B/B_HM_20_55_300 (2.36), T3S1_BOOKS_B/B_WT_15_1.75_50 (2.35), S8ALL/S8_mon_h1_NQ (2.33), T3S1_BOOKS_B/B_ST_150_2.0_150 (2.32), GAPMAP_B2356/G2__G2_GC_10_1_h5_BTC (2.29), T3S1_G_G_bb4/BB_073_p0_br60 (2.28), T3S1_G_G_bb4/BB_073_p0_ts120 (2.26), T3S1_G_G_v1/G_G2_orb_n15_tf1_e200_t5 (2.26), D1F4/ES_k0.75_slip0.0_ST (2.25), T3S1_G_G_v1/G_G1_macross_kindVIDYA_f5_s20_tf5_eNone_delta (2.24), T3S3/S3_12_NQ_ORB_{'N':15,'stopmode':0,'tm':1.0,'reentry':0} (2.24), T3S1_G_G_v1/G_G6_fvg_n20_tf5_e200_none (2.23), WThist/ATR10_m3_ema0_tf10_X1 (2.23), V5P2/c1174 (2.18), B1CO/ETH_1 (2.18), T3S1_BOOKS_B/B_ST_180_2.25_150 (2.18), B1leg_BTC/30_ST_4_2.0_20_m_3.0 (2.18), WThist/ATR14_m3_ema0_tf10_X1 (2.15), T3S1_BOOKS_B/B_WT_20_1.75_50 (2.15), T3S1_BOOKS_B/B_WT_15_1.5_50 (2.14), T3S1_G_G_v1/G_G1_macross_kindKAMA_f10_s50_tf5_e200_t5 (2.14), B1leg_BTC/15_ST_8_2.0_20_m_3.0 (2.13), T3S1_G_G_v1/G_G4_stochrsi_n14_lo30_hi70_tf5_e200_adx20 (2.12), T3S1_BOOKS_B/B_WT_10_2.0_100 (2.12), T3S1_G_G_v1/G_G1_macross_kindKAMA_f5_s20_tf1_e200_t15 (2.12), V5P2/c0627 (2.11), C10S1_ZN/240_ema_20_60_opp_0_all_0 (2.10), T3S1_G_G_v1/G_G6_fvg_n50_tf5_eNone_t5 (2.09), T3S1_BOOKS_B/B_ST_150_2.0_200 (2.08), B1CO/ETH_3 (2.08), S8ALL/S8_mon_h1_ES (2.08), V5P2/c0393 (2.08), T3S1_BOOKS_B/B_WT_45_1.5_50 (2.08), T3S1_G_G_v1/G_G3_ichi_t9_k26_sb52_modecross_tf1_e200_t15 (2.07), B1CO/BTC_5 (2.07), T3S1_G_G_v1/G_G3_aroon_n25_tf1_e200_none (2.07), T3S1_G_G_bb1/BB_009_p0_atr15 (2.06), T3S1_G_G_bb6/BB_110_p2_ts30 (2.06), T3S1_G_G_v1/G_G1_pxma_kindSMA_n20_tf1_e200_adx20 (2.06), C10S1_ZN/240_ema_20_60_brk_3.0_all_0 (2.06)
+
+DONE ASSEMBLY 20261016T1737Z

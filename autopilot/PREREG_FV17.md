@@ -1,0 +1,13 @@
+# PREREG FV17 - causality audit of the volume-clock result (I2) [filed late: disclosure]
+
+DISCLOSURE: this file was written after the audit scripts (ap_fv17_audit.py, ap_fv17_causal.py, ap_fv17_gates.py) had been written and run, not before. The design below is the coordinator's FV17 brief taken point by point; every variant that was run is listed, none was dropped, and no parameter was tuned on the audit outputs (k, m come from FV16; no new cells were added to any selection).
+
+## 1. Causality audit
+a. Bars rebuilt from the raw NQ trade stream (data/databento/NQ/trades, front contract per UTC day, raw prices), not the 1-min cache. A volume bar closes at the print where cumulative volume since its first print >= k x 3 x (trailing mean of the previous 27,600 minute-rows of volume, current minute excluded); bars also close at a UTC-day or label-day change. Completion timestamp = timestamp of the last print of the bar. Orders are placed at completion + 1 ns (+ latency variants); the fill scan reads only prints with ts >= placement. Impulse rule IMP3 (3 same-direction bars, net >= m ATR(14 bars), limit at 50%, stop beyond bar-1 extreme +0.05 ATR, floors/caps as before, 60-min expiry, 2R, flat 16:55, roll exclusion days dropped). Truncation proofs: for 360 sampled bars (months 2023-05, 2024-11, 2026-07) the bars/boundaries and the thresholds recomputed from the stream truncated at the completion print are identical to the full-stream values.
+b. Delay variants: +1 s, +60 s, and one full volume bar (order placed at the completion of the next bar, same levels). Time-bar (3-min clock) control rebuilt the same way, same delays.
+c. Code check: threshold uses minute volumes strictly before the bar's first print; ATR/impulse use completed bars only; the entry bar's volume is not used (the entry is a resting limit placed after completion).
+d. Independent rebuild = (a) (raw trade files only). Concordance with the cache construction reported.
+e. Entry fraction variants f in {0.25, 0.5, 0.75, 1.0 (limit at the bar close = immediate), random U(0.1, 0.9)} for VC k1 m1.125 and the time-bar control.
+## 2. Full gates (only because the audit passed): ICT verify() on VC k1 m1.125, VC k0.5 m1.125, VC k1 m1.5: H1/H2 once, shares 10-50%, bootstrap, shift null, 6 exact +-25% neighbours (k, m, RR), 2x slippage, strict fills, odd/even months, worst-decile corr <= +0.30, H0 sleeve leg (2023-02..07), replication on ES, RTY, GC with the same parameters; family null = FV16 enlarged 149-cell null.
+## 3. NT8 feasibility (research and design; vendor behaviour marked UNVERIFIED).
+## 4. If the audit failed: void the VC library books with a banner and record the lesson (not triggered).

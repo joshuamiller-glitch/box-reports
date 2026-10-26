@@ -1,0 +1,5 @@
+# PRED decisions (user, 2026-10-24) — verbatim
+1. FOUND label: use the CONDITIONAL label (F-R among sessions that actually have an entry after the decision time, plus the per-signal gate G). Unconditional / activity-driven cells are ACTIVITY-ONLY and never count. Re-state the leaderboard against the conditional baseline (holdout ~0.49-0.54 pooled) and re-set FOUND = conditional AUC >= 0.68 pooled or >= 0.66 Asia on the holdout, with the economic conditions unchanged.
+2. Feeds: run block C now on the on-disk daily futures-options and SPX/NDX OI (daily gamma, GEX flip distance, 0DTE share) - no purchase. Report its conditional AUC before I decide on intraday options. Constituents (D) and calendar/news (H): not yet; keep them queued with on-disk proxies where any exist.
+3. Scheduling: block B (MBO book/tape) must not be starved again - give it a guaranteed 8 slots. Confirm G and F capped at 10 each. Confirm the per-signal gate placebo was run on the small case.
+Keep every slot busy. Next MORNING block: cores busy/total, per-block slots, queue depth, conditional leaderboard top 5.

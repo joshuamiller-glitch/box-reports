@@ -1,0 +1,7 @@
+# REPORT GC FADE R5 - newest weeks after the 2026-10-16 extension (frozen definitions)
+
+**Status: NOT EVALUABLE (0 complete post-freeze ISO weeks; 2 post-freeze trading days).** Frozen objects: O1 = 108-cell equal-risk ensemble, O2 = 5-min Supertrend(14, 2.0) fade, 240-minute hold, no stop, day session; O3 = O2 plus the 0.5 x ADR20 stop (PREREG_AUTOPILOT.md 'GC FADE v2'). The series is rebuilt read-only from data/autopilot/ohlcv1m into outputs/autopilot/l/g93v2/r5/ (the extension's own files are untouched); script ap_g93_r5.py; a watcher re-runs it every 6 hours until >= 8 complete weeks exist, then applies the pre-registered sign test (binomial p on positive weeks) and reports Sharpe; pair-uplift needs the pair rows beyond 2026-10-13.
+
+Post-freeze days (2026-10-15, 2026-10-16), one GC contract, O2 (the 0.5 ADR stop did not bind): +$606 and +$1,086 (2 trades). At the 20%-share size of 3.9 contracts that is about +$2.4k and +$4.2k. For the ensemble in clean-sigma units: +0.078 and +0.339. Both days positive, two observations: no inference. The coordinator's figure of +$12.3k for W42 at the 20% sleeve (ensemble) includes 2026-10-12..14 (which were inside the frozen window: O2 per-contract daily $336, -$2,574, +$7,166 on 10-12, 10-13, 10-14).
+
+Worst-trade sizing for reference (from the v2 battery): single worst trade per one GC contract -$19.6k; at 3.9 contracts (20% share) -$76k without a stop, -$36k with the 0.5 ADR stop.

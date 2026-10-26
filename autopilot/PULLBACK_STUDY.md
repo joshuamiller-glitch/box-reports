@@ -1,0 +1,10 @@
+PULLBACK STUDY — comprehensive, mechanical, pre-registered. Instruments NQ, ES, RTY; signal bars {1,3,5,15,60}-min; HTF trend filter from the next timeframe up. Grid: LEVEL x TRIGGER x TREND x STOP x TARGET x SESSION. Nulls: timing-destroyed and random-level. ~4,000 cells; PREREG_PULLBACK.md first; REPORT_PULLBACK.md.
+
+Levels (pullback-to): EMA {9,20,21,34,50,100,200}; SMA {20,50,100,200}; HMA {20,55}; VWAP (session), anchored VWAP (week, month, swing); Bollinger mid (20,2); Keltner mid/inner band; Ichimoku kijun; PSAR; Fibonacci {38.2,50,61.8}% of the last swing; prior-day high/low; overnight high/low; classic and Camarilla pivots; round numbers {50,100} pts; supertrend line; prior FVG/order block (from the ICT study)
+Triggers at the level: touch-and-close-back; rejection candle (pin bar with wick >= {50,66}% of range); engulfing; RSI(2/7/14) reset below {30,50} in an uptrend then turn; stochastic reset; 2-bar pullback count {2,3,5} bars; first touch only vs any touch; touch within {0,0.25,0.5} ATR band
+Trend filter: HTF EMA {50,200} slope sign; HTF Supertrend; ADX(14) > {15,20,25}; price above/below the same level on HTF; the live pair's own ST/HM state as the trend (pullback entries INSIDE the pair's trend — the pair-side version)
+Stops: below the pullback low / above the high; {1,1.5,2} ATR; the level minus {0.25,0.5} ATR
+Targets: {1,1.5,2,3}R; prior swing high/low; HTF level; VWAP band; time stop {30,60,120} min; trail on the pullback EMA
+Sessions: all / RTH / Globex / kill zones from the ICT study
+Also: (a) the pair's own entries re-timed as pullbacks — instead of market at the flip, enter on the first retrace to EMA {9,20} or VWAP after the flip, with a cancel if no retrace within N bars (E5 limits were NO; a level-conditioned retrace is different); (b) pullback-depth as a size tilt for the pair; (c) ES/RTY confirmation of the pullback hold.
+Report: standalone by level family and by trigger (which levels actually get respected, measured as bounce rate vs the random-level null — publish that table even where nothing survives), the best cells with plateau and replication, and the pair-side results.

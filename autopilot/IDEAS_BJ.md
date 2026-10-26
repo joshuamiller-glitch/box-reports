@@ -1,0 +1,26 @@
+# IDEAS_BJ - batch BJ (worker BK, 2026-10-17), registered BEFORE any BJ run
+Source: ideas 11-25 of IDEAS_BI.md that were not run were checked again (all covered by existing reports: flip-conditioned holds C2-G1/J0A, VIX slope N3/PX34, VRP K9, pre-FOMC G3/N2, pre-holiday X1, first30-last30 C3-H1, semivariance FV16, lag-1 autocorr SW23, volume spike SW6, ORB, NR7, Connors) and are NOT repeated. Ten NEW mechanisms (keyword search over LEDGER, GAPMAP*, BACKLOG*, IDEAS_*, PREREG, every REPORT_*: 0 hits unless noted):
+1. BJ1 FOMC-cycle weeks: the equity premium is earned in even weeks (0,2,4,6) of the FOMC cycle (Cieslak-Morse-Vissing-Jorgensen 2019). Sign: LONG in even weeks, flat/short in odd.
+2. BJ2 Power-hour momentum: the return into 15:00/15:30 predicts the last 25-55 minutes (institutional close-demand / MOC imbalance, Heston-Korajczyk-Sadka 2010 style, here conditioned on the prior 30-90 min rather than the first 30 min, which C3-H1 tested). Sign: WITH.
+3. BJ3 RTH-open magnet: price displaced from the day's RTH open by >= x ADR at 11:00/13:00 reverts toward the open (opening price as anchor, George-Hwang anchoring at the daily scale). Sign: AGAINST.
+4. BJ4 Open location vs the prior-day range: an RTH open beyond the prior day's high/low (outside the prior range) continues (acceptance/rejection of value, Dalton; distinct from the open-vs-prior-close gap sleeve I2). Sign: WITH.
+5. BJ5 Prior-day close minus RTH VWAP: closing above the day's VWAP means late-day net buying by VWAP-benchmarked institutions that continues next day (Berkowitz-Logue-Noser VWAP benchmark pressure). Sign: WITH.
+6. BJ6 VIX-settlement Wednesday: SOQ/VIX settlement-related option flows move SPX/NQ around the Wednesday settlement of the monthly VIX future (Griffin-Shams 2018). No sign prior; small-sample by construction (12/yr).
+7. BJ7 Lunar cycle: returns are higher around new moons than full moons (Yuan-Zheng-Zhu 2006, mood). Sign: LONG new-moon window, weaker full-moon window.
+8. BJ8 Month-of-year: Nov-Apr returns exceed May-Oct (Bouman-Jacobsen 2002 'sell in May'). Sign: LONG Nov-Apr. (C2-G4 excluded the indices.)
+9. BJ9 Opening drive: the first 5-minute bar direction (09:30-09:34) continues over the next 30-120 min (order-imbalance persistence at the open). Sign: WITH. (Distinct from FOMC first-5-minute tests.)
+10. BJ10 Globex volume share (informed after-hours trading, Barclay-Hendershott 2003): when overnight volume is high relative to its 20-day mean the overnight price move is informed and continues in RTH. Sign: WITH on high-volume nights.
+## Machinery and protocol (frozen)
+SW sleeve pipeline clone (ap_bj_*), instruments ES NQ RTY YM, clean-only selection (>= 100 clean trades; MINTR 60 for BJ5/BJ8 daily rows with < 100, MINTR 20 for BJ6 flagged small-sample so it cannot be FOUND; weekly Sharpe > 0 in both clean halves), H1/H2 once, 200-replicate false-selection test and 200-replicate own null on the selected cell, additive framing at 10/20/30/50% (+0.10 on clean/H1/H2, worst week), bootstrap, plateau, 2x slippage, worst-decile corr, ERA flag with cost decomposition, library save, replication leg (ap_bi_rep: H0, alternating months, other instruments). NEW (from REPORT_BI8B): the random-entry null is DRIFT- AND TIME-OF-DAY-MATCHED: the random entries are drawn from the same clock minute(s) as the rule (valid mask = the rule's signal clock) and take the same long/short mix as the real events, so a long-only rule must beat random long-only entries at the same clock and hold (the old alternating-side null let long-beta pass). Fill: next 1-min open, 1 tick/side + $4.36/contract, entry/exit clocks as stated.
+## Grids
+- BJ1: parity {even weeks 0,2,4,6; odd weeks 1,3,5,7 after the last FOMC statement date, dates: 2023-26 verified, 2013-22 from memory (unverified, flagged)} x dir {long, short} x hold {RTH open to 16:55; close-to-close (15:55 entry, next day 15:55 exit)}; 8 cells.
+- BJ2: entry {15:00, 15:30} x prior-return window L {30,60,90} x dir {with, against}; time exit 15:55; 12 cells. Neighbours L x0.75/x1.25.
+- BJ3: clock {11:00, 13:00} x |displacement from the RTH open| >= x {0.3, 0.6} ADR20 x hold {60,120} x dir {against, with}; 16 cells. Neighbours x, hold x0.75/x1.25.
+- BJ4: buffer b {0, 0.1} ADR20 beyond prior-day high/low (price at 09:29) x dir {with, against} x hold {120, flat}; 8 cells.
+- BJ5: prior-day (close - RTH VWAP)/ADR20 >= th {0, 0.05} x dir {with, against} x hold {120, flat}; 8 cells. Neighbours th, hold.
+- BJ6: day offset to the VIX settlement Wednesday {-1,0,+1} x dir {long, short} x hold {RTH, close-to-close}; 12 cells.
+- BJ7: window {new moon, full moon} x half-width w {2, 3.5} days x dir {long, short} x hold {RTH, close-to-close}; 16 cells. Phase from the synodic month 29.530588853 d from the 2000-01-06 18:14 UTC new moon.
+- BJ8: season {Nov-Apr, May-Oct} x dir {long, short} x hold {RTH, close-to-close}; 8 cells.
+- BJ9: first-bar threshold x {0, 0.03} ADR20 x dir {with, against} x hold {30, 60, 120}; entry 09:35; 12 cells.
+- BJ10: Globex (18:00-09:29) volume / its prior-20-day mean >= q {1.2, 1.5} x dir {with the overnight move, against} x hold {120, flat}; entry 09:30; 8 cells.
+Priors <= 3% each; expected false FOUND ~0.1-0.3.

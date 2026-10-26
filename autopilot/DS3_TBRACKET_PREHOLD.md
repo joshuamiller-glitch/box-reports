@@ -1,0 +1,5 @@
+# DS3 T-BRACKET-PM section A (D3BA) pre-holdout text
+Stage 1 (21 cells, prereg sha256 bb08c97608fe426afb384ea79883a8fbfe66e4d34caa558ddf2a02e5e763d5f3). Written before the holdout (2025-07+) is read for the DIRECT basis.
+Disclosure: the MAPPED screen function computes the HOLD window together with PRE/SPAN2 (one pass); one test cell (KB_t30_s60, mapped) was printed in full, including a HOLD paired effect of -1.8 pt/trade, during code testing, before this text. The MAPPED screen is not the basis of any verdict; the DIRECT-replay basis is. The holdout is therefore looked at once, for the direct basis, by the final scorer; the second span 2023-04..2024-01 is reported alongside.
+Books reusing T-ENTRY series (KB, SM, EM bases) have already had a holdout look in the T-ENTRY track (disclosed).
+Decision rule fixed in advance: V2 trade-modifier verdict (paired mean > 0, CI excludes 0, full-sequence WF maxDD not worse, holdout sign agrees, placebo rank >= 0.95 PASS / >= 0.90 CANDIDATE, neighbours agree in sign, 2x-cost sign). Placebo = same bracket on random-time entries on the mapped basis (bias-matched null).
