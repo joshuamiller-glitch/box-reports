@@ -55,12 +55,29 @@ Continuous front NQ, back-adjusted; the 5-min swings and the Supertrend run on a
 ## 5. Position limits
 10 lots, one position. With DS2 (10+10+7) the worst case is 37; other DS3 books add (lead's computation, see DS3_PORTFOLIO).
 
-## 6. Backtest expectation (MAPPED basis, series l2vast/ds3/out/SERIES, 10 lots, exact locks; from autopilot/DS3_TPULLBACK.md)
-| trades/wk | win | avg win | avg loss | PRE $/wk | WF $/wk | HOLD $/wk | HOLD Sharpe | 2023-04..2024-01 $/wk | long / short WF $/wk | corr ST | placebo rank | paired vs ST pts/trade [CI] (MDE) |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 26.97 | 0.52 | $11,000 | -$10,795 | 6,067 | 12,067 | 18,414 | 2.38 | 2,530 | 9,893 / 2,174 | 0.45 | 0.93 | +13.4 [10.5, 16.3] (4.0, n 805) |
+## 6. Backtest expectation (MAPPED basis, 10 lots, exact per-book locks; series l2vast/ds3/out/SERIES/DS3_TPULLBACK__PB_ST10_SWZ_T3.parquet, script l2vast/ds3/code/pb_swz_series.py reproduces the leaderboard row: WF $12,067/wk, hold $18,414/wk)
+**DIRECT basis: PENDING (tp_direct replay running). Rerun pb_swz_series.py / ds3_addbook on the direct daily series when it lands and replace this table; nothing below is a direct-L2 number.**
 
-Trades/wk after the lock engine's entry blocks is lower than the about 31/wk of the raw list (6,027 trades over about 192 weeks, i.e. about 31/wk). Verdict CANDIDATE (mapped): failed placebo >= 0.95. The paired-vs-ST figure is the pullback entry's own advantage (see DS3_TPULLBACK.md); dWK vs ST is -$2,445/wk [-12,420, 7,176] at equal lots.
+Weekly P&L, $ (ST10 DS2 true-P9 at the same 10 lots for scale):
+| window | weeks | mean $/wk | weekly SD | Sharpe (ann.) | maxDD | worst week | trades/wk | ST10 mean / SD / maxDD / worst |
+|---|---|---|---|---|---|---|---|---|
+| PRE 2024-02..2025-06 | 75 | 6,067 | 57,434 | 0.76 | 431,079 | -120,212 | 23.9 | - |
+| WF 2024-02..2026-10 | 143 | 12,067 | 56,933 | 1.53 | 431,079 | -120,212 | 27.0 | 14,350 / 57,331 / 263,432 / -91,189 |
+| HOLD 2025-07+ (one logged look per track) | 69 | 18,414 | 55,682 | 2.38 | 290,496 | -90,623 | 29.9 | 16,463 / 61,612 / 263,432 / -91,189 |
+| L8W (last 8 WF weeks) | 8 | 47,472 | 64,550 | 5.30 | 86,619 | -54,801 | 31.4 | 22,235 / 96,747 / 217,475 / -86,384 |
+
+Other windows: 2023-04..2024-01 span $2,530/wk. Reading: at equal lots (10) the weekly SD equals ST10's, but the maxDD (431k) and worst week (-120k) are about 1.6x and 1.3x ST10's: the losses are more clustered. L8W is a short, hot window (8 weeks), not an expectation. The ds3_addbook standalone (s48scorer calendar, 142 WF weeks) reads WF $11,535/wk, SD 56,778, Sharpe 1.47, maxDD 431,079: same series, one-week window difference.
+
+Add-to-DS3 marginal Sharpe with KB (TE7_kelt3m_n14_m1.0) and SM (TE6_st10m_n7_m3.0) as the base set (ds3_addbook, monthly WF risk-parity weights, per-book locks inside each series; mapped; no EM; JSON l2vast/ds3/out/xpb/PB_ST10_SWZ_T3_addbook_KBSM.json):
+| window | marginal Sharpe (add-one) | base KB+SM Sharpe @27 contracts | with PB Sharpe @27 | maxDD base -> with @27 |
+|---|---|---|---|---|
+| WF-PRE | -0.54 | 3.25 | 2.71 | 318,780 -> 334,163 |
+| WF | -0.04 | 2.97 | 2.93 | 318,780 -> 334,163 (+15,383) |
+| HOLD | +0.60 | 2.60 | 3.20 | 316,040 -> 281,092 (-34,948) |
+
+Correlation (WF weekly, unit books): KB 0.32, SM -0.03, ST 0.45, HM 0.39, WT 0.32, DS2 0.52. Leave-one-out WF Sharpe: without KB 0.63, without SM 0.75, without PB -0.04 is the add-one value (the base pair alone). Reading: the marginal Sharpe is NEGATIVE in WF-PRE, about ZERO over the full WF and POSITIVE only in the holdout; the sign flips between windows, so the book does not demonstrate a diversification gain over KB+SM. The holdout number is a single window, and this add-book call is a logged holdout re-read (l2vast/ds3/ledger/addbook_looks.jsonl, 2026-10-26T21:52:09Z). Peak lots use the new book's nominal 10 lots (upper bound; no interval replay for it yet).
+
+Trades/wk after the lock engine's entry blocks is lower than the about 31/wk of the raw list (6,027 trades over about 192 weeks). Verdict CANDIDATE (mapped): failed placebo >= 0.95. The paired-vs-ST figure (+13.4 pts/trade [10.5, 16.3], MDE 4.0, n 805) is the pullback entry's own advantage (see DS3_TPULLBACK.md); dWK vs ST is -$2,445/wk [-12,420, 7,176] at equal lots.
 
 ## 7. What could kill it
 - Selection: one of 447 pullback cells scored (best-of-N; 49 of 447 have a paired CI above 0 against about 11 expected by chance); the placebo rank 0.93 is below the 0.95 bar.
