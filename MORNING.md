@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 22:29Z 10-26 (t+9.5 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 22:59Z 10-26 (t+10.0 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 542/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 24/24, T-J 3/12, T-K 19/19, T-P 662/?. Verdicts {'DEAD': 6473, 'CANDIDATE': 43, 'PENDING': 213, 'PASS': 8}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(P), PRO_Z120_t2.0(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 32/32 slots now; CPU 5-min avg over last 24 samples 49% min 38% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 11.0, 'TL': 0.0, 'TR': 4.0, 'TP': 2.0}.
-Updated 2026-10-26T22:29:06Z. Box: CPU 78.3%, slots busy 32/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 27/32 slots now; CPU 5-min avg over last 24 samples 57% min 38% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 9.9, 'TL': 0.0, 'TR': 2.0, 'TP': 1.0, 'TC': 2.0}.
+Updated 2026-10-26T22:59:22Z. Box: CPU 66.2%, slots busy 27/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -23,7 +23,7 @@ Updated 2026-10-26T22:29:06Z. Box: CPU 78.3%, slots busy 32/32, queue 0. Cores p
 | B8 | D3Q | 0 | 0 / ? | none | done (report) |
 | B9 | D3M | 0 | 0 / ? | none | queued |
 | BA | ? | 0 | 0 / 0 | none | prereg |
-| C | D3CT | 0 | 28 / 28 | none | done (report) |
+| C | D3CT | 2.0 | 28 / 28 | none | done (report) |
 | C1 | D3XT | 0 | 0 / ? | none | queued |
 | C1C2 | D3XT | 0 | 0 / ? | none | queued |
 | C3C4 | D3XT | 0 | 0 / ? | none | queued |
@@ -52,7 +52,7 @@ Updated 2026-10-26T22:29:06Z. Box: CPU 78.3%, slots busy 32/32, queue 0. Cores p
 | J | D3L | 0 | 0 / 12 | none | done (report) |
 | K | D3K | 0 | 19 / 38 | none | done (report) |
 | M | ? | 0 | 0 / 0 | none | prereg |
-| P | ? | 2.0 | 0 / 157 | none | prereg |
+| P | ? | 1.0 | 0 / 157 | none | prereg |
 | P4 | ? | 0 | 0 / 150 | none | prereg |
 | PB2 | D3PB* | 0 | 0 / 28 | none | prereg |
 | PB2B | D3PB* | 0 | 0 / 24 | none | prereg |
@@ -94,24 +94,24 @@ Updated 2026-10-26T22:29:06Z. Box: CPU 78.3%, slots busy 32/32, queue 0. Cores p
 | TPULLBACK3 | ? | 0 | 141 / ? | PB3A_R10_P2(C), PB3B_R3_P2(C) | done (report) |
 | TPYRAMID | ? | 0 | 215 / ? | none | done (report) |
 | TSO | ? | 0 | 0 / 10 | none | prereg |
-| unattributed | - | 11.0 | - | - | - |
+| unattributed | - | 9.9 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
 <!--PULLBACK-BEGIN-->
-## PULLBACK (PL) update 2026-10-26T22:11Z
+## PULLBACK (PL) update 2026-10-26T22:36Z
 Pullback: 4 PASS, 23 CANDIDATE. Best: PRO_KAL_k0.0, +$12972/wk standalone, paired vs ST +-2.67 pts/trade [-5.1,-0.4], 32.0 trades/wk, DS3 marginal Sharpe +-, deliverable DELIVERABLE.
 Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPULLBACK.json': 157, 'DS3_TPULLBACK3.json': 141}; prereg totals: {}
 Best cell: PRO_KAL_k0.0. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-10-26T22:14Z
+## TREND (TL) update 2026-10-26T22:44Z
 Trend: 0 PASS, 0 CANDIDATE. Best entry: none yet, paired vs ST n/a pts/trade , n/a trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe n/a.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
-| TR1 | a323e3e202224ce04 | R1,R6 | 0 | TR1 (T-TREND PRO R1+R6) 2026-10-26T22:14:29Z: cells scored (trade tables written) 61 / 134 (cont report cell separate); worker processes 1 (want 4, min 1); prereg TR1A-F sha256 in autopilot/DECISIONS.md |
-| TR2 | abd489a56ea9de378 | R2,R3 | 0 | Memory available: 5 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 0 | 2026-10-26T22:01:43Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 15 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 22, 25, 26] |
+| TR1 | a323e3e202224ce04 | R1,R6 | 0 | TR1 (T-TREND PRO R1+R6) 2026-10-26T22:44:30Z: cells scored (trade tables written) 109 / 134 (cont report cell separate); worker processes 0 (want 4, min 1); prereg TR1A-F sha256 in autopilot/DECISIONS.md |
+| TR2 | abd489a56ea9de378 | R2,R3 | 0 | Memory available: 17 GB |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 0 | 2026-10-26T22:31:43Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 15 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 32/32: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, |
 | TR4 | a0a28efac2a53186e | R5,R7 | 0 | TR4: R5 pre-stage scoring started 17:35Z, slots want 3 |
 Total trend cells scored: 0. Best-of-N context: ledger total 43031 cells across all tracks; trend cells with CI lower bound >0: 0 vs 0.0 expected by chance. Best cell: none. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -123,12 +123,12 @@ Brackets: 0 PASS, 0 CANDIDATE. Best shape: none. Near-target: not scored, diagno
 Cells scored per owner: {'G': 5088, 'D': 215} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: none. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 20:34Z 10-26 (t+55.8 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 22:34Z 10-26 (t+57.8 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
-Forward register: {'ON TRACK': 88, 'BEHIND': 1, 'PROMOTE': 1, 'RETIRE': 1} (changed since last edition).
+Forward register: {'ON TRACK': 88, 'BEHIND': 2, 'PROMOTE': 2, 'RETIRE': 2} (changed since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 14/32 slots (STRUCT48 13, PRED 1), CPU 5-min avg over last 2 h 58% min 43% (floor 90%), queue 0, by track {'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0}.
+Cores: busy 32/32 slots (STRUCT48 28, PRED 4), CPU 5-min avg over last 2 h 50% min 38% (floor 90%), queue 0, by track {'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->

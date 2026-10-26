@@ -1,5 +1,5 @@
 # TREND LEADERBOARD (TL, R9)
-Updated 2026-10-26T22:14Z. Rows: none yet
+Updated 2026-10-26T22:44Z. Rows: none yet
 
 Trend: 0 PASS, 0 CANDIDATE. Best entry: none yet, paired vs ST n/a pts/trade , n/a trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe n/a.
 
