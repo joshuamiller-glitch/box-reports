@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 21:43Z 10-26 (t+8.7 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 21:58Z 10-26 (t+9.0 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 542/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 24/24, T-J 3/12, T-K 19/19, T-P 662/?. Verdicts {'DEAD': 6473, 'CANDIDATE': 43, 'PENDING': 213, 'PASS': 8}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(P), PRO_Z120_t2.0(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 45% min 38% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 10.9, 'TL': 0.0, 'TR': 0.0, 'TP': 1.0}.
-Updated 2026-10-26T21:43:47Z. Box: CPU 44.8%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 43% min 38% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 13.0, 'TL': 0.0, 'TR': 0.0, 'TP': 1.0}.
+Updated 2026-10-26T21:58:50Z. Box: CPU 44.7%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -94,7 +94,7 @@ Updated 2026-10-26T21:43:47Z. Box: CPU 44.8%, slots busy 13/32, queue 0. Cores p
 | TPULLBACK3 | ? | 0 | 141 / ? | PB3A_R10_P2(C), PB3B_R3_P2(C) | done (report) |
 | TPYRAMID | ? | 0 | 215 / ? | none | done (report) |
 | TSO | ? | 0 | 0 / 10 | none | prereg |
-| unattributed | - | 10.9 | - | - | - |
+| unattributed | - | 13.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->

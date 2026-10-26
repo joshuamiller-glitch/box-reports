@@ -753,7 +753,7 @@ Ledger: PRED corrected 27,744 + STRUCT48 15,428 = cumulative 43,172 trials.
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-26T21:43:47Z. DS3 cells: 6737; verdicts {'DEAD': 6473, 'CANDIDATE': 43, 'PENDING': 213, 'PASS': 8}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-26T21:58:50Z. DS3 cells: 6737; verdicts {'DEAD': 6473, 'CANDIDATE': 43, 'PENDING': 213, 'PASS': 8}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
