@@ -1,5 +1,5 @@
 # PULLBACK LEADERBOARD (PL, P10)
-Updated 2026-10-26T22:36Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
+Updated 2026-10-26T23:26Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
 
 Pullback: 4 PASS, 23 CANDIDATE. Best: PRO_KAL_k0.0, +$12972/wk standalone, paired vs ST +-2.67 pts/trade [-5.1,-0.4], 32.0 trades/wk, DS3 marginal Sharpe +-, deliverable DELIVERABLE.
 
