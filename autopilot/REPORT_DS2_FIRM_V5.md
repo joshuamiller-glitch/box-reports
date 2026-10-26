@@ -308,9 +308,9 @@ No cell meets the strict objective (WF mean >= benchmark AND maxDD <= 0.7 x benc
 <!--F1-ADDENDUM-BEGIN-->
 ## F1 addendum - live vs replay (rewritten on each data/live push; latest run below)
 
-### F1 addendum (data/live first push; generated 2026-10-25 22:11Z; live window 0001-01-01..2026-10-23, 49 DualStrat2 trades)
+### F1 addendum (data/live first push; generated 2026-10-26 22:11Z; live window 0001-01-01..2026-10-26, 82 DualStrat2 trades)
 
-**Live stop exits: N = 18** (StopJoin filled 8, StopJoinFallback 9, StopJoinRejected 1; plus 11 targets and 2 ComboLock exits). **Join rate** (filled / filled+fallback, rejected excluded) = 8/17 = **0.47, exact 95% CI [0.23, 0.72]**; counting the position-limit reject as a failure 8/18 = 0.44 [0.22, 0.69]. Replay assumption 0.78 lies OUTSIDE the live interval. 1 join attempt(s) were rejected by the broker (counted separately; the retained trace is the connect-time order history with state Rejected and no reason text - the position-limit cause is taken from the user). Earlier count quoted as '3/8' is not what the CSV shows.
+**Live stop exits: N = 21** (StopJoin filled 8, StopJoinFallback 12, StopJoinRejected 1; plus 19 targets and 2 ComboLock exits). **Join rate** (filled / filled+fallback, rejected excluded) = 8/20 = **0.40, exact 95% CI [0.19, 0.64]**; counting the position-limit reject as a failure 8/21 = 0.38 [0.18, 0.62]. Replay assumption 0.78 lies OUTSIDE the live interval. 1 join attempt(s) were rejected by the broker (counted separately; the retained trace is the connect-time order history with state Rejected and no reason text - the position-limit cause is taken from the user). Earlier count quoted as '3/8' is not what the CSV shows.
 
 Join-order lifecycle (NT8 trace, orders since 10-21, N = 12 join orders): 6 filled completely (median working time 0.9 s), 1 partly filled then fallback, 5 not filled at all before the fallback (median working time 3.2 s = the timeout); lots joined 86 of 155 exit lots (lot-weighted join share 0.55); 5 market fallback orders (69 lots).
 
@@ -319,50 +319,50 @@ Join-order lifecycle (NT8 trace, orders since 10-21, N = 12 join orders): 6 fill
 | exit type | live N | live mean (95% CI) | replay mean |
 |---|---|---|---|
 | StopJoin filled | 8 | +0.52 (-0.32, +1.36) | -0.52 (XJ arm; market arm -1.74) |
-| StopJoinFallback (market) | 9 | -4.25 (-6.69, -1.80) | -1.74 (XJ arm; market arm -1.74) |
-| all stop exits | 18 | -2.01 (-3.65, -0.37) | -0.52 (XJ arm; market arm -1.74) |
+| StopJoinFallback (market) | 12 | -4.46 (-6.29, -2.63) | -1.74 (XJ arm; market arm -1.74) |
+| all stop exits | 21 | -2.45 (-3.95, -0.95) | -0.52 (XJ arm; market arm -1.74) |
 
-Live stop exits are -1.49 pt worse than the replay's XJ expectation per stop exit (live fallback market exits -4.25 vs replay market -1.74); with N = 18 the interval is wide - do not over-read. **Entry slip: PENDING** ({'note': 'tape mids from the 10-19..10-23 L2 extension (join_recon2, 2026-10-25); pts per lot, + = adverse; exchange clock = log stamp - 27 ms', 'ST_HM_14lot_vs_slice_mid': {'n': 29, 'mean': 0.458, 'ci': [0.244, 0.672]}, 'ST_HM_14lot_replay_vs_slice_mid': {'n': 29, 'mean': 0.529, 'ci': [0.466, 0.592]}, 'ST_HM_14lot_vs_mid_T0': {'n': 29, 'mean': -0.411, 'ci': [-2.452, 1.63]}, 'traced21_live': {'n': 21, 'mean': 0.591, 'ci': [0.422, 0.76]}, 'traced21_replay': {'n': 21, 'mean': 0.56, 'ci': [0.49, 0.629]}, 'ST_HM_8lot_vs_slice_mid': {'n': 11, 'mean': 0.075, 'ci': [-0.196, 0.346]}, 'ST_HM_8lot_replay': {'n': 11, 'mean': 0.321, 'ci': [0.286, 0.356]}, 'slice_exact_match': 0.8257489864632723, 'slice_px_diff': -0.013123582766439913}).
+Live stop exits are -1.93 pt worse than the replay's XJ expectation per stop exit (live fallback market exits -4.46 vs replay market -1.74); with N = 21 the interval is wide - do not over-read. **Entry slip: PENDING** ({'note': 'tape mids from the 10-19..10-23 L2 extension (join_recon2, 2026-10-25); pts per lot, + = adverse; exchange clock = log stamp - 27 ms', 'ST_HM_14lot_vs_slice_mid': {'n': 29, 'mean': 0.458, 'ci': [0.244, 0.672]}, 'ST_HM_14lot_replay_vs_slice_mid': {'n': 29, 'mean': 0.529, 'ci': [0.466, 0.592]}, 'ST_HM_14lot_vs_mid_T0': {'n': 29, 'mean': -0.411, 'ci': [-2.452, 1.63]}, 'traced21_live': {'n': 21, 'mean': 0.591, 'ci': [0.422, 0.76]}, 'traced21_replay': {'n': 21, 'mean': 0.56, 'ci': [0.49, 0.629]}, 'ST_HM_8lot_vs_slice_mid': {'n': 11, 'mean': 0.075, 'ci': [-0.196, 0.346]}, 'ST_HM_8lot_replay': {'n': 11, 'mean': 0.321, 'ci': [0.286, 0.356]}, 'slice_exact_match': 0.8257489864632723, 'slice_px_diff': -0.013123582766439913}).
 
-**Re-score at the measured join rate** (replay-policy points on the live 60-pt trades; XJ gain x live/replay where the per-fold policy chose XJ; last column additionally charges the live exit shortfall of -1.49 pt on every stop exit): WF mean / SD / maxDD; L8W mean / maxDD
+**Re-score at the measured join rate** (replay-policy points on the live 60-pt trades; XJ gain x live/replay where the per-fold policy chose XJ; last column additionally charges the live exit shortfall of -1.93 pt on every stop exit): WF mean / SD / maxDD; L8W mean / maxDD
 
-| cell | replay (78%) | live point 0.47 | live lower 0.23 | live upper 0.72 | point + live exit shortfall |
+| cell | replay (78%) | live point 0.40 | live lower 0.19 | live upper 0.64 | point + live exit shortfall |
 |---|---|---|---|---|---|
-| live locks (benchmark) | 27.2k / 106.7k / 371.4k; 41.2k / 174.8k | 28.0k / 106.5k / 372.0k; 35.4k / 174.8k | 24.7k / 107.3k / 373.0k; 20.7k / 182.2k | 27.2k / 106.7k / 370.6k; 41.0k / 174.8k | 22.1k / 102.3k / 382.2k; 1.4k / 228.0k |
-| remove cap + week floor | 35.9k / 113.9k / 347.7k; 47.0k / 185.1k | 35.9k / 114.2k / 344.0k; 41.2k / 185.1k | 32.6k / 114.9k / 345.4k; 26.5k / 192.5k | 35.9k / 113.8k / 347.0k; 46.8k / 185.1k | 27.2k / 111.2k / 400.7k; 3.0k / 253.2k |
-| BEST5 | 24.7k / 94.6k / 331.7k; 57.4k / 122.8k | 23.4k / 93.9k / 340.5k; 49.2k / 123.9k | 21.3k / 95.2k / 338.1k; 40.6k / 148.7k | 24.6k / 94.5k / 331.1k; 57.2k / 123.0k | 17.5k / 95.3k / 373.3k; 36.7k / 152.3k |
-| USER forward set (cap off, wk12, London/NY 10) | 32.4k / 107.6k / 332.1k; 62.4k / 127.4k | 30.7k / 106.9k / 340.6k; 43.1k / 127.4k | 28.4k / 107.6k / 338.0k; 35.5k / 148.7k | 32.2k / 107.6k / 331.5k; 62.3k / 127.4k | 23.8k / 105.7k / 346.4k; 30.5k / 152.3k |
+| live locks (benchmark) | 27.2k / 106.7k / 371.4k; 41.2k / 174.8k | 26.8k / 106.9k / 371.0k; 31.0k / 181.7k | 24.5k / 106.8k / 372.5k; 20.6k / 182.4k | 27.6k / 107.7k / 380.8k; 40.5k / 174.8k | 19.8k / 101.1k / 385.7k; 0.8k / 226.9k |
+| remove cap + week floor | 35.9k / 113.9k / 347.7k; 47.0k / 185.1k | 34.8k / 114.9k / 343.1k; 36.8k / 192.0k | 31.9k / 114.0k / 346.2k; 26.4k / 192.7k | 36.9k / 114.6k / 346.0k; 46.3k / 185.1k | 23.8k / 111.4k / 388.8k; 1.0k / 257.9k |
+| BEST5 | 24.7k / 94.6k / 331.7k; 57.4k / 122.8k | 22.8k / 94.3k / 339.8k; 46.0k / 148.2k | 21.6k / 94.9k / 338.0k; 40.4k / 148.8k | 24.0k / 94.1k / 330.3k; 54.1k / 123.3k | 15.5k / 97.0k / 382.2k; 34.9k / 153.8k |
+| USER forward set (cap off, wk12, London/NY 10) | 32.4k / 107.6k / 332.1k; 62.4k / 127.4k | 29.8k / 107.3k / 339.8k; 39.9k / 148.2k | 27.9k / 106.5k / 337.6k; 35.5k / 148.8k | 31.7k / 107.4k / 330.5k; 61.9k / 127.4k | 21.1k / 107.1k / 363.2k; 28.6k / 155.2k |
 
-Ranking check at each scenario (does the candidate still beat the live locks on WF mean AND maxDD?): replay (78%): remove cap + week floor yes, BEST5 no, USER forward set yes; live point 0.47: remove cap + week floor yes, BEST5 no, USER forward set yes; live lower 0.23: remove cap + week floor yes, BEST5 no, USER forward set yes; live upper 0.72: remove cap + week floor yes, BEST5 no, USER forward set yes.
+Ranking check at each scenario (does the candidate still beat the live locks on WF mean AND maxDD?): replay (78%): remove cap + week floor yes, BEST5 no, USER forward set yes; live point 0.40: remove cap + week floor yes, BEST5 no, USER forward set yes; live lower 0.19: remove cap + week floor yes, BEST5 no, USER forward set yes; live upper 0.64: remove cap + week floor yes, BEST5 no, USER forward set yes.
 
 **D1 top-20 (+ exact best cells) re-scored at the measured rate** (all options): benchmark = the live pair (live locks, 14/14/14, live signals) at the same join-rate scale.
 
 | option | lock set | lots | WF mean / maxDD at 78% | at live point | at live lower bound | beats live-at-same-scale (WF mean & maxDD) at 78% / point / lower |
 |---|---|---|---|---|---|---|
-| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N0 | 14/8/10 | 28.3k / 327.9k | 27.6k / 323.8k | 26.0k / 399.6k | yes / no / no |
-| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N2 | 14/8/10 | 28.3k / 327.9k | 27.6k / 323.8k | 26.0k / 399.6k | yes / no / no |
-| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N0 | 14/8/10 | 28.3k / 327.9k | 27.6k / 323.8k | 26.0k / 399.6k | yes / no / no |
-| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N2 | 14/8/10 | 28.3k / 327.9k | 27.6k / 323.8k | 26.0k / 399.6k | yes / no / no |
-| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N3 | 14/8/10 | 28.3k / 327.9k | 27.6k / 323.8k | 26.0k / 399.6k | yes / no / no |
-| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N3 | 14/8/10 | 28.3k / 327.9k | 27.6k / 323.8k | 26.0k / 399.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N3 | 14/8/10 | 28.9k / 324.7k | 28.1k / 330.0k | 27.4k / 378.1k | yes / yes / no |
-| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N0 | 14/8/10 | 28.9k / 324.7k | 28.1k / 330.0k | 27.5k / 378.1k | yes / yes / no |
-| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N2 | 14/8/10 | 28.9k / 324.7k | 28.1k / 330.0k | 27.5k / 378.1k | yes / yes / no |
-| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N3 | 14/8/10 | 29.0k / 324.7k | 28.2k / 330.0k | 27.4k / 378.1k | yes / yes / no |
-| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N3 | 14/8/10 | 29.0k / 324.7k | 28.2k / 330.0k | 27.4k / 378.1k | yes / yes / no |
-| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N0 | 14/8/10 | 29.0k / 324.7k | 28.2k / 330.0k | 27.4k / 378.1k | yes / yes / no |
-| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N0 | 14/8/10 | 29.0k / 324.7k | 28.2k / 330.0k | 27.4k / 378.1k | yes / yes / no |
-| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N2 | 14/8/10 | 29.0k / 324.7k | 28.2k / 330.0k | 27.4k / 378.1k | yes / yes / no |
-| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N2 | 14/8/10 | 29.0k / 324.7k | 28.2k / 330.0k | 27.4k / 378.1k | yes / yes / no |
-| ATR_R10000_f8 | pblive|caphard|wkoff|gb0|N2 | 14/8/10 | 28.8k / 330.8k | 27.9k / 330.0k | 27.1k / 378.1k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N2 | 14/8/10 | 28.8k / 330.8k | 27.9k / 330.0k | 27.1k / 378.1k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wkoff|gb0|N0 | 14/8/10 | 28.8k / 330.8k | 27.9k / 330.0k | 27.1k / 378.1k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N0 | 14/8/10 | 28.8k / 330.8k | 27.9k / 330.0k | 27.1k / 378.1k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N3 | 14/8/10 | 28.8k / 330.8k | 27.8k / 330.0k | 27.1k / 378.1k | yes / no / no |
-| live60_P9 | pblive|capoff|wk12|gb1|N2 | 14/10/10 | 24.7k / 331.7k | 23.4k / 340.5k | 21.3k / 338.1k | no / no / no |
-| live60_P9 | pblive|capoff|wkoff|gb0|N0 | 14/14/14 | 35.9k / 347.7k | 35.9k / 344.0k | 32.6k / 345.4k | yes / yes / yes |
-| live60_P9 | pblive|capoff|wk12|gb1|N0 | 14/10/10 | 24.3k / 331.7k | 23.1k / 340.5k | 21.0k / 338.1k | no / no / no |
+| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N0 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N2 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N0 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N2 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N3 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N3 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
+| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N3 | 14/8/10 | 28.9k / 324.7k | 27.4k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N0 | 14/8/10 | 28.9k / 324.7k | 27.5k / 375.0k | 26.9k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N2 | 14/8/10 | 28.9k / 324.7k | 27.5k / 375.0k | 26.9k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N3 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N3 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N0 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N0 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N2 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N2 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wkoff|gb0|N2 | 14/8/10 | 28.8k / 330.8k | 27.2k / 375.0k | 27.0k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N2 | 14/8/10 | 28.8k / 330.8k | 27.2k / 375.0k | 27.0k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wkoff|gb0|N0 | 14/8/10 | 28.8k / 330.8k | 27.2k / 375.0k | 27.0k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N0 | 14/8/10 | 28.8k / 330.8k | 27.2k / 375.0k | 27.0k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N3 | 14/8/10 | 28.8k / 330.8k | 27.1k / 375.0k | 26.9k / 380.6k | yes / no / no |
+| live60_P9 | pblive|capoff|wk12|gb1|N2 | 14/10/10 | 24.7k / 331.7k | 22.8k / 339.8k | 21.6k / 338.0k | no / no / no |
+| live60_P9 | pblive|capoff|wkoff|gb0|N0 | 14/14/14 | 35.9k / 347.7k | 34.8k / 343.1k | 31.9k / 346.2k | yes / yes / yes |
+| live60_P9 | pblive|capoff|wk12|gb1|N0 | 14/10/10 | 24.3k / 331.7k | 22.4k / 339.8k | 21.2k / 338.0k | no / no / no |
 
-The verdict (beats live at the same scale) is the same at all three scales for 3 of 23 re-scored cells. Because N = 18 the live join rate is not stable enough to re-rank cells; the re-base is a sensitivity, not an estimate.
+The verdict (beats live at the same scale) is the same at all three scales for 3 of 23 re-scored cells. Because N = 21 the live join rate is not stable enough to re-rank cells; the re-base is a sensitivity, not an estimate.
 
 <!--F1-ADDENDUM-END-->

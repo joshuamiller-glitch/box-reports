@@ -12,7 +12,7 @@
 | week | role | status | A net | A trades | A worst day | B net | B trades | B worst day | B - A | live net | live trades | fill |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 2026-W43 | info | DONE | -134,500 | 49 | -68,420 | -86,278 | 53 | -67,742 | 48,223 | -189,750 | 49 | natural |
-| 2026-W44 | official | PENDING | - | - | - | - | - | - | - | - | - | nt8sim tape ends label day 20261023 (needs 20261030) |
+| 2026-W44 | official | PENDING | - | - | - | - | - | - | - | -63,815 | 33 | nt8sim tape ends label day 20261023 (needs 20261030) |
 | 2026-W45 | official | PENDING | - | - | - | - | - | - | - | - | - | nt8sim tape ends label day 20261023 (needs 20261106) |
 | 2026-W46 | official | PENDING | - | - | - | - | - | - | - | - | - | nt8sim tape ends label day 20261023 (needs 20261113) |
 | 2026-W47 | official | PENDING | - | - | - | - | - | - | - | - | - | nt8sim tape ends label day 20261023 (needs 20261120) |
