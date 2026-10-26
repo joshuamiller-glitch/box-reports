@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 20:58Z 10-26 (t+8.0 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 21:28Z 10-26 (t+8.5 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 542/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 24/24, T-J 3/12, T-K 19/19, T-P 662/?. Verdicts {'DEAD': 6473, 'CANDIDATE': 43, 'PENDING': 213, 'PASS': 8}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(P), PRO_Z120_t2.0(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 52% min 38% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 10.0, 'TL': 0.0, 'TR': 0.0, 'TP': 0.7}.
-Updated 2026-10-26T20:58:31Z. Box: CPU 38.5%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 47% min 38% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 10.0, 'TL': 0.0, 'TR': 0.0, 'TP': 1.0}.
+Updated 2026-10-26T21:28:42Z. Box: CPU 40.5%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -52,7 +52,7 @@ Updated 2026-10-26T20:58:31Z. Box: CPU 38.5%, slots busy 13/32, queue 0. Cores p
 | J | D3L | 0 | 0 / 12 | none | done (report) |
 | K | D3K | 0 | 19 / 38 | none | done (report) |
 | M | ? | 0 | 0 / 0 | none | prereg |
-| P | ? | 0.7 | 0 / 157 | none | prereg |
+| P | ? | 1.0 | 0 / 157 | none | prereg |
 | P4 | ? | 0 | 0 / 150 | none | prereg |
 | PB2 | D3PB* | 0 | 0 / 28 | none | prereg |
 | PB2B | D3PB* | 0 | 0 / 24 | none | prereg |
@@ -99,19 +99,19 @@ Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
 <!--PULLBACK-BEGIN-->
-## PULLBACK (PL) update 2026-10-26T20:56Z
+## PULLBACK (PL) update 2026-10-26T21:21Z
 Pullback: 4 PASS, 23 CANDIDATE. Best: PRO_KAL_k0.0, +$12972/wk standalone, paired vs ST +-2.67 pts/trade [-5.1,-0.4], 32.0 trades/wk, DS3 marginal Sharpe +-, deliverable DELIVERABLE.
 Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPULLBACK.json': 157, 'DS3_TPULLBACK3.json': 141}; prereg totals: {}
 Best cell: PRO_KAL_k0.0. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-10-26T20:44Z
+## TREND (TL) update 2026-10-26T21:14Z
 Trend: 0 PASS, 0 CANDIDATE. Best entry: none yet, paired vs ST n/a pts/trade , n/a trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe n/a.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
-| TR1 | a323e3e202224ce04 | R1,R6 | 0 | TR1 (T-TREND PRO R1+R6) 2026-10-26T20:43:35Z: cells scored (trade tables written) 19 / 134 (cont report cell separate); worker processes 0 (want 4, min 1); prereg TR1A-F sha256 in autopilot/DECISIONS.md |
-| TR2 | abd489a56ea9de378 | R2,R3 | 0 | Memory available: 71 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 0 | 2026-10-26T20:31:43Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 15 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 14/32: [0, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 22, 25, 26] |
+| TR1 | a323e3e202224ce04 | R1,R6 | 0 | TR1 (T-TREND PRO R1+R6) 2026-10-26T21:13:36Z: cells scored (trade tables written) 19 / 134 (cont report cell separate); worker processes 0 (want 4, min 1); prereg TR1A-F sha256 in autopilot/DECISIONS.md |
+| TR2 | abd489a56ea9de378 | R2,R3 | 0 | Memory available: 78 GB |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 0 | 2026-10-26T21:01:43Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 15 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 22, 25, 26] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 0 | TR4: R5 pre-stage scoring started 17:35Z, slots want 3 |
 Total trend cells scored: 0. Best-of-N context: ledger total 43031 cells across all tracks; trend cells with CI lower bound >0: 0 vs 0.0 expected by chance. Best cell: none. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
