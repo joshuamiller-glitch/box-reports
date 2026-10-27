@@ -1,4 +1,4 @@
-# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-26 19:14 ET)
+# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-26 19:34 ET)
 
 Weeks start Sunday 18:00 ET. W43 (10-19..10-23) informational, never counted; official = W44+. Live file: `<repo>/data/live/StratTrades_DualStrat2_<acct>.csv` (80 grouped trades, last exit 2026-10-26 11:44 ET). Verdicts: PROMOTE >= 6 weeks, z >= -1, sign right; RETIRE >= 8 weeks, z < -2; BEHIND z < -1; z = (realised - expected*n)/(expected SD*sqrt(n)).
 
@@ -123,6 +123,11 @@ Tape ends 2026-10-23 20:59:00 UTC (label day 20261023); verdict field: none: 4 f
 | ds3_TR1D_HP_10m_slope | CANDIDATE | signal (T-TREND PRO R1/R6 trend entry into the DS2 bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 | ds3_TR1E_retest_15m_c3 | CANDIDATE | signal (T-TREND PRO R1/R6 trend entry into the DS2 bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 | ds3_TR1F_vote_TSM_k3 | CANDIDATE | signal (T-TREND PRO R1/R6 trend entry into the DS2 bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_TR3_DON15_S | CANDIDATE | signal (entry type; stop/limit order at the break level) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_TR3_KB20_S | CANDIDATE | signal (entry type; stop/limit order at the break level) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_TR3_KB_RT15 | CANDIDATE | signal (entry type; stop/limit order at the break level) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_TR3_KB_RT5 | CANDIDATE | signal (entry type; stop/limit order at the break level) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_TR3_KB_S | CANDIDATE | signal (entry type; stop/limit order at the break level) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 
 Per-cell frozen expectation (WF / L8W / IS) and parameters: `autopilot/forward/series/PAPERALL_CELLS.json`.
 

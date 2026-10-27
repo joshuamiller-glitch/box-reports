@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 23:29Z 10-26 (t+10.5 h of 48; final 10-28 13:00Z)
-Cells scored/total per track: T-A 142/30, T-B 542/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 24/24, T-J 3/12, T-K 19/19, T-P 662/?, T-R 192/?. Verdicts {'DEAD': 6656, 'CANDIDATE': 49, 'PENDING': 214, 'PASS': 10}.
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 23:59Z 10-26 (t+11.0 h of 48; final 10-28 13:00Z)
+Cells scored/total per track: T-A 142/30, T-B 542/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 24/24, T-J 3/12, T-K 19/19, T-P 662/?, T-R 266/?. Verdicts {'DEAD': 6704, 'CANDIDATE': 63, 'PENDING': 214, 'PASS': 22}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(P), PRO_Z120_t2.0(C); T-R: TR1A_ens_s0.5_k4(C), TR1A_ens_s1.0_k3(P), TR1B_reg1m_n60_t2_r0.5(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 28/32 slots now; CPU 5-min avg over last 24 samples 61% min 42% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 6.0, 'TL': 0.0, 'TR': 2.0, 'TP': 1.0, 'TC': 1.0}.
-Updated 2026-10-26T23:29:30Z. Box: CPU 41.8%, slots busy 28/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 28/32 slots now; CPU 5-min avg over last 24 samples 58% min 32% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 6.0, 'TL': 0.0, 'TP': 4.0, 'TR': 0.0, 'TC': 0.0}.
+Updated 2026-10-26T23:59:38Z. Box: CPU 32.0%, slots busy 28/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -23,7 +23,7 @@ Updated 2026-10-26T23:29:30Z. Box: CPU 41.8%, slots busy 28/32, queue 0. Cores p
 | B8 | D3Q | 0 | 0 / ? | none | done (report) |
 | B9 | D3M | 0 | 0 / ? | none | queued |
 | BA | ? | 0 | 0 / 0 | none | prereg |
-| C | D3CT | 1.0 | 28 / 28 | none | done (report) |
+| C | D3CT | 0.0 | 28 / 28 | none | done (report) |
 | C1 | D3XT | 0 | 0 / ? | none | queued |
 | C1C2 | D3XT | 0 | 0 / ? | none | queued |
 | C3C4 | D3XT | 0 | 0 / ? | none | queued |
@@ -52,7 +52,7 @@ Updated 2026-10-26T23:29:30Z. Box: CPU 41.8%, slots busy 28/32, queue 0. Cores p
 | J | D3L | 0 | 0 / 12 | none | done (report) |
 | K | D3K | 0 | 19 / 38 | none | done (report) |
 | M | ? | 0 | 0 / 0 | none | prereg |
-| P | ? | 1.0 | 0 / 157 | none | prereg |
+| P | ? | 4.0 | 0 / 157 | none | prereg |
 | P4 | ? | 0 | 0 / 150 | none | prereg |
 | PB2 | D3PB* | 0 | 0 / 28 | none | prereg |
 | PB2B | D3PB* | 0 | 0 / 24 | none | prereg |
@@ -66,7 +66,7 @@ Updated 2026-10-26T23:29:30Z. Box: CPU 41.8%, slots busy 28/32, queue 0. Cores p
 | PY | ? | 0 | 0 / 0 | none | prereg |
 | Q | ? | 0 | 0 / 113 | none | prereg |
 | R1 | ? | 0 | 0 / 134 | none | done (report) |
-| R2 | ? | 0 | 0 / 74 | none | prereg |
+| R2 | ? | 0 | 0 / 74 | none | done (report) |
 | R4 | ? | 0 | 0 / 58 | none | done (report) |
 | TA | ? | 0 | 22 / ? | none | done (report) |
 | TA1 | ? | 0 | 120 / ? | TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C) | done (report) |
@@ -94,6 +94,7 @@ Updated 2026-10-26T23:29:30Z. Box: CPU 41.8%, slots busy 28/32, queue 0. Cores p
 | TPULLBACK3 | ? | 0 | 141 / ? | PB3A_R10_P2(C), PB3B_R3_P2(C) | done (report) |
 | TPYRAMID | ? | 0 | 215 / ? | none | done (report) |
 | TR1 | ? | 0 | 134 / ? | TR1A_ens_s0.5_k4(C), TR1A_ens_s1.0_k3(P) | done (report) |
+| TR2 | ? | 0 | 74 / ? | TR2_KB_plain(P), TR2_KB_NR4(P) | done (report) |
 | TR4 | ? | 0 | 58 / ? | none | done (report) |
 | TSO | ? | 0 | 0 / 10 | none | prereg |
 | unattributed | - | 6.0 | - | - | - |
@@ -101,7 +102,7 @@ Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
 <!--PULLBACK-BEGIN-->
-## PULLBACK (PL) update 2026-10-26T23:26Z
+## PULLBACK (PL) update 2026-10-26T23:51Z
 Pullback: 4 PASS, 23 CANDIDATE. Best: PRO_KAL_k0.0, +$12972/wk standalone, paired vs ST +-2.67 pts/trade [-5.1,-0.4], 32.0 trades/wk, DS3 marginal Sharpe +-, deliverable DELIVERABLE.
 Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPULLBACK.json': 157, 'DS3_TPULLBACK3.json': 141}; prereg totals: {}
 Best cell: PRO_KAL_k0.0. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
