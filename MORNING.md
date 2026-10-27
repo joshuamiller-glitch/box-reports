@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 16:50Z 10-27 (t+27.8 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 17:21Z 10-27 (t+28.4 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2515/30, T-C 215/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 196/24, T-J 3/12, T-K 19/19, T-P 1312/?, T-R 266/?, T-S 207/?, T-W 1488/?. Verdicts {'DEAD': 10925, 'CANDIDATE': 134, 'PENDING': 261, 'PASS': 39, 'ERROR': 321}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 32/32 slots now; CPU 5-min avg over last 24 samples 31% min 16% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 5.2, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TC': 1.0}.
-Updated 2026-10-27T16:50:59Z. Box: CPU 35.6%, slots busy 32/32, queue 11. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 32/32 slots now; CPU 5-min avg over last 24 samples 35% min 17% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 6.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TC': 0.8}.
+Updated 2026-10-27T17:21:12Z. Box: CPU 40.3%, slots busy 32/32, queue 1. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -29,7 +29,7 @@ Updated 2026-10-27T16:50:59Z. Box: CPU 35.6%, slots busy 32/32, queue 11. Cores 
 | BA | ? | 0 | 0 / 0 | none | prereg |
 | BAS | ? | 0 | 0 / 0 | none | prereg |
 | BRACKET | ? | 0 | 1652 / ? | T4D_PRO_ER5_EMA5_D4_N15_f50_m1_s30_G1(C), T4D_PRO_ER5_EMA5_D4_SG_f50_m1_s30_G1(C) | done (report) |
-| C | D3CT | 1.0 | 28 / 28 | none | done (report) |
+| C | D3CT | 0.8 | 28 / 28 | none | done (report) |
 | C1 | D3XT | 0 | 0 / ? | none | queued |
 | C1C2 | D3XT | 0 | 0 / ? | none | done (report) |
 | C3C4 | D3XT | 0 | 0 / ? | none | done (report) |
@@ -125,7 +125,7 @@ Updated 2026-10-27T16:50:59Z. Box: CPU 35.6%, slots busy 32/32, queue 11. Cores 
 | TSTRUCTFIB | ? | 0 | 46 / ? | none | done (report) |
 | TWASHOUT | ? | 0 | 1488 / ? | WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C) | done (report) |
 | WO | ? | 0 | 0 / 1488 | none | prereg |
-| unattributed | - | 5.2 | - | - | - |
+| unattributed | - | 6.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -136,13 +136,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-10-27T16:45Z
+## TREND (TL) update 2026-10-27T17:15Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-27T16:31:48Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 32/32: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-27T17:01:48Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 30/32: [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 52125 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -653,3 +653,4 @@ T-OPEN starts when every queued item has its final report, then takes ALL cores 
 - T-CLOSE stored (not started): follows or overlaps T-OPEN; NEEDS.md MOC-imbalance-feed line to be written when it starts (vendor options + cost, no purchase).
 - D4 specs (CRT, DON15_S, ens_s0.5_k4, MAMA): ETA ~4-8 h each, pool-queue permitting; files autopilot/DS3_SPEC_<cell>.md.
 - CRT/S3 cross-instrument re-score (ES/RTY/YM/CL/GC/ZN/6E): queued after PBX/CHOP; fee rows for YM/CL/GC/ZN missing in FEES.md (proxies will be labelled WEAK).
+- CRT_H4_M5_close spec: identity OK (0.89% full), but the entire mapped edge is the +4 pt stop-exit credit; conservative basis WF -$1.6k/wk -> DEAD / do not add. SBS-family tight-stop CANDIDATEs need CONS-basis relabel (queued correction).
