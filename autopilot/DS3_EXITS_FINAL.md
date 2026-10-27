@@ -1,6 +1,6 @@
 # DS3_EXITS_FINAL - exit structure on every book (D3XT, priority item 1)
 
-Generated 2026-10-27T13:40:50Z. Research only; nothing is a live recommendation. 174 prereg'd exit cells scored (Track C 104 incl. TB7/ST10 siblings, R4 70, PB + OPP flips 72; preregs TC_G1..G5, shas in autopilot/DECISIONS.md), direct L2 basis, paired per trade on identical entries vs each book's own DS2 bracket (60/60, 1R, flat 16:55), exact per-book locks at 10 lots, price frame corrected (v1 outputs *_v1_INVALID* superseded).
+Generated 2026-10-27T14:01:36Z. Research only; nothing is a live recommendation. 174 of 246 prereg'd exit cells scored (Track C 104 incl. TB7/ST10 siblings, R4 70, PB + OPP flips 72 (G5 PENDING: replay of the PB books is held by the replay governor; this file is regenerated automatically when it finishes); preregs TC_G1..G5, shas in autopilot/DECISIONS.md), direct L2 basis, paired per trade on identical entries vs each book's own DS2 bracket (60/60, 1R, flat 16:55), exact per-book locks at 10 lots, price frame corrected (v1 outputs *_v1_INVALID* superseded).
 
 ## Verdict
 **0 PASS, 0 CANDIDATE, 174 DEAD of 174 cells.** No exit rule is a PASS or CANDIDATE on any book, so there is no parameter spec to write and nothing to put into the DS3 container for all books at once; the live DS2 fixed bracket (60/60 flat 16:55) stays the best-supported exit on every book.
