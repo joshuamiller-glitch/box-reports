@@ -1,5 +1,5 @@
 # PULLBACK LEADERBOARD (PL, P10)
-Updated 2026-10-27T07:22Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
+Updated 2026-10-27T07:47Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
 
 Pullback: 21 PASS, 54 CANDIDATE. Best: PRO_ER5_EMA5, +$4866/wk standalone, paired vs ST +17.01 pts/trade [6.3,28.6], 3.1 trades/wk, DS3 marginal Sharpe +0.56, deliverable DELIVERABLE.
 Basis split (distinct, duplicates removed): DIRECT 3 PASS / 11 CANDIDATE; MAPPED-only (no direct yet) 61. Direct verdict supersedes mapped. Best = highest DS3 marginal Sharpe among direct PASS, else CANDIDATE. Equal-risk rule: no book is DEAD solely for earning less than ST at equal lots.
