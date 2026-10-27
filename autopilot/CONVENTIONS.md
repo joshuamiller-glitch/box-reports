@@ -55,7 +55,7 @@ Rule: BEFORE choosing an ID prefix for a new batch, list `outputs/autopilot/REPO
 Worker I used R1-R15 for a K4-deepening batch while the b2356 worker already owned R1-R10; REPORT_R1/2/3/4/9/10 and status/R1-R4,R9,R10 were overwritten, then restored by regeneration. Library rows saved by worker I under family R2/R3/R4/R9/R10/R12/R12P were re-labelled RW* with update_meta; b2356 rows keep their R-families (their `source` field now points at the _b2356 reports).
 
 ## Added 2026-10-17
-- RX (batch RX, done), RY (batch RY: RY1-RY10, K4 independence tests; code ap_ry*; library family RY<n>) are worker I's. RZ (batch RZ: RZ1-RZ10, range-regime and structural limit-order items; code ap_rz*) is done. RV (RV1 follow-up on RZ FVG sleeves; code ap_rv_*) is done. Next prefix for worker I: RU (check before use).
+- RX (batch RX, done), RY (batch RY: RY1-RY10, K4 independence tests; code ap_ry*; library family RY<n>) are worker I's. RZ (batch RZ: RZ1-RZ10, range-regime and structural limit-order items; code ap_rz*) is done. RV (RV1 follow-up on RZ FVG sleeves; code ap_rv_*) is done. RU (RU1-RU11, depth contrast and displacement continuation; code ap_ru_*) is done. Next prefix for worker I: RT (check before use).
 
 ## Added 2026-10-17 (worker BK)
 - BK (batch BK: BK1-BK10, backlog-2 residue groups F/G/J; code ap_bk*; REPORT_BK<n>.md; status/BK.txt; library family BK<n>). Next free prefix after BK: BL (check before use).
