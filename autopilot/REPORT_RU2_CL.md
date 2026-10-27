@@ -1,5 +1,5 @@
 # REPORT RU2_CL
-**Verdict: NO** (1/7 measured gates pass). Selected cell nb=1, conf=0, sess=ALL, ent=mkt, k=1.5, tf=30, S=1.0, R=2.0; additive @20% clean/H1/H2 -0.05/-0.75/-0.23; standalone all-in weekly Sharpe -0.76 (2013-26 -0.83, dev 2013-22 -0.81); pair-window trades 2521. Runtime 0.0 min (+selection 0.0 min). 10-worker pool.
+**Verdict: NO** (1/7 measured gates pass). Selected cell nb=1, conf=0, sess=ALL, ent=mkt, k=1.5, tf=30, S=1.0, R=2.0; additive @20% clean/H1/H2 -0.05/-0.75/-0.26; standalone all-in weekly Sharpe -0.80 (2013-26 -0.84, dev 2013-22 -0.81); pair-window trades 2532. Runtime 0.0 min (+selection 0.0 min). 10-worker pool.
 
 RU2 displacement continuation: trade WITH a tf bar of range >= k ATR closing within 20% of its extreme; market (next open +1 tick) or stop entry; stop S ATR (floor 30 ticks), target R x stop, 360 min cap, flat 16:55. 1-min sim, $4.36/contract, 1 tick slippage. Pre-registered in PREREG_AUTOPILOT.md BATCH RU.
 
@@ -25,17 +25,17 @@ Selection-aware null (report only, 20 random-entry replicates of the whole grid 
 
 | share | framing | clean dSh | H1 dSh | H2 dSh | all dSh | worst wk chg % | boot 90% CI | shift-null rank | verdict |
 |---|---|---|---|---|---|---|---|---|---|
-| 10% | add | -0.021 | -0.385 | -0.110 | -0.088 | +15.0 | [-0.180, +0.003] | 0.28 | NO |
-| 20% | add | -0.055 | -0.750 | -0.231 | -0.189 | +35.1 | [-0.367, -0.009] | 0.28 | NO |
-| 30% | add | -0.100 | -1.091 | -0.362 | -0.298 | +55.2 | [-0.557, -0.036] | 0.28 | NO |
-| 50% | add | -0.212 | -1.688 | -0.642 | -0.529 | +95.4 | [-0.930, -0.120] | 0.28 | NO |
-| 10% | const | -0.024 | -0.427 | -0.123 | -0.099 | +5.5 | [-0.200, +0.002] | 0.28 | NO |
-| 20% | const | -0.076 | -0.924 | -0.295 | -0.243 | +16.1 | [-0.463, -0.020] | 0.28 | NO |
-| 30% | const | -0.169 | -1.487 | -0.540 | -0.446 | +26.7 | [-0.797, -0.087] | 0.28 | NO |
-| 50% | const | -0.511 | -2.746 | -1.342 | -1.051 | +48.0 | [-1.702, -0.375] | 0.28 | NO |
+| 10% | add | -0.021 | -0.385 | -0.125 | -0.091 | +15.0 | [-0.183, -0.005] | 0.28 | NO |
+| 20% | add | -0.055 | -0.750 | -0.260 | -0.195 | +35.1 | [-0.373, -0.025] | 0.28 | NO |
+| 30% | add | -0.100 | -1.091 | -0.404 | -0.308 | +55.2 | [-0.565, -0.060] | 0.28 | NO |
+| 50% | add | -0.212 | -1.688 | -0.706 | -0.543 | +95.4 | [-0.945, -0.156] | 0.28 | NO |
+| 10% | const | -0.024 | -0.427 | -0.139 | -0.102 | +5.5 | [-0.204, -0.007] | 0.28 | NO |
+| 20% | const | -0.076 | -0.924 | -0.331 | -0.251 | +16.1 | [-0.467, -0.041] | 0.28 | NO |
+| 30% | const | -0.169 | -1.487 | -0.597 | -0.459 | +26.7 | [-0.815, -0.119] | 0.28 | NO |
+| 50% | const | -0.511 | -2.746 | -1.443 | -1.073 | +48.0 | [-1.729, -0.429] | 0.28 | NO |
 
-Standalone at 100% pair-equivalent risk ($): clean: net -93,085, Sharpe -0.10, maxDD 706,754, worst wk -130,848; H1: net -564,704, Sharpe -2.65, maxDD 614,190, worst wk -165,981; H2: net -384,760, Sharpe -1.60, maxDD 667,433, worst wk -108,067; all: net -1,042,548, Sharpe -0.76, maxDD 1,740,221, worst wk -165,981
-Correlation with pair (weekly): clean +0.02, H1 +0.43, H2 -0.08, all +0.05; worst-decile weeks (n=17) corr +0.00, sleeve mean in those weeks $-8,883, positive share 0.53.
+Standalone at 100% pair-equivalent risk ($): clean: net -93,085, Sharpe -0.10, maxDD 706,754, worst wk -130,848; H1: net -564,704, Sharpe -2.65, maxDD 614,190, worst wk -165,981; H2: net -433,850, Sharpe -1.82, maxDD 667,433, worst wk -108,067; all: net -1,091,639, Sharpe -0.80, maxDD 1,740,221, worst wk -165,981
+Correlation with pair (weekly): clean +0.02, H1 +0.43, H2 -0.06, all +0.05; worst-decile weeks (n=17) corr +0.00, sleeve mean in those weeks $-8,883, positive share 0.53.
 
 ## Insurance metric set (pair, 20%/30% additive and constant-risk), per span
 
@@ -51,28 +51,28 @@ Correlation with pair (weekly): clean +0.02, H1 +0.43, H2 -0.08, all +0.05; wors
 | H1 | add 30% | 1.74 | 3.05 | 2.14 | -113,414 | -96,709 | 198,629 | -128,082 | 46.4 |
 | H1 | const 20% | 1.90 | 3.45 | 2.37 | -85,957 | -73,232 | 152,648 | -95,826 | 46.4 |
 | H1 | const 30% | 1.34 | 2.19 | 1.59 | -90,131 | -77,000 | 154,518 | -104,595 | 46.4 |
-| H2 | pair | 2.30 | 4.69 | 3.50 | -81,089 | -79,185 | 217,425 | -82,524 | 44.4 |
-| H2 | add 20% | 2.06 | 4.12 | 3.06 | -86,111 | -79,814 | 223,566 | -91,703 | 44.4 |
-| H2 | add 30% | 1.93 | 3.81 | 2.82 | -89,182 | -80,128 | 229,236 | -96,293 | 47.2 |
-| H2 | const 20% | 2.00 | 3.97 | 2.95 | -70,117 | -63,977 | 180,081 | -75,198 | 47.2 |
-| H2 | const 30% | 1.76 | 3.41 | 2.36 | -65,191 | -56,901 | 177,247 | -71,535 | 50.0 |
-| all | pair | 1.86 | 3.63 | 9.59 | -79,220 | -78,243 | 280,110 | -82,524 | 42.9 |
-| all | add 20% | 1.67 | 3.17 | 7.24 | -91,548 | -84,353 | 342,012 | -111,483 | 45.8 |
-| all | add 30% | 1.56 | 2.90 | 6.36 | -99,081 | -88,007 | 372,962 | -128,082 | 47.6 |
-| all | const 20% | 1.61 | 3.03 | 6.78 | -76,251 | -68,944 | 285,990 | -95,826 | 47.6 |
-| all | const 30% | 1.41 | 2.54 | 5.42 | -76,137 | -65,886 | 288,930 | -104,595 | 47.6 |
+| H2 | pair | 2.30 | 4.65 | 3.58 | -81,089 | -79,185 | 217,425 | -82,524 | 43.2 |
+| H2 | add 20% | 2.04 | 4.03 | 3.09 | -86,111 | -79,814 | 223,566 | -91,703 | 43.2 |
+| H2 | add 30% | 1.89 | 3.70 | 2.83 | -89,182 | -80,128 | 229,236 | -96,293 | 45.9 |
+| H2 | const 20% | 1.97 | 3.86 | 2.98 | -70,117 | -63,977 | 180,081 | -75,198 | 45.9 |
+| H2 | const 30% | 1.70 | 3.28 | 2.34 | -65,191 | -56,901 | 177,247 | -71,535 | 51.4 |
+| all | pair | 1.86 | 3.63 | 9.65 | -79,220 | -78,243 | 280,110 | -82,524 | 42.6 |
+| all | add 20% | 1.66 | 3.15 | 7.26 | -91,548 | -84,353 | 342,012 | -111,483 | 45.6 |
+| all | add 30% | 1.55 | 2.88 | 6.37 | -99,081 | -88,007 | 372,962 | -128,082 | 47.3 |
+| all | const 20% | 1.61 | 3.02 | 6.80 | -76,251 | -68,944 | 285,990 | -95,826 | 47.3 |
+| all | const 30% | 1.40 | 2.52 | 5.41 | -76,137 | -65,886 | 288,930 | -104,595 | 47.9 |
 
 ## Gate checklist (headline 20% additive)
 
-- [FAIL] 3 uplift>=+0.10 clean/H1/H2 @20%: -0.055 / -0.750 / -0.231
+- [FAIL] 3 uplift>=+0.10 clean/H1/H2 @20%: -0.055 / -0.750 / -0.260
 - [FAIL] 3 worst week within share: all-in worst week +35.1% vs share 20%
-- [FAIL] 4 own random-entry null p95 (standalone all-in): real -0.76 vs p95 -0.31 (rank 0.77)
-- [FAIL] 4 bootstrap 90% CI of all-in uplift >0: [-0.367, -0.009]
+- [FAIL] 4 own random-entry null p95 (standalone all-in): real -0.80 vs p95 -0.24 (rank 0.69)
+- [FAIL] 4 bootstrap 90% CI of all-in uplift >0: [-0.373, -0.025]
 - [FAIL] 5 plateau >=75% of neighbours keep >=75% of uplift: 0% of 6
-- [FAIL] 5 2x slippage uplift>=+0.10 each span: -0.144 / -0.844 / -0.276
+- [FAIL] 5 2x slippage uplift>=+0.10 each span: -0.144 / -0.844 / -0.306
 - [PASS] 6 worst-decile corr <=+0.30: +0.00
 - [PASS] 1 pre-registered before first run (PREREG_AUTOPILOT.md section RU2_CL); 2 selection on clean only, H1/H2 read once for one cell
-- [INFO] 7 executability: see below; small-sample flag: no (2521 trades in pair window)
+- [INFO] 7 executability: see below; small-sample flag: no (2532 trades in pair window)
 
 ## ERA FLAG (Gate Amendment 2; not gating): negative pre-2023
 
@@ -84,15 +84,15 @@ Correlation with pair (weekly): clean +0.02, H1 +0.43, H2 -0.08, all +0.05; wors
 | fixed | 6723 | -0.0391 | -0.81 |
 | scaled | 6723 | -0.0391 | -0.81 |
 
-Plateau neighbours (all-in 20% uplift; selected -0.189):
-- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.125', 'tf': '30', 'S': '1.0', 'R': '2.0'}: -0.296 (trades 3884)
-- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.5', 'tf': '30', 'S': '0.75', 'R': '2.0'}: -0.277 (trades 2586)
-- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.5', 'tf': '30', 'S': '1.0', 'R': '1.5'}: -0.256 (trades 2704)
-- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.875', 'tf': '30', 'S': '1.0', 'R': '2.0'}: -0.137 (trades 1408)
-- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.5', 'tf': '30', 'S': '1.25', 'R': '2.0'}: -0.186 (trades 2410)
-- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.5', 'tf': '30', 'S': '1.0', 'R': '2.5'}: -0.179 (trades 2388)
+Plateau neighbours (all-in 20% uplift; selected -0.195):
+- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.125', 'tf': '30', 'S': '1.0', 'R': '2.0'}: -0.304 (trades 3902)
+- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.5', 'tf': '30', 'S': '0.75', 'R': '2.0'}: -0.281 (trades 2598)
+- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.5', 'tf': '30', 'S': '1.0', 'R': '1.5'}: -0.262 (trades 2716)
+- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.875', 'tf': '30', 'S': '1.0', 'R': '2.0'}: -0.139 (trades 1412)
+- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.5', 'tf': '30', 'S': '1.25', 'R': '2.0'}: -0.191 (trades 2420)
+- {'sym': 'CL', 'nb': '1', 'conf': '0', 'sess': 'ALL', 'ent': 'mkt', 'k': '1.5', 'tf': '30', 'S': '1.0', 'R': '2.5'}: -0.184 (trades 2399)
 
-Own random-entry null: 300 draws, standalone all-in Sharpe median -1.13, p95 -0.31, real -0.76. Standalone Sharpe at 2x slippage -1.18.
+Own random-entry null: 300 draws, standalone all-in Sharpe median -1.14, p95 -0.24, real -0.80. Standalone Sharpe at 2x slippage -1.21.
 
 ## Long history of the selected cell (unit-risk sleeve, weekly Sharpe by year)
 
@@ -111,16 +111,16 @@ Own random-entry null: 300 draws, standalone all-in Sharpe median -1.13, p95 -0.
 | 2023 | 904 | -25 | -0.67 |
 | 2024 | 839 | 25 | 0.59 |
 | 2025 | 733 | -73 | -2.05 |
-| 2026 | 570 | -50 | -2.06 |
+| 2026 | 581 | -54 | -2.29 |
 
 
 ## Fill bounds (entry slippage and exit slippage in ticks) and retrace-limit comparison
 
 | scenario | clean weekly Sharpe | additive-20% uplift clean/H1/H2 |
 |---|---|---|
-| 1 tick entry / 1 tick exit | -0.10 | -0.05/-0.75/-0.23 |
-| 2 tick entry / 2 tick exit | -1.37 | -0.30/-0.92/-0.30 |
-| 3 tick entry / 3 tick exit | -2.49 | -0.52/-1.07/-0.44 |
-| retrace-limit DISP (b=1.5, tf30, f=0.5, RZ geometry) | 0.32 | +0.05/-0.40/-0.11 |
+| 1 tick entry / 1 tick exit | -0.10 | -0.05/-0.75/-0.26 |
+| 2 tick entry / 2 tick exit | -1.37 | -0.30/-0.92/-0.33 |
+| 3 tick entry / 3 tick exit | -2.49 | -0.52/-1.07/-0.47 |
+| retrace-limit DISP (b=1.5, tf30, f=0.5, RZ geometry) | 0.32 | +0.05/-0.40/-0.07 |
 
 DONE RU2_CL

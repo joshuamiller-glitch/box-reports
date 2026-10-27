@@ -1,12 +1,12 @@
 # BRACKET LEADERBOARD (T-BRACKET-PM, D3BL)
-Updated 2026-10-27T07:01Z. Rows files: DS3_TBRACKET.json, DS3_TBRACKET_G1.json, DS3_TBRACKET_G2.json, DS3_TBRACKET_G3.json, DS3_TBRACKET_T4A.json, DS3_TBRACKET_T4G1.json, DS3_TPYRAMID.json, DS3_TPYRAMID_T4.json
+Updated 2026-10-27T08:21Z. Rows files: DS3_TBRACKET.json, DS3_TBRACKET_G1.json, DS3_TBRACKET_G2.json, DS3_TBRACKET_G3.json, DS3_TBRACKET_T4A.json, DS3_TBRACKET_T4G1.json, DS3_TBRACKET_T4G2.json, DS3_TPYRAMID.json, DS3_TPYRAMID_T4.json
 
-Brackets: 0 PASS, 0 CANDIDATE. Best shape: none. Near-target: not scored, diagnostic ratio n/a. Scale-out: not scored. Pyramiding risk-constant: 635 cells scored, 0 PASS/CANDIDATE (all DEAD). Combined best on n/a: +$n/a/wk, maxDD delta n/a, CI [n/a]. Trade Health: 5508 cells scored, 0 PASS/CANDIDATE (cut EV: see rows).
+Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Best shape: none. Near-target: not scored, diagnostic ratio n/a. Scale-out: not scored. Pyramiding risk-constant: 635 cells scored, 0 PASS/CANDIDATE (all DEAD). Combined best on n/a: +$n/a/wk, maxDD delta n/a, CI [n/a]. Trade Health: 5928 cells scored, 0 PASS/CANDIDATE (cut EV: see rows).
 
 Scope: tier 1 (ST, HM, KB, SM, EM) and tier 4 (14 pullback direct-series entries); other registry entries paused.
 ## Multiplicity
-Cells scored across A-D, E, G: 6541 (per section {'A': 398, 'G': 5508, 'D': 635}). Verdicts: {'PENDING_DIRECT': 9, 'DEAD': 6532}.
-Cells with paired CI lower bound >0: 14; expected by chance at one-sided 2.5% over 6541 cells: 163.5. If observed is near this the best cell is best-of-N noise.
+Cells scored across A-D, E, G: 6961 (per section {'A': 398, 'G': 5928, 'D': 635}). Verdicts: {'PENDING_DIRECT': 9, 'DEAD': 6952}.
+Cells with paired CI lower bound >0: 14; expected by chance at one-sided 2.5% over 6961 cells: 174.0. If observed is near this the best cell is best-of-N noise.
 Best-of-N null: each section's best cell is judged against the max of N paired deltas drawn at zero effect (use the per-owner placebo ranks in the rows; a cell with placebo rank <0.95 is not credited).
 
 ## PASS / CANDIDATE
@@ -223,29 +223,29 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3B_R10_P3 | D | T4D_PB3B_R10_P3_D4_N45_f50_m1_s30_G1 | -1.1 [-1.5,-0.7] |  |  /  | 4,840.0 | 11.1 / 15 | 5,700 / 55,603 / 352,208 | -1.02 | 1.00 | 5,700 | 5,103 | 10.4 | 26 |  | DEAD |
 | PB3_PB3B_R10_P3 | D | T4D_PB3B_R10_P3_D2_PB_f50_m1_s30_G1 | -1.4 [-2.7,-0.2] |  |  /  | 4,683.0 | 10.7 / 15 | -2,124 / 52,990 / 904,920 | -1.60 | 1.00 | -2,124 | -2,288 | 10.8 |  |  | DEAD |
 
-### PB3_PB3B_R10_P3 / G (30 cells)
+### PB3_PB3B_R10_P3 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| PB3_PB3B_R10_P3 | G | G2_m40_r4_t8_s1__PB3_PB3B_R10_P3 | 0.1 [-0.8,1.0] |  |  /  | 4,609.0 |  /  |  /  /  |  | 1.00 | 3,304 | 3,464 | 10.5 | 23 | -0.22 | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0013__PB3_PB3B_R10_P3 | -0.3 [-2.0,1.4] |  |  /  | 2,134.0 |  /  |  /  /  | -0.73 | 0.89 | 2,729 | 3,618 | 13.3 | 26 |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0021__PB3_PB3B_R10_P3 | -0.4 [-1.7,0.9] |  |  /  | 2,134.0 |  /  |  /  /  | -0.17 | 0.92 | 4,732 | 5,695 | 12.0 | 38 |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0028__PB3_PB3B_R10_P3 | -0.6 [-2.0,0.9] |  |  /  | 2,134.0 |  /  |  /  /  | -0.07 | 0.79 | 4,779 | 5,582 | 11.7 | 38 |  | DEAD |
+| PB3_PB3B_R10_P3 | G | G2_m40_r3_t8_s1__PB3_PB3B_R10_P3 | -0.6 [-1.5,0.3] |  |  /  | 4,544.0 |  /  |  /  /  |  | 0.90 | -27 | -30 | 11.1 |  |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0017__PB3_PB3B_R10_P3 | -0.8 [-2.3,0.6] |  |  /  | 2,134.0 |  /  |  /  /  | -0.78 | 0.72 | 842 | 1,068 | 12.7 | 18 |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0008__PB3_PB3B_R10_P3 | -0.8 [-2.5,0.9] |  |  /  | 2,134.0 |  /  |  /  /  | -1.53 | 0.59 | -2,235 | -3,088 | 13.8 |  |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0003__PB3_PB3B_R10_P3 | -0.8 [-2.5,0.8] |  |  /  | 2,134.0 |  /  |  /  /  | -1.13 | 0.54 | -436 | -552 | 12.6 |  |  | DEAD |
+| PB3_PB3B_R10_P3 | G | G2_m40_r2_t8_s1__PB3_PB3B_R10_P3 | -0.8 [-1.8,0.2] |  |  /  | 4,544.0 |  /  |  /  /  |  | 0.90 | -523 | -588 | 11.2 |  |  | DEAD |
+| PB3_PB3B_R10_P3 | G | G2_m30_r3_t4_s1__PB3_PB3B_R10_P3 | -0.9 [-2.1,0.2] |  |  /  | 4,632.0 |  /  |  /  /  |  | 1.00 | -1,768 | -2,157 | 12.2 |  |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0004__PB3_PB3B_R10_P3 | -0.9 [-2.4,0.6] |  |  /  | 2,134.0 |  /  |  /  /  | -1.63 | 0.37 | -3,066 | -3,891 | 12.7 |  |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0020__PB3_PB3B_R10_P3 | -0.9 [-2.6,0.7] |  |  /  | 2,134.0 |  /  |  /  /  | -0.56 | 0.82 | 1,984 | 2,585 | 13.0 | 23 |  | DEAD |
+| PB3_PB3B_R10_P3 | G | G2_m10_r4_t8_s1__PB3_PB3B_R10_P3 | -0.9 [-2.4,0.4] |  |  /  | 4,615.0 |  /  |  /  /  |  | 0.90 | 799 | 1,015 | 12.7 | 16 |  | DEAD |
+| PB3_PB3B_R10_P3 | G | G2_m30_r3_t12_s1__PB3_PB3B_R10_P3 | -0.9 [-2.0,0.2] |  |  /  | 4,622.0 |  /  |  /  /  |  | 0.85 | -2,307 | -2,714 | 11.8 |  |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0045__PB3_PB3B_R10_P3 | -1.0 [-2.6,0.6] |  |  /  | 2,134.0 |  /  |  /  /  | -1.23 | 0.60 | -701 | -804 | 11.5 |  |  | DEAD |
+| PB3_PB3B_R10_P3 | G | G2_m30_r3_t8_s1__PB3_PB3B_R10_P3 | -1.0 [-2.2,0.1] |  |  /  | 4,630.0 |  /  |  /  /  |  | 0.90 | -1,722 | -2,076 | 12.1 |  |  | DEAD |
+| PB3_PB3B_R10_P3 | G | G2_TRAILONLY_m40_t8__PB3_PB3B_R10_P3 | -1.0 [-1.9,-0.0] |  |  /  | 4,545.0 |  /  |  /  /  |  | 0.80 | -565 | -646 | 11.4 |  |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_0042__PB3_PB3B_R10_P3 | -1.0 [-2.9,0.8] |  |  /  | 2,134.0 |  /  |  /  /  | -1.35 | 0.85 | -1,347 | -1,749 | 13.0 |  |  | DEAD |
 | PB3_PB3B_R10_P3 | G | G1_TH_LIVE_ST__PB3_PB3B_R10_P3 | -1.1 [-2.9,0.7] |  |  /  | 2,134.0 |  /  |  /  /  | -1.27 | 0.78 | -996 | -1,267 | 12.7 |  |  | DEAD |
-| PB3_PB3B_R10_P3 | G | G1_0041__PB3_PB3B_R10_P3 | -1.1 [-3.0,0.8] |  |  /  | 2,134.0 |  /  |  /  /  | -1.42 | 0.84 | -1,763 | -2,255 | 12.8 |  |  | DEAD |
-| PB3_PB3B_R10_P3 | G | G1_0039__PB3_PB3B_R10_P3 | -1.1 [-3.0,0.7] |  |  /  | 2,134.0 |  /  |  /  /  | -1.18 | 0.77 | -1,506 | -1,827 | 12.1 |  |  | DEAD |
-| PB3_PB3B_R10_P3 | G | G1_0049__PB3_PB3B_R10_P3 | -1.2 [-3.0,0.6] |  |  /  | 2,134.0 |  /  |  /  /  | -0.89 | 0.42 | -703 | -829 | 11.8 |  |  | DEAD |
-| PB3_PB3B_R10_P3 | G | G1_0044__PB3_PB3B_R10_P3 | -1.3 [-3.2,0.7] |  |  /  | 2,134.0 |  /  |  /  /  | -1.28 | 0.78 | -1,761 | -2,276 | 12.9 |  |  | DEAD |
-| PB3_PB3B_R10_P3 | G | G1_0035__PB3_PB3B_R10_P3 | -1.3 [-2.8,0.3] |  |  /  | 2,134.0 |  /  |  /  /  | -0.53 | 0.39 | 962 | 1,174 | 12.2 | 18 |  | DEAD |
-| PB3_PB3B_R10_P3 | G | G1_0036__PB3_PB3B_R10_P3 | -1.3 [-3.3,0.6] |  |  /  | 2,134.0 |  /  |  /  /  | -1.37 | 0.64 | -2,180 | -2,651 | 12.2 |  |  | DEAD |
-| PB3_PB3B_R10_P3 | G | G1_0024__PB3_PB3B_R10_P3 | -1.4 [-3.4,0.6] |  |  /  | 2,134.0 |  /  |  /  /  | -1.61 | 0.72 | -3,476 | -4,480 | 12.9 |  |  | DEAD |
-| PB3_PB3B_R10_P3 | G | G1_TH_LIVE_HM__PB3_PB3B_R10_P3 | -1.4 [-3.4,0.5] |  |  /  | 2,134.0 |  /  |  /  /  | -1.65 | 0.35 | -3,686 | -4,675 | 12.7 |  |  | DEAD |
-| PB3_PB3B_R10_P3 | G | G1_0027__PB3_PB3B_R10_P3 | -1.5 [-3.5,0.5] |  |  /  | 2,134.0 |  /  |  /  /  | -1.58 | 0.66 | -3,550 | -4,555 | 12.8 |  |  | DEAD |
+| PB3_PB3B_R10_P3 | G | G2_m20_r4_t8_s1__PB3_PB3B_R10_P3 | -1.1 [-2.2,0.2] |  |  /  | 4,615.0 |  /  |  /  /  |  | 0.60 | -211 | -255 | 12.1 |  |  | DEAD |
 
 ### PB3_PB3B_R5_P1 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -295,13 +295,14 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3B_R5_P1 | D | T4D_PB3B_R5_P1_D2_PB_f50_m1_s30_G1 | -1.6 [-2.5,-0.5] |  |  /  | 6,462.0 | 10.7 / 15 | -2,844 / 48,854 / 800,583 | -1.55 | 1.00 | -2,844 | -3,505 | 11.7 |  |  | DEAD |
 | PB3_PB3B_R5_P1 | D | T4D_PB3B_R5_P1_D3_N30_f50_m1_s30_G1 | -1.7 [-2.4,-0.9] |  |  /  | 6,693.0 | 11.5 / 15 | 2,018 / 54,526 / 331,213 | -1.37 | 1.00 | 2,018 | 1,659 | 10.5 | 16 |  | DEAD |
 
-### PB3_PB3B_R5_P1 / G (30 cells)
+### PB3_PB3B_R5_P1 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PB3_PB3B_R5_P1 | G | G1_0031__PB3_PB3B_R5_P1 | -0.1 [-1.7,1.4] |  |  /  | 3,049.0 |  /  |  /  /  | -0.42 | 0.97 | 12,269 | 12,387 | 10.1 | 86 |  | DEAD |
 | PB3_PB3B_R5_P1 | G | G1_0021__PB3_PB3B_R5_P1 | -0.5 [-1.7,0.6] |  |  /  | 3,049.0 |  /  |  /  /  | -0.14 | 0.48 | 11,985 | 12,666 | 10.6 | 84 |  | DEAD |
 | PB3_PB3B_R5_P1 | G | G1_0017__PB3_PB3B_R5_P1 | -0.6 [-1.8,0.6] |  |  /  | 3,049.0 |  /  |  /  /  | -0.09 | 0.92 | 11,619 | 11,464 | 9.9 | 81 |  | DEAD |
 | PB3_PB3B_R5_P1 | G | G1_0041__PB3_PB3B_R5_P1 | -0.7 [-2.3,0.9] |  |  /  | 3,049.0 |  /  |  /  /  | -0.67 | 0.56 | 8,357 | 8,552 | 10.2 | 57 |  | DEAD |
+| PB3_PB3B_R5_P1 | G | G2_m40_r4_t8_s1__PB3_PB3B_R5_P1 | -0.7 [-1.4,-0.1] |  |  /  | 6,439.0 |  /  |  /  /  |  | 0.35 | 9,456 | 10,095 | 10.7 | 32 | -0.04 | DEAD |
 | PB3_PB3B_R5_P1 | G | G1_0016__PB3_PB3B_R5_P1 | -0.8 [-2.2,0.7] |  |  /  | 3,049.0 |  /  |  /  /  | -0.67 | 0.88 | 7,327 | 7,579 | 10.3 | 49 |  | DEAD |
 | PB3_PB3B_R5_P1 | G | G1_0044__PB3_PB3B_R5_P1 | -0.8 [-2.4,0.8] |  |  /  | 3,049.0 |  /  |  /  /  | -0.69 | 0.43 | 7,710 | 8,020 | 10.4 | 52 |  | DEAD |
 | PB3_PB3B_R5_P1 | G | G1_0042__PB3_PB3B_R5_P1 | -0.8 [-2.4,0.7] |  |  /  | 3,049.0 |  /  |  /  /  | -0.62 | 0.34 | 8,023 | 8,223 | 10.2 | 54 |  | DEAD |
@@ -317,7 +318,6 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3B_R5_P1 | G | G1_0045__PB3_PB3B_R5_P1 | -1.1 [-2.5,0.2] |  |  /  | 3,049.0 |  /  |  /  /  | -0.02 | 0.12 | 10,210 | 10,242 | 10.0 | 71 |  | DEAD |
 | PB3_PB3B_R5_P1 | G | G1_0023__PB3_PB3B_R5_P1 | -1.2 [-2.9,0.6] |  |  /  | 3,049.0 |  /  |  /  /  | -1.33 | 0.77 | 2,263 | 2,041 | 9.0 | 22 |  | DEAD |
 | PB3_PB3B_R5_P1 | G | G1_0013__PB3_PB3B_R5_P1 | -1.2 [-2.5,0.1] |  |  /  | 3,049.0 |  /  |  /  /  | -1.40 | 0.33 | 2,007 | 2,190 | 10.9 | 21 |  | DEAD |
-| PB3_PB3B_R5_P1 | G | G1_0003__PB3_PB3B_R5_P1 | -1.2 [-2.5,0.1] |  |  /  | 3,049.0 |  /  |  /  /  | -1.14 | 0.21 | 3,209 | 3,043 | 9.5 | 26 |  | DEAD |
 
 ### PB3_PB3B_R5_P3 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -367,29 +367,29 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3B_R5_P3 | D | T4D_PB3B_R5_P3_D1_N30_f50_m2_s15_G1 | -1.4 [-2.2,-0.7] |  |  /  | 4,890.0 | 11.9 / 15 | 1,771 / 55,602 / 434,388 | -1.66 | 1.00 | 1,771 | 1,307 | 10.3 | 17 |  | DEAD |
 | PB3_PB3B_R5_P3 | D | T4D_PB3B_R5_P3_D1_N30_f50_m3_s15_G1 | -1.4 [-2.2,-0.7] |  |  /  | 4,890.0 | 11.9 / 15 | 1,771 / 55,602 / 434,388 | -1.66 | 1.00 | 1,771 | 1,307 | 10.3 | 17 |  | DEAD |
 
-### PB3_PB3B_R5_P3 / G (30 cells)
+### PB3_PB3B_R5_P3 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PB3_PB3B_R5_P3 | G | G1_0021__PB3_PB3B_R5_P3 | -0.2 [-1.5,1.0] |  |  /  | 2,208.0 |  /  |  /  /  | 0.32 | 1.00 | 7,303 | 8,660 | 11.9 | 57 |  | DEAD |
+| PB3_PB3B_R5_P3 | G | G2_m40_r4_t8_s1__PB3_PB3B_R5_P3 | -0.4 [-1.2,0.4] |  |  /  | 4,729.0 |  /  |  /  /  |  | 0.95 | 3,439 | 4,252 | 12.4 | 23 | -0.25 | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0003__PB3_PB3B_R5_P3 | -0.6 [-2.2,1.0] |  |  /  | 2,208.0 |  /  |  /  /  | -0.62 | 0.88 | 2,528 | 3,131 | 12.4 | 25 |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0008__PB3_PB3B_R5_P3 | -0.7 [-2.3,1.0] |  |  /  | 2,208.0 |  /  |  /  /  | -1.49 | 0.90 | -1,354 | -1,735 | 12.8 |  |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0017__PB3_PB3B_R5_P3 | -0.7 [-2.2,0.7] |  |  /  | 2,208.0 |  /  |  /  /  | -0.66 | 0.96 | 1,675 | 2,048 | 12.2 | 21 |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0013__PB3_PB3B_R5_P3 | -0.8 [-2.4,0.8] |  |  /  | 2,208.0 |  /  |  /  /  | -1.07 | 0.90 | 34 | 45 | 13.2 | 15 |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0004__PB3_PB3B_R5_P3 | -0.8 [-2.3,0.6] |  |  /  | 2,208.0 |  /  |  /  /  | -1.49 | 0.72 | -1,810 | -2,114 | 11.7 |  |  | DEAD |
+| PB3_PB3B_R5_P3 | G | G2_m40_r3_t8_s1__PB3_PB3B_R5_P3 | -0.8 [-1.7,0.1] |  |  /  | 4,666.0 |  /  |  /  /  |  | 1.00 | 3,821 | 4,709 | 12.3 | 23 |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0028__PB3_PB3B_R5_P3 | -1.0 [-2.5,0.4] |  |  /  | 2,208.0 |  /  |  /  /  | 0.40 | 0.77 | 5,422 | 6,051 | 11.2 | 41 |  | DEAD |
+| PB3_PB3B_R5_P3 | G | G2_m40_r2_t8_s1__PB3_PB3B_R5_P3 | -1.1 [-2.0,-0.2] |  |  /  | 4,666.0 |  /  |  /  /  |  | 0.95 | 651 | 792 | 12.2 | 16 |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0045__PB3_PB3B_R5_P3 | -1.1 [-2.7,0.4] |  |  /  | 2,208.0 |  /  |  /  /  | -0.14 | 0.77 | 3,039 | 3,584 | 11.8 | 27 |  | DEAD |
+| PB3_PB3B_R5_P3 | G | G2_m30_r3_t4_s1__PB3_PB3B_R5_P3 | -1.4 [-2.5,-0.2] |  |  /  | 4,773.0 |  /  |  /  /  |  | 0.90 | -830 | -1,041 | 12.5 |  |  | DEAD |
+| PB3_PB3B_R5_P3 | G | G2_TRAILONLY_m40_t8__PB3_PB3B_R5_P3 | -1.4 [-2.3,-0.4] |  |  /  | 4,665.0 |  /  |  /  /  |  | 0.85 | 715 | 870 | 12.2 | 16 |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0035__PB3_PB3B_R5_P3 | -1.4 [-2.9,0.2] |  |  /  | 2,208.0 |  /  |  /  /  | 0.13 | 0.62 | 3,475 | 4,129 | 11.9 | 29 |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0042__PB3_PB3B_R5_P3 | -1.4 [-3.3,0.4] |  |  /  | 2,208.0 |  /  |  /  /  | -0.78 | 0.87 | -391 | -454 | 11.6 |  |  | DEAD |
+| PB3_PB3B_R5_P3 | G | G2_m30_r3_t8_s1__PB3_PB3B_R5_P3 | -1.5 [-2.6,-0.3] |  |  /  | 4,772.0 |  /  |  /  /  |  | 0.95 | -1,534 | -1,927 | 12.6 |  |  | DEAD |
+| PB3_PB3B_R5_P3 | G | G2_m10_r4_t8_s1__PB3_PB3B_R5_P3 | -1.5 [-2.7,-0.2] |  |  /  | 4,751.0 |  /  |  /  /  |  | 0.80 | -7,085 | -9,628 | 13.6 |  |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_0020__PB3_PB3B_R5_P3 | -1.5 [-3.2,0.2] |  |  /  | 2,208.0 |  /  |  /  /  | 0.23 | 0.72 | 3,389 | 4,109 | 12.1 | 29 |  | DEAD |
+| PB3_PB3B_R5_P3 | G | G2_m30_r3_t12_s1__PB3_PB3B_R5_P3 | -1.5 [-2.5,-0.4] |  |  /  | 4,759.0 |  /  |  /  /  |  | 0.90 | -1,857 | -2,389 | 12.9 |  |  | DEAD |
 | PB3_PB3B_R5_P3 | G | G1_TH_LIVE_ST__PB3_PB3B_R5_P3 | -1.6 [-3.3,0.2] |  |  /  | 2,208.0 |  /  |  /  /  | -0.45 | 0.69 | 531 | 643 | 12.1 | 17 |  | DEAD |
-| PB3_PB3B_R5_P3 | G | G1_0024__PB3_PB3B_R5_P3 | -1.8 [-3.7,0.2] |  |  /  | 2,208.0 |  /  |  /  /  | -0.85 | 0.70 | -1,895 | -2,347 | 12.4 |  |  | DEAD |
-| PB3_PB3B_R5_P3 | G | G1_0023__PB3_PB3B_R5_P3 | -1.8 [-4.0,0.4] |  |  /  | 2,208.0 |  /  |  /  /  | -2.14 | 0.94 | -7,240 | -8,842 | 12.2 |  |  | DEAD |
-| PB3_PB3B_R5_P3 | G | G1_0044__PB3_PB3B_R5_P3 | -1.8 [-3.7,0.1] |  |  /  | 2,208.0 |  /  |  /  /  | -0.70 | 0.63 | -1,292 | -1,599 | 12.4 |  |  | DEAD |
-| PB3_PB3B_R5_P3 | G | G1_0039__PB3_PB3B_R5_P3 | -1.8 [-3.7,0.0] |  |  /  | 2,208.0 |  /  |  /  /  | -0.61 | 0.51 | -1,540 | -1,788 | 11.6 |  |  | DEAD |
-| PB3_PB3B_R5_P3 | G | G1_0032__PB3_PB3B_R5_P3 | -1.8 [-3.6,-0.1] |  |  /  | 2,208.0 |  /  |  /  /  | -0.38 | 0.41 | -84 | -94 | 11.2 |  |  | DEAD |
-| PB3_PB3B_R5_P3 | G | G1_0022__PB3_PB3B_R5_P3 | -1.9 [-4.0,0.3] |  |  /  | 2,208.0 |  /  |  /  /  | -2.22 | 0.71 | -7,752 | -9,401 | 12.1 |  |  | DEAD |
-| PB3_PB3B_R5_P3 | G | G1_0049__PB3_PB3B_R5_P3 | -1.9 [-3.6,-0.1] |  |  /  | 2,208.0 |  /  |  /  /  | -0.77 | 0.27 | -2,258 | -2,562 | 11.3 |  |  | DEAD |
-| PB3_PB3B_R5_P3 | G | G1_0018__PB3_PB3B_R5_P3 | -1.9 [-3.9,0.1] |  |  /  | 2,208.0 |  /  |  /  /  | -1.42 | 0.53 | -4,450 | -5,311 | 11.9 |  |  | DEAD |
 
 ### PB3_PB3B_R60_P2 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -439,7 +439,7 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3B_R60_P2 | D | T4D_PB3B_R60_P2_D2_PB_f50_m1_s30_G1 | -1.2 [-2.4,0.0] |  |  /  | 5,274.0 | 10.7 / 15 | 2,233 / 52,460 / 667,870 | -1.11 | 1.00 | 2,233 | 2,759 | 10.9 | 17 |  | DEAD |
 | PB3_PB3B_R60_P2 | D | T4D_PB3B_R60_P2_D3_SG_f50_m1_s30_G1 | -1.3 [-2.3,-0.4] |  |  /  | 5,240.0 | 11.9 / 15 | -3,333 / 53,868 / 719,478 | -2.04 | 1.00 | -3,333 | -2,864 | 10.7 |  |  | DEAD |
 
-### PB3_PB3B_R60_P2 / G (30 cells)
+### PB3_PB3B_R60_P2 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PB3_PB3B_R60_P2 | G | G1_0003__PB3_PB3B_R60_P2 | 0.4 [-1.1,1.9] |  |  /  | 2,406.0 |  /  |  /  /  | -0.96 | 0.99 | 10,045 | 10,615 | 10.6 | 79 |  | DEAD |
@@ -452,16 +452,16 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3B_R60_P2 | G | G1_0035__PB3_PB3B_R60_P2 | -0.6 [-2.1,1.0] |  |  /  | 2,406.0 |  /  |  /  /  | 0.29 | 0.73 | 11,574 | 11,375 | 9.8 | 91 |  | DEAD |
 | PB3_PB3B_R60_P2 | G | G1_TH_LIVE_ST__PB3_PB3B_R60_P2 | -0.6 [-2.4,1.1] |  |  /  | 2,406.0 |  /  |  /  /  | -0.13 | 0.86 | 9,588 | 10,500 | 11.0 | 75 |  | DEAD |
 | PB3_PB3B_R60_P2 | G | G1_0039__PB3_PB3B_R60_P2 | -0.7 [-2.5,1.0] |  |  /  | 2,406.0 |  /  |  /  /  | -0.71 | 0.82 | 6,775 | 7,588 | 11.2 | 51 |  | DEAD |
+| PB3_PB3B_R60_P2 | G | G2_m40_r4_t8_s1__PB3_PB3B_R60_P2 | -0.8 [-1.5,-0.0] |  |  /  | 5,221.0 |  /  |  /  /  |  | 0.45 | 4,408 | 4,888 | 11.1 | 24 | -0.24 | DEAD |
 | PB3_PB3B_R60_P2 | G | G1_0020__PB3_PB3B_R60_P2 | -0.8 [-2.4,0.8] |  |  /  | 2,406.0 |  /  |  /  /  | -0.25 | 0.71 | 8,637 | 9,302 | 10.8 | 67 |  | DEAD |
 | PB3_PB3B_R60_P2 | G | G1_0016__PB3_PB3B_R60_P2 | -0.8 [-2.5,0.9] |  |  /  | 2,406.0 |  /  |  /  /  | -0.91 | 0.93 | 5,454 | 5,483 | 10.1 | 40 |  | DEAD |
 | PB3_PB3B_R60_P2 | G | G1_0045__PB3_PB3B_R60_P2 | -0.8 [-2.3,0.7] |  |  /  | 2,406.0 |  /  |  /  /  | 0.01 | 0.57 | 9,754 | 10,438 | 10.7 | 76 |  | DEAD |
 | PB3_PB3B_R60_P2 | G | G1_0031__PB3_PB3B_R60_P2 | -0.9 [-2.6,0.9] |  |  /  | 2,406.0 |  /  |  /  /  | -0.41 | 0.78 | 7,770 | 8,210 | 10.6 | 59 |  | DEAD |
 | PB3_PB3B_R60_P2 | G | G1_0017__PB3_PB3B_R60_P2 | -0.9 [-2.3,0.5] |  |  /  | 2,406.0 |  /  |  /  /  | -0.35 | 0.82 | 7,852 | 7,984 | 10.2 | 60 |  | DEAD |
 | PB3_PB3B_R60_P2 | G | G1_0036__PB3_PB3B_R60_P2 | -0.9 [-2.7,0.9] |  |  /  | 2,406.0 |  /  |  /  /  | -0.68 | 0.79 | 6,093 | 6,678 | 11.0 | 45 |  | DEAD |
+| PB3_PB3B_R60_P2 | G | G2_m20_r4_t8_s1__PB3_PB3B_R60_P2 | -0.9 [-2.0,0.3] |  |  /  | 5,223.0 |  /  |  /  /  |  | 0.25 | -195 | -234 | 12.0 |  |  | DEAD |
+| PB3_PB3B_R60_P2 | G | G2_m20_r4_t12_s1__PB3_PB3B_R60_P2 | -0.9 [-2.0,0.3] |  |  /  | 5,223.0 |  /  |  /  /  |  | 0.35 | -544 | -651 | 12.0 |  |  | DEAD |
 | PB3_PB3B_R60_P2 | G | G1_0027__PB3_PB3B_R60_P2 | -1.0 [-2.8,0.9] |  |  /  | 2,406.0 |  /  |  /  /  | -0.36 | 0.85 | 7,547 | 8,746 | 11.6 | 57 |  | DEAD |
-| PB3_PB3B_R60_P2 | G | G1_0044__PB3_PB3B_R60_P2 | -1.0 [-2.8,0.9] |  |  /  | 2,406.0 |  /  |  /  /  | -0.83 | 0.78 | 5,285 | 6,068 | 11.5 | 40 |  | DEAD |
-| PB3_PB3B_R60_P2 | G | G1_0024__PB3_PB3B_R60_P2 | -1.1 [-2.9,0.8] |  |  /  | 2,406.0 |  /  |  /  /  | -0.37 | 0.83 | 7,081 | 8,419 | 11.9 | 53 |  | DEAD |
-| PB3_PB3B_R60_P2 | G | G1_0042__PB3_PB3B_R60_P2 | -1.1 [-2.8,0.7] |  |  /  | 2,406.0 |  /  |  /  /  | -0.50 | 0.59 | 6,379 | 7,317 | 11.5 | 47 |  | DEAD |
 
 ### PB3_PB3B_R60_P3 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -511,7 +511,7 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3B_R60_P3 | D | T4D_PB3B_R60_P3_D1_PB_f50_m1_s30_G1 | -1.3 [-2.2,-0.5] |  |  /  | 4,565.0 | 12.6 / 15 | 5,997 / 60,143 / 516,931 | -1.66 | 1.00 | 5,997 | 6,144 | 9.5 | 28 |  | DEAD |
 | PB3_PB3B_R60_P3 | D | T4D_PB3B_R60_P3_D2_N30_f50_m1_s30_G1 | -1.4 [-2.5,-0.4] |  |  /  | 4,494.0 | 10.7 / 15 | -633 / 57,124 / 870,432 | -1.49 | 1.00 | -633 | 360 | 10.2 | 15 |  | DEAD |
 
-### PB3_PB3B_R60_P3 / G (30 cells)
+### PB3_PB3B_R60_P3 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PB3_PB3B_R60_P3 | G | G1_0021__PB3_PB3B_R60_P3 | 0.3 [-1.0,1.6] |  |  /  | 2,043.0 |  /  |  /  /  | -0.93 | 1.00 | 6,201 | 7,064 | 11.4 | 49 |  | DEAD |
@@ -519,6 +519,7 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3B_R60_P3 | G | G1_0013__PB3_PB3B_R60_P3 | -0.2 [-1.9,1.5] |  |  /  | 2,043.0 |  /  |  /  /  | -0.34 | 0.90 | 6,812 | 8,537 | 12.5 | 54 |  | DEAD |
 | PB3_PB3B_R60_P3 | G | G1_0045__PB3_PB3B_R60_P3 | -0.3 [-2.0,1.3] |  |  /  | 2,043.0 |  /  |  /  /  | -1.48 | 0.91 | 2,704 | 2,931 | 10.8 | 26 |  | DEAD |
 | PB3_PB3B_R60_P3 | G | G1_0017__PB3_PB3B_R60_P3 | -0.3 [-1.8,1.1] |  |  /  | 2,043.0 |  /  |  /  /  | -1.43 | 0.92 | 2,217 | 2,520 | 11.4 | 24 |  | DEAD |
+| PB3_PB3B_R60_P3 | G | G2_m40_r4_t8_s1__PB3_PB3B_R60_P3 | -0.5 [-1.3,0.4] |  |  /  | 4,435.0 |  /  |  /  /  |  | 0.80 | 5,582 | 6,279 | 11.2 | 30 | 0.07 | DEAD |
 | PB3_PB3B_R60_P3 | G | G1_0035__PB3_PB3B_R60_P3 | -0.6 [-2.3,0.9] |  |  /  | 2,043.0 |  /  |  /  /  | -1.04 | 0.78 | 3,171 | 3,531 | 11.1 | 28 |  | DEAD |
 | PB3_PB3B_R60_P3 | G | G1_0049__PB3_PB3B_R60_P3 | -0.7 [-2.5,1.1] |  |  /  | 2,043.0 |  /  |  /  /  | -1.66 | 0.85 | 537 | 577 | 10.7 | 17 |  | DEAD |
 | PB3_PB3B_R60_P3 | G | G1_0020__PB3_PB3B_R60_P3 | -0.7 [-2.4,0.9] |  |  /  | 2,043.0 |  /  |  /  /  | -1.16 | 0.93 | 2,489 | 2,857 | 11.5 | 25 |  | DEAD |
@@ -530,10 +531,9 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3B_R60_P3 | G | G1_0036__PB3_PB3B_R60_P3 | -1.0 [-3.0,0.9] |  |  /  | 2,043.0 |  /  |  /  /  | -1.63 | 0.82 | -269 | -296 | 11.0 |  |  | DEAD |
 | PB3_PB3B_R60_P3 | G | G1_0016__PB3_PB3B_R60_P3 | -1.1 [-2.9,0.7] |  |  /  | 2,043.0 |  /  |  /  /  | -1.22 | 0.68 | 584 | 639 | 10.9 | 17 |  | DEAD |
 | PB3_PB3B_R60_P3 | G | G1_0039__PB3_PB3B_R60_P3 | -1.1 [-3.0,0.8] |  |  /  | 2,043.0 |  /  |  /  /  | -1.54 | 0.70 | -260 | -287 | 11.0 |  |  | DEAD |
+| PB3_PB3B_R60_P3 | G | G2_BE_p20__PB3_PB3B_R60_P3 | -1.1 [-2.3,0.1] |  |  /  | 4,434.0 |  /  |  /  /  |  | 0.60 | 1,738 | 2,171 | 12.5 | 18 |  | DEAD |
 | PB3_PB3B_R60_P3 | G | G1_0024__PB3_PB3B_R60_P3 | -1.2 [-3.2,0.8] |  |  /  | 2,043.0 |  /  |  /  /  | -1.75 | 0.74 | -1,220 | -1,474 | 12.1 |  |  | DEAD |
 | PB3_PB3B_R60_P3 | G | G1_0041__PB3_PB3B_R60_P3 | -1.2 [-3.3,0.7] |  |  /  | 2,043.0 |  /  |  /  /  | -1.79 | 0.64 | -1,506 | -1,706 | 11.3 |  |  | DEAD |
-| PB3_PB3B_R60_P3 | G | G1_0044__PB3_PB3B_R60_P3 | -1.4 [-3.5,0.6] |  |  /  | 2,043.0 |  /  |  /  /  | -1.99 | 0.58 | -2,751 | -3,106 | 11.3 |  |  | DEAD |
-| PB3_PB3B_R60_P3 | G | G1_0032__PB3_PB3B_R60_P3 | -1.4 [-3.3,0.4] |  |  /  | 2,043.0 |  /  |  /  /  | -1.29 | 0.38 | -175 | -202 | 11.5 |  |  | DEAD |
 
 ### PB3_PB3D_R3_P2 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -583,29 +583,29 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3D_R3_P2 | D | T4D_PB3D_R3_P2_D3_N30_f50_m1_s30_G1 | -1.8 [-2.9,-0.7] |  |  /  | 3,342.0 | 11.5 / 15 | -825 / 47,761 / 733,894 | -1.26 | 1.00 | -825 | -1,207 | 12.0 |  |  | DEAD |
 | PB3_PB3D_R3_P2 | D | T4D_PB3D_R3_P2_D3_N30_f50_m2_s15_G1 | -1.8 [-2.9,-0.7] |  |  /  | 3,342.0 | 11.5 / 15 | -825 / 47,761 / 733,894 | -1.26 | 1.00 | -825 | -1,207 | 12.0 |  |  | DEAD |
 
-### PB3_PB3D_R3_P2 / G (30 cells)
+### PB3_PB3D_R3_P2 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| PB3_PB3D_R3_P2 | G | G2_m40_r4_t8_s1__PB3_PB3D_R3_P2 | -0.8 [-1.8,0.1] |  |  /  | 3,274.0 |  /  |  /  /  |  | 0.70 | 5,519 | 7,439 | 13.5 | 38 |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_m40_r3_t8_s1__PB3_PB3D_R3_P2 | -0.9 [-2.0,0.3] |  |  /  | 3,255.0 |  /  |  /  /  |  | 1.00 | 6,346 | 8,390 | 13.2 | 42 | 0.17 | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_m40_r2_t8_s1__PB3_PB3D_R3_P2 | -0.9 [-2.0,0.2] |  |  /  | 3,254.0 |  /  |  /  /  |  | 0.95 | 5,593 | 7,445 | 13.3 | 38 |  | DEAD |
 | PB3_PB3D_R3_P2 | G | G1_0028__PB3_PB3D_R3_P2 | -0.9 [-2.7,0.8] |  |  /  | 1,510.0 |  /  |  /  /  | 0.20 | 0.95 | 5,368 | 6,555 | 12.2 | 51 |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_TRAILONLY_m40_t8__PB3_PB3D_R3_P2 | -1.1 [-2.2,-0.0] |  |  /  | 3,255.0 |  /  |  /  /  |  | 0.90 | 4,184 | 5,569 | 13.3 | 30 |  | DEAD |
 | PB3_PB3D_R3_P2 | G | G1_0017__PB3_PB3D_R3_P2 | -1.2 [-3.0,0.5] |  |  /  | 1,510.0 |  /  |  /  /  | -0.62 | 0.99 | 2,777 | 3,556 | 12.8 | 29 |  | DEAD |
 | PB3_PB3D_R3_P2 | G | G1_0049__PB3_PB3D_R3_P2 | -1.5 [-3.6,0.6] |  |  /  | 1,510.0 |  /  |  /  /  | -0.65 | 0.88 | 1,753 | 2,222 | 12.7 | 23 |  | DEAD |
 | PB3_PB3D_R3_P2 | G | G1_0021__PB3_PB3D_R3_P2 | -1.6 [-3.3,0.1] |  |  /  | 1,510.0 |  /  |  /  /  | 1.14 | 0.47 | 6,539 | 8,335 | 12.7 | 63 |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_m30_r3_t8_s1__PB3_PB3D_R3_P2 | -1.7 [-3.0,-0.4] |  |  /  | 3,290.0 |  /  |  /  /  |  | 0.60 | 2,926 | 4,041 | 13.8 | 24 |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_m30_r3_t4_s1__PB3_PB3D_R3_P2 | -1.7 [-3.0,-0.4] |  |  /  | 3,288.0 |  /  |  /  /  |  | 0.60 | 2,987 | 4,148 | 13.9 | 24 |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_BE_p20__PB3_PB3D_R3_P2 | -1.8 [-3.2,-0.4] |  |  /  | 3,292.0 |  /  |  /  /  |  | 0.15 | -59 | -82 | 13.9 |  |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_m30_r3_t12_s1__PB3_PB3D_R3_P2 | -1.9 [-3.2,-0.5] |  |  /  | 3,289.0 |  /  |  /  /  |  | 0.75 | 1,628 | 2,274 | 14.0 | 20 |  | DEAD |
 | PB3_PB3D_R3_P2 | G | G1_0004__PB3_PB3D_R3_P2 | -1.9 [-3.8,-0.0] |  |  /  | 1,510.0 |  /  |  /  /  | -0.03 | 0.51 | 3,100 | 4,304 | 13.9 | 31 |  | DEAD |
 | PB3_PB3D_R3_P2 | G | G1_TH_LIVE_HM__PB3_PB3D_R3_P2 | -1.9 [-4.2,0.4] |  |  /  | 1,510.0 |  /  |  /  /  | 0.18 | 0.87 | 3,127 | 4,292 | 13.7 | 32 |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_BE_p10__PB3_PB3D_R3_P2 | -1.9 [-3.6,-0.2] |  |  /  | 3,283.0 |  /  |  /  /  |  | 0.20 | -3,376 | -6,412 | 15.7 |  |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_m20_r4_t8_s1__PB3_PB3D_R3_P2 | -2.0 [-3.4,-0.6] |  |  /  | 3,285.0 |  /  |  /  /  |  | 0.55 | 526 | 487 | 14.6 | 16 |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_m20_r4_t12_s1__PB3_PB3D_R3_P2 | -2.0 [-3.4,-0.6] |  |  /  | 3,285.0 |  /  |  /  /  |  | 0.50 | 82 | -235 | 14.7 | 15 |  | DEAD |
+| PB3_PB3D_R3_P2 | G | G2_BE_p15__PB3_PB3D_R3_P2 | -2.0 [-3.4,-0.5] |  |  /  | 3,286.0 |  /  |  /  /  |  | 0.20 | -2,194 | -3,071 | 14.0 |  |  | DEAD |
 | PB3_PB3D_R3_P2 | G | G1_0003__PB3_PB3D_R3_P2 | -2.0 [-4.0,-0.1] |  |  /  | 1,510.0 |  /  |  /  /  | 0.55 | 0.45 | 3,982 | 5,694 | 15.6 | 38 |  | DEAD |
 | PB3_PB3D_R3_P2 | G | G1_0008__PB3_PB3D_R3_P2 | -2.0 [-4.2,0.0] |  |  /  | 1,510.0 |  /  |  /  /  | -0.06 | 0.68 | 2,570 | 3,549 | 14.9 | 28 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0039__PB3_PB3D_R3_P2 | -2.2 [-4.4,-0.1] |  |  /  | 1,510.0 |  /  |  /  /  | -0.28 | 0.84 | 1,282 | 1,614 | 12.6 | 21 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0036__PB3_PB3D_R3_P2 | -2.2 [-4.5,-0.1] |  |  /  | 1,510.0 |  /  |  /  /  | 0.28 | 0.87 | 2,473 | 3,186 | 12.9 | 27 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0018__PB3_PB3D_R3_P2 | -2.4 [-4.8,-0.0] |  |  /  | 1,510.0 |  /  |  /  /  | -0.38 | 0.83 | 617 | 836 | 14.1 | 17 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0013__PB3_PB3D_R3_P2 | -2.4 [-4.5,-0.4] |  |  /  | 1,510.0 |  /  |  /  /  | -0.07 | 0.49 | 1,513 | 1,665 | 16.4 | 22 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0016__PB3_PB3D_R3_P2 | -2.4 [-4.6,-0.3] |  |  /  | 1,510.0 |  /  |  /  /  | 0.34 | 0.83 | 2,237 | 2,939 | 13.1 | 26 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0031__PB3_PB3D_R3_P2 | -2.4 [-4.7,-0.3] |  |  /  | 1,510.0 |  /  |  /  /  | -0.39 | 0.77 | 459 | 619 | 13.5 | 17 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_TH_LIVE_ST__PB3_PB3D_R3_P2 | -2.5 [-4.6,-0.4] |  |  /  | 1,510.0 |  /  |  /  /  | 0.18 | 0.62 | 1,847 | 2,442 | 13.2 | 24 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0045__PB3_PB3D_R3_P2 | -2.6 [-4.5,-0.7] |  |  /  | 1,510.0 |  /  |  /  /  | 0.25 | 0.32 | 1,985 | 2,669 | 13.4 | 24 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0027__PB3_PB3D_R3_P2 | -2.7 [-5.1,-0.4] |  |  /  | 1,510.0 |  /  |  /  /  | 0.05 | 0.64 | 822 | 1,095 | 14.3 | 18 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0024__PB3_PB3D_R3_P2 | -2.8 [-5.2,-0.5] |  |  /  | 1,510.0 |  /  |  /  /  | -0.06 | 0.59 | 399 | 503 | 14.2 | 16 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0032__PB3_PB3D_R3_P2 | -2.8 [-5.0,-0.7] |  |  /  | 1,510.0 |  /  |  /  /  | 0.47 | 0.40 | 1,800 | 2,359 | 13.1 | 23 |  | DEAD |
-| PB3_PB3D_R3_P2 | G | G1_0041__PB3_PB3D_R3_P2 | -2.9 [-5.1,-0.6] |  |  /  | 1,510.0 |  /  |  /  /  | 0.45 | 0.48 | 1,695 | 2,303 | 13.6 | 23 |  | DEAD |
 
 ### PB3_PB3E_D_R3_P2_40_1.5R / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -655,7 +655,7 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3E_D_R3_P2_40_1.5R | D | T4D_PB3E_D_R3_P2_40_1.5R_D3_N30_f50_m1_s30_G1 | -2.0 [-2.7,-1.2] |  |  /  | 3,991.0 | 17.6 / 22 | -6,029 / 54,487 / 1,077,368 | -1.55 | 1.00 | -6,029 | -7,089 | 15.7 |  |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | D | T4D_PB3E_D_R3_P2_40_1.5R_D3_N30_f50_m2_s15_G1 | -2.0 [-2.7,-1.2] |  |  /  | 3,991.0 | 17.6 / 22 | -6,029 / 54,487 / 1,077,368 | -1.55 | 1.00 | -6,029 | -7,089 | 15.7 |  |  | DEAD |
 
-### PB3_PB3E_D_R3_P2_40_1.5R / G (30 cells)
+### PB3_PB3E_D_R3_P2_40_1.5R / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0017__PB3_PB3E_D_R3_P2_40_1.5R | 0.0 [0.0,0.0] |  |  /  | 1,795.0 |  /  |  /  /  | 0.00 |  | 8,211 | 8,270 | 15.2 | 57 |  | DEAD |
@@ -663,21 +663,21 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0028__PB3_PB3E_D_R3_P2_40_1.5R | -0.7 [-1.7,0.3] |  |  /  | 1,795.0 |  /  |  /  /  | 0.39 | 0.86 | 6,972 | 6,868 | 14.4 | 48 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0021__PB3_PB3E_D_R3_P2_40_1.5R | -0.9 [-1.7,-0.1] |  |  /  | 1,795.0 |  /  |  /  /  | 0.73 | 0.21 | 7,825 | 7,834 | 15.0 | 55 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0008__PB3_PB3E_D_R3_P2_40_1.5R | -0.9 [-2.4,0.4] |  |  /  | 1,795.0 |  /  |  /  /  | -0.68 | 0.93 | 1,055 | 967 | 15.4 | 19 |  | DEAD |
+| PB3_PB3E_D_R3_P2_40_1.5R | G | G2_m40_r4_t8_s1__PB3_PB3E_D_R3_P2_40_1.5R | -1.1 [-1.8,-0.4] |  |  /  | 3,934.0 |  /  |  /  /  |  | 0.15 | 5,972 | 5,794 | 16.3 | 29 | -0.14 | DEAD |
+| PB3_PB3E_D_R3_P2_40_1.5R | G | G2_m40_r3_t8_s1__PB3_PB3E_D_R3_P2_40_1.5R | -1.2 [-2.0,-0.3] |  |  /  | 3,913.0 |  /  |  /  /  |  | 0.65 | 4,832 | 4,482 | 16.5 | 25 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0003__PB3_PB3E_D_R3_P2_40_1.5R | -1.2 [-2.5,0.1] |  |  /  | 1,795.0 |  /  |  /  /  | 0.03 | 0.63 | 3,607 | 3,505 | 16.3 | 29 |  | DEAD |
+| PB3_PB3E_D_R3_P2_40_1.5R | G | G2_m40_r2_t8_s1__PB3_PB3E_D_R3_P2_40_1.5R | -1.2 [-2.1,-0.3] |  |  /  | 3,915.0 |  /  |  /  /  |  | 0.75 | 2,524 | 1,849 | 16.7 | 20 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0013__PB3_PB3E_D_R3_P2_40_1.5R | -1.3 [-2.6,0.1] |  |  /  | 1,795.0 |  /  |  /  /  | -0.25 | 0.83 | 1,450 | 979 | 17.0 | 20 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_TH_LIVE_HM__PB3_PB3E_D_R3_P2_40_1.5R | -1.3 [-2.8,0.1] |  |  /  | 1,795.0 |  /  |  /  /  | 0.11 | 0.91 | 2,876 | 2,909 | 14.7 | 26 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0049__PB3_PB3E_D_R3_P2_40_1.5R | -1.3 [-2.7,-0.0] |  |  /  | 1,795.0 |  /  |  /  /  | -0.30 | 0.71 | 761 | 914 | 13.0 | 18 |  | DEAD |
+| PB3_PB3E_D_R3_P2_40_1.5R | G | G2_TRAILONLY_m40_t8__PB3_PB3E_D_R3_P2_40_1.5R | -1.4 [-2.3,-0.5] |  |  /  | 3,915.0 |  /  |  /  /  |  | 0.55 | 2,692 | 1,946 | 16.9 | 21 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0031__PB3_PB3E_D_R3_P2_40_1.5R | -1.4 [-2.8,-0.0] |  |  /  | 1,795.0 |  /  |  /  /  | -0.28 | 0.97 | 947 | 1,014 | 14.7 | 19 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0039__PB3_PB3E_D_R3_P2_40_1.5R | -1.4 [-2.8,-0.1] |  |  /  | 1,795.0 |  /  |  /  /  | -0.12 | 0.90 | 1,488 | 1,630 | 13.7 | 21 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_TH_LIVE_ST__PB3_PB3E_D_R3_P2_40_1.5R | -1.4 [-2.8,-0.2] |  |  /  | 1,795.0 |  /  |  /  /  | 0.32 | 0.86 | 3,365 | 3,381 | 14.7 | 28 |  | DEAD |
+| PB3_PB3E_D_R3_P2_40_1.5R | G | G2_m30_r3_t4_s1__PB3_PB3E_D_R3_P2_40_1.5R | -1.5 [-2.5,-0.6] |  |  /  | 3,940.0 |  /  |  /  /  |  | 0.30 | 4,684 | 4,394 | 16.0 | 24 |  | DEAD |
+| PB3_PB3E_D_R3_P2_40_1.5R | G | G2_m30_r3_t8_s1__PB3_PB3E_D_R3_P2_40_1.5R | -1.5 [-2.5,-0.6] |  |  /  | 3,941.0 |  /  |  /  /  |  | 0.30 | 4,208 | 3,758 | 16.4 | 23 |  | DEAD |
 | PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0041__PB3_PB3E_D_R3_P2_40_1.5R | -1.5 [-3.0,-0.1] |  |  /  | 1,795.0 |  /  |  /  /  | 0.60 | 0.96 | 4,395 | 4,390 | 14.5 | 33 |  | DEAD |
-| PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0045__PB3_PB3E_D_R3_P2_40_1.5R | -1.6 [-2.8,-0.4] |  |  /  | 1,795.0 |  /  |  /  /  | 0.36 | 0.44 | 3,139 | 3,162 | 14.7 | 27 |  | DEAD |
-| PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0016__PB3_PB3E_D_R3_P2_40_1.5R | -1.6 [-2.8,-0.4] |  |  /  | 1,795.0 |  /  |  /  /  | 0.38 | 0.98 | 3,172 | 3,180 | 14.9 | 27 |  | DEAD |
-| PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0036__PB3_PB3E_D_R3_P2_40_1.5R | -1.6 [-3.0,-0.2] |  |  /  | 1,795.0 |  /  |  /  /  | 0.41 | 0.87 | 3,087 | 3,122 | 13.9 | 27 |  | DEAD |
-| PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0042__PB3_PB3E_D_R3_P2_40_1.5R | -1.6 [-3.1,-0.3] |  |  /  | 1,795.0 |  /  |  /  /  | 0.38 | 0.86 | 2,840 | 2,879 | 14.6 | 26 |  | DEAD |
-| PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0032__PB3_PB3E_D_R3_P2_40_1.5R | -1.6 [-3.0,-0.3] |  |  /  | 1,795.0 |  /  |  /  /  | 0.35 | 0.79 | 3,081 | 3,129 | 13.9 | 27 |  | DEAD |
-| PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0035__PB3_PB3E_D_R3_P2_40_1.5R | -1.7 [-2.9,-0.6] |  |  /  | 1,795.0 |  /  |  /  /  | 0.61 | 0.28 | 4,111 | 4,113 | 14.9 | 31 |  | DEAD |
-| PB3_PB3E_D_R3_P2_40_1.5R | G | G1_0020__PB3_PB3E_D_R3_P2_40_1.5R | -1.7 [-2.9,-0.6] |  |  /  | 1,795.0 |  /  |  /  /  | 0.19 | 0.42 | 1,853 | 1,827 | 15.2 | 22 |  | DEAD |
+| PB3_PB3E_D_R3_P2_40_1.5R | G | G2_m30_r3_t12_s1__PB3_PB3E_D_R3_P2_40_1.5R | -1.6 [-2.6,-0.6] |  |  /  | 3,941.0 |  /  |  /  /  |  | 0.20 | 5,035 | 4,607 | 16.5 | 25 |  | DEAD |
 
 ### PB3_PB3F_D_R3_P2_60_2R_bracket / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -727,29 +727,29 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PB3_PB3F_D_R3_P2_60_2R_bracket | D | T4D_PB3F_D_R3_P2_60_2R_bracket_D2_N30_f50_m1_s30_G3 | -1.0 [-3.3,1.6] |  |  /  | 2,571.0 | 10.9 / 15 | 4,308 / 48,285 / 431,494 | -0.16 | 1.00 | 4,308 | 5,270 | 11.8 | 25 |  | DEAD |
 | PB3_PB3F_D_R3_P2_60_2R_bracket | D | T4D_PB3F_D_R3_P2_60_2R_bracket_D1_N30_f50_m1_s30_G2 | -1.1 [-3.3,1.2] |  |  /  | 2,433.0 | 13.1 / 15 | 1,727 / 55,788 / 727,389 | -1.07 | 1.00 | 1,727 | 1,249 | 10.3 | 19 |  | DEAD |
 
-### PB3_PB3F_D_R3_P2_60_2R_bracket / G (30 cells)
+### PB3_PB3F_D_R3_P2_60_2R_bracket / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0003__PB3_PB3F_D_R3_P2_60_2R_bracket | -2.6 [-5.7,0.4] |  |  /  | 1,128.0 |  /  |  /  /  | 0.13 | 0.41 | 3,279 | 3,730 | 11.4 | 46 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0017__PB3_PB3F_D_R3_P2_60_2R_bracket | -2.7 [-5.6,0.2] |  |  /  | 1,128.0 |  /  |  /  /  | -0.67 | 0.49 | 1,410 | 1,462 | 10.4 | 25 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0004__PB3_PB3F_D_R3_P2_60_2R_bracket | -2.8 [-5.8,0.1] |  |  /  | 1,128.0 |  /  |  /  /  | 0.42 | 0.27 | 3,550 | 3,943 | 11.1 | 50 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0049__PB3_PB3F_D_R3_P2_60_2R_bracket | -2.9 [-6.3,0.5] |  |  /  | 1,128.0 |  /  |  /  /  | 0.57 | 0.73 | 3,415 | 3,459 | 10.1 | 48 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0028__PB3_PB3F_D_R3_P2_60_2R_bracket | -3.0 [-5.9,-0.1] |  |  /  | 1,128.0 |  /  |  /  /  | 1.07 | 0.72 | 4,584 | 4,711 | 10.3 | 66 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0008__PB3_PB3F_D_R3_P2_60_2R_bracket | -3.1 [-6.4,0.2] |  |  /  | 1,128.0 |  /  |  /  /  | -0.29 | 0.32 | 1,440 | 1,622 | 11.3 | 25 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0021__PB3_PB3F_D_R3_P2_60_2R_bracket | -3.1 [-5.9,-0.4] |  |  /  | 1,128.0 |  /  |  /  /  | 2.02 | 0.48 | 6,021 | 6,272 | 10.4 | 89 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0013__PB3_PB3F_D_R3_P2_60_2R_bracket | -3.6 [-7.0,-0.3] |  |  /  | 1,128.0 |  /  |  /  /  | -0.62 | 0.14 | -392 | -455 | 11.6 |  |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0018__PB3_PB3F_D_R3_P2_60_2R_bracket | -4.1 [-8.1,-0.2] |  |  /  | 1,128.0 |  /  |  /  /  | -0.15 | 0.25 | 18 | 19 | 10.6 | 15 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0016__PB3_PB3F_D_R3_P2_60_2R_bracket | -4.2 [-7.7,-0.7] |  |  /  | 1,128.0 |  /  |  /  /  | 0.34 | 0.11 | 560 | 598 | 10.7 | 19 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_TH_LIVE_HM__PB3_PB3F_D_R3_P2_60_2R_bracket | -4.2 [-8.0,-0.4] |  |  /  | 1,128.0 |  /  |  /  /  | 0.84 | 0.39 | 1,827 | 1,881 | 10.3 | 29 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0046__PB3_PB3F_D_R3_P2_60_2R_bracket | -4.4 [-9.0,0.1] |  |  /  | 1,128.0 |  /  |  /  /  | 1.53 | 0.22 | 3,036 | 3,780 | 12.4 | 42 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0048__PB3_PB3F_D_R3_P2_60_2R_bracket | -4.4 [-9.0,0.1] |  |  /  | 1,128.0 |  /  |  /  /  | 1.60 | 0.53 | 3,227 | 4,022 | 12.5 | 45 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0047__PB3_PB3F_D_R3_P2_60_2R_bracket | -4.5 [-9.1,0.0] |  |  /  | 1,128.0 |  /  |  /  /  | 1.75 | 0.17 | 3,380 | 4,248 | 12.6 | 47 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0031__PB3_PB3F_D_R3_P2_60_2R_bracket | -4.6 [-8.3,-0.9] |  |  /  | 1,128.0 |  /  |  /  /  | 0.60 | 0.60 | 943 | 993 | 10.5 | 21 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0035__PB3_PB3F_D_R3_P2_60_2R_bracket | -4.7 [-8.0,-1.5] |  |  /  | 1,128.0 |  /  |  /  /  | 0.92 | 0.20 | 1,311 | 1,370 | 10.4 | 24 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0036__PB3_PB3F_D_R3_P2_60_2R_bracket | -4.9 [-8.7,-1.2] |  |  /  | 1,128.0 |  /  |  /  /  | 0.99 | 0.59 | 1,081 | 1,067 | 9.9 | 22 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0039__PB3_PB3F_D_R3_P2_60_2R_bracket | -5.1 [-8.8,-1.4] |  |  /  | 1,128.0 |  /  |  /  /  | 0.10 | 0.40 | -940 | -911 | 9.7 |  |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_TH_LIVE_ST__PB3_PB3F_D_R3_P2_60_2R_bracket | -5.1 [-8.7,-1.5] |  |  /  | 1,128.0 |  /  |  /  /  | 0.69 | 0.34 | 142 | 145 | 10.2 | 16 |  | DEAD |
-| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G1_0024__PB3_PB3F_D_R3_P2_60_2R_bracket | -5.1 [-9.1,-1.3] |  |  /  | 1,128.0 |  /  |  /  /  | 1.06 | 0.60 | 762 | 806 | 10.6 | 20 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m40_r3_t8_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -0.4 [-2.9,2.1] |  |  /  | 2,546.0 |  /  |  /  /  |  | 0.55 | 11,727 | 14,112 | 12.0 | 82 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_BE_p20__PB3_PB3F_D_R3_P2_60_2R_bracket | -0.4 [-3.0,2.3] |  |  /  | 2,490.0 |  /  |  /  /  |  | 0.35 | 6,284 | 8,407 | 13.4 | 39 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m40_r4_t8_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -0.4 [-2.8,1.9] |  |  /  | 2,534.0 |  /  |  /  /  |  | 0.70 | 13,772 | 17,332 | 12.6 | 103 | 0.56 | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m40_r2_t8_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -0.5 [-3.0,2.0] |  |  /  | 2,546.0 |  /  |  /  /  |  | 0.55 | 10,276 | 13,170 | 12.8 | 70 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_TRAILONLY_m40_t8__PB3_PB3F_D_R3_P2_60_2R_bracket | -0.5 [-3.1,2.0] |  |  /  | 2,548.0 |  /  |  /  /  |  | 0.55 | 9,610 | 12,759 | 13.3 | 65 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_BE_p15__PB3_PB3F_D_R3_P2_60_2R_bracket | -0.9 [-3.5,1.8] |  |  /  | 2,490.0 |  /  |  /  /  |  | 0.25 | 4,972 | 6,377 | 12.8 | 30 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m30_r3_t4_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.0 [-3.6,1.6] |  |  /  | 2,549.0 |  /  |  /  /  |  | 0.55 | 9,658 | 12,256 | 12.7 | 59 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m30_r3_t8_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.0 [-3.6,1.6] |  |  /  | 2,549.0 |  /  |  /  /  |  | 0.55 | 9,433 | 12,028 | 12.8 | 58 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_TRAILONLY_m30_t8__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.1 [-3.8,1.7] |  |  /  | 2,551.0 |  /  |  /  /  |  | 0.50 | 8,287 | 11,335 | 13.7 | 49 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m30_r3_t12_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.2 [-3.8,1.5] |  |  /  | 2,549.0 |  /  |  /  /  |  | 0.45 | 8,669 | 11,193 | 12.9 | 52 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m20_r4_t8_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.3 [-3.8,1.3] |  |  /  | 2,535.0 |  /  |  /  /  |  | 0.80 | 9,583 | 13,248 | 13.8 | 58 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_BE_p10__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.3 [-4.3,1.5] |  |  /  | 2,480.0 |  /  |  /  /  |  | 0.10 | 6,091 | 8,536 | 14.2 | 32 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m20_r4_t12_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.4 [-3.9,1.2] |  |  /  | 2,535.0 |  /  |  /  /  |  | 0.65 | 9,409 | 13,101 | 13.9 | 56 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m20_r2_t8_s2__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.5 [-4.1,1.4] |  |  /  | 2,556.0 |  /  |  /  /  |  | 0.15 | 5,838 | 8,187 | 14.4 | 32 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m20_r2_t8_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.5 [-4.2,1.5] |  |  /  | 2,555.0 |  /  |  /  /  |  | 0.20 | 7,039 | 9,923 | 14.4 | 37 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_TH_LIVE_JADE_m20_r3_t8_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.5 [-4.2,1.3] |  |  /  | 2,554.0 |  /  |  /  /  |  | 0.25 | 6,949 | 9,463 | 13.6 | 37 | 0.30 | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m20_r2_t4_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.5 [-4.3,1.5] |  |  /  | 2,555.0 |  /  |  /  /  |  | 0.05 | 8,363 | 11,891 | 14.7 | 42 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m20_r3_t4_s1__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.6 [-4.2,1.4] |  |  /  | 2,554.0 |  /  |  /  /  |  | 0.15 | 7,730 | 10,391 | 13.4 | 40 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m20_r3_t8_s0.5__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.6 [-4.3,1.3] |  |  /  | 2,555.0 |  /  |  /  /  |  | 0.15 | 6,126 | 8,603 | 14.4 | 33 |  | DEAD |
+| PB3_PB3F_D_R3_P2_60_2R_bracket | G | G2_m20_r3_t8_s2.0__PB3_PB3F_D_R3_P2_60_2R_bracket | -1.6 [-4.5,1.2] |  |  /  | 2,556.0 |  /  |  /  /  |  | 0.45 | 7,625 | 10,744 | 14.3 | 40 |  | DEAD |
 
 ### PRO2_PRO_ER4_EMA5 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -799,14 +799,18 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_ER4_EMA5 | D | T4D_PRO_ER4_EMA5_D1_N30_f100_m1_s30_G1 | -0.7 [-2.9,1.4] |  |  /  | 1,141.0 | 13.3 / 20 | 2,275 / 42,858 / 354,330 | 0.83 | 1.00 | 2,275 | 3,209 | 13.3 | 33 |  | DEAD |
 | PRO2_PRO_ER4_EMA5 | D | T4D_PRO_ER4_EMA5_D3_N30_f50_m1_s30_G1 | -0.8 [-2.9,0.8] |  |  /  | 1,141.0 | 11.5 / 15 | 3,795 / 35,209 / 277,156 | 0.54 | 1.00 | 3,795 | 5,742 | 16.2 | 64 |  | DEAD |
 
-### PRO2_PRO_ER4_EMA5 / G (30 cells)
+### PRO2_PRO_ER4_EMA5 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PRO2_PRO_ER4_EMA5 | G | G1_0028__PRO2_PRO_ER4_EMA5 | 0.7 [-2.0,3.3] |  |  /  | 552.0 |  /  |  /  /  | -0.43 | 0.99 | 5,493 | 10,214 | 20.7 | 139 |  | DEAD |
 | PRO2_PRO_ER4_EMA5 | G | G1_0045__PRO2_PRO_ER4_EMA5 | -0.1 [-3.1,2.9] |  |  /  | 552.0 |  /  |  /  /  | 1.72 | 0.97 | 6,649 | 12,736 | 21.0 | 170 |  | DEAD |
+| PRO2_PRO_ER4_EMA5 | G | G2_m40_r4_t8_s1__PRO2_PRO_ER4_EMA5 | -0.2 [-1.7,1.4] |  |  /  | 1,129.0 |  /  |  /  /  |  | 0.65 | 5,923 | 11,001 | 20.6 | 140 | 0.43 | DEAD |
 | PRO2_PRO_ER4_EMA5 | G | G1_0039__PRO2_PRO_ER4_EMA5 | -0.2 [-3.8,3.2] |  |  /  | 552.0 |  /  |  /  /  | 0.68 | 1.00 | 5,590 | 11,440 | 23.8 | 142 |  | DEAD |
 | PRO2_PRO_ER4_EMA5 | G | G1_0017__PRO2_PRO_ER4_EMA5 | -0.4 [-3.2,2.3] |  |  /  | 552.0 |  /  |  /  /  | 0.95 | 0.91 | 5,750 | 10,628 | 20.4 | 146 |  | DEAD |
 | PRO2_PRO_ER4_EMA5 | G | G1_0021__PRO2_PRO_ER4_EMA5 | -0.4 [-3.1,2.2] |  |  /  | 552.0 |  /  |  /  /  | 2.24 | 0.66 | 6,845 | 13,135 | 21.0 | 175 |  | DEAD |
+| PRO2_PRO_ER4_EMA5 | G | G2_m40_r2_t8_s1__PRO2_PRO_ER4_EMA5 | -0.8 [-2.7,1.1] |  |  /  | 1,126.0 |  /  |  /  /  |  | 0.65 | 4,599 | 8,857 | 23.6 | 104 |  | DEAD |
+| PRO2_PRO_ER4_EMA5 | G | G2_TRAILONLY_m40_t8__PRO2_PRO_ER4_EMA5 | -0.9 [-2.8,1.2] |  |  /  | 1,126.0 |  /  |  /  /  |  | 0.90 | 4,521 | 8,716 | 23.8 | 103 |  | DEAD |
+| PRO2_PRO_ER4_EMA5 | G | G2_m40_r3_t8_s1__PRO2_PRO_ER4_EMA5 | -0.9 [-2.9,1.0] |  |  /  | 1,126.0 |  /  |  /  /  |  | 0.80 | 4,547 | 8,687 | 23.3 | 103 |  | DEAD |
 | PRO2_PRO_ER4_EMA5 | G | G1_0036__PRO2_PRO_ER4_EMA5 | -1.0 [-4.7,2.5] |  |  /  | 552.0 |  /  |  /  /  | 1.01 | 0.95 | 5,245 | 10,627 | 23.8 | 132 |  | DEAD |
 | PRO2_PRO_ER4_EMA5 | G | G1_0016__PRO2_PRO_ER4_EMA5 | -1.1 [-4.5,2.2] |  |  /  | 552.0 |  /  |  /  /  | -0.65 | 0.87 | 3,884 | 7,189 | 22.5 | 96 |  | DEAD |
 | PRO2_PRO_ER4_EMA5 | G | G1_0008__PRO2_PRO_ER4_EMA5 | -1.2 [-4.7,2.3] |  |  /  | 552.0 |  /  |  /  /  | -2.67 | 0.83 | 2,047 | 3,011 | 23.6 | 48 |  | DEAD |
@@ -814,14 +818,10 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_ER4_EMA5 | G | G1_0004__PRO2_PRO_ER4_EMA5 | -1.3 [-4.3,1.7] |  |  /  | 552.0 |  /  |  /  /  | -2.09 | 0.66 | 2,490 | 4,005 | 21.0 | 59 |  | DEAD |
 | PRO2_PRO_ER4_EMA5 | G | G1_0020__PRO2_PRO_ER4_EMA5 | -1.3 [-4.7,1.8] |  |  /  | 552.0 |  /  |  /  /  | 1.09 | 0.87 | 5,138 | 10,087 | 22.8 | 130 |  | DEAD |
 | PRO2_PRO_ER4_EMA5 | G | G1_0042__PRO2_PRO_ER4_EMA5 | -1.4 [-5.0,2.2] |  |  /  | 552.0 |  /  |  /  /  | 0.62 | 0.89 | 4,661 | 9,096 | 23.2 | 117 |  | DEAD |
-| PRO2_PRO_ER4_EMA5 | G | G1_0031__PRO2_PRO_ER4_EMA5 | -1.6 [-5.3,2.0] |  |  /  | 552.0 |  /  |  /  /  | -0.78 | 0.86 | 3,368 | 6,114 | 23.4 | 83 |  | DEAD |
-| PRO2_PRO_ER4_EMA5 | G | G1_0013__PRO2_PRO_ER4_EMA5 | -1.6 [-5.2,2.1] |  |  /  | 552.0 |  /  |  /  /  | -1.58 | 0.77 | 2,667 | 4,488 | 24.9 | 64 |  | DEAD |
-| PRO2_PRO_ER4_EMA5 | G | G1_0041__PRO2_PRO_ER4_EMA5 | -1.7 [-5.5,2.1] |  |  /  | 552.0 |  /  |  /  /  | 1.04 | 0.90 | 4,783 | 9,527 | 23.9 | 120 |  | DEAD |
-| PRO2_PRO_ER4_EMA5 | G | G1_0027__PRO2_PRO_ER4_EMA5 | -1.7 [-5.7,2.2] |  |  /  | 552.0 |  /  |  /  /  | 0.08 | 0.96 | 3,951 | 7,653 | 24.6 | 98 |  | DEAD |
-| PRO2_PRO_ER4_EMA5 | G | G1_0024__PRO2_PRO_ER4_EMA5 | -1.8 [-5.7,2.2] |  |  /  | 552.0 |  /  |  /  /  | 0.01 | 0.94 | 3,847 | 7,405 | 24.7 | 95 |  | DEAD |
-| PRO2_PRO_ER4_EMA5 | G | G1_0044__PRO2_PRO_ER4_EMA5 | -1.8 [-5.6,2.0] |  |  /  | 552.0 |  /  |  /  /  | 0.68 | 0.91 | 4,395 | 8,550 | 23.6 | 110 |  | DEAD |
-| PRO2_PRO_ER4_EMA5 | G | G1_0035__PRO2_PRO_ER4_EMA5 | -1.8 [-4.9,1.2] |  |  /  | 552.0 |  /  |  /  /  | 0.70 | 0.56 | 4,344 | 8,005 | 21.5 | 109 |  | DEAD |
-| PRO2_PRO_ER4_EMA5 | G | G1_0049__PRO2_PRO_ER4_EMA5 | -1.8 [-5.3,1.5] |  |  /  | 552.0 |  /  |  /  /  | -2.02 | 0.65 | 2,204 | 3,407 | 21.5 | 52 |  | DEAD |
+| PRO2_PRO_ER4_EMA5 | G | G2_m20_r4_t8_s1__PRO2_PRO_ER4_EMA5 | -1.4 [-3.7,0.9] |  |  /  | 1,129.0 |  /  |  /  /  |  | 0.75 | 3,168 | 5,375 | 22.8 | 67 |  | DEAD |
+| PRO2_PRO_ER4_EMA5 | G | G2_m20_r4_t12_s1__PRO2_PRO_ER4_EMA5 | -1.5 [-3.7,0.9] |  |  /  | 1,129.0 |  /  |  /  /  |  | 0.70 | 3,142 | 5,315 | 22.8 | 67 |  | DEAD |
+| PRO2_PRO_ER4_EMA5 | G | G2_m10_r4_t8_s1__PRO2_PRO_ER4_EMA5 | -1.6 [-4.1,1.1] |  |  /  | 1,129.0 |  /  |  /  /  |  | 0.90 | 2,560 | 3,889 | 23.6 | 51 |  | DEAD |
+| PRO2_PRO_ER4_EMA5 | G | G2_BE_p20__PRO2_PRO_ER4_EMA5 | -1.6 [-3.8,0.8] |  |  /  | 1,128.0 |  /  |  /  /  |  | 0.50 | 2,879 | 4,663 | 25.4 | 59 |  | DEAD |
 
 ### PRO2_PRO_ER5_EMA5 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -871,7 +871,7 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_ER5_EMA5 | D | T4D_PRO_ER5_EMA5_D3_N30_f50_m2_s15_G1 | -1.0 [-3.9,1.8] |  |  /  | 458.0 | 11.6 / 15 | 3,789 / 22,104 / 172,551 | 0.32 | 1.00 | 3,789 | 7,856 | 26.1 | 160 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | D | T4D_PRO_ER5_EMA5_D2_N30_f50_m1_s30_G3 | -1.5 [-5.5,2.5] |  |  /  | 451.0 | 11.2 / 15 | 3,599 / 20,474 / 143,269 | -2.57 | 1.00 | 3,599 | 7,937 | 28.1 | 152 |  | DEAD |
 
-### PRO2_PRO_ER5_EMA5 / G (30 cells)
+### PRO2_PRO_ER5_EMA5 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PRO2_PRO_ER5_EMA5 | G | G1_0028__PRO2_PRO_ER5_EMA5 | 1.1 [-2.8,4.9] |  |  /  | 226.0 |  /  |  /  /  | -2.10 | 1.00 | 4,416 | 12,068 | 30.8 | 283 |  | DEAD |
@@ -880,20 +880,20 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_ER5_EMA5 | G | G1_0045__PRO2_PRO_ER5_EMA5 | -0.4 [-4.8,4.1] |  |  /  | 226.0 |  /  |  /  /  | 0.76 | 0.99 | 4,852 | 14,071 | 32.7 |  |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0020__PRO2_PRO_ER5_EMA5 | -1.3 [-6.0,3.2] |  |  /  | 226.0 |  /  |  /  /  | 0.61 | 0.99 | 4,520 | 13,067 | 32.9 | 289 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0017__PRO2_PRO_ER5_EMA5 | -1.4 [-5.7,2.6] |  |  /  | 226.0 |  /  |  /  /  | 0.63 | 0.93 | 4,510 | 12,235 | 30.5 | 289 |  | DEAD |
+| PRO2_PRO_ER5_EMA5 | G | G2_m40_r4_t8_s1__PRO2_PRO_ER5_EMA5 | -1.4 [-3.5,0.8] |  |  /  | 454.0 |  /  |  /  /  |  | 0.90 | 3,378 | 8,829 | 31.0 | 205 | 0.39 | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0016__PRO2_PRO_ER5_EMA5 | -1.7 [-6.8,3.3] |  |  /  | 226.0 |  /  |  /  /  | -2.43 | 0.97 | 3,416 | 10,059 | 35.9 | 217 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_TH_LIVE_ST__PRO2_PRO_ER5_EMA5 | -2.1 [-7.4,3.1] |  |  /  | 226.0 |  /  |  /  /  | -0.61 | 0.99 | 3,880 | 11,200 | 33.8 | 247 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0035__PRO2_PRO_ER5_EMA5 | -2.4 [-7.3,2.3] |  |  /  | 226.0 |  /  |  /  /  | -0.84 | 0.93 | 3,707 | 10,030 | 31.4 | 236 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0042__PRO2_PRO_ER5_EMA5 | -2.5 [-8.2,3.1] |  |  /  | 226.0 |  /  |  /  /  | -0.66 | 1.00 | 3,742 | 11,280 | 36.1 | 238 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0032__PRO2_PRO_ER5_EMA5 | -2.9 [-8.3,2.4] |  |  /  | 226.0 |  /  |  /  /  | 1.46 | 0.96 | 4,295 | 13,125 | 35.6 | 275 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0031__PRO2_PRO_ER5_EMA5 | -3.0 [-8.8,2.6] |  |  /  | 226.0 |  /  |  /  /  | -2.98 | 1.00 | 2,810 | 7,799 | 35.3 | 177 |  | DEAD |
+| PRO2_PRO_ER5_EMA5 | G | G2_m40_r3_t8_s1__PRO2_PRO_ER5_EMA5 | -3.1 [-5.8,-0.4] |  |  /  | 454.0 |  /  |  /  /  |  | 1.00 | 2,536 | 6,599 | 34.4 | 150 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0036__PRO2_PRO_ER5_EMA5 | -3.2 [-8.9,2.4] |  |  /  | 226.0 |  /  |  /  /  | -0.06 | 0.98 | 3,712 | 11,272 | 36.6 | 237 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0044__PRO2_PRO_ER5_EMA5 | -3.2 [-9.1,2.6] |  |  /  | 226.0 |  /  |  /  /  | -1.02 | 1.00 | 3,388 | 10,200 | 37.2 | 215 |  | DEAD |
+| PRO2_PRO_ER5_EMA5 | G | G2_TRAILONLY_m40_t8__PRO2_PRO_ER5_EMA5 | -3.2 [-5.9,-0.4] |  |  /  | 454.0 |  /  |  /  /  |  | 0.90 | 2,425 | 6,311 | 35.3 | 143 |  | DEAD |
+| PRO2_PRO_ER5_EMA5 | G | G2_m40_r2_t8_s1__PRO2_PRO_ER5_EMA5 | -3.3 [-6.0,-0.5] |  |  /  | 454.0 |  /  |  /  /  |  | 0.95 | 2,418 | 6,263 | 35.1 | 143 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_0039__PRO2_PRO_ER5_EMA5 | -3.4 [-9.1,2.1] |  |  /  | 226.0 |  /  |  /  /  | -0.44 | 0.96 | 3,499 | 10,134 | 34.9 | 223 |  | DEAD |
 | PRO2_PRO_ER5_EMA5 | G | G1_TH_LIVE_HM__PRO2_PRO_ER5_EMA5 | -3.4 [-9.1,2.2] |  |  /  | 226.0 |  /  |  /  /  | -2.58 | 0.91 | 2,895 | 8,171 | 35.8 | 183 |  | DEAD |
-| PRO2_PRO_ER5_EMA5 | G | G1_0018__PRO2_PRO_ER5_EMA5 | -3.7 [-9.6,2.2] |  |  /  | 226.0 |  /  |  /  /  | -3.38 | 0.78 | 2,641 | 7,548 | 38.2 | 166 |  | DEAD |
-| PRO2_PRO_ER5_EMA5 | G | G1_0041__PRO2_PRO_ER5_EMA5 | -3.8 [-9.7,2.0] |  |  /  | 226.0 |  /  |  /  /  | -1.05 | 0.99 | 3,193 | 9,406 | 36.8 | 202 |  | DEAD |
-| PRO2_PRO_ER5_EMA5 | G | G1_0024__PRO2_PRO_ER5_EMA5 | -3.8 [-9.9,2.2] |  |  /  | 226.0 |  /  |  /  /  | -1.58 | 1.00 | 3,017 | 8,957 | 38.0 | 191 |  | DEAD |
-| PRO2_PRO_ER5_EMA5 | G | G1_0003__PRO2_PRO_ER5_EMA5 | -5.4 [-10.8,-0.0] |  |  /  | 226.0 |  /  |  /  /  | -3.41 | 0.38 | 1,989 | 4,647 | 31.7 | 124 |  | DEAD |
 
 ### PRO2_PRO_KAL_k0.0 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -943,7 +943,7 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_KAL_k0.0 | D | T4D_PRO_KAL_k0.0_D2_N30_f100_m1_s30_G1 | -1.2 [-2.0,-0.3] |  |  /  | 7,897.0 | 10.9 / 20 | -3,555 / 60,620 / 820,809 | -1.11 | 1.00 | -3,555 | -2,972 | 9.5 |  |  | DEAD |
 | PRO2_PRO_KAL_k0.0 | D | T4D_PRO_KAL_k0.0_D2_SG_f50_m1_s30_G1 | -1.3 [-2.3,-0.3] |  |  /  | 7,156.0 | 10.5 / 15 | -13,403 / 59,928 / 2,146,018 | -1.60 | 1.00 | -13,403 | -12,496 | 9.6 |  |  | DEAD |
 
-### PRO2_PRO_KAL_k0.0 / G (30 cells)
+### PRO2_PRO_KAL_k0.0 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PRO2_PRO_KAL_k0.0 | G | G1_0017__PRO2_PRO_KAL_k0.0 | 0.1 [-0.9,1.1] |  |  /  | 3,895.0 |  /  |  /  /  | 0.22 | 0.95 | 11,972 | 9,440 | 7.9 | 70 |  | DEAD |
@@ -957,6 +957,7 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_KAL_k0.0 | G | G1_0013__PRO2_PRO_KAL_k0.0 | -0.2 [-1.4,0.9] |  |  /  | 3,895.0 |  /  |  /  /  | -1.10 | 0.70 | 435 | 382 | 8.8 | 16 |  | DEAD |
 | PRO2_PRO_KAL_k0.0 | G | G1_0042__PRO2_PRO_KAL_k0.0 | -0.3 [-1.6,1.1] |  |  /  | 3,895.0 |  /  |  /  /  | -0.36 | 0.81 | 4,919 | 3,885 | 7.9 | 30 |  | DEAD |
 | PRO2_PRO_KAL_k0.0 | G | G1_0004__PRO2_PRO_KAL_k0.0 | -0.3 [-1.3,0.7] |  |  /  | 3,895.0 |  /  |  /  /  | -0.47 | 0.60 | 4,642 | 3,829 | 8.2 | 29 |  | DEAD |
+| PRO2_PRO_KAL_k0.0 | G | G2_m40_r4_t8_s1__PRO2_PRO_KAL_k0.0 | -0.3 [-0.9,0.3] |  |  /  | 7,881.0 |  /  |  /  /  |  | 0.10 | 3,868 | 4,009 | 10.4 | 19 | -0.45 | DEAD |
 | PRO2_PRO_KAL_k0.0 | G | G1_TH_LIVE_ST__PRO2_PRO_KAL_k0.0 | -0.4 [-1.7,1.0] |  |  /  | 3,895.0 |  /  |  /  /  | -0.02 | 0.72 | 7,082 | 5,625 | 7.9 | 40 |  | DEAD |
 | PRO2_PRO_KAL_k0.0 | G | G1_0044__PRO2_PRO_KAL_k0.0 | -0.4 [-1.8,1.0] |  |  /  | 3,895.0 |  /  |  /  /  | -0.40 | 0.75 | 3,860 | 3,022 | 7.8 | 26 |  | DEAD |
 | PRO2_PRO_KAL_k0.0 | G | G1_0039__PRO2_PRO_KAL_k0.0 | -0.4 [-1.7,1.0] |  |  /  | 3,895.0 |  /  |  /  /  | -0.44 | 0.62 | 3,602 | 2,914 | 8.1 | 25 |  | DEAD |
@@ -965,7 +966,6 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_KAL_k0.0 | G | G1_TH_LIVE_HM__PRO2_PRO_KAL_k0.0 | -0.5 [-1.9,1.0] |  |  /  | 3,895.0 |  /  |  /  /  | -0.27 | 0.66 | 4,339 | 3,432 | 7.9 | 28 |  | DEAD |
 | PRO2_PRO_KAL_k0.0 | G | G1_0041__PRO2_PRO_KAL_k0.0 | -0.5 [-1.9,0.9] |  |  /  | 3,895.0 |  /  |  /  /  | -0.21 | 0.62 | 4,642 | 3,743 | 8.1 | 29 |  | DEAD |
 | PRO2_PRO_KAL_k0.0 | G | G1_0016__PRO2_PRO_KAL_k0.0 | -0.5 [-1.8,0.7] |  |  /  | 3,895.0 |  /  |  /  /  | -0.23 | 0.68 | 4,080 | 3,126 | 7.7 | 27 |  | DEAD |
-| PRO2_PRO_KAL_k0.0 | G | G1_0028__PRO2_PRO_KAL_k0.0 | -0.6 [-1.8,0.6] |  |  /  | 3,895.0 |  /  |  /  /  | 0.21 | 0.30 | 7,793 | 6,072 | 7.8 | 43 |  | DEAD |
 
 ### PRO2_PRO_RIB1m_q30 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -1015,29 +1015,29 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_RIB1m_q30 | D | T4D_PRO_RIB1m_q30_D2_PB_f50_m1_s30_G1 | -1.2 [-2.4,0.1] |  |  /  | 4,478.0 | 10.7 / 15 | 4,625 / 49,496 / 402,232 | -1.91 | 1.00 | 4,625 | 5,303 | 11.5 | 21 |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | D | T4D_PRO_RIB1m_q30_D1_N15_f50_m1_s30_G1 | -1.3 [-2.3,-0.3] |  |  /  | 4,520.0 | 13.3 / 15 | 8,761 / 61,217 / 500,614 | -1.63 | 1.00 | 8,761 | 7,658 | 9.4 | 31 |  | DEAD |
 
-### PRO2_PRO_RIB1m_q30 / G (30 cells)
+### PRO2_PRO_RIB1m_q30 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| PRO2_PRO_RIB1m_q30 | G | G2_m40_r4_t8_s1__PRO2_PRO_RIB1m_q30 | -0.1 [-1.0,0.7] |  |  /  | 4,439.0 |  /  |  /  /  |  | 0.70 | 7,785 | 7,919 | 10.2 | 39 |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | G | G1_0017__PRO2_PRO_RIB1m_q30 | -0.2 [-1.6,1.2] |  |  /  | 2,057.0 |  /  |  /  /  | -0.62 | 0.99 | 4,764 | 5,351 | 11.2 | 36 |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | G | G1_0004__PRO2_PRO_RIB1m_q30 | -0.3 [-1.8,1.2] |  |  /  | 2,057.0 |  /  |  /  /  | -1.40 | 0.91 | 2,064 | 2,361 | 11.4 | 22 |  | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_m40_r3_t8_s1__PRO2_PRO_RIB1m_q30 | -0.6 [-1.6,0.4] |  |  /  | 4,379.0 |  /  |  /  /  |  | 0.50 | 6,898 | 7,274 | 10.5 | 35 |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | G | G1_0003__PRO2_PRO_RIB1m_q30 | -0.6 [-2.3,1.1] |  |  /  | 2,057.0 |  /  |  /  /  | -1.75 | 0.91 | -375 | -467 | 12.5 |  |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | G | G1_0013__PRO2_PRO_RIB1m_q30 | -0.6 [-2.3,1.1] |  |  /  | 2,057.0 |  /  |  /  /  | -1.26 | 0.90 | 1,502 | 2,087 | 13.9 | 20 |  | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_m40_r2_t8_s1__PRO2_PRO_RIB1m_q30 | -0.7 [-1.7,0.3] |  |  /  | 4,379.0 |  /  |  /  /  |  | 0.35 | 5,511 | 5,701 | 10.3 | 29 |  | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_TRAILONLY_m40_t8__PRO2_PRO_RIB1m_q30 | -0.8 [-1.8,0.2] |  |  /  | 4,379.0 |  /  |  /  /  |  | 0.55 | 4,885 | 5,113 | 10.5 | 27 |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | G | G1_0021__PRO2_PRO_RIB1m_q30 | -0.8 [-2.3,0.5] |  |  /  | 2,057.0 |  /  |  /  /  | -0.24 | 0.59 | 4,427 | 4,880 | 11.0 | 34 |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | G | G1_0008__PRO2_PRO_RIB1m_q30 | -0.9 [-2.6,0.8] |  |  /  | 2,057.0 |  /  |  /  /  | -1.53 | 0.82 | 14 | 18 | 12.9 | 15 |  | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_m20_r4_t12_s1__PRO2_PRO_RIB1m_q30 | -0.9 [-2.2,0.4] |  |  /  | 4,444.0 |  /  |  /  /  |  | 0.95 | 3,045 | 3,499 | 11.5 | 21 | -0.43 | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_m20_r4_t8_s1__PRO2_PRO_RIB1m_q30 | -0.9 [-2.2,0.3] |  |  /  | 4,444.0 |  /  |  /  /  |  | 1.00 | 3,711 | 4,229 | 11.4 | 22 |  | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_m30_r3_t4_s1__PRO2_PRO_RIB1m_q30 | -1.0 [-2.3,0.2] |  |  /  | 4,434.0 |  /  |  /  /  |  | 0.90 | 4,969 | 5,915 | 11.9 | 26 |  | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_m30_r3_t8_s1__PRO2_PRO_RIB1m_q30 | -1.1 [-2.4,0.0] |  |  /  | 4,434.0 |  /  |  /  /  |  | 0.60 | 3,608 | 4,244 | 11.8 | 23 |  | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_m30_r3_t12_s1__PRO2_PRO_RIB1m_q30 | -1.2 [-2.3,-0.0] |  |  /  | 4,431.0 |  /  |  /  /  |  | 0.60 | 4,907 | 5,698 | 11.6 | 26 |  | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_BE_p20__PRO2_PRO_RIB1m_q30 | -1.2 [-2.4,-0.0] |  |  /  | 4,439.0 |  /  |  /  /  |  | 0.95 | 4,848 | 5,603 | 11.6 | 25 |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | G | G1_0028__PRO2_PRO_RIB1m_q30 | -1.2 [-2.8,0.4] |  |  /  | 2,057.0 |  /  |  /  /  | 0.57 | 0.28 | 6,269 | 7,073 | 11.3 | 46 |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | G | G1_0016__PRO2_PRO_RIB1m_q30 | -1.3 [-3.0,0.6] |  |  /  | 2,057.0 |  /  |  /  /  | -1.82 | 0.84 | -2,646 | -3,111 | 11.8 |  |  | DEAD |
+| PRO2_PRO_RIB1m_q30 | G | G2_m10_r4_t8_s1__PRO2_PRO_RIB1m_q30 | -1.3 [-2.6,0.1] |  |  /  | 4,440.0 |  /  |  /  /  |  | 0.85 | -1,097 | -1,485 | 13.5 |  |  | DEAD |
 | PRO2_PRO_RIB1m_q30 | G | G1_0020__PRO2_PRO_RIB1m_q30 | -1.4 [-3.1,0.4] |  |  /  | 2,057.0 |  /  |  /  /  | -0.47 | 0.32 | 2,312 | 2,571 | 11.1 | 23 |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_0049__PRO2_PRO_RIB1m_q30 | -1.4 [-3.2,0.4] |  |  /  | 2,057.0 |  /  |  /  /  | -0.26 | 0.53 | 2,686 | 3,256 | 12.1 | 25 |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_0042__PRO2_PRO_RIB1m_q30 | -1.5 [-3.4,0.4] |  |  /  | 2,057.0 |  /  |  /  /  | -1.23 | 0.34 | -676 | -827 | 12.2 |  |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_0044__PRO2_PRO_RIB1m_q30 | -1.5 [-3.5,0.5] |  |  /  | 2,057.0 |  /  |  /  /  | -1.29 | 0.44 | -968 | -1,199 | 12.4 |  |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_0041__PRO2_PRO_RIB1m_q30 | -1.5 [-3.5,0.5] |  |  /  | 2,057.0 |  /  |  /  /  | -1.01 | 0.37 | 27 | 34 | 12.5 | 15 |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_0039__PRO2_PRO_RIB1m_q30 | -1.5 [-3.4,0.4] |  |  /  | 2,057.0 |  /  |  /  /  | -0.71 | 0.27 | 1,050 | 1,313 | 12.5 | 18 |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_0018__PRO2_PRO_RIB1m_q30 | -1.6 [-3.7,0.6] |  |  /  | 2,057.0 |  /  |  /  /  | -0.79 | 0.82 | 625 | 781 | 12.5 | 17 |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_TH_LIVE_ST__PRO2_PRO_RIB1m_q30 | -1.6 [-3.5,0.3] |  |  /  | 2,057.0 |  /  |  /  /  | -0.72 | 0.23 | 909 | 1,105 | 12.2 | 18 |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_TH_LIVE_HM__PRO2_PRO_RIB1m_q30 | -1.6 [-3.6,0.4] |  |  /  | 2,057.0 |  /  |  /  /  | -0.68 | 0.65 | 904 | 1,126 | 12.5 | 18 |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_0031__PRO2_PRO_RIB1m_q30 | -1.7 [-3.6,0.3] |  |  /  | 2,057.0 |  /  |  /  /  | -1.16 | 0.22 | -759 | -988 | 13.0 |  |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_0045__PRO2_PRO_RIB1m_q30 | -1.7 [-3.4,0.0] |  |  /  | 2,057.0 |  /  |  /  /  | -0.54 | 0.08 | 936 | 1,062 | 11.3 | 18 |  | DEAD |
-| PRO2_PRO_RIB1m_q30 | G | G1_0036__PRO2_PRO_RIB1m_q30 | -1.7 [-3.7,0.2] |  |  /  | 2,057.0 |  /  |  /  /  | -0.59 | 0.17 | 762 | 954 | 12.5 | 17 |  | DEAD |
 
 ### PRO2_PRO_Z20_t1.0 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -1087,7 +1087,7 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_Z20_t1.0 | D | T4D_PRO_Z20_t1.0_D2_PB_f50_m1_s30_G1 | -1.2 [-2.1,-0.2] |  |  /  | 7,939.0 | 10.7 / 15 | 72 / 57,389 / 756,850 | -1.08 | 1.00 | 72 | 773 | 10.1 | 15 |  | DEAD |
 | PRO2_PRO_Z20_t1.0 | D | T4D_PRO_Z20_t1.0_D1_N45_f50_m1_s30_G1 | -1.2 [-1.6,-0.8] |  |  /  | 8,689.0 | 10.9 / 15 | 8,923 / 58,834 / 501,514 | -1.37 | 1.00 | 8,923 | 9,161 | 9.8 | 25 |  | DEAD |
 
-### PRO2_PRO_Z20_t1.0 / G (30 cells)
+### PRO2_PRO_Z20_t1.0 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PRO2_PRO_Z20_t1.0 | G | G1_0039__PRO2_PRO_Z20_t1.0 | 0.2 [-1.2,1.5] |  |  /  | 3,805.0 |  /  |  /  /  | -1.66 | 0.97 | 3,004 | 2,495 | 8.3 | 24 |  | DEAD |
@@ -1105,11 +1105,11 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_Z20_t1.0 | G | G1_0027__PRO2_PRO_Z20_t1.0 | -0.2 [-1.7,1.2] |  |  /  | 3,805.0 |  /  |  /  /  | -1.32 | 0.75 | 2,717 | 2,239 | 8.2 | 23 |  | DEAD |
 | PRO2_PRO_Z20_t1.0 | G | G1_0020__PRO2_PRO_Z20_t1.0 | -0.3 [-1.5,1.0] |  |  /  | 3,805.0 |  /  |  /  /  | -0.95 | 0.49 | 5,676 | 4,891 | 8.6 | 34 |  | DEAD |
 | PRO2_PRO_Z20_t1.0 | G | G1_0016__PRO2_PRO_Z20_t1.0 | -0.3 [-1.6,1.0] |  |  /  | 3,805.0 |  /  |  /  /  | -0.69 | 0.97 | 7,321 | 6,407 | 8.8 | 42 |  | DEAD |
+| PRO2_PRO_Z20_t1.0 | G | G2_m40_r4_t8_s1__PRO2_PRO_Z20_t1.0 | -0.3 [-0.9,0.4] |  |  /  | 8,033.0 |  /  |  /  /  |  | 0.55 | 13,408 | 13,006 | 9.7 | 34 | 0.05 | DEAD |
 | PRO2_PRO_Z20_t1.0 | G | G1_0013__PRO2_PRO_Z20_t1.0 | -0.4 [-1.6,0.8] |  |  /  | 3,805.0 |  /  |  /  /  | -1.19 | 0.88 | 3,711 | 3,459 | 9.3 | 26 |  | DEAD |
 | PRO2_PRO_Z20_t1.0 | G | G1_0032__PRO2_PRO_Z20_t1.0 | -0.4 [-1.8,0.9] |  |  /  | 3,805.0 |  /  |  /  /  | -1.22 | 0.52 | 2,589 | 2,177 | 8.4 | 22 |  | DEAD |
 | PRO2_PRO_Z20_t1.0 | G | G1_0003__PRO2_PRO_Z20_t1.0 | -0.5 [-1.7,0.7] |  |  /  | 3,805.0 |  /  |  /  /  | -1.21 | 0.66 | 2,346 | 2,232 | 9.5 | 21 |  | DEAD |
 | PRO2_PRO_Z20_t1.0 | G | G1_0028__PRO2_PRO_Z20_t1.0 | -0.5 [-1.7,0.7] |  |  /  | 3,805.0 |  /  |  /  /  | 0.00 | 0.28 | 11,197 | 9,429 | 8.4 | 67 |  | DEAD |
-| PRO2_PRO_Z20_t1.0 | G | G1_0015__PRO2_PRO_Z20_t1.0 | -0.8 [-2.3,0.7] |  |  /  | 3,805.0 |  /  |  /  /  | -1.16 | 0.92 | 960 | 747 | 7.8 | 17 |  | DEAD |
 
 ### PRO2_PRO_Z60_t1.0 / A (28 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
@@ -1159,17 +1159,19 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_Z60_t1.0 | D | T4D_PRO_Z60_t1.0_D1_N30_f50_m1_s30_G1 | -1.4 [-2.1,-0.8] |  |  /  | 6,997.0 | 11.9 / 15 | 1,676 / 56,379 / 712,826 | -1.30 | 1.00 | 1,676 | 1,048 | 10.2 | 16 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | D | T4D_PRO_Z60_t1.0_D1_N30_f50_m2_s15_G1 | -1.4 [-2.1,-0.8] |  |  /  | 6,997.0 | 11.9 / 15 | 1,676 / 56,379 / 712,826 | -1.30 | 1.00 | 1,676 | 1,048 | 10.2 | 16 |  | DEAD |
 
-### PRO2_PRO_Z60_t1.0 / G (30 cells)
+### PRO2_PRO_Z60_t1.0 / G (60 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | PRO2_PRO_Z60_t1.0 | G | G1_0013__PRO2_PRO_Z60_t1.0 | -0.2 [-1.6,1.1] |  |  /  | 3,106.0 |  /  |  /  /  | -1.27 | 0.91 | 1,329 | 1,421 | 10.7 | 19 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0039__PRO2_PRO_Z60_t1.0 | -0.3 [-1.8,1.3] |  |  /  | 3,106.0 |  /  |  /  /  | -0.70 | 0.99 | 3,892 | 3,726 | 9.6 | 27 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0045__PRO2_PRO_Z60_t1.0 | -0.3 [-1.7,1.1] |  |  /  | 3,106.0 |  /  |  /  /  | -0.28 | 0.94 | 6,464 | 5,841 | 9.0 | 39 |  | DEAD |
+| PRO2_PRO_Z60_t1.0 | G | G2_m40_r4_t8_s1__PRO2_PRO_Z60_t1.0 | -0.3 [-1.0,0.4] |  |  /  | 6,803.0 |  /  |  /  /  |  | 0.35 | 4,637 | 4,929 | 10.6 | 22 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0042__PRO2_PRO_Z60_t1.0 | -0.4 [-2.0,1.1] |  |  /  | 3,106.0 |  /  |  /  /  | -0.57 | 0.98 | 3,811 | 3,626 | 9.5 | 27 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0035__PRO2_PRO_Z60_t1.0 | -0.5 [-1.9,0.9] |  |  /  | 3,106.0 |  /  |  /  /  | -0.04 | 0.85 | 6,887 | 6,249 | 9.1 | 41 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0008__PRO2_PRO_Z60_t1.0 | -0.5 [-1.9,0.9] |  |  /  | 3,106.0 |  /  |  /  /  | -1.25 | 0.71 | -139 | -146 | 10.5 |  |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0021__PRO2_PRO_Z60_t1.0 | -0.5 [-1.7,0.7] |  |  /  | 3,106.0 |  /  |  /  /  | -0.03 | 0.80 | 6,919 | 6,546 | 9.5 | 41 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0036__PRO2_PRO_Z60_t1.0 | -0.5 [-2.2,1.1] |  |  /  | 3,106.0 |  /  |  /  /  | -0.70 | 0.98 | 2,465 | 2,395 | 9.7 | 22 |  | DEAD |
+| PRO2_PRO_Z60_t1.0 | G | G2_m40_r3_t8_s1__PRO2_PRO_Z60_t1.0 | -0.6 [-1.4,0.1] |  |  /  | 6,743.0 |  /  |  /  /  |  | 0.55 | 3,776 | 4,306 | 11.4 | 20 | -0.44 | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_TH_LIVE_ST__PRO2_PRO_Z60_t1.0 | -0.6 [-2.2,0.9] |  |  /  | 3,106.0 |  /  |  /  /  | -0.14 | 0.91 | 5,400 | 4,976 | 9.2 | 34 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0049__PRO2_PRO_Z60_t1.0 | -0.6 [-2.2,0.9] |  |  /  | 3,106.0 |  /  |  /  /  | -0.91 | 0.78 | 591 | 544 | 9.2 | 16 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0020__PRO2_PRO_Z60_t1.0 | -0.7 [-2.1,0.8] |  |  /  | 3,106.0 |  /  |  /  /  | -0.16 | 0.81 | 5,676 | 5,279 | 9.3 | 35 |  | DEAD |
@@ -1177,11 +1179,9 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | PRO2_PRO_Z60_t1.0 | G | G1_0028__PRO2_PRO_Z60_t1.0 | -0.7 [-2.1,0.6] |  |  /  | 3,106.0 |  /  |  /  /  | 0.18 | 0.64 | 7,209 | 6,330 | 8.8 | 42 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_TH_LIVE_HM__PRO2_PRO_Z60_t1.0 | -0.8 [-2.4,0.9] |  |  /  | 3,106.0 |  /  |  /  /  | -0.65 | 0.78 | 1,546 | 1,441 | 9.3 | 19 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0031__PRO2_PRO_Z60_t1.0 | -0.8 [-2.4,0.8] |  |  /  | 3,106.0 |  /  |  /  /  | -0.39 | 0.88 | 3,768 | 3,946 | 10.5 | 27 |  | DEAD |
+| PRO2_PRO_Z60_t1.0 | G | G2_m40_r2_t8_s1__PRO2_PRO_Z60_t1.0 | -0.8 [-1.6,-0.0] |  |  /  | 6,739.0 |  /  |  /  /  |  | 0.35 | 1,901 | 2,133 | 11.2 | 17 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0017__PRO2_PRO_Z60_t1.0 | -0.9 [-2.1,0.3] |  |  /  | 3,106.0 |  /  |  /  /  | -0.22 | 0.63 | 4,134 | 3,976 | 9.6 | 28 |  | DEAD |
 | PRO2_PRO_Z60_t1.0 | G | G1_0041__PRO2_PRO_Z60_t1.0 | -0.9 [-2.5,0.7] |  |  /  | 3,106.0 |  /  |  /  /  | -0.64 | 0.82 | 1,411 | 1,314 | 9.3 | 19 |  | DEAD |
-| PRO2_PRO_Z60_t1.0 | G | G1_0003__PRO2_PRO_Z60_t1.0 | -0.9 [-2.3,0.4] |  |  /  | 3,106.0 |  /  |  /  /  | -0.89 | 0.23 | -414 | -396 | 9.6 |  |  | DEAD |
-| PRO2_PRO_Z60_t1.0 | G | G1_0018__PRO2_PRO_Z60_t1.0 | -1.0 [-2.8,0.7] |  |  /  | 3,106.0 |  /  |  /  /  | -0.91 | 0.68 | -963 | -920 | 9.6 |  |  | DEAD |
-| PRO2_PRO_Z60_t1.0 | G | G1_0044__PRO2_PRO_Z60_t1.0 | -1.1 [-2.7,0.6] |  |  /  | 3,106.0 |  /  |  /  /  | -0.60 | 0.71 | 830 | 791 | 9.5 | 17 |  | DEAD |
 
 ### SM / A (2 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
