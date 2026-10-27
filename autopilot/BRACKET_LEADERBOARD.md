@@ -1,12 +1,12 @@
 # BRACKET LEADERBOARD (T-BRACKET-PM, D3BL)
-Updated 2026-10-26T20:39Z. Rows files: DS3_TBRACKET_G1.json, DS3_TBRACKET_G2.json, DS3_TBRACKET_G3.json, DS3_TPYRAMID.json
+Updated 2026-10-27T05:19Z. Rows files: DS3_TBRACKET.json, DS3_TBRACKET_G1.json, DS3_TBRACKET_G2.json, DS3_TBRACKET_G3.json, DS3_TPYRAMID.json
 
 Brackets: 0 PASS, 0 CANDIDATE. Best shape: none. Near-target: not scored, diagnostic ratio n/a. Scale-out: not scored. Pyramiding risk-constant: 215 cells scored, 0 PASS/CANDIDATE (all DEAD). Combined best on n/a: +$n/a/wk, maxDD delta n/a, CI [n/a]. Trade Health: 5088 cells scored, 0 PASS/CANDIDATE (cut EV: see rows).
 
 Scope: tier 1 only (ST, HM, KB, SM, EM); other registry entries paused; sections B and C paused.
 ## Multiplicity
-Cells scored across A-D, E, G: 5303 (per section {'G': 5088, 'D': 215}). Verdicts: {'DEAD': 5303}.
-Cells with paired CI lower bound >0: 2; expected by chance at one-sided 2.5% over 5303 cells: 132.6. If observed is near this the best cell is best-of-N noise.
+Cells scored across A-D, E, G: 5309 (per section {'A': 6, 'G': 5088, 'D': 215}). Verdicts: {'PENDING_DIRECT': 6, 'DEAD': 5303}.
+Cells with paired CI lower bound >0: 2; expected by chance at one-sided 2.5% over 5309 cells: 132.7. If observed is near this the best cell is best-of-N noise.
 Best-of-N null: each section's best cell is judged against the max of N paired deltas drawn at zero effect (use the per-owner placebo ranks in the rows; a cell with placebo rank <0.95 is not credited).
 
 ## PASS / CANDIDATE
@@ -19,6 +19,12 @@ Best-of-N null: each section's best cell is judged against the max of N paired d
 Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD reference; sweep cost on extra lots).
 
 ## Top 20 per entry family and section (by paired delta)
+### EM / A (2 cells)
+| entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| EM | A | EM_t30_s60 |  [,] |  |  /  |  |  /  | 4,530 / 25,573 / 214,135 |  |  |  |  |  |  |  | PENDING_DIRECT |
+| EM | A | EM_t40_s60 |  [,] |  |  /  |  |  /  | 7,610 / 28,712 / 192,927 |  |  |  |  |  |  |  | PENDING_DIRECT |
+
 ### EM / D (43 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -115,6 +121,12 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | HM10 | D | PY_HM10_D3_N30_f50_m1_s30_G1 |  [,] |  |  /  |  |  /  |  /  /  |  |  | 26 | 129 | 10.7 | 15 |  | DEAD |
 | HM10 | D | PY_HM10_D3_N15_f50_m1_s30_G1 |  [,] |  |  /  |  |  /  |  /  /  |  |  | -2,633 | -2,292 | 10.4 |  |  | DEAD |
 
+### KB / A (2 cells)
+| entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| KB | A | KB_t30_s60 |  [,] |  |  /  |  |  /  | 5,144 / 49,440 / 525,071 |  | 0.00 |  |  |  |  |  | PENDING_DIRECT |
+| KB | A | KB_t40_s60 |  [,] |  |  /  |  |  /  | 12,102 / 46,944 / 379,629 |  | 0.00 |  |  |  |  |  | PENDING_DIRECT |
+
 ### KB / D (43 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -162,6 +174,12 @@ Equal-risk columns come from l2vast/ds3/code/equal_risk.py (ST10 WF weekly SD re
 | KB | G | G2_m40_r4_t8_s1__KB | -0.3 [-1.0,0.4] |  |  /  | 6,584.0 |  /  |  /  /  |  | 0.65 | 15,329 | 15,574 | 10.2 | 47 |  | DEAD |
 | KB | G | G1_0005__KB | -0.4 [-1.5,0.7] |  |  /  |  |  /  |  /  /  | -0.45 | 0.96 |  |  |  |  |  | DEAD |
 | KB | G | G1_0579__KB | -0.4 [-1.4,0.7] |  |  /  |  |  /  |  /  /  | -0.13 | 0.89 |  |  |  |  |  | DEAD |
+
+### SM / A (2 cells)
+| entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| SM | A | SM_t30_s60 |  [,] |  |  /  |  |  /  | 1,989 / 28,649 / 167,938 |  |  |  |  |  |  |  | PENDING_DIRECT |
+| SM | A | SM_t40_s60 |  [,] |  |  /  |  |  /  | 5,861 / 30,297 / 155,150 |  |  |  |  |  |  |  | PENDING_DIRECT |
 
 ### SM / D (43 cells)
 | entry | sec | cell | paired pts/trade [CI] | MDE | win req / obs | trades | lots avg / peak | WF mean / SD / maxDD | holdout | placebo | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | DS3 marg. Sharpe | verdict |
