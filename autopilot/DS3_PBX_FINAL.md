@@ -18,6 +18,8 @@ Cells scored: 332 non-control cells in 5 scoring blocks plus controls (42). PASS
 
 Multiplicity: 22 of 332 cells have a paired CI above 0 against their own market/base control; 33 have a CI above 0 vs random-in-regime. Blocks: (i) 192 stop x exit cells on 6 pullback families (autopilot/DS3_TPBX.md); (ii) 112 cells across 14 NT8-native bar types (DS3_TPBX_B2.md); (iii) 24 order-type cells and (iii-b) 16 touch-rule limit cells (DS3_TPBX_B3.md, B3B.md); (iv) 30 tape/footprint trigger cells (DS3_TPBX_B4.md); (v) robustness of the top 3 below.
 
+**Direct-L2 basis (section 7) changes the two CANDIDATE labels: PB_ST10_SWZ_T3 f60_SW is paired -1.12 [-2.33,+0.14] pts/trade vs the direct 60/1R control (HOLD -2.16, 2023 -0.83) and f60_T3 is +1.20 [-1.25,+3.77] (HOLD -0.63, 2023 -1.36): neither has a paired CI above 0, so both are DEAD on the direct basis (a gate is never loosened; the mapped CANDIDATE labels stand only as mapped-screen labels). The direct 60/1R control itself earns +12.7k $/wk WF (mapped conservative: +0.3k), i.e. the mapped basis understates stop-exit books by the stop-join credit; the paired comparisons are on identical entries and are unaffected in sign.**
+
 ## 2. Top 10 cells by effect vs random-in-regime, regardless of verdict (failed gate, by how much, MDE, forward weeks)
 
 ER-family cells of blocks (iii)/(iv) are EXCLUDED from this ranking: their random arms were not ER-gated (placebo (c) exists only in block (i)), so their effects (up to +20 pts, all with CIs including 0 or inflated by the gate itself) are artefacts of the placebo, not results; they remain in the block files.
@@ -39,11 +41,11 @@ Forward weeks = weeks of forward data for the standard error of the cell's weekl
 
 ## 3. RECOMMENDED-FOR-SIM
 
-No cell meets the line (best deliverable cell with a positive direct-basis holdout and a non-negative DS3 marginal line).
+No cell meets the line (best deliverable cell with a positive direct-basis holdout and a non-negative DS3 marginal line). On the direct basis the PB_ST10_SWZ_T3 f60 cells have positive HOLD weekly means (+4.4k SW, +13.5k T3, control +17.2k) but their paired effect vs the control is negative or zero in HOLD (-2.16 / -0.63), so the book is carried by the 60/1R control, not by the new exit; the control (the existing PB_ST10_SWZ_T3 rule) is the forward-register entry.
 
 Blocking gates, with the random-in-regime placebo beside the leads:
 
-- PB_ST10_SWZ_T3 f60 + swing trail (block (i) CANDIDATE, failed beats_(b)_CI_includes_0): effect vs random-in-regime +1.44 [-0.39,+3.18]; DS3 add-one marginal Sharpe negative (WF -0.30, HOLD -0.08); direct-basis section below.
+- PB_ST10_SWZ_T3 f60 + swing trail (block (i) CANDIDATE, failed beats_(b)_CI_includes_0): effect vs random-in-regime +1.44 [-0.39,+3.18]; DS3 add-one marginal Sharpe negative (WF -0.30, HOLD -0.08); direct-basis: paired vs the direct 60/1R control -1.12 [-2.33,+0.14] (HOLD -2.16): fails.
 - PB_ST10_SWZ_T3 f60 + 3R target (block (i) CANDIDATE, fails SPAN2): marginal Sharpe WF -0.32, HOLD -0.07.
 - Block (iii)/(iv) leads (PBS_f60_T3 stop-entry; PBS_f60_T3 stacked-imbalance trigger) are paired-neutral vs their market control (+0.4 / +0.0 pts per arm), have a negative 2023-span per-arm effect, and the stop-entry is mapped without stop slippage; the stacked-imbalance trigger is execution-server-only.
 Forward-register entry: ds3_TPBX_PB_ST10_SWZ_T3_f60_SW (mapped-screen lead only, struct48/paper_all). Provisional spec: DS3_SPEC_PB_ST10_SWZ_T3.md section 1 with the exit of DS3_TPBX.md section "RECOMMENDED-FOR-SIM" (no 1R target, 60-pt initial stop, 1-min fractal-swing trail -5 after +1R); the exit was not independently replayed (identity test pending).
@@ -180,15 +182,25 @@ Selection rule (fixed before the numbers were read): rank by effect vs random-in
 
 ## 7. Direct L2 basis (PB_ST10_SWZ_T3 f60 cells)
 
-# DS3_TPBX_DIRECT - direct-L2 basis for the PB_ST10_SWZ_T3 f60 cells (D3PX, PARTIAL: D3XT months 19/45)
+# DS3_TPBX_DIRECT - direct-L2 basis for the PB_ST10_SWZ_T3 f60 cells (D3PX, complete)
 
 Research output. Cells: PBX_PB_ST10_SWZ_T3_f60_{T1 (control), SW, T3} (the two block (i) mapped CANDIDATEs and the 60/1R base). Entries S10x1 gap-2 s and exits XJ touch-join / 10-lot market from D3XT's replay (identical event keys; pbx_dprep: 0 new events; nominal identity of f60_T1 vs D3XT PBS BASE rows: {"n_mine": 6092, "n_d3xt": 6092, "n_matched": 6092, "k_equal": 1.0, "px_equal": 1.0, "reason_equal": 1.0}). Price basis: raw L2 prices with the per-bar real-minus-adjusted offset (dc_asm.adj_arr). 10 lots (fixed 60 stop, $12,000 risk), per-book locks.
 
+Coverage: D3XT exclusion filter applied (L2 raw on disk ends 2026-10-09): trades entered after 2026-10-09 20:00 UTC dropped from every cell and the control (360 of 18276 rows).
+
 | cell | missing entry / exit fills | n pairs WF | direct mean pts/trade WF | paired vs 60/1R direct [CI] WF | HOLD paired | 2023 paired | direct WF wk mean / SD / maxDD | HOLD wk | 2023 wk | 2x wk | mapped (conservative) WF wk mean | direct real minus mapped random-in-regime (b) draws, pts/trade (WF) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| PBX_PB_ST10_SWZ_T3_f60_SW | 4363 / 1930 | 5098 | +0.22 | -1.00 [-2.19,+0.24] | -1.95 | -0.83 | -1,247 / 60,332 / 804,503 | -847 | +8,456 | -8,514 | +5,760 | -0.53 |
-| PBX_PB_ST10_SWZ_T3_f60_T1 | 4363 / 1512 | 5098 | +1.22 | +0.00 [+0.00,+0.00] | +0.00 | +0.00 | +6,867 / 57,235 / 556,368 | +9,821 | +8,119 | +2,370 | +295 | +1.66 |
-| PBX_PB_ST10_SWZ_T3_f60_T3 | 4363 / 2147 | 5098 | +2.83 | +1.61 [-0.86,+4.13] | +0.05 | -1.36 | +4,295 / 61,303 / 719,041 | +9,729 | +7,021 | +2,155 | +6,901 | +2.71 |
+| PBX_PB_ST10_SWZ_T3_f60_SW | 12 / 0 | 4978 | +1.31 | -1.12 [-2.33,+0.14] | -2.16 | -0.83 | +2,955 / 61,228 / 734,158 | +4,374 | +8,456 | -1,140 | +5,760 | +0.56 |
+| PBX_PB_ST10_SWZ_T3_f60_T1 | 12 / 0 | 4978 | +2.43 | +0.00 [+0.00,+0.00] | +0.00 | +0.00 | +12,652 / 59,729 / 537,122 | +17,213 | +8,119 | +14,014 | +295 | +2.87 |
+| PBX_PB_ST10_SWZ_T3_f60_T3 | 12 / 0 | 4978 | +3.63 | +1.20 [-1.25,+3.77] | -0.63 | -1.36 | +7,255 / 61,989 / 679,737 | +13,526 | +7,021 | +5,600 | +6,901 | +3.51 |
+
+Direct real vs the mapped random-in-regime / timing-destroyed draws (16 each; placebo trades were not replayed, so the comparison is real-direct vs placebo-mapped, which favours the real cell), pts/trade per kept trade:
+
+| cell | WF vs random-in-regime [CI] rank | HOLD vs (b) [CI] | 2023 span vs (b) | WF vs (a) rank | mapped (conservative) mean pts/trade WF | direct mean pts/trade WF |
+|---|---|---|---|---|---|---|
+| PBX_PB_ST10_SWZ_T3_f60_SW | +0.85 [-1.19,+2.73] r0.94 | +1.14 [-1.17,+3.68] | +1.07 | +2.10 r1.00 | +1.86 | +1.31 |
+| PBX_PB_ST10_SWZ_T3_f60_T1 | +2.87 [+1.70,+3.99] r1.00 | +3.67 [+2.27,+5.27] | +2.25 | +4.29 r1.00 | +0.11 | +2.43 |
+| PBX_PB_ST10_SWZ_T3_f60_T3 | +3.02 [+0.79,+5.17] r1.00 | +4.22 [+1.33,+7.14] | +2.49 | +4.24 r1.00 | +2.99 | +3.63 |
 
 Reading notes: (1) the direct real mean includes the XJ stop-join credit and measured friction; the mapped placebo draws carry no join credit, so "direct real minus mapped random-in-regime" favours the real cell; it is shown only to size the gap, not as a placebo test (placebo trades were not replayed). (2) Base-cell sanity: compare the control row (direct f60_T1 WF mean pts/trade) with the mapped control; D3XT's own PBS BASE direct rows are the same trades.
 

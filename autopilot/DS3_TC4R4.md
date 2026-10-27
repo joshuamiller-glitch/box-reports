@@ -1,304 +1,304 @@
 # DS3_TC4R4: D3XT, DS3 addendum-2 track C exit alternatives (G4a, G4b, G4c)
 
-Generated 2026-10-27T13:29:20Z. Research only; nothing is a live recommendation. **V2 pipeline**: the first (v1) run priced exits in the wrong price frame (raw L2 contract prices vs the back-adjusted harness bars); v1 outputs are kept as *_v1_INVALID* and must not be used. The holdout and the 2023 span were read once in v1 (invalid numbers) and are read again here; treat the holdout evidence as second-look.
+Generated 2026-10-27T21:50:35Z. Research only; nothing is a live recommendation. **V2 pipeline**: the first (v1) run priced exits in the wrong price frame (raw L2 contract prices vs the back-adjusted harness bars); v1 outputs are kept as *_v1_INVALID* and must not be used. The holdout and the 2023 span were read once in v1 (invalid numbers) and are read again here; treat the holdout evidence as second-look.
 
 ## Verdict
 70 cells scored: **PASS 0, CANDIDATE 0, DEAD 70**. (verdict = s48score.verdict, trade-modifier object, paired vs the same stream's DS2 bracket; PASS downgraded to CANDIDATE if 2023-span, 2x-cost or year-share fails.)
 
 | cell | n pairs WF | n changed | paired WF pts/trade [95% CI] | MDE | HOLD paired | SPAN2 paired | WF d wk $ | HOLD d wk $ | SPAN2 d wk $ | d maxDD (ALL) $ | 1.5x d wk | 2x d wk | placebo | nbrs | peak lots (+DS2) | verdict | failed |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XT_R4_CH2_ST | 7105 | 8100 | -2.11 [-3.38,-0.84] | 1.83 | -1.78 | -1.32 | -26,929 | -30,752 | -11,342 | +3,288,109 | -29,167 | -34,324 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH2_HM | 5271 | 6209 | -2.83 [-4.32,-1.34] | 2.12 | -3.34 | -1.06 | -21,025 | -24,769 | -8,984 | +3,055,515 | -26,744 | -32,949 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH2_KEL3 | 7339 | 7986 | -3.02 [-4.28,-1.75] | 1.80 | -2.36 | -0.02 | -23,810 | -27,964 | -7,090 | +3,075,273 | -26,961 | -29,016 | 0.02 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH2_ST10n7 | 1878 | 2106 | -4.85 [-7.41,-2.19] | 3.77 | -3.72 | -0.76 | -8,065 | -7,343 | -3,259 | +692,721 | -8,618 | -9,133 | 0.04 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH2_EMA5 | 1831 | 2198 | -4.70 [-7.12,-2.21] | 3.53 | -4.41 | -1.72 | -10,865 | -10,332 | -3,655 | +1,139,829 | -12,708 | -13,799 | 0.00 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH25_ST | 7105 | 7990 | -2.66 [-3.99,-1.37] | 1.86 | -2.49 | -1.92 | -29,110 | -32,687 | -13,938 | +3,666,135 | -33,731 | -36,628 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH25_HM | 5271 | 6167 | -3.21 [-4.71,-1.69] | 2.12 | -3.60 | -1.33 | -19,884 | -21,586 | -10,069 | +3,002,601 | -24,200 | -30,854 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH25_KEL3 | 7339 | 7700 | -3.54 [-4.87,-2.22] | 1.91 | -3.17 | +0.07 | -18,992 | -20,351 | -7,393 | +2,464,886 | -21,743 | -23,067 | 0.00 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_CH25_ST10n7 | 1878 | 1988 | -4.24 [-7.10,-1.28] | 4.15 | -3.63 | -1.25 | -3,908 | -2,556 | -3,967 | +383,245 | -4,119 | -4,912 | 0.07 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH25_EMA5 | 1831 | 2110 | -4.46 [-6.95,-1.86] | 3.61 | -4.19 | -1.67 | -9,258 | -7,999 | -3,334 | +854,703 | -10,488 | -11,822 | 0.00 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH3_ST | 7105 | 7834 | -3.24 [-4.60,-1.90] | 1.93 | -3.21 | -1.27 | -28,311 | -31,977 | -11,384 | +3,467,459 | -30,446 | -36,747 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH3_HM | 5271 | 6099 | -3.55 [-5.13,-1.99] | 2.22 | -4.23 | -0.60 | -19,494 | -22,893 | -7,346 | +2,889,116 | -24,055 | -28,023 | 1.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH3_KEL3 | 7339 | 7337 | -3.71 [-5.20,-2.17] | 2.18 | -3.55 | +0.09 | -15,761 | -14,542 | -6,699 | +1,993,799 | -13,423 | -13,564 | 0.00 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_CH3_ST10n7 | 1878 | 1855 | -3.75 [-6.92,-0.50] | 4.61 | -4.20 | -1.92 | -1,984 | -1,504 | -5,249 | +266,089 | -2,399 | -2,139 | 0.13 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_CH3_EMA5 | 1831 | 2007 | -4.03 [-6.65,-1.31] | 3.83 | -4.62 | -0.89 | -5,374 | -4,907 | -1,472 | +283,511 | -5,462 | -6,412 | 0.01 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_STB_ST | 7105 | 7509 | -3.24 [-4.72,-1.71] | 2.14 | -3.14 | -1.67 | -21,091 | -25,314 | -13,482 | +2,580,650 | -22,242 | -25,675 | 0.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_STB_HM | 5271 | 5896 | -3.93 [-5.50,-2.33] | 2.25 | -5.01 | -1.29 | -13,800 | -15,563 | -9,922 | +2,250,574 | -18,150 | -21,089 | 0.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_STB_KEL3 | 7339 | 6672 | -2.17 [-4.50,+0.24] | 3.40 | -2.89 | -1.05 | -9,526 | -5,785 | -9,855 | +1,333,740 | -7,135 | -3,726 | 0.01 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_STB_ST10n7 | 1878 | 1679 | -1.53 [-5.79,+2.93] | 6.21 | -2.71 | +0.23 | +619 | -1,196 | -116 | +196,247 | +2,384 | +2,470 | 0.76 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_STB_EMA5 | 1831 | 1827 | -1.38 [-4.72,+2.05] | 4.84 | -0.70 | -1.21 | +2,967 | +7,263 | -2,161 | +107,473 | +3,099 | +2,543 | 0.66 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_PSAR_ST | 7105 | 8159 | -2.39 [-3.67,-1.14] | 1.80 | -2.11 | -1.87 | -29,043 | -34,625 | -14,125 | +3,655,823 | -32,013 | -36,162 | 0.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_PSAR_HM | 5271 | 6242 | -2.45 [-3.91,-1.00] | 2.06 | -2.71 | -0.29 | -15,409 | -13,796 | -5,420 | +2,213,314 | -19,768 | -27,525 | 0.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_PSAR_KEL3 | 7339 | 8228 | -2.60 [-3.83,-1.37] | 1.76 | -2.45 | -1.18 | -20,616 | -23,165 | -13,580 | +2,920,390 | -20,347 | -22,385 | 0.99 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_PSAR_ST10n7 | 1878 | 2205 | -3.45 [-6.47,-0.32] | 4.39 | -2.97 | -2.08 | -4,421 | -2,090 | -6,856 | +362,875 | -4,495 | -5,676 | 0.38 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_PSAR_EMA5 | 1831 | 2247 | -3.09 [-5.61,-0.53] | 3.60 | -3.45 | -0.41 | -5,101 | -5,434 | -352 | +222,876 | -6,107 | -7,936 | 0.14 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD30_ST | 7105 | 5838 | -1.39 [-3.52,+0.85] | 3.14 | -0.84 | -1.23 | -7,035 | -2,778 | -6,947 | +447,219 | -2,647 | -4,584 | 0.19 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD30_HM | 5271 | 4695 | -1.91 [-4.08,+0.28] | 3.15 | -0.98 | +0.29 | +4,044 | +11,133 | -2,208 | +226,659 | +5,497 | +4,773 | 0.13 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_TD30_KEL3 | 7339 | 6087 | -0.81 [-2.76,+1.18] | 2.78 | -0.70 | -0.74 | -8,077 | -6,176 | -7,730 | +956,294 | -7,015 | -1,851 | 0.46 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD30_ST10n7 | 1878 | 1867 | -1.12 [-4.30,+2.19] | 4.61 | +0.68 | -2.00 | -711 | +1,803 | -5,382 | +123,640 | -371 | +531 | 0.99 | True | 10 (44) | DEAD | mean_up,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD30_EMA5 | 1831 | 1831 | -1.41 [-4.37,+1.65] | 4.26 | +0.21 | -1.38 | -2,546 | +434 | -1,349 | +279,051 | -2,254 | -1,811 | 0.65 | True | 10 (44) | DEAD | mean_up,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD60_ST | 7105 | 5235 | -1.12 [-3.91,+1.88] | 4.11 | -1.26 | -3.46 | +1,151 | +2,761 | -14,898 | +217,579 | +6,651 | +8,091 | 0.36 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD60_HM | 5271 | 4173 | -1.24 [-4.02,+1.63] | 4.05 | -0.97 | -1.21 | +14,314 | +22,007 | -11,023 | +36,665 | +15,492 | +16,375 | 0.52 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD60_KEL3 | 7339 | 5370 | -0.47 [-3.03,+2.25] | 3.74 | -0.54 | -3.10 | -4,082 | -3,533 | -8,832 | +456,822 | -472 | +6,225 | 0.64 | False | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD60_ST10n7 | 1878 | 1660 | -1.99 [-5.62,+1.76] | 5.26 | -1.95 | -2.79 | -1,441 | -1,394 | -7,010 | +200,805 | -67 | +751 | 0.69 | False | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD60_EMA5 | 1831 | 1628 | -1.68 [-5.15,+1.80] | 4.98 | -1.11 | -3.27 | +38 | +4,513 | -3,544 | +341,022 | +1,267 | +1,319 | 0.40 | False | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD120_ST | 7105 | 4699 | -0.61 [-4.23,+3.29] | 5.33 | +0.34 | -6.09 | +3,822 | +9,118 | -15,540 | +255,782 | +10,339 | +12,895 | 0.68 | True | 10 (34) | DEAD | mean_up,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD120_HM | 5271 | 3697 | -1.03 [-4.50,+2.56] | 5.07 | +0.63 | -3.17 | +16,298 | +26,027 | -10,770 | -14,115 | +19,086 | +22,057 | 0.57 | True | 10 (34) | DEAD | mean_up,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TD120_KEL3 | 7339 | 4827 | +0.54 [-2.76,+4.08] | 4.85 | +1.01 | -3.80 | +4,648 | +7,796 | -7,084 | -48,436 | +10,829 | +15,796 | 0.92 | False | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,placebo<0.95,SPAN2<=0,year_share>60% |
-| XT_R4_TD120_ST10n7 | 1878 | 1497 | +1.01 [-3.55,+5.80] | 6.58 | +2.10 | -2.56 | +6,201 | +8,793 | -9,035 | +361,000 | +7,771 | +8,728 | 1.00 | False | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,year_share>60% |
-| XT_R4_TD120_EMA5 | 1831 | 1469 | +1.60 [-2.66,+5.96] | 6.21 | +3.45 | -4.18 | +5,983 | +8,694 | -6,243 | +303,429 | +8,068 | +9,005 | 1.00 | False | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,year_share>60% |
-| XT_R4_PL_ST | 7105 | 4135 | +1.04 [-0.32,+2.39] | 1.94 | +0.60 | +0.03 | -3,723 | -314 | -9,239 | +483,354 | +2,839 | +4,186 | 0.99 | None | 10 (34) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse |
-| XT_R4_PL_HM | 5271 | 3144 | -0.00 [-1.46,+1.43] | 2.06 | -0.27 | +0.07 | +5,786 | +8,804 | -8,837 | +47,410 | +8,049 | +9,717 | 0.92 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,placebo<0.95,year_share>60% |
-| XT_R4_PL_KEL3 | 7339 | 4231 | +0.76 [-0.45,+1.94] | 1.72 | +0.70 | -0.76 | +4,175 | +5,640 | +9,730 | -206,667 | +8,313 | +13,700 | 0.98 | None | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0 |
-| XT_R4_PL_ST10n7 | 1878 | 1219 | -0.91 [-3.41,+1.54] | 3.51 | -0.50 | +0.93 | -1,083 | +3,147 | +3,624 | +149,916 | +275 | +1,206 | 0.88 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_PL_EMA5 | 1831 | 1169 | -0.44 [-2.86,+1.96] | 3.47 | +0.52 | +0.99 | +2,916 | +7,885 | +3,754 | +144,110 | +3,893 | +4,501 | 0.68 | None | 10 (44) | DEAD | mean_up,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_ONH_ST | 7105 | 4134 | -0.68 [-5.23,+4.10] | 6.71 | -1.43 | -2.25 | +2,814 | -5,352 | -1,002 | +73,901 | +9,894 | +13,333 | 0.99 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_ONH_HM | 5271 | 3143 | -1.33 [-5.92,+3.45] | 6.77 | -0.68 | -0.49 | +16,208 | +20,112 | +586 | -221,334 | +20,681 | +23,881 | 0.92 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,placebo<0.95,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_ONH_KEL3 | 7339 | 4231 | +0.98 [-3.38,+5.55] | 6.30 | +0.15 | -0.76 | +3,089 | +7,299 | +10,984 | -270,457 | +9,646 | +17,040 | 1.00 | None | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_ONH_ST10n7 | 1878 | 1219 | -2.18 [-7.76,+3.56] | 8.03 | -0.93 | +4.88 | +3,295 | +4,073 | +11,927 | +61,793 | +5,001 | +6,921 | 0.82 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_ONH_EMA5 | 1831 | 1169 | +0.27 [-5.16,+6.05] | 8.04 | +1.54 | +4.60 | +9,596 | +9,427 | +11,798 | +88,197 | +10,935 | +12,238 | 0.97 | None | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_T15_ST | 7105 | 4135 | -0.10 [-1.15,+0.94] | 1.50 | -0.52 | +0.62 | -4,612 | -5,111 | -8,020 | +392,830 | -155 | +1,572 | 1.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_T15_HM | 5271 | 3144 | -0.41 [-1.57,+0.72] | 1.66 | -1.25 | +0.45 | +5,728 | +2,653 | -596 | +7,064 | +7,584 | +7,745 | 0.76 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_T15_KEL3 | 7339 | 4231 | +0.09 [-0.86,+1.02] | 1.33 | -0.59 | -0.19 | +2,981 | +3,115 | +13,816 | -362,436 | +5,930 | +9,430 | 1.00 | None | 10 (44) | DEAD | holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_T15_ST10n7 | 1878 | 1219 | -1.41 [-3.44,+0.60] | 2.88 | -0.23 | +1.03 | -726 | +3,742 | +4,262 | +68,818 | -129 | -870 | 0.73 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_T15_EMA5 | 1831 | 1169 | -1.10 [-3.12,+0.84] | 2.84 | -0.19 | +0.29 | -1,066 | +890 | +1,587 | +231,649 | -518 | -456 | 0.67 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_T20_ST | 7105 | 4135 | +0.01 [-1.47,+1.48] | 2.11 | -0.16 | -0.81 | -1,455 | -1,212 | -9,310 | +203,703 | +3,745 | +6,298 | 0.98 | None | 10 (34) | DEAD | holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_T20_HM | 5271 | 3144 | -0.95 [-2.57,+0.67] | 2.33 | -0.58 | +0.02 | +3,134 | +7,144 | -8,707 | +429,327 | +4,577 | +6,146 | 0.60 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_T20_KEL3 | 7339 | 4231 | +0.08 [-1.25,+1.38] | 1.89 | -0.15 | -1.00 | +3,434 | +6,223 | +7,681 | -17,427 | +7,534 | +10,219 | 0.96 | None | 10 (44) | DEAD | holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_T20_ST10n7 | 1878 | 1219 | -0.63 [-3.36,+2.05] | 3.85 | +0.67 | +0.77 | -2,015 | +5,455 | +2,710 | +323,183 | -961 | +52 | 0.92 | None | 10 (44) | DEAD | mean_up,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,placebo<0.95,2x_cost<=0,year_share>60% |
-| XT_R4_T20_EMA5 | 1831 | 1169 | -1.37 [-4.07,+1.29] | 3.85 | +0.16 | +2.03 | -535 | +6,269 | +2,786 | +301,346 | -218 | +65 | 0.61 | None | 10 (44) | DEAD | mean_up,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_TNONE_ST | 7105 | 4135 | -0.29 [-4.83,+4.56] | 6.75 | -0.85 | -1.80 | -8,856 | -11,219 | -4,598 | +652,583 | -1,411 | +2,138 | 0.91 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,placebo<0.95,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_TNONE_HM | 5271 | 3144 | -0.98 [-5.53,+3.85] | 6.76 | -0.04 | +0.05 | +12,144 | +16,161 | -5,195 | +158,980 | +16,204 | +19,365 | 0.78 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_TNONE_KEL3 | 7339 | 4231 | +1.45 [-2.92,+6.03] | 6.36 | +0.81 | -0.19 | +1,187 | +6,125 | +8,219 | -194,347 | +6,369 | +13,239 | 1.00 | None | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,year_share>60% |
-| XT_R4_TNONE_ST10n7 | 1878 | 1219 | -1.53 [-7.10,+4.17] | 8.07 | -0.25 | +5.12 | +3,944 | +6,460 | +8,975 | +92,986 | +5,608 | +7,045 | 0.74 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_TNONE_EMA5 | 1831 | 1169 | +0.64 [-4.80,+6.43] | 8.07 | +1.93 | +4.70 | +4,824 | +7,850 | +11,521 | +200,843 | +5,617 | +6,925 | 0.89 | None | 10 (44) | DEAD | placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_MM_ST | 7105 | 3154 | +0.01 [-0.98,+1.01] | 1.42 | +0.26 | +0.18 | -3,542 | -4,116 | +1,249 | +90,351 | -765 | -855 | 1.00 | None | 10 (34) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_MM_HM | 5271 | 2468 | -1.32 [-2.36,-0.28] | 1.49 | -1.41 | +0.76 | -1,176 | +4,904 | +1,205 | +119,743 | -677 | -990 | 0.09 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_MM_KEL3 | 7339 | 3700 | +0.12 [-0.89,+1.12] | 1.42 | +0.25 | -0.77 | +4,166 | +2,834 | -2,182 | -157,544 | +3,745 | +5,224 | 1.00 | None | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
-| XT_R4_MM_ST10n7 | 1878 | 986 | -1.73 [-3.82,+0.34] | 2.93 | -2.72 | +1.06 | -1,120 | -971 | +868 | +265,107 | -876 | -1,267 | 0.41 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
-| XT_R4_MM_EMA5 | 1831 | 807 | +0.12 [-1.64,+1.89] | 2.53 | +0.00 | +0.67 | +3,206 | +3,847 | +627 | -3,632 | +3,998 | +4,445 | 0.97 | None | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,year_share>60% |
+| XT_R4_CH2_ST | 6952 | 7949 | -2.13 [-3.46,-0.81] | 1.88 | -1.81 | -1.32 | -25,890 | -28,600 | -11,342 | +3,225,134 | -28,103 | -33,252 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH2_HM | 5162 | 6100 | -2.86 [-4.39,-1.38] | 2.12 | -3.42 | -1.06 | -21,063 | -24,848 | -8,984 | +3,044,521 | -26,710 | -32,631 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH2_KEL3 | 7169 | 7829 | -3.06 [-4.37,-1.77] | 1.85 | -2.39 | -0.02 | -23,143 | -26,581 | -7,090 | +3,055,105 | -26,226 | -27,947 | 0.03 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH2_ST10n7 | 1847 | 2082 | -4.81 [-7.45,-2.13] | 3.82 | -3.60 | -0.76 | -7,945 | -7,095 | -3,259 | +692,721 | -8,494 | -9,005 | 0.02 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH2_EMA5 | 1800 | 2169 | -4.83 [-7.38,-2.35] | 3.59 | -4.66 | -1.72 | -11,218 | -11,063 | -3,655 | +1,139,829 | -13,061 | -14,156 | 0.00 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH25_ST | 6952 | 7845 | -2.70 [-4.05,-1.38] | 1.90 | -2.55 | -1.92 | -27,736 | -29,839 | -13,938 | +3,564,855 | -32,279 | -35,244 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH25_HM | 5162 | 6059 | -3.24 [-4.78,-1.74] | 2.15 | -3.68 | -1.33 | -19,846 | -21,508 | -10,069 | +2,984,281 | -24,244 | -30,588 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH25_KEL3 | 7169 | 7551 | -3.53 [-4.92,-2.15] | 1.97 | -3.13 | +0.07 | -18,546 | -19,428 | -7,393 | +2,464,886 | -21,339 | -22,711 | 0.00 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_CH25_ST10n7 | 1847 | 1968 | -4.14 [-7.03,-1.17] | 4.20 | -3.42 | -1.25 | -3,960 | -2,664 | -3,967 | +383,245 | -4,167 | -4,955 | 0.05 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH25_EMA5 | 1800 | 2084 | -4.43 [-6.97,-1.81] | 3.68 | -4.13 | -1.67 | -9,512 | -8,524 | -3,334 | +854,703 | -10,753 | -12,116 | 0.00 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH3_ST | 6952 | 7691 | -3.29 [-4.64,-1.93] | 1.96 | -3.29 | -1.27 | -27,736 | -30,784 | -11,384 | +3,450,701 | -29,535 | -35,530 | 0.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH3_HM | 5162 | 5993 | -3.56 [-5.14,-1.99] | 2.24 | -4.26 | -0.60 | -19,479 | -22,864 | -7,346 | +2,868,436 | -24,015 | -27,892 | 1.00 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH3_KEL3 | 7169 | 7196 | -3.75 [-5.32,-2.17] | 2.25 | -3.62 | +0.09 | -15,029 | -13,025 | -6,699 | +1,993,799 | -12,710 | -12,571 | 0.00 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_CH3_ST10n7 | 1847 | 1837 | -3.56 [-6.78,-0.29] | 4.65 | -3.86 | -1.92 | -2,084 | -1,710 | -5,249 | +266,089 | -2,496 | -2,207 | 0.15 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_CH3_EMA5 | 1800 | 1984 | -3.97 [-6.67,-1.22] | 3.89 | -4.52 | -0.89 | -5,623 | -5,422 | -1,472 | +283,511 | -5,766 | -6,716 | 0.02 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_STB_ST | 6952 | 7372 | -3.33 [-4.84,-1.83] | 2.15 | -3.30 | -1.67 | -20,458 | -24,002 | -13,482 | +2,580,650 | -21,544 | -24,932 | 0.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_STB_HM | 5162 | 5795 | -3.88 [-5.50,-2.30] | 2.27 | -4.97 | -1.29 | -13,670 | -15,295 | -9,922 | +2,224,601 | -18,009 | -20,674 | 0.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_STB_KEL3 | 7169 | 6542 | -2.09 [-4.53,+0.40] | 3.49 | -2.78 | -1.05 | -8,845 | -4,375 | -9,855 | +1,333,740 | -6,294 | -2,938 | 0.02 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_STB_ST10n7 | 1847 | 1663 | -1.48 [-5.70,+2.97] | 6.17 | -2.66 | +0.23 | +681 | -1,066 | -116 | +196,247 | +2,440 | +2,522 | 0.76 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_STB_EMA5 | 1800 | 1807 | -1.75 [-5.07,+1.66] | 4.77 | -1.39 | -1.21 | +1,498 | +4,220 | -2,161 | +107,473 | +1,629 | +1,072 | 0.45 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_PSAR_ST | 6952 | 8007 | -2.45 [-3.72,-1.17] | 1.83 | -2.20 | -1.87 | -27,859 | -32,171 | -14,125 | +3,554,259 | -30,799 | -34,846 | 0.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_PSAR_HM | 5162 | 6133 | -2.49 [-3.96,-1.07] | 2.07 | -2.79 | -0.29 | -15,586 | -14,163 | -5,420 | +2,213,314 | -19,917 | -27,260 | 0.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_PSAR_KEL3 | 7169 | 8061 | -2.60 [-3.85,-1.33] | 1.81 | -2.45 | -1.18 | -20,115 | -22,126 | -13,580 | +2,891,358 | -19,965 | -21,804 | 0.94 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,placebo<0.95,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_PSAR_ST10n7 | 1847 | 2175 | -3.27 [-6.37,-0.21] | 4.43 | -2.61 | -2.08 | -4,315 | -1,870 | -6,856 | +362,875 | -4,383 | -5,559 | 0.25 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_PSAR_EMA5 | 1800 | 2216 | -3.10 [-5.63,-0.52] | 3.64 | -3.48 | -0.41 | -5,162 | -5,559 | -352 | +222,876 | -6,238 | -8,061 | 0.12 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD30_ST | 6952 | 5737 | -1.61 [-3.74,+0.68] | 3.16 | -1.21 | -1.23 | -7,215 | -3,151 | -6,947 | +447,219 | -2,801 | -4,475 | 0.15 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD30_HM | 5162 | 4623 | -1.97 [-4.13,+0.27] | 3.15 | -1.05 | +0.29 | +3,924 | +10,884 | -2,208 | +226,659 | +5,394 | +4,926 | 0.24 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_TD30_KEL3 | 7169 | 5973 | -0.90 [-2.96,+1.12] | 2.92 | -0.85 | -0.74 | -7,333 | -4,633 | -7,730 | +956,294 | -6,257 | -1,018 | 0.33 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD30_ST10n7 | 1847 | 1847 | -1.13 [-4.35,+2.11] | 4.62 | +0.74 | -2.00 | -1,024 | +1,155 | -5,382 | +123,640 | -684 | +223 | 0.95 | True | 10 (44) | DEAD | mean_up,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD30_EMA5 | 1800 | 1811 | -1.55 [-4.53,+1.49] | 4.33 | -0.00 | -1.38 | -2,723 | +66 | -1,349 | +279,051 | -2,428 | -2,071 | 0.54 | True | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD60_ST | 6952 | 5145 | -1.85 [-4.57,+1.10] | 4.04 | -2.56 | -3.46 | +46 | +469 | -14,898 | +217,579 | +5,556 | +7,602 | 0.14 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD60_HM | 5162 | 4109 | -1.60 [-4.39,+1.24] | 4.08 | -1.60 | -1.21 | +13,450 | +20,214 | -11,023 | +36,665 | +14,616 | +15,717 | 0.45 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD60_KEL3 | 7169 | 5271 | -0.74 [-3.34,+1.98] | 3.83 | -1.01 | -3.10 | -2,800 | -876 | -8,832 | +456,822 | +725 | +7,405 | 0.40 | False | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD60_ST10n7 | 1847 | 1643 | -1.76 [-5.40,+1.86] | 5.22 | -1.52 | -2.79 | -1,619 | -1,762 | -7,010 | +200,805 | -246 | +570 | 0.70 | False | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD60_EMA5 | 1800 | 1612 | -1.76 [-5.26,+1.79] | 5.04 | -1.23 | -3.27 | -507 | +3,382 | -3,544 | +341,022 | +719 | +769 | 0.33 | False | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD120_ST | 6952 | 4620 | -1.37 [-4.92,+2.34] | 5.18 | -0.98 | -6.09 | +2,800 | +6,999 | -15,540 | +255,782 | +9,311 | +11,841 | 0.42 | True | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD120_HM | 5162 | 3641 | -1.34 [-4.89,+2.35] | 5.16 | +0.12 | -3.17 | +15,853 | +25,105 | -10,770 | -14,115 | +18,624 | +21,810 | 0.53 | True | 10 (34) | DEAD | mean_up,placebo>=0.90,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD120_KEL3 | 7169 | 4738 | +0.07 [-3.35,+3.57] | 4.91 | +0.20 | -3.80 | +5,995 | +10,589 | -7,084 | -48,436 | +12,169 | +17,106 | 0.90 | False | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,placebo<0.95,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TD120_ST10n7 | 1847 | 1482 | +0.98 [-3.52,+5.59] | 6.51 | +2.07 | -2.56 | +5,048 | +6,403 | -9,035 | +361,000 | +6,610 | +7,561 | 1.00 | False | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,year_share>60% |
+| XT_R4_TD120_EMA5 | 1800 | 1455 | +1.04 [-3.27,+5.34] | 6.15 | +2.43 | -4.18 | +4,072 | +4,733 | -6,243 | +303,429 | +6,148 | +7,077 | 0.95 | False | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,year_share>60% |
+| XT_R4_PL_ST | 6952 | 4058 | +1.06 [-0.29,+2.41] | 1.93 | +0.63 | +0.03 | -4,390 | -1,698 | -9,239 | +483,354 | +2,472 | +3,825 | 1.00 | None | 10 (34) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse |
+| XT_R4_PL_HM | 5162 | 3088 | +0.20 [-1.27,+1.67] | 2.09 | +0.08 | +0.07 | +5,791 | +8,814 | -8,837 | +47,410 | +8,054 | +9,949 | 0.97 | None | 10 (34) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,year_share>60% |
+| XT_R4_PL_KEL3 | 7169 | 4143 | +0.85 [-0.38,+2.08] | 1.73 | +0.86 | -0.76 | +4,960 | +7,267 | +9,730 | -206,667 | +9,100 | +14,444 | 0.95 | None | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0 |
+| XT_R4_PL_ST10n7 | 1847 | 1205 | -0.73 [-3.22,+1.74] | 3.56 | -0.13 | +0.93 | -1,320 | +2,656 | +3,624 | +149,916 | +36 | +965 | 0.88 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_PL_EMA5 | 1800 | 1155 | -0.53 [-2.87,+1.92] | 3.44 | +0.37 | +0.99 | +2,182 | +6,364 | +3,754 | +144,110 | +3,155 | +3,760 | 0.62 | None | 10 (44) | DEAD | mean_up,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_ONH_ST | 6952 | 4058 | -1.28 [-5.72,+3.46] | 6.62 | -2.51 | -2.25 | +3,712 | -3,490 | -1,002 | +73,901 | +10,781 | +14,192 | 1.00 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_ONH_HM | 5162 | 3087 | -1.53 [-6.22,+3.36] | 6.84 | -1.02 | -0.49 | +15,030 | +17,670 | +586 | -221,334 | +19,479 | +22,888 | 0.95 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_ONH_KEL3 | 7169 | 4143 | +0.54 [-3.76,+5.01] | 6.30 | -0.66 | -0.76 | +4,187 | +9,575 | +10,984 | -270,457 | +10,728 | +18,086 | 1.00 | None | 10 (44) | DEAD | holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_ONH_ST10n7 | 1847 | 1205 | -2.01 [-7.50,+3.60] | 8.05 | -0.56 | +4.88 | +3,382 | +4,253 | +11,927 | +61,793 | +5,076 | +6,985 | 0.83 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_ONH_EMA5 | 1800 | 1155 | -0.31 [-5.77,+5.34] | 7.89 | +0.47 | +4.60 | +8,705 | +7,579 | +11,798 | +88,197 | +10,027 | +11,313 | 0.93 | None | 10 (44) | DEAD | mean_up,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,placebo<0.95,2x_cost<=0,year_share>60% |
+| XT_R4_T15_ST | 6952 | 4058 | -0.20 [-1.23,+0.86] | 1.50 | -0.71 | +0.62 | -5,253 | -6,439 | -8,020 | +392,830 | -796 | +904 | 0.98 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_T15_HM | 5162 | 3088 | -0.27 [-1.42,+0.88] | 1.66 | -1.02 | +0.45 | +4,714 | +551 | -596 | +7,064 | +6,562 | +6,947 | 0.85 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_T15_KEL3 | 7169 | 4143 | +0.18 [-0.79,+1.12] | 1.36 | -0.44 | -0.19 | +3,533 | +4,259 | +13,816 | -362,436 | +6,482 | +9,946 | 0.97 | None | 10 (44) | DEAD | holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_T15_ST10n7 | 1847 | 1205 | -1.25 [-3.34,+0.72] | 2.88 | +0.12 | +1.03 | -1,011 | +3,153 | +4,262 | +68,818 | -420 | -1,168 | 0.71 | None | 10 (44) | DEAD | mean_up,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_T15_EMA5 | 1800 | 1155 | -1.18 [-3.13,+0.84] | 2.82 | -0.32 | +0.29 | -1,666 | -354 | +1,587 | +231,649 | -1,122 | -1,065 | 0.60 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_T20_ST | 6952 | 4058 | -0.05 [-1.53,+1.44] | 2.10 | -0.26 | -0.81 | -1,111 | -499 | -9,310 | +203,703 | +4,085 | +6,621 | 0.97 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_T20_HM | 5162 | 3088 | -0.81 [-2.45,+0.86] | 2.36 | -0.33 | +0.02 | +3,206 | +7,294 | -8,707 | +429,327 | +4,638 | +6,429 | 0.71 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_T20_KEL3 | 7169 | 4143 | +0.24 [-1.07,+1.58] | 1.89 | +0.13 | -1.00 | +4,190 | +7,789 | +7,681 | -17,427 | +8,289 | +10,940 | 0.96 | None | 10 (44) | DEAD | neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_T20_ST10n7 | 1847 | 1205 | -0.41 [-3.16,+2.27] | 3.90 | +1.14 | +0.77 | -2,402 | +4,652 | +2,710 | +323,183 | -1,356 | -350 | 0.96 | None | 10 (44) | DEAD | mean_up,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_T20_EMA5 | 1800 | 1155 | -1.56 [-4.21,+1.19] | 3.81 | -0.15 | +2.03 | -1,524 | +4,217 | +2,786 | +301,346 | -1,217 | -942 | 0.52 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_TNONE_ST | 6952 | 4058 | -0.94 [-5.38,+3.82] | 6.66 | -2.01 | -1.80 | -8,141 | -9,738 | -4,598 | +652,583 | -708 | +2,813 | 0.80 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TNONE_HM | 5162 | 3088 | -1.23 [-5.90,+3.61] | 6.84 | -0.46 | +0.05 | +11,160 | +14,121 | -5,195 | +158,980 | +15,202 | +18,576 | 0.77 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_TNONE_KEL3 | 7169 | 4143 | +0.97 [-3.40,+5.51] | 6.36 | -0.06 | -0.19 | +2,199 | +8,221 | +8,219 | -194,347 | +7,366 | +14,200 | 1.00 | None | 10 (44) | DEAD | holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_TNONE_ST10n7 | 1847 | 1205 | -1.37 [-6.87,+4.25] | 8.09 | +0.12 | +5.12 | +4,204 | +6,998 | +8,975 | +92,986 | +5,859 | +7,287 | 0.72 | None | 10 (44) | DEAD | mean_up,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_TNONE_EMA5 | 1800 | 1155 | +0.02 [-5.42,+5.71] | 7.90 | +0.77 | +4.70 | +4,180 | +6,515 | +11,521 | +200,843 | +4,962 | +6,260 | 0.82 | None | 10 (44) | DEAD | placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_MM_ST | 6952 | 3088 | -0.09 [-1.08,+0.93] | 1.44 | +0.10 | +0.18 | -3,107 | -3,214 | +1,249 | +90,351 | -327 | -428 | 1.00 | None | 10 (34) | DEAD | mean_up,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_MM_HM | 5162 | 2414 | -1.20 [-2.27,-0.14] | 1.51 | -1.20 | +0.76 | -901 | +5,475 | +1,205 | +119,743 | -417 | -500 | 0.13 | None | 10 (34) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_MM_KEL3 | 7169 | 3609 | -0.02 [-1.04,+1.00] | 1.45 | +0.01 | -0.77 | +3,950 | +2,386 | -2,182 | -157,544 | +3,537 | +5,104 | 0.99 | None | 10 (44) | DEAD | mean_up,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,SPAN2<=0,2x_cost<=0,year_share>60% |
+| XT_R4_MM_ST10n7 | 1847 | 971 | -1.60 [-3.66,+0.42] | 2.93 | -2.49 | +1.06 | -1,453 | -1,662 | +868 | +265,107 | -1,210 | -1,612 | 0.62 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,placebo>=0.90,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
+| XT_R4_MM_EMA5 | 1800 | 791 | -0.00 [-1.81,+1.74] | 2.54 | -0.24 | +0.67 | +2,577 | +2,544 | +627 | -3,632 | +3,362 | +3,801 | 0.98 | None | 10 (44) | DEAD | mean_up,holdout_sign_agrees,neighbours_agree,paired_CI_excludes0&maxDD_not_worse,2x_cost<=0,year_share>60% |
 
 ## Long / short / quiet / wide columns (paired pts/trade [95% CI], n) on the scoring window (WF)
 | cell | long | short | quiet | wide |
 |---|---|---|---|---|
-| XT_R4_CH2_ST | -1.04 [-3.08,+0.80] n3313 | -3.03 [-4.79,-1.22] n3792 | -2.26 [-4.70,+0.28] n2128 | -2.20 [-3.70,-0.78] n4897 |
-| XT_R4_CH2_HM | -2.19 [-4.36,-0.04] n2705 | -3.49 [-5.53,-1.43] n2566 | -2.59 [-5.21,+0.03] n1687 | -3.00 [-4.77,-1.19] n3522 |
-| XT_R4_CH2_KEL3 | -2.63 [-4.33,-0.88] n3777 | -3.44 [-5.19,-1.59] n3562 | -1.49 [-3.90,+0.74] n2174 | -3.72 [-5.24,-2.19] n5071 |
-| XT_R4_CH2_ST10n7 | -5.61 [-9.25,-1.77] n923 | -4.12 [-7.83,-0.45] n955 | -5.05 [-9.31,-0.87] n673 | -4.81 [-8.21,-1.21] n1189 |
-| XT_R4_CH2_EMA5 | -3.39 [-6.99,+0.31] n882 | -5.91 [-9.49,-2.40] n949 | -4.40 [-8.54,-0.48] n659 | -5.21 [-8.33,-1.95] n1150 |
-| XT_R4_CH25_ST | -1.45 [-3.42,+0.50] n3313 | -3.72 [-5.55,-1.88] n3792 | -1.92 [-4.23,+0.41] n2128 | -3.13 [-4.76,-1.63] n4897 |
-| XT_R4_CH25_HM | -2.64 [-4.74,-0.49] n2705 | -3.81 [-5.87,-1.71] n2566 | -3.07 [-5.66,-0.49] n1687 | -3.29 [-5.11,-1.49] n3522 |
-| XT_R4_CH25_KEL3 | -3.15 [-5.02,-1.27] n3777 | -3.96 [-5.79,-2.04] n3562 | -2.01 [-4.44,+0.31] n2174 | -4.22 [-5.83,-2.50] n5071 |
-| XT_R4_CH25_ST10n7 | -4.56 [-8.58,-0.50] n923 | -3.93 [-7.72,+0.19] n955 | -5.10 [-9.48,-0.83] n673 | -3.67 [-7.49,+0.22] n1189 |
-| XT_R4_CH25_EMA5 | -3.01 [-6.44,+0.83] n882 | -5.81 [-9.49,-2.13] n949 | -4.10 [-8.17,-0.01] n659 | -4.83 [-8.15,-1.53] n1150 |
-| XT_R4_CH3_ST | -2.30 [-4.15,-0.50] n3313 | -4.06 [-6.11,-2.04] n3792 | -2.45 [-4.70,-0.04] n2128 | -3.70 [-5.29,-2.07] n4897 |
-| XT_R4_CH3_HM | -3.79 [-5.93,-1.70] n2705 | -3.31 [-5.45,-0.92] n2566 | -2.69 [-5.23,-0.12] n1687 | -3.94 [-5.80,-1.92] n3522 |
-| XT_R4_CH3_KEL3 | -2.88 [-4.87,-0.75] n3777 | -4.58 [-6.77,-2.36] n3562 | -2.85 [-5.25,-0.48] n2174 | -4.17 [-6.07,-2.21] n5071 |
-| XT_R4_CH3_ST10n7 | -2.64 [-7.09,+1.92] n923 | -4.82 [-8.99,-0.34] n955 | -2.64 [-7.55,+2.16] n673 | -4.17 [-8.27,+0.30] n1189 |
-| XT_R4_CH3_EMA5 | -2.88 [-6.49,+1.02] n882 | -5.10 [-9.12,-1.31] n949 | -3.07 [-7.37,+1.41] n659 | -4.61 [-8.15,-1.13] n1150 |
-| XT_R4_STB_ST | -2.51 [-4.43,-0.62] n3313 | -3.88 [-6.15,-1.60] n3792 | -1.78 [-4.16,+0.60] n2128 | -3.97 [-5.82,-2.10] n4897 |
-| XT_R4_STB_HM | -3.76 [-5.77,-1.86] n2705 | -4.10 [-6.38,-1.64] n2566 | -2.93 [-5.52,-0.44] n1687 | -4.38 [-6.29,-2.33] n3522 |
-| XT_R4_STB_KEL3 | -1.55 [-4.01,+1.26] n3777 | -2.82 [-6.73,+1.65] n3562 | -0.56 [-4.15,+3.72] n2174 | -2.84 [-5.83,+0.31] n5071 |
-| XT_R4_STB_ST10n7 | -1.64 [-7.06,+3.82] n923 | -1.42 [-7.85,+5.11] n955 | -3.38 [-8.70,+1.93] n673 | -0.15 [-6.10,+6.51] n1189 |
-| XT_R4_STB_EMA5 | -0.31 [-4.39,+3.93] n882 | -2.39 [-7.51,+3.06] n949 | -2.74 [-7.53,+2.02] n659 | -0.59 [-5.07,+4.10] n1150 |
-| XT_R4_PSAR_ST | -0.90 [-2.69,+0.86] n3313 | -3.68 [-5.42,-1.89] n3792 | -1.85 [-4.05,+0.43] n2128 | -2.75 [-4.24,-1.24] n4897 |
-| XT_R4_PSAR_HM | -1.54 [-3.63,+0.52] n2705 | -3.42 [-5.36,-1.33] n2566 | -1.82 [-4.20,+0.55] n1687 | -2.80 [-4.53,-1.01] n3522 |
-| XT_R4_PSAR_KEL3 | -1.48 [-3.11,+0.20] n3777 | -3.79 [-5.53,-1.90] n3562 | -1.35 [-3.49,+0.64] n2174 | -3.16 [-4.68,-1.59] n5071 |
-| XT_R4_PSAR_ST10n7 | -4.77 [-8.66,-0.76] n923 | -2.18 [-6.50,+2.33] n955 | -4.62 [-9.16,-0.31] n673 | -2.71 [-7.08,+1.72] n1189 |
-| XT_R4_PSAR_EMA5 | -2.03 [-5.51,+1.49] n882 | -4.07 [-7.85,-0.23] n949 | -2.71 [-6.93,+1.21] n659 | -3.54 [-6.92,-0.12] n1150 |
-| XT_R4_TD30_ST | +0.50 [-2.32,+3.53] n3313 | -3.04 [-6.23,+0.24] n3792 | +0.52 [-2.42,+3.64] n2128 | -2.15 [-4.93,+0.74] n4897 |
-| XT_R4_TD30_HM | -0.63 [-3.44,+2.17] n2705 | -3.25 [-6.56,+0.21] n2566 | +0.63 [-2.46,+3.82] n1687 | -3.07 [-5.97,-0.07] n3522 |
-| XT_R4_TD30_KEL3 | +0.85 [-1.70,+3.56] n3777 | -2.57 [-5.50,+0.32] n3562 | -0.50 [-3.22,+2.21] n2174 | -1.02 [-3.50,+1.61] n5071 |
-| XT_R4_TD30_ST10n7 | -4.54 [-8.59,-0.28] n923 | +2.18 [-2.24,+6.90] n955 | -2.99 [-7.82,+1.50] n673 | -0.20 [-4.61,+4.40] n1189 |
-| XT_R4_TD30_EMA5 | -0.26 [-4.18,+3.73] n882 | -2.48 [-7.07,+2.22] n949 | -0.71 [-5.34,+3.88] n659 | -2.29 [-5.97,+1.74] n1150 |
-| XT_R4_TD60_ST | +0.06 [-3.34,+3.47] n3313 | -2.14 [-6.42,+2.44] n3792 | -0.06 [-3.64,+3.75] n2128 | -1.75 [-5.47,+2.02] n4897 |
-| XT_R4_TD60_HM | -0.58 [-3.66,+2.72] n2705 | -1.95 [-6.24,+3.16] n2566 | +0.04 [-3.34,+3.61] n1687 | -1.87 [-5.89,+2.09] n3522 |
-| XT_R4_TD60_KEL3 | +0.52 [-2.65,+3.96] n3777 | -1.53 [-5.88,+2.85] n3562 | -1.50 [-4.70,+1.71] n2174 | -0.14 [-3.49,+3.54] n5071 |
-| XT_R4_TD60_ST10n7 | -4.35 [-8.90,+0.26] n923 | +0.29 [-4.86,+5.85] n955 | -3.08 [-8.32,+2.09] n673 | -1.21 [-6.36,+3.78] n1189 |
-| XT_R4_TD60_EMA5 | -1.92 [-6.43,+2.43] n882 | -1.47 [-6.84,+3.98] n949 | -2.44 [-7.73,+2.67] n659 | -1.50 [-5.99,+3.32] n1150 |
-| XT_R4_TD120_ST | +1.45 [-2.77,+5.73] n3313 | -2.40 [-7.93,+3.74] n3792 | +1.70 [-3.14,+6.91] n2128 | -1.65 [-6.36,+3.27] n4897 |
-| XT_R4_TD120_HM | +1.01 [-3.10,+5.05] n2705 | -3.18 [-8.52,+3.25] n2566 | +1.07 [-3.24,+5.79] n1687 | -1.85 [-6.57,+3.32] n3522 |
-| XT_R4_TD120_KEL3 | +2.23 [-1.48,+6.38] n3777 | -1.25 [-7.11,+4.43] n3562 | +0.63 [-3.59,+5.30] n2174 | +0.47 [-3.92,+5.27] n5071 |
-| XT_R4_TD120_ST10n7 | -0.77 [-6.44,+4.99] n923 | +2.72 [-4.02,+9.74] n955 | -0.59 [-6.71,+5.59] n673 | +2.19 [-4.44,+8.71] n1189 |
-| XT_R4_TD120_EMA5 | +0.94 [-4.50,+6.82] n882 | +2.21 [-4.48,+8.80] n949 | -0.42 [-6.39,+5.19] n659 | +2.52 [-3.09,+8.66] n1150 |
-| XT_R4_PL_ST | +2.03 [+0.20,+3.75] n3313 | +0.17 [-1.76,+2.15] n3792 | +0.45 [-1.82,+2.87] n2128 | +1.36 [-0.27,+3.09] n4897 |
-| XT_R4_PL_HM | +0.38 [-1.55,+2.37] n2705 | -0.41 [-2.38,+1.72] n2566 | +0.03 [-2.33,+2.27] n1687 | +0.25 [-1.54,+2.10] n3522 |
-| XT_R4_PL_KEL3 | +1.49 [-0.18,+3.22] n3777 | -0.01 [-1.73,+1.71] n3562 | +0.18 [-1.86,+2.41] n2174 | +1.07 [-0.40,+2.47] n5071 |
-| XT_R4_PL_ST10n7 | -2.80 [-6.42,+0.93] n923 | +0.92 [-2.30,+4.09] n955 | -2.06 [-6.07,+1.86] n673 | -0.11 [-3.03,+3.02] n1189 |
-| XT_R4_PL_EMA5 | -1.44 [-4.99,+2.10] n882 | +0.49 [-2.80,+4.01] n949 | -1.45 [-5.54,+2.34] n659 | -0.10 [-3.25,+3.07] n1150 |
-| XT_R4_ONH_ST | +2.16 [-3.64,+8.40] n3313 | -3.17 [-10.00,+3.90] n3792 | +0.07 [-7.04,+8.01] n2128 | -1.13 [-6.97,+4.75] n4897 |
-| XT_R4_ONH_HM | +1.46 [-4.34,+7.50] n2705 | -4.27 [-11.48,+3.97] n2566 | +0.23 [-7.05,+8.50] n1687 | -2.00 [-7.79,+4.39] n3522 |
-| XT_R4_ONH_KEL3 | +4.56 [-0.91,+10.78] n3777 | -2.81 [-9.61,+4.27] n3562 | -0.90 [-7.22,+6.31] n2174 | +1.61 [-3.84,+7.49] n5071 |
-| XT_R4_ONH_ST10n7 | -2.10 [-9.64,+5.30] n923 | -2.26 [-10.41,+5.97] n955 | -5.28 [-12.99,+2.39] n673 | -0.10 [-7.73,+7.50] n1189 |
-| XT_R4_ONH_EMA5 | +1.55 [-5.86,+9.41] n882 | -0.93 [-9.32,+7.05] n949 | -3.09 [-10.37,+4.99] n659 | +1.83 [-5.24,+9.74] n1150 |
-| XT_R4_T15_ST | +0.99 [-0.49,+2.34] n3313 | -1.05 [-2.47,+0.41] n3792 | -0.30 [-2.22,+1.59] n2128 | -0.05 [-1.39,+1.29] n4897 |
-| XT_R4_T15_HM | -0.11 [-1.68,+1.42] n2705 | -0.73 [-2.39,+0.98] n2566 | -0.60 [-2.45,+1.25] n1687 | -0.14 [-1.57,+1.35] n3522 |
-| XT_R4_T15_KEL3 | +0.66 [-0.57,+2.03] n3777 | -0.52 [-1.91,+0.85] n3562 | -0.04 [-1.58,+1.56] n2174 | +0.17 [-1.00,+1.27] n5071 |
-| XT_R4_T15_ST10n7 | -3.15 [-6.23,-0.16] n923 | +0.27 [-2.31,+2.89] n955 | -3.20 [-6.58,-0.08] n673 | -0.19 [-2.71,+2.15] n1189 |
-| XT_R4_T15_EMA5 | -1.48 [-4.37,+1.41] n882 | -0.75 [-3.47,+2.07] n949 | -2.50 [-5.95,+0.66] n659 | -0.53 [-3.01,+1.97] n1150 |
-| XT_R4_T20_ST | +1.24 [-0.76,+3.15] n3313 | -1.07 [-3.10,+1.05] n3792 | +0.11 [-2.43,+2.76] n2128 | -0.03 [-1.82,+1.82] n4897 |
-| XT_R4_T20_HM | -0.62 [-2.85,+1.58] n2705 | -1.29 [-3.57,+0.99] n2566 | +0.12 [-2.49,+2.70] n1687 | -1.14 [-3.19,+0.89] n3522 |
-| XT_R4_T20_KEL3 | +0.82 [-1.02,+2.73] n3777 | -0.71 [-2.77,+1.24] n3562 | -0.18 [-2.51,+2.06] n2174 | +0.28 [-1.32,+1.84] n5071 |
-| XT_R4_T20_ST10n7 | -2.04 [-6.12,+1.82] n923 | +0.74 [-2.93,+4.31] n955 | -2.84 [-7.14,+1.50] n673 | +0.77 [-2.58,+4.38] n1189 |
-| XT_R4_T20_EMA5 | -1.44 [-5.39,+2.56] n882 | -1.31 [-5.04,+2.48] n949 | -2.72 [-7.10,+1.56] n659 | -0.88 [-4.15,+2.58] n1150 |
-| XT_R4_TNONE_ST | +2.20 [-3.64,+8.50] n3313 | -2.46 [-9.31,+4.62] n3792 | +0.49 [-6.68,+8.45] n2128 | -0.80 [-6.76,+5.16] n4897 |
-| XT_R4_TNONE_HM | +1.44 [-4.34,+7.32] n2705 | -3.52 [-10.82,+4.71] n2566 | +0.61 [-6.72,+8.95] n1687 | -1.70 [-7.56,+4.77] n3522 |
-| XT_R4_TNONE_KEL3 | +4.76 [-0.90,+10.98] n3777 | -2.05 [-8.99,+5.19] n3562 | -0.23 [-6.45,+7.07] n2174 | +1.95 [-3.46,+7.82] n5071 |
-| XT_R4_TNONE_ST10n7 | -1.55 [-9.04,+5.81] n923 | -1.51 [-9.76,+6.65] n955 | -4.67 [-12.49,+3.07] n673 | +0.60 [-7.03,+8.22] n1189 |
-| XT_R4_TNONE_EMA5 | +1.78 [-5.79,+9.82] n882 | -0.41 [-8.66,+7.63] n949 | -2.89 [-10.34,+5.13] n659 | +2.27 [-4.88,+10.17] n1150 |
-| XT_R4_MM_ST | +0.31 [-0.89,+1.56] n3313 | -0.26 [-1.66,+1.18] n3792 | +1.39 [-0.17,+2.91] n2128 | -0.64 [-1.88,+0.63] n4897 |
-| XT_R4_MM_HM | -1.70 [-3.10,-0.33] n2705 | -0.91 [-2.48,+0.60] n2566 | -0.86 [-2.42,+0.61] n1687 | -1.35 [-2.77,-0.05] n3522 |
-| XT_R4_MM_KEL3 | +0.76 [-0.57,+2.10] n3777 | -0.56 [-2.06,+0.89] n3562 | +0.20 [-1.23,+1.58] n2174 | -0.05 [-1.36,+1.18] n5071 |
-| XT_R4_MM_ST10n7 | -1.79 [-4.80,+1.16] n923 | -1.68 [-4.39,+0.97] n955 | -0.41 [-3.25,+2.42] n673 | -2.35 [-5.18,+0.34] n1189 |
-| XT_R4_MM_EMA5 | -0.03 [-2.48,+2.42] n882 | +0.27 [-2.20,+2.95] n949 | +0.74 [-1.75,+3.40] n659 | -0.39 [-2.66,+1.98] n1150 |
+| XT_R4_CH2_ST | -1.41 [-3.33,+0.54] n3257 | -2.77 [-4.61,-0.97] n3695 | -2.34 [-4.72,+0.17] n2117 | -2.08 [-3.64,-0.55] n4831 |
+| XT_R4_CH2_HM | -2.40 [-4.48,-0.42] n2660 | -3.34 [-5.49,-1.22] n2502 | -2.66 [-5.30,-0.09] n1681 | -2.93 [-4.66,-1.16] n3477 |
+| XT_R4_CH2_KEL3 | -2.83 [-4.56,-1.08] n3709 | -3.30 [-5.18,-1.42] n3460 | -1.51 [-3.94,+0.93] n2165 | -3.74 [-5.27,-2.31] n4999 |
+| XT_R4_CH2_ST10n7 | -6.01 [-9.63,-2.40] n907 | -3.66 [-7.47,+0.11] n940 | -5.06 [-9.41,-1.06] n671 | -4.67 [-8.10,-1.18] n1175 |
+| XT_R4_CH2_EMA5 | -3.71 [-7.38,+0.07] n868 | -5.88 [-9.44,-2.57] n932 | -4.40 [-8.54,-0.48] n659 | -5.15 [-8.44,-1.85] n1139 |
+| XT_R4_CH25_ST | -1.82 [-3.75,+0.05] n3257 | -3.48 [-5.35,-1.60] n3695 | -1.99 [-4.42,+0.49] n2117 | -3.04 [-4.57,-1.48] n4831 |
+| XT_R4_CH25_HM | -2.86 [-4.87,-0.83] n2660 | -3.65 [-5.87,-1.56] n2502 | -3.14 [-5.74,-0.64] n1681 | -3.27 [-5.06,-1.41] n3477 |
+| XT_R4_CH25_KEL3 | -3.30 [-5.13,-1.42] n3709 | -3.77 [-5.84,-1.67] n3460 | -2.01 [-4.41,+0.44] n2165 | -4.21 [-5.86,-2.54] n4999 |
+| XT_R4_CH25_ST10n7 | -4.81 [-8.61,-0.75] n907 | -3.50 [-7.62,+0.84] n940 | -5.09 [-9.70,-0.93] n671 | -3.60 [-7.22,+0.40] n1175 |
+| XT_R4_CH25_EMA5 | -3.15 [-6.79,+0.74] n868 | -5.62 [-9.33,-2.08] n932 | -4.10 [-8.17,-0.01] n659 | -4.67 [-7.94,-1.39] n1139 |
+| XT_R4_CH3_ST | -2.70 [-4.53,-0.90] n3257 | -3.80 [-5.77,-1.75] n3695 | -2.54 [-4.85,-0.09] n2117 | -3.64 [-5.25,-1.96] n4831 |
+| XT_R4_CH3_HM | -3.98 [-5.99,-2.02] n2660 | -3.11 [-5.49,-0.67] n2502 | -2.76 [-5.32,-0.32] n1681 | -3.90 [-5.89,-1.95] n3477 |
+| XT_R4_CH3_KEL3 | -3.06 [-5.13,-0.83] n3709 | -4.48 [-6.81,-2.04] n3460 | -2.84 [-5.13,-0.45] n2165 | -4.15 [-6.09,-2.08] n4999 |
+| XT_R4_CH3_ST10n7 | -2.93 [-7.44,+1.64] n907 | -4.18 [-8.68,+0.38] n940 | -2.60 [-7.42,+2.28] n671 | -4.12 [-8.36,+0.40] n1175 |
+| XT_R4_CH3_EMA5 | -3.05 [-6.64,+0.95] n868 | -4.83 [-8.59,-0.93] n932 | -3.07 [-7.37,+1.41] n659 | -4.50 [-7.89,-1.01] n1139 |
+| XT_R4_STB_ST | -2.87 [-4.79,-0.84] n3257 | -3.74 [-5.90,-1.32] n3695 | -1.87 [-4.26,+0.69] n2117 | -4.00 [-5.90,-2.14] n4831 |
+| XT_R4_STB_HM | -3.88 [-5.79,-2.04] n2660 | -3.89 [-6.33,-1.49] n2502 | -2.97 [-5.46,-0.54] n1681 | -4.30 [-6.30,-2.26] n3477 |
+| XT_R4_STB_KEL3 | -1.59 [-3.99,+1.06] n3709 | -2.62 [-6.63,+1.91] n3460 | -0.62 [-4.23,+3.64] n2165 | -2.75 [-5.78,+0.46] n4999 |
+| XT_R4_STB_ST10n7 | -1.81 [-7.24,+4.02] n907 | -1.17 [-7.40,+5.42] n940 | -3.33 [-8.97,+2.44] n671 | -0.43 [-6.18,+6.09] n1175 |
+| XT_R4_STB_EMA5 | -0.24 [-4.41,+4.14] n868 | -3.15 [-8.14,+2.17] n932 | -2.74 [-7.53,+2.02] n659 | -1.19 [-5.49,+3.24] n1139 |
+| XT_R4_PSAR_ST | -1.29 [-3.07,+0.45] n3257 | -3.46 [-5.28,-1.62] n3695 | -1.93 [-4.18,+0.52] n2117 | -2.70 [-4.16,-1.17] n4831 |
+| XT_R4_PSAR_HM | -1.74 [-3.73,+0.21] n2660 | -3.29 [-5.48,-1.18] n2502 | -1.87 [-4.43,+0.48] n1681 | -2.78 [-4.55,-0.95] n3477 |
+| XT_R4_PSAR_KEL3 | -1.68 [-3.35,+0.01] n3709 | -3.59 [-5.50,-1.47] n3460 | -1.35 [-3.47,+0.91] n2165 | -3.14 [-4.69,-1.58] n4999 |
+| XT_R4_PSAR_ST10n7 | -5.04 [-9.09,-1.07] n907 | -1.57 [-6.10,+3.09] n940 | -4.63 [-9.05,-0.00] n671 | -2.51 [-6.58,+1.71] n1175 |
+| XT_R4_PSAR_EMA5 | -2.18 [-5.66,+1.42] n868 | -3.96 [-7.78,-0.24] n932 | -2.71 [-6.93,+1.21] n659 | -3.40 [-6.67,-0.10] n1139 |
+| XT_R4_TD30_ST | +0.31 [-2.58,+3.18] n3257 | -3.31 [-6.46,-0.12] n3695 | +0.38 [-2.72,+3.50] n2117 | -2.53 [-5.32,+0.24] n4831 |
+| XT_R4_TD30_HM | -0.65 [-3.25,+2.23] n2660 | -3.37 [-6.69,+0.21] n2502 | +0.53 [-2.47,+3.78] n1681 | -3.15 [-6.07,-0.10] n3477 |
+| XT_R4_TD30_KEL3 | +0.74 [-1.91,+3.48] n3709 | -2.65 [-5.65,+0.61] n3460 | -0.60 [-3.36,+2.12] n2165 | -1.06 [-3.54,+1.63] n4999 |
+| XT_R4_TD30_ST10n7 | -5.13 [-9.32,-0.74] n907 | +2.73 [-2.04,+7.51] n940 | -3.02 [-7.75,+1.77] n671 | -0.08 [-4.60,+4.23] n1175 |
+| XT_R4_TD30_EMA5 | -0.56 [-4.46,+3.51] n868 | -2.47 [-6.94,+2.16] n932 | -0.71 [-5.34,+3.88] n659 | -2.11 [-5.75,+1.97] n1139 |
+| XT_R4_TD60_ST | -0.17 [-3.58,+3.40] n3257 | -3.33 [-7.46,+1.21] n3695 | -0.18 [-3.84,+3.43] n2117 | -2.61 [-6.25,+1.22] n4831 |
+| XT_R4_TD60_HM | -0.60 [-3.91,+2.75] n2660 | -2.66 [-7.12,+2.28] n2502 | -0.07 [-3.66,+3.42] n1681 | -2.32 [-6.06,+1.73] n3477 |
+| XT_R4_TD60_KEL3 | +0.52 [-2.72,+3.83] n3709 | -2.08 [-6.33,+2.63] n3460 | -1.62 [-4.87,+1.51] n2165 | -0.40 [-3.90,+3.12] n4999 |
+| XT_R4_TD60_ST10n7 | -4.69 [-9.41,+0.01] n907 | +1.06 [-4.30,+6.86] n940 | -3.12 [-8.45,+2.41] n671 | -1.04 [-6.01,+3.93] n1175 |
+| XT_R4_TD60_EMA5 | -2.13 [-6.70,+2.84] n868 | -1.41 [-6.45,+4.01] n932 | -2.44 [-7.73,+2.67] n659 | -1.43 [-5.89,+3.28] n1139 |
+| XT_R4_TD120_ST | +1.44 [-2.77,+5.89] n3257 | -3.85 [-9.33,+2.00] n3695 | +1.60 [-3.27,+6.75] n2117 | -2.67 [-7.44,+2.34] n4831 |
+| XT_R4_TD120_HM | +1.28 [-2.77,+5.63] n2660 | -4.13 [-9.80,+2.02] n2502 | +0.96 [-3.47,+5.63] n1681 | -2.43 [-7.19,+2.64] n3477 |
+| XT_R4_TD120_KEL3 | +2.47 [-1.39,+6.50] n3709 | -2.51 [-8.13,+3.84] n3460 | +0.54 [-3.81,+4.87] n2165 | -0.16 [-4.63,+4.31] n4999 |
+| XT_R4_TD120_ST10n7 | -1.02 [-6.69,+5.10] n907 | +2.90 [-3.82,+9.94] n940 | -0.61 [-6.80,+5.87] n671 | +1.88 [-4.38,+8.20] n1175 |
+| XT_R4_TD120_EMA5 | +0.96 [-4.98,+6.95] n868 | +1.11 [-5.12,+7.74] n932 | -0.42 [-6.39,+5.19] n659 | +1.89 [-3.90,+7.99] n1139 |
+| XT_R4_PL_ST | +2.08 [+0.28,+3.82] n3257 | +0.16 [-1.86,+2.13] n3695 | +0.47 [-1.86,+2.97] n2117 | +1.32 [-0.31,+2.91] n4831 |
+| XT_R4_PL_HM | +0.58 [-1.34,+2.62] n2660 | -0.20 [-2.31,+1.94] n2502 | +0.01 [-2.38,+2.40] n1681 | +0.31 [-1.47,+2.13] n3477 |
+| XT_R4_PL_KEL3 | +1.66 [+0.05,+3.39] n3709 | -0.01 [-1.81,+1.83] n3460 | +0.13 [-1.98,+2.42] n2165 | +1.16 [-0.22,+2.58] n4999 |
+| XT_R4_PL_ST10n7 | -3.08 [-6.48,+0.49] n907 | +1.54 [-1.77,+4.83] n940 | -2.02 [-6.23,+2.00] n671 | +0.01 [-3.02,+3.17] n1175 |
+| XT_R4_PL_EMA5 | -1.59 [-5.07,+1.95] n868 | +0.46 [-2.88,+3.69] n932 | -1.45 [-5.54,+2.34] n659 | +0.00 [-3.19,+2.93] n1139 |
+| XT_R4_ONH_ST | +2.39 [-3.29,+8.45] n3257 | -4.51 [-11.03,+2.59] n3695 | +0.22 [-6.85,+7.91] n2117 | -1.94 [-7.64,+4.10] n4831 |
+| XT_R4_ONH_HM | +1.84 [-3.97,+7.55] n2660 | -5.12 [-12.32,+2.65] n2502 | +0.31 [-6.76,+8.64] n1681 | -2.36 [-8.14,+3.50] n3477 |
+| XT_R4_ONH_KEL3 | +4.98 [-0.69,+11.04] n3709 | -4.22 [-10.92,+2.85] n3460 | -0.86 [-7.35,+6.21] n2165 | +1.19 [-4.16,+6.85] n4999 |
+| XT_R4_ONH_ST10n7 | -2.07 [-9.56,+6.05] n907 | -1.96 [-9.97,+6.41] n940 | -5.11 [-13.53,+3.02] n671 | -0.24 [-7.72,+7.56] n1175 |
+| XT_R4_ONH_EMA5 | +1.76 [-5.97,+9.72] n868 | -2.24 [-9.62,+6.12] n932 | -3.09 [-10.37,+4.99] n659 | +1.30 [-5.87,+8.92] n1139 |
+| XT_R4_T15_ST | +0.95 [-0.51,+2.35] n3257 | -1.22 [-2.77,+0.27] n3695 | -0.35 [-2.26,+1.59] n2117 | -0.13 [-1.37,+1.14] n4831 |
+| XT_R4_T15_HM | +0.05 [-1.44,+1.67] n2660 | -0.60 [-2.32,+1.08] n2502 | -0.64 [-2.53,+1.25] n1681 | -0.10 [-1.60,+1.32] n3477 |
+| XT_R4_T15_KEL3 | +0.75 [-0.55,+2.02] n3709 | -0.42 [-1.90,+0.95] n3460 | -0.11 [-1.78,+1.46] n2165 | +0.30 [-0.79,+1.38] n4999 |
+| XT_R4_T15_ST10n7 | -3.37 [-6.39,-0.30] n907 | +0.79 [-1.94,+3.32] n940 | -3.25 [-6.61,+0.02] n671 | -0.11 [-2.56,+2.35] n1175 |
+| XT_R4_T15_EMA5 | -1.68 [-4.57,+1.23] n868 | -0.73 [-3.42,+1.89] n932 | -2.50 [-5.95,+0.66] n659 | -0.42 [-3.00,+2.03] n1139 |
+| XT_R4_T20_ST | +1.31 [-0.68,+3.26] n3257 | -1.25 [-3.30,+0.86] n3695 | +0.09 [-2.42,+2.82] n2117 | -0.11 [-1.93,+1.60] n4831 |
+| XT_R4_T20_HM | -0.45 [-2.73,+1.80] n2660 | -1.20 [-3.41,+1.31] n2502 | +0.05 [-2.63,+2.84] n1681 | -1.16 [-3.18,+0.82] n3477 |
+| XT_R4_T20_KEL3 | +1.11 [-0.76,+2.91] n3709 | -0.69 [-2.69,+1.20] n3460 | -0.15 [-2.55,+2.19] n2165 | +0.39 [-1.19,+1.93] n4999 |
+| XT_R4_T20_ST10n7 | -2.21 [-5.93,+1.64] n907 | +1.33 [-2.46,+5.04] n940 | -2.67 [-7.14,+1.64] n671 | +0.89 [-2.50,+4.44] n1175 |
+| XT_R4_T20_EMA5 | -1.60 [-5.55,+2.29] n868 | -1.52 [-5.31,+2.05] n932 | -2.72 [-7.10,+1.56] n659 | -0.89 [-4.24,+2.22] n1139 |
+| XT_R4_TNONE_ST | +2.40 [-3.23,+8.37] n3257 | -3.88 [-10.43,+3.22] n3695 | +0.65 [-6.40,+8.38] n2117 | -1.63 [-7.35,+4.37] n4831 |
+| XT_R4_TNONE_HM | +1.77 [-3.97,+7.51] n2660 | -4.42 [-11.74,+3.42] n2502 | +0.70 [-6.48,+9.03] n1681 | -2.10 [-7.72,+3.80] n3477 |
+| XT_R4_TNONE_KEL3 | +5.19 [-0.60,+11.26] n3709 | -3.56 [-10.21,+3.65] n3460 | -0.19 [-6.71,+7.08] n2165 | +1.52 [-3.82,+7.27] n4999 |
+| XT_R4_TNONE_ST10n7 | -1.54 [-9.05,+6.56] n907 | -1.19 [-9.19,+7.29] n940 | -4.50 [-12.92,+3.69] n671 | +0.43 [-7.15,+8.23] n1175 |
+| XT_R4_TNONE_EMA5 | +1.96 [-5.75,+9.98] n868 | -1.79 [-9.32,+6.55] n932 | -2.89 [-10.34,+5.13] n659 | +1.71 [-5.52,+9.39] n1139 |
+| XT_R4_MM_ST | +0.27 [-0.93,+1.54] n3257 | -0.40 [-1.85,+1.05] n3695 | +1.39 [-0.06,+3.00] n2117 | -0.73 [-2.06,+0.48] n4831 |
+| XT_R4_MM_HM | -1.57 [-2.87,-0.23] n2660 | -0.81 [-2.38,+0.70] n2502 | -0.85 [-2.31,+0.73] n1681 | -1.35 [-2.76,+0.08] n3477 |
+| XT_R4_MM_KEL3 | +0.65 [-0.71,+1.96] n3709 | -0.73 [-2.30,+0.78] n3460 | +0.20 [-1.20,+1.62] n2165 | -0.12 [-1.42,+1.19] n4999 |
+| XT_R4_MM_ST10n7 | -1.92 [-4.73,+0.94] n907 | -1.29 [-3.90,+1.40] n940 | -0.42 [-3.36,+2.50] n671 | -2.28 [-4.85,+0.41] n1175 |
+| XT_R4_MM_EMA5 | +0.07 [-2.38,+2.49] n868 | -0.07 [-2.50,+2.50] n932 | +0.74 [-1.75,+3.40] n659 | -0.43 [-2.62,+1.91] n1139 |
 
 ## Weekly P&L (10 lots, exact per-book locks, WF 2024-02+; base = same stream fixed bracket)
 | cell | WF wk mean rule | WF wk mean base | WF wk SD rule | base | WF worst wk rule | base | maxDD ALL rule | base | trades/wk rule | base | taken rule | taken base |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XT_R4_CH2_ST | -22,512 | 4,417 | 36,609 | 56,718 | -132,618 | -96,575 | 3,729,605 | 441,496 | 39.8 | 24.1 | 8284 | 8309 |
-| XT_R4_CH2_HM | -22,861 | -1,837 | 27,168 | 51,840 | -112,370 | -138,460 | 3,677,305 | 621,790 | 32.7 | 22.3 | 6260 | 6311 |
-| XT_R4_CH2_KEL3 | -22,676 | 1,134 | 45,524 | 55,868 | -141,217 | -121,961 | 3,922,996 | 847,723 | 30.8 | 24.6 | 7863 | 8593 |
-| XT_R4_CH2_ST10n7 | -5,147 | 2,918 | 36,471 | 37,985 | -105,811 | -90,867 | 954,179 | 261,458 | 11.7 | 11.8 | 2397 | 2397 |
-| XT_R4_CH2_EMA5 | -7,863 | 3,002 | 28,542 | 36,762 | -83,579 | -83,696 | 1,403,769 | 263,940 | 12.0 | 11.4 | 2334 | 2335 |
-| XT_R4_CH25_ST | -24,693 | 4,417 | 41,284 | 56,718 | -149,478 | -96,575 | 4,107,631 | 441,496 | 36.3 | 24.1 | 8174 | 8309 |
-| XT_R4_CH25_HM | -21,720 | -1,837 | 36,589 | 51,840 | -108,270 | -138,460 | 3,624,390 | 621,790 | 30.6 | 22.3 | 6165 | 6311 |
-| XT_R4_CH25_KEL3 | -17,857 | 1,134 | 49,060 | 55,868 | -140,589 | -121,961 | 3,312,609 | 847,723 | 26.8 | 24.6 | 7414 | 8593 |
-| XT_R4_CH25_ST10n7 | -990 | 2,918 | 39,761 | 37,985 | -101,117 | -90,867 | 644,703 | 261,458 | 11.2 | 11.8 | 2396 | 2397 |
-| XT_R4_CH25_EMA5 | -6,256 | 3,002 | 31,081 | 36,762 | -74,323 | -83,696 | 1,118,643 | 263,940 | 11.6 | 11.4 | 2334 | 2335 |
-| XT_R4_CH3_ST | -23,894 | 4,417 | 48,397 | 56,718 | -136,627 | -96,575 | 3,908,955 | 441,496 | 33.0 | 24.1 | 7977 | 8309 |
-| XT_R4_CH3_HM | -21,330 | -1,837 | 37,197 | 51,840 | -143,525 | -138,460 | 3,510,905 | 621,790 | 28.6 | 22.3 | 6029 | 6311 |
-| XT_R4_CH3_KEL3 | -14,627 | 1,134 | 47,071 | 55,868 | -131,257 | -121,961 | 2,841,522 | 847,723 | 23.7 | 24.6 | 6943 | 8593 |
-| XT_R4_CH3_ST10n7 | 934 | 2,918 | 44,234 | 37,985 | -102,107 | -90,867 | 527,546 | 261,458 | 10.7 | 11.8 | 2387 | 2397 |
-| XT_R4_CH3_EMA5 | -2,372 | 3,002 | 36,342 | 36,762 | -102,991 | -83,696 | 547,451 | 263,940 | 11.3 | 11.4 | 2333 | 2335 |
-| XT_R4_STB_ST | -16,675 | 4,417 | 51,866 | 56,718 | -144,461 | -96,575 | 3,022,146 | 441,496 | 28.8 | 24.1 | 7444 | 8309 |
-| XT_R4_STB_HM | -15,636 | -1,837 | 39,606 | 51,840 | -145,079 | -138,460 | 2,872,364 | 621,790 | 25.9 | 22.3 | 5787 | 6311 |
-| XT_R4_STB_KEL3 | -8,391 | 1,134 | 55,752 | 55,868 | -130,718 | -121,961 | 2,181,463 | 847,723 | 19.9 | 24.6 | 6039 | 8593 |
-| XT_R4_STB_ST10n7 | 3,537 | 2,918 | 52,013 | 37,985 | -106,287 | -90,867 | 457,705 | 261,458 | 9.9 | 11.8 | 2396 | 2397 |
-| XT_R4_STB_EMA5 | 5,969 | 3,002 | 44,836 | 36,762 | -85,425 | -83,696 | 371,413 | 263,940 | 10.5 | 11.4 | 2332 | 2335 |
-| XT_R4_PSAR_ST | -24,626 | 4,417 | 43,694 | 56,718 | -141,014 | -96,575 | 4,097,319 | 441,496 | 35.7 | 24.1 | 8177 | 8309 |
-| XT_R4_PSAR_HM | -17,246 | -1,837 | 33,479 | 51,840 | -138,743 | -138,460 | 2,835,104 | 621,790 | 30.2 | 22.3 | 6253 | 6311 |
-| XT_R4_PSAR_KEL3 | -19,482 | 1,134 | 50,132 | 55,868 | -119,488 | -121,961 | 3,768,113 | 847,723 | 27.9 | 24.6 | 7793 | 8593 |
-| XT_R4_PSAR_ST10n7 | -1,502 | 2,918 | 38,606 | 37,985 | -96,289 | -90,867 | 624,333 | 261,458 | 11.4 | 11.8 | 2396 | 2397 |
-| XT_R4_PSAR_EMA5 | -2,099 | 3,002 | 31,681 | 36,762 | -77,624 | -83,696 | 486,816 | 263,940 | 11.7 | 11.4 | 2334 | 2335 |
-| XT_R4_TD30_ST | -2,619 | 4,417 | 50,902 | 56,718 | -148,820 | -96,575 | 888,715 | 441,496 | 20.5 | 24.1 | 5708 | 8309 |
-| XT_R4_TD30_HM | 2,208 | -1,837 | 53,277 | 51,840 | -124,837 | -138,460 | 848,449 | 621,790 | 19.1 | 22.3 | 4967 | 6311 |
-| XT_R4_TD30_KEL3 | -6,943 | 1,134 | 55,651 | 55,868 | -144,733 | -121,961 | 1,804,017 | 847,723 | 19.9 | 24.6 | 6013 | 8593 |
-| XT_R4_TD30_ST10n7 | 2,207 | 2,918 | 40,152 | 37,985 | -117,216 | -90,867 | 385,098 | 261,458 | 11.4 | 11.8 | 2349 | 2397 |
-| XT_R4_TD30_EMA5 | 457 | 3,002 | 36,991 | 36,762 | -106,794 | -83,696 | 542,991 | 263,940 | 11.2 | 11.4 | 2305 | 2335 |
-| XT_R4_TD60_ST | 5,568 | 4,417 | 53,529 | 56,718 | -139,935 | -96,575 | 659,075 | 441,496 | 16.1 | 24.1 | 4810 | 8309 |
-| XT_R4_TD60_HM | 12,478 | -1,837 | 60,762 | 51,840 | -99,107 | -138,460 | 658,455 | 621,790 | 15.6 | 22.3 | 4297 | 6311 |
-| XT_R4_TD60_KEL3 | -2,947 | 1,134 | 59,395 | 55,868 | -144,242 | -121,961 | 1,304,546 | 847,723 | 15.5 | 24.6 | 5005 | 8593 |
-| XT_R4_TD60_ST10n7 | 1,477 | 2,918 | 47,062 | 37,985 | -107,594 | -90,867 | 462,262 | 261,458 | 10.5 | 11.8 | 2259 | 2397 |
-| XT_R4_TD60_EMA5 | 3,041 | 3,002 | 42,994 | 36,762 | -105,949 | -83,696 | 604,962 | 263,940 | 10.4 | 11.4 | 2265 | 2335 |
-| XT_R4_TD120_ST | 8,239 | 4,417 | 60,792 | 56,718 | -118,444 | -96,575 | 697,278 | 441,496 | 12.9 | 24.1 | 4101 | 8309 |
-| XT_R4_TD120_HM | 14,462 | -1,837 | 60,028 | 51,840 | -115,331 | -138,460 | 607,674 | 621,790 | 12.3 | 22.3 | 3696 | 6311 |
-| XT_R4_TD120_KEL3 | 5,782 | 1,134 | 61,412 | 55,868 | -124,809 | -121,961 | 799,287 | 847,723 | 12.2 | 24.6 | 4201 | 8593 |
-| XT_R4_TD120_ST10n7 | 9,119 | 2,918 | 56,946 | 37,985 | -111,399 | -90,867 | 622,458 | 261,458 | 9.3 | 11.8 | 2118 | 2397 |
-| XT_R4_TD120_EMA5 | 8,986 | 3,002 | 49,768 | 36,762 | -98,199 | -83,696 | 567,369 | 263,940 | 9.2 | 11.4 | 2146 | 2335 |
-| XT_R4_PL_ST | 694 | 4,417 | 62,624 | 56,718 | -130,771 | -96,575 | 924,850 | 441,496 | 14.8 | 24.1 | 5880 | 8309 |
-| XT_R4_PL_HM | 3,950 | -1,837 | 56,298 | 51,840 | -122,592 | -138,460 | 669,199 | 621,790 | 14.2 | 22.3 | 4567 | 6311 |
-| XT_R4_PL_KEL3 | 5,310 | 1,134 | 63,604 | 55,868 | -136,454 | -121,961 | 641,056 | 847,723 | 14.3 | 24.6 | 5879 | 8593 |
-| XT_R4_PL_ST10n7 | 1,835 | 2,918 | 47,664 | 37,985 | -96,039 | -90,867 | 411,374 | 261,458 | 9.7 | 11.8 | 2166 | 2397 |
-| XT_R4_PL_EMA5 | 5,919 | 3,002 | 43,771 | 36,762 | -84,016 | -83,696 | 408,050 | 263,940 | 9.6 | 11.4 | 2177 | 2335 |
-| XT_R4_ONH_ST | 7,231 | 4,417 | 61,698 | 56,718 | -108,134 | -96,575 | 515,397 | 441,496 | 6.6 | 24.1 | 2916 | 8309 |
-| XT_R4_ONH_HM | 14,372 | -1,837 | 55,730 | 51,840 | -135,389 | -138,460 | 400,456 | 621,790 | 6.6 | 22.3 | 2681 | 6311 |
-| XT_R4_ONH_KEL3 | 4,223 | 1,134 | 56,399 | 55,868 | -130,084 | -121,961 | 577,266 | 847,723 | 6.2 | 24.6 | 2890 | 8593 |
-| XT_R4_ONH_ST10n7 | 6,213 | 2,918 | 57,174 | 37,985 | -111,791 | -90,867 | 323,250 | 261,458 | 6.3 | 11.8 | 1747 | 2397 |
-| XT_R4_ONH_EMA5 | 12,599 | 3,002 | 53,661 | 36,762 | -127,684 | -83,696 | 352,137 | 263,940 | 6.1 | 11.4 | 1803 | 2335 |
-| XT_R4_T15_ST | -195 | 4,417 | 56,782 | 56,718 | -131,331 | -96,575 | 834,326 | 441,496 | 16.8 | 24.1 | 6251 | 8309 |
-| XT_R4_T15_HM | 3,892 | -1,837 | 56,869 | 51,840 | -143,920 | -138,460 | 628,854 | 621,790 | 16.0 | 22.3 | 4932 | 6311 |
-| XT_R4_T15_KEL3 | 4,115 | 1,134 | 61,451 | 55,868 | -133,282 | -121,961 | 485,287 | 847,723 | 16.3 | 24.6 | 6289 | 8593 |
-| XT_R4_T15_ST10n7 | 2,192 | 2,918 | 43,460 | 37,985 | -101,984 | -90,867 | 330,276 | 261,458 | 10.1 | 11.8 | 2194 | 2397 |
-| XT_R4_T15_EMA5 | 1,936 | 3,002 | 40,197 | 36,762 | -89,581 | -83,696 | 495,589 | 263,940 | 10.1 | 11.4 | 2192 | 2335 |
-| XT_R4_T20_ST | 2,962 | 4,417 | 58,249 | 56,718 | -148,038 | -96,575 | 645,199 | 441,496 | 13.2 | 24.1 | 5436 | 8309 |
-| XT_R4_T20_HM | 1,297 | -1,837 | 53,962 | 51,840 | -135,354 | -138,460 | 1,051,117 | 621,790 | 13.2 | 22.3 | 4380 | 6311 |
-| XT_R4_T20_KEL3 | 4,568 | 1,134 | 60,574 | 55,868 | -141,658 | -121,961 | 830,296 | 847,723 | 13.0 | 24.6 | 5487 | 8593 |
-| XT_R4_T20_ST10n7 | 904 | 2,918 | 50,469 | 37,985 | -104,642 | -90,867 | 584,641 | 261,458 | 9.1 | 11.8 | 2078 | 2397 |
-| XT_R4_T20_EMA5 | 2,468 | 3,002 | 43,189 | 36,762 | -127,684 | -83,696 | 565,285 | 263,940 | 8.9 | 11.4 | 2099 | 2335 |
-| XT_R4_TNONE_ST | -4,439 | 4,417 | 59,419 | 56,718 | -108,134 | -96,575 | 1,094,078 | 441,496 | 7.9 | 24.1 | 2917 | 8309 |
-| XT_R4_TNONE_HM | 10,308 | -1,837 | 56,237 | 51,840 | -135,389 | -138,460 | 780,769 | 621,790 | 8.0 | 22.3 | 2681 | 6311 |
-| XT_R4_TNONE_KEL3 | 2,322 | 1,134 | 58,525 | 55,868 | -130,084 | -121,961 | 653,376 | 847,723 | 7.4 | 24.6 | 2890 | 8593 |
-| XT_R4_TNONE_ST10n7 | 6,862 | 2,918 | 63,573 | 37,985 | -111,791 | -90,867 | 354,444 | 261,458 | 7.4 | 11.8 | 1747 | 2397 |
-| XT_R4_TNONE_EMA5 | 7,826 | 3,002 | 54,560 | 36,762 | -127,684 | -83,696 | 464,783 | 263,940 | 7.4 | 11.4 | 1803 | 2335 |
-| XT_R4_MM_ST | 875 | 4,417 | 56,057 | 56,718 | -111,410 | -96,575 | 531,847 | 441,496 | 22.9 | 24.1 | 7529 | 8309 |
-| XT_R4_MM_HM | -3,013 | -1,837 | 50,733 | 51,840 | -109,473 | -138,460 | 741,533 | 621,790 | 21.3 | 22.3 | 5887 | 6311 |
-| XT_R4_MM_KEL3 | 5,300 | 1,134 | 60,021 | 55,868 | -133,411 | -121,961 | 690,179 | 847,723 | 22.7 | 24.6 | 7383 | 8593 |
-| XT_R4_MM_ST10n7 | 1,799 | 2,918 | 42,730 | 37,985 | -106,884 | -90,867 | 526,565 | 261,458 | 11.0 | 11.8 | 2358 | 2397 |
-| XT_R4_MM_EMA5 | 6,208 | 3,002 | 38,491 | 36,762 | -87,480 | -83,696 | 260,308 | 263,940 | 11.1 | 11.4 | 2326 | 2335 |
+| XT_R4_CH2_ST | -21,947 | 3,943 | 36,636 | 56,580 | -132,618 | -96,575 | 3,666,630 | 441,496 | 38.9 | 23.7 | 8131 | 8156 |
+| XT_R4_CH2_HM | -22,809 | -1,746 | 26,568 | 51,751 | -112,370 | -138,460 | 3,666,311 | 621,790 | 32.0 | 22.0 | 6152 | 6202 |
+| XT_R4_CH2_KEL3 | -22,690 | 453 | 45,500 | 55,539 | -141,217 | -121,961 | 3,902,828 | 847,723 | 30.1 | 24.0 | 7712 | 8423 |
+| XT_R4_CH2_ST10n7 | -4,471 | 3,475 | 36,106 | 37,536 | -105,811 | -90,867 | 954,179 | 261,458 | 11.5 | 11.6 | 2366 | 2366 |
+| XT_R4_CH2_EMA5 | -7,918 | 3,300 | 28,481 | 36,293 | -83,579 | -83,696 | 1,403,769 | 263,940 | 11.9 | 11.2 | 2303 | 2304 |
+| XT_R4_CH25_ST | -23,793 | 3,943 | 41,058 | 56,580 | -149,478 | -96,575 | 4,006,350 | 441,496 | 35.5 | 23.7 | 8023 | 8156 |
+| XT_R4_CH25_HM | -21,592 | -1,746 | 36,061 | 51,751 | -108,270 | -138,460 | 3,606,071 | 621,790 | 29.9 | 22.0 | 6062 | 6202 |
+| XT_R4_CH25_KEL3 | -18,093 | 453 | 48,896 | 55,539 | -140,589 | -121,961 | 3,312,609 | 847,723 | 26.4 | 24.0 | 7274 | 8423 |
+| XT_R4_CH25_ST10n7 | -486 | 3,475 | 39,532 | 37,536 | -101,117 | -90,867 | 644,703 | 261,458 | 11.0 | 11.6 | 2365 | 2366 |
+| XT_R4_CH25_EMA5 | -6,212 | 3,300 | 30,945 | 36,293 | -74,323 | -83,696 | 1,118,643 | 263,940 | 11.4 | 11.2 | 2303 | 2304 |
+| XT_R4_CH3_ST | -23,793 | 3,943 | 48,295 | 56,580 | -136,627 | -96,575 | 3,892,197 | 441,496 | 32.3 | 23.7 | 7829 | 8156 |
+| XT_R4_CH3_HM | -21,225 | -1,746 | 36,922 | 51,751 | -143,525 | -138,460 | 3,490,225 | 621,790 | 28.0 | 22.0 | 5928 | 6202 |
+| XT_R4_CH3_KEL3 | -14,576 | 453 | 47,070 | 55,539 | -131,257 | -121,961 | 2,841,522 | 847,723 | 23.3 | 24.0 | 6821 | 8423 |
+| XT_R4_CH3_ST10n7 | 1,391 | 3,475 | 43,977 | 37,536 | -102,107 | -90,867 | 527,546 | 261,458 | 10.5 | 11.6 | 2356 | 2366 |
+| XT_R4_CH3_EMA5 | -2,323 | 3,300 | 36,263 | 36,293 | -102,991 | -83,696 | 547,451 | 263,940 | 11.1 | 11.2 | 2302 | 2304 |
+| XT_R4_STB_ST | -16,515 | 3,943 | 51,884 | 56,580 | -144,461 | -96,575 | 3,022,146 | 441,496 | 28.2 | 23.7 | 7305 | 8156 |
+| XT_R4_STB_HM | -15,416 | -1,746 | 39,257 | 51,751 | -145,079 | -138,460 | 2,846,391 | 621,790 | 25.3 | 22.0 | 5691 | 6202 |
+| XT_R4_STB_KEL3 | -8,392 | 453 | 55,719 | 55,539 | -130,718 | -121,961 | 2,181,463 | 847,723 | 19.6 | 24.0 | 5930 | 8423 |
+| XT_R4_STB_ST10n7 | 4,156 | 3,475 | 51,691 | 37,536 | -106,287 | -90,867 | 457,705 | 261,458 | 9.7 | 11.6 | 2365 | 2366 |
+| XT_R4_STB_EMA5 | 4,798 | 3,300 | 42,981 | 36,293 | -85,425 | -83,696 | 371,413 | 263,940 | 10.4 | 11.2 | 2301 | 2304 |
+| XT_R4_PSAR_ST | -23,916 | 3,943 | 43,649 | 56,580 | -141,014 | -96,575 | 3,995,754 | 441,496 | 34.9 | 23.7 | 8026 | 8156 |
+| XT_R4_PSAR_HM | -17,332 | -1,746 | 32,675 | 51,751 | -138,743 | -138,460 | 2,835,104 | 621,790 | 29.6 | 22.0 | 6147 | 6202 |
+| XT_R4_PSAR_KEL3 | -19,662 | 453 | 50,000 | 55,539 | -119,488 | -121,961 | 3,739,081 | 847,723 | 27.4 | 24.0 | 7644 | 8423 |
+| XT_R4_PSAR_ST10n7 | -840 | 3,475 | 38,205 | 37,536 | -96,289 | -90,867 | 624,333 | 261,458 | 11.2 | 11.6 | 2365 | 2366 |
+| XT_R4_PSAR_EMA5 | -1,862 | 3,300 | 31,619 | 36,293 | -77,624 | -83,696 | 486,816 | 263,940 | 11.5 | 11.2 | 2303 | 2304 |
+| XT_R4_TD30_ST | -3,272 | 3,943 | 50,260 | 56,580 | -148,820 | -96,575 | 888,715 | 441,496 | 20.1 | 23.7 | 5598 | 8156 |
+| XT_R4_TD30_HM | 2,178 | -1,746 | 52,986 | 51,751 | -124,837 | -138,460 | 848,449 | 621,790 | 18.7 | 22.0 | 4881 | 6202 |
+| XT_R4_TD30_KEL3 | -6,880 | 453 | 55,648 | 55,539 | -144,733 | -121,961 | 1,804,017 | 847,723 | 19.6 | 24.0 | 5904 | 8423 |
+| XT_R4_TD30_ST10n7 | 2,451 | 3,475 | 40,071 | 37,536 | -117,216 | -90,867 | 385,098 | 261,458 | 11.2 | 11.6 | 2318 | 2366 |
+| XT_R4_TD30_EMA5 | 577 | 3,300 | 36,727 | 36,293 | -106,794 | -83,696 | 542,991 | 263,940 | 11.1 | 11.2 | 2274 | 2304 |
+| XT_R4_TD60_ST | 3,989 | 3,943 | 50,988 | 56,580 | -139,935 | -96,575 | 659,075 | 441,496 | 15.8 | 23.7 | 4725 | 8156 |
+| XT_R4_TD60_HM | 11,704 | -1,746 | 60,559 | 51,751 | -99,107 | -138,460 | 658,455 | 621,790 | 15.4 | 22.0 | 4229 | 6202 |
+| XT_R4_TD60_KEL3 | -2,347 | 453 | 59,058 | 55,539 | -144,242 | -121,961 | 1,304,546 | 847,723 | 15.3 | 24.0 | 4919 | 8423 |
+| XT_R4_TD60_ST10n7 | 1,856 | 3,475 | 46,902 | 37,536 | -107,594 | -90,867 | 462,262 | 261,458 | 10.3 | 11.6 | 2229 | 2366 |
+| XT_R4_TD60_EMA5 | 2,793 | 3,300 | 42,848 | 36,293 | -105,949 | -83,696 | 604,962 | 263,940 | 10.2 | 11.2 | 2234 | 2304 |
+| XT_R4_TD120_ST | 6,743 | 3,943 | 58,133 | 56,580 | -118,444 | -96,575 | 697,278 | 441,496 | 12.8 | 23.7 | 4033 | 8156 |
+| XT_R4_TD120_HM | 14,107 | -1,746 | 60,033 | 51,751 | -115,331 | -138,460 | 607,674 | 621,790 | 12.2 | 22.0 | 3641 | 6202 |
+| XT_R4_TD120_KEL3 | 6,448 | 453 | 60,417 | 55,539 | -124,809 | -121,961 | 799,287 | 847,723 | 12.1 | 24.0 | 4132 | 8423 |
+| XT_R4_TD120_ST10n7 | 8,523 | 3,475 | 55,851 | 37,536 | -111,399 | -90,867 | 622,458 | 261,458 | 9.2 | 11.6 | 2090 | 2366 |
+| XT_R4_TD120_EMA5 | 7,371 | 3,300 | 47,382 | 36,293 | -98,199 | -83,696 | 567,369 | 263,940 | 9.1 | 11.2 | 2118 | 2304 |
+| XT_R4_PL_ST | -447 | 3,943 | 61,809 | 56,580 | -130,771 | -96,575 | 924,850 | 441,496 | 14.5 | 23.7 | 5762 | 8156 |
+| XT_R4_PL_HM | 4,045 | -1,746 | 56,242 | 51,751 | -122,592 | -138,460 | 669,199 | 621,790 | 13.9 | 22.0 | 4483 | 6202 |
+| XT_R4_PL_KEL3 | 5,413 | 453 | 63,515 | 55,539 | -136,454 | -121,961 | 641,056 | 847,723 | 14.0 | 24.0 | 5764 | 8423 |
+| XT_R4_PL_ST10n7 | 2,154 | 3,475 | 47,531 | 37,536 | -96,039 | -90,867 | 411,374 | 261,458 | 9.6 | 11.6 | 2135 | 2366 |
+| XT_R4_PL_EMA5 | 5,482 | 3,300 | 43,663 | 36,293 | -84,016 | -83,696 | 408,050 | 263,940 | 9.5 | 11.2 | 2146 | 2304 |
+| XT_R4_ONH_ST | 7,655 | 3,943 | 61,540 | 56,580 | -108,134 | -96,575 | 515,397 | 441,496 | 6.5 | 23.7 | 2878 | 8156 |
+| XT_R4_ONH_HM | 13,284 | -1,746 | 54,852 | 51,751 | -135,389 | -138,460 | 400,456 | 621,790 | 6.6 | 22.0 | 2643 | 6202 |
+| XT_R4_ONH_KEL3 | 4,640 | 453 | 56,009 | 55,539 | -130,084 | -121,961 | 577,266 | 847,723 | 6.2 | 24.0 | 2848 | 8423 |
+| XT_R4_ONH_ST10n7 | 6,857 | 3,475 | 56,757 | 37,536 | -111,791 | -90,867 | 323,250 | 261,458 | 6.2 | 11.6 | 1722 | 2366 |
+| XT_R4_ONH_EMA5 | 12,004 | 3,300 | 53,553 | 36,293 | -127,684 | -83,696 | 352,137 | 263,940 | 6.0 | 11.2 | 1782 | 2304 |
+| XT_R4_T15_ST | -1,310 | 3,943 | 55,915 | 56,580 | -131,331 | -96,575 | 834,326 | 441,496 | 16.4 | 23.7 | 6126 | 8156 |
+| XT_R4_T15_HM | 2,968 | -1,746 | 56,052 | 51,751 | -143,920 | -138,460 | 628,854 | 621,790 | 15.8 | 22.0 | 4845 | 6202 |
+| XT_R4_T15_KEL3 | 3,986 | 453 | 61,215 | 55,539 | -133,282 | -121,961 | 485,287 | 847,723 | 16.1 | 24.0 | 6169 | 8423 |
+| XT_R4_T15_ST10n7 | 2,464 | 3,475 | 43,303 | 37,536 | -101,984 | -90,867 | 330,276 | 261,458 | 9.9 | 11.6 | 2163 | 2366 |
+| XT_R4_T15_EMA5 | 1,634 | 3,300 | 40,128 | 36,293 | -89,581 | -83,696 | 495,589 | 263,940 | 9.9 | 11.2 | 2161 | 2304 |
+| XT_R4_T20_ST | 2,832 | 3,943 | 58,232 | 56,580 | -148,038 | -96,575 | 645,199 | 441,496 | 13.0 | 23.7 | 5336 | 8156 |
+| XT_R4_T20_HM | 1,460 | -1,746 | 53,918 | 51,751 | -135,354 | -138,460 | 1,051,117 | 621,790 | 13.0 | 22.0 | 4301 | 6202 |
+| XT_R4_T20_KEL3 | 4,642 | 453 | 60,502 | 55,539 | -141,658 | -121,961 | 830,296 | 847,723 | 12.8 | 24.0 | 5380 | 8423 |
+| XT_R4_T20_ST10n7 | 1,073 | 3,475 | 50,383 | 37,536 | -104,642 | -90,867 | 584,641 | 261,458 | 8.9 | 11.6 | 2048 | 2366 |
+| XT_R4_T20_EMA5 | 1,775 | 3,300 | 42,820 | 36,293 | -127,684 | -83,696 | 565,285 | 263,940 | 8.8 | 11.2 | 2068 | 2304 |
+| XT_R4_TNONE_ST | -4,198 | 3,943 | 59,371 | 56,580 | -108,134 | -96,575 | 1,094,078 | 441,496 | 7.8 | 23.7 | 2879 | 8156 |
+| XT_R4_TNONE_HM | 9,414 | -1,746 | 55,793 | 51,751 | -135,389 | -138,460 | 780,769 | 621,790 | 7.9 | 22.0 | 2643 | 6202 |
+| XT_R4_TNONE_KEL3 | 2,652 | 453 | 58,135 | 55,539 | -130,084 | -121,961 | 653,376 | 847,723 | 7.3 | 24.0 | 2848 | 8423 |
+| XT_R4_TNONE_ST10n7 | 7,678 | 3,475 | 63,081 | 37,536 | -111,791 | -90,867 | 354,444 | 261,458 | 7.3 | 11.6 | 1722 | 2366 |
+| XT_R4_TNONE_EMA5 | 7,479 | 3,300 | 54,496 | 36,293 | -127,684 | -83,696 | 464,783 | 263,940 | 7.3 | 11.2 | 1782 | 2304 |
+| XT_R4_MM_ST | 836 | 3,943 | 55,783 | 56,580 | -111,410 | -96,575 | 531,847 | 441,496 | 22.6 | 23.7 | 7386 | 8156 |
+| XT_R4_MM_HM | -2,647 | -1,746 | 50,615 | 51,751 | -109,473 | -138,460 | 741,533 | 621,790 | 21.0 | 22.0 | 5785 | 6202 |
+| XT_R4_MM_KEL3 | 4,403 | 453 | 59,210 | 55,539 | -133,411 | -121,961 | 690,179 | 847,723 | 22.3 | 24.0 | 7241 | 8423 |
+| XT_R4_MM_ST10n7 | 2,021 | 3,475 | 42,645 | 37,536 | -106,884 | -90,867 | 526,565 | 261,458 | 10.9 | 11.6 | 2327 | 2366 |
+| XT_R4_MM_EMA5 | 5,877 | 3,300 | 38,422 | 36,293 | -87,480 | -83,696 | 260,308 | 263,940 | 10.9 | 11.2 | 2295 | 2304 |
 
 ## Exit mix, duration and pricing diagnostics
 | cell | exit reasons (0 stop,1 tgt,2 flat,3 time,4 opp,5 horizon,6 trail) | median hold min | mean exit friction S / M (pts) | missing exit fills | seq dropped | placebo mean pts / sd | overnight trades | peak lots DS2 alone | cap50 ok |
 |---|---|---|---|---|---|---|---|---|---|
-| XT_R4_CH2_ST | {'6': 8117, '0': 191, '2': 1} | 7 | 0.89 / 0.00 | 165 | 25 | -0.73 / 0.25 | 0 | 34 | True |
-| XT_R4_CH2_HM | {'6': 6219, '0': 92} | 7 | 0.86 / nan | 122 | 51 | -1.45 / 0.27 | 0 | 34 | True |
-| XT_R4_CH2_KEL3 | {'6': 7992, '0': 593, '2': 8} | 22 | 2.27 / 2.22 | 183 | 730 | -2.29 / 0.36 | 0 | 34 | True |
-| XT_R4_CH2_ST10n7 | {'6': 2066, '0': 277, '2': 54} | 57 | 2.16 / 0.84 | 31 | 0 | -2.99 / 0.93 | 0 | 34 | True |
-| XT_R4_CH2_EMA5 | {'6': 2194, '0': 127, '2': 14} | 35 | 2.14 / 0.57 | 32 | 1 | -1.95 / 0.74 | 0 | 34 | True |
-| XT_R4_CH25_ST | {'6': 8007, '0': 301, '2': 1} | 10 | 1.53 / -1.95 | 165 | 135 | +0.95 / 0.29 | 0 | 34 | True |
-| XT_R4_CH25_HM | {'6': 6182, '0': 129} | 11 | 1.50 / nan | 122 | 146 | -1.32 / 0.31 | 0 | 34 | True |
-| XT_R4_CH25_KEL3 | {'6': 7680, '0': 880, '2': 33} | 33 | 2.34 / 1.42 | 181 | 1179 | -1.65 / 0.36 | 0 | 34 | True |
-| XT_R4_CH25_ST10n7 | {'6': 1910, '0': 383, '2': 104} | 81 | 2.24 / 0.71 | 31 | 1 | -2.82 / 0.97 | 0 | 34 | True |
-| XT_R4_CH25_EMA5 | {'6': 2092, '0': 200, '2': 43} | 51 | 2.19 / 0.78 | 31 | 1 | -2.07 / 0.78 | 0 | 34 | True |
-| XT_R4_CH3_ST | {'6': 7856, '0': 451, '2': 2} | 15 | 2.15 / -1.01 | 165 | 332 | -0.00 / 0.33 | 0 | 34 | True |
-| XT_R4_CH3_HM | {'6': 6120, '0': 190, '2': 1} | 15 | 2.02 / 5.17 | 122 | 282 | -5.84 / 0.34 | 0 | 34 | True |
-| XT_R4_CH3_KEL3 | {'6': 7262, '0': 1254, '2': 77} | 45 | 2.45 / 0.96 | 180 | 1650 | -1.31 / 0.41 | 0 | 34 | True |
-| XT_R4_CH3_ST10n7 | {'6': 1706, '0': 521, '2': 170} | 109 | 2.31 / 0.72 | 31 | 10 | -2.68 / 0.93 | 0 | 34 | True |
-| XT_R4_CH3_EMA5 | {'6': 1945, '0': 304, '2': 86} | 70 | 2.15 / 0.76 | 31 | 2 | -2.02 / 0.81 | 0 | 34 | True |
-| XT_R4_STB_ST | {'6': 7490, '0': 807, '2': 12} | 24 | 2.53 / 0.38 | 163 | 865 | -1.21 / 0.34 | 0 | 34 | True |
-| XT_R4_STB_HM | {'6': 5910, '0': 387, '2': 14} | 23 | 2.27 / 0.92 | 120 | 524 | -2.01 / 0.42 | 0 | 34 | True |
-| XT_R4_STB_KEL3 | {'6': 6359, '0': 1969, '2': 265} | 65 | 2.50 / 0.59 | 181 | 2554 | -1.08 / 0.51 | 0 | 34 | True |
-| XT_R4_STB_ST10n7 | {'6': 1295, '0': 781, '2': 321} | 155 | 2.35 / 0.61 | 31 | 1 | -2.41 / 1.11 | 0 | 34 | True |
-| XT_R4_STB_EMA5 | {'6': 1689, '0': 483, '2': 163} | 104 | 2.03 / 0.70 | 31 | 3 | -1.64 / 0.92 | 0 | 34 | True |
-| XT_R4_PSAR_ST | {'6': 8253, '0': 53, '2': 3} | 17 | 1.68 / -1.29 | 163 | 132 | +0.35 / 0.25 | 0 | 34 | True |
-| XT_R4_PSAR_HM | {'6': 6294, '0': 17} | 18 | 1.67 / nan | 121 | 58 | -1.16 / 0.28 | 0 | 34 | True |
-| XT_R4_PSAR_KEL3 | {'6': 8421, '0': 167, '2': 5} | 39 | 2.28 / 3.65 | 181 | 800 | -3.25 / 0.32 | 0 | 34 | True |
-| XT_R4_PSAR_ST10n7 | {'6': 2254, '0': 101, '2': 42} | 104 | 2.10 / 0.76 | 31 | 1 | -3.08 / 0.92 | 0 | 34 | True |
-| XT_R4_PSAR_EMA5 | {'6': 2285, '0': 41, '2': 9} | 66 | 2.03 / 0.84 | 31 | 1 | -2.25 / 0.74 | 0 | 34 | True |
-| XT_R4_TD30_ST | {'6': 4869, '0': 3233, '2': 207} | 60 | 1.12 / 0.66 | 156 | 2601 | -0.96 / 0.46 | 0 | 34 | True |
-| XT_R4_TD30_HM | {'6': 4073, '0': 2070, '2': 168} | 65 | 1.08 / 0.75 | 113 | 1344 | -1.37 / 0.49 | 0 | 34 | True |
-| XT_R4_TD30_KEL3 | {'6': 5196, '0': 3178, '2': 219} | 61 | 1.08 / 0.81 | 175 | 2580 | -0.74 / 0.50 | 0 | 34 | True |
-| XT_R4_TD30_ST10n7 | {'6': 1688, '0': 654, '2': 55} | 71 | 1.03 / 1.03 | 31 | 48 | -3.04 / 0.86 | 0 | 34 | True |
-| XT_R4_TD30_EMA5 | {'6': 1657, '0': 616, '2': 62} | 75 | 1.03 / 0.80 | 31 | 30 | -1.64 / 0.89 | 0 | 34 | True |
-| XT_R4_TD60_ST | {'0': 4116, '6': 3608, '2': 585} | 97 | 1.43 / 0.55 | 154 | 3499 | -0.97 / 0.59 | 0 | 34 | True |
-| XT_R4_TD60_HM | {'6': 3052, '0': 2807, '2': 452} | 108 | 1.35 / 0.66 | 111 | 2014 | -1.31 / 0.60 | 0 | 34 | True |
-| XT_R4_TD60_KEL3 | {'0': 4187, '6': 3785, '2': 621} | 100 | 1.48 / 0.65 | 172 | 3588 | -0.67 / 0.62 | 0 | 34 | True |
-| XT_R4_TD60_ST10n7 | {'6': 1315, '0': 951, '2': 131} | 116 | 1.26 / 0.75 | 31 | 138 | -2.44 / 1.01 | 0 | 34 | True |
-| XT_R4_TD60_EMA5 | {'6': 1300, '0': 894, '2': 141} | 120 | 1.15 / 0.72 | 31 | 70 | -1.39 / 0.97 | 0 | 34 | True |
-| XT_R4_TD120_ST | {'0': 4858, '6': 2224, '2': 1227} | 142 | 1.73 / 0.46 | 153 | 4208 | -0.86 / 0.64 | 0 | 34 | True |
-| XT_R4_TD120_HM | {'0': 3464, '6': 1901, '2': 946} | 157 | 1.60 / 0.54 | 110 | 2615 | -1.24 / 0.68 | 0 | 34 | True |
-| XT_R4_TD120_KEL3 | {'0': 4981, '6': 2308, '2': 1304} | 144 | 1.84 / 0.58 | 171 | 4392 | -0.59 / 0.68 | 0 | 34 | True |
-| XT_R4_TD120_ST10n7 | {'0': 1194, '6': 903, '2': 300} | 174 | 1.61 / 0.62 | 31 | 279 | -2.08 / 1.18 | 0 | 34 | True |
-| XT_R4_TD120_EMA5 | {'0': 1131, '6': 892, '2': 312} | 180 | 1.47 / 0.64 | 31 | 189 | -0.79 / 1.13 | 0 | 34 | True |
-| XT_R4_PL_ST | {'0': 4584, '6': 3087, '2': 638} | 79 | 0.91 / 0.57 | 153 | 2429 | -0.77 / 0.59 | 0 | 34 | True |
-| XT_R4_PL_HM | {'0': 3423, '6': 2307, '2': 581} | 107 | 1.01 / 0.63 | 110 | 1744 | -1.17 / 0.74 | 0 | 34 | True |
-| XT_R4_PL_KEL3 | {'0': 4758, '6': 3132, '2': 703} | 84 | 1.18 / 0.63 | 171 | 2714 | -0.51 / 0.64 | 0 | 34 | True |
-| XT_R4_PL_ST10n7 | {'0': 1303, '6': 891, '2': 203} | 132 | 0.84 / 0.78 | 31 | 231 | -2.22 / 1.16 | 0 | 34 | True |
-| XT_R4_PL_EMA5 | {'0': 1264, '6': 850, '2': 221} | 138 | 0.89 / 0.77 | 31 | 158 | -0.90 / 1.14 | 0 | 34 | True |
-| XT_R4_ONH_ST | {'0': 5876, '5': 1260, '2': 1173} | 159 | 2.59 / 2.59 | 189 | 5393 | -2.30 / 0.67 | 243 | 34 | True |
-| XT_R4_ONH_HM | {'0': 4399, '5': 970, '2': 942} | 189 | 2.46 / 2.47 | 138 | 3630 | -2.65 / 0.92 | 257 | 34 | True |
-| XT_R4_ONH_KEL3 | {'0': 6057, '5': 1306, '2': 1230} | 163 | 2.80 / 2.59 | 203 | 5703 | -1.89 / 0.72 | 240 | 34 | True |
-| XT_R4_ONH_ST10n7 | {'0': 1652, '5': 388, '2': 357} | 243 | 2.50 / 2.57 | 43 | 650 | -3.40 / 1.20 | 229 | 34 | True |
-| XT_R4_ONH_EMA5 | {'0': 1589, '5': 388, '2': 358} | 251 | 2.34 / 2.47 | 41 | 532 | -1.88 / 1.33 | 248 | 34 | True |
-| XT_R4_T15_ST | {'0': 4584, '1': 3190, '2': 535} | 67 | 2.30 / 0.60 | 88 | 2058 | -0.81 / 0.27 | 0 | 34 | True |
-| XT_R4_T15_HM | {'0': 3422, '1': 2392, '2': 497} | 88 | 2.23 / 0.61 | 71 | 1379 | -0.69 / 0.38 | 0 | 34 | True |
-| XT_R4_T15_KEL3 | {'0': 4758, '1': 3248, '2': 587} | 72 | 2.54 / 0.65 | 105 | 2304 | -0.79 / 0.32 | 0 | 34 | True |
-| XT_R4_T15_ST10n7 | {'0': 1303, '1': 925, '2': 169} | 114 | 1.92 / 0.81 | 22 | 203 | -1.77 / 0.69 | 0 | 34 | True |
-| XT_R4_T15_EMA5 | {'0': 1264, '1': 880, '2': 191} | 125 | 1.97 / 0.79 | 19 | 143 | -1.34 / 0.64 | 0 | 34 | True |
-| XT_R4_T20_ST | {'0': 5010, '1': 2519, '2': 780} | 87 | 2.32 / 0.56 | 101 | 2873 | -0.74 / 0.33 | 0 | 34 | True |
-| XT_R4_T20_HM | {'0': 3751, '1': 1867, '2': 693} | 115 | 2.33 / 0.62 | 79 | 1931 | -1.10 / 0.46 | 0 | 34 | True |
-| XT_R4_T20_KEL3 | {'0': 5191, '1': 2547, '2': 855} | 91 | 2.56 / 0.62 | 120 | 3106 | -0.69 / 0.42 | 0 | 34 | True |
-| XT_R4_T20_ST10n7 | {'0': 1418, '1': 733, '2': 246} | 142 | 2.05 / 0.74 | 24 | 319 | -1.65 / 0.72 | 0 | 34 | True |
-| XT_R4_T20_EMA5 | {'0': 1382, '1': 694, '2': 259} | 150 | 2.02 / 0.77 | 20 | 236 | -1.55 / 0.78 | 0 | 34 | True |
-| XT_R4_TNONE_ST | {'0': 5876, '2': 2433} | 155 | 2.59 / 0.54 | 153 | 5392 | -1.16 / 0.68 | 0 | 34 | True |
-| XT_R4_TNONE_HM | {'0': 4399, '2': 1912} | 183 | 2.46 / 0.58 | 110 | 3630 | -1.58 / 0.91 | 0 | 34 | True |
-| XT_R4_TNONE_KEL3 | {'0': 6057, '2': 2536} | 159 | 2.80 / 0.60 | 171 | 5703 | -0.78 / 0.68 | 0 | 34 | True |
-| XT_R4_TNONE_ST10n7 | {'0': 1652, '2': 745} | 238 | 2.50 / 0.63 | 31 | 650 | -2.30 / 1.16 | 0 | 34 | True |
-| XT_R4_TNONE_EMA5 | {'0': 1589, '2': 746} | 240 | 2.34 / 0.68 | 31 | 532 | -0.88 / 1.33 | 0 | 34 | True |
-| XT_R4_MM_ST | {'1': 4032, '0': 3961, '2': 316} | 45 | 2.44 / 0.61 | 75 | 780 | -0.84 / 0.25 | 0 | 34 | True |
-| XT_R4_MM_HM | {'1': 3033, '0': 2990, '2': 288} | 61 | 2.36 / 0.69 | 61 | 424 | -0.87 / 0.31 | 0 | 34 | True |
-| XT_R4_MM_KEL3 | {'0': 4302, '1': 3930, '2': 361} | 55 | 2.61 / 0.65 | 86 | 1210 | -0.83 / 0.25 | 0 | 34 | True |
-| XT_R4_MM_ST10n7 | {'0': 1170, '1': 1102, '2': 125} | 88 | 2.23 / 0.90 | 22 | 39 | -1.69 / 0.55 | 0 | 34 | True |
-| XT_R4_MM_EMA5 | {'1': 1118, '0': 1087, '2': 130} | 90 | 2.11 / 0.85 | 16 | 9 | -0.93 / 0.54 | 0 | 34 | True |
+| XT_R4_CH2_ST | {'6': 7966, '0': 189, '2': 1} | 7 | 0.88 / 0.00 | 12 | 25 | -0.76 / 0.28 | 0 | 34 | True |
+| XT_R4_CH2_HM | {'6': 6110, '0': 92} | 7 | 0.86 / nan | 13 | 50 | -1.46 / 0.26 | 0 | 34 | True |
+| XT_R4_CH2_KEL3 | {'6': 7835, '0': 580, '2': 8} | 22 | 2.30 / 2.22 | 13 | 711 | -2.26 / 0.37 | 0 | 34 | True |
+| XT_R4_CH2_ST10n7 | {'6': 2042, '0': 270, '2': 54} | 56 | 2.17 / 0.84 | 0 | 0 | -2.83 / 1.03 | 0 | 34 | True |
+| XT_R4_CH2_EMA5 | {'6': 2165, '0': 125, '2': 14} | 35 | 2.15 / 0.57 | 1 | 1 | -1.89 / 0.71 | 0 | 34 | True |
+| XT_R4_CH25_ST | {'6': 7862, '0': 293, '2': 1} | 10 | 1.54 / -1.95 | 12 | 133 | +0.89 / 0.33 | 0 | 34 | True |
+| XT_R4_CH25_HM | {'6': 6074, '0': 128} | 11 | 1.51 / nan | 13 | 140 | -1.38 / 0.28 | 0 | 34 | True |
+| XT_R4_CH25_KEL3 | {'6': 7531, '0': 859, '2': 33} | 33 | 2.36 / 1.42 | 11 | 1149 | -1.60 / 0.44 | 0 | 34 | True |
+| XT_R4_CH25_ST10n7 | {'6': 1890, '0': 372, '2': 104} | 81 | 2.25 / 0.71 | 0 | 1 | -2.60 / 1.04 | 0 | 34 | True |
+| XT_R4_CH25_EMA5 | {'6': 2066, '0': 195, '2': 43} | 51 | 2.21 / 0.78 | 0 | 1 | -2.07 / 0.82 | 0 | 34 | True |
+| XT_R4_CH3_ST | {'6': 7713, '0': 441, '2': 2} | 15 | 2.17 / -1.01 | 12 | 327 | -0.04 / 0.30 | 0 | 34 | True |
+| XT_R4_CH3_HM | {'6': 6014, '0': 187, '2': 1} | 15 | 2.03 / 5.17 | 13 | 274 | -5.90 / 0.33 | 0 | 34 | True |
+| XT_R4_CH3_KEL3 | {'6': 7121, '0': 1225, '2': 77} | 45 | 2.48 / 0.96 | 10 | 1602 | -1.26 / 0.45 | 0 | 34 | True |
+| XT_R4_CH3_ST10n7 | {'6': 1691, '0': 506, '2': 169} | 109 | 2.33 / 0.72 | 0 | 10 | -2.50 / 1.19 | 0 | 34 | True |
+| XT_R4_CH3_EMA5 | {'6': 1922, '0': 296, '2': 86} | 70 | 2.16 / 0.76 | 0 | 2 | -1.92 / 0.96 | 0 | 34 | True |
+| XT_R4_STB_ST | {'6': 7353, '0': 791, '2': 12} | 24 | 2.55 / 0.38 | 10 | 851 | -1.31 / 0.33 | 0 | 34 | True |
+| XT_R4_STB_HM | {'6': 5810, '0': 378, '2': 14} | 23 | 2.29 / 0.92 | 11 | 511 | -2.09 / 0.40 | 0 | 34 | True |
+| XT_R4_STB_KEL3 | {'6': 6231, '0': 1927, '2': 265} | 65 | 2.53 / 0.59 | 11 | 2493 | -0.95 / 0.51 | 0 | 34 | True |
+| XT_R4_STB_ST10n7 | {'6': 1287, '0': 760, '2': 319} | 155 | 2.37 / 0.61 | 0 | 1 | -2.20 / 1.21 | 0 | 34 | True |
+| XT_R4_STB_EMA5 | {'6': 1671, '0': 472, '2': 161} | 105 | 2.04 / 0.69 | 0 | 3 | -1.69 / 0.93 | 0 | 34 | True |
+| XT_R4_PSAR_ST | {'6': 8101, '0': 52, '2': 3} | 17 | 1.70 / -1.29 | 10 | 130 | +0.26 / 0.24 | 0 | 34 | True |
+| XT_R4_PSAR_HM | {'6': 6185, '0': 17} | 18 | 1.68 / nan | 12 | 55 | -1.13 / 0.24 | 0 | 34 | True |
+| XT_R4_PSAR_KEL3 | {'6': 8254, '0': 164, '2': 5} | 39 | 2.30 / 3.65 | 11 | 779 | -3.20 / 0.35 | 0 | 34 | True |
+| XT_R4_PSAR_ST10n7 | {'6': 2224, '0': 100, '2': 42} | 105 | 2.11 / 0.76 | 0 | 1 | -2.74 / 0.95 | 0 | 34 | True |
+| XT_R4_PSAR_EMA5 | {'6': 2254, '0': 41, '2': 9} | 66 | 2.04 / 0.84 | 0 | 1 | -2.30 / 0.64 | 0 | 34 | True |
+| XT_R4_TD30_ST | {'6': 4788, '0': 3165, '2': 203} | 60 | 1.13 / 0.65 | 3 | 2558 | -1.11 / 0.48 | 0 | 34 | True |
+| XT_R4_TD30_HM | {'6': 4011, '0': 2024, '2': 167} | 65 | 1.08 / 0.75 | 4 | 1321 | -1.52 / 0.63 | 0 | 34 | True |
+| XT_R4_TD30_KEL3 | {'6': 5102, '0': 3105, '2': 216} | 61 | 1.08 / 0.80 | 5 | 2519 | -0.66 / 0.45 | 0 | 34 | True |
+| XT_R4_TD30_ST10n7 | {'6': 1670, '0': 641, '2': 55} | 71 | 1.03 / 1.03 | 0 | 48 | -2.72 / 0.87 | 0 | 34 | True |
+| XT_R4_TD30_EMA5 | {'6': 1638, '0': 605, '2': 61} | 75 | 1.03 / 0.80 | 0 | 30 | -1.65 / 0.79 | 0 | 34 | True |
+| XT_R4_TD60_ST | {'0': 4034, '6': 3548, '2': 574} | 97 | 1.43 / 0.54 | 1 | 3431 | -1.17 / 0.58 | 0 | 34 | True |
+| XT_R4_TD60_HM | {'6': 3007, '0': 2747, '2': 448} | 108 | 1.35 / 0.65 | 2 | 1973 | -1.45 / 0.64 | 0 | 34 | True |
+| XT_R4_TD60_KEL3 | {'0': 4090, '6': 3721, '2': 612} | 100 | 1.49 / 0.64 | 2 | 3504 | -0.54 / 0.55 | 0 | 34 | True |
+| XT_R4_TD60_ST10n7 | {'6': 1305, '0': 930, '2': 131} | 116 | 1.26 / 0.75 | 0 | 137 | -2.18 / 0.88 | 0 | 34 | True |
+| XT_R4_TD60_EMA5 | {'6': 1287, '0': 877, '2': 140} | 120 | 1.16 / 0.72 | 0 | 70 | -1.35 / 0.87 | 0 | 34 | True |
+| XT_R4_TD120_ST | {'0': 4758, '6': 2194, '2': 1204} | 142 | 1.74 / 0.45 | 0 | 4123 | -1.28 / 0.66 | 0 | 34 | True |
+| XT_R4_TD120_HM | {'0': 3388, '6': 1882, '2': 932} | 158 | 1.61 / 0.53 | 1 | 2561 | -1.43 / 0.66 | 0 | 34 | True |
+| XT_R4_TD120_KEL3 | {'0': 4865, '6': 2280, '2': 1278} | 144 | 1.85 / 0.57 | 1 | 4291 | -0.59 / 0.61 | 0 | 34 | True |
+| XT_R4_TD120_ST10n7 | {'0': 1170, '6': 897, '2': 299} | 175 | 1.62 / 0.62 | 0 | 276 | -1.85 / 1.04 | 0 | 34 | True |
+| XT_R4_TD120_EMA5 | {'0': 1109, '6': 886, '2': 309} | 180 | 1.48 / 0.64 | 0 | 186 | -0.87 / 1.16 | 0 | 34 | True |
+| XT_R4_PL_ST | {'0': 4498, '6': 3023, '2': 635} | 80 | 0.91 / 0.56 | 0 | 2394 | -0.97 / 0.63 | 0 | 34 | True |
+| XT_R4_PL_HM | {'0': 3355, '6': 2268, '2': 579} | 108 | 1.01 / 0.63 | 1 | 1719 | -1.17 / 0.69 | 0 | 34 | True |
+| XT_R4_PL_KEL3 | {'0': 4656, '6': 3067, '2': 700} | 84 | 1.18 / 0.63 | 1 | 2659 | -0.39 / 0.65 | 0 | 34 | True |
+| XT_R4_PL_ST10n7 | {'0': 1281, '6': 882, '2': 203} | 133 | 0.84 / 0.78 | 0 | 231 | -1.99 / 1.14 | 0 | 34 | True |
+| XT_R4_PL_EMA5 | {'0': 1246, '6': 838, '2': 220} | 140 | 0.89 / 0.77 | 0 | 158 | -0.96 / 1.09 | 0 | 34 | True |
+| XT_R4_ONH_ST | {'0': 5761, '5': 1235, '2': 1160} | 161 | 2.62 / 2.61 | 36 | 5278 | -2.77 / 0.73 | 242 | 34 | True |
+| XT_R4_ONH_HM | {'0': 4315, '5': 953, '2': 934} | 190 | 2.48 / 2.49 | 29 | 3559 | -2.83 / 0.74 | 254 | 34 | True |
+| XT_R4_ONH_KEL3 | {'0': 5929, '5': 1279, '2': 1215} | 164 | 2.84 / 2.62 | 33 | 5575 | -1.91 / 0.71 | 239 | 34 | True |
+| XT_R4_ONH_ST10n7 | {'0': 1624, '5': 386, '2': 356} | 246 | 2.52 / 2.58 | 12 | 644 | -3.11 / 1.19 | 228 | 34 | True |
+| XT_R4_ONH_EMA5 | {'0': 1565, '5': 383, '2': 356} | 255 | 2.36 / 2.48 | 10 | 522 | -2.13 / 1.29 | 244 | 34 | True |
+| XT_R4_T15_ST | {'0': 4498, '1': 3125, '2': 533} | 68 | 2.33 / 0.60 | 0 | 2030 | -0.90 / 0.36 | 0 | 34 | True |
+| XT_R4_T15_HM | {'0': 3354, '1': 2353, '2': 495} | 90 | 2.26 / 0.61 | 1 | 1357 | -0.67 / 0.40 | 0 | 34 | True |
+| XT_R4_T15_KEL3 | {'0': 4656, '1': 3182, '2': 585} | 73 | 2.58 / 0.65 | 1 | 2254 | -0.63 / 0.37 | 0 | 34 | True |
+| XT_R4_T15_ST10n7 | {'0': 1281, '1': 916, '2': 169} | 115 | 1.94 / 0.81 | 0 | 203 | -1.69 / 0.66 | 0 | 34 | True |
+| XT_R4_T15_EMA5 | {'0': 1246, '1': 868, '2': 190} | 126 | 1.98 / 0.79 | 0 | 143 | -1.40 / 0.74 | 0 | 34 | True |
+| XT_R4_T20_ST | {'0': 4912, '1': 2467, '2': 777} | 88 | 2.35 / 0.56 | 0 | 2820 | -0.89 / 0.43 | 0 | 34 | True |
+| XT_R4_T20_HM | {'0': 3678, '1': 1836, '2': 688} | 116 | 2.35 / 0.62 | 1 | 1901 | -1.04 / 0.48 | 0 | 34 | True |
+| XT_R4_T20_KEL3 | {'0': 5076, '1': 2496, '2': 851} | 92 | 2.59 / 0.62 | 1 | 3043 | -0.51 / 0.41 | 0 | 34 | True |
+| XT_R4_T20_ST10n7 | {'0': 1394, '1': 726, '2': 246} | 144 | 2.07 / 0.74 | 0 | 318 | -1.54 / 0.73 | 0 | 34 | True |
+| XT_R4_T20_EMA5 | {'0': 1363, '1': 683, '2': 258} | 151 | 2.03 / 0.77 | 0 | 236 | -1.59 / 0.74 | 0 | 34 | True |
+| XT_R4_TNONE_ST | {'0': 5761, '2': 2395} | 156 | 2.62 / 0.53 | 0 | 5277 | -1.62 / 0.72 | 0 | 34 | True |
+| XT_R4_TNONE_HM | {'0': 4315, '2': 1887} | 185 | 2.48 / 0.58 | 1 | 3559 | -1.74 / 0.71 | 0 | 34 | True |
+| XT_R4_TNONE_KEL3 | {'0': 5929, '2': 2494} | 160 | 2.84 / 0.59 | 1 | 5575 | -0.78 / 0.73 | 0 | 34 | True |
+| XT_R4_TNONE_ST10n7 | {'0': 1624, '2': 742} | 241 | 2.52 / 0.63 | 0 | 644 | -2.05 / 1.19 | 0 | 34 | True |
+| XT_R4_TNONE_EMA5 | {'0': 1565, '2': 739} | 245 | 2.36 / 0.68 | 0 | 522 | -1.15 / 1.29 | 0 | 34 | True |
+| XT_R4_MM_ST | {'1': 3954, '0': 3886, '2': 316} | 45 | 2.47 / 0.61 | 0 | 770 | -0.90 / 0.25 | 0 | 34 | True |
+| XT_R4_MM_HM | {'1': 2984, '0': 2931, '2': 287} | 62 | 2.39 / 0.69 | 1 | 417 | -0.88 / 0.33 | 0 | 34 | True |
+| XT_R4_MM_KEL3 | {'0': 4218, '1': 3845, '2': 360} | 55 | 2.64 / 0.65 | 1 | 1182 | -0.78 / 0.28 | 0 | 34 | True |
+| XT_R4_MM_ST10n7 | {'0': 1148, '1': 1093, '2': 125} | 88 | 2.25 / 0.90 | 0 | 39 | -1.80 / 0.52 | 0 | 34 | True |
+| XT_R4_MM_EMA5 | {'1': 1103, '0': 1071, '2': 130} | 91 | 2.13 / 0.85 | 0 | 9 | -0.95 / 0.56 | 0 | 34 | True |
 
 ## Caveats
 - Sequence uses the BASE entry set only: a rule that exits earlier (time stop, trail) does not create new entries; a rule that holds longer skips base entries that arrive while it is open (counted in `seq dropped`).
