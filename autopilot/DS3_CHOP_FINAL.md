@@ -96,3 +96,56 @@ Reading: every dip-buy cell earns about zero in the lowest VIX tercile (-$2.8k t
 
 Marginal Sharpe is positive on both bases in all windows (EM base smaller: +0.70 WF / +1.22 HOLD); the dMaxDD sign is positive in WF on both bases (the same 2024 effect) and negative in HOLD (KB+SM+PB -$47.7k; EM base -$5.7k). Excluding April 2025 changes nothing (it is outside the drawdown).
 **A5. 50-cap concurrency (full sequence).** Equal-risk lots of the sleeve are NOT the 10.1 shown in the lots column of the leaderboard (that is the weight-averaged figure); per fully signalled day the sleeve is 5.0 NQ + 10.3 ES + 15.6 RTY contracts (spec section 2 corrected). NQ lots beside the stack, nominal: DS2 10/10/7 = 27 + DS3 trio (KB/SM/PB at the DS2+DS3 line, peak 23) + sleeve 5.0 = 55 > 50 when everything is at its equal-risk size: the sum of nominal peaks breaches the NQ cap by about 5 lots; at the interval-replay cap line (KB/SM/PB intervals, sleeve NQ leg included, DS2 not in the replay) the whole DS3+sleeve portfolio is scaled so the NQ peak is 50 (base line c = 42,287, with sleeve c = 38,797 for KB+SM+PB: trend books scaled down by 8%). ES (10.3) and RTY (15.6) are far below their own 50-contract caps. DS2 has no interval table, so DS2's own concurrency is nominal (27, an upper bound).
+
+
+## BLOCKS B7+ (2026-10-27/28; lead order: bars axis, gates x bars x orders, deeper tape, order types on the D3LS simulator, direct replay). Blocks 0 and B1-B6 above stand and were not re-run.
+Preregs (sha256 in DECISIONS.md, hashed before scoring, <= 30 cells, both placebos, one holdout look per track): B7 bars axis (30 cells), B8 gates x bars (25), B9 deeper tape (30), B10 order types on lsim (24), B11 direct L2 re-pricing of the B10 survivors (same cells, same look). Ledger +109 cells. Across ALL blocks B1-B10: **0 PASS, 26 CANDIDATE of 274 scorable cells**; the new CANDIDATEs of B7+ are only the four B10 limit-entry cells, which fail on the direct basis (below).
+**B7 bars axis.** Bollinger, VWAP+-3 sigma, prior-day sweep and Asia-sweep fades on time_1m, time_15m, tick_1000, range_40, renko_40, volume_2500 with market-at-next-print entries (worse of p_sig +- 1 tick and the first 15-s open, i.e. 0-15 s adverse latency; exits on the library 15-s path): all 24 intraday cells have negative mean R per trade (-0.04 to -0.20 R, except pdhl on range_40/renko_40 at +0.02/-0.01 R); activity bars (range, Renko, tick, volume) are WORSE than time bars for Bollinger/VWAP (more trades, same cost). The dip cells are bar-invariant (down3 / union on time_1m, tick_500, range_40: WF $8.9-11.7k/wk, Sharpe 1.1-1.5, HOLD $10-15k/wk; down3 cells stay CANDIDATE-like but fail G7 because the 2023 span is unavailable with the library start and M; within noise of the 1-min results). The bar type is not the missing axis.
+**B8 gates x bars.** Five least-negative B7 bases x five chop gates (ER, ADX, ATR ratio, flip-chop, vol tercile): 24 scorable cells, 0 CANDIDATE. The pre-holdout leader (pdhl_range_40 x flip-chop IG4: WF-PRE Sharpe 0.82, random-in-gate placebo 0.99/1.00) decays to HOLD $-0.0k/wk, Sharpe 0.52, 0.75 trades/wk: a selection effect (25 cells), DEAD (G2, G4, G7, M). Random-in-gate (placebo b) was computed on the same gate window as asked.
+**B9 deeper tape.** Pairwise feature conjunctions and chop-gated single/conjunction exhaustion entries on the tape layer (dupwin=1 excluded; everything here is execution-server-only except absorption/price BOS, which fire too rarely): 28 scorable cells, 0 CANDIDATE; after cost every cell with enough trades is negative; the flags beat random extremes in placebo (b) for some features (delta divergence, stacked imbalance) but not by enough to cover cost.
+**B10 order types on D3LS lsim v1 (uncalibrated; strict through-fill primary).** Passive entries move Bollinger and VWAP fades to roughly zero Sharpe (best WF-PRE: B10_boll_time_15m_LAD +0.17) with strongly negative stack correlation (-0.2 to -0.3) and positive L25 P&L (+$10-26k/wk), but marginal Sharpe stays negative and the final-window means are negative (WF -$3k to -$11k/wk): DEAD. The four pdhl_range_40 limit cells (LM0/LM2 x S0/S20; WF $4.8-5.3k/wk, HOLD $8-11k, Sharpe 0.6, corr ~0, placebo a/b 0.97-1.00, 3.4 trades/wk) are CANDIDATE failing G4 only (marginal Sharpe -0.25..-0.35 WF).
+**B11 direct L2 re-pricing of those four cells** (exec_engine_l2 on raw mbp-10, 5 ms latency, limit at the RAW last print of the bar-completing tick minus the offset, bracket stop/target in ticks from the fill, 16:55 flat, 1 lot; both the 1-tick-through rule and the engine queue model; 654 of 685 signals priced: 2025-11 and 2026-02 files unavailable after memory-guard kills of my workers; fills 99%, i.e. at 15-s-level resting the limit is almost always marketable at the touch):
+| cell | trades/wk | WF $/wk | HOLD $/wk | 2023-04..24-01 | Sharpe | maxDD | corr stack | L25 $/wk | chop +60 | marg WF/HOLD | dMaxDD WF | lsim (B10) WF $/wk |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| B11_pdhl_range_40_LM0_S0 | 3.06 | 2.7k | 2.3k | 3.1k | 0.33 | 650.1k | +0.02 | -3.4k | 250.6k | -0.46/-0.39 | 67.6k | 4.8k |
+| B11_pdhl_range_40_LM0_S0_queue | 3.07 | 3.0k | 3.1k | 3.1k | 0.38 | 649.8k | +0.00 | -1.9k | 251.6k | -0.45/-0.35 | 67.6k | 4.8k |
+| B11_pdhl_range_40_LM0_S20 | 3.06 | 1.0k | 2.8k | 1.0k | 0.13 | 829.6k | +0.08 | -10.2k | 212.9k | -0.62/-0.43 | 142.8k | 4.8k |
+| B11_pdhl_range_40_LM0_S20_queue | 3.07 | 1.4k | 3.6k | 1.0k | 0.17 | 829.6k | +0.06 | -8.8k | 213.7k | -0.61/-0.39 | 142.8k | 4.8k |
+| B11_pdhl_range_40_LM2_S0 | 3.05 | 2.9k | 3.0k | 3.5k | 0.36 | 652.5k | +0.03 | -3.6k | 282.6k | -0.46/-0.37 | 69.7k | 5.0k |
+| B11_pdhl_range_40_LM2_S0_queue | 3.06 | 3.0k | 3.0k | 3.6k | 0.37 | 651.8k | +0.03 | -3.5k | 294.1k | -0.45/-0.37 | 69.0k | 5.0k |
+| B11_pdhl_range_40_LM2_S20 | 3.05 | 1.9k | 3.1k | 1.8k | 0.24 | 709.7k | +0.06 | -7.4k | 213.0k | -0.50/-0.41 | 64.5k | 5.3k |
+| B11_pdhl_range_40_LM2_S20_queue | 3.06 | 2.0k | 3.1k | 1.8k | 0.25 | 709.0k | +0.06 | -7.3k | 223.8k | -0.49/-0.41 | 63.9k | 5.3k |
+
+On the direct basis the four cells fall to WF $1.0-3.0k/wk (Sharpe 0.13-0.38), L25-week P&L NEGATIVE (-$2k to -$10k/wk, fails G5), marginal Sharpe -0.45 to -0.62: they fail G4 and G5 and are DEAD on the direct basis; the lsim candidate status did not survive. Engine and lsim agree per signal on the first 25 matched signals (mean 10.6 vs 11.2 pts) but not over the full period: the early months (2023) carry the gain (2024 -$3.7k/wk, low-VIX weeks -$5.3k/wk, bootstrap CI of the lsim mean [-$4k, +$15k]).
+Robustness of the (lsim) B10 candidates, WF weekly: VIX terciles low/mid/high, years 2024/2025/2026, block-bootstrap mean CI and maxDD band:
+| cell | VIX terciles | years | boot mean 95% CI | boot maxDD p5/50/95 |
+|---|---|---|---|---|
+| B10_pdhl_range_40_LM0_S0 | -5.3k / 8.9k / 14.6k | -3.7k / 9.5k / 8.8k | [-4.0k, 14.6k] | 253.7k/449.0k/872.0k (obs 554.3k) |
+| B10_pdhl_range_40_LM0_S20 | -7.3k / 10.5k / 13.2k | -7.9k / 11.0k / 11.6k | [-4.8k, 15.1k] | 280.6k/508.7k/1004.3k (obs 711.8k) |
+| B10_pdhl_range_40_LM2_S0 | -5.4k / 8.5k / 17.6k | -3.8k / 11.4k / 7.3k | [-3.7k, 14.6k] | 244.6k/432.4k/854.1k (obs 551.9k) |
+| B10_pdhl_range_40_LM2_S20 | -5.4k / 10.3k / 13.6k | -5.4k / 11.2k / 10.4k | [-4.1k, 15.6k] | 268.7k/480.8k/921.6k (obs 587.1k) |
+
+### Top 10 across ALL blocks B1-B10 regardless of verdict (target conditions met of 6)
+## Top 10 across blocks B1+B2+B2C+B3+B4+B5+B6+B7+B8+B9+B10 by the 2.1 target (conditions met of 6: corr<=0.2, L25>0, chop>0, marginal>0, dMaxDD<0, Sharpe>=0.8), regardless of verdict
+
+| rank | cell | conditions | Sharpe | corr | L25 | trades/wk | failed gates | per-trade mean / SD ($, WF, n) | forward weeks to settle the mean (80% power, 2.8 SD/sqrt(n)) |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | B2_X09_DG2 | 6 | 1.51 | +0.04 | 19.5k | 0.27 | M | 2459 / 5510 (n=39) | 143 |
+| 2 | B2_X09_DG1 | 6 | 1.50 | -0.02 | 15.6k | 0.18 | M | 2664 / 4930 (n=26) | 147 |
+| 3 | X09 | 6 | 1.48 | -0.05 | 22.6k | 0.33 | M | 2069 / 6401 (n=47) | 227 |
+| 4 | B7_dip_down3_time_1m | 6 | 1.48 | -0.05 | 22.2k | 0.33 | G7, M | 2102 / 6403 (n=47) | 220 |
+| 5 | X11 | 6 | 1.40 | -0.07 | 20.4k | 0.73 | G6a, M | 1222 / 6112 (n=104) | 268 |
+| 6 | B7_dip_down3_range_40 | 6 | 1.37 | -0.07 | 23.2k | 0.32 | G7, M | 1938 / 6378 (n=46) | 262 |
+| 7 | B2_X09_DG3 | 6 | 1.37 | +0.04 | 15.3k | 0.11 | G6a, M | 2870 / 4324 (n=15) | 168 |
+| 8 | B7_dip_down3_tick_500 | 6 | 1.33 | -0.04 | 21.9k | 0.34 | G7, M | 1908 / 6579 (n=48) | 276 |
+| 9 | B2_X11_DG1 | 6 | 1.30 | -0.01 | 11.6k | 0.44 | G6a, G6b, M | 1405 / 5097 (n=62) | 236 |
+| 10 | X06 | 6 | 1.21 | -0.16 | 30.6k | 0.64 | G6a, M | 1197 / 5788 (n=91) | 286 |
+
+### Structural read, blocks B7+ (which axis moved the paired result)
+* Bar type (B7): did not move anything that mattered; activity bars lower the net edge of band fades (more signals, same per-trade cost). Dip-buy is bar-invariant.
+* Gate x bar (B8): conditioning on chop windows produces pre-holdout winners that decay; the family is in the best-of-25 range, not an edge.
+* Tape (B9): features add rank vs random extremes (placebo b) but no net edge after cost; none NT8-bar executable.
+* Order type (B10/B11): passive entry converts the fade families from clearly negative to about zero and gives them strongly negative stack correlation and positive L25 P&L (hedge-like, zero-alpha); the apparent positive pdhl_range_40 limit result is a lsim artifact relative to the L2 engine and is not a survivor.
+* Net: the only positive, stack-uncorrelated, measurable result of the whole T-CHOP programme remains the overnight dip-buy basket (B3_F19 recommended). Nothing in B7+ changes the recommendation or enters the top 5.
+### Power and disclosures, B7+
+Per-trade MDE of the intraday fades is 0.02-0.06 R on 300-50,000 trades; weekly MDE 13.5k/wk at equal risk. Disclosures: smoke test on 5 bar types before the B7 freeze (stated in the prereg); B8 bases chosen from B7 WF-PRE; B10 cells use lsim v1 (queue model uncalibrated, stop entries not tested, 16:55 flat not enforced, placebos 40 draws per kind); the B11 first launch held signal windows in memory (rss up to 26 GB) and was killed by the memory guard (my workers only; the box was under pressure: other agents' replay workers were also killed in the same period), relaunched with streaming windows, 2 more relaunches of killed months, 2 months still missing; fills use 1 lot per order (equal-risk lots are about 24 NQ: queue position at size not modelled); executable-from-NT8: none of B7-B11 was identity-tested (the library bars and lsim are research tools; NT8 range/Renko/volume bars are native, the limit logic needs the D3LS audit). Code: chopb.py, chopb_run.py, chopb2.py, chopb3.py, chopx6.py, chop_limdirect.py (+ chop_direct.py CHOP_MODE=lim), chop_b11.py, chop_rob.py; numbers out/CHOP/*_B7..B11*.json.
