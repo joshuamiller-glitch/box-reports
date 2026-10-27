@@ -1,5 +1,5 @@
 # DS3_CHOP_B23 - blocks (ii) gated, (ii-control) gated fades, (B3) frequency, (B4) maxDD guards (D3CH 2026-10-27)
-**Blocks B1+B2+B2C+B3+B4+B5+B6+B7+B8+B9 together: 0 PASS (G8 pending), 22 CANDIDATE among 250 scorable cells.**
+**Blocks B1+B2+B2C+B3+B4+B5+B6+B7+B8+B9+B10 together: 0 PASS (G8 pending), 26 CANDIDATE among 274 scorable cells.**
 Prereg l2vast/ds3/prereg/T-CHOP_B2_B2C_B3_prereg.md sha256 529cbdd631041c2ded9c4c354ebd33458910f6022552934675f79d79fc8471c0; pre text DS3_TCHOP_B23_PREHOLD.md; tracks DS3_TCHOP_B2/_B2C/_B3, one holdout look each. Mapped basis. Cells with < 5 trades in WF-PRE/WF are listed as too few (DEAD for count).
 
 ## B2: 0 PASS (G8 pending), 2 CANDIDATE among 26 scorable cells; 4 cells too few trades: B2_X03_DG5(3), B2_X06_DG5(2), B2_X09_DG5(3), B2_X11_DG5(3)
@@ -269,9 +269,38 @@ Prereg l2vast/ds3/prereg/T-CHOP_B2_B2C_B3_prereg.md sha256 529cbdd631041c2ded9c4
 | B9_SC_IG4 | 0.04 | 300.0 | -2.8k | -6.8k | -4.5k | -0.65 | +0.10 [+0.15] | -5.5k | -72.0k | -0.94/-1.72 | -342.6k/-250.6k | 0.44 / 0.54 | DEAD | G2, G4, G5, G6a, G6b, G7, M |
 | B9_CL_IG4 | 0.07 | 300.0 | 1.7k | -1.9k | -2.4k | 0.27 | -0.00 [-0.07] | 0.0k | 216.1k | -3.14/-0.58 | -323.8k/-271.6k | 0.96 / 0.95 | DEAD [REGIME BETA] | G2, G4, G5, G6b, G7, M |
 
+## B10: 0 PASS (G8 pending), 4 CANDIDATE among 24 scorable cells; 0 cells too few trades: 
+
+| cell | tr/wk | lots | WF $/wk | HOLD $/wk | X-span | Sharpe | corr stack WF [HOLD] | L25 $/wk | chop(+60) | marg WF/HOLD | dMaxDD WF/HOLD | placebo a / b | tier | failed |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| B10_asia_time_15m_LAD_S0 | 3.07 | 94.2 | -19.3k | -29.1k | -19.5k | -2.43 | -0.14 [-0.10] | -9.6k | 120.5k | -1.25/-1.94 | -270.0k/-178.0k | 0.15 / 0.23 | DEAD | G2, G4, G5, G6a, G6b, G7 |
+| B10_asia_time_15m_LAD_S20 | 3.07 | 74.6 | -15.0k | -19.7k | -18.1k | -1.89 | -0.11 [-0.07] | -7.8k | 134.1k | -0.96/-1.21 | -185.1k/-93.2k | 0.05 / 0.10 | DEAD | G2, G4, G5, G6a, G6b, G7 |
+| B10_asia_time_15m_LM0_S0 | 3.01 | 70.6 | -11.3k | -18.6k | -4.2k | -1.42 | -0.18 [-0.16] | 1.2k | 58.2k | -0.76/-1.34 | -235.5k/-143.6k | 0.38 / 0.53 | DEAD | G2, G4, G6a, G6b, G7 |
+| B10_asia_time_15m_LM0_S20 | 3.01 | 65.2 | -14.0k | -20.1k | -12.5k | -1.76 | -0.13 [-0.14] | -2.0k | -2.4k | -0.94/-1.31 | -81.5k/10.5k | 0.10 / 0.15 | DEAD | G2, G4, G5, G6a, G6b, G7 |
+| B10_asia_time_15m_LM2_S0 | 2.94 | 72.1 | -10.7k | -17.5k | -2.6k | -1.35 | -0.23 [-0.20] | 6.6k | 138.1k | -0.69/-1.24 | -229.7k/-137.7k | 0.30 / 0.38 | DEAD | G2, G4, G6a, G6b, G7, M |
+| B10_asia_time_15m_LM2_S20 | 2.94 | 67.2 | -12.4k | -16.4k | -13.1k | -1.56 | -0.15 [-0.15] | 2.6k | 144.9k | -0.84/-1.10 | -83.8k/8.2k | 0.23 / 0.23 | DEAD | G2, G4, G6a, G6b, G7, M |
+| B10_boll_time_15m_LAD_S0 | 22.23 | 17.9 | -7.0k | -16.3k | 1.9k | -0.88 | -0.34 [-0.37] | 23.6k | 242.7k | -0.52/-1.04 | -79.9k/12.1k | 0.30 / 0.25 | DEAD | G2, G4, G6a, G6b |
+| B10_boll_time_15m_LAD_S20 | 22.23 | 21.4 | -6.8k | -16.6k | -2.9k | -0.86 | -0.27 [-0.31] | 18.8k | 270.3k | -0.50/-1.02 | -109.9k/-18.0k | 0.40 / 0.42 | DEAD | G2, G4, G6a, G6b, G7 |
+| B10_boll_time_15m_LM0_S0 | 22.05 | 15.3 | -8.8k | -17.7k | -0.4k | -1.10 | -0.31 [-0.36] | 17.3k | 231.2k | -0.67/-1.12 | 30.8k/122.7k | 0.15 / 0.28 | DEAD | G2, G4, G6a, G6b, G7 |
+| B10_boll_time_15m_LM0_S20 | 22.05 | 17.4 | -10.4k | -17.7k | -6.5k | -1.31 | -0.24 [-0.30] | 11.7k | 12.9k | -0.83/-1.18 | 11.8k/103.7k | 0.28 / 0.15 | DEAD | G2, G4, G6a, G6b, G7 |
+| B10_boll_time_15m_LM2_S0 | 21.70 | 15.8 | -8.3k | -16.9k | 0.8k | -1.04 | -0.30 [-0.31] | 15.9k | 244.1k | -0.65/-1.11 | 32.4k/124.4k | 0.28 / 0.28 | DEAD | G2, G4, G6a, G6b |
+| B10_boll_time_15m_LM2_S20 | 21.70 | 17.9 | -11.0k | -18.1k | -4.6k | -1.38 | -0.23 [-0.28] | 10.0k | -3.3k | -0.86/-1.21 | 94.1k/186.1k | 0.15 / 0.20 | DEAD | G2, G4, G5, G6a, G6b, G7 |
+| B10_pdhl_range_40_LAD_S0 | 3.45 | 40.8 | 1.0k | 9.0k | 2.2k | 0.13 | -0.00 [+0.02] | -1.9k | 63.3k | -0.65/-0.06 | 21.7k/-119.8k | 0.97 / 0.85 | DEAD [REGIME BETA] | G4, G5, G6b |
+| B10_pdhl_range_40_LAD_S20 | 3.45 | 35.2 | 2.5k | 11.3k | 0.6k | 0.31 | +0.04 [+0.10] | -3.0k | 169.0k | -0.53/-0.04 | 62.6k/-85.7k | 0.93 / 0.97 | DEAD | G4, G5, G6a |
+| B10_pdhl_range_40_LM0_S0 | 3.44 | 25.8 | 4.8k | 8.7k | 5.2k | 0.61 | -0.04 [+0.01] | 5.1k | 178.7k | -0.27/+0.05 | 56.9k/-75.2k | 1.00 / 1.00 | CANDIDATE | G4 |
+| B10_pdhl_range_40_LM0_S20 | 3.44 | 24.1 | 4.8k | 11.3k | 2.5k | 0.60 | +0.00 [+0.03] | 0.3k | 162.4k | -0.35/+0.18 | 142.1k/-40.0k | 0.97 / 0.95 | CANDIDATE | G4 |
+| B10_pdhl_range_40_LM2_S0 | 3.43 | 25.8 | 5.0k | 8.3k | 5.0k | 0.63 | -0.01 [+0.04] | 3.7k | 153.9k | -0.31/-0.03 | 49.7k/-47.6k | 0.97 / 1.00 | CANDIDATE | G4 |
+| B10_pdhl_range_40_LM2_S20 | 3.43 | 24.1 | 5.3k | 10.7k | 2.4k | 0.67 | -0.01 [+0.05] | 1.8k | 108.1k | -0.25/+0.09 | 43.7k/-13.9k | 1.00 / 0.97 | CANDIDATE | G4 |
+| B10_vwap3_time_15m_LAD_S0 | 29.53 | 15.0 | -4.6k | -8.9k | -4.5k | -0.58 | -0.30 [-0.38] | 15.8k | -80.0k | -0.28/-0.49 | -193.7k/-101.8k | 0.35 / 0.42 | DEAD | G2, G4, G5, G6a, G6b, G7 |
+| B10_vwap3_time_15m_LAD_S20 | 29.53 | 19.2 | -8.2k | -8.2k | -7.0k | -1.03 | -0.25 [-0.31] | 10.3k | -130.8k | -0.65/-0.52 | -180.0k/-146.6k | 0.40 / 0.33 | DEAD | G2, G4, G5, G6a, G6b, G7 |
+| B10_vwap3_time_15m_LM0_S0 | 29.36 | 13.4 | -5.5k | -9.4k | -7.4k | -0.70 | -0.26 [-0.34] | 12.3k | -14.5k | -0.38/-0.55 | -180.9k/-88.9k | 0.47 / 0.30 | DEAD | G2, G4, G5, G6a, G6b, G7 |
+| B10_vwap3_time_15m_LM0_S20 | 29.36 | 15.6 | -9.1k | -9.8k | -5.3k | -1.15 | -0.19 [-0.23] | 3.1k | -77.6k | -0.63/-0.71 | -157.4k/-86.8k | 0.25 / 0.25 | DEAD | G2, G4, G5, G6a, G6b, G7 |
+| B10_vwap3_time_15m_LM2_S0 | 29.04 | 13.2 | -3.1k | -6.0k | -7.1k | -0.39 | -0.27 [-0.35] | 14.5k | 30.3k | -0.21/-0.33 | -190.1k/-112.4k | 0.62 / 0.78 | DEAD | G2, G4, G6a, G6b, G7 |
+| B10_vwap3_time_15m_LM2_S20 | 29.04 | 15.3 | -7.6k | -7.6k | -6.6k | -0.95 | -0.20 [-0.23] | 5.8k | -55.1k | -0.50/-0.58 | -172.6k/-92.9k | 0.20 / 0.33 | DEAD | G2, G4, G5, G6a, G6b, G7 |
+
 ### Control result: of 29 gated intraday fades, 2 have a positive WF mean at equal risk (B2C_X17_IG3, B2C_X17_IG4); best WF Sharpe 0.30. Gates do not rescue the ungated-negative fades (tested, not assumed).
 
-## Top 10 across blocks B1+B2+B2C+B3+B4+B5+B6+B7+B8+B9 by the 2.1 target (conditions met of 6: corr<=0.2, L25>0, chop>0, marginal>0, dMaxDD<0, Sharpe>=0.8), regardless of verdict
+## Top 10 across blocks B1+B2+B2C+B3+B4+B5+B6+B7+B8+B9+B10 by the 2.1 target (conditions met of 6: corr<=0.2, L25>0, chop>0, marginal>0, dMaxDD<0, Sharpe>=0.8), regardless of verdict
 
 | rank | cell | conditions | Sharpe | corr | L25 | trades/wk | failed gates | per-trade mean / SD ($, WF, n) | forward weeks to settle the mean (80% power, 2.8 SD/sqrt(n)) |
 |---|---|---|---|---|---|---|---|---|---|
