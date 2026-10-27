@@ -1,6 +1,6 @@
 # LEADERBOARD (one file, all tracks) - RESEARCH V2 verdicts
 
-Updated 2026-10-27T14:56:07Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
+Updated 2026-10-27T15:26:13Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
 Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base conditions + placebo >= 0.95 + object criterion; CANDIDATE = placebo >= 0.90 and at most one failure (registered in PAPER-ALL); DEAD = anything else. A `*` marks a provisional verdict (evidence listed in the needs column: e.g. paired test not yet run for a trade-modifier, holdout not looked, placebo not computed).
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout d | verdict | exposure | forward | DSR (N trials) | passed / failed / needs |
@@ -753,7 +753,7 @@ Ledger: PRED corrected 27,744 + STRUCT48 23,885 = cumulative 51,629 trials.
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-27T14:50:06Z. DS3 cells: 11076; verdicts {'DEAD': 10657, 'CANDIDATE': 132, 'PENDING': 227, 'PASS': 39, 'ERROR': 21}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-27T15:20:13Z. DS3 cells: 11268; verdicts {'DEAD': 10838, 'CANDIDATE': 136, 'PENDING': 233, 'PASS': 40, 'ERROR': 21}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -796,6 +796,7 @@ Updated 2026-10-27T14:50:06Z. DS3 cells: 11076; verdicts {'DEAD': 10657, 'CANDID
 | DS3_PRO1 | PRO1_ABS_R10_EMA200_SWZ | signal | - | - [1,839,17,431] | 11,144 | - | - | - | 17.5 | EXECUTION-SERVER-ONLY | **PASS** | - |  |
 | DS3_PRO1 | PRO1_IMB_K5_ST10_SWZ | signal | - | - [3,533,22,686] | 13,689 | - | - | - | 24.4 | EXECUTION-SERVER-ONLY | **PASS** | - |  |
 | DS3_TICT | IF_5m_tg_pd | signal | - | - - | - | - | - | - | - | mapped only (resting limit / stop entry / structural bracket: not priceable by the market-only direct arms) | **PASS** | - |  |
+| TPBX | PBX_PB_ST10_SWZ_T3_f60_SW | signal | - | - - | - | - | - | - | - | - | **PASS** | - |  |
 | DS3_TR2 | TR3_KB20_S | signal | - | 22,958 [13,334,32,927] | 14,003 | 1.00 | 21,897 | -4,539 | 28.7 | DELIVERABLE-bars/ticks | **CANDIDATE** | - | -SPAN2>0 |
 | DS3_TR2 | TR3_KB_S | signal | - | 21,094 [11,798,30,440] | 13,324 | 1.00 | 23,485 | -3,780 | 29.9 | DELIVERABLE-bars/ticks | **CANDIDATE** | - | -SPAN2>0 |
 | DS3_TR2 | TRW_DON15m_n14_S | signal | - | 19,137 [9,735,28,088] | 13,117 | 1.00 | 21,254 | -6,792 | 23.0 | DELIVERABLE-bars/ticks | **CANDIDATE** | - | -SPAN2>0 |
@@ -928,6 +929,10 @@ Updated 2026-10-27T14:50:06Z. DS3 cells: 11076; verdicts {'DEAD': 10657, 'CANDID
 | DS3_TICT | BK_5m_ec | signal | - | - - | - | - | - | - | - | mapped; direct replay only if finalist with market entry and 60/60 bracket | **CANDIDATE** | - |  |
 | DS3_TICT | BK_5m_ea_tg_sess | signal | - | - - | - | - | - | - | - | mapped only (resting limit / stop entry / structural bracket: not priceable by the market-only direct arms) | **CANDIDATE** | - |  |
 | DS3_TICT | BK_5m_ea_tf60 | signal | - | - - | - | - | - | - | - | mapped only (resting limit / stop entry / structural bracket: not priceable by the market-only direct arms) | **CANDIDATE** | - |  |
+| TPBX | PBX_PB_ST10_SWZ_T3_f60_T3 | signal | - | - - | - | - | - | - | - | - | **CANDIDATE** | - | -SPAN2<=0 |
+| TPBX | PBX_PRO_ER4_EMA5_f40_T2 | signal | - | - - | - | - | - | - | - | - | **CANDIDATE** | - | -SPAN2<=0 |
+| TPBX | PBX_PRO_ER4_EMA5_f40_FLIP | signal | - | - - | - | - | - | - | - | - | **CANDIDATE** | - | -SPAN2<=0 |
+| TPBX | PBX_PRO_ER4_EMA5_f40_TR30 | signal | - | - - | - | - | - | - | - | - | **CANDIDATE** | - | -paired_CI_excludes0&maxDD_not_worse |
 | DS3_TD4 | D4_cap_ST | sizing-lock-session | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TD4 | D4_cap_HM | sizing-lock-session | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TD4 | D4_cap_WT | sizing-lock-session | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
@@ -1155,6 +1160,12 @@ Updated 2026-10-27T14:50:06Z. DS3 cells: 11076; verdicts {'DEAD': 10657, 'CANDID
 | DS3_TCHOP | T14_S_s50_t1.5_n14 | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TCHOP | FOURTH_R4_k2.0_H60_8lots | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TCHOP | FOURTH_R2_k1.0_H120_8lots | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
+| TPBX | PBX_PB3B_R5_P1_f60_T1 | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
+| TPBX | PBX_PB3B_R5_P2_f60_T1 | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
+| TPBX | PBX_PB3B_R60_P2_f60_T1 | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
+| TPBX | PBX_PB_ST10_SWZ_T3_f60_T1 | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
+| TPBX | PBX_PRO_ER5_EMA5_f60_T1 | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
+| TPBX | PBX_PRO_ER4_EMA5_f60_T1 | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_BRACKET_T4A | T4A_PB3F_D_R3_P2_60_2R_bracket_t30_sst | trade-modifier | paired | 2.10 pts/tr - | - | 0.25 | - | - | 37.7 | MAPPED screen (1-s path, D3BA calibrated exit-type correction + per-entry offset to the direct base); direct L2 replay required for PASS/CANDIDATE | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse |
 | DS3_TR2 | TR2_KB_ROC2 | signal | - | 18,918 [8,862,28,756] | 14,218 | 1.00 | 16,348 | -323 | 29.0 | DELIVERABLE-bars/ticks | **DEAD** | - | -SPAN2>0; -plc>=.95 |
 | DS3_BRACKET_T4A | T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s40 | trade-modifier | paired | 2.98 pts/tr - | - | 0.60 | - | - | 28.1 | MAPPED screen (1-s path, D3BA calibrated exit-type correction + per-entry offset to the direct base); direct L2 replay required for PASS/CANDIDATE | **DEAD** | - | -placebo>=0.90 |
@@ -11812,6 +11823,187 @@ Updated 2026-10-27T14:50:06Z. DS3 cells: 11076; verdicts {'DEAD': 10657, 'CANDID
 | DS3_TR1 | TR1F_score_disc_3 | signal | weekly | - [-7,074,6,886] | 9,977 | 0.20 | 6,479 | -662 | 18.3 | DELIVERABLE | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -weekly_CI_excludes0&maxDD_not_worse; ?hold |
 | DS3_TR1 | TR1F_score_disc_5 | signal | weekly | - [-7,500,5,609] | 9,369 | 0.55 | -277 | -133 | 13.1 | DELIVERABLE | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -weekly_CI_excludes0&maxDD_not_worse; ?hold |
 | DS3_TR1 | TR1F_score_disc_7 | signal | weekly | - [-4,308,5,090] | 6,717 | 0.68 | 159 | 68 | 6.6 | DELIVERABLE | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -weekly_CI_excludes0&maxDD_not_worse; ?hold |
+| TPBX | PBX_PB3B_R5_P1_pe5_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -2x_cost<=0; - |
+| TPBX | PBX_PB3B_R5_P1_pe5_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe5_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe5_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P1_pe5_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe5_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe5_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_ |
+| TPBX | PBX_PB3B_R5_P1_pe5_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe10_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P1_pe10_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe10_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe10_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe10_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe10_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_pe10_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB3B_R5_P1_pe10_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P1_f40_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB3B_R5_P1_f40_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB3B_R5_P1_f40_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P1_f40_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>6 |
+| TPBX | PBX_PB3B_R5_P1_f40_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P1_f40_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P1_f40_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P1_f40_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse |
+| TPBX | PBX_PB3B_R5_P1_f60_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P1_f60_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -maxDD_not_worse(full sequence); -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P1_f60_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>6 |
+| TPBX | PBX_PB3B_R5_P1_f60_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P1_f60_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90 |
+| TPBX | PBX_PB3B_R5_P1_f60_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P1_f60_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse |
+| TPBX | PBX_PB3B_R5_P2_pe5_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P2_pe5_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P2_pe5_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P2_pe5_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P2_pe5_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB3B_R5_P2_pe5_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P2_pe5_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB3B_R5_P2_pe5_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -2x_c |
+| TPBX | PBX_PB3B_R5_P2_pe10_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P2_pe10_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -2x_cost<=0; - |
+| TPBX | PBX_PB3B_R5_P2_pe10_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P2_pe10_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R5_P2_pe10_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -yea |
+| TPBX | PBX_PB3B_R5_P2_pe10_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P2_pe10_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -yea |
+| TPBX | PBX_PB3B_R5_P2_pe10_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P2_f40_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB3B_R5_P2_f40_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -yea |
+| TPBX | PBX_PB3B_R5_P2_f40_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P2_f40_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>6 |
+| TPBX | PBX_PB3B_R5_P2_f40_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P2_f40_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R5_P2_f40_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P2_f40_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse |
+| TPBX | PBX_PB3B_R5_P2_f60_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -maxDD_not_worse(full sequence); -SPA |
+| TPBX | PBX_PB3B_R5_P2_f60_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -maxDD_not_worse(full sequence); -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P2_f60_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>6 |
+| TPBX | PBX_PB3B_R5_P2_f60_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P2_f60_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90 |
+| TPBX | PBX_PB3B_R5_P2_f60_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R5_P2_f60_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90 |
+| TPBX | PBX_PB3B_R60_P2_pe5_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -2x_cost<=0; - |
+| TPBX | PBX_PB3B_R60_P2_pe5_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R60_P2_pe5_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -2x_cost<=0; - |
+| TPBX | PBX_PB3B_R60_P2_pe5_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R60_P2_pe5_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB3B_R60_P2_pe5_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R60_P2_pe5_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB3B_R60_P2_pe5_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R60_P2_pe10_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_pe10_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -2x_cost<=0; - |
+| TPBX | PBX_PB3B_R60_P2_pe10_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_pe10_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_pe10_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_pe10_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB3B_R60_P2_pe10_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_pe10_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_f40_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB3B_R60_P2_f40_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -2x_c |
+| TPBX | PBX_PB3B_R60_P2_f40_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R60_P2_f40_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_f40_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB3B_R60_P2_f40_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_f40_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_f40_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -maxDD_not_worse(full sequence); -placebo<0.95; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_f60_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse |
+| TPBX | PBX_PB3B_R60_P2_f60_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90 |
+| TPBX | PBX_PB3B_R60_P2_f60_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_f60_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_f60_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_f60_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB3B_R60_P2_f60_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe5_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe5_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe5_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe5_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe5_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe5_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe5_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe5_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe10_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe10_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe10_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe10_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe10_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe10_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe10_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_pe10_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PB_ST10_SWZ_T3_f40_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
+| TPBX | PBX_PB_ST10_SWZ_T3_f40_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_f40_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo<0.95; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_f40_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_f40_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB_ST10_SWZ_T3_f40_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0 |
+| TPBX | PBX_PB_ST10_SWZ_T3_f40_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_f40_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90 |
+| TPBX | PBX_PB_ST10_SWZ_T3_f60_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_f60_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PB_ST10_SWZ_T3_f60_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PB_ST10_SWZ_T3_f60_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0 |
+| TPBX | PBX_PB_ST10_SWZ_T3_f60_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90 |
+| TPBX | PBX_PRO_ER5_EMA5_pe5_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER5_EMA5_pe5_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER5_EMA5_pe5_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_pe5_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_pe5_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_pe5_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_pe5_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_pe5_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER5_EMA5_pe10_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER5_EMA5_pe10_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER5_EMA5_pe10_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_pe10_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_pe10_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_pe10_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER5_EMA5_pe10_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_pe10_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER5_EMA5_f40_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<= |
+| TPBX | PBX_PRO_ER5_EMA5_f40_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PRO_ER5_EMA5_f40_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -maxDD_not_worse(full sequence); -SPAN2<=0 |
+| TPBX | PBX_PRO_ER5_EMA5_f40_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_f40_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_f40_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PRO_ER5_EMA5_f40_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_f40_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -year_share>60 |
+| TPBX | PBX_PRO_ER5_EMA5_f60_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -maxDD_not_worse(full sequence); -SPAN2<=0; -year_sha |
+| TPBX | PBX_PRO_ER5_EMA5_f60_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_f60_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -ye |
+| TPBX | PBX_PRO_ER5_EMA5_f60_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_f60_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_f60_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER5_EMA5_f60_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_pe5_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_pe5_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER4_EMA5_pe5_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER4_EMA5_pe5_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -2x_cost<=0; - |
+| TPBX | PBX_PRO_ER4_EMA5_pe5_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0 |
+| TPBX | PBX_PRO_ER4_EMA5_pe5_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -2x_cost<=0; - |
+| TPBX | PBX_PRO_ER4_EMA5_pe5_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_pe5_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER4_EMA5_pe10_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER4_EMA5_pe10_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_pe10_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_pe10_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_pe10_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_pe10_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER4_EMA5_pe10_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0 |
+| TPBX | PBX_PRO_ER4_EMA5_pe10_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX_PRO_ER4_EMA5_f40_T1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f40_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -maxDD_not_worse(full sequence); -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f40_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f40_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f40_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f60_T2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f60_T3 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f60_CH | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f60_STB | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f60_SW | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -year_share>60% |
+| TPBX | PBX_PRO_ER4_EMA5_f60_FLIP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0 |
+| TPBX | PBX_PRO_ER4_EMA5_f60_TR30 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -year_share>60% |
 | DS3_TBRACKET | A_t20_s60 | ? | - | - - | - | - | - | - | 124.2 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | A_t30_s60 | ? | - | - - | - | - | - | - | 105.1 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | A_t40_s60 | ? | - | - - | - | - | - | - | 92.0 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
