@@ -1,6 +1,6 @@
 # LEADERBOARD (one file, all tracks) - RESEARCH V2 verdicts
 
-Updated 2026-10-27T08:54:45Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
+Updated 2026-10-27T09:24:53Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
 Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base conditions + placebo >= 0.95 + object criterion; CANDIDATE = placebo >= 0.90 and at most one failure (registered in PAPER-ALL); DEAD = anything else. A `*` marks a provisional verdict (evidence listed in the needs column: e.g. paired test not yet run for a trade-modifier, holdout not looked, placebo not computed).
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout d | verdict | exposure | forward | DSR (N trials) | passed / failed / needs |
@@ -753,7 +753,7 @@ Ledger: PRED corrected 27,744 + STRUCT48 21,536 = cumulative 49,280 trials.
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-27T08:47:54Z. DS3 cells: 8676; verdicts {'DEAD': 8347, 'CANDIDATE': 73, 'PENDING': 214, 'PASS': 21, 'ERROR': 21}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-27T09:18:09Z. DS3 cells: 8676; verdicts {'DEAD': 8347, 'CANDIDATE': 73, 'PENDING': 214, 'PASS': 21, 'ERROR': 21}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
