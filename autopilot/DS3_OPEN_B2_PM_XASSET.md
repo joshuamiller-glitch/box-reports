@@ -42,3 +42,40 @@ Per-cell interaction tables (year, dow, opening type 09:35/10:00, gap class, VIX
 l2vast/ds3/code/open2/second_opens.py: ORb5/ORb15/DRV5/DRV15 signals (+ mirrors) for CL 09:00, GC/SI/ZN 08:20, 6E 03:00/08:30, NQ 03:00, ES/RTY/YM 09:30 -> out/open2/second_opens_signals.parquet (650-950 days per cell); tick-based fill model (slippage ticks, fee RT, grade) with RTY/YM/CL/GC/SI/ZN flagged WEAK PROXY (4.84 from ES), 6E 5.30 (addendum); equal_risk_lots (to ST10 weekly SD) and xcorr (same-cell cross-instrument weekly correlation, pooled and per-instrument verdicts) helpers. Prereg design for block (vii): cells = {instrument-open} x {ORb5, ORb15, DRV5, DRV15} x R-unit brackets (stop/target 1.0, 1.5, 2.0 x own R5, time exit +60 min, hold to the session end) with mirrors as controls and the same placebo (a)/(b)/(c)/(d) set; to be hashed at block (vii) start.
 ## Files
 Preregs l2vast/ds3/prereg/TOPEN_B2_PMXA1..9_prereg.md; code l2vast/ds3/code/open2/pmxa_signals.py, pmxa_run.py, pmxa_final.py, pmxa_prereg.py, pmxa_interact.py, second_opens.py; results l2vast/ds3/out/topen_b2/pmxa_final.pkl, pmxa_pre.pkl, out/open2/pmxa_cells_M.csv; rows l2vast/ds3/rows/DS3_TOPEN_B2_PM.json. No series produced (no PASS/CANDIDATE).
+
+## ADDENDUM 2026-10-27T23:18:14Z - lead request: prereg-spec placebo (b), 10:00-flat variant, 09:29 conditioning tables (D3O4)
+**Verdict after all three: unchanged. 0 PASS, 0 CANDIDATE, 202 DEAD.** The X4b|ORX pre-stage CANDIDATE is no longer even a candidate on the corrected harness.
+**0. Harness fix.** D3O1 fixed a price-space bug (DS2 exit path vs library tape, 15 roll days, o2_core.off2) after my first scoring; the report above was scored with the old code. I recomputed everything with the fixed code: the 16-draw run (dir grp_TOPEN_B2_PMXAN, tag N16: 202 DEAD, best-of-N family rank 0.78 M) is the corrected version of the main report; its numbers differ only marginally (best cell X3a|HOLD +0.34 Sharpe unchanged; my cells enter after 09:30, so only the roll-day ones moved). Best-of-N is now family-wise over N_total=204.
+**1. Placebo (b) at the PREREG spec** (anchors 11:30-14:00, 200 draws, each draw randomly subsampled to the real event count; 152 draws usable in the best-of-N null after min-length trimming), ALL 202 cells (not only the 45+20): dir grp_TOPEN_B2_PMXANB200. Cells with (b) rank >= 0.95 on basis M fall from 42 (16 draws) to 29 (200 draws); only 1 of them also beats the bracket-beta placebo (d). Best-of-N: best (b)-effect cell ranks 0.39 (M) / 0.38 (T) in its family null (p95 effect 93 pts vs best 37). All 202 DEAD. Placebo-(b) clock window still differs from the harness 11:00-11:30; with the prereg spec the hold-to-close/long-duration cells are less comparable (shorter hold after a 14:00 anchor), which is why I also quote (d). Top 15 by stack-add Sharpe (M):
+| cell | n | d Sharpe vs live | d mean $/wk | MDE | fwd wks | vs un-block-all $/wk | HOLD mean | rank vs (b) 200 | failed (M) |
+|---|---|---|---|---|---|---|---|---|---|
+| X3a|HOLD | 171 | +0.34 | +6,289 | 7,933 | 119 | -196 | +2,119 | 0.81 | beats_b,beats_beta,stack_add_pre,span2,best_of_N |
+| X3a|T1200 | 171 | +0.31 | +5,679 | 7,599 | 134 | -806 | +3,039 | 0.84 | beats_b,beats_beta,stack_add_pre,span2,best_of_N |
+| X4a|HOLD | 449 | +0.29 | +7,170 | 10,253 | 153 | +685 | +4,730 | 1.00 | beats_c,span2,best_of_N |
+| X3a|T1030 | 171 | +0.28 | +5,095 | 6,302 | 115 | -1,390 | +3,664 | 0.95 | beats_beta,stack_add_pre,span2,best_of_N |
+| X4b|T1200 | 183 | +0.27 | +4,979 | 6,351 | 122 | -1,507 | +1,486 | 0.93 | beats_b,hold,span2,best_of_N |
+| X4b|HOLD | 183 | +0.26 | +5,917 | 7,638 | 125 | -568 | +1,345 | 0.94 | beats_b,beats_beta,year_share,hold,best_of_N |
+| X4a|T1200 | 449 | +0.21 | +5,109 | 9,810 | 277 | -1,377 | +5,603 | 0.97 | beats_b,beats_beta,stack_add_pre,best_of_N |
+| X4a|T1030 | 449 | +0.20 | +3,993 | 8,577 | 346 | -2,493 | +6,880 | 0.99 | beats_b,beats_beta,stack_add_pre,best_of_N |
+| X1b|T1200 | 469 | +0.20 | +5,207 | 8,996 | 224 | -1,278 | -1,126 | 0.98 | beats_beta,stack_add_pre,year_share,hold,best_of_N |
+| X1b|HOLD | 469 | +0.20 | +7,016 | 10,378 | 164 | +531 | -267 | 0.96 | beats_b,beats_beta,year_share,hold,best_of_N |
+| S2r|ONHL | 209 | +0.18 | +3,709 | 5,262 | 151 | -2,777 | -372 | 1.00 | beats_b,beats_beta,stack_add_pre,year_share,hold,span2,best_of_N |
+| S4b|HOLD | 483 | +0.17 | +2,546 | 9,886 | 1,131 | -3,940 | -2,800 | 0.74 | beats_b,beats_beta,stack_add_pre,year_share,hold,span2,best_of_N |
+| S4a|HOLD | 850 | +0.17 | +6,411 | 12,152 | 269 | -74 | +4,185 | 0.98 | beats_b,beats_beta,stack_add_pre,hold,best_of_N |
+| X4b|T1030 | 183 | +0.17 | +3,457 | 4,772 | 143 | -3,029 | +915 | 0.88 | beats_b,beats_beta,year_share,hold,best_of_N |
+| S4a|STRAIL | 850 | +0.16 | +2,800 | 7,728 | 571 | -3,685 | +2,448 | 0.88 | beats_b,beats_beta,stack_add_pre,hold,best_of_N |
+
+No cell exceeds its MDE; un-block comparison unchanged: best vs un-block-all is X4a|HOLD +685 $/wk (fails (c), second holdout, best-of-N); 2 of 201 cells > 0.
+**2. 10:00-flat variant** (no entry minute in 09:58-10:02, any open trade exits at 09:58): run through the harness CUSTOM bracket for the representable brackets F30/F45/F60/ORX/T1030/T1200/HOLD of the selected 51 cells = 32 cells (VWAP, ONHL, STRAIL, CHAND, SCALE NOT RUN: need harness support). All 32 DEAD; flatting costs stack-add (corr of d Sharpe flat vs base 0.62) but never creates a PASS. Best flat cells:
+| cell | d Sharpe flat | d Sharpe base | d mean flat | d mean base | rank (b) flat |
+|---|---|---|---|---|---|
+| X4a|T1030 | +0.24 | +0.20 | +3,862 | +3,993 | 1.00 |
+| X4a|T1200 | +0.24 | +0.21 | +3,862 | +5,109 | 1.00 |
+| X4a|HOLD | +0.24 | +0.29 | +3,862 | +7,170 | 0.88 |
+| X4b|ORX | +0.14 | +0.16 | +1,688 | +2,740 | 0.94 |
+| X4b|T1030 | +0.13 | +0.17 | +2,247 | +3,457 | 0.88 |
+| X4b|T1200 | +0.13 | +0.27 | +2,247 | +4,979 | 0.88 |
+
+Note T1030/T1200/HOLD collapse to the same trades once flattened at 09:58 for pre-10:00 entries (identical rows). File out/open2/pmxa_flat_cells.csv.
+**3. 09:29 conditioning tables** for the 51 selected cells (basis M, pre-lock trades; day-block bootstrap 90% CI of group-minus-rest): 6,377 group contrasts (n >= 15, share < 0.95), 676 (10.6%) have a CI excluding zero, versus 10% expected by chance. No feature separates winners from losers beyond chance; the nominal hits (has1000 for X4b: 19 ISM-rule days +87 pts/trade; 10:00 release days; ORR days for S2r) are 1-3 per cell in 100+ looks and are reported as chance-level, small-n (not predictors). Columns ot1000_type_name and price-level columns are excluded (ot1000 is not as-of for entries before 10:00; ot0935 is not as-of for the 09:31-entry signals, so its hits are descriptive only). File out/open2/pmxa_cond_tables.csv.
+**4. Holdout looks.** The original 9 per-group looks stand. The harness fix and the prereg-spec placebo re-read HOLD/X for the SAME cells (no new cells, no selection change); I logged 9 further looks with the note 'RE-READ ... N16' (pre-holdout text sha256 4802903f7c375248115386de5556ab7741bbb97d0bc7a8c47c7f3b0d80c2a0f8). The B200 and flat finals re-use that re-read and were not separately logged (disclosed here).
