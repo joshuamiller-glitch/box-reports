@@ -1,5 +1,5 @@
 # PULLBACK LEADERBOARD (PL, P10)
-Updated 2026-10-27T09:27Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
+Updated 2026-10-27T09:52Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
 
 Pullback: 21 PASS, 54 CANDIDATE. Best: PRO_ER5_EMA5, +$4866/wk standalone, paired vs ST +17.01 pts/trade [6.3,28.6], 3.1 trades/wk, DS3 marginal Sharpe +0.56, deliverable DELIVERABLE.
 Basis split (distinct, duplicates removed): DIRECT 3 PASS / 11 CANDIDATE; MAPPED-only (no direct yet) 61. Direct verdict supersedes mapped. Best = highest DS3 marginal Sharpe among direct PASS, else CANDIDATE. Equal-risk rule: no book is DEAD solely for earning less than ST at equal lots.
@@ -8,7 +8,7 @@ Basis split (distinct, duplicates removed): DIRECT 3 PASS / 11 CANDIDATE; MAPPED
 Cells scored: 447. Prereg totals: {}
 Cells with paired-vs-ST CI lower bound >0: 226; expected by chance at one-sided 2.5% over 447 cells: 11.2 (if observed is near this, treat as best-of-N noise).
 Placebo ranks >=0.95: 90 of 376 (chance ~18.8). Top placebo ranks: [1.0, 1.0, 1.0, 1.0, 1.0]
-Verdict counts: {'PASS': 21, 'CANDIDATE': 56, 'DEAD': 370}
+Verdict counts: {'CANDIDATE': 56, 'PASS': 21, 'DEAD': 370}
 
 ## PASS / CANDIDATE
 | cell | basis | dup-of | track | verdict | regime | level | trigger | bar | exec | bracket | tr/wk | $/wk | vs ST pts [CI] | MDE | vs base | holdout | 2023 | placebo | quiet/wide | long | short | executability | DS3 mkt Sharpe WF | $/wk eq lots | $/wk eq risk | lots eq risk | vs ST eq risk | capacity lots | re-verdict |
