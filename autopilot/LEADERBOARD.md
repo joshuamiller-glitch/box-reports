@@ -1,6 +1,6 @@
 # LEADERBOARD (one file, all tracks) - RESEARCH V2 verdicts
 
-Updated 2026-10-27T17:56:42Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
+Updated 2026-10-27T18:26:47Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
 Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base conditions + placebo >= 0.95 + object criterion; CANDIDATE = placebo >= 0.90 and at most one failure (registered in PAPER-ALL); DEAD = anything else. A `*` marks a provisional verdict (evidence listed in the needs column: e.g. paired test not yet run for a trade-modifier, holdout not looked, placebo not computed).
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout d | verdict | exposure | forward | DSR (N trials) | passed / failed / needs |
@@ -753,7 +753,7 @@ Ledger: PRED corrected 27,744 + STRUCT48 25,274 = cumulative 53,018 trials.
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-27T17:51:21Z. DS3 cells: 12532; verdicts {'DEAD': 11770, 'CANDIDATE': 137, 'PENDING': 265, 'PASS': 39, 'ERROR': 321}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-27T18:21:32Z. DS3 cells: 12544; verdicts {'DEAD': 11782, 'CANDIDATE': 137, 'PENDING': 265, 'PASS': 39, 'ERROR': 321}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -12968,6 +12968,18 @@ Updated 2026-10-27T17:51:21Z. DS3 cells: 12532; verdicts {'DEAD': 11770, 'CANDID
 | TPBX | PBX4_PB3_f60_T3_RUN | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -beats_(b)_CI_includes_0 |
 | TPBX | PBX4_PB3_f60_T3_LP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -SPAN |
 | TPBX | PBX4_PB3_f60_T3_BOOK | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX3_PBS_f60_SW_L10T | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -beats_(b)_CI_ |
+| TPBX | PBX3_PBS_f60_SW_L30T | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -beats_(b)_CI_ |
+| TPBX | PBX3_PBS_f60_SW_LADT | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -beats_(b)_CI |
+| TPBX | PBX3_PBS_f60_T3_L10T | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -beats_(b)_CI_includes_0 |
+| TPBX | PBX3_PBS_f60_T3_L30T | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -beats_(b)_CI_includes_0 |
+| TPBX | PBX3_PBS_f60_T3_LADT | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0; -beats_(b)_CI_includes |
+| TPBX | PBX3_ER5_f40_SW_L10T | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -beats_(b)_CI_ |
+| TPBX | PBX3_ER5_f40_SW_L30T | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -placebo<0.95; -SPAN2<=0; -beats_(b)_CI_ |
+| TPBX | PBX3_ER5_f40_SW_LADT | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -beats_(b)_CI_includes_0 |
+| TPBX | PBX3_PB3_f60_T3_L10T | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX3_PB3_f60_T3_L30T | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
+| TPBX | PBX3_PB3_f60_T3_LADT | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -2x_cost<=0;  |
 | DS3_TBRACKET | A_t20_s60 | ? | - | - - | - | - | - | - | 124.2 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | A_t30_s60 | ? | - | - - | - | - | - | - | 105.1 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | A_t40_s60 | ? | - | - - | - | - | - | - | 92.0 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
