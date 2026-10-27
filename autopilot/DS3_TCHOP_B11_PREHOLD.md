@@ -1,0 +1,1 @@
+# DS3_TCHOP_B11 note: direct-L2 (mbp-10, exec_engine_l2) re-pricing of the four B10 pdhl_range_40 limit-entry cells (same 685 signals, no selection on the holdout; B10 pre-holdout text DS3_TCHOP_B10_PREHOLD.md). Re-reads the same holdout window already looked at under DS3_TCHOP_B10.
