@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 11:49Z 10-27 (t+22.8 h of 48; final 10-28 13:00Z)
-Cells scored/total per track: T-A 142/30, T-B 2215/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 24/24, T-J 3/12, T-K 19/19, T-P 1008/?, T-R 266/?, T-S 207/?, T-W 1488/?. Verdicts {'DEAD': 10320, 'CANDIDATE': 124, 'PENDING': 214, 'PASS': 38, 'ERROR': 21}.
-Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR1A_ens_s0.5_k4(C), TR1A_ens_s1.0_k3(P), TR1B_reg1m_n60_t2_r0.5(C); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 32/32 slots now; CPU 5-min avg over last 24 samples 54% min 27% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 1.1, 'TL': 0.0, 'TP': 0.0, 'TR': 2.0, 'TC': 0.0, 'TS': 0.0, 'TE': 0.2}.
-Updated 2026-10-27T11:49:16Z. Box: CPU 26.6%, slots busy 32/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 12:19Z 10-27 (t+23.3 h of 48; final 10-28 13:00Z)
+Cells scored/total per track: T-A 142/30, T-B 2215/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 196/24, T-J 3/12, T-K 19/19, T-P 1008/?, T-R 266/?, T-S 207/?, T-W 1488/?. Verdicts {'DEAD': 10483, 'CANDIDATE': 132, 'PENDING': 214, 'PASS': 39, 'ERROR': 21}.
+Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR1A_ens_s0.5_k4(C), TR1A_ens_s1.0_k3(P), TR1B_reg1m_n60_t2_r0.5(C); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C). Census: autopilot/DS3_CENSUS.md (written).
+Cores: busy 23/32 slots now; CPU 5-min avg over last 24 samples 46% min 27% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 6.0, 'TL': 0.0, 'TP': 1.0, 'TR': 1.4, 'TC': 1.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-10-27T12:19:25Z. Box: CPU 35.8%, slots busy 23/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -28,19 +28,20 @@ Updated 2026-10-27T11:49:16Z. Box: CPU 26.6%, slots busy 32/32, queue 0. Cores p
 | B9 | D3M | 0 | 0 / ? | none | queued |
 | BA | ? | 0 | 0 / 0 | none | prereg |
 | BRACKET | ? | 0 | 1652 / ? | T4D_PRO_ER5_EMA5_D4_N15_f50_m1_s30_G1(C), T4D_PRO_ER5_EMA5_D4_SG_f50_m1_s30_G1(C) | done (report) |
-| C | D3CT | 0.0 | 28 / 28 | none | done (report) |
+| C | D3CT | 1.0 | 28 / 28 | none | done (report) |
 | C1 | D3XT | 0 | 0 / ? | none | queued |
 | C1C2 | D3XT | 0 | 0 / ? | none | queued |
 | C3C4 | D3XT | 0 | 0 / ? | none | queued |
 | C5 | D3XT | 0 | 0 / ? | none | queued |
 | CENSUS | D3C | 0 | 0 / 0 | none | done (report) |
+| CHOP | ? | 0 | 0 / 0 | none | prereg |
 | D | D3D | 0 | 0 / 14 | none | done (report) |
 | D1 | D3SZ | 0 | 0 / 14 | none | done (report) |
 | D2 | D3SZ | 0 | 0 / 126 | none | done (report) |
 | D3 | D3SZ | 0 | 0 / 18 | none | done (report) |
 | D3XT | D3SZ | 0 | 0 / ? | none | queued |
 | D4 | D3SZ | 0 | 0 / 9 | none | done (report) |
-| E | D3D | 0.2 | 0 / 197 | none | done (report) |
+| E | D3D | 0.0 | 0 / 197 | none | done (report) |
 | E1 | D3BAR | 0 | 0 / 57 | none | prereg |
 | E2 | D3INS | 0 | 0 / ? | none | queued |
 | E2E3 | D3INS | 0 | 0 / 293 | none | done (report) |
@@ -59,7 +60,7 @@ Updated 2026-10-27T11:49:16Z. Box: CPU 26.6%, slots busy 32/32, queue 0. Cores p
 | K | D3K | 0 | 19 / 38 | none | done (report) |
 | M | ? | 0 | 0 / 0 | none | prereg |
 | NEARTARGET | ? | 0 | 0 / ? | none | queued |
-| P | ? | 0.0 | 0 / 157 | none | prereg |
+| P | ? | 1.0 | 0 / 157 | none | prereg |
 | P4 | ? | 0 | 0 / 177 | none | prereg |
 | PB2 | D3PB* | 0 | 0 / 28 | none | prereg |
 | PB2B | D3PB* | 0 | 0 / 24 | none | prereg |
@@ -89,7 +90,7 @@ Updated 2026-10-27T11:49:16Z. Box: CPU 26.6%, slots busy 32/32, queue 0. Cores p
 | TD2 | ? | 0 | 7 / ? | D2_TE7_emax5m_f30_s50_a3_k67_f16(C) | done (report) |
 | TD3 | ? | 0 | 18 / ? | none | done (report) |
 | TD4 | ? | 0 | 7 / ? | none | done (report) |
-| TE | ? | 0.2 | 3 / ? | none | done (report) |
+| TE | ? | 0.0 | 3 / ? | none | done (report) |
 | TE2E3 | ? | 0 | 293 / ? | TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C) | done (report) |
 | TF | ? | 0 | 4 / ? | TF1_FOMC_NY(C) | done (report) |
 | TG | ? | 0 | 4 / ? | none | scoring |
@@ -97,6 +98,7 @@ Updated 2026-10-27T11:49:16Z. Box: CPU 26.6%, slots busy 32/32, queue 0. Cores p
 | TH | ? | 0 | 0 / 0 | none | done (report) |
 | THG1 | ? | 0 | 4800 / ? | none | scoring |
 | THG3 | ? | 0 | 138 / ? | none | scoring |
+| TICT | ? | 0 | 172 / ? | FV_15m_ea(C), FV_15m_ec(C) | scoring |
 | TJ | D3L | 0 | 3 / ? | none | done (report) |
 | TPULLBACK | ? | 0 | 157 / ? | none | done (report) |
 | TPULLBACK2 | ? | 0 | 52 / ? | PB2_B1_S(C), PB2_B4_M_Hvol(C) | done (report) |
@@ -111,7 +113,7 @@ Updated 2026-10-27T11:49:16Z. Box: CPU 26.6%, slots busy 32/32, queue 0. Cores p
 | TSTRUCTFIB | ? | 0 | 46 / ? | none | done (report) |
 | TWASHOUT | ? | 0 | 1488 / ? | WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C) | done (report) |
 | WO | ? | 0 | 0 / 1488 | none | prereg |
-| unattributed | - | 1.1 | - | - | - |
+| unattributed | - | 6.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -122,15 +124,15 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-10-27T11:45Z
+## TREND (TL) update 2026-10-27T12:15Z
 Trend: 12 PASS, 18 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | TR1 2026-10-26T22:59:30Z: scoring chain done |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 0 | 2026-10-27T11:31:47Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 26/32: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 0 | 2026-10-27T12:01:47Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 31/32: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
-Total trend cells scored: 266. Best-of-N context: ledger total 49514 cells across all tracks; trend cells with CI lower bound >0: 19 vs 6.7 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
+Total trend cells scored: 266. Best-of-N context: ledger total 51174 cells across all tracks; trend cells with CI lower bound >0: 19 vs 6.7 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
 
 <!--BRACKET-BEGIN-->
@@ -604,3 +606,14 @@ Priority mode is ON (governor flag l2vast/ds3/ledger/gov_priority.on): every oth
 2. TR1 direct on TR1A_ens_s0.5_k4 + TR1A_ens_s1.0_k3 only: remaining rows filtered to those two cells (14,513 of 56,621 unique trades, tr1_direct.py patched, backup .bak_pre_2cells_20261027); 9 months still pending (2025-04, 2026-03..2026-10; 2 already running), roughly a quarter of the old trades per month -> ETA about 14:00-15:00Z; then tr1_dfinal.py gives the two direct verdicts (other 13 stay mapped).
 3. D3XT exits: main replay 45/45 months done; R4 event pass (dc_replay2) 38/45, missing months being replayed on 2 workers (about 9-70 min each) -> ETA about 13:00-14:00Z, then its auto post.sh (pre/final C and R4).
 After all three finish the governor resumes T-BRACKET A (D3BA), B (D3NT) and TR2 workers; pb2/pb4/pb4w/pro1/so3 (D3PB2, D3PB4, PRO1, T2 scale-out C) STAY FROZEN until you release them (you named only A/B and TR2).
+
+## PRIORITY ORDER 2026-10-27 - status and ETA per item (written ~12:15Z; supersedes the 11:50Z block above)
+Governor: priority mode ON (cap 12 live replay workers, 32 GB gate, items 1-3 tier 1, item 4 (TR1) only when workers < 10 and avail >= 32 GB; frozen/held: pb2, pb4, pb4w, pro1, so3 (scale-out C stays unlaunched), tr2, pro3, pb3, pro; non-DS3 assembly nulls paused; T-ICT (D3IC) told to stop at a clean point).
+1. EXITS: D3XT main replay 45/45 and R4 event pass 45/45 months DONE; remaining = (i) new replay pass for the PB streams (PB_ST10_SWZ_T3 + PB3B_R5_P1 exits), (ii) scoring 104 + R4 cells on ST/HM/KB/SM/PB, DS3_EXITS_FINAL.md. ETA: PB-stream replay ~5-8 h (not started, depends on slots), scoring + report +2-3 h -> about 20:00-23:00Z. Then T-BRACKET A (D3BA replay 35/45, 2-3 workers, ETA ~3-4 h, auto-finalises) and B (D3NT nt_direct, T4 months running, ETA ~6-8 h; scored after its WF months land). Section C stays unlaunched.
+2. T-CHOP (D3CH, new agent started 12:10Z): sleeves re-scored under V2 (mapped screens first ~2-4 h, direct replay only for finalists); DS3_CHOP_FINAL.md ETA about 20:00Z-tomorrow 06:00Z depending on replay needs.
+3. PB3B_R5_P1 spec + P9 block (D3SPEC, started ~11:55Z, no replay needed): ETA ~13:30-15:30Z. D3PB base: 44/45 months, last month 2026-06 restarted 12:08Z (an earlier restart was killed), ETA ~13:15Z, then PB_ST10_SWZ_T3 direct verdict via finish.sh.
+4. TR1 two cells: remaining rows already filtered to the two cells, 38/45 months; runs when workers < 10 and avail >= 32 GB; ETA ~16:00-20:00Z.
+5-6: not started (wait for items 1-3 final reports).
+Memguard still killed 3 dc_replay2 workers at 11:52-11:56Z (before the 12:07Z cap-12 / 32 GB governor).
+- BOX-WIDE: mapped-basis stop-exit credit (+2.6..+4.2 pts in 2025-26, calibrated on 60-pt stops) inflates tight-stop cells (D3SF S3_B_N12_tf5m PASS ~14-pt stop, D3IC cells, D3PB3 structure stops). A CONS-basis rescore (raw+0.5+min(correction,0)) is needed before any of those PASS/CANDIDATE are cited; queued after priority items 1-3.
+- T-PBX (item 1 addendum) ETA: D3PX mapped/conservative screen ~3-5 h after 13:00Z; direct stage after the D3XT PB-stream replay lands (same dependency as item 1).

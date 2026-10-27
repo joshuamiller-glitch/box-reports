@@ -1,4 +1,4 @@
-# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-27 07:34 ET)
+# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-27 08:14 ET)
 
 Weeks start Sunday 18:00 ET. W43 (10-19..10-23) informational, never counted; official = W44+. Live file: `<repo>/data/live/StratTrades_DualStrat2_<acct>.csv` (80 grouped trades, last exit 2026-10-26 11:44 ET). Verdicts: PROMOTE >= 6 weeks, z >= -1, sign right; RETIRE >= 8 weeks, z < -2; BEHIND z < -1; z = (realised - expected*n)/(expected SD*sqrt(n)).
 
@@ -193,6 +193,16 @@ Tape ends 2026-10-23 20:59:00 UTC (label day 20261023); verdict field: none: 4 f
 | ds3_WO_WO_PRO2_RIB1m_q30_cci_b1_n20_k10 | CANDIDATE | trade-modifier (washout entry condition on PRO2_RIB1m_q30) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 | ds3_WO_WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18 | CANDIDATE | trade-modifier (washout entry condition on TE6_st10m_n10_m3.5) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 | ds3_WO_WO_TE7_boll3m_n20_m1.5_pb_b5_x1.5_k10 | CANDIDATE | trade-modifier (washout entry condition on TE7_boll3m_n20_m1.5) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_BK_5m_ea_tf60 | CANDIDATE | signal (ICT FVG / iFVG / breaker / MTF structural entry into a structural or fixed bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_BK_5m_ea_tg_sess | CANDIDATE | signal (ICT FVG / iFVG / breaker / MTF structural entry into a structural or fixed bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_BK_5m_ec | CANDIDATE | signal (ICT FVG / iFVG / breaker / MTF structural entry into a structural or fixed bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_FV_15m_ea | CANDIDATE | signal (ICT FVG / iFVG / breaker / MTF structural entry into a structural or fixed bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_FV_15m_ec | CANDIDATE | signal (ICT FVG / iFVG / breaker / MTF structural entry into a structural or fixed bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_FV_15m_ed | CANDIDATE | signal (ICT FVG / iFVG / breaker / MTF structural entry into a structural or fixed bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_IF_3m_tg_pd | CANDIDATE | signal (ICT FVG / iFVG / breaker / MTF structural entry into a structural or fixed bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_IF_5m_tg_pd | CANDIDATE | signal (ICT FVG / iFVG / breaker / MTF structural entry into a structural or fixed bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_IF_5m_tg_sess | CANDIDATE | signal (ICT FVG / iFVG / breaker / MTF structural entry into a structural or fixed bracket) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_pbrepl_PB3B_R5_P1 | CANDIDATE | signal (DS3 PB replacement candidate: 5-min Supertrend regime, 1-min EMA20 pullback touch, arming-bar extreme-break trigger, DS2 bracket 60/1R; bars only; research only) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 
 Per-cell frozen expectation (WF / L8W / IS) and parameters: `autopilot/forward/series/PAPERALL_CELLS.json`.
 
