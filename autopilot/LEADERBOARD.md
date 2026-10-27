@@ -1,68 +1,68 @@
 # LEADERBOARD (one file, all tracks) - RESEARCH V2 verdicts
 
-Updated 2026-10-27T21:57:17Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
+Updated 2026-10-27T22:27:21Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
 Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base conditions + placebo >= 0.95 + object criterion; CANDIDATE = placebo >= 0.90 and at most one failure (registered in PAPER-ALL); DEAD = anything else. A `*` marks a provisional verdict (evidence listed in the needs column: e.g. paired test not yet run for a trade-modifier, holdout not looked, placebo not computed).
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout d | verdict | exposure | forward | DSR (N trials) | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| T3.2 | ORB_ASIA_15_v1__s60@1.0 | sleeve | weekly | 16,276 [1,553,32,788] | 22,324 | 0.96 | 24,491 | **PASS** | ORB Asia | - | 0.059 (53,018) | [size: +68 NQ lots, port maxDD +100%]  |
-| T3.2 | ORB_ASIA_15_v1__s75@1.0 | sleeve | weekly | 15,455 [926,30,113] | 20,860 | 0.96 | 29,359 | **PASS** | ORB Asia | - | 0.063 (53,018) | [size: +55 NQ lots, port maxDD +81%]  |
-| T3.8A | ES_RSI2_t10 | sleeve | weekly | 12,559 [3,559,22,101] | 13,252 | 0.96 | 14,513 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.255 (53,018) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
-| T3.7rsi2c | RSI2C_s20 | sleeve | weekly | 10,568 [2,294,20,281] | 12,856 | 0.98 | 12,766 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.125 (53,018) |  |
-| T3.6b1 | RSI2_t10 | sleeve | weekly | 10,197 [1,961,20,243] | 13,066 | 0.98 | 10,991 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.084 (53,018) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.976 |
-| T3.2 | ORB_ASIA_15_v1__s60@0.5 | sleeve | weekly | 8,138 [776,16,394] | 11,162 | 0.96 | 12,245 | **PASS** | ORB Asia | - | 0.059 (53,018) | [size: +34 NQ lots, port maxDD +39%]  |
-| T3.2 | ORB_ASIA_15_v1__s75@0.5 | sleeve | weekly | 7,727 [463,15,057] | 10,430 | 0.96 | 14,680 | **PASS** | ORB Asia | - | 0.063 (53,018) | [size: +27 NQ lots, port maxDD +32%]  |
-| NM_E | E:ES_RSI2_t10 | sleeve | weekly | 6,279 [1,779,11,051] | 6,140 | 0.96 | 7,257 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
-| T3.8B | GSHORT_t90 | sleeve | weekly | 5,941 [-2,995,14,754] | 12,686 | 0.96 | 7,862 | **PASS** | GSHORT | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.014 (53,018) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.957 |
-| NM_E | E:NQ_RSI2C_s20 | sleeve | weekly | 5,284 [1,147,10,141] | 6,140 | 0.98 | 6,383 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - |  |
+| T3.2 | ORB_ASIA_15_v1__s60@1.0 | sleeve | weekly | 16,276 [1,553,32,788] | 22,324 | 0.96 | 24,491 | **PASS** | ORB Asia | - | 0.059 (53,980) | [size: +68 NQ lots, port maxDD +100%]  |
+| T3.2 | ORB_ASIA_15_v1__s75@1.0 | sleeve | weekly | 15,455 [926,30,113] | 20,860 | 0.96 | 29,359 | **PASS** | ORB Asia | - | 0.062 (53,980) | [size: +55 NQ lots, port maxDD +81%]  |
+| T3.8A | ES_RSI2_t10 | sleeve | weekly | 12,559 [3,559,22,101] | 13,252 | 0.96 | 14,513 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.254 (53,980) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
+| T3.7rsi2c | RSI2C_s20 | sleeve | weekly | 10,568 [2,294,20,281] | 12,856 | 0.98 | 12,766 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.124 (53,980) |  |
+| T3.6b1 | RSI2_t10 | sleeve | weekly | 10,197 [1,961,20,243] | 13,066 | 0.98 | 10,991 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.084 (53,980) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.976 |
+| T3.2 | ORB_ASIA_15_v1__s60@0.5 | sleeve | weekly | 8,138 [776,16,394] | 11,162 | 0.96 | 12,245 | **PASS** | ORB Asia | - | 0.059 (53,980) | [size: +34 NQ lots, port maxDD +39%]  |
+| T3.2 | ORB_ASIA_15_v1__s75@0.5 | sleeve | weekly | 7,727 [463,15,057] | 10,430 | 0.96 | 14,680 | **PASS** | ORB Asia | - | 0.062 (53,980) | [size: +27 NQ lots, port maxDD +32%]  |
+| NM_E | E:ES_RSI2_t10 | sleeve | weekly | 6,279 [1,779,11,051] | 6,140 | 0.96 | 7,257 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
+| T3.8B | GSHORT_t90 | sleeve | weekly | 5,941 [-2,995,14,754] | 12,686 | 0.96 | 7,862 | **PASS** | GSHORT | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.014 (53,980) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.957 |
+| NM_E | E:NQ_RSI2C_s20 | sleeve | weekly | 5,284 [1,147,10,141] | 6,140 | 0.98 | 6,383 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | - |  |
 | NM_E | E:NQ_RSI2CC_s20 | sleeve | weekly | 5,284 [1,147,10,141] | 6,140 | 0.98 | 6,383 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - |  |
 | NM_E | E:NQ_RSI2_t10 | sleeve | weekly | 5,099 [980,10,121] | 6,140 | 0.98 | 5,496 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.976 |
 | NM_E | E:ORB_ASIA_15_v1_s75 | sleeve | weekly | 4,472 [268,8,714] | 6,140 | 0.96 | 8,496 | **PASS** | ORB Asia | ON TRACK (0 weeks live; AWAITING EVALUAT | - |  |
 | NM_E | E:ORB_ASIA_15_v1_s60 | sleeve | weekly | 4,462 [426,8,988] | 6,140 | 0.96 | 6,713 | **PASS** | ORB Asia | ON TRACK (0 weeks live; AWAITING EVALUAT | - |  |
-| T3.2 | ORB_ASIA_15_v1__s60@0.25 | sleeve | weekly | 4,069 [388,8,197] | 5,581 | 0.96 | 6,123 | **PASS** | ORB Asia | - | 0.059 (53,018) | [size: +17 NQ lots, port maxDD +12%]  |
-| T3.2 | ORB_ASIA_15_v1__s75@0.25 | sleeve | weekly | 3,864 [232,7,528] | 5,215 | 0.96 | 7,340 | **PASS** | ORB Asia | - | 0.063 (53,018) | [size: +14 NQ lots, port maxDD +9%]  |
+| T3.2 | ORB_ASIA_15_v1__s60@0.25 | sleeve | weekly | 4,069 [388,8,197] | 5,581 | 0.96 | 6,123 | **PASS** | ORB Asia | - | 0.059 (53,980) | [size: +17 NQ lots, port maxDD +12%]  |
+| T3.2 | ORB_ASIA_15_v1__s75@0.25 | sleeve | weekly | 3,864 [232,7,528] | 5,215 | 0.96 | 7,340 | **PASS** | ORB Asia | - | 0.062 (53,980) | [size: +14 NQ lots, port maxDD +9%]  |
 | NM_E | E:GSHORT_t90 | sleeve | weekly | 2,970 [-1,498,7,377] | 6,140 | 0.96 | 3,931 | **PASS** | GSHORT | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.957 |
-| T3.7rsi2c | RSI2CC_s20 | sleeve | weekly | 2,646 [574,5,078] | 3,219 | 0.98 | 3,196 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.125 (53,018) |  |
-| T3.2 | ORB_ASIA_30_v1__s60@1.0 | sleeve | weekly | 16,003 [-464,32,465] | 23,535 | 0.98 | 26,620 | **CANDIDATE** | ORB Asia | - | 0.044 (53,018) | [size: +67 NQ lots, port maxDD +102%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
-| T3.2 | ORB_ASIA_30_v1__s75@1.0 | sleeve | weekly | 14,390 [-2,059,30,776] | 23,468 | 0.96 | 28,509 | **CANDIDATE** | ORB Asia | - | 0.035 (53,018) | [size: +56 NQ lots, port maxDD +108%] -year_share>60% |
-| T3.2 | ORB_ASIA_30_v1__s50@1.0 | sleeve | weekly | 11,468 [-4,170,27,370] | 22,542 | 0.95 | 20,400 | **CANDIDATE** | ORB Asia | - | 0.013 (53,018) | [size: +80 NQ lots, port maxDD +104%] -year_share>60% |
+| T3.7rsi2c | RSI2CC_s20 | sleeve | weekly | 2,646 [574,5,078] | 3,219 | 0.98 | 3,196 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.124 (53,980) |  |
+| T3.2 | ORB_ASIA_30_v1__s60@1.0 | sleeve | weekly | 16,003 [-464,32,465] | 23,535 | 0.98 | 26,620 | **CANDIDATE** | ORB Asia | - | 0.044 (53,980) | [size: +67 NQ lots, port maxDD +102%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
+| T3.2 | ORB_ASIA_30_v1__s75@1.0 | sleeve | weekly | 14,390 [-2,059,30,776] | 23,468 | 0.96 | 28,509 | **CANDIDATE** | ORB Asia | - | 0.035 (53,980) | [size: +56 NQ lots, port maxDD +108%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s50@1.0 | sleeve | weekly | 11,468 [-4,170,27,370] | 22,542 | 0.95 | 20,400 | **CANDIDATE** | ORB Asia | - | 0.013 (53,980) | [size: +80 NQ lots, port maxDD +104%] -year_share>60% |
 | NM_B | B06_SetB_pboff_noprofit_vsA | sizing-lock-session | weekly | 10,566 [-327,20,628] | 15,151 | 1.00 | 13,110 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B05_SetB_pboff_vsA | sizing-lock-session | weekly | 10,507 [-273,20,378] | 14,917 | 1.00 | 12,226 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B06_SetB_pb3R_noprofit_vsA | sizing-lock-session | weekly | 9,125 [-1,522,18,982] | 14,811 | 1.00 | 13,851 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B05_SetB_pb3R_vsA | sizing-lock-session | weekly | 9,066 [-1,773,18,525] | 14,504 | 1.00 | 12,967 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.6b1 | RSI2T_t10 | sleeve | weekly | 8,882 [1,096,19,045] | 12,828 | 0.91 | 10,606 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.049 (53,018) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.911; -was PASS |
-| T3.7b4 | IBS_t20_n1 | sleeve | weekly | 8,465 [420,18,131] | 12,658 | 0.93 | 10,973 | **CANDIDATE** | IBS | ON TRACK (0 weeks live) | 0.034 (53,018) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.932 |
+| T3.6b1 | RSI2T_t10 | sleeve | weekly | 8,882 [1,096,19,045] | 12,828 | 0.91 | 10,606 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.048 (53,980) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.911; -was PASS |
+| T3.7b4 | IBS_t20_n1 | sleeve | weekly | 8,465 [420,18,131] | 12,658 | 0.93 | 10,973 | **CANDIDATE** | IBS | ON TRACK (0 weeks live) | 0.034 (53,980) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.932 |
 | NM_B | B06_SetB_pb4R_noprofit_vsA | sizing-lock-session | weekly | 8,442 [-2,458,18,693] | 15,356 | 1.00 | 10,434 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B05_SetB_pb4R_vsA | sizing-lock-session | weekly | 8,383 [-2,578,18,411] | 15,153 | 1.00 | 9,550 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B07_SetB_Rscaled_pb4R_vsA | sizing-lock-session | weekly | 8,344 [-1,554,17,422] | 13,514 | 1.00 | 11,151 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.8A | YM_RSI2_t10 | sleeve | weekly | 8,274 [-87,17,321] | 12,442 | 0.95 | 11,303 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.050 (53,018) | -year_share>60%; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.951; -was DEAD |
+| T3.8A | YM_RSI2_t10 | sleeve | weekly | 8,274 [-87,17,321] | 12,442 | 0.95 | 11,303 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.050 (53,980) | -year_share>60%; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.951; -was DEAD |
 | NM_B | B01_SetB | sizing-lock-session | weekly | 8,131 [-80,16,029] | 11,517 | 1.00 | 5,959 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live) | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_D | T14_S_s50_t1.5_n14 | trade-modifier | paired | 8016.07 pts/tr [-4,440,20,357] | 17,591 | 0.91 | 7,390 | **CANDIDATE** | T14_S_s50_t1.5_n14 | ON TRACK (0 weeks live) | - | -CANDIDATE by user ruling 2026-10-25 (scorer reads DEAD: paired CI includes 0, year share 68%, maxDD +5.7k, pl |
 | NM_B | B06_SetB_pb2R_noprofit_vsA | sizing-lock-session | weekly | 8,016 [-522,16,241] | 12,031 | 1.00 | 6,479 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.2 | ORB_ASIA_30_v1__s60@0.5 | sleeve | weekly | 8,001 [-232,16,232] | 11,767 | 0.98 | 13,310 | **CANDIDATE** | ORB Asia | - | 0.044 (53,018) | [size: +33 NQ lots, port maxDD +44%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
+| T3.2 | ORB_ASIA_30_v1__s60@0.5 | sleeve | weekly | 8,001 [-232,16,232] | 11,767 | 0.98 | 13,310 | **CANDIDATE** | ORB Asia | - | 0.044 (53,980) | [size: +33 NQ lots, port maxDD +44%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
 | T1 | T14_S_s50_t1.5_n14 | trade-modifier | weekly(paired pending) | 7,914 [-5,904,20,799] | 19,085 | 0.91 | 7,325 | **CANDIDATE** | T14_S_s50_t1.5_n14 | ON TRACK (0 weeks live) | - | -CANDIDATE by user ruling 2026-10-25 (scorer reads DEAD: paired CI includes 0, year share 68%, maxDD +5.7k, pl |
-| T3.2 | ORB_ASIA_30_v1__s75@0.5 | sleeve | weekly | 7,195 [-1,030,15,388] | 11,734 | 0.96 | 14,254 | **CANDIDATE** | ORB Asia | - | 0.035 (53,018) | [size: +28 NQ lots, port maxDD +47%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s75@0.5 | sleeve | weekly | 7,195 [-1,030,15,388] | 11,734 | 0.96 | 14,254 | **CANDIDATE** | ORB Asia | - | 0.035 (53,980) | [size: +28 NQ lots, port maxDD +47%] -year_share>60% |
 | NM_B | B07_SetB_Rscaled_pb2R_vsA | sizing-lock-session | weekly | 6,902 [-1,070,14,596] | 11,126 | 1.00 | 1,611 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.2 | ORB_ASIA_30_v1__s50@0.5 | sleeve | weekly | 5,734 [-2,085,13,685] | 11,271 | 0.95 | 10,200 | **CANDIDATE** | ORB Asia | - | 0.013 (53,018) | [size: +40 NQ lots, port maxDD +45%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s50@0.5 | sleeve | weekly | 5,734 [-2,085,13,685] | 11,271 | 0.95 | 10,200 | **CANDIDATE** | ORB Asia | - | 0.013 (53,980) | [size: +40 NQ lots, port maxDD +45%] -year_share>60% |
 | NM_E | E:COMB_c3_R | sleeve | weekly | 5,118 [1,131,9,760] | 6,140 | 0.97 | 4,818 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.966; -worst of 1.5x/2x/1-s tape stre |
 | NM_E | E:NQ_RSI2T_t10 | sleeve | weekly | 4,441 [548,9,523] | 6,140 | 0.91 | 5,303 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.911; -was PASS |
 | NM_E | E:NQ_IBS_t20_n1 | sleeve | weekly | 4,232 [210,9,065] | 6,140 | 0.93 | 5,486 | **CANDIDATE** | IBS | ON TRACK (0 weeks live) | - | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.932 |
-| T3.2 | ORB_ASIA_30_v1__s60@0.25 | sleeve | weekly | 4,001 [-116,8,116] | 5,884 | 0.98 | 6,655 | **CANDIDATE** | ORB Asia | - | 0.044 (53,018) | [size: +17 NQ lots, port maxDD +19%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
-| T3.2 | ORB_ASIA_30_v1__s75@0.25 | sleeve | weekly | 3,598 [-515,7,694] | 5,867 | 0.96 | 7,127 | **CANDIDATE** | ORB Asia | - | 0.035 (53,018) | [size: +14 NQ lots, port maxDD +21%] -year_share>60% |
-| T3.2 | ORB_ASIA_30_v1__s50@0.25 | sleeve | weekly | 2,867 [-1,043,6,843] | 5,636 | 0.95 | 5,100 | **CANDIDATE** | ORB Asia | - | 0.013 (53,018) | [size: +20 NQ lots, port maxDD +20%] -year_share>60% |
-| T3.8A | COMB_c3_R | sleeve | weekly | 2,831 [307,5,812] | 3,934 | 0.97 | 3,490 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.099 (53,018) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.966; -worst of 1.5x/2x/1-s tape stre |
+| T3.2 | ORB_ASIA_30_v1__s60@0.25 | sleeve | weekly | 4,001 [-116,8,116] | 5,884 | 0.98 | 6,655 | **CANDIDATE** | ORB Asia | - | 0.044 (53,980) | [size: +17 NQ lots, port maxDD +19%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
+| T3.2 | ORB_ASIA_30_v1__s75@0.25 | sleeve | weekly | 3,598 [-515,7,694] | 5,867 | 0.96 | 7,127 | **CANDIDATE** | ORB Asia | - | 0.035 (53,980) | [size: +14 NQ lots, port maxDD +21%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s50@0.25 | sleeve | weekly | 2,867 [-1,043,6,843] | 5,636 | 0.95 | 5,100 | **CANDIDATE** | ORB Asia | - | 0.013 (53,980) | [size: +20 NQ lots, port maxDD +20%] -year_share>60% |
+| T3.8A | COMB_c3_R | sleeve | weekly | 2,831 [307,5,812] | 3,934 | 0.97 | 3,490 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.098 (53,980) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.966; -worst of 1.5x/2x/1-s tape stre |
 | T4 | T4.2_Y4 | execution | paired | 0.05 pts/tr [-2,762,2,988] | 4,109 | 0.21 | -2,658 | **CANDIDATE** | T4.2_Y4 touch-join | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -year_share>60% |
 | T3_8 | NQ_RSI2_t10 | sleeve | - | - [36,301] | 189 | 0.99 | - | **PENDING*** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | ?no scored effect yet |
 | T3_8 | NQ_IBS_t20_n1 | sleeve | - | - [-24,426] | 321 | 0.95 | - | **PENDING*** | IBS | ON TRACK (0 weeks live) | - | ?no scored effect yet |
-| T3_8 | ES_RSI2_t10 | sleeve | - | - [-33,204] | 169 | 0.97 | - | **PENDING*** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | ?no scored effect yet |
+| T3_8 | ES_RSI2_t10 | sleeve | - | - [-33,204] | 169 | 0.97 | - | **PENDING*** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | - | ?no scored effect yet |
 | T3_8 | ES_IBS_t20_n1 | sleeve | - | - [-42,233] | 197 | 0.92 | - | **PENDING*** | IBS | - | - | ?no scored effect yet |
-| T3_8 | RTY_RSI2_t10 | sleeve | - | - [-46,157] | 145 | 0.86 | - | **PENDING*** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | ?no scored effect yet |
-| T3_8 | RTY_IBS_t20_n1 | sleeve | - | - [-44,227] | 194 | 0.92 | - | **PENDING*** | IBS | ON TRACK (0 weeks live) | - | ?no scored effect yet |
+| T3_8 | RTY_RSI2_t10 | sleeve | - | - [-46,157] | 145 | 0.86 | - | **PENDING*** | dip-buy RSI2 family | DEAD (was PASS) | - | ?no scored effect yet |
+| T3_8 | RTY_IBS_t20_n1 | sleeve | - | - [-44,227] | 194 | 0.92 | - | **PENDING*** | IBS | DEAD (was CANDIDATE) | - | ?no scored effect yet |
 | T3_8 | YM_RSI2_t10 | sleeve | - | - [-52,139] | 136 | 0.78 | - | **PENDING*** | dip-buy RSI2 family | ON TRACK (0 weeks live; AWAITING EVALUAT | - | ?no scored effect yet |
 | T3_8 | YM_IBS_t20_n1 | sleeve | - | - [-26,179] | 147 | 0.89 | - | **PENDING*** | IBS | - | - | ?no scored effect yet |
 | T3_8 | COMB_c3_R | sleeve | - | - [112,1,235] | 803 | 0.98 | - | **PENDING*** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | ?no scored effect yet |
 | T3_8 | COMB_c1_N | sleeve | - | - [40,501] | 329 | 0.98 | - | **PENDING*** | dip-buy RSI2 family | - | - | ?no scored effect yet |
-| T3.8A | RTY_RSI2_t10 | sleeve | weekly | 16,009 [8,362,24,984] | 11,880 | 0.87 | 24,421 | **DEAD** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo>=0.90; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.870; -was PASS |
+| T3.8A | RTY_RSI2_t10 | sleeve | weekly | 16,009 [8,362,24,984] | 11,880 | 0.87 | 24,421 | **DEAD** | dip-buy RSI2 family | DEAD (was PASS) | - | -placebo>=0.90; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.870; -was PASS |
 | T2 | SO_f33_tr30 | trade-modifier | paired | 1.20 pts/tr [4,312,24,151] | 14,179 | 0.47 | 13,842 | **DEAD** | SO_f33_tr30 | - | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -maxDD_not_worse(full sequence) |
 | T3.2 | DON_55__s75@1.0 | sleeve | weekly | 12,419 [-4,772,28,965] | 24,112 | 0.77 | 19,729 | **DEAD** | DON_55__s75@1.0 | - | - | [size: +18 NQ lots, port maxDD +173%] -placebo>=0.90; -neighbours_agree; -sleeve_marginal_sharpe_up; -standalone_hold>0&marginal_Sharpe_up&corr<=0.5 |
 | T2 | SO_f33_tr20 | trade-modifier | paired | 1.30 pts/tr [3,136,21,922] | 13,426 | 0.27 | 12,133 | **DEAD** | SO_f33_tr20 | - | - | -placebo>=0.90 |
@@ -71,7 +71,7 @@ Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base
 | NM_B | B07_SetB_Rscaled_pb3R_vsA | sizing-lock-session | weekly | 10,200 [1,009,18,141] | 12,491 | 0.42 | 12,129 | **DEAD** | Set B / PBDAY lock variants | - | - | -placebo>=0.90 |
 | T2 | SO_f50_tr20 | trade-modifier | paired | 0.97 pts/tr [1,381,18,840] | 12,478 | 0.59 | 13,808 | **DEAD** | SO_f50_tr20 | - | - | -placebo>=0.90 |
 | NM_B | B03_RemCapWk | sizing-lock-session | weekly | 9,770 [4,230,15,910] | 8,410 | 0.73 | 5,142 | **DEAD** | Set B / PBDAY lock variants | - | - | -placebo>=0.90 |
-| T3.8B | BRK_960_1080 | sleeve | weekly | 9,707 [1,185,18,109] | 12,096 | 0.99 | 10,629 | **DEAD** | BRK 960-1080 | ON TRACK (0 weeks live) | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.988; -worst of 1.5x/2x/1-s tape stre |
+| T3.8B | BRK_960_1080 | sleeve | weekly | 9,707 [1,185,18,109] | 12,096 | 0.99 | 10,629 | **DEAD** | BRK 960-1080 | DEAD (was PASS) | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.988; -worst of 1.5x/2x/1-s tape stre |
 | T3.2 | ORB_NY_15_v1__s60@1.0 | sleeve | weekly | 9,632 [-4,744,24,048] | 20,578 | 0.92 | 6,028 | **DEAD** | ORB_NY_15_v1__s60@1.0 | - | - | [size: +169 NQ lots, port maxDD +70%] -year_share>60%; -placebo<0.95 |
 | NM_A | SOFT_FB_h5_t0.3 | sizing-lock-session | weekly | 8,613 [2,219,15,514] | 9,508 | 1.00 | 6,946 | **DEAD** | SOFT_FB_h5_t0.3 | - | - | -neighbours_agree |
 | T3.3 | ON_VT_L2 | sleeve | weekly | 8,439 [275,17,457] | 12,281 | 0.85 | 1,996 | **DEAD** | overnight drift | - | - | -placebo>=0.90; -year_share>60% |
@@ -79,9 +79,9 @@ Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base
 | NM_E | E:RTY_RSI2_t10 | sleeve | weekly | 8,005 [4,181,12,492] | 6,140 | 0.87 | 12,210 | **DEAD** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo>=0.90; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.870; -was PASS |
 | NM_D | T14_C | trade-modifier | paired | 7951.90 pts/tr [-7,814,24,028] | 22,910 | - | 12,856 | **DEAD*** | T14_C | - | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -year_share>60%; ?placebo>=0.90 |
 | T1 | T14_C | trade-modifier | weekly(paired pending) | 7,851 [-7,400,24,316] | 22,668 | - | 12,743 | **DEAD*** | T14_C | - | - | -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; -year_share>60%; ?paired test missing |
-| T3.3 | ON_none_L2 | sleeve | weekly | 7,476 [-856,15,926] | 11,994 | 0.97 | 3,132 | **DEAD** | overnight drift | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -superseded by NM_E ON_none (2013-2023 OOS placebo / further evidence) |
-| T3.3 | ON_none_L4 | sleeve | weekly | 7,476 [-856,15,926] | 11,994 | 0.97 | 6,264 | **DEAD** | overnight drift | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -superseded by NM_E ON_none (2013-2023 OOS placebo / further evidence) |
-| T3.8A | RTY_IBS_t20_n1 | sleeve | weekly | 7,236 [-396,16,183] | 11,849 | 0.93 | 10,003 | **DEAD** | IBS | ON TRACK (0 weeks live) | - | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.931; -worst of 1.5x/2 |
+| T3.3 | ON_none_L2 | sleeve | weekly | 7,476 [-856,15,926] | 11,994 | 0.97 | 3,132 | **DEAD** | overnight drift | DEAD (was PASS) | - | -superseded by NM_E ON_none (2013-2023 OOS placebo / further evidence) |
+| T3.3 | ON_none_L4 | sleeve | weekly | 7,476 [-856,15,926] | 11,994 | 0.97 | 6,264 | **DEAD** | overnight drift | DEAD (was PASS) | - | -superseded by NM_E ON_none (2013-2023 OOS placebo / further evidence) |
+| T3.8A | RTY_IBS_t20_n1 | sleeve | weekly | 7,236 [-396,16,183] | 11,849 | 0.93 | 10,003 | **DEAD** | IBS | DEAD (was CANDIDATE) | - | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.931; -worst of 1.5x/2 |
 | T3.7b4 | IBS_t20_n2 | sleeve | weekly | 7,098 [-760,15,663] | 11,738 | 0.83 | 11,310 | **DEAD** | IBS | - | - | -placebo>=0.90 |
 | T2 | E5S | signal | weekly | 7,065 [-204,15,009] | 10,873 | 0.89 | 7,635 | **DEAD** | E5S | - | - | -placebo>=0.90; -weekly_CI_excludes0&maxDD_not_worse |
 | NM_C | E5S | signal | weekly | 7,065 [-204,15,009] | 11,279 | 0.89 | 7,635 | **DEAD** | E5S | - | - | -placebo>=0.90; -weekly_CI_excludes0&maxDD_not_worse |
@@ -748,12 +748,12 @@ See also autopilot/NEARMISS_RESCORE.md (near-miss re-score / forward register; i
 
 See also autopilot/FORWARD_REGISTER.md (near-miss re-score / forward register; its cells are listed in the table when their rows land in l2vast/struct48/rows).
 
-Ledger: PRED corrected 27,744 + STRUCT48 25,274 = cumulative 53,018 trials.
+Ledger: PRED corrected 27,744 + STRUCT48 26,236 = cumulative 53,980 trials.
 
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-27T21:52:37Z. DS3 cells: 12616; verdicts {'DEAD': 11854, 'CANDIDATE': 137, 'PENDING': 265, 'PASS': 39, 'ERROR': 321}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-27T22:22:45Z. DS3 cells: 12616; verdicts {'DEAD': 11854, 'CANDIDATE': 137, 'PENDING': 265, 'PASS': 39, 'ERROR': 321}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
