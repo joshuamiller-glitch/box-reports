@@ -1,6 +1,6 @@
 # LEADERBOARD (one file, all tracks) - RESEARCH V2 verdicts
 
-Updated 2026-10-27T12:55:50Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
+Updated 2026-10-27T13:25:55Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
 Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base conditions + placebo >= 0.95 + object criterion; CANDIDATE = placebo >= 0.90 and at most one failure (registered in PAPER-ALL); DEAD = anything else. A `*` marks a provisional verdict (evidence listed in the needs column: e.g. paired test not yet run for a trade-modifier, holdout not looked, placebo not computed).
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout d | verdict | exposure | forward | DSR (N trials) | passed / failed / needs |
@@ -753,7 +753,7 @@ Ledger: PRED corrected 27,744 + STRUCT48 23,707 = cumulative 51,451 trials.
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-27T12:49:38Z. DS3 cells: 11076; verdicts {'DEAD': 10643, 'CANDIDATE': 144, 'PENDING': 227, 'PASS': 41, 'ERROR': 21}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-27T13:19:49Z. DS3 cells: 11076; verdicts {'DEAD': 10643, 'CANDIDATE': 144, 'PENDING': 227, 'PASS': 41, 'ERROR': 21}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -949,163 +949,6 @@ Updated 2026-10-27T12:49:38Z. DS3 cells: 11076; verdicts {'DEAD': 10643, 'CANDID
 | DS3_TD4 | D4_cap_TE6_st10m_n7_m3.0 | sizing-lock-session | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TD4 | D4_cap_TE7_emax5m_f30_s50 | sizing-lock-session | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TD4 | D4_cap_TB7_ORBNY_k3_P60_N | sizing-lock-session | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_VWAP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_VWAP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_VWAP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_EMA1_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_EMA1_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_EMA1_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_EMA5_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_EMA5_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_EMA5_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_KELT_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_KELT_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_KELT_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_FLIP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_FLIP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_FLIP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_SWZ_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_SWZ_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_ST10_SWZ_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_VWAP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_VWAP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_VWAP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_EMA1_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_EMA1_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_EMA1_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_EMA5_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_EMA5_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_EMA5_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_KELT_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_KELT_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_KELT_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_FLIP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_FLIP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_FLIP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_SWZ_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_SWZ_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_EMA200_SWZ_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_VWAP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_VWAP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_VWAP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_EMA1_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_EMA1_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_EMA1_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_EMA5_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_EMA5_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_EMA5_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_KELT_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_KELT_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_KELT_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_FLIP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_FLIP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_FLIP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_SWZ_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_SWZ_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_HMA55_SWZ_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_VWAP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_VWAP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_VWAP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_EMA1_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_EMA1_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_EMA1_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_EMA5_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_EMA5_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_EMA5_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_KELT_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_KELT_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_KELT_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_FLIP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_FLIP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_FLIP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_SWZ_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_SWZ_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB_PRIORDIR_SWZ_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_depth_atr0.5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_depth_atr1.0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_depth_atr1.5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_depth_swing38 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_depth_swing50 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_depth_swing62 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_time_W10_first | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_time_W10_second | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_time_W30_second | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_time_W60_first | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_time_W60_second | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_failed_ST10_N10 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_failed_ST10_N20 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_failed_ST10_N30 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_failed_EMA200_N10 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_failed_EMA200_N20 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_failed_EMA200_N30 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_fade_ST10_EMA5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_fade_ST10_VWAP | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_fade_EMA200_EMA5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_fade_EMA200_VWAP | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_fade_HMA55_EMA5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_fade_HMA55_VWAP | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_fade_PRIORDIR_EMA5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB5_fade_PRIORDIR_VWAP | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST3m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST3m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST5m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST5m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST5m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST10m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST10m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST10m_EMA20_5m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST15m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST15m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST15m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST15m_EMA20_5m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST30m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST30m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST30m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST30m_EMA20_5m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST60m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST60m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST60m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB6_ST60m_EMA20_5m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W15_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W15_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W15_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W30_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W30_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W60_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W60_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W60_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W15_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W15_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W15_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W30_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W30_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W60_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W60_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W60_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W15_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W15_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W15_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W30_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W30_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W60_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W60_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W60_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W15_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W15_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W15_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W30_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W30_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W60_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W60_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W60_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W15_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W15_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W15_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W30_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W30_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W60_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W60_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
-| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W60_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
 | TH | G1_TH_LIVE_ST | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | TH | G1_TH_LIVE_HM | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | TH | G1_0016 | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
@@ -1169,6 +1012,163 @@ Updated 2026-10-27T12:49:38Z. DS3 cells: 11076; verdicts {'DEAD': 10643, 'CANDID
 | DS3_TCHOP | T14_S_s50_t1.5_n14 | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TCHOP | FOURTH_R4_k2.0_H60_8lots | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TCHOP | FOURTH_R2_k1.0_H120_8lots | signal | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_VWAP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_VWAP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_VWAP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_EMA1_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_EMA1_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_EMA1_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_EMA5_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_EMA5_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_EMA5_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_KELT_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_KELT_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_KELT_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_FLIP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_FLIP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_FLIP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_SWZ_T1 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_SWZ_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_ST10_SWZ_T3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_VWAP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_VWAP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_VWAP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_EMA1_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_EMA1_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_EMA1_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_EMA5_T1 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_EMA5_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_EMA5_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_KELT_T1 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_KELT_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_KELT_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_FLIP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_FLIP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_FLIP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_SWZ_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_SWZ_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_EMA200_SWZ_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_VWAP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_VWAP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_VWAP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_EMA1_T1 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_EMA1_T2 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_EMA1_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_EMA5_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_EMA5_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_EMA5_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_KELT_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_KELT_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_KELT_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_FLIP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_FLIP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_FLIP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_SWZ_T1 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_SWZ_T2 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_HMA55_SWZ_T3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_VWAP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_VWAP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_VWAP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_EMA1_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_EMA1_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_EMA1_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_EMA5_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_EMA5_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_EMA5_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_KELT_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_KELT_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_KELT_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_FLIP_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_FLIP_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_FLIP_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_SWZ_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_SWZ_T2 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB_PRIORDIR_SWZ_T3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_depth_atr0.5 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_depth_atr1.0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_depth_atr1.5 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_depth_swing38 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_depth_swing50 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_depth_swing62 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_time_W10_first | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_time_W10_second | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_time_W30_second | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_time_W60_first | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_time_W60_second | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_failed_ST10_N10 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_failed_ST10_N20 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_failed_ST10_N30 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_failed_EMA200_N10 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_failed_EMA200_N20 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_failed_EMA200_N30 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_fade_ST10_EMA5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_fade_ST10_VWAP | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_fade_EMA200_EMA5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_fade_EMA200_VWAP | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_fade_HMA55_EMA5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_fade_HMA55_VWAP | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_fade_PRIORDIR_EMA5 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB5_fade_PRIORDIR_VWAP | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST3m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST3m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST5m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST5m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST5m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST10m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST10m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST10m_EMA20_5m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST15m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST15m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST15m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST15m_EMA20_5m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST30m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST30m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST30m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST30m_EMA20_5m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST60m_EMA20_1m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST60m_EMA20_2m_T1 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST60m_EMA20_3m_T1 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB6_ST60m_EMA20_5m_T1 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W15_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W15_s+0 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W15_s+3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W30_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W30_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W60_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W60_s+0 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_ST10_SWZ_T1_W60_s+3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W15_s-3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W15_s+0 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W15_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W30_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W30_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W60_s-3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W60_s+0 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T1_W60_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W15_s-3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W15_s+0 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W15_s+3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W30_s-3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W30_s+3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W60_s-3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W60_s+0 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB_HMA55_EMA1_T2_W60_s+3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W15_s-3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W15_s+0 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W15_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W30_s-3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W30_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W60_s-3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W60_s+0 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB5_depth_atr0.5_W60_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W15_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W15_s+0 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W15_s+3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W30_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W30_s+3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W60_s-3 | signal | - | - - | - | - | - | - | - | mapped only (screen) | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W60_s+0 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
+| DS3_TPULLBACK | PB7_PB6_ST60m_EMA20_3m_T1_W60_s+3 | signal | - | - - | - | - | - | - | - | direct L2 replay (S10x1+XJ3), coverage 0.98 | **PENDING*** | - | ?no scored effect yet |
 | DS3_BRACKET_T4A | T4A_PB3F_D_R3_P2_60_2R_bracket_t30_sst | trade-modifier | paired | 2.10 pts/tr - | - | 0.25 | - | - | 37.7 | MAPPED screen (1-s path, D3BA calibrated exit-type correction + per-entry offset to the direct base); direct L2 replay required for PASS/CANDIDATE | **DEAD** | - | -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse |
 | DS3_TR2 | TR2_KB_ROC2 | signal | - | 18,918 [8,862,28,756] | 14,218 | 1.00 | 16,348 | -323 | 29.0 | DELIVERABLE-bars/ticks | **DEAD** | - | -SPAN2>0; -plc>=.95 |
 | DS3_BRACKET_T4A | T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s40 | trade-modifier | paired | 2.98 pts/tr - | - | 0.60 | - | - | 28.1 | MAPPED screen (1-s path, D3BA calibrated exit-type correction + per-entry offset to the direct base); direct L2 replay required for PASS/CANDIDATE | **DEAD** | - | -placebo>=0.90 |
