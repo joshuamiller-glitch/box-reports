@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 00:29Z 10-27 (t+11.5 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 00:59Z 10-27 (t+12.0 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 542/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 24/24, T-J 3/12, T-K 19/19, T-P 662/?, T-R 266/?. Verdicts {'DEAD': 6704, 'CANDIDATE': 63, 'PENDING': 214, 'PASS': 22}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(P), PRO_Z120_t2.0(C); T-R: TR1A_ens_s0.5_k4(C), TR1A_ens_s1.0_k3(P), TR1B_reg1m_n60_t2_r0.5(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 28/32 slots now; CPU 5-min avg over last 24 samples 48% min 30% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 2.0, 'TL': 0.0, 'TP': 5.0, 'TR': 1.0, 'TC': 0.0}.
-Updated 2026-10-27T00:29:45Z. Box: CPU 31.9%, slots busy 28/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 28/32 slots now; CPU 5-min avg over last 24 samples 39% min 30% (floor 90% on sanctioned work); by owner (cores) {'TE': 0.0, 'ds3?': 6.0, 'TL': 0.0, 'TP': 3.0, 'TR': 0.0, 'TC': 0.0}.
+Updated 2026-10-27T00:59:53Z. Box: CPU 35.1%, slots busy 28/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -52,7 +52,7 @@ Updated 2026-10-27T00:29:45Z. Box: CPU 31.9%, slots busy 28/32, queue 0. Cores p
 | J | D3L | 0 | 0 / 12 | none | done (report) |
 | K | D3K | 0 | 19 / 38 | none | done (report) |
 | M | ? | 0 | 0 / 0 | none | prereg |
-| P | ? | 5.0 | 0 / 157 | none | prereg |
+| P | ? | 3.0 | 0 / 157 | none | prereg |
 | P4 | ? | 0 | 0 / 150 | none | prereg |
 | PB2 | D3PB* | 0 | 0 / 28 | none | prereg |
 | PB2B | D3PB* | 0 | 0 / 24 | none | prereg |
@@ -97,12 +97,12 @@ Updated 2026-10-27T00:29:45Z. Box: CPU 31.9%, slots busy 28/32, queue 0. Cores p
 | TR2 | ? | 0 | 74 / ? | TR2_KB_plain(P), TR2_KB_NR4(P) | done (report) |
 | TR4 | ? | 0 | 58 / ? | none | done (report) |
 | TSO | ? | 0 | 0 / 10 | none | prereg |
-| unattributed | - | 2.0 | - | - | - |
+| unattributed | - | 6.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
 <!--PULLBACK-BEGIN-->
-## PULLBACK (PL) update 2026-10-27T00:16Z
+## PULLBACK (PL) update 2026-10-27T00:41Z
 Pullback: 4 PASS, 23 CANDIDATE. Best: PRO_KAL_k0.0, +$12972/wk standalone, paired vs ST +-2.67 pts/trade [-5.1,-0.4], 32.0 trades/wk, DS3 marginal Sharpe +-, deliverable DELIVERABLE.
 Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPULLBACK.json': 157, 'DS3_TPULLBACK3.json': 141}; prereg totals: {}
 Best cell: PRO_KAL_k0.0. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
@@ -126,12 +126,12 @@ Brackets: 0 PASS, 0 CANDIDATE. Best shape: none. Near-target: not scored, diagno
 Cells scored per owner: {'G': 5088, 'D': 215} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: none. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 22:34Z 10-26 (t+57.8 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 00:34Z 10-27 (t+59.8 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
-Forward register: {'ON TRACK': 88, 'BEHIND': 2, 'PROMOTE': 2, 'RETIRE': 2} (changed since last edition).
+Forward register: {'ON TRACK': 101, 'BEHIND': 1, 'PROMOTE': 1, 'RETIRE': 1} (changed since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 32/32 slots (STRUCT48 28, PRED 4), CPU 5-min avg over last 2 h 50% min 38% (floor 90%), queue 0, by track {'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0}.
+Cores: busy 28/32 slots (STRUCT48 24, PRED 4), CPU 5-min avg over last 2 h 47% min 31% (floor 90%), queue 0, by track {'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
