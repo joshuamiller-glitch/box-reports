@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 20:22Z 10-27 (t+31.4 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 20:52Z 10-27 (t+31.9 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2515/30, T-C 215/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 196/24, T-J 3/12, T-K 19/19, T-P 1378/?, T-R 266/?, T-S 1005/?, T-W 1488/?. Verdicts {'DEAD': 11782, 'CANDIDATE': 137, 'PENDING': 265, 'PASS': 39, 'ERROR': 321}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 16/32 slots now; CPU 5-min avg over last 24 samples 18% min 10% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 3.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-10-27T20:22:07Z. Box: CPU 9.6%, slots busy 16/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 15% min 3% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-10-27T20:52:12Z. Box: CPU 3.2%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -126,7 +126,7 @@ Updated 2026-10-27T20:22:07Z. Box: CPU 9.6%, slots busy 16/32, queue 0. Cores pe
 | TSTRUCTFIB | ? | 0 | 46 / ? | none | done (report) |
 | TWASHOUT | ? | 0 | 1488 / ? | WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C) | done (report) |
 | WO | ? | 0 | 0 / 1488 | none | prereg |
-| unattributed | - | 3.0 | - | - | - |
+| unattributed | - | 0.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -137,13 +137,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-10-27T20:15Z
+## TREND (TL) update 2026-10-27T20:45Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-27T20:01:48Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 16/32: [4, 7, 8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 2 |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-27T20:31:48Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 16/32: [4, 7, 8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 2 |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 52125 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -155,12 +155,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 18:36Z 10-27 (t+77.9 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 20:36Z 10-27 (t+79.9 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
-Forward register: {'ON TRACK': 213, 'BEHIND': 1, 'PROMOTE': 1, 'RETIRE': 1} (changed since last edition).
+Forward register: {'ON TRACK': 213, 'BEHIND': 1, 'PROMOTE': 1, 'RETIRE': 1} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 28/32 slots (STRUCT48 25, PRED 3), CPU 5-min avg over last 2 h 32% min 20% (floor 90%), queue 0, by track {'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0}.
+Cores: busy 16/32 slots (STRUCT48 16, PRED 0), CPU 5-min avg over last 2 h 17% min 10% (floor 90%), queue 0, by track {'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -572,7 +572,7 @@ FOUND: none. FOUND-PENDING (not counted): FVG family (now IMP3 tf3 m1.5 primary 
 - Forward table: outputs/FORWARD.md now 23 leads (+ REGIME tracker and Q34 ES1 being added) (first scored 10-14..16 = 0.6 week, nothing can be promoted). Below weekly band: BTC WT (-$25.8k) and Q20 RTY (-$21.2k) - flags only, kill-watch needs >=6 weeks. FVG trade level OK (P1 -0.062R, E1 +0.118R, IMP3 +0.217R per trade vs predicted +0.079/+0.078/+0.120; fill 72-75%). Newest pair week W42 +$38.0k.
 - PORTFOLIO-LEAD flag (assembly 21:19Z): library has 35k books; best T=16 portfolio S8_mon_h1_RTY x3 + BTC_1 x7 + FVG tf3 x3 + FVG tf15 x3 = clean/H1/H2 6.34/4.92/2.91 vs pair 1.46/2.83/2.26. CAUTION: clean Sharpe 6.66 is BELOW chance best-of-search (mean 8.37, p95 9.11; rank 0.00), two of four members are the unverified-fill FVG books, day-level account approximation, no give-back rule. Treat as provisional; re-score after FVG fill verification.
 <!-- ASSEMBLY:BEGIN -->
-**ASSEMBLY (library portfolio search, 20261027T0837Z)** pool 245 of 38452 library books. Best T=16 portfolio: S8ALL/S8_mon_h1_RTY x3, B1CO/BTC_1 x6, Q1CCO/NQ_6 x3, RU11_GC_IMP3_5_1.5 x4 - clean/H1/H2 weekly Sharpe 7.31/2.86/3.03 vs live pair 8/8 1.46/2.83/2.26. Chance (timing-destroyed library, best-of-search stage-1 clean Sharpe): mean 7.92, p95 9.07 vs real 7.26 (rank 0.20). PORTFOLIO-LEAD: YES. Report: REPORT_ASSEMBLY_20261027T0837Z.md
+**ASSEMBLY (library portfolio search, 20261027T2043Z)** pool 245 of 38452 library books. Best T=16 portfolio: S8ALL/S8_mon_h1_RTY x3, B1CO/BTC_1 x6, Q1CCO/NQ_6 x3, RU11_GC_IMP3_5_1.5 x4 - clean/H1/H2 weekly Sharpe 7.31/2.86/3.03 vs live pair 8/8 1.46/2.83/2.26. Chance (timing-destroyed library, best-of-search stage-1 clean Sharpe): mean 7.92, p95 9.07 vs real 7.26 (rank 0.20). PORTFOLIO-LEAD: YES. Report: REPORT_ASSEMBLY_20261027T2043Z.md
 <!-- ASSEMBLY:END -->
 
 ## 4. False-discovery accounting
