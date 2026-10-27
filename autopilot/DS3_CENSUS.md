@@ -478,3 +478,26 @@ Source `l2vast/ds3/out/TPULLBACK_top10.parquet` (rank 0 = ST10/HM10 benchmarks),
 |      8 | PB5_depth_atr1.5                  | CANDIDATE | MAPPED (1-s path + P9 table) | NT8-bars (executable on bars; entry via stop/limit-free market on the next bar open) | 26.762 | 11714.4  | 17901.7 |  1700.34  |     2.001 | 57904   |     439825 |    0.48  |    0.344 |
 |      9 | PB7_PB6_ST60m_EMA20_3m_T1_W30_s+3 | CANDIDATE | MAPPED (1-s path + P9 table) | NT8-bars (executable on bars; entry via stop/limit-free market on the next bar open) | 23.93  | 10055.6  | 16529.8 |  4704.64  |     1.987 | 55121.1 |     402256 |    0.246 |    0.19  |
 |     10 | PB7_PB_ST10_SWZ_T1_W15_s+0        | CANDIDATE | MAPPED (1-s path + P9 table) | NT8-bars (executable on bars; entry via stop/limit-free market on the next bar open) | 24.455 | 10232    | 15817   | 10878.9   |     1.985 | 55417.5 |     500894 |    0.465 |    0.374 |
+
+
+## 15. T-PULLBACK (3)+(5) top cells (D3PB2; MAPPED basis; direct replay of the top-10 M/S cells still running)
+
+Source `l2vast/ds3/rows/DS3_TPULLBACK2.json`, report `autopilot/DS3_TPULLBACK2.md`. Verdict: 0 PASS, 2 CANDIDATE, 50 DEAD of 52 cells. Top by WF-PRE ($/wk at 10 lots): PB2_B2_M_Hvol 5,546 (DEAD: placebo 0.88, WF CI), PB2_B1_S 4,793 (CANDIDATE, WF CI fails), PB2_B4_M_Hvol 4,600 (CANDIDATE, placebo 0.92, subset-of-base placebo 0.82), PB2_B1_M 3,781, PB2_B2_M_Hcd 3,461, PB2_B1_M_Habs 3,418, PB2_B3_M 3,360, PB2_B3_S 2,661, PB2_B4_M_Habs 2,592, PB2_B2_S 2,318. Every one has a WF CI that includes 0 except PB2_B4_M_Hvol. Executability: Hvol and S cells are NT8-bars; Hcd and Habs need bid/ask-classified ticks (NT8-ticks, not L2); passive limit and ladder cells are mapped-only and all DEAD. Re-read the report after the direct replay lands.
+
+
+## 16. T-PULLBACK sub-minute top 10 (D3PB4; MAPPED screen only)
+
+Source `l2vast/ds3/rows/DS3_TPULLBACK4.json` (177 cells; 13 PASS, 15 CANDIDATE on the mapped screen), report `autopilot/DS3_TPULLBACK4.md`. **Verdicts are mapped-only**: the direct L2 replay is still running (`out/pb4/direct_final.pkl` not yet landed); re-read before the final census. Track's key point: sub-minute cells earn about $1.7k/wk LESS than the same rule on 1-min bars and the median cell is negative at 2x cost. exec_status DELIVERABLE-PENDING-IDENTITY (D3X identity test not run). Top-10 cells (nt8_bar = exact NT8 BarsPeriod):
+
+| cell | NT8 bar | verdict | WF mean | HOLD | exec_status |
+|---|---|---|---|---|---|
+| TB4A_time_14_time_30s_ST5_E20_1_T2 | BarsPeriodType.Second, Value 30 | PASS | 16396 | 20405 | DELIVERABLE-PENDING-IDENTITY |
+| TB4A_time_21_time_30s_ST10_E20_1_T2 | BarsPeriodType.Second, Value 30 | DEAD | 11518 | 18579 | DELIVERABLE-PENDING-IDENTITY |
+| TB4B_tick_11_tick_2000_ST10_SW50_T3 | BarsPeriodType.Tick, Value 2000 | DEAD | 6529 | 11644 | DELIVERABLE-PENDING-IDENTITY |
+| TB4B_tick_18_tick_250_ST5_SW50_T1 | BarsPeriodType.Tick, Value 250 | DEAD | 10688 | 17069 | DELIVERABLE-PENDING-IDENTITY |
+| TB4D_volume_00_volume_1000_ST15_E20_1_T1 | BarsPeriodType.Volume, Value 1000 | PASS | 18143 | 22621 | DELIVERABLE-PENDING-IDENTITY |
+| TB4D_volume_07_volume_500_ST15_E20_1_T1 | BarsPeriodType.Volume, Value 500 | PASS | 15641 | 18702 | DELIVERABLE-PENDING-IDENTITY |
+| TB4W_04_time_15s_ST5_E20_1_T2_ntime14 | BarsPeriodType.Second, Value 15 | PASS | 16630 | 18175 | DELIVERABLE-PENDING-IDENTITY |
+| TB4W_06_time_30s_ST3_E20_1_T2_ntime14 | BarsPeriodType.Second, Value 30 | PASS | 17654 | 18295 | DELIVERABLE-PENDING-IDENTITY |
+| TB4W_12_volume_1000_ST10_E20_1_T1_nvolume00 | BarsPeriodType.Volume, Value 1000 | PASS | 14708 | 17776 | DELIVERABLE-PENDING-IDENTITY |
+| TB4W_18_volume_500_ST10_E20_1_T2_nvolume21 | BarsPeriodType.Volume, Value 500 | DEAD | 9211 | 17299 | DELIVERABLE-PENDING-IDENTITY |
