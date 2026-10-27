@@ -1,35 +1,33 @@
 # PULLBACK LEADERBOARD (PL, P10)
-Updated 2026-10-27T04:26Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
+Updated 2026-10-27T04:51Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
 
-Pullback: 4 PASS, 23 CANDIDATE. Best: PRO_KAL_k0.0, +$12972/wk standalone, paired vs ST +-2.67 pts/trade [-5.1,-0.4], 32.0 trades/wk, DS3 marginal Sharpe +-, deliverable DELIVERABLE.
+Pullback: 3 PASS, 22 CANDIDATE. Best: PRO_KAL_k0.0, +$12972/wk standalone, paired vs ST +-2.67 pts/trade [-5.1,-0.4], 32.0 trades/wk, DS3 marginal Sharpe +-, deliverable DELIVERABLE.
 
 ## Multiplicity (all pullback tracks pooled)
 Cells scored: 447. Prereg totals: {}
 Cells with paired-vs-ST CI lower bound >0: 49; expected by chance at one-sided 2.5% over 447 cells: 11.2 (if observed is near this, treat as best-of-N noise).
 Placebo ranks >=0.95: 15 of 104 (chance ~5.2). Top placebo ranks: [1.0, 1.0, 1.0, 1.0, 1.0]
-Verdict counts: {None: 202, 'CANDIDATE': 23, 'DEAD': 218, 'PASS': 4}
+Verdict counts: {None: 202, 'PASS': 3, 'DEAD': 220, 'CANDIDATE': 22}
 
 ## PASS / CANDIDATE
 | cell | track | verdict | regime | level | trigger | bar | exec | bracket | tr/wk | $/wk | vs ST pts [CI] | MDE | vs base | holdout | 2023 | placebo | quiet | long | short | executability | mkt Sharpe | mirror | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | re-verdict flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| PRO_KAL_k0.0 | PRO2 | PASS | - | - | - | - | - | - | 32.0 | 12972 | -2.67 [-5.1,-0.4] | 3.38 | -18.57 | 18205 | 70 | 0.97 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_Z60_t1.0 | PRO2 | PASS | - | - | - | - | - | - | 30.6 | 11542 | 9.43 [7.0,11.7] | 3.35 | -7.72 | 15210 | 6308 | 0.97 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_RIB1m_q30 | PRO2 | PASS | - | - | - | - | - | - | 24.8 | 10260 | -7.18 [-9.7,-4.8] | 3.63 | -19.97 | 15426 | 4818 | 0.95 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_ER5_EMA5 | PRO2 | PASS | - | - | - | - | - | - | 3.1 | 4977 | 17.41 [7.8,28.5] | 14.69 | -0.34 | 5221 | 2152 | 1.00 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_KAL_s0.5_k0.25 | PRO2 | CANDIDATE | - | - | - | - | - | - | 31.2 | 16713 | 0.37 [-1.9,2.6] | 3.15 | -16.25 | 26102 | -5203 | 0.95 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_Z20_t1.0 | PRO2 | CANDIDATE | - | - | - | - | - | - | 31.5 | 13803 | 2.43 [-0.2,5.1] | 3.68 | -15.66 | 18966 | -3422 | 0.97 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_RIB1m_q30_M5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 24.1 | 11662 | -6.57 [-9.1,-4.0] | 3.61 | -18.99 | 19902 | 4200 | 0.85 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_KAL_s0.5_k0.0 | PRO2 | CANDIDATE | - | - | - | - | - | - | 31.1 | 11036 | -1.63 [-3.6,0.5] | 3.04 | -19.89 | 22050 | 3036 | 0.72 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_RIB1m_q30_M20 | PRO2 | CANDIDATE | - | - | - | - | - | - | 25.6 | 11024 | -7.37 [-9.9,-4.8] | 3.61 | -20.60 | 16679 | 6036 | 0.90 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_RIB1m_q35_M20 | PRO2 | CANDIDATE | - | - | - | - | - | - | 26.2 | 10753 | -7.44 [-9.9,-4.8] | 3.62 | -20.41 | 17068 | 5488 | 0.80 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_RIB1m_q25_M10 | PRO2 | CANDIDATE | - | - | - | - | - | - | 24.2 | 10128 | -7.02 [-9.4,-4.5] | 3.50 | -18.93 | 16944 | 1954 | 0.93 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_RIB1m_q35_M5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 24.9 | 10103 | -7.64 [-10.0,-5.0] | 3.61 | -19.40 | 18635 | 3288 | 0.70 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_RIB1m_q25_M5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 23.5 | 9823 | -6.69 [-9.0,-4.1] | 3.68 | -18.55 | 17675 | 1820 | 0.60 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_RIB1m_q20 | PRO2 | CANDIDATE | - | - | - | - | - | - | 23.7 | 9188 | -7.70 [-10.3,-5.1] | 3.72 | -19.40 | 16435 | 4456 | 0.82 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_Z120_t2.0 | PRO2 | CANDIDATE | - | - | - | - | - | - | 24.3 | 6584 | 14.81 [11.4,18.3] | 5.01 | 4.14 | 5214 | 2709 | 0.95 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_ER4_EMA5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 7.8 | 5638 | 11.97 [6.6,17.4] | 7.89 | -0.38 | 5346 | -1776 | 1.00 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_ER4_n40_EMA5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 2.8 LOW-FREQUENCY | 4476 | 14.13 [4.4,24.6] | 14.10 | -0.62 | 3077 | 1604 | 1.00 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_ER6_n20_EMA5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 0.9 LOW-FREQUENCY | 1979 | - - | 2427.80 | 0.00 | 1670 | 839 | 1.00 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
+| PRO_KAL_k0.0 | PRO2 | PASS | - | - | - | - | - | - | 32.0 | 12972 | -2.67 [-5.1,-0.4] | 3.38 | -18.57 | 18205 | 70 | 0.97 | - | - | - | DELIVERABLE | - | - | 10234 | DIRECT | 9.4 | 59 |  |
+| PRO_ER4_EMA5 | PRO2 | PASS | - | - | - | - | - | - | 7.8 | 5638 | 11.97 [6.6,17.4] | 7.89 | -0.38 | 5346 | -1776 | 1.00 | - | - | - | DELIVERABLE | - | - | 5419 | DIRECT | 17.7 | 137 |  |
+| PRO_ER5_EMA5 | PRO2 | PASS | - | - | - | - | - | - | 3.1 | 4977 | 17.41 [7.8,28.5] | 14.69 | -0.34 | 5221 | 2152 | 1.00 | - | - | - | DELIVERABLE | - | - | 4745 | DIRECT | 26.7 | - |  |
+| PRO_KAL_s0.5_k0.25 | PRO2 | CANDIDATE | - | - | - | - | - | - | 31.2 | 16713 | 0.37 [-1.9,2.6] | 3.15 | -16.25 | 26102 | -5203 | 0.95 | - | - | - | DELIVERABLE | - | - | 16946 | MAPPED | 9.2 | 105 |  |
+| PRO_Z20_t1.0 | PRO2 | CANDIDATE | - | - | - | - | - | - | 31.5 | 13803 | 2.43 [-0.2,5.1] | 3.68 | -15.66 | 18966 | -3422 | 0.97 | - | - | - | DELIVERABLE | - | - | 14455 | DIRECT | 10.0 | 88 |  |
+| PRO_RIB1m_q30_M5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 24.1 | 11662 | -6.57 [-9.1,-4.0] | 3.61 | -18.99 | 19902 | 4200 | 0.85 | - | - | - | DELIVERABLE | - | - | 11015 | MAPPED | 10.0 | 87 |  |
+| PRO_Z60_t1.0 | PRO2 | CANDIDATE | - | - | - | - | - | - | 30.6 | 11542 | 9.43 [7.0,11.7] | 3.35 | -7.72 | 15210 | 6308 | 0.97 | - | - | - | DELIVERABLE | - | - | 9254 | DIRECT | 9.3 | 56 |  |
+| PRO_KAL_s0.5_k0.0 | PRO2 | CANDIDATE | - | - | - | - | - | - | 31.1 | 11036 | -1.63 [-3.6,0.5] | 3.04 | -19.89 | 22050 | 3036 | 0.72 | - | - | - | DELIVERABLE | - | - | 11147 | MAPPED | 9.3 | 67 |  |
+| PRO_RIB1m_q30_M20 | PRO2 | CANDIDATE | - | - | - | - | - | - | 25.6 | 11024 | -7.37 [-9.9,-4.8] | 3.61 | -20.60 | 16679 | 6036 | 0.90 | - | - | - | DELIVERABLE | - | - | 10424 | MAPPED | 10.2 | 77 |  |
+| PRO_RIB1m_q35_M20 | PRO2 | CANDIDATE | - | - | - | - | - | - | 26.2 | 10753 | -7.44 [-9.9,-4.8] | 3.62 | -20.41 | 17068 | 5488 | 0.80 | - | - | - | DELIVERABLE | - | - | 10129 | MAPPED | 9.7 | 73 |  |
+| PRO_RIB1m_q30 | PRO2 | CANDIDATE | - | - | - | - | - | - | 24.8 | 10260 | -7.18 [-9.7,-4.8] | 3.63 | -19.97 | 15426 | 4818 | 0.95 | - | - | - | DELIVERABLE | - | - | 7863 | DIRECT | 10.3 | 59 |  |
+| PRO_RIB1m_q25_M10 | PRO2 | CANDIDATE | - | - | - | - | - | - | 24.2 | 10128 | -7.02 [-9.4,-4.5] | 3.50 | -18.93 | 16944 | 1954 | 0.93 | - | - | - | DELIVERABLE | - | - | 10219 | MAPPED | 10.1 | 80 |  |
+| PRO_RIB1m_q35_M5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 24.9 | 10103 | -7.64 [-10.0,-5.0] | 3.61 | -19.40 | 18635 | 3288 | 0.70 | - | - | - | DELIVERABLE | - | - | 9401 | MAPPED | 9.8 | 71 |  |
+| PRO_RIB1m_q25_M5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 23.5 | 9823 | -6.69 [-9.0,-4.1] | 3.68 | -18.55 | 17675 | 1820 | 0.60 | - | - | - | DELIVERABLE | - | - | 9910 | MAPPED | 9.8 | 80 |  |
+| PRO_ER4_n40_EMA5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 2.8 LOW-FREQUENCY | 4476 | 14.13 [4.4,24.6] | 14.10 | -0.62 | 3077 | 1604 | 1.00 | - | - | - | DELIVERABLE | - | - | 4352 | MAPPED | 30.6 | - |  |
+| PRO_ER6_n20_EMA5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 0.9 LOW-FREQUENCY | 1979 | - - | 2427.80 | 0.00 | 1670 | 839 | 1.00 | - | - | - | DELIVERABLE | - | - | 1993 | MAPPED | 55.6 | - |  |
 | PB3A_R10_P2 | TPULLBACK3 | CANDIDATE | - | - | - | - | - | - | - | - | - - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |  |
 | PB3B_R3_P2 | TPULLBACK3 | CANDIDATE | - | - | - | - | - | - | - | - | - - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |  |
 | PB3B_R5_P1 | TPULLBACK3 | CANDIDATE | - | - | - | - | - | - | - | - | - - | - | - | - | - | - | - | - | - | - | - | - | 10862 | 10 | 11.4 | 68 |  |
@@ -44,15 +42,15 @@ Verdict counts: {None: 202, 'CANDIDATE': 23, 'DEAD': 218, 'PASS': 4}
 | cell | track | verdict | regime | level | trigger | bar | exec | bracket | tr/wk | $/wk | vs ST pts [CI] | MDE | vs base | holdout | 2023 | placebo | quiet | long | short | executability | mkt Sharpe | mirror | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | re-verdict flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | PRO_ST10_VWAPb2_T1 | PRO2 | DEAD | - | - | - | - | - | - | 5.3 | -1501 | 22.81 [13.1,34.1] | 15.47 | 12.31 | 496 | 193 | 0.17 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_ER5_EMA5 | PRO2 | PASS | - | - | - | - | - | - | 3.1 | 4977 | 17.41 [7.8,28.5] | 14.69 | -0.34 | 5221 | 2152 | 1.00 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_Z120_t2.0 | PRO2 | CANDIDATE | - | - | - | - | - | - | 24.3 | 6584 | 14.81 [11.4,18.3] | 5.01 | 4.14 | 5214 | 2709 | 0.95 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
+| PRO_ER5_EMA5 | PRO2 | PASS | - | - | - | - | - | - | 3.1 | 4977 | 17.41 [7.8,28.5] | 14.69 | -0.34 | 5221 | 2152 | 1.00 | - | - | - | DELIVERABLE | - | - | 4745 | DIRECT | 26.7 | - |  |
+| PRO_Z120_t2.0 | PRO2 | DEAD | - | - | - | - | - | - | 24.3 | 6584 | 14.81 [11.4,18.3] | 5.01 | 4.14 | 5214 | 2709 | 0.95 | - | - | - | DELIVERABLE | - | - | 6822 | MAPPED | 10.4 | 51 |  |
 | PRO_Z120_t1.5 | PRO2 | DEAD | - | - | - | - | - | - | 27.1 | 4671 | 14.27 [11.3,17.2] | 4.27 | 2.97 | -297 | -291 | 0.97 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_ER4_n40_EMA5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 2.8 LOW-FREQUENCY | 4476 | 14.13 [4.4,24.6] | 14.10 | -0.62 | 3077 | 1604 | 1.00 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
+| PRO_ER4_n40_EMA5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 2.8 LOW-FREQUENCY | 4476 | 14.13 [4.4,24.6] | 14.10 | -0.62 | 3077 | 1604 | 1.00 | - | - | - | DELIVERABLE | - | - | 4352 | MAPPED | 30.6 | - |  |
 | PRO_ST10_VWAPb1_T1 | PRO2 | DEAD | - | - | - | - | - | - | 10.2 | -1455 | 13.93 [7.7,20.2] | 8.84 | 11.43 | -2841 | -3379 | 0.72 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
 | PRO_Z60_t2.0_ST10 | PRO2 | DEAD | - | - | - | - | - | - | 25.4 | 4359 | 12.98 [10.3,15.8] | 3.97 | -1.76 | 3446 | 5373 | 0.88 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
 | PRO_Z60_t2.0 | PRO2 | DEAD | - | - | - | - | - | - | 27.1 | 1845 | 12.56 [10.0,15.5] | 4.03 | -2.74 | 5050 | 3278 | 0.62 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
 | PRO_Z90_t1.25 | PRO2 | DEAD | - | - | - | - | - | - | 27.9 | 1450 | 12.14 [9.5,14.7] | 3.69 | -4.21 | 2974 | -1400 | 0.55 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_ER4_EMA5 | PRO2 | CANDIDATE | - | - | - | - | - | - | 7.8 | 5638 | 11.97 [6.6,17.4] | 7.89 | -0.38 | 5346 | -1776 | 1.00 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
+| PRO_ER4_EMA5 | PRO2 | PASS | - | - | - | - | - | - | 7.8 | 5638 | 11.97 [6.6,17.4] | 7.89 | -0.38 | 5346 | -1776 | 1.00 | - | - | - | DELIVERABLE | - | - | 5419 | DIRECT | 17.7 | 137 |  |
 | PRO_Z120_t1.0 | PRO2 | DEAD | - | - | - | - | - | - | 27.8 | 3514 | 11.74 [9.1,14.4] | 3.82 | -0.52 | -496 | 2024 | 0.93 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
 | PRO_Z90_t0.75 | PRO2 | DEAD | - | - | - | - | - | - | 29.8 | 1629 | 11.59 [9.2,14.2] | 3.58 | -5.92 | 6036 | -3594 | 0.47 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
 | PRO_Z90_t1.0 | PRO2 | DEAD | - | - | - | - | - | - | 29.4 | 2071 | 11.53 [9.1,14.0] | 3.54 | -5.60 | 7866 | -1516 | 0.47 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
@@ -62,7 +60,7 @@ Verdict counts: {None: 202, 'CANDIDATE': 23, 'DEAD': 218, 'PASS': 4}
 | PRO_Z60_t1.25 | PRO2 | DEAD | - | - | - | - | - | - | 30.1 | 6743 | 10.07 [7.7,12.5] | 3.38 | -8.50 | 10325 | 3407 | 0.90 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
 | PRO_Z60_t0.75 | PRO2 | DEAD | - | - | - | - | - | - | 30.7 | 11883 | 9.77 [7.5,12.4] | 3.43 | -7.81 | 21972 | -630 | 0.68 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
 | PRO_ER3_EMA5 | PRO2 | DEAD | - | - | - | - | - | - | 14.0 | 6514 | 9.43 [5.1,14.0] | 6.33 | -0.39 | 9311 | -266 | 0.75 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
-| PRO_Z60_t1.0 | PRO2 | PASS | - | - | - | - | - | - | 30.6 | 11542 | 9.43 [7.0,11.7] | 3.35 | -7.72 | 15210 | 6308 | 0.97 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
+| PRO_Z60_t1.0 | PRO2 | CANDIDATE | - | - | - | - | - | - | 30.6 | 11542 | 9.43 [7.0,11.7] | 3.35 | -7.72 | 15210 | 6308 | 0.97 | - | - | - | DELIVERABLE | - | - | 9254 | DIRECT | 9.3 | 56 |  |
 | PRO_Z60_t1.5_ST10 | PRO2 | DEAD | - | - | - | - | - | - | 28.2 | 7503 | 9.32 [7.0,11.6] | 3.24 | -5.52 | 10616 | 12454 | 0.82 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
 | PRO_Z60_t1.0_ST10 | PRO2 | DEAD | - | - | - | - | - | - | 29.1 | 6439 | 8.99 [6.5,11.3] | 3.42 | -6.93 | 11061 | 6993 | 0.68 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |
 | PRO_Z40_t1.25 | PRO2 | DEAD | - | - | - | - | - | - | 30.1 | 7268 | 8.81 [6.5,11.2] | 3.34 | -9.67 | 6023 | -4518 | 1.00 | - | - | - | DELIVERABLE | - | - | - | - | - | - |  |

@@ -1,6 +1,6 @@
 # LEADERBOARD (one file, all tracks) - RESEARCH V2 verdicts
 
-Updated 2026-10-27T04:23:29Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
+Updated 2026-10-27T04:53:35Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
 Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base conditions + placebo >= 0.95 + object criterion; CANDIDATE = placebo >= 0.90 and at most one failure (registered in PAPER-ALL); DEAD = anything else. A `*` marks a provisional verdict (evidence listed in the needs column: e.g. paired test not yet run for a trade-modifier, holdout not looked, placebo not computed).
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout d | verdict | exposure | forward | DSR (N trials) | passed / failed / needs |
@@ -753,7 +753,7 @@ Ledger: PRED corrected 27,744 + STRUCT48 15,446 = cumulative 43,190 trials.
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-27T04:15:42Z. DS3 cells: 7024; verdicts {'DEAD': 6704, 'CANDIDATE': 63, 'PENDING': 214, 'PASS': 22, 'ERROR': 21}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-27T04:45:48Z. DS3 cells: 7024; verdicts {'DEAD': 6706, 'CANDIDATE': 62, 'PENDING': 214, 'PASS': 21, 'ERROR': 21}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -775,9 +775,8 @@ Updated 2026-10-27T04:15:42Z. DS3 cells: 7024; verdicts {'DEAD': 6704, 'CANDIDAT
 | DS3_TB3 | TB3W_cdb60_ofiq0.99_W3 | signal | - | 5,721 [664,11,334] | 7,626 | 1.00 | 1,344 | 1,143 | 9.2 | EXEC-ONLY | **PASS** | - |  |
 | DS3_TB3 | TB3_cdb_ofi_W3 | signal | - | 5,377 [665,10,140] | 6,772 | 1.00 | 1,828 | 310 | 8.0 | EXEC-ONLY | **PASS** | - |  |
 | DS3_TR2 | TR2_DON15_LV2 | signal | - | 3,245 [27,6,700] | 4,769 | 1.00 | 2,050 | 3,537 | 3.4 | DELIVERABLE-bars/ticks | **PASS** | - |  |
-| DS3_PRO2 | PRO_Z60_t1.0 | signal | - | - [1,861,21,331] | 13,915 | - | - | - | 30.6 | DELIVERABLE | **PASS** | - |  |
 | DS3_PRO2 | PRO_KAL_k0.0 | signal | - | - [3,155,23,042] | 14,213 | - | - | - | 32.0 | DELIVERABLE | **PASS** | - |  |
-| DS3_PRO2 | PRO_RIB1m_q30 | signal | - | - [1,269,19,583] | 13,089 | - | - | - | 24.8 | DELIVERABLE | **PASS** | - |  |
+| DS3_PRO2 | PRO_ER4_EMA5 | signal | - | - [874,10,707] | 7,028 | - | - | - | 7.8 | DELIVERABLE | **PASS** | - |  |
 | DS3_PRO2 | PRO_ER5_EMA5 | signal | - | - [1,802,8,553] | 4,825 | - | - | - | 3.1 | DELIVERABLE | **PASS** | - |  |
 | DS3_TR2 | TR3_KB20_S | signal | - | 22,958 [13,334,32,927] | 14,003 | 1.00 | 21,897 | -4,539 | 28.7 | DELIVERABLE-bars/ticks | **CANDIDATE** | - | -SPAN2>0 |
 | DS3_TR2 | TR3_KB_S | signal | - | 21,094 [11,798,30,440] | 13,324 | 1.00 | 23,485 | -3,780 | 29.9 | DELIVERABLE-bars/ticks | **CANDIDATE** | - | -SPAN2>0 |
@@ -819,10 +818,18 @@ Updated 2026-10-27T04:15:42Z. DS3 cells: 7024; verdicts {'DEAD': 6704, 'CANDIDAT
 | DS3_TR1 | TR1E_retest_15m_c3 | signal | weekly | 1,595 [-1,447,5,001] | 4,609 | 0.95 | 828 | 1,864 | 3.3 | DELIVERABLE | **CANDIDATE** | - | -WF_CI>0 |
 | DS3_TF | TF1_FOMC_NY | trade-modifier | paired | 28.84 pts/tr - | - | 0.96 | 479 | 405 | 25.6 | DELIVERABLE | **CANDIDATE** | none (no live record) | -paired_CI_excludes0&maxDD_not_worse |
 | DS3_TD2 | D2_TE7_emax5m_f30_s50_a3_k67_f16 | sizing-lock-session | weekly | 338 [-313,1,052] | 976 | 0.97 | 185 | 1,586 | 11.9 | DELIVERABLE (entry rule = TE7_emax5m_f30_s50 per DS3_SPEC; lock constants arm 3R keep 67% week floor 16R) | **CANDIDATE** | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse; -year_share>60% |
+| DS3_TPULLBACK3 | PB3A_R10_P2 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
+| DS3_TPULLBACK3 | PB3B_R3_P2 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
+| DS3_TPULLBACK3 | PB3B_R5_P1 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
+| DS3_TPULLBACK3 | PB3B_R5_P3 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
+| DS3_TPULLBACK3 | PB3B_R10_P3 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
+| DS3_TPULLBACK3 | PB3B_R60_P2 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
+| DS3_TPULLBACK3 | PB3B_R60_P3 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
+| DS3_TPULLBACK3 | PB3D_R3_P1 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
+| DS3_TPULLBACK3 | PB3D_R3_P2 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
 | DS3_PRO2 | PRO_Z20_t1.0 | signal | - | - [4,662,22,485] | 12,738 | - | - | - | 31.5 | DELIVERABLE | **CANDIDATE** | - |  |
-| DS3_PRO2 | PRO_Z120_t2.0 | signal | - | - [-1,739,15,741] | 12,493 | - | - | - | 24.3 | DELIVERABLE | **CANDIDATE** | - |  |
-| DS3_PRO2 | PRO_RIB1m_q20 | signal | - | - [740,17,865] | 12,239 | - | - | - | 23.7 | DELIVERABLE | **CANDIDATE** | - |  |
-| DS3_PRO2 | PRO_ER4_EMA5 | signal | - | - [874,10,707] | 7,028 | - | - | - | 7.8 | DELIVERABLE | **CANDIDATE** | - |  |
+| DS3_PRO2 | PRO_Z60_t1.0 | signal | - | - [1,861,21,331] | 13,915 | - | - | - | 30.6 | DELIVERABLE | **CANDIDATE** | - |  |
+| DS3_PRO2 | PRO_RIB1m_q30 | signal | - | - [1,269,19,583] | 13,089 | - | - | - | 24.8 | DELIVERABLE | **CANDIDATE** | - |  |
 | DS3_PRO2 | PRO_KAL_s0.5_k0.0 | signal | - | - [1,353,21,411] | 14,336 | - | - | - | 31.1 | DELIVERABLE | **CANDIDATE** | - |  |
 | DS3_PRO2 | PRO_KAL_s0.5_k0.25 | signal | - | - [7,058,27,132] | 14,347 | - | - | - | 31.2 | DELIVERABLE | **CANDIDATE** | - |  |
 | DS3_PRO2 | PRO_RIB1m_q25_M5 | signal | - | - [378,19,145] | 13,412 | - | - | - | 23.5 | DELIVERABLE | **CANDIDATE** | - |  |
@@ -833,15 +840,6 @@ Updated 2026-10-27T04:15:42Z. DS3 cells: 7024; verdicts {'DEAD': 6704, 'CANDIDAT
 | DS3_PRO2 | PRO_RIB1m_q35_M20 | signal | - | - [841,20,306] | 13,912 | - | - | - | 26.2 | DELIVERABLE | **CANDIDATE** | - |  |
 | DS3_PRO2 | PRO_ER4_n40_EMA5 | signal | - | - [1,360,7,401] | 4,318 | - | - | - | 2.8 | DELIVERABLE | **CANDIDATE** | - |  |
 | DS3_PRO2 | PRO_ER6_n20_EMA5 | signal | - | - [316,3,693] | 2,414 | - | - | - | 0.9 | DELIVERABLE | **CANDIDATE** | - |  |
-| DS3_TPULLBACK3 | PB3A_R10_P2 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
-| DS3_TPULLBACK3 | PB3B_R3_P2 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
-| DS3_TPULLBACK3 | PB3B_R5_P1 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
-| DS3_TPULLBACK3 | PB3B_R5_P3 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
-| DS3_TPULLBACK3 | PB3B_R10_P3 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
-| DS3_TPULLBACK3 | PB3B_R60_P2 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
-| DS3_TPULLBACK3 | PB3B_R60_P3 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
-| DS3_TPULLBACK3 | PB3D_R3_P1 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
-| DS3_TPULLBACK3 | PB3D_R3_P2 | signal | - | - - | - | - | - | - | - | NT8-deliverable (bars only: R-/P-min bars, EMA/ATR/Supertrend, OnBarClose, market entry + OCO bracket) | **CANDIDATE** | - |  |
 | DS3_TD4 | D4_cap_ST | sizing-lock-session | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TD4 | D4_cap_HM | sizing-lock-session | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
 | DS3_TD4 | D4_cap_WT | sizing-lock-session | - | - - | - | - | - | - | - | - | **PENDING*** | - | ?no scored effect yet |
@@ -6994,92 +6992,6 @@ Updated 2026-10-27T04:15:42Z. DS3 cells: 7024; verdicts {'DEAD': 6704, 'CANDIDAT
 | DS3_TB8 | TB8_ISM_N20 | signal | - | - - | - | 0.62 | 3,143 | -2,846 | 0.4 | NOT MEASURABLE FORWARD (<3 trades/wk); not a DS3 book | **DEAD** | - | -tpw>=3; -PRE>0; -WF_CI>0; -SPAN2>0; -plc>=.95 |
 | DS3_TB8 | TB8_ISM_N30 | signal | - | - - | - | 0.66 | 1,991 | -3,596 | 0.4 | NOT MEASURABLE FORWARD (<3 trades/wk); not a DS3 book | **DEAD** | - | -tpw>=3; -PRE>0; -WF_CI>0; -SPAN2>0; -plc>=.95 |
 | DS3_TB8 | TB8_ISM_N20_fade | signal | - | - - | - | 0.39 | -3,269 | 2,421 | 0.4 | NOT MEASURABLE FORWARD (<3 trades/wk); not a DS3 book | **DEAD** | - | -tpw>=3; -WF_CI>0; -HOLD>0; -plc>=.95; -x2_WF>0 |
-| DS3_PRO2 | PRO_ST10_AVWAP_flip_T1 | signal | - | - [-2,534,13,936] | 11,771 | - | - | - | 20.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_AVWAP_sw_T1 | signal | - | - [-6,013,13,706] | 14,093 | - | - | - | 27.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_VWAPb1_T1 | signal | - | - [-7,487,4,616] | 8,650 | - | - | - | 10.2 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_VWAPb2_T1 | signal | - | - [-5,764,2,592] | 5,972 | - | - | - | 5.3 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_dPOC_T1 | signal | - | - [-3,510,14,421] | 12,815 | - | - | - | 21.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_dVAH_T1 | signal | - | - [-6,966,6,818] | 9,851 | - | - | - | 13.2 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_dVAL_T1 | signal | - | - [-5,095,8,345] | 9,606 | - | - | - | 13.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_pdPOC_T1 | signal | - | - [-7,006,2,179] | 6,565 | - | - | - | 6.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_pdVAH_T1 | signal | - | - [-2,344,5,874] | 5,873 | - | - | - | 5.7 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_pdVAL_T1 | signal | - | - [-3,390,4,287] | 5,487 | - | - | - | 5.2 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_HVN5_T1 | signal | - | - [-12,656,3,186] | 11,323 | - | - | - | 19.7 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_LVN5_T1 | signal | - | - [-10,091,3,672] | 9,836 | - | - | - | 17.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_ONH_T1 | signal | - | - [-4,165,1,771] | 4,243 | - | - | - | 3.3 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_ONL_T1 | signal | - | - [-1,661,4,157] | 4,158 | - | - | - | 2.8 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_IMP38_T1 | signal | - | - [-7,004,10,467] | 12,486 | - | - | - | 21.2 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_IMP50_T1 | signal | - | - [-8,493,5,812] | 10,224 | - | - | - | 20.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_IMP62_T1 | signal | - | - [-5,648,9,716] | 10,981 | - | - | - | 18.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_PPL_T1 | signal | - | - [-6,385,11,696] | 12,922 | - | - | - | 22.8 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_CONF2_T1 | signal | - | - [-4,845,13,476] | 13,094 | - | - | - | 27.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_CONF2_T2 | signal | - | - [-1,763,15,309] | 12,201 | - | - | - | 25.3 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_dPOC_T2 | signal | - | - [-2,387,14,657] | 12,182 | - | - | - | 19.2 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_pdPOC_T2 | signal | - | - [-5,859,3,644] | 6,792 | - | - | - | 5.9 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_AVWAP_flip_T2 | signal | - | - [-3,472,13,193] | 11,911 | - | - | - | 19.0 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_HVN5_T2 | signal | - | - [-8,856,5,520] | 10,275 | - | - | - | 17.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_CONF2_T1_2nd | signal | - | - [-538,18,503] | 13,608 | - | - | - | 26.0 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_AVWAP_flip_T1_2nd | signal | - | - [-4,216,9,655] | 9,914 | - | - | - | 15.7 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_dPOC_T1_2nd | signal | - | - [-1,965,14,408] | 11,702 | - | - | - | 16.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_pdPOC_T1_2nd | signal | - | - [-5,600,1,097] | 4,786 | - | - | - | 4.2 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_VWAPb1_T1_2nd | signal | - | - [-4,592,6,008] | 7,576 | - | - | - | 6.8 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_PPL_T1_2nd | signal | - | - [-6,852,9,429] | 11,637 | - | - | - | 16.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_EMA200_CONF2_T1 | signal | - | - [-3,841,12,755] | 11,861 | - | - | - | 27.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_EMA200_AVWAP_flip_T1 | signal | - | - [-7,983,7,915] | 11,362 | - | - | - | 20.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_EMA200_dPOC_T1 | signal | - | - [-3,180,12,427] | 11,155 | - | - | - | 21.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_EMA200_pdPOC_T1 | signal | - | - [-3,698,5,633] | 6,669 | - | - | - | 6.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_EMA200_HVN5_T1 | signal | - | - [-7,978,9,032] | 12,157 | - | - | - | 19.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_EMA200_IMP50_T1 | signal | - | - [-4,867,7,999] | 9,196 | - | - | - | 16.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_HMA55_CONF2_T1 | signal | - | - [-10,980,6,887] | 12,770 | - | - | - | 27.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_HMA55_AVWAP_flip_T1 | signal | - | - [-4,363,11,517] | 11,350 | - | - | - | 20.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_HMA55_dPOC_T1 | signal | - | - [-9,467,6,632] | 11,506 | - | - | - | 21.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_HMA55_pdPOC_T1 | signal | - | - [-3,286,5,541] | 6,308 | - | - | - | 6.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_HMA55_HVN5_T1 | signal | - | - [-14,897,32] | 10,670 | - | - | - | 20.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_HMA55_IMP50_T1 | signal | - | - [-2,887,9,602] | 8,926 | - | - | - | 17.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_PRIORDIR_CONF2_T1 | signal | - | - [-8,956,11,527] | 14,639 | - | - | - | 27.3 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_PRIORDIR_AVWAP_flip_T1 | signal | - | - [-6,839,8,851] | 11,214 | - | - | - | 18.7 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_PRIORDIR_pdPOC_T1 | signal | - | - [-2,137,6,900] | 6,459 | - | - | - | 7.0 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_CONF2_T1_W10 | signal | - | - [-2,738,15,734] | 13,203 | - | - | - | 27.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ST10_CONF2_T1_W60 | signal | - | - [-3,967,14,355] | 13,095 | - | - | - | 27.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z20_t1.5 | signal | - | - [-7,086,13,788] | 14,919 | - | - | - | 30.9 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z20_t2.0 | signal | - | - [-8,817,10,490] | 13,799 | - | - | - | 27.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z60_t1.5 | signal | - | - [-3,770,14,670] | 13,179 | - | - | - | 29.7 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z60_t2.0 | signal | - | - [-7,541,11,298] | 13,464 | - | - | - | 27.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z120_t1.0 | signal | - | - [-5,389,12,777] | 12,984 | - | - | - | 27.8 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z120_t1.5 | signal | - | - [-5,394,14,339] | 14,103 | - | - | - | 27.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z60_t1.0_ST10 | signal | - | - [-3,199,15,674] | 13,488 | - | - | - | 29.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z60_t1.5_ST10 | signal | - | - [-1,702,16,086] | 12,713 | - | - | - | 28.2 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z60_t2.0_ST10 | signal | - | - [-5,396,12,790] | 12,997 | - | - | - | 25.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_k0.0_ST10 | signal | - | - [-1,506,18,348] | 14,190 | - | - | - | 29.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_k0.5 | signal | - | - [-867,18,030] | 13,506 | - | - | - | 30.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_k0.5_ST10 | signal | - | - [-4,105,15,217] | 13,809 | - | - | - | 29.9 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_k1.0 | signal | - | - [-3,670,14,396] | 12,912 | - | - | - | 30.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_k1.0_ST10 | signal | - | - [-1,151,19,945] | 15,078 | - | - | - | 29.0 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_RIB5m_q20 | signal | - | - [-6,691,7,651] | 10,250 | - | - | - | 15.2 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_RIB5m_q30 | signal | - | - [-6,239,8,832] | 10,772 | - | - | - | 17.2 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ER3_EMA5 | signal | - | - [-272,13,611] | 9,922 | - | - | - | 14.0 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ER3_VWAP | signal | - | - [-3,517,4,256] | 5,555 | - | - | - | 5.3 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ER4_VWAP | signal | - | - [-2,902,2,786] | 4,065 | - | - | - | 2.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ER5_VWAP | signal | - | - [-1,092,2,532] | 2,590 | - | - | - | 1.0 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z40_t0.75 | signal | - | - [-4,367,14,481] | 13,471 | - | - | - | 30.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z40_t1.0 | signal | - | - [-4,805,13,968] | 13,417 | - | - | - | 30.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z40_t1.25 | signal | - | - [-2,371,17,595] | 14,270 | - | - | - | 30.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z60_t0.75 | signal | - | - [1,602,22,516] | 14,948 | - | - | - | 30.7 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z60_t1.25 | signal | - | - [-2,496,16,188] | 13,354 | - | - | - | 30.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z90_t0.75 | signal | - | - [-8,811,11,706] | 14,664 | - | - | - | 29.8 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z90_t1.0 | signal | - | - [-7,557,12,123] | 14,065 | - | - | - | 29.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_Z90_t1.25 | signal | - | - [-9,233,12,967] | 15,866 | - | - | - | 27.9 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_s0.5_k0.5 | signal | - | - [1,138,19,354] | 13,020 | - | - | - | 30.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_s1.0_k0.25 | signal | - | - [-1,000,18,089] | 13,643 | - | - | - | 31.6 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_s2.0_k0.0 | signal | - | - [-998,18,024] | 13,595 | - | - | - | 32.3 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_s2.0_k0.25 | signal | - | - [-2,441,16,542] | 13,568 | - | - | - | 31.8 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_KAL_s2.0_k0.5 | signal | - | - [-781,18,913] | 14,075 | - | - | - | 31.5 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_RIB1m_q25_M20 | signal | - | - [-226,17,459] | 12,639 | - | - | - | 25.0 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_RIB1m_q35_M10 | signal | - | - [-76,19,502] | 13,993 | - | - | - | 25.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ER4_n10_EMA5 | signal | - | - [-665,12,019] | 9,066 | - | - | - | 12.4 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ER5_n10_EMA5 | signal | - | - [-2,192,7,028] | 6,589 | - | - | - | 7.1 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ER5_n40_EMA5 | signal | - | - [-181,3,272] | 2,468 | - | - | - | 0.8 | DELIVERABLE | **DEAD** | - |  |
-| DS3_PRO2 | PRO_ER6_n10_EMA5 | signal | - | - [-1,032,5,304] | 4,529 | - | - | - | 3.3 | DELIVERABLE | **DEAD** | - |  |
 | DS3_TBRACKET_G2 | G2_TH_LIVE_JADE_m20_r3_t8_s1__ST | trade-modifier | paired | -1.77 pts/tr - | - | 0.80 | - | - | 71.4 | NOT DELIVERABLE as a recommendation (all cells negative); mechanism needs per-tick state (STStrat module on the execution server) | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; ?hold |
 | DS3_TBRACKET_G2 | G2_m10_r3_t8_s1__ST | trade-modifier | paired | -2.14 pts/tr - | - | 0.65 | - | - | 92.6 | NOT DELIVERABLE as a recommendation (all cells negative); mechanism needs per-tick state (STStrat module on the execution server) | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; ?hold |
 | DS3_TBRACKET_G2 | G2_m15_r3_t8_s1__ST | trade-modifier | paired | -1.98 pts/tr - | - | 0.60 | - | - | 79.9 | NOT DELIVERABLE as a recommendation (all cells negative); mechanism needs per-tick state (STStrat module on the execution server) | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -paired_CI_excludes0&maxDD_not_worse; ?hold |
@@ -7760,6 +7672,94 @@ Updated 2026-10-27T04:15:42Z. DS3 cells: 7024; verdicts {'DEAD': 6704, 'CANDIDAT
 | DS3_TR1 | TR1F_score_disc_3 | signal | weekly | - [-7,074,6,886] | 9,977 | 0.20 | 6,479 | -662 | 18.3 | DELIVERABLE | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -weekly_CI_excludes0&maxDD_not_worse; ?hold |
 | DS3_TR1 | TR1F_score_disc_5 | signal | weekly | - [-7,500,5,609] | 9,369 | 0.55 | -277 | -133 | 13.1 | DELIVERABLE | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -weekly_CI_excludes0&maxDD_not_worse; ?hold |
 | DS3_TR1 | TR1F_score_disc_7 | signal | weekly | - [-4,308,5,090] | 6,717 | 0.68 | 159 | 68 | 6.6 | DELIVERABLE | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -weekly_CI_excludes0&maxDD_not_worse; ?hold |
+| DS3_PRO2 | PRO_ST10_AVWAP_flip_T1 | signal | - | - [-2,534,13,936] | 11,771 | - | - | - | 20.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_AVWAP_sw_T1 | signal | - | - [-6,013,13,706] | 14,093 | - | - | - | 27.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_VWAPb1_T1 | signal | - | - [-7,487,4,616] | 8,650 | - | - | - | 10.2 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_VWAPb2_T1 | signal | - | - [-5,764,2,592] | 5,972 | - | - | - | 5.3 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_dPOC_T1 | signal | - | - [-3,510,14,421] | 12,815 | - | - | - | 21.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_dVAH_T1 | signal | - | - [-6,966,6,818] | 9,851 | - | - | - | 13.2 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_dVAL_T1 | signal | - | - [-5,095,8,345] | 9,606 | - | - | - | 13.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_pdPOC_T1 | signal | - | - [-7,006,2,179] | 6,565 | - | - | - | 6.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_pdVAH_T1 | signal | - | - [-2,344,5,874] | 5,873 | - | - | - | 5.7 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_pdVAL_T1 | signal | - | - [-3,390,4,287] | 5,487 | - | - | - | 5.2 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_HVN5_T1 | signal | - | - [-12,656,3,186] | 11,323 | - | - | - | 19.7 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_LVN5_T1 | signal | - | - [-10,091,3,672] | 9,836 | - | - | - | 17.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_ONH_T1 | signal | - | - [-4,165,1,771] | 4,243 | - | - | - | 3.3 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_ONL_T1 | signal | - | - [-1,661,4,157] | 4,158 | - | - | - | 2.8 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_IMP38_T1 | signal | - | - [-7,004,10,467] | 12,486 | - | - | - | 21.2 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_IMP50_T1 | signal | - | - [-8,493,5,812] | 10,224 | - | - | - | 20.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_IMP62_T1 | signal | - | - [-5,648,9,716] | 10,981 | - | - | - | 18.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_PPL_T1 | signal | - | - [-6,385,11,696] | 12,922 | - | - | - | 22.8 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_CONF2_T1 | signal | - | - [-4,845,13,476] | 13,094 | - | - | - | 27.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_CONF2_T2 | signal | - | - [-1,763,15,309] | 12,201 | - | - | - | 25.3 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_dPOC_T2 | signal | - | - [-2,387,14,657] | 12,182 | - | - | - | 19.2 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_pdPOC_T2 | signal | - | - [-5,859,3,644] | 6,792 | - | - | - | 5.9 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_AVWAP_flip_T2 | signal | - | - [-3,472,13,193] | 11,911 | - | - | - | 19.0 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_HVN5_T2 | signal | - | - [-8,856,5,520] | 10,275 | - | - | - | 17.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_CONF2_T1_2nd | signal | - | - [-538,18,503] | 13,608 | - | - | - | 26.0 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_AVWAP_flip_T1_2nd | signal | - | - [-4,216,9,655] | 9,914 | - | - | - | 15.7 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_dPOC_T1_2nd | signal | - | - [-1,965,14,408] | 11,702 | - | - | - | 16.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_pdPOC_T1_2nd | signal | - | - [-5,600,1,097] | 4,786 | - | - | - | 4.2 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_VWAPb1_T1_2nd | signal | - | - [-4,592,6,008] | 7,576 | - | - | - | 6.8 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_PPL_T1_2nd | signal | - | - [-6,852,9,429] | 11,637 | - | - | - | 16.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_EMA200_CONF2_T1 | signal | - | - [-3,841,12,755] | 11,861 | - | - | - | 27.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_EMA200_AVWAP_flip_T1 | signal | - | - [-7,983,7,915] | 11,362 | - | - | - | 20.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_EMA200_dPOC_T1 | signal | - | - [-3,180,12,427] | 11,155 | - | - | - | 21.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_EMA200_pdPOC_T1 | signal | - | - [-3,698,5,633] | 6,669 | - | - | - | 6.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_EMA200_HVN5_T1 | signal | - | - [-7,978,9,032] | 12,157 | - | - | - | 19.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_EMA200_IMP50_T1 | signal | - | - [-4,867,7,999] | 9,196 | - | - | - | 16.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_HMA55_CONF2_T1 | signal | - | - [-10,980,6,887] | 12,770 | - | - | - | 27.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_HMA55_AVWAP_flip_T1 | signal | - | - [-4,363,11,517] | 11,350 | - | - | - | 20.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_HMA55_dPOC_T1 | signal | - | - [-9,467,6,632] | 11,506 | - | - | - | 21.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_HMA55_pdPOC_T1 | signal | - | - [-3,286,5,541] | 6,308 | - | - | - | 6.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_HMA55_HVN5_T1 | signal | - | - [-14,897,32] | 10,670 | - | - | - | 20.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_HMA55_IMP50_T1 | signal | - | - [-2,887,9,602] | 8,926 | - | - | - | 17.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_PRIORDIR_CONF2_T1 | signal | - | - [-8,956,11,527] | 14,639 | - | - | - | 27.3 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_PRIORDIR_AVWAP_flip_T1 | signal | - | - [-6,839,8,851] | 11,214 | - | - | - | 18.7 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_PRIORDIR_pdPOC_T1 | signal | - | - [-2,137,6,900] | 6,459 | - | - | - | 7.0 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_CONF2_T1_W10 | signal | - | - [-2,738,15,734] | 13,203 | - | - | - | 27.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ST10_CONF2_T1_W60 | signal | - | - [-3,967,14,355] | 13,095 | - | - | - | 27.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z20_t1.5 | signal | - | - [-7,086,13,788] | 14,919 | - | - | - | 30.9 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z20_t2.0 | signal | - | - [-8,817,10,490] | 13,799 | - | - | - | 27.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z60_t1.5 | signal | - | - [-3,770,14,670] | 13,179 | - | - | - | 29.7 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z60_t2.0 | signal | - | - [-7,541,11,298] | 13,464 | - | - | - | 27.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z120_t1.0 | signal | - | - [-5,389,12,777] | 12,984 | - | - | - | 27.8 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z120_t1.5 | signal | - | - [-5,394,14,339] | 14,103 | - | - | - | 27.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z120_t2.0 | signal | - | - [-1,739,15,741] | 12,493 | - | - | - | 24.3 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z60_t1.0_ST10 | signal | - | - [-3,199,15,674] | 13,488 | - | - | - | 29.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z60_t1.5_ST10 | signal | - | - [-1,702,16,086] | 12,713 | - | - | - | 28.2 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z60_t2.0_ST10 | signal | - | - [-5,396,12,790] | 12,997 | - | - | - | 25.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_k0.0_ST10 | signal | - | - [-1,506,18,348] | 14,190 | - | - | - | 29.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_k0.5 | signal | - | - [-867,18,030] | 13,506 | - | - | - | 30.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_k0.5_ST10 | signal | - | - [-4,105,15,217] | 13,809 | - | - | - | 29.9 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_k1.0 | signal | - | - [-3,670,14,396] | 12,912 | - | - | - | 30.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_k1.0_ST10 | signal | - | - [-1,151,19,945] | 15,078 | - | - | - | 29.0 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_RIB1m_q20 | signal | - | - [740,17,865] | 12,239 | - | - | - | 23.7 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_RIB5m_q20 | signal | - | - [-6,691,7,651] | 10,250 | - | - | - | 15.2 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_RIB5m_q30 | signal | - | - [-6,239,8,832] | 10,772 | - | - | - | 17.2 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ER3_EMA5 | signal | - | - [-272,13,611] | 9,922 | - | - | - | 14.0 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ER3_VWAP | signal | - | - [-3,517,4,256] | 5,555 | - | - | - | 5.3 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ER4_VWAP | signal | - | - [-2,902,2,786] | 4,065 | - | - | - | 2.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ER5_VWAP | signal | - | - [-1,092,2,532] | 2,590 | - | - | - | 1.0 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z40_t0.75 | signal | - | - [-4,367,14,481] | 13,471 | - | - | - | 30.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z40_t1.0 | signal | - | - [-4,805,13,968] | 13,417 | - | - | - | 30.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z40_t1.25 | signal | - | - [-2,371,17,595] | 14,270 | - | - | - | 30.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z60_t0.75 | signal | - | - [1,602,22,516] | 14,948 | - | - | - | 30.7 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z60_t1.25 | signal | - | - [-2,496,16,188] | 13,354 | - | - | - | 30.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z90_t0.75 | signal | - | - [-8,811,11,706] | 14,664 | - | - | - | 29.8 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z90_t1.0 | signal | - | - [-7,557,12,123] | 14,065 | - | - | - | 29.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_Z90_t1.25 | signal | - | - [-9,233,12,967] | 15,866 | - | - | - | 27.9 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_s0.5_k0.5 | signal | - | - [1,138,19,354] | 13,020 | - | - | - | 30.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_s1.0_k0.25 | signal | - | - [-1,000,18,089] | 13,643 | - | - | - | 31.6 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_s2.0_k0.0 | signal | - | - [-998,18,024] | 13,595 | - | - | - | 32.3 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_s2.0_k0.25 | signal | - | - [-2,441,16,542] | 13,568 | - | - | - | 31.8 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_KAL_s2.0_k0.5 | signal | - | - [-781,18,913] | 14,075 | - | - | - | 31.5 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_RIB1m_q25_M20 | signal | - | - [-226,17,459] | 12,639 | - | - | - | 25.0 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_RIB1m_q35_M10 | signal | - | - [-76,19,502] | 13,993 | - | - | - | 25.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ER4_n10_EMA5 | signal | - | - [-665,12,019] | 9,066 | - | - | - | 12.4 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ER5_n10_EMA5 | signal | - | - [-2,192,7,028] | 6,589 | - | - | - | 7.1 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ER5_n40_EMA5 | signal | - | - [-181,3,272] | 2,468 | - | - | - | 0.8 | DELIVERABLE | **DEAD** | - |  |
+| DS3_PRO2 | PRO_ER6_n10_EMA5 | signal | - | - [-1,032,5,304] | 4,529 | - | - | - | 3.3 | DELIVERABLE | **DEAD** | - |  |
 | DS3_TBRACKET | A_t20_s60 | ? | - | - - | - | - | - | - | 124.2 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | A_t30_s60 | ? | - | - - | - | - | - | - | 105.1 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | A_t40_s60 | ? | - | - - | - | - | - | - | 92.0 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
