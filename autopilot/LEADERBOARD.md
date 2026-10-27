@@ -1,6 +1,6 @@
 # LEADERBOARD (one file, all tracks) - RESEARCH V2 verdicts
 
-Updated 2026-10-27T03:53:21Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
+Updated 2026-10-27T04:23:29Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
 Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base conditions + placebo >= 0.95 + object criterion; CANDIDATE = placebo >= 0.90 and at most one failure (registered in PAPER-ALL); DEAD = anything else. A `*` marks a provisional verdict (evidence listed in the needs column: e.g. paired test not yet run for a trade-modifier, holdout not looked, placebo not computed).
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout d | verdict | exposure | forward | DSR (N trials) | passed / failed / needs |
@@ -753,7 +753,7 @@ Ledger: PRED corrected 27,744 + STRUCT48 15,446 = cumulative 43,190 trials.
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-27T03:45:35Z. DS3 cells: 7003; verdicts {'DEAD': 6704, 'CANDIDATE': 63, 'PENDING': 214, 'PASS': 22}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-27T04:15:42Z. DS3 cells: 7024; verdicts {'DEAD': 6704, 'CANDIDATE': 63, 'PENDING': 214, 'PASS': 22, 'ERROR': 21}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -7760,6 +7760,27 @@ Updated 2026-10-27T03:45:35Z. DS3 cells: 7003; verdicts {'DEAD': 6704, 'CANDIDAT
 | DS3_TR1 | TR1F_score_disc_3 | signal | weekly | - [-7,074,6,886] | 9,977 | 0.20 | 6,479 | -662 | 18.3 | DELIVERABLE | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -weekly_CI_excludes0&maxDD_not_worse; ?hold |
 | DS3_TR1 | TR1F_score_disc_5 | signal | weekly | - [-7,500,5,609] | 9,369 | 0.55 | -277 | -133 | 13.1 | DELIVERABLE | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -weekly_CI_excludes0&maxDD_not_worse; ?hold |
 | DS3_TR1 | TR1F_score_disc_7 | signal | weekly | - [-4,308,5,090] | 6,717 | 0.68 | 159 | 68 | 6.6 | DELIVERABLE | **DEAD*** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -neighbours_agree; -weekly_CI_excludes0&maxDD_not_worse; ?hold |
+| DS3_TBRACKET | A_t20_s60 | ? | - | - - | - | - | - | - | 124.2 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t30_s60 | ? | - | - - | - | - | - | - | 105.1 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t40_s60 | ? | - | - - | - | - | - | - | 92.0 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t45_s60 | ? | - | - - | - | - | - | - | 87.0 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t50_s60 | ? | - | - - | - | - | - | - | 82.7 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t20_s75 | ? | - | - - | - | - | - | - | 113.8 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t30_s75 | ? | - | - - | - | - | - | - | 95.2 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t40_s75 | ? | - | - - | - | - | - | - | 82.9 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t45_s75 | ? | - | - - | - | - | - | - | 77.9 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t50_s75 | ? | - | - - | - | - | - | - | 73.6 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t20_s90 | ? | - | - - | - | - | - | - | 106.5 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t30_s90 | ? | - | - - | - | - | - | - | 87.9 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t40_s90 | ? | - | - - | - | - | - | - | 76.1 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t45_s90 | ? | - | - - | - | - | - | - | 71.3 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | A_t50_s90 | ? | - | - - | - | - | - | - | 67.3 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | KB_t30_s60 | ? | - | - - | - | - | - | - | 65.8 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | KB_t40_s60 | ? | - | - - | - | - | - | - | 56.1 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | SM_t30_s60 | ? | - | - - | - | - | - | - | 13.7 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | SM_t40_s60 | ? | - | - - | - | - | - | - | 13.1 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | EM_t30_s60 | ? | - | - - | - | - | - | - | 13.3 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
+| DS3_TBRACKET | EM_t40_s60 | ? | - | - - | - | - | - | - | 12.7 | DELIVERABLE (bracket parameters in DualStrat2 per-book target/stop; execution layer S14x1+XJ3 unvalidated live) | **ERROR** | - | -KeyError('effect_pts') |
 
 DS2 baseline series for the three-line comparison: l2vast/ds3/out/DS2_daily.parquet / DS2_weekly.parquet (ST10/HM10/WT7 per-book locks, from the ASSEMBLY engine), Set A: SETA_*.parquet.
 <!--DS3-END-->

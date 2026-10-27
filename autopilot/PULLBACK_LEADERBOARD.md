@@ -1,5 +1,5 @@
 # PULLBACK LEADERBOARD (PL, P10)
-Updated 2026-10-27T03:36Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
+Updated 2026-10-27T04:26Z. Rows: DS3_PRO2.json=104, DS3_PRO3.json=45, DS3_TPULLBACK.json=157, DS3_TPULLBACK3.json=141
 
 Pullback: 4 PASS, 23 CANDIDATE. Best: PRO_KAL_k0.0, +$12972/wk standalone, paired vs ST +-2.67 pts/trade [-5.1,-0.4], 32.0 trades/wk, DS3 marginal Sharpe +-, deliverable DELIVERABLE.
 
@@ -7,7 +7,7 @@ Pullback: 4 PASS, 23 CANDIDATE. Best: PRO_KAL_k0.0, +$12972/wk standalone, paire
 Cells scored: 447. Prereg totals: {}
 Cells with paired-vs-ST CI lower bound >0: 49; expected by chance at one-sided 2.5% over 447 cells: 11.2 (if observed is near this, treat as best-of-N noise).
 Placebo ranks >=0.95: 15 of 104 (chance ~5.2). Top placebo ranks: [1.0, 1.0, 1.0, 1.0, 1.0]
-Verdict counts: {None: 202, 'PASS': 4, 'DEAD': 218, 'CANDIDATE': 23}
+Verdict counts: {None: 202, 'CANDIDATE': 23, 'DEAD': 218, 'PASS': 4}
 
 ## PASS / CANDIDATE
 | cell | track | verdict | regime | level | trigger | bar | exec | bracket | tr/wk | $/wk | vs ST pts [CI] | MDE | vs base | holdout | 2023 | placebo | quiet | long | short | executability | mkt Sharpe | mirror | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots | re-verdict flag |
