@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 11:19Z 10-27 (t+22.3 h of 48; final 10-28 13:00Z)
-Cells scored/total per track: T-A 142/30, T-B 2215/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 24/24, T-J 3/12, T-K 19/19, T-P 1008/?, T-R 266/?, T-S 207/?. Verdicts {'DEAD': 8836, 'CANDIDATE': 120, 'PENDING': 214, 'PASS': 38, 'ERROR': 21}.
-Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR1A_ens_s0.5_k4(C), TR1A_ens_s1.0_k3(P), TR1B_reg1m_n60_t2_r0.5(C); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 26/32 slots now; CPU 5-min avg over last 24 samples 50% min 24% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 6.0, 'TL': 0.0, 'TP': 0.0, 'TR': 2.0, 'TC': 1.0, 'TS': 2.0, 'TE': 2.0}.
-Updated 2026-10-27T11:19:04Z. Box: CPU 50.8%, slots busy 26/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 11:49Z 10-27 (t+22.8 h of 48; final 10-28 13:00Z)
+Cells scored/total per track: T-A 142/30, T-B 2215/30, T-C 28/28, T-D 53/7, T-E 296/30, T-F 4/4, T-G 8/16, T-H 4956/30, T-I 24/24, T-J 3/12, T-K 19/19, T-P 1008/?, T-R 266/?, T-S 207/?, T-W 1488/?. Verdicts {'DEAD': 10320, 'CANDIDATE': 124, 'PENDING': 214, 'PASS': 38, 'ERROR': 21}.
+Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR1A_ens_s0.5_k4(C), TR1A_ens_s1.0_k3(P), TR1B_reg1m_n60_t2_r0.5(C); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C). Census: autopilot/DS3_CENSUS.md (written).
+Cores: busy 32/32 slots now; CPU 5-min avg over last 24 samples 54% min 27% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 1.1, 'TL': 0.0, 'TP': 0.0, 'TR': 2.0, 'TC': 0.0, 'TS': 0.0, 'TE': 0.2}.
+Updated 2026-10-27T11:49:16Z. Box: CPU 26.6%, slots busy 32/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -28,7 +28,7 @@ Updated 2026-10-27T11:19:04Z. Box: CPU 50.8%, slots busy 26/32, queue 0. Cores p
 | B9 | D3M | 0 | 0 / ? | none | queued |
 | BA | ? | 0 | 0 / 0 | none | prereg |
 | BRACKET | ? | 0 | 1652 / ? | T4D_PRO_ER5_EMA5_D4_N15_f50_m1_s30_G1(C), T4D_PRO_ER5_EMA5_D4_SG_f50_m1_s30_G1(C) | done (report) |
-| C | D3CT | 1.0 | 28 / 28 | none | done (report) |
+| C | D3CT | 0.0 | 28 / 28 | none | done (report) |
 | C1 | D3XT | 0 | 0 / ? | none | queued |
 | C1C2 | D3XT | 0 | 0 / ? | none | queued |
 | C3C4 | D3XT | 0 | 0 / ? | none | queued |
@@ -40,7 +40,7 @@ Updated 2026-10-27T11:19:04Z. Box: CPU 50.8%, slots busy 26/32, queue 0. Cores p
 | D3 | D3SZ | 0 | 0 / 18 | none | done (report) |
 | D3XT | D3SZ | 0 | 0 / ? | none | queued |
 | D4 | D3SZ | 0 | 0 / 9 | none | done (report) |
-| E | D3D | 2.0 | 0 / 197 | none | done (report) |
+| E | D3D | 0.2 | 0 / 197 | none | done (report) |
 | E1 | D3BAR | 0 | 0 / 57 | none | prereg |
 | E2 | D3INS | 0 | 0 / ? | none | queued |
 | E2E3 | D3INS | 0 | 0 / 293 | none | done (report) |
@@ -54,6 +54,7 @@ Updated 2026-10-27T11:19:04Z. Box: CPU 50.8%, slots busy 26/32, queue 0. Cores p
 | H | D3CT | 0 | 18 / 58 | none | done (report) |
 | HG3 | ? | 0 | 0 / 0 | none | prereg |
 | I | D3CT | 0 | 24 / 48 | none | done (report) |
+| IC | ? | 0 | 0 / 172 | none | prereg |
 | J | D3L | 0 | 0 / 12 | none | done (report) |
 | K | D3K | 0 | 19 / 38 | none | done (report) |
 | M | ? | 0 | 0 / 0 | none | prereg |
@@ -88,7 +89,7 @@ Updated 2026-10-27T11:19:04Z. Box: CPU 50.8%, slots busy 26/32, queue 0. Cores p
 | TD2 | ? | 0 | 7 / ? | D2_TE7_emax5m_f30_s50_a3_k67_f16(C) | done (report) |
 | TD3 | ? | 0 | 18 / ? | none | done (report) |
 | TD4 | ? | 0 | 7 / ? | none | done (report) |
-| TE | ? | 2.0 | 3 / ? | none | done (report) |
+| TE | ? | 0.2 | 3 / ? | none | done (report) |
 | TE2E3 | ? | 0 | 293 / ? | TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C) | done (report) |
 | TF | ? | 0 | 4 / ? | TF1_FOMC_NY(C) | done (report) |
 | TG | ? | 0 | 4 / ? | none | scoring |
@@ -108,7 +109,9 @@ Updated 2026-10-27T11:19:04Z. Box: CPU 50.8%, slots busy 26/32, queue 0. Cores p
 | TSBS | ? | 0 | 161 / ? | S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C) | done (report) |
 | TSO | ? | 0 | 0 / 10 | none | prereg |
 | TSTRUCTFIB | ? | 0 | 46 / ? | none | done (report) |
-| unattributed | - | 6.0 | - | - | - |
+| TWASHOUT | ? | 0 | 1488 / ? | WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C) | done (report) |
+| WO | ? | 0 | 0 / 1488 | none | prereg |
+| unattributed | - | 1.1 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -119,13 +122,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-10-27T11:15Z
+## TREND (TL) update 2026-10-27T11:45Z
 Trend: 12 PASS, 18 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | TR1 2026-10-26T22:59:30Z: scoring chain done |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 0 | 2026-10-27T11:01:47Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 28/32: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 0 | 2026-10-27T11:31:47Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 26/32: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 266. Best-of-N context: ledger total 49514 cells across all tracks; trend cells with CI lower bound >0: 19 vs 6.7 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -594,3 +597,10 @@ ST10/HM10/WT7 with per-book locks: DEAD (both rows: 10/10/7 and 14/10/10+WT7); p
 - QUESTION: 32/32 slots busy but memory-bound (memguard kills 6 workers in 10 min after the 22:00Z utilisation order). Options: (a) accept kills/retries, (b) cap total replay workers ~14 and let tp_extra fill only when others finish (current), (c) pause non-DS3 ap_assembly nulls (5 procs). Current = (b) with 32 GB gate.
 - econlib.py import breakage: benchmark rows 14,488 vs P9 table 14,486 (after the weekly extension); affects failpred/econlib.py and struct48/code/t2lib.py users; not fixed. Decide whether to regenerate the P9 table or pin the old rows.
 - S115 (ES depth z-score weekly change -> NQ pair next-week P&L; lead, p ~0.07 after 3-instrument search): only forward weeks from 2026-10-19 can confirm; not yet in the forward register. Want me to add it as a pre-registered forward check (cut-to-50% rule in worst tercile)?
+
+## REPLAY PRIORITY MODE (user order 2026-10-27 ~11:30Z) - ETA per item (written 11:50Z)
+Priority mode is ON (governor flag l2vast/ds3/ledger/gov_priority.on): every other replay orchestrator and worker is frozen (SIGSTOP, memory still held; no kills).
+1. D3PB base last missing month (2026-06; the other 44 R_ files exist): 1 worker started 11:45Z, ~40-70 min per month -> ETA about 12:30-13:00Z, then PB_ST10_SWZ_T3 direct verdict (tp_post.py / finish.sh + a direct run of the cell series).
+2. TR1 direct on TR1A_ens_s0.5_k4 + TR1A_ens_s1.0_k3 only: remaining rows filtered to those two cells (14,513 of 56,621 unique trades, tr1_direct.py patched, backup .bak_pre_2cells_20261027); 9 months still pending (2025-04, 2026-03..2026-10; 2 already running), roughly a quarter of the old trades per month -> ETA about 14:00-15:00Z; then tr1_dfinal.py gives the two direct verdicts (other 13 stay mapped).
+3. D3XT exits: main replay 45/45 months done; R4 event pass (dc_replay2) 38/45, missing months being replayed on 2 workers (about 9-70 min each) -> ETA about 13:00-14:00Z, then its auto post.sh (pre/final C and R4).
+After all three finish the governor resumes T-BRACKET A (D3BA), B (D3NT) and TR2 workers; pb2/pb4/pb4w/pro1/so3 (D3PB2, D3PB4, PRO1, T2 scale-out C) STAY FROZEN until you release them (you named only A/B and TR2).

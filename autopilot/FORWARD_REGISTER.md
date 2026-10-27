@@ -1,4 +1,4 @@
-# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-27 07:09 ET)
+# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-27 07:34 ET)
 
 Weeks start Sunday 18:00 ET. W43 (10-19..10-23) informational, never counted; official = W44+. Live file: `<repo>/data/live/StratTrades_DualStrat2_<acct>.csv` (80 grouped trades, last exit 2026-10-26 11:44 ET). Verdicts: PROMOTE >= 6 weeks, z >= -1, sign right; RETIRE >= 8 weeks, z < -2; BEHIND z < -1; z = (realised - expected*n)/(expected SD*sqrt(n)).
 
@@ -189,6 +189,10 @@ Tape ends 2026-10-23 20:59:00 UTC (label day 20261023); verdict field: none: 4 f
 | ds3_PRO1_QD_R4_EMA200_EMA5 | CANDIDATE | signal (T-PULLBACK pullback arming with a tape end-of-pullback trigger; EXECUTION-SERVER-ONLY, needs L2/tape at run time) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 | ds3_PRO1_QD_R6_EMA200_SWZ | CANDIDATE | signal (T-PULLBACK pullback arming with a tape end-of-pullback trigger; EXECUTION-SERVER-ONLY, needs L2/tape at run time) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 | ds3_PRO1_QD_R6_ST10_SWZ | CANDIDATE | signal (T-PULLBACK pullback arming with a tape end-of-pullback trigger; EXECUTION-SERVER-ONLY, needs L2/tape at run time) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_WO_WO_HM_cci_b1_n20_k10 | CANDIDATE | trade-modifier (washout entry condition on HM) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_WO_WO_PRO2_RIB1m_q30_cci_b1_n20_k10 | CANDIDATE | trade-modifier (washout entry condition on PRO2_RIB1m_q30) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_WO_WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18 | CANDIDATE | trade-modifier (washout entry condition on TE6_st10m_n10_m3.5) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_WO_WO_TE7_boll3m_n20_m1.5_pb_b5_x1.5_k10 | CANDIDATE | trade-modifier (washout entry condition on TE7_boll3m_n20_m1.5) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 
 Per-cell frozen expectation (WF / L8W / IS) and parameters: `autopilot/forward/series/PAPERALL_CELLS.json`.
 

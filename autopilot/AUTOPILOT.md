@@ -1,0 +1,6 @@
+
+## 2026-10-27T11:42:56Z USER DIRECTIVE (replay priority, verbatim)
+Replay governor priority, in order, all other replays paused until these finish: (1) D3PB base months 38-45 (PB_ST10_SWZ_T3 direct verdict), (2) TR1 direct on TR1A_ens_s0.5_k4 and TR1A_ens_s1.0_k3 only (drop the other 13), (3) D3XT exits replay to completion. Then resume T-BRACKET A/B and TR2. Report ETA per item in MORNING.
+
+## 2026-10-27T11:54:28Z USER DIRECTIVE (spec request PB3B_R5_P1, verbatim)
+SPEC REQUEST: write autopilot/DS3_SPEC_PB3B_R5_P1.md at the same parameter level as DS3_SPEC_PB_ST10_SWZ_T3.md (every rule needed to reproduce the trade list in NT8 OnBarClose from 1-min bars: 5-min Supertrend recursion and flip rule, EMA20 definition and seed, exact "touch" condition, how the pullback extreme is tracked and reset, exact extreme-break trigger and entry bar, one-entry-per-pullback and re-arm rules, invalidation, session windows, bracket, lots and locks; plus the identity-audit entry share, expectation table WF/HOLD/2023 with SD, maxDD, worst week, and the add-to-DS3 table). Then run the P9 robustness block on PB3B_R5_P1 only (cell-specific mirror, day-block bootstrap maxDD, VIX terciles, fill sensitivity, 1.5x/2x cost, capacity to 42 lots) as the pullback final recommended. Register it in the forward register as the DS3 PB replacement candidate.
