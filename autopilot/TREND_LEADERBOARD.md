@@ -1,13 +1,13 @@
 # TREND LEADERBOARD (TL, R9)
-Updated 2026-10-27T05:14Z. Rows: DS3_TR1.json=134, DS3_TR2.json=74, DS3_TR4.json=58
+Updated 2026-10-27T05:44Z. Rows: DS3_TR1.json=134, DS3_TR2.json=74, DS3_TR4.json=58
 
 Trend: 12 PASS, 18 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 
 ## Multiplicity (all trend tracks pooled; best-of-N context)
-Trend cells scored: 266 (per agent {'TR1': 134, 'TR2': 74, 'D3XT': 0, 'TR4': 58}). Ledger total (all tracks): 43190; DS3 final-stage cells all tracks: 3577.
+Trend cells scored: 266 (per agent {'TR1': 134, 'TR2': 74, 'D3XT': 0, 'TR4': 58}). Ledger total (all tracks): 43582; DS3 final-stage cells all tracks: 3577.
 Cells with paired-vs-ST CI lower bound >0: 19; expected by chance (one-sided 2.5%) over 266 cells: 6.7 (near this => best-of-N noise).
 Placebo ranks >=0.95: 50 of 231 (chance ~11.6). Top: [1.0, 1.0, 1.0, 1.0, 1.0]
-Verdict counts: {'DEAD': 231, 'CANDIDATE': 20, 'REPORT-ONLY': 1, 'PASS': 14}
+Verdict counts: {'REPORT-ONLY': 1, 'PASS': 14, 'CANDIDATE': 20, 'DEAD': 231}
 
 ## PASS / CANDIDATE
 | cell | agent | verdict | regime/conditions | trigger | bar | entry exec | exit type | tr/wk | $/wk | vs ST pts [CI] | MDE | vs KB | vs SM | vs EM | holdout | 2023 | placebo | quiet | wide | long | short | executability | DS3 mSharpe | mirror(mapped,$/wk) | dEqRisk vs ST $/wk | duplicate | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots |
