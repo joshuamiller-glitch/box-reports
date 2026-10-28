@@ -175,3 +175,39 @@ Questions (not blocking): Q1 zone_far stops are undefined for E1-E5 (3 of 135 st
 - Disclosure: first PRE pass had a marketable-limit fill artifact in the pool placebo (fixed, re-scored, same cells). Prereg sha 1e97077444c26bb91974786b34413ae76ddaf992de92ca94e43834d7fb9ba2a5; PREHOLD sha a0c3ba66eab58e28e899218d37d9f76159e6c3e51d7af6986c98c80869f325f6.
 - Needs main: G10 direct replay NOT run (needs governor PRIO_ALLOW entry + restart). Structural question (queue not paused): should limit entries 0-2 pt before the line placed after the hold candle (60% already marketable) be replaced by a resting limit before the touch (M2 REST cell covers it)?
 - Did not use zen_struct.grid_eval (D3ZF1 fill_mode=1 bug); own kernel f3_lib.simk verified identical to Z.simulate.
+
+## D3SR1 (2026-10-28) session shadow records wired
+- 107 records registered (94 cluster reps incl. the 1 SESSION-PASS, 12 half-size cost-robust pairs, 1 WT NY-PM WATCH row), start 2026-W45, all ENTRY-ONLY / PENDING-FEED: the evaluator has no forward generator for IC/CRT/SF/PB/TB/BA/H4/TR1 engines, so nothing is scored and no rows fabricated. Register 216 -> 323, 216 old records unchanged. Detail: DS3_SESSION2_REGISTER.md.
+- Structural questions (queue not paused): (a) singles carry expectation at the stored 10 lots, with 0.5x as sizing hint only - want the expectation halved? (b) should item A's live-latency replay double as the forward generator (rerun survivors weekly on the extended tape)? (c) restart the register loop daemon to show the new status text.
+
+## D3SKE (T-STACK E, slower-bar siblings) - done
+Report DS3_STACK_E.md; prereg l2vast/ds3/prereg/D3SKE_prereg.md sha256 deb69aaf4973744e473bf4cb82306f50b5fac493f643d01d44d53d7150df3358. 12 cells (F=12): 0 PASS, 0 CANDIDATE, 4 LEAD (ST3, HM3, HM5, ST3te), 8 DEAD. Slower ST/HM bars cut the stack's worst weeks by a lot (HM5 PRE +$307k over the 20 worst PRE weeks at +$1.1k/wk mean) but every LEAD fails maxDD/worst-week (G3), the thinned-live placebo on mean (G4) and the 2023 span (G6). KB and PE slower siblings are DEAD (tail gets worse on the direct basis). PRE-selected rule for F: HM5 (HM on 5-min bars, same bar counts). Replay 46,592 trades / 37 months through stke_direct.py (governor allow-list edit logged in DECISIONS). Question: none blocking.
+
+## D3SA (T-SESSION-2 item A, live-latency three-basis replay) - plan ready, waiting for governor restart
+Plan autopilot/DS3_SESSION2_A.md; prereg SSA_prereg.md sha256 73f0a1ca...e762. Scope: all 409 SESSION-CANDIDATE/PASS cell-sessions (not only the 94 reps; shared entries make it cheap); 348 fixed-bracket cell-sessions get the three-basis replay (347,170 unique entries x 35 months, est. 1.5-2.5 h at 12 workers), 61 dynamic-exit ones (40 of the 94 reps) are scored on the families' existing direct replays (MEASURED-PROXY) or listed not-rerunnable. Governor edit made (backup .bak_pre_ssa_20261028); restart requested from main; no worker launched.
+- 2026-10-28T19:24:38Z MGMT (D3ZMG) PAUSED for D6 priority, state: PRE screen done (N=22,020), PREHOLD hashed, HOLD/X look not yet taken; no jobs running; resume steps in out/zen/mgmt/PAUSED.txt
+
+## D6 PRIORITY status 19:24Z
+- item 1 specs: D3SSE (IF/CRT, 5 specs) + D3SSE2 (ba2 KB/HM/SM, PB7, E1A/TB4B/TB4W) running; ETA 20:30Z.
+- item 2 live-latency replay of D6 legs: D3SA, governor CAP 24, ETA ~21:30Z (D3SA to confirm).
+- item 3 D6 line: starts when 1+2 land; ETA ~22:00Z.
+- all other programs paused (agents suspended own jobs with SIGSTOP; no kills).
+2026-10-28T19:25:05Z D3SB3 PAUSED per coordinator: washout + sesslock scored (reports landed), pyramid trades regenerated (scoring not started); no running jobs; resume steps in out/sb3/PAUSED.txt
+- 2026-10-28T19:25:10Z D3SB1 PAUSED for D6: T-OPEN B2 entry-clock trades extracted (11,677 NQ + 264 SO cells, regen sample exact except PM T-basis); prereg/scoring/report not started; resume per l2vast/ds3/out/sb1/PAUSED.txt
+2026-10-28T19:25:10Z D3ZL2 (ZEN L2) PAUSED for D6 priority, state: all compute done, report DS3_ZEN_L2.md written (book only filters); final MORNING/DECISIONS blocks and hand-back pending; no jobs running
+- 2026-10-28T19:25:17Z D3SKF PAUSED per coordinator (no bg jobs running; state in l2vast/ds3/out/stk_f/PAUSED.txt); F not scored, no prereg yet.
+2026-10-28 D3SSE spec done: autopilot/DS3_SPEC_IF_30s_eb_SESSION.md (IF_30s_eb ASIA: entries 18:05-02:00 ET (fill stamp 18:00-02:00) - session cell, tier SESSION-CANDIDATE (ASIA) and SESSION-CANDIDATE (PREOPEN), MAPPED, not live-eligible until D3SA; key flags: stop is 5.0 pt (not 5 ticks), NT8 30-s bar identity unverified, stored stop credit inflates 6-pt stops.
+2026-10-28 D3SSE spec done: autopilot/DS3_SPEC_IF_15s_eb_SESSION.md (IF_15s_eb NY-AM: entries 09:30-12:00 ET (fill stamp)) - session cell, tier SESSION-CANDIDATE, MAPPED, not live-eligible until D3SA; key flags: stop is 5.0 pt (not 5 ticks), NT8 15-s bar identity unverified, stored stop credit inflates 6-pt stops.
+2026-10-28 D3SSE spec done: autopilot/DS3_SPEC_IF_30s_eb_SESSION.md (IF_30s_eb ASIA: entries 18:05-02:00 ET (fill stamp 18:00-02:00) - session cell, tier SESSION-CANDIDATE (ASIA) and SESSION-CANDIDATE (PREOPEN), MAPPED, not live-eligible until D3SA; key flags: stop is 5.0 pt (not 5 ticks), NT8 30-s bar identity unverified, stored stop credit inflates 6-pt stops.
+2026-10-28 D3SSE spec done: autopilot/DS3_SPEC_IF_15s_eb_SESSION.md (IF_15s_eb NY-AM: entries 09:30-12:00 ET (fill stamp)) - session cell, tier SESSION-CANDIDATE, MAPPED, not live-eligible until D3SA; key flags: stop is 5.0 pt (not 5 ticks), NT8 15-s bar identity unverified, stored stop credit inflates 6-pt stops.
+2026-10-28 D3SSE spec done: autopilot/DS3_SPEC_CRT_M15_M1_close_ib_SESSION.md (LONDON) - session cell, tier SESSION-PASS (BOF_F:clear), MAPPED, not live-eligible until D3SA; flags: stored stop credit inflates 4-8 pt stops, 2023 negative.
+2026-10-28 D3SSE spec done: autopilot/DS3_SPEC_CRT_M15_M1_close_SESSION.md (LONDON) - session cell, tier SESSION-CANDIDATE, MAPPED, not live-eligible until D3SA; flags: stored stop credit inflates 4-8 pt stops, 2023 negative.
+2026-10-28 D3SSE spec done: autopilot/DS3_SPEC_CRT_H1_30s_close_SESSION.md (LONDON) - session cell, tier SESSION-CANDIDATE, MAPPED, not live-eligible until D3SA; flags: stored stop credit inflates 4-8 pt stops, 2023 negative.
+## D3SSE (item E, five ICT session specs) - done. Index DS3_SESSION2_E_INDEX.md; stored stop credit inflates the 4-8 pt-stop cells; none live-eligible before D3SA.
+
+## D6 PRIORITY status 19:27Z
+- item 1 specs: IF_30s_eb (ASIA+PRE), IF_15s_eb (NY-AM), CRT_M15_M1_close_ib, CRT_M15_M1_close, CRT_H1_30s_close DONE (D3SSE, DS3_SPEC_*_SESSION.md + DS3_SESSION2_E_INDEX.md). ba2 KB/HM/SM, PB7, E1A/TB4B/TB4W: D3SSE2 running. 
+- item 2 replay: D3SA running, ETA to be confirmed.
+- item 3 D6 line: after 1+2.
+2026-10-28T19:27:44Z D3SB2 PAUSED on coordinator directive (D6); no jobs running; PBX and PB2/PB2B trade tables rebuilt and reproduced; B2/B3 scoring resumes after D6; state in l2vast/ds3/out/sb2/PAUSED.txt
+2026-10-28T19:28:18Z D3ZMX (MX) PAUSED for D6 priority, state: PRE screen + HOLD/X done; M9 (RTY) and M10 SIGSTOPped (PIDs 1957151, 1967594); DS3_ZEN_M.md not yet written; resume per out/zen/mx/PAUSED.txt

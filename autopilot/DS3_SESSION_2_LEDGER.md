@@ -542,3 +542,40 @@ One entry per independent (cluster x session) shown below (124); all 409 cell-se
 - 'Alive' here means: positive and CI above 0 on PRE in that session, positive on HOLD overall and in both HOLD year-segments. It is not a stack-add verdict (item 3 does that) and it ignores fills at live latency; the ICT/IC and CRT 15s-30s cells in particular were labelled DEAD/CANDIDATE on pooled all-hours numbers from engines with stored (not live-latency) fills.
 - The 2023 span is negative for most alive ASIA/LONDON cells: if the program is regime-dependent, 2023 is the contrary year; this is printed beside every cell and left to the reader.
 - Duplicates: many cells are the same trades; use the cluster column.
+
+
+## B-section washout: dead pooled, alive in a session (31 independent; 2026-10-28T19:16:13Z)
+Source DS3_SESSION2_B_washout.md. Basis per that report.
+| cid | session | n | tpw | mean | mde | t | hold_n | hold_mean | x_mean | y2023_mean | tier | bof_label | label | pool_pre_mean | cluster50 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| WO_TE7_boll3m_n30_m1.5_rsi_b5_k18 | NY-AM | 169 | 2.25 | 2731 | 2459 | 3.11 | 75.0 | 1039 | -1897 | -1907 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1365 | 104 |
+| WO_TE1B_emax_5m_pb_b5_x1.5_k10 | NY-AM | 209 | 2.79 | 1984 | 1845 | 3.01 | 84.0 | 1367 | 698 | 878 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 943 | 88 |
+| WO_SM_cci_b5_n27_k10 | NY-AM | 127 | 1.69 | 2861 | 2680 | 2.99 | 61.0 | 679 | -398 | -244 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1462 | 76 |
+| WO_PB3E_R3_P2_40_1.5R_pb_b5_x1.5_k10 | ASIA | 473 | 6.31 | 1158 | 1086 | 2.99 | 206 | 330 | 366 | 414 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 652 | 34 |
+| WO_TE7_kelt3m_n30_m1.0_cci_b3_n14_k18 | ASIA | 473 | 6.31 | 1552 | 1469 | 2.96 | 213 | 436 | -410 | -614 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 578 | 114 |
+| WO_TE7_boll3m_n30_m1.5_pb_b5_x1.0_k10 | NY | 1328 | 17.7 | 752 | 717 | 2.94 | 588 | 51.3 | -496 | -695 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 540 | 104 |
+| WO_HM_cci_b1_n14_k10 | ASIA | 339 | 4.52 | 1782 | 1777 | 2.81 | 153 | 1242 | -144 | -241 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 928 | 5 |
+| WO_TE7_kelt3m_n14_m1.5_cci_b5_n20_k18 | ASIA | 307 | 4.09 | 1754 | 1763 | 2.79 | 179 | 266 | -1951 | -1812 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 639 | 108 |
+| WO_SM_cci_b5_n20_k30 | ASIA | 171 | 2.28 | 2331 | 2369 | 2.76 | 86.0 | 327 | 497 | 394 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 794 | 76 |
+| WO_KB_rsi_b3_k18 | NY | 258 | 3.44 | 1806 | 1858 | 2.72 | 96.0 | 455 | -60.2 | -364 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1112 | 9 |
+| WO_KB_rsi_b3_k10 | NY | 105 | 1.40 | 2881 | 3011 | 2.68 | 41.0 | 335 | -853 | -1302 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 2125 | 10 |
+| WO_PB3B_R5_P1_cci_b1_n14_k18 | ASIA | 521 | 6.95 | 1245 | 1311 | 2.66 | 236 | 1287 | -1159 | -1206 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 88.6 | 18 |
+| WO_PRO2_RIB1m_q30_cci_b1_n14_k10 | ASIA | 210 | 2.80 | 2114 | 2276 | 2.60 | 89.0 | 1635 | 276 | 23.6 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1089 | 56 |
+| WO_TE6_st10m_n10_m3.5_cci_b5_n40_k10 | NY | 132 | 1.76 | 2161 | 2336 | 2.59 | 64.0 | 812 | -1732 | -1304 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 885 | 76 |
+| WO_TE7_kelt3m_n14_m1.5_cci_b3_n40_k10 | NY-AM | 158 | 2.11 | 2287 | 2494 | 2.57 | 88.0 | 1116 | -1953 | -2085 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 506 | 108 |
+| WO_HM_pb_b5_x1.5_k10 | NY-AM | 508 | 6.77 | 1065 | 1168 | 2.55 | 232 | 599 | 50.3 | 76.3 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 365 | 5 |
+| WO_TE1_kelt_3m_rsi_b5_k18 | NY-AM | 174 | 2.32 | 2085 | 2286 | 2.55 | 66.0 | 1724 | -812 | -701 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 996 | 92 |
+| WO_EM_cci_b5_n27_k30 | NY | 281 | 3.75 | 1455 | 1612 | 2.53 | 117 | 1097 | -12.8 | -120 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 770 | 1 |
+| WO_TE1B_emax_5m_cci_b5_n27_k18 | NY | 255 | 3.40 | 1438 | 1606 | 2.51 | 100 | 1476 | -57.8 | -199 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1251 | 88 |
+| WO_PRO2_Z20_t1.0_cci_b5_n20_k30 | ASIA | 579 | 7.72 | 925 | 1079 | 2.40 | 279 | 1084 | 696 | 641 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 86.7 | 65 |
+| WO_TE7_kelt3m_n30_m1.0_rsi_b5_k18 | NY-AM | 187 | 2.49 | 1813 | 2160 | 2.35 | 73.0 | 1074 | -229 | -87.1 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1045 | 114 |
+| WO_TE1B_emax_5m_cci_b5_n40_k10 | NY-AM | 114 | 1.52 | 1954 | 2348 | 2.33 | 51.0 | 1549 | -2436 | -2436 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 772 | 87 |
+| WO_TE1_kelt_3m_rsi_b3_k18 | NY-AM | 102 | 1.36 | 2349 | 2837 | 2.32 | 38.0 | 752 | -1680 | -1488 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1523 | 94 |
+| WO_TE7_boll3m_n20_m1.5_pb_b3_x1.5_k10 | NY | 1268 | 16.9 | 711 | 859 | 2.32 | 548 | 251 | -187 | -331 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 579 | 101 |
+| WO_TE1_kelt_3m_rsi_b3_k18 | NY | 146 | 1.95 | 2034 | 2480 | 2.30 | 51.0 | 251 | -977 | -1061 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1523 | 94 |
+| WO_EM_pb_b5_x1.5_k10 | NY-AM | 180 | 2.40 | 1641 | 2092 | 2.20 | 77.0 | 415 | 1402 | 1474 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 813 | 1 |
+| WO_TE1_kelt_3m_cci_b5_n40_k10 | NY | 385 | 5.13 | 1199 | 1541 | 2.18 | 167 | 182 | -1253 | -1241 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1142 | 92 |
+| WO_TE3_ice_q99_pb_b5_x1.5_k10 | NY | 506 | 6.75 | 985 | 1272 | 2.17 | 251 | 776 | 926 | 1114 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1001 | 100 |
+| WO_TE7_kelt3m_n30_m1.0_rsi_b3_k18 | NY | 181 | 2.41 | 1647 | 2154 | 2.14 | 59.0 | 1173 | -2354 | -2566 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1219 | 114 |
+| WO_ST_pb_b5_x1.5_k10 | NY | 1411 | 18.8 | 594 | 792 | 2.10 | 674 | 925 | -96.7 | -59.7 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 372 | 78 |
+| WO_PB3E_R3_P2_40_1.5R_cci_b5_n40_k18 | NY-AM | 174 | 2.32 | 1695 | 2260 | 2.10 | 90.0 | 915 | -287 | 267 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1014 | 34 |

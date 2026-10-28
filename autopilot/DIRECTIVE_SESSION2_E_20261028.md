@@ -1,0 +1,5 @@
+(addition to T-SESSION-2, user message mid-turn 2026-10-28; verbatim)
+
+E. Specs for the D6 session book (write now from existing rows; update after A)
+
+Codeable NT8 specs (DS3_SPEC_<cell>_SESSION.md, same format as DS3_SPEC_TE6_st10m_n7_m3.0.md: bars, exact rule bar by bar, entry order type, stop/target in ticks, session window ET, flat rule, lots at $1,000 risk, costs, identity test vs the library rows, "what could kill it") for: IF_30s_eb (ASIA, PRE), IF_15s_eb (NY-AM), CRT_M15_M1_close_ib and CRT_M15_M1_close (LONDON), CRT_H1_30s_close (LONDON), PB7_PB5_depth_atr0.5_W15_s+0 (ASIA), ba2/KB_t60_s75 (ASIA: the KB engine with its exact bracket), ba2/SM_t60_sst (ASIA: SM with the Supertrend-line stop, exact definition), ba2/HM_t75_s90 (NY-AM: the live HM engine with 75/90), E1A_RENKOC5_A3_r48 and TB4W_03_time_15s_ST3_E20_1_T2 (ASIA, if their generating rules are on disk). For the ICT cells state the FVG/iFVG definition exactly (gap measured on bodies or wicks, min gap, inversion rule, retest definition, "nearest liquidity" definition), and whether NT8 15-s/30-s bars reproduce the library bars (identity check needed on the user side).

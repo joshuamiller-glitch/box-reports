@@ -1,0 +1,5 @@
+(addition to T-SESSION-DISCOVER, user message 2026-10-28; verbatim)
+
+6b. Order book and bar type, per session (the L2 and bar-type axes were only ever tested pooled or in NY)
+
+On the top 5 cells per session: (a) the T-ZEN Addendum 3 book-state block (absorption / iceberg refresh / depth imbalance / delta flip / sweep-and-reclaim / large prints / pulls at the entry level, as trigger and as filter, random-in-session placebo with the same book requirement) — ASIA and LONDON first, where the tape is thin and the book may carry information it does not in NY; (b) the bar-type re-screen (5-s/10-s/15-s/30-s, 250/500/1000-tick, volume, range, Renko with phantom-bar counts) INSIDE each session for the session's own top cells; report per session whether any book trigger or bar type beats the 1-min/15-s/30-s time-bar version by more than its MDE. Also name the rule behind the unlabelled Asia survivors E1A_RENKOC5_A3_r48, TB4B_tick_26_tick_250_ST3_SW62_T2 and TB4W_03_time_15s_ST3_E20_1_T2 (generating code on disk) so they can be specced.
