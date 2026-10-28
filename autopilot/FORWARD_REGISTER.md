@@ -1,4 +1,4 @@
-# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-27 18:13 ET)
+# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-28 07:19 ET)
 
 Weeks start Sunday 18:00 ET. W43 (10-19..10-23) informational, never counted; official = W44+. Live file: `<repo>/data/live/StratTrades_DualStrat2_<acct>.csv` (80 grouped trades, last exit 2026-10-26 10:44 ET). Verdicts: PROMOTE >= 6 weeks, z >= -1, sign right; RETIRE >= 8 weeks, z < -2; BEHIND z < -1; z = (realised - expected*n)/(expected SD*sqrt(n)).
 
@@ -240,6 +240,9 @@ Tape ends 2026-10-23 20:59:00 UTC (label day 20261023); verdict field: none: 4 f
 | ds3_SL_PB_NY_G1k50 | CANDIDATE | sizing/lock/session rule | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 | ds3_SL_WT_NY_P2 | CANDIDATE | sizing/lock/session rule | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 | ds3_SL_WT_NY_P2pN1 | CANDIDATE | sizing/lock/session rule | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_PORTFOLIO_DS5_KB5_DN8_SM7_PE5_MV4 | CANDIDATE | portfolio (fixed lot mix of direct/mapped DS3 books KB5 DN8 SM7 PE5 MV4 = 29 NQ-eq lots, exact locks; shadow of the live DS5 paper file; research only) | 2026-W45 | 0 | - | - | 0 | - | 46,741 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_TCLOSE_RVW1_F30_LMT | CANDIDATE | signal (NQ last-hour VWAP reversion 15:30->16:00, resting-limit-at-touch v2, standalone add; shadow; research only) | 2026-W45 | 0 | - | - | 0 | - | 1,332 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_TOPEN_DR5m_pb1_rm0.5_X60_75 | CANDIDATE | signal (NQ 09:30 5-min opening drive >= 0.5x median opening range, first 1-min pullback entry in the drive direction, stop 60 / target 75, 10 lots; shadow; research only) | 2026-W45 | 0 | - | - | 0 | - | 5,742 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
 
 Per-cell frozen expectation (WF / L8W / IS) and parameters: `autopilot/forward/series/PAPERALL_CELLS.json`.
 
@@ -260,17 +263,28 @@ Evaluation basis for the three bar-based books: x_te replay on the extended NQ t
 
 ## DS3 live (Sim leader; DS3 file) - realised vs paper_all expectation, per book and total
 
-**WARNING: 9 trades could not be assigned to KB/SM** (names seen: ['PB_BookLock', 'PB_LossExit', 'PB_StopJoin', 'PB_Target']); edit tokens in series/DS3_LIVE_CONFIG.json.
+DS3 file(s): 1; 31 grouped trades; last exit 2026-10-27 13:52 ET. Expectations are the paper_all values at the registered lots, scaled per book by median live qty / registered lots: KB 16,863/wk SD 59,362 (x1.00); PE 15,248/wk SD 49,890 (x0.50); SM 8,749/wk SD 35,698 (x1.00). Total SD assumes independent books (sqrt of summed variances; actual correlation >0 makes the true SD larger). Expectations are selection-inflated (best of many cells); 
 
-DS3 file(s): 1; 31 grouped trades; last exit 2026-10-27 14:52 ET. Expectations are the paper_all values at the registered 10 lots (KB 16,863/wk SD 59,362; SM 8,749/wk SD 35,698), scaled by live median qty/10 = **x1.00** (median qty 10). Total SD assumes independent books (sqrt of summed variances; actual correlation >0 makes the true SD larger). Expectations are selection-inflated (best of 191 cells); the 2x-cost mean is 12,395 (KB) / 6,716 (SM).
-
-Start week 2026-W44 (first entry 10-26 14:03 ET); weeks count once complete (Friday 17:00 ET). Verdict: PROMOTE >=6 wks z>=-1 right sign; RETIRE >=8 wks z<-2; BEHIND z<-1.
+Start week 2026-W44 (first entry 10-26 13:03 ET); weeks count once complete (Friday 17:00 ET). Verdict: PROMOTE >=6 wks z>=-1 right sign; RETIRE >=8 wks z<-2; BEHIND z<-1.
 
 | book | week | complete | trades | exp trades | realised $ | expected $ | per trade real | z (week) | cum weeks | cum z | verdict |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | KB | 2026-W44 | no | 14 | 26.8 | 17,635 | 16,863 | 1,260 | +0.01 | 0 | - | in progress |
-| SM | 2026-W44 | no | 8 | 12.2 | 13,505 | 8,749 | 1,688 | +0.13 | 0 | - | in progress |
-| TOTAL | 2026-W44 | no | 22 | 39.0 | 31,140 | 25,612 | 1,415 | +0.08 | 0 | - | in progress |
+| PE | 2026-W44 | no | 15 | 27.3 | 14,200 | 7,624 | 947 | +0.26 | 0 | - | in progress |
+| SM | 2026-W44 | no | 2 | 12.2 | 8,080 | 8,749 | 4,040 | -0.02 | 0 | - | in progress |
+| TOTAL | 2026-W44 | no | 31 | 66.3 | 39,915 | 33,236 | 1,288 | +0.09 | 0 | - | in progress |
+
+
+## DS5 live (paper mix KB5 DN8 SM7 PE5 MV4 = 29 lots; DS5 file) - realised vs paper_all expectation, per book and total
+
+DS5 file(s): 1; 1 grouped trades; last exit 2026-10-27 18:05 ET. Expectations are the paper_all values at the registered lots, scaled per book by median live qty / registered lots: MIX 46,741/wk SD 95,173 (x1.00). Total SD assumes independent books (sqrt of summed variances; actual correlation >0 makes the true SD larger). Expectations are selection-inflated (best of many cells); Mix expectation from DS3_FORWARD_W44.md (library series, exact locks; DN mapped). Pre-v1.3 tick-routing trades are not excluded here: read nothing as evidence until the deploy time is given.
+
+Start week 2026-W44 (first entry 10-27 18:05 ET); weeks count once complete (Friday 17:00 ET). Verdict: PROMOTE >=6 wks z>=-1 right sign; RETIRE >=8 wks z<-2; BEHIND z<-1.
+
+| book | week | complete | trades | exp trades | realised $ | expected $ | per trade real | z (week) | cum weeks | cum z | verdict |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| MIX | 2026-W44 | no | 1 | 104.8 | 65 | 46,741 | 65 | -0.49 | 0 | - | in progress |
+| TOTAL | 2026-W44 | no | 1 | 104.8 | 65 | 46,741 | 65 | -0.49 | 0 | - | in progress |
 
 
 ## Live stop-join rate and slip (Set A stop exits; file `StratTrades_DualStrat2_<acct>.csv`)
