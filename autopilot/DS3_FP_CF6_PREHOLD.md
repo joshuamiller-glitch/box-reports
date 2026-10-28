@@ -1,0 +1,21 @@
+# D3FP confirmation group CF6 (bases PB3B_R5_P1) PRE-HOLDOUT text 2026-10-28T01:59:41Z
+WF-PRE 2024-02..2025-06 keys only (lift = mean(kept) - mean(all) pts/trade, label-day-block bootstrap CI, plc_rank = random-removal rank, wk_d_pre = weekly $ kept book minus base book); WF / HOLD / SPAN2 keys of the result file were NOT read when this text was written.
+
+| cell                      |   take |   n_kept_pre |   n_mirror_pre |   lift_pre | ci              |    mde |   mirror_lift |   win_kept |   win_all |   plc_rank |   wk_d_pre | note                              |
+|:--------------------------|-------:|-------------:|---------------:|-----------:|:----------------|-------:|--------------:|-----------:|----------:|-----------:|-----------:|:----------------------------------|
+| CF_PB3B_R5_P1_AB_1m_k5    |  0.009 |           27 |           3022 |       0.88 | [-20.72, 24.59] |  31.66 |         -0.01 |      0.519 |      0.51 |       0.53 |      -7932 | nan                               |
+| CF_PB3B_R5_P1_AB_1m_k15   |  0.033 |           93 |           2956 |       2.97 | [-8.05, 14.14]  |  16.02 |         -0.09 |      0.527 |      0.51 |       0.7  |      -7733 | nan                               |
+| CF_PB3B_R5_P1_AB_5m_k5    |  0.003 |            7 |           3042 |     nan    | nan             | nan    |        nan    |    nan     |    nan    |     nan    |        nan | under 30 kept/mirror trades in WF |
+| CF_PB3B_R5_P1_AB_5m_k15   |  0.01  |           29 |           3020 |     -15.36 | [-34.82, 5.4]   |  28.6  |          0.15 |      0.379 |      0.51 |       0.07 |      -9186 | nan                               |
+| CF_PB3B_R5_P1_AB_t500_k5  |  0.002 |            2 |           3047 |     nan    | nan             | nan    |        nan    |    nan     |    nan    |     nan    |        nan | under 30 kept/mirror trades in WF |
+| CF_PB3B_R5_P1_AB_t500_k15 |  0.005 |            8 |           3041 |      -0.85 | [-44.58, 41.43] |  62.79 |          0    |      0.5   |      0.51 |       0.54 |      -7989 | nan                               |
+| CF_PB3B_R5_P1_CD_1m_k5    |  0.298 |          933 |           2116 |      -0.33 | [-2.92, 2.41]   |   3.78 |          0.15 |      0.506 |      0.51 |       0.43 |      -7129 | nan                               |
+| CF_PB3B_R5_P1_CD_1m_k15   |  0.643 |         1974 |           1075 |      -0.74 | [-2.17, 0.74]   |   2.11 |          1.36 |      0.504 |      0.51 |       0.17 |      -9529 | nan                               |
+| CF_PB3B_R5_P1_CD_5m_k5    |  0.039 |          119 |           2930 |      -6.83 | [-17.05, 3.6]   |  14.53 |          0.28 |      0.454 |      0.51 |       0.1  |      -9789 | nan                               |
+| CF_PB3B_R5_P1_CD_5m_k15   |  0.165 |          496 |           2553 |      -3.36 | [-7.98, 1.16]   |   6.64 |          0.65 |      0.48  |      0.51 |       0.09 |     -11308 | nan                               |
+| CF_PB3B_R5_P1_CD_t500_k5  |  0.235 |          776 |           2273 |      -1.88 | [-5.47, 1.7]    |   4.98 |          0.64 |      0.495 |      0.51 |       0.15 |     -10067 | nan                               |
+| CF_PB3B_R5_P1_CD_t500_k15 |  0.494 |         1561 |           1488 |      -0.34 | [-2.39, 1.8]    |   2.97 |          0.36 |      0.508 |      0.51 |       0.39 |      -7528 | nan                               |
+| CF_PB3B_R5_P1_CZA_1m_k5   |  0     |            0 |           3049 |     nan    | nan             | nan    |        nan    |    nan     |    nan    |     nan    |        nan | under 30 kept/mirror trades in WF |
+| CF_PB3B_R5_P1_CZA_1m_k15  |  0.001 |            3 |           3046 |     nan    | nan             | nan    |        nan    |    nan     |    nan    |     nan    |        nan | under 30 kept/mirror trades in WF |
+| CF_PB3B_R5_P1_CZB_1m_k5   |  0     |            0 |           3049 |     nan    | nan             | nan    |        nan    |    nan     |    nan    |     nan    |        nan | under 30 kept/mirror trades in WF |
+| CF_PB3B_R5_P1_CZB_1m_k15  |  0     |            0 |           3049 |     nan    | nan             | nan    |        nan    |    nan     |    nan    |     nan    |        nan | under 30 kept/mirror trades in WF |
