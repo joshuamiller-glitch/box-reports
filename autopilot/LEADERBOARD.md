@@ -1,56 +1,56 @@
 # LEADERBOARD (one file, all tracks) - RESEARCH V2 verdicts
 
-Updated 2026-10-28T01:57:51Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
+Updated 2026-10-28T02:27:54Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
 Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base conditions + placebo >= 0.95 + object criterion; CANDIDATE = placebo >= 0.90 and at most one failure (registered in PAPER-ALL); DEAD = anything else. A `*` marks a provisional verdict (evidence listed in the needs column: e.g. paired test not yet run for a trade-modifier, holdout not looked, placebo not computed).
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout d | verdict | exposure | forward | DSR (N trials) | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| T3.2 | ORB_ASIA_15_v1__s60@1.0 | sleeve | weekly | 16,276 [1,553,32,788] | 22,324 | 0.96 | 24,491 | **PASS** | ORB Asia | - | 0.054 (67,821) | [size: +68 NQ lots, port maxDD +100%]  |
-| T3.2 | ORB_ASIA_15_v1__s75@1.0 | sleeve | weekly | 15,455 [926,30,113] | 20,860 | 0.96 | 29,359 | **PASS** | ORB Asia | - | 0.057 (67,821) | [size: +55 NQ lots, port maxDD +81%]  |
-| T3.8A | ES_RSI2_t10 | sleeve | weekly | 12,559 [3,559,22,101] | 13,252 | 0.96 | 14,513 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.241 (67,821) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
-| T3.7rsi2c | RSI2C_s20 | sleeve | weekly | 10,568 [2,294,20,281] | 12,856 | 0.98 | 12,766 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.116 (67,821) |  |
-| T3.6b1 | RSI2_t10 | sleeve | weekly | 10,197 [1,961,20,243] | 13,066 | 0.98 | 10,991 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.077 (67,821) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.976 |
-| T3.2 | ORB_ASIA_15_v1__s60@0.5 | sleeve | weekly | 8,138 [776,16,394] | 11,162 | 0.96 | 12,245 | **PASS** | ORB Asia | - | 0.054 (67,821) | [size: +34 NQ lots, port maxDD +39%]  |
-| T3.2 | ORB_ASIA_15_v1__s75@0.5 | sleeve | weekly | 7,727 [463,15,057] | 10,430 | 0.96 | 14,680 | **PASS** | ORB Asia | - | 0.057 (67,821) | [size: +27 NQ lots, port maxDD +32%]  |
+| T3.2 | ORB_ASIA_15_v1__s60@1.0 | sleeve | weekly | 16,276 [1,553,32,788] | 22,324 | 0.96 | 24,491 | **PASS** | ORB Asia | - | 0.054 (67,853) | [size: +68 NQ lots, port maxDD +100%]  |
+| T3.2 | ORB_ASIA_15_v1__s75@1.0 | sleeve | weekly | 15,455 [926,30,113] | 20,860 | 0.96 | 29,359 | **PASS** | ORB Asia | - | 0.057 (67,853) | [size: +55 NQ lots, port maxDD +81%]  |
+| T3.8A | ES_RSI2_t10 | sleeve | weekly | 12,559 [3,559,22,101] | 13,252 | 0.96 | 14,513 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.241 (67,853) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
+| T3.7rsi2c | RSI2C_s20 | sleeve | weekly | 10,568 [2,294,20,281] | 12,856 | 0.98 | 12,766 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.116 (67,853) |  |
+| T3.6b1 | RSI2_t10 | sleeve | weekly | 10,197 [1,961,20,243] | 13,066 | 0.98 | 10,991 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.077 (67,853) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.976 |
+| T3.2 | ORB_ASIA_15_v1__s60@0.5 | sleeve | weekly | 8,138 [776,16,394] | 11,162 | 0.96 | 12,245 | **PASS** | ORB Asia | - | 0.054 (67,853) | [size: +34 NQ lots, port maxDD +39%]  |
+| T3.2 | ORB_ASIA_15_v1__s75@0.5 | sleeve | weekly | 7,727 [463,15,057] | 10,430 | 0.96 | 14,680 | **PASS** | ORB Asia | - | 0.057 (67,853) | [size: +27 NQ lots, port maxDD +32%]  |
 | NM_E | E:ES_RSI2_t10 | sleeve | weekly | 6,279 [1,779,11,051] | 6,140 | 0.96 | 7,257 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
-| T3.8B | GSHORT_t90 | sleeve | weekly | 5,941 [-2,995,14,754] | 12,686 | 0.96 | 7,862 | **PASS** | GSHORT | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.012 (67,821) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.957 |
+| T3.8B | GSHORT_t90 | sleeve | weekly | 5,941 [-2,995,14,754] | 12,686 | 0.96 | 7,862 | **PASS** | GSHORT | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.012 (67,853) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.957 |
 | NM_E | E:NQ_RSI2C_s20 | sleeve | weekly | 5,284 [1,147,10,141] | 6,140 | 0.98 | 6,383 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | - |  |
 | NM_E | E:NQ_RSI2CC_s20 | sleeve | weekly | 5,284 [1,147,10,141] | 6,140 | 0.98 | 6,383 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - |  |
 | NM_E | E:NQ_RSI2_t10 | sleeve | weekly | 5,099 [980,10,121] | 6,140 | 0.98 | 5,496 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.976 |
 | NM_E | E:ORB_ASIA_15_v1_s75 | sleeve | weekly | 4,472 [268,8,714] | 6,140 | 0.96 | 8,496 | **PASS** | ORB Asia | ON TRACK (0 weeks live; AWAITING EVALUAT | - |  |
 | NM_E | E:ORB_ASIA_15_v1_s60 | sleeve | weekly | 4,462 [426,8,988] | 6,140 | 0.96 | 6,713 | **PASS** | ORB Asia | ON TRACK (0 weeks live; AWAITING EVALUAT | - |  |
-| T3.2 | ORB_ASIA_15_v1__s60@0.25 | sleeve | weekly | 4,069 [388,8,197] | 5,581 | 0.96 | 6,123 | **PASS** | ORB Asia | - | 0.054 (67,821) | [size: +17 NQ lots, port maxDD +12%]  |
-| T3.2 | ORB_ASIA_15_v1__s75@0.25 | sleeve | weekly | 3,864 [232,7,528] | 5,215 | 0.96 | 7,340 | **PASS** | ORB Asia | - | 0.057 (67,821) | [size: +14 NQ lots, port maxDD +9%]  |
+| T3.2 | ORB_ASIA_15_v1__s60@0.25 | sleeve | weekly | 4,069 [388,8,197] | 5,581 | 0.96 | 6,123 | **PASS** | ORB Asia | - | 0.054 (67,853) | [size: +17 NQ lots, port maxDD +12%]  |
+| T3.2 | ORB_ASIA_15_v1__s75@0.25 | sleeve | weekly | 3,864 [232,7,528] | 5,215 | 0.96 | 7,340 | **PASS** | ORB Asia | - | 0.057 (67,853) | [size: +14 NQ lots, port maxDD +9%]  |
 | NM_E | E:GSHORT_t90 | sleeve | weekly | 2,970 [-1,498,7,377] | 6,140 | 0.96 | 3,931 | **PASS** | GSHORT | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.957 |
-| T3.7rsi2c | RSI2CC_s20 | sleeve | weekly | 2,646 [574,5,078] | 3,219 | 0.98 | 3,196 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.116 (67,821) |  |
-| T3.2 | ORB_ASIA_30_v1__s60@1.0 | sleeve | weekly | 16,003 [-464,32,465] | 23,535 | 0.98 | 26,620 | **CANDIDATE** | ORB Asia | - | 0.040 (67,821) | [size: +67 NQ lots, port maxDD +102%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
-| T3.2 | ORB_ASIA_30_v1__s75@1.0 | sleeve | weekly | 14,390 [-2,059,30,776] | 23,468 | 0.96 | 28,509 | **CANDIDATE** | ORB Asia | - | 0.032 (67,821) | [size: +56 NQ lots, port maxDD +108%] -year_share>60% |
-| T3.2 | ORB_ASIA_30_v1__s50@1.0 | sleeve | weekly | 11,468 [-4,170,27,370] | 22,542 | 0.95 | 20,400 | **CANDIDATE** | ORB Asia | - | 0.011 (67,821) | [size: +80 NQ lots, port maxDD +104%] -year_share>60% |
+| T3.7rsi2c | RSI2CC_s20 | sleeve | weekly | 2,646 [574,5,078] | 3,219 | 0.98 | 3,196 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.116 (67,853) |  |
+| T3.2 | ORB_ASIA_30_v1__s60@1.0 | sleeve | weekly | 16,003 [-464,32,465] | 23,535 | 0.98 | 26,620 | **CANDIDATE** | ORB Asia | - | 0.040 (67,853) | [size: +67 NQ lots, port maxDD +102%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
+| T3.2 | ORB_ASIA_30_v1__s75@1.0 | sleeve | weekly | 14,390 [-2,059,30,776] | 23,468 | 0.96 | 28,509 | **CANDIDATE** | ORB Asia | - | 0.032 (67,853) | [size: +56 NQ lots, port maxDD +108%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s50@1.0 | sleeve | weekly | 11,468 [-4,170,27,370] | 22,542 | 0.95 | 20,400 | **CANDIDATE** | ORB Asia | - | 0.011 (67,853) | [size: +80 NQ lots, port maxDD +104%] -year_share>60% |
 | NM_B | B06_SetB_pboff_noprofit_vsA | sizing-lock-session | weekly | 10,566 [-327,20,628] | 15,151 | 1.00 | 13,110 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B05_SetB_pboff_vsA | sizing-lock-session | weekly | 10,507 [-273,20,378] | 14,917 | 1.00 | 12,226 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B06_SetB_pb3R_noprofit_vsA | sizing-lock-session | weekly | 9,125 [-1,522,18,982] | 14,811 | 1.00 | 13,851 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B05_SetB_pb3R_vsA | sizing-lock-session | weekly | 9,066 [-1,773,18,525] | 14,504 | 1.00 | 12,967 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.6b1 | RSI2T_t10 | sleeve | weekly | 8,882 [1,096,19,045] | 12,828 | 0.91 | 10,606 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.044 (67,821) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.911; -was PASS |
-| T3.7b4 | IBS_t20_n1 | sleeve | weekly | 8,465 [420,18,131] | 12,658 | 0.93 | 10,973 | **CANDIDATE** | IBS | ON TRACK (0 weeks live) | 0.030 (67,821) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.932 |
+| T3.6b1 | RSI2T_t10 | sleeve | weekly | 8,882 [1,096,19,045] | 12,828 | 0.91 | 10,606 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.044 (67,853) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.911; -was PASS |
+| T3.7b4 | IBS_t20_n1 | sleeve | weekly | 8,465 [420,18,131] | 12,658 | 0.93 | 10,973 | **CANDIDATE** | IBS | ON TRACK (0 weeks live) | 0.030 (67,853) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.932 |
 | NM_B | B06_SetB_pb4R_noprofit_vsA | sizing-lock-session | weekly | 8,442 [-2,458,18,693] | 15,356 | 1.00 | 10,434 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B05_SetB_pb4R_vsA | sizing-lock-session | weekly | 8,383 [-2,578,18,411] | 15,153 | 1.00 | 9,550 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B07_SetB_Rscaled_pb4R_vsA | sizing-lock-session | weekly | 8,344 [-1,554,17,422] | 13,514 | 1.00 | 11,151 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.8A | YM_RSI2_t10 | sleeve | weekly | 8,274 [-87,17,321] | 12,442 | 0.95 | 11,303 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.046 (67,821) | -year_share>60%; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.951; -was DEAD |
+| T3.8A | YM_RSI2_t10 | sleeve | weekly | 8,274 [-87,17,321] | 12,442 | 0.95 | 11,303 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.046 (67,853) | -year_share>60%; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.951; -was DEAD |
 | NM_B | B01_SetB | sizing-lock-session | weekly | 8,131 [-80,16,029] | 11,517 | 1.00 | 5,959 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live) | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_D | T14_S_s50_t1.5_n14 | trade-modifier | paired | 8016.07 pts/tr [-4,440,20,357] | 17,591 | 0.91 | 7,390 | **CANDIDATE** | T14_S_s50_t1.5_n14 | ON TRACK (0 weeks live) | - | -CANDIDATE by user ruling 2026-10-25 (scorer reads DEAD: paired CI includes 0, year share 68%, maxDD +5.7k, pl |
 | NM_B | B06_SetB_pb2R_noprofit_vsA | sizing-lock-session | weekly | 8,016 [-522,16,241] | 12,031 | 1.00 | 6,479 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.2 | ORB_ASIA_30_v1__s60@0.5 | sleeve | weekly | 8,001 [-232,16,232] | 11,767 | 0.98 | 13,310 | **CANDIDATE** | ORB Asia | - | 0.040 (67,821) | [size: +33 NQ lots, port maxDD +44%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
+| T3.2 | ORB_ASIA_30_v1__s60@0.5 | sleeve | weekly | 8,001 [-232,16,232] | 11,767 | 0.98 | 13,310 | **CANDIDATE** | ORB Asia | - | 0.040 (67,853) | [size: +33 NQ lots, port maxDD +44%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
 | T1 | T14_S_s50_t1.5_n14 | trade-modifier | weekly(paired pending) | 7,914 [-5,904,20,799] | 19,085 | 0.91 | 7,325 | **CANDIDATE** | T14_S_s50_t1.5_n14 | ON TRACK (0 weeks live) | - | -CANDIDATE by user ruling 2026-10-25 (scorer reads DEAD: paired CI includes 0, year share 68%, maxDD +5.7k, pl |
-| T3.2 | ORB_ASIA_30_v1__s75@0.5 | sleeve | weekly | 7,195 [-1,030,15,388] | 11,734 | 0.96 | 14,254 | **CANDIDATE** | ORB Asia | - | 0.032 (67,821) | [size: +28 NQ lots, port maxDD +47%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s75@0.5 | sleeve | weekly | 7,195 [-1,030,15,388] | 11,734 | 0.96 | 14,254 | **CANDIDATE** | ORB Asia | - | 0.032 (67,853) | [size: +28 NQ lots, port maxDD +47%] -year_share>60% |
 | NM_B | B07_SetB_Rscaled_pb2R_vsA | sizing-lock-session | weekly | 6,902 [-1,070,14,596] | 11,126 | 1.00 | 1,611 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.2 | ORB_ASIA_30_v1__s50@0.5 | sleeve | weekly | 5,734 [-2,085,13,685] | 11,271 | 0.95 | 10,200 | **CANDIDATE** | ORB Asia | - | 0.011 (67,821) | [size: +40 NQ lots, port maxDD +45%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s50@0.5 | sleeve | weekly | 5,734 [-2,085,13,685] | 11,271 | 0.95 | 10,200 | **CANDIDATE** | ORB Asia | - | 0.011 (67,853) | [size: +40 NQ lots, port maxDD +45%] -year_share>60% |
 | NM_E | E:COMB_c3_R | sleeve | weekly | 5,118 [1,131,9,760] | 6,140 | 0.97 | 4,818 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.966; -worst of 1.5x/2x/1-s tape stre |
 | NM_E | E:NQ_RSI2T_t10 | sleeve | weekly | 4,441 [548,9,523] | 6,140 | 0.91 | 5,303 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.911; -was PASS |
 | NM_E | E:NQ_IBS_t20_n1 | sleeve | weekly | 4,232 [210,9,065] | 6,140 | 0.93 | 5,486 | **CANDIDATE** | IBS | ON TRACK (0 weeks live) | - | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.932 |
-| T3.2 | ORB_ASIA_30_v1__s60@0.25 | sleeve | weekly | 4,001 [-116,8,116] | 5,884 | 0.98 | 6,655 | **CANDIDATE** | ORB Asia | - | 0.040 (67,821) | [size: +17 NQ lots, port maxDD +19%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
-| T3.2 | ORB_ASIA_30_v1__s75@0.25 | sleeve | weekly | 3,598 [-515,7,694] | 5,867 | 0.96 | 7,127 | **CANDIDATE** | ORB Asia | - | 0.032 (67,821) | [size: +14 NQ lots, port maxDD +21%] -year_share>60% |
-| T3.2 | ORB_ASIA_30_v1__s50@0.25 | sleeve | weekly | 2,867 [-1,043,6,843] | 5,636 | 0.95 | 5,100 | **CANDIDATE** | ORB Asia | - | 0.011 (67,821) | [size: +20 NQ lots, port maxDD +20%] -year_share>60% |
-| T3.8A | COMB_c3_R | sleeve | weekly | 2,831 [307,5,812] | 3,934 | 0.97 | 3,490 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.091 (67,821) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.966; -worst of 1.5x/2x/1-s tape stre |
+| T3.2 | ORB_ASIA_30_v1__s60@0.25 | sleeve | weekly | 4,001 [-116,8,116] | 5,884 | 0.98 | 6,655 | **CANDIDATE** | ORB Asia | - | 0.040 (67,853) | [size: +17 NQ lots, port maxDD +19%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
+| T3.2 | ORB_ASIA_30_v1__s75@0.25 | sleeve | weekly | 3,598 [-515,7,694] | 5,867 | 0.96 | 7,127 | **CANDIDATE** | ORB Asia | - | 0.032 (67,853) | [size: +14 NQ lots, port maxDD +21%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s50@0.25 | sleeve | weekly | 2,867 [-1,043,6,843] | 5,636 | 0.95 | 5,100 | **CANDIDATE** | ORB Asia | - | 0.011 (67,853) | [size: +20 NQ lots, port maxDD +20%] -year_share>60% |
+| T3.8A | COMB_c3_R | sleeve | weekly | 2,831 [307,5,812] | 3,934 | 0.97 | 3,490 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.091 (67,853) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.966; -worst of 1.5x/2x/1-s tape stre |
 | T4 | T4.2_Y4 | execution | paired | 0.05 pts/tr [-2,762,2,988] | 4,109 | 0.21 | -2,658 | **CANDIDATE** | T4.2_Y4 touch-join | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -year_share>60% |
 | T3_8 | NQ_RSI2_t10 | sleeve | - | - [36,301] | 189 | 0.99 | - | **PENDING*** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | ?no scored effect yet |
 | T3_8 | NQ_IBS_t20_n1 | sleeve | - | - [-24,426] | 321 | 0.95 | - | **PENDING*** | IBS | ON TRACK (0 weeks live) | - | ?no scored effect yet |
@@ -748,12 +748,12 @@ See also autopilot/NEARMISS_RESCORE.md (near-miss re-score / forward register; i
 
 See also autopilot/FORWARD_REGISTER.md (near-miss re-score / forward register; its cells are listed in the table when their rows land in l2vast/struct48/rows).
 
-Ledger: PRED corrected 27,744 + STRUCT48 40,077 = cumulative 67,821 trials.
+Ledger: PRED corrected 27,744 + STRUCT48 40,109 = cumulative 67,853 trials.
 
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-28T01:54:05Z. DS3 cells: 24858; verdicts {'DEAD': 23832, 'CANDIDATE': 160, 'PENDING': 265, 'PASS': 51, 'ERROR': 550}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-28T02:24:17Z. DS3 cells: 25224; verdicts {'DEAD': 24198, 'CANDIDATE': 160, 'PENDING': 265, 'PASS': 51, 'ERROR': 550}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -25065,6 +25065,372 @@ Updated 2026-10-28T01:54:05Z. DS3 cells: 24858; verdicts {'DEAD': 23832, 'CANDID
 | H2 | H2_PB3_f60_T3_LP | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -beats_(b)_CI_includes_0 |
 | H2 | H2_PB3_f60_T3_DRY | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -beats_(b)_CI |
 | H2 | H2_PB3_f60_T3_COMBO | signal | - | - - | - | - | - | - | - | - | **DEAD** | - | -mean_up; -holdout_sign_agrees; -placebo>=0.90; -paired_CI_excludes0&maxDD_not_worse; -SPAN2<=0; -beats_(b)_CI |
+| DS3_TFOOTPRINT | FP_SI33_1m_T_K60 | signal | - | - - | 13,342 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_1m_T_KS | signal | - | - - | 11,876 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_1m_TZ_K60 | signal | - | - - | 5,696 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_1m_TZ_KS | signal | - | - - | 2,193 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_1m_TS_K60 | signal | - | - - | 9,076 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_1m_TS_KS | signal | - | - - | 5,629 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_3m_T_K60 | signal | - | - - | 13,422 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_3m_T_KS | signal | - | - - | 12,507 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_3m_TZ_K60 | signal | - | - - | 6,388 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_3m_TZ_KS | signal | - | - - | 2,599 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_3m_TS_K60 | signal | - | - - | 7,379 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_3m_TS_KS | signal | - | - - | 4,999 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_5m_T_K60 | signal | - | - - | 12,606 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_5m_T_KS | signal | - | - - | 11,833 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_5m_TZ_K60 | signal | - | - - | 5,376 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_5m_TZ_KS | signal | - | - - | 2,490 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_5m_TS_K60 | signal | - | - - | 7,022 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_5m_TS_KS | signal | - | - - | 4,067 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t500_T_K60 | signal | - | - - | 12,079 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t500_T_KS | signal | - | - - | 12,151 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t500_TZ_K60 | signal | - | - - | 7,143 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t500_TZ_KS | signal | - | - - | 3,268 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t500_TS_K60 | signal | - | - - | 8,853 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t500_TS_KS | signal | - | - - | 6,215 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t1000_T_K60 | signal | - | - - | 14,478 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t1000_T_KS | signal | - | - - | 12,134 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t1000_TZ_K60 | signal | - | - - | 6,095 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t1000_TZ_KS | signal | - | - - | 3,246 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t1000_TS_K60 | signal | - | - - | 7,364 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t1000_TS_KS | signal | - | - - | 5,736 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI34_1m_TZ_K60 | signal | - | - - | 3,816 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI34_1m_TS_K60 | signal | - | - - | 7,443 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI34_5m_TZ_K60 | signal | - | - - | 4,178 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI34_5m_TS_K60 | signal | - | - - | 5,093 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI34_t500_TZ_K60 | signal | - | - - | 5,071 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI34_t500_TS_K60 | signal | - | - - | 7,345 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI43_1m_TZ_K60 | signal | - | - - | 4,955 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI43_1m_TS_K60 | signal | - | - - | 8,891 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI43_5m_TZ_K60 | signal | - | - - | 4,918 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI43_5m_TS_K60 | signal | - | - - | 6,009 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI43_t500_TZ_K60 | signal | - | - - | 6,215 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI43_t500_TS_K60 | signal | - | - - | 7,896 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_1m_TZ_K60 | signal | - | - - | 3,102 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_1m_TS_K60 | signal | - | - - | 6,364 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_5m_TZ_K60 | signal | - | - - | 3,258 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_5m_TS_K60 | signal | - | - - | 4,278 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_t500_TZ_K60 | signal | - | - - | 4,518 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_t500_TS_K60 | signal | - | - - | 6,029 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_1m_N_K60 | signal | - | - - | 13,422 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_3m_N_K60 | signal | - | - - | 14,101 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_5m_N_K60 | signal | - | - - | 13,125 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t500_N_K60 | signal | - | - - | 12,075 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t1000_N_K60 | signal | - | - - | 13,575 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_1m_N_KS | signal | - | - - | 11,161 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_5m_N_KS | signal | - | - - | 13,406 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI33_t500_N_KS | signal | - | - - | 12,573 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_1m_T_K60 | signal | - | - - | 13,454 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_1m_T_KS | signal | - | - - | 9,345 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_5m_T_K60 | signal | - | - - | 12,407 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_SI44_5m_T_KS | signal | - | - - | 9,168 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_1m_N_K60 | signal | - | - - | 11,927 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_1m_N_KS | signal | - | - - | 4,098 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_3m_N_K60 | signal | - | - - | 10,080 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_3m_N_KS | signal | - | - - | 2,331 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_5m_N_K60 | signal | - | - - | 8,440 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_5m_N_KS | signal | - | - - | 1,817 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_t500_N_K60 | signal | - | - - | 11,355 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_t500_N_KS | signal | - | - - | 3,589 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_t1000_N_K60 | signal | - | - - | 9,927 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_t1000_N_KS | signal | - | - - | 2,558 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_1m_N_K60 | signal | - | - - | 10,479 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_1m_N_KS | signal | - | - - | 10,092 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_3m_N_K60 | signal | - | - - | 10,760 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_3m_N_KS | signal | - | - - | 8,026 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_5m_N_K60 | signal | - | - - | 8,757 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_5m_N_KS | signal | - | - - | 5,457 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_t500_N_K60 | signal | - | - - | 11,591 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_t500_N_KS | signal | - | - - | 9,576 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_t1000_N_K60 | signal | - | - - | 9,639 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_t1000_N_KS | signal | - | - - | 8,090 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfinfade_1m_N_K60 | signal | - | - - | 12,514 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfinfade_3m_N_K60 | signal | - | - - | 11,912 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfinfade_5m_N_K60 | signal | - | - - | 10,650 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfinfade_t500_N_K60 | signal | - | - - | 12,017 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfinfade_t1000_N_K60 | signal | - | - - | 12,441 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_1m_Z_K60 | signal | - | - - | 8,756 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAfade_5m_Z_K60 | signal | - | - - | 5,633 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_1m_T_K60 | signal | - | - - | 11,703 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_UAcont_5m_T_K60 | signal | - | - - | 7,794 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_1m_N_K60 | signal | - | - - | 13,055 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_3m_N_K60 | signal | - | - - | 12,545 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_5m_N_K60 | signal | - | - - | 12,128 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_t500_N_K60 | signal | - | - - | 11,779 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_t1000_N_K60 | signal | - | - - | 10,875 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_cd_1m_N_K60 | signal | - | - - | 12,176 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_cd_3m_N_K60 | signal | - | - - | 11,291 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_cd_5m_N_K60 | signal | - | - - | 10,323 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_cd_t500_N_K60 | signal | - | - - | 11,860 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_cd_t1000_N_K60 | signal | - | - - | 9,305 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_1m_N_K60 | signal | - | - - | 11,683 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_3m_N_K60 | signal | - | - - | 11,854 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_5m_N_K60 | signal | - | - - | 12,216 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_t500_N_K60 | signal | - | - - | 11,542 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_t1000_N_K60 | signal | - | - - | 11,443 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_cd_1m_N_K60 | signal | - | - - | 12,344 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_cd_3m_N_K60 | signal | - | - - | 12,242 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_cd_5m_N_K60 | signal | - | - - | 10,859 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_cd_t500_N_K60 | signal | - | - - | 12,503 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_cd_t1000_N_K60 | signal | - | - - | 10,501 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_1m_N_KS | signal | - | - - | 10,389 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_3m_N_KS | signal | - | - - | 9,868 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_5m_N_KS | signal | - | - - | 9,564 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_t500_N_KS | signal | - | - - | 10,152 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvs_bar_t1000_N_KS | signal | - | - - | 10,120 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_1m_N_KS | signal | - | - - | 8,833 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_3m_N_KS | signal | - | - - | 8,308 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_5m_N_KS | signal | - | - - | 8,566 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_t500_N_KS | signal | - | - - | 8,414 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_DDdvx60_bar_t1000_N_KS | signal | - | - - | 7,035 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_1m_N_K60 | signal | - | - - | 9,465 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_1m_N_KS | signal | - | - - | 4,777 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_3m_N_K60 | signal | - | - - | 6,291 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_3m_N_KS | signal | - | - - | 4,032 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_5m_N_K60 | signal | - | - - | 5,222 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_5m_N_KS | signal | - | - - | 3,638 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_t500_N_K60 | signal | - | - - | 3,411 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_t500_N_KS | signal | - | - - | 1,526 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_t1000_N_K60 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_ABloose_t1000_N_KS | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_IRini_1m_N_K60 | signal | - | - - | 3,871 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_IRini_t500_N_K60 | signal | - | - - | 3,791 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_IRresp_1m_N_K60 | signal | - | - - | 3,282 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_IRresp_t500_N_K60 | signal | - | - - | 3,198 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_IRini_1m_N_KS | signal | - | - - | 2,417 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_IRini_t500_N_KS | signal | - | - - | 1,774 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_IRresp_1m_N_KS | signal | - | - - | 1,713 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_IRresp_t500_N_KS | signal | - | - - | 1,599 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZA2_1m_N_K60 | signal | - | - - | 4,236 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZA2_1m_N_KS | signal | - | - - | 1,120 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZA3_1m_N_K60 | signal | - | - - | 3,189 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZA3_1m_N_KS | signal | - | - - | 702 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZB2_1m_N_K60 | signal | - | - - | 1,861 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZB2_1m_N_KS | signal | - | - - | 282 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZB3_1m_N_K60 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZB3_1m_N_KS | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_1m_N_K60 | signal | - | - - | 13,080 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_1m_N_KS | signal | - | - - | 12,110 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_3m_N_K60 | signal | - | - - | 13,158 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_3m_N_KS | signal | - | - - | 12,446 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_5m_N_K60 | signal | - | - - | 12,057 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_5m_N_KS | signal | - | - - | 11,120 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_t500_N_K60 | signal | - | - - | 12,750 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_t500_N_KS | signal | - | - - | 12,155 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_t1000_N_K60 | signal | - | - - | 12,105 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDall_t1000_N_KS | signal | - | - - | 12,362 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDwithp_1m_N_K60 | signal | - | - - | 13,583 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDwithp_3m_N_K60 | signal | - | - - | 11,141 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDwithp_5m_N_K60 | signal | - | - - | 9,953 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDwithp_t500_N_K60 | signal | - | - - | 11,163 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDwithp_t1000_N_K60 | signal | - | - - | 10,564 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDnop_1m_N_K60 | signal | - | - - | 13,593 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDnop_3m_N_K60 | signal | - | - - | 11,436 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDnop_5m_N_K60 | signal | - | - - | 12,265 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDnop_t500_N_K60 | signal | - | - - | 12,377 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDnop_t1000_N_K60 | signal | - | - - | 10,643 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDpbos_1m_N_K60 | signal | - | - - | 12,347 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDpbos_3m_N_K60 | signal | - | - - | 12,647 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDpbos_5m_N_K60 | signal | - | - - | 10,892 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDpbos_t500_N_K60 | signal | - | - - | 13,234 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CDpbos_t1000_N_K60 | signal | - | - - | 12,186 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZA2_30s_N_K60 | signal | - | - - | 6,862 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZA2_t250_N_K60 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZB2_30s_N_K60 | signal | - | - - | 3,058 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | FP_CZB2_t250_N_K60 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI33_1m_k5 | signal | - | - [-2,1] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI33_1m_k15 | signal | - | - [-1,0] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI33_5m_k5 | signal | - | - [-3,2] | 4 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI33_5m_k15 | signal | - | - [-1,1] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI33_t500_k5 | signal | - | - [-2,0] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI33_t500_k15 | signal | - | - [-1,0] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI44_1m_k5 | signal | - | - [-0,5] | 4 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI44_1m_k15 | signal | - | - [-2,2] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI44_5m_k5 | signal | - | - [-2,8] | 7 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI44_5m_k15 | signal | - | - [-3,3] | 4 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI44_t500_k5 | signal | - | - [-1,4] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_SI44_t500_k15 | signal | - | - [-1,2] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_DD_1m_k5 | signal | - | - [-8,3] | 8 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_DD_1m_k15 | signal | - | - [-4,3] | 5 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_DD_5m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_DD_5m_k15 | signal | - | - [-19,13] | 23 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_DD_t500_k5 | signal | - | - [-5,4] | 6 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_DD_t500_k15 | signal | - | - [-2,4] | 5 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_AB_1m_k5 | signal | - | - [-2,26] | 20 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_AB_1m_k15 | signal | - | - [3,16] | 10 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_AB_5m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_AB_5m_k15 | signal | - | - [-8,18] | 19 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_AB_t500_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_AB_t500_k15 | signal | - | - [-21,15] | 25 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CD_1m_k5 | signal | - | - [-2,1] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CD_1m_k15 | signal | - | - [-1,1] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CD_5m_k5 | signal | - | - [-10,2] | 9 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CD_5m_k15 | signal | - | - [-5,2] | 5 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CD_t500_k5 | signal | - | - [-3,1] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CD_t500_k15 | signal | - | - [-1,2] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI33_1m_k5 | signal | - | - [-1,1] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI33_1m_k15 | signal | - | - [-1,0] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI33_5m_k5 | signal | - | - [-4,0] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI33_5m_k15 | signal | - | - [-2,0] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI33_t500_k5 | signal | - | - [-2,0] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI33_t500_k15 | signal | - | - [-1,0] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI44_1m_k5 | signal | - | - [-5,-0] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI44_1m_k15 | signal | - | - [-3,0] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI44_5m_k5 | signal | - | - [-9,-2] | 6 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI44_5m_k15 | signal | - | - [-6,-1] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI44_t500_k5 | signal | - | - [-3,1] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_SI44_t500_k15 | signal | - | - [-1,2] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_DD_1m_k5 | signal | - | - [-5,21] | 19 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_DD_1m_k15 | signal | - | - [-6,5] | 8 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_DD_5m_k5 | signal | - | - [-21,11] | 23 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_DD_5m_k15 | signal | - | - [-9,6] | 11 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_DD_t500_k5 | signal | - | - [-12,16] | 20 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_DD_t500_k15 | signal | - | - [-6,4] | 7 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_AB_1m_k5 | signal | - | - [-4,19] | 16 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_AB_1m_k15 | signal | - | - [1,16] | 10 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_AB_5m_k5 | signal | - | - [-8,21] | 21 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_AB_5m_k15 | signal | - | - [-14,8] | 16 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_AB_t500_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_AB_t500_k15 | signal | - | - [-7,25] | 23 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CD_1m_k5 | signal | - | - [-1,2] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CD_1m_k15 | signal | - | - [-1,1] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CD_5m_k5 | signal | - | - [-3,4] | 5 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CD_5m_k15 | signal | - | - [-2,3] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CD_t500_k5 | signal | - | - [-3,0] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CD_t500_k15 | signal | - | - [-2,0] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI33_1m_k5 | signal | - | - [-1,1] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI33_1m_k15 | signal | - | - [-1,0] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI33_5m_k5 | signal | - | - [-1,4] | 4 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI33_5m_k15 | signal | - | - [-0,2] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI33_t500_k5 | signal | - | - [-3,0] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI33_t500_k15 | signal | - | - [-2,-0] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI44_1m_k5 | signal | - | - [-3,3] | 4 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI44_1m_k15 | signal | - | - [-3,1] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI44_5m_k5 | signal | - | - [-6,5] | 8 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI44_5m_k15 | signal | - | - [-5,1] | 4 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI44_t500_k5 | signal | - | - [-5,1] | 4 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_SI44_t500_k15 | signal | - | - [-3,0] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_DD_1m_k5 | signal | - | - [-11,13] | 17 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_DD_1m_k15 | signal | - | - [-11,-2] | 7 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_DD_5m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_DD_5m_k15 | signal | - | - [-28,8] | 25 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_DD_t500_k5 | signal | - | - [-15,6] | 15 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_DD_t500_k15 | signal | - | - [-9,1] | 7 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_AB_1m_k5 | signal | - | - [-12,14] | 18 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_AB_1m_k15 | signal | - | - [-4,9] | 10 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_AB_5m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_AB_5m_k15 | signal | - | - [-17,7] | 18 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_AB_t500_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_AB_t500_k15 | signal | - | - [-23,11] | 24 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CD_1m_k5 | signal | - | - [-2,2] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CD_1m_k15 | signal | - | - [-2,0] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CD_5m_k5 | signal | - | - [-7,6] | 9 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CD_5m_k15 | signal | - | - [-2,3] | 4 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CD_t500_k5 | signal | - | - [-4,1] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CD_t500_k15 | signal | - | - [-3,0] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI33_1m_k5 | signal | - | - [-3,1] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI33_1m_k15 | signal | - | - [-1,1] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI33_5m_k5 | signal | - | - [-3,5] | 6 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI33_5m_k15 | signal | - | - [-1,2] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI33_t500_k5 | signal | - | - [-4,1] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI33_t500_k15 | signal | - | - [-1,1] | 2 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI44_1m_k5 | signal | - | - [-6,4] | 7 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI44_1m_k15 | signal | - | - [-3,2] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI44_5m_k5 | signal | - | - [-6,13] | 13 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI44_5m_k15 | signal | - | - [-1,8] | 6 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI44_t500_k5 | signal | - | - [-6,2] | 6 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_SI44_t500_k15 | signal | - | - [-3,1] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_DD_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_DD_1m_k15 | signal | - | - [-11,23] | 25 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_DD_5m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_DD_5m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_DD_t500_k5 | signal | - | - [-19,-2] | 13 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_DD_t500_k15 | signal | - | - [-15,5] | 14 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_AB_1m_k5 | signal | - | - [-14,-3] | 8 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_AB_1m_k15 | signal | - | - [-8,2] | 7 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_AB_5m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_AB_5m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_AB_t500_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_AB_t500_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CD_1m_k5 | signal | - | - [-2,4] | 5 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CD_1m_k15 | signal | - | - [-1,1] | 1 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CD_5m_k5 | signal | - | - [-7,6] | 10 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CD_5m_k15 | signal | - | - [-2,3] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CD_t500_k5 | signal | - | - [-3,6] | 6 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CD_t500_k15 | signal | - | - [-2,2] | 3 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_HM_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_HM_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_HM_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_HM_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SM_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SM_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SM_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SM_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_EM_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_EM_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_EM_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_EM_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R60_P2_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R60_P2_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R60_P2_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R60_P2_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P3_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P3_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P3_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P3_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3D_R3_P2_CZA_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3D_R3_P2_CZA_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3D_R3_P2_CZB_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3D_R3_P2_CZB_1m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_HM_AB13_1m_k5 | signal | - | - [1,27] | 19 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_HM_AB13_1m_k15 | signal | - | - [-2,16] | 13 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_HM_AB13_3m_k5 | signal | - | - [-15,17] | 23 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_HM_AB13_3m_k15 | signal | - | - [-13,10] | 17 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SM_AB13_1m_k5 | signal | - | - [-23,13] | 26 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SM_AB13_1m_k15 | signal | - | - [-11,12] | 16 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SM_AB13_3m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SM_AB13_3m_k15 | signal | - | - [-23,13] | 26 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_EM_AB13_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_EM_AB13_1m_k15 | signal | - | - [-14,12] | 19 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_EM_AB13_3m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_EM_AB13_3m_k15 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R60_P2_AB13_1m_k5 | signal | - | - [-24,5] | 21 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R60_P2_AB13_1m_k15 | signal | - | - [-15,2] | 13 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R60_P2_AB13_3m_k5 | signal | - | - [-11,28] | 28 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R60_P2_AB13_3m_k15 | signal | - | - [1,23] | 15 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P3_AB13_1m_k5 | signal | - | - [-23,11] | 24 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P3_AB13_1m_k15 | signal | - | - [-2,18] | 14 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P3_AB13_3m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P3_AB13_3m_k15 | signal | - | - [-14,9] | 17 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3D_R3_P2_AB13_1m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3D_R3_P2_AB13_1m_k15 | signal | - | - [-4,19] | 17 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3D_R3_P2_AB13_3m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3D_R3_P2_AB13_3m_k15 | signal | - | - [-12,18] | 22 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_AB3_3m_k5 | signal | - | - [-30,6] | 26 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_ST_AB3_3m_k15 | signal | - | - [-8,11] | 14 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_AB3_3m_k5 | signal | - | - [-13,12] | 18 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_KB_AB3_3m_k15 | signal | - | - [-6,10] | 12 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_AB3_3m_k5 | signal | - | - [-25,9] | 24 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_PB3B_R5_P1_AB3_3m_k15 | signal | - | - [-8,8] | 12 | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_AB3_3m_k5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_TFOOTPRINT | CF_SBS_AB3_3m_k15 | signal | - | - [-13,3] | 12 | - | - | - | - | - | **DEAD** | - |  |
 | DS3_TBRACKET | BAS_ST_ASIA_t30_s40 | ? | - | - - | - | - | - | - | - | - | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | BAS_ST_ASIA_t30_s60 | ? | - | - - | - | - | - | - | - | - | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | BAS_ST_ASIA_t30_s75 | ? | - | - - | - | - | - | - | - | - | **ERROR** | - | -KeyError('effect_pts') |
