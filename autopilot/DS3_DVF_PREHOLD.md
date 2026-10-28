@@ -1,0 +1,18 @@
+# D3D2F pre-holdout text (WFPRE 2024-02-01..2025-06-30 only; HOLD, X and PRE23 not read for this text). Prereg DVF_prereg.md sha256 731fc387eae4417377e5cdf280570ca4c1ed83219dcd8cf4498f890136b3f002.
+
+Mean R per trade (R = stop distance), 95% CI, MDE = 2.8 SE; placebo (a) random direction same clock, (b) same rule random clock (40 draws): effect = per-day R difference, CI lower, rank; 2x = mean R at doubled slippage+commission; stack add at 20% risk on WFPRE (marginal weekly Sharpe, CI of d_mean, d_maxDD $).
+
+| inst | cell | n | tr/wk | mean R [CI] (MDE) | win | 2x R | (a) eff [lo,hi] rank | (b) eff [lo,hi] rank | year gain 2024/2025 | add20: dSharpe, d_mean CI, dMaxDD | pre-failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| NQ | EU_BRK_k1.0 | 360 | 4.9 | -0.091 [-0.190,0.008] (0.142) | 0.45 | -0.118 | -0.076 [-0.179,0.023] r0.05 | -0.064 [-0.171,0.040] r0.07 | -26.5/-6.2 | -0.345, [-10,794,-207], 68,691 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |
+| NQ | EU_BRK_k1.5 | 360 | 4.9 | -0.075 [-0.164,0.015] (0.128) | 0.45 | -0.092 | -0.070 [-0.160,0.011] r0.10 | -0.079 [-0.172,0.010] r0.03 | -15.6/-11.4 | -0.362, [-11,063,1,460], 90,109 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |
+| NQ | EU_FADE_k1.0 | 164 | 2.2 | -0.005 [-0.127,0.117] (0.174) | 0.51 | -0.024 | 0.004 [-0.050,0.057] r0.62 | 0.016 [-0.039,0.069] r0.68 | 6.8/-7.6 | -0.004, [-6,215,5,376], 55,765 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |
+| NQ | AS_SHORT | 364 | 4.9 | 0.032 [-0.028,0.092] (0.086) | 0.54 | 0.005 | 0.053 [-0.002,0.112] r0.95 | 0.069 [0.011,0.134] r1.00 | 6.6/4.9 | 0.101, [-4,376,7,259], -85,769 | beats_a,stack_add_pre |
+| NQ | AS_FADE_k1.0 | 153 | 2.1 | -0.112 [-0.245,0.021] (0.190) | 0.44 | -0.157 | -0.030 [-0.084,0.022] r0.05 | -0.029 [-0.087,0.027] r0.12 | -14.4/-2.8 | -0.407, [-12,995,165], 59,444 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |
+| NQ | AS_FADE_k1.5 | 153 | 2.1 | -0.036 [-0.144,0.071] (0.154) | 0.47 | -0.056 | -0.004 [-0.050,0.040] r0.45 | -0.007 [-0.050,0.037] r0.38 | -5.6/0.1 | -0.268, [-9,145,3,189], 16,463 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |
+| ES | EU_BRK_k1.0 | 361 | 4.9 | -0.164 [-0.266,-0.061] (0.147) | 0.44 | -0.291 | -0.033 [-0.135,0.065] r0.23 | 0.051 [-0.060,0.159] r0.82 | -40.2/-19.0 | -0.589, [-15,399,-4,731], 163,132 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |
+| ES | EU_BRK_k1.5 | 361 | 4.9 | -0.098 [-0.189,-0.006] (0.131) | 0.45 | -0.186 | -0.019 [-0.110,0.069] r0.35 | 0.029 [-0.067,0.124] r0.80 | -19.4/-15.8 | -0.419, [-11,657,-1,186], 60,694 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |
+| ES | EU_FADE_k1.0 | 184 | 2.5 | -0.073 [-0.190,0.045] (0.167) | 0.47 | -0.148 | 0.008 [-0.050,0.064] r0.62 | 0.047 [-0.012,0.105] r0.97 | -8.0/-5.3 | -0.161, [-8,268,1,324], 63,163 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |
+| ES | AS_SHORT | 364 | 4.9 | -0.046 [-0.108,0.017] (0.089) | 0.44 | -0.163 | 0.064 [0.005,0.122] r1.00 | 0.105 [0.042,0.172] r1.00 | -15.4/-1.2 | -0.239, [-9,932,2,251], -1,678 | mean_up,cost2x_pre,year_share,stack_add_pre |
+| ES | AS_FADE_k1.0 | 165 | 2.2 | -0.213 [-0.344,-0.082] (0.187) | 0.40 | -0.351 | -0.035 [-0.094,0.023] r0.10 | -0.022 [-0.083,0.038] r0.30 | -31.5/-3.7 | -0.493, [-14,792,-1,188], 67,011 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |
+| ES | AS_FADE_k1.5 | 165 | 2.2 | -0.109 [-0.214,-0.004] (0.150) | 0.43 | -0.199 | -0.015 [-0.062,0.030] r0.28 | -0.003 [-0.050,0.044] r0.42 | -18.5/0.5 | -0.420, [-12,960,216], 61,528 | mean_up,beats_a,beats_b,cost2x_pre,year_share,stack_add_pre |

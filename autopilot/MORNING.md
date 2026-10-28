@@ -54,3 +54,21 @@ Agents: D3O1 (A, ORbase/DRbase), D3CL1 (B, block 4 + RVW1 robustness), D3DN (C),
 - [T-DIVERSIFY-2 queued 2026-10-28] A audit (D3D2A) and E MBO audit (D3D2E) running; B/C/D/F/H launch after the audit (agent cap). Market agents D3DVE/D3DVC/D3DVR/D3DVX running for T-DIVERSIFY.
 
 - [DIV2 E] MBO seven: corr to stack ~0 (-0.09..+0.10), not another way of buying NQ trend, but no edge established (all means < MDE) and not shown a worst-week hedge (null p 0.21-0.69). Number: best setup +$129k in stack's 20 worst weeks at 20% risk vs stack -$3.30M (3.9%). NEEDS from you: export of the seven paper-soak trade logs + frozen config + soak start date from the execution server.
+
+- [DIV2 A audit] Stack loses on 48% of days (64% of losing-day $ on range days), in 12 of 46 half-hour entry slots (03:30,05:00,05:30,07:00,08:00,11:30,12:00,13:00,14:30,16:30,22:00,23:30 ET); idle only in the live-blocked slots. Worst 20 weeks lose $3.74M (59% of negative-week $), range/chop weeks, all books but SM lose together. Number: -$3.74M in the stack's 20 worst weeks. Launched DIV2 B pairs, C events, D stack-state books, F night map (10 of 10 agent slots). Intraday VIX / NYSE TICK not on disk (NEEDS, DS3_DIV2_G_NEEDS.md).
+
+- [DIV ES/RTY/YM] 0 CONFIRMED/0 CANDIDATE/33 DEAD. Overnight premium (ON1) positive in all three indices but inside MDE (pooled +$1.0k/wk vs MDE $3.3k). Costs eat window rules. ES 10:30/11:00 breaks negative at WF -$412/-$583 (fade untested).
+
+- [DIV ZN/6E] 0/18 survive; costs (0.10-0.68 R/trade) exceed gross edge (<=0.18 R). No sibling replication. Nothing for the stack.
+
+- [DIV CL/GC] 0/17 survive. Best GC_ONL overnight long WF +$341/wk (MDE $293) fails the random-clock placebo (gold trend, not a clock edge) and loses $1.4k in the stack's worst 20 weeks. No purchase justified by these results.
+
+- [DIV XMKT] 0/15. Only lead: short ES at 10:30 after a first-hour 6E drop, WF +$303/wk (MDE $352), fails year_share and 2023 span; p 0.09 after correction. Cross-market filters all hurt the stack.
+
+- [CONFIRM FINAL] DR5m: replicates 0/3, cap 60 only, forward weeks 96-383. RVW1|F30: replicates 0/3 and DOES NOT EXIST AT LIVE LATENCY (1-s delay: WF +$909 M / +$1,768 T, both inside MDE ~$2.1-2.3k; HOLD CI includes 0). Both: do not pursue; shadow rows run from W45. See DS3_CONFIRM_FINAL.md.
+
+- [DIV2 C events] 60 cells: 1 PASS (NQ fade of first 5-min move after CPI/NFP 08:30, +$133/trade, n=53, but mean < MDE and best-of-24 p 0.43; ~21 trades/yr; loses in stack's worst weeks) / 1 CANDIDATE / 1 LEAD / 57 DEAD. First-minute breaks lose everywhere. NEEDS: event-date CSV for PPI, retail sales, GDP, auctions, NatGas, MSCI.
+
+- [DIV2 F night] 0/12 survive. Only lead NQ AS_SHORT (short Tokyo open 15 min): positive every window/year but inside MDE; stack add +$986/wk (MDE $6.0k), Sharpe +0.056, maxDD $64k worse, flips negative at 2x cost. Number: +$135k in the stack's 20 worst weeks at 20% risk vs stack -$3.53M (best of 12). Night breaks lose in the stack's own loss slots.
+
+- [DIV2 B pairs] 47 cells all DEAD; mean reversion loses its cost (NQ/ES -$3.7k/wk), laggard catch-up has the wrong sign. QUESTION: post-hoc lead = relative-strength CONTINUATION book at 10:00/11:30 (gross +$556 WF / +$930 HOLD vs ~$370-490 cost, found by inverting G3 after WF/HOLD seen). Give it its own prereg (<=6 cells, WFPRE only)? Default: yes, queued as sanctioned follow-up.
