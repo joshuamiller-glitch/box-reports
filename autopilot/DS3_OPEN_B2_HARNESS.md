@@ -46,3 +46,9 @@ Reading: wide stops with a long hold (T1200, HOLD, T1030, STRAIL) earn +1.4k to 
 
 ## 4. Power
 Stack weekly-mean MDE of one cell (80% power, WFPRE 75 weeks) is about 8,000 $/wk (sd of the weekly difference ~25,000 $/wk), 13,800 for HOLD-bracket cells; per-trade effect vs a placebo about 8.5 pts (10-lot-equivalent, n~360 in PRE). Family-wise best-of-N over thousands of cells raises the bar further. A null here reads: 'could not have seen a stack gain below about 8k $/wk'.
+
+## 5. Addendum (after the family runs)
+- Family event-builder as-of audit (`o2_famaudit.py`, `out/topen_b2/audit_families.json`): bars starting at/after the signal minute replaced by random numbers, event rebuilt: OR family 250 of 250 and drive family 250 of 250 events reproduced (side and t_sig), positive control (poison from 2 minutes earlier) changes 210 of 250 and 152 of 250; rolling 20-day median unchanged when all later days are poisoned.
+- Gate added after the first block: `min_n` (>= 30 PRE trades; also a small-sample flag below 100 WF trades) because a 5-trade cell passed every other gate; best-of-N null is family-wise (N_total 7,668 for 3.1; 2,304 for 3.2); post-pass placebos for the top-15 cells of every block (`o2_toppost.py`).
+- Usage by the other families: D3O2/D3O3/D3O4 run their groups through the same `run_variant` / `finalize` (groups grp_TOPEN_B2_*, GAP, FADE, PB, PM in out/topen_b2/); their results are in their own reports.
+- Known limits of the harness: quote/print arrays end 12:00 ET (later entries use a no-quote fallback); lock-engine concurrency with the live stack's other positions is the stack sum (no 50-cap/margin replay); fixed 10 lots only in this screen (fixed-R sizing implemented, not scored); mapped/tape bases are not a real-book replay (block (iii)+); the random-clock placebo (b) for hold-to-close brackets has a shorter hold than the real rule, hence the random-direction control (d).
