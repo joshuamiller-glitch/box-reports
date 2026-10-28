@@ -579,3 +579,73 @@ Source DS3_SESSION2_B_washout.md. Basis per that report.
 | WO_TE7_kelt3m_n30_m1.0_rsi_b3_k18 | NY | 181 | 2.41 | 1647 | 2154 | 2.14 | 59.0 | 1173 | -2354 | -2566 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1219 | 114 |
 | WO_ST_pb_b5_x1.5_k10 | NY | 1411 | 18.8 | 594 | 792 | 2.10 | 674 | 925 | -96.7 | -59.7 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 372 | 78 |
 | WO_PB3E_R3_P2_40_1.5R_cci_b5_n40_k18 | NY-AM | 174 | 2.32 | 1695 | 2260 | 2.10 | 90.0 | 915 | -287 | 267 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1014 | 34 |
+
+
+## B-section pyramid: dead pooled, alive in a session (2 independent; 2026-10-28T20:52:20Z)
+Source DS3_SESSION2_B_pyramid.md. Basis per that report.
+| cid | session | n | tpw | mean | mde | t | hold_n | hold_mean | x_mean | y2023_mean | tier | bof_label | label | pool_pre_mean | cluster50 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| T4PY_PB3B_R5_P1_D1_PB_f50_m1_s30_G1 | ASIA | 806 | 10.7 | 1061 | 1264 | 2.35 | 387 | 1266 | -637 | -744 | SESSION-CANDIDATE | BOF:not cleared | nan | -114 | 6 |
+| T4PY_PB3B_R5_P3_D2_N20_f50_m1_s30_G1 | ASIA | 898 | 12.0 | 539 | 722 | 2.09 | 429 | 78.6 | -481 | -521 | SESSION-CANDIDATE | BOF:not cleared | nan | -20.7 | 5 |
+
+
+## B-section tb: dead pooled, alive in a session (3 independent; 2026-10-28T20:54:15Z)
+Source DS3_SESSION2_B_tb.md. Basis per that report.
+| cid | session | n | tpw | mean | mde | t | hold_n | hold_mean | x_mean | y2023_mean | tier | bof_label | label | pool_pre_mean | cluster50 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TB1_ST_k15_T_N | NY-AM | 361 | 4.81 | 2295 | 2116 | 3.04 | 139 | 420 | -586 | -576 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 411 | 2 |
+| TB1_ST_k5_T_N | NY | 605 | 8.07 | 1218 | 1601 | 2.13 | 218 | 688 | 34.9 | -139 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 245 | 17 |
+| TB7_ORBNY_k1_T_N | NY-AM | 609 | 8.12 | 1145 | 1538 | 2.08 | 248 | 567 | 109 | 294 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 588 | 131 |
+
+
+## Section: T-OPEN B2 (D3SB1, item B1) - dead pooled, alive in a session
+11,941 cells with entry clock re-scored by session and 09:30-11:00 sub-window (prereg sha 766047a3...99ac, PREHOLD sha 42ad1b9b7989...). SESSION-CANDIDATE 938 cell-windows / 44 clusters (SESSION-PASS 0); MEASURED-alive 823 / 41 clusters; all NY-AM or its sub-windows; 730 alive windows fail the harness beats_beta gate. Report DS3_SESSION2_B_TOPEN.md.
+| cell | window | n | tpw | PRE mean $ | MDE $ | t | HOLD n | HOLD mean | H25 | H26 | 2023 span | 2023 | 2024 | 2025 | PRE meas | HOLD meas | HOLD 2x | tier | tier MEAS | failed gate | BOF | pooled verdict |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| DR15m_pb3_mv10__c2_X20_120 | W2_0945-1000 | 290 | 3.9 | 2,496 | 1,736 | 4.02 | 118 | 2,024 | 1,036 | 6,587 | -408 | -388 | 2,796 | 1,289 | 1,951 | 1,917 | 1,776 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| DR15m_pb3_mv10__c2_X20_120 | NY-AM | 304 | 4.1 | 2,390 | 1,682 | 3.98 | 126 | 1,858 | 960 | 6,102 | -395 | -349 | 2,553 | 1,299 | 1,860 | 1,740 | 1,610 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| DR15m_pb3_mv10__c2_X30_90 | W2_0945-1000 | 290 | 3.9 | 2,063 | 1,493 | 3.87 | 118 | 1,100 | 427 | 4,209 | 124 | 314 | 2,173 | 910 | 1,617 | 505 | 852 | SESSION-CANDIDATE | FAILS-MEASURED | - | BOF:not cleared | DEAD |
+| DR15m_pb3_mv10__c2_X30_90 | NY-AM | 304 | 4.1 | 1,976 | 1,489 | 3.72 | 126 | 1,164 | 619 | 3,740 | 151 | 218 | 2,118 | 1,000 | 1,540 | 583 | 916 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| DR15m_hl_mv10__c3_X60_120 | NY-AM | 261 | 3.5 | 3,755 | 2,879 | 3.65 | 105 | 847 | 345 | 2,984 | -419 | -353 | 3,115 | 2,401 | 3,639 | 442 | 599 | SESSION-CANDIDATE | FAILS-MEASURED | - | BOF:not cleared | DEAD |
+| DR15m_pb3_mv10__c3_X40_120 | NY-AM | 304 | 4.1 | 2,999 | 2,300 | 3.65 | 126 | 1,822 | 1,087 | 5,297 | 367 | 337 | 3,107 | 1,794 | 3,029 | 1,505 | 1,574 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| LV_RN_BH_F60 | NY-AM | 160 | 2.1 | 2,699 | 2,075 | 3.64 | 89 | 690 | 192 | 3,362 | 359 | -157 | 3,339 | 826 | 2,021 | 142 | 442 | SESSION-CANDIDATE | FAILS-MEASURED | - | BOF:not cleared | DEAD |
+| DR15m_pb3_mv10__c3_X40_120 | W2_0945-1000 | 290 | 3.9 | 3,025 | 2,327 | 3.64 | 118 | 1,786 | 888 | 5,935 | 337 | 466 | 3,039 | 1,713 | 2,958 | 1,472 | 1,538 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| OR15m_stp_le1_F60 | NY-AM | 179 | 2.4 | 2,579 | 1,987 | 3.63 | 72 | 1,560 | 869 | 5,393 | -1,627 | -1,595 | 2,727 | 1,326 | 2,190 | 978 | 1,312 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| DR15m_hl_mv20_F60 | W2_0945-1000 | 188 | 2.5 | 2,789 | 2,162 | 3.61 | 90 | 864 | 789 | 1,129 | -399 | -439 | 2,811 | 1,559 | 2,128 | 565 | 616 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| DR15m_hl_mv20_F60 | NY-AM | 208 | 2.8 | 2,786 | 2,167 | 3.60 | 97 | 1,169 | 1,179 | 1,129 | -320 | -411 | 2,513 | 2,058 | 2,145 | 841 | 920 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| DR15m_hl_mv20_F45 | W2_0945-1000 | 188 | 2.5 | 2,135 | 1,666 | 3.59 | 90 | 1,634 | 1,606 | 1,732 | -538 | -223 | 1,932 | 1,620 | 1,457 | 1,034 | 1,385 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| DR15m_pb3_mv10__c2_X30_120 | W2_0945-1000 | 290 | 3.9 | 2,436 | 1,908 | 3.58 | 118 | 1,150 | 306 | 5,051 | 202 | 484 | 2,940 | 592 | 2,255 | 963 | 691 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+| PB_ORX_T_SCALE | NY-AM | 119 | 1.6 | 3,107 | 2,466 | 3.53 | 58 | 573 | 655 | 258 | -288 | -344 | 3,528 | 1,167 | 3,033 | 326 | 324 | SESSION-CANDIDATE | FAILS-MEASURED | - | BOF:not cleared | DEAD |
+| DR15m_pb3_mv10__c2_X30_120 | NY-AM | 304 | 4.1 | 2,388 | 1,895 | 3.53 | 126 | 1,293 | 605 | 4,546 | 294 | 419 | 2,925 | 768 | 2,208 | 1,107 | 829 | SESSION-CANDIDATE | SESSION-CANDIDATE | - | BOF:not cleared | DEAD |
+
+
+
+## B-section te2: dead pooled, alive in a session (2 independent; 2026-10-28T20:57:21Z)
+Source DS3_SESSION2_B_te2.md. Basis per that report.
+| cid | session | n | tpw | mean | mde | t | hold_n | hold_mean | x_mean | y2023_mean | tier | bof_label | label | pool_pre_mean | cluster50 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TE2_NQ_ST_k15 | NY-AM | 523 | 6.97 | 1293 | 1150 | 3.15 | 197 | 774 | 246 | 220 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 91.3 | 167 |
+| TE2_NQ_ST_k15 | NY | 725 | 9.67 | 854 | 907 | 2.63 | 243 | 747 | 342 | 188 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 91.3 | 167 |
+
+
+## B-section tb2: dead pooled, alive in a session (2 independent; 2026-10-28T20:59:04Z)
+Source DS3_SESSION2_B_tb2.md. Basis per that report.
+| cid | session | n | tpw | mean | mde | t | hold_n | hold_mean | x_mean | y2023_mean | tier | bof_label | label | pool_pre_mean | cluster50 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TB6_t1000_follow_L31 | NY-AM | 363 | 4.84 | 1325 | 1517 | 2.45 | 157 | 369 | -1083 | -1313 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1325 | 40 |
+| TB6_t1000_follow_L31 | NY | 363 | 4.84 | 1325 | 1517 | 2.45 | 157 | 369 | -1083 | -1313 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1325 | 40 |
+
+
+## B-section tr2: dead pooled, alive in a session (1 independent; 2026-10-28T20:59:33Z)
+Source DS3_SESSION2_B_tr2.md. Basis per that report.
+| cid | session | n | tpw | mean | mde | t | hold_n | hold_mean | x_mean | y2023_mean | tier | bof_label | label | pool_pre_mean | cluster50 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TR2_KB_LV1 | NY-AM | 445 | 5.93 | 1025 | 1367 | 2.10 | 196 | 934 | -598 | -785 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 375 | 15 |
+
+
+## B-section tr4: dead pooled, alive in a session (2 independent; 2026-10-28T20:59:35Z)
+Source DS3_SESSION2_B_tr4.md. Basis per that report.
+| cid | session | n | tpw | mean | mde | t | hold_n | hold_mean | x_mean | y2023_mean | tier | bof_label | label | pool_pre_mean | cluster50 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| R5_QUIET_KB | NY-PM | 188 | 2.51 | 2227 | 2369 | 2.63 | 95.0 | 338 | 318 | -635 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 864 | 19 |
+| R5_DW_HM | NY-AM | 217 | 2.89 | 1500 | 1837 | 2.29 | 79.0 | 1236 | -835 | -845 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 774 | 2 |
