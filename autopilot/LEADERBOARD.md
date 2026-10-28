@@ -1,56 +1,56 @@
 # LEADERBOARD (one file, all tracks) - RESEARCH V2 verdicts
 
-Updated 2026-10-28T03:28:01Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
+Updated 2026-10-28T03:58:05Z. Benchmark Set A (corrected P9, live cost): WF $24,975/wk, SD 104,523, maxDD 401,293. Weekly WF test cannot see less than **$24,574/wk** (80% power) for a candidate independent of Set A; a modifier of D2 has a much smaller difference-SD (see MDE column, derived from each cell's CI width).
 Verdicts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}. PASS = base conditions + placebo >= 0.95 + object criterion; CANDIDATE = placebo >= 0.90 and at most one failure (registered in PAPER-ALL); DEAD = anything else. A `*` marks a provisional verdict (evidence listed in the needs column: e.g. paired test not yet run for a trade-modifier, holdout not looked, placebo not computed).
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout d | verdict | exposure | forward | DSR (N trials) | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| T3.2 | ORB_ASIA_15_v1__s60@1.0 | sleeve | weekly | 16,276 [1,553,32,788] | 22,324 | 0.96 | 24,491 | **PASS** | ORB Asia | - | 0.054 (67,903) | [size: +68 NQ lots, port maxDD +100%]  |
-| T3.2 | ORB_ASIA_15_v1__s75@1.0 | sleeve | weekly | 15,455 [926,30,113] | 20,860 | 0.96 | 29,359 | **PASS** | ORB Asia | - | 0.057 (67,903) | [size: +55 NQ lots, port maxDD +81%]  |
-| T3.8A | ES_RSI2_t10 | sleeve | weekly | 12,559 [3,559,22,101] | 13,252 | 0.96 | 14,513 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.241 (67,903) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
-| T3.7rsi2c | RSI2C_s20 | sleeve | weekly | 10,568 [2,294,20,281] | 12,856 | 0.98 | 12,766 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.116 (67,903) |  |
-| T3.6b1 | RSI2_t10 | sleeve | weekly | 10,197 [1,961,20,243] | 13,066 | 0.98 | 10,991 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.076 (67,903) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.976 |
-| T3.2 | ORB_ASIA_15_v1__s60@0.5 | sleeve | weekly | 8,138 [776,16,394] | 11,162 | 0.96 | 12,245 | **PASS** | ORB Asia | - | 0.054 (67,903) | [size: +34 NQ lots, port maxDD +39%]  |
-| T3.2 | ORB_ASIA_15_v1__s75@0.5 | sleeve | weekly | 7,727 [463,15,057] | 10,430 | 0.96 | 14,680 | **PASS** | ORB Asia | - | 0.057 (67,903) | [size: +27 NQ lots, port maxDD +32%]  |
+| T3.2 | ORB_ASIA_15_v1__s60@1.0 | sleeve | weekly | 16,276 [1,553,32,788] | 22,324 | 0.96 | 24,491 | **PASS** | ORB Asia | - | 0.053 (68,203) | [size: +68 NQ lots, port maxDD +100%]  |
+| T3.2 | ORB_ASIA_15_v1__s75@1.0 | sleeve | weekly | 15,455 [926,30,113] | 20,860 | 0.96 | 29,359 | **PASS** | ORB Asia | - | 0.057 (68,203) | [size: +55 NQ lots, port maxDD +81%]  |
+| T3.8A | ES_RSI2_t10 | sleeve | weekly | 12,559 [3,559,22,101] | 13,252 | 0.96 | 14,513 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.240 (68,203) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
+| T3.7rsi2c | RSI2C_s20 | sleeve | weekly | 10,568 [2,294,20,281] | 12,856 | 0.98 | 12,766 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | 0.115 (68,203) |  |
+| T3.6b1 | RSI2_t10 | sleeve | weekly | 10,197 [1,961,20,243] | 13,066 | 0.98 | 10,991 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.076 (68,203) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.976 |
+| T3.2 | ORB_ASIA_15_v1__s60@0.5 | sleeve | weekly | 8,138 [776,16,394] | 11,162 | 0.96 | 12,245 | **PASS** | ORB Asia | - | 0.053 (68,203) | [size: +34 NQ lots, port maxDD +39%]  |
+| T3.2 | ORB_ASIA_15_v1__s75@0.5 | sleeve | weekly | 7,727 [463,15,057] | 10,430 | 0.96 | 14,680 | **PASS** | ORB Asia | - | 0.057 (68,203) | [size: +27 NQ lots, port maxDD +32%]  |
 | NM_E | E:ES_RSI2_t10 | sleeve | weekly | 6,279 [1,779,11,051] | 6,140 | 0.96 | 7,257 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.962 |
-| T3.8B | GSHORT_t90 | sleeve | weekly | 5,941 [-2,995,14,754] | 12,686 | 0.96 | 7,862 | **PASS** | GSHORT | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.012 (67,903) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.957 |
+| T3.8B | GSHORT_t90 | sleeve | weekly | 5,941 [-2,995,14,754] | 12,686 | 0.96 | 7,862 | **PASS** | GSHORT | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.012 (68,203) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.957 |
 | NM_E | E:NQ_RSI2C_s20 | sleeve | weekly | 5,284 [1,147,10,141] | 6,140 | 0.98 | 6,383 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) [MERGED into DIP | - |  |
 | NM_E | E:NQ_RSI2CC_s20 | sleeve | weekly | 5,284 [1,147,10,141] | 6,140 | 0.98 | 6,383 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - |  |
 | NM_E | E:NQ_RSI2_t10 | sleeve | weekly | 5,099 [980,10,121] | 6,140 | 0.98 | 5,496 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.976 |
 | NM_E | E:ORB_ASIA_15_v1_s75 | sleeve | weekly | 4,472 [268,8,714] | 6,140 | 0.96 | 8,496 | **PASS** | ORB Asia | ON TRACK (0 weeks live; AWAITING EVALUAT | - |  |
 | NM_E | E:ORB_ASIA_15_v1_s60 | sleeve | weekly | 4,462 [426,8,988] | 6,140 | 0.96 | 6,713 | **PASS** | ORB Asia | ON TRACK (0 weeks live; AWAITING EVALUAT | - |  |
-| T3.2 | ORB_ASIA_15_v1__s60@0.25 | sleeve | weekly | 4,069 [388,8,197] | 5,581 | 0.96 | 6,123 | **PASS** | ORB Asia | - | 0.054 (67,903) | [size: +17 NQ lots, port maxDD +12%]  |
-| T3.2 | ORB_ASIA_15_v1__s75@0.25 | sleeve | weekly | 3,864 [232,7,528] | 5,215 | 0.96 | 7,340 | **PASS** | ORB Asia | - | 0.057 (67,903) | [size: +14 NQ lots, port maxDD +9%]  |
+| T3.2 | ORB_ASIA_15_v1__s60@0.25 | sleeve | weekly | 4,069 [388,8,197] | 5,581 | 0.96 | 6,123 | **PASS** | ORB Asia | - | 0.053 (68,203) | [size: +17 NQ lots, port maxDD +12%]  |
+| T3.2 | ORB_ASIA_15_v1__s75@0.25 | sleeve | weekly | 3,864 [232,7,528] | 5,215 | 0.96 | 7,340 | **PASS** | ORB Asia | - | 0.057 (68,203) | [size: +14 NQ lots, port maxDD +9%]  |
 | NM_E | E:GSHORT_t90 | sleeve | weekly | 2,970 [-1,498,7,377] | 6,140 | 0.96 | 3,931 | **PASS** | GSHORT | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.957 |
-| T3.7rsi2c | RSI2CC_s20 | sleeve | weekly | 2,646 [574,5,078] | 3,219 | 0.98 | 3,196 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.116 (67,903) |  |
-| T3.2 | ORB_ASIA_30_v1__s60@1.0 | sleeve | weekly | 16,003 [-464,32,465] | 23,535 | 0.98 | 26,620 | **CANDIDATE** | ORB Asia | - | 0.040 (67,903) | [size: +67 NQ lots, port maxDD +102%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
-| T3.2 | ORB_ASIA_30_v1__s75@1.0 | sleeve | weekly | 14,390 [-2,059,30,776] | 23,468 | 0.96 | 28,509 | **CANDIDATE** | ORB Asia | - | 0.032 (67,903) | [size: +56 NQ lots, port maxDD +108%] -year_share>60% |
-| T3.2 | ORB_ASIA_30_v1__s50@1.0 | sleeve | weekly | 11,468 [-4,170,27,370] | 22,542 | 0.95 | 20,400 | **CANDIDATE** | ORB Asia | - | 0.011 (67,903) | [size: +80 NQ lots, port maxDD +104%] -year_share>60% |
+| T3.7rsi2c | RSI2CC_s20 | sleeve | weekly | 2,646 [574,5,078] | 3,219 | 0.98 | 3,196 | **PASS** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.115 (68,203) |  |
+| T3.2 | ORB_ASIA_30_v1__s60@1.0 | sleeve | weekly | 16,003 [-464,32,465] | 23,535 | 0.98 | 26,620 | **CANDIDATE** | ORB Asia | - | 0.040 (68,203) | [size: +67 NQ lots, port maxDD +102%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
+| T3.2 | ORB_ASIA_30_v1__s75@1.0 | sleeve | weekly | 14,390 [-2,059,30,776] | 23,468 | 0.96 | 28,509 | **CANDIDATE** | ORB Asia | - | 0.032 (68,203) | [size: +56 NQ lots, port maxDD +108%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s50@1.0 | sleeve | weekly | 11,468 [-4,170,27,370] | 22,542 | 0.95 | 20,400 | **CANDIDATE** | ORB Asia | - | 0.011 (68,203) | [size: +80 NQ lots, port maxDD +104%] -year_share>60% |
 | NM_B | B06_SetB_pboff_noprofit_vsA | sizing-lock-session | weekly | 10,566 [-327,20,628] | 15,151 | 1.00 | 13,110 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B05_SetB_pboff_vsA | sizing-lock-session | weekly | 10,507 [-273,20,378] | 14,917 | 1.00 | 12,226 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B06_SetB_pb3R_noprofit_vsA | sizing-lock-session | weekly | 9,125 [-1,522,18,982] | 14,811 | 1.00 | 13,851 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B05_SetB_pb3R_vsA | sizing-lock-session | weekly | 9,066 [-1,773,18,525] | 14,504 | 1.00 | 12,967 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.6b1 | RSI2T_t10 | sleeve | weekly | 8,882 [1,096,19,045] | 12,828 | 0.91 | 10,606 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.044 (67,903) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.911; -was PASS |
-| T3.7b4 | IBS_t20_n1 | sleeve | weekly | 8,465 [420,18,131] | 12,658 | 0.93 | 10,973 | **CANDIDATE** | IBS | ON TRACK (0 weeks live) | 0.030 (67,903) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.932 |
+| T3.6b1 | RSI2T_t10 | sleeve | weekly | 8,882 [1,096,19,045] | 12,828 | 0.91 | 10,606 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.044 (68,203) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.911; -was PASS |
+| T3.7b4 | IBS_t20_n1 | sleeve | weekly | 8,465 [420,18,131] | 12,658 | 0.93 | 10,973 | **CANDIDATE** | IBS | ON TRACK (0 weeks live) | 0.030 (68,203) | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.932 |
 | NM_B | B06_SetB_pb4R_noprofit_vsA | sizing-lock-session | weekly | 8,442 [-2,458,18,693] | 15,356 | 1.00 | 10,434 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B05_SetB_pb4R_vsA | sizing-lock-session | weekly | 8,383 [-2,578,18,411] | 15,153 | 1.00 | 9,550 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_B | B07_SetB_Rscaled_pb4R_vsA | sizing-lock-session | weekly | 8,344 [-1,554,17,422] | 13,514 | 1.00 | 11,151 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.8A | YM_RSI2_t10 | sleeve | weekly | 8,274 [-87,17,321] | 12,442 | 0.95 | 11,303 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.046 (67,903) | -year_share>60%; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.951; -was DEAD |
+| T3.8A | YM_RSI2_t10 | sleeve | weekly | 8,274 [-87,17,321] | 12,442 | 0.95 | 11,303 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live; AWAITING EVALUAT | 0.046 (68,203) | -year_share>60%; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.951; -was DEAD |
 | NM_B | B01_SetB | sizing-lock-session | weekly | 8,131 [-80,16,029] | 11,517 | 1.00 | 5,959 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live) | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
 | NM_D | T14_S_s50_t1.5_n14 | trade-modifier | paired | 8016.07 pts/tr [-4,440,20,357] | 17,591 | 0.91 | 7,390 | **CANDIDATE** | T14_S_s50_t1.5_n14 | ON TRACK (0 weeks live) | - | -CANDIDATE by user ruling 2026-10-25 (scorer reads DEAD: paired CI includes 0, year share 68%, maxDD +5.7k, pl |
 | NM_B | B06_SetB_pb2R_noprofit_vsA | sizing-lock-session | weekly | 8,016 [-522,16,241] | 12,031 | 1.00 | 6,479 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.2 | ORB_ASIA_30_v1__s60@0.5 | sleeve | weekly | 8,001 [-232,16,232] | 11,767 | 0.98 | 13,310 | **CANDIDATE** | ORB Asia | - | 0.040 (67,903) | [size: +33 NQ lots, port maxDD +44%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
+| T3.2 | ORB_ASIA_30_v1__s60@0.5 | sleeve | weekly | 8,001 [-232,16,232] | 11,767 | 0.98 | 13,310 | **CANDIDATE** | ORB Asia | - | 0.040 (68,203) | [size: +33 NQ lots, port maxDD +44%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
 | T1 | T14_S_s50_t1.5_n14 | trade-modifier | weekly(paired pending) | 7,914 [-5,904,20,799] | 19,085 | 0.91 | 7,325 | **CANDIDATE** | T14_S_s50_t1.5_n14 | ON TRACK (0 weeks live) | - | -CANDIDATE by user ruling 2026-10-25 (scorer reads DEAD: paired CI includes 0, year share 68%, maxDD +5.7k, pl |
-| T3.2 | ORB_ASIA_30_v1__s75@0.5 | sleeve | weekly | 7,195 [-1,030,15,388] | 11,734 | 0.96 | 14,254 | **CANDIDATE** | ORB Asia | - | 0.032 (67,903) | [size: +28 NQ lots, port maxDD +47%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s75@0.5 | sleeve | weekly | 7,195 [-1,030,15,388] | 11,734 | 0.96 | 14,254 | **CANDIDATE** | ORB Asia | - | 0.032 (68,203) | [size: +28 NQ lots, port maxDD +47%] -year_share>60% |
 | NM_B | B07_SetB_Rscaled_pb2R_vsA | sizing-lock-session | weekly | 6,902 [-1,070,14,596] | 11,126 | 1.00 | 1,611 | **CANDIDATE** | Set B / PBDAY lock variants | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -mean_not_down&(SD|maxDD down with CI) OR mean_up&maxDD_not_worse |
-| T3.2 | ORB_ASIA_30_v1__s50@0.5 | sleeve | weekly | 5,734 [-2,085,13,685] | 11,271 | 0.95 | 10,200 | **CANDIDATE** | ORB Asia | - | 0.011 (67,903) | [size: +40 NQ lots, port maxDD +45%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s50@0.5 | sleeve | weekly | 5,734 [-2,085,13,685] | 11,271 | 0.95 | 10,200 | **CANDIDATE** | ORB Asia | - | 0.011 (68,203) | [size: +40 NQ lots, port maxDD +45%] -year_share>60% |
 | NM_E | E:COMB_c3_R | sleeve | weekly | 5,118 [1,131,9,760] | 6,140 | 0.97 | 4,818 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.966; -worst of 1.5x/2x/1-s tape stre |
 | NM_E | E:NQ_RSI2T_t10 | sleeve | weekly | 4,441 [548,9,523] | 6,140 | 0.91 | 5,303 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.911; -was PASS |
 | NM_E | E:NQ_IBS_t20_n1 | sleeve | weekly | 4,232 [210,9,065] | 6,140 | 0.93 | 5,486 | **CANDIDATE** | IBS | ON TRACK (0 weeks live) | - | -placebo<0.95; -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.932 |
-| T3.2 | ORB_ASIA_30_v1__s60@0.25 | sleeve | weekly | 4,001 [-116,8,116] | 5,884 | 0.98 | 6,655 | **CANDIDATE** | ORB Asia | - | 0.040 (67,903) | [size: +17 NQ lots, port maxDD +19%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
-| T3.2 | ORB_ASIA_30_v1__s75@0.25 | sleeve | weekly | 3,598 [-515,7,694] | 5,867 | 0.96 | 7,127 | **CANDIDATE** | ORB Asia | - | 0.032 (67,903) | [size: +14 NQ lots, port maxDD +21%] -year_share>60% |
-| T3.2 | ORB_ASIA_30_v1__s50@0.25 | sleeve | weekly | 2,867 [-1,043,6,843] | 5,636 | 0.95 | 5,100 | **CANDIDATE** | ORB Asia | - | 0.011 (67,903) | [size: +20 NQ lots, port maxDD +20%] -year_share>60% |
-| T3.8A | COMB_c3_R | sleeve | weekly | 2,831 [307,5,812] | 3,934 | 0.97 | 3,490 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.091 (67,903) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.966; -worst of 1.5x/2x/1-s tape stre |
+| T3.2 | ORB_ASIA_30_v1__s60@0.25 | sleeve | weekly | 4,001 [-116,8,116] | 5,884 | 0.98 | 6,655 | **CANDIDATE** | ORB Asia | - | 0.040 (68,203) | [size: +17 NQ lots, port maxDD +19%] -worst of 1.5x/2x/1-s tape stress (T3.10b) = CANDIDATE; -was PASS |
+| T3.2 | ORB_ASIA_30_v1__s75@0.25 | sleeve | weekly | 3,598 [-515,7,694] | 5,867 | 0.96 | 7,127 | **CANDIDATE** | ORB Asia | - | 0.032 (68,203) | [size: +14 NQ lots, port maxDD +21%] -year_share>60% |
+| T3.2 | ORB_ASIA_30_v1__s50@0.25 | sleeve | weekly | 2,867 [-1,043,6,843] | 5,636 | 0.95 | 5,100 | **CANDIDATE** | ORB Asia | - | 0.011 (68,203) | [size: +20 NQ lots, port maxDD +20%] -year_share>60% |
+| T3.8A | COMB_c3_R | sleeve | weekly | 2,831 [307,5,812] | 3,934 | 0.97 | 3,490 | **CANDIDATE** | dip-buy RSI2 family | ON TRACK (0 weeks live) | 0.091 (68,203) | -placebo of record = min(5000-draw WF, 5000-draw pre-2024 fresh seed) = 0.966; -worst of 1.5x/2x/1-s tape stre |
 | T4 | T4.2_Y4 | execution | paired | 0.05 pts/tr [-2,762,2,988] | 4,109 | 0.21 | -2,658 | **CANDIDATE** | T4.2_Y4 touch-join | ON TRACK (0 weeks live; AWAITING EVALUAT | - | -year_share>60% |
 | T3_8 | NQ_RSI2_t10 | sleeve | - | - [36,301] | 189 | 0.99 | - | **PENDING*** | dip-buy RSI2 family | ON TRACK (0 weeks live) | - | ?no scored effect yet |
 | T3_8 | NQ_IBS_t20_n1 | sleeve | - | - [-24,426] | 321 | 0.95 | - | **PENDING*** | IBS | ON TRACK (0 weeks live) | - | ?no scored effect yet |
@@ -748,12 +748,12 @@ See also autopilot/NEARMISS_RESCORE.md (near-miss re-score / forward register; i
 
 See also autopilot/FORWARD_REGISTER.md (near-miss re-score / forward register; its cells are listed in the table when their rows land in l2vast/struct48/rows).
 
-Ledger: PRED corrected 27,744 + STRUCT48 40,159 = cumulative 67,903 trials.
+Ledger: PRED corrected 27,744 + STRUCT48 40,459 = cumulative 68,203 trials.
 
 <!--DS3-BEGIN-->
 ## DS3 (second strategy container; rows l2vast/ds3/rows/*.json; DS3 section rewritten every 2 h by l2vast/ds3/code/ds3_lead.py)
 
-Updated 2026-10-28T03:24:38Z. DS3 cells: 25253; verdicts {'DEAD': 24223, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
+Updated 2026-10-28T03:54:49Z. DS3 cells: 25553; verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}. Verdict by s48score.verdict (object-type criteria). Benchmark for the delta column is Set A unless the row says otherwise; DS3 inclusion criteria per DIRECTIVE_DS3 (+ addenda): standalone holdout > 0, marginal portfolio Sharpe up, >= 3 trades/wk, executable from NT8 chart data, placebo >= 0.95, 2023-04..2024-01 sign agrees. "-" = field not yet supplied by the owning track.
 
 | track | cell | object | test | effect $/wk (CI) | MDE $/wk | placebo | holdout | 2023-04..2024-01 | trades/wk | executability | verdict | forward | passed / failed / needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -25460,6 +25460,306 @@ Updated 2026-10-28T03:24:38Z. DS3 cells: 25253; verdicts {'DEAD': 24223, 'CANDID
 | DS3_TICT_IC7 | IF_15m_tg_pd_sz4 | signal | - | - - | - | - | - | - | - | mapped only (resting limit / stop entry / structural bracket: not priceable by the market-only direct arms) | **DEAD** | - |  |
 | DS3_TICT_IC7 | IF_15m_tg_pd_sz8 | signal | - | - - | - | - | - | - | - | mapped only (resting limit / stop entry / structural bracket: not priceable by the market-only direct arms) | **DEAD** | - |  |
 | DS3_TICT_IC7 | IF_5m_tg_pd_sw | signal | - | - - | - | - | - | - | - | mapped only (resting limit / stop entry / structural bracket: not priceable by the market-only direct arms) | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sw3_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sw5_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sw8_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sw5_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sw5_a05 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sw5_a10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_hl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_vw_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_psl_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sig0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sw5_5_fix | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_st_sw5_5_m20 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_sw1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_on | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_or | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_vp2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_va | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_fib10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_fib2618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_ropp | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_tg_rh2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_dy_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_dy_u2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_dy_trail | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_dy_brk | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST_dy_trail_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sw3_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sw5_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sw8_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sw5_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sw5_a05 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sw5_a10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_hl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_vw_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_psl_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sig0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sw5_5_fix | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_st_sw5_5_m20 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_sw1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_on | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_or | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_vp2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_va | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_fib10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_fib2618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_ropp | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_tg_rh2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_dy_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_dy_u2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_dy_trail | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_dy_brk | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_HM_dy_trail_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sw3_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sw5_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sw8_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sw5_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sw5_a05 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sw5_a10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_hl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_vw_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_psl_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sig0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sw5_5_fix | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_st_sw5_5_m20 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_sw1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_on | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_or | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_vp2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_va | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_fib10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_fib2618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_ropp | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_tg_rh2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_dy_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_dy_u2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_dy_trail | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_dy_brk | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB_dy_trail_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sw3_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sw5_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sw8_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sw5_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sw5_a05 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sw5_a10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_hl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_vw_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_psl_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sig0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sw5_5_fix | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_st_sw5_5_m20 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_sw1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_on | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_or | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_vp2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_va | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_fib10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_fib2618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_ropp | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_tg_rh2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_dy_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_dy_u2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_dy_trail | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_dy_brk | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_SM_dy_trail_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sw3_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sw5_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sw8_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sw5_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sw5_a05 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sw5_a10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_hl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_vw_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_psl_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sig0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sw5_5_fix | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_st_sw5_5_m20 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_sw1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_on | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_or | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_vp2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_va | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_fib10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_fib2618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_ropp | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_tg_rh2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_dy_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_dy_u2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_dy_trail | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_dy_brk | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_EM_dy_trail_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_st_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_st_sw5_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_st_sw8_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_st_hl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_tg_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_tg_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_tg_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_dy_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_dy_trail | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR5_P1_dy_brk | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_st_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_st_sw5_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_st_sw8_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_st_hl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_tg_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_tg_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_tg_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_dy_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_dy_trail | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_PBR60_P2_dy_brk | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_st_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_st_sw5_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_st_sw8_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_st_hl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_tg_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_tg_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_tg_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_dy_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_dy_trail | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ER4_dy_brk | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sig_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sig_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sig_1a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw3_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw3_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw3_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw5_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw8_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw8_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw8_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw8_1a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_hl_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_hl_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_hl_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_vw_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_vw_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_vw_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_psl_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_psl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_psl_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_psl_1a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw5_5_m15x90 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw5_5_m20x120 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sig_5_r1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw5_5_r1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw8_5_r1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_hl_5_r1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw5_5_r2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw8_5_r2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST7_st_sw3_5_fix | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_tg_poc | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_tg_hvn | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_tg_lvn | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_tg_rmid | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_tg_rh1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_tg_sw2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_tg_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_tg_u2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_ropp | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_fib10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_va | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_on | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_or | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_hvn | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_rh2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_sw1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sw5_vp2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_hl_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_hl_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_hl_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sig5_sw1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sig5_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_cb_sig5_fib10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_dy_trail_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_dy_trail_hl5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_dy_brk_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_ST8_dy_trail_sw8 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sig_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sig_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sig_1a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw3_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw3_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw3_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw5_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw8_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw8_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw8_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw8_1a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_hl_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_hl_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_hl_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_vw_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_vw_10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_vw_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_psl_0 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_psl_5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_psl_05a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_psl_1a | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw5_5_m15x90 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw5_5_m20x120 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sig_5_r1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw5_5_r1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw8_5_r1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_hl_5_r1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw5_5_r2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw8_5_r2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB7_st_sw3_5_fix | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_tg_poc | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_tg_hvn | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_tg_lvn | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_tg_rmid | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_tg_rh1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_tg_sw2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_tg_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_tg_u2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_vp1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_ropp | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_fib10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_va | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_on | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_or | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_hvn | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_rh2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_sw1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sw5_vp2 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_hl_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_hl_fib1618 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_hl_pd | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sig5_sw1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sig5_u1 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_cb_sig5_fib10 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_dy_trail_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_dy_trail_hl5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_dy_brk_sig5 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
+| DS3_STRUCTBRACKET | SB_KB8_dy_trail_sw8 | signal | - | - - | - | - | - | - | - | - | **DEAD** | - |  |
 | DS3_TBRACKET | BAS_ST_ASIA_t30_s40 | ? | - | - - | - | - | - | - | - | - | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | BAS_ST_ASIA_t30_s60 | ? | - | - - | - | - | - | - | - | - | **ERROR** | - | -KeyError('effect_pts') |
 | DS3_TBRACKET | BAS_ST_ASIA_t30_s75 | ? | - | - - | - | - | - | - | - | - | **ERROR** | - | -KeyError('effect_pts') |
