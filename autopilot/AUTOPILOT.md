@@ -18,3 +18,6 @@ Sections 0 inventory (+purchase list, no buys w/o OK), 1 time-of-day maps (ES,RT
 
 ## 2026-10-28 USER DIRECTIVE: T-DIVERSIFY-2 (full text autopilot/DIRECTIVE_DIVERSIFY2_20261028.md)
 A stack audit (where it loses/idles), B market-neutral pairs, C scheduled-event books (RECONSTRUCTED calendar), D stack-state conditional books, E MBO setups audit, F night-session map, G internals NEEDS, H portfolio+specs. Reports DS3_DIV2_A_AUDIT, _B.._F, _FINAL (one number: $ in stack's 20 worst weeks at 20% risk).
+
+## 2026-10-28 USER DIRECTIVE: T-STACK (full text autopilot/DIRECTIVE_STACK_20261028.md)
+Fix the stack where the audit says it loses: A PRE-derived loss-slot blocks/halving, B ex-ante range-day rules, C chop-week de-risking (stack-state), D same-direction concurrency caps, E slower-timeframe trend books (KB/PE/ST/HM), F combine passers, G live-eligible specs. Sizing/lock/block/timeframe rules on EXISTING books; selection on PRE only, prereg before HOLD, placebos, paired by week, MDE, F = total cells. Reports DS3_STACK_A..F.md, DS3_STACK_FINAL.md; MORNING.md every 2 h.
