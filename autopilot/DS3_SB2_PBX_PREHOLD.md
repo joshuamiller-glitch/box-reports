@@ -1,0 +1,15 @@
+# DS3_SB2_PBX_PREHOLD - PRE-selected cell x session list (D3SB2)
+
+Written 2026-10-28T21:08Z BEFORE any HOLD or X row of this family was read into a statistic. Prereg sha256 2b37f030256abc36baf9124f833f8b525ba66763ae7928b329be7204a3de5cd5.
+Rule (PRE 2024-02..2025-06 only): n>=100, mean>0, week-cluster CI lower bound>0, by entry session. Cells 374, F=2618, clusters 73, F_eff=511. SELECTED cell-sessions: 9 (9 cells, 4 clusters). By session: ASIA 1, LONDON 7, NY-AM 1
+One HOLD look + one X look for exactly this list. Columns: cid|session|n|tpw|mean|lo|t|mde|cluster
+
+PBX_PRO_ER4_EMA5_f60_SW|LONDON|137|1.83|3573.6|840.0|2.60|3841.4|72
+PBX_PB3B_R5_P2_f40_T2|ASIA|609|8.12|1636.1|292.6|2.43|1887.9|70
+PBX_PRO_ER4_EMA5_f60_TR30|LONDON|129|1.72|1839.6|248.8|2.30|2235.5|72
+PBX_PB3B_R5_P2_f60_T3|NY-AM|347|4.63|2131.5|209.6|2.21|2700.8|70
+PBX_PRO_ER4_EMA5_f40_SW|LONDON|137|1.83|4017.7|384.8|2.20|5105.1|72
+PBX4_PBS_f60_T3_DFLIP|LONDON|183|2.44|3091.6|248.8|2.17|3994.7|64
+PBX3_PBS_f60_SW_SE|LONDON|348|4.64|1637.8|104.0|2.13|2155.4|40
+PBX_PRO_ER4_EMA5_f60_T1|LONDON|137|1.83|2118.7|66.6|2.06|2883.8|72
+PBX_PRO_ER4_EMA5_f40_T1|LONDON|137|1.83|2020.6|5.2|2.00|2832.1|72

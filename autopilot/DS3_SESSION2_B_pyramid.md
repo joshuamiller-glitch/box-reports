@@ -1,6 +1,6 @@
 # DS3_SESSION2_B_pyramid - T-PYRAMID entry-clock re-run and session scoring
 
-Written 2026-10-28T20:52:20Z. Research only; no live/execution-server/chart change; label days after 2026-02-06 never read. Code l2vast/ds3/code/sb3/, outputs l2vast/ds3/out/sb3/pyramid/. Prereg l2vast/ds3/prereg/SB3_pyramid_prereg.md sha256 70b6b539d1047bc568c5ac711191b905b8fd84ac87bb5d8ab8aed4a631bbe085; PREHOLD autopilot/DS3_SESSION2_B_pyramid_PREHOLD.md sha256 58a6f9a09270e40fb456bdb38bf492e5df1f7b5938275a91bce25d5e9a033dee (written before HOLD/X; one HOLD look + one X look logged in out/sb3/looks.jsonl).
+Written 2026-10-28T21:16:48Z. Research only; no live/execution-server/chart change; label days after 2026-02-06 never read. Code l2vast/ds3/code/sb3/, outputs l2vast/ds3/out/sb3/pyramid/. Prereg l2vast/ds3/prereg/SB3_pyramid_prereg.md sha256 70b6b539d1047bc568c5ac711191b905b8fd84ac87bb5d8ab8aed4a631bbe085; PREHOLD autopilot/DS3_SESSION2_B_pyramid_PREHOLD.md sha256 58a6f9a09270e40fb456bdb38bf492e5df1f7b5938275a91bce25d5e9a033dee (written before HOLD/X; one HOLD look + one X look logged in out/sb3/looks.jsonl).
 
 ## 1. Re-run, reproduction and basis
 Re-run of the original 1-s path sequential simulation (py_lib.simulate_seq/build_seq with the original cells py_cells.CELLS+CELLS_B; tier-4 through t4_pycore with its stop/target/lots), one position per trade: pnl = sum over legs of 200*u*(pe-0.5) - 48.4*u (u in 10-lot units, tier-4 native lots), unlocked, i.e. the tradenet of the original paired test; entry time = main-leg et_in (ET, bar end stamp as in the ledger convention). Basis: main leg DIRECT P9 / T-ENTRY S10x1+XJ3 where available else mapped; adds and changed exits MAPPED; 'cons' = no join bonus on modified stops (the verdict basis of the source), 'plain' = year x exit haircut (upper bound, stated by the source as not registered). Adds are not a plain entry+bracket: pyramid survivors cannot go to the fixed-bracket replay queue as is (listed separately).
@@ -85,9 +85,27 @@ failed_gate empty = passes the PRE and HOLD gates. HOLD columns are blank for ce
 
 
 ## 5. Dead pooled, alive in a session
-2 cell-sessions (2 cells, 2 independent). Top 30:
+131 cell-sessions (86 cells, 20 independent). Top 30:
 | cid | session | n | tpw | mean | mde | t | hold_n | hold_mean | h25_mean | h26_mean | x_mean | y2023_mean | y2024_mean | y2025_mean | y2026_mean | tier | bof_label | label | pool_pre_mean | cluster50 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| T4PY_PB3B_R5_P1_D1_PB_f50_m1_s30_G1 | ASIA | 806 | 10.7 | 1061 | 1264 | 2.35 | 387 | 1266 | 1499 | 466 | -637 | -744 | 930 | 1301 | 466 | SESSION-CANDIDATE | BOF:not cleared | nan | -114 | 6 |
-| T4PY_PB3B_R5_P3_D2_N20_f50_m1_s30_G1 | ASIA | 898 | 12.0 | 539 | 722 | 2.09 | 429 | 78.6 | 38.8 | 215 | -481 | -521 | 420 | 371 | 215 | SESSION-CANDIDATE | BOF:not cleared | nan | -20.7 | 5 |
+| PY_plain_KB_D2_N15_f50_m2_s15_G1 | NY | 2768 | 36.9 | 663 | 362 | 5.14 | 1192 | 546 | 395 | 1290 | -290 | -323 | 486 | 644 | 1290 | SESSION-PASS | BOF_F:clear | DEAD | 638 | 2 |
+| PY_plain_KB_D2_N15_f50_m2_s15_G1 | NY-AM | 1480 | 19.7 | 847 | 522 | 4.54 | 692 | 661 | 557 | 1167 | -385 | -397 | 578 | 867 | 1167 | SESSION-CANDIDATE | BOF_Feff:clear | DEAD | 638 | 2 |
+| PY_plain_KB_D2_N15_f50_m2_s15_G1 | ASIA | 1553 | 20.7 | 745 | 460 | 4.53 | 746 | 1111 | 1030 | 1383 | -115 | -118 | 632 | 914 | 1383 | SESSION-CANDIDATE | BOF_Feff:clear | DEAD | 638 | 2 |
+| PY_plain_ST10_D2_N30_f50_m2_s15_G1 | NY | 1978 | 26.4 | 733 | 506 | 4.06 | 940 | 1085 | 924 | 1772 | -341 | -280 | 668 | 797 | 1772 | SESSION-CANDIDATE | BOF_Feff:clear | DEAD | 516 | 4 |
+| PY_plain_HM10_D2_N30_f100_m1_s30_G1 | NY-AM | 653 | 8.71 | 1223 | 844 | 4.06 | 299 | 925 | 399 | 3486 | -59.9 | 145 | 925 | 862 | 3486 | SESSION-CANDIDATE | BOF_Feff:clear | DEAD | 571 | 1 |
+| PY_plain_HM10_D2_N30_f100_m1_s30_G1 | NY | 1280 | 17.1 | 765 | 646 | 3.32 | 552 | 579 | 297 | 1974 | -394 | -414 | 774 | 461 | 1974 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 571 | 1 |
+| PY_plain_HM10_D1_N30_f50_m1_s30_G3 | ASIA | 732 | 9.76 | 1400 | 1208 | 3.24 | 340 | 1580 | 1212 | 3079 | -797 | -1141 | 1521 | 1274 | 3079 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 850 | 1 |
+| PY_plain_ST10_D2_N30_f50_m2_s15_G1 | NY-AM | 1249 | 16.7 | 800 | 736 | 3.04 | 622 | 1651 | 1510 | 2193 | -355 | -171 | 550 | 1204 | 2193 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 516 | 4 |
+| PY_plain_EM_D1_N45_f50_m1_s30_G3 | ASIA | 255 | 3.40 | 2481 | 2705 | 2.57 | 130 | 1867 | 676 | 6871 | -781 | -865 | 2215 | 1623 | 6871 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 1432 | 0 |
+| PY_plain_ST10_D3_N30_f50_m1_s30_G1 | ASIA | 813 | 10.8 | 884 | 985 | 2.51 | 384 | 624 | 291 | 1730 | 484 | 379 | 903 | 635 | 1730 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 358 | 4 |
+| PY_plain_SM_D1_N30_f50_m1_s30_G1 | ASIA | 244 | 3.25 | 2053 | 2379 | 2.42 | 113 | 1559 | 1537 | 1643 | 1304 | 1432 | 1592 | 2102 | 1643 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 796 | 3 |
+| PY_plain_KB_D2_N15_f50_m2_s15_G1 | NY-PM | 1288 | 17.2 | 453 | 525 | 2.42 | 500 | 386 | 171 | 1465 | -176 | -233 | 374 | 384 | 1465 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 638 | 2 |
+| T4PY_PB3B_R5_P1_D2_N30_f50_m1_s30_G3 | ASIA | 929 | 12.4 | 854 | 990 | 2.41 | 473 | 462 | 296 | 1047 | -839 | -1029 | 864 | 600 | 1047 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 271 | 6 |
+| PY_plain_KB_D2_N15_f50_m2_s15_G1 | LONDON | 1462 | 19.5 | 518 | 601 | 2.41 | 635 | 675 | 844 | 60.1 | 7.14 | -65.5 | -123 | 1085 | 60.1 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 638 | 2 |
+| PY_plain_SM_D1_PB_f50_m1_s30_G1 | NY-AM | 233 | 3.11 | 1931 | 2346 | 2.30 | 103 | 1975 | 2049 | 1459 | -94.9 | -285 | 2450 | 1450 | 1459 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 479 | 3 |
+| T4PY_PB3B_R5_P3_D3_N30_f50_m1_s30_G3 | ASIA | 713 | 9.51 | 1006 | 1254 | 2.25 | 327 | 835 | 802 | 951 | -309 | -476 | 1022 | 912 | 951 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 357 | 5 |
+| PY_plain_SM_D1_PB_f50_m1_s30_G1 | NY | 342 | 4.56 | 1424 | 1811 | 2.20 | 135 | 1363 | 908 | 3830 | -976 | -1277 | 1636 | 940 | 3830 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 479 | 3 |
+| T4PY_PRO_Z20_t1.0_D1_SG_f50_m1_s30_G1 | ASIA | 929 | 12.4 | 912 | 1209 | 2.11 | 441 | 969 | 317 | 3137 | 728 | 277 | 1262 | 574 | 3137 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 323 | 16 |
+| T4PY_PB3B_R5_P1_D2_N30_f50_m1_s30_G3 | NY-AM | 1157 | 15.4 | 631 | 850 | 2.08 | 517 | 179 | 114 | 428 | 661 | 874 | 711 | 230 | 428 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 271 | 6 |
+| PY_plain_EM_D1_SG_f50_m1_s30_G3 | NY-AM | 190 | 2.53 | 1559 | 2113 | 2.07 | 80.0 | 982 | 981 | 986 | 22.8 | 15.5 | 1899 | 887 | 986 | SESSION-CANDIDATE | BOF:not cleared | DEAD | 466 | 0 |
 

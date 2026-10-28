@@ -12,7 +12,7 @@ Written 2026-10-28 20:59Z. Research only; no live, execution-server or chart cha
 - **CLOSE: no SESSION-CANDIDATE in these six families on the MEASURED basis.** Stored-only (dynamic exits, MEASURED n/a): B3_F01. 
 - **NY: 3 SESSION-CANDIDATE cell-sessions on the analytic MEASURED basis (PRO 1, T-PB 1, T-TREND-TR1 1); best by HOLD: PRO3B_OPEN0930_DRV38_T1 (PRO) +7.90 pts/trade MEASURED (MDE 17.7 pts), PRE +8.45, X(2023) -3.20.** None is a SESSION-PASS (best-of-F not cleared). 
 
-All alive counts are ANALYTIC MEASURED (entry +1 tick, mapped stop credit removed, stop slip 0.85 pt at 1 lot); the analytic is about 0.8 pt/trade optimistic against the one replay check available (PB7 ASIA), the replay of out/sd2a/survivors_for_A.parquet decides. No family produced a SESSION-PASS: no PRE p-value clears p x F_tot < 0.05 (F_tot=5,100 screened cell-sessions).
+Every best-cell HOLD mean above lies INSIDE its own per-trade MDE (that is: candidates, not proven edges), and the 2023 span is negative or flat for most of them. The NY row is derived (NY-AM + NY-PM) and repeats cells of those two rows. All alive counts are ANALYTIC MEASURED (entry +1 tick, mapped stop credit removed, stop slip 0.85 pt at 1 lot); the analytic is about 0.8 pt/trade optimistic against the one replay check available (PB7 ASIA), the replay of out/sd2a/survivors_for_A.parquet decides. No family produced a SESSION-PASS: no PRE p-value clears p x F_tot < 0.05 (F_tot=5,100 screened cell-sessions).
 
 ## Tier table (rows = tier, columns = family)
 
