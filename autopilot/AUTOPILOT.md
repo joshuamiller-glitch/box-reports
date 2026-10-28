@@ -7,3 +7,5 @@ SPEC REQUEST: write autopilot/DS3_SPEC_PB3B_R5_P1.md at the same parameter level
 
 ## 2026-10-27T15:56:46Z USER DIRECTIVE (verbatim)
 DIRECTIVE_PBX_CHOP_FULL.md is the current scope and the box is at 20% CPU. Start now, in parallel: T-PBX blocks (ii)-(v) (bars, order types, tape/footprint ends, direct replay of block (i)'s top cells and of every later survivor) and T-CHOP blocks 1-5 (band fades, range model, failed-breakout fades, session reversals, tape exhaustion, gates x bars x orders), each with the random-in-regime / random-in-gate placebo. Preregs in blocks of <= 30; 90% floor; report ETA per block in MORNING. Block 0 / block (i) results stand; do not re-run them.
+
+## 2026-10-27 user directive: OVERNIGHT PROGRAM (items A-H, 10-27 -> 10-28 13:00Z). Full text (account ids redacted) in autopilot/DIRECTIVE_OVERNIGHT_20261027.md
