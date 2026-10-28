@@ -211,3 +211,25 @@ Plan autopilot/DS3_SESSION2_A.md; prereg SSA_prereg.md sha256 73f0a1ca...e762. S
 - item 3 D6 line: after 1+2.
 2026-10-28T19:27:44Z D3SB2 PAUSED on coordinator directive (D6); no jobs running; PBX and PB2/PB2B trade tables rebuilt and reproduced; B2/B3 scoring resumes after D6; state in l2vast/ds3/out/sb2/PAUSED.txt
 2026-10-28T19:28:18Z D3ZMX (MX) PAUSED for D6 priority, state: PRE screen + HOLD/X done; M9 (RTY) and M10 SIGSTOPped (PIDs 1957151, 1967594); DS3_ZEN_M.md not yet written; resume per out/zen/mx/PAUSED.txt
+
+## D6 PRIORITY status 19:30Z
+- item 2 replay (D3SA): 2023-04 month verified (6,346 entries x 3 fills, none unfilled, ~22 min/month/worker). Two orchestrators, up to 24 workers, 34 months in two waves: wave 1 ~20:20Z, wave 2 ~20:45Z. DS3_SESSION2_A_D6.md ~21:10Z for fixed-bracket legs (IF/CRT/KB/SM/HM). Dynamic-exit legs (PB7, E1A, TB4B, TB4W) scored as MEASURED-PROXY from existing direct replays: may miss 21:35Z.
+- item 3 D6 line: D3SA does it after legs if time allows, else a separate agent (~22:00Z).
+- memory watch: 24 workers x 5-8 GB vs ~100 GB avail; governor gate 32 GB self-limits; memguard kills <6 GB.
+
+## D3SA D6 item 2 (live-latency replay of D6 legs) - 19:45Z update
+First month (2023-04) checked OK (19,038 fills, all TAKEN). 24 workers running/launching (2 orchestrators, SSA_SPACING 10 s); replay ETA ~20:45Z, DS3_SESSION2_A_D6.md ~21:10Z. 9 of 13 D6 legs are fixed-bracket and replayed; PB7, E1A, TB4W, TB4B have dynamic exits (stored basis only, advice capped at minimum). Addendum sha e9742d74...
+2026-10-28T19:31:12Z D3SSE2 SPEC 1/7 done: DS3_SPEC_ba2_KB_t60_s75_SESSION.md (KB engine confirmed live TE7_kelt3m_n14_m1.0; differs only stop 75 vs 60, different trade chain, ASIA filter, STORED fills; identity ASIA PRE 704 trades). Next: HM, SM.
+2026-10-28T19:33:02Z D3SSE2 SPEC 2/7 done: DS3_SPEC_ba2_HM_t75_s90_SESSION.md (HM engine confirmed = ROWS_bench3 HM row for row at 60/60; differs: 75/90 bracket, chain, NY-AM filter, no netting; OPEN: live 09:00-09:58 guard affects ~25% of cell trades; identity NY-AM PRE 427 trades).
+2026-10-28T19:34:14Z D3SSE2 SPEC 3/7 done: DS3_SPEC_ba2_SM_t60_sst_SESSION.md. FINDING: 'sst' = STRUCTURE stop (signal-bar extreme +5 pt, clip 20-120; 50% of trades at the 20-pt floor), NOT a Supertrend-line stop; the live SM 60/60 bracket beats it in ASIA PRE/HOLD (1840/544 vs 1539/459 per 10-lot trade). Identity ASIA PRE 264.
+2026-10-28T19:37:34Z D3SSE2 SPEC 4/7 done: DS3_SPEC_PB7_PB5_depth_atr0.5_W15_s+0_SESSION.md (ST10 regime, running-extreme minus 0.5 x ATR14(5-min) level, W15, T1, 60/60 fixed bracket; rule rebuilt from library code: all 342 PRE ASIA executed trades reproduced; HOLD edge half mapping credit: raw 434 vs mapped 905). NOTE for D3SA: PB7 bracket is fixed 60/60 (not dynamic), full 3-basis replay is possible.
+2026-10-28T19:39:53Z D3SSE2 SPEC 5/7 done: DS3_SPEC_E1A_RENKOC5_A3_r48_SESSION.md (reconstructible from code: true 12-pt Renko, 5-brick colour-run state, 3x ATR14(1m) stop, no target, signal exit on state flip; 2023 span ~0; identity ASIA PRE 424). Next TB4B, TB4W.
+2026-10-28T19:41:21Z D3SSE2 SPEC 6/7 and 7/7 done: DS3_SPEC_TB4B_tick_26_tick_250_ST3_SW62_T2_SESSION.md (tier DEAD-IN-HOLD: ASIA HOLD -1,060/trade; reconstructible) and DS3_SPEC_TB4W_03_time_15s_ST3_E20_1_T2_SESSION.md (reconstructible; bar-close convention risk; HOLD 494/trade). Writing index + DECISIONS next.
+2026-10-28T19:41:50Z D3SSE2 ALL 7 specs + DS3_SESSION2_E_INDEX2.md done (item 1 of D6 priority, my part). Open for user: live HM 09:00-09:58 guard; 'sst' = structure stop; PB7/TB4B/TB4W are fixed brackets (replayable). DECISIONS.md appended.
+
+## D6 PRIORITY status 19:42Z
+- item 1 specs DONE: all 12 spec files + DS3_SESSION2_E_INDEX.md and _INDEX2.md. Key corrections: 'sst' = STRUCTURE stop (10-bar extreme+5pt, 20-120pt), not Supertrend line; KB/HM/SM ba2 = live engines, only bracket changed; live HM 09:00-09:58 guard question open (about 25% of HM cell PRE trades signal in that window, avg $4,221 vs $1,856); PB7 is fixed 60/60, TB4B/TB4W fixed 240/240 ticks (replayable), E1A dynamic; TB4B DEAD-IN-HOLD (ASIA HOLD -$1,060/trade). D3SA told to replay PB7/TB4B/TB4W on all three bases.
+- item 2: D3SA wave 1 ~20:20Z, wave 2 ~20:45Z, report ~21:10Z.
+
+## D6 PRIORITY 19:42Z - memguard kill
+memguard killed ssa_direct worker pid 2023680 at 19:31:47Z (avail 5.1 GB, rss 6.0 GB) = month 2024-06 (no done marker). Standing rule: no retries. QUESTION FOR USER (D6 deadline): authorize ONE re-run of 2024-06 (PRE window month)? D3SA told not to relaunch and to bound the hole in scoring. Memory: 24 workers + ZEN MX jobs (mx_m9 5.5 GB) + 13 frozen held-track workers (~25 GB) are competing; ending the frozen held-track workers would free ~25 GB.

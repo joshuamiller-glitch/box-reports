@@ -81,3 +81,6 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 
 ## 2026-10-28 USER ANSWERS (ZEN MGMT questions; verbatim)
 "MGMT answers: (1) Yes — produce the diversity-capped second list (one cell per idea cluster, paired-delta ranked) as a new small prereg; the top 30 near-duplicates tell us nothing. (2) Follow the prereg as written (include the <100-trade cells in the best-of-N null) and print the excluded-version p beside it; neither changes the verdict. Pause confirmations: proceed as you are; the D6 specs and replay are the only clock that matters."
+
+## 2026-10-28 USER DECISION (verbatim)
+"Decision: YES, re-run 2024-06 (one worker, PRE month, cheap). Do NOT kill the frozen held-track workers. Everything else proceed as scheduled."

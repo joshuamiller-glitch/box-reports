@@ -1,0 +1,57 @@
+# DS3_SPEC_PB7_PB5_depth_atr0.5_W15_s+0_SESSION - executability spec and identity test (D3SSE2, 2026-10-28)
+
+Research output for the Sim leader; NOT a live recommendation. No execution-server, chart or live change. **Session cell, tier SESSION-CANDIDATE (BOF not cleared), basis MAPPED in the rows (the ledger label says "DIRECT L2" but the stored net takes only four distinct values per window, which is the P9 year x exit-type mapping, not per-fill direct pricing; the family verdict is mapped PASS / direct CANDIDATE). NOT live-eligible until the live-latency result (D3SA, DS3_SESSION2_A) lands.** Cell = ASIA entries (18:00-02:00 ET) of the T-PULLBACK cell "PB5_depth_atr0.5 with a 15-minute window and no level shift".
+
+Sources: ledger row (autopilot/DS3_SESSION_2_LEDGER.md line 66), rows l2vast/ds3/out/TP/trades_PB7_PB5_depth_atr0.5_W15_s+0.parquet (ledger_index cid 45; columns tin, side, lin, net, sess, ei; 4,043 rows all dates, 2,946 to 2026-02-06), signal engine l2vast/ds3/code/tp/tp_sig.py (pullback lines 175-185, _runext 102-112, _pb 113-143, atr5 26-27, st10_dir 39-40, reg_dir 47-60, asof_idx 12-20, _pack 168-173), cells tp_cells.py (PB5 atr lines 22; PB7 widening lines 41-56), definitions l2vast/ds3/out/TPULLBACK_DEFS.md, results autopilot/DS3_TPULLBACK.md (line 52), runner tp_run.py line 54 (te_core.gen_entries, DS2 bracket). "PbEngine" in the coordinator note = tp_sig.pullback / _pb.
+
+## 0. Cell id decoded
+PB7 = the 3x3 widening group (time limit W in {15,30,60} min x level shift s in {-3,0,+3} pt, centre W30/s0 excluded) around the mapped-PASS centre cells (tp_cells.py line 41-56; neighbours were scored AFTER the single holdout look, so they are not a fresh holdout, tp_md.py). PB5_depth_atr0.5 = the PB5 depth cell with m = 0.5 (tp_cells.py line 22: reg='ST10', pb=None, trig='T1', W=30, second=0, fade=False, atrm=0.5). **W15** = W 15; **s+0** = shift 0.0. Full parameter set passed to tp_sig.pullback: reg='ST10', pb=None, trig='T1', W=15, second=0, fade=False, atrm=0.5, shift=0.0.
+
+## 1. Rule (NT8), bar by bar
+- **Bars:** NQ 1-minute series (signal evaluation, entry, bracket), 5-minute bars (ATR), 10-minute bars (regime). Time bars aligned to the epoch minute // k (clock-aligned in ET), END-time stamped in NT8. Globex template, label day 18:00-17:59 ET, continuous back-adjusted.
+- **As-of rule for higher-timeframe values (tp_sig.asof_idx):** at 1-min bar i, a k-min indicator value is that of the latest k-min bar that is COMPLETE at the close of bar i: its own bucket if minute % k == k-1, else the previous bucket.
+- **Regime d[i] (ST10):** Supertrend(ATR n=10 Wilder, mult 3.0, median price (H+L)/2) on 10-minute bars, direction +1/-1, as-of. Exactly te_sig.supertrend (lines 51-61): ATR first value H-L then (ATR[1]*9 + TR)/10; ub/lb = hl2 +/- 3.0*ATR; fub = ub if (ub < fub[1] or Close[1] > fub[1]) else fub[1]; flb = lb if (lb > flb[1] or Close[1] < flb[1]) else flb[1]; d starts +1; d=+1 and Close < flb (current bar) -> -1; d=-1 and Close > fub (current bar) -> +1 (the TE6 definition with n=10).
+- **ATR for the depth level:** ATR(14) Wilder on 5-minute bars (te_sig.atr_w: first value H-L, ATR = (ATR[1]*13 + TR)/14), as-of (a value is used from the 1-min bar that closes the 5-min bar, i.e. minute % 5 == 4).
+- **Level (tp_sig._runext, atrm=0.5):** the running extreme since the current regime segment began, minus/plus 0.5 x ATR5. For d = +1: ehi = max of the 1-min HIGHS from the first bar of the segment (reset whenever the 1-min regime series d changes) up to and including the current bar; level_up[i] = ehi - 0.5*ATR5[i]. For d = -1: elo = min of 1-min LOWS since the segment began; level_dn[i] = elo + 0.5*ATR5[i]. No floor level. shift = 0 adds nothing (s+3 would add +3 pt to level_up and subtract 3 pt from level_dn, shallower pullback).
+- **Touch (edge, tp_sig._pb lines 120-125):** long (d=+1): level and previous level not NaN, Low[i] <= level[i] AND Low[i-1] > level[i-1]. Short (d=-1): High[i] >= level[i] AND High[i-1] < level[i-1] (level_dn). A regime change (d[i] != d[i-1]) disarms and resets the touch counter.
+- **Arming (W = 15, second = 0):** on the first touch of a pullback (ntouch counter reset if more than W bars since the first touch), arm: tb = i, until = i + 15. An armed state expires when i > until (checked before the touch test, so a touch on bar until+1 can re-arm). A touch while already armed does not extend the window.
+- **Trigger T1 (evaluated on every armed 1-min bar from the touch bar itself, completed bar):** long: Close > Open AND Close > level[i] (the CURRENT level, which moves with a new extreme); short: Close < Open AND Close < level[i]. The first qualifying bar fires one event (bar i, side d); then disarm and ntouch = 0. One trade per arming.
+- **Entry order:** market order at the open of bar i+1 (next 1-min bar, must be consecutive: MIN[i+1] == MIN[i]+1). tp_sig._pack. 10 lots as 10 x 1-lot market slices 2 s apart (S10x1) in the direct pricing.
+- **Filters in the row builder (te_core.gen_entries, lines 41-62):** drop the event if the signal bar (bar i) start minute is in 15:00-17:59 ET; one open trade at a time (events with entry bar <= busy exit bar are dropped); entries need bar < N-2. No other filter.
+- **Bracket:** stop-market 60 pt = 240 ticks, limit target 60 pt = 240 ticks (1.0R), OCO from the entry (gen_entries defaults stop=60.0, tr=1.0; observed in the unlocked rows: bracket = 60.0 for all 3,527 trades). Flat at the close of the bar ending >= 16:55 ET (market), early closes at the final bar. Stops checked before targets inside a second.
+- **Session filter (this cell):** keep a trade if the entry-bar END stamp (= entry-bar start + 1 min; ledger tin) has minute-of-day >= 18:00 or < 02:00 ET. Earliest ASIA entry stamps are about 18:12. Exits are not session-limited (ASIA entries can run to 16:55).
+- **Order types:** MARKET entry (sliced), STOP-MARKET + LIMIT target OCO, MARKET time exit; XJ stop-join (3 s touch-join then market) in the direct pricing, unvalidated live.
+- **Lots at $1,000 risk per trade:** stop 60 pt = $1,200 per NQ lot, so $1,000 = 0.83 NQ lot (not whole-lot tradable); MNQ ($120 stop risk per contract): 8 contracts = $960. Reference: 10 NQ lots = R $12,000.
+- **Costs:** $4.84 RT per contract; stored all-in $100.13 per 10-lot trade in the raw convention; the executed `net` column is the mapped P9-equivalent net after the per-book lock engine and cost.
+
+## 2. Identity test (runnable)
+Two reference tables; both were produced today from the library code (tp_sig.pullback -> te_core.gen_entries) and compared with the stored table.
+| window (label days) | unlocked ASIA trades (rule-level) | executed ASIA trades in the stored table (after per-book locks) | in both | executed first / last stamp | executed mean net $ (10 lots) | win | raw bracket mean $ (pts*200-100.13, unlocked) |
+|---|---|---|---|---|---|---|---|
+| PRE 2024-02-01..2025-06-30 | 348 | **342** | 342 | 2024-02-04 21:17 / 2025-06-29 22:44 | 2,372 | 60.8% | 2,486 |
+| HOLD 2025-07-01..2026-02-06 | 202 | **192** | 192 | 2025-06-30 23:56 / 2026-02-05 20:56 | 905 | 53.6% | 434 |
+| 2023 span 2023-04-01..2024-01-31 | 145 | 137 | 137 | 2023-04-02 18:12 / 2024-01-29 18:22 | 777 | 53.3% | 843 |
+| ALL to 2026-02-06 | - | 690 | - | 2023-02-14 01:45 / 2026-02-05 20:56 | 1,524 | 56.8% | - |
+(all-hours unlocked: 24,461 events -> 5,045 trades 2023-02-10..2026-10-23; 3,527 to 2026-02-06; stored executed all-hours 2,946 to 2026-02-06.) Every executed trade is in the rule-level list (the stored table is the rule-level list minus the trades the per-book day/week locks removed: 6 in PRE, 10 in HOLD, 8 in the 2023 span). The ledger row (342, 2,372, HOLD 192 / 905, span 777) is reproduced.
+**Test:** implement the rule above in NT8 on 1-min/5-min/10-min series, run all hours (one open trade, 15:00-17:59 signal block), filter ASIA by entry-bar end stamp. Pass if: count within +/-3% of the UNLOCKED ASIA column (locks are an overlay; add the book's lock engine to compare with the executed column), entry (minute, side) mismatch <= 3% (pullback logic has more state than the flip rules: allow 3%), exit type/time (+/-2 min) mismatch <= 3%, bracket exactly 240/240 ticks. Residuals: both levels in one 1-min bar, vendor vs NT8 bar differences (touch and trigger use bar Low/High/Close equality tests), ATR/Supertrend warm-up.
+
+## 3. Data, roll, holidays
+Continuous front NQ, back-adjusted; EMA/ATR/Supertrend states run across days, and the running-extreme level starts at the regime flip (which can be days earlier), so adjusted history and a long warm-up matter. Flat 16:55-18:00; no trade crosses a roll.
+
+## 4. Position limits
+10 lots, one position per book. Concurrency with the live ST/KB/SM/PE books is the lead's computation; the cell is an all-hours-capable pullback book run here as an ASIA-only slice. The stored executed table comes from the ALL-SESSIONS book: a session-only ASIA book has the same entries (flat 16:55-18:00) but different lock states.
+
+## 5. Backtest expectation (ledger)
+PRE 342 trades (4.56/wk), mean $2,372/trade at 10 lots, MDE $2,020, t 3.29, win 61%; HOLD 192 trades, $905/trade (H2-2025 1,097, 2026 stub 374); 2023 span 777 (by year 2023 356, 2024 2,313, 2025 1,841, 2026 stub 374). Mean R (R = $12,000): PRE +0.20, HOLD +0.075, 2023 span +0.065. At $1,000 risk: PRE about +$198/trade (about $900/wk at 4.6 trades/wk), HOLD +$75/trade. Cell-level pooled (all hours, family report DS3_TPULLBACK.md line 52): 20.8 trades/wk, WF $/wk mapped 8,538 -> direct 7,138, HOLD 3,332, 2023 span 5,363, hold Sharpe 0.47, DSR 0.48, placebo rank 0.48.
+
+## 6. What could kill it
+- **Mapped-fill dependence.** The stored net uses the P9 year x exit-type mapping (PRE: +11,645 x117, +11,109 x89, -11,866 x77, -11,244 x54 per 10 lots). On the raw bracket points the same ASIA trades earn PRE 2,486 but **HOLD only 434 (vs 905 mapped, i.e. the mapping adds about 2.4 pt per trade, half of the HOLD edge)** and 843 in the 2023 span. Direct verdict for the cell is CANDIDATE (failed WF_CI>0); the pooled paired comparison vs the live ST book is -11.3 pt/trade [-15.2, -7.5] (MDE 5.6): per trade the pullback entry earns less than the flip entry it replaces, and its book-level $ is bracket beta. Slippage break-even (ledger HOLD, mapped): 905/200 = **4.5 pt per trade** (raw basis 2.2 pt; PRE 11.9 pt).
+- **2023 span** positive here (777) but weak (win 53%); HOLD win 53.6%; the ASIA/LONDON pattern (earns from 2024) shows in the year line (2023: 356).
+- **Selection**: a W/shift neighbour of a mapped PASS, scored after the holdout look (not a fresh holdout); 5 centres x 8 neighbours; BOF not cleared; cluster id 0 (no shared-entry cluster in the ledger).
+- **Hindsight in the level**: running extreme "since the regime flipped" and ATR as-of rules must be reproduced exactly; touch requires the PREVIOUS bar's low above the previous level (edge); small deviations change entries (3% tolerance in the identity test).
+- Sample: 342 PRE and 192 HOLD trades; MDE per trade $2,020 vs HOLD mean 905.
+- Long holds, no news block, tie/ordering inside a 1-min bar.
+
+## 7. Open items
+- D3SA covers this leg as MEASURED-PROXY from the existing direct replay (dynamic exits are not involved here: the bracket is a fixed 60/60, so a full 3-basis re-run is possible if the replay allows; the family replay was S10x1 + XJ3 direct).
+- Session lock thresholds and handoff (D3SD).
