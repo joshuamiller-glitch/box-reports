@@ -1,6 +1,8 @@
 # DS3_ZEN_F3 - bracket shapes / management / vol-unit stops / entry mechanics on E1-E5 (D3ZF3)
 
-STATUS: counts block written BEFORE the prereg hash; no cell scored yet at this point of the file.
+**Verdict: DEAD. Of 2,330 cells (Z1 1,260, Z2 120, M1 900, M2 50) none has a positive net mean at 1x AND 2x cost (G3 0/1,910 eligible; 420 cells have n<100), none beats random-in-regime with CI lower > 0 and rank >= 0.95 in PRE (10 cells have a bootstrap CI above 0 only under the pool-expectation screen, none survives the 100-draw placebo: best rank 0.89), the best family reality-check p over N=2,330 is 0.64, and the best cell (Z1|E2|IV_FVG50|F4H|LIM0|F1400) has PRE effect +1.82 pts/trade vs MDE80 3.28 and HOLD effect +0.37 [-1.97, 2.77]. The model brackets lose money: every cell average is about -2.3 to -2.5 pts/trade net, i.e. the level+reaction buys nothing over a random entry with the same bracket, and no stop/target/management/volatility-unit/entry-mechanic choice repairs it.**
+
+Dollar scale: 1 pt/trade = $200 at 10 lots; fees $4.84 RT included in net (0.242 pt). Screen basis mapped conservative (1-min OHLC, P9 min(corr,0)); G10 (direct 1-s/L2 replay) NOT RUN: replay needs a governor allow-list entry and restart by main (requested in MORNING.md); no CANDIDATE label is possible without it.
 
 ## 2. Counts block (descriptive, NO P&L; PRE 2024-02-01..2025-06-30 = 75 weeks, PRIMARY entry window 10:00-14:00)
 
@@ -34,3 +36,285 @@ M1 context - what a fixed 15-pt stop is in volatility units by year (PRIMARY-win
 | 2026 | 26514 | 14.3 | 0.057% | 1.05 |
 
 Reading: the hold candle is common (20-49 per week), a limit 0-2 pt before the line fills on 57-81% of them (so a limit is not a rare event), a stop-entry 1 tick beyond the hold-candle extreme sits on average 12-15 pts from the line (the hold candle is a wide bar), the nearest 1-min swing target is on median 5-7.5 pts away (so the model bracket "15-pt stop, swing target" needs a very high win rate), and ZM3-style zones (FVG within 5 pt of the level) exist on ~80% of touches - they are not selective. 15 pt = 1.7 ATR in 2023 but 1.0 ATR in 2026, which is why M1 is a first-order question.
+
+
+## 3. Grid enumeration and screened N
+
+Prereg l2vast/ds3/prereg/ZEN_F3_A_prereg.md sha256 1e97077444c26bb91974786b34413ae76ddaf992de92ca94e43834d7fb9ba2a5 (cell table ZEN_F3_cells.csv b656ba71...f7afd). Z1: 5 entries x 7 stops x 6 targets x 3 fills x 2 flat = 1,260; Z2: 5 x 12 shapes x 2 flat = 120; M1: 5 x 5 vol-unit stops x 6 targets x 3 fills x 2 flat = 900; M2: 5 x 5 mechanics x 2 flat = 50. **Screened N = 2,330** (plan 2,280 + M2 50, M2 also appears in MX N). All 2,330 scored on PRE; n>=100 sequenced trades: 1,910; n<100 (count only, not eligible): 420 (mostly invalidation stops needing an FVG/OB at the level, EQ/F4H targets on 15-min-class geometry, and E3). Per-trade skips (structure absent, geometry, R<1 pt, hard stop >60) are inside the cell n and not N. Program N 291,130. Holdout looks used: 1 HOLD + 1 X for the 30 (hash a0c3ba66...25f6 logged before).
+
+## 4. Top 10 cells by PRE effect vs random-in-regime (n>=100), regardless of verdict
+
+Effect = real mean - mean of 100 shared-seed random-in-regime draws (same mechanic, bracket re-derived at the random bar), pts/trade net1, week-block CI. BE = cost-adjusted break-even win rate (price brackets: of the realised mean stop/target; invalidation/multi-stage: of realised mean win/loss). fwd wk = weeks for 80% power at the PRE effect = 75 x (MDE80/effect)^2.
+
+| # | cell | n PRE (per wk) | net1 / net2 pts ($/trade) | win vs BE | R:R nominal | effect vs rand-in-regime [CI], rank | MDE80 | vs random dir (rank) | PRE / HOLD / X effect | HOLD n, net1 | failed gates | fwd weeks |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Z1|E2|IV_FVG50|F4H|LIM0|F1400 | 534 (7.1) | -0.81 / -3.01 ($-162) | 23.8% vs 25.8% | 18.60 | +1.82 [-0.18, 4.34], rank 0.86 | 3.28 | +0.73 (0.74) | +1.82 / +0.37 / +0.40 | 209, -3.53 | G1 (eff +1.82, CI lo -0.18, rank 0.86); G2 (dir rank 0.74); G3 (net1 -0.81, net2 -3.01); G4 (win 23.8% vs BE 25.8%); G5 (eff < MDE80 3.28); G6 (HOLD eff +0.37, CI lo -1.97); G8 (RC p 0.64); G9 (pos yrs 1, max-year share 53%); G10 not run | 244 |
+| 2 | Z1|E1|IV_FVG50|F4H|LIM0|F1400 | 542 (7.2) | -0.85 / -3.04 ($-171) | 22.9% vs 25.0% | 19.56 | +1.73 [-0.27, 4.23], rank 0.85 | 3.26 | +1.19 (0.84) | +1.73 / +1.64 / +0.72 | 203, -2.38 | G1 (eff +1.73, CI lo -0.27, rank 0.85); G2 (dir rank 0.84); G3 (net1 -0.85, net2 -3.04); G4 (win 22.9% vs BE 25.0%); G5 (eff < MDE80 3.26); G6 (HOLD eff +1.64, CI lo -1.30); G8 (RC p 0.67); G9 (pos yrs 1, max-year share 53%); G10 not run | 265 |
+| 3 | Z1|E5|IV_STACK|R2|LIM0|F1555 | 946 (12.6) | -0.77 / -3.04 ($-153) | 39.5% vs 40.7% | 2.00 | +0.81 [-0.83, 2.35], rank 0.76 | 2.27 | +0.67 (0.79) | +0.81 / -1.40 / +0.31 | 348, -2.43 | G1 (eff +0.81, CI lo -0.83, rank 0.76); G2 (dir rank 0.79); G3 (net1 -0.77, net2 -3.04); G4 (win 39.5% vs BE 40.7%); G5 (eff < MDE80 2.27); G6 (HOLD eff -1.40, CI lo -4.34); G8 (RC p 0.84); G9 (pos yrs 1, max-year share 83%); G10 not run | 591 |
+| 4 | Z1|E2|IV_FVG50|F4H|LIM0|F1555 | 537 (7.2) | -1.18 / -3.39 ($-236) | 21.4% vs 24.1% | 18.58 | +1.48 [-0.08, 3.34], rank 0.73 | 2.49 | +0.51 (0.75) | +1.48 / +0.64 / +0.41 | 209, -3.67 | G1 (eff +1.48, CI lo -0.08, rank 0.73); G2 (dir rank 0.75); G3 (net1 -1.18, net2 -3.39); G4 (win 21.4% vs BE 24.1%); G5 (eff < MDE80 2.49); G6 (HOLD eff +0.64, CI lo -1.74); G8 (RC p 0.84); G9 (pos yrs 1, max-year share 63%); G10 not run | 211 |
+| 5 | Z1|E3|IV_FVG50|F4H|LIM0|F1555 | 265 (3.5) | -3.12 / -5.26 ($-623) | 15.5% vs 22.7% | 24.21 | +1.52 [-0.83, 3.75], rank 0.66 | 3.22 | +0.12 (0.49) | +1.52 / -1.74 / +0.78 | 96, -5.51 | G1 (eff +1.52, CI lo -0.83, rank 0.66); G2 (dir rank 0.49); G3 (net1 -3.12, net2 -5.26); G4 (win 15.5% vs BE 22.7%); G5 (eff < MDE80 3.22); G6 (HOLD eff -1.74, CI lo -5.25); G8 (RC p 0.87); G9 (pos yrs 1, max-year share 89%); G10 not run | 335 |
+| 6 | Z1|E1|IV_FVG50|F4H|LIM1|F1400 | 659 (8.8) | -1.15 / -3.34 ($-230) | 23.8% vs 26.8% | 17.33 | +1.11 [-0.58, 3.21], rank 0.73 | 2.77 | +0.94 (0.83) | +1.11 / +0.90 / +1.52 | 260, -2.39 | G1 (eff +1.11, CI lo -0.58, rank 0.73); G2 (dir rank 0.83); G3 (net1 -1.15, net2 -3.34); G4 (win 23.8% vs BE 26.8%); G5 (eff < MDE80 2.77); G6 (HOLD eff +0.90, CI lo -1.50); G8 (RC p 0.89); G9 (pos yrs 1, max-year share 52%); G10 not run | 469 |
+| 7 | Z1|E1|IV_FVG50|F4H|LIM2|F1400 | 761 (10.1) | -1.08 / -3.27 ($-215) | 25.6% vs 28.5% | 15.18 | +0.93 [-0.43, 2.58], rank 0.74 | 2.23 | +0.87 (0.83) | +0.93 / +0.67 / +0.95 | 293, -2.56 | G1 (eff +0.93, CI lo -0.43, rank 0.74); G2 (dir rank 0.83); G3 (net1 -1.08, net2 -3.27); G4 (win 25.6% vs BE 28.5%); G5 (eff < MDE80 2.23); G6 (HOLD eff +0.67, CI lo -1.52); G8 (RC p 0.93); G9 (pos yrs 1, max-year share 46%); G10 not run | 435 |
+| 8 | Z1|E2|IV_FVG50|F4H|LIM1|F1400 | 643 (8.6) | -1.26 / -3.45 ($-252) | 24.3% vs 27.5% | 16.76 | +1.00 [-0.64, 3.22], rank 0.73 | 2.80 | +0.44 (0.65) | +1.00 / +0.03 / +0.80 | 256, -3.20 | G1 (eff +1.00, CI lo -0.64, rank 0.73); G2 (dir rank 0.65); G3 (net1 -1.26, net2 -3.45); G4 (win 24.3% vs BE 27.5%); G5 (eff < MDE80 2.80); G6 (HOLD eff +0.03, CI lo -2.63); G8 (RC p 0.93); G9 (pos yrs 1, max-year share 48%); G10 not run | 588 |
+| 9 | Z1|E5|IV_STACK|EQ|LIM1|F1555 | 776 (10.3) | -2.97 / -5.46 ($-593) | 54.4% vs 62.7% | 0.75 | +0.71 [-0.75, 2.12], rank 0.78 | 2.04 | -0.03 (0.49) | +0.71 / -2.59 / +0.12 | 322, -4.09 | G1 (eff +0.71, CI lo -0.75, rank 0.78); G2 (dir rank 0.49); G3 (net1 -2.97, net2 -5.46); G4 (win 54.4% vs BE 62.7%); G5 (eff < MDE80 2.04); G6 (HOLD eff -2.59, CI lo -5.13); G8 (RC p 0.94); G9 (pos yrs 1, max-year share 57%); G10 not run | 624 |
+| 10 | Z1|E1|IV_FVG50|F4H|LIM0|F1555 | 545 (7.3) | -1.46 / -3.65 ($-291) | 21.1% vs 24.5% | 19.57 | +1.15 [-0.47, 3.06], rank 0.71 | 2.56 | +1.15 (0.89) | +1.15 / +1.78 / +0.71 | 203, -2.65 | G1 (eff +1.15, CI lo -0.47, rank 0.71); G2 (dir rank 0.89); G3 (net1 -1.46, net2 -3.65); G4 (win 21.1% vs BE 24.5%); G5 (eff < MDE80 2.56); G6 (HOLD eff +1.78, CI lo -1.07); G8 (RC p 0.95); G9 (pos yrs 1, max-year share 54%); G10 not run | 374 |
+
+Realised initial risk (nominal stop or invalidation reference distance) and fill: median / p90 pts for the top 10: #1 3.3/9.2; #2 3.2/8.8; #3 18.2/49.7; #4 3.3/9.2; #5 3.1/7.9; #6 3.5/9.2; #7 3.8/9.9; #8 3.6/9.8; #9 22.2/49.3; #10 3.2/8.8. For close-basis cells the realised loss is open-ended up to the 60-pt disaster stop; mean loss on losing trades is in the screen table.
+
+## 5. Top 30: by window, year, half-year, side (random-in-regime column on every row)
+
+### 5a. By entry window (PRE; real mean net1 / pool mean net1 / n)
+
+| # | cell | 09:30-10 | 10-11 | 11-12 | 12-13 | 13-14 | 14:00-15:30 | RTH pooled |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Z1|E2|IV_FVG50|F4H|LIM0|F1400 | 0.58 / -1.11 / 144 | -0.49 / -3.00 / 178 | -3.18 / -3.87 / 141 | -0.15 / -1.98 / 146 | -0.96 / -2.51 / 131 | nan / nan / 0 | -0.41 / -2.56 / 666 |
+| 2 | Z1|E1|IV_FVG50|F4H|LIM0|F1400 | -2.14 / -1.11 / 157 | -0.93 / -3.00 / 187 | -2.85 / -3.87 / 154 | 0.14 / -1.98 / 131 | -0.87 / -2.51 / 137 | nan / nan / 0 | -1.08 / -2.56 / 682 |
+| 3 | Z1|E5|IV_STACK|R2|LIM0|F1555 | -4.24 / -4.44 / 301 | -0.49 / -1.33 / 415 | 0.20 / -1.40 / 284 | 0.59 / -1.26 / 251 | -4.06 / -6.07 / 237 | -5.59 / -3.56 / 264 | -2.02 / -2.78 / 1434 |
+| 4 | Z1|E2|IV_FVG50|F4H|LIM0|F1555 | 0.40 / -1.11 / 144 | -2.08 / -3.31 / 178 | -2.76 / -3.57 / 141 | -0.35 / -2.15 / 146 | -0.31 / -2.35 / 134 | -2.24 / -2.22 / 207 | -1.52 / -2.67 / 944 |
+| 5 | Z1|E3|IV_FVG50|F4H|LIM0|F1555 | -0.91 / 5.46 / 54 | -4.41 / -4.50 / 51 | -1.75 / -4.23 / 55 | -5.21 / -6.02 / 78 | -2.70 / -4.32 / 101 | 0.43 / -1.54 / 144 | -2.43 / -3.26 / 496 |
+| 6 | Z1|E1|IV_FVG50|F4H|LIM1|F1400 | -2.12 / -0.96 / 193 | -2.19 / -3.27 / 217 | -1.83 / -3.50 / 178 | -0.05 / -1.73 / 171 | -1.85 / -2.47 / 170 | nan / nan / 0 | -1.20 / -2.44 / 829 |
+| 7 | Z1|E1|IV_FVG50|F4H|LIM2|F1400 | -1.66 / -1.43 / 223 | -1.39 / -3.01 / 243 | -2.60 / -3.75 / 202 | -0.27 / -1.39 / 197 | -1.60 / -2.13 / 205 | nan / nan / 0 | -1.17 / -2.37 / 958 |
+| 8 | Z1|E2|IV_FVG50|F4H|LIM1|F1400 | 0.44 / -0.96 / 172 | -2.10 / -3.27 / 206 | -1.97 / -3.50 / 167 | -0.70 / -1.73 / 179 | -1.33 / -2.47 / 162 | nan / nan / 0 | -0.81 / -2.44 / 802 |
+| 9 | Z1|E5|IV_STACK|EQ|LIM1|F1555 | -7.18 / -5.25 / 210 | -3.77 / -3.97 / 246 | -2.34 / -5.78 / 222 | -2.00 / -4.18 / 251 | -2.29 / -3.64 / 207 | -2.91 / -1.36 / 282 | -3.45 / -3.68 / 1260 |
+| 10 | Z1|E1|IV_FVG50|F4H|LIM0|F1555 | -2.12 / -1.11 / 157 | -2.43 / -3.31 / 187 | -2.47 / -3.57 / 154 | -0.07 / -2.15 / 131 | -1.16 / -2.35 / 140 | -1.79 / -2.22 / 194 | -2.11 / -2.67 / 930 |
+| 11 | Z1|E2|IV_FVG50|F4H|LIM2|F1400 | -0.46 / -1.43 / 201 | -1.12 / -3.01 / 227 | -2.57 / -3.75 / 194 | -1.84 / -1.39 / 193 | -0.82 / -2.13 / 192 | nan / nan / 0 | -1.06 / -2.37 / 916 |
+| 12 | Z1|E5|IV_STACK|EQ|LIM0|F1555 | -6.60 / -5.05 / 205 | -3.58 / -4.07 / 242 | -2.13 / -5.86 / 218 | -2.52 / -4.11 / 231 | -2.30 / -3.50 / 198 | -3.40 / -1.30 / 251 | -3.55 / -3.65 / 1197 |
+| 13 | Z1|E3|IV_FVG50|F4H|LIM0|F1400 | -0.91 / 5.64 / 54 | -4.41 / -4.48 / 51 | -1.75 / -4.94 / 55 | -4.31 / -4.92 / 78 | -3.15 / -3.76 / 100 | nan / nan / 0 | -2.60 / -3.21 / 316 |
+| 14 | Z1|E5|IV_STACK|EQ|LIM2|F1555 | -7.19 / -5.41 / 220 | -4.06 / -3.96 / 256 | -2.47 / -5.67 / 236 | -2.06 / -4.08 / 268 | -2.66 / -3.74 / 216 | -3.09 / -1.37 / 297 | -3.58 / -3.68 / 1323 |
+| 15 | Z1|E2|S10|F4H|LIM0|F1400 | -2.15 / -0.76 / 316 | -1.19 / -1.98 / 370 | -0.41 / -3.83 / 264 | -1.09 / -1.49 / 248 | -0.43 / -0.28 / 248 | nan / nan / 0 | -1.07 / -1.69 / 1300 |
+| 16 | Z1|E5|IV_STACK|EQ|LIM1|F1400 | -7.18 / -5.25 / 210 | -3.77 / -3.97 / 246 | -2.22 / -5.64 / 222 | -1.70 / -3.77 / 251 | -1.61 / -2.25 / 205 | nan / nan / 0 | -3.44 / -4.04 / 954 |
+| 17 | Z1|E5|S20|R2|LIM2|F1400 | -2.15 / -2.07 / 386 | -1.70 / -1.90 / 504 | -0.99 / -2.42 / 465 | 2.20 / 0.14 / 419 | -0.83 / -2.03 / 383 | nan / nan / 0 | -0.62 / -1.58 / 1795 |
+| 18 | Z1|E2|S10|F4H|LIM2|F1400 | -2.05 / -0.71 / 332 | -1.10 / -1.90 / 383 | -1.51 / -4.20 / 276 | -1.17 / -1.37 / 262 | -0.52 / -0.63 / 270 | nan / nan / 0 | -1.13 / -1.79 / 1361 |
+| 19 | Z1|E2|S10|F4H|LIM0|F1555 | -2.19 / -0.75 / 316 | -1.62 / -2.20 / 370 | -1.25 / -4.17 / 264 | -1.61 / -1.72 / 248 | 1.61 / 1.47 / 253 | -1.38 / -1.37 / 353 | -1.12 / -1.49 / 1756 |
+| 20 | Z1|E5|IV_STACK|R2|LIM0|F1400 | -4.24 / -4.44 / 301 | -0.43 / -1.28 / 415 | -0.23 / -1.16 / 284 | 0.16 / -1.72 / 251 | -2.68 / -3.38 / 235 | nan / nan / 0 | -1.33 / -2.16 / 1191 |
+| 21 | Z1|E5|S20|R2|LIM2|F1555 | -2.15 / -2.08 / 386 | -1.70 / -1.90 / 504 | -0.96 / -2.48 / 465 | 2.26 / 0.32 / 419 | -1.61 / -2.29 / 387 | -3.53 / -2.79 / 529 | -1.49 / -1.96 / 2352 |
+| 22 | Z1|E5|IV_STACK|EQ|LIM0|F1400 | -6.60 / -5.05 / 205 | -3.58 / -4.07 / 242 | -2.01 / -5.71 / 218 | -2.19 / -3.66 / 231 | -1.53 / -2.12 / 196 | nan / nan / 0 | -3.42 / -4.00 / 923 |
+| 23 | Z1|E1|S10|F4H|LIM2|F1400 | -2.23 / -0.71 / 353 | -1.43 / -1.90 / 415 | -1.76 / -4.20 / 287 | -0.55 / -1.37 / 258 | -1.21 / -0.63 / 285 | nan / nan / 0 | -1.09 / -1.79 / 1413 |
+| 24 | Z1|E5|IV_STACK|R2|LIM2|F1555 | -3.50 / -4.26 / 324 | -1.00 / -1.06 / 434 | 1.05 / -1.21 / 307 | -0.65 / -1.52 / 278 | -5.60 / -6.52 / 244 | -4.71 / -3.33 / 290 | -1.94 / -2.76 / 1548 |
+| 25 | Z1|E2|S10|F4H|LIM1|F1400 | -2.09 / -0.65 / 324 | -1.29 / -1.92 / 374 | -1.05 / -4.02 / 267 | -1.35 / -1.63 / 259 | -0.47 / -0.48 / 260 | nan / nan / 0 | -1.23 / -1.77 / 1339 |
+| 26 | M1|E5|A150|R2|LIM0|F1555 | -2.40 / -3.04 / 369 | -3.01 / -2.99 / 429 | -0.97 / -1.87 / 424 | 1.12 / -0.87 / 434 | -1.00 / -2.00 / 412 | -2.56 / -1.55 / 581 | -1.60 / -1.97 / 2420 |
+| 27 | Z1|E2|S10|F4H|LIM2|F1555 | -2.09 / -0.80 / 332 | -1.51 / -2.18 / 383 | -2.25 / -4.59 / 276 | -1.39 / -1.58 / 262 | 1.39 / 1.52 / 273 | -1.05 / -1.75 / 379 | -1.03 / -1.56 / 1834 |
+| 28 | Z1|E1|IV_FVG50|F4H|LIM2|F1555 | -1.70 / -1.61 / 223 | -2.55 / -3.26 / 243 | -2.30 / -3.57 / 202 | -0.46 / -1.47 / 197 | -1.71 / -1.69 / 209 | -1.42 / -2.70 / 285 | -1.83 / -2.50 / 1307 |
+| 29 | Z1|E2|IV_FVG50|F4H|LIM2|F1555 | -0.64 / -1.61 / 201 | -2.36 / -3.26 / 227 | -2.26 / -3.57 / 194 | -1.96 / -1.47 / 193 | -0.55 / -1.69 / 194 | -1.91 / -2.70 / 280 | -1.74 / -2.50 / 1281 |
+| 30 | Z1|E5|IV_STACK|R2|LIM1|F1555 | -4.14 / -4.49 / 316 | -1.17 / -1.20 / 427 | 0.27 / -1.37 / 292 | -0.12 / -1.34 / 265 | -5.08 / -6.22 / 236 | -4.96 / -3.45 / 280 | -2.28 / -2.77 / 1495 |
+
+### 5b. By year (real net1 mean, n | random-in-regime pool mean) over PRE+HOLD+X; 2023 = X span only, 2024 and 2025 H1 = PRE, 2025 H2-2026 = HOLD
+
+| # | cell | 2023 | 2024 | 2025 | 2026 | max-year share of WF | years positive (24/25/26) |
+|---|---|---|---|---|---|---|---|
+| 1 | Z1|E2|IV_FVG50|F4H|LIM0|F1400 | -2.38 (275) | -2.99 | -1.38 (395) | -1.37 | -2.15 (353) | -4.76 | 3.89 (33) | 1.53 | 53% | 1 |
+| 2 | Z1|E1|IV_FVG50|F4H|LIM0|F1400 | -2.17 (289) | -2.99 | -1.63 (406) | -1.37 | -1.26 (348) | -4.76 | 5.16 (33) | 1.53 | 53% | 1 |
+| 3 | Z1|E5|IV_STACK|R2|LIM0|F1555 | -3.07 (530) | -3.53 | -0.05 (750) | -0.87 | -2.42 (579) | -2.50 | 1.26 (45) | -3.66 | 83% | 1 |
+| 4 | Z1|E2|IV_FVG50|F4H|LIM0|F1555 | -2.49 (277) | -3.03 | -1.03 (398) | -1.11 | -2.82 (353) | -4.84 | 2.65 (33) | -0.30 | 63% | 1 |
+| 5 | Z1|E3|IV_FVG50|F4H|LIM0|F1555 | -2.56 (170) | -3.21 | 0.06 (199) | -2.86 | -7.25 (166) | -6.01 | -4.84 (17) | 1.98 | 89% | 1 |
+| 6 | Z1|E1|IV_FVG50|F4H|LIM1|F1400 | -1.62 (372) | -3.22 | -1.78 (503) | -1.52 | -1.52 (431) | -4.11 | 5.62 (39) | 1.60 | 52% | 1 |
+| 7 | Z1|E1|IV_FVG50|F4H|LIM2|F1400 | -1.82 (424) | -3.02 | -1.47 (581) | -1.53 | -1.85 (488) | -3.93 | 4.36 (43) | 1.43 | 46% | 1 |
+| 8 | Z1|E2|IV_FVG50|F4H|LIM1|F1400 | -2.33 (348) | -3.22 | -1.75 (482) | -1.52 | -2.22 (425) | -4.11 | 4.76 (38) | 1.60 | 48% | 1 |
+| 9 | Z1|E5|IV_STACK|EQ|LIM1|F1555 | -2.32 (533) | -2.21 | -2.58 (638) | -3.11 | -4.42 (501) | -3.93 | 5.24 (26) | 1.06 | 57% | 1 |
+| 10 | Z1|E1|IV_FVG50|F4H|LIM0|F1555 | -2.28 (292) | -3.03 | -1.19 (409) | -1.11 | -2.35 (348) | -4.84 | 2.62 (33) | -0.30 | 54% | 1 |
+| 11 | Z1|E2|IV_FVG50|F4H|LIM2|F1400 | -2.16 (391) | -3.02 | -1.48 (551) | -1.53 | -2.19 (476) | -3.93 | 3.48 (42) | 1.43 | 54% | 1 |
+| 12 | Z1|E5|IV_STACK|EQ|LIM0|F1555 | -1.98 (503) | -2.22 | -2.63 (612) | -3.09 | -4.20 (476) | -3.87 | 6.03 (24) | 1.02 | 54% | 1 |
+| 13 | Z1|E3|IV_FVG50|F4H|LIM0|F1400 | -1.71 (168) | -2.49 | -1.07 (198) | -2.79 | -6.03 (166) | -5.67 | 0.08 (17) | 4.66 | 80% | 1 |
+| 14 | Z1|E5|IV_STACK|EQ|LIM2|F1555 | -2.57 (562) | -2.09 | -2.56 (666) | -3.08 | -4.75 (518) | -3.91 | 4.59 (27) | 1.20 | 59% | 1 |
+| 15 | Z1|E2|S10|F4H|LIM0|F1400 | -2.19 (435) | -1.17 | -1.23 (701) | -1.78 | -0.36 (670) | -1.69 | 1.75 (61) | 0.82 | 72% | 1 |
+| 16 | Z1|E5|IV_STACK|EQ|LIM1|F1400 | -2.02 (532) | -1.73 | -2.20 (636) | -2.59 | -4.49 (497) | -4.07 | 5.24 (26) | 2.75 | 61% | 1 |
+| 17 | Z1|E5|S20|R2|LIM2|F1400 | -2.06 (610) | -1.18 | 0.35 (985) | -0.73 | -0.84 (1063) | -1.40 | 1.48 (113) | 1.05 | 67% | 2 |
+| 18 | Z1|E2|S10|F4H|LIM2|F1400 | -2.19 (473) | -1.18 | -1.26 (735) | -1.81 | -0.85 (698) | -1.82 | 4.56 (63) | 0.09 | 50% | 1 |
+| 19 | Z1|E2|S10|F4H|LIM0|F1555 | -2.16 (438) | -1.48 | -0.83 (706) | -1.34 | -0.30 (671) | -1.69 | -0.53 (61) | -2.01 | 75% | 0 |
+| 20 | Z1|E5|IV_STACK|R2|LIM0|F1400 | -2.40 (528) | -1.79 | 0.13 (748) | -0.38 | -3.30 (577) | -2.83 | 3.97 (45) | 2.65 | 88% | 2 |
+| 21 | Z1|E5|S20|R2|LIM2|F1555 | -1.98 (610) | -0.85 | 0.17 (988) | -0.56 | -0.39 (1067) | -1.07 | 0.40 (113) | -0.20 | 86% | 2 |
+| 22 | Z1|E5|IV_STACK|EQ|LIM0|F1400 | -1.89 (501) | -1.76 | -2.22 (609) | -2.56 | -4.41 (473) | -4.04 | 6.03 (24) | 2.76 | 59% | 1 |
+| 23 | Z1|E1|S10|F4H|LIM2|F1400 | -1.38 (488) | -1.18 | -1.03 (768) | -1.81 | -1.51 (727) | -1.82 | 1.76 (63) | 0.09 | 53% | 1 |
+| 24 | Z1|E5|IV_STACK|R2|LIM2|F1555 | -3.50 (575) | -3.69 | -0.78 (804) | -0.76 | -1.86 (613) | -2.65 | 2.38 (46) | -2.77 | 55% | 1 |
+| 25 | Z1|E2|S10|F4H|LIM1|F1400 | -2.56 (453) | -1.25 | -1.58 (719) | -1.83 | -0.60 (691) | -1.74 | 2.63 (62) | 0.29 | 67% | 1 |
+| 26 | M1|E5|A150|R2|LIM0|F1555 | -1.98 (749) | -1.57 | -0.49 (1062) | -1.18 | -1.16 (992) | -1.98 | 3.44 (104) | 0.96 | 58% | 1 |
+| 27 | Z1|E2|S10|F4H|LIM2|F1555 | -2.20 (473) | -1.56 | -0.90 (738) | -1.24 | -0.79 (699) | -1.80 | 2.35 (63) | -2.91 | 50% | 1 |
+| 28 | Z1|E1|IV_FVG50|F4H|LIM2|F1555 | -1.51 (426) | -3.19 | -1.26 (585) | -1.20 | -2.69 (488) | -4.02 | 2.42 (43) | -1.80 | 59% | 1 |
+| 29 | Z1|E2|IV_FVG50|F4H|LIM2|F1555 | -1.93 (391) | -3.19 | -1.20 (553) | -1.20 | -2.75 (476) | -4.02 | 2.51 (42) | -1.80 | 62% | 1 |
+| 30 | Z1|E5|IV_STACK|R2|LIM1|F1555 | -3.32 (558) | -3.63 | -0.63 (778) | -0.80 | -2.45 (601) | -2.61 | 1.62 (45) | -3.33 | 67% | 1 |
+
+### 5c. Half-year (real net1 mean, n) and long / short (PRE)
+
+| # | cell | 2023H1 | 2023H2 | 2024H1 | 2024H2 | 2025H1 | 2025H2 | 2026H1 | long n / mean / win | short n / mean / win |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Z1|E2|IV_FVG50|F4H|LIM0|F1400 | -1.11 (63) | -2.76 (212) | -0.94 (182) | -1.76 (213) | 0.59 (177) | -4.92 (176) | 3.89 (33) | 270 / 0.63 / 22% | 264 / -2.27 / 25% |
+| 2 | Z1|E1|IV_FVG50|F4H|LIM0|F1400 | -0.32 (67) | -2.72 (222) | -1.23 (193) | -1.99 (213) | 1.20 (178) | -3.84 (170) | 5.16 (33) | 272 / 0.56 / 22% | 270 / -2.28 / 24% |
+| 3 | Z1|E5|IV_STACK|R2|LIM0|F1555 | -1.10 (174) | -4.02 (356) | 1.00 (411) | -1.33 (339) | -1.80 (276) | -2.98 (303) | 1.26 (45) | 510 / -1.85 / 39% | 436 / 0.50 / 40% |
+| 4 | Z1|E2|IV_FVG50|F4H|LIM0|F1555 | -2.93 (63) | -2.37 (214) | -0.64 (184) | -1.36 (214) | -0.79 (177) | -4.85 (176) | 2.65 (33) | 272 / 0.01 / 20% | 265 / -2.41 / 23% |
+| 5 | Z1|E3|IV_FVG50|F4H|LIM0|F1555 | -1.70 (36) | -2.79 (134) | 0.01 (97) | 0.10 (102) | -8.70 (87) | -5.65 (79) | -4.84 (17) | 153 / -3.66 / 14% | 112 / -2.38 / 17% |
+| 6 | Z1|E1|IV_FVG50|F4H|LIM1|F1400 | 0.18 (87) | -2.17 (285) | -1.30 (248) | -2.26 (255) | 0.88 (210) | -3.80 (221) | 5.62 (39) | 319 / 0.14 / 23% | 340 / -2.37 / 25% |
+| 7 | Z1|E1|IV_FVG50|F4H|LIM2|F1400 | -0.18 (96) | -2.30 (328) | -1.52 (284) | -1.42 (297) | 0.15 (238) | -3.75 (250) | 4.36 (43) | 362 / 0.56 / 26% | 399 / -2.56 / 26% |
+| 8 | Z1|E2|IV_FVG50|F4H|LIM1|F1400 | 0.09 (84) | -3.10 (264) | -1.14 (221) | -2.28 (261) | 0.26 (207) | -4.59 (218) | 4.76 (38) | 320 / 0.14 / 23% | 323 / -2.65 / 25% |
+| 9 | Z1|E5|IV_STACK|EQ|LIM1|F1555 | -2.14 (178) | -2.40 (355) | -2.87 (362) | -2.19 (276) | -3.71 (205) | -4.91 (296) | 5.24 (26) | 472 / -3.41 / 55% | 304 / -2.27 / 54% |
+| 10 | Z1|E1|IV_FVG50|F4H|LIM0|F1555 | -2.31 (67) | -2.27 (225) | -0.85 (194) | -1.49 (215) | -1.09 (178) | -3.67 (170) | 2.62 (33) | 275 / -0.89 / 20% | 270 / -2.04 / 23% |
+| 11 | Z1|E2|IV_FVG50|F4H|LIM2|F1400 | -0.22 (87) | -2.71 (304) | -1.50 (255) | -1.46 (296) | -0.46 (234) | -3.86 (242) | 3.48 (42) | 360 / 0.72 / 26% | 370 / -3.01 / 25% |
+| 12 | Z1|E5|IV_STACK|EQ|LIM0|F1555 | -1.84 (173) | -2.05 (330) | -3.18 (342) | -1.94 (270) | -3.67 (202) | -4.60 (274) | 6.03 (24) | 459 / -3.44 / 53% | 289 / -2.46 / 51% |
+| 13 | Z1|E3|IV_FVG50|F4H|LIM0|F1400 | 1.52 (36) | -2.59 (132) | -0.84 (97) | -1.30 (101) | -6.72 (87) | -5.27 (79) | 0.08 (17) | 152 / -3.70 / 16% | 112 / -2.36 / 19% |
+| 14 | Z1|E5|IV_STACK|EQ|LIM2|F1555 | -2.15 (189) | -2.79 (373) | -2.84 (378) | -2.19 (288) | -4.50 (214) | -4.92 (304) | 4.59 (27) | 490 / -3.74 / 54% | 322 / -2.32 / 55% |
+| 15 | Z1|E2|S10|F4H|LIM0|F1400 | -1.87 (105) | -2.29 (330) | -1.51 (321) | -1.00 (380) | 0.51 (377) | -1.49 (293) | 1.75 (61) | 476 / -0.11 / 23% | 543 / -1.16 / 25% |
+| 16 | Z1|E5|IV_STACK|EQ|LIM1|F1400 | -2.06 (177) | -2.00 (355) | -2.41 (361) | -1.93 (275) | -3.89 (204) | -4.90 (293) | 5.24 (26) | 470 / -3.20 / 54% | 304 / -1.98 / 53% |
+| 17 | Z1|E5|S20|R2|LIM2|F1400 | 0.12 (199) | -3.12 (411) | -0.60 (431) | 1.09 (554) | -1.39 (566) | -0.21 (497) | 1.48 (113) | 761 / -0.58 / 36% | 717 / -0.10 / 35% |
+| 18 | Z1|E2|S10|F4H|LIM2|F1400 | -1.67 (116) | -2.36 (357) | -2.01 (333) | -0.64 (402) | -0.00 (394) | -1.95 (304) | 4.56 (63) | 503 / -0.17 / 26% | 565 / -1.42 / 27% |
+| 19 | Z1|E2|S10|F4H|LIM0|F1555 | -3.67 (106) | -1.67 (332) | -1.21 (323) | -0.51 (383) | 0.55 (377) | -1.39 (294) | -0.53 (61) | 480 / -0.04 / 21% | 544 / -0.86 / 24% |
+| 20 | Z1|E5|IV_STACK|R2|LIM0|F1400 | -0.53 (173) | -3.31 (355) | 1.24 (410) | -1.22 (338) | -2.19 (275) | -4.32 (302) | 3.97 (45) | 508 / -1.54 / 41% | 436 / 0.20 / 40% |
+| 21 | Z1|E5|S20|R2|LIM2|F1555 | -0.38 (199) | -2.76 (411) | -0.94 (432) | 1.04 (556) | -1.29 (568) | 0.64 (499) | 0.40 (113) | 763 / -0.80 / 34% | 720 / -0.13 / 35% |
+| 22 | Z1|E5|IV_STACK|EQ|LIM0|F1400 | -1.73 (172) | -1.98 (329) | -2.66 (340) | -1.67 (269) | -3.85 (201) | -4.82 (272) | 6.03 (24) | 457 / -3.22 / 51% | 289 / -2.10 / 50% |
+| 23 | Z1|E1|S10|F4H|LIM2|F1400 | -0.66 (118) | -1.61 (370) | -1.34 (357) | -0.77 (411) | -0.35 (411) | -3.03 (316) | 1.76 (63) | 509 / -0.12 / 27% | 605 / -1.60 / 27% |
+| 24 | Z1|E5|IV_STACK|R2|LIM2|F1555 | -1.57 (196) | -4.50 (379) | 0.17 (434) | -1.90 (370) | -2.35 (285) | -1.43 (328) | 2.38 (46) | 540 / -2.25 / 38% | 469 / -0.58 / 39% |
+| 25 | Z1|E2|S10|F4H|LIM1|F1400 | -1.80 (109) | -2.80 (344) | -1.87 (328) | -1.33 (391) | 0.49 (390) | -2.00 (301) | 2.63 (62) | 487 / -0.78 / 24% | 562 / -1.06 / 26% |
+| 26 | M1|E5|A150|R2|LIM0|F1555 | -2.03 (258) | -1.96 (491) | -0.89 (531) | -0.08 (531) | -1.53 (474) | -0.83 (518) | 3.44 (104) | 773 / -1.43 / 32% | 671 / -0.17 / 35% |
+| 27 | Z1|E2|S10|F4H|LIM2|F1555 | -3.53 (116) | -1.76 (357) | -1.84 (334) | -0.12 (404) | 0.10 (394) | -1.94 (305) | 2.35 (63) | 506 / -0.07 / 25% | 565 / -1.12 / 26% |
+| 28 | Z1|E1|IV_FVG50|F4H|LIM2|F1555 | -0.54 (97) | -1.80 (329) | -1.38 (285) | -1.15 (300) | -1.36 (238) | -3.95 (250) | 2.42 (43) | 366 / -0.54 / 24% | 399 / -2.29 / 24% |
+| 29 | Z1|E2|IV_FVG50|F4H|LIM2|F1555 | -0.68 (87) | -2.28 (304) | -1.30 (256) | -1.12 (297) | -1.61 (234) | -3.84 (242) | 2.51 (42) | 362 / 0.19 / 23% | 370 / -3.07 / 23% |
+| 30 | Z1|E5|IV_STACK|R2|LIM1|F1555 | -1.98 (186) | -3.99 (372) | 0.47 (427) | -1.98 (351) | -2.77 (279) | -2.18 (322) | 1.62 (45) | 526 / -2.41 / 39% | 449 / -0.37 / 38% |
+
+## 6. Family-level tables from the PRE screen (all cells; pts/trade net1)
+
+### 6a. Z1 by stop (all targets/fills/entries/flat, cells with n>=100 only: means of cell means)
+
+| stop     |   cells |   n_med |   net1 |   win |    be |    eff |   best_eff |   cells_G1 |   cells_G3 |
+|:---------|--------:|--------:|-------:|------:|------:|-------:|-----------:|-----------:|-----------:|
+| IV_FVG50 |     180 |   663   | -2.506 | 0.339 | 0.474 |  0.077 |      2.042 |          0 |          0 |
+| IV_LEVEL |     120 |  1353   | -3.082 | 0.245 | 0.508 | -0.286 |      0.076 |          0 |          0 |
+| IV_OBFAR |     180 |   411   | -2.704 | 0.357 | 0.487 | -0.003 |      1.019 |          0 |          0 |
+| IV_STACK |     180 |   892   | -2.817 | 0.389 | 0.493 | -0.46  |      1.706 |          1 |          0 |
+| S10      |     180 |  1237.5 | -2.043 | 0.335 | 0.387 | -0.116 |      1.198 |          0 |          0 |
+| S15      |     180 |  1088.5 | -2.228 | 0.389 | 0.431 | -0.267 |      1.001 |          2 |          0 |
+| S20      |     180 |   977   | -2.233 | 0.431 | 0.467 | -0.285 |      1.17  |          2 |          0 |
+
+### 6b. Z1 by target
+
+| tgt   |   cells |   n_med |   net1 |   win |    be |    eff |   best_eff |   cells_G1 |   cells_G3 |
+|:------|--------:|--------:|-------:|------:|------:|-------:|-----------:|-----------:|-----------:|
+| EQ    |     200 |   661.5 | -2.544 | 0.331 | 0.384 | -0.314 |      1.441 |          0 |          0 |
+| F4H   |     200 |   882.5 | -2.112 | 0.267 | 0.236 | -0.077 |      2.042 |          0 |          0 |
+| FX20  |     200 |  1125.5 | -2.116 | 0.367 | 0.437 | -0.202 |      0.951 |          0 |          0 |
+| R1    |     200 |  1101.5 | -2.9   | 0.432 | 0.627 | -0.183 |      0.638 |          0 |          0 |
+| R2    |     200 |   912.5 | -2.241 | 0.38  | 0.501 |  0.017 |      1.706 |          5 |          0 |
+| SW    |     200 |  1232   | -3.015 | 0.385 | 0.587 | -0.358 |      0.733 |          0 |          0 |
+
+### 6c. Z1 by fill (2 / 1 / 0 pt before the level)
+
+| fill   |   cells |   n_med |   net1 |   win |    be |    eff |   best_eff |   cells_G1 |   cells_G3 |
+|:-------|--------:|--------:|-------:|------:|------:|-------:|-----------:|-----------:|-----------:|
+| LIM0   |     360 |   653   | -2.391 | 0.373 | 0.453 | -0.197 |      2.042 |          1 |          0 |
+| LIM1   |     420 |   922.5 | -2.581 | 0.344 | 0.457 | -0.236 |      1.587 |          0 |          0 |
+| LIM2   |     420 |   949.5 | -2.478 | 0.366 | 0.473 | -0.128 |      1.483 |          4 |          0 |
+
+### 6d. Z1 by entry cell, and by flat rule
+
+| ent   |   cells |   n_med |   net1 |   win |    be |    eff |   best_eff |   cells_G1 |   cells_G3 |
+|:------|--------:|--------:|-------:|------:|------:|-------:|-----------:|-----------:|-----------:|
+| E1    |     240 |   977   | -2.504 | 0.353 | 0.454 | -0.2   |      1.995 |          0 |          0 |
+| E2    |     240 |   944.5 | -2.59  | 0.348 | 0.455 | -0.285 |      2.042 |          0 |          0 |
+| E3    |     240 |   520   | -2.579 | 0.353 | 0.455 | -0.177 |      1.625 |          0 |          0 |
+| E4    |     240 |   897.5 | -2.384 | 0.366 | 0.454 | -0.29  |      0.886 |          0 |          0 |
+| E5    |     240 |  1345.5 | -2.383 | 0.382 | 0.488 |  0.02  |      1.706 |          5 |          0 |
+
+| flat   |   cells |   n_med |   net1 |   win |    be |    eff |   best_eff |   cells_G1 |   cells_G3 |
+|:-------|--------:|--------:|-------:|------:|------:|-------:|-----------:|-----------:|-----------:|
+| F1400  |     600 |   874.5 | -2.455 | 0.362 | 0.463 | -0.206 |      2.042 |          2 |          0 |
+| F1555  |     600 |   877   | -2.521 | 0.359 | 0.461 | -0.167 |      1.706 |          3 |          0 |
+
+### 6e. Model bracket S15|SW (stop 15, nearest swing, LIM1, flat 14:00): win rate vs break-even and what 15 pt does to the random comparator
+
+| entry | n | net1 | pool (random-in-regime) mean | effect | win | BE nominal | RR | median target dist |
+|---|---|---|---|---|---|---|---|---|
+| E1 | 1355 | -2.97 | -2.31 | -0.67 [-1.17, -0.13] | 41.6% | 65.0% | 0.71 | 11.4 |
+| E2 | 1367 | -3.21 | -2.31 | -0.90 [-1.44, -0.35] | 41.2% | 66.6% | 0.68 | 10.8 |
+| E3 | 729 | -2.96 | -2.34 | -0.61 [-1.27, 0.05] | 42.5% | 66.3% | 0.68 | 10.8 |
+| E4 | 1253 | -3.59 | -2.76 | -0.83 [-1.28, -0.38] | 41.0% | 61.3% | 0.81 | 12.9 |
+| E5 | 2134 | -3.35 | -2.79 | -0.56 [-0.91, -0.23] | 43.3% | 70.4% | 0.60 | 9.5 |
+
+### 6f. M1 volatility-unit stops vs fixed-point stops (same targets/fills/entries; cells n>=100)
+
+| stop   |   cells |   n_med |   net1 |   win |    be |    eff |   best_eff |   cells_G1 |   cells_G3 |
+|:-------|--------:|--------:|-------:|------:|------:|-------:|-----------:|-----------:|-----------:|
+| A075   |     180 |  1285.5 | -2.074 | 0.314 | 0.385 | -0.163 |      0.997 |          0 |          0 |
+| A100   |     180 |  1195   | -2.231 | 0.356 | 0.419 | -0.208 |      0.85  |          2 |          0 |
+| A150   |     180 |  1003.5 | -2.341 | 0.416 | 0.473 | -0.17  |      1.051 |          1 |          0 |
+
+Per-year stability inside PRE only (2024 = 11 months; 2025 = Jan-Jun; pooled over cells with SW/FX20/R1/R2 targets, trade-weighted): HOLD years were read only for the top 30, so 2025H2-2026 is not available for M1 cells.
+
+| stop   |   cells |   net1_2024 |   eff_2024 |   net1_2025 |   eff_2025 |   risk_med_pts_mean |
+|:-------|--------:|------------:|-----------:|------------:|-----------:|--------------------:|
+| S10    |     120 |      -1.745 |     -0.15  |      -3.08  |     -0.273 |              11     |
+| S15    |     120 |      -1.907 |     -0.234 |      -2.884 |     -0.206 |              16     |
+| S20    |     120 |      -1.88  |     -0.291 |      -2.753 |     -0.141 |              21     |
+| A075   |     120 |      -1.682 |     -0.207 |      -3.129 |     -0.15  |               8.998 |
+| A100   |     120 |      -1.787 |     -0.158 |      -2.912 |     -0.053 |              11.999 |
+| A150   |     120 |      -2.031 |     -0.181 |      -2.637 |      0.416 |              18.043 |
+
+### 6g. Z2 management shapes paired on identical entries against the plain bracket S15|SW|LIM1 (pair mean = shape - plain, pts/trade, week-block CI; averaged over 5 entries x 2 flat)
+
+| shape       |   cells |   n_med |   net1 |   plain |   pair |   pair_lo_min |   pair_lo_max |   pair_hi_max |   win |   be_emp |   runner_exists |    eff |
+|:------------|--------:|--------:|-------:|--------:|-------:|--------------:|--------------:|--------------:|------:|---------:|----------------:|-------:|
+| Z2a_50_E200 |      10 |  1104.5 | -2.071 |  -3.116 |  1.156 |        -0.239 |         0.845 |         2.316 | 0.402 |    0.494 |           0.061 | -0.646 |
+| Z2a_50_END  |      10 |  1104.5 | -2.035 |  -3.116 |  1.189 |        -0.239 |         0.845 |         2.587 | 0.4   |    0.49  |         nan     | -0.716 |
+| Z2a_50_F4H  |      10 |  1176.5 | -2.166 |  -3.116 |  0.966 |        -0.193 |         0.849 |         2.041 | 0.416 |    0.515 |           0.899 | -0.657 |
+| Z2a_50_VWAP |      10 |  1164.5 | -2.17  |  -3.116 |  1.098 |        -0.166 |         0.886 |         2.587 | 0.411 |    0.509 |           0.303 | -0.664 |
+| Z2a_75_E200 |      10 |  1104.5 | -2.587 |  -3.116 |  0.578 |        -0.119 |         0.422 |         1.158 | 0.415 |    0.539 |           0.061 | -0.621 |
+| Z2a_75_END  |      10 |  1104.5 | -2.558 |  -3.116 |  0.594 |        -0.119 |         0.422 |         1.293 | 0.415 |    0.537 |         nan     | -0.645 |
+| Z2a_75_F4H  |      10 |  1176.5 | -2.643 |  -3.116 |  0.483 |        -0.096 |         0.424 |         1.021 | 0.428 |    0.555 |           0.899 | -0.635 |
+| Z2a_75_VWAP |      10 |  1164.5 | -2.617 |  -3.116 |  0.549 |        -0.083 |         0.443 |         1.293 | 0.424 |    0.55  |           0.303 | -0.611 |
+| Z2b_BE10    |      10 |  1417   | -2.97  |  -3.116 |  0.239 |        -0.59  |         0.446 |         1.214 | 0.323 |    0.529 |         nan     | -0.619 |
+| Z2b_BE15    |      10 |  1390.5 | -3.06  |  -3.116 |  0.196 |        -0.33  |         0.366 |         0.905 | 0.38  |    0.564 |         nan     | -0.595 |
+| Z2c_50      |      10 |  1205.5 | -1.993 |  -3.116 |  1.188 |         0.488 |         1.051 |         1.993 | 0.389 |    0.47  |         nan     | -0.604 |
+| Z2c_75      |      10 |  1205.5 | -2.567 |  -3.116 |  0.594 |         0.244 |         0.526 |         0.996 | 0.42  |    0.538 |         nan     | -0.62  |
+
+Best paired cell: {'cell_id': 'Z2|E4|Z2a_50_VWAP|F1555', 'pair_mean': 1.603486180301705, 'pair_lo': 0.6504553063859326, 'pair_hi': 2.586918125902059, 'pair_mde80': 1.38866956679743}. Cells with pair CI lower > 0: 99 of 120.
+
+### 6h. M2 entry mechanics on the model bracket S15|SW (flat 14:00; fill rate = fills / signals; entry vs line = signed pts on the trend side)
+
+| entry | mechanic | signals | fill rate | entry vs line | n trades | net1 | random-in-regime pool | effect [CI] | win vs BE |
+|---|---|---|---|---|---|---|---|---|---|
+| E1 | REST | 1782 | 70% | -0.0 | 1087 | -2.35 | -2.29 | -0.06 [-0.53, 0.42] | 43.6% vs 58.6% |
+| E1 | MKT | 2543 | 100% | 8.1 | 2024 | -2.63 | -2.15 | -0.48 [-1.01, 0.04] | 47.0% vs 77.9% |
+| E1 | STOPENT | 2543 | 63% | 14.1 | 1240 | -3.82 | -3.09 | -0.73 [-1.46, -0.02] | 48.5% vs 82.6% |
+| E1 | MID | 2543 | 50% | -0.4 | 1048 | -2.76 | -2.59 | -0.17 [-0.69, 0.37] | 38.9% vs 64.4% |
+| E1 | MIDctl | 2543 | 86% | 8.1 | 1763 | -2.34 | -2.13 | -0.21 [-0.78, 0.32] | 47.0% vs 78.9% |
+| E2 | REST | 1743 | 86% | -0.0 | 1264 | -2.11 | -2.29 | +0.18 [-0.23, 0.56] | 44.9% vs 61.0% |
+| E2 | MKT | 2334 | 100% | 6.8 | 1851 | -2.38 | -2.15 | -0.23 [-0.75, 0.28] | 46.7% vs 76.4% |
+| E2 | STOPENT | 2334 | 67% | 12.3 | 1196 | -3.98 | -3.09 | -0.89 [-1.65, -0.08] | 47.7% vs 81.7% |
+| E2 | MID | 2334 | 54% | -0.8 | 1012 | -2.86 | -2.59 | -0.27 [-0.82, 0.30] | 39.0% vs 63.8% |
+| E2 | MIDctl | 2334 | 84% | 6.8 | 1576 | -2.08 | -2.13 | +0.05 [-0.53, 0.65] | 46.4% vs 77.3% |
+| E3 | REST | 909 | 65% | -0.0 | 521 | -1.33 | -2.23 | +0.89 [0.24, 1.57] | 47.2% vs 59.0% |
+| E3 | MKT | 1495 | 100% | 9.0 | 1209 | -1.98 | -2.27 | +0.29 [-0.27, 0.92] | 48.0% vs 81.7% |
+| E3 | STOPENT | 1495 | 66% | 14.2 | 770 | -2.58 | -3.05 | +0.47 [-0.35, 1.31] | 49.4% vs 86.6% |
+| E3 | MID | 1495 | 45% | -0.2 | 574 | -2.51 | -2.59 | +0.07 [-0.62, 0.79] | 42.0% vs 65.2% |
+| E3 | MIDctl | 1495 | 88% | 8.9 | 1074 | -1.88 | -2.19 | +0.31 [-0.31, 0.99] | 47.6% vs 82.3% |
+| E4 | REST | 1690 | 70% | -0.0 | 985 | -3.65 | -2.82 | -0.83 [-1.35, -0.29] | 40.6% vs 54.4% |
+| E4 | MKT | 2350 | 100% | 8.2 | 1859 | -2.64 | -2.31 | -0.33 [-0.96, 0.23] | 47.8% vs 74.3% |
+| E4 | STOPENT | 2350 | 64% | 14.6 | 1148 | -3.96 | -3.47 | -0.49 [-1.48, 0.44] | 47.4% vs 82.0% |
+| E4 | MID | 2350 | 50% | -0.4 | 973 | -3.51 | -2.89 | -0.61 [-1.18, -0.07] | 39.0% vs 60.9% |
+| E4 | MIDctl | 2350 | 86% | 8.4 | 1631 | -2.57 | -2.36 | -0.21 [-0.85, 0.40] | 47.9% vs 75.9% |
+| E5 | REST | 3254 | 67% | -0.0 | 1926 | -2.94 | -2.74 | -0.20 [-0.54, 0.14] | 42.8% vs 67.1% |
+| E5 | MKT | 3695 | 100% | 7.8 | 3296 | -2.15 | -2.16 | +0.01 [-0.32, 0.38] | 45.2% vs 81.7% |
+| E5 | STOPENT | 3695 | 63% | 14.2 | 1896 | -2.96 | -3.22 | +0.26 [-0.29, 0.78] | 46.6% vs 86.6% |
+| E5 | MID | 3695 | 54% | 0.0 | 1784 | -3.02 | -2.93 | -0.09 [-0.49, 0.29] | 41.3% vs 72.8% |
+| E5 | MIDctl | 3695 | 89% | 7.9 | 2948 | -2.07 | -2.24 | +0.17 [-0.22, 0.55] | 44.8% vs 82.3% |
+
+Note: the M2 REST pool and signals are touch episodes (no hold-candle knowledge); MID is zone-qualified (FVG else OB within 5 pt of the level), its paired control is MIDctl (market on the same zone-qualified entries).
+
+## 7. Realised stop distribution and R:R
+
+Price-stop cells: nominal stop = X + fill offset (S10 10-12, S15 15-17, S20 20-22 pt) and the nearest-swing target is 5-8 pt away (median, see counts), so nominal R:R of S15|SW is about 0.4 and the break-even win rate about 70%; the realised win rate is far below it. Invalidation cells: reference distance median / p90 in the counts block (level 1-2 pt, stack 1-100 pt by entry cell, FVG50 3 / 9 pt, OB far edge 4 / 10 pt) with the realised loss open-ended to 60 pt; the screen table (f3_pre_scored.parquet) has risk_med, risk_p90, loss_mean per cell.
+
+## 8. Deviations and disclosures
+
+- Screen run twice on PRE. Run 1 filled resting limits at the limit price even when the market had already traded through it at the fill-bar open (so random-pool bars on the wrong side of the line were filled far above the market; pool mean -18 pts, giant false effects). Found from the pool placebo, fixed in f3_lib.build_es (fill at the open if the open is through the limit; applies to real and pool alike), the same 2,330 cells re-scored, run 1 discarded (kept as out/zen/f3/run1_artifact_f3_pre_scored.parquet). Prereg text said "fills at the limit"; this is an edge case it did not cover. The PREHOLD list is from run 2 only. Conservative sensitivity: with N doubled to 4,660 the best reality-check p is still far above 0.05.
+- Screen placebo = exact pool expectation (unsequenced); real set is sequenced (one open trade). Top-30 placebos use 100 draws with sequencing; the draw-based rank, not the CI, is used for G1/G2 on the top 30.
+- Marketable limits: because the hold candle closes within a few points of the line, about 60% of the limit fills are at the next open (the limit is already marketable): LIM0/1/2 are therefore largely market entries; fill rates in the counts block.
+- The shared grid kernel zen_struct.grid_eval was NOT used (LIB BUG reported by D3ZF1: fill-bar spike counted for limit/stop entries). All cells use f3_lib.simk (own close-basis kernel) or Z.simulate; simk equals Z.simulate on market brackets, limit fill_mode=1 brackets and the cexit path (f3_test.py, 4000 random signals each, identity to 1e-9).
+- Invalidation stops are close-basis exits with a 60-pt disaster stop (assumption); FVG/OB invalidation cells exist only where a zone sits within 5 pt of the level (placebo requires the same), so they are subsets (n 265-760) and have larger MDE.
+- M1: 1R/2R targets are in the stop unit (volatility), FX20 stays in points; ATR14 is the 1-min Wilder ATR at the closed signal bar.
+- Z2 runner levels VWAP / EMA200 are usually behind price for pullback entries; where the level is not beyond the first target the runner runs to the flat time (runner_exists column in 6g).
+- Z2c trail uses 1-min closes against the last closed 5-min low/high (library semantics) rather than a 5-min close.
+- G10 NOT RUN (no replay worker; governor allow-list needs main). No 1-s proxy was run. Sub-window tables are descriptive; no best-window claim is made (no +240 to N).
+- Holdout looks used: 1 HOLD + 1 X, 30 cells, after the PREHOLD hash. Selection on PRE: top 30 by effect among n>=100, no de-duplication, so many of the 30 are near-duplicates (same entry, neighbouring fill/flat).
+- Statistical reading: the CI-based G1 on the pool expectation passes for 10 cells, none after 100 draws; G5 passes for 0 cells (no effect reaches its own MDE80). Screen basis is the mapped 1-min path (0.05-0.13 pts/trade more conservative than 1-s on tight stops).
+
+## 9. Files
+Code l2vast/ds3/code/zen/f3/{f3_lib,f3_cells,f3_cellrun,f3_screen_helpers,f3_screen,f3_analyze,f3_hold,f3_report,f3_test,f3_counts}.py; outputs l2vast/ds3/out/zen/f3/ (f3_pre_scored.parquet = all 2,330 cells, top30_full.pkl, logs); prereg l2vast/ds3/prereg/ZEN_F3_A_prereg.md(+.sha256), ZEN_F3_cells.csv; autopilot/DS3_ZEN_F3_PREHOLD.md.
+
+DONE F3

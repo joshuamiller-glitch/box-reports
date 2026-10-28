@@ -244,3 +244,139 @@ S6.4 target sources: distance above entry at the touch (E1; availability = touch
 | sd_ext_2.25 | 0.98 | 50.7 / 121.3 | 4.85 |
 
 Files: l2vast/ds3/out/zen/struct/s6_map_stopbuf0.csv (cell x window x 45 stops(buffer 0) x 64 targets: n, skipped, P(T), P(S), P(neither), mean stop / target, pool P(T)), s6_distances.csv (stop and target distances at the touch, pts and ATR), s6_md.txt; code l2vast/ds3/code/zen/struct/st_s6.py.
+
+## 2. Counts and grid (from the prereg, plus what was actually scored)
+
+- Prereg sha256 51e36df3b7f753f9e9d06b6ad56716ffbac2be5ea74b96aad297c80d65ec5e53 (hash line in DECISIONS.md written before scoring). Enumeration: 5 cells x 5 skip variants x 135 stops x 64 targets = 216,000 S3 + S4 120 + S5 80 + ladders 6 = **screened N upper bound 216,206**.
+- Actually scored on PRE: S3 216,000 enumerated, 205,721 valid (>= 30 real and pool trades), 10,279 not eligible (4,800 zone_far all-NaN pairs + 5,479 with fewer than 30 trades, counted); 198,761 with >= 100 valid real PRE trades; S4/S5 206 of 206 scored (all n >= 100).
+- Pair-level noise check: 4,079 of 205,721 valid pairs (2.0%) have effect CI lower bound > 0 (3,995 with n >= 100); the nominal one-sided false-positive rate is 2.5%. 458 pairs with n >= 100 have effect >= their own MDE80.
+- **Reality check (White max-statistic, week-block bootstrap 1,000, N=216,206, 205,721 eligible pairs): p = 0.964 for the best pair over all pairs.** By cell: E1 0.627, E2 0.549, E3 0.734, E4 0.951, E5 0.861. No cell passes G8.
+- Best-of-N is therefore the verdict that matters: the best of 205,721 pairs by effect (+9.8 pts, E2 prev-day-extreme stop / 5-min equal highs, n=102, CI lower +1.5 only because that pair's pool is -5.8) is what the max of 205k noisy estimates looks like (MDE80 for these pairs is 12-30 pts because wide stops and far targets give n of 100-200 trades with a 40-100 pt payoff).
+- Holdout looks used: 1 for HOLD (30 definitions), 1 for X (same 30); logged in out/zen/struct/looks.jsonl and DECISIONS.md BEFORE the runs. S4/S5 cells were not in the top 30 (their effects are 0.1-0.3 pt against S3 effects of 3-10 pt) so they have PRE results only.
+- Program N reference: 291,130 (plan).
+
+## 3. S3 best pairs by effect (PRE grid, n >= 100 raw, unsequenced) and the plain fixed-bracket comparator
+
+Fixed 15 pt stop / 20 pt target on the same entries, sequenced, full 100-draw placebo: E1 n=2465 mean -1.83 effect -0.32 rank 0.03 MDE80 0.77 win 0.413 vs BE 0.470; E2 n=2096 mean -1.71 effect -0.21 rank 0.16 MDE80 0.92 win 0.416 vs BE 0.470; E3 n=1117 mean -1.25 effect +0.13 rank 0.68 MDE80 1.07 win 0.429 vs BE 0.469; E4 n=2397 mean -1.52 effect -0.02 rank 0.46 MDE80 0.85 win 0.423 vs BE 0.470; E5 n=4018 mean -1.50 effect +0.01 rank 0.54 MDE80 0.64 win 0.424 vs BE 0.471. The fixed bracket is at or below zero vs random-in-regime and loses 1.25-1.83 pts/trade net (about $250-370 per 10-lot trade) in every cell. Same-bracket pool means: -1.0 to -1.2 pts for the plain structural hold-candle stop with fixed20 / 2R targets (grid, heat table).
+
+### 4. Top-10 table (top 10 of the 30 by PRE grid effect vs random-in-regime, regardless of verdict)
+
+PRE/HOLD/X = mean net1 pts/trade of the sequenced list [effect vs random-in-regime]; $ = pts x 200 (10 lots). trades/wk on PRE. fwd wks = weeks for 80% power at the PRE effect = 75 x (MDE80/effect)^2.
+
+| # | pair (cell | skip | stop | target) | n PRE seq | PRE [eff] | MDE80 | win vs BE | trades/wk | HOLD n [eff, CI lo] | X n [eff] | PRE gates G1-G5 | failed | fwd wks |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | E2 cap60|prev_day_extreme+0t|swing_5m_k2_equal_highs | 31 | 0.35 [+5.13] | 8.5 | 0.677 vs 0.667 | 0.41 | 26 [-0.32, -8.5] | 81 [+3.00] | fPfPf | G1 G3 G5 G6 G8 (p=0.964) G9 G10 not run | 208 |
+| 2 | E2 cap15|swing_15m_k3_last+0t|pivot_R1 | 50 | 0.96 [+0.68] | 7.7 | 0.220 vs 0.194 | 0.67 | 15 [+0.90, -11.2] | 71 [+2.86] | fffPf | G1 G2 G3 G5 G6 G8 (p=0.964) G9 G10 not run | 9612 |
+| 3 | E2 cap20|session_extreme+5t|pivot_R1 | 36 | 1.87 [+1.21] | 14.8 | 0.194 vs 0.166 | 0.48 | 7 [-0.55, -12.6] | 38 [-1.55] | ffPPf | G1 G2 G5 G6 G7 G8 (p=0.964) G9 G10 not run | 11167 |
+| 4 | E2 atr1.5|session_extreme+2t|session_extreme | 71 | 0.28 [+2.79] | 12.6 | 0.183 vs 0.180 | 0.95 | 20 [+14.10, -10.2] | 35 [-3.43] | fffPf | G1 G2 G3 G5 G6 G7 G8 (p=0.964) G9 G10 not run | 1532 |
+| 5 | E5 atr1.5|prev_hour_extreme+2t|swing_4h_nearest_high | 73 | 3.33 [+3.70] | 10.1 | 0.329 vs 0.249 | 0.97 | 24 [-4.58, -10.8] | 47 [+0.77] | fPPPf | G1 G5 G6 G8 (p=0.964) G9 G10 not run | 562 |
+| 6 | E5 cap30|session_extreme+5t|swing_5m_k3_lower_high | 27 | -0.15 [+3.99] | 12.9 | 0.370 vs 0.377 | 0.36 | 15 [+0.74, -23.0] | 34 [+1.27] | fPfff | G1 G3 G4 G5 G6 G8 (p=0.964) G9 G10 not run | 790 |
+| 7 | E4 cap60|prev_day_extreme+0t|swing_4h_nearest_high | 151 | 0.95 [+2.81] | 8.3 | 0.325 vs 0.309 | 2.01 | 38 [+2.08, -9.3] | 91 [+0.79] | fPfPf | G1 G3 G5 G6 G8 (p=0.964) G9 G10 not run | 660 |
+| 8 | E2 atr1.5|session_extreme+2t|donchian_100 | 71 | 0.01 [+2.27] | 12.3 | 0.183 vs 0.183 | 0.95 | 20 [+14.70, -9.5] | 35 [-3.47] | fffPf | G1 G2 G3 G5 G6 G7 G8 (p=0.964) G9 G10 not run | 2224 |
+| 9 | E2 cap15|swing_15m_k3_last+0t|swing_4h_nearest_high | 74 | 1.21 [+2.03] | 6.4 | 0.216 vs 0.185 | 0.99 | 24 [-4.02, -11.5] | 78 [-1.17] | ffPPf | G1 G2 G5 G6 G7 G8 (p=0.964) G9 G10 not run | 749 |
+| 10 | E2 atr1.5|session_extreme+2t|donchian_50 | 71 | -0.41 [+2.17] | 11.8 | 0.183 vs 0.187 | 0.95 | 20 [+14.91, -10.2] | 35 [-3.89] | fffff | G1 G2 G3 G4 G5 G6 G7 G8 (p=0.964) G9 G10 not run | 2221 |
+
+### 5. By entry window, by year, long/short (top 10; PRE+HOLD sequenced list = WF)
+
+Entry windows other than 10:00-14:00 (09:30-10:00, 14:00-15:30) are outside the screened PRIMARY window and were not scored (disclosed). Random-in-regime column = the pool mean over the same window is in the grid CSV; the placebo effect per row above is the pooled-window number.
+
+| # | W10 | W11 | W12 | W13 | 2024 | 2025 | 2026 | long | short |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 6.5 (n=21) | -15.2 (n=8) | 5.7 (n=15) | -2.0 (n=13) | -0.5 (n=29) | 3.2 (n=28) | - | -7.0 (n=14) | 4.0 (n=43) |
+| 2 | 4.4 (n=36) | -4.4 (n=11) | -1.0 (n=14) | 3.4 (n=4) | 2.9 (n=40) | -0.2 (n=25) | - | 3.3 (n=35) | -0.2 (n=30) |
+| 3 | 0.1 (n=39) | 9.9 (n=3) | -6.1 (n=1) | - | 5.1 (n=29) | -7.9 (n=13) | -18.0 (n=1) | 15.7 (n=16) | -8.3 (n=27) |
+| 4 | 2.2 (n=90) | 75.9 (n=1) | - | - | -2.9 (n=47) | 13.6 (n=40) | -32.9 (n=4) | 6.8 (n=40) | 0.1 (n=51) |
+| 5 | -0.6 (n=28) | -2.4 (n=12) | 14.4 (n=14) | -0.7 (n=43) | -0.6 (n=51) | 4.3 (n=44) | -16.6 (n=2) | 0.6 (n=44) | 1.8 (n=53) |
+| 6 | -2.9 (n=24) | -0.7 (n=16) | -0.8 (n=2) | - | 1.2 (n=23) | -5.7 (n=19) | - | -8.7 (n=14) | 1.4 (n=28) |
+| 7 | 4.1 (n=77) | -3.6 (n=55) | 5.6 (n=25) | -1.0 (n=32) | 1.8 (n=92) | 0.6 (n=97) | - | -5.0 (n=52) | 3.5 (n=137) |
+| 8 | 2.0 (n=90) | 75.9 (n=1) | - | - | -2.9 (n=47) | 13.1 (n=40) | -32.9 (n=4) | 6.3 (n=40) | 0.1 (n=51) |
+| 9 | 2.8 (n=47) | -2.4 (n=17) | -2.6 (n=24) | 1.1 (n=10) | 2.2 (n=61) | -2.6 (n=36) | -0.5 (n=1) | -0.9 (n=56) | 2.2 (n=42) |
+| 10 | 1.6 (n=90) | 79.2 (n=1) | - | - | -2.4 (n=47) | 11.8 (n=40) | -32.9 (n=4) | 5.1 (n=40) | 0.5 (n=51) |
+
+### 6. Heat tables (PRE, all touches, skip variant cap60, buffer 0; cell E1 shown, all five cells x 5 skips x 135 stops in s3_pairs_PRE.parquet / heat_*.csv)
+
+Rows = stop source, columns = target. Cell = mean net1 pts/trade of the real touches | effect vs pool | target-first rate minus break-even rate (BE of the realised mean stop/target, Target correction 2.48 pt). Positive win-BE means the target-first share exceeds break-even.
+
+| stop \ target | sw1m_k2 | sw5m_k3 | sw15m_k2 | session_extreme | prev_hour_extreme | vwap | ema20_5m | R1 | R2 | fixed20 | fixed40 | nearer2R_sw1m_k2 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| hold_candle | -1.89 / -0.12 / -0.14 | -1.83 / -0.37 / +0.03 | -1.36 / +0.00 / +0.06 | -0.68 / +0.20 / -0.02 | -0.86 / +0.08 / -0.00 | -1.40 / -0.10 / -0.05 | -1.71 / -0.16 / -0.11 | -1.47 / +0.22 / -0.20 | -1.02 / +0.14 / -0.09 | -1.01 / -0.13 / -0.09 | -0.82 / -0.25 / -0.05 | -1.94 / -0.08 / -0.24 |
+| prev_candle | -1.88 / +0.03 / -0.14 | -1.96 / -0.33 / +0.02 | -1.51 / +0.02 / +0.05 | -0.93 / +0.13 / -0.03 | -0.93 / +0.18 / -0.01 | -1.42 / +0.13 / -0.05 | -1.93 / -0.01 / -0.13 | -1.55 / -0.03 / -0.14 | -1.14 / -0.11 / -0.08 | -1.11 / -0.10 / -0.10 | -0.94 / -0.37 / -0.06 | -1.92 / -0.06 / -0.20 |
+| low3 | -1.87 / +0.03 / -0.13 | -2.09 / -0.37 / +0.02 | -1.61 / +0.05 / +0.05 | -1.18 / -0.08 / -0.04 | -1.12 / +0.12 / -0.02 | -1.56 / +0.03 / -0.06 | -1.85 / +0.03 / -0.12 | -1.53 / +0.00 / -0.13 | -1.13 / -0.04 / -0.07 | -1.18 / -0.08 / -0.11 | -1.02 / -0.34 / -0.07 | -1.89 / -0.03 / -0.18 |
+| line | -1.93 / +0.30 / -0.13 | -1.77 / +0.09 / +0.05 | -1.42 / +0.69 / +0.07 | -0.91 / +0.86 / -0.01 | -0.96 / +1.24 / +0.01 | -1.25 / +0.76 / -0.03 | -1.65 / +0.26 / -0.09 | -1.61 / -0.39 / -0.22 | -1.15 / -0.83 / -0.11 | -1.00 / +0.76 / -0.08 | -0.97 / +0.47 / -0.05 | -1.95 / +0.15 / -0.25 |
+| regime_line | -1.46 / +0.65 / -0.12 | -1.77 / +0.60 / -0.08 | -1.65 / +0.51 / -0.09 | 0.03 / +1.52 / -0.12 | -0.53 / +1.48 / -0.09 | -1.09 / +0.29 / -0.08 | -1.59 / +0.78 / -0.11 | -1.05 / +0.67 / -0.12 | -1.08 / +0.36 / -0.12 | -1.63 / +0.46 / -0.15 | -0.80 / +0.73 / -0.14 | -1.50 / +0.63 / -0.13 |
+| swing_1m_k2_higher | -1.91 / +0.11 / -0.18 | -2.27 / -0.36 / -0.02 | -1.82 / +0.25 / +0.01 | -1.00 / +0.34 / -0.07 | -0.95 / +0.40 / -0.03 | -1.00 / +0.18 / -0.07 | -1.91 / +0.32 / -0.17 | -1.48 / -0.31 / -0.11 | -1.36 / -0.81 / -0.09 | -1.46 / -0.36 / -0.13 | -1.32 / -0.71 / -0.10 | -1.95 / -0.29 / -0.19 |
+| swing_1m_k2_last | -1.91 / +0.04 / -0.14 | -2.48 / -0.55 / -0.01 | -2.07 / -0.01 / +0.01 | -1.09 / +0.23 / -0.08 | -1.31 / +0.19 / -0.04 | -1.57 / -0.03 / -0.07 | -2.21 / +0.04 / -0.14 | -1.70 / -0.50 / -0.11 | -1.62 / -1.00 / -0.10 | -1.66 / -0.33 / -0.13 | -1.38 / -0.63 / -0.11 | -1.98 / -0.23 / -0.15 |
+| swing_5m_k2_higher | -2.54 / -0.02 / -0.16 | -2.53 / -0.19 / -0.04 | -2.38 / +0.08 / -0.03 | -1.20 / +0.74 / -0.09 | -2.02 / +0.47 / -0.05 | -1.44 / -0.13 / -0.09 | -2.37 / +0.29 / -0.19 | -1.96 / -0.44 / -0.12 | -1.91 / -1.10 / -0.11 | -1.90 / +0.13 / -0.15 | -1.80 / -0.39 / -0.13 | -2.54 / -0.20 / -0.17 |
+| swing_5m_k2_last | -2.39 / -0.12 / -0.13 | -2.62 / -0.43 / -0.04 | -2.78 / -0.29 / -0.04 | -1.76 / -0.11 / -0.13 | -2.01 / +0.12 / -0.08 | -1.77 / -0.84 / -0.08 | -2.35 / -0.38 / -0.15 | -2.39 / -0.85 / -0.15 | -2.51 / -1.74 / -0.15 | -2.14 / -0.18 / -0.15 | -1.80 / -0.51 / -0.16 | -2.43 / -0.27 / -0.13 |
+| swing_15m_k2_last | -2.31 / +0.15 / -0.10 | -3.71 / -0.09 / -0.09 | -3.64 / -0.72 / -0.06 | -4.17 / -1.58 / -0.17 | -3.67 / -0.47 / -0.13 | -2.20 / -0.25 / -0.06 | -2.66 / +0.66 / -0.12 | -4.48 / -1.47 / -0.18 | -5.28 / -2.05 / -0.20 | -3.89 / -1.23 / -0.18 | -4.21 / -1.47 / -0.22 | -2.38 / +0.20 / -0.10 |
+| pullback_extreme | -1.98 / -0.07 / -0.14 | -2.51 / -0.67 / -0.01 | -2.02 / -0.06 / +0.02 | -1.38 / -0.17 / -0.07 | -1.42 / -0.05 / -0.04 | -1.71 / -0.14 / -0.07 | -1.91 / +0.08 / -0.13 | -1.91 / -0.51 / -0.12 | -1.57 / -0.66 / -0.09 | -1.55 / -0.27 / -0.13 | -1.40 / -0.59 / -0.10 | -2.01 / -0.19 / -0.17 |
+| session_extreme | -2.27 / +0.03 / -0.08 | -3.96 / -0.42 / -0.06 | -4.25 / -1.31 / -0.07 | -5.66 / -2.64 / -0.17 | -4.82 / -1.70 / -0.11 | -2.03 / -0.13 / -0.05 | -3.27 / -0.36 / -0.10 | -6.02 / -2.52 / -0.21 | -7.09 / -2.74 / -0.21 | -4.84 / -2.17 / -0.18 | -5.09 / -2.35 / -0.21 | -2.35 / +0.12 / -0.08 |
+| prev_hour_extreme | -2.41 / +0.11 / -0.11 | -3.18 / -0.19 / -0.05 | -3.44 / -0.27 / -0.03 | -2.54 / -0.45 / -0.15 | -1.99 / +0.23 / -0.10 | -1.63 / +0.31 / -0.07 | -2.51 / +0.29 / -0.13 | -3.13 / -0.55 / -0.16 | -3.76 / -1.56 / -0.18 | -2.69 / -0.23 / -0.17 | -2.65 / -0.24 / -0.19 | -2.45 / +0.12 / -0.12 |
+| donchian_20 | -2.06 / -0.05 / -0.12 | -2.37 / -0.46 / -0.01 | -2.21 / +0.10 / +0.01 | -0.94 / +0.44 / -0.09 | -1.19 / +0.41 / -0.05 | -1.46 / +0.07 / -0.06 | -1.83 / +0.25 / -0.12 | -1.87 / -0.55 / -0.11 | -1.42 / -0.79 / -0.11 | -1.74 / -0.19 / -0.14 | -1.44 / -0.40 / -0.12 | -2.09 / -0.19 / -0.14 |
+| round_50 | -1.86 / +0.37 / -0.12 | -2.29 / -0.35 / -0.03 | -1.65 / +0.33 / -0.01 | -1.62 / -0.24 / -0.10 | -1.21 / +0.33 / -0.07 | -0.92 / +0.45 / -0.05 | -1.83 / +0.22 / -0.11 | -1.67 / -0.22 / -0.14 | -1.64 / -0.89 / -0.14 | -1.78 / -0.25 / -0.16 | -1.67 / -0.61 / -0.15 | -1.86 / +0.21 / -0.13 |
+| nearest_prior_level | -2.10 / +0.05 / -0.17 | -2.08 / +0.20 / -0.04 | -2.24 / +0.47 / -0.05 | -0.96 / +1.17 / -0.10 | -1.38 / +0.85 / -0.07 | -1.39 / +0.65 / -0.11 | -2.16 / +0.39 / -0.17 | -1.75 / +0.22 / -0.15 | -2.15 / -0.21 / -0.13 | -1.43 / +0.41 / -0.16 | -1.18 / +0.52 / -0.14 | -2.16 / -0.07 / -0.19 |
+| vwap_1sd | -2.16 / +0.15 / -0.11 | -1.69 / -0.25 / -0.04 | -2.01 / -0.12 / -0.03 | -0.79 / +0.55 / -0.12 | -0.97 / +0.28 / -0.08 | -1.26 / +0.52 / -0.07 | -1.75 / +0.97 / -0.13 | -2.40 / +0.10 / -0.14 | -1.44 / +0.19 / -0.13 | -2.19 / +0.21 / -0.16 | -1.83 / +0.75 / -0.16 | -2.23 / +0.07 / -0.11 |
+
+(* = n < 100: a count, not a verdict.) Full per-cell heat CSVs: out/zen/struct/heat_E{1..5}_cap60_{pts,effect,n}.csv.
+
+### 6b. S4 trails and S5 scaling (PRE; base stop = hold-candle +2 ticks, entries with stop > 20 pt skipped; effect vs the pool running the same rule at every regime minute; paired = rule minus the plain 15/20 bracket and minus the same stop with a 2R target on identical entries)
+
+| cell | rule | n | mean net1 | pool | effect [CI lo] | MDE80 | paired vs 15/20 [CI lo] (MDE) | paired vs 2R [CI lo] |
+|---|---|---|---|---|---|---|---|---|
+| E2 | S5 f0.50 t2=prev_day_extreme noBE | 3155 | -0.90 | -1.20 | +0.30 [-0.34] | 0.94 | +0.38 [-0.71] (1.45) | -0.09 [-0.64] |
+| E5 | LADDER25/25/50 setB | 10559 | -1.03 | -1.29 | +0.27 [+0.12] | 0.20 | +0.48 [-0.15] (0.91) | -0.09 [-0.28] |
+| E5 | S5 f0.50 t2=2R BE | 10559 | -1.44 | -1.70 | +0.26 [+0.14] | 0.17 | +0.07 [-0.58] (0.94) | -0.50 [-0.74] |
+| E5 | S4 rule12 noscale | 12922 | -0.45 | -0.70 | +0.25 [-0.05] | 0.45 | +1.24 [+0.63] (0.90) | +0.57 [+0.20] |
+| E5 | S5 f0.75 t2=2R BE | 10559 | -1.73 | -1.97 | +0.24 [+0.13] | 0.16 | -0.22 [-0.87] (0.97) | -0.79 [-1.05] |
+| E5 | S5 f0.50 t2=2R noBE | 10559 | -1.55 | -1.79 | +0.24 [+0.10] | 0.20 | -0.05 [-0.64] (0.87) | -0.61 [-0.76] |
+| E5 | S5 f0.75 t2=2R noBE | 10559 | -1.78 | -2.01 | +0.23 [+0.12] | 0.17 | -0.28 [-0.91] (0.93) | -0.85 [-1.07] |
+| E1 | S5 f0.50 t2=prev_day_extreme noBE | 4831 | -0.99 | -1.20 | +0.22 [-0.31] | 0.79 | +0.38 [-0.61] (1.35) | -0.06 [-0.51] |
+| E3 | S5 f0.50 t2=2R BE | 2382 | -1.47 | -1.68 | +0.21 [-0.14] | 0.49 | +0.24 [-0.79] (1.54) | -0.27 [-0.65] |
+| E3 | S5 f0.75 t2=2R BE | 2382 | -1.75 | -1.95 | +0.20 [-0.14] | 0.48 | -0.04 [-1.10] (1.57) | -0.55 [-0.98] |
+
+Mean effect over the five cells by rule: every S4 trail rule averages -0.1 to -0.8 pt vs the random-regime pool (worst: no trail / BE after scale control -0.76, 1-min higher low trails -0.4 to -0.5, best: previous-candle low after +10/+15 pt and EMA20 exit -0.1); S5 scaling averages -0.23 to +0.18 pt, positive only with the 2R second target (+0.11 to +0.18) and ladder set B (+0.17); first-scale versions are slightly better than no-scale for the trails. No S4/S5 cell has positive mean net (best -0.45 pt/trade, E5 EMA20 exit after +1R, no scale). Largest positive effects: E5 ladder 25/25/50 with 2R/3R (+0.27 [0.12], MDE80 0.20, net -1.03 pt/trade) and E5 50% at structure + 2R (+0.26 [0.14], net -1.44). They beat the pool by about 0.25 pt and still lose after costs. E5 EMA20-exit-after-+1R without scale beats the plain 15/20 bracket paired by +1.24 pt [0.63] (MDE80 0.90) and the 2R target by +0.57 [0.20], but only because the bracket comparators lose 1.7 pt; its own effect vs random is +0.25 [-0.05], net -0.45, not tested on HOLD (not in the top 30). BE after the first scale (the S5 control pair) makes no systematic difference (2R: +0.02 to +0.04 pt in favour of BE) - the dead-BE finding stands at the 15-pt-class stop. Ladders ran on E5, E2, E1 (best S5 effect).
+
+## 7. Realised stop and target distributions and R:R (top 10 on PRE, sequenced)
+
+| # | stop med / p90 pts | realised mean R:R (mean target dist / mean stop) | win | BE win |
+|---|---|---|---|---|
+| 1 | 51.5 / 59.2 | 0.3 | 0.677 | 0.667 |
+| 2 | 7.6 / 14.2 | 10.3 | 0.220 | 0.194 |
+| 3 | 12.9 / 18.8 | 7.3 | 0.194 | 0.166 |
+| 4 | 16.8 / 35.8 | 4.9 | 0.183 | 0.180 |
+| 5 | 10.5 / 24.7 | 6.8 | 0.329 | 0.249 |
+| 6 | 26.2 / 29.5 | 0.4 | 0.370 | 0.377 |
+| 7 | 23.8 / 52.8 | 4.9 | 0.325 | 0.309 |
+| 8 | 16.8 / 35.8 | 5.1 | 0.183 | 0.183 |
+| 9 | 8.2 / 14.2 | 10.9 | 0.216 | 0.185 |
+| 10 | 16.8 / 35.8 | 4.7 | 0.183 | 0.187 |
+
+Stops at the touch (S6.3): hold-candle 5.8 pt median (p90 17), line 5.4, last 1-min higher low 4.0, swing lows 12-32 pt, session / OR / prior-day extremes 50-180 pt. The top pairs are wide-stop / far-target structures (stop 8-50 pt, R:R of 3-9), win rates of 18-37% against break-evens of 17-31%: payoff shape, not edge - the random-regime pool with the same logic wins nearly as often.
+
+## 8. Gate outcome for the top 30 (G10 not run by this agent)
+
+PRE: G1 passes 2 of 30, G2 8, G3 7, G4 18, G5 0 (no top-30 pair has n >= 100 sequenced trades and effect >= MDE80). Only #26 (E4, stop 15-min last swing low +5t, target 3-min leg high, 1.5 ATR cap) passes G1-G4 on PRE (eff +5.03, CI [0.43, 10.0], n=90, MDE80 6.7: inside MDE). **HOLD: G6 passes for 0 of 30** (HOLD effect > 0 for 19 of 30, mean +4.1, but no CI lower bound above 0, largest HOLD n is 73; #26 HOLD effect -1.53). X: effect >= 0 for 13 of 30 (G7). G8 fails for all (p=0.964). G9 passes for none. Label: none (LEAD requires G1-G7; there is no LEAD, no CANDIDATE, no CONFIRMED). The HOLD effects of +12 to +17 for several session-extreme-stop pairs are 20 trades, all the same handful of trades in one regime (the 8 identical-n rows), CI lower about -10.
+
+## 9. Deviations and disclosures
+
+- BUG found and fixed by me before any look (my own wrapper, not the shared lib): in `st_common.run_grid` the ATR-cap flag was tested as `is None`, so all five skip variants had the 1.5 x ATR cap applied on the first S3 run (log s3_run_BUGGY_atrcap_all.log; best-of-N p was 0.817 then). Detected by the sim_spec vs grid identity test (12/40 matched), fixed, S3 rerun in full (identity now 40/40: n and mean net1 equal between `Z.simulate` and `grid_eval` for 40 random pairs across all skip variants). The prereg hash predates both runs; no cell definition changed. Reported numbers are from the corrected run.
+- Coordinator warning (fill_mode=1 grid bug in zen_struct._grid): STRUCT uses market entries only (fill_mode=0), never fill_mode=1. Spot identity check against `Z.simulate()` done as above (40/40), and all 30 top cells and S4/S5 are simulated with Z.simulate directly. Not affected.
+- Screen grid is unsequenced (every touch); the top 30 are sequenced (one open trade) and have fewer trades (26-151), which is why G5 fails everywhere. The ranking used the unsequenced effect as preregistered; sequenced effects differ (e.g. #1: +9.8 grid, +5.1 sequenced).
+- Heat table win rate = target-first share (a time-flat exit with positive net is not a win); break-even uses the PRE mean mapped Target correction 2.48 pt (target fills are penalised heavily in 2025 by the P9 map: -4.2 pt; this lowers every target-based result, and the pool/random-regime comparator is subject to the same correction).
+- The 'line' stop source at a random minute is often far from price (skipped or wide), so its pool is a different (closer-to-line) subset; effects of line-based stops vs the pool are therefore not comparable to candle stops (visible in the heat table, e.g. line row effects +0.3 to +1.2).
+- zone_far undefined for E1-E5: 4,800 pairs skipped, counted. Entry windows 09:30-10:00 and 14:00-15:30 and the 15:55 flat were not screened (prereg). Direct 1-s/L2 replay (G10) not run: no cell can reach CANDIDATE here. Mapped basis is 0.05-0.13 pt/trade more conservative than the 1-s path on tight stops.
+- S4/S5 were not holdout-tested (not in the top 30); S4 'higher low' trails use the confirmed swing as-of the close and are accepted only if below the close; 5-min candle low trail is a stop-order ratchet, not the 5-min-close exit of Addendum 1 Z2c. Ladder BE=yes (prereg silent). 
+- Leak tests: st_tests.py 17/17 (touch masks of E1-E5 and 12 trail arrays unchanged when bars after 20250102 are deleted); zen_lib_test 63/63 covers the swing ladders.
+- Selection: top 30 chosen by PRE effect only, one pair per (cell, stop source, target), best buffer x skip variant per key.
+
+## 10. Files
+
+Code l2vast/ds3/code/zen/struct/{st_common,st_specs,st_trails,st_tests,st_s6,st_s6_md,st_s3,st_s45,st_top,st_prehold,st_hold,st_report,st_md2}.py. Output l2vast/ds3/out/zen/struct/ (s6_*.csv, s3_pairs_PRE.parquet, s3_grids_PRE.pkl, s45_PRE.pkl, top30_PRE.pkl, hold_x_results.pkl, final_top30.pkl, heat_*.csv, looks.jsonl, logs). Prereg l2vast/ds3/prereg/ZEN_STRUCT_S3_prereg.md (+ .sha256, cells.csv.gz). Pre-holdout text autopilot/DS3_ZEN_STRUCT_PREHOLD.md.
+
+## 11. Verdict
+
+S6: the nearest 1-min swing high is reached before the hold-candle low breaks in 46-51% of touches (random minute 39%), but the target is about as far as the stop (R:R about 1.0) and the cost-adjusted break-even is 58-68%, so near structure is reachable and not payable; far structure (5-min, 15-min, 1-h swing highs) pays but its odds are mostly shared with a random minute. S3: of 205,721 eligible stop x target pairs the best-of-N reality-check p is 0.964 (4,079 pairs have CI lower > 0 against about 5,100 expected from noise at 2.5%); the top 30 fail the holdout (G6 0 of 30). The plain 15/20 bracket is at zero vs random-in-regime and nets -1.5 pt/trade; structural brackets reshape the payoff (win rate 18-37% against break-even 17-31%) without changing the mean vs a random minute. S4/S5: the best structural management effects are +0.25 pt vs random minutes (MDE80 0.2) with net -1.0 to -1.4 pt/trade; nothing is positive after costs.
+
+no structural pair beats the fixed bracket
+
+DONE STRUCT
