@@ -12,3 +12,9 @@ DIRECTIVE_PBX_CHOP_FULL.md is the current scope and the box is at 20% CPU. Start
 
 ## 2026-10-28 USER DIRECTIVE: CONFIRMATION PROGRAM (full text in autopilot/DIRECTIVE_CONFIRM_20261028.md)
 Items A cross-instrument replication of DR5m & RVW1|F30 (ES/YM/RTY + NQ ref, 8 cells), B RVW1 queue-position execution replay (5/10 lots, 1s/3s delay), C DR5m at hard caps 40/50/60 + margin, D forward register (both rows, DS5 mix row + evaluator tz/PE fix, TR3_DON15_S alert -> 1.7 pt), E Sim specs if A passes. Reports DS3_CONFIRM_A/B/C/D.md, DS3_CONFIRM_FINAL.md. No grid, no re-tuning.
+
+## 2026-10-28 USER DIRECTIVE: T-DIVERSIFY intraday (full text in autopilot/DIRECTIVE_DIVERSIFY_20261028.md)
+Sections 0 inventory (+purchase list, no buys w/o OK), 1 time-of-day maps (ES,RTY,YM,CL,ZN,GC,6E + NQ ref), 2 one-rule-per-window cells (<=12/market, incl. overnight cells), 3 cross-market signals into NQ/ES, 4 vol-regime on/off gates for live books, 5 portfolio solve, 6 Sim specs for CONFIRMED. Reports DS3_DIV_0_INVENTORY, _1_MAPS, _<market>, _XMKT, _VOLGATE, _FINAL.
+
+## 2026-10-28 USER DIRECTIVE: T-DIVERSIFY-2 (full text autopilot/DIRECTIVE_DIVERSIFY2_20261028.md)
+A stack audit (where it loses/idles), B market-neutral pairs, C scheduled-event books (RECONSTRUCTED calendar), D stack-state conditional books, E MBO setups audit, F night-session map, G internals NEEDS, H portfolio+specs. Reports DS3_DIV2_A_AUDIT, _B.._F, _FINAL (one number: $ in stack's 20 worst weeks at 20% risk).

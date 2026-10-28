@@ -37,3 +37,20 @@ Agents: D3O1 (A, ORbase/DRbase), D3CL1 (B, block 4 + RVW1 robustness), D3DN (C),
 - [D3CFC] TR3_DON15_S slippage alert 1.0 -> 1.7 pt: the 1.0 pt only existed in the research spec text (DS3_SPEC_TR3_DON15_S.md line 104), changed there. NOT touched (not in this repo): if your DN strategy or execution server has its own slippage-alert parameter, the one-line change is: `TR3_DON15_S forward slippage alert: average fill slippage vs stop price, 4-week window: threshold 1.0 pt  ->  1.7 pt`.
 
 - [CONFIRM C/D] DR5m at cap 60: survives (never binds on 48.7-lot stack); cap 50: WF/HOLD ok but 2023 span +$0.3k vs +$2.4k (fails); cap 40 fails. Margin unresolved: need broker intraday NQ margin (<~$11.9k/contract fits $700k at 58.7 lots). Forward weeks needed at half edge: DR5m 383, RVW1 646-1,624. Shadow rows + DS5 row + evaluator tz fix done; W44 DS3 total now 31 trades / $39,915.
+
+- [T-DIVERSIFY started 2026-10-28 ~13:00Z] D3DV1 (inventory + maps), D3DVG (vol-regime gates). Per-market agents follow the maps. Purchase list (if any) will be here for your OK; nothing bought.
+
+# MORNING BRIEF 2026-10-28 13:00Z (one line per overnight item)
+- A T-OPEN: no PASS. Best = DR5m_pb1_rm0.5 X60_75 (forward-register only): direct WF +$5.7k/wk, HOLD +$4.3k, 2023 +$2.4k (optimistic bound); fails program-level best-of-N; does NOT replicate on ES/YM/RTY (0 of 3) -> NQ-only. Changes nothing in DS3/DS5. Number: margin ~$1.2M proxy at 57-lot peak vs $700k (need broker intraday NQ margin).
+- B T-CLOSE: best = RVW1|F30 v2 (+$1.3k M / +$2.3k T per wk, MDE $2.25k); 0 of 3 instruments replicate; queue-position replay (D3CFB) still running. Changes nothing yet. Number: needs ~160-1,600 forward weeks.
+- C DN 10-lot stop-fill: DEGRADED but positive; 10 lots keeps 54-68% of as-scored mean, break-even slip ~4.5-5.2 pt vs measured ~1.4-1.7. KB/DN substitution: see DS3_DN_STOPFILL.md.
+- D Block rules: see DS3_BLOCKRULES.md (no live-eligible rule beyond the 09:30-09:59 un-block lines).
+- E Trade Health loss-side: not gate-supported on DS3 KB/PE/SM/PB (question open: switch off in Sim?).
+- F Sizing by regime: 4/8-week picks DEAD on correct stack (D3VS).
+- G Forward register: shadow rows for DR5m, RVW1 LMT and DS5 mix added from W45; evaluator tz fixed to ET, PE slot fixed; W44 DS3 total now 31 trades / $39,915. TR3_DON15_S alert -> 1.7 pt (research spec only).
+- H Extras: structure brackets 0/300 PASS (DS3_STRUCTBRACKET_FINAL.md); ICT/MAMA no promotion; MAMA plateau direct WF +$7.4k not includable.
+- NEW T-DIVERSIFY: inventory done. Tick trades already on disk for ES/RTY/CL/GC/ZN (not YM/6E). Purchase list in DS3_DIV_0_INVENTORY.md needs your OK: P1 YM+6E trades $158.63; P3 mbp-1 12m (CL/6E/GC/YM/ZN) $350.99; P4 2022-06..2023-01 trades $252.73; all $762.35 of $811.38 headroom. Nothing bought.
+
+- [T-DIVERSIFY-2 queued 2026-10-28] A audit (D3D2A) and E MBO audit (D3D2E) running; B/C/D/F/H launch after the audit (agent cap). Market agents D3DVE/D3DVC/D3DVR/D3DVX running for T-DIVERSIFY.
+
+- [DIV2 E] MBO seven: corr to stack ~0 (-0.09..+0.10), not another way of buying NQ trend, but no edge established (all means < MDE) and not shown a worst-week hedge (null p 0.21-0.69). Number: best setup +$129k in stack's 20 worst weeks at 20% risk vs stack -$3.30M (3.9%). NEEDS from you: export of the seven paper-soak trade logs + frozen config + soak start date from the execution server.
