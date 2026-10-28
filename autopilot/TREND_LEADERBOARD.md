@@ -1,5 +1,5 @@
 # TREND LEADERBOARD (TL, R9)
-Updated 2026-10-28T09:16Z. Rows: DS3_TC1C2.json=48, DS3_TC1C2_v1_INVALID.json=48, DS3_TC3C4.json=32, DS3_TC3C4_v1_INVALID.json=32, DS3_TC4R4.json=70, DS3_TC4R4_v1_INVALID.json=70, DS3_TC5.json=24, DS3_TC5_v1_INVALID.json=24, DS3_TR1.json=134, DS3_TR2.json=74, DS3_TR4.json=58
+Updated 2026-10-28T09:46Z. Rows: DS3_TC1C2.json=48, DS3_TC1C2_v1_INVALID.json=48, DS3_TC3C4.json=32, DS3_TC3C4_v1_INVALID.json=32, DS3_TC4R4.json=70, DS3_TC4R4_v1_INVALID.json=70, DS3_TC5.json=24, DS3_TC5_v1_INVALID.json=24, DS3_TR1.json=134, DS3_TR2.json=74, DS3_TR4.json=58
 
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 
