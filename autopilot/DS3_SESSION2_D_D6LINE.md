@@ -66,3 +66,15 @@ Stack-add (line scaled to 10/20/30% of the stack PRE weekly SD): 10%: HOLD add 5
 - The wider line (any replayed cell-session passing MEASURED, PRE-ranked; these cells do NOT all have NT8 specs, only the item-1 cells do) is positive in PRE (+9.8k/wk) and HOLD (+7.4k/wk) but NEGATIVE in the 2023 span (-0.3k/wk) and does not hedge the stack's bad weeks (add in the 20 worst stack weeks is negative at every risk level); correlation to the stack 0.5 (PRE) and 0.4 (HOLD). It is an honest upper bound for what a measured-basis session book looks like, not the D6 line.
 - Net: on live-latency fills the session book collapses from six sessions of IC/CRT/ICT legs to one measured-positive leg (NY-AM HM) and a few minimum-size monitors. The earlier PAIR-PASS stack-add numbers (11-32k/wk at 20% risk) do not survive: the measured HOLD add of every complete pair is negative.
 
+
+
+## D3SQ queue refresh (SSA_Q_addendum)
+2026-10-28 22:49Z after q1 (TOPEN); queue waves so far [1]: ASIA = no new queue book, LONDON = no new queue book, PRE = no new queue book, NYAM = TOPEN_B2_OR30m_stp_ge0.5_F60 [NY-AM] (MEASURED HOLD +5.38 pts, MDE 14.5, 1 lots, edge-beyond-beta yes), NYPM = no new queue book. CLOSE: no new queue book.
+
+
+## D3SQ queue refresh (SSA_Q_addendum)
+2026-10-28 22:50Z after q1 (TOPEN); queue waves so far [1]: ASIA = no new queue book, LONDON = no new queue book, PRE = no new queue book, NYAM = TOPEN_B2_OR30m_stp_ge0.5_F60 [NY-AM] (MEASURED HOLD +5.38 pts, MDE 14.5, 1 lots, edge-beyond-beta yes), NYPM = no new queue book. CLOSE: no new queue book.
+
+
+## D3SQ queue refresh (SSA_Q_addendum)
+2026-10-28 22:58Z after q2 (sd2a); queue waves so far [1, 2]: ASIA = PRO_ER4_n40_EMA5 [ASIA] (MEASURED HOLD +10.64 pts, MDE 24.2, 1 lots, edge-beyond-beta yes), LONDON = TR1B_reg1m_n60_t3_r0.5 [LONDON] (MEASURED HOLD +5.12 pts, MDE 10.9, 1 lots, edge-beyond-beta no), PRE = TB4B_tick_17_tick_1000_ST60_SW38_T3 [PREOPEN] (MEASURED HOLD +10.07 pts, MDE 23.2, 1 lots, edge-beyond-beta yes), NYAM = TOPEN_B2_OR30m_stp_ge0.5_F60 [W3_1000-1030] (MEASURED HOLD +5.38 pts, MDE 14.5, 1 lots, edge-beyond-beta yes), NYPM = PRO1_AGG_RL3_EMA200_VWAP [NY-PM] (MEASURED HOLD +6.72 pts, MDE 19.7, 1 lots, edge-beyond-beta yes). CLOSE: no new queue book.
