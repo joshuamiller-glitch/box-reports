@@ -233,3 +233,10 @@ First month (2023-04) checked OK (19,038 fills, all TAKEN). 24 workers running/l
 
 ## D6 PRIORITY 19:42Z - memguard kill
 memguard killed ssa_direct worker pid 2023680 at 19:31:47Z (avail 5.1 GB, rss 6.0 GB) = month 2024-06 (no done marker). Standing rule: no retries. QUESTION FOR USER (D6 deadline): authorize ONE re-run of 2024-06 (PRE window month)? D3SA told not to relaunch and to bound the hole in scoring. Memory: 24 workers + ZEN MX jobs (mx_m9 5.5 GB) + 13 frozen held-track workers (~25 GB) are competing; ending the frozen held-track workers would free ~25 GB.
+
+## D6 PRIORITY status 20:09Z
+- D3SA: 2024-06 re-running once; pass 1 (9 IF/CRT/ba2 legs) ~20:30Z; pass 2 (PB7, TB4B, TB4W; 22 months) ~21:05Z; DS3_SESSION2_A_D6.md ~21:15Z (deadline 21:35Z). E1A only non-replayed leg.
+- EARLY READ (55-65% of months, NOT final, from D3SA): IF and CRT legs NEGATIVE on MEASURED (about -1 to -3 pts/trade) vs about +1 to +2.5 stored. D3SA is checking how much is the 60-pt-bracket P9 target correction applied to 4-8 pt targets (flagged in prereg as a caveat). If the ICT cells do not survive MEASURED, the D6 line will lean on the ba2 KB/HM/SM and PB7/E1A/TB4W legs.
+
+## D3SA D6 item 2 - 20:35Z update
+Pass 1 (35 months, 9 of 13 D6 legs + all 348 fixed-bracket cell-sessions) is replayed and scored; pass 2 (PB7, TB4B, TB4W entries in 22 months) running, ~20:55Z. Headline so far: the IF/CRT legs are NEGATIVE on MEASURED (about -1.3 to -3.9 pts/trade HOLD against +0.8 to +3.3 stored): the stored basis credited stop exits +4 pt (P9 stop-join) that a stop-market does not get; ba2/HM_t75_s90 NY-AM stays positive (MEAS HOLD +5.4), ba2/SM_t60_sst small positive, ba2/KB_t60_s75 ASIA negative in HOLD. All 19 complete session pairs die on MEASURED (8 more incomplete, non-replayed PRO1/d4a/E1C/S5 legs). 2024-06 re-run done (one attempt). DS3_SESSION2_A_D6.md due ~21:15Z.
