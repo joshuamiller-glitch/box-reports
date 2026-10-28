@@ -21,3 +21,15 @@ A stack audit (where it loses/idles), B market-neutral pairs, C scheduled-event 
 
 ## 2026-10-28 USER DIRECTIVE: T-STACK (full text autopilot/DIRECTIVE_STACK_20261028.md)
 Fix the stack where the audit says it loses: A PRE-derived loss-slot blocks/halving, B ex-ante range-day rules, C chop-week de-risking (stack-state), D same-direction concurrency caps, E slower-timeframe trend books (KB/PE/ST/HM), F combine passers, G live-eligible specs. Sizing/lock/block/timeframe rules on EXISTING books; selection on PRE only, prereg before HOLD, placebos, paired by week, MDE, F = total cells. Reports DS3_STACK_A..F.md, DS3_STACK_FINAL.md; MORNING.md every 2 h.
+
+## 2026-10-28 USER DIRECTIVE re-issued with added C2 (autopilot/DIRECTIVE_STACK_C2_20261028.md)
+C2 stack-level day profit trail on DS3 set (KB10/SM10/PE8) and DS5 set (K5 9/N5 4/U5 7/P5 9): arm-and-keep at +2R/3R/4R with 50%/67% keep, halve variant, dollar trail, DualStrat2 2R/50% reference; <=14 cells; paired by day vs per-book locks only; 1-s path combined realised+unrealised. Rest of T-STACK unchanged. Agent D3SKC2.
+
+## 2026-10-28 USER DIRECTIVE re-issued #2: C2 extended (autopilot/DIRECTIVE_STACK_C2b_20261028.md)
+Adds (e) user's realised-only rule (arm +2.3R/+2.5R/+2.0R realised; stop NEW entries at 1R/0.5R/1.5R below realised high; open trades run to bracket) and requires (a)-(c) on both bases (MTM and realised-only) side by side; C2 cap now 24 cells. Sent to D3SKC2.
+
+## 2026-10-28 USER DIRECTIVE: T-STACK addendum C2 (standalone re-issue; same content as DIRECTIVE_STACK_C2b_20261028.md)
+Text identical to C2b plus: prereg frozen before scoring, F added to the T-STACK total, 2023 span reported, report DS3_STACK_C2.md, carry any survivor into F.
+
+## 2026-10-28 USER DIRECTIVE: T-ZEN (+ ADDENDUM ZM1-ZM4) (full text autopilot/DIRECTIVE_ZEN_20261028.md and DIRECTIVE_ZEN_ADDENDUM_20261028.md)
+ZEN EMA-pullback family on NQ: regimes R1-R8 (5m EMA200 side, 1m EMA40/200, VWAP side/slope, 15m EMA200, ST comparator), levels L1-L8 (1m EMA200 etc., many bar types), triggers T0-T9 (touch control vs reaction), brackets (20-pt targets/wide stops, structure, ATR, partial, trail), NY windows scored separately (10-14 primary), VWAP-band reversals, filters on top-3, portfolio add net of PE, Sim spec. Hierarchical: SCREEN all on PRE (mapped), top 30/family to direct replay + ONE holdout look, 2023 span, best-of-N with N=screened count, placebos (random-in-regime, random-direction). Addendum: model's own brackets (10/15/20 stops), management shapes Z2, confluence tiers ZM1-ZM4 (win rate vs tier), red-flag filters Z4, SMT/extension Z5, day typing Z6. Reports DS3_ZEN_0_PLAN, DS3_ZEN_<family>, DS3_ZEN_ZM, DS3_ZEN_FINAL.
