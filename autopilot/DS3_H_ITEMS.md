@@ -4,13 +4,15 @@ Research output; NOT a live recommendation. No live, execution-server, chart or 
 
 ## Verdict lines
 
-PLACEHOLDER_VERDICTS
+- **Item 4 (MAMA widening): the grid confirms a plateau, not a better cell.** 27 cells: 2 PASS (the 10m 0.5/0.05 control and a new 15m 0.5/0.05), 3 CANDIDATE, 22 DEAD (harness primary, mapped). All 12 cells with bar 10-15 min and FastLimit <= 0.5 have WF > 0 (10 of 12 HOLD > 0, mean WF +4.7k/wk vs the 10m baseline 8.8k: expect about half the baseline's number going forward); FastLimit 0.75 and 5-minute bars fail. Nothing beats the baseline per trade (best paired vs baseline: 10m .5/.1 +1.89 pts [+0.68,+3.33] but HOLD per-trade $81 vs $500 and (b) rank HOLD 0.23). Best-of-N: PASS cells do not clear the primary null p95 (WF per-trade 538/580 vs 699) nor the class null (964). Direct (hybrid): 15m WF +7,268 [+1,299,+13,282], HOLD +8,682, 2023 span +1,621; 10m baseline WF +7,974 [+576,+14,881]. Stack add-one marginal Sharpe is negative in WF-PRE and WF for both (15m: -0.065 WF, +0.249 HOLD on KB+SM). Spec: autopilot/DS3_SPEC_H4_MAMA.md. The number to look at: the 12-cell plateau mean WF +4.7k/wk (min +0.3k) against the 10m baseline's +8.8k.
+- **Item 2 (tape-defined pullback ends at second resolution): 0 PASS, 0 CANDIDATE, 24 DEAD.** No trigger beats the minute-bar base trigger per arm (0 paired CIs above 0, 7 of 8 triggers negative on average); the cells that beat random-in-regime arms (ABS/SWR/IMB/DRY on PBS) fail the paired gate and the 2023 span. Same conclusion as the 30 minute-resolution cells of block (iv).
+- **Item 3 (structure-bracket cells on PB3B): 0 PASS, 0 CANDIDATE, 27 DEAD.** Pullback-extreme stops are -3.9 pts/trade vs the fixed-60 control on identical entries; the prior-high target is the worst target (-5.3 pts/trade, 8 of 9 CIs below 0); fib 1.0/1.618 extensions with the fixed stop are paired-neutral (+0.5..+1.6, CIs include 0). Only pe10_F10 on PB3B_R5_P2 beats random-in-regime with a CI above 0 (+2.49 [+0.02,+4.93]) and it fails paired, SPAN2 and the best-of-N null.
 
 ## Item 4 - MAMA widening (bar 5/10/15 x FastLimit .25/.5/.75 x SlowLimit .02/.05/.10 = 27 cells)
 
 Harness verdicts (six gates + placebo (b) rule): {'DEAD': 22, 'CANDIDATE': 3, 'PASS': 2}. Basis MAPPED (TR1 harness: 10 lots, exact per-book locks, $4.84 RT, corrected-P9 mapping incl. stop-join credit as for TR1C); direct L2 basis in the section below (hybrid: replay of the PASS cell and of the baseline trades the TR1 stage never replayed).
 
-Identity: the (10, .5, .05) and (5, .5, .05) cells reproduce the TR1C_MAMA_10m_flip / 5m_flip event lists exactly (11,925 and 5,678 events equal), so the 10m baseline row of this table is the library cell re-run (WF 8,760 = the stored mapped value).
+Identity: the (10, .5, .05) and (5, .5, .05) cells reproduce the TR1C_MAMA_10m_flip / 5m_flip event lists exactly (5,678 and 11,925 events; the 15-minute 0.5/0.05 list, 3,851 events, equals tr1_sig.filt_events(MAMA, 15) as well), so the 10m baseline row of this table is the library cell re-run (WF 8,760 = the stored mapped value).
 
 | cell | verdict (harness) | failed gates | tr/wk | PRE | WF $/wk [CI] | HOLD | 2023 span | rank (a)/(b)/(c) PRE | (b) rank HOLD | eff vs (b) WF pts/trade | 2x WF | WF Sharpe | paired vs 10m baseline (pts/trade) | paired vs ST10 | corr ST/HM/KB/SM/EM |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -51,8 +53,26 @@ Robustness (mapped, WF windows; cells with a non-DEAD label and the baseline): b
 - H4M_k10_f0.5_s0.05: by year {'2024': 517.3, '2025': 449.0, '2026': 286.3}, 2023 span 202.7k, VIX {'low': 6362.0, 'mid': 3676.0, 'high': 7183.0}, maxDD obs 291,981 (boot 187,638/308,358/523,207).
 - H4M_k10_f0.5_s0.1: by year {'2024': 407.5, '2025': 776.0, '2026': -132.8}, 2023 span 180.5k, VIX {'low': 6000.0, 'mid': 954.0, 'high': 7997.0}, maxDD obs 271,951 (boot 209,631/337,443/600,886).
 - H4M_k15_f0.5_s0.05: by year {'2024': 308.8, '2025': 373.2, '2026': 275.2}, 2023 span 11.0k, VIX {'low': 2085.0, 'mid': 5131.0, 'high': 5486.0}, maxDD obs 205,274 (boot 178,396/287,328/537,487).
-PLACEHOLDER_H4_READ
-PLACEHOLDER_H4_DIRECT
+
+Reading: (1) the 6-gate harness labels the baseline and the 15m cell PASS, but the best-of-N primary (27 cells) is not cleared by either and the placebo (b) ranks in HOLD are only 0.63 (10m) and 0.75 (15m): the regime-beta caution of the CLOSE track applies (random entries in the MAMA regime earn a large part of the edge: effect vs (b) is about $400 of the $540-580 per trade, i.e. about 70% of the per-trade edge is the trend regime itself). (2) The edge needs the 10-15 minute scale and a fast limit at or below 0.5: moving to 5-minute bars or FastLimit 0.75 adds trades (19-24/wk) and removes the edge. (3) SlowLimit is not a lever (mean WF 4.3k/5.0k/4.9k at 10m for 0.02/0.05/0.10; CIs overlap). (4) Mix: corr to ST/HM about 0 for every cell, to SM +0.3..+0.4 and to EM +0.4..+0.7 (the MAMA entries overlap the other 5-10 minute trend books), so the 'zero-correlation' claim holds against the live ST/HM pair but not against the DS3 trend books.
+
+### Direct L2 basis (hybrid) for H4M_k15_f0.5_s0.05 and the 10m baseline
+
+Pricing as tr1_dfinal: S10x1_g2 replay points + XJ3 stop-join gain + 0.5 pt where a replay row exists, mapped otherwise. This job replayed (corepool, 6 workers, h4_direct.py, same engine and arms as tr1_direct.py) all trades of the 15m cell plus the 10m baseline trades the TR1 stage had not replayed; **8 of 45 monthly replays (2025-04, 2025-06, 2025-10, 2025-11, 2026-01, 2026-02, 2026-06, 2026-08) were killed externally (exit -9/-15) and were not retried (no-retry rule), so the cover is 80.6% (15m) and 89.3% (10m) instead of 100%**; the missing months are on the mapped basis. Files: /mnt/l2/l2vast/ds3_h4/, out/H4/direct_result.json, series_*.parquet.
+
+| cell | cover | verdict (direct, +(b)) | PRE wk | WF wk [CI] | HOLD wk | 2023 span wk | 2x WF | WF Sharpe | HOLD Sharpe | WF maxDD | trades/wk WF | paired vs ST10 WF pts/trade [CI] | paired vs 10m baseline WF |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| H4M_k15_f0.5_s0.05 | 0.806 | PASS  | +5,870 | +7,268 [+1,299,+13,282] | +8,682 | +1,621 | +4,976 | 1.43 | 1.72 | 218,601 | 12.1 | +0.86 [-3.61,+5.58] (288) | -2.57 [-6.22,+1.27] (427) |
+| H4M_k10_f0.5_s0.05 | 0.893 | PASS  | +8,330 | +7,974 [+576,+14,881] | +7,471 | +5,721 | +4,699 | 1.32 | 1.24 | 331,543 | 14.6 | +1.93 [-2.94,+6.63] (309) | baseline |
+
+Stack add-one (ds3_addbook; replayed-trade intervals; WF-PRE / WF / HOLD marginal Sharpe; dMaxDD at 27 contracts WF / HOLD; each call re-reads the holdout, logged, track D3MM_H4_<cell>, 4 calls):
+
+- H4M_k15_f0.5_s0.05 + KBSM: -0.317 / -0.065 / +0.249; dMaxDD -25,873 / -23,134; weekly corr KB +0.06, SM +0.37, ST +0.05, HM +0.07
+- H4M_k15_f0.5_s0.05 + KBSMEM: -0.310 / -0.133 / +0.098; dMaxDD -12,754 / +14,046; weekly corr KB +0.06, SM +0.37, ST +0.05, HM +0.07
+- H4M_k10_f0.5_s0.05 + KBSM: -0.246 / -0.087 / +0.107; dMaxDD +9,916 / +12,656; weekly corr KB -0.03, SM +0.31, ST -0.09, HM -0.08
+- H4M_k10_f0.5_s0.05 + KBSMEM: -0.258 / -0.141 / +0.008; dMaxDD +23,538 / +5,152; weekly corr KB -0.03, SM +0.31, ST -0.09, HM -0.08
+
+Independent-replay identity of the 15m cell (x_tr1.py MAMA replay with 15-minute buckets, own bars/recursion/bracket): 2,350 library vs 2,349 replay trades, entry mismatch 0.94%, full mismatch 1.40% (limit 2%).
 
 ## Item 3 - structure-bracket cells on PB3B entries (27 cells = 3 PB3B families x stop {pe5, pe10, f60} x target {PH prior high, F10, F1618})
 
@@ -77,7 +97,7 @@ Structure definitions (as-of the arming bar): H1 = highest high of the 120 one-m
 
 Forward weeks for the top 10 (weeks for the SE of the weekly pre-lock effect vs (b) to fall to 1/2.8 of that effect): H3_PB3B_R5_P2_pe10_F1618: 325; H3_PB3B_R5_P2_pe10_F10: 282; H3_PB3B_R60_P2_pe10_F10: 542; H3_PB3B_R60_P2_pe5_F10: 593; H3_PB3B_R5_P1_pe5_F10: 1588; H3_PB3B_R5_P1_pe10_F10: 1483; H3_PB3B_R5_P2_pe5_F10: 2705; H3_PB3B_R60_P2_pe5_F1618: 3497; H3_PB3B_R60_P2_f60_F10: 767; H3_PB3B_R5_P2_f60_F1618: 1524
 
-Best-of-N nulls on the WF effect vs placebo (pts/trade; group = 9 cells of one family; ALL = 27 cells, same draw indices pooled):
+Best-of-N nulls on the WF effect vs placebo (pts/trade; group = 9 cells of one family; no pooled 27-cell null was computed):
 
 - PB3B_R5_P1 vs timing-destroyed (a): best ('pe5', 'F10') effect +2.67, null max p95 +4.87, rank of best 0.71
 - PB3B_R5_P1 vs random-in-regime (b): best ('pe5', 'F10') effect +1.37, null max p95 +3.80, rank of best 0.42
@@ -156,4 +176,14 @@ Verdicts: {'DEAD': 24}. Block (iv) (autopilot/DS3_TPBX_B4.md) scored the same id
 Trigger axis (mean over the 3 base cells): ABS: paired -1.04, vs (b) +2.68, rate 0.17; COMBO: paired -1.26, vs (b) +0.36, rate 0.11; DFL10: paired -1.06, vs (b) +1.38, rate 0.27; DFL30: paired -1.34, vs (b) +0.33, rate 0.17; DRY: paired -1.15, vs (b) +2.80, rate 0.14; IMB: paired -0.63, vs (b) +1.80, rate 0.25; LP: paired -1.23, vs (b) +1.44, rate 0.04; SWR: paired +0.03, vs (b) +2.15, rate 0.62
 
 Structural read: no tape trigger beats the minute-bar base trigger per arm (7 of 8 triggers have a negative mean paired effect, none has a paired CI above 0, 0 of 24 cells have a CI above 0). Against random-in-regime arms given the same tape trigger, 5 of 24 cells have a CI above 0 (ABS and SWR on PBS_f60_T3, SWR/IMB/DRY on PBS_f60_SW), reflecting that real pullback arms in the ST10 regime do better than random arms under any entry rule (the known +0.5 location effect of PB_ST10_SWZ_T3 plus the arm filter), not a trigger effect; they fail the paired gate and SPAN2 (2023). Best-of-N (PRE text autopilot/DS3_H2_TAPE1S_PREHOLD.md): the best (b) effect exceeds the 8-trigger null p95 for PBS_f60_T3 (ABS +5.16 vs +3.76) and PBS_f60_SW (IMB +3.48 vs +2.61) but not for PB3_f60_T3.
-PLACEHOLDER_DEV
+
+## Deviations, disclosures and what was not done
+
+1. Basis: item 4 on the TR1 MAPPED harness (stop-join credit included, as the TR1C parent), direct (hybrid) only for the 15m PASS and the baseline completion; the three 10m CANDIDATE variants were not replayed. Items 2 and 3 on the MAPPED CONSERVATIVE basis (no stop-join credit, sweep surcharge above 14 lots), no direct replay (nothing reached CANDIDATE).
+2. Replay: 8 of 45 monthly workers were killed externally (-9 / -15) and NOT retried (no-retry rule); cover 80.6% / 89.3%. Claim files left in /mnt/l2/l2vast/ds3_h4/ (no deletions). A relaunch of those 8 months (about 700 trades) is the lead's decision; run `corepool.py run 6 1 -- python3 l2vast/ds3/code/h4/h4_direct.py orch 6` after removing the 8 claim_<ym> files, then rerun h4_dfinal.py.
+3. Placebos: (a) harness timing-destroyed, (b) random-in-regime = random bar with the side of sign(MAMA-FAMA) of the same cell, (c) = (b) hour-matched, for item 4 (60 draws each); for items 2 and 3 (a),(b) with 24 draws each, (c) not applicable (ER-gated placebo exists only for PRO_ER). Item-4 verdict applies the directive's PASS-must-beat-(b) rule as an additional gate (PRE rank >= 0.95 and positive effect); on the six harness gates alone the same two cells PASS.
+4. Per-bracket-class secondary null: item 4 uses the pooled centred placebo draws scaled to N = 293 (266 trend cells + 27), an approximation of the CLOSE/OPEN class nulls (their code needs per-class cell arrays); items 2/3 report the per-group best-of-N (8-9 cells) and, for item 3, no separate class null (all cells are one structure-target class).
+5. Holdout discipline: one look per prereg group, logged via log_holdout_look before HOLD/SPAN2 were read (DECISIONS.md lines D3MM). Exceptions to disclose: (i) the H3 real-cell job (stage 'final') prints per-window weekly means to its stdout log; I read the last two lines of the PB3B_R5_P1 log (cells f60_F1618 and the f60_T1 control, including their HOLD and 2023-span weekly means) before the PREHOLD text was written; (ii) before the H3 prereg was written I printed the all-window mean ptsE of the nine PB3B_R5_P1 cells in a smoke test (grid unchanged afterwards, so no selection effect, but the all-window numbers of that family were seen); (iii) the H3 placebo jobs (random entries only, no real-cell values) started about a minute before the H3 prereg sha line was appended because the first launch of the prereg writer silently did not write (sys.argv overwritten by an imported module); (iv) H2: the trigger RATES (no P&L) were read before the prereg, and COMBO was redefined once (DFL10 and IMB, rate 0.4%, replaced by DFL10 after ABS within 30 s) on rate grounds before the prereg was hashed; the scan start was also moved from the touch-minute start to after the touch minute closes (causality fix) before the prereg; (v) the ds3_addbook calls (4) re-read the holdout, logged.
+6. Ledger: +27 (H4_MAMA) +27 (H3) +24 (H2) cells; no gate loosened; MDE beside every null in the tables (per-trade paired MDE 1.3-9.6 pts depending on the cell; weekly MDE about 14k $/wk standalone).
+7. Not done: independent replay of the CANDIDATE MAMA variants; B = 15 warm-up sweep; item 2 at tick resolution / true L2 queue (1-s aggregates only); item 3 targets 'second level', 'trail to each new structure level' and 'opposite structure break' (only PH, F10, F1618 were preregistered); H3 on the other PB3B-like families; the structure-bracket directive's stop options other than the pullback extreme (swing L3/5/8, VWAP, prior-session extremes) and ATR buffers; stop-entry orders.
+8. Files: autopilot/DS3_H_ITEMS.md (this), DS3_SPEC_H4_MAMA.md, DS3_H4_MAMA_PREHOLD.md, DS3_H3_PB3B_{R5_P1,R5_P2,R60_P2}_PREHOLD.md, DS3_H2_TAPE1S_PREHOLD.md; rows l2vast/ds3/rows/DS3_H2_TAPE1S.json; results l2vast/ds3/out/{H4,H3,H2}/; code l2vast/ds3/code/{h4,h3,h2}/ and h_items_report.py; preregs l2vast/ds3/prereg/{H4_MAMA,H3_*,H2_TAPE1S}_prereg.md. No credentials or account numbers in any new file.

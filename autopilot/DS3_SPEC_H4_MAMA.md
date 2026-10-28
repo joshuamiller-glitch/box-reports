@@ -1,0 +1,29 @@
+# DS3_SPEC_H4_MAMA - MAMA/FAMA cross widening: executability spec for the non-DEAD cells of item H4 (D3MM, 2026-10-28)
+
+Research output for the Sim leader; NOT a live recommendation. No execution-server, chart, strategy or live-file change. Parent spec: autopilot/DS3_SPEC_TR1C_MAMA_10m_flip.md (rule, execution layer, lots/locks, warm-up, identity test, expectation). Everything in that spec applies unchanged except the three parameters below. Prereg l2vast/ds3/prereg/H4_MAMA_prereg.md (sha256 in DECISIONS.md, c8217142dbae6c4c4dac3b7c1e0ade661d06eb491f24867190d96851307dd749), results autopilot/DS3_H_ITEMS.md, code l2vast/ds3/code/h4/ (h4_sig.py, h4_run.py, h4_post.py, h4_dsel.py, h4_direct.py, h4_dfinal.py, h4_ident.py).
+
+## 1. Cells and what changes against the 10-minute spec
+| cell | bar (min) | FastLimit | SlowLimit | harness verdict (mapped) | direct (hybrid) | independent-replay identity |
+|---|---|---|---|---|---|---|
+| H4M_k15_f0.5_s0.05 | 15 | 0.5 | 0.05 | PASS | PASS (6 gates + (b)); cover 80.6% | DONE: 0.94% entry mismatch (limit 2%) |
+| H4M_k10_f0.25_s0.1 | 10 | 0.25 | 0.10 | CANDIDATE (fails 2023 span only) | not replayed | not run (library list only) |
+| H4M_k10_f0.5_s0.02 | 10 | 0.5 | 0.02 | CANDIDATE (WF CI lower -126) | not replayed | not run |
+| H4M_k10_f0.5_s0.1 | 10 | 0.5 | 0.10 | CANDIDATE (WF CI lower -11) | not replayed | not run |
+| H4M_k10_f0.5_s0.05 | 10 | 0.5 | 0.05 | PASS = TR1C_MAMA_10m_flip (control) | PASS, cover 89.3% | see parent spec (1.08%) |
+Changes: (a) bucket = floor(epoch minute / B) with B = 5/10/15 (clock-aligned on :00, :15, :30, :45 ET for B = 15; the 18:00 ET anchor is on the grid for every B); (b) the Ehlers recursion of parent section 1.3 is unchanged except that alpha = max(FastLimit / DeltaPhase, SlowLimit) uses the cell's FastLimit and SlowLimit (DeltaPhase = max(Phase[j-1] - Phase[j], 1.0)); (c) the signal-time block (bucket last-bar open 15:00-17:59 ET), entry rule (market at the open of the bar after the bucket's last 1-minute bar, valid only if that bar starts exactly 1 minute later), one-trade-at-a-time, bracket (60-pt stop, 60-pt limit target, flat 16:55), 10 lots as 10 x 1-lot slices, locks (day -2R/+5R, give-back 2R keep 50%, week floor -12R, R = $12,000) and the warm-up skip (first 300 buckets) are identical. For B = 15 the 300-bucket skip is 75 hours, and the parent spec's warm-up finding (state forgotten within 24 h of buckets) was measured at B = 10 (144 buckets); at B = 15 load at least 3 days (288 buckets of 15 min = 3 days) before the first signal; not separately measured.
+Events (library, whole series): B=15 f.5/s.05 3,851 crosses (before the one-trade rule) -> 2,350 library trades (2023-02-10..2026-10-16), 12.4 trades/wk after locks in WF.
+
+## 2. Identity test, H4M_k15_f0.5_s0.05 (independent replay l2vast/ds3/code/x_tr1.py mama_events(k=15) from the spec text: own bars, own recursion, own bracket)
+2,350 library trades vs 2,349 replay trades: entry (time, side) mismatches 22 (0.94%), entry + exit time + exit type 33 (1.40%), tolerant (exit within 2 min, 0.5 pt) 30 (1.28%); limit 2%; first run, no spec change. Causes are the same class as the parent spec (contract-roll days move the MAMA-FAMA gap by sub-tick amounts); not separately attributed. File l2vast/ds3/out/H4/x_identity_H4M_k15.json.
+
+## 3. Expectation (H4M_k15_f0.5_s0.05, DIRECT hybrid basis, 10 lots, per-book locks; 80.6% of trades with a replay row (months 2025-04, 2025-06, 2025-10, 2025-11, 2026-01, 2026-02, 2026-06, 2026-08 fell back to the mapped basis because their replay workers were killed externally and no retry was made); fees $4.84 RT)
+| window | wk mean $ | wk SD | Sharpe | maxDD | trades/wk | win rate | per-trade $ | wk CI | corr ST/HM |
+|---|---|---|---|---|---|---|---|---|---|
+| WF-PRE 2024-02..2025-06 | +5,870 | 36,232 | 1.17 | 187,573 | 11.1 | 0.525 | +530 | [-2,905, +13,644] | +0.05/+0.07 |
+| WF 2024-02.. | +7,268 | 36,607 | 1.43 | 218,601 | 12.1 | 0.532 | +599 | [+1,299, +13,282] | +0.04/+0.09 |
+| HOLD 2025-07.. | +8,682 | 36,429 | 1.72 | 218,601 | 13.1 | 0.538 | +661 | [-47, +16,686] | +0.01/+0.09 |
+| 2023-04..2024-01 | +1,621 | 29,789 | 0.39 | 141,195 | 9.0 | 0.511 | +180 | [-6,696, +10,010] | -0.04/+0.12 |
+2x-cost WF +4,976/wk. Mapped WF +6,694. Paired per trade vs ST10 (nearest same-side within +-15 min): WF +0.86 pts [-3.61, +5.58] (288 pairs), HOLD -0.05, 2023 -8.92 [-19.88, +2.04] (48 pairs); vs the 10m baseline (direct): WF -2.57 pts [-6.22, +1.27] (427 pairs), i.e. not better. Stack (ds3_addbook, 10 lots, intervals from the replayed trades): add-one marginal Sharpe to KB+SM: WFPRE -0.317, WF -0.065, HOLD +0.249, dMaxDD(27 contracts) WF -25.9k, HOLD -23.1k; to KB+SM+EM: WFPRE -0.310, WF -0.133, HOLD +0.098, dMaxDD WF -12.8k, HOLD +14.0k; weekly corr to KB +0.06, SM +0.37, EM +0.51, ST +0.05, HM +0.07. Baseline for comparison (same job): KB+SM add-one WFPRE -0.246, WF -0.087, HOLD +0.107; KB+SM+EM -0.258/-0.141/+0.008. The add-one calls re-read the holdout (logged in ledger/addbook_looks.jsonl, track D3MM_H4_<cell>, 4 calls). Verdict on the stack: neither the 15m nor the 10m MAMA meets a non-negative marginal line in WF-PRE or WF, so neither is DS3-includable on this evidence.
+
+## 4. Read
+The widening does not produce a better MAMA than the 10-minute 0.5/0.05 baseline per trade; it shows the baseline is not a knife-edge: all 12 cells with bar 10-15 min and FastLimit <= 0.5 have WF > 0 (10 of 12 HOLD > 0, mean WF +4.7k/wk vs the baseline 8.8k mapped), while FastLimit 0.75 and 5-minute bars fail. Use the neighbourhood mean (+4.7k/wk mapped), not the baseline's +8.8k, as the forward expectation. Forward-register suggestion (lead's decision, NOT copied to paper_all): ds3_H4M_k15_f0.5_s0.05 as a second MAMA line beside TR1C_MAMA_10m_flip, paper only. Open items for any promotion: independent replay of the three CANDIDATE variants, direct replay of the 8 missing months, B = 15 warm-up measurement.
