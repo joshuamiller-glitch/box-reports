@@ -314,3 +314,5 @@ DS3_SESSION2_A.md (+A_D6), DS3_SESSION2_C.md (2023 gate: range-regime effect rea
 New session books (clusters, per Q_BOOKS): ASIA 5, LONDON 1, PREOPEN 2, NY-AM 33 (8 beat bracket-beta at source), NY 3, NY-PM 2, CLOSE 0. Opening book O6 = DEAD (DS3_SESSION2_Q_OPEN_BOOK.md); 09:00-09:59 stays blocked. Memguard kills: 23:49:32Z and 23:58:16Z (ssa workers; wave/month not yet identified), plus q2 2023-12 and q4 2025-06/10/11 re-run question pending user OK.
 
 ## 01:19Z D3SQ count: scored q1 (30 NY-AM clusters pass MEASURED), q2 partial, q4 partial (0 pass), q5 (1 pass); q3 sd1 25/35, q6 sb3 25/35; q7 sd6b, q8 sb2, q9 sd2b queued.
+
+## 01:48Z D3SQ q3 (sd1) scored: 103 cell-sessions, 12 pass MEASURED (8 market-entry real, rest are limit/stop entries = MARKET-FALLBACK PROXY), median beta -2.7, edge +5.4, 3 clusters with HOLD edge CI lo>0. q6 (sb3) scored PARTIAL (2025-10 killed, no retry). q7 sd6b, q8 sb2, q9 sd2b running/queued.
