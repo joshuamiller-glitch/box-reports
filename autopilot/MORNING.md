@@ -335,3 +335,8 @@ HM5 reconciliation: E's +1,138 was a bug, not data: stke_lib.stack_parts mutates
 ## THLB (T-TH-LOSS section B, loss-side rule grids) - done
 0 PASS / 0 CANDIDATE / 3476 DEAD (22 streams x 158 rules, MEASURED fills); live TH-loss rule pooled 11 books PRE -1.00 pts/trade (MDE 1.49), HOLD -1.13 (MDE 2.31); weekly re-selection chain (3-month / 1-month) -0.13 / -0.84 PRE / HOLD, nothing beats the stop. Report autopilot/DS3_THL_B_RULES.md.
 STRUCTURAL QUESTION (queue not paused): HM only, the deeper live-rule variants (adverse 20-30, 3 of 3, window 10-30 s) are positive in PRE, HOLD and X (+1.4 / +1.8 / +0.1 at a30 w10) and fail only the CI and best-of-158 gates (HM RC p 0.27). Worth a pre-registered HM-only re-test (new prereg, fresh holdout) or leave it dead? ES/RTY basket legs have no 1-s path in the box (not scored).
+
+## THPC3 15:15Z progress (online/changepoint/HMM)
+Best in-sample (PRE, IN-SAMPLE selection, stage A, HMM not yet in): profit btab disc0.9995 z1 m2 +0.09 pts/trade CI lower -0.25 (MDE 0.49), but random exits at its rate give +0.7 (M-basis target-correction artefact), placebo rank 0; loss ogbm lr0.2 phi0.999 m8 +0.20 (MDE 0.91), shuffled-label placebo beats it. Best walk-forward / distilled rule so far: none positive; RC p 0.99 profit / 0.97 loss. HOLD not opened (PREHOLD file pending).
+
+## 2-hourly 15:16Z THPC2 (structural DP/hazard/QR walk-forward): THPC2: prereg frozen, 752 structural chains (DP/DPO/HAZ/QR) running; no result yet. best in-sample: n/a; best walk-forward: n/a; distilled rule so far: n/a
