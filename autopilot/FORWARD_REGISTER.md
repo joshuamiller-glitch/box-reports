@@ -1,4 +1,4 @@
-# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-28 18:11 ET)
+# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-29 18:19 ET)
 
 Weeks start Sunday 18:00 ET. W43 (10-19..10-23) informational, never counted; official = W44+. Live file: `<repo>/data/live/StratTrades_DualStrat2_<acct>.csv` (80 grouped trades, last exit 2026-10-26 10:44 ET). Verdicts: PROMOTE >= 6 weeks, z >= -1, sign right; RETIRE >= 8 weeks, z < -2; BEHIND z < -1; z = (realised - expected*n)/(expected SD*sqrt(n)).
 
@@ -370,16 +370,16 @@ Evaluation basis for the three bar-based books: x_te replay on the extended NQ t
 
 ## DS3 live (Sim leader; DS3 file) - realised vs paper_all expectation, per book and total
 
-DS3 file(s): 2; 34 grouped trades; last exit 2026-10-28 14:51 ET. Expectations are the paper_all values at the registered lots, scaled per book by median live qty / registered lots: KB 16,863/wk SD 59,362 (x1.00); PE 15,248/wk SD 49,890 (x0.50); SM 8,749/wk SD 35,698 (x1.00). Total SD assumes independent books (sqrt of summed variances; actual correlation >0 makes the true SD larger). Expectations are selection-inflated (best of many cells); 
+DS3 file(s): 2; 56 grouped trades; last exit 2026-10-29 14:52 ET. Expectations are the paper_all values at the registered lots, scaled per book by median live qty / registered lots: KB 16,863/wk SD 59,362 (x1.00); PE 15,248/wk SD 49,890 (x0.20); SM 8,749/wk SD 35,698 (x1.00). Total SD assumes independent books (sqrt of summed variances; actual correlation >0 makes the true SD larger). Expectations are selection-inflated (best of many cells); 
 
 Start week 2026-W44 (first entry 10-26 13:03 ET); weeks count once complete (Friday 17:00 ET). Verdict: PROMOTE >=6 wks z>=-1 right sign; RETIRE >=8 wks z<-2; BEHIND z<-1.
 
 | book | week | complete | trades | exp trades | realised $ | expected $ | per trade real | z (week) | cum weeks | cum z | verdict |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | KB | 2026-W44 | no | 14 | 26.8 | 17,635 | 16,863 | 1,260 | +0.01 | 0 | - | in progress |
-| PE | 2026-W44 | no | 18 | 27.3 | 16,670 | 7,624 | 926 | +0.36 | 0 | - | in progress |
+| PE | 2026-W44 | no | 40 | 27.3 | 10,640 | 3,050 | 266 | +0.76 | 0 | - | in progress |
 | SM | 2026-W44 | no | 2 | 12.2 | 8,080 | 8,749 | 4,040 | -0.02 | 0 | - | in progress |
-| TOTAL | 2026-W44 | no | 34 | 66.3 | 42,385 | 33,236 | 1,247 | +0.12 | 0 | - | in progress |
+| TOTAL | 2026-W44 | no | 56 | 66.3 | 36,355 | 28,662 | 649 | +0.11 | 0 | - | in progress |
 
 
 ## DS5 live (paper mix KB5 DN8 SM7 PE5 MV4 = 29 lots; DS5 file) - realised vs paper_all expectation, per book and total
@@ -421,7 +421,7 @@ Other forward shadows (DS15, S130, P30/P36, ...) remain in LEAGUE.md / ap_m2_pap
 
 Object: every live ST trade closed by the TH LOSS-side cut (exit name ends LossExit), replayed WITHOUT the cut on the real mbp-10 tape (exec_engine_l2, live entry as anchor, 60/60 bracket, 16:55 ET flatten, stop exits through the live stop-join model XJ3). Paired difference d = cut P&L - no-cut P&L per cut trade (+ = TH helped). Weeks start Sunday 18:00 ET; W42 is partial (trading days 10-13..10-16), W43 informational. Only complete rows from 10-13 on; days without mbp-10 on disk are PENDING_L2 (never imputed).
 
-Identification: exitName ends 'LossExit' (loss-side TH cut; ProfitExit = profit-side cut) in data/live/StratTrades_*.csv, trading day >= 20261013 (entries from 2026-10-12 18:00 ET). Cuts by file/book: DualStrat2 file HM CUT_LOSS n=3; DualStrat2 file HM CUT_PROFIT n=1; DualStrat2 file ST CUT_LOSS n=16; DualStrat2 file ST CUT_PROFIT n=6; DualStrat2 file WT CUT_LOSS n=9; Sim file HM CUT_LOSS n=31; Sim file ST CUT_LOSS n=36; Sim file WT CUT_LOSS n=62; pair file (DualStrat) ST CUT_LOSS n=46. Trace logs (nt8log_trace.*, nt8log_latest): 5 files, 297 LossExit lines (trace window ends before the 10-23 TH-on period; the CSV is the identification of record).
+Identification: exitName ends 'LossExit' (loss-side TH cut; ProfitExit = profit-side cut) in data/live/StratTrades_*.csv, trading day >= 20261013 (entries from 2026-10-12 18:00 ET). Cuts by file/book: DualStrat2 file HM CUT_LOSS n=3; DualStrat2 file HM CUT_PROFIT n=1; DualStrat2 file ST CUT_LOSS n=16; DualStrat2 file ST CUT_PROFIT n=6; DualStrat2 file WT CUT_LOSS n=9; Sim file HM CUT_LOSS n=31; Sim file ST CUT_LOSS n=36; Sim file WT CUT_LOSS n=62; pair file (DualStrat) ST CUT_LOSS n=46. Trace logs (nt8log_trace.*, nt8log_latest): 5 files, 219 LossExit lines (trace window ends before the 10-23 TH-on period; the CSV is the identification of record).
 
 | week | ST loss-cuts | replayed | pending L2 | mean d pts/trade | mean d $/trade | 95% CI $/trade (session-block bootstrap, 10,000) | d $ in week | MDE80 $ for this week alone | P(d>0) | DualStrat2 file n / d $ | pair file n / d $ |
 |---|---|---|---|---|---|---|---|---|---|---|---|

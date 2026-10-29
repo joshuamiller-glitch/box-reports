@@ -1,4 +1,4 @@
-# LIVE_RECON - live fill vs replay expectation, per trade (generated 2026-10-28 18:17 ET; source <repo>/data/live/StratTrades_DualStrat2_<acct>.csv)
+# LIVE_RECON - live fill vs replay expectation, per trade (generated 2026-10-29 18:29 ET; source <repo>/data/live/StratTrades_DualStrat2_<acct>.csv)
 
 Replay fill = the corrected P9 replay expectations (per-trade matched-signal replay needs L2 for the day; the per-trade L2 replay of the 18 stop joins with the 10-20..23 tape is in JOIN_RECON.md section 5 / join_recon2/join_replay_per_attempt.csv; the replay column below stays the replay MEAN for that exit class (comparison basis of the earlier version): all stops -0.52 pts, market fallback -1.74 pts; entry S14x1 mean 1.90 (ST) / 1.77 (HM) ticks vs mid at decision). Signal reference for entry slip: REF.csv mid if present, else 1-min bar open if the NQ series covers the minute, else "-".
 NQ 1-min series ends 2026-10-23 20:59:00 UTC.
@@ -79,11 +79,11 @@ NQ 1-min series ends 2026-10-23 20:59:00 UTC.
 | book | trades | entry slip pts vs bar open (n) | replay entry | stop-exit slip pts worse (n) | replay | market-fallback worse (n) | replay | target fill vs nominal (n) | lock-named exits |
 |---|---|---|---|---|---|---|---|---|---|
 | KB | 14 | PENDING (no tape mids/bars cover the entries) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | +0.02 (4) | 1 |
-| PE | 18 | PENDING (no tape mids/bars cover the entries) | +0.45 | -1.14 (2) | 0.52 | PENDING/none | 1.74 | +0.01 (8) | 1 |
+| PE | 40 | PENDING (no tape mids/bars cover the entries) | +0.45 | -1.14 (2) | 0.52 | PENDING/none | 1.74 | -0.00 (12) | 1 |
 | SM | 2 | PENDING (no tape mids/bars cover the entries) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | +0.10 (1) | 0 |
-| TOTAL | 34 | PENDING (no tape mids/bars cover the entries) | +0.45 | -1.14 (2) | 0.52 | PENDING/none | 1.74 | +0.02 (13) | 2 |
+| TOTAL | 56 | PENDING (no tape mids/bars cover the entries) | +0.45 | -1.14 (2) | 0.52 | PENDING/none | 1.74 | +0.01 (17) | 2 |
 
-Lock events: exit names matching the lock regex are counted per book above; NT8-log DS3 lock lines: 0. $ check at R = $12,000 x lots/10 per book (12,000 x lots/10, per book): per-book day <= -2R or >= +5R, entries after the crossing = **0 violations**. Give-back (+2R arm, keep 50%) and week floor (-12R) are visible only through the exit names / log; the $ check covers the day -2R/+5R lines.
+Lock events: exit names matching the lock regex are counted per book above; NT8-log DS3 lock lines: 0. $ check at R = $12,000 x lots/10 per book (12,000 x lots/10, per book): per-book day <= -2R or >= +5R, entries after the crossing = **8 violations** [('PE', '2026-10-27', '03:25'), ('PE', '2026-10-27', '06:08'), ('PE', '2026-10-27', '08:15'), ('PE', '2026-10-27', '08:55'), ('PE', '2026-10-27', '11:38')]. Give-back (+2R arm, keep 50%) and week floor (-12R) are visible only through the exit names / log; the $ check covers the day -2R/+5R lines.
 
 Replay model: direct-L2 S10x1 slicing + XJ3 stop-join; plain Market entries (Mode 1) should show MORE entry slip than the replay number. Entry slip is PENDING until the extended tape (or REF.csv) covers the entry minutes.
 
