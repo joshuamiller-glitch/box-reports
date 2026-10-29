@@ -309,3 +309,8 @@ DS3_SESSION2_A.md (+A_D6), DS3_SESSION2_C.md (2023 gate: range-regime effect rea
 ## 00:12Z D3SQ q5 (sd56) scored: 13 cell-sessions, 1 passes MEASURED (3 at 1 s), 9 with edge label; q4 sd34 at 32/35; q3 sd1, q6 sb3 running; q7 sd6b, q8 sb2, q9 sd2b queued.
 
 ## 00:50Z D3SQ: per main, q2 (34/35, 2023-12 X only) and q4 sd34 (32/35: 2025-06, 2025-10, 2025-11 missing, HOLD/H25 incomplete) are PARTIAL; no sd34 cell promoted (tier SESSION-CANDIDATE-PARTIAL at most; 0 of 7 pass anyway); no re-runs. Flags in DS3_SESSION2_Q_BOOKS.md and the D6 line. q3/q6 running (~15/35), q7 q8 q9 queued.
+
+## 2-hourly 01:17Z 2026-10-29
+New session books (clusters, per Q_BOOKS): ASIA 5, LONDON 1, PREOPEN 2, NY-AM 33 (8 beat bracket-beta at source), NY 3, NY-PM 2, CLOSE 0. Opening book O6 = DEAD (DS3_SESSION2_Q_OPEN_BOOK.md); 09:00-09:59 stays blocked. Memguard kills: 23:49:32Z and 23:58:16Z (ssa workers; wave/month not yet identified), plus q2 2023-12 and q4 2025-06/10/11 re-run question pending user OK.
+
+## 01:19Z D3SQ count: scored q1 (30 NY-AM clusters pass MEASURED), q2 partial, q4 partial (0 pass), q5 (1 pass); q3 sd1 25/35, q6 sb3 25/35; q7 sd6b, q8 sb2, q9 sd2b queued.
