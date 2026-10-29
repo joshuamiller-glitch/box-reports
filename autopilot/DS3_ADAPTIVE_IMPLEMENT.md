@@ -17,3 +17,6 @@ Profit: undefined; model +0.32, distilled -1.02. Loss: no distillation (fixed ru
 2. Profit chain starts 2024-04 (no X'). Distilled-tree training used teacher scores of the chain itself (causal).
 3. Bracket "OR" target = opening-range edge as in ABRA; short-target fills untested. Per-book window splits not available; per-book all-span deltas all >= +0.84 (SM +6.3, MA +5.4 CIs exclude 0 individually, uncorrected). ST/WT/MA/CR use research names because the D6 tags were not supplied.
 4. THPC1 loss grid, THPC2 and ABRC1 are unfinished; nightly re-fit will pick up their cells. I did not touch their processes.
+
+## v1.1 note (PUB1)
+Bracket section emptied, header wf_bracket=0.00 (hold 60/60). Reason (EXP2, DS3_ADAPTIVE_EXP2.md, exact lock engine): wide no-time-exit brackets block 36-78% of a book's later entries; frozen stop=120/OR gives stack weekly SD $654k vs $332k, maxDD $4.5M vs $2.9M, costs ~$51.7k/wk outside the worst weeks; joint stack 0/19; best bracket component ~0 (PRE +4.7k, HOLD -1.4k, X' -1.0k $/wk). The v1 trade-level +2.35 does not survive. Profit stays empty, HM loss rule unchanged (+1.18, fixed rule, seen data). Rules 12 -> 1 (-11). v1 files kept (THP_POLICY_20261029.txt); v1.1 copy THP_POLICY_20261029_v1.1.txt.

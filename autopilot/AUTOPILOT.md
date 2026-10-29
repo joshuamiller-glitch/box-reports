@@ -116,3 +116,4 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-29T19:20:27Z] USER DIRECTIVE T-TH L2 CATALOGUE saved to autopilot/DIRECTIVE_THL2_CATALOGUE_20261029.md (condensed, all items kept); forwarded to L2P
 [2026-10-29T19:23:05Z] USER DIRECTIVE T-DIP-ENTRY saved verbatim to autopilot/DIRECTIVE_DIPENTRY_20261029.md; QUEUED (cap full)
 [2026-10-29T19:27:27Z] USER UPDATE T-DIP-ENTRY: L2-gated primary (appended verbatim to DIRECTIVE_DIPENTRY_20261029.md); still QUEUED
+[2026-10-29T19:32:16Z] THP_POLICY v1.1 published (bracket EMPTY); DIPENTRY launched from queue
