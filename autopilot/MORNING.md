@@ -316,3 +316,5 @@ New session books (clusters, per Q_BOOKS): ASIA 5, LONDON 1, PREOPEN 2, NY-AM 33
 ## 01:19Z D3SQ count: scored q1 (30 NY-AM clusters pass MEASURED), q2 partial, q4 partial (0 pass), q5 (1 pass); q3 sd1 25/35, q6 sb3 25/35; q7 sd6b, q8 sb2, q9 sd2b queued.
 
 ## 01:48Z D3SQ q3 (sd1) scored: 103 cell-sessions, 12 pass MEASURED (8 market-entry real, rest are limit/stop entries = MARKET-FALLBACK PROXY), median beta -2.7, edge +5.4, 3 clusters with HOLD edge CI lo>0. q6 (sb3) scored PARTIAL (2025-10 killed, no retry). q7 sd6b, q8 sb2, q9 sd2b running/queued.
+
+## 02:17Z D3SQ count: q1 q2(p) q3 q4(p) q5 q6(p) scored; q7 sd6b 14/35, q8 sb2 12/35 running; q9 sd2b queued.
