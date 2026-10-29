@@ -97,3 +97,5 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-29 ~14:40Z] USER DIRECTIVE T-TH-PROFIT ADAPTIVE2 (verbatim in autopilot/DIRECTIVE_THP_ADAPTIVE2_20261029.md)
 
 [2026-10-29 ~15:00Z] USER DIRECTIVE T-TH-LOSS (verbatim in autopilot/DIRECTIVE_THL_20261029.md)
+
+[2026-10-29 ~15:10Z] USER DIRECTIVE THP_POLICY text format (verbatim in autopilot/DIRECTIVE_THP_POLICYFMT_20261029.md); supersedes THP_POLICY.json
