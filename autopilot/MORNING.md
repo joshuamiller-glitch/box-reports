@@ -351,3 +351,6 @@ ABRA: A dataset built (47,131 entries x 155 cols, 11 books, outcome minute profi
 ABRA: entry dataset READY and audited (0 mismatches: 132 entry rows / 19,272 comparisons + 38 aux series x 4 cuts); B oracle done (DS3_ABR_B_ORACLE.md): pooled fixed-bracket oracle vs 60/60 +2.33 IN-SAMPLE (MDE 6.2, RC p 0.66), +3.17 HOLD (MDE 10.9), +0.22 X (MDE 6.4), per-trade oracle ~118 pts = upper bound only. best walk-forward: n/a (sections C-E by learner agents); distilled rule so far: n/a.
 
 ## 2-hourly 17:16Z THPC2 (structural DP/hazard/QR walk-forward): THPC2: prereg frozen, 752 structural chains (DP/DPO/HAZ/QR) running; no result yet. best in-sample: n/a; best walk-forward: n/a; distilled rule so far: n/a
+
+## 2026-10-29T18:22:44Z THPC1 (GBM/logit walk-forward) interim, profit side only (loss grid not yet run)
+best in-sample: not yet (CV series comes with the meta run); best walk-forward chain 2024-04..2026-02 (350 cfg x policy so far): logit 3m window weekly refit + tighten = +0.32 pts/trade [-0.60,+1.24], MDE 1.32, NOT significant (best-of-350 look; reality check pending); every GBM take policy is negative (-0.2 to -0.4 pts/trade, daily worse than weekly/monthly); classic-rule re-selection -0.19..-0.63, live JADE -0.69 [-1.56,+0.19]; distilled rule: pending (nothing to retain yet).
