@@ -70,4 +70,4 @@ Beta check on the MEASURED-gate cell-sessions (n=16): median beta HOLD -3.16 pts
 
 All cell-sessions with every column: out/ssa/cs_scores_q2.csv.
 
-FLAG: month 2023-12 of q2 is MISSING (worker killed by SIGTERM, no retry without user OK); it affects only the 2023 span (X) numbers; PRE/HOLD/H25/H26 gates and tiers are unaffected. Sources without cluster50 (sd2a etc.) count each cell as its own cluster in the tables above.
+FLAG PARTIAL: q2 sd2a: month 2023-12 missing (X span only; PRE/HOLD gates complete)

@@ -36,4 +36,4 @@ Beta check on the MEASURED-gate cell-sessions (n=0): median beta HOLD +nan pts, 
 
 All cell-sessions with every column: out/ssa/cs_scores_q4.csv.
 
-FLAG PARTIAL: months 2025-06 (PRE), 2025-10 and 2025-11 (H25) are MISSING (workers killed; no retry without user OK). HOLD/H25 means above use only the surviving months of H25 (2025-07..09, 2025-12); tiers are PROVISIONAL until the 3 months are re-run.
+FLAG PARTIAL: q4 sd34: months 2025-06 (PRE), 2025-10 and 2025-11 (H25 HOLD) missing; HOLD/H25 gates INCOMPLETE; no sd34 cell is promoted on HOLD grounds, at most SESSION-CANDIDATE-PARTIAL; missing months not imputed

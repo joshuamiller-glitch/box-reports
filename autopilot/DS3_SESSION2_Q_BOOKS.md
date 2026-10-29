@@ -1,6 +1,10 @@
 # DS3_SESSION2_Q_BOOKS - running table of new session books found by the replay queue (D3SQ)
 Updated after each wave. One row per independent cluster (best MEASURED PRE-t cell-session among MEASURED-gate cell-sessions). MEASURED = tier basis (V0, cell lot class at $1,000 risk); break-even = MEASURED mean net pts/trade (extra adverse pts that zero it). Beta placebo = same entries with side flipped (see SSA_Q_addendum). Non-replayable survivors are MEASURED-ANALYTIC (counts below, in cs_analytic_q*.csv).
 
+## PARTIAL waves (killed workers, no retry without user OK)
+- q2 sd2a: month 2023-12 missing (X span only; PRE/HOLD gates complete)
+- q4 sd34: months 2025-06 (PRE), 2025-10 and 2025-11 (H25 HOLD) missing; HOLD/H25 gates INCOMPLETE; no sd34 cell is promoted on HOLD grounds, at most SESSION-CANDIDATE-PARTIAL; missing months not imputed
+
 ## New session books found per session (clusters)
 | session   |   replayed_cs |   gate_M0 |   clusters_M0 |   clusters_edge_beyond_beta |   clusters_beats_beta_src |   analytic_only_alive |   analytic_clusters |
 |:----------|--------------:|----------:|--------------:|----------------------------:|--------------------------:|----------------------:|--------------------:|

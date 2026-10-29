@@ -307,3 +307,5 @@ DS3_SESSION2_A.md (+A_D6), DS3_SESSION2_C.md (2023 gate: range-regime effect rea
 ## 23:44Z D3SQ count: scored q1 sb1, q2 sd2a; running q4 sd34, q5 sd56 (~20/35); q3 sd1, q6 sb3, q7 sd6b, q8 sb2, q9 sd2b queued. No new survivor files since sd2b. New session books found so far (queue): NY-AM 30 clusters (q1) + sd2a cells; see DS3_SESSION2_Q_BOOKS.md.
 
 ## 00:12Z D3SQ q5 (sd56) scored: 13 cell-sessions, 1 passes MEASURED (3 at 1 s), 9 with edge label; q4 sd34 at 32/35; q3 sd1, q6 sb3 running; q7 sd6b, q8 sb2, q9 sd2b queued.
+
+## 00:50Z D3SQ: per main, q2 (34/35, 2023-12 X only) and q4 sd34 (32/35: 2025-06, 2025-10, 2025-11 missing, HOLD/H25 incomplete) are PARTIAL; no sd34 cell promoted (tier SESSION-CANDIDATE-PARTIAL at most; 0 of 7 pass anyway); no re-runs. Flags in DS3_SESSION2_Q_BOOKS.md and the D6 line. q3/q6 running (~15/35), q7 q8 q9 queued.
