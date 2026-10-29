@@ -346,3 +346,6 @@ Best in-sample (PRE): profit btab disc0.9995 z1 m2 +0.09 [-0.25,+0.43] (HOLD -0.
 
 ## ABRA 15:55Z progress (T-ADAPTIVE-BRACKETS sections A,B)
 ABRA: A dataset built (47,131 entries x 155 cols, 11 books, outcome minute profiles to 16:55, 1-s path refs, stop-walk slippage estimator calibrated on DN) at l2vast/ds3/out/abr/data; leakage audit running; B prereg frozen (sha in DECISIONS.md), 990 brackets scored, PRE-only fixed-oracle selection written (DS3_ABR_B_PREHOLD.md). best in-sample: pooled fixed oracle +2.3 pts/trade vs 60/60 (MDE 6.2, RC p 0.66, IN-SAMPLE); best walk-forward: n/a (sections C-E later); distilled rule so far: n/a.
+
+## ABRA 16:51Z final (sections A,B)
+ABRA: entry dataset READY and audited (0 mismatches: 132 entry rows / 19,272 comparisons + 38 aux series x 4 cuts); B oracle done (DS3_ABR_B_ORACLE.md): pooled fixed-bracket oracle vs 60/60 +2.33 IN-SAMPLE (MDE 6.2, RC p 0.66), +3.17 HOLD (MDE 10.9), +0.22 X (MDE 6.4), per-trade oracle ~118 pts = upper bound only. best walk-forward: n/a (sections C-E by learner agents); distilled rule so far: n/a.
