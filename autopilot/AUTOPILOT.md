@@ -105,3 +105,6 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-29 ~17:40Z] USER DECISION (verbatim): "HM retest decision: A — forward only from 2026-11-01, UNTOUCHED stays sealed. Keep a30_w10 as the sole primary (a30_w20 was found after the freeze; report it as descriptive only). The user runs a30/3of3/w10 live on all D6 books from 2026-10-29; score the forward HM arm from the live/Sim trade files against hold-to-stop on the 1-s path, and report at the 500-trade and 1,000-trade marks."
 
 [2026-10-29 ~18:00Z] USER DIRECTIVE T-ADAPTIVE-BRACKETS (verbatim in autopilot/DIRECTIVE_ABR_20261029.md)
+[2026-10-29T18:50:12Z] USER DIRECTIVE ADAPTIVE IMPLEMENT (publish THP_POLICY v1 within 60 min, nightly 23:00Z re-fit, expand search a-f) saved to autopilot/DIRECTIVE_ADAPTIVE_IMPLEMENT_20261029.md
+[2026-10-29T18:52:39Z] USER DIRECTIVE THP L2 FOCUS + new features imb5/imb10/wall_tgt/wall_stop saved to autopilot/DIRECTIVE_THP_L2_20261029.md
+[2026-10-29T18:56:08Z] USER DIRECTIVE T-TH L2 ADDENDUM (library A, map B, policies C, H1-H10 D, publish E) saved to autopilot/DIRECTIVE_THL2_ADDENDUM_20261029.md

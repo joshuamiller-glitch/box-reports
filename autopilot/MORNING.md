@@ -354,3 +354,5 @@ ABRA: entry dataset READY and audited (0 mismatches: 132 entry rows / 19,272 com
 
 ## 2026-10-29T18:22:44Z THPC1 (GBM/logit walk-forward) interim, profit side only (loss grid not yet run)
 best in-sample: not yet (CV series comes with the meta run); best walk-forward chain 2024-04..2026-02 (350 cfg x policy so far): logit 3m window weekly refit + tighten = +0.32 pts/trade [-0.60,+1.24], MDE 1.32, NOT significant (best-of-350 look; reality check pending); every GBM take policy is negative (-0.2 to -0.4 pts/trade, daily worse than weekly/monthly); classic-rule re-selection -0.19..-0.63, live JADE -0.69 [-1.56,+0.19]; distilled rule: pending (nothing to retain yet).
+
+## 2026-10-29T18:57:19Z L2L progress: THL2 prereg frozen (sha in DECISIONS.md), 2,232 cells; harness code next; waiting for L2FEAT_READY. best in-sample: n/a; best walk-forward: n/a.
