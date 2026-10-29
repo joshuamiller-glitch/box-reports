@@ -22,26 +22,26 @@ Beta check on the MEASURED-gate cell-sessions (n=20): median beta HOLD -2.81 pts
 ## 3. One representative per cluster (best MEASURED PRE t among MEASURED-gate cell-sessions), pts/trade net
 | wave | session | cell | window | cluster | tier (MEASURED) | HOLD stored | HOLD MEAS V0 [CI] | MDE | H25 / H26 | 2023 span | lots $1k (class/exact) | break-even slip PRE / HOLD (pts) | beta HOLD | edge HOLD | edge beyond beta | beats_beta (src) | 1s | stress |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| q6 | NY-AM | WO_TE1B_emax_5m_pb_b5_x1.5_k10 | NY-AM | 88 | SESSION-CANDIDATE-PARTIAL | 6.84 | 6.41 [-11.25, 24.08] | 24.25 | 6.63 / 5.55 | 4.62 | 1 / 1.00 | 8.38 / 6.41 | -2.83 | 9.25 | yes |  | yes | yes |
-| q6 | NY-PM | TE7_kelt3m_n14_m1.0|wide | NY-PM | 116 | SESSION-CANDIDATE-PARTIAL | 1.12 | 4.52 [-5.73, 14.76] | 14.06 | 4.79 / 3.76 | 0.92 | 1 / 1.00 | 10.97 / 4.52 | -2.56 | 7.08 | yes |  | yes | yes |
-| q6 | NY-PM | R5_QUIET_KB | NY-PM | 19 | SESSION-CANDIDATE-PARTIAL | 1.69 | 4.52 [-5.73, 14.76] | 14.06 | 4.79 / 3.76 | 1.62 | 1 / 1.00 | 11.02 / 4.52 | -2.56 | 7.08 | yes |  | yes | yes |
-| q6 | NY | C5M1_NQ_819 | NY | 241 | SESSION-CANDIDATE-PARTIAL | 6.58 | 8.54 [-10.02, 27.09] | 25.48 | 5.02 / 28.74 | -0.11 | 1 / 1.00 | 13.62 / 8.54 | -2.25 | 10.79 | yes |  | yes | yes |
-| q6 | NY-AM | C5M1_NQ_188 | NY-AM | 175 | SESSION-CANDIDATE-PARTIAL | 2.51 | 0.58 [-12.55, 13.72] | 18.04 | 0.45 / 1.32 | 1.25 | 1 / 1.00 | 7.92 / 0.58 | -3.92 | 4.51 | yes |  | yes | yes |
-| q6 | NY-AM | WO_TE7_kelt3m_n14_m1.5_cci_b3_n40_k10 | NY-AM | 108 | SESSION-CANDIDATE-PARTIAL | 5.58 | 6.67 [-10.46, 23.80] | 23.52 | 5.25 / 11.93 | -9.82 | 1 / 1.00 | 10.18 / 6.67 | -2.56 | 9.23 | yes |  | yes | yes |
-| q6 | NY | C5M1_NQ_303 | NY | 183 | SESSION-CANDIDATE-PARTIAL | 3.55 | 4.73 [-10.38, 19.84] | 20.75 | 0.96 / 21.38 | 4.62 | 1 / 1.00 | 11.03 / 4.73 | -2.41 | 7.14 | yes |  | yes | yes |
-| q6 | NY | WO_TE1B_emax_5m_cci_b5_n27_k18 | NY | 88 | SESSION-CANDIDATE-PARTIAL | 7.38 | 4.84 [-8.93, 18.61] | 18.90 | 3.27 / 11.79 | -0.28 | 1 / 1.00 | 6.14 / 4.84 | -2.80 | 7.64 | yes |  | yes | yes |
-| q6 | NY-AM | WO_TE1B_emax_5m_cci_b5_n40_k10 | NY-AM | 87 | SESSION-CANDIDATE-PARTIAL | 7.74 | 7.35 [-13.65, 28.36] | 28.84 | 3.35 / 20.58 | -9.92 | 1 / 1.00 | 8.69 / 7.35 | -2.62 | 9.98 | yes |  | yes | yes |
-| q6 | NY-AM | C5M1_NQ_818 | NY-AM | 241 | SESSION-CANDIDATE-PARTIAL | 8.41 | 6.03 [-16.39, 28.46] | 30.78 | 5.90 / 6.78 | -2.23 | 1 / 1.00 | 14.31 / 6.03 | -3.90 | 9.93 | yes |  | yes | yes |
-| q6 | ASIA | WO_PRO2_RIB1m_q30_cci_b1_n14_k10 | ASIA | 56 | SESSION-CANDIDATE-PARTIAL | 8.17 | 10.85 [-3.39, 25.08] | 19.54 | 2.09 / 37.13 | 0.65 | 1 / 1.00 | 8.21 / 10.85 | -2.75 | 13.60 | yes |  | yes | yes |
-| q6 | NY-AM | R5_DW_HM | NY-AM | 2 | SESSION-CANDIDATE-PARTIAL | 6.18 | 5.19 [-5.49, 15.87] | 14.66 | 3.14 / 16.57 | -2.51 | 1 / 1.00 | 6.56 / 5.19 | -3.90 | 9.09 | yes |  | yes | yes |
-| q6 | ASIA | WO_HM_cci_b1_n14_k10 | ASIA | 5 | SESSION-CANDIDATE-PARTIAL | 6.21 | 3.30 [-3.24, 9.84] | 8.98 | 2.56 / 5.37 | -2.13 | 1 / 1.00 | 6.13 / 3.30 | -3.19 | 6.50 | yes |  | yes | yes |
-| q6 | LONDON | C5M1_NQ_775 | LONDON | 238 | SESSION-CANDIDATE-PARTIAL | 4.59 | 5.41 [-12.01, 22.82] | 23.91 | 5.31 / 5.86 | 4.22 | 1 / 1.00 | 10.92 / 5.41 | -2.44 | 7.85 | yes |  | yes | yes |
-| q6 | ASIA | WO_PRO2_Z20_t1.0_cci_b5_n20_k30 | ASIA | 65 | SESSION-CANDIDATE-PARTIAL | 5.42 | 2.69 [-4.38, 9.75] | 9.70 | 0.42 / 7.88 | 1.65 | 1 / 1.00 | 3.53 / 2.69 | -3.18 | 5.86 | yes |  | yes | yes |
-| q6 | NY-PM | TE4_vwb_k1.5_ny|wide | NY-PM | 99 | SESSION-CANDIDATE-PARTIAL | 7.20 | 4.87 [-6.03, 15.77] | 14.96 | 5.39 / 2.34 | -2.80 | 1 / 1.00 | 6.24 / 4.87 | -2.22 | 7.09 | yes |  | yes | yes |
-| q6 | NY | WO_EM_cci_b5_n27_k30 | NY | 1 | SESSION-CANDIDATE-PARTIAL | 5.48 | 3.37 [-6.57, 13.31] | 13.65 | 1.97 / 9.11 | 0.02 | 1 / 1.00 | 4.41 / 3.37 | -4.21 | 7.58 | yes |  | yes | yes |
-| q6 | NY-AM | C5M1_NQ_8 | NY-AM | 166 | SESSION-CANDIDATE-PARTIAL | 5.78 | 7.16 [-3.41, 17.72] | 14.50 | 5.33 / 14.27 | -1.32 | 1 / 1.00 | 4.04 / 7.16 | -3.40 | 10.56 | yes |  | yes | yes |
-| q6 | NY-AM | TE3_ofi_w5_q0.97|wide | NY-AM | 89 | SESSION-CANDIDATE-PARTIAL | 2.06 | 1.01 [-5.46, 7.48] | 8.88 | 0.06 / 3.35 | -0.72 | 1 / 1.00 | 2.36 / 1.01 | -3.13 | 4.14 | yes |  | yes | yes |
-| q6 | LONDON | WO_TE7_boll3m_n20_m1.5_pb_b5_x1.5_k10 | LONDON | 101 | SESSION-CANDIDATE-PARTIAL | 6.49 | 2.72 [-3.93, 9.38] | 9.13 | 3.80 / 0.01 | -5.32 | 1 / 1.00 | 2.88 / 2.72 | -3.17 | 5.89 | yes |  | yes | yes |
+| q6 | NY-AM | WO_TE1B_emax_5m_pb_b5_x1.5_k10 | NY-AM | q6:88 | SESSION-CANDIDATE-PARTIAL | 6.84 | 6.41 [-11.25, 24.08] | 24.25 | 6.63 / 5.55 | 4.62 | 1 / 1.00 | 8.38 / 6.41 | -2.83 | 9.25 | yes |  | yes | yes |
+| q6 | NY-PM | TE7_kelt3m_n14_m1.0|wide | NY-PM | q6:116 | SESSION-CANDIDATE-PARTIAL | 1.12 | 4.52 [-5.73, 14.76] | 14.06 | 4.79 / 3.76 | 0.92 | 1 / 1.00 | 10.97 / 4.52 | -2.56 | 7.08 | yes |  | yes | yes |
+| q6 | NY-PM | R5_QUIET_KB | NY-PM | q6:19 | SESSION-CANDIDATE-PARTIAL | 1.69 | 4.52 [-5.73, 14.76] | 14.06 | 4.79 / 3.76 | 1.62 | 1 / 1.00 | 11.02 / 4.52 | -2.56 | 7.08 | yes |  | yes | yes |
+| q6 | NY | C5M1_NQ_819 | NY | q6:241 | SESSION-CANDIDATE-PARTIAL | 6.58 | 8.54 [-10.02, 27.09] | 25.48 | 5.02 / 28.74 | -0.11 | 1 / 1.00 | 13.62 / 8.54 | -2.25 | 10.79 | yes |  | yes | yes |
+| q6 | NY-AM | C5M1_NQ_188 | NY-AM | q6:175 | SESSION-CANDIDATE-PARTIAL | 2.51 | 0.58 [-12.55, 13.72] | 18.04 | 0.45 / 1.32 | 1.25 | 1 / 1.00 | 7.92 / 0.58 | -3.92 | 4.51 | yes |  | yes | yes |
+| q6 | NY-AM | WO_TE7_kelt3m_n14_m1.5_cci_b3_n40_k10 | NY-AM | q6:108 | SESSION-CANDIDATE-PARTIAL | 5.58 | 6.67 [-10.46, 23.80] | 23.52 | 5.25 / 11.93 | -9.82 | 1 / 1.00 | 10.18 / 6.67 | -2.56 | 9.23 | yes |  | yes | yes |
+| q6 | NY | C5M1_NQ_303 | NY | q6:183 | SESSION-CANDIDATE-PARTIAL | 3.55 | 4.73 [-10.38, 19.84] | 20.75 | 0.96 / 21.38 | 4.62 | 1 / 1.00 | 11.03 / 4.73 | -2.41 | 7.14 | yes |  | yes | yes |
+| q6 | NY | WO_TE1B_emax_5m_cci_b5_n27_k18 | NY | q6:88 | SESSION-CANDIDATE-PARTIAL | 7.38 | 4.84 [-8.93, 18.61] | 18.90 | 3.27 / 11.79 | -0.28 | 1 / 1.00 | 6.14 / 4.84 | -2.80 | 7.64 | yes |  | yes | yes |
+| q6 | NY-AM | WO_TE1B_emax_5m_cci_b5_n40_k10 | NY-AM | q6:87 | SESSION-CANDIDATE-PARTIAL | 7.74 | 7.35 [-13.65, 28.36] | 28.84 | 3.35 / 20.58 | -9.92 | 1 / 1.00 | 8.69 / 7.35 | -2.62 | 9.98 | yes |  | yes | yes |
+| q6 | NY-AM | C5M1_NQ_818 | NY-AM | q6:241 | SESSION-CANDIDATE-PARTIAL | 8.41 | 6.03 [-16.39, 28.46] | 30.78 | 5.90 / 6.78 | -2.23 | 1 / 1.00 | 14.31 / 6.03 | -3.90 | 9.93 | yes |  | yes | yes |
+| q6 | ASIA | WO_PRO2_RIB1m_q30_cci_b1_n14_k10 | ASIA | q6:56 | SESSION-CANDIDATE-PARTIAL | 8.17 | 10.85 [-3.39, 25.08] | 19.54 | 2.09 / 37.13 | 0.65 | 1 / 1.00 | 8.21 / 10.85 | -2.75 | 13.60 | yes |  | yes | yes |
+| q6 | NY-AM | R5_DW_HM | NY-AM | q6:2 | SESSION-CANDIDATE-PARTIAL | 6.18 | 5.19 [-5.49, 15.87] | 14.66 | 3.14 / 16.57 | -2.51 | 1 / 1.00 | 6.56 / 5.19 | -3.90 | 9.09 | yes |  | yes | yes |
+| q6 | ASIA | WO_HM_cci_b1_n14_k10 | ASIA | q6:5 | SESSION-CANDIDATE-PARTIAL | 6.21 | 3.30 [-3.24, 9.84] | 8.98 | 2.56 / 5.37 | -2.13 | 1 / 1.00 | 6.13 / 3.30 | -3.19 | 6.50 | yes |  | yes | yes |
+| q6 | LONDON | C5M1_NQ_775 | LONDON | q6:238 | SESSION-CANDIDATE-PARTIAL | 4.59 | 5.41 [-12.01, 22.82] | 23.91 | 5.31 / 5.86 | 4.22 | 1 / 1.00 | 10.92 / 5.41 | -2.44 | 7.85 | yes |  | yes | yes |
+| q6 | ASIA | WO_PRO2_Z20_t1.0_cci_b5_n20_k30 | ASIA | q6:65 | SESSION-CANDIDATE-PARTIAL | 5.42 | 2.69 [-4.38, 9.75] | 9.70 | 0.42 / 7.88 | 1.65 | 1 / 1.00 | 3.53 / 2.69 | -3.18 | 5.86 | yes |  | yes | yes |
+| q6 | NY-PM | TE4_vwb_k1.5_ny|wide | NY-PM | q6:99 | SESSION-CANDIDATE-PARTIAL | 7.20 | 4.87 [-6.03, 15.77] | 14.96 | 5.39 / 2.34 | -2.80 | 1 / 1.00 | 6.24 / 4.87 | -2.22 | 7.09 | yes |  | yes | yes |
+| q6 | NY | WO_EM_cci_b5_n27_k30 | NY | q6:1 | SESSION-CANDIDATE-PARTIAL | 5.48 | 3.37 [-6.57, 13.31] | 13.65 | 1.97 / 9.11 | 0.02 | 1 / 1.00 | 4.41 / 3.37 | -4.21 | 7.58 | yes |  | yes | yes |
+| q6 | NY-AM | C5M1_NQ_8 | NY-AM | q6:166 | SESSION-CANDIDATE-PARTIAL | 5.78 | 7.16 [-3.41, 17.72] | 14.50 | 5.33 / 14.27 | -1.32 | 1 / 1.00 | 4.04 / 7.16 | -3.40 | 10.56 | yes |  | yes | yes |
+| q6 | NY-AM | TE3_ofi_w5_q0.97|wide | NY-AM | q6:89 | SESSION-CANDIDATE-PARTIAL | 2.06 | 1.01 [-5.46, 7.48] | 8.88 | 0.06 / 3.35 | -0.72 | 1 / 1.00 | 2.36 / 1.01 | -3.13 | 4.14 | yes |  | yes | yes |
+| q6 | LONDON | WO_TE7_boll3m_n20_m1.5_pb_b5_x1.5_k10 | LONDON | q6:101 | SESSION-CANDIDATE-PARTIAL | 6.49 | 2.72 [-3.93, 9.38] | 9.13 | 3.80 / 0.01 | -5.32 | 1 / 1.00 | 2.88 / 2.72 | -3.17 | 5.89 | yes |  | yes | yes |
 
 ## 4. Top 25 replayed cell-sessions by MEASURED PRE t regardless of gate: stored vs MEASURED vs CONSERVATIVE
 | cell | window | tier MEAS | PRE S / M0 / C | HOLD S / M0 / C | HOLD n | H25 / H26 (M0) | MDE | 2023 span M0 | beta / edge HOLD | EBB | beats_beta | gate_M0 |

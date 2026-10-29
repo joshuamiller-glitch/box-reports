@@ -22,7 +22,7 @@ Beta check on the MEASURED-gate cell-sessions (n=1): median beta HOLD +0.27 pts,
 ## 3. One representative per cluster (best MEASURED PRE t among MEASURED-gate cell-sessions), pts/trade net
 | wave | session | cell | window | cluster | tier (MEASURED) | HOLD stored | HOLD MEAS V0 [CI] | MDE | H25 / H26 | 2023 span | lots $1k (class/exact) | break-even slip PRE / HOLD (pts) | beta HOLD | edge HOLD | edge beyond beta | beats_beta (src) | 1s | stress |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| q5 | NY-AM | sd56/NY-AM/X:SB_HM_st_vw_5/t60s40/run | NY-AM | 12 | SESSION-CANDIDATE |  | 4.56 [-4.88, 14.00] | 12.96 | 3.74 / 9.43 | -1.11 | 1 / 1.00 | 4.46 / 4.56 | 0.27 | 4.29 | yes |  | yes | yes |
+| q5 | NY-AM | sd56/NY-AM/X:SB_HM_st_vw_5/t60s40/run | NY-AM | q5:12 | SESSION-CANDIDATE |  | 4.56 [-4.88, 14.00] | 12.96 | 3.74 / 9.43 | -1.11 | 1 / 1.00 | 4.46 / 4.56 | 0.27 | 4.29 | yes |  | yes | yes |
 
 ## 4. Top 25 replayed cell-sessions by MEASURED PRE t regardless of gate: stored vs MEASURED vs CONSERVATIVE
 | cell | window | tier MEAS | PRE S / M0 / C | HOLD S / M0 / C | HOLD n | H25 / H26 (M0) | MDE | 2023 span M0 | beta / edge HOLD | EBB | beats_beta | gate_M0 |

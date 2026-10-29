@@ -22,18 +22,18 @@ Beta check on the MEASURED-gate cell-sessions (n=12): median beta HOLD -2.67 pts
 ## 3. One representative per cluster (best MEASURED PRE t among MEASURED-gate cell-sessions), pts/trade net
 | wave | session | cell | window | cluster | tier (MEASURED) | HOLD stored | HOLD MEAS V0 [CI] | MDE | H25 / H26 | 2023 span | lots $1k (class/exact) | break-even slip PRE / HOLD (pts) | beta HOLD | edge HOLD | edge beyond beta | beats_beta (src) | 1s | stress |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| q7 | NY-AM | ba2/HM_t75_s90 | NY-AM | 4 | SESSION-PASS |  | 7.25 [-6.64, 21.14] | 19.07 | 2.56 / 32.33 | 11.04 | 1 / 1.00 | 12.90 / 7.25 | -3.63 | 10.88 | yes |  | yes | yes |
-| q7 | NY-AM | ba2/HM_t90_s90 | NY-AM | 5 | SESSION-PASS |  | 7.64 [-6.83, 22.10] | 19.86 | 2.28 / 36.56 | 14.89 | 1 / 1.00 | 13.09 / 7.64 | -3.32 | 10.96 | yes |  | yes | yes |
-| q7 | ASIA | ba2/SM_t75_sst | ASIA | 1 | SESSION-PASS |  | 6.01 [-3.63, 15.65] | 13.24 | 5.88 / 6.87 | 4.78 | 2 / 2.00 | 8.09 / 6.01 | 0.36 | 5.65 | yes |  | yes | yes |
-| q7 | ASIA | ba2/SM_t90_sst | ASIA | 2 | SESSION-PASS |  | 5.20 [-5.36, 15.76] | 14.49 | 4.22 / 11.85 | 7.10 | 2 / 2.00 | 8.52 / 5.20 | -0.17 | 5.36 | yes |  | yes | yes |
-| q7 | PREOPEN | pb4:tick_1000|ST10|SW62|T2|60/60 | PREOPEN | 10 | SESSION-CANDIDATE |  | 8.62 [-8.99, 26.24] | 24.18 | 4.55 / 19.05 | 1.90 | 1 / 0.83 | 12.15 / 8.62 | -2.68 | 11.30 | yes |  | yes | yes |
-| q7 | PREOPEN | pb4:volume_1000|ST10|SW62|T2|60/60 | PREOPEN | 11 | SESSION-CANDIDATE |  | 9.39 [-5.71, 24.50] | 20.74 | 4.33 / 21.31 | 8.57 | 1 / 0.83 | 9.04 / 9.39 | -4.84 | 14.23 | yes |  | yes | yes |
-| q7 | PREOPEN | pb4:volume_1000|ST5|SW62|T2|60/60 | PREOPEN | 12 | SESSION-CANDIDATE |  | 11.35 [-3.68, 26.38] | 20.64 | 8.34 / 19.69 | 15.25 | 1 / 0.83 | 10.61 / 11.35 | -3.86 | 15.21 | yes |  | yes | yes |
-| q7 | NY-AM | ba2/KB_t90_s90 | NY-AM | 6 | SESSION-PASS |  | 6.72 [-4.61, 18.04] | 15.55 | 5.18 / 15.43 | 8.10 | 1 / 1.00 | 8.17 / 6.72 | -2.66 | 9.38 | yes |  | yes | yes |
-| q7 | ASIA | ba2/EM_t60_s40 | ASIA | 0 | SESSION-PASS |  | 3.75 [-9.75, 17.25] | 18.53 | 0.11 / 34.06 | -4.12 | 1 / 1.00 | 5.40 / 3.75 | -0.75 | 4.50 | yes |  | yes | yes |
-| q7 | ASIA | tsoHM10/r1.5 | ASIA | 3 | SESSION-PASS |  | 2.88 [-6.68, 12.44] | 13.13 | 1.46 / 12.39 | -3.65 | 1 / 1.00 | 5.57 / 2.88 | -0.41 | 3.29 | yes |  | yes | yes |
-| q7 | NY-AM | pb4:min_1|ST3|VWAP|T2|60/60 | NY-AM | 8 | SESSION-CANDIDATE |  | 1.83 [-6.16, 9.83] | 10.98 | 1.92 / 1.47 | 0.41 | 1 / 0.83 | 5.06 / 1.83 | -4.48 | 6.31 | yes |  | yes | yes |
-| q7 | PREOPEN | pb4:tick_1000|ST10|SW62|T2|40/40 | PREOPEN | 9 | SESSION-CANDIDATE |  | 5.60 [-1.62, 12.82] | 9.91 | 3.70 / 10.14 | -1.52 | 1 / 1.25 | 4.40 / 5.60 | -2.58 | 8.18 | yes |  | yes | yes |
+| q7 | NY-AM | ba2/HM_t75_s90 | NY-AM | q7:4 | SESSION-PASS |  | 7.25 [-6.64, 21.14] | 19.07 | 2.56 / 32.33 | 11.04 | 1 / 1.00 | 12.90 / 7.25 | -3.63 | 10.88 | yes |  | yes | yes |
+| q7 | NY-AM | ba2/HM_t90_s90 | NY-AM | q7:5 | SESSION-PASS |  | 7.64 [-6.83, 22.10] | 19.86 | 2.28 / 36.56 | 14.89 | 1 / 1.00 | 13.09 / 7.64 | -3.32 | 10.96 | yes |  | yes | yes |
+| q7 | ASIA | ba2/SM_t75_sst | ASIA | q7:1 | SESSION-PASS |  | 6.01 [-3.63, 15.65] | 13.24 | 5.88 / 6.87 | 4.78 | 2 / 2.00 | 8.09 / 6.01 | 0.36 | 5.65 | yes |  | yes | yes |
+| q7 | ASIA | ba2/SM_t90_sst | ASIA | q7:2 | SESSION-PASS |  | 5.20 [-5.36, 15.76] | 14.49 | 4.22 / 11.85 | 7.10 | 2 / 2.00 | 8.52 / 5.20 | -0.17 | 5.36 | yes |  | yes | yes |
+| q7 | PREOPEN | pb4:tick_1000|ST10|SW62|T2|60/60 | PREOPEN | q7:10 | SESSION-CANDIDATE |  | 8.62 [-8.99, 26.24] | 24.18 | 4.55 / 19.05 | 1.90 | 1 / 0.83 | 12.15 / 8.62 | -2.68 | 11.30 | yes |  | yes | yes |
+| q7 | PREOPEN | pb4:volume_1000|ST10|SW62|T2|60/60 | PREOPEN | q7:11 | SESSION-CANDIDATE |  | 9.39 [-5.71, 24.50] | 20.74 | 4.33 / 21.31 | 8.57 | 1 / 0.83 | 9.04 / 9.39 | -4.84 | 14.23 | yes |  | yes | yes |
+| q7 | PREOPEN | pb4:volume_1000|ST5|SW62|T2|60/60 | PREOPEN | q7:12 | SESSION-CANDIDATE |  | 11.35 [-3.68, 26.38] | 20.64 | 8.34 / 19.69 | 15.25 | 1 / 0.83 | 10.61 / 11.35 | -3.86 | 15.21 | yes |  | yes | yes |
+| q7 | NY-AM | ba2/KB_t90_s90 | NY-AM | q7:6 | SESSION-PASS |  | 6.72 [-4.61, 18.04] | 15.55 | 5.18 / 15.43 | 8.10 | 1 / 1.00 | 8.17 / 6.72 | -2.66 | 9.38 | yes |  | yes | yes |
+| q7 | ASIA | ba2/EM_t60_s40 | ASIA | q7:0 | SESSION-PASS |  | 3.75 [-9.75, 17.25] | 18.53 | 0.11 / 34.06 | -4.12 | 1 / 1.00 | 5.40 / 3.75 | -0.75 | 4.50 | yes |  | yes | yes |
+| q7 | ASIA | tsoHM10/r1.5 | ASIA | q7:3 | SESSION-PASS |  | 2.88 [-6.68, 12.44] | 13.13 | 1.46 / 12.39 | -3.65 | 1 / 1.00 | 5.57 / 2.88 | -0.41 | 3.29 | yes |  | yes | yes |
+| q7 | NY-AM | pb4:min_1|ST3|VWAP|T2|60/60 | NY-AM | q7:8 | SESSION-CANDIDATE |  | 1.83 [-6.16, 9.83] | 10.98 | 1.92 / 1.47 | 0.41 | 1 / 0.83 | 5.06 / 1.83 | -4.48 | 6.31 | yes |  | yes | yes |
+| q7 | PREOPEN | pb4:tick_1000|ST10|SW62|T2|40/40 | PREOPEN | q7:9 | SESSION-CANDIDATE |  | 5.60 [-1.62, 12.82] | 9.91 | 3.70 / 10.14 | -1.52 | 1 / 1.25 | 4.40 / 5.60 | -2.58 | 8.18 | yes |  | yes | yes |
 
 ## 4. Top 25 replayed cell-sessions by MEASURED PRE t regardless of gate: stored vs MEASURED vs CONSERVATIVE
 | cell | window | tier MEAS | PRE S / M0 / C | HOLD S / M0 / C | HOLD n | H25 / H26 (M0) | MDE | 2023 span M0 | beta / edge HOLD | EBB | beats_beta | gate_M0 |

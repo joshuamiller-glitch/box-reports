@@ -22,15 +22,15 @@ Beta check on the MEASURED-gate cell-sessions (n=9): median beta HOLD -3.13 pts,
 ## 3. One representative per cluster (best MEASURED PRE t among MEASURED-gate cell-sessions), pts/trade net
 | wave | session | cell | window | cluster | tier (MEASURED) | HOLD stored | HOLD MEAS V0 [CI] | MDE | H25 / H26 | 2023 span | lots $1k (class/exact) | break-even slip PRE / HOLD (pts) | beta HOLD | edge HOLD | edge beyond beta | beats_beta (src) | 1s | stress |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| q8 | NY-AM | PBX_PB3B_R5_P2_f60_T3 | NY-AM | 0 | SESSION-CANDIDATE |  | 5.71 [-10.01, 21.43] | 21.59 | 5.09 / 7.76 | 0.00 | 1 / 1.00 | 10.24 / 5.71 | 1.42 | 4.29 | yes |  | yes | yes |
-| q8 | LONDON | PBX4_PBS_f60_T3_DFLIP | LONDON | 1 | SESSION-CANDIDATE |  | 16.34 [-4.96, 37.64] | 29.24 | 17.14 / 13.97 | 11.59 | 1 / 1.00 | 14.95 / 16.34 | 5.89 | 10.45 | yes |  | yes | yes |
-| q8 | LONDON | PB3E_C_R3_P2_60_1.5R | LONDON | 4 | SESSION-CANDIDATE |  | 4.73 [-9.89, 19.35] | 20.07 | 4.45 / 5.44 | -8.81 | 1 / 1.00 | 7.63 / 4.73 | -2.26 | 6.98 | no |  | yes | yes |
-| q8 | ASIA | T4A_PB3B_R5_P1_t45_s60 | ASIA | 23 | SESSION-CANDIDATE |  | 1.80 [-4.03, 7.64] | 8.01 | 0.96 / 4.43 | -4.28 | 1 / 1.00 | 1.69 / 1.80 | -3.45 | 5.25 | yes |  | yes | yes |
-| q8 | NY | T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s40 | NY | 11 | SESSION-CANDIDATE |  | 1.99 [-1.43, 5.42] | 4.70 | 2.13 / 1.33 | -2.75 | 1 / 1.00 | 1.47 / 1.99 | -3.04 | 5.03 | yes |  | yes | yes |
-| q8 | ASIA | PB3B_R5_P1 | ASIA | 2 | SESSION-CANDIDATE |  | 3.16 [-3.21, 9.53] | 8.75 | 3.89 / 0.66 | -4.84 | 1 / 1.00 | 1.99 / 3.16 | -3.13 | 6.29 | yes |  | yes | yes |
-| q8 | NY | T4A_PB3F_D_R3_P2_60_2R_bracket_t60_s40 | NY | 8 | SESSION-CANDIDATE |  | 1.42 [-2.97, 5.81] | 6.03 | 1.35 / 1.75 | -3.73 | 1 / 1.00 | 1.50 / 1.42 | -5.27 | 6.69 | no |  | no | yes |
-| q8 | NY | T4A_PB3D_R3_P2_t30_s40 | NY | 27 | SESSION-CANDIDATE |  | 0.18 [-2.56, 2.93] | 3.76 | 0.18 / 0.19 | -1.82 | 1 / 1.00 | 0.86 / 0.18 | -3.29 | 3.47 | yes |  | yes | yes |
-| q8 | ASIA | T4A_PRO_Z20_t1.0_t60_s50 | ASIA | 34 | SESSION-CANDIDATE |  | 1.85 [-3.29, 7.00] | 7.06 | 0.17 / 8.23 | -0.14 | 1 / 1.00 | 1.26 / 1.85 | -3.55 | 5.40 | yes |  | yes | yes |
+| q8 | NY-AM | PBX_PB3B_R5_P2_f60_T3 | NY-AM | q8:0 | SESSION-CANDIDATE |  | 5.71 [-10.01, 21.43] | 21.59 | 5.09 / 7.76 | 0.00 | 1 / 1.00 | 10.24 / 5.71 | 1.42 | 4.29 | yes |  | yes | yes |
+| q8 | LONDON | PBX4_PBS_f60_T3_DFLIP | LONDON | q8:1 | SESSION-CANDIDATE |  | 16.34 [-4.96, 37.64] | 29.24 | 17.14 / 13.97 | 11.59 | 1 / 1.00 | 14.95 / 16.34 | 5.89 | 10.45 | yes |  | yes | yes |
+| q8 | LONDON | PB3E_C_R3_P2_60_1.5R | LONDON | q8:4 | SESSION-CANDIDATE |  | 4.73 [-9.89, 19.35] | 20.07 | 4.45 / 5.44 | -8.81 | 1 / 1.00 | 7.63 / 4.73 | -2.26 | 6.98 | no |  | yes | yes |
+| q8 | ASIA | T4A_PB3B_R5_P1_t45_s60 | ASIA | q8:23 | SESSION-CANDIDATE |  | 1.80 [-4.03, 7.64] | 8.01 | 0.96 / 4.43 | -4.28 | 1 / 1.00 | 1.69 / 1.80 | -3.45 | 5.25 | yes |  | yes | yes |
+| q8 | NY | T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s40 | NY | q8:11 | SESSION-CANDIDATE |  | 1.99 [-1.43, 5.42] | 4.70 | 2.13 / 1.33 | -2.75 | 1 / 1.00 | 1.47 / 1.99 | -3.04 | 5.03 | yes |  | yes | yes |
+| q8 | ASIA | PB3B_R5_P1 | ASIA | q8:2 | SESSION-CANDIDATE |  | 3.16 [-3.21, 9.53] | 8.75 | 3.89 / 0.66 | -4.84 | 1 / 1.00 | 1.99 / 3.16 | -3.13 | 6.29 | yes |  | yes | yes |
+| q8 | NY | T4A_PB3F_D_R3_P2_60_2R_bracket_t60_s40 | NY | q8:8 | SESSION-CANDIDATE |  | 1.42 [-2.97, 5.81] | 6.03 | 1.35 / 1.75 | -3.73 | 1 / 1.00 | 1.50 / 1.42 | -5.27 | 6.69 | no |  | no | yes |
+| q8 | NY | T4A_PB3D_R3_P2_t30_s40 | NY | q8:27 | SESSION-CANDIDATE |  | 0.18 [-2.56, 2.93] | 3.76 | 0.18 / 0.19 | -1.82 | 1 / 1.00 | 0.86 / 0.18 | -3.29 | 3.47 | yes |  | yes | yes |
+| q8 | ASIA | T4A_PRO_Z20_t1.0_t60_s50 | ASIA | q8:34 | SESSION-CANDIDATE |  | 1.85 [-3.29, 7.00] | 7.06 | 0.17 / 8.23 | -0.14 | 1 / 1.00 | 1.26 / 1.85 | -3.55 | 5.40 | yes |  | yes | yes |
 
 ## 4. Top 25 replayed cell-sessions by MEASURED PRE t regardless of gate: stored vs MEASURED vs CONSERVATIVE
 | cell | window | tier MEAS | PRE S / M0 / C | HOLD S / M0 / C | HOLD n | H25 / H26 (M0) | MDE | 2023 span M0 | beta / edge HOLD | EBB | beats_beta | gate_M0 |
