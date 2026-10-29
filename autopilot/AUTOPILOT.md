@@ -91,3 +91,9 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-29 ~00:50Z] USER DIRECTIVE T-OPEN follow-up (verbatim in autopilot/DIRECTIVE_TOPEN_BOOK_20261029.md)
 
 [2026-10-29 ~13:30Z] USER DIRECTIVE T-TH-PROFIT (verbatim in autopilot/DIRECTIVE_THP_20261029.md)
+
+[2026-10-29 ~14:30Z] USER DIRECTIVE T-TH-PROFIT ADDENDUM (verbatim in autopilot/DIRECTIVE_THP_ADDENDUM_20261029.md)
+
+[2026-10-29 ~14:40Z] USER DIRECTIVE T-TH-PROFIT ADAPTIVE2 (verbatim in autopilot/DIRECTIVE_THP_ADAPTIVE2_20261029.md)
+
+[2026-10-29 ~15:00Z] USER DIRECTIVE T-TH-LOSS (verbatim in autopilot/DIRECTIVE_THL_20261029.md)
