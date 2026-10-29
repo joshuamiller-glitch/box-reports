@@ -303,3 +303,5 @@ DS3_SESSION2_A.md (+A_D6), DS3_SESSION2_C.md (2023 gate: range-regime effect rea
 ## 22:57Z D3SQ: wave q2 (sd2a) worker 2023-12 killed SIGTERM ~21:20Z (memguard presumed); 2023 X-span only. No retry without user OK (asked). q2 scored with 34/35 months and the gap flagged. q1 (sb1): 312 of 381 replayable cell-sessions pass MEASURED.
 
 ## 22:58Z D3SQ q2 (sd2a) SCORED with 34/35 months (2023-12 killed, not retried; X span only): 37 cell-sessions, 16 pass MEASURED (22 at 1 s, 33 CONS), 14 with edge-beyond-beta label; median beta -3.2, median HOLD edge +6.9, 0 with HOLD CI lo>0 (3 with edge CI lo>0). New session books found (queue): ASIA 5, LONDON/PRE/NYAM etc see DS3_SESSION2_Q_BOOKS.md (cells counted as clusters; source has no cluster50). Waves q3-q9 still running/queued.
+
+## 23:44Z D3SQ count: scored q1 sb1, q2 sd2a; running q4 sd34, q5 sd56 (~20/35); q3 sd1, q6 sb3, q7 sd6b, q8 sb2, q9 sd2b queued. No new survivor files since sd2b. New session books found so far (queue): NY-AM 30 clusters (q1) + sd2a cells; see DS3_SESSION2_Q_BOOKS.md.
