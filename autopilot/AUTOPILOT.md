@@ -117,3 +117,4 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-29T19:23:05Z] USER DIRECTIVE T-DIP-ENTRY saved verbatim to autopilot/DIRECTIVE_DIPENTRY_20261029.md; QUEUED (cap full)
 [2026-10-29T19:27:27Z] USER UPDATE T-DIP-ENTRY: L2-gated primary (appended verbatim to DIRECTIVE_DIPENTRY_20261029.md); still QUEUED
 [2026-10-29T19:32:16Z] THP_POLICY v1.1 published (bracket EMPTY); DIPENTRY launched from queue
+[2026-10-29T20:53:23Z] ABRC1 hand-back received; bracket layer closed (0 PASS)
