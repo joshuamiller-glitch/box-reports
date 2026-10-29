@@ -318,3 +318,8 @@ New session books (clusters, per Q_BOOKS): ASIA 5, LONDON 1, PREOPEN 2, NY-AM 33
 ## 01:48Z D3SQ q3 (sd1) scored: 103 cell-sessions, 12 pass MEASURED (8 market-entry real, rest are limit/stop entries = MARKET-FALLBACK PROXY), median beta -2.7, edge +5.4, 3 clusters with HOLD edge CI lo>0. q6 (sb3) scored PARTIAL (2025-10 killed, no retry). q7 sd6b, q8 sb2, q9 sd2b running/queued.
 
 ## 02:17Z D3SQ count: q1 q2(p) q3 q4(p) q5 q6(p) scored; q7 sd6b 14/35, q8 sb2 12/35 running; q9 sd2b queued.
+
+## 03:14Z D3SQ count: q7 sd6b scored (12 of 13 cell-sessions pass MEASURED), q8 sb2 scored (9 of 56); q9 sd2b running. All 9 waves launched; PARTIAL: q2, q4, q6.
+
+## 2-hourly 03:17Z 2026-10-29
+New session books (clusters, Q_BOOKS): ASIA 17, LONDON 6, PREOPEN 7, NY-AM 43, NY 10, NY-PM 10, CLOSE 0. Memguard kill 01:26:29Z (ssa worker, wave/month unidentified). Re-run question for q2 2023-12 / q4 2025-06,10,11 still awaiting user OK.
