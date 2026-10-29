@@ -1,6 +1,6 @@
 # DS3_THL2_D_HYPOTHESES - H1-H11 as named cell families (L2H, 2026-10-29)
 
-Research only; UNTOUCHED never read (store max label day 20260206; HOLD capped). Prereg: l2vast/ds3/prereg/THL2_D_prereg.md (stage 1 sha256 eb2d615f..., amendment A1 for H4,H5,H7,H10 sha256 08c15545..., both in DECISIONS.md, logged before the cells they cover were scored; H11 was in the stage-1 prereg). 428 cells in total (stage 1: 326, stage 2: 102). Data: 10-s decision rows of the 10 static-bracket books (CR excluded), MEASURED fills (market 0.995 pt, tightened stop 1.01 pt, exit at the 10-s close, conservative), paired vs the same trade held to the bracket (profit) / held to the stop (loss). Walk-forward: the cell is chosen on PRE (X and HOLD never used for selection) and, separately, by re-fitting chains (window 3m/12m/ew10, weekly, pooled or per book) on closed trades only. Placebo: L2 columns of another trade of the same label day (10 draws, whole family re-run, best-of-family PRE mean ranked against the real best); H11 path arm: random cuts at the same rate (10 draws). MDE = 2.8 SE with trade clusters (label day x session). RC = White reality check on PRE daily sums (family), over all 428 cells p = 0.73.
+Research only; UNTOUCHED never read (store max label day 20260206; HOLD capped). Prereg: l2vast/ds3/prereg/THL2_D_prereg.md (stage 1 sha256 eb2d615f..., amendment A1 for H4,H5,H7,H10 sha256 08c15545..., both in DECISIONS.md, logged before the cells they cover were scored; H11 was in the stage-1 prereg). 448 cells in total (stage 1: 326, stage 2: 102, stage 3 H12: 20). Data: 10-s decision rows of the 10 static-bracket books (CR excluded), MEASURED fills (market 0.995 pt, tightened stop 1.01 pt, exit at the 10-s close, conservative), paired vs the same trade held to the bracket (profit) / held to the stop (loss). Walk-forward: the cell is chosen on PRE (X and HOLD never used for selection) and, separately, by re-fitting chains (window 3m/12m/ew10, weekly, pooled or per book) on closed trades only. Placebo: L2 columns of another trade of the same label day (10 draws, whole family re-run, best-of-family PRE mean ranked against the real best); H11 path arm: random cuts at the same rate (10 draws). MDE = 2.8 SE with trade clusters (label day x session). RC = White reality check on PRE daily sums (family), over all 428 cells p = 0.73.
 
 ## RECENT WINDOWS FIRST (user directive 2026-10-29, part 5)
 
@@ -181,3 +181,20 @@ Take the whole position at the first 10-s close with pct >= 0.7 (70% of the way 
 
 Nothing in the 10-level book, the queue, the sweeps or the pulled/added size beats hold-to-bracket after measured costs, once placebo, best-of-N and the matching path-only control are applied. The L2 gates (H1 wall, H8 thin, H7 sweep) add 0 +/- 0.3 pt to the plain path rule they sit on. The descriptive map (DS3_THL2_B_MAP.md) shows the same: total book thickness against the session median is the only feature with a large decile spread (thick book, winner: PRE -4.7 pts remaining vs +2.4 in the thinnest decile; HOLD -0.2 vs +3.5) but that is mostly a selection of time-of-day and trade-progress states and does not survive the paired rule test (H8). Files: cells_all.csv (all 428 cells x X/PRE/HOLD, fired counts, 2x, NOTC), fam_summary.csv, chains.csv, breakdown.csv, lead_controls.csv, h7_control.csv in l2vast/ds3/out/thp/wf/l2h/.
 
+## ADDENDUM: H12 ES-book lean (post-hoc, amendment A2 sha 75b3836e...; 20 cells; found from the map-B reading es_imb5 L6M t=+4.0)
+
+* **H12 ES book leaning against the trade (es_imb5 <= -0.1/-0.2): NO.** Despite the largest decile spread in the whole map (loser: remaining P&L L6M +6.7 pts adjusted in the top es_imb5 decile vs -1.2 in the bottom; monotone in 2026, L6M, HOLD, much weaker in PRE and reversed in X), every rule built on it loses against hold: loser cut 8 cells PRE -0.70..-1.31, L6M -1.06..-2.27, 2026 -0.41..-2.89; winner take/trail PRE -0.35..-1.00 (best mfe20/es0.1/take: PRE -0.35, HOLD +0.17, L6M -0.13, 2026 +0.22); the veto of the live-loss stall rule is the only near-zero cell (PRE -0.17, HOLD +0.05, L6M 0.00, 2026 -1.27). Chains negative (best HOLD +0.01, 12m pooled loss). RC p 0.98/0.86; all-cell RC p 0.74. Why the map did not become a rule: the decile table reports remaining P&L ADJUSTED for position in the trade; the raw remaining P&L of the weak-book losers is still about zero or positive, i.e. less than the 1-pt cost of leaving, so a lower rem decile does not mean a profitable cut. Read every `adj` spread in the map as a diagnostic, not as an exit signal.
+
+| family | rank-1 by L6M | 2026 (MDE) | L6M (MDE) | HOLD | PRE | X | #CAND-RECENT | PRE-selected: 2026 / L6M |
+|---|---|---|---|---|---|---|---|---|
+| H12|P | H12P|mfe20|es0.1|take | +0.22 (4.5) | -0.13 (2.1) | +0.17 | -0.35 | -0.14 | 0/10 | +0.22 / -0.13 |
+| H12|L | H12L|veto|es0.1 | -1.27 (1.8) | -0.00 (0.7) | +0.05 | -0.17 | +0.10 | 0/10 | -1.27 / -0.00 |
+
+Table rows (same columns as the main table):
+
+| family | best cell | cells | PRE | HOLD | X | fired | MDE | 2x cost | RC p | placebo | verdict |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| H12|P | H12P|mfe20|es0.1|take | 10 | -0.35 [-1.33,+0.63] | +0.17 [-1.26,+1.59] | -0.14 | 17,771/7,879 | 1.40/2.03 | -1.06/-0.56 | 0.86 | 0.6 | DEAD |
+| H12|L | H12L|veto|es0.1 | 10 | -0.17 [-0.50,+0.15] | +0.05 [-0.44,+0.53] | +0.10 | 3,114/1,379 | 0.46/0.69 | -0.30/-0.08 | 0.98 | 1.0 | DEAD |
+
+Totals with H12: 448 cells, 0 PASS, 0 CANDIDATE, 5 LEAD families, 17 DEAD (22 families); all-cell RC p 0.74.
