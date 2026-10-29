@@ -372,3 +372,4 @@ THP_POLICY v1.1: profit 0.00 / loss +1.18 (fixed rule, seen data) / bracket 0.00
 
 ## 2026-10-29T19:48Z DIPENTRY progress: prereg frozen (sha 9f73c2f9..., 2,072 cells, DECISIONS.md); 1-s arm/fill/bracket simulator built and identity-checked (base exit type/net reproduced 5,999/6,000 and 44,369/44,370); gate tick tables building as L2P tranches land (L2P PRE months 2024-12..2025-04 still building); no PRE/HOLD number read yet.
 2026-10-29T19:52:42Z CUTWAIT progress: all 17 books scoring (5 workers, ~20 min/book placebo phase); analysis/report code ready; no verdict yet. best in-sample: n/a; WF: n/a
+## 2026-10-29T20:04:45Z ADDUW progress: grid 1,300/1,729 cells simulated (all 6 live books through the lock engine + 4 D6-family books); stage 1 (PRE-only selection) next, then HOLD/X look, placebos, walk-forward. No verdict yet.
