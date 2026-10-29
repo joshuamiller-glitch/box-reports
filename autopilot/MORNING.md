@@ -349,3 +349,5 @@ ABRA: A dataset built (47,131 entries x 155 cols, 11 books, outcome minute profi
 
 ## ABRA 16:51Z final (sections A,B)
 ABRA: entry dataset READY and audited (0 mismatches: 132 entry rows / 19,272 comparisons + 38 aux series x 4 cuts); B oracle done (DS3_ABR_B_ORACLE.md): pooled fixed-bracket oracle vs 60/60 +2.33 IN-SAMPLE (MDE 6.2, RC p 0.66), +3.17 HOLD (MDE 10.9), +0.22 X (MDE 6.4), per-trade oracle ~118 pts = upper bound only. best walk-forward: n/a (sections C-E by learner agents); distilled rule so far: n/a.
+
+## 2-hourly 17:16Z THPC2 (structural DP/hazard/QR walk-forward): THPC2: prereg frozen, 752 structural chains (DP/DPO/HAZ/QR) running; no result yet. best in-sample: n/a; best walk-forward: n/a; distilled rule so far: n/a
