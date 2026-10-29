@@ -340,3 +340,9 @@ STRUCTURAL QUESTION (queue not paused): HM only, the deeper live-rule variants (
 Best in-sample (PRE, IN-SAMPLE selection, stage A, HMM not yet in): profit btab disc0.9995 z1 m2 +0.09 pts/trade CI lower -0.25 (MDE 0.49), but random exits at its rate give +0.7 (M-basis target-correction artefact), placebo rank 0; loss ogbm lr0.2 phi0.999 m8 +0.20 (MDE 0.91), shuffled-label placebo beats it. Best walk-forward / distilled rule so far: none positive; RC p 0.99 profit / 0.97 loss. HOLD not opened (PREHOLD file pending).
 
 ## 2-hourly 15:16Z THPC2 (structural DP/hazard/QR walk-forward): THPC2: prereg frozen, 752 structural chains (DP/DPO/HAZ/QR) running; no result yet. best in-sample: n/a; best walk-forward: n/a; distilled rule so far: n/a
+
+## THPC3 DONE 15:50Z
+Best in-sample (PRE): profit btab disc0.9995 z1 m2 +0.09 [-0.25,+0.43] (HOLD -0.36); loss ogbm lr0.2 phi0.999 m8 +0.20 (HOLD -0.73). Best walk-forward: none positive (0 PASS/0 CAND/2468 DEAD, RC p 0.99/0.97). Distilled rule: l2vast/ds3/out/thp/wf/c3/policy_candidate.txt (6+4 rules, label tree, HOLD ~0, NOT for live; hold-everything is the supported policy). Report DS3_THP_C3_ONLINE.md.
+
+## ABRA 15:55Z progress (T-ADAPTIVE-BRACKETS sections A,B)
+ABRA: A dataset built (47,131 entries x 155 cols, 11 books, outcome minute profiles to 16:55, 1-s path refs, stop-walk slippage estimator calibrated on DN) at l2vast/ds3/out/abr/data; leakage audit running; B prereg frozen (sha in DECISIONS.md), 990 brackets scored, PRE-only fixed-oracle selection written (DS3_ABR_B_PREHOLD.md). best in-sample: pooled fixed oracle +2.3 pts/trade vs 60/60 (MDE 6.2, RC p 0.66, IN-SAMPLE); best walk-forward: n/a (sections C-E later); distilled rule so far: n/a.

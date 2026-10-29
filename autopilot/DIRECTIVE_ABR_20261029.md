@@ -1,0 +1,27 @@
+T-ADAPTIVE-BRACKETS — stop and target chosen per trade from the current tape, re-fitted on recent data, every book (2026-10-29)
+
+Research only. No live, execution-server or chart change. UNTOUCHED never read. Redact account ids. Third adaptive program beside T-TH-PROFIT / T-TH-LOSS; same walk-forward protocol (windows 1 week .. 12 months, EWMA half-lives 5/10/20 days; steps intraday / daily / weekly; online learners; short/long ensembles; regime-conditioned; CUSUM re-fit trigger), same MEASURED fills, session as a column, all cores within the shared 4-8 h budget. Prior results cited, not repeated: T-BRACKET (60/60 best everywhere, shape changes variance not sign), per-session brackets (60/60 holds in every session; tight brackets lose), structure brackets (0/300), ZEN brackets (dead), vol-unit stops in ZEN M1. Those were FIXED brackets over the whole history; this program sets the bracket PER TRADE from the state at entry and re-fits the mapping on recent data.
+
+A. The dataset (every entry of every book; built from the existing 1-s paths)
+
+For each entry (ST, HM, WT, KB, SM, PE, PB, DN, MV, MA, CR, basket legs, D6 session cells, O6): the state at the entry second — 1-min ATR14 and its ratio to the 20-day median, the 5-min and 30-min realised range, the overnight range vs median, the day's first-hour range, time of day / session, minutes since the open, VIX tercile (daily), ES-NQ 20-min correlation, the book's own signal strength (Keltner distance, Supertrend age, pullback depth, HMA spread), distance to the nearest structure (session H/L, OR edges, 5-min swing, VWAP bands, prior-day H/L), order book at entry (depth imbalance 5/10 levels, size at the would-be stop and target prices, aggressor delta 60 s, trade intensity vs session median, spread), the stack state (other books' positions, day P&L), and the day type ex-ante. Outcome labels: the full path after entry (MFE/MAE profile by minute to 16:55), so ANY bracket can be scored on the same entry without a replay; realised stop slippage by stop distance from the measured walk.
+
+B. The bracket space
+
+Per trade: stop S in {20, 30, 40, 50, 60, 75, 90, 120} pts and as ATR units {0.5, 0.75, 1, 1.5, 2 x ATR14(1m), x ATR(5m)}; target T as R multiples {0.5, 0.75, 1, 1.25, 1.5, 2, 3} and as structure (nearest level beyond 1R, prior-day H/L, OR edge, VWAP band); time exit {none, 30, 60, 120 min, session end}; the live 60/60 as the control. Score every combination on every entry from the stored path (fill rules: stop-market at the measured walk for that stop distance; target at touch with the correction; time exit at market). Report, per book, the fixed-bracket oracle (best single bracket in-sample) and the per-trade oracle (best bracket per trade with hindsight) to bound what any policy could gain.
+
+C. The policy: bracket from the state at entry (walk-forward, re-fitted)
+
+Models: gradient boosting / quantile regression predicting the MFE and MAE distribution over the next N minutes from the A features; the policy picks (S, T, time exit) maximising expected net P&L per trade (and a risk-adjusted variant: expected P&L minus lambda x expected loss, lambda from the stack's risk budget); optimal-stopping on the path profile; k-NN "trades like this one" (nearest neighbours in feature space on the trailing window -> their MFE/MAE profile -> bracket); per-book and pooled with the book as a feature; regime-keyed tables (ATR tercile x session x signal strength) as the simple version. Online update after every closed trade; short/long ensembles; CUSUM re-fit trigger. Walk-forward chain as the primary result: paired per entry vs the live 60/60 bracket, pts/trade and $/wk at live lots, MDE, win rate, average realised R, per book / session / year, 2023 span; placebo = the policy with shuffled features (same bracket distribution, random assignment) and the fixed-bracket re-selection chain (best single bracket on the trailing window) as the simple adaptive baseline.
+
+D. Stack level and risk
+
+The policy applied to every book at once: weekly series, SD, maxDD, worst-20-weeks vs the stack as it is; realised stop slippage at the chosen stops (wide stops cost less to fill, tight ones more; use the measured walk); the exposure effect (a 120-pt stop on a trend day vs 40 on a chop day changes lots at $-risk parity — report both constant-lots and constant-$-risk versions, with lots = round(risk / (S x $20)), minimum 1).
+
+E. The policy file and the live mechanism
+
+Distil the best walk-forward policy into a bracket table NT8 can evaluate at entry: <= 4 features (candidates: ATR14 ratio, session, signal-strength bucket, 60-s aggressor delta or depth imbalance), cells giving stop pts, target pts (or R), time exit, and a lot multiplier for $-risk parity; retained gain >= 80% stated. Publish as a bracket section in THP_POLICY.txt per book, same header/valid-date discipline, re-published after every re-fit. My side: D6 reads the table at entry and places the bracket from it; missing/stale -> the book's own bracket.
+
+Report
+
+DS3_ABR_A_DATA.md, DS3_ABR_B_ORACLE.md (fixed vs per-trade oracle bounds), DS3_ABR_WF.md (walk-forward table, drift, regime read, distilled table), DS3_ABR_FINAL.md with one verdict line per book and the stack line: "choosing the bracket from the state at entry, re-fitted on the last N, adds X pts/trade out of sample (MDE Y) on books A, B; the fixed 60/60 stays best on C". MORNING.md every 2 h.

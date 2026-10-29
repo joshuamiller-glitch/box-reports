@@ -103,3 +103,5 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-29 ~17:00Z] USER DECISION (verbatim): "THL question: YES — pre-register the HM-only loss-side retest (adverse 20-30, 3 of 3, window 10-30 s), fresh holdout, one look. Everything else in B stands as dead; proceed with the adaptive layers (profit and loss) as the only remaining work on Trade Health."
 
 [2026-10-29 ~17:40Z] USER DECISION (verbatim): "HM retest decision: A — forward only from 2026-11-01, UNTOUCHED stays sealed. Keep a30_w10 as the sole primary (a30_w20 was found after the freeze; report it as descriptive only). The user runs a30/3of3/w10 live on all D6 books from 2026-10-29; score the forward HM arm from the live/Sim trade files against hold-to-stop on the 1-s path, and report at the 500-trade and 1,000-trade marks."
+
+[2026-10-29 ~18:00Z] USER DIRECTIVE T-ADAPTIVE-BRACKETS (verbatim in autopilot/DIRECTIVE_ABR_20261029.md)
