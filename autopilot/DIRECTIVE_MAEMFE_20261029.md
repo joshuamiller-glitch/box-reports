@@ -1,0 +1,2 @@
+# DIRECTIVE MAE/MFE profile (user, 2026-10-29) — verbatim
+MAE/MFE profile (user): one table per book from the THP dataset, PRE and HOLD: share of trades with MAE > 0 / >= 5 / 10 / 15 / 20 / 30 / 40 pts; the same for MFE; the MAE distribution of the eventual WINNERS vs LOSERS (deciles); P(target first | MAE reached X) for X = 5..40; median minutes to the MAE and to the MFE; and the joint MAE x MFE heat table (what share of trades touched -X then +Y). Report DS3_MAEMFE.md; it is the base map for T-ADD-UNDERWATER.

@@ -108,3 +108,11 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-29T18:50:12Z] USER DIRECTIVE ADAPTIVE IMPLEMENT (publish THP_POLICY v1 within 60 min, nightly 23:00Z re-fit, expand search a-f) saved to autopilot/DIRECTIVE_ADAPTIVE_IMPLEMENT_20261029.md
 [2026-10-29T18:52:39Z] USER DIRECTIVE THP L2 FOCUS + new features imb5/imb10/wall_tgt/wall_stop saved to autopilot/DIRECTIVE_THP_L2_20261029.md
 [2026-10-29T18:56:08Z] USER DIRECTIVE T-TH L2 ADDENDUM (library A, map B, policies C, H1-H10 D, publish E) saved to autopilot/DIRECTIVE_THL2_ADDENDUM_20261029.md
+[2026-10-29T19:02:03Z] USER DIRECTIVE T-ADD-UNDERWATER (replaces T-SCALEIN-PULLBACK) saved verbatim to autopilot/DIRECTIVE_ADDUW_20261029.md
+[2026-10-29T19:06:11Z] USER DIRECTIVE MAE/MFE profile saved verbatim to autopilot/DIRECTIVE_MAEMFE_20261029.md; THP_POLICY v1 published by PUB1 (profit empty, loss HM rule, bracket stop120/OR)
+[2026-10-29T19:08:28Z] USER DIRECTIVE T-CUT-WAIT saved verbatim to autopilot/DIRECTIVE_CUTWAIT_20261029.md; QUEUED (agent cap 10 full), launch on first free slot
+[2026-10-29T19:11:15Z] MAEMFE done (DS3_MAEMFE.md); CUTWAIT launched from queue
+[2026-10-29T19:12:56Z] USER ADDITION H11 round-trip cut appended verbatim to DIRECTIVE_THL2_ADDENDUM_20261029.md; forwarded to L2H
+[2026-10-29T19:20:27Z] USER DIRECTIVE T-TH L2 CATALOGUE saved to autopilot/DIRECTIVE_THL2_CATALOGUE_20261029.md (condensed, all items kept); forwarded to L2P
+[2026-10-29T19:23:05Z] USER DIRECTIVE T-DIP-ENTRY saved verbatim to autopilot/DIRECTIVE_DIPENTRY_20261029.md; QUEUED (cap full)
+[2026-10-29T19:27:27Z] USER UPDATE T-DIP-ENTRY: L2-gated primary (appended verbatim to DIRECTIVE_DIPENTRY_20261029.md); still QUEUED
