@@ -123,3 +123,4 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-29T21:27:42Z] launched REDO (replay months + section E), L2EA, L2EB; SIZING queued; Databento Nov feed: quote-first, weekly from 2026-11-02
 [2026-10-29T23:17:11Z] nightly 23:00Z re-publish done by lead: no change, THP_POLICY_20261030.txt copy
 [2026-10-30T00:06:45Z] USER DIRECTIVE T-L2-SETTINGS saved verbatim-condensed to DIRECTIVE_L2SETTINGS_20261029.md; launching L2SE (entry), L2SP (profit), L2SL (loss); JOINT after
+[2026-10-30T01:53:50Z] USER DIRECTIVE T-MISSED saved to DIRECTIVE_MISSED_20261030.md. LEAD CONFLICT NOTE: section 1(a) needs live fills since 2026-10-28 (sealed span 2026-02-07..2026-10-31, UNTOUCHED never read) -> 1(a) HELD, user asked in MORNING.md; 1(b) proceeds with already-published live calibration (LIVE_VS_REPLAY_P9 report text). Sections 2-6 launched.

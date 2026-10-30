@@ -20,3 +20,10 @@ Profit: undefined; model +0.32, distilled -1.02. Loss: no distillation (fixed ru
 
 ## v1.1 note (PUB1)
 Bracket section emptied, header wf_bracket=0.00 (hold 60/60). Reason (EXP2, DS3_ADAPTIVE_EXP2.md, exact lock engine): wide no-time-exit brackets block 36-78% of a book's later entries; frozen stop=120/OR gives stack weekly SD $654k vs $332k, maxDD $4.5M vs $2.9M, costs ~$51.7k/wk outside the worst weeks; joint stack 0/19; best bracket component ~0 (PRE +4.7k, HOLD -1.4k, X' -1.0k $/wk). The v1 trade-level +2.35 does not survive. Profit stays empty, HM loss rule unchanged (+1.18, fixed rule, seen data). Rules 12 -> 1 (-11). v1 files kept (THP_POLICY_20261029.txt); v1.1 copy THP_POLICY_20261029_v1.1.txt.
+
+## v2 note (PUB1, 2026-10-30)
+THP_POLICY v2 = sections entry, profit, loss, bracket (EMPTY). Inputs read, not recomputed: l2set/entry_policy_candidate.txt, profit_policy_candidate.txt, loss_policy_candidate.txt, joint/joint_policy_candidate.txt, DS3_L2SET_JOINT.md. Files: THP_POLICY.txt = THP_POLICY_20261030_v2.txt; v1 and v1.1 copies untouched.
+* Entry: 1 default line (pooled PRE-selected 70/30 split, CANDIDATE-RECENT, L6M +13.3k/wk (MDE 14.5k)) + explicit market lines for PE, DN, MA (pooled split DEAD) and CR (untested); 20 per-book option rows ('#! entry', ALT own-best = looked data, PRE-selected = honest) as L2SE gives them. Cost fragile (PRE breaks even at ~+1 pt per remainder fill).
+* Profit: 8 active plain take-at-70% lines (S6 W6 K6 U6 P6 A6 N6 M6), N-basis negative (pooled L6M -1.25) so the gain is the target-fill artefact. DISCREPANCY: L2SP READ FIRST says 9 active lines, but the HM (H6) candidate cell is p70never and has no plain-70% rule or number, so H6 is an inactive '#!' option; MA is DEAD (#!). Thick-book curDepthRel variants kept as '#!' options (11 rows).
+* Loss: HM a30_w10 transliteration stays live (1 line). L2SL has 8 CANDIDATE-RECENT rows (not 9: ST HM KB SM PE PB MV MA) + 2 DEAD (WT, DN), all use features D6 lacks, all commented '# NEEDS:' (10 rows).
+* Parser: thp_policy_check.py accepts v1/v1.1/v2 headers, entry grammar, curDepthRel and pulled_sup10, '#!' option rows (validated) and '# NEEDS:' rows (lenient).
