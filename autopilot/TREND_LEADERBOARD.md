@@ -1,5 +1,5 @@
 # TREND LEADERBOARD (TL, R9)
-Updated 2026-10-30T20:50Z. Rows: DS3_TC1C2.json=48, DS3_TC1C2_v1_INVALID.json=48, DS3_TC3C4.json=32, DS3_TC3C4_v1_INVALID.json=32, DS3_TC4R4.json=70, DS3_TC4R4_v1_INVALID.json=70, DS3_TC5.json=24, DS3_TC5_v1_INVALID.json=24, DS3_TR1.json=134, DS3_TR2.json=74, DS3_TR4.json=58
+Updated 2026-10-30T21:20Z. Rows: DS3_TC1C2.json=48, DS3_TC1C2_v1_INVALID.json=48, DS3_TC3C4.json=32, DS3_TC3C4_v1_INVALID.json=32, DS3_TC4R4.json=70, DS3_TC4R4_v1_INVALID.json=70, DS3_TC5.json=24, DS3_TC5_v1_INVALID.json=24, DS3_TR1.json=134, DS3_TR2.json=74, DS3_TR4.json=58
 
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 
@@ -7,7 +7,7 @@ Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/tra
 Trend cells scored: 614 (per agent {'TR1': 134, 'TR2': 74, 'D3XT': 348, 'TR4': 58}). Ledger total (all tracks): 68524; DS3 final-stage cells all tracks: 19769.
 Cells with paired-vs-ST CI lower bound >0: 19; expected by chance (one-sided 2.5%) over 614 cells: 15.4 (near this => best-of-N noise).
 Placebo ranks >=0.95: 263 of 579 (chance ~29.0). Top: [1.0, 1.0, 1.0, 1.0, 1.0]
-Verdict counts: {'CANDIDATE': 32, 'PASS': 16, 'REPORT-ONLY': 1, 'DEAD': 565}
+Verdict counts: {'DEAD': 565, 'PASS': 16, 'REPORT-ONLY': 1, 'CANDIDATE': 32}
 
 ## PASS / CANDIDATE
 | cell | agent | verdict | regime/conditions | trigger | bar | entry exec | exit type | tr/wk | $/wk | vs ST pts [CI] | MDE | vs KB | vs SM | vs EM | holdout | 2023 | placebo | quiet | wide | long | short | executability | DS3 mSharpe | mirror(mapped,$/wk) | dEqRisk vs ST $/wk | duplicate | $/wk equal lots | $/wk equal risk | lots equal risk | capacity lots |
