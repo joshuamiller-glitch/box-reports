@@ -162,3 +162,6 @@ Selection: PRE-selected cell chosen on SEL = PRE u X' only (not on the looked wi
 * Walk-forward chains fit only on trades closed before each refit (G11: 2023-10-01 then quarterly).
 ## 6. Files
 code l2vast/ds3/code/uf/ufe_kernel.py (kernel), ufe_lib.py (engine/EQR), ufe_cells.py, ufe_regime.py, ufe_run.py (stage 0), ufe_stageA.py (SEL-only selection), ufe_stageB.py (the look), ufe_stageC.py (placebos), ufe_rc.py, ufe_gates.py, ufe_report.py; outputs l2vast/ds3/out/uf/entry_c1/ (D/SW/BK npy, pre_sel.json, stageA_table.pkl, stageB_res.pkl, stageB_table.pkl, rc.pkl, gates.pkl, placebo_*.pkl); cells l2vast/ds3/prereg/UF_ENTRY_C1_cells.csv.
+
+## Look-ahead note (added after cycle 2)
+G11 regime-sizer cells used EINT1 columns sig_st1_age, htf_vwap_atr, htf_gap_eth, sig_hma_sp; same-day availability of the htf_* columns at the signal second was not verified (coordinator warning on day-level features). The G11 family was ~0 (+0.1k L6M) and is not the selected cell: no verdict changes; G11 is marked UNVERIFIED. UPDATE (DS3_CAUSAL_TIMES.md, LEAKAUDIT): htf_vwap_atr and htf_gap_eth are verified causal at the signal second (section 2d: htf_gap_eth uses the 18:00 Globex open, htf_vwap_atr is as-of the bar close); G11 is RE-MARKED VERIFIED-CAUSAL for those two features. sig_st1_age / sig_hma_sp: see the sig_* rows of that file if present.
