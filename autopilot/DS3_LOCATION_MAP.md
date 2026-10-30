@@ -12,7 +12,7 @@ The location store is NTZ-1's `out/poi_store` (685 streams, imported through `po
 ## 0. Headline (read this first)
 * 11,422 location cells scored on PRE and X'; 1672 pass the "positive in both windows on N and M" eligibility (pure chance would pass about 1/16 = 700). 514 selected.
 * **The selected locations do not persist.** Pooled-selected (300): mean lift PRE 2.26 (selection window), X' 5.31, **L6M -0.82** (recent, out of sample); 135 of 300 positive in L6M (coin flip = 150); HOLD mean -1.12; 2026 mean -2.77.
-* Multiplicity over the 514 selected cells on L6M: White RC p = 0.068, cumulative-adjusted (Sidak over 61422+ cells) p = 1.00, Romano-Wolf survivors 5, PBO 0.60 (L6M) / 0.65 (all) - a PBO above 0.5 means the in-sample best is not the out-of-sample best.
+* Multiplicity over the 514 selected cells on L6M: White RC p (statistic: kept-trade excess over the same book-month mean, week-block bootstrap) = 0.467, cumulative-adjusted (Sidak over the ~534,697 cells scored in all programs incl. this one) p = 1.00, Romano-Wolf survivors 0, PBO 0.45 (L6M) / 0.66 (all) - a PBO above 0.5 means the in-sample best is not the out-of-sample best.
 
 ## 1. Ranked favourable-location list (pooled; ranked on PRE+X' z, recent columns = the single look)
 Columns: PRE / X' lifts are the selection windows (optimistic by construction); L6M [CI] is out of sample; MAE_L6M = lift in mean adverse excursion (negative = shallower drawdown); plc = rank of the real L6M lift among 200 random-location placebo draws at the same fire rate within book x session x week (1/201 is best); RW = Romano-Wolf survivor over the 514 selected cells; qtrs_pos = quarters with positive lift (2023Q2..2026Q1).
