@@ -126,3 +126,13 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-30T01:53:50Z] USER DIRECTIVE T-MISSED saved to DIRECTIVE_MISSED_20261030.md. LEAD CONFLICT NOTE: section 1(a) needs live fills since 2026-10-28 (sealed span 2026-02-07..2026-10-31, UNTOUCHED never read) -> 1(a) HELD, user asked in MORNING.md; 1(b) proceeds with already-published live calibration (LIVE_VS_REPLAY_P9 report text). Sections 2-6 launched.
 [2026-10-30T03:06:23Z] USER STANDING ORDER L2-UNTIL-FOUND saved (DIRECTIVE_L2_UNTIL_FOUND_20261030.md) + lead guardrails UF_BRIEF.md (cumulative-multiplicity RC, burned windows, bases, tiers). USER CONFIRMATION for BASISL part (a): 'read live exit fills from 2026-10-20 for cost calibration only' -> BASISL resumed. Agents: DEADCAT, UF-ENTRY, UF-PROFIT, UF-LOSS launched.
 [2026-10-30T04:13:09Z] USER ADDENDUM L2-UNTIL-FOUND per-contract / information edge saved (DIRECTIVE_L2_UF_ADDENDUM_PERCONTRACT_20261030.md). Launching INFO agent (information map, DS3_L2_INFO.md); UF-ENTRY/PROFIT/LOSS told to report per contract primary.
+
+## 2026-10-30 ~15:30Z USER DIRECTIVE: T-CONFIRM-LAYER v2 (full text: autopilot/DIRECTIVE_CONFIRM_LAYER_20261030.md)
+
+## 2026-10-30 ~16:00Z USER DIRECTIVE: T-SIGNAL-DECAY (full text: autopilot/DIRECTIVE_SIGNAL_DECAY_20261030.md). Reopens exits keyed on SIGNAL state (supersedes the earlier "exits closed" order for this program only; price-path/bracket exits stay closed).
+
+## 2026-10-30 ~16:20Z USER DIRECTIVE: T-CONFIRM-LAYER ADDENDUM COMBINATIONS (full text: autopilot/DIRECTIVE_CONFIRM_COMBOS_20261030.md); applies to CONFIRM-LAYER and SIGNAL-DECAY.
+
+## 2026-10-30 ~16:40Z USER DIRECTIVE: T-CONFIRM-LAYER ADDENDUM 2 BAR TYPES (full text: autopilot/DIRECTIVE_CONFIRM_BARS_20261030.md)
+
+## 2026-10-30 ~17:00Z USER DIRECTIVE: T-BARS-ALL (full text: autopilot/DIRECTIVE_BARS_ALL_20261030.md); extends BAR-ENG scope.
