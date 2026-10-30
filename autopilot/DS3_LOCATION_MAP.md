@@ -12,72 +12,125 @@ The location store is NTZ-1's `out/poi_store` (685 streams, imported through `po
 ## 0. Headline (read this first)
 * 11,422 location cells scored on PRE and X'; 1672 pass the "positive in both windows on N and M" eligibility (pure chance would pass about 1/16 = 700). 514 selected.
 * **The selected locations do not persist.** Pooled-selected (300): mean lift PRE 2.26 (selection window), X' 5.31, **L6M -0.82** (recent, out of sample); 135 of 300 positive in L6M (coin flip = 150); HOLD mean -1.12; 2026 mean -2.77.
-* Multiplicity over the 514 selected cells on L6M: White RC p (statistic: kept-trade excess over the same book-month mean, week-block bootstrap) = 0.467, cumulative-adjusted (Sidak over the ~534,697 cells scored in all programs incl. this one) p = 1.00, Romano-Wolf survivors 0, PBO 0.45 (L6M) / 0.66 (all) - a PBO above 0.5 means the in-sample best is not the out-of-sample best.
+* Multiplicity over the 514 selected cells on L6M: White RC p (statistic: kept-trade excess over the same book-month mean, week-block bootstrap) = 0.467, cumulative-adjusted (Sidak over the ~538,957 cells scored in all programs incl. this one) p = 1.00, Romano-Wolf survivors 0, PBO 0.45 (L6M) / 0.66 (all) - a PBO above 0.5 means the in-sample best is not the out-of-sample best.
 
 ## 1. Ranked favourable-location list (pooled; ranked on PRE+X' z, recent columns = the single look)
 Columns: PRE / X' lifts are the selection windows (optimistic by construction); L6M [CI] is out of sample; MAE_L6M = lift in mean adverse excursion (negative = shallower drawdown); plc = rank of the real L6M lift among 200 random-location placebo draws at the same fire rate within book x session x week (1/201 is best); RW = Romano-Wolf survivor over the 514 selected cells; qtrs_pos = quarters with positive lift (2023Q2..2026Q1).
 
 | location | keep_L6M | n_L6M | PRE | Xp | L6M | MDE | HOLD | Y26 | L3M_view | Ptgt_L6M_pp | MAE_L6M | M_L6M | plc | RW | qtrs_pos |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| any ORB behind <= 20 pts | 3% | 268 | 0.74 | 11.74 | 3.46 [-2.66,9.57] | 8.74 | -0.95 | 4.12 | 4.29 | 4.50 | 0.49 | 3.25 | 97/201 | N | 7/12 |
-| mit ORB behind <= 20 pts | 3% | 268 | 0.74 | 11.74 | 3.46 [-2.66,9.57] | 8.74 | -0.95 | 4.12 | 4.29 | 4.50 | 0.49 | 3.25 | 89/201 | N | 7/12 |
+| any ORB Lx1 30m behind <= 20 pts | 3% | 268 | 0.74 | 11.74 | 3.46 [-2.66,9.57] | 8.74 | -0.95 | 4.12 | 4.29 | 4.50 | 0.49 | 3.25 | 97/201 | N | 7/12 |
+| mit ORB Lx1 30m behind <= 20 pts | 3% | 268 | 0.74 | 11.74 | 3.46 [-2.66,9.57] | 8.74 | -0.95 | 4.12 | 4.29 | 4.50 | 0.49 | 3.25 | 89/201 | N | 7/12 |
 | book flag=dflip10 | 10% | 958 | 3.98 | 3.55 | 0.94 [-3.40,5.27] | 6.19 | 1.58 | -8.60 | -0.65 | 0.66 | -1.00 | 0.91 | 89/201 | N | 11/12 |
-| fresh ARR behind <= 5 pts | 6% | 631 | 3.00 | 8.85 | 1.70 [-3.37,6.77] | 7.24 | -0.18 | 2.69 | 2.91 | 0.42 | -0.61 | 1.68 | 84/201 | N | 10/12 |
-| mit FIB behind <= 5 pts | 1% | 113 | 9.27 | 7.82 | -5.25 [-14.40,3.90] | 13.07 | -3.57 | -25.97 | -16.17 | -6.18 | 0.24 | -4.98 | 154/201 | N | 10/12 |
+| fresh ARR iplFVG 45s behind <= 5 pts | 6% | 631 | 3.00 | 8.85 | 1.70 [-3.37,6.77] | 7.24 | -0.18 | 2.69 | 2.91 | 0.42 | -0.61 | 1.68 | 84/201 | N | 10/12 |
+| mit FIB ote79_up 1h behind <= 5 pts | 1% | 113 | 9.27 | 7.82 | -5.25 [-14.40,3.90] | 13.07 | -3.57 | -25.97 | -16.17 | -6.18 | 0.24 | -4.98 | 154/201 | N | 10/12 |
 | PRF-class POI behind <= 10 AND book defS | 20% | 1995 | 3.04 | 1.29 | 0.75 [-1.65,3.14] | 3.42 | -0.17 | 4.08 | 0.34 | 0.59 | -0.47 | 0.72 | 81/201 | N | 9/12 |
-| any FIB behind <= 5 pts | 1% | 117 | 9.96 | 6.70 | -4.21 [-13.17,4.75] | 12.80 | -2.72 | -24.03 | -15.83 | -5.20 | 0.60 | -3.99 | 160/201 | N | 10/12 |
-| mit SWG behind <= 10 pts | 70% | 6785 | 1.77 | 7.46 | 0.93 [-2.58,4.44] | 5.01 | 0.91 | -2.42 | 0.82 | -0.41 | -0.42 | 0.95 | 5/201 | N | 8/12 |
-| mit MAS behind <= 20 pts | 2% | 208 | 0.39 | 13.24 | 2.81 [-7.45,13.07] | 14.65 | 1.91 | 4.75 | 8.24 | 0.31 | -0.03 | 2.79 | 88/201 | N | 9/12 |
-| fresh ARR behind <= 15 pts | 22% | 2117 | 2.65 | 2.45 | 1.25 [-2.10,4.59] | 4.78 | 0.77 | 2.17 | 3.91 | -0.07 | -0.33 | 1.25 | 112/201 | N | 10/12 |
+| any FIB ote79_up 1h behind <= 5 pts | 1% | 117 | 9.96 | 6.70 | -4.21 [-13.17,4.75] | 12.80 | -2.72 | -24.03 | -15.83 | -5.20 | 0.60 | -3.99 | 160/201 | N | 10/12 |
+| mit SWG f7H 1m behind <= 10 pts | 70% | 6785 | 1.77 | 7.46 | 0.93 [-2.58,4.44] | 5.01 | 0.91 | -2.42 | 0.82 | -0.41 | -0.42 | 0.95 | 5/201 | N | 8/12 |
+| mit MAS sma50 4h behind <= 20 pts | 2% | 208 | 0.39 | 13.24 | 2.81 [-7.45,13.07] | 14.65 | 1.91 | 4.75 | 8.24 | 0.31 | -0.03 | 2.79 | 88/201 | N | 9/12 |
+| fresh ARR iplFVG 45s behind <= 15 pts | 22% | 2117 | 2.65 | 2.45 | 1.25 [-2.10,4.59] | 4.78 | 0.77 | 2.17 | 3.91 | -0.07 | -0.33 | 1.25 | 112/201 | N | 10/12 |
 | BOS-class POI behind <= 2 AND book defS | 12% | 1148 | 2.81 | 3.99 | 0.49 [-3.62,4.60] | 5.88 | -1.06 | -1.71 | -1.77 | 0.52 | -0.24 | 0.47 | 75/201 | N | 9/12 |
 | FIB-class POI behind <= 5 AND book defS | 18% | 1741 | 2.83 | 0.32 | 1.95 [-1.15,5.05] | 4.43 | 1.10 | 5.16 | 0.58 | 1.60 | -0.86 | 1.88 | 56/201 | N | 11/12 |
-| any MAS behind <= 15 pts | 2% | 156 | 5.06 | 7.47 | -10.07 [-17.33,-2.81] | 10.37 | -10.32 | -16.02 | -8.63 | -11.89 | 3.90 | -9.57 | 200/201 | N | 9/12 |
-| any SWG behind <= 10 pts | 70% | 6837 | 1.89 | 6.77 | 0.80 [-2.68,4.27] | 4.97 | 0.86 | -2.52 | 0.63 | -0.50 | -0.34 | 0.82 | 14/201 | N | 8/12 |
+| any MAS sma200 1h behind <= 15 pts | 2% | 156 | 5.06 | 7.47 | -10.07 [-17.33,-2.81] | 10.37 | -10.32 | -16.02 | -8.63 | -11.89 | 3.90 | -9.57 | 200/201 | N | 9/12 |
+| any SWG f7H 1m behind <= 10 pts | 70% | 6837 | 1.89 | 6.77 | 0.80 [-2.68,4.27] | 4.97 | 0.86 | -2.52 | 0.63 | -0.50 | -0.34 | 0.82 | 14/201 | N | 8/12 |
 | SWG-class POI behind <= 2 AND book defS | 24% | 2303 | 2.25 | 2.13 | 0.67 [-1.61,2.94] | 3.25 | 0.01 | 1.47 | -0.64 | 0.40 | -0.49 | 0.65 | 88/201 | N | 9/12 |
-| any SWG behind <= 15 pts | 1% | 137 | 5.81 | 13.53 | -1.15 [-14.85,12.54] | 19.56 | -0.50 | 11.79 | 5.22 | 0.70 | -0.89 | -1.19 | 158/201 | N | 7/12 |
-| any WYK behind <= 2 pts | 1% | 115 | 4.09 | 12.92 | -7.01 [-16.75,2.73] | 13.91 | -4.38 | -18.50 | -11.58 | -7.98 | 0.45 | -6.67 | 194/201 | N | 7/12 |
-| mit WYK behind <= 2 pts | 1% | 115 | 4.09 | 12.92 | -7.01 [-16.75,2.73] | 13.91 | -4.38 | -18.50 | -11.58 | -7.98 | 0.45 | -6.67 | 197/201 | N | 7/12 |
-| mit SWG behind <= 15 pts | 1% | 137 | 5.81 | 13.25 | -1.15 [-14.85,12.54] | 19.56 | -0.50 | 11.79 | 5.22 | 0.70 | -0.89 | -1.19 | 142/201 | N | 7/12 |
+| any SWG f3L 1d behind <= 15 pts | 1% | 137 | 5.81 | 13.53 | -1.15 [-14.85,12.54] | 19.56 | -0.50 | 11.79 | 5.22 | 0.70 | -0.89 | -1.19 | 158/201 | N | 7/12 |
+| any WYK upthrust 15m behind <= 2 pts | 1% | 115 | 4.09 | 12.92 | -7.01 [-16.75,2.73] | 13.91 | -4.38 | -18.50 | -11.58 | -7.98 | 0.45 | -6.67 | 194/201 | N | 7/12 |
+| mit WYK upthrust 15m behind <= 2 pts | 1% | 115 | 4.09 | 12.92 | -7.01 [-16.75,2.73] | 13.91 | -4.38 | -18.50 | -11.58 | -7.98 | 0.45 | -6.67 | 197/201 | N | 7/12 |
+| mit SWG f3L 1d behind <= 15 pts | 1% | 137 | 5.81 | 13.25 | -1.15 [-14.85,12.54] | 19.56 | -0.50 | 11.79 | 5.22 | 0.70 | -0.89 | -1.19 | 142/201 | N | 7/12 |
 | ARR-class POI behind <= 2 AND book defS | 25% | 2416 | 2.05 | 1.93 | 0.14 [-2.08,2.35] | 3.16 | -0.57 | 2.45 | -0.34 | 0.11 | -0.43 | 0.13 | 144/201 | N | 10/12 |
-| mit SWG behind <= 15 pts | 81% | 7842 | 1.28 | 8.83 | 0.56 [-4.10,5.21] | 6.65 | 0.87 | -5.24 | -0.09 | -0.77 | -0.41 | 0.59 | 29/201 | N | 8/12 |
-| fresh ARR behind <= 20 pts | 44% | 4307 | 1.93 | 1.97 | -0.14 [-2.56,2.28] | 3.46 | -1.21 | 3.72 | -0.24 | -0.26 | -0.14 | -0.13 | 175/201 | N | 9/12 |
+| mit SWG f5H 1m behind <= 15 pts | 81% | 7842 | 1.28 | 8.83 | 0.56 [-4.10,5.21] | 6.65 | 0.87 | -5.24 | -0.09 | -0.77 | -0.41 | 0.59 | 29/201 | N | 8/12 |
+| fresh ARR iFVG 30s behind <= 20 pts | 44% | 4307 | 1.93 | 1.97 | -0.14 [-2.56,2.28] | 3.46 | -1.21 | 3.72 | -0.24 | -0.26 | -0.14 | -0.13 | 175/201 | N | 9/12 |
 | PRF-class POI behind <= 5 AND book defS | 15% | 1472 | 3.09 | 0.11 | 0.90 [-2.19,3.98] | 4.41 | 0.03 | 3.93 | 0.97 | 0.76 | -0.58 | 0.86 | 64/201 | N | 9/12 |
 | FIB-class POI behind <= 2 AND book defS | 14% | 1399 | 2.42 | 1.77 | 2.68 [-0.89,6.26] | 5.10 | 1.49 | 6.27 | 1.32 | 2.47 | -1.02 | 2.58 | 22/201 | N | 9/12 |
-| fresh ARR behind <= 20 pts | 28% | 2761 | 1.85 | 2.93 | 0.50 [-2.44,3.44] | 4.20 | -0.17 | 2.03 | 1.92 | -0.82 | -0.13 | 0.54 | 111/201 | N | 10/12 |
-| mit ARR behind <= 2 pts | 20% | 1949 | 2.13 | 3.20 | -1.66 [-5.39,2.07] | 5.33 | -2.17 | -10.05 | -1.18 | -1.65 | 0.58 | -1.59 | 102/201 | N | 8/12 |
-| mit SWG behind <= 10 pts | 65% | 6324 | 1.15 | 6.92 | -0.17 [-3.29,2.96] | 4.46 | -0.04 | -1.56 | -0.81 | -1.20 | 0.10 | -0.11 | 24/201 | N | 8/12 |
-| fresh ARR behind <= 15 pts | 37% | 3641 | 1.84 | 2.12 | 1.09 [-1.54,3.73] | 3.76 | 0.19 | 2.71 | 1.36 | 0.75 | -0.35 | 1.06 | 103/201 | N | 9/12 |
-| fresh ARR behind <= 20 pts | 37% | 3604 | 2.15 | 2.16 | 1.16 [-2.31,4.62] | 4.95 | 0.77 | 4.16 | 2.59 | 0.70 | 0.28 | 1.13 | 62/201 | N | 10/12 |
-| mit MAS behind <= 15 pts | 2% | 168 | 2.95 | 13.06 | 1.57 [-9.83,12.96] | 16.28 | 1.16 | 5.38 | 10.15 | -0.74 | 0.61 | 1.59 | 120/201 | N | 9/12 |
+| fresh ARR iplFVG 45s behind <= 20 pts | 28% | 2761 | 1.85 | 2.93 | 0.50 [-2.44,3.44] | 4.20 | -0.17 | 2.03 | 1.92 | -0.82 | -0.13 | 0.54 | 111/201 | N | 10/12 |
+| mit ARR iFVG_CE 2m behind <= 2 pts | 20% | 1949 | 2.13 | 3.20 | -1.66 [-5.39,2.07] | 5.33 | -2.17 | -10.05 | -1.18 | -1.65 | 0.58 | -1.59 | 102/201 | N | 8/12 |
+| mit SWG f3H 3m behind <= 10 pts | 65% | 6324 | 1.15 | 6.92 | -0.17 [-3.29,2.96] | 4.46 | -0.04 | -1.56 | -0.81 | -1.20 | 0.10 | -0.11 | 24/201 | N | 8/12 |
+| fresh ARR iFVG 30s behind <= 15 pts | 37% | 3641 | 1.84 | 2.12 | 1.09 [-1.54,3.73] | 3.76 | 0.19 | 2.71 | 1.36 | 0.75 | -0.35 | 1.06 | 103/201 | N | 9/12 |
+| fresh ARR iFVG 45s behind <= 20 pts | 37% | 3604 | 2.15 | 2.16 | 1.16 [-2.31,4.62] | 4.95 | 0.77 | 4.16 | 2.59 | 0.70 | 0.28 | 1.13 | 62/201 | N | 10/12 |
+| mit MAS sma50 4h behind <= 15 pts | 2% | 168 | 2.95 | 13.06 | 1.57 [-9.83,12.96] | 16.28 | 1.16 | 5.38 | 10.15 | -0.74 | 0.61 | 1.59 | 120/201 | N | 9/12 |
 
 ### 1b. Same cells, recent-ranked view (DESCRIPTIVE ONLY: sorted by L6M, which is burned - not a selection)
 | location | keep_L6M | n_L6M | PRE | Xp | L6M | MDE | HOLD | Y26 | L3M_view | Ptgt_L6M_pp | MAE_L6M | M_L6M | plc | RW | qtrs_pos |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| any ORB behind <= 15 pts | 3% | 293 | 2.51 | 5.34 | 11.73 [4.29,19.17] | 10.63 | 8.40 | 9.36 | 14.43 | 11.23 | -3.92 | 11.24 | 1/201 | N | 9/12 |
-| mit ORB behind <= 15 pts | 3% | 293 | 2.69 | 5.72 | 11.73 [4.29,19.17] | 10.63 | 8.40 | 9.36 | 14.43 | 11.23 | -3.92 | 11.24 | 1/201 | N | 9/12 |
-| any PRF behind <= 2 pts | 1% | 94 | 7.49 | 5.24 | 10.65 [2.16,19.14] | 12.13 | 7.89 | 4.53 | 10.21 | 9.52 | -3.66 | 10.25 | 14/201 | N | 10/12 |
-| mit ORB behind <= 10 pts | 2% | 196 | 0.97 | 8.00 | 10.37 [3.29,17.46] | 10.12 | 7.99 | 5.62 | 12.28 | 10.40 | -3.46 | 9.92 | 2/201 | N | 9/12 |
-| any ARR behind <= 20 pts | 1% | 127 | 3.54 | 19.33 | 9.85 [-0.50,20.21] | 14.79 | 5.23 | 16.95 | 9.60 | 5.47 | -0.27 | 9.62 | 20/201 | N | 10/12 |
-| mit ARR behind <= 20 pts | 1% | 127 | 3.54 | 19.02 | 9.85 [-0.50,20.21] | 14.79 | 5.23 | 16.95 | 9.60 | 5.47 | -0.27 | 9.62 | 18/201 | N | 10/12 |
+| any ORB Lx1 5m behind <= 15 pts | 3% | 293 | 2.51 | 5.34 | 11.73 [4.29,19.17] | 10.63 | 8.40 | 9.36 | 14.43 | 11.23 | -3.92 | 11.24 | 1/201 | N | 9/12 |
+| mit ORB Lx1 5m behind <= 15 pts | 3% | 293 | 2.69 | 5.72 | 11.73 [4.29,19.17] | 10.63 | 8.40 | 9.36 | 14.43 | 11.23 | -3.92 | 11.24 | 1/201 | N | 9/12 |
+| any PRF vwap day behind <= 2 pts | 1% | 94 | 7.49 | 5.24 | 10.65 [2.16,19.14] | 12.13 | 7.89 | 4.53 | 10.21 | 9.52 | -3.66 | 10.25 | 14/201 | N | 10/12 |
+| mit ORB Lx1 5m behind <= 10 pts | 2% | 196 | 0.97 | 8.00 | 10.37 [3.29,17.46] | 10.12 | 7.99 | 5.62 | 12.28 | 10.40 | -3.46 | 9.92 | 2/201 | N | 9/12 |
+| any ARR iFVG_CE 1d behind <= 20 pts | 1% | 127 | 3.54 | 19.33 | 9.85 [-0.50,20.21] | 14.79 | 5.23 | 16.95 | 9.60 | 5.47 | -0.27 | 9.62 | 20/201 | N | 10/12 |
+| mit ARR iFVG_CE 1d behind <= 20 pts | 1% | 127 | 3.54 | 19.02 | 9.85 [-0.50,20.21] | 14.79 | 5.23 | 16.95 | 9.60 | 5.47 | -0.27 | 9.62 | 18/201 | N | 10/12 |
 | PDX-class POI behind <= 2 AND book defS | 1% | 142 | 5.23 | 2.78 | 7.18 [-1.94,16.30] | 13.03 | 4.02 | 4.05 | 13.20 | 5.57 | -3.16 | 6.95 | 6/201 | N | 9/12 |
 | WYK-class POI behind <= 5 AND book defR | 1% | 131 | 4.06 | 3.40 | 6.18 [-3.36,15.72] | 13.62 | 10.60 | -4.83 | 6.58 | 5.23 | -3.22 | 5.96 | 24/201 | N | 9/12 |
 | SES-class POI behind <= 2 AND book defS | 2% | 203 | 5.11 | 3.73 | 5.71 [-1.30,12.72] | 10.01 | 5.27 | 3.86 | 3.37 | 4.29 | -3.16 | 5.53 | 9/201 | N | 11/12 |
 | PDX-class POI behind <= 5 AND book defS | 3% | 266 | 4.05 | 3.72 | 5.35 [-0.40,11.09] | 8.20 | 3.68 | 2.16 | 6.92 | 5.35 | -2.48 | 5.13 | 19/201 | N | 10/12 |
-| mit ORB behind <= 5 pts | 1% | 91 | 1.93 | 15.21 | 5.29 [-8.49,19.07] | 19.69 | 4.84 | 12.33 | 1.12 | 3.29 | -0.92 | 5.13 | 50/201 | N | 10/12 |
-| any ORB behind <= 5 pts | 1% | 91 | 1.93 | 15.21 | 5.29 [-8.49,19.07] | 19.69 | 4.84 | 12.33 | 1.12 | 3.29 | -0.92 | 5.13 | 51/201 | N | 10/12 |
+| mit ORB Hx2 15m behind <= 5 pts | 1% | 91 | 1.93 | 15.21 | 5.29 [-8.49,19.07] | 19.69 | 4.84 | 12.33 | 1.12 | 3.29 | -0.92 | 5.13 | 50/201 | N | 10/12 |
+| any ORB Hx2 15m behind <= 5 pts | 1% | 91 | 1.93 | 15.21 | 5.29 [-8.49,19.07] | 19.69 | 4.84 | 12.33 | 1.12 | 3.29 | -0.92 | 5.13 | 51/201 | N | 10/12 |
 | ORB-class POI behind <= 10 AND book defS | 8% | 764 | 1.91 | 2.85 | 4.74 [-0.13,9.62] | 6.96 | 2.20 | 11.19 | 5.96 | 3.58 | -2.70 | 4.58 | 10/201 | N | 6/12 |
-| fresh ARR behind <= 5 pts | 9% | 919 | 1.21 | 3.59 | 4.70 [0.49,8.91] | 6.01 | 2.85 | 0.91 | 6.25 | 3.92 | -1.61 | 4.54 | 5/201 | N | 8/12 |
-| any MAS behind <= 15 pts | 2% | 179 | 2.34 | 9.27 | 4.54 [-7.44,16.52] | 17.11 | 5.59 | 7.66 | 14.91 | 6.40 | -1.21 | 4.26 | 62/201 | N | 9/12 |
+| fresh ARR iplFVG 30s behind <= 5 pts | 9% | 919 | 1.21 | 3.59 | 4.70 [0.49,8.91] | 6.01 | 2.85 | 0.91 | 6.25 | 3.92 | -1.61 | 4.54 | 5/201 | N | 8/12 |
+| any MAS ema200 1h behind <= 15 pts | 2% | 179 | 2.34 | 9.27 | 4.54 [-7.44,16.52] | 17.11 | 5.59 | 7.66 | 14.91 | 6.40 | -1.21 | 4.26 | 62/201 | N | 9/12 |
+
+### 1c. DEFENDED variants (POI behind AND the book defends at the signal second: absorption/iceberg, refill, imbalance support, sweep reversal) - selected cells ranked on PRE+X' z, with the single recent look
+
+| location | keep_L6M | n_L6M | PRE | Xp | L6M | MDE | HOLD | Y26 | L3M_view | Ptgt_L6M_pp | MAE_L6M | M_L6M | plc | RW | qtrs_pos |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| book flag=dflip10 | 10% | 958 | 3.98 | 3.55 | 0.94 [-3.40,5.27] | 6.19 | 1.58 | -8.60 | -0.65 | 0.66 | -1.00 | 0.91 | 89/201 | N | 11/12 |
+| PRF-class POI behind <= 10 AND book defS | 20% | 1995 | 3.04 | 1.29 | 0.75 [-1.65,3.14] | 3.42 | -0.17 | 4.08 | 0.34 | 0.59 | -0.47 | 0.72 | 81/201 | N | 9/12 |
+| BOS-class POI behind <= 2 AND book defS | 12% | 1148 | 2.81 | 3.99 | 0.49 [-3.62,4.60] | 5.88 | -1.06 | -1.71 | -1.77 | 0.52 | -0.24 | 0.47 | 75/201 | N | 9/12 |
+| FIB-class POI behind <= 5 AND book defS | 18% | 1741 | 2.83 | 0.32 | 1.95 [-1.15,5.05] | 4.43 | 1.10 | 5.16 | 0.58 | 1.60 | -0.86 | 1.88 | 56/201 | N | 11/12 |
+| SWG-class POI behind <= 2 AND book defS | 24% | 2303 | 2.25 | 2.13 | 0.67 [-1.61,2.94] | 3.25 | 0.01 | 1.47 | -0.64 | 0.40 | -0.49 | 0.65 | 88/201 | N | 9/12 |
+| ARR-class POI behind <= 2 AND book defS | 25% | 2416 | 2.05 | 1.93 | 0.14 [-2.08,2.35] | 3.16 | -0.57 | 2.45 | -0.34 | 0.11 | -0.43 | 0.13 | 144/201 | N | 10/12 |
+| PRF-class POI behind <= 5 AND book defS | 15% | 1472 | 3.09 | 0.11 | 0.90 [-2.19,3.98] | 4.41 | 0.03 | 3.93 | 0.97 | 0.76 | -0.58 | 0.86 | 64/201 | N | 9/12 |
+| FIB-class POI behind <= 2 AND book defS | 14% | 1399 | 2.42 | 1.77 | 2.68 [-0.89,6.26] | 5.10 | 1.49 | 6.27 | 1.32 | 2.47 | -1.02 | 2.58 | 22/201 | N | 9/12 |
+| OPN-class POI behind <= 10 AND book defS | 3% | 300 | 3.58 | 8.87 | -4.97 [-12.01,2.08] | 10.06 | -8.45 | 0.85 | -2.36 | -4.16 | 2.08 | -4.79 | 190/201 | N | 8/12 |
+| EQL-class POI behind <= 5 AND book defS | 14% | 1340 | 2.50 | 2.12 | -0.90 [-4.90,3.10] | 5.71 | -2.14 | -3.48 | -2.86 | -0.71 | -0.34 | -0.87 | 143/201 | N | 10/12 |
+| EQL-class POI behind <= 2 AND book defS | 10% | 959 | 2.80 | 2.64 | -1.20 [-5.60,3.19] | 6.28 | -2.69 | -6.22 | -4.47 | -1.09 | -0.20 | -1.16 | 162/201 | N | 8/12 |
+| EQL-class POI behind <= 10 AND book defS | 17% | 1678 | 2.08 | 1.60 | 0.54 [-2.74,3.82] | 4.68 | -0.56 | -1.26 | -1.75 | 0.18 | -0.67 | 0.53 | 111/201 | N | 9/12 |
+
+### 1d. RETEST variants (the POI behind has been touched before = second touch) vs FRESH (first touch) - selected cells ranked on PRE+X' z
+
+Retest (mit):
+
+| location | keep_L6M | n_L6M | PRE | Xp | L6M | MDE | HOLD | Y26 | L3M_view | Ptgt_L6M_pp | MAE_L6M | M_L6M | plc | RW | qtrs_pos |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| mit ORB Lx1 30m behind <= 20 pts | 3% | 268 | 0.74 | 11.74 | 3.46 [-2.66,9.57] | 8.74 | -0.95 | 4.12 | 4.29 | 4.50 | 0.49 | 3.25 | 89/201 | N | 7/12 |
+| mit FIB ote79_up 1h behind <= 5 pts | 1% | 113 | 9.27 | 7.82 | -5.25 [-14.40,3.90] | 13.07 | -3.57 | -25.97 | -16.17 | -6.18 | 0.24 | -4.98 | 154/201 | N | 10/12 |
+| mit FIB ote62_up 4h behind <= 20 pts | 2% | 205 | 13.26 | -0.17 | 2.02 [-7.89,11.92] | 14.15 | -3.19 | 1.10 | 4.88 | 2.37 | -1.75 | 1.91 | 26/201 | N | 9/12 |
+| mit SWG f7H 1m behind <= 10 pts | 70% | 6785 | 1.77 | 7.46 | 0.93 [-2.58,4.44] | 5.01 | 0.91 | -2.42 | 0.82 | -0.41 | -0.42 | 0.95 | 5/201 | N | 8/12 |
+| mit MAS sma50 4h behind <= 20 pts | 2% | 208 | 0.39 | 13.24 | 2.81 [-7.45,13.07] | 14.65 | 1.91 | 4.75 | 8.24 | 0.31 | -0.03 | 2.79 | 88/201 | N | 9/12 |
+| mit WYK upthrust 15m behind <= 2 pts | 1% | 115 | 4.09 | 12.92 | -7.01 [-16.75,2.73] | 13.91 | -4.38 | -18.50 | -11.58 | -7.98 | 0.45 | -6.67 | 197/201 | N | 7/12 |
+| mit SWG f3L 1d behind <= 15 pts | 1% | 137 | 5.81 | 13.25 | -1.15 [-14.85,12.54] | 19.56 | -0.50 | 11.79 | 5.22 | 0.70 | -0.89 | -1.19 | 142/201 | N | 7/12 |
+| mit SWG f5H 1m behind <= 15 pts | 81% | 7842 | 1.28 | 8.83 | 0.56 [-4.10,5.21] | 6.65 | 0.87 | -5.24 | -0.09 | -0.77 | -0.41 | 0.59 | 29/201 | N | 8/12 |
+| mit ARR iFVG_CE 2m behind <= 2 pts | 20% | 1949 | 2.13 | 3.20 | -1.66 [-5.39,2.07] | 5.33 | -2.17 | -10.05 | -1.18 | -1.65 | 0.58 | -1.59 | 102/201 | N | 8/12 |
+| mit SWG f3H 3m behind <= 10 pts | 65% | 6324 | 1.15 | 6.92 | -0.17 [-3.29,2.96] | 4.46 | -0.04 | -1.56 | -0.81 | -1.20 | 0.10 | -0.11 | 24/201 | N | 8/12 |
+| mit MAS sma50 4h behind <= 15 pts | 2% | 168 | 2.95 | 13.06 | 1.57 [-9.83,12.96] | 16.28 | 1.16 | 5.38 | 10.15 | -0.74 | 0.61 | 1.59 | 120/201 | N | 9/12 |
+| mit SWG f7H 45s behind <= 10 pts | 75% | 7263 | 1.32 | 7.31 | 0.88 [-3.00,4.76] | 5.54 | 1.25 | -4.01 | 0.70 | -0.47 | -0.48 | 0.90 | 19/201 | N | 8/12 |
+
+Fresh (first touch):
+
+| location | keep_L6M | n_L6M | PRE | Xp | L6M | MDE | HOLD | Y26 | L3M_view | Ptgt_L6M_pp | MAE_L6M | M_L6M | plc | RW | qtrs_pos |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| fresh ARR iplFVG 45s behind <= 5 pts | 6% | 631 | 3.00 | 8.85 | 1.70 [-3.37,6.77] | 7.24 | -0.18 | 2.69 | 2.91 | 0.42 | -0.61 | 1.68 | 84/201 | N | 10/12 |
+| fresh ARR iplFVG 45s behind <= 15 pts | 22% | 2117 | 2.65 | 2.45 | 1.25 [-2.10,4.59] | 4.78 | 0.77 | 2.17 | 3.91 | -0.07 | -0.33 | 1.25 | 112/201 | N | 10/12 |
+| fresh ARR iFVG 30s behind <= 20 pts | 44% | 4307 | 1.93 | 1.97 | -0.14 [-2.56,2.28] | 3.46 | -1.21 | 3.72 | -0.24 | -0.26 | -0.14 | -0.13 | 175/201 | N | 9/12 |
+| fresh ARR iplFVG 45s behind <= 20 pts | 28% | 2761 | 1.85 | 2.93 | 0.50 [-2.44,3.44] | 4.20 | -0.17 | 2.03 | 1.92 | -0.82 | -0.13 | 0.54 | 111/201 | N | 10/12 |
+| fresh ARR iFVG 30s behind <= 15 pts | 37% | 3641 | 1.84 | 2.12 | 1.09 [-1.54,3.73] | 3.76 | 0.19 | 2.71 | 1.36 | 0.75 | -0.35 | 1.06 | 103/201 | N | 9/12 |
+| fresh ARR iFVG 45s behind <= 20 pts | 37% | 3604 | 2.15 | 2.16 | 1.16 [-2.31,4.62] | 4.95 | 0.77 | 4.16 | 2.59 | 0.70 | 0.28 | 1.13 | 62/201 | N | 10/12 |
+| confluence ntf>=2 within 5 (fresh) | 61% | 5990 | 1.51 | 3.86 | 1.59 [-1.85,5.04] | 4.92 | 0.70 | 0.29 | 1.60 | 0.20 | -1.12 | 1.59 | 105/201 | N | 9/12 |
+| fresh ARR iplFVG 45s behind <= 10 pts | 15% | 1422 | 2.15 | 2.43 | 3.76 [-0.14,7.67] | 5.58 | 2.83 | 5.67 | 5.48 | 1.96 | -1.29 | 3.68 | 4/201 | N | 8/12 |
+| fresh PRF vwap avwap behind <= 15 pts | 10% | 931 | 3.09 | 2.16 | -1.17 [-5.94,3.60] | 6.82 | -2.30 | 6.29 | 0.92 | -0.99 | 0.84 | -1.13 | 172/201 | N | 9/12 |
+| fresh any 45s POI behind <= 5 pts | 36% | 3460 | 1.46 | 3.08 | 1.48 [-1.96,4.92] | 4.92 | 0.51 | 0.97 | 1.74 | 0.60 | -0.36 | 1.46 | 83/201 | N | 10/12 |
+| fresh ARR OB 30s behind <= 10 pts | 19% | 1864 | 1.73 | 2.51 | 1.18 [-2.65,5.02] | 5.47 | 0.74 | 2.54 | 3.07 | 0.58 | -0.80 | 1.16 | 134/201 | N | 11/12 |
+| fresh any ARR-class POI behind <= 5 pts | 74% | 7168 | 1.46 | 4.56 | 1.08 [-2.91,5.08] | 5.71 | 0.62 | -2.53 | 0.44 | -0.30 | -0.95 | 1.10 | 159/201 | N | 9/12 |
 
 ## 2. Plain lines (last 6 months, selected cells)
-* "A signal fired with **any ORB behind <= 20 pts** reaches the target 57.1% of the time vs 52.8% without it (+4.5 pp), and earns 6.46 vs 3.15 pts per contract (lift 3.46 [-2.66,9.57], MDE 8.74) - L6M, n=268 signals, 3% of all signals. PRE+X'-selected.
-* "A signal fired with **mit ORB behind <= 20 pts** reaches the target 57.1% of the time vs 52.8% without it (+4.5 pp), and earns 6.46 vs 3.15 pts per contract (lift 3.46 [-2.66,9.57], MDE 8.74) - L6M, n=268 signals, 3% of all signals. PRE+X'-selected.
+* "A signal fired with **any ORB Lx1 30m behind <= 20 pts** reaches the target 57.1% of the time vs 52.8% without it (+4.5 pp), and earns 6.46 vs 3.15 pts per contract (lift 3.46 [-2.66,9.57], MDE 8.74) - L6M, n=268 signals, 3% of all signals. PRE+X'-selected.
+* "A signal fired with **mit ORB Lx1 30m behind <= 20 pts** reaches the target 57.1% of the time vs 52.8% without it (+4.5 pp), and earns 6.46 vs 3.15 pts per contract (lift 3.46 [-2.66,9.57], MDE 8.74) - L6M, n=268 signals, 3% of all signals. PRE+X'-selected.
 * "A signal fired with **book flag=dflip10** reaches the target 53.3% of the time vs 52.9% without it (+0.7 pp), and earns 4.42 vs 3.12 pts per contract (lift 0.94 [-3.40,5.27], MDE 6.19) - L6M, n=958 signals, 10% of all signals. PRE+X'-selected.
-* "A signal fired with **fresh ARR behind <= 5 pts** reaches the target 52.8% of the time vs 53.0% without it (+0.4 pp), and earns 4.38 vs 3.17 pts per contract (lift 1.70 [-3.37,6.77], MDE 7.24) - L6M, n=631 signals, 6% of all signals. PRE+X'-selected.
-* "A signal fired with **mit FIB behind <= 5 pts** reaches the target 46.9% of the time vs 53.0% without it (-6.2 pp), and earns -1.85 vs 3.30 pts per contract (lift -5.25 [-14.40,3.90], MDE 13.07) - L6M, n=113 signals, 1% of all signals. PRE+X'-selected.
+* "A signal fired with **fresh ARR iplFVG 45s behind <= 5 pts** reaches the target 52.8% of the time vs 53.0% without it (+0.4 pp), and earns 4.38 vs 3.17 pts per contract (lift 1.70 [-3.37,6.77], MDE 7.24) - L6M, n=631 signals, 6% of all signals. PRE+X'-selected.
+* "A signal fired with **mit FIB ote79_up 1h behind <= 5 pts** reaches the target 46.9% of the time vs 53.0% without it (-6.2 pp), and earns -1.85 vs 3.30 pts per contract (lift -5.25 [-14.40,3.90], MDE 13.07) - L6M, n=113 signals, 1% of all signals. PRE+X'-selected.
 * "A signal fired with **PRF-class POI behind <= 10 AND book defS** reaches the target 53.5% of the time vs 52.8% without it (+0.6 pp), and earns 3.92 vs 3.07 pts per contract (lift 0.75 [-1.65,3.14], MDE 3.42) - L6M, n=1995 signals, 20% of all signals. PRE+X'-selected.
-* "A signal fired with **any ORB behind <= 15 pts** reaches the target 63.8% of the time vs 52.6% without it (+11.2 pp), and earns 14.52 vs 2.89 pts per contract (lift 11.73 [4.29,19.17], MDE 10.63) - L6M, n=293 signals, 3% of all signals. PRE+X'-selected.
-* "A signal fired with **mit ORB behind <= 15 pts** reaches the target 63.8% of the time vs 52.6% without it (+11.2 pp), and earns 14.52 vs 2.89 pts per contract (lift 11.73 [4.29,19.17], MDE 10.63) - L6M, n=293 signals, 3% of all signals. PRE+X'-selected.
+* "A signal fired with **any ORB Lx1 5m behind <= 15 pts** reaches the target 63.8% of the time vs 52.6% without it (+11.2 pp), and earns 14.52 vs 2.89 pts per contract (lift 11.73 [4.29,19.17], MDE 10.63) - L6M, n=293 signals, 3% of all signals. PRE+X'-selected.
+* "A signal fired with **mit ORB Lx1 5m behind <= 15 pts** reaches the target 63.8% of the time vs 52.6% without it (+11.2 pp), and earns 14.52 vs 2.89 pts per contract (lift 11.73 [4.29,19.17], MDE 10.63) - L6M, n=293 signals, 3% of all signals. PRE+X'-selected.
 
 ## 3. The map over ALL 11,422 cells (PRE + X' only; the recent look is not used here)
 Family summary (pooled PRE+X' lift in pts per contract; n_keep>=300). A family with no information has mean z ~ 0 and share_pos ~ 50%:
@@ -323,6 +376,34 @@ Family summary (pooled PRE+X' lift in pts per contract; n_keep>=300). A family w
 | OPN-class POI behind <= 2 AND book defA | 0 | 0.0 | nan | 58.76 | nan | nan |
 | WYK-class POI behind <= 2 AND book defA | 1 | 0.0 | -63.5 | nan | nan | nan |
 
+### 3c'. Premium / discount in BINS (side-aligned position in the dealing range; 0 = deepest discount for a long / deepest premium for a short, 1 = the range extreme in the signal direction, >1 = outside the range). PRE and X' only (recent windows of unselected cells stay sealed). lift = pts per contract vs the same book's signals outside the bin
+
+| range | <0.2 (deep discount) | 0.2-0.33 | 0.33-0.5 | 0.5-0.67 | 0.67-0.8 | 0.8-1.0 | >=1.0 (at/outside extreme) | stat |
+|---|---|---|---|---|---|---|---|---|
+| 15m | -6.17 | 1.66 | -1.80 | -0.65 | -1.14 | 2.52 | -0.11 | lift PRE (pts/contract) |
+| 1d | -2.40 | 3.58 | -1.44 | 0.32 | 1.06 | -2.06 | 1.96 | lift PRE (pts/contract) |
+| 1h | -2.26 | 2.28 | 1.56 | -2.83 | -1.86 | 1.60 | -0.01 | lift PRE (pts/contract) |
+| 4h | 0.47 | -4.12 | 2.42 | -0.44 | -1.08 | -2.72 | 2.68 | lift PRE (pts/contract) |
+| 5m | 1.98 | -0.54 | 1.80 | -0.79 | 0.10 | 0.92 | -0.86 | lift PRE (pts/contract) |
+| day | -5.02 | 2.79 | 1.14 | -1.30 | -0.61 | 0.51 | 0.15 | lift PRE (pts/contract) |
+| pday | -1.81 | -0.14 | 2.30 | 2.44 | -2.75 | -1.25 | 0.95 | lift PRE (pts/contract) |
+| pweek | -1.91 | 1.18 | 2.84 | -4.24 | 0.28 | -0.12 | 2.35 | lift PRE (pts/contract) |
+| sess | -5.50 | -0.77 | 1.86 | -1.25 | 0.31 | 0.32 | 2.39 | lift PRE (pts/contract) |
+| week | -4.23 | 0.51 | -0.36 | -0.63 | -1.01 | 1.97 | 3.59 | lift PRE (pts/contract) |
+
+| range | <0.2 (deep discount) | 0.2-0.33 | 0.33-0.5 | 0.5-0.67 | 0.67-0.8 | 0.8-1.0 | >=1.0 (at/outside extreme) | stat |
+|---|---|---|---|---|---|---|---|---|
+| 15m | 3.18 | -3.15 | -0.80 | 1.74 | 4.12 | -0.94 | -0.63 | lift X' (pts/contract) |
+| 1d | -6.75 | 4.30 | 2.21 | -3.69 | 0.33 | 8.46 | 2.82 | lift X' (pts/contract) |
+| 1h | 0.33 | -5.00 | 2.81 | 0.57 | 2.46 | -0.58 | -0.23 | lift X' (pts/contract) |
+| 4h | -3.35 | -5.05 | 1.69 | -1.22 | -1.37 | 1.43 | 2.98 | lift X' (pts/contract) |
+| 5m | -4.16 | 1.86 | 8.22 | -1.02 | 1.47 | -0.33 | -1.44 | lift X' (pts/contract) |
+| day | -6.55 | -0.20 | -4.91 | 1.50 | 0.79 | 1.81 | -0.17 | lift X' (pts/contract) |
+| pday | 1.28 | -3.49 | -2.39 | -2.57 | 1.70 | 2.56 | 0.60 | lift X' (pts/contract) |
+| pweek | -6.47 | 2.48 | 10.88 | -3.89 | -2.10 | 4.39 | -0.21 | lift X' (pts/contract) |
+| sess | -9.82 | 3.22 | -3.21 | 2.25 | -0.98 | 1.79 | -5.78 | lift X' (pts/contract) |
+| week | -1.30 | -2.97 | -1.13 | 4.19 | -1.40 | 1.90 | 0.31 | lift X' (pts/contract) |
+
 ## 4. By book (PRE+X' pooled lift of the group, pts per contract; protocol-dependence)
 
 | group | ST | HM | WT | KB | SM | PE | PB | DN | MV | MA |
@@ -339,92 +420,92 @@ Family summary (pooled PRE+X' lift in pts per contract; n_keep>=300). A family w
 
 | location | PRE | Xp | L6M | SE | n_L6M | HOLD | Y26 | Ptgt_pp |
 |---|---|---|---|---|---|---|---|---|
-| fresh ARR behind <= 20 pts | 5.36 | 4.11 | 1.41 | 2.86 | 490 | 0.87 | -0.54 | 0.34 |
-| any MAS behind <= 20 pts | 13.99 | 13.41 | -6.56 | 10.59 | 30 | -3.84 | 8.34 | -5.29 |
-| any EQL behind <= 20 pts | 5.51 | 3.08 | 1.99 | 3.17 | 597 | 2.18 | -2.24 | 0.82 |
+| fresh ARR iFVG 45s behind <= 20 pts | 5.36 | 4.11 | 1.41 | 2.86 | 490 | 0.87 | -0.54 | 0.34 |
+| any MAS bb_mid 4h behind <= 20 pts | 13.99 | 13.41 | -6.56 | 10.59 | 30 | -3.84 | 8.34 | -5.29 |
+| any EQL EQH_tight 1m behind <= 20 pts | 5.51 | 3.08 | 1.99 | 3.17 | 597 | 2.18 | -2.24 | 0.82 |
 | mit any CRT-class POI behind <= 2 pts | 6.62 | 16.07 | 3.80 | 6.01 | 77 | 5.78 | 2.31 | 2.89 |
-| mit EQL behind <= 20 pts | 5.69 | 2.46 | 2.50 | 3.09 | 589 | 2.45 | -2.24 | 1.19 |
-| any RND behind <= 2 pts | 8.49 | 22.67 | 15.87 | 4.99 | 65 | 14.94 | 16.13 | 13.48 |
-| fresh RND behind <= 2 pts | 8.49 | 22.67 | 15.87 | 4.99 | 65 | 14.94 | 16.13 | 13.48 |
-| fresh ARR behind <= 2 pts | 8.20 | 15.75 | -2.45 | 7.76 | 52 | 1.38 | 8.97 | -1.91 |
+| mit EQL EQH_tight 1m behind <= 20 pts | 5.69 | 2.46 | 2.50 | 3.09 | 589 | 2.45 | -2.24 | 1.19 |
+| any RND x50 raw behind <= 2 pts | 8.49 | 22.67 | 15.87 | 4.99 | 65 | 14.94 | 16.13 | 13.48 |
+| fresh RND x50 raw behind <= 2 pts | 8.49 | 22.67 | 15.87 | 4.99 | 65 | 14.94 | 16.13 | 13.48 |
+| fresh ARR iplFVG 15s behind <= 2 pts | 8.20 | 15.75 | -2.45 | 7.76 | 52 | 1.38 | 8.97 | -1.91 |
 
 ### HM
 
 | location | PRE | Xp | L6M | SE | n_L6M | HOLD | Y26 | Ptgt_pp |
 |---|---|---|---|---|---|---|---|---|
-| mit ARR behind <= 2 pts | 8.90 | 7.99 | -1.73 | 5.45 | 127 | -1.20 | 2.60 | -1.78 |
-| any ARR behind <= 2 pts | 8.90 | 7.99 | -1.73 | 5.45 | 127 | -1.20 | 2.60 | -1.78 |
-| any ARR behind <= 0 pts (in-zone) | 9.39 | 6.01 | 1.18 | 6.07 | 115 | 0.74 | 10.84 | 0.28 |
-| mit ARR behind <= 0 pts (in-zone) | 9.39 | 6.01 | 1.18 | 6.07 | 115 | 0.74 | 10.84 | 0.28 |
-| mit ARR behind <= 10 pts | 9.09 | 7.62 | 3.70 | 6.29 | 150 | 2.82 | -5.79 | 0.09 |
-| any PRF behind <= 15 pts | 8.95 | 15.16 | -10.96 | 7.69 | 82 | -9.30 | 27.64 | -8.82 |
-| mit PRF behind <= 15 pts | 9.98 | 16.52 | -8.60 | 7.65 | 70 | -8.18 | 37.31 | -6.73 |
-| any ARR behind <= 2 pts | 7.64 | 2.92 | -4.71 | 4.15 | 236 | -5.73 | 6.11 | -3.74 |
+| mit ARR OB 10m behind <= 2 pts | 8.90 | 7.99 | -1.73 | 5.45 | 127 | -1.20 | 2.60 | -1.78 |
+| any ARR OB 10m behind <= 2 pts | 8.90 | 7.99 | -1.73 | 5.45 | 127 | -1.20 | 2.60 | -1.78 |
+| any ARR OB 10m behind <= 0 pts (in-zone) | 9.39 | 6.01 | 1.18 | 6.07 | 115 | 0.74 | 10.84 | 0.28 |
+| mit ARR OB 10m behind <= 0 pts (in-zone) | 9.39 | 6.01 | 1.18 | 6.07 | 115 | 0.74 | 10.84 | 0.28 |
+| mit ARR OB 15m behind <= 10 pts | 9.09 | 7.62 | 3.70 | 6.29 | 150 | 2.82 | -5.79 | 0.09 |
+| any PRF lvn0 sw15 behind <= 15 pts | 8.95 | 15.16 | -10.96 | 7.69 | 82 | -9.30 | 27.64 | -8.82 |
+| mit PRF lvn0 sw15 behind <= 15 pts | 9.98 | 16.52 | -8.60 | 7.65 | 70 | -8.18 | 37.31 | -6.73 |
+| any ARR FVG 10m behind <= 2 pts | 7.64 | 2.92 | -4.71 | 4.15 | 236 | -5.73 | 6.11 | -3.74 |
 
 ### WT
 
 | location | PRE | Xp | L6M | SE | n_L6M | HOLD | Y26 | Ptgt_pp |
 |---|---|---|---|---|---|---|---|---|
-| mit SES behind <= 10 pts | 14.62 | 7.97 | -3.66 | 6.50 | 40 | -2.89 | 10.86 | -4.72 |
-| any SES behind <= 10 pts | 14.62 | 7.97 | -3.66 | 6.50 | 40 | -2.89 | 10.86 | -4.72 |
-| mit SES behind <= 15 pts | 10.46 | 4.12 | -1.86 | 4.99 | 54 | -0.23 | 4.17 | -2.28 |
-| any SES behind <= 15 pts | 10.46 | 4.12 | -1.86 | 4.99 | 54 | -0.23 | 4.17 | -2.28 |
-| mit SWG behind <= 5 pts | 0.22 | 8.46 | -1.61 | 1.38 | 962 | -1.14 | -4.68 | -2.26 |
-| any SES behind <= 20 pts | 8.46 | 2.41 | 0.24 | 3.46 | 76 | 0.71 | -5.71 | -0.42 |
-| mit SES behind <= 20 pts | 8.46 | 2.41 | 0.24 | 3.46 | 76 | 0.71 | -5.71 | -0.42 |
-| any SWG behind <= 5 pts | 0.22 | 8.05 | -1.54 | 1.37 | 963 | -1.08 | -4.68 | -2.16 |
+| mit SES pre_H prev behind <= 10 pts | 14.62 | 7.97 | -3.66 | 6.50 | 40 | -2.89 | 10.86 | -4.72 |
+| any SES pre_H prev behind <= 10 pts | 14.62 | 7.97 | -3.66 | 6.50 | 40 | -2.89 | 10.86 | -4.72 |
+| mit SES pre_H prev behind <= 15 pts | 10.46 | 4.12 | -1.86 | 4.99 | 54 | -0.23 | 4.17 | -2.28 |
+| any SES pre_H prev behind <= 15 pts | 10.46 | 4.12 | -1.86 | 4.99 | 54 | -0.23 | 4.17 | -2.28 |
+| mit SWG f3H 3m behind <= 5 pts | 0.22 | 8.46 | -1.61 | 1.38 | 962 | -1.14 | -4.68 | -2.26 |
+| any SES pre_H prev behind <= 20 pts | 8.46 | 2.41 | 0.24 | 3.46 | 76 | 0.71 | -5.71 | -0.42 |
+| mit SES pre_H prev behind <= 20 pts | 8.46 | 2.41 | 0.24 | 3.46 | 76 | 0.71 | -5.71 | -0.42 |
+| any SWG f3H 3m behind <= 5 pts | 0.22 | 8.05 | -1.54 | 1.37 | 963 | -1.08 | -4.68 | -2.16 |
 
 ### KB
 
 | location | PRE | Xp | L6M | SE | n_L6M | HOLD | Y26 | Ptgt_pp |
 |---|---|---|---|---|---|---|---|---|
-| any ORB behind <= 20 pts | 7.46 | 31.70 | -10.45 | 7.64 | 39 | -12.69 | -10.47 | -9.30 |
-| mit ORB behind <= 20 pts | 7.46 | 31.70 | -10.45 | 7.64 | 39 | -12.69 | -10.47 | -9.30 |
-| any WYK behind <= 20 pts | 2.29 | 22.74 | -6.86 | 9.16 | 43 | -1.37 | -48.04 | -3.65 |
-| mit WYK behind <= 20 pts | 1.85 | 22.74 | -8.45 | 9.10 | 42 | -2.57 | -48.04 | -4.97 |
-| any ORB behind <= 20 pts | 12.49 | 8.62 | -2.87 | 6.41 | 48 | 0.23 | -6.38 | -4.37 |
-| mit ORB behind <= 20 pts | 12.49 | 8.62 | -2.87 | 6.41 | 48 | 0.23 | -6.38 | -4.37 |
-| any ORB behind <= 15 pts | 12.70 | 17.65 | -6.56 | 7.64 | 35 | -5.68 | -13.26 | -7.39 |
-| mit ORB behind <= 15 pts | 12.70 | 17.65 | -6.56 | 7.64 | 35 | -5.68 | -13.26 | -7.39 |
+| any ORB Hx2 60m behind <= 20 pts | 7.46 | 31.70 | -10.45 | 7.64 | 39 | -12.69 | -10.47 | -9.30 |
+| mit ORB Hx2 60m behind <= 20 pts | 7.46 | 31.70 | -10.45 | 7.64 | 39 | -12.69 | -10.47 | -9.30 |
+| any WYK sow_high 15m behind <= 20 pts | 2.29 | 22.74 | -6.86 | 9.16 | 43 | -1.37 | -48.04 | -3.65 |
+| mit WYK sow_high 15m behind <= 20 pts | 1.85 | 22.74 | -8.45 | 9.10 | 42 | -2.57 | -48.04 | -4.97 |
+| any ORB Hx2 15m behind <= 20 pts | 12.49 | 8.62 | -2.87 | 6.41 | 48 | 0.23 | -6.38 | -4.37 |
+| mit ORB Hx2 15m behind <= 20 pts | 12.49 | 8.62 | -2.87 | 6.41 | 48 | 0.23 | -6.38 | -4.37 |
+| any ORB Hx2 15m behind <= 15 pts | 12.70 | 17.65 | -6.56 | 7.64 | 35 | -5.68 | -13.26 | -7.39 |
+| mit ORB Hx2 15m behind <= 15 pts | 12.70 | 17.65 | -6.56 | 7.64 | 35 | -5.68 | -13.26 | -7.39 |
 
 ### SM
 
 | location | PRE | Xp | L6M | SE | n_L6M | HOLD | Y26 | Ptgt_pp |
 |---|---|---|---|---|---|---|---|---|
-| mit SWG behind <= 20 pts | 11.51 | 21.25 | 8.78 | 7.43 | 248 | 11.94 | 17.04 | 6.96 |
-| any SWG behind <= 20 pts | 10.56 | 20.14 | 10.00 | 7.46 | 249 | 14.13 | 17.04 | 8.00 |
-| mit SWG behind <= 20 pts | 10.95 | 15.84 | 11.10 | 7.40 | 248 | 13.03 | 12.38 | 8.88 |
+| mit SWG f7H 2m behind <= 20 pts | 11.51 | 21.25 | 8.78 | 7.43 | 248 | 11.94 | 17.04 | 6.96 |
+| any SWG f7H 2m behind <= 20 pts | 10.56 | 20.14 | 10.00 | 7.46 | 249 | 14.13 | 17.04 | 8.00 |
+| mit SWG f3H 5m behind <= 20 pts | 10.95 | 15.84 | 11.10 | 7.40 | 248 | 13.03 | 12.38 | 8.88 |
 | confluence ntf>=3 within 5 (fresh) | 10.79 | 6.70 | 2.60 | 6.42 | 196 | 2.33 | -3.79 | 1.53 |
-| any SWG behind <= 20 pts | 11.82 | 12.66 | 8.49 | 7.16 | 238 | 12.56 | 11.98 | 6.47 |
-| mit SWG behind <= 20 pts | 12.25 | 11.43 | 7.42 | 7.10 | 237 | 10.63 | 11.98 | 5.57 |
-| mit SWG behind <= 20 pts | 11.00 | 14.69 | 6.46 | 6.77 | 248 | 9.89 | 12.11 | 5.05 |
-| any SWG behind <= 20 pts | 9.99 | 14.68 | 10.00 | 7.46 | 249 | 13.15 | 12.38 | 8.00 |
+| any SWG f7H 3m behind <= 20 pts | 11.82 | 12.66 | 8.49 | 7.16 | 238 | 12.56 | 11.98 | 6.47 |
+| mit SWG f7H 3m behind <= 20 pts | 12.25 | 11.43 | 7.42 | 7.10 | 237 | 10.63 | 11.98 | 5.57 |
+| mit SWG f5H 3m behind <= 20 pts | 11.00 | 14.69 | 6.46 | 6.77 | 248 | 9.89 | 12.11 | 5.05 |
+| any SWG f3H 5m behind <= 20 pts | 9.99 | 14.68 | 10.00 | 7.46 | 249 | 13.15 | 12.38 | 8.00 |
 
 ### PE
 
 | location | PRE | Xp | L6M | SE | n_L6M | HOLD | Y26 | Ptgt_pp |
 |---|---|---|---|---|---|---|---|---|
-| fresh ARR behind <= 5 pts | 16.05 | 14.46 | 11.53 | 15.75 | 19 | 11.36 | 15.40 | 8.96 |
+| fresh ARR iplFVG 3m behind <= 5 pts | 16.05 | 14.46 | 11.53 | 15.75 | 19 | 11.36 | 15.40 | 8.96 |
 | book flag=bigp1 | 4.00 | 12.25 | -1.21 | 6.70 | 130 | 0.70 | 11.35 | -2.42 |
-| mit ARR behind <= 10 pts | 13.15 | 9.82 | 14.61 | 5.55 | 1141 | 15.17 | 8.15 | 9.90 |
-| mit SWG behind <= 10 pts | 3.49 | 9.60 | 7.40 | 4.11 | 785 | 8.09 | -1.92 | 5.48 |
-| any ARR behind <= 15 pts | 9.90 | 12.91 | 14.41 | 6.04 | 1122 | 15.78 | 5.24 | 13.80 |
+| mit ARR iplFVG 15s behind <= 10 pts | 13.15 | 9.82 | 14.61 | 5.55 | 1141 | 15.17 | 8.15 | 9.90 |
+| mit SWG f7H 1m behind <= 10 pts | 3.49 | 9.60 | 7.40 | 4.11 | 785 | 8.09 | -1.92 | 5.48 |
+| any ARR iFVG_CE 15s behind <= 15 pts | 9.90 | 12.91 | 14.41 | 6.04 | 1122 | 15.78 | 5.24 | 13.80 |
 | HTF tf=1h on 1h | 6.94 | 5.39 | 2.86 | 4.74 | 258 | 2.22 | -12.27 | 1.18 |
-| any SWG behind <= 10 pts | 3.40 | 9.38 | 7.41 | 4.19 | 789 | 8.31 | -2.82 | 5.52 |
-| any FIB behind <= 20 pts | 12.12 | 15.06 | -9.51 | 10.03 | 27 | 3.06 | 33.76 | -8.53 |
+| any SWG f7H 1m behind <= 10 pts | 3.40 | 9.38 | 7.41 | 4.19 | 789 | 8.31 | -2.82 | 5.52 |
+| any FIB ote62_dn 4h behind <= 20 pts | 12.12 | 15.06 | -9.51 | 10.03 | 27 | 3.06 | 33.76 | -8.53 |
 
 ### PB
 
 | location | PRE | Xp | L6M | SE | n_L6M | HOLD | Y26 | Ptgt_pp |
 |---|---|---|---|---|---|---|---|---|
-| any ARR behind <= 10 pts | 8.46 | 23.58 | 4.56 | 7.29 | 794 | 7.46 | -11.80 | 1.63 |
-| mit PRF behind <= 15 pts | 17.39 | 8.06 | 2.39 | 9.19 | 33 | 3.07 | -27.34 | -2.87 |
-| mit SWG behind <= 20 pts | 3.52 | 18.21 | 11.16 | 3.89 | 659 | 12.32 | 15.97 | 7.20 |
-| mit ARR behind <= 10 pts | 6.39 | 24.49 | 3.97 | 7.56 | 789 | 6.83 | -14.99 | 1.13 |
-| any SWG behind <= 5 pts | 5.24 | 23.97 | 14.56 | 8.09 | 794 | 13.71 | -1.34 | 10.72 |
-| any SWG behind <= 5 pts | 4.26 | 22.37 | 10.18 | 6.01 | 771 | 8.98 | -10.63 | 7.75 |
+| any ARR iplFVG 45s behind <= 10 pts | 8.46 | 23.58 | 4.56 | 7.29 | 794 | 7.46 | -11.80 | 1.63 |
+| mit PRF lvn0 sw1h behind <= 15 pts | 17.39 | 8.06 | 2.39 | 9.19 | 33 | 3.07 | -27.34 | -2.87 |
+| mit SWG f5H 2m behind <= 20 pts | 3.52 | 18.21 | 11.16 | 3.89 | 659 | 12.32 | 15.97 | 7.20 |
+| mit ARR iplFVG 45s behind <= 10 pts | 6.39 | 24.49 | 3.97 | 7.56 | 789 | 6.83 | -14.99 | 1.13 |
+| any SWG f3L 30s behind <= 5 pts | 5.24 | 23.97 | 14.56 | 8.09 | 794 | 13.71 | -1.34 | 10.72 |
+| any SWG f7L 15s behind <= 5 pts | 4.26 | 22.37 | 10.18 | 6.01 | 771 | 8.98 | -10.63 | 7.75 |
 | CRT-class POI behind <= 10 AND book defS | 18.59 | 2.02 | -10.09 | 6.64 | 57 | -9.33 | -19.97 | -9.27 |
-| fresh PRF behind <= 15 pts | 6.74 | 5.92 | -1.35 | 3.74 | 253 | -1.62 | 7.57 | -1.85 |
+| fresh PRF vwap avwap behind <= 15 pts | 6.74 | 5.92 | -1.35 | 3.74 | 253 | -1.62 | 7.57 | -1.85 |
 
 ### DN
 
@@ -432,68 +513,68 @@ Family summary (pooled PRE+X' lift in pts per contract; n_keep>=300). A family w
 |---|---|---|---|---|---|---|---|---|
 | mit any SWG-class POI behind <= 2 pts | 6.64 | 62.03 | 7.02 | 38.29 | 697 | 5.74 |  | 3.80 |
 | any any SWG-class POI behind <= 2 pts | 6.64 | 62.03 | 7.02 | 38.29 | 697 | 5.74 |  | 3.80 |
-| any FIB behind <= 20 pts | 16.10 | 18.00 | 13.59 | 11.69 | 21 | 6.60 | -16.21 | 13.28 |
-| any FIB behind <= 20 pts | 10.26 | 12.92 | -2.56 | 7.47 | 58 | -1.79 | -4.86 | -2.24 |
-| fresh ARR behind <= 20 pts | 9.24 | 8.13 | -3.76 | 9.16 | 63 | -7.44 | -16.44 | -3.28 |
-| any FIB behind <= 15 pts | 9.32 | 10.61 | 0.72 | 8.69 | 43 | 1.08 | -10.11 | -0.31 |
-| any FIB behind <= 5 pts | 7.66 | 15.92 | -4.21 | 9.98 | 22 | -10.75 | 14.90 | -3.90 |
-| mit SWG behind <= 5 pts | 7.97 | 3.31 | -5.21 | 3.54 | 457 | -4.50 | -2.80 | -1.75 |
+| any FIB ext162 5m behind <= 20 pts | 16.10 | 18.00 | 13.59 | 11.69 | 21 | 6.60 | -16.21 | 13.28 |
+| any FIB ext127 5m behind <= 20 pts | 10.26 | 12.92 | -2.56 | 7.47 | 58 | -1.79 | -4.86 | -2.24 |
+| fresh ARR BRK_CE 3m behind <= 20 pts | 9.24 | 8.13 | -3.76 | 9.16 | 63 | -7.44 | -16.44 | -3.28 |
+| any FIB ext127 5m behind <= 15 pts | 9.32 | 10.61 | 0.72 | 8.69 | 43 | 1.08 | -10.11 | -0.31 |
+| any FIB OTEzone 5m behind <= 5 pts | 7.66 | 15.92 | -4.21 | 9.98 | 22 | -10.75 | 14.90 | -3.90 |
+| mit SWG f5L 45s behind <= 5 pts | 7.97 | 3.31 | -5.21 | 3.54 | 457 | -4.50 | -2.80 | -1.75 |
 
 ### MV
 
 | location | PRE | Xp | L6M | SE | n_L6M | HOLD | Y26 | Ptgt_pp |
 |---|---|---|---|---|---|---|---|---|
-| any PIV behind <= 10 pts | 5.41 | 37.40 | -5.57 | 12.10 | 25 | -2.31 | -14.32 | -2.81 |
-| mit PIV behind <= 10 pts | 6.19 | 36.67 | -5.57 | 12.10 | 25 | -2.31 | -14.32 | -2.81 |
-| fresh FIB behind <= 15 pts | 10.49 | 12.80 | 4.92 | 6.72 | 74 | 1.51 | 19.62 | 3.53 |
-| any KZ behind <= 10 pts | 21.63 | 1.08 | 9.20 | 17.44 | 15 | -2.29 | -66.05 | 9.37 |
-| mit KZ behind <= 10 pts | 21.63 | 1.08 | 9.20 | 17.44 | 15 | -2.29 | -66.05 | 9.37 |
+| any PIV classic_P rth behind <= 10 pts | 5.41 | 37.40 | -5.57 | 12.10 | 25 | -2.31 | -14.32 | -2.81 |
+| mit PIV classic_P rth behind <= 10 pts | 6.19 | 36.67 | -5.57 | 12.10 | 25 | -2.31 | -14.32 | -2.81 |
+| fresh FIB ret50 5m behind <= 15 pts | 10.49 | 12.80 | 4.92 | 6.72 | 74 | 1.51 | 19.62 | 3.53 |
+| any KZ kz_ny_L prev behind <= 10 pts | 21.63 | 1.08 | 9.20 | 17.44 | 15 | -2.29 | -66.05 | 9.37 |
+| mit KZ kz_ny_L prev behind <= 10 pts | 21.63 | 1.08 | 9.20 | 17.44 | 15 | -2.29 | -66.05 | 9.37 |
 | fresh any 30s POI behind <= 2 pts | 5.27 | 5.80 | -9.10 | 4.45 | 222 | -8.00 | -29.20 | -7.66 |
-| mit ARR behind <= 2 pts | 6.33 | 6.45 | -5.83 | 4.84 | 157 | -6.79 | -13.71 | -4.20 |
-| any ARR behind <= 2 pts | 6.29 | 6.06 | -6.49 | 4.62 | 159 | -7.75 | -13.71 | -4.90 |
+| mit ARR FVG_CE 3m behind <= 2 pts | 6.33 | 6.45 | -5.83 | 4.84 | 157 | -6.79 | -13.71 | -4.20 |
+| any ARR FVG_CE 3m behind <= 2 pts | 6.29 | 6.06 | -6.49 | 4.62 | 159 | -7.75 | -13.71 | -4.90 |
 
 ### MA
 
 | location | PRE | Xp | L6M | SE | n_L6M | HOLD | Y26 | Ptgt_pp |
 |---|---|---|---|---|---|---|---|---|
-| any SWG behind <= 15 pts | 16.72 | 63.69 | -27.77 | 15.26 | 397 | -29.05 | -21.33 | -15.84 |
+| any SWG f3L 30s behind <= 15 pts | 16.72 | 63.69 | -27.77 | 15.26 | 397 | -29.05 | -21.33 | -15.84 |
 | fresh any 30s POI behind <= 20 pts | 31.07 | 63.45 | 28.31 | 18.29 | 398 | 31.02 | 67.71 | 21.69 |
 | any any 30s POI behind <= 2 pts | 20.74 | 64.19 | 7.59 | 29.76 | 403 | 4.89 | 66.93 | 4.59 |
 | any any PRF-class POI behind <= 20 pts | 21.50 | 63.45 | 2.96 | 11.45 | 394 | -6.13 | -15.59 | 0.72 |
-| mit SWG behind <= 20 pts | 14.13 | 63.57 | -7.76 | 20.85 | 399 | 8.93 | -55.49 | -8.11 |
-| any ARR behind <= 20 pts | 29.17 | 48.95 | -29.14 | 21.67 | 402 | -12.64 | -55.49 | -25.77 |
-| mit ARR behind <= 15 pts | 38.49 | 8.50 | 16.45 | 24.72 | 400 | 23.96 | -15.03 | 11.89 |
+| mit SWG f3H 30s behind <= 20 pts | 14.13 | 63.57 | -7.76 | 20.85 | 399 | 8.93 | -55.49 | -8.11 |
+| any ARR iplFVG 45s behind <= 20 pts | 29.17 | 48.95 | -29.14 | 21.67 | 402 | -12.64 | -55.49 | -25.77 |
+| mit ARR iplFVG 30s behind <= 15 pts | 38.49 | 8.50 | 16.45 | 24.72 | 400 | 23.96 | -15.03 | 11.89 |
 | mit any SWG-class POI behind <= 2 pts | 25.08 | 27.29 | -0.04 | 18.03 | 391 | 2.67 | -25.79 | -1.77 |
 
 ## 6. Drift by quarter of the top-10 pooled locations (lift in pts per contract, N)
 
 | location | 2023Q2 | 2023Q3 | 2023Q4 | 2024Q1 | 2024Q2 | 2024Q3 | 2024Q4 | 2025Q1 | 2025Q2 | 2025Q3 | 2025Q4 | 2026Q1 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| any ORB behind <= 20 pts | 13.1 | 12.1 | 10.4 | 30.1 | -10.9 | 11.1 | 13.7 | -0.6 | -9.5 | -13.0 | -0.4 | 4.1 |
-| mit ORB behind <= 20 pts | 13.1 | 12.1 | 10.4 | 30.1 | -10.9 | 11.1 | 13.7 | -0.6 | -9.5 | -13.0 | -0.4 | 4.1 |
+| any ORB Lx1 30m behind <= 20 pts | 13.1 | 12.1 | 10.4 | 30.1 | -10.9 | 11.1 | 13.7 | -0.6 | -9.5 | -13.0 | -0.4 | 4.1 |
+| mit ORB Lx1 30m behind <= 20 pts | 13.1 | 12.1 | 10.4 | 30.1 | -10.9 | 11.1 | 13.7 | -0.6 | -9.5 | -13.0 | -0.4 | 4.1 |
 | book flag=dflip10 | 3.3 | 2.3 | 4.0 | 1.8 | 5.2 | 5.8 | 1.2 | 3.7 | 5.1 | 2.9 | 5.3 | -8.6 |
-| fresh ARR behind <= 5 pts | 3.4 | 8.2 | 10.2 | 10.7 | 6.4 | 1.7 | 0.7 | -1.0 | 6.6 | -3.4 | 1.7 | 2.7 |
-| mit FIB behind <= 5 pts | 2.7 | 12.6 | 7.0 | 3.8 | 8.3 | 14.9 | 2.7 | 16.8 | 5.8 | 5.3 | -4.1 | -26.0 |
+| fresh ARR iplFVG 45s behind <= 5 pts | 3.4 | 8.2 | 10.2 | 10.7 | 6.4 | 1.7 | 0.7 | -1.0 | 6.6 | -3.4 | 1.7 | 2.7 |
+| mit FIB ote79_up 1h behind <= 5 pts | 2.7 | 12.6 | 7.0 | 3.8 | 8.3 | 14.9 | 2.7 | 16.8 | 5.8 | 5.3 | -4.1 | -26.0 |
 | PRF-class POI behind <= 10 AND book defS | 1.5 | 3.1 | 1.0 | -0.7 | 5.5 | 3.5 | 0.3 | 4.9 | 2.3 | -2.6 | -0.7 | 4.1 |
-| any FIB behind <= 5 pts | 2.8 | 11.3 | 5.3 | 3.8 | 11.4 | 16.0 | 3.4 | 18.2 | 3.0 | 7.3 | -4.1 | -24.0 |
-| mit SWG behind <= 10 pts | 12.4 | 10.0 | -0.5 | 4.5 | 3.1 | -1.4 | -0.9 | 2.0 | 4.3 | 1.8 | 2.0 | -2.4 |
-| mit MAS behind <= 20 pts | 13.3 | 18.5 | 10.8 | 1.6 | 3.9 | -13.3 | 0.4 | -0.3 | 5.9 | -7.0 | 12.0 | 4.8 |
-| fresh ARR behind <= 15 pts | 0.2 | 0.5 | 4.1 | 5.9 | 2.6 | 2.9 | -0.2 | 2.9 | 3.5 | -1.6 | 2.1 | 2.2 |
+| any FIB ote79_up 1h behind <= 5 pts | 2.8 | 11.3 | 5.3 | 3.8 | 11.4 | 16.0 | 3.4 | 18.2 | 3.0 | 7.3 | -4.1 | -24.0 |
+| mit SWG f7H 1m behind <= 10 pts | 12.4 | 10.0 | -0.5 | 4.5 | 3.1 | -1.4 | -0.9 | 2.0 | 4.3 | 1.8 | 2.0 | -2.4 |
+| mit MAS sma50 4h behind <= 20 pts | 13.3 | 18.5 | 10.8 | 1.6 | 3.9 | -13.3 | 0.4 | -0.3 | 5.9 | -7.0 | 12.0 | 4.8 |
+| fresh ARR iplFVG 45s behind <= 15 pts | 0.2 | 0.5 | 4.1 | 5.9 | 2.6 | 2.9 | -0.2 | 2.9 | 3.5 | -1.6 | 2.1 | 2.2 |
 
 ## 7. Session columns of the top-10 pooled (lift pts per contract: PRE | X' | L6M)
 
 | location | asia | close | london | nyam | nypm | pre |
 |---|---|---|---|---|---|---|
-| any ORB behind <= 20 pts | 2.8 | 18.7 | 9.5 | -36.1 | -23.5 | 74.0 | 6.6 | 5.8 | -18.4 | 2.5 | 10.5 | 6.0 | -5.4 | 6.7 | 8.9 | -14.0 | 28.5 | 41.5 |
-| mit ORB behind <= 20 pts | 2.8 | 18.7 | 9.5 | -36.1 | -23.5 | 74.0 | 6.6 | 5.8 | -18.4 | 2.5 | 10.5 | 6.0 | -5.4 | 6.7 | 8.9 | -14.0 | 28.5 | 41.5 |
+| any ORB Lx1 30m behind <= 20 pts | 2.8 | 18.7 | 9.5 | -36.1 | -23.5 | 74.0 | 6.6 | 5.8 | -18.4 | 2.5 | 10.5 | 6.0 | -5.4 | 6.7 | 8.9 | -14.0 | 28.5 | 41.5 |
+| mit ORB Lx1 30m behind <= 20 pts | 2.8 | 18.7 | 9.5 | -36.1 | -23.5 | 74.0 | 6.6 | 5.8 | -18.4 | 2.5 | 10.5 | 6.0 | -5.4 | 6.7 | 8.9 | -14.0 | 28.5 | 41.5 |
 | book flag=dflip10 | 7.6 | 3.1 | -5.1 | -37.9 | -26.4 | 59.0 | 4.1 | -2.3 | -3.5 | 1.1 | 4.7 | 5.9 | 6.0 | 6.5 | 0.8 | -1.4 | 4.4 | 15.5 |
-| fresh ARR behind <= 5 pts | 5.7 | 9.6 | -0.7 | 2.8 | -13.5 |  | -4.6 | 11.5 | -5.2 | 10.0 | 10.1 | 18.3 | 3.2 | 2.6 | -1.8 | 7.6 | 10.5 | 12.8 |
-| mit FIB behind <= 5 pts | 13.1 | -2.1 | -27.7 | 96.2 |  |  | 23.0 | 6.7 | 12.1 | 4.4 | 13.4 | -9.4 | -1.8 | 6.2 | -4.1 | -14.7 | 42.9 | 16.7 |
+| fresh ARR iplFVG 45s behind <= 5 pts | 5.7 | 9.6 | -0.7 | 2.8 | -13.5 |  | -4.6 | 11.5 | -5.2 | 10.0 | 10.1 | 18.3 | 3.2 | 2.6 | -1.8 | 7.6 | 10.5 | 12.8 |
+| mit FIB ote79_up 1h behind <= 5 pts | 13.1 | -2.1 | -27.7 | 96.2 |  |  | 23.0 | 6.7 | 12.1 | 4.4 | 13.4 | -9.4 | -1.8 | 6.2 | -4.1 | -14.7 | 42.9 | 16.7 |
 | PRF-class POI behind <= 10 AND book defS | 3.3 | -3.0 | -1.8 | 21.4 | -2.6 | -32.8 | 0.8 | 6.9 | -0.1 | 3.3 | 0.4 | 4.5 | 4.9 | 0.0 | -1.2 | 3.3 | 13.1 | 2.3 |
-| any FIB behind <= 5 pts | 15.4 | -4.9 | -29.5 | 96.2 |  |  | 24.1 | 3.9 | 15.1 | 3.0 | 14.4 | -7.8 | -0.6 | 6.3 | -4.1 | -14.7 | 42.9 | 16.7 |
-| mit SWG behind <= 10 pts | -1.0 | 6.2 | -2.4 | -3.8 | -28.2 | -10.9 | 2.1 | 18.8 | 2.2 | 4.2 | 8.0 | 0.3 | 1.4 | 2.8 | 2.5 | 3.5 | 3.7 | 4.1 |
-| mit MAS behind <= 20 pts | 7.6 | 11.4 | 11.0 |  | 19.9 |  | -9.9 | -5.1 | -7.1 | -5.6 | 20.7 | -2.9 | 1.9 | 21.9 | 27.2 | 23.4 | 1.5 | -48.5 |
-| fresh ARR behind <= 15 pts | 5.2 | 2.2 | -0.3 | -14.0 | -15.4 | -5.8 | 0.4 | 8.2 | -1.9 | 3.1 | 1.7 | 5.3 | 2.6 | -0.6 | -0.8 | 2.3 | 0.2 | 9.1 |
+| any FIB ote79_up 1h behind <= 5 pts | 15.4 | -4.9 | -29.5 | 96.2 |  |  | 24.1 | 3.9 | 15.1 | 3.0 | 14.4 | -7.8 | -0.6 | 6.3 | -4.1 | -14.7 | 42.9 | 16.7 |
+| mit SWG f7H 1m behind <= 10 pts | -1.0 | 6.2 | -2.4 | -3.8 | -28.2 | -10.9 | 2.1 | 18.8 | 2.2 | 4.2 | 8.0 | 0.3 | 1.4 | 2.8 | 2.5 | 3.5 | 3.7 | 4.1 |
+| mit MAS sma50 4h behind <= 20 pts | 7.6 | 11.4 | 11.0 |  | 19.9 |  | -9.9 | -5.1 | -7.1 | -5.6 | 20.7 | -2.9 | 1.9 | 21.9 | 27.2 | 23.4 | 1.5 | -48.5 |
+| fresh ARR iplFVG 45s behind <= 15 pts | 5.2 | 2.2 | -0.3 | -14.0 | -15.4 | -5.8 | 0.4 | 8.2 | -1.9 | 3.1 | 1.7 | 5.3 | 2.6 | -0.6 | -0.8 | 2.3 | 0.2 | 9.1 |
 
 ## 8. Method notes and caveats
 * Concurrency: the same signal is often in several books; week-clustered SEs are per book-stratified. Book-defended flags are from the l2set bit-planes (10-s windows, side-aligned); absorption/iceberg are rare (<1%). "Defended AT the POI" for POIs farther than the visible 10 levels (~2.5 pts) is a signal-second book flag plus the POI behind, not the size at the POI price.
