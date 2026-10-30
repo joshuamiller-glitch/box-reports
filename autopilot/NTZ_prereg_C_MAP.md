@@ -1,0 +1,14 @@
+# NTZ-1 PREREG group C (POI reversal map, descriptive) - 2026-10-30
+Agent NTZ-1 (T-NO-TRADE-ZONES). Registered BEFORE any outcome statistic (P(target), pts, touch/turn/move) of any POI stream was read. Only the POI features themselves (distances, ages, counts; no outcomes) and engine self-tests (market-at-signal == lock-engine base, 70/30 == cf_engine floor) had been computed.
+Data: 44,370 capped trades (books ST HM WT KB SM PE PB DN MV MA), signal second = k_in; label day <= 20260206; windows (own masks) Y26 20260101..0206, L6M 20250801..0206, HOLD 20250701..0206, PRE 20240201..20250630, X' 20230401..20240131, L3M 20251106..0206 (VIEW ONLY, never selects). UNTOUCHED never read.
+POI store: l2vast/ds3/out/poi_store/ (674 streams + round-number and book streams). AHEAD = POI between entry and target (distance from E to the near edge in the travel direction, <= td; direction-bearing POIs count ahead only if they support the OTHER side; neutral lines both); fresh = never touched since formation at the signal second; BEHIND = between entry and stop.
+## Cells (all reported, nothing dropped)
+stream (all 674 + round numbers x100/x50/x25/x10 + book streams) x variant {fresh, mitigated} x D in {5,10,20,40,60 (=any before target)} x group {ALL, each book, each session} x window {L3M, L6M, HOLD, Y26, PRE, X'}.
+Metrics: n; P(target) with POI ahead vs without; difference raw and ADJUSTED (stratified by book x td-bin(<30,30-45,45-59,60); standardised to the ahead group's strata mix); pts per contract (market base M and N) with / without; first-touch event study at the nearest fresh ahead POI: touch rate, P(turn): price retraces 5 / 10 pts back before trading 5 / 10 through within 60 min, mean move over 5/15/30/60 min; the same for the random-level placebo (distance distribution preserved, permuted within book; subset defined by the placebo distance <= D).
+Book split (support vs none) of the touch statistics for the ranked top list only (ldp10s sample at the last 10-s sample before the touch; descriptive, uses information after the signal, NOT a rule input).
+## Ranking ("most trusted reversal spots")
+Key: ADJUSTED lowering of P(target), fresh, D=20, pooled all books, computed on PRE u X' only; eligibility n_ahead >= 200 in PRE and >= 100 in X', same sign in both. Reported beside it (single look, no re-ranking): L6M, HOLD, Y26, L3M (view). Per-book and per-session lists use the same key with n_ahead >= 60 in PRE u X'. Multiplicity: the number of streams x D x variant evaluated is stated; RC over the ranking family on weekly data reported; cumulative count added to UF_TRIALS (side=ntz).
+## Placebos
+random-level (above); shuffled-day POI (POI distances re-assigned across days within book, adjusted diff recomputed, 100 draws, rank of the real value) for the top-20 list.
+## Plain-line template
+"a <book> signal whose target lies beyond <POI> (fresh) reaches it X% of the time vs Y% otherwise (L6M, n, td-adjusted)".
