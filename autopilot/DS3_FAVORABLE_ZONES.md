@@ -622,6 +622,9 @@ LightGBM (fixed: 300 trees, depth 4, lr 0.03, min leaf 100, subsample/colsample 
 | real | graded | 68% | 235.7 | 0.70 | -0.19 [-2.16,1.77] | 2.80 | -0.19 | -0.18 | -0.19 | 0.06 | -0.41 | -2.28 | -1.28 | -390 | -25695 / -24137 / -765 |
 | real | takeonly | 68% | 235.7 | 0.68 | -0.34 [-1.57,0.89] | 1.75 | -0.34 | -0.33 | -0.34 | -0.07 | -0.29 | -1.30 | -0.92 | -446 | -29895 / -24577 / -12606 |
 | real | sizeonly | 100% | 347.9 | 1.02 | 0.09 [-0.64,0.82] | 1.04 | 0.09 | 0.10 | 0.10 | 0.09 | -0.09 | -0.67 | -0.27 | 56 | 9535 / 4263 / 2602 |
+| roll12 | graded | 67% | 233.6 | 0.69 | 0.73 [-0.99,2.45] | 2.45 | 0.74 | 0.71 | 0.74 | 0.17 | 0.52 | -2.15 | -0.09 | -178 | -13413 / -6136 / -11962 |
+| roll12 | takeonly | 67% | 233.6 | 0.67 | 0.28 [-0.52,1.08] | 1.14 | 0.29 | 0.27 | 0.28 | -0.35 | 0.09 | -0.10 | 0.14 | -307 | -19658 / -16701 / -19658 |
+| roll12 | sizeonly | 100% | 347.9 | 1.02 | 0.31 [-0.53,1.15] | 1.20 | 0.31 | 0.30 | 0.31 | 0.35 | 0.30 | -1.29 | -0.16 | 129 | -1780 / 3200 / 2783 |
 | noloc | graded | 70% | 245.2 | 0.75 | 0.44 [-0.80,1.68] | 1.77 | 0.44 | 0.41 | 0.43 | -0.96 | 0.59 | -0.07 | 1.22 | -171 | -9978 / -4969 / -35245 |
 | noloc | takeonly | 70% | 245.2 | 0.70 | 0.01 [-0.91,0.94] | 1.32 | 0.02 | -0.00 | 0.01 | -0.06 | 0.15 | 0.29 | 0.52 | -331 | -17381 / -12587 / -21496 |
 | noloc | sizeonly | 100% | 347.9 | 1.04 | 0.31 [-0.30,0.91] | 0.87 | 0.31 | 0.30 | 0.31 | -0.64 | 0.32 | -0.25 | 0.53 | 160 | 2151 / -992 / -23148 |
@@ -630,29 +633,29 @@ Shuffled-location placebo (S73): rank of the real location model among the shuff
 
 | policy | window | real | no_location_model | shuffled_mean | shuffled_max | n_draws | rank |
 |---|---|---|---|---|---|---|---|
-| graded | PRE | 0.06 | -0.96 |  |  | 0 |  |
-| graded | HOLD | -0.41 | 0.59 |  |  | 0 |  |
-| graded | L6M | -0.19 | 0.44 |  |  | 0 |  |
-| sizeonly | PRE | 0.09 | -0.64 |  |  | 0 |  |
-| sizeonly | HOLD | -0.09 | 0.32 |  |  | 0 |  |
-| sizeonly | L6M | 0.09 | 0.31 |  |  | 0 |  |
-| takeonly | PRE | -0.07 | -0.06 |  |  | 0 |  |
-| takeonly | HOLD | -0.29 | 0.15 |  |  | 0 |  |
-| takeonly | L6M | -0.34 | 0.01 |  |  | 0 |  |
+| graded | PRE | 0.06 | -0.96 | 0.62 | 1.26 | 10 | 11/11 |
+| graded | HOLD | -0.41 | 0.59 | 1.13 | 1.87 | 10 | 11/11 |
+| graded | L6M | -0.19 | 0.44 | 0.95 | 1.71 | 10 | 11/11 |
+| sizeonly | PRE | 0.09 | -0.64 | 0.28 | 0.45 | 10 | 10/11 |
+| sizeonly | HOLD | -0.09 | 0.32 | 0.41 | 0.64 | 10 | 11/11 |
+| sizeonly | L6M | 0.09 | 0.31 | 0.34 | 0.60 | 10 | 11/11 |
+| takeonly | PRE | -0.07 | -0.06 | 0.26 | 0.75 | 10 | 10/11 |
+| takeonly | HOLD | -0.29 | 0.15 | 0.59 | 1.49 | 10 | 11/11 |
+| takeonly | L6M | -0.34 | 0.01 | 0.50 | 1.28 | 10 | 11/11 |
 
 Same placebo on the lock-engine stack ($/wk vs the S73 floor, window means):
 
 | policy | window | real_stackD | no_location_stackD | shuffled_mean | shuffled_max | n_draws | rank |
 |---|---|---|---|---|---|---|---|
-| graded | PRE | -765 | -35245 |  |  | 0 |  |
-| graded | HOLD | -24137 | -4969 |  |  | 0 |  |
-| graded | L6M | -25695 | -9978 |  |  | 0 |  |
-| sizeonly | PRE | 2602 | -23148 |  |  | 0 |  |
-| sizeonly | HOLD | 4263 | -992 |  |  | 0 |  |
-| sizeonly | L6M | 9535 | 2151 |  |  | 0 |  |
-| takeonly | PRE | -12606 | -21496 |  |  | 0 |  |
-| takeonly | HOLD | -24577 | -12587 |  |  | 0 |  |
-| takeonly | L6M | -29895 | -17381 |  |  | 0 |  |
+| graded | PRE | -765 | -35245 | -10028 | 2716 | 10 | 2/11 |
+| graded | HOLD | -24137 | -4969 | 7847 | 23703 | 10 | 11/11 |
+| graded | L6M | -25695 | -9978 | 5371 | 21118 | 10 | 10/11 |
+| sizeonly | PRE | 2602 | -23148 | -838 | 6388 | 10 | 4/11 |
+| sizeonly | HOLD | 4263 | -992 | 1405 | 14599 | 10 | 5/11 |
+| sizeonly | L6M | 9535 | 2151 | 2753 | 17624 | 10 | 4/11 |
+| takeonly | PRE | -12606 | -21496 | -11334 | -1081 | 10 | 6/11 |
+| takeonly | HOLD | -24577 | -12587 | 1427 | 15483 | 10 | 11/11 |
+| takeonly | L6M | -29895 | -17381 | -3426 | 13254 | 10 | 11/11 |
 
 ### Base M0
 
@@ -669,29 +672,29 @@ Shuffled-location placebo (M0): rank of the real location model among the shuffl
 
 | policy | window | real | no_location_model | shuffled_mean | shuffled_max | n_draws | rank |
 |---|---|---|---|---|---|---|---|
-| graded | PRE | 0.11 | -0.99 |  |  | 0 |  |
-| graded | HOLD | -0.69 | 0.60 |  |  | 0 |  |
-| graded | L6M | -0.39 | 0.44 |  |  | 0 |  |
-| sizeonly | PRE | 0.32 | -0.59 |  |  | 0 |  |
-| sizeonly | HOLD | -0.40 | 0.27 |  |  | 0 |  |
-| sizeonly | L6M | -0.33 | 0.19 |  |  | 0 |  |
-| takeonly | PRE | -0.37 | -0.15 |  |  | 0 |  |
-| takeonly | HOLD | -0.10 | 0.24 |  |  | 0 |  |
-| takeonly | L6M | 0.10 | 0.19 |  |  | 0 |  |
+| graded | PRE | 0.11 | -0.99 | 0.86 | 1.32 | 5 | 6/6 |
+| graded | HOLD | -0.69 | 0.60 | 1.60 | 1.84 | 5 | 6/6 |
+| graded | L6M | -0.39 | 0.44 | 1.34 | 1.65 | 5 | 6/6 |
+| sizeonly | PRE | 0.32 | -0.59 | 0.41 | 0.51 | 5 | 5/6 |
+| sizeonly | HOLD | -0.40 | 0.27 | 0.53 | 0.68 | 5 | 6/6 |
+| sizeonly | L6M | -0.33 | 0.19 | 0.44 | 0.55 | 5 | 6/6 |
+| takeonly | PRE | -0.37 | -0.15 | 0.34 | 0.70 | 5 | 6/6 |
+| takeonly | HOLD | -0.10 | 0.24 | 0.88 | 1.05 | 5 | 6/6 |
+| takeonly | L6M | 0.10 | 0.19 | 0.75 | 0.98 | 5 | 6/6 |
 
 Same placebo on the lock-engine stack ($/wk vs the M0 floor, window means):
 
 | policy | window | real_stackD | no_location_stackD | shuffled_mean | shuffled_max | n_draws | rank |
 |---|---|---|---|---|---|---|---|
-| graded | PRE | -5029 | -45917 |  |  | 0 |  |
-| graded | HOLD | -26258 | 4653 |  |  | 0 |  |
-| graded | L6M | -28633 | 391 |  |  | 0 |  |
-| sizeonly | PRE | 8542 | -18511 |  |  | 0 |  |
-| sizeonly | HOLD | -19795 | -6191 |  |  | 0 |  |
-| sizeonly | L6M | -21726 | -7950 |  |  | 0 |  |
-| takeonly | PRE | -18113 | -24399 |  |  | 0 |  |
-| takeonly | HOLD | -19585 | 168 |  |  | 0 |  |
-| takeonly | L6M | -19493 | -423 |  |  | 0 |  |
+| graded | PRE | -5029 | -45917 | -10698 | 7265 | 5 | 2/6 |
+| graded | HOLD | -26258 | 4653 | 24851 | 29769 | 5 | 6/6 |
+| graded | L6M | -28633 | 391 | 19820 | 26534 | 5 | 6/6 |
+| sizeonly | PRE | 8542 | -18511 | -6265 | -2451 | 5 | 1/6 |
+| sizeonly | HOLD | -19795 | -6191 | 21684 | 32476 | 5 | 6/6 |
+| sizeonly | L6M | -21726 | -7950 | 20625 | 29688 | 5 | 6/6 |
+| takeonly | PRE | -18113 | -24399 | -9796 | 1338 | 5 | 5/6 |
+| takeonly | HOLD | -19585 | 168 | 919 | 19115 | 5 | 6/6 |
+| takeonly | L6M | -19493 | -423 | -3341 | 14341 | 5 | 6/6 |
 
 Top features at the LAST re-fit (S73, anchored; gain-count importance): ptsrange_1h (165), ptsrange_15m (136), disc_1d (127), ptsrange_4h (121), week_rng (108), pos_week (103), disc_pweek (101), disc_pday (101), disc_4h (98), pos_1d (93), disc_week (92), ptsrange_1d (90), disc_1h (81), disc_5m (80), pos_1h (76)
 
