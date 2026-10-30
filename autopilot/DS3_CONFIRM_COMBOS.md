@@ -104,3 +104,28 @@ qv header (one row per candidate; promote_ok False when any column is missing; c
 | THEN60s(iFVG|15s+FVG|15s) | c2_far|F0.7 | KB | 2.867 | 2.293 | 3.474 | 3.150 | 2.867 | 2.844 | 2.975 | 1.879 | 44.893 | 0.656 | 2038519 | 0.000 | Y | 1.000 | 0.226 | 5/201 | None | None | None | 0.600 | None | None | 12/12 | THEN60s(iFVG|15s+FVG|15s) then c2_far|F0.7 adds +2.87 pts/contract (all KB signals, L6M) | False |
 | THEN60s(iplFVG|45s+iFVG|15s) | c2_mid|F0.7 | KB | 2.822 | 2.216 | 3.453 | 3.246 | 2.822 | 2.771 | 2.703 | 2.057 | 44.893 | 0.658 | 2038519 | 0.000 | Y | 1.000 | 0.226 | 13/201 | None | None | None | 0.618 | None | None | 12/12 | THEN60s(iplFVG|45s+iFVG|15s) then c2_mid|F0.7 adds +2.82 pts/contract (all KB signals, L6M) | False |
 | THEN300s(iplFVG|45s+iFVG|15s) | c2_far|F0.7 | KB | 2.866 | 2.146 | 3.644 | 3.372 | 2.866 | 2.903 | 2.828 | 1.794 | 44.893 | 0.704 | 2038519 | 0.000 | Y | 1.000 | 0.226 | 6/201 | None | None | None | 0.611 | None | None | 12/12 | THEN300s(iplFVG|45s+iFVG|15s) then c2_far|F0.7 adds +2.87 pts/contract (all KB signals, L6M) | False |
+
+## Stage stage1ENG  (2026-10-30T20:55Z)
+
+auto
+
+### PE: 3525 combinations x 17 variants = 59925 cells; PRE+X' selection, one recent look on the top 18 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.002 (K=59625). Tiers: BEST-AVAILABLE 23, CANDIDATE 7.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| THEN60s(FVG|15s+FVG|10m) | c2_mid|F0.7 | 39.1% | 467 | +7.53 (MDE 2.09) | +7.54 | +7.00 | +9.18 | +7.40 | +2.13 | +2.21 | 0.984 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| THEN60s(iplFVG|30s+FVG|10m) | c2_mid|F0.7 | 37.5% | 448 | +7.39 (MDE 2.16) | +7.46 | +7.26 | +9.32 | +7.31 | +1.95 | +2.65 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| THEN60s(FVG|15s+FVG|10m) | b_mid|F0.7 | 39.7% | 474 | +7.24 (MDE 2.08) | +7.10 | +6.81 | +8.65 | +6.88 | +2.05 | +1.05 | 0.590 | BEST-AVAILABLE | placebo |
+| THEN60s(iFVG|30s+OB|1m) | c2_far|F0.7 | 49.8% | 595 | +7.19 (MDE 1.94) | +6.98 | +7.72 | +7.09 | +5.97 | +3.07 | +2.50 | 0.033 | CANDIDATE |  |
+| THEN60s(iplFVG|30s+OB|1m) | b_far|F0.7 | 50.8% | 606 | +7.08 (MDE 1.70) | +6.75 | +7.05 | +7.38 | +5.65 | +2.96 | +2.29 | 0.016 | CANDIDATE |  |
+| THEN60s(iplFVG|30s+OB|1m) | c2_far|F0.7 | 51.3% | 612 | +7.04 (MDE 1.77) | +6.84 | +7.16 | +7.80 | +6.20 | +3.01 | +2.50 | 0.197 | BEST-AVAILABLE | placebo |
+| THEN60s(FVG|15s+OB|1m) | c2_far|F0.7 | 54.4% | 650 | +7.03 (MDE 1.65) | +6.81 | +7.70 | +7.02 | +5.15 | +3.34 | +2.82 | 0.016 | CANDIDATE |  |
+| THEN300s(iplFVG|30s+FVG|10m) | c2_mid|F0.7 | 38.3% | 457 | +7.01 (MDE 2.18) | +7.14 | +6.79 | +8.88 | +7.07 | +1.86 | +2.65 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| THEN300s(FVG|15s+FVG|10m) | c2_mid|F0.7 | 39.0% | 466 | +6.98 (MDE 1.95) | +6.94 | +6.49 | +8.63 | +7.01 | +1.81 | +2.21 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| THEN300s(iFVG|30s+OB|1m) | c2_far|F0.7 | 51.1% | 610 | +6.97 (MDE 1.80) | +6.70 | +7.91 | +6.70 | +5.59 | +2.96 | +2.50 | 0.590 | BEST-AVAILABLE | placebo |
+| THEN300s(iplFVG|30s+OB|1m) | c2_far|F0.7 | 52.5% | 627 | +6.82 (MDE 1.75) | +6.62 | +7.40 | +7.26 | +5.71 | +3.08 | +2.50 | 0.541 | BEST-AVAILABLE | placebo |
+| THEN60s(iFVG|30s+FVG|2m) | c2_far|F0.7 | 47.9% | 572 | +6.35 (MDE 1.82) | +6.34 | +6.24 | +7.79 | +6.00 | +2.48 | +1.81 | 0.951 | BEST-AVAILABLE | placebo |
+
+Plain sentence (best by all-signal gain): requiring iplFVG|30s THEN FVG|15s within 60 s before the signal enters (c2_far|F0.7) adds +5.10 pts per contract on the 73.2% of signals it fires on in the last 6 months (MDE 1.78), but +3.58 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +2.82; tier CANDIDATE.
+
