@@ -122,3 +122,4 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 [2026-10-29T21:26:45Z] USER REPLIES (replay rerun YES, section E rerun YES, D6 tags ST=S6 WT=W6 MA=MA6 CR=C6 HM carrier DS6/H6, Nov 1-s feed pull authorised via env key, EXP2 bracket NOT published, audit replies, exits/brackets/cutwait closed) saved to DIRECTIVE_REPLIES_20261029_2130.md; T-L2-ENTRY saved to DIRECTIVE_L2ENTRY_20261029.md
 [2026-10-29T21:27:42Z] launched REDO (replay months + section E), L2EA, L2EB; SIZING queued; Databento Nov feed: quote-first, weekly from 2026-11-02
 [2026-10-29T23:17:11Z] nightly 23:00Z re-publish done by lead: no change, THP_POLICY_20261030.txt copy
+[2026-10-30T00:06:45Z] USER DIRECTIVE T-L2-SETTINGS saved verbatim-condensed to DIRECTIVE_L2SETTINGS_20261029.md; launching L2SE (entry), L2SP (profit), L2SL (loss); JOINT after
