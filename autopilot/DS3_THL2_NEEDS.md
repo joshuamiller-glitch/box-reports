@@ -78,3 +78,6 @@ Sided with the trade (+ = with the trade); decision second T, 10-s rows; "win30"
 
 ## UF-PROFIT cycle 3 additions, 2026-10-30
 Nothing is requested for promotion (no cell passes). If the WIDEN-target lead (thin book ahead + ES price/book with the trade, 85% of target, to the next round-50 level) is re-tested forward, D6 would need: an order-modification path that moves the working target after entry; rel_ahead8 (ahead side, hour-normalised); ES mid (1-s) return over 60 s sided with the trade and es_imb5 sided. The sequence model needs a 60-s history of 1-s add/cancel/OFI/imbalance aggregates by level bucket and a model-scoring service - not requested (no information found).
+
+## UF-LOSS cycle 6 (2026-10-30): raw-MBO fields the remaining loss-side structure would need (nothing promoted; mbp-10 + 1-s aggregates exhausted)
+Order lifetime at best (add-to-cancel/fill time per order at level 1, fleeting share <= 100 ms / 1 s), cancel bursts (cancel count/size per 100 ms / 1 s at levels 1-3 per side), queue position and resting size AHEAD of the trade's stop and target price (full-depth rebuild beyond 10 levels), level age / order age, hidden-size reloads from order-ID execute-and-reappear. NQ GLBX.MDP3 mbo, L6M 2025-08-01..2026-02-06 first; free quotes in DS3_L2_UF_LOSS_C6.md section 6.
