@@ -1,4 +1,4 @@
-# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-29 18:19 ET)
+# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-30 18:15 ET)
 
 Weeks start Sunday 18:00 ET. W43 (10-19..10-23) informational, never counted; official = W44+. Live file: `<repo>/data/live/StratTrades_DualStrat2_<acct>.csv` (80 grouped trades, last exit 2026-10-26 10:44 ET). Verdicts: PROMOTE >= 6 weeks, z >= -1, sign right; RETIRE >= 8 weeks, z < -2; BEHIND z < -1; z = (realised - expected*n)/(expected SD*sqrt(n)).
 
@@ -9,7 +9,7 @@ Expectation $24,975/wk, SD $104,500/wk, ~35 trades/wk (REPORT_DS2_FIRM_V4 benchm
 | week | role | status | trades | realised $ | expected $ | per trade realised | per trade expected | z (week) | cum z (official) |
 |---|---|---|---|---|---|---|---|---|---|
 | 2026-W43 | info | COMPLETE | 39 | -184,580 | 24,975 | -4,733 | 714 | -2.01 | - |
-| 2026-W44 | official | IN PROGRESS | 22 | -47,620 | 24,975 | -2,165 | 714 | -0.69 | - |
+| 2026-W44 | official | COMPLETE | 22 | -47,620 | 24,975 | -2,165 | 714 | -0.69 | -0.69 |
 
 Set A vs Set B forward column (FWD_AB_SETS; flat natural fills on forward weeks; PENDING until the 1-s tape is extended):
 
@@ -28,15 +28,15 @@ Tape ends 2026-10-23 20:59:00 UTC (label day 20261023); verdict field: none: 4 f
 | cell | tier | object | start wk | weeks live | n trades | realised $ | expected $ | real/wk | exp/wk | per trade real | per trade exp | z | verdict | evaluator | W43 info $ |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | B01_SetB | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | 0 | 0 | 0 | - | 8,131 | - | - | - | ON TRACK (0 weeks live) | LIVE (FWD_AB_SETS B-A; natural fills) | 48,223 |
-| B05_SetB_pb3R_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | 0 | - | 9,066 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
-| B05_SetB_pb4R_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | 0 | - | 8,383 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
-| B05_SetB_pboff_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | 0 | - | 10,507 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
-| B06_SetB_pb2R_noprofit_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | 0 | - | 8,016 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
-| B06_SetB_pb3R_noprofit_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | 0 | - | 9,125 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
-| B06_SetB_pb4R_noprofit_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | 0 | - | 8,442 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
-| B06_SetB_pboff_noprofit_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | 0 | - | 10,566 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
-| B07_SetB_Rscaled_pb2R_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | 0 | - | 6,902 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
-| B07_SetB_Rscaled_pb4R_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | 0 | - | 8,344 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| B05_SetB_pb3R_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | 9,066 | - | 9,066 | - | - | - | AWAITING EVALUATOR [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| B05_SetB_pb4R_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | 8,383 | - | 8,383 | - | - | - | AWAITING EVALUATOR [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| B05_SetB_pboff_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | 10,507 | - | 10,507 | - | - | - | AWAITING EVALUATOR [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| B06_SetB_pb2R_noprofit_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | 8,016 | - | 8,016 | - | - | - | AWAITING EVALUATOR [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| B06_SetB_pb3R_noprofit_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | 9,125 | - | 9,125 | - | - | - | AWAITING EVALUATOR [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| B06_SetB_pb4R_noprofit_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | 8,442 | - | 8,442 | - | - | - | AWAITING EVALUATOR [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| B06_SetB_pboff_noprofit_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | 10,566 | - | 10,566 | - | - | - | AWAITING EVALUATOR [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| B07_SetB_Rscaled_pb2R_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | 6,902 | - | 6,902 | - | - | - | AWAITING EVALUATOR [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| B07_SetB_Rscaled_pb4R_vsA | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | 8,344 | - | 8,344 | - | - | - | AWAITING EVALUATOR [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
 | BRK_960_1080 | DEAD (was PASS) | sleeve | 2026-W44 | 0 | 0 | 0 | 0 | - | 9,707 | - | 106.06485074626862 | - | ON TRACK (0 weeks live) [WATCH ONLY: DEAD per S48-LEAD] | LIVE (script) | 104,027 |
 | COMB_c3_R | CANDIDATE (was PASS) | sleeve | 2026-W44 | 0 | 0 | 0 | 0 | - | 2,831 | - | 1262.066474820144 | - | ON TRACK (0 weeks live) | LIVE (script) | 22,335 |
 | ES_RSI2_t10 | PASS | sleeve | 2026-W44 | 0 | 0 | 0 | 0 | - | 12,559 | - | 1544.535 | - | ON TRACK (0 weeks live) [MERGED into DIPBUY_RSI2_2lot: same exposure, not an independent test] | LIVE (script; no forward trades yet / bars not extended) | 0 |
@@ -73,9 +73,9 @@ Tape ends 2026-10-23 20:59:00 UTC (label day 20261023); verdict field: none: 4 f
 | RTY_IBS_t20_n1 | DEAD (was CANDIDATE) | sleeve | 2026-W44 | 0 | 0 | 0 | 0 | - | 7,236 | - | 242.601860465117 | - | ON TRACK (0 weeks live) [WATCH ONLY: DEAD per S48-LEAD] | LIVE (script) | 12,154 |
 | RTY_RSI2_t10 | DEAD (was PASS) | sleeve | 2026-W44 | 0 | 0 | 0 | 0 | - | 16,009 | - | 712.8872727272733 | - | ON TRACK (0 weeks live) [WATCH ONLY: DEAD per S48-LEAD] | LIVE (script; no forward trades yet / bars not extended) | 0 |
 | YM_RSI2_t10 | CANDIDATE | sleeve | 2026-W44 | 0 | - | - | 0 | - | 8,274 | - | 521.8907692307694 | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | NOT EVALUABLE: no extended 1-min source for YM | - |
-| BK1_SETB_sizecredit | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
+| BK1_SETB_sizecredit | CANDIDATE | sizing/lock rule (risk set) | 2026-W44 | 1 | - | - | - | - | - | - | - | - | RECORD INCOMPLETE (no expect_mean_wk) [MERGED into B01_SetB: same exposure, not an independent test] | AWAITING EVALUATOR | - |
 | T14_S_s50_t1.5_n14 | CANDIDATE by user ruling 2026-10-25 | trade-modifier (shorts-only bracket) | 2026-W44 | 0 | 0 | 0 | 0 | - | 7,914 | - | 84 | - | ON TRACK (0 weeks live) | LIVE (script) | 47,950 |
-| T4.2_Y4 | CANDIDATE | execution change | 2026-W44 | 0 | - | - | 0 | - | 179 | - | 0.0503076242657505 | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| T4.2_Y4 | CANDIDATE | execution change | 2026-W44 | 1 | - | - | 179 | - | 179 | - | 0.0503076242657505 | - | AWAITING EVALUATOR | AWAITING EVALUATOR | - |
 | DIPBUY_RSI2_2lot | PASS | sleeve | 2026-W44 | 0 | 0 | 0 | 0 | - | 3,091 | - | - | - | ON TRACK (0 weeks live) | LIVE (script) | 14,890 |
 | ds3_TB1_ST_k15_P60_N | CANDIDATE | sleeve (NQ intraday trend book, standalone) | 2026-W44 | 0 | - | - | 0 | - | 10,933 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | NOT EVALUABLE: no evaluator wired for ds3_TB1_ST_k15_P60_N (ORB / overnight-drift / unknown variant) | - |
 | ds3_TB7_ORBNY_k3_P60_N | CANDIDATE | sleeve (NQ intraday trend book, standalone) | 2026-W44 | 0 | - | - | 0 | - | 6,866 | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | NOT EVALUABLE: no evaluator wired for ds3_TB7_ORBNY_k3_P60_N (ORB / overnight-drift / unknown variant) | - |
@@ -101,7 +101,7 @@ Tape ends 2026-10-23 20:59:00 UTC (label day 20261023); verdict field: none: 4 f
 | ds3_TE_TE7_kelt3m_n20_m1.0 | CANDIDATE | signal (entry into DS2 bracket, standalone book; T-ENTRY) | 2026-W44 | 0 | 0 | 0 | 0 | - | 17,235 | - | - | - | ON TRACK (0 weeks live) | LIVE (script) | 33,725 |
 | ds3_TE_TE7_kelt3m_n20_m1.5 | CANDIDATE | signal (entry into DS2 bracket, standalone book; T-ENTRY) | 2026-W44 | 0 | 0 | 0 | 0 | - | 13,416 | - | - | - | ON TRACK (0 weeks live) [MERGED into ds3_TE_TE1_kelt_3m: same exposure, not an independent test] | LIVE (script) | -14,081 |
 | ds3_TE_TE7_kelt3m_n30_m1.0 | CANDIDATE | signal (entry into DS2 bracket, standalone book; T-ENTRY) | 2026-W44 | 0 | 0 | 0 | 0 | - | 13,603 | - | - | - | ON TRACK (0 weeks live) | LIVE (script) | 10,500 |
-| ds3_TF1_FOMC_NY_block | CANDIDATE | trade-modifier (entry filter on NQ NY-window trend entries) | 2026-W44 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
+| ds3_TF1_FOMC_NY_block | CANDIDATE | trade-modifier (entry filter on NQ NY-window trend entries) | 2026-W44 | 1 | - | - | - | - | - | - | - | - | RECORD INCOMPLETE (no expect_mean_wk) | AWAITING EVALUATOR | - |
 | ds3_TE2_GC_KEL_k15 | CANDIDATE | sleeve (GC 15-min intraday trend book, standalone) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | NOT EVALUABLE: no evaluator wired for ds3_TE2_GC_KEL_k15 (ORB / overnight-drift / unknown variant) | - |
 | ds3_TE2_GC_VWAP_k15 | CANDIDATE | sleeve (GC 15-min intraday trend book, standalone) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | NOT EVALUABLE: no evaluator wired for ds3_TE2_GC_VWAP_k15 (ORB / overnight-drift / unknown variant) | - |
 | ds3_TA1__TE1_kelt_3m__wide | CANDIDATE | signal (entry + regime gate; gate execution-server-only) | 2026-W45 | 0 | - | - | - | - | - | - | - | - | ON TRACK (0 weeks live; AWAITING EVALUATOR) | AWAITING EVALUATOR | - |
@@ -370,16 +370,16 @@ Evaluation basis for the three bar-based books: x_te replay on the extended NQ t
 
 ## DS3 live (Sim leader; DS3 file) - realised vs paper_all expectation, per book and total
 
-DS3 file(s): 2; 56 grouped trades; last exit 2026-10-29 14:52 ET. Expectations are the paper_all values at the registered lots, scaled per book by median live qty / registered lots: KB 16,863/wk SD 59,362 (x1.00); PE 15,248/wk SD 49,890 (x0.20); SM 8,749/wk SD 35,698 (x1.00). Total SD assumes independent books (sqrt of summed variances; actual correlation >0 makes the true SD larger). Expectations are selection-inflated (best of many cells); 
+DS3 file(s): 2; 76 grouped trades; last exit 2026-10-30 14:56 ET. Expectations are the paper_all values at the registered lots, scaled per book by median live qty / registered lots: KB 16,863/wk SD 59,362 (x1.00); PE 15,248/wk SD 49,890 (x0.20); SM 8,749/wk SD 35,698 (x1.00). Total SD assumes independent books (sqrt of summed variances; actual correlation >0 makes the true SD larger). Expectations are selection-inflated (best of many cells); 
 
 Start week 2026-W44 (first entry 10-26 13:03 ET); weeks count once complete (Friday 17:00 ET). Verdict: PROMOTE >=6 wks z>=-1 right sign; RETIRE >=8 wks z<-2; BEHIND z<-1.
 
 | book | week | complete | trades | exp trades | realised $ | expected $ | per trade real | z (week) | cum weeks | cum z | verdict |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| KB | 2026-W44 | no | 14 | 26.8 | 17,635 | 16,863 | 1,260 | +0.01 | 0 | - | in progress |
-| PE | 2026-W44 | no | 40 | 27.3 | 10,640 | 3,050 | 266 | +0.76 | 0 | - | in progress |
-| SM | 2026-W44 | no | 2 | 12.2 | 8,080 | 8,749 | 4,040 | -0.02 | 0 | - | in progress |
-| TOTAL | 2026-W44 | no | 56 | 66.3 | 36,355 | 28,662 | 649 | +0.11 | 0 | - | in progress |
+| KB | 2026-W44 | yes | 14 | 26.8 | 17,635 | 16,863 | 1,260 | +0.01 | 1 | +0.01 | ON TRACK |
+| PE | 2026-W44 | yes | 60 | 27.3 | 21,735 | 3,050 | 362 | +1.87 | 1 | +1.87 | ON TRACK |
+| SM | 2026-W44 | yes | 2 | 12.2 | 8,080 | 8,749 | 4,040 | -0.02 | 1 | -0.02 | ON TRACK |
+| TOTAL | 2026-W44 | yes | 76 | 66.3 | 47,450 | 28,662 | 624 | +0.27 | 1 | +0.27 | ON TRACK |
 
 
 ## DS5 live (paper mix KB5 DN8 SM7 PE5 MV4 = 29 lots; DS5 file) - realised vs paper_all expectation, per book and total
@@ -392,8 +392,8 @@ Start week 2026-W44 (first entry 10-27 18:05 ET); weeks count once complete (Fri
 
 | book | week | complete | trades | exp trades | realised $ | expected $ | per trade real | z (week) | cum weeks | cum z | verdict |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| MIX | 2026-W44 | no | 1 | 104.8 | 65 | 46,741 | 65 | -0.49 | 0 | - | in progress |
-| TOTAL | 2026-W44 | no | 1 | 104.8 | 65 | 46,741 | 65 | -0.49 | 0 | - | in progress |
+| MIX | 2026-W44 | yes | 1 | 104.8 | 65 | 46,741 | 65 | -0.49 | 1 | -0.49 | ON TRACK |
+| TOTAL | 2026-W44 | yes | 1 | 104.8 | 65 | 46,741 | 65 | -0.49 | 1 | -0.49 | ON TRACK |
 
 
 ## Live stop-join rate and slip (Set A stop exits; file `StratTrades_DualStrat2_<acct>.csv`)
@@ -421,7 +421,7 @@ Other forward shadows (DS15, S130, P30/P36, ...) remain in LEAGUE.md / ap_m2_pap
 
 Object: every live ST trade closed by the TH LOSS-side cut (exit name ends LossExit), replayed WITHOUT the cut on the real mbp-10 tape (exec_engine_l2, live entry as anchor, 60/60 bracket, 16:55 ET flatten, stop exits through the live stop-join model XJ3). Paired difference d = cut P&L - no-cut P&L per cut trade (+ = TH helped). Weeks start Sunday 18:00 ET; W42 is partial (trading days 10-13..10-16), W43 informational. Only complete rows from 10-13 on; days without mbp-10 on disk are PENDING_L2 (never imputed).
 
-Identification: exitName ends 'LossExit' (loss-side TH cut; ProfitExit = profit-side cut) in data/live/StratTrades_*.csv, trading day >= 20261013 (entries from 2026-10-12 18:00 ET). Cuts by file/book: DualStrat2 file HM CUT_LOSS n=3; DualStrat2 file HM CUT_PROFIT n=1; DualStrat2 file ST CUT_LOSS n=16; DualStrat2 file ST CUT_PROFIT n=6; DualStrat2 file WT CUT_LOSS n=9; Sim file HM CUT_LOSS n=31; Sim file ST CUT_LOSS n=36; Sim file WT CUT_LOSS n=62; pair file (DualStrat) ST CUT_LOSS n=46. Trace logs (nt8log_trace.*, nt8log_latest): 5 files, 219 LossExit lines (trace window ends before the 10-23 TH-on period; the CSV is the identification of record).
+Identification: exitName ends 'LossExit' (loss-side TH cut; ProfitExit = profit-side cut) in data/live/StratTrades_*.csv, trading day >= 20261013 (entries from 2026-10-12 18:00 ET). Cuts by file/book: DualStrat2 file HM CUT_LOSS n=3; DualStrat2 file HM CUT_PROFIT n=1; DualStrat2 file ST CUT_LOSS n=16; DualStrat2 file ST CUT_PROFIT n=6; DualStrat2 file WT CUT_LOSS n=9; Sim file HM CUT_LOSS n=31; Sim file ST CUT_LOSS n=36; Sim file WT CUT_LOSS n=62; pair file (DualStrat) ST CUT_LOSS n=46. Trace logs (nt8log_trace.*, nt8log_latest): 5 files, 33 LossExit lines (trace window ends before the 10-23 TH-on period; the CSV is the identification of record).
 
 | week | ST loss-cuts | replayed | pending L2 | mean d pts/trade | mean d $/trade | 95% CI $/trade (session-block bootstrap, 10,000) | d $ in week | MDE80 $ for this week alone | P(d>0) | DualStrat2 file n / d $ | pair file n / d $ |
 |---|---|---|---|---|---|---|---|---|---|---|---|

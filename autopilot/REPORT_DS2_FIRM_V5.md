@@ -308,7 +308,7 @@ No cell meets the strict objective (WF mean >= benchmark AND maxDD <= 0.7 x benc
 <!--F1-ADDENDUM-BEGIN-->
 ## F1 addendum - live vs replay (rewritten on each data/live push; latest run below)
 
-### F1 addendum (data/live first push; generated 2026-10-29 22:13Z; live window 0001-01-01..2026-10-26, 82 DualStrat2 trades)
+### F1 addendum (data/live first push; generated 2026-10-30 22:13Z; live window 0001-01-01..2026-10-26, 82 DualStrat2 trades)
 
 **Live stop exits: N = 21** (StopJoin filled 8, StopJoinFallback 12, StopJoinRejected 1; plus 19 targets and 2 ComboLock exits). **Join rate** (filled / filled+fallback, rejected excluded) = 8/20 = **0.40, exact 95% CI [0.19, 0.64]**; counting the position-limit reject as a failure 8/21 = 0.38 [0.18, 0.62]. Replay assumption 0.78 lies OUTSIDE the live interval. 1 join attempt(s) were rejected by the broker (counted separately; the retained trace is the connect-time order history with state Rejected and no reason text - the position-limit cause is taken from the user). Earlier count quoted as '3/8' is not what the CSV shows.
 
