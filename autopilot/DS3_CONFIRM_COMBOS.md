@@ -229,3 +229,28 @@ White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.
 
 Plain sentence (best by all-signal gain): requiring FVG|45s AND FVG|30s before the signal enters (c2_far|F0.7) adds +4.70 pts per contract on the 56.5% of signals it fires on in the last 6 months (MDE 1.23), but +2.41 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +2.41; tier BEST-AVAILABLE.
 
+
+## Stage stage1ENG  (2026-10-30T23:01Z)
+
+auto
+
+### DN: 3525 combinations x 17 variants = 59925 cells; PRE+X' selection, one recent look on the top 12 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.002 (K=59597). Tiers: BEST-AVAILABLE 30.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| THEN60s(iplFVG|15s+OB|2m) | c2_far|F0.7 | 36.2% | 254 | +8.31 (MDE 2.52) | +9.08 | +8.69 | +9.33 | +8.24 | +2.72 | +2.72 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| THEN60s(iplFVG|15s+OB|1m) | c2_far|F0.7 | 47.2% | 331 | +7.15 (MDE 1.91) | +7.62 | +9.06 | +8.33 | +7.02 | +3.16 | +2.88 | 1.000 | BEST-AVAILABLE | placebo |
+| THEN60s(FVG|15s+OB|1m) | c2_far|F0.7 | 50.1% | 351 | +7.09 (MDE 1.98) | +7.52 | +8.77 | +7.40 | +6.10 | +3.35 | +2.88 | 0.869 | BEST-AVAILABLE | placebo |
+| THEN60s(iplFVG|15s+OB|1m) | c2_mid|F0.7 | 54.2% | 380 | +7.00 (MDE 2.24) | +7.24 | +8.79 | +7.33 | +7.23 | +3.62 | +2.81 | 0.672 | BEST-AVAILABLE | placebo |
+| THEN60s(iplFVG|15s+OB|1m) | b_far|F0.7 | 46.4% | 325 | +7.00 (MDE 1.89) | +7.42 | +8.89 | +8.04 | +6.64 | +3.02 | +2.57 | 0.951 | BEST-AVAILABLE | placebo |
+| THEN60s(iplFVG|15s+iFVG|3m) | c2_far|F0.7 | 45.8% | 321 | +6.90 (MDE 2.05) | +7.46 | +7.71 | +7.94 | +7.66 | +2.92 | +2.72 | 1.000 | BEST-AVAILABLE | placebo |
+| THEN60s(iplFVG|15s+iFVG|5m) | c2_far|F0.7 | 41.2% | 289 | +6.86 (MDE 2.64) | +7.33 | +6.59 | +9.22 | +7.49 | +2.57 | +2.72 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| THEN300s(iplFVG|15s+OB|1m) | c2_far|F0.7 | 48.4% | 339 | +6.83 (MDE 1.91) | +7.27 | +8.66 | +7.72 | +6.44 | +3.09 | +2.88 | 0.967 | BEST-AVAILABLE | placebo |
+| THEN60s(iplFVG|15s+OB|1m) | b_mid|F0.7 | 53.8% | 377 | +6.79 (MDE 2.26) | +6.98 | +8.67 | +6.92 | +6.71 | +3.47 | +2.42 | 0.180 | BEST-AVAILABLE | placebo |
+| THEN60s(iplFVG|15s+OB|1m) | c2_near|F0.7 | 56.6% | 397 | +6.75 (MDE 2.46) | +6.87 | +7.60 | +6.95 | +7.01 | +3.65 | +2.66 | 0.590 | BEST-AVAILABLE | placebo |
+| THEN60s(iplFVG|15s+iplFVG|5m) | c2_far|F0.7 | 49.8% | 349 | +6.68 (MDE 2.52) | +7.49 | +5.79 | +8.04 | +6.34 | +3.12 | +2.72 | 0.967 | BEST-AVAILABLE | placebo |
+| THEN60s(iplFVG|15s+iFVG|3m) | c2_mid|F0.7 | 48.9% | 343 | +6.67 (MDE 1.93) | +7.23 | +7.83 | +7.53 | +6.77 | +3.04 | +2.37 | 0.984 | BEST-AVAILABLE | placebo |
+
+Plain sentence (best by all-signal gain): requiring iplFVG|15s THEN OB|1m within 60 s before the signal enters (c2_near|F0.7) adds +6.75 pts per contract on the 56.6% of signals it fires on in the last 6 months (MDE 2.46), but +3.65 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +2.66; tier BEST-AVAILABLE.
+
