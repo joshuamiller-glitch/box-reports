@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 15:51Z 10-30 (t+98.9 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 16:21Z 10-30 (t+99.4 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 3% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TH': 0.0}.
-Updated 2026-10-30T15:51:31Z. Box: CPU 52.7%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 25% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 22.7, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TH': 0.0}.
+Updated 2026-10-30T16:21:54Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -205,7 +205,7 @@ Updated 2026-10-30T15:51:31Z. Box: CPU 52.7%, slots busy 13/32, queue 0. Cores p
 | UF | ? | 0 | 0 / 0 | none | prereg |
 | WO | ? | 0 | 0 / 1488 | none | prereg |
 | ZEN | ? | 0 | 0 / 176 | none | prereg |
-| unattributed | - | 0.0 | - | - | - |
+| unattributed | - | 22.7 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -216,13 +216,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-10-30T15:49Z
+## TREND (TL) update 2026-10-30T16:19Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-30T15:47:04Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-30T16:17:05Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -784,3 +784,23 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - best in-sample: ABRA fixed oracle abs120|OR|none PRE +2.33 pts (IN-SAMPLE, RC p 0.66); GBM CV inside windows is NEGATIVE (-1.4..-2.0 pts).
 - best walk-forward: CANDIDATE gbm EV 12m monthly RP m1 chain +1.10 pts / +$231 per trade (MDE 1.84 / $317), fails best-of-490 RC (p 0.38); best PRE table +1.76 pts (MDE 3.7) DEAD; both below the frozen fixed bracket +2.34. 0 PASS / 1 CANDIDATE / 979 DEAD.
 - distilled table: policy_candidate.txt (NOT for live); retained gain >= 80% NOT met stably (45% EV-teacher, 80% vs RA teacher full chain but 8% in PRE). Report autopilot/DS3_ABR_C1_CORE.md.
+
+- 2026-10-30 18:00Z LEAD QUEUE: T-STACK-PARTIALS (autopilot/DIRECTIVE_STACK_PARTIALS_20261030.md) is QUEUED, not started: agent cap 10/10. Launches (agent SP-1) as soon as any running agent finishes (first one: SD-A/SD-C/CF-A/CF-B). Needs the exact lock engine l2set_joint + EINT1 confluence cells.
+
+- 2026-10-30 ~18:20Z LEAD: CF-ENG finished (stage 1: 560 cells, 0 PASS, floor not moved); T-STACK-PARTIALS now STARTED as agent SP-1 (agents 10/10).
+
+- 2026-10-30 18:40Z LEAD QUEUE: T-SIGNAL-DECAY REVERSE CONFIRMATION (autopilot/DIRECTIVE_REVERSE_CONFIRM_20261030.md) QUEUED as RC-1, starts at the next free agent slot; will use cf_engine streams (out/confirm/streams) mirrored.
+
+- 2026-10-30 19:05Z LEAD: RECENT_WINS standing report started: autopilot/RECENT_WINS.md (compiler l2vast/ds3/code/recent_wins/compile_recent_wins.py, empty until agents write rows; rewritten every 2 h by the lead). Closed-program re-read agent RW-1 QUEUED (cap 10/10).
+
+- 2026-10-30 19:30Z LEAD QUEUE: T-NO-TRADE-ZONES queued (NTZ-1); order in autopilot/AGENT_QUEUE.md: RC-1, RW-1, NTZ-1.
+
+- 2026-10-30 20:00Z LEAD QUEUE: T-FAVORABLE-ZONES queued as FZ-1 (#4), shares NTZ-1 POI store. Queue: RC-1, RW-1, NTZ-1, FZ-1.
+
+- 2026-10-30 20:20Z LEAD QUEUE: T-TREND-GATE queued as TG-1 (#5). Queue: RC-1, RW-1, NTZ-1, FZ-1, TG-1. 5 programs waiting on slots; cap 10 unchanged.
+
+- 2026-10-30 20:45Z LEAD: SD-A finished; RC-1 (reverse confirmation) STARTED. Queue now: RW-1, NTZ-1, FZ-1, TG-1.
+
+- 2026-10-30 21:00Z LEAD QUEUE: TREND_GATE ADDENDUM (STAT/CROSS/FLOW regime families) folded into TG-1. QUESTION for user (non-blocking): options-positioning daily file (dealer gamma sign/level, flip level, largest strikes) and any VIX/VX or intraday implied-vol history you can supply; otherwise named as gaps. Cross-asset (ES/RTY/YM, ZN/ZB, 6E, GC, CL) used only where already on disk.
+
+- 2026-10-30 21:30Z LEAD: QUANT-LAYER addendum applies to all programs; QL-1 (shared validity library) queued FIRST. Running agents notified. Header-column standard (section 5) is required for any promoted/CANDIDATE-RECENT cell.

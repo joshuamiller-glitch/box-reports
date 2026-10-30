@@ -1,0 +1,7 @@
+# AGENT_QUEUE (lead; agent cap 10). Launch in order when a slot frees (check ListAgents on each completion notification).
+0. QL-1  QUANT-LAYER shared validity library l2vast/ds3/code/quant/qv.py (White RC + Romano-Wolf, DSR, PBO/CSCV, purged k-fold+embargo, cluster/block-bootstrap CI, Newey-West, placebo set, sensitivity +-25/50% and 8-neighbour mean, breakeven cost, capacity, top-5% share, stack correlation, IC/calibration, latency 1s/3s) — launch FIRST at next free slot so every program imports one implementation
+1. [LAUNCHED 20:45Z] RC-1  T-SIGNAL-DECAY REVERSE CONFIRMATION  (DIRECTIVE_REVERSE_CONFIRM_20261030.md) — waits for SD-A report
+2. RW-1  RECENT_WINS closed-program re-read (DIRECTIVE_RECENT_WINS_20261030.md) — closed programs' best cells -> L3M rows
+3. NTZ-1 T-NO-TRADE-ZONES (DIRECTIVE_NO_TRADE_ZONES_20261030.md) — POI map (section C) first, then rules; uses cf_levels_* and CF-ENG streams
+4. FZ-1  T-FAVORABLE-ZONES (DIRECTIVE_FAVORABLE_ZONES_20261030.md) — shares NTZ-1's POI store; NTZ-1 builds the store (l2vast/ds3/out/poi_store/) with a 'behind'/'ahead' feature API, FZ-1 starts when NTZ-1's store is importable
+5. TG-1  T-TREND-GATE (DIRECTIVE_TREND_GATE_20261030.md) — note: EINT1 already scored trend-strength terciles (DS3_ENTRY_INTEL_A.md; 0 PASS, reversed before 2025); TG-1 must read it + dead_lookup first; trend map (section B) first  [ADDENDUM: DIRECTIVE_TREND_GATE_ADDENDUM_20261030.md — families STAT, CROSS, FLOW; data gaps: VIX/VX, ZN/ZB, DX, gold, crude only if on disk; $TICK/$ADD not on box; options positioning needs user file]

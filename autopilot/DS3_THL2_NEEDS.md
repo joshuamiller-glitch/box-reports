@@ -81,3 +81,10 @@ Nothing is requested for promotion (no cell passes). If the WIDEN-target lead (t
 
 ## UF-LOSS cycle 6 (2026-10-30): raw-MBO fields the remaining loss-side structure would need (nothing promoted; mbp-10 + 1-s aggregates exhausted)
 Order lifetime at best (add-to-cancel/fill time per order at level 1, fleeting share <= 100 ms / 1 s), cancel bursts (cancel count/size per 100 ms / 1 s at levels 1-3 per side), queue position and resting size AHEAD of the trade's stop and target price (full-depth rebuild beyond 10 levels), level age / order age, hidden-size reloads from order-ID execute-and-reappear. NQ GLBX.MDP3 mbo, L6M 2025-08-01..2026-02-06 first; free quotes in DS3_L2_UF_LOSS_C6.md section 6.
+
+## SD-A (T-SIGNAL-DECAY section A, 2026-10-30): invalidation features. NO rule reached CANDIDATE, so nothing is requested for D6 on this evidence. If an invalidation rule is ever promoted, D6 needs these per-book state features (bar-close only, the book's own recursions as in l2vast/ds3/code/decay/sd_state.py):
+* kb_inside_channel / kb_below_mid / kb_channel_flip (3-min Keltner n14 m1.0, ATR10, mid = EMA14 of 3m closes; completed 3m bar only), kb_breakbar_low (low/high of the 3m signal bar)
+* st_flip (1-min ST 120/2.0), st_fast_flip (120/1.0), st_near_line (|close - line| < 1 ATR120), st_line_stalled_N (line unchanged N bars), atr_regime (ATR14 / 20-day median of ATR14 > 1.5 or < 0.6); sm_* the same on 10-min ST n7 m3.0
+* hm_slope (HMA55(c - dayVWAP) change per bar), hm_hma55_recross (HMA20 vs HMA55 of c - VWAP), hm_vwap_back, ema200_flip
+* pe_pullback_extreme (lowest low / highest high between the EMA20 arming touch and the trigger), pe_regime (5-min ST 10/3), ema20_lost, kbmid_lost
+* generic: sigbar_extreme_lost_1m/3m/5m (close beyond the signal bar's extreme), bos_against_1m/5m/15m (close beyond the last confirmed 2/2 fractal swing), vwap_cross_against, st1m_flip_against, xbook_opposite (another live book's signal in the opposite direction at the bar close), mins_in_trade.
