@@ -154,3 +154,5 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 ## 2026-10-30 ~21:00Z USER DIRECTIVE: T-TREND-GATE ADDENDUM institutional regime measures (full text: autopilot/DIRECTIVE_TREND_GATE_ADDENDUM_20261030.md)
 
 ## 2026-10-30 ~21:30Z USER DIRECTIVE: QUANT-LAYER ADDENDUM (all programs) (full text: autopilot/DIRECTIVE_QUANT_LAYER_20261030.md)
+
+## 2026-10-30 ~22:55Z (wall clock) USER DIRECTIVE: 36-HOUR PLAN to Sunday 12:00 ET (full text: autopilot/DIRECTIVE_PLAN36_20261030.md)
