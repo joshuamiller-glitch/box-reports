@@ -182,3 +182,67 @@ Put "Needs D6" as a short column but cut "Why shadow" to 5-8 words per row.
 
 ## Pass-2 summary
 Safe to read after N1-N3, N5, N6, N8 are fixed (all one-line label or number edits). Re-run when ER-1 lands or v4 is written.
+
+---
+# PASS 3 - audit of DS3_SUNDAY_BRIEF.md v4 (1,370 words), BA-1, 2026-10-31 (appended; passes 1-2 kept; brief not edited)
+Sources added: DS3_UNIT_AUDIT (Brief table + notes), DS3_ER_SIZER_ROBUSTNESS (ER-1), DS3_SUNDAY_RISK (RK-1), DS3_L2_UF_ENTRY_C10/C11, DS3_DEFECT_SWEEP, DS3_CAPPED_RERUN, DS3_NO_TRADE_FINAL_2, DS3_DECAY_GAP, HM_FORWARD_FEED, FORWARD_SHADOW_RUNBOOK, MORNING.md. DS3_RERUN_B and DS3_BARS_3 were not read beyond headline greps (v4 cites neither).
+
+## Verdict (pass 3)
+**Safe to read after 6 small corrections (P3-1 .. P3-6); no number that drives the Sunday decision is wrong.** Pass-2 items N1-N10: N1, N2, N3, N4, N6 (p 0.055 removed), N7, N8, N9 (partly), N10 landed. Still open or new below. Word count 1,370 vs target 1,000-1,100: cuts in section D.
+
+## N1-N10 status
+| item | status in v4 |
+|---|---|
+| N1 per-book split list lot set | fixed ("research lots"; S6/W6 dropped) |
+| N2 mixed engines (ER +13.3/-10.9, 8-line +28.3/+25.7, "live +5.7") | fixed: UA-1 one-engine numbers (ER planned +8.6/+8.5, 8-line +3.9/+15.4); the zones-addendum figure is kept as a flagged side note: ok |
+| N3 hazard 3 lot labels | fixed ("(live+)"), but see P3-3 |
+| N4 ER sizer in hazard 4 | fixed (200% gross / 32% net; 107% top-5 from ER-1) |
+| N5 SS statistics under SS-2 headline | fixed except "Romano-Wolf (PRE) 0.79" and "cumulative-adjusted p 1.00" still SS (4 live books, static governors): relabel "(SS)" |
+| N6 stop-join p 0.055 | removed; row still says "for ST/HM": add "live = S6 at research/2.35 + H6 4/2" |
+| N7 lot labels | fixed for Asia cut, KB, 8-line; second-signal skip "+0.6 / +5.6" see P3-5 |
+| N8 MBO price, Q4 default | fixed ($214 L6M; Q4 [leave]) |
+| N9 unverified OFF claims | partly: "IC <= 0.03-0.07 vs break-even 0.3-0.65" matches L2-INFO (entry 0.042 vs 0.288, profit 0.069 vs 0.653, loss 0.065 vs 0.514); "29 cycles" not found; "0 of 85k cells" see P3-4 |
+| N10 M6/A6 six- vs eight-book | fixed (M6 -0.7 drop, A6 inconclusive from ER-1; A says "8 books") |
+
+## Figure checks
+- **Headline table** (+18.5/+16.2/+4.7/+12.5, MDE 17.4/16.8/13.4/14.7): matches SS-2 and RK-1. Correct.
+- **RK-1 summary:** means, SD, maxDD, worst-20 (L6M 24.0->42.6, SD 47->42, maxDD 92->27; HOLD 23.7->39.9, 144->93; PRE 17.7->22.4, 210->232, -874->-905) match RK-1 section 0 (maxDD there is week-cumulative; SS-2 daily-path maxDD is 98->102 L6M, 155->109 HOLD: say "week-cum"). Equal-risk +11.4k [+4.8, +17.7] and x1.083 match. Two over-statements: (P3-1) "D6 raises the tail in NO window": RK-1 PRE is "LEAVES (not distinguishable), D6 tail point estimate heavier" (worst-20 -31k, maxDD +23k; LIVE-CAL -87.5k, maxDD +43k). Replace by "D6 does not raise the tail distinguishably in any window; in PRE the point estimate is slightly heavier (worst-20 -905 vs -874, maxDD 232 vs 210)". (P3-2) "lowers it in L3M/L6M only through one week (2026-01-19)": RK-1: L3M CVaR5 is that week; L6M CVaR5 is the worst 2 weeks; HOLD LEAVES. Say "through one to two weeks (2026-01-19: -91.8k as-is vs -27.2k)" and add "HOLD, PRE, X' not distinguishable". "ER sizer alone is the only piece that heavies the tail" is right but only "alone on the stack" (ALL worst-20 -1593 vs -1218; inside D6 it is absorbed): add "alone".
+- **ER sizer rows (ER-1 correction):** "200 shuffled-ER draws never reach it (p 0.005)", "lot-factor-matched -2.0k", in-stack +12.5 (23.5) / HOLD +13.7 / PRE +9.5 / X' +0.8: match ER-1. The correction of my earlier statement (placebo +9k included the other five pieces) is accurate. Per-book verdicts in the row: ER-1 says P6 **INCONCLUSIVE (lean keep, p 0.065/0.060)**, K6 weak keep (running-max only), ST/WT KEEP but not live; v4 lists "P6 +6.0, K6 +2.1, ST +3.2, WT +3.1 keep": relabel P6 "lean keep (p 0.06)" and say ST/WT are not live (so "keep" has no live effect). **P3-3:** the in-stack figures are the "live+" lot set (ST, WT at research/2.35), the A table is "live" (no ST/WT); the ER row does not say so (hazard 3 does). Add "(live+: ST, WT at research/2.35)". Hazard 3's "+14.1k day-static; opener-fixed negative" match ER-1 (opener in-stack -8.7k L6M).
+- **UA-1 Brief-table figures:** ER alone running-max +19.3 live-session / +37.3 research; planned +8.6 / +8.5; KB running +3.2 / +8.1, planned +1.4 / +3.1; 8-line +3.9 / +15.4 (HOLD +12.4); Asia +9.1 live-session / +13.2 research; Native +1.5 live (CI +0.9..+2.3) / +4.1: all match. Note UA-1 is six books and says M6/A6 not merged; v4's A (8 books) vs C (six books) is stated: ok.
+- **PE rows (C11 erratum):** coded spec +3.29 L6M (HOLD +3.20, PRE +1.53, X' +0.63) vs pure wait +3.57: correct; "-0.65k, noise" matches (paired MDE ~1.8k); "the value is NOT trading the 40% unconfirmed signals": C11 says the 230 unconfirmed (34-40%) lose -14.9 pts/planned lot under the floor; the confirmed trades themselves lose by waiting (+2.71 vs floor +6.59): wording is ok but should be "the gain comes from skipping the unconfirmed 34-40%, not from the entry". Stack "+2.4 / +3.0": UA-1 PE-in-S73-line (live-session / research); C11 gives coded +2.9k research (x1.25 for 7 lots): consistent. RC 0.74 and "no live NY-PM PE lots" ok. v4 no longer shows the +0.92: good (pass-1 item 8 fixed).
+- **NY-PM end skip row (new):** numbers match NTE-1 (L6M +4,659, MDE 4,098; HOLD +3,790, PRE +975, X' +1,182, 2026 +4,070; market base, research lots). Issues: (P3-4a) section C header says "all inside MDE, all post-hoc": this row clears its MDE (4.7 vs 4.1), the stop-join clears its (4.1 vs 2.9), and the stop-join is not post-hoc: reword "none outside its MDE except stop-join and NY-PM end skip (both marginal)". (P3-4b) row says "per signal ~0": NTE-1 +0.035 L6M, MDE 0.30, placebo rank 0.69, circular-shift 0.91, i.e. the stack gain is a composition effect (positive for PE SM HM ST WT, negative for KB PB MA); the row has "books split" but not the placebo; add "per-signal placebo rank 0.69". Market-base label missing: add "(market base, research lots)". It has no read time and no entry in FORWARD_SHADOW_SPEC R1-R9; NTE-1 says "forward-register only": add "not in the register spec yet".
+- **"0 of 85k cells" (section D):** DECAY_GAP: 3,564 single + 81,648 combination cells, **five micro cells survive (4 LEAD, 1 CANDIDATE-RECENT, post-hoc)**; none CANDIDATE/PASS. Write "0 PASS / 0 CANDIDATE of 85k cells (5 post-hoc micro leads)". (P3-4c)
+- **Hazard 5 (defects):** counts match: capped re-run 103 tier changes (41 UP, 62 DOWN), leaderboard 18 PASS -> 5 PASS (the 18 are 6 independent exposures per MORNING; CAPPED_RERUN text says 12 exposures for the 47 rows), ST10 WF 15.1k / HOLD 21.3k, HM10 HOLD 8.8k t 0.9 (DEFECT_SWEEP l.46). "defects mostly INFLATED earlier results" is not what the sweep says: class 2 (unbounded windows) moves "both directions", class 6 (shuffle_src) and class 7 (WDAY mutation) DEFLATED verdicts (HM3te DEAD -> LEAD), class 3 (unit) inflated skip/gate rules but no flip. Reword: "defects moved results both ways (most inflated; two deflated); the OFF list is unchanged." This hazard concerns the leaderboard, not Sunday's decision: move to MORNING.md (saves ~95 words).
+- **Second-signal skip "+0.6 / +5.6; PRE negative" (P3-5):** UA-1 live-session row is L6M +0.6, **HOLD -0.0, PRE -1.9, X' -1.5, MDE +5.7**; the "5.6" cannot be matched to a research dollar figure in what I read (5.7 is the MDE). Write "+0.6 live-session (HOLD 0.0, PRE -1.9; inside MDE 5.7)".
+- **Section B split evidence:** +5.4 live-session / +17.6 research (vs market), +4.8 N / +5.3 LIVE-CAL at integer lots: match UA-1. K6 "-3.0 negative in L3M/L6M/HOLD/PRE" ok; "+1.3k X'" in v3 dropped, fine.
+- **HM feed / money (Q8):** "~$1.15/wk, ohlcv-1s NQ" matches HM_FORWARD_FEED sec 3 (cheapest feed; 0.017 GB/week); "first window Sat 11-07": file says windows end Saturday 00:00Z and no paid pull before 11-02 and only after the user confirms: acceptable but "your OK" wording should say "no purchase before Mon 11-02".
+- **P3-6 stale pointer:** header cites "FORWARD_SHADOW_RUNBOOK" (exists, ok) but not the D6 log-writer spec D6_LOG_WRITER_SPEC.md that the runbook requires on Sunday night (D6 owner action before 18:00 ET: log every signal, 45-s bars for P6, stop A/B from Mon 11-02). That is a time-critical "do tonight" item and belongs on page 1 as one line.
+
+## D6-needs column
+Accurate against THP v2 / THL2_NEEDS: ER (closed 5-min bars, lot multiplier, running-max locks; "raw front-month closes" matches ER-1 feature-definition risk; ER-1 also says 20.8% of signals fire on the exact 5-min bar-close second: specify "last CLOSED bar strictly before the signal second or including it?" - it changes 3.6% of classes), KB (same), PE (45-s candles; hold-until-confirmation), 8-line file, Asia cut (stack state + cross-book exit), stop-join (order type), NY-PM end (`clock_et_in(14:40,15:00)`, THL2_NEEDS l.136: clock only: correct). Split row: none needed. Still unresolved: FORWARD_SHADOW_SPEC l.21 says R2/R3/R5/R6/R7 need only existing D6 state; v4 says D6 v2 lacks the ER feature and cross-book action. One question to the D6 owner would close it (add to Q1).
+
+## Open questions (max 8, defaults) - proposed replacement
+Current Q1-Q8 are 8 numbered but Q2, Q4, Q6, Q7, Q8 bundle 2-4 items each (about 14 items). Merge to eight:
+1. D6 locks = R x running max of the day's ER multipliers? what does D6 do today (planned-lot or sized-lot R)? ER feature: last closed 5-min bar [specify running max; ER on bars closed before the signal second].
+2. ER lot rounding on 1-2 lot books [half-up, min 1; headline fractional].
+3. K6 add [keep]; P6 THP v2 market-entry line [leave, P6 stays market, and drop "P6 5/2" from the composite description or delete the line: pick one].
+4. Live add-fill slippage per lot [model +0.25, stress +0.45].
+5. Live lots/sessions as listed; A6 = PB or PB7 [PB].
+6. Original RISK-OFF / HALT-RESUME / QUIT-WHEN-UP texts [re-paste; interpretations stay labelled]; D6 week-floor R basis [per book, planned-lot R].
+7. Money/data: HM forward feed ohlcv-1s ~$1.15/wk (no purchase before 11-02) [OK]; raw MBO ($214 L6M slice, budget ~$811) [no].
+8. Housekeeping defaults (no answer needed unless you object): paper-log books [yes]; leaderboard shows tier + capped column [yes]; HM FVG and zone shadow arm [no / no]; UNTOUCHED live-fill cost read [still unanswered: from 2026-10-20 or 10-28?]; earnings-night file [not scored].
+Still-unanswered MORNING items not in v4: the UNTOUCHED live-fill read (MORNING l.440/449), earnings file (l.443), location = extension follow-up [no] (l.582), RW-1 second pass [no], BAR-STORE duplication (fixed per PAIRFIX/DEFECT_SWEEP class 5: drop).
+
+## Word-count plan (1,370 -> ~1,050)
+1. Header file list (~45 words) -> "Detail: MORNING.md index." (-35)
+2. Hazard 5 (~95) -> move to MORNING.md; keep one clause in D (-80)
+3. A: delete the Pieces sentence repeat of the table title and the Half-up/LIVE-CAL clause detail; keep headline, one risk sentence (as corrected), the one change (-70)
+4. C ER row: drop per-book detail except "P6 lean keep; U6, H6, M6 drop" (-45)
+5. C: merge KB row into ER row (-15); shorten Asia/8-line/PE notes (-40)
+6. "Not on the list" line (~35) -> "also tested, not listed: second-signal skip, ES-led, HM FVG (see MORNING)" (-15)
+7. D OFF (~150) -> 3 lines: exits/L2 rules (0 PASS of ~85k, 5 post-hoc micro leads); bars/zones/POI/no-trade/entry-timing/partials; risk-off/halt/quit on interpretations (-75)
+8. E: merge as proposed above (about equal length but fewer items; -20)
+Total about -395 words; keep all four page-1 hazards, the headline table, the risk line, the one-change sentence and every lot label.
+
+## Pass-3 summary
+Corrections needed: P3-1/P3-2 (risk wording), P3-3 (live+ label), P3-4 (NY-PM row header and "0 of 85k"), P3-5 (second-signal figure), P3-6 (D6 log-writer tonight line), plus N5 relabel (SS statistics) and Q-list merge. None changes ON/SHADOW/OFF placement. Re-run on v5 or when RERUN_B / BARS_3 are cited.
