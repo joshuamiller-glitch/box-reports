@@ -1,0 +1,29 @@
+# T-QUIT-WHEN-UP — user directive (2026-10-30), re-sent 2026-10-31 (verbatim)
+
+T-QUIT-WHEN-UP — the intraday give-back: map when the stack makes and gives back money, then score every "stop for the day" rule (user, 2026-10-30)
+
+Research only. No live, execution-server or chart change. UNTOUCHED never read. Exact lock engine on the stack (this is a stack-level program: re-entries, blocked entries and locks real); per book beside it; MEASURED fills (live-cal basis beside); RECENT FIRST; session as a column; prereg per section; placebos; the QUANT-LAYER applies. Data: the stack's trade-level and 1-s path series 2023-04 .. 2026-02-06, D6's session table as the base book set (and the stack as it is as the second base).
+
+The user's observation
+"The number of times I've seen the strategy give back later in the day is uncanny." He closed the last trade at 12:30 ET on a Friday, up $19k. Nothing has scored the simplest rule a discretionary trader applies: when the day is up X by time T, stop.
+
+A. The intraday P&L map (descriptive, before any rule)
+The stack's cumulative P&L by time of day (5-min bins, 18:00 .. 16:55 ET): the mean path, the median path, and the 20th / 80th percentile paths; per day of week; per day type (trend / chop / vol tercile); per window (2026, L6M, HOLD, PRE, X'); the same per book.
+The GIVE-BACK statistic: for each day, the day's peak P&L (realised + open) and its time, the close-of-day P&L, give-back = peak − close; the distribution of give-back (mean, median, 80th pct) by window, by day of week, by the time the peak occurred, by the size of the peak (days up > 1 / 2 / 3 R by noon: what happens after noon); P(the afternoon is negative | up X by T) for X = 1 / 2 / 3 / 4 R (R = one book's full stop) and T = 10:30 / 11:00 / 11:30 / 12:00 / 13:00 / 14:00 ET; the same for "after the N-th winner".
+The plain lines: "on days when the stack is up ≥ 2R by noon, the afternoon averages X (median Y), and is negative Z% of the time (last 6 months)"; "Friday afternoons average …"; "the hour that gives back most is …"; "after a +3R morning the afternoon's expectation is …".
+
+B. The quit rules (each on the stack and per book; vs the stack as it is; lot-matched; recent-first)
+QUIT AT +X: stop all entries for the day once the day's realised (and realised + open) P&L ≥ X R (X = 1 / 1.5 / 2 / 2.5 / 3 / 4 / 5), and the variant that also flattens open trades at that moment vs lets them run to their brackets.
+QUIT AT TIME IF UP: no entries after T (T = 11:00 / 11:30 / 12:00 / 12:30 / 13:00 / 14:00 ET) if the day is up ≥ X (X = 0 / 0.5 / 1 / 2 R); the Friday-only version and the day-of-week versions; the "no entries after T regardless" control (= the session-table cut, already partly live).
+THE DAY PROFIT TRAIL (the user's 10-28 C2 idea, scored here if not yet reported): once the day's peak ≥ A R (A = 2 / 2.3 / 2.5 / 3), stop and flatten if the day falls back to peak − B R (B = 0.5 / 1 / 1.5) — on realised P&L and on realised + open; the per-book version (each book trails its own day) vs the stack version; the already-live per-book give-back lock (arm 2R, keep 50%) as the reference.
+QUIT AFTER N WINNERS / N TRADES: stop after the N-th winning trade (N = 2 / 3 / 4 / 5) or the N-th trade (6 / 8 / 10 / 12); the "quit after the first loser following a +X morning" rule.
+QUIT ON REGIME: stop entries after T if the day is a chop day (first-hour range tag / Choppiness / ER from the TREND-GATE catalogue) — the afternoon give-back may be a chop-afternoon effect, not a time effect; and the opposite: keep trading the afternoon on trend days only.
+RESUME: for every quit rule, the variant that re-opens entries at the next session boundary (15:00 / 18:00) vs stays off until the next day.
+SIZE DOWN instead of quit: after +X by T, lots × 0.5 / 0.33 for the rest of the day (risk-matched report); the inverse (size UP after a losing morning — reported, expected negative).
+COMBINATIONS (COMBOS method): time ∧ profit ∧ day-of-week ∧ regime; the learned version: a walk-forward model of E[afternoon P&L | morning P&L, time of peak, day of week, regime, trades so far, stack state] with the policy continue / size down / quit; 3-month weekly re-fit; shuffled-day placebo; the extracted rules in words. Controls: random quit times at the same rate; shuffled-day morning P&L (the quit keyed to another day's morning); the stack as it is; the already-live locks.
+
+C. Scoring (QUANT-LAYER columns)
+Stack weekly mean, SD, maxDD, worst-20-weeks, Sharpe; the mean per day and per week; the share of days affected; the P&L given up by the skipped afternoon trades (what the rule forgoes) beside the give-back it avoids; the equal-risk frame (a rule that cuts worst-20-weeks allows more lots — the factor stated, labelled structure); per contract per book; block-bootstrap CIs; RC per section; the drift of the give-back statistic by quarter (is it new?); day-of-week and regime splits.
+
+D. Report and publish
+DS3_INTRADAY_MAP.md (section A; the time-of-day curves and the give-back table, recent-first, with the plain lines), DS3_QUIT_RULES.md (section B per rule; stack line; forgone vs avoided), DS3_QUIT_FINAL.md with the plain sentences "stopping entries at 12:00 ET when the day is up ≥ 2R keeps X% of the stack's mean and cuts worst-20-weeks by Y% in the last 6 months; it forgoes Z/week of afternoon winners and avoids W/week of give-back"; "the afternoon give-back is / is not a chop-day effect"; "the best quit rule overall is …; at equal worst-20-weeks it allows V× lots". Anything ≥ 0 on the stack mean at lower risk, or ≥ 0 at equal risk with the factor: a day section in THP_POLICY.txt ("day cond action": quit_at_R x | quit_after HHmm if_up x | trail_day A B | size_after x mult) — D6's day lock group computes day P&L, peak and R live, so these are a small addition. Rows to RECENT_WINS.md. MORNING.md every 2 h.

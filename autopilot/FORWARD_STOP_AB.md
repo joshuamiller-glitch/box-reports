@@ -3,7 +3,7 @@
 Question: does JoinThenMarket (3 s) cost more per stop than Native stop-market? Live evidence so far (LIVE_STOP_JOIN.md): join 2.45 pts/stop vs nominal (n=21, CI 1.04–3.86); Native 1.28 (n=8, other books, SE 0.13); difference +1.17, z 1.6, one-sided p 0.055; join fill rate 8/21 (0.38) vs replay 0.78.
 
 ## Design
-- Arms: A = Native stop-market; B = JoinThenMarket (current 3 s). Assignment by trade-date parity of the entry's session-trading-day: ODD day = A, EVEN day = B, per book, from Monday 2026-11-02 (the Sunday-open trading day 11-01 18:00 ET counts to Monday's date by the exchange trade date). Same rule for every book that has a stop; assignment is by calendar date, not by outcome, so no selection by the box or the user.
+- Arms: A = Native stop-market; B = JoinThenMarket (current 3 s). Assignment by DAY-OF-MONTH parity of the entry's exchange trade date (user answer 2026-10-31; not ordinal parity): ODD date = A, EVEN date = B, per book, from Monday 2026-11-02 (the Sunday-open trading day 11-01 18:00 ET counts to Monday's date by the exchange trade date). Same rule for every book that has a stop; assignment is by calendar date, not by outcome, so no selection by the box or the user.
 - Start with ST (U6/ST10) and HM (H6) where the evidence exists; add K6, P6, M6 if the platform owner can switch order type per book by day (DS5/DS6 joins were rejected 6 of 13 times: log rejections as their own outcome, never as 'not filled' silently).
 - No other change to the books during the test (so the stop cost is the only difference). Do not mix with the Sunday ON set changes if avoidable: the split/ER/PE changes alter which stops occur, so compare arms WITHIN the same ON set only.
 

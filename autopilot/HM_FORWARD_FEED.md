@@ -1,4 +1,6 @@
-# HM_FORWARD_FEED - November-onward data feed for the HM forward test (HMF-1, 2026-10-31)
+# HM_FORWARD_FEED - November-onward data feed for the HM forward test (HMF-1, 2026-10-31; REG-1 update below)
+
+**REG-1 STATUS (2026-10-31, user reply 14:30Z): the weekly NQ.v.0 ohlcv-1s feed (~$1.15/wk) is APPROVED, start Sat 2026-11-07. Raw MBO ($214) is NO.** The exact weekly procedure, a cron-free checklist, the verification and the budget-log step are in section 6 at the end. The text of sections 1-5 is the original HMF-1 plan (kept); where it says "only after the user confirms", the user's 14:30Z reply is that confirmation for the weekly ohlcv-1s pull at a quote <= $2.00; any other schema, symbol or quote above $2.00 still needs a new OK.
 
 Status: PLAN + guarded script + FREE quotes only. Nothing was downloaded or bought. No key, account or credential appears in any file. Data before 2026-11-01 22:00Z (18:00 ET) is never touched by the script (it refuses an earlier start). Sealed UNTOUCHED stays sealed: no paid pull before 2026-11-02, and only after the lead tells you the user confirmed purchase and budget.
 
@@ -65,3 +67,37 @@ Step C, score (Monday): `python3 fwd_score.py --trades <list> --path-kind table 
 * First-week check (free): the path parquet's hi/lo/last for the week vs the L2-derived tables/NQ/1s part for the same seconds (if the L2 buy ran) or vs the data/ext trades-derived tick path: expect hi/lo/last equal on at least 99.9% of seconds.
 * Quarterly roll: v.0 switches contract around 2026-12-15 inside one week; instr changes mid-file. The scorer ranks contracts by trd_n over the whole window, so a roll week must be pulled and scored as one file but check no_path = 0 and the scored trades' contract.
 * Weeks with a CME holiday (Thanksgiving 11-26, 12-25, 01-01): no/short session; early_end flagged by the scorer.
+
+## 6. REG-1: the approved weekly procedure (cron-free; the lead runs it by hand, ~5 minutes, every Saturday)
+Standing OK: user reply 2026-10-31 14:30Z (NQ.v.0 ohlcv-1s weekly, ~$1.15/wk, from Sat 2026-11-07; raw MBO no). Guard rails stay in the script: dry run by default, floor 2026-11-01T22:00Z, no paid pull before 2026-11-02, end must be released (<= now - 8 h and <= dataset end), quote <= `--max-usd` and <= remaining budget, exact confirm string, never overwrites. Use `--max-usd 2.00` for this standing OK (a quote above it = stop and ask in MORNING.md). The key comes from `bash -ic` (env DATABENTO_API_KEY) only. REG-1 change to the script: the path parquet also carries `trd_px_open` (extra column; fwd_score.py reads named columns so it is unaffected; it allows 45-s bar opens to be rebuilt later).
+
+Windows are contiguous, Sunday 22:00Z to Saturday 00:00Z; the pull is made on the Saturday that ENDS the window, at or after 08:00Z:
+| week | START (UTC) | END (UTC) | pull on |
+|---|---|---|---|
+| 1 | 2026-11-01T22:00:00Z | 2026-11-07T00:00:00Z | Sat 11-07 >= 08:00Z |
+| 2 | 2026-11-07T00:00:00Z | 2026-11-14T00:00:00Z | Sat 11-14 |
+| 3 | 2026-11-14T00:00:00Z | 2026-11-21T00:00:00Z | Sat 11-21 |
+| 4 | 2026-11-21T00:00:00Z | 2026-11-28T00:00:00Z | Sat 11-28 (Thanksgiving 11-26: short week) |
+| n | previous END | previous END + 7 d | the Saturday of END |
+(Week 1 holds six trading days; the weekend gap between weeks is empty by construction. The 12-15 roll falls inside the week 2026-12-12..12-19: pull and score it as one file.)
+
+**Step 1 - dry run (free).** Replace S/E with the row above:
+```
+cd l2vast/ds3/code/hmfwd
+bash -ic 'python3 -I pull_nov.py --start S --end E --max-usd 2.00'
+```
+Check: `cost_usd` between 0.9 and 1.5 (week 1: ~1.1-1.3), `records` 250k-330k, `remaining_budget_usd` > 100, `dry_run: true`, the CONFIRM STRING printed. If the quote fails with "not yet released", wait (it is released ~8 h after the event).
+**Step 2 - the pull.** Paste the string from the dry run:
+```
+bash -ic 'python3 -I pull_nov.py --start S --end E --max-usd 2.00 --execute --confirm "PULL-HMFWD NQ.v.0 ohlcv-1s <S>-<E> USD<cost>"'
+```
+Writes `data_fwd/NQ_ohlcv-1s_<S>_<E>.dbn.zst`, `data_fwd/path/2026-11__ext_fwd_<S>_<E>.parquet` and a `MANIFEST.jsonl` line (sha256, bytes, quote, records, path_rows, path_sha256).
+**Step 3 - verify (free, read-only; all of it is one command):**
+```
+<repo>/.venv/bin/python3 l2vast/ds3/code/shadow/hm_feed.py --verify
+```
+It re-hashes the dbn and the path parquet against the MANIFEST (sha256), compares the parquet row count with `path_rows`, checks that no window starts before the floor, that the windows are contiguous (week n START = week n-1 END), and prints the continuity with the prior week (hours between the last print of week n-1 and the first print of week n: expect ~2 days across the weekend; flags a gap > 72 h, an overlap, and an instrument change = roll week). Exit code 1 and the word FAIL = do not score from the feed; paste the lines in MORNING.md.
+Also by eye: records/rows within +-15% of the previous week (~300k per full week); `quote_usd` equals the dry-run quote; week 1 only: compare hi/lo/last with the L2-derived `tables/NQ/1s` part for the same seconds if the weekly L2 buy ran (expect equal on >= 99.9% of seconds).
+**Step 4 - budget log.** `python3 l2vast/ds3/code/hmfwd/log_spend.py` (dry: prints the SPEND.json update and the DECISIONS.md line), then the same with `--apply`; paste the printed DECISIONS.md line into DECISIONS.md. Expected running line: spent_usd + ~1.15 per week, the HM feed total ~$57 to the 1,000-trade mark.
+**Step 5 - Monday.** Nothing to do: `run_register.py` (shadow runbook) verifies the same manifest and, when `incoming/tape.csv` is absent, builds the register tape from ALL verified weekly files (one front contract per trade date: the one with the most volume that date). Run `fwd_score.py` for HM as before with `--path-kind table --path-root .../data_fwd/path/`; use only one path root per run.
+Failure handling: a skipped Saturday is made up the next Saturday by one pull covering both weeks (window <= 32 days is accepted by the script; START must still equal the last END); a failed verification is never patched by hand - re-pull is refused (no overwrite), so move the bad files to `data_fwd/quarantine/` first and say so in MORNING.md.
