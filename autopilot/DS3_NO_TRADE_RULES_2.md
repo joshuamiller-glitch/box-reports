@@ -619,7 +619,7 @@ Stack ($/wk):
 | combo | C|MKT | 300 | 0.692 | 0.686 | 1.000 | 0 | 0 | 0.806 |  |  |  |  |  |
 | combo | C|SPL | 300 | 0.676 | 0.674 | 1.000 | 0 | 0 | 0.813 |  |  |  |  |  |
 
-xRC / xPBO = the same test on the gain OVER the lot-matched uniform scaling of the base (the right null for size rules). RC_cum = Sidak-adjusted to the 317,628 cell-scopes of this program (cumulative with earlier programs the multiplicity is ~1 million: no cell clears). A size-up cell clears the raw RC (p 0.00) only because a positive base grows with lots; against uniform scaling RC p is 0.34 / 0.58 with 0 Romano-Wolf survivors.
+xRC / xPBO = the same test on the gain OVER the lot-matched uniform scaling of the base (the right null for size rules). RC_cum = Sidak-adjusted to the 317,628 cell-scopes of this program (cumulative with earlier programs the multiplicity is ~1 million: no cell clears). A size-up cell clears the raw RC (p 0.00) only because a positive base grows with lots; the right null is the uniform scaling (xRC columns): market base p 0.07 / 0.06, 2 / 4 Romano-Wolf survivors, 70/30 base p 0.34 / 0.58; Sidak-adjusted to 317,628 cell-scopes both are ~1.
 
 ## 9. Shortlist checks (the 382 cells with tier >= CANDIDATE-RECENT and a positive stack, plus the directive's named release / calendar cells): neighbourhood, circular-shift state placebo, lag-one-signal state placebo, 1 s / 3 s latency, stack with its MDE, stack against the lot-matched uniform control
 
