@@ -849,3 +849,9 @@ QUESTION (structural, queue not paused): how to treat STRUCT48-era PASS/CANDIDAT
 [2026-10-31T09:18:23Z] RECENT EDGES: implemented in D6 / THP_POLICY: 24 of 14741 | persistence = DS3_PERSISTENCE.md (P next 3m positive is ~family base rate; shrunk size column; page is a view, value = shrunk expectation)
 
 - (wall 09:18Z) load: ~0% (idle) | agents: 0/10 | queue: 0. Nothing sanctioned left on existing data; waiting on user decisions (raw MBO pull, HM feed purchase, D6 questions). Brief v5 current; next rewrite Sat 18:00Z.
+
+[2026-10-31T11:18:16Z] RECENT EDGES (RE-1 ledger, RECENT_WINS.md): 14741 tracked (positive L3M and L6M) | NEW 5390 RISING 3549 STABLE 1566 FADING 4236 STOPPED 0
+[2026-10-31T11:18:16Z] RECENT EDGES: turned on / new: CF-ENG On the 70/30 split, rest the 30% limit a (POOL9); CF-ENG On the 70/30 split, rest the 30% limit a (POOL9) | fading: CF-ENG On the 70/30 split, enter the 30% at mar (POOL9); CF-ENG On the 70/30 split, enter the 30% at mar (POOL9) | stopped (RE-2 monitor, 9 fading): 5 cap|live=12|x2.35|mode=skip|session=pre|count=both100 [S73]; session pre x0.5 [S73]
+[2026-10-31T11:18:16Z] RECENT EDGES: implemented in D6 / THP_POLICY: 24 of 14741 | persistence = DS3_PERSISTENCE.md (P next 3m positive is ~family base rate; shrunk size column; page is a view, value = shrunk expectation)
+
+- (wall 11:18Z) load: ~0% | agents: 0/10 | queue: 0 (idle; awaiting user decisions).

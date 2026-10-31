@@ -1,4 +1,4 @@
-# RECENT_WINS  (L3M = 2025-11-06..2026-02-06, 13 weeks; own capped mask; compiled 2026-10-31 09:17Z)
+# RECENT_WINS  (L3M = 2025-11-06..2026-02-06, 13 weeks; own capped mask; compiled 2026-10-31 11:17Z)
 
 **This table is a VIEW, not a verdict.** Nothing is promoted by being in it; the tier column carries the gates. Rows are cells that were POSITIVE in the last 3 months on the primary measure. They were not selected on L3M, but L3M has been looked at for every one of them, so the L3M numbers are the most-looked-at window we have. Rows from a program with tens of thousands of cells are what noise looks like (see the multiplicity column); "$ at live lots" are not additive across rows (many rows are the same trade stream, cells of one program overlap, and units differ by program: stack-level lock-engine deltas vs per-fill 1-lot approximations, see each note). Closed programs are RE-READ from stored windows / per-trade or per-day series (no re-run, no new selection).
 
