@@ -1267,3 +1267,6 @@
 2026-02-02 | D|560|take | OFF -> NEW | 13w mean 1,850 26w 1,030 $/wk
 2026-02-02 | D|572|take | OFF -> NEW | 13w mean 2,187 26w 562 $/wk
 2026-02-02 | HR|book|L:sh2:0.6|mem|0 | NEW -> FADING | CUSUM 0.0 sig, z4 -0.1, 4w -150 13w 61 26w 369 $/wk
+
+## RE-1 ledger run 2026-10-31 (rows of RECENT_WINS.md: NEW/RISING/STABLE/FADING from the ledger; one line per transition since the previous compile)
+
