@@ -1,12 +1,12 @@
-# LIVE_RECON - live fill vs replay expectation, per trade (generated 2026-10-30 18:19 ET; source <repo>/data/live/StratTrades_DualStrat2_<acct>.csv)
+# LIVE_RECON - live fill vs replay expectation, per trade (generated 2026-10-31 04:14 ET; source <repo>/data/live/StratTrades_DualStrat2_<acct>.csv)
 
 Replay fill = the corrected P9 replay expectations (per-trade matched-signal replay needs L2 for the day; the per-trade L2 replay of the 18 stop joins with the 10-20..23 tape is in JOIN_RECON.md section 5 / join_recon2/join_replay_per_attempt.csv; the replay column below stays the replay MEAN for that exit class (comparison basis of the earlier version): all stops -0.52 pts, market fallback -1.74 pts; entry S14x1 mean 1.90 (ST) / 1.77 (HM) ticks vs mid at decision). Signal reference for entry slip: REF.csv mid if present, else 1-min bar open if the NQ series covers the minute, else "-".
-NQ 1-min series ends 2026-10-23 20:59:00 UTC.
+NQ 1-min series ends 2026-10-30 20:59:00 UTC.
 
 ## Summary
 
-- trades 61, with entry reference 39; stop exits 21: live avg 2.45 pts worse than nominal vs replay 0.52; live minus replay per stop exit -1.23 pts (negative = worse than replay).
-- entry slip vs reference: mean -0.47 pts (n=39)
+- trades 61, with entry reference 61; stop exits 21: live avg 2.45 pts worse than nominal vs replay 0.52; live minus replay per stop exit -1.23 pts (negative = worse than replay).
+- entry slip vs reference: mean -0.02 pts (n=61)
 
 ## Per trade
 
@@ -51,37 +51,37 @@ NQ 1-min series ends 2026-10-23 20:59:00 UTC.
 | 2026-W43 | ST | S | 8 | 1 | 10-23 13:25:00 | 29154.13 | 29151.25 | L2 tape mid at trigger | -2.88 | 10-23 13:39:09 | ST_LossExit | 29170.00 | - | - | - | -2,510 |
 | 2026-W43 | ST | S | 8 | 1 | 10-23 14:04:00 | 29179.50 | 29179.38 | L2 tape mid at trigger | -0.12 | 10-23 14:41:54 | ST_ProfitExit | 29156.50 | - | - | - | 3,695 |
 | 2026-W43 | HM | S | 8 | 1 | 10-23 14:39:00 | 29161.34 | 29162.50 | L2 tape mid at trigger | +1.16 | 10-23 16:45:46 | HM_LossExit | 29176.00 | - | - | - | -2,315 |
-| 2026-W44 | ST | L | 10 | 1 | 10-25 18:29:00 | 29269.65 | - | - | - | 10-25 18:45:23 | ST_Target | 29329.75 | - | - | - | 12,020 |
-| 2026-W44 | ST | L | 10 | 1 | 10-25 19:03:00 | 29301.43 | - | - | - | 10-25 19:06:42 | ST_LossExit | 29264.00 | - | - | - | -7,405 |
-| 2026-W44 | ST | S | 10 | 1 | 10-25 19:47:00 | 29120.83 | - | - | - | 10-25 19:54:31 | ST_LossExit | 29148.50 | - | - | - | -5,370 |
-| 2026-W44 | HM | S | 10 | 1 | 10-25 19:51:00 | 29105.45 | - | - | - | 10-25 20:06:33 | HM_StopJoinFallback | 29172.50 | -7.05 | -1.74 | -5.31 | -13,335 |
-| 2026-W44 | ST | S | 10 | 1 | 10-25 20:04:00 | 29120.13 | - | - | - | 10-25 20:06:38 | ST_StopJoinFallback | 29185.50 | -5.37 | -1.74 | -3.63 | -12,935 |
-| 2026-W44 | ST | S | 10 | 1 | 10-25 21:05:00 | 29064.33 | - | - | - | 10-25 21:22:23 | ST_LossExit | 29088.75 | - | - | - | -4,755 |
-| 2026-W44 | ST | S | 10 | 1 | 10-25 21:41:00 | 29099.83 | - | - | - | 10-25 21:45:47 | ST_Target | 29039.75 | - | - | - | 12,015 |
-| 2026-W44 | ST | S | 10 | 1 | 10-25 22:01:00 | 29138.25 | - | - | - | 10-25 22:07:06 | ST_LossExit | 29162.50 | - | - | - | -4,765 |
-| 2026-W44 | HM | L | 10 | 1 | 10-25 21:55:00 | 29165.63 | - | - | - | 10-25 22:20:48 | HM_StopJoinFallback | 29102.75 | -2.88 | -1.74 | -1.14 | -12,460 |
-| 2026-W44 | ST | S | 10 | 1 | 10-25 23:10:00 | 29098.38 | - | - | - | 10-26 00:04:35 | ST_LossExit | 29129.00 | - | - | - | -6,045 |
-| 2026-W44 | ST | L | 10 | 1 | 10-26 02:16:00 | 29164.45 | - | - | - | 10-26 02:18:10 | ST_LossExit | 29148.00 | - | - | - | -3,245 |
-| 2026-W44 | ST | S | 10 | 1 | 10-26 02:20:00 | 29131.35 | - | - | - | 10-26 02:28:51 | ST_Target | 29071.25 | - | - | - | 12,020 |
-| 2026-W44 | ST | S | 10 | 1 | 10-26 02:36:01 | 29078.50 | - | - | - | 10-26 03:02:17 | ST_LossExit | 29118.00 | - | - | - | -7,820 |
-| 2026-W44 | ST | S | 10 | 1 | 10-26 03:28:00 | 29105.78 | - | - | - | 10-26 03:31:33 | ST_LossExit | 29131.50 | - | - | - | -5,055 |
-| 2026-W44 | ST | L | 10 | 1 | 10-26 03:33:00 | 29139.25 | - | - | - | 10-26 03:36:42 | ST_LossExit | 29126.00 | - | - | - | -2,565 |
-| 2026-W44 | ST | S | 10 | 1 | 10-26 03:40:00 | 29112.15 | - | - | - | 10-26 04:08:22 | ST_Target | 29052.25 | - | - | - | 11,980 |
-| 2026-W44 | ST | S | 10 | 1 | 10-26 04:09:00 | 29060.95 | - | - | - | 10-26 04:27:33 | ST_LossExit | 29102.75 | - | - | - | -8,250 |
-| 2026-W44 | ST | L | 10 | 1 | 10-26 05:24:01 | 29200.38 | - | - | - | 10-26 06:21:25 | ST_LossExit | 29150.25 | - | - | - | -9,945 |
-| 2026-W44 | ST | L | 10 | 1 | 10-26 08:44:03 | 29291.18 | - | - | - | 10-26 08:56:11 | ST_LossExit | 29270.25 | - | - | - | -4,100 |
-| 2026-W44 | ST | L | 10 | 1 | 10-26 10:05:00 | 29232.95 | - | - | - | 10-26 10:11:07 | ST_ProfitExit | 29256.75 | - | - | - | 4,845 |
-| 2026-W44 | ST | L | 10 | 1 | 10-26 10:37:00 | 29344.60 | - | - | - | 10-26 10:39:28 | ST_ProfitExit | 29371.25 | - | - | - | 5,400 |
-| 2026-W44 | HM | L | 10 | 1 | 10-26 10:43:00 | 29400.88 | - | - | - | 10-26 10:44:58 | HM_ProfitExit | 29411.25 | - | - | - | 2,150 |
+| 2026-W44 | ST | L | 10 | 1 | 10-25 18:29:00 | 29269.65 | 29270.50 | 1-min bar open | -0.85 | 10-25 18:45:23 | ST_Target | 29329.75 | - | - | - | 12,020 |
+| 2026-W44 | ST | L | 10 | 1 | 10-25 19:03:00 | 29301.43 | 29308.50 | 1-min bar open | -7.07 | 10-25 19:06:42 | ST_LossExit | 29264.00 | - | - | - | -7,405 |
+| 2026-W44 | ST | S | 10 | 1 | 10-25 19:47:00 | 29120.83 | 29128.00 | 1-min bar open | +7.17 | 10-25 19:54:31 | ST_LossExit | 29148.50 | - | - | - | -5,370 |
+| 2026-W44 | HM | S | 10 | 1 | 10-25 19:51:00 | 29105.45 | 29110.25 | 1-min bar open | +4.80 | 10-25 20:06:33 | HM_StopJoinFallback | 29172.50 | -7.05 | -1.74 | -5.31 | -13,335 |
+| 2026-W44 | ST | S | 10 | 1 | 10-25 20:04:00 | 29120.13 | 29119.00 | 1-min bar open | -1.13 | 10-25 20:06:38 | ST_StopJoinFallback | 29185.50 | -5.37 | -1.74 | -3.63 | -12,935 |
+| 2026-W44 | ST | S | 10 | 1 | 10-25 21:05:00 | 29064.33 | 29068.75 | 1-min bar open | +4.42 | 10-25 21:22:23 | ST_LossExit | 29088.75 | - | - | - | -4,755 |
+| 2026-W44 | ST | S | 10 | 1 | 10-25 21:41:00 | 29099.83 | 29107.25 | 1-min bar open | +7.42 | 10-25 21:45:47 | ST_Target | 29039.75 | - | - | - | 12,015 |
+| 2026-W44 | ST | S | 10 | 1 | 10-25 22:01:00 | 29138.25 | 29130.00 | 1-min bar open | -8.25 | 10-25 22:07:06 | ST_LossExit | 29162.50 | - | - | - | -4,765 |
+| 2026-W44 | HM | L | 10 | 1 | 10-25 21:55:00 | 29165.63 | 29153.50 | 1-min bar open | +12.13 | 10-25 22:20:48 | HM_StopJoinFallback | 29102.75 | -2.88 | -1.74 | -1.14 | -12,460 |
+| 2026-W44 | ST | S | 10 | 1 | 10-25 23:10:00 | 29098.38 | 29098.75 | 1-min bar open | +0.37 | 10-26 00:04:35 | ST_LossExit | 29129.00 | - | - | - | -6,045 |
+| 2026-W44 | ST | L | 10 | 1 | 10-26 02:16:00 | 29164.45 | 29160.25 | 1-min bar open | +4.20 | 10-26 02:18:10 | ST_LossExit | 29148.00 | - | - | - | -3,245 |
+| 2026-W44 | ST | S | 10 | 1 | 10-26 02:20:00 | 29131.35 | 29134.50 | 1-min bar open | +3.15 | 10-26 02:28:51 | ST_Target | 29071.25 | - | - | - | 12,020 |
+| 2026-W44 | ST | S | 10 | 1 | 10-26 02:36:01 | 29078.50 | 29077.75 | 1-min bar open | -0.75 | 10-26 03:02:17 | ST_LossExit | 29118.00 | - | - | - | -7,820 |
+| 2026-W44 | ST | S | 10 | 1 | 10-26 03:28:00 | 29105.78 | 29112.00 | 1-min bar open | +6.22 | 10-26 03:31:33 | ST_LossExit | 29131.50 | - | - | - | -5,055 |
+| 2026-W44 | ST | L | 10 | 1 | 10-26 03:33:00 | 29139.25 | 29142.00 | 1-min bar open | -2.75 | 10-26 03:36:42 | ST_LossExit | 29126.00 | - | - | - | -2,565 |
+| 2026-W44 | ST | S | 10 | 1 | 10-26 03:40:00 | 29112.15 | 29113.75 | 1-min bar open | +1.60 | 10-26 04:08:22 | ST_Target | 29052.25 | - | - | - | 11,980 |
+| 2026-W44 | ST | S | 10 | 1 | 10-26 04:09:00 | 29060.95 | 29056.75 | 1-min bar open | -4.20 | 10-26 04:27:33 | ST_LossExit | 29102.75 | - | - | - | -8,250 |
+| 2026-W44 | ST | L | 10 | 1 | 10-26 05:24:01 | 29200.38 | 29195.50 | 1-min bar open | +4.88 | 10-26 06:21:25 | ST_LossExit | 29150.25 | - | - | - | -9,945 |
+| 2026-W44 | ST | L | 10 | 1 | 10-26 08:44:03 | 29291.18 | 29291.50 | 1-min bar open | -0.32 | 10-26 08:56:11 | ST_LossExit | 29270.25 | - | - | - | -4,100 |
+| 2026-W44 | ST | L | 10 | 1 | 10-26 10:05:00 | 29232.95 | 29242.75 | 1-min bar open | -9.80 | 10-26 10:11:07 | ST_ProfitExit | 29256.75 | - | - | - | 4,845 |
+| 2026-W44 | ST | L | 10 | 1 | 10-26 10:37:00 | 29344.60 | 29351.00 | 1-min bar open | -6.40 | 10-26 10:39:28 | ST_ProfitExit | 29371.25 | - | - | - | 5,400 |
+| 2026-W44 | HM | L | 10 | 1 | 10-26 10:43:00 | 29400.88 | 29398.75 | 1-min bar open | +2.13 | 10-26 10:44:58 | HM_ProfitExit | 29411.25 | - | - | - | 2,150 |
 
 ## DS3 live reconciliation (DS3 file): fills vs the direct-replay model, lock events
 
 | book | trades | entry slip pts vs bar open (n) | replay entry | stop-exit slip pts worse (n) | replay | market-fallback worse (n) | replay | target fill vs nominal (n) | lock-named exits |
 |---|---|---|---|---|---|---|---|---|---|
-| KB | 14 | PENDING (no tape mids/bars cover the entries) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | +0.02 (4) | 1 |
-| PE | 60 | PENDING (no tape mids/bars cover the entries) | +0.45 | -0.92 (3) | 0.52 | PENDING/none | 1.74 | +0.02 (21) | 1 |
-| SM | 2 | PENDING (no tape mids/bars cover the entries) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | +0.10 (1) | 0 |
-| TOTAL | 76 | PENDING (no tape mids/bars cover the entries) | +0.45 | -0.92 (3) | 0.52 | PENDING/none | 1.74 | +0.03 (26) | 2 |
+| KB | 14 | -0.15 (14) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | +0.02 (4) | 1 |
+| PE | 60 | +0.48 (60) | +0.45 | -0.92 (3) | 0.52 | PENDING/none | 1.74 | +0.02 (21) | 1 |
+| SM | 2 | -2.53 (2) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | +0.10 (1) | 0 |
+| TOTAL | 76 | +0.29 (76) | +0.45 | -0.92 (3) | 0.52 | PENDING/none | 1.74 | +0.03 (26) | 2 |
 
 Lock events: exit names matching the lock regex are counted per book above; NT8-log DS3 lock lines: 0. $ check at R = $12,000 x lots/10 per book (12,000 x lots/10, per book): per-book day <= -2R or >= +5R, entries after the crossing = **20 violations** [('PE', '2026-10-27', '03:25'), ('PE', '2026-10-27', '06:08'), ('PE', '2026-10-27', '08:15'), ('PE', '2026-10-27', '08:55'), ('PE', '2026-10-27', '11:38')]. Give-back (+2R arm, keep 50%) and week floor (-12R) are visible only through the exit names / log; the $ check covers the day -2R/+5R lines.
 
@@ -92,8 +92,8 @@ Replay model: direct-L2 S10x1 slicing + XJ3 stop-join; plain Market entries (Mod
 
 | book | trades | entry slip pts vs bar open (n) | replay entry | stop-exit slip pts worse (n) | replay | market-fallback worse (n) | replay | target fill vs nominal (n) | lock-named exits |
 |---|---|---|---|---|---|---|---|---|---|
-| MIX | 1 | PENDING (no tape mids/bars cover the entries) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | PENDING/none | 0 |
-| TOTAL | 1 | PENDING (no tape mids/bars cover the entries) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | PENDING/none | 0 |
+| MIX | 1 | +0.25 (1) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | PENDING/none | 0 |
+| TOTAL | 1 | +0.25 (1) | +0.45 | PENDING/none | 0.52 | PENDING/none | 1.74 | PENDING/none | 0 |
 
 Lock events: exit names matching the lock regex are counted per book above; NT8-log DS3 lock lines: 0. $ check at R = $12,000 x lots/10 per book (12,000 x lots/10, per book): per-book day <= -2R or >= +5R, entries after the crossing = **0 violations**. Give-back (+2R arm, keep 50%) and week floor (-12R) are visible only through the exit names / log; the $ check covers the day -2R/+5R lines.
 

@@ -308,7 +308,7 @@ No cell meets the strict objective (WF mean >= benchmark AND maxDD <= 0.7 x benc
 <!--F1-ADDENDUM-BEGIN-->
 ## F1 addendum - live vs replay (rewritten on each data/live push; latest run below)
 
-### F1 addendum (data/live first push; generated 2026-10-30 22:13Z; live window 0001-01-01..2026-10-26, 82 DualStrat2 trades)
+### F1 addendum (data/live first push; generated 2026-10-31 08:06Z; live window 0001-01-01..2026-10-26, 82 DualStrat2 trades)
 
 **Live stop exits: N = 21** (StopJoin filled 8, StopJoinFallback 12, StopJoinRejected 1; plus 19 targets and 2 ComboLock exits). **Join rate** (filled / filled+fallback, rejected excluded) = 8/20 = **0.40, exact 95% CI [0.19, 0.64]**; counting the position-limit reject as a failure 8/21 = 0.38 [0.18, 0.62]. Replay assumption 0.78 lies OUTSIDE the live interval. 1 join attempt(s) were rejected by the broker (counted separately; the retained trace is the connect-time order history with state Rejected and no reason text - the position-limit cause is taken from the user). Earlier count quoted as '3/8' is not what the CSV shows.
 
@@ -328,10 +328,10 @@ Live stop exits are -1.93 pt worse than the replay's XJ expectation per stop exi
 
 | cell | replay (78%) | live point 0.40 | live lower 0.19 | live upper 0.64 | point + live exit shortfall |
 |---|---|---|---|---|---|
-| live locks (benchmark) | 27.2k / 106.7k / 371.4k; 41.2k / 174.8k | 26.8k / 106.9k / 371.0k; 31.0k / 181.7k | 24.5k / 106.8k / 372.5k; 20.6k / 182.4k | 27.6k / 107.7k / 380.8k; 40.5k / 174.8k | 19.8k / 101.1k / 385.7k; 0.8k / 226.9k |
-| remove cap + week floor | 35.9k / 113.9k / 347.7k; 47.0k / 185.1k | 34.8k / 114.9k / 343.1k; 36.8k / 192.0k | 31.9k / 114.0k / 346.2k; 26.4k / 192.7k | 36.9k / 114.6k / 346.0k; 46.3k / 185.1k | 23.8k / 111.4k / 388.8k; 1.0k / 257.9k |
-| BEST5 | 24.7k / 94.6k / 331.7k; 57.4k / 122.8k | 22.8k / 94.3k / 339.8k; 46.0k / 148.2k | 21.6k / 94.9k / 338.0k; 40.4k / 148.8k | 24.0k / 94.1k / 330.3k; 54.1k / 123.3k | 15.5k / 97.0k / 382.2k; 34.9k / 153.8k |
-| USER forward set (cap off, wk12, London/NY 10) | 32.4k / 107.6k / 332.1k; 62.4k / 127.4k | 29.8k / 107.3k / 339.8k; 39.9k / 148.2k | 27.9k / 106.5k / 337.6k; 35.5k / 148.8k | 31.7k / 107.4k / 330.5k; 61.9k / 127.4k | 21.1k / 107.1k / 363.2k; 28.6k / 155.2k |
+| live locks (benchmark) | 26.1k / 107.2k / 371.4k; 24.2k / 310.4k | 25.7k / 107.4k / 371.0k; 17.9k / 317.3k | 23.4k / 107.2k / 372.5k; 12.7k / 317.9k | 26.5k / 108.2k / 380.8k; 23.6k / 310.4k | 18.7k / 101.5k / 385.7k; 1.0k / 323.7k |
+| remove cap + week floor | 35.3k / 113.7k / 347.7k; 41.5k / 320.2k | 34.2k / 114.7k / 343.1k; 35.2k / 327.1k | 31.4k / 113.7k / 346.2k; 30.0k / 327.7k | 36.4k / 114.4k / 346.0k; 40.9k / 320.2k | 23.3k / 111.2k / 388.8k; 15.6k / 353.9k |
+| BEST5 | 24.2k / 94.4k / 331.7k; 45.8k / 257.3k | 22.3k / 94.1k / 339.8k; 37.3k / 257.3k | 21.2k / 94.8k / 338.0k; 31.8k / 257.3k | 23.5k / 93.9k / 330.3k; 42.7k / 257.3k | 15.0k / 96.8k / 382.2k; 26.8k / 280.6k |
+| USER forward set (cap off, wk12, London/NY 10) | 31.8k / 107.4k / 332.1k; 52.7k / 262.5k | 29.3k / 107.1k / 339.8k; 33.1k / 268.9k | 27.4k / 106.3k / 337.6k; 28.8k / 269.5k | 31.1k / 107.2k / 330.5k; 52.3k / 262.5k | 20.6k / 106.9k / 363.2k; 22.3k / 295.1k |
 
 Ranking check at each scenario (does the candidate still beat the live locks on WF mean AND maxDD?): replay (78%): remove cap + week floor yes, BEST5 no, USER forward set yes; live point 0.40: remove cap + week floor yes, BEST5 no, USER forward set yes; live lower 0.19: remove cap + week floor yes, BEST5 no, USER forward set yes; live upper 0.64: remove cap + week floor yes, BEST5 no, USER forward set yes.
 
@@ -339,29 +339,29 @@ Ranking check at each scenario (does the candidate still beat the live locks on 
 
 | option | lock set | lots | WF mean / maxDD at 78% | at live point | at live lower bound | beats live-at-same-scale (WF mean & maxDD) at 78% / point / lower |
 |---|---|---|---|---|---|---|
-| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N0 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
-| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N2 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
-| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N0 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
-| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N2 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
-| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N3 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
-| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N3 | 14/8/10 | 28.3k / 327.9k | 27.0k / 350.2k | 25.7k / 401.8k | yes / yes / no |
-| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N3 | 14/8/10 | 28.9k / 324.7k | 27.4k / 375.0k | 26.8k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N0 | 14/8/10 | 28.9k / 324.7k | 27.5k / 375.0k | 26.9k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N2 | 14/8/10 | 28.9k / 324.7k | 27.5k / 375.0k | 26.9k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N3 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N3 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N0 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N0 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N2 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N2 | 14/8/10 | 29.0k / 324.7k | 27.5k / 375.0k | 26.8k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wkoff|gb0|N2 | 14/8/10 | 28.8k / 330.8k | 27.2k / 375.0k | 27.0k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N2 | 14/8/10 | 28.8k / 330.8k | 27.2k / 375.0k | 27.0k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wkoff|gb0|N0 | 14/8/10 | 28.8k / 330.8k | 27.2k / 375.0k | 27.0k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N0 | 14/8/10 | 28.8k / 330.8k | 27.2k / 375.0k | 27.0k / 380.6k | yes / no / no |
-| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N3 | 14/8/10 | 28.8k / 330.8k | 27.1k / 375.0k | 26.9k / 380.6k | yes / no / no |
-| live60_P9 | pblive|capoff|wk12|gb1|N2 | 14/10/10 | 24.7k / 331.7k | 22.8k / 339.8k | 21.6k / 338.0k | no / no / no |
-| live60_P9 | pblive|capoff|wkoff|gb0|N0 | 14/14/14 | 35.9k / 347.7k | 34.8k / 343.1k | 31.9k / 346.2k | yes / yes / yes |
-| live60_P9 | pblive|capoff|wk12|gb1|N0 | 14/10/10 | 24.3k / 331.7k | 22.4k / 339.8k | 21.2k / 338.0k | no / no / no |
+| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N0 | 14/8/10 | 28.1k / 327.9k | 26.8k / 350.2k | 25.5k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N2 | 14/8/10 | 28.1k / 327.9k | 26.8k / 350.2k | 25.5k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N0 | 14/8/10 | 28.1k / 327.9k | 26.8k / 350.2k | 25.5k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N2 | 14/8/10 | 28.1k / 327.9k | 26.8k / 350.2k | 25.5k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capsoft8|wk8|gb0|N3 | 14/8/10 | 28.1k / 327.9k | 26.8k / 350.2k | 25.5k / 401.8k | yes / yes / no |
+| ATR_R10000_f4 | pblive|capoff|wk8|gb0|N3 | 14/8/10 | 28.1k / 327.9k | 26.8k / 350.2k | 25.5k / 401.8k | yes / yes / no |
+| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N3 | 14/8/10 | 28.7k / 324.7k | 27.2k / 375.0k | 26.7k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N0 | 14/8/10 | 28.7k / 324.7k | 27.3k / 375.0k | 26.7k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk8|gb0|N2 | 14/8/10 | 28.7k / 324.7k | 27.3k / 375.0k | 26.7k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N3 | 14/8/10 | 28.8k / 324.7k | 27.3k / 375.0k | 26.6k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N3 | 14/8/10 | 28.8k / 324.7k | 27.3k / 375.0k | 26.6k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N0 | 14/8/10 | 28.8k / 324.7k | 27.3k / 375.0k | 26.7k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N0 | 14/8/10 | 28.8k / 324.7k | 27.3k / 375.0k | 26.7k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capoff|wk8|gb0|N2 | 14/8/10 | 28.8k / 324.7k | 27.3k / 375.0k | 26.7k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|capsoft8|wk8|gb0|N2 | 14/8/10 | 28.8k / 324.7k | 27.3k / 375.0k | 26.7k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wkoff|gb0|N2 | 14/8/10 | 28.6k / 330.8k | 27.0k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N2 | 14/8/10 | 28.6k / 330.8k | 27.0k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wkoff|gb0|N0 | 14/8/10 | 28.6k / 330.8k | 27.0k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N0 | 14/8/10 | 28.6k / 330.8k | 27.0k / 375.0k | 26.8k / 380.6k | yes / no / no |
+| ATR_R10000_f8 | pblive|caphard|wk12|gb0|N3 | 14/8/10 | 28.6k / 330.8k | 26.9k / 375.0k | 26.7k / 380.6k | yes / no / no |
+| live60_P9 | pblive|capoff|wk12|gb1|N2 | 14/10/10 | 24.2k / 331.7k | 22.3k / 339.8k | 21.2k / 338.0k | no / no / no |
+| live60_P9 | pblive|capoff|wkoff|gb0|N0 | 14/14/14 | 35.3k / 347.7k | 34.2k / 343.1k | 31.4k / 346.2k | yes / yes / yes |
+| live60_P9 | pblive|capoff|wk12|gb1|N0 | 14/10/10 | 23.8k / 331.7k | 22.0k / 339.8k | 20.8k / 338.0k | no / no / no |
 
 The verdict (beats live at the same scale) is the same at all three scales for 3 of 23 re-scored cells. Because N = 21 the live join rate is not stable enough to re-rank cells; the re-base is a sensitivity, not an estimate.
 
