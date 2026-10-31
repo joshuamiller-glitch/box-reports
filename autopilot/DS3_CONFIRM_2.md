@@ -167,3 +167,39 @@ per contract after costs +4.64 (floor +0.80) | L3M +3.08 / L6M +2.42 / HOLD +2.1
 ## Open / next
 * "What to switch ON Sunday 18:00 ET" from this section: nothing. SHADOW: PE 45-s three-bar limit at body mid (pure wait) and its first-pullback variant, one clip per live PE lot; DN HA-30 s second-up-candle add; HM 15-s four-up-closes only if sub-second reaction exists. OFF: the book / level / ER conditioning of any pattern, the pattern as a filter (d), KB / ST / WT / PB / MA patterns, every sub-minute rule that needs the first 1-3 s after the bar close.
 * Not done in this pass (listed for the next 4-h update): capacity at fills, queue-position model, neighbour means, session-specific 200-draw ranks, section 8a entry-timing-within-the-bar, 200-draw placebos for all selected cells (5-draw only), the PE 45-s result on 5-minute bars (section 5 of the plan).
+
+
+## ADDENDUM 2026-10-31 (follow-up order section 5 + own open items). Code l2vast/ds3/code/confirm2/c2_addendum.py, raw numbers out/confirm2/addendum.json
+Unit as above: pts per planned lot vs the plain 70/30 dip floor on the same book (N basis); pc = per contract of final position (cell / floor); stack = lock-engine $/wk delta with only the named book/sessions replaced (engine lots HM10, PE5.6; scale by live/engine lots for a rough live figure). Decision delay = the order is issued d seconds after the bar close (limits are placed d seconds late). Everything here is a second look at windows already looked at: no selection, no new tier.
+
+### A. HM 15-s four-up-closes after a 3-pt dip: DROP
+One line: **drop** - on a market entry the L6M gain decays +1.06 (0 s) -> +0.74 (1 s) -> +0.30 (2 s) -> +0.07 (3 s), HOLD +1.37 -> +1.08 -> +0.68 -> +0.47, and no resting-limit version is positive.
+| HM, tc 15s C_mom4, pure wait (delta vs floor per planned lot) | delay | L3M | L6M [MDE] | HOLD | PRE | X' |
+|---|---|---|---|---|---|---|
+| market at the 4th close after a 3-pt dip (c1) | 0 s | +1.81 | +1.06 [3.5] | +1.37 | -0.15 | +0.87 |
+| | 1 s | +1.58 | +0.74 | +1.08 | -0.33 | +0.94 |
+| | 2 s | +0.99 | +0.30 | +0.68 | -0.15 | +0.79 |
+| | 3 s | +0.85 | +0.07 | +0.47 | -0.12 | +0.79 |
+| limit at the 4th candle's OPEN, rests, placed after the dip (c2 mid) | 0 / 1 / 2 / 3 s | +1.21 / +1.22 / +0.89 / +0.70 | +0.47 / -0.02 / -0.07 / -0.32 | +0.63 / +0.24 / +0.20 / -0.14 | -0.86 / -0.86 / -1.23 / -1.09 | +0.15 / +0.32 / -0.02 / -0.26 |
+| limit at its body MID (c2 near) | 0 / 1 / 2 / 3 s | +0.74 / +1.58 / +0.89 / +1.36 | -0.20 / -0.31 / -0.63 / -0.28 | +0.03 / -0.33 / -0.48 / -0.16 | -0.57 / -0.88 / -0.45 / -0.87 | -0.86 / -0.49 / -0.39 / -0.94 |
+| limit at open / mid without the dip (b mid / b near) | 0 s | +1.38 / +1.60 | +0.10 / -0.15 | +0.13 / -0.23 | -0.24 / +0.08 | -0.49 / -0.97 |
+The 70/30 base (A70) variants are +0.3 or less in L6M and negative in PRE and X' at every delay.
+Per session (market, L6M / HOLD): Asia +1.12 / +0.77 at 0 s, +0.01 / -0.22 at 3 s; NY-AM +0.05 / +1.19 at 0 s (L6M -0.54 at 1 s, -1.96 at 3 s). In PRE both sessions are negative (Asia -0.41, NY-AM -0.51). Per contract (L6M, cell / floor): all sessions +6.74 / +4.32 at 0 s, +5.44 / +4.32 at 3 s; Asia +8.45 / +5.92 -> +7.01 / +5.92; NY-AM +11.3 / +7.63 -> +8.18 / +7.63. Lock-engine stack (HM replaced, market c1): +12.3k L6M / +9.9k HOLD / -1.4k PRE / +2.3k X' at 0 s, and still +9.9k / +7.8k / -0.3k / +3.7k at 3 s, almost all of it from Asia (+7.9k at 3 s; NY-AM about 0). That stack figure does not come from the entry: at 3 s the Asia per-lot delta is +0.01, so it is a lock-engine interaction (a pure-wait HM leg frees or delays lock capacity for the other books) and is not evidence for the rule; at HM live lots (Asia 4, NY-AM 2 vs engine 10) it scales to about +3k/wk Asia, which I would not rely on. Resting-limit stacks: c2 mid +7.6k L6M at 0 s but the per-lot delta is +0.47 and NY-AM is -2.6. Nothing survives a 3-s delay as an entry edge.
+
+### B. PE 45-s three-bar entered at MARKET at the confirming candle's close (the user's Sunday spec), NY-AM + NY-PM only
+Cell tc 45s R_three, mechanic a (market at the print +1 tick), pure wait (the whole planned lot at the print; no confirmation = no trade), ENTRIES in NY-AM and NY-PM only (post-hoc session restriction: the full-day cell had Asia/pre-market negative). Delta vs floor per planned lot on the same NY trades:
+| variant | delay | L3M | L6M [MDE] | HOLD | PRE | X' | NY-AM L6M / HOLD | NY-PM L6M / HOLD | per contract L6M (cell / floor) | stack $/wk L6M / HOLD / PRE / X' (PE NY entries replaced, engine 5.6 lots) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| R_three, market, pure wait | 0 s | +5.71 | +3.57 [4.9] | +3.54 | +1.58 | +0.81 | +4.83 / +4.22 | +1.63 / +2.51 | +2.71 / -1.92 | +3.6k / +3.3k / -0.4k / -0.6k |
+| | 1 s | +5.35 | +3.55 | +3.53 | +1.74 | +0.64 | +4.79 / +4.18 | +1.66 / +2.54 | +2.70 / -1.92 | +4.1k / +3.8k / -0.2k / -0.6k |
+| | 3 s | +5.54 | +3.57 | +3.55 | +1.75 | +0.84 | +4.69 / +4.08 | +1.85 / +2.74 | +2.71 / -1.92 | +3.4k / +3.1k / -0.6k / -0.6k |
+| R_three_strict, market | 0 / 1 / 3 s | +5.59 / +5.24 / +5.42 | +3.80 / +3.80 / +3.83 | +3.76 / +3.76 / +3.79 | +1.62 / +1.79 / +1.64 | +0.56 / +0.38 / +0.59 | +5.25 / +5.24 / +5.16 (L6M) | +1.57 / +1.59 / +1.80 | +3.15 | +3.2k / +3.7k / +3.0k |
+| R_three, 70/30 with the add at the pattern (A70) | 0 s | +2.17 | +0.92 [2.6] | +0.88 | +0.82 | +1.03 | +1.37 / +1.18 | +0.24 / +0.43 | -1.11 / -1.92 | +2.3k / +1.6k / -1.1k / -0.4k |
+| (comparison) limit at body mid, pure wait | 0 s | +4.97 | +4.74 | +4.21 | +1.36 | +0.61 | +5.03 / +4.00 | +4.30 / +4.51 | +4.97 / -1.92 | +4.4k / +3.5k / -0.2k / -0.2k |
+Reading: the market entry at the close is as good as the limit at the body mid on NY-AM and a lot weaker on NY-PM (+1.6 vs +4.3 L6M); it is completely insensitive to a 1-s or 3-s delay (+3.55 / +3.57) because the fill is the next-second print, so latency is not the risk here. Inside the MDE (4.9) like every PE row; PRE +1.6, X' +0.8, stack mixed (PRE -0.4k, X' -0.6k). NY-PM per contract is negative (-0.53) even though it beats a floor that is worse (-2.00): the NY-PM leg adds little (+0.24 L6M on the A70 version). Rough dollars: per-signal arithmetic 3.57 x $20 x 7 live lots x 20.8 NY signals/wk = +$10k/wk (overstated); the lock-engine stack is +3.6k at 5.6 engine lots, about +4.5k/wk at 7 lots for NY entries, with PRE and X' about -0.4k / -0.6k. Fires on about 12.6 of the 20.8 NY (AM+PM) signals per week (measured on the L6M window; the NY-AM-only signal count is also 12.6, so check the NY-PM share before sizing). Tier unchanged: LEAD-family, shadow only.
+
+### C. Own open items for the PE 45-s three-bar (limit at body mid, pure wait, the LEAD cell)
+* Neighbour means (8 neighbouring cells, delta vs floor L6M / HOLD): strict three-bar b-near +2.63 / +2.20; b-mid +1.11 / +1.28; b-far +1.40 / +1.68; 30-s b-near +1.77 / +1.57; 15-s b-near +1.38 / +1.47; market at print +2.58 / +2.28; c2 near +1.50 / +1.75; strict b-mid +1.15 / +1.25 -> mean +1.69 / +1.69, all eight positive in both windows (no knife edge; about 70% of the headline).
+* Share of the gain from the top 5% of trades (L6M, PE, 1,194 signals, 830 fired): the top 5% (59 signals) carry 168% of the net gain (+2,895 pts in total): the gain is concentrated in a few large winners and the other 95% net negative against the floor. Treat the 29.6 trades/week as ~1.5 big events/week, MDE-limited.
+* Capacity proxy (no depth at the fill seconds in the engine): the confirming 45-s candle trades median 96 contracts (p25 41, p10 21); 7 live PE lots are below the p10 volume of the confirming bar, so entry size is not the constraint; resting limits after a reversal candle may be behind a queue (not modelled).
+* Still not computed: stack correlation / marginal worst-20-weeks, 200-draw placebos for the rest of the selected cells. Section 8a entry timing is N1's.

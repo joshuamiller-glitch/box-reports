@@ -481,3 +481,128 @@ White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.
 
 Plain sentence (best by all-signal gain): requiring iFVG|2m AND ote705|2m before the signal enters (c2_near|F0.7) adds +13.81 pts per contract on the 30.5% of signals it fires on in the last 6 months (MDE 3.51), but +3.90 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +4.09; tier BEST-AVAILABLE.
 
+
+## Stage POOL  (2026-10-31T03:31Z)
+
+auto
+
+### HM: 1238 combinations x 17 variants = 21046 cells; PRE+X' selection, one recent look on the top 11 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.008 (K=16630). Tiers: BEST-AVAILABLE 30.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AND(FVG|15s+ote79|15s) | c1|F0.7 | 56.8% | 516 | +5.54 (MDE 1.80) | +5.64 | +6.49 | +7.84 | +5.71 | +3.02 | +2.96 | 0.408 | BEST-AVAILABLE | placebo,<=best_member_PRE+X |
+| AND(FVG|15s+ote79|15s) | a|F0.7 | 56.8% | 516 | +5.54 (MDE 1.80) | +5.63 | +6.49 | +7.73 | +5.71 | +3.01 | +2.96 | 0.408 | BEST-AVAILABLE | placebo,<=best_member_PRE+X |
+| AND(OB|3m+ote79|15s) | c2_near|F0.7 | 56.2% | 511 | +5.52 (MDE 1.88) | +5.58 | +6.63 | +7.92 | +5.76 | +2.97 | +3.03 | 0.313 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|3m+ote79|15s) | b_near|F0.7 | 56.2% | 511 | +5.51 (MDE 1.88) | +5.56 | +6.62 | +7.81 | +5.76 | +2.97 | +3.03 | 0.343 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|45s+ote79|15s) | c2_near|F0.7 | 57.2% | 520 | +5.45 (MDE 1.87) | +5.51 | +6.57 | +7.87 | +5.61 | +3.00 | +3.03 | 0.408 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|45s+ote79|15s) | b_near|F0.7 | 57.2% | 520 | +5.45 (MDE 1.87) | +5.49 | +6.57 | +7.76 | +5.61 | +2.99 | +3.03 | 0.438 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(BRK|30s+ote79|15s) | c2_near|F0.7 | 56.3% | 512 | +5.44 (MDE 1.91) | +5.50 | +6.62 | +7.87 | +5.58 | +2.94 | +3.03 | 0.393 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+ote79|15s) | c2_near|F0.7 | 56.0% | 509 | +5.43 (MDE 1.91) | +5.49 | +6.56 | +7.87 | +5.64 | +2.91 | +3.03 | 0.398 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|30s+ote79|15s) | c2_near|F0.7 | 57.5% | 523 | +5.43 (MDE 1.87) | +5.49 | +6.61 | +7.85 | +5.63 | +3.00 | +3.03 | 0.438 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+ote79|15s) | b_near|F0.7 | 56.0% | 509 | +5.42 (MDE 1.91) | +5.48 | +6.55 | +7.76 | +5.64 | +2.91 | +3.03 | 0.433 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|30s+ote79|15s) | b_near|F0.7 | 57.5% | 523 | +5.42 (MDE 1.87) | +5.48 | +6.60 | +7.74 | +5.62 | +3.00 | +3.03 | 0.468 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|3m+ote79|15s) | c1|F0.7 | 56.1% | 510 | +5.41 (MDE 1.80) | +5.48 | +6.48 | +7.94 | +5.70 | +2.91 | +2.96 | 0.363 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+
+Plain sentence (best by all-signal gain): requiring FVG|15s AND ote79|15s before the signal enters (c1|F0.7) adds +5.54 pts per contract on the 56.8% of signals it fires on in the last 6 months (MDE 1.80), but +3.02 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +2.96; tier BEST-AVAILABLE.
+
+
+## Stage POOL  (2026-10-31T03:39Z)
+
+auto
+
+### KB: 1238 combinations x 17 variants = 21046 cells; PRE+X' selection, one recent look on the top 21 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.194 (K=16574). Tiers: BEST-AVAILABLE 30.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AND(OB|45s+CFA:b1|avwap) | c2_far|F0.7 | 42.9% | 539 | +5.26 (MDE 1.10) | +5.24 | +5.83 | +5.79 | +4.80 | +1.75 | +1.77 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iFVG|15s+CFA:vwap|avwap+CFA:vwap|day) | c2_far|F0.7 | 59.3% | 746 | +5.01 (MDE 1.30) | +5.06 | +5.90 | +4.83 | +3.89 | +2.70 | +2.50 | 0.934 | BEST-AVAILABLE | placebo |
+| AND(iFVG|15s+CFA:vwap|day) | c2_far|F0.7 | 61.7% | 775 | +4.76 (MDE 1.04) | +4.81 | +5.52 | +4.94 | +3.82 | +2.69 | +2.50 | 0.902 | BEST-AVAILABLE | placebo |
+| AND(FVG|2m+CFA:vwap|day) | c2_far|F0.7 | 45.3% | 569 | +4.46 (MDE 1.26) | +4.47 | +4.82 | +5.85 | +4.70 | +1.54 | +1.62 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iFVG|15s+CFA:vwap|day) | c2_mid|F0.7 | 62.3% | 783 | +4.45 (MDE 0.83) | +4.35 | +5.18 | +4.81 | +3.77 | +2.53 | +2.19 | 0.951 | BEST-AVAILABLE | placebo |
+| AND(iFVG|15s+CFA:vwap|avwap+CFA:vwap|day) | c2_mid|F0.7 | 60.1% | 755 | +4.43 (MDE 1.10) | +4.35 | +5.12 | +4.67 | +3.80 | +2.40 | +2.19 | 0.967 | BEST-AVAILABLE | placebo |
+| AND(iFVG|15s+CFA:vwap|avwap) | c2_far|F0.7 | 66.0% | 830 | +4.32 (MDE 1.18) | +4.43 | +5.15 | +4.42 | +3.37 | +2.63 | +2.50 | 0.934 | BEST-AVAILABLE | placebo |
+| AND(FVG|2m+CFA:b1|day) | c2_far|F0.7 | 49.6% | 624 | +4.22 (MDE 1.15) | +4.32 | +4.61 | +5.47 | +4.53 | +1.65 | +1.62 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_PRE+X |
+| AND(FVG|2m+CFA:vwap|avwap) | c2_far|F0.7 | 49.2% | 618 | +4.21 (MDE 1.34) | +4.36 | +4.61 | +5.40 | +4.65 | +1.62 | +1.80 | 0.984 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iFVG|30s+CFA:b1|day) | c2_far|F0.7 | 62.3% | 783 | +4.14 (MDE 1.19) | +4.27 | +4.50 | +4.72 | +2.89 | +2.33 | +2.32 | 0.984 | BEST-AVAILABLE | placebo |
+| AND(FVG|15s+CFA:b1|day) | c2_far|F0.7 | 64.6% | 812 | +4.11 (MDE 1.32) | +4.05 | +4.43 | +4.43 | +3.43 | +2.51 | +2.61 | 0.820 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|15s+CFA:b1|avwap) | c2_far|F0.7 | 67.6% | 850 | +4.08 (MDE 1.21) | +4.06 | +4.59 | +4.03 | +3.45 | +2.63 | +2.61 | 0.656 | BEST-AVAILABLE | placebo,<=best_member_PRE+X |
+
+Plain sentence (best by all-signal gain): requiring iFVG|15s AND CFA:vwap|avwap AND CFA:vwap|day before the signal enters (c2_far|F0.7) adds +5.01 pts per contract on the 59.3% of signals it fires on in the last 6 months (MDE 1.30), but +2.70 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +2.50; tier BEST-AVAILABLE.
+
+
+## Stage POOL  (2026-10-31T03:46Z)
+
+auto
+
+### PE: 1238 combinations x 17 variants = 21046 cells; PRE+X' selection, one recent look on the top 17 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.002 (K=16718). Tiers: BEST-AVAILABLE 30.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AND(OB|1m+CFA:val|sw15) | c2_far|F0.7 | 39.5% | 472 | +7.92 (MDE 1.86) | +8.00 | +8.67 | +8.39 | +7.31 | +2.24 | +2.50 | 0.770 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| AND(OB|1m+CFA:vah|sw15) | c2_far|F0.7 | 41.2% | 492 | +7.89 (MDE 2.09) | +7.86 | +8.77 | +9.06 | +7.39 | +2.46 | +2.50 | 0.475 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| AND(OB|1m+CFA:poc|sw15) | c2_far|F0.7 | 41.4% | 494 | +7.11 (MDE 1.87) | +7.13 | +7.44 | +8.76 | +7.42 | +2.15 | +2.50 | 0.820 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| AND(OB|1m+CFA:vwap|avwap+CFA:vwap|day) | c2_far|F0.7 | 49.8% | 595 | +6.92 (MDE 1.70) | +6.91 | +7.45 | +7.11 | +6.17 | +2.83 | +2.50 | 0.984 | BEST-AVAILABLE | placebo,<=best_member_PRE+X |
+| AND(OB|1m+CFA:vwap|day) | c2_far|F0.7 | 50.4% | 602 | +6.79 (MDE 1.64) | +6.79 | +7.46 | +6.76 | +5.59 | +2.80 | +2.50 | 0.984 | BEST-AVAILABLE | placebo |
+| AND(OB|1m+CFA:vwap|avwap) | c2_far|F0.7 | 50.3% | 600 | +6.73 (MDE 1.71) | +6.69 | +7.20 | +6.50 | +5.61 | +2.77 | +2.50 | 0.984 | BEST-AVAILABLE | placebo,<=best_member_PRE+X |
+| AND(OB|1m+CFA:vwap|avwap+CFA:b1|avwap) | c2_far|F0.7 | 50.3% | 600 | +6.73 (MDE 1.71) | +6.69 | +7.20 | +6.50 | +5.61 | +2.77 | +2.50 | 0.984 | BEST-AVAILABLE | placebo,<=best_member_PRE+X |
+| AND(OB|1m+CFA:b1|avwap+CFA:vwap|day) | c2_far|F0.7 | 50.6% | 604 | +6.72 (MDE 1.57) | +6.70 | +7.24 | +6.82 | +5.71 | +2.78 | +2.50 | 0.967 | BEST-AVAILABLE | placebo,<=best_member_PRE+X |
+| AND(FVG|2m+CFA:vah|sw15) | c2_mid|F0.7 | 44.6% | 532 | +6.58 (MDE 2.46) | +6.64 | +6.12 | +7.37 | +6.72 | +2.17 | +2.14 | 0.689 | BEST-AVAILABLE | placebo |
+| AND(FVG|15s+CFA:val|sw15) | c2_far|F0.7 | 52.9% | 632 | +6.06 (MDE 1.56) | +6.31 | +6.46 | +7.43 | +7.28 | +2.62 | +2.82 | 0.820 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+| AND(FVG|15s+CFA:val|sw15) | c2_mid|F0.7 | 53.5% | 639 | +6.03 (MDE 1.82) | +6.26 | +6.73 | +7.18 | +7.18 | +2.64 | +2.21 | 0.705 | BEST-AVAILABLE | placebo |
+| AND(FVG|15s+CFA:vah|sw15) | c2_far|F0.7 | 55.4% | 662 | +5.96 (MDE 1.91) | +6.12 | +6.98 | +7.35 | +7.03 | +2.74 | +2.82 | 0.721 | BEST-AVAILABLE | placebo,<=best_member_L6M |
+
+Plain sentence (best by all-signal gain): requiring FVG|15s AND CFA:vwap|day before the signal enters (c2_far|F0.7) adds +4.56 pts per contract on the 73.5% of signals it fires on in the last 6 months (MDE 1.35), but +3.10 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +2.82; tier BEST-AVAILABLE.
+
+
+## Stage POOL  (2026-10-31T03:51Z)
+
+auto
+
+### ST: 1238 combinations x 17 variants = 21046 cells; PRE+X' selection, one recent look on the top 14 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.044 (K=16630). Tiers: BEST-AVAILABLE 30.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AND(OB|1m+pd50|5m) | c2_near|F0.7 | 25.8% | 324 | +9.66 (MDE 2.64) | +9.66 | +10.03 | +10.42 | +11.35 | +1.56 | +1.57 | 0.055 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|30s+pd50|5m) | c2_near|F0.7 | 26.0% | 326 | +9.65 (MDE 2.62) | +9.62 | +10.06 | +10.51 | +11.26 | +1.57 | +1.87 | 0.065 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iplFVG|30s+pd50|5m) | c2_near|F0.7 | 24.9% | 313 | +9.64 (MDE 2.72) | +9.64 | +10.13 | +10.35 | +11.43 | +1.46 | +1.57 | 0.100 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+pd50|5m) | b_near|F0.7 | 25.9% | 325 | +9.62 (MDE 2.63) | +9.62 | +9.95 | +10.39 | +11.32 | +1.56 | +1.57 | 0.050 | BEST-AVAILABLE | <=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|45s+pd50|5m) | c2_near|F0.7 | 25.2% | 317 | +9.62 (MDE 2.74) | +9.64 | +10.01 | +10.34 | +11.18 | +1.49 | +1.57 | 0.085 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|30s+pd50|5m) | b_near|F0.7 | 26.0% | 327 | +9.61 (MDE 2.61) | +9.58 | +9.98 | +10.48 | +11.20 | +1.57 | +1.57 | 0.055 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|30s+pd50|5m) | c1|F0.7 | 25.9% | 325 | +9.61 (MDE 2.63) | +9.56 | +10.00 | +10.17 | +11.29 | +1.55 | +1.54 | 0.035 | BEST-AVAILABLE | <=best_member_PRE+X |
+| AND(iplFVG|30s+pd50|5m) | c1|F0.7 | 24.8% | 312 | +9.61 (MDE 2.73) | +9.61 | +10.07 | +10.15 | +11.57 | +1.44 | +1.54 | 0.090 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+pd50|5m) | c1|F0.7 | 25.7% | 323 | +9.60 (MDE 2.65) | +9.59 | +9.94 | +10.11 | +11.38 | +1.54 | +1.54 | 0.035 | BEST-AVAILABLE | <=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|30s+pd50|5m) | a|F0.7 | 25.9% | 325 | +9.60 (MDE 2.63) | +9.55 | +9.99 | +10.12 | +11.24 | +1.55 | +1.54 | 0.035 | BEST-AVAILABLE | <=best_member_PRE+X |
+| AND(iplFVG|30s+pd50|5m) | a|F0.7 | 24.8% | 312 | +9.60 (MDE 2.73) | +9.60 | +10.05 | +10.11 | +11.55 | +1.44 | +1.54 | 0.090 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iplFVG|30s+pd50|5m) | b_near|F0.7 | 25.0% | 314 | +9.59 (MDE 2.70) | +9.60 | +10.05 | +10.32 | +11.40 | +1.46 | +1.57 | 0.095 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+
+Plain sentence (best by all-signal gain): requiring OB|30s AND CFA:vwap|avwap AND CFA:b1|avwap before the signal enters (c2_far|F0.7) adds +5.24 pts per contract on the 49.4% of signals it fires on in the last 6 months (MDE 1.61), but +2.07 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +1.98; tier BEST-AVAILABLE.
+
+
+## Stage POOL  (2026-10-31T04:00Z)
+
+auto
+
+### MV: 1238 combinations x 17 variants = 21046 cells; PRE+X' selection, one recent look on the top 8 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.002 (K=16590). Tiers: BEST-AVAILABLE 30.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AND(OB|30s+rnd50) | c2_near|F0.7 | 69.9% | 791 | +9.58 (MDE 1.81) | +9.60 | +9.49 | +9.88 | +10.27 | +6.64 | +6.70 | 0.731 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+rnd50) | c2_near|F0.7 | 69.5% | 786 | +9.57 (MDE 1.81) | +9.58 | +9.50 | +9.87 | +10.02 | +6.58 | +6.70 | 0.741 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|30s+rnd50) | b_near|F0.7 | 69.9% | 791 | +9.56 (MDE 1.82) | +9.58 | +9.48 | +9.84 | +10.21 | +6.63 | +6.69 | 0.716 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+rnd50) | b_near|F0.7 | 69.5% | 786 | +9.55 (MDE 1.82) | +9.56 | +9.49 | +9.83 | +9.96 | +6.57 | +6.69 | 0.731 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iFVG|1m+rnd50) | c2_near|F0.7 | 69.1% | 781 | +9.54 (MDE 1.81) | +9.55 | +9.48 | +9.77 | +10.04 | +6.51 | +6.70 | 0.697 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iplFVG|1m+rnd50) | c2_near|F0.7 | 68.5% | 775 | +9.53 (MDE 1.82) | +9.54 | +9.52 | +9.92 | +9.82 | +6.46 | +6.70 | 0.672 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iFVG|1m+rnd50) | b_near|F0.7 | 69.1% | 781 | +9.52 (MDE 1.82) | +9.53 | +9.47 | +9.73 | +9.98 | +6.50 | +6.69 | 0.667 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iplFVG|1m+rnd50) | b_near|F0.7 | 68.5% | 775 | +9.51 (MDE 1.83) | +9.52 | +9.51 | +9.88 | +9.78 | +6.45 | +6.69 | 0.657 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|45s+rnd50) | c2_near|F0.7 | 69.1% | 781 | +9.47 (MDE 1.78) | +9.49 | +9.35 | +9.87 | +10.09 | +6.47 | +6.70 | 0.786 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|2m+rnd50) | c2_near|F0.7 | 68.1% | 770 | +9.46 (MDE 1.84) | +9.49 | +9.45 | +9.70 | +10.06 | +6.35 | +6.70 | 0.786 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|45s+rnd50) | c2_near|F0.7 | 68.6% | 776 | +9.45 (MDE 1.78) | +9.47 | +9.40 | +9.77 | +10.18 | +6.41 | +6.70 | 0.751 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|45s+rnd50) | b_near|F0.7 | 69.1% | 781 | +9.44 (MDE 1.78) | +9.47 | +9.34 | +9.83 | +10.03 | +6.46 | +6.69 | 0.771 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+
+Plain sentence (best by all-signal gain): requiring OB|30s AND rnd50 before the signal enters (c2_near|F0.7) adds +9.58 pts per contract on the 69.9% of signals it fires on in the last 6 months (MDE 1.81), but +6.64 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +6.70; tier BEST-AVAILABLE.
+

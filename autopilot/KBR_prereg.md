@@ -1,0 +1,10 @@
+# KBR prereg (follow-up section 4, KB regime tools) 2026-10-31
+Unit: KB signals in the four live sessions (asia london nyam nypm); universe = trend-store 44,370 trades, KB rows; bases B2 = 70/30@3 split basis N (f73_N), B1 = market-at-signal basis N (mkt_N). Windows X' 20230401-20240131, PRE 20240201-20250630, HOLD 20250701-20260206, L6M 20250801-20260206, L3M 20251106-20260206, Y26 = 5 weeks sign only. Selection = PRE+X' only; ONE recent look on the hashed selection + named cells.
+ER cells: 5-min Kaufman ER(20) at the signal (trendgate store 5m.er20), thr in {0.2, 0.3}; actions gate (skip below) and sizer (x0.5 below / x1.5 at-or-above). 4 cells. Sensitivity (not selected): thr 0.1,0.15,0.25,0.35,0.4,0.45.
+LEAN cells (N1 e feature, e_feat.parquet run_signed: sign of 1-min mean imb10 x signal side, run of identical sign over consecutive 1-min blocks ending at the signal; + = book leaning OUR way): R in {3,5,15} min; AGAINST skip (run_signed <= -R), OUR-WAY skip (run_signed >= R), AGAINST sizer x0.5. 9 cells.
+COMBINED: each ER cell x each LEAN cell = 36 (+ the 4 + 9 singles) = 49 cells x 2 bases x scopes {KB-live, asia, london, nyam, nypm}.
+Selection: carried = PRE>0 and X'>0 risk-matched rate lift (pts/planned lot); per scope pick the best (PRE+X')/2 per family (ER, LEAN, COMBINED). Named cells always looked at: ER>=0.2 gate/sizer, ER>=0.3 gate/sizer (TG-1), LEAN against 3/5/15 skip, LEAN our-way 3/5/15 skip.
+Walk-forward chain: monthly re-fit on trailing 12 months (anchored and rolling-12 variants) over the 49-cell set + 'none', pick max risk-matched lift if > 0 else none; last re-fit reported.
+Placebo: >=200 shuffled-flag draws within book-month (same fire rate), plus 60-s-stale lean feature; rank of the real cell.
+Stack: s2_lib lock engine (S73 and MKT, basis N), m0 = multiplier (0 skip), planned-lot-R locks and sized-lot-R locks (day/week/pb locks x day's largest multiplier). Live $ at KB 2 lots = research $ x 2/5.2 (KB book only changes; locks are per book).
+Labels: any cell that changes lots (gate or sizer) is STRUCTURE for the unscaled $; risk-matched lift (total lots unchanged) is the information measure.

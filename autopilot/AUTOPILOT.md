@@ -156,3 +156,12 @@ Supersedes all queue orders. Everything else PAUSED (not killed; markers stay) u
 ## 2026-10-30 ~21:30Z USER DIRECTIVE: QUANT-LAYER ADDENDUM (all programs) (full text: autopilot/DIRECTIVE_QUANT_LAYER_20261030.md)
 
 ## 2026-10-30 ~22:55Z (wall clock) USER DIRECTIVE: 36-HOUR PLAN to Sunday 12:00 ET (full text: autopilot/DIRECTIVE_PLAN36_20261030.md)
+
+## 2026-10-31 ~03:50Z (wall) USER DIRECTIVE: FOLLOW-UP ORDERS (full text: autopilot/DIRECTIVE_FOLLOWUP_20261031.md); live lots K6 2, P6 7, U6 4, H6 4 Asia / 2 NY-AM, M6 2, A6 1, O6 1
+
+## 2026-10-31 ~04:20Z (wall) USER DIRECTIVE: T-NO-TRADE-EXPANDED (full text: autopilot/DIRECTIVE_NO_TRADE_EXPANDED_20261031.md)
+
+## 2026-10-31 ~04:40Z (wall) USER DIRECTIVE: T-RECENT-EDGE standing program (full text: autopilot/DIRECTIVE_RECENT_EDGE_20261031.md)
+
+## 2026-10-31 USER DIRECTIVE: UTILISATION (verbatim)
+UTILISATION (user, 2026-10-31): run at 80-90% CPU continuously until Sunday 2026-11-01 12:00 ET. Keep the agent cap full at all times (10 agents); when one finishes, start the next from the queue immediately; respect the 30 GB per-agent memory cap (prefer more agents at 3 workers to one agent at 8). Queue order after the running agents: FOLLOWUP s1 (Sunday stack as coded) > RECENT-EDGE s2+s1 > risk-off > halt-resume > quit-when-up > NO-TRADE-EXPANDED > FOLLOWUP s2-s7 > RECENT-EDGE s3-s5 > L2 cycles (continuous). MORNING.md every 2 h must carry one line: "load: X% | agents: n/10 | queue: m".

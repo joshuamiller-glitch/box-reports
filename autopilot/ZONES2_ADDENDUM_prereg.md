@@ -1,0 +1,20 @@
+# ZONES-2 ADDENDUM prereg (ZA, follow-up section 6 "no-trade set: isolate the information") - written 2026-10-31 before any P&L statistic of the 8-line set is read
+Code l2vast/ds3/code/zones2/za_*.py, outputs l2vast/ds3/out/zones2/za_*. Same masks as ZONES-2 (own, capped 20260206; L3M 20251106.., L6M 20250801.., HOLD 20250701.., PRE 20240201..20250630, X' 20230401..20240131; UNTOUCHED never read). Same machinery as ZONES2 (zl.py: ahead vectors from the NTZ-1 POI store, simulate(), aggregate(), placebo_draw()).
+Every line of the set is POST-HOC-SELECTED (see DS3_ZONES_2.md section 1); nothing here is honest out-of-sample except the forward-facing version F1/F2 below.
+
+## The coded live set (8 lines) -> zones2 stream names
+PD mid = PDX|day|M ; 1-h kijun = MAS|ich_kijun|1h ; 4-h Keltner upper = MAS|kc_up|4h ; 4-h bar mid = CRT|M|4h ; RTH Camarilla H3 = PIV|cam_H3|rth ; 15-m OTE 62 / 70.5 / 79 = FIB|ote62_up|15m, FIB|ote705_up|15m, FIB|ote79_up|15m.
+Absent from live (the 3 profile lines of the 11): PRF|vah|sw15, PRF|lvn1|sw1h, PRF|hvn0|sw1h.  S8 = the 8, S11 = ZONES2 set, S3 = the three profile lines.
+
+## Rule under test (as coded): signal fires when a FRESH S8 line lies between entry and target within D=20 pts -> skip.  Variants: rt = target re-based to line - 2 ticks (as ZONES2), z50 = half size, fixN = target fixed at N pts from entry (no level).
+Base = the live 70/30 split at 3 pt (SPL), N basis primary (M, LIVE bases in the parquet). Gain per signal in planned-lot points vs the unfiltered base (all signals of the group in the denominator), week-clustered SE, MDE = 2.8 SE; per contract = kept per final lot; stack = exact lock engine (6 books).
+Stack line: weekly mean, SD, maxDD, worst-20-weeks (sum), base vs rule, at (i) research lots (ST10 HM10 WT7 KB5.2 SM7.4 PE5.6, as ZONES2) and (ii) LIVE lots from FOLLOWUP_BRIEF: PE(P6) 7 Asia/London/NY-AM; KB(K6) 2 Asia/London/NY-AM/NY-PM; SM(U6) 4 Asia/London; HM(H6) 4 Asia, 2 NY-AM; ST(S6) and WT not live -> research/2.35 every session; sessions with live lot 0 drop out; the lock engine's R/$ locks are on the book's reference lot (planned-lot variant); half-size cells are scored by size multiplier 0.5 inside the engine (locks unchanged). M6 (MV) is not in the 6-book engine; not scored.
+
+## Cell families (declared; every variant added is counted)
+A. controls at D=20, S8: skip, rt, z50, fix40 (primary a), fix30, fix20 (sensitivity) = 6 ; same on S11 and S3 = 12 more (c, set comparison). 
+B. D = 10 / 15 / 20 / 30 on S8 x {skip, rt, z50, fix40} = 16 (d, e; D=20 overlaps A).
+C. per line (c): each of the 11 alone x {skip, rt, z50} = 33; leave-one-out of the 8 x {skip, rt, z50} = 24.
+D. placebos (b) >= 300 draws each on S8 D=20: rt (permuted-distance = same fired signals, target at a random level drawn from the real distance pool of the same book; random-level-at-same-distance is identical to the real rt in the simulator because only the distance enters), fix40 vs rt difference, skip and rt vs random fire sets (same fire count per book x session x target-bin x side) and vs shuffled-day; stack of >= 100 permuted-distance draws.
+E. forward-facing (S8 fixed, lines not re-selected): F1 = choose D in {10,15,20,30} and action in {skip, rt, z50} (12 cells) using PRE+X' only (pooled per-signal gain) and drop S8 lines whose PRE+X' dP(target) at D=20 is not negative; score the chosen cell in L6M / HOLD / L3M (per signal and stack). F2 = quarterly walk-forward chain with the pool restricted to S8 (select lines with adjusted dP(target) < 0 at D=20 and D=40 in all four chunks of everything seen so far, n >= 30 per chunk; skip at D=20), scored only on the next quarter, 2024Q2..2026-02, per signal and stack.
+Total declared ~ 110 scored cells + 2 forward + placebos.  Multiplicity: the 11-line set was chosen from 586 streams after seeing all windows (ZONES2: 5,326 cells, ~2.5M cumulative trials); the 8-line subset is the user's live coding of that selection.
+Tiers: PASS / CANDIDATE / LEAD / DEAD as ZONES2; the S8 skip stays LEAD-posthoc at best.  Questions go to MORNING.md only.
