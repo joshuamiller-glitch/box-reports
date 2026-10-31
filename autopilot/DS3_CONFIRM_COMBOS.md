@@ -329,3 +329,155 @@ White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.
 
 Plain sentence (best by all-signal gain): requiring OB|45s AND iplFVG|45s before the signal enters (c2_near|F0.7) adds +5.82 pts per contract on the 64.4% of signals it fires on in the last 6 months (MDE 3.80), but +3.62 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +3.15; tier BEST-AVAILABLE.
 
+
+
+## PAGE 1 — stage1ENG: verdict per book and every candidate on three units (generated 2026-10-31 03:17Z)
+
+Units: pc = pts per contract of final position (primary, all book signals, L6M); pl = per planned lot; stack = lock-engine $/wk difference vs the plain-dip floor (engine books only: ST HM WT KB SM PE; others n/a). Placebo = random-level (cf_engine.placebo_level_ov, same distance distribution) rank of the real gain among draws (limit variants only). "excess" = combination minus its better member in the same variant (paired week-block CI): the "beats its best single member" test. FINAL TIER: INFO-CANDIDATE needs stack>0 in L6M and HOLD (engine books), placebo beaten (95th pct), excess CI>0; otherwise STRUCTURE (the single-member resting-limit/70-30 structure explains it) or STACK-NEG.
+
+| book | verdict |
+|---|---|
+| KB | 50 looked cells; {'BEST-AVAILABLE': np.int64(40), 'CANDIDATE': np.int64(10)}; stage RC(PRE+X') p=0.178; 10 unit-checked candidates -> 5 INFO-CANDIDATE, 5 STRUCTURE/STACK-NEG |
+| PE | 30 looked cells; {'BEST-AVAILABLE': np.int64(23), 'CANDIDATE': np.int64(7)}; stage RC(PRE+X') p=0.002; 7 unit-checked candidates -> 1 INFO-CANDIDATE, 6 STRUCTURE/STACK-NEG |
+| ST | 30 looked cells; {'BEST-AVAILABLE': np.int64(19), 'CANDIDATE': np.int64(11)}; stage RC(PRE+X') p=0.008; 11 unit-checked candidates -> 2 INFO-CANDIDATE, 9 STRUCTURE/STACK-NEG |
+| HM | 30 looked cells; {'CANDIDATE': np.int64(16), 'BEST-AVAILABLE': np.int64(14)}; stage RC(PRE+X') p=0.034; 16 unit-checked candidates -> 8 INFO-CANDIDATE, 8 STRUCTURE/STACK-NEG |
+| SM | 30 looked cells; {'BEST-AVAILABLE': np.int64(20), 'CANDIDATE': np.int64(10)}; stage RC(PRE+X') p=0.182; 10 unit-checked candidates -> 3 INFO-CANDIDATE, 7 STRUCTURE/STACK-NEG |
+| WT | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.006; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| DN | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.002; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| PB | 30 looked cells; {'BEST-AVAILABLE': np.int64(24), 'CANDIDATE': np.int64(6)}; stage RC(PRE+X') p=0.006; 6 unit-checked candidates -> 0 INFO-CANDIDATE, 6 STRUCTURE/STACK-NEG |
+| MV | 30 looked cells; {'BEST-AVAILABLE': np.int64(18), 'CANDIDATE': np.int64(12)}; stage RC(PRE+X') p=0.002; 12 unit-checked candidates -> 3 INFO-CANDIDATE, 9 STRUCTURE/STACK-NEG |
+| MA | 30 looked cells; {'BEST-AVAILABLE': np.int64(28), 'CANDIDATE': np.int64(2)}; stage RC(PRE+X') p=0.204; 2 unit-checked candidates -> 0 INFO-CANDIDATE, 2 STRUCTURE/STACK-NEG |
+
+| book | cell | pc L6M | pl L6M | stack $/wk L6M | stack HOLD | placebo rank (mean) | best member pc | excess [CI] | final | DSR | RW | PBO | + quarters | top5% |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| SM | THEN60s(iplFVG~15s+OB~30s) / c2_mid~F0.7 | +5.19 | +1.13 | +2808 | +915 | 1/101 (+3.20) | +3.30 | +1.89 [+0.69,+3.20] | INFO-CANDIDATE | 1.00 | Y | 0.05 | 12/12 | 0.66 |
+| SM | THEN60s(iplFVG~15s+OB~30s) / c2_near~F0.7 | +4.68 | +0.52 | +2634 | +750 | 2/101 (+3.14) | +2.48 | +2.20 [+1.02,+3.55] | INFO-CANDIDATE | 1.00 | Y | 0.05 | 12/12 | 0.61 |
+| SM | THEN60s(iplFVG~15s+OB~30s) / c2_far~F0.7 | +4.60 | +0.20 | +1900 | +227 | 2/101 (+3.26) | +3.51 | +1.09 [+0.08,+2.18] | INFO-CANDIDATE | 1.00 | Y | 0.05 | 12/12 | 0.58 |
+| MV | THEN60s(iplFVG~30s+OB~30s) / c2_mid~F0.7 | +4.13 | +0.65 | +nan | +nan | 4/101 (+3.66) | +3.44 | +0.69 [+0.23,+1.19] | INFO-CANDIDATE | 1.00 | Y | 0.03 | 12/12 | 0.57 |
+| HM | THEN60s(iplFVG~30s+OB~30s) / c2_far~F0.7 | +3.68 | +0.95 | +5328 | +3392 | 1/101 (+2.77) | +2.87 | +0.81 [+0.43,+1.20] | INFO-CANDIDATE | 1.00 | Y | 0.45 | 12/12 | 0.65 |
+| HM | THEN60s(iFVG~30s+OB~30s) / c2_far~F0.7 | +3.64 | +0.35 | +6511 | +4731 | 1/101 (+2.79) | +2.87 | +0.77 [+0.24,+1.30] | INFO-CANDIDATE | 1.00 | Y | 0.45 | 12/12 | 0.61 |
+| MV | THEN60s(iplFVG~1m+OB~30s) / b_far~F0.7 | +3.62 | +0.53 | +nan | +nan | 5/101 (+3.16) | +2.86 | +0.76 [+0.17,+1.34] | INFO-CANDIDATE | 1.00 | Y | 0.03 | 12/12 | 0.63 |
+| HM | THEN300s(iplFVG~30s+OB~30s) / c2_far~F0.7 | +3.56 | +0.85 | +7486 | +5302 | 1/101 (+2.67) | +2.87 | +0.69 [+0.28,+1.09] | INFO-CANDIDATE | 1.00 | Y | 0.45 | 12/12 | 0.66 |
+| HM | THEN60s(iplFVG~30s+OB~30s) / b_far~F0.7 | +3.54 | +0.77 | +4790 | +3267 | 1/101 (+2.67) | +2.57 | +0.97 [+0.59,+1.32] | INFO-CANDIDATE | 1.00 | Y | 0.45 | 12/12 | 0.66 |
+| MV | THEN60s(iplFVG~45s+OB~1m) / b_far~F0.7 | +3.50 | +0.75 | +nan | +nan | 1/101 (+2.92) | +2.58 | +0.92 [+0.26,+1.63] | INFO-CANDIDATE | 1.00 | Y | 0.03 | 12/12 | 0.70 |
+| HM | THEN60s(iplFVG~30s+OB~30s) / c2_mid~F0.7 | +3.46 | +0.54 | +7173 | +5908 | 1/101 (+2.79) | +2.39 | +1.06 [+0.59,+1.56] | INFO-CANDIDATE | 1.00 | Y | 0.45 | 12/12 | 0.61 |
+| HM | THEN60s(iFVG~30s+OB~30s) / b_far~F0.7 | +3.39 | +0.28 | +6324 | +4822 | 1/101 (+2.69) | +2.57 | +0.82 [+0.28,+1.40] | INFO-CANDIDATE | 1.00 | Y | 0.45 | 12/12 | 0.63 |
+| HM | THEN60s(FVG~15s+OB~30s) / c2_far~F0.7 | +3.23 | +0.16 | +6647 | +4436 | 1/101 (+2.49) | +2.87 | +0.35 [+0.15,+0.66] | INFO-CANDIDATE | 1.00 | Y | 0.45 | 12/12 | 0.60 |
+| HM | THEN60s(FVG~15s+OB~30s) / b_far~F0.7 | +3.11 | +0.26 | +4276 | +2876 | 1/101 (+2.33) | +2.57 | +0.54 [+0.24,+0.93] | INFO-CANDIDATE | 1.00 | Y | 0.45 | 12/12 | 0.62 |
+| PE | THEN60s(iFVG~30s+OB~1m) / c2_far~F0.7 | +3.07 | +0.90 | +287 | +137 | 1/101 (+2.47) | +2.50 | +0.57 [+0.24,+0.97] | INFO-CANDIDATE | 1.00 | Y | 0.02 | 12/12 | 0.71 |
+| KB | THEN60s(iplFVG~45s+iFVG~15s) / c2_far~F0.7 | +3.04 | +0.41 | +666 | +501 | 8/201 (+2.58) | +2.50 | +0.53 [+0.26,+0.84] | INFO-CANDIDATE | 1.00 | Y | 0.23 | 12/12 | 0.62 |
+| KB | THEN60s(iplFVG~30s+iFVG~15s) / c2_far~F0.7 | +2.96 | +0.53 | +951 | +726 | 6/201 (+2.59) | +2.50 | +0.46 [+0.21,+0.72] | INFO-CANDIDATE | 1.00 | Y | 0.23 | 12/12 | 0.58 |
+| KB | THEN60s(iFVG~15s+FVG~15s) / c2_far~F0.7 | +2.87 | +0.35 | +2288 | +2035 | 5/201 (+2.41) | +2.61 | +0.26 [+0.11,+0.41] | INFO-CANDIDATE | 1.00 | Y | 0.23 | 12/12 | 0.60 |
+| KB | THEN300s(iplFVG~45s+iFVG~15s) / c2_far~F0.7 | +2.87 | +0.29 | +1417 | +1010 | 6/201 (+2.46) | +2.50 | +0.36 [+0.17,+0.59] | INFO-CANDIDATE | 1.00 | Y | 0.23 | 12/12 | 0.61 |
+| KB | THEN60s(FVG~15s+FVG~2m) / c2_near~F0.7 | +2.62 | +0.45 | +1559 | +1337 | 5/201 (+2.17) | +2.01 | +0.61 [+0.23,+0.94] | INFO-CANDIDATE | 1.00 | Y | 0.23 | 12/12 | 0.68 |
+| ST | THEN60s(iplFVG~15s+OB~1m) / b_mid~F0.7 | +1.91 | -0.80 | +3658 | +2248 | 4/101 (+1.63) | +1.17 | +0.74 [+0.29,+1.14] | INFO-CANDIDATE | 1.00 | Y | 0.07 | 12/12 | 0.83 |
+| ST | THEN60s(iplFVG~15s+OB~1m) / b_near~F0.7 | +1.87 | -0.69 | +2265 | +1617 | 4/101 (+1.51) | +1.06 | +0.81 [+0.36,+1.18] | INFO-CANDIDATE | 1.00 | Y | 0.07 | 12/12 | 0.77 |
+| SM | THEN60s(iplFVG~15s+OB~45s) / c2_mid~F0.7 | +4.35 | +0.16 | +1256 | -494 | 16/101 (+3.63) | +2.71 | +1.64 [+0.83,+2.56] | STACK-NEG | 1.00 | Y | 0.05 | 12/12 | 0.60 |
+| PE | THEN60s(iplFVG~30s+FVG~15s) / c2_far~F0.7 | +3.58 | +0.59 | -99 | +2 | 1/101 (+2.85) | +2.82 | +0.76 [+0.27,+1.24] | STACK-NEG | 1.00 | Y | 0.02 | 12/12 | 0.61 |
+| HM | THEN60s(BRK~15s+OB~30s) / c2_far~F0.7 | +3.04 | +0.07 | +848 | -452 | 2/101 (+2.33) | +2.87 | +0.16 [-0.15,+0.56] | STACK-NEG | 1.00 | Y | 0.45 | 12/12 | 0.65 |
+| PE | THEN60s(iplFVG~30s+OB~1m) / b_far~F0.7 | +2.96 | +0.85 | -665 | -1246 | 3/101 (+2.51) | +2.29 | +0.67 [+0.06,+1.23] | STACK-NEG | 1.00 | Y | 0.02 | 12/12 | 0.72 |
+| KB | THEN60s(iplFVG~45s+iFVG~15s) / c2_mid~F0.7 | +2.82 | +0.27 | -1054 | -1428 | 13/201 (+2.51) | +2.19 | +0.63 [+0.33,+0.94] | STACK-NEG | 1.00 | Y | 0.23 | 12/12 | 0.62 |
+| ST | THEN60s(iplFVG~15s+OB~30s) / c2_mid~F0.7 | +2.74 | -0.82 | -1470 | -4099 | 2/101 (+2.25) | +2.01 | +0.73 [+0.38,+1.15] | STACK-NEG | 1.00 | Y | 0.07 | 12/12 | 0.66 |
+| ST | THEN60s(iplFVG~15s+OB~30s) / b_mid~F0.7 | +2.68 | -0.70 | -1526 | -3995 | 4/101 (+2.18) | +1.74 | +0.94 [+0.61,+1.34] | STACK-NEG | 1.00 | Y | 0.07 | 12/12 | 0.72 |
+| ST | THEN60s(iplFVG~15s+OB~30s) / c2_far~F0.7 | +2.60 | -1.05 | +2406 | -771 | 10/101 (+2.25) | +1.98 | +0.62 [+0.27,+0.96] | STACK-NEG | 1.00 | Y | 0.07 | 12/12 | 0.69 |
+| ST | THEN60s(iplFVG~15s+OB~30s) / c2_near~F0.7 | +2.58 | -0.90 | -5401 | -7396 | 4/101 (+2.21) | +1.87 | +0.71 [+0.33,+1.05] | STACK-NEG | 1.00 | Y | 0.07 | 12/12 | 0.65 |
+| ST | THEN60s(iplFVG~30s+OB~30s) / c2_near~F0.7 | +2.50 | -0.91 | -8473 | -8723 | 2/101 (+2.05) | +1.87 | +0.62 [+0.20,+1.07] | STACK-NEG | 1.00 | Y | 0.07 | 12/12 | 0.65 |
+| PE | THEN60s(FVG~15s+FVG~2m) / c2_near~F0.7 | +2.47 | -0.27 | -173 | +241 | 61/101 (+2.52) | +1.97 | +0.50 [-0.28,+1.32] | STACK-NEG | 1.00 | Y | 0.02 | 12/12 | 0.69 |
+| ST | THEN60s(iplFVG~15s+OB~30s) / b_far~F0.7 | +2.41 | -1.11 | -1251 | -3970 | 5/101 (+2.04) | +1.66 | +0.74 [+0.39,+1.09] | STACK-NEG | 1.00 | Y | 0.07 | 12/12 | 0.72 |
+| ST | THEN60s(iplFVG~30s+OB~30s) / c2_mid~F0.7 | +2.40 | -1.00 | -6763 | -7451 | 1/101 (+2.00) | +2.01 | +0.39 [-0.00,+0.81] | STACK-NEG | 1.00 | Y | 0.07 | 12/12 | 0.67 |
+| ST | THEN60s(iplFVG~45s+OB~30s) / c2_mid~F0.7 | +2.39 | -0.31 | +490 | -844 | 1/101 (+1.86) | +2.01 | +0.38 [-0.27,+1.09] | STACK-NEG | 1.00 | Y | 0.07 | 12/12 | 0.75 |
+| KB | THEN60s(FVG~15s+FVG~2m) / b_mid~F0.7 | +2.36 | +0.43 | -1039 | -958 | 5/201 (+2.01) | +1.92 | +0.44 [+0.21,+0.69] | STACK-NEG | 1.00 | Y | 0.23 | 12/12 | 0.72 |
+| PE | THEN60s(FVG~15s+FVG~2m) / b_far~F0.7 | +2.35 | +0.39 | -4 | -25 | 11/101 (+2.13) | +1.67 | +0.67 [+0.00,+1.42] | STACK-NEG | 1.00 | Y | 0.02 | 12/12 | 0.75 |
+| KB | THEN60s(iplFVG~30s+FVG~2m) / b_mid~F0.7 | +2.32 | +0.92 | +377 | -488 | 4/201 (+1.97) | +1.92 | +0.40 [+0.15,+0.66] | STACK-NEG | 1.00 | Y | 0.23 | 12/12 | 0.73 |
+| ST | THEN60s(iplFVG~30s+OB~30s) / b_far~F0.7 | +2.08 | -1.04 | -189 | -3153 | 3/101 (+1.76) | +1.66 | +0.41 [+0.03,+0.81] | STACK-NEG | 1.00 | Y | 0.07 | 12/12 | 0.75 |
+| SM | THEN60s(iplFVG~15s+OB~45s) / c2_far~F0.7 | +4.89 | +1.12 | +3689 | +1935 | 3/101 (+3.50) | +3.69 | +1.21 [-0.21,+2.49] | STRUCTURE | 1.00 | Y | 0.05 | 12/12 | 0.66 |
+| SM | THEN60s(iplFVG~30s+OB~30s) / c2_far~F0.7 | +4.18 | +0.94 | +2230 | +764 | 3/101 (+2.99) | +3.51 | +0.67 [-0.25,+1.81] | STRUCTURE | 1.00 | Y | 0.05 | 12/12 | 0.67 |
+| SM | THEN300s(iplFVG~30s+OB~45s) / c2_far~F0.7 | +4.04 | +0.63 | +2120 | +671 | 1/101 (+2.90) | +3.69 | +0.35 [-0.77,+1.47] | STRUCTURE | 1.00 | Y | 0.05 | 12/12 | 0.69 |
+| MV | THEN60s(iplFVG~30s+OB~30s) / c2_far~F0.7 | +3.99 | +0.25 | +nan | +nan | 32/101 (+3.89) | +3.58 | +0.41 [-0.20,+1.13] | STRUCTURE | 1.00 | Y | 0.03 | 12/12 | 0.54 |
+| MV | THEN300s(iplFVG~1m+OB~30s) / c2_far~F0.7 | +3.98 | +0.67 | +nan | +nan | 1/101 (+3.44) | +3.58 | +0.40 [-0.14,+0.92] | STRUCTURE | 1.00 | Y | 0.03 | 12/12 | 0.58 |
+| SM | THEN60s(iplFVG~15s+OB~45s) / b_far~F0.7 | +3.95 | +0.54 | +3526 | +1903 | 9/101 (+3.14) | +2.68 | +1.27 [-0.13,+2.59] | STRUCTURE | 1.00 | Y | 0.05 | 12/12 | 0.68 |
+| MV | THEN60s(iplFVG~1m+OB~30s) / c2_far~F0.7 | +3.93 | +0.75 | +nan | +nan | 3/101 (+3.44) | +3.58 | +0.35 [-0.22,+0.92] | STRUCTURE | 1.00 | Y | 0.03 | 12/12 | 0.58 |
+| MV | THEN300s(iplFVG~45s+OB~30s) / c2_far~F0.7 | +3.90 | +0.81 | +nan | +nan | 17/101 (+3.62) | +3.58 | +0.32 [+0.11,+0.52] | STRUCTURE | 1.00 | Y | 0.03 | 12/12 | 0.56 |
+| MV | THEN300s(iplFVG~30s+OB~30s) / c2_far~F0.7 | +3.86 | +0.34 | +nan | +nan | 27/101 (+3.69) | +3.58 | +0.28 [-0.05,+0.65] | STRUCTURE | 1.00 | Y | 0.03 | 12/12 | 0.56 |
+| MV | THEN60s(iplFVG~45s+OB~30s) / c2_far~F0.7 | +3.75 | +0.42 | +nan | +nan | 32/101 (+3.62) | +3.58 | +0.17 [-0.31,+0.64] | STRUCTURE | 1.00 | Y | 0.03 | 12/12 | 0.55 |
+| SM | THEN60s(iplFVG~30s+OB~45s) / c2_far~F0.7 | +3.70 | +0.05 | +1960 | +277 | 13/101 (+3.19) | +3.69 | +0.02 [-1.83,+1.66] | STRUCTURE | 1.00 | Y | 0.05 | 12/12 | 0.79 |
+| MV | THEN60s(iplFVG~45s+OB~30s) / b_far~F0.7 | +3.56 | +0.58 | +nan | +nan | 31/101 (+3.41) | +2.86 | +0.71 [+0.15,+1.36] | STRUCTURE | 1.00 | Y | 0.03 | 12/12 | 0.62 |
+| MV | THEN60s(iplFVG~30s+OB~30s) / b_far~F0.7 | +3.54 | -0.05 | +nan | +nan | 71/101 (+3.63) | +2.86 | +0.68 [+0.08,+1.36] | STRUCTURE | 1.00 | Y | 0.03 | 12/12 | 0.60 |
+| MV | THEN300s(iplFVG~30s+OB~30s) / b_far~F0.7 | +3.37 | +0.04 | +nan | +nan | 42/101 (+3.31) | +2.86 | +0.51 [+0.17,+0.92] | STRUCTURE | 1.00 | Y | 0.03 | 12/12 | 0.63 |
+| PE | THEN60s(FVG~15s+OB~1m) / c2_far~F0.7 | +3.34 | +0.93 | +1702 | +662 | 1/101 (+2.63) | +2.82 | +0.52 [-0.35,+1.35] | STRUCTURE | 1.00 | Y | 0.02 | 12/12 | 0.67 |
+| HM | THEN60s(iplFVG~30s+iFVG~30s) / c2_far~F0.7 | +3.33 | +0.17 | +2026 | +1307 | 9/101 (+3.00) | +2.74 | +0.59 [+0.06,+1.02] | STRUCTURE | 1.00 | Y | 0.45 | 12/12 | 0.65 |
+| HM | THEN60s(iplFVG~30s+iFVG~30s) / c2_mid~F0.7 | +3.16 | +0.56 | +6834 | +6039 | 8/101 (+2.77) | +2.67 | +0.49 [+0.04,+0.87] | STRUCTURE | 1.00 | Y | 0.45 | 12/12 | 0.67 |
+| HM | THEN300s(iFVG~30s+OB~30s) / c2_far~F0.7 | +3.08 | +0.03 | +4425 | +2778 | 2/101 (+2.50) | +2.87 | +0.20 [-0.11,+0.51] | STRUCTURE | 1.00 | Y | 0.45 | 12/12 | 0.61 |
+| HM | THEN60s(iFVG~30s+OB~30s) / c2_mid~F0.7 | +3.05 | +0.06 | +4606 | +3774 | 7/101 (+2.65) | +2.67 | +0.38 [-0.15,+0.86] | STRUCTURE | 1.00 | Y | 0.45 | 12/12 | 0.57 |
+| HM | THEN60s(FVG~15s+iFVG~30s) / c2_far~F0.7 | +3.04 | -0.06 | +3542 | +2522 | 12/101 (+2.74) | +2.74 | +0.30 [+0.07,+0.57] | STRUCTURE | 1.00 | Y | 0.45 | 12/12 | 0.63 |
+| MA | THEN60s(FVG~15s+FVG~3m) / c2_far~F0.7 | +2.95 | -0.52 | +nan | +nan | 10/101 (+2.42) | +2.16 | +0.79 [-0.59,+2.19] | STRUCTURE | 1.00 | Y | 0.48 | 12/12 | 0.71 |
+| HM | THEN60s(FVG~15s+OB~45s) / c2_far~F0.7 | +2.80 | -0.09 | +6113 | +5823 | 28/101 (+2.62) | +2.71 | +0.08 [-0.90,+1.03] | STRUCTURE | 1.00 | Y | 0.45 | 12/12 | 0.62 |
+| PE | THEN60s(FVG~15s+FVG~2m) / c2_mid~F0.7 | +2.79 | +0.39 | +359 | +961 | 14/101 (+2.53) | +2.21 | +0.59 [-0.34,+1.63] | STRUCTURE | 1.00 | Y | 0.02 | 12/12 | 0.71 |
+| KB | THEN60s(iplFVG~1m+iFVG~15s) / c2_far~F0.7 | +2.77 | +0.23 | +822 | +798 | 3/201 (+2.29) | +2.50 | +0.26 [-0.25,+0.81] | STRUCTURE | 1.00 | Y | 0.23 | 12/12 | 0.63 |
+| SM | THEN60s(iplFVG~30s+OB~45s) / b_far~F0.7 | +2.74 | -0.70 | +1707 | +271 | 59/101 (+2.80) | +2.68 | +0.06 [-1.78,+1.72] | STRUCTURE | 1.00 | Y | 0.05 | 12/12 | 0.85 |
+| HM | THEN60s(FVG~15s+OB~45s) / c2_mid~F0.7 | +2.70 | -0.07 | +2862 | +4166 | 28/101 (+2.55) | +2.49 | +0.21 [-0.85,+1.07] | STRUCTURE | 1.00 | Y | 0.45 | 12/12 | 0.59 |
+| MA | THEN60s(FVG~15s+OB~1m) / c2_mid~F0.7 | +2.35 | -1.38 | +nan | +nan | 27/101 (+2.10) | +2.06 | +0.29 [-1.43,+1.93] | STRUCTURE | 1.00 | Y | 0.48 | 12/12 | 0.67 |
+| PB | THEN60s(iplFVG~15s+iFVG~15s) / c2_far~F0.7 | +2.28 | -0.99 | +nan | +nan | 27/101 (+2.13) | +1.96 | +0.32 [+0.12,+0.53] | STRUCTURE | 1.00 | Y | 0.30 | 12/12 | 0.65 |
+| KB | THEN60s(iFVG~15s+FVG~2m) / b_mid~F0.7 | +2.23 | +0.65 | +363 | +664 | 36/201 (+2.04) | +1.92 | +0.31 [-0.23,+0.83] | STRUCTURE | 1.00 | Y | 0.23 | 12/12 | 0.83 |
+| PB | THEN60s(iplFVG~30s+iFVG~15s) / c2_far~F0.7 | +2.06 | -1.04 | +nan | +nan | 55/101 (+2.10) | +1.96 | +0.09 [-0.14,+0.29] | STRUCTURE | 1.00 | Y | 0.30 | 12/12 | 0.68 |
+| PB | THEN60s(iplFVG~15s+FVG~45s) / c2_mid~F0.7 | +2.03 | -1.04 | +nan | +nan | 38/101 (+1.94) | +1.57 | +0.46 [-0.52,+1.43] | STRUCTURE | 1.00 | Y | 0.30 | 12/12 | 0.87 |
+| PB | THEN300s(iplFVG~30s+iFVG~15s) / c2_far~F0.7 | +2.03 | -1.03 | +nan | +nan | 51/101 (+2.02) | +1.96 | +0.06 [-0.17,+0.25] | STRUCTURE | 1.00 | Y | 0.30 | 12/12 | 0.68 |
+| PB | THEN60s(iFVG~15s+FVG~45s) / c2_far~F0.7 | +1.97 | -1.27 | +nan | +nan | 12/101 (+1.67) | +1.96 | +0.00 [-1.00,+1.12] | STRUCTURE | 1.00 | Y | 0.30 | 12/12 | 0.89 |
+| PB | THEN60s(iplFVG~15s+iFVG~15s) / c2_mid~F0.7 | +1.86 | -1.26 | +nan | +nan | 69/101 (+1.97) | +1.60 | +0.26 [-0.12,+0.55] | STRUCTURE | 1.00 | Y | 0.30 | 12/12 | 0.74 |
+
+Totals: 74 unit-checked candidate rows; INFO-CANDIDATE 22, STRUCTURE 34, STACK-NEG 18.
+
+## Stage POOL  (2026-10-31T03:21Z)
+
+auto
+
+
+## Stage POOL  (2026-10-31T03:24Z)
+
+auto
+
+### SM: 1238 combinations x 17 variants = 21046 cells; PRE+X' selection, one recent look on the top 12 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.156 (K=16630). Tiers: BEST-AVAILABLE 30.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AND(OB|45s+pd50|10m) | b_near|F0.7 | 31.5% | 99 | +12.64 (MDE 7.16) | +12.80 | +17.50 | +13.18 | +11.49 | +3.30 | +3.36 | 0.199 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|45s+pd50|10m) | c2_near|F0.7 | 31.5% | 99 | +12.64 (MDE 7.16) | +12.80 | +17.50 | +13.19 | +11.49 | +3.30 | +3.36 | 0.204 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|45s+pd50|10m) | c1|F0.7 | 31.5% | 99 | +12.51 (MDE 7.14) | +12.73 | +17.43 | +13.31 | +10.82 | +3.25 | +3.31 | 0.209 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|45s+pd50|10m) | a|F0.7 | 31.5% | 99 | +12.51 (MDE 7.14) | +12.73 | +17.43 | +13.30 | +10.77 | +3.25 | +3.31 | 0.204 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|30s+pd50|10m) | c2_near|F0.7 | 32.5% | 102 | +12.44 (MDE 6.97) | +12.56 | +17.16 | +13.43 | +11.23 | +3.36 | +3.36 | 0.204 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|30s+pd50|10m) | b_near|F0.7 | 32.5% | 102 | +12.44 (MDE 6.97) | +12.56 | +17.16 | +13.42 | +11.23 | +3.36 | +3.36 | 0.204 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+pd50|10m) | c2_near|F0.7 | 29.0% | 91 | +12.43 (MDE 7.59) | +12.52 | +17.45 | +13.33 | +11.31 | +2.89 | +3.36 | 0.259 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+pd50|10m) | b_near|F0.7 | 29.0% | 91 | +12.43 (MDE 7.59) | +12.52 | +17.45 | +13.32 | +11.31 | +2.89 | +3.36 | 0.254 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|45s+pd50|10m) | b_near|F0.7 | 31.8% | 100 | +12.37 (MDE 7.11) | +12.50 | +17.23 | +13.53 | +11.09 | +3.25 | +3.36 | 0.199 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|45s+pd50|10m) | c2_near|F0.7 | 31.8% | 100 | +12.37 (MDE 7.11) | +12.50 | +17.23 | +13.54 | +11.10 | +3.25 | +3.36 | 0.204 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|30s+pd50|10m) | a|F0.7 | 32.5% | 102 | +12.28 (MDE 6.96) | +12.43 | +17.07 | +13.12 | +10.57 | +3.31 | +3.31 | 0.224 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|30s+pd50|10m) | c1|F0.7 | 32.5% | 102 | +12.28 (MDE 6.96) | +12.43 | +17.07 | +13.13 | +10.62 | +3.31 | +3.31 | 0.229 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+
+Plain sentence (best by all-signal gain): requiring FVG|30s AND CFA:vwap|day before the signal enters (c2_far|F0.7) adds +5.91 pts per contract on the 71.0% of signals it fires on in the last 6 months (MDE 4.04), but +4.13 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +3.03; tier BEST-AVAILABLE.
+
+
+## Stage POOL  (2026-10-31T03:28Z)
+
+auto
+
+### DN: 1238 combinations x 17 variants = 21046 cells; PRE+X' selection, one recent look on the top 10 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.002 (K=16370). Tiers: BEST-AVAILABLE 30.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AND(OB|1m+pd50|5m) | c2_near|F0.7 | 27.0% | 189 | +14.40 (MDE 3.18) | +15.01 | +16.31 | +15.42 | +12.73 | +3.55 | +3.79 | 0.194 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+pd50|5m) | b_near|F0.7 | 27.0% | 189 | +14.40 (MDE 3.18) | +15.01 | +16.31 | +15.36 | +12.69 | +3.55 | +3.79 | 0.194 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+pd50|5m) | c1|F0.7 | 26.8% | 188 | +14.24 (MDE 3.21) | +14.79 | +16.16 | +15.24 | +12.29 | +3.49 | +3.71 | 0.169 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+pd50|5m) | a|F0.7 | 26.8% | 188 | +14.24 (MDE 3.21) | +14.79 | +16.16 | +15.20 | +12.29 | +3.49 | +3.71 | 0.169 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iFVG|2m+pd50|5m) | c2_near|F0.7 | 26.7% | 187 | +14.08 (MDE 3.08) | +14.71 | +16.47 | +15.35 | +12.92 | +3.43 | +3.79 | 0.244 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iFVG|2m+pd50|5m) | b_near|F0.7 | 26.7% | 187 | +14.08 (MDE 3.08) | +14.71 | +16.47 | +15.32 | +12.88 | +3.43 | +3.79 | 0.244 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|30s+pd50|5m) | b_near|F0.7 | 27.1% | 190 | +14.05 (MDE 3.21) | +14.72 | +15.35 | +15.16 | +12.40 | +3.48 | +3.79 | 0.184 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|30s+pd50|5m) | c2_near|F0.7 | 27.1% | 190 | +14.05 (MDE 3.21) | +14.72 | +15.35 | +15.19 | +12.44 | +3.48 | +3.79 | 0.184 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|15s+pd50|5m) | c2_near|F0.7 | 27.1% | 190 | +13.92 (MDE 3.11) | +14.59 | +15.35 | +15.45 | +13.12 | +3.44 | +3.79 | 0.328 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(FVG|15s+pd50|5m) | b_near|F0.7 | 27.1% | 190 | +13.92 (MDE 3.11) | +14.59 | +15.35 | +15.41 | +13.08 | +3.44 | +3.79 | 0.328 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(iFVG|2m+ote705|2m) | c2_near|F0.7 | 30.5% | 214 | +13.81 (MDE 3.51) | +13.90 | +14.78 | +14.70 | +10.33 | +3.90 | +4.09 | 0.015 | BEST-AVAILABLE | <=best_member_L6M,<=best_member_PRE+X |
+| AND(iFVG|2m+ote705|2m) | b_near|F0.7 | 30.5% | 214 | +13.81 (MDE 3.51) | +13.90 | +14.78 | +14.70 | +10.30 | +3.90 | +4.09 | 0.015 | BEST-AVAILABLE | <=best_member_L6M,<=best_member_PRE+X |
+
+Plain sentence (best by all-signal gain): requiring iFVG|2m AND ote705|2m before the signal enters (c2_near|F0.7) adds +13.81 pts per contract on the 30.5% of signals it fires on in the last 6 months (MDE 3.51), but +3.90 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +4.09; tier BEST-AVAILABLE.
+
