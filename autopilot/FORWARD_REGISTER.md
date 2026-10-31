@@ -469,3 +469,5 @@ Machinery check on the live trades that were NOT cut (same replay, n=177): outco
 | rule | what | expectation | weekly MDE | forward weeks needed | status |
 |---|---|---|---|---|---|
 | INST3-C `xm.led_YM_60.ge+0.0` | skip a K6/P6/U6/H6/M6/A6 signal when, over the last 60 min, NQ has NOT out-run YM (beta-adjusted residual NQ - b*YM, aligned with the signal side, per-session scaled < 0); state read from the last completed 1-min bar of NQ and YM | +2.65 pts per contract kept-minus-skipped L6M (MDE 5.9), stack +7.3k/wk L6M (MDE 12.8k), PRE -2.2k, X' -1.3k; persistence score 0.50, shrunk size 0 | 12.8k/wk (L6M) | 28+ weeks at the L6M MDE just to see the L6M mean once; at the shrunk expectation (0) it can only be monitored, not sized | TOLERANT-positive LEAD, cell placebo p 0.32, program placebo p 0.41; paper_all shadow row (state computed from NT8 NQ and YM bars) |
+
+**Correction 2026-10-31T16:39Z (lead):** the C row above is labelled TOLERANT but passes only the post-hoc TOL-B reading of the gate (literal TOLERANT: PRE gain > 0; its stack PRE is -2.2k). Treat as a TOL-B shadow LEAD, not independent evidence.
