@@ -1,4 +1,4 @@
-# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-31 04:12 ET)
+# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-10-31 18:17 ET)
 
 Weeks start Sunday 18:00 ET. W43 (10-19..10-23) informational, never counted; official = W44+. Live file: `<repo>/data/live/StratTrades_DualStrat2_<acct>.csv` (80 grouped trades, last exit 2026-10-26 10:44 ET). Verdicts: PROMOTE >= 6 weeks, z >= -1, sign right; RETIRE >= 8 weeks, z < -2; BEHIND z < -1; z = (realised - expected*n)/(expected SD*sqrt(n)).
 
@@ -421,7 +421,7 @@ Other forward shadows (DS15, S130, P30/P36, ...) remain in LEAGUE.md / ap_m2_pap
 
 Object: every live ST trade closed by the TH LOSS-side cut (exit name ends LossExit), replayed WITHOUT the cut on the real mbp-10 tape (exec_engine_l2, live entry as anchor, 60/60 bracket, 16:55 ET flatten, stop exits through the live stop-join model XJ3). Paired difference d = cut P&L - no-cut P&L per cut trade (+ = TH helped). Weeks start Sunday 18:00 ET; W42 is partial (trading days 10-13..10-16), W43 informational. Only complete rows from 10-13 on; days without mbp-10 on disk are PENDING_L2 (never imputed).
 
-Identification: exitName ends 'LossExit' (loss-side TH cut; ProfitExit = profit-side cut) in data/live/StratTrades_*.csv, trading day >= 20261013 (entries from 2026-10-12 18:00 ET). Cuts by file/book: DualStrat2 file HM CUT_LOSS n=3; DualStrat2 file HM CUT_PROFIT n=1; DualStrat2 file ST CUT_LOSS n=16; DualStrat2 file ST CUT_PROFIT n=6; DualStrat2 file WT CUT_LOSS n=9; Sim file HM CUT_LOSS n=31; Sim file ST CUT_LOSS n=36; Sim file WT CUT_LOSS n=62; pair file (DualStrat) ST CUT_LOSS n=46. Trace logs (nt8log_trace.*, nt8log_latest): 5 files, 33 LossExit lines (trace window ends before the 10-23 TH-on period; the CSV is the identification of record).
+Identification: exitName ends 'LossExit' (loss-side TH cut; ProfitExit = profit-side cut) in data/live/StratTrades_*.csv, trading day >= 20261013 (entries from 2026-10-12 18:00 ET). Cuts by file/book: DualStrat2 file HM CUT_LOSS n=3; DualStrat2 file HM CUT_PROFIT n=1; DualStrat2 file ST CUT_LOSS n=16; DualStrat2 file ST CUT_PROFIT n=6; DualStrat2 file WT CUT_LOSS n=9; Sim file HM CUT_LOSS n=31; Sim file ST CUT_LOSS n=36; Sim file WT CUT_LOSS n=62; pair file (DualStrat) ST CUT_LOSS n=46. Trace logs (nt8log_trace.*, nt8log_latest): 5 files, 0 LossExit lines (trace window ends before the 10-23 TH-on period; the CSV is the identification of record).
 
 | week | ST loss-cuts | replayed | pending L2 | mean d pts/trade | mean d $/trade | 95% CI $/trade (session-block bootstrap, 10,000) | d $ in week | MDE80 $ for this week alone | P(d>0) | DualStrat2 file n / d $ | pair file n / d $ |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -464,10 +464,3 @@ Knock-on caveat (informational, not the paired test): 52 of the 98 replayed ST c
 Second account: no StratTrades file for a second account exists in data/live (the Sim files hold no ST loss-cut in the window), so there is no second-file row; it appears automatically when such a file arrives. Bootstrap basis: trading-day x session (Asia 18-02, London 02-09:30, NY 09:30-18 ET) blocks, 10,000 draws; rows with fewer than 5 blocks use trade-level resampling (flagged in FORWARD_TH.json).
 
 Machinery check on the live trades that were NOT cut (same replay, n=177): outcome class agrees in 175/177 (live targets reproduced as targets 111/112, live stops as stops 64/65); stop-exit pts live -60.51 vs replay XJ3 -60.31.
-
-## INST-3 C forward-register row (2026-10-31T16:26Z) - shadow only, nothing promoted
-| rule | what | expectation | weekly MDE | forward weeks needed | status |
-|---|---|---|---|---|---|
-| INST3-C `xm.led_YM_60.ge+0.0` | skip a K6/P6/U6/H6/M6/A6 signal when, over the last 60 min, NQ has NOT out-run YM (beta-adjusted residual NQ - b*YM, aligned with the signal side, per-session scaled < 0); state read from the last completed 1-min bar of NQ and YM | +2.65 pts per contract kept-minus-skipped L6M (MDE 5.9), stack +7.3k/wk L6M (MDE 12.8k), PRE -2.2k, X' -1.3k; persistence score 0.50, shrunk size 0 | 12.8k/wk (L6M) | 28+ weeks at the L6M MDE just to see the L6M mean once; at the shrunk expectation (0) it can only be monitored, not sized | TOLERANT-positive LEAD, cell placebo p 0.32, program placebo p 0.41; paper_all shadow row (state computed from NT8 NQ and YM bars) |
-
-**Correction 2026-10-31T16:39Z (lead):** the C row above is labelled TOLERANT but passes only the post-hoc TOL-B reading of the gate (literal TOLERANT: PRE gain > 0; its stack PRE is -2.2k). Treat as a TOL-B shadow LEAD, not independent evidence.

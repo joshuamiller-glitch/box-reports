@@ -24,5 +24,5 @@ n=26  mean exit vs stop level (pts, +ve better) +0.68  worst -10.1
 REPLAY XJ8 on STOP exits: mean pts_x - pts_base +0.85  passive fully filled within 3 s: 0.78  any passive fill: 0.83
 
 ## NT8 log
-StopFB (join timed out) lines 0; rejects 11; EntryFB 0; join fill rate (stop exits - StopFB - rejects)/stop exits ~ see ledger; replay full-fill rate above
+StopFB (join timed out) lines 0; rejects 0; EntryFB 0; join fill rate (stop exits - StopFB - rejects)/stop exits ~ see ledger; replay full-fill rate above
 
