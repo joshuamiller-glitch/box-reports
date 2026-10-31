@@ -983,3 +983,81 @@ None. Criteria (OOS IC above both placebos AND net per contract > 0 with lower C
 
 ## 4. Files and rerun
 Code: l2vast/ds3/code/info/ (info_common, info_build_intrade, info_build_sig, info_data, info_prep, info_uni, info_models, info_seq, info_eval, info_report; run_all.sh = one-command rerun). Tables/CSV: l2vast/ds3/out/uf/info/tables/ (T1..T7, model_map.csv, ledger.csv, uni_*.parquet, selection.json, imp_*), predictions: out/uf/info/pred/. Prereg: autopilot/DS3_L2_INFO_PREREG.md.
+
+
+---
+# CYCLE 2 (2026-10-31) - the gap to the three-edge stop condition, per side, and the resting-limit use of the information
+Prereg autopilot/DS3_L2_INFO_C2_PREREG.md sha256 c050fd1d2d85a2bfedc4356c6c83588c27e66416169476655168cf2acc571144 (before any statistic); selections (PRE+X' only) logged in DECISIONS.md: Block L prof sha256 175e5002..., uw sha256 70b21f84...; Block G per-horizon feature files gap_sel_*_PREX.csv. dead_lookup: 0 hits. One recent look. Cells: 36 gap cells (4 states x 9 horizons, 16.4k feature-horizon-state IC tests behind them) + 480 limit cells (240 per state) + 12 market-action comparators; cumulative with cycle 1 about 12.5k cells, ~450k statistics. Up to 3 workers.
+
+## Page 1 - verdict
+1. **The gap is 3-11x on every side, at every horizon.** Break-even IC (cost / (1.755 x sigma_h), top/bottom-decile action) against the largest measured out-of-sample IC (L6M; HOLD within 0.006): ENTRY 0.288 vs 0.042 (2 s, OFI), PROFIT 0.653 vs 0.069 (1 s, L1 imbalance), LOSS 0.514 vs 0.065 (1 s, L1 imbalance), unconditional 0.564 vs 0.051 (1 s). The horizon where the L1-imbalance IC is largest is the SHORTEST one (1 s: in-profit +0.069 [+0.059,+0.078], under water +0.065) and it decays to +0.022 at 30 s and +0.011 at 60 s, but sigma_h shrinks with it: the implied gross per action is 0.10-0.14 pt at every horizon (measured decile gross 0.05-0.15 pt) against a cost of 0.995 pt (market exit) or 1.49 pt (market in and out). The shorter the horizon, the larger the IC and the smaller the move: the product is flat at about 0.1 pt per contract.
+2. **Closest cells (chosen on PRE+X'):** ENTRY, 60-s horizon, ES book imbalance (10 levels) fading the signal: gross +1.53 pt [+0.61,+2.57] per contract vs cost 1.49 = net +0.04 L6M (CI about -0.9..+1.1), HOLD -0.06; the stand-alone entry version of the cycle-6 ES lead, a break-even, not an edge. Unconditional 30-s ES imbalance: gross 0.56 [0.33,0.82], net -0.93. PROFIT and LOSS are 0.85-0.95 pt short of break-even in every cell (net -0.85 to -0.95, CIs exclude 0).
+3. **Stop cost does not close it.** A market cut of a loser on the book trigger, scored on the whole trade (cut now vs hold-to-bracket), with the stop cost avoided credited at 2.45 / 1.28 / 0.5: L1-imbalance worst decile -1.15 / -1.36 / -1.50 pt per trade (L6M; HOLD -0.95 / -1.17 / -1.31), model-E trigger -0.81 / -0.94 / -1.02. The trigger fires on 19-32% of trades and 54-56% of the fired losers end at the stop anyway, so the credit is already inside the number. A market exit of a winner on the same trigger: -2.1..-2.3 (fires on 43%).
+4. **Resting the exit as a limit (fill at nominal, no cost) is worth +0.8 to +1.4 pt per trade more than the market exit on the same trigger, but is still below hold-to-bracket on the N basis.** Selected on PRE+X' (240 cells per state, none with N > 0; RC p 0.988): in profit, imb1 worst decile, rest the exit +2.0 pt for 15 s (touch fill): N -0.54 per trade [-1.54,+0.49] L6M, -0.31 HOLD, -0.31 PRE, -0.16 X'; market exit on the same rows -1.31. Shuffled-trigger placebo rank 3/201 (the book trigger picks better moments than random: shuffled mean -0.96), time-shifted trigger -1.06, neighbourhood mean -0.91; fires on 26% of trades, 99 trades/wk; $ at live lots -14.1k/wk (1 lot -4.1k/wk). Under water, model-E worst decile, rest +2.0 for 10 s: N -0.41 [-1.00,+0.23] L6M, -0.39 HOLD, -0.06 PRE; shuffled rank 50/201. The M basis shows +0.17 (prof L6M) only because M penalises holds that end at the target by the year correction (4.3 pt) - the known fill-basis artefact; N and LC are negative. Why: a winner that touches +2 pt keeps drifting up toward its 60-pt target more often than not; taking +2 loses that drift.
+5. **No state clears the stop condition; no rule candidate** (rule_candidates.txt rewritten). The live 11/11 target-touch fills make the resting-limit cost assumption credible, but the information cannot pay for giving up the winners' drift.
+
+## 1. Gap per side (chosen on PRE+X'; recent windows read once; costs: market exit 0.995, market in+out 1.49 incl. fee and +1 tick)
+| side            | cell type             |   h s | feature    | IC L6M [+-1.96se]      |   IC HOLD |   sigma_h L6M |   implied gross (IC*sigma*1.755) |   measured gross decile L6M |   cost |   net L6M |   net HOLD |   break-even IC |   x short |
+|:----------------|:----------------------|------:|:-----------|:-----------------------|----------:|--------------:|---------------------------------:|----------------------------:|-------:|----------:|-----------:|----------------:|----------:|
+| ENTRY           | largest IC            |     2 | f_ofi5_60  | +0.042 [+0.014,+0.070] |     0.048 |          2.95 |                             0.22 |                        0.67 |  1.49  |     -0.83 |      -0.74 |           0.288 |       6.9 |
+| ENTRY           | closest to break-even |    60 | f_es_imb10 | -0.024 [-0.045,-0.002] |    -0.024 |         10.35 |                             0.44 |                        1.53 |  1.49  |      0.04 |      -0.06 |           0.082 |       3.4 |
+| PROFIT          | largest IC            |     1 | sq_imb1_0  | +0.069 [+0.059,+0.078] |     0.071 |          0.87 |                             0.1  |                        0.05 |  0.995 |     -0.95 |      -0.95 |           0.653 |       9.5 |
+| PROFIT          | closest to break-even |    60 | sq_imb1_0  | +0.011 [+0.000,+0.022] |     0.012 |          4.9  |                             0.1  |                        0.15 |  0.995 |     -0.85 |      -0.88 |           0.116 |      10.4 |
+| LOSS            | largest IC            |     1 | imb1       | +0.065 [+0.053,+0.077] |     0.061 |          1.1  |                             0.13 |                        0.08 |  0.995 |     -0.91 |      -0.93 |           0.514 |       7.9 |
+| LOSS            | closest to break-even |     5 | imb1       | +0.036 [+0.023,+0.050] |     0.037 |          1.96 |                             0.12 |                        0.11 |  0.995 |     -0.88 |      -0.88 |           0.29  |       8   |
+| (unconditional) | largest IC            |     1 | f_imb1     | +0.051 [+0.042,+0.059] |     0.051 |          1.51 |                             0.13 |                        0.14 |  1.49  |     -1.35 |      -1.37 |           0.564 |      11.2 |
+| (unconditional) | closest to break-even |    30 | f_es_imb10 | +0.026 [+0.018,+0.034] |     0.026 |          6.4  |                             0.3  |                        0.56 |  1.49  |     -0.93 |      -1.05 |           0.133 |       5   |
+
+Reading: 'x short' = break-even IC / measured IC. Gross is the measured mean move in the favourable decile (entry) or the adverse decile (exit, sign flipped) with thresholds from X'. Largest-IC rows are the max |IC| in L6M among the 9 PRE+X'-selected horizon cells (descriptive); closest rows = max net L6M. The full 36-cell table with CIs of the deciles: out/uf/info/tables/C2_gap_by_side_horizon.csv.
+
+### IC of L1 imbalance by horizon (session ALL)
+| state   | win   |     1 |     2 |     3 |     5 |    10 |    15 |    20 |    30 |    60 |
+|:--------|:------|------:|------:|------:|------:|------:|------:|------:|------:|------:|
+| prof    | HOLD  | 0.071 | 0.053 | 0.047 | 0.045 | 0.035 | 0.028 | 0.026 | 0.022 | 0.012 |
+| prof    | L6M   | 0.069 | 0.051 | 0.046 | 0.046 | 0.035 | 0.029 | 0.027 | 0.022 | 0.011 |
+| sig     | HOLD  | 0.034 | 0.02  | 0.03  | 0.029 | 0.014 | 0.012 | 0.021 | 0.016 | 0.008 |
+| sig     | L6M   | 0.036 | 0.025 | 0.035 | 0.033 | 0.019 | 0.016 | 0.026 | 0.018 | 0.01  |
+| unc     | HOLD  | 0.051 | 0.037 | 0.033 | 0.03  | 0.02  | 0.019 | 0.014 | 0.015 | 0.011 |
+| unc     | L6M   | 0.051 | 0.036 | 0.032 | 0.029 | 0.021 | 0.019 | 0.015 | 0.015 | 0.01  |
+| uw      | HOLD  | 0.061 | 0.045 | 0.041 | 0.037 | 0.024 | 0.019 | 0.019 | 0.016 | 0.004 |
+| uw      | L6M   | 0.065 | 0.048 | 0.043 | 0.036 | 0.023 | 0.019 | 0.019 | 0.016 | 0.004 |
+(f_imb1 rows = signal-second `sig` and unconditional `unc` states.)
+
+## 2. Resting limit exit - selected cells, all windows (per trade per contract, all trades in the denominator)
+| cell                                 | win   | N per trade [95% CI]   |     M |    LC |   market exit, same rows (N) |   fires/trade |   per fired decision d-m_h |
+|:-------------------------------------|:------|:-----------------------|------:|------:|-----------------------------:|--------------:|---------------------------:|
+| prof|rest_limit|S1|d=2.0|h=15|fill=0 | 2026  | -2.03 [-4.01,-0.17]    | -1.33 | -1.95 |                        -2.7  |         0.225 |                      -0.88 |
+| prof|rest_limit|S1|d=2.0|h=15|fill=0 | L6M   | -0.54 [-1.54,+0.49]    |  0.17 | -0.44 |                        -1.31 |         0.258 |                      -0.38 |
+| prof|rest_limit|S1|d=2.0|h=15|fill=0 | HOLD  | -0.31 [-1.29,+0.68]    |  0.42 | -0.21 |                        -1.12 |         0.27  |                      -0.35 |
+| prof|rest_limit|S1|d=2.0|h=15|fill=0 | PRE   | -0.31 [-1.03,+0.30]    |  0.18 | -0.18 |                        -1.25 |         0.313 |                      -0.05 |
+| prof|rest_limit|S1|d=2.0|h=15|fill=0 | X'    | -0.16 [-1.22,+1.06]    |  0.19 |  0.01 |                        -1.44 |         0.426 |                       0.01 |
+| uw|rest_limit|S3|d=2.0|h=10|fill=0   | 2026  | -0.10 [-1.01,+0.70]    |  0.04 | -0.03 |                        -0.39 |         0.096 |                       0.03 |
+| uw|rest_limit|S3|d=2.0|h=10|fill=0   | L6M   | -0.41 [-1.00,+0.23]    | -0.22 | -0.31 |                        -0.78 |         0.125 |                      -0.5  |
+| uw|rest_limit|S3|d=2.0|h=10|fill=0   | HOLD  | -0.39 [-0.96,+0.16]    | -0.21 | -0.3  |                        -0.77 |         0.126 |                      -0.64 |
+| uw|rest_limit|S3|d=2.0|h=10|fill=0   | PRE   | -0.06 [-0.60,+0.42]    |  0.09 |  0.1  |                        -0.62 |         0.187 |                      -0.36 |
+| uw|rest_limit|S3|d=2.0|h=10|fill=0   | X'    | -0.26 [-0.96,+0.38]    | -0.2  | -0.15 |                        -0.71 |         0.148 |                       0.06 |
+
+qv header (L6M): prof cell pts -0.54 [-1.60,+0.51], L3M -0.35, drift sign count 5/12, placebo rank 3/201, neighbourhood mean -0.91, n_cells 240; uw cell -0.41 [-1.03,+0.18], 2/12, 50/201, -0.52. Missing columns (so not promoted; none positive anyway): rc_p_program (0.988 over the 240 cells, PRE+X'), rw_survives (no), dsr, pbo, breakeven_slip, capacity_contracts, top5_share, stack_corr, regime. Recent-wins file: out/recent_wins/info_c2.csv.
+
+## 3. Market action on the book trigger, whole trade, stop cost variants (gain per trade vs hold-to-bracket; N: targets at nominal)
+| state   | sig   |   stop_cost |   HOLD |   L6M |
+|:--------|:------|------------:|-------:|------:|
+| prof    | S1    |        0.5  |  -2.03 | -2.33 |
+| prof    | S1    |        1.28 |  -1.92 | -2.23 |
+| prof    | S1    |        2.45 |  -1.76 | -2.08 |
+| prof    | S3    |        0.5  |  -1.56 | -1.78 |
+| prof    | S3    |        1.28 |  -1.46 | -1.69 |
+| prof    | S3    |        2.45 |  -1.33 | -1.55 |
+| uw      | S1    |        0.5  |  -1.31 | -1.5  |
+| uw      | S1    |        1.28 |  -1.17 | -1.36 |
+| uw      | S1    |        2.45 |  -0.95 | -1.15 |
+| uw      | S3    |        0.5  |  -1.09 | -1.02 |
+| uw      | S3    |        1.28 |  -1.01 | -0.94 |
+| uw      | S3    |        2.45 |  -0.89 | -0.81 |
+
+## 4. Limits and what this does not cover
+* Gains are vs hold-to-bracket on the library path: rem_pts from the decision row; unfilled rests are cancelled and re-rested at the next qualifying minute row (rows thinned 1-in-3 / 1-in-5, so the first fill can be up to 2-4 minutes late).
+* Fill model: through-by-one-tick (FILL1) or touch (FILL0, optimistic); queue position is not modelled - a resting join at the touch fills only when the queue ahead trades, so the true fill rate is below FILL0; this only lowers the numbers.
+* Entry-side resting limit and size/skip rules with the book were scored in L2EA/L2EB/DIPENTRY and UF-ENTRY C1-C6 (limit-join, split dips); not repeated here.
+* Costs per action are the measured ones; BASIS_LIVE stop figures 2.45 / 1.28 / 0.5 are applied as bases in section 3; a trade-level lock-engine stack was not run because no cell is positive per contract.
+* Code: l2vast/ds3/code/info/info2_short.py, info2_gap.py, info2_lim.py, info2_final.py, info2_mkt.py.

@@ -9,6 +9,33 @@ Research only. No live/execution/chart change. UNTOUCHED never read (every frame
 
 Base-lot governors instead (planned-lot R, not multiplied by the day's largest multiplier): live4 L6M +13.4k (MDE 17.0k), HOLD +12.5k, PRE +0.1k, X' +12.1k; research L6M +45.7k (MDE 50.6k), HOLD +44.9k, PRE +5.6k, X' +21.9k. With the 2.45 join stop instead of Native: live4 L6M +20.6k, HOLD +18.3k, PRE +1.1k.
 
+**Integer live-lot splits and modelled add slippage (lead request, UF-ENTRY C7), and the leave-one-out row "no add on K6".** Split at the integer lots: K6 1/1, U6 3/1, H6 3/1 (1/1 in NY-AM), P6 5/2 (run as the 0.7 cell), ST/WT 0.7; the modelled add slippage (+0.25 pt per lot, stress +0.45) is charged on every add fill (the PE-confirmed add too); the rest of the coded stack unchanged (sized governors, Native stops). "No add on K6" = K6 enters plain at market, the other books split. Delta vs the stack as it is, $k/wk; last column = change vs the coded cell.
+#### LIVE lots, engine books K6 P6 U6 H6
+
+| config | mean $k/wk L3M | L6M | HOLD | PRE | X' | delta vs as-is L6M (MDE) | HOLD | PRE | X' | change vs the coded cell L6M / HOLD / PRE / X' |
+|---|---|---|---|---|---|---|---|---|---|---|
+| FULL (fractional 70/30, no add slippage) | 33.1 | 40.4 | 37.1 | 18.8 | 7.6 | +22.3 (18.9) | +20.0 | +3.3 | +11.1 | +0.0 / +0.0 / +0.0 / +0.0 |
+| integer split, add slip 0 | 34.5 | 40.8 | 37.3 | 18.8 | 7.4 | +22.8 (19.3) | +20.2 | +3.3 | +10.9 | +0.5 / +0.3 / -0.0 / -0.3 |
+| integer split, add slip +0.25 | 34.0 | 40.4 | 36.9 | 18.4 | 7.1 | +22.3 (19.3) | +19.8 | +2.9 | +10.6 | +0.0 / -0.2 / -0.4 / -0.5 |
+| integer split, add slip +0.45 (stress) | 33.6 | 40.1 | 36.6 | 18.1 | 6.9 | +22.0 (19.3) | +19.5 | +2.6 | +10.4 | -0.2 / -0.4 / -0.7 / -0.7 |
+| LOO: no add on K6 (fractional split) | 31.9 | 40.0 | 36.9 | 18.1 | 7.2 | +21.9 (18.7) | +19.8 | +2.6 | +10.7 | -0.4 / -0.2 / -0.7 / -0.4 |
+| LOO: no add on K6, integer, +0.25 | 31.5 | 39.6 | 36.5 | 17.7 | 7.0 | +21.5 (18.7) | +19.4 | +2.2 | +10.5 | -0.8 / -0.6 / -1.1 / -0.7 |
+| LOO: no add on K6, integer, +0.45 | 31.2 | 39.4 | 36.3 | 17.4 | 6.8 | +21.3 (18.7) | +19.2 | +2.0 | +10.3 | -1.0 / -0.8 / -1.3 / -0.8 |
+
+#### LIVE lots + ST/WT research/2.35
+
+| config | mean $k/wk L3M | L6M | HOLD | PRE | X' | delta vs as-is L6M (MDE) | HOLD | PRE | X' | change vs the coded cell L6M / HOLD / PRE / X' |
+|---|---|---|---|---|---|---|---|---|---|---|
+| FULL (fractional 70/30, no add slippage) | 57.3 | 64.4 | 57.0 | 37.1 | 9.1 | +35.9 (27.7) | +33.6 | +14.7 | +9.5 | +0.0 / +0.0 / +0.0 / +0.0 |
+| integer split, add slip 0 | 58.4 | 64.5 | 56.9 | 37.2 | 8.8 | +36.0 (28.1) | +33.6 | +14.8 | +9.2 | +0.1 / -0.1 / +0.1 / -0.3 |
+| integer split, add slip +0.25 | 57.7 | 63.7 | 56.1 | 35.8 | 8.4 | +35.2 (28.1) | +32.8 | +13.4 | +8.8 | -0.7 / -0.8 / -1.3 / -0.7 |
+| integer split, add slip +0.45 (stress) | 57.0 | 63.0 | 55.5 | 35.4 | 8.0 | +34.5 (28.0) | +32.2 | +13.0 | +8.4 | -1.4 / -1.5 / -1.8 / -1.1 |
+| LOO: no add on K6 (fractional split) | 55.9 | 63.8 | 56.6 | 36.4 | 8.6 | +35.3 (27.6) | +33.3 | +14.0 | +9.1 | -0.6 / -0.4 / -0.7 / -0.4 |
+| LOO: no add on K6, integer, +0.25 | 55.0 | 62.8 | 55.6 | 35.1 | 8.2 | +34.3 (27.6) | +32.3 | +12.7 | +8.6 | -1.6 / -1.3 / -2.1 / -0.9 |
+| LOO: no add on K6, integer, +0.45 | 54.4 | 62.2 | 55.1 | 34.7 | 7.9 | +33.7 (27.5) | +31.8 | +12.3 | +8.4 | -2.2 / -1.9 / -2.5 / -1.2 |
+
+Reading: the integer split changes the stack by -0.5..+0.5k before slippage; +0.25 pt per add lot costs about 0.2-0.5k a week at live lots (0.7-1.8k with ST/WT) and +0.45 about 0.4-0.7k (1.1-1.8k): nothing near the MDE. On the stack, "no add on K6" LOWERS the stack by 0.2-0.7k (L6M -0.4k at the coded cell; -0.8k at integer +0.25), so this engine does not reproduce C7's per-book K6 loss (-3.0k L6M at equal risk): the K6 add is a small positive here (K6 is 2 lots, the add 1 lot). No change recommended on this evidence; the C7 per-book K6 result and this one differ in engine (equal-risk scaling vs the lock-engine stack with ER sizing and governors).
+
 **Verdict.** Tier CANDIDATE-RECENT, not PASS. The composite is one pre-specified configuration (1 of 1) and clears the MDE in L6M and HOLD at live lots (L6M +22.3k vs 18.9k; HOLD +20.0k vs 18.3k) and at research lots, is positive in PRE (+3.3k live, +27.0k research) and X' (+11.1k, +13.0k) but INSIDE their MDE (PRE Romano-Wolf p 0.79); the six pieces are post-hoc-selected (section 8) and the cumulative-trial adjusted p is 1.00. The gain is concentrated in the ER sizer (alone +11.6k L6M at live lots, +47.4k at research lots) and, at research lots, in the sized-governor reading (the same sizer with planned-lot governors is +17.0k); the split, the zone skip and the Native stop are positive in every window at research lots (L6M contribution +10.7k / +15.7k / +11.7k) and small at live lots (+2.6k / +1.3k / +1.7k); the PE confirmation is positive in L6M/HOLD and ~0 in PRE/X'; the Asia-stopped cut is about zero at live lots (it needs the other same-side books open: only 4 engine books are live here).
 
 **The one change before 18:00 ET Sunday.** Applying the pre-stated rule to every piece, at every lot set and under both governor readings, the pieces for which removal improves L6M, HOLD, PRE and X' together: none. Nothing meets the rule, so the numbers support NO change. Watch items that are NOT changes (none meets the rule; all inside their MDE): at live lots the Asia-stopped cut contributes -1.1k L6M, -1.6k HOLD, -0.9k PRE, +0.7k X' (MDE of the L6M leave-one-out delta 3.5k); the sized-lot governor reading is an implementation choice worth +37k L6M at research lots / +9k at live lots, PRE +21k / +3k and X' -9k / -1k (it also lifts the drawdown: L6M maxDD 464k vs 323k at research lots, 97k vs 86k at live lots, and the SD) - confirm that D6 really multiplies the locks by the day's largest multiplier, because the number depends on it. The stage-1 pre-statement (cut = the weakest piece) is unchanged.
@@ -678,14 +705,20 @@ Latency (a decision delay between the trigger and the order; the ER sizer and th
 | **breakeven extra cost (pt per lot, linear interpolation)** | 4.3 | 3.6 | 3.5 | 1.5 | 1.6 |
 
 ## 7. Placebos, drift, regime, information
-Placebos (rank = share of the placebo deltas below the real delta; 1.00 = the real composite beats every draw). Each placebo changes ONE piece of the composite and keeps the rest real, so it tests that piece's information given the rest.
+Placebos (rank = share of the placebo deltas below the real delta; 1.00 = the real composite beats every draw). Each placebo changes ONE piece of the composite and keeps the rest real, so it tests that piece's information given the rest. STRUCTURE note: the shuffled-ER placebo still earns most of the composite's recent gain at research lots (+54k L6M of +83k; +9k of +22k at live lots) because shuffled multipliers under the sized-governor reading still loosen the day/week locks on days that hold a 1.5; the real ER information is the margin over the placebo (rank 0.99-1.00 L6M/HOLD, PRE 0.88 live / 1.00 research, X' 0.46 live).
 #### LIVE lots (engine books)
 | placebo (draws) | what is randomised | rank of the real D6 delta L6M | HOLD | PRE | X' | placebo mean delta L6M $k | HOLD | PRE |
 |---|---|---|---|---|---|---|---|---|
 | ER (100) | ER multiplier shuffled within book x session x ~2-month stratum (sized governors follow the shuffled multipliers) | 1.00 | 1.00 | 0.88 | 0.46 | +9.4 | +8.1 | +0.1 |
+| ZONE (100) | zone skip: random signals at the same fire rate (book x session x side x target-distance strata) | 0.98 | 0.99 | 0.98 | 0.94 | +11.4 | +10.5 | -1.2 |
+| PE (100) | PE confirmation at random print seconds of the same ET day (same events, same direction) | 1.00 | 1.00 | 0.85 | 0.73 | +17.8 | +15.3 | +2.2 |
 
 #### RESEARCH lots
-placebos not finished
+| placebo (draws) | what is randomised | rank of the real D6 delta L6M | HOLD | PRE | X' | placebo mean delta L6M $k | HOLD | PRE |
+|---|---|---|---|---|---|---|---|---|
+| ER (100) | ER multiplier shuffled within book x session x ~2-month stratum (sized governors follow the shuffled multipliers) | 0.99 | 1.00 | 1.00 | 0.87 | +54.3 | +49.5 | +8.1 |
+| ZONE (100) | zone skip: random signals at the same fire rate (book x session x side x target-distance strata) | 1.00 | 1.00 | 1.00 | 0.99 | +47.2 | +45.3 | +9.1 |
+| PE (100) | PE confirmation at random print seconds of the same ET day (same events, same direction) | 0.87 | 0.93 | 0.92 | 0.29 | +80.3 | +73.3 | +25.3 |
 
 Quarterly delta, $k/wk, live lots (engine books):
 | 2023Q2 (13w) | 2023Q3 (13w) | 2023Q4 (13w) | 2024Q1 (13w) | 2024Q2 (13w) | 2024Q3 (14w) | 2024Q4 (13w) | 2025Q1 (13w) | 2025Q2 (13w) | 2025Q3 (13w) | 2025Q4 (13w) | 2026Q1 (5w) |

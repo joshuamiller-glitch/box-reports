@@ -1,0 +1,10 @@
+# SUNDAYSTACK2 prereg (agent SS-2, 2026-10-31) - written before the full scoring run
+Scope: re-score the Sunday composite (D6 v2.3b as coded; six pieces fixed by DIRECTIVE_FOLLOWUP section 1; NOTHING tuned; no new piece) with SS-2's corrections. All variants are reported; there is no selection among them.
+Honest disclosure: the tie-out run (research lots, N basis, Native 1.28) printed the L6M mean of the three causal readings once before this file was hashed (runmax 129.5k, first 90.3k, cur 119.1k vs static 132.8k / base 95.7k); it was a code-equivalence check (cm = 1 reproduces the base engine exactly; sized/base reproduce SS to the dollar).
+Variants (each: composite and as-is on the same basis, delta per window L3M/L6M/HOLD/PRE/X'):
+ G1 governors: static (SS: day/week locks x the day's largest multiplier of the taken trades, non-causal), runmax (a: running maximum of the multipliers of the signals taken so far today, lock multiplier updates as signals fire), first (b: multiplier of the trade that opened the day's exposure, fixed for the day), cur (b': multiplier of the trade last entered), base (c: planned-lot R). Entry test of trade i uses its own causal multiplier; arm/floor use the multiplier in force at each second.
+ G2 books: engine extended in place to 8 books (ST HM WT KB SM PE MV PB); M6=MV, A6=PB (DS3_MAEMFE.md D6 tag table); O6 stand-alone if a per-trade series exists.
+ G3 lots: research(6) | live6 (SS session assumption, tie-out) | live4 | live (user sessions + M6 2 + A6 1) | liveX | live+ (ST WT at research/2.35); user sessions: K6 2 asia/london/nyam/nypm; P6 7 asia/london/nyam; U6 4 asia/london; H6 4 asia, 2 nyam; M6 2 london/nyam; A6 1 all sessions; PRE and CLOSE are entry sessions with lot 0 unless listed.
+ G4 bases: N (no target correction), M (target correction 1.4/1.5/4.2/4.3 by year, stop 1.01), LIVE-CAL (= N with stop 2.45); stops Native 1.28 and join 2.45 on N and M.
+ G5 K6 no-add reconciliation on one engine (plain stack, equal-risk, integer 1/1, add slip 0.25/0.45; then inside the composite).
+Count: ~140 scenario runs, all reported; trials n_eff small (same composite).

@@ -248,3 +248,34 @@
 2026-02-02 | book SM x1.5 [S73] | STABLE -> FADING | CUSUM 0.6 sig, z4 -1.0, 4w -4,126 13w 1,211 26w 4,228 $/wk
 2026-02-02 | fs|P=25|stoppedSession=asia [MKT] | FADING -> STABLE | CUSUM 0.0 sig, z4 +2.2, 4w 47,056 13w 11,036 26w 11,879 $/wk
 2026-02-02 | book PE x1.5 [MKT] | FADING -> STOPPED | CUSUM 0.0 sig, z4 -0.6, 4w -1,196 13w -650 26w 5,380 $/wk
+
+## RE-1 ledger run 2026-10-31 (rows of RECENT_WINS.md: NEW/RISING/STABLE/FADING from the ledger; one line per transition since the previous compile)
+
+
+## RE-1 ledger run 2026-10-31 (rows of RECENT_WINS.md: NEW/RISING/STABLE/FADING from the ledger; one line per transition since the previous compile)
+- 2026-10-31 | STACK-2 "fs|P=50|stopdef=0" (STACK (6 books)) | NEW? -> RISING | L3M primary nan, tier CANDIDATE-RECENT, $ live 15,211
+- 2026-10-31 | STACK-2 "fs|P=50|stopdef=0" (STACK (6 books)) | NEW? -> NEW | L3M primary nan, tier CANDIDATE-RECENT, $ live 6,809
+- 2026-10-31 | STACK-2 "fs|P=50|others<=2" (STACK (6 books)) | NEW? -> RISING | L3M primary nan, tier LEAD, $ live 9,508
+- 2026-10-31 | STACK-2 "fs|P=50|stoppedSession=asia" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 7,431
+- 2026-10-31 | STACK-2 "fs|P=50|voltercile>=2" (STACK (6 books)) | NEW? -> RISING | L3M primary nan, tier LEAD, $ live 6,957
+- 2026-10-31 | STACK-2 "fs|P=100|stoppedSession=asia" (STACK (6 books)) | NEW? -> RISING | L3M primary nan, tier LEAD, $ live 6,356
+- 2026-10-31 | STACK-2 "fs|P=50|stoppedSession=asia" (STACK (6 books)) | NEW? -> RISING | L3M primary nan, tier LEAD, $ live 5,053
+- 2026-10-31 | STACK-2 "fs|P=100|stoppedSession=asia" (STACK (6 books)) | NEW? -> RISING | L3M primary nan, tier LEAD, $ live 4,703
+- 2026-10-31 | STACK-2 "fs|P=50|asia&voltercile>=2" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 4,173
+- 2026-10-31 | STACK-2 "fs|P=50|er20_5m>=0.4" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 3,393
+- 2026-10-31 | STACK-2 "fs|P=50|asia&voltercile>=2" (STACK (6 books)) | NEW? -> NEW | L3M primary nan, tier LEAD, $ live 2,355
+- 2026-10-31 | STACK-2 "cap|live=10|x2.35|mode=skip|session=pre|count=openAll" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 2,354
+- 2026-10-31 | STACK-2 "cap|live=8|x2.35|mode=skip|session=pre|count=openAll" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 1,924
+- 2026-10-31 | STACK-2 "fs|P=50|asia&er20_5m>=0.4" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 1,471
+- 2026-10-31 | STACK-2 "fs|P=50|oppBooks>=1" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 1,388
+- 2026-10-31 | STACK-2 "cap|live=8|x2.35|mode=skip|session=pre|count=both100" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 885
+- 2026-10-31 | STACK-2 "fs|P=50|asia&er20_5m>=0.4" (STACK (6 books)) | NEW? -> NEW | L3M primary nan, tier LEAD, $ live 751
+- 2026-10-31 | STACK-2 "cap|live=8|x2.35|mode=skip|session=pre|count=openAll" (STACK (6 books)) | NEW? -> FADING | L3M primary nan, tier LEAD, $ live 559
+- 2026-10-31 | STACK-2 "cap|live=8|x2.35|mode=skip|session=pre|count=70only" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 457
+- 2026-10-31 | STACK-2 "cap|live=6|x2.35|mode=skip|session=pre|count=70only" (STACK (6 books)) | NEW? -> STABLE | L3M primary nan, tier LEAD, $ live 396
+
+## RE-1 ledger run 2026-10-31 (rows of RECENT_WINS.md: NEW/RISING/STABLE/FADING from the ledger; one line per transition since the previous compile)
+
+
+## RE-1 ledger run 2026-10-31 (rows of RECENT_WINS.md: NEW/RISING/STABLE/FADING from the ledger; one line per transition since the previous compile)
+

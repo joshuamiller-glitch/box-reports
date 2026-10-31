@@ -656,3 +656,51 @@ White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.
 
 Plain sentence (best by all-signal gain): requiring FVG|15s AND ote705|1m before the signal enters (c1|F0.7) adds +7.72 pts per contract on the 48.6% of signals it fires on in the last 6 months (MDE 2.75), but +3.27 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +3.25; tier BEST-AVAILABLE.
 
+
+## Stage POOL  (2026-10-31T04:41Z)
+
+auto
+
+### WT: 1238 combinations x 17 variants = 21046 cells; PRE+X' selection, one recent look on the top 8 cells (30 cell x variant rows)
+White RC over the stage's cells (PRE+X', all-signal differential vs floor): p=0.020 (K=16614). Tiers: BEST-AVAILABLE 30.
+
+| AND-set (timeframes in the member names) | variant | fill L6M | n | add vs floor on fired L6M [per contract] | HOLD | L3M | PRE | X' | ALL-signal add L6M | best member (all-signal) L6M | placebo p | tier | failed gates |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AND(OB|1m+CFA:vwap|day) | c2_mid|F0.7 | 35.6% | 607 | +5.48 (MDE 1.53) | +5.53 | +5.80 | +5.23 | +4.81 | +1.48 | +1.86 | 0.590 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+CFA:b1|avwap) | c2_far|F0.7 | 32.2% | 549 | +5.28 (MDE 1.72) | +5.40 | +6.11 | +5.74 | +5.53 | +1.16 | +1.22 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+CFA:vwap|day) | c2_far|F0.7 | 29.0% | 495 | +5.26 (MDE 1.74) | +5.42 | +6.19 | +6.04 | +5.62 | +0.97 | +1.22 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+CFA:b1|avwap) | c2_mid|F0.7 | 40.6% | 693 | +5.19 (MDE 1.38) | +5.31 | +5.48 | +4.71 | +4.50 | +1.68 | +1.86 | 0.492 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+CFA:vwap|avwap) | c2_mid|F0.7 | 37.1% | 633 | +5.12 (MDE 1.34) | +5.29 | +5.29 | +4.85 | +4.90 | +1.44 | +1.86 | 0.738 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+CFA:vwap|avwap) | c2_far|F0.7 | 30.0% | 511 | +5.09 (MDE 1.74) | +5.23 | +5.87 | +5.74 | +5.38 | +0.97 | +1.22 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+CFA:vwap|day) | c2_near|F0.7 | 37.9% | 647 | +4.84 (MDE 1.58) | +4.96 | +5.17 | +4.35 | +4.68 | +1.38 | +1.62 | 0.820 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+CFA:vwap|day) | b_mid|F0.7 | 35.8% | 611 | +4.70 (MDE 1.54) | +4.76 | +4.97 | +4.60 | +4.05 | +1.20 | +1.46 | 0.770 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|45s+CFA:vwap|day) | c2_far|F0.7 | 31.4% | 535 | +4.70 (MDE 1.41) | +4.97 | +5.02 | +5.28 | +5.50 | +0.93 | +1.15 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|1m+CFA:b1|avwap) | b_far|F0.7 | 32.3% | 551 | +4.56 (MDE 1.63) | +4.68 | +5.25 | +4.77 | +4.72 | +0.93 | +0.98 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|45s+C2:ha|30s|HA_nolow2) | c2_far|F0.7 | 30.4% | 519 | +4.55 (MDE 1.44) | +4.60 | +4.59 | +5.17 | +5.54 | +0.83 | +1.15 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+| AND(OB|45s+CFA:b1|avwap) | c2_far|F0.7 | 35.6% | 607 | +4.50 (MDE 1.28) | +4.71 | +4.38 | +5.17 | +5.37 | +1.08 | +1.15 | 1.000 | BEST-AVAILABLE | placebo,<=best_member_L6M,<=best_member_PRE+X |
+
+Plain sentence (best by all-signal gain): requiring OB|1m AND CFA:b1|avwap before the signal enters (c2_mid|F0.7) adds +5.19 pts per contract on the 40.6% of signals it fires on in the last 6 months (MDE 1.38), but +1.68 pts per signal over ALL signals (the skipped signals' floor P&L counted against it) vs the best member +1.86; tier BEST-AVAILABLE.
+
+
+## PAGE 1 — POOL: verdict per book and every candidate on three units (generated 2026-10-31 04:50Z)
+
+Units: pc = pts per contract of final position (primary, all book signals, L6M); pl = per planned lot; stack = lock-engine $/wk difference vs the plain-dip floor (engine books only: ST HM WT KB SM PE; others n/a). Placebo = random-level (cf_engine.placebo_level_ov, same distance distribution) rank of the real gain among draws (limit variants only). "excess" = combination minus its better member in the same variant (paired week-block CI): the "beats its best single member" test. FINAL TIER: INFO-CANDIDATE needs stack>0 in L6M and HOLD (engine books), placebo beaten (95th pct), excess CI>0; otherwise STRUCTURE (the single-member resting-limit/70-30 structure explains it) or STACK-NEG.
+
+| book | verdict |
+|---|---|
+| KB | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.194; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| PE | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.002; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| ST | missing |
+| HM | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.008; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| SM | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.156; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| WT | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.020; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| DN | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.002; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| PB | 30 looked cells; {'BEST-AVAILABLE': np.int64(29), 'CANDIDATE': np.int64(1)}; stage RC(PRE+X') p=0.002; 1 unit-checked candidates -> 1 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| MV | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.002; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+| MA | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.110; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+
+| book | cell | pc L6M | pl L6M | stack $/wk L6M | stack HOLD | placebo rank (mean) | best member pc | excess [CI] | final | DSR | RW | PBO | + quarters | top5% |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| PB | AND(FVG~30s+CFA:val~sw15) / c2_mid~F0.7 | +3.05 | -1.33 | +nan | +nan | 1/101 (+2.46) | +1.98 | +1.08 [+0.38,+1.83] | INFO-CANDIDATE | 1.00 | Y | 0.05 | 12/12 | 0.73 |
+
+Totals: 1 unit-checked candidate rows; INFO-CANDIDATE 1, STRUCTURE 0, STACK-NEG 0.
