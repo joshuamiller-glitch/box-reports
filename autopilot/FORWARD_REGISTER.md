@@ -464,3 +464,8 @@ Knock-on caveat (informational, not the paired test): 52 of the 98 replayed ST c
 Second account: no StratTrades file for a second account exists in data/live (the Sim files hold no ST loss-cut in the window), so there is no second-file row; it appears automatically when such a file arrives. Bootstrap basis: trading-day x session (Asia 18-02, London 02-09:30, NY 09:30-18 ET) blocks, 10,000 draws; rows with fewer than 5 blocks use trade-level resampling (flagged in FORWARD_TH.json).
 
 Machinery check on the live trades that were NOT cut (same replay, n=177): outcome class agrees in 175/177 (live targets reproduced as targets 111/112, live stops as stops 64/65); stop-exit pts live -60.51 vs replay XJ3 -60.31.
+
+## INST-3 C forward-register row (2026-10-31T16:26Z) - shadow only, nothing promoted
+| rule | what | expectation | weekly MDE | forward weeks needed | status |
+|---|---|---|---|---|---|
+| INST3-C `xm.led_YM_60.ge+0.0` | skip a K6/P6/U6/H6/M6/A6 signal when, over the last 60 min, NQ has NOT out-run YM (beta-adjusted residual NQ - b*YM, aligned with the signal side, per-session scaled < 0); state read from the last completed 1-min bar of NQ and YM | +2.65 pts per contract kept-minus-skipped L6M (MDE 5.9), stack +7.3k/wk L6M (MDE 12.8k), PRE -2.2k, X' -1.3k; persistence score 0.50, shrunk size 0 | 12.8k/wk (L6M) | 28+ weeks at the L6M MDE just to see the L6M mean once; at the shrunk expectation (0) it can only be monitored, not sized | TOLERANT-positive LEAD, cell placebo p 0.32, program placebo p 0.41; paper_all shadow row (state computed from NT8 NQ and YM bars) |

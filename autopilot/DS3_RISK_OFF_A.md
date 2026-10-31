@@ -1,0 +1,114 @@
+# DS3_RISK_OFF_A - T-RISK-OFF part A (NTE-2): single triggers x stop destinations, REVERSE CONFIRMATION / SIGNAL DECAY / STACK / TIME / VOLATILITY (2026-10-31)
+
+Research only; no live / execution / chart change. UNTOUCHED never read (every frame capped at label day 20260206). Prereg autopilot/RISK_OFF_NTE2_prereg.md sha256 822fca42ad9314ffe22e4a8d940a6a47577434c4d77bc56342f11a5e38fb0f2e (addenda B and C appended before the combination / learned / staged cells were read; sha logged in DECISIONS.md at each stage); carry-list hashes: pass 1 950235a7566ea7110fcdc60d88c4072d8466a5fa455b2d425ede396259e16031, combinations b92495ab33e01ef5cdf9240928ba34db9de630e971a7bd865ce212f32ba5ad7b (each logged in autopilot/RISK_OFF_NTE2_looks.txt BEFORE its single recent look). Engine l2vast/ds3/code/riskoff/ (ro_engine = the moved-stop hook shared with RO-2; ro_trig, ro_pass1, ro_select, ro_look, ro_finalists, ro_stack, ro_combo, ro_staged, ro_learn*), outputs l2vast/ds3/out/riskoff/.
+
+## Page 1 (the answer)
+**NULL. Moving the stop on a single piece of evidence from these five families does not beat hold-the-original-stop. 0 PASS, 0 CONFIRMED.** 282,144 cell-scopes were scored (rows triggers 51 x 19 destinations x 3 states x 4 ages; confirmation-catalogue event streams 146 x {against, lost} x 13 destinations x 3 states x 2 ages; stack events 4 x 18 x 12), on the LIVE stop basis (a moved stop AND the original stop it is compared with fill at the level minus 2.45; 1.28 Native and 0.5 join-fix beside). The mean cell loses -0.23 pts per contract per trade in PRE and -0.13 in X'; every one of the 20 destinations has a negative mean in PRE; only 5.3% of the pooled-scope cells are positive in both selection windows (noise level for a null with 282,144 cells).
+**Why the retail version dies (controls, section 3):** BE / BE+4 ticks / MAE+10 / lock 50% after +25 / +50 / +75% of the target, or after 5 / 15 / 30 minutes, lose -0.1 to -1.8 pts per contract per trade in the last 6 months; the CLOCK versions lose -1.1 to -1.9. The moved stop sits on the retest: BE after +50% of the target is hit on 1,877 trades in L6M, of which 932 would have reached the target (forfeited) and 827 would have gone to the full stop (avoided), net -0.51 pts per trade.
+**Selection on PRE u X' did not survive the single recent look:** 358 cells carried (top 10 per family x scope); the carried cells average +0.2 pts in PRE and -0.13 (event streams) / +0.09 (stack) / -0.00 (volatility) / -0.13 (time) / -0.54 (decay) in L6M; 110 of 358 are positive in both L6M and HOLD (about what coin flips give). Finalists (the 35 cells of this part positive in both recent windows, one per trigger x scope x destination, deduplicated): 46 LEAD-weak (recent > 0, placebo not beaten on both), 12 LEAD (placebo beaten; stack fails a window), 6 CANDIDATE-RECENT (stack >= 0 in all windows; inside MDE). No cell is above its MDE in both recent windows. Best-of-F (family size F, PRE u X' min-t): event streams 2.28 of F = 182,208; stack 2.01 of 6,912; volatility 1.58 of 10,944; time 1.51 of 29,184; decay 0.45 of 23,712; bar-state mirrors 1.16 of 29,184. For F this large the expected maximum t under the null is about 4; the best selected min-t is 2.3. Cumulative multiplicity: UF_TRIALS +282,144 (side riskoff_nte2).
+
+## 1. Definitions and engine (so every number is reproducible)
+* Trades: the 44,370-trade store (D6 books KB PE SM HM MV PB + DN), library 60/60 bracket, market entry, ONE contract; 20230401..20260206. Windows: PRE 20240201..20250630, X' 20230401..20240131 (selection), L3M 20251106.., L6M 20250801.., HOLD 20250701.. (one look each). Per-trade denominators = every trade of the scope in the window (non-touched trades contribute 0). MDE = 2.8 x SE of the weekly clustered mean.
+* Trigger rows = the THP/L2H 10-s path cache (every 10 s of every open trade); state triggers that fire on > 2.5 M rows are read at a 1-minute decision cadence (documented, applied identically to every cell). Event-stream triggers use the RC-1 convention (against = a NEW structure of the opposite direction forms after entry; lost = a same-direction structure formed before entry loses its far level) on the 1-s grid.
+* Move rule: the stop moves only TIGHTER (ratchet) than the original stop and only to a level at least 1.0 pt behind the market at the trigger row; it is live from the next second; the target is unchanged; same-second-as-original-exit leaves the original exit; the first valid fire per trade. The action is never an exit.
+* Destinations (19): BE; BE+2 / 4 / 8 ticks; MAE+5 / 10 / 15 pts (beyond the worst point so far); signal-bar extreme; last 1-m / 5-m / 15-m fractal swing; ETH VWAP; the largest resting level behind price within 10 levels; 1 / 1.5 / 2 x ATR14(1-m) behind price; halfway to the target; lock 25 / 50% of open profit; (event streams add the RC-1 midpoint 'mid'). Not built (disclosed): FVG/OB edge, POC, absorption price, VWAP band as destinations (no per-second store).
+* Fills: hold-the-original-stop = the library exit; stop exits cost c (2.45 LIVE headline, 1.28 Native, 0.5 join-fix) in place of the 1.01 of the M basis, target exits the year correction, time exits 0.995, fee 0.242.
+* Cost ties: the hold arm reproduces d.base to 0.0 at c = 1.01. Two bugs were found and fixed before any scored cell: (i) cache row blocks are not in trade order (the row-to-trade map is built from ro_start, verified against tid.npy on 100% of rows; an earlier scratch helper in code/ntexp2 used np.repeat and was deleted - no reported number used it); (ii) trigger rows at or after the original exit second are excluded.
+* Stack line: finalists only, through the D6-faithful engine (ss2: live lots K6 2 P6 7 U6 4 H6 4/2 M6 2 A6 1 by session, integer half-up ER lots, running-max locks, 70/30 integer split for P6 U6 H6 M6, K6 and A6 market, zone skip, Asia cut). The rule is evaluated on the signal's library path and applied to the composite rows from the trigger second (whole position at the new stop; the add leg never fills if the stop is touched first). Stop cost 2.45 on the rule's and the base's fills. Tie-out: the base composite returns {L6M 46,092 / HOLD 42,629 / PRE 24,540 / X' 9,460} $/wk (A-composite on the N basis), and the earlier +18.5k / +16.2k / +4.7k / +12.5k SS-2 delta is reproduced exactly by the same code path.
+
+## 2. Family table (selection windows only until the look)
+| family | cells x scopes scored | with fires | ALL-scope cells | mean gain PRE | mean gain X' | selected (both > 0, touched >= 150) | of which ALL scope | carried | positive in L6M AND HOLD (one look) | carried mean PRE | carried mean L6M | carried mean HOLD | best min-t (PRE, X') |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| RC | 29,184 | 25,562 | 3,648 | -0.474 | -0.133 | 620 | 0 | 0 | 0 | +nan | +nan | +nan | 1.16 |
+| RC_STREAM | 182,208 | 105,974 | 22,776 | -0.210 | -0.168 | 3,694 | 431 | 80 | 18 | +0.295 | -0.133 | -0.156 | 2.28 |
+| DECAY | 23,712 | 5,200 | 2,964 | -0.086 | -0.005 | 160 | 80 | 38 | 0 | +0.242 | -0.542 | -0.448 | 0.45 |
+| STACK | 6,912 | 5,270 | 864 | -0.244 | -0.147 | 387 | 27 | 80 | 47 | +0.202 | +0.089 | +0.076 | 2.01 |
+| TIME | 29,184 | 25,342 | 3,648 | -0.056 | -0.017 | 1,024 | 123 | 80 | 10 | +0.177 | -0.130 | -0.178 | 1.51 |
+| VOL | 10,944 | 9,600 | 1,368 | -0.233 | -0.138 | 659 | 68 | 80 | 35 | +0.221 | -0.004 | -0.021 | 1.58 |
+Footnote: the carry list is top-10 per (family, scope) with RC = event streams and bar-state mirrors pooled, so the 'carried' counts of the RC bar-state row are in the event-stream row; none of the 620 selected bar-state mirror cells has min-t above 1.16.
+
+Destinations (mean gain per trade over all ALL-scope cells, PRE / X'):
+| destination | atr1 | atr15 | atr2 | be | be2 | be4 | be8 | book | half | lock25 | lock50 | mae10 | mae15 | mae5 | mid | sig | sw1 | sw15 | sw5 | vwap |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| mean gain PRE | -0.378 | -0.356 | -0.271 | -0.189 | -0.184 | -0.123 | -0.169 | -0.337 | -0.018 | -0.126 | -0.195 | -0.296 | -0.243 | -0.349 | -0.226 | -0.191 | -0.237 | -0.050 | -0.195 | -0.092 |
+| mean gain X' | -0.305 | -0.247 | -0.106 | -0.031 | -0.020 | -0.059 | -0.013 | -0.169 | +0.006 | -0.072 | -0.032 | -0.164 | -0.101 | -0.255 | -0.062 | -0.169 | -0.147 | -0.096 | -0.200 | -0.007 |
+By state: always -0.271 / -0.087; under water -0.186 / -0.128; in profit -0.182 / -0.096. The destination that loses least is 'halfway to target' and the 15-m swing; the ATR and MAE+5 destinations lose most (they sit closest to price and are hit by noise).
+
+## 3. Controls (named a priori; all windows, ALL D6 books, c = 2.45)
+| control | dest | PRE | X' | L3M | L6M | HOLD |
+|---|---|---|---|---|---|---|
+| CTL_age15m | be | -1.034 | -0.989 | -1.217 | -1.769 | -1.404 |
+| CTL_age15m | be4 | -1.024 | -0.999 | -1.292 | -1.811 | -1.453 |
+| CTL_age15m | lock50 | -1.102 | -1.167 | -1.134 | -1.837 | -1.486 |
+| CTL_age15m | mae10 | -0.731 | -0.518 | -0.778 | -1.263 | -0.963 |
+| CTL_age30m | be | -0.890 | -0.684 | -1.289 | -1.516 | -1.300 |
+| CTL_age30m | be4 | -0.865 | -0.674 | -1.412 | -1.541 | -1.307 |
+| CTL_age30m | lock50 | -0.861 | -0.806 | -1.358 | -1.561 | -1.342 |
+| CTL_age30m | mae10 | -0.704 | -0.600 | -0.819 | -1.086 | -0.898 |
+| CTL_age5m | be | -1.412 | -0.893 | -0.947 | -1.852 | -1.478 |
+| CTL_age5m | be4 | -1.308 | -0.952 | -0.904 | -1.816 | -1.450 |
+| CTL_age5m | lock50 | -1.412 | -1.090 | -0.798 | -1.732 | -1.364 |
+| CTL_age5m | mae10 | -1.022 | -0.507 | -0.956 | -1.668 | -1.267 |
+| CTL_pct25 | be | -1.019 | -0.129 | -0.500 | -1.302 | -1.079 |
+| CTL_pct25 | be4 | -1.010 | -0.069 | -0.535 | -1.380 | -1.145 |
+| CTL_pct25 | lock50 | -0.981 | -0.245 | -0.207 | -1.239 | -0.971 |
+| CTL_pct25 | mae10 | -0.685 | -0.100 | -0.130 | -0.709 | -0.579 |
+| CTL_pct50 | be | -0.518 | +0.165 | -0.094 | -0.505 | -0.541 |
+| CTL_pct50 | be4 | -0.510 | +0.175 | -0.159 | -0.598 | -0.633 |
+| CTL_pct50 | lock50 | -0.532 | +0.195 | +0.176 | -0.463 | -0.503 |
+| CTL_pct50 | mae10 | -0.385 | +0.160 | +0.146 | +0.012 | -0.107 |
+| CTL_pct75 | be | -0.107 | +0.093 | -0.237 | -0.191 | -0.195 |
+| CTL_pct75 | be4 | -0.110 | +0.081 | -0.285 | -0.236 | -0.236 |
+| CTL_pct75 | lock50 | -0.126 | -0.042 | -0.329 | -0.443 | -0.414 |
+| CTL_pct75 | mae10 | -0.019 | -0.075 | +0.204 | +0.141 | +0.112 |
+
+## 4. Finalists of part A (selected on PRE u X' only; ONE recent look; placebos 60 draws; stack at live lots)
+Columns: gains in pts per contract per trade of the scope (MDE of L6M in brackets); touched = trades whose stop moved in L6M; avoided = hold would have gone to the full stop and the moved stop was hit first; forfeited = hold reached the target but the moved stop was hit first; P(tgt|held) = share of tightened trades whose stop was NOT hit that reached the target; placebo rank = share of placebo draws below the real ALL-trade gain (random-tighten at the same count per book x session and the same time-since-entry / timing permuted among the touched trades; >= 0.90 required for CANDIDATE-RECENT); stack $/wk = lock-engine delta at live lots vs the same composite without the rule.
+| family | trigger | scope | dest | state | age s | PRE | X' | L6M [MDE] | HOLD | L6M @1.28 / @0.5 | touched L6M | avoided / forfeited L6M | P(tgt|held) | placebo rank L6M (rand / timing) | HOLD plc | stack L6M [MDE] / HOLD / PRE / X' ($/wk, live lots) | tier |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| RC_STREAM | `s1_iFVG_30m|lost` | SM | mae5 | under | 0 | +0.805 | +0.773 | +1.532 [1.97] | +0.755 | +1.551 / +1.563 | 42 | 33 / 3 | 1.00 | 0.00 / 0.00 | 0.05 | -7,590 [10,652] / -4,833 / -708 / -2,662 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| RC_STREAM | `s1_iFVG_30m|lost` | SM | atr1 | any | 0 | +0.646 | +0.805 | +1.246 [1.98] | +0.563 | +1.264 / +1.277 | 39 | 30 / 3 | 0.75 | 0.00 / 0.00 | 0.07 | -6,675 [10,804] / -4,517 / -273 / -2,779 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| RC_STREAM | `s1_iFVG_30m|lost` | SM | atr15 | under | 0 | +0.575 | +0.750 | +1.010 [1.74] | +0.611 | +1.025 / +1.035 | 37 | 29 / 3 | 0.75 | 0.00 / 0.00 | 0.20 | -4,683 [7,754] / -2,475 / +365 / -1,018 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_spike3` | SM | sw15 | under | 120 | +1.095 | +1.220 | +0.645 [2.50] | +0.656 | +0.678 / +0.701 | 69 | 35 / 9 | 0.72 | 0.00 / 0.05 | 0.00 | -8,643 [13,962] / -9,155 / -162 / -3,296 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_bar2atr` | PE | sig | profit | 120 | +0.240 | +0.693 | +0.635 [0.92] | +0.825 | +0.664 / +0.683 | 103 | 43 / 25 | 0.90 | 1.00 / 1.00 | 1.00 | -272 [11,495] / +505 / -3,729 / -1,210 | LEAD (placebo beaten; stack fails a window) |
+| VOL | `V_bar2atr` | SM | mae10 | profit | 0 | +0.516 | +0.582 | +0.630 [1.68] | +0.008 | +0.645 / +0.655 | 42 | 14 / 4 | 0.92 | 1.00 / 1.00 | 1.00 | +4,608 [9,050] / +4,676 / -3,021 / +1,444 | LEAD (placebo beaten; stack fails a window) |
+| VOL | `V_bar2atr` | PE | mae5 | profit | 60 | +0.208 | +0.665 | +0.604 [0.78] | +0.683 | +0.617 / +0.626 | 102 | 42 / 10 | 0.91 | 1.00 / 1.00 | 1.00 | +4,394 [9,358] / +4,249 / -2,037 / +1,384 | LEAD (placebo beaten; stack fails a window) |
+| RC_STREAM | `cfa1__lvn2__sess|against` | SM | mid | profit | 0 | +0.690 | +0.656 | +0.593 [1.47] | +0.521 | +0.604 / +0.612 | 38 | 11 / 2 | 0.92 | 0.12 / 1.00 | 0.48 | -4,445 [7,854] / -3,805 / -1,781 / +2,489 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_bar2atr` | PE | mae10 | profit | 60 | +0.200 | +0.741 | +0.582 [0.69] | +0.673 | +0.592 / +0.599 | 99 | 41 / 7 | 0.92 | 1.00 / 1.00 | 1.00 | +4,584 [8,853] / +4,452 / -2,558 / +1,300 | LEAD (placebo beaten; stack fails a window) |
+| VOL | `V_bar2atr` | PE | mae15 | profit | 120 | +0.204 | +0.470 | +0.441 [0.71] | +0.506 | +0.450 / +0.456 | 95 | 39 / 6 | 0.91 | 1.00 / 1.00 | 1.00 | +3,250 [8,446] / +3,458 / -2,190 / +43 | LEAD (placebo beaten; stack fails a window) |
+| STACK | `same_stop` | HM | mae5 | under | 60 | +0.409 | +0.839 | +0.397 [1.47] | +0.055 | +0.427 / +0.447 | 205 | 155 / 19 | 0.59 | 1.00 / 0.00 | 0.98 | -6,071 [8,248] / -7,355 / +533 / +746 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| STACK | `same_stop` | DN | atr15 | under | 120 | +0.138 | +0.523 | +0.313 [1.09] | +0.264 | +0.328 / +0.338 | 95 | 67 / 8 | 0.53 | 1.00 / 0.00 | 0.98 | -777 [8,436] / -775 / -2,071 / +437 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| STACK | `opp_entry` | HM | vwap | under | 0 | +0.240 | +0.577 | +0.264 [0.94] | +0.194 | +0.273 / +0.279 | 55 | 33 / 7 | 0.73 | 0.00 / 0.37 | 0.33 | -3,201 [8,683] / -2,853 / +488 / +1,387 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| STACK | `same_stop` | HM | atr2 | under | 120 | +0.237 | +0.399 | +0.227 [0.96] | +0.086 | +0.240 / +0.249 | 113 | 75 / 8 | 0.64 | 1.00 / 0.00 | 1.00 | +665 [5,678] / +127 / -1,809 / -154 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_bar2atr` | PE | sw1 | profit | 0 | +0.201 | +0.506 | +0.217 [0.80] | +0.237 | +0.239 / +0.254 | 54 | 23 / 21 | 0.89 | 0.93 / 1.00 | 1.00 | -3,420 [7,961] / -3,589 / -1,092 / -1,350 | LEAD (placebo beaten; stack fails a window) |
+| RC_STREAM | `s1_iFVG_3m|lost` | HM | mid | under | 120 | +0.790 | +1.131 | +0.182 [1.69] | +0.164 | +0.225 / +0.254 | 280 | 196 / 26 | 0.75 | 0.97 / 0.00 | 0.98 | -2,732 [12,668] / -1,384 / +401 / -6,298 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_bar2atr` | MV | sw15 | always | 0 | +0.159 | +0.467 | +0.134 [1.50] | +0.318 | +0.171 / +0.195 | 144 | 71 / 25 | 0.79 | 0.00 / 0.03 | 0.00 | -3,980 [14,307] / -4,861 / -1,671 / -6,971 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_spike2` | DN | half | always | 120 | +0.288 | +0.229 | +0.122 [2.06] | +0.276 | +0.251 / +0.337 | 138 | 22 / 72 | 0.97 | 0.00 / 0.00 | 0.02 | -10,533 [11,746] / -10,417 / -4,810 / -3,185 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| STACK | `opp_entry` | PE | vwap | under | 60 | +0.411 | +0.616 | +0.110 [0.78] | +0.211 | +0.123 / +0.131 | 76 | 46 / 12 | 0.94 | 0.02 / 0.38 | 0.27 | -3,215 [8,685] / -2,864 / +908 / +1,186 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| TIME | `T_kz_end10` | PB | half | always | 0 | +0.170 | +0.477 | +0.110 [0.70] | +0.135 | +0.136 / +0.153 | 31 | 7 / 19 | 1.00 | 1.00 / 1.00 | 1.00 | -46 [6,044] / +236 / +594 / +1,520 | LEAD (placebo beaten; stack fails a window) |
+| RC_STREAM | `s1_iFVG_1h|against` | PB | sw5 | any | 0 | +0.390 | +0.771 | +0.103 [0.63] | +0.077 | +0.111 / +0.116 | 32 | 22 / 5 | 1.00 | 0.83 / 0.03 | 0.68 | -719 [5,532] / -924 / +385 / -171 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| RC_STREAM | `cfa1__vwap__avwap|lost` | KB | mae15 | any | 0 | +0.150 | +0.341 | +0.088 [0.55] | +0.075 | +0.095 / +0.100 | 54 | 36 / 7 | 1.00 | 0.08 / 0.00 | 0.12 | -2,828 [5,037] / -1,166 / -1,798 / -543 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| TIME | `T_flat60` | PB | book | always | 120 | +0.093 | +0.259 | +0.083 [0.60] | +0.061 | +0.138 / +0.174 | 47 | 5 / 6 | 0.50 | 0.00 / 0.00 | 0.00 | -111 [1,090] / -277 / -309 / -275 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| RC_STREAM | `cfa1__lvn2__sess|against` | DN | mae10 | any | 0 | +0.371 | +0.707 | +0.076 [1.40] | +0.194 | +0.103 / +0.121 | 144 | 44 / 14 | 0.88 | 0.00 / 1.00 | 0.05 | -6,346 [11,069] / -5,453 / -2,475 / +180 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_atr15` | PB | vwap | under | 60 | +0.181 | +0.159 | +0.064 [1.51] | +0.127 | +0.116 / +0.151 | 208 | 93 / 30 | 0.77 | 0.08 / 0.57 | 0.03 | -7,835 [10,356] / -6,328 / -2,343 / -1,529 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| STACK | `same_stop` | PB | vwap | any | 60 | +0.362 | +0.664 | +0.062 [0.95] | +0.104 | +0.077 / +0.087 | 69 | 44 / 9 | 0.57 | 0.47 / 0.00 | 0.52 | -1,976 [4,107] / -1,718 / -1,249 / +1,508 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| STACK | `same_tgt` | DN | vwap | any | 120 | +0.252 | +0.529 | +0.059 [1.62] | +0.381 | +0.092 / +0.115 | 222 | 47 / 17 | 0.97 | 0.63 / 1.00 | 0.77 | -4,800 [9,140] / -4,714 / +273 / -1,357 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_spike5` | ALL | mae15 | under | 300 | +0.070 | +0.090 | +0.053 [0.22] | +0.050 | +0.057 / +0.060 | 344 | 181 / 25 | 0.78 | 0.93 / 1.00 | 0.92 | -742 [5,456] / -852 / -537 / +1,267 | LEAD (placebo beaten; stack fails a window) |
+| STACK | `same_stop` | ALL | sw1 | any | 0 | +0.049 | +0.057 | +0.043 [0.17] | +0.031 | +0.044 / +0.044 | 93 | 61 / 8 | 0.54 | 1.00 / 0.75 | 1.00 | -369 [1,958] / -323 / +94 / +76 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| RC_STREAM | `s1_iFVG_30m|against` | MV | mid | profit | 0 | +0.074 | +0.546 | +0.036 [0.45] | +0.089 | +0.042 / +0.046 | 34 | 10 / 4 | 0.83 | 0.45 / 0.98 | 0.60 | -614 [3,842] / -445 / -870 / +1,068 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| RC_STREAM | `cfa1__lvn2__sess|lost` | ALL | atr1 | any | 0 | +0.042 | +0.068 | +0.020 [0.11] | +0.040 | +0.021 / +0.022 | 66 | 45 / 10 | 0.80 | 0.83 / 0.00 | 0.88 | -371 [2,153] / -295 / -345 / +380 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_spike3` | ALL | half | always | 0 | +0.051 | +0.128 | +0.015 [0.36] | +0.014 | +0.041 / +0.059 | 365 | 63 / 200 | 0.98 | 0.70 / 0.57 | 0.70 | -2,680 [7,199] / -1,641 / -3,990 / -941 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| VOL | `V_spike5` | MV | mae15 | profit | 60 | +0.117 | +0.334 | +0.009 [0.58] | +0.094 | +0.016 / +0.020 | 48 | 19 / 6 | 0.87 | 0.10 / 1.00 | 0.53 | -2,447 [3,926] / -1,632 / -965 / -729 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| RC_STREAM | `cfa1__lvn2__sess|lost` | ALL | mae5 | under | 0 | +0.056 | +0.080 | +0.007 [0.13] | +0.032 | +0.009 / +0.010 | 77 | 56 / 13 | 0.86 | 0.67 / 0.03 | 0.93 | -56 [2,180] / -19 / -61 / +487 | LEAD-weak (recent > 0, placebo not beaten on both) |
+| TIME | `T_flat60` | DN | mae5 | always | 120 | +0.037 | +0.074 | +0.007 [0.25] | +0.006 | +0.017 / +0.024 | 33 | 3 / 0 | 0.25 | 0.02 / 0.72 | 0.02 | -237 [574] / -228 / -85 / -166 | LEAD-weak (recent > 0, placebo not beaten on both) |
+
+Reading. (1) The only part-A cells that pass 'positive in L6M and HOLD, both placebos beaten' are the volatility cells V_bar2atr (a 1-minute bar with body >= 2 ATR against an IN-PROFIT trade) on PE / SM / MV -> MAE+5 / +10 / +15: +0.6 pts per PE trade in L6M and HOLD, but they touch only 42-102 trades in 6 months, their MDE is as large as the gain, and the lock-engine stack is NEGATIVE in PRE (-2.0k to -3.7k $/wk) while positive in L6M / HOLD / X' (+3.3k to +4.6k, MDE 8.9-11.5k): LEAD at best. (2) Every cell positive on SM with the RC-1 event streams (iFVG-30m lost -> MAE+5 / ATR) shows +1.0 to +1.5 pts in L6M but a placebo rank of 0.00: random tightening of SM trades does as well, i.e. it is a property of the book (SM stops are rarely worth keeping), not of the trigger, and the stack line is -4.7k to -7.6k. (3) The pooled cells (ALL scope) are all inside +-0.05 pts per trade with MDE 0.11-0.36.
+
+## 5. Plain sentences
+* moving KB's stop to MAE+10 when support is pulled z >= 2 (RO-2 PUL_2) after the trade has been -30 or worse (any state) changes +0.33 pts per contract per trade in the last 6 months (MDE 2.25; HOLD +0.25; PRE -0.53, X' +0.27); it touches 659 of 1242 trades, avoids a full stop on 432 and forfeits a target on 56. (The sentence the directive named; it is scored regardless of selection and is mixed: KB PRE -0.53, X' +0.27.)
+* The same rule over all D6 books: moving a D6 book's stop to MAE+10 when support is pulled z >= 2 (RO-2 PUL_2) after the trade has been -30 or worse (any state) changes -0.35 pts per contract per trade in the last 6 months (MDE 0.81; HOLD -0.36; PRE -0.14, X' -0.06); it touches 3039 of 9645 trades, avoids a full stop on 1994 and forfeits a target on 312.
+* Best part-A pooled cell (event stream, `cfa1__lvn2__sess|lost`, any state, age 0 -> MAE+5): +0.05 PRE, +0.09 X', -0.01 L6M, +0.02 HOLD per trade; it touches 80 trades in 6 months and its MDE is 0.13: nothing.
+* Not taking a risk-off at all (hold the original stop) is the best policy in every family of part A. The retail clock rule 'break even after 15 minutes' costs -1.77 pts per contract per trade in the last 6 months (MDE 0.9).
+
+## 6. What was not done (named)
+FVG/OB-edge, POC and absorption-price destinations; stack-at-minus-X-R trigger (needs the stack's open P&L by second); the Asia/London killzone calendars beyond the end-of-killzone and open windows; 'first book to reach +X R' as a trigger (only 'same-side other-book target' and 'stop' events); VIX intraday. The shuffled-day trigger is implemented as the timing permutation among touched trades of the same book x session (day-shuffled by construction); a calendar-shifted version was not run.

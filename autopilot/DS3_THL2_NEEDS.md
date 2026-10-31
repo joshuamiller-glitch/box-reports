@@ -145,3 +145,11 @@ Nothing here is a recommendation (0 PASS); these are the exact definitions D6 / 
 * **Delay action** `delay N` (hold the signal N minutes, then take it at market at the first print >= N min later + 1 tick if the original stop / target / opposite signal has not ended it; stop = ORIGINAL stop level, target = fill + target distance): a new action in the entry vocabulary.
 * **Re-target x0.5** (target distance x0.5, stop and lots unchanged) has no D6 property today.
 * **Sizing**: the engine-mult route (lots multiplier on the sized path, planned-lot-R locks) is the only valid stack line for lot changes; the sized-lot-R lock variant (day / week locks scaled by the day's largest multiplier) is NOT built for per-signal multipliers.
+
+## RISK-OFF (T-RISK-OFF, NTE-2, 2026-10-31): features a stop-tighten policy would need that D6 does not compute
+Only the CANDIDATE-RECENT cell `loss * * sameSideBookStopped == 1 volSpike3Against == 1 tighten mae+10` (post-selection, inside MDE; see DS3_RISK_OFF_FINAL.md) names new features:
+* **volSpike3Against**: 1 if the last COMPLETED 1-minute bar's range (high - low) > 3 x the median of the previous 60 completed 1-minute ranges (min 20 bars) AND that bar closed against the trade (close < open for a long, > for a short).
+* **sameSideBookStopped**: 1 if, since this trade's entry, another D6 book on the same side has exited at its stop (events are in D6's own book logs).
+* **mae**: the trade's running maximum adverse excursion in points from the entry fill (D6 computes MAE for its health rules); action `tighten mae+10` = stop to entry -/+ (MAE + 10), only if tighter than the current stop and at least 1.0 pt behind the market; never an exit.
+* THP_POLICY grammar extension needed: `tighten be | be+k | mae+k | struct | book | atr*k | lock X%`; here only `mae+k` is used.
+Not requested (no cell survived): order-book triggers (pulled support z, imbalance flip, iceberg, sweep), reverse-confirmation items, time/session triggers, learned policies.
