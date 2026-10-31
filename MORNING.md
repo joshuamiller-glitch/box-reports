@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 03:58Z 10-31 (t+111.0 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 04:28Z 10-31 (t+111.5 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 6% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TG': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-10-31T03:58:14Z. Box: CPU 29.4%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 22% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 4.3, 'TG': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-10-31T04:28:53Z. Box: CPU 64.3%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -216,7 +216,7 @@ Updated 2026-10-31T03:58:14Z. Box: CPU 29.4%, slots busy 13/32, queue 0. Cores p
 | UF | ? | 0 | 0 / 0 | none | prereg |
 | WO | ? | 0 | 0 / 1488 | none | prereg |
 | ZEN | ? | 0 | 0 / 176 | none | prereg |
-| unattributed | - | 0.0 | - | - | - |
+| unattributed | - | 4.3 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -227,13 +227,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-10-31T03:50Z
+## TREND (TL) update 2026-10-31T04:21Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-31T03:47:09Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-31T04:17:09Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -843,3 +843,15 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - load: ~31% (ramping, agents just started) | agents: 10/10 | queue: 7 filler items (UF-ENTRY/PROFIT/LOSS/INFO cycles, SD-GAP, BARS-CAND-3, DEAD-REREAD). (03:52Z) RE-2 started.
 
 - (wall 03:52Z) C2 DONE: HM four-up = DROP; PE 45-s three-bar at market (NY only) +3.57/planned lot L6M, stack +3.6k L6M but -0.4k PRE, top 5% of trades carry 168% of gain: shadow LEAD. UF-ENTRY resumed (agents 10/10).
+
+- (wall 04:13Z) ZA DONE: 8-line skip >= 0 in L6M and HOLD on the stack (+6.6k/+6.1k live lots) but post-hoc lines and the level itself is not the information (permuted-distance placebo +0.21 vs real +0.26): shadow LEAD. UF-PROFIT resumed (agents 10/10).
+
+- (wall 04:16Z) UF-ENTRY C5+C6 DONE: order-book information map for entry closed (<= ~0.02 IC). Cycle 7 = execution realism of the split / modelled add slippage per lot. agents 10/10.
+
+- (wall 04:17Z) KBR DONE: KB ER>=0.2 sizer under sized-lot R is the only KB item >=0 on the stack in all windows (+3.1k/wk L6M at KB 2 live lots; +1.2k under planned-lot R); book-lean skip/chop gate OFF. UF-LOSS resumed (agents 10/10).
+
+- (wall 04:24Z) RE-2 DONE: the honest test of "run what worked recently" says NO at scale: walk-forward 2024-26 of running the ledger at full size = -9.6k/wk (shrunk -5.5k, persistence>=0.7 ~0); recent positives are positive next quarter 40% of the time vs 44% for noise twins. Only the first-stop cut (book open on the other side) is positive in all windows: run at 25% size, monthly review. INFO resumed (agents 10/10).
+
+- (wall 04:25Z) RHQ DONE: risk-off, halt-resume, quit-when-up all NULL on the lead-written interpretations (quitting when up costs -45k/wk L6M; the 12R week floor never fires). UA-1 (unit/governor audit of every Sunday candidate) started (agents 10/10). Still need the original texts if the interpretations missed the intent.
+
+- (wall 04:26Z) UF-ENTRY C7 DONE: modelled live add slippage +0.25 pt/lot (stress +0.45); at integer live lots the split is K6 1/1, U6 3/1, H6 3/1, P6 5/2; the split earns +12.5k L6M / +13.5k HOLD at research lots after modelled slippage, but K6 loses with the add in every window (-3.0k L6M): drop the add on K6? (user decision). UF-ENTRY on cycles 8-9 (agents 10/10).
