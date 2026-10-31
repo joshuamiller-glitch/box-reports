@@ -1,0 +1,2 @@
+## Drawdown evidence: how wide? (RB-1, post-hoc)
+L6M maxDD (composite 23k vs as-is 88k) rests on 28 weeks; the as-is figure is one week. Resampling a forward 26 weeks, the composite's maxDD median is 96 / 96 / 68k under 2023-24 / mixed / 2025-26 weeks vs 197 / 123 / 119k as-is, bands overlapping; the composite's maxDD is the larger in 7% / 24% / 9% of paths (39% drawing all 149 weeks). A 20% cut appears by chance in 12-35% of 28-week windows; the composite shows it in 88% of L6M and 94% of 2023-24 draws, 8% of PRE. ON set and ON+ER stay inside the as-is band. No PASS.
