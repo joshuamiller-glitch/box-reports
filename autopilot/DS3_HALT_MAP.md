@@ -51,4 +51,13 @@ Entry i has N straight losers just before it. "next 10 mean" = mean r of trades 
 | PE | 0.43 | 0.44 | 0.52 | 0.52 | 0.57 | -0.13 |
 | SM | 0.44 | 0.43 | 0.44 | 0.48 | 0.40 | +0.90 |
 
-Plain lines (L6M): see section 1; e.g. the "after 4 straight losers" columns give the next-10 mean r against the unconditional mean r of the same window. A streak rule helps only if the next-10 mean after the trigger is clearly below the unconditional mean; most cells are inside noise (starts overlap: effective n is about starts/10).
+## Plain lines (last 6 months, next 10 trades after 4 straight losers vs unconditional)
+
+* After 4 straight HM losers the next 10 trades average +0.096 R (n=7 starts) vs +0.120 R unconditionally (last 6 months)
+* After 4 straight KB losers the next 10 trades average +0.135 R (n=24 starts) vs +0.077 R unconditionally (last 6 months)
+* After 4 straight MV losers the next 10 trades average +0.190 R (n=8 starts) vs +0.019 R unconditionally (last 6 months)
+* After 4 straight PB losers the next 10 trades average +0.393 R (n=13 starts) vs +0.234 R unconditionally (last 6 months)
+* After 4 straight PE losers the next 10 trades average +0.376 R (n=10 starts) vs +0.176 R unconditionally (last 6 months)
+* After 4 straight SM losers the next 10 trades average +0.392 R (n=4 starts) vs +0.054 R unconditionally (last 6 months)
+
+Notes: see section 1; e.g. the "after 4 straight losers" columns give the next-10 mean r against the unconditional mean r of the same window. A streak rule helps only if the next-10 mean after the trigger is clearly below the unconditional mean; most cells are inside noise (starts overlap: effective n is about starts/10).

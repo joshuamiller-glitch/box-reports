@@ -1,4 +1,4 @@
-# RECENT_WINS  (L3M = 2025-11-06..2026-02-06, 13 weeks; own capped mask; compiled 2026-10-31 14:44Z)
+# RECENT_WINS  (L3M = 2025-11-06..2026-02-06, 13 weeks; own capped mask; compiled 2026-10-31 15:17Z)
 
 **This table is a VIEW, not a verdict.** Nothing is promoted by being in it; the tier column carries the gates. Rows are cells that were POSITIVE in the last 3 months on the primary measure. They were not selected on L3M, but L3M has been looked at for every one of them, so the L3M numbers are the most-looked-at window we have. Rows from a program with tens of thousands of cells are what noise looks like (see the multiplicity column); "$ at live lots" are not additive across rows (many rows are the same trade stream, cells of one program overlap, and units differ by program: stack-level lock-engine deltas vs per-fill 1-lot approximations, see each note). Closed programs are RE-READ from stored windows / per-trade or per-day series (no re-run, no new selection).
 
@@ -32,7 +32,7 @@ How to read the new columns: PERSIST = historical probability that a rule with t
 # The older view (every row positive in L3M; now with the new columns on the shown rows)
 
 ## Summary header
-Sources: 38 files; 203904 rows read, 31735 positive-in-L3M rows after de-duplication (49632 before). Closed-programs file: l2vast/ds3/out/recent_wins/closed_programs.csv (16315 rows). Unified full rows: l2vast/ds3/out/recent_wins/compiled/all_rows_unified.csv.
+Sources: 39 files; 203908 rows read, 31735 positive-in-L3M rows after de-duplication (49632 before). Closed-programs file: l2vast/ds3/out/recent_wins/closed_programs.csv (16315 rows). Unified full rows: l2vast/ds3/out/recent_wins/compiled/all_rows_unified.csv.
 
 ### Top 10 rows by L3M $ at live lots (any tier; NOT additive)
 
@@ -123,23 +123,23 @@ Sources: 38 files; 203904 rows read, 31735 positive-in-L3M rows after de-duplica
 | CONFIRM-BARS S2b                                        |         42 |         42 |           42 |      0 |           4 |                  8 |      0 |                     30 |                                      0 |
 | DIPENTRY                                                |         41 |         41 |           40 |      0 |           0 |                 29 |      0 |                      0 |                                     11 |
 | CONFIRM-BARS S1                                         |         41 |         41 |           41 |      0 |           9 |                 16 |      0 |                     16 |                                      0 |
-| ENSM                                                    |         39 |         39 |           39 |      0 |           0 |                 18 |      0 |                      0 |                                     21 |
 | UF-LOSS c4                                              |         40 |         39 |           22 |      0 |           0 |                  1 |      0 |                      0 |                                     21 |
 | CONFIRM-BARS S1c                                        |         39 |         39 |           39 |      0 |           5 |                 14 |      0 |                     20 |                                      0 |
-| EXP1 profit fixed                                       |         40 |         38 |           38 |      0 |           0 |                  0 |      0 |                      0 |                                     38 |
+| ENSM                                                    |         39 |         39 |           39 |      0 |           0 |                 18 |      0 |                      0 |                                     21 |
 | CONFIRM-BARS S2c                                        |         38 |         38 |           38 |      0 |           3 |                 11 |      0 |                     24 |                                      0 |
+| EXP1 profit fixed                                       |         40 |         38 |           38 |      0 |           0 |                  0 |      0 |                      0 |                                     38 |
 | CONFIRM-BARS S2                                         |         37 |         37 |           27 |      0 |           4 |                  5 |      0 |                     18 |                                      0 |
 | CONFIRM-BARS S4                                         |         36 |         36 |           36 |      0 |           2 |                  7 |      0 |                     27 |                                      0 |
 | STACK-PARTIALS                                          |         30 |         30 |           30 |      0 |           0 |                 11 |      2 |                     17 |                                      0 |
 | CF-COMBO GREEDY                                         |         27 |         27 |           26 |      0 |           2 |                  0 |      0 |                      3 |                                     21 |
-| UF-ENTRY c3                                             |         27 |         27 |           27 |      0 |           0 |                  1 |      3 |                      1 |                                     22 |
 | L2SP profit (THP_POLICY profit)                         |         27 |         27 |           27 |      0 |           0 |                 18 |      0 |                      0 |                                      9 |
+| UF-ENTRY c3                                             |         27 |         27 |           27 |      0 |           0 |                  1 |      3 |                      1 |                                     22 |
 | CF-SUBMIN S2 (looked)                                   |         24 |         24 |           24 |      0 |           0 |                  0 |      0 |                     10 |                                     14 |
-| UF-PROFIT c4                                            |         32 |         21 |           21 |      0 |           0 |                  0 |      0 |                      0 |                                     21 |
 | THL2 L2L (live L2 health rules)                         |         23 |         21 |           21 |      0 |           0 |                  0 |      0 |                      0 |                                     21 |
+| UF-PROFIT c4                                            |         32 |         21 |           21 |      0 |           0 |                  0 |      0 |                      0 |                                     21 |
+| STACK-2                                                 |         21 |         20 |           20 |      0 |           0 |                  2 |     18 |                      0 |                                      0 |
 | STRUCT48 NM-B                                           |         20 |         20 |           20 |      0 |          10 |                  0 |      0 |                      0 |                                     10 |
 | THPC3 (loss)                                            |         29 |         20 |           20 |      0 |           0 |                  0 |      0 |                      0 |                                     20 |
-| STACK-2                                                 |         21 |         20 |           20 |      0 |           0 |                  2 |     18 |                      0 |                                      0 |
 | EXP2 (f) stack/ES-RTY state features                    |         19 |         19 |           19 |      0 |           0 |                  0 |      0 |                      0 |                                     19 |
 | L2SL loss (THL2/THP_POLICY loss)                        |         15 |         15 |           15 |      0 |           0 |                  9 |      0 |                      0 |                                      6 |
 | THP_POLICY joint (L2SE entry / L2SP profit / L2SL loss) |         14 |         14 |           14 |      0 |           2 |                 11 |      0 |                      0 |                                      1 |
@@ -148,22 +148,23 @@ Sources: 38 files; 203904 rows read, 31735 positive-in-L3M rows after de-duplica
 | THL_HM                                                  |          9 |          9 |            9 |      0 |           1 |                  0 |      0 |                      0 |                                      8 |
 | SPLIT-2                                                 |          7 |          7 |            7 |      0 |           0 |                  6 |      1 |                      0 |                                      0 |
 | ADDUW B1                                                |          6 |          6 |            6 |      0 |           0 |                  0 |      0 |                      0 |                                      6 |
-| EXP1 loss chains (P11)                                  |          7 |          6 |            6 |      0 |           0 |                  0 |      0 |                      0 |                                      6 |
 | EXP2 (d) joint stack                                    |          6 |          6 |            6 |      0 |           0 |                  0 |      0 |                      0 |                                      6 |
+| EXP1 loss chains (P11)                                  |          7 |          6 |            6 |      0 |           0 |                  0 |      0 |                      0 |                                      6 |
 | UF-LOSS c2                                              |          6 |          5 |            5 |      0 |           0 |                  0 |      0 |                      2 |                                      3 |
+| UF-LOSS-C7                                              |          5 |          4 |            4 |      0 |           0 |                  3 |      0 |                      0 |                                      1 |
 | EXP2 (b) wide-bracket tables                            |          4 |          4 |            4 |      0 |           0 |                  0 |      0 |                      0 |                                      4 |
 | FIRST-HOUR-DELTA                                        |          4 |          4 |            4 |      0 |           2 |                  0 |      0 |                      0 |                                      2 |
-| UF-LOSS-C7                                              |          5 |          4 |            4 |      0 |           0 |                  3 |      0 |                      0 |                                      1 |
 | SIZING SZR                                              |          4 |          4 |            4 |      0 |           0 |                  0 |      0 |                      0 |                                      4 |
 | THPC1 (loss)                                            |         12 |          3 |            3 |      0 |           0 |                  0 |      0 |                      0 |                                      3 |
-| EXP1 vol_lo+ON take@50% (post-look LEAD)                |          2 |          2 |            2 |      0 |           0 |                  0 |      1 |                      0 |                                      1 |
 | ADDUW B0                                                |          2 |          2 |            2 |      0 |           0 |                  0 |      0 |                      0 |                                      2 |
+| EXP1 vol_lo+ON take@50% (post-look LEAD)                |          2 |          2 |            2 |      0 |           0 |                  0 |      1 |                      0 |                                      1 |
 | EXP1 loss fixed (P11 pooled)                            |          2 |          2 |            2 |      0 |           0 |                  0 |      0 |                      0 |                                      2 |
 | DIPENTRY ADD2                                           |          1 |          1 |            1 |      0 |           0 |                  0 |      0 |                      0 |                                      1 |
 | DIPENTRY D6-LIVE engine                                 |          1 |          1 |            1 |      0 |           0 |                  0 |      0 |                      0 |                                      1 |
+|                                                         |      28296 |          0 |            0 |      0 |           0 |                  0 |      0 |                      0 |                                      0 |
 | KBR                                                     |          4 |          0 |            0 |      0 |           0 |                  0 |      0 |                      0 |                                      0 |
 | ESL                                                     |          2 |          0 |            0 |      0 |           0 |                  0 |      0 |                      0 |                                      0 |
-|                                                         |      28296 |          0 |            0 |      0 |           0 |                  0 |      0 |                      0 |                                      0 |
+| D7F                                                     |          4 |          0 |            0 |      0 |           0 |                  0 |      0 |                      0 |                                      0 |
 | RC-1 reverse-confirm exit RB2                           |       2300 |          0 |            0 |      0 |           0 |                  0 |      0 |                      0 |                                      0 |
 | SD-GAP invalidation exit                                |      18744 |          0 |            0 |      0 |           0 |                  0 |      0 |                      0 |                                      0 |
 | RHQ-HALT-RESUME                                         |          1 |          0 |            0 |      0 |           0 |                  0 |      0 |                      0 |                                      0 |
