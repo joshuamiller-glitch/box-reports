@@ -1,4 +1,4 @@
-# DS3_TREND_2 - PLAN36 section 3, TREND second pass: 5-min ER(20) as a SIZER (agent T2, 2026-10-30T23:47Z; INTERIM 1, part (d) pending)
+# DS3_TREND_2 - PLAN36 section 3, TREND second pass: 5-min ER(20) as a SIZER (agent T2, 2026-10-31T00:09Z; INTERIM 1, part (d) partial)
 
 Prereg `l2vast/ds3/out/trend2/T2_prereg.json` sha256 df4dad1f414bed7e8e5323bbf00bb11aae171165974312c30ea85c151c413f20 (52 sizer cells + 5 regime-switch thresholds + 4 walk-forward chains, logged in DECISIONS.md before any statistic); PRE+X' selection file `selection_SEL.csv` sha256 3d7b9b0c...1839 (logged before the recent windows were read). Code `l2vast/ds3/code/trend2/`, outputs `l2vast/ds3/out/trend2/`. Research only; UNTOUCHED never read (every frame capped at label day 20260206; the 1-min bar file was read with a `ld<=20260206` parquet filter). Own masks: X' 20230401-20240131, PRE 20240201-20250630, HOLD 20250701-20260206, L6M 20250801-20260206, L3M 20251106-20260206 (view), 2026 = 20260101-20260206 (5 real weeks, sign only). Data: the TG-1 trend store (44,370 signals, ENG6 = 29,800); ER(10/20/50) on 3m/5m/15m rebuilt with the TG-1 bar code and checked equal to the store's `5m.er*` to 0.0 on every signal.
 
@@ -12,7 +12,7 @@ Prereg `l2vast/ds3/out/trend2/T2_prereg.json` sha256 df4dad1f414bed7e8e5323bbf00
 6. **The 30% add pays more in trend in the recent windows only** (add-leg proxy, spread hi-lo: L6M +1.46 per planned lot, HOLD +1.38, PRE +0.62, X' -0.15; Asia +3.3 L6M / +0.7 PRE). The add fills in 92-94% of signals in every ER bucket (fill rate does not depend on trend), so the sizer cannot be built on fill probability.
 7. **Regime-switch sizing is not better than the plain trend sizer.** Polarity fixed on PRE+X': only HM prefers chop (SEL spread -1.6/lot; ST, KB, PE, SM, WT, MV, PB, DN, MA prefer trend); the "fade" book is therefore HM only and reversing it costs L6M (HM's L6M spread is +4.9): equal-risk lift L6M +1.07 (vs +1.40 uniform), stack +7.9k L6M / -1.3k PRE. The chosen polarity beats 95% of all 64 polarity assignments in L6M (98% in PRE+X'), shuffled-ER rank 2/301.
 8. **Walk-forward chain of the threshold** (monthly re-fit, fit only on trades closed before the re-fit, 3/6/12-month rolling and anchored, grid 0.15-0.45, sizing OFF if the best fit lift <= 0): equal-risk lift L6M +0.91..+1.22, PRE +0.26..+0.58, X' +0.46..+0.61 per planned lot (shuffled-ER chain rank 100/100 in L6M, 93/100 PRE); stack (governed) L6M -10.8k..+6.3k, PRE -8k..-18k, all-window -5k..-9k: the chain is worse than the fixed 0.3 on the stack. **Last re-fit (data to 2026-02-06, applies to Feb 2026): anchored 0.45 (grid edge), roll-12 0.30, roll-6 0.40, roll-3 0.40.** The thresholds wander 0.20-0.45 month to month (std 0.06-0.09), which is the honest forward statement: any value 0.30-0.40 is equivalent.
-9. **Tier.** The ER(20) 5-min sizer is a **post-hoc-named LEAD / CANDIDATE-RECENT (ER>=0.3 was named after TG-1 looked at L6M/HOLD)**; PRE+X'-selected alternatives (ER50>=0.4) fail the recent look. Failed gates: stack PRE < 0 (governed), cumulative multiplicity (program RC p 0.024 over its 54 cells, Sidak against 2.46 M cumulative cells = 1.0), PBO 0.81, X' placebo not distinguished, stack effect inside MDE in every window. **PASS: none. Recommendation: SHADOW (paper-trade the 1.5/0.5 lot multiplier), not ON**; see the D6 line below. (d) ER x sub-minute confirmation is **pending** (CF-SUBMIN S2 look is 34/67 done, `out/confirm2` is still empty); it will be added in the next update.
+9. **Tier.** The ER(20) 5-min sizer is a **post-hoc-named LEAD / CANDIDATE-RECENT (ER>=0.3 was named after TG-1 looked at L6M/HOLD)**; PRE+X'-selected alternatives (ER50>=0.4) fail the recent look. Failed gates: stack PRE < 0 (governed), cumulative multiplicity (program RC p 0.024 over its 54 cells, Sidak against 2.46 M cumulative cells = 1.0), PBO 0.81, X' placebo not distinguished, stack effect inside MDE in every window. **PASS: none. Recommendation: SHADOW (paper-trade the 1.5/0.5 lot multiplier), not ON**; see the D6 line below. (d) ER x sub-minute confirmation is **partial**: only CF-SUBMIN's MA-event cells exist (21 ENG6 cells: confirmation and the ER sizer are additive, no complementarity); the 45-s/30-s candle patterns (C2, `out/confirm2` empty) are not available yet.
 
 ## D6 mapping and dollars (Sunday-brief rows)
 
@@ -673,9 +673,34 @@ placebo of the roll6 chain: shuffled-ER chain (100 draws)
 | 202601.00 | 0.45 | 0.30 | 0.30 | 0.40 |
 | 202602.00 | 0.45 | 0.30 | 0.40 | 0.40 |
 
-## (d) ER x SUB-MINUTE CONFIRMATION - PENDING
+## (d) ER x SUB-MINUTE CONFIRMATION (PARTIAL: 21 ENG6 cells of CF-SUBMIN's S2 recent look; C2's pattern catalogue `out/confirm2` is still empty)
 
-C2's `out/confirm2` is empty; CF-SUBMIN's S2 recent look (`out/confirm/submin/look/*.pkl`, per-trade `dx` = confirmed cell minus floor for all 44,370 signals) is 34/67 done. When it finishes this section will give, for the selected PE / KB (and the other ENG6) cells: mean dx at ER>=0.3 vs <0.3 per window, the confirmed-cell outcome sized by the ER sizer (equal risk), and the stack line. Not done yet; no number is claimed.
+What exists: CF-SUBMIN's S2 look pickles (`out/confirm/submin/look/*.pkl`: per-signal `dx` = confirmed cell minus the 70/30 floor, N base) are all **moving-average event families on sub-minute/1-3-min MAs (cross, distance-pullback, reclaim)**, not the 45-s / 30-s three-bar candle patterns the directive means; 38 of 67 selected cells were finished (21 on ENG6 books: HM 3, KB 5, PE 3, SM 3 mechanics of 1 spec, ST 4, WT 3). Their selection was PRE+X' (CF-SUBMIN's file), the recent look is theirs; I only split their `dx` by ER>=0.3. When C2 writes the candle-pattern tables the same script (`code/trend2/t2_d.py`) reruns on them.
+Result on these cells: (i) the confirmation gain itself is **-0.59 per planned lot in L6M and +0.75 in PRE on average** (21 cells), i.e. these MA events are not recent winners; (ii) the confirmation gain is larger in trend than in chop (dx at ER>=0.3 minus ER<0.3) in L6M for 13 of 21 cells, in PRE for 7 of 21, in both for 5 of 21: no complementarity; (iii) the ER sizer applied to the confirmed outcome is no better than applied to the floor (13 of 21 cells higher in L6M, 7 of 21 in PRE; mean change +0.03 L6M, -0.10 PRE): the two effects are additive and independent, ER carries its own information, confirmation does not add to it. Table (per planned lot, f73 N, ENG6 books; `conf` = confirmed minus floor; `dx hi-lo` = confirmation gain at ER>=0.3 minus ER<0.3; `sizer floor` / `sizer conf` = equal-risk lift of the ER>=0.3 1.5/0.5 sizer on the floor / on the confirmed outcome):
+
+| book | spec | cell | conf L6M | conf HOLD | conf PRE | conf X' | dx hi-lo L6M | dx hi-lo PRE | sizer floor L6M | sizer floor PRE | sizer floor X' | sizer conf L6M | sizer conf PRE | sizer conf X' |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| HM | tf=2m|typ=VIDYA|ev=distpull|n=9|th=1.0 | b|near|X3|A70|N | -0.33 | -0.24 | 0.34 | 0.54 | 0.48 | 0.48 | 1.30 | -0.62 | 0.09 | 1.43 | -0.50 | 0.44 |
+| HM | tf=3m|typ=ALMA|ev=distpull|n=50|th=1.0 | d|near|X3|A70|N | -2.25 | -2.12 | 0.62 | -0.03 | -2.22 | 1.22 | 1.30 | -0.62 | 0.09 | 0.71 | -0.30 | 0.52 |
+| HM | tf=3m|typ=VWMA|ev=distpull|n=20|th=1.0 | d|near|X3|A70|N | -2.62 | -2.94 | 0.67 | 0.24 | -1.80 | 2.23 | 1.30 | -0.62 | 0.09 | 0.82 | -0.03 | 0.56 |
+| KB | tf=15s|typ=DEMA|ev=distpull|n=9|th=1.0 | d|near|X3|A70|N | -1.11 | -0.77 | 0.28 | 4.12 | 1.42 | 2.36 | 1.07 | -0.45 | 2.19 | 1.45 | 0.18 | 0.05 |
+| KB | tf=1s|typ=HMA|ev=cross|fast=100|slow=200|hold=0 | a|near|X3|A70|N | -0.10 | -0.33 | 0.83 | -0.07 | 0.65 | 0.13 | 2.20 | 0.30 | 0.63 | 2.38 | 0.33 | 0.82 |
+| KB | tf=1s|typ=HMA|ev=cross|fast=89|slow=200|hold=0 | a|near|X3|A70|N | -0.07 | -0.22 | 0.76 | 0.08 | 0.21 | 0.37 | 2.20 | 0.30 | 0.63 | 2.26 | 0.40 | 0.91 |
+| KB | tf=1s|typ=T3|ev=cross|fast=33|slow=50|hold=0 | a|near|X3|A70|N | 0.40 | 0.21 | 0.81 | 0.10 | 1.04 | 0.15 | 2.20 | 0.30 | 0.63 | 2.48 | 0.34 | 0.92 |
+| KB | tf=1s|typ=T3|ev=cross|fast=34|slow=50|hold=0 | b|far|X3|A70|N | -0.52 | -0.62 | 0.60 | 1.22 | -0.08 | -1.84 | 1.21 | 1.27 | 1.04 | 1.19 | 0.78 | 0.21 |
+| PE | tf=2m|typ=VIDYA|ev=distpull|n=9|th=1.0 | d|near|X3|A70|N | 0.73 | 0.60 | 0.93 | 0.79 | 0.01 | -1.58 | 1.49 | 1.14 | -0.54 | 1.49 | 0.73 | -0.97 |
+| PE | tf=2m|typ=WMA|ev=distpull|n=33|th=1.0 | d|near|X3|A70|N | 1.18 | 1.07 | 0.72 | 0.81 | -1.32 | -0.79 | 1.49 | 1.14 | -0.54 | 1.13 | 0.93 | -0.37 |
+| PE | tf=2m|typ=WMA|ev=distres|n=20|th=0.5 | d|near|X3|A70|N | -0.00 | 0.02 | 0.66 | 1.08 | -0.67 | -0.65 | 1.49 | 1.14 | -0.54 | 1.31 | 0.97 | -0.34 |
+| SM | tf=3m|typ=T3|ev=distpull|n=55|th=1.0 | b|mid|X3|A70|N | -1.52 | -1.03 | 1.51 | 0.98 | 1.56 | -2.00 | 0.85 | 0.04 | 0.46 | 1.24 | -0.45 | 0.47 |
+| SM | tf=3m|typ=T3|ev=distpull|n=55|th=1.0 | b|near|X3|A70|N | -1.27 | -0.76 | 1.59 | 1.24 | 2.17 | -1.09 | 0.85 | 0.04 | 0.46 | 1.40 | -0.22 | 0.96 |
+| SM | tf=3m|typ=T3|ev=distpull|n=55|th=1.0 | c2|mid|X8|A70|N | -1.24 | -0.82 | 1.47 | 0.83 | 1.52 | -2.05 | 0.85 | 0.04 | 0.46 | 1.24 | -0.46 | 0.63 |
+| ST | tf=1m|typ=EMA|ev=reclaim|n=13|k=1 | d|near|X3|A70|N | -0.28 | -0.38 | 1.61 | 1.98 | -0.21 | -0.78 | 1.32 | 1.62 | -0.34 | 1.26 | 1.41 | 0.13 |
+| ST | tf=1m|typ=VWMA|ev=distres|n=33|th=0.5 | b|far|X3|A70|N | -1.29 | -1.08 | 0.44 | 1.08 | 0.67 | -1.25 | 1.61 | 1.37 | 0.25 | 1.79 | 1.03 | 0.09 |
+| ST | tf=2m|typ=KAMA|ev=distpull|n=34|th=2.0 | d|near|X3|A70|N | 0.50 | 0.58 | 0.98 | 0.68 | -0.56 | -0.79 | 1.61 | 1.37 | 0.25 | 1.46 | 1.16 | 0.29 |
+| ST | tf=2m|typ=WMA|ev=distres|n=20|th=0.5 | b|far|X3|A70|N | -1.23 | -1.09 | 0.43 | 0.89 | 0.34 | -1.33 | 1.61 | 1.37 | 0.25 | 1.70 | 1.01 | 0.34 |
+| WT | tf=15s|typ=HMA|ev=distpull|n=5|th=0.5 | b|near|X3|A70|N | -0.31 | -0.14 | 0.09 | 0.92 | -0.64 | -0.32 | 0.68 | 0.26 | -0.33 | 0.51 | 0.18 | -0.20 |
+| WT | tf=1m|typ=KAMA|ev=distpull|n=89|th=2.0 | d|near|X3|A70|N | -0.62 | -0.58 | 0.26 | 0.64 | 0.03 | -0.57 | 0.68 | 0.26 | -0.33 | 0.69 | 0.11 | -0.51 |
+| WT | tf=3m|typ=ALMA|ev=distpull|n=9|th=0.5 | b|near|X3|A70|N | -0.50 | -0.31 | 0.18 | 0.60 | 0.35 | -0.12 | 0.68 | 0.26 | -0.33 | 0.78 | 0.23 | -0.25 |
 
 ## Method notes and defects
 

@@ -1,4 +1,4 @@
-# DS3_SPLIT_2 - THE SPLIT, SECOND PASS (PLAN36 section 6; agent SP2; 2026-10-30T23:52Z)
+# DS3_SPLIT_2 - THE SPLIT, SECOND PASS (PLAN36 section 6; agent SP2; 2026-10-31T00:05Z)
 
 Research only; no live/execution/chart change; UNTOUCHED (label day > 2026-02-06) never read. Prereg `l2vast/ds3/prereg/SPLIT2_prereg.md` sha256 49438b28457fb8871f37c7734b280a86f85ffda23f1838d086114afbc3521b5f (in DECISIONS.md before any SPLIT-2 cell statistic); PRE u X' selection files (hashed in DECISIONS.md before each group's one recent look): `ga_selection_PRE_X.json`, `gd_selection_PRE_X.json`, `ge_selection_PRE_X.json`. Code `l2vast/ds3/code/split2/` (s2k.py kernel, s2lib.py, ga*/gb/gc/gd*/ge_* drivers, rep_*.py, rc_prog*.py, qh*.py, build_*.py), outputs `l2vast/ds3/out/split2/`. Engine: exact lock engine (sl_lib.run_book), six books ST HM WT KB SM PE at research lots ST10 HM10 WT7 KB5.2 SM7.4 PE5.6; own masks capped at 20260206 (L3M 20251106.., L6M 20250801.., HOLD 20250701.., PRE 20240201..20250630, X' 20230401..20240131; 2026 = 20260101..20260206 = 5 weeks, a sign not a size; 'worst-20' over a window with fewer than 20 weeks is the sum of all its weeks). **Kernel validation:** the pooled 70/30@3 cell reproduces lj_kernel.jrun on 44,360 of 44,370 trades and the published stack deltas (+19.5k/+13.3k/+11.6k/+7.6k/+2.8k on M; LIVE-CAL L6M +15.1k); the first-stop + sizer composition reproduces SP-1 exactly (MKT cutRest50: L3M +35.7k, L6M +23.0k, HOLD +19.3k, PRE -8.2k; S73 cutRest50 +16.0k/+6.6k/+4.6k/-6.4k).
 Bases: **N** = no target correction (primary; profit-type results must be >= 0 on N), **LC (LIVE-CAL)** = N + stop-class exits 2.45 pt worse than nominal (p_fallback 0.57), **LJ (LIVE-JOIN)** = N + stop-class exits 0.5 pt (stop-join fix assumed), M beside where stated (BASIS definitions as in LIVE_CAL_SUMMARY.md / DS3_BASIS_LIVE.md; no BASIS_DEF.md file exists on disk). $/wk = lock-engine stack at research lots; **at D6 live lots divide by 2.35** (SP-1 mapping; unconfirmed, question in MORNING). MDE = 2.8 x SE of the paired weekly delta, in parentheses. Units on every row: per planned lot, per contract of final lots, lock-engine stack; STRUCTURE = the variant changes lots and must beat its lot-factor-matched uniform scaling line and the random-dip placebo (the mean final lots of every split cell here is 0.997-0.999 per planned lot, so the lot-matched line is the market stack itself; the real test is the placebo).
@@ -10,6 +10,7 @@ Bases: **N** = no target correction (primary; profit-type results must be >= 0 o
 * **(c) 90/10-at-8 vs 70/30-at-3 on the live-cal basis: equal at the measured cost; 90/10 is the cost-robust cell; the stop-join fix does not matter for the choice.** Paired C90 minus C70 (N, 2.45 stop): L6M +2.0k (12.5k), HOLD +0.2k (11.5k), PRE -0.9k (8.8k), X' +5.0k (8.6k); at the 0.5 stop: L6M +0.4k (13.6k), HOLD -1.8k (12.5k), PRE -0.8k (9.4k), X' +6.8k (9.3k) - all inside MDE. The stop cost moves either cell by < 3k/wk (stack delta vs market at 0.5 / 2.45: C70 L6M +14.4k / +15.1k, C90 +14.8k / +17.1k): the join fix changes no sign and no ranking. What separates them is the remainder fill cost: at +1 pt per remainder lot-fill C70 falls to +6.1k / +8.6k L6M (PRE -1.9k / -1.6k) and at +2 pt to +1.5k / +3.9k (PRE -7.8k / -7.6k) while C90 keeps +13.3k / +14.9k and +11.7k / +10.6k (PRE +1.6k / -0.0k and -0.2k / -2.1k) at the 0.5 / 2.45 stop. Breakeven remainder cost (N): L6M C70 about 2.3 pt, C90 above 2 pt (not reached); in PRE C70 about 0.6 pt and C90 about 1 pt. This is the UFE1 cell (in DEAD_CELLS: flat vs the split at +0 pt); what is new is that the stop-join assumption leaves it unchanged. Both beat the random-dip placebo (adds at random seconds, same time-since-entry distribution, 100 draws) at rank 1.00 in L3M/L6M/HOLD/PRE/X' (2026 0.98 / 0.94). Section 4.
 * **(d) Split on the confirmation base: dead.** 35 confirmation definitions (FVG / iFVG / iplFVG / OB / BRK x 15 s ... 5 min; the 15/30/45-s ones are the CF-SUBMIN sub-minute timeframes) x 3 variants (70% at the confirmation print + 30% on the 3-pt dip after it with / without the gate; pure wait). Pooled PRE u X' excess over the lot-matched market: D1 -0.15, D2 -0.15, D3 -0.10 per planned lot vs +0.03 for the signal-anchored split. The 8 PRE u X'-selected cells are -4.8k .. -35.4k vs the market stack in L6M and negative vs S73 in every window; they are positive only in L3M for 2 (FVG-15s pure wait +2.1k, OB-45s +7.5k) and in 2026 (5 weeks) for 6 of 8. Per planned lot the confirmation cells look fine (FVG-15s pure wait +2.50 vs market 2.39 in L6M) because they skip 7-54% of the signals, which lose -9 .. -31 pts each; on the lock engine the skipped trades and the later fills cost dollars (the CF-B / FZ-1 unit lesson again). Time-matched random events beat the real events in L6M in 6 of 8 cells (the real event beats its random-timing mean in 2 of 8 in L6M, 5 of 8 in PRE = the selection window): no information shown. Section 5.
 * **(e) The three together (split + first-stop cut50 + ER sizer) on the lock-engine stack: not additive as lots, additive-ish as risk.** Unscaled (N, L6M, vs the stack as it is): first-stop cut50 adds +23.0k, the ER sizer (lots x0.5 below 5-min ER(20) 0.3, x1.0 above; the sizer takes 30% of the lots off: lot factor 0.70) +16.1k, together +15.5k (additive would be +39k); with 90/10-at-8 underneath +23.7k, +20.9k, together +17.2k. The prereg headline S* (C90) + cut50 + ER 0.5/1.0 is **+17.2k (43.9k) L6M, +16.1k (40.0k) HOLD, +44.0k (56.1k) L3M, -14.9k (23.0k) PRE, -0.8k (23.7k) X'** vs the stack as it is at 0.70 of its lots, weekly SD 146k -> 113k, maxDD 372k -> 448k and worst-20 -153k -> 513k in L6M. **At equal risk (lots scaled by one factor c* so the WF worst-20 weeks equal the stack as it is; c* = 1.39; STRUCTURE-labelled, leverage) the same line is +48.2k (47.8k) L6M, +41.5k (43.6k) HOLD, +65.7k (71.4k) L3M, +2.2k (26.7k) PRE, +5.2k (27.0k) X'** (S73 + cut50 + ER: +41.9k (46.7k) / +36.3k (43.0k) / +53.3k (70.9k) / +3.6k (26.7k) / +1.1k (27.0k); 90/10 alone: +24.4k (15.1k) / +21.7k (17.0k) / +19.9k (23.2k) / +8.9k (10.6k) / +10.7k (9.5k); S73 alone +22.6k / +22.6k / +22.2k / +7.7k / +3.3k = the EQR A|H|E|N row); matched on weekly SD instead of worst-20 the headline is +34.4k / +30.2k / +56.0k / -5.4k / +2.5k. So the combination beats the split alone by about +24k L6M / +20k HOLD at equal risk (positive in all five windows on N, LIVE-CAL and LIVE-JOIN) but is inside its MDE except in L6M (PRE/X' MDE 27k; the MDE is as large as the effect) and the equal-risk factor 1.39 is itself a noisy estimate (EQR: factor CIs +-20-30%, equal risk does not transfer out of sample). Components overlap (both de-risk after a loss / in chop) but at equal risk they add partially: cut50 alone +27.3k, sizer alone +33.7k, both +41.9k..+48.2k L6M. The ER information is real inside the composition (shuffled-ER placebo, 40 draws: sizer alone rank 1.00 L6M / HOLD, 0.97 PRE; the sizer on top of C90 + cut50 rank 1.00 L6M / HOLD / PRE) and vs the lot-matched line (market x 0.70) the sizer is positive in all five windows (+41.8k / +35.0k / +30.6k / +6.2k / +4.2k). Section 6 has the Sunday stack line.
+* **(e2) The Sunday stack line with the owners' published variants (S2 Asia-stopped first-stop cut, T2 2L ER sizer x0.5 / x1.5), N, vs the stack as it is, $k/wk (MDE), recent first: S73 alone +20.2k (25.2k) L3M / +17.6k (16.6k) L6M / +18.4k (15.3k) HOLD / +3.8k (10.7k) PRE / +2.2k (8.4k) X'. S73 + S2 Asia-stopped cut50: +32.1k (39.1k) / +30.8k (28.4k) / +29.8k (24.9k) / +5.8k (15.1k) / +5.0k (15.0k) (positive in all five windows; +13.2k L6M over S73 alone, PRE +2.0k, X' +2.8k; weekly SD 137k -> 129k, L6M worst-20 +332k -> +620k). S73 + cut + T2 2L sizer (all three): +48.5k (77.3k) / +24.6k (54.7k) / +26.9k (48.7k) / -6.3k (25.1k) / +10.1k (31.0k); C90 + cut + 2L (all three, 90/10 base): +63.8k (66.6k) / +37.7k (50.2k) / +37.2k (44.6k) / -0.3k (24.7k) / +16.3k (31.5k)** (weekly SD 117k vs 146k as-is, maxDD 378k vs 372k, L6M worst-20 +889k vs -153k). The 2L sizer (x0.5 below / x1.5 above ER 0.3) adds nothing to the S73 + cut line in the unscaled stack (L6M +24.6k vs +30.8k, PRE -6.3k vs +5.8k) - consistent with T2's finding that the day/week governors clip the up-size - but lowers the SD; the all-three line is a post-hoc-selected combination out of a 48-line grid (section 6c) and the PRE evidence for the sizer is negative on the 70/30 and ~0 on the 90/10 base.
 * Tiers (V2 gates, none softened): split S73 CANDIDATE-RECENT (unchanged: random-dip placebo rank 1.00, WF block-bootstrap CI of the weekly delta [+2.0k, +14.8k], 12 of 12 quarters positive; fails cumulative RC, DSR 0.04, CI(PRE) includes 0 in the L2SE run); C90 CANDIDATE-RECENT as a rule vs market and BEST-AVAILABLE-NEGATIVE as an improvement over S73 at +0 pt (use it only if the remainder fill cost is believed to exceed ~+0.5 pt); session / ER add-size policies DEAD; limit-at-arming BEST-AVAILABLE-NEGATIVE; confirmation-base split DEAD; first-stop cut50 and ER sizer CANDIDATE-RECENT in their own programs; the three together CANDIDATE-RECENT at equal risk only (STRUCTURE-labelled leverage; unscaled PRE negative -15k; fails cumulative RC; PRE/X' inside MDE). Selection post-hoc status: the A4/A5 policies are the directive's own (pre-specified, not selected); A1-A3, S* and the D picks are PRE u X' selected (honest); no row here is post-hoc selected on L6M/HOLD.
 
 ## 1. The base being tested
@@ -340,7 +341,7 @@ Confirmation = the first same-direction event of a CF-ENG stream (`out/confirm/s
 Reading: the confirmation base is worse than the signal base in every window that matters. The mechanism is the CF-ENG one: waiting skips the signals that run away without confirming (they are the winners as often as the losers on the lock engine), delays the fill of the kept ones, and the dip add measured from a later price is a different, worse trade (D1 -0.15 per planned lot pooled PRE u X' vs +0.03 at the signal). The three best definitions per PRE u X' (FVG 2m, OB 30s/3m/45s, FVG 15s pure wait) do not carry to the recent windows (-4.8k .. -35.4k L6M, PRE -13k .. -25k, and the PRE u X' pick is not the PRE winner of the time-matched random control). Tier: DEAD. The 70/30 split remains a signal-second construction.
 
 ## 6. (e) The split with the first-stop rule and the ER sizer on the lock-engine stack = the Sunday stack line (Group E: 27 lines per basis)
-Components, all on the SP-1 simulator (`stackpart/sp_sim.py` -> exact per-book lock engine; the S2 stack module `code/stack2/` and T2 sizer `code/trend2/` published scripts but no import API at this writing, so the composition uses SP-1's first-stop rule kind 4 type 2 and a placeholder ER sizer identical in form to T2's F1/2L cells: lots x 0.5 when 5-min ER(20) < 0.3, x 1.0 above ("er_05_10"), or x 1.5 when ER >= 0.45 ("er_05_10_15"); the first-stop rule: at the second a same-side book is stopped, market-exit 50% (or 100%) of the other same-side books next second). Split: MKT (stack as it is) | S73 | C90 (S* = the best of A0-A7 and C90 by PRE u X' week-weighted stack delta, chosen before any recent window: {"A0": 3186, "A1": 2747, "A2": 187, "A3": 1184, "A4": 1274, "A5": 404, "A6": 1821, "A7": 1805, "C90": 5136} -> **C90**). Prereg headline = C90 + cut50 + ER 0.5/1.0.
+Components, all on the SP-1 simulator (`stackpart/sp_sim.py` -> exact per-book lock engine; section 6 uses SP-1's first-stop rule (kind 4 type 2) and ER sizers re-implemented in the form of T2's F1 cells (T2's `code/trend2/` has no import API; its definition is taken from DS3_TREND_2.md); 6b / 6c rerun the composition through STACK-2's published module `code/stack2/s2_lib.run` (kind-8 simulator; Asia-stopped and opposite-book variants). Sizers: lots x 0.5 when 5-min ER(20) < 0.3, x 1.0 above ("er_05_10"), or x 1.5 when ER >= 0.45 ("er_05_10_15"); the first-stop rule: at the second a same-side book is stopped, market-exit 50% (or 100%) of the other same-side books next second). Split: MKT (stack as it is) | S73 | C90 (S* = the best of A0-A7 and C90 by PRE u X' week-weighted stack delta, chosen before any recent window: {"A0": 3186, "A1": 2747, "A2": 187, "A3": 1184, "A4": 1274, "A5": 404, "A6": 1821, "A7": 1805, "C90": 5136} -> **C90**). Prereg headline = C90 + cut50 + ER 0.5/1.0.
 
 #### THE SUNDAY STACK LINE, basis N (primary): weekly mean / SD / maxDD / worst-20 ($k, research lots), recent first; delta vs as-is (MDE)
 
@@ -574,6 +575,143 @@ Reading: unscaled, the increments of cut50 and the ER sizer overlap (both are "b
 | ER sizer alone (market stack) | +38.6k | 0.97 | +16.1k | 1.00 | +15.9k | 1.00 | -11.4k | 0.97 | -0.6k | 0.90 |
 | ER sizer on top of C90 + cut50 | +6.4k | 0.97 | -6.5k | 1.00 | -4.8k | 1.00 | -11.5k | 1.00 | -7.4k | 0.82 |
 
+#### 6b. The same composition through STACK-2's published module (`stack2/s2_lib.run`, kind-8 simulator; my split rows registered into the SP-1 cache) with S2's Asia-stopped first-stop variant (`rule(event=stop, action=cut, P=0.5, sess_mask=1)`), S2's opposite-side variant (min_opp=1, N only) and T2's primary 2L sizer (x0.5 below ER(20) 0.3, x1.5 at/above; "er_05_15"). Validation: the all-session cut50 lines reproduce section 6 to the dollar (max abs daily difference 0.0). Delta vs the stack as it is, N basis, $k/wk (MDE), and at equal worst-20 risk (c*, STRUCTURE)
+
+| split | first-stop rule | sizer | L3M | L6M | HOLD | PRE | X' | c* | equal-risk L6M | HOLD | PRE | X' | L6M SD line / as-is |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| MKT | cut50_all | no sizer | +35.7k (44.3k) | +23.0k (28.5k) | +19.3k (26.1k) | -8.2k (15.4k) | +0.7k (17.9k) | 1.05 | +27.3k (29.4k) | +22.8k (27.6k) | -5.7k (15.7k) | +1.5k (18.5k) | 144 / 146 |
+| MKT | cut50_all | ER 0.5/1.0 | +44.3k (60.4k) | +15.5k (44.9k) | +14.8k (40.7k) | -16.1k (21.6k) | -3.5k (23.2k) | 1.36 | +42.8k (48.2k) | +37.2k (43.5k) | -1.1k (24.9k) | +0.9k (26.8k) | 113 / 146 |
+| MKT | cut50_all | ER 0.5/1/1.5 | +50.5k (68.0k) | +24.2k (52.6k) | +25.2k (46.6k) | -16.1k (25.6k) | +3.1k (25.8k) | 1.20 | +41.0k (55.4k) | +39.6k (49.4k) | -7.9k (28.8k) | +6.9k (29.7k) | 119 / 146 |
+| MKT | cut50_all | ER 0.5/1.5 (T2 2L) | +54.1k (72.2k) | +17.4k (56.2k) | +18.9k (49.6k) | -10.3k (26.2k) | +10.4k (29.6k) | 1.08 | +23.7k (57.0k) | +24.2k (50.4k) | -6.5k (27.7k) | +12.5k (31.6k) | 115 / 146 |
+| MKT | cut50_asia | no sizer | +17.5k (37.8k) | +20.2k (26.3k) | +16.5k (23.7k) | +0.9k (13.5k) | +3.7k (13.8k) | 1.05 | +24.5k (26.9k) | +19.9k (24.6k) | +4.0k (14.1k) | +4.7k (14.5k) | 142 / 146 |
+| MKT | cut50_asia | ER 0.5/1.0 | +45.1k (58.3k) | +20.9k (44.7k) | +20.0k (40.7k) | -9.1k (20.9k) | -1.2k (22.1k) | 1.27 | +42.9k (46.3k) | +38.3k (41.4k) | +4.0k (24.2k) | +2.8k (25.1k) | 113 / 146 |
+| MKT | cut50_asia | ER 0.5/1/1.5 | +46.0k (69.8k) | +22.4k (53.3k) | +25.0k (47.5k) | -13.0k (26.0k) | +6.0k (25.2k) | 1.18 | +37.4k (56.3k) | +38.1k (50.4k) | -5.0k (29.1k) | +9.9k (29.4k) | 123 / 146 |
+| MKT | cut50_asia | ER 0.5/1.5 (T2 2L) | +47.9k (72.8k) | +16.7k (55.3k) | +19.2k (48.9k) | -10.2k (25.6k) | +10.4k (29.5k) | 1.09 | +23.9k (56.1k) | +25.5k (49.7k) | -5.8k (27.3k) | +12.9k (32.1k) | 113 / 146 |
+| MKT | cut50_opp1 | no sizer | -2.8k (10.9k) | +4.0k (13.1k) | +4.3k (12.4k) | +4.4k (9.3k) | +4.4k (12.4k) | 1.04 | +6.7k (13.9k) | +6.5k (13.1k) | +6.9k (9.9k) | +5.2k (12.7k) | 148 / 146 |
+| MKT | cut50_opp1 | ER 0.5/1.0 | +43.9k (58.1k) | +20.1k (41.3k) | +19.1k (38.1k) | -10.6k (19.0k) | +1.5k (23.2k) | 1.22 | +37.8k (42.8k) | +33.7k (38.4k) | -0.3k (21.0k) | +5.3k (25.2k) | 119 / 146 |
+| MKT | cut50_opp1 | ER 0.5/1/1.5 | +51.2k (69.7k) | +25.0k (53.2k) | +26.0k (47.2k) | -11.2k (23.2k) | +6.9k (25.6k) | 1.10 | +33.5k (54.9k) | +33.3k (48.8k) | -6.6k (24.7k) | +9.2k (27.4k) | 127 / 146 |
+| MKT | none | ER 0.5/1.5 (T2 2L) | +52.7k (55.5k) | +17.3k (48.3k) | +19.8k (42.6k) | -7.4k (24.9k) | +7.5k (26.6k) | 1.03 | +19.8k (48.5k) | +22.0k (42.7k) | -5.8k (25.5k) | +8.3k (27.4k) | 120 / 146 |
+| S73 | cut50_all | no sizer | +36.2k (45.1k) | +24.2k (31.5k) | +23.0k (28.2k) | -2.6k (17.0k) | +1.7k (18.8k) | 1.13 | +35.5k (32.8k) | +32.4k (31.5k) | +4.8k (18.7k) | +4.1k (20.7k) | 133 / 146 |
+| S73 | cut50_all | ER 0.5/1.0 | +35.1k (57.9k) | +12.7k (44.2k) | +12.4k (40.9k) | -13.8k (23.0k) | -3.8k (23.6k) | 1.39 | +41.9k (46.7k) | +36.3k (43.0k) | +3.6k (26.7k) | +1.1k (27.0k) | 109 / 146 |
+| S73 | cut50_all | ER 0.5/1/1.5 | +49.3k (73.2k) | +25.9k (55.1k) | +25.0k (49.7k) | -11.4k (24.8k) | +3.4k (26.1k) | 1.29 | +50.8k (59.7k) | +45.9k (53.5k) | +1.9k (29.4k) | +8.9k (32.3k) | 116 / 146 |
+| S73 | cut50_all | ER 0.5/1.5 (T2 2L) | +52.4k (77.1k) | +26.5k (55.0k) | +27.7k (49.0k) | -5.4k (25.4k) | +9.4k (29.3k) | 1.12 | +36.7k (56.0k) | +36.6k (50.0k) | +0.7k (27.6k) | +12.3k (32.0k) | 112 / 146 |
+| S73 | cut50_asia | no sizer | +32.1k (39.1k) | +30.8k (28.4k) | +29.8k (24.9k) | +5.8k (15.1k) | +5.0k (15.0k) | 1.07 | +37.2k (28.2k) | +35.2k (25.3k) | +10.2k (16.2k) | +6.4k (16.0k) | 129 / 146 |
+| S73 | cut50_asia | ER 0.5/1.0 | +38.0k (53.0k) | +19.7k (43.8k) | +20.7k (40.1k) | -7.7k (22.2k) | -4.0k (22.0k) | 1.33 | +46.6k (45.3k) | +43.6k (41.1k) | +9.0k (26.5k) | +0.1k (25.3k) | 109 / 146 |
+| S73 | cut50_asia | ER 0.5/1/1.5 | +52.8k (73.5k) | +30.0k (54.7k) | +30.5k (49.2k) | -10.5k (25.8k) | +6.2k (26.2k) | 1.24 | +51.6k (59.0k) | +49.1k (52.7k) | +0.7k (29.8k) | +11.5k (31.6k) | 121 / 146 |
+| S73 | cut50_asia | ER 0.5/1.5 (T2 2L) | +48.5k (77.3k) | +24.6k (54.7k) | +26.9k (48.7k) | -6.3k (25.1k) | +10.1k (31.0k) | 1.09 | +32.1k (55.4k) | +33.5k (49.3k) | -1.8k (26.8k) | +12.4k (33.3k) | 113 / 146 |
+| S73 | cut50_opp1 | no sizer | +23.5k (29.8k) | +22.4k (21.1k) | +23.0k (18.9k) | +6.7k (13.8k) | +6.3k (14.2k) | 1.07 | +28.1k (21.9k) | +27.8k (20.2k) | +11.1k (14.9k) | +7.9k (14.8k) | 142 / 146 |
+| S73 | cut50_opp1 | ER 0.5/1.0 | +39.1k (53.5k) | +19.2k (42.8k) | +20.7k (39.7k) | -6.7k (20.0k) | -1.4k (23.4k) | 1.28 | +42.0k (44.3k) | +40.1k (39.9k) | +7.7k (23.3k) | +2.7k (25.5k) | 113 / 146 |
+| S73 | cut50_opp1 | ER 0.5/1/1.5 | +55.9k (68.5k) | +31.2k (53.6k) | +30.4k (48.0k) | -8.7k (23.9k) | +6.0k (26.7k) | 1.14 | +44.4k (56.0k) | +41.7k (49.9k) | -1.6k (26.0k) | +9.2k (29.2k) | 124 / 146 |
+| S73 | none | ER 0.5/1.5 (T2 2L) | +49.1k (58.0k) | +26.1k (45.5k) | +28.4k (40.4k) | -5.4k (25.6k) | +8.7k (28.9k) | 1.04 | +29.4k (45.6k) | +31.4k (40.4k) | -3.4k (26.4k) | +9.6k (29.8k) | 118 / 146 |
+| C90 | cut50_all | no sizer | +37.6k (48.5k) | +23.7k (30.7k) | +20.9k (27.7k) | -3.4k (16.7k) | +6.6k (19.3k) | 1.12 | +33.9k (32.7k) | +29.1k (31.1k) | +3.2k (18.0k) | +9.3k (21.0k) | 139 / 146 |
+| C90 | cut50_all | ER 0.5/1.0 | +44.0k (56.1k) | +17.2k (43.9k) | +16.1k (40.0k) | -14.9k (23.0k) | -0.8k (23.7k) | 1.39 | +48.2k (47.8k) | +41.5k (43.6k) | +2.2k (26.7k) | +5.2k (27.0k) | 113 / 146 |
+| C90 | cut50_all | ER 0.5/1/1.5 | +62.7k (67.7k) | +34.8k (50.0k) | +34.0k (44.4k) | -5.6k (25.2k) | +7.4k (25.5k) | 1.33 | +66.4k (55.6k) | +61.0k (50.6k) | +11.6k (31.5k) | +15.1k (32.5k) | 119 / 146 |
+| C90 | cut50_all | ER 0.5/1.5 (T2 2L) | +68.5k (69.4k) | +36.9k (52.0k) | +35.4k (46.2k) | +0.7k (25.4k) | +15.9k (31.0k) | 1.21 | +57.5k (54.8k) | +52.9k (49.2k) | +13.0k (29.8k) | +22.6k (36.3k) | 117 / 146 |
+| C90 | cut50_asia | no sizer | +26.0k (45.1k) | +28.8k (28.4k) | +27.2k (25.0k) | +6.3k (14.8k) | +12.6k (16.5k) | 1.13 | +40.3k (30.0k) | +36.8k (28.1k) | +14.5k (16.5k) | +16.2k (18.5k) | 136 / 146 |
+| C90 | cut50_asia | ER 0.5/1.0 | +46.1k (52.4k) | +23.9k (41.8k) | +23.0k (38.0k) | -6.9k (22.1k) | +0.8k (23.1k) | 1.32 | +50.9k (43.5k) | +45.5k (39.6k) | +9.3k (26.3k) | +6.2k (26.7k) | 112 / 146 |
+| C90 | cut50_asia | ER 0.5/1/1.5 | +57.1k (65.9k) | +31.8k (50.6k) | +31.6k (45.2k) | -6.5k (25.9k) | +10.5k (25.1k) | 1.26 | +55.8k (55.5k) | +52.1k (49.6k) | +6.7k (30.9k) | +17.4k (30.7k) | 124 / 146 |
+| C90 | cut50_asia | ER 0.5/1.5 (T2 2L) | +63.8k (66.6k) | +37.7k (50.2k) | +37.2k (44.6k) | -0.3k (24.7k) | +16.3k (31.5k) | 1.17 | +54.3k (52.0k) | +51.5k (46.6k) | +9.3k (28.3k) | +21.7k (35.9k) | 117 / 146 |
+| C90 | cut50_opp1 | no sizer | +18.6k (29.5k) | +19.9k (19.5k) | +20.7k (17.3k) | +5.0k (13.3k) | +12.7k (15.4k) | 1.14 | +30.9k (23.5k) | +30.1k (22.8k) | +13.5k (15.2k) | +16.5k (17.0k) | 147 / 146 |
+| C90 | cut50_opp1 | ER 0.5/1.0 | +43.2k (51.4k) | +23.4k (39.7k) | +22.7k (36.6k) | -6.3k (19.8k) | +2.8k (23.9k) | 1.29 | +48.1k (42.2k) | +43.3k (38.0k) | +8.7k (23.2k) | +8.2k (26.4k) | 119 / 146 |
+| C90 | cut50_opp1 | ER 0.5/1/1.5 | +63.1k (65.4k) | +36.0k (50.4k) | +34.1k (44.8k) | -5.2k (23.9k) | +13.5k (25.2k) | 1.16 | +52.0k (53.1k) | +47.7k (47.4k) | +3.5k (26.8k) | +18.4k (27.9k) | 125 / 146 |
+| C90 | none | ER 0.5/1.5 (T2 2L) | +62.7k (53.7k) | +37.1k (41.4k) | +36.1k (36.8k) | -2.1k (26.2k) | +14.7k (29.1k) | 1.06 | +43.4k (41.3k) | +41.5k (36.9k) | +1.4k (27.6k) | +16.7k (30.4k) | 119 / 146 |
+
+#### 6c. THE SUNDAY STACK LINE with the owners' variants (S2: first-stop cut, Asia-stopped = fires only when the stopped book's session is Asia; T2: 2L sizer), basis N (primary): weekly mean / SD / maxDD / worst-20 ($k, research lots), recent first; delta vs as-is (MDE); equal-risk delta (c*, STRUCTURE)
+
+| line | window | mean $k/wk | SD | maxDD | worst-20 (sum) | delta vs as-is (MDE) | equal-risk delta (MDE) | c* |
+|--|--|--|--|--|--|--|--|--|
+| as it is (market entries, no rule) | L3M | 11.0 | 140 | 372 | 155 | - | - |  |
+|  | L6M | 61.5 | 146 | 372 | -153 | - | - |  |
+|  | HOLD | 48.3 | 173 | 651 | -1095 | - | - |  |
+|  | PRE | 58.0 | 139 | 704 | -2418 | - | - |  |
+|  | X' | 16.0 | 104 | 490 | -1457 | - | - |  |
+|  | 2026 | 18.9 | 186 | 346 | 114 | - | - |  |
+| S73 split only | L3M | 31.3 | 130 | 319 | 438 | +20.2k (25.2k) | +22.2k (25.0k) | 1.06 |
+|  | L6M | 79.1 | 137 | 319 | 332 | +17.6k (16.6k) | +22.6k (16.4k) |  |
+|  | HOLD | 66.7 | 169 | 625 | -630 | +18.4k (15.3k) | +22.6k (16.0k) |  |
+|  | PRE | 61.8 | 139 | 617 | -2307 | +3.8k (10.7k) | +7.7k (11.4k) |  |
+|  | X' | 18.2 | 102 | 469 | -1392 | +2.2k (8.4k) | +3.3k (8.8k) |  |
+|  | 2026 | 37.0 | 185 | 306 | 222 | +18.1k (40.6k) | +20.5k (43.8k) |  |
+| S73 + S2 Asia-stopped cut50 | L3M | 43.1 | 132 | 370 | 604 | +32.1k (39.1k) | +35.1k (40.0k) | 1.07 |
+|  | L6M | 92.2 | 129 | 370 | 620 | +30.8k (28.4k) | +37.2k (28.2k) |  |
+|  | HOLD | 78.1 | 163 | 608 | -390 | +29.8k (24.9k) | +35.2k (25.3k) |  |
+|  | PRE | 63.8 | 142 | 750 | -2330 | +5.8k (15.1k) | +10.2k (16.2k) |  |
+|  | X' | 21.0 | 106 | 450 | -1448 | +5.0k (15.0k) | +6.4k (16.0k) |  |
+|  | 2026 | 79.9 | 174 | 282 | 479 | +60.9k (63.6k) | +66.5k (64.2k) |  |
+| S73 + T2 2L ER sizer (x0.5 / x1.5) | L3M | 60.1 | 116 | 349 | 842 | +49.1k (58.0k) | +51.4k (58.1k) | 1.04 |
+|  | L6M | 87.5 | 118 | 349 | 812 | +26.1k (45.5k) | +29.4k (45.6k) |  |
+|  | HOLD | 76.8 | 148 | 495 | -103 | +28.4k (40.4k) | +31.4k (40.4k) |  |
+|  | PRE | 52.6 | 148 | 528 | -2550 | -5.4k (25.6k) | -3.4k (26.4k) |  |
+|  | X' | 24.7 | 115 | 374 | -1465 | +8.7k (28.9k) | +9.6k (29.8k) |  |
+|  | 2026 | 78.4 | 124 | 277 | 470 | +59.4k (124.8k) | +62.5k (123.5k) |  |
+| **S73 + Asia-stopped cut50 + T2 2L sizer (all three, owners' variants)** | L3M | 59.6 | 130 | 395 | 834 | +48.5k (77.3k) | +53.7k (80.2k) | 1.09 |
+|  | L6M | 86.1 | 113 | 395 | 682 | +24.6k (54.7k) | +32.1k (55.4k) |  |
+|  | HOLD | 75.3 | 145 | 484 | -205 | +26.9k (48.7k) | +33.5k (49.3k) |  |
+|  | PRE | 51.8 | 145 | 542 | -2519 | -6.3k (25.1k) | -1.8k (26.8k) |  |
+|  | X' | 26.2 | 116 | 427 | -1477 | +10.1k (31.0k) | +12.4k (33.3k) |  |
+|  | 2026 | 90.0 | 119 | 300 | 540 | +71.0k (153.1k) | +78.9k (152.7k) |  |
+| **C90 + Asia-stopped cut50 + T2 2L sizer (all three, 90/10 base)** | L3M | 74.9 | 141 | 378 | 1048 | +63.8k (66.6k) | +76.3k (74.3k) | 1.17 |
+|  | L6M | 99.2 | 117 | 378 | 889 | +37.7k (50.2k) | +54.3k (52.0k) |  |
+|  | HOLD | 85.6 | 150 | 508 | -86 | +37.2k (44.6k) | +51.5k (46.6k) |  |
+|  | PRE | 57.7 | 144 | 530 | -2322 | -0.3k (24.7k) | +9.3k (28.3k) |  |
+|  | X' | 32.4 | 114 | 401 | -1313 | +16.3k (31.5k) | +21.7k (35.9k) |  |
+|  | 2026 | 101.2 | 142 | 322 | 607 | +82.2k (115.1k) | +99.2k (114.5k) |  |
+| C90 + cut50 (all sessions) + ER 0.5/1.0 (prereg headline) | L3M | 55.1 | 128 | 448 | 771 | +44.0k (56.1k) | +65.7k (71.4k) | 1.39 |
+|  | L6M | 78.7 | 113 | 448 | 513 | +17.2k (43.9k) | +48.2k (47.8k) |  |
+|  | HOLD | 64.5 | 138 | 494 | -332 | +16.1k (40.0k) | +41.5k (43.6k) |  |
+|  | PRE | 43.2 | 116 | 355 | -1799 | -14.9k (23.0k) | +2.2k (26.7k) |  |
+|  | X' | 15.2 | 85 | 361 | -1132 | -0.8k (23.7k) | +5.2k (27.0k) |  |
+|  | 2026 | 99.3 | 140 | 238 | 596 | +80.4k (98.4k) | +119.5k (98.8k) |  |
+
+#### 6c. THE SUNDAY STACK LINE with the owners' variants (S2: first-stop cut, Asia-stopped = fires only when the stopped book's session is Asia; T2: 2L sizer), basis LIVE-CAL (stop 2.45): weekly mean / SD / maxDD / worst-20 ($k, research lots), recent first; delta vs as-is (MDE); equal-risk delta (c*, STRUCTURE)
+
+| line | window | mean $k/wk | SD | maxDD | worst-20 (sum) | delta vs as-is (MDE) | equal-risk delta (MDE) | c* |
+|--|--|--|--|--|--|--|--|--|
+| as it is (market entries, no rule) | L3M | -1.0 | 141 | 417 | -14 | - | - |  |
+|  | L6M | 50.0 | 145 | 417 | -372 | - | - |  |
+|  | HOLD | 37.2 | 173 | 684 | -1321 | - | - |  |
+|  | PRE | 46.1 | 137 | 778 | -2620 | - | - |  |
+|  | X' | 7.0 | 104 | 560 | -1661 | - | - |  |
+|  | 2026 | 11.5 | 187 | 371 | 69 | - | - |  |
+| S73 split only | L3M | 15.1 | 135 | 363 | 211 | +16.1k (24.4k) | +16.9k (24.7k) | 1.05 |
+|  | L6M | 65.1 | 139 | 363 | 51 | +15.1k (15.8k) | +18.7k (15.9k) |  |
+|  | HOLD | 53.2 | 171 | 658 | -927 | +16.0k (14.7k) | +18.9k (15.5k) |  |
+|  | PRE | 49.9 | 140 | 707 | -2543 | +3.8k (11.2k) | +6.5k (11.9k) |  |
+|  | X' | 9.5 | 103 | 525 | -1599 | +2.5k (8.4k) | +3.0k (8.8k) |  |
+|  | 2026 | 26.0 | 192 | 322 | 156 | +14.6k (40.3k) | +16.0k (44.4k) |  |
+| S73 + S2 Asia-stopped cut50 | L3M | 19.7 | 133 | 417 | 276 | +20.7k (33.1k) | +22.2k (33.7k) | 1.07 |
+|  | L6M | 74.1 | 131 | 417 | 255 | +24.1k (24.1k) | +29.6k (23.9k) |  |
+|  | HOLD | 61.5 | 165 | 633 | -716 | +24.3k (21.2k) | +28.9k (21.7k) |  |
+|  | PRE | 50.7 | 140 | 820 | -2543 | +4.5k (13.3k) | +8.3k (14.5k) |  |
+|  | X' | 11.6 | 106 | 568 | -1646 | +4.5k (15.2k) | +5.4k (16.2k) |  |
+|  | 2026 | 59.1 | 174 | 316 | 355 | +47.6k (48.9k) | +52.0k (48.3k) |  |
+| S73 + T2 2L ER sizer (x0.5 / x1.5) | L3M | 52.1 | 117 | 374 | 729 | +53.1k (55.7k) | +55.1k (55.7k) | 1.04 |
+|  | L6M | 79.2 | 119 | 374 | 626 | +29.2k (44.5k) | +32.2k (44.6k) |  |
+|  | HOLD | 68.3 | 150 | 521 | -298 | +31.1k (39.6k) | +33.7k (39.6k) |  |
+|  | PRE | 41.4 | 148 | 588 | -2764 | -4.7k (26.0k) | -3.1k (26.7k) |  |
+|  | X' | 17.3 | 117 | 463 | -1644 | +10.3k (29.0k) | +11.0k (29.9k) |  |
+|  | 2026 | 70.3 | 124 | 290 | 422 | +58.9k (122.0k) | +61.6k (120.4k) |  |
+| **S73 + Asia-stopped cut50 + T2 2L sizer (all three, owners' variants)** | L3M | 54.0 | 132 | 420 | 755 | +55.0k (76.4k) | +59.6k (79.3k) | 1.08 |
+|  | L6M | 76.2 | 116 | 420 | 450 | +26.2k (54.2k) | +32.7k (55.1k) |  |
+|  | HOLD | 66.5 | 145 | 480 | -381 | +29.3k (48.4k) | +34.9k (49.0k) |  |
+|  | PRE | 40.5 | 144 | 693 | -2740 | -5.7k (24.8k) | -2.2k (26.4k) |  |
+|  | X' | 18.3 | 118 | 453 | -1697 | +11.3k (30.9k) | +12.8k (33.2k) |  |
+|  | 2026 | 82.5 | 127 | 284 | 495 | +71.0k (154.6k) | +78.0k (154.9k) |  |
+| **C90 + Asia-stopped cut50 + T2 2L sizer (all three, 90/10 base)** | L3M | 65.7 | 145 | 390 | 920 | +66.8k (69.9k) | +74.7k (75.8k) | 1.12 |
+|  | L6M | 86.6 | 122 | 390 | 591 | +36.6k (50.5k) | +47.1k (52.1k) |  |
+|  | HOLD | 73.6 | 153 | 531 | -359 | +36.4k (45.0k) | +45.3k (46.5k) |  |
+|  | PRE | 45.6 | 145 | 645 | -2590 | -0.5k (24.6k) | +5.0k (27.1k) |  |
+|  | X' | 25.9 | 114 | 458 | -1478 | +18.9k (31.5k) | +22.0k (34.6k) |  |
+|  | 2026 | 95.9 | 156 | 311 | 575 | +84.4k (126.5k) | +96.1k (129.4k) |  |
+| C90 + cut50 (all sessions) + ER 0.5/1.0 (prereg headline) | L3M | 43.5 | 127 | 497 | 609 | +44.6k (55.1k) | +61.1k (68.8k) | 1.38 |
+|  | L6M | 68.6 | 113 | 497 | 318 | +18.6k (42.5k) | +44.7k (46.4k) |  |
+|  | HOLD | 54.9 | 138 | 508 | -517 | +17.7k (39.0k) | +38.6k (41.9k) |  |
+|  | PRE | 36.2 | 118 | 376 | -2007 | -10.0k (22.0k) | +3.8k (26.2k) |  |
+|  | X' | 9.0 | 85 | 394 | -1258 | +2.0k (24.2k) | +5.5k (27.3k) |  |
+|  | 2026 | 91.7 | 142 | 236 | 550 | +80.3k (97.7k) | +115.2k (98.0k) |  |
+
+Multiplicity of section 6/6b/6c: 3 splits x 4 first-stop rules (none, cut50 all sessions, Asia-stopped, opposite-book>=1) x 4 sizers (none, 0.5/1.0, 0.5/1/1.5, T2 2L) = 48 stack lines per basis, of which only the prereg headline (C90 + cut50 + ER 0.5/1.0) was named in advance; the lines in bold in 6c are named after seeing the grid on PRE u X' and all recent windows, i.e. **post-hoc-selected** (PRE and X' evidence is shown beside; the choice of the Asia variant and the 2L sizer comes from the owners' own PRE u X' / post-hoc picks, S2 DS3_STACK_2 and T2 DS3_TREND_2). Rerun with the owners' final picks: `ge_run2.py` / `ge_run3.py` (about 8 + 2 minutes).
+
 ## 7. QUANT-LAYER one-page header (headline rows; N basis; stack-level cells: per-contract of final lots exists only for the split rows)
 | cell | per contract delta vs market (point: L6M; [95% block-bootstrap CI over weeks, PRE u HOLD]) | stack L3M | L6M | HOLD | PRE | X' | signals / wk (engine) , fills of the add | n_cells | RC p (program) | Romano-Wolf survives | DSR (n_trials 144k) | PBO | placebo rank | neighbourhood mean | breakeven slippage | capacity | top-5%-of-trades share of gain (x total) | stack corr (weekly delta vs stack) | regime it works in | drift: positive quarters 2023Q2-2026Q1 | WF weekly-delta CI (block bootstrap by week) |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -584,6 +722,9 @@ Reading: unscaled, the increments of cut50 and the ER sizer overlap (both are "b
 | S73+cut50+ER0.5/1.0 | - | +35.1k (57.9k) | +12.7k (44.2k) | +12.4k (40.9k) | -13.8k (23.0k) | -3.8k (23.6k) | 237 / 237 | 1 of 296 (179 stack-level) | vs S73 0.77 / vs mkt 0.002 (L6M) | n/a | 0.00 | NOT RUN | ER 1.00 L6M/HOLD (40 shuffled-ER) | n/a | n/a | NOT MEASURED (book depth at the fill seconds) | n/a | -0.60 | recent regime (PRE negative unscaled) | 5/12 | [-20.7k, +7.8k] |
 | C90+cut50+ER0.5/1.0 (prereg headline) | - | +44.0k (56.1k) | +17.2k (43.9k) | +16.1k (40.0k) | -14.9k (23.0k) | -0.8k (23.7k) | 237 / 237 | 1 of 296 (179 stack-level) | vs S73 0.77 / vs mkt 0.002 (L6M) | n/a | 0.00 | NOT RUN | ER 1.00 L6M/HOLD (40 shuffled-ER) | n/a | n/a | NOT MEASURED (book depth at the fill seconds) | n/a | -0.58 | recent regime (PRE negative unscaled) | 5/12 | [-20.5k, +8.4k] |
 | C90+cut50+ER0.5/1/1.5 | - | +62.7k (67.7k) | +34.8k (50.0k) | +34.0k (44.4k) | -5.6k (25.2k) | +7.4k (25.5k) | 237 / 237 | 1 of 296 (179 stack-level) | vs S73 0.77 / vs mkt 0.002 (L6M) | n/a | 0.00 | NOT RUN | ER 1.00 L6M/HOLD (40 shuffled-ER) | n/a | n/a | NOT MEASURED (book depth at the fill seconds) | n/a | -0.41 | recent regime (PRE negative unscaled) | 8/12 | [-9.0k, +21.7k] |
+| S73 + S2 Asia-stopped cut50 (post-hoc-selected from the 48-line grid) | - | +32.1k (39.1k) | +30.8k (28.4k) | +29.8k (24.9k) | +5.8k (15.1k) | +5.0k (15.0k) | 237 / 237 | 1 of 48 stack lines (296 cells) | vs S73 0.77 / vs mkt 0.002 (L6M) | n/a | 0.04 | NOT RUN | random-cut placebo: see DS3_STACK_2.md | n/a | cut: 1.3-3.7 pt (SP-1) | NOT MEASURED | n/a | -0.18 | recent regime | 8/12 | [+3.9k, +22.1k] |
+| S73 + Asia cut50 + T2 2L sizer (post-hoc-selected from the 48-line grid) | - | +48.5k (77.3k) | +24.6k (54.7k) | +26.9k (48.7k) | -6.3k (25.1k) | +10.1k (31.0k) | 237 / 237 | 1 of 48 stack lines (296 cells) | vs S73 0.77 / vs mkt 0.002 (L6M) | n/a | 0.00 | NOT RUN | random-cut placebo: see DS3_STACK_2.md | n/a | cut: 1.3-3.7 pt (SP-1) | NOT MEASURED | n/a | -0.34 | recent regime | 9/12 | [-12.1k, +19.6k] |
+| C90 + Asia cut50 + T2 2L sizer (post-hoc-selected from the 48-line grid) | - | +63.8k (66.6k) | +37.7k (50.2k) | +37.2k (44.6k) | -0.3k (24.7k) | +16.3k (31.5k) | 237 / 237 | 1 of 48 stack lines (296 cells) | vs S73 0.77 / vs mkt 0.002 (L6M) | n/a | 0.00 | NOT RUN | random-cut placebo: see DS3_STACK_2.md | n/a | cut: 1.3-3.7 pt (SP-1) | NOT MEASURED | n/a | -0.31 | recent regime | 9/12 | [-4.2k, +26.7k] |
 
 Column notes: DSR is the Bailey-Lopez de Prado deflated Sharpe of the weekly delta series with the cumulative trial count 144,000 (the 143,584 stored cells + this program), so every row is ~0 by construction; PBO (CSCV) was not run for this program (no cell-by-time return matrix with a selection stage beyond the PRE u X' picks); capacity needs top-5 depth at the 70/30 add seconds, not measured; the top-5% share is the share of the gain in the WF window from the best 5% of trades (the split's gain is concentrated: the best 5% of trades are worth 10x the total net gain, i.e. the rest nets out negative - a tail-capture rule, not a steady one).
 
@@ -599,19 +740,20 @@ Column notes: DSR is the Bailey-Lopez de Prado deflated Sharpe of the weekly del
 
 D6 vocabulary used: group 05 (entry) properties split_F, dip_X, confirmations_N, veto, limit_join_s (0 = market on the touch; the limit-at-arming variant has no D6 property and is not recommended); STACK section lines from SP-1 (`stack first_stop=1 books_same>=1 cut pct=50 books=others_same_side`); the ER sizer needs a 5-min Kaufman ER(20) property (3 numbers per signal, computable from the 5-min bar store; listed in DS3_THL2_NEEDS from TG-1). A per-session split_F (the directive's Asia 0.5 / NY 0.7) maps to a D6 session cell property; it is **not recommended** (A4 is noise).
 
-#### Signals per week / adds (engine books, L6M): about 237 signals per week across the six books (237 for S73's add fill rate 92%, 83% for C90); live $ = research / 2.35.
+Signals per week (L6M, six engine books): about 237; the add fills on 92% of them at 70/30-at-3 and on 83% at 90/10-at-8; $ at live lots = research $ / 2.35 (table above, N / LIVE-CAL).
 
 ## 9. What this means for the Sunday brief (one table)
 | bucket | item | D6 property | evidence (N / LC, research lots, vs stack as it is) | tier | note |
 |--|--|--|--|--|--|
-| ON (already the base) | 70/30 split, dip 3 pt, 1-of-8, veto | split_F=0.7 dip_X=3 confirmations_N=1 | L6M +17.6k (16.6k) / +15.1k, HOLD +18.4k (15.3k) / +16.0k, PRE +3.8k (10.7k), 12 of 12 quarters + | CANDIDATE-RECENT | random-dip placebo 1.00; cost-fragile (+1 pt per remainder fill removes PRE and X') |
+| ON (the base every stack number here sits on; the lead decides) | 70/30 split, dip 3 pt, 1-of-8, veto | split_F=0.7 dip_X=3 confirmations_N=1 | L6M +17.6k (16.6k) / +15.1k, HOLD +18.4k (15.3k) / +16.0k, PRE +3.8k (10.7k), 12 of 12 quarters + | CANDIDATE-RECENT | random-dip placebo 1.00; cost-fragile (+1 pt per remainder fill removes PRE and X') |
 | SHADOW / switch if remainder fill cost > ~0.5 pt | 90/10, dip 8, no gate | split_F=0.9 dip_X=8 confirmations_N=0 | equal to S73 at the measured cost (paired L6M +2.0k, MDE 12.5k); at +1 / +2 pt per remainder fill L6M +14.9k / +10.6k vs S73 +8.6k / +3.9k | CANDIDATE-RECENT (vs market); BEST-AVAILABLE-NEGATIVE vs S73 | only reason to prefer it is the measured remainder fill cost (live fills of the add not yet measured: ask for the add-fill slippage from the 10-20+ live fills) |
-| SHADOW | first-stop cut50 on top of the split | stack first_stop=1 cut 50% | S73 + cut50 L6M +6.6k (26.8k), HOLD +4.6k (24.0k), L3M +16.0k (35.1k), PRE -6.4k (16.0k) (SP-1) | CANDIDATE-RECENT | PRE -6k (S73 base); S2 owns the rule decision |
+| SHADOW (S2 owns) | first-stop cut50 on top of the split; S2's Asia-stopped variant is the one with PRE and X' >= 0 | stack first_stop=1 cut 50% (fires when the stopped book is an Asia book) | S73 + Asia-stopped cut50 (N): L3M +32.1k (39.1k), L6M +30.8k (28.4k), HOLD +29.8k (24.9k), PRE +5.8k (15.1k), X' +5.0k (15.0k) (S73 alone +20.2k / +17.6k / +18.4k / +3.8k / +2.2k); all-session cut50 on S73: L6M +24.2k (31.5k), PRE -2.6k (17.0k) | CANDIDATE-RECENT (SP-1 / S2) | post-hoc variant choice (session split) out of the S2 grid; S2 owns the rule decision |
 | SHADOW | ER(20) sizer 0.5/1.0 | sizer: 5-min ER20<0.3 lots x0.5 | alone on the market stack L6M +16.1k (41.7k), SD -20%, PRE -11.4k (18.3k) | CANDIDATE-RECENT (T2 / TG-1) | de-risk tool; shuffled-ER placebo 1.00 |
-| OFF | per-session / per-ER add fraction; limit-at-arming; split on a confirmation base; all-three-at-once with the 1.5x up-size | - | section 2, 3, 5, 6 | DEAD / BEST-AVAILABLE-NEGATIVE / LEAD | the three components overlap; running all three removes the mean gain of each |
+| SHADOW (forward register) | the three together: 90/10@8 or 70/30@3 + first-stop cut50 + ER sizer 0.5/1.0 | split_F + stack first_stop=1 cut 50 + sizer 5-min ER20<0.3 x0.5 | unscaled (0.70 lots) L6M +17.2k (43.9k), HOLD +16.1k (40.0k), PRE -14.9k (23.0k), X' -0.8k (23.7k); at equal worst-20 risk (c* 1.39, STRUCTURE) L6M +48.2k (47.8k), HOLD +41.5k (43.6k), PRE +2.2k (26.7k), X' +5.2k (27.0k) | CANDIDATE-RECENT at equal risk; LEAD unscaled | not additive (cut50 and the sizer overlap); PRE/X' inside MDE; D6 day/week governors must be in planned-lot R (T2 question); owners S2 / T2 decide the two rules |
+| OFF | per-session / per-ER add fraction (A1-A7); limit-at-arming; split on a confirmation base; the 1.5x ER up-size on top of everything (leverage in the 2025-26 regime) | - | section 2, 3, 5, 6 | DEAD / BEST-AVAILABLE-NEGATIVE / LEAD | no stable session or ER dependence of the add; the limit gives up 0.7 pt and the gate; waiting skips winners |
 
 #### Open questions (non-blocking)
-1. Live lots per book (SP-1 asked the same): the 2.35 research-to-live factor is an assumption. 2. The remainder (add) fill slippage on live 70/30 fills: that single number decides 70/30@3 vs 90/10@8 (break-even about +1 pt in PRE, +2.3 pt in L6M for 70/30). 3. T2 / S2 import APIs are not yet published; the composition uses SP-1's simulator and a placeholder ER sizer of T2's F1 2L form; rerun the E group with their modules when they publish (the run takes about 9 minutes: `ge_run.py`).
+1. Live lots per book (SP-1 asked the same): the 2.35 research-to-live factor is an assumption. 2. The remainder (add) fill slippage on live 70/30 fills: that single number decides 70/30@3 vs 90/10@8 (break-even about +1 pt in PRE, +2.3 pt in L6M for 70/30). 3. S2's API is used (6b / 6c); T2's sizer is re-implemented from its interim report (x0.5 / x1.5 at ER(20) 0.3). When S2 / T2 publish their final picks, rerun `ge_run2.py` / `ge_run3.py` (about 10 minutes) with them. T2's open question (do D6's day-arm / week-floor governors use planned-lot or sized-lot R) applies to every sizer line here.
 
 ## 10. Bookkeeping
 Dead-lookup: UFE1 contains the 90/10@8 cell and its resting variant, L2SE the F/X/N split grid, ADDUW the add structure; the lookup was run after scoring for the directive cells (they are directive-named repeats, flagged `repeat` in the appended rows); new cells here: per-session / per-ER add fraction (90), limit-at-arming with through-ticks (48 incl. neighbours), stop-cost x remainder-cost grid on the C pair (18 cells x 6 stop costs x 3 ce), confirmation-base split (105), composition (27 x 3 bases). Multiplicity: this program 296 cells (honest count incl. every variant added: +8 selection variants, +1 qh/RC run), cumulative 2,467,648. UF_TRIALS side=plan36_split2; DEAD_CELLS appended (program SPLIT2); RECENT_WINS rows `out/recent_wins/SPLIT2.csv`; D6 policy text candidate `out/split2/split2_policy_candidate.txt`; MORNING.md lines at start / interim / end.
