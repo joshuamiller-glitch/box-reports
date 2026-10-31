@@ -1,4 +1,4 @@
-# AUTOPILOT LIVE STATUS  2026-10-31T08:01:45Z  load 1.71 / 32 cores   (48h ends 2026-10-17T21:52Z)
+# AUTOPILOT LIVE STATUS  2026-10-31T09:01:46Z  load 0.13 / 32 cores   (48h ends 2026-10-17T21:52Z)
 
 - A10 done 2026-10-16
 - A1 done 2026-10-16
@@ -106,7 +106,7 @@
 - E4 done 2026-10-16
 - E7 done 2026-10-16
 - 2026-10-16T15:57:19Z DONE ERA-RETRO + C11-DIP-REP2
-- 2026-10-25T05:39:16Z EXT week 202643 DONE (see REPORT_EXT_1019_1024.md)
+- 2026-10-31T08:14:55Z EXT week 202644 DONE (REPORT_EXT_1024_1030.md)
 - POWER2 done: REPORT_POWER2.md, harness ready
 - FV15A run done 177s sel FE_W30_q2.0
 - FV15B run done 102s sel VE_k4_r1
@@ -818,6 +818,7 @@
 - autopilot/REPORT_ENSEMBLE.md
 - autopilot/REPORT_ERA_RETRO.md
 - autopilot/REPORT_EXT_1019_1024.md
+- autopilot/REPORT_EXT_1024_1030.md
 - autopilot/REPORT_EXTENSION_20261017.md
 - autopilot/REPORT_EXTENSION_RESCORE.md
 - autopilot/REPORT_FA1.md
@@ -1385,5 +1386,5 @@
 - autopilot/REPORT_Z9.md
 
 ## spend
-committed 7188.6184 of 8000
+committed 7226.9431 of 8000
 1-min bar files: 377/364

@@ -843,3 +843,9 @@ QUESTION (structural, queue not paused): how to treat STRUCT48-era PASS/CANDIDAT
 [2026-10-31T07:18:10Z] RECENT EDGES: implemented in D6 / THP_POLICY: 24 of 14741 | persistence = DS3_PERSISTENCE.md (P next 3m positive is ~family base rate; shrunk size column; page is a view, value = shrunk expectation)
 
 - (wall 08:15Z) EXT week 202644 DONE (your order): cost $38.3247 (quote = actual; under the $40 cap), spend now $7,226.94 of $8,000; NQ/ES/RTY mbp-10 10-25..10-30 (window ends 10-30T22:00Z because data was released only to 22:40Z); Set A vs Set B W44 scored: A -135,078, B -45,769, live -63,815; FORWARD_REGISTER and LIVE_RECON ran; DST: fix +4h ET-UTC offsets before next Saturday.
+
+[2026-10-31T09:18:23Z] RECENT EDGES (RE-1 ledger, RECENT_WINS.md): 14741 tracked (positive L3M and L6M) | NEW 5390 RISING 3549 STABLE 1566 FADING 4236 STOPPED 0
+[2026-10-31T09:18:23Z] RECENT EDGES: turned on / new: CF-ENG On the 70/30 split, rest the 30% limit a (POOL9); CF-ENG On the 70/30 split, rest the 30% limit a (POOL9) | fading: CF-ENG On the 70/30 split, enter the 30% at mar (POOL9); CF-ENG On the 70/30 split, enter the 30% at mar (POOL9) | stopped (RE-2 monitor, 9 fading): 5 cap|live=12|x2.35|mode=skip|session=pre|count=both100 [S73]; session pre x0.5 [S73]
+[2026-10-31T09:18:23Z] RECENT EDGES: implemented in D6 / THP_POLICY: 24 of 14741 | persistence = DS3_PERSISTENCE.md (P next 3m positive is ~family base rate; shrunk size column; page is a view, value = shrunk expectation)
+
+- (wall 09:18Z) load: ~0% (idle) | agents: 0/10 | queue: 0. Nothing sanctioned left on existing data; waiting on user decisions (raw MBO pull, HM feed purchase, D6 questions). Brief v5 current; next rewrite Sat 18:00Z.
