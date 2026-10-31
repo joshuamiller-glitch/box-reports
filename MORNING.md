@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 15:16Z 10-31 (t+122.3 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 15:47Z 10-31 (t+122.8 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 9% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 9.0, 'TG': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-10-31T15:16:58Z. Box: CPU 49.3%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 18% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TG': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-10-31T15:47:11Z. Box: CPU 21.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -146,6 +146,8 @@ Updated 2026-10-31T15:16:58Z. Box: CPU 49.3%, slots busy 13/32, queue 0. Cores p
 | R4 | ? | 0 | 0 / 58 | none | done (report) |
 | RE2 | ? | 0 | 0 / 0 | none | prereg |
 | RE3 | ? | 0 | 0 / 0 | none | prereg |
+| RE5 | ? | 0 | 0 / 0 | none | prereg |
+| RE6 | ? | 0 | 0 / 0 | none | prereg |
 | SB | ? | 0 | 0 / 300 | none | prereg |
 | SB1 | ? | 0 | 0 / 0 | none | prereg |
 | SB2 | ? | 0 | 0 / 0 | none | prereg |
@@ -219,7 +221,7 @@ Updated 2026-10-31T15:16:58Z. Box: CPU 49.3%, slots busy 13/32, queue 0. Cores p
 | UF | ? | 0 | 0 / 0 | none | prereg |
 | WO | ? | 0 | 0 / 1488 | none | prereg |
 | ZEN | ? | 0 | 0 / 176 | none | prereg |
-| unattributed | - | 9.0 | - | - | - |
+| unattributed | - | 0.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -230,13 +232,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-10-31T15:21Z
+## TREND (TL) update 2026-10-31T15:51Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-31T15:17:11Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-10-31T15:47:11Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -874,3 +876,25 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - (wall 04:53Z) RE-1 DONE: persistence study: recent positives persist 41% (CI 36-47) vs 50% for sign-flip noise and 44% same-mean baseline; only strong evidence (6-month t >= 3) persists (70-83%). New ledger columns live in RECENT_WINS.md. BA-1 (independent audit of the Sunday brief) started (agents 10/10).
 
 - (wall 15:06Z) TAPE-1 STARTED: scope the duplicated first hour(s) in 13 NQ (and 11 ES / 11 RTY) monthly tape files; consumers, tier changes, Sunday-brief verdict, de-dup script (copies only, originals untouched). First answer by Sun 05:00Z.
+
+- (wall 15:47Z Sat) GOV-3 ONE-CONVENTION first table (full: autopilot/DS3_ONE_CONVENTION.md, page 1 = bridge + final table; post-hoc, nothing is a PASS). Convention: A6 = PB7, live lots, taken-signal running max, session-lot BookR, integer half-up min-1, parity stop per row, slip +0.25, combined lock F x R_K6 (F unknown, m0 1.0 / 0.5). Bridge L6M: +22.8 (earlier V0) -> A6 PB7 +21.8 -> session-lot BookR +20.7 -> parity stop +19.4 (C1) -> 12R combined lock vs unlocked as-is +10.6 (C2) / like-for-like +21.9 (C3).
+
+
+| row | L3M | L6M | HOLD | PRE | X' |
+|---|---|---|---|---|---|
+| C1 no combined lock: composite vs as-is (both without) | +22.3 (22.3) | +19.4 (17.5)* | +16.7 (17.3) | +4.5 (13.2) | +11.4 (14.0) |
+| C2 12R(m0 1.0) on composite vs UNLOCKED as-is | +16.9 (27.4) | +10.6 (26.5) | +9.5 (26.7) | -3.5 (15.3) | +4.5 (14.1) |
+| C2 20R(m0 1.0) on composite vs UNLOCKED as-is | +11.6 (34.3) | +13.1 (21.9) | +10.1 (23.3) | -2.7 (15.3) | +6.7 (15.2) |
+| C2 30R(m0 1.0) on composite vs UNLOCKED as-is | +19.4 (24.9) | +16.6 (18.9) | +14.4 (18.2) | -2.5 (14.9) | +10.1 (14.4) |
+| C3 like-for-like 12R(m0 1.0) on BOTH | +25.1 (21.2)* | +21.9 (27.3) | +17.7 (27.2) | +5.4 (11.9) | +8.3 (13.8) |
+| C3 like-for-like 20R(m0 1.0) on BOTH | +8.8 (32.4) | +16.1 (24.4) | +12.2 (24.8) | +2.2 (14.9) | +11.6 (15.4) |
+| C3 like-for-like 30R(m0 1.0) on BOTH | +18.3 (23.8) | +16.1 (18.6) | +13.8 (17.9) | -0.1 (14.5) | +10.2 (14.4) |
+| C2 12R(m0 0.5) on composite vs UNLOCKED as-is | +16.8 (27.4) | +10.8 (26.4) | +10.2 (26.2) | -7.7 (15.2) | +5.4 (13.6) |
+| C2 20R(m0 0.5) on composite vs UNLOCKED as-is | +11.3 (34.0) | +13.0 (21.8) | +10.0 (23.2) | -2.7 (15.6) | +6.3 (14.8) |
+| C2 30R(m0 0.5) on composite vs UNLOCKED as-is | +12.4 (35.1) | +13.1 (22.4) | +12.3 (21.1) | -1.8 (14.7) | +10.0 (14.4) |
+| C3 like-for-like 12R(m0 0.5) on BOTH | +28.9 (19.5)* | +23.6 (27.1) | +19.6 (26.6) | +1.6 (11.2) | +7.4 (11.7) |
+| C3 like-for-like 20R(m0 0.5) on BOTH | +17.0 (22.9) | +19.3 (19.9) | +14.2 (21.9) | +4.9 (12.8) | +10.2 (15.0) |
+| C3 like-for-like 30R(m0 0.5) on BOTH | +12.7 (32.0) | +13.3 (21.3) | +11.8 (20.1) | +2.6 (13.8) | +14.5 (15.8) |
+| memo: effect of the combined lock on the composite alone, 12R (m0 1.0) | -5.4 (11.3) | -8.9 (14.0) | -7.2 (16.1) | -8.0 (12.0) | -6.9 (9.0) |
+| memo: effect of the combined lock on the as-is alone, 12R (m0 1.0) | -8.2 (23.6) | -11.4 (14.3) | -8.2 (13.6) | -8.9 (10.4) | -3.8 (8.0) |
+

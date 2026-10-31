@@ -172,3 +172,88 @@ Saturday weekly extension (user order: extend ES/RTY tape with the Saturday purc
 ## 2026-10-31 ~14:30Z USER REPLY (answers E1-E8 + work order until Sun 12:00 ET, 80-90% CPU) (full text: autopilot/DIRECTIVE_USER_REPLY_20261031_1430.md). The three re-sent directive files (DIRECTIVE_RISK_OFF_1030.md, DIRECTIVE_HALT_RESUME_1030.md, DIRECTIVE_QUIT_WHEN_UP_1030.md) were NOT found on the box at 14:34Z.
 
 ## 2026-10-31 ~14:45Z USER DIRECTIVES re-sent: T-RISK-OFF, T-HALT-RESUME, T-QUIT-WHEN-UP (full texts: autopilot/DIRECTIVE_RISK_OFF_1030.md, DIRECTIVE_HALT_RESUME_1030.md, DIRECTIVE_QUIT_WHEN_UP_1030.md). NOTE: the lead-written interpretations (RHQ) were wrong in kind for RISK-OFF (it is STOP MANAGEMENT: moving the stop on evidence, not sizing down) and QUIT-WHEN-UP (intraday give-back map + quit/trail rules, not only +XR quits); HALT-RESUME is closer but lacked halt triggers/paper track/resume rules. Prior RHQ reports are superseded.
+
+## USER DIRECTIVE T-SIXTY 2026-10-31T15:52Z (verbatim in DIRECTIVE_SIXTY_20261031.md)
+T-SIXTY — the "over a coin flip" book: every recent edge with persistence ≥ 60%, built as a diversified portfolio (user, 2026-10-31 ~16:00Z)
+
+Research only. PLAN36 rules (measured + live-cal fills; per contract first; session column; QUANT-LAYER; prereg; dead cells). Runs inside the 80-90% order beside the Sunday work; interim table by Sun 06:00Z, final in the Sunday brief v6 as its own section.
+
+The user's reasoning (score it, do not argue with it)
+
+The persistence study says the average recent edge holds 41% of the time. The user does not want the average; he wants the rules whose persistence score is ABOVE 60% — better than a coin flip — because they are working NOW, in this market, not in 2024 when the market was different. He also expects rules on different candle sizes and different methods to be less correlated with each other and with the live books, so a portfolio of them should have a better risk picture than its parts. Test exactly that.
+
+1. The 60% list (from the RECENT-EDGE ledger, 14,741 rows)
+
+Every row with PERSISTENCE SCORE ≥ 0.60 (and, as a second column, ≥ 0.70), de-duplicated to one row per distinct rule (same mechanic, same book, same session; different thresholds collapse to the walk-forward last re-fit). For each: family, book, session, bar type / timeframe, mechanic, per-contract L3M / L6M / HOLD / PRE / X', trades per week, 6-month t-stat, persistence score and what drives it (streak, t, placebo rank, PRE sign), shrunk expectation, STATUS (rising / stable / fading), and whether D6 or D7 can run it today (group / property) or what it needs. Sort by shrunk $ per week at live lots. Say how many there are and how many are independent exposures (section 3).
+
+2. The regime argument, tested
+
+For the 60% list: the monthly series since 2023 as a small table per rule; the 2024 vs 2025-26 split; which regime measures (vol tercile, trend persistence, session share, book depth, ES correlation — the 2025-26 regime description of RECENT-EDGE 5b) carry the difference; and the one sentence per rule "this works now because …" where the data supports a reason, or "no identifiable reason" where it does not. Then the question the user is really asking: within the 60% list, does the persistence score do better than 41% out of sample — the walk-forward of "take only rules scored ≥ 0.60 at month M" over 2024-26: share still positive after 3 months, shrinkage, and the $ line.
+
+3. Diversification (the user's second point)
+
+Pairwise weekly correlation of the 60% rules with each other and with the live stack; cluster them (same bet wearing different clothes vs truly different); the portfolio line — equal-risk weights at shrunk sizes, all rules together on the lock engine — mean, SD, maxDD, worst-20-weeks in L3M / L6M / HOLD / PRE / X', vs the live stack alone and vs the Sunday composite. State the diversification benefit explicitly: SD of the sum vs the sum of SDs; how much of the improvement comes from alt-bar / alt-method rules specifically (score the portfolio with and without them). If the alt-bar rules are just the live books' signals shifted a few seconds, say so with the correlation.
+
+4. What to run and how
+
+The portfolio of section 3 restricted to what D6 v2.3b / D7 v1.0 can run (D7 has generic alt-bar slots: Supertrend / Keltner / EMA-cross / HMA-VWAP on any NT8 bar type, HA optional; group-12 clock filters; the policy file): per rule the exact D7 slot settings or D6 property, the recommended size (shrunk, Kelly-capped), Shadow or Live by the 60%/70% tier, and the monitor's STOP rule for each (RE-2). Rules D7 cannot run: one line each on what is missing.
+
+5. Also (not pasted earlier)
+
+D7F follow-up on rule (a) first-60-min skip: add maxDD, SD, worst-20-weeks, Sharpe in every window, per session, plus the equal-risk line (lots re-scaled so worst-20 matches the composite's) — the user's question is whether it lowers drawdown, not the mean. Answer to the D7F open question: in D7 a skipped signal does NOT update SizeMult (the filter runs before the sizer).
+
+6. Report
+
+DS3_SIXTY.md (sections 1-4 with the plain sentences: "N rules clear 60%; M independent bets; together at shrunk size they add X $/wk at Y% lower worst-20 than the stack alone; the alt-bar rules contribute Z of that; out of sample the ≥60% selection held W% of the time vs 41% for everything"); rows to RECENT_WINS; a SIXTY section in DS3_SUNDAY_BRIEF v6; MORNING.md every 2 h.
+
+## USER DIRECTIVE T-SIXTY ADDENDUM 2026-10-31T15:53Z (verbatim in DIRECTIVE_SIXTY_ADDENDUM_20261031.md)
+T-SIXTY addendum (user): add an OOS-TOLERANCE gate to the 60% list and use it instead of “positive in every window.” A rule passes if L3M and L6M are positive (per contract and stack) AND the older windows are not broken: PRE and X’ each ≥ −0.5 × that window’s MDE (a small loss inside the noise is fine) AND PRE worst-20-weeks no worse than the stack’s own, AND the drop from L6M to PRE is less than 100% of the L6M gain (it may fade to zero earlier, it may not have been a big loser). Report three columns: STRICT (positive everywhere, the old gate), TOLERANT (this gate), NOW-ONLY (positive L3M/L6M, anything earlier). Count the rules in each and show the walk-forward persistence of each column over 2024-26 — the user’s claim is that TOLERANT keeps most of STRICT’s reliability with far more rules; the number decides. Apply the same three columns to the D7 slot mapping (section 4) and the diversification portfolio (section 3).
+
+## USER DIRECTIVE T-INSTITUTIONAL 2026-10-31T15:59Z (verbatim in DIRECTIVE_INSTITUTIONAL_20261031.md)
+T-INSTITUTIONAL — what the ledger does NOT contain yet: the things a desk uses that we have not scored; one deep, pre-registered pass (user, 2026-10-31 ~16:00Z)
+
+Research only. PLAN36 rules + QUANT-LAYER on every candidate; prereg per section with sha256 before scoring; PRE+X' selection, ONE recent look; dead cells; placebos named per section; per contract first, session column, measured fills; the T-SIXTY three columns (STRICT / TOLERANT / NOW-ONLY) on every result; rows to RECENT_WINS. Runs after T-SIXTY section 1 in the 80-90% order; interim by Sun 12:00Z, then it continues past the deadline as a standing program (the user is not stopping on Sunday). First step of every section: a DATA line — what is on disk, what is derivable, what must be bought (quote, no purchase without the user's OK).
+
+Why (read the ledger first)
+
+RECENT_WINS today is 857 visible rows / 14,741 ledger rows from these families: candle confirmations, L2 entry/exit gates, policy rules, stack partials, zones, trend terciles, signal decay, meta-labels, structure sleeves, splits, dip entries, lot factors, ensembles. Every one of them is a rule about OUR signal and OUR trade. Almost nothing in the ledger describes WHO ELSE is in the market and what they have to do — which is what an institutional desk actually trades around. That is the gap. Sections below are ordered by how likely the data is on disk.
+
+A. Auction / market-profile day structure (derivable from the 1-min and 1-s data on disk)
+
+Initial balance (first 60 min of RTH, and 30-min variant); open location vs the prior day's value area (above / inside / below VA; VA = 70% of volume-at-price of the prior RTH day; also vs the prior day's range and the overnight range); IB extension (price trades beyond IB by 0.5 / 1 / 2 × IB); day type ex-ante at 10:30 / 11:00 (trend / normal-variation / neutral / non-trend by the classic IB rules); single prints and poor highs/lows (unfinished auction) as targets and as no-fade zones; the overnight inventory (ON session VWAP vs open: long/short inventory that must be corrected). Score each as (i) a REGIME for the live books (which books to run / size at 10:30 by the day type), (ii) a TARGET chooser (the opposite VA edge / the prior poor high), (iii) a STANDALONE book (open-outside-value → trade back to value; IB break with ON-inventory agreement; the "80% rule"). Placebos: shuffled prior-day values; time-shifted IB.
+
+B. Institutional execution footprints (derivable from the tape and mbp-10)
+
+Working algos (VWAP / TWAP / POV) leave persistent, same-signed aggressor volume with small prints at a steady rate. Build the detector: rolling 5 / 15 / 30-min signed-volume autocorrelation, run length of same-sign minute deltas, participation rate (aggressor volume / total) stability, print-size distribution (many small vs few large), re-loading at a price (the iceberg family already scored, re-used). State = "an institutional buyer/seller is working" with confidence. Score: (i) as a direction filter for the live books (only take signals WITH the working algo; skip or size down against), (ii) as a standalone "ride the algo" book (enter with it on pullbacks to its average price, exit when the footprint stops), (iii) the END of the footprint as an exit/reverse signal. Placebos: shuffled minute deltas within the day; time-shifted state. Also the MOC: the 15:50-16:00 imbalance behaviour (direction of the 15:30-15:50 move vs the close) as a close-window book and as a reason for the 14:40-15:00 skip the Sunday brief found.
+
+C. Cross-market state at minutes-to-hours (not the seconds lead-lag already scored)
+
+NQ vs ES relative strength over 30 / 60 / 120 min (beta-adjusted residual, z-score) as a regime: NQ-led days vs ES-led days vs divergence days; RTY and ZN (on disk) as risk-on/off confirmation; the NQ/ES residual mean reversion as a standalone pair book (ratio z ≥ 2 → fade the residual with the two legs; is it tradeable at our costs); gold/oil/bonds direction at the NY open as a day-type input; the DXY if derivable. Score per live book: do NQ signals pay more when ES/RTY/ZN agree at the HOUR scale (not the second)? Placebos: time-shifted cross-market series.
+
+D. Volatility-market state (options data: INVENTORY FIRST — likely a purchase)
+
+Dealer gamma regime (positive gamma → pinning/mean-reversion, negative → trending), 0DTE flow proxies, VIX/VXN term structure, implied vs realised vol spread, the opex / monthly expiration cycle, vol-of-vol. If options data is not on disk: (i) quote the cheapest source (CBOE/Databento options summary; daily GEX proxies are small), (ii) meanwhile build the REALISED proxies — intraday mean-reversion strength (variance ratio at 5/30 min), range compression, the open-to-10:30 realised vol vs the implied-equivalent from the prior day's range — and score them as the regime for trend vs fade books. Deliver the quote and the proxy results; the user decides on the purchase.
+
+E. Cash-market lead (equities data: INVENTORY FIRST)
+
+QQQ / SPY NBBO and the top-10 NDX names (NVDA, AAPL, MSFT, AMZN, META, GOOGL, AVGO, TSLA …): index-arb basis deviations, the cash open (09:30:00 prints) vs futures, breadth of the leaders at the open (how many up on the first 5 min), the leader that moves first. If not on disk: quote one month of QQQ + 10 names mbp-1 (Databento XNAS.ITCH) and state what the test would be; do not buy.
+
+F. Flow calendar (release calendar exists; extend)
+
+Month-end / quarter-end rebalancing windows (last 2 days, 15:00-16:00 flows), index rebalance days (NDX quarterly, Russell June), the roll week (NQ expiry: volume migration, basis moves, the Thursday roll), Treasury auction 13:00 settlements, Fed blackout vs speaker days, the opex Friday morning; TWAP-heavy windows (the 10:00 and 15:00 "institutional clocks"). Score each as a state for the live books (take / skip / size / re-bracket) and as a close-window book where the window itself has drift. Placebos: shuffled calendar days of the same weekday.
+
+G. Order-flow toxicity as a sizer (mbp-10 on disk; extends the L2 cycles)
+
+VPIN / bulk-volume toxicity at 50-contract buckets, multi-level OFI (Cont), the trade-to-book ratio, cancel ratio (cancels / adds per minute = spoof-like activity), hidden-liquidity rate (prints inside the spread or beyond the displayed size): as a REGIME for sizing all books (toxic tape → half lots; quiet informed tape → full) and as a stop-placement input (do not rest the stop where the cancel ratio is extreme). Report IC per feature at 1 / 5 / 30 min horizons and the sizer's stack line with the running-max locks.
+
+H. Minute-of-day alpha (derivable)
+
+The return and vol surface by minute-of-day × day-of-week over 2023-26 (the desk's "time-of-day" sheet): where the drift is, where the vol is, where the books' signals pay; the live books' brackets re-scaled by the minute-of-day vol (a 60-pt stop at 09:35 is not a 60-pt stop at 13:00); entries shifted to the drift minutes. Walk-forward (fit on the trailing 6 months, score the next month). Placebos: shuffled minute labels.
+
+I. Robustness standard for THIS program (stricter because the families are new)
+
+Every section: PRE+X' selection with ONE recent look; purged k-fold with embargo on the standalone books; the shuffled-state and time-shifted placebos; the 1-s / 3-s decision delay; capacity (mbp-10 depth at the fire seconds); the TOLERANT gate from T-SIXTY as the headline tier, STRICT and NOW-ONLY beside it; per session; the stack line on the SS-2 engine at live lots with the D6 running-max locks; the persistence score and shrunk size for every row that enters the ledger; dead cells logged. Nothing promoted; everything labelled; the forward-register row written for anything TOLERANT-positive.
+
+J. Report
+
+DS3_INST_<section>.md per section as they land (DATA line first), DS3_INSTITUTIONAL.md as the rolling summary with one plain sentence per section ("working-algo footprint: a buyer is detectable X% of RTH minutes; signals with him pay +Y per contract vs −Z against, L6M, placebo rank W; as a filter on the stack +$k/wk"), a PURCHASE table (source, slice, cost, what it unlocks) for the user's OK, rows to RECENT_WINS, a section in the Sunday brief v6 for whatever has landed, MORNING.md every 2 h. The program does not stop at the Sunday deadline.

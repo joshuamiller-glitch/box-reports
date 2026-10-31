@@ -1,0 +1,8 @@
+# DS3_L2_UF_PROFIT_C8 - no genuinely new profit-side hypothesis (UF-PROFIT, 2026-10-31 ~16:00Z): STOPPED, nothing scored, nothing padded
+Read: DS3_L2_UF_PROFIT_C5-C7, DS3_L2_INFO.md (cycles 1-2), DS3_RISK_OFF_A2.md (RO-2). Candidate hypotheses considered for C8 and why none is new information:
+1. Stop-distance chooser at entry from the signal-second book (the mirror of C5): same information source as C5 (signal-second book, INFO IC +0.015, CI includes 0; C5 learned chooser = its book-free twin, thin-depth tag reproduced by the 60-s-old book); RO-2 already shows the stop side (moves on book/path events, 10,752 cells) loses because forfeited targets cost more than avoided stops. A stop chooser would be a re-parametrisation of cells that cannot differ in information from C5.
+2. More exit/trail/take/widen variants on book states: closed by C1-C4, C7 and INFO C2 (240 resting-limit cells per state, none N > 0).
+3. Stack-aware exits (other books' state): not L2; the lock-engine and NT/risk-off programs own it.
+4. Cross-instrument (ES/RTY) price or book as confirm: C3/C4 (divergence, ES price/book confirm) - null.
+5. Anything needing order-level data (queue position and level age at the target/stop, order lifetimes, iceberg refill): not on disk; the pull list and date priorities are in DS3_L2_UF_PROFIT_C4.md. This is the only profit-side L2 gap that could change the verdict.
+Verdict: the PROFIT side is closed on mbp-10 + 1-s aggregates (cycles 1-7, 0 PASS / 0 CANDIDATE); C8 is not run. Resume only if raw MBO becomes available or the lead names a hypothesis with a new information source.
