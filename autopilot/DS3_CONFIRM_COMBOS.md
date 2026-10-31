@@ -704,3 +704,43 @@ Units: pc = pts per contract of final position (primary, all book signals, L6M);
 | PB | AND(FVG~30s+CFA:val~sw15) / c2_mid~F0.7 | +3.05 | -1.33 | +nan | +nan | 1/101 (+2.46) | +1.98 | +1.08 [+0.38,+1.83] | INFO-CANDIDATE | 1.00 | Y | 0.05 | 12/12 | 0.73 |
 
 Totals: 1 unit-checked candidate rows; INFO-CANDIDATE 1, STRUCTURE 0, STACK-NEG 0.
+
+## PAGE 1 — GREEDY: verdict per book and every candidate on three units (generated 2026-10-31 05:16Z)
+
+Units: pc = pts per contract of final position (primary, all book signals, L6M); pl = per planned lot; stack = lock-engine $/wk difference vs the plain-dip floor (engine books only: ST HM WT KB SM PE; others n/a). Placebo = random-level (cf_engine.placebo_level_ov, same distance distribution) rank of the real gain among draws (limit variants only). "excess" = combination minus its better member in the same variant (paired week-block CI): the "beats its best single member" test. FINAL TIER: INFO-CANDIDATE needs stack>0 in L6M and HOLD (engine books), placebo beaten (95th pct), excess CI>0; otherwise STRUCTURE (the single-member resting-limit/70-30 structure explains it) or STACK-NEG.
+
+| book | verdict |
+|---|---|
+| SM | missing |
+| DN | missing |
+
+
+## PAGE 1 — FOUR: verdict per book and every candidate on three units (generated 2026-10-31 05:16Z)
+
+Units: pc = pts per contract of final position (primary, all book signals, L6M); pl = per planned lot; stack = lock-engine $/wk difference vs the plain-dip floor (engine books only: ST HM WT KB SM PE; others n/a). Placebo = random-level (cf_engine.placebo_level_ov, same distance distribution) rank of the real gain among draws (limit variants only). "excess" = combination minus its better member in the same variant (paired week-block CI): the "beats its best single member" test. FINAL TIER: INFO-CANDIDATE needs stack>0 in L6M and HOLD (engine books), placebo beaten (95th pct), excess CI>0; otherwise STRUCTURE (the single-member resting-limit/70-30 structure explains it) or STACK-NEG.
+
+| book | verdict |
+|---|---|
+| SM | 30 looked cells; {'CANDIDATE': np.int64(16), 'BEST-AVAILABLE': np.int64(14)}; stage RC(PRE+X') p=0.104; 16 unit-checked candidates -> 0 INFO-CANDIDATE, 16 STRUCTURE/STACK-NEG |
+| DN | 30 looked cells; {'BEST-AVAILABLE': np.int64(30)}; stage RC(PRE+X') p=0.002; 0 unit-checked candidates -> 0 INFO-CANDIDATE, 0 STRUCTURE/STACK-NEG |
+
+| book | cell | pc L6M | pl L6M | stack $/wk L6M | stack HOLD | placebo rank (mean) | best member pc | excess [CI] | final | DSR | RW | PBO | + quarters | top5% |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| SM | AND(OB~30s+MOM:RSI2<10~1m+FLOW:thick_q33) / c2_near~F0.7 | +3.72 | -0.51 | +1106 | -850 | 22/101 (+3.38) | +2.48 | +1.24 [-0.27,+2.75] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.70 |
+| SM | AND(OB~30s+MOM:RSI2<10~1m+FLOW:imb5_ge_q20) / c2_near~F0.7 | +3.61 | -0.51 | +1106 | -850 | 1/101 (+2.77) | +2.48 | +1.13 [-0.60,+2.67] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.59 |
+| SM | AND(OB~30s+MOM:RSI2<10~1m+FLOW:imb5_ge_q20) / c2_mid~F0.7 | +3.47 | -0.70 | +1381 | -581 | 8/101 (+2.93) | +3.30 | +0.16 [-1.44,+1.57] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.62 |
+| SM | AND(OB~30s+MOM:RSI2<10~1m+FLOW:imb5_ge_q20) / b_near~F0.7 | +3.13 | -1.27 | +516 | -1294 | 17/101 (+2.69) | +0.98 | +2.15 [+0.34,+4.08] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.68 |
+| SM | AND(OB~30s+MOM:RSI2<10~1m+FLOW:thick_q33) / b_mid~F0.7 | +3.03 | -1.38 | +923 | -909 | 62/101 (+3.14) | +2.20 | +0.84 [-0.80,+2.62] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.76 |
+| SM | AND(OB~30s+MOM:RSI2<10~1m+FLOW:imb5_ge_q20) / b_mid~F0.7 | +3.01 | -1.38 | +923 | -909 | 28/101 (+2.78) | +2.20 | +0.81 [-0.71,+2.50] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.71 |
+| SM | AND(OB~45s+MOM:RSI2<10~1m+FLOW:imb5_ge_q20) / b_near~F0.7 | +2.61 | -1.03 | +1329 | -408 | 2/101 (+1.96) | +1.86 | +0.75 [-0.76,+1.89] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.79 |
+| SM | AND(OB~30s+MOM:RSI7<30~1m+FLOW:imb5_ge_q20) / b_near~F0.7 | +2.50 | -0.84 | +109 | -1233 | 1/101 (+1.88) | +0.98 | +1.53 [-0.19,+3.26] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.72 |
+| SM | AND(OB~30s+MOM:RSI7<30~1m+FLOW:imb5_ge_q20) / c2_near~F0.7 | +2.50 | -0.51 | +661 | -1034 | 1/101 (+1.93) | +2.48 | +0.02 [-1.94,+1.90] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.72 |
+| SM | AND(OB~30s+MOM:RSI7<30~1m+FLOW:imb5_ge_q20) / b_mid~F0.7 | +2.44 | -0.97 | -362 | -1683 | 3/101 (+1.97) | +2.20 | +0.24 [-1.48,+1.84] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.74 |
+| SM | AND(OB~30s+MOM:Stoch14x~1m+FLOW:imb5_ge_q20) / b_near~F0.7 | +2.40 | -0.58 | +60 | -1558 | 2/101 (+1.77) | +0.98 | +1.42 [-0.25,+3.27] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.76 |
+| SM | AND(OB~45s+MOM:RSI7<30~1m+FLOW:imb5_ge_q20) / b_near~F0.7 | +2.34 | -0.43 | -126 | -1398 | 1/101 (+1.67) | +1.86 | +0.49 [-0.85,+1.67] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.78 |
+| SM | AND(OB~45s+MOM:RSI7<30~1m+FLOW:imb5_ge_q20) / b_mid~F0.7 | +2.20 | -0.18 | -13 | -1164 | 1/101 (+1.52) | +2.06 | +0.14 [-1.23,+1.42] | STACK-NEG | 1.00 | Y | 0.04 | 12/12 | 0.82 |
+| SM | AND(OB~45s+MOM:RSI2<10~1m+FLOW:imb5_ge_q20) / c2_near~F0.7 | +2.97 | -0.11 | +2244 | +322 | 3/101 (+2.29) | +2.69 | +0.29 [-1.10,+1.42] | STRUCTURE | 1.00 | Y | 0.04 | 12/12 | 0.69 |
+| SM | AND(OB~45s+MOM:RSI2<10~1m+FLOW:imb5_ge_q20) / c2_mid~F0.7 | +2.93 | +0.51 | +3322 | +1383 | 2/101 (+2.18) | +2.71 | +0.22 [-1.19,+1.36] | STRUCTURE | 1.00 | Y | 0.04 | 12/12 | 0.70 |
+| SM | AND(OB~45s+MOM:RSI2<10~1m+FLOW:imb5_ge_q20) / b_mid~F0.7 | +2.55 | -0.47 | +2634 | +855 | 4/101 (+1.90) | +2.06 | +0.50 [-1.11,+1.68] | STRUCTURE | 1.00 | Y | 0.04 | 12/12 | 0.81 |
+
+Totals: 16 unit-checked candidate rows; INFO-CANDIDATE 0, STRUCTURE 3, STACK-NEG 13.

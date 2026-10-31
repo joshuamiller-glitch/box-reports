@@ -15,6 +15,103 @@ Research only; one engine (stack2/s2_lib -> stackpart sp_lib rows + sl_lib exact
 11. **Mapping (section 4):** K6 = KB, P6 = PE, U6 = SM, H6 = HM, S6 = ST, W6 = WT, MA6 = MA; M6 (MV), A6 (PB7), O6 have no row in the six-book lock engine and are not valued anywhere. The SIZING note says K6/P6/U6 came from the ABR bundle, but the user's THP_POLICY-format directive lists K6 KB, P6 PE, U6 SM, so the mapping is user-sourced; the one risk is P6 (FOLLOWUP_BRIEF writes "PB3B": if P6 were the PB book it is outside the engine).
 12. Questions for the user: in MORNING.md only (none blocking; the two that change numbers: D6 governors planned vs sized R; whether P6 is PE).
 
+## Brief table (BA-1 N1-N10): ONE engine, every row, both lot conventions, bases N and LIVE-CAL
+Engine on every row: UA harness = stack2/s2_lib -> sp_lib + sl_lib per-book lock engine (the STACK-2/SPLIT-2/KB-REGIME engine), six books ST HM WT KB SM PE; $k per week, stack delta of the row vs its reference (market for the two splits, the S73 line for the rest), as coded (no equal-risk rescale). Governor: planned-lot R unless "running-max" (sized-lot R: day/week/entry locks x the book's largest multiplier of the day/week). MDE = 2.8 x week-clustered SE (L6M). Net re-entry share = (re-entry in + admit-out)/gain, top-5 = best 5 weeks/gain, both L6M on that row (n/m when the gain is inside 0.1 MDE or negative). Native stop exists only on the LIVE basis (reference = the 2.45 join). M6/A6 (8-book engine of sundaystack2) are NOT merged here; see note 8.
+
+**(i) LIVE-session lots (engine run at live lots: K6 2, P6 7, U6 4, H6 4 Asia/2 NY-AM, S6/W6 research/2.35; sessions of live lot 0 dropped from base and rule)**
+
+| row | ref | governor | basis | L3M | L6M | HOLD | PRE | X' | MDE L6M | net re-entry L6M | top-5 wk L6M |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 70/30 split S73 (vs market) | MKT | none | N | +5.6 | +5.4 | +5.4 | +1.4 | +2.0 | +9.5 | 32% | 110% |
+| 70/30 split S73 (vs market) | MKT | none | LIVE-CAL | +3.6 | +4.0 | +4.1 | +1.0 | +2.1 | +9.9 | 6% | 145% |
+| 90/10 at 8 pts, no confirmation (vs market) | MKT | none | N | +8.2 | +7.6 | +6.7 | +1.3 | +5.1 | +7.9 | 28% | 76% |
+| 90/10 at 8 pts, no confirmation (vs market) | MKT | none | LIVE-CAL | +7.8 | +6.7 | +5.9 | +1.2 | +4.7 | +8.3 | 22% | 87% |
+| PE 45-s three-bar, market, NY-AM+PM (in S73 line) | S73 | none | N | +3.0 | +2.4 | +1.9 | -0.6 | +0.1 | +6.2 | 163% | 137% |
+| PE 45-s three-bar, market, NY-AM+PM (in S73 line) | S73 | none | LIVE-CAL | +3.1 | +2.4 | +2.0 | -0.4 | +0.2 | +6.2 | 163% | 129% |
+| ER(20) 5m sizer 1.5/0.5 at 0.3, all 6 books | S73 | running-max (sized-lot R) | N | +22.6 | +19.3 | +18.3 | +6.3 | -1.5 | +22.9 | 58% | 73% |
+| ER(20) 5m sizer 1.5/0.5 at 0.3, all 6 books | S73 | running-max (sized-lot R) | LIVE-CAL | +19.1 | +17.2 | +16.3 | +5.3 | -1.6 | +23.3 | 54% | 77% |
+|   same, planned-lot R | S73 | planned-lot R | N | +15.5 | +8.6 | +9.3 | -4.8 | +1.7 | +19.1 | 30% | 145% |
+|   same, planned-lot R | S73 | planned-lot R | LIVE-CAL | +19.1 | +11.0 | +11.5 | -4.1 | +2.2 | +19.9 | 43% | 122% |
+| KB ER(20) sizer at 0.2 (K6) | S73 | running-max | N | +4.0 | +3.2 | +2.6 | +0.8 | +0.3 | +5.1 | 24% | 99% |
+| KB ER(20) sizer at 0.2 (K6) | S73 | running-max | LIVE-CAL | +4.7 | +3.4 | +2.8 | +0.6 | +0.2 | +4.8 | 21% | 93% |
+|   same, planned-lot R | S73 | planned-lot R | N | +3.7 | +1.4 | +1.1 | -0.5 | +0.9 | +4.0 | 13% | 163% |
+|   same, planned-lot R | S73 | planned-lot R | LIVE-CAL | +4.8 | +1.9 | +1.6 | -0.6 | +0.9 | +3.9 | 35% | 120% |
+| 8-line skip, D=20 (S8) | S73 | n/a (skip) | N | +3.1 | +3.9 | +3.3 | +2.5 | +3.1 | +11.2 | 1% | 149% |
+| 8-line skip, D=20 (S8) | S73 | n/a (skip) | LIVE-CAL | +4.5 | +5.0 | +4.4 | +3.3 | +3.7 | +10.9 | 8% | 116% |
+| Asia-stopped first-stop cut50 | S73 | n/a (rule) | N | +11.0 | +9.1 | +9.1 | -0.8 | +2.7 | +14.6 | 88% | 108% |
+| Asia-stopped first-stop cut50 | S73 | n/a (rule) | LIVE-CAL | +9.0 | +7.7 | +8.2 | -0.8 | +2.3 | +14.1 | 74% | 126% |
+| second-signal skip (<=30 min after a loser) | S73 | n/a (skip) | N | -1.6 | +0.6 | -0.0 | -1.9 | -1.5 | +5.7 | 127% | 481% |
+| second-signal skip (<=30 min after a loser) | S73 | n/a (skip) | LIVE-CAL | -0.5 | +1.4 | +0.6 | -2.4 | -1.4 | +6.1 | 127% | 237% |
+| Native stop-market vs 3-s join, ST+HM | S73 | n/a | N | n/a (LIVE basis only) | | | | | | | |
+| Native stop-market vs 3-s join, ST+HM | S73 | n/a | LIVE-CAL | +0.9 | +1.5 | +1.5 | +1.5 | +1.0 | +1.2 | 14% | 48% |
+| ES-led sizer N1 (ES led NQ >=1.5 bp/30 s) | S73 | running-max | N | -1.7 | -1.2 | -0.7 | +1.6 | +0.2 | +9.1 | n/m | n/m |
+| ES-led sizer N1 (ES led NQ >=1.5 bp/30 s) | S73 | running-max | LIVE-CAL | -1.4 | -0.7 | -0.3 | +1.1 | -0.1 | +9.5 | n/m | n/m |
+|   same, planned-lot R | S73 | planned-lot R | N | +0.1 | +1.5 | +1.0 | +1.5 | -1.7 | +7.8 | -4% | 288% |
+|   same, planned-lot R | S73 | planned-lot R | LIVE-CAL | +1.4 | +2.5 | +1.9 | +1.7 | -1.8 | +7.6 | 36% | 189% |
+| ES lag-z sizer th 0.5 (eslead / D6 es_lead) | S73 | running-max | N | +1.9 | +4.3 | +5.2 | +4.1 | +3.9 | +14.0 | 118% | 183% |
+| ES lag-z sizer th 0.5 (eslead / D6 es_lead) | S73 | running-max | LIVE-CAL | +3.6 | +4.8 | +5.7 | +4.0 | +3.3 | +12.5 | 122% | 152% |
+|   same, planned-lot R | S73 | planned-lot R | N | -0.2 | -0.2 | -0.3 | +3.8 | +2.2 | +9.3 | n/m | n/m |
+|   same, planned-lot R | S73 | planned-lot R | LIVE-CAL | +1.2 | +1.0 | +0.8 | +5.2 | +1.8 | +9.3 | 50% | 470% |
+
+**(ii) RESEARCH lots (ST 10, HM 10, WT 7, KB 5.2, SM 7.4, PE 5.6)**
+
+| row | ref | governor | basis | L3M | L6M | HOLD | PRE | X' | MDE L6M | net re-entry L6M | top-5 wk L6M |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 70/30 split S73 (vs market) | MKT | none | N | +20.2 | +17.6 | +18.4 | +3.8 | +2.2 | +16.6 | 55% | 66% |
+| 70/30 split S73 (vs market) | MKT | none | LIVE-CAL | +16.1 | +15.1 | +16.0 | +3.8 | +2.5 | +15.8 | 43% | 77% |
+| 90/10 at 8 pts, no confirmation (vs market) | MKT | none | N | +17.2 | +17.1 | +15.8 | +3.3 | +8.4 | +12.9 | 46% | 56% |
+| 90/10 at 8 pts, no confirmation (vs market) | MKT | none | LIVE-CAL | +17.8 | +17.1 | +16.1 | +3.1 | +7.5 | +13.4 | 47% | 60% |
+| PE 45-s three-bar, market, NY-AM+PM (in S73 line) | S73 | none | N | +4.9 | +3.0 | +2.8 | -0.7 | -1.0 | +7.4 | 105% | 123% |
+| PE 45-s three-bar, market, NY-AM+PM (in S73 line) | S73 | none | LIVE-CAL | +3.8 | +2.4 | +2.3 | -0.6 | -1.2 | +7.3 | 111% | 154% |
+| ER(20) 5m sizer 1.5/0.5 at 0.3, all 6 books | S73 | running-max (sized-lot R) | N | +43.0 | +37.3 | +32.8 | +11.2 | -0.7 | +52.6 | 66% | 84% |
+| ER(20) 5m sizer 1.5/0.5 at 0.3, all 6 books | S73 | running-max (sized-lot R) | LIVE-CAL | +40.3 | +35.2 | +30.9 | +8.6 | -1.2 | +52.8 | 63% | 87% |
+|   same, planned-lot R | S73 | planned-lot R | N | +28.9 | +8.5 | +10.1 | -9.2 | +6.5 | +40.5 | 32% | 260% |
+|   same, planned-lot R | S73 | planned-lot R | LIVE-CAL | +37.0 | +14.0 | +15.1 | -8.6 | +7.9 | +41.3 | 57% | 168% |
+| KB ER(20) sizer at 0.2 (K6) | S73 | running-max | N | +10.9 | +8.1 | +6.5 | +3.4 | +2.3 | +12.2 | 34% | 94% |
+| KB ER(20) sizer at 0.2 (K6) | S73 | running-max | LIVE-CAL | +13.1 | +8.8 | +7.0 | +3.4 | +1.9 | +11.1 | 32% | 85% |
+|   same, planned-lot R | S73 | planned-lot R | N | +8.2 | +3.1 | +2.8 | -1.6 | +0.8 | +9.4 | 42% | 173% |
+|   same, planned-lot R | S73 | planned-lot R | LIVE-CAL | +11.4 | +4.7 | +3.9 | -1.2 | +0.8 | +9.4 | 59% | 118% |
+| 8-line skip, D=20 (S8) | S73 | n/a (skip) | N | +30.1 | +15.4 | +12.4 | +1.6 | +4.9 | +26.1 | 22% | 96% |
+| 8-line skip, D=20 (S8) | S73 | n/a (skip) | LIVE-CAL | +36.8 | +19.8 | +16.4 | +3.4 | +5.9 | +28.2 | 32% | 87% |
+| Asia-stopped first-stop cut50 | S73 | n/a (rule) | N | +11.9 | +13.2 | +11.4 | +2.0 | +2.8 | +23.1 | 81% | 111% |
+| Asia-stopped first-stop cut50 | S73 | n/a (rule) | LIVE-CAL | +4.6 | +9.0 | +8.3 | +0.7 | +2.1 | +20.5 | 51% | 143% |
+| second-signal skip (<=30 min after a loser) | S73 | n/a (skip) | N | +4.3 | +5.6 | +4.5 | -3.9 | -3.0 | +11.4 | 48% | 117% |
+| second-signal skip (<=30 min after a loser) | S73 | n/a (skip) | LIVE-CAL | +6.3 | +7.0 | +5.7 | -4.8 | -2.8 | +12.5 | 67% | 113% |
+| Native stop-market vs 3-s join, ST+HM | S73 | n/a | N | n/a (LIVE basis only) | | | | | | | |
+| Native stop-market vs 3-s join, ST+HM | S73 | n/a | LIVE-CAL | +2.8 | +4.1 | +4.1 | +4.7 | +3.0 | +2.9 | 12% | 43% |
+| ES-led sizer N1 (ES led NQ >=1.5 bp/30 s) | S73 | running-max | N | -10.9 | -4.4 | -3.7 | +6.9 | -3.6 | +21.1 | n/m | n/m |
+| ES-led sizer N1 (ES led NQ >=1.5 bp/30 s) | S73 | running-max | LIVE-CAL | -8.2 | -2.5 | -2.1 | +5.7 | -4.7 | +19.9 | n/m | n/m |
+|   same, planned-lot R | S73 | planned-lot R | N | -0.9 | +3.7 | +3.2 | +3.3 | -2.6 | +18.3 | 33% | 249% |
+|   same, planned-lot R | S73 | planned-lot R | LIVE-CAL | +2.5 | +6.2 | +5.3 | +4.0 | -2.9 | +17.2 | 58% | 139% |
+| ES lag-z sizer th 0.5 (eslead / D6 es_lead) | S73 | running-max | N | -16.0 | +0.5 | +1.3 | +7.3 | +3.2 | +28.3 | n/m | 2818% |
+| ES lag-z sizer th 0.5 (eslead / D6 es_lead) | S73 | running-max | LIVE-CAL | -12.7 | +1.2 | +1.9 | +6.5 | +1.6 | +25.1 | n/m | 1143% |
+|   same, planned-lot R | S73 | planned-lot R | N | -9.8 | -0.8 | -2.1 | +6.5 | +1.6 | +20.6 | n/m | n/m |
+|   same, planned-lot R | S73 | planned-lot R | LIVE-CAL | -4.8 | +3.4 | +1.3 | +8.7 | +2.1 | +20.7 | 98% | 338% |
+
+**70/30 split S73 per book at integer live lots** (UF-ENTRY C7 engine, separate from the table above: integer fractions K6 1/1, U6 3/1, H6 3/1 (NY-AM 1/1), P6 5/2; split minus market, basis N, add slippage +0.25 pt/lot modelled; live-lot $k/wk = research-lot figure x live/research):
+
+| book | live lots | L3M | L6M | HOLD | PRE | X' | L6M live-lot $k | same, LIVE-CAL L6M / PRE |
+|---|---|---|---|---|---|---|---|---|
+| K6 (KB) | 2 (1/1) | -2.3 | -3.0 | -2.4 | -3.1 | +1.3 | -1.2 | -2.4 / -3.8 |
+| U6 (SM) | 4 (3/1) | +0.7 | +3.0 | +3.3 | +0.2 | -0.9 | +1.6 | +3.0 / +0.2 |
+| H6 (HM) | 4 / 2 | +1.9 | +0.8 | +1.4 | +0.2 | -0.1 | +0.3 | +1.7 / +0.4 |
+| P6 (PE) | 7 (5/2) | +1.1 | +0.8 | +0.2 | +1.5 | +2.7 | +1.0 | +0.2 / +1.2 |
+| S6 (ST) | 4.26 | +3.0 | +3.3 | +4.1 | -0.1 | +0.7 | +1.4 | +6.0 / +0.3 |
+| W6 (WT) | 2.98 | +3.2 | +3.7 | +3.8 | +1.7 | -1.8 | +1.6 | +2.6 / +1.7 |
+| six-book, research lots | - | +7.5 | +8.6 | +10.3 | +0.3 | +1.9 | n/a | +11.1 / +0.1 |
+
+**Notes**
+1. Every row is one engine, so rows are comparable; the brief's mixed-engine quotes (TREND-2 tg_stack ER +13.3k/-10.9k; zones-addendum 8-line +28.3k/+25.7k; "live +5.7k" = research/2.35) are NOT reproducible here: ER sizer planned-lot R is +8.5k/-9.2k (L6M/PRE), 8-line D=20 is +15.4k/+12.4k (L6M/HOLD).
+2. "Live" now has two meanings: (i) engine at live-session lots, (ii) research/2.35. Only (i) is in the table; ER sizer live-lot engine run is +8.6k (planned) vs research/2.35 +3.6k, because P6 has 7 live lots against 5.6 research and sessions of live lot 0 change the governors.
+3. Sizers: the running-max governor makes them look much better (ER20 L6M +37.3k vs +8.5k planned; KB +8.1k vs +3.1k) and flips the ES N1 sizer negative (research -4.4k sized vs +3.7k planned; live-lot -1.2k vs +1.5k); the lag-z sizer goes the other way (+0.5k sized vs -0.2k planned, live-lot +4.3k vs -0.2k); D6 must say which it implements. Planned-lot rows are given beside each.
+4. 90/10 at 8 pts (no confirmation) vs the 70/30 line: +17.1k vs market in L6M, but C minus S73 is -0.5k L6M / -2.6k HOLD / -0.5k PRE / +6.2k X' (research, N): equal at zero add cost, as C7 said; its edge is robustness to add slippage, not shown here (no add slippage in this table). It rounds to market at K6/U6/H6 live lots (2/0, 4/0).
+5. Native stop: +4.1k research but only about +1.5k at live lots (L6M, CI +0.9k..+2.3k); it is an execution fix, positive on every base.
+6. K6: the split at integer 1/1 lots is negative in L3M/L6M/HOLD/PRE (-3.0k L6M) even before the live-lot scaling; U6 +3.0k is the only per-book split gain clearly above zero after slippage.
+7. Net re-entry shares above 50% and top-5-week shares above 50% apply to most rows (see page 1 flags); the top-5 share is close to what independent weekly noise gives for most rows (section 5), so it does not discriminate much.
+8. M6/A6/O6: sundaystack2 holds an 8-book engine (o73_8) with its own governor/lot handling; I did not merge it into this harness, so the table is six books only. Live dollars for M6 (2 lots), A6 (1), O6 (1) are therefore missing and the live-lot totals understate the live stack.
+9. HM live sessions other than Asia/NY-AM are counted 0; PE45 is "in S73 line" (market NY entries replace PE NY rows); C2's own floor version is in section 1.
+10. Basis M and the LIVE-JOIN variants (Native 1.28, fixed 0.5), the other cut variants and the full grids are in sections 1-6 and `full_table.csv`; this table is only the headline convention per row.
+
 ## PAGE 1 - FLAGS (read this first)
 Convention cells per candidate = reference base (S73 live 70/30 line | market) x basis (N | M | LIVE-CAL 2.45 | LIVE-JOIN with ST+HM stop cost Native 1.28 | fixed 0.5) x lots (research | live book-session lots) x governors (planned-lot R | sized-lot R, sizers only) x scale (as coded | equal-risk, sizers only). A sign flip = at least one cell of the grid is negative while another is positive in the same window. "Re-entry share" = lock-engine gain from rows admitted only in the rule world / total gain (the S2 artefact: 76% for the pooled first-stop cut = 17.4k of 23.0k, reproduced here to the dollar); "net admit share" = (re-entry in + admit-out)/total. "Top-5 weeks" = the 5 best weekly deltas / total gain in the window (L6M has 28 weeks).
 

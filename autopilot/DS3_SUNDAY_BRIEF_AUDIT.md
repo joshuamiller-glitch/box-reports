@@ -137,3 +137,48 @@ S73 table values (+20.2/+17.6/+18.4/+3.8/+2.2, STACK/SPLIT_2 l.150); Asia-cut va
 
 ## E. Re-run triggers
 Re-run this audit when (i) the brief is rewritten (v3), (ii) DS3_UNIT_AUDIT.md lands (items 10, 13, 15-18, 22-24 may resolve into a single table), (iii) DS3_ER_SIZER_ROBUSTNESS.md lands (items 15, 40), (iv) CF-COMBO reports.
+
+---
+# RE-AUDIT of DS3_SUNDAY_BRIEF.md v3 (1,663 words) - BA-1 pass 2, 2026-10-31 (appended; pass 1 above kept)
+Sources added: DS3_UNIT_AUDIT.md (UA-1), SS-2 re-read, C7/C9, MORNING quotes. Brief not edited.
+
+## Verdict (pass 2)
+**Mostly safe; needs 9 small corrections (none changes a decision, 3 are medium).** Pass-1 items 1-4, 5, 9, 12, 28, 29, 32-35, 41 are fixed: SS-2 headline, hazards on page 1 with read times, K6 add shown as a user decision with both sides, 8-line skip in SHADOW, "Needs D6" column, 8 questions with defaults. UA-1 figures you asked about:
+
+| figure in v3 | UA-1 source | status |
+|---|---|---|
+| split integer live lots +4.8k N / +5.3k LIVE-CAL | KEY POINT 7: same, +0.25 pt slippage; +4.7k/+3.7k at +0.45 stress | matches |
+| per-book list S6 +3.3, W6 +3.7, U6 +3.0, H6 +0.8, P6 +0.8, K6 -3.0 | KEY POINT 7: matches, but it is the C7 series at **research lots** (c=1); the sum at live lots is the +4.8k | numbers OK, lot set wrong in v3 (see N1) |
+| Native stop +4.1k research (CI +2.8..+6.0k) vs +1.5k live (CI +0.9..+2.3k) | KEY POINT 6: same; "live" = S6 4.26 (research/2.35, ST not live) + H6 4/2 | matches; add "S6 at research/2.35" |
+| ER sizer planned +8.5k L6M / -9.2k PRE; sized +37.3k / +11.2k | KEY POINT 3: S73, N, research lots, as coded (planned +8.5/+10.1/-9.2/+6.5; sized +37.3/+32.8/+11.2/-0.7) | matches; conflicts with the C-table ER row (N2) |
+| re-entry shares split 47-55, PE 58, Asia 71, 2nd-signal 73, 8-line 85, KB 88 | KEY POINT 4: gross/net as listed | matches; ER sizer (200% gross, net 32%) omitted (N4) |
+| top-5 weeks >50%, noise 62-170% | KEY POINT 5 | matches (stop-join 43% and split 66% vs 62% are the exceptions, not said) |
+
+## New discrepancies
+N1. **M. B row (l.~21) "at integer live lots ... +4.8k/+5.3k, per book L6M: S6 +3.3, W6 +3.7, ... K6 -3.0".** The per-book values are research lots; S6 and W6 are not live. Say "per book at research lots c=1" or drop S6/W6. The sum +4.8k is at live lots (UA-1: ST/WT at research/2.35).
+N2. **M. Two different numbers for the same cell.** Hazard 3: ER sizer planned-lot R +8.5k L6M / -9.2k PRE (UA-1, sp_lib S73). C-table ER row: "stack +13.3k L6M, -10.9k PRE (planned-lot R)" (TREND_2, equal-risk, tg_stack wrapper base). UA-1 KEY POINT 10: the wrappers' 70/30 base is not the sp_lib S73 (base stack 72.1k vs 79.1k; equal-risk planned +10.0k here vs +13.3k reported). Pick UA-1's engine for the brief; label the other "TREND_2 wrapper, equal-risk". Also "live L6M ~ +5.7k" (13.3/2.35) vs UA-1 convention B (engine at live-session lots) ER sizer 8.6k vs A (/2.35) 3.6k: the /2.35 figure shown is not UA-1's. Same issue for the 8-line skip: v3 shows +28.3k/+25.7k (ZA engine) but UA-1 reproduces +15.4k L6M / +12.4k HOLD on the common engine (live B 3.9k vs A 6.6k; v3 shows ZA's +6.6k). The re-entry share 85% comes from the UA-1 engine, the dollars from ZA: mixed engines in one row. Give both or use UA-1's.
+N3. **M. Hazard 3 mixes lot sets in one sentence.** "+18.5k vs +9.8k with base-lot locks, +4.6k" are the live composite (SS-2); "+8.5k / -9.2k ... +37.3k / +11.2k" are the ER sizer alone at research lots. Add "(composite, live lots)" and "(ER sizer alone, research lots)".
+N4. **L. Hazard 4** omits the ER sizer (the largest piece: 200% gross re-entry, 32% net; top-5 weeks 260%). It is the piece the headline rests on; add "ER sizer 200% gross / 32% net".
+N5. **M. Section A mixes SS (4-book, static) and SS-2 (8-book, causal) statistics under the SS-2 headline.** Contributions "split +2.6k, zone +1.3k, PE +3.3k, Asia -1.1k", "shuffled-ER +54k/+9k", "Sharpe 0.40->0.93", "9 of 12 quarters", "correlation -0.43", "RW 0.79" are all SS (K6 P6 U6 H6 only, static governors). Label "(SS, 4 live books, static governors)" or drop Sharpe/quarters/corr. Also A says Native "-2.3k with the 2.45 join" but UA-1 Native is ST+HM only; SS-2 applies 1.28 to all 8 books: add "composite applies Native to all books; the measured stop gap is ST/HM only".
+N6. **M. Stop-join row.** "p 0.055" belongs to LJ's fill-sample difference (z 1.6, +4.4k); UA-1's research CI (+2.8..+6.0k) excludes 0 and is a different test. Label "p 0.055 = join-vs-Native stop-cost difference (n 21 vs 8)". Also "(ST, HM)" row but live ST is 0 (S6 research/2.35).
+N7. **L. Lot set missing on rows:** Asia cut ("+11.9/+13.2/+11.4/+2.0/+2.8" = research lots S73), second-signal skip ("70/30 base +7.7/..." research), 90/10-at-8 line (+14.9k/+10.6k vs +8.6k/+3.9k: research lots, LIVE-CAL), ES row second clause fine. The "Others" line (HM 15-s etc.) has no numbers: ok. Every other row states its lots.
+N8. **L. Open question 8 "MBO pull (about $213 for one month)" is wrong.** MORNING quotes: one month $32.11; L6M (2025-08-01..2026-02-06) $213.67 (127.5 GB); HOLD-only (all contracts) $295.77; remaining budget ~$811. Write "about $32 for one month, $214 for L6M". Q4 default "[per your call]" is not a default: use "[delete the P6 line, matching SS-2]" or "[keep market, drop the P6 5/2 from the composite]".
+N9. **L. Unverified in v3 D-line:** "INFO: break-even IC 3-11x" (found in DS3_L2_UNTIL_FOUND l.114, ok), "0 of 60,584 cells" and "<= ~0.02 IC" (not found in files I opened; INFO C2 prereg says measured 0.02-0.03 and 4-6x short). Cite or soften to "0.02-0.03".
+N10. **L. UA-1 caveats not in v3:** (a) UA-1 key point 2 sign flips: second-signal skip HOLD -0.0k on S73 N live lots; HM FVG HOLD negative in 9 of 10 live-lot cells; ES N1 sizer planned +7.4k vs sized -1.1k; ER(20)>=0.3 SKIP -14.7k L6M on S73 (v3's TG-1 row was dropped, fine); (b) UA-1 point 11: M6/A6/O6 have no row in the six-book lock engine, whereas SS-2/v3 value M6 and A6 (+0.7k): note "8-book engine = SS-2 only"; (c) P6=PE assumption (FOLLOWUP_BRIEF writes "PB3B"): already Q6, keep.
+
+## "Needs D6" column check
+Correct against THP v2/THL2_NEEDS: ER sizer (ER on 5-min closes, lotmult, running-max locks), KB 0.20 (same), PE (45-s candles; "hold-until-confirmation" is a new order type - say so), 8-line file, Asia cut (stack state + cross-book exit), second-signal (prior-trade state), stop-join (order type), ES (forming bar). Gaps: ON split row has no column (fine, all tokens exist, THP l.20); the "Others" line lacks needs (HM FVG = daily HTF FVG file). FORWARD_SHADOW_SPEC says R2/R3/R5/R6/R7 "need only existing D6 state"; v3 says the opposite. Ask the D6 owner once and delete one claim.
+
+## One-page cut proposal (1,663 -> about 1,050 words, nothing lost from hazards or headline table)
+Keep verbatim: header units line, the 4 hazards, the headline table, the governor-readings line, the one-change sentence, ON row 1 + K6 row, open questions 1-8.
+Cut or move to MORNING.md / a page 2 pointer:
+1. Sources-finished/not-finished list (~70 words) -> "Sources: see MORNING.md; unfinished: ER-1, CF-COMBO, NTE-1, SD-GAP, SH-2."
+2. Section A contributions sentence, Sharpe/quarters/correlation/RW (~70 words) -> keep only "ER sizer is the largest piece; split +2.6k L6M".
+3. SHADOW rows: delete the second-signal skip, ES-led and "Others" rows from the table (move to one line "also tested, not worth shadowing: second-signal skip, ES-led sizer, HM FVG, DN, HM 15-s"); trim the PE and 8-line evidence cells to the headline numbers (~250 words saved).
+4. Section D OFF list to 3 lines (exits/L2 rules; bars/zones/location; risk-off/halt/quit) (~110 words saved).
+5. Drop the 90/10-at-8 paragraph to one clause "alternative: 90/10-at-8 (P6 6/1 only), see SPLIT_2" (~35 words).
+6. Hazard 4 detail and hazard 1 parenthetical: shorten wording but keep all numbers (~40 words).
+Put "Needs D6" as a short column but cut "Why shadow" to 5-8 words per row.
+
+## Pass-2 summary
+Safe to read after N1-N3, N5, N6, N8 are fixed (all one-line label or number edits). Re-run when ER-1 lands or v4 is written.
