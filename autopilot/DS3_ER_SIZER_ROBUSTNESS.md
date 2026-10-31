@@ -6,23 +6,23 @@ Research only. No live/execution/chart change. UNTOUCHED never read (every frame
 
 ## 0. Page 1: per-book verdict and what the sizer is
 
-**Verdict rule (fixed before the placebo draws were read, stated here so it cannot move):** per book, sizer on that book only, integer live lots, running-max governors, in-stack, L6M and HOLD. KEEP = real delta above the p95 of the shuffled-ER placebo in BOTH L6M and HOLD, both deltas positive, and PRE+X' sum not negative. DROP = at or below the placebo mean in L6M or HOLD, or non-positive in both. NO-OP = the sizer changes no live lot of the book (none at the coded x0.5/x1.5; see section 6). Otherwise INCONCLUSIVE with the lean. With MDEs of 5-25k per book most books cannot be verified either way; the table says so rather than forcing a verdict. Placebo = ER multiplier shuffled within book x session x quarter strata (same rounding, same governors), 42 draws per book.
+**Verdict rule (fixed before the placebo draws were read, stated here so it cannot move):** per book, sizer on that book only, integer live lots, running-max governors, in-stack, L6M and HOLD. KEEP = real delta above the p95 of the shuffled-ER placebo in BOTH L6M and HOLD, both deltas positive, and PRE+X' sum not negative. DROP = at or below the placebo mean in L6M or HOLD, or non-positive in both. NO-OP = the sizer changes no live lot of the book (none at the coded x0.5/x1.5; see section 6). Otherwise INCONCLUSIVE with the lean. With MDEs of 5-25k per book most books cannot be verified either way; the table says so rather than forcing a verdict. Placebo = ER multiplier shuffled within book x session x quarter strata (same rounding, same governors), 200 draws per book.
 
 | book | live lot | sizer on this book only, running-max, L6M / HOLD / PRE / X' (MDE L6M) | same, planned-lot governors L6M / HOLD | lot-factor-matched uniform line L6M / HOLD | shuffled-ER placebo mean L6M / HOLD (p95 L6M) | p(placebo >= real) L6M / HOLD | VERDICT | why |
 |---|---|---|---|---|---|---|---|---|
-| ST | research/2.35 (not live) | +3.2 / +3.8 / +4.5 / +0.2 (9.9) | -0.2 / +0.6 | -1.1 / -0.9 | -2.1 / -1.5 (+1.6) | 0.023 / 0.023 | **KEEP** | above the shuffled-ER p95 in L6M and HOLD, PRE+X' +4.7 |
-| H6 | H6 4 Asia / 2 NY-AM | -0.2 / -0.2 / +0.0 / -0.4 (3.5) | -0.2 / -0.1 | -1.1 / -0.9 | -1.1 / -0.9 (+0.7) | 0.233 / 0.326 | **DROP** | at or below the shuffled-ER mean (L6M -0.2 vs placebo -1.1, HOLD -0.2 vs -0.9) |
-| WT | research/2.35 (not live) | +3.1 / +3.4 / +1.7 / +0.5 (4.5) | +2.3 / +2.1 | -0.5 / -0.4 | +0.5 / +1.1 (+3.4) | 0.093 / 0.093 | **INCONCLUSIVE (lean keep)** | positive vs the placebo mean (L6M +2.6, HOLD +2.3) but inside the placebo p95 / not both windows |
-| K6 | K6 2 (Asia/London/NY-AM/NY-PM) | +2.1 / +1.7 / +0.1 / +0.8 (4.7) | -0.7 / -0.7 | -0.3 / -0.2 | -0.5 / -0.4 (+1.9) | 0.070 / 0.070 | **KEEP** | above the shuffled-ER p95 in L6M and HOLD, PRE+X' +0.9 |
-| U6 | U6 4 (Asia/London) | -0.8 / -0.3 / -0.0 / +0.0 (2.9) | -0.2 / -0.1 | +0.1 / +0.1 | -0.3 / -0.3 (+1.2) | 0.744 / 0.581 | **DROP** | at or below the shuffled-ER mean (L6M -0.8 vs placebo -0.3, HOLD -0.3 vs -0.3) |
-| P6 | P6 7 (Asia/London/NY-AM) | +6.0 / +6.3 / +3.2 / -0.2 (12.6) | +2.2 / +3.3 | +0.9 / +0.9 | +0.5 / +0.9 (+5.8) | 0.070 / 0.047 | **KEEP** | above the shuffled-ER p95 in L6M and HOLD, PRE+X' +2.9 |
-| ALL six |  | +12.5 / +13.7 / +9.5 / +0.8 (23.5) | +2.7 / +4.8 | -2.0 / -1.4 | -2.5 / -0.7 (+3.9) | 0.023 / 0.023 | **KEEP** | above the shuffled-ER p95 in L6M and HOLD, PRE+X' +10.3 |
+| ST | research/2.35 (not live) | +3.2 / +3.8 / +4.5 / +0.2 (9.9) | -0.2 / +0.6 | -1.1 / -0.9 | -1.7 / -1.1 (+2.8) | 0.030 / 0.030 | **KEEP** | above the shuffled-ER p95 in L6M and HOLD, PRE+X' +4.7 |
+| H6 | H6 4 Asia / 2 NY-AM | -0.2 / -0.2 / +0.0 / -0.4 (3.5) | -0.2 / -0.1 | -1.1 / -0.9 | -1.4 / -1.2 (+0.7) | 0.139 / 0.189 | **DROP** | at or below the shuffled-ER mean (L6M -0.2 vs placebo -1.4, HOLD -0.2 vs -1.2) |
+| WT | research/2.35 (not live) | +3.1 / +3.4 / +1.7 / +0.5 (4.5) | +2.3 / +2.1 | -0.5 / -0.4 | +0.5 / +0.9 (+2.9) | 0.050 / 0.050 | **KEEP** | above the shuffled-ER p95 in L6M and HOLD, PRE+X' +2.2 |
+| K6 | K6 2 (Asia/London/NY-AM/NY-PM) | +2.1 / +1.7 / +0.1 / +0.8 (4.7) | -0.7 / -0.7 | -0.3 / -0.2 | -0.5 / -0.5 (+1.9) | 0.035 / 0.055 | **KEEP** | above the shuffled-ER p95 in L6M and HOLD, PRE+X' +0.9 |
+| U6 | U6 4 (Asia/London) | -0.8 / -0.3 / -0.0 / +0.0 (2.9) | -0.2 / -0.1 | +0.1 / +0.1 | -0.1 / -0.1 (+1.4) | 0.766 / 0.637 | **DROP** | at or below the shuffled-ER mean (L6M -0.8 vs placebo -0.1, HOLD -0.3 vs -0.1) |
+| P6 | P6 7 (Asia/London/NY-AM) | +6.0 / +6.3 / +3.2 / -0.2 (12.6) | +2.2 / +3.3 | +0.9 / +0.9 | +0.1 / +0.6 (+6.2) | 0.065 / 0.060 | **INCONCLUSIVE (lean keep)** | positive vs the placebo mean (L6M +5.9, HOLD +5.7) but inside the placebo p95 / not both windows |
+| ALL six |  | +12.5 / +13.7 / +9.5 / +0.8 (23.5) | +2.7 / +4.8 | -2.0 / -1.4 | -2.8 / -1.1 (+5.7) | 0.005 / 0.005 | **KEEP** | above the shuffled-ER p95 in L6M and HOLD, PRE+X' +10.3 |
 
 A6 (PB, live 1) and M6 (MV, live 2) are not in the six-book sizer; their rows are in section 2e (A6 1 lot becomes 1/2 lots at the coded pair, so it is NOT a no-op on the high side; it IS a no-op on the low side, 0.5 rounds up to 1).
 
 **What the sizer is, in six lines (all numbers $k/wk of the stack, in-stack, integer live+ lots, MDE in brackets):**
 1. As coded, with the causal running-max governors: L3M +15.3 (39.8), L6M +12.5 (23.5), HOLD +13.7 (21.5), PRE +9.5 (11.8), X' +0.8 (10.9). L6M and HOLD are INSIDE their MDE; PRE is above its MDE (11.8); X' is zero. Static (non-causal) reading +14.1 (22.9) L6M; planned-lot governors +2.7 (19.6) L6M / +4.8 (17.7) HOLD / -2.4 (12.0) PRE / +3.9 (11.4) X'. About +9.8k of the +12.5k L6M gain exists only when the day/week locks are multiplied (the lock-multiplier effect), the lot ratio on planned-lot locks is worth +2.7k.
-2. Information vs leverage vs lock looseness (whole sizer, running-max): lot-factor-matched uniform scaling -2.0k L6M (the sizer lowers the average lot to 0.85-1.05 of planned, so leverage alone LOSES money); shuffled-ER placebo mean -2.5k L6M (sd 4.2, p95 +3.9, p(placebo >= real) 0.023), HOLD -0.7k (p 0.023); PRE -3.1k vs real +9.5k, X' +1.8k vs +0.8k. With planned-lot governors the placebo mean is -8.8k L6M (p 0.024); with the static sized governors -1.9k (p 0.024). 42 draws.
+2. Information vs leverage vs lock looseness (whole sizer, running-max): lot-factor-matched uniform scaling -2.0k L6M (the sizer lowers the average lot to 0.85-1.05 of planned, so leverage alone LOSES money); shuffled-ER placebo mean -2.8k L6M (sd 5.1, p95 +5.7, p(placebo >= real) 0.005), HOLD -1.1k (p 0.005); PRE -3.6k vs real +9.5k, X' +1.2k vs +0.8k. With planned-lot governors the placebo mean is -9.2k L6M (p 0.015); with the static sized governors -2.1k (p 0.005). 200 draws.
 3. Concentration and stability: 10 of 12 quarters positive, the top-5 L6M weeks carry 107% of the L6M gain (mean without them -1.1k/wk); first/second half of L6M +9.2k / +15.8k.
 4. Feature-definition risk: the ER must be the ER of the 20-bar window ending at the LAST CLOSED 5-min bar; 20.8% of signals fire at the exact second a 5-min bar closes (the closing bar is then 'current'). Requiring the bar to be closed strictly before the signal second changes 3.6% of the classes and costs -0.6k L6M. Using the FORMING bar (1-s price as its close) gives +13.2k L6M (PRE +7.9k). A one-bar-stale ER (D6 using the bar BEFORE the last closed one) gives +4.2k L6M: the sizer loses +8.3k of its +12.5k. A one-bar LOOK-AHEAD would show +21.6k, the size of an accidental leak.
 5. Integer lots: at the coded x0.5/x1.5 and round-half-up the sizer is NOT a no-op for any live book: K6 2 -> 1/3, H6 NY-AM 2 -> 1/3, U6 4 -> 2/6, H6 Asia 4 -> 2/6, P6 7 -> 4/11, A6 1 -> 1/2 (low side unchanged). It IS a no-op for A6 at 0.7/1.3, 0.75/1.25 and 0.5/1.0, and for K6/H6-NY-AM/M6 on the low side at 0.75/1.25 and on the high side at 0.5/1.0. Rounding rule matters: half-up +12.5 (23.5) L6M, half-even +10.5 (22.3), floor +9.2 (24.0), fractional (no rounding) +9.7 (24.0) (ceil equals half-up here).
@@ -413,25 +413,25 @@ Definitions. Real = the coded sizer on that book only (other books unsized). Uni
 
 | book | ER sizer: L6M | HOLD | PRE | X' | uniform (lot-factor-matched) L6M | HOLD | PRE | X' | shuffled-ER placebo mean L6M (p95) | HOLD | PRE | X' | draws | real minus placebo mean L6M / HOLD | p (placebo >= real) L6M / HOLD |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ST | +3.2 (9.9) | +3.8 (8.8) | +4.5 (5.1) | +0.2 (4.2) | -1.1 | -0.9 | -0.5 | -0.1 | -2.1 (+1.6) | -1.5 | -1.1 | +0.0 | 42 | +5.3 / +5.3 | 0.023 / 0.023 |
-| H6 | -0.2 (3.5) | -0.2 (3.2) | +0.0 (2.5) | -0.4 (1.7) | -1.1 | -0.9 | -0.3 | +0.0 | -1.1 (+0.7) | -0.9 | +0.0 | +0.1 | 42 | +0.9 / +0.7 | 0.233 / 0.326 |
-| WT | +3.1 (4.5) | +3.4 (4.5) | +1.7 (3.4) | +0.5 (2.4) | -0.5 | -0.4 | -0.4 | -0.1 | +0.5 (+3.4) | +1.1 | +0.1 | +0.7 | 42 | +2.6 / +2.3 | 0.093 / 0.093 |
-| K6 | +2.1 (4.7) | +1.7 (4.2) | +0.1 (2.3) | +0.8 (2.0) | -0.3 | -0.2 | -0.3 | +0.0 | -0.5 (+1.9) | -0.4 | +0.2 | +0.1 | 42 | +2.6 / +2.1 | 0.070 / 0.070 |
-| U6 | -0.8 (2.9) | -0.3 (2.6) | -0.0 (1.7) | +0.0 (1.7) | +0.1 | +0.1 | +0.2 | +0.2 | -0.3 (+1.2) | -0.3 | +0.3 | +0.3 | 42 | -0.4 / -0.1 | 0.744 / 0.581 |
-| P6 | +6.0 (12.6) | +6.3 (11.8) | +3.2 (7.2) | -0.2 (6.6) | +0.9 | +0.9 | +0.6 | +0.2 | +0.5 (+5.8) | +0.9 | -1.8 | +0.6 | 42 | +5.5 / +5.5 | 0.070 / 0.047 |
-| ALL six | +12.5 (23.5) | +13.7 (21.5) | +9.5 (11.8) | +0.8 (10.9) | -2.0 | -1.4 | -0.7 | +0.3 | -2.5 (+3.9) | -0.7 | -3.1 | +1.8 | 42 | +15.0 / +14.4 | 0.023 / 0.023 |
+| ST | +3.2 (9.9) | +3.8 (8.8) | +4.5 (5.1) | +0.2 (4.2) | -1.1 | -0.9 | -0.5 | -0.1 | -1.7 (+2.8) | -1.1 | -1.0 | -0.0 | 200 | +4.9 / +4.9 | 0.030 / 0.030 |
+| H6 | -0.2 (3.5) | -0.2 (3.2) | +0.0 (2.5) | -0.4 (1.7) | -1.1 | -0.9 | -0.3 | +0.0 | -1.4 (+0.7) | -1.2 | -0.1 | +0.1 | 200 | +1.2 / +1.0 | 0.139 / 0.189 |
+| WT | +3.1 (4.5) | +3.4 (4.5) | +1.7 (3.4) | +0.5 (2.4) | -0.5 | -0.4 | -0.4 | -0.1 | +0.5 (+2.9) | +0.9 | -0.2 | +0.4 | 200 | +2.7 / +2.4 | 0.050 / 0.050 |
+| K6 | +2.1 (4.7) | +1.7 (4.2) | +0.1 (2.3) | +0.8 (2.0) | -0.3 | -0.2 | -0.3 | +0.0 | -0.5 (+1.9) | -0.5 | +0.0 | +0.2 | 200 | +2.6 / +2.2 | 0.035 / 0.055 |
+| U6 | -0.8 (2.9) | -0.3 (2.6) | -0.0 (1.7) | +0.0 (1.7) | +0.1 | +0.1 | +0.2 | +0.2 | -0.1 (+1.4) | -0.1 | +0.3 | +0.2 | 200 | -0.7 / -0.3 | 0.766 / 0.637 |
+| P6 | +6.0 (12.6) | +6.3 (11.8) | +3.2 (7.2) | -0.2 (6.6) | +0.9 | +0.9 | +0.6 | +0.2 | +0.1 (+6.2) | +0.6 | -1.8 | +0.3 | 200 | +5.9 / +5.7 | 0.065 / 0.060 |
+| ALL six | +12.5 (23.5) | +13.7 (21.5) | +9.5 (11.8) | +0.8 (10.9) | -2.0 | -1.4 | -0.7 | +0.3 | -2.8 (+5.7) | -1.1 | -3.6 | +1.2 | 200 | +15.4 / +14.8 | 0.005 / 0.005 |
 
 ### 2a. planned-lot governors
 
 | book | ER sizer: L6M | HOLD | PRE | X' | uniform (lot-factor-matched) L6M | HOLD | PRE | X' | shuffled-ER placebo mean L6M (p95) | HOLD | PRE | X' | draws | real minus placebo mean L6M / HOLD | p (placebo >= real) L6M / HOLD |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ST | -0.2 (10.1) | +0.6 (8.8) | -1.5 (5.1) | +2.2 (4.4) | -1.4 | -0.9 | +0.6 | +0.4 | -4.7 (-0.2) | -3.9 | -1.5 | +0.4 | 41 | +4.5 / +4.5 | 0.095 / 0.071 |
-| H6 | -0.2 (3.9) | -0.1 (3.5) | +0.2 (1.9) | -0.3 (1.7) | -1.4 | -1.2 | -0.0 | +0.0 | -1.3 (+0.1) | -1.1 | +0.1 | +0.1 | 41 | +1.1 / +1.0 | 0.238 / 0.238 |
-| WT | +2.3 (5.3) | +2.1 (4.9) | +1.7 (3.1) | +0.4 (2.7) | +0.2 | -0.1 | +0.2 | -0.6 | +0.6 (+2.9) | +0.7 | +0.5 | +0.6 | 41 | +1.7 / +1.5 | 0.167 / 0.190 |
-| K6 | -0.7 (4.7) | -0.7 (4.1) | +0.4 (2.2) | +0.9 (2.0) | -0.3 | -0.4 | +0.0 | +0.3 | -0.9 (+1.4) | -0.9 | -0.5 | +0.2 | 41 | +0.2 / +0.2 | 0.429 / 0.405 |
-| U6 | -0.2 (2.6) | -0.1 (2.4) | -0.5 (1.8) | +0.0 (1.7) | +0.1 | +0.1 | +0.1 | +0.2 | -0.2 (+1.3) | -0.2 | +0.1 | +0.3 | 41 | -0.1 / +0.1 | 0.548 / 0.476 |
-| P6 | +2.2 (11.7) | +3.3 (10.7) | -2.5 (7.3) | +0.7 (6.5) | +0.1 | +0.2 | -0.2 | -0.8 | -2.5 (+3.0) | -1.9 | -2.5 | -0.3 | 41 | +4.8 / +5.2 | 0.119 / 0.048 |
-| ALL six | +2.7 (19.6) | +4.8 (17.7) | -2.4 (12.0) | +3.9 (11.4) | -3.1 | -2.6 | +0.7 | -0.6 | -8.8 (-1.0) | -7.1 | -5.0 | +1.2 | 41 | +11.6 / +11.9 | 0.024 / 0.024 |
+| ST | -0.2 (10.1) | +0.6 (8.8) | -1.5 (5.1) | +2.2 (4.4) | -1.4 | -0.9 | +0.6 | +0.4 | -4.3 (+0.3) | -3.6 | -1.7 | +0.3 | 200 | +4.1 / +4.2 | 0.109 / 0.060 |
+| H6 | -0.2 (3.9) | -0.1 (3.5) | +0.2 (1.9) | -0.3 (1.7) | -1.4 | -1.2 | -0.0 | +0.0 | -1.6 (+0.2) | -1.4 | -0.0 | +0.1 | 200 | +1.4 / +1.3 | 0.144 / 0.129 |
+| WT | +2.3 (5.3) | +2.1 (4.9) | +1.7 (3.1) | +0.4 (2.7) | +0.2 | -0.1 | +0.2 | -0.6 | +0.3 (+2.7) | +0.4 | +0.0 | +0.3 | 200 | +2.0 / +1.7 | 0.114 / 0.114 |
+| K6 | -0.7 (4.7) | -0.7 (4.1) | +0.4 (2.2) | +0.9 (2.0) | -0.3 | -0.4 | +0.0 | +0.3 | -0.9 (+1.4) | -0.9 | -0.5 | +0.3 | 200 | +0.2 / +0.3 | 0.413 / 0.348 |
+| U6 | -0.2 (2.6) | -0.1 (2.4) | -0.5 (1.8) | +0.0 (1.7) | +0.1 | +0.1 | +0.1 | +0.2 | +0.0 (+1.4) | -0.0 | +0.1 | +0.2 | 200 | -0.2 / -0.0 | 0.622 / 0.567 |
+| P6 | +2.2 (11.7) | +3.3 (10.7) | -2.5 (7.3) | +0.7 (6.5) | +0.1 | +0.2 | -0.2 | -0.8 | -2.9 (+3.0) | -2.1 | -2.3 | -0.3 | 200 | +5.2 / +5.4 | 0.075 / 0.050 |
+| ALL six | +2.7 (19.6) | +4.8 (17.7) | -2.4 (12.0) | +3.9 (11.4) | -3.1 | -2.6 | +0.7 | -0.6 | -9.2 (-1.0) | -7.5 | -5.6 | +0.9 | 200 | +12.0 / +12.2 | 0.015 / 0.015 |
 
 
 ### 2b. Day-static governors, ALL six books (the reading in which the shuffled placebo was reported to earn most)
@@ -439,20 +439,20 @@ Definitions. Real = the coded sizer on that book only (other books unsized). Uni
 | | L6M | HOLD | PRE | X' |
 |---|---|---|---|---|
 | real (static) | +14.1 | +14.2 | +8.1 | +1.0 |
-| shuffled-ER placebo mean | -1.9 | -1.1 | -2.4 | +1.7 |
-| placebo p95 | +5.4 | +4.7 | +3.6 | +5.9 |
-| p(placebo >= real) | 0.024 | 0.024 | 0.024 | 0.595 |
+| shuffled-ER placebo mean | -2.1 | -1.3 | -2.9 | +1.2 |
+| placebo p95 | +5.7 | +6.3 | +2.8 | +6.2 |
+| p(placebo >= real) | 0.005 | 0.005 | 0.005 | 0.532 |
 
-Reconciliation with DS3_SUNDAY_STACK: its 'shuffled-ER placebo earns +9k live / +54k research' is the shuffled composite measured against the AS-IS stack, so it contains the five other pieces. Here the placebo is measured against the same composite WITHOUT the ER sizer. The composite without ER is itself +20.8k L6M / +18.0k HOLD / +6.8k PRE / +8.6k X' vs the as-is stack (live+ integer lots), which is where the placebo's 'earnings' come from; relative to the no-ER composite the placebo is -1.9k L6M static / -2.5k running-max.
+Reconciliation with DS3_SUNDAY_STACK: its 'shuffled-ER placebo earns +9k live / +54k research' is the shuffled composite measured against the AS-IS stack, so it contains the five other pieces. Here the placebo is measured against the same composite WITHOUT the ER sizer. The composite without ER is itself +20.8k L6M / +18.0k HOLD / +6.8k PRE / +8.6k X' vs the as-is stack (live+ integer lots), which is where the placebo's 'earnings' come from; relative to the no-ER composite the placebo is -2.1k L6M static / -2.8k running-max.
 
 
 ### 2c. Alone on the as-is stack (the SUNDAY_STACK headline reading), all six books, three governor readings
 
 | governor | real L6M / HOLD / PRE / X' | matched uniform L6M / HOLD | shuffled-ER mean L6M / HOLD / PRE / X' (p95 L6M) | draws | p(placebo >= real) L6M / HOLD |
 |---|---|---|---|---|---|
-| causal running-max (headline) | +15.3 / +16.6 / +0.6 / +1.4 | -1.7 / -1.1 | -1.0 / +0.8 / -5.7 / +0.7 (+5.3) | 41 | 0.024 / 0.024 |
-| planned-lot (base) | +11.7 / +12.5 / -6.0 / +5.1 | +1.9 / +1.6 | -4.4 / -3.6 / -4.6 / +2.4 (+3.0) | 41 | 0.024 / 0.024 |
-| day-static sized (non-causal) | +18.0 / +16.8 / +2.6 / +1.8 | n/a | -0.8 / -0.2 / -3.4 / +1.8 (+5.3) | 39 | 0.025 / 0.025 |
+| causal running-max (headline) | +15.3 / +16.6 / +0.6 / +1.4 | -1.7 / -1.1 | -0.5 / +1.2 / -6.3 / +0.1 (+9.7) | 200 | 0.015 / 0.010 |
+| planned-lot (base) | +11.7 / +12.5 / -6.0 / +5.1 | +1.9 / +1.6 | -4.6 / -3.7 / -5.2 / +1.7 (+5.1) | 200 | 0.005 / 0.005 |
+| day-static sized (non-causal) | +18.0 / +16.8 / +2.6 / +1.8 | n/a | -0.4 / +0.2 / -4.2 / +1.3 (+8.8) | 200 | 0.010 / 0.010 |
 
 ### 2d. Pair-by-pair: is the gain information or leverage? (all six books, in-stack, threshold 0.30; uniform line at the pair's own per-book lot factors)
 
@@ -493,6 +493,14 @@ For pair 0/1.5 (skip below the threshold) the lot factor is computed over the ba
 | all eight books | runmax | +17.9 (37.6) | +14.2 (22.9) | +14.9 (21.4) | +9.2 (13.0) | +1.8 (11.9) |
 | all eight books | base | +0.1 (30.5) | +1.6 (20.4) | +3.6 (18.7) | -3.0 (12.8) | +4.6 (12.6) |
 | all eight books | sized | +18.9 (37.4) | +15.6 (22.5) | +15.3 (21.4) | +7.7 (14.3) | +1.9 (12.0) |
+
+### 2f. The four LIVE books only (K6 P6 U6 H6; ST and WT unsized, in-stack)
+
+| governor | real L3M | L6M | HOLD | PRE | X' | matched uniform L6M / HOLD / PRE / X' |
+|---|---|---|---|---|---|---|
+| runmax | +8.3 (29.8) | +7.1 (16.4) | +7.5 (15.2) | +3.2 (8.5) | +0.2 (8.2) | -0.4 / -0.2 / +0.2 / +0.5 |
+| base | -3.3 (24.6) | +1.1 (13.9) | +2.4 (12.6) | -2.4 (8.5) | +1.3 (8.2) | -1.5 / -1.2 / -0.1 / -0.3 |
+| sized | +9.9 (29.9) | +8.3 (16.1) | +8.6 (14.9) | +1.6 (9.7) | +0.2 (8.1) | -0.4 / -0.2 / +0.2 / +0.5 |
 
 ## 3. ER feature definition risk (what D6 must compute)
 
