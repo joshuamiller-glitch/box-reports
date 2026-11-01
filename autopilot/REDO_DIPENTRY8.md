@@ -10,7 +10,7 @@ Vectors: out/recent_wins/redo/vec/D8__{DIPENTRY,UF-PROFIT-c1..c4,THPC3}.parquet 
 | UF-PROFIT c2 | 32 | 32 | 32 | 0 | 0.235 -> 0.084 (21 of 32) |
 | UF-PROFIT c3 | 14 | 14 | 14 | 0 | 0.139 -> 0.026 (11 of 14) |
 | UF-PROFIT c4 | 16 | 16 (pts) | 16 in pts | 6 ledger rows (12 more non-ledger cells) also store a lock-engine stack $: NOT extended, see 3 | 0.097 -> -0.038 (7 of 16) |
-| THPC3 profit | 20 | see section 4 | | | |
+| THPC3 profit | 20 | 20 | 20 (bit-exact, rel <= 1e-14) | 0 | 0.531 -> 0.757 pts/trade (18 of 20 positive) |
 Non-ledger cells of the same programs were also run (DIPENTRY 41, UF c1 14, c2 67 of 68, c3 92, c4 32 of 33, THPC3 btab+cusum 76): all tie where a stored value exists.
 
 ## 2. Tie-out (done before scoring)
@@ -24,4 +24,4 @@ Non-ledger cells of the same programs were also run (DIPENTRY 41, UF c1 14, c2 6
 * ENSM, EQR, THPC1, ADDUW B1, FIRST-HOUR-DELTA, EXP2 (b)(d), EXP1 chains: reassigned by the lead, not touched.
 
 ## 4. THPC3 (profit)
-(see below)
+Rebuilt with the program's own scripts (c3_prep, c3_online btab family, c3_cp cusum + c3_run_cp chains, c3_hmm fit_chain/apply_chain), paths and cap only: X_P/X_L (62 features, warm-up scaling unchanged), Xp, path store. One incident: REDO-1's path_off/path_px are in tid order, c3_prep's trade index is entry_ts order; the first run segfaulted in eval_policy (index out of range); path files were permuted to the c3_prep order (own copies, symlinks removed) and everything re-run. Rows built: 76 btab + cusum (adaptive chains and fixed cells, all 10 windows x 4 steps x 2 scopes) and 36 HMM cells (K=3, windows 2w and 1m, all steps/rules); all 112 with a stored value tie the old L3M, usd, n, L6M, HOLD, PRE, X (dM per trade identical; rel <= 1e-14). The 20 ledger rows are all inside this set. Not built (non-ledger, 312 rows): HMM K=2 and the other windows, bocpd, rls/rlog/ogbm online learners, other btab discounts beyond the 4 configs run. (The BTAB run used 4 configs only.)
