@@ -1,115 +1,117 @@
-# DS3_L2CUT_DECISIVE - frozen-definition decisive test of A1's 39 as-is-frame RISK-KEEPs: the L2SL loss cuts, the UF-PROFIT trails and target chooser, and the live loss cut THL L6_a30_r3_w10 (A5, 2026-11-01T02:30Z). SHADOW / NEEDS only, no PASS
+# DS3_L2CUT_DECISIVE - frozen-definition decisive test of A1's 39 as-is-frame RISK-KEEPs: the L2SL loss cuts, the UF-PROFIT trails and target chooser, and the live loss cut THL L6_a30_r3_w10 (A5, 2026-11-01T07:02Z). SHADOW / NEEDS only, no PASS
 
-Prereg `l2vast/ds3/prereg/L2CUT_prereg.md` sha256 `8b6d1ee468b145d79f2becb32924b8f3301b61024838804e8cc0787287d09ef3` (cells file `out/l2cut/cells_frozen.csv` sha256 `50d56f2570433736fcbfea75736e4ceebda8ed8b11ed63b57eb5e4ee84f35792`) + ADDENDUM 1 sha256 `de3b9b700612a61c49279c0eaf12d0460dd8dfb600af67350d4d59b821418629`, all in DECISIONS.md before any statistic. dead_lookup first (`out/l2cut/dead_lookup_before.csv`), append_cells after (program L2CUT; DEAD_CELLS never rebuilt). Code `l2vast/ds3/code/l2cut/`, results `l2vast/ds3/out/l2cut/`. Masks capped 20260206; no post-cap file opened (stack*_daily.npz in uf/loss1 and the 953-day adduw grid not touched). 3 workers, OMP/MKL=1. **Integrity:** PRE and X' were A1's selection windows and A1 already looked at L3M/L6M/HOLD, so this is a CONSISTENCY test on the same data, not a holdout; the statistics were produced once from the frozen spec.
+Prereg `l2vast/ds3/prereg/L2CUT_prereg.md` sha256 `8b6d1ee468b145d79f2becb32924b8f3301b61024838804e8cc0787287d09ef3` (cells file `out/l2cut/cells_frozen.csv` sha256 `50d56f2570433736fcbfea75736e4ceebda8ed8b11ed63b57eb5e4ee84f35792`) + ADDENDUM 1 sha256 `de3b9b700612a61c49279c0eaf12d0460dd8dfb600af67350d4d59b821418629` + ADDENDUM 2 sha256 `645fb0ee7f409b3b4f738c498ddc826b8555ca756603df9c8f04c5bdd5b444e1`, all in DECISIONS.md (the prereg and ADDENDUM 1 before any statistic; ADDENDUM 2 after the headline cell's PL-M and 350 PL-T draws had been seen, as it discloses). dead_lookup first (`out/l2cut/dead_lookup_before.csv`), append_cells after (program L2CUT; DEAD_CELLS never rebuilt). Code `l2vast/ds3/code/l2cut/`, results `l2vast/ds3/out/l2cut/`. Masks capped 20260206; no post-cap file opened (stack*_daily.npz in uf/loss1 and the 953-day adduw grid not touched). 3 workers, OMP/MKL=1. **Integrity:** PRE and X' were A1's selection windows and A1 already looked at L3M/L6M/HOLD, so this is a CONSISTENCY test on the same data, not a holdout; the statistics were produced once from the frozen spec.
 
 ## Verdict (first)
 
-**No cell is a decisive drawdown hedge: 0 of 29 tested cells pass G1-G8 (RISK-KEEP decisive = NO for all). 13 of the 15 primary cells meet the user definition (G1+G2: L6M maxDD cut >= 20% with the mean inside MDE, and PRE and X' agree) in the exact as-is frame, which reproduces A1 to the dollar; none survives the placebo, the leave-episode-out test and the bootstrap.** Shadow / NEEDS only; every failed gate is named per cell in section 9 and on page 1.
+**No cell is a decisive drawdown hedge: 0 of 27 tested cells pass G1-G8 (R1, R2 are reference cells, not candidates) (RISK-KEEP decisive = NO for all). 13 of the 15 primary cells meet the user definition (G1+G2: L6M maxDD cut >= 20% with the mean inside MDE, and PRE and X' agree) in the exact as-is frame, which reproduces A1 to the dollar; none passes the leave-episode-out (all five removed) or the bootstrap in PRE and X', and no L2SL cut beats every placebo in L6M, PRE and X' together.** Shadow / NEEDS only; every failed gate is named per cell in section 9 and on page 1.
 
-Four findings carry the verdict.
-1. **The L2 condition is not what cuts the drawdown for the strongest cells; the -45 pt arm is.** The headline cell H fires on 98% of the engine-taken trades that reach -45 pts (5157 of 5283; S5 90%): it is a -45 pt stop tightening on 60-pt-stop trades. The arm-only reference R2 (cut at -45, no L2 condition at all) gives X' maxDD +48% and ALL +48% against H's +41%; the random arm-cut placebo reproduces H in PRE and X' (see section 3). Only the L6M figure is above the placebo, and it is one week.
-2. **The gain is a lock-engine effect, not a trade P&L effect.** The cut changes the trade P&L by -0.37 pts per fired trade (first-order -0.2k/wk, forfeited targets cost as much as the losses saved), but the exact engine gain is 4.1k/wk: the rule frees the busy filter and the -2R day lock and the engine admits 1603 extra trades (12759 vs 11347 kept, 191 dropped). With the 12R combined week lock (D6 as coded) the same cut gives different numbers (section 6). The whole benefit therefore depends on how the live system accounts the cut exit in its R locks.
+Five findings carry the verdict.
+1. **For the strongest cells the -45 pt arm does most of the work, and the L2 condition beats a plain cut only in the one L6M week.** The headline cell H fires on 98% of the engine-taken trades that reach -45 pts (5157 of 5283; S5 90%): it is a -45 pt stop tightening on 60-pt-stop trades. Against random trades cut at the plain arm crossing (PL-M) H ranks L6M 100% / PRE 69% / X' 1%, and against random trades cut at the same time-since-arm as the real fires (PL-A, ADDENDUM 2) 100% / 62% / 30%; only the nulls that cut LATER and deeper than the arm (PL-T absolute time-in-trade 100/98/100%, PL-S random row 100/94/100%) are beaten, which only says that cutting at -45 beats cutting deeper. The arm-only reference R2 (cut at -45, no L2 condition) gives X' maxDD +48% and ALL +48% against H's +41%; in X' a random -45 cut does better than H. S1-S3 and S5 show the same pattern (section 3).
+2. **The gain is a lock-engine effect, not a trade P&L effect.** The cut changes the trade P&L by -0.37 pts per fired trade (first-order -0.2k/wk, forfeited targets cost as much as the losses saved), but the exact engine gain is 4.1k/wk: the engine admits 1603 extra trades (12759 vs 11347 kept, 191 dropped). With the 12R combined week lock (D6 as coded) the same cut gives different numbers (section 6). Holding the same per-trade pts change but NOT moving the exit time gives mean 0.4k/wk instead of 4.1k (PRE cut +29%, X' +22%): the earlier exit (busy filter, day lock, re-entries) carries the mean gain, so the benefit depends on how the live system accounts the cut exit in its R locks and on a position being free for the next signal.
 3. **The L6M drawdown cut is one week.** The as-is L6M maxDD is the single week 2026-01-19..23 (base -88.0k, rule -23.6k for H); with that week removed H still cuts 25% (30.8k to 23.2k) but the 5-episode leave-out in ALL turns the cut to -16%; the bootstrap CI of the L6M maxDD change is [-101.9, -0.5]k, PRE [-161.9, 37.4], X' [-299.2, 25.6] (PRE and X' include zero).
 4. **Execution and the stop-cost basis move the answer.** H keeps its L6M/PRE/X' cuts at +1 s and +3 s, but the benefit shrinks when the cut is priced like a join stop (cost 2.45 instead of the measured 0.995: ALL mean 0.1k/wk, PRE cut +19%) and when the baseline stops are priced at 1.28 (PRE cut +27%, ALL mean 1.9k/wk). In the composite frame H deepens L6M by 40% (A1: no composite keep). Every L2 cell needs book features D6 does not compute (section 8); D6 can run only the price-only cells (R1, R2, the THL L6 family).
 
-**Your live loss cut.** THL L6_a30_r3_w10 is a PRICE-PATH rule (adverse >= 30 pts, 3 of 3 path conditions: secs_ext, recov, eff120; window 10 s), not an L2 rule; D6 already runs it as coded (loss H6 line, HM only). HM scope (the live line): L6M maxDD +15%, PRE +16%, X' -10%, ALL mean 1.0k/wk (MDE 1.6k): not a drawdown keep (G1 fails). POOL6 (A1's scope): L6M -25%, PRE -7%, X' +26%, mean -0.9k/wk, reproducing A1. Its one-step neighbours do not rescue it (section 1b). The '-30 / 5 s / 30x' rule is not a verbatim ledger cell; U1-U4 (A=30, 5 s, pulled multiple 20/100) are the nearest and none is a keep.
+5. **The UF-PROFIT trails and target chooser are exposure cuts, not hedges.** T1-T5 and C1-C2 meet the user definition and T1-T5 pass G3 against the only null defined for them (stratum-matched random reassignment of the same deltas, rank 98-100%; a weak null: it scatters the rule's profit-giving exits over random trades), but all fail G4 and G5, their ALL mean change is -4.9 to 0.9k/wk (T1 -4.5k vs MDE 6.1k), and none is D6-feasible (section 8). C1 and C2 fail G3 in X' (R rank 68% and 56%).
 
-## Page 1 - the table (as-is frame, exact lock engine at live lots, vs the same frame without the rule; maxDD $k before>after (cut) [95% stationary-bootstrap CI of the change, block 4 weeks, 4,000 resamples]; worst-20 weeks (PRE, X', ALL) or worst-5 (L3M, L6M, HOLD) $k before>after [CI of the change]; mean change $k/wk (MDE = 2.8 x SE of the paired weekly delta) [CI]; equal-risk mean change at the engine lot scale c where the rule's ALL worst-20 equals the baseline's; matched-placebo rank = share of 1,000 engine-exact draws with a smaller maxDD cut than the real (M matched trades at the plain arm cut, T random exit time, S same trades random row, R stratum-matched reassignment); recent first)
+**Your live loss cut.** THL L6_a30_r3_w10 is a PRICE-PATH rule (adverse >= 30 pts, 3 of 3 path conditions: secs_ext, recov, eff120; window 10 s), not an L2 rule; D6 already runs it as coded (loss H6 line, HM only). HM scope (the live line): L6M maxDD +15%, PRE +16%, X' -10%, ALL mean 1.0k/wk (MDE 1.6k): not a drawdown keep (G1 fails). POOL6 (A1's scope): L6M -25%, PRE -7%, X' +26%, mean -0.9k/wk, reproducing A1. Its one-step neighbours do not rescue it (section 1b). The '-30 / 5 s / 30x' rule is not a verbatim ledger cell; U1-U4 (A=30, 5 s, pulled multiple 20/100, newext 0/1) are the nearest: U1 (20x, no new-extreme condition) meets the user definition (L6M +31%, PRE +33%, X' +36%) but fires on 98% of the trades that reach -30, has ALL mean -2.6k/wk and is beaten by random -30 cuts (PL-M rank L6M/PRE/X' 22/3/0%); U2-U4 fail G1/G2.
+
+## Page 1 - the table (as-is frame, exact lock engine at live lots, vs the same frame without the rule; maxDD $k before>after (cut) [95% stationary-bootstrap CI of the change, block 4 weeks, 4,000 resamples]; worst-20 weeks (PRE, X', ALL) or worst-5 (L3M, L6M, HOLD) $k before>after [CI of the change]; mean change $k/wk (MDE = 2.8 x SE of the paired weekly delta) [CI]; equal-risk mean change at the engine lot scale c where the rule's ALL worst-20 equals the baseline's; matched-placebo rank = share of 1,000 engine-exact draws with a smaller maxDD cut than the real (M matched trades at the plain arm cut, A random exit time since the arm crossing, T random exit time-in-trade, S same trades random row, R stratum-matched reassignment); recent first)
 
 | cell | window | as-is maxDD before>after (cut) [CI of change] | worst-20 / worst-5 [CI] | mean change (MDE) [CI] | equal-risk mean (MDE) | matched placebo rank | LOEO | live-feasible in D6 (Y/N + gap) | RISK-KEEP |
 |---|---|---|---|---|---|---|---|---|---|
-| S1 L2SL A45 z10>=2 ne0 ICE | L3M | 88.0>34.0 (+61%) [-94.1, 14.2] | -185>-109 (w5) [-19.9, 163.7] | 5.2 (20.9) [-8.0, 17.8] | 6.5 (21.5) c=1.07 | not run |  |  |  |
-|  | L6M | 88.0>34.0 (+61%) [-83.8, 14.2] | -185>-113 (w5) [-17.3, 182.4] | 1.4 (14.0) [-6.6, 10.2] | 3.0 (14.3) c=1.07 | not run |  |  |  |
-|  | HOLD | 144.2>142.7 (+1%) [-67.6, 15.3] | -263>-213 (w5) [-28.6, 160.9] | 1.5 (12.3) [-6.3, 9.4] | 3.1 (12.7) c=1.07 | not run |  |  |  |
-|  | PRE | 162.0>105.6 (+35%) [-134.6, 58.4] | -811>-809 (w20) [-189.5, 207.8] | 1.9 (6.4) [-2.9, 6.8] | 3.4 (6.7) c=1.07 | not run |  |  |  |
-|  | X' | 316.5>218.0 (+31%) [-245.6, 32.0] | -572>-560 (w20) [-150.1, 164.9] | 6.2 (8.6) [1.4, 11.4] | 6.4 (9.1) c=1.07 | not run |  |  |  |
-|  | ALL | 316.5>218.0 (+31%) [-205.8, 43.6] | -1161>-1084 (w20) [-125.0, 298.2] | 3.1 (4.9) [-0.2, 6.7] | 4.3 (5.1) c=1.07 | not run | 4/5 single removals; all-five NO (-21%); L6M worst wk removed -11% | N: pulled_sup10 z-score vs 15-min ET bucket (prior-month log-mean/sd table), icebergAgainst (best-level traded >=10x displayed, 10 s) | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI |
-| S2 L2SL A45 z10>=2 ne0 ICESWP | L3M | 88.0>34.0 (+61%) [-95.6, 14.2] | -185>-110 (w5) [-19.6, 164.9] | 6.3 (20.8) [-7.6, 19.3] | 7.4 (21.3) c=1.06 | not run |  |  |  |
-|  | L6M | 88.0>34.0 (+61%) [-84.1, 14.2] | -185>-113 (w5) [-16.9, 180.5] | 1.8 (14.0) [-6.5, 11.1] | 3.2 (14.2) c=1.06 | not run |  |  |  |
-|  | HOLD | 144.2>154.0 (-7%) [-60.2, 24.0] | -263>-223 (w5) [-38.3, 155.5] | 1.4 (12.3) [-6.6, 9.7] | 2.8 (12.6) c=1.06 | not run |  |  |  |
-|  | PRE | 162.0>104.0 (+36%) [-131.3, 56.3] | -811>-811 (w20) [-187.0, 201.3] | 2.2 (6.3) [-2.4, 7.0] | 3.4 (6.5) c=1.06 | not run |  |  |  |
-|  | X' | 316.5>214.8 (+32%) [-248.6, 29.5] | -572>-563 (w20) [-153.7, 162.6] | 6.3 (8.6) [1.5, 11.3] | 6.4 (9.0) c=1.06 | not run |  |  |  |
-|  | ALL | 316.5>214.8 (+32%) [-206.8, 42.0] | -1161>-1097 (w20) [-136.4, 282.8] | 3.3 (4.8) [-0.1, 6.9] | 4.2 (5.0) c=1.06 | not run | 3/5 single removals; all-five NO (-19%); L6M worst wk removed -11% | N: pulled_sup10 z-score vs 15-min bucket, icebergAgainst AND sweepAgainst10>=1 | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI |
-| S3 L2SL A45 z10>=2 ne0 K2 | L3M | 88.0>34.0 (+61%) [-96.2, 14.2] | -185>-109 (w5) [-19.6, 166.6] | 6.2 (20.9) [-7.6, 19.2] | 7.4 (21.4) c=1.07 | not run |  |  |  |
-|  | L6M | 88.0>34.0 (+61%) [-84.7, 14.2] | -185>-113 (w5) [-16.6, 182.2] | 1.7 (14.0) [-6.4, 10.8] | 3.3 (14.2) c=1.07 | not run |  |  |  |
-|  | HOLD | 144.2>146.9 (-2%) [-64.8, 17.0] | -263>-215 (w5) [-31.5, 159.1] | 1.6 (12.3) [-6.4, 9.9] | 3.1 (12.6) c=1.07 | not run |  |  |  |
-|  | PRE | 162.0>104.0 (+36%) [-130.2, 56.4] | -811>-819 (w20) [-200.9, 196.9] | 2.1 (6.4) [-2.5, 7.0] | 3.5 (6.6) c=1.07 | not run |  |  |  |
-|  | X' | 316.5>214.2 (+32%) [-241.3, 35.8] | -572>-563 (w20) [-152.6, 162.7] | 5.9 (8.2) [1.1, 11.0] | 6.1 (8.8) c=1.07 | not run |  |  |  |
-|  | ALL | 316.5>214.2 (+32%) [-205.4, 42.3] | -1161>-1089 (w20) [-125.5, 289.2] | 3.2 (4.8) [-0.2, 6.8] | 4.2 (5.0) c=1.07 | not run | 3/5 single removals; all-five NO (-19%); L6M worst wk removed -11% | N: pulled_sup10 z-score vs 15-min bucket, K2 = 2 of {icebergAgainst, sweepAgainst10>=1, ownDepth10Rel<=0.5, imb10<=-0.3} (ice, sweep, ownDepth10Rel missing; imb10 present) | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI |
-| S4 L2SL A30 z5>=3 none | L3M | 88.0>64.8 (+26%) [-46.5, 6.1] | -185>-158 (w5) [-7.5, 79.5] | 0.9 (10.6) [-5.1, 6.8] | 1.1 (10.5) c=1.01 | not run |  |  |  |
-|  | L6M | 88.0>64.8 (+26%) [-41.6, 10.6] | -185>-162 (w5) [-16.6, 66.7] | -2.4 (6.9) [-6.8, 2.2] | -2.2 (6.9) c=1.01 | not run |  |  |  |
-|  | HOLD | 144.2>197.8 (-37%) [-24.7, 104.9] | -263>-296 (w5) [-95.8, 68.1] | -4.1 (6.9) [-9.3, 0.9] | -3.9 (6.9) c=1.01 | not run |  |  |  |
-|  | PRE | 162.0>113.9 (+30%) [-112.3, 60.7] | -811>-819 (w20) [-165.1, 149.9] | -0.5 (5.1) [-4.5, 3.8] | -0.2 (5.1) c=1.01 | not run |  |  |  |
-|  | X' | 316.5>252.1 (+20%) [-194.7, 27.1] | -572>-550 (w20) [-82.0, 132.5] | 4.1 (5.3) [0.7, 7.6] | 4.1 (5.3) c=1.01 | not run |  |  |  |
-|  | ALL | 316.5>252.1 (+20%) [-135.1, 85.2] | -1161>-1146 (w20) [-131.5, 170.8] | 0.1 (3.4) [-2.8, 3.0] | 0.3 (3.4) c=1.01 | not run | 2/5 single removals; all-five NO (-31%); L6M worst wk removed -10% | N: pulled_sup5 (5-s cancel size) z-score vs 15-min bucket; A=30 pct<=-0.5 | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI, G6 execution |
-| S5 L2SL A45 mult100@30 ne1 ICE | L3M | 88.0>26.3 (+70%) [-102.9, 24.9] | -185>-93 (w5) [-10.9, 198.3] | 8.9 (25.6) [-8.7, 27.0] | 12.9 (28.3) c=1.19 | not run |  |  |  |
-|  | L6M | 88.0>26.3 (+70%) [-96.4, 0.9] | -185>-93 (w5) [4.0, 207.0] | 3.4 (16.8) [-6.8, 15.7] | 8.1 (17.9) c=1.19 | not run |  |  |  |
-|  | HOLD | 144.2>141.1 (+2%) [-76.0, 12.2] | -263>-194 (w5) [-12.8, 185.1] | 3.3 (14.7) [-6.3, 14.6] | 8.1 (16.4) c=1.19 | not run |  |  |  |
-|  | PRE | 162.0>99.2 (+39%) [-167.9, 32.4] | -811>-711 (w20) [-93.0, 316.8] | 3.3 (7.1) [-1.8, 8.5] | 7.5 (7.8) c=1.19 | not run |  |  |  |
-|  | X' | 316.5>161.3 (+49%) [-335.7, 7.7] | -572>-478 (w20) [-105.4, 271.3] | 7.7 (9.1) [3.3, 11.8] | 8.5 (10.7) c=1.19 | not run |  |  |  |
-|  | ALL | 316.5>161.3 (+49%) [-257.3, 12.8] | -1161>-975 (w20) [-15.9, 414.2] | 4.6 (5.4) [0.8, 8.7] | 8.0 (6.1) c=1.19 | not run | 5/5 single removals; all-five NO (-14%); L6M worst wk removed +15% | N: pulled_sup30 >= 100 x medOwnLevel, newAdvExt30, icebergAgainst | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI |
-| H L2SL A45 mult20@30 ne1 ICE (headline) | L3M | 88.0>24.5 (+72%) [-106.9, 20.0] | -185>-85 (w5) [-4.1, 209.9] | 10.6 (25.8) [-7.5, 29.4] | 13.7 (27.6) c=1.14 | M 100% / T 100% (n=200) |  |  |  |
-|  | L6M | 88.0>23.6 (+73%) [-101.9, -0.5] | -185>-85 (w5) [10.0, 216.0] | 4.6 (16.6) [-5.8, 17.3] | 8.2 (17.4) c=1.14 | M 100% / T 100% (n=200) |  |  |  |
-|  | HOLD | 144.2>125.1 (+13%) [-84.6, 1.8] | -263>-180 (w5) [2.6, 199.6] | 4.9 (14.6) [-5.2, 16.5] | 8.7 (15.7) c=1.14 | M 83% / T 100% (n=200) |  |  |  |
-|  | PRE | 162.0>101.0 (+38%) [-161.9, 37.4] | -811>-733 (w20) [-109.4, 279.2] | 2.6 (7.5) [-3.1, 8.6] | 5.5 (7.9) c=1.14 | M 69% / T 98% (n=200) |  |  |  |
-|  | X' | 316.5>185.2 (+41%) [-299.2, 25.6] | -572>-502 (w20) [-137.4, 252.5] | 6.0 (9.7) [1.3, 10.2] | 6.4 (10.9) c=1.14 | M 1% / T 100% (n=200) |  |  |  |
-|  | ALL | 316.5>185.2 (+41%) [-242.5, 19.4] | -1161>-1019 (w20) [-65.3, 385.7] | 4.1 (5.7) [0.1, 8.3] | 6.5 (6.1) c=1.14 | M 1% / T 100% (n=200) | 5/5 single removals; all-five NO (-16%); L6M worst wk removed +25% | N: pulled_sup30 >= 20 x medOwnLevel, newAdvExt30 (new MAE extreme in 30 s), icebergAgainst | user-def YES / decisive NO: G3 placebo, G4 LOEO, G5 CI, G8 family-wise p |
-| T1 UFP1 F3 icege10 ext10 trail20 | L3M | 88.0>39.7 (+55%) [-86.3, 20.6] | -185>-111 (w5) [-17.9, 147.9] | -4.4 (21.2) [-14.2, 5.9] | -3.0 (21.1) c=1.18 | not run |  |  |  |
-|  | L6M | 88.0>39.7 (+55%) [-77.0, 21.0] | -185>-133 (w5) [-35.5, 150.8] | -7.3 (12.9) [-14.4, 0.5] | -4.7 (12.7) c=1.18 | not run |  |  |  |
-|  | HOLD | 144.2>136.3 (+5%) [-59.4, 34.6] | -263>-227 (w5) [-42.4, 126.8] | -7.6 (11.7) [-13.8, -1.3] | -5.1 (11.7) c=1.18 | not run |  |  |  |
-|  | PRE | 162.0>101.7 (+37%) [-141.3, 80.1] | -811>-796 (w20) [-205.0, 236.0] | -8.0 (8.9) [-13.7, -1.6] | -6.1 (9.2) c=1.18 | not run |  |  |  |
-|  | X' | 316.5>110.6 (+65%) [-378.4, 26.5] | -572>-420 (w20) [-35.7, 330.0] | 4.0 (10.8) [-3.7, 11.9] | 4.2 (11.6) c=1.18 | not run |  |  |  |
-|  | ALL | 316.5>136.3 (+57%) [-241.6, 61.8] | -1161>-985 (w20) [1.6, 369.5] | -4.5 (6.1) [-9.0, 0.3] | -2.9 (6.3) c=1.18 | not run | 5/5 single removals; all-five NO (-17%); L6M worst wk removed -1% | N: icebergAhead10>=10 (iceberg against at the NQ extreme) + ext (<=10 s since MFE) | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI, G8 family-wise p |
-| T2 UFP1 F3 icege10 ext30 trail20 | L3M | 88.0>39.7 (+55%) [-86.3, 27.2] | -185>-116 (w5) [-26.9, 147.0] | -4.9 (21.5) [-14.5, 5.7] | -3.6 (21.6) c=1.18 | not run |  |  |  |
-|  | L6M | 88.0>39.7 (+55%) [-77.0, 26.1] | -185>-139 (w5) [-45.6, 144.9] | -7.5 (13.0) [-14.6, 0.1] | -5.0 (12.9) c=1.18 | not run |  |  |  |
-|  | HOLD | 144.2>139.3 (+3%) [-56.6, 39.9] | -263>-233 (w5) [-52.3, 124.3] | -7.9 (11.7) [-14.1, -1.7] | -5.4 (11.8) c=1.18 | not run |  |  |  |
-|  | PRE | 162.0>101.7 (+37%) [-141.3, 77.3] | -811>-790 (w20) [-197.8, 241.7] | -8.0 (9.0) [-13.7, -1.6] | -6.1 (9.2) c=1.18 | not run |  |  |  |
-|  | X' | 316.5>110.6 (+65%) [-376.2, 34.4] | -572>-420 (w20) [-36.4, 329.3] | 3.7 (11.0) [-4.0, 11.6] | 3.7 (11.8) c=1.18 | not run |  |  |  |
-|  | ALL | 316.5>139.3 (+56%) [-240.5, 65.9] | -1161>-985 (w20) [2.7, 369.7] | -4.6 (6.2) [-9.2, 0.1] | -3.1 (6.4) c=1.18 | not run | 5/5 single removals; all-five NO (-17%); L6M worst wk removed -21% | N: icebergAhead10>=10 + ext30 | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI, G8 family-wise p |
-| T3 UFP1 F5 d5q20 acc dl30 trail20 | L3M | 88.0>40.6 (+54%) [-92.3, 38.8] | -185>-114 (w5) [-19.6, 170.5] | -4.6 (22.4) [-14.9, 6.1] | -3.2 (22.1) c=1.19 | not run |  |  |  |
-|  | L6M | 88.0>40.6 (+54%) [-81.7, 32.7] | -185>-122 (w5) [-25.5, 179.4] | -7.5 (13.0) [-15.4, 0.8] | -4.8 (12.7) c=1.19 | not run |  |  |  |
-|  | HOLD | 144.2>148.7 (-3%) [-56.7, 51.1] | -263>-221 (w5) [-51.6, 145.8] | -8.3 (11.7) [-14.7, -1.7] | -5.7 (11.7) c=1.19 | not run |  |  |  |
-|  | PRE | 162.0>104.3 (+36%) [-142.8, 87.3] | -811>-793 (w20) [-254.1, 265.2] | -8.5 (9.1) [-14.9, -1.6] | -6.5 (9.3) c=1.19 | not run |  |  |  |
-|  | X' | 316.5>99.3 (+69%) [-381.2, 36.2] | -572>-440 (w20) [-52.1, 310.3] | 3.7 (11.0) [-3.9, 11.5] | 3.8 (11.9) c=1.19 | not run |  |  |  |
-|  | ALL | 316.5>148.7 (+53%) [-248.3, 73.5] | -1161>-974 (w20) [-36.8, 410.3] | -4.9 (6.2) [-9.8, 0.0] | -3.4 (6.4) c=1.19 | not run | 4/5 single removals; all-five NO (-20%); L6M worst wk removed -32% | N: 60-s change of imb5 (d_imb5_60<=q20) + delta30/delta_acc (D6 has imb5, delta60 only) | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI, G8 family-wise p |
-| T4 UFP1 F1 Wc80 Tb I1 trail20 | L3M | 88.0>46.2 (+48%) [-77.4, 30.5] | -185>-149 (w5) [-44.5, 118.3] | -3.6 (15.7) [-9.5, 3.4] | -2.6 (15.3) c=1.11 | not run |  |  |  |
-|  | L6M | 88.0>46.2 (+48%) [-63.1, 23.2] | -185>-156 (w5) [-40.1, 125.9] | -4.2 (10.0) [-9.6, 1.2] | -2.3 (9.9) c=1.11 | not run |  |  |  |
-|  | HOLD | 144.2>131.8 (+9%) [-59.9, 23.9] | -263>-246 (w5) [-54.0, 103.1] | -4.2 (9.6) [-8.9, 0.6] | -2.2 (9.6) c=1.11 | not run |  |  |  |
-|  | PRE | 162.0>109.8 (+32%) [-147.0, 75.2] | -811>-810 (w20) [-249.0, 240.7] | -4.8 (8.2) [-10.4, 1.3] | -3.3 (8.4) c=1.11 | not run |  |  |  |
-|  | X' | 316.5>119.5 (+62%) [-324.7, 39.8] | -572>-444 (w20) [-31.3, 278.9] | 3.5 (8.5) [-2.1, 9.2] | 3.5 (8.9) c=1.11 | not run |  |  |  |
-|  | ALL | 316.5>131.8 (+58%) [-232.4, 56.7] | -1161>-1045 (w20) [-80.8, 318.2] | -2.3 (5.3) [-6.2, 1.5] | -1.1 (5.4) c=1.11 | not run | 5/5 single removals; all-five NO (-26%); L6M worst wk removed -31% | N: wall ahead (cum_ahead10_rel>=q80), tape turn (delta_acc<=q20 & delta30<0), intensity z | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI, G8 family-wise p |
-| T5 UFP1 F1 Wc80 Tb I1 trail40 | L3M | 88.0>54.0 (+39%) [-54.3, 17.2] | -185>-149 (w5) [-25.1, 90.8] | -5.6 (13.2) [-10.2, -1.2] | -5.2 (12.4) c=1.07 | not run |  |  |  |
-|  | L6M | 88.0>54.0 (+39%) [-39.5, 18.8] | -185>-158 (w5) [-30.8, 106.9] | -5.4 (8.2) [-8.7, -1.8] | -4.1 (8.2) c=1.07 | not run |  |  |  |
-|  | HOLD | 144.2>159.9 (-11%) [-36.4, 45.5] | -263>-264 (w5) [-90.3, 84.8] | -5.8 (8.1) [-8.8, -2.7] | -4.6 (8.2) c=1.07 | not run |  |  |  |
-|  | PRE | 162.0>106.3 (+34%) [-154.3, 54.7] | -811>-765 (w20) [-148.0, 269.7] | -3.9 (6.9) [-9.2, 2.2] | -2.8 (6.9) c=1.07 | not run |  |  |  |
-|  | X' | 316.5>211.6 (+33%) [-246.1, 127.9] | -572>-530 (w20) [-114.8, 194.5] | 1.3 (8.1) [-4.7, 7.3] | 1.1 (8.4) c=1.07 | not run |  |  |  |
-|  | ALL | 316.5>211.6 (+33%) [-181.9, 102.0] | -1161>-1081 (w20) [-93.2, 279.1] | -2.8 (4.6) [-6.4, 0.9] | -2.1 (4.6) c=1.07 | not run | 4/5 single removals; all-five NO (-22%); L6M worst wk removed +8% | N: as T4 | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI |
-| C1 UFP5 dlt_a m0.5 | L3M | 88.0>47.8 (+46%) [-78.1, 9.1] | -185>-117 (w5) [9.0, 113.3] | -2.7 (19.1) [-13.1, 6.4] | -1.4 (18.8) c=1.14 | not run |  |  |  |
-|  | L6M | 88.0>47.8 (+46%) [-65.2, 6.3] | -185>-117 (w5) [18.4, 127.6] | -5.0 (11.0) [-11.2, 1.1] | -2.7 (11.1) c=1.14 | not run |  |  |  |
-|  | HOLD | 144.2>122.0 (+15%) [-62.5, 5.8] | -263>-206 (w5) [18.2, 129.7] | -3.6 (9.8) [-9.7, 2.0] | -1.1 (9.8) c=1.14 | not run |  |  |  |
-|  | PRE | 162.0>93.9 (+42%) [-140.1, 43.1] | -811>-770 (w20) [-123.8, 208.6] | -2.1 (6.7) [-7.4, 2.9] | 0.2 (7.1) c=1.14 | not run |  |  |  |
-|  | X' | 316.5>197.5 (+38%) [-224.2, 36.3] | -572>-488 (w20) [-30.1, 202.6] | 2.8 (6.8) [-1.5, 7.5] | 2.7 (7.2) c=1.14 | not run |  |  |  |
-|  | ALL | 316.5>197.5 (+38%) [-186.9, 45.5] | -1161>-1021 (w20) [-3.4, 296.3] | -1.0 (4.5) [-4.4, 2.3] | 0.7 (4.7) c=1.14 | not run | 5/5 single removals; all-five NO (-8%); L6M worst wk removed -19% | N (action): delta60<=q30 is available but "shorten the target to 0.5x at entry" is not a THP action (vocabulary take|cut|tighten) | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI |
-| C2 UFP5 dlt_a m0.67 | L3M | 88.0>53.0 (+40%) [-66.9, 19.3] | -185>-163 (w5) [-31.7, 85.1] | -3.4 (15.3) [-10.2, 2.9] | -2.2 (14.9) c=1.14 | not run |  |  |  |
-|  | L6M | 88.0>53.0 (+40%) [-46.1, 15.8] | -185>-163 (w5) [-28.8, 90.9] | -2.5 (9.1) [-8.0, 3.5] | 0.1 (9.4) c=1.14 | not run |  |  |  |
-|  | HOLD | 144.2>132.1 (+8%) [-47.5, 14.0] | -263>-226 (w5) [-17.1, 98.1] | -1.6 (8.3) [-6.4, 3.6] | 1.2 (8.7) c=1.14 | not run |  |  |  |
-|  | PRE | 162.0>89.6 (+45%) [-138.6, 13.8] | -811>-742 (w20) [-50.7, 189.4] | 1.2 (5.3) [-2.7, 6.0] | 4.0 (5.8) c=1.14 | not run |  |  |  |
-|  | X' | 316.5>212.2 (+33%) [-211.3, 44.8] | -572>-489 (w20) [-23.7, 203.0] | 2.3 (6.0) [-1.5, 6.1] | 2.1 (6.3) c=1.14 | not run |  |  |  |
-|  | ALL | 316.5>212.2 (+33%) [-171.2, 32.7] | -1161>-1020 (w20) [28.3, 281.5] | 0.9 (3.7) [-1.7, 3.8] | 2.9 (4.0) c=1.14 | not run | 5/5 single removals; all-five NO (-3%); L6M worst wk removed -27% | N (action): as C1, multiple 0.67 | user-def YES / decisive NO: G3 placebo (not run), G4 LOEO, G5 CI |
-| L1 THL L6_a30_r3_w10 HM (live line) | L3M | 88.0>74.5 (+15%) [-27.0, 8.6] | -185>-165 (w5) [-10.5, 52.8] | 1.6 (7.1) [-2.0, 5.1] | 2.0 (6.8) c=1.03 | not run |  |  |  |
-|  | L6M | 88.0>74.5 (+15%) [-24.5, 8.6] | -185>-178 (w5) [-19.6, 45.4] | 1.6 (4.2) [-0.5, 3.8] | 2.3 (4.2) c=1.03 | not run |  |  |  |
-|  | HOLD | 144.2>142.7 (+1%) [-23.5, 8.6] | -263>-253 (w5) [-16.6, 46.3] | 1.6 (3.7) [-0.3, 3.6] | 2.3 (3.7) c=1.03 | not run |  |  |  |
-|  | PRE | 162.0>136.5 (+16%) [-46.3, 20.4] | -811>-825 (w20) [-79.6, 47.0] | 1.4 (2.4) [-0.4, 3.5] | 2.0 (2.5) c=1.03 | not run |  |  |  |
-|  | X' | 316.5>347.1 (-10%) [-54.3, 78.1] | -572>-578 (w20) [-60.0, 47.7] | -0.2 (2.1) [-2.2, 1.8] | -0.3 (2.1) c=1.03 | not run |  |  |  |
-|  | ALL | 316.5>347.1 (-10%) [-61.2, 40.9] | -1161>-1129 (w20) [-13.7, 83.4] | 1.0 (1.6) [-0.2, 2.3] | 1.4 (1.6) c=1.03 | not run | 1/5 single removals; all-five NO (-2%); L6M worst wk removed -18% | Y: price-path only (pct, secs_ext, recov, eff120 as coded: loss H6 line) | user-def no / decisive NO: G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L1 THL L6_a30_r3_w10 POOL6 | L3M | 88.0>110.0 (-25%) [-73.5, 139.1] | -185>-175 (w5) [-122.3, 124.8] | -3.7 (26.1) [-24.5, 14.4] | -3.3 (26.8) c=1.05 | not run |  |  |  |
-|  | L6M | 88.0>110.0 (-25%) [-54.7, 113.3] | -185>-186 (w5) [-111.3, 122.5] | -2.3 (13.9) [-12.9, 7.5] | -1.4 (14.3) c=1.05 | not run |  |  |  |
-|  | HOLD | 144.2>142.1 (+1%) [-55.4, 109.2] | -263>-255 (w5) [-120.9, 144.7] | -1.9 (13.0) [-12.6, 7.6] | -1.0 (13.4) c=1.05 | not run |  |  |  |
-|  | PRE | 162.0>172.6 (-7%) [-97.2, 161.4] | -811>-862 (w20) [-298.3, 166.0] | -4.6 (8.8) [-13.6, 3.4] | -3.9 (9.0) c=1.05 | not run |  |  |  |
-|  | X' | 316.5>235.3 (+26%) [-249.9, 21.8] | -572>-441 (w20) [-25.4, 291.6] | 6.1 (8.8) [2.0, 10.0] | 6.2 (9.0) c=1.05 | not run |  |  |  |
-|  | ALL | 316.5>235.3 (+26%) [-170.1, 135.1] | -1161>-1109 (w20) [-180.8, 277.7] | -0.9 (5.9) [-6.4, 4.0] | -0.3 (6.0) c=1.05 | not run | 3/5 single removals; all-five NO (-98%); L6M worst wk removed -257% | Y: price-path only (as coded for HM; other books have no loss line) | user-def no / decisive NO: G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| S1 L2SL A45 z10>=2 ne0 ICE | L3M | 88.0>34.0 (+61%) [-94.1, 14.2] | -185>-109 (w5) [-19.9, 163.7] | 5.2 (20.9) [-8.0, 17.8] | 6.5 (21.5) c=1.07 | M 99% / A 100% / T 100% / S 100% |  |  |  |
+|  | L6M | 88.0>34.0 (+61%) [-83.8, 14.2] | -185>-113 (w5) [-17.3, 182.4] | 1.4 (14.0) [-6.6, 10.2] | 3.0 (14.3) c=1.07 | M 99% / A 100% / T 100% / S 100% |  |  |  |
+|  | HOLD | 144.2>142.7 (+1%) [-67.6, 15.3] | -263>-213 (w5) [-28.6, 160.9] | 1.5 (12.3) [-6.3, 9.4] | 3.1 (12.7) c=1.07 | M 29% / A 51% / T 62% / S 72% |  |  |  |
+|  | PRE | 162.0>105.6 (+35%) [-134.6, 58.4] | -811>-809 (w20) [-189.5, 207.8] | 1.9 (6.4) [-2.9, 6.8] | 3.4 (6.7) c=1.07 | M 88% / A 91% / T 93% / S 65% |  |  |  |
+|  | X' | 316.5>218.0 (+31%) [-245.6, 32.0] | -572>-560 (w20) [-150.1, 164.9] | 6.2 (8.6) [1.4, 11.4] | 6.4 (9.1) c=1.07 | M 39% / A 77% / T 86% / S 100% |  |  |  |
+|  | ALL | 316.5>218.0 (+31%) [-205.8, 43.6] | -1161>-1084 (w20) [-125.0, 298.2] | 3.1 (4.9) [-0.2, 6.7] | 4.3 (5.1) c=1.07 | M 39% / A 77% / T 86% / S 100% | 4/5 single removals; all-five NO (-21%); L6M worst wk removed -11% | N: pulled_sup10 z-score vs 15-min ET bucket (prior-month log-mean/sd table), icebergAgainst (best-level traded >=10x displayed, 10 s) | user-def YES / decisive NO: G3 placebo, G4 LOEO, G5 CI |
+| S2 L2SL A45 z10>=2 ne0 ICESWP | L3M | 88.0>34.0 (+61%) [-95.6, 14.2] | -185>-110 (w5) [-19.6, 164.9] | 6.3 (20.8) [-7.6, 19.3] | 7.4 (21.3) c=1.06 | M 100% / A 99% (n=500) |  |  |  |
+|  | L6M | 88.0>34.0 (+61%) [-84.1, 14.2] | -185>-113 (w5) [-16.9, 180.5] | 1.8 (14.0) [-6.5, 11.1] | 3.2 (14.2) c=1.06 | M 100% / A 100% (n=500) |  |  |  |
+|  | HOLD | 144.2>154.0 (-7%) [-60.2, 24.0] | -263>-223 (w5) [-38.3, 155.5] | 1.4 (12.3) [-6.6, 9.7] | 2.8 (12.6) c=1.06 | M 9% / A 26% (n=500) |  |  |  |
+|  | PRE | 162.0>104.0 (+36%) [-131.3, 56.3] | -811>-811 (w20) [-187.0, 201.3] | 2.2 (6.3) [-2.4, 7.0] | 3.4 (6.5) c=1.06 | M 88% / A 92% (n=500) |  |  |  |
+|  | X' | 316.5>214.8 (+32%) [-248.6, 29.5] | -572>-563 (w20) [-153.7, 162.6] | 6.3 (8.6) [1.5, 11.3] | 6.4 (9.0) c=1.06 | M 42% / A 80% (n=500) |  |  |  |
+|  | ALL | 316.5>214.8 (+32%) [-206.8, 42.0] | -1161>-1097 (w20) [-136.4, 282.8] | 3.3 (4.8) [-0.1, 6.9] | 4.2 (5.0) c=1.06 | M 42% / A 80% (n=500) | 3/5 single removals; all-five NO (-19%); L6M worst wk removed -11% | N: pulled_sup10 z-score vs 15-min bucket, icebergAgainst AND sweepAgainst10>=1 | user-def YES / decisive NO: G3 placebo, G4 LOEO, G5 CI |
+| S3 L2SL A45 z10>=2 ne0 K2 | L3M | 88.0>34.0 (+61%) [-96.2, 14.2] | -185>-109 (w5) [-19.6, 166.6] | 6.2 (20.9) [-7.6, 19.2] | 7.4 (21.4) c=1.07 | M 99% / A 100% (n=500) |  |  |  |
+|  | L6M | 88.0>34.0 (+61%) [-84.7, 14.2] | -185>-113 (w5) [-16.6, 182.2] | 1.7 (14.0) [-6.4, 10.8] | 3.3 (14.2) c=1.07 | M 99% / A 100% (n=500) |  |  |  |
+|  | HOLD | 144.2>146.9 (-2%) [-64.8, 17.0] | -263>-215 (w5) [-31.5, 159.1] | 1.6 (12.3) [-6.4, 9.9] | 3.1 (12.6) c=1.07 | M 18% / A 36% (n=500) |  |  |  |
+|  | PRE | 162.0>104.0 (+36%) [-130.2, 56.4] | -811>-819 (w20) [-200.9, 196.9] | 2.1 (6.4) [-2.5, 7.0] | 3.5 (6.6) c=1.07 | M 85% / A 94% (n=500) |  |  |  |
+|  | X' | 316.5>214.2 (+32%) [-241.3, 35.8] | -572>-563 (w20) [-152.6, 162.7] | 5.9 (8.2) [1.1, 11.0] | 6.1 (8.8) c=1.07 | M 43% / A 84% (n=500) |  |  |  |
+|  | ALL | 316.5>214.2 (+32%) [-205.4, 42.3] | -1161>-1089 (w20) [-125.5, 289.2] | 3.2 (4.8) [-0.2, 6.8] | 4.2 (5.0) c=1.07 | M 43% / A 84% (n=500) | 3/5 single removals; all-five NO (-19%); L6M worst wk removed -11% | N: pulled_sup10 z-score vs 15-min bucket, K2 = 2 of {icebergAgainst, sweepAgainst10>=1, ownDepth10Rel<=0.5, imb10<=-0.3} (ice, sweep, ownDepth10Rel missing; imb10 present) | user-def YES / decisive NO: G3 placebo, G4 LOEO, G5 CI |
+| S4 L2SL A30 z5>=3 none | L3M | 88.0>64.8 (+26%) [-46.5, 6.1] | -185>-158 (w5) [-7.5, 79.5] | 0.9 (10.6) [-5.1, 6.8] | 1.1 (10.5) c=1.01 | M 59% / A 79% / T 84% / S 3% |  |  |  |
+|  | L6M | 88.0>64.8 (+26%) [-41.6, 10.6] | -185>-162 (w5) [-16.6, 66.7] | -2.4 (6.9) [-6.8, 2.2] | -2.2 (6.9) c=1.01 | M 60% / A 79% / T 84% / S 3% |  |  |  |
+|  | HOLD | 144.2>197.8 (-37%) [-24.7, 104.9] | -263>-296 (w5) [-95.8, 68.1] | -4.1 (6.9) [-9.3, 0.9] | -3.9 (6.9) c=1.01 | M 0% / A 0% / T 0% / S 1% |  |  |  |
+|  | PRE | 162.0>113.9 (+30%) [-112.3, 60.7] | -811>-819 (w20) [-165.1, 149.9] | -0.5 (5.1) [-4.5, 3.8] | -0.2 (5.1) c=1.01 | M 86% / A 95% / T 98% / S 15% |  |  |  |
+|  | X' | 316.5>252.1 (+20%) [-194.7, 27.1] | -572>-550 (w20) [-82.0, 132.5] | 4.1 (5.3) [0.7, 7.6] | 4.1 (5.3) c=1.01 | M 60% / A 95% / T 92% / S 5% |  |  |  |
+|  | ALL | 316.5>252.1 (+20%) [-135.1, 85.2] | -1161>-1146 (w20) [-131.5, 170.8] | 0.1 (3.4) [-2.8, 3.0] | 0.3 (3.4) c=1.01 | M 60% / A 95% / T 92% / S 5% | 2/5 single removals; all-five NO (-31%); L6M worst wk removed -10% | N: pulled_sup5 (5-s cancel size) z-score vs 15-min bucket; A=30 pct<=-0.5 | user-def YES / decisive NO: G3 placebo, G4 LOEO, G5 CI, G6 execution |
+| S5 L2SL A45 mult100@30 ne1 ICE | L3M | 88.0>26.3 (+70%) [-102.9, 24.9] | -185>-93 (w5) [-10.9, 198.3] | 8.9 (25.6) [-8.7, 27.0] | 12.9 (28.3) c=1.19 | M 100% / A 100% / T 100% / S 100% |  |  |  |
+|  | L6M | 88.0>26.3 (+70%) [-96.4, 0.9] | -185>-93 (w5) [4.0, 207.0] | 3.4 (16.8) [-6.8, 15.7] | 8.1 (17.9) c=1.19 | M 100% / A 100% / T 100% / S 100% |  |  |  |
+|  | HOLD | 144.2>141.1 (+2%) [-76.0, 12.2] | -263>-194 (w5) [-12.8, 185.1] | 3.3 (14.7) [-6.3, 14.6] | 8.1 (16.4) c=1.19 | M 8% / A 22% / T 59% / S 24% |  |  |  |
+|  | PRE | 162.0>99.2 (+39%) [-167.9, 32.4] | -811>-711 (w20) [-93.0, 316.8] | 3.3 (7.1) [-1.8, 8.5] | 7.5 (7.8) c=1.19 | M 74% / A 74% / T 93% / S 81% |  |  |  |
+|  | X' | 316.5>161.3 (+49%) [-335.7, 7.7] | -572>-478 (w20) [-105.4, 271.3] | 7.7 (9.1) [3.3, 11.8] | 8.5 (10.7) c=1.19 | M 43% / A 86% / T 100% / S 100% |  |  |  |
+|  | ALL | 316.5>161.3 (+49%) [-257.3, 12.8] | -1161>-975 (w20) [-15.9, 414.2] | 4.6 (5.4) [0.8, 8.7] | 8.0 (6.1) c=1.19 | M 43% / A 86% / T 100% / S 100% | 5/5 single removals; all-five NO (-14%); L6M worst wk removed +15% | N: pulled_sup30 >= 100 x medOwnLevel, newAdvExt30, icebergAgainst | user-def YES / decisive NO: G3 placebo, G4 LOEO, G5 CI |
+| H L2SL A45 mult20@30 ne1 ICE (headline) | L3M | 88.0>24.5 (+72%) [-106.9, 20.0] | -185>-85 (w5) [-4.1, 209.9] | 10.6 (25.8) [-7.5, 29.4] | 13.7 (27.6) c=1.14 | M 100% / A 100% / T 100% / S 100% |  |  |  |
+|  | L6M | 88.0>23.6 (+73%) [-101.9, -0.5] | -185>-85 (w5) [10.0, 216.0] | 4.6 (16.6) [-5.8, 17.3] | 8.2 (17.4) c=1.14 | M 100% / A 100% / T 100% / S 100% |  |  |  |
+|  | HOLD | 144.2>125.1 (+13%) [-84.6, 1.8] | -263>-180 (w5) [2.6, 199.6] | 4.9 (14.6) [-5.2, 16.5] | 8.7 (15.7) c=1.14 | M 83% / A 86% / T 100% / S 100% |  |  |  |
+|  | PRE | 162.0>101.0 (+38%) [-161.9, 37.4] | -811>-733 (w20) [-109.4, 279.2] | 2.6 (7.5) [-3.1, 8.6] | 5.5 (7.9) c=1.14 | M 69% / A 62% / T 98% / S 94% |  |  |  |
+|  | X' | 316.5>185.2 (+41%) [-299.2, 25.6] | -572>-502 (w20) [-137.4, 252.5] | 6.0 (9.7) [1.3, 10.2] | 6.4 (10.9) c=1.14 | M 1% / A 30% / T 100% / S 100% |  |  |  |
+|  | ALL | 316.5>185.2 (+41%) [-242.5, 19.4] | -1161>-1019 (w20) [-65.3, 385.7] | 4.1 (5.7) [0.1, 8.3] | 6.5 (6.1) c=1.14 | M 1% / A 30% / T 100% / S 100% | 5/5 single removals; all-five NO (-16%); L6M worst wk removed +25% | N: pulled_sup30 >= 20 x medOwnLevel, newAdvExt30 (new MAE extreme in 30 s), icebergAgainst | user-def YES / decisive NO: G3 placebo, G4 LOEO, G5 CI, G8 family-wise p |
+| T1 UFP1 F3 icege10 ext10 trail20 | L3M | 88.0>39.7 (+55%) [-86.3, 20.6] | -185>-111 (w5) [-17.9, 147.9] | -4.4 (21.2) [-14.2, 5.9] | -3.0 (21.1) c=1.18 | R 100% |  |  |  |
+|  | L6M | 88.0>39.7 (+55%) [-77.0, 21.0] | -185>-133 (w5) [-35.5, 150.8] | -7.3 (12.9) [-14.4, 0.5] | -4.7 (12.7) c=1.18 | R 100% |  |  |  |
+|  | HOLD | 144.2>136.3 (+5%) [-59.4, 34.6] | -263>-227 (w5) [-42.4, 126.8] | -7.6 (11.7) [-13.8, -1.3] | -5.1 (11.7) c=1.18 | R 66% |  |  |  |
+|  | PRE | 162.0>101.7 (+37%) [-141.3, 80.1] | -811>-796 (w20) [-205.0, 236.0] | -8.0 (8.9) [-13.7, -1.6] | -6.1 (9.2) c=1.18 | R 100% |  |  |  |
+|  | X' | 316.5>110.6 (+65%) [-378.4, 26.5] | -572>-420 (w20) [-35.7, 330.0] | 4.0 (10.8) [-3.7, 11.9] | 4.2 (11.6) c=1.18 | R 100% |  |  |  |
+|  | ALL | 316.5>136.3 (+57%) [-241.6, 61.8] | -1161>-985 (w20) [1.6, 369.5] | -4.5 (6.1) [-9.0, 0.3] | -2.9 (6.3) c=1.18 | R 100% | 5/5 single removals; all-five NO (-17%); L6M worst wk removed -1% | N: icebergAhead10>=10 (iceberg against at the NQ extreme) + ext (<=10 s since MFE) | user-def YES / decisive NO: G4 LOEO, G5 CI, G8 family-wise p |
+| T2 UFP1 F3 icege10 ext30 trail20 | L3M | 88.0>39.7 (+55%) [-86.3, 27.2] | -185>-116 (w5) [-26.9, 147.0] | -4.9 (21.5) [-14.5, 5.7] | -3.6 (21.6) c=1.18 | R 100% (n=500) |  |  |  |
+|  | L6M | 88.0>39.7 (+55%) [-77.0, 26.1] | -185>-139 (w5) [-45.6, 144.9] | -7.5 (13.0) [-14.6, 0.1] | -5.0 (12.9) c=1.18 | R 100% (n=500) |  |  |  |
+|  | HOLD | 144.2>139.3 (+3%) [-56.6, 39.9] | -263>-233 (w5) [-52.3, 124.3] | -7.9 (11.7) [-14.1, -1.7] | -5.4 (11.8) c=1.18 | R 61% (n=500) |  |  |  |
+|  | PRE | 162.0>101.7 (+37%) [-141.3, 77.3] | -811>-790 (w20) [-197.8, 241.7] | -8.0 (9.0) [-13.7, -1.6] | -6.1 (9.2) c=1.18 | R 100% (n=500) |  |  |  |
+|  | X' | 316.5>110.6 (+65%) [-376.2, 34.4] | -572>-420 (w20) [-36.4, 329.3] | 3.7 (11.0) [-4.0, 11.6] | 3.7 (11.8) c=1.18 | R 100% (n=500) |  |  |  |
+|  | ALL | 316.5>139.3 (+56%) [-240.5, 65.9] | -1161>-985 (w20) [2.7, 369.7] | -4.6 (6.2) [-9.2, 0.1] | -3.1 (6.4) c=1.18 | R 100% (n=500) | 5/5 single removals; all-five NO (-17%); L6M worst wk removed -21% | N: icebergAhead10>=10 + ext30 | user-def YES / decisive NO: G4 LOEO, G5 CI, G8 family-wise p |
+| T3 UFP1 F5 d5q20 acc dl30 trail20 | L3M | 88.0>40.6 (+54%) [-92.3, 38.8] | -185>-114 (w5) [-19.6, 170.5] | -4.6 (22.4) [-14.9, 6.1] | -3.2 (22.1) c=1.19 | R 100% |  |  |  |
+|  | L6M | 88.0>40.6 (+54%) [-81.7, 32.7] | -185>-122 (w5) [-25.5, 179.4] | -7.5 (13.0) [-15.4, 0.8] | -4.8 (12.7) c=1.19 | R 100% |  |  |  |
+|  | HOLD | 144.2>148.7 (-3%) [-56.7, 51.1] | -263>-221 (w5) [-51.6, 145.8] | -8.3 (11.7) [-14.7, -1.7] | -5.7 (11.7) c=1.19 | R 44% |  |  |  |
+|  | PRE | 162.0>104.3 (+36%) [-142.8, 87.3] | -811>-793 (w20) [-254.1, 265.2] | -8.5 (9.1) [-14.9, -1.6] | -6.5 (9.3) c=1.19 | R 100% |  |  |  |
+|  | X' | 316.5>99.3 (+69%) [-381.2, 36.2] | -572>-440 (w20) [-52.1, 310.3] | 3.7 (11.0) [-3.9, 11.5] | 3.8 (11.9) c=1.19 | R 100% |  |  |  |
+|  | ALL | 316.5>148.7 (+53%) [-248.3, 73.5] | -1161>-974 (w20) [-36.8, 410.3] | -4.9 (6.2) [-9.8, 0.0] | -3.4 (6.4) c=1.19 | R 100% | 4/5 single removals; all-five NO (-20%); L6M worst wk removed -32% | N: 60-s change of imb5 (d_imb5_60<=q20) + delta30/delta_acc (D6 has imb5, delta60 only) | user-def YES / decisive NO: G4 LOEO, G5 CI, G8 family-wise p |
+| T4 UFP1 F1 Wc80 Tb I1 trail20 | L3M | 88.0>46.2 (+48%) [-77.4, 30.5] | -185>-149 (w5) [-44.5, 118.3] | -3.6 (15.7) [-9.5, 3.4] | -2.6 (15.3) c=1.11 | R 99% |  |  |  |
+|  | L6M | 88.0>46.2 (+48%) [-63.1, 23.2] | -185>-156 (w5) [-40.1, 125.9] | -4.2 (10.0) [-9.6, 1.2] | -2.3 (9.9) c=1.11 | R 99% |  |  |  |
+|  | HOLD | 144.2>131.8 (+9%) [-59.9, 23.9] | -263>-246 (w5) [-54.0, 103.1] | -4.2 (9.6) [-8.9, 0.6] | -2.2 (9.6) c=1.11 | R 64% |  |  |  |
+|  | PRE | 162.0>109.8 (+32%) [-147.0, 75.2] | -811>-810 (w20) [-249.0, 240.7] | -4.8 (8.2) [-10.4, 1.3] | -3.3 (8.4) c=1.11 | R 100% |  |  |  |
+|  | X' | 316.5>119.5 (+62%) [-324.7, 39.8] | -572>-444 (w20) [-31.3, 278.9] | 3.5 (8.5) [-2.1, 9.2] | 3.5 (8.9) c=1.11 | R 100% |  |  |  |
+|  | ALL | 316.5>131.8 (+58%) [-232.4, 56.7] | -1161>-1045 (w20) [-80.8, 318.2] | -2.3 (5.3) [-6.2, 1.5] | -1.1 (5.4) c=1.11 | R 100% | 5/5 single removals; all-five NO (-26%); L6M worst wk removed -31% | N: wall ahead (cum_ahead10_rel>=q80), tape turn (delta_acc<=q20 & delta30<0), intensity z | user-def YES / decisive NO: G4 LOEO, G5 CI, G8 family-wise p |
+| T5 UFP1 F1 Wc80 Tb I1 trail40 | L3M | 88.0>54.0 (+39%) [-54.3, 17.2] | -185>-149 (w5) [-25.1, 90.8] | -5.6 (13.2) [-10.2, -1.2] | -5.2 (12.4) c=1.07 | R 98% |  |  |  |
+|  | L6M | 88.0>54.0 (+39%) [-39.5, 18.8] | -185>-158 (w5) [-30.8, 106.9] | -5.4 (8.2) [-8.7, -1.8] | -4.1 (8.2) c=1.07 | R 98% |  |  |  |
+|  | HOLD | 144.2>159.9 (-11%) [-36.4, 45.5] | -263>-264 (w5) [-90.3, 84.8] | -5.8 (8.1) [-8.8, -2.7] | -4.6 (8.2) c=1.07 | R 28% |  |  |  |
+|  | PRE | 162.0>106.3 (+34%) [-154.3, 54.7] | -811>-765 (w20) [-148.0, 269.7] | -3.9 (6.9) [-9.2, 2.2] | -2.8 (6.9) c=1.07 | R 100% |  |  |  |
+|  | X' | 316.5>211.6 (+33%) [-246.1, 127.9] | -572>-530 (w20) [-114.8, 194.5] | 1.3 (8.1) [-4.7, 7.3] | 1.1 (8.4) c=1.07 | R 99% |  |  |  |
+|  | ALL | 316.5>211.6 (+33%) [-181.9, 102.0] | -1161>-1081 (w20) [-93.2, 279.1] | -2.8 (4.6) [-6.4, 0.9] | -2.1 (4.6) c=1.07 | R 100% | 4/5 single removals; all-five NO (-22%); L6M worst wk removed +8% | N: as T4 | user-def YES / decisive NO: G4 LOEO, G5 CI |
+| C1 UFP5 dlt_a m0.5 | L3M | 88.0>47.8 (+46%) [-78.1, 9.1] | -185>-117 (w5) [9.0, 113.3] | -2.7 (19.1) [-13.1, 6.4] | -1.4 (18.8) c=1.14 | R 99% |  |  |  |
+|  | L6M | 88.0>47.8 (+46%) [-65.2, 6.3] | -185>-117 (w5) [18.4, 127.6] | -5.0 (11.0) [-11.2, 1.1] | -2.7 (11.1) c=1.14 | R 99% |  |  |  |
+|  | HOLD | 144.2>122.0 (+15%) [-62.5, 5.8] | -263>-206 (w5) [18.2, 129.7] | -3.6 (9.8) [-9.7, 2.0] | -1.1 (9.8) c=1.14 | R 71% |  |  |  |
+|  | PRE | 162.0>93.9 (+42%) [-140.1, 43.1] | -811>-770 (w20) [-123.8, 208.6] | -2.1 (6.7) [-7.4, 2.9] | 0.2 (7.1) c=1.14 | R 100% |  |  |  |
+|  | X' | 316.5>197.5 (+38%) [-224.2, 36.3] | -572>-488 (w20) [-30.1, 202.6] | 2.8 (6.8) [-1.5, 7.5] | 2.7 (7.2) c=1.14 | R 68% |  |  |  |
+|  | ALL | 316.5>197.5 (+38%) [-186.9, 45.5] | -1161>-1021 (w20) [-3.4, 296.3] | -1.0 (4.5) [-4.4, 2.3] | 0.7 (4.7) c=1.14 | R 87% | 5/5 single removals; all-five NO (-8%); L6M worst wk removed -19% | N (action): delta60<=q30 is available but "shorten the target to 0.5x at entry" is not a THP action (vocabulary take|cut|tighten) | user-def YES / decisive NO: G3 placebo, G4 LOEO, G5 CI |
+| C2 UFP5 dlt_a m0.67 | L3M | 88.0>53.0 (+40%) [-66.9, 19.3] | -185>-163 (w5) [-31.7, 85.1] | -3.4 (15.3) [-10.2, 2.9] | -2.2 (14.9) c=1.14 | R 97% |  |  |  |
+|  | L6M | 88.0>53.0 (+40%) [-46.1, 15.8] | -185>-163 (w5) [-28.8, 90.9] | -2.5 (9.1) [-8.0, 3.5] | 0.1 (9.4) c=1.14 | R 97% |  |  |  |
+|  | HOLD | 144.2>132.1 (+8%) [-47.5, 14.0] | -263>-226 (w5) [-17.1, 98.1] | -1.6 (8.3) [-6.4, 3.6] | 1.2 (8.7) c=1.14 | R 52% |  |  |  |
+|  | PRE | 162.0>89.6 (+45%) [-138.6, 13.8] | -811>-742 (w20) [-50.7, 189.4] | 1.2 (5.3) [-2.7, 6.0] | 4.0 (5.8) c=1.14 | R 100% |  |  |  |
+|  | X' | 316.5>212.2 (+33%) [-211.3, 44.8] | -572>-489 (w20) [-23.7, 203.0] | 2.3 (6.0) [-1.5, 6.1] | 2.1 (6.3) c=1.14 | R 56% |  |  |  |
+|  | ALL | 316.5>212.2 (+33%) [-171.2, 32.7] | -1161>-1020 (w20) [28.3, 281.5] | 0.9 (3.7) [-1.7, 3.8] | 2.9 (4.0) c=1.14 | R 68% | 5/5 single removals; all-five NO (-3%); L6M worst wk removed -27% | N (action): as C1, multiple 0.67 | user-def YES / decisive NO: G3 placebo, G4 LOEO, G5 CI |
+| L1 THL L6_a30_r3_w10 HM (live line) | L3M | 88.0>74.5 (+15%) [-27.0, 8.6] | -185>-165 (w5) [-10.5, 52.8] | 1.6 (7.1) [-2.0, 5.1] | 2.0 (6.8) c=1.03 | M 51% / A 85% / T 68% |  |  |  |
+|  | L6M | 88.0>74.5 (+15%) [-24.5, 8.6] | -185>-178 (w5) [-19.6, 45.4] | 1.6 (4.2) [-0.5, 3.8] | 2.3 (4.2) c=1.03 | M 51% / A 85% / T 68% |  |  |  |
+|  | HOLD | 144.2>142.7 (+1%) [-23.5, 8.6] | -263>-253 (w5) [-16.6, 46.3] | 1.6 (3.7) [-0.3, 3.6] | 2.3 (3.7) c=1.03 | M 48% / A 73% / T 74% |  |  |  |
+|  | PRE | 162.0>136.5 (+16%) [-46.3, 20.4] | -811>-825 (w20) [-79.6, 47.0] | 1.4 (2.4) [-0.4, 3.5] | 2.0 (2.5) c=1.03 | M 84% / A 95% / T 97% |  |  |  |
+|  | X' | 316.5>347.1 (-10%) [-54.3, 78.1] | -572>-578 (w20) [-60.0, 47.7] | -0.2 (2.1) [-2.2, 1.8] | -0.3 (2.1) c=1.03 | M 4% / A 55% / T 48% |  |  |  |
+|  | ALL | 316.5>347.1 (-10%) [-61.2, 40.9] | -1161>-1129 (w20) [-13.7, 83.4] | 1.0 (1.6) [-0.2, 2.3] | 1.4 (1.6) c=1.03 | M 4% / A 55% / T 48% | 1/5 single removals; all-five NO (-2%); L6M worst wk removed -18% | Y: price-path only (pct, secs_ext, recov, eff120 as coded: loss H6 line) | user-def no / decisive NO: G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L1 THL L6_a30_r3_w10 POOL6 | L3M | 88.0>110.0 (-25%) [-73.5, 139.1] | -185>-175 (w5) [-122.3, 124.8] | -3.7 (26.1) [-24.5, 14.4] | -3.3 (26.8) c=1.05 | M 11% / A 42% / T 59% |  |  |  |
+|  | L6M | 88.0>110.0 (-25%) [-54.7, 113.3] | -185>-186 (w5) [-111.3, 122.5] | -2.3 (13.9) [-12.9, 7.5] | -1.4 (14.3) c=1.05 | M 9% / A 39% / T 56% |  |  |  |
+|  | HOLD | 144.2>142.1 (+1%) [-55.4, 109.2] | -263>-255 (w5) [-120.9, 144.7] | -1.9 (13.0) [-12.6, 7.6] | -1.0 (13.4) c=1.05 | M 20% / A 71% / T 77% |  |  |  |
+|  | PRE | 162.0>172.6 (-7%) [-97.2, 161.4] | -811>-862 (w20) [-298.3, 166.0] | -4.6 (8.8) [-13.6, 3.4] | -3.9 (9.0) c=1.05 | M 1% / A 49% / T 59% |  |  |  |
+|  | X' | 316.5>235.3 (+26%) [-249.9, 21.8] | -572>-441 (w20) [-25.4, 291.6] | 6.1 (8.8) [2.0, 10.0] | 6.2 (9.0) c=1.05 | M 53% / A 100% / T 100% |  |  |  |
+|  | ALL | 316.5>235.3 (+26%) [-170.1, 135.1] | -1161>-1109 (w20) [-180.8, 277.7] | -0.9 (5.9) [-6.4, 4.0] | -0.3 (6.0) c=1.05 | M 54% / A 100% / T 100% | 3/5 single removals; all-five NO (-98%); L6M worst wk removed -257% | Y: price-path only (as coded for HM; other books have no loss line) | user-def no / decisive NO: G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
 
-Placebo draws completed: 1 of 2 placebo sets at 1,000; total 1200 draws. 'not run' = not reached yet in the queue. Columns for the neighbour / reference cells (L2-L5, U1-U4, R1-R2) are in section 1b.
+Placebo draws completed: 28 of 61 placebo sets at 1,000; total 44500 draws. 'not run' = not reached yet in the queue. Columns for the neighbour / reference cells (L2-L5, U1-U4, R1-R2) are in section 1b.
 
 ## 1. Per-episode table: top-10 drawdown episodes of the AS-IS stack (ALL window, weekly cumulative, greedy peak to trough) and what each rule does inside them
 
@@ -130,28 +132,28 @@ Baseline P&L inside the span equals minus the depth (a greedy episode runs peak 
 | top-10 total | | | 1003.5 | +448.5 | +375.7 | +502.6 | +156.1 | +495.8 | +449.3 | +435.2 | +13.5 | +278.5 | +427.5 |
 | rule maxDD inside the span of #1 / #2 / #4 | | | | 185.2/63.8/23.6 | 218.0/82.0/33.0 | 161.3/60.5/26.0 | 252.1/92.2/64.8 | 110.6/99.6/39.7 | 119.5/94.6/46.2 | 197.5/80.9/47.8 | 347.1/136.5/74.5 | 235.3/91.8/45.3 | 164.6/60.0/59.1 |
 
-Reading. Episode 1 (2023-04-03 to 2023-12-01, 35 weeks, 316.5k) and episode 2 (2024-08-19 to 2024-10-11) carry most of H's gain (+194k and +151k); the L6M maxDD week (episode 4, 2026-01-19..23, 88.0k) is cut to 23.6k (+64k); episodes 6, 7 and 10 get WORSE under H (-23k, -5k, -32k): the cut is not uniformly protective. The two largest A=30 cells (S4, R1) have negative means and carry their gain in episode 1 only.
+Reading. Episode 1 (2023-04-03 to 2023-12-01, 35 weeks, 316.5k) and episode 2 (2024-08-19 to 2024-10-11) carry most of H's gain (+194k and +151k); the L6M maxDD week (episode 4, 2026-01-19..23, 88.0k) is cut to 23.6k (+64k); episodes 6, 7 and 10 get WORSE under H (-23k, -5k, -32k): the cut is not uniformly protective.  Every cell in the table gains in episodes 1, 2 and 4 (the three largest drawdowns and the L6M week), including the arm-only reference R2 and the profit trails T1/T4, so a gain inside the baseline's own worst episodes is what any volume- or exposure-reducing change produces (the baseline's worst weeks are selected for being bad); the placebo of section 3 is the test of whether the L2 rule does better than that.
 
 ### 1b. Live-cut neighbours and references (same columns, key windows; full rows in `out/l2cut/analysis.pkl`)
 
 | cell | L6M maxDD cut [CI] | PRE cut [CI] | X' cut [CI] | ALL cut | mean change ALL (MDE) / L6M (MDE) | equal-risk mean ALL (MDE) | placebo rank L6M / PRE / X' | decisive fails |
 |---|---|---|---|---|---|---|---|---|
-| L1 THL L6_a30_r3_w10 HM (live line) | +15% [-24.5, 8.6] | +16% [-46.3, 20.4] | -10% [-54.3, 78.1] | -10% | 1.0 (1.6) / 1.6 (4.2) | 1.4 (1.6) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L1 THL L6_a30_r3_w10 POOL6 | -25% [-54.7, 113.3] | -7% [-97.2, 161.4] | +26% [-249.9, 21.8] | +26% | -0.9 (5.9) / -2.3 (13.9) | -0.3 (6.0) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L2 THL L6_a25_r3_w10 HM | +11% [-17.7, 11.3] | +18% [-49.8, 20.3] | -8% [-57.1, 74.0] | -8% | 0.9 (1.5) / 1.3 (3.9) | 1.3 (1.6) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L2 THL L6_a25_r3_w10 POOL6 | -23% [-63.2, 121.1] | +8% [-136.5, 114.7] | +21% [-244.8, 45.0] | +21% | -1.0 (6.6) / -3.4 (15.6) | -0.1 (6.8) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L3 THL L6_a30_r2_w10 HM | +16% [-30.6, 7.6] | +13% [-57.6, 18.7] | -3% [-80.0, 54.7] | -3% | 0.8 (2.1) / 2.4 (5.6) | 1.9 (2.3) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L3 THL L6_a30_r2_w10 POOL6 | -10% [-47.9, 152.0] | -59% [-158.5, 242.7] | +43% [-337.2, 24.0] | +18% | -2.6 (8.9) / -11.7 (18.2) | 0.2 (10.0) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L4 THL L6_a30_r3_w30 HM | +20% [-30.9, 10.9] | +7% [-53.1, 14.6] | +2% [-92.5, 25.0] | +2% | 1.7 (1.9) / 2.1 (5.4) | 2.8 (2.1) | not run / not run / not run | G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L4 THL L6_a30_r3_w30 POOL6 | -26% [-60.2, 145.2] | +10% [-176.1, 88.3] | +41% [-373.6, 21.2] | +41% | 0.4 (7.4) / -7.3 (17.3) | 3.8 (8.2) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L5 THL L6_a15_r3_w30 HM | +15% [-26.3, 10.5] | +13% [-57.8, 26.9] | -7% [-97.0, 83.3] | -7% | 0.2 (2.3) / -0.4 (6.5) | 0.8 (2.4) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| L5 THL L6_a15_r3_w30 POOL6 | -46% [-50.0, 170.4] | -146% [-112.3, 539.8] | +59% [-388.8, 4.6] | -26% | -6.5 (9.4) / -15.7 (19.6) | -6.0 (9.7) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| U1 L2SL A30 mult20@5 ne0 none | +31% [-46.9, 44.7] | +33% [-181.1, 67.0] | +36% [-307.3, 31.7] | +36% | -2.6 (7.4) / -6.0 (17.3) | 0.1 (8.1) | not run / not run / not run | G3 placebo (not run), G4 LOEO, G5 CI, G8 family-wise p |
-| U2 L2SL A30 mult20@5 ne1 none | +26% [-42.8, 49.0] | +6% [-164.4, 95.0] | +33% [-313.2, 18.9] | +33% | -0.4 (6.9) / -3.9 (16.8) | 2.3 (7.6) | not run / not run / not run | G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| U3 L2SL A30 mult100@5 ne0 none | +10% [-28.3, 44.1] | +13% [-122.9, 89.1] | +38% [-261.4, 8.9] | +38% | -0.3 (5.4) / -6.3 (17.2) | 0.7 (5.6) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| U4 L2SL A30 mult100@5 ne1 none | +18% [-34.5, 26.9] | +16% [-88.0, 56.7] | +5% [-168.7, 78.3] | +5% | -0.4 (4.9) / -4.1 (14.7) | -0.2 (5.0) | not run / not run / not run | G1 user def, G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
-| R1 arm-only A30 (no L2) | +26% [-46.1, 52.2] | +42% [-183.3, 58.1] | +49% [-351.3, 10.0] | +49% | -2.9 (7.6) / -6.7 (17.0) | -0.0 (8.4) | not run / not run / not run | G3 placebo (not run), G4 LOEO, G5 CI, G8 family-wise p |
-| R2 arm-only A45 (no L2) | +33% [-59.7, 16.7] | +19% [-163.4, 61.3] | +48% [-311.9, 24.1] | +48% | 3.5 (5.5) / 0.9 (15.5) | 5.3 (5.8) | not run / not run / not run | G2 PRE/X' agree, G3 placebo (not run), G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L1 THL L6_a30_r3_w10 HM (live line) | +15% [-24.5, 8.6] | +16% [-46.3, 20.4] | -10% [-54.3, 78.1] | -10% | 1.0 (1.6) / 1.6 (4.2) | 1.4 (1.6) | M 51% / A 85% / T 68% / M 84% / A 95% / T 97% / M 4% / A 55% / T 48% | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L1 THL L6_a30_r3_w10 POOL6 | -25% [-54.7, 113.3] | -7% [-97.2, 161.4] | +26% [-249.9, 21.8] | +26% | -0.9 (5.9) / -2.3 (13.9) | -0.3 (6.0) | M 9% / A 39% / T 56% / M 1% / A 49% / T 59% / M 53% / A 100% / T 100% | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L2 THL L6_a25_r3_w10 HM | +11% [-17.7, 11.3] | +18% [-49.8, 20.3] | -8% [-57.1, 74.0] | -8% | 0.9 (1.5) / 1.3 (3.9) | 1.3 (1.6) | M 23% / A 48% (n=500) / M 87% / A 97% (n=500) / M 12% / A 74% (n=500) | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L2 THL L6_a25_r3_w10 POOL6 | -23% [-63.2, 121.1] | +8% [-136.5, 114.7] | +21% [-244.8, 45.0] | +21% | -1.0 (6.6) / -3.4 (15.6) | -0.1 (6.8) | M 3% / A 29% (n=500) / M 18% / A 90% (n=500) / M 19% / A 99% (n=500) | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L3 THL L6_a30_r2_w10 HM | +16% [-30.6, 7.6] | +13% [-57.6, 18.7] | -3% [-80.0, 54.7] | -3% | 0.8 (2.1) / 2.4 (5.6) | 1.9 (2.3) | M 54% / A 47% (n=500) / M 72% / A 73% (n=500) / M 2% / A 3% (n=500) | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L3 THL L6_a30_r2_w10 POOL6 | -10% [-47.9, 152.0] | -59% [-158.5, 242.7] | +43% [-337.2, 24.0] | +18% | -2.6 (8.9) / -11.7 (18.2) | 0.2 (10.0) | M 10% / A 11% (n=500) / M 0% / A 0% (n=500) / M 43% / A 49% (n=500) | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L4 THL L6_a30_r3_w30 HM | +20% [-30.9, 10.9] | +7% [-53.1, 14.6] | +2% [-92.5, 25.0] | +2% | 1.7 (1.9) / 2.1 (5.4) | 2.8 (2.1) | M 84% / A 98% (n=500) / M 31% / A 65% (n=500) / M 37% / A 94% (n=500) | G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L4 THL L6_a30_r3_w30 POOL6 | -26% [-60.2, 145.2] | +10% [-176.1, 88.3] | +41% [-373.6, 21.2] | +41% | 0.4 (7.4) / -7.3 (17.3) | 3.8 (8.2) | M 12% / A 72% (n=500) / M 6% / A 71% (n=500) / M 57% / A 100% (n=500) | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L5 THL L6_a15_r3_w30 HM | +15% [-26.3, 10.5] | +13% [-57.8, 26.9] | -7% [-97.0, 83.3] | -7% | 0.2 (2.3) / -0.4 (6.5) | 0.8 (2.4) | M 42% / A 57% (n=500) / M 23% / A 78% (n=500) / M 63% / A 99% (n=500) | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| L5 THL L6_a15_r3_w30 POOL6 | -46% [-50.0, 170.4] | -146% [-112.3, 539.8] | +59% [-388.8, 4.6] | -26% | -6.5 (9.4) / -15.7 (19.6) | -6.0 (9.7) | M 12% / A 94% (n=500) / M 0% / A 78% (n=500) / M 88% / A 100% (n=500) | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| U1 L2SL A30 mult20@5 ne0 none | +31% [-46.9, 44.7] | +33% [-181.1, 67.0] | +36% [-307.3, 31.7] | +36% | -2.6 (7.4) / -6.0 (17.3) | 0.1 (8.1) | M 22% / A 85% (n=500) / M 3% / A 39% (n=500) / M 0% / A 66% (n=500) | G3 placebo, G4 LOEO, G5 CI, G8 family-wise p |
+| U2 L2SL A30 mult20@5 ne1 none | +26% [-42.8, 49.0] | +6% [-164.4, 95.0] | +33% [-313.2, 18.9] | +33% | -0.4 (6.9) / -3.9 (16.8) | 2.3 (7.6) | M 13% / A 74% (n=500) / M 0% / A 1% (n=500) / M 1% / A 75% (n=500) | G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| U3 L2SL A30 mult100@5 ne0 none | +10% [-28.3, 44.1] | +13% [-122.9, 89.1] | +38% [-261.4, 8.9] | +38% | -0.3 (5.4) / -6.3 (17.2) | 0.7 (5.6) | M 13% / A 41% (n=500) / M 7% / A 56% (n=500) / M 74% / A 100% (n=500) | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| U4 L2SL A30 mult100@5 ne1 none | +18% [-34.5, 26.9] | +16% [-88.0, 56.7] | +5% [-168.7, 78.3] | +5% | -0.4 (4.9) / -4.1 (14.7) | -0.2 (5.0) | M 18% / A 38% (n=500) / M 18% / A 50% (n=500) / M 14% / A 68% (n=500) | G1 user def, G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
+| R1 arm-only A30 (no L2) | +26% [-46.1, 52.2] | +42% [-183.3, 58.1] | +49% [-351.3, 10.0] | +49% | -2.9 (7.6) / -6.7 (17.0) | -0.0 (8.4) | M 0% / A 0% (n=500) / M 100% / A 100% (n=500) / M 0% / A 0% (n=500) | G3 placebo, G4 LOEO, G5 CI, G8 family-wise p |
+| R2 arm-only A45 (no L2) | +33% [-59.7, 16.7] | +19% [-163.4, 61.3] | +48% [-311.9, 24.1] | +48% | 3.5 (5.5) / 0.9 (15.5) | 5.3 (5.8) | M 100% / A 99% (n=500) / M 0% / A 0% (n=500) / M 0% / A 0% (n=500) | G2 PRE/X' agree, G3 placebo, G4 LOEO, G5 CI, G6 execution, G8 family-wise p |
 
 ## 2. Leave-one-episode-out (top-5 ALL episodes of the as-is stack: peak..trough weeks removed from both series; maxDD $k before>after (cut); survives = cut >= 10%, worst-20 not worse)
 
@@ -191,12 +193,71 @@ Reading. Episode 1 (2023-04-03 to 2023-12-01, 35 weeks, 316.5k) and episode 2 (2
 
 ## 3. Matched placebos, 1,000 engine-exact draws each (rank = share of draws with a SMALLER maxDD cut than the real cell; p = (1+#draws >= real)/(n+1); the placebo is run through the same lock engine, so the lock channel is in the null)
 
-Universe = engine-taken trades (as-is final size > 0) that reached the arm; strata = book x side x session x hold-time quartile; the real fired count per stratum is kept. **M** = random trades at their first arm-qualified decision row (the plain arm cut, no L2 condition); **T** = random trades, cut at the arm-qualified row nearest a time-in-trade drawn from the real fires of the stratum (the L2 condition replaced by a random same-share condition at the same time-in-trade); **S** = the real fired trades cut at a random arm-qualified row; **R** (UFP trails / target chooser) = the real deltas reassigned to random stratum-matched trades at the same fraction of their hold.
+Universe = engine-taken trades (as-is final size > 0) that reached the arm; strata = book x side x session x hold-time quartile; the real fired count per stratum is kept. **M** = random trades at their first arm-qualified decision row (the plain arm cut, no L2 condition); **T** = random trades, cut at the arm-qualified row nearest an ABSOLUTE time-in-trade drawn from the real fires of the stratum (the L2 condition replaced by a random same-share condition at the same time-in-trade; prereg definition); **A** = as T but the drawn time is time SINCE THE ARM crossing (ADDENDUM 2, added because T pushes the cut later than the arm crossing for rules that fire at the crossing); **S** = the real fired trades cut at a random arm-qualified row; **R** (UFP trails / target chooser) = the real deltas reassigned to random stratum-matched trades at the same fraction of their hold.
 
 | cell | set | n draws | L6M real / placebo mean [p5, p95] / rank (p) | PRE | X' | ALL | draws with L6M cut >= 20% | PRE and X' both >= 20% | all three |
 |---|---|---|---|---|---|---|---|---|---|
+| S1 L2SL A45 z10>=2 ne0 ICE | M | 1000 | +61% / +32% [+10%, +56%] / 99% (0.007) | +35% / +25% [+12%, +39%] / 88% (0.117) | +31% / +35% [+14%, +55%] / 39% (0.614) | +31% / +35% [+14%, +54%] / 39% (0.614) | 82% | 65% | 54% |
+| S1 L2SL A45 z10>=2 ne0 ICE | A | 1000 | +61% / +25% [-3%, +50%] / 100% (0.003) | +35% / +22% [+7%, +37%] / 91% (0.092) | +31% / +21% [-1%, +43%] / 77% (0.232) | +31% / +21% [-1%, +43%] / 77% (0.232) | 63% | 31% | 21% |
+| S1 L2SL A45 z10>=2 ne0 ICE | T | 1000 | +61% / +19% [-7%, +45%] / 100% (0.001) | +35% / +19% [+1%, +36%] / 93% (0.067) | +31% / +16% [-8%, +38%] / 86% (0.141) | +31% / +16% [-8%, +38%] / 86% (0.141) | 47% | 19% | 9% |
+| S1 L2SL A45 z10>=2 ne0 ICE | S | 1000 | +61% / +41% [+23%, +53%] / 100% (0.001) | +35% / +33% [+28%, +38%] / 65% (0.347) | +31% / +23% [+17%, +27%] / 100% (0.001) | +31% / +23% [+17%, +27%] / 100% (0.001) | 100% | 89% | 89% |
+| S2 L2SL A45 z10>=2 ne0 ICESWP | M | 500 | +61% / +31% [+10%, +54%] / 100% (0.004) | +36% / +26% [+12%, +40%] / 88% (0.118) | +32% / +34% [+12%, +56%] / 42% (0.583) | +32% / +34% [+12%, +54%] / 42% (0.583) | 81% | 65% | 52% |
+| S2 L2SL A45 z10>=2 ne0 ICESWP | A | 500 | +61% / +25% [-2%, +51%] / 100% (0.004) | +36% / +22% [+6%, +37%] / 92% (0.080) | +32% / +20% [-2%, +41%] / 80% (0.198) | +32% / +20% [-2%, +41%] / 80% (0.198) | 61% | 30% | 17% |
+| S3 L2SL A45 z10>=2 ne0 K2 | M | 500 | +61% / +32% [+9%, +55%] / 99% (0.008) | +36% / +26% [+12%, +41%] / 85% (0.156) | +32% / +34% [+12%, +57%] / 43% (0.569) | +32% / +34% [+12%, +54%] / 43% (0.569) | 84% | 63% | 53% |
+| S3 L2SL A45 z10>=2 ne0 K2 | A | 500 | +61% / +26% [-4%, +52%] / 100% (0.002) | +36% / +23% [+5%, +37%] / 94% (0.064) | +32% / +19% [-5%, +42%] / 84% (0.160) | +32% / +19% [-5%, +42%] / 84% (0.160) | 65% | 32% | 20% |
+| S4 L2SL A30 z5>=3 none | M | 1000 | +26% / +22% [-4%, +49%] / 60% (0.406) | +30% / +9% [-28%, +35%] / 86% (0.137) | +20% / +15% [-14%, +42%] / 60% (0.400) | +20% / +15% [-14%, +41%] / 60% (0.398) | 54% | 13% | 7% |
+| S4 L2SL A30 z5>=3 none | A | 1000 | +26% / +12% [-16%, +39%] / 79% (0.207) | +30% / -1% [-40%, +29%] / 95% (0.047) | +20% / -10% [-41%, +20%] / 95% (0.050) | +20% / -10% [-41%, +19%] / 95% (0.049) | 32% | 1% | 0% |
+| S4 L2SL A30 z5>=3 none | T | 1000 | +26% / +10% [-20%, +36%] / 84% (0.160) | +30% / -5% [-45%, +27%] / 98% (0.022) | +20% / -5% [-35%, +24%] / 92% (0.082) | +20% / -5% [-35%, +24%] / 92% (0.079) | 27% | 1% | 0% |
+| S4 L2SL A30 z5>=3 none | S | 1000 | +26% / +34% [+29%, +37%] / 3% (0.972) | +30% / +32% [+27%, +39%] / 15% (0.852) | +20% / +24% [+20%, +28%] / 5% (0.946) | +20% / +24% [+20%, +28%] / 5% (0.946) | 98% | 96% | 94% |
+| S5 L2SL A45 mult100@30 ne1 ICE | M | 1000 | +70% / +38% [+20%, +56%] / 100% (0.001) | +39% / +35% [+26%, +47%] / 74% (0.260) | +49% / +50% [+36%, +63%] / 43% (0.574) | +49% / +50% [+36%, +60%] / 43% (0.573) | 95% | 100% | 95% |
+| S5 L2SL A45 mult100@30 ne1 ICE | A | 1000 | +70% / +32% [+7%, +52%] / 100% (0.001) | +39% / +34% [+22%, +46%] / 74% (0.265) | +49% / +39% [+22%, +54%] / 86% (0.141) | +49% / +39% [+22%, +53%] / 86% (0.139) | 82% | 95% | 78% |
+| S5 L2SL A45 mult100@30 ne1 ICE | T | 1000 | +70% / +19% [-4%, +41%] / 100% (0.001) | +39% / +25% [+7%, +40%] / 93% (0.074) | +49% / +15% [-5%, +35%] / 100% (0.002) | +49% / +15% [-5%, +35%] / 100% (0.002) | 46% | 24% | 10% |
+| S5 L2SL A45 mult100@30 ne1 ICE | S | 1000 | +70% / +48% [+44%, +57%] / 100% (0.001) | +39% / +34% [+28%, +43%] / 81% (0.195) | +49% / +34% [+26%, +40%] / 100% (0.001) | +49% / +34% [+26%, +40%] / 100% (0.001) | 100% | 99% | 99% |
 | H L2SL A45 mult20@30 ne1 ICE (headline) | M | 1000 | +73% / +32% [+26%, +40%] / 100% (0.001) | +38% / +36% [+29%, +48%] / 69% (0.312) | +41% / +52% [+48%, +56%] / 1% (0.991) | +41% / +52% [+48%, +56%] / 1% (0.991) | 100% | 100% | 100% |
-| H L2SL A45 mult20@30 ne1 ICE (headline) | T | 200 | +73% / +15% [-2%, +27%] / 100% (0.005) | +38% / +25% [+13%, +36%] / 98% (0.030) | +41% / +18% [+6%, +30%] / 100% (0.005) | +41% / +18% [+6%, +30%] / 100% (0.005) | 46% | 22% | 10% |
+| H L2SL A45 mult20@30 ne1 ICE (headline) | A | 1000 | +73% / +29% [+21%, +38%] / 100% (0.001) | +38% / +36% [+25%, +47%] / 62% (0.378) | +41% / +43% [+34%, +50%] / 30% (0.695) | +41% / +43% [+34%, +50%] / 30% (0.695) | 95% | 100% | 95% |
+| H L2SL A45 mult20@30 ne1 ICE (headline) | T | 1000 | +73% / +15% [-2%, +27%] / 100% (0.001) | +38% / +24% [+13%, +36%] / 98% (0.024) | +41% / +17% [+5%, +29%] / 100% (0.001) | +41% / +17% [+5%, +29%] / 100% (0.001) | 46% | 25% | 12% |
+| H L2SL A45 mult20@30 ne1 ICE (headline) | S | 1000 | +73% / +49% [+45%, +52%] / 100% (0.001) | +38% / +33% [+28%, +38%] / 94% (0.065) | +41% / +9% [+3%, +14%] / 100% (0.001) | +41% / +9% [+3%, +14%] / 100% (0.001) | 100% | 0% | 0% |
+| T1 UFP1 F3 icege10 ext10 trail20 | R | 1000 | +55% / -40% [-113%, +20%] / 100% (0.002) | +37% / -58% [-124%, +2%] / 100% (0.001) | +65% / -3% [-53%, +43%] / 100% (0.001) | +57% / -10% [-53%, +28%] / 100% (0.001) | 5% | 0% | 0% |
+| T2 UFP1 F3 icege10 ext30 trail20 | R | 500 | +55% / -39% [-120%, +19%] / 100% (0.002) | +37% / -56% [-121%, -0%] / 100% (0.002) | +65% / -6% [-55%, +42%] / 100% (0.004) | +56% / -11% [-56%, +28%] / 100% (0.002) | 4% | 0% | 0% |
+| T3 UFP1 F5 d5q20 acc dl30 trail20 | R | 1000 | +54% / -31% [-96%, +23%] / 100% (0.001) | +36% / -50% [-114%, +4%] / 100% (0.001) | +69% / -5% [-57%, +41%] / 100% (0.001) | +53% / -10% [-57%, +27%] / 100% (0.001) | 6% | 0% | 0% |
+| T4 UFP1 F1 Wc80 Tb I1 trail20 | R | 1000 | +48% / -6% [-44%, +29%] / 99% (0.008) | +32% / -32% [-77%, +15%] / 100% (0.004) | +62% / -5% [-42%, +33%] / 100% (0.003) | +58% / -6% [-42%, +27%] / 100% (0.001) | 12% | 0% | 0% |
+| T5 UFP1 F1 Wc80 Tb I1 trail40 | R | 1000 | +39% / -4% [-41%, +31%] / 98% (0.023) | +34% / -24% [-67%, +15%] / 100% (0.002) | +33% / -16% [-56%, +20%] / 99% (0.009) | +33% / -17% [-56%, +20%] / 100% (0.002) | 13% | 0% | 0% |
+| C1 UFP5 dlt_a m0.5 | R | 1000 | +46% / -8% [-51%, +29%] / 99% (0.009) | +42% / -29% [-77%, +16%] / 100% (0.002) | +38% / +27% [-7%, +58%] / 68% (0.324) | +38% / +20% [-8%, +44%] / 87% (0.132) | 10% | 2% | 0% |
+| C2 UFP5 dlt_a m0.67 | R | 1000 | +40% / +1% [-26%, +35%] / 97% (0.031) | +45% / -17% [-58%, +21%] / 100% (0.002) | +33% / +30% [+1%, +57%] / 56% (0.440) | +33% / +25% [+1%, +46%] / 68% (0.317) | 16% | 4% | 1% |
+| L1 THL L6_a30_r3_w10 HM (live line) | M | 1000 | +15% / +15% [+4%, +24%] / 51% (0.492) | +16% / +8% [-5%, +21%] / 84% (0.164) | -10% / +2% [-9%, +14%] / 4% (0.957) | -10% / +2% [-9%, +14%] / 4% (0.957) | 23% | 0% | 0% |
+| L1 THL L6_a30_r3_w10 HM (live line) | A | 1000 | +15% / +9% [-1%, +17%] / 85% (0.148) | +16% / +1% [-14%, +15%] / 95% (0.049) | -10% / -11% [-23%, +1%] / 55% (0.455) | -10% / -11% [-23%, +1%] / 55% (0.455) | 1% | 0% | 0% |
+| L1 THL L6_a30_r3_w10 HM (live line) | T | 1000 | +15% / +12% [+1%, +20%] / 68% (0.318) | +16% / -0% [-15%, +14%] / 97% (0.034) | -10% / -10% [-22%, +2%] / 48% (0.521) | -10% / -10% [-22%, +2%] / 48% (0.521) | 5% | 0% | 0% |
+| L1 THL L6_a30_r3_w10 POOL6 | M | 1000 | -25% / +16% [-39%, +50%] / 9% (0.908) | -7% / +29% [+5%, +47%] / 1% (0.987) | +26% / +23% [-9%, +54%] / 53% (0.467) | +26% / +23% [-9%, +52%] / 54% (0.466) | 52% | 43% | 23% |
+| L1 THL L6_a30_r3_w10 POOL6 | A | 1000 | -25% / -20% [-82%, +25%] / 39% (0.611) | -7% / -7% [-44%, +24%] / 49% (0.513) | +26% / -39% [-80%, +1%] / 100% (0.004) | +26% / -40% [-81%, +1%] / 100% (0.004) | 8% | 0% | 0% |
+| L1 THL L6_a30_r3_w10 POOL6 | T | 1000 | -25% / -34% [-101%, +17%] / 56% (0.441) | -7% / -14% [-53%, +18%] / 59% (0.415) | +26% / -35% [-77%, +4%] / 100% (0.004) | +26% / -36% [-80%, +4%] / 100% (0.004) | 4% | 0% | 0% |
+| L2 THL L6_a25_r3_w10 HM | M | 500 | +11% / +16% [+4%, +25%] / 23% (0.772) | +18% / +9% [-4%, +22%] / 87% (0.132) | -8% / +1% [-13%, +13%] / 12% (0.882) | -8% / +1% [-13%, +13%] / 12% (0.882) | 33% | 0% | 0% |
+| L2 THL L6_a25_r3_w10 HM | A | 500 | +11% / +11% [+1%, +19%] / 48% (0.521) | +18% / +3% [-12%, +16%] / 97% (0.028) | -8% / -13% [-26%, -1%] / 74% (0.265) | -8% / -13% [-26%, -1%] / 74% (0.265) | 4% | 0% | 0% |
+| L2 THL L6_a25_r3_w10 POOL6 | M | 500 | -23% / +29% [-11%, +58%] / 3% (0.972) | +8% / +21% [-6%, +44%] / 18% (0.818) | +21% / +37% [+4%, +62%] / 19% (0.814) | +21% / +36% [+4%, +58%] / 19% (0.814) | 71% | 49% | 35% |
+| L2 THL L6_a25_r3_w10 POOL6 | A | 500 | -23% / -11% [-74%, +32%] / 29% (0.713) | +8% / -24% [-74%, +14%] / 90% (0.102) | +21% / -28% [-74%, +7%] / 99% (0.012) | +21% / -33% [-83%, +3%] / 100% (0.006) | 15% | 0% | 0% |
+| L3 THL L6_a30_r2_w10 HM | M | 500 | +16% / +17% [+12%, +25%] / 54% (0.459) | +13% / +10% [+3%, +18%] / 72% (0.285) | -3% / +7% [-1%, +16%] / 2% (0.982) | -3% / +7% [-1%, +16%] / 2% (0.982) | 11% | 0% | 0% |
+| L3 THL L6_a30_r2_w10 HM | A | 500 | +16% / +17% [+12%, +25%] / 47% (0.527) | +13% / +10% [+2%, +18%] / 73% (0.275) | -3% / +7% [-2%, +16%] / 3% (0.972) | -3% / +7% [-2%, +16%] / 3% (0.972) | 15% | 0% | 0% |
+| L3 THL L6_a30_r2_w10 POOL6 | M | 500 | -10% / +15% [-20%, +38%] / 10% (0.902) | -59% / +34% [+15%, +50%] / 0% (1.000) | +43% / +45% [+27%, +62%] / 43% (0.571) | +18% / +45% [+27%, +60%] / 1% (0.988) | 48% | 88% | 42% |
+| L3 THL L6_a30_r2_w10 POOL6 | A | 500 | -10% / +14% [-19%, +40%] / 11% (0.890) | -59% / +31% [+12%, +49%] / 0% (1.000) | +43% / +43% [+24%, +60%] / 49% (0.515) | +18% / +43% [+24%, +59%] / 2% (0.980) | 44% | 81% | 34% |
+| L4 THL L6_a30_r3_w30 HM | M | 500 | +20% / +15% [+6%, +24%] / 84% (0.164) | +7% / +10% [-1%, +20%] / 31% (0.695) | +2% / +5% [-6%, +16%] / 37% (0.627) | +2% / +5% [-6%, +16%] / 37% (0.627) | 18% | 0% | 0% |
+| L4 THL L6_a30_r3_w30 HM | A | 500 | +20% / +9% [-1%, +19%] / 98% (0.022) | +7% / +3% [-9%, +15%] / 65% (0.351) | +2% / -9% [-20%, +3%] / 94% (0.060) | +2% / -9% [-20%, +3%] / 94% (0.060) | 2% | 0% | 0% |
+| L4 THL L6_a30_r3_w30 POOL6 | M | 500 | -26% / +5% [-42%, +42%] / 12% (0.876) | +10% / +28% [+7%, +46%] / 6% (0.938) | +41% / +37% [+13%, +61%] / 57% (0.433) | +41% / +37% [+13%, +58%] / 57% (0.431) | 33% | 70% | 22% |
+| L4 THL L6_a30_r3_w30 POOL6 | A | 500 | -26% / -56% [-137%, +7%] / 72% (0.277) | +10% / +0% [-28%, +23%] / 71% (0.293) | +41% / -15% [-49%, +15%] / 100% (0.004) | +41% / -15% [-49%, +15%] / 100% (0.002) | 1% | 0% | 0% |
+| L5 THL L6_a15_r3_w30 HM | M | 500 | +15% / +16% [+5%, +27%] / 42% (0.579) | +13% / +17% [+5%, +28%] / 23% (0.766) | -7% / -10% [-25%, +5%] / 63% (0.373) | -7% / -10% [-25%, +5%] / 63% (0.373) | 25% | 0% | 0% |
+| L5 THL L6_a15_r3_w30 HM | A | 500 | +15% / +14% [+3%, +25%] / 57% (0.429) | +13% / +6% [-7%, +18%] / 78% (0.220) | -7% / -30% [-45%, -16%] / 99% (0.012) | -7% / -30% [-45%, -16%] / 99% (0.012) | 18% | 0% | 0% |
+| L5 THL L6_a15_r3_w30 POOL6 | M | 500 | -46% / -3% [-73%, +43%] / 12% (0.884) | -146% / +11% [-29%, +39%] / 0% (1.000) | +59% / +40% [+8%, +63%] / 88% (0.120) | -26% / +37% [+8%, +57%] / 0% (0.998) | 31% | 34% | 10% |
+| L5 THL L6_a15_r3_w30 POOL6 | A | 500 | -46% / -173% [-324%, -40%] / 94% (0.064) | -146% / -208% [-336%, -86%] / 78% (0.224) | +59% / -57% [-105%, -12%] / 100% (0.002) | -26% / -236% [-323%, -141%] / 100% (0.002) | 0% | 0% | 0% |
+| U1 L2SL A30 mult20@5 ne0 none | M | 500 | +31% / +34% [+26%, +47%] / 22% (0.780) | +33% / +40% [+34%, +50%] / 3% (0.974) | +36% / +52% [+45%, +60%] / 0% (1.000) | +36% / +52% [+45%, +60%] / 0% (1.000) | 99% | 100% | 98% |
+| U1 L2SL A30 mult20@5 ne0 none | A | 500 | +31% / +23% [+12%, +36%] / 85% (0.154) | +33% / +34% [+24%, +45%] / 39% (0.609) | +36% / +33% [+24%, +45%] / 66% (0.341) | +36% / +33% [+24%, +45%] / 66% (0.341) | 63% | 97% | 61% |
+| U2 L2SL A30 mult20@5 ne1 none | M | 500 | +26% / +35% [+20%, +52%] / 13% (0.872) | +6% / +39% [+25%, +51%] / 0% (1.000) | +33% / +51% [+38%, +62%] / 1% (0.994) | +33% / +51% [+38%, +62%] / 1% (0.994) | 95% | 98% | 94% |
+| U2 L2SL A30 mult20@5 ne1 none | A | 500 | +26% / +17% [-8%, +38%] / 74% (0.259) | +6% / +29% [+17%, +42%] / 1% (0.994) | +33% / +27% [+11%, +43%] / 75% (0.255) | +33% / +27% [+11%, +43%] / 75% (0.255) | 41% | 67% | 27% |
+| U3 L2SL A30 mult100@5 ne0 none | M | 500 | +10% / +32% [-9%, +57%] / 13% (0.870) | +13% / +35% [+10%, +52%] / 7% (0.932) | +38% / +26% [-5%, +53%] / 74% (0.265) | +38% / +26% [-5%, +52%] / 74% (0.265) | 78% | 55% | 45% |
+| U3 L2SL A30 mult100@5 ne0 none | A | 500 | +10% / +12% [-33%, +43%] / 41% (0.589) | +13% / +10% [-24%, +36%] / 56% (0.437) | +38% / -22% [-54%, +13%] / 100% (0.002) | +38% / -22% [-54%, +13%] / 100% (0.002) | 42% | 1% | 1% |
+| U4 L2SL A30 mult100@5 ne1 none | M | 500 | +18% / +33% [+2%, +58%] / 18% (0.822) | +16% / +30% [+2%, +49%] / 18% (0.824) | +5% / +23% [-7%, +49%] / 14% (0.862) | +5% / +23% [-7%, +49%] / 14% (0.862) | 80% | 45% | 36% |
+| U4 L2SL A30 mult100@5 ne1 none | A | 500 | +18% / +21% [-9%, +48%] / 38% (0.617) | +16% / +14% [-16%, +40%] / 50% (0.503) | +5% / -5% [-36%, +25%] / 68% (0.319) | +5% / -5% [-36%, +25%] / 68% (0.319) | 57% | 3% | 2% |
+| R1 arm-only A30 (no L2) | M | 500 | +26% / +33% [+33%, +33%] / 0% (1.000) | +42% / +39% [+39%, +39%] / 100% (0.002) | +49% / +54% [+54%, +54%] / 0% (1.000) | +49% / +54% [+54%, +54%] / 0% (1.000) | 100% | 100% | 100% |
+| R1 arm-only A30 (no L2) | A | 500 | +26% / +33% [+33%, +33%] / 0% (1.000) | +42% / +39% [+39%, +39%] / 100% (0.002) | +49% / +54% [+54%, +54%] / 0% (1.000) | +49% / +54% [+54%, +54%] / 0% (1.000) | 100% | 100% | 100% |
+| R2 arm-only A45 (no L2) | M | 500 | +33% / +31% [+31%, +31%] / 100% (0.002) | +19% / +37% [+37%, +37%] / 0% (1.000) | +48% / +54% [+54%, +54%] / 0% (1.000) | +48% / +54% [+54%, +54%] / 0% (1.000) | 100% | 100% | 100% |
+| R2 arm-only A45 (no L2) | A | 500 | +33% / +32% [+31%, +32%] / 99% (0.016) | +19% / +37% [+37%, +37%] / 0% (1.000) | +48% / +54% [+54%, +54%] / 0% (1.000) | +48% / +54% [+54%, +54%] / 0% (1.000) | 100% | 100% | 100% |
 
 Reading. A cell passes G3 only if its real cut ranks >= 95% in L6M, PRE and X' under every placebo that applies. A rank near 100% in L6M together with a low rank in X' is the signature of one lucky week plus a stop-tightening effect; a placebo that already satisfies the 20% cut in PRE and X' in a large share of draws means those windows do not discriminate (the 'draws with PRE and X' both >= 20%' column).
 
@@ -373,6 +434,23 @@ Engine-kept trades (as-is 11,347; as-is+12R 7878): newly kept / dropped when the
 
 Is the data available at the trigger second? The L2 features are built on the 10-s book table (state at the END of the 10-s bin; windows end at the decision second), the fill in the base case is the 1-s close of that same second, i.e. zero latency; +1 s / +3 s are the realistic cases. For the L2 cells the live feed must supply, at the trigger second, the features of section 8: D6 as coded does not compute them (D6 computes pct, imb5, imb10, delta60, curDepthRel, pulled_sup10 and the price-path set), so the rule cannot be evaluated live today.
 
+### 6b. Where the mean gain comes from: same per-trade pts change, exit time NOT moved (the lock engine sees the old exit second)
+
+| cell | exact (exit moved): ALL mean / L6M cut / PRE cut / X' cut | pts only (exit unchanged): ALL mean / L6M cut / PRE cut / X' cut |
+|---|---|---|
+| H L2SL A45 mult20@30 ne1 ICE (headline) | 4.1 / +73% / +38% / +41% | 0.4 / +65% / +29% / +22% |
+| S1 L2SL A45 z10>=2 ne0 ICE | 3.1 / +61% / +35% / +31% | 0.9 / +58% / +32% / +26% |
+| S5 L2SL A45 mult100@30 ne1 ICE | 4.6 / +70% / +39% / +49% | 1.1 / +63% / +27% / +32% |
+| S4 L2SL A30 z5>=3 none | 0.1 / +26% / +30% / +20% | -0.9 / +26% / +29% / +20% |
+| R2 arm-only A45 (no L2) | 3.5 / +33% / +19% / +48% | 0.0 / +29% / +21% / +29% |
+| R1 arm-only A30 (no L2) | -2.9 / +26% / +42% / +49% | -7.6 / +26% / +19% / +33% |
+| L1 THL L6_a30_r3_w10 HM (live line) | 1.0 / +15% / +16% / -10% | 0.7 / +15% / +15% / -12% |
+| L1 THL L6_a30_r3_w10 POOL6 | -0.9 / -25% / -7% / +26% | -3.8 / -41% / -5% / +8% |
+| T1 UFP1 F3 icege10 ext10 trail20 | -4.5 / +55% / +37% / +65% | -9.0 / +49% / +7% / +57% |
+| C1 UFP5 dlt_a m0.5 | -1.0 / +46% / +42% / +38% | -3.5 / +40% / +36% / +27% |
+
+For the A=45 cells the mean gain (+3.5 to +4.6k/wk exact) falls to about zero when the exit second is not moved; a maxDD cut of 20-30% in PRE and X' remains, which is what a 25% tighter stop does mechanically. The -45 pt cut therefore buys a smaller loss per losing trade (and the busy-filter/lock release that follows), at constant trade-level expectancy.
+
 ## 7. The target-forfeit side (the trades the cut closes that would have recovered)
 
 Per cell, ALL window, engine-taken fired trades: forfeited = cut worse than hold (delta < 0); 'hit target' = of the forfeited, trades whose hold outcome was a target (hold pts > 0); $ at live sizes (first-order: pts x as-is final size x $/pt) saved / forfeited / net; mean pts saved and forfeited per trade.
@@ -409,7 +487,7 @@ Per cell, ALL window, engine-taken fired trades: forfeited = cut worse than hold
 | R1 arm-only A30 (no L2) | 6522 | 1725 (26%) | 1599 | 9737.0 | -10216.6 | -479.6 | +27.8 / -82.5 | 1330 / 365 / -194.9 |
 | R2 arm-only A45 (no L2) | 5283 | 673 (13%) | 593 | 4409.3 | -4468.7 | -59.4 | +13.0 / -92.7 | 1072 / 142 / -78.1 |
 
-For the A=45 loss cuts the saved and forfeited dollars are within a few percent of each other: roughly 88% of the closed trades would have stopped out (saving about 12 pts each) and about 12% would have gone on to the target or a small win (losing about 90 pts each, mostly targets). The cut is a risk-for-reward trade at constant expectancy at the trade level; the P&L change in the engine comes from the extra trades it admits.
+For H the saved and forfeited dollars nearly cancel: 4538 of 5157 closed trades would have stopped out or lost more (saving +12.2 pts each, 4039.9k) and 619 (12%) would have recovered (losing -92.6 pts each, -4072.1k), 541 of them to the target; net -32.2k over 149 weeks. The cut is a risk-for-reward trade at about constant trade-level expectancy; the engine P&L change comes from the extra trades it admits (section 6).
 
 ## 8. Can D6 / D7 see it? The exact feature gap, and the D6 mapping (THP L2 policy line = NEEDS)
 
@@ -447,37 +525,37 @@ Latency / cadence: the book table behind every L2 cell is the 10-s mbp-10 bin; t
 
 | cell | G1 L6M cut>=20% & mean in MDE | G2 PRE and X' agree | G3 placebo >= 95% (L6M, PRE, X') | G4 LOEO (5 singles + all-five + L6M worst week) | G5 bootstrap CI excludes 0 (L6M, PRE, X') | G6 +3 s, cost 1.28, base stop 1.28 | G7 equal-risk mean >= -MDE | G8 family-wise p <= 0.05 | user-def | decisive |
 |---|---|---|---|---|---|---|---|---|---|---|
-| S1 L2SL A45 z10>=2 ne0 ICE | pass | pass | not run | FAIL | FAIL | pass | pass | pass (p 0.010) | YES | NO |
-| S2 L2SL A45 z10>=2 ne0 ICESWP | pass | pass | not run | FAIL | FAIL | pass | pass | pass (p 0.010) | YES | NO |
-| S3 L2SL A45 z10>=2 ne0 K2 | pass | pass | not run | FAIL | FAIL | pass | pass | pass (p 0.010) | YES | NO |
-| S4 L2SL A30 z5>=3 none | pass | pass | not run | FAIL | FAIL | FAIL | pass | pass (p 0.030) | YES | NO |
-| S5 L2SL A45 mult100@30 ne1 ICE | pass | pass | not run | FAIL | FAIL | pass | pass | pass (p 0.040) | YES | NO |
-| H L2SL A45 mult20@30 ne1 ICE (headline) | pass | pass | FAIL (M:PRE=69%, M:X=1%) | FAIL | FAIL | pass | pass | FAIL (p 0.060) | YES | NO |
-| T1 UFP1 F3 icege10 ext10 trail20 | pass | pass | not run | FAIL | FAIL | pass | pass | FAIL (p 0.060) | YES | NO |
-| T2 UFP1 F3 icege10 ext30 trail20 | pass | pass | not run | FAIL | FAIL | pass | pass | FAIL (p 0.060) | YES | NO |
-| T3 UFP1 F5 d5q20 acc dl30 trail20 | pass | pass | not run | FAIL | FAIL | pass | pass | FAIL (p 0.065) | YES | NO |
-| T4 UFP1 F1 Wc80 Tb I1 trail20 | pass | pass | not run | FAIL | FAIL | pass | pass | FAIL (p 0.065) | YES | NO |
-| T5 UFP1 F1 Wc80 Tb I1 trail40 | pass | pass | not run | FAIL | FAIL | pass | pass | pass (p 0.035) | YES | NO |
-| C1 UFP5 dlt_a m0.5 | pass | pass | not run | FAIL | FAIL | pass | pass | pass (p 0.045) | YES | NO |
-| C2 UFP5 dlt_a m0.67 | pass | pass | not run | FAIL | FAIL | pass | pass | pass (p 0.015) | YES | NO |
-| L1 THL L6_a30_r3_w10 HM (live line) | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| L1 THL L6_a30_r3_w10 POOL6 | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| L2 THL L6_a25_r3_w10 HM | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| L2 THL L6_a25_r3_w10 POOL6 | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| L3 THL L6_a30_r2_w10 HM | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| L3 THL L6_a30_r2_w10 POOL6 | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| L4 THL L6_a30_r3_w30 HM | pass | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| L4 THL L6_a30_r3_w30 POOL6 | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| L5 THL L6_a15_r3_w30 HM | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| L5 THL L6_a15_r3_w30 POOL6 | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| U1 L2SL A30 mult20@5 ne0 none | pass | pass | not run | FAIL | FAIL | pass | pass | FAIL | YES | NO |
-| U2 L2SL A30 mult20@5 ne1 none | pass | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| U3 L2SL A30 mult100@5 ne0 none | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| U4 L2SL A30 mult100@5 ne1 none | FAIL | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
-| R1 arm-only A30 (no L2) | pass | pass | not run | FAIL | FAIL | pass | pass | FAIL | YES | NO |
-| R2 arm-only A45 (no L2) | pass | FAIL | not run | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| S1 L2SL A45 z10>=2 ne0 ICE | pass | pass | FAIL (A:PRE=91%, A:X=77%, M:PRE=88%, M:X=39%, S:PRE=65%, T:PRE=93%, T:X=86%) | FAIL | FAIL | pass | pass | pass (p 0.010) | YES | NO |
+| S2 L2SL A45 z10>=2 ne0 ICESWP | pass | pass | FAIL (A:PRE=92%, A:X=80%, M:PRE=88%, M:X=42%) | FAIL | FAIL | pass | pass | pass (p 0.010) | YES | NO |
+| S3 L2SL A45 z10>=2 ne0 K2 | pass | pass | FAIL (A:PRE=94%, A:X=84%, M:PRE=85%, M:X=43%) | FAIL | FAIL | pass | pass | pass (p 0.010) | YES | NO |
+| S4 L2SL A30 z5>=3 none | pass | pass | FAIL (A:L6M=79%, M:L6M=60%, M:PRE=86%, M:X=60%, S:L6M=3%, S:PRE=15%, S:X=5%, T:L6M=84%, T:X=92%) | FAIL | FAIL | FAIL | pass | pass (p 0.030) | YES | NO |
+| S5 L2SL A45 mult100@30 ne1 ICE | pass | pass | FAIL (A:PRE=74%, A:X=86%, M:PRE=74%, M:X=43%, S:PRE=81%, T:PRE=93%) | FAIL | FAIL | pass | pass | pass (p 0.040) | YES | NO |
+| H L2SL A45 mult20@30 ne1 ICE (headline) | pass | pass | FAIL (A:PRE=62%, A:X=30%, M:PRE=69%, M:X=1%, S:PRE=94%) | FAIL | FAIL | pass | pass | FAIL (p 0.060) | YES | NO |
+| T1 UFP1 F3 icege10 ext10 trail20 | pass | pass | pass | FAIL | FAIL | pass | pass | FAIL (p 0.060) | YES | NO |
+| T2 UFP1 F3 icege10 ext30 trail20 | pass | pass | pass | FAIL | FAIL | pass | pass | FAIL (p 0.060) | YES | NO |
+| T3 UFP1 F5 d5q20 acc dl30 trail20 | pass | pass | pass | FAIL | FAIL | pass | pass | FAIL (p 0.065) | YES | NO |
+| T4 UFP1 F1 Wc80 Tb I1 trail20 | pass | pass | pass | FAIL | FAIL | pass | pass | FAIL (p 0.065) | YES | NO |
+| T5 UFP1 F1 Wc80 Tb I1 trail40 | pass | pass | pass | FAIL | FAIL | pass | pass | pass (p 0.035) | YES | NO |
+| C1 UFP5 dlt_a m0.5 | pass | pass | FAIL (R:X=68%) | FAIL | FAIL | pass | pass | pass (p 0.045) | YES | NO |
+| C2 UFP5 dlt_a m0.67 | pass | pass | FAIL (R:X=56%) | FAIL | FAIL | pass | pass | pass (p 0.015) | YES | NO |
+| L1 THL L6_a30_r3_w10 HM (live line) | FAIL | FAIL | FAIL (A:L6M=85%, A:X=55%, M:L6M=51%, M:PRE=84%, M:X=4%, T:L6M=68%, T:X=48%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| L1 THL L6_a30_r3_w10 POOL6 | FAIL | FAIL | FAIL (A:L6M=39%, A:PRE=49%, M:L6M=9%, M:PRE=1%, M:X=53%, T:L6M=56%, T:PRE=59%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| L2 THL L6_a25_r3_w10 HM | FAIL | FAIL | FAIL (A:L6M=48%, A:X=74%, M:L6M=23%, M:PRE=87%, M:X=12%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| L2 THL L6_a25_r3_w10 POOL6 | FAIL | FAIL | FAIL (A:L6M=29%, A:PRE=90%, M:L6M=3%, M:PRE=18%, M:X=19%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| L3 THL L6_a30_r2_w10 HM | FAIL | FAIL | FAIL (A:L6M=47%, A:PRE=73%, A:X=3%, M:L6M=54%, M:PRE=72%, M:X=2%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| L3 THL L6_a30_r2_w10 POOL6 | FAIL | FAIL | FAIL (A:L6M=11%, A:PRE=0%, A:X=49%, M:L6M=10%, M:PRE=0%, M:X=43%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| L4 THL L6_a30_r3_w30 HM | pass | FAIL | FAIL (A:PRE=65%, A:X=94%, M:L6M=84%, M:PRE=31%, M:X=37%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| L4 THL L6_a30_r3_w30 POOL6 | FAIL | FAIL | FAIL (A:L6M=72%, A:PRE=71%, M:L6M=12%, M:PRE=6%, M:X=57%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| L5 THL L6_a15_r3_w30 HM | FAIL | FAIL | FAIL (A:L6M=57%, A:PRE=78%, M:L6M=42%, M:PRE=23%, M:X=63%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| L5 THL L6_a15_r3_w30 POOL6 | FAIL | FAIL | FAIL (A:L6M=94%, A:PRE=78%, M:L6M=12%, M:PRE=0%, M:X=88%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| U1 L2SL A30 mult20@5 ne0 none | pass | pass | FAIL (A:L6M=85%, A:PRE=39%, A:X=66%, M:L6M=22%, M:PRE=3%, M:X=0%) | FAIL | FAIL | pass | pass | FAIL | YES | NO |
+| U2 L2SL A30 mult20@5 ne1 none | pass | FAIL | FAIL (A:L6M=74%, A:PRE=1%, A:X=75%, M:L6M=13%, M:PRE=0%, M:X=1%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| U3 L2SL A30 mult100@5 ne0 none | FAIL | FAIL | FAIL (A:L6M=41%, A:PRE=56%, M:L6M=13%, M:PRE=7%, M:X=74%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| U4 L2SL A30 mult100@5 ne1 none | FAIL | FAIL | FAIL (A:L6M=38%, A:PRE=50%, A:X=68%, M:L6M=18%, M:PRE=18%, M:X=14%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
+| R1 arm-only A30 (no L2) | pass | pass | FAIL (A:L6M=0%, A:X=0%, M:L6M=0%, M:X=0%) | FAIL | FAIL | pass | pass | FAIL | YES | NO |
+| R2 arm-only A45 (no L2) | pass | FAIL | FAIL (A:PRE=0%, A:X=0%, M:PRE=0%, M:X=0%) | FAIL | FAIL | FAIL | pass | FAIL | no | NO |
 
-Cells failing each gate (of 29): G1 11, G2 14, G3 1, G4 29, G5 29, G6 15, G7 0, G8 21. G3 'not run' counts as not passed. G9 (live-feasible in D6) is column 'live-feasible' on page 1 and section 8: L2 cells N, price-only cells Y.
+Cells failing each gate (of 27 candidates; R1/R2 excluded: their placebo draws are the real cell by construction): G1 11, G2 13, G3 22, G4 27, G5 27, G6 14, G7 0, G8 19. G3 'not run' counts as not passed. G9 (live-feasible in D6) is column 'live-feasible' on page 1 and section 8: L2 cells N, price-only cells Y.
 
 ## 10. Shadow monitor and STOP rule (nothing is activated; the decisive label is NO, so this is a record, not a promotion)
 
