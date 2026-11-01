@@ -1,0 +1,2 @@
+# DIRECTIVE (user, 2026-11-01 ~21:30Z; saved verbatim)
+Confirm: the moment RECENT_WINS_REDO coverage reads 100%, all 10 agents and all cores go to T-ZONES-3 + ZONES-3-L2 on the new windows (base D7 v1.2: TH-L2 loss on / profit off, post-cut blackout U7 30 min, zones HALF, X1-X5 and signal-state shadow, NY-AM 1 lot K7/H7/M7, 12R lock). Report in MORNING.md every 30 min with load and the current ranked zone lines; first interim DS3_ZONES_3.md on the new windows by 01:00Z.

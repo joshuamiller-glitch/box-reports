@@ -297,3 +297,4 @@ PRIORITY (user, 17:30Z): all cores on the ledger re-score (REDO section 4) until
 
 ## USER ORDER ledger then ZONES-3 2026-11-01T18:01Z (verbatim in DIRECTIVE_LEDGER_THEN_ZONES_20261101.md)
 ORDER (user, 2026-11-01 18:00Z) — finish the ledger, then every core on ZONES-3, all on the NEW windows
+- 2026-11-01T21:19Z AUTOPILOT: ZONES3 GO order active (see DIRECTIVE_ZONES3_GO_20261101.md).
