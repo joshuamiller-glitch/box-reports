@@ -285,3 +285,9 @@ T-BETTER — find what makes D7 BETTER; all day Sunday and on (user, 2026-11-01 
 
 ## USER ORDER T-ZONES-3 2026-11-01T14:53Z (verbatim in DIRECTIVE_ZONES3_20261101.md)
 T-ZONES-3 — expand the zone skip, the one piece that lowers drawdown in every window (user, 2026-11-01 ~15:00Z)
+
+## USER ORDER T-ZONES-3 ADDENDUM (order-flow/tape zones) 2026-11-01T15:36Z (verbatim in DIRECTIVE_ZONES3_L2_20261101.md)
+T-ZONES-3 ADDENDUM — the zones we have never built: ORDER-FLOW and TAPE zones (user, 2026-11-01 ~15:40Z)
+
+## USER ORDER T-RECENT-REDO 2026-11-01T15:39Z (verbatim in DIRECTIVE_RECENT_REDO_20261101.md)
+T-RECENT-REDO — "recent" means FROM TODAY. Move the cap, rebuild every recent window, validate the method, re-read everything (user, 2026-11-01 ~15:45Z)
