@@ -1,0 +1,2 @@
+# USER DECISION 2026-11-01 (verbatim)
+EF-1 threshold cadence: option 4 (live expanding rank warmed from the chart’s history) is what D7 v1.0d runs tonight. Also do option 3 as the check: publish the trailing-12-month per-book × feature thresholds (33rd / 67th percentiles) as a small file, refreshed monthly, so next week’s build can load them as a “frozen thresholds” mode and we can compare the two live. EF-2’s drawdown line on the four shipped rules at live lots is the number I want before tonight if it makes 16:00Z.
