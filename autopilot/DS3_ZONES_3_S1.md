@@ -98,3 +98,79 @@ Tape = 1-s bars (high, low, close, volume) in the study path frame (per-day addi
 
 ## Not done at this checkpoint
 D7-base run (adapter ready, ties exact), full line placebos, equal-risk verification runs (the equal-risk column shows ? where unverified), 2047-subset drop landscape, best-of-N family null, 12R line sensitivity. All to be re-run on the new cap (L1M|L2M|L3M|L6M|HOLD|MID|PRE|X') when REDO-1 and BASE-1 announce.
+
+# NEW CAP interim 17:27Z (Z1, T-ZONES-3 section 1 on the REDO cap; checkpoint on the lead's order, workers killed)
+Cap 20261031 (last day 20261030), windows L1M L2M L3M L6M HOLD MID PRE X' (L1M/L2M view only), REDO engine via redo_boot, 935 label days. POST-HOC, no PASS, Shadow only. Prereg addendum l2vast/ds3/prereg/ZONES3_S1_addendum_redo_prereg.md (sha in DECISIONS.md). Two bases through one engine (d7lib): D7 literal (7 lines D20 skip + OTE-62 B73 D30) and CV (one-convention composite = D.TIE, 8 lines skip D20; ties REDO-2: maxDD 245.1 without / 247.7 with the zone set in L6M).
+What ran: all cubes (58 sets incl. 12R and TH-L2-off), equal-risk grids (340 runs), premise bootstrap/leave-one-episode-out for both bases; the 3 uncoded profile lines REBUILT on the new tape (code zones3/s1/build_prf.py, out/zones3/prf_redo/) and validated against the old store (fire-D20 agreement 99.995% on 44,370 common signals). Main stage (placebos, verification runs, subset landscape; 17,118 jobs in out/zones3/s1n/jobs_main.pkl) only 630 jobs done, so NO line placebo ranks, no equal-risk verification, no landscape yet. Premise placebo ranks therefore not yet filled.
+## Premise check on the new windows (plain)
+* D7 base: the zone set does NOT lower drawdown. maxDD without > with: L6M 92 > 156k, HOLD 201 > 215k, MID 116 > 130k, L3M/L2M/L1M 92 > 92k (unchanged: the Oct-26 week), PRE 250 > 192k (-23%), X' 136 > 127k (-7%). Effect only in PRE/X', bootstrap P(cut>0) 0.69 each; recent windows it is worse (P(cut>0) 0.21-0.22).
+* CV composite: L6M 245 > 248k (-1%), HOLD 245 > 248k, MID 205 > 148k (+28%, P 0.84, one episode 2026-03-23), L3M 177 > 173k, PRE 304 > 241k (+21%), X' 118 > 121k (flat). The old-cap Jan-2026 one-week effect is now one of several episodes and is gone from L6M.
+* Net: "lowers drawdown in every window" is false on the new windows; recent L6M/HOLD no effect or worse, older windows (PRE) mixed and not chance-distinguishable (placebo pending).
+Tables from the run (placebo columns empty):
+
+### D7 base - zone set without > with
+| window (weeks) | maxDD $k without > with (cut) | 90% block-bootstrap CI of the cut / P(cut>0) / P(cut>=20%) | trough week without > with | leave-one-episode-out cut range | leave-one-month-out cut range | worst-20 $k without > with | weekly SD $k | Calmar | mean d $k/wk (MDE) | placebo rank of the maxDD cut: random-level / same-volume (n draws) | worst-20 rank A / B |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| L1M (view) (5) | 92 > 92 (+0%) | [-20%, +19%] / 0.69 / 0.03 | 20261026 > 20261026 | n/a | n/a | -60 > -58 * | 31.7 > 34.8 | -0.13 > -0.13 | +0.3 (12.1) | 0.423 / 0.473 (200 / 200) | - |
+| L2M (view) (9) | 92 > 92 (+0%) | [-16%, +19%] / 0.64 / 0.01 | 20261026 > 20261026 | n/a | +0% .. +0% | 95 > 70 * | 45.3 > 39.4 | 0.12 > 0.08 | -2.8 (13.4) | 0.428 / 0.473 (200 / 200) | - |
+| L3M (13) | 92 > 92 (+0%) | [-8%, +28%] / 0.80 / 0.15 | 20261026 > 20261026 | n/a | +0% .. +21% | 107 > 102 * | 41.4 > 37.0 | 0.09 > 0.09 | -0.4 (9.7) | 0.428 / 0.473 (200 / 200) | - |
+| L6M (27) | 92 > 156 (-70%) | [-240%, +6%] / 0.21 / 0.01 | 20261026 > 20260803 | -233% .. +0% (4 drops) | -233% .. +0% | 74 > -112 | 64.8 > 62.8 | 0.37 > 0.15 | -10.4 (12.5) | 0.950 / 0.960 (200 / 200) | 0.881 / 0.975 |
+| HOLD (52) | 201 > 215 (-7%) | [-132%, +6%] / 0.22 / 0.01 | 20260216 > 20260302 | -70% .. -7% (8 drops) | -70% .. -2% | -661 > -757 | 61.3 > 58.6 | 0.12 > 0.09 | -6.4 (7.8) | 0.905 / 0.905 (200 / 200) | 0.935 / 0.940 |
+| MID (12) | 116 > 130 (-13%) | [-70%, +25%] / 0.18 / 0.07 | 20260216 > 20260302 | n/a | -13% .. -0% | 94 > 33 * | 58.5 > 53.8 | 0.07 > 0.02 | -5.1 (16.0) | 0.871 / 0.826 (200 / 200) | - |
+| PRE (75) | 250 > 192 (+23%) | [-26%, +47%] / 0.68 / 0.40 | 20250414 > 20240916 | -20% .. +38% (10 drops) | -20% .. +38% | -878 > -763 | 48.8 > 46.7 | 0.04 > 0.07 | +3.6 (5.5) | 0.622 / 0.522 (200 / 200) | 0.418 / 0.433 |
+| X' (44) | 136 > 127 (+7%) | [-28%, +40%] / 0.69 / 0.28 | 20231113 > 20231120 | -10% .. +7% (9 drops) | -10% .. +16% | -475 > -392 | 30.0 > 27.2 | 0.03 > 0.04 | +1.5 (5.8) | 0.632 / 0.612 (200 / 200) | 0.229 / 0.244 |
+| ALL (187) | 250 > 215 (+14%) | [-42%, +35%] / 0.54 / 0.19 | 20250414 > 20260302 | -7% .. +23% (12 drops) | -7% .. +29% | -1126 > -1146 | 49.3 > 45.9 | 0.05 > 0.06 | +0.2 (3.6) | 0.741 / 0.652 (200 / 200) | 0.856 / 0.900 |
+
+### D7 base - 12R lock sensitivity
+| window | maxDD $k without > with (cut), 12R lock | worst-20 | mean $k/wk |
+|---|---|---|---|
+| L1M | 77 > 68 (+12%) | -62 > -58 | -12.3 > -11.5 |
+| L2M | 77 > 73 (+5%) | 34 > 16 | 3.8 > 1.8 |
+| L3M | 82 > 73 (+10%) | 7 > 3 | 0.6 > 0.3 |
+| L6M | 129 > 111 (+14%) | -241 > -256 | 21.3 > 17.2 |
+| HOLD | 129 > 111 (+14%) | -542 > -616 | 17.1 > 14.0 |
+| MID | 52 > 76 (-47%) | 123 > 21 | 10.2 > 1.7 |
+| PRE | 292 > 194 (+34%) | -648 > -590 | 5.5 > 9.2 |
+| X' | 194 > 114 (+41%) | -453 > -378 | -1.2 > 4.6 |
+| ALL | 292 > 194 (+34%) | -780 > -749 | 8.1 > 10.2 |
+
+### CV base - zone set without > with
+| window (weeks) | maxDD $k without > with (cut) | 90% block-bootstrap CI of the cut / P(cut>0) / P(cut>=20%) | trough week without > with | leave-one-episode-out cut range | leave-one-month-out cut range | worst-20 $k without > with | weekly SD $k | Calmar | mean d $k/wk (MDE) | placebo rank of the maxDD cut: random-level / same-volume (n draws) | worst-20 rank A / B |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| L1M (view) (5) | 119 > 137 (-15%) | [-242%, -15%] / 0.00 / 0.05 | 20261026 > 20261026 | n/a | n/a | 72 > 56 * | 83.2 > 94.5 | 0.12 > 0.08 | -3.3 (16.7) | 0.978 / - (183 / 0) | - |
+| L2M (view) (9) | 119 > 137 (-15%) | [-15%, +100%] / 0.25 / 0.12 | 20261026 > 20261026 | n/a | -15% .. +8% | 281 > 359 * | 95.2 > 107.8 | 0.26 > 0.29 | +8.7 (20.0) | 0.799 / - (183 / 0) | - |
+| L3M (13) | 177 > 173 (+2%) | [-15%, +11%] / 0.22 / 0.02 | 20260907 > 20260831 | n/a | -15% .. +2% | 222 > 294 * | 80.6 > 93.1 | 0.10 > 0.13 | +5.6 (16.8) | 0.288 / - (183 / 0) | - |
+| L6M (27) | 245 > 248 (-1%) | [-26%, +11%] / 0.26 / 0.01 | 20260907 > 20260831 | -15% .. -1% (5 drops) | -15% .. +2% | -83 > -128 | 74.5 > 75.4 | 0.12 > 0.11 | -2.1 (12.3) | 0.266 / - (183 / 0) | 0.337 / - |
+| HOLD (52) | 245 > 248 (-1%) | [-15%, +34%] / 0.67 / 0.33 | 20260907 > 20260831 | -1% .. +28% (8 drops) | -1% .. +28% | -830 > -696 | 68.7 > 67.1 | 0.11 > 0.12 | +1.1 (8.7) | 0.245 / - (183 / 0) | 0.022 / - |
+| MID (12) | 205 > 148 (+28%) | [-42%, +42%] / 0.84 / 0.66 | 20260323 > 20260323 | n/a | -4% .. +28% | 144 > 166 * | 71.5 > 65.7 | 0.06 > 0.09 | +1.8 (22.6) | 0.310 / - (183 / 0) | - |
+| PRE (75) | 304 > 241 (+21%) | [-26%, +34%] / 0.76 / 0.29 | 20240930 > 20240930 | +6% .. +21% (9 drops) | -26% .. +21% | -977 > -875 | 59.1 > 55.7 | 0.07 > 0.10 | +2.7 (8.6) | 0.277 / - (183 / 0) | 0.179 / - |
+| X' (44) | 118 > 121 (-2%) | [-40%, +55%] / 0.72 / 0.48 | 20230814 > 20230515 | -25% .. +32% (7 drops) | -18% .. +44% | -576 > -420 | 36.1 > 32.6 | 0.04 > 0.07 | +3.8 (7.8) | 0.489 / - (183 / 0) | 0.060 / - |
+| ALL (187) | 304 > 248 (+18%) | [-22%, +33%] / 0.69 / 0.26 | 20240930 > 20260831 | -1% .. +21% (12 drops) | -1% .. +21% | -1540 > -1426 | 58.8 > 55.4 | 0.07 > 0.09 | +2.4 (4.8) | 0.071 / - (183 / 0) | 0.304 / - |
+
+### CV base - 12R lock sensitivity
+| window | maxDD $k without > with (cut), 12R lock | worst-20 | mean $k/wk |
+|---|---|---|---|
+| L1M | 43 > 43 (-0%) | 154 > 171 | 30.9 > 34.2 |
+| L2M | 105 > 79 (+25%) | 304 > 404 | 33.8 > 44.9 |
+| L3M | 82 > 71 (+13%) | 326 > 424 | 25.1 > 32.6 |
+| L6M | 189 > 170 (+10%) | -187 > -248 | 24.7 > 22.9 |
+| HOLD | 189 > 170 (+10%) | -496 > -523 | 22.7 > 21.3 |
+| MID | 54 > 70 (-31%) | 153 > 98 | 12.8 > 8.2 |
+| PRE | 216 > 233 (-8%) | -571 > -608 | 10.4 > 15.1 |
+| X' | 312 > 120 (+62%) | -480 > -468 | -6.6 > 1.0 |
+| ALL | 354 > 233 (+34%) | -797 > -754 | 11.8 > 15.5 |
+
+### D7 base with TH-L2 exits off
+| window | maxDD $k without > with (cut), TH-L2 exits OFF | worst-20 | mean $k/wk |
+|---|---|---|---|
+| L1M | 110 > 94 (+15%) | -37 > -37 | -7.3 > -7.4 |
+| L2M | 110 > 94 (+15%) | 196 > 267 | 21.7 > 29.7 |
+| L3M | 213 > 230 (-8%) | 83 > 126 | 6.4 > 9.7 |
+| L6M | 323 > 320 (+1%) | -329 > -408 | 18.4 > 14.0 |
+| HOLD | 323 > 320 (+1%) | -968 > -915 | 24.4 > 20.6 |
+| MID | 185 > 148 (+20%) | 70 > 11 | 5.8 > 0.9 |
+| PRE | 310 > 245 (+21%) | -1222 > -1074 | 18.2 > 22.8 |
+| X' | 102 > 114 (-11%) | -626 > -486 | 3.1 > 6.2 |
+| ALL | 323 > 320 (+1%) | -1715 > -1571 | 18.6 > 20.6 |
+
+Entry points: code l2vast/ds3/code/zones3/s1/ (boot.py FIRST import; zr.py engine+masks; jobsr.py runner; mkr.py/mkmain.py job lists; sr.py/rp.py scoring; premise_r.py; wr.py table writers incl. line tables, honest/post-hoc rankings, best-of-N, landscape). Resume: `python3 -I jobsr.py main <0|1|2> 3` (resumes from res_main_*.pkl), then premise_r.py, then wr.py writers into the report. Results in out/zones3/s1n/. Old-cap checkpoint above remains for history.
