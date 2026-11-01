@@ -1,4 +1,4 @@
-# DS3_INST_H_DD - INSTITUTIONAL section H, minute-of-day surface (bracket rescale, vol-of-minute lot scaling, wider brackets in high-vol minutes, minute-bucket skip, drift-minute books): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-10-31 23:59Z)
+# DS3_INST_H_DD - INSTITUTIONAL section H, minute-of-day surface (bracket rescale, vol-of-minute lot scaling, wider brackets in high-vol minutes, minute-bucket skip, drift-minute books): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-11-01 00:00Z)
 
 DATA. On disk: NQ 1-min and 1-s tables, minute-of-day x day-of-week grid (780 label days), walk-forward 6-month 30-min-forward-range surface. Cells: H3 4 minute-bucket skip filters; H4 12 vol-of-minute lot-scaling cells through the engine multiplier route (NEW); H2 6 bracket rescales and H5 4 wider-brackets-in-high-vol-minutes cells through the engine bracket route (Brackets re-plumbing of INST-H2, tie-out at s=1 max diff 0.0); H1 6 walk-forward drift-minute books as ADDITIVE sleeves (5 NQ contracts, 3-s delay, N basis). Surface months start 2023-08, so X-prime is scaled in 2023-08..2024-01 only.
 

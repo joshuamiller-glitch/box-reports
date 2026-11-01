@@ -1,4 +1,4 @@
-# DS3_INST_G_DD - INSTITUTIONAL section G, order-flow toxicity sizer (VPIN, cancel ratio, OFI, trade-to-book, hidden rate): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-10-31 23:59Z)
+# DS3_INST_G_DD - INSTITUTIONAL section G, order-flow toxicity sizer (VPIN, cancel ratio, OFI, trade-to-book, hidden rate): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-11-01 00:00Z)
 
 DATA. On disk: mbp-10 10-s buckets; features VPIN-50, cancel ratio, multi-level OFI, trade-to-book, hidden-liquidity rate at the signal second. 36 cells (6 features x 2 quantiles x S1 half / S2 skip / S3 half+x1.5), composite series tie to the stored stageA_all.pkl.
 

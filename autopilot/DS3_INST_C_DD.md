@@ -1,4 +1,4 @@
-# DS3_INST_C_DD - INSTITUTIONAL section C, cross-market state at the hour scale (30/60/120-min ES RTY YM ZN GC CL DXY residuals; NY-open day type): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-10-31 23:59Z)
+# DS3_INST_C_DD - INSTITUTIONAL section C, cross-market state at the hour scale (30/60/120-min ES RTY YM ZN GC CL DXY residuals; NY-open day type): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-11-01 00:00Z)
 
 DATA. On disk, nothing to buy: 1-min ES/RTY/YM/ZN/GC/CL/6x series (cache_te2), engine d-space signal rows (61,401). 693 cells = all INST-3 C keep-masks reconstructed with the c_stack.py code (skip = signals not kept); composite series tie to the stored C_stack.pkl to 0.004 (float32). The 8 NQ/ES pair-book cells are standalone books, not stack rules (not re-priced).
 
@@ -116,9 +116,9 @@ DATA. On disk, nothing to buy: 1-min ES/RTY/YM/ZN/GC/CL/6x series (cache_te2), e
 
 C (cross-market state at the hour scale): 693 cells swept, 57 cut the composite maxDD >= 20% in BOTH PRE and X-prime with the mean inside its MDE; 40 looked at once in L3M/L6M/HOLD/ALL: 0 meet the user's L6M definition (cut >= 20% with the mean inside MDE), median L6M maxDD change +166% (positive = deeper), 40 still cut ALL by >= 20%, STRICT 0 / TOLERANT 0 / NOW-ONLY 2 (TOL-B 0, TOL-nc 1); program placebo false-carry rate 14.0% at a 41% typical volume cut (about 97 chance carries of 693 vs 57 observed).
 
-The PRE and X-prime cuts of the cross-market skips come from removing 10-80% of all signals (volume column in out/inst_dd/stage1_table.csv; the keep-masks are the weakest-aligned NQ signals at the hour scale); in L6M the same skips deepen the composite maxDD because the one L6M drawdown week (2026-01-19) is not in the skipped set and the skipped weeks carry the profit. Not one cell is RISK-KEEP, none is STRICT, none is literal TOLERANT.
+The PRE and X-prime cuts of the cross-market skips come with 10-80% of all signals removed (volume column in out/inst_dd/stage1_table.csv): at a 41% typical volume cut a random skip passes the PRE and X-prime criterion 14% of the time, so about 97 of the 693 cells would carry by chance and 57 did. In L6M the same skips deepen the composite maxDD (median +166%). Not one cell is RISK-KEEP, none is STRICT, none is literal TOLERANT.
 
-Disclosure: 53 of the 57 carried cells were not looked at only through the cap (40); the 17 cut-off cells have the smaller min(PRE cut, X' cut) and are listed in out/inst_dd/stage1_table.csv.
+Disclosure: 17 of the 57 carried cells were not looked at because of the cap of 40 (smaller min(PRE cut, X' cut)); they are listed in out/inst_dd/stage1_table.csv.
 
 ### Notes
 - Counts: STRICT/TOLERANT(literal)/NOW-ONLY over the looked cells: see Reading; TOL-B and TOL-nc are post-hoc, beside.

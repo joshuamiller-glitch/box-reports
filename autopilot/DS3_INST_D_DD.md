@@ -1,4 +1,4 @@
-# DS3_INST_D_DD - INSTITUTIONAL section D, volatility-market state (options gamma, VIX term, IV-RV, variance ratio, range compression, expiry cycle): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-10-31 23:59Z)
+# DS3_INST_D_DD - INSTITUTIONAL section D, volatility-market state (options gamma, VIX term, IV-RV, variance ratio, range compression, expiry cycle): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-11-01 00:00Z)
 
 DATA. On disk (bought 10-16, nothing new bought): CME ES/NQ option statistics, OPRA NDX/NDXP daily + 0DTE flow, CBOE VIX family, realised-vol proxies, states_D.parquet in d space. 1,044 grid cells; composite daily series re-run and tied to the stored res_grid.npz (max diff 0.0). Options quote refresh NOT needed: no state survives the recent look, so the P-D2 ($140.05) buy stays unjustified; quotes in DS3_INSTITUTIONAL.md unchanged (free get_cost only, no purchase, no download).
 
@@ -98,7 +98,7 @@ DATA. On disk (bought 10-16, nothing new bought): CME ES/NQ option statistics, O
 
 D (volatility-market state): 1044 cells swept, 31 cut the composite maxDD >= 20% in BOTH PRE and X-prime with the mean inside its MDE; 31 looked at once in L3M/L6M/HOLD/ALL: 0 meet the user's L6M definition (cut >= 20% with the mean inside MDE), median L6M maxDD change +38% (positive = deeper), 31 still cut ALL by >= 20%, STRICT 0 / TOLERANT 0 / NOW-ONLY 12 (TOL-B 0, TOL-nc 0); program placebo false-carry rate 2.5% at a 6% typical volume cut (about 26 chance carries of 1044 vs 31 observed).
 
-The states that cut PRE and X-prime are the same ones INST-D had on the mean (negative ES/NQ gamma, vol-of-vol, 15-min realised-vol ratio, NDX put/call volume): skips are mostly small (6% typical volume) and the L6M window has no negative-gamma days to act on (cut 0.0% = the rule never fires in L6M), so no recent evidence either way. The only D cell that cuts L6M by >= 20% (vix_minus_rv20 >= 2.03, skip ALL6, +56%) costs -20.6k/wk (MDE 19.4k), beyond its MDE, so it is not a RISK-KEEP; half-sizing cells deepen L6M. Options quote refresh was not needed (no purchase is justified).
+The D states that cut PRE and X-prime are the ones INST-D had on the mean (negative ES/NQ gamma, vol-of-vol, 15-min realised-vol ratio, NDX put/call volume, skew). Several negative-gamma cells leave the L6M composite maxDD unchanged (cut 0.0%) while adding +1k to +4k per week (12 NOW-ONLY, none STRICT or literal TOLERANT because PRE/X-prime means are negative); the only D cell that cuts L6M by >= 20% (vix_minus_rv20 >= 2.03, skip ALL6, 56%) costs -20.6k per week (MDE 19.4k), beyond its MDE, so it is not a RISK-KEEP. Options quote refresh was not needed (no purchase is justified).
 
 ### Notes
 - Counts: STRICT/TOLERANT(literal)/NOW-ONLY over the looked cells: see Reading; TOL-B and TOL-nc are post-hoc, beside.

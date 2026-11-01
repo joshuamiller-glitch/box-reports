@@ -1,4 +1,4 @@
-# DS3_INST_E_DD - INSTITUTIONAL section E, cash-market lead (QQQ + 10 NDX leaders, 1-minute bars): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-10-31 23:59Z)
+# DS3_INST_E_DD - INSTITUTIONAL section E, cash-market lead (QQQ + 10 NDX leaders, 1-minute bars): re-read under DRAWDOWN FIRST (F1, overnight order, written 2026-11-01 00:00Z)
 
 DATA. On disk: 1-minute Nasdaq bars QQQ + 10 NDX leaders 2022-26 (no NBBO/quotes). 396 grid cells re-run on the composite; tied to stored res_grid.npz. Quote context: P-E2 1-second bars $70.54, P-E1 mbp-1 one month $33.52 (unchanged, nothing bought).
 
