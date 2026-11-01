@@ -64,7 +64,7 @@ True-engine maxDD vs cap (ALL, $k): 1.0x: 173 vs cap 233; 0.75x: 147 vs cap 174;
 
 **Walk-forward in one sentence (lock off, cap 1.0x, monthly re-solve on the trailing 6 months, next month scored, 25 months 2024-01..2026-01):** the solver reports a mean of 39.9 on its own windows against 23.2 for the live table on the same windows (+16.7), but the next month delivers 27.8 against 28.4 for live (-0.7, MDE 11.6), maxDD 233 vs 241, worst-20 -1279 vs -989, weekly SD 62.7 vs 54.4, with 16 lots of table churn per month (sum of absolute cell changes, 6.8 of 14 cells move) - so monthly re-solving buys no out-of-sample mean and no tail relief; the 0.5x cap lowers the chained maxDD to 173 (-28%) at -2.7 but its forward 26-week maxDD is 1.55x its own target (median) and the worst-20 is not better (-997); under the 12R lock the re-solved tables are worse than live (13.7 vs 19.9).
 
-**What I would put in Shadow:** not the solved tables. The only variant that is not worse than live out-of-sample is the HALF-WAY table (average of the solved and the live lots, rounded half up): lock off, walk-forward, cap 1.0x / 0.75x / 0.5x: mean 29.4 / 29.0 / 28.7 vs live 28.4, maxDD 192 / 164 / 127 vs 241 - but that maxDD gain is ONE drawdown episode (PRE, 2024-25) and does not repeat under 12R. The user decides lots; the live table stays.
+**Shadow recommendation: none of the solved tables.** The half-way table (average of solved and live, rounded half up) is the only variant that is not worse than live out-of-sample in the walk-forward with the lock off: cap 1.0x / 0.75x / 0.5x mean 29.4 / 29.0 / 28.7 vs live 28.4, maxDD 192 / 164 / 127 vs 241; but that maxDD gain is ONE drawdown episode (PRE, 2024-25), the fixed-table protocol (section 2) does not reproduce it, and under 12R the same construction is inconsistent across caps (maxDD 147 / 234 / 271 vs 233, mean -3.5 / -11.0 / -6.5). The user decides lots; the live table stays.
 
 Page 2 onward: fixed-table protocol, walk-forward detail, placebo, overfitting, cost of being wrong, method. Files: `l2vast/ds3/code/lotsdd/`, `l2vast/ds3/out/lotsdd/` (cache_all.pkl = every true-engine daily series, ~9.5k tables; final_sel.json = every key's table; risk_lines.csv; lot_tables.csv; wf_tables.csv).
 
@@ -97,11 +97,11 @@ In-sample (solve window) true maxDD vs cap ($k): 1.0x 220 vs 241, mean 25.8 vs l
 | table | L6M mean / maxDD / SD | HOLD mean / maxDD / SD | in-sample mean / maxDD | placebo (true engine, feasible random, same 20) |
 |---|---|---|---|---|
 | live | 41.1 / 23 / 43 | 38.6 / 97 / 52 | - | - |
-| 1.0x solved | 38.6 / 64 / 64 | 36.2 / 102 / 69 | 25.8 / 220 | n/a (not run) |
+| 1.0x solved | 38.6 / 64 / 64 | 36.2 / 102 / 69 | 25.8 / 220 | n=274/300 feasible; L6M mean rank 0.07, maxDD rank 0.83; HOLD 0.06/0.87 |
 | 1.0x shrunk | 41.1 / 34 / 56 | 38.0 / 116 / 63 | 19.9 / 167 |  |
 | 0.75x solved | 33.6 / 59 / 54 | 32.2 / 109 / 62 | 24.0 / 158 | n/a (not run) |
 | 0.75x shrunk | 41.7 / 34 / 49 | 39.5 / 93 / 56 | 20.1 / 188 |  |
-| 0.5x solved | 39.0 / 48 / 50 | 36.9 / 89 / 59 | 22.5 / 116 | n/a (not run) |
+| 0.5x solved | 39.0 / 48 / 50 | 36.9 / 89 / 59 | 22.5 / 116 | n=31/300 feasible; L6M mean rank 0.00, maxDD rank 0.74; HOLD 0.00/0.81 |
 | 0.5x shrunk | 37.3 / 29 / 48 | 35.5 / 116 / 58 | 18.6 / 186 |  |
 
 ### Table 3 - solved on PRE+X', 12R: lot tables
@@ -129,11 +129,11 @@ In-sample (solve window) true maxDD vs cap ($k): 1.0x 182 vs 233, mean 15.1 vs l
 | table | L6M mean / maxDD / SD | HOLD mean / maxDD / SD | in-sample mean / maxDD | placebo (true engine, feasible random, same 20) |
 |---|---|---|---|---|
 | live | 32.3 / 27 / 45 | 31.4 / 35 / 49 | - | - |
-| 1.0x solved | 29.7 / 50 / 55 | 27.2 / 104 / 61 | 15.1 / 182 | n/a (not run) |
+| 1.0x solved | 29.7 / 50 / 55 | 27.2 / 104 / 61 | 15.1 / 182 | n=299/400 feasible; L6M mean rank 0.16, maxDD rank 0.38; HOLD 0.14/0.84 |
 | 1.0x shrunk | 34.5 / 57 / 54 | 32.4 / 68 / 60 | 13.7 / 143 |  |
 | 0.75x solved | 30.3 / 33 / 45 | 27.7 / 70 / 50 | 10.6 / 118 | n/a (not run) |
 | 0.75x shrunk | 29.3 / 34 / 46 | 27.1 / 69 / 51 | 11.5 / 132 |  |
-| 0.5x solved | 29.3 / 44 / 44 | 28.7 / 44 / 45 | 5.1 / 117 | n/a (not run) |
+| 0.5x solved | 29.3 / 44 / 44 | 28.7 / 44 / 45 | 5.1 / 117 | n=25/400 feasible; L6M mean rank 0.00, maxDD rank 0.28; HOLD 0.00/0.08 |
 | 0.5x shrunk | 35.1 / 23 / 44 | 32.4 / 48 / 48 | 7.1 / 139 |  |
 
 ### Table 3 - solved on HOLD, lock off: lot tables
@@ -200,6 +200,11 @@ In-sample (solve window) true maxDD vs cap ($k): 1.0x 35 vs 35, mean 40.3 vs liv
 | 0.5x solved | 14.7 / 130 / 45 | -0.4 / 148 / 26 | 33.6 / 22 | n/a (not run) |
 | 0.5x shrunk | 15.7 / 237 / 49 | 0.8 / 151 / 29 | 30.9 / 26 |  |
 
+### Reading of the fixed-table protocol
+* lock off, solved on PRE+X' then judged: L6M mean 38.6 / 33.6 / 39.0 (1.0x / 0.75x / 0.5x) vs live 41.1, L6M maxDD 64 / 59 / 48 vs 23; HOLD maxDD 102 / 109 / 89 vs 97. Solved on HOLD then judged on PRE: maxDD 374 / 214 / 313 vs live 241; X' maxDD 226 / 201 / 180 vs 121; PRE mean 23.5 / 26.8 / 21.3 vs 23.1.
+* 12R, solved on PRE+X' then judged: L6M mean 29.7 / 30.3 / 29.3 (1.0x / 0.75x / 0.5x) vs live 32.3, L6M maxDD 50 / 33 / 44 vs 27; HOLD maxDD 104 / 70 / 44 vs 35. Solved on HOLD then judged on PRE: maxDD 211 / 130 / 130 vs live 233; X' maxDD 388 / 148 / 148 vs 120; PRE mean 11.9 / 14.7 / 14.7 vs 15.1.
+* A cap met in the solve window is not met in the judged window: the recent-fit tables load P6/K6 and the 2024-25 episode then costs more than live; the PRE-fit tables load the same books and the recent windows' maxDD is several times the live value. The mean gain in the judged windows is small or negative against live (compare the columns).
+
 ## 3. Walk-forward: monthly re-solve on the trailing 6 months, next month scored (2024-01..2026-01, 25 months)
 
 Per month: solve on the 26-ish label weeks before the month (cap = k x the live composite maxDD in that window), run the chosen table through the true engine on the full history, take that table's daily series for the month's own days, chain the 25 months. OOS window 20240101..20260131; live = the same days. `S` = solved table, `H` = half-way (solved+live)/2 rounded half up. dMean = paired weekly delta vs live over the chained weeks, MDE = 2.8 x SE. In-sample = mean of the solved table on its own solve windows (true engine); live in-sample on the same windows is 23.2 (off) / 15.2 (12R). Turnover = mean over consecutive months of the sum of absolute cell changes (lots); vs live = mean sum of absolute cell differences to the live table. Forward-26w maxDD/target = maxDD of the table over the 26 weeks starting at the month (overlapping, diagnostic) divided by that month's cap; live shown for reference. Month hit = share of months in which the table beat live in dollars.
@@ -224,8 +229,8 @@ Per month: solve on the 26-ish label weeks before the month (cap = k x the live 
 `IS - OOS gap` = (solved in-sample mean minus live in-sample mean on the same windows) minus (OOS dMean): the part of the in-sample uplift that did not survive.
 
 ### Reading
-* lock off: re-solving monthly changes 6.8 of 14 cells per month on average (sum of absolute changes 15.9 lots; largest single month 54), and the solved table sits on average 32 lots (L1) from the live table. Realised vs target: the table is feasible in-sample in 100% of months by construction (true engine), but over the following 26 weeks the maxDD is at or below the cap in only 52% (1.0x), 36% (0.75x), 24% (0.5x) of months (live: 48% / 48% / 44%); the median ratio of forward maxDD solved/live is 1.11 (1.0x), 1.14 (0.5x): the maxDD constraint does not carry forward.
-* 12R: re-solving monthly changes 7.9 of 14 cells per month on average (sum of absolute changes 18.9 lots; largest single month 48), and the solved table sits on average 25 lots (L1) from the live table. Realised vs target: the table is feasible in-sample in 100% of months by construction (true engine), but over the following 26 weeks the maxDD is at or below the cap in only 52% (1.0x), 44% (0.75x), 24% (0.5x) of months (live: 68% / 60% / 24%); the median ratio of forward maxDD solved/live is 1.29 (1.0x), 1.19 (0.5x): the maxDD constraint does not carry forward.
+* lock off: re-solving monthly changes 6.8 of 14 cells per month on average (sum of absolute changes 15.9 lots; largest single month 54), and the solved table sits on average 32 lots (L1) from the live table. Realised vs target: the search found a table feasible in-sample (true engine) in 100% of months at 1.0x (100% at 0.5x), but over the following 26 weeks the maxDD is at or below the cap in only 52% (1.0x), 36% (0.75x), 24% (0.5x) of months (live: 48% / 48% / 44%); the median ratio of forward maxDD solved/live is 1.11 (1.0x), 1.14 (0.5x): the maxDD constraint does not carry forward.
+* 12R: re-solving monthly changes 7.9 of 14 cells per month on average (sum of absolute changes 18.9 lots; largest single month 48), and the solved table sits on average 25 lots (L1) from the live table. Realised vs target: the search found a table feasible in-sample (true engine) in 100% of months at 1.0x (76% at 0.5x), but over the following 26 weeks the maxDD is at or below the cap in only 52% (1.0x), 44% (0.75x), 24% (0.5x) of months (live: 68% / 60% / 24%); the median ratio of forward maxDD solved/live is 1.29 (1.0x), 1.19 (0.5x): the maxDD constraint does not carry forward.
 
 ## 4. Placebo: where does the solved table rank among random tables with the same total lots?
 
@@ -251,6 +256,15 @@ Random tables with exactly 20 base lots (random split of the 20 over the six boo
 | ALL | 0.75x | 37170 | 28.2 vs 14.2 / 19.0 (rank 0.000) | (in-sample) | - | - | - |
 | ALL | 0.5x | 5971 | 24.7 vs 14.2 / 17.8 (rank 0.000) | (in-sample) | - | - | - |
 
+**True engine (both lock scenarios; random draws run through the engine, feasible = maxDD <= cap on PRE+X'):**
+
+| lock | cap | feasible / drawn | in-sample mean rank (solved) | L6M mean rank / maxDD rank | HOLD mean rank / maxDD rank | draws median L6M mean / maxDD (solved) | draws median HOLD mean / maxDD (solved) |
+|---|---|---|---|---|---|---|---|
+| lock off | 1.0x | 274/300 | 0.000 | 0.07 / 0.83 | 0.06 / 0.87 | 26.5 / 43 (38.6 / 64) | 24.8 / 72 (36.2 / 102) |
+| lock off | 0.5x | 31/300 | 0.000 | 0.00 / 0.74 | 0.00 / 0.81 | 24.8 / 35 (39.0 / 48) | 22.9 / 64 (36.9 / 89) |
+| 12R | 1.0x | 299/400 | 0.003 | 0.16 / 0.38 | 0.14 / 0.84 | 19.6 / 57 (29.7 / 50) | 18.7 / 71 (27.2 / 104) |
+| 12R | 0.5x | 25/400 | 0.880 | 0.00 / 0.28 | 0.00 / 0.08 | 18.9 / 55 (29.3 / 44) | 17.9 / 67 (28.7 / 44) |
+
 **Walk-forward placebo (lock off, decomposition; 300 chains, each month a random table feasible in that month's solve window at the same cap, same total lots):**
 
 | cap | placebo chain mean (median) | placebo chain maxDD (median) | solved chain mean / maxDD | mean rank | maxDD rank | Calmar rank | half-way chain mean / maxDD | maxDD rank | distance-matched placebo (same L1 distance to live per month) mean / maxDD | solved mean rank | maxDD rank |
@@ -258,15 +272,15 @@ Random tables with exactly 20 base lots (random split of the 20 over the six boo
 | 1.0x | 19.0 | 160 | 27.8 / 233 | 0.00 | 0.90 | 0.51 | 29.4 / 192 | 0.76 | 23.6 / 200 | 0.01 | 0.77 |
 | 0.5x | 17.4 | 143 | 25.7 / 173 | 0.00 | 0.76 | 0.26 | 28.7 / 127 | 0.30 | 21.9 / 164 | 0.00 | 0.69 |
 
-Reading. Against RANDOM tables with the same 20 lots the solved tables rank at the top on mean (they are not random: they follow the books that earned money), which is a weak test because most random tables are poor allocations. The relevant comparison is the live table (hand-halved, balanced): the solved table does not beat it out of sample (section 3), and on maxDD the solved table is worse than most random feasible tables out of sample (maxDD rank high = most random tables have a smaller drawdown). The solver buys in-sample mean by loading P6 and K6 (the books with the best 2023-26 sessions) and that is exactly what does not survive.
+Reading. Against RANDOM tables with the same 20 lots the solved tables rank at the top on mean (they are not random: they follow the books that earned money), which is a weak test because most random tables are poor allocations. The relevant comparison is the live table (hand-halved, balanced): the solved table does not beat it out of sample (section 3), and on maxDD out of sample the solved table is worse than most random feasible tables with the lock off (maxDD rank 0.74-1.00 in the fixed protocol, 0.69-0.90 in the walk-forward; a high rank = most random tables have a smaller drawdown), mixed under 12R (0.08-0.84; the 12R 0.5x PRE+X' solve is itself 1% infeasible, hence its in-sample rank 0.88). The solver buys in-sample mean by loading P6 and K6 (the books with the best 2023-26 sessions) and that is exactly what does not survive.
 
 ## 5. Overfitting statement, in-sample vs out-of-sample, shrinkage, effective N
 
 * **What is being fitted.** 14 integer variables (cells) on one stack, with a budget of 20 and a drawdown cap that is binding on a single episode: the live composite's ALL maxDD of 241k is one episode of 7 weeks (weeks labelled 202434..202440, PRE), and its L6M maxDD of 23k is 1 week(s) (weeks ending 202543). A maxDD cap therefore constrains the lots in whatever the one or two worst weeks of the window were, and leaves everything else free for the mean: the optimum loads the sessions that earned money in the rest of the window.
-* **Effective N.** Walk-forward solve window = 26-27 weekly observations (26 label weeks) for 14 free integers = under 2 weeks per variable; the autocorrelation-adjusted N of those windows is about 20-26 weeks, and the binding drawdown episode is 1-3 weeks. The fixed solves use 118 weeks (PRE+X', adjusted N 71, binding episode 9 weeks), 32 weeks (HOLD, adjusted N 28, episode 3 weeks) and 149 (ALL, adjusted N 87, episode 7 weeks). The effective number of independent drawdown episodes behind any cap is about 1 (PRE) in the long windows and 1 (L6M) in the short ones. The weekly SE of the paired OOS delta gives the MDE column: the OOS delta of the solved tables is inside it in every row.
+* **Effective N.** Walk-forward solve window = 26-27 weekly observations (26 label weeks) for 14 free integers = under 2 weeks per variable; the autocorrelation-adjusted N of those windows has median 19 weeks, and the binding drawdown episode of the live composite in those windows has median 4 (max 7) weeks. The fixed solves use 118 weeks (PRE+X', adjusted N 71, binding episode 9 weeks), 32 weeks (HOLD, adjusted N 28, episode 3 weeks) and 149 (ALL, adjusted N 87, episode 7 weeks). The effective number of independent drawdown episodes behind any cap is about 1 (PRE) in the long windows and 1 (L6M) in the short ones. The weekly SE of the paired OOS delta gives the MDE column: the out-of-sample delta vs live is inside its MDE in every row except: 12R H0.75 -11.0 vs MDE 8.6; 12R S0.5 -13.2 vs MDE 9.8 (all negative)
 * **In-sample vs out-of-sample gap (lock off, cap 1.0x, $k/wk).** Walk-forward: in-sample uplift over live on the solver's own windows +16.7, out-of-sample -0.7 (gap 17.4); with the half-way table +7.6 in-sample, 1.0 out-of-sample. Fixed PRE+X' solve: in-sample +8.1, out-of-sample L6M -2.6, HOLD -2.3; reverse (solved on HOLD): in-sample +19.7, out-of-sample PRE 0.4, X' -4.2. Under 12R: walk-forward in-sample +12.3, out-of-sample -6.2.
 * **The in-sample optimum is biased upward by construction** (maximum over ~10^12 integer tables of a noisy objective, plus the selection of the table that exploits the single worst week): the in-sample mean is not an estimate of anything. The honest numbers are the out-of-sample rows. The 'IS - OOS gap' column in section 3 is the size of the bias in this study.
-* **Shrinkage toward live (average of solved and live, half up).** Out-of-sample (walk-forward, lock off) it keeps the mean (29.4 vs live 28.4, delta 1.0, MDE 6.4) and keeps most of the in-sample maxDD gain (192 vs 241); the 0.5x half-way table: 127, worst-20 -879 vs -989. This is a shrinkage the data cannot validate further: the improvement in maxDD out-of-sample is one episode (PRE). Under 12R the half-way tables are not better than live.
+* **Shrinkage toward live (average of solved and live, half up).** Out-of-sample (walk-forward, lock off) it keeps the mean (29.4 vs live 28.4, delta 1.0, MDE 6.4) and keeps most of the in-sample maxDD gain (192 vs 241); the 0.5x half-way table: 127, worst-20 -879 vs -989. This is a shrinkage the data cannot validate further: the improvement in maxDD out-of-sample is one episode (PRE). Under 12R it is inconsistent across caps (section 3).
 
 ## 6. Cost of being wrong: if the regime of 2024-25 returns (PRE and X' maxDD and worst-20 for every lot table)
 
@@ -336,6 +350,6 @@ Reading. A table solved on the recent windows and then hit by a 2024-25 regime: 
 
 ## 8. Recommendation (Shadow only; the user decides lots)
 
-1. Keep the live table. No solved table beats it out of sample on the mean (all inside MDE) and the solved tables do not reduce the tail (worst-20, SD) out of sample; re-solving monthly only churns lots.
-2. No lot table is recommended for Shadow. The only variant with an out-of-sample maxDD gain in the walk-forward is the monthly half-way table (lock off), and the fixed-table protocol DISAGREES (the PRE+X' half-way tables have a larger L6M and HOLD maxDD than live, section 2): two protocols, two answers = noise-level evidence. If the user wants a paper row anyway for learning, log the monthly half-way 0.5x table (lock off) beside the live book with no real lots and judge it on forward weeks only.
-3. The finding that matters for the lock question: with the combined 12R lock ON, every re-solved table is worse than live out of sample. Do not size lots to a drawdown cap while the 12R lock is on.
+1. Keep the live table. No solved table beats it out of sample on the mean (lock off: all inside MDE; 12R: lower, two rows beyond MDE) and the solved tables do not reduce the tail (worst-20, SD) out of sample; re-solving monthly only churns lots.
+2. No lot table is recommended for Shadow. The only variant with an out-of-sample maxDD gain in the walk-forward is the monthly half-way table (lock off), and the fixed-table protocol DISAGREES (the PRE+X' half-way tables have a larger L6M maxDD than live at all three caps and a larger HOLD maxDD at two of three, section 2): two protocols, two answers = noise-level evidence. If the user wants a paper row anyway for learning, log the monthly half-way 0.5x table (lock off) beside the live book with no real lots and judge it on forward weeks only.
+3. With the combined 12R lock ON, the re-solved tables are worse than live on the mean out of sample at every cap (walk-forward dMean -6.2 / -9.4 / -13.2 vs MDE 11.0 / 10.4 / 9.8) and the maxDD result is erratic; the 12R surrogate is also the weakest. Do not size lots to a drawdown cap while the 12R lock is on.
