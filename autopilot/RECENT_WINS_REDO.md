@@ -1,93 +1,93 @@
-# RECENT_WINS_REDO  (new windows; compiled 2026-11-01 19:54Z; cap 2026-10-31, last trading day 2026-10-30)
+# RECENT_WINS_REDO  (new windows; compiled 2026-11-01 20:29Z; cap 2026-10-31, last trading day 2026-10-30)
 
 **THIS IS A VIEW, NOT A SELECTION.** REDO-3 (DS3_WINDOW_VALIDATION.md): no trailing window (30/60/90/180/365 d, with or without the tolerant gate, or combined) beats a noise twin; a rule positive in the last 60 days stayed positive next month 41% of the time (noise twin 43%). So every STATUS below (NEW / RISING / STABLE / FADING / STOPPED) is a DESCRIPTION OF THE LAST MONTHS, not a forecast and not a deployment criterion; L1M and L2M are view columns (n shown) and nothing is selected on them. Windows: L1M 2026-10-01..10-31 | L2M 2026-09-01..10-31 | L3M 2026-08-01..10-31 | L6M 2026-05-01..10-31 | HOLD 2025-11-01..2026-10-31 | MID 2026-02-07..04-30 | PRE 2024-02..2025-06 | X' 2023-04..2024-01 (PRE and X' are the stored values, windows unchanged). **old L3M (to Feb-06)** = the stored 2025-11-06..2026-02-06 value of the same row, in the same unit. Prereg autopilot/RECENT_WINS_REDO_prereg.md (sha256 9bd25a2d1fc7ffa8937bfb0652f05897555231ca375916c9cfc76302ae91ed61). No PASS claims.
 
 ## 1. Coverage (what was re-scored, what is pending)
 
-Old ledger: **14734** rows (positive old L3M and L6M). **Re-scored (extended): 13649** ledger rows, of which tied to the stored old value 12290, NOT TIED 1355, tie unknown 4 (not-tied rows are shown flagged, never dropped silently), partial (data ends 20261023) 41; 39692 rows in all incl. other cells of the same programs. Not extended: **0** cannot be extended (data not available/bought) and **1085** pending (inputs not yet rebuilt or builder not yet run; **no approximation, no carry-forward**). **COVERAGE: extended 13649 / (14734 - cannot) = 92.6% of what can be extended.**
+Old ledger: **14734** rows (positive old L3M and L6M). **Re-scored (extended): 14097** ledger rows, of which tied to the stored old value 12734, NOT TIED 1359, tie unknown 4 (not-tied rows are shown flagged, never dropped silently), partial (data ends 20261023) 41; 40279 rows in all incl. other cells of the same programs. Not extended: **0** cannot be extended (data not available/bought) and **637** pending (inputs not yet rebuilt or builder not yet run; **no approximation, no carry-forward**). **COVERAGE: extended 14097 / (14734 - cannot) = 95.7% of what can be extended.**
 
-| program                                                 |   ledger_rows |   extended |   pending | pending reason (most common)                                                                                      |
-|:--------------------------------------------------------|--------------:|-----------:|----------:|:------------------------------------------------------------------------------------------------------------------|
-| BARS-ENG                                                |          2765 |       2765 |         0 |                                                                                                                   |
-| EINT2                                                   |          1778 |       1778 |         0 |                                                                                                                   |
-| ZONES-2                                                 |          1455 |       1455 |         0 |                                                                                                                   |
-| EINT1                                                   |          1088 |       1088 |         0 |                                                                                                                   |
-| THL (THLB classic loss rules)                           |           864 |        864 |         0 |                                                                                                                   |
-| THP (THPB classic profit rules)                         |           845 |        845 |         0 |                                                                                                                   |
-| L2ENTRY-A                                               |           596 |        596 |         0 |                                                                                                                   |
-| L2SE entry (THP_POLICY entry)                           |           550 |        550 |         0 |                                                                                                                   |
-| CF-ENG                                                  |           499 |        499 |         0 |                                                                                                                   |
-| META FS2                                                |           449 |        449 |         0 |                                                                                                                   |
-| META FS1                                                |           388 |        388 |         0 |                                                                                                                   |
-| ABRC1 (bracket choice per entry)                        |           371 |        371 |         0 |                                                                                                                   |
-| ADDUW B2                                                |           353 |          0 |       353 | pending: layer stack_trades/b_lib audit-stack weekly base (REDO-2 stack_trades, dv2a) for the ADDUW weekly engine |
-| EXP1 loss per-stream fixed                              |           340 |          0 |       340 | pending: layer exp1 cache for new tids                                                                            |
-| CF-COMBO stage1ENG                                      |           314 |        314 |         0 |                                                                                                                   |
-| CF-COMBO POOL                                           |           261 |        261 |         0 |                                                                                                                   |
-| SPLIT 70/30                                             |           150 |        150 |         0 |                                                                                                                   |
-| THPC2 (profit)                                          |           141 |         92 |        49 | pending: job qr_qr_YTD_True not yet run (c2 redo chain queue)                                                     |
-| CUTWAIT                                                 |           111 |         75 |        36 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book D6_SM_t60_sst_ASIA    |
-| UF-LOSS c3                                              |            98 |         98 |         0 |                                                                                                                   |
-| UF-ENTRY c2                                             |            90 |         90 |         0 |                                                                                                                   |
-| EQR lots_factor                                         |            86 |         23 |        63 | pending: EQR frame E series (needs T-SESSION-LOCKS sl_stack redo)                                                 |
-| UF-ENTRY c1                                             |            84 |         84 |         0 |                                                                                                                   |
-| L2ENTRY-B                                               |            69 |         69 |         0 |                                                                                                                   |
-| ZONES-2 ADDENDUM                                        |            65 |         65 |         0 |                                                                                                                   |
-| UF-ENTRY c4                                             |            52 |         52 |         0 |                                                                                                                   |
-| THL2 L2H (hypotheses H1-H12)                            |            50 |         50 |         0 |                                                                                                                   |
-| UF-LOSS c1                                              |            44 |         44 |         0 |                                                                                                                   |
-| UF-LOSS c5                                              |            43 |         43 |         0 |                                                                                                                   |
-| CF-COMBO FOUR                                           |            43 |         43 |         0 |                                                                                                                   |
-| EXP1 profit chains (v0, look-ahead vol key)             |            42 |         42 |         0 |                                                                                                                   |
-| STRUCT48                                                |            41 |         41 |         0 |                                                                                                                   |
-| DIPENTRY                                                |            38 |          0 |        38 | pending: layer dipentry tick-event arrays (de_ticks ticks/book=*/m=* + lgb tick predictions) for the new months   |
-| EXP1 profit chains (causal vol key)                     |            33 |         33 |         0 |                                                                                                                   |
-| CF-COMBO stage1B                                        |            33 |         33 |         0 |                                                                                                                   |
-| UF-PROFIT c2                                            |            32 |          0 |        32 | pending: layer uf profit cache                                                                                    |
-| UF-LOSS c6                                              |            27 |         27 |         0 |                                                                                                                   |
-| CF-COMBO GREEDY                                         |            26 |         26 |         0 |                                                                                                                   |
-| CONFIRM-BARS S1                                         |            26 |         26 |         0 |                                                                                                                   |
-| L2SP profit (THP_POLICY profit)                         |            26 |         26 |         0 |                                                                                                                   |
-| CONFIRM-BARS S3                                         |            23 |         23 |         0 |                                                                                                                   |
-| CONFIRM-BARS S1c                                        |            22 |         22 |         0 |                                                                                                                   |
-| THPC3 (profit)                                          |            20 |          0 |        20 | pending: layer c3 btab state                                                                                      |
-| STRUCT48 NM-B                                           |            20 |         20 |         0 |                                                                                                                   |
-| ENSM                                                    |            19 |          0 |        19 | pending: not yet extended (no builder run / no vector delivered)                                                  |
-| EXP2 (f) stack/ES-RTY state features                    |            16 |          0 |        16 | pending: not yet extended (no builder run / no vector delivered)                                                  |
-| UF-PROFIT c4                                            |            16 |          0 |        16 | pending: layer uf profit cache                                                                                    |
-| CONFIRM-BARS S2c                                        |            16 |         16 |         0 |                                                                                                                   |
-| UF-LOSS c4                                              |            15 |         15 |         0 |                                                                                                                   |
-| THL2 L2P (walk-forward policies on the order book)      |            15 |          0 |        15 | pending: layer not yet run                                                                                        |
-| UF-ENTRY c3                                             |            14 |         14 |         0 |                                                                                                                   |
-| EXP1 profit fixed                                       |            14 |         14 |         0 |                                                                                                                   |
-| CF-SUBMIN S2 (looked)                                   |            14 |         14 |         0 |                                                                                                                   |
-| UF-PROFIT c3                                            |            14 |          0 |        14 | pending: layer uf profit cache                                                                                    |
-| THP_POLICY joint (L2SE entry / L2SP profit / L2SL loss) |            13 |          0 |        13 | pending: layer lock engine wiring (REDO-2) + L2SE/L2SP/L2SL                                                       |
-| CONFIRM-BARS S2b                                        |            12 |         12 |         0 |                                                                                                                   |
-| THPC2 (loss)                                            |            12 |          0 |        12 | pending: job haz_haz_2w_True not yet run (c2 redo chain queue)                                                    |
-| CONFIRM-BARS S2                                         |            12 |         12 |         0 |                                                                                                                   |
-| L2SL loss (THL2/THP_POLICY loss)                        |            12 |         12 |         0 |                                                                                                                   |
-| CONFIRM-BARS S4                                         |            10 |         10 |         0 |                                                                                                                   |
+| program                                                 |   ledger_rows |   extended |   pending | pending reason (most common)                                                                                                      |
+|:--------------------------------------------------------|--------------:|-----------:|----------:|:----------------------------------------------------------------------------------------------------------------------------------|
+| BARS-ENG                                                |          2765 |       2765 |         0 |                                                                                                                                   |
+| EINT2                                                   |          1778 |       1778 |         0 |                                                                                                                                   |
+| ZONES-2                                                 |          1455 |       1455 |         0 |                                                                                                                                   |
+| EINT1                                                   |          1088 |       1088 |         0 |                                                                                                                                   |
+| THL (THLB classic loss rules)                           |           864 |        864 |         0 |                                                                                                                                   |
+| THP (THPB classic profit rules)                         |           845 |        845 |         0 |                                                                                                                                   |
+| L2ENTRY-A                                               |           596 |        596 |         0 |                                                                                                                                   |
+| L2SE entry (THP_POLICY entry)                           |           550 |        550 |         0 |                                                                                                                                   |
+| CF-ENG                                                  |           499 |        499 |         0 |                                                                                                                                   |
+| META FS2                                                |           449 |        449 |         0 |                                                                                                                                   |
+| META FS1                                                |           388 |        388 |         0 |                                                                                                                                   |
+| ABRC1 (bracket choice per entry)                        |           371 |        371 |         0 |                                                                                                                                   |
+| ADDUW B2                                                |           353 |        353 |         0 |                                                                                                                                   |
+| EXP1 loss per-stream fixed                              |           340 |          0 |       340 | pending: layer THLB loss-rule streams need lock-engine stack_trades (REDO-2) + 1-s path sim; not rebuilt                          |
+| CF-COMBO stage1ENG                                      |           314 |        314 |         0 |                                                                                                                                   |
+| CF-COMBO POOL                                           |           261 |        261 |         0 |                                                                                                                                   |
+| SPLIT 70/30                                             |           150 |        150 |         0 |                                                                                                                                   |
+| THPC2 (profit)                                          |           141 |        119 |        22 | pending: job dp_1w_vol not yet run (c2 redo chain queue)                                                                          |
+| CUTWAIT                                                 |           111 |         75 |        36 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book D6_SM_t60_sst_ASIA                    |
+| UF-LOSS c3                                              |            98 |         98 |         0 |                                                                                                                                   |
+| UF-ENTRY c2                                             |            90 |         90 |         0 |                                                                                                                                   |
+| EQR lots_factor                                         |            86 |         72 |        14 | pending: EQR frame C series (needs STK weekly series stk_a/stk_f redo (other program builders))                                   |
+| UF-ENTRY c1                                             |            84 |         84 |         0 |                                                                                                                                   |
+| L2ENTRY-B                                               |            69 |         69 |         0 |                                                                                                                                   |
+| ZONES-2 ADDENDUM                                        |            65 |         65 |         0 |                                                                                                                                   |
+| UF-ENTRY c4                                             |            52 |         52 |         0 |                                                                                                                                   |
+| THL2 L2H (hypotheses H1-H12)                            |            50 |         50 |         0 |                                                                                                                                   |
+| UF-LOSS c1                                              |            44 |         44 |         0 |                                                                                                                                   |
+| UF-LOSS c5                                              |            43 |         43 |         0 |                                                                                                                                   |
+| CF-COMBO FOUR                                           |            43 |         43 |         0 |                                                                                                                                   |
+| EXP1 profit chains (v0, look-ahead vol key)             |            42 |         42 |         0 |                                                                                                                                   |
+| STRUCT48                                                |            41 |         41 |         0 |                                                                                                                                   |
+| DIPENTRY                                                |            38 |          0 |        38 | pending: layer dipentry tick-event arrays (de_ticks ticks/book=*/m=* + lgb tick predictions) for the new months                   |
+| EXP1 profit chains (causal vol key)                     |            33 |         33 |         0 |                                                                                                                                   |
+| CF-COMBO stage1B                                        |            33 |         33 |         0 |                                                                                                                                   |
+| UF-PROFIT c2                                            |            32 |          0 |        32 | pending: layer UF profit stores (uf profit_c* tidx/DN arrays; need dipentry_redo arm tables + L2 event store rebuild) not rebuilt |
+| UF-LOSS c6                                              |            27 |         27 |         0 |                                                                                                                                   |
+| CF-COMBO GREEDY                                         |            26 |         26 |         0 |                                                                                                                                   |
+| CONFIRM-BARS S1                                         |            26 |         26 |         0 |                                                                                                                                   |
+| L2SP profit (THP_POLICY profit)                         |            26 |         26 |         0 |                                                                                                                                   |
+| CONFIRM-BARS S3                                         |            23 |         23 |         0 |                                                                                                                                   |
+| CONFIRM-BARS S1c                                        |            22 |         22 |         0 |                                                                                                                                   |
+| THPC3 (profit)                                          |            20 |          0 |        20 | pending: layer c3 X matrices + online btab chain not rebuilt (low priority, time)                                                 |
+| STRUCT48 NM-B                                           |            20 |         20 |         0 |                                                                                                                                   |
+| ENSM                                                    |            19 |          0 |        19 | pending: not yet extended (no builder run / no vector delivered)                                                                  |
+| EXP2 (f) stack/ES-RTY state features                    |            16 |          0 |        16 | pending: not yet extended (no builder run / no vector delivered)                                                                  |
+| UF-PROFIT c4                                            |            16 |          0 |        16 | pending: layer UF profit stores (uf profit_c* tidx/DN arrays; need dipentry_redo arm tables + L2 event store rebuild) not rebuilt |
+| CONFIRM-BARS S2c                                        |            16 |         16 |         0 |                                                                                                                                   |
+| UF-LOSS c4                                              |            15 |         15 |         0 |                                                                                                                                   |
+| THL2 L2P (walk-forward policies on the order book)      |            15 |         15 |         0 |                                                                                                                                   |
+| UF-ENTRY c3                                             |            14 |         14 |         0 |                                                                                                                                   |
+| EXP1 profit fixed                                       |            14 |         14 |         0 |                                                                                                                                   |
+| CF-SUBMIN S2 (looked)                                   |            14 |         14 |         0 |                                                                                                                                   |
+| UF-PROFIT c3                                            |            14 |          0 |        14 | pending: layer UF profit stores (uf profit_c* tidx/DN arrays; need dipentry_redo arm tables + L2 event store rebuild) not rebuilt |
+| THP_POLICY joint (L2SE entry / L2SP profit / L2SL loss) |            13 |          0 |        13 | pending: layer lock engine (REDO-2) + L2SE/L2SL stores (ds3_g2_redo ends 20261023)                                                |
+| CONFIRM-BARS S2b                                        |            12 |         12 |         0 |                                                                                                                                   |
+| THPC2 (loss)                                            |            12 |          4 |         8 | pending: job haz_haz_2w_True not yet run (c2 redo chain queue)                                                                    |
+| CONFIRM-BARS S2                                         |            12 |         12 |         0 |                                                                                                                                   |
+| L2SL loss (THL2/THP_POLICY loss)                        |            12 |         12 |         0 |                                                                                                                                   |
+| CONFIRM-BARS S4                                         |            10 |         10 |         0 |                                                                                                                                   |
 
 ## 2. Status counts on the extended ledger rows (descriptive; new windows vs the old ledger)
 
 | | NEW | RISING | STABLE | FADING | STOPPED |
 |---|---|---|---|---|---|
-| OLD (to Feb-06), same 13649 rows | 5001 | 3174 | 1469 | 4005 | 0 |
-| NEW windows (Aug-Oct vs May-Jul; STOPPED = L3M<=0 and L1M<=0) | 3158 | 1295 | 1061 | 3657 | 4463 |
+| OLD (to Feb-06), same 14097 rows | 5156 | 3356 | 1523 | 4062 | 0 |
+| NEW windows (Aug-Oct vs May-Jul; STOPPED = L3M<=0 and L1M<=0) | 3185 | 1323 | 1073 | 3729 | 4772 |
 
 Transition table (rows = old status, columns = new status):
 
 | old_status   |   FADING |   NEW |   RISING |   STABLE |   STOPPED |   n/a |
 |:-------------|---------:|------:|---------:|---------:|----------:|------:|
-| FADING       |     1012 |  1022 |      328 |      154 |      1489 |     0 |
-| NEW          |     1561 |  1058 |      499 |      184 |      1699 |     0 |
-| RISING       |      776 |   725 |      363 |      389 |       917 |     4 |
-| STABLE       |      308 |   353 |      105 |      334 |       358 |    11 |
+| FADING       |     1032 |  1032 |      331 |      158 |      1509 |     0 |
+| NEW          |     1579 |  1068 |      510 |      187 |      1812 |     0 |
+| RISING       |      792 |   730 |      374 |      393 |      1063 |     4 |
+| STABLE       |      326 |   355 |      108 |      335 |       388 |    11 |
 
 ## 3. Turned on / faded / stopped since Feb (descriptive)
 
-**Turned on since Feb** (old L3M <= 0, new L3M > 0 and new L6M > 0, any stored cell of the extended programs): **6** rows. **Faded** (old-ledger rows now FADING): **3657**. **Stopped** (L3M <= 0 and L1M <= 0): **4463**.
+**Turned on since Feb** (old L3M <= 0, new L3M > 0 and new L6M > 0, any stored cell of the extended programs): **6** rows. **Faded** (old-ledger rows now FADING): **3729**. **Stopped** (L3M <= 0 and L1M <= 0): **4772**.
 
 ### Turned on (top 15 by new L3M $ at live lots, else by pts)
 
@@ -128,6 +128,7 @@ Transition table (rows = old status, columns = new status):
 | EQR lots_factor | A/B/E/N @ lots x1.432 | stack | all | $/wk | -9,272 (5) | -22,297 (9) | -28,886 | 123,058 | -24,357 | 11,867 | -18,156 | -6,520 | -12,295 | 80,873 | 61,119 | 0.45 | STOPPED (RISING) | ▁█▄▄▄▅ -1.17e+05 +8.15e+04 -2.09e+04 -4.16e+04 -3.53e+04 -8.97e+03 | 0 | -1,142 | -14,850 | 0.00 |
 | EQR lots_factor | A/B/E/M @ lots x1.367 | stack | all | $/wk | -21,477 (5) | -22,808 (9) | -21,072 | 105,009 | -26,035 | 504 | -45,479 | -4,808 | -11,360 | 65,791 | 52,814 | 0.45 | STOPPED (RISING) | ▁█▃▅▄▄ -1.04e+05 +6.36e+04 -4.96e+04 -1.77e+04 -2.41e+04 -2.08e+04 | 0 | -833 | -10,833 | 0.00 |
 | EINT2 | f.exclfirst90.all/STACK6 | STACK6 | ALL | $/wk | -65,521 (5) | -53,227 (9) | -21,786 | 84,840 | 15,023 | 21,288 | -32,981 | -34,802 | 13,894 | 94,138 | 82,338 | 0.43 | STOPPED (NEW) | ▄█▇▆▂▁ -567 +8.67e+04 +6.93e+04 +3.91e+04 -4.09e+04 -6.34e+04 | 0 | -0 | -0 | 0.00 |
+| THPC2 (profit) | qr_profit/qr/6m/S1d/reg | ALL books (pooled chain) | ALL | pts/ct | -0.80 (2,618) | -0.82 (4,716) | -0.16 | 1.11 | 0.25 | 0.31 | -0.21 | 0.30 | 0.36 | 3.54 | 1.95 | 0.39 | STOPPED (NEW) | ▅▂█▇▁▁ +0.659 -0.585 +1.61 +1.28 -0.834 -0.803 | 0 | -0.00 | -0 | 0.00 |
 | EQR lots_factor | A/B/EPL/N @ lots x1.306 | stack | all | $/wk | -3,409 (5) | -37,482 (9) | -35,564 | 74,808 | -11,333 | -4,088 | -58,015 | -54,776 | -13,744 | 106,098 | 60,292 | 0.45 | STOPPED (RISING) | █▄▆▃▁▅ +4.41e+04 -2.34e+04 +1.6e+04 -3.19e+04 -7.16e+04 -3.3e+03 | 0 | -1,406 | -18,283 | 0.00 |
 | L2ENTRY-A | skipBot3_depth_rel [ALL] | ALL | all | pts/ct | -0.08 (2,709) | -0.22 (4,893) | -0.75 | 0.71 | -0.13 | 0.11 | 0.18 | 17,099.04 | -9,940.48 | 1.88 | 1.06 | 0.33 | STOPPED (FADING) | ▆█▆▁▅▆ -0.0494 +0.942 +0.0954 -1.93 -0.386 -0.0797 | 0 | -0.00 | -0 | 0.00 |
 | L2ENTRY-A | skipBot3_imb10 [ALL] | ALL | all | pts/ct | -0.85 (2,709) | -0.46 (4,893) | -0.74 | 0.51 | -0.39 | -0.21 | -0.03 | 32,036.18 | -30,691.68 | 1.34 | 0.98 | 0.33 | STOPPED (FADING) | █▄▃▁▅▂ +1.12 -0.455 -0.68 -1.37 +0.0347 -0.853 | 0 | -0.00 | -0 | 0.00 |
@@ -138,7 +139,6 @@ Transition table (rows = old status, columns = new status):
 | L2ENTRY-A | PAIRs[skipBot10_rel_ahead8/skipBot10_rel_tot8] [ALL] | ALL | all | pts/ct | -0.50 (2,709) | -0.39 (4,893) | -0.46 | 0.48 | -0.07 | 0.11 | 0.20 | 24,427.31 | 3,312.88 | 0.62 | 0.54 | 0.33 | STOPPED (FADING) | ▃█▅▁▃▂ -0.308 +0.683 +0.187 -0.604 -0.265 -0.498 | 0 | -0.00 | -0 | 0.00 |
 | L2ENTRY-A | PAIRs[skipBot10_rel_ahead8/doubleBot3_rnd100_ahead] [ALL] | ALL | all | pts/ct | -0.24 (2,709) | -0.22 (4,893) | -0.26 | 0.48 | -0.02 | 0.17 | 0.31 | 19,624.72 | 14,938.21 | 0.52 | 0.52 | 0.33 | STOPPED (FADING) | ▁█▆▂▃▃ -0.551 +0.624 +0.278 -0.361 -0.196 -0.242 | 0 | -0.00 | -0 | 0.00 |
 | EINT1 | skipBot3_htf_wk_open_atr/ENG | ENG | ALL | $/wk | -38,207 (5) | 413 (9) | -3,929 | 50,599 | 13,832 | 16,164 | -18,868 | -17,136 | 14,510 | 142,980 | 81,663 | 0.44 | STOPPED (NEW) | ▄█▃▂▅▁ +1.79e+04 +8.56e+04 -7.47e+03 -1.23e+04 +3.9e+04 -3.7e+04 | 0 | -0 | -0 | 0.00 |
-| EINT2 | f.exclfirst90.asia/STACK6 | STACK6 | ALL | $/wk | -70,494 (5) | -26,975 (9) | -8,242 | 49,776 | 3,705 | 6,434 | -19,043 | -13,311 | 1,834 | 116,888 | 71,274 | 0.43 | STOPPED (NEW) | ▆█▆▇▇▁ +2.32e+03 +3.7e+04 +7.96e+03 +2.8e+04 +1.65e+04 -6.82e+04 | 0 | -0 | -0 | 0.00 |
 
 ## 4. Top 30 by shrunk $ at live lots (new L3M $ x family shrink; NOT additive: many rows are the same trade stream)
 
@@ -177,7 +177,7 @@ Transition table (rows = old status, columns = new status):
 
 ## 5. Old top 300 (P1) re-read
 
-249 of 300 extended and tied; status now: RISING 80, STABLE 70, FADING 44, STOPPED 35, NEW 20; positive new L3M: 199; positive new L6M: 203.
+276 of 300 extended and tied; status now: RISING 87, STABLE 74, FADING 50, STOPPED 40, NEW 25; positive new L3M: 219; positive new L6M: 228.
 
 | program | cell | book | session | unit | L1M (n) | L2M (n) | L3M | **old L3M (to Feb-06)** | L6M | HOLD | MID | PRE | X' | MDE L3M | MDE L6M | persist | status new (old) | drift May..Oct | age | shrunk L3M | shrunk $ L3M | size x |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -223,8 +223,8 @@ Transition table (rows = old status, columns = new status):
 | THPC2 (profit) | dp_profit/dp/ew20/S1d/none | ALL books (pooled chain) | ALL | pts/ct | 1.62 (2,618) | 1.34 (4,716) | 1.59 | 1.10 | 1.43 | 1.49 | 2.11 | 0.24 | -0.02 | 1.67 | 1.02 | 0.62 | STABLE (RISING) | ▁▃▄█▁▅ +1.04 +1.31 +1.51 +2.15 +0.996 +1.62 | 6 | 0.93 | 984,494 | 0.63 |
 | THPC2 (profit) | dp_profit/dp/YTD/Sintra/tod | ALL books (pooled chain) | ALL | pts/ct | 1.48 (2,618) | 1.24 (4,716) | 1.56 | 1.13 | 1.49 | 1.51 | 2.01 | 0.32 | -0.14 | 1.62 | 0.99 | 0.62 | STABLE (RISING) | ▃▂▆█▁▄ +1.34 +1.05 +1.86 +2.26 +0.938 +1.48 | 6 | 0.91 | 983,902 | 0.63 |
 | THPC2 (profit) | dp_profit/dp/YTD/S1d/tod | ALL books (pooled chain) | ALL | pts/ct | 1.48 (2,618) | 1.24 (4,716) | 1.56 | 1.12 | 1.49 | 1.51 | 2.01 | 0.32 | -0.14 | 1.62 | 0.99 | 0.62 | STABLE (RISING) | ▃▂▆█▁▄ +1.34 +1.05 +1.86 +2.26 +0.938 +1.48 | 6 | 0.91 | 983,902 | 0.63 |
-| EXP1 profit chains (causal vol | all/pooled/6m/m0.0 | ALL10 profit side | ALL | pts/ct | 1.72 (2,618) | 1.41 (4,716) | 1.62 | 0.90 | 1.14 | 1.19 | 1.75 | 0.25 | -0.05 | 2.10 | 1.16 | 0.58 | RISING (RISING) | ▃▁▂█▃▆ +1.04 +0.529 +0.807 +2.07 +1.04 +1.72 | 6 | 0.95 | 980,536 | 0.55 |
 | EXP1 profit chains (v0, look-a | all/pooled/6m/m0.0 | ALL10 profit side | ALL | pts/ct | 1.72 (2,618) | 1.41 (4,716) | 1.62 | 0.90 | 1.14 | 1.19 | 1.75 | 0.25 | -0.05 | 2.10 | 1.16 | 0.58 | RISING (RISING) | ▃▁▂█▃▆ +1.04 +0.529 +0.807 +2.07 +1.04 +1.72 | 6 | 0.95 | 980,536 | 0.55 |
+| EXP1 profit chains (causal vol | all/pooled/6m/m0.0 | ALL10 profit side | ALL | pts/ct | 1.72 (2,618) | 1.41 (4,716) | 1.62 | 0.90 | 1.14 | 1.19 | 1.75 | 0.25 | -0.05 | 2.10 | 1.16 | 0.58 | RISING (RISING) | ▃▁▂█▃▆ +1.04 +0.529 +0.807 +2.07 +1.04 +1.72 | 6 | 0.95 | 980,536 | 0.55 |
 | THPC2 (profit) | dp_profit/dp/1w/S1m/none | ALL books (pooled chain) | ALL | pts/ct | 1.33 (2,618) | 1.29 (4,716) | 1.56 | 0.83 | 1.27 | 1.30 | 1.82 | 0.31 | 0.14 | 1.78 | 1.16 | 0.61 | RISING (RISING) | ▁▁▅█▄▄ +0.768 +0.679 +1.6 +2.16 +1.24 +1.33 | 6 | 0.92 | 977,460 | 0.60 |
 | THPC2 (profit) | dp_profit/dp/3m/S1w/tod | ALL books (pooled chain) | ALL | pts/ct | 1.51 (2,618) | 1.20 (4,716) | 1.54 | 1.09 | 1.46 | 1.45 | 1.85 | 0.40 | -0.11 | 1.78 | 1.04 | 0.60 | STABLE (RISING) | ▃▂▅█▁▄ +1.33 +1.07 +1.73 +2.29 +0.82 +1.51 | 6 | 0.91 | 976,204 | 0.60 |
 | THPC2 (profit) | dp_profit/dp/3m/S1d/none | ALL books (pooled chain) | ALL | pts/ct | 1.65 (2,618) | 1.39 (4,716) | 1.61 | 1.09 | 1.37 | 1.46 | 2.12 | 0.34 | -0.04 | 1.70 | 1.05 | 0.62 | RISING (RISING) | ▃▁▄█▂▅ +1.21 +0.851 +1.45 +2.11 +1.07 +1.65 | 6 | 0.95 | 975,977 | 0.63 |
@@ -291,7 +291,7 @@ Transition table (rows = old status, columns = new status):
 
 ## 7. SIXTY >= 0.70 list (re-cut descriptive; persistence recomputed on the new windows)
 
-345 of 350 extended. Persistence >= 0.70 now: 297; >= 0.60: 313.
+347 of 350 extended. Persistence >= 0.70 now: 297; >= 0.60: 313.
 
 | program | cell | book | session | unit | L1M (n) | L2M (n) | L3M | **old L3M (to Feb-06)** | L6M | HOLD | MID | PRE | X' | MDE L3M | MDE L6M | persist | status new (old) | drift May..Oct | age | shrunk L3M | shrunk $ L3M | size x |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -299,24 +299,24 @@ Transition table (rows = old status, columns = new status):
 | CF-COMBO stage1ENG | THEN60s(iplFVG/45s+iFVG/15s) / c2_far/F0.7 | KB | ALL | pts/ct | 5.57 (230) | 5.92 (397) | 5.98 | 5.76 | 5.40 | 5.39 | 4.90 | 5.14 | 3.90 | 1.42 | 1.30 | 0.75 | STABLE (RISING) | ▁▁▆▇█▅ +4.33 +4.28 +5.91 +6.1 +6.41 +5.57 | 6 | 1.47 | 0 | 0.30 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/45s+FVG/3m) / c2_mid/F0.7 | MV | ALL | pts/ct | 8.83 (157) | 8.00 (279) | 7.74 | 6.11 | 8.40 | 7.69 | 7.92 | 6.46 | 6.78 | 2.18 | 1.82 | 0.75 | STABLE (STABLE) | ▄▄█▂▁▅ +8.15 +8.51 +10.1 +7.19 +6.93 +8.83 | 6 | 1.91 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/45s+FVG/3m) / b_mid/F0.7 | MV | ALL | pts/ct | 7.52 (161) | 7.20 (288) | 6.76 | 5.64 | 7.74 | 7.17 | 7.70 | 6.02 | 7.01 | 2.23 | 1.91 | 0.75 | STABLE (STABLE) | ▄▅█▁▃▄ +7.77 +8.09 +9.9 +5.85 +6.79 +7.52 | 6 | 1.67 | 0 | 0.29 |
+| CF-COMBO stage1ENG | THEN60s(iplFVG/15s+iFVG/2m) / c2_near/F0.7 | DN | ALL | pts/ct | 5.58 (95) | 6.34 (184) | 6.03 | 4.47 | 6.48 | 6.19 | 7.39 | 6.72 | 5.91 | 2.59 | 2.02 | 0.75 | STABLE (STABLE) | ▁█▁▁▄▁ +5.38 +10.3 +5.56 +5.37 +7.15 +5.58 | 6 | 1.49 | 0 | 0.28 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/1m+OB/30s) / b_far/F0.7 | MV | ALL | pts/ct | 6.87 (178) | 6.35 (319) | 7.03 | 7.64 | 6.82 | 6.84 | 6.71 | 6.69 | 5.77 | 1.91 | 1.03 | 0.75 | STABLE (RISING) | ▄▅▂█▁▄ +6.82 +7.19 +5.93 +8.59 +5.69 +6.87 | 6 | 1.73 | 0 | 0.30 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/1m+OB/30s) / c2_far/F0.7 | MV | ALL | pts/ct | 8.07 (174) | 7.17 (317) | 7.66 | 7.82 | 7.64 | 7.73 | 8.00 | 7.14 | 6.19 | 2.27 | 1.26 | 0.75 | STABLE (STABLE) | ▄▆▅█▁▆ +7.37 +7.97 +7.51 +8.74 +6.07 +8.07 | 6 | 1.89 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/1m+iFVG/15s) / c2_far/F0.7 | KB | ALL | pts/ct | 4.68 (230) | 5.62 (398) | 5.33 | 5.42 | 4.87 | 5.04 | 4.93 | 4.94 | 3.90 | 1.60 | 1.24 | 0.75 | STABLE (RISING) | ▂▁▄▃█▃ +4.28 +3.8 +5.26 +4.67 +6.92 +4.68 | 6 | 1.31 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/1m+iplFVG/30s) / c2_far/F0.7 | PE | ALL | pts/ct | 4.80 (216) | 4.91 (389) | 4.43 | 4.99 | 3.76 | 4.34 | 5.23 | 5.14 | 5.15 | 1.36 | 1.43 | 0.75 | RISING (STABLE) | ▂▅▁▃█▇ +3.14 +3.95 +2.65 +3.42 +5.04 +4.8 | 6 | 1.09 | 0 | 0.29 |
-| CF-COMBO stage1ENG | THEN60s(iplFVG/30s+FVG/15s) / c2_far/F0.7 | KB | ALL | pts/ct | 5.85 (235) | 5.69 (400) | 5.33 | 4.44 | 5.50 | 5.16 | 5.06 | 4.92 | 4.50 | 1.92 | 1.31 | 0.75 | STABLE (STABLE) | █▇▅▁▆█ +5.8 +5.75 +5.39 +4.58 +5.45 +5.85 | 6 | 1.32 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/30s) / c2_mid/F0.7 | ST | ALL | pts/ct | 9.84 (180) | 8.63 (329) | 8.26 | 5.63 | 8.78 | 8.07 | 8.65 | 5.95 | 5.11 | 2.31 | 1.56 | 0.75 | STABLE (STABLE) | ▂▃█▂▁▆ +7.86 +8.31 +11 +7.5 +7.18 +9.84 | 6 | 2.04 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/30s) / c2_near/F0.7 | ST | ALL | pts/ct | 8.61 (192) | 7.42 (353) | 7.19 | 5.34 | 7.98 | 7.23 | 7.22 | 5.16 | 4.74 | 1.94 | 1.43 | 0.75 | STABLE (STABLE) | ▃▅█▂▁▅ +7.1 +8.42 +10.1 +6.71 +5.99 +8.61 | 6 | 1.77 | 0 | 0.30 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+iFVG/2m) / b_far/F0.7 | DN | ALL | pts/ct | 5.98 (86) | 7.03 (169) | 6.61 | 5.19 | 6.80 | 6.69 | 8.04 | 7.50 | 6.48 | 2.09 | 1.79 | 0.75 | STABLE (STABLE) | ▄▇▃▁█▂ +6.92 +7.62 +6.54 +5.73 +8.13 +5.98 | 6 | 1.63 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+iFVG/2m) / b_mid/F0.7 | DN | ALL | pts/ct | 7.85 (94) | 7.95 (180) | 6.88 | 5.72 | 6.77 | 6.56 | 7.06 | 6.91 | 6.33 | 2.15 | 1.93 | 0.75 | STABLE (STABLE) | ▄▆▆▁██ +6.03 +7.07 +6.88 +4.56 +8.06 +7.85 | 6 | 1.70 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+iFVG/2m) / c2_far/F0.7 | DN | ALL | pts/ct | 6.15 (85) | 7.19 (167) | 6.73 | 4.93 | 7.14 | 6.96 | 8.58 | 7.81 | 6.40 | 2.14 | 1.82 | 0.75 | STABLE (STABLE) | ▆▇▅▁█▂ +7.68 +8.09 +7.11 +5.76 +8.27 +6.15 | 6 | 1.66 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+iFVG/2m) / c2_mid/F0.7 | DN | ALL | pts/ct | 8.15 (91) | 8.15 (177) | 7.46 | 5.38 | 7.45 | 6.93 | 7.46 | 7.31 | 5.86 | 1.67 | 1.89 | 0.75 | STABLE (STABLE) | ▂█▄▁▇▇ +6.46 +8.73 +7.29 +5.98 +8.16 +8.15 | 6 | 1.84 | 0 | 0.30 |
-| CF-COMBO stage1ENG | THEN60s(iplFVG/15s+iFVG/2m) / c2_near/F0.7 | DN | ALL | pts/ct | 5.58 (95) | 6.34 (184) | 6.03 | 4.47 | 6.48 | 6.19 | 7.39 | 6.72 | 5.91 | 2.59 | 2.02 | 0.75 | STABLE (STABLE) | ▁█▁▁▄▁ +5.38 +10.3 +5.56 +5.37 +7.15 +5.58 | 6 | 1.49 | 0 | 0.28 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / c2_mid/F0.7 | ST | ALL | pts/ct | 9.03 (150) | 8.71 (288) | 8.26 | 6.29 | 9.26 | 8.72 | 9.43 | 7.01 | 5.56 | 1.61 | 2.02 | 0.75 | STABLE (RISING) | ▁█▇▂▃▄ +6.12 +12.4 +11.7 +7.23 +8.36 +9.03 | 6 | 2.04 | 0 | 0.30 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / c2_near/F0.7 | DN | ALL | pts/ct | 6.65 (87) | 7.41 (175) | 7.44 | 7.60 | 8.44 | 7.52 | 5.44 | 6.95 | 7.01 | 2.76 | 2.93 | 0.75 | STABLE (RISING) | ▁▇█▄▄▃ +3.96 +11.5 +12.6 +7.5 +8.17 +6.65 | 6 | 1.83 | 0 | 0.28 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / c2_near/F0.7 | ST | ALL | pts/ct | 7.42 (165) | 7.71 (311) | 7.31 | 5.10 | 8.17 | 7.42 | 7.67 | 6.15 | 5.47 | 2.61 | 2.27 | 0.75 | STABLE (RISING) | ▁█▇▂▄▄ +5.56 +10.7 +10 +6.38 +8.05 +7.42 | 6 | 1.80 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/30s) / b_far/F0.7 | ST | ALL | pts/ct | 7.85 (151) | 7.99 (289) | 8.34 | 6.40 | 8.29 | 8.23 | 9.90 | 6.51 | 6.09 | 2.21 | 1.52 | 0.75 | STABLE (RISING) | ▁▄█▆▄▄ +5.56 +7.74 +10.8 +9.03 +8.14 +7.85 | 6 | 2.06 | 0 | 0.30 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/30s) / b_mid/F0.7 | ST | ALL | pts/ct | 8.78 (177) | 8.20 (329) | 7.81 | 5.67 | 7.98 | 7.54 | 8.23 | 5.64 | 4.76 | 2.30 | 1.62 | 0.75 | STABLE (STABLE) | ▁▅█▃▄▆ +5.81 +8.11 +9.89 +7 +7.54 +8.78 | 6 | 1.93 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/30s) / c2_far/F0.7 | ST | ALL | pts/ct | 9.21 (149) | 8.91 (284) | 9.05 | 6.92 | 9.32 | 9.01 | 10.39 | 6.82 | 6.41 | 1.96 | 1.70 | 0.75 | STABLE (RISING) | ▁▃█▄▃▄ +6.78 +8.68 +12.6 +9.33 +8.57 +9.21 | 6 | 2.23 | 0 | 0.30 |
+| CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / b_far/F0.7 | ST | ALL | pts/ct | 12.14 (117) | 11.59 (237) | 10.43 | 7.52 | 10.80 | 9.97 | 10.11 | 7.75 | 6.88 | 3.47 | 2.08 | 0.75 | STABLE (RISING) | ▃▅█▁▅▇ +9.11 +10.7 +13 +7.83 +11 +12.1 | 6 | 2.57 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / b_mid/F0.7 | DN | ALL | pts/ct | 7.57 (83) | 8.01 (169) | 7.54 | 8.67 | 8.95 | 8.22 | 6.42 | 6.92 | 6.71 | 1.68 | 2.76 | 0.75 | FADING (RISING) | ▁██▂▄▃ +5.32 +12.7 +13.1 +6.54 +8.42 +7.57 | 6 | 1.86 | 0 | 0.30 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / b_mid/F0.7 | ST | ALL | pts/ct | 8.79 (152) | 8.42 (289) | 8.18 | 5.88 | 8.80 | 8.24 | 8.84 | 6.86 | 5.23 | 2.08 | 2.18 | 0.75 | STABLE (RISING) | ▁█▆▃▄▅ +5.19 +12.1 +10.5 +7.63 +8.02 +8.79 | 6 | 2.02 | 0 | 0.30 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / b_near/F0.7 | DN | ALL | pts/ct | 6.50 (86) | 7.25 (176) | 6.86 | 7.40 | 7.95 | 7.16 | 5.32 | 6.75 | 6.64 | 2.51 | 2.83 | 0.75 | STABLE (RISING) | ▁▇█▃▅▃ +3.56 +11.4 +12 +6.04 +7.96 +6.5 | 6 | 1.69 | 0 | 0.29 |
@@ -324,6 +324,7 @@ Transition table (rows = old status, columns = new status):
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / c2_far/F0.7 | DN | ALL | pts/ct | 9.80 (71) | 10.03 (146) | 9.15 | 9.06 | 9.68 | 8.67 | 6.10 | 8.33 | 7.02 | 2.73 | 3.30 | 0.75 | STABLE (RISING) | ▁▄█▁▄▄ +7.24 +9.59 +13.6 +7.27 +10.3 +9.8 | 6 | 2.26 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / c2_far/F0.7 | ST | ALL | pts/ct | 13.97 (116) | 12.97 (235) | 11.60 | 8.85 | 11.66 | 10.78 | 10.36 | 7.90 | 7.22 | 3.78 | 2.26 | 0.75 | STABLE (RISING) | ▃▄█▁▅█ +9.6 +10.9 +14 +8.35 +12 +14 | 6 | 2.86 | 0 | 0.29 |
 | CF-COMBO stage1ENG | THEN60s(iplFVG/15s+OB/1m) / c2_mid/F0.7 | DN | ALL | pts/ct | 7.66 (83) | 8.22 (165) | 7.68 | 8.79 | 9.18 | 8.44 | 6.67 | 7.33 | 7.23 | 1.81 | 2.95 | 0.75 | FADING (RISING) | ▁▇█▂▄▃ +5.69 +12.6 +13.8 +6.55 +8.77 +7.66 | 6 | 1.89 | 0 | 0.30 |
+| CF-COMBO POOL | AND(OB/1m+CFA:b1/avwap) / c2_mid/F0.7 | WT | ALL | pts/ct | 5.77 (153) | 5.13 (313) | 5.34 | 5.48 | 5.92 | 5.75 | 5.49 | 4.71 | 4.50 | 1.28 | 1.14 | 0.75 | STABLE (STABLE) | ▁▆█▄▁▄ +4.74 +6.87 +7.8 +5.82 +4.52 +5.77 | 6 | 1.32 | 0 | 0.30 |
 | CF-COMBO POOL | AND(OB/1m+CFA:b1/avwap) / c2_near/F0.7 | WT | ALL | pts/ct | 4.91 (173) | 4.61 (347) | 4.98 | 4.67 | 5.28 | 5.07 | 4.87 | 4.02 | 4.36 | 1.16 | 1.05 | 0.75 | STABLE (STABLE) | ▆▇██▁▄ +5.44 +5.49 +5.77 +5.79 +4.32 +4.91 | 6 | 1.23 | 0 | 0.30 |
 | CF-COMBO POOL | AND(OB/1m+CFA:b1/avwap+CFA:vwap/day) / c2_far/F0.7 | PE | ALL | pts/ct | 8.31 (152) | 8.35 (276) | 8.12 | 7.24 | 7.44 | 7.43 | 7.42 | 6.82 | 5.71 | 1.46 | 1.72 | 0.75 | STABLE (STABLE) | ▁▅█▆▇▇ +4.21 +6.91 +8.85 +7.69 +8.4 +8.31 | 6 | 2.00 | 0 | 0.30 |
 | CF-COMBO POOL | AND(OB/1m+CFA:poc/sw15) / c2_far/F0.7 | PE | ALL | pts/ct | 10.23 (107) | 8.46 (208) | 7.65 | 7.44 | 7.60 | 7.71 | 8.28 | 8.76 | 7.42 | 2.98 | 2.73 | 0.75 | STABLE (STABLE) | ▁▅█▄▄▇ +2.93 +8.17 +11.8 +6.16 +6.59 +10.2 | 6 | 1.89 | 0 | 0.28 |
@@ -331,76 +332,58 @@ Transition table (rows = old status, columns = new status):
 | CF-COMBO POOL | AND(OB/1m+CFA:val/sw15) / c2_far/F0.7 | PE | ALL | pts/ct | 9.84 (102) | 9.04 (205) | 8.18 | 8.67 | 8.20 | 8.47 | 8.53 | 8.39 | 7.31 | 3.09 | 2.48 | 0.75 | STABLE (STABLE) | ▁▅█▃▅▆ +4.65 +8.71 +11.4 +6.59 +8.25 +9.84 | 6 | 2.02 | 0 | 0.28 |
 | CF-COMBO POOL | AND(OB/1m+CFA:vwap/avwap) / b_mid/F0.7 | WT | ALL | pts/ct | 6.41 (132) | 4.99 (280) | 4.89 | 4.49 | 5.31 | 5.08 | 4.94 | 4.34 | 4.18 | 1.45 | 1.33 | 0.75 | STABLE (STABLE) | ▁▆█▃▂▆ +3.45 +6.19 +7.41 +4.66 +3.73 +6.41 | 6 | 1.21 | 0 | 0.29 |
 | CF-COMBO POOL | AND(OB/1m+CFA:vwap/avwap) / b_near/F0.7 | WT | ALL | pts/ct | 5.27 (149) | 4.14 (305) | 4.46 | 4.01 | 4.56 | 4.35 | 4.07 | 3.46 | 3.73 | 1.57 | 1.29 | 0.75 | STABLE (STABLE) | ▄▅█▇▁▇ +3.94 +4.41 +5.5 +5.2 +3.05 +5.27 | 6 | 1.10 | 0 | 0.29 |
-| CF-COMBO POOL | AND(OB/1m+CFA:vwap/avwap) / c2_far/F0.7 | PE | ALL | pts/ct | 7.55 (154) | 7.75 (287) | 7.73 | 7.20 | 7.05 | 7.34 | 8.02 | 6.50 | 5.61 | 1.28 | 1.59 | 0.75 | STABLE (STABLE) | ▁▅█▇█▇ +4.25 +6.57 +8.13 +7.67 +7.98 +7.55 | 6 | 1.91 | 0 | 0.30 |
+| CF-COMBO POOL | AND(FVG/45s+ote79/15s) / c2_near/F0.7 | HM | ALL | pts/ct | 9.52 (124) | 9.58 (241) | 9.32 | 6.57 | 10.04 | 8.79 | 7.68 | 7.87 | 5.61 | 2.82 | 2.18 | 0.75 | STABLE (RISING) | ▇██▁▄▄ +10.5 +10.7 +10.8 +8.8 +9.64 +9.52 | 6 | 2.30 | 0 | 0.29 |
 | CF-COMBO POOL | AND(FVG/45s+rnd50) / a/F0.7 | MV | ALL | pts/ct | 10.20 (228) | 9.35 (381) | 9.47 | 9.21 | 9.59 | 10.14 | 12.62 | 9.53 | 9.99 | 1.88 | 1.33 | 0.75 | STABLE (STABLE) | ▅▃█▆▁▇ +9.58 +8.91 +10.5 +9.73 +8.09 +10.2 | 6 | 2.34 | 0 | 0.30 |
 | CF-COMBO POOL | AND(FVG/45s+rnd50) / b_near/F0.7 | MV | ALL | pts/ct | 10.76 (229) | 9.72 (382) | 9.56 | 9.34 | 9.73 | 10.16 | 12.21 | 9.83 | 10.03 | 2.04 | 1.42 | 0.75 | STABLE (STABLE) | ▅▄█▄▁█ +9.52 +9.31 +10.7 +9.21 +8.16 +10.8 | 6 | 2.36 | 0 | 0.30 |
-| CF-COMBO POOL | AND(FVG/45s+rnd50) / c1/F0.7 | MV | ALL | pts/ct | 10.21 (228) | 9.37 (381) | 9.50 | 9.22 | 9.62 | 10.16 | 12.66 | 9.56 | 10.05 | 1.86 | 1.33 | 0.75 | STABLE (STABLE) | ▅▃█▆▁▇ +9.6 +8.92 +10.6 +9.79 +8.12 +10.2 | 6 | 2.34 | 0 | 0.30 |
 
 ## 8. Pending rows (ledger) by reason
 
-| program                                                 | reason                                                                                                            |   rows |
-|:--------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|-------:|
-| ADDUW B2                                                | pending: layer stack_trades/b_lib audit-stack weekly base (REDO-2 stack_trades, dv2a) for the ADDUW weekly engine |    353 |
-| EXP1 loss per-stream fixed                              | pending: layer exp1 cache for new tids                                                                            |    340 |
-| DIPENTRY                                                | pending: layer dipentry tick-event arrays (de_ticks ticks/book=*/m=* + lgb tick predictions) for the new months   |     38 |
-| UF-PROFIT c2                                            | pending: layer uf profit cache                                                                                    |     32 |
-| EQR lots_factor                                         | pending: EQR frame E series (needs T-SESSION-LOCKS sl_stack redo)                                                 |     31 |
-| EQR lots_factor                                         | pending: EQR frame C series (needs STK weekly series stk_a/stk_f redo (other program builders))                   |     21 |
-| THPC3 (profit)                                          | pending: layer c3 btab state                                                                                      |     20 |
-| ENSM                                                    | pending: not yet extended (no builder run / no vector delivered)                                                  |     19 |
-| CUTWAIT                                                 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book D6_SM_t60_sst_ASIA    |     16 |
-| UF-PROFIT c4                                            | pending: layer uf profit cache                                                                                    |     16 |
-| EXP2 (f) stack/ES-RTY state features                    | pending: not yet extended (no builder run / no vector delivered)                                                  |     16 |
-| THL2 L2P (walk-forward policies on the order book)      | pending: layer not yet run                                                                                        |     15 |
-| UF-PROFIT c3                                            | pending: layer uf profit cache                                                                                    |     14 |
-| THP_POLICY joint (L2SE entry / L2SP profit / L2SL loss) | pending: layer lock engine wiring (REDO-2) + L2SE/L2SP/L2SL                                                       |     13 |
-| CUTWAIT                                                 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book D6_TB4B_ASIA          |     11 |
-| THL_HM                                                  | pending: layer not yet run                                                                                        |      9 |
-| SD-B                                                    | pending: not yet extended (no builder run / no vector delivered)                                                  |      7 |
-| CUTWAIT                                                 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book CR                    |      6 |
-| UF-PROFIT c1                                            | pending: layer uf profit cache                                                                                    |      6 |
-| EXP1 loss chains (P11)                                  | pending: layer not yet run                                                                                        |      6 |
-| EQR lots_factor                                         | pending: EQR frame B series (needs L2SL loss stack_daily / EXP2 joint redo)                                       |      5 |
-| ADDUW B1                                                | pending: not yet extended (no builder run / no vector delivered)                                                  |      5 |
-| EXP2 (b) wide-bracket tables                            | pending: not yet extended (no builder run / no vector delivered)                                                  |      4 |
-| FIRST-HOUR-DELTA                                        | pending: not yet extended (no builder run / no vector delivered)                                                  |      4 |
-| THPC2 (profit)                                          | pending: job qr_qr_YTD_False not yet run (c2 redo chain queue)                                                    |      4 |
-| THPC2 (profit)                                          | pending: job dp_1w_vol not yet run (c2 redo chain queue)                                                          |      4 |
-| THPC1 (profit)                                          | pending: layer c1 cache                                                                                           |      4 |
-| THPC2 (profit)                                          | pending: job qr_qr_6m_True not yet run (c2 redo chain queue)                                                      |      4 |
-| THPC2 (profit)                                          | pending: job qr_qr_YTD_True not yet run (c2 redo chain queue)                                                     |      4 |
-| THPC2 (profit)                                          | pending: job qr_qr_ew20_False not yet run (c2 redo chain queue)                                                   |      4 |
-| EQR lots_factor                                         | pending: EQR frame G series (needs frame)                                                                         |      3 |
-| CUTWAIT                                                 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book D6_HM_t75_s90_NYAM    |      3 |
-| THPC2 (profit)                                          | pending: job qr_qr_6m_False not yet run (c2 redo chain queue)                                                     |      3 |
-| THPC2 (profit)                                          | pending: job qr_qr_ew20_True not yet run (c2 redo chain queue)                                                    |      3 |
-| THPC2 (profit)                                          | pending: job haz_haz_12m_False not yet run (c2 redo chain queue)                                                  |      3 |
-| THPC2 (profit)                                          | pending: job qr_qr_ew5_False not yet run (c2 redo chain queue)                                                    |      2 |
-| THPC2 (profit)                                          | pending: job qr_qr_2w_False not yet run (c2 redo chain queue)                                                     |      2 |
-| THPC2 (profit)                                          | pending: job qr_qr_ew10_True not yet run (c2 redo chain queue)                                                    |      2 |
-| THPC2 (loss)                                            | pending: job haz_haz_2w_False not yet run (c2 redo chain queue)                                                   |      2 |
-| THPC2 (loss)                                            | pending: job haz_haz_2w_True not yet run (c2 redo chain queue)                                                    |      2 |
-| EXP2 (d) joint stack                                    | pending: not yet extended (no builder run / no vector delivered)                                                  |      2 |
-| EXP1 vol_lo+ON take@50% (post-look LEAD)                | pending: layer not yet run                                                                                        |      2 |
-| EQR lots_factor                                         | pending: EQR frame H series (needs L2SP six-book profit stack redo (er_lpstack))                                  |      2 |
-| THPC2 (profit)                                          | pending: job qr_qr_1w_False not yet run (c2 redo chain queue)                                                     |      2 |
-| THPC2 (profit)                                          | pending: job haz_haz_6m_True not yet run (c2 redo chain queue)                                                    |      2 |
-| EQR lots_factor                                         | pending: EQR frame F series (needs frame)                                                                         |      1 |
-| THPC2 (loss)                                            | pending: job haz_haz_1w_True not yet run (c2 redo chain queue)                                                    |      1 |
-| THPC2 (loss)                                            | pending: job haz_haz_ew20_False not yet run (c2 redo chain queue)                                                 |      1 |
-| THPC2 (loss)                                            | pending: job qr_qr_YTD_False not yet run (c2 redo chain queue)                                                    |      1 |
-| THPC2 (loss)                                            | pending: job qr_qr_2w_False not yet run (c2 redo chain queue)                                                     |      1 |
-| THPC2 (loss)                                            | pending: job haz_haz_ew20_True not yet run (c2 redo chain queue)                                                  |      1 |
-| THPC2 (profit)                                          | pending: job haz_haz_12m_True not yet run (c2 redo chain queue)                                                   |      1 |
-| THPC2 (profit)                                          | pending: job qr_qr_1w_True not yet run (c2 redo chain queue)                                                      |      1 |
-| THPC2 (profit)                                          | pending: job haz_haz_ew10_True not yet run (c2 redo chain queue)                                                  |      1 |
-| THPC2 (profit)                                          | pending: job haz_haz_ew10_False not yet run (c2 redo chain queue)                                                 |      1 |
-| THPC2 (profit)                                          | pending: job dpo_ew5_none not yet run (c2 redo chain queue)                                                       |      1 |
-| THPC2 (loss)                                            | pending: job qr_qr_ew20_True not yet run (c2 redo chain queue)                                                    |      1 |
-| THPC2 (loss)                                            | pending: job qr_qr_ew20_False not yet run (c2 redo chain queue)                                                   |      1 |
-| THPC2 (loss)                                            | pending: job qr_qr_YTD_True not yet run (c2 redo chain queue)                                                     |      1 |
-| THPC2 (profit)                                          | pending: job dpo_all_none not yet run (c2 redo chain queue)                                                       |      1 |
-| THPC2 (profit)                                          | pending: job dpo_ew5_tod not yet run (c2 redo chain queue)                                                        |      1 |
-| THPC2 (profit)                                          | pending: job dpo_ew10_none not yet run (c2 redo chain queue)                                                      |      1 |
-| THPC2 (profit)                                          | pending: job dpo_ew20_none not yet run (c2 redo chain queue)                                                      |      1 |
-| THPC2 (profit)                                          | pending: job qr_qr_ew10_False not yet run (c2 redo chain queue)                                                   |      1 |
+| program                                                 | reason                                                                                                                            |   rows |
+|:--------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------|-------:|
+| EXP1 loss per-stream fixed                              | pending: layer THLB loss-rule streams need lock-engine stack_trades (REDO-2) + 1-s path sim; not rebuilt                          |    340 |
+| DIPENTRY                                                | pending: layer dipentry tick-event arrays (de_ticks ticks/book=*/m=* + lgb tick predictions) for the new months                   |     38 |
+| UF-PROFIT c2                                            | pending: layer UF profit stores (uf profit_c* tidx/DN arrays; need dipentry_redo arm tables + L2 event store rebuild) not rebuilt |     32 |
+| THPC3 (profit)                                          | pending: layer c3 X matrices + online btab chain not rebuilt (low priority, time)                                                 |     20 |
+| ENSM                                                    | pending: not yet extended (no builder run / no vector delivered)                                                                  |     19 |
+| CUTWAIT                                                 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book D6_SM_t60_sst_ASIA                    |     16 |
+| EXP2 (f) stack/ES-RTY state features                    | pending: not yet extended (no builder run / no vector delivered)                                                                  |     16 |
+| UF-PROFIT c4                                            | pending: layer UF profit stores (uf profit_c* tidx/DN arrays; need dipentry_redo arm tables + L2 event store rebuild) not rebuilt |     16 |
+| UF-PROFIT c3                                            | pending: layer UF profit stores (uf profit_c* tidx/DN arrays; need dipentry_redo arm tables + L2 event store rebuild) not rebuilt |     14 |
+| THP_POLICY joint (L2SE entry / L2SP profit / L2SL loss) | pending: layer lock engine (REDO-2) + L2SE/L2SL stores (ds3_g2_redo ends 20261023)                                                |     13 |
+| CUTWAIT                                                 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book D6_TB4B_ASIA                          |     11 |
+| THL_HM                                                  | pending: layer not yet run                                                                                                        |      9 |
+| SD-B                                                    | pending: not yet extended (no builder run / no vector delivered)                                                                  |      7 |
+| EQR lots_factor                                         | pending: EQR frame C series (needs STK weekly series stk_a/stk_f redo (other program builders))                                   |      6 |
+| CUTWAIT                                                 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book CR                                    |      6 |
+| UF-PROFIT c1                                            | pending: layer UF profit stores (uf profit_c* tidx/DN arrays; need dipentry_redo arm tables + L2 event store rebuild) not rebuilt |      6 |
+| EXP1 loss chains (P11)                                  | pending: layer not yet run                                                                                                        |      6 |
+| ADDUW B1                                                | pending: not yet extended (no builder run / no vector delivered)                                                                  |      5 |
+| EQR lots_factor                                         | pending: EQR frame B series (needs L2SL loss stack_daily / EXP2 joint redo)                                                       |      5 |
+| EXP2 (b) wide-bracket tables                            | pending: not yet extended (no builder run / no vector delivered)                                                                  |      4 |
+| THPC2 (profit)                                          | pending: job dp_1w_vol not yet run (c2 redo chain queue)                                                                          |      4 |
+| THPC1 (profit)                                          | pending: layer c1 chain (thp_wf_c1) and X matrices not rebuilt (low priority, time)                                               |      4 |
+| FIRST-HOUR-DELTA                                        | pending: not yet extended (no builder run / no vector delivered)                                                                  |      4 |
+| THPC2 (profit)                                          | pending: job haz_haz_12m_False not yet run (c2 redo chain queue)                                                                  |      3 |
+| CUTWAIT                                                 | pending: layer tier-B signals/lock inputs (sl books.pkl / D6 taken-signal streams) for book D6_HM_t75_s90_NYAM                    |      3 |
+| EQR lots_factor                                         | pending: EQR frame H series (needs L2SP six-book profit stack redo (er_lpstack))                                                  |      2 |
+| EXP1 vol_lo+ON take@50% (post-look LEAD)                | pending: layer not yet run                                                                                                        |      2 |
+| THPC2 (profit)                                          | pending: job qr_qr_ew5_False not yet run (c2 redo chain queue)                                                                    |      2 |
+| THPC2 (loss)                                            | pending: job haz_haz_2w_True not yet run (c2 redo chain queue)                                                                    |      2 |
+| THPC2 (loss)                                            | pending: job haz_haz_2w_False not yet run (c2 redo chain queue)                                                                   |      2 |
+| EXP2 (d) joint stack                                    | pending: not yet extended (no builder run / no vector delivered)                                                                  |      2 |
+| THPC2 (profit)                                          | pending: job qr_qr_1w_False not yet run (c2 redo chain queue)                                                                     |      2 |
+| THPC2 (profit)                                          | pending: job qr_qr_2w_False not yet run (c2 redo chain queue)                                                                     |      2 |
+| EQR lots_factor                                         | pending: EQR frame F series (needs frame)                                                                                         |      1 |
+| THPC2 (profit)                                          | pending: job dpo_all_none not yet run (c2 redo chain queue)                                                                       |      1 |
+| THPC2 (loss)                                            | pending: job haz_haz_ew20_False not yet run (c2 redo chain queue)                                                                 |      1 |
+| THPC2 (loss)                                            | pending: job haz_haz_ew20_True not yet run (c2 redo chain queue)                                                                  |      1 |
+| THPC2 (loss)                                            | pending: job haz_haz_1w_True not yet run (c2 redo chain queue)                                                                    |      1 |
+| THPC2 (loss)                                            | pending: job qr_qr_2w_False not yet run (c2 redo chain queue)                                                                     |      1 |
+| THPC2 (profit)                                          | pending: job dpo_ew20_none not yet run (c2 redo chain queue)                                                                      |      1 |
+| THPC2 (profit)                                          | pending: job dpo_ew10_none not yet run (c2 redo chain queue)                                                                      |      1 |
+| THPC2 (profit)                                          | pending: job qr_qr_1w_True not yet run (c2 redo chain queue)                                                                      |      1 |
+| THPC2 (profit)                                          | pending: job haz_haz_ew10_False not yet run (c2 redo chain queue)                                                                 |      1 |
+| THPC2 (profit)                                          | pending: job dpo_ew5_none not yet run (c2 redo chain queue)                                                                       |      1 |
+| THPC2 (profit)                                          | pending: job haz_haz_ew10_True not yet run (c2 redo chain queue)                                                                  |      1 |
+| THPC2 (profit)                                          | pending: job dpo_ew5_tod not yet run (c2 redo chain queue)                                                                        |      1 |
+| THPC2 (profit)                                          | pending: job qr_qr_ew10_False not yet run (c2 redo chain queue)                                                                   |      1 |
