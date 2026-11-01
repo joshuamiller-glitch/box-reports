@@ -294,3 +294,6 @@ T-RECENT-REDO — "recent" means FROM TODAY. Move the cap, rebuild every recent 
 
 ## USER PRIORITY ledger re-score 2026-11-01T17:26Z (verbatim in DIRECTIVE_LEDGER_PRIORITY_20261101.md)
 PRIORITY (user, 17:30Z): all cores on the ledger re-score (REDO section 4) until it is 100% — every pending program’s inputs rebuilt and re-read on the new windows, RECENT_WINS_REDO rewritten every 30 minutes with the coverage line, the “turned on since Feb” list and the top 30 refreshed each time. Nothing else runs until coverage reads 100%. Then BETTER, ZONES-3 and ZONES-3-L2 resume on the new windows.
+
+## USER ORDER ledger then ZONES-3 2026-11-01T18:01Z (verbatim in DIRECTIVE_LEDGER_THEN_ZONES_20261101.md)
+ORDER (user, 2026-11-01 18:00Z) — finish the ledger, then every core on ZONES-3, all on the NEW windows
