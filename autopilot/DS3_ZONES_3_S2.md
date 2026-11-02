@@ -769,3 +769,38 @@ The cell is applied in Asia rows only; placebos: cnt = same count of Asia rows a
 | PDmid_40fw1stk_asia | +1% | +7% / +11% / -1% / +2% / -2% | -/T/N | ONE-WEEK | cnt | 100 | 0.27 | 0.27 | 0.61 | 0.28 | 0.92 | 0.07 | no |
 | PDmid_40fw1stk_asia | +1% | +7% / +11% / -1% / +2% / -2% | -/T/N | ONE-WEEK | volA | 100 | 0.14 | 0.14 | 0.61 | 0.28 | 0.91 | 0.05 | no |
 | PDmid_40fw1stk_asia | +1% | +7% / +11% / -1% / +2% / -2% | -/T/N | ONE-WEEK | sdayA | 100 | 0.45 | 0.45 | 0.53 | 0.45 | 0.71 | 0.29 | no |
+
+
+## s2 V13Z: B2 round numbers, same-volume placebos (100 draws) for the top-5 cells; placebos for the V13Y finalists on V13Z (Z2, ~13:00Z 2026-11-02)
+**B2 round numbers = VOLUME (placebo matches):** on V13Z lock=None the added handle lines give large L6M cuts (R25 75%tgt +23%, R50 75%tgt +32%) but random same-volume half-sizing gets as much (L6M ranks 0.07-0.58; the best, R50 75%tgt fresh, 0.07 on L6M and 0.05 on HOLD), and PRE Calmar is -18% to -70%, X' -46% to -48% for the R25 cells. They help only the last 12 months and only through the volume cut: not a lead; B3 gap/unfilled FVG lines were built and screened earlier (no STRICT cell; ZL-3 owns the B3 scoring).
+V13Z placebos for the V13Y finalists: camH3 40pts fw8 any (L6M cut +3%): L6M ranks 0.24-0.39, MID 0.03-0.06, X' sday 0.02: no L6M beat; PDmid 40pts fw1 stacked: ONE-WEEK, ranks 0.26-0.45; CRT4h 30pts fw2 solo: ranks 0.43-0.56, nothing.
+| B2 cell (added to the half mask; V13Z lock=None) | L6M cut | Calmar gain L6M / HOLD / MID / PRE / X' | n | same-volume rank: L6M cut | HOLD | MID | PRE | X' | S_post | label |
+|---|---|---|---|---|---|---|---|---|---|---|
+| B2|R25|75%tgt|any | +23% | +28% / +26% / -50% / -70% / -48% | 100 | 0.32 | 0.32 | 0.79 | 0.91 | 0.97 | 0.25 | VOLUME (placebo matches); PRE Calmar -70% |
+| B2|R25|75%tgt|fresh | +23% | +28% / +26% / -50% / -70% / -48% | 100 | 0.32 | 0.32 | 0.79 | 0.91 | 0.97 | 0.25 | VOLUME (placebo matches); PRE Calmar -70% |
+| B2|R25|40pts|fresh | +13% | +9% / +7% / -34% / -51% / -46% | 100 | 0.58 | 0.57 | 0.69 | 0.58 | 0.97 | 0.50 | VOLUME (placebo matches); PRE Calmar -51% |
+| B2|R25|40pts|any | +13% | +9% / +7% / -34% / -51% / -46% | 100 | 0.58 | 0.57 | 0.69 | 0.58 | 0.97 | 0.50 | VOLUME (placebo matches); PRE Calmar -51% |
+| B2|R50|75%tgt|fresh | +32% | +34% / +46% / -1% / -18% / +21% | 100 | 0.07 | 0.05 | 0.27 | 0.53 | 0.29 | 0.12 | VOLUME (placebo matches); PRE Calmar -18% |
+
+
+
+## s2 V13Z per-session stage (lock=None; 4 lines x Asia/London/NY-AM/NY-PM; the line's setting changed in that session only; 36 settings) (Z2, ~13:10Z 2026-11-02)
+On the exact fixed base the session carrying the effect moved from Asia (V13X, defect base) to **London**: CRT4h London 12 STRICT / 10 TOLERANT / 15 NOW-ONLY of 36 settings (best post-hoc 60pts fresh: L6M +5%, HOLD +5%, MID +5%, PRE +2%), camH3 London 6/6/25 (60pts touched: L6M +15%, HOLD +17%, MID +40%, PRE 0%, X' +10%), kijun1h London 0/12/20 (60pts any: HOLD +10%, MID +17%, PRE +8%, X' -10%). Asia: CRT4h only 4 STRICT, best post-hoc 60pts any (L6M +18%, PRE -12%); NY-AM and NY-PM are flat. London is a small session (22k of 88k rows), so the effects are small in $ and have not been through a session-level null or placebo.
+| line | session | cells | S_hon>0 | S_post>0 | best honest (S; L6M/HOLD/MID/PRE/X' Calmar gain) | best post-hoc (TOL gate if any) | STRICT/TOL/NOW |
+|---|---|---|---|---|---|---|---|
+| CRT4h | asia | 36 | 0.28 | 0.53 | 30pts|fw2: +0.042; -1% / +0% / -3% / +4% / +4% | 60pts|any (ungated): +0.161; +18% / +14% / +1% / -12% / +3% | 4/0/10 |
+| CRT4h | london | 36 | 0.94 | 0.67 | 75%tgt|touched: +0.066; -5% / -3% / +13% / +5% / +8% | 60pts|fresh: +0.051; +5% / +5% / +5% / +2% / -0% | 12/10/15 |
+| CRT4h | nyam | 36 | 0.17 | 0.61 | 50%tgt|fresh: +0.005; +0% / +0% / +0% / +1% / -0% | 60pts|touched (ungated): +0.003; +0% / +1% / +3% / -3% / -12% | 0/0/9 |
+| CRT4h | nypm | 36 | 0.36 | 0.39 | 60pts|any: +0.013; +0% / +0% / +3% / +2% / +0% | 30pts|fresh (ungated): +0.001; +0% / +0% / +3% / +0% / +0% | 0/0/0 |
+| PDmid | asia | 36 | 0.53 | 0.39 | 40pts|any: +0.050; -8% / +2% / -1% / -8% / +18% | 25%tgt|touched (ungated): +0.058; +7% / +5% / -4% / +3% / -8% | 0/0/3 |
+| PDmid | london | 36 | 0.58 | 0.03 | 75%tgt|fresh: +0.069; -3% / -2% / -2% / +5% / +8% | 20pts|touched (ungated): +0.020; +1% / +3% / +1% / -3% / -1% | 0/0/0 |
+| PDmid | nyam | 36 | 0.53 | 0.61 | 30pts|touched: +0.042; -0% / +1% / -6% / +1% / +7% | 50%tgt|fresh (ungated): +0.007; +1% / +1% / +0% / -0% / +3% | 0/0/10 |
+| PDmid | nypm | 36 | 0.31 | 0.25 | 60pts|touched: +0.003; +0% / +0% / +0% / +2% / -1% | 60pts|touched: +0.004; +0% / +0% / +0% / +2% / -1% | 0/1/1 |
+| camH3 | asia | 36 | 0.00 | 0.47 | 20pts|fresh: +0.000; +0% / +0% / +0% / +0% / +0% | 10pts|any (ungated): +0.057; +5% / +6% / +3% / +2% / -6% | 0/0/15 |
+| camH3 | london | 36 | 0.42 | 0.75 | 60pts|touched: +0.052; +15% / +17% / +40% / +0% / +10% | 60pts|touched: +0.161; +15% / +17% / +40% / +0% / +10% | 6/6/25 |
+| camH3 | nyam | 36 | 0.42 | 0.17 | 10pts|fw2: +0.031; -1% / -0% / +0% / -1% / +7% | 60pts|any (ungated): +0.006; +1% / +1% / +1% / -0% / -2% | 0/0/2 |
+| camH3 | nypm | 36 | 0.31 | 0.28 | 50%tgt|touched: +0.006; -0% / -0% / -0% / +1% / +0% | 30pts|any (ungated): +0.000; +0% / +0% / +0% / +0% / +0% | 0/0/0 |
+| kijun1h | asia | 36 | 0.72 | 0.11 | 60pts|fw2: +0.036; -7% / +0% / -25% / -11% / +18% | 25%tgt|touched (ungated): +0.027; +3% / +2% / -13% / +2% / -2% | 0/0/6 |
+| kijun1h | london | 36 | 0.42 | 0.67 | 30pts|fresh: +0.021; -2% / -2% / -1% / +8% / -3% | 60pts|any: +0.071; +4% / +10% / +17% / +8% / -10% | 0/12/20 |
+| kijun1h | nyam | 36 | 0.08 | 0.56 | 10pts|any: +0.001; +0% / +0% / +1% / -2% / +2% | 75%tgt|fresh (ungated): +0.008; +1% / +1% / +1% / -3% / +0% | 0/0/15 |
+| kijun1h | nypm | 36 | 0.42 | 0.58 | 60pts|any: +0.012; +0% / +0% / +2% / +1% / +2% | 30pts|touched (ungated): +0.006; +1% / +1% / +0% / -0% / -1% | 0/0/21 |
