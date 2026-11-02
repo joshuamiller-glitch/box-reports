@@ -1,6 +1,6 @@
 # DS3_EXIT_N_LOSS - T-EXIT-N E1, LOSS SIDE (S4a)
 
-STATUS 2026-11-02 14:51Z: first table. Prereg autopilot/ZL_S4A_PREREG_EXIT_N_LOSS.md sha256 1ba0d3c23f262eeec067abc9b9f1dafddd7b938923e9ed5efa49d7f77159254f (DECISIONS.md). POST-HOC, Shadow only, no PASS claim. Base = V13T_LIVE (code/d7base/d7_v13t.py run_v13t_live: take lines empty, lock none = per-book locks, market exits 0.80 pt, stops 2.45 pt worse than nominal, targets at nominal, resting add cancelled on any exit). Reference cell = the SHIPPED TH-L2 loss cut (-30 pts / 5 s / 30x) on this base; every cut below is vs that reference, maxDD of the weekly cumulative total. Reference maxDD $k: L6M 151, HOLD 151, MID 44, PRE 166, X 92; weekly mean $: L6M 36747, HOLD 30405, MID 24008, PRE 17285, X 4801.
+STATUS 2026-11-02 17:28Z: first table. Prereg autopilot/ZL_S4A_PREREG_EXIT_N_LOSS.md sha256 1ba0d3c23f262eeec067abc9b9f1dafddd7b938923e9ed5efa49d7f77159254f (DECISIONS.md). POST-HOC, Shadow only, no PASS claim. Base = V13T_LIVE (code/d7base/d7_v13t.py run_v13t_live: take lines empty, lock none = per-book locks, market exits 0.80 pt, stops 2.45 pt worse than nominal, targets at nominal, resting add cancelled on any exit). Reference cell = the SHIPPED TH-L2 loss cut (-30 pts / 5 s / 30x) on this base; every cut below is vs that reference, maxDD of the weekly cumulative total. Reference maxDD $k: L6M 151, HOLD 151, MID 44, PRE 166, X 92; weekly mean $: L6M 36747, HOLD 30405, MID 24008, PRE 17285, X 4801.
 
 ## 0. Plain sentences
 
@@ -125,7 +125,7 @@ Band rule: PA cut above the band in L6M AND in PRE or X' (flip-5 band of DS3_ZON
 
 ## 5. Equal-risk and book x session for the three near cells (addendum 2; REPLACE-mode alternatives to the shipped cut; own engine path with the K-table cuts, which ties by construction)
 
-Equal-risk = lot scale so ALL worst-20 equals the shipped cell's. The harness route (S5 exit_harness.py with the K-table cut sets injected) does NOT tie out here: injecting the shipped -30/5s/30x cut set as 'cut' rows with the shipped cut off reproduces the base only approximately (L6M cut -0.38, 37,906 rows vs the 9,840 engine cuts) because the stored L2SL deltas are priced differently from path-price injection; so the final numbers of these three cells use the engine's own th_loss path and the harness is used only for the cells that are native injections (flow-gated, time).
+Equal-risk = lot scale so ALL worst-20 equals the shipped cell's. The S5 harness route was tried (K-table cut sets injected as 'cut' rows with the shipped cut off) and its output is INVALID: with th_loss off the engine dropped the injected exits in that configuration, so the harness numbers equalled the no-cut base (audit by S4b, DS3_EXIT_N_AUDIT.md section 4); the file is renamed e1_harness_INVALID.pkl and no number of this page comes from it; so the final numbers of these three cells use the engine's own th_loss path and the harness is used only for the cells that are native injections (flow-gated, time).
 
 | cell | lot scale c | equal-risk cut L6M | HOLD | PRE | X' | equal-risk mean change $/wk (ALL) | mean change at c=1 $/wk |
 |--|--|--|--|--|--|--|--|

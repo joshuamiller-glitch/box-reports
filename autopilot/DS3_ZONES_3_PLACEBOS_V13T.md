@@ -41,3 +41,12 @@ Shadow only. No PASS claims. Z3, 2026-11-02. Base V13T_LIVE (lock none, xcost 0.
 
 ## Walk-forward with 30 random chains (V13T_LIVE, lock none)
 Cut vs shipped fixed layer: WF6 L6M -.592 (rank 0.03 vs 30 random chains, random mean -.13), WF12 L6M -.831 (rank 0.00); PRE -.078/-.075 (rank .53); WF window -.444/-.661 (rank .03/.00); shrink variants ~0 (collapse to shipped). Monthly refit is worse than the fixed layer and worse than random monthly picks in L6M/HOLD/WF; PRE is no different from random picks. Verdict stands: the refit does not beat the fixed layer.
+
+## 9-shift placebos (appended 2026-11-02 ~17:20Z; K=9 week shifts, 100 stratified draws each)
+Script tl_plc9_an.py, table out/zones3/s3_v13tl/placebos_tl9_table.csv. Same method as above with all 9 shifts for the cell and each draw.
+| lead | L6M (rank / placebo mean) | HOLD rank | MID (rank) | PRE (rank) | X' (rank) | L6M drop W29-39 | band | no-harm | rank>=.95 |
+|---|---|---|---|---|---|---|---|---|---|
+| EQL_tight 5m D40 skip | .385 (1.00 / .037) | .242 (1.00) | -.076 (.64) | .051 (.81) | -.184 (.17) | -.047 | no | yes | no |
+| S5 sA40>=1 skip | .502 (.85 / .260) | .502 (.93) | -.323 (.52) | .219 (.79) | -.585 (.05) | +.068 | yes | NO (MID -.32) | no |
+| S4a SWG f5L 3m D20 half | .282 (.75 / .153) | .256 (.90) | -.125 (.60) | .086 (.83) | .176 (.83) | +.051 | yes | yes | no |
+Firmed-up reading (the 3-shift ranks were coarse): ranks move by at most 0.1; no lead reaches .95 together in L6M and PRE/X'. sA40 now fails no-harm at K=9 (MID -.32). EQL_tight keeps L6M/HOLD rank 1.00 but its PRE rank is .81, X' -.18 (rank .17) and the W29-W39 drop makes it -.05: one-episode. SWG f5L 3m keeps all three windows positive (L6M .28, PRE .09, X' .18) but ranks .75/.83/.83 and +.05 without W29-W39: lead only. CRT4h 60 fw2, FIB ret62 and BT swing flip 9-shift placebos are running (placebos_tl9b); results to be appended.
