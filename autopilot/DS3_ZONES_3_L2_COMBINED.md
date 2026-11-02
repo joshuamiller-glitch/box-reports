@@ -58,3 +58,10 @@ Nothing in section 5 is RISK-KEEP or a lead beyond a note. **"Order-flow (tape) 
 * Combined price + tape layer vs the shipped group 10: the shipped halving is unchanged by L2 evidence (confirmed and weak set rows both need it); the density cell TAPEALL nah20>=5 half (cut +17/+17/+16/+15%, rank 0.04) is the single candidate to re-test on the finalists with the robustness standard.
 * Learned rule: price + tape features do not beat the book x session prior or the shuffled-feature placebo; no per-line D7 table results from it.
 * Order-flow zones "add 0 / are the same information / are worse": for the tape half, same information (no addition), the liquidity-pool (TLQ) levels worse; book half open.
+
+## 8. (added) ORDER-BOOK zones, stage 1 on D7 v1.3 (ZL-1 new-cap streams, 96 files to 2026-10-30)
+Same frame as section 2 but base v1.3 and both actions: 385 cells so far of 412 (AHEAD fresh, D20/D40, skip and half; 96 streams + ABS ICE DEF PUL SWP BOOKALL L2ALL families). Table autopilot/ZL3_s1book_v13.csv; placebo = the same-count proxy placebo (150 draws) as in section 2.
+* **No book stream beats the placebo beyond chance:** 12 of 385 cells at rank <= 0.05 (19 expected), 28 at <= 0.10 (38 expected). The lowest ranks are tiny halving cells (PUL k5, 51-150 trades halved, PRE negative -6 to -7%), not leads.
+* Best consistent cells: SWP lvl_swing N15 24h D40 skip +33/+22/+19/+2% (L6M/HOLD/PRE/X'), 598 trades, rank 0.25 (volume-sized); PUL k3 4h D20 skip +36/+36/-3/+6% (281 trades, rank 0.14; same cell ZL-1 labels fragile; PRE disagrees); SWP ext_sess 24h D40 skip is NEGATIVE on L6M/HOLD (-13%) with rank 0.04-0.05 in the wrong direction (stops-extremes are run-through levels again).
+* L2ALL (book + tape) D20 skip +14/+14/+53/+66% fires 37k of 88k rows: volume (rank 0.33). BOOKALL D40 skip L6M -38%.
+* RISK-KEEP: none. Mean deltas inside MDE in all but a few cells (see csv).

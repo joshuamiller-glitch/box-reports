@@ -73,3 +73,95 @@ The null (best-of-N chance) and per-session stage are running (8 shuffled replic
 ## s2 FINAL-FOR-NOW (Z2, 2026-11-02 ~01:40Z): best-of-N chance null and verdict
 **Best-of-N chance null (6 shuffled-label replicates complete of 8 planned; 238-cell reduced grid per replicate = 7 lines x 9 D x {fresh, touched, any, fw2}; real reduced grid beside):** max honest score (S_hon) in shuffled worlds 0.11 / 0.17 / 0.15 / 0.17 / 0.21 / 0.40 vs real 0.38 (full grid 0.39): the real maximum beats 5 of 6 nulls (not significant at 6 replicates; the 0.40 replicate shows chance alone reaches it). Max post-hoc score (S_post) null 0.23-0.55 vs real 0.33 (below the null median); max S_post among TOLERANT cells null 0.02-0.46 vs real 0.07-0.09. Cells passing the gates: real 2 STRICT / 6 TOLERANT / 68 NOW-ONLY of 238, null 12-27 / 18-51 / 62-99: the real lines pass the gates LESS often than shuffled lines. So the grid contains no signal beyond chance at this resolution; the table of picks is a ranking of noise-level differences. Ranked by what each ranking honestly says: CRT4h 60pts fresh solo (only agreement of the two rankings, ROBUST-D, 7/7 months), camH3 75%tgt age>4h solo, kijun1h 15pts touched, PDmid 15pts touched, OTE705 60pts fw2 solo; all LEAD-weak, none beats its three placebos, none is RISK-KEEP, base-dependent (v1.1 / v1.2 / v1.3 disagree in sign for several).
 **Not done / resumable:** per-session stage (res_sess partial, `worker_v12.py sess`), 200 placebo draws (43 done), 2 more null replicates, uncoded profile lines in the grid, D7 v1.3 sweep (finalists re-run on v1.3 only), OTE-62 B73 D sweep scored but not tabulated (res_gen_ote62). Grid file for Z3: out/zones3/s2/v12/candidate_grid_for_Z3.csv. Entry: code/zones3/s2/{z2lib_v12,worker_v12,rep_final,rob,an*_v12}.py, drivers drive2-5.sh. DEAD_CELLS appended (program ZONES3_S2, 1,933 cells; never rebuilt).
+
+
+## s2 on D7 v1.3 (Z2, wall ~02:05Z 2026-11-02) - finalists, per-session stage, profile lines, OTE-62 D sweep, robustness; POST-HOC, LEAD, no PASS
+Base v1.3 (profit side = gated take lines U6/P6, best-effort; U7 on) shipped layer L6M 21.3k/wk, maxDD 94.1k; screening frame U7 off: L6M 27.3k, maxDD 107.3k. Finalists = the post-hoc picks of the v1.1 sweep (CRT4h 60pts fresh solo is the honest+post-hoc agreement). Code rep13.py, rep13b.py; data v12/table_rep13_a1.md, table_rep13b_b2.md.
+**CRT4h 60pts fresh solo on v1.3 with U7 on (item 6):** L6M maxDD 94.1 -> 89.1k (-5%, below the 20% RISK-KEEP bar), L6M Calmar +11%, HOLD +1%, PRE +38%, X' +6%, **MID -58% (MID maxDD 43.1 -> 69.9k; mean change in MID -6.2k/wk, MDE 16.2: inside MDE but the drawdown is 62% deeper)**. It is not ONE-WEEK: dropping the week that carries the shipped L6M maxDD (ISO 2026-W38 on v1.3 U7) leaves a +6% cut; leave-one-week-out over the 27 L6M weeks keeps the cut positive in 27/27 (min +0.02, W38 +0.06); only 5/7 L6M months keep a positive cut; month-block bootstrap 5-95% of the cut -0.00..+0.27. Mean change L6M +1.2k (MDE 1.9). Placebo ranks on 100+ draws: see the placebo table below (filled as draws complete). The gain is carried by Asia (per book x session table: P6 Asia -7.7k L6M maxDD, -22.4k PRE; MID worsens in P6 Asia/London/NY-AM +12.6/+4.9/+7.0k).
+**Per-session (item 1):** Asia is where the CRT4h line acts: 11 STRICT / 11 TOLERANT / 17 NOW-ONLY of 36 settings, best honest 60pts fresh (L6M +7%, PRE +39%), removing the line in Asia gives L6M +9% / PRE +14%; London, NY-AM, NY-PM cells are flat (0-2 TOLERANT). camH3: Asia PRE +52% when the line is removed there but L6M +1%; kijun1h removed in Asia: L6M +12% but PRE -66% (not a lead); PDmid: nothing in Asia, NY-AM has 8 TOLERANT cells at tiny size. A zone layer whose only live line is CRT4h-in-Asia is a different product from the shipped all-session layer (Asia carries the stack in 2026), consistent with the order's warning. LEAD pending placebo for the Asia-only cell.
+**Profile lines added to the half mask (item 3, poi_store_redo streams):** HVN0 1h-swing: best honest 60pts fw2 (PRE +82%, X' +13%, L6M -1%), best post-hoc 30pts fw2 (L6M +2%, HOLD +1%), 2 STRICT of 36; LVN1 1h-swing: 94% of settings have positive honest score but L6M/HOLD gains are +2%; VAH 15m-swing: honest-only (PRE +86% at 20pts touched), L6M -7%, no post-hoc cell. Their honest and post-hoc scores disagree; no lead. **OTE-62 B73 D sweep:** shorter than D30 is worse (D10/15/20 L6M -24..-28%, PRE -9..-26% with U7 off); D40/60 improve L6M +11/+14% and HOLD +10/+15% but PRE -12/-7%: the shipped D30 is a local optimum on the honest windows, longer D is a recent-only effect (FRAGILE). With U7 on D40: L6M +8%, MID -15%, PRE -4%. **Line parameter variants (swing strength 2/3, profile bin 1/2 pt, anchor shifts): NOT DONE** - the poi_store_redo streams have one fixed definition per line; building variants is a profile-engine task (named gap). **Decision delay 1-s/3-s: N/A for skip/half** (the decision is taken at the signal second; it matters for B73/WT/re-target, which s2 does not sweep). **FRAGILE rule:** a cell is FRAGILE when at most 1 of the 4 D +-25/+-50% neighbours keeps a positive own score (computed on the v1.1 sweep: camH3 20pts-touched honest pick ROBUST-D, OTE79 picks FRAGILE; CRT4h/camH3/kijun1h/PDmid post-hoc picks ROBUST-D, but D=60 is the ladder end for CRT4h).
+
+### v1.3 U7 OFF (screening frame): shipped layer L6M maxDD 107.3k mean 27.3k; MID 67.0k; PRE 192.4k
+
+| finalist | maxDD $k L6M / HOLD / MID / PRE / X' | Calmar gain L6M / HOLD / MID / PRE / X' | mean d L6M (MDE) | mean d MID (MDE) | S/T/N | ONE-WEEK (cut w/o maxDD week) | leave-one-week-out L6M cut: min, #weeks cut<=0, W38 | LOMO | boot 5-95 | vol tercile mean d low/mid/high | equal-risk |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60 | 100.5 / 100.5 / 66.1 / 197.8 / 256.4 | +10% / +8% / +2% / +32% / +1% | +0.7 (1.0) | +0.0 (2.9) | -/T/N | no (+10%; wk 202637) | min +0.03, 0/27, W38 +0.06 | 7/7 months >0, min +0.01 | +0.01..+0.10 | +0.6/+0.5/+0.2 | n/a (see er) |
+| camH3 | 98.1 / 98.1 / 67.8 / 193.2 / 331.8 | +11% / +8% / -3% / +16% / +30% | +0.3 (2.3) | -0.2 (2.7) | -/-/N | no (+4%; wk 202637) | min +0.00, 0/27, W38 +0.09 | 6/7 months >0, min +0.00 | +0.00..+0.19 | -0.5/-0.7/-1.3 | n/a (see er) |
+| kijun1h | 102.3 / 102.3 / 70.1 / 214.6 / 270.4 | +14% / +10% / -6% / -6% / +1% | +2.4 (10.4) | -0.2 (2.5) | -/-/N | no (+4%; wk 202637) | min -0.01, 2/27, W38 +0.05 | 6/7 months >0, min +0.00 | -0.09..+0.33 | +1.6/+0.2/-0.6 | n/a (see er) |
+| PDmid | 105.9 / 105.9 / 66.2 / 186.7 / 254.0 | +2% / +4% / +1% / +10% / +1% | +0.1 (1.8) | +0.0 (2.7) | -/-/- | no (+10%; wk 202637) | min -0.05, 3/27, W38 +0.01 | 5/7 months >0, min -0.00 | -0.10..+0.11 | -0.6/+1.1/+0.2 | n/a (see er) |
+
+### v1.3 U7 ON (finalist frame): shipped layer L6M maxDD 94.1k mean 21.3k; MID 43.1k; PRE 175.1k
+
+| finalist | maxDD $k L6M / HOLD / MID / PRE / X' | Calmar gain L6M / HOLD / MID / PRE / X' | mean d L6M (MDE) | mean d MID (MDE) | S/T/N | ONE-WEEK (cut w/o maxDD week) | leave-one-week-out L6M cut: min, #weeks cut<=0, W38 | LOMO | boot 5-95 | vol tercile mean d low/mid/high | equal-risk |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60 | 89.1 / 89.1 / 69.9 / 173.5 / 281.5 | +11% / +1% / -58% / +38% / +6% | +1.2 (1.9) | -6.2 (16.2) | -/T/N | no (+6%; wk 202638) | min +0.02, 0/27, W38 +0.06 | 5/7 months >0, min -0.01 | -0.00..+0.27 | +0.6/-0.2/-0.7 | n/a (see er) |
+| camH3 | 84.1 / 84.1 / 43.1 / 179.2 / 305.3 | +13% / +11% / +0% / -6% / +32% | +0.1 (2.3) | +0.0 (2.6) | -/-/N | no (+9%; wk 202638) | min +0.00, 1/27, W38 +0.09 | 6/7 months >0, min +0.00 | +0.00..+0.21 | -0.0/-1.8/-1.1 | n/a (see er) |
+| kijun1h | 89.1 / 89.1 / 47.0 / 195.4 / 257.3 | +16% / +6% / -29% / -6% / +2% | +2.1 (8.7) | -4.4 (12.0) | -/T/N | no (+4%; wk 202638) | min -0.00, 1/27, W38 +0.04 | 6/7 months >0, min +0.00 | -0.01..+0.29 | +1.6/-0.1/-1.5 | n/a (see er) |
+| PDmid | 75.7 / 75.7 / 44.1 / 177.6 / 249.9 | +31% / +25% / -21% / +24% / +3% | +1.2 (3.1) | -3.7 (13.1) | -/-/N | no (+13%; wk 202638) | min -0.01, 1/27, W38 +0.13 | 5/7 months >0, min -0.03 | -0.03..+0.42 | -0.2/+1.0/-0.2 | n/a (see er) |
+
+### CRT4h 60pts fresh solo, v1.3 U7 on: per book x session, change in maxDD and mean ($k, cell minus shipped; negative maxDD change = shallower)
+
+| book | session | dDD L6M | dDD MID | dDD PRE | dDD X' | dmean L6M | dmean MID | dmean PRE | dmean X' |
+|---|---|---|---|---|---|---|---|---|---|
+| K6 | asia | +2.1 | +0.4 | +0.5 | -7.4 | +0.10 | -0.05 | +0.00 | +0.17 |
+| K6 | london | +0.0 | -1.2 | -0.8 | +2.5 | +0.29 | +0.10 | +0.02 | -0.04 |
+| K6 | nyam | +0.0 | +0.0 | +0.3 | -0.5 | +0.16 | -0.02 | +0.13 | -0.01 |
+| K6 | nypm | +1.9 | -2.4 | -1.7 | +0.0 | -0.10 | +0.16 | +0.06 | +0.00 |
+| P6 | asia | -7.7 | +12.6 | -22.4 | +0.9 | +0.70 | -0.98 | +0.38 | -0.00 |
+| P6 | london | +0.0 | +4.9 | +2.6 | +0.5 | -0.11 | -3.36 | -0.02 | -0.01 |
+| P6 | nyam | +0.0 | +7.0 | +0.0 | +0.0 | +0.00 | -0.58 | +0.41 | -0.73 |
+| U6 | asia | -1.1 | -3.5 | +2.6 | +0.0 | -0.09 | +0.56 | -0.06 | -0.01 |
+| U6 | london | +0.0 | +2.8 | +0.2 | -0.1 | +0.09 | -0.69 | +0.04 | -0.03 |
+| H6 | asia | -3.0 | +3.3 | -8.3 | +9.3 | +0.02 | -0.97 | +0.12 | -0.23 |
+| H6 | nyam | +0.2 | +0.4 | +3.6 | +2.3 | +0.03 | +0.12 | -0.05 | -0.10 |
+| M6 | london | +0.0 | +3.5 | -0.2 | +1.2 | +0.14 | -0.36 | -0.01 | -0.03 |
+| M6 | nyam | +0.4 | +5.8 | +0.0 | +4.8 | -0.01 | -0.34 | +0.08 | -0.11 |
+| A6 | asia | +1.1 | -1.4 | +0.0 | -2.0 | -0.04 | +0.27 | -0.02 | +0.06 |
+
+### s2 per-session stage on D7 v1.3 (U7 off, screening), 4 lines x 4 sessions, 36 settings + OFF each; shipped = D20 fresh in every session
+
+| line | session | cells | share S_hon>0 | share S_post>0 | best honest (S_hon) | best post-hoc TOL-gated (S_post) | OFF (line removed in this session): Calmar gain L6M / PRE | n STRICT/TOL/NOW |
+|---|---|---|---|---|---|---|---|---|
+| CRT4h | asia | 36 | 0.53 | 0.69 | 60pts|fresh (+0.187; L6M +7%, PRE +39%) | 60pts|fw2 (+0.205) | +9% / +14% | 11/11/17 |
+| CRT4h | london | 36 | 0.22 | 0.25 | 40pts|touched (+0.009; L6M -3%, PRE +3%) | 60pts|fresh (+0.016) | -3% / -1% | 0/2/8 |
+| CRT4h | nyam | 36 | 0.25 | 0.28 | 40pts|touched (+0.115; L6M +0%, PRE +23%) | no TOL cell | +0% / -0% | 0/0/9 |
+| CRT4h | nypm | 36 | 0.31 | 0.00 | 60pts|fresh (+0.001; L6M +0%, PRE +1%) | no TOL cell | +0% / +0% | 0/0/2 |
+| PDmid | asia | 36 | 0.31 | 0.39 | 75%tgt|touched (+0.061; L6M -7%, PRE +11%) | no TOL cell | +5% / -6% | 0/0/0 |
+| PDmid | london | 36 | 0.69 | 0.11 | 30pts|fresh (+0.189; L6M -4%, PRE +38%) | no TOL cell | +0% / +1% | 0/0/0 |
+| PDmid | nyam | 36 | 0.56 | 0.56 | 10pts|touched (+0.090; L6M -1%, PRE +16%) | 75%tgt|fresh (+0.010) | -1% / +0% | 7/8/11 |
+| PDmid | nypm | 36 | 0.00 | 0.25 | 10pts|fresh (+0.000; L6M +0%, PRE +0%) | no TOL cell | +0% / +0% | 0/0/0 |
+| camH3 | asia | 36 | 0.94 | 0.58 | 60pts|fresh (+0.306; L6M -2%, PRE +31%) | no TOL cell | +1% / +52% | 0/0/19 |
+| camH3 | london | 36 | 0.19 | 0.72 | 20pts|touched (+0.071; L6M -2%, PRE +17%) | 30pts|touched (+0.048) | +0% / +0% | 6/6/19 |
+| camH3 | nyam | 36 | 0.31 | 0.00 | 10pts|fw2 (+0.026; L6M +0%, PRE +5%) | no TOL cell | +0% / +5% | 0/0/6 |
+| camH3 | nypm | 36 | 0.56 | 0.00 | 60pts|touched (+0.016; L6M +0%, PRE +3%) | 30pts|touched (-0.000) | +0% / +0% | 0/5/5 |
+| kijun1h | asia | 36 | 0.00 | 0.58 | 20pts|fresh (+0.000; L6M +0%, PRE +0%) | no TOL cell | +12% / -66% | 0/0/24 |
+| kijun1h | london | 36 | 0.69 | 0.53 | 60pts|fresh (+0.225; L6M +3%, PRE +36%) | 60pts|fresh (+0.023) | +2% / +11% | 0/3/9 |
+| kijun1h | nyam | 36 | 0.25 | 0.25 | 30pts|touched (+0.061; L6M -1%, PRE +11%) | no TOL cell | -2% / -1% | 0/0/0 |
+| kijun1h | nypm | 36 | 0.25 | 0.08 | 15pts|touched (+0.002; L6M +0%, PRE +0%) | no TOL cell | +0% / +0% | 0/0/3 |
+
+### the three profile lines ADDED to the half mask (v1.3, U7 off); shipped layer has them off
+
+| line | cells | share S_hon>0 | share S_post>0 | best honest | best post-hoc (TOL gate if any) | STRICT/TOL/NOW |
+|---|---|---|---|---|---|---|
+| HVN0_1hs | 36 | 0.56 | 0.39 | 60pts|fw2 (+0.472; L6M -1%, PRE +82%, X' +13%) | 30pts|fw2 (+0.013; L6M +2%, HOLD +1%) | 2/4/9 |
+| LVN1_1hs | 36 | 0.94 | 0.36 | 75%tgt|fw2 (+0.148; L6M -4%, PRE +19%, X' +11%) | 10pts|fresh (+0.015; L6M +2%, HOLD +2%) | 0/3/3 |
+| VAH15s | 36 | 0.25 | 0.00 | 20pts|touched (+0.433; L6M -7%, PRE +86%, X' +0%) | 10pts|fw2 (-0.020; L6M -3%, HOLD -1%) | 0/0/0 |
+
+### OTE-62 B73 distance sweep (v1.3), Calmar gain vs the D30 shipped B73
+
+| ote62_D | frame | maxDD L6M / MID / PRE $k | Calmar gain L6M / HOLD / MID / PRE / X' |
+|---|---|---|---|
+| 10 | U7 off | 123.3 / 67.7 / 231.2 | -24% / -22% / -10% / -23% / +10% |
+| 15 | U7 off | 123.4 / 66.0 / 212.9 | -26% / -22% / +5% / -9% / +10% |
+| 20 | U7 off | 126.1 / 66.0 / 216.1 | -28% / -23% / +4% / -26% / +10% |
+| 30 | U7 off | 107.3 / 67.0 / 192.4 | +0% / +0% / +0% / +0% / +0% |
+| 40 | U7 off | 101.8 / 69.9 / 206.4 | +11% / +10% / -2% / -12% / -3% |
+| 60 | U7 off | 99.1 / 74.1 / 202.1 | +14% / +15% / -2% / -7% / +0% |
+| 20 | U7 on | 92.6 / 43.4 / 190.0 | +4% / +2% / +1% / -16% / +8% |
+| 30 | U7 on | 94.1 / 43.1 / 175.1 | +0% / +0% / +0% / +0% / +0% |
+| 40 | U7 on | 90.9 / 49.7 / 181.0 | +8% / +7% / -15% / -4% / -4% |
+
+### placebo ranks on v1.3 (share of draws with an L6M / MID / PRE / X' maxDD cut at least as large; small = good); CRT4h on U7 ON vs its U7-on shipped layer, others U7 off
+
+| finalist | kind | n | L6M cut (cell) | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M |
+|---|---|---|---|---|---|---|---|---|---|

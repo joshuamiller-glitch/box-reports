@@ -232,3 +232,131 @@ L6M and HOLD cut (36%) beats all three placebos (ranks 0.00-0.05 of 20 draws; re
 Spearman(events, delta_k) = 0.01; Spearman(flagged rows, delta_k) = 0.11; PUL events/month: 2023-08..2024-07 mean 259, 2025-08..2026-02 mean 542, 2026-03..10 mean 1254
 
 Reading: (a) it is an ASIA product: of +157k cell-minus-base dollars in L6M, +137k is Asia (P6 +72k, H6 +32k, U6 +19k, K6 +12k); non-Asia +20k; in HOLD non-Asia is -4k. (b) It is ONE MONTH: monthly delta is +158k in 2026-09 (the W38 episode) and the other 27 months net to about -2k (Spearman of monthly event count vs delta 0.01). Dropping W38 from the window leaves the maxDD cut at 30-31% in L6M/HOLD only because the next-largest drawdown episode is also reduced, but L3M falls from 32% to 18%. (c) volatility: L6M gain sits in the middle and top vol terciles (+87k / +52k); in PRE it loses in the two low terciles (-22k / -26k) and gains only in the top (+28k): no stable regime. (d) count artefact: pulled-wall events per month ROSE (about 260/month in 2023-24 to 540 in 2025-26 to 1,250 in 2026-03..10) and flagged rows per month rose from about 10-40 to 50-175, so the recent window has several times the exposure that PRE had; ICE and DEF are the streams whose counts fell 10x (their cells show no cut in any window, so there is nothing to explain).
+
+
+## Follow-up 2: definition sensitivity (D7 v1.3; maxDD cut vs base per window; flagged rows)
+
+### PUL|k3|4h (keep 1h/24h rows carry their own stream name)
+
+| stream     | frame   |     D | act   |   nflag |    L3M |    L6M |   HOLD |    MID |    PRE |     X' |   mean_HOLD |   mde_HOLD |
+|:-----------|:--------|------:|:------|--------:|-------:|-------:|-------:|-------:|-------:|-------:|------------:|-----------:|
+| PUL|k3|1h  | AH      | 20    | half  |    1200 |  0.101 | -0.233 | -0.233 | -0.153 | -0.142 |  0.042 |   -1333.44  |   2053.22  |
+| PUL|k3|1h  | AH      | 40    | half  |    1458 |  0.041 | -0.247 | -0.247 | -0.111 | -0.13  |  0.042 |   -1386.8   |   2103.7   |
+| PUL|k3|1h  | AH      | 20    | skip  |    1200 | -0.125 | -0.156 | -0.156 | -0.09  | -0.236 |  0.01  |    -486.054 |   5071.42  |
+| PUL|k3|1h  | AH      | 40    | skip  |    1458 | -0.05  | -0.098 | -0.098 | -0.079 | -0.09  |  0.01  |    -424.139 |   5346.78  |
+| PUL|k3|24h | AH      | 20    | skip  |    2164 |  0.324 |  0.348 |  0.348 | -0.009 | -0.035 |  0.059 |    1912.6   |   7223.62  |
+| PUL|k3|24h | AH      | 40    | skip  |    3590 |  0.002 | -0.151 | -0.151 | -0.397 | -0.211 |  0.114 |    -160.648 |   7558.9   |
+| PUL|k3|4h  | AH      | 20    | half  |    1564 |  0.182 | -0.181 | -0.181 | -0.205 | -0.124 |  0.055 |   -1187.37  |   2024.79  |
+| PUL|k3|4h  | AH      | 40    | half  |    2138 |  0.315 | -0.106 | -0.106 | -0.743 | -0.09  |  0.072 |   -2420     |   4264.72  |
+| PUL|k3|4h  | AH      | 10    | skip  |    1017 |  0.391 |  0.085 |  0.085 | -0.009 | -0.08  |  0.012 |    -467.97  |   2026.01  |
+| PUL|k3|4h  | AH      | 20    | skip  |    1564 |  0.317 |  0.36  |  0.355 | -0.044 | -0.028 |  0.056 |    2423.84  |   7498.39  |
+| PUL|k3|4h  | AH      | 30    | skip  |    1927 |  0.423 |  0.466 |  0.355 |  0.104 | -0.055 |  0.086 |    1529.13  |   8473.6   |
+| PUL|k3|4h  | AH      | 40    | skip  |    2138 |  0.486 |  0.112 |  0.112 | -0.497 | -0.036 |  0.097 |    -842.13  |   9187.87  |
+| PUL|k3|4h  | AH      | 60    | skip  |    2387 |  0.311 |  0.033 |  0.033 | -0.467 | -0.017 |  0.134 |   -1235.39  |   9067.89  |
+| PUL|k3|4h  | AHF     |  0.25 | skip  |    1231 |  0.256 |  0.293 |  0.293 | -0.009 | -0.075 |  0.056 |    1372.45  |   4823.58  |
+| PUL|k3|4h  | AHF     |  0.5  | skip  |    1833 |  0.423 |  0.466 |  0.355 |  0.104 | -0.055 |  0.086 |    1529.13  |   8473.6   |
+| PUL|k3|4h  | AHF     |  0.75 | skip  |    2158 |  0.486 |  0.146 |  0.146 | -0.468 | -0.025 |  0.097 |    -734.461 |   9193.69  |
+| PUL|k3|4h  | AT      |  2    | take  |     566 |  0.271 |  0.662 |  0.662 |  0.761 |  0.759 |  0.919 |  -23196.5   |  18271.9   |
+| PUL|k3|4h  | AT      |  2    | up    |     566 | -0.101 | -0.008 | -0.008 | -0.004 | -0.002 | -0.015 |     152.72  |    770.558 |
+| PUL|k3|4h  | BH      | 20    | half  |    3010 | -0.034 | -0.289 | -0.289 | -0.012 | -0.427 |  0.058 |   -1464.66  |   2296.81  |
+| PUL|k3|4h  | BH      | 20    | skip  |    3010 | -0.273 | -0.459 | -0.459 | -0.1   | -0.615 |  0.088 |   -3648.77  |   6386.69  |
+
+### SWP|lvl_sess_N5|4h (keep 1h/24h rows carry their own stream name)
+
+| stream              | frame   |     D | act   |   nflag |    L3M |    L6M |   HOLD |    MID |    PRE |     X' |   mean_HOLD |   mde_HOLD |
+|:--------------------|:--------|------:|:------|--------:|-------:|-------:|-------:|-------:|-------:|-------:|------------:|-----------:|
+| SWP|lvl_sess_N5|24h | AH      | 20    | skip  |    1239 | -0.001 | -0.14  | -0.14  |  0     | -0.133 |  0.054 |   -2763.72  |   5161.11  |
+| SWP|lvl_sess_N5|24h | AH      | 40    | skip  |    1795 |  0.46  |  0.008 |  0.047 | -0.016 | -0.095 |  0.064 |   -2373.9   |   5500.56  |
+| SWP|lvl_sess_N5|4h  | AH      | 20    | half  |    1111 |  0.013 |  0.015 |  0.015 | -0.066 | -0.254 |  0.097 |   -1368.35  |   2837.6   |
+| SWP|lvl_sess_N5|4h  | AH      | 40    | half  |    1475 |  0.1   |  0.104 |  0.104 | -0.04  | -0.193 |  0.097 |   -1386.12  |   2938.59  |
+| SWP|lvl_sess_N5|4h  | AH      | 10    | skip  |     704 | -0.001 | -0.144 | -0.144 |  0     | -0.037 |  0.047 |   -1552.01  |   2923.83  |
+| SWP|lvl_sess_N5|4h  | AH      | 20    | skip  |    1111 | -0.001 | -0.14  | -0.14  |  0     | -0.176 |  0.064 |   -2763.72  |   5161.11  |
+| SWP|lvl_sess_N5|4h  | AH      | 30    | skip  |    1323 | -0.001 | -0.127 | -0.127 | -0.016 | -0.141 |  0.071 |   -3065.96  |   5231.48  |
+| SWP|lvl_sess_N5|4h  | AH      | 40    | skip  |    1475 |  0.158 | -0.053 | -0.053 | -0.016 | -0.141 |  0.071 |   -3185.28  |   5170.42  |
+| SWP|lvl_sess_N5|4h  | AH      | 60    | skip  |    1639 |  0.46  |  0.042 |  0.047 | -0.016 | -0.087 |  0.071 |   -2322.81  |   5682.35  |
+| SWP|lvl_sess_N5|4h  | AHF     |  0.25 | skip  |     866 | -0.001 | -0.14  | -0.14  |  0     | -0.142 |  0.058 |   -2535.24  |   5161.56  |
+| SWP|lvl_sess_N5|4h  | AHF     |  0.5  | skip  |    1245 | -0.001 | -0.127 | -0.127 | -0.016 | -0.141 |  0.071 |   -3065.96  |   5231.48  |
+| SWP|lvl_sess_N5|4h  | AHF     |  0.75 | skip  |    1494 |  0.158 | -0.053 | -0.053 | -0.016 | -0.141 |  0.071 |   -3185.28  |   5170.42  |
+| SWP|lvl_sess_N5|4h  | AT      |  2    | take  |     172 |  0.985 |  0.94  |  0.934 |  0.902 |  0.962 |  0.949 |  -23265.5   |  18624.4   |
+| SWP|lvl_sess_N5|4h  | AT      |  2    | up    |     172 |  0     |  0     |  0     |  0     | -0.001 | -0.236 |     -63.491 |    171.169 |
+| SWP|lvl_sess_N5|4h  | BH      | 20    | half  |      41 |  0     |  0.012 |  0.012 | -0.012 |  0     | -0.001 |      11.741 |     67.54  |
+| SWP|lvl_sess_N5|4h  | BH      | 20    | skip  |      41 |  0     |  0.011 |  0.011 | -0.007 | -0.001 | -0.018 |      14.374 |     59.162 |
+
+### ICE|R2N30|4h (keep 1h/24h rows carry their own stream name)
+
+| stream        | frame   |     D | act   |   nflag |    L3M |    L6M |   HOLD |    MID |    PRE |     X' |   mean_HOLD |   mde_HOLD |
+|:--------------|:--------|------:|:------|--------:|-------:|-------:|-------:|-------:|-------:|-------:|------------:|-----------:|
+| ICE|R2N30|24h | AH      | 20    | skip  |    1059 |  0     |  0     |  0     |  0.22  |  0.015 |  0.404 |     204.373 |   1499.41  |
+| ICE|R2N30|24h | AH      | 40    | skip  |    1553 |  0.005 |  0.002 |  0.002 |  0.22  | -0.089 |  0.029 |     273.882 |   1404.59  |
+| ICE|R2N30|4h  | AH      | 20    | half  |     627 |  0     |  0     |  0     |  0.189 |  0.013 |  0.014 |     173.72  |   1248.92  |
+| ICE|R2N30|4h  | AH      | 40    | half  |     736 |  0     |  0     |  0     |  0.189 | -0.002 |  0.017 |     376.184 |   1056.51  |
+| ICE|R2N30|4h  | AH      | 10    | skip  |     460 |  0     |  0     |  0     |  0.22  | -0.007 |  0.425 |     216.341 |   1158.77  |
+| ICE|R2N30|4h  | AH      | 20    | skip  |     627 |  0     |  0     |  0     |  0.22  |  0.015 |  0.432 |     171.079 |   1501.3   |
+| ICE|R2N30|4h  | AH      | 30    | skip  |     697 |  0     |  0     |  0     |  0.22  | -0.007 |  0.399 |     474.788 |   1303.45  |
+| ICE|R2N30|4h  | AH      | 40    | skip  |     736 |  0.005 |  0.002 |  0.002 |  0.22  | -0.047 |  0.292 |     308.898 |   1353.45  |
+| ICE|R2N30|4h  | AH      | 60    | skip  |     769 | -0.074 | -0.034 | -0.034 |  0.22  | -0.047 |  0.292 |     276.386 |   1356.85  |
+| ICE|R2N30|4h  | AHF     |  0.25 | skip  |     532 |  0     |  0     |  0     |  0.22  |  0.012 |  0.426 |     431.012 |   1299.91  |
+| ICE|R2N30|4h  | AHF     |  0.5  | skip  |     673 |  0     |  0     |  0     |  0.22  | -0.007 |  0.399 |     474.788 |   1303.45  |
+| ICE|R2N30|4h  | AHF     |  0.75 | skip  |     738 | -0.074 | -0.034 | -0.034 |  0.22  | -0.047 |  0.292 |     276.386 |   1356.85  |
+| ICE|R2N30|4h  | AT      |  2    | take  |     399 |  1     |  1     |  0.965 |  0.923 |  0.921 |  0.908 |  -23363.6   |  18426.3   |
+| ICE|R2N30|4h  | AT      |  2    | up    |     399 |  0     |  0     |  0     | -0.005 |  0     | -0.013 |      37.277 |    133.457 |
+| ICE|R2N30|4h  | BH      | 20    | half  |    1742 |  0     |  0     |  0     |  0     |  0.027 |  0.028 |     -23.244 |    470.527 |
+| ICE|R2N30|4h  | BH      | 20    | skip  |    1742 |  0     |  0     |  0     |  0     |  0.045 | -0.12  |     -35.042 |    863.225 |
+
+### SWP|ext_swing_N5|4h (keep 1h/24h rows carry their own stream name)
+
+| stream               | frame   |     D | act   |   nflag |    L3M |    L6M |   HOLD |    MID |    PRE |     X' |   mean_HOLD |   mde_HOLD |
+|:---------------------|:--------|------:|:------|--------:|-------:|-------:|-------:|-------:|-------:|-------:|------------:|-----------:|
+| SWP|ext_swing_N5|1h  | AH      | 20    | half  |    5982 | -0.112 | -0.154 | -0.154 | -0.091 |  0.031 | -0.256 |   -2282.59  |   4132.91  |
+| SWP|ext_swing_N5|1h  | AH      | 40    | half  |    7331 |  0.002 | -0.095 | -0.095 | -0.026 | -0.044 | -0.251 |   -2276.61  |   4125.96  |
+| SWP|ext_swing_N5|1h  | AH      | 20    | skip  |    5982 | -0.732 | -0.549 | -0.549 |  0.158 |  0.082 | -0.116 |   -1269.41  |   4061.08  |
+| SWP|ext_swing_N5|1h  | AH      | 40    | skip  |    7331 | -0.538 | -0.44  | -0.44  |  0.08  |  0.018 | -0.121 |    -461.722 |   4348.76  |
+| SWP|ext_swing_N5|24h | AH      | 20    | skip  |    8111 | -0.153 | -0.084 | -0.084 |  0.181 |  0.067 | -0.117 |   -4545.22  |   7605.78  |
+| SWP|ext_swing_N5|24h | AH      | 40    | skip  |   11929 | -0.111 | -0.034 | -0.034 |  0.315 |  0.132 | -0.156 |   -2852.11  |   9265.44  |
+| SWP|ext_swing_N5|4h  | AH      | 20    | half  |    6679 | -0.039 | -0.075 | -0.075 | -0.091 |  0.133 | -0.237 |   -2524.9   |   4262.56  |
+| SWP|ext_swing_N5|4h  | AH      | 40    | half  |    8719 |  0.125 |  0.012 |  0.012 | -0.009 |  0.086 | -0.19  |   -3262.97  |   5345.91  |
+| SWP|ext_swing_N5|4h  | AH      | 10    | skip  |    4589 |  0.02  | -0.226 | -0.226 | -0.024 |  0.148 | -0.318 |    -935.532 |   3046.69  |
+| SWP|ext_swing_N5|4h  | AH      | 20    | skip  |    6679 | -0.529 | -0.259 | -0.259 |  0.176 |  0.132 | -0.183 |   -2307.73  |   6115.84  |
+| SWP|ext_swing_N5|4h  | AH      | 30    | skip  |    7917 | -0.561 | -0.248 | -0.248 | -0.432 |  0.11  | -0.222 |   -3300.37  |   7306.36  |
+| SWP|ext_swing_N5|4h  | AH      | 40    | skip  |    8719 | -0.45  | -0.191 | -0.191 |  0.08  |  0.134 | -0.217 |   -1893.22  |   6359.53  |
+| SWP|ext_swing_N5|4h  | AH      | 60    | skip  |    9633 | -0.14  | -0.069 | -0.069 |  0.035 |  0.221 | -0.193 |   -1254.3   |   6147.57  |
+| SWP|ext_swing_N5|4h  | AHF     |  0.25 | skip  |    5555 | -0.458 | -0.207 | -0.207 |  0.156 |  0.133 | -0.246 |    -872.824 |   3847.32  |
+| SWP|ext_swing_N5|4h  | AHF     |  0.5  | skip  |    7578 | -0.561 | -0.248 | -0.248 | -0.432 |  0.11  | -0.222 |   -3300.37  |   7306.36  |
+| SWP|ext_swing_N5|4h  | AHF     |  0.75 | skip  |    8778 | -0.713 | -0.313 | -0.313 |  0.08  |  0.192 | -0.206 |   -2562.41  |   6204.94  |
+| SWP|ext_swing_N5|4h  | AT      |  2    | take  |    1143 |  0.944 |  0.971 |  0.659 |  0.54  |  0.955 |  0.963 |  -23438     |  18495.6   |
+| SWP|ext_swing_N5|4h  | AT      |  2    | up    |    1143 |  0.014 |  0.018 |  0.018 | -0.005 |  0.002 | -0.073 |     -39.3   |    429.435 |
+| SWP|ext_swing_N5|4h  | BH      | 20    | half  |     915 | -0.059 | -0.027 | -0.027 |  0     | -0.093 | -0.042 |     -39.114 |    343.032 |
+| SWP|ext_swing_N5|4h  | BH      | 20    | skip  |     915 | -0.112 | -0.052 | -0.052 |  0     | -0.075 | -0.044 |     -25.723 |    737.566 |
+
+## Follow-up 3: placebo-corrected cuts (draws up to 60 per kind for PUL D20 skip; 15 kind-A draws for the other cells)
+
+| cell                          | kind   |   draws | window   |   cell_cut |   placebo_mean |   placebo_p95 |   corrected |   rank |
+|:------------------------------|:-------|--------:|:---------|-----------:|---------------:|--------------:|------------:|-------:|
+| PUL|k3|4h|AH|20|skip          | A      |      60 | L3M      |      0.317 |          0.192 |         0.485 |       0.125 |  0.393 |
+| PUL|k3|4h|AH|20|skip          | A      |      60 | L6M      |      0.36  |         -0.003 |         0.28  |       0.364 |  0.066 |
+| PUL|k3|4h|AH|20|skip          | A      |      60 | HOLD     |      0.355 |         -0.013 |         0.277 |       0.368 |  0.049 |
+| PUL|k3|4h|AH|20|skip          | B      |      60 | L3M      |      0.317 |          0.087 |         0.46  |       0.23  |  0.279 |
+| PUL|k3|4h|AH|20|skip          | B      |      60 | L6M      |      0.36  |         -0.103 |         0.178 |       0.463 |  0.016 |
+| PUL|k3|4h|AH|20|skip          | B      |      60 | HOLD     |      0.355 |         -0.103 |         0.178 |       0.458 |  0.016 |
+| PUL|k3|4h|AH|20|skip          | C      |      60 | L3M      |      0.317 |          0.151 |         0.46  |       0.166 |  0.328 |
+| PUL|k3|4h|AH|20|skip          | C      |      60 | L6M      |      0.36  |         -0.041 |         0.18  |       0.402 |  0.016 |
+| PUL|k3|4h|AH|20|skip          | C      |      60 | HOLD     |      0.355 |         -0.043 |         0.178 |       0.398 |  0.016 |
+| PUL|k3|4h|AH|40|skip          | A      |      15 | L3M      |      0.486 |          0.186 |         0.46  |       0.3   |  0.062 |
+| PUL|k3|4h|AH|40|skip          | A      |      15 | L6M      |      0.112 |         -0     |         0.277 |       0.113 |  0.375 |
+| PUL|k3|4h|AH|40|skip          | A      |      15 | HOLD     |      0.112 |         -0.024 |         0.23  |       0.136 |  0.25  |
+| PUL|k3|4h|AH|20|half          | A      |      15 | L3M      |      0.182 |          0.235 |         0.466 |      -0.053 |  0.562 |
+| PUL|k3|4h|AH|20|half          | A      |      15 | L6M      |     -0.181 |          0.044 |         0.205 |      -0.225 |  0.938 |
+| PUL|k3|4h|AH|20|half          | A      |      15 | HOLD     |     -0.181 |          0.044 |         0.205 |      -0.225 |  0.938 |
+| SWP|lvl_sess_N5|4h|AH|40|half | A      |      15 | L3M      |      0.1   |          0.052 |         0.421 |       0.048 |  0.25  |
+| SWP|lvl_sess_N5|4h|AH|40|half | A      |      15 | L6M      |      0.104 |         -0.004 |         0.131 |       0.109 |  0.312 |
+| SWP|lvl_sess_N5|4h|AH|40|half | A      |      15 | HOLD     |      0.104 |         -0.004 |         0.131 |       0.109 |  0.312 |
+| ICE|R2N30|4h|AH|40|skip       | A      |      15 | L3M      |      0.005 |          0.067 |         0.46  |      -0.061 |  0.562 |
+| ICE|R2N30|4h|AH|40|skip       | A      |      15 | L6M      |      0.002 |         -0.028 |         0.182 |       0.03  |  0.5   |
+| ICE|R2N30|4h|AH|40|skip       | A      |      15 | HOLD     |      0.002 |         -0.028 |         0.182 |       0.03  |  0.5   |
+
+Reading of follow-up 2/3 (all D7 v1.3, new windows, post-hoc):
+* Definition sensitivity, PUL k3 4 h skip: D 20 and D 30 and 25%/50% of target are a plateau (L6M cut +29..+47%, HOLD +29..+35%, L3M +26..+42%); D 10 (+8%), D 40 (+11%), D 60 (+3%) and 75% of target (+15%) fade, and MID is -50% at D 40/60; keep 24 h at D 20 is the same (+35%), keep 1 h is negative (-16%); half is negative (-18%); BEHIND (skip -46%, half -29%) is clearly worse. So not a single-D artefact, but valid only for D 20-30.
+* AT frame 'take-only' shows 66-100% maxDD cuts for several streams: this is a volume artefact (it removes 99% of the trades; mean -23k/wk, outside MDE) and is not a result. AT size-up 1.5x: no effect (+-1%).
+* Placebo-corrected cut for PUL k3 4 h D20 skip (60 draws per kind): L6M cell +36%, placebo mean -0.3% (same-volume), -10% (random rows same count per day), -4% (shuffled-day) => corrected +36..+46%, ranks 0.066 / 0.016 / 0.016 (0.016 = best possible with 60 draws); HOLD identical. L3M cell +32%, placebo means +19% / +9% / +15% => corrected only +12..+23%, ranks 0.28-0.39: the L3M cut is mostly a volume effect. The other cells (PUL D40 skip, PUL D20 half, SWP lvl_sess D40 half, ICE R2N30 D40 skip) are not distinguishable from their placebos (ranks 0.25-0.94).
+* Verdict: PUL k3 4 h skip D20-30 is the only book-zone line that beats all three placebos on L6M/HOLD, but it is (a) ASIA-only (P6/H6/U6/K6 Asia sessions), (b) carried by one month (2026-09, +158k of +157k L6M dollars), (c) absent in PRE (-3%) and MID (-4% at D20, +10% at D30) and (d) limited to D 20-30. Label: (L6M/HOLD only) / ONE-MONTH, ASIA. Not RISK-KEEP. Counts: pulled-wall events per month rose 5x, so the recent window has more exposure than PRE (not a decay artefact); ICE and DEF event counts fell 10x but their cells have no cut in any window, so the decay does not create a false recent effect.
+Files: out/zl_new/{sens_table.csv, placebo_table.csv, pul_breakdown.md, followup2.md, robust_q1.csv}.
