@@ -425,3 +425,128 @@ The V13T engine has lock none, so shifting the engine week key (Harness.run phas
 - Verdict: LEAD-weak at best for PE london; the combined KB+PE rule is NOT supported (placebo ranks <= 0.45, carrying-week dependent, MID/X' harm, null-typical). The ER sizer stays KEEP; the 'off' reference unchanged.
 
 Files: s1b/s1b_expo.py, s1b_pa2.py, s1b_plc_comb.py, s1b_null.py, s1b_null_an.py; data /mnt/l2/l2vast/ds3_zones3_new/Z2_s1b/{expo.pkl,expo_table.csv,pa2.pkl,plccomb_C1.pkl,null_*.pkl}.
+
+
+# S4b SECTION 2 (T-SIZER): other state measures as sizers + sizing of the resting 30% add  (written 19:50Z 2026-11-02, first table)
+Prereg SIZER_PREREG_DRAFT.md (hashed in DECISIONS.md 17:49Z); add-sizing prereg l2vast/ds3/prereg/SIZER_ADD_S4B_prereg.md sha256 3dd688f209d22d001192dbc3ccd0a1af0deb10721ef12d5a34287b4856260afc (logged before any add statistic). Base = the T-SIZER TS base (run_v13t_ts: V13T_LIVE + live ER ladder, sequential rounding, lock R scaled only when mult > 1, lock none); reference = the live ER ladder (every cut is vs it). USER KEEP DIRECTIVE: the ER sizer is kept; the other features are scored as MODIFIERS (ON TOP of the live ladder, cap 0.25..2.0, or as GATES on its x1.5 / x0.5) and, for completeness, ALONE in its place. Harness: copy of ZL-2's sizer_harness (zones3/s4b/sizer_harness_s2.py, ts mode). Screen = single path (phase 0), then PA9 + 3 placebos x 100 for the best of the family.
+## 2.0 Scope
+76 features: the 65 non-ER features of ranks_book.parquet + 11 order-flow/confirmation features built here (feat_signal_flow.parquet, ranks_flow.parquet: pulled support 5/10 s and rate, pulled ahead 5/10 s, iceberg with / against the trade (30 s), microprice deviation and 10-s drift, confirmation counts 5/15 min; causal at the signal second, ranks per book as the other ranks). Cells: 76 features x 2 directions x 5 mappings (U3, D3, L3, LIN, SIG; lo/hi pair A = 0.5/1.5) x (alone, on top) = 1,520 cells + 608 gate cells (GU1/GU2: the x1.5 only when the feature rank >= 1/3 or 2/3, GD: the x0.5 cancelled when rank >= 2/3, GUD both) = 2,128 cells on the TS base. NOT scored from the prereg list: the weekday cells and the vol-target cells (definition missing in the draft); the ES-based features are NaN before 2023-08 (multiplier 1 there). Ledger: program SIZER_S2 (2,128 cells), SIZER_ADD (26).
+## 2.1 Plain sentences
+* **No second feature improves the live ER ladder at the same-or-better mean: of 2,128 cells 404 keep the mean (L6M and HOLD mean change >= 0, PRE >= -0.5 MDE), 59 of those are also no-harm, and 0 pass the V13T PA9 flip-5 band (L6M .219 and PRE .099 or X' .182) together with mean and no-harm.** The band is passed by 757 cells, all of them by lowering lots (they lose 1-20k/wk of mean: VOLUME).
+* Best cell that keeps the mean and is no-harm: bars_since_flip_5m (TOP:D3, direction +1): size the live ladder down (x0.5) when the number of 5-min bars since the last EMA20 flip is in the lowest third of the book's history; PA9 cuts L6M +17.9% / HOLD +17.9% / MID -7.1% / PRE +2.4% / X' +22.5%, mean +1.3k/wk L6M; fails the band (L6M .219; PRE .024 < .099), and the placebos do not separate it: cut ranks (high = real beats placebo) perm / day-shuffled / AR(1): L6M 0.20 / 0.18 / 0.22, PRE 0.37 / 0.31 / 0.27, X' 0.98 / 0.99 / 0.97 (only X' beats chance; the mean beats the placebos, 0.95-0.99). Label: NOT A LEAD.
+* The largest cuts in the table are volume cells, e.g. rst1_dir_s TOP:L3: L6M +43% PRE +45% with mean -18.7k/wk and mean lots 1.83 against about 3.2 (a degenerate +-1 regime feature halving a third of the signals).
+* GATES (a second feature cancelling the ER x0.5 or limiting its x1.5): 608 cells, none beyond the band at the same mean; the best by S is dist_prior_close_atrd_s (GATE:GD).
+## 2.2 Top 12 by S = mean(cut PRE, cut X') among cells that keep the mean and are no-harm
+| feature | d | map | cut L6M / HOLD / MID / PRE / X' | mean d L6M / HOLD / PRE $k/wk | mean lots | S |
+|---|---|---|---|---|---|---|
+| bars_since_flip_5m | +1 | TOP:D3 | +18% / +18% / -7% / +2% / +22% | +1.3 / +0.2 / -0.7 | 2.94 | +0.124 |
+| dist_prior_close_atrd_s | +1 | GATE:GD | +7% / +7% / -23% / +0% / +7% | +2.8 / +2.1 / +0.7 | 3.35 | +0.035 |
+| zone_set8_ahead_atr | -1 | GATE:GD | +2% / +2% / -6% / +0% / +5% | +0.6 / +0.5 / +1.3 | 3.30 | +0.027 |
+| pos_in_day_range_s | +1 | GATE:GD | +11% / +11% / -16% / +5% / -2% | +2.6 / +1.4 / +0.4 | 3.39 | +0.011 |
+| big2_net30_s | +1 | TOP:U3 | -1% / -1% / -0% / -1% / +4% | +0.2 / +0.1 / +0.2 | 3.25 | +0.011 |
+| slope_atr_5m_20 | +1 | GATE:GD | +4% / +4% / -12% / -1% / +2% | +1.6 / +0.7 / +0.1 | 3.29 | +0.008 |
+| pulled_ahd10 | +1 | GATE:GD | +31% / +29% / -25% / +2% / -1% | +1.6 / +2.4 / +0.6 | 3.40 | +0.005 |
+| zone_set8_ahead_atr | -1 | TOP:U3 | +4% / +4% / -7% / -1% / +1% | +1.4 / +0.9 / +0.7 | 3.30 | +0.004 |
+| rst10_dir_s | +1 | TOP:U3 | +0% / +0% / +0% / +0% / +0% | +0.0 / +0.0 / +0.0 | 3.22 | +0.000 |
+| rst5_dir_s | -1 | TOP:D3 | +0% / +0% / +0% / +0% / +0% | +0.0 / +0.0 / +0.0 | 3.22 | +0.000 |
+| rst10_dir_s | -1 | TOP:D3 | +0% / +0% / +0% / +0% / +0% | +0.0 / +0.0 / +0.0 | 3.22 | +0.000 |
+| rst1_dir_s | -1 | GATE:GU1 | +0% / +0% / +0% / +0% / +0% | +0.0 / +0.0 / +0.0 | 3.22 | +0.000 |
+## 2.3 Largest drawdown cuts ignoring the mean (volume effects): no-harm cells with L6M > 30% and PRE > 20%
+| feature | d | map | cut L6M / HOLD / MID / PRE / X' | mean d L6M / HOLD / PRE $k/wk | mean lots | S |
+|---|---|---|---|---|---|---|
+| rst1_dir_s | +1 | TOP:D3 | +43% / +43% / +38% / +45% / +32% | -18.7 / -15.0 / -8.8 | 1.83 | +0.384 |
+| regime_with_5m | +1 | TOP:D3 | +43% / +43% / +38% / +45% / +32% | -18.7 / -15.0 / -8.8 | 1.83 | +0.384 |
+| rst1_dir_s | +1 | TOP:L3 | +43% / +43% / +38% / +45% / +32% | -18.7 / -15.0 / -8.8 | 1.83 | +0.384 |
+| regime_with_5m | +1 | TOP:L3 | +43% / +43% / +38% / +45% / +32% | -18.7 / -15.0 / -8.8 | 1.83 | +0.384 |
+| big2_net30_s | +1 | TOP:D3 | +42% / +42% / +44% / +43% / +32% | -17.8 / -14.7 / -9.0 | 1.87 | +0.372 |
+| big2_net30_s | +1 | TOP:L3 | +42% / +42% / +44% / +41% / +32% | -17.6 / -14.7 / -9.1 | 1.90 | +0.365 |
+| rst5_dir_s | +1 | TOP:L3 | +36% / +36% / +39% / +40% / +32% | -16.9 / -14.2 / -8.1 | 1.92 | +0.360 |
+| rst5_dir_s | +1 | TOP:D3 | +36% / +36% / +39% / +40% / +32% | -16.9 / -14.2 / -8.1 | 1.92 | +0.360 |
+| rst10_dir_s | +1 | TOP:L3 | +40% / +40% / +35% / +40% / +32% | -17.1 / -14.5 / -7.9 | 1.92 | +0.359 |
+| rst10_dir_s | +1 | TOP:D3 | +40% / +40% / +35% / +40% / +32% | -17.1 / -14.5 / -7.9 | 1.92 | +0.359 |
+## 2.4 Sizing of the resting 30% add (addendum 2 item 1; hook run_v13t_ts add_mult / add_only_if; 25 cells + bound, all vs the TS base)
+Plain sentences: the add leg is the stack's main drawdown source: switching it OFF (bound) cuts maxDD L6M +66% / HOLD +45% / PRE +23% / X' +24% but costs -838k over the history (-8.4k/wk L6M): the add earns about what it risks. **No add-sizing rule cuts the drawdown at the same-or-better mean in all windows:** every 'add only when' filter (ER, large print with the trade, delta with the trade, own support not pulled, iceberg with the trade) is a partial add-off (mean -5 to -8.6k/wk, maxDD cuts as the bound, X' flat); every x2 rule (tape-confirmed or an ER ladder on the add) raises the mean (+0.1 to +7.4k/wk L6M) but deepens PRE and/or X' maxDD (x2 if ER >= .30 else x0.5: PRE -28%, X' -41%; x2 if own support not pulled <= 1/3: X' -46%); the combined ER >= .30 and tape cells are the same. Only 'add only if ER >= 0.40' gives cuts in L6M / HOLD / MID / PRE / X' (+29 / +29 / +55 / +5 / +18%) but at mean -4.6k/wk L6M (-278k total): a volume effect (add off for most signals). Exposure sizing (open same-side position) is not exposed by the hook: not scored. The add fill rate is 88% of taken signals and does not move (the dip-3 trigger precedes the hook). Table:
+| cell | cut L6M / HOLD / MID / PRE / X' | mean d L6M / HOLD / PRE $k/wk | total P&L change $k | add fills / taken | add lots base->cell | cancelled n / lots | add-leg P&L base->cell | cancelled add P&L |
+|---|---|---|---|---|---|---|---|---|
+| A_only_er>=0.15 | +8% / +8% / +31% / -6% / +1% | -1.1 / -0.2 / -0.5 | -40 | 18505 of 21024 (88%) | 25915 -> 20479 | 5375 / 5436 | +873k -> +765k | +95k |
+| A_only_er>=0.20 | +12% / +12% / +47% / -4% / -0% | -1.5 / -0.0 / -0.9 | -51 | 18548 of 21070 (88%) | 25958 -> 18605 | 7279 / 7353 | +869k -> +809k | +38k |
+| A_only_er>=0.30 | +11% / +11% / +55% / -7% / +1% | -0.5 / +0.1 / -0.9 | -27 | 18662 of 21194 (88%) | 26094 -> 14759 | 11203 / 11335 | +888k -> +725k | +154k |
+| A_only_er>=0.40 | +29% / +29% / +55% / +5% / +18% | -4.6 / -2.5 / -2.1 | -278 | 18920 of 21462 (88%) | 26406 -> 8739 | 14519 / 17667 | +889k -> +628k | +237k |
+| A_ladder_x2_hi_x0.5_lo | -17% / -17% / -73% / -28% / -41% | +7.4 / +4.3 / +4.5 | +715 | 17505 of 19955 (88%) | 24617 -> 36476 | 0 / 0 | +858k -> +1490k | +0k |
+| A_only_hi_x1.5 | +4% / +4% / +33% / -6% / -29% | +2.7 / +2.3 / +1.2 | +287 | 18369 of 20880 (88%) | 25711 -> 19927 | 11003 / 11130 | +873k -> +965k | +157k |
+| B_x2_if_T1_25 | +0% / +0% / +7% / -1% / -3% | +0.7 / +0.6 / -0.1 | +28 | 18386 of 20898 (88%) | 25794 -> 26329 | 0 / 0 | +863k -> +872k | +0k |
+| B_only_if_T1_25 | +65% / +47% / +24% / +23% / +26% | -8.4 / -7.2 / -5.1 | -840 | 19164 of 21724 (88%) | 26695 -> 1146 | 18234 / 25549 | +871k -> -15k | +878k |
+| B_x2_if_T1_50 | +3% / +3% / +7% / -0% / +1% | +0.5 / +0.4 / +0.0 | +28 | 18392 of 20903 (88%) | 25800 -> 26028 | 0 / 0 | +860k -> +852k | +0k |
+| B_only_if_T1_50 | +67% / +47% / +22% / +23% / +25% | -8.3 / -7.1 / -5.0 | -825 | 19170 of 21729 (88%) | 26702 -> 454 | 18813 / 26248 | +870k -> -17k | +878k |
+| B_x2_if_T2a_d2/3 | -18% / -18% / +18% / -12% / -19% | -0.3 / +0.2 / +1.3 | +227 | 18150 of 20646 (88%) | 25473 -> 29104 | 0 / 0 | +859k -> +1064k | +0k |
+| B_only_if_T2a_d2/3 | +50% / +50% / +37% / +7% / +14% | -6.8 / -5.7 / -3.6 | -588 | 19062 of 21611 (88%) | 26569 -> 6974 | 13741 / 19595 | +897k -> +234k | +671k |
+| B_x2_if_T2b_d1/2 | -16% / -16% / -7% / -29% / -11% | -1.0 / -0.0 / +2.0 | +254 | 17978 of 20462 (88%) | 25247 -> 31802 | 0 / 0 | +907k -> +1220k | +0k |
+| B_only_if_T2b_d1/2 | +39% / +39% / +9% / -4% / -2% | -7.5 / -6.3 / -3.8 | -630 | 18900 of 21443 (88%) | 26388 -> 11765 | 10245 / 14623 | +895k -> +246k | +676k |
+| B_x2_if_T3a_ps1/3 | +5% / -7% / -48% / +1% / -45% | +4.3 / +3.2 / +1.9 | +427 | 18108 of 20600 (88%) | 25407 -> 30221 | 0 / 0 | +852k -> +1229k | +0k |
+| B_only_if_T3a_ps1/3 | +63% / +33% / +7% / +23% / -35% | -5.2 / -4.4 / -4.2 | -581 | 19026 of 21570 (88%) | 26509 -> 7182 | 14311 / 19327 | +891k -> +428k | +408k |
+| B_x2_if_T3b_ps1/2 | -34% / -34% / -26% / -10% / -69% | +5.7 / +5.5 / +0.8 | +454 | 17869 of 20342 (88%) | 25076 -> 32970 | 0 / 0 | +817k -> +1329k | +0k |
+| B_only_if_T3b_ps1/2 | +61% / +26% / -17% / +16% / -22% | +1.0 / -1.3 / -3.7 | -367 | 18866 of 21404 (88%) | 26332 -> 12124 | 10841 / 14208 | +864k -> +627k | +192k |
+| B_x2_if_T4_ice2/3 | +7% / +7% / -2% / -6% / -4% | -0.6 / +1.0 / +2.4 | +274 | 18224 of 20729 (88%) | 25578 -> 28645 | 0 / 0 | +871k -> +1058k | +0k |
+| B_only_if_T4_ice2/3 | +62% / +42% / +20% / +26% / +19% | -8.6 / -6.3 / -2.7 | -647 | 19043 of 21595 (88%) | 26563 -> 6613 | 13607 / 19950 | +879k -> +236k | +650k |
+| C_er>=.30_x2_if_T1_25 | +13% / +13% / +62% / -8% / -14% | +0.0 / +0.6 / -0.9 | -2 | 18651 of 21183 (88%) | 26080 -> 15205 | 11196 / 11328 | +885k -> +727k | +153k |
+| C_er>=.30_x2_if_T2a_d2/3 | +3% / +3% / +29% / -17% / -29% | +0.1 / +0.9 / +0.8 | +241 | 18421 of 20942 (88%) | 25789 -> 17606 | 11032 / 11164 | +879k -> +944k | +150k |
+| C_er>=.30_x2_if_T3a_ps1/3 | +18% / +18% / +21% / -22% / -17% | +4.6 / +4.4 / -0.2 | +333 | 18444 of 20960 (88%) | 25822 -> 18619 | 11053 / 11180 | +887k -> +1004k | +156k |
+| D_vol_off_if_atr_rk>=2/3 | +2% / +2% / -5% / -13% / -5% | -1.3 / -1.2 / -2.9 | -275 | 18505 of 21018 (88%) | 25924 -> 19926 | 4957 / 5998 | +851k -> +527k | +309k |
+| D_vol_x0.5/x1.5 | -15% / -15% / -21% / -1% / -14% | +2.8 / +0.9 / +0.2 | +120 | 18283 of 20782 (88%) | 25620 -> 28178 | 0 / 0 | +895k -> +955k | +0k |
+| BOUND_add_off | +66% / +45% / +20% / +23% / +24% | -8.4 / -7.3 / -4.8 | -838 | 19174 of 21733 (88%) | 26708 -> 0 | 19174 / 26708 | +876k -> -13k | +876k |
+## 2.5 Files
+pool_inputs_s2.csv for Z3: /mnt/l2/l2vast/ds3_sizer/pool_inputs_s2.csv (2,128 cells; equal-risk cuts by the linear lot-scale approximation, p1_exp = 7-volume-level x 10-draw permutation calibration); cells /mnt/l2/l2vast/ds3_zones3_new/sizer_s2ts/ (res.pkl, res_gate.pkl, table.pkl), add cells /mnt/l2/l2vast/ds3_zones3_new/sizer_add/res.pkl; code l2vast/ds3/code/zones3/s4b/ (sizer_s2.py, sizer_s2g.py, sizer_s2_an.py, sizer_s2_pool.py, sizer_s2_top.py, addm.py, sizer_s2_doc.py); features l2vast/ds3/code/d7base/build_sizer_feats_flow.py.
+
+## SIZER_S3X (Z1) - LOT-SCALED TH-L2 loss cut on top of the live ER ladder (2026-11-02 19:56Z)
+Prereg SIZER_S3X_Z1_addendum3 (sha cad3249d...) logged before the run. Hook: per-row arm array for the L2SL cut (per-arm fire tables merged per row; shifted-entry rows re-evaluated with the same per-row arm), the TH-L2 loss cut keeps its trigger (adverse excursion in points from entry AND pulled-support multiple 30x over 5 s) but the adverse threshold in points is per trade, arm = round(clip(3500 / (lots x 20), 20, 40)) with lots = the traded lots of that trade (sequential rounding: session lots -> zone HALF rounded -> x ER ladder 0.5/1.5 rounded, min 1): lots 1-4 -> 40 pts, 5 -> 35, 6 -> 29, 7 -> 25, 8 -> 22, 9+ -> 20; all six live books, all trades, ER ladder and everything else unchanged; base = run_v13t_ts + HALF layer (V13T_LIVE costs, per-book locks, lock R scaled only when mult > 1). X = $3,000 / 3,500 / 4,200 / 5,000 (4,200 = 7 lots x 30 pts x $20), scopes PE only / all six books, rows ER>=0.30 only / all. Post-hoc, no PASS, Shadow only.
+
+**Answer:** the only family that survives is X=$3,500 on ALL six books and ALL rows: lot-scaled arm. Full windows: L6M +4.6% (PA +5%, below the .219 band), HOLD +5%, PRE +7.3% (PA +11%, beyond the .099 band), X' +13.4%, but MID -16% and L3M -8%. With the carrying episodes (W29-W39 in L6M, the PRE episode) dropped: L6M +27.5% and PRE +31.7%; mean change -3.1k/wk L6M (MDE 13.8) and -1.9k PRE (MDE 7.4), i.e. mean within the MDE (kept >= base within 0.5 MDE). Placebos (100 draws each; A = the same arms PERMUTED within book x session: keeps the arm distribution, destroys the lot dependence; B = iid arms from the marginal; C = shuffled-day arms): PRE ranks 0.020 / 0.010 / 0.010 (episode dropped 0.010 / 0.010 / 0.010), X' 0.020 / 0.010 / 0.010, L6M with the episode dropped 0.059 / 0.010 / 0.050, full-window L6M 0.277 / 0.020 / 0.149: the PRE and X' effect is the lot dependence, not a generic arm change. It is a LEAD, not RISK-KEEP (full-window L6M cut below the band, MID and L3M worse, one carrying episode in L6M). Decomposition (X=3500, all books): tighten-only (arm = min(30, scaled)) gives L6M -21% (ep. dropped +22%), PRE +9% (+26%), X' -11%; loosen-only (max(30, scaled)) gives MID +92% and PRE +1%; constant arm 40 or 25 on all rows are much worse (arm 40: L6M -39%, PRE -44%; arm 25: L6M -17%, PRE -4%): the benefit needs the lot scaling (tighter for 7+ lot PE/U7 trades, looser for 1-4 lot books). Caution: 87% of rows get arm 40 (looser than the present 30), i.e. for K7/M7/A6/H7 the cut is relaxed; that is a policy change of the loss protection, not only a PE fix. The PE-only and ER>=0.30 variants do not help (PE only X=3000-4200: L6M -14..-26%, PRE +8..+9%; ER>=.30 rows alone L6M -2..+3%).
+
+### Exposure table (X=3500, all books)
+```
+X=3500 rows 27902; arm != 30 on 100.0% of rows; arm 20: 8.4%, 21-29: 4.7%, 31-39: 0.0%, 40: 86.8%
+      rows  mean_lots  max_lots  mean_arm  tighter_than_30  looser_than_30
+book                                                                      
+HM    3304        2.3       6.0      38.2             16.6            83.4
+KB    8025        1.6       3.0      40.0              0.0           100.0
+MV    3674        1.6       3.0      40.0              0.0           100.0
+PB    5403        1.7       2.0      40.0              0.0           100.0
+PE    6126        6.6      11.0      32.0             41.4            58.6
+SM    1370        3.8       6.0      35.2             43.5            56.5
+```
+
+### Cells (maxDD cut vs the T-SIZER base; PA = phase-averaged; band = Z3 PA9 flip-5)
+| scope | rows | X $ | maxDD cut L3M / L6M / HOLD / MID / PRE / X' (phase-avg) | beyond PA9 band | episode dropped L6M / PRE | mean d $k/wk (MDE) L6M / PRE | mean >= base (within 0.5 MDE) | worst-20 PRE b>a |
+|---|---|---|---|---|---|---|---|---|
+| PE | ER>=.30 | 3000 | -9% (+1%) / -21% (-6%) / -21% (-6%) / -4% (+10%) / +9% (+5%) / +3% (+4%) | - | +20% / +25% | -2.4 (12.9) / -3.7 (6.5) | no | -823>-788 |
+| PE | ER>=.30 | 3500 | -12% (-1%) / -23% (-8%) / -23% (-8%) / -4% (+9%) / +9% (+4%) / +3% (+7%) | - | +20% / +24% | -2.6 (13.0) / -3.9 (6.5) | no | -823>-782 |
+| PE | ER>=.30 | 4200 | -17% (-5%) / -26% (-11%) / -26% (-11%) / -4% (+9%) / +8% (+6%) / +1% (+4%) | - | +20% / +23% | -2.9 (12.9) / -4.1 (6.4) | no | -823>-798 |
+| PE | ER>=.30 | 5000 | -56% (-37%) / -37% (-23%) / -37% (-23%) / -0% (+6%) / -1% (+1%) / -10% (-7%) | - | +12% / +23% | -3.7 (11.2) / -3.0 (5.3) | no | -823>-845 |
+| PE | all | 3000 | +2% (+12%) / -14% (-7%) / -14% (-7%) / -22% (+10%) / +9% (+8%) / +4% (+2%) | - | +14% / +24% | -2.5 (12.2) / -3.2 (6.5) | no | -823>-809 |
+| PE | all | 3500 | -8% (+5%) / -13% (-5%) / -13% (-5%) / -27% (+14%) / +8% (+6%) / +8% (+6%) | - | +21% / +21% | -1.8 (11.6) / -2.8 (6.6) | yes | -823>-795 |
+| PE | all | 4200 | -14% (+0%) / -17% (-8%) / -17% (-8%) / -27% (+14%) / +8% (+7%) / +5% (+4%) | - | +21% / +21% | -2.1 (11.5) / -3.0 (6.5) | yes | -823>-809 |
+| PE | all | 5000 | -55% (-34%) / -41% (-34%) / -41% (-34%) / -5% (+22%) / -1% (-0%) / -3% (-7%) | - | -5% / +21% | -6.2 (11.1) / -2.1 (5.4) | no | -823>-854 |
+| ALL | ER>=.30 | 3000 | +14% (+11%) / +3% (+12%) / +3% (+12%) / -34% (-27%) / +10% (+7%) / -10% (+6%) | - | +30% / +31% | -6.3 (15.5) / -3.6 (7.1) | no | -823>-764 |
+| ALL | ER>=.30 | 3500 | +1% (-0%) / -2% (+8%) / -2% (+8%) / -18% (-19%) / +8% (+10%) / -12% (+2%) | PRE | +21% / +28% | -3.4 (13.6) / -3.4 (7.0) | yes | -823>-784 |
+| ALL | ER>=.30 | 4200 | -12% (-10%) / -15% (-1%) / -15% (-1%) / -9% (+4%) / +9% (+8%) / -18% (-5%) | - | +11% / +24% | -3.1 (14.0) / -3.2 (7.0) | yes | -823>-828 |
+| ALL | ER>=.30 | 5000 | -46% (-35%) / -21% (-6%) / -21% (-6%) / +31% (+13%) / -5% (+0%) / +0% (-4%) | - | +7% / +18% | -3.7 (14.4) / -1.6 (5.6) | yes | -823>-880 |
+| ALL | all | 3000 | +13% (+11%) / +7% (+6%) / +7% (+6%) / -23% (-7%) / +9% (+8%) / +2% (+5%) | - | +29% / +24% | -7.0 (16.8) / -2.6 (7.4) | yes | -823>-797 |
+| ALL | all | 3500 | -8% (-5%) / +5% (+5%) / +5% (+5%) / -16% (-11%) / +7% (+11%) / +13% (+12%) | PRE | +27% / +32% | -3.1 (13.8) / -1.9 (7.4) | yes | -823>-806 |
+| ALL | all | 4200 | -22% (-15%) / -9% (-4%) / -9% (-4%) / +15% (+27%) / +7% (+10%) / +4% (+1%) | PRE | +18% / +28% | -2.8 (13.3) / -1.7 (7.4) | yes | -823>-839 |
+| ALL | all | 5000 | -58% (-42%) / -29% (-23%) / -29% (-23%) / +82% (+44%) / -6% (-3%) / -19% (-19%) | MID | -5% / +23% | -6.7 (14.9) / -0.2 (6.2) | yes | -823>-896 |
+
+### Placebo ranks for the two cells that qualified (A permuted / B iid / C shuffled-day)
+```
+ALLall3500 L6M cut +4.6% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.277/0.020/0.149
+ALLall3500 L6M (episode dropped) cut +27.5% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.059/0.010/0.050
+ALLall3500 PRE cut +7.3% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.020/0.010/0.010
+ALLall3500 PRE (episode dropped) cut +31.7% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.010/0.010/0.010
+ALLall3500 X cut +13.4% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.020/0.010/0.010
+ALLhi3500 L6M cut -1.6% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.436/0.287/0.535
+ALLhi3500 L6M (episode dropped) cut +21.5% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.238/0.079/0.248
+ALLhi3500 PRE cut +8.0% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.396/0.010/0.436
+ALLhi3500 PRE (episode dropped) cut +27.5% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.356/0.010/0.218
+ALLhi3500 X cut -11.9% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.851/0.089/0.594
+```
+
+(Z1 correction to the SIZER_S3X lot-scaled-cut paragraph above: PE-only cells X=3000-4200 give L6M -13..-26% (PRE +8..+9%); the ER>=0.30-rows-only family over all books gives L6M +3% (X=3000), -2% (3500), -15% (4200), -21% (5000), and PRE +8..+10% for X=3000-4200.)

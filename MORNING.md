@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 19:24Z 11-02 (t+174.4 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 19:55Z 11-02 (t+174.9 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 45% min 30% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 12.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
-Updated 2026-11-02T19:24:48Z. Box: CPU 47.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 48% min 38% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 9.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
+Updated 2026-11-02T19:55:21Z. Box: CPU 46.1%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -259,7 +259,7 @@ Updated 2026-11-02T19:24:48Z. Box: CPU 47.9%, slots busy 13/32, queue 0. Cores p
 | ZL1 | ? | 0 | 0 / 0 | none | prereg |
 | ZL3 | ? | 0 | 0 / 0 | none | prereg |
 | ZONES3 | ? | 0 | 0 / 0 | none | prereg |
-| unattributed | - | 12.0 | - | - | - |
+| unattributed | - | 9.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -270,13 +270,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-02T19:25Z
+## TREND (TL) update 2026-11-02T19:55Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-02T19:17:22Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-02T19:47:23Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -1076,3 +1076,6 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - (wall 18:55Z) ZL-1 SIZER_S2V (99 cells, prereg a82a7b26...): no vol-scaling cell selective; every strong cut comes from fewer lots (mean lots 3.01 -> ~2.35); 27 beat PA9 band in L6M+PRE, 10 no-harm (all DIR = size down in low vol); placebo ranks .18-.52; vol-target 1.0 down-only L6M 47%%/PRE 22%% no-harm, -566k total, not yet placebo-tested; size-up-only nothing. Flag raised mechanically by ZL-1, qualified in MORNING_FLAGS. Harness exposure_table bug (inspect.getsource loses source on second call) fixed only in ZL-1's copy.
 - (wall 19:21Z) Z1 SIZER_S3X (12 cells, T-SIZER base): tighter bracket on ER>=.30 trades: no cell passes. PE only: 45/60 and 50/60 neutral (L6M +1..+3%%, PRE +4..+5%%, mean ~0); 35/45, 45/45, 50/45 PRE -92..-141%%, -7..-9k/wk. All six books: stop 45/50 target 45 cut L6M +39/+42%% (beyond band) but PRE -53/-58%%, MID -199/-158%%, mean -9k/wk, one episode (+10/+11%% without W29-W39). No winner; no placebos needed.
 - 2026-11-02 19:4xZ Z2 SIZER_S1B follow-up appended to DS3_SIZER.md: exposure worst-day unchanged (28 lots/$33.6k) for all cells; combined KB+PE rule C1/C2 NOT supported (placebo L6M rank .13-.26, carrying-week drop -30, MID/X' harm, null-typical, 10 worlds so far); CORRECTION: earlier S1B 'PA9' was single-phase (lock-none engine ignores week-key shift), genuine PA9 recomputed. B02 still PROXY. Nothing is a PASS.
+- (wall 19:45Z) ZL-2 Q2 done (52 cells): no cell keeps x1.5 and beats the ladder (0/52 mean >= ladder in L6M+PRE); 18 meet the mechanical flag rule (size effects); notable: 3-tier b=.60, K_PE (x1.5 only PE), ADDK_ALL (add at x1); see MORNING_FLAGS LEAD NOTE.
+- (wall 19:50Z) S4b SIZER_S2 + add (2,128 cells on 76 features; ADD prereg 3dd688f2...): no second feature improves the ladder at same-or-better mean (263 keep mean, 0 pass PA flip-5 band + no-harm); best mean-keeping no-harm cell bars_since_flip_5m (x0.5 when rank lowest third): PA cuts L6M +17.9 HOLD +17.9 MID -7.1 PRE +2.4 X' +22.5, mean +1.3k/wk; fails band in PRE (9.9); placebo ranks L6M .18-.22, PRE .27-.37: not a lead. Biggest cuts are volume (mean lots 1.8). Gates: none. ADD sizing (25 cells + add-off bound): add OFF cuts L6M maxDD 66%% HOLD 45%% PRE 23%% X' 24%% but costs ~-837k (the add earns what it risks); add-only-if filters are partial add-offs (-5..-8.6k/wk); x2 rules raise mean (+0.1..+7.4k/wk L6M) but deepen PRE and/or X' (x2 if ER>=.30 else x.5: PRE -28%%, X' -41%%); only 'add only if ER>=.40' cuts all windows (+29/+29/+55/+5/+18%%) at -4.6k/wk L6M (volume). Fill rate 88%%. pool_inputs_s2.csv (2,128 cells) delivered to Z3 (cell_id parsing unverified).
+- (wall 19:57Z) ***FLAG (LEAD)*** Z1: lot-scaled TH-L2 cut ($3,500/(lots x $20) clipped 20-40 pts): PRE +7.3%% (PA +11%%), X' +13.4%%, L6M +27.5%% with W29-W39 dropped (+4.6%% full), placebo ranks .01-.02 PRE/X'; but loosens the cut for 87%% of rows (40 vs 30) and MID -16%%. Details in MORNING_FLAGS.md.
