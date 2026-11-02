@@ -1,3 +1,5 @@
+> **DEFECT BASE (V13X):** every cut, rank, lead and withdrawal on this page was computed on D7 V13X, which dropped the TH-L2 loss cut and take-line exits that came before the resting add filled (846 rows; BASE-4 fixed it in V13Y). Treat all numbers here as 'defect base (V13X)'; the V13Y re-run of the leads is in progress and will supersede them.
+
 # DS3_ZONES_3_L2_TAPE_POC - the developing day-POC skip (TVP|poc|day, D40) under the robustness standard (ZL-2), V13X EXACT base
 
 Cell `A40__TVP_poc_day__skip`: skip the signal when a FRESH developing Globex-day POC line (running volume POC of the label day so far, 1-pt bins, 15-min clock checkpoints after a 30-min warm-up, a new line only when the POC bin moves >= 2 bins; the last POC of the previous day stays 24 h) lies between entry and target within min(40 pts, target distance). Fires on 1,768 of 88,490 engine rows (2.0%%). Post-hoc, Shadow, no PASS.

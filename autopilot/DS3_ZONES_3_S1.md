@@ -2228,3 +2228,130 @@ OTE variants: fractal strength 1 / 2 (shipped) / 3, dealing-range window K = 2 /
 | KCup4h_a20 | +3% / +1% / +0% / +2% / -1% | +0% / +0% / +0% / +1% / +1% | -0.1 (0.9) / +0.1 (0.8) / -0.1 (0.6) | fail | - |
 | KCup4h_e10 | +0% / +0% / +0% / +8% / +5% | +0% / +0% / +0% / +2% / -6% | -0.3 (0.7) / +0.0 (0.8) / +0.0 (0.8) | fail | - |
 | KCup4h_e30 | -3% / -1% / +0% / +4% / +2% | -3% / -3% / +0% / +3% / -0% | +0.2 (1.1) / -0.1 (1.0) / +0.1 (0.7) | fail | - |
+
+# Z1 NEXT RESULTS (n2; 2026-11-02 08:21Z) - V13X, lock OFF = headline, lock 12R beside
+
+## (1) The shipped HALF layer vs its own placebos, lock OFF (per-book locks only), V13X
+Placebos: A random-level same-count (stratified by book x session x target-bin x side), B same-volume random halves, C shuffled-day line sets; rank = share of draws cutting at least as much (small = real). Episode columns drop the top-3 drawdown episodes of DS3_ZONES_EPISODES.md (lock none) one at a time. Noise band = Z3 flip band 2% / 5%.
+| window (weeks) | maxDD $k without > with (cut) | noise band (Z3: flip 2% / 5%) | 90% block-bootstrap CI / P(cut>0) / P(cut>=20%) | leave-one-episode-out (top-3 DS3_ZONES_EPISODES episodes dropped one at a time) | leave-one-month-out range | placebo rank of the cut: A random-level same-count / B same-volume / C shuffled-day (n) | worst-20 $k b>a, rank A/B/C | mean d (MDE) |
+|---|---|---|---|---|---|---|---|---|
+| L1M (5) | 35 > 37 (-6%) | - | [-53%, +3%] / 0.15 / 0.01 | n/a | n/a | 0.376/0.416/0.426 (100/100/100) | 96>98, -/-/- | +0.4 (9.6) |
+| L2M (9) | 35 > 37 (-6%) | - | [-53%, +4%] / 0.51 / 0.00 | n/a | -6%..-6% | 0.366/0.416/0.426 (100/100/100) | 218>225, -/-/- | +0.8 (5.9) |
+| L3M (13) | 53 > 50 (+7%) | - | [-48%, +15%] / 0.70 / 0.02 | drop 202634-202638: +3% ; drop 202640-202642: +7% ; drop 202643-202644: +7% | -6%..+7% | 0.406/0.634/0.446 (100/100/100) | 193>210, -/-/- | +1.3 (4.5) |
+| L6M (27) | 146 > 133 (+9%) | 15% / 22% | [-12%, +16%] / 0.83 / 0.01 | drop 202627-202639: -6% ; drop 202640-202642: +9% ; drop 202643-202644: +9% | +1%..+9% | 0.475/0.515/0.446 (100/100/100) | 6>27, 0.376/0.574/0.327 | -0.6 (4.1) |
+| HOLD (52) | 146 > 133 (+9%) | - | [-7%, +19%] / 0.87 / 0.03 | drop 202627-202639: +11% ; drop 202605-202616: +9% ; drop 202547-202601: +9% | +1%..+11% | 0.337/0.446/0.396 (100/100/100) | -635>-604, 0.683/0.723/0.653 | +0.6 (3.5) |
+| MID (12) | 78 > 63 (+19%) | - | [+3%, +22%] / 0.99 / 0.08 | drop 202611-202614: +6% ; drop 202605-202609: +19% ; drop 202614-202616: +19% | +6%..+19% | 0.178/0.099/0.198 (100/100/100) | 140>131, -/-/- | -0.8 (6.1) |
+| PRE (75) | 245 > 178 (+27%) | 17% / 24% | [+1%, +39%] / 0.97 / 0.48 | drop 202505-202521: +21% ; drop 202434-202452: +21% ; drop 202410-202421: +27% | +21%..+43% | 0.119/0.079/0.079 (100/100/100) | -859>-734, 0.099/0.069/0.079 | +2.3 (3.3) |
+| X' (44) | 190 > 135 (+29%) | 15% / 29% | [-25%, +46%] / 0.80 / 0.55 | drop 202313-202337: +16% | +3%..+38% | 0.376/0.356/0.416 (100/100/100) | -517>-445, 0.347/0.317/0.307 | +0.5 (4.5) |
+| ALL (187) | 245 > 178 (+27%) | - | [+0%, +38%] / 0.95 / 0.46 | n/a | +21%..+43% | 0.109/0.059/0.079 (100/100/100) | -1134>-973, 0.129/0.139/0.208 | +1.2 (2.0) |
+
+### Same, lock 12R (placebo draws of the first run)
+| window (weeks) | maxDD $k without > with (cut) | noise band (Z3: flip 2% / 5%) | 90% block-bootstrap CI / P(cut>0) / P(cut>=20%) | leave-one-episode-out (top-3 DS3_ZONES_EPISODES episodes dropped one at a time) | leave-one-month-out range | placebo rank of the cut: A random-level same-count / B same-volume / C shuffled-day (n) | worst-20 $k b>a, rank A/B/C | mean d (MDE) |
+|---|---|---|---|---|---|---|---|---|
+| L1M (5) | 39 > 16 (+58%) | - | [+8%, +71%] / 1.00 / 0.88 | n/a | n/a | 0.249/0.284/0.184 (200/200/200) | 15>118, -/-/- | +20.5 (47.6) |
+| L2M (9) | 54 > 27 (+50%) | - | [-3%, +66%] / 0.75 / 0.54 | n/a | -10%..+58% | 0.269/0.214/0.299 (200/200/200) | 109>216, -/-/- | +11.9 (27.0) |
+| L3M (13) | 54 > 40 (+26%) | - | [+2%, +57%] / 0.97 / 0.53 | drop 202634-202638: +56% ; drop 202640-202642: +9% ; drop 202643-202644: +26% | +9%..+56% | 0.303/0.284/0.264 (200/200/200) | 96>205, -/-/- | +8.4 (18.9) |
+| L6M (27) | 72 > 74 (-2%) | 31% / 37% | [-5%, +44%] / 0.68 / 0.23 | drop 202627-202639: +9% ; drop 202640-202642: -2% ; drop 202643-202644: -2% | -14%..+25% | 0.478/0.622/0.473 (200/200/200) | -143>-52, 0.368/0.488/0.338 | +2.8 (9.9) |
+| HOLD (52) | 118 > 119 (-1%) | - | [-36%, +31%] / 0.65 / 0.17 | drop 202627-202639: -1% ; drop 202605-202616: -2% ; drop 202547-202601: -1% | -23%..+30% | 0.896/0.791/0.896 (200/200/200) | -447>-405, 0.572/0.443/0.567 | +0.7 (7.4) |
+| MID (12) | 95 > 79 (+17%) | - | [+2%, +32%] / 0.96 / 0.31 | drop 202611-202614: +40% ; drop 202605-202609: +16% ; drop 202614-202616: +17% | +16%..+40% | 0.458/0.204/0.488 (200/200/200) | 65>64, -/-/- | -0.1 (9.0) |
+| PRE (75) | 329 > 252 (+23%) | 21% / 28% | [-13%, +57%] / 0.88 / 0.60 | drop 202505-202521: -2% ; drop 202434-202452: +16% ; drop 202410-202421: +23% | +10%..+33% | 0.448/0.373/0.428 (200/200/200) | -608>-512, 0.224/0.164/0.249 | +1.7 (7.0) |
+| X' (44) | 145 > 174 (-20%) | 21% / 29% | [-222%, +32%] / 0.25 / 0.12 | drop 202313-202337: +20% | -53%..+29% | 0.463/0.756/0.478 (200/200/200) | -386>-342, 0.070/0.045/0.040 | -2.4 (5.8) |
+| ALL (187) | 329 > 252 (+23%) | - | [-38%, +44%] / 0.68 / 0.32 | n/a | -1%..+36% | 0.279/0.318/0.254 (200/200/200) | -733>-619, 0.109/0.050/0.164 | +0.4 (3.7) |
+
+## (2) Lock OFF line table with 3 placebos (V13X; 60 draws per kind per line; OTE-62 B73 is an action line, no placebo)
+| # | line | kept trades removed (% of kept) | maxDD $k L6M before>after (cut) | HOLD | MID | PRE | X' | worst-20 PRE | worst-20 X' | mean d $k/wk (MDE) L6M / HOLD / MID / PRE / X' | equal-risk mean d L6M / PRE / X' | placebo rank random-level A / same-volume B (L6M, PRE, X') | label | S/T/N | TOL-B / TOL-nc | PRE and X' cut >= 20% | sign-agree PRE, X', HOLD |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | OTE62b73 (action) | -87 (-0.5%) | 134>133 (+1%) | 145>133 (+8%) | 62>63 (-2%) | 194>178 (+8%) | 165>135 (+18%) | -740>-734 | -504>-445 | +0.7 (2.7) / +1.7 (2.4) / +0.8 (3.9) / +0.7 (1.4) / +1.6 (3.4) | ? / ? / ? | -/-/- ; -/-/- ; -/-/- (n 0/0/0) | n/a (action line, no placebo) | Y/Y/Y | Y/Y | n | Y |
+| 2 | CRT4h (coded) | 39 (0.2%) | 140>133 (+5%) | 140>133 (+5%) | 68>63 (+7%) | 187>178 (+5%) | 151>135 (+11%) | -738>-734 | -449>-445 | +0.5 (2.2) / -0.1 (1.4) / -0.8 (3.1) / +0.6 (0.9) / -0.0 (1.2) | ? / ? / ? | 0.344/0.213/0.262 ; 0.164/0.164/0.295 ; 0.033/0.049/0.049 (n 60/60/60) | no | n/Y/Y | Y/Y | n | Y |
+| 3 | OTE62act (coded) | -51 (-0.3%) | 134>136 (-1%) | 145>136 (+6%) | 62>59 (+4%) | 194>172 (+12%) | 165>160 (+3%) | -740>-695 | -504>-493 | -1.0 (1.5) / -0.1 (1.2) / +1.7 (3.0) / +0.6 (2.0) / +0.1 (1.1) | ? / ? / ? | 0.590/0.623/0.557 ; 0.049/0.016/0.049 ; 0.213/0.328/0.197 (n 60/60/60) | no | n/n/n | n/n | n | Y |
+| 4 | VAH15s (UNCODED) | 1 (0.0%) | 133>128 (+3%) | 133>128 (+3%) | 63>64 (-1%) | 178>162 (+9%) | 135>131 (+3%) | -734>-697 | -445>-458 | -0.5 (0.8) / -0.7 (1.5) / -0.1 (5.3) / -0.1 (1.0) / -0.9 (2.3) | ? / ? / ? | 0.361/0.246/0.426 ; 0.082/0.049/0.098 ; 0.328/0.295/0.377 (n 60/60/60) | no | n/n/n | n/n | n | Y |
+| 5 | OTE79 (coded) | 62 (0.3%) | 139>133 (+4%) | 139>133 (+4%) | 64>63 (+2%) | 203>178 (+12%) | 123>135 (-9%) | -762>-734 | -429>-445 | -0.0 (0.9) / -0.0 (0.8) / -0.6 (1.5) / +0.6 (1.2) / -0.5 (0.9) | ? / ? / ? | 0.295/0.361/0.230 ; 0.115/0.082/0.115 ; 0.803/0.836/0.869 (n 60/60/60) | no | n/n/n | n/n | n | n |
+| 6 | camH3 (coded) | 10 (0.1%) | 127>133 (-4%) | 127>133 (-4%) | 61>63 (-2%) | 180>178 (+1%) | 149>135 (+10%) | -747>-734 | -477>-445 | -0.3 (0.8) / -0.6 (0.9) / -0.9 (1.5) / +0.1 (0.8) / +0.2 (1.5) | ? / ? / ? | 0.672/0.787/0.754 ; 0.459/0.459/0.459 ; 0.033/0.115/0.049 (n 60/60/60) | no | n/n/n | n/n | n | n |
+| 7 | PDmid (coded) | 13 (0.1%) | 131>133 (-1%) | 131>133 (-1%) | 63>63 (+1%) | 174>178 (-3%) | 150>135 (+10%) | -729>-734 | -472>-445 | -1.0 (2.2) / -0.7 (1.2) / +0.0 (1.1) / -0.1 (0.4) / +0.9 (2.4) | ? / ? / ? | 0.721/0.738/0.770 ; 0.787/0.787/0.885 ; 0.016/0.016/0.033 (n 60/60/60) | no | n/n/n | n/n | n | n |
+| 8 | OTE705 (coded) | 76 (0.4%) | 136>133 (+3%) | 136>133 (+3%) | 66>63 (+5%) | 183>178 (+2%) | 134>135 (-1%) | -749>-734 | -445>-445 | -0.3 (2.0) / -0.1 (1.1) / +0.1 (2.0) / +0.4 (0.7) / -0.0 (0.9) | ? / ? / ? | 0.279/0.459/0.361 ; 0.475/0.328/0.328 ; 0.623/0.557/0.475 (n 60/60/60) | no | n/n/n | n/n | n | n |
+| 9 | LVN1_1hs (UNCODED) | 9 (0.0%) | 133>135 (-2%) | 133>135 (-2%) | 63>60 (+4%) | 178>178 (+0%) | 135>129 (+5%) | -734>-707 | -445>-450 | -0.6 (2.2) / +0.0 (1.3) / +0.4 (1.6) / +0.2 (1.2) / -0.4 (0.9) | ? / ? / ? | 0.672/0.705/0.836 ; 0.525/0.426/0.361 ; 0.230/0.180/0.197 (n 60/60/60) | no | n/n/n | n/n | n | n |
+| 10 | KCup4h (coded) | -6 (-0.0%) | 133>133 (+0%) | 133>133 (+0%) | 63>63 (+0%) | 179>178 (+1%) | 130>135 (-4%) | -742>-734 | -456>-445 | +0.2 (0.5) / +0.1 (0.4) / +0.2 (1.1) / +0.0 (0.6) / +0.0 (0.7) | ? / ? / ? | 0.508/0.541/0.459 ; 0.508/0.475/0.328 ; 0.787/0.738/0.836 (n 60/60/60) | no | Y/Y/Y | Y/Y | n | n |
+| 11 | kijun1h (coded) | 22 (0.1%) | 134>133 (+1%) | 134>133 (+1%) | 68>63 (+9%) | 170>178 (-5%) | 138>135 (+2%) | -736>-734 | -446>-445 | -0.2 (0.9) / -0.3 (0.8) / -0.9 (2.7) / -0.1 (1.1) / -0.4 (1.0) | ? / ? / ? | 0.492/0.410/0.426 ; 0.738/0.721/0.869 ; 0.426/0.459/0.344 (n 60/60/60) | no | n/n/n | n/n | n | n |
+| 12 | HVN0_1hs (UNCODED) | -10 (-0.1%) | 133>142 (-7%) | 133>142 (-7%) | 63>66 (-5%) | 178>180 (-1%) | 135>129 (+4%) | -734>-724 | -445>-438 | -1.0 (2.6) / -0.4 (1.4) / -0.1 (1.5) / +0.2 (0.9) / -0.1 (0.7) | ? / ? / ? | 0.836/0.852/0.869 ; 0.459/0.525/0.590 ; 0.246/0.295/0.213 (n 60/60/60) | no | n/n/n | n/n | n | n |
+### Episode-proofing, lock OFF
+| line | L6M: cut / cut without the trough week (date) / leave-month-out range / P(cut>0) / flag | HOLD: cut / cut without the trough week (date) / leave-month-out range / P(cut>0) / flag | MID: cut / cut without the trough week (date) / leave-month-out range / P(cut>0) / flag | PRE: cut / cut without the trough week (date) / leave-month-out range / P(cut>0) / flag | X': cut / cut without the trough week (date) / leave-month-out range / P(cut>0) / flag |
+|---|---|---|---|---|---|
+| OTE62b73 | +1% / +1% (20260817) / -6%..+9% / 0.49 / no cut | +8% / +1% (20260209) / +1%..+15% / 0.83 / no cut | -2% / -8% (20260209) / -8%..+25% / 0.51 / no cut | +8% / +11% (20250414) / +5%..+22% / 0.89 / no cut | +18% / +17% (20230925) / -9%..+28% / 0.83 / holds |
+| CRT4h | +5% / +2% (20260817) / +1%..+11% / 0.79 / no cut | +5% / +2% (20260817) / -1%..+5% / 0.52 / no cut | +7% / -4% (20260323) / -4%..+7% / 0.65 / no cut | +5% / +4% (20250414) / +1%..+9% / 0.77 / no cut | +11% / +1% (20230911) / +2%..+15% / 0.57 / ONE-WEEK |
+| OTE62act | -1% / +2% (20260817) / -7%..-1% / 0.42 / no cut | +6% / -1% (20260209) / -1%..+8% / 0.78 / no cut | +4% / -2% (20260209) / -2%..+19% / 0.74 / no cut | +12% / +5% (20250414) / +5%..+23% / 0.79 / holds | +3% / +9% (20230925) / -9%..+9% / 0.67 / no cut |
+| VAH15s | +3% / +3% (20260817) / -1%..+5% / 0.77 / no cut | +3% / -1% (20260817) / -2%..+3% / 0.49 / no cut | -1% / -6% (20260323) / -6%..-1% / 0.13 / no cut | +9% / +3% (20250414) / +2%..+11% / 0.97 / no cut | +3% / +3% (20230911) / -8%..+6% / 0.30 / no cut |
+| OTE79 | +4% / +6% (20260817) / +2%..+5% / 0.90 / no cut | +4% / +6% (20260817) / +0%..+4% / 0.67 / no cut | +2% / +0% (20260323) / +0%..+2% / 0.75 / no cut | +12% / +13% (20250414) / +5%..+16% / 0.83 / holds | -9% / -11% (20230911) / -10%..-1% / 0.06 / no cut |
+| camH3 | -4% / -3% (20260817) / -6%..-2% / 0.05 / no cut | -4% / +2% (20260817) / -6%..+3% / 0.41 / no cut | -2% / -3% (20260323) / -3%..-2% / 0.03 / no cut | +1% / +1% (20250414) / -1%..+4% / 0.57 / no cut | +10% / +15% (20230904) / +4%..+15% / 0.83 / no cut |
+| PDmid | -1% / +0% (20260817) / -3%..-0% / 0.00 / no cut | -1% / +0% (20260817) / -1%..-0% / 0.16 / no cut | +1% / +0% (20260323) / -0%..+1% / 0.70 / no cut | -3% / -2% (20250414) / -3%..+1% / 0.23 / no cut | +10% / +9% (20230925) / +5%..+16% / 0.87 / holds |
+| OTE705 | +3% / +5% (20260817) / -11%..+12% / 0.83 / no cut | +3% / +5% (20260817) / -4%..+3% / 0.63 / no cut | +5% / -10% (20260323) / -10%..+5% / 0.62 / no cut | +2% / -1% (20250414) / -3%..+8% / 0.47 / no cut | -1% / -1% (20230911) / -6%..+3% / 0.64 / no cut |
+| LVN1_1hs | -2% / -0% (20260817) / -5%..+1% / 0.24 / no cut | -2% / -0% (20260817) / -5%..+1% / 0.61 / no cut | +4% / +0% (20260323) / -0%..+4% / 0.63 / no cut | +0% / +2% (20250414) / +0%..+14% / 0.74 / no cut | +5% / +5% (20230911) / +0%..+7% / 0.48 / no cut |
+| KCup4h | +0% / +0% (20260817) / -0%..+4% / 0.31 / no cut | +0% / +0% (20260817) / -0%..+3% / 0.17 / no cut | +0% / +0% (20260323) / -0%..-0% / 0.00 / no cut | +1% / +5% (20250414) / +0%..+5% / 0.84 / no cut | -4% / -4% (20230911) / -14%..+2% / 0.53 / no cut |
+| kijun1h | +1% / +0% (20260817) / -2%..+2% / 0.76 / no cut | +1% / +0% (20260817) / -0%..+1% / 0.73 / no cut | +9% / +2% (20260323) / +2%..+9% / 0.93 / no cut | -5% / -1% (20250414) / -10%..+5% / 0.56 / no cut | +2% / +2% (20230911) / -1%..+5% / 0.33 / no cut |
+| HVN0_1hs | -7% / -8% (20260817) / -13%..+3% / 0.18 / no cut | -7% / -8% (20260817) / -7%..+3% / 0.48 / no cut | -5% / +9% (20260323) / -5%..+9% / 0.45 / no cut | -1% / +0% (20250414) / -1%..+11% / 0.83 / no cut | +4% / +4% (20230911) / -1%..+7% / 0.52 / no cut |
+
+### VAH15s swing 3 (profile variant that passed PRE/X' with a LOCK-ONLY cut) - lock OFF placebos
+| line (marginal-in-set, V13X exact) | maxDD cut L6M / HOLD / MID / PRE / X' | placebo A random-level / B same-volume / C shuffled-day: rank of the cut in L6M ; PRE ; X' (n) | worst-20 rank PRE A/B/C | S/T/N | verdict |
+|---|---|---|---|---|---|
+| VAH15s_w3 | -1% / -1% / -2% / +10% / +0% | 0.508/0.607/0.623 ; 0.016/0.049/0.033 ; 0.541/0.541/0.410 (n 60/60/60) | 0.016/0.066/0.016 | n/n/n | LEAD (PRE beats 3 placebos; L6M cut -1% < 20% so not RISK-KEEP) |
+
+## (3) Subset landscape, lock OFF (V13X, all 2^10 subsets of the 7 lines + 3 uncoded lines, OTE-62 B73 kept; HALF action)
+Subsets scored: 1024 (all 2^10 subsets of the 7 lines + 3 uncoded lines, OTE-62 B73 kept, HALF frame). Baseline = zone piece off.
+
+| set | lines | kept trades removed | maxDD cut L6M / HOLD / MID / PRE / X' | mean $k/wk L6M / HOLD / MID | Calmar ALL |
+|---|---|---|---|---|---|
+| SHIPPED | kijun1h+PDmid+CRT4h+KCup4h+camH3+OTE705+OTE79 | 0.9% | +9% / +9% / +19% / +27% / +29% | 26.9 / 23.9 / 10.9 | 0.07 |
+| best by S_PX (PRE,X' only) #1 | CRT4h+camH3+OTE705+OTE79+VAH15s+LVN1_1hs+HVN0_1hs | 1.1% | +5% / +5% / +7% / +37% / +39% | 26.1 / 23.4 / 10.0 | 0.08 |
+| S_PX #2 | CRT4h+camH3+OTE705+OTE79+VAH15s+LVN1_1hs | 1.0% | +11% / +11% / +11% / +38% / +36% | 27.3 / 23.9 / 10.0 | 0.08 |
+| S_PX #3 | CRT4h+KCup4h+camH3+OTE705+OTE79+VAH15s+LVN1_1hs+HVN0_1hs | 1.0% | +5% / +5% / +7% / +38% / +37% | 26.4 / 23.6 / 10.4 | 0.08 |
+| post-hoc L6M cut #1 | kijun1h+CRT4h+KCup4h+OTE705+OTE79+VAH15s | 0.7% | +17% / +12% / +19% / +33% / +20% | 27.7 / 24.5 / 12.0 | 0.07 |
+| post-hoc L6M cut #2 | kijun1h+CRT4h+OTE705+OTE79+VAH15s | 0.7% | +17% / +12% / +19% / +32% / +22% | 27.4 / 24.2 / 11.8 | 0.07 |
+| post-hoc L6M cut #3 | CRT4h+OTE705+OTE79+VAH15s | 0.8% | +16% / +10% / +10% / +31% / +29% | 28.0 / 24.2 / 10.6 | 0.07 |
+| <= half of the shipped rows (4473 vs 10760) keeping >= 80% of the PRE and X' cut #1 | CRT4h+KCup4h+VAH15s | 0.3% | +11% / +10% / -5% / +22% / +25% | 28.5 / 24.3 / 9.8 | 0.06 |
+| <= half of the shipped rows (4664 vs 10760) keeping >= 80% of the PRE and X' cut #2 | CRT4h+VAH15s+LVN1_1hs | 0.3% | +9% / +9% / -2% / +23% / +32% | 27.5 / 24.0 / 9.8 | 0.06 |
+| <= half of the shipped rows (4686 vs 10760) keeping >= 80% of the PRE and X' cut #3 | CRT4h+camH3+LVN1_1hs | 0.1% | +3% / +3% / -0% / +23% / +38% | 27.8 / 24.9 / 11.3 | 0.07 |
+| <= half of the shipped rows (4931 vs 10760) keeping >= 80% of the PRE and X' cut #4 | PDmid+camH3+VAH15s | 0.0% | -0% / -0% / -10% / +25% / +28% | 25.5 / 23.1 / 10.9 | 0.06 |
+| <= half of the shipped rows (5080 vs 10760) keeping >= 80% of the PRE and X' cut #5 | CRT4h+VAH15s+HVN0_1hs | 0.4% | +3% / +3% / -6% / +23% / +29% | 27.0 / 23.7 / 9.6 | 0.06 |
+| smallest set (rows 4473) keeping >= 80% of PRE and X' cut #1 | CRT4h+KCup4h+VAH15s | 0.3% | +11% / +10% / -5% / +22% / +25% | 28.5 / 24.3 / 9.8 | 0.06 |
+| smallest set (rows 4664) keeping >= 80% of PRE and X' cut #2 | CRT4h+VAH15s+LVN1_1hs | 0.3% | +9% / +9% / -2% / +23% / +32% | 27.5 / 24.0 / 9.8 | 0.06 |
+| smallest set (rows 4686) keeping >= 80% of PRE and X' cut #3 | CRT4h+camH3+LVN1_1hs | 0.1% | +3% / +3% / -0% / +23% / +38% | 27.8 / 24.9 / 11.3 | 0.07 |
+Single-line drop effect inside the landscape: removing line j from the SHIPPED set changes the PRE / X' cut by (kijun1h +3 / -2 pp; PDmid +2 / -8 pp; CRT4h -4 / -8 pp; KCup4h -0 / +3 pp; camH3 -1 / -8 pp; OTE705 -2 / +0 pp; OTE79 -10 / +6 pp).
+
+Rank of the shipped set among all 1024 subsets by maxDD cut (1 = best): L6M 166, HOLD 166, MID 43, PRE 347, X' 402, S_PX 316.
+Best-of-subsets caution: with 1024 subsets the best S_PX in-sample is a selection effect; the line-level chance null below is the honest reference.
+
+Reading (1): with the combined lock removed the layer's maxDD cuts are PRE +27% (CI [+1%, +39%], survives dropping any one top-3 episode: +21/+21/+27%), X' +29% (CI [-25%, +46%]; +16% after dropping the 24-week episode), MID +19%, L6M/HOLD +9%; PRE and X' exceed Z3's flip noise band (17/24 and 15/29) but L6M (15/22) does not. The PLACEBO RANKS DO NOT AGREE with the band: random same-count half-lot layers cut as much (PRE ranks 0.12 / 0.08 / 0.08, X' 0.38 / 0.36 / 0.42, L6M 0.48 / 0.52 / 0.45, ALL 0.11 / 0.06 / 0.08; none < 0.05), and the worst-20 improvements are chance-level too. The L6M cut is ONE-EPISODE (drop ISO weeks 202627-202639: -6%). Verdict: the layer lowers drawdown in every window in the literal lock frame, but a random half-lot layer of the same size does about as well, so the evidence is a volume effect, not line information; PRE (rank 0.08-0.12) is the nearest to a real signal. Mean effect inside MDE in every window.
+Reading (4): no OTE or KC variant has both a PRE and an X' cut >= 10% with the lock off. OTE-79 with a 2- or 5-swing window cuts PRE +20% / +25% (lock off) but X' -6%; OTE-705 fractal strength 1 passes the PX gate with small cuts (PRE +6%, X' +6%, MID +28%); OTE-79 and KC fractal-3 / multiplier variants are LOCK-ONLY in PRE. Nothing improves on the shipped lines: no lead.
+
+## (4) Swing-strength / window / min-range variants of the OTE lines and ATR / multiplier / EMA variants of KC-up 4h (V13X; marginal-in-set; both lock frames)
+OTE variants: fractal strength 1 / 2 (shipped) / 3, dealing-range window K = 2 / 3 / 5 swings, min range 2 / 4 / 8 pts (the min-range variants are identical to the base: the range filter never binds); KC: EMA span 10 / 20 / 30, ATR 10 / 14 / 20, multiplier 1.5 / 2 / 2.5 / 3. Baselines tie to the shipped masks exactly (fire-D20 agreement 1.000).
+| variant (replaces its base line in the shipped set; OTE-62 variants are added as an extra half line) | maxDD cut lock 12R: L6M / HOLD / MID / PRE / X' | maxDD cut lock OFF: L6M / HOLD / MID / PRE / X' | mean d L6M / PRE / X' lock OFF ($k/wk (MDE)) | PX gate lock OFF | flag |
+|---|---|---|---|---|---|
+| OTE62_base | +9% / -42% / +0% / -9% / +5% | -1% / +6% / +4% / +12% / +3% | -1.0 (1.5) / +0.6 (2.0) / +0.1 (1.1) | pass | cut>=10% lock-off |
+| OTE705_base | -12% / +5% / +6% / +7% / -7% | +3% / +3% / +5% / +2% / -1% | -0.3 (2.0) / +0.4 (0.7) / -0.0 (0.9) | fail | - |
+| OTE79_base | -1% / -1% / -1% / -1% / -1% | +4% / +4% / +2% / +12% / -9% | -0.0 (0.9) / +0.6 (1.2) / -0.5 (0.9) | fail | cut>=10% lock-off |
+| OTE62_sw3 | +4% / -27% / +13% / -6% / +3% | -8% / +0% / +9% / +6% / -6% | -0.8 (1.9) / +0.6 (2.0) / -0.3 (0.8) | fail | - |
+| OTE705_sw3 | -10% / +1% / +4% / +6% / -1% | +5% / +5% / +0% / -2% / +7% | +0.0 (1.4) / +0.5 (1.0) / +0.0 (1.1) | fail | - |
+| OTE79_sw3 | -3% / -1% / -4% / +12% / +7% | +7% / +7% / -2% / -0% / -2% | -0.1 (2.0) / +0.4 (1.1) / -0.3 (0.8) | fail | LOCK-ONLY PRE |
+| OTE62_sw1 | +9% / -37% / +3% / -20% / +14% | +2% / +9% / +12% / -1% / +1% | +0.3 (0.7) / +0.3 (0.8) / +0.2 (0.6) | fail | LOCK-ONLY X' |
+| OTE705_sw1 | +1% / +18% / +25% / +3% / +4% | +6% / +6% / +28% / +6% / +6% | +0.1 (1.2) / +0.6 (1.1) / +0.0 (0.9) | pass | - |
+| OTE79_sw1 | +4% / +1% / +2% / +10% / -4% | +5% / +5% / +5% / -1% / -14% | -1.3 (2.0) / -0.0 (1.2) / -1.0 (1.4) | fail | LOCK-ONLY PRE |
+| OTE62_K2 | -23% / -38% / +1% / -10% / -12% | +4% / +7% / +7% / -3% / +3% | -0.2 (1.0) / +0.2 (0.9) / +0.2 (1.1) | fail | - |
+| OTE705_K2 | -1% / +5% / +6% / -0% / -2% | +2% / +2% / +2% / +3% / +8% | -0.2 (1.0) / +0.5 (0.8) / +0.2 (0.9) | pass | - |
+| OTE79_K2 | +0% / +2% / +2% / -12% / -4% | +5% / +5% / +0% / +20% / -6% | -1.1 (2.3) / +0.6 (2.2) / -0.5 (1.1) | fail | cut>=10% lock-off |
+| OTE62_K5 | -11% / -24% / +12% / +3% / +1% | -11% / -4% / -8% / -2% / -2% | -0.6 (1.8) / -0.2 (0.9) / -0.1 (0.9) | fail | - |
+| OTE705_K5 | -9% / -2% / +0% / +14% / +1% | +8% / +8% / +6% / -6% / +7% | -0.5 (2.6) / +0.1 (0.9) / -0.1 (0.8) | fail | LOCK-ONLY PRE |
+| OTE79_K5 | +1% / +1% / +2% / +10% / +5% | +4% / +4% / -2% / +25% / -6% | -0.2 (2.4) / +0.8 (2.0) / -0.7 (1.2) | fail | cut>=10% lock-off |
+| OTE62_r2 | +9% / -42% / +0% / -9% / +5% | -1% / +6% / +4% / +12% / +3% | -1.0 (1.5) / +0.6 (2.0) / +0.1 (1.1) | pass | cut>=10% lock-off |
+| OTE705_r2 | -12% / +5% / +6% / +7% / -7% | +3% / +3% / +5% / +2% / -1% | -0.3 (2.0) / +0.4 (0.7) / -0.0 (0.9) | fail | - |
+| OTE79_r2 | -1% / -1% / -1% / -1% / -1% | +4% / +4% / +2% / +12% / -9% | -0.0 (0.9) / +0.6 (1.2) / -0.5 (0.9) | fail | cut>=10% lock-off |
+| OTE62_r8 | +9% / -42% / +0% / -9% / +5% | -1% / +6% / +4% / +12% / +3% | -1.0 (1.5) / +0.6 (2.0) / +0.1 (1.1) | pass | cut>=10% lock-off |
+| OTE705_r8 | -12% / +5% / +6% / +7% / -7% | +3% / +3% / +5% / +2% / -1% | -0.3 (2.0) / +0.4 (0.7) / -0.0 (0.9) | fail | - |
+| OTE79_r8 | -1% / -1% / -1% / -1% / -1% | +4% / +4% / +2% / +12% / -9% | -0.0 (0.9) / +0.6 (1.2) / -0.5 (0.9) | fail | cut>=10% lock-off |
+| KCup4h_base | +7% / +1% / +0% / -7% / +3% | +0% / +0% / +0% / +1% / -4% | +0.2 (0.5) / +0.0 (0.6) / +0.0 (0.7) | fail | - |
+| KCup4h_m15 | +7% / -1% / +0% / +12% / +0% | -1% / -1% / +0% / -0% / -8% | -0.2 (1.1) / +0.3 (0.9) / -0.1 (0.9) | fail | LOCK-ONLY PRE |
+| KCup4h_m25 | +1% / +0% / +0% / -2% / +0% | +0% / +0% / +0% / -2% / +7% | +0.1 (1.0) / -0.1 (0.3) / +0.2 (0.7) | fail | - |
+| KCup4h_m3 | +0% / +0% / +0% / -4% / +10% | +0% / +0% / +0% / +2% / +9% | -0.2 (0.5) / -0.3 (0.7) / +0.0 (0.8) | fail | - |
+| KCup4h_a14 | +5% / +1% / +0% / +7% / +4% | +1% / +1% / +0% / -3% / +3% | -0.4 (1.3) / -0.4 (0.7) / +0.2 (0.6) | fail | - |
+| KCup4h_a20 | +3% / +1% / +0% / +2% / -1% | +0% / +0% / +0% / +1% / +1% | -0.1 (0.9) / +0.1 (0.8) / -0.1 (0.6) | fail | - |
+| KCup4h_e10 | +0% / +0% / +0% / +8% / +5% | +0% / +0% / +0% / +2% / -6% | -0.3 (0.7) / +0.0 (0.8) / +0.0 (0.8) | fail | - |
+| KCup4h_e30 | -3% / -1% / +0% / +4% / +2% | -3% / -3% / +0% / +3% / -0% | +0.2 (1.1) / -0.1 (1.0) / +0.1 (0.7) | fail | - |

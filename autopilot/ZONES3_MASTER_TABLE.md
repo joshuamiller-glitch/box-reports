@@ -1,95 +1,101 @@
 # ZONES3_MASTER_TABLE - program-wide finalist x frame x noise band x placebo rank x carrying week x label (S5 light-job agent)
-Refreshed 2026-11-02 07:59Z. CSV: autopilot/ZONES3_MASTER_TABLE.csv (784 rows). Bases: V13X exact (S5, Z3 s3_v13x), ZL3 lock-off V13X, S4A stage2x_vx (v13_=lock12, nl_=lock-off) and stage2xn_vxn (v13_=lock-off headline, nl_=lock12), mapping CONFIRMED by S4a; S4A pA/pB/pC rank the mean of the L6M/HOLD/PRE/X cuts, not L6M alone, 40 draws. Band = Z3 V13X noise band (DS3_ZONES_3_NOISE.md, interim n~43), row by rows changed (S5 from flagged share; others: Z3 1,500 rows -> flip 2/5; S4A/ZL3 use rows/flags as stored x0.3 for live share, flip 5 when unknown); rule: cut > band in L6M AND (PRE or X'). Placebo ranks: S5 from its stored draws (rank = share of draws with cut >= real, 100/kind lock12 for 9 cells, lock-off for 5), S4A from its pA/pB/pC (see above); Z3 and ZL3 tables carry no placebo ranks (labelled 'BAND (placebo not in table)'). Carrying week: S5 only. Labels are mechanical; nothing is a lead without the robustness standard.
+Refreshed 2026-11-02 08:29Z. CSV: autopilot/ZONES3_MASTER_TABLE.csv (850 rows). BASE COLUMN: V13X = DEFECT BASE (add-fill ordering defect, BASE-4), V13Y = fixed base; only S5 rows exist on V13Y so far (others republish). Bases: V13X exact (S5, Z3 s3_v13x), ZL3 lock-off V13X, S4A stage2x_vx (v13_=lock12, nl_=lock-off) and stage2xn_vxn (v13_=lock-off headline, nl_=lock12), mapping CONFIRMED by S4a; S4A pA/pB/pC rank the mean of the L6M/HOLD/PRE/X cuts, not L6M alone, 40 draws. Band = Z3 V13X noise band (DS3_ZONES_3_NOISE.md, interim n~43), row by rows changed (S5 from flagged share; others: Z3 1,500 rows -> flip 2/5; S4A/ZL3 use rows/flags as stored x0.3 for live share, flip 5 when unknown); rule: cut > band in L6M AND (PRE or X'). Placebo ranks: S5 from its stored draws (rank = share of draws with cut >= real, 100/kind lock12 for 9 cells, lock-off for 5), S4A from its pA/pB/pC (see above); Z3 and ZL3 tables carry no placebo ranks (labelled 'BAND (placebo not in table)'). Carrying week: S5 only. Labels are mechanical; nothing is a lead without the robustness standard.
 
 ## Counts by program and frame
 
-|                                  |   cells |   band_pass |   volume |   band_placebo |
-|:---------------------------------|--------:|------------:|---------:|---------------:|
-| ('S4A streams', 'lock12')        |      48 |           2 |        1 |              0 |
-| ('S4A streams', 'lockoff')       |      48 |          12 |        5 |              3 |
-| ('S5 density', 'lock12')         |      34 |           0 |        0 |              0 |
-| ('S5 density', 'lockoff')        |      34 |           5 |        5 |              0 |
-| ('Z3 action table', 'lock12')    |     101 |           0 |        0 |              0 |
-| ('Z3 action table', 'lockoff')   |     101 |           0 |        0 |              0 |
-| ('ZL3 L2/tape zones', 'lockoff') |     418 |          56 |        0 |              0 |
+|                                                        |   cells |   band_pass |   volume |   band_placebo |
+|:-------------------------------------------------------|--------:|------------:|---------:|---------------:|
+| ('V13X (DEFECT BASE)', 'S4A streams', 'lock12')        |      48 |           2 |        0 |              0 |
+| ('V13X (DEFECT BASE)', 'S4A streams', 'lockoff')       |      48 |          12 |        0 |              0 |
+| ('V13X (DEFECT BASE)', 'S5 density', 'lock12')         |      34 |           0 |        0 |              0 |
+| ('V13X (DEFECT BASE)', 'S5 density', 'lockoff')        |      34 |           5 |        0 |              0 |
+| ('V13X (DEFECT BASE)', 'Z3 action table', 'lock12')    |     101 |           0 |        0 |              0 |
+| ('V13X (DEFECT BASE)', 'Z3 action table', 'lockoff')   |     101 |           0 |        0 |              0 |
+| ('V13X (DEFECT BASE)', 'ZL3 L2/tape zones', 'lockoff') |     418 |          56 |        0 |              0 |
+| ('V13Y', 'S5 density', 'lock12')                       |      33 |           1 |        0 |              0 |
+| ('V13Y', 'S5 density', 'lockoff')                      |      33 |           3 |        0 |              0 |
 
 
 ## Every row that passes the band in a frame (necessary, not sufficient)
 
-| program | cell | frame | L6M | HOLD | PRE | X' | mean d L6M (MDE) | band L6M/PRE/X' | placebo B/C/A | carrying week | label |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| S4A streams | DEV|day_L|so_far D40 half | lock12 | +50% | +30% | -46% | +34% | n/a | 36/28/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| S4A streams | ARR|iplFVG|15s D20 skip | lock12 | +36% | +48% | +9% | +32% | n/a | 36/28/29% | 1.00/1.00/1.00 |  | VOLUME |
-| S4A streams | DEV|day_L|so_far D40 half | lockoff | +69% | +12% | -43% | +33% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:(L6M/recent only)] |
-| S4A streams | DEV|on_L|so_far D40 half | lockoff | +67% | +17% | -38% | +40% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:(L6M/recent only)] |
-| S4A streams | DEV|on_L|so_far D20 half | lockoff | +64% | +23% | -21% | +32% | n/a | 21/20/29% | 0.01/0.01/0.01 |  | BAND+PLACEBO [src:(L6M/recent only)] |
-| S4A streams | SWG|f3L|15s D20 half | lockoff | +54% | +8% | -51% | +33% | n/a | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| S4A streams | SWG|f3L|15s D40 half | lockoff | +45% | +31% | +6% | +41% | n/a | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| S4A streams | SWG|f3L|15s D40 half | lockoff | +45% | +31% | +6% | +41% | n/a | 21/20/29% | 0.01/0.04/0.01 |  | BAND+PLACEBO |
-| S4A streams | ARR|iplFVG|15s D40 half | lockoff | +31% | +25% | -23% | +34% | n/a | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| S4A streams | ARR|iplFVG|15s D40 half | lockoff | +31% | +25% | -23% | +34% | n/a | 21/20/29% | 0.07/0.24/0.07 |  | VOLUME [src:(L6M/recent only)] |
-| S4A streams | ARR|iplFVG|15s D20 half | lockoff | +30% | +6% | -24% | +38% | n/a | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| S4A streams | ARR|iplFVG|15s D20 half | lockoff | +30% | +6% | -24% | +38% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:FRAGILE] |
-| S4A streams | FIB|ret50|1h D40 skip | lockoff | +23% | +23% | -13% | +31% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:(L6M/recent only)] |
-| S4A streams | MAS|bb_mid|4h D20 skip | lockoff | +12% | +7% | +7% | +11% | n/a | 10/14/8% | 0.03/0.03/0.04 |  | BAND+PLACEBO |
-| S5 density | sopen40 half | lockoff | +51% | +44% | +22% | +11% | -6.9k (14.0k) | 21/20/29% | 0.09/0.07/0.11 | 202630 | VOLUME |
-| S5 density | open20 half | lockoff | +47% | +47% | +26% | +1% | -12.3k (15.6k) | 21/20/29% | 0.29/0.23/0.23 | 202630 | VOLUME |
-| S5 density | nA60>=1 skip | lockoff | +38% | +27% | -6% | +31% | -7.2k (14.5k) | 21/20/29% | 0.23/0.30/0.35 | 202630 | VOLUME |
-| S5 density | openA40 half | lockoff | +37% | +37% | +36% | +30% | -8.9k (14.0k) | 21/20/29% | 0.52/0.41/0.39 | 202630 | VOLUME |
-| S5 density | rho60>=2 skip | lockoff | +34% | +15% | +9% | +32% | -1.1k (13.2k) | 21/20/29% | 0.23/0.35/0.23 | 202630 | VOLUME |
-| ZL3 L2/tape zones | act=skip|fam=SET8|kind=DENS|rule=near_ge:40|lat0 | lockoff | +70% | +13% | +5% | +48% | -18.2k (26.8k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf3|rule=pol2040|lat0 | lockoff | +67% | +19% | +10% | +64% | -18.9k (22.5k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf18|rule=pol2040|lat0 | lockoff | +66% | +35% | +42% | +53% | -20.3k (23.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=exp|rule=skip30|lat0 | lockoff | +62% | +62% | +52% | +51% | -17.8k (20.2k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf29|rule=pol2040|lat0 | lockoff | +61% | +42% | +19% | +50% | -20.4k (22.5k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=half|fam=TAPEALL|kind=DENS|rule=nah20:2|lat0 | lockoff | +60% | +36% | +26% | -19% | -1.5k (10.0k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf1|rule=pol2040|lat0 | lockoff | +55% | +32% | -35% | +47% | -21.4k (22.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf15|rule=pol2040|lat0 | lockoff | +54% | +3% | -13% | +31% | -19.2k (21.8k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf27|rule=pol2040|lat0 | lockoff | +54% | +49% | +53% | +58% | -22.9k (22.7k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf7|rule=pol2040|lat0 | lockoff | +53% | +37% | -16% | +65% | -20.6k (22.7k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf18|rule=skip20|lat0 | lockoff | +52% | -2% | +20% | +35% | -17.5k (23.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf21|rule=pol2040|lat0 | lockoff | +52% | +45% | +21% | +33% | -23.6k (22.1k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf8|rule=pol2040|lat0 | lockoff | +51% | +29% | +11% | +53% | -22.8k (22.0k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf3|rule=skip20|lat0 | lockoff | +51% | +20% | +6% | +56% | -16.9k (20.0k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|tol=10|weak=half|lat0 | lockoff | +49% | +28% | -5% | +36% | -3.6k (10.5k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat1 | lockoff | +48% | +31% | -4% | +31% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat3 | lockoff | +48% | +31% | -4% | +31% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +47% | +31% | -4% | +32% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=75|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +47% | +31% | -4% | +32% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=90|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +47% | +31% | -4% | +32% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|tol=7.5|weak=half|lat0 | lockoff | +47% | +28% | -4% | +35% | -4.2k (10.5k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf2|rule=pol2040|lat0 | lockoff | +47% | +45% | +30% | +57% | -22.5k (21.4k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=roll|rule=skip30|lat0 | lockoff | +46% | +40% | +36% | +32% | -17.6k (21.8k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf19|rule=pol2040|lat0 | lockoff | +46% | +36% | +5% | +32% | -21.1k (23.9k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf16|rule=pol2040|lat0 | lockoff | +45% | +41% | +33% | +61% | -20.8k (22.1k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf26|rule=pol2040|lat0 | lockoff | +45% | -10% | +12% | +52% | -21.2k (21.8k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|sess=asia|tier=all|weak=half|lat0 | lockoff | +45% | +31% | -1% | +32% | -1.9k (8.8k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf9|rule=pol2040|lat0 | lockoff | +45% | +22% | +18% | +34% | -21.2k (22.0k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf29|rule=skip20|lat0 | lockoff | +44% | +13% | +5% | +36% | -18.5k (23.2k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf23|rule=pol2040|lat0 | lockoff | +43% | +43% | +27% | +63% | -22.6k (21.0k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=half|fam=SET8+L2ALL|kind=DENS|rule=nah20:2|lat0 | lockoff | +43% | +39% | +35% | -22% | -3.9k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf16|rule=skip20|lat0 | lockoff | +43% | +42% | +3% | +56% | -17.7k (20.9k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf13|rule=pol2040|lat0 | lockoff | +42% | +42% | +48% | +41% | -22.3k (22.4k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=roll|rule=pol2040|lat0 | lockoff | +42% | +32% | +39% | +53% | -19.6k (20.6k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=60|conf=skip|fam=TAPEALL|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +38% | +25% | +4% | +38% | -5.7k (10.9k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=skip|fam=TAPEALL|kind=DENS|rule=nah40:1|lat0 | lockoff | +37% | +34% | +37% | +35% | -16.2k (25.2k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=half|fam=SET8|kind=DENS|rule=near_ge:40|lat0 | lockoff | +37% | +37% | +36% | +30% | -8.9k (14.0k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=skip|fam=TAPEALL|kind=DENS|rule=nah20:2|lat0 | lockoff | +36% | -21% | +31% | -18% | -4.9k (15.0k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf10|rule=pol2040|lat0 | lockoff | +36% | +31% | +33% | +31% | -22.6k (21.9k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf14|rule=pol2040|lat0 | lockoff | +35% | +18% | +43% | +27% | -21.7k (22.1k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf20|rule=pol2040|lat0 | lockoff | +35% | +3% | +35% | +63% | -23.7k (22.7k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | file=treewf_zm_s3.npz|kind=TWF|lat0 | lockoff | +34% | +34% | +56% | +0% | -21.2k (20.4k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf22|rule=pol2040|lat0 | lockoff | +31% | +31% | +27% | +59% | -22.9k (22.0k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=half|fam=SET8+L2ALL|kind=DENS|rule=ratio_ge:2|lat0 | lockoff | +30% | +30% | +6% | +29% | -2.6k (10.1k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=skip|fam=TAPEALL|kind=DENS|rule=nah40:2|lat0 | lockoff | +29% | +19% | +26% | -30% | -7.9k (20.7k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=2|weak=half|lat0 | lockoff | +28% | +28% | -5% | +31% | -4.0k (8.7k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=skip|fam=SET8+L2ALL|kind=DENS|rule=nah40:1|lat0 | lockoff | +28% | +28% | +39% | +43% | -21.5k (25.8k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | Dl=60|book=P7|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +28% | +28% | -11% | +35% | -4.0k (7.0k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf23|rule=skip20|lat0 | lockoff | +26% | +26% | -53% | +41% | -21.2k (19.7k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=skip|fam=SET8+L2ALL|kind=DENS|rule=nah20:5|lat0 | lockoff | +26% | +24% | +35% | +49% | -1.6k (8.3k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=half|fam=TAPEALL|kind=DENS|rule=ratio_le:0.5|lat0 | lockoff | +25% | +25% | +23% | +20% | -5.6k (6.5k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=exp|rule=pol2040|lat0 | lockoff | +24% | +24% | +28% | +53% | -17.2k (16.6k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=half|fam=SET8+L2ALL|kind=DENS|rule=nah20:3|lat0 | lockoff | +23% | +23% | +23% | -7% | -1.4k (7.2k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | act=skip|fam=TAPEALL|kind=DENS|rule=ratio_le:0.5|lat0 | lockoff | +22% | +22% | +40% | -29% | -12.1k (16.4k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | arm=B|kind=LRN|model=exp|rule=skip20|lat0 | lockoff | +21% | +21% | +23% | +40% | -10.2k (12.6k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
-| ZL3 L2/tape zones | D=20|act=skip|fam=('tape', 'TLQ_SES_asia')|kind=AH|tier=all|var=fresh|lat0 | lockoff | +11% | +5% | +13% | +12% | -0.0k (3.9k) | 10/14/8% | n/a/n/a/n/a |  | BAND (placebo not in table) |
+| base | program | cell | frame | L6M | HOLD | PRE | X' | mean d L6M (MDE) | band L6M/PRE/X' | placebo B/C/A | carrying week | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| V13X (DEFECT BASE) | S4A streams | DEV|day_L|so_far D40 half | lock12 | +50% | +30% | -46% | +34% | n/a | 36/28/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | S4A streams | ARR|iplFVG|15s D20 skip | lock12 | +36% | +48% | +9% | +32% | n/a | 36/28/29% | 1.00/1.00/1.00 |  | [defect base] VOLUME |
+| V13X (DEFECT BASE) | S4A streams | DEV|day_L|so_far D40 half | lockoff | +69% | +12% | -43% | +33% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | [defect base] VOLUME [src:(L6M/recent only)] |
+| V13X (DEFECT BASE) | S4A streams | DEV|on_L|so_far D40 half | lockoff | +67% | +17% | -38% | +40% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | [defect base] VOLUME [src:(L6M/recent only)] |
+| V13X (DEFECT BASE) | S4A streams | DEV|on_L|so_far D20 half | lockoff | +64% | +23% | -21% | +32% | n/a | 21/20/29% | 0.01/0.01/0.01 |  | [defect base] BAND+PLACEBO [src:(L6M/recent only)] |
+| V13X (DEFECT BASE) | S4A streams | SWG|f3L|15s D20 half | lockoff | +54% | +8% | -51% | +33% | n/a | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | S4A streams | SWG|f3L|15s D40 half | lockoff | +45% | +31% | +6% | +41% | n/a | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | S4A streams | SWG|f3L|15s D40 half | lockoff | +45% | +31% | +6% | +41% | n/a | 21/20/29% | 0.01/0.04/0.01 |  | [defect base] BAND+PLACEBO |
+| V13X (DEFECT BASE) | S4A streams | ARR|iplFVG|15s D40 half | lockoff | +31% | +25% | -23% | +34% | n/a | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | S4A streams | ARR|iplFVG|15s D40 half | lockoff | +31% | +25% | -23% | +34% | n/a | 21/20/29% | 0.07/0.24/0.07 |  | [defect base] VOLUME [src:(L6M/recent only)] |
+| V13X (DEFECT BASE) | S4A streams | ARR|iplFVG|15s D20 half | lockoff | +30% | +6% | -24% | +38% | n/a | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | S4A streams | ARR|iplFVG|15s D20 half | lockoff | +30% | +6% | -24% | +38% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | [defect base] VOLUME [src:FRAGILE] |
+| V13X (DEFECT BASE) | S4A streams | FIB|ret50|1h D40 skip | lockoff | +23% | +23% | -13% | +31% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | [defect base] VOLUME [src:(L6M/recent only)] |
+| V13X (DEFECT BASE) | S4A streams | MAS|bb_mid|4h D20 skip | lockoff | +12% | +7% | +7% | +11% | n/a | 10/14/8% | 0.03/0.03/0.04 |  | [defect base] BAND+PLACEBO |
+| V13X (DEFECT BASE) | S5 density | sopen40 half | lockoff | +51% | +44% | +22% | +11% | -6.9k (14.0k) | 21/20/29% | 0.09/0.07/0.11 | 202630 | [defect base] VOLUME |
+| V13X (DEFECT BASE) | S5 density | open20 half | lockoff | +47% | +47% | +26% | +1% | -12.3k (15.6k) | 21/20/29% | 0.29/0.23/0.23 | 202630 | [defect base] VOLUME |
+| V13X (DEFECT BASE) | S5 density | nA60>=1 skip | lockoff | +38% | +27% | -6% | +31% | -7.2k (14.5k) | 21/20/29% | 0.23/0.30/0.35 | 202630 | [defect base] VOLUME |
+| V13X (DEFECT BASE) | S5 density | openA40 half | lockoff | +37% | +37% | +36% | +30% | -8.9k (14.0k) | 21/20/29% | 0.52/0.41/0.39 | 202630 | [defect base] VOLUME |
+| V13X (DEFECT BASE) | S5 density | rho60>=2 skip | lockoff | +34% | +15% | +9% | +32% | -1.1k (13.2k) | 21/20/29% | 0.23/0.35/0.23 | 202630 | [defect base] VOLUME |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=skip|fam=SET8|kind=DENS|rule=near_ge:40|lat0 | lockoff | +70% | +13% | +5% | +48% | -18.2k (26.8k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf3|rule=pol2040|lat0 | lockoff | +67% | +19% | +10% | +64% | -18.9k (22.5k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf18|rule=pol2040|lat0 | lockoff | +66% | +35% | +42% | +53% | -20.3k (23.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=exp|rule=skip30|lat0 | lockoff | +62% | +62% | +52% | +51% | -17.8k (20.2k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf29|rule=pol2040|lat0 | lockoff | +61% | +42% | +19% | +50% | -20.4k (22.5k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=half|fam=TAPEALL|kind=DENS|rule=nah20:2|lat0 | lockoff | +60% | +36% | +26% | -19% | -1.5k (10.0k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf1|rule=pol2040|lat0 | lockoff | +55% | +32% | -35% | +47% | -21.4k (22.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf15|rule=pol2040|lat0 | lockoff | +54% | +3% | -13% | +31% | -19.2k (21.8k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf27|rule=pol2040|lat0 | lockoff | +54% | +49% | +53% | +58% | -22.9k (22.7k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf7|rule=pol2040|lat0 | lockoff | +53% | +37% | -16% | +65% | -20.6k (22.7k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf18|rule=skip20|lat0 | lockoff | +52% | -2% | +20% | +35% | -17.5k (23.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf21|rule=pol2040|lat0 | lockoff | +52% | +45% | +21% | +33% | -23.6k (22.1k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf8|rule=pol2040|lat0 | lockoff | +51% | +29% | +11% | +53% | -22.8k (22.0k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf3|rule=skip20|lat0 | lockoff | +51% | +20% | +6% | +56% | -16.9k (20.0k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|tol=10|weak=half|lat0 | lockoff | +49% | +28% | -5% | +36% | -3.6k (10.5k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat1 | lockoff | +48% | +31% | -4% | +31% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat3 | lockoff | +48% | +31% | -4% | +31% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +47% | +31% | -4% | +32% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=75|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +47% | +31% | -4% | +32% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=90|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +47% | +31% | -4% | +32% | -3.8k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|tol=7.5|weak=half|lat0 | lockoff | +47% | +28% | -4% | +35% | -4.2k (10.5k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf2|rule=pol2040|lat0 | lockoff | +47% | +45% | +30% | +57% | -22.5k (21.4k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=roll|rule=skip30|lat0 | lockoff | +46% | +40% | +36% | +32% | -17.6k (21.8k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf19|rule=pol2040|lat0 | lockoff | +46% | +36% | +5% | +32% | -21.1k (23.9k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf16|rule=pol2040|lat0 | lockoff | +45% | +41% | +33% | +61% | -20.8k (22.1k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf26|rule=pol2040|lat0 | lockoff | +45% | -10% | +12% | +52% | -21.2k (21.8k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|sess=asia|tier=all|weak=half|lat0 | lockoff | +45% | +31% | -1% | +32% | -1.9k (8.8k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf9|rule=pol2040|lat0 | lockoff | +45% | +22% | +18% | +34% | -21.2k (22.0k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf29|rule=skip20|lat0 | lockoff | +44% | +13% | +5% | +36% | -18.5k (23.2k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf23|rule=pol2040|lat0 | lockoff | +43% | +43% | +27% | +63% | -22.6k (21.0k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=half|fam=SET8+L2ALL|kind=DENS|rule=nah20:2|lat0 | lockoff | +43% | +39% | +35% | -22% | -3.9k (10.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf16|rule=skip20|lat0 | lockoff | +43% | +42% | +3% | +56% | -17.7k (20.9k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf13|rule=pol2040|lat0 | lockoff | +42% | +42% | +48% | +41% | -22.3k (22.4k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=roll|rule=pol2040|lat0 | lockoff | +42% | +32% | +39% | +53% | -19.6k (20.6k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=60|conf=skip|fam=TAPEALL|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +38% | +25% | +4% | +38% | -5.7k (10.9k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=skip|fam=TAPEALL|kind=DENS|rule=nah40:1|lat0 | lockoff | +37% | +34% | +37% | +35% | -16.2k (25.2k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=half|fam=SET8|kind=DENS|rule=near_ge:40|lat0 | lockoff | +37% | +37% | +36% | +30% | -8.9k (14.0k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=skip|fam=TAPEALL|kind=DENS|rule=nah20:2|lat0 | lockoff | +36% | -21% | +31% | -18% | -4.9k (15.0k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf10|rule=pol2040|lat0 | lockoff | +36% | +31% | +33% | +31% | -22.6k (21.9k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf14|rule=pol2040|lat0 | lockoff | +35% | +18% | +43% | +27% | -21.7k (22.1k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf20|rule=pol2040|lat0 | lockoff | +35% | +3% | +35% | +63% | -23.7k (22.7k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | file=treewf_zm_s3.npz|kind=TWF|lat0 | lockoff | +34% | +34% | +56% | +0% | -21.2k (20.4k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf22|rule=pol2040|lat0 | lockoff | +31% | +31% | +27% | +59% | -22.9k (22.0k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=half|fam=SET8+L2ALL|kind=DENS|rule=ratio_ge:2|lat0 | lockoff | +30% | +30% | +6% | +29% | -2.6k (10.1k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=skip|fam=TAPEALL|kind=DENS|rule=nah40:2|lat0 | lockoff | +29% | +19% | +26% | -30% | -7.9k (20.7k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=60|conf=skip|fam=TVP|kind=CONF|line=SET|tier=2|weak=half|lat0 | lockoff | +28% | +28% | -5% | +31% | -4.0k (8.7k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=skip|fam=SET8+L2ALL|kind=DENS|rule=nah40:1|lat0 | lockoff | +28% | +28% | +39% | +43% | -21.5k (25.8k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | Dl=60|book=P7|conf=skip|fam=TVP|kind=CONF|line=SET|tier=all|weak=half|lat0 | lockoff | +28% | +28% | -11% | +35% | -4.0k (7.0k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf23|rule=skip20|lat0 | lockoff | +26% | +26% | -53% | +41% | -21.2k (19.7k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=skip|fam=SET8+L2ALL|kind=DENS|rule=nah20:5|lat0 | lockoff | +26% | +24% | +35% | +49% | -1.6k (8.3k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=half|fam=TAPEALL|kind=DENS|rule=ratio_le:0.5|lat0 | lockoff | +25% | +25% | +23% | +20% | -5.6k (6.5k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=exp|rule=pol2040|lat0 | lockoff | +24% | +24% | +28% | +53% | -17.2k (16.6k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=half|fam=SET8+L2ALL|kind=DENS|rule=nah20:3|lat0 | lockoff | +23% | +23% | +23% | -7% | -1.4k (7.2k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | act=skip|fam=TAPEALL|kind=DENS|rule=ratio_le:0.5|lat0 | lockoff | +22% | +22% | +40% | -29% | -12.1k (16.4k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=exp|rule=skip20|lat0 | lockoff | +21% | +21% | +23% | +40% | -10.2k (12.6k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13X (DEFECT BASE) | ZL3 L2/tape zones | D=20|act=skip|fam=('tape', 'TLQ_SES_asia')|kind=AH|tier=all|var=fresh|lat0 | lockoff | +11% | +5% | +13% | +12% | -0.0k (3.9k) | 10/14/8% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
+| V13Y | S5 density | open60 half | lock12 | +47% | +29% | +30% | +2% | -4.1k (13.4k) | 36/28/29% | n/a/n/a/n/a | 202632 | BAND (placebo not in table) |
+| V13Y | S5 density | open60 half | lockoff | +42% | +10% | +4% | +33% | -7.4k (13.8k) | 21/20/29% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |
+| V13Y | S5 density | rho60>=2 skip | lockoff | +41% | +14% | +1% | +36% | -1.1k (12.7k) | 21/20/29% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) ONE-WEEK |
+| V13Y | S5 density | openA40 half | lockoff | +35% | +40% | +20% | +41% | -10.4k (12.9k) | 21/20/29% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |

@@ -1,3 +1,5 @@
+> **DEFECT BASE (V13X):** every cut, rank, lead and withdrawal on this page was computed on D7 V13X, which dropped the TH-L2 loss cut and take-line exits that came before the resting add filled (846 rows; BASE-4 fixed it in V13Y). Treat all numbers here as 'defect base (V13X)'; the V13Y re-run of the leads is in progress and will supersede them.
+
 # DS3_ZONES_3_B7_ASIA_CUBE - zone x vol tercile x session cube (Asia is the product in 2026), V13X, ZL-2
 
 Window F9 = Feb-Oct 2026 (38 weeks). Cube = stored per-book x per-session daily series of the engine (6 core books x 6 sessions). Effect = cell minus base (candidates) or layer-on minus layer-off (the shipped 8-line layer: `zone=False, ote62=none` run on the same engine). Mean = $k per week, maxDD = change of that session's own maxDD. Vol terciles = weeks ranked by the weekly mean target distance of the engine rows (T1 calm .. T3 volatile). Lock none (user's literal frame, headline) and 12R beside.

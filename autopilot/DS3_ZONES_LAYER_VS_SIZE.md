@@ -150,3 +150,68 @@ Total episode P&L: shipped -115k vs placebo median -148k [-203,-91], rank 0.10.
 | vol tag 0.0 | 130 | -2.2 | -1.9 | 0.75 |
 | vol tag 1.0 | 96 | -3.8 | -3.7 | 0.55 |
 | vol tag 2.0 | 138 | +15.9 | +13.3 | 0.00 |
+
+## (4) Cheaper layer test: keep only the three lines that add PRE protection (PDmid, CRT4h, OTE79), lock none, equal risk to the shipped layer
+Cell: mean $k/wk / maxDD $k / Calmar; ranks = share of 20 same-count random half-lot layers (equal risk) at least as good on mean / maxDD. KEEP3 with and without the OTE-62 B73 line.
+| layer | PRE | F9 | L6M | HOLD | MID | X' |
+|---|---|---|---|---|---|---|
+| shipped (8 lines) | 10.0 / DD 178 / Cal 0.056 | 22.5 / DD 133 / Cal 0.170 | 26.9 / DD 133 / Cal 0.202 | 23.9 / DD 133 / Cal 0.180 | 10.9 / DD 63 / Cal 0.174 | -1.2 / DD 135 / Cal -0.009 |
+| KEEP3_noB73 (PDmid+CRT4h+OTE79) | 6.2 / DD 211 / Cal 0.029 (ranks mean 0.20 / DD 0.05) | 20.6 / DD 145 / Cal 0.142 (ranks mean 0.40 / DD 0.20) | 23.2 / DD 145 / Cal 0.160 (ranks mean 0.55 / DD 0.20) | 21.2 / DD 145 / Cal 0.146 (ranks mean 0.55 / DD 0.20) | 13.1 / DD 54 / Cal 0.241 (ranks mean 0.15 / DD 0.00) | -2.6 / DD 166 / Cal -0.016 (ranks mean 0.75 / DD 0.60) |
+| KEEP3_B73 (PDmid+CRT4h+OTE79 + OTE62 B73) | 7.9 / DD 202 / Cal 0.039 (ranks mean 0.25 / DD 0.20) | 22.2 / DD 157 / Cal 0.141 (ranks mean 0.40 / DD 0.90) | 24.4 / DD 157 / Cal 0.156 (ranks mean 0.55 / DD 0.90) | 23.9 / DD 157 / Cal 0.152 (ranks mean 0.45 / DD 0.90) | 15.4 / DD 54 / Cal 0.284 (ranks mean 0.05 / DD 0.00) | -1.8 / DD 150 / Cal -0.012 (ranks mean 0.90 / DD 0.70) |
+
+## ATTRIBUTION SUMMARY (headline; lock none, equal risk)
+1. No single line carries the PRE edge: removing any one of the 8 lines still leaves the PRE equal-risk mean edge (+2.0..+3.3k/wk vs +2.3k shipped, ranks vs matched random layers 0.00-0.10) and the PRE maxDD edge. Per line, change of the PRE maxDD when the line is removed (positive = the line protects): OTE79 +19k, PDmid +4k, CRT4h +1k; OTE62 B73 -26k, OTE705 -19k, kijun1h -12k, KCup4h -7k, camH3 -5k (the last five make PRE maxDD WORSE at equal risk: without them it is shallower). Mean carried per line in PRE is within +-1.0k/wk. In F9/L6M the only line with a clear effect is CRT4h (protects +23k maxDD, costs 2.4k/wk mean).
+2. Where it lives: books P7 (PRE mean +6.9k vs random +4.8k, rank 0.00; own maxDD 152k vs 186k, rank 0.05) and session Asia (+7.7k vs +5.9k, rank 0.00); nothing in K7/U7/H7/M7/A6, nyam or nypm. NOT the London episode: PRE 2025-W05..W16 shipped -115k vs random median -148k (rank 0.10), the layer's Asia part is +106k vs +60k (rank 0.00) while London is -204k vs -211k (rank 0.28): the layer does not protect the London episode that carries the 178k drawdown. By day vol tag: the edge is in the highest-vol days (tag 2.0: +15.9k/wk vs +13.3k, rank 0.00); tags 0/1 are not better than random.
+3. PRE thirds: mean edge in all three (shipped vs random median 8.4 vs 5.7, 12.0 vs 9.3, 9.6 vs 7.5 k/wk; ranks 0.06 / 0.09 / 0.13), Calmar ranks 0.28 / 0.15 / 0.19, maxDD only in thirds 2-3 (ranks 0.28 / 0.28; third 1 is worse than random, 0.84): a modest, spread-out edge, not one segment, but no third is significant by itself.
+4. Cheaper layer: NOT demonstrated. Keeping only the three protective lines (PDmid, CRT4h, OTE79; with or without OTE-62 B73) loses the PRE edge (PRE mean 6.2 / 7.9k vs shipped 10.0k, ranks 0.20-0.25; PRE maxDD 211 / 202k vs 178k) and is worse in F9-HOLD maxDD. The edge needs the combination of lines (the union of their rows), consistent with a coverage/size effect concentrated in high-vol Asia P7 rows; the best single-line removal candidates (OTE705, OTE62 B73, kijun1h) improve PRE maxDD but were not tested jointly. Post-hoc; 20 matched draws per line, 40 for book/session cubes.
+
+
+# CONSISTENCY AND MULTIPLICITY OF THE PRE EDGE (BASE-4, 2026-11-02T08:02Z; lock none, equal risk; 40 random half-lot layers with cubes)
+
+Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Heat table: cell = shipped minus random-layer MEDIAN of the slice's mean contribution ($k/wk) and, in brackets, the rank = share of the random layers with a contribution at least as high (small = the shipped layer beats random halving in that slice; PRE column is where the slices were found; the other columns are out-of-selection checks).
+
+## (1) Heat table: slice x window
+| slice | F9 | L6M | HOLD | MID | PRE | X' |
+|---|---|---|---|---|---|---|
+| book K7 | -0.0 (0.53) | -0.1 (0.60) | -0.1 (0.53) | +0.3 (0.38) | +0.1 (0.42) | -0.2 (0.72) |
+| book P7 | +1.4 (0.20) | +1.6 (0.28) | +0.3 (0.45) | +0.4 (0.42) | +2.1 (0.00) | -0.9 (0.80) |
+| book U7 | -0.6 (0.97) | -0.6 (0.97) | -0.4 (0.93) | -0.6 (0.80) | +0.0 (0.42) | -0.1 (0.65) |
+| book H7 | -0.3 (0.90) | -0.5 (0.85) | -0.3 (0.85) | -0.1 (0.57) | +0.0 (0.47) | +0.2 (0.23) |
+| book M7 | -0.6 (0.97) | -0.4 (0.90) | -0.5 (0.93) | -1.0 (0.97) | +0.1 (0.23) | -0.1 (0.60) |
+| book A6 | -0.2 (0.80) | +0.0 (0.45) | +0.0 (0.47) | -0.6 (0.95) | -0.1 (0.57) | +0.3 (0.03) |
+| sess asia | -0.5 (0.65) | -0.6 (0.72) | -0.5 (0.68) | -0.6 (0.68) | +1.8 (0.00) | +0.3 (0.33) |
+| sess london | +0.3 (0.40) | +1.1 (0.20) | +0.1 (0.47) | -1.3 (0.85) | -0.3 (0.72) | -0.4 (0.90) |
+| sess nyam | -0.0 (0.50) | +0.1 (0.45) | -0.2 (0.68) | -0.4 (0.62) | +0.6 (0.15) | -0.4 (0.75) |
+| sess nypm | -0.3 (0.85) | -0.7 (0.97) | -0.2 (0.90) | +0.6 (0.00) | +0.0 (0.45) | -0.2 (0.93) |
+| vol 0 | -1.4 (0.97) | -1.2 (0.95) | -1.4 (1.00) | -1.8 (0.93) | -0.3 (0.75) | -0.4 (0.85) |
+| vol 1 | +2.1 (0.00) | +2.5 (0.00) | +1.6 (0.03) | +0.1 (0.40) | -0.1 (0.55) | -0.4 (0.88) |
+| vol 2 | -0.8 (0.80) | -1.5 (0.85) | -0.9 (0.70) | +0.3 (0.40) | +2.6 (0.00) | +0.2 (0.38) |
+
+
+## (2) Multiplicity: 42 active book x session x vol-tag slices in PRE (6 books x 4 sessions x 3 tags, empty cells dropped)
+Shipped layer: 4 slices with rank <= 0.05 (better than random halving) and 2 with rank >= 0.95 (worse). NULL (each of the 40 random layers ranked against the other 39): slices with rank <= 0.05 per random layer: mean 2.1, median 2, 90th pct 4, max 7; rank >= 0.95: mean 2.1. Share of random layers with at least as many <=0.05 slices as the shipped layer: 0.15. (Resolution of a rank with 39-40 comparators is 0.025, so rank <= 0.05 means at most 2 random layers are as good.)
+
+
+# SLICE-ONLY LAYERS AND WALK-FORWARD OF THE SLICE CHOICE (BASE-4, 2026-11-02T08:17Z; lock none)
+
+Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Evaluation period = 2024-01-01..2026-10-30 (148 weeks). Equal risk = the lot table is scaled until the worst-20 weeks OF THIS PERIOD equal the full shipped layer's (stop at 2.5%, residual corrected linearly). Slice layers halve only the shipped 7-line HALF mask rows of the slice (other rows untouched; OTE-62 B73 as shipped). Random layers: same live-row count per month, drawn only inside the same slice (P7 rows / P7+Asia rows), equal risk. Walk-forward: before each month, among {full, none, P7, Asia, P7+Asia, P7-or-Asia} choose the layer with the best Calmar over the trailing 12 months ending 7 days before the month (purged), apply it to that month's rows (engine run with the composite mask); 2023 months use the full layer. Choices made: {'P7': 17, 'P7AS': 1, 'FULL': 14, 'AS': 2}.
+
+## (4) Equal-risk comparison, eval period
+| layer | scale/gap | mean $k/wk | maxDD $k | Calmar | random same-slice med mean | rank mean | med maxDD | rank maxDD | n draws |
+|---|---|---|---|---|---|---|---|---|---|
+| full shipped layer (8 lines) | 1.000/0.0% | 15.5 | 178 | 0.087 |  |  |  |  |  |
+| no layer (scaled) | 0.950/0.4% | 12.1 | 325 | 0.037 |  |  |  |  |  |
+| P7-only HALF (7-line mask rows of book P7; OTE-62 B73 kept) | 1.000/2.0% | 15.7 | 194 | 0.081 | 14.3 | 0.20 | 225 | 0.17 | 30 |
+| Asia-only HALF | 1.000/1.9% | 15.1 | 184 | 0.082 |  |  |  |  |  |
+| P7+Asia-only HALF | 1.000/3.3% | 15.4 | 196 | 0.078 | 14.4 | 0.17 | 236 | 0.17 | 30 |
+| P7-or-Asia HALF | 1.000/0.7% | 15.4 | 181 | 0.085 |  |  |  |  |  |
+| WALK-FORWARD slice choice (trailing 12m Calmar, 7-day embargo) | 1.000/1.4% | 15.2 | 195 | 0.078 |  |  |  |  |  |
+
+
+Eval period split in thirds (mean $k/wk / maxDD $k at equal risk):
+| layer | third 1 | third 2 | third 3 |
+|---|---|---|---|
+| full shipped layer (8 lines) | 8.7 / DD 161 | 16.6 / DD 178 | 21.0 / DD 133 |
+| WALK-FORWARD slice choice (trailing 12m Calmar, 7-day embargo) | 8.8 / DD 150 | 15.9 / DD 195 | 20.7 / DD 132 |
+| P7-only HALF (7-line mask rows of book P7; OTE-62 B73 kept) | 9.0 / DD 149 | 15.9 / DD 194 | 22.0 / DD 130 |
+| no layer (scaled) | 4.8 / DD 235 | 11.4 / DD 229 | 19.9 / DD 155 |

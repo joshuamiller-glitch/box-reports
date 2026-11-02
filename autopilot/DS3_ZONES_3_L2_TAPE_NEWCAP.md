@@ -1,3 +1,5 @@
+> **DEFECT BASE (V13X):** every cut, rank, lead and withdrawal on this page was computed on D7 V13X, which dropped the TH-L2 loss cut and take-line exits that came before the resting add filled (846 rows; BASE-4 fixed it in V13Y). Treat all numbers here as 'defect base (V13X)'; the V13Y re-run of the leads is in progress and will supersede them.
+
 # DS3_ZONES_3_L2_TAPE_NEWCAP - tape zone streams on the NEW cap (to 2026-10-30), scored in the ZONES frames (ZL-2, s7)
 
 **Base: D7 v1.3 EXACT (V13X, BASE-4: exact U7, exact NY-AM lots, the five exact profit lines, per-book 12R lock) - HEADLINE.** Research only; post-hoc, Shadow only, no PASS claims. New windows only (L1M L2M VIEW, L3M L6M HOLD MID PRE X'; Feb-Oct = F9 = 2026-02-07..10-31). Old-cap results are on `DS3_ZONES_3_L2_TAPE.md` (OLD CAP). Prereg autopilot/ZL2_TAPE_prereg.md (streams) and ZL2_TAPE_SCORE_prereg.md (scoring; sha256 in DECISIONS.md). Code l2vast/ds3/code/zl2/, cells /mnt/l2/l2vast/ds3_zones3_new/ZL-2/ (cells/, cells_summary.csv, robust_f1.csv, plc_rank.csv, interim_tables.md), streams out/zl/streams_tape_new/.

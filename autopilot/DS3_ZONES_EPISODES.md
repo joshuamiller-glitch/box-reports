@@ -71,3 +71,5 @@ For each window and frame the top-3 episodes of the weekly-cumulative equity (IS
 
 - **X'** (44 wk, total equity change -174k):   
     1. start -> 202405 -> open: depth 173.7k over 44 wk; books P7 -162k, M7 -25k, H7 -16k; sessions london -147k, asia -59k, pre +0k
+
+SUPERSEDED 2026-11-02 (BASE-4): the episodes of the V13Y base (add-fill ordering fixed) are in DS3_ZONES_EPISODES_V13Y.md; this file is the V13X (defect) base.

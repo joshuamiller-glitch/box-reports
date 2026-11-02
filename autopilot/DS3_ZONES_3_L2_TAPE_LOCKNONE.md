@@ -1,3 +1,5 @@
+> **DEFECT BASE (V13X):** every cut, rank, lead and withdrawal on this page was computed on D7 V13X, which dropped the TH-L2 loss cut and take-line exits that came before the resting add filled (846 rows; BASE-4 fixed it in V13Y). Treat all numbers here as 'defect base (V13X)'; the V13Y re-run of the leads is in progress and will supersede them.
+
 # DS3_ZONES_3_L2_TAPE_LOCKNONE - the tape-zone cells in the LOCK-NONE frame (per-book locks only; the user's literal text), D7 v1.3 EXACT (V13X), ZL-2
 
 Frame: `V13X.run_v13x(lock=None)`. Base maxDD (lock none): F9 132.6k, key episode 202627 -> 202634 -> 202639 (trough week 2026-08-17). Cuts below are POSITIVE = shallower maxDD (cut = 1 - maxDD(cell)/maxDD(base)). Noise bands = Z3 FINAL lock-off band (n=107, DS3_ZONES_3_NOISE.md), flip 2%% / 5%%: L3M 17/23, L6M 16/21, HOLD 15/20, MID 20/33, PRE 22/26, X' 15/25. Rule: cut above the band in L6M AND in PRE or X'; NO-HARM column: PRE and MID not worse than -(flip-2%% band) = -22%% / -20%%.

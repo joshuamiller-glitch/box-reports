@@ -154,3 +154,6 @@ Stage 1: 308 cells per frame (AHEAD fresh D10-60 skip/half, BEHIND D10/20 skip/h
 
 ## 20. Standing summary (ZL-3, V13X)
 Order-book zones: DEAD. Tape zones: DEAD or volume (G2 the only structured survivor: lock-12-only per S5's monthly series, total +186k lock=12 / -89.5k lock=None, P(delta>0) 0.75 / 0.38, noise-band NOISE). Learned rule and 3-seed tree: no zone content, D7 table empty. Gap/FVG zones: lock-only skip, generic-B73 mechanism. Item 2 of the lead's list (tape stage-1 re-run on V13X) was not repeated: ZL-2 owns the tape zones and published its own V13X tape rows.
+
+## 21. CORRECTION to section 19 (B73 on FVG zones)
+The B73 'leads' in section 19 and the random-row B73 placebo equalities were produced by a base defect (TH-L2 cut dropped when it precedes the B73 add fill; see DS3_ZONES_3_B73_GENERIC.md section 0). With the fix and the fixed base, FVG B73 gives lock=None L6M/HOLD/PRE/X' -2..+3 / +2..+7 / -12..+12 / -3..+1% and mean -0.9k..+0.1k/wk: nothing. Section 19's skip/half findings are unaffected. Also: in section 13 I wrote that nearly all Dl-60 set-line rows are 'confirmed'; the row masks show 7,396 confirmed vs 10,836 unconfirmed, so G2 is not simply 'skip all set rows within 60'.

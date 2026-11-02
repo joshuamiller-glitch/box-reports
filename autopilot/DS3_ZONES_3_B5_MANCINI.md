@@ -266,3 +266,429 @@ Reading: with the lock off the RXL lvn_20d half cell cuts L3M +13%, L6M +20%, HO
 * Mancini failed breakdown / back-test (S4b's 24 streams + the SWP failed-breakdown family): DEAD.
 * BT flip levels (swing level broken by >= 10 pts, skip ahead within 40 pts, 4 h): LEAD - recent windows L3M/L6M/HOLD/MID all +14..+21% maxDD, +233k dollars over the 43 months (26 positive / 13 negative months), weekly-mean placebo ranks 0.024-0.12; PRE/X' about 0 with the lock off (+14% / +23% with the 12R lock); the lock-None drawdown cut is ONE-WEEK (W34), the dollar gain is not. Needs: 100-draw placebos, the noise-band rule, a purged walk-forward on D (Z3), and the forward shadow log.
 * RXL density bands / HVN / LVN: DEAD or FRAGILE.
+
+
+## 3. BT swing flip: ROW-LEVEL (mean / dollar) tests, immune to the lock phase (ZL-1, lock None headline, V13X taken trades, first-order dollars = -sum of the flagged rows' base net)
+Base taken-trade tables: /mnt/l2/l2vast/ds3_zones3_new/zl1/base_rows_none.pkl and base_rows_lock12.pkl (drow, net $, ld, book, sess). Placebos (200 draws): A same count per book x session over the sample, B same count per day, C each flagged row replaced by a random row of the same book x session on a different day; rank = share of placebo sums at least as negative as the flagged sum (low = good).
+
+### lock None: BT|swing_F10|4h AHEAD D40 skip; taken trades 18716, flagged 1032 (5.5%)
+
+| window   |   n_flag |   flag_sum_k |   flag_mean |   unflag_mean |   flag_hit |   unflag_hit |   flag_ci_lo_k |   flag_ci_hi_k |   rank_A |   rank_B |   rank_C |   plcA_mean_k |   plcB_mean_k |   plcC_mean_k |
+|:---------|---------:|-------------:|------------:|--------------:|-----------:|-------------:|---------------:|---------------:|---------:|---------:|---------:|--------------:|--------------:|--------------:|
+| L3M      |       94 |      -38.45  |    -409.048 |       137.087 |      0.372 |        0.47  |        -79.359 |          0.141 |    0.045 |    0.03  |    0.075 |        17.688 |        16.445 |        12.447 |
+| L6M      |      203 |      -86.234 |    -424.798 |       192.203 |      0.355 |        0.465 |       -142.207 |        -31.156 |    0.005 |    0.02  |    0.005 |        47.443 |        29.846 |        45.206 |
+| HOLD     |      359 |      -99.631 |    -277.524 |       182.324 |      0.373 |        0.464 |       -182.691 |        -19.467 |    0.01  |    0.01  |    0.01  |        72.082 |        53.596 |        75.304 |
+| MID      |       84 |      -29.867 |    -355.565 |       105.412 |      0.405 |        0.453 |        -73.902 |         14.005 |    0.179 |    0.109 |    0.144 |         2.224 |         9.383 |         6.672 |
+| PRE      |      413 |      -89.363 |    -216.375 |       129.902 |      0.438 |        0.476 |       -192.92  |         12.364 |    0.045 |    0.149 |    0.025 |        20.352 |        -9.519 |        17.089 |
+| X'       |      156 |      -40.829 |    -261.726 |        -5.069 |      0.487 |        0.495 |       -112.066 |         28.157 |    0.164 |    0.423 |    0.174 |        -7.693 |       -33.252 |        -5.457 |
+
+flagged rows by book|session in HOLD (sum $k, n, mean $):
+| key   |   size |   sum |    mean |
+|:------|-------:|------:|--------:|
+| HM|0  |     33 |   5.6 |   169.8 |
+| HM|3  |      4 |   0.3 |    65.4 |
+| KB|0  |     82 |  -6.3 |   -76.7 |
+| KB|1  |     66 | -22.6 |  -341.7 |
+| KB|3  |     15 |  -6.4 |  -429.2 |
+| KB|4  |      9 |  -3.4 |  -379.1 |
+| MV|1  |     37 |  -1.1 |   -28.8 |
+| MV|3  |      5 |  -1   |  -208.9 |
+| PB|0  |      5 |  -2.2 |  -436.3 |
+| PE|0  |     38 | -15.4 |  -404   |
+| PE|1  |     31 | -26.4 |  -850.5 |
+| PE|3  |      2 |   8.2 |  4100.1 |
+| SM|0  |     10 |  -6.2 |  -622   |
+| SM|1  |     22 | -22.8 | -1035.3 |
+
+flagged rows by book|session in PRE (sum $k, n, mean $):
+| key   |   size |   sum |    mean |
+|:------|-------:|------:|--------:|
+| HM|0  |     34 | -12.6 |  -371.8 |
+| HM|3  |     14 |  -4.8 |  -339.6 |
+| KB|0  |     76 | -18.4 |  -241.6 |
+| KB|1  |     72 |   8.8 |   121.7 |
+| KB|3  |     30 |   4.5 |   151   |
+| KB|4  |     23 |  -2.9 |  -126.7 |
+| MV|1  |     18 |  -5.1 |  -280.8 |
+| MV|3  |      7 |  -4.1 |  -591.7 |
+| PB|0  |      4 |   3.5 |   867.3 |
+| PE|0  |     53 | -40.1 |  -756.6 |
+| PE|1  |     31 | -10.9 |  -350.6 |
+| PE|3  |      9 | -10.6 | -1176.5 |
+| SM|0  |     14 |  -2.3 |  -161   |
+| SM|1  |     28 |   5.6 |   198.4 |
+
+### lock 12R: BT|swing_F10|4h AHEAD D40 skip; taken trades 12193, flagged 677 (5.6%)
+
+| window   |   n_flag |   flag_sum_k |   flag_mean |   unflag_mean |   flag_hit |   unflag_hit |   flag_ci_lo_k |   flag_ci_hi_k |   rank_A |   rank_B |   rank_C |   plcA_mean_k |   plcB_mean_k |   plcC_mean_k |
+|:---------|---------:|-------------:|------------:|--------------:|-----------:|-------------:|---------------:|---------------:|---------:|---------:|---------:|--------------:|--------------:|--------------:|
+| L3M      |       57 |      -40.98  |    -718.949 |       232.495 |      0.281 |        0.491 |        -78.166 |         -8.176 |    0.025 |    0.02  |    0.025 |        12.16  |         5.143 |        10.06  |
+| L6M      |      127 |      -99.343 |    -782.228 |       267.734 |      0.276 |        0.473 |       -145.961 |        -56.023 |    0.005 |    0.005 |    0.005 |        38.204 |         7.339 |        36.899 |
+| HOLD     |      239 |     -129.881 |    -543.435 |       238.402 |      0.326 |        0.47  |       -199.686 |        -59.673 |    0.005 |    0.01  |    0.01  |        55.679 |        24.95  |        57.836 |
+| MID      |       62 |      -44.33  |    -715.003 |        95.38  |      0.355 |        0.453 |        -79.193 |        -10.59  |    0.06  |    0.04  |    0.085 |        -3.019 |         7.322 |         0.534 |
+| PRE      |      239 |     -104.799 |    -438.488 |       102.479 |      0.402 |        0.466 |       -178.509 |        -34.868 |    0.015 |    0.095 |    0.03  |         4.194 |       -40.559 |         5.673 |
+| X'       |      108 |      -67.131 |    -621.582 |       -68.191 |      0.463 |        0.493 |       -119.634 |        -18.466 |    0.035 |    0.159 |    0.04  |       -14.473 |       -38.366 |       -12.629 |
+
+flagged rows by book|session in HOLD (sum $k, n, mean $):
+| key   |   size |   sum |    mean |
+|:------|-------:|------:|--------:|
+| HM|0  |     17 |   1.2 |    67.7 |
+| HM|3  |      3 |   1   |   337.9 |
+| KB|0  |     52 |   0.5 |     9   |
+| KB|1  |     48 | -19.6 |  -407.4 |
+| KB|3  |     10 |  -4   |  -395.2 |
+| KB|4  |      7 |  -3.5 |  -497.6 |
+| MV|1  |     22 |  -7.5 |  -340.5 |
+| MV|3  |      3 |  -0.4 |  -130.4 |
+| PB|0  |      4 |  -4.6 | -1142.9 |
+| PE|0  |     27 | -22.9 |  -847.1 |
+| PE|1  |     20 | -40.1 | -2006.7 |
+| PE|3  |      2 |   8.2 |  4100.1 |
+| SM|0  |      7 |  -9   | -1281.7 |
+| SM|1  |     17 | -29.3 | -1723.3 |
+
+flagged rows by book|session in PRE (sum $k, n, mean $):
+| key   |   size |   sum |    mean |
+|:------|-------:|------:|--------:|
+| HM|0  |     22 | -17.1 |  -776.4 |
+| HM|3  |      9 |  -4.8 |  -529.4 |
+| KB|0  |     46 | -16.1 |  -350.1 |
+| KB|1  |     39 |  -2.2 |   -56.1 |
+| KB|3  |     21 |   1.2 |    55   |
+| KB|4  |     12 |   4.7 |   388.8 |
+| MV|1  |     11 |  -5.5 |  -500.2 |
+| MV|3  |      4 |  -1.7 |  -418.8 |
+| PB|0  |      2 |  -0   |   -17.6 |
+| PE|0  |     33 | -22.1 |  -670.9 |
+| PE|1  |     14 | -19.3 | -1376.4 |
+| PE|3  |      4 |  -6   | -1507.7 |
+| SM|0  |      5 | -10.5 | -2090.9 |
+| SM|1  |     17 |  -5.4 |  -316   |
+
+## 4. Plateau and purged walk-forward of the DEFINITION (swing 5m/15m/1h x break 5/10/15/20 x keep 1h/4h/24h x reach 20/30/40/60 = 144 configs; streams BTC|<tf>_F<F>|<keep>)
+### lock None: parameter plateau of the flip-level skip (saved $k = -sum of the flagged rows' base net; 144 configs = swing ['5m', '15m', '1h'] x break [5, 10, 15, 20] x keep ['1h', '4h', '24h'] x reach [20, 30, 40, 60])
+
+share of configs with positive saved dollars: L6M 80%, HOLD 89%, MID 94%, PRE 60%, X' 86%; all four of L6M/HOLD/PRE/X': 41%
+
+median saved $k by swing timeframe:
+| TF   |   L6M |   HOLD |   PRE |   X' |
+|:-----|------:|-------:|------:|-----:|
+| 15m  |  14   |   24.9 |  13.5 |  8.6 |
+| 1h   |   0   |    6.6 |  -1.7 |  8.5 |
+| 5m   |  44.2 |   37.3 |  30.4 | 22   |
+
+median saved $k by F:
+|   F |   L6M |   HOLD |   PRE |   X' |
+|----:|------:|-------:|------:|-----:|
+|   5 |  12.7 |   14.3 |   6   |  7.5 |
+|  10 |  12   |   10   |  15.1 |  8.9 |
+|  15 |  13.8 |   25.2 |   7.2 |  9.2 |
+|  20 |  11.6 |   19.4 |  -1.1 | 13   |
+
+median saved $k by keep:
+| keep   |   L6M |   HOLD |   PRE |   X' |
+|:-------|------:|-------:|------:|-----:|
+| 1h     |   6.9 |    8.3 |   6.2 |  6.2 |
+| 24h    |  21   |   36.7 | -29.8 | 20.8 |
+| 4h     |  17.6 |   27.8 |  26.3 |  9.6 |
+
+median saved $k by D:
+|   D |   L6M |   HOLD |   PRE |   X' |
+|----:|------:|-------:|------:|-----:|
+|  20 |   7.4 |    5.6 |  12.4 | 10.5 |
+|  30 |  12   |   10.7 |   1.4 |  8.5 |
+|  40 |  12.1 |   32   |   0.2 | 10.4 |
+|  60 |  16.2 |   18.9 |   7.6 |  8.4 |
+
+reference config (5m, break 10, 4h, reach 40):
+| TF   |   F | keep   |   D |   n_flag |   L6M |   HOLD |   MID |   PRE |   X' |   hit_all |
+|:-----|----:|:-------|----:|---------:|------:|-------:|------:|------:|-----:|----------:|
+| 5m   |  10 | 4h     |  40 |     1101 |  88.8 |  102.2 |  29.4 |  84.1 | 24.4 |     190.5 |
+
+**Walk-forward (12-month trailing choice of the whole configuration, apply to next month; 2024-01..2026-10; saved $k):**
+
+|                                                  |   L6M |   HOLD |   MID |   2024-25 |   all |
+|:-------------------------------------------------|------:|-------:|------:|----------:|------:|
+| walk-forward (skips only if trailing saving > 0) |  36.5 |   47   |  23.1 |      18.1 |  77.5 |
+| fixed reference config                           |  88.8 |  102.2 |  29.4 |      29.9 | 153.1 |
+| mean of all 144 configs (random choice)          |  23.1 |   30.3 |  13.7 |       6.2 |  34.1 |
+| best config in hindsight each month              | 222.4 |  428.7 | 129.7 |     627.6 | 994.2 |
+
+months with positive walk-forward saving: 15 / 31 active; fixed-config positive months 19 / 31
+
+most-chosen configs: ('5m', np.int64(20), '4h', np.int64(60)) x7; ('5m', np.int64(10), '1h', np.int64(20)) x5; ('5m', np.int64(10), '4h', np.int64(20)) x4; ('15m', np.int64(20), '24h', np.int64(40)) x4
+
+**Walk-forward (6-month trailing choice of the whole configuration, apply to next month; 2024-01..2026-10; saved $k):**
+
+|                                                  |   L6M |   HOLD |   MID |   2024-25 |    all |
+|:-------------------------------------------------|------:|-------:|------:|----------:|-------:|
+| walk-forward (skips only if trailing saving > 0) |  15.6 |   79.3 |  59.3 |     -39.2 |    9.9 |
+| fixed reference config                           |  88.8 |  102.2 |  29.4 |      33.3 |  156.5 |
+| mean of all 144 configs (random choice)          |  23.1 |   30.3 |  13.7 |      -5.5 |   22.4 |
+| best config in hindsight each month              | 222.4 |  428.7 | 129.7 |     677.7 | 1044.3 |
+
+months with positive walk-forward saving: 14 / 34 active; fixed-config positive months 20 / 34
+
+most-chosen configs: ('5m', np.int64(15), '4h', np.int64(60)) x4; ('5m', np.int64(20), '4h', np.int64(60)) x4; ('15m', np.int64(15), '24h', np.int64(40)) x3; ('5m', np.int64(15), '24h', np.int64(40)) x2
+
+### lock 12R: parameter plateau of the flip-level skip (saved $k = -sum of the flagged rows' base net; 144 configs = swing ['5m', '15m', '1h'] x break [5, 10, 15, 20] x keep ['1h', '4h', '24h'] x reach [20, 30, 40, 60])
+
+share of configs with positive saved dollars: L6M 88%, HOLD 88%, MID 94%, PRE 60%, X' 97%; all four of L6M/HOLD/PRE/X': 45%
+
+median saved $k by swing timeframe:
+| TF   |   L6M |   HOLD |   PRE |   X' |
+|:-----|------:|-------:|------:|-----:|
+| 15m  |  11.2 |   24   |  11.2 | 11.8 |
+| 1h   |   2.7 |    7.8 |  -0.2 |  2.9 |
+| 5m   |  43.5 |   44.4 |  42.8 | 37.1 |
+
+median saved $k by F:
+|   F |   L6M |   HOLD |   PRE |   X' |
+|----:|------:|-------:|------:|-----:|
+|   5 |   9.6 |   11.8 |  11.7 | 13.3 |
+|  10 |  10.3 |   10.1 |  21.2 | 32.5 |
+|  15 |  14.3 |   21.6 |  11.6 | 29.4 |
+|  20 |  11.4 |   15   |   2.6 | 19.4 |
+
+median saved $k by keep:
+| keep   |   L6M |   HOLD |   PRE |   X' |
+|:-------|------:|-------:|------:|-----:|
+| 1h     |   7.2 |    6.1 |  -0.2 |  5.2 |
+| 24h    |  14.9 |   24.3 |  -2.8 | 44.5 |
+| 4h     |  25.5 |   29.7 |  48.5 | 10.7 |
+
+median saved $k by D:
+|   D |   L6M |   HOLD |   PRE |   X' |
+|----:|------:|-------:|------:|-----:|
+|  20 |   7.7 |    4.7 |  12   | 17.8 |
+|  30 |   8.1 |    9   |   0.8 | 12.7 |
+|  40 |  12.3 |   21   |   0.5 | 18.9 |
+|  60 |  19.4 |   19.3 |  15.8 | 22   |
+
+reference config (5m, break 10, 4h, reach 40):
+| TF   |   F | keep   |   D |   n_flag |   L6M |   HOLD |   MID |   PRE |   X' |   hit_all |
+|:-----|----:|:-------|----:|---------:|------:|-------:|------:|------:|-----:|----------:|
+| 5m   |  10 | 4h     |  40 |      721 | 101.9 |  132.4 |  40.9 |  99.5 | 58.6 |     287.1 |
+
+**Walk-forward (12-month trailing choice of the whole configuration, apply to next month; 2024-01..2026-10; saved $k):**
+
+|                                                  |   L6M |   HOLD |   MID |   2024-25 |   all |
+|:-------------------------------------------------|------:|-------:|------:|----------:|------:|
+| walk-forward (skips only if trailing saving > 0) |  30.8 |   68.1 |  48.3 |      55.2 | 134.5 |
+| fixed reference config                           | 101.9 |  132.4 |  40.9 |      50.5 | 204.7 |
+| mean of all 144 configs (random choice)          |  23.5 |   28.2 |  14.4 |      12.7 |  42.7 |
+| best config in hindsight each month              | 196.3 |  365.7 | 111   |     545.2 | 864.3 |
+
+months with positive walk-forward saving: 20 / 31 active; fixed-config positive months 22 / 31
+
+most-chosen configs: ('5m', np.int64(10), '4h', np.int64(60)) x6; ('5m', np.int64(10), '4h', np.int64(20)) x5; ('5m', np.int64(20), '4h', np.int64(60)) x5; ('5m', np.int64(15), '4h', np.int64(60)) x4
+
+**Walk-forward (6-month trailing choice of the whole configuration, apply to next month; 2024-01..2026-10; saved $k):**
+
+|                                                  |   L6M |   HOLD |   MID |   2024-25 |   all |
+|:-------------------------------------------------|------:|-------:|------:|----------:|------:|
+| walk-forward (skips only if trailing saving > 0) | 101.5 |  147   |  56.8 |       2.1 | 126.8 |
+| fixed reference config                           | 101.9 |  132.4 |  40.9 |      73.6 | 227.8 |
+| mean of all 144 configs (random choice)          |  23.5 |   28.2 |  14.4 |       7.1 |  37.1 |
+| best config in hindsight each month              | 196.3 |  365.7 | 111   |     593.1 | 912.2 |
+
+months with positive walk-forward saving: 22 / 34 active; fixed-config positive months 24 / 34
+
+most-chosen configs: ('5m', np.int64(10), '4h', np.int64(20)) x4; ('5m', np.int64(10), '24h', np.int64(60)) x4; ('5m', np.int64(20), '4h', np.int64(60)) x3; ('5m', np.int64(15), '4h', np.int64(60)) x3
+
+## 5. Separate causal audit of the BT stream: 100 random rows (BT swing F10 4h/24h and F5 4h) recomputed from raw 1-s rows truncated at the end of the event bin with a 4-day warm-up: 100 / 100 reproduced, max level diff 0.
+
+
+## 6. Phase-averaged maxDD (Z3 estimator) for BT swing F10 4h D40 skip
+### Phase-averaged maxDD (Z3 estimator: lock-reset week key shifted -2..+2 label days, 5 phases; V13X) for BT swing F10 4h D40 skip, with 8 same-volume random-layer placebos (kind A) per phase
+
+**lock None**
+| window   |   cut_mean |   cut_min |   cut_max |   phases_pos |   placebo_mean |   placebo_sd_of_draw_means |   placebo_draws |   corrected |   rank |
+|:---------|-----------:|----------:|----------:|-------------:|---------------:|---------------------------:|----------------:|------------:|-------:|
+| L3M      |      0.232 |     0.19  |     0.267 |            5 |         -0.133 |                      0.176 |               8 |       0.365 |  0.111 |
+| L6M      |      0.013 |    -0.089 |     0.138 |            2 |          0.031 |                      0.225 |               8 |      -0.018 |  0.667 |
+| HOLD     |      0.013 |    -0.089 |     0.138 |            2 |         -0.013 |                      0.176 |               8 |       0.025 |  0.667 |
+| MID      |      0.131 |     0.041 |     0.168 |            5 |         -0.145 |                      0.26  |               8 |       0.277 |  0.333 |
+| PRE      |     -0.026 |    -0.042 |    -0.014 |            0 |         -0.053 |                      0.12  |               8 |       0.026 |  0.444 |
+| X'       |     -0.058 |    -0.172 |     0.057 |            2 |         -0.011 |                      0.24  |               8 |      -0.047 |  0.444 |
+
+**lock 12R**
+| window   |   cut_mean |   cut_min |   cut_max |   phases_pos |   placebo_mean |   placebo_sd_of_draw_means |   placebo_draws |   corrected |   rank |
+|:---------|-----------:|----------:|----------:|-------------:|---------------:|---------------------------:|----------------:|------------:|-------:|
+| L3M      |      0.17  |    -0.113 |     0.319 |            4 |         -0.032 |                      0.16  |               8 |       0.202 |  0.111 |
+| L6M      |     -0.004 |    -0.385 |     0.236 |            3 |         -0.046 |                      0.19  |               8 |       0.042 |  0.444 |
+| HOLD     |     -0.02  |    -0.385 |     0.483 |            3 |         -0.017 |                      0.1   |               8 |      -0.004 |  0.667 |
+| MID      |      0.016 |    -0.392 |     0.287 |            4 |         -0.073 |                      0.155 |               8 |       0.09  |  0.556 |
+| PRE      |     -0.068 |    -0.31  |     0.141 |            2 |         -0.086 |                      0.093 |               8 |       0.018 |  0.556 |
+| X'       |     -0.009 |    -0.193 |     0.225 |            2 |          0.012 |                      0.107 |               8 |      -0.02  |  0.556 |
+
+Reading: averaged over the 5 lock-reset phases the maxDD cut of the flip-level skip is +23% in L3M and +13% in MID (5 of 5 phases positive, lock None) but only +1% in L6M/HOLD, -3% in PRE and -6% in X': the lock-None L6M cut in section 1 (+14%) was one phase of the lock. With 12R the phases disagree in sign. The flip-level skip is therefore a DOLLAR / expectancy effect (section 3: flagged rows lose $277 per trade against +$182 for the rest in HOLD, saved dollars rank 0.005-0.02 in L6M and 0.01 in HOLD against 200-draw row-level placebos, positive in PRE and X' but with ranks 0.025-0.15 and 0.16-0.42), not a robust drawdown cut. Walk-forward (section 4): choosing the whole definition on the trailing 12 months keeps +77.5k (lock None) / +134.5k (12R) out of sample 2024-01..2026-10, above a random configuration (+34k / +43k) and below the in-sample reference (+153k / +205k); on the trailing 6 months it is +9.9k / +126.8k. Verdict: LEAD as a mean effect (candidate size modifier / skip for D7), not RISK-KEEP.
+
+
+## 7. Per-period consistency of the BT swing flip (saved $k = minus the flagged taken trades' base net)
+### lock None: saved dollars $k (= minus the flagged rows' base net) by calendar period; n flagged
+
+**year** (positive 4 / 4):
+| period   |   n_flag |   saved_k |   flag_mean |   unflag_mean |
+|:---------|---------:|----------:|------------:|--------------:|
+| (2023,)  |      123 |      50.4 |      -410   |          -4.6 |
+| (2024,)  |      301 |      24.7 |       -82.1 |         141.6 |
+| (2025,)  |      288 |      13.8 |       -48.1 |         159.6 |
+| (2026,)  |      320 |     120.7 |      -377.1 |         168.5 |
+
+**half-year** (positive 5 / 8):
+| period    |   n_flag |   saved_k |   flag_mean |   unflag_mean |
+|:----------|---------:|----------:|------------:|--------------:|
+| (2023, 1) |        0 |      -0   |       nan   |         -67.1 |
+| (2023, 2) |      123 |      50.4 |      -410   |          26.6 |
+| (2024, 1) |      156 |      40.7 |      -260.7 |         127.8 |
+| (2024, 2) |      145 |     -16   |       110.1 |         150.9 |
+| (2025, 1) |      145 |      55.1 |      -379.7 |         100.6 |
+| (2025, 2) |      143 |     -41.2 |       288.2 |         230.7 |
+| (2026, 1) |      190 |      72.2 |      -379.8 |         227.5 |
+| (2026, 2) |      130 |      48.5 |      -373.2 |          90.6 |
+
+**quarter** (positive 11 / 15):
+| period    |   n_flag |   saved_k |   flag_mean |   unflag_mean |
+|:----------|---------:|----------:|------------:|--------------:|
+| (2023, 2) |        0 |      -0   |       nan   |         -67.1 |
+| (2023, 3) |       51 |       1.3 |       -25.6 |         -62.4 |
+| (2023, 4) |       72 |      49.1 |      -682.3 |         129.4 |
+| (2024, 1) |       80 |       3.4 |       -42.5 |         101.9 |
+| (2024, 2) |       76 |      37.3 |      -490.4 |         153.2 |
+| (2024, 3) |       75 |      11.5 |      -153.8 |         174.1 |
+| (2024, 4) |       70 |     -27.5 |       392.8 |         122   |
+| (2025, 1) |       73 |      16.4 |      -224.5 |          12.7 |
+| (2025, 2) |       72 |      38.7 |      -537   |         171.7 |
+| (2025, 3) |       82 |      -7.7 |        93.3 |         224.6 |
+| (2025, 4) |       61 |     -33.6 |       550.1 |         234.7 |
+| (2026, 1) |       84 |      31.8 |      -379   |          72.4 |
+| (2026, 2) |      106 |      40.3 |      -380.3 |         354.9 |
+| (2026, 3) |       92 |      44.6 |      -484.4 |          71.3 |
+| (2026, 4) |       38 |       4   |      -104   |         148.1 |
+
+### lock 12R: saved dollars $k (= minus the flagged rows' base net) by calendar period; n flagged
+
+**year** (positive 4 / 4):
+| period   |   n_flag |   saved_k |   flag_mean |   unflag_mean |
+|:---------|---------:|----------:|------------:|--------------:|
+| (2023,)  |       86 |      67.8 |      -788.8 |         -53.5 |
+| (2024,)  |      175 |      65.5 |      -374.5 |          71.5 |
+| (2025,)  |      208 |      13.3 |       -63.9 |         191.8 |
+| (2026,)  |      208 |     151.7 |      -729.1 |         214.2 |
+
+**half-year** (positive 6 / 8):
+| period    |   n_flag |   saved_k |   flag_mean |   unflag_mean |
+|:----------|---------:|----------:|------------:|--------------:|
+| (2023, 1) |        0 |      -0   |       nan   |        -250.8 |
+| (2023, 2) |       86 |      67.8 |      -788.8 |          25.6 |
+| (2024, 1) |       87 |      41.9 |      -481.3 |         111.8 |
+| (2024, 2) |       88 |      23.7 |      -268.8 |          43.9 |
+| (2025, 1) |       86 |      38.6 |      -448.3 |         110.9 |
+| (2025, 2) |      122 |     -25.3 |       207   |         272.6 |
+| (2026, 1) |      136 |     106.3 |      -781.7 |         227.5 |
+| (2026, 2) |       72 |      45.3 |      -629.8 |         191.5 |
+
+**quarter** (positive 12 / 15):
+| period    |   n_flag |   saved_k |   flag_mean |   unflag_mean |
+|:----------|---------:|----------:|------------:|--------------:|
+| (2023, 2) |        0 |      -0   |       nan   |        -250.8 |
+| (2023, 3) |       26 |      20.7 |      -797.4 |         -61.8 |
+| (2023, 4) |       60 |      47.1 |      -785.1 |         101.1 |
+| (2024, 1) |       45 |      23.1 |      -512.9 |          60.5 |
+| (2024, 2) |       42 |      18.8 |      -447.5 |         167.9 |
+| (2024, 3) |       39 |      21.3 |      -546.3 |          48.2 |
+| (2024, 4) |       49 |       2.4 |       -48   |          40   |
+| (2025, 1) |       44 |      26.5 |      -601.7 |        -140.6 |
+| (2025, 2) |       42 |      12.1 |      -287.6 |         278.9 |
+| (2025, 3) |       74 |      -7.3 |        98.8 |         268.6 |
+| (2025, 4) |       48 |     -17.9 |       373.8 |         275.2 |
+| (2026, 1) |       50 |      51.6 |     -1031.9 |          53.5 |
+| (2026, 2) |       86 |      54.7 |      -636.3 |         334.8 |
+| (2026, 3) |       54 |      37.5 |      -694.3 |         141.3 |
+| (2026, 4) |       18 |       7.9 |      -436.3 |         352.8 |
+
+
+## 7. Is the flagged-row loss an artefact of the exit model? Library bracket 60/60 outcome of the 2,819 flagged candidate rows vs the rest (all 88,490 rows, net pts per contract = pts_lib - fill cost; hit = pts_lib > 0)
+| window   |   n_flag |   flag_mean_pts |   rest_mean_pts |   diff |   ci_lo |   ci_hi |   flag_hit |   rest_hit |   plc_mean |   rank |
+|:---------|---------:|----------------:|----------------:|-------:|--------:|--------:|-----------:|-----------:|-----------:|-------:|
+| L3M      |      249 |          -5.685 |          -1.515 | -4.169 | -12.513 |   4.264 |      0.482 |      0.519 |     -3.044 |  0.219 |
+| L6M      |      523 |          -5.278 |          -1.335 | -3.943 |  -9.393 |   1.791 |      0.486 |      0.521 |     -3.071 |  0.189 |
+| HOLD     |      983 |          -2.929 |          -1.12  | -1.809 |  -5.844 |   2.392 |      0.507 |      0.523 |     -2.016 |  0.309 |
+| MID      |      234 |           0.862 |          -1.911 |  2.772 |  -5.848 |  11.42  |      0.543 |      0.516 |     -2.069 |  0.787 |
+| PRE      |     1168 |          -3.464 |           0.489 | -3.953 |  -8.421 |   0.66  |      0.492 |      0.529 |     -2.862 |  0.369 |
+| X'       |      424 |          -7.426 |           1.099 | -8.524 | -15.817 |  -0.849 |      0.458 |      0.525 |     -3.23  |  0.033 |
+(rank = share of 300 same-count-per-day random row sets whose mean is at least as low as the flagged rows'; low = the flagged rows are worse than random rows in the library bracket too.)
+
+## 8. Overlap with the other mean-type lines (88,490 candidate rows): Jaccard of the flagged sets, share of BT rows inside the other set
+|                              |   BT swing flip  |   large print >= |   TCD TCD_ext D4 |   TCD TCD_div D4 |   TCD TCD_burst  |   Keltner upper  |
+|:-----------------------------|-----------------:|-----------------:|-----------------:|-----------------:|-----------------:|-----------------:|
+| BT swing flip D40            |            1     |            0.038 |            0.018 |            0.003 |            0.013 |            0.008 |
+| large print >=25 lots 4h D40 |            0.038 |            1     |            0.05  |            0.03  |            0.017 |            0.011 |
+| TCD TCD_ext D40              |            0.018 |            0.05  |            1     |            0.006 |            0.01  |            0.011 |
+| TCD TCD_div D40              |            0.003 |            0.03  |            0.006 |            1     |            0.004 |            0.008 |
+| TCD TCD_burst D40            |            0.013 |            0.017 |            0.01  |            0.004 |            1     |            0.004 |
+| Keltner upper 4h D20 (coded) |            0.008 |            0.011 |            0.011 |            0.008 |            0.004 |            1     |
+rows flagged: BT swing flip D40 2819, large print >=25 lots 4h D40 5110, TCD TCD_ext D40 15965, TCD TCD_div D40 3318, TCD TCD_burst D40 695, Keltner upper 4h D20 (coded) 1177
+share of BT rows also flagged by: large print >=25 lots 4h D40 10.3%, TCD TCD_ext D40 11.8%, TCD TCD_div D40 0.6%, TCD TCD_burst D40 1.6%, Keltner upper 4h D20 (coded) 1.1%
+
+### saved $k on V13X taken trades, lock None
+| other                        | set            |   L6M |   HOLD |    PRE |    X' |    n |
+|:-----------------------------|:---------------|------:|-------:|-------:|------:|-----:|
+| large print >=25 lots 4h D40 | BT alone       |  86.2 |   99.6 |   89.4 |  40.8 | 1032 |
+| large print >=25 lots 4h D40 | other alone    |  90.2 |  103.4 |   16.8 | -53.5 | 1198 |
+| large print >=25 lots 4h D40 | union          | 181.1 |  213.4 |   96.3 | -28.4 | 2114 |
+| large print >=25 lots 4h D40 | BT minus other |  91   |  110.1 |   79.5 |  25.1 |  916 |
+| large print >=25 lots 4h D40 | other minus BT |  94.9 |  113.8 |    6.9 | -69.2 | 1082 |
+| TCD TCD_ext D40              | BT alone       |  86.2 |   99.6 |   89.4 |  40.8 | 1032 |
+| TCD TCD_ext D40              | other alone    |  55.4 | -113.5 | -448.6 | 173.1 | 3569 |
+| TCD TCD_ext D40              | union          | 142.6 |  -17.2 | -353.4 | 209.6 | 4506 |
+| TCD TCD_ext D40              | BT minus other |  87.2 |   96.3 |   95.2 |  36.5 |  937 |
+| TCD TCD_ext D40              | other minus BT |  56.3 | -116.8 | -442.8 | 168.8 | 3474 |
+| TCD TCD_div D40              | BT alone       |  86.2 |   99.6 |   89.4 |  40.8 | 1032 |
+| TCD TCD_div D40              | other alone    | -57.6 |  -88.8 |  -20.1 |  22   |  627 |
+| TCD TCD_div D40              | union          |  28.6 |   10.8 |   66.4 |  61.9 | 1651 |
+| TCD TCD_div D40              | BT minus other |  86.2 |   99.6 |   86.5 |  39.9 | 1024 |
+| TCD TCD_div D40              | other minus BT | -57.6 |  -88.8 |  -23   |  21.1 |  619 |
+| TCD TCD_burst D40            | BT alone       |  86.2 |   99.6 |   89.4 |  40.8 | 1032 |
+| TCD TCD_burst D40            | other alone    |  -2.4 |  -12.8 |   11.5 | -44   |  161 |
+| TCD TCD_burst D40            | union          |  83.8 |   88   |  101.8 |  -3.9 | 1177 |
+| TCD TCD_burst D40            | BT minus other |  86.2 |  100.9 |   90.3 |  40.1 | 1016 |
+| TCD TCD_burst D40            | other minus BT |  -2.4 |  -11.6 |   12.4 | -44.8 |  145 |
+| Keltner upper 4h D20 (coded) | BT alone       |  86.2 |   99.6 |   89.4 |  40.8 | 1032 |
+| Keltner upper 4h D20 (coded) | other alone    |  13.4 |   19.8 |    0.7 |  -3.8 |  189 |
+| Keltner upper 4h D20 (coded) | union          |  96.4 |  116.2 |   84.7 |  28.8 | 1211 |
+| Keltner upper 4h D20 (coded) | BT minus other |  83   |   96.4 |   84   |  32.6 | 1022 |
+| Keltner upper 4h D20 (coded) | other minus BT |  10.1 |   16.6 |   -4.7 | -12   |  179 |
+
+### saved $k on V13X taken trades, lock 12R
+| other                        | set            |   L6M |   HOLD |    PRE |    X' |    n |
+|:-----------------------------|:---------------|------:|-------:|-------:|------:|-----:|
+| large print >=25 lots 4h D40 | BT alone       |  99.3 |  129.9 |  104.8 |  67.1 |  677 |
+| large print >=25 lots 4h D40 | other alone    |  37.4 |   43.5 |   98.3 | -39   |  757 |
+| large print >=25 lots 4h D40 | union          | 136.1 |  176.6 |  186.3 |  15.6 | 1357 |
+| large print >=25 lots 4h D40 | BT minus other |  98.7 |  133   |   88   |  54.6 |  600 |
+| large print >=25 lots 4h D40 | other minus BT |  36.8 |   46.7 |   81.5 | -51.5 |  680 |
+| TCD TCD_ext D40              | BT alone       |  99.3 |  129.9 |  104.8 |  67.1 |  677 |
+| TCD TCD_ext D40              | other alone    |  -6.9 | -136.3 | -159.3 | 138.2 | 2261 |
+| TCD TCD_ext D40              | union          |  93.6 |   -8.2 |  -77.4 | 197.7 | 2879 |
+| TCD TCD_ext D40              | BT minus other | 100.6 |  128.2 |   81.9 |  59.5 |  618 |
+| TCD TCD_ext D40              | other minus BT |  -5.7 | -138   | -182.2 | 130.6 | 2202 |
+| TCD TCD_div D40              | BT alone       |  99.3 |  129.9 |  104.8 |  67.1 |  677 |
+| TCD TCD_div D40              | other alone    | -32.7 |  -52.3 |   19.7 |  24.1 |  383 |
+| TCD TCD_div D40              | union          |  66.6 |   77.6 |  124.5 |  90.3 | 1056 |
+| TCD TCD_div D40              | BT minus other |  99.3 |  129.9 |  104.8 |  66.2 |  673 |
+| TCD TCD_div D40              | other minus BT | -32.7 |  -52.3 |   19.7 |  23.2 |  379 |
+| TCD TCD_burst D40            | BT alone       |  99.3 |  129.9 |  104.8 |  67.1 |  677 |
+| TCD TCD_burst D40            | other alone    |  -6.9 |   -7.4 |   12   | -23.3 |  124 |
+| TCD TCD_burst D40            | union          |  92.4 |  125.5 |  117.8 |  42.4 |  789 |
+| TCD TCD_burst D40            | BT minus other |  99.3 |  132.9 |  105.8 |  65.7 |  665 |
+| TCD TCD_burst D40            | other minus BT |  -6.9 |   -4.4 |   13   | -24.8 |  112 |
+| Keltner upper 4h D20 (coded) | BT alone       |  99.3 |  129.9 |  104.8 |  67.1 |  677 |
+| Keltner upper 4h D20 (coded) | other alone    |   6.5 |   10.3 |   17.5 |   7.6 |  127 |
+| Keltner upper 4h D20 (coded) | union          | 105.9 |  140.2 |  119.9 |  66.4 |  797 |
+| Keltner upper 4h D20 (coded) | BT minus other |  99.3 |  129.9 |  102.4 |  58.9 |  670 |
+| Keltner upper 4h D20 (coded) | other minus BT |   6.5 |   10.3 |   15.1 |  -0.7 |  120 |
+
+Reading of 7: the library bracket (60/60, all 88,490 candidate rows) has the same sign as the V13X realised result in 5 of 6 windows (flagged minus rest: L3M -4.2, L6M -3.9, HOLD -1.8, PRE -4.0, X' -8.5 pts per contract after fill cost; MID +2.8) but the 90% day-clustered CIs include zero in the recent windows (X' [-15.8,-0.8], rank 0.033, is the only one that excludes 0), so the flagged-row loss is NOT purely an artefact of the exit model but the library test alone would not detect it; the V13X realised dollars (with the TH-L2 cut, take lines and sizing) show it more strongly (-$277..-$425 per taken trade).
+Reading of 8: the flagged row sets barely overlap (Jaccard <= 0.04; 10% of BT rows are also large-print rows, 12% TCD_ext), and the saved dollars are close to additive with large prints (union L6M 181k, HOLD 213k; but large prints are negative in X', union X' -28k) and with the Keltner upper line (+10..+17k extra).

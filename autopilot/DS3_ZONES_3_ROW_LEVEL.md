@@ -1,3 +1,5 @@
+> **DEFECT BASE (V13X):** every cut, rank, lead and withdrawal on this page was computed on D7 V13X, which dropped the TH-L2 loss cut and take-line exits that came before the resting add filled (846 rows; BASE-4 fixed it in V13Y). Treat all numbers here as 'defect base (V13X)'; the V13Y re-run of the leads is in progress and will supersede them.
+
 # DS3_ZONES_3_ROW_LEVEL - the PATH / LOCK-INDEPENDENT test of zone lines at TRADE level (ZL-2)
 
 **Question.** Is a row with a FRESH line ahead (within D and the target) worse than a row without, in a way a random line would not reproduce? No combined lock, no weekly aggregation, no maxDD: each of the 88,490 V13X engine rows (core six books used for the statistics) is one observation. Outcome = the row's library 60/60 bracket trade: net points per contract = pts_lib - the exact fill cost (fill_cost_pts, outputs/FEES.md model), target / stop flags, MAE / MFE inside the trade (path highs/lows from entry to exit), 15-min forward return in the trade direction, mean of the worst 5% of rows. NOT applied: the V13X-specific exits (TH-L2 cut, take lines, 70/30 split, ER sizing, combined lock): they depend on the path and the lock, which this test deliberately leaves out. Effect = mean(with line) - mean(without) in pts per row (negative = rows with a line ahead are worse). CI = day-clustered bootstrap (400 resamples of label days). Placebo = random rows with the SAME COUNT PER DAY (100 draws); rank = share of placebo effects <= the real effect: **small rank = the real line is worse than random lines would be**; 1.00 = better than random.
@@ -106,3 +108,121 @@ Windows (label days): L6M 2026-05..10, HOLD 2025-11..2026-10, MID 2026-02-07..04
 | coded MAS|kc_up|4h D20 | -27.4 (64) | -33.9 (31) | -59.2 (6) | -1.6 (19) | -13.2 (11) | -32.3 (14) | -26.7 (8) | n/a (3) | -30.7 (16) | -34.5 (10) | -20.9 (80) |
 | dev day POC D40 | -8.8 (105) | -10.2 (73) | +14.1 (8) | -17.0 (35) | -9.7 (35) | +5.4 (64) | -18.6 (73) | +1.2 (10) | +9.3 (33) | -1.8 (35) | -36.8 (41) |
 | TCD_ext D30 | +1.7 (862) | -1.9 (726) | -9.6 (100) | -3.7 (492) | -2.4 (300) | -0.3 (438) | -3.2 (525) | +5.1 (70) | +2.5 (240) | -2.1 (454) | -0.6 (759) |
+
+---
+## ADDENDUM 2026-11-02 (follow-ups)
+**RANK CONVENTION IN THIS PAGE: rank <= 0.05 means the REAL line is WORSE than random lines; rank >= 0.95 means BETTER than random.** (Other pages in this program use rank = share of placebos the real CUT beats; for a cut, high = good; here the effect is the row outcome, so low = bad.) Rank = share of the 100 placebo effects (random rows, same count per day) that are <= the real effect.
+
+## 1. Heat table: effect with-line minus without-line, rank in brackets (▼▼ rank <= 0.05 worse than random, ▼ <= 0.20, ▲ >= 0.80, ▲▲ >= 0.95)
+Column groups: LIBRARY = library 60/60 bracket net pts per contract per row (all core-book rows); V13X NONE = V13X realised net $ per TAKEN row, per-book locks only; V13X 12R = same with the combined 12R lock.
+| line | fire | LIB L6M | LIB HOLD | LIB MID | LIB PRE | LIB X' | V13X-none L6M | V13X-none HOLD | V13X-none MID | V13X-none PRE | V13X-none X' | V13X-12R L6M | V13X-12R HOLD | V13X-12R MID | V13X-12R PRE | V13X-12R X' |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| coded MAS|ich_kijun|1h D20 | 3.0% | +2.6 (0.63) | -2.8 (0.32) | -2.3 (0.68) | -6.3 (0.10) ▼ | -5.8 (0.28) | +428 (0.69) | +20 (0.51) | -124 (0.50) | -216 (0.34) | +21 (0.80) | +400 (0.60) | -234 (0.15) | -752 (0.08) | -92 (0.60) | +9 (0.74) |
+| coded PDX|day|M D20 | 1.5% | +13.2 (0.88) ▲ | +3.8 (0.54) | -9.5 (0.18) ▼ | -2.9 (0.52) | -6.4 (0.10) ▼ | +964 (0.84) | +440 (0.71) | +20 (0.62) | -82 (0.60) | -45 (0.50) | +984 (0.79) | +435 (0.79) | +109 (0.62) | +125 (0.62) | +62 (0.55) |
+| coded CRT|M|4h D20 | 1.6% | +1.4 (0.84) ▲ | -2.6 (0.57) | -7.5 (0.26) | -5.9 (0.23) | -1.5 (0.62) | -316 (0.22) | -229 (0.24) | -179 (0.47) | -181 (0.48) | -182 (0.45) | -399 (0.32) | -314 (0.30) | -255 (0.46) | -76 (0.84) | -153 (0.49) |
+| coded MAS|kc_up|4h D20 | 1.6% | -24.3 (0.00) ▼▼ | -24.5 (0.00) ▼▼ | -29.9 (0.00) ▼▼ | -0.5 (0.56) | +9.6 (0.95) ▲▲ | -1124 (0.12) | -747 (0.07) | +298 (0.42) | -120 (0.12) | +102 (0.49) | -1158 (0.18) | -778 (0.14) |  | -414 (0.12) | -114 (0.40) |
+| coded PIV|cam_H3|rth D20 | 2.7% | +10.5 (0.99) ▲▲ | +5.2 (0.97) ▲▲ | +8.7 (0.81) ▲ | -6.0 (0.03) ▼▼ | -5.3 (0.25) | +89 (0.55) | +99 (0.68) | +556 (0.76) | -343 (0.23) | -70 (0.40) | -104 (0.49) | +150 (0.73) | +565 (0.76) | -289 (0.36) | +128 (0.65) |
+| coded FIB|ote62_up|15m D20 | 2.8% | -2.2 (0.49) | -5.0 (0.21) | -6.2 (0.24) | -3.1 (0.58) | -1.4 (0.86) ▲ | +9 (0.75) | -21 (0.71) | -644 (0.14) | -69 (0.66) | +133 (0.74) | -445 (0.31) | -219 (0.42) | -435 (0.31) | +48 (0.72) | +51 (0.69) |
+| coded FIB|ote705_up|15m D20 | 2.8% | -4.9 (0.20) ▼ | -7.2 (0.04) ▼▼ | -10.6 (0.16) ▼ | -5.9 (0.53) | -0.5 (0.90) ▲ | -63 (0.37) | -199 (0.29) | -380 (0.43) | -95 (0.85) | -138 (0.58) | -36 (0.45) | -243 (0.34) | -538 (0.50) | -132 (0.82) | -24 (0.75) |
+| coded FIB|ote79_up|15m D20 | 3.0% | +4.2 (0.99) ▲▲ | +0.8 (0.96) ▲▲ | +5.6 (0.87) ▲ | -2.8 (0.94) ▲ | -0.7 (0.99) ▲▲ | -178 (0.38) | -157 (0.51) | -113 (0.59) | -131 (0.88) | +24 (0.83) | -47 (0.47) | -100 (0.47) | -351 (0.40) | -163 (0.60) | +68 (0.91) |
+| coded OTE62 D30 | 3.9% | -4.7 (0.28) | -7.2 (0.01) ▼▼ | -12.1 (0.02) ▼▼ | -3.0 (0.52) | -2.1 (0.83) ▲ | +21 (0.76) | -34 (0.78) | -435 (0.37) | -105 (0.53) | +168 (0.88) | -345 (0.41) | -241 (0.37) | -141 (0.60) | +21 (0.73) | +183 (0.90) |
+| coded any of 8 D20 | 15.0% | -0.0 (0.76) | -2.8 (0.36) | -3.6 (0.50) | -4.4 (0.26) | -1.2 (0.95) ▲▲ | +18 (0.64) | -32 (0.55) | -102 (0.58) | -221 (0.43) | +53 (0.95) ▲▲ | -118 (0.36) | -112 (0.43) | -218 (0.34) | -193 (0.65) | +85 (0.93) |
+| TCD_ext D30 | 14.6% | -3.3 (0.00) ▼▼ | -1.0 (0.21) | +0.3 (0.48) | +0.2 (0.65) | -2.1 (0.53) | -344 (0.01) ▼▼ | -139 (0.09) | +62 (0.47) | +198 (0.93) | -273 (0.02) ▼▼ | -181 (0.30) | +39 (0.75) | +186 (0.70) | +113 (0.65) | -285 (0.11) |
+| TCD_ext D40 | 17.0% | -3.3 (0.02) ▼▼ | -1.8 (0.07) ▼ | -1.8 (0.26) | -0.0 (0.88) ▲ | -2.0 (0.78) | -290 (0.00) ▼▼ | -79 (0.18) | +39 (0.49) | +258 (0.96) ▲▲ | -337 (0.02) ▼▼ | -236 (0.05) ▼▼ | -28 (0.44) | +41 (0.46) | +144 (0.81) | -344 (0.10) |
+| large prints >=25 4h D40 | 5.5% | -5.4 (0.01) ▼▼ | -5.4 (0.00) ▼▼ | -5.8 (0.02) ▼▼ | -2.8 (0.15) ▼ | -1.5 (0.39) | -650 (0.00) ▼▼ | -463 (0.02) ▼▼ | -251 (0.23) | -159 (0.15) | +230 (0.72) | -571 (0.08) | -399 (0.04) ▼▼ | -244 (0.24) | -497 (0.01) ▼▼ | +371 (0.90) |
+| large prints >=25 1h D40 | 3.8% | -6.3 (0.01) ▼▼ | -5.4 (0.00) ▼▼ | -5.2 (0.00) ▼▼ | -0.8 (0.25) | -1.7 (0.14) ▼ | -919 (0.00) ▼▼ | -628 (0.02) ▼▼ | -518 (0.18) | -113 (0.11) | +489 (0.84) | -758 (0.02) ▼▼ | -499 (0.01) ▼▼ | -393 (0.14) | -526 (0.01) ▼▼ | +684 (0.95) ▲▲ |
+| large prints >=50 4h D40 | 1.3% | +3.1 (0.80) ▲ | -0.8 (0.36) | -6.2 (0.08) ▼ | -7.7 (0.01) ▼▼ | +3.2 (0.84) ▲ | -416 (0.18) | -292 (0.26) | -148 (0.50) | -392 (0.15) | +305 (0.82) | -643 (0.22) | -263 (0.20) | +128 (0.50) | -961 (0.01) ▼▼ | +402 (0.82) |
+| TLQ SES asia D40 | 6.1% | -9.5 (0.07) ▼ | -0.2 (0.97) ▲▲ | +17.8 (1.00) ▲▲ | -1.8 (0.99) ▲▲ | -0.2 (1.00) ▲▲ | -431 (0.06) | +95 (0.93) | +879 (1.00) ▲▲ | -190 (0.52) | -78 (0.68) | -400 (0.16) | -193 (0.56) | +463 (0.88) | -343 (0.26) | -28 (0.47) |
+| dev day POC D40 | 1.6% | -10.5 (0.02) ▼▼ | -9.1 (0.03) ▼▼ | +5.7 (0.86) ▲ | +3.2 (1.00) ▲▲ | +11.3 (1.00) ▲▲ | -327 (0.30) | -194 (0.47) | -317 (0.45) | -42 (0.63) | -168 (0.63) | -857 (0.05) ▼▼ | -615 (0.11) | -661 (0.35) | -14 (0.61) | -222 (0.79) |
+| dev POC day+sess D40 | 2.9% | -4.2 (0.28) | -8.0 (0.00) ▼▼ | -12.3 (0.02) ▼▼ | +1.5 (0.99) ▲▲ | +5.3 (1.00) ▲▲ | -229 (0.39) | -276 (0.30) | -515 (0.31) | -34 (0.54) | -45 (0.69) | -717 (0.06) | -605 (0.04) ▼▼ | -719 (0.11) | -98 (0.56) | -121 (0.79) |
+| TPF hvn2 sess D40 | 2.8% | -10.8 (0.02) ▼▼ | -4.7 (0.22) | +3.9 (0.88) ▲ | -3.6 (0.75) | +1.1 (0.83) ▲ | -417 (0.26) | -390 (0.20) | -778 (0.12) | -424 (0.06) | +183 (0.68) | -420 (0.11) | -391 (0.18) | -663 (0.29) | -86 (0.32) | +440 (0.91) |
+| TPF vah sw15 D20 (missing line 1) | 2.8% | +0.4 (0.46) | -0.4 (0.40) | +4.4 (0.85) ▲ | -5.1 (0.21) | -4.8 (0.24) | -192 (0.47) | -78 (0.55) | +183 (0.68) | -226 (0.44) | -71 (0.51) | -92 (0.45) | +27 (0.72) | +302 (0.77) | -120 (0.75) | -325 (0.12) |
+| TPF lvn1 sw1h D20 (missing line 2) | 1.7% | +8.8 (0.99) ▲▲ | +4.2 (0.99) ▲▲ | -1.3 (0.67) | -6.5 (0.22) | -2.5 (0.42) | -264 (0.52) | -309 (0.42) | -34 (0.41) | -468 (0.53) | +219 (0.78) | -787 (0.08) | -691 (0.10) | -207 (0.36) | -851 (0.12) | +363 (0.82) |
+| TPF hvn0 sw1h D20 (missing line 3) | 2.2% | -0.8 (0.70) | -7.7 (0.18) ▼ | +7.6 (0.97) ▲▲ | -2.8 (0.89) ▲ | -1.6 (0.77) | -166 (0.34) | -197 (0.30) | +504 (0.80) | -133 (0.67) | +73 (0.60) | -350 (0.28) | -289 (0.32) | +406 (0.68) | -413 (0.55) | +59 (0.49) |
+| dev LVN D40 (volume heavy) | 44.7% | -2.2 (0.54) | -1.8 (0.92) ▲ | -0.2 (0.96) ▲▲ | -3.1 (0.99) ▲▲ | -0.5 (1.00) ▲▲ | -256 (0.01) ▼▼ | -213 (0.03) ▼▼ | +31 (0.72) | -110 (0.86) | +13 (0.87) | -437 (0.00) ▼▼ | -295 (0.01) ▼▼ | -87 (0.44) | -115 (0.58) | +22 (0.74) |
+| TPF session/day lines D40 (volume heavy) | 31.1% | -2.5 (0.07) ▼ | -4.1 (0.01) ▼▼ | -3.1 (0.70) | -1.7 (0.98) ▲▲ | -3.7 (0.92) ▲ | -45 (0.62) | -85 (0.63) | -335 (0.17) | -313 (0.21) | -253 (0.41) | -82 (0.64) | -106 (0.55) | -265 (0.18) | -244 (0.50) | -213 (0.61) |
+| swing pools 15m D20 (TLQ SWG 15m) | 23.8% | +3.5 (1.00) ▲▲ | +3.0 (1.00) ▲▲ | +5.6 (1.00) ▲▲ | +0.6 (1.00) ▲▲ | -1.3 (0.94) ▲ | +10 (0.71) | +90 (0.94) | +16 (0.57) | -0 (0.73) | -75 (0.23) | +179 (0.96) ▲▲ | +117 (0.92) | -225 (0.32) | -30 (0.54) | -394 (0.00) ▼▼ |
+| TCD divergence D40 | 4.1% | +8.9 (0.97) ▲▲ | +2.7 (0.72) | -14.7 (0.00) ▼▼ | +4.1 (0.63) | -2.2 (0.01) ▼▼ | +278 (0.82) | +246 (0.89) | +1006 (0.89) | -18 (0.39) | -144 (0.37) | +217 (0.70) | +149 (0.71) | +1133 (0.86) | -245 (0.16) | -211 (0.47) |
+| Z2 CRT|M|4h D30 (fresh; fw2 not reproduced) | 2.4% | -0.3 (0.78) | -3.2 (0.47) | -8.3 (0.17) ▼ | -3.3 (0.60) | -3.6 (0.26) | -258 (0.19) | -356 (0.05) ▼▼ | -626 (0.16) | -298 (0.20) | -241 (0.46) | -188 (0.33) | -331 (0.17) | -610 (0.13) | -228 (0.64) | -249 (0.36) |
+| S4a EQL tight 5m D40 (EQH or EQL) | 6.0% | -7.4 (0.05) ▼▼ | -1.5 (0.42) | -2.7 (0.54) | -1.6 (0.99) ▲▲ | +0.5 (0.98) ▲▲ | -207 (0.34) | +82 (0.66) | +409 (0.87) | -122 (0.65) | -25 (0.67) | -349 (0.40) | +19 (0.63) | +329 (0.84) | -109 (0.68) | -15 (0.48) |
+| S4a FIB|ote705_up|5m D40 | 3.7% | +2.2 (0.99) ▲▲ | +0.5 (0.97) ▲▲ | +2.0 (0.90) ▲ | -3.2 (0.42) | -1.5 (0.62) | -67 (0.69) | -116 (0.56) | -197 (0.42) | -199 (0.43) | +68 (0.78) | -113 (0.65) | -123 (0.67) | -86 (0.65) | -90 (0.83) | -132 (0.53) |
+| S4a PRF|vwap|day D20 | 2.7% | +2.3 (0.98) ▲▲ | -2.0 (0.86) ▲ | -15.2 (0.02) ▼▼ | -5.6 (0.34) | -11.3 (0.00) ▼▼ | -73 (0.60) | +4 (0.63) | +52 (0.60) | -94 (0.70) | -277 (0.14) | -308 (0.40) | -246 (0.26) | -527 (0.17) | -249 (0.49) | -344 (0.33) |
+| S4a FIB|ote705_dn|15m D40 | 5.0% | +4.5 (1.00) ▲▲ | +1.6 (0.99) ▲▲ | +2.6 (0.92) ▲ | -2.0 (0.98) ▲▲ | +6.2 (1.00) ▲▲ | -45 (0.82) | -76 (0.67) | -37 (0.54) | -182 (0.83) | +331 (0.91) | -157 (0.59) | -101 (0.52) | -36 (0.36) | -340 (0.54) | -5 (0.73) |
+| S4a FIB|ote705_up|5m D20 | 2.4% | +0.9 (0.84) ▲ | -3.2 (0.61) | -0.8 (0.84) ▲ | -2.6 (0.40) | -1.1 (0.74) | -54 (0.59) | -33 (0.57) | +134 (0.67) | -144 (0.53) | +57 (0.80) | -85 (0.57) | +60 (0.82) | +353 (0.79) | -111 (0.63) | -80 (0.60) |
+| S4a FIB|pd50|5m D40 | 2.8% | -5.7 (0.09) ▼ | -3.7 (0.37) | +5.4 (0.99) ▲▲ | +0.8 (0.99) ▲▲ | -4.1 (0.53) | -248 (0.14) | -304 (0.03) ▼▼ | -243 (0.26) | -265 (0.21) | -213 (0.30) | -466 (0.10) | -367 (0.08) | -136 (0.35) | -164 (0.53) | -464 (0.12) |
+| S4a ARR|FVG|10m D20 | 7.2% | -2.1 (0.24) | -2.2 (0.22) | -6.0 (0.19) ▼ | -1.9 (0.91) ▲ | -1.4 (0.67) | -267 (0.09) | -159 (0.16) | -44 (0.42) | -71 (0.80) | +8 (0.79) | -368 (0.17) | -153 (0.33) | +9 (0.43) | +68 (0.84) | -150 (0.46) |
+| S4a ARR|iFVG_CE|10m D40 | 13.7% | -3.1 (0.18) ▼ | -1.1 (0.37) | -2.3 (0.13) ▼ | -3.0 (0.87) ▲ | -0.9 (1.00) ▲▲ | -196 (0.28) | -106 (0.33) | -187 (0.25) | +129 (0.98) ▲▲ | -149 (0.57) | -409 (0.02) ▼▼ | -275 (0.09) | -562 (0.08) | +55 (0.91) | -126 (0.41) |
+| S4a SES|nyam_H|prev D40 | 3.2% | +17.2 (1.00) ▲▲ | +10.5 (1.00) ▲▲ | +14.8 (0.99) ▲▲ | -1.9 (0.19) ▼ | +0.7 (0.11) ▼ | +301 (0.85) | -93 (0.38) | -75 (0.31) | -332 (0.18) | -36 (0.21) | +108 (0.64) | +33 (0.53) | +444 (0.60) | -263 (0.39) | -419 (0.01) ▼▼ |
+| S4a PRF|vwap|day D40 | 4.5% | -0.8 (0.78) | -3.1 (0.32) | -10.4 (0.02) ▼▼ | -1.5 (0.88) ▲ | -12.0 (0.00) ▼▼ | -81 (0.51) | -162 (0.22) | -363 (0.16) | -162 (0.48) | -142 (0.24) | -276 (0.28) | -392 (0.06) | -651 (0.04) ▼▼ | -276 (0.31) | -286 (0.29) |
+| S4a ARR|iFVG_CE|15s D20 | 39.5% | +0.2 (1.00) ▲▲ | +0.0 (1.00) ▲▲ | +1.9 (0.98) ▲▲ | -1.5 (1.00) ▲▲ | +0.5 (1.00) ▲▲ | -60 (0.43) | -58 (0.35) | +88 (0.68) | -137 (0.39) | -9 (0.73) | -121 (0.33) | -111 (0.20) | -18 (0.58) | -314 (0.01) ▼▼ | -175 (0.41) |
+| ZL-1 PUL k3 1h ahead D20 | 1.0% | +5.7 (0.93) ▲ | +7.3 (0.99) ▲▲ | +13.9 (0.98) ▲▲ | -3.8 (0.21) | -2.5 (0.28) | -13 (0.39) | +262 (0.90) | +855 (0.92) | -86 (0.45) | -1366 (0.15) | -269 (0.16) | +62 (0.43) | +469 (0.72) | +221 (0.81) | -2024 (0.09) |
+| ZL-1 PUL k3 1h ahead D30 | 1.1% | +5.7 (0.96) ▲▲ | +6.4 (0.99) ▲▲ | +10.4 (0.95) ▲▲ | -3.5 (0.29) | -2.5 (0.35) | -63 (0.37) | +151 (0.71) | +564 (0.75) | -8 (0.57) | -1366 (0.17) | -132 (0.35) | +77 (0.52) | +258 (0.61) | +171 (0.69) | -2024 (0.11) |
+| ZL-1 PUL k3 4h ahead D20 | 1.5% | +0.0 (0.53) | +2.9 (0.80) ▲ | +8.1 (0.96) ▲▲ | -2.4 (0.37) | -15.7 (0.02) ▼▼ | -227 (0.14) | +17 (0.52) | +422 (0.90) | -290 (0.22) | -1588 (0.09) | -483 (0.02) ▼▼ | -152 (0.23) | +120 (0.66) | -173 (0.41) | -2095 (0.03) ▼▼ |
+| ZL-1 PUL k3 4h ahead D30 | 1.8% | -2.1 (0.19) ▼ | +0.1 (0.43) | +1.9 (0.74) | -0.1 (0.79) | -20.4 (0.01) ▼▼ | -309 (0.02) ▼▼ | -94 (0.24) | +137 (0.80) | -195 (0.38) | -1794 (0.02) ▼▼ | -476 (0.02) ▼▼ | -161 (0.27) | +86 (0.76) | -202 (0.42) | -2260 (0.03) ▼▼ |
+| ZL-1 PUL k3 24h ahead D20 | 2.3% | -0.1 (0.45) | +2.2 (0.76) | +6.5 (0.91) ▲ | -0.9 (0.74) | -19.4 (0.00) ▼▼ | -198 (0.14) | +37 (0.51) | +501 (0.92) | -195 (0.37) | -1214 (0.10) | -366 (0.03) ▼▼ | -102 (0.28) | +153 (0.79) | -50 (0.76) | -1802 (0.07) |
+| ZL-1 PUL k3 24h ahead D30 | 3.1% | -1.0 (0.35) | +1.3 (0.68) | +6.0 (0.96) ▲▲ | -0.1 (0.89) ▲ | -14.1 (0.00) ▼▼ | -284 (0.08) | -78 (0.44) | +236 (0.72) | -106 (0.54) | -1383 (0.06) | -419 (0.04) ▼▼ | -162 (0.31) | +95 (0.80) | -99 (0.73) | -1822 (0.02) ▼▼ |
+
+## 2. The pattern: worse than random in the recent windows (L6M or HOLD rank <= 0.10) but better than random in PRE or X' (rank >= 0.80), library outcome
+| line | best recent rank | best old rank | effects by window |
+|---|---|---|---|
+| coded MAS|kc_up|4h D20 | 0.00 | 0.95 | L6M -24.3 ; HOLD -24.5 ; MID -29.9 ; PRE -0.5 ; X' +9.6 |
+| coded FIB|ote705_up|15m D20 | 0.04 | 0.90 | L6M -4.9 ; HOLD -7.2 ; MID -10.6 ; PRE -5.9 ; X' -0.5 |
+| coded OTE62 D30 | 0.01 | 0.83 | L6M -4.7 ; HOLD -7.2 ; MID -12.1 ; PRE -3.0 ; X' -2.1 |
+| TCD_ext D40 | 0.02 | 0.88 | L6M -3.3 ; HOLD -1.8 ; MID -1.8 ; PRE -0.0 ; X' -2.0 |
+| TLQ SES asia D40 | 0.07 | 1.00 | L6M -9.5 ; HOLD -0.2 ; MID +17.8 ; PRE -1.8 ; X' -0.2 |
+| dev day POC D40 | 0.02 | 1.00 | L6M -10.5 ; HOLD -9.1 ; MID +5.7 ; PRE +3.2 ; X' +11.3 |
+| dev POC day+sess D40 | 0.00 | 1.00 | L6M -4.2 ; HOLD -8.0 ; MID -12.3 ; PRE +1.5 ; X' +5.3 |
+| TPF hvn2 sess D40 | 0.02 | 0.83 | L6M -10.8 ; HOLD -4.7 ; MID +3.9 ; PRE -3.6 ; X' +1.1 |
+| TPF session/day lines D40 (volume heavy) | 0.01 | 0.98 | L6M -2.5 ; HOLD -4.1 ; MID -3.1 ; PRE -1.7 ; X' -3.7 |
+| S4a EQL tight 5m D40 (EQH or EQL) | 0.05 | 0.99 | L6M -7.4 ; HOLD -1.5 ; MID -2.7 ; PRE -1.6 ; X' +0.5 |
+| S4a FIB|pd50|5m D40 | 0.09 | 0.99 | L6M -5.7 ; HOLD -3.7 ; MID +5.4 ; PRE +0.8 ; X' -4.1 |
+Reading: a line whose rows were worse than random in 2025-26 and better than random in 2023-25 is a regime-flipping line, not a stable support/resistance; the 12R maxDD cuts of the day-POC and TLQ-asia cells belong to this group.
+
+## 3. Is the large-print / Keltner-upper effect carried by a handful of rows? (library net pts per contract)
+Columns: mean effect; 5%/10% trimmed-mean effect; effect after dropping the 10 worst rows with the line; share of the total effect carried by those 10 rows; share carried by the 3 worst days; stop rate with / without. (The median effect is not informative: the bracket outcome is bimodal, stop about -61 / target about +58.)
+| line | window | rows with line (days) | mean | trim5 | trim10 | without 10 worst rows | top-10 rows share | top-3 days share | stop rate with / without |
+|---|---|---|---|---|---|---|---|---|---|
+| large prints >=25 4h D40 | L6M | 529 (119) | -5.4 | -6.0 | -6.7 | -4.4 | 21% | 43% | 0.53 / 0.48 |
+| large prints >=25 4h D40 | HOLD | 986 (228) | -5.4 | -6.0 | -6.7 | -4.8 | 11% | 24% | 0.52 / 0.48 |
+| large prints >=25 4h D40 | PRE | 1067 (296) | -2.8 | -3.1 | -3.5 | -2.2 | 21% | 42% | 0.46 / 0.46 |
+| large prints >=25 4h D40 | X' | 714 (184) | -1.5 | -1.7 | -1.9 | -0.7 | 57% | 109% | 0.41 / 0.42 |
+| large prints >=25 1h D40 | L6M | 373 (112) | -6.3 | -6.9 | -7.8 | -4.8 | 26% | 49% | 0.54 / 0.48 |
+| large prints >=25 1h D40 | HOLD | 700 (215) | -5.4 | -6.0 | -6.8 | -4.6 | 16% | 30% | 0.52 / 0.48 |
+| large prints >=25 1h D40 | PRE | 762 (265) | -0.8 | -0.9 | -1.0 | +0.0 | 102% | 184% | 0.44 / 0.46 |
+| large prints >=25 1h D40 | X' | 473 (164) | -1.7 | -1.9 | -2.1 | -0.4 | 78% | 134% | 0.41 / 0.42 |
+| coded MAS|kc_up|4h D20 | L6M | 70 (24) | -24.3 | -26.6 | -30.4 | -18.3 | 35% | 57% | 0.69 / 0.48 |
+| coded MAS|kc_up|4h D20 | HOLD | 131 (50) | -24.5 | -27.0 | -30.6 | -21.6 | 19% | 34% | 0.65 / 0.48 |
+| coded MAS|kc_up|4h D20 | PRE | 378 (109) | -0.5 | -0.6 | -0.7 | +1.1 | 302% | 967% | 0.42 / 0.46 |
+| coded MAS|kc_up|4h D20 | X' | 271 (75) | +9.6 | +10.6 | +12.0 | +12.3 | -24% | -60% | 0.29 / 0.42 |
+| dev day POC D40 | L6M | 150 (74) | -10.5 | -11.6 | -13.1 | -7.0 | 38% | 54% | 0.57 / 0.48 |
+| dev day POC D40 | HOLD | 256 (130) | -9.1 | -10.0 | -11.3 | -7.0 | 26% | 49% | 0.55 / 0.48 |
+| dev day POC D40 | PRE | 308 (142) | +3.2 | +3.5 | +3.9 | +5.3 | -63% | -167% | 0.43 / 0.46 |
+| dev day POC D40 | X' | 229 (79) | +11.3 | +12.5 | +14.0 | +14.7 | -24% | -62% | 0.37 / 0.42 |
+| TLQ SES asia D40 | L6M | 384 (105) | -9.5 | -10.6 | -11.9 | -8.2 | 16% | 48% | 0.57 / 0.48 |
+| TLQ SES asia D40 | HOLD | 786 (204) | -0.2 | -0.2 | -0.2 | +0.6 | 480% | 1396% | 0.47 / 0.48 |
+| TLQ SES asia D40 | PRE | 1390 (284) | -1.8 | -2.0 | -2.3 | -1.4 | 25% | 96% | 0.48 / 0.45 |
+| TLQ SES asia D40 | X' | 860 (181) | -0.2 | -0.2 | -0.2 | +0.5 | 385% | 1210% | 0.42 / 0.42 |
+| coded OTE62 D30 | L6M | 369 (113) | -4.7 | -5.2 | -5.9 | -3.2 | 35% | 49% | 0.51 / 0.48 |
+| coded OTE62 D30 | HOLD | 667 (217) | -7.2 | -7.9 | -8.9 | -6.4 | 13% | 24% | 0.53 / 0.48 |
+| coded OTE62 D30 | PRE | 787 (290) | -3.0 | -3.4 | -3.8 | -2.3 | 26% | 57% | 0.49 / 0.45 |
+| coded OTE62 D30 | X' | 506 (169) | -2.1 | -2.3 | -2.6 | -0.9 | 58% | 111% | 0.45 / 0.42 |
+Reading: large prints >=25 lots: the HOLD/L6M effect (-5.4) survives the 5-10% trim (-6.0 to -6.7) and the removal of the 10 worst rows (-4.4 to -4.8; those 10 rows carry 11-26% of it), and spreads over 119-228 days: not a handful of rows. It is a shift of the stop rate (+4 to +5 pp: 0.52-0.54 vs 0.48). Keltner-upper D20: 70 rows in L6M on 24 days, -24 pts/row, still -18 after dropping the 10 worst rows (35% share) and 57% of it on 3 days -> concentrated; HOLD (131 rows, 50 days) -21.6 after the 10 worst. Treat the Keltner effect as real but small-sample.
+
+Overlap of the row sets (HOLD window, core rows): Jaccard index of the 9 main lines (full matrix in out/zl/rows_overlap_jaccard.csv and rows_overlap_share.csv):
+| | large prints >=25 4h | large prints >=25 1h | MAS|kc_up|4h | dev day POC | TLQ SES asia | OTE62 D30 | TCD_ext D30 | TPF hvn2 sess |
+|---|---|---|---|---|---|---|---|---|
+| large prints >=25 4h D40 | 1.00 | 0.71 | 0.00 | 0.01 | 0.01 | 0.03 | 0.04 | 0.02 |
+| large prints >=25 1h D40 | 0.71 | 1.00 | 0.00 | 0.01 | 0.01 | 0.01 | 0.03 | 0.01 |
+| MAS|kc_up|4h D20 | 0.00 | 0.00 | 1.00 | 0.00 | 0.01 | 0.01 | 0.01 | 0.00 |
+| dev day POC D40 | 0.01 | 0.01 | 0.00 | 1.00 | 0.00 | 0.02 | 0.01 | 0.02 |
+| TLQ SES asia D40 | 0.01 | 0.01 | 0.01 | 0.00 | 1.00 | 0.00 | 0.10 | 0.00 |
+| OTE62 D30 | 0.03 | 0.01 | 0.01 | 0.02 | 0.00 | 1.00 | 0.02 | 0.04 |
+| TCD_ext D30 | 0.04 | 0.03 | 0.01 | 0.01 | 0.10 | 0.02 | 1.00 | 0.01 |
+| TPF hvn2 sess D40 | 0.02 | 0.01 | 0.00 | 0.02 | 0.00 | 0.04 | 0.01 | 1.00 |
+The large-print rows and the Keltner-upper rows share 0% / 0% of each other (share of row set A inside B: large 4h in kc_up 0%, kc_up in large 4h 1%): they are largely different rows, so the two effects are not one effect counted twice.
+
+## 4. Leads of the other agents (masks read from their files; not recomputed from definitions)
+Z2 CRT|M|4h D30 (coded-line distance, fresh; the "fw2" freshness-within-2h rule is not reproduced), S4a EQL tight 5m D40 and the S4a finalists with their own D (s4_feats ahead-fresh distance <= min(D, target)), ZL-1 PUL k3 1h/4h/24h ahead D20/D30 (feats.npz ahf). **Not run: ZL-1 BT swing flip, ZL-3 G2, S5 sA40/sopen40: their row masks were not found in files I could read; owners can send a boolean mask over the 88,490 rows (d-row order of out/zl/d_rows.npz) and `rows_extra.py` runs it in two minutes.** Results are in the heat table (rows starting "Z2", "S4a", "ZL-1").
+
+## 5. V13X realised outcome vs library bracket
+The V13X realised $ per taken row (after TH-L2 cut, take lines, 70/30 split, ER sizing, lots, locks) comes from the engine record (`rec[book][trades]` mapped through R[perm] to the d-row; captured in dump_v13x_rows.py): 18,716 taken rows in the per-book-lock frame, 12,193 with the combined 12R lock (core six books). The two outcome families are shown side by side in the heat table; an effect that has the same sign and rank in LIB and V13X-none is a property of the entry; one that appears only in V13X is produced by the exits / sizing / lock.
