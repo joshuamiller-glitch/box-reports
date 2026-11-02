@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 15:22Z 11-02 (t+170.4 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 15:52Z 11-02 (t+170.9 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 59% min 32% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 10.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
-Updated 2026-11-02T15:22:43Z. Box: CPU 39.0%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 47% min 16% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 5.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
+Updated 2026-11-02T15:52:52Z. Box: CPU 16.5%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -258,7 +258,7 @@ Updated 2026-11-02T15:22:43Z. Box: CPU 39.0%, slots busy 13/32, queue 0. Cores p
 | ZL1 | ? | 0 | 0 / 0 | none | prereg |
 | ZL3 | ? | 0 | 0 / 0 | none | prereg |
 | ZONES3 | ? | 0 | 0 / 0 | none | prereg |
-| unattributed | - | 10.0 | - | - | - |
+| unattributed | - | 5.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -269,13 +269,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-02T15:24Z
+## TREND (TL) update 2026-11-02T15:55Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-02T15:17:22Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-02T15:47:22Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -1051,3 +1051,4 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - (wall 15:13Z) S4a T-SIZER prereg DRAFT (autopilot/SIZER_PREREG_DRAFT.md, not hashed): 2,523 nominal cells (s1 1,066; s2 1,316; s3 141); top-8 pool picked on PRE and X' only with volume curve subtracted. Causal rank arrays /mnt/l2/l2vast/ds3_sizer/ranks_book.parquet (88,490 x 115, audit 0 violations). Open item: exact live ER mapping (engine: .30 binary x.5/x1.5; overnight log suggests finer x.25..x1.5) needs DS7 code (see QUESTION in MORNING_FLAGS.md); exit-bracket cells await BASE-4 bracket override.
 - (wall 15:20Z) BASE-4 bracket override in V13T_LIVE: run_v13t_live({'bracket': (stop_pts, target_pts)}) arrays over 88,490 rows (NaN=default), default reproduces base at 0.0000$, 5 worked rows match single-row inject; stress stop45/target45: $3,482k -> $2,607k. LIMITS: only tighter-or-equal brackets (wider raises error: the 'high-ER wider stop/target' half of the sizer-on-exits idea cannot be scored without longer path data); entry reference = signal price (PE 45-s delayed entries approximate); zone ahead and confirmation gates not re-evaluated. Docs: EXIT_API.md, SIZER_HOOK_TESTS.md (CORRECTED blocks supersede).
 - (wall 15:23Z) Z1 T-SIZER prep (SIZER_BRACKET_PREP.md, prereg addendum 5 sha eb4bfae9...): bracket-by-ER on V13T_LIVE DEAD: low-ER tighter side (ER<=.15/.30, stop/target 45/30, lots unchanged or scaled 60/stop) nothing beyond PA9 band in any window (best ER<=.30 -> 45/45: MID +28%% but L6M -25%%, mean -4.7k/wk); high-ER wider side untestable on official hook (indicative only: much worse). One cell beyond band (ER<=.15 -> 45/45 scaled lots, rebuild): PRE +26%% (PA +18%%) but L6M -8%%, X' -62%%; placebo ranks .10-.17 chance. Sizer x zone overlap (candidate rows): ER ladder halves 54.4%% of rows, zone layer 14.2%%; 57.2%% of zone rows are also ER x0.5 (chance 54.4%%); 42.8%% of zone rows are ER x1.5 (net x0.75); both -> quarter lots; overlap 77-80%% in NY-AM/PM. Entry features missing in feat_signal: onr, eff120. Wider-bracket kernel would be a new BASE-4 task.
+- (wall 15:48Z) ZL-2 harness limits closed (band = tl_band_final.csv; split table book x session x tercile; PA placebos 3/9-phase) + FRAMES table: -86k not a cut on V13T_LIVE; likely the absolute ladder maxDD on old V13Y-like base; see MORNING_FLAGS.md. Ladder vs random: mean ranks .91-.99 (L6M/HOLD/PRE), L6M maxDD cut rank .03-.09 (deeper than random).
