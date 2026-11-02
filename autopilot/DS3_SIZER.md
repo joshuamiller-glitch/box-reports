@@ -914,3 +914,96 @@ Frames for P4020 (arm 40 at lots <= 4 plus arm 20 at 11 lots), each vs its own b
 
 ### What the formula really does (one paragraph)
 The formula is two opposite moves that happen to net to about zero P&L. (1) It tightens the 11-lot PE rows (ER >= 0.30 on the biggest PE size) from arm 30 to arm 20: this alone (I20) gives PA PRE +4%, X' +5%, episode-dropped L6M +20% / PRE +24%, but costs $488k of total P&L (mean -2.5k/-3.9k per week, inside the MDE); it is the part that buys the carrying-episode drawdown cut and it is the same mechanism as the dead fixed arm 25 (which cost $474k). (2) It loosens all rows of 1-4 lots (all six books; PE 2- and 4-lot rows, KB/MV/PB/HM/SM 1-3) from 30 to 40: this alone (I40) cuts no drawdown (PA PRE 0%, X' -4%) but earns +$319k, i.e. it pays for the tightening. The 29 at 6 lots is nearly irrelevant (I29: PA PRE +1%, X' 0%, P&L -$45k, almost all HM/SM rows; PE-only I29 does nothing). The two big parts are not additive: I40+I20 (P4020) gives PA PRE +10%, X' +7%, dropped +25%/+30% at -$15k P&L, vs the sum of singles of PA PRE +4%; adding the 29 at 6 lots (the full formula F) adds PA PRE +1 point and X' +5 points for -$45k. P4020 beats all three placebos on PA PRE, PA X' and the dropped cuts (ranks 0.010-0.04, except A on L6M-dropped 0.139); I20 alone is only informative against C (ranks 0.21/0.39 on PA, 0.02/0.04 on dropped), i.e. its PA gain is chance level and its dropped-episode gain is real but expensive. The fixed rules PE-R1n (25 at 11 lots) and PE-R2n (22 at 11 lots) are the same tightening without the loosened small-lot rows: they beat all three placebos on the episode-dropped cuts (ranks 0.010-0.099) but are at chance on PA PRE/X' (ranks 0.14-0.68) and lose $244k/$474k, which is why they die. So the contradiction resolves as: the fixed rule died because it only had the costly half; the formula's PRE/X' result needs both halves, and the loosening at 1-4 lots is what makes the tightening affordable. Caveats: P4020 is selected after seeing the decomposition (best of 7 isolating cells, not adjusted in the null), PA L6M is only +2% (below the PA9 band .165), kfix X' is +1%, the loosening depends on lots 1-4 being 90%+ of the trade count, and the walk-forward on X/clip from the stress test is unchanged (formula parameters still unstable).
+
+
+## SIZER_S3X_STRESS addendum 7: pricing the selection of P4020, out-of-time, neighbours (2026-11-02T22:01Z) POST-HOC, no PASS, Shadow only
+Prereg l2vast/ds3/prereg/SIZER_S3X_Z1_addendum7_prereg.md sha256 e410702e84b0dc732b66adfc9fe9ea77e1f0287f3d62fa03b10045562d7e81d7 (DECISIONS.md before scoring). Spec: autopilot/SIZER_LOT_ARM_SPEC.md.
+(1) Selection-aware null, 100 shuffled-day worlds, whole procedure repeated (best of 16 grid cells by S1 -> decomposition into arm-value groups -> every pair, 4.7 pairs per world on average -> max over pairs). Real: best grid cell by S1 is the formula cell (X=3500, ALL, no ER filter), its pairs P4029 -0.001, P4020 0.085, P2920 0.040 -> real M1 = S1(P4020) = 0.085, M2 = S2(P4020) = 0.251. Null M1 (S1 = mean of PA PRE and PA X' cuts): median 0.007, 95th 0.090, max 0.101 -> rank 0.119. Null M2 (S2 = min of L6M and PRE cuts with carrying episodes dropped): median 0.055, 95th 0.146, max 0.181 -> rank 0.010. So after pricing the selection the PA score is NOT below the 0.10 rank used in the flag rule (0.119), and the episode-dropped score still is (0.010).
+(2) Rolling out-of-time (nothing fitted; weekly-cumulative maxDD restarted at each period start, ISO weeks, base vs P4020):
+| period | days | base maxDD $ | P4020 maxDD $ | d maxDD $ | d % | d P&L $ | days with a change |
+|---|---|---|---|---|---|---|---|
+| 2023 | 195 | 72805 | 67051 | -5754 | -7.9% | +80697 | 190 |
+| 2024 | 262 | 155639 | 150300 | -5339 | -3.4% | +10833 | 255 |
+| 2025 | 261 | 160713 | 111996 | -48718 | -30.3% | -135300 | 258 |
+| 2026 | 217 | 170420 | 166273 | -4147 | -2.4% | +28962 | 216 |
+| --- quarters --- | | | | | | | |
+| 2023Q2 | 65 | 49771 | 67051 | +17281 | +34.7% | +5985 | 64 |
+| 2023Q3 | 65 | 66067 | 58383 | -7684 | -11.6% | -15068 | 64 |
+| 2023Q4 | 65 | 72805 | 41339 | -31467 | -43.2% | +89780 | 62 |
+| 2024Q1 | 65 | 62500 | 74257 | +11757 | +18.8% | +29608 | 63 |
+| 2024Q2 | 65 | 84950 | 84806 | -144 | -0.2% | -40542 | 61 |
+| 2024Q3 | 66 | 155639 | 150300 | -5339 | -3.4% | +16129 | 66 |
+| 2024Q4 | 66 | 27007 | 33696 | +6689 | +24.8% | +5639 | 65 |
+| 2025Q1 | 64 | 160713 | 111996 | -48718 | -30.3% | +64793 | 63 |
+| 2025Q2 | 65 | 85440 | 74564 | -10877 | -12.7% | -194428 | 64 |
+| 2025Q3 | 66 | 92770 | 97014 | +4244 | +4.6% | -6266 | 66 |
+| 2025Q4 | 66 | 46313 | 37133 | -9180 | -19.8% | +601 | 65 |
+| 2026Q1 | 64 | 130381 | 60740 | -69641 | -53.4% | +81414 | 63 |
+| 2026Q2 | 65 | 36551 | 36349 | -202 | -0.6% | -108954 | 65 |
+| 2026Q3 | 66 | 170420 | 166273 | -4147 | -2.4% | +31584 | 66 |
+| 2026Q4 | 22 | 93094 | 69702 | -23392 | -25.1% | +24918 | 22 |
+| --- halves --- | | | | | | | |
+| first half to 20250115 | 468 | 155639 | 150300 | -5339 | -3.4% | +135653 | 455 |
+| second half from 20250116 | 467 | 170420 | 166273 | -4147 | -2.4% | -150461 | 464 |
+| all | 935 | 170420 | 166273 | -4147 | -2.4% | -14808 | 919 |
+Reading: the drawdown improvement is not stable by calendar: yearly maxDD changes -7.9 / -3.4 / -30.3 / -2.4% (2023..2026), quarterly it is worse in 2023Q2 (+35%), 2024Q1 (+19%), 2024Q4 (+25%), 2025Q3 (+5%) and better in 8 of the 15 quarters; the whole-period ISO maxDD change is only -2.4% ($170,420 -> $166,273). P&L: +$136k in the first half (to 2025-01-15), -$150k in the second half, -$15k overall (2025Q2 -$194k, 2026Q2 -$109k, 2023Q4 +$90k, 2026Q1 +$81k). The two halves have maxDD -3.4% / -2.4%, i.e. the cut is small in both and carried by a few quarters (2025Q1, 2026Q1, 2023Q4).
+(3) Neighbours (arm at lots <= 4 x arm at 11 lots; 6-lot rows live 30; P4020 = 40/20):
+| arm lots<=4 | arm 11 lots | PA cut L6M / HOLD / MID / PRE / X' | episode dropped L6M / PRE | S1 | mean d L6M / PRE $k/wk (MDE) | P&L d $k |
+|---|---|---|---|---|---|---|
+| 35 | 18 | +11% / +11% / +2% / +11% / +10% | +16% / +29% | 0.110 | -2.1 (16.4) / -2.9 (7.0) | -320 |
+| 35 | 20 | -1% / -1% / -1% / +7% / +6% | +14% / +22% | 0.067 | -2.0 (13.4) / -3.2 (6.7) | -353 |
+| 35 | 22 | -18% / -18% / +9% / +1% / -3% | +9% / +17% | -0.012 | -5.6 (13.6) / -3.1 (6.5) | -373 |
+| 35 | 25 | -7% / -7% / +9% / -8% / +1% | +6% / +13% | -0.036 | -2.9 (10.5) / -2.0 (5.0) | -163 |
+| 40 | 18 | +18% / +18% / +19% / +13% / +10% | +28% / +36% | 0.119 | -2.3 (15.8) / -1.2 (7.7) | +23 |
+| 40 | 20 | +2% / +2% / +12% / +10% / +7% | +25% / +30% | 0.085 | -2.7 (13.3) / -1.7 (7.3) | -15 |
+| 40 | 22 | -14% / -14% / +29% / +3% / -5% | +3% / +25% | -0.007 | -7.7 (13.0) / -1.6 (7.0) | -99 |
+| 40 | 25 | -18% / -18% / +31% / -5% / -2% | -1% / +22% | -0.036 | -5.5 (10.6) / -0.3 (5.6) | +119 |
+| 45 | 18 | +20% / +20% / +14% / +20% / +1% | -10% / +43% | 0.109 | -3.6 (15.6) / -1.4 (8.1) | -45 |
+| 45 | 20 | -2% / -2% / +18% / +16% / -8% | -12% / +36% | 0.043 | -4.9 (12.8) / -1.9 (7.7) | -118 |
+| 45 | 22 | -15% / -15% / +27% / +11% / -6% | -17% / +30% | 0.023 | -8.2 (12.3) / -1.6 (7.3) | -122 |
+| 45 | 25 | -20% / -20% / +27% / +2% / -25% | -21% / +28% | -0.116 | -5.7 (10.7) / -0.5 (6.0) | +91 |
+Reading: not a symmetric plateau. In the 11-lot arm it is a ramp: 18 is as good or better than 20 on PA PRE/X' (40/18: +13%/+10%, dropped +28/+36%, P&L +$23k), 22 and 25 lose the PA gain (PA L6M -14..-18%) and keep only the PRE episode-dropped cut. In the lots<=4 arm 35, 40, 45 all keep PRE (+7..+20%) but 35 costs more P&L (-$320k..-$373k at 11-lot arm 18-22 versus -$15k..+$23k for 40), 45 flips L6M-dropped to -10..-21%. The cell is on a ramp whose good side is a tighter 11-lot arm (18-20) with the 40 at small lots; it is not robust to a looser 11-lot arm.
+Verdict: the flag stays LEAD with qualifiers but is downgraded: selection-aware null rank on the PA score 0.119 (> 0.10), out-of-time quarterly improvement unstable (8 of 15 quarters), neighbours a ramp. The episode-dropped score (rank 0.010) remains.
+
+- 2026-11-02T22:01Z Z1 CORRECTION to the line above and DS3_SIZER.md addendum 7: P4020 quarterly maxDD is better than base in 11 of 15 quarters (worse in 4: 2023Q2 +35%, 2024Q1 +19%, 2024Q4 +25%, 2025Q3 +5%), NOT 8 of 15. The out-of-time reading is therefore: mostly positive by quarter, but small overall (-2.4% whole period) and carried by 2023Q4, 2025Q1, 2026Q1; P&L swings +136k / -150k between halves. Downgrade rests on selection-aware PA rank 0.119 and the ramp neighbours.
+
+### SIZER_S1B family-wise null UPDATE (Z2, 22:10Z): 62 worlds (target 100 NOT reached; 3 engine workers, ~12-20 worlds/h)
+Worlds = ER permuted within book x session x side (115 KB/PE cells rerun per world, same clean test). Real: 8 clean KB/PE cells, best single-cell score 20.8, C1 cuts L6M 29.8 / PRE 19.3. Null: mean clean cells 4.35, P(n_clean >= 8) = 0.145, P(>=1 clean) = 0.89; null best-cell score median 21.6, p90 32.2, P(>= real 20.8) = 0.45; null combined-rule (55 worlds with a rule) L6M cut median 30.8 / p90 55.1, PRE median 16.6 / p90 26.6; P(L6M >= 29.8) = 0.45, P(L6M and PRE both >= real) = 0.32. Family-wise p about 0.15-0.45 on every statistic: the clean cells and the combined KB+PE rule are indistinguishable from a signal-free sizer. Conclusion stands: combined rule not supported, ER sizer KEEP, nothing is a PASS, B02 still a PROXY. Limitation: 62 (not 100) worlds, null restricted to the 115 KB/PE cells (not all 616), permuted-ER rather than literal shuffled-day multiplier worlds (day-shuffled and AR(1) placebos for C1 were run separately at 100 draws each, ranks .13-.45).
+
+## PA9 phase audit across sizer programs + S1B ledger append (Z2, 2026-11-02 ~23:45Z)
+Test (code s1b/pa_verify.py): one cell (PE london t0.25 0.5/1.0) run at engine phases 0,1,2,3,4,-3 through each program's own harness; compare daily cores to phase 0.
+- ts mode (run_v13t_ts; lock none, lock R scaled only upward): engine phase is a NO-OP (max core diff 0 $ for 4 of 6 phases, 1,249 $ at phases 2/-3 = one leg). Weekly maxDD under the SAME core but a shifted SCORING week key varies strongly (L6M 113k..136k over s=0..4), so a real PA9 needs the scoring shift (s1b_pa2.py).
+- single mode (run_v13t_live / V13T_LIVE, lock reset on week key): engine phase is real, period 5 (phases -4..+4 give 5 distinct runs; 1 and -4, 2 and -3 etc. identical), core diffs 27-32k $.
+Verdict per program (what the PA9 column in each report is):
+- S1 (S4a, sizer_harness_s4a, run_v13t_live): REAL lock-reset PA9 (5 distinct phases, each counted ~twice).
+- S2 (S4b, sizer_harness_s2 default HARNESS_MODE ts, S.H.pa9): NOT real; the PA9 columns (e.g. in the DS3_SIZER.md S4b section, top_pa9) equal the phase-0 result. top_pa9.pkl in sizer_s2ts is also an empty file (0 bytes).
+- S2V (ZL-1, sizer_s2v harness, default ts): NOT real; all 29 pa9_*.pkl have SD 0.0 on every window (and presumably hybpa9_/meanpa9_ likewise).
+- Q1 (ZL-2): s2 stage in ts mode has SD 0 and the report says so ("moot on this base"); the real lock-reset PA9 is the s2s stage in single mode (SD 3-7 L6M), already used in section 9. OK.
+- Q2/Q3/Q4 (ZL-2): placebos at phases=(0,) and no PA9 claim; nothing to correct.
+- S1B (Z2): was not real, corrected above (scoring-shift PA9 in pa2.pkl).
+Note the two PA9 notions are different: single-mode PA9 = lock-reset phase (a real mechanism, engine lock), ts-mode scoring-shift PA9 = weekly bucket phase. Owners of S2 and S2V should either relabel their PA9 columns "single-phase (phase 0)" or recompute with the scoring-week-key shift (F.WK = WK0[clip(arange(ND)+s)], s=-4..4 on one engine run; see s1b/s1b_pa2.py).
+Ledger: SIZER_S1B appended to DEAD_CELLS.csv after dead_lookup (6 representative specs, 0 hits, log out/zones3/s2/s1b_deadlookup.log): 616 cells + C1/C2 = 618 rows (program SIZER_S1B, side sizing, tier SCORED; val_L6M/HOLD/PRE/X = single-phase cut %, val_other = MID; genuine PA9 in `extra` for the 40 screened cells and C1/C2). B02-related cells (E|R3, fam E) carry the PROXY label in the report, key names only.
+
+
+## CORRECTION BLOCK (ZL-1, 2026-11-03 ~00:30Z): GENUINE PA9 for SIZER_S2V, SIZER_S2V_HYBRID and SIZER_S2V_MEAN (replaces the 'PA9' columns above)
+Cause (Z2 audit): on the ts base the engine week key does nothing, so the 29 + 3 + 3 harness `pa9_*`/`hybpa9_*`/`meanpa9_*` results equalled phase 0 (SD 0.0 on every window). The statements 'N cells beat the PA9 band', every 'PA9' column and every 'passes PA9/no-harm' above are therefore SINGLE-PHASE band comparisons. Recomputed here as in s1b_pa2.py: one engine run per cell (phase 0, ts base, sequential rounding), SCORING week key shifted -4..+4 (index shift, clipped), mean cut over the 9 shifts vs the live ladder shifted the same way; band = V13T PA9 band, flip 2% (L6M 18.8, HOLD 18.2, MID 21.2, PRE 7.8, X' 14.5), flip 5% (21.9 / 20.5 / 32.2 / 9.9 / 18.2); pass2 = L6M > band and (PRE > band or X' > band); no-harm = PA9 PRE, MID, X' not below -band2; carry-dropped = PA9 with the carrying weeks dropped (L6M 2026 W27-38, PRE 2024 W34-51). Cells: 29 S2V finalists, all 28 HYBRID, all 17 MEAN. File: ds3_zones3_new/sizer_s2v/patrue_all.csv (+ patrue_*.pkl; SD and positive-shift counts per window); code zones3/sizer_s2v/s2v_patrue.py, s2v_patrue_an.py. The placebo ranks above are PHASE-0 placebos (the harness placebos default phases=(0,)) and are unchanged; they are not affected by this bug.
+**Counts, corrected.** S2V (29 finalists): 9 beat the band in L6M and PRE (was 27 of the 99 at phase 0, all inside the 29); 9 pass2; 19 no-harm; 8 both-band and no-harm (was 10 eligible + both + no-harm at phase 0). HYBRID (28): 13 pass2, 10 no-harm, 4 both-band and no-harm. MEAN (17): 2 pass2, 13 no-harm, 1 both-band and no-harm. SD across the 9 shifts is 1-11 points (L6M), so the earlier 'SD 0.0' was spurious; all cells have the cut positive in 9 of 9 shifts (L6M and PRE) except as listed in the csv.
+**S2V rows that change (phase-0 -> genuine PA9; L6M / PRE / MID / X'):**
+| cell | phase-0 (old 'PA9') | genuine PA9 | pass2 old -> new | no-harm old -> new |
+|--|--|--|--|--|
+| VT 0.75 FULL (INV) | 42.7 / 19.8 / 31.0 / -29.8 | 35.1 / 30.5 / 41.4 / -0.9 (carry-dropped 45.8 / 20.0) | T -> T | F -> **T** |
+| VT 0.75 DOWN (INV) | 43.5 / 24.1 / 31.4 / -26.5 | 35.6 / 32.5 / 40.7 / -5.2 (45.8 / 24.1) | T -> T | F -> **T** |
+| VT 1.0 DOWN (INV) | 43.4 / 15.7 / 16.2 / -14.4 | 28.9 / 19.8 / 17.8 / -6.2 (34.0 / 15.7) | T -> T | T -> T |
+| VT 1.0 FULL (INV) | 58.9 / 16.1 / 28.5 / -27.6 | 39.9 / 22.2 / 21.6 / -15.5 (33.6 / 13.0) | T -> T | F -> F (X' -15.5 vs -14.5) |
+| rv_ratio_30m SIG DOWN DIR (the 'flag' cell) | 35.5 / 16.1 / 14.5 / 18.4 | 20.9 / 11.7 / 18.1 / 23.4 (carry-dropped **5.5 / 4.8**) | T -> T | T -> T |
+| dayrange_atrd SIG DOWN DIR | 38.9 / 17.9 / -5.1 / 18.1 | 29.1 / 21.5 / 14.0 / 27.5 (12.1 / 24.2) | T -> T | T -> T |
+| atr_ratio_5m SIG DOWN DIR | 49.3 / 16.0 / 35.8 / 16.7 | 29.3 / 19.8 / 25.7 / 22.6 (20.9 / 12.7) | T -> T | T -> T |
+| atr_ratio_5m LIN FULL DIR / LIN DOWN DIR | 39.3 / 13.9 and 39.3 / 11.7 | 18.6 / 16.5 and 18.6 / 17.5 | T -> **F** (L6M 18.6 < 18.8) | T -> T |
+| atr_ratio_5m L3 FULL DIR | 45.6 / 9.0 / 21.3 / 19.0 | 15.0 / 15.3 | T -> **F** | T -> T |
+| rv_ratio_30m LIN DOWN DIR, LIN FULL DIR, SIG FULL DIR | 23.8, 23.3, 32.7 (L6M) | 9.2, 8.4, 17.7 | T -> **F** (all three) | T -> T |
+| dayrange_atrd SIG DOWN INV, SIG FULL INV; range_so_far_ratio SIG DOWN INV | L6M 28.4 / 32.2 / 26.6 | 16.3 / 14.8 / 15.6 | T -> **F** | F -> F (X' -17 to -24) |
+| rv_ratio_30m L3 FULL INV, SIG FULL INV, SIG DOWN INV, L3 DOWN INV; pk_ratio_20d SIG FULL INV | no-harm F | no-harm **T** (X' -14.2 .. +4.8 with L6M 8-15, pass2 F) | F -> F | F -> **T** |
+All 17 rows with a changed pass2 or no-harm flag are in patrue_all.csv (old_* columns). Reading: the genuine PA9 lowers most L6M cuts (the phase-0 L6M cut was carried by one alignment of the week key), lifts the X' value of the vol-target cells (-26..-30 -> -1..-6, so they are no longer 'harm' in X'), and keeps the DIR cells passing but with a much thinner carry-dropped cut (rv_ratio_30m SIG DOWN DIR: 5.5 / 4.8).
+**HYBRID (x1.5 quiet-vol cap, all books) genuine PA9, top rows:** VT th=1.0 X=0.75: 45.2 / 25.1 / MID 11.9 / X' -21.9 (was 63.0 / 23.3 / -48.8), pass2 T, no-harm F; th=1.1 X=0.75: 44.3 / 32.9 / 14.6 / -21.2 (was 64.2 / 33.5 / -45.4), no-harm F; th=1.25 X=0.75: 29.2 / 31.8 / 17.1 / **-13.5** (was 44.3 / 36.0 / -33.0), pass2 T, **no-harm T (X' -13.5 vs -14.5)**, carry-dropped 29.3 / 21.1; th=1.1 X=1.0: 36.4 / 25.1 / 9.4 / -13.9, no-harm T (carry-dropped 18.4 / 14.8); th=1.0 X=1.0: 29.0 / 20.1 / 7.9 / -13.7, no-harm T (35.6 / 11.3); rv_ratio_30m q .33 X=1.0: 32.0 / 22.1 / 5.8 / -10.0, no-harm T. So the statement 'EVERY hybrid cell harms X' is a phase-0 statement: at genuine PA9 four hybrid cells are no-harm (X' -10 to -14, at the band edge). They are still lot reductions (total -353k to -828k, mean lots 2.5-2.8; phase-0 placebo ranks L6M .30-.93, PRE .34-.62 as reported) and still fail the same-or-better-mean standard.
+**MEAN (PE-only / mild / compensation) genuine PA9:** PE a=1.0 X=0.75: 32.9 / 11.6 / 20.3 / -14.9 (was 52.7 / 7.6 / -34.2; now passes PRE band, no-harm F by 0.4); PE a=0.9 X=0.75: 30.0 / 17.9 / 22.8 / -10.5, pass2 T, no-harm T, but carry-dropped L6M **-8.5** (so not 'beats with carrying week dropped'), PRE mean -4.4k/wk; CALL a=1.0 (exposure-failed): 28.2 / 6.8 / 8.1 / -26.7, pass2 F. The other MEAN cells have L6M PA9 <= 16.6 (fail the band). Conclusions of the MEAN section (no strict mean-keeping cut) are unchanged.
+**FLAGS, re-judged (prereg rule: beats the ladder on L6M and PRE with the carrying week dropped, no-harm at PA9, eligible on mean; cells are NOT mean-keeping: mean lots 2.3-2.5, total -0.8 to -1.0M):** still met by rv_ratio_30m SIG DOWN DIR (weaker: carry-dropped PA9 5.5 / 4.8 instead of 'cut 10.4 / 32.8'), dayrange_atrd SIG DOWN/FULL DIR, atr_ratio_5m SIG DOWN/FULL DIR; NEWLY met by the vol-target cells VT 0.75 DOWN / FULL (PA9 35.6 / 32.5 / 40.7 / -5.2 and 35.1 / 30.5 / 41.4 / -0.9; carry-dropped 45.8 / 24.1 and 45.8 / 20.0; total -822k / -791k; phase-0 placebo ranks L6M .32-.41 and PRE .30-.46, i.e. a lot reduction) and by VT 1.0 DOWN (28.9 / 19.8 / 17.8 / -6.2; carry-dropped 34.0 / 15.7). The old statement that the vol-target FULL cells fail no-harm is a phase-0 result. MORNING_FLAGS.md gets a corrected line; the formal flag is still caveated (lot cut, placebo ranks, equal-risk PRE mean below the ladder 14.8-16.1k vs 17.8k, best-of-99).
