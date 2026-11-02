@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 23:15Z 11-01 (t+154.3 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 23:45Z 11-01 (t+154.8 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 34% min 2% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 24.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
-Updated 2026-11-01T23:15:23Z. Box: CPU 86.3%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 51% min 2% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 11.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
+Updated 2026-11-01T23:45:32Z. Box: CPU 70.7%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -253,7 +253,7 @@ Updated 2026-11-01T23:15:23Z. Box: CPU 86.3%, slots busy 13/32, queue 0. Cores p
 | ZEN | ? | 0 | 0 / 176 | none | prereg |
 | ZL1 | ? | 0 | 0 / 0 | none | prereg |
 | ZONES3 | ? | 0 | 0 / 0 | none | prereg |
-| unattributed | - | 24.0 | - | - | - |
+| unattributed | - | 11.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -264,13 +264,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-01T23:23Z
+## TREND (TL) update 2026-11-01T23:53Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-01T23:17:16Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-01T23:47:16Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -946,3 +946,4 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 [2026-11-01T21:55Z] REDO-8 BATCH 1: DIPENTRY 38 ledger rows extended and TIED (stack $/wk; ticks tables, grid1/grid2 rebuilt with the program's own de_* code on the REDO tape; all 2072 cells bit-identical on the 44,370 old trades; rows tie at float32 rounding 1e-4). UF-PROFIT c1 6, c2 32, c3 14, c4 16 = 68 ledger rows extended and TIED in pts/trade (cycle arrays DM/DN/DL/FIRE bit-identical on old trades for all 376/222/225/190 cells; thresholds identical; c3 walk-forward LightGBM old draws replayed). Caveat: 6 c4 ledger rows also carry a lock-engine stack $ not rebuilt. Vectors D8__*; code recent_wins_redo/D8/. Descriptive mean pts old L3M -> new L3M: UF-PROFIT c1 0.309 -> 0.004, c2 0.235 -> 0.084, c3 0.139 -> 0.026, c4 0.097 -> -0.038. No PASS claims.
 [2026-11-01T22:10Z] REDO-8 BATCH 2: THPC3 (profit) 20 of 20 ledger rows extended and TIED bit-exact (btab, cusum adaptive/fixed, HMM K3 1m/2w); old L3M 0.531 -> new 0.757 pts/trade (18/20 positive). UF-PROFIT c4 lock-engine stack $ (6 ledger rows): port onto REDO-5 stackx engine did NOT tie (12,600 vs 14,948 etc.) -> pts delivered, stack $ declared cannot-extend (missing: legacy UF stack object dvg base_B + e2 Ctx on REDO). Report autopilot/REDO_DIPENTRY8.md. DIPENTRY mean $/wk old L3M +30,130 -> -8,820 (10/38 positive). No PASS claims.
 [2026-11-01T23:04:56Z] ZL-1 (ZONES-3 L2 book) RESUMED on NEW cap: 96 book streams rebuilt to 20261030 (events from 1-s L2 tables incl. 2026-10 ext parts, path ds3_g2_redo; old stream rows identical, index space compatible) at /mnt/l2/l2vast/ds3_zones3_new/zl1/streams_book (link l2vast/ds3/out/zl_new). Scoring prereg sha dc117cd3...1f3e. Pass 1 = 114 AHEAD cells (skip/half, D20/40) on D7 v1.2, 2 workers x ~4 GB (box avail ~21 GB, below the 40 GB spawn rule so only 2). Load: 2 procs. Early fact: book levels are short-lived, fresh-ahead fire rate is 0.02-10% of rows (ICE R2N30 0.5-0.8%, PUL k3 1.4-2.4%, swing sweep ext 7-10%, ABS k1 0.2%), and iceberg/defended-wall event counts fall 10x from 2023-24 to 2026 (ICE R2N30 1239/mo -> 80/mo): regime note. Ranked zone lines: none yet (pass 1 running).
+[2026-11-01T23:32:01Z] ZL-1 30-min: LOAD 1 scoring worker (~4-8 GB) + 0 others; box available memory ~13-21 GB (below 40, only 1 worker allowed). BASE: v1.2 interim pass 1 gave 22+ cells, all |maxDD cut| <= 7% in L3M/L6M/HOLD/MID (book levels fire on 0.02-10% of trade rows; best ICE R2N30 1h D40 skip HOLD +0.5%, 473 rows): NO ranked zone line from the order book yet. Switched to D7 v1.3 (stage q1: 56 AHEAD cells + base, then q2: 18 'L2 confirms price line' cells); new-cap descriptive stats running. Robustness tools ready (zrob.py: week carrying maxDD, ONE-WEEK, LOO-month, month-block bootstrap). Interim table due 00:45Z.
