@@ -533,3 +533,58 @@ The two 'any' rows are the identical mask to the 'fresh' rows (round-number line
 | B2|R25|40pts|any | +40% | +68% / +38% / -2% / -38% / -17% | 100 | 0.11 | 0.05 | 0.52 | 0.52 | 0.88 | 0.09 | VOLUME (placebo matches) |
 | B2|R50|75%tgt|fresh | +41% | +57% / +37% / +2% / -18% / +27% | 100 | 0.07 | 0.01 | 0.42 | 0.75 | 0.19 | 0.03 | VOLUME (placebo matches) |
 
+
+## BASE LABEL 2 (Z2, 2026-11-02 ~08:40Z): every V13X row above is on the 'DEFECT BASE (V13X)'
+BASE-4 / ZL-3 found that d7lib dropped TH-L2 loss cuts and take-line exits that preceded the resting-add fill (846 rows). V13X = defect base; V13Y = fixed base. All V13X tables in this file (the lock=12 and lock=None screens, the CRT4h 30pts fw2 solo / camH3 / PDmid ranking, the Asia-only cell and its Asia-restricted placebos, the phase-averaged table, the B2 same-volume placebos, the chain CSVs sent to S5) are labelled 'defect base (V13X)'. Leads are being re-run on V13Y, lock=None headline and 12R, then the 1,933-cell screen, then placebos and the null; V13Y rows will be appended below and become the headline. The V13X best-of-N null run was stopped half-way (4 of 8 replicates) for this reason.
+
+
+## s2 ON D7 V13Y (FIXED BASE) - leads re-run, lock=None HEADLINE and lock=12R (Z2, ~08:55Z 2026-11-02); POST-HOC, LEAD labels, no PASS
+Same cells, same masks; only the engine changed (add-fill ordering fix). Placebos/noise band/phase average on V13Y are queued (leads first, then the screen).
+**V13X (defect base) -> V13Y change for each lead (L6M maxDD cut, lock=None):** CRT4h 30pts fw2 solo +6% (STRICT) -> -0% (no gate: Calmar gain L6M -0%, HOLD -1%, MID -7%, PRE +3%, X' +8%; the strongest V13X lead DISAPPEARS); CRT4h 30pts fw2 solo Asia-only -> -2%; CRT4h 60pts fresh solo +4% -> +3% and now ONE-WEEK (-4% without the carrying week); camH3 40pts fw8 any +7% (STRICT) -> +8% (STRICT, 6/7 months, leave-one-week-out min +0.03, cut +9% without the carrying week; Calmar L6M +10%, HOLD +2%, MID +1%, PRE +1%, X' +40%) = the only cell that survives the base fix; PDmid 20pts touched solo +7% -> -0%; PDmid 30pts touched stacked +11% -> +6% (weak); OTE705 60pts a1-4 +5% -> -5%; B2 round numbers: R50 75%tgt fresh +41% -> +44% L6M cut with PRE Calmar -11% (VOLUME-type recent effect, LOMO 6/7 but min -0.16, no placebo yet), R25 cells reversed (PRE -38..-55%, MID -31..-49%). Lock=12R on V13Y: nothing is STRICT or TOLERANT; CRT4h30fw2solo and all PDmid/kijun1h/OTE705 cuts are ONE-WEEK (+0% without the carrying week), camH3 40 fw8 -5% (LOCK-ONLY reversal), B2 R25 40pts -17%.
+**Reading:** on the fixed base the section-2 candidate set shrinks to camH3 40pts fw8 any (lock=None only; STRICT; maxDD cuts L6M -8%, PRE ~0, X' +40% Calmar; inside MDE; placebo and phase checks pending). The V13X reading 'CRT4h 30pts fw2 solo carries the layer' and its forward-shadow spec were driven by the dropped-exit defect and are withdrawn pending the V13Y screen.
+
+#### V13Y lock=None (HEADLINE): shipped layer L6M 28.8k/wk, maxDD L6M 96.2k, HOLD 103.0k, MID 30.2k, PRE 129.7k, X' 69.7k
+
+| cell | maxDD $k L6M / HOLD / MID / PRE / X' | Calmar gain L6M / HOLD / MID / PRE / X' | maxDD cut L6M | mean d L6M (MDE) | S/T/N | ONE-WEEK (cut w/o carrying week) | LOMO months>0, min | LOEO-week min cut | V13X->V13Y L6M cut | label |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60 | 93.1 / 113.1 / 36.6 / 129.9 / 70.9 | +6% / -7% / -8% / -1% / +2% | +3% | +0.6 (1.7) | -/-/N | ONE-WEEK (-4%) | 5/7, -0.15 | -0.04 | +4% -> +3% | ONE-WEEK |
+| CRT4h60asia | 93.5 / 114.2 / 37.8 / 129.3 / 69.8 | +5% / -7% / -14% / -1% / +6% | +3% | +0.7 (1.7) | -/-/N | ONE-WEEK (-3%) | 5/7, -0.15 | -0.03 | +4% -> +3% | ONE-WEEK |
+| CRT4h30fw2solo | 96.3 / 105.7 / 34.2 / 130.3 / 70.7 | -0% / -1% / -7% / +3% / +8% | -0% | -0.0 (0.7) | -/-/- | no (+1%) | 2/7, -0.00 | -0.02 | +6% -> -0% | weak |
+| camH3_40fw8any | 88.5 / 103.8 / 30.1 / 131.2 / 64.7 | +10% / +2% / +1% / +1% / +40% | +8% | +0.3 (1.5) | S/-/N | no (+9%) | 6/7, +0.00 | +0.03 | +7% -> +8% | LEAD |
+| PDmid_20touchedsolo | 96.3 / 103.0 / 33.1 / 131.5 / 70.1 | +3% / +5% / -5% / -2% / +3% | -0% | +0.8 (2.6) | -/-/N | no (+2%) | 1/7, -0.11 | -0.03 | +7% -> -0% | weak |
+| PDmid_30touchedstk | 90.0 / 103.0 / 31.3 / 122.1 / 83.5 | +7% / -1% / -13% / +8% / -17% | +6% | +0.1 (2.8) | -/-/- | no (+0%) | 6/7, +0.00 | -0.03 | +11% -> +6% | weak |
+| camH3_75fw8solo | 94.1 / 103.8 / 30.1 / 131.2 / 58.1 | +2% / +1% / +3% / +1% / +52% | +2% | -0.1 (2.8) | -/-/- | no (+9%) | 6/7, -0.06 | -0.05 | +7% -> +2% | weak |
+| OTE705_60a14any | 100.7 / 100.7 / 35.2 / 124.1 / 65.1 | -4% / +2% / -13% / +4% / +38% | -5% | +0.0 (1.8) | -/-/- | no (-13%) | 0/7, -0.13 | -0.13 | +5% -> -5% | weak |
+| kijun1h_60a14any | 98.9 / 98.9 / 31.2 / 139.9 / 77.0 | -2% / +9% / +3% / -8% / +30% | -3% | +0.3 (1.1) | -/-/N | no (-3%) | 0/7, -0.07 | -0.04 | -2% -> -3% | weak |
+| PDmid_75a4solo | 101.0 / 101.3 / 29.9 / 126.4 / 64.0 | -3% / +3% / +1% / +6% / +16% | -5% | +0.6 (2.4) | S/T/N | no (-6%) | 0/7, -0.06 | -0.07 | -1% -> -5% | weak |
+| CRT4h30asia | 97.6 / 105.7 / 34.1 / 129.3 / 69.2 | -1% / -1% / -7% / +3% / +10% | -2% | +0.1 (0.5) | -/-/- | no (-1%) | 1/7, -0.02 | -0.02 | n/a | weak |
+| kijun1h_post | 90.0 / 103.7 / 31.7 / 135.2 / 85.4 | +4% / -3% / -6% / -8% / +10% | +6% | -0.9 (3.2) | -/-/- | no (+3%) | 6/7, +0.00 | -0.04 | n/a | weak |
+| OTE705 | 100.3 / 104.4 / 32.8 / 149.2 / 74.1 | -5% / -3% / -1% / -14% / -2% | -4% | -0.2 (3.1) | -/-/- | no (-10%) | 0/7, -0.22 | -0.10 | n/a | weak |
+| B2|R25|75%tgt|any | 87.2 / 87.2 / 47.7 / 166.6 / 113.6 | +3% / +7% / -49% / -55% / -54% | +9% | -1.9 (9.7) | -/-/- | no (+35%) | 6/7, -0.21 | -0.39 | n/a | weak |
+| B2|R25|75%tgt|fresh | 87.2 / 87.2 / 47.7 / 166.6 / 113.6 | +3% / +7% / -49% / -55% / -54% | +9% | -1.9 (9.7) | -/-/- | no (+35%) | 6/7, -0.21 | -0.39 | n/a | weak |
+| B2|R25|40pts|fresh | 103.4 / 103.4 / 39.4 / 143.9 / 108.6 | -12% / -8% / -31% / -38% / -50% | -7% | -1.4 (6.4) | -/-/- | no (+22%) | 1/7, -0.38 | -0.22 | n/a | weak |
+| B2|R25|40pts|any | 103.4 / 103.4 / 39.4 / 143.9 / 108.6 | -12% / -8% / -31% / -38% / -50% | -7% | -1.4 (6.4) | -/-/- | no (+22%) | 1/7, -0.38 | -0.22 | n/a | weak |
+| B2|R50|75%tgt|fresh | 53.9 / 71.0 / 28.6 / 134.1 / 57.3 | +59% / +39% / +2% / -11% / +59% | +44% | -3.0 (8.8) | -/-/- | no (+41%) | 6/7, -0.16 | +0.21 | n/a | weak |
+
+#### V13Y lock=12R: shipped layer L6M 21.2k/wk, maxDD L6M 52.8k, HOLD 90.4k, MID 52.3k, PRE 282.2k, X' 131.5k
+
+| cell | maxDD $k L6M / HOLD / MID / PRE / X' | Calmar gain L6M / HOLD / MID / PRE / X' | maxDD cut L6M | mean d L6M (MDE) | S/T/N | ONE-WEEK (cut w/o carrying week) | LOMO months>0, min | LOEO-week min cut | V13X->V13Y L6M cut | label |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60 | 51.8 / 96.5 / 43.8 / 279.2 / 128.0 | +9% / +0% / +68% / +4% / -2% | +2% | +1.4 (4.0) | -/-/- | no (+1%) | 7/7, +0.01 | +0.01 | n/a | weak |
+| CRT4h60asia | 51.8 / 96.5 / 47.2 / 275.3 / 124.7 | +9% / +1% / +47% / +4% / -1% | +2% | +1.5 (4.0) | -/-/- | no (+1%) | 7/7, +0.01 | -0.01 | n/a | weak |
+| CRT4h30fw2solo | 52.7 / 91.0 / 57.6 / 262.7 / 123.8 | -0% / +1% / +8% / +9% / +3% | +0% | -0.1 (0.6) | -/-/- | ONE-WEEK (+0%) | 5/7, +0.00 | +0.00 | n/a | ONE-WEEK |
+| camH3_40fw8any | 55.5 / 90.4 / 39.2 / 235.1 / 143.5 | -7% / +5% / +95% / +19% / -10% | -5% | -0.5 (2.0) | -/-/- | no (+0%) | 0/7, -0.05 | -0.05 | n/a | weak |
+| PDmid_20touchedsolo | 52.2 / 83.2 / 52.8 / 283.7 / 133.9 | +5% / +16% / +8% / -2% / -9% | +1% | +0.8 (2.4) | -/-/N | ONE-WEEK (+0%) | 5/7, +0.00 | -0.03 | n/a | ONE-WEEK |
+| PDmid_30touchedstk | 52.2 / 92.2 / 56.6 / 249.8 / 140.1 | +8% / +3% / -25% / +7% / -12% | +1% | +1.5 (4.5) | -/-/- | ONE-WEEK (+0%) | 5/7, +0.00 | +0.00 | n/a | ONE-WEEK |
+| camH3_75fw8solo | 56.8 / 90.4 / 39.2 / 238.1 / 143.7 | -11% / +2% / +97% / +18% / -17% | -8% | -1.0 (2.5) | -/-/- | no (+0%) | 0/7, -0.08 | -0.08 | n/a | weak |
+| OTE705_60a14any | 51.7 / 91.3 / 57.3 / 247.1 / 161.1 | +6% / -1% / -24% / +7% / -11% | +2% | +0.7 (1.5) | -/-/- | no (+1%) | 7/7, +0.01 | +0.01 | n/a | weak |
+| kijun1h_60a14any | 52.2 / 94.4 / 53.3 / 237.0 / 185.8 | +3% / -3% / -2% / +3% / -14% | +1% | +0.3 (0.9) | -/-/N | ONE-WEEK (+0%) | 5/7, +0.00 | +0.00 | n/a | ONE-WEEK |
+| PDmid_75a4solo | 52.2 / 83.5 / 54.6 / 252.3 / 133.3 | +5% / +12% / -3% / +11% / -7% | +1% | +0.7 (2.3) | -/-/- | ONE-WEEK (+0%) | 5/7, +0.00 | +0.00 | n/a | ONE-WEEK |
+| CRT4h30asia | 52.7 / 91.0 / 57.7 / 263.4 / 123.8 | +1% / +1% / +6% / +8% / +3% | +0% | +0.1 (0.4) | -/-/- | ONE-WEEK (+0%) | 5/7, +0.00 | +0.00 | n/a | ONE-WEEK |
+| kijun1h_post | 52.2 / 97.9 / 54.5 / 192.8 / 129.5 | -3% / -9% / -4% / +23% / -8% | +1% | -0.9 (2.9) | -/-/- | ONE-WEEK (+0%) | 5/7, +0.00 | +0.00 | n/a | ONE-WEEK |
+| OTE705 | 52.2 / 94.5 / 54.1 / 253.5 / 170.2 | +2% / -6% / -8% / +7% / -13% | +1% | +0.2 (1.9) | -/-/- | ONE-WEEK (+0%) | 5/7, +0.00 | +0.00 | n/a | ONE-WEEK |
+| B2|R25|75%tgt|any | 50.9 / 79.1 / 39.9 / 265.0 / 89.3 | -12% / +17% / +189% / -29% / -7% | +4% | -3.1 (6.4) | -/-/- | no (+2%) | 7/7, +0.04 | +0.02 | n/a | weak |
+| B2|R25|75%tgt|fresh | 50.9 / 79.1 / 39.9 / 265.0 / 89.3 | -12% / +17% / +189% / -29% / -7% | +4% | -3.1 (6.4) | -/-/- | no (+2%) | 7/7, +0.04 | +0.02 | n/a | weak |
+| B2|R25|40pts|fresh | 61.6 / 79.2 / 61.8 / 223.2 / 132.6 | -23% / +12% / +29% / -9% / -19% | -17% | -2.2 (4.2) | -/-/- | no (-12%) | 2/7, -0.17 | -0.17 | n/a | weak |
+| B2|R25|40pts|any | 61.6 / 79.2 / 61.8 / 223.2 / 132.6 | -23% / +12% / +29% / -9% / -19% | -17% | -2.2 (4.2) | -/-/- | no (-12%) | 2/7, -0.17 | -0.17 | n/a | weak |
+| B2|R50|75%tgt|fresh | 70.4 / 91.9 / 56.6 / 235.4 / 109.4 | -42% / -14% / +4% / -0% / -4% | -33% | -4.8 (11.1) | -/-/- | no (-35%) | 1/7, -0.52 | -0.35 | n/a | weak |

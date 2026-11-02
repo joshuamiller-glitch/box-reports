@@ -157,3 +157,16 @@ Order-book zones: DEAD. Tape zones: DEAD or volume (G2 the only structured survi
 
 ## 21. CORRECTION to section 19 (B73 on FVG zones)
 The B73 'leads' in section 19 and the random-row B73 placebo equalities were produced by a base defect (TH-L2 cut dropped when it precedes the B73 add fill; see DS3_ZONES_3_B73_GENERIC.md section 0). With the fix and the fixed base, FVG B73 gives lock=None L6M/HOLD/PRE/X' -2..+3 / +2..+7 / -12..+12 / -3..+1% and mean -0.9k..+0.1k/wk: nothing. Section 19's skip/half findings are unaffected. Also: in section 13 I wrote that nearly all Dl-60 set-line rows are 'confirmed'; the row masks show 7,396 confirmed vs 10,836 unconfirmed, so G2 is not simply 'skip all set rows within 60'.
+
+## 22. V13X (defect base) -> V13Y (BASE-4's fixed base) for every lead and near-lead (ZL-3, 2026-11-02). Everything in sections 10-21 above was scored on the 'defect base (V13X)'.
+Reconciliation: my ZL_B73FIX (145 OTE-62 rows + my own generic B73 rows) and V13Y (846 rows: 125 loss cuts + 721 take-line exits, incl. 701 generic-split rows) are the same fix for the B73 rows: generic B73 d=30 on every row gives $1.864M (my fix on my rows only) vs $1.898M (V13Y, which also fixes the OTE-62 and split rows): consistent. V13Y is used from here.
+maxDD cut L6M / HOLD / PRE / X' (%), mean change L6M / MDE ($/wk). Cells identical to the V13X versions, V13Y engine:
+| cell | lock=None V13X | lock=None V13Y | lock=12R V13X | lock=12R V13Y | label on V13Y |
+|---|---|---|---|---|---|
+| G2 TVP-confirmed set-line skip Dl60, unconfirmed halved | +47 / +31 / -4 / +32; -3.8k/10.3k | **+29 / +26 / -20 / +21**; -4.8k/9.5k | +26 / +34 / +35 / +49 | **-2 / +5 / +38 / +63**; -1.1k/11.0k | DEAD as a lead (PRE -20% lock=None; L6M -2% lock=12R) |
+| G1 (unconfirmed full lot) | +40 / +13 / -12 / -1 | +35 / +16 / -26 / -16 | +31 / +30 / +37 / +45 | -1 / +11 / +31 / +39 | DEAD |
+| F1 TAPEALL >=5 tape zones within 20 pts, half | +9 / +9 / +7 / -12 | -4 / +3 / +15 / +11; -0.5k/4.5k | -27 / +22 / -2 / +22 | -13 / +5 / -0 / +4 | DEAD |
+| F2 TPF hvn1 sw1h D20 skip | +0 / +0 / +4 / -8 | -1 / -14 / -1 / -13 | -8 / +17 / +6 / +17 | -6 / -0 / +11 / -5 | DEAD |
+| F3 TLQ SES asia D20 skip | +11 / +5 / +13 / +12 | +11 / -2 / +8 / +22; +0.3k/3.5k | +11 / +8 / +15 / +7 | +2 / +0 / +3 / +16 | VOLUME-sized, not a lead |
+| F4 TCD divbull D20 skip | +0 / +0 / -10 / +9 | -4 / -7 / -11 / -12 | -5 / -17 / +4 / +25 | +1 / -17 / +3 / +29 | DEAD |
+The cut sign flips between V13X and V13Y for G2 (lock=12 L6M +26 -> -2), F1 (lock=None L6M +9 -> -4) and the density/tape cells: base dependence. Nothing here is RISK-KEEP on V13Y. FVG skip/half and the remaining screens (book and tape stage 1) are re-running on V13Y in order; their V13X versions stay labelled 'defect base'.

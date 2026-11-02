@@ -1,3 +1,4 @@
+> BASE NOTE (08:45Z): every V13X table in this file is on the DEFECT base (V13X: dropped TH-L2 loss cut / take exits before an add fill). The V13Y re-run is in progress; V13Y results will be appended below. Labels: V13X = "defect base".
 # DS3_ZONES_3_S4B - T-ZONES-3 section 4, second half: 331 odd-indexed POI streams as an extra line on D7 v1.3 EXACT (V13X), ahead / behind / at
 Written by S4b (updated 2026-11-02 ~07:00Z). POST-HOC, no PASS claim, Shadow only, new windows only (L1M L2M view; L3M L6M HOLD MID PRE X'). Prereg l2vast/ds3/prereg/ZONES3_S4B_prereg.md sha256 fd98941a699e2b1e4cb7be89b99868fa442779d8aedf3d07b9e9346972c5e9dc (+ DECISIONS amendments 2026-11-02T00:35Z). Code l2vast/ds3/code/zones3/s4b/, cubes and tables /mnt/l2/l2vast/ds3_zones3_new/s4b/. 934+ cells appended to DEAD_CELLS (program ZONES3S4B, assumed-base cells only; V13X cells to be appended by the next refit: see 0.5).
 
