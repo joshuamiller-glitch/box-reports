@@ -147,3 +147,25 @@ Practical thresholds for a zone unit of ~500-1,500 rows in the lock-off headline
 | flip 5.0 | 0.227 | 0.208 | 0.201 | 0.327 | 0.256 | 0.246 |
 **One-day lock-reset shift** (week key of every day moved one day later / earlier, no other change; one deterministic run each): maxDD cut vs unshifted lock-off base, +1 day: L3M -7.6%, L6M -23.7%, HOLD -23.7%, MID +12.4%, PRE -7.3%, X' -0.6%; -1 day: L3M +2.7%, L6M -18.2%, HOLD -18.2%, MID +6.7%, PRE +2.8%, X' +9.9%. A calendar-day shift of the lock reset alone moves L6M/HOLD maxDD by ~18-24% - the size of a 2-5% random half-lot flip - so lock-reset timing is itself a noise source of that size; the band above (flip 2% to 5%) is the right yardstick for any zone cell that changes ~500-1,500 rows.
 **Final rule (lock-off, headline): a zone cell counts only if its maxDD cut exceeds, for its size (flip 2.0 row for ~500 rows, flip 5.0 row for 1,000+ rows), BOTH the L6M band (16% / 21%) AND the PRE band (22% / 26%) or the X' band (15% / 25%), same sign; in lock 12R use the 12R rows (L6M 31% / 37%, PRE 21% / 28%, X' 21% / 29%, final n in the next line when the 12R run completes).** Z3's 91 cells: 0 pass in lock-off (rule recomputed with the final band; csv `noise_fin_mine_off.csv`). Best-of-N null with 100 draws per finalist in both frames: no finalist beats the best of ~100 cells (lock-off best-of-101 p >= 0.25, lock 12R >= 0.93).
+
+
+# V13Y (D7 v1.3 EXACT + add-fill ordering fix) NOISE BAND - appended 2026-11-02 ~09:20Z (the V13X sections above are on the DEFECT BASE)
+Phase-averaged (K = 9 lock-reset phases: week key shifted -4..+4 label days), paired with the shipped layer at the same phase, perturbation = random 2% / 5% of live rows halved, n = 50 draws per type (60 planned), both frames. PA band = 95th percentile of |phase-averaged paired maxDD cut|; single-path band = phase 0 only.
+## Phase-averaged band (USE THIS ONE)
+| frame | flip | L3M | L6M | HOLD | MID | PRE | X' | n |
+|---|---|---|---|---|---|---|---|---|
+| lock-off | 2% | 0.323 | 0.155 | 0.133 | 0.268 | 0.115 | 0.141 | 51 |
+| lock-off | 5% | 0.320 | 0.200 | 0.191 | 0.398 | 0.161 | 0.224 | 50 |
+| lock 12R | 2% | 0.163 | 0.110 | 0.107 | 0.265 | 0.133 | 0.099 | 50 |
+| lock 12R | 5% | 0.228 | 0.248 | 0.135 | 0.411 | 0.154 | 0.133 | 50 |
+
+## Single-path band (phase 0)
+| frame | flip | L3M | L6M | HOLD | MID | PRE | X' | n |
+|---|---|---|---|---|---|---|---|---|
+| lock-off | 2% | 0.273 | 0.151 | 0.127 | 0.586 | 0.166 | 0.180 | 51 |
+| lock-off | 5% | 0.255 | 0.269 | 0.228 | 0.778 | 0.172 | 0.222 | 50 |
+| lock 12R | 2% | 0.567 | 0.214 | 0.144 | 0.192 | 0.273 | 0.377 | 50 |
+| lock 12R | 5% | 0.627 | 0.681 | 0.253 | 0.335 | 0.353 | 0.471 | 50 |
+
+Shipped-layer maxDD across the 9 phases on V13Y ($k, mean / SD / range): lock-off L6M 118 / 9.5 / 96-126, PRE 138 / 7.7 / 129-150, X' 76 / 11.8 / 67-97, MID 30 / 1.3; lock 12R L6M 87 / 23 / 53-121, PRE 185 / 66 / 107-282, X' 99 / 30 / 75-145, MID 42 / 16.
+Rule (unchanged, now on the PA statistic): a phase-averaged cut counts only if it exceeds the PA band in L6M AND in PRE or X' (row = nearest in rows changed: flip 2 for ~500 rows, flip 5 for 1,000+). Lock-off: L6M 15.5 / 20, PRE 11.5 / 16, X' 14 / 22 %. Lock 12R: L6M 11 / 25, PRE 13 / 15, X' 10 / 13 %. Phase-averaging shrinks the 12R band 3x (L6M single-path flip-5 68% -> 25%) but only slightly in lock-off (L6M 27% -> 20%): the lock-off noise is mostly WHICH rows are halved (70-90% of the variance is draw-specific, V13X check), i.e. trade-selection noise of the maxDD extreme, not lock phase; it cannot be averaged away by phase and needs more draws/rows (a real effect must exceed it).

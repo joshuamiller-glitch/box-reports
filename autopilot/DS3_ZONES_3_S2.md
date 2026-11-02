@@ -588,3 +588,27 @@ Same cells, same masks; only the engine changed (add-fill ordering fix). Placebo
 | B2|R25|40pts|fresh | 61.6 / 79.2 / 61.8 / 223.2 / 132.6 | -23% / +12% / +29% / -9% / -19% | -17% | -2.2 (4.2) | -/-/- | no (-12%) | 2/7, -0.17 | -0.17 | n/a | weak |
 | B2|R25|40pts|any | 61.6 / 79.2 / 61.8 / 223.2 / 132.6 | -23% / +12% / +29% / -9% / -19% | -17% | -2.2 (4.2) | -/-/- | no (-12%) | 2/7, -0.17 | -0.17 | n/a | weak |
 | B2|R50|75%tgt|fresh | 70.4 / 91.9 / 56.6 / 235.4 / 109.4 | -42% / -14% / +4% / -0% / -4% | -33% | -4.8 (11.1) | -/-/- | no (-35%) | 1/7, -0.52 | -0.35 | n/a | weak |
+
+
+## s2 V13Y lock=None full screen (1,192 masks / 1,902 changed cells), ~09:35Z 2026-11-02
+Gate counts: STRICT 48, TOLERANT 86, NOW-ONLY 662 (TOL-B 596, TOL-nc 120); positive honest score 42%, positive post-hoc 39%; **0 cells meet the L6M RISK-KEEP rule**. Honest and post-hoc rankings agree on no line. Survivors by label: camH3 40pts fw8 any (post-hoc; STRICT is lost in the screen's tier column here because HOLD +2% is positive but PRE/X' small; L6M maxDD 96.2 -> 88.5k, -8%; Calmar +10% L6M, +2% HOLD, +1% MID/PRE, +40% X'; neighbours 3/4 same sign; LOEO worst -0.00) = LEAD-weak; PDmid 40pts fw1 stacked (TOL: L6M +3%, HOLD +14%, PRE +4%, X' -9%) = LEAD-weak; CRT4h 20pts fw1 solo (STRICT/TOL/NOW but L6M +0%, MID -12%) = weak. The V13X leader CRT4h 30pts fw2 solo is the honest pick here with L6M -0%: gone. Placebos (100 draws x 3 kinds, 5 cells), phase averages and the V13Y null are queued after the lock=12R screen.
+V13Y l0 full screen: 1902 changed distinct-key cells; S_hon>0 0.42, S_post>0 0.39; STRICT 48, TOL 86, NOW 662, TOL-B 596, TOL-nc 120, RISK-KEEP(L6M rule) 0
+
+| line | pick | cell | maxDD $k L6M / HOLD / MID / PRE / X' | Calmar gain L6M / HOLD / MID / PRE / X' | mean d L6M (MDE) | S/T/N | RK | neighbours n, mean S, same sign | LOEO worst S (episode) |
+|---|---|---|---|---|---|---|---|---|---|
+| CRT4h | HONEST | CRT4h|30pts|fw2|solo | 96.3 / 105.7 / 34.2 / 130.3 / 70.7 | -0% / -1% / -7% / +3% / +8% | -0.0 (0.7) | -/-/- | no | 4, +0.03, 4/4 | +0.06 (202506-202509) |
+| CRT4h | POST-HOC | CRT4h|20pts|fw1|solo | 97.4 / 101.3 / 35.0 / 132.8 / 72.6 | +0% / +4% / -12% / -2% / +3% | +0.4 (0.6) | S/T/N | no | 3, +0.01, 2/3 | -0.00 (202606-202607) |
+| KCup4h | HONEST | KCup4h|15pts|fresh|solo | 96.2 / 103.0 / 30.2 / 129.1 / 69.7 | -0% / -0% / -2% / +2% / +3% | -0.0 (0.3) | -/-/- | no | 4, +0.01, 3/4 | +0.02 (202435-202440) |
+| KCup4h | POST-HOC (ungated) | KCup4h|20pts|fresh|solo | 96.2 / 103.0 / 30.2 / 129.7 / 69.7 | +0% / +0% / +0% / +0% / +0% | +0.0 (0.0) | -/-/- | no | 4, -0.01, 2/4 | +0.00 (202435-202440) |
+| OTE705 | HONEST | OTE705|60pts|a1-4|any | 100.7 / 100.7 / 35.2 / 124.1 / 65.1 | -4% / +2% / -13% / +4% / +38% | +0.0 (1.8) | -/-/- | no | 3, +0.06, 2/3 | +0.18 (202435-202440) |
+| OTE705 | POST-HOC (ungated) | OTE705|30pts|a1-4|solo | 96.2 / 98.7 / 33.6 / 127.3 / 64.5 | +2% / +6% / -8% / -2% / +38% | +0.5 (1.4) | -/-/N | no | 4, -0.05, 2/4 | +0.01 (202628-202632) |
+| OTE79 | HONEST | OTE79|10pts|touched|any | 111.7 / 111.7 / 29.4 / 136.0 / 56.7 | -17% / -8% / +6% / -7% / +38% | -1.0 (2.6) | -/-/- | no | 2, +0.02, 1/2 | +0.15 (202606-202607) |
+| OTE79 | POST-HOC | OTE79|20pts|fw2|any | 96.2 / 103.0 / 30.2 / 129.7 / 66.0 | +1% / +1% / +0% / +0% / +2% | +0.2 (0.5) | -/T/N | no | 4, -0.01, 1/4 | +0.01 (202606-202607) |
+| PDmid | HONEST | PDmid|40pts|fresh|any | 99.6 / 99.6 / 35.1 / 136.9 / 56.7 | -7% / +5% / -12% / -8% / +40% | -1.2 (1.9) | -/-/- | no | 4, +0.08, 4/4 | +0.16 (202411-202415) |
+| PDmid | POST-HOC | PDmid|40pts|fw1|stk | 96.2 / 96.2 / 30.8 / 125.9 / 78.7 | +3% / +14% / -1% / +4% / -9% | +1.0 (2.2) | -/T/N | no | 3, +0.06, 3/3 | +0.03 (202606-202607) |
+| STK | HONEST | STK|C8|stk2|fresh|15pts|only | 128.2 / 128.2 / 39.9 / 151.2 / 69.9 | -22% / -15% / -20% / -22% / +52% | +1.3 (4.1) | -/-/N | no | 4, +0.07, 4/4 | +0.14 (202435-202440) |
+| STK | POST-HOC (ungated) | STK|C8|stk2|fresh|75%tgt|add | 96.0 / 96.0 / 37.7 / 137.0 / 63.4 | -2% / +11% / -12% / -9% / +27% | -0.8 (1.5) | -/-/- | no | 3, +0.01, 2/3 | -0.01 (202606-202607) |
+| camH3 | HONEST | camH3|75%tgt|fw8|any | 94.1 / 103.8 / 30.1 / 131.2 / 55.4 | +2% / +1% / +3% / +1% / +59% | -0.0 (2.7) | -/-/- | no | 3, +0.13, 3/3 | +0.27 (202435-202440) |
+| camH3 | POST-HOC (ungated) | camH3|40pts|fw8|any | 88.5 / 103.8 / 30.1 / 131.2 / 64.7 | +10% / +2% / +1% / +1% / +40% | +0.3 (1.5) | S/-/N | no | 4, +0.01, 3/4 | -0.00 (202628-202632) |
+| kijun1h | HONEST | kijun1h|40pts|fw2|stk | 97.0 / 97.0 / 39.0 / 127.0 / 69.5 | -3% / +11% / -15% / +1% / +42% | -0.5 (1.7) | -/-/- | no | 4, +0.19, 4/4 | +0.21 (202411-202415) |
+| kijun1h | POST-HOC (ungated) | kijun1h|40pts|a1-4|any | 96.4 / 96.4 / 31.2 / 139.9 / 77.0 | +1% / +12% / +3% / -8% / +21% | +0.3 (1.0) | -/-/N | no | 4, -0.04, 2/4 | +0.01 (202606-202607) |
