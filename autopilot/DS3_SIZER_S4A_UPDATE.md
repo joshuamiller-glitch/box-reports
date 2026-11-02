@@ -1,5 +1,5 @@
 
-## SIZER_S1 update (2026-11-02 18:54Z): ts-base re-screen, exact equal-risk, rank-hysteresis family with a family-wise null, tier carrying, exposure
+## SIZER_S1 update (2026-11-02 20:26Z): ts-base re-screen, exact equal-risk, rank-hysteresis family with a family-wise null, tier carrying, exposure
 
 Prereg: ZL_S4A_PREREG_SIZER_HYST_FAMILY.md (sha256 6da9c8038f47a138ebf47a8e6276e57e24cbe88086ce5c61eaa854d4e492acc3, DECISIONS.md). Base = the current T-SIZER harness (ts mode: V13T_LIVE costs, sequential rounding, lock R scaled only when mult > 1), reference = live binary ER ladder in the same mode; single path (lock-reset phases are identical on this base). IMPORTANT: the section-1 screen of 998 cells above was run on the sequential-without-ts base; the top 100 of it were re-run on the ts base here.
 
@@ -20,7 +20,7 @@ Prereg: ZL_S4A_PREREG_SIZER_HYST_FAMILY.md (sha256 6da9c8038f47a138ebf47a8e6276e
 | ER20 exp cuts 1/4-3/4 h0.1 | +0.34 | -0.03 | -1.02 | +0.18 | -0.36 | -0.21 | +0.18 | -1344 | +0.260 |  |
 | ER20 roll cuts 1/4-3/4 h0.03 | +0.31 | +0.01 | -0.74 | +0.21 | -0.01 | -0.17 | +0.32 | -1882 | +0.259 |  |
 
-Best-of-grid statistic B = max S over eligible cells = +0.142 (B2 = max min(L6M,PRE) = +0.031; unconditioned max S = +0.351). FAMILY-WISE NULL (day-shuffled multiplier worlds, one day-source map per world applied to all 72 cells): 0 complete worlds so far (target 100). Null B: median +nan, 95th pct +nan; share of worlds with an eligible cell nan. P-value of B = nan; of B2 = nan; of the unconditioned max = nan (n = 0 worlds).
+Best-of-grid statistic B = max S over eligible cells = +0.142 (B2 = max min(L6M,PRE) = +0.031; unconditioned max S = +0.351). FAMILY-WISE NULL (day-shuffled multiplier worlds, one day-source map per world applied to all 72 cells): 57 complete worlds so far (target 100). Null B: median -9.000, 95th pct -9.000; share of worlds with an eligible cell 0.00. P-value of B = 0.017; of B2 = 0.017; of the unconditioned max S = 0.793; of the best S among no-harm cells WITHOUT the mean gate (real +0.142) = 0.017; null of unconditioned max S: median +0.407, 95th pct +0.506 (n = 57 worlds). Reading: no day-shuffled world has a cell that keeps the mean at or above the live ladder (the shuffle removes the ER signal's contribution to the mean), so the eligibility gate alone separates the real lead from the null; the drawdown cut S by itself is NOT unusual under shuffling (a random multiplier vector with this distribution reaches an S as high as the real best in most worlds).
 
 **(3) Which tier carries the gain (lead ER20 expanding (1/3,2/3) h .05):**
 

@@ -550,3 +550,69 @@ ALLhi3500 X cut -11.9% ranks A(permuted arms)/B(iid marginal)/C(shuffled day) 0.
 ```
 
 (Z1 correction to the SIZER_S3X lot-scaled-cut paragraph above: PE-only cells X=3000-4200 give L6M -13..-26% (PRE +8..+9%); the ER>=0.30-rows-only family over all books gives L6M +3% (X=3000), -2% (3500), -15% (4200), -21% (5000), and PRE +8..+10% for X=3000-4200.)
+
+
+# S4b SECTION 2 - ADDENDA (written 20:25Z): weekday cells, exposure-aware add, size-matched add-off placebos
+## 2.6 Weekday cells (live ER ladder x f(weekday of the label day), cap 0.25..2.0; 20 cells: one weekday x0.75 / x1.25, and x0.75 on each 2-day set; TS base, single path, PA9 for the top 3)
+| cell | cut L6M / HOLD / MID / PRE / X' | mean d L6M / HOLD / PRE $k/wk | mean lots | mean_ok | no-harm | band5 |
+|---|---|---|---|---|---|---|
+| WDSET_Thu+Fri_x0.75 | +23% / +20% / -42% / +15% / +17% | -2.7 / -2.6 / -1.7 | 2.92 | n | n | Y |
+| WDSET_Mon+Fri_x0.75 | +1% / +1% / -20% / +12% / +17% | -5.0 / -5.0 / -2.0 | 2.92 | n | Y | n |
+| WDSET_Mon+Thu_x0.75 | +13% / +13% / -18% / +9% / +14% | -2.6 / -3.7 / -2.7 | 2.91 | n | Y | n |
+| WDSET_Tue+Fri_x0.75 | -4% / -4% / -15% / +9% / +10% | -6.9 / -4.2 / -1.0 | 2.92 | n | Y | n |
+| WD_Thu_x0.75 | +17% / +17% / -20% / +8% / +10% | -0.2 / -0.6 / -1.2 | 3.07 | n | Y | n |
+| WDSET_Wed+Fri_x0.75 | +30% / +27% / +3% / +13% / +5% | -1.9 / -1.3 / -1.3 | 2.93 | n | Y | Y |
+| WD_Fri_x0.75 | +5% / +5% / -22% / +6% / +9% | -2.5 / -1.9 / -0.5 | 3.08 | n | Y | n |
+| WDSET_Mon+Tue_x0.75 | -14% / -14% / +10% / +9% / +7% | -6.8 / -5.3 / -2.0 | 2.91 | n | Y | n |
+| WDSET_Wed+Thu_x0.75 | +42% / +31% / +5% / +12% / +3% | +0.5 / -0.0 / -2.0 | 2.93 | n | Y | Y |
+| WDSET_Tue+Thu_x0.75 | +8% / +8% / -13% / +12% / -1% | -4.5 / -2.9 / -1.8 | 2.91 | n | Y | n |
+| WD_Mon_x0.75 | -4% / -4% / +2% / +4% / +7% | -2.4 / -3.0 / -1.5 | 3.06 | n | Y | n |
+| WDSET_Mon+Wed_x0.75 | +20% / +20% / +27% / +8% / -2% | -1.8 / -2.4 / -2.3 | 2.92 | n | Y | n |
+| WD_Wed_x0.75 | +24% / +24% / +25% / +6% / -8% | +0.6 / +0.6 / -0.8 | 3.08 | Y | Y | n |
+| WD_Mon_x1.25 | -4% / -4% / -19% / -3% / -3% | +2.4 / +2.3 / +0.8 | 3.35 | Y | Y | n |
+| WD_Thu_x1.25 | -6% / -6% / +2% / -7% / -1% | +0.4 / +1.5 / +0.5 | 3.34 | Y | Y | n |
+| WD_Wed_x1.25 | -3% / -3% / -14% / -5% / -3% | +0.3 / +0.4 / +0.3 | 3.33 | Y | Y | n |
+| WD_Tue_x0.75 | -9% / -9% / +7% / +3% / -12% | -4.4 / -2.2 / -0.5 | 3.06 | n | Y | n |
+| WD_Tue_x1.25 | +19% / +19% / +5% / -4% / -7% | +3.8 / +1.9 / +0.7 | 3.34 | Y | Y | n |
+| WD_Fri_x1.25 | -18% / -18% / +12% / -9% / -9% | +1.3 / +1.8 / -0.2 | 3.33 | Y | Y | n |
+| WDSET_Tue+Wed_x0.75 | +15% / +15% / +32% / +10% / -33% | -3.7 / -1.6 / -1.3 | 2.92 | n | n | n |
+**Plain sentence:** no weekday rule is a lead. The only cell that passes the phase-averaged band AND no-harm is x0.75 on Wednesday+Thursday (PA9 cuts L6M +41.7% / HOLD +30.9% / MID +4.5% / PRE +11.8% / X' +3.4%, carrying-week-dropped L6M +16.8% / PRE +15.6%; mean +0.5k/wk L6M, +0.0 HOLD, -2.0k/wk PRE): its cut ranks against the three placebo kinds (share of 100 placebos below the real cut, perm / day-shuffled / AR(1)) are L6M 0.37 / 0.28 / 0.38 and PRE 0.23 / 0.28 / 0.28, i.e. random multipliers with the same distribution cut as much or more (HOLD 0.93 / 0.90 / 0.97, X' 0.98 / 0.92 / 0.99): VOLUME, and the choice of the pair is one of 10 pairs looked at. x0.75 on Thu+Fri passes the band but harms MID (-42%). Single-day cells: x0.75 on Wednesday cuts L6M +24% / MID +25% with PRE +6.5%, X' -8.3% (fails the band). Size-up days (x1.25) all deepen at least one window.
+## 2.7 Exposure-aware add (add_only_if the other books' same-side net open lots at the signal second < N; array net_other_books_ts from BASE-4's stack hook)
+| cell | cut L6M / HOLD / MID / PRE / X' | mean d L6M / HOLD / PRE $k/wk |
+|---|---|---|
+| E_add_only_if_netother<10 | +5% / +5% / +20% / +6% / +1% | -3.4 / -2.7 / -1.2 |
+| E_add_only_if_netother<8 | +18% / +18% / +18% / +9% / +1% | -2.7 / -2.5 / -1.9 |
+| E_add_only_if_netother<6 | +10% / +10% / +30% / +11% / -7% | -3.8 / -2.7 / -1.9 |
+| E_add_only_if_netother<12 | +6% / +6% / +12% / +5% / -1% | -2.0 / -2.2 / -1.1 |
+## 2.8 Size-matched add-off placebos (add_only_if cells vs 100 random add-offs with the same cancelled share per book x session; rank = share of placebo draws below the real cell, high = real beats chance)
+| real cell (add only when ...) | real cut L6M / HOLD / PRE / X' | real mean d L6M | placebo median cut L6M / HOLD / PRE / X' | share of 100 placebos BELOW the real cut L6M / HOLD / PRE / X' | share below on the mean L6M / PRE | placebo median mean d L6M |
+|---|---|---|---|---|---|---|
+| A_only_er>=0.30 | +11% / +11% / -7% / +1% | -0.5 | +42% / +33% / +11% / +11% | 0.02 / 0.02 / 0.05 / 0.26 | 1.00 / 1.00 | -5.2 |
+| A_only_er>=0.40 | +29% / +29% / +5% / +18% | -4.6 | +54% / +38% / +16% / +12% | 0.02 / 0.09 / 0.13 / 0.69 | 0.83 / 1.00 | -6.6 |
+| B_only_if_T1_25 | +65% / +47% / +23% / +26% | -8.4 | +65% / +44% / +23% / +23% | 0.56 / 0.88 / 0.52 / 0.69 | 0.50 / 0.02 | -8.4 |
+| B_only_if_T2a_d2/3 | +50% / +50% / +7% / +14% | -6.8 | +55% / +41% / +18% / +13% | 0.22 / 0.96 / 0.07 / 0.56 | 0.62 / 0.25 | -7.4 |
+| B_only_if_T3a_ps1/3 | +63% / +33% / +23% / -35% | -5.2 | +50% / +37% / +14% / -2% | 1.00 / 0.32 / 0.94 / 0.02 | 0.43 / 0.52 | -5.0 |
+| B_only_if_T4_ice2/3 | +62% / +42% / +26% / +19% | -8.6 | +60% / +43% / +21% / +13% | 0.66 / 0.39 / 0.86 / 0.87 | 0.36 / 0.32 | -8.2 |
+**Plain sentence 2.7:** the exposure-aware add (cancel the add when the other books already hold >= N same-side net lots, N = 6 / 8 / 10 / 12 cancels 22 / 16 / 13 / 10 % of live adds) cuts maxDD modestly (N<8: L6M +18%, MID +18%, PRE +9%, X' +1%; N<6: L6M +10%, MID +30%, PRE +11%, X' -7%) but costs mean in every window (-2.0 to -3.8k/wk L6M, -1.1 to -1.9k/wk PRE): no cell keeps the mean; X' is not helped. Not a lead.
+**Plain sentence 2.8:** the size-matched add-off placebos show the 'add only when' cells are VOLUME, and some are worse than chance: 'add only if ER >= 0.30' cuts L6M +11% while a random add-off with the same cancelled share cuts +42% (median) and loses 5.2k/wk against -0.5k/wk for the real rule (the ER filter removes adds that earn less than average to the benefit of the mean, but not the drawdown); 'add only if ER >= 0.40' (L6M +29%, PRE +5%, X' +18%, -4.6k/wk) is at or below its placebo in every window (share of placebos below 0.02 / 0.09 / 0.13 / 0.69); the tape-confirmation filters T1 (large print with the trade) and T4 (iceberg with the trade) sit exactly on their placebo medians (shares 0.56 / 0.88 / 0.52 / 0.69 and 0.66 / 0.39 / 0.86 / 0.87), i.e. no information beyond the lower add volume; T3a (own support not pulled) beats its placebo in L6M and PRE (1.00 / 0.94) but loses X' (-35%, share 0.02). The add is a drawdown source of about the right size, and no feature tells which adds to drop.
+
+
+## SIZER_S2V FOLLOW-UP (ZL-1, 2026-11-02 ~20:30Z): vol-target placebos, and the hybrid 'vol cap on the ER x1.5 side' (prereg SIZER_S2V_HYBRID_prereg.md sha256 d52cb5d375fd089c87df49921e336f79a91a01c8ed21a3bd9ba43ecfc6f4a653, logged before scoring; post-hoc, research only)
+### A. Placebos (3 kinds x 100 draws), equal-risk, exposure for the three vol-target cells not in the first top 5
+| cell | cut L6M / PRE (phase 0) | PA9 L6M / PRE (X') | placebo rank on CUT L6M (perm, dayshuf, ar1) | on CUT PRE | on MEAN L6M | equal-risk mean L6M / PRE / HOLD (ladder 37.6 / 17.8 / 31.8) | worst-day net lots / stack risk / mean lots (ladder 28 / $33.6k / 3.01) |
+|--|--|--|--|--|--|--|--|
+| VT 1.0 DOWN-only | 47.0 / 22.3 | 43.4 / 15.7 (-14.4) | .39 .48 .44 | .42 .32 .29 | .92 .93 .95 | 58.7 (lscale 1.78) / 15.5 / 43.6 | 28 / $33.6k / 2.55 |
+| VT 1.0 FULL | 56.3 / 18.3 | 58.9 / 16.1 (-27.6, harm) | .86 .89 .81 | .40 .37 .38 | .90 .93 .97 | 89.6 (2.62, extrapolated) / 16.1 / 44.9 | 29 / $34.8k / 2.64 |
+| VT 0.75 FULL | 38.2 / 23.3 | 42.7 / 19.8 (-29.8, harm) | .32 .39 .41 | .41 .33 .30 | .81 .84 .89 | 81.4 (2.72, extrapolated) / 16.1 / 49.5 | 29 / $34.8k / 2.35 |
+Reading: VT 1.0 FULL is the one vol-target cell whose L6M cut beats random multipliers of the same distribution (rank 0.81-0.89) and whose L6M dollars beat random (0.90-0.97); its PRE cut does not (0.37-0.40, i.e. random does as well), it harms X' (-27.6 PA9) and the PRE equal-risk mean (16.1k) is below the ladder (17.8k). The other two are lot reductions (L6M cut ranks 0.3-0.5). None reduces worst-day exposure (net lots 28-29, stack risk $33.6-34.8k).
+### B. Hybrid: vol as a CAP only on the ER x1.5 side (28 cells)
+m = ER where ER is x0.5 (untouched); where ER x1.5: 1.5 if quiet else X in {1.0, 0.75}. Quiet = ATR below its expanding same-book median x th (VT; th 0.8-1.25; th 1.0 = 'x1.5 only when ATR is below its median') or rank of atr_ratio_5m / rv_ratio_30m / dayrange_atrd < q (0.33/0.5/0.67). Eligible 24-28 cells; best by key (mean of L6M and PRE cuts):
+| cell | cut L6M / PRE | carry-week dropped L6M / PRE | HOLD / MID / X' | mean vs ladder L6M / PRE (MDE) | total $k vs ladder | mean lots | PA9 L6M / PRE / X' | placebo cut rank L6M (perm, dayshuf, ar1) | PRE | equal-risk PRE / HOLD |
+|--|--|--|--|--|--|--|--|--|--|--|
+| VT th=1.1, X=0.75 | 61.4 / 36.6 | 35.1 / 33.9 | 24.4 / 18.7 / -43.3 | -4.6k (15.1) / -4.7k (6.3) | -716 | 2.60 | 64.2 / 33.5 / -45.4 | .83 .93 .80 | .56 .62 .57 | 18.3 / 39.2 |
+| VT th=1.0, X=0.75 | 60.1 / 26.8 | 52.9 / 30.5 | 26.3 / 17.2 / -46.7 | -4.5k (14.2) / -4.5k (5.6) | -608 | 2.70 | 63.0 / 23.3 / -48.8 | .86 .88 .79 | .37 .39 .34 | 17.5 / 42.7 |
+| VT th=1.25, X=0.75 | 39.9 / 39.0 | 35.1 / 36.3 | 18.2 / 4.1 / -31.1 | -9.7k (16.2) / -4.8k (6.6) | -828 | 2.50 | 44.3 / 36.0 / -33.0 | .31 .42 .30 | .55 .56 .58 | 18.9 / 31.5 |
+Others of interest: VT th=1.0 X=1.0 ('x1.5 only when ATR below median, else x1.0'): cut 35.5 / 20.4, carry-dropped 40.2 / 20.8, HOLD 27.7, MID 15.2, X' -35.2, mean -2.2k / -3.0k, total -369k, lots 2.8. The rank-feature caps (atr_ratio, rv_ratio, dayrange) are weaker or negative on L6M (atr_ratio q .5: -19 / +11).
+**EVERY one of the 28 hybrid cells harms X' (-31 to -67%, 2023-04..2024-01): the cap removes x1.5 trades that paid in 2023-24 in high-vol conditions, so no hybrid cell is no-harm (S2 undefined).** The cut in L6M and PRE is real in sign but costs 0.4-0.8M of total dollars and 0.3-0.4 lots per signal.
+**Own best-of-N null (28 cells, 65 draws; condition inputs permuted jointly within book x session).** Real best eligible key 49.0; null S1 mean 37.8, p95 47.5, max 51.8; rank p = 0.030 ((1+1)/(1+65): one draw >= real). The null is built from the same cells, so it already contains the lot reduction effect, and still the best real cell sits at the p95 edge. Null draws find a no-harm eligible cell in 75% of draws (real: none), so 'no-harm' is NOT a property the real hybrid has. Reading: moderate, one-sided signal that quiet-vol timing of the x1.5 side helps L6M/PRE drawdown (L6M placebo ranks 0.8-0.93 for th 1.0 / 1.1, PRE 0.34-0.62: not above random in PRE), but it fails X' every time and best-of-28 x best-of-99 multiplicity applies. Not flagged; not a recommendation. If the user wants it as a SHADOW/forward line: 'x1.5 only when ATR14(5m) <= 1.1 x expanding same-book median ATR at the signal, else x0.75 (not x1.0)'.
+Files: ds3_zones3_new/sizer_s2v/ (hyb_real.csv, hyb_null_*.csv, hybpa9_*, hybplc_*, hybeq_*, hybex_*, plc_VT_*, equal_risk2.pkl, exposure2.pkl); code zones3/sizer_s2v/ (s2v_fin2.py, s2v_hyb.py, s2v_hybfin.py).
