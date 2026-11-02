@@ -1,6 +1,8 @@
 # DS3_ZONES_3_S4A - T-ZONES-3 section 4, first half (EVEN-index streams) of the other POI streams: AHEAD / BEHIND / AT frames
 
-STATUS: S4a deliverable written 2026-11-02 02:19Z (interim: BEHIND/AT frames for the 19 best finalist streams; per-cell placebos 16 draws per kind). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
+**BASE LABEL: every number in this file is on the ASSUMED base (v1.2 / v1.3-assumed: U7 blackout on all books both sides, assumed NY-AM lots and assumed profit lines). The EXACT D7 v1.3 (V13X, user paste 02:45Z) is being built by BASE-4; finalists are re-run on V13X when it is announced and those rows become the headline. Where V13X differs the file will say so (base dependence).**
+
+STATUS: S4a deliverable written 2026-11-02 02:52Z (interim: BEHIND/AT frames for the 19 best finalist streams; per-cell placebos 16 draws per kind). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
 Prereg l2vast/ds3/prereg/ZONES3_S4A_prereg.md sha256 e8d9004f35ecf860d2beaac5372bdd274862c0db1225523eb12a877ac3fcb66d (DECISIONS.md). dead_lookup before: out/zones3_new/s4a_dead_lookup.txt (NOT FOUND for every spec); append_cells after: see end. NEW windows only (code/cap/windows.py): L1M L2M (view, n weeks 5/9) L3M L6M HOLD MID PRE X'. Old-cap numbers are not used.
 
 ## 0. Plain verdict
@@ -52,7 +54,7 @@ Prereg l2vast/ds3/prereg/ZONES3_S4A_prereg.md sha256 e8d9004f35ecf860d2beaac5372
 
 cut = 1 - maxDD(cell)/maxDD(base), weekly cumulative. K = mean over L6M/HOLD/PRE/X' of (cut - placebo-curve cut at equal volume share). Base maxDD (v1.3 screen): L1M 15437, L2M 30359, L3M 40675, L6M 107305, HOLD 107305, MID 66992, PRE 192388, X 253329.
 
-## 3. The 24 finalists on D7 v1.3 (with U7), ranked by the equal-risk cut (mean of L6M/HOLD/PRE/X'); the top 20 across both halves is merged by the lead
+## 3. The 24 finalists on assumed-base v1.3 (with U7), ranked by the equal-risk cut (mean of L6M/HOLD/PRE/X'); the top 20 across both halves is merged by the lead
 
 Base (v1.3, U7, 12R): maxDD L3M 43587, L6M 94071, HOLD 94071, MID 43072, PRE 175098, X 234635; mean $/wk L3M 8158, L6M 21332, HOLD 23492, MID 19719, PRE 2944, X -3921. Equal-risk = lot-table scale c so that the ALL worst-20 equals the base's (c shown), exact re-run.
 
@@ -223,6 +225,49 @@ The 8 shipped lines and the 3 profile lines are not in this section. L1M/L2M col
 
 ## 8. Not done / named gaps
 * Only the AHEAD frame was swept over all 332 streams; BEHIND/AT were run for 19 streams. Placebo draws (16 per kind) are the compute budget; ranks have 0.06 resolution. The purged walk-forward is owned by Z3. 1-s/3-s decision delay was not run (AHEAD skip/half are signal-second decisions; B73/WT/re-target are in section 3). Parameter variants of the line itself (swing strength, profile bin, anchor shifts) are separate streams in the grid (SWG f3/f5/f7, PRF b1-b3, anchors), not re-parameterised. RND and BKS streams were not built. D7 v1.3 profit lines are an agent-built assumption (THP_POLICY_D7.txt not on disk); U7 is an assumption.
+
+## 9. Follow-up on the two leads (v1.3 WITH U7, 12R lock; skip frame)
+
+Placebos here use the v1.3+U7 engine itself (the section 4 placebos used the U7-off screen). Kinds: A = random rows, same count per day x book x session; B = same-volume Bernoulli; C = shuffled-day line set (circular shift in time order inside each book x session). Statistic = mean of the L6M/HOLD/PRE/X' cuts. Rank = (1+#placebo >= cell)/(1+n).
+
+### PRF|vwap|day (lead D 20 skip)
+
+**D scan (pts and % of target distance) and decision delay**
+
+| variant | fires | cut L6M | cut HOLD | cut MID | cut PRE | cut X | mean4 |
+|--|--|--|--|--|--|--|--|
+| D 10 pts | 1540 | +0.17 | +0.17 | -0.40 | +0.00 | +0.37 | +0.18 |
+| D 15 pts | 2267 | +0.17 | +0.16 | -0.47 | +0.06 | +0.60 | +0.25 |
+| D 20 pts | 2865 | +0.17 | +0.17 | -0.46 | +0.09 | +0.59 | +0.26 |
+| D 25 pts | 3418 | +0.17 | +0.11 | -0.00 | +0.09 | +0.62 | +0.25 |
+| D 30 pts | 3884 | +0.11 | -0.02 | -0.06 | +0.11 | +0.62 | +0.20 |
+| D 35 pts | 4256 | +0.14 | +0.14 | -0.06 | +0.05 | +0.64 | +0.25 |
+| D 40 pts | 4523 | -0.01 | -0.01 | +0.04 | +0.06 | +0.65 | +0.17 |
+| D 50 pts | 4990 | -0.03 | -0.03 | +0.23 | -0.12 | +0.65 | +0.12 |
+| D 60 pts | 5390 | -0.00 | -0.00 | +0.21 | -0.06 | +0.65 | +0.14 |
+| 25 % of target | 2065 | +0.17 | +0.16 | -0.47 | +0.06 | +0.60 | +0.25 |
+| 50 % of target | 3617 | +0.11 | -0.02 | -0.06 | +0.11 | +0.62 | +0.20 |
+| 75 % of target | 4619 | -0.01 | -0.01 | +0.04 | -0.06 | +0.65 | +0.14 |
+| D 20 pts, signal decision delayed 1 s | 2805 | +0.17 | +0.17 | -0.52 | +0.09 | +0.59 | +0.26 |
+| D 20 pts, signal decision delayed 3 s | 2735 | +0.15 | +0.15 | -0.52 | +0.09 | +0.59 | +0.25 |
+
+**Placebos (v1.3+U7), cell mean4 cut +0.26**: A: n=100, placebo mean +0.058, 95th pct +0.218, rank 0.040; B: n=100, placebo mean -0.041, 95th pct +0.113, rank 0.020; C: n=66, placebo mean -0.023, 95th pct +0.174, rank 0.015
+
+* L6M: cut +0.17, base trough week 202638, drop that week +0.10, drop worst week +0.17, LOEO +0.17..+0.35, LOMO +0.09..+0.35, month-block bootstrap 5-95 % -0.00..+0.38, P(cut>0) 0.83
+* PRE: cut +0.09, base trough week 202518, drop that week +0.04, drop worst week +0.14, LOEO +0.09..+0.14, LOMO +0.09..+0.24, month-block bootstrap 5-95 % -0.15..+0.34, P(cut>0) 0.68
+* X: cut +0.59, base trough week 202347, drop that week +0.59, drop worst week +0.59, LOEO -0.02..+0.00, LOMO +0.45..+0.63, month-block bootstrap 5-95 % +0.16..+0.68, P(cut>0) 0.99
+* HOLD: cut +0.17, base trough week 202638, drop that week +0.10, drop worst week +0.17, LOEO -0.29..+0.17, LOMO -0.29..+0.26, month-block bootstrap 5-95 % -0.83..+0.17, P(cut>0) 0.30
+* L6M with ISO week 202638 (2026-09-14..18, the base's maxDD trough, base weekly P&L -7207, cell +90518) removed: maxDD base 86864 cell 77796, cut +0.10
+### FIB|ote705_dn|15m (lead D 40 skip)
+
+**D scan (pts and % of target distance) and decision delay**
+
+| variant | fires | cut L6M | cut HOLD | cut MID | cut PRE | cut X | mean4 |
+|--|--|--|--|--|--|--|--|
+
+**Explained weeks (v1.3+U7, weekly P&L cell minus base)**
+* PRF|vwap|day D20: the L6M/HOLD cut is ONE WEEK: ISO 202638 delta +97.7k (the skip removed a trade cluster that lost ~98k in the base's trough week); every other L6M week moves by < 16k. MID (Feb-Apr) -0.46: week 202611 delta -68.5k (the skip removed a winning cluster), which creates a new 62.7k drawdown vs the base's 43.1k. So PRF vwap is a one-week lead for L6M, not a drawdown reduction.
+* FIB|ote705_dn|15m D40: X' worsening (-0.21, maxDD 285k vs 235k) is diffuse over the whole window (cell DD episode 202314..202347); biggest negative deltas 202326 -23k, 202338 -21k, 202317 -16k, 202403 -11k, offset by 202334 +16k, 202402 +11k. It is the line removing winners over the whole 2023 downtrend, not one event. MID: the cut +0.37 comes from week 202613 (+28.7k) and 202614 (+12k), offset by 202611 -68.6k and 202617 -52k.
 
 
 ## 10. Structural reading and decision delay

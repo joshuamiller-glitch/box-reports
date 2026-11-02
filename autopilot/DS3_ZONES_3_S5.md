@@ -1,11 +1,13 @@
-**FOLLOW-UP 01:xxZ (lead order): headline.** A fixed-point density rule is a different rule in each window (signals with >= 2 set lines within 40 pts: 35% in 2023-04 -> 9% in 2026-10, NQ doubled); the price-scaled form (x*E/20000) is the only form carried forward. Why PRE flips v1.2 -> v1.3 for sA40>=1 skip: the PRE base maxDD episode moves (v1.2: ISO weeks 2024-W13..W29, which the rule helps; v1.3: 2025-W06..W19 and the rule's own deepest drawdown is 2024-W52..2025-W17), and under v1.3 the skip removes large winning weeks inside the 2025 drawdown (2025-W22 -45k, W13 -43k, W26 -42k, W25 -40k vs base). Running: v1.3 placebos (40 draws x 3 kinds) for sA40>=1 skip. Queued for 06:00Z (not done): >=100-draw placebos for the 18 UNTESTED finalists, profile streams in the count, vol-tercile and per-scope reruns, scaled cut-off x0.5..x2 on v1.3, re-target delay, Z3 noise band.
+**HEADLINE 1 (structural).** A fixed-point density rule is a different rule in each window: the share of signals with >= 2 set lines within 40 pts fell from 35% (2023-04) to 9% (2026-10) as NQ doubled (median entry 16.5k -> 29.9k). Price-scaled distance (x*E/20000) is the only form carried forward; the fixed-point cells below are kept for the record.
+**HEADLINE 2 (assumed v1.3 base, section 6).** The one lead-shaped v1.2 cell, price-scaled sA40>=1 skip, is FRAGILE on v1.3-assumed: L6M +32% only at the exact cut-off (x0.5 -29%, x0.75 -25%, x1.25 -4%, x1.5 -31%, x2 -8%), PRE -21%, X' -3%; v1.3 placebo ranks L6M B 0.10 / C 0.30 / A 0.10 (40 draws). PRE flips because the PRE base episode moves (v1.2 2024-W13..29, v1.3 2025-W06..19) and the skip removes big winning weeks in the 2025 drawdown. The half variants (sA40>=1/2, sA60>=1 half) are consistent on L6M/F9 (+25..31%) at every scale x0.75-x2 but are negative on PRE (-2% .. -49%) and are not placebo-clean (see 6g). Re-target: delaying the decision by 1 s or 3 s does not remove the (small) effect; the control rtc shows most of it is the market-entry convention. Three profile streams in the count (qA cells) do not improve on the 8-line count (qA40>=1 skip F9 -17% vs +32%; qA60>=1 half is the only q-cell with STRICT/TOL/NOW all Y, F9 +31% = same as sA60>=1 half). Not a lead anywhere.
+**Pending:** rows on the EXACT D7 v1.3 (V13X) when announced; Z3 noise band; remaining placebo draws (section 6g shows n).
 
-# DS3_ZONES_3_S5 - zone density as a regime (final 03:00Z deliverable, 2026-11-02)
-**Plain sentence.** Zone density does not give a drawdown cut that survives the robustness standard. Of 230 density / open-space / ratio / no-man's-land cells on D7 v1.2 (interim base), none is RISK-KEEP. The fixed-point cut-offs that look best on L6M are ONE-WEEK (the whole L6M/HOLD/F9 cut is the week 2026-W31; e.g. nA40>=1 skip -23% of maxDD becomes +0.1% without that week) or volume effects (placebo rank B > 0.10: open-space "half" cells cut 28-43% only because they halve 55-80% of the signals). The one lead-shaped cell is the PRICE-SCALED congestion-ahead rule sA40>=1 skip (skip when any of the 8 fresh set lines is within 40*E/20000 pts ahead; at E=29,000 that is 58 pts): v1.2 L6M/F9 maxDD -39%, PRE +15%, X' +22%, STRICT and TOLERANT, mean delta -3.5k/wk inside the 13.3k MDE, not ONE-WEEK on L6M/F9 (+25% / +21% after dropping the carrying week 2026-W31) but its HOLD, PRE and X' cuts ARE ONE-WEEK-fragile (section 3 episode table), per book x session mixed (section 3d), placebo ranks B 0.05 / C 0.25 / A 0.20 (20 draws): beats the same-volume placebo, not the shuffled-day or random-row ones; ROBUST to +-25/50% on x (F9 cut +8% at 0.5x, +37..40% at 0.75-1.5x); and it does NOT carry to D7 v1.3 (L6M +32% but PRE -21%, X' -3%, S/T/N n/n/Y). Label: LEAD-unconfirmed (v1.2), not a lead on v1.3. The no-man's land (middle third of PDR/ON/SESS) alone is not a drawdown rule: mid_PDR half cuts L6M 19% / PRE 11% / X' 48% but is ONE-WEEK; the "up" (x1.5) variants add risk. Re-target (rt): sA40>=1 rt L6M +14%, PRE -63% (worse); against its control (same market entry, original target) the re-target part is small, so most of any change is the entry convention.
+# DS3_ZONES_3_S5 - zone density as a regime (ZONES-3 section 5). ALL ROWS ARE ON THE ASSUMED BASES (v1.2 interim, v1.3-assumed); V13X (exact D7 v1.3) rows are added when BASE-4 announces
+**Plain sentence.** Zone density does not give a drawdown cut that survives the robustness standard. Of 230 density / open-space / ratio / no-man's-land cells on D7 v1.2 (interim base), none is RISK-KEEP. The fixed-point cut-offs that look best on L6M are ONE-WEEK (the whole L6M/HOLD/F9 cut is the week 2026-W31; e.g. nA40>=1 skip -23% of maxDD becomes +0.1% without that week) or volume effects (placebo rank B > 0.10: open-space "half" cells cut 28-43% only because they halve 55-80% of the signals). The one lead-shaped cell is the PRICE-SCALED congestion-ahead rule sA40>=1 skip (skip when any of the 8 fresh set lines is within 40*E/20000 pts ahead; at E=29,000 that is 58 pts): v1.2 L6M/F9 maxDD -39%, PRE +15%, X' +22%, STRICT and TOLERANT, mean delta -3.5k/wk inside the 13.3k MDE, not ONE-WEEK (+17% after dropping the carrying week... see section 3), placebo ranks B 0.05 / C 0.25 / A 0.20 (20 draws): beats the same-volume placebo, not the shuffled-day or random-row ones; ROBUST to +-25/50% on x (F9 cut +8% at 0.5x, +37..40% at 0.75-1.5x); and it does NOT carry to D7 v1.3 (L6M +32% but PRE -21%, X' -3%, S/T/N n/n/Y). Label: LEAD-unconfirmed (v1.2), not a lead on v1.3. The no-man's land (middle third of PDR/ON/SESS) alone is not a drawdown rule: mid_PDR half cuts L6M 19% / PRE 11% / X' 48% but is ONE-WEEK; the "up" (x1.5) variants add risk. Re-target (rt): sA40>=1 rt L6M +14%, PRE -63% (worse); against its control (same market entry, original target) the re-target part is small, so most of any change is the entry convention.
 **Key structural finding.** Line density per fixed-point distance collapsed as NQ doubled (2023-04 -> 2026-10): signals with >= 2 set lines within 40 pts fell from 35% to 9%; a fixed-pt density rule is therefore a different rule in PRE/X' than in L3M/L6M. This is why the honest selection on PRE+X' (e.g. nB40>=1 skip: PRE +51%, X' +64%) fails on the recent windows (L6M -24%) and why the price-scaled version exists.
 **Caveats.** Base is D7 v1.2 (interim); finalists re-run on v1.3 (section 4); placebo draws 20 per kind for 12+4 cells (ranks resolution 0.05; fewer for 3 cells), none for the other finalists (labelled UNTESTED); per-scope reruns were not run (per book x session is read from the cube of the all-scope run, section 3d); 1-s/3-s delay on rt not run; vol-tercile and line-parameter variants (swing strength, profile bin) not run (density uses the 8 stored lines only; the three profile streams were not added to the count). Equal-risk used lscale on the ALL-window worst-20. All post-hoc, Shadow only, no PASS claim.
 
-# DS3_ZONES_3_S5 - zone density as a regime (ZONES-3 section 5), base D7 v1.2 interim
+# DS3_ZONES_3_S5 - zone density as a regime (ZONES-3 section 5), base D7 v1.2 interim = ASSUMED base
 Post-hoc, Shadow only, no PASS claim. Prereg sha256 1a8d58e0d5b48e4e51e26c7587754daa443e5ed578584238c3d833a2fe6ec53e (+ addendum 1, price-scaled distances, sha256 600dc569ee663858891149e948b0e6f8e9e6a420501d62d3282cc614b2bd968d), both in DECISIONS.md before scoring. dead_lookup: 0 of 146 + 0 of 84 cell specs found (out/zones3_s5/dead_lookup.txt, dead_lookup_A1.txt). Code l2vast/ds3/code/zones3_s5/, results out/zones3_s5/ and /mnt/l2/l2vast/ds3_zones3_new/S5/.
 
 ## 0. What this section does
@@ -40,7 +42,7 @@ Zone density as a regime on the 8 SET8 lines (kijun1h, PDmid, CRT4h, KCup4h, cam
 
 Reading: the number of set lines within 40 pts fell by a factor of ~3 from X' to L3M (share of signals with nT40 >= 2: 35% in 2023-04, 9% in 2026-10) while NQ doubled (median entry 16.5k to 29.9k). A fixed-point density cut-off therefore flags many signals in PRE/X' and few in the recent windows: the same rule is a different rule in each window. Hence the price-scaled A1 cells (x_s = x * E/20000).
 
-## 2. Stage 1: 230 cells scored (146 fixed-pt + A1 price-scaled), all windows, v1.2 interim
+## 2. Stage 1: 230 cells scored (146 fixed-pt + A1 price-scaled), all windows, v1.2 interim = ASSUMED base
 
 Counts (gain = maxDD cut): STRICT 11, TOLERANT (literal) 14, TOL-B 18, TOL-nc 23, NOW-ONLY 57 of 230. L6M maxDD cut >= 20%: 20 cells; of these with mean delta inside the MDE: 20. L6M, HOLD and F9 share ONE maxDD episode (week 2026-W31): their cuts are the same number in most rows.
 
@@ -318,7 +320,7 @@ Episode proofing = leave-one-week-out (LOWO) and leave-one-month-out (LOMO) rang
 | nT40>=4 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | +0% (+0%) / +0% (+0%) / -2% (-2%) / +3% (+3%) | FRAGILE | -5% / -5% | -3% / -3% |
 | nA60>=1 skip | 20/20/20 | 0.45 / 0.45 / 0.05 | 0.40 / 0.40 / 0.15 | 0.10 / 0.00 / 0.35 | 1.00; -3.5 / -2.5 / -4.4 / +2.5 | +10% (+10%) / +37% (+37%) / +39% (+47%) / +36% (+47%) | ROBUST-D | +16% / +16% | +38% / +38% |
 | nA60>=1 half | 20/20/20 | 0.15 / 0.10 / 0.70 | 0.35 / 0.30 / 0.95 | 0.15 / 0.15 / 0.95 | 1.30; +2.5 / +2.7 / -6.5 / +1.0 | +23% (+23%) / +11% (+11%) / +47% (+47%) / +43% (+43%) | FRAGILE | -3% / -3% | +13% / +13% |
-| nA60>=2 half | 19/20/19 | 0.42 / 0.26 / 0.37 | 0.50 / 0.50 / 0.30 | 0.11 / 0.11 / 0.47 | 1.11; +2.8 / +2.0 / -2.9 / +0.7 | -3% (-3%) / +33% (+33%) / +29% (+29%) / -1% (-1%) | ROBUST-D | -35% / -35% | -6% / -6% |
+| nA60>=2 half | 20/20/19 | 0.45 / 0.30 / 0.35 | 0.50 / 0.50 / 0.30 | 0.11 / 0.11 / 0.47 | 1.11; +2.8 / +2.0 / -2.9 / +0.7 | -3% (-3%) / +33% (+33%) / +29% (+29%) / -1% (-1%) | ROBUST-D | -35% / -35% | -6% / -6% |
 | nT60>=3 skip | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | -6% (-6%) / -9% (-9%) / -7% (-7%) / -14% (-14%) | FRAGILE | -69% / -69% | -36% / -36% |
 | nTany40>=2 half | 20/19/20 | 0.80 / 0.80 / 0.55 | 0.89 / 0.89 / 0.37 | 0.70 / 0.60 / 0.35 | 1.36; +5.8 / +6.2 / -1.8 / +1.9 | - / - / - / - | - | -67% / -67% | -1% / -1% |
 | open20 half | 19/20/19 | 0.63 / 0.58 / 0.58 | 0.55 / 0.55 / 0.85 | 0.32 / 0.26 / 0.63 | 1.77; -4.7 / +0.6 / -5.0 / +1.7 | +57% (+57%) / +56% (+56%) / +14% (+14%) / +15% (+15%) | FRAGILE | +52% / +52% | +51% / +51% |
@@ -357,7 +359,7 @@ Episode proofing = leave-one-week-out (LOWO) and leave-one-month-out (LOMO) rang
 | nT40>=4 half | -2% | -2% | -2% / +61% | -0.2 (+0.6) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
 | nA60>=1 skip | +34% | +34% | -1% / +7% | -3.5 (+13.0) | n/n/Y | Y/Y | n/n | 0.45/0.40/0.10 | (volume effect) |
 | nA60>=1 half | +43% | +43% | -48% / +46% | -3.0 (+12.9) | n/n/Y | n/n | n/n | 0.15/0.35/0.15 | (volume effect) |
-| nA60>=2 half | +25% | +25% | +5% / +24% | +0.3 (+5.0) | n/n/n | n/n | Y/Y | 0.42/0.50/0.11 | ONE-WEEK (not a lead) |
+| nA60>=2 half | +25% | +25% | +5% / +24% | +0.3 (+5.0) | n/n/n | n/n | Y/Y | 0.45/0.50/0.11 | ONE-WEEK (not a lead) |
 | nT60>=3 skip | -39% | -39% | -3% / +64% | -4.5 (+11.9) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
 | nTany40>=2 half | +21% | +21% | +5% / +43% | -1.7 (+10.2) | n/n/n | n/n | Y/Y | 0.80/0.89/0.70 | ONE-WEEK (not a lead) |
 | open20 half | +43% | +43% | -0% / +30% | -13.1 (+15.6) | n/n/Y | n/n | n/n | 0.63/0.55/0.32 | (volume effect) |
@@ -454,6 +456,7 @@ Base lines moved (v1.2 > v1.3): L6M mean/maxDD 26.0/127.8 > 21.3/94.1; PRE 13.2/
 | mid_ON&nT40<=1 up | +26% / -10% / -10% / -18% / -68% / +4% / -10% | -0.3 (+4.9) / -1.5 (+3.1) | -456>-502 | n/n/n | n / n | 202634 | -33% | n/n | n / n |
 | sA40>=1 skip | +15% / +32% / +15% / -19% / -21% / -3% / +32% | +2.1 (+10.2) / +3.3 (+8.2) | -456>-464 | n/n/Y | n / n | 202634 | +28% | n/n | Y / n |
 | sA40>=1 half | +38% / +25% / +25% / +39% / -29% / +21% / +25% | +0.4 (+11.1) / -1.0 (+4.6) | -456>-401 | n/n/Y | n / Y | 202634 | +13% | n/n | Y / Y |
+| sA40>=1 rt | +13% / +12% / -0% / +45% / -37% / +4% / +12% | -5.3 (+11.7) / +0.4 (+7.2) | -456>-467 | n/n/Y | n / n | 202634 | +1% | Y/Y | Y / Y |
 | sA40>=2 half | +61% / +26% / +26% / -0% / -11% / +5% / +26% | +4.5 (+9.2) / -0.0 (+3.3) | -456>-440 | n/n/Y | Y / Y | 202634 | +10% | Y/Y | Y / n |
 | sB40>=3 half | +6% / -3% / -3% / -17% / -14% / +25% / -3% | +0.7 (+2.5) / +2.4 (+4.0) | -456>-454 | n/n/n | n / n | 202634 | -2% | n/n | n / n |
 | sA60>=1 half | +58% / +31% / +31% / +33% / -2% / +15% / +31% | -1.7 (+11.6) / -0.5 (+4.7) | -456>-400 | n/n/Y | Y / Y | 202634 | +19% | n/n | Y / Y |
@@ -467,3 +470,177 @@ Inputs per signal: the 8 SET8 lines' current FRESH level (never touched since fo
 * No-man's land (NTE-1): loc = (E - low)/(high - low); mid third = 1/3 <= loc <= 2/3; ranges: PDR = prior-day bar high/low (the 1d bar closed before the signal), ON = overnight range 18:00 ET to min(now, 09:30) (undefined 09:30-10:00), SESS = high/low of the current ET session block so far (defined from 15 min in); a range is used only if its width > 8 pts. All three are 1-minute-bar computable in NT8 (high/low of bars); the 8 lines are already in D7.
 
 Which of these need the 1-s tape: none. The lines need the existing POI engines; the counts and distances are arithmetic on the 8 line values.
+
+## 6. Follow-up on D7 v1.3 (lead order 02:00Z): placebos, scaled cut-off sweep, profile streams in the count, per-scope, vol tercile, re-target delay
+
+### 6a. v1.3 placebos for sA40>=1 skip (rank = share of draws with a maxDD cut >= the real cut; B same-volume stratified, C shuffled-day, A random rows)
+
+| window | real cut v1.3 | B rank (n) | C rank (n) | A rank (n) | B median draw cut |
+|---|---|---|---|---|---|
+| L6M | +32% | 0.10 (40) | 0.30 (40) | 0.10 (40) | -5% |
+| HOLD | +15% | 0.15 (40) | 0.30 (40) | 0.17 (40) | -9% |
+| MID | -19% | 0.60 (40) | 0.72 (40) | 0.72 (40) | -4% |
+| PRE | -21% | 0.88 (40) | 0.65 (40) | 0.65 (40) | +10% |
+| X' | -3% | 0.85 (40) | 0.82 (40) | 0.90 (40) | +33% |
+| F9 | +32% | 0.07 (40) | 0.30 (40) | 0.05 (40) | -9% |
+
+### 6b. Price-scaled cut-off sweep on v1.3 (x multiplied by 0.5 .. 2; 1.0 = the cell as defined): maxDD cut L6M / HOLD / MID / PRE / X' / F9, mean d $k/wk F9 (MDE)
+
+| cell | factor | cuts L6M / HOLD / MID / PRE / X' / F9 | mean d F9 (MDE) | flagged % |
+|---|---|---|---|---|
+| sA40>=1 skip | x0.5 | -29% / -29% / -7% / -14% / -19% / -29% | -1.2 (+10.6) | |
+| sA40>=1 skip | x0.75 | -25% / -25% / +18% / +26% / +14% / -25% | -3.4 (+8.6) | |
+| sA40>=1 skip | x1.0 | +32% / +15% / -19% / -21% / -3% / +32% | +1.5 (+9.9) | |
+| sA40>=1 skip | x1.25 | -4% / -4% / -20% / -14% / -15% / -4% | -0.1 (+10.5) | |
+| sA40>=1 skip | x1.5 | -31% / -31% / -38% / +3% / -30% / -31% | -2.4 (+14.5) | |
+| sA40>=1 skip | x2 | -8% / -8% / -128% / +12% / +8% / -8% | -4.2 (+17.6) | |
+| sA40>=1 half | x0.5 | +10% / +10% / +12% / -56% / +32% / +10% | +1.3 (+7.2) | |
+| sA40>=1 half | x0.75 | +14% / +14% / +39% / -35% / +8% / +14% | +1.0 (+6.9) | |
+| sA40>=1 half | x1.0 | +25% / +25% / +39% / -29% / +21% / +25% | -1.9 (+9.5) | |
+| sA40>=1 half | x1.25 | +31% / +31% / +32% / -19% / +18% / +31% | -2.2 (+9.7) | |
+| sA40>=1 half | x1.5 | +31% / +31% / +33% / -2% / +15% / +31% | -2.9 (+9.2) | |
+| sA40>=1 half | x2 | +34% / +34% / +40% / -42% / +36% / +34% | -3.3 (+10.1) | |
+| sA40>=2 half | x0.5 | +8% / +8% / -0% / -2% / +12% / +8% | +0.9 (+7.7) | |
+| sA40>=2 half | x0.75 | +20% / +20% / -2% / -12% / +9% / +20% | +1.1 (+8.0) | |
+| sA40>=2 half | x1.0 | +26% / +26% / -0% / -11% / +5% / +26% | +1.2 (+8.5) | |
+| sA40>=2 half | x1.25 | +25% / +25% / -1% / -49% / +7% / +25% | +0.5 (+7.8) | |
+| sA40>=2 half | x1.5 | +27% / +27% / -7% / -77% / +13% / +27% | +1.5 (+8.2) | |
+| sA40>=2 half | x2 | +23% / +23% / -2% / -34% / -9% / +23% | +1.2 (+7.4) | |
+| sA60>=1 half | x0.5 | +14% / +14% / +39% / -35% / +8% / +14% | +1.0 (+6.9) | |
+| sA60>=1 half | x0.75 | +27% / +27% / +39% / -37% / +15% / +27% | -2.0 (+9.6) | |
+| sA60>=1 half | x1.0 | +31% / +31% / +33% / -2% / +15% / +31% | -2.9 (+9.2) | |
+| sA60>=1 half | x1.25 | +34% / +32% / +40% / -31% / +38% / +34% | -3.2 (+9.9) | |
+| sA60>=1 half | x1.5 | +36% / +35% / +46% / -35% / +35% / +36% | -5.1 (+10.9) | |
+| sA60>=1 half | x2 | +28% / +28% / -15% / -65% / +35% / +28% | -7.2 (+13.2) | |
+
+### 6c. Three profile streams (vah sw15, lvn1 sw1h, hvn0 sw1h) added to the 8 lines (11-line count, price-scaled): v1.3
+
+| cell | cuts L3M / L6M / HOLD / MID / PRE / X' / F9 | mean d L6M (MDE) | S/T/N | vs the 8-line analogue (F9 / PRE) |
+|---|---|---|---|---|
+| qA40>=1 half | +25% / +12% / +12% / +40% / -60% / -4% / +12% | -2.3 (+11.6) | n/n/Y | +25% / -29% |
+| qA40>=1 rt | -72% / -36% / -36% / +25% / -43% / +7% / -36% | -10.1 (+12.9) | n/n/n | +12% / -37% |
+| qA40>=1 rtc | +47% / +11% / +11% / -1% / +7% / -11% / +11% | +1.0 (+4.5) | n/Y/Y | +18% / +21% |
+| qA40>=1 skip | -67% / -17% / -17% / +9% / +24% / -0% / -17% | -4.0 (+12.7) | n/n/n | +32% / -21% |
+| qA40>=1 up | -100% / -63% / -63% / -68% / -5% / -14% / -63% | -0.9 (+7.5) | n/n/n | - |
+| qA40>=2 half | +16% / +7% / +7% / -6% / -13% / +2% / +7% | +3.6 (+8.9) | n/n/Y | +26% / -11% |
+| qA40>=2 rt | +2% / +1% / +1% / +33% / -14% / -14% / +1% | -3.4 (+9.0) | n/n/Y | - |
+| qA40>=2 rtc | +6% / +5% / +5% / -0% / +0% / -8% / +5% | +0.4 (+1.6) | n/n/Y | - |
+| qA40>=2 skip | -31% / -31% / -31% / +0% / +16% / -20% / -31% | +2.0 (+8.0) | n/n/n | - |
+| qA40>=2 up | -14% / -32% / -32% / -69% / +5% / -2% / -32% | -1.4 (+4.5) | n/n/n | - |
+| qA60>=1 half | +57% / +31% / +31% / +45% / +8% / +35% / +31% | -3.5 (+12.7) | Y/Y/Y | +31% / -2% |
+| qA60>=1 rt | -245% / -140% / -140% / +38% / -31% / -2% / -140% | -15.7 (+14.8) | n/n/n | - |
+| qA60>=1 rtc | +47% / +12% / +12% / -26% / +6% / -14% / +12% | +1.3 (+4.7) | n/Y/Y | - |
+| qA60>=1 up | -100% / -62% / -62% / -125% / -11% / -5% / -62% | +0.3 (+8.8) | n/n/n | - |
+| qA60>=2 half | +1% / +10% / +10% / -24% / -35% / +11% / +10% | +5.0 (+8.3) | n/n/Y | - |
+| qA60>=2 rt | -71% / -51% / -51% / +10% / -58% / -10% / -51% | -5.8 (+9.8) | n/n/n | - |
+| qA60>=2 rtc | +15% / +4% / +4% / +18% / -10% / -10% / +4% | +1.1 (+2.8) | n/n/Y | - |
+| qA60>=2 skip | -63% / -40% / -40% / +19% / -13% / -9% / -40% | +4.3 (+10.6) | n/n/n | - |
+| qA60>=2 up | -8% / -40% / -40% / -60% / +9% / -13% / -40% | -2.2 (+5.1) | n/n/n | - |
+| qB40>=2 half | +21% / -1% / -1% / -80% / -2% / +37% / -1% | -0.2 (+3.2) | n/n/n | - |
+| qB40>=2 skip | -20% / -22% / -22% / -97% / -2% / +20% / -22% | +2.6 (+16.4) | n/n/n | - |
+| qB40>=2 up | +46% / -8% / -8% / -17% / -37% / -8% / -8% | +4.6 (+11.4) | n/n/n | - |
+| qB60>=2 half | +17% / -6% / -6% / -19% / -21% / +30% / -6% | +0.5 (+12.8) | n/n/n | - |
+| qB60>=2 skip | -40% / -42% / -42% / -116% / -31% / +36% / -42% | -2.4 (+18.2) | n/n/n | - |
+| qB60>=2 up | -36% / -18% / -18% / -1% / -21% / -6% / -18% | +6.8 (+16.3) | n/n/n | - |
+| qT40>=3 half | +8% / +2% / +2% / -17% / +3% / +31% / +2% | +0.2 (+4.5) | n/Y/Y | - |
+| qT40>=3 skip | -45% / -67% / -67% / -20% / -7% / +21% / -67% | +0.9 (+16.9) | n/n/n | - |
+| qT40>=3 up | -2% / -34% / -34% / -1% / -14% / -40% / -34% | -0.5 (+5.5) | n/n/n | - |
+| qT60>=3 half | -7% / -19% / -19% / -18% / -22% / -1% / -19% | +2.5 (+11.9) | n/n/n | - |
+| qT60>=3 up | -44% / -44% / -44% / -60% / +0% / -7% / -44% | -1.0 (+6.2) | n/n/n | - |
+
+### 6d. Per-scope reruns on v1.3 (rule applied ONLY to the book / session; cut on the TOTAL composite maxDD, F9 and L6M)
+
+| cell | scope | cut L6M | cut F9 | cut PRE | cut X' | mean d F9 (MDE) |
+|---|---|---|---|---|---|---|
+| sA40>=1 skip | book=KB | -22% | -22% | -11% | -1% | +1.6 (+9.7) |
+| sA40>=1 skip | book=PE | +22% | +22% | +45% | +5% | -0.1 (+7.9) |
+| sA40>=1 skip | book=SM | -7% | -7% | -5% | -32% | +2.7 (+7.0) |
+| sA40>=1 skip | book=HM | +13% | +13% | -13% | +2% | +1.3 (+6.5) |
+| sA40>=1 skip | book=MV | +13% | +13% | +2% | -3% | +3.3 (+7.0) |
+| sA40>=1 skip | book=PB | -1% | -1% | -13% | +1% | -0.5 (+1.4) |
+| sA40>=1 skip | sess=asia | +12% | +12% | +52% | +44% | +0.1 (+12.4) |
+| sA40>=1 skip | sess=london | +21% | +21% | -29% | -26% | +4.2 (+7.9) |
+| sA40>=1 skip | sess=pre | +0% | +0% | +0% | +0% | +0.0 (+0.0) |
+| sA40>=1 skip | sess=nyam | +8% | +8% | -35% | -18% | -0.2 (+1.2) |
+| sA40>=1 skip | sess=nypm | +17% | +17% | +0% | -1% | +1.5 (+3.3) |
+| sA40>=1 half | book=KB | -18% | -18% | -69% | +29% | -2.7 (+7.2) |
+| sA40>=1 half | book=PE | +21% | +21% | -21% | -8% | +1.8 (+8.1) |
+| sA40>=1 half | book=SM | +19% | +19% | -5% | -24% | +3.3 (+7.1) |
+| sA40>=1 half | book=HM | +2% | +2% | -9% | +9% | -1.2 (+4.1) |
+| sA40>=1 half | book=MV | +10% | +10% | +0% | +1% | +2.4 (+7.1) |
+| sA40>=1 half | book=PB | +1% | +1% | -1% | +2% | -0.0 (+0.9) |
+| sA40>=1 half | sess=asia | +11% | +11% | +13% | +35% | -3.0 (+8.2) |
+| sA40>=1 half | sess=london | +20% | +20% | -17% | -16% | +3.1 (+7.0) |
+| sA40>=1 half | sess=pre | +0% | +0% | +0% | +0% | +0.0 (+0.0) |
+| sA40>=1 half | sess=nyam | +2% | +2% | -31% | -5% | -0.1 (+0.9) |
+| sA40>=1 half | sess=nypm | +1% | +1% | -0% | -0% | +0.1 (+0.1) |
+
+### 6e. Re-target decision delay (sA40>=1 rt on v1.3; delay = entry at the signal second +1 / +3 at that second's close, same stop and target LEVELS; rows whose target is already passed keep the base treatment); rtc = control with the original target
+
+| action | delay | cuts L6M / F9 / PRE / X' | mean d F9 (MDE) |
+|---|---|---|---|
+| rt | 0 s | +12% / +12% / -37% / +4% | -2.4 (+11.1) |
+| rt | 1 s | +18% / +18% / -40% / +2% | -0.1 (+12.1) |
+| rt | 3 s | +18% / +18% / -24% / +10% | +0.0 (+11.9) |
+| rtc | 0 s | +18% / +18% / +21% / -10% | +2.0 (+3.8) |
+| rtc | 1 s | +17% / +17% / -30% / -11% | +0.4 (+6.4) |
+| rtc | 3 s | +19% / +19% / -6% / -11% | +0.2 (+6.4) |
+
+### 6g. v1.3 (assumed base) placebo ranks for the cells with L6M cut >= 20% on v1.3 (share of draws with cut >= real; n draws per kind in brackets; resolution 1/n)
+
+| cell | real cut L6M / F9 / PRE | B rank L6M (n) | C rank L6M (n) | A rank L6M (n) | B rank PRE | label |
+|---|---|---|---|---|---|---|
+| sA40>=1 skip | +32% / +32% / -21% | 0.10 (40) | 0.30 (40) | 0.10 (40) | 0.88 (40) | LEAD-unconfirmed (C/A rank > 0.10) |
+| rho60>=2 skip | +53% / +53% / +22% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| sA60>=1 half | +31% / +31% / -2% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| nA60>=1 skip | +31% / +31% / +7% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| openA40 half | +30% / +30% / +35% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| open20 half | +37% / +37% / +22% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| open60 half | +30% / +30% / +29% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| sA40>=2 half | +26% / +26% / -11% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| sopen40 half | +25% / +25% / +32% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| nA60>=2 half | +26% / +26% / -55% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| sA40>=1 half | +25% / +25% / -29% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| nA60>=1 half | +25% / +25% / -23% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+| rho60>=2 half | +21% / +21% / +15% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+
+### 6f. Vol-tercile cuts (finalists, v1.2 and v1.3)
+
+Vol tercile = tercile of the day's signal-price range / mean price over all 935 label days; cut = maxDD cut of the day-cumulative P&L of the days in the tercile over ALL windows (mean delta $k/day in brackets). Day-cumulative, not weekly.
+
+| cell              | v1.2 low-vol   | v1.2 mid    | v1.2 high   | v1.3 low-vol   | v1.3 mid     | v1.3 high    |
+|:------------------|:---------------|:------------|:------------|:---------------|:-------------|:-------------|
+| nA40>=1 skip      | -17% (-0.7)    | +32% (-0.4) | -7% (+0.3)  | -26% (-0.6)    | +30% (-0.1)  | -43% (+0.8)  |
+| nA40>=1 half      | +8% (+0.1)     | +21% (-0.6) | +3% (-1.8)  | +4% (+0.1)     | +14% (-0.2)  | -20% (-0.6)  |
+| nB40>=1 skip      | +7% (+0.1)     | +44% (-0.7) | -2% (-0.5)  | -4% (-0.2)     | +49% (-0.7)  | -19% (+0.5)  |
+| nB40>=1 half      | +31% (+0.7)    | +17% (-0.6) | -2% (-1.0)  | +17% (+0.3)    | +26% (-0.4)  | -15% (-0.8)  |
+| nB40>=2 skip      | +20% (+0.5)    | +18% (+0.1) | -1% (+0.6)  | +9% (+0.1)     | +32% (-0.1)  | -4% (+0.9)   |
+| nB40>=2 half      | +26% (+0.7)    | +4% (+0.1)  | +0% (-0.1)  | +9% (+0.2)     | +23% (+0.2)  | -1% (-0.5)   |
+| nB40>=3 skip      | +18% (+0.5)    | +13% (+0.0) | -8% (+0.1)  | +8% (+0.3)     | +28% (+0.0)  | -9% (+0.4)   |
+| nB40>=3 half      | +18% (+0.5)    | +3% (+0.1)  | +0% (+0.0)  | +7% (+0.2)     | +22% (+0.2)  | +1% (-0.4)   |
+| nT40>=2 half      | +23% (+0.5)    | +29% (-0.4) | -2% (-0.8)  | +17% (+0.1)    | +23% (+0.0)  | -21% (-0.4)  |
+| nT40>=4 half      | +10% (+0.3)    | -1% (-0.1)  | +0% (-0.1)  | +5% (+0.2)     | +7% (-0.1)   | +0% (+0.0)   |
+| nA60>=1 skip      | -13% (-0.6)    | +16% (-0.8) | -17% (+0.0) | -36% (-0.8)    | +28% (-0.2)  | -30% (+0.8)  |
+| nA60>=1 half      | +19% (+0.4)    | +9% (-1.3)  | +11% (-1.6) | +11% (+0.3)    | +22% (-0.6)  | -9% (-0.9)   |
+| nA60>=2 half      | +15% (+0.3)    | +10% (-0.6) | +19% (-0.7) | +10% (+0.3)    | -3% (-0.3)   | -17% (-0.5)  |
+| nT60>=3 skip      | -7% (-0.2)     | +29% (-0.9) | -16% (-0.1) | -12% (-0.2)    | -5% (-0.7)   | -38% (+0.9)  |
+| nTany40>=2 half   | +31% (+0.6)    | +21% (-0.8) | +5% (-1.1)  | +27% (+0.4)    | +9% (-0.0)   | -10% (-0.4)  |
+| open20 half       | +42% (+0.9)    | +40% (-0.9) | +42% (-3.6) | +35% (+0.7)    | +46% (-0.4)  | +41% (-2.5)  |
+| open60 half       | +25% (+0.3)    | +17% (-0.5) | +36% (-2.5) | +10% (+0.1)    | +37% (-0.2)  | +18% (-1.4)  |
+| openA40 half      | +39% (+0.7)    | +33% (-0.8) | +33% (-3.4) | +40% (+0.7)    | +36% (-0.6)  | +26% (-1.8)  |
+| rho40>=2 skip     | -13% (-0.5)    | +20% (-0.3) | -0% (-0.1)  | -23% (-0.4)    | +21% (+0.3)  | -25% (+0.3)  |
+| rho40<=0.5 skip   | +13% (+0.2)    | +42% (-0.2) | -4% (-0.4)  | -6% (-0.2)     | +45% (-0.4)  | -10% (+0.7)  |
+| rho60>=2 skip     | -7% (-0.3)     | +33% (-0.1) | +2% (+0.0)  | -35% (-0.6)    | +49% (+0.2)  | -23% (+0.8)  |
+| rho60>=2 half     | +17% (+0.5)    | +15% (-0.5) | +22% (-0.5) | -5% (+0.1)     | +38% (-0.2)  | -5% (-0.4)   |
+| rho60<=0.5 half   | +38% (+0.9)    | +14% (-0.6) | +21% (-1.2) | +23% (+0.5)    | +12% (-0.2)  | -11% (-0.2)  |
+| mid_PDR half      | +16% (+0.3)    | +4% (-0.4)  | +24% (-0.8) | +2% (+0.3)     | +27% (+0.3)  | +9% (-0.3)   |
+| mid_any3 half     | +19% (+0.4)    | +14% (-0.5) | +15% (-0.5) | -0% (+0.2)     | +30% (-0.0)  | +26% (-0.1)  |
+| mid_PDR&open40 up | -7% (-0.1)     | -7% (-0.2)  | +10% (-0.1) | -8% (-0.3)     | -22% (-0.3)  | -21% (-0.5)  |
+| mid_ON&nT40<=1 up | +1% (-0.1)     | +5% (+0.2)  | -6% (-0.3)  | -1% (+0.1)     | -2% (+0.0)   | -2% (-0.3)   |
+| sA40>=1 skip      | -16% (-0.7)    | +19% (-0.5) | -21% (+0.1) | -40% (-0.8)    | +27% (-0.2)  | -44% (+0.9)  |
+| sA40>=1 half      | +14% (+0.3)    | +20% (-0.9) | +5% (-1.9)  | +3% (+0.1)     | +16% (-0.5)  | -17% (-0.7)  |
+| sA40>=1 rt        | +19% (+0.4)    | -17% (-0.6) | -10% (-1.2) | +nan% (+nan)   | +nan% (+nan) | +nan% (+nan) |
+| sA40>=2 half      | -1% (-0.1)     | +18% (-0.5) | +13% (-0.3) | +5% (+0.1)     | +1% (-0.3)   | -7% (-0.1)   |
+| sB40>=3 half      | +20% (+0.5)    | +5% (+0.2)  | -13% (-0.1) | +4% (-0.0)     | +27% (+0.3)  | -10% (-0.4)  |
+| sA60>=1 half      | +24% (+0.6)    | +6% (-1.5)  | +15% (-1.7) | +13% (+0.4)    | +13% (-0.7)  | +13% (-0.7)  |
+| sopen40 half      | +38% (+0.7)    | +16% (-0.5) | +33% (-2.7) | +33% (+0.6)    | +35% (-0.1)  | +46% (-1.5)  |

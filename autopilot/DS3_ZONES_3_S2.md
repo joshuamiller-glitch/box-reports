@@ -165,3 +165,17 @@ Base v1.3 (profit side = gated take lines U6/P6, best-effort; U7 on) shipped lay
 
 | finalist | kind | n | L6M cut (cell) | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M |
 |---|---|---|---|---|---|---|---|---|---|
+
+
+## s2 on v1.3: placebo ranks, interim at ~02:40Z (Z2)
+CRT4h 60pts fresh solo with U7 ON, v1.3 (n about 67 draws per kind so far; the run continues to 120, then the Asia-only CRT4h cell and 2 more null replicates). **It does not beat any placebo on the L6M cut (ranks 0.32-0.60) and its MID cut ranks 0.85-0.99, i.e. worse than random; only the shuffled-day PRE rank (0.07) is near a beat.** With the MID maxDD +62% (Calmar -58%) the cell is a recent-window, Asia-carried, placebo-indistinguishable LEAD, not a RISK-KEEP. Reading for the policy file: keep the shipped D20 fresh; if the user wants one change to test forward, it is CRT4h in Asia only (per-session table) and it must pass its own placebo first (job queued: res_gen_plc13b).
+### placebo ranks on v1.3 (share of draws with an L6M / MID / PRE / X' maxDD cut at least as large; small = good); CRT4h on U7 ON vs its U7-on shipped layer, others U7 off
+
+| finalist | kind | n | L6M cut (cell) | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M |
+|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60 | cnt | 67 | +5% | 0.60 | 0.60 | 0.94 | 0.31 | 0.93 | 0.54 |
+| CRT4h60 | vol | 67 | +5% | 0.32 | 0.32 | 0.99 | 0.28 | 0.96 | 0.34 |
+| CRT4h60 | sday | 66 | +5% | 0.57 | 0.55 | 0.85 | 0.07 | 0.72 | 0.49 |
+
+## BASE LABEL (Z2, 2026-11-02 ~02:50Z): every s2 row above is on the ASSUMED base
+All tables in the sections "s2 INTERIM", "s2 UPDATE", "s2 FINAL-FOR-NOW", "s2 on D7 v1.3" and "placebo ranks, interim" are on the ASSUMED base (D7 v1.1 sweep; v1.2 = U7 on all books both sides; v1.3-assumed = + U6/P6 take lines on rel_tot8), not the EXACT D7 v1.3 given by the user at 02:45Z. They are valid evidence about the assumed base only. Queued placebos finish on it; no new large grid is started on it. When BASE-4 announces V13X (d7_v13x.py) the finalists (CRT4h 60 fresh solo, CRT4h Asia-only, camH3, kijun1h, PDmid post-hoc picks) are re-run there and those rows become the headline; cut flips are reported as base-dependence.
