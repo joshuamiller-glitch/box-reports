@@ -33,3 +33,6 @@ Per rule and per exit line: base P&L of flagged/fired rows, maxDD of the base se
 
 ## ZL-1 pointer (2026-11-02): PUL k3 numbers for the forward register
 PUL k3 4h skip D20, V13X: lock=12R L6M +29% / PRE +22% / X' +20%; lock=None (headline) L6M +1% / PRE +17% / X' +11% / MID -14%. Label LEAD (weak, PRE/X' only), LOCK-ONLY on L6M. Detail and the live definition + log fields: autopilot/DS3_ZONES_3_S7_BOOK.md (sections "LIVE definition of the PULLED-WALL zone", "FORWARD SHADOW LOG spec", "HEADLINE (lock=None...)"). Per-cell files: /mnt/l2/l2vast/ds3_zones3_new/zl1/lockoff_cells.csv, placebo_lockoff.csv.
+
+## Z2 pointer (2026-11-02): CRT4h 30pts fw2 solo (rule_id Z2_CRT4h30fw2solo), half
+Exact live definition and the extra log fields (crt_line_px, crt_formed_ts_utc, crt_age_s, other-line distances, solo flag, shipped_crt_flag): autopilot/DS3_ZONES_3_S2.md, section "LIVE definition (Shadow only) of the CRT4h 30pts fw2 solo zone cell". Label LEAD (STRICT, not one-month, placebo ranks 0.09-0.14), Asia-carried; V13X lock=None L6M maxDD -6%, Calmar L6M/HOLD/MID/PRE/X' +8/+9/+6/+4/+5%.

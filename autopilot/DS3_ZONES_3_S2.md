@@ -447,3 +447,50 @@ B3 (my cut; ZL-3 also owns B3 scoring): unfilled FVG 5m/15m/1h, Globex-open gap,
 | FVG5 | 36 | 0.94 | 0.14 | 30pts|fw2: +0.138, +4% / -3% / -40% / +20% / +8% | 40pts|fw2: +0.007, +7% / -5% / -44% / +10% / +8% | 0/7/8 | +11% | n/a |
 | NDOG | 36 | 0.03 | 0.69 | 60pts|fw2: +0.000, +0% / +0% / +0% / +1% / -1% | 30pts|fresh: +0.004, +0% / +0% / +0% / +2% / -2% | 0/18/24 | +0% | n/a |
 | RTHG | 36 | 0.25 | 0.14 | 20pts|touched: +0.180, -5% / +3% / +16% / +48% / -12% | 40pts|touched (ungated): +0.022, -2% / +7% / +39% / +33% / -10% | 0/0/2 | +14% | n/a |
+
+
+## s2 FINAL (Z2, ~07:15Z 2026-11-02): V13X lock=None placebos at n=133-139 draws per kind (first 6 cells), n=60 for the 4 extra honest cells (queue still filling to 100)
+**Verdict, headline frame (lock=None, corrected score):** no finalist beats its three placebos (random-level same-count, same-volume random half, shuffled-day line sets) on the L6M maxDD cut. Closest: CRT4h 30pts fw2 solo (the corrected honest+post-hoc agreement, STRICT, 4/4 neighbours, 43-month chain delta +75.5k lock-none / +101.9k lock-12, leave-one-month-out min +60.6k / +62.3k, P(delta>0) 1.00 / 0.99, best month 20% / 39%: NOT one-month) has L6M-cut ranks 0.09-0.14, HOLD 0.07-0.11, S_post 0.08-0.10, X' 0.04 (sday): the strongest LEAD but not a placebo beat. camH3 40pts fw8 any: L6M ranks 0.19-0.25 but MID cut ranks 0.01 / 0.01 / 0.05 and X' 0.01-0.20 (placebo-beating on MID and X' only); its lock-12 monthly chain is ONE-MONTH (best month 137%, LOMO min -32.7k) so it is a lock-none-only lead. PDmid 20pts touched solo beats the cnt and vol placebos on S_post (0.04) but not on the L6M cut (0.16-0.17) nor shuffled-day (0.11). OTE705 60pts a1-4 any: PRE rank 0.02 only. Others no. **Labels: CRT4h 30pts fw2 solo = LEAD (strongest; carried by Asia in the per-session stage; keep forward-shadow only); camH3 40pts fw8 any = LEAD in lock-none only (MID/X' placebo beat; ONE-MONTH in lock-12); PDmid 20pts touched solo = LEAD-weak; CRT4h 60pts fresh solo = LOCK-ONLY in part, no placebo beat; B2 round numbers = VOLUME (recent-only gains, PRE -27..-62%); profile lines and B3 FVG/gap lines = no lead; stacked rule = no lead.** Nothing is RISK-KEEP in the headline frame (L6M maxDD cuts at most 6-11%, inside MDE on the mean). Proposed policy-file row (shadow only, for Z3): CRT4h | 30pts | fresh within 2 h, no other set line within 5 pts | half | all books | Asia; every other line keeps D20 fresh half. Not done: the V13X best-of-N null for the full grid (the earlier 6-replicate null was on the v1.1 assumed base: real best scores fell inside the shuffled range), a same-volume placebo for the B2 cells, line-parameter variants.
+| finalist (lock=None) | kind | n | L6M cut (cell) | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M | rank S_post | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60 | cnt | 139 | +4% | 0.34 | 0.36 | 0.17 | 0.84 | 0.64 | 0.26 | 0.23 | no placebo beat |
+| CRT4h60 | vol | 134 | +4% | 0.31 | 0.37 | 0.16 | 0.91 | 0.57 | 0.27 | 0.25 | no placebo beat |
+| CRT4h60 | sday | 139 | +4% | 0.21 | 0.26 | 0.12 | 0.59 | 0.19 | 0.17 | 0.18 | no placebo beat |
+| CRT4h60asia | cnt | 134 | +4% | 0.41 | 0.50 | 0.12 | 0.81 | 0.44 | 0.33 | 0.36 | no placebo beat |
+| CRT4h60asia | vol | 139 | +4% | 0.29 | 0.44 | 0.16 | 0.94 | 0.41 | 0.19 | 0.21 | no placebo beat |
+| CRT4h60asia | sday | 134 | +4% | 0.28 | 0.31 | 0.14 | 0.56 | 0.07 | 0.19 | 0.21 | no placebo beat |
+| CRT4h30fw2solo | cnt | 139 | +6% | 0.12 | 0.11 | 0.86 | 0.39 | 0.35 | 0.13 | 0.08 | no placebo beat |
+| CRT4h30fw2solo | vol | 133 | +6% | 0.09 | 0.07 | 0.83 | 0.39 | 0.43 | 0.12 | 0.08 | no placebo beat |
+| CRT4h30fw2solo | sday | 139 | +6% | 0.14 | 0.11 | 0.41 | 0.15 | 0.04 | 0.11 | 0.10 | no placebo beat |
+| camH3_40fw8any | cnt | 133 | +7% | 0.23 | 0.14 | 0.01 | 0.43 | 0.20 | 0.25 | 0.21 | no placebo beat |
+| camH3_40fw8any | vol | 139 | +7% | 0.19 | 0.11 | 0.01 | 0.50 | 0.14 | 0.19 | 0.15 | no placebo beat |
+| camH3_40fw8any | sday | 133 | +7% | 0.25 | 0.07 | 0.05 | 0.63 | 0.01 | 0.19 | 0.12 | no placebo beat |
+| PDmid_20touchedsolo | cnt | 139 | +7% | 0.16 | 0.11 | 0.81 | 0.21 | 0.66 | 0.06 | 0.04 | beats on S_post |
+| PDmid_20touchedsolo | vol | 133 | +7% | 0.17 | 0.09 | 0.72 | 0.25 | 0.67 | 0.10 | 0.04 | beats on S_post |
+| PDmid_20touchedsolo | sday | 139 | +7% | 0.17 | 0.09 | 0.82 | 0.36 | 0.24 | 0.16 | 0.11 | no placebo beat |
+| PDmid_30touchedstk | cnt | 133 | +11% | 0.06 | 0.07 | 0.57 | 0.43 | 0.99 | 0.09 | 0.10 | no placebo beat |
+| PDmid_30touchedstk | vol | 138 | +11% | 0.06 | 0.06 | 0.58 | 0.37 | 0.96 | 0.09 | 0.11 | no placebo beat |
+| PDmid_30touchedstk | sday | 133 | +11% | 0.10 | 0.11 | 0.56 | 0.60 | 0.72 | 0.21 | 0.28 | no placebo beat |
+| camH3_75fw8solo | cnt | 61 | +7% | 0.26 | 0.18 | 0.02 | 0.40 | 0.13 | 0.24 | 0.21 | no placebo beat |
+| camH3_75fw8solo | vol | 61 | +7% | 0.23 | 0.16 | 0.03 | 0.42 | 0.06 | 0.26 | 0.21 | no placebo beat |
+| camH3_75fw8solo | sday | 61 | +7% | 0.32 | 0.08 | 0.05 | 0.56 | 0.02 | 0.23 | 0.13 | no placebo beat |
+| OTE705_60a14any | cnt | 61 | +5% | 0.24 | 0.21 | 0.71 | 0.02 | 0.40 | 0.19 | 0.24 | no placebo beat |
+| OTE705_60a14any | vol | 61 | +5% | 0.26 | 0.16 | 0.66 | 0.02 | 0.34 | 0.24 | 0.21 | no placebo beat |
+| OTE705_60a14any | sday | 60 | +5% | 0.15 | 0.11 | 0.69 | 0.02 | 0.51 | 0.13 | 0.15 | no placebo beat |
+| kijun1h_60a14any | cnt | 60 | -2% | 0.64 | 0.64 | 0.80 | 0.05 | 0.49 | 0.64 | 0.56 | no placebo beat |
+| kijun1h_60a14any | vol | 60 | -2% | 0.57 | 0.56 | 0.85 | 0.07 | 0.30 | 0.57 | 0.41 | no placebo beat |
+| kijun1h_60a14any | sday | 60 | -2% | 0.61 | 0.56 | 0.56 | 0.26 | 0.49 | 0.54 | 0.48 | no placebo beat |
+| PDmid_75a4solo | cnt | 60 | -1% | 0.64 | 0.64 | 0.33 | 0.08 | 0.28 | 0.38 | 0.44 | no placebo beat |
+| PDmid_75a4solo | vol | 60 | -1% | 0.66 | 0.66 | 0.38 | 0.16 | 0.25 | 0.39 | 0.41 | no placebo beat |
+| PDmid_75a4solo | sday | 60 | -1% | 0.67 | 0.62 | 0.39 | 0.38 | 0.03 | 0.69 | 0.70 | no placebo beat |
+
+## LIVE definition (Shadow only) of the CRT4h 30pts fw2 solo zone cell, for D7 v1.3 EXACT (Z2, 2026-11-02 ~08:00Z)
+Status: strongest LEAD of section 2 (STRICT in V13X lock=None, 4/4 neighbours, 43-month chain +75.5k, not one-month, placebo ranks 0.09-0.14: not at the 5% bar). Shadow log only; nothing is traded or acted on; no PASS.
+**Line (CRT 4h midpoint):** at each close of a 4-hour bar (bars anchored at 18:00 ET: 18:00, 22:00, 02:00, 06:00, 10:00, 14:00 ET), line L = (high + low) / 2 of that just-closed bar, built from the 1-s path price frame (back-adjusted at rolls; D7 uses its own chart price frame, same quantity). It exists from the first second after the bar closes (ek) until the next 4h bar closes (a new L replaces it; cap = next close).
+**Fresh:** L is fresh while no 1-s bar since ek has traded through it (second range [low, high] containing L; first touch ends freshness); evaluated on state strictly before the signal second.
+**Age rule ("fresh within 2 h"):** signal_second - ek <= 7,200 s (the line formed within the last 2 hours; the first half of its 4-hour life).
+**Ahead:** L is between the planned entry price E and the target: distance a = (L - E) x side >= 0 and a <= D = 30 pts (and, as for every zone line, a <= target distance). CRT midpoints are neutral lines (count for longs and shorts).
+**Solo (confluence):** no other line of the set - MAS ich_kijun 1h, PDX day midpoint, MAS kc_up 4h, PIV cam_H3 RTH, FIB ote62/705/79 up 15m - is fresh, ahead and within D = 30 pts AND within 5 pts of a (|a_other - a| <= 5 pts) at the signal second. (The 3-profile lines are not in the set.)
+**Action HALF:** if all of the above hold, the signal's planned lots are multiplied by 0.5 through the ER row multiplier exactly as the shipped zone HALF does (integer half-up, minimum 1 lot, the running-max SizeMult governor keeps the 0.5). This REPLACES the shipped CRT term (shipped: CRT midpoint fresh, any age, any confluence, D = 20): in the cell the CRT line half-sizes only when the three conditions above hold. The other six half-lines keep D20 fresh unchanged; OTE-62 B73 D30 unchanged.
+**Scope in the cell tested:** all books and sessions (lock=None headline). The per-session stage found the effect only in Asia (11 STRICT / 7 TOLERANT of 36 settings; London / NY flat), so an Asia-only version is the cleaner product; its placebos (Asia-restricted) are being run.
+**Forward shadow log (pointer in FORWARD_SHADOW_ZONES_SPEC.md; fields to add to shadow_zone_flags.csv for rule_id Z2_CRT4h30fw2solo):** signal_id, rule_id, variant=half, D_pts=30, frame=AHEAD, fresh_only=1, crt_line_px, crt_formed_ts_utc (ek), crt_age_s, crt_fresh (0/1), crt_dist_pts, crt_touched_ts_utc, for each of the 7 other set lines: px, fresh, dist_pts (NaN if none ahead within D), n_others_within_5pts, solo (0/1), shipped_crt_flag (D20, fresh, any age), cell_flag, would_action (half lots, min 1), lots_final_if_applied, and at trade close base_pnl_usd and pnl_with_action_usd. Controls: every signal row (flagged or not) so the same-count / same-volume / shuffled-day placebos can be built from the log; per day count of flagged signals; hourly heartbeat (4h bars seen, 1-s rows seen).

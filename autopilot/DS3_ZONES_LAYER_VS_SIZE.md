@@ -1,20 +1,36 @@
-# DS3 ZONES LAYER vs SIZE - is the shipped HALF layer better than random halving at EQUAL RISK? (BASE-4, 2026-11-02T06:48Z)
+# DS3 ZONES LAYER vs SIZE - is the shipped HALF layer better than random halving at EQUAL RISK? (BASE-4, 2026-11-02T07:21Z)
 
 Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Method: placebo layer = the shipped 7-line HALF mask (D20, half lots) replaced by a random half-lot mask with the same number of LIVE rows (A = same count per month, 100 draws; B = same count per month x book x session, 50 draws); OTE-62 B73, TH-L2 loss, profit lines, locks, sizer unchanged. Every placebo (and the references) has its WHOLE lot table scaled (engine lscale, integer-lot rounding) until the worst-20-weeks sum over ALL history equals the shipped layer's at scale 1 in the same frame (stop at |gap| <= 2.5% (<=5 engine runs); the residual gap is corrected linearly in mean, maxDD and ulcer: x target/achieved). Metrics per window: weekly mean ($k/wk), maxDD ($k, weekly cumulative), Calmar (mean/maxDD), ulcer (RMS of the weekly drawdown path, $k). RANK = share of placebo draws that are at least as GOOD as the shipped layer (higher mean / lower maxDD / higher Calmar / lower ulcer); small rank = the shipped layer beats random halving; ~0.5 = indistinguishable. Frames: lock none = per-book locks only (headline), 12R = + combined stack lock. Post-hoc.
 
+
+## ANSWER (one paragraph; lock none = headline)
+**In the recent windows the shipped HALF layer is NOT better than random halving at equal risk; it is better only in PRE (and on MID drawdown), and it is clearly better than having no layer.** Lock none, 100 same-count-per-month random half-lot layers (and 50 stratified by month x book x session), each scaled in the integer-lot engine to the shipped layer's worst-20: in F9 / L6M / HOLD the shipped layer's equal-risk mean ranks 0.48 / 0.40 / 0.58 (A) and 0.42 / 0.30 / 0.50 (B), its maxDD 0.41 / 0.41 / 0.39 and Calmar 0.43 / 0.38 / 0.42 (rank ~0.5 = indistinguishable; shipped F9 mean 22.5k vs placebo median 22.3k, maxDD 132.6k vs 135.5k). Where it does beat random halving is PRE (mean 10.0k vs 7.8k, maxDD 178k vs 212k, Calmar 0.056 vs 0.036: ranks 0.06 / 0.10 / 0.05 in A, 0.06 / 0.04 / 0.04 in B) and MID drawdown (rank 0.02-0.10); in X' it is no better (ranks 0.59-0.81 worse). With the combined 12R lock the picture is different: F9 maxDD rank 0.13 and Calmar 0.21 (better than random), L3M better (0.12-0.24), but HOLD (0.74-0.79) and X' (0.74-1.00) are worse than random halving, PRE indistinguishable (0.44-0.53). Versus no layer scaled to the same worst-20 (scale 0.95, lock none): F9 mean 20.2k / maxDD 151.7k vs shipped 22.5k / 132.6k, PRE 5.2k / 318k vs 10.0k / 178k, so a layer of half-lot rows beats scaling every row down, but a RANDOM half-lot layer of the same size does about as well in F9-HOLD: what the layer buys in the recent year is the size effect of taking half lots on ~10-12% of signals (a convex haircut on big-exposure rows), not the information in the 8 lines; the line information shows only in PRE (and MID drawdown).
+
 ## LOCK NONE (headline)
 
-### A: same count per month: 93 draws; equal-risk lot scale of the placebo layers: median 1.011 [0.940, 1.089] (shipped = 1.000); residual risk gap max 6.3%
+### A: same count per month: 100 draws; equal-risk lot scale of the placebo layers: median 1.011 [0.939, 1.087] (shipped = 1.000); residual risk gap max 6.6%
 
 | window | shipped mean | placebo mean med [5,95] | rank mean | shipped maxDD | placebo maxDD med [5,95] | rank maxDD | Calmar ship / plc med | rank Calmar | ulcer ship / plc med | rank ulcer |
 |---|---|---|---|---|---|---|---|---|---|---|
-| F9 | 22.5 | 22.3 [20.5,26.4] | 0.47 | 132.6 | 135.5 [101.3,174.7] | 0.42 | 0.170 / 0.166 | 0.43 | 54.1 / 56.5 | 0.41 |
-| L3M | 16.1 | 14.2 [10.5,17.6] | 0.14 | 49.9 | 50.0 [38.5,67.5] | 0.49 | 0.324 / 0.289 | 0.34 | 27.1 / 26.4 | 0.55 |
-| L6M | 26.9 | 26.3 [23.8,29.5] | 0.39 | 132.6 | 135.5 [101.3,174.7] | 0.42 | 0.202 / 0.193 | 0.39 | 61.4 / 64.3 | 0.42 |
-| HOLD | 23.9 | 24.1 [21.7,28.2] | 0.57 | 132.6 | 136.3 [113.3,174.7] | 0.40 | 0.180 / 0.174 | 0.42 | 59.4 / 56.2 | 0.69 |
-| MID | 10.9 | 11.9 [8.0,18.2] | 0.65 | 62.6 | 77.8 [60.1,94.1] | 0.10 | 0.174 / 0.154 | 0.39 | 25.7 / 28.1 | 0.20 |
-| PRE | 10.0 | 7.8 [5.4,10.1] | 0.06 | 178.4 | 212.2 [168.0,293.8] | 0.11 | 0.056 / 0.036 | 0.05 | 81.3 / 95.7 | 0.13 |
-| X' | -1.2 | -0.5 [-2.5,1.1] | 0.83 | 134.8 | 126.5 [91.2,177.3] | 0.62 | -0.009 / -0.004 | 0.81 | 66.6 / 56.0 | 0.69 |
+| F9 | 22.5 | 22.4 [20.5,26.2] | 0.48 | 132.6 | 135.6 [102.5,175.7] | 0.41 | 0.170 / 0.166 | 0.43 | 54.1 / 56.6 | 0.40 |
+| L3M | 16.1 | 14.2 [10.4,17.3] | 0.13 | 49.9 | 49.9 [38.4,67.4] | 0.50 | 0.324 / 0.289 | 0.35 | 27.1 / 26.3 | 0.55 |
+| L6M | 26.9 | 26.3 [23.8,29.5] | 0.40 | 132.6 | 135.6 [102.5,175.7] | 0.41 | 0.202 / 0.192 | 0.38 | 61.4 / 64.3 | 0.42 |
+| HOLD | 23.9 | 24.1 [21.5,28.0] | 0.58 | 132.6 | 136.4 [113.3,175.7] | 0.39 | 0.180 / 0.174 | 0.42 | 59.4 / 56.2 | 0.69 |
+| MID | 10.9 | 11.9 [8.0,18.2] | 0.66 | 62.6 | 77.7 [60.3,94.0] | 0.10 | 0.174 / 0.154 | 0.39 | 25.7 / 28.3 | 0.21 |
+| PRE | 10.0 | 7.7 [5.4,10.0] | 0.06 | 178.4 | 212.9 [168.8,293.1] | 0.10 | 0.056 / 0.036 | 0.05 | 81.3 / 96.5 | 0.12 |
+| X' | -1.2 | -0.5 [-2.7,1.1] | 0.81 | 134.8 | 127.7 [91.4,176.6] | 0.59 | -0.009 / -0.004 | 0.80 | 66.6 / 56.4 | 0.66 |
+
+### B: same count per month x book x session: 50 draws; equal-risk lot scale of the placebo layers: median 1.011 [0.940, 1.090] (shipped = 1.000); residual risk gap max 6.5%
+
+| window | shipped mean | placebo mean med [5,95] | rank mean | shipped maxDD | placebo maxDD med [5,95] | rank maxDD | Calmar ship / plc med | rank Calmar | ulcer ship / plc med | rank ulcer |
+|---|---|---|---|---|---|---|---|---|---|---|
+| F9 | 22.5 | 22.1 [19.8,24.8] | 0.42 | 132.6 | 138.0 [110.1,170.3] | 0.40 | 0.170 / 0.165 | 0.40 | 54.1 / 57.5 | 0.36 |
+| L3M | 16.1 | 13.6 [10.3,16.8] | 0.10 | 49.9 | 48.0 [41.0,64.5] | 0.62 | 0.324 / 0.260 | 0.26 | 27.1 / 27.6 | 0.48 |
+| L6M | 26.9 | 26.1 [23.6,29.0] | 0.30 | 132.6 | 138.0 [110.1,170.3] | 0.40 | 0.202 / 0.188 | 0.38 | 61.4 / 64.7 | 0.36 |
+| HOLD | 23.9 | 23.9 [21.4,26.4] | 0.50 | 132.6 | 141.0 [112.1,170.3] | 0.32 | 0.180 / 0.169 | 0.40 | 59.4 / 57.3 | 0.56 |
+| MID | 10.9 | 12.2 [7.4,15.8] | 0.66 | 62.6 | 77.2 [64.1,92.9] | 0.02 | 0.174 / 0.162 | 0.34 | 25.7 / 29.2 | 0.10 |
+| PRE | 10.0 | 7.7 [5.7,9.9] | 0.06 | 178.4 | 220.5 [181.8,267.5] | 0.04 | 0.056 / 0.034 | 0.04 | 81.3 / 94.2 | 0.08 |
+| X' | -1.2 | -1.1 [-2.7,0.7] | 0.70 | 134.8 | 120.6 [92.5,168.2] | 0.68 | -0.009 / -0.008 | 0.64 | 66.6 / 58.7 | 0.66 |
 
 ### References (mean $k/wk / maxDD $k / Calmar / ulcer $k)
 | layer | F9 | L3M | L6M | HOLD | MID | PRE | X' |
@@ -30,6 +46,30 @@ Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Method: placebo layer = the sh
 | none layer, uniform lot scale 1.0 | 23.2 / DD 145.8 / Cal 0.159 / U 60.7 | 14.8 / DD 53.4 / Cal 0.278 / U 29.5 | 27.4 / DD 145.8 / Cal 0.188 / U 68.7 | 23.3 / DD 145.8 / Cal 0.160 / U 64.9 | 11.7 / DD 77.7 / Cal 0.150 / U 30.0 | 7.7 / DD 245.1 / Cal 0.031 / U 112.2 | -1.8 / DD 190.0 / Cal -0.009 / U 92.7 |
 
 ## 12R combined lock
+
+### A: same count per month: 100 draws; equal-risk lot scale of the placebo layers: median 0.992 [0.934, 1.055] (shipped = 1.000); residual risk gap max 5.2%
+
+| window | shipped mean | placebo mean med [5,95] | rank mean | shipped maxDD | placebo maxDD med [5,95] | rank maxDD | Calmar ship / plc med | rank Calmar | ulcer ship / plc med | rank ulcer |
+|---|---|---|---|---|---|---|---|---|---|---|
+| F9 | 17.6 | 17.3 [14.2,20.5] | 0.39 | 78.5 | 92.1 [68.4,108.7] | 0.13 | 0.224 / 0.187 | 0.21 | 32.2 / 33.3 | 0.38 |
+| L3M | 15.8 | 11.6 [5.0,17.0] | 0.12 | 39.9 | 47.7 [33.3,62.3] | 0.24 | 0.395 / 0.240 | 0.14 | 18.9 / 22.3 | 0.26 |
+| L6M | 22.4 | 20.4 [16.9,25.3] | 0.27 | 73.9 | 71.5 [49.9,100.6] | 0.56 | 0.303 / 0.289 | 0.45 | 32.4 / 31.6 | 0.55 |
+| HOLD | 19.9 | 20.4 [17.0,23.5] | 0.56 | 119.2 | 96.9 [77.3,140.6] | 0.79 | 0.167 / 0.212 | 0.74 | 40.9 / 34.3 | 0.77 |
+| MID | 5.3 | 7.4 [2.4,12.3] | 0.74 | 78.5 | 89.3 [62.9,107.8] | 0.21 | 0.068 / 0.086 | 0.65 | 29.1 / 33.6 | 0.17 |
+| PRE | 4.0 | 3.8 [1.7,6.6] | 0.44 | 252.4 | 248.5 [178.0,327.2] | 0.53 | 0.016 / 0.015 | 0.45 | 99.9 / 100.9 | 0.49 |
+| X' | -3.9 | -2.0 [-4.4,-0.1] | 0.92 | 173.7 | 137.2 [74.1,214.9] | 0.74 | -0.023 / -0.015 | 1.00 | 114.4 / 75.6 | 0.90 |
+
+### B: same count per month x book x session: 50 draws; equal-risk lot scale of the placebo layers: median 0.990 [0.929, 1.058] (shipped = 1.000); residual risk gap max 6.9%
+
+| window | shipped mean | placebo mean med [5,95] | rank mean | shipped maxDD | placebo maxDD med [5,95] | rank maxDD | Calmar ship / plc med | rank Calmar | ulcer ship / plc med | rank ulcer |
+|---|---|---|---|---|---|---|---|---|---|---|
+| F9 | 17.6 | 16.9 [14.1,19.9] | 0.42 | 78.5 | 91.8 [78.2,101.6] | 0.06 | 0.224 / 0.186 | 0.12 | 32.2 / 34.4 | 0.28 |
+| L3M | 15.8 | 12.4 [8.9,15.1] | 0.04 | 39.9 | 44.5 [36.2,58.0] | 0.24 | 0.395 / 0.259 | 0.04 | 18.9 / 21.4 | 0.20 |
+| L6M | 22.4 | 20.6 [17.1,24.8] | 0.32 | 73.9 | 72.8 [52.1,95.1] | 0.56 | 0.303 / 0.280 | 0.40 | 32.4 / 32.7 | 0.48 |
+| HOLD | 19.9 | 20.1 [16.7,22.7] | 0.54 | 119.2 | 106.0 [81.3,135.2] | 0.78 | 0.167 / 0.187 | 0.76 | 40.9 / 36.5 | 0.82 |
+| MID | 5.3 | 6.5 [2.9,11.2] | 0.70 | 78.5 | 90.5 [64.7,101.4] | 0.12 | 0.068 / 0.075 | 0.54 | 29.1 / 34.7 | 0.10 |
+| PRE | 4.0 | 4.2 [2.3,6.7] | 0.56 | 252.4 | 255.9 [175.7,340.3] | 0.42 | 0.016 / 0.016 | 0.54 | 99.9 / 103.6 | 0.44 |
+| X' | -3.9 | -3.0 [-5.3,-1.0] | 0.72 | 173.7 | 169.7 [98.3,254.8] | 0.54 | -0.023 / -0.018 | 1.00 | 114.4 / 97.6 | 0.66 |
 
 ### References (mean $k/wk / maxDD $k / Calmar / ulcer $k)
 | layer | F9 | L3M | L6M | HOLD | MID | PRE | X' |
