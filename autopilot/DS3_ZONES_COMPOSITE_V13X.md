@@ -85,7 +85,7 @@ ALL7 skip lock OFF comes from Z3 lockoff_cubes_ALL7_STK7_O62.npz. "no layer" = V
 
 Reading rule: a layer that only reduces drawdown by trading smaller shows the same mean at equal worst-20; compare rows at equal risk. ALL7 skip and PUL/CRT4h details in the cut table above.
 
-## Placebo / noise-band evidence per candidate (what exists, in which frame) - refreshed 2026-11-02T05:17Z
+## Placebo / noise-band evidence per candidate (what exists, in which frame) - refreshed 2026-11-02T05:35Z
 
 | candidate | lock-None placebo | lock-12R placebo | noise band | note |
 |---|---|---|---|---|
@@ -94,3 +94,51 @@ Reading rule: a layer that only reduces drawdown by trading smaller shows the sa
 | sA40>=1 / nA60>=1 skip | NO (S5 to run) | 40 draws v1.3 started (S5) | density-threshold sensitivity (S5) | flags 28% of rows: volume placebo essential |
 | PUL k3 4h D20 skip | NO | ranks 0.016-0.066 L6M/HOLD, 0.28-0.39 L3M (ZL-1, 60 draws) | no | one month (2026-09) carries L6M dollars |
 | ALL7 skip | NO | S3 plc_*.pkl 12R | s3 noise | lock-off cut weak (L6M -4%, HOLD -4%, MID +18%, PRE -8%, X' -8% vs HALF per Z3) |
+
+## Lock-NONE placebos for S5 density cells (BASE-4, 3 kinds, cut = maxDD cut vs SHIPPED layer lock None; rank = share of placebo draws with cut >= real; small = real beats placebo)
+plA = same count uniformly random rows; plB = same count per book x session; plC = real mask circularly shifted within each book x session stream (shuffled day).
+
+| cell | placebo | draws | window | real cut | placebo median [5,95] | rank cut | real d mean | placebo med d mean | rank mean |
+|---|---|---|---|---|---|---|---|---|---|
+| sA40>=1 skip | plA | 100 | F9 | +36% | +19% [-48,+57] | 0.26 | -2.5 | -4.5 | 0.23 |
+| sA40>=1 skip | plA | 100 | L3M | -9% | -12% [-114,+40] | 0.45 | -6.0 | -5.9 | 0.51 |
+| sA40>=1 skip | plA | 100 | L6M | +36% | +25% [-48,+64] | 0.37 | -7.4 | -6.4 | 0.57 |
+| sA40>=1 skip | plA | 100 | HOLD | +30% | +4% [-52,+36] | 0.13 | -3.8 | -4.6 | 0.38 |
+| sA40>=1 skip | plA | 100 | MID | +40% | -5% [-119,+54] | 0.12 | +8.8 | -0.4 | 0.06 |
+| sA40>=1 skip | plA | 100 | PRE | +14% | -8% [-63,+30] | 0.22 | +1.4 | -3.2 | 0.01 |
+| sA40>=1 skip | plA | 100 | X' | +27% | +14% [-41,+53] | 0.33 | +0.9 | +1.1 | 0.54 |
+| sA40>=1 skip | plB | 100 | F9 | +36% | +11% [-49,+53] | 0.24 | -2.5 | -7.3 | 0.13 |
+| sA40>=1 skip | plB | 100 | L3M | -9% | -28% [-149,+34] | 0.38 | -6.0 | -7.2 | 0.44 |
+| sA40>=1 skip | plB | 100 | L6M | +36% | +12% [-49,+61] | 0.29 | -7.4 | -9.0 | 0.35 |
+| sA40>=1 skip | plB | 100 | HOLD | +30% | +1% [-52,+39] | 0.13 | -3.8 | -7.2 | 0.14 |
+| sA40>=1 skip | plB | 100 | MID | +40% | +6% [-65,+59] | 0.15 | +8.8 | -2.3 | 0.03 |
+| sA40>=1 skip | plB | 100 | PRE | +14% | +0% [-49,+28] | 0.28 | +1.4 | -2.7 | 0.01 |
+| sA40>=1 skip | plB | 100 | X' | +27% | +11% [-53,+53] | 0.29 | +0.9 | +0.7 | 0.43 |
+| sA40>=1 skip | plC | 100 | F9 | +36% | +22% [-51,+57] | 0.32 | -2.5 | -6.3 | 0.13 |
+| sA40>=1 skip | plC | 100 | L3M | -9% | -17% [-107,+35] | 0.40 | -6.0 | -7.4 | 0.37 |
+| sA40>=1 skip | plC | 100 | L6M | +36% | +24% [-51,+58] | 0.37 | -7.4 | -8.4 | 0.36 |
+| sA40>=1 skip | plC | 100 | HOLD | +30% | +5% [-51,+36] | 0.13 | -3.8 | -7.2 | 0.11 |
+| sA40>=1 skip | plC | 100 | MID | +40% | +7% [-71,+63] | 0.17 | +8.8 | -1.6 | 0.04 |
+| sA40>=1 skip | plC | 100 | PRE | +14% | -5% [-65,+24] | 0.21 | +1.4 | -3.3 | 0.00 |
+| sA40>=1 skip | plC | 100 | X' | +27% | +18% [-48,+57] | 0.41 | +0.9 | +0.4 | 0.41 |
+| nA60>=1 skip | plA | 100 | F9 | +38% | +15% [-38,+59] | 0.27 | -3.5 | -5.9 | 0.32 |
+| nA60>=1 skip | plA | 100 | L3M | -8% | -8% [-97,+49] | 0.48 | -5.9 | -5.4 | 0.55 |
+| nA60>=1 skip | plA | 100 | L6M | +38% | +25% [-38,+64] | 0.35 | -7.2 | -7.3 | 0.49 |
+| nA60>=1 skip | plA | 100 | HOLD | +27% | +5% [-49,+44] | 0.20 | -4.4 | -6.1 | 0.36 |
+| nA60>=1 skip | plA | 100 | MID | +40% | +7% [-94,+52] | 0.14 | +5.1 | -1.4 | 0.14 |
+| nA60>=1 skip | plA | 100 | PRE | -6% | -0% [-65,+34] | 0.58 | +0.9 | -3.0 | 0.00 |
+| nA60>=1 skip | plA | 100 | X' | +31% | +12% [-56,+53] | 0.27 | +1.2 | +0.8 | 0.43 |
+| nA60>=1 skip | plB | 100 | F9 | +38% | +18% [-47,+53] | 0.20 | -3.5 | -8.1 | 0.09 |
+| nA60>=1 skip | plB | 100 | L3M | -8% | -15% [-136,+39] | 0.47 | -5.9 | -7.8 | 0.36 |
+| nA60>=1 skip | plB | 100 | L6M | +38% | +21% [-47,+58] | 0.23 | -7.2 | -10.0 | 0.22 |
+| nA60>=1 skip | plB | 100 | HOLD | +27% | +11% [-49,+39] | 0.25 | -4.4 | -7.8 | 0.11 |
+| nA60>=1 skip | plB | 100 | MID | +40% | +6% [-74,+58] | 0.18 | +5.1 | -2.3 | 0.09 |
+| nA60>=1 skip | plB | 100 | PRE | -6% | -6% [-64,+24] | 0.51 | +0.9 | -3.6 | 0.02 |
+| nA60>=1 skip | plB | 100 | X' | +31% | +19% [-68,+55] | 0.34 | +1.2 | +0.7 | 0.42 |
+| nA60>=1 skip | plC | 100 | F9 | +38% | +20% [-37,+56] | 0.21 | -3.5 | -8.0 | 0.17 |
+| nA60>=1 skip | plC | 100 | L3M | -8% | -21% [-137,+41] | 0.40 | -5.9 | -8.6 | 0.33 |
+| nA60>=1 skip | plC | 100 | L6M | +38% | +25% [-37,+65] | 0.30 | -7.2 | -10.2 | 0.25 |
+| nA60>=1 skip | plC | 100 | HOLD | +27% | +9% [-47,+32] | 0.15 | -4.4 | -8.0 | 0.09 |
+| nA60>=1 skip | plC | 100 | MID | +40% | +14% [-73,+64] | 0.22 | +5.1 | -1.9 | 0.14 |
+| nA60>=1 skip | plC | 100 | PRE | -6% | +1% [-64,+26] | 0.57 | +0.9 | -3.8 | 0.02 |
+| nA60>=1 skip | plC | 100 | X' | +31% | +16% [-47,+48] | 0.31 | +1.2 | +0.5 | 0.34 |

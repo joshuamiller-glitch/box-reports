@@ -1,4 +1,4 @@
-# DS3 B6 (time decay / touch count) of the SHIPPED 7 coded lines + OTE: V13X, lock None (per-book locks only) - BASE-4, 2026-11-02T05:17Z
+# DS3 B6 (time decay / touch count) of the SHIPPED 7 coded lines + OTE: V13X, lock None (per-book locks only) - BASE-4, 2026-11-02T05:35Z
 
 Same layers as Z3 b6.py (zones3_s3/b6.py, D20, fresh = age since formation in buckets <1h / 1-4h / 4-24h / >24h, touched = >=1 touch; the store has no 2+ touch count) but run with lock=None. Layer = line restricted to the bucket (HALF) with the other lines as shipped (`only`), or bucket removed (`drop`). Cell: maxDD cut vs the SHIPPED layer (lock None) / delta mean $k (paired MDE). Positive cut = shallower. Post-hoc; no placebo.
 

@@ -123,3 +123,14 @@ Other programs' cuts (DEAD_CELLS, scored on the assumed base): ZL1 0 of 74 pass;
 
 ## Frame comparison (lock 12R vs lock-off, V13X, appended ~05:00Z)
 Noise bands differ strongly between frames: flip 2% / flip 5% - lock 12R: L3M 25/31, L6M 30/36, HOLD 28/40, MID 24/30, PRE 18/28, X' 26/29 %; lock-off: L3M 18/21, L6M 15/21, HOLD 15/21, MID 19/34, PRE 21/20, X' 13/29 %. The combined 12R lock roughly doubles the L6M/HOLD noise band (a lock that pulls a whole week of trades makes the maxDD path-dependent). Use the band of the frame you score in; the headline frame is lock-off until the user confirms the combined lock. n = 43 (12R) / 38 (lock-off) draws per type so far (continuing for lock-off). Rule check in the lock-off frame: Z3 cells passing 0 / 91 (see DS3_ZONES_3_S3.md).
+
+## Refined V13X band (appended ~06:00Z; n = 57 draws per type in lock-off, ~75 in lock 12R; both frames, flip 2% / flip 5% / drop 30)
+| frame | type | L3M | L6M | HOLD | MID | PRE | X' |
+|---|---|---|---|---|---|---|---|
+| lock-off (HEADLINE) | flip 2.0 | 0.174 | 0.149 | 0.149 | 0.237 | 0.172 | 0.146 |
+| lock-off | flip 5.0 | 0.211 | 0.216 | 0.215 | 0.350 | 0.240 | 0.288 |
+| lock-off | drop 30 | 0.075 | 0.132 | 0.083 | 0.119 | 0.098 | 0.051 |
+| lock 12R | flip 2.0 | 0.237 | 0.306 | 0.300 | 0.216 | 0.207 | 0.206 |
+| lock 12R | flip 5.0 | 0.325 | 0.372 | 0.398 | 0.245 | 0.281 | 0.293 |
+| lock 12R | drop 30 | 0.068 | 0.076 | 0.069 | 0.057 | 0.116 | 0.081 |
+Practical thresholds for a zone unit of ~500-1,500 rows in the lock-off headline frame: L6M cut > 15-22% AND PRE cut > 17-24% (or X' > 15-29%). The full per-type tables are in `out/zones3/s3_v13x/noise_band_{lock12,off}.csv`. Best-of-N chance null (placebo matrix of the 7 finalist cells x 100 draws, standardised cut, V13X): lock 12R - best cell per window p vs the best-of-101 null 0.93-1.00 (O62_30 d5 L6M, bar4hmid wt MID/PRE, kijun1h wt X'); lock-off - ALL7 rt L6M p 0.69, bar4hmid wt MID 0.25, kijun1h wt X' 0.25, others 1.00 (vs best-of-10: 0.02-0.08 for those three). No finalist is distinguishable from the best of ~100 cells by chance in either frame.

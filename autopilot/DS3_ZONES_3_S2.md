@@ -339,3 +339,78 @@ V13X lock=None full screen: 1933 changed distinct-key cells; S_hon>0 0.47, S_pos
 | camH3 | POST-HOC | camH3|40pts|fw8|any | 123.1 / 123.1 / 46.4 / 181.2 / 123.6 | +9% / +11% / +39% / +2% / -26% | +0.3 (1.5) | S/T/N | no | 4, +0.06, 4/4 | +0.04 (202628-202634) |
 | kijun1h | HONEST | kijun1h|60pts|fw1|solo | 123.6 / 123.6 / 63.9 / 183.7 / 147.2 | +8% / +6% / -2% / -6% / +85% | +0.2 (2.8) | -/-/N | no | 2, +0.19, 2/2 | -0.11 (202314-202337) |
 | kijun1h | POST-HOC | kijun1h|60pts|a1-4|stk | 135.3 / 135.3 / 68.5 / 170.0 / 138.3 | -1% / +2% / -1% / +7% / -39% | +0.3 (1.1) | S/T/N | no | 3, -0.02, 1/3 | -0.01 (202606-202607) |
+
+
+## s2 CORRECTION and CORRECTED headline (Z2, ~05:50Z 2026-11-02)
+**DEFECT FOUND AND FIXED:** the relative Calmar gain (c_cell / c_ship - 1) was inverted when the shipped Calmar was negative and exploded when it was near zero. This hit the X' component of the HONEST score S_hon (and the displayed X' Calmar-gain column) in every frame where the X' shipped mean is <= 0: D7 v1.1 / v1.2 / v1.3-assumed / V13X (X' mean about -4k/wk); the one-convention frames (X' mean +8k) and the L6M, HOLD, MID, PRE columns were not affected, nor were maxDD cuts, tiers, RISK-KEEP, placebo ranks, S_post. Fixed definition: dcal = (c_cell - c_ship) / max(|c_ship|, 0.05). All honest picks and 'X'' Calmar gain' entries printed above for those frames are superseded by the tables in this section; the honest ranking in the earlier sections should be disregarded.
+**Corrected lock=None (headline) picks:** the honest and post-hoc rankings now agree on CRT4h 30pts fw2 solo (fresh within 2 h, no other set line within 5 pts): STRICT, L6M maxDD 132.6 -> 124.3k (-6%), Calmar gain L6M +8%, HOLD +9%, MID +6%, PRE +4%, X' +5%, mean +0.3k/wk (MDE 1.0), 4/4 neighbours, LOEO worst +0.04; second agreement camH3 40pts fw8 any (post-hoc STRICT: L6M +9%, HOLD +11%, MID +39%, PRE +2%, X' +5%; the honest pick is the 75%tgt neighbour). kijun1h 60pts a1-4 (honest, S/T/N) and PDmid 75%tgt age>4h solo (honest, S/T/N: PRE +9%) are small. Share of cells with positive honest score falls from 47% to 20% (the inverted X' term inflated it), positive post-hoc 35%. Placebos for these cells are queued (lock-off frame).
+V13X lock=None full screen: 1933 changed distinct-key cells; S_hon>0 0.20, S_post>0 0.35; STRICT 46, TOL 110, NOW 663, TOL-B 492, TOL-nc 143, RISK-KEEP(L6M rule) 0
+
+| line | pick | cell | maxDD $k L6M / HOLD / MID / PRE / X' | Calmar gain L6M / HOLD / MID / PRE / X' | mean d L6M (MDE) | S/T/N | RK | neighbours n, mean S, same sign | LOEO worst S (episode) |
+|---|---|---|---|---|---|---|---|---|---|
+| CRT4h | HONEST | CRT4h|30pts|fw2|solo | 124.3 / 124.3 / 66.7 / 178.0 / 134.3 | +8% / +9% / +6% / +4% / +5% | +0.3 (1.0) | S/T/N | no | 4, +0.03, 4/4 | +0.04 (202506-202516) |
+| CRT4h | POST-HOC | CRT4h|30pts|fw2|solo | 124.3 / 124.3 / 66.7 / 178.0 / 134.3 | +8% / +9% / +6% / +4% / +5% | +0.3 (1.0) | S/T/N | no | 4, +0.06, 4/4 | +0.02 (202628-202634) |
+| KCup4h | HONEST | KCup4h|15pts|fresh|solo | 132.6 / 132.6 / 62.6 / 176.9 / 128.2 | -0% / -0% / -3% / +2% / +1% | -0.0 (0.3) | -/-/- | no | 4, +0.01, 3/4 | -0.01 (202314-202337) |
+| KCup4h | POST-HOC (ungated) | KCup4h|60pts|fresh|stk | 131.9 / 131.9 / 62.6 / 179.4 / 132.4 | -0% / +1% / -2% / -1% / -1% | -0.2 (0.5) | -/-/- | no | 3, +0.00, 2/3 | -0.03 (202628-202634) |
+| OTE705 | HONEST | OTE705|60pts|a1-4|any | 125.5 / 125.5 / 67.6 / 139.4 / 134.2 | +7% / +5% / -3% / +34% / +1% | +0.3 (1.9) | -/-/- | no | 3, -0.01, 1/3 | +0.07 (202506-202516) |
+| OTE705 | POST-HOC (ungated) | OTE705|30pts|a1-4|solo | 126.7 / 126.7 / 66.0 / 182.0 / 133.6 | +7% / +7% / -3% / -5% / +2% | +0.5 (1.6) | -/-/N | no | 4, -0.02, 2/4 | +0.03 (202628-202634) |
+| OTE79 | HONEST | OTE79|75%tgt|a1-4|solo | 138.3 / 138.3 / 63.6 / 182.0 / 132.5 | -5% / -4% / -3% / -1% / +2% | -0.4 (1.1) | -/-/- | no | 3, -0.06, 0/3 | -0.02 (202314-202337) |
+| OTE79 | POST-HOC | OTE79|20pts|fw2|any | 132.6 / 132.6 / 62.6 / 178.4 / 136.0 | +1% / +0% / +0% / +0% / -0% | +0.2 (0.5) | -/T/N | no | 4, -0.03, 1/4 | +0.00 (202606-202607) |
+| PDmid | HONEST | PDmid|75%tgt|a>4|solo | 133.9 / 133.9 / 62.4 / 170.8 / 130.3 | +2% / +0% / +1% / +9% / +5% | +0.7 (2.4) | S/T/N | no | 2, +0.01, 1/2 | +0.04 (202506-202516) |
+| PDmid | POST-HOC | PDmid|20pts|touched|solo | 123.3 / 123.3 / 65.5 / 173.1 / 140.5 | +14% / +14% / +3% / +5% / -8% | +1.5 (2.6) | -/T/N | no | 3, +0.04, 2/3 | +0.07 (202628-202634) |
+| STK | HONEST | STK|C8|clu3|fresh|75%tgt|add | 132.6 / 132.6 / 62.6 / 178.4 / 130.1 | +0% / +0% / -1% / +2% / +1% | +0.0 (0.0) | -/-/- | no | 3, -0.02, 2/3 | +0.01 (202435-202445) |
+| STK | POST-HOC (ungated) | STK|C8|clu3|fresh|30pts|only | 136.8 / 136.8 / 84.3 / 211.8 / 144.3 | +4% / +4% / -16% / -28% / +16% | +1.8 (3.9) | -/-/- | no | 4, -0.01, 3/4 | +0.02 (202606-202607) |
+| camH3 | HONEST | camH3|75%tgt|fw8|solo | 123.4 / 123.4 / 46.4 / 181.1 / 116.9 | +8% / +9% / +42% / +3% / +5% | +0.0 (2.7) | -/-/- | no | 3, +0.00, 2/3 | -0.12 (202314-202337) |
+| camH3 | POST-HOC | camH3|40pts|fw8|any | 123.1 / 123.1 / 46.4 / 181.2 / 123.6 | +9% / +11% / +39% / +2% / +5% | +0.3 (1.5) | S/T/N | no | 4, +0.06, 4/4 | +0.04 (202628-202634) |
+| kijun1h | HONEST | kijun1h|60pts|a1-4|any | 135.3 / 135.3 / 68.5 / 165.7 / 136.5 | -1% / +3% / -1% / +10% / +11% | +0.2 (1.1) | S/T/N | no | 3, +0.00, 2/3 | +0.07 (202506-202516) |
+| kijun1h | POST-HOC | kijun1h|60pts|a1-4|stk | 135.3 / 135.3 / 68.5 / 170.0 / 138.3 | -1% / +2% / -1% / +7% / +7% | +0.3 (1.1) | S/T/N | no | 3, -0.02, 1/3 | -0.01 (202606-202607) |
+
+## s2 B2 round numbers, profile lines and B3 unfilled levels as ADDED lines (lock=None, corrected score)
+B2 (00/50/25 handles, 100s separate, price-scaled, fresh = untouched since the day start): no honest lead (best honest scores <= +0.14; most 0 or negative). The recent-window scores are large (post-hoc up to L6M +91%, maxDD cut up to 48%) but they come with PRE Calmar -27 to -62% and a much larger halved volume: each added handle line half-sizes 10-25% of the signals, so these are VOLUME effects until a same-volume placebo says otherwise (queued). Profile lines vah/lvn1/hvn0: honest scores positive for VAH15 and LVN1 on the old inverted X' term only; after the fix no STRICT/TOLERANT cell (0/0/0 and 0/0/9). B3 (unfilled FVG 5m/15m/1h, Globex-open gap, RTH gap; 180 cells) pending. NOTE: naked prior-day POC/VAH/VAL, NY lunch, Globex open print, session VWAP bands, weekly/monthly open and prior week/month H/L are ZL-1's streams (NPD, LNC, OPN2, VWB, PWM) per its message; not built here.
+
+### B2 round numbers (R100 = x100 levels, R50 = 50 mod 100, R25 = 25/75, A50/A25 = all multiples, SC* = price-scaled spacing); fresh = untouched since the day start (V13X lock=None, ADDED to the half mask; 216 cells)
+
+| stream | cells | S_hon>0 | S_post>0 | best honest (cell: S, L6M/HOLD/MID/PRE/X' Calmar gain) | best post-hoc, TOL-gated if any | STRICT/TOL/NOW | max L6M maxDD cut | volume (kept trades) of best honest |
+|---|---|---|---|---|---|---|---|---|
+| A25 | 27 | 0.04 | 0.78 | 10pts|touched: +0.071, +26% / -7% / -25% / -23% / +37% | 20pts|fresh (ungated): +0.268, +39% / +14% / +31% / -27% / -10% | 0/0/6 | +36% | n/a |
+| A50 | 27 | 0.00 | 0.70 | 40pts|fresh: -0.037, +24% / +2% / -10% / -36% / +28% | 75%tgt|fresh (ungated): +0.266, +32% / +21% / +22% / -56% / +20% | 0/0/6 | +42% | n/a |
+| R100 | 27 | 0.00 | 0.63 | 10pts|touched: -0.057, +3% / +4% / +47% / -32% / +21% | 60pts|fresh (ungated): +0.308, +68% / -7% / +8% / -57% / -24% | 0/0/5 | +47% | n/a |
+| R25 | 27 | 0.22 | 0.78 | 10pts|touched: +0.075, -25% / -19% / -17% / +1% / +14% | 75%tgt|fresh (ungated): +0.767, +91% / +62% / -28% / -62% / -12% | 0/0/2 | +48% | n/a |
+| R50 | 27 | 0.48 | 0.48 | 75%tgt|touched: +0.142, -15% / -18% / -32% / +30% / -2% | 75%tgt|fresh (ungated): +0.471, +57% / +37% / +2% / -18% / +27% | 0/0/4 | +41% | n/a |
+| SC100 | 27 | 0.00 | 0.52 | 10pts|touched: -0.030, -16% / -13% / +28% / -33% / +27% | 20pts|fresh (ungated): +0.128, +8% / +18% / +45% / +1% / -17% | 0/0/4 | +10% | n/a |
+| SC25 | 27 | 0.04 | 0.78 | 10pts|touched: +0.071, +40% / -3% / -25% / -23% / +37% | 40pts|fresh (ungated): +0.306, +31% / +30% / -55% / -31% / -18% | 0/0/0 | +37% | n/a |
+| SC50 | 27 | 0.00 | 0.52 | 10pts|touched: -0.009, -17% / -12% / +25% / -28% / +26% | 75%tgt|fresh (ungated): +0.240, +34% / +14% / +52% / -56% / -11% | 0/0/6 | +39% | n/a |
+
+### profile lines vah sw15 / lvn1 sw1h / hvn0 sw1h (V13X lock=None, ADDED to the half mask; 108 cells)
+
+| stream | cells | S_hon>0 | S_post>0 | best honest (cell: S, L6M/HOLD/MID/PRE/X' Calmar gain) | best post-hoc, TOL-gated if any | STRICT/TOL/NOW | max L6M maxDD cut | volume (kept trades) of best honest |
+|---|---|---|---|---|---|---|---|---|
+| HVN0_1hs | 36 | 0.42 | 0.25 | 30pts|fw2: +0.040, -2% / -2% / -11% / +8% / -1% | 40pts|touched (ungated): +0.062, +7% / +5% / -7% / -7% / +2% | 0/0/9 | +4% | n/a |
+| LVN1_1hs | 36 | 0.44 | 0.08 | 60pts|fresh: +0.064, -25% / -21% / +8% / +20% / -7% | 10pts|fw2 (ungated): +0.009, +1% / +1% / -0% / -1% / -2% | 0/0/0 | +0% | n/a |
+| VAH15s | 36 | 0.33 | 0.50 | 10pts|fresh: +0.035, -1% / +0% / +8% / +10% / -3% | 30pts|fresh (ungated): +0.064, +10% / +2% / +2% / +11% / -13% | 0/0/0 | +10% | n/a |
+
+(b3xl0: not complete: need at least one array to stack)
+
+
+## s2 PLACEBOS in the headline frame (V13X lock=None), interim n=36 draws per kind (Z2, ~06:00Z 2026-11-02; target 150, queue running)
+Share of placebo draws with an L6M/HOLD/MID/PRE/X' maxDD cut at least as large as the cell's (5% would be a beat; the resolution at n=36 is 0.03). No finalist beats any of its three placebos (random-level same-count, same-volume random half, shuffled-day line sets) on the L6M cut: CRT4h 60pts fresh solo 0.24-0.42, CRT4h-Asia-only 0.30-0.46, CRT4h 30pts fw2 solo (the corrected honest+post-hoc agreement) 0.16-0.24, camH3 40pts fw8 any 0.19-0.22 (MID rank 0.03-0.05 and X' 0.03: its MID/X' cuts are the placebo-beating part), PDmid 20pts touched solo 0.16-0.24, PDmid 30pts touched stacked 0.11-0.14. Labels: CRT4h 30pts fw2 solo = LEAD (STRICT, 4/4 neighbours, inside MDE, no placebo beat yet); camH3 40pts fw8 any = LEAD with MID/X' placebo ranks <= 0.05 (watch); the rest LEAD-weak / VOLUME-like.
+| finalist (lock=None) | kind | n | L6M cut (cell) | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M | rank S_post | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60 | cnt | 37 | +4% | 0.42 | 0.50 | 0.24 | 0.84 | 0.50 | 0.34 | 0.37 | no placebo beat |
+| CRT4h60 | vol | 37 | +4% | 0.24 | 0.26 | 0.13 | 0.92 | 0.74 | 0.24 | 0.21 | no placebo beat |
+| CRT4h60 | sday | 36 | +4% | 0.24 | 0.27 | 0.14 | 0.57 | 0.22 | 0.16 | 0.22 | no placebo beat |
+| CRT4h60asia | cnt | 36 | +4% | 0.46 | 0.57 | 0.14 | 0.84 | 0.41 | 0.35 | 0.43 | no placebo beat |
+| CRT4h60asia | vol | 36 | +4% | 0.38 | 0.46 | 0.19 | 0.97 | 0.41 | 0.27 | 0.22 | no placebo beat |
+| CRT4h60asia | sday | 36 | +4% | 0.30 | 0.30 | 0.16 | 0.49 | 0.08 | 0.24 | 0.22 | no placebo beat |
+| CRT4h30fw2solo | cnt | 36 | +6% | 0.19 | 0.16 | 0.78 | 0.43 | 0.30 | 0.22 | 0.14 | no placebo beat |
+| CRT4h30fw2solo | vol | 36 | +6% | 0.16 | 0.16 | 0.84 | 0.35 | 0.41 | 0.19 | 0.16 | no placebo beat |
+| CRT4h30fw2solo | sday | 36 | +6% | 0.24 | 0.14 | 0.41 | 0.11 | 0.08 | 0.22 | 0.19 | no placebo beat |
+| camH3_40fw8any | cnt | 36 | +7% | 0.22 | 0.14 | 0.05 | 0.35 | 0.14 | 0.22 | 0.22 | no placebo beat |
+| camH3_40fw8any | vol | 36 | +7% | 0.19 | 0.11 | 0.03 | 0.49 | 0.11 | 0.19 | 0.16 | no placebo beat |
+| camH3_40fw8any | sday | 36 | +7% | 0.22 | 0.14 | 0.05 | 0.59 | 0.03 | 0.19 | 0.14 | no placebo beat |
+| PDmid_20touchedsolo | cnt | 36 | +7% | 0.24 | 0.22 | 0.81 | 0.30 | 0.68 | 0.11 | 0.05 | no placebo beat |
+| PDmid_20touchedsolo | vol | 36 | +7% | 0.22 | 0.11 | 0.78 | 0.27 | 0.73 | 0.11 | 0.11 | no placebo beat |
+| PDmid_20touchedsolo | sday | 36 | +7% | 0.16 | 0.11 | 0.84 | 0.32 | 0.19 | 0.16 | 0.16 | no placebo beat |
+| PDmid_30touchedstk | cnt | 36 | +11% | 0.14 | 0.11 | 0.62 | 0.43 | 1.00 | 0.16 | 0.16 | no placebo beat |
+| PDmid_30touchedstk | vol | 36 | +11% | 0.11 | 0.11 | 0.62 | 0.35 | 0.95 | 0.14 | 0.14 | no placebo beat |
+| PDmid_30touchedstk | sday | 36 | +11% | 0.14 | 0.16 | 0.59 | 0.57 | 0.76 | 0.27 | 0.27 | no placebo beat |
