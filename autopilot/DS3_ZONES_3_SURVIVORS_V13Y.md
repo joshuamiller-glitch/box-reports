@@ -106,3 +106,24 @@ A survivor needs: PA cut above the PA band in L6M and PRE or X' (same sign); no-
 | TAPEALL ratio<=0.5 half | ZL3 density | ZL-3 | lock 12R | +3 / +7 / +4 | 24 / 13 / 14 | no | not run (size-matched null not built) | below band |
 
 Result: of 13 cells x 2 frames only the SET8 'open space' rule passes the band (skip in both frames, half in lock-off), and it touches 40,617 of 88,490 rows (VOLUME: skip MID -239% lock-off, PRE -33%, mean -20.3k/wk); G2, G1, F1-F4, FVG, PUL k3 and the density halves are below the band or fail PRE in at least one frame. No ZL-3 survivor.
+
+# FINAL (Z3, 2026-11-02 ~14:00Z): 100-draw phase-averaged placebos, LP natural masks, S4A/ZL3 completion
+**Bottom line (unchanged, now complete): no cell survives. Nothing is RISK-KEEP.** Every cell that nominally clears the V13Y phase-averaged band in L6M and (PRE or X') is a lot-volume cut (S5 density, SET8 open-space, sopen40, SWG f3L), or fails PRE/MID (S4A ARR/DEV/SWG), or has a placebo rank < 0.95 in the windows that matter (below).
+## Table E - PHASE-AVERAGED placebos at 100 draws (V13Y, lock-off headline; K = 5 phases for the cell and each draw; rank = share of the 100 draws the real PA cut strictly beats; random draws = same row count per book x session x td-bin x side stratum; skip masks -> random skip; zone-layer replacements -> random layer of the same size replacing the shipped one)
+| cell | owner | rows | PA cut L6M / HOLD / MID / PRE / X' % | rank L6M / PRE / X' | placebo mean cut L6M / PRE / X' % | label |
+|---|---|---|---|---|---|---|
+| BT swing flip skip | ZL-1 | 2,819 | -8 / -7 / +28 / +1.5 / -17 | 0.29 / 0.73 / 0.23 | +6 / -7 / -3 | MEAN-ONLY (no risk cut; MID only, 0.97 as one window) |
+| LP_AGAINST fixscan skip | ZL-2 | 2,081 | +16 / +11 / -16 / +0.5 / -6 | 0.72 / 0.77 / 0.35 | +5 / -6 / -1 | NOISE for maxDD (below band 16-20 / 11-17 / 16-23%); mean +1.8k |
+| LP clean-room primary skip | ZL-1 | 1,937 | +13 / +9 / -16 / +2.3 / -6 | 0.82 / 0.86 / 0.41 | -0.4 / -4 / -2 | NOISE (below band) |
+| EQL_tight 5m D40 skip | S4a | 2,062 | +9 / +8 / -2 / +5.5 / +26 | 0.68 / 0.88 / 0.99 | +2 / -2 / -3 | X'-ONLY (L6M +9% below band 16-20%, PRE +5.5% below band 11-17%): ONE-WEEK/NOISE in L6M, weak X' lead |
+| camH3 40 fw8 any (layer replacement) | Z2 | | +7 / +5 / -1 / -0.6 / +8 | 0.60 / 0.99 / 0.86 | +1 / -22 / -17 | NOISE (cut below band; PRE rank 0.99 only because random layers cut PRE by -22%) |
+| PDmid 40 fw1 stk (layer replacement) | Z2 | | +0.3 / +2 / -2.5 / +0.1 / -8 | 0.52 / 0.98 / 0.69 | -0.3 / -20 / -18 | NOISE (PA cut ~0) |
+| S5 sopen40 half vs size-matched 55% null | S5 | 48,862 | +53 / +22 / -18 / +15 / +24 | 0.81 / 0.84 / 0.56 | +34 / -4 / +16 (null 95th pct |cut| 62 / 51 / 46) | VOLUME + EQUAL-RISK-HARM |
+Reading: no cell reaches 0.95 in L6M; the only 0.95+ ranks are PRE ranks of layer replacements that cut ~0 against random layers that cut -20%, i.e. "not worse than shipped", not a gain; EQL_tight's X' rank 0.99 with a +26% X' cut is the single window-specific hint (X' only, one episode window, L6M and PRE below band): weak lead, not a survivor.
+## Table F - what the other programs completed on V13Y
+* ZL-3 (Table D above, 13 cell families x 2 frames, K = 9): only the SET8 open-space rule (40,617 of 88,490 rows, VOLUME; skip version PRE -33%, MID -239%, mean -$20k/wk) passes the flip-5 band; the other 43 of 56 defect-base band passers are variants of the same families and share the verdict. No ZL-3 survivor.
+* S4A band-passers on the defect base (K = 9, lock-off / 12R): ARR iplFVG D20 skip L6M +51/+22, PRE -78/-30 (FRAGILE); ARR iplFVG D40 half L6M +34/+22, PRE -45/+2; ARR iplFVG D20 half L6M +28/+20, PRE -59/-25; SWG f3L D40 half L6M +46/+33, PRE +15/+11, X' +27/+41, rank 0.80/0.95/0.80 (n = 20) and equal-risk PRE +27% worse (VOLUME); SWG f3L D20 half L6M +48/+10, PRE -11/-1; DEV day_L D40 half L6M +61/+46, PRE -54/-19; DEV on_L D20 half L6M +54/+14; DEV on_L D40 half L6M +61/+47, PRE -46/-13; FIB ret50 1h D40 skip L6M +20/-26, PRE -5; MAS bb_mid 4h D20 skip L6M +17/0, PRE +3 (NOISE). None passes the no-harm (PRE and MID) criterion; the nominal band-passers DEV on_L D40 and SWG f3L D40 carry PRE/MID losses or volume.
+* S5 density cells on V13Y (Table A): sopen40, open20, openA40, rho60>=2: VOLUME (matched placebo ranks 0.4-0.9; sopen40 size-matched null above).
+* Z3 action table: 0 of 182 cell-frames pass; the monthly-refit walk-forward and B10 combinations fail; O62_30 d5 is (recent windows only) with MID -47%.
+## Files
+Phase-averaged tables: `out/zones3/s3_v13y/plcy_table.csv`, `sopen_null_table.csv`, `survivors_pa.csv`, `smooth_band.csv`, `phase_y_band.csv`; library for other agents `code/zones3_s3/phase_lib.py`. Rank convention: share of placebo draws strictly beaten; rank >= 0.95 in L6M and (PRE or X') together with band pass, no-harm and equal-risk would be required for a survivor.

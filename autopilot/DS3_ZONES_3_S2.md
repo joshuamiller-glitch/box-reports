@@ -737,3 +737,35 @@ V13Z l0 full screen: 1933 changed distinct-key cells; S_hon>0 0.28, S_post>0 0.3
 | camH3 | POST-HOC (ungated) | camH3|75%tgt|fw8|any | 180.3 / 180.3 / 38.2 / 183.1 / 72.7 | +6% / +8% / +40% / -3% / +16% | +0.8 (1.9) | S/-/N | no | 3, +0.01, 2/3 | +0.01 (202628-202634) |
 | kijun1h | HONEST | kijun1h|40pts|fw2|stk | 182.5 / 182.5 / 58.9 / 165.1 / 90.6 | -3% / +8% / +3% / +5% / +10% | -0.5 (1.6) | -/-/- | no | 4, +0.06, 4/4 | +0.05 (202506-202516) |
 | kijun1h | POST-HOC (ungated) | kijun1h|15pts|touched|any | 165.3 / 165.3 / 52.2 / 172.4 / 108.0 | +10% / +9% / +1% / -6% / -8% | -0.1 (2.6) | -/-/- | no | 3, -0.01, 2/3 | -0.04 (202628-202634) |
+
+
+## s2 V13Z placebos for the four new cells (lock=None, 100 draws per kind) and the S4a two-episode check (Z2, ~13:10Z 2026-11-02)
+**FLAG (partial; not a lead):** OTE705 60pts fw2 any (OTE 70.5 up-15m line, fresh, formed within 2 h, D = 60 pts, half): V13Z lock=None L6M maxDD cut +11% (182.8 -> 162.8k), not ONE-WEEK (+12% without the carrying week), STRICT/TOL/NOW. Against the SHUFFLED-DAY line-set placebo its ranks are L6M 0.01, HOLD 0.01, PRE 0.03, S_post 0.03 (all <= 0.05); against the same-count / same-volume random-half placebos the L6M ranks are 0.16 / 0.13 (PRE 0.04 / 0.07). So it beats the line-information placebo on L6M and PRE but not a random half-sizing of the same size on the L6M cut. It does NOT hold on V13Y (L6M cut -4%, ONE-EPISODE in the S4a check) nor with the 12R lock (cut +10%, HOLD -12%, MID -12%), i.e. it is base-dependent (the nfix take-line basis changes the shipped layer's drawdown from 96k to 183k): LEAD-weak, shadow only, do not read as a keeper.
+CRT4h 60pts fw2 any: L6M cut +11%, same-volume rank 0.03 but PRE rank 0.92-0.94 and PRE Calmar -14%: recent-only. camH3 75%tgt fw8 any: ONE-WEEK (the cut disappears without W34); its MID/X' ranks (0.01-0.04) are not a maxDD cut. PDmid 60pts fw1 stacked: nothing (ranks 0.27-0.44).
+S4a two-episode check (cut positive in >= 2 of L6M/PRE/X' with the carrying episode dropped; V13Y lock=None series; ~5% of random pass): TWO-EPISODE-OK only OTE705 60pts a1-4 any (PRE +0.04, X' +0.07, L6M -0.05); ONE-EPISODE: camH3 40/75 fw8 any, PDmid 40 fw1 stk, CRT4h 30 fw2 solo, CRT4h 20 fw1 solo, CRT4h 60 fresh, CRT4h 60 fw2 any, OTE705 60 fw2 any. (S4a's check is on V13Y, not V13Z.)
+| cell (V13Z lock=None) | kind | n | L6M cut | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M | rank S_post | ONE-WEEK | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| camH3_75fw8any | cnt | 100 | +1% | 0.49 | 0.49 | 0.04 | 0.58 | 0.01 | 0.38 | 0.35 | ONE-WEEK | no placebo beat |
+| camH3_75fw8any | vol | 100 | +1% | 0.48 | 0.48 | 0.02 | 0.74 | 0.02 | 0.28 | 0.21 | ONE-WEEK | no placebo beat |
+| camH3_75fw8any | sday | 100 | +1% | 0.48 | 0.48 | 0.10 | 0.52 | 0.01 | 0.28 | 0.26 | ONE-WEEK | no placebo beat |
+| OTE705_60fw2any | cnt | 100 | +11% | 0.16 | 0.16 | 0.61 | 0.04 | 0.60 | 0.10 | 0.11 | no | no placebo beat |
+| OTE705_60fw2any | vol | 100 | +11% | 0.13 | 0.13 | 0.48 | 0.07 | 0.58 | 0.10 | 0.09 | no | no placebo beat |
+| OTE705_60fw2any | sday | 100 | +11% | 0.01 | 0.01 | 0.45 | 0.03 | 0.81 | 0.02 | 0.03 | no | beats L6M placebo |
+| CRT4h60fw2any | cnt | 100 | +11% | 0.08 | 0.08 | 0.76 | 0.92 | 0.56 | 0.09 | 0.07 | no | no placebo beat |
+| CRT4h60fw2any | vol | 100 | +11% | 0.03 | 0.03 | 0.76 | 0.94 | 0.53 | 0.06 | 0.05 | no | beats L6M placebo |
+| CRT4h60fw2any | sday | 100 | +11% | 0.13 | 0.13 | 0.52 | 0.58 | 0.33 | 0.10 | 0.11 | no | no placebo beat |
+| PDmid_60fw1stk | cnt | 100 | +2% | 0.29 | 0.29 | 0.49 | 0.36 | 0.91 | 0.15 | 0.12 | no | no placebo beat |
+| PDmid_60fw1stk | vol | 100 | +2% | 0.27 | 0.27 | 0.61 | 0.40 | 0.92 | 0.11 | 0.07 | no | no placebo beat |
+| PDmid_60fw1stk | sday | 100 | +2% | 0.44 | 0.44 | 0.50 | 0.40 | 0.57 | 0.36 | 0.25 | no | no placebo beat |
+
+
+## s2 V13Z: Asia-restricted placebos (placebo draws within Asia rows, 100 per kind) for camH3 40pts fw8 any and PDmid 40pts fw1 stacked (Z2, ~13:30Z 2026-11-02)
+The cell is applied in Asia rows only; placebos: cnt = same count of Asia rows at random levels per book, volA = same planned-lot volume of random Asia rows, sdayA = the line's fires taken from other Asia trades of the same stratum. **No flag:** camH3 40 fw8 any Asia-only (L6M cut +4%, NOW-ONLY, Calmar MID +46%): L6M ranks 0.26-0.31, only MID (0.02-0.05) and X' sday (0.02) are small; PDmid 40 fw1 stacked Asia-only (L6M cut +1%, ONE-WEEK, TOL): L6M ranks 0.14-0.45, S_post 0.05-0.29. Neither passes (L6M and PRE/X' <= 0.05 with the carrying week dropped).
+| Asia-only cell (V13Z lock=None) | maxDD cut L6M | Calmar gain L6M / HOLD / MID / PRE / X' | S/T/N | ONE-WEEK | kind | n | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank S_post | flag (L6M and PRE/X' <= 0.05, not ONE-WEEK) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| camH3_40fw8any_asia | +4% | +6% / +8% / +46% / +5% / -1% | -/-/N | no | cnt | 100 | 0.29 | 0.29 | 0.02 | 0.42 | 0.17 | 0.30 | no |
+| camH3_40fw8any_asia | +4% | +6% / +8% / +46% / +5% / -1% | -/-/N | no | volA | 100 | 0.26 | 0.26 | 0.02 | 0.29 | 0.25 | 0.26 | no |
+| camH3_40fw8any_asia | +4% | +6% / +8% / +46% / +5% / -1% | -/-/N | no | sdayA | 100 | 0.31 | 0.31 | 0.05 | 0.53 | 0.02 | 0.27 | no |
+| PDmid_40fw1stk_asia | +1% | +7% / +11% / -1% / +2% / -2% | -/T/N | ONE-WEEK | cnt | 100 | 0.27 | 0.27 | 0.61 | 0.28 | 0.92 | 0.07 | no |
+| PDmid_40fw1stk_asia | +1% | +7% / +11% / -1% / +2% / -2% | -/T/N | ONE-WEEK | volA | 100 | 0.14 | 0.14 | 0.61 | 0.28 | 0.91 | 0.05 | no |
+| PDmid_40fw1stk_asia | +1% | +7% / +11% / -1% / +2% / -2% | -/T/N | ONE-WEEK | sdayA | 100 | 0.45 | 0.45 | 0.53 | 0.45 | 0.71 | 0.29 | no |

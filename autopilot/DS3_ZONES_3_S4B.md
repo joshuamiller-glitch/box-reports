@@ -853,14 +853,16 @@ Reading: lock none: 25 of 1,258 cells pass the band; 0 are also eligible; 10 als
 Reading: the SHIPPED 8-line layer (no layer -> shipped, lock none) cuts maxDD HOLD +9% / PRE +27% / X' +29% in total and the cut sits in K6 and P6 (asia, london) and M6 (nyam, london) with H6 and A6 flat or worse; it is not carried by one session. The extra lines' cuts are not consistent across books (e.g. ARR|iFVG|45s D20 skip: +33% K6 / +42% U6 HOLD but -15% H6 and -26% A6; the PRE/X' sign flips by book) - consistent with no entry family carrying a real zone effect. Entry type is not stored below book level (BASE-4).
 
 
-# V13Y (FIXED BASE) - HEADLINE UPDATE 11:00Z - lock none
-**All V13X sections above are on the DEFECT base (V13X). This section is on D7 V13Y (add-fill ordering fix), lock = None (headline frame); the 12R frame follows when its run completes.** Base maxDD $k: L6M 96, HOLD 103, MID 30, PRE 130, X' 70. Cells: 1,258 (319 streams x D20/D40 x half/skip).
+# V13Y (FIXED BASE) - HEADLINE. Add-fill ordering fix; the V13X sections above are the DEFECT base. Updated by S4b after the 12R run.
+V13Y base maxDD $k: lock none (headline) L6M 96, HOLD 103, MID 30, PRE 130, X' 70; lock 12R L6M 53, HOLD 90, MID 52, PRE 282, X' 132. 1,258 cells per frame (319 streams x D20/D40 x half/skip).
 ## V.0 Plain sentences
-* On V13Y with the combined lock removed only **12 of 1,258 cells (1.0%) pass the eligibility gate** (8 of the 629 half cells = 1.3%), the 80-draw same-count placebo null passes 0 of 80, and the best score is **+0.18: PRF|vwap|month D40 skip** (anchored month VWAP, a neutral line: fire if a fresh month-VWAP lies between entry and target within 40 pts of the entry; action skip). It cuts maxDD HOLD (=L6M) +15%, PRE +14%, X' +37% (MID +2%), mean +2.5k per week in HOLD (inside MDE); the engine-lscale equal-risk run for V13Y is pending (section 6 below shows - until it is run).
-* Robustness of that one cell (lock none, V13Y): leave-key-episode-out HOLD +14..+15%, PRE +10..+23%, X' +22..+39% (it SURVIVES dropping each key episode); trough-week drop leaves +14 / +12 / +22% (no ONE-WEEK); month-block bootstrap P(cut>0) 0.94 / 0.83 / 0.84 (90% CI includes 0 in all three); placebo ranks of its score (100 draws each) A random-level 0.02, B same-volume 0.01, C shuffled-day 0.01 - the first cell in this program that beats 100 random same-count lines on all three kinds; D 25..60 all positive (S +0.09..+0.18), D 10-20 weak (S +0.03..+0.05). **It still does not pass the Z3 noise band** (flip-5 lock-off band L6M 0.21, PRE 0.26, X' 0.25; its cuts are +14 / +14 / +37%, so only X' passes), the cut is largely an X' effect (HOLD/PRE placebo rank 0.07 / 0.01), and the V13Y-specific band is not yet published. Label: **NEAR-LEAD / NOISE-BAND FAIL, not a lead.**
-* No other cell is a near-lead: PIV|cam_L2|day D40 skip (X' +35% only), FIB|ret62|15m, FIB|OTEzone|15m (cuts <= 12% in HOLD/PRE), PRF|vwap|avwap D20 skip (L6M +22% but PRE -25%, MID -77%: harms).
-* V13X -> V13Y changes of the V13X top cells at lock none: ARR|iFVG|45s D20 skip S +0.22 -> +0.10 (PRE +2% -> -24%); EQL|EQH_rel|15m D20 skip +0.16 -> +0.10 (no longer eligible); CRT|H|4h D20 skip +0.15 -> +0.04; PRF|vwap|month D40 skip +0.10 -> +0.18 (now eligible in both).
-## V.1 Ranked table, robustness and placebos (V13Y, lock none)
+* **Lock none (headline):** 12 of 1,258 cells (1.0%) pass the eligibility gate (8 of 629 half cells = 1.3%); the 80-draw same-count placebo null passes 0 of 80. Best score +0.18: **PRF|vwap|month D40 skip** (an anchored month VWAP; fire if a fresh month-VWAP lies between entry and target within 40 pts; skip). Cuts maxDD HOLD (=L6M) +15%, PRE +14%, X' +37% (MID +2%), mean +2.5k per week in HOLD (inside MDE). It survives dropping every key episode (HOLD +14..+15%, PRE +10..+23%, X' +22..+39%), no ONE-WEEK, bootstrap P(cut>0) 0.94 / 0.83 / 0.84, placebo ranks of its score at 100 draws each A 0.02 / B 0.01 / C 0.01 (the first cell of this program to beat all three kinds), D 25-60 all positive. It does NOT pass Z3's lock-off noise band (flip-5: L6M 0.21, PRE 0.26, X' 0.25; its cuts +14 / +14 / +37%; the V13Y band is not yet published) and its HOLD/PRE placebo ranks per window are 0.07 / 0.01 / 0.01 (X' carries it). Label **NEAR-LEAD, noise-band FAIL, not a lead**; no other cell comes close (PIV|cam_L2|day D40 skip is an X' effect only; PRF|vwap|avwap D20 skip harms PRE -25% and MID -77%).
+* **Lock 12R:** 93 of 1,258 cells (7.4%) are eligible, top ARR|OB|45s D40 skip S +0.42; but **5 of the 6 eligible cells of the 12R top 20 are LOCK-ONLY** (section V.2) and no cell of the 12R top 20 keeps an eligible score without the lock. The zone cuts at 12R are an interaction with the stack lock.
+* **V13X -> V13Y flips (lock none):** ARR|iFVG|45s D20 skip S +0.22 -> +0.10 (PRE +2% -> -24%), EQL|EQH_rel|15m D20 skip +0.16 -> +0.10 (no longer eligible), CRT|H|4h D20 skip +0.15 -> +0.04, PRF|vwap|month D40 skip +0.10 -> +0.18 (still eligible); at 12R the top cell ARR|OB|45s D40 skip is stable (S +0.38 -> +0.42).
+* **Frames:** no BEHIND or AT cell is a lead at either lock (section V.1 and V.2 frame tables: take-only is a volume effect, size-up does not cut drawdown).
+* **Engine equal-risk check of the near-lead (lscale c 1.09, worst-20 gap +0.5%):** the cuts shrink to HOLD +7% / PRE +7% / X' +34% with mean +4.1k (HOLD) / -1.3k (PRE) per week (the linear-c screen over-states HOLD and PRE). Session-restricted (line applied only in one entry session): asia S +0.11 (cuts +4% / +7% / +24%), london +0.08, the other sessions ~0.
+* **Definition of the near-lead (D7-computable):** PRF|vwap|month = running volume-weighted average price anchored at the first print of the label-day month; the value used at minute m uses only seconds before m*60 (cf_levels_profile VWAP_ANCHORS 'month'). It is a neutral line (support or resistance). Rule scored: skip the signal if a fresh month-VWAP row (poi store convention: one row per minute, fresh = not touched since it was emitted) lies between the entry price and the target within 40 pts of the entry. Because the VWAP moves slowly this is close to "the current month VWAP lies between entry and target within 40 pts"; that plain-rule variant was not scored separately.
+## V.1 V13Y lock none (headline)
 #### Frame: V13Y, lock = None (combined stack lock OFF; per-book floors stay)
 Base lines (V13X, weekly-cumulative maxDD, $k): L1M 27, L2M 27, L3M 31, L6M 96, HOLD 103, MID 30, PRE 130, X' 70. Same score S, gate, labels and placebo method as sections 1-3 (placebo draws A 8 / B 4 / C 4 per line, so a line is said to beat a placebo only if NO draw reached its S (rank = 1/(1+n))). Cells re-run: the 20 streams of the assumed-base top 20, D20/D40 x skip/half (80 runs).
 
@@ -874,19 +876,19 @@ Base lines (V13X, weekly-cumulative maxDD, $k): L1M 27, L2M 27, L3M 31, L6M 96, 
 | 5 | PRF|vwap|avwap | D20 skip | 4565/5954 | 0.96 | 103>81 (+21%) | 130>162 (-25%) | 70>52 (+26%) | +0.102 | -648>-659 | -400>-293 | -0.7 (4.0) / -0.3 (3.0) / +1.6 (4.0) | -1.5 / -0.7 | +22% / -77% / -28% | -46% / -46% | n/n/n | n/n | 0.136 | n |
 | 6 | ARR|iFVG|45s | D20 skip | 16911/27260 | 0.88 | 103>96 (+6%) | 130>161 (-24%) | 70>36 (+49%) | +0.102 | -648>-687 | -400>-275 | +1.7 (6.8) / -3.0 (4.3) / +3.1 (4.9) | +1.7 / -3.0 | +37% / -42% / -15% | +62% / +62% | n/n/Y | n/n | 0.245 | n |
 | 7 | EQL|EQH_rel|15m | D20 skip | 2447/4885 | 0.99 | 103>107 (-4%) | 130>136 (-5%) | 70>48 (+31%) | +0.100 | -648>-652 | -400>-362 | -1.3 (3.2) / -0.2 (1.3) / +0.7 (2.3) | -2.0 / -0.5 | +16% / -6% / -9% | +6% / +6% | n/n/n | n/n | 0.076 | n |
-| 8 | ORB|Hx1|15m | D40 skip | 878/2350 | 0.99 | 103>98 (+5%) | 130>125 (+3%) | 70>57 (+18%) | +0.095 | -648>-644 | -400>-375 | -0.1 (0.5) / +0.3 (1.4) / -0.2 (2.6) | -0.3 / +0.1 | -2% / +0% / -6% | +0% / +0% | n/n/n | n/n | - | Y |
-| 9 | ORB|Lx1|5m | D40 skip | 486/1412 | 0.99 | 103>103 (-0%) | 130>128 (+1%) | 70>55 (+21%) | +0.083 | -648>-644 | -400>-373 | -0.2 (0.4) / -0.9 (1.4) / +0.8 (1.7) | -0.5 / -1.1 | -2% / +0% / -8% | +3% / +3% | n/n/n | n/n | - | n |
-| 10 | PRF|hvn0|sw15 | D40 skip | 1544/2577 | 0.99 | 103>99 (+4%) | 130>129 (+0%) | 70>58 (+17%) | +0.078 | -648>-631 | -400>-401 | -0.1 (2.5) / +0.1 (1.5) / +0.5 (1.4) | -0.3 / -0.0 | +12% / +1% / +6% | -8% / -8% | n/Y/Y | Y/Y | - | n |
-| 11 | SWG|f5L|2m | D20 half | 18490/27397 | 0.89 | 103>58 (+43%) | 130>155 (-19%) | 70>59 (+16%) | +0.076 | -648>-679 | -400>-310 | +1.3 (6.0) / -3.3 (3.3) / +1.1 (3.3) | +3.0 / -2.7 | +54% / -77% / +39% | +30% / +30% | n/n/Y | n/n | - | n |
-| 12 | PRF|poc|sw15 | D40 skip | 1613/2628 | 0.98 | 103>112 (-9%) | 130>130 (-0%) | 70>53 (+24%) | +0.075 | -648>-637 | -400>-402 | +0.1 (2.2) / -0.1 (1.6) / -0.1 (1.8) | -0.5 / -0.4 | +16% / +3% / +7% | -6% / -6% | n/n/Y | Y/n | - | n |
+| 8 | ORB|Hx1|15m | D40 skip | 878/2350 | 0.99 | 103>98 (+5%) | 130>125 (+3%) | 70>57 (+18%) | +0.095 | -648>-644 | -400>-375 | -0.1 (0.5) / +0.3 (1.4) / -0.2 (2.6) | -0.3 / +0.1 | -2% / +0% / -6% | +0% / +0% | n/n/n | n/n | -0.183 | Y |
+| 9 | ORB|Lx1|5m | D40 skip | 486/1412 | 0.99 | 103>103 (-0%) | 130>128 (+1%) | 70>55 (+21%) | +0.083 | -648>-644 | -400>-373 | -0.2 (0.4) / -0.9 (1.4) / +0.8 (1.7) | -0.5 / -1.1 | -2% / +0% / -8% | +3% / +3% | n/n/n | n/n | 0.124 | n |
+| 10 | PRF|hvn0|sw15 | D40 skip | 1544/2577 | 0.99 | 103>99 (+4%) | 130>129 (+0%) | 70>58 (+17%) | +0.078 | -648>-631 | -400>-401 | -0.1 (2.5) / +0.1 (1.5) / +0.5 (1.4) | -0.3 / -0.0 | +12% / +1% / +6% | -8% / -8% | n/Y/Y | Y/Y | 0.060 | n |
+| 11 | SWG|f5L|2m | D20 half | 18490/27397 | 0.89 | 103>58 (+43%) | 130>155 (-19%) | 70>59 (+16%) | +0.076 | -648>-679 | -400>-310 | +1.3 (6.0) / -3.3 (3.3) / +1.1 (3.3) | +3.0 / -2.7 | +54% / -77% / +39% | +30% / +30% | n/n/Y | n/n | 0.259 | n |
+| 12 | PRF|poc|sw15 | D40 skip | 1613/2628 | 0.98 | 103>112 (-9%) | 130>130 (-0%) | 70>53 (+24%) | +0.075 | -648>-637 | -400>-402 | +0.1 (2.2) / -0.1 (1.6) / -0.1 (1.8) | -0.5 / -0.4 | +16% / +3% / +7% | -6% / -6% | n/n/Y | Y/n | 0.038 | n |
 | 13 | ORB|Hx2|5m | D40 half | 753/2097 | 0.99 | 103>104 (-1%) | 130>130 (+0%) | 70>57 (+18%) | +0.071 | -648>-654 | -400>-386 | -0.1 (0.6) / -0.6 (0.7) / +0.4 (1.1) | -0.4 / -0.8 | +2% / -1% / -2% | +0% / +0% | n/n/n | n/n | 0.027 | n |
-| 14 | SWG|f7L|2m | D20 skip | 16077/25025 | 0.85 | 103>102 (+1%) | 130>134 (-3%) | 70>78 (-12%) | +0.070 | -648>-701 | -400>-358 | -2.6 (7.5) / -4.9 (5.7) / +1.1 (6.7) | -5.0 / -5.7 | +11% / -173% / +24% | +68% / +50% | n/n/n | n/n | - | n |
-| 15 | MAS|dc_up|1d | D20 skip | 548/1403 | 0.99 | 103>103 (+0%) | 130>130 (+0%) | 70>54 (+22%) | +0.070 | -648>-649 | -400>-371 | -0.3 (1.4) / -0.4 (0.6) / +0.0 (1.8) | -0.2 / -0.3 | +0% / +0% / +0% | +0% / +0% | n/n/n | n/n | - | n |
-| 16 | FIB|dr_high|4h | D20 skip | 688/2010 | 1.00 | 103>103 (+0%) | 130>130 (-0%) | 70>56 (+19%) | +0.068 | -648>-644 | -400>-374 | -0.0 (1.2) / +0.2 (1.1) / +0.1 (1.9) | -0.1 / +0.1 | +0% / -1% / +0% | +0% / +0% | n/n/n | n/n | - | n |
+| 14 | SWG|f7L|2m | D20 skip | 16077/25025 | 0.85 | 103>102 (+1%) | 130>134 (-3%) | 70>78 (-12%) | +0.070 | -648>-701 | -400>-358 | -2.6 (7.5) / -4.9 (5.7) / +1.1 (6.7) | -5.0 / -5.7 | +11% / -173% / +24% | +68% / +50% | n/n/n | n/n | 0.073 | n |
+| 15 | MAS|dc_up|1d | D20 skip | 548/1403 | 0.99 | 103>103 (+0%) | 130>130 (+0%) | 70>54 (+22%) | +0.070 | -648>-649 | -400>-371 | -0.3 (1.4) / -0.4 (0.6) / +0.0 (1.8) | -0.2 / -0.3 | +0% / +0% / +0% | +0% / +0% | n/n/n | n/n | -0.004 | n |
+| 16 | FIB|dr_high|4h | D20 skip | 688/2010 | 1.00 | 103>103 (+0%) | 130>130 (-0%) | 70>56 (+19%) | +0.068 | -648>-644 | -400>-374 | -0.0 (1.2) / +0.2 (1.1) / +0.1 (1.9) | -0.1 / +0.1 | +0% / -1% / +0% | +0% / +0% | n/n/n | n/n | 0.072 | n |
 | 17 | FIB|ote62_dn|5m | D20 skip | 2285/3530 | 0.99 | 103>100 (+3%) | 130>143 (-10%) | 70>52 (+26%) | +0.067 | -648>-614 | -400>-356 | +0.9 (2.2) / +0.7 (1.6) / +0.9 (2.2) | +0.8 / +0.7 | +21% / -11% / -14% | -16% / -16% | n/n/n | n/n | 0.285 | n |
-| 18 | FIB|ret38|1h | D20 skip | 1772/3712 | 0.99 | 103>107 (-4%) | 130>129 (+1%) | 70>56 (+20%) | +0.066 | -648>-668 | -400>-403 | +0.5 (1.8) / -0.5 (1.5) / +0.5 (2.1) | +0.3 / -0.5 | -2% / -14% / -3% | +0% / +0% | n/n/Y | Y/n | - | n |
-| 19 | FIB|ote79_up|1h | D20 skip | 2189/4767 | 0.98 | 103>103 (+0%) | 130>144 (-11%) | 70>60 (+14%) | +0.066 | -648>-678 | -400>-389 | -0.9 (2.1) / -0.3 (1.8) / +0.2 (1.5) | -2.2 / -0.9 | +16% / +0% / +8% | -5% / -5% | n/n/n | n/n | - | n |
-| 20 | MAS|sma100|1h | D40 half | 1280/3203 | 0.99 | 103>99 (+4%) | 130>134 (-3%) | 70>54 (+22%) | +0.061 | -648>-641 | -400>-395 | +0.5 (1.6) / +0.3 (1.1) / +0.0 (1.3) | +0.9 / +0.5 | +5% / -4% / -3% | -17% / -17% | n/n/n | n/n | - | n |
+| 18 | FIB|ret38|1h | D20 skip | 1772/3712 | 0.99 | 103>107 (-4%) | 130>129 (+1%) | 70>56 (+20%) | +0.066 | -648>-668 | -400>-403 | +0.5 (1.8) / -0.5 (1.5) / +0.5 (2.1) | +0.3 / -0.5 | -2% / -14% / -3% | +0% / +0% | n/n/Y | Y/n | -0.041 | n |
+| 19 | FIB|ote79_up|1h | D20 skip | 2189/4767 | 0.98 | 103>103 (+0%) | 130>144 (-11%) | 70>60 (+14%) | +0.066 | -648>-678 | -400>-389 | -0.9 (2.1) / -0.3 (1.8) / +0.2 (1.5) | -2.2 / -0.9 | +16% / +0% / +8% | -5% / -5% | n/n/n | n/n | 0.192 | n |
+| 20 | MAS|sma100|1h | D40 half | 1280/3203 | 0.99 | 103>99 (+4%) | 130>134 (-3%) | 70>54 (+22%) | +0.061 | -648>-641 | -400>-395 | +0.5 (1.6) / +0.3 (1.1) / +0.0 (1.3) | +0.9 / +0.5 | +5% / -4% / -3% | -17% / -17% | n/n/n | n/n | 0.033 | n |
 
 ### H.2 All four AHEAD variants (V13X; S / cuts HOLD,PRE,X')
 | stream | D20 half | D20 skip | D40 half | D40 skip |
@@ -938,7 +940,7 @@ E = eligible.
 | MAS|sma100|1h | D40 half | +4..+5% / -3..+4% / +12..+22% | +1..+5% / -3..+4% / +12..+22% | [-2%,+9%] (0.89) / [-6%,+11%] (0.64) / [-25%,+21%] (0.56) | +4% (ONE-WEEK) / +0% (ok) / +12% (ok) | 0.11 (8) / 0.60 (4) / 0.20 (4) | 0.44/0.67/0.11 | 10: +0.01; 15: -0.00; 20: +0.03; 25: +0.03; 30: +0.04; 40: +0.06; 50: +0.05; 60: +0.05 | ONE-WEEK |
 Placebo draws are few (A 16, B 8, C 8 per line): the smallest rank is 1/17 = 0.06, so the prereg 5% threshold is unreachable; the label uses rank <= 0.12 on all three kinds. FRAGILE = no D within +-50% of the variant's D (and no freshness variant) keeps the cut positive in HOLD, PRE and X'. Line-parameter variants (swing strength 2/3, profile bin 1/2 pt, anchor shifts) need stream rebuilds and are NOT scored here. 1-s/3-s decision delay is not applicable to ahead skip/half (decided at the signal second); NOT scored.
 
-### Top 5: 100-draw placebos and the (V13X lock-off) noise-band test
+### Top 5: 100-draw placebos and the V13X lock-off noise-band test
 | stream | variant | S | band test (flip-2.0 band: L6M >0.216 and PRE >0.263 or X' >0.241) | placebo rank of S: A / B / C (n) | rank of the HOLD / PRE / X' cut under A | share of 100 A-draws with S >= observed |
 |---|---|---|---|---|---|---|
 | PRF|vwap|month | D40 skip | +0.180 | NOISE (L6M +14%, PRE +14%, X' +37%) | 0.020 (100) / 0.010 (100) / 0.010 (100) | 0.069 / 0.010 / 0.010 | 0.01 |
@@ -947,7 +949,7 @@ Placebo draws are few (A 16, B 8, C 8 per line): the smallest rank is 1/17 = 0.0
 | FIB|OTEzone|15m | D20 skip | +0.111 | NOISE (L6M +5%, PRE +5%, X' +16%) | 0.020 (100) / 0.010 (100) / 0.010 (100) | 0.059 / 0.158 / 0.188 | 0.01 |
 | PRF|vwap|avwap | D20 skip | +0.102 | PASS (L6M +22%, PRE -25%, X' +26%) | 0.030 (100) / 0.050 (100) / 0.040 (100) | 0.050 / 0.525 / 0.069 | 0.02 |
 
-### Re-label with Z3 FINAL lock-off bands and leave-key-episode-out (V13Y)
+### Re-label with Z3 FINAL lock-off bands, no-harm and leave-key-episode-out (V13Y)
 * lock none (headline, X-frame FINAL band n=107; V13Y band pending): 6 of 1258 cells pass the band (L6M and PRE-or-X'); 1 of those also pass no-harm (PRE and MID cuts not worse than -band); 0 also eligible. Half cells passing band: 0.
 
 | stream | variant | rows touched | band used | cut L6M / PRE / X' / MID | band pass | no-harm | label |
@@ -973,30 +975,30 @@ Placebo draws are few (A 16, B 8, C 8 per line): the smallest rank is 1/17 = 0.0
 | FIB|ote79_up|1h | D20 skip | 2189 | flip5 | +16% / -11% / +14% / +0% | NOISE | ok | NOISE |
 | MAS|sma100|1h | D40 half | 3203 | flip5 | +5% / -3% / +22% / -4% | NOISE | ok | NOISE |
 
-* lock 12R (12R band rows): 0 of 108 cells pass the band (L6M and PRE-or-X'); 0 of those also pass no-harm (PRE and MID cuts not worse than -band); 0 also eligible. Half cells passing band: 0.
+* lock 12R (12R band rows): 0 of 1258 cells pass the band (L6M and PRE-or-X'); 0 of those also pass no-harm (PRE and MID cuts not worse than -band); 0 also eligible. Half cells passing band: 0.
 
 | stream | variant | rows touched | band used | cut L6M / PRE / X' / MID | band pass | no-harm | label |
 |---|---|---|---|---|---|---|---|
 | ARR|OB|45s | D40 skip | 37322 | flip5 | -15% / +53% / +50% / +66% | NOISE | ok | NOISE |
 | ARR|FVG_CE|2m | D40 skip | 31306 | flip5 | -21% / +46% / +48% / +58% | NOISE | ok | NOISE |
+| ARR|FVG_CE|5m | D40 skip | 21138 | flip5 | +7% / -3% / +60% / +31% | NOISE | ok | NOISE |
+| ARR|FVG|2m | D40 skip | 24179 | flip5 | -13% / +31% / +53% / +57% | NOISE | ok | NOISE |
+| ARR|OB|30s | D20 half | 29591 | flip5 | -10% / +31% / +56% / +47% | NOISE | ok | NOISE |
 | ARR|OB|1m | D40 skip | 33255 | flip5 | -60% / +33% / +53% / +24% | NOISE | ok | NOISE |
+| ARR|BRK|1m | D20 skip | 9435 | flip5 | -31% / +30% / +63% / -24% | NOISE | ok | NOISE |
+| ARR|OB_CE|5m | D20 skip | 9307 | flip5 | -14% / +25% / +21% / +28% | NOISE | ok | NOISE |
 | ARR|FVG|45s | D40 skip | 34611 | flip5 | -34% / +36% / +32% / -10% | NOISE | ok | NOISE |
 | FIB|ote62_dn|5m | D40 skip | 3530 | flip5 | -2% / +30% / +51% / +1% | NOISE | ok | NOISE |
 | FIB|ote79_up|5m | D40 skip | 5460 | flip5 | -33% / +15% / +57% / +35% | NOISE | ok | NOISE |
+| ARR|iFVG|1m | D40 skip | 24946 | flip5 | -101% / +58% / +60% / +25% | NOISE | ok | NOISE |
+| ARR|OB_CE|1m | D40 skip | 37775 | flip5 | -22% / +25% / +18% / +26% | NOISE | ok | NOISE |
 | ARR|FVG_CE|45s | D40 skip | 43637 | flip5 | -21% / +45% / +39% / -3% | NOISE | ok | NOISE |
-| SWG|f3L|2m | D20 half | 22226 | flip5 | -8% / +35% / +56% / +6% | NOISE | ok | NOISE |
-| ARR|iFVG|45s | D20 skip | 16911 | flip5 | -20% / +40% / +50% / +20% | NOISE | ok | NOISE |
-| PRF|vwap|week | D40 skip | 4974 | flip5 | -24% / +39% / +49% / +14% | NOISE | ok | NOISE |
-| ARR|BRK|30s | D20 skip | 14734 | flip5 | -10% / +23% / +34% / +34% | NOISE | ok | NOISE |
-| PRF|hvn2|day | D40 skip | 2553 | flip5 | +1% / +12% / +38% / -28% | NOISE | ok | NOISE |
-| PRF|vwap|avwap | D40 skip | 5954 | flip5 | -24% / +5% / +50% / +13% | NOISE | ok | NOISE |
-| FIB|ret62|15m | D40 skip | 3373 | flip5 | +2% / +20% / +11% / +43% | NOISE | ok | NOISE |
-| FIB|OTEzone|15m | D40 skip | 3164 | flip5 | +0% / +22% / +11% / +19% | NOISE | ok | NOISE |
-| PRF|vwap|month | D40 skip | 2604 | flip5 | +6% / +27% / +22% / -1% | NOISE | ok | NOISE |
-| PDX|day|C | D20 half | 637 | flip2 | +1% / +31% / -2% / -3% | NOISE | ok | NOISE |
-| PIV|cam_L2|day | D40 skip | 3628 | flip5 | -28% / +7% / +15% / +31% | NOISE | ok | NOISE |
-| PDX|rth|M | D40 skip | 2982 | flip5 | +9% / +1% / +26% / +26% | NOISE | ok | NOISE |
-| EQL|EQH_rel|15m | D40 skip | 4885 | flip5 | -56% / +5% / +51% / +21% | NOISE | ok | NOISE |
+| ARR|OB_CE|2m | D20 skip | 16683 | flip5 | +1% / +44% / +35% / +23% | NOISE | ok | NOISE |
+| ARR|iplFVG|30s | D40 skip | 27664 | flip5 | -87% / +42% / +45% / +43% | NOISE | ok | NOISE |
+| PRF|b3|week | D40 half | 6925 | flip5 | -1% / +28% / +45% / -10% | NOISE | ok | NOISE |
+| ARR|FVG|1m | D40 skip | 31969 | flip5 | -105% / +55% / +63% / +31% | NOISE | ok | NOISE |
+| SWG|f5L|2m | D20 half | 18490 | flip5 | +5% / +29% / +52% / -10% | NOISE | ok | NOISE |
+| FIB|pd50|4h | D40 skip | 1948 | flip5 | +1% / +34% / +49% / +6% | NOISE | ok | NOISE |
 
 
 ### Leave-key-episode-out (lock none; episodes from DS3_ZONES_EPISODES.md: HOLD ISO weeks 202627-202639, 202605-202616, 202547-202601; PRE 202505-202521, 202434-202452, 202410-202421; X' 202337-open)
@@ -1013,7 +1015,7 @@ Placebo draws are few (A 16, B 8, C 8 per line): the smallest rank is 1/17 = 0.0
 | ORB|Lx1|5m | D40 skip | -0% / -0% / -2% / -0% | +1% / +1% / -2% / +1% | +21% / +21% | worst -2% | survives |
 | PRF|hvn0|sw15 | D40 skip | +4% / +4% / +12% / +4% | +0% / +0% / +2% / +0% | +17% / +17% | worst +0% | survives |
 
-### Frames AHEAD / BEHIND / AT (V13Y lock none, top 20)
+### Frames AHEAD / BEHIND / AT (lock none)
 | stream | frame | D | action | S | cut HOLD / PRE / X' | vol | elig |
 |---|---|---|---|---|---|---|---|
 | PRF|poc|sw15 | BEHIND | 40 | up | +0.091 | +0% / -14% / +27% | 1.05 | n |
@@ -1024,8 +1026,6 @@ Placebo draws are few (A 16, B 8, C 8 per line): the smallest rank is 1/17 = 0.0
 | PRF|hvn0|sw15 | BEHIND | 40 | up | +0.066 | +1% / -18% / +26% | 1.05 | n |
 | PRF|vwap|month | AT | 5 | skip | +0.058 | +0% / +0% / +19% | 1.00 | n |
 | SWG|f5L|2m | BEHIND | 20 | up | +0.053 | +5% / -19% / -8% | 1.08 | n |
-| MAS|sma100|1h | BEHIND | 20 | skip | +0.049 | -1% / -2% / +18% | 1.00 | n |
-| PRF|vwap|avwap | AT | 5 | skip | +0.047 | +8% / -20% / +22% | 0.98 | n |
 
 |                    |   cells |   meanS |   maxS |   eligible |
 |:-------------------|--------:|--------:|-------:|-----------:|
@@ -1066,52 +1066,329 @@ Vol tercile = day tercile of the mean stop distance (sd) of that day's signals (
 ### Session-restricted action (line applied only to signals entering in that session; S, cuts HOLD/PRE/X')
 | stream | variant | asia | london | pre | nyam | nypm | close |
 |---|---|---|---|---|---|---|---|
-| PRF|vwap|month | D40 skip | - | - | - | - | - | - |
-| PIV|cam_L2|day | D40 skip | - | - | - | - | - | - |
-| FIB|ret62|15m | D20 skip | - | - | - | - | - | - |
-| FIB|OTEzone|15m | D20 skip | - | - | - | - | - | - |
-| PRF|vwap|avwap | D20 skip | - | - | - | - | - | - |
-| ARR|iFVG|45s | D20 skip | - | - | - | - | - | - |
-| EQL|EQH_rel|15m | D20 skip | - | - | - | - | - | - |
-| ORB|Hx1|15m | D40 skip | - | - | - | - | - | - |
-| ORB|Lx1|5m | D40 skip | - | - | - | - | - | - |
-| PRF|hvn0|sw15 | D40 skip | - | - | - | - | - | - |
-| SWG|f5L|2m | D20 half | - | - | - | - | - | - |
-| PRF|poc|sw15 | D40 skip | - | - | - | - | - | - |
-| ORB|Hx2|5m | D40 half | - | - | - | - | - | - |
-| SWG|f7L|2m | D20 skip | - | - | - | - | - | - |
-| MAS|dc_up|1d | D20 skip | - | - | - | - | - | - |
-| FIB|dr_high|4h | D20 skip | - | - | - | - | - | - |
-| FIB|ote62_dn|5m | D20 skip | - | - | - | - | - | - |
-| FIB|ret38|1h | D20 skip | - | - | - | - | - | - |
-| FIB|ote79_up|1h | D20 skip | - | - | - | - | - | - |
-| MAS|sma100|1h | D40 half | - | - | - | - | - | - |
+| PRF|vwap|month | D40 skip | +0.11 (+4%,+7%,+24%) | +0.08 (+6%,+4%,+19%) | +0.00 (+0%,+0%,+0%) | +0.06 (-0%,+3%,+18%) | -0.01 (+0%,+0%,-1%) | +0.00 (+0%,+0%,+0%) |
+| PIV|cam_L2|day | D40 skip | +0.10 (+1%,-7%,+27%) | +0.08 (+0%,+0%,+25%) | +0.00 (+0%,+0%,+0%) | +0.01 (-0%,-1%,+7%) | -0.00 (+0%,+0%,-2%) | +0.00 (+0%,+0%,+0%) |
+| FIB|ret62|15m | D20 skip | +0.11 (+8%,+2%,+22%) | -0.00 (+4%,+1%,-2%) | +0.00 (+0%,+0%,+0%) | -0.02 (+0%,+0%,-8%) | -0.00 (+0%,+0%,-2%) | +0.00 (+0%,+0%,+0%) |
+| FIB|OTEzone|15m | D20 skip | +0.11 (+6%,+3%,+22%) | -0.01 (+4%,+1%,-3%) | +0.00 (+0%,+0%,+0%) | -0.02 (+0%,+0%,-7%) | -0.00 (+0%,+1%,-2%) | +0.00 (+0%,+0%,+0%) |
+| PRF|vwap|avwap | D20 skip | +0.09 (+17%,-23%,+17%) | -0.01 (-8%,-1%,+5%) | +0.00 (+0%,+0%,+0%) | -0.02 (+1%,-0%,-1%) | +0.00 (+1%,+1%,-1%) | +0.00 (+0%,+0%,+0%) |
+| ARR|iFVG|45s | D20 skip | +0.06 (-2%,-21%,+19%) | -0.16 (+7%,-19%,-17%) | +0.00 (+0%,+0%,+0%) | +0.03 (-10%,-19%,+26%) | -0.01 (+1%,-4%,-1%) | +0.00 (+0%,+0%,+0%) |
+| EQL|EQH_rel|15m | D20 skip | +0.07 (-4%,-5%,+22%) | +0.03 (+0%,+3%,+11%) | +0.00 (+0%,+0%,+0%) | +0.02 (+0%,+0%,+2%) | -0.00 (+0%,+0%,-1%) | +0.00 (+0%,+0%,+0%) |
+| ORB|Hx1|15m | D40 skip | +0.02 (+0%,+0%,+5%) | +0.03 (+0%,+0%,+8%) | +0.00 (+0%,+0%,+0%) | +0.04 (+4%,+4%,+4%) | -0.02 (+1%,-1%,-8%) | +0.00 (+0%,+0%,+0%) |
+| ORB|Lx1|5m | D40 skip | -0.00 (+0%,+0%,+0%) | +0.00 (+0%,+0%,+0%) | +0.00 (+0%,+0%,+0%) | +0.08 (-0%,+1%,+21%) | -0.02 (+0%,+0%,-5%) | +0.00 (+0%,+0%,+0%) |
+| PRF|hvn0|sw15 | D40 skip | +0.08 (+5%,-1%,+19%) | +0.01 (+0%,-1%,+1%) | +0.00 (+0%,+0%,+0%) | -0.02 (-2%,+0%,-5%) | +0.00 (+0%,-1%,+1%) | +0.00 (+0%,+0%,+0%) |
+| SWG|f5L|2m | D20 half | -0.11 (+9%,-50%,+9%) | +0.05 (+5%,+9%,+12%) | +0.00 (+0%,+0%,+0%) | -0.09 (+0%,-9%,-19%) | +0.01 (+0%,+2%,+0%) | +0.00 (+0%,+0%,+0%) |
+| PRF|poc|sw15 | D40 skip | +0.05 (-0%,-2%,+12%) | -0.00 (-7%,-1%,+1%) | +0.00 (+0%,+0%,+0%) | -0.01 (+0%,+0%,-2%) | -0.00 (+0%,-1%,+0%) | +0.00 (+0%,+0%,+0%) |
+| ORB|Hx2|5m | D40 half | +0.00 (+0%,+0%,+0%) | +0.02 (+0%,+0%,+6%) | +0.00 (+0%,+0%,+0%) | +0.07 (-1%,+0%,+18%) | -0.00 (+0%,+0%,-2%) | +0.00 (+0%,+0%,+0%) |
+| SWG|f7L|2m | D20 skip | -0.16 (+5%,-64%,-34%) | -0.00 (-9%,-0%,+18%) | +0.00 (+0%,+0%,+0%) | -0.13 (-0%,-17%,-36%) | +0.01 (+1%,+3%,-0%) | +0.00 (+0%,+0%,+0%) |
+| MAS|dc_up|1d | D20 skip | -0.01 (+0%,+0%,-3%) | +0.03 (+0%,+0%,+8%) | +0.00 (+0%,+0%,+0%) | +0.05 (+0%,+0%,+16%) | -0.01 (+0%,+0%,-3%) | +0.00 (+0%,+0%,+0%) |
+| FIB|dr_high|4h | D20 skip | -0.01 (+0%,+2%,-3%) | +0.02 (+0%,-2%,+8%) | +0.00 (+0%,+0%,+0%) | +0.05 (+0%,+0%,+12%) | +0.00 (+0%,+0%,+0%) | +0.00 (+0%,+0%,+0%) |
+| FIB|ote62_dn|5m | D20 skip | +0.07 (+6%,-10%,+25%) | -0.01 (-0%,-1%,-1%) | +0.00 (+0%,+0%,+0%) | +0.03 (+0%,+1%,+9%) | -0.01 (+0%,-1%,-1%) | +0.00 (+0%,+0%,+0%) |
+| FIB|ret38|1h | D20 skip | +0.05 (-6%,+1%,+18%) | +0.04 (+3%,+1%,+5%) | +0.00 (+0%,+0%,+0%) | -0.00 (+0%,-1%,+0%) | +0.01 (+0%,-0%,+0%) | +0.00 (+0%,+0%,+0%) |
+| FIB|ote79_up|1h | D20 skip | +0.08 (-1%,+0%,+17%) | +0.02 (+1%,-7%,+6%) | +0.00 (+0%,+0%,+0%) | +0.01 (-1%,+0%,+4%) | +0.01 (+1%,+0%,+0%) | +0.00 (+0%,+0%,+0%) |
+| MAS|sma100|1h | D40 half | +0.02 (+1%,-2%,+14%) | +0.01 (+0%,-1%,+2%) | +0.00 (+0%,+0%,+0%) | +0.04 (+0%,-1%,+15%) | -0.01 (+0%,+0%,-2%) | +0.00 (+0%,+0%,+0%) |
 
 ## 6. Engine-lscale equal-risk check (top 20; c = lot scale so that worst-20 ALL equals the base)
 | stream | variant | engine equal-risk (lscale c, worst-20 gap): cut HOLD/PRE/X' ; mean d HOLD/PRE | linear-c S (screen) |
 |---|---|---|---|
-| PRF|vwap|month | D40 skip | - | +0.180 |
-| PIV|cam_L2|day | D40 skip | - | +0.128 |
-| FIB|ret62|15m | D20 skip | - | +0.119 |
-| FIB|OTEzone|15m | D20 skip | - | +0.111 |
-| PRF|vwap|avwap | D20 skip | - | +0.102 |
-| ARR|iFVG|45s | D20 skip | - | +0.102 |
-| EQL|EQH_rel|15m | D20 skip | - | +0.100 |
-| ORB|Hx1|15m | D40 skip | - | +0.095 |
-| ORB|Lx1|5m | D40 skip | - | +0.083 |
-| PRF|hvn0|sw15 | D40 skip | - | +0.078 |
-| SWG|f5L|2m | D20 half | - | +0.076 |
-| PRF|poc|sw15 | D40 skip | - | +0.075 |
-| ORB|Hx2|5m | D40 half | - | +0.071 |
-| SWG|f7L|2m | D20 skip | - | +0.070 |
-| MAS|dc_up|1d | D20 skip | - | +0.070 |
-| FIB|dr_high|4h | D20 skip | - | +0.068 |
-| FIB|ote62_dn|5m | D20 skip | - | +0.067 |
-| FIB|ret38|1h | D20 skip | - | +0.066 |
-| FIB|ote79_up|1h | D20 skip | - | +0.066 |
-| MAS|sma100|1h | D40 half | - | +0.061 |
+| PRF|vwap|month | D40 skip | c 1.09, gap +0.5%: +7%/+7%/+34% ; +4.1 / -1.3 | +0.180 |
+| PIV|cam_L2|day | D40 skip | c 0.94, gap +2.0%: -3%/-66%/+37% ; -0.9 / -4.0 | +0.128 |
+| FIB|ret62|15m | D20 skip | c 1.00, gap +1.0%: +12%/+3%/+18% ; +1.5 / +0.8 | +0.119 |
+| FIB|OTEzone|15m | D20 skip | c 1.00, gap +0.9%: +10%/+5%/+16% ; +1.6 / +0.9 | +0.111 |
+| PRF|vwap|avwap | D20 skip | c 1.00, gap +3.3%: +21%/-25%/+26% ; -0.7 / -0.3 | +0.102 |
+| ARR|iFVG|45s | D20 skip | c 1.00, gap -0.1%: +6%/-24%/+49% ; +1.7 / -3.0 | +0.102 |
+| EQL|EQH_rel|15m | D20 skip | c 0.97, gap +0.9%: +2%/-26%/+31% ; -3.4 / -3.6 | +0.100 |
+| ORB|Hx1|15m | D40 skip | c 1.00, gap +0.9%: +5%/+3%/+18% ; -0.1 / +0.3 | +0.095 |
+| ORB|Lx1|5m | D40 skip | c 1.00, gap +1.0%: -0%/+1%/+21% ; -0.2 / -0.9 | +0.083 |
+| PRF|hvn0|sw15 | D40 skip | c 1.00, gap +0.9%: +4%/+0%/+17% ; -0.1 / +0.1 | +0.078 |
+| SWG|f5L|2m | D20 half | c 1.13, gap +0.3%: +33%/-45%/+3% ; +2.8 / -2.9 | +0.076 |
+| PRF|poc|sw15 | D40 skip | c 1.00, gap +2.6%: -9%/-0%/+24% ; +0.1 / -0.1 | +0.075 |
+| ORB|Hx2|5m | D40 half | c 1.00, gap +1.4%: -1%/+0%/+18% ; -0.1 / -0.6 | +0.071 |
+| SWG|f7L|2m | D20 skip | c 0.91, gap +2.0%: -8%/-13%/+0% ; -5.8 / -6.9 | +0.070 |
+| MAS|dc_up|1d | D20 skip | c 1.00, gap -0.6%: +0%/+0%/+22% ; -0.3 / -0.4 | +0.070 |
+| FIB|dr_high|4h | D20 skip | c 1.00, gap +0.5%: +0%/-0%/+19% ; -0.0 / +0.2 | +0.068 |
+| FIB|ote62_dn|5m | D20 skip | c 1.00, gap +0.6%: +3%/-10%/+26% ; +0.9 / +0.7 | +0.067 |
+| FIB|ret38|1h | D20 skip | c 1.00, gap +0.8%: -4%/+1%/+20% ; +0.5 / -0.5 | +0.066 |
+| FIB|ote79_up|1h | D20 skip | c 0.94, gap -1.0%: +4%/-51%/+22% ; -3.1 / -3.6 | +0.066 |
+| MAS|sma100|1h | D40 half | c 1.00, gap -1.6%: +4%/-3%/+22% ; +0.5 / +0.3 | +0.061 |
 
 ## 7. Family null (selection among 319 streams x 4 variants)
 * Null: 80 random same-count (stratified by book x session x target-bin x side) half cells on v1.3: S median -0.004, 95th pct +0.031, max +0.065; eligible under the gate 0 of 80 (0.0%).
 * Real (other frame / interim screen, all 629 half cells): S median -0.002, 95th pct +0.063, max +0.200; eligible 39 of 629 (6.2%). Real v1.3 half cells of the 45 finalists (selected on v1.2): eligible 8 of 629.
+Reading: compare the eligible share and the S tail of the real half cells with the null; a real eligible share close to the null share means the gate passes by chance at the null rate and no individual stream stands out from the family.
+
+## V.2 V13Y lock 12R
+#### Frame: V13Y, lock = 12R
+Base lines (V13X, weekly-cumulative maxDD, $k): L1M 22, L2M 22, L3M 27, L6M 53, HOLD 90, MID 52, PRE 282, X' 132. Same score S, gate, labels and placebo method as sections 1-3 (placebo draws A 8 / B 4 / C 4 per line, so a line is said to beat a placebo only if NO draw reached its S (rank = 1/(1+n))). Cells re-run: the 20 streams of the assumed-base top 20, D20/D40 x skip/half (80 runs).
+
+### H.1 Ranked AHEAD lines on V13X (the 20 streams re-run, best variant by S; mean d in $k/wk with MDE)
+| # | stream | variant | fired rows D20/D40 | vol kept | maxDD HOLD (=L6M) | PRE | X' | S equal-risk | worst-20 PRE base>var | worst-20 X' | mean d (MDE) HOLD / PRE / X' | equal-risk mean d HOLD / PRE | L6M / MID / L3M cut (one look) | L1M / L2M cut (view) | S/T/N | TOL-B / nc | v1.2 interim S (same variant) | elig |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | ARR|OB|45s | D40 skip | 23985/37322 | 0.78 | 90>61 (+33%) | 282>132 (+53%) | 132>66 (+50%) | +0.418 | -514>-487 | -304>-267 | +2.4 (10.3) / -1.0 (7.2) / +1.6 (8.3) | +3.6 / -0.7 | -15% / +66% / -129% | +22% / +22% | n/n/n | n/n | 0.024 | Y |
+| 2 | ARR|FVG_CE|2m | D40 skip | 19352/31306 | 0.86 | 90>64 (+29%) | 282>151 (+46%) | 132>68 (+48%) | +0.369 | -514>-494 | -304>-338 | +9.4 (11.6) / +1.9 (7.0) / +2.2 (6.5) | +11.3 / +2.4 | -21% / +58% / -79% | +34% / +34% | Y/Y/Y | Y/Y | -0.222 | n |
+| 3 | ARR|FVG_CE|5m | D40 skip | 11864/21138 | 0.89 | 90>51 (+43%) | 282>291 (-3%) | 132>52 (+60%) | +0.354 | -514>-517 | -304>-371 | +5.4 (8.9) / -2.0 (7.1) / +3.3 (5.7) | +4.8 / -2.1 | +7% / +31% / +26% | +17% / +12% | n/n/Y | Y/n | -0.251 | n |
+| 4 | ARR|FVG|2m | D40 skip | 14299/24179 | 0.90 | 90>66 (+27%) | 282>196 (+31%) | 132>61 (+53%) | +0.344 | -514>-492 | -304>-344 | +6.5 (10.4) / +1.4 (7.6) / +0.6 (5.5) | +7.6 / +1.7 | -13% / +57% / -54% | +87% / +6% | Y/Y/Y | Y/Y | -0.196 | n |
+| 5 | ARR|OB|30s | D20 half | 29591/43208 | 0.88 | 90>58 (+36%) | 282>194 (+31%) | 132>58 (+56%) | +0.340 | -514>-434 | -304>-231 | +2.9 (7.7) / +0.1 (4.8) / +2.2 (4.9) | +5.1 / +0.8 | -10% / +47% / -38% | -10% / -12% | Y/Y/Y | Y/Y | -0.204 | Y |
+| 6 | ARR|OB|1m | D40 skip | 20652/33255 | 0.83 | 90>92 (-2%) | 282>190 (+33%) | 132>61 (+53%) | +0.328 | -514>-482 | -304>-254 | -3.1 (9.9) / +0.9 (6.8) / +4.7 (6.3) | -3.9 / +0.4 | -60% / +24% / -106% | -109% / -120% | n/n/n | n/n | -0.194 | n |
+| 7 | ARR|BRK|1m | D20 skip | 9435/16146 | 0.93 | 90>69 (+23%) | 282>198 (+30%) | 132>49 (+63%) | +0.307 | -514>-437 | -304>-289 | -0.0 (5.0) / +0.2 (6.7) / +4.1 (5.6) | +2.1 / +1.0 | -31% / -24% / -85% | -15% / -37% | n/n/n | n/n | -0.014 | Y |
+| 8 | ARR|OB_CE|5m | D20 skip | 9307/17851 | 0.95 | 90>60 (+33%) | 282>211 (+25%) | 132>103 (+21%) | +0.307 | -514>-548 | -304>-347 | +1.4 (8.4) / -0.8 (6.0) / -0.1 (3.6) | +0.4 / -1.1 | -14% / +28% / -36% | -33% / -63% | n/n/n | n/n | -0.110 | n |
+| 9 | ARR|FVG|45s | D40 skip | 22392/34611 | 0.79 | 90>77 (+15%) | 282>181 (+36%) | 132>89 (+32%) | +0.307 | -514>-508 | -304>-353 | +1.0 (12.5) / -0.6 (8.9) / +2.3 (6.5) | +0.3 / -0.8 | -34% / -10% / -9% | -0% / -31% | n/n/n | n/n | -0.266 | n |
+| 10 | FIB|ote62_dn|5m | D40 skip | 2285/3530 | 1.02 | 90>71 (+22%) | 282>199 (+30%) | 132>64 (+51%) | +0.303 | -514>-488 | -304>-295 | +4.1 (5.8) / +1.7 (4.9) / +4.5 (4.4) | +5.4 / +2.1 | -2% / +1% / -22% | +44% / -14% | Y/Y/Y | Y/Y | 0.031 | Y |
+| 11 | FIB|ote79_up|5m | D40 skip | 3512/5460 | 0.99 | 90>80 (+11%) | 282>239 (+15%) | 132>56 (+57%) | +0.300 | -514>-507 | -304>-321 | +0.3 (5.4) / -0.6 (6.0) / +3.1 (4.5) | -0.2 / -0.8 | -33% / +35% / -62% | -10% / -10% | n/n/Y | Y/n | -0.048 | n |
+| 12 | ARR|iFVG|1m | D40 skip | 15629/24946 | 0.88 | 90>106 (-17%) | 282>119 (+58%) | 132>53 (+60%) | +0.290 | -514>-474 | -304>-279 | -1.6 (7.7) / +3.4 (6.4) / +3.3 (5.7) | -0.6 / +4.0 | -101% / +25% / -180% | +32% / -31% | n/n/n | n/n | -0.049 | n |
+| 13 | ARR|OB_CE|1m | D40 skip | 24167/37775 | 0.77 | 90>65 (+28%) | 282>211 (+25%) | 132>108 (+18%) | +0.278 | -514>-480 | -304>-303 | -0.3 (9.4) / -2.0 (8.8) / +0.8 (7.7) | -1.1 / -2.2 | -22% / +26% / -65% | +33% / +19% | n/n/Y | Y/n | -0.312 | Y |
+| 14 | ARR|FVG_CE|45s | D40 skip | 30300/43637 | 0.75 | 90>84 (+7%) | 282>156 (+45%) | 132>80 (+39%) | +0.275 | -514>-437 | -304>-336 | +0.9 (12.9) / +0.1 (9.0) / +3.0 (7.9) | +1.6 / +0.3 | -21% / -3% / -134% | -14% / -40% | n/n/n | n/n | -0.261 | n |
+| 15 | ARR|OB_CE|2m | D20 skip | 16683/28615 | 0.88 | 90>87 (+3%) | 282>157 (+44%) | 132>85 (+35%) | +0.271 | -514>-453 | -304>-344 | -0.8 (7.5) / -0.1 (7.3) / +1.8 (5.9) | -0.6 / -0.0 | +1% / +23% / -97% | +35% / -14% | n/n/n | n/n | -0.439 | n |
+| 16 | ARR|iplFVG|30s | D40 skip | 16904/27664 | 0.89 | 90>99 (-9%) | 282>163 (+42%) | 132>72 (+45%) | +0.270 | -514>-500 | -304>-338 | +4.3 (11.9) / -1.7 (6.5) / +2.4 (5.5) | +4.0 / -1.7 | -87% / +43% / -158% | +32% / -132% | n/n/n | n/n | -0.396 | n |
+| 17 | PRF|b3|week | D40 half | 2783/6925 | 0.94 | 90>91 (-1%) | 282>202 (+28%) | 132>72 (+45%) | +0.262 | -514>-510 | -304>-330 | -3.2 (6.0) / +1.1 (4.9) / -0.1 (4.5) | -3.6 / +1.0 | -1% / -10% / -22% | -45% / -45% | n/n/n | n/n | -0.031 | n |
+| 18 | ARR|FVG|1m | D40 skip | 20604/31969 | 0.84 | 90>108 (-20%) | 282>127 (+55%) | 132>48 (+63%) | +0.260 | -514>-443 | -304>-326 | +2.1 (10.7) / +2.1 (8.2) / +3.6 (5.7) | +3.9 / +2.9 | -105% / +31% / -88% | +3% / -30% | n/n/n | n/n | -0.310 | n |
+| 19 | SWG|f5L|2m | D20 half | 18490/27397 | 0.91 | 90>71 (+22%) | 282>200 (+29%) | 132>63 (+52%) | +0.259 | -514>-434 | -304>-278 | +5.4 (7.3) / -0.2 (4.9) / +2.6 (4.6) | +8.3 / +0.6 | +5% / -10% / -70% | +34% / -36% | n/n/Y | Y/n | 0.076 | Y |
+| 20 | FIB|pd50|4h | D40 skip | 760/1948 | 0.99 | 90>90 (+0%) | 282>187 (+34%) | 132>67 (+49%) | +0.256 | -514>-507 | -304>-298 | +0.2 (2.4) / +0.8 (4.3) / +1.9 (3.8) | +0.6 / +1.0 | +1% / +6% / -4% | +2% / +0% | Y/Y/Y | Y/Y | 0.055 | n |
+
+### H.2 All four AHEAD variants (V13X; S / cuts HOLD,PRE,X')
+| stream | D20 half | D20 skip | D40 half | D40 skip |
+|---|---|---|---|---|
+| ARR|OB|45s | -0.06 (-7%,+22%,+6%) | +0.17 (-7%,+27%,+51%) | +0.11 (-1%,+36%,+38%) | +0.42 (+33%,+53%,+50%) E |
+| ARR|FVG_CE|2m | -0.02 (+24%,+3%,-0%) | +0.11 (+22%,+27%,-18%) | +0.04 (+3%,+25%,+22%) E | +0.37 (+29%,+46%,+48%) |
+| ARR|FVG_CE|5m | +0.10 (+35%,+9%,-3%) | +0.23 (+16%,+27%,+18%) | +0.04 (+24%,-22%,+19%) | +0.35 (+43%,-3%,+60%) |
+| ARR|FVG|2m | -0.07 (+6%,-30%,+26%) | +0.17 (-14%,+31%,+32%) | -0.05 (+23%,+17%,-16%) | +0.34 (+27%,+31%,+53%) |
+| ARR|OB|30s | +0.34 (+36%,+31%,+56%) E | +0.02 (+14%,+41%,-9%) | +0.14 (+14%,+54%,+25%) E | -0.05 (+9%,+50%,-20%) |
+| ARR|OB|1m | -0.07 (-24%,+18%,-2%) | +0.19 (-32%,+22%,+59%) | +0.16 (+7%,+39%,+10%) E | +0.33 (-2%,+33%,+53%) |
+| ARR|BRK|1m | +0.03 (+11%,+36%,-11%) | +0.31 (+23%,+30%,+63%) E | -0.03 (-7%,+39%,+2%) | +0.03 (-39%,+24%,+53%) |
+| ARR|OB_CE|5m | +0.03 (-4%,+23%,+5%) | +0.31 (+33%,+25%,+21%) | +0.13 (+6%,+19%,+14%) | +0.15 (+37%,+21%,-25%) |
+| ARR|FVG|45s | -0.11 (+24%,+20%,-60%) | -0.14 (-21%,+21%,-46%) | +0.23 (+16%,+30%,+37%) E | +0.31 (+15%,+36%,+32%) |
+| FIB|ote62_dn|5m | +0.12 (+5%,+14%,+25%) E | +0.29 (+21%,+31%,+44%) | +0.10 (+5%,+8%,+28%) E | +0.30 (+22%,+30%,+51%) E |
+| FIB|ote79_up|5m | +0.09 (-0%,+22%,+7%) | +0.24 (+1%,+13%,+51%) | +0.09 (-0%,+21%,+10%) | +0.30 (+11%,+15%,+57%) |
+| ARR|iFVG|1m | -0.06 (-11%,+48%,-42%) | +0.24 (-30%,+55%,+55%) | +0.01 (+3%,+43%,-29%) | +0.29 (-17%,+58%,+60%) |
+| ARR|OB_CE|1m | -0.09 (-29%,+17%,+16%) | +0.04 (-35%,+12%,+31%) | +0.04 (+12%,+30%,-23%) | +0.28 (+28%,+25%,+18%) E |
+| ARR|FVG_CE|45s | -0.40 (-21%,-8%,-49%) | +0.16 (+23%,+11%,+20%) | -0.11 (+0%,+43%,-19%) | +0.28 (+7%,+45%,+39%) |
+| ARR|OB_CE|2m | +0.17 (+20%,+39%,+5%) E | +0.27 (+3%,+44%,+35%) | +0.22 (+20%,+33%,+31%) E | -0.00 (-28%,+35%,-5%) |
+| ARR|iplFVG|30s | -0.10 (+3%,+14%,-22%) | +0.24 (+17%,+14%,+35%) | -0.11 (-26%,+24%,+0%) | +0.27 (-9%,+42%,+45%) |
+| PRF|b3|week | +0.03 (+3%,+12%,-5%) | +0.17 (+31%,-14%,+31%) | +0.26 (-1%,+28%,+45%) | +0.16 (-16%,+29%,+55%) |
+| ARR|FVG|1m | +0.14 (-0%,+36%,+13%) | +0.14 (-10%,+41%,+19%) | +0.09 (-23%,+40%,+20%) | +0.26 (-20%,+55%,+63%) |
+| SWG|f5L|2m | +0.26 (+22%,+29%,+52%) E | +0.23 (-12%,+49%,+65%) | +0.18 (+4%,+30%,+59%) E | +0.04 (-22%,+3%,+67%) |
+| FIB|pd50|4h | +0.05 (+0%,+10%,+6%) | +0.16 (+0%,+16%,+35%) | +0.17 (+0%,+15%,+38%) | +0.26 (+0%,+34%,+49%) |
+E = eligible.
+
+### H.3 Robustness on V13X (the variant of 9.1): episode-proofing, placebos, D sensitivity, label
+| stream | variant | LOEO range of the cut HOLD / PRE / X' | leave-one-month-out range HOLD / PRE / X' | month-block bootstrap 90% CI (P cut>0) HOLD / PRE / X' | trough week dropped: cut after (ONE-WEEK?) HOLD / PRE / X' | placebo rank of S: A random-level same count / B same-volume uniform / C shuffled-day (n) | per-window rank A (HOLD/PRE/X') | D +-25/50% S (D: S) | label |
+|---|---|---|---|---|---|---|---|---|---|
+| ARR|OB|45s | D40 skip | +5..+33% / +46..+57% / +15..+50% | +5..+33% / +39..+53% / +21..+50% | [-32%,+51%] (0.77) / [-23%,+54%] (0.85) / [-30%,+67%] (0.86) | +12% (ONE-WEEK) / +48% (ok) / +43% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.56/0.33/0.22 | 10: +0.23; 15: +0.15; 20: +0.17; 25: +0.31; 30: +0.33; 40: +0.42; 50: +0.35; 60: +0.35 | ONE-WEEK |
+| ARR|FVG_CE|2m | D40 skip | +7..+35% / +31..+49% / -14..+59% | -0..+35% / +27..+46% / -7..+59% | [-20%,+64%] (0.83) / [-14%,+53%] (0.87) / [-32%,+65%] (0.83) | +12% (ONE-WEEK) / +42% (ok) / +42% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.11/0.44/0.22 | 10: +0.21; 15: +0.30; 20: +0.11; 25: +0.31; 30: +0.36; 40: +0.37; 50: +0.45; 60: +0.44 | ONE-WEEK |
+| ARR|FVG_CE|5m | D40 skip | +20..+44% / -14..+7% / +13..+62% | +20..+44% / -16..+10% / +19..+62% | [+5%,+57%] (0.97) / [-80%,+25%] (0.33) / [-26%,+61%] (0.82) | +30% (ok) / -9% (ok) / +55% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.11/1.00/0.11 | 10: +0.32; 15: +0.25; 20: +0.23; 25: +0.20; 30: +0.25; 40: +0.35; 50: +0.31; 60: +0.34 | no (not eligible) |
+| ARR|FVG|2m | D40 skip | -2..+34% / +21..+51% / -2..+60% | -2..+34% / +7..+46% / +4..+60% | [-16%,+59%] (0.76) / [-22%,+60%] (0.84) / [-60%,+59%] (0.71) | +10% (ONE-WEEK) / +24% (ok) / +48% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.11/0.56/0.11 | 10: +0.18; 15: +0.12; 20: +0.17; 25: +0.30; 30: +0.43; 40: +0.34; 50: +0.43; 60: +0.49 | ONE-WEEK |
+| ARR|OB|30s | D20 half | +9..+37% / +21..+42% / +3..+68% | +3..+37% / +0..+47% / +9..+68% | [-16%,+56%] (0.82) / [-10%,+51%] (0.87) / [-16%,+74%] (0.90) | +20% (ok) / +33% (ok) / +50% (ok) | 0.11 (8) / 0.20 (4) / 0.40 (4) | 0.11/0.44/0.11 | 10: +0.17; 15: +0.25; 20: +0.34; 25: +0.30; 30: +0.29; 40: +0.14; 50: +0.20; 60: +0.21 | (volume effect) |
+| ARR|OB|1m | D40 skip | -32..-2% / +22..+43% / +36..+53% | -39..+5% / +3..+46% / +41..+57% | [-70%,+18%] (0.22) / [-8%,+58%] (0.89) / [+12%,+77%] (0.97) | -16% (ok) / +32% (ok) / +54% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.67/0.67/0.22 | 10: +0.04; 15: +0.05; 20: +0.19; 25: +0.19; 30: +0.23; 40: +0.33; 50: +0.37; 60: +0.29 | no (not eligible) |
+| ARR|BRK|1m | D20 skip | -9..+26% / +19..+41% / +26..+63% | -14..+26% / -2..+46% / +30..+63% | [-31%,+32%] (0.51) / [-16%,+49%] (0.80) / [+7%,+72%] (0.96) | -9% (ONE-WEEK) / +34% (ok) / +58% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.11/0.56/0.11 | 10: +0.24; 15: +0.36; 20: +0.31; 25: +0.15; 30: +0.11; 40: +0.03; 50: +0.07; 60: +0.04 | ONE-WEEK |
+| ARR|OB_CE|5m | D20 skip | +6..+38% / +14..+40% / -0..+21% | +5..+38% / -8..+35% / +6..+21% | [-29%,+44%] (0.76) / [-40%,+33%] (0.56) / [-43%,+39%] (0.61) | +17% (ok) / +28% (ok) / +24% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.11/0.78/0.11 | 10: +0.00; 15: +0.26; 20: +0.31; 25: +0.22; 30: +0.29; 40: +0.15; 50: +0.10; 60: +0.16 | no (not eligible) |
+| ARR|FVG|45s | D40 skip | -20..+20% / +24..+37% / +11..+32% | -40..+20% / +7..+44% / +17..+35% | [-54%,+41%] (0.50) / [-80%,+58%] (0.60) / [-38%,+62%] (0.81) | -5% (ONE-WEEK) / +30% (ok) / +24% (ok) | 0.22 (8) / 0.20 (4) / 0.40 (4) | 0.56/0.89/0.44 | 10: +0.14; 15: +0.06; 20: -0.14; 25: -0.01; 30: +0.13; 40: +0.31; 50: +0.26; 60: +0.24 | ONE-WEEK |
+| FIB|ote62_dn|5m | D40 skip | +10..+22% / +19..+34% / +40..+51% | -8..+22% / -2..+39% / +34..+60% | [-6%,+40%] (0.84) / [-25%,+44%] (0.72) / [+8%,+70%] (0.97) | +3% (ONE-WEEK) / +32% (ok) / +57% (ok) | 0.22 (8) / 0.20 (4) / 0.20 (4) | 0.11/0.11/0.11 | 10: +0.27; 15: +0.28; 20: +0.29; 25: +0.33; 30: +0.34; 40: +0.30; 50: +0.32; 60: +0.31 | ONE-WEEK |
+| FIB|ote79_up|5m | D40 skip | -22..+11% / +13..+22% / +6..+62% | -22..+12% / +3..+23% / +12..+62% | [-32%,+22%] (0.49) / [-32%,+35%] (0.70) / [-12%,+71%] (0.91) | -7% (ONE-WEEK) / +17% (ok) / +52% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.33/0.89/0.11 | 10: +0.11; 15: +0.23; 20: +0.24; 25: +0.24; 30: +0.24; 40: +0.30; 50: +0.27; 60: +0.31 | ONE-WEEK |
+| ARR|iFVG|1m | D40 skip | -66..-11% / +45..+60% / +36..+60% | -66..-11% / +34..+65% / +36..+66% | [-86%,+17%] (0.17) / [+3%,+63%] (0.96) / [+8%,+71%] (0.98) | -46% (ok) / +54% (ok) / +61% (ok) | 0.11 (8) / 0.40 (4) / 0.20 (4) | 0.67/0.33/0.11 | 10: +0.11; 15: +0.20; 20: +0.24; 25: +0.17; 30: +0.17; 40: +0.29; 50: +0.20; 60: +0.24 | FRAGILE |
+| ARR|OB_CE|1m | D40 skip | -1..+30% / +13..+35% / -35..+39% | -18..+30% / -8..+40% / -26..+36% | [-28%,+37%] (0.71) / [-20%,+53%] (0.82) / [-109%,+63%] (0.67) | +11% (ONE-WEEK) / +34% (ok) / +20% (ok) | 0.22 (8) / 0.20 (4) / 0.40 (4) | 0.33/0.78/0.56 | 10: -0.11; 15: -0.00; 20: +0.04; 25: +0.09; 30: +0.03; 40: +0.28; 50: +0.24; 60: +0.36 | ONE-WEEK |
+| ARR|FVG_CE|45s | D40 skip | -2..+7% / +34..+45% / -33..+58% | -31..+26% / +20..+58% / -24..+58% | [-44%,+43%] (0.56) / [-47%,+65%] (0.78) / [-67%,+73%] (0.76) | +10% (ok) / +40% (ok) / +32% (ok) | 0.22 (8) / 0.20 (4) / 0.40 (4) | 0.44/0.67/0.33 | 10: +0.18; 15: -0.01; 20: +0.16; 25: +0.22; 30: +0.26; 40: +0.28; 50: +0.20; 60: +0.17 | no (not eligible) |
+| ARR|OB_CE|2m | D20 skip | +3..+12% / +36..+46% / -24..+43% | -6..+16% / +19..+46% / -16..+43% | [-29%,+29%] (0.63) / [-15%,+52%] (0.85) / [-65%,+62%] (0.74) | -3% (ONE-WEEK) / +39% (ok) / +35% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.22/0.33/0.44 | 10: +0.10; 15: +0.22; 20: +0.27; 25: +0.25; 30: +0.20; 40: -0.00; 50: -0.08; 60: -0.04 | ONE-WEEK |
+| ARR|iplFVG|30s | D40 skip | -54..+45% / +33..+44% / +11..+45% | -54..+29% / +16..+45% / +17..+45% | [-67%,+59%] (0.70) / [-29%,+49%] (0.79) / [-24%,+56%] (0.83) | -35% (ok) / +37% (ok) / +32% (ok) | 0.11 (8) / 0.40 (4) / 0.20 (4) | 0.78/0.44/0.22 | 10: -0.09; 15: +0.22; 20: +0.24; 25: +0.18; 30: +0.27; 40: +0.27; 50: +0.16; 60: +0.06 | no (not eligible) |
+| PRF|b3|week | D40 half | -1..+10% / +15..+51% / -20..+47% | -8..+10% / -4..+55% / -12..+47% | [-29%,+14%] (0.37) / [-27%,+53%] (0.66) / [-77%,+46%] (0.50) | -15% (ok) / +31% (ok) / +39% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.44/0.22/0.11 | 10: +0.05; 15: -0.07; 20: +0.03; 25: +0.03; 30: +0.22; 40: +0.26; 50: +0.21; 60: +0.18 | no (not eligible) |
+| ARR|FVG|1m | D40 skip | -70..+23% / +42..+57% / +19..+69% | -70..+23% / +35..+66% / +24..+69% | [-89%,+46%] (0.47) / [-23%,+66%] (0.86) / [-11%,+75%] (0.91) | -49% (ok) / +51% (ok) / +59% (ok) | 0.11 (8) / 0.20 (4) / 0.40 (4) | 0.67/0.22/0.11 | 10: +0.24; 15: +0.17; 20: +0.14; 25: +0.15; 30: +0.07; 40: +0.26; 50: +0.21; 60: +0.26 | FRAGILE |
+| SWG|f5L|2m | D20 half | +4..+22% / +26..+33% / +6..+52% | -3..+22% / +7..+37% / +12..+55% | [-12%,+43%] (0.88) / [-21%,+48%] (0.82) / [-11%,+71%] (0.90) | +13% (ok) / +29% (ok) / +52% (ok) | 0.11 (8) / 0.20 (4) / 0.40 (4) | 0.33/0.22/0.11 | 10: +0.09; 15: -0.05; 20: +0.26; 25: +0.23; 30: +0.13; 40: +0.18; 50: +0.17; 60: +0.17 | FRAGILE |
+| FIB|pd50|4h | D40 skip | +0..+8% / +24..+38% / +13..+49% | -19..+3% / +4..+38% / +19..+58% | [-11%,+13%] (0.38) / [-31%,+40%] (0.70) / [-6%,+60%] (0.90) | +0% (ok) / +37% (ok) / +55% (ok) | 0.11 (8) / 0.20 (4) / 0.20 (4) | 0.89/0.11/0.11 | 10: +0.05; 15: +0.12; 20: +0.16; 25: +0.20; 30: +0.21; 40: +0.26; 50: +0.28; 60: +0.26 | FRAGILE |
+Placebo draws are few (A 16, B 8, C 8 per line): the smallest rank is 1/17 = 0.06, so the prereg 5% threshold is unreachable; the label uses rank <= 0.12 on all three kinds. FRAGILE = no D within +-50% of the variant's D (and no freshness variant) keeps the cut positive in HOLD, PRE and X'. Line-parameter variants (swing strength 2/3, profile bin 1/2 pt, anchor shifts) need stream rebuilds and are NOT scored here. 1-s/3-s decision delay is not applicable to ahead skip/half (decided at the signal second); NOT scored.
+
+### LOCK-ONLY check of the 12R top 20 (cuts at lock none from the full lock-none screen)
+| stream | variant | S lock12 | elig | S lock none | elig none | cuts lock none HOLD / PRE / X' | label |
+|---|---|---|---|---|---|---|---|
+| ARR|OB|45s | D40 skip | +0.418 | Y | +0.024 | n | +8% / +5% / +12% | weak |
+| ARR|FVG_CE|2m | D40 skip | +0.369 | n | -0.222 | n | -46% / -12% / +12% | weak |
+| ARR|FVG_CE|5m | D40 skip | +0.354 | n | -0.251 | n | -9% / -12% / -50% | weak |
+| ARR|FVG|2m | D40 skip | +0.344 | n | -0.196 | n | -27% / +5% / -18% | weak |
+| ARR|OB|30s | D20 half | +0.340 | Y | -0.204 | n | -2% / -11% / -14% | LOCK-ONLY |
+| ARR|OB|1m | D40 skip | +0.328 | n | -0.194 | n | -16% / -41% / +10% | weak |
+| ARR|BRK|1m | D20 skip | +0.307 | Y | -0.014 | n | -11% / -14% / -5% | LOCK-ONLY |
+| ARR|OB_CE|5m | D20 skip | +0.307 | n | -0.110 | n | -10% / -7% / -58% | weak |
+| ARR|FVG|45s | D40 skip | +0.307 | n | -0.266 | n | -44% / -24% / -1% | weak |
+| FIB|ote62_dn|5m | D40 skip | +0.303 | Y | +0.031 | n | +9% / -24% / +25% | LOCK-ONLY |
+| FIB|ote79_up|5m | D40 skip | +0.300 | n | -0.048 | n | +14% / -28% / -26% | weak |
+| ARR|iFVG|1m | D40 skip | +0.290 | n | -0.049 | n | -76% / -9% / +52% | weak |
+| ARR|OB_CE|1m | D40 skip | +0.278 | Y | -0.312 | n | +3% / -61% / -37% | LOCK-ONLY |
+| ARR|FVG_CE|45s | D40 skip | +0.275 | n | -0.261 | n | -58% / -8% / -13% | weak |
+| ARR|OB_CE|2m | D20 skip | +0.271 | n | -0.439 | n | -47% / -7% / -101% | weak |
+| ARR|iplFVG|30s | D40 skip | +0.270 | n | -0.396 | n | -76% / -47% / -56% | weak |
+| PRF|b3|week | D40 half | +0.262 | n | -0.031 | n | +10% / -10% / -22% | weak |
+| ARR|FVG|1m | D40 skip | +0.260 | n | -0.310 | n | -43% / -48% / -8% | weak |
+| SWG|f5L|2m | D20 half | +0.259 | Y | +0.076 | n | +43% / -19% / +16% | LOCK-ONLY |
+| FIB|pd50|4h | D40 skip | +0.256 | n | +0.055 | n | +0% / -1% / +19% | weak |
+
+### Top 5 placebos (12R)
+| stream | variant | S | band test (flip-2.0 band: L6M >0.216 and PRE >0.263 or X' >0.241) | placebo rank of S: A / B / C (n) | rank of the HOLD / PRE / X' cut under A | share of 100 A-draws with S >= observed |
+|---|---|---|---|---|---|---|
+| ARR|OB|45s | D40 skip | +0.418 | NOISE (L6M -15%, PRE +53%, X' +50%) | 0.111 (8) / 0.200 (4) / 0.200 (4) | 0.556 / 0.333 / 0.222 | 0.00 |
+| ARR|FVG_CE|2m | D40 skip | +0.369 | NOISE (L6M -21%, PRE +46%, X' +48%) | 0.111 (8) / 0.200 (4) / 0.200 (4) | 0.111 / 0.444 / 0.222 | 0.00 |
+| ARR|FVG_CE|5m | D40 skip | +0.354 | NOISE (L6M +7%, PRE -3%, X' +60%) | 0.111 (8) / 0.200 (4) / 0.200 (4) | 0.111 / 1.000 / 0.111 | 0.00 |
+| ARR|FVG|2m | D40 skip | +0.344 | NOISE (L6M -13%, PRE +31%, X' +53%) | 0.111 (8) / 0.200 (4) / 0.200 (4) | 0.111 / 0.556 / 0.111 | 0.00 |
+| ARR|OB|30s | D20 half | +0.340 | NOISE (L6M -10%, PRE +31%, X' +56%) | 0.111 (8) / 0.200 (4) / 0.400 (4) | 0.111 / 0.444 / 0.111 | 0.00 |
+
+### Re-label (12R band rows) and leave-key-episode-out (12R)
+* lock none (headline, X-frame FINAL band n=107; V13Y band pending): 6 of 1258 cells pass the band (L6M and PRE-or-X'); 1 of those also pass no-harm (PRE and MID cuts not worse than -band); 0 also eligible. Half cells passing band: 0.
+
+| stream | variant | rows touched | band used | cut L6M / PRE / X' / MID | band pass | no-harm | label |
+|---|---|---|---|---|---|---|---|
+| PRF|vwap|month | D40 skip | 2604 | flip5 | +14% / +14% / +37% / +2% | NOISE | ok | NOISE |
+| PIV|cam_L2|day | D40 skip | 3628 | flip5 | +1% / -6% / +35% / +12% | NOISE | ok | NOISE |
+| FIB|ret62|15m | D20 skip | 1956 | flip5 | +8% / +3% / +18% / +9% | NOISE | ok | NOISE |
+| FIB|OTEzone|15m | D20 skip | 1837 | flip5 | +5% / +5% / +16% / +19% | NOISE | ok | NOISE |
+| PRF|vwap|avwap | D20 skip | 4565 | flip5 | +22% / -25% / +26% / -77% | PASS | HARM | BAND-PASS (HARMS PRE/MID) |
+| ARR|iFVG|45s | D20 skip | 16911 | flip5 | +37% / -24% / +49% / -42% | PASS | HARM | BAND-PASS (HARMS PRE/MID) |
+| EQL|EQH_rel|15m | D20 skip | 2447 | flip5 | +16% / -5% / +31% / -6% | NOISE | ok | NOISE |
+| ORB|Hx1|15m | D40 skip | 2350 | flip5 | -2% / +3% / +18% / +0% | NOISE | ok | NOISE |
+| ORB|Lx1|5m | D40 skip | 1412 | flip5 | -2% / +1% / +21% / +0% | NOISE | ok | NOISE |
+| PRF|hvn0|sw15 | D40 skip | 2577 | flip5 | +12% / +0% / +17% / +1% | NOISE | ok | NOISE |
+| SWG|f5L|2m | D20 half | 18490 | flip5 | +54% / -19% / +16% / -77% | NOISE | HARM | NOISE |
+| PRF|poc|sw15 | D40 skip | 2628 | flip5 | +16% / -0% / +24% / +3% | NOISE | ok | NOISE |
+| ORB|Hx2|5m | D40 half | 2097 | flip5 | +2% / +0% / +18% / -1% | NOISE | ok | NOISE |
+| SWG|f7L|2m | D20 skip | 16077 | flip5 | +11% / -3% / -12% / -173% | NOISE | HARM | NOISE |
+| MAS|dc_up|1d | D20 skip | 548 | flip2 | +0% / +0% / +22% / +0% | NOISE | ok | NOISE |
+| FIB|dr_high|4h | D20 skip | 688 | flip2 | +0% / -0% / +19% / -1% | NOISE | ok | NOISE |
+| FIB|ote62_dn|5m | D20 skip | 2285 | flip5 | +21% / -10% / +26% / -11% | PASS | ok | BAND-PASS |
+| FIB|ret38|1h | D20 skip | 1772 | flip5 | -2% / +1% / +20% / -14% | NOISE | ok | NOISE |
+| FIB|ote79_up|1h | D20 skip | 2189 | flip5 | +16% / -11% / +14% / +0% | NOISE | ok | NOISE |
+| MAS|sma100|1h | D40 half | 3203 | flip5 | +5% / -3% / +22% / -4% | NOISE | ok | NOISE |
+
+* lock 12R (12R band rows): 0 of 1258 cells pass the band (L6M and PRE-or-X'); 0 of those also pass no-harm (PRE and MID cuts not worse than -band); 0 also eligible. Half cells passing band: 0.
+
+| stream | variant | rows touched | band used | cut L6M / PRE / X' / MID | band pass | no-harm | label |
+|---|---|---|---|---|---|---|---|
+| ARR|OB|45s | D40 skip | 37322 | flip5 | -15% / +53% / +50% / +66% | NOISE | ok | NOISE |
+| ARR|FVG_CE|2m | D40 skip | 31306 | flip5 | -21% / +46% / +48% / +58% | NOISE | ok | NOISE |
+| ARR|FVG_CE|5m | D40 skip | 21138 | flip5 | +7% / -3% / +60% / +31% | NOISE | ok | NOISE |
+| ARR|FVG|2m | D40 skip | 24179 | flip5 | -13% / +31% / +53% / +57% | NOISE | ok | NOISE |
+| ARR|OB|30s | D20 half | 29591 | flip5 | -10% / +31% / +56% / +47% | NOISE | ok | NOISE |
+| ARR|OB|1m | D40 skip | 33255 | flip5 | -60% / +33% / +53% / +24% | NOISE | ok | NOISE |
+| ARR|BRK|1m | D20 skip | 9435 | flip5 | -31% / +30% / +63% / -24% | NOISE | ok | NOISE |
+| ARR|OB_CE|5m | D20 skip | 9307 | flip5 | -14% / +25% / +21% / +28% | NOISE | ok | NOISE |
+| ARR|FVG|45s | D40 skip | 34611 | flip5 | -34% / +36% / +32% / -10% | NOISE | ok | NOISE |
+| FIB|ote62_dn|5m | D40 skip | 3530 | flip5 | -2% / +30% / +51% / +1% | NOISE | ok | NOISE |
+| FIB|ote79_up|5m | D40 skip | 5460 | flip5 | -33% / +15% / +57% / +35% | NOISE | ok | NOISE |
+| ARR|iFVG|1m | D40 skip | 24946 | flip5 | -101% / +58% / +60% / +25% | NOISE | ok | NOISE |
+| ARR|OB_CE|1m | D40 skip | 37775 | flip5 | -22% / +25% / +18% / +26% | NOISE | ok | NOISE |
+| ARR|FVG_CE|45s | D40 skip | 43637 | flip5 | -21% / +45% / +39% / -3% | NOISE | ok | NOISE |
+| ARR|OB_CE|2m | D20 skip | 16683 | flip5 | +1% / +44% / +35% / +23% | NOISE | ok | NOISE |
+| ARR|iplFVG|30s | D40 skip | 27664 | flip5 | -87% / +42% / +45% / +43% | NOISE | ok | NOISE |
+| PRF|b3|week | D40 half | 6925 | flip5 | -1% / +28% / +45% / -10% | NOISE | ok | NOISE |
+| ARR|FVG|1m | D40 skip | 31969 | flip5 | -105% / +55% / +63% / +31% | NOISE | ok | NOISE |
+| SWG|f5L|2m | D20 half | 18490 | flip5 | +5% / +29% / +52% / -10% | NOISE | ok | NOISE |
+| FIB|pd50|4h | D40 skip | 1948 | flip5 | +1% / +34% / +49% / +6% | NOISE | ok | NOISE |
+
+
+### Leave-key-episode-out (lock none; episodes from DS3_ZONES_EPISODES.md: HOLD ISO weeks 202627-202639, 202605-202616, 202547-202601; PRE 202505-202521, 202434-202452, 202410-202421; X' 202337-open)
+| stream | variant | HOLD cut: all / drop ep1 / ep2 / ep3 | PRE cut: all / drop ep1 / ep2 / ep3 | X' cut: all / drop ep1 | worst after drop | label |
+|---|---|---|---|---|---|---|
+| PRF|vwap|month | D40 skip | +10% / +10% / -2% / +10% | +27% / +11% / +16% / +27% | +22% / +22% | worst -2% | ONE-EPISODE |
+| PIV|cam_L2|day | D40 skip | +2% / +2% / -9% / +2% | +7% / +36% / -38% / +7% | +15% / +15% | worst -38% | ONE-EPISODE |
+| FIB|ret62|15m | D20 skip | +16% / +16% / -18% / +16% | +2% / -5% / -5% / +2% | +3% / +3% | worst -18% | ONE-EPISODE |
+| FIB|OTEzone|15m | D20 skip | +1% / +1% / -18% / +1% | +6% / -3% / -4% / +6% | +2% / +2% | worst -18% | ONE-EPISODE |
+| PRF|vwap|avwap | D20 skip | +19% / +22% / -14% / +19% | -7% / +34% / -11% / -7% | +53% / +53% | worst -14% | ONE-EPISODE |
+| ARR|iFVG|45s | D20 skip | -8% / -8% / -5% / -8% | +40% / +43% / +36% / +40% | +50% / +50% | worst -8% | ONE-EPISODE |
+| EQL|EQH_rel|15m | D20 skip | -2% / -2% / -39% / -2% | +4% / +2% / +1% / +4% | +34% / +34% | worst -39% | survives |
+| ORB|Hx1|15m | D40 skip | +2% / +2% / -5% / +2% | -2% / -8% / +3% / -2% | -54% / -24% | worst -24% | ONE-EPISODE |
+| ORB|Lx1|5m | D40 skip | -0% / -0% / -8% / -0% | +7% / +4% / +2% / +7% | +34% / +34% | worst -8% | survives |
+| PRF|hvn0|sw15 | D40 skip | +5% / +5% / -0% / +5% | +19% / +35% / -6% / +19% | -2% / -2% | worst -6% | ONE-EPISODE |
+
+### Frames AHEAD / BEHIND / AT (lock 12R)
+| stream | frame | D | action | S | cut HOLD / PRE / X' | vol | elig |
+|---|---|---|---|---|---|---|---|
+| ARR|OB_CE|1m | AT | 5 | take | +0.461 | +74% / +71% / +71% | 0.23 | n |
+| ARR|OB|30s | AT | 5 | take | +0.398 | +42% / +69% / +65% | 0.37 | n |
+| ARR|FVG|1m | AT | 5 | take | +0.332 | +54% / +80% / +56% | 0.33 | n |
+| ARR|OB|1m | AT | 5 | take | +0.327 | +36% / +83% / +76% | 0.24 | n |
+| ARR|FVG|2m | BEHIND | 40 | up | +0.312 | +0% / -2% / +36% | 1.24 | n |
+| PRF|b3|week | AT | 5 | take | +0.288 | +88% / +93% / +92% | 0.01 | n |
+| PRF|b3|week | BEHIND | 40 | skip | +0.279 | +27% / +21% / +49% | 0.99 | n |
+| ARR|FVG|45s | AT | 5 | skip | +0.279 | +40% / +22% / +38% | 0.89 | n |
+
+|                    |   cells |   meanS |   maxS |   eligible |
+|:-------------------|--------:|--------:|-------:|-----------:|
+| ('at', 'half')     |      20 |   0.002 |  0.247 |          2 |
+| ('at', 'skip')     |      20 |   0.08  |  0.279 |          0 |
+| ('at', 'take')     |      20 |   0.102 |  0.461 |          0 |
+| ('at', 'up')       |      20 |  -0.003 |  0.165 |          0 |
+| ('behind', 'half') |      40 |   0.038 |  0.221 |         10 |
+| ('behind', 'skip') |      40 |  -0.021 |  0.279 |          1 |
+| ('behind', 'up')   |      40 |   0.048 |  0.312 |          0 |
+
+
+## 5. Per book, per session, per vol tercile (top 20, v1.3 base; cut of maxDD in HOLD / PRE / X', mean delta $k/wk over the window in brackets; a slice with base maxDD 0 shows -)
+Vol tercile = day tercile of the mean stop distance (sd) of that day's signals (low / mid / high), all windows pooled (ALL axis, days outside the tercile zeroed on BOTH series), cut = maxDD cut on the pooled weekly series.
+| stream | variant | asia | london | pre | nyam | nypm | close | K6 | P6 | U6 | H6 | M6 | A6 | vol tercile low / mid / high (cut ; mean d) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ARR|OB|45s | D40 skip | +14%/+29%/+48% | +50%/+37%/-10% | -/-/- | +5%/-22%/+21% | +14%/-60%/+15% | -/-/- | +27%/+45%/+27% | +23%/+31%/+55% | +31%/+53%/+35% | -2%/-3%/-8% | +40%/+57%/+20% | -29%/-15%/-34% | +30% ; +1.2 / +1% ; -0.5 / -8% ; -0.2 |
+| ARR|FVG_CE|2m | D40 skip | +4%/-14%/+38% | +58%/+55%/+5% | -/-/- | +58%/+17%/+48% | +20%/-3%/+24% | -/-/- | +56%/-15%/+30% | +46%/+48%/+54% | +36%/+24%/+36% | +39%/-47%/-3% | -10%/+20%/+56% | +38%/-1%/+15% | +49% ; +2.8 / +19% ; +0.8 / +13% ; +0.5 |
+| ARR|FVG_CE|5m | D40 skip | -2%/-36%/+54% | +47%/+57%/+25% | -/-/- | +16%/-17%/-12% | +29%/-16%/+42% | -/-/- | +58%/+59%/+27% | +55%/-19%/+27% | +53%/-34%/+31% | -32%/-57%/+55% | -14%/+21%/+56% | -14%/-1%/+9% | +26% ; +1.7 / +15% ; +0.3 / +9% ; -0.5 |
+| ARR|FVG|2m | D40 skip | +2%/+2%/+21% | +61%/+30%/+10% | -/-/- | +24%/+4%/+19% | +13%/+24%/+36% | -/-/- | +28%/+37%/+42% | +49%/+8%/+38% | +36%/+22%/+32% | +13%/-87%/-30% | -9%/+23%/+69% | +40%/-49%/-36% | +41% ; +2.1 / -16% ; +0.5 / +8% ; +0.1 |
+| ARR|OB|30s | D20 half | +5%/+37%/+22% | +9%/+34%/+17% | -/-/- | +25%/-12%/+22% | +28%/-15%/-1% | -/-/- | +13%/+20%/+40% | +28%/+30%/+52% | +18%/+35%/+27% | -38%/+18%/-17% | +37%/+16%/+33% | +5%/+27%/-11% | +47% ; +1.2 / +22% ; -0.3 / +34% ; +0.2 |
+| ARR|OB|1m | D40 skip | +13%/+11%/+64% | -37%/+57%/+8% | -/-/- | -26%/-6%/+39% | +43%/-5%/+9% | -/-/- | +39%/+55%/-4% | -6%/+28%/+35% | +33%/-15%/+67% | +13%/-27%/+4% | +23%/+47%/+48% | -17%/-4%/-66% | +34% ; +0.8 / +31% ; +0.4 / +14% ; -0.6 |
+| ARR|BRK|1m | D20 skip | -10%/+29%/+44% | -0%/+37%/+47% | -/-/- | +33%/-1%/-14% | -1%/+6%/+32% | -/-/- | +0%/+49%/+48% | +47%/+38%/+51% | +3%/-16%/+41% | -21%/-22%/-4% | +31%/+5%/+54% | +20%/-21%/-52% | +26% ; +0.6 / -2% ; -0.3 / +51% ; +0.7 |
+| ARR|OB_CE|5m | D20 skip | +4%/+6%/+17% | -1%/+8%/-14% | -/-/- | +18%/-20%/-44% | +14%/-60%/+26% | -/-/- | +27%/-7%/+11% | +28%/+25%/-8% | +22%/+13%/+37% | -3%/+27%/+24% | +3%/+6%/+28% | +13%/+26%/-13% | +48% ; +1.1 / +9% ; -0.3 / -8% ; -0.7 |
+| ARR|FVG|45s | D40 skip | +18%/+9%/+29% | +30%/+34%/+41% | -/-/- | +17%/+31%/-12% | +69%/+34%/+13% | -/-/- | +59%/+47%/+25% | +40%/+25%/+14% | +2%/-13%/+35% | +24%/-70%/-16% | -7%/+28%/+35% | +10%/-14%/-23% | +61% ; +2.9 / +18% ; -1.2 / +7% ; -1.2 |
+| FIB|ote62_dn|5m | D40 skip | -2%/+36%/+44% | +7%/+11%/+18% | -/-/- | +19%/-5%/+20% | +30%/-54%/+45% | -/-/- | +15%/+12%/+4% | +14%/+38%/+42% | +6%/-10%/+0% | +1%/+16%/+21% | +21%/+4%/+50% | +15%/-2%/-15% | +39% ; +1.5 / +5% ; +0.3 / +15% ; +1.0 |
+| FIB|ote79_up|5m | D40 skip | +2%/-1%/+36% | +13%/+9%/+18% | -/-/- | -3%/+6%/+22% | +4%/+14%/+24% | -/-/- | +13%/+15%/+27% | -13%/-16%/+54% | +3%/-4%/-1% | -20%/+26%/-9% | -5%/+14%/+60% | -4%/+12%/-11% | +9% ; +0.8 / +1% ; -0.5 / +33% ; +0.5 |
+| ARR|iFVG|1m | D40 skip | -51%/+31%/+30% | +11%/+52%/+52% | -/-/- | +22%/-2%/-17% | +41%/+44%/-18% | -/-/- | +44%/+67%/-47% | +13%/+53%/+54% | +40%/+35%/-28% | -12%/+24%/+44% | +33%/+10%/+45% | +34%/+33%/-26% | +64% ; +1.8 / +19% ; +0.1 / +25% ; +0.0 |
+| ARR|OB_CE|1m | D40 skip | +1%/+0%/+53% | -38%/+56%/-8% | -/-/- | -24%/-23%/-20% | +29%/+10%/+26% | -/-/- | +34%/+72%/+42% | +10%/+31%/+2% | +33%/-55%/+67% | -3%/-34%/-13% | +43%/+37%/+37% | -12%/-53%/-98% | +48% ; +0.9 / +10% ; -0.7 / +6% ; -1.5 |
+| ARR|FVG_CE|45s | D40 skip | +17%/+9%/+34% | +46%/+42%/+4% | -/-/- | +25%/+22%/+21% | +32%/+14%/+30% | -/-/- | +45%/+50%/+26% | +24%/+52%/+31% | +46%/+37%/+35% | -10%/-16%/-30% | +10%/+22%/+40% | -12%/+12%/-19% | +64% ; +2.4 / +24% ; -1.0 / +52% ; -0.5 |
+| ARR|OB_CE|2m | D20 skip | +2%/+36%/+7% | +20%/+55%/+0% | -/-/- | +22%/-0%/-26% | +31%/-28%/+7% | -/-/- | +30%/+10%/-6% | -19%/+38%/+27% | +27%/+10%/+3% | +10%/+18%/+24% | -4%/+8%/+57% | +1%/+23%/-5% | +20% ; +0.5 / +24% ; -0.5 / -2% ; -0.8 |
+| ARR|iplFVG|30s | D40 skip | -66%/+3%/+22% | +25%/+42%/+17% | -/-/- | +62%/+1%/+51% | +53%/-64%/+38% | -/-/- | +29%/+12%/+41% | +30%/+32%/+19% | +23%/+13%/+2% | +18%/-3%/-22% | +3%/+17%/+14% | +13%/-31%/-21% | +14% ; +1.2 / +45% ; +0.3 / +22% ; -0.4 |
+| PRF|b3|week | D40 half | -30%/+31%/+20% | -3%/+12%/-17% | -/-/- | +40%/-6%/+29% | +32%/+4%/+11% | -/-/- | +16%/+8%/-32% | +11%/+32%/+46% | -7%/+22%/-6% | -38%/-0%/+11% | -10%/+2%/-5% | +8%/+21%/-20% | +32% ; -0.1 / +19% ; -0.5 / -3% ; -0.3 |
+| ARR|FVG|1m | D40 skip | -61%/+38%/+20% | +9%/+56%/+56% | -/-/- | +38%/-4%/+21% | +59%/+0%/+12% | -/-/- | +66%/+65%/+28% | +16%/+61%/+43% | -52%/+18%/+39% | +20%/+10%/+8% | +16%/+20%/+65% | -68%/-17%/-15% | +54% ; +2.7 / +14% ; +0.3 / +42% ; -0.6 |
+| SWG|f5L|2m | D20 half | -55%/-20%/+35% | +35%/+28%/+33% | -/-/- | +67%/-10%/+29% | +7%/+5%/+50% | -/-/- | +16%/+11%/+36% | +40%/+24%/+48% | +5%/+7%/+50% | -18%/+5%/-5% | +18%/-1%/+41% | -12%/-0%/-9% | +17% ; +0.9 / +45% ; +0.3 / +50% ; +0.9 |
+| FIB|pd50|4h | D40 skip | +0%/+32%/-1% | +6%/+5%/-5% | -/-/- | -1%/+2%/+20% | -1%/-3%/-6% | -/-/- | +1%/+11%/-28% | -5%/+35%/+49% | +0%/+16%/-7% | +39%/+9%/-3% | +2%/+0%/+28% | -7%/+0%/-36% | +39% ; +0.9 / -3% ; +0.0 / -11% ; -0.1 |
+
+### Session-restricted action (line applied only to signals entering in that session; S, cuts HOLD/PRE/X')
+| stream | variant | asia | london | pre | nyam | nypm | close |
+|---|---|---|---|---|---|---|---|
+| ARR|OB|45s | D40 skip | +0.35 (-2%,+35%,+56%) | -0.09 (-25%,+57%,-12%) | +0.00 (+0%,+0%,+0%) | +0.12 (-8%,+23%,+28%) | -0.04 (-4%,+5%,-4%) | +0.00 (+0%,+0%,+0%) |
+| ARR|FVG_CE|2m | D40 skip | +0.19 (+30%,-10%,+30%) | -0.02 (-29%,+55%,-7%) | +0.00 (+0%,+0%,+0%) | +0.19 (+6%,+38%,+38%) | -0.14 (-6%,+9%,-42%) | +0.00 (+0%,+0%,+0%) |
+| ARR|FVG_CE|5m | D40 skip | +0.26 (+38%,+7%,+28%) | +0.01 (-12%,+33%,-9%) | +0.00 (+0%,+0%,+0%) | +0.02 (-2%,+8%,-2%) | +0.02 (-6%,+10%,-2%) | +0.00 (+0%,+0%,+0%) |
+| ARR|FVG|2m | D40 skip | -0.01 (-6%,-5%,-2%) | -0.12 (-38%,+33%,-2%) | +0.00 (+0%,+0%,+0%) | +0.01 (+2%,+42%,-28%) | -0.09 (-2%,+11%,-33%) | +0.00 (+0%,+0%,+0%) |
+| ARR|OB|30s | D20 half | +0.19 (-9%,+38%,+46%) | +0.00 (-1%,+39%,-18%) | +0.00 (+0%,+0%,+0%) | -0.06 (+1%,-10%,-4%) | +0.01 (-1%,+1%,-1%) | +0.00 (+0%,+0%,+0%) |
+| ARR|OB|1m | D40 skip | +0.02 (-34%,+3%,+13%) | +0.09 (-17%,+54%,-8%) | +0.00 (+0%,+0%,+0%) | +0.02 (-1%,+18%,-20%) | -0.18 (-1%,-2%,-37%) | +0.00 (+0%,+0%,+0%) |
+| ARR|BRK|1m | D20 skip | +0.14 (-13%,+33%,+34%) | +0.10 (+24%,+26%,-9%) | +0.00 (+0%,+0%,+0%) | -0.01 (+0%,+1%,+1%) | +0.04 (+0%,+8%,+0%) | +0.00 (+0%,+0%,+0%) |
+| ARR|OB_CE|5m | D20 skip | +0.21 (+28%,+10%,+22%) | +0.08 (-8%,+28%,+3%) | +0.00 (+0%,+0%,+0%) | +0.01 (+0%,+19%,-15%) | -0.11 (-1%,+0%,-34%) | +0.00 (+0%,+0%,+0%) |
+| ARR|FVG|45s | D40 skip | +0.09 (+5%,-40%,+29%) | +0.05 (-2%,+43%,-8%) | +0.00 (+0%,+0%,+0%) | +0.10 (-8%,+31%,+12%) | -0.14 (-7%,+1%,-34%) | +0.00 (+0%,+0%,+0%) |
+| FIB|ote62_dn|5m | D40 skip | +0.37 (+30%,+32%,+58%) | -0.01 (-1%,+5%,+0%) | +0.00 (+0%,+0%,+0%) | +0.01 (+0%,+23%,-21%) | +0.00 (+0%,-1%,-0%) | +0.00 (+0%,+0%,+0%) |
+| FIB|ote79_up|5m | D40 skip | +0.26 (+9%,+5%,+52%) | +0.10 (-1%,+30%,+0%) | +0.00 (+0%,+0%,+0%) | -0.00 (+0%,-0%,+0%) | +0.01 (+0%,-0%,+0%) | +0.00 (+0%,+0%,+0%) |
+| ARR|iFVG|1m | D40 skip | +0.15 (-5%,+2%,+22%) | +0.03 (-14%,+47%,+6%) | +0.00 (+0%,+0%,+0%) | +0.04 (+9%,+28%,-11%) | -0.17 (-2%,-0%,-57%) | +0.00 (+0%,+0%,+0%) |
+| ARR|OB_CE|1m | D40 skip | +0.21 (-6%,+18%,+30%) | +0.15 (-9%,+54%,-1%) | +0.00 (+0%,+0%,+0%) | +0.02 (-0%,+1%,-4%) | -0.18 (-5%,+5%,-41%) | +0.00 (+0%,+0%,+0%) |
+| ARR|FVG_CE|45s | D40 skip | +0.25 (-3%,+10%,+44%) | -0.02 (-2%,+59%,-2%) | +0.00 (+0%,+0%,+0%) | +0.18 (+5%,+28%,+31%) | -0.17 (-7%,+8%,-58%) | +0.00 (+0%,+0%,+0%) |
+| ARR|OB_CE|2m | D20 skip | +0.18 (-16%,+21%,+55%) | -0.08 (-15%,+32%,-24%) | +0.00 (+0%,+0%,+0%) | +0.07 (-4%,+4%,+30%) | -0.17 (+0%,-2%,-53%) | +0.00 (+0%,+0%,+0%) |
+| ARR|iplFVG|30s | D40 skip | +0.06 (-13%,+16%,-22%) | +0.18 (+8%,+54%,+6%) | +0.00 (+0%,+0%,+0%) | +0.15 (+19%,-1%,+24%) | -0.04 (-6%,-1%,-2%) | +0.00 (+0%,+0%,+0%) |
+| PRF|b3|week | D40 half | +0.05 (-10%,+28%,+2%) | +0.11 (-5%,+30%,-1%) | +0.00 (+0%,+0%,+0%) | -0.03 (+0%,-2%,-0%) | -0.01 (+0%,+0%,-2%) | +0.00 (+0%,+0%,+0%) |
+| ARR|FVG|1m | D40 skip | +0.12 (-18%,+2%,+32%) | +0.06 (-7%,+35%,+5%) | +0.00 (+0%,+0%,+0%) | +0.17 (-2%,+45%,+10%) | +0.01 (-2%,+7%,+0%) | +0.00 (+0%,+0%,+0%) |
+| SWG|f5L|2m | D20 half | +0.19 (+5%,+26%,+38%) | +0.20 (+18%,+39%,+24%) | +0.00 (+0%,+0%,+0%) | -0.06 (+0%,+2%,+2%) | +0.02 (-1%,-0%,+1%) | +0.00 (+0%,+0%,+0%) |
+| FIB|pd50|4h | D40 skip | +0.16 (+0%,+32%,+25%) | +0.03 (+0%,+4%,+1%) | +0.00 (+0%,+0%,+0%) | +0.16 (+0%,-1%,+47%) | +0.00 (+0%,+1%,+0%) | +0.00 (+0%,+0%,+0%) |
+
+## 6. Engine-lscale equal-risk check (top 20; c = lot scale so that worst-20 ALL equals the base)
+| stream | variant | engine equal-risk (lscale c, worst-20 gap): cut HOLD/PRE/X' ; mean d HOLD/PRE | linear-c S (screen) |
+|---|---|---|---|
+| ARR|OB|45s | D40 skip | c 1.11, gap +2.8%: +26%/+46%/+48% ; +3.9 / -1.3 | +0.418 |
+| ARR|FVG_CE|2m | D40 skip | c 1.10, gap +1.4%: +28%/+40%/+46% ; +12.3 / +3.0 | +0.369 |
+| ARR|FVG_CE|5m | D40 skip | c 0.99, gap -1.5%: +35%/-7%/+59% ; +4.0 / -3.0 | +0.354 |
+| ARR|FVG|2m | D40 skip | c 1.09, gap -0.9%: +25%/+39%/+55% ; +7.8 / +1.7 | +0.344 |
+| ARR|OB|30s | D20 half | c 1.22, gap +0.3%: -4%/+20%/+52% ; +7.7 / +0.2 | +0.340 |
+| ARR|OB|1m | D40 skip | c 0.94, gap -1.7%: +5%/+35%/+48% ; -3.2 / -0.6 | +0.328 |
+| ARR|BRK|1m | D20 skip | c 1.13, gap -1.2%: -3%/+25%/+57% ; +1.1 / +0.2 | +0.307 |
+| ARR|OB_CE|5m | D20 skip | c 0.95, gap -0.8%: +37%/+34%/+8% ; +1.3 / -1.7 | +0.307 |
+| ARR|FVG|45s | D40 skip | c 0.98, gap -2.9%: +17%/+39%/+39% ; -1.3 / -0.9 | +0.307 |
+| FIB|ote62_dn|5m | D40 skip | c 1.06, gap -1.8%: -3%/+26%/+51% ; +5.5 / +2.2 | +0.303 |
+| FIB|ote79_up|5m | D40 skip | c 0.96, gap +1.8%: +10%/-7%/+57% ; +0.0 / -3.1 | +0.300 |
+| ARR|iFVG|1m | D40 skip | c 1.07, gap +1.5%: -32%/+56%/+58% ; -1.4 / +3.1 | +0.290 |
+| ARR|OB_CE|1m | D40 skip | c 0.98, gap -1.5%: +15%/+26%/+4% ; -0.3 / -1.9 | +0.278 |
+| ARR|FVG_CE|45s | D40 skip | c 1.10, gap +2.0%: +2%/+40%/+50% ; +2.6 / +1.1 | +0.275 |
+| ARR|OB_CE|2m | D20 skip | c 1.00, gap -0.8%: +3%/+44%/+35% ; -0.8 / -0.1 | +0.271 |
+| ARR|iplFVG|30s | D40 skip | c 1.00, gap +1.3%: -9%/+42%/+45% ; +4.3 / -1.7 | +0.270 |
+| PRF|b3|week | D40 half | c 1.00, gap +2.6%: -1%/+28%/+45% ; -3.2 / +1.1 | +0.262 |
+| ARR|FVG|1m | D40 skip | c 1.10, gap +0.7%: -36%/+49%/+59% ; +5.4 / +0.8 | +0.260 |
+| SWG|f5L|2m | D20 half | c 1.17, gap -0.5%: +1%/+4%/+45% ; +5.0 / -0.4 | +0.259 |
+| FIB|pd50|4h | D40 skip | c 1.03, gap +1.3%: -15%/+34%/+49% ; +0.3 / +0.9 | +0.256 |
+
+## 7. Family null (selection among 319 streams x 4 variants)
+* Real (other frame / interim screen, all 629 half cells): S median -0.002, 95th pct +0.063, max +0.200; eligible 39 of 629 (6.2%). Real v1.3 half cells of the 45 finalists (selected on v1.2): eligible 72 of 629.
 Reading: compare the eligible share and the S tail of the real half cells with the null; a real eligible share close to the null share means the gate passes by chance at the null rate and no individual stream stands out from the family.

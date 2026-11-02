@@ -2,7 +2,7 @@
 
 **BASE LABEL: this file is on D7 V13Y (the fixed base: add-fill ordering fix; V13X results are in DS3_ZONES_3_S4A_V13X_DEFECT_BASE.md and are labelled defect base). Original V13X note: sections 0-14 were on V13X = DEFECT BASE (BASE-4 found d7lib dropped TH-L2 loss cuts and take-line exits that preceded the resting-add fill, 846 rows). Section 15 re-runs the leads on the FIXED base V13Y; the full V13Y re-screen is in progress and will replace the headline. Original header: D7 v1.3 EXACT (V13X, user paste 02:45Z). HEADLINE FRAME = combined stack lock OFF (lock=None: the engine's own per-book 12R week floor and day give-back locks remain), as the lead ordered at 04:30Z; the same cells with the combined 12R lock ON are in the columns marked 'lock12'. A cut that exists only with lock 12 is LOCK-ONLY. The older assumed-base file is DS3_ZONES_3_S4A_ASSUMED_BASE.md.**
 
-STATUS: S4a deliverable written 2026-11-02 11:47Z (V13Y; placebos 100 draws x3 for the 3 band-relevant cells, none for the rest; BEHIND/AT on V13Y pending, V13X versions are in the defect-base file). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
+STATUS: S4a deliverable written 2026-11-02 12:15Z (V13Y; placebos 100 draws x3 for the 3 band-relevant cells, none for the rest; BEHIND/AT on V13Y pending, V13X versions are in the defect-base file). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
 Prereg l2vast/ds3/prereg/ZONES3_S4A_prereg.md sha256 e8d9004f35ecf860d2beaac5372bdd274862c0db1225523eb12a877ac3fcb66d (DECISIONS.md). dead_lookup before: out/zones3_new/s4a_dead_lookup.txt (NOT FOUND for every spec); append_cells after: see end. NEW windows only (code/cap/windows.py): L1M L2M (view, n weeks 5/9) L3M L6M HOLD MID PRE X'. Old-cap numbers are not used.
 
 ## 0. Plain verdict
@@ -838,6 +838,31 @@ T1 benchmark reading: the 14 T1 cells are compared with the benchmark share abov
 | EQL|EQL_tight|5m D20 skip | +0.09 | +0.09 | +0.00 | +0.08 | +0.17 | +0.06/+0.05/+0.14 |  | +0.08 -0.07 -0.02 +0.10 -0.23 |
 | SWG|f5L|3m D20 half | +0.23 | +0.23 | -0.42 | -0.09 | +0.21 | +0.20/-0.17/+0.07 |  | -0.14 -0.09 +0.12 +0.19 +0.11 |
 | SES|asia_H|prev D20 skip | +0.07 | +0.07 | +0.00 | +0.08 | +0.22 | +0.05/+0.05/+0.18 |  | +0.09 +0.03 +0.00 +0.03 -0.09 |
+## 22. Reproducibility: chance-benchmark draws re-run with fixed integer seeds (prereg addendum 1, seed = 880000 + 1000*bi + k)
+
+| benchmark cell | n new / old | share positive in L6M+PRE+X' new | old | L6M>0 new/old | PRE>0 new/old | X'>0 new/old |
+|--|--|--|--|--|--|--|
+| EQL tight D40 skip Asia | 100/100 | 0.120 | 0.070 | 0.58/0.50 | 0.37/0.29 | 0.51/0.44 |
+| EQL tight D40 skip London | 100/100 | 0.100 | 0.100 | 0.45/0.47 | 0.54/0.51 | 0.51/0.42 |
+| SWG f3L 3m D20 half Asia | 100/100 | 0.010 | 0.000 | 0.49/0.45 | 0.04/0.03 | 0.47/0.56 |
+| SWG f3L 3m D20 half London | 100/100 | 0.070 | 0.100 | 0.46/0.43 | 0.44/0.39 | 0.42/0.46 |
+| SWG f3L 15s D40 half Asia | 100/100 | 0.000 | 0.000 | 0.49/0.63 | 0.01/0.00 | 0.75/0.68 |
+| SWG f3L 15s D40 half London | 100/100 | 0.070 | 0.110 | 0.57/0.66 | 0.68/0.65 | 0.26/0.32 |
+| POOL D20 half | 100/100 | 0.080 | 0.080 | 0.71/0.75 | 0.20/0.19 | 0.70/0.60 |
+| POOL D40 half | 100/100 | 0.270 | 0.230 | 0.81/0.81 | 0.41/0.41 | 0.79/0.71 |
+
+Stability reading: shares from the two independent seed sets differ by sampling error only (binomial SE at n=100 is 0.03-0.05 for shares of 0.05-0.2); the new seeds are reproducible.
+
+## 23. Diagnosis of the MID harm of the four London SWG fractal-low cells (V13Y lock none; MID = 2026-02-07..04-30, 12 ISO weeks)
+
+Base MID: weekly mean +16.4k, weekly SD 38.7k, maxDD 30.2k (trough week 202613; the base's own MID drawdown is small: 2 weeks, W11-W13, depth 30k), so a 0.4-0.6 percentage cut change is only 11-19 $k.
+
+| cell | MID cut | base maxDD > cell $k | maxDD change $k | change / base weekly SD | mean change $k/wk | / base weekly SD | worst weeks (delta $k) | books carrying (sum MID delta $k) | sessions |
+|--|--|--|--|--|--|--|--|--|--|
+| SWG f3L 15s D20 half London | -0.55 | 30.2 > 46.8 | +16.6 | +0.43 | -5.4 | -0.14 | 202610 -26.6, 202613 -11.8, 202607 -11.3 | P7 -60.3, U7 -6.0, K7 -4.1 | london -65.0, nypm -1.7, asia +0.0 |
+| SWG f3L 3m D20 half London | -0.50 | 30.2 > 45.1 | +14.9 | +0.39 | -3.8 | -0.10 | 202610 -18.5, 202613 -15.4, 202618 -8.5 | P7 -33.9, K7 -6.3, U7 -4.6 | london -47.0, nypm -1.7, asia +0.0 |
+| SWG f3L 15s D40 half London | -0.38 | 30.2 > 41.6 | +11.4 | +0.30 | -3.4 | -0.09 | 202610 -14.7, 202608 -9.4, 202618 -8.7 | P7 -32.6, U7 -6.7, K7 -4.1 | london -37.6, nypm -1.7, nyam -1.6 |
+| SWG f3L 3m D40 half London | -0.63 | 30.2 > 49.2 | +19.1 | +0.49 | -3.5 | -0.09 | 202607 -13.8, 202610 -13.7, 202618 -10.9 | P7 -36.6, K7 -5.6, U7 -4.6 | london -43.2, nypm -1.7, asia +0.0 |
 ## 8. Not done / named gaps
 * Only the AHEAD frame was swept over all 332 streams; BEHIND/AT were run for 19 streams. Placebo draws (16 per kind) are the compute budget; ranks have 0.06 resolution. The purged walk-forward is owned by Z3. 1-s/3-s decision delay was not run (AHEAD skip/half are signal-second decisions; B73/WT/re-target are in section 3). Parameter variants of the line itself (swing strength, profile bin, anchor shifts) are separate streams in the grid (SWG f3/f5/f7, PRF b1-b3, anchors), not re-parameterised. RND and BKS streams were not built. D7 v1.3 profit lines are an agent-built assumption (THP_POLICY_D7.txt not on disk); U7 is an assumption.
 
