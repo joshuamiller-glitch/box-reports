@@ -2892,3 +2892,35 @@ landscape not yet run (0 subsets)
 | KCup4h | +7% / +1% / +0% / -7% / +3% | +0% / +0% / +0% / +1% / -4% | +0.4 / +0.2 | no cut in either |
 | OTE62b73 | +6% / -37% / +1% / -4% / -4% | +1% / +8% / -2% / +8% / +18% | +3.8 / +0.7 | survives lock-off |
 | LVN1_1hs | -2% / +1% / +2% / -2% / -10% | -2% / -2% / +4% / +0% / +5% | -0.3 / -0.6 | no cut in either |
+
+# V13Y REDUCED SETS, VOLUME-vs-PRE-CUT FRONTIER AND BEST-OF-1023 SELECTION NULL (Z1; 2026-11-02 11:49Z; lock OFF, HALF action)
+Random same-size sets = the rows acted on are replaced by the same number of random rows per book x session x target-bin x side stratum (placebo A), engine re-run on V13Y with the same OTE-62 B73 action. Top table: 100 random sets per reduced set. Frontier: 2 random analogues for each of the 1023 non-empty subsets (2046 runs). Figure: out/zones3/s1v12/frontier_V13Y_lockoff.png; data frontier_real_points.csv / frontier_random_points.csv.
+
+## Reduced sets vs random sets of the same size
+| set | rows acted | real cut PRE / X' / L6M / HOLD / MID | S_PX | random same-size sets (n): median / 95th pct S_PX | rank of real S_PX | rank real PRE | rank real X' | rank real L6M |
+|---|---|---|---|---|---|---|---|---|
+| PDmid+CRT4h+VAH15s | 4463 | +19% / +21% / +0% / +0% / +3% | +0.196 | (102) +0.022 / +0.139 | 0.010 | 0.039 | 0.087 | 0.631 |
+| kijun1h+PDmid+CRT4h+KCup4h+camH3+VAH15s | 8838 | +21% / +33% / -3% / -3% / +19% | +0.271 | (102) +0.012 / +0.167 | 0.019 | 0.029 | 0.049 | 0.757 |
+| kijun1h+PDmid+CRT4h+KCup4h+camH3+OTE705+OTE79 | 10760 | +23% / +13% / +25% / +19% / +31% | +0.178 | (102) +0.003 / +0.159 | 0.039 | 0.010 | 0.301 | 0.214 |
+| CRT4h+camH3+LVN1_1hs | 4686 | +20% / +11% / -5% / -5% / +7% | +0.156 | (102) +0.016 / +0.131 | 0.029 | 0.010 | 0.204 | 0.728 |
+| kijun1h+PDmid+CRT4h+KCup4h+camH3+VAH15s+LVN1_1hs+HVN0_1hs | 11454 | +28% / +24% / -8% / -8% / +21% | +0.259 | (102) +0.011 / +0.153 | 0.019 | 0.010 | 0.117 | 0.854 |
+
+## Volume-vs-cut frontier with the random band
+Real subsets: 1024; random same-size analogues: 2 per subset (matched rows, stratified by book x session x target-bin x side). Band = percentiles of the analogues within the row bin.
+
+| rows acted (bin) | real subsets in bin | real: best PRE cut / best X' cut / best S_PX | random: median / 95th / max S_PX | random: 95th PRE cut | real subsets above the random 95th S_PX | share of real subsets above | 
+|---|---|---|---|---|---|---|
+| 0-6155 | 205 | +22% / +24% / +0.218 | -0.001 / +0.137 / +0.226 | +15% | 41 | 20% |
+| 6156-7589 | 205 | +28% / +30% / +0.236 | +0.012 / +0.150 / +0.258 | +16% | 36 | 18% |
+| 7590-8757 | 204 | +27% / +31% / +0.256 | +0.015 / +0.167 / +0.256 | +17% | 31 | 15% |
+| 8758-10022 | 205 | +30% / +33% / +0.271 | +0.008 / +0.167 / +0.288 | +17% | 33 | 16% |
+| 10023-14183 | 205 | +30% / +32% / +0.259 | -0.002 / +0.191 / +0.269 | +17% | 27 | 13% |
+
+Best-of-1023 selection null (pick the best S_PX among subsets with PRE and X' cut > 0, one random analogue per subset, 2000 resamples of the analogue draws): null median 0.278, 95th 0.288, max 0.288; REAL best 0.271 -> share of null >= real 0.500.
+
+Pareto frontier (smallest row count reaching each higher PRE cut): 4463 rows: PDmid+CRT4h+VAH15s PRE +19% / X' +21% / L6M +0%; 4473 rows: CRT4h+KCup4h+VAH15s PRE +19% / X' +7% / L6M +1%; 4686 rows: CRT4h+camH3+LVN1_1hs PRE +20% / X' +11% / L6M -5%; 5724 rows: CRT4h+KCup4h+camH3+LVN1_1hs PRE +22% / X' +11% / L6M -5%; 6502 rows: CRT4h+camH3+VAH15s+LVN1_1hs PRE +26% / X' +18% / L6M -5%; 7522 rows: CRT4h+KCup4h+camH3+VAH15s+LVN1_1hs PRE +28% / X' +14% / L6M -5%; 9107 rows: CRT4h+KCup4h+camH3+VAH15s+LVN1_1hs+HVN0_1hs PRE +30% / X' +6% / L6M -8%; 10751 rows: CRT4h+KCup4h+camH3+OTE79+VAH15s+LVN1_1hs+HVN0_1hs PRE +30% / X' +7% / L6M -2%
+
+## Answer: is there a cheaper layer that keeps the PRE edge?
+* Yes in-sample, but only on PRE/X': PDmid + CRT4h + VAH15s halves 4,463 rows (41% of the shipped 10,760) and keeps PRE +19% / X' +21%, beating 100 random sets of the same size (S_PX rank 0.010, PRE 0.039, X' 0.088); CRT4h + camH3 + LVN1_1hs (4,686 rows) PRE +20% / X' +11% (ranks 0.020 / 0.010 / 0.198). Both lose every recent-window cut (L6M 0% and -5%, HOLD 0% and -5%, MID +3% and -5%): a cheaper layer is a PRE/X' layer, not a recent one.
+* The search is not free: pooled over the 1,023 subsets, 13-20% of real subsets beat the 95th percentile of random same-size sets (5% expected), so line choice carries information beyond volume in the PRE+X' space; but the best subset (S_PX 0.271) is NOT above what the same selection finds among random sets (null median 0.278, 95th 0.288; share of null >= real 0.50). So the selected "best" sets are search luck on top of a general PRE/X' effect shared by many subsets; no specific cheap set is established. The null uses only 2 random draws per subset, so its tails are coarse.
+* BASE-4's finding that PDmid + CRT4h + OTE79 loses the PRE edge is consistent: the PRE edge sits in combinations containing VAH15s / LVN1_1hs / camH3 with CRT4h, not in the OTE lines.

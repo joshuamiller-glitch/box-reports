@@ -692,3 +692,95 @@ Reading: the one-page text reproduces the candidate rows to Jaccard 0.917 (0.983
 
 ## 13. Frozen definition text (pinned with S4b; their repro autopilot/DS3_BT_CLEANROOM_REPRO.md sections A-E hold the engine extra_skip, delay and early-period tables)
 Eight points both implementations agree on: (1) events from the first available bar (no calendar start; my 2023-08 start was a build artefact of the L2-table months); (2) the return/fresh test starts the second AFTER the break second; (3) keep-3: a swing is dropped when the 3rd newer same-kind swing becomes known, and a dropped swing can no longer break; (4) a level is fresh at a signal iff its end-of-fresh second is strictly after the signal second; (5) bars: clock-aligned 5-min windows of trade prices, no contiguity requirement; (6) fractal = strictly higher/lower than the 2 bars on each side, known when the 2nd following bar closes; (7) break = first print >= L + 10.0 (high) / <= L - 10.0 (low), flip level at L valid 4 h from the break second; (8) flag = 0 <= (L - E for a long, E - L for a short) <= min(40, target distance). The 30 + 18 residual rows (Jaccard 0.983 after 2023-08) are scattered over about 20 label days and are not a rule difference: tick/second-level differences between the L2-table hi/lo and the path SH/SL around the L+10 break or the return to L.
+
+
+## 14. BT swing flip on three fill bases (BASE-4's fill-basis artefact: the engine baseline is basis N but take-line deltas were credited fill_cost_pts; nfix=True subtracts it) - V13Y, V13Y+nfix, nfix with the take lines OFF; lock None and 12R
+Saved dollars $k = minus the flagged taken trades' net (row level), D40, 5-min swing, print break 10, 4 h. Taken trades 18.8k (lock None). Source: out/zl_new/three_bases.csv, base_rows_{y,nfix,nfixnl}{none,lock12}.pkl.
+| base                 | lock   |   taken |   flagged |   flag_mean |   unflag_mean |   base_total_M |   L3M |   L6M |   HOLD |   MID |   PRE |    X |   ALL |   y2023 |   y2024 |   y2025 |   y2026 | quarters_pos   |
+|:---------------------|:-------|--------:|----------:|------------:|--------------:|---------------:|------:|------:|-------:|------:|------:|-----:|------:|--------:|--------:|--------:|--------:|:---------------|
+| V13Y                 | none   |   18827 |      1035 |      -196.4 |         155.5 |            2.6 |  30.4 |  69.8 |   74.9 |  17.9 | 103.4 | 50.1 | 203.2 |    56.9 |    29.3 |    28   |    89.2 | 11/14          |
+| V13Y                 | 12R    |   12835 |       704 |      -408   |         146.4 |            1.5 |  24.8 |  70.1 |  107.1 |  47.3 | 123.1 | 66.3 | 287.2 |    64.1 |    83.9 |    16.8 |   122.4 | 11/14          |
+| V13Y+nfix            | none   |   18815 |      1032 |      -226.1 |         106.6 |            1.7 |  33.5 |  80   |   89.6 |  21.1 | 114.9 | 49.9 | 233.3 |    56.2 |    34.4 |    40.5 |   102.2 | 11/14          |
+| V13Y+nfix            | 12R    |   12224 |       668 |      -467.8 |          94.1 |            0.8 |  26.8 |  75.4 |  112.1 |  48.7 | 128.2 | 68.3 | 312.5 |    66.5 |    79.3 |    38.7 |   128   | 11/14          |
+| nfix, take lines off | none   |   18203 |      1011 |      -286   |         220.2 |            3.5 |  71.9 | 120.8 |  164.6 |  10.4 |  82.4 | 66.5 | 289.2 |    49.2 |    15.3 |    85.9 |   138.8 | 12/14          |
+| nfix, take lines off | 12R    |   11550 |       641 |      -485.3 |         213.9 |            2   |  46.6 | 102.8 |  172.2 |  34.2 | 105.4 | 49.2 | 311.1 |    34.7 |    44.1 |    86.5 |   145.7 | 13/14          |
+Row-placebo ranks (200 draws; A same count per book x session, B same count per day, C other-day same book x session; low = real):
+| base                 | lock   |   A_L6M |   B_L6M |   C_L6M |   A_HOLD |   B_HOLD |   C_HOLD |   A_PRE |   B_PRE |   C_PRE |   A_X |   B_X |   C_X |
+|:---------------------|:-------|--------:|--------:|--------:|---------:|---------:|---------:|--------:|--------:|--------:|------:|------:|------:|
+| V13Y                 | none   |   0.01  |   0.015 |   0.01  |    0.015 |    0.045 |    0.025 |   0.02  |   0.129 |   0.03  | 0.045 | 0.373 | 0.065 |
+| V13Y                 | 12R    |   0.01  |   0.015 |   0.005 |    0.005 |    0.005 |    0.005 |   0.015 |   0.04  |   0.015 | 0.025 | 0.184 | 0.025 |
+| V13Y+nfix            | none   |   0.015 |   0.015 |   0.04  |    0.015 |    0.04  |    0.02  |   0.015 |   0.1   |   0.03  | 0.104 | 0.249 | 0.1   |
+| V13Y+nfix            | 12R    |   0.015 |   0.02  |   0.01  |    0.01  |    0.005 |    0.015 |   0.005 |   0.03  |   0.015 | 0.03  | 0.164 | 0.015 |
+| nfix, take lines off | none   |   0.015 |   0.005 |   0.01  |    0.005 |    0.005 |    0.005 |   0.075 |   0.09  |   0.055 | 0.03  | 0.134 | 0.04  |
+| nfix, take lines off | 12R    |   0.005 |   0.005 |   0.005 |    0.005 |    0.005 |    0.005 |   0.03  |   0.065 |   0.025 | 0.109 | 0.249 | 0.1   |
+
+## Phase-averaged (9 lock-reset phases -4..+4, lock None) engine results for BT swing F10 4h D40 skip: dollar delta $k over the window (cell minus base), phases positive, maxDD cut mean [min,max]
+| base                 | window   |   dollar_delta_k | phases_positive   |   dollar_min |   maxdd_cut_mean |   cut_min |   cut_max |
+|:---------------------|:---------|-----------------:|:------------------|-------------:|-----------------:|----------:|----------:|
+| V13Y                 | L3M      |           21.992 | 9/9               |       17.8   |            0.119 |     0.098 |     0.159 |
+| V13Y                 | L6M      |           47.832 | 9/9               |       41.021 |           -0.118 |    -0.178 |     0.05  |
+| V13Y                 | HOLD     |           92.776 | 9/9               |       72.152 |           -0.114 |    -0.178 |     0.081 |
+| V13Y                 | MID      |           32.01  | 9/9               |       22.111 |            0.244 |    -0.014 |     0.422 |
+| V13Y                 | PRE      |           97.66  | 9/9               |       59.669 |            0.028 |    -0.038 |     0.096 |
+| V13Y                 | X'       |           31.179 | 9/9               |       13.472 |           -0.112 |    -0.364 |     0.073 |
+| V13Y+nfix            | L3M      |           20.621 | 9/9               |       17.394 |            0.254 |     0.206 |     0.334 |
+| V13Y+nfix            | L6M      |           66.553 | 9/9               |       60.144 |           -0.006 |    -0.031 |     0.06  |
+| V13Y+nfix            | HOLD     |           99.639 | 9/9               |       87.175 |           -0.006 |    -0.031 |     0.06  |
+| V13Y+nfix            | MID      |           23.732 | 9/9               |       17.276 |            0.182 |    -0.002 |     0.245 |
+| V13Y+nfix            | PRE      |           98.211 | 9/9               |       63.201 |           -0.061 |    -0.094 |    -0.041 |
+| V13Y+nfix            | X'       |           35.424 | 9/9               |       16.852 |           -0.067 |    -0.275 |     0.098 |
+| nfix, take lines off | L3M      |           53.035 | 9/9               |       44.783 |            0.073 |     0.046 |     0.101 |
+| nfix, take lines off | L6M      |           98.647 | 9/9               |       85.883 |            0.079 |     0.011 |     0.2   |
+| nfix, take lines off | HOLD     |          122.629 | 9/9               |      111.974 |            0.063 |     0.011 |     0.178 |
+| nfix, take lines off | MID      |            6.495 | 6/9               |       -5.956 |            0.014 |    -0.729 |     0.404 |
+| nfix, take lines off | PRE      |           68.603 | 9/9               |       40.712 |            0.046 |     0.036 |     0.066 |
+| nfix, take lines off | X'       |           73.525 | 9/9               |       43.664 |            0.079 |    -0.122 |     0.202 |
+
+## Best-of-N null (1,980 same-density families each: 990 level-offset + 990 shuffled-day), min over windows of saved $k; BT | null median | null p99 | null max | rank
+| base                 | lock   | stat                 |   families |    BT_k |   null_median |   null_p99 |   null_max |   rank |
+|:---------------------|:-------|:---------------------|-----------:|--------:|--------------:|-----------:|-----------:|-------:|
+| V13Y                 | none   | min(L6M,HOLD,PRE)    |       1980 |  69.777 |       -29.481 |     16.19  |     37.365 |  0.001 |
+| V13Y                 | none   | min(L6M,HOLD,PRE,X') |       1980 |  50.13  |       -37.205 |      0.265 |     17.166 |  0.001 |
+| V13Y                 | 12R    | min(L6M,HOLD,PRE)    |       1980 |  70.142 |       -21.019 |     14.643 |     27.022 |  0.001 |
+| V13Y                 | 12R    | min(L6M,HOLD,PRE,X') |       1980 |  66.28  |       -23.617 |      6.969 |     15.397 |  0.001 |
+| V13Y+nfix            | none   | min(L6M,HOLD,PRE)    |       1980 |  80.007 |       -24.042 |     20.373 |     34.945 |  0.001 |
+| V13Y+nfix            | none   | min(L6M,HOLD,PRE,X') |       1980 |  49.855 |       -34.804 |      7.258 |     18.432 |  0.001 |
+| V13Y+nfix            | 12R    | min(L6M,HOLD,PRE)    |       1980 |  75.418 |       -16.385 |     20.737 |     34.538 |  0.001 |
+| V13Y+nfix            | 12R    | min(L6M,HOLD,PRE,X') |       1980 |  68.334 |       -19.594 |     12.179 |     32.81  |  0.001 |
+| nfix, take lines off | none   | min(L6M,HOLD,PRE)    |       1980 |  82.429 |       -42.671 |     21.216 |     40.122 |  0.001 |
+| nfix, take lines off | none   | min(L6M,HOLD,PRE,X') |       1980 |  66.456 |       -57.716 |     -0.148 |     19.35  |  0.001 |
+| nfix, take lines off | 12R    | min(L6M,HOLD,PRE)    |       1980 | 102.792 |       -45.249 |     13.544 |     31.314 |  0.001 |
+| nfix, take lines off | 12R    | min(L6M,HOLD,PRE,X') |       1980 |  49.174 |       -45.767 |      7.672 |     23.315 |  0.001 |
+
+
+### Exit-set robustness under nfix (lock None)
+## Exit-set robustness of the BT swing-flip saved dollars (V13Y+nfix engine, lock None, D40 5-min swing flip skip; saved $k = minus the flagged taken trades' net; rank = share of 100 random same-count-per-day sets at least as good)
+| variant                           |   taken |   flagged |   flag_mean |   unflag_mean |   base_total_M |    L3M |     L6M |    HOLD |    MID |     PRE |     X' |   rank_L6M |   rank_HOLD |   rank_PRE |   rank_X' |
+|:----------------------------------|--------:|----------:|------------:|--------------:|---------------:|-------:|--------:|--------:|-------:|--------:|-------:|-----------:|------------:|-----------:|----------:|
+| V13Y+nfix base exits              |   18815 |      1032 |    -226.052 |       106.639 |          1.663 | 33.458 |  80.007 |  89.623 | 21.081 | 114.891 | 49.855 |       0.02 |       0.02  |      0.069 |     0.198 |
+| (a)/(c) TH-L2 loss cut OFF (nfix) |   16000 |       873 |    -397.583 |       277.193 |          3.846 | 85.072 | 168.584 | 197.359 | 56.752 |  64.912 | 90.838 |       0.01 |       0.03  |      0.297 |     0.158 |
+| (b) take lines OFF (nfix)         |   18203 |      1011 |    -286.017 |       220.19  |          3.496 | 71.914 | 120.85  | 164.649 | 10.424 |  82.429 | 66.456 |       0.01 |       0.01  |      0.079 |     0.277 |
+| (e) take thresholds x0.5 (nfix)   |   19685 |      1074 |    -179.165 |        40.875 |          0.568 | 29.013 |  62.769 |  54.043 | 10.474 |  85.774 | 55.992 |       0.01 |       0.119 |      0.188 |     0.376 |
+| (e) x0.75                         |   19114 |      1037 |    -211.964 |        55.945 |          0.792 | 30.298 |  77.868 |  86.092 | 13.634 |  97.644 | 51.556 |       0.02 |       0.05  |      0.149 |     0.347 |
+| (e) x1.25                         |   18342 |      1012 |    -277.065 |       165.332 |          2.585 | 59.967 | 113.931 | 144.528 | 24.964 |  87.757 | 58.493 |       0.02 |       0.01  |      0.089 |     0.178 |
+| (e) x1.5                          |   18314 |      1015 |    -270.399 |       210.377 |          3.365 | 64.277 | 103.06  | 145.277 | 20.602 |  83.581 | 63.777 |       0.01 |       0.01  |      0.069 |     0.149 |
+
+Per calendar year (saved $k):
+| variant                           |   2023 |   2024 |   2025 |   2026 |
+|:----------------------------------|-------:|-------:|-------:|-------:|
+| V13Y+nfix base exits              |   56.2 |   34.4 |   40.5 |  102.2 |
+| (a)/(c) TH-L2 loss cut OFF (nfix) |   60.5 |   36.9 |   42.4 |  207.2 |
+| (b) take lines OFF (nfix)         |   49.2 |   15.3 |   85.9 |  138.8 |
+| (e) take thresholds x0.5 (nfix)   |   47.2 |   23.5 |   52.9 |   68.8 |
+| (e) x0.75                         |   46.1 |   31.4 |   45.7 |   96.6 |
+| (e) x1.25                         |   41.8 |   43.1 |   53.8 |  141.7 |
+| (e) x1.5                          |   46.5 |   17.4 |   87.1 |  123.4 |
+
+### Walk-forward of the whole definition (144 configs, chosen on trailing months, applied to the next month, 2024-01..2026-10; OOS saved $k, 12-month / 6-month trailing; random-config baseline in brackets)
+| base | lock None | lock 12R |
+|--|--|--|
+| V13Y | +54 / +51 (33 / 21) | +134 / +180 (52 / 50) |
+| V13Y+nfix | +89 / +188 (51 / 40) | +178 / +213 (66 / 64) |
+| nfix, take lines off | +178 / +94 (64 / 58) | +178 / +158 (60 / 62) |
+
+Reading: BT does NOT depend on the fill-basis artefact; it gets slightly larger when the artefact is removed (ALL 233k vs 203k lock None) and larger still with the take lines off (289k): flagged trades average -$226 (nfix) / -$286 (nfix, no take lines) vs +$107 / +$220 for the rest. The row-placebo ranks stay at 0.005-0.04 in L6M and HOLD for all six cells; PRE ranks .005-.13 (A/C kinds <= .075) and X' ranks .025-.37 as before. The 1,980-family null is beaten (rank at the floor 0.0005) on min(L6M,HOLD,PRE) and min(L6M,HOLD,PRE,X') for all six cells. Dollars positive in 9/9 lock phases in every window for V13Y and V13Y+nfix (nfix, take lines off: MID 6/9); the maxDD cut is still not a stable drawdown cut (nfix lock None: +25% L3M, +18% MID, -1% L6M/HOLD, -6% PRE, -7% X'; with no take lines +7% L3M, +8% L6M, +6% HOLD, +5% PRE, +8% X', MID unstable). Walk-forward out-of-sample dollars beat the random-configuration baseline on every base. Label unchanged: LEAD, mean-type; the take lines are not what produces the edge (they dilute it).

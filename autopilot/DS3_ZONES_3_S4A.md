@@ -2,7 +2,7 @@
 
 **BASE LABEL: this file is on D7 V13Y (the fixed base: add-fill ordering fix; V13X results are in DS3_ZONES_3_S4A_V13X_DEFECT_BASE.md and are labelled defect base). Original V13X note: sections 0-14 were on V13X = DEFECT BASE (BASE-4 found d7lib dropped TH-L2 loss cuts and take-line exits that preceded the resting-add fill, 846 rows). Section 15 re-runs the leads on the FIXED base V13Y; the full V13Y re-screen is in progress and will replace the headline. Original header: D7 v1.3 EXACT (V13X, user paste 02:45Z). HEADLINE FRAME = combined stack lock OFF (lock=None: the engine's own per-book 12R week floor and day give-back locks remain), as the lead ordered at 04:30Z; the same cells with the combined 12R lock ON are in the columns marked 'lock12'. A cut that exists only with lock 12 is LOCK-ONLY. The older assumed-base file is DS3_ZONES_3_S4A_ASSUMED_BASE.md.**
 
-STATUS: S4a deliverable written 2026-11-02 11:06Z (V13Y; placebos 100 draws x3 for the 3 band-relevant cells, none for the rest; BEHIND/AT on V13Y pending, V13X versions are in the defect-base file). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
+STATUS: S4a deliverable written 2026-11-02 11:47Z (V13Y; placebos 100 draws x3 for the 3 band-relevant cells, none for the rest; BEHIND/AT on V13Y pending, V13X versions are in the defect-base file). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
 Prereg l2vast/ds3/prereg/ZONES3_S4A_prereg.md sha256 e8d9004f35ecf860d2beaac5372bdd274862c0db1225523eb12a877ac3fcb66d (DECISIONS.md). dead_lookup before: out/zones3_new/s4a_dead_lookup.txt (NOT FOUND for every spec); append_cells after: see end. NEW windows only (code/cap/windows.py): L1M L2M (view, n weeks 5/9) L3M L6M HOLD MID PRE X'. Old-cap numbers are not used.
 
 ## 0. Plain verdict
@@ -756,6 +756,88 @@ Cells meeting the PA band rule: 1; passing band rule AND no-harm: 1.
 | DEV|on_L|so_far half | 20 | 12 | +0.08 | +0.08 | -0.00 | -0.01 | +0.01 |  |
 | ARR|iplFVG|15s half | 40 | none | -0.01 | -0.06 | +0.04 | +0.02 | -0.05 | FRAGILE |
 | ARR|iplFVG|15s half | 40 | 12 | +0.13 | +0.22 | +0.23 | +0.27 | +0.32 |  |
+## 19. PRE-REGISTERED T3: mechanical two-episode requirement on the 24 V13Y finalists (lock none; prereg sha256 396e7256...)
+
+Carrying episode = the base's episode 1 of the window (L6M weeks 202627-202638, PRE 202434-202451, X' 202321-202341). SURVIVES in a window if the full cut > 0 AND the cut with that episode removed > 0. TWO-EPISODE-OK = survives in at least 2 of L6M/PRE/X'.
+
+| stream | D | frame | cut L6M (drop ep1) | cut PRE (drop ep1) | cut X' (drop ep1) | verdict |
+|--|--|--|--|--|--|--|
+| EQL|EQL_tight|5m | 40 | skip | +0.11 (-0.18) | +0.08 (+0.04) | +0.27 (-0.06) | ONE-EPISODE |
+| SES|asia_H|prev | 20 | skip | +0.12 (+0.02) | +0.07 (+0.04) | +0.22 (+0.02) | TWO-EPISODE-OK |
+| MAS|bb_mid|4h | 20 | skip | +0.20 (+0.00) | +0.02 (+0.04) | +0.15 (-0.35) | ONE-EPISODE |
+| SES|asia_H|prev | 40 | skip | +0.09 (+0.03) | +0.05 (+0.00) | +0.14 (-0.07) | TWO-EPISODE-OK |
+| SES|nypm_H|prev | 20 | skip | +0.14 (-0.06) | +0.00 (+0.00) | +0.04 (-0.04) | ONE-EPISODE |
+| SES|asia_H|prev | 40 | half | +0.08 (+0.00) | +0.03 (-0.00) | +0.12 (+0.04) | ONE-EPISODE |
+| MAS|supertrend|4h | 40 | half | +0.04 (+0.00) | +0.03 (-0.01) | +0.10 (+0.00) | ONE-EPISODE |
+| SES|close_H|prev | 20 | skip | +0.04 (+0.02) | +0.01 (+0.05) | +0.12 (-0.12) | TWO-EPISODE-OK |
+| SWG|f3L|3m | 20 | half | +0.51 (+0.29) | -0.22 (-0.28) | +0.10 (-0.12) | ONE-EPISODE |
+| SWG|f7L|3m | 20 | half | +0.34 (+0.19) | -0.07 (-0.12) | -0.12 (-0.36) | ONE-EPISODE |
+| SWG|f3L|15s | 20 | half | +0.44 (+0.38) | -0.36 (-0.42) | +0.26 (+0.24) | TWO-EPISODE-OK |
+| MAS|bb_lo|1h | 40 | skip | +0.31 (+0.22) | -0.03 (-0.08) | +0.08 (+0.20) | TWO-EPISODE-OK |
+| SWG|f3L|15s | 40 | half | +0.44 (+0.35) | +0.05 (-0.05) | +0.29 (+0.24) | TWO-EPISODE-OK |
+| MAS|bb_up|1h | 20 | skip | +0.17 (+0.04) | +0.03 (+0.04) | +0.05 (-0.14) | TWO-EPISODE-OK |
+| MAS|ema50|1d | 40 | skip | +0.18 (+0.00) | +0.01 (-0.04) | +0.02 (+0.00) | ONE-EPISODE |
+| MAS|bb_lo|1h | 40 | half | +0.15 (+0.04) | +0.06 (+0.02) | +0.18 (+0.09) | TWO-EPISODE-OK |
+| EQL|EQL_tight|5m | 40 | half | +0.04 (-0.11) | +0.03 (-0.01) | +0.17 (+0.01) | ONE-EPISODE |
+| PIV|cam_H3|week | 40 | skip | +0.02 (-0.00) | +0.02 (-0.01) | +0.19 (+0.00) | ONE-EPISODE |
+| ARR|iplFVG|3m | 20 | half | +0.02 (+0.06) | +0.00 (+0.01) | +0.19 (-0.16) | TWO-EPISODE-OK |
+| FIB|ret38|4h | 40 | skip | +0.10 (-0.27) | +0.10 (+0.06) | +0.02 (-0.59) | ONE-EPISODE |
+| DEV|on_L|so_far | 20 | half | +0.69 (+0.21) | -0.30 (-0.36) | +0.17 (-0.14) | ONE-EPISODE |
+| SWG|f5L|3m | 20 | half | +0.24 (+0.32) | -0.01 (-0.06) | +0.06 (-0.07) | ONE-EPISODE |
+| DEV|sess_L|so_far | 20 | half | +0.70 (+0.38) | -0.17 (-0.22) | -0.37 (-0.20) | ONE-EPISODE |
+| SWG|f7L|15s | 20 | half | +0.51 (+0.35) | -0.09 (-0.14) | -0.13 (+0.08) | ONE-EPISODE |
+
+TWO-EPISODE-OK finalists: 9 of 24. CHANCE BENCHMARK: share of the stored kind-B random same-volume placebo series (cells 1138, 359, 569, 1208; n=400) that are TWO-EPISODE-OK by the same rule: 0.052; expected among 24 random finalist-like cells: 1.3 (observed 9).
+
+## 20. PRE-REGISTERED T1 / T2 (prereg sha256 396e7256...; V13Y lock none, PA K=9, Z3 final band; placebos only for PASS)
+
+| test | cell | session | fires | vol share | PA cut L6M | HOLD | MID | PRE | X' | min phase L6M/PRE/X' | rule | no-harm | PASS |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| T1 | EQL|EQL_tight|5m D40 skip | Asia | 588 | 0.011 | +0.10 | +0.08 | +0.05 | -0.01 | -0.04 | +0.09/-0.10/-0.05 |  | yes |  |
+| T1 | EQL|EQL_tight|5m D40 skip | London | 733 | 0.008 | +0.00 | +0.00 | -0.01 | +0.03 | +0.18 | +0.00/+0.00/+0.16 |  | yes |  |
+| T1 | FIB|ote705_dn|15m D20 skip | Asia | 896 | 0.017 | +0.25 | +0.17 | -0.17 | -0.06 | -0.15 | +0.22/-0.15/-0.18 |  | yes |  |
+| T1 | FIB|ote705_dn|15m D20 skip | London | 603 | 0.008 | -0.02 | -0.03 | -0.20 | -0.03 | +0.01 | -0.03/-0.09/-0.02 |  | yes |  |
+| T1 | FIB|ote705_dn|15m D40 skip | Asia | 1766 | 0.036 | +0.17 | +0.08 | -0.35 | -0.03 | -0.20 | +0.08/-0.12/-0.44 |  | yes |  |
+| T1 | FIB|ote705_dn|15m D40 skip | London | 1136 | 0.017 | -0.10 | -0.09 | -0.13 | -0.05 | -0.00 | -0.19/-0.12/-0.03 |  | yes |  |
+| T1 | SWG|f3L|15s D20 half | Asia | 9597 | 0.091 | +0.25 | +0.15 | +0.04 | -0.73 | +0.15 | +0.19/-1.02/-0.16 |  | NO |  |
+| T1 | SWG|f3L|15s D20 half | London | 9264 | 0.062 | +0.19 | +0.14 | -0.61 | +0.17 | +0.04 | +0.11/+0.06/+0.03 |  | NO |  |
+| T1 | SWG|f3L|15s D40 half | Asia | 10419 | 0.098 | +0.21 | +0.15 | -0.20 | -0.47 | +0.16 | +0.16/-0.62/-0.16 |  | NO |  |
+| T1 | SWG|f3L|15s D40 half | London | 10214 | 0.069 | +0.12 | +0.12 | -0.38 | +0.16 | +0.06 | +0.03/+0.06/+0.04 |  | NO |  |
+| T1 | SWG|f3L|3m D20 half | Asia | 5264 | 0.050 | -0.01 | -0.00 | +0.02 | -0.37 | +0.21 | -0.17/-0.73/+0.08 |  | NO |  |
+| T1 | SWG|f3L|3m D20 half | London | 5106 | 0.035 | +0.15 | +0.15 | -0.42 | +0.12 | +0.10 | +0.07/+0.00/+0.09 |  | NO |  |
+| T1 | SWG|f3L|3m D40 half | Asia | 7152 | 0.069 | +0.39 | +0.24 | -0.22 | -0.44 | +0.23 | +0.28/-0.72/+0.10 |  | NO |  |
+| T1 | SWG|f3L|3m D40 half | London | 7090 | 0.051 | +0.09 | +0.08 | -0.51 | +0.16 | +0.05 | -0.10/+0.05/+0.05 |  | NO |  |
+| T2 | POOL D20 half | all | 36171 | 0.211 | +0.66 | +0.31 | -0.93 | -0.14 | +0.20 | +0.60/-0.40/+0.03 |  | NO |  |
+| T2 | POOL D40 half | all | 48074 | 0.288 | +0.34 | +0.12 | -0.77 | -0.45 | -0.00 | +0.10/-0.63/-0.13 |  | NO |  |
+
+PASS cells: 0 of 16; cells positive in the PA triple (L6M, PRE, X'): 4 of 16.
+
+**Chance benchmark (kind-B random masks at the cell volume, session-restricted for T1; share positive in L6M AND PRE AND X' on the single path, lock none)**
+
+| benchmark cell | n | share positive in triple | share L6M>0 | PRE>0 | X>0 |
+|--|--|--|--|--|--|
+| EQL|EQL_tight|5m D40 skip Asia | 100 | 0.070 | 0.50 | 0.29 | 0.44 |
+| EQL|EQL_tight|5m D40 skip London | 100 | 0.100 | 0.47 | 0.51 | 0.42 |
+| SWG|f3L|3m D20 half Asia | 100 | 0.000 | 0.45 | 0.03 | 0.56 |
+| SWG|f3L|3m D20 half London | 100 | 0.100 | 0.43 | 0.39 | 0.46 |
+| SWG|f3L|15s D40 half Asia | 100 | 0.000 | 0.63 | 0.00 | 0.68 |
+| SWG|f3L|15s D40 half London | 100 | 0.110 | 0.66 | 0.65 | 0.32 |
+| POOL D20 | 100 | 0.080 | 0.75 | 0.19 | 0.60 |
+| POOL D40 | 100 | 0.230 | 0.81 | 0.41 | 0.71 |
+
+T1 benchmark reading: the 14 T1 cells are compared with the benchmark share above (expected positives = 14 x benchmark share).
+
+## 21. Best cells re-run on D7 V13Z (V13Y + nfix: take-line fill-basis artefact removed), lock off PA K=9 and lock 12R single path
+
+| cell | PA cut L6M | HOLD | MID | PRE | X' | min phase L6M/PRE/X' | band rule | lock12 single-path L6M/HOLD/MID/PRE/X' |
+|--|--|--|--|--|--|--|--|--|
+| EQL|EQL_tight|5m D40 skip | +0.15 | +0.15 | +0.01 | +0.07 | +0.24 | +0.10/+0.06/+0.22 |  | +0.36 -0.06 +0.00 -0.03 -0.08 |
+| SWG|f3L|15s D40 half | +0.37 | +0.36 | -0.36 | +0.02 | +0.30 | +0.33/-0.10/+0.09 | YES | +0.15 +0.19 +0.36 +0.38 +0.47 |
+| MAS|bb_up|1h D20 skip | +0.09 | +0.09 | +0.04 | +0.01 | +0.01 | +0.06/-0.02/-0.05 |  | +0.03 +0.02 +0.03 +0.40 -0.28 |
+| MAS|bb_mid|4h D20 skip | +0.10 | +0.10 | +0.09 | +0.08 | +0.03 | +0.05/+0.07/-0.01 |  | -0.02 +0.02 +0.10 +0.04 -0.01 |
+| EQL|EQL_tight|5m D20 skip | +0.09 | +0.09 | +0.00 | +0.08 | +0.17 | +0.06/+0.05/+0.14 |  | +0.08 -0.07 -0.02 +0.10 -0.23 |
+| SWG|f5L|3m D20 half | +0.23 | +0.23 | -0.42 | -0.09 | +0.21 | +0.20/-0.17/+0.07 |  | -0.14 -0.09 +0.12 +0.19 +0.11 |
+| SES|asia_H|prev D20 skip | +0.07 | +0.07 | +0.00 | +0.08 | +0.22 | +0.05/+0.05/+0.18 |  | +0.09 +0.03 +0.00 +0.03 -0.09 |
 ## 8. Not done / named gaps
 * Only the AHEAD frame was swept over all 332 streams; BEHIND/AT were run for 19 streams. Placebo draws (16 per kind) are the compute budget; ranks have 0.06 resolution. The purged walk-forward is owned by Z3. 1-s/3-s decision delay was not run (AHEAD skip/half are signal-second decisions; B73/WT/re-target are in section 3). Parameter variants of the line itself (swing strength, profile bin, anchor shifts) are separate streams in the grid (SWG f3/f5/f7, PRF b1-b3, anchors), not re-parameterised. RND and BKS streams were not built. D7 v1.3 profit lines are an agent-built assumption (THP_POLICY_D7.txt not on disk); U7 is an assumption.
 
