@@ -487,3 +487,119 @@ Scoring on the forward register: the skipped rows' base P&L sum and the maxDD of
 |  60 | C      |      24 | PRE      |      0.232 |         -0.086 |       0.317 |   0.08 |
 |  60 | C      |      24 | X'       |      0.103 |          0.057 |       0.046 |   0.28 |
 Reading: recent-window cut +33..+46% with placebo-corrected +36..+46% (ranks 0.04-0.20), PRE corrected +25..+32% (ranks 0.08-0.16), X' +5..+8% (ranks 0.24-0.28): the swing-level D60 cell is the stronger candidate on the assumed base, but D-fragile (D30/40: recent +4..+7%, MID collapses at D <= 20). Re-run on V13X pending (stage x1).
+
+
+## HEADLINE: D7 v1.3 EXACT (V13X, lock 12R) - book-zone cells, new windows (supersedes the assumed-base rows above)
+
+Base maxDD $k: L1M 16.4, L3M 39.9, L6M 73.9, HOLD 119.2, MID 78.5, PRE 252.4, X' 173.7; base mean $k/wk: L1M 23.5, L3M 15.8, L6M 22.4, HOLD 19.9, MID 5.3, PRE 4.0, X' -3.9
+
+| cell                            |   nflag |   L1M |    L3M |    L6M |   HOLD |    MID |    PRE |    X' |   dmean_HOLD |   mde_HOLD |
+|:--------------------------------|--------:|------:|-------:|-------:|-------:|-------:|-------:|------:|-------------:|-----------:|
+| PUL|k3|4h|AH|30|skip            |    1927 | 0.046 |  0.219 |  0.297 | -0.013 | -0.029 |  0.15  | 0.225 |      244.621 |    6000.36 |
+| PUL|k3|4h|AH|40|skip            |    2138 | 0.046 |  0.306 | -0.167 | -0.028 | -0.053 |  0.185 | 0.225 |    -1871.05  |    7006.41 |
+| SWP|lvl_swing_N5|4h|AH|60|skip  |    3214 | 0     |  0.112 | -0.328 |  0.177 | -0.195 |  0.231 | 0.141 |     3763.58  |    6735.28 |
+| SWP|lvl_swing_N5|4h|AH|40|skip  |    2929 | 0     | -0.108 | -0.45  | -0.017 | -0.202 |  0.17  | 0.141 |      880.727 |    4120.31 |
+| PUL|k5|4h|AH|30|skip            |     457 | 0     |  0.112 |  0.132 |  0.012 |  0.004 |  0.027 | 0.193 |      663.196 |    3940.45 |
+| SWP|lvl_sess_N5|4h|AH|40|half   |    1475 | 0     | -0.019 | -0.015 |  0.084 |  0.057 | -0.032 | 0.161 |      106.41  |    1801.01 |
+| PUL|k3|4h|AH|20|skip            |    1564 | 0.046 |  0.141 |  0.291 |  0.004 |  0.007 |  0.223 | 0.198 |      224.119 |    5670.03 |
+| PUL|k3|4h|AHA|20|skip           |     860 | 0     |  0.112 |  0.266 |  0.001 |  0.001 |  0.231 | 0.154 |     1388.28  |    4129.12 |
+| PUL|k3|24h|AH|20|skip           |    2164 | 0.046 |  0.096 |  0.291 |  0.012 |  0.025 |  0.367 | 0.206 |      297.671 |    5706.16 |
+| SWP|lvl_swing_N5|4h|AH|30|skip  |    2678 | 0     | -0.138 | -0.472 | -0.032 | -0.226 |  0.25  | 0.136 |     -601.314 |    2873.23 |
+| SWP|lvl_swing_N5|24h|AH|40|skip |    4360 | 0     | -0.093 | -0.362 | -0.032 | -0.205 |  0.201 | 0.105 |     -874.777 |    5350.91 |
+| ICE|R2N30|4h|AH|40|skip         |     736 | 0     | -0.013 | -0.007 |  0.127 |  0.193 | -0.033 | 0.207 |      359.259 |    1341.08 |
+
+### episode-proofing (|cut| >= 10%): week carrying the maxDD, cut with that week dropped, leave-one-month-out range, month-block bootstrap 90% CI
+| cell                            | window   |    cut |   week_dd |   cut_dropweek |   loo_min |   loo_max |   boot_lo |   boot_hi | label   |
+|:--------------------------------|:---------|-------:|----------:|---------------:|----------:|----------:|----------:|----------:|:--------|
+| PUL|k3|4h|AH|30|skip            | L3M      |  0.219 |    202637 |          0.162 |     0.219 |     0.487 |     0.096 |     0.608 |         |
+| PUL|k3|4h|AH|30|skip            | L6M      |  0.297 |    202637 |          0.27  |    -0.051 |     0.452 |    -0.051 |     0.338 |         |
+| PUL|k3|4h|AH|30|skip            | PRE      |  0.15  |    202516 |          0.062 |     0.025 |     0.197 |    -0.484 |     0.298 |         |
+| PUL|k3|4h|AH|30|skip            | X'       |  0.225 |    202405 |          0.166 |     0     |     0.324 |    -0     |     0.347 |         |
+| PUL|k3|4h|AH|40|skip            | L3M      |  0.306 |    202637 |          0.256 |     0.306 |     0.544 |     0.163 |     0.608 |         |
+| PUL|k3|4h|AH|40|skip            | L6M      | -0.167 |    202637 |         -0.211 |    -0.185 |     0.089 |    -0.329 |     0.307 |         |
+| PUL|k3|4h|AH|40|skip            | PRE      |  0.185 |    202516 |          0.101 |     0.067 |     0.228 |    -0.409 |     0.315 |         |
+| PUL|k3|4h|AH|40|skip            | X'       |  0.225 |    202405 |          0.166 |     0     |     0.324 |     0.011 |     0.356 |         |
+| SWP|lvl_swing_N5|4h|AH|60|skip  | L3M      |  0.112 |    202637 |          0.048 |     0     |     0.112 |     0     |     0.112 |         |
+| SWP|lvl_swing_N5|4h|AH|60|skip  | L6M      | -0.328 |    202637 |         -0.378 |    -0.328 |     0.283 |    -0.46  |     0.283 |         |
+| SWP|lvl_swing_N5|4h|AH|60|skip  | HOLD     |  0.177 |    202613 |         -0.03  |    -0.134 |     0.213 |    -0.529 |     0.201 |         |
+| SWP|lvl_swing_N5|4h|AH|60|skip  | PRE      |  0.231 |    202516 |          0.18  |    -0.062 |     0.27  |    -0.125 |     0.326 |         |
+| SWP|lvl_swing_N5|4h|AH|60|skip  | X'       |  0.141 |    202405 |          0.076 |     0     |     0.204 |    -0.034 |     0.282 |         |
+| SWP|lvl_swing_N5|4h|AH|40|skip  | L3M      | -0.108 |    202637 |         -0.188 |    -0.115 |     0     |    -0.193 |     0     |         |
+| SWP|lvl_swing_N5|4h|AH|40|skip  | L6M      | -0.45  |    202637 |         -0.505 |    -0.45  |     0.106 |    -0.505 |     0.186 |         |
+| SWP|lvl_swing_N5|4h|AH|40|skip  | PRE      |  0.17  |    202516 |          0.153 |    -0.07  |     0.21  |    -0.139 |     0.301 |         |
+| SWP|lvl_swing_N5|4h|AH|40|skip  | X'       |  0.141 |    202405 |          0.076 |     0     |     0.204 |    -0.034 |     0.282 |         |
+| PUL|k5|4h|AH|30|skip            | L3M      |  0.112 |    202637 |          0.047 |     0     |     0.112 |     0     |     0.127 |         |
+| PUL|k5|4h|AH|30|skip            | L6M      |  0.132 |    202637 |          0.099 |    -0.056 |     0.132 |    -0.066 |     0.106 |         |
+| PUL|k5|4h|AH|30|skip            | X'       |  0.193 |    202405 |          0.166 |     0     |     0.278 |    -0.009 |     0.272 |         |
+| SWP|lvl_sess_N5|4h|AH|40|half   | X'       |  0.161 |    202405 |          0.097 |     0     |     0.231 |     0.007 |     0.248 |         |
+| PUL|k3|4h|AH|20|skip            | L3M      |  0.141 |    202637 |          0.079 |     0.141 |     0.436 |     0.036 |     0.608 |         |
+| PUL|k3|4h|AH|20|skip            | L6M      |  0.291 |    202637 |          0.264 |    -0.06  |     0.447 |    -0.06  |     0.297 |         |
+| PUL|k3|4h|AH|20|skip            | PRE      |  0.223 |    202516 |          0.143 |     0.111 |     0.244 |    -0.453 |     0.313 |         |
+| PUL|k3|4h|AH|20|skip            | X'       |  0.198 |    202405 |          0.157 |     0     |     0.286 |    -0     |     0.232 |         |
+| PUL|k3|4h|AHA|20|skip           | L3M      |  0.112 |    202637 |          0.047 |     0.112 |     0.416 |     0.047 |     0.514 |         |
+| PUL|k3|4h|AHA|20|skip           | L6M      |  0.266 |    202637 |          0.238 |     0.005 |     0.427 |    -0.001 |     0.314 |         |
+| PUL|k3|4h|AHA|20|skip           | PRE      |  0.231 |    202516 |          0.152 |     0.138 |     0.252 |    -0.437 |     0.286 |         |
+| PUL|k3|4h|AHA|20|skip           | X'       |  0.154 |    202405 |          0.136 |     0     |     0.222 |     0     |     0.19  |         |
+| PUL|k3|24h|AH|20|skip           | L6M      |  0.291 |    202637 |          0.264 |    -0.06  |     0.447 |    -0.06  |     0.309 |         |
+| PUL|k3|24h|AH|20|skip           | PRE      |  0.367 |    202516 |          0.302 |     0.13  |     0.389 |    -0.347 |     0.373 |         |
+| PUL|k3|24h|AH|20|skip           | X'       |  0.206 |    202405 |          0.157 |     0     |     0.297 |    -0     |     0.241 |         |
+| SWP|lvl_swing_N5|4h|AH|30|skip  | L3M      | -0.138 |    202637 |         -0.221 |    -0.138 |     0     |    -0.23  |     0     |         |
+| SWP|lvl_swing_N5|4h|AH|30|skip  | L6M      | -0.472 |    202637 |         -0.528 |    -0.472 |    -0.118 |    -0.528 |    -0.118 |         |
+| SWP|lvl_swing_N5|4h|AH|30|skip  | PRE      |  0.25  |    202516 |          0.173 |    -0.07  |     0.297 |    -0.095 |     0.299 |         |
+| SWP|lvl_swing_N5|4h|AH|30|skip  | X'       |  0.136 |    202405 |          0.076 |     0     |     0.195 |    -0.058 |     0.246 |         |
+| SWP|lvl_swing_N5|24h|AH|40|skip | L6M      | -0.362 |    202637 |         -0.414 |    -0.362 |     0.118 |    -0.485 |     0.186 |         |
+| SWP|lvl_swing_N5|24h|AH|40|skip | PRE      |  0.201 |    202516 |          0.187 |     0.01  |     0.24  |    -0.074 |     0.315 |         |
+| SWP|lvl_swing_N5|24h|AH|40|skip | X'       |  0.105 |    202405 |          0.088 |     0     |     0.151 |    -0.026 |     0.137 |         |
+| ICE|R2N30|4h|AH|40|skip         | HOLD     |  0.127 |    202613 |          0     |     0     |     0.14  |    -0.007 |     0.202 |         |
+| ICE|R2N30|4h|AH|40|skip         | X'       |  0.207 |    202405 |          0.15  |     0     |     0.298 |    -0.134 |     0.408 |         |
+
+### three placebos (A same-volume stratified, B random rows same count per day, C other-day same book x session), V13X
+| cell                         | kind   |   draws | window   |   cell_cut |   placebo_mean |   corrected |   rank |
+|:-----------------------------|:-------|--------:|:---------|-----------:|---------------:|------------:|-------:|
+| PUL|k3|4h D20 skip           | A      |      60 | L3M      |      0.141 |         -0.089 |       0.231 |  0.131 |
+| PUL|k3|4h D20 skip           | A      |      60 | L6M      |      0.291 |         -0.127 |       0.418 |  0.098 |
+| PUL|k3|4h D20 skip           | A      |      60 | HOLD     |      0.004 |          0.107 |      -0.103 |  0.721 |
+| PUL|k3|4h D20 skip           | A      |      60 | MID      |      0.007 |          0.044 |      -0.038 |  0.623 |
+| PUL|k3|4h D20 skip           | A      |      60 | PRE      |      0.223 |          0.083 |       0.139 |  0.197 |
+| PUL|k3|4h D20 skip           | A      |      60 | X'       |      0.198 |          0.005 |       0.194 |  0.18  |
+| PUL|k3|4h D20 skip           | B      |      60 | L3M      |      0.141 |         -0.043 |       0.184 |  0.311 |
+| PUL|k3|4h D20 skip           | B      |      60 | L6M      |      0.291 |         -0.096 |       0.387 |  0.098 |
+| PUL|k3|4h D20 skip           | B      |      60 | HOLD     |      0.004 |          0.023 |      -0.018 |  0.656 |
+| PUL|k3|4h D20 skip           | B      |      60 | MID      |      0.007 |          0.047 |      -0.041 |  0.705 |
+| PUL|k3|4h D20 skip           | B      |      60 | PRE      |      0.223 |          0.116 |       0.107 |  0.213 |
+| PUL|k3|4h D20 skip           | B      |      60 | X'       |      0.198 |          0.03  |       0.169 |  0.016 |
+| PUL|k3|4h D20 skip           | C      |      60 | L3M      |      0.141 |         -0.126 |       0.267 |  0.115 |
+| PUL|k3|4h D20 skip           | C      |      60 | L6M      |      0.291 |         -0.187 |       0.478 |  0.016 |
+| PUL|k3|4h D20 skip           | C      |      60 | HOLD     |      0.004 |          0.089 |      -0.085 |  0.672 |
+| PUL|k3|4h D20 skip           | C      |      60 | MID      |      0.007 |          0.039 |      -0.033 |  0.574 |
+| PUL|k3|4h D20 skip           | C      |      60 | PRE      |      0.223 |          0.048 |       0.175 |  0.148 |
+| PUL|k3|4h D20 skip           | C      |      60 | X'       |      0.198 |          0.037 |       0.161 |  0.164 |
+| SWP|lvl_swing_N5|4h D60 skip | A      |      30 | L3M      |      0.112 |         -0.081 |       0.194 |  0.355 |
+| SWP|lvl_swing_N5|4h D60 skip | A      |      30 | L6M      |     -0.328 |         -0.094 |      -0.234 |  0.774 |
+| SWP|lvl_swing_N5|4h D60 skip | A      |      30 | HOLD     |      0.177 |          0.132 |       0.045 |  0.452 |
+| SWP|lvl_swing_N5|4h D60 skip | A      |      30 | MID      |     -0.195 |          0.05  |      -0.245 |  0.968 |
+| SWP|lvl_swing_N5|4h D60 skip | A      |      30 | PRE      |      0.231 |          0.192 |       0.04  |  0.484 |
+| SWP|lvl_swing_N5|4h D60 skip | A      |      30 | X'       |      0.141 |          0.049 |       0.092 |  0.452 |
+| SWP|lvl_swing_N5|4h D60 skip | B      |      30 | L3M      |      0.112 |         -0.052 |       0.164 |  0.355 |
+| SWP|lvl_swing_N5|4h D60 skip | B      |      30 | L6M      |     -0.328 |         -0.086 |      -0.242 |  0.839 |
+| SWP|lvl_swing_N5|4h D60 skip | B      |      30 | HOLD     |      0.177 |          0.129 |       0.048 |  0.355 |
+| SWP|lvl_swing_N5|4h D60 skip | B      |      30 | MID      |     -0.195 |          0.07  |      -0.265 |  1     |
+| SWP|lvl_swing_N5|4h D60 skip | B      |      30 | PRE      |      0.231 |          0.137 |       0.094 |  0.29  |
+| SWP|lvl_swing_N5|4h D60 skip | B      |      30 | X'       |      0.141 |          0.017 |       0.125 |  0.226 |
+| SWP|lvl_swing_N5|4h D60 skip | C      |      30 | L3M      |      0.112 |         -0.17  |       0.282 |  0.161 |
+| SWP|lvl_swing_N5|4h D60 skip | C      |      30 | L6M      |     -0.328 |         -0.101 |      -0.227 |  0.839 |
+| SWP|lvl_swing_N5|4h D60 skip | C      |      30 | HOLD     |      0.177 |          0.211 |      -0.034 |  0.613 |
+| SWP|lvl_swing_N5|4h D60 skip | C      |      30 | MID      |     -0.195 |          0.098 |      -0.294 |  0.968 |
+| SWP|lvl_swing_N5|4h D60 skip | C      |      30 | PRE      |      0.231 |          0.099 |       0.132 |  0.323 |
+| SWP|lvl_swing_N5|4h D60 skip | C      |      30 | X'       |      0.141 |          0.108 |       0.033 |  0.419 |
+
+### PUL D20 skip on V13X: Asia vs rest and month chain
+L6M: total +119.1k; Asia +75.8k; non-Asia +43.3k
+
+HOLD: total +11.7k; Asia -23.0k; non-Asia +34.7k
+
+PRE: total -37.8k; Asia -20.0k; non-Asia -17.7k
+
+PUL D20 skip month chain (V13X): 43 months, positive 23, negative 14, zero 6; total +13.2k, 2026-09 +64.0k, other months -50.8k (t -0.37)
+
+Reading (V13X is the headline; every table above this block is the ASSUMED base): on the exact base the pulled-wall cell gets BETTER where the assumed base had it fail (PRE +22%, X' +20%, L6M +29%) and is flat where the assumed base had it large (HOLD +0.4%: the HOLD maxDD episode is not touched). It is not carried by the 2026-09 episode on this base (L6M cut +26% without W37; the month chain is +13.2k in total, +64.0k in 2026-09 and -50.8k in the other 42 months, so it is a drawdown-shape effect, not a mean effect). Against the placebos the L6M cut is the only window with ranks <= 0.1; PRE/X' ranks are 0.15-0.2 (X' with random-rows placebo 0.016). Label LEAD (weak); the SWP lvl_swing D60 candidate flips sign in L6M/MID and is DEAD as a base-dependent result.

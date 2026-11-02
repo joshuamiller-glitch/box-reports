@@ -1,6 +1,6 @@
 # DS3 D7 TAKE LINES - the five THP_POLICY_D7 profit lines scored on the D7 v1.3 EXACT base (BASE-4)
 
-Rolling page, written 2026-11-02T03:13Z. Prereg l2vast/ds3/prereg/D7_TAKE_LINES_prereg.md sha256 af2bb13bad8e3288b3f3b98114b0db5f5d21bf9be1446497fe605721ed4c59da (DECISIONS.md, logged before any line-effect statistic was read). dead_lookup before: the five specs are NOT FOUND in DEAD_CELLS (0 hits); append_cells after (see end). POST-HOC labels only; no PASS claim; mean and MDE (2.8 x SE of the weekly mean, paired for deltas) are columns, drawdown first.
+Rolling page, written 2026-11-02T03:42Z. Prereg l2vast/ds3/prereg/D7_TAKE_LINES_prereg.md sha256 af2bb13bad8e3288b3f3b98114b0db5f5d21bf9be1446497fe605721ed4c59da (DECISIONS.md, logged before any line-effect statistic was read). dead_lookup before: the five specs are NOT FOUND in DEAD_CELLS (0 hits); append_cells after (see end). POST-HOC labels only; no PASS claim; mean and MDE (2.8 x SE of the weekly mean, paired for deltas) are columns, drawdown first.
 
 **Base.** d7_v13x.run_v13x: D7 v1.3 EXACT (live11 lots, U7 exact = never binds, TH-L2 loss ON / profit-path OFF, HALF D20 + OTE-62 B73 D30, X1-X5 and signal-state Shadow, Native stops, ER(20) sizer, engine per-book locks; combined 12R stack week lock ON = headline, OFF = sensitivity). "lines off" = the same base with the profit side empty. Lines on the 10-s L2 grid (rel_tot8 / rel_ahead8 exist only there): first row where pct >= a and the rel gate holds; take exit cost 0.995 pt, tighten 30 = exit 1.01 pt when favourable extreme - current >= 30 pts. Weeks are ISO weeks of the label day; windows: F9 = 2026-02-07..2026-10-31 (the Feb-Oct window), L1M L2M L3M L6M HOLD MID PRE X' as windows.py. Equal-risk mean = mean x (lines-off worst-20 over ALL history / line worst-20 over ALL history), linear lot scaling (the integer-lot engine search is not run per row). Cells: "mean (MDE) / maxDD / worst-20 / SD / Calmar" all $k per week (maxDD of the weekly cumulative sum; worst-20 = sum of the 20 worst weeks, or the worst quarter of the weeks if the window has <20; Calmar = weekly mean / maxDD).
 
@@ -209,27 +209,27 @@ Book x session cells (F9 and HOLD delta mean $k/wk; only cells where the lines a
 
 | placebo | window | draws | real maxDD cut | placebo median [5,95] | rank cut | real d mean | placebo med d mean | rank mean |
 |---|---|---|---|---|---|---|---|---|
-| P1 | F9 | 2 | +42% | -22% [-40,-3] | 0.00 | -10.1 | -20.1 | 0.00 |
-| P1 | L3M | 2 | +30% | -85% [-130,-39] | 0.00 | -0.2 | -17.9 | 0.00 |
-| P1 | L6M | 2 | +46% | -22% [-40,-3] | 0.00 | -8.1 | -19.1 | 0.00 |
-| P1 | HOLD | 2 | +12% | -22% [-40,-4] | 0.00 | -6.3 | -17.7 | 0.00 |
-| P1 | MID | 2 | -84% | -89% [-108,-71] | 0.50 | -13.8 | -20.8 | 0.00 |
-| P1 | PRE | 2 | -99% | -133% [-199,-67] | 0.50 | -5.9 | -10.8 | 0.00 |
-| P1 | X' | 2 | +26% | -49% [-50,-47] | 0.00 | +0.5 | -2.9 | 0.00 |
-| P2 | F9 | 2 | +42% | -31% [-47,-16] | 0.00 | -10.1 | -12.7 | 0.00 |
-| P2 | L3M | 2 | +30% | -85% [-92,-78] | 0.00 | -0.2 | -15.6 | 0.00 |
-| P2 | L6M | 2 | +46% | -31% [-47,-16] | 0.00 | -8.1 | -12.6 | 0.00 |
-| P2 | HOLD | 2 | +12% | -31% [-47,-16] | 0.00 | -6.3 | -9.5 | 0.00 |
-| P2 | MID | 2 | -84% | -54% [-65,-44] | 1.00 | -13.8 | -12.0 | 1.00 |
-| P2 | PRE | 2 | -99% | -81% [-99,-63] | 0.50 | -5.9 | -4.9 | 1.00 |
-| P2 | X' | 2 | +26% | -3% [-32,+26] | 0.50 | +0.5 | -0.5 | 0.50 |
-| P3 | F9 | 2 | +42% | +12% [+4,+19] | 0.00 | -10.1 | -6.9 | 0.50 |
-| P3 | L3M | 2 | +30% | -9% [-27,+10] | 0.00 | -0.2 | -9.4 | 0.00 |
-| P3 | L6M | 2 | +46% | +12% [+4,+19] | 0.00 | -8.1 | -6.0 | 0.50 |
-| P3 | HOLD | 2 | +12% | +12% [+4,+19] | 0.50 | -6.3 | -5.8 | 0.50 |
-| P3 | MID | 2 | -84% | -76% [-80,-71] | 1.00 | -13.8 | -8.3 | 1.00 |
-| P3 | PRE | 2 | -99% | -87% [-134,-40] | 0.50 | -5.9 | -3.7 | 1.00 |
-| P3 | X' | 2 | +26% | +3% [-24,+30] | 0.50 | +0.5 | +0.1 | 0.50 |
+| P1 | F9 | 100 | +42% | -26% [-57,+18] | 0.00 | -10.1 | -18.9 | 0.00 |
+| P1 | L3M | 100 | +30% | -84% [-142,-23] | 0.00 | -0.2 | -15.1 | 0.00 |
+| P1 | L6M | 100 | +46% | -26% [-57,+19] | 0.00 | -8.1 | -17.2 | 0.01 |
+| P1 | HOLD | 100 | +12% | -28% [-62,+8] | 0.04 | -6.3 | -16.3 | 0.00 |
+| P1 | MID | 100 | -84% | -76% [-172,-4] | 0.55 | -13.8 | -20.6 | 0.08 |
+| P1 | PRE | 100 | -99% | -149% [-264,-59] | 0.27 | -5.9 | -9.7 | 0.02 |
+| P1 | X' | 100 | +26% | -44% [-74,-5] | 0.00 | +0.5 | -2.9 | 0.01 |
+| P2 | F9 | 100 | +42% | -16% [-41,+23] | 0.00 | -10.1 | -9.7 | 0.55 |
+| P2 | L3M | 100 | +30% | -37% [-85,+21] | 0.04 | -0.2 | -7.7 | 0.02 |
+| P2 | L6M | 100 | +46% | -16% [-41,+23] | 0.00 | -8.1 | -9.4 | 0.30 |
+| P2 | HOLD | 100 | +12% | -16% [-41,+21] | 0.12 | -6.3 | -8.6 | 0.11 |
+| P2 | MID | 100 | -84% | -28% [-110,+16] | 0.87 | -13.8 | -9.4 | 0.89 |
+| P2 | PRE | 100 | -99% | -80% [-177,+7] | 0.62 | -5.9 | -6.2 | 0.44 |
+| P2 | X' | 100 | +26% | -6% [-55,+29] | 0.09 | +0.5 | -0.1 | 0.34 |
+| P3 | F9 | 100 | +42% | -3% [-29,+33] | 0.03 | -10.1 | -5.0 | 0.92 |
+| P3 | L3M | 100 | +30% | -26% [-62,+41] | 0.07 | -0.2 | -4.1 | 0.14 |
+| P3 | L6M | 100 | +46% | -3% [-29,+33] | 0.04 | -8.1 | -4.2 | 0.85 |
+| P3 | HOLD | 100 | +12% | -3% [-29,+32] | 0.23 | -6.3 | -2.8 | 0.89 |
+| P3 | MID | 100 | -84% | -54% [-112,+4] | 0.78 | -13.8 | -6.8 | 0.94 |
+| P3 | PRE | 100 | -99% | -50% [-127,+0] | 0.86 | -5.9 | -3.7 | 0.91 |
+| P3 | X' | 100 | +26% | +10% [-32,+39] | 0.21 | +0.5 | +0.5 | 0.49 |
 
 ## 7. Leave-one-week-out (ISO 2026-W38) and leave-one-month-out, five lines vs lines off (lock 12R)
 
@@ -242,3 +242,25 @@ Book x session cells (F9 and HOLD delta mean $k/wk; only cells where the lines a
 
 
 MaxDD carrier weeks (trough week of the weekly-cumulative maxDD): F9: off 202637 / on 202613; L3M: off 202637 / on 202637; L6M: off 202637 / on 202637; HOLD: off 202637 / on 202613; PRE: off 202440 / on 202516; X': off 202351 / on 202405
+
+## 8. Drop the carrier week (OFF maxDD trough is ISO 2026-W37, the W38 label is the week after)
+- F9 drop 202637: DD 117.8->78.5 (+33%) d-10.4k(MDE 13.1)
+- F9 drop 202638: DD 135.9->78.5 (+42%) d-10.0k(MDE 13.1)
+- F9 drop [202637 202638]: DD 117.8->78.5 (+33%) d-10.2k(MDE 13.5)
+- L3M drop 202637: DD 39.1->37.2 (+5%) d-0.2k(MDE 11.5)
+- L3M drop 202638: DD 57.2->39.9 (+30%) d+1.2k(MDE 10.7)
+- L3M drop [202637 202638]: DD 39.1->37.2 (+5%) d+1.4k(MDE 11.7)
+- L6M drop 202637: DD 117.8->71.2 (+40%) d-8.4k(MDE 15.7)
+- L6M drop 202638: DD 135.9->73.9 (+46%) d-7.8k(MDE 15.7)
+- L6M drop [202637 202638]: DD 117.8->71.2 (+40%) d-8.0k(MDE 16.3)
+- HOLD drop 202637: DD 117.8->119.2 (-1%) d-6.4k(MDE 10.5)
+- HOLD drop 202638: DD 135.9->119.2 (+12%) d-6.1k(MDE 10.5)
+- HOLD drop [202637 202638]: DD 117.8->119.2 (-1%) d-6.2k(MDE 10.7)
+
+## 9. Reading (post-hoc, no PASS)
+- Drawdown first: with the combined 12R lock the five lines cut F9/L6M maxDD 42%/46% (135.9k -> 78.5k / 73.9k), L3M 30%, X' 26%, HOLD 12%; they make MID (-84%) and PRE (-99%: 126.5k -> 252.4k) much WORSE. Means are lower in every window except L1M/L2M/X' (F9 -10.1k/wk, MDE 12.8k; inside MDE). Calmar F9 0.20 -> 0.22. With the combined lock OFF the cut disappears (F9 117.8k -> 132.6k, +13% worse): the benefit is an interaction with the stack week lock, not a property of the lines.
+- Carrier: the OFF F9/L6M/HOLD drawdown is the 2026-W37 week; the ON system's F9 drawdown moves to 2026-W13 (MID). So the F9/L6M cut is largely 'this one episode is avoided'; see section 8 for drop-W37.
+- Placebos (100 draws x 3, lock 12R): the real maxDD cut beats P1 (random rows, same count) at rank 0.00 in F9/L3M/L6M/X' and 0.04 HOLD, P2 (shuffled day) 0.00 F9/L6M, 0.04 L3M, P3 (same-volume pct-only early exit, no L2 gate) 0.03-0.07 F9/L3M/L6M, but NOT in MID (0.55-0.87) or PRE (0.27-0.86). Mean: the real mean delta is not better than P2/P3 (ranks 0.3-0.9): the lines lose money like random exits of the same volume; the L2 gate adds drawdown shape in F9-X' windows only.
+- One at a time (12R): P7 and H7 carry the F9/L6M cut (add: P7 +21%, H7 +13%, K7 +7%, W* +6%, U7 -2%) but P7 doubles PRE drawdown (-44% alone) and costs -4.5k/wk F9; H7 and W* have the best mean (H7 +1.8k L2M); U7 adds nothing in F9. Thresholds: P7 pct x0.5..0.75 and W* rel x1.25..1.5 are worse (maxDD +30..+100%) than the exact values; K7/H7/U7 variants move little; no neighbourhood is monotone (fragile). A6/PB wildcard never acts (engine does not inject exits for PB; same for the TH-L2 cut) so '*' = M7 only.
+- Tiers (delta mean on total, post-hoc): the five lines together STRICT - / TOLERANT - / NOW-ONLY -; single lines in section 2 (W* only: TOLERANT/NOW-ONLY, inside MDE).
+- After dropping W37: F9 cut +33% (L6M +40%) survives, L3M cut falls to +5% and HOLD to -1%: the F9/L6M cut is not one week, the L3M/HOLD cut is.

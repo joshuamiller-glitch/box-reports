@@ -1,0 +1,30 @@
+# DS3 ZONES COMPOSITE on D7 v1.3 EXACT (V13X): no layer vs shipped layer vs candidate layers (BASE-4, rolling, 2026-11-02)
+
+Cells: mean$k/wk (MDE) / maxDD$k / worst-20 $k / Calmar / equal-risk mean (mean x worst-20-ALL of the SHIPPED layer / this row's worst-20-ALL, linear lot scaling). Post-hoc labels; "candidate layers" are NOT leads (no placebo/walk-forward in this table). Candidate cubes are the other agents' stored V13X cubes with the combined 12R stack lock ON (the convention they ran); candidate rows could not be built lock-off from stored cubes.
+
+## With the combined 12R stack lock
+
+| layer | F9 | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
+|---|---|---|---|---|---|---|---|---|---|
+| no layer (zone off, no OTE-62) | 15.6(23.0) / DD 95.1 / w20 -416 / C 0.16 / ER 13.2 | 3.1(49.5) / DD 38.8 / w20 -24 / C 0.08 / ER 2.6 | 12.1(42.0) / DD 54.0 / w20 -42 / C 0.22 / ER 10.3 | 7.4(30.8) / DD 54.0 / w20 -67 / C 0.14 / ER 6.2 | 19.6(28.6) / DD 72.3 / w20 -143 / C 0.27 / ER 16.6 | 19.1(19.6) / DD 118.3 / w20 -447 / C 0.16 / ER 16.2 | 5.4(34.7) / DD 95.1 / w20 -108 / C 0.06 / ER 4.6 | 2.2(12.2) / DD 329.1 / w20 -608 / C 0.01 / ER 1.9 | -1.6(9.7) / DD 144.8 / w20 -386 / C -0.01 / ER -1.3 |
+| SHIPPED layer (HALF D20 + OTE-62 B73 D30) = V13X | 17.6(21.6) / DD 78.5 / w20 -360 / C 0.22 / ER 17.6 | 23.5(59.2) / DD 16.4 / w20 -16 / C 1.43 / ER 23.5 | 24.0(43.4) / DD 26.9 / w20 -36 / C 0.89 / ER 24.0 | 15.8(32.4) / DD 39.9 / w20 -58 / C 0.40 / ER 15.8 | 22.4(26.9) / DD 73.9 / w20 -52 / C 0.30 / ER 22.4 | 19.9(18.9) / DD 119.2 / w20 -405 / C 0.17 / ER 19.9 | 5.3(31.7) / DD 78.5 / w20 -77 / C 0.07 / ER 5.3 | 4.0(11.0) / DD 252.4 / w20 -512 / C 0.02 / ER 4.0 | -3.9(7.8) / DD 173.7 / w20 -342 / C -0.02 / ER -3.9 |
+| candidate: shipped + PUL k3 4h AHEAD D20 skip (ZL-1) | 19.4(20.7) / DD 78.0 / w20 -323 / C 0.25 / ER 20.0 | 24.9(54.0) / DD 15.7 / w20 -16 / C 1.58 / ER 25.6 | 31.9(38.7) / DD 15.7 / w20 -31 / C 2.03 / ER 32.8 | 21.3(30.1) / DD 34.3 / w20 -48 / C 0.62 / ER 21.9 | 26.8(25.1) / DD 52.4 / w20 90 / C 0.51 / ER 27.6 | 20.1(17.9) / DD 118.7 / w20 -386 / C 0.17 / ER 20.7 | 1.0(30.4) / DD 78.0 / w20 -72 / C 0.01 / ER 1.1 | 3.5(10.6) / DD 196.2 / w20 -486 / C 0.02 / ER 3.6 | -3.2(7.7) / DD 139.2 / w20 -319 / C -0.02 / ER -3.3 |
+| candidate: shipped + sA40>=1 skip (S5) | 17.4(19.9) / DD 53.3 / w20 -294 / C 0.33 / ER 17.4 | 21.7(54.7) / DD 15.1 / w20 -15 / C 1.44 / ER 21.7 | 17.7(41.9) / DD 32.1 / w20 -35 / C 0.55 / ER 17.7 | 13.1(29.7) / DD 31.0 / w20 -51 / C 0.42 / ER 13.1 | 19.5(24.4) / DD 46.2 / w20 -83 / C 0.42 / ER 19.5 | 17.2(17.6) / DD 89.7 / w20 -379 / C 0.19 / ER 17.2 | 11.3(32.1) / DD 53.3 / w20 -71 / C 0.21 / ER 11.3 | 5.2(10.0) / DD 239.2 / w20 -500 / C 0.02 / ER 5.2 | -1.7(8.4) / DD 140.0 / w20 -350 / C -0.01 / ER -1.7 |
+| candidate: ALL7 skip instead of HALF (S3, with OTE-62 as shipped) | 16.5(20.2) / DD 79.2 / w20 -327 / C 0.21 / ER 16.1 | 25.3(60.6) / DD 14.9 / w20 -15 / C 1.69 / ER 24.8 | 23.6(42.2) / DD 30.8 / w20 -31 / C 0.77 / ER 23.1 | 15.3(31.2) / DD 37.9 / w20 -48 / C 0.40 / ER 15.0 | 20.1(25.2) / DD 79.2 / w20 -71 / C 0.25 / ER 19.7 | 18.8(18.3) / DD 88.4 / w20 -402 / C 0.21 / ER 18.4 | 6.9(29.9) / DD 52.0 / w20 -64 / C 0.13 / ER 6.7 | 7.7(11.5) / DD 214.1 / w20 -517 / C 0.04 / ER 7.5 | -0.9(9.1) / DD 114.3 / w20 -385 / C -0.01 / ER -0.9 |
+
+
+## Combined stack lock OFF (per-book locks only; the user's literal lock text)
+
+| layer | F9 | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
+|---|---|---|---|---|---|---|---|---|---|
+| no layer (zone off, no OTE-62) | 23.2(25.1) / DD 145.8 / w20 -371 / C 0.16 / ER 19.9 | 19.2(61.8) / DD 34.6 / w20 -35 / C 0.56 / ER 16.5 | 24.2(43.4) / DD 34.6 / w20 -58 / C 0.70 / ER 20.8 | 14.8(34.4) / DD 53.4 / w20 -112 / C 0.28 / ER 12.7 | 27.4(31.3) / DD 145.8 / w20 6 / C 0.19 / ER 23.5 | 23.3(21.7) / DD 145.8 / w20 -635 / C 0.16 / ER 20.0 | 11.7(37.4) / DD 77.7 / w20 -127 / C 0.15 / ER 10.0 | 7.7(14.0) / DD 245.1 / w20 -859 / C 0.03 / ER 6.6 | -1.8(12.3) / DD 190.0 / w20 -517 / C -0.01 / ER -1.5 |
+| SHIPPED layer = V13X | 22.5(23.6) / DD 132.6 / w20 -342 / C 0.17 / ER 22.5 | 19.6(68.8) / DD 36.6 / w20 -37 / C 0.54 / ER 19.6 | 25.0(45.9) / DD 36.6 / w20 -70 / C 0.68 / ER 25.0 | 16.1(35.3) / DD 49.9 / w20 -112 / C 0.32 / ER 16.1 | 26.9(29.6) / DD 132.6 / w20 27 / C 0.20 / ER 26.9 | 23.9(21.0) / DD 132.6 / w20 -604 / C 0.18 / ER 23.9 | 10.9(33.9) / DD 62.6 / w20 -109 / C 0.17 / ER 10.9 | 10.0(13.0) / DD 178.4 / w20 -734 / C 0.06 / ER 10.0 | -1.2(10.1) / DD 134.8 / w20 -445 / C -0.01 / ER -1.2 |
+
+
+Candidate not built: CRT4h 60 fresh solo (Asia) - no stored V13X cube found (S2 re-run on V13X not yet saved as a cube); it will be added when its cube exists. Delta rows (layer effect = shipped minus none, drawdown first):
+
+- 12R lock: F9: DD 95.1->78.5 (+17%) d+1.9k(MDE 7.4); L1M: DD 38.8->16.4 (+58%) d+20.5k(MDE 47.6); L2M: DD 54.0->26.9 (+50%) d+11.9k(MDE 27.0); L3M: DD 54.0->39.9 (+26%) d+8.4k(MDE 18.9); L6M: DD 72.3->73.9 (-2%) d+2.8k(MDE 9.9); HOLD: DD 118.3->119.2 (-1%) d+0.7k(MDE 7.4); MID: DD 95.1->78.5 (+17%) d-0.1k(MDE 9.0); PRE: DD 329.1->252.4 (+23%) d+1.7k(MDE 7.0); X': DD 144.8->173.7 (-20%) d-2.4k(MDE 5.8)
+
+- lock off: F9: DD 145.8->132.6 (+9%) d-0.7k(MDE 3.5); L1M: DD 34.6->36.6 (-6%) d+0.4k(MDE 9.6); L2M: DD 34.6->36.6 (-6%) d+0.8k(MDE 5.9); L3M: DD 53.4->49.9 (+7%) d+1.3k(MDE 4.5); L6M: DD 145.8->132.6 (+9%) d-0.6k(MDE 4.1); HOLD: DD 145.8->132.6 (+9%) d+0.6k(MDE 3.5); MID: DD 77.7->62.6 (+19%) d-0.8k(MDE 6.1); PRE: DD 245.1->178.4 (+27%) d+2.3k(MDE 3.3); X': DD 190.0->134.8 (+29%) d+0.5k(MDE 4.5)
+
+Note: "no layer" = V13X with zone skip/half and OTE-62 B73 switched off (profit lines, TH-L2 loss, locks, sizer unchanged). Candidate rows are the other agents stored V13X cubes with the combined lock ON; PUL k3 row = ZL-1 res_x1_1.pkl cell (shipped + PUL skip), sA40 = S5/resvx, ALL7 = zones3/s3_v13x/grid_N_0.pkl. PUL: L6M/HOLD mean unchanged but MID mean falls 5.3k -> 1.0k/wk and w20 improves only in L6M: ONE-MONTH per ZL-1. Labels are NOT leads.
