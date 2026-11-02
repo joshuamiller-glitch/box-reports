@@ -837,3 +837,54 @@ V13T (truth base) shipped layer: L6M 35.8k/wk maxDD L6M 163.6k, HOLD 163.6k, MID
 | CRT4h60fw2any | 129.6 / 129.6 / 41.0 / 169.0 / 90.5 | +31% / +32% / +17% / +1% / +9% | +21% | +1.3 (3.5) | +1263 | S/T/N | no (+26%) | 7/7, +0.03 | +0.02 | +11% -> +21% | LEAD |
 | PDmid_60fw1stk | 168.8 / 168.8 / 44.2 / 165.9 / 71.3 | -3% / +1% / +1% / +1% / +44% | -3% | +0.0 (1.7) | +8 | -/-/- | no (-4%) | 0/7, -0.04 | -0.04 | +2% -> -3% | weak |
 **Reading:** on the truth base **CRT4h 60pts fw2 any** (CRT 4h midpoint, fresh, formed within 2 h, D = 60 pts, half) cuts the L6M maxDD 163.6 -> 129.6k (-21%), STRICT/TOLERANT/NOW (Calmar L6M +31%, HOLD +32%, MID +17%, PRE +1%, X' +9%), mean +1.3k/wk (MDE 3.5, so not beyond MDE downside), not ONE-WEEK (+26% without the carrying week), 7/7 months, leave-one-week-out min +0.02: it meets the L6M RISK-KEEP rule's cut and mean conditions; PRE maxDD is not cut (167.2 -> 169.0k), so it is NOT yet an L6M-and-PRE RISK-KEEP; placebos (100 draws), the PA band and the two-episode rule are pending and the V13T full screen is running. camH3 75%tgt fw8 any: cut +10%, S/-/N, LEAD-weak. OTE705 60 fw2 any (the V13Z candidate) reverses on V13T (cut -10%): base-dependent. The V13Z->V13T column shows the base sensitivity of every cell.
+
+
+## s2 ON V13T (TRUTH BASE): full screen, RISK-KEEP candidates, placebos, phase average, two-episode (Z2, ~15:15Z 2026-11-02)
+V13T l0 full screen: 1933 changed distinct-key cells; S_hon>0 0.55, S_post>0 0.36; STRICT 80, TOL 70, NOW 481, TOL-B 455, TOL-nc 241, RISK-KEEP(L6M rule) 30
+Of the 30 cells that meet the old L6M RISK-KEEP test (cut >= 20%, mean not below -MDE), none cuts the PRE maxDD (PRE cuts -1..-2%); the kijun1h 15-40pts 'touched' and PDmid 15-60pts 'touched' families (L6M cut +21..+35%, HOLD +18%, X' +7..+13%, MID -4..-6%) are NOW-ONLY (not TOLERANT), PRE mean -0.2..-1.0k/wk, 6/7 months, ONE-WEEK no, but fail the two-episode rule. **Exactly one cell passes the two-episode rule and STRICT/TOLERANT: CRT4h 60pts fw2 any.**
+### CRT4h 60pts fw2 any on V13T (lock none): RISK-KEEP (L6M / HOLD only), LEAD
+Definition (shadow-only candidate): the CRT 4-hour midpoint line, fresh, formed within the last 2 h (age <= 7,200 s), ahead of the planned entry within D = 60 pts (and within the target distance), any confluence; action HALF (planned lots x 0.5 via the ER row multiplier, integer half-up, min 1), REPLACING the shipped CRT term (D20, fresh, any age); the other six half-lines and OTE-62 B73 unchanged. L6M maxDD 163.6 -> 129.6k (-21%), HOLD the same episode, Calmar L6M +31%, HOLD +32%, MID +17%, PRE +1%, X' +9%; **dollar no-harm in every window** (mean change +43 L3M, +1,263 L6M, +1,267 HOLD, +1,547 MID, +429 PRE, +232 X' $/wk, all inside MDE); PRE and X' maxDD NOT cut (-1% / +4%), so it is not an L6M-and-PRE RISK-KEEP; worst-20 PRE -796 -> -760k, X' -451 -> -445k. Robustness: not ONE-WEEK (+26% with the carrying week 2026-W37 dropped), leave-one-month-out 7/7, month-block bootstrap 5-95% of the cut +2%..+36%, TWO-EPISODE-OK (cut positive after dropping the carrying episode in L6M +, PRE +, X' +), phase-averaged over 5 lock-reset phases +22.5% (+16.6..+32.6%), 5/5 (shipped layer's own L6M maxDD 163.6..195.3k across phases). **Placebos (100 draws per kind, same engine): L6M cut ranks 0.03 (random-level same count) / 0.02 (same volume) / 0.03 (shuffled-day line sets); HOLD 0.01 / 0.02 / 0.02; MID 0.22 / 0.18 / 0.04; PRE 0.67 / 0.50 / 0.57; X' 0.52 / 0.36 / 0.95: it beats all three placebos on L6M and HOLD and none on PRE / X'.** Concentration: the L6M cut is carried by P6 London (-26.7k of the book-session maxDD; P6 London mean +656 $/wk); no other book x session moves more than 5k. Base dependence: V13Z lock-none cut +11% (5/5 phases), V13Y +3%, V13X +4%: the cut grows as the take-line artefacts are removed; with the 12R combined lock (not live) it is -12% on V13Z. Label: RISK-KEEP (L6M/HOLD only), LEAD, Shadow only; the PRE/X' maxDD are unchanged, so it works only in the recent regime.
+| window | mean ship $/wk | mean cell $/wk | delta (MDE) | maxDD ship $k | maxDD cell $k | cut | Calmar ship | Calmar cell | worst-20 ship / cell ($k, tail windows) |
+|---|---|---|---|---|---|---|---|---|---|
+| L3M | 13969 | 14012 | +43 (1124) | 95.3 | 92.0 | +3% | 0.147 | 0.152 | n/a |
+| L6M | 35770 | 37033 | +1263 (3489) | 163.6 | 129.6 | +21% | 0.219 | 0.286 | n/a |
+| HOLD | 29371 | 30638 | +1267 (1973) | 163.6 | 129.6 | +21% | 0.180 | 0.236 | n/a |
+| MID | 23509 | 25056 | +1547 (3397) | 44.9 | 41.0 | +9% | 0.524 | 0.611 | n/a |
+| PRE | 16937 | 17366 | +429 (1560) | 167.2 | 169.0 | -1% | 0.101 | 0.103 | -796 / -760 |
+| X' | 4594 | 4826 | +232 (917) | 94.2 | 90.5 | +4% | 0.049 | 0.053 | -451 / -445 |
+
+Per book x session (change vs shipped; $ per week mean; maxDD change k$ of that book-session series)
+
+| book | session | d mean L6M | d mean HOLD | d mean PRE | d mean X' | d maxDD L6M | d maxDD HOLD | d maxDD PRE | d maxDD X' |
+|---|---|---|---|---|---|---|---|---|---|
+| K6 | asia | +207 | -28 | -83 | +68 | -1.4 | -1.4 | -0.5 | -3.0 |
+| K6 | london | +106 | +39 | -38 | +68 | +0.6 | +0.5 | +1.4 | -0.1 |
+| K6 | nyam | +101 | +75 | +37 | -5 | +0.8 | -0.4 | -0.8 | +0.0 |
+| K6 | nypm | +60 | +31 | -3 | +22 | -1.6 | -1.6 | +3.0 | -1.0 |
+| P6 | asia | +40 | +433 | +72 | -165 | -4.9 | -4.2 | +3.3 | +7.3 |
+| P6 | london | +656 | +366 | +150 | +0 | -26.7 | -1.1 | -11.3 | +0.0 |
+| P6 | nyam | +0 | -15 | +187 | -89 | +0.0 | +0.0 | +1.6 | +0.0 |
+| U6 | asia | +428 | +226 | +74 | +294 | -0.9 | +0.0 | -3.3 | +0.0 |
+| U6 | london | +48 | +61 | +58 | -14 | -0.7 | -0.7 | -1.4 | +0.0 |
+| H6 | asia | -245 | +7 | -20 | +39 | -0.4 | -0.4 | -0.6 | -1.2 |
+| H6 | nyam | -41 | +8 | -57 | -12 | -0.5 | +0.1 | +0.7 | +0.5 |
+| A6 | asia | -103 | +62 | +44 | +27 | +2.8 | +1.3 | +0.0 | +0.0 |
+
+carrying week of the control L6M maxDD: 202637 ; cut with that week dropped 0.262 ; months>0 7 / 7 ; bootstrap 5-95 0.023 0.361
+
+
+| cell (V13T lock=None) | kind | n | L6M cut | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M | rank S_post | ONE-WEEK | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60fw2any | cnt | 100 | +21% | 0.03 | 0.01 | 0.22 | 0.67 | 0.52 | 0.03 | 0.03 | no | beats L6M placebo |
+| CRT4h60fw2any | vol | 100 | +21% | 0.02 | 0.02 | 0.18 | 0.50 | 0.36 | 0.02 | 0.02 | no | beats L6M placebo |
+| CRT4h60fw2any | sday | 100 | +21% | 0.03 | 0.02 | 0.04 | 0.57 | 0.95 | 0.03 | 0.02 | no | beats L6M placebo |
+| camH3_75fw8any | cnt | 100 | +10% | 0.21 | 0.19 | 0.60 | 0.77 | 0.49 | 0.17 | 0.16 | no | no placebo beat |
+| camH3_75fw8any | vol | 100 | +10% | 0.20 | 0.20 | 0.64 | 0.74 | 0.28 | 0.19 | 0.15 | no | no placebo beat |
+| camH3_75fw8any | sday | 100 | +10% | 0.19 | 0.19 | 1.00 | 0.29 | 0.34 | 0.09 | 0.10 | no | no placebo beat |
+
+| lock | cell (V13Z) | phase-avg L6M maxDD cut (range over 5 lock-reset phases) | phase-avg Calmar gain L6M / HOLD / MID / PRE / X' | phases with cut > 0 | phase-avg ship L6M maxDD (range) | phase-avg cell L6M maxDD |
+|---|---|---|---|---|---|---|
+| none | CRT4h60fw2any | +22.5% (+16.6%..+32.6%) | +35% / +36% / +12% / +2% / +3% | 5/5 | 179.6k (163.6..195.3) | 139.1k |
+| none | camH3_75fw8any | +8.8% (+7.6%..+9.8%) | +13% / +15% / +5% / -4% / +11% | 5/5 | 179.6k (163.6..195.3) | 163.8k |
+| none | kijun1h20tstk | +28.2% (+15.3%..+39.0%) | +48% / +33% / -2% / -3% / -7% | 5/5 | 179.6k (163.6..195.3) | 129.3k |
+

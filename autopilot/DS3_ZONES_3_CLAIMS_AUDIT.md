@@ -170,3 +170,6 @@ Recomputed from a fresh V13Y run (lock none and 12R, shipped layer) with my own 
 
 ## Not yet audited
 S4a stage-2 cells beyond the 10 sampled; ZL-3's per-book lock rows and the shipped+LP column; the carrier lists of the episodes file; ZL-2's walk-forward and the ZL-1 definition-grid null; every number on the V12 / V13-assumed bases.
+
+## 14. Update for V13T_LIVE (2026-11-02, appended)
+Headline numbers on V13T_LIVE (xcost 0.80, lock none): band PA9 2% flip L6M .188 / HOLD .182 / MID .212 / PRE .078 / X' .145, 5% flip .219/.205/.322/.099/.182 (n=100, tl_band_final.csv; re-derived from raw pkl by tl_band_final.py, matched the partial n~45 table within 0.04). Shipped layer ranks among 100 random same-size layers: L6M .37, HOLD .37, MID .32, PRE .79, X' .23 (no 0.95). Monthly-refit WF6/WF12 L6M cut -.592/-.831 vs fixed. Statements from earlier sections that said "shipped layer indistinguishable from random" and "no survivor / walk-forward fails" remain true on V13T_LIVE. Statements quoting V13Y band values (15.7/19.9 etc.) are base-specific and should be labelled V13Y. Open: lead placebos, equal-risk and episode-drop were not re-run on V13T_LIVE (verdicts carried from V13Y).

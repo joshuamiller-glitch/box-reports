@@ -76,3 +76,6 @@ On the truth base V13T (V13Z, take lines off, lock none) the natural-reading rul
 
 ## ZL-2 (2026-11-02, correction): LP_AGAINST mask excludes side-N prints
 A print with tape side N has no aggressor and must NEVER qualify as 'against' (my kernel did; 147 rows of the 2,081-row natural mask). Use A/B only: 1,934 rows (Jaccard 0.996 with ZL-1's clean room). Still NOISE on V13T_LIVE (PA9 cut L6M +4.5, X' -28.0; null p 0.14). Page: DS3_ZONES_3_L2_TAPE_V13T_REKEY.md.
+
+## Z2 pointer UPDATE 2 (2026-11-02 ~15:15Z): current Z2 zone candidate on the truth base V13T = CRT4h 60pts fw2 any (rule_id Z2_CRT4h60fw2any), half
+CRT 4h midpoint line (4h bar (high+low)/2, formed at the bar close), fresh (never traded through since formed), age <= 7,200 s, ahead within D = 60 pts and the target distance, any confluence, half lots (replaces the shipped CRT term D20 fresh any age). V13T lock none: L6M maxDD -21% (Calmar +31%), HOLD same, MID +17%, PRE/X' maxDD not cut, dollars >= 0 in every window; beats its three placebos on L6M/HOLD (ranks 0.01-0.03), not on PRE/X'; phase-average +22.5% (5/5); two-episode OK. Label RISK-KEEP (L6M/HOLD only) / LEAD, Shadow only. Log fields as in the Z2 pointer above (crt_line_px, crt_formed_ts_utc, crt_age_s, crt_fresh, crt_dist_pts, shipped_crt_flag, cell_flag, would_action).
