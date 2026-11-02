@@ -1017,3 +1017,52 @@ Z2's audit is right: on the TS base the engine week-key phase does nothing, so t
 * **Add cells (genuine PA9):** add OFF (bound) L6M +60.0 / HOLD +45.4 / MID +22.6 / PRE +28.4 / X' +28.6 with mean -8.6k/wk (volume); 'add only when' T1/T2a/T3a/T4/ER >= .40 pass the band by cancelling adds (mean -4.7 to -8.8k/wk L6M); T3b (own support pulled <= 1/2) +50 / +31 / +2 / +17.5 / +3 with mean +1.0k/wk L6M, -3.7k PRE; every x2 rule fails band or no-harm (e.g. x2 if ER >= .30 else x0.5: L6M -17, MID -70, PRE -32, X' -25); exposure N<8: L6M +17.3 / MID +3.9 / PRE +5.9 / X' -4.4, mean -2.8k. No add cell keeps the mean and passes the band except 'T3b only' whose X' is +3% and PRE mean -3.7k; the size-matched placebos of 2.8 stand (single path).
 ## Files
 pool_inputs_s2.csv REWRITTEN: cut_pre_eqrisk / cut_xp_eqrisk are now PA9-averaged equal-risk cuts (X' for xp), p1_exp_* from a PA9-scored calibration (7 volume levels x 10 permutation draws, cores re-run), noharm_flag from the PA9 judgement, new columns pa9_cut_L6M, pa9_cut_PRE, pa9_cut_X, pa9_band5, pa9_mean_ok, eqrisk_method = pa9_scoring_weekkey_shift; the previous single-path file is kept as pool_inputs_s2_singlepath.csv. PA9 tables: /mnt/l2/l2vast/ds3_zones3_new/sizer_s2ts/pa9_all.pkl, pa9_table.pkl, pa9_add.pkl, plc_pa9.pkl.
+
+
+# S4b: FULL TREATMENT of the one cell that passes PA9 band + no-harm + mean (gate pulled_ahd10 d-1 GU1) - written 23:15Z
+## 1. Verdict: it does NOT survive with the carrying week dropped; not flagged
+* **Genuine PA9 (scoring week key shifted -4..+4):** L6M +32.9% / PRE +10.8% / X' -13.8%. **With the carrying episode dropped (harness CAR weeks on each shifted key): L6M +15.3% (band .219), PRE +6.6% (band .099), X' +14.0%**: both required windows fall below the band, i.e. the cut is carried by the L6M and PRE worst episode (ONE-EPISODE).
+* **Equal-risk (engine lot scale):** L6M lscale 1.19, mean at equal risk 45.8k/wk vs the reference's fitted 35.9k (+10.0k/wk; the maxDD fit has R2 0.87, noisy); PRE lscale 1.09, 16.9k vs 15.5k/wk (+1.4k). The up-size cancelled by the gate removes risk faster than it removes mean in the recent windows.
+* **Mean:** +0.8k/wk L6M, but over the whole history the cell minus reference sums to -229k (-1.2k/wk): the monthly table (section 4) shows 18 of 43 months positive. Placebo cut ranks at chance (L6M 0.29-0.39, PRE 0.50-0.53; previous section).
+* **Family-wise (section 3): 1 of 2,128 is what the null gives.**
+## 2. The rule in plain language (live-computable)
+* For a signal of book B at the signal second: ER(20) 5-min as live. **If ER >= 0.30 (the live x1.5 up-size) AND the 10-second pulled-liquidity-ahead multiple is in the top third of book B's own history, use x1.0 instead of x1.5** (the x0.5 branch is unchanged; the zone half, integer lots and locks as live).
+* Pulled-liquidity-ahead multiple (10 s) = (size cancelled at levels 1-10 of the AHEAD side in the last 10 seconds, summed from the 1-s L2 table rows with second <= signal second: for a LONG the ask side sz_can_a1 + sz_can_a23 + sz_can_a410, for a SHORT the bid side sz_can_b*) / (median of the 10 displayed level sizes of that same side at the signal second). Array: /mnt/l2/l2vast/ds3_flow1s/pulled_ask10 (long) / pulled_bid10 (short).
+* Rank r = (number of EARLIER signals of the same book with a valid multiple strictly below this signal's) / (number of earlier valid signals of the book); defined once the book has >= 100 earlier signals (else the gate does nothing). The gate fires when r > 2/3 (direction -1 of the grid cell: r' = 1 - r < 1/3).
+* It touches 2,172 of 17,396 taken signals with live lots (12.5%). By book x session (touched share of the taken signals): HM nyam 30.7%, PE nyam 30.2%, KB nyam 26.1%, MV nyam 26.0%, PB asia 25.5%, KB nypm 15.9%, SM london 11.5%, SM asia 8.1%, and 4.6-7.1% in the other asia/london cells. The gate is mostly a NY-AM rule: the multiple is very large at the open (hundreds of cancelled lots against a 3-5 lot median level), so the per-book rank puts NY-AM signals in the top third.
+* Lots distribution of the cell (taken signals), by book x session:
+| book | session | n taken | mean lots | max lots | x0.25 | x0.5 | x0.75 | x1 | x1.5 (share %) |
+|---|---|---|---|---|---|---|---|---|---|
+| HM | asia | 1815 | 3.03 | 6 | 13.3 | 50.1 | 6.5 | 5.4 | 24.7 |
+| HM | nyam | 1435 | 1.06 | 2 | 7.2 | 57.6 | 0.8 | 29.1 | 5.2 |
+| KB | asia | 2293 | 1.66 | 3 | 14.0 | 48.1 | 6.0 | 4.3 | 27.6 |
+| KB | london | 1660 | 1.68 | 3 | 9.1 | 52.5 | 4.2 | 5.1 | 29.2 |
+| KB | nyam | 1882 | 1.07 | 2 | 8.4 | 60.0 | 0.8 | 24.6 | 6.1 |
+| KB | nypm | 1361 | 1.50 | 3 | 8.7 | 57.5 | 1.8 | 15.9 | 16.2 |
+| MV | london | 1576 | 1.84 | 3 | 6.0 | 47.2 | 3.7 | 6.1 | 36.9 |
+| MV | nyam | 1947 | 1.08 | 2 | 6.8 | 59.7 | 0.8 | 25.2 | 7.4 |
+| PB | asia | 1108 | 1.44 | 2 | 4.2 | 28.7 | 9.3 | 23.5 | 34.4 |
+| PE | asia | 2177 | 6.37 | 11 | 9.0 | 47.4 | 5.1 | 5.9 | 32.5 |
+| PE | london | 1606 | 6.65 | 11 | 6.6 | 47.5 | 2.2 | 7.8 | 35.8 |
+| PE | nyam | 920 | 5.32 | 11 | 5.1 | 57.6 | 0.7 | 28.9 | 7.7 |
+| SM | asia | 690 | 3.81 | 6 | 7.1 | 29.1 | 17.5 | 7.2 | 39.0 |
+| SM | london | 680 | 3.39 | 6 | 12.8 | 36.3 | 10.1 | 10.7 | 30.0 |
+Worst single-day exposure of the cell: max net lots 28 (stack risk $33.6k) on 2026-09-18, 2025-10-14 and 2025-08-06 (day table in /mnt/l2/l2vast/ds3_zones3_new/sizer_s2ts/gate_full.pkl, 'exposure'['days']).
+* Worked rows (touched signals; the multiple and the rank are recomputed here from the raw L2 table rows and from the book's earlier signals and reproduce the stored arrays to 1e-7; the first touched row of each book after 2026-01-01, plus the first touched long):
+| tid | book | session | day | side | ER(20) 5m | ladder | pulled-ahead 10 s mult | earlier signals of the book / strictly below | rank r | rank in file | session lots | lots live -> gated |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 4005220 | KB | nyam | 20260102 | -1 | 0.396 | x1.5 | 557.3 | 5219 / 4874 | 0.9339 | 0.9339 | 1 | 2 -> 1 |
+| 6005089 | PE | nyam | 20260102 | -1 | 0.475 | x1.5 | 255.4 | 5089 / 4027 | 0.7913 | 0.7913 | 7 | 11 -> 7 |
+| 5001692 | SM | asia | 20260130 | -1 | 0.597 | x1.5 | 160.3 | 1692 / 1232 | 0.7281 | 0.7281 | 4 | 6 -> 4 |
+| 2003957 | HM | nyam | 20260102 | -1 | 0.352 | x1.5 | 748.0 | 3957 / 3860 | 0.9755 | 0.9755 | 1 | 2 -> 1 |
+| 9004911 | MV | nyam | 20260102 | -1 | 0.396 | x1.5 | 337.2 | 4901 / 4082 | 0.8329 | 0.8329 | 1 | 2 -> 1 |
+| 2003961 | HM | asia | 20260105 | +1 | 0.381 | x1.5 | 170.5 | 3961 / 2916 | 0.7362 | 0.7362 | 4 | 6 -> 4 |
+Raw check of the multiple for the five shorts (cancelled size in the last 10 s on the bid side / median bid level): KB 1672/3.0 = 557.3, PE 1277/5.0 = 255.4, SM 481/3.0 = 160.3, HM 2244/3.0 = 748.0, MV 1349/4.0 = 337.25. Sized lots with the gate: the x1.5 (rounded) becomes the session lots (e.g. PE 7 lots x1.5 -> 11 becomes 7).
+## 3. Family-wise null: does any cell pass band + no-harm + mean by chance?
+Shuffled-day multiplier worlds: 1,500 draws, each = a random cell of the 2,128-cell grid with its multiplier vector moved to other days (harness 'dayshuf'), engine run, genuine PA9 judged with the same rules. Null rates per draw: band 38.5% (577), band and no-harm 3.5% (53), band and mean kept 0.33% (5), noharm and mean kept 0.07% (1), **all three 0 of 1,500** (rule-of-3 upper bound 0.20% per cell). Real grid: band 30.4% (648), band and no-harm 9.9% (210), band and mean kept 1.1% (24), all three **1 of 2,128**. Chaining the null stages (P(band and mean kept) x P(no-harm | band) = 0.0033 x 0.092 = 0.0003) the expected number of triple-passing cells in 2,128 is about 0.65 (P(at least one) = 48%); at the 95% upper bound 4.3. **One passing cell is at chance; it is not evidence of a signal.** The real grid does have more cells with band and no-harm (9.9% vs 3.5%) and with band and mean kept (1.1% vs 0.33%) than the shuffled-day worlds, which is the volume/time-of-day structure of the features (cells that size down in the weak periods), not a surviving rule.
+## 4. Monthly stability (cell minus reference total, $k per month; touched taken signals per month)
+| month | 202304 | 202305 | 202306 | 202307 | 202308 | 202309 | 202310 | 202311 | 202312 | 202401 | 202402 | 202403 | 202404 | 202405 | 202406 | 202407 | 202408 | 202409 | 202410 | 202411 | 202412 | 202501 | 202502 | 202503 | 202504 | 202505 | 202506 | 202507 | 202508 | 202509 | 202510 | 202511 | 202512 | 202601 | 202602 | 202603 | 202604 | 202605 | 202606 | 202607 | 202608 | 202609 | 202610 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| cell minus reference, $k | +0 | +2 | -29 | +36 | -40 | -6 | -1 | -2 | +2 | +7 | +2 | -25 | -19 | -16 | -4 | -61 | -19 | +13 | +8 | -3 | -31 | -24 | +14 | +39 | -20 | -51 | +20 | -17 | -2 | -12 | -24 | +24 | +9 | -19 | +27 | -12 | -16 | +12 | -66 | +67 | +11 | -5 | +3 |
+| touched taken signals | 0 | 26 | 40 | 26 | 48 | 22 | 37 | 20 | 19 | 19 | 27 | 27 | 47 | 19 | 16 | 67 | 66 | 53 | 52 | 41 | 30 | 46 | 53 | 52 | 136 | 54 | 38 | 24 | 32 | 19 | 60 | 74 | 44 | 52 | 61 | 134 | 81 | 84 | 129 | 85 | 46 | 75 | 91 |
+18 of 43 months positive; best +67k (2026-07), worst -66k (2026-06), -61k (2024-07), -51k (2025-05), -40k (2023-08): the L6M gain is two offsetting months (2026-06 / 2026-07) around a rule that costs money in most other months. NOT A LEAD, no flag.
