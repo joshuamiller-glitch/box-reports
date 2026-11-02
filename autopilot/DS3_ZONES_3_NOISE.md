@@ -73,3 +73,50 @@ ZL1 (74 cells, tape/book zones): 0 cells pass. ZONES3S4A (1,328 screen cells): 1
 ## Reading
 A one-line zone change (hundreds to ~1,500 rows) moves the L6M maxDD by up to 22-31% and the PRE maxDD by 26-53% (95th percentile) by chance on this base; MID is the noisiest (55-64% for flips of 1-5%) because its shipped maxDD is one 43k episode. The earlier observation (4 walk-forward switches moving MID maxDD by -83%) is therefore inside the band. Apparent drawdown cuts below about 30% in L6M, 50% in PRE or 31% in X' are not evidence on this base.
 Caveats: n per type is small in this interim (27-30 draws, so the 95th percentile of |cut| is the top 1-2 draws); the band is for the information-free perturbation types used here (random row drops and random half-lot flips), not for a timing-structured perturbation; it is specific to the assumed base and to N fills. Code `l2vast/ds3/code/zones3_s3/noise7.py`, `noise_an.py`, `noise_fin.py`.
+
+
+# V13X (D7 v1.3 EXACT) noise band - appended 2026-11-02 04:15Z. The section above is the ASSUMED-base interim (V13-assumed); this one is the headline. Interim n = 43-44 draws per type (lock 12R) / 37-38 (lock-off) of 300 planned; the run continues (`out/zones3/s3_v13x/noise_*_0.pkl`, `noise_an6.py` recomputes).
+Base: V13X.run_v13x, live11 lots, exact U7 (never binds), exact take lines, lock 12R (and engine-own per-book locks only for 'off'). Live candidate rows 26,645. Same perturbations: drop k = 1,3,10,30 random live rows; halve lots of a random 0.5/1/2/5 % of the live rows. Band = 95th percentile of |maxDD change| / shipped maxDD of the window.
+Shipped V13X maxDD (12R): L3M 39.9k, L6M 73.9k, HOLD 119.2k, MID 78.5k, PRE 252.4k, X' 173.7k.
+## Band, lock 12R
+| type | L3M | L6M | HOLD | MID | PRE | X' | n |
+|---|---|---|---|---|---|---|---|
+| drop 1 | 0.000 | 0.007 | 0.000 | 0.000 | 0.000 | 0.003 | 44 |
+| drop 3 | 0.000 | 0.009 | 0.000 | 0.000 | 0.006 | 0.012 | 44 |
+| drop 10 | 0.000 | 0.008 | 0.021 | 0.004 | 0.117 | 0.034 | 44 |
+| drop 30 | 0.063 | 0.066 | 0.062 | 0.053 | 0.100 | 0.047 | 44 |
+| flip 0.5 | 0.178 | 0.298 | 0.140 | 0.098 | 0.136 | 0.126 | 44 |
+| flip 1.0 | 0.152 | 0.326 | 0.129 | 0.096 | 0.153 | 0.193 | 44 |
+| flip 2.0 | 0.246 | 0.302 | 0.281 | 0.241 | 0.178 | 0.256 | 44 |
+| flip 5.0 | 0.311 | 0.358 | 0.396 | 0.299 | 0.277 | 0.287 | 43 |
+
+## Band, lock-off (engine's own per-book locks only)
+| type | L3M | L6M | HOLD | MID | PRE | X' | n |
+|---|---|---|---|---|---|---|---|
+| drop 1 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 38 |
+| drop 3 | 0.002 | 0.006 | 0.006 | 0.000 | 0.018 | 0.007 | 38 |
+| drop 10 | 0.018 | 0.019 | 0.019 | 0.011 | 0.037 | 0.050 | 38 |
+| drop 30 | 0.074 | 0.143 | 0.107 | 0.068 | 0.098 | 0.048 | 38 |
+| flip 0.5 | 0.104 | 0.087 | 0.091 | 0.083 | 0.091 | 0.097 | 38 |
+| flip 1.0 | 0.150 | 0.105 | 0.096 | 0.148 | 0.140 | 0.076 | 38 |
+| flip 2.0 | 0.178 | 0.148 | 0.148 | 0.189 | 0.205 | 0.131 | 38 |
+| flip 5.0 | 0.211 | 0.214 | 0.214 | 0.343 | 0.202 | 0.287 | 37 |
+
+## Rule (unchanged): a cut counts only if cut > band of its window in L6M AND in PRE or X' (same sign), band row = nearest in rows changed (zone unit ~1,000-2,000 rows: flip 5.0; ~500 rows: flip 2.0).
+## Re-expression (V13X band, lock 12R)
+Z3 cells (91 non-shipped V13X grid cells): **passing the rule: 0**; cells with >= 3 windows above band: 0. Largest L6M cut/band:
+| unit | action | rows | band type | cut L6M | cut/band L6M | cut PRE | cut/band PRE | cut X | cut/band X |
+|---|---|---|---|---|---|---|---|---|---|
+| OTE705 | d1 | 1024 | flip 5.0 | 0.32 | 0.9 | -0.13 | -0.47 | 0.12 | 0.41 |
+| OTE705 | d3 | 1024 | flip 5.0 | 0.26 | 0.72 | -0.02 | -0.07 | -0.07 | -0.24 |
+| OTE705 | d5 | 1024 | flip 5.0 | 0.24 | 0.68 | -0.15 | -0.54 | -0.07 | -0.26 |
+| OTE705 | rb | 1024 | flip 5.0 | 0.23 | 0.65 | -0.13 | -0.45 | 0.01 | 0.05 |
+| OTE705 | b73 | 1024 | flip 5.0 | 0.23 | 0.63 | -0.13 | -0.49 | 0.02 | 0.09 |
+| OTE79 | d1 | 1141 | flip 5.0 | 0.22 | 0.62 | -0.08 | -0.28 | -0.04 | -0.15 |
+| OTE79 | d3 | 1141 | flip 5.0 | 0.21 | 0.59 | -0.1 | -0.37 | -0.09 | -0.33 |
+| bar4hmid | rt | 777 | flip 2.0 | 0.15 | 0.49 | -0.0 | -0.01 | -0.1 | -0.39 |
+
+ALL7 skip on V13X: L6M -7.2%, HOLD +25.9%, MID +33.7%, PRE +15.2%, X' +34.2% - L6M is negative (fails), PRE +15% sits below its band (18-28%), HOLD/MID/X' exceed it (14-40%): **PARTIAL (older + HOLD/MID windows only), not L6M**. It is not ONE-WEEK (drop-5-weeks minimum +7% HOLD, +4% PRE) but its month-block bootstrap P(cut>0) is 0.50 (HOLD) / 0.83 (PRE) and the interval spans zero.
+Other programs' cuts (DEAD_CELLS, scored on the assumed base): ZL1 0 of 74 pass; ZONES3S4A 7 of 1,328 pass at flip 2.0 and 3 at flip 5.0 (the lead should have the S4 owners re-score those on V13X before calling any a lead; their L6M/PRE signs flip with the base).
+## Noise-floor facts that matter
+(1) the walk-forward chains' whole-period cut (+16% / +26%) is inside the flip-2/5% band (PRE 18-28%), so it is not a cut; (2) the 'drop 30' perturbation (30 random rows of 26,645 = 0.1%) already moves PRE maxDD by up to 10%; (3) lock-off bands are smaller than 12R bands in L6M (15-21% vs 30-36%): the 12R lock amplifies path noise; (4) one-day lock-reset shift not run.

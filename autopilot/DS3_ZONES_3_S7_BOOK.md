@@ -603,3 +603,80 @@ PRE: total -37.8k; Asia -20.0k; non-Asia -17.7k
 PUL D20 skip month chain (V13X): 43 months, positive 23, negative 14, zero 6; total +13.2k, 2026-09 +64.0k, other months -50.8k (t -0.37)
 
 Reading (V13X is the headline; every table above this block is the ASSUMED base): on the exact base the pulled-wall cell gets BETTER where the assumed base had it fail (PRE +22%, X' +20%, L6M +29%) and is flat where the assumed base had it large (HOLD +0.4%: the HOLD maxDD episode is not touched). It is not carried by the 2026-09 episode on this base (L6M cut +26% without W37; the month chain is +13.2k in total, +64.0k in 2026-09 and -50.8k in the other 42 months, so it is a drawdown-shape effect, not a mean effect). Against the placebos the L6M cut is the only window with ranks <= 0.1; PRE/X' ranks are 0.15-0.2 (X' with random-rows placebo 0.016). Label LEAD (weak); the SWP lvl_swing D60 candidate flips sign in L6M/MID and is DEAD as a base-dependent result.
+
+
+## HEADLINE V13X (exact base), stage x2: definition grid (D 10/20/30/40/60, 25/50/75% of target, 1h/4h/24h keep, BEHIND D20 skip/half, AT 2 pts size-up; skip and half) for the other 10 book streams + PUL k3/k5 (154 cells; AT take-only not scored: volume artefact, it removes 99% of trades)
+Base maxDD $k: L1M 16.4, L3M 39.9, L6M 73.9, HOLD 119.2, MID 78.5, PRE 252.4, X' 173.7.
+Best cell per stream by min(L6M cut, PRE cut, X' cut):
+| stream               |   cells |   best_min_L6M_PRE_X |   best_L6M |   best_PRE |
+|:---------------------|--------:|---------------------:|-----------:|-----------:|
+| PUL|k3|4h            |       4 |                0.15  |      0.297 |      0.209 |
+| PUL|k5|24h           |       2 |                0.132 |      0.132 |      0.185 |
+| PUL|k5|4h            |      13 |                0.027 |      0.132 |      0.152 |
+| SWP|ext_sess_N5|4h   |      13 |                0.005 |      0.039 |      0.249 |
+| DEF|k3N30|4h         |      13 |                0.004 |      0.019 |      0.101 |
+| ABS|k1N10|24h        |       2 |                0     |      0     |      0.015 |
+| SWP|ext_pd_N5|4h     |      13 |                0     |      0     |      0.334 |
+| SWP|lvl_pd_N5|4h     |      13 |                0     |      0     |      0.054 |
+| ABS|k1N10|4h         |      13 |                0     |      0     |      0.081 |
+| ICE|R3N30|4h         |      13 |                0     |      0     |      0     |
+| DEF|k3N10|4h         |      13 |               -0.001 |      0.067 |      0.15  |
+| SWP|ext_swing_N5|1h  |      13 |               -0.004 |     -0.004 |      0.254 |
+| SWP|ext_sess_N5|24h  |       2 |               -0.009 |      0.045 |      0.249 |
+| ICE|R3N30|24h        |       2 |               -0.015 |      0     |      0     |
+| SWP|lvl_pd_N5|24h    |       2 |               -0.027 |     -0.025 |      0.035 |
+| SWP|lvl_swing_N5|4h  |      13 |               -0.034 |     -0.019 |      0.25  |
+| DEF|k3N30|24h        |       2 |               -0.059 |     -0.059 |      0.051 |
+| SWP|ext_pd_N5|24h    |       2 |               -0.06  |     -0.06  |      0.302 |
+| DEF|k3N10|24h        |       2 |               -0.189 |     -0.154 |      0.187 |
+| SWP|lvl_swing_N5|24h |       2 |               -0.362 |     -0.362 |      0.311 |
+| SWP|ext_swing_N5|24h |       2 |               -0.688 |     -0.688 |      0.263 |
+Reading: on the exact base no stream except PUL reaches a 15% cut in L6M, PRE and X' together (ABS, ICE, DEF, SWP pd/sess/swing: DEAD in the AHEAD, BEHIND and AT frames); PUL k3 4 h D30 (min 15%) and PUL k5 24 h D40 (min 13%) are the only others. Full cells: out/zl_new/x2_cells.csv.
+
+
+## HEADLINE V13X LOCK-OFF (engine per-book locks only, no combined 12R) - PUL k3
+Lock-off base maxDD $k: L1M 36.6, L3M 49.9, L6M 132.6, HOLD 132.6, MID 62.6, PRE 178.4, X' 134.8.
+| cell (skip) | nflag | L3M | L6M | HOLD | MID | PRE | X' |
+|--|--|--|--|--|--|--|--|
+| PUL k3 4h D20 | 1564 | -1% | +1% | +1% | -14% | +17% | +11% |
+| PUL k3 4h D30 | 1927 | +11% | +8% | +2% | -55% | +13% | +11% |
+| PUL k3 24h D20 | 2164 | +6% | +6% | 0% | -16% | +13% | +10% |
+| PUL k3 4h D20 Asia-only | 860 | +25% | +12% | +7% | +9% | +6% | +9% |
+Placebos on lock-off (20 draws per kind, D20): PRE cut +17% vs placebo mean -6..+4% (ranks 0.10 all kinds); X' +11% (ranks 0.05-0.52); L6M +1% vs placebo -0..+7% (rank 0.43-0.62).
+Reading: with the combined 12R lock ON the PUL cell cuts L6M maxDD 29% (V13X), with the lock OFF it cuts 1%: the L6M effect is a property of how the lock engine reacts to the skipped rows, not a standalone drawdown cut. What survives without the lock is PRE +13..+17% and X' +10..+11% (placebo ranks 0.05-0.52). Label: FRAGILE (lock-dependent), LEAD only for PRE/X'.
+
+
+## HEADLINE V13X, B4 liquidity pools (stage x4): LQP streams = UNSWEPT swing (fractal-5) and equal (2 / 3 touches within 1 pt, nothing beyond between) highs and lows on 15m / 1h / 4h path bars (31,214 levels to 20261030; fresh until price touches the level; kept 5 days; POI format in out/zl_new/streams_book/LQP*; causal audit 97/97 rows reproduced from as-of-truncated data, 0 index violations); AHEAD D20/40 and BEHIND D20 skip/half
+Best cell per stream by min(L6M, PRE, X' cut):
+| stream       |   cells |   best_min |   best_L6M |   best_PRE |   best_Xp |
+|:-------------|--------:|-----------:|-----------:|-----------:|----------:|
+| LQP|swH|15m  |       6 |      0.078 |      0.083 |      0.352 |     0.192 |
+| LQP|eqL2|15m |       6 |      0.019 |      0.085 |      0.019 |     0.02  |
+| LQP|eqH2|15m |       6 |      0.017 |      0.017 |      0.11  |     0.11  |
+| LQP|swL|4h   |       6 |      0.008 |      0.008 |      0.162 |     0.139 |
+| LQP|eqH2|1h  |       6 |      0     |      0     |      0.012 |     0.017 |
+| LQP|eqH3|1h  |       6 |      0     |      0     |      0     |     0     |
+| LQP|eqH3|15m |       6 |      0     |      0     |      0.006 |     0.021 |
+| LQP|eqL3|15m |       6 |      0     |      0     |      0     |     0     |
+| LQP|eqL2|1h  |       6 |      0     |      0     |      0     |     0     |
+| LQP|swH|1h   |       6 |      0     |      0.005 |      0.232 |     0.039 |
+| LQP|swH|4h   |       6 |      0     |      0.015 |      0.118 |     0     |
+| LQP|swL|15m  |       6 |      0     |      0.143 |      0.127 |     0.276 |
+| LQP|swL|1h   |       6 |      0     |      0     |      0.383 |     0.12  |
+
+Sweep-then-reverse frame (a swept-and-reclaimed level BEHIND the entry within 5 / 10 pts = the reversal has started; size x1.5) and the sweep streams as skip ahead (x2 above): 
+| stream              | frame   |   D | act   |   nflag |   L3M |   L6M |   HOLD |   MID |    PRE |     X' |   dmean_HOLD |      m |
+|:--------------------|:--------|----:|:------|--------:|------:|------:|-------:|------:|-------:|-------:|-------------:|-------:|
+| SWP|lvl_pd_N5|4h    | BH      |   5 | up    |       0 | 0     | 0     |      0 |     0 |  0     |  0     |        0     |  0     |
+| SWP|lvl_pd_N5|4h    | BH      |  10 | up    |       0 | 0     | 0     |      0 |     0 |  0     |  0     |        0     |  0     |
+| SWP|ext_pd_N5|4h    | BH      |   5 | up    |       0 | 0     | 0     |      0 |     0 |  0     |  0     |        0     |  0     |
+| SWP|ext_pd_N5|4h    | BH      |  10 | up    |       0 | 0     | 0     |      0 |     0 |  0     |  0     |        0     |  0     |
+| SWP|lvl_sess_N5|4h  | BH      |   5 | up    |       5 | 0     | 0     |      0 |     0 |  0     |  0     |        0     |  0     |
+| SWP|lvl_sess_N5|4h  | BH      |  10 | up    |       9 | 0     | 0     |      0 |     0 |  0     |  0.004 |        0     |  0     |
+| SWP|ext_sess_N5|4h  | BH      |   5 | up    |       4 | 0     | 0     |      0 |     0 |  0     |  0     |        0     |  0     |
+| SWP|ext_sess_N5|4h  | BH      |  10 | up    |      11 | 0     | 0     |      0 |     0 |  0     |  0.004 |        0     |  0     |
+| SWP|lvl_swing_N5|4h | BH      |   5 | up    |      68 | 0     | 0     |      0 |     0 |  0     | -0.012 |        0     | -0.012 |
+| SWP|lvl_swing_N5|4h | BH      |  10 | up    |     165 | 0.008 | 0.004 |      0 |     0 |  0     | -0.011 |       19.924 | -0.011 |
+| SWP|ext_swing_N5|4h | BH      |   5 | up    |      88 | 0     | 0     |      0 |     0 |  0     |  0.004 |        0     |  0     |
+| SWP|ext_swing_N5|4h | BH      |  10 | up    |     248 | 0.008 | 0.004 |      0 |     0 | -0.113 | -0.006 |        7.84  | -0.113 |
+Reading: no liquidity-pool cell reaches 15% on L6M, PRE and X' together (best LQP swH 15m D20 half: L6M +8%, PRE +24%, X' +8%); unswept swing/equal levels ahead are not skip zones on the exact base, and the sweep-then-reverse size-up has no effect (nflag small, cuts about 0). DEAD. The measured pool sizes (tape) stay with ZL-2 (DS3_ZONES_3_L2_TAPE.md): the unswept levels cannot know their pool before the break, only after.
