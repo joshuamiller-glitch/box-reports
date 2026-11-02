@@ -25,3 +25,6 @@ Null (400 families: price-offset and shuffled-day, thinned to the same row count
 
 ## Pages
 DS3_ZONES_3_L2_TAPE_V13Y.md (leads V13X->V13Y, screen), _V13Y_PA.md (phase-averaged re-flag, side table), _LP_AGAINST.md, _LARGEPRINT_V13Y.md, _POC.md (V13X, defect base), _LOCKNONE.md (V13X), ROW_LEVEL(_V13Y).md, B7_ASIA_CUBE.md (V13X), _REGIME.md; chain files chain_V13Y_*_{nolock,12R}.csv in /mnt/l2/l2vast/ds3_zones3_new/ZL-2/ for the register; forward-shadow spec lines for the large-print rule in FORWARD_SHADOW_ZONES_SPEC.md.
+
+## UPDATE 2026-11-02 (natural reading adopted) - Flag #2 relabelled
+Natural touch reading is now PRIMARY (see DS3_ZONES_3_L2_TAPE_LP_AGAINST_NATURAL.md): 2,081 rows; saved $k lock none L6M 43 / HOLD 61 / PRE 96 / X' 1 / ALL 137 (ZL-1 clean-room 44/53/56/-11/83); 2,001-family null p 0.037 on min(L6M,HOLD,PRE), 0.18 with X'; PA band FAIL (L6M +12.4 vs 15.5, PRE +2.5, X' -13.7); walk-forward default +206k t 3.4. Final label: LEAD-weak, Shadow only. The text above this section is the legacy-convention version.

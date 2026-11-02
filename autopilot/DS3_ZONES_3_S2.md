@@ -636,3 +636,24 @@ V13Y l12 full screen: 1933 changed distinct-key cells; S_hon>0 0.38, S_post>0 0.
 | camH3 | POST-HOC | camH3|60pts|touched|any | 88.0 / 107.5 / 56.4 / 185.3 / 149.2 | -37% / -10% / -2% / +35% / -5% | +0.9 (10.4) | -/T/N | no | 2, -0.08, 1/2 | -0.30 (202604-202608) |
 | kijun1h | HONEST | kijun1h|40pts|fresh|any | 58.9 / 88.9 / 56.7 / 235.3 / 107.3 | +2% / +11% / -7% / +19% / +7% | +3.0 (9.1) | S/T/N | no | 4, +0.08, 4/4 | +0.10 (202314-202323) |
 | kijun1h | POST-HOC | kijun1h|40pts|fw1|solo | 58.0 / 90.0 / 54.1 / 270.0 / 125.7 | +5% / +11% / +1% / +3% / -1% | +3.3 (9.1) | -/T/N | no | 3, +0.03, 2/3 | +0.07 (202604-202608) |
+
+
+## s2 FINAL ON V13Y (fixed base), lock=None placebos n=100 per kind (Z2, ~11:00Z 2026-11-02)
+**Verdict:** on the fixed base nothing in section 2 is a lead in both lock frames and nothing beats its L6M maxDD placebos. camH3 40pts fw8 any: L6M maxDD cut +8% (not ONE-WEEK), ranks 0.15-0.18 on L6M, X' sday 0.05: LEAD-weak, inside MDE. PDmid 40pts fw1 stacked: no maxDD cut (+0%), but HOLD ranks 0.02, PRE 0.05-0.07, S_post 0.01-0.05 against count/volume placebos (Calmar gain through the mean: HOLD +14%): LEAD-weak, mean-side. camH3 75%tgt fw8 any: X' ranks 0.01-0.02 only. CRT4h 30pts fw2 solo (the withdrawn V13X lead): ranks 0.34-0.80, nothing; CRT4h 20pts fw1 solo: nothing. V13X lead withdrawn: its apparent L6M cut and STRICT status came from the dropped-exit defect. Lock-12R-only: CRT4h 60pts fresh any (L6M +24%), kijun1h 40pts fresh any = LOCK-ONLY. B2 round numbers on V13Y: R50 75%tgt L6M cut +44% with PRE Calmar -11% (recent-type volume effect), R25 reversed: no lead. Recommendation for the policy file: keep the shipped D20 fresh half on all seven lines; the only items to carry into a forward shadow are camH3 40pts fw8 any and PDmid 40pts fw1 stacked as LEAD-weak, shadow-only. NOT done on V13Y: best-of-N null (the V13X null was stopped; the grid-level evidence is the gate counts: 48 STRICT / 86 TOLERANT of 1,902 lock-none cells and 61 / 137 of 1,933 lock-12R cells, 0 RISK-KEEP in both), Asia-restricted placebos, phase-averaged check, session-level lock-none stage (all on the V13X defect base only).
+| cell (V13Y lock=None) | kind | n | L6M cut | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M | rank S_post | ONE-WEEK | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| camH3_40fw8any | cnt | 100 | +8% | 0.17 | 0.43 | 0.18 | 0.39 | 0.17 | 0.16 | 0.17 | no | no placebo beat |
+| camH3_40fw8any | vol | 100 | +8% | 0.18 | 0.40 | 0.25 | 0.36 | 0.18 | 0.15 | 0.13 | no | no placebo beat |
+| camH3_40fw8any | sday | 100 | +8% | 0.15 | 0.35 | 0.63 | 0.51 | 0.05 | 0.12 | 0.16 | no | no placebo beat |
+| camH3_75fw8any | cnt | 100 | +2% | 0.35 | 0.28 | 0.22 | 0.35 | 0.02 | 0.33 | 0.27 | no | no placebo beat |
+| camH3_75fw8any | vol | 100 | +2% | 0.40 | 0.38 | 0.21 | 0.35 | 0.02 | 0.44 | 0.33 | no | no placebo beat |
+| camH3_75fw8any | sday | 100 | +2% | 0.29 | 0.35 | 0.64 | 0.42 | 0.01 | 0.24 | 0.26 | no | no placebo beat |
+| CRT4h20fw1solo | cnt | 100 | -1% | 0.67 | 0.10 | 0.93 | 0.59 | 0.62 | 0.43 | 0.16 | no | no placebo beat |
+| CRT4h20fw1solo | vol | 100 | -1% | 0.66 | 0.12 | 0.94 | 0.67 | 0.75 | 0.52 | 0.21 | no | no placebo beat |
+| CRT4h20fw1solo | sday | 100 | -1% | 0.42 | 0.35 | 0.33 | 0.54 | 0.34 | 0.26 | 0.22 | no | no placebo beat |
+| PDmid_40fw1stk | cnt | 100 | +0% | 0.55 | 0.02 | 0.60 | 0.07 | 0.96 | 0.27 | 0.05 | no | no placebo beat |
+| PDmid_40fw1stk | vol | 100 | +0% | 0.47 | 0.02 | 0.61 | 0.05 | 0.90 | 0.19 | 0.01 | no | no placebo beat |
+| PDmid_40fw1stk | sday | 100 | +0% | 0.40 | 0.09 | 0.41 | 0.05 | 0.67 | 0.34 | 0.17 | no | no placebo beat |
+| CRT4h30fw2solo | cnt | 100 | -0% | 0.47 | 0.72 | 0.80 | 0.45 | 0.49 | 0.48 | 0.50 | no | no placebo beat |
+| CRT4h30fw2solo | vol | 100 | -0% | 0.52 | 0.79 | 0.80 | 0.38 | 0.54 | 0.52 | 0.60 | no | no placebo beat |
+| CRT4h30fw2solo | sday | 100 | -0% | 0.34 | 0.53 | 0.25 | 0.13 | 0.24 | 0.31 | 0.32 | no | no placebo beat |

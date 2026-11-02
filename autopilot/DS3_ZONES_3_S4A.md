@@ -2,7 +2,7 @@
 
 **BASE LABEL: this file is on D7 V13Y (the fixed base: add-fill ordering fix; V13X results are in DS3_ZONES_3_S4A_V13X_DEFECT_BASE.md and are labelled defect base). Original V13X note: sections 0-14 were on V13X = DEFECT BASE (BASE-4 found d7lib dropped TH-L2 loss cuts and take-line exits that preceded the resting-add fill, 846 rows). Section 15 re-runs the leads on the FIXED base V13Y; the full V13Y re-screen is in progress and will replace the headline. Original header: D7 v1.3 EXACT (V13X, user paste 02:45Z). HEADLINE FRAME = combined stack lock OFF (lock=None: the engine's own per-book 12R week floor and day give-back locks remain), as the lead ordered at 04:30Z; the same cells with the combined 12R lock ON are in the columns marked 'lock12'. A cut that exists only with lock 12 is LOCK-ONLY. The older assumed-base file is DS3_ZONES_3_S4A_ASSUMED_BASE.md.**
 
-STATUS: S4a deliverable written 2026-11-02 10:20Z (V13Y; placebos 100 draws x3 for the 3 band-relevant cells, none for the rest; BEHIND/AT on V13Y pending, V13X versions are in the defect-base file). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
+STATUS: S4a deliverable written 2026-11-02 10:58Z (V13Y; placebos 100 draws x3 for the 3 band-relevant cells, none for the rest; BEHIND/AT on V13Y pending, V13X versions are in the defect-base file). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
 Prereg l2vast/ds3/prereg/ZONES3_S4A_prereg.md sha256 e8d9004f35ecf860d2beaac5372bdd274862c0db1225523eb12a877ac3fcb66d (DECISIONS.md). dead_lookup before: out/zones3_new/s4a_dead_lookup.txt (NOT FOUND for every spec); append_cells after: see end. NEW windows only (code/cap/windows.py): L1M L2M (view, n weeks 5/9) L3M L6M HOLD MID PRE X'. Old-cap numbers are not used.
 
 ## 0. Plain verdict
@@ -134,7 +134,67 @@ Sessions: a zone cut that lives in one session only is a different product (Asia
 
 ## 6. BEHIND and AT frames (v1.3 + U7; streams = the 19 distinct finalist streams (top 20 ranks); cut vs the v1.3 base)
 
-(frames pending)
+BEHIND: fresh POI between entry and stop within Db pts; actions skip / half / restop (stop moved to line - 2 ticks, only if tighter than the library stop; core books; re-simulated with the same jrun kernel as the engine, tie-out exact for the six core books; PE NY rows are not re-stopped = approximate; the TH-L2 loss cut interaction on re-stopped rows is approximate). AT: POI within 2 pts of the entry (fresh or touched, ahead or behind): take-only (skip rows not AT inside book x session cells with >= 50 AT rows; volume collapses, read with equal-risk) / sizeup (x1.5).
+
+| stream | frame | param | action | rows | cut L6M | HOLD | MID | PRE | X' | d L6M (MDE) | Calmar L6M cell/base |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+**BEHIND (top 25 by mean of L6M/HOLD/PRE/X' cut)**
+
+| stream | frame | param | action | rows | cut L6M | HOLD | MID | PRE | X' | d L6M (MDE) | Calmar L6M cell/base |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| SWG|f3L|15s | BEHIND | 20 | half | 23256 | +0.16 | +0.22 | +0.18 | -0.19 | +0.24 | -11469 (10409) | 0.22/0.30 |
+| MAS|bb_lo|1h | BEHIND | 10 | half | 38 | +0.25 | +0.00 | +0.00 | +0.00 | -0.02 | +907 (2544) | 0.41/0.30 |
+| MAS|bb_lo|1h | BEHIND | 20 | half | 151 | +0.25 | +0.00 | +0.00 | +0.00 | -0.04 | +907 (2544) | 0.41/0.30 |
+| MAS|bb_up|1h | BEHIND | 20 | skip | 377 | +0.00 | +0.00 | +0.00 | +0.05 | +0.15 | +179 (753) | 0.30/0.30 |
+| MAS|bb_up|1h | BEHIND | 20 | half | 305 | +0.00 | +0.00 | +0.00 | +0.03 | +0.14 | +130 (404) | 0.30/0.30 |
+| MAS|bb_lo|1h | BEHIND | 10 | restop | 41 | +0.14 | +0.00 | +0.00 | +0.00 | +0.00 | +573 (1718) | 0.35/0.30 |
+| EQL|EQL_tight|5m | BEHIND | 10 | skip | 67 | +0.00 | +0.00 | +0.00 | +0.00 | +0.14 | +0 (0) | 0.30/0.30 |
+| MAS|bb_up|1h | BEHIND | 20 | restop | 377 | +0.00 | +0.00 | -0.53 | +0.05 | +0.09 | -448 (2505) | 0.29/0.30 |
+| MAS|bb_lo|1h | BEHIND | 20 | restop | 176 | +0.14 | +0.00 | +0.00 | +0.00 | -0.01 | +636 (1716) | 0.36/0.30 |
+| MAS|bb_lo|1h | BEHIND | 10 | skip | 41 | +0.16 | +0.00 | +0.00 | +0.00 | -0.03 | +598 (1701) | 0.36/0.30 |
+| EQL|EQL_tight|5m | BEHIND | 10 | restop | 67 | +0.00 | +0.00 | +0.00 | +0.00 | +0.11 | +0 (0) | 0.30/0.30 |
+| MAS|bb_lo|1h | BEHIND | 20 | skip | 176 | +0.16 | -0.01 | +0.00 | +0.00 | -0.10 | +642 (1699) | 0.36/0.30 |
+| MAS|bb_up|1h | BEHIND | 10 | restop | 88 | +0.00 | +0.00 | +0.00 | +0.04 | +0.00 | +211 (592) | 0.30/0.30 |
+| MAS|bb_up|1h | BEHIND | 10 | skip | 88 | +0.00 | +0.00 | +0.00 | +0.04 | +0.00 | -112 (221) | 0.30/0.30 |
+| SWG|f3L|15s | BEHIND | 20 | skip | 28732 | -0.02 | +0.05 | -1.10 | -0.05 | +0.07 | -20114 (19371) | 0.09/0.30 |
+| MAS|bb_mid|4h | BEHIND | 20 | skip | 94 | +0.00 | +0.00 | +0.00 | +0.00 | +0.04 | +24 (68) | 0.30/0.30 |
+| EQL|EQL_tight|5m | BEHIND | 20 | skip | 363 | +0.00 | +0.00 | +0.00 | -0.10 | +0.13 | -17 (407) | 0.30/0.30 |
+| MAS|bb_up|1h | BEHIND | 10 | half | 71 | +0.00 | +0.00 | +0.00 | +0.03 | +0.00 | -22 (62) | 0.30/0.30 |
+| MAS|bb_mid|4h | BEHIND | 20 | half | 60 | +0.00 | +0.00 | +0.00 | +0.00 | +0.02 | +0 (0) | 0.30/0.30 |
+| MAS|ema50|1d | BEHIND | 20 | half | 3 | +0.01 | +0.00 | +0.00 | +0.00 | +0.00 | +25 (69) | 0.30/0.30 |
+| MAS|ema50|1d | BEHIND | 10 | half | 2 | +0.01 | +0.00 | +0.00 | +0.00 | +0.00 | +25 (69) | 0.30/0.30 |
+| SES|asia_H|prev | BEHIND | 10 | restop | 1 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | +0 (0) | 0.30/0.30 |
+| EQL|EQL_tight|5m | BEHIND | 10 | half | 32 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | +0 (0) | 0.30/0.30 |
+| MAS|bb_mid|4h | BEHIND | 10 | skip | 14 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | +0 (0) | 0.30/0.30 |
+| SES|asia_H|prev | BEHIND | 10 | skip | 1 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | +0 (0) | 0.30/0.30 |
+
+**AT size-up (x1.5 on rows with a POI within 2 pts)**
+
+| stream | frame | param | action | rows | cut L6M | HOLD | MID | PRE | X' | d L6M (MDE) | Calmar L6M cell/base |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| MAS|bb_lo|1h | AT | 2 | sizeup | 355 | +0.39 | -0.01 | -0.01 | +0.00 | -0.04 | +1073 (4445) | 0.51/0.30 |
+| MAS|bb_mid|4h | AT | 2 | sizeup | 357 | +0.01 | +0.02 | -0.07 | -0.08 | +0.06 | -66 (970) | 0.30/0.30 |
+| SES|asia_H|prev | AT | 2 | sizeup | 712 | -0.02 | -0.00 | -0.02 | +0.03 | -0.02 | +90 (1096) | 0.29/0.30 |
+| MAS|bb_up|1h | AT | 2 | sizeup | 551 | +0.00 | +0.01 | +0.00 | +0.01 | -0.03 | +453 (757) | 0.30/0.30 |
+| EQL|EQL_tight|5m | AT | 2 | sizeup | 1501 | -0.01 | -0.02 | +0.02 | -0.05 | +0.04 | +42 (1360) | 0.30/0.30 |
+| SWG|f3L|3m | AT | 2 | sizeup | 22209 | +0.09 | +0.15 | -0.42 | -0.33 | +0.06 | +5104 (8571) | 0.38/0.30 |
+| MAS|ema50|1d | AT | 2 | sizeup | 92 | -0.05 | +0.00 | +0.00 | +0.02 | -0.02 | -344 (522) | 0.28/0.30 |
+| DEV|on_L|so_far | AT | 2 | sizeup | 2061 | -0.02 | +0.05 | -0.18 | -0.12 | -0.02 | +129 (2233) | 0.30/0.30 |
+| SWG|f3L|15s | AT | 2 | sizeup | 44555 | -0.40 | -0.43 | -0.34 | -1.64 | -0.37 | +8412 (9761) | 0.28/0.30 |
+
+**AT take-only (skip every row not AT in cells with >= 50 AT rows): the volume collapses (rows = skipped rows, 8-50 % of the book), so the cut is mostly volume; read the mean column and Calmar, not the cut. Not a lead.**
+
+| stream | frame | param | action | rows | cut L6M | HOLD | MID | PRE | X' | d L6M (MDE) | Calmar L6M cell/base |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| MAS|bb_up|1h | AT | 2 | takeonly | 16838 | +0.14 | +0.03 | -0.15 | -0.06 | +0.01 | -850 (3302) | 0.34/0.30 |
+| SES|asia_H|prev | AT | 2 | takeonly | 7415 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | +0 (0) | 0.30/0.30 |
+| MAS|bb_mid|4h | AT | 2 | takeonly | 0 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | +0 (0) | 0.30/0.30 |
+| MAS|bb_lo|1h | AT | 2 | takeonly | 0 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | +0 (0) | 0.30/0.30 |
+| MAS|ema50|1d | AT | 2 | takeonly | 0 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | +0 (0) | 0.30/0.30 |
+| EQL|EQL_tight|5m | AT | 2 | takeonly | 33267 | +0.55 | +0.14 | -0.51 | -0.83 | +0.24 | -17801 (25931) | 0.25/0.30 |
+| SWG|f3L|15s | AT | 2 | takeonly | 10744 | +0.09 | +0.15 | +0.16 | -0.25 | +0.14 | -7753 (9639) | 0.24/0.30 |
+| SWG|f3L|3m | AT | 2 | takeonly | 33060 | +0.29 | +0.29 | -1.44 | -0.08 | +0.26 | -16875 (21834) | 0.17/0.30 |
+| DEV|on_L|so_far | AT | 2 | takeonly | 21541 | +0.03 | +0.10 | -0.79 | -0.46 | -0.17 | -19478 (23403) | 0.10/0.30 |
 
 ## 7. New lines worth adding, with exact D7-computable definitions
 
@@ -151,51 +211,41 @@ None is yet a RISK-KEEP line. The ones to carry to the merged top 20 as screen L
 
 The 8 shipped lines and the 3 profile lines are not in this section. L1M/L2M columns are views, never selected on.
 
-## 11. B8: the zone as TARGET (every even-index stream, V13X lock off, post-hoc)
+## 11. B8: the zone as TARGET (every even-index stream, V13Y lock off, post-hoc)
 
 Rule: when the nearest fresh line ahead lies between 4 pts and (target - 4 pts) from the entry, the first leg takes profit at the line; 'b73t' = share F of the lots (the engine's integer split share per book/session, 0.5-0.75) exits at the line and the rest keeps the library target (the OTE-62 B73 idea turned to the target side); 'rt' = all lots exit at the line. Simulated per lot with poi_sim.mkt_run (market entry at the signal price, N basis) and added to the engine's split outcome; exit second/type of the library trade unchanged (the 30% leg keeps the original exit time): APPROXIMATE, PE NY confirmed entries not touched. BASE-4 covers the shipped lines (DS3_B8_ZONE_TARGET_SHIPPED.md).
 
-* 632 (stream, mode) cells scored; mean change in $/wk (ALL) averages -598 for b73t and -939 for rt: re-targeting to a line costs money on average (the library target is usually better than the first line). 132 cells improve the mean; 12 cells have a positive maxDD cut in L6M AND PRE AND X'.
+* 632 (stream, mode) cells scored; mean change in $/wk (ALL) averages -588 for b73t and -909 for rt: re-targeting to a line costs money on average (the library target is usually better than the first line). 131 cells improve the mean; 6 cells have a positive maxDD cut in L6M AND PRE AND X'.
 
 **Top 12 by mean cut (L6M/HOLD/PRE/X')**
 
 | stream | mode | rows | cut L6M | cut HOLD | cut MID | cut PRE | cut X | d L6M (MDE) | d ALL $/wk |
 |--|--|--|--|--|--|--|--|--|--|
-| ARR|iFVG|1h | rt | 3256 | +0.18 | +0.09 | +0.09 | +0.02 | +0.23 | +1401 (5842) | -558 |
-| ARR|FVG_CE|1h | rt | 6368 | +0.13 | +0.13 | -0.09 | -0.05 | +0.27 | -3229 (8084) | +750 |
-| ARR|iFVG|1h | b73t | 3256 | +0.09 | +0.09 | +0.12 | +0.06 | +0.18 | +196 (3877) | -542 |
-| ARR|FVG|4h | rt | 3055 | +0.41 | -0.06 | -0.28 | +0.17 | -0.12 | +270 (7549) | +129 |
-| PIV|cam_H1|rth | b73t | 1956 | +0.19 | +0.17 | +0.00 | +0.25 | -0.20 | +1828 (4481) | +612 |
-| ARR|FVG|4h | b73t | 3055 | +0.29 | +0.04 | -0.19 | +0.14 | -0.08 | -21 (5120) | +138 |
-| BOS|BOS_dn|1m | b73t | 3383 | +0.11 | +0.06 | +0.04 | +0.01 | +0.20 | -996 (4148) | -599 |
-| PRF|hvn0|sess | b73t | 1561 | +0.29 | +0.28 | -0.07 | -0.08 | -0.14 | +3531 (5625) | +856 |
-| FIB|dr_low|1d | rt | 124 | +0.31 | +0.07 | -0.00 | +0.00 | -0.04 | +1491 (4239) | +115 |
-| ARR|FVG_CE|1h | b73t | 6368 | +0.07 | +0.07 | -0.07 | -0.08 | +0.28 | -2127 (5443) | +337 |
-| BOS|BOS_dn|5m | b73t | 1531 | +0.09 | +0.09 | +0.02 | +0.03 | +0.13 | +133 (2444) | +168 |
-| ARR|iFVG_CE|1h | b73t | 4527 | +0.10 | +0.10 | +0.13 | +0.01 | +0.10 | +409 (3325) | +292 |
+| ARR|FVG|4h | b73t | 3055 | +0.48 | -0.04 | -0.40 | +0.03 | +0.00 | +212 (5364) | +168 |
+| FIB|dr_low|1d | rt | 124 | +0.42 | +0.00 | -0.01 | +0.00 | +0.00 | +1491 (4239) | +112 |
+| ARR|FVG|4h | rt | 3055 | +0.55 | -0.12 | -0.58 | +0.02 | -0.05 | +438 (7762) | +126 |
+| FIB|ret38|1d | rt | 628 | +0.18 | +0.04 | +0.00 | +0.15 | -0.03 | +965 (1791) | +388 |
+| MAS|bb_lo|1h | b73t | 4130 | +0.19 | -0.12 | -0.33 | +0.02 | +0.18 | +801 (3748) | +23 |
+| BOS|BOS_dn|15m | rt | 929 | +0.09 | +0.01 | +0.00 | +0.02 | +0.15 | +1631 (3101) | +427 |
+| MAS|kc_lo|4h | b73t | 1593 | +0.39 | -0.04 | -0.25 | +0.02 | -0.11 | +1505 (3283) | +387 |
+| MAS|ich_kijun|1d | rt | 737 | +0.15 | +0.04 | +0.02 | +0.00 | +0.05 | -17 (2504) | +86 |
+| BOS|BOS_dn|1m | b73t | 3383 | +0.09 | +0.15 | +0.03 | -0.06 | +0.02 | -996 (4558) | -309 |
+| PIV|cam_L2|week | rt | 639 | +0.38 | -0.05 | -0.14 | -0.00 | -0.13 | +249 (4372) | -147 |
+| MAS|ich_kijun|1d | b73t | 737 | +0.14 | +0.02 | +0.02 | +0.00 | +0.03 | +98 (1755) | +139 |
+| PRF|val|week | rt | 555 | +0.00 | +0.01 | -0.12 | +0.01 | +0.17 | +42 (1760) | +102 |
 
 **Top 8 by mean improvement ($/wk, ALL)**
 
 | stream | mode | rows | d ALL $/wk | cut L6M | cut PRE | cut X' |
 |--|--|--|--|--|--|--|
-| ARR|FVG|1h | rt | 4634 | +1628 | -0.21 | +0.06 | +0.19 |
-| FIB|ote705_up|1h | rt | 4713 | +1165 | -0.19 | -0.07 | +0.00 |
-| PRF|poc|sess | rt | 1521 | +1057 | +0.19 | -0.07 | -0.19 |
-| PRF|poc|sess | b73t | 1521 | +985 | +0.13 | -0.01 | -0.13 |
-| ARR|FVG|1h | b73t | 4634 | +923 | -0.17 | +0.03 | +0.20 |
-| PRF|hvn0|sess | b73t | 1561 | +856 | +0.29 | -0.08 | -0.14 |
-| ARR|BRK|3m | rt | 7013 | +803 | +0.07 | -0.31 | +0.24 |
-| FIB|ote705_up|1h | b73t | 4713 | +797 | -0.11 | -0.03 | -0.05 |
-
-**Random-level placebo (same rows, line distance uniform in [4, target-4]), statistic = mean cut L6M/HOLD/PRE/X'**
-
-| cell | cell k4 | placebo mean | 95th pct | n | rank |
-|--|--|--|--|--|--|
-| ARR|FVG_CE|1h rt | +0.12 | +0.065 | +0.141 | 60 | 0.131 |
-| ARR|iFVG|1h b73t | +0.10 | +0.033 | +0.072 | 60 | 0.016 |
-| ARR|iFVG|1h rt | +0.13 | +0.015 | +0.067 | 60 | 0.016 |
-| PIV|cam_H1|rth b73t | +0.10 | +0.085 | +0.127 | 60 | 0.344 |
-| PRF|hvn0|sess b73t | +0.09 | +0.017 | +0.085 | 60 | 0.066 |
+| ARR|FVG|1h | rt | 4634 | +1809 | -0.30 | -0.03 | -0.14 |
+| FIB|ote705_up|1h | rt | 4713 | +1313 | -0.26 | -0.08 | -0.26 |
+| PRF|poc|sess | rt | 1521 | +948 | +0.17 | -0.23 | -0.48 |
+| FIB|ote705_up|1h | b73t | 4713 | +859 | -0.16 | -0.04 | -0.29 |
+| ARR|FVG|1h | b73t | 4634 | +821 | -0.29 | +0.02 | -0.08 |
+| ARR|FVG_CE|1h | rt | 6368 | +762 | +0.13 | +0.03 | +0.01 |
+| PRF|poc|sess | b73t | 1521 | +737 | +0.13 | -0.12 | -0.33 |
+| ARR|BRK|3m | rt | 7013 | +735 | -0.03 | -0.37 | +0.07 |
 ## 12. EQL|EQL_tight|5m (equal lows, tight 1.0 pt, 5-min bars) - the flagged family: band, episodes, phases, placebos, books, definition, audit, base flip
 
 **1. Noise band (Z3 final lock-off band, n=107: flip 2 % / flip 5 % of live rows): L6M 0.16 / 0.21, PRE 0.22 / 0.26, X' 0.15 / 0.25.** The cell changes 2,062 rows of ~25,800 live rows (about 8 %), so the flip-5 band applies (flip-2 shown in brackets).
@@ -494,6 +544,8 @@ The 24 finalists were picked from the screen as the cells with the best excess c
 * Expected count among 24 random finalist-like cells: 1.6 (sd 1.3); observed 16; P(chance count >= observed) = 0.000.
 * NB (V13Y): the 24 finalists were selected from cells that are already positive in all three windows, so 'observed 16 of 24' is true by construction and says nothing. The valid test is the whole screen: of the 763 eligible cells (volume 0.5-25 %, >= 300 fires) only 40 (5.2 %) are positive in L6M AND PRE AND X' with lock none, versus a per-draw chance of 5.7-7.7 % for random same-volume masks (expected 43-59): THE SCREEN IS AT OR BELOW CHANCE for this triple.
 * Reading (V13X-style comparison, not valid here): 10 of 24 is above the chance count (p<=0.05), but the finalists are best-of-1,272 so the selection effect is not removed by this comparison. The finalists were selected on excess cut, the placebo cells were not; the comparison is therefore generous to the finalists.
+"
+**METHOD NOTE (program-wide chance benchmark, reusable per family).** Question: is "a cell has a positive maxDD cut in L6M AND PRE AND X'" informative? Procedure: (1) take the family's grid of cells and fix an eligibility rule (here volume share 0.5-25 %, >= 300 fires); count how many eligible cells are positive in the three independent episodes (L6M, PRE, X'; HOLD is not independent of L6M); (2) build information-free cells of the same volume: for 3-8 representative cells draw N >= 100 random masks (kinds: A random rows same count per stratum, B same-volume Bernoulli, C shuffled-day circular shift), run each through the SAME engine and base (V13Y lock none), and record the share positive in all three = the chance rate p3 (here 5.7-7.7 % at volume 2-24 %; per-window rates L6M 0.36-0.54, PRE 0.26-0.54, X' 0.48-0.72); (3) expected count = sum of p3 over the eligible cells (volume-matched), compare with the observed count (here 40 observed vs ~43-59 expected: at or below chance). Never apply it to a set that was selected on the same triple (finalists): the test is on the screen. Code: zones3_new/s4a/chance_y.py reads the stored placebo series (plcyn_res_*.pkl: key (cell, kind, draw) -> daily total) and the base (s2yn_base.pkl); a family needs only its own placebo draws and its eligible-cell table.
 
 ## 14. B6: touch-count states of the shipped lines as the AHEAD condition (D20; V13Y fixed base)
 
@@ -609,6 +661,101 @@ Cells above the band (rule met): none.
 
 Cells above the band (rule met): none.
 
+## 16. EQL|EQL_tight|5m: exact live definition and causal audit (base independent; the stream, the audit and the fired rows do not depend on V13X/V13Y)
+
+* Bars: 5-minute bars of the back-adjusted 1-s path (300 s; a bar is closed at its last second; ek of a bar = the SS index of the first print second after its close).
+* Swing lows: fractal-5 (strength 2): bar j is a swing low if its low is strictly below the lows of the 2 bars before and the 2 bars after; CONFIRMED when bar j+2 has closed.
+* Equal lows (tight): for each confirmed swing low j2 (value v2) look back over the previous 8 confirmed swing lows (nearest first); the first j1 (value v1) with |v1 - v2| <= 1.0 pt and no bar low between j1 and j2 below min(v1, v2) - 1.0 pt makes a level = min(v1, v2). Knowable at the close of bar j2+2 (ek). One level per j2.
+* Life: from ek until the first second whose low trades to or below the level (touched) or 24 h (cap = max(86,400 s, 10 x 300 s)). FRESH = never touched since ek, evaluated at the signal second.
+* Neutral line (dr=0): AHEAD for either side when it lies between the entry and the target: 0 <= side*(L - E) <= td. Rule tested: if the nearest fresh equal-lows level is within D (40, and 20) pts of the entry in the travel direction, SKIP the trade (core books; the shipped layer is unchanged). D40 fires on 2,062 of 88,490 rows (about 2.3 % of planned lot volume), D20 on 1,094 rows.
+* 100-row causal audit (out/zones3_new/s4a_eql_audit100.csv): 100 random fired rows; per row: stream ek <= signal second; never traded through between ek and the signal second (min of SL over (ek, kin] > level); an independent rebuild of the equal lows from the 5-min bars (swing + equality rule above) reproduces the (ek, level) pair; the distance equals the feature. Result 100 of 100 OK; line age at the signal 0 to 79441 s (median 16830 s, cap 86,400 s); 62 of the 100 rows are core D7 books, the rest library books that D7 does not run.
+
+## 17. Phase-averaged (PA) band and no-harm test of the 24 V13Y finalists (K=9 lock-reset phases, week key shifted -4..+4 label days, Z3 estimator; paired with the shipped layer at the same phase)
+
+PA band = Z3 FINAL V13Y band (DS3_ZONES_3_NOISE.md, 95th pct of |PA paired cut| for a random 2 % / 5 % half-lot flip): lock off L6M .157/.199, HOLD .145/.191, MID .261/.366, PRE .114/.174, X' .159/.230; lock 12R L6M .117/.239, HOLD .112/.117, MID .239/.373, PRE .131/.131, X' .100/.145 (flip 2 used for cells with < 1,000 fired rows, flip 5 otherwise). RULE: PA cut above the band in L6M AND in PRE or X'. NO-HARM (defined here, shared definition not published): no window among L6M/HOLD/MID/PRE/X' has a PA cut below minus its band (no window worsened beyond noise) AND the PA mean change over ALL is not below minus the paired MDE.
+
+**lock off (headline)**
+
+| stream | D | frame | fires | band | PA cut L6M | HOLD | MID | PRE | X' | min over phases L6M/PRE/X' | rule met | no-harm | PASS |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| SWG|f3L|15s | 40 | half | 42423 | flip5 | +0.46 | +0.17 | -0.48 | +0.16 | +0.27 | +0.39/+0.05/+0.20 | YES | NO |  |
+| EQL|EQL_tight|5m | 40 | skip | 2062 | flip5 | +0.09 | +0.08 | +0.01 | +0.05 | +0.26 | +0.08/-0.02/+0.25 |  | yes |  |
+| MAS|bb_up|1h | 20 | skip | 3120 | flip5 | +0.14 | +0.14 | +0.16 | +0.02 | +0.03 | +0.12/-0.08/+0.02 |  | yes |  |
+| SES|asia_H|prev | 20 | skip | 1282 | flip5 | +0.11 | +0.09 | +0.08 | +0.04 | +0.22 | +0.09/+0.01/+0.19 |  | yes |  |
+| MAS|ema50|1d | 40 | skip | 516 | flip2 | +0.15 | +0.12 | +0.02 | +0.02 | +0.04 | +0.14/-0.02/+0.02 |  | yes |  |
+| MAS|bb_mid|4h | 20 | skip | 1298 | flip5 | +0.16 | +0.12 | -0.01 | +0.04 | +0.12 | +0.06/-0.02/+0.04 |  | yes |  |
+| MAS|bb_lo|1h | 40 | half | 4531 | flip5 | +0.24 | +0.20 | +0.11 | +0.05 | +0.11 | +0.15/-0.03/-0.12 |  | yes |  |
+| SES|asia_H|prev | 40 | skip | 2695 | flip5 | +0.08 | +0.07 | -0.58 | +0.05 | +0.09 | +0.03/-0.00/+0.07 |  | NO |  |
+| EQL|EQL_tight|5m | 40 | half | 2062 | flip5 | +0.03 | +0.03 | +0.01 | +0.03 | +0.18 | +0.03/-0.01/+0.16 |  | yes |  |
+| SES|nypm_H|prev | 20 | skip | 1056 | flip5 | +0.12 | +0.11 | +0.09 | +0.01 | +0.14 | +0.06/+0.00/+0.04 |  | yes |  |
+| PIV|cam_H3|week | 40 | skip | 1058 | flip5 | +0.02 | +0.02 | -0.01 | +0.00 | +0.19 | +0.01/-0.01/+0.10 |  | yes |  |
+| SES|asia_H|prev | 40 | half | 2695 | flip5 | +0.05 | +0.04 | -0.11 | +0.02 | +0.07 | +0.03/+0.00/+0.05 |  | yes |  |
+| ARR|iplFVG|3m | 20 | half | 9328 | flip5 | +0.10 | +0.07 | -0.09 | +0.02 | +0.15 | -0.06/-0.07/+0.12 |  | yes |  |
+| MAS|supertrend|4h | 40 | half | 1328 | flip5 | +0.05 | +0.05 | +0.09 | +0.02 | +0.09 | +0.00/-0.05/+0.06 |  | yes |  |
+| FIB|ret38|4h | 40 | skip | 2546 | flip5 | +0.09 | +0.06 | -0.11 | +0.08 | -0.03 | +0.06/-0.03/-0.11 |  | yes |  |
+| SES|close_H|prev | 20 | skip | 1942 | flip5 | +0.10 | +0.09 | -0.12 | -0.01 | +0.07 | +0.04/-0.14/+0.01 |  | yes |  |
+| DEV|on_L|so_far | 20 | half | 10884 | flip5 | +0.53 | +0.23 | -0.35 | -0.26 | +0.16 | +0.38/-0.63/+0.10 |  | NO |  |
+| SWG|f3L|3m | 20 | half | 19378 | flip5 | +0.47 | +0.36 | -0.67 | -0.10 | +0.31 | +0.37/-0.42/+0.10 | YES | NO |  |
+| SWG|f5L|3m | 20 | half | 15731 | flip5 | +0.28 | +0.28 | -0.22 | -0.01 | +0.27 | +0.24/-0.06/+0.06 | YES | yes | PASS |
+| SWG|f7L|3m | 20 | half | 13233 | flip5 | +0.42 | +0.26 | -0.20 | -0.02 | +0.09 | +0.34/-0.08/-0.12 |  | yes |  |
+| DEV|sess_L|so_far | 20 | half | 22088 | flip5 | +0.56 | +0.21 | -0.62 | -0.11 | -0.13 | +0.52/-0.46/-0.37 |  | NO |  |
+| SWG|f3L|15s | 20 | half | 37498 | flip5 | +0.48 | +0.21 | -0.56 | -0.11 | +0.22 | +0.42/-0.36/+0.10 |  | NO |  |
+| SWG|f7L|15s | 20 | half | 29604 | flip5 | +0.54 | +0.11 | -1.09 | +0.04 | +0.04 | +0.40/-0.18/-0.13 |  | NO |  |
+| MAS|bb_lo|1h | 40 | skip | 4531 | flip5 | +0.28 | +0.18 | +0.16 | -0.00 | +0.17 | +0.21/-0.12/+0.08 |  | yes |  |
+
+Cells meeting the PA band rule: 3; passing band rule AND no-harm: 1.
+
+**lock 12R**
+
+| stream | D | frame | fires | band | PA cut L6M | HOLD | MID | PRE | X' | min over phases L6M/PRE/X' | rule met | no-harm | PASS |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| SWG|f3L|15s | 40 | half | 42423 | flip5 | +0.38 | +0.23 | -0.09 | +0.08 | +0.40 | -0.17/-0.20/+0.29 | YES | yes | PASS |
+| EQL|EQL_tight|5m | 40 | skip | 2062 | flip5 | +0.08 | +0.08 | +0.07 | -0.02 | +0.14 | -0.02/-0.16/-0.08 |  | yes |  |
+| MAS|bb_up|1h | 20 | skip | 3120 | flip5 | +0.06 | +0.08 | +0.12 | +0.00 | +0.17 | -0.00/-0.56/-0.29 |  | yes |  |
+| SES|asia_H|prev | 20 | skip | 1282 | flip5 | +0.08 | +0.07 | -0.04 | +0.02 | +0.03 | +0.02/-0.01/-0.03 |  | yes |  |
+| MAS|ema50|1d | 40 | skip | 516 | flip2 | +0.01 | -0.01 | +0.06 | -0.00 | -0.04 | -0.00/-0.06/-0.13 |  | yes |  |
+| MAS|bb_mid|4h | 20 | skip | 1298 | flip5 | +0.02 | +0.00 | +0.07 | +0.09 | +0.04 | -0.08/+0.04/-0.07 |  | yes |  |
+| MAS|bb_lo|1h | 40 | half | 4531 | flip5 | -0.05 | -0.00 | -0.04 | +0.01 | +0.04 | -0.11/-0.12/-0.11 |  | yes |  |
+| SES|asia_H|prev | 40 | skip | 2695 | flip5 | +0.06 | -0.01 | -0.64 | +0.07 | +0.03 | -0.08/+0.00/-0.23 |  | NO |  |
+| EQL|EQL_tight|5m | 40 | half | 2062 | flip5 | -0.01 | -0.01 | +0.01 | -0.02 | +0.11 | -0.05/-0.14/-0.03 |  | yes |  |
+| SES|nypm_H|prev | 20 | skip | 1056 | flip5 | +0.00 | -0.01 | -0.02 | +0.02 | +0.18 | -0.03/-0.18/+0.08 |  | yes |  |
+| PIV|cam_H3|week | 40 | skip | 1058 | flip5 | +0.03 | +0.06 | -0.02 | -0.02 | -0.03 | +0.00/-0.05/-0.05 |  | yes |  |
+| SES|asia_H|prev | 40 | half | 2695 | flip5 | +0.02 | +0.03 | -0.33 | +0.01 | +0.00 | -0.02/-0.03/-0.05 |  | yes |  |
+| ARR|iplFVG|3m | 20 | half | 9328 | flip5 | -0.06 | +0.05 | +0.09 | +0.14 | +0.11 | -0.67/-0.05/-0.07 |  | yes |  |
+| MAS|supertrend|4h | 40 | half | 1328 | flip5 | +0.01 | +0.00 | -0.03 | +0.06 | +0.06 | -0.00/+0.00/-0.07 |  | yes |  |
+| FIB|ret38|4h | 40 | skip | 2546 | flip5 | +0.04 | +0.10 | +0.08 | +0.06 | -0.07 | -0.08/+0.01/-0.21 |  | yes |  |
+| SES|close_H|prev | 20 | skip | 1942 | flip5 | +0.09 | +0.12 | +0.14 | -0.05 | +0.10 | +0.01/-0.38/-0.17 |  | yes |  |
+| DEV|on_L|so_far | 20 | half | 10884 | flip5 | +0.16 | +0.04 | -0.34 | -0.03 | +0.21 | +0.01/-0.17/+0.05 |  | yes |  |
+| SWG|f3L|3m | 20 | half | 19378 | flip5 | +0.21 | -0.05 | -0.82 | -0.20 | +0.25 | -0.03/-0.66/+0.15 |  | NO |  |
+| SWG|f5L|3m | 20 | half | 15731 | flip5 | +0.14 | +0.03 | -0.29 | +0.01 | +0.25 | -0.13/-0.21/+0.09 |  | yes |  |
+| SWG|f7L|3m | 20 | half | 13233 | flip5 | +0.18 | +0.14 | -0.11 | +0.03 | +0.18 | -0.07/-0.11/-0.31 |  | yes |  |
+| DEV|sess_L|so_far | 20 | half | 22088 | flip5 | +0.14 | -0.01 | -0.48 | +0.03 | +0.32 | -0.08/-0.09/+0.21 |  | NO |  |
+| SWG|f3L|15s | 20 | half | 37498 | flip5 | +0.10 | +0.10 | -0.38 | -0.01 | +0.40 | -0.37/-0.14/+0.29 |  | NO |  |
+| SWG|f7L|15s | 20 | half | 29604 | flip5 | +0.13 | +0.09 | -0.50 | +0.06 | +0.35 | -0.33/-0.14/+0.29 |  | NO |  |
+| MAS|bb_lo|1h | 40 | skip | 4531 | flip5 | -0.00 | -0.04 | +0.09 | -0.10 | +0.04 | -0.31/-0.27/-0.07 |  | yes |  |
+
+Cells meeting the PA band rule: 1; passing band rule AND no-harm: 1.
+
+## 18. D x0.5 / 0.75 / 1.0 / 1.25 / 1.5 sensitivity on V13Y for the 7 lead cells (nearest grid D of 15,20,25,30,35,40,50,60), single path, mean cut L6M/HOLD/PRE/X'
+
+| cell | D | lock | x0.5 | x0.75 | x1.0 | x1.25 | x1.5 | works at <=1 of 5 D (FRAGILE)? |
+|--|--|--|--|--|--|--|--|--|
+| EQL|EQL_tight|5m skip | 40 | none | +0.05 | +0.07 | +0.12 | +0.11 | +0.12 |  |
+| EQL|EQL_tight|5m skip | 40 | 12 | +0.01 | +0.02 | +0.02 | +0.06 | +0.02 | FRAGILE |
+| EQL|EQL_tight|5m skip | 20 | none | +0.04 | +0.04 | +0.05 | +0.05 | +0.07 | FRAGILE |
+| EQL|EQL_tight|5m skip | 20 | 12 | -0.01 | -0.01 | +0.01 | +0.03 | +0.02 | FRAGILE |
+| FIB|ote705_dn|15m skip | 20 | none | -0.05 | -0.05 | -0.03 | -0.09 | -0.07 | FRAGILE |
+| FIB|ote705_dn|15m skip | 20 | 12 | +0.01 | +0.01 | +0.03 | +0.11 | +0.07 |  |
+| MAS|bb_mid|4h skip | 20 | none | +0.05 | +0.05 | +0.08 | -0.01 | +0.02 |  |
+| MAS|bb_mid|4h skip | 20 | 12 | +0.02 | +0.02 | +0.02 | -0.08 | -0.07 | FRAGILE |
+| SWG|f3L|15s half | 40 | none | +0.11 | +0.26 | +0.22 | +0.20 | +0.24 |  |
+| SWG|f3L|15s half | 40 | 12 | +0.10 | +0.23 | +0.19 | +0.21 | +0.22 |  |
+| PRF|vwap|day skip | 20 | none | +0.01 | +0.01 | -0.12 | -0.10 | -0.13 | FRAGILE |
+| PRF|vwap|day skip | 20 | 12 | +0.10 | +0.10 | -0.04 | +0.04 | +0.04 |  |
+| DEV|on_L|so_far half | 20 | none | +0.16 | +0.16 | +0.19 | +0.14 | +0.10 |  |
+| DEV|on_L|so_far half | 20 | 12 | +0.08 | +0.08 | -0.00 | -0.01 | +0.01 |  |
+| ARR|iplFVG|15s half | 40 | none | -0.01 | -0.06 | +0.04 | +0.02 | -0.05 | FRAGILE |
+| ARR|iplFVG|15s half | 40 | 12 | +0.13 | +0.22 | +0.23 | +0.27 | +0.32 |  |
 ## 8. Not done / named gaps
 * Only the AHEAD frame was swept over all 332 streams; BEHIND/AT were run for 19 streams. Placebo draws (16 per kind) are the compute budget; ranks have 0.06 resolution. The purged walk-forward is owned by Z3. 1-s/3-s decision delay was not run (AHEAD skip/half are signal-second decisions; B73/WT/re-target are in section 3). Parameter variants of the line itself (swing strength, profile bin, anchor shifts) are separate streams in the grid (SWG f3/f5/f7, PRF b1-b3, anchors), not re-parameterised. RND and BKS streams were not built. D7 v1.3 profit lines are an agent-built assumption (THP_POLICY_D7.txt not on disk); U7 is an assumption.
 

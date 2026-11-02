@@ -1,6 +1,6 @@
 # DS3 D7 TAKE LINES (1-s evaluation) - the five THP_POLICY_D7 profit lines scored on the D7 v1.3 EXACT base (BASE-4)
 
-Rolling page, written 2026-11-02T09:08Z. Prereg l2vast/ds3/prereg/D7_TAKE_LINES_prereg.md sha256 af2bb13bad8e3288b3f3b98114b0db5f5d21bf9be1446497fe605721ed4c59da (DECISIONS.md, logged before any line-effect statistic was read). dead_lookup before: the five specs are NOT FOUND in DEAD_CELLS (0 hits); append_cells after (see end). POST-HOC labels only; no PASS claim; mean and MDE (2.8 x SE of the weekly mean, paired for deltas) are columns, drawdown first.
+Rolling page, written 2026-11-02T10:32Z. Prereg l2vast/ds3/prereg/D7_TAKE_LINES_prereg.md sha256 af2bb13bad8e3288b3f3b98114b0db5f5d21bf9be1446497fe605721ed4c59da (DECISIONS.md, logged before any line-effect statistic was read). dead_lookup before: the five specs are NOT FOUND in DEAD_CELLS (0 hits); append_cells after (see end). POST-HOC labels only; no PASS claim; mean and MDE (2.8 x SE of the weekly mean, paired for deltas) are columns, drawdown first.
 
 **Base.** d7_v13x.run_v13x: D7 v1.3 EXACT (live11 lots, U7 exact = never binds, TH-L2 loss ON / profit-path OFF, HALF D20 + OTE-62 B73 D30, X1-X5 and signal-state Shadow, Native stops, ER(20) sizer, engine per-book locks; combined 12R stack week lock OFF = HEADLINE (user text), ON = Part B). "lines off" = the same base with the profit side empty. 1-S VERSION: lines evaluated EVERY PATH SECOND (redo 1-s path to 2026-10-30; rel_tot8 / rel_ahead8 rebuilt at 1 s from the 1-s L2 tables, ET-hour-normalised vs the prior 20 label days like curDepthRel, corr 0.95 with the 10-s cache values); first second where pct >= a and the rel gate holds; take exit cost 0.995 pt, tighten 30 = exit 1.01 pt when favourable extreme - current >= 30 pts. Weeks are ISO weeks of the label day; windows: F9 = 2026-02-07..2026-10-31 (the Feb-Oct window), L1M L2M L3M L6M HOLD MID PRE X' as windows.py. Equal-risk mean = mean x (lines-off worst-20 over ALL history / line worst-20 over ALL history), linear lot scaling (the integer-lot engine search is not run per row). Cells: "mean (MDE) / maxDD / worst-20 / SD / Calmar" all $k per week (maxDD of the weekly cumulative sum; worst-20 = sum of the 20 worst weeks, or the worst quarter of the weeks if the window has <20; Calmar = weekly mean / maxDD).
 
@@ -417,6 +417,7 @@ Book x session cells (F9 and HOLD delta mean $k/wk; only cells where the lines a
 
 
 MaxDD carrier weeks (trough week of the weekly-cumulative maxDD): F9: off 202637 / on 202637; L3M: off 202637 / on 202637; L6M: off 202637 / on 202637; HOLD: off 202637 / on 202613; PRE: off 202440 / on 202516; X': off 202351 / on 202339
+
 
 ## C. Reading on V13Y (add-fill ordering fixed; 1-s evaluation; lock none = headline; post-hoc, no PASS)
 Episodes lookup: DS3_ZONES_EPISODES_V13Y.md. This page replaces the V13X pages (DS3_D7_TAKE_LINES.md / _1S.md), whose take exits were dropped on 721 rows (see DS3_V13Y_BASE.md).

@@ -132,3 +132,10 @@ Choices lock none (book-months): {0.5: 17, 0.7: 51, None: 47, 0.3: 27, 0.17: 28}
 | M7|london | +1.7(1.7) | +69% | +0.2(1.0) | +9% |
 | M7|nyam | -0.3(1.2) | -45% | +0.1(0.7) | +35% |
 | A6|asia | +0.0(0.0) | +0% | +0.0(0.0) | +0% |
+
+
+## PA noise band for the PLAIN 70% take (all books pct>=0.70, no depth gate; 1-s; V13Y; K=9 phases; band = Z3 V13Y FINAL flip-5% phase-averaged)
+| frame | L3M | L6M | HOLD | MID | PRE | X' | rule: L6M AND (PRE or X') |
+|---|---|---|---|---|---|---|---|
+| LOCK NONE | PA cut +44% [+31,+72] band 34%; d mean +6.8k | PA cut +50% [+46,+57] band 20%; d mean +5.9k | PA cut +44% [+27,+55] band 19%; d mean +5.5k | PA cut -34% [-232,+55] band 37%; d mean +5.8k | PA cut +25% [+9,+31] band 17%; d mean -0.5k | PA cut +30% [+19,+41] band 23%; d mean +2.2k | PASS |
+| 12R | PA cut +34% [-28,+62] band 23%; d mean +5.5k | PA cut +48% [+18,+65] band 24%; d mean +6.2k | PA cut +33% [-45,+65] band 12%; d mean +5.2k | PA cut -9% [-59,+35] band 37%; d mean +1.9k | PA cut -2% [-10,+8] band 13%; d mean +0.9k | PA cut +10% [-30,+40] band 14%; d mean +2.6k | NOT met |

@@ -1,6 +1,6 @@
 # DS3 D7 TAKE LINES - the five THP_POLICY_D7 profit lines scored on the D7 v1.3 EXACT base (BASE-4)
 
-Rolling page, written 2026-11-02T09:27Z. Prereg l2vast/ds3/prereg/D7_TAKE_LINES_prereg.md sha256 af2bb13bad8e3288b3f3b98114b0db5f5d21bf9be1446497fe605721ed4c59da (DECISIONS.md, logged before any line-effect statistic was read). dead_lookup before: the five specs are NOT FOUND in DEAD_CELLS (0 hits); append_cells after (see end). POST-HOC labels only; no PASS claim; mean and MDE (2.8 x SE of the weekly mean, paired for deltas) are columns, drawdown first.
+Rolling page, written 2026-11-02T10:32Z. Prereg l2vast/ds3/prereg/D7_TAKE_LINES_prereg.md sha256 af2bb13bad8e3288b3f3b98114b0db5f5d21bf9be1446497fe605721ed4c59da (DECISIONS.md, logged before any line-effect statistic was read). dead_lookup before: the five specs are NOT FOUND in DEAD_CELLS (0 hits); append_cells after (see end). POST-HOC labels only; no PASS claim; mean and MDE (2.8 x SE of the weekly mean, paired for deltas) are columns, drawdown first.
 
 **Base.** d7_v13x.run_v13x: D7 v1.3 EXACT (live11 lots, U7 exact = never binds, TH-L2 loss ON / profit-path OFF, HALF D20 + OTE-62 B73 D30, X1-X5 and signal-state Shadow, Native stops, ER(20) sizer, engine per-book locks; combined 12R stack week lock OFF = HEADLINE (user text), ON = Part B). "lines off" = the same base with the profit side empty. Lines on the 10-s L2 grid (rel_tot8 / rel_ahead8 exist only there): first row where pct >= a and the rel gate holds; take exit cost 0.995 pt, tighten 30 = exit 1.01 pt when favourable extreme - current >= 30 pts. Weeks are ISO weeks of the label day; windows: F9 = 2026-02-07..2026-10-31 (the Feb-Oct window), L1M L2M L3M L6M HOLD MID PRE X' as windows.py. Equal-risk mean = mean x (lines-off worst-20 over ALL history / line worst-20 over ALL history), linear lot scaling (the integer-lot engine search is not run per row). Cells: "mean (MDE) / maxDD / worst-20 / SD / Calmar" all $k per week (maxDD of the weekly cumulative sum; worst-20 = sum of the 20 worst weeks, or the worst quarter of the weeks if the window has <20; Calmar = weekly mean / maxDD).
 
@@ -335,36 +335,71 @@ Book x session cells (F9 and HOLD delta mean $k/wk; only cells where the lines a
 | line | param | x | F9 | L6M | HOLD | MID | PRE | X' |
 |---|---|---|---|---|---|---|---|---|
 | K7 | pct | 0.5 | DD 52.8->53.6 (-2%) d+1.2k(MDE 3.8) | DD 52.8->53.6 (-2%) d+1.0k(MDE 5.1) | DD 90.4->101.1 (-12%) d+1.4k(MDE 4.3) | DD 52.3->47.7 (+9%) d+1.4k(MDE 4.5) | DD 282.2->296.6 (-5%) d-2.3k(MDE 4.8) | DD 131.5->138.5 (-5%) d-0.1k(MDE 2.2) |
+| K7 | pct | 0.75 | DD 52.8->62.1 (-18%) d+0.4k(MDE 3.7) | DD 52.8->62.1 (-18%) d+0.1k(MDE 5.1) | DD 90.4->94.6 (-5%) d+0.9k(MDE 4.1) | DD 52.3->41.1 (+21%) d+0.9k(MDE 2.9) | DD 282.2->261.6 (+7%) d-0.5k(MDE 2.1) | DD 131.5->138.3 (-5%) d-0.4k(MDE 2.1) |
 | K7 | pct | 1.25 | DD 52.8->65.0 (-23%) d+0.8k(MDE 3.0) | DD 52.8->65.0 (-23%) d+0.6k(MDE 4.1) | DD 90.4->91.9 (-2%) d+0.4k(MDE 2.3) | DD 52.3->49.0 (+6%) d+1.1k(MDE 2.5) | DD 282.2->211.9 (+25%) d-1.8k(MDE 5.6) | DD 131.5->145.6 (-11%) d-0.6k(MDE 2.3) |
+| K7 | pct | 1.5 | DD 52.8->61.0 (-15%) d+1.1k(MDE 3.3) | DD 52.8->61.0 (-15%) d+1.2k(MDE 4.5) | DD 90.4->90.3 (+0%) d+0.6k(MDE 2.5) | DD 52.3->54.4 (-4%) d+0.7k(MDE 2.5) | DD 282.2->207.4 (+26%) d-1.9k(MDE 5.6) | DD 131.5->172.4 (-31%) d-1.2k(MDE 2.8) |
 | K7 | rel | 0.5 | DD 52.8->63.1 (-19%) d+0.8k(MDE 3.0) | DD 52.8->63.1 (-19%) d+1.2k(MDE 4.0) | DD 90.4->97.2 (-8%) d+0.3k(MDE 2.3) | DD 52.3->53.0 (-1%) d-0.2k(MDE 2.6) | DD 282.2->284.0 (-1%) d-0.0k(MDE 0.9) | DD 131.5->133.1 (-1%) d-0.5k(MDE 1.9) |
+| K7 | rel | 0.75 | DD 52.8->63.6 (-20%) d-0.3k(MDE 1.3) | DD 52.8->63.6 (-20%) d-0.2k(MDE 1.5) | DD 90.4->97.2 (-8%) d-0.4k(MDE 1.1) | DD 52.3->55.7 (-7%) d-0.2k(MDE 2.2) | DD 282.2->269.9 (+4%) d+0.2k(MDE 0.5) | DD 131.5->132.7 (-1%) d-0.5k(MDE 1.9) |
 | K7 | rel | 1.25 | DD 52.8->65.6 (-24%) d+1.3k(MDE 3.3) | DD 52.8->65.6 (-24%) d+1.9k(MDE 4.6) | DD 90.4->88.1 (+2%) d+0.9k(MDE 2.5) | DD 52.3->52.4 (-0%) d+0.1k(MDE 2.1) | DD 282.2->215.8 (+24%) d-0.3k(MDE 3.9) | DD 131.5->164.9 (-25%) d-1.2k(MDE 2.6) |
+| K7 | rel | 1.5 | DD 52.8->58.1 (-10%) d+1.5k(MDE 3.2) | DD 52.8->58.1 (-10%) d+1.9k(MDE 4.4) | DD 90.4->90.1 (+0%) d+0.9k(MDE 2.5) | DD 52.3->49.3 (+6%) d+0.4k(MDE 2.2) | DD 282.2->207.1 (+27%) d-1.8k(MDE 5.6) | DD 131.5->170.4 (-30%) d-1.2k(MDE 2.7) |
 | P7 | pct | 0.5 | DD 52.8->143.4 (-171%) d-4.2k(MDE 8.6) | DD 52.8->143.4 (-171%) d-6.0k(MDE 9.4) | DD 90.4->143.4 (-59%) d-2.2k(MDE 8.6) | DD 52.3->64.0 (-22%) d+0.3k(MDE 18.2) | DD 282.2->212.5 (+25%) d-0.9k(MDE 5.5) | DD 131.5->119.1 (+9%) d-0.7k(MDE 4.8) |
+| P7 | pct | 0.75 | DD 52.8->97.7 (-85%) d-2.2k(MDE 6.1) | DD 52.8->97.7 (-85%) d-3.9k(MDE 5.2) | DD 90.4->97.7 (-8%) d-1.6k(MDE 5.7) | DD 52.3->63.0 (-20%) d+1.8k(MDE 15.4) | DD 282.2->276.1 (+2%) d-1.3k(MDE 4.2) | DD 131.5->130.8 (+1%) d-0.0k(MDE 4.3) |
+| P7 | pct | 1.25 | DD 52.8->110.4 (-109%) d+0.6k(MDE 9.9) | DD 52.8->110.4 (-109%) d-0.9k(MDE 13.8) | DD 90.4->110.4 (-22%) d+0.7k(MDE 7.6) | DD 52.3->42.2 (+19%) d+3.8k(MDE 5.2) | DD 282.2->242.3 (+14%) d-1.4k(MDE 6.4) | DD 131.5->191.3 (-45%) d-1.3k(MDE 6.2) |
+| P7 | pct | 1.5 | DD 52.8->115.0 (-118%) d+2.5k(MDE 10.8) | DD 52.8->115.0 (-118%) d+2.3k(MDE 14.9) | DD 90.4->115.0 (-27%) d+1.9k(MDE 8.4) | DD 52.3->64.3 (-23%) d+3.0k(MDE 8.3) | DD 282.2->132.2 (+53%) d+3.0k(MDE 7.8) | DD 131.5->133.9 (-2%) d-0.9k(MDE 4.6) |
+| P7 | rel | 0.5 | DD 52.8->108.1 (-105%) d+4.1k(MDE 8.6) | DD 52.8->108.1 (-105%) d+4.7k(MDE 11.8) | DD 90.4->108.1 (-20%) d+2.7k(MDE 6.8) | DD 52.3->60.8 (-16%) d+2.2k(MDE 6.6) | DD 282.2->236.0 (+16%) d-1.1k(MDE 6.1) | DD 131.5->136.0 (-3%) d-1.1k(MDE 2.3) |
+| P7 | rel | 0.75 | DD 52.8->100.0 (-89%) d+1.7k(MDE 8.3) | DD 52.8->100.0 (-89%) d+3.5k(MDE 11.4) | DD 90.4->129.2 (-43%) d+1.2k(MDE 6.3) | DD 52.3->66.2 (-27%) d-2.5k(MDE 5.5) | DD 282.2->256.0 (+9%) d-1.1k(MDE 5.7) | DD 131.5->93.7 (+29%) d-0.0k(MDE 3.6) |
+| P7 | rel | 1.25 | DD 52.8->111.5 (-111%) d-2.8k(MDE 7.8) | DD 52.8->111.5 (-111%) d-4.7k(MDE 10.7) | DD 90.4->111.5 (-23%) d-2.4k(MDE 6.6) | DD 52.3->48.8 (+7%) d+1.7k(MDE 5.3) | DD 282.2->226.7 (+20%) d+0.5k(MDE 5.5) | DD 131.5->146.2 (-11%) d+0.6k(MDE 4.2) |
+| P7 | rel | 1.5 | DD 52.8->63.0 (-19%) d+4.2k(MDE 10.3) | DD 52.8->63.0 (-19%) d+5.2k(MDE 14.1) | DD 90.4->63.0 (+30%) d+4.5k(MDE 8.9) | DD 52.3->49.5 (+5%) d+1.7k(MDE 7.5) | DD 282.2->192.2 (+32%) d-0.1k(MDE 6.6) | DD 131.5->244.1 (-86%) d-3.4k(MDE 5.3) |
+| H7 | pct | 0.5 | DD 52.8->81.3 (-54%) d+2.9k(MDE 8.0) | DD 52.8->81.3 (-54%) d+2.0k(MDE 9.6) | DD 90.4->92.2 (-2%) d+2.3k(MDE 5.9) | DD 52.3->55.4 (-6%) d+4.5k(MDE 13.7) | DD 282.2->279.0 (+1%) d-2.4k(MDE 5.1) | DD 131.5->134.2 (-2%) d-0.1k(MDE 1.1) |
+| H7 | pct | 0.75 | DD 52.8->54.9 (-4%) d+2.1k(MDE 6.2) | DD 52.8->54.0 (-2%) d+2.5k(MDE 8.6) | DD 90.4->90.6 (-0%) d+1.7k(MDE 4.6) | DD 52.3->54.9 (-5%) d+1.0k(MDE 3.9) | DD 282.2->266.7 (+5%) d-1.4k(MDE 4.1) | DD 131.5->128.9 (+2%) d-0.2k(MDE 2.1) |
+| H7 | pct | 1.25 | DD 52.8->54.0 (-2%) d+2.0k(MDE 3.1) | DD 52.8->52.2 (+1%) d+2.2k(MDE 4.2) | DD 90.4->83.0 (+8%) d+1.7k(MDE 2.3) | DD 52.3->54.0 (-3%) d+1.4k(MDE 2.4) | DD 282.2->255.3 (+10%) d+0.7k(MDE 1.3) | DD 131.5->139.8 (-6%) d-0.0k(MDE 1.1) |
+| H7 | pct | 1.5 | DD 52.8->55.7 (-6%) d+1.0k(MDE 3.9) | DD 52.8->55.7 (-6%) d+1.4k(MDE 5.2) | DD 90.4->92.2 (-2%) d+2.5k(MDE 4.3) | DD 52.3->48.1 (+8%) d+0.2k(MDE 3.5) | DD 282.2->246.0 (+13%) d+1.1k(MDE 1.5) | DD 131.5->136.6 (-4%) d-0.8k(MDE 1.9) |
+| H7 | rel | 0.5 | DD 52.8->78.9 (-49%) d+3.1k(MDE 8.3) | DD 52.8->78.9 (-49%) d+2.0k(MDE 10.0) | DD 90.4->103.1 (-14%) d+2.1k(MDE 6.2) | DD 52.3->54.1 (-3%) d+5.2k(MDE 14.0) | DD 282.2->203.6 (+28%) d-2.5k(MDE 6.5) | DD 131.5->131.7 (-0%) d-0.0k(MDE 0.4) |
+| H7 | rel | 0.75 | DD 52.8->78.4 (-49%) d+3.2k(MDE 8.2) | DD 52.8->78.4 (-49%) d+2.1k(MDE 9.9) | DD 90.4->99.8 (-10%) d+2.3k(MDE 6.1) | DD 52.3->58.0 (-11%) d+5.3k(MDE 14.0) | DD 282.2->192.0 (+32%) d-2.5k(MDE 6.4) | DD 131.5->131.4 (+0%) d-0.1k(MDE 0.2) |
+| H7 | rel | 1.25 | DD 52.8->56.9 (-8%) d+1.2k(MDE 3.3) | DD 52.8->56.9 (-8%) d+1.5k(MDE 4.4) | DD 90.4->81.2 (+10%) d+1.4k(MDE 2.5) | DD 52.3->53.1 (-1%) d+0.5k(MDE 3.6) | DD 282.2->270.6 (+4%) d+0.6k(MDE 1.4) | DD 131.5->130.9 (+0%) d+0.0k(MDE 2.7) |
+| H7 | rel | 1.5 | DD 52.8->92.3 (-75%) d-0.3k(MDE 9.2) | DD 52.8->92.3 (-75%) d-1.2k(MDE 12.8) | DD 90.4->92.3 (-2%) d+1.5k(MDE 7.5) | DD 52.3->52.8 (-1%) d+1.7k(MDE 4.9) | DD 282.2->201.6 (+29%) d+0.5k(MDE 4.8) | DD 131.5->137.8 (-5%) d-1.9k(MDE 3.4) |
+| U7 | pct | 0.5 | DD 52.8->54.0 (-2%) d+0.1k(MDE 1.5) | DD 52.8->54.0 (-2%) d+0.4k(MDE 1.4) | DD 90.4->91.2 (-1%) d+0.2k(MDE 1.2) | DD 52.3->41.8 (+20%) d-0.5k(MDE 3.6) | DD 282.2->262.3 (+7%) d+0.2k(MDE 1.6) | DD 131.5->149.0 (-13%) d-0.3k(MDE 1.0) |
+| U7 | pct | 0.75 | DD 52.8->52.2 (+1%) d-0.1k(MDE 1.0) | DD 52.8->52.2 (+1%) d+0.2k(MDE 0.8) | DD 90.4->90.4 (+0%) d-0.0k(MDE 0.8) | DD 52.3->46.3 (+11%) d-0.8k(MDE 2.5) | DD 282.2->268.8 (+5%) d+0.3k(MDE 1.2) | DD 131.5->146.8 (-12%) d-0.2k(MDE 1.0) |
+| U7 | pct | 1.25 | DD 52.8->57.9 (-10%) d-0.1k(MDE 0.8) | DD 52.8->57.9 (-10%) d-0.4k(MDE 0.8) | DD 90.4->96.1 (-6%) d-0.2k(MDE 0.7) | DD 52.3->49.2 (+6%) d+0.3k(MDE 1.9) | DD 282.2->222.0 (+21%) d+0.8k(MDE 1.5) | DD 131.5->136.7 (-4%) d-0.7k(MDE 1.5) |
+| U7 | pct | 1.5 | DD 52.8->58.6 (-11%) d+0.5k(MDE 1.3) | DD 52.8->58.6 (-11%) d+0.0k(MDE 1.3) | DD 90.4->80.3 (+11%) d+0.2k(MDE 1.0) | DD 52.3->56.5 (-8%) d+1.5k(MDE 2.8) | DD 282.2->230.7 (+18%) d+0.7k(MDE 1.6) | DD 131.5->167.5 (-27%) d-1.3k(MDE 2.4) |
+| U7 | rel | 0.5 | DD 52.8->60.4 (-14%) d+0.7k(MDE 4.2) | DD 52.8->60.4 (-14%) d+1.2k(MDE 5.5) | DD 90.4->91.6 (-1%) d+0.9k(MDE 3.3) | DD 52.3->49.1 (+6%) d-0.5k(MDE 5.5) | DD 282.2->292.1 (-4%) d+0.2k(MDE 3.2) | DD 131.5->154.4 (-17%) d-2.2k(MDE 3.1) |
+| U7 | rel | 0.75 | DD 52.8->56.7 (-7%) d+0.9k(MDE 3.8) | DD 52.8->56.7 (-7%) d+1.7k(MDE 5.1) | DD 90.4->93.4 (-3%) d+0.8k(MDE 3.0) | DD 52.3->46.1 (+12%) d-0.9k(MDE 3.7) | DD 282.2->294.4 (-4%) d+0.5k(MDE 3.2) | DD 131.5->182.3 (-39%) d-2.9k(MDE 3.6) |
+| U7 | rel | 1.25 | DD 52.8->56.2 (-6%) d-0.2k(MDE 2.2) | DD 52.8->56.2 (-6%) d-0.3k(MDE 2.9) | DD 90.4->101.0 (-12%) d+0.8k(MDE 3.9) | DD 52.3->53.2 (-2%) d-0.1k(MDE 2.5) | DD 282.2->176.2 (+38%) d+0.5k(MDE 3.7) | DD 131.5->229.0 (-74%) d-2.7k(MDE 5.2) |
+| U7 | rel | 1.5 | DD 52.8->57.0 (-8%) d+0.2k(MDE 3.2) | DD 52.8->57.0 (-8%) d-0.4k(MDE 4.3) | DD 90.4->96.5 (-7%) d+1.4k(MDE 4.3) | DD 52.3->55.7 (-7%) d+1.5k(MDE 3.2) | DD 282.2->190.9 (+32%) d+0.7k(MDE 4.0) | DD 131.5->217.5 (-65%) d-2.3k(MDE 5.1) |
+| W* | pct | 0.5 | DD 52.8->52.2 (+1%) d+1.1k(MDE 3.4) | DD 52.8->52.2 (+1%) d+1.0k(MDE 4.7) | DD 90.4->78.5 (+13%) d+1.0k(MDE 2.6) | DD 52.3->47.5 (+9%) d+1.2k(MDE 2.8) | DD 282.2->324.4 (-15%) d-0.6k(MDE 1.2) | DD 131.5->123.3 (+6%) d+0.1k(MDE 0.8) |
+| W* | pct | 0.75 | DD 52.8->49.0 (+7%) d+0.9k(MDE 3.0) | DD 52.8->49.0 (+7%) d+1.0k(MDE 4.2) | DD 90.4->91.3 (-1%) d+0.2k(MDE 2.3) | DD 52.3->47.6 (+9%) d+0.5k(MDE 1.8) | DD 282.2->291.4 (-3%) d+0.0k(MDE 1.3) | DD 131.5->130.5 (+1%) d+0.1k(MDE 0.5) |
+| W* | pct | 1.25 | DD 52.8->81.5 (-54%) d-1.5k(MDE 3.0) | DD 52.8->81.5 (-54%) d-2.1k(MDE 4.1) | DD 90.4->89.8 (+1%) d-1.0k(MDE 2.2) | DD 52.3->48.6 (+7%) d-0.0k(MDE 1.8) | DD 282.2->284.9 (-1%) d-0.8k(MDE 2.2) | DD 131.5->128.4 (+2%) d-0.5k(MDE 1.0) |
+| W* | pct | 1.5 | DD 52.8->80.7 (-53%) d-1.8k(MDE 2.9) | DD 52.8->80.7 (-53%) d-2.7k(MDE 3.9) | DD 90.4->89.5 (+1%) d-1.3k(MDE 2.2) | DD 52.3->48.4 (+7%) d+0.5k(MDE 2.0) | DD 282.2->271.5 (+4%) d-0.8k(MDE 2.2) | DD 131.5->127.8 (+3%) d-0.3k(MDE 0.9) |
+| W* | rel | 0.5 | DD 52.8->50.3 (+5%) d+1.2k(MDE 3.2) | DD 52.8->50.3 (+5%) d+1.2k(MDE 4.5) | DD 90.4->90.8 (-0%) d+0.7k(MDE 2.4) | DD 52.3->49.0 (+6%) d+1.0k(MDE 1.4) | DD 282.2->268.5 (+5%) d-0.3k(MDE 2.0) | DD 131.5->90.0 (+32%) d+1.4k(MDE 3.2) |
+| W* | rel | 0.75 | DD 52.8->52.5 (+1%) d+1.4k(MDE 2.9) | DD 52.8->52.5 (+1%) d+1.5k(MDE 4.0) | DD 90.4->90.6 (-0%) d+0.9k(MDE 2.1) | DD 52.3->50.6 (+3%) d+0.9k(MDE 1.6) | DD 282.2->264.4 (+6%) d-0.3k(MDE 2.0) | DD 131.5->89.9 (+32%) d+1.3k(MDE 2.9) |
+| W* | rel | 1.25 | DD 52.8->85.2 (-61%) d-1.1k(MDE 2.4) | DD 52.8->85.2 (-61%) d-1.5k(MDE 3.4) | DD 90.4->90.2 (+0%) d-0.7k(MDE 1.8) | DD 52.3->51.0 (+3%) d-0.3k(MDE 1.1) | DD 282.2->281.9 (+0%) d-0.7k(MDE 2.1) | DD 131.5->131.3 (+0%) d-0.6k(MDE 1.5) |
+| W* | rel | 1.5 | DD 52.8->84.2 (-59%) d-1.7k(MDE 2.9) | DD 52.8->84.2 (-59%) d-2.5k(MDE 4.0) | DD 90.4->90.2 (+0%) d-1.2k(MDE 2.2) | DD 52.3->49.3 (+6%) d+0.1k(MDE 2.0) | DD 282.2->279.3 (+1%) d-0.7k(MDE 2.1) | DD 131.5->131.3 (+0%) d-0.6k(MDE 1.5) |
 
 ## B6. Placebos (full package replaced by random exits). Rank = share of placebo draws whose effect vs lines-OFF is at least as good as the real lines (maxDD cut larger / mean delta larger); small = real beats the placebo.
 
 | placebo | window | draws | real maxDD cut | placebo median [5,95] | rank cut | real d mean | placebo med d mean | rank mean |
 |---|---|---|---|---|---|---|---|---|
-| P1 | F9 | 200 | +65% | -49% [-148,+4] | 0.00 | -9.6 | -23.8 | 0.00 |
-| P1 | L3M | 200 | +60% | -123% [-277,-31] | 0.00 | -1.1 | -21.1 | 0.00 |
-| P1 | L6M | 200 | +65% | -48% [-148,+7] | 0.00 | -8.0 | -22.5 | 0.00 |
-| P1 | HOLD | 200 | +40% | -63% [-155,-6] | 0.00 | -8.1 | -21.5 | 0.00 |
-| P1 | MID | 200 | -19% | -163% [-411,-39] | 0.03 | -12.4 | -24.9 | 0.02 |
-| P1 | PRE | 200 | -113% | -294% [-445,-179] | 0.01 | -3.0 | -13.0 | 0.00 |
-| P1 | X' | 200 | +44% | -48% [-103,-3] | 0.00 | +3.4 | -2.9 | 0.00 |
-| P2 | F9 | 200 | +65% | -7% [-57,+24] | 0.00 | -9.6 | -9.1 | 0.57 |
-| P2 | L3M | 200 | +60% | -34% [-128,+32] | 0.00 | -1.1 | -9.2 | 0.07 |
-| P2 | L6M | 200 | +65% | -7% [-57,+26] | 0.00 | -8.0 | -8.1 | 0.49 |
-| P2 | HOLD | 200 | +40% | -10% [-59,+21] | 0.01 | -8.1 | -8.3 | 0.47 |
-| P2 | MID | 200 | -19% | -37% [-145,+11] | 0.30 | -12.4 | -10.5 | 0.68 |
-| P2 | PRE | 200 | -113% | -91% [-191,-27] | 0.67 | -3.0 | -5.0 | 0.30 |
-| P2 | X' | 200 | +44% | +18% [-28,+63] | 0.21 | +3.4 | +1.8 | 0.30 |
-| P3 | F9 | 200 | +65% | +17% [-24,+52] | 0.00 | -9.6 | +0.9 | 0.99 |
-| P3 | L3M | 200 | +60% | +8% [-51,+54] | 0.03 | -1.1 | +1.2 | 0.70 |
-| P3 | L6M | 200 | +65% | +17% [-24,+54] | 0.01 | -8.0 | +3.1 | 1.00 |
-| P3 | HOLD | 200 | +40% | +13% [-25,+38] | 0.04 | -8.1 | +1.4 | 1.00 |
-| P3 | MID | 200 | -19% | -31% [-109,+18] | 0.40 | -12.4 | -4.7 | 0.94 |
-| P3 | PRE | 200 | -113% | -25% [-110,+13] | 0.95 | -3.0 | +1.9 | 0.84 |
-| P3 | X' | 200 | +44% | +43% [-11,+75] | 0.48 | +3.4 | +4.0 | 0.56 |
+| P1 | F9 | 100 | +65% | -9% [-40,+21] | 0.00 | -9.6 | -17.9 | 0.01 |
+| P1 | L3M | 100 | +60% | -49% [-105,+8] | 0.00 | -1.1 | -13.5 | 0.00 |
+| P1 | L6M | 100 | +65% | -9% [-40,+23] | 0.00 | -8.0 | -16.9 | 0.01 |
+| P1 | HOLD | 100 | +40% | -14% [-42,+18] | 0.00 | -8.1 | -15.9 | 0.01 |
+| P1 | MID | 100 | -19% | -64% [-156,+0] | 0.19 | -12.4 | -19.2 | 0.05 |
+| P1 | PRE | 100 | -113% | -166% [-261,-76] | 0.19 | -3.0 | -9.6 | 0.00 |
+| P1 | X' | 100 | +44% | -33% [-68,+5] | 0.01 | +3.4 | -2.3 | 0.00 |
+| P2 | F9 | 100 | +65% | -3% [-27,+25] | 0.00 | -9.6 | -9.2 | 0.58 |
+| P2 | L3M | 100 | +60% | -13% [-62,+32] | 0.00 | -1.1 | -6.9 | 0.10 |
+| P2 | L6M | 100 | +65% | -3% [-27,+25] | 0.00 | -8.0 | -9.0 | 0.38 |
+| P2 | HOLD | 100 | +40% | -3% [-27,+25] | 0.01 | -8.1 | -8.3 | 0.47 |
+| P2 | MID | 100 | -19% | -23% [-91,+18] | 0.46 | -12.4 | -8.8 | 0.83 |
+| P2 | PRE | 100 | -113% | -99% [-171,-12] | 0.64 | -3.0 | -6.3 | 0.05 |
+| P2 | X' | 100 | +44% | +2% [-44,+44] | 0.06 | +3.4 | +0.4 | 0.04 |
+| P3 | F9 | 100 | +65% | +17% [-7,+46] | 0.00 | -9.6 | -1.6 | 0.99 |
+| P3 | L3M | 100 | +60% | +15% [-35,+57] | 0.03 | -1.1 | +1.5 | 0.71 |
+| P3 | L6M | 100 | +65% | +17% [-7,+46] | 0.02 | -8.0 | +0.1 | 0.97 |
+| P3 | HOLD | 100 | +40% | +15% [-7,+43] | 0.09 | -8.1 | -1.1 | 1.00 |
+| P3 | MID | 100 | -19% | -29% [-99,+7] | 0.37 | -12.4 | -6.7 | 0.90 |
+| P3 | PRE | 100 | -113% | -36% [-104,+11] | 0.96 | -3.0 | -1.7 | 0.79 |
+| P3 | X' | 100 | +44% | +16% [-28,+42] | 0.05 | +3.4 | +1.4 | 0.09 |
 
 ## B7. Leave-one-week-out (ISO 2026-W38) and leave-one-month-out, five lines vs lines off 
 
@@ -377,6 +412,7 @@ Book x session cells (F9 and HOLD delta mean $k/wk; only cells where the lines a
 
 
 MaxDD carrier weeks (trough week of the weekly-cumulative maxDD): F9: off 202637 / on 202635; L3M: off 202637 / on 202635; L6M: off 202637 / on 202635; HOLD: off 202637 / on 202608; PRE: off 202440 / on 202516; X': off 202351 / on 202323
+
 
 ## C. Reading on V13Y, 10-s grid (lock none headline; post-hoc, no PASS)
 Episodes lookup: DS3_ZONES_EPISODES_V13Y.md. The 1-s page (DS3_D7_TAKE_LINES_V13Y_1S.md) is the preferred evaluation; this is the 10-s grid the earlier pages used.
