@@ -30,3 +30,8 @@ r = V13T.run_v13t_live({'inject': [it, it2]})
 - `px` for a limit-order style exit (e.g. exit AT a target-like level) is your choice; for a marketable exit use the path price at kx (d.SC[kx]) and let the cost model charge xcost. A stop-style exit that fills worse (stopcost) is NOT an injected kind: use `kind='time'` with px = the stop level and xcost=2.45 (item override) if you want a rule's own stop priced like a live stop.
 - Combine with placebos by building random `rows/kx/px` sets and passing them through the same `inject` (they then carry the same cost model).
 - Costs/phase: per-book locks use the lock engine; `lockfix='legs'` is the only mode that values the 30% from its fill.
+
+## Notes added after the self-tests (EXIT_API_TESTS.md)
+- An injected exit COMPETES with the TH-L2 loss cut and with other injected exits on the same row: the EARLIEST second wins and the delta is applied relative to the LIBRARY exit (not to the cut). For a row the cut already exits, the net change from your injection is dN_yours - dN_cut. Check your marginal effect on rows where the base exit is the original stop or target (ty0 != 2).
+- Stop-type rows: when your exit replaces an original STOP exit, the engine also removes the stop slippage (stopcost - 1.01 pt per lot, 1.44 at the live 2.45) of the exited lots (the row stops being a stop); scale_out removes it pro rata. This is automatic: the worked examples verify delta = (dN + 1.44) x $/pt for stop rows and delta = dN x $/pt for target rows, with dN = side*(px - exit_px_lib) - xcost + fill_cost*(original exit not the target).
+- $/pt per lot of the position = lots x $20 (e.g. 105 $/pt for a 5-lot P6 trade); an exit before the add fills carries the 70% leg only (F x $/pt).

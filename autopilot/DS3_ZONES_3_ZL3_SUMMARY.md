@@ -17,3 +17,16 @@ Scope: ZONES-3 L2 addendum B/C (order-book + tape zones scored on D7, density, c
 2. No RISK-KEEP, no live lead from ZL-3. The only structured survivor (G2) died on V13Y.
 3. The base defect found here (B73 add-fill ordering) overstated the shipped OTE-62 B73 and every B73/WT cell; V13Y is the corrected base.
 4. The learned rule has no zone content: the discrimination (AUC 0.71-0.75 on V13Y labels) is the book x session prior; D7 mapping table EMPTY.
+
+## V13T / V13T_LIVE update (2026-11-02 evening; truth base after the user's answers: lines off, lock none, resting add cancelled on any exit, market exits 0.80, stops 2.45 worse)
+| family | cells | V13T / V13T_LIVE result | final label |
+|---|---|---|---|
+| Execution-robust split family (ladder3, ladder2, band, +2 s delay, wide ladder) x 9 execution scenarios + market + 10 random-dip placebos (prereg sha 5c147ad4) | 75 | no design beats the shipped X = 3 add; the shipped split has no L6M drawdown edge on V13T (market +3%) - its edge is in PRE (market 20% worse) and MID (market 75% worse); friction costs mean (-2.8k/wk per 1 tick + 3 s, -7.4k with 50% fills), not drawdown | shipped split stays; null decision |
+| Split vs market by sub-period (PRE thirds, MID halves, years) | 13 | PRE edge = the middle third, MID edge = the second half (two episodes); dollar edge positive 2023 and 2026, negative 2024-25 | edge = two episodes, regime-dependent |
+| Generic B73 / no-split re-run on V13T | 11 | cuts -17..+26% (d = 60 = 70% size cut), means <= 0 | DEAD |
+| Pools as target (EQL / SWG / LQP; m 15, 25) + 10 permuted-distance placebos (prereg sha e2ab98f3) | 16 | swing-pool targets: mean -12.8k/wk, MID -151%; equal-H/L pools: -11..-16% L6M; placebo as bad | DEAD |
+| ZL-1 broken / flip levels on V13T_LIVE (17 masks skip + 5 size-up) | 22 | none beyond +-10% in L6M / PRE / X'; prior-day H/L and London H/L +9% in L3M only | DEAD |
+| ZL-1 'BT 5m swing' flip skip (the one live cell) | 1 (+40 placebos) | +30% L6M / +22% HOLD / +15% MID / +5% PRE / +22% X'; mean +5.1k (> MDE 3.9k), mean rank 0.025, DD ranks 0.075-0.10, L6M and X' ONE-WEEK | LEAD-weak (ZL-1 owns; needs the V13T_LIVE band and a causal re-audit) |
+Earlier families (order-book, tape, density, confirmed/weak, G2, learned model, B9 tree, gap/FVG) were scored on V13Y and the V13T split work does not change their labels; their V13T / V13T_LIVE re-run is pending.
+| Scale-out (30/50% at pct 0.5/0.7) vs the resting add, V13T_LIVE (prereg sha e7811d4e) | 9 + 20 placebos + 2 equal-risk | cuts +13..+38% L6M for -2..-7k/wk mean; at equal risk market + scale-out = shipped split (+0.5% total), split + scale-out -11%; random-timing placebo clearly worse | NO EDGE (volume) |
+| Decision table split vs market (V13T_LIVE; per year, episode, book, equal risk, walk-forward per-book choice, sign-flip null) | see DS3_D7_SPLIT_DECISION.md | market +$158k (+4.5%, CI [-115k, +429k]) but maxDD 198k vs 166k; PE needs the split (-$86k, maxDD 200k), KB gains from market (+$185k, P(best of 5) 0.067); walk-forward per-book choice $3.616M / maxDD 161k vs shipped $3.390M / 166k (rank 0.06 vs random) | user decision; 'split only for PE' is the cleanest candidate (in-sample) |

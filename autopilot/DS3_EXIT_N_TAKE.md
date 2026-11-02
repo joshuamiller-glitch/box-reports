@@ -143,3 +143,21 @@ Control (V13T_LIVE, no exits): L6M 36.7k/wk, maxDD L6M 150.7k, HOLD 150.7k, MID 
 | M6 | nyam | -97 | +103 | +154 | -4.1 | -1.6 | -1.2 |
 | A6 | asia | +0 | +0 | +0 | +0.0 | +0.0 | +0.0 |
 
+
+
+## Placebos for the four NOW-ONLY(B) cells, interim n=40-49 draws per kind (carry the SAME cost model: exits injected through V13T.inject with xcost 0.80 and the base stopcost 2.45); target 100 draws, still running
+No placebo is beaten on the maxDD cut (L6M cut ranks 0.27-0.90, PRE 0.08-0.76, X' 0.12-0.94). The only small ranks are on the MEAN: delta-turn <= -100 contracts at pct 0.7 has an L6M mean change +2.5k/wk that only 2-8% of random same-count/same-volume/shuffled-gate exits match (rank 0.02 / 0.08 / 0.05) - the gate is slightly selective about which exits lose least, but the absolute gain is 2.5k/wk (inside the 4.1k MDE), PRE is -0.6k/wk and the L6M maxDD cut (+6%) is ordinary. delta-turn at pct 0.5: L6M cut +11%, PRE-mean rank 0.04 against random rows only. Labels: all four = NOW-ONLY, no placebo beat, not leads.
+| cell | placebo kind | n | cell: L6M cut / mean d | rank L6M cut | rank HOLD | rank PRE cut | rank X' cut | rank L6M mean | rank PRE mean | label |
+|---|---|---|---|---|---|---|---|---|---|---|
+| delta|a0.7|T100 | random rows same count per day | 40 | +6% / +2535 | 0.63 | 0.63 | 0.76 | 0.83 | 0.02 | 0.32 | no placebo beat |
+| delta|a0.7|T100 | same planned-lot volume | 49 | +6% / +2535 | 0.72 | 0.70 | 0.68 | 0.76 | 0.08 | 0.22 | no placebo beat |
+| delta|a0.7|T100 | shuffled-day donor gate | 40 | +6% / +2535 | 0.27 | 0.27 | 0.56 | 0.85 | 0.05 | 0.71 | no placebo beat |
+| delta|a0.5|T100 | random rows same count per day | 49 | +11% / +1437 | 0.44 | 0.30 | 0.20 | 0.18 | 0.08 | 0.04 | no placebo beat |
+| delta|a0.5|T100 | same planned-lot volume | 40 | +11% / +1437 | 0.66 | 0.37 | 0.24 | 0.17 | 0.10 | 0.15 | no placebo beat |
+| delta|a0.5|T100 | shuffled-day donor gate | 48 | +11% / +1437 | 0.33 | 0.22 | 0.10 | 0.12 | 0.06 | 0.06 | no placebo beat |
+| delta|a0.7|T60 | random rows same count per day | 40 | +6% / +276 | 0.85 | 0.80 | 0.51 | 0.78 | 0.20 | 0.17 | no placebo beat |
+| delta|a0.7|T60 | same planned-lot volume | 48 | +6% / +276 | 0.90 | 0.88 | 0.65 | 0.76 | 0.18 | 0.10 | no placebo beat |
+| delta|a0.7|T60 | shuffled-day donor gate | 40 | +6% / +276 | 0.44 | 0.32 | 0.34 | 0.85 | 0.22 | 0.24 | no placebo beat |
+| zone|ahead1.2 | random rows same count per day | 48 | +8% / +912 | 0.57 | 0.31 | 0.37 | 0.94 | 0.12 | 0.47 | no placebo beat |
+| zone|ahead1.2 | same planned-lot volume | 40 | +8% / +912 | 0.71 | 0.46 | 0.34 | 0.93 | 0.07 | 0.44 | no placebo beat |
+| zone|ahead1.2 | shuffled-day donor gate | 48 | +8% / +912 | 0.45 | 0.43 | 0.08 | 0.84 | 0.12 | 0.84 | no placebo beat |
