@@ -795,3 +795,122 @@ Arms constant per PE row (25 / 30 / 40); rows = PE rows where the TH-L2 trigger 
 | 1-99 | 6126 | 3972 / 3699 / 3208 | -0.8 / -0.1 / 0.4 | -142 / -6 / +0 | -565049 / -23299 / +281 | -541749 | +23581 | -3419 / -4081 / -5406 |
 
 Exit-at-cut loss by lots (analytic, $ per cut trade at arm 25 / 30 / 40): 7 lots -3612 / -4312 / -5712; 9 lots -4644 / -5544 / -7344; 11 lots -5676 / -6776 / -8976 (7 and 9 lots do not occur in live PE; only 11 does). Tightening 30 -> 25 saves $700 per cut 7-lot trade, $900 at 9, $1,100 at 11, but at 11 lots arm 25 changes 115 more rows than arm 30 and the net total over all 11-lot rows is $474k worse than arm 30 (arm 40 is $133k worse): trades cut at 25 that would have recovered cost more than the saved loss. At 4 lots the picture reverses (arm 40 is +$208k better than 30, arm 25 -$112k), at 6 lots arm 25 is +$44k and arm 40 -$52k. That is the whole mechanism: large-lot rows prefer a tight arm only for drawdown containment, not for P&L.
+
+## SIZER_S1 update (2026-11-02 21:30Z): ts-base re-screen, exact equal-risk, rank-hysteresis family with a family-wise null, tier carrying, exposure
+
+Prereg: ZL_S4A_PREREG_SIZER_HYST_FAMILY.md (sha256 6da9c8038f47a138ebf47a8e6276e57e24cbe88086ce5c61eaa854d4e492acc3, DECISIONS.md). Base = the current T-SIZER harness (ts mode: V13T_LIVE costs, sequential rounding, lock R scaled only when mult > 1), reference = live binary ER ladder in the same mode; single path (lock-reset phases are identical on this base). IMPORTANT: the section-1 screen of 998 cells above was run on the sequential-without-ts base; the top 100 of it were re-run on the ts base here.
+
+**(0) Base sensitivity.** The ts re-screen of the top 100 keeps 77 cells at mean >= live. The previous lead (ER(20) rank hysteresis 3 tiers) changes from PA9 L6M +.34 / PRE +.19 (sequential base) to single-path L6M +0.31; see (2): on the ts base its PRE cut is about zero. The lead is BASE-SENSITIVE.
+
+**(2) Family of 72 rank-hysteresis settings** (ER window 14/20/30 x expanding/rolling-250 rank x cuts (1/4,3/4) (1/3,2/3) (.4,.6) x margin 0/.03/.05/.10). Eligible cells (mean >= live, no window worse than the PA9 flip-5 band): 5 of 72. Single-path cuts of the best cells:
+
+| cell | cut L6M | HOLD | MID | PRE | X' | drop L6M | drop PRE | mean $/wk | S=(L6M+PRE)/2 | eligible |
+|--|--|--|--|--|--|--|--|--|--|--|
+| ER20 exp cuts 1/4-3/4 h0.05 | +0.39 | -0.00 | -0.75 | +0.32 | -0.13 | -0.12 | +0.40 | -254 | +0.351 |  |
+| ER20 exp cuts 1/3-2/3 h0.1 | +0.47 | +0.11 | -0.37 | +0.21 | +0.04 | +0.02 | +0.21 | +855 | +0.336 |  |
+| ER30 exp cuts 1/4-3/4 h0.1 | +0.46 | -0.07 | -1.24 | +0.13 | +0.09 | +0.01 | +0.13 | -2898 | +0.298 |  |
+| ER20 exp cuts 1/4-3/4 h0.03 | +0.39 | +0.00 | -0.70 | +0.18 | -0.05 | -0.12 | +0.33 | -1619 | +0.284 |  |
+| ER20 roll cuts .4-.6 h0.1 | +0.46 | +0.10 | -0.73 | +0.10 | +0.14 | +0.01 | +0.20 | +1559 | +0.281 |  |
+| ER14 exp cuts 1/4-3/4 h0.1 | +0.38 | -0.25 | -1.75 | +0.18 | -0.31 | +0.14 | +0.18 | -3579 | +0.281 |  |
+| ER30 exp cuts .4-.6 h0.1 | +0.42 | -0.43 | -1.65 | +0.11 | +0.09 | +0.27 | +0.11 | -283 | +0.269 |  |
+| ER30 roll cuts .4-.6 h0.05 | +0.30 | -0.29 | -1.60 | +0.24 | +0.07 | +0.00 | +0.24 | -2500 | +0.267 |  |
+| ER20 exp cuts 1/4-3/4 h0.1 | +0.34 | -0.03 | -1.02 | +0.18 | -0.36 | -0.21 | +0.18 | -1344 | +0.260 |  |
+| ER20 roll cuts 1/4-3/4 h0.03 | +0.31 | +0.01 | -0.74 | +0.21 | -0.01 | -0.17 | +0.32 | -1882 | +0.259 |  |
+
+Best-of-grid statistic B = max S over eligible cells = +0.142 (B2 = max min(L6M,PRE) = +0.031; unconditioned max S = +0.351). FAMILY-WISE NULL (day-shuffled multiplier worlds, one day-source map per world applied to all 72 cells): 100 complete worlds so far (target 100). Null B: median -9.000, 95th pct -9.000; share of worlds with an eligible cell 0.00. P-value of B = 0.010; of B2 = 0.010; of the unconditioned max S = 0.812; of the best S among no-harm cells WITHOUT the mean gate (real +0.142) = 0.040; null of unconditioned max S: median +0.409, 95th pct +0.501 (n = 100 worlds). Reading: no day-shuffled world has a cell that keeps the mean at or above the live ladder (the shuffle removes the ER signal's contribution to the mean), so the eligibility gate alone separates the real lead from the null; the drawdown cut S by itself is NOT unusual under shuffling (a random multiplier vector with this distribution reaches an S as high as the real best in most worlds).
+
+**(3) Which tier carries the gain (lead ER20 expanding (1/3,2/3) h .05):**
+
+| variant | cut L6M | HOLD | MID | PRE | X' | drop L6M | drop PRE | mean $/wk vs live |
+|--|--|--|--|--|--|--|--|--|
+| lead x0.5 / x1.0 / x1.5 | +0.31 | +0.19 | -0.11 | -0.02 | -0.03 | -0.02 | +0.31 | +138 |
+| x0.5 replaced by x1.0 (1/1/1.5) | +0.22 | -0.14 | -1.38 | +0.10 | -0.32 | -0.05 | +0.10 | +875 |
+| x1.5 replaced by x1.0 (0.5/1/1) | +0.53 | +0.22 | -0.25 | +0.47 | +0.06 | +0.20 | +0.47 | -4982 |
+
+Reading: the drawdown gain sits in the x0.5 (down-size) tier and is paid for in mean; the x1.5 tier is what carries the mean.
+
+**(1) Exact equal-risk mean (11-point lscale scan, linear fits; lot scale c at which the cell's fitted maxDD equals the live ladder's) for the lead and the top-30 ts re-screen cells; mean gain = mean at equal risk - live mean (fitted), $/wk:**
+
+| cell | c L6M | gain L6M | c PRE | gain PRE | c X' | gain X' |
+|--|--|--|--|--|--|--|
+| ('g13', 'ers_30m_20', 1, 'LIN', 'B') | 2.51 | +69190 | 0.96 | +776 | 0.76 | +1049 |
+| ('g13', 'ers_30m_20', 1, 'SIG', 'B') | 2.21 | +56233 | 0.94 | +755 | 0.74 | +994 |
+| ('g13', 'ers_30m_20', 1, 'L5', 'B') | 1.97 | +40835 | 1.01 | +3671 | 0.66 | +505 |
+| ('g13', 'ers_5m_20', 1, 'L5', 'A') | 1.63 | +27030 | 1.17 | +3666 | 0.94 | +503 |
+| ('g12', 'er_15m_10', 'L3', 'D') | 1.67 | +23251 | 1.11 | +4183 | 0.92 | +1241 |
+| ('g13', 'ers_5m_20', 1, 'LIN', 'B') | 1.38 | +27016 | 0.87 | +65 | 0.89 | +2724 |
+| ('g13', 'ers_15m_20', 1, 'L3', 'A') | 1.39 | +23825 | 1.09 | +2621 | 1.00 | +2063 |
+| ('g12', 'er_30m_10', 'L5', 'D') | 1.51 | +17768 | 1.19 | +5918 | 0.70 | -980 |
+| ('g12', 'er_10m_14', 'L3', 'D') | 1.33 | +14402 | 1.24 | +5919 | 0.81 | -225 |
+| ('g12', 'er_1m_100', 'LIN', 'D') | 1.46 | +16509 | 1.13 | +3727 | 0.48 | -2561 |
+| ('g12', 'er_1m_100', 'SIG', 'D') | 1.50 | +16100 | 1.13 | +4029 | 0.53 | -2098 |
+| ('g13', 'ers_10m_20', 1, 'LIN', 'B') | 1.11 | +12510 | 1.18 | +6992 | 0.83 | -815 |
+| ('g12', 'er_10m_14', 'LIN', 'B') | 1.22 | +13434 | 1.14 | +5274 | 0.81 | +317 |
+| ('g12', 'er_10m_14', 'SIG', 'B') | 1.21 | +11719 | 1.16 | +5899 | 0.86 | +1012 |
+| ('g12', 'er_5m_20', 'LIN', 'D') | 1.36 | +13002 | 1.18 | +4577 | 0.51 | -1993 |
+| ('g12', 'er_30m_10', 'L3', 'D') | 1.33 | +11407 | 1.13 | +6024 | 0.61 | -1425 |
+| ('g12', 'er_15m_10', 'L5', 'D') | 1.45 | +14220 | 1.06 | +2271 | 0.89 | +1083 |
+| ('g12', 'er_10m_10', 'LIN', 'B') | 1.36 | +16130 | 0.91 | -441 | 0.66 | -1385 |
+| ('g12', 'er_30m_10', 'LIN', 'B') | 1.15 | +11060 | 1.00 | +4218 | 0.76 | -251 |
+| ('g13', 'ers_5m_20', 1, 'L3', 'A') | 1.39 | +14140 | 1.02 | +1038 | 1.10 | +4255 |
+| ('g12', 'er_15m_10', 'LIN', 'D') | 1.36 | +12639 | 1.06 | +2357 | 0.62 | -1198 |
+| ('g13', 'ers_5m_20', 1, 'L5', 'D') | 1.25 | +8731 | 1.27 | +6065 | 0.81 | +171 |
+| ('g13', 'ers_10m_20', 1, 'SIG', 'B') | 1.02 | +8963 | 1.14 | +5344 | 0.85 | -530 |
+| ('g13', 'ers_10m_20', 1, 'L3', 'D') | 1.29 | +12701 | 1.01 | +1122 | 0.88 | +978 |
+| ('g12', 'er_1m_100', 'L3', 'D') | 1.37 | +11623 | 1.07 | +1588 | 0.77 | +63 |
+| ('g14', 'er_5m_20', 'hyst', 'L3') | 1.41 | +11851 | 0.99 | +565 | 1.02 | +1178 |
+| LEAD ER20 hysteresis | 1.41 | +11851 | 0.99 | +565 | 1.02 | +1191 |
+| ('g12', 'er_1m_100', 'L3', 'A') | 1.25 | +8296 | 1.13 | +2215 | 1.16 | +2532 |
+| ('g12', 'er_5m_20', 'L5', 'D') | 1.12 | +5111 | 1.23 | +4659 | 0.78 | -442 |
+| ('g12', 'er_10m_20', 'L3', 'D') | 1.20 | +7549 | 1.01 | +894 | 0.86 | +929 |
+| ('g14', 'er_5m_14', 'min3', 'L3') | 1.15 | +5510 | 1.05 | -268 | 1.00 | +1668 |
+
+**Exposure (exposure_table):** lead mean lots 3.14 / max 11; live ladder 3.01 / 11. Worst net signed NQ lots across books: lead 28 (20240926), live 28 (20240220); worst stack risk lead $33,600, live $33,600. The lead does not change the worst-case exposure.
+
+
+## SIZER_S3X_STRESS addendum 6: what the lot-scaled formula really does (2026-11-02T21:47Z) POST-HOC, no PASS, Shadow only
+Prereg l2vast/ds3/prereg/SIZER_S3X_Z1_addendum6_prereg.md sha256 3bbd38ba9643ae7b977d29632c4dd5dbe05a9317eb0484829731846e718307d2 (DECISIONS.md before scoring). Positive = smaller drawdown vs the T-SIZER base (run_v13t_ts + HALF), live arm 30 elsewhere. Formula F arms: lots 1-4 -> 40, lots 6 -> 29, lots 11 -> 20 (all books; the 11-lot rows are PE only). Check: rule cell T (40/29/20 by those buckets) reproduces F exactly (max daily diff 0.00).
+Formula cell F (ALL, ER-multiplied lots, X=3500)
+| cell | PA cut L6M / HOLD / MID / PRE / X' | episode dropped L6M / PRE | S1 | mean d L6M / PRE $k/wk (MDE) | P&L d $k |
+|---|---|---|---|---|---|
+| F full | +5% / +5% / -11% / +11% / +12% | +27% / +32% | 0.116 | -3.1 (13.8) / -1.9 (7.4) | -60 |
+| F only at lots=1 (arm 40) | +8% / +8% / +8% / -2% / -9% | -6% / +1% | -0.055 | +0.6 (2.8) / -0.2 (1.4) | -13 |
+| F only at lots=2 (arm 40) | -4% / -4% / +10% / +2% / +3% | +5% / -1% | 0.022 | -0.7 (2.4) / +0.9 (1.4) | +99 |
+| F only at lots=3 (arm 40) | +9% / +9% / -8% / -1% / +3% | +2% / +6% | 0.011 | +0.1 (4.8) / +0.4 (2.1) | +125 |
+| F only at lots=4 (arm 40) | -10% / -10% / +35% / -2% / -0% | -17% / -4% | -0.010 | -2.8 (5.2) / +0.6 (2.2) | +117 |
+| F only at lots=6 (arm 29) | +2% / +2% / -19% / +1% / -0% | +2% / +1% | 0.004 | -0.3 (1.7) / -0.2 (0.7) | -45 |
+| F only at lots=11 (arm 20) | -8% / -8% / +9% / +4% / +5% | +20% / +24% | 0.044 | -2.5 (12.9) / -3.9 (6.5) | -488 |
+| I40 | -3% / -3% / +31% / +0% / -4% | -12% / +6% | -0.017 | -3.8 (8.3) / +1.7 (3.6) | +319 |
+| I29 | +2% / +2% / -19% / +1% / -0% | +2% / +1% | 0.004 | -0.3 (1.7) / -0.2 (0.7) | -45 |
+| I20 | -8% / -8% / +9% / +4% / +5% | +20% / +24% | 0.044 | -2.5 (12.9) / -3.9 (6.5) | -488 |
+| P4029 | +0% / +0% / +18% / +1% / -2% | -10% / +8% | -0.001 | -4.1 (8.4) / +1.6 (3.6) | +274 |
+| P4020 | +2% / +2% / +12% / +10% / +7% | +25% / +30% | 0.085 | -2.7 (13.3) / -1.7 (7.3) | -15 |
+| P2920 | -6% / -6% / -7% / +5% / +3% | +22% / +26% | 0.040 | -2.8 (13.3) / -4.1 (6.6) | -533 |
+| T | +5% / +5% / -11% / +11% / +12% | +27% / +32% | 0.116 | -3.1 (13.8) / -1.9 (7.4) | -60 |
+| I40pe | -10% / -10% / +33% / -1% / -1% | -17% / -3% | -0.010 | -2.8 (5.5) / +0.5 (2.2) | +115 |
+| I29pe | +0% / +0% / +0% / +0% / -2% | +0% / +0% | -0.008 | +0.1 (0.1) / +0.1 (0.1) | +4 |
+| I20pe | -8% / -8% / +9% / +4% / +5% | +20% / +24% | 0.044 | -2.5 (12.9) / -3.9 (6.5) | -488 |
+check T == F: max abs daily diff 0.00
+| cell | kind (n) | rank PA PRE | rank PA X' | rank L6M-dropped | rank PRE-dropped |
+|---|---|---|---|---|---|
+| PE-R1n (real -6% / +6% / +8% / +16%) | A (100) | 0.515 | 0.188 | 0.010 | 0.010 |
+| PE-R1n (real -6% / +6% / +8% / +16%) | B (100) | 0.465 | 0.139 | 0.010 | 0.010 |
+| PE-R1n (real -6% / +6% / +8% / +16%) | C (100) | 0.574 | 0.257 | 0.020 | 0.010 |
+| PE-R2n (real -9% / -2% / +15% / +16%) | A (100) | 0.564 | 0.594 | 0.010 | 0.059 |
+| PE-R2n (real -9% / -2% / +15% / +16%) | B (100) | 0.525 | 0.594 | 0.010 | 0.030 |
+| PE-R2n (real -9% / -2% / +15% / +16%) | C (100) | 0.554 | 0.683 | 0.020 | 0.099 |
+| cell | kind (n) | rank PA PRE | rank PA X' | rank L6M-dropped | rank PRE-dropped |
+|---|---|---|---|---|---|
+| P4020 (real +10% / +7% / +25% / +30%) | A (100) | 0.010 | 0.020 | 0.139 | 0.020 |
+| P4020 (real +10% / +7% / +25% / +30%) | B (100) | 0.010 | 0.010 | 0.010 | 0.010 |
+| P4020 (real +10% / +7% / +25% / +30%) | C (100) | 0.010 | 0.010 | 0.040 | 0.010 |
+| I20 (real +4% / +5% / +20% / +24%) | A (100) | 1.000 | 1.000 | 1.000 | 1.000 |
+| I20 (real +4% / +5% / +20% / +24%) | B (100) | 1.000 | 1.000 | 1.000 | 1.000 |
+| I20 (real +4% / +5% / +20% / +24%) | C (100) | 0.208 | 0.386 | 0.020 | 0.040 |
+
+Note: for single-valued cells (I20) placebos A (permute) and B (iid from marginal) are degenerate (every draw equals the cell, rank 1.000); only kind C is informative there. Extra placebos for P4020 and I20 were run because both had PA PRE and X' cuts > 0 (prereg item C).
+
+Frames for P4020 (arm 40 at lots <= 4 plus arm 20 at 11 lots), each vs its own base: V13T2 kfix PA cut L6M/HOLD/MID/PRE/X' +8/+8/+15/+7/+1%, dropped L6M/PRE +14/+30%, mean d -2.9k (MDE 12.6) / -1.9k (7.0), P&L -5k; single rounding +1/+1/+13/+11/+11%, dropped +25/+32%, mean -2.4k (12.7) / -1.7k (7.3), P&L -6k.
+
+### What the formula really does (one paragraph)
+The formula is two opposite moves that happen to net to about zero P&L. (1) It tightens the 11-lot PE rows (ER >= 0.30 on the biggest PE size) from arm 30 to arm 20: this alone (I20) gives PA PRE +4%, X' +5%, episode-dropped L6M +20% / PRE +24%, but costs $488k of total P&L (mean -2.5k/-3.9k per week, inside the MDE); it is the part that buys the carrying-episode drawdown cut and it is the same mechanism as the dead fixed arm 25 (which cost $474k). (2) It loosens all rows of 1-4 lots (all six books; PE 2- and 4-lot rows, KB/MV/PB/HM/SM 1-3) from 30 to 40: this alone (I40) cuts no drawdown (PA PRE 0%, X' -4%) but earns +$319k, i.e. it pays for the tightening. The 29 at 6 lots is nearly irrelevant (I29: PA PRE +1%, X' 0%, P&L -$45k, almost all HM/SM rows; PE-only I29 does nothing). The two big parts are not additive: I40+I20 (P4020) gives PA PRE +10%, X' +7%, dropped +25%/+30% at -$15k P&L, vs the sum of singles of PA PRE +4%; adding the 29 at 6 lots (the full formula F) adds PA PRE +1 point and X' +5 points for -$45k. P4020 beats all three placebos on PA PRE, PA X' and the dropped cuts (ranks 0.010-0.04, except A on L6M-dropped 0.139); I20 alone is only informative against C (ranks 0.21/0.39 on PA, 0.02/0.04 on dropped), i.e. its PA gain is chance level and its dropped-episode gain is real but expensive. The fixed rules PE-R1n (25 at 11 lots) and PE-R2n (22 at 11 lots) are the same tightening without the loosened small-lot rows: they beat all three placebos on the episode-dropped cuts (ranks 0.010-0.099) but are at chance on PA PRE/X' (ranks 0.14-0.68) and lose $244k/$474k, which is why they die. So the contradiction resolves as: the fixed rule died because it only had the costly half; the formula's PRE/X' result needs both halves, and the loosening at 1-4 lots is what makes the tightening affordable. Caveats: P4020 is selected after seeing the decomposition (best of 7 isolating cells, not adjusted in the null), PA L6M is only +2% (below the PA9 band .165), kfix X' is +1%, the loosening depends on lots 1-4 being 90%+ of the trade count, and the walk-forward on X/clip from the stress test is unchanged (formula parameters still unstable).
