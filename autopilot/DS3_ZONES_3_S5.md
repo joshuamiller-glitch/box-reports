@@ -1,4 +1,9 @@
-INTERIM 00:55Z 2026-11-02: placebo draws partial; ranks with < 8 draws are UNTESTED. Base v1.2 interim, v1.3 re-run in section 4. Post-hoc, Shadow only.
+**FOLLOW-UP 01:xxZ (lead order): headline.** A fixed-point density rule is a different rule in each window (signals with >= 2 set lines within 40 pts: 35% in 2023-04 -> 9% in 2026-10, NQ doubled); the price-scaled form (x*E/20000) is the only form carried forward. Why PRE flips v1.2 -> v1.3 for sA40>=1 skip: the PRE base maxDD episode moves (v1.2: ISO weeks 2024-W13..W29, which the rule helps; v1.3: 2025-W06..W19 and the rule's own deepest drawdown is 2024-W52..2025-W17), and under v1.3 the skip removes large winning weeks inside the 2025 drawdown (2025-W22 -45k, W13 -43k, W26 -42k, W25 -40k vs base). Running: v1.3 placebos (40 draws x 3 kinds) for sA40>=1 skip. Queued for 06:00Z (not done): >=100-draw placebos for the 18 UNTESTED finalists, profile streams in the count, vol-tercile and per-scope reruns, scaled cut-off x0.5..x2 on v1.3, re-target delay, Z3 noise band.
+
+# DS3_ZONES_3_S5 - zone density as a regime (final 03:00Z deliverable, 2026-11-02)
+**Plain sentence.** Zone density does not give a drawdown cut that survives the robustness standard. Of 230 density / open-space / ratio / no-man's-land cells on D7 v1.2 (interim base), none is RISK-KEEP. The fixed-point cut-offs that look best on L6M are ONE-WEEK (the whole L6M/HOLD/F9 cut is the week 2026-W31; e.g. nA40>=1 skip -23% of maxDD becomes +0.1% without that week) or volume effects (placebo rank B > 0.10: open-space "half" cells cut 28-43% only because they halve 55-80% of the signals). The one lead-shaped cell is the PRICE-SCALED congestion-ahead rule sA40>=1 skip (skip when any of the 8 fresh set lines is within 40*E/20000 pts ahead; at E=29,000 that is 58 pts): v1.2 L6M/F9 maxDD -39%, PRE +15%, X' +22%, STRICT and TOLERANT, mean delta -3.5k/wk inside the 13.3k MDE, not ONE-WEEK on L6M/F9 (+25% / +21% after dropping the carrying week 2026-W31) but its HOLD, PRE and X' cuts ARE ONE-WEEK-fragile (section 3 episode table), per book x session mixed (section 3d), placebo ranks B 0.05 / C 0.25 / A 0.20 (20 draws): beats the same-volume placebo, not the shuffled-day or random-row ones; ROBUST to +-25/50% on x (F9 cut +8% at 0.5x, +37..40% at 0.75-1.5x); and it does NOT carry to D7 v1.3 (L6M +32% but PRE -21%, X' -3%, S/T/N n/n/Y). Label: LEAD-unconfirmed (v1.2), not a lead on v1.3. The no-man's land (middle third of PDR/ON/SESS) alone is not a drawdown rule: mid_PDR half cuts L6M 19% / PRE 11% / X' 48% but is ONE-WEEK; the "up" (x1.5) variants add risk. Re-target (rt): sA40>=1 rt L6M +14%, PRE -63% (worse); against its control (same market entry, original target) the re-target part is small, so most of any change is the entry convention.
+**Key structural finding.** Line density per fixed-point distance collapsed as NQ doubled (2023-04 -> 2026-10): signals with >= 2 set lines within 40 pts fell from 35% to 9%; a fixed-pt density rule is therefore a different rule in PRE/X' than in L3M/L6M. This is why the honest selection on PRE+X' (e.g. nB40>=1 skip: PRE +51%, X' +64%) fails on the recent windows (L6M -24%) and why the price-scaled version exists.
+**Caveats.** Base is D7 v1.2 (interim); finalists re-run on v1.3 (section 4); placebo draws 20 per kind for 12+4 cells (ranks resolution 0.05; fewer for 3 cells), none for the other finalists (labelled UNTESTED); per-scope reruns were not run (per book x session is read from the cube of the all-scope run, section 3d); 1-s/3-s delay on rt not run; vol-tercile and line-parameter variants (swing strength, profile bin) not run (density uses the 8 stored lines only; the three profile streams were not added to the count). Equal-risk used lscale on the ALL-window worst-20. All post-hoc, Shadow only, no PASS claim.
 
 # DS3_ZONES_3_S5 - zone density as a regime (ZONES-3 section 5), base D7 v1.2 interim
 Post-hoc, Shadow only, no PASS claim. Prereg sha256 1a8d58e0d5b48e4e51e26c7587754daa443e5ed578584238c3d833a2fe6ec53e (+ addendum 1, price-scaled distances, sha256 600dc569ee663858891149e948b0e6f8e9e6a420501d62d3282cc614b2bd968d), both in DECISIONS.md before scoring. dead_lookup: 0 of 146 + 0 of 84 cell specs found (out/zones3_s5/dead_lookup.txt, dead_lookup_A1.txt). Code l2vast/ds3/code/zones3_s5/, results out/zones3_s5/ and /mnt/l2/l2vast/ds3_zones3_new/S5/.
@@ -301,79 +306,79 @@ Episode proofing = leave-one-week-out (LOWO) and leave-one-month-out (LOMO) rang
 
 | cell | draws B/C/A | rank B same-volume L6M / F9 / PRE | rank C shuffled-day L6M / F9 / PRE | rank A random L6M / F9 / PRE | equal-risk (lscale; mean d $k/wk L6M / HOLD / PRE / X') | sensitivity x0.5 / 0.75 / 1.25 / 1.5 : F9 cut (L6M cut) | D-label | lock-off L6M / F9 cut | v1.1 (no U7) L6M / F9 cut |
 |---|---|---|---|---|---|---|---|---|---|
-| nA40>=1 skip | 10/9/10 | 0.40 / 0.40 / 0.10 | 0.78 / 0.78 / 0.11 | 0.40 / 0.40 / 0.00 | 1.07; -4.1 / -2.7 / -1.4 / +1.2 | -12% (-12%) / +10% (+10%) / +16% (+16%) / +34% (+34%) | FRAGILE | -12% / -12% | +14% / +14% |
-| nA40>=1 half | 9/10/9 | 0.67 / 0.56 / 0.44 | 0.50 / 0.50 / 0.70 | 0.33 / 0.33 / 0.56 | 1.27; +2.9 / +4.6 / -4.2 / -1.2 | -5% (-5%) / +23% (+23%) / +40% (+40%) / +43% (+43%) | ROBUST-D | -29% / -29% | +2% / +2% |
+| nA40>=1 skip | 20/20/20 | 0.35 / 0.35 / 0.10 | 0.55 / 0.50 / 0.10 | 0.30 / 0.30 / 0.10 | 1.07; -4.1 / -2.7 / -1.4 / +1.2 | -12% (-12%) / +10% (+10%) / +16% (+16%) / +34% (+34%) | FRAGILE | -12% / -12% | +14% / +14% |
+| nA40>=1 half | 20/20/20 | 0.55 / 0.45 / 0.35 | 0.45 / 0.40 / 0.60 | 0.25 / 0.25 / 0.50 | 1.27; +2.9 / +4.6 / -4.2 / -1.2 | -5% (-5%) / +23% (+23%) / +40% (+40%) / +43% (+43%) | ROBUST-D | -29% / -29% | +2% / +2% |
 | nB40>=1 skip | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | -11% (-11%) / -1% (-1%) / -23% (-23%) / -8% (-8%) | FRAGILE | -55% / -55% | -17% / -17% |
 | nB40>=1 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | -2% (-2%) / +2% (+2%) / +10% (+10%) / +5% (+5%) | FRAGILE | -21% / -21% | -7% / -7% |
 | nB40>=2 skip | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | +0% (+0%) / +3% (+3%) / -33% (-33%) / -17% (-17%) | FRAGILE | -26% / -26% | -2% / -2% |
-| nB40>=2 half | 10/8/9 | 0.70 / 0.70 / 0.10 | 0.75 / 0.75 / 0.00 | 0.44 / 0.44 / 0.00 | 1.05; +0.0 / +2.0 / -0.4 / +3.2 | +1% (+1%) / +2% (+2%) / +0% (+0%) / +11% (+11%) | FRAGILE | +2% / +2% | +2% / +2% |
+| nB40>=2 half | 20/20/20 | 0.65 / 0.65 / 0.05 | 0.75 / 0.75 / 0.05 | 0.45 / 0.45 / 0.00 | 1.05; +0.0 / +2.0 / -0.4 / +3.2 | +1% (+1%) / +2% (+2%) / +0% (+0%) / +11% (+11%) | FRAGILE | +2% / +2% | +2% / +2% |
 | nB40>=3 skip | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | +0% (+0%) / -0% (-0%) / +4% (+4%) / -35% (-35%) | FRAGILE | -15% / -15% | -7% / -7% |
 | nB40>=3 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | +0% (+0%) / +2% (+2%) / +5% (+5%) / +1% (+1%) | ROBUST-D | -5% / -5% | -6% / -6% |
 | nT40>=2 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | -6% (-6%) / -4% (-4%) / +25% (+25%) / +17% (+17%) | FRAGILE | -38% / -38% | -4% / -4% |
 | nT40>=4 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | +0% (+0%) / +0% (+0%) / -2% (-2%) / +3% (+3%) | FRAGILE | -5% / -5% | -3% / -3% |
-| nA60>=1 skip | 8/9/8 | 0.25 / 0.25 / 0.00 | 0.22 / 0.33 / 0.11 | 0.00 / 0.00 / 0.25 | 1.00; -3.5 / -2.5 / -4.4 / +2.5 | +10% (+10%) / +37% (+37%) / +39% (+47%) / +36% (+47%) | ROBUST-D | +16% / +16% | +38% / +38% |
-| nA60>=1 half | 9/8/9 | 0.00 / 0.00 / 0.78 | 0.25 / 0.25 / 1.00 | 0.11 / 0.11 / 1.00 | 1.30; +2.5 / +2.7 / -6.5 / +1.0 | +23% (+23%) / +11% (+11%) / +47% (+47%) / +43% (+43%) | FRAGILE | -3% / -3% | +13% / +13% |
-| nA60>=2 half | 8/9/8 | 0.38 / 0.25 / 0.38 | 0.56 / 0.56 / 0.44 | 0.00 / 0.00 / 0.75 | 1.11; +2.8 / +2.0 / -2.9 / +0.7 | -3% (-3%) / +33% (+33%) / +29% (+29%) / -1% (-1%) | ROBUST-D | -35% / -35% | -6% / -6% |
+| nA60>=1 skip | 20/20/20 | 0.45 / 0.45 / 0.05 | 0.40 / 0.40 / 0.15 | 0.10 / 0.00 / 0.35 | 1.00; -3.5 / -2.5 / -4.4 / +2.5 | +10% (+10%) / +37% (+37%) / +39% (+47%) / +36% (+47%) | ROBUST-D | +16% / +16% | +38% / +38% |
+| nA60>=1 half | 20/20/20 | 0.15 / 0.10 / 0.70 | 0.35 / 0.30 / 0.95 | 0.15 / 0.15 / 0.95 | 1.30; +2.5 / +2.7 / -6.5 / +1.0 | +23% (+23%) / +11% (+11%) / +47% (+47%) / +43% (+43%) | FRAGILE | -3% / -3% | +13% / +13% |
+| nA60>=2 half | 19/20/19 | 0.42 / 0.26 / 0.37 | 0.50 / 0.50 / 0.30 | 0.11 / 0.11 / 0.47 | 1.11; +2.8 / +2.0 / -2.9 / +0.7 | -3% (-3%) / +33% (+33%) / +29% (+29%) / -1% (-1%) | ROBUST-D | -35% / -35% | -6% / -6% |
 | nT60>=3 skip | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | -6% (-6%) / -9% (-9%) / -7% (-7%) / -14% (-14%) | FRAGILE | -69% / -69% | -36% / -36% |
-| nTany40>=2 half | 9/8/9 | 1.00 / 1.00 / 0.67 | 0.88 / 0.88 / 0.38 | 0.67 / 0.67 / 0.11 | 1.36; +5.8 / +6.2 / -1.8 / +1.9 | - / - / - / - | - | -67% / -67% | -1% / -1% |
-| open20 half | 8/9/8 | 0.75 / 0.62 / 0.50 | 0.67 / 0.67 / 0.89 | 0.25 / 0.25 / 0.50 | 1.77; -4.7 / +0.6 / -5.0 / +1.7 | +57% (+57%) / +56% (+56%) / +14% (+14%) / +15% (+15%) | FRAGILE | +52% / +52% | +51% / +51% |
+| nTany40>=2 half | 20/19/20 | 0.80 / 0.80 / 0.55 | 0.89 / 0.89 / 0.37 | 0.70 / 0.60 / 0.35 | 1.36; +5.8 / +6.2 / -1.8 / +1.9 | - / - / - / - | - | -67% / -67% | -1% / -1% |
+| open20 half | 19/20/19 | 0.63 / 0.58 / 0.58 | 0.55 / 0.55 / 0.85 | 0.32 / 0.26 / 0.63 | 1.77; -4.7 / +0.6 / -5.0 / +1.7 | +57% (+57%) / +56% (+56%) / +14% (+14%) / +15% (+15%) | FRAGILE | +52% / +52% | +51% / +51% |
 | open60 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | +15% (+15%) / +10% (+10%) / +24% (+50%) / +34% (+63%) | FRAGILE | +15% / +15% | +36% / +36% |
-| openA40 half | 9/8/9 | 0.89 / 0.89 / 0.44 | 0.75 / 0.75 / 0.38 | 0.67 / 0.67 / 0.44 | 1.65; -6.2 / -0.6 / -4.2 / +3.9 | +50% (+50%) / +41% (+41%) / +6% (+6%) / -1% (-1%) | FRAGILE | +19% / +19% | +20% / +20% |
-| rho40>=2 skip | 8/9/8 | 0.25 / 0.12 / 0.25 | 0.33 / 0.22 / 0.33 | 0.12 / 0.12 / 0.25 | 1.15; +0.1 / +1.4 / -1.9 / +0.3 | - / - / - / - | - | -1% / -1% | +21% / +21% |
+| openA40 half | 20/19/20 | 0.85 / 0.80 / 0.35 | 0.74 / 0.74 / 0.32 | 0.75 / 0.75 / 0.50 | 1.65; -6.2 / -0.6 / -4.2 / +3.9 | +50% (+50%) / +41% (+41%) / +6% (+6%) / -1% (-1%) | FRAGILE | +19% / +19% | +20% / +20% |
+| rho40>=2 skip | 19/20/19 | 0.21 / 0.16 / 0.37 | 0.20 / 0.15 / 0.30 | 0.05 / 0.05 / 0.21 | 1.15; +0.1 / +1.4 / -1.9 / +0.3 | - / - / - / - | - | -1% / -1% | +21% / +21% |
 | rho40<=0.5 skip | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | - / - / - / - | - | -22% / -22% | -10% / -10% |
-| rho60>=2 skip | 9/8/9 | 0.11 / 0.11 / 0.33 | 0.38 / 0.12 / 0.12 | 0.22 / 0.22 / 0.33 | 1.00; +1.4 / +0.6 / -1.8 / +0.6 | - / - / - / - | - | +12% / +12% | +40% / +40% |
-| rho60>=2 half | 8/9/8 | 0.25 / 0.25 / 0.12 | 0.33 / 0.33 / 0.22 | 0.00 / 0.00 / 0.00 | 1.17; -1.0 / +1.3 / -2.4 / +1.8 | - / - / - / - | - | -8% / -8% | +23% / +23% |
+| rho60>=2 skip | 20/19/20 | 0.05 / 0.05 / 0.30 | 0.32 / 0.16 / 0.16 | 0.15 / 0.15 / 0.40 | 1.00; +1.4 / +0.6 / -1.8 / +0.6 | - / - / - / - | - | +12% / +12% | +40% / +40% |
+| rho60>=2 half | 19/20/19 | 0.21 / 0.21 / 0.11 | 0.35 / 0.35 / 0.10 | 0.00 / 0.00 / 0.16 | 1.17; -1.0 / +1.3 / -2.4 / +1.8 | - / - / - / - | - | -8% / -8% | +23% / +23% |
 | rho60<=0.5 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | - / - / - / - | - | -22% / -22% | -6% / -6% |
 | mid_PDR half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | - / - / - / - | - | -91% / -91% | -0% / -0% |
 | mid_any3 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | - / - / - / - | - | -81% / -81% | -14% / -14% |
 | mid_PDR&open40 up | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | - / - / - / - | - | +14% / +14% | +27% / +27% |
 | mid_ON&nT40<=1 up | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | - / - / - / - | - | +9% / +9% | +6% / +6% |
-| sA40>=1 skip | 13/13/13 | 0.08 / 0.00 / 0.08 | 0.15 / 0.15 / 0.15 | 0.23 / 0.23 / 0.08 | 1.03; -4.1 / -3.1 / -2.5 / +1.5 | +8% (+8%) / +37% (+37%) / +39% (+44%) / +40% (+45%) | ROBUST-D | +16% / +16% | +60% / +53% |
-| sA40>=1 half | 13/13/13 | 0.08 / 0.08 / 0.69 | 0.31 / 0.31 / 0.69 | 0.15 / 0.15 / 0.38 | 1.27; +0.2 / +2.6 / -3.9 / -1.2 | +22% (+22%) / +11% (+11%) / +47% (+47%) / +43% (+43%) | FRAGILE | -1% / -1% | +24% / +24% |
+| sA40>=1 skip | 20/20/20 | 0.05 / 0.00 / 0.05 | 0.25 / 0.20 / 0.20 | 0.20 / 0.15 / 0.10 | 1.03; -4.1 / -3.1 / -2.5 / +1.5 | +8% (+8%) / +37% (+37%) / +39% (+44%) / +40% (+45%) | ROBUST-D | +16% / +16% | +60% / +53% |
+| sA40>=1 half | 20/20/20 | 0.05 / 0.05 / 0.65 | 0.35 / 0.30 / 0.65 | 0.10 / 0.10 / 0.45 | 1.27; +0.2 / +2.6 / -3.9 / -1.2 | +22% (+22%) / +11% (+11%) / +47% (+47%) / +43% (+43%) | FRAGILE | -1% / -1% | +24% / +24% |
 | sA40>=1 rt | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | - / - / - / - | - | - | - |
-| sA40>=2 half | 13/12/12 | 0.23 / 0.23 / 0.31 | 0.33 / 0.33 / 0.58 | 0.08 / 0.08 / 0.25 | 1.22; +4.4 / +4.2 / -3.1 / +1.6 | -3% (-3%) / +33% (+33%) / +29% (+29%) / -0% (-0%) | ROBUST-D | -36% / -36% | -6% / -6% |
+| sA40>=2 half | 20/20/20 | 0.30 / 0.25 / 0.30 | 0.50 / 0.50 / 0.50 | 0.10 / 0.10 / 0.40 | 1.22; +4.4 / +4.2 / -3.1 / +1.6 | -3% (-3%) / +33% (+33%) / +29% (+29%) / -0% (-0%) | ROBUST-D | -36% / -36% | -6% / -6% |
 | sB40>=3 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | +2% (+2%) / +4% (+4%) / +9% (+9%) / +7% (+7%) | ROBUST-D | -1% / -1% | -7% / -7% |
-| sA60>=1 half | 12/12/12 | 0.17 / 0.17 / 0.75 | 0.17 / 0.17 / 0.67 | 0.25 / 0.25 / 0.83 | 1.33; +1.2 / +1.2 / -5.3 / +0.0 | +11% (+11%) / +43% (+43%) / +40% (+40%) / +47% (+47%) | ROBUST-D | -8% / -8% | +36% / +36% |
+| sA60>=1 half | 20/20/20 | 0.25 / 0.20 / 0.70 | 0.20 / 0.15 / 0.75 | 0.20 / 0.20 / 0.90 | 1.33; +1.2 / +1.2 / -5.3 / +0.0 | +11% (+11%) / +43% (+43%) / +40% (+40%) / +47% (+47%) | ROBUST-D | -8% / -8% | +36% / +36% |
 | sopen40 half | 0/0/0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a | n/a | +15% (+15%) / +17% (+17%) / +31% (+50%) / +27% (+63%) | ROBUST-D | +12% / +12% | +31% / +31% |
 
 ### 3c. Labels (RISK-KEEP = L6M cut >= 20% with mean delta inside MDE, placebo ranks B, C, A <= 0.10 (L6M), HOLD/PRE/X' cuts > 0, not ONE-WEEK; (volume effect) = rank B > 0.10; (L6M only) = HOLD/PRE/X' disagree)
 
 | cell | L6M cut | F9 cut | PRE / X' cut | mean d L6M (MDE) | S/T/N | TOL-B/nc | ONE-WEEK (L6M/F9) | rank B/C/A L6M | label |
 |---|---|---|---|---|---|---|---|---|---|
-| nA40>=1 skip | +23% | +23% | +10% / +23% | -5.9 (+9.3) | Y/Y/Y | Y/Y | Y/Y | 0.4/0.7777777777777778/0.4 | ONE-WEEK (not a lead) |
-| nA40>=1 half | +28% | +28% | -10% / +26% | -0.9 (+6.1) | n/n/n | n/n | Y/Y | 0.6666666666666666/0.5/0.3333333333333333 | ONE-WEEK (not a lead) |
-| nB40>=1 skip | -24% | -24% | +51% / +64% | -2.7 (+6.9) | n/n/n | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| nB40>=1 half | -5% | -5% | +29% / +36% | -1.5 (+3.7) | n/n/n | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| nB40>=2 skip | -0% | -0% | +27% / +45% | +0.9 (+3.1) | n/n/n | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| nB40>=2 half | +7% | +7% | +23% / +44% | +0.6 (+1.5) | n/Y/Y | Y/Y | n/n | 0.7/0.75/0.4444444444444444 | (volume effect) |
-| nB40>=3 skip | -1% | -1% | +31% / +31% | +0.1 (+1.8) | n/n/n | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| nB40>=3 half | +3% | +3% | +27% / +40% | +0.2 (+0.8) | n/Y/Y | Y/Y | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| nT40>=2 half | -3% | -3% | +13% / +60% | -1.4 (+2.9) | n/n/n | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| nT40>=4 half | -2% | -2% | -2% / +61% | -0.2 (+0.6) | n/n/n | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| nA60>=1 skip | +34% | +34% | -1% / +7% | -3.5 (+13.0) | n/n/Y | Y/Y | n/n | 0.25/0.2222222222222222/0.0 | (volume effect) |
-| nA60>=1 half | +43% | +43% | -48% / +46% | -3.0 (+12.9) | n/n/Y | n/n | n/n | 0.0/0.25/0.1111111111111111 | (L6M only) |
-| nA60>=2 half | +25% | +25% | +5% / +24% | +0.3 (+5.0) | n/n/n | n/n | Y/Y | 0.375/0.5555555555555556/0.0 | ONE-WEEK (not a lead) |
-| nT60>=3 skip | -39% | -39% | -3% / +64% | -4.5 (+11.9) | n/n/n | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| nTany40>=2 half | +21% | +21% | +5% / +43% | -1.7 (+10.2) | n/n/n | n/n | Y/Y | 1.0/0.875/0.6666666666666666 | ONE-WEEK (not a lead) |
-| open20 half | +43% | +43% | -0% / +30% | -13.1 (+15.6) | n/n/Y | n/n | n/n | 0.75/0.6666666666666666/0.25 | (volume effect) |
-| open60 half | +24% | +24% | -13% / +5% | -11.7 (+18.0) | n/n/n | n/n | Y/Y | None/None/None | ONE-WEEK (not a lead) |
-| openA40 half | +28% | +28% | +20% / +59% | -13.2 (+16.9) | n/n/n | n/n | n/n | 0.8888888888888888/0.75/0.6666666666666666 | (volume effect) |
-| rho40>=2 skip | +37% | +37% | -13% / +19% | -2.4 (+8.9) | n/n/Y | Y/Y | n/n | 0.25/0.3333333333333333/0.125 | (volume effect) |
-| rho40<=0.5 skip | -28% | -28% | +18% / +68% | -1.3 (+5.8) | n/n/n | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| rho60>=2 skip | +34% | +34% | -16% / -10% | +1.4 (+11.2) | n/n/Y | Y/Y | n/n | 0.1111111111111111/0.375/0.2222222222222222 | (volume effect) |
-| rho60>=2 half | +30% | +30% | +11% / +42% | -2.2 (+11.8) | Y/Y/Y | Y/Y | n/n | 0.25/0.3333333333333333/0.0 | (volume effect) |
-| rho60<=0.5 half | +10% | +10% | -44% / +27% | -1.1 (+4.7) | n/n/n | n/n | Y/Y | None/None/None | ONE-WEEK (not a lead) |
-| mid_PDR half | +19% | +19% | +11% / +48% | -4.5 (+8.1) | n/n/n | n/n | Y/Y | None/None/None | ONE-WEEK (not a lead) |
-| mid_any3 half | -1% | -1% | +14% / +54% | -5.3 (+8.2) | n/n/n | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| mid_PDR&open40 up | +24% | +24% | -20% / -3% | +5.1 (+5.2) | n/n/Y | n/n | Y/Y | None/None/None | ONE-WEEK (not a lead) |
-| mid_ON&nT40<=1 up | +6% | +6% | +8% / -2% | -2.2 (+11.7) | n/n/Y | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| sA40>=1 skip | +39% | +39% | +15% / +22% | -3.5 (+13.3) | Y/Y/Y | Y/Y | n/n | 0.07692307692307693/0.15384615384615385/0.23076923076923078 | LEAD-unconfirmed |
-| sA40>=1 half | +43% | +43% | -9% / +28% | -2.9 (+12.9) | n/n/Y | n/n | n/n | 0.07692307692307693/0.3076923076923077/0.15384615384615385 | (L6M only) |
-| sA40>=1 rt | +14% | +14% | -63% / -5% | -2.9 (+8.8) | n/n/Y | n/n | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| sA40>=2 half | +25% | +25% | +8% / +37% | +0.5 (+5.0) | n/n/n | n/n | Y/Y | 0.23076923076923078/0.3333333333333333/0.08333333333333333 | ONE-WEEK (not a lead) |
-| sB40>=3 half | +1% | +1% | +29% / +41% | +0.1 (+1.9) | n/Y/Y | Y/Y | n/n | None/None/None | UNTESTED (placebo draws pending) |
-| sA60>=1 half | +43% | +43% | -44% / +41% | -4.9 (+14.1) | n/n/Y | n/n | n/n | 0.16666666666666666/0.16666666666666666/0.25 | (volume effect) |
-| sopen40 half | +19% | +19% | +20% / +39% | -11.7 (+17.6) | n/n/n | n/n | Y/Y | None/None/None | ONE-WEEK (not a lead) |
+| nA40>=1 skip | +23% | +23% | +10% / +23% | -5.9 (+9.3) | Y/Y/Y | Y/Y | Y/Y | 0.35/0.55/0.30 | ONE-WEEK (not a lead) |
+| nA40>=1 half | +28% | +28% | -10% / +26% | -0.9 (+6.1) | n/n/n | n/n | Y/Y | 0.55/0.45/0.25 | ONE-WEEK (not a lead) |
+| nB40>=1 skip | -24% | -24% | +51% / +64% | -2.7 (+6.9) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| nB40>=1 half | -5% | -5% | +29% / +36% | -1.5 (+3.7) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| nB40>=2 skip | -0% | -0% | +27% / +45% | +0.9 (+3.1) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| nB40>=2 half | +7% | +7% | +23% / +44% | +0.6 (+1.5) | n/Y/Y | Y/Y | n/n | 0.65/0.75/0.45 | (volume effect) |
+| nB40>=3 skip | -1% | -1% | +31% / +31% | +0.1 (+1.8) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| nB40>=3 half | +3% | +3% | +27% / +40% | +0.2 (+0.8) | n/Y/Y | Y/Y | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| nT40>=2 half | -3% | -3% | +13% / +60% | -1.4 (+2.9) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| nT40>=4 half | -2% | -2% | -2% / +61% | -0.2 (+0.6) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| nA60>=1 skip | +34% | +34% | -1% / +7% | -3.5 (+13.0) | n/n/Y | Y/Y | n/n | 0.45/0.40/0.10 | (volume effect) |
+| nA60>=1 half | +43% | +43% | -48% / +46% | -3.0 (+12.9) | n/n/Y | n/n | n/n | 0.15/0.35/0.15 | (volume effect) |
+| nA60>=2 half | +25% | +25% | +5% / +24% | +0.3 (+5.0) | n/n/n | n/n | Y/Y | 0.42/0.50/0.11 | ONE-WEEK (not a lead) |
+| nT60>=3 skip | -39% | -39% | -3% / +64% | -4.5 (+11.9) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| nTany40>=2 half | +21% | +21% | +5% / +43% | -1.7 (+10.2) | n/n/n | n/n | Y/Y | 0.80/0.89/0.70 | ONE-WEEK (not a lead) |
+| open20 half | +43% | +43% | -0% / +30% | -13.1 (+15.6) | n/n/Y | n/n | n/n | 0.63/0.55/0.32 | (volume effect) |
+| open60 half | +24% | +24% | -13% / +5% | -11.7 (+18.0) | n/n/n | n/n | Y/Y | n/a/n/a/n/a | ONE-WEEK (not a lead) |
+| openA40 half | +28% | +28% | +20% / +59% | -13.2 (+16.9) | n/n/n | n/n | n/n | 0.85/0.74/0.75 | (volume effect) |
+| rho40>=2 skip | +37% | +37% | -13% / +19% | -2.4 (+8.9) | n/n/Y | Y/Y | n/n | 0.21/0.20/0.05 | (volume effect) |
+| rho40<=0.5 skip | -28% | -28% | +18% / +68% | -1.3 (+5.8) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| rho60>=2 skip | +34% | +34% | -16% / -10% | +1.4 (+11.2) | n/n/Y | Y/Y | n/n | 0.05/0.32/0.15 | (L6M only) |
+| rho60>=2 half | +30% | +30% | +11% / +42% | -2.2 (+11.8) | Y/Y/Y | Y/Y | n/n | 0.21/0.35/0.00 | (volume effect) |
+| rho60<=0.5 half | +10% | +10% | -44% / +27% | -1.1 (+4.7) | n/n/n | n/n | Y/Y | n/a/n/a/n/a | ONE-WEEK (not a lead) |
+| mid_PDR half | +19% | +19% | +11% / +48% | -4.5 (+8.1) | n/n/n | n/n | Y/Y | n/a/n/a/n/a | ONE-WEEK (not a lead) |
+| mid_any3 half | -1% | -1% | +14% / +54% | -5.3 (+8.2) | n/n/n | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| mid_PDR&open40 up | +24% | +24% | -20% / -3% | +5.1 (+5.2) | n/n/Y | n/n | Y/Y | n/a/n/a/n/a | ONE-WEEK (not a lead) |
+| mid_ON&nT40<=1 up | +6% | +6% | +8% / -2% | -2.2 (+11.7) | n/n/Y | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| sA40>=1 skip | +39% | +39% | +15% / +22% | -3.5 (+13.3) | Y/Y/Y | Y/Y | n/n | 0.05/0.25/0.20 | LEAD-unconfirmed |
+| sA40>=1 half | +43% | +43% | -9% / +28% | -2.9 (+12.9) | n/n/Y | n/n | n/n | 0.05/0.35/0.10 | (L6M only) |
+| sA40>=1 rt | +14% | +14% | -63% / -5% | -2.9 (+8.8) | n/n/Y | n/n | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| sA40>=2 half | +25% | +25% | +8% / +37% | +0.5 (+5.0) | n/n/n | n/n | Y/Y | 0.30/0.50/0.10 | ONE-WEEK (not a lead) |
+| sB40>=3 half | +1% | +1% | +29% / +41% | +0.1 (+1.9) | n/Y/Y | Y/Y | n/n | n/a/n/a/n/a | UNTESTED (placebo draws pending) |
+| sA60>=1 half | +43% | +43% | -44% / +41% | -4.9 (+14.1) | n/n/Y | n/n | n/n | 0.25/0.20/0.20 | (volume effect) |
+| sopen40 half | +19% | +19% | +20% / +39% | -11.7 (+17.6) | n/n/n | n/n | Y/Y | n/a/n/a/n/a | ONE-WEEK (not a lead) |
 
 ### 3d. Per book x session maxDD cut of the same run (rule applied everywhere; cut = 1 - cell/base within the book or session; windows L6M | HOLD | PRE | X')
 
