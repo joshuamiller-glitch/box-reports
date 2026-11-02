@@ -159,3 +159,47 @@ Hook: `run_v13t_live({'bracket': (stop_pts, target_pts)})` (EXIT_API.md, CORRECT
 
 Reading: with the official hook no low-ER tightening (ER<=0.15 or ER<=0.30; stop/target 45 or 30; lots unchanged or risk-parity; ALL books or per book) is beyond the PA9 band in any window; the best cells are MID-only (ER<=0.30 -> 45/45 MID +28% but L6M -25%, mean -4.7k/wk) and ER<=0.15 -> 30/30 (L6M +18% single, PRE +2%). Parity lots (60/stop) make drawdown much worse in MID and X'. A6 has no ER<=0.30 rows with a library bracket >= 45 (no effect). So the low-ER tight-bracket idea is DEAD on V13T_LIVE with the official hook, agreeing with the run_split rows above (which stay as indicative cross-check only).
 HIGH-ER WIDER BRACKETS: NOT TESTABLE with the official hook (it only injects exits no later than the library exit; a wider stop/target needs the 1-s path beyond the library exit and a different exit kernel). The run_split-based B1/B2/C1/C2 rows above rebuilt the whole outcome with the plain 70/30 split (differs from the library cell by the veto, see the control rows) and are INDICATIVE ONLY; they say that wider brackets with unchanged lots raise drawdown mechanically and that parity lots do not rescue them, but they are not a V13T_LIVE measurement. If T-SIZER needs a measured wider-bracket test, BASE-4 must extend the exit kernel (asked).
+
+
+## CORRECTED 18:20Z - re-run on the EXACT wider/tighter bracket kernel (run_v13t_live bracket, WIDER-BRACKET blocks of EXIT_API.md / SIZER_HOOK_TESTS.md). SUPERSEDES the "official hook (tighter side)" block (bracket_inj, deprecated) and the run_split rows above, which stay for history only
+Each changed signal is rebuilt inside compose by the library kernels (L2SE split, PE confirmation, PB market); stop = signal price -+ stop pts, target = average entry +- target pts; add lots re-sized; wider brackets walk the 1-s path to the session flat. Base V13T_LIVE + shipped HALF layer. Cells A1 ER<=.15 -> 45/45, A2 ER<=.30 -> 45/45, B1 ER>.30 -> 75/75, B2 ER>.30 -> 90/90, C1 = A2+B1, C2 = A1+B1; lots unchanged (1) or 60/stop (parity); per book A2/B1/C1 with lots unchanged. Cuts vs the base; PA = phase-averaged; band = Z3 PA9 flip-5.
+
+| cell (corrected hook, rebuilt kernels) | lots | maxDD cut L3M / L6M / HOLD / MID / PRE / X' (phase-avg) | beyond PA9 band | episode dropped L6M / PRE | mean d $k/wk (MDE) L6M / PRE | worst-20 PRE b>a |
+|---|---|---|---|---|---|---|
+| ALL ER<=.15 ->45/45 | 1 | +3% (-3%) / -1% (-6%) / -1% (-6%) / +22% (+11%) / -4% (+0%) / -17% (-9%) | - | +3% / -5% | -2.4 (6.7) / -1.9 (3.0) | -790>-852 |
+| ALL ER<=.15 ->45/45 | 60/stop | +1% (-10%) / -2% (-11%) / -28% (-28%) / -164% (-80%) / +22% (+19%) / -5% (-12%) | PRE | +48% / +21% | -16.1 (21.8) / -6.2 (8.9) | -790>-750 |
+| ALL ER<=.30 ->45/45 | 1 | -15% (-16%) / -23% (-30%) / -23% (-30%) / +25% (+11%) / -2% (+8%) / -6% (-2%) | - | +19% / -3% | -5.2 (8.1) / -2.3 (3.3) | -790>-810 |
+| ALL ER<=.30 ->45/45 | 60/stop | -7% (-13%) / -12% (-3%) / -60% (-51%) / -251% (-131%) / +13% (+18%) / -31% (-39%) | PRE | -3% / +12% | -18.8 (22.5) / -7.4 (10.2) | -790>-820 |
+| ALL ER>.30 ->75/75 | 1 | -50% (-63%) / -99% (-116%) / -99% (-116%) / -111% (-55%) / -37% (-39%) / -179% (-152%) | - | +8% / -38% | -3.1 (14.0) / -3.2 (9.2) | -790>-893 |
+| ALL ER>.30 ->75/75 | 60/stop | -52% (-52%) / -9% (-15%) / -56% (-59%) / -206% (-113%) / +11% (+12%) / -54% (-48%) | PRE | +18% / +10% | -16.9 (23.4) / -6.6 (11.4) | -790>-703 |
+| ALL ER>.30 ->90/90 | 1 | -123% (-142%) / -185% (-208%) / -185% (-208%) / -133% (-80%) / -127% (-132%) / -251% (-231%) | - | +13% / -129% | -11.8 (17.9) / -4.9 (14.8) | -790>-1054 |
+| ALL ER>.30 ->90/90 | 60/stop | -21% (-21%) / +16% (+8%) / -42% (-51%) / -187% (-106%) / -12% (-4%) / -100% (-90%) | - | +39% / -13% | -21.2 (25.8) / -7.6 (13.2) | -790>-689 |
+| ALL A2+B1 | 1 | -103% (-112%) / -128% (-148%) / -128% (-148%) / -74% (-46%) / -38% (-41%) / -269% (-253%) | - | +25% / -39% | -9.5 (17.3) / -4.2 (9.6) | -790>-890 |
+| ALL A2+B1 | 60/stop | -46% (-39%) / -33% (-25%) / -77% (-81%) / -226% (-137%) / +5% (+8%) / -151% (-160%) | - | +26% / +4% | -20.0 (25.0) / -8.5 (12.5) | -790>-806 |
+| ALL A1+B1 | 1 | -82% (-96%) / -110% (-129%) / -110% (-129%) / -82% (-47%) / -27% (-37%) / -194% (-180%) | - | +14% / -28% | -5.7 (16.3) / -4.0 (9.5) | -790>-879 |
+| ALL A1+B1 | 60/stop | -63% (-63%) / -42% (-49%) / -42% (-54%) / -166% (-102%) / +4% (+1%) / -52% (-65%) | - | +41% / +3% | -17.1 (23.5) / -7.8 (11.9) | -790>-754 |
+| K7 ER<=.30 ->45/45 | 1 | +3% (+1%) / -6% (-9%) / -6% (-9%) / +16% (+10%) / +1% (+6%) / +9% (+6%) | - | +3% / +0% | -0.4 (1.8) / +0.5 (1.1) | -790>-771 |
+| K7 ER>.30 ->75/75 | 1 | +7% (+5%) / -3% (-2%) / -9% (-9%) / -39% (-11%) / +1% (+3%) / +12% (+4%) | - | +7% / -0% | +0.4 (4.6) / +1.0 (1.8) | -790>-756 |
+| K7 A2+B1 | 1 | +10% (+6%) / +6% (+5%) / -4% (-2%) / -19% (+3%) / -0% (+4%) / +6% (+1%) | - | +10% / -1% | +0.1 (4.3) / +1.3 (1.8) | -790>-750 |
+| P7 ER<=.30 ->45/45 | 1 | -3% (-7%) / -10% (-12%) / -10% (-12%) / -16% (-11%) / -4% (+5%) / -10% (-5%) | - | +11% / -5% | -3.5 (6.4) / -2.6 (2.7) | -790>-831 |
+| P7 ER>.30 ->75/75 | 1 | -26% (-38%) / -75% (-87%) / -75% (-87%) / -18% (-9%) / -37% (-46%) / -21% (-5%) | - | -9% / -38% | -2.9 (10.5) / -3.2 (7.3) | -790>-851 |
+| P7 A2+B1 | 1 | -58% (-67%) / -95% (-109%) / -95% (-109%) / -124% (-60%) / -43% (-47%) / -101% (-85%) | - | +2% / -44% | -6.4 (13.1) / -4.6 (7.4) | -790>-867 |
+| U7 ER<=.30 ->45/45 | 1 | +5% (+3%) / +6% (+6%) / +6% (+6%) / +6% (+2%) / -2% (-2%) / -1% (+0%) | - | +5% / +1% | -0.2 (1.3) / +0.1 (0.6) | -790>-788 |
+| U7 ER>.30 ->75/75 | 1 | -8% (-11%) / -31% (-30%) / -31% (-30%) / -22% (-12%) / -13% (-7%) / -57% (-48%) | - | +0% / -15% | -1.2 (4.5) / -1.0 (2.4) | -790>-829 |
+| U7 A2+B1 | 1 | +1% (-4%) / -25% (-24%) / -25% (-24%) / -16% (-10%) / -13% (-7%) / -58% (-49%) | - | +5% / -14% | -1.4 (4.6) / -0.9 (2.5) | -790>-826 |
+| H7 ER<=.30 ->45/45 | 1 | -4% (-8%) / -17% (-18%) / -17% (-18%) / +13% (+7%) / +3% (+2%) / -5% (-4%) | - | -4% / +2% | -1.3 (1.4) / -0.2 (0.8) | -790>-786 |
+| H7 ER>.30 ->75/75 | 1 | +0% (+2%) / +17% (+13%) / -3% (-8%) / -16% (-6%) / +1% (+1%) / +10% (+9%) | - | +0% / -0% | +1.2 (2.7) / +0.8 (1.6) | -790>-783 |
+| H7 A2+B1 | 1 | -3% (-1%) / -2% (-5%) / -2% (-10%) / -2% (+1%) / +4% (+4%) / +5% (+3%) | - | -3% / +5% | -0.3 (3.0) / +0.9 (1.7) | -790>-771 |
+| M7 ER<=.30 ->45/45 | 1 | +2% (+1%) / +2% (+1%) / +2% (+1%) / +3% (+4%) / +0% (+0%) / -3% (-1%) | - | +2% / +1% | -0.1 (1.2) / +0.1 (0.5) | -790>-787 |
+| M7 ER>.30 ->75/75 | 1 | +1% (-5%) / -0% (-3%) / -0% (-3%) / -4% (+2%) / -1% (-1%) / +5% (+5%) | - | +1% / +3% | -0.2 (2.5) / +0.1 (1.2) | -790>-784 |
+| M7 A2+B1 | 1 | +3% (-6%) / -5% (-9%) / -5% (-9%) / +6% (+7%) / -0% (-0%) / +4% (+5%) | - | +3% / +3% | -0.6 (2.7) / +0.2 (1.3) | -790>-774 |
+| A6 ER<=.30 ->45/45 | 1 | +2% (-2%) / -4% (-6%) / -4% (-6%) / +5% (+1%) / -1% (+2%) / -2% (-3%) | - | +2% / -2% | -0.3 (1.5) / +0.2 (0.8) | -790>-787 |
+| A6 ER>.30 ->75/75 | 1 | +6% (-3%) / -6% (-9%) / -6% (-9%) / -13% (-5%) / -1% (-1%) / -15% (-14%) | - | +11% / +6% | -0.5 (2.9) / -0.7 (1.3) | -790>-794 |
+| A6 A2+B1 | 1 | -7% (-11%) / -13% (-16%) / -13% (-16%) / -8% (-4%) / +2% (+3%) / -16% (-17%) | - | +9% / +3% | -0.4 (3.0) / -0.4 (1.5) | -790>-780 |
+
+Placebos (100 draws per kind: A random same-count rows, B Bernoulli same volume, C shuffled-day donor rows; parity lots) for every cell beyond the band (all three are PRE-only):
+A1 lotpar (n 100/100/100): PRE cut +22% ranks 0.327/0.386/0.327 ; L6M cut -2% ranks 0.931/0.931/0.921 ; X cut -5% ranks 0.099/0.059/0.149
+A2 lotpar (n 100/100/100): PRE cut +13% ranks 0.178/0.198/0.168 ; L6M cut -12% ranks 0.851/0.921/0.901 ; X cut -31% ranks 0.277/0.366/0.267
+B1 lotpar (n 100/100/100): PRE cut +11% ranks 0.455/0.465/0.475 ; L6M cut -9% ranks 0.683/0.723/0.693 ; X cut -54% ranks 0.792/0.861/0.762
+
+Reading (corrected): tight low-ER brackets and wide high-ER brackets are both DEAD on V13T_LIVE with the exact kernel. Lots unchanged: every wide-bracket cell is far worse in all windows (75/75 ER>.30: L6M -99%, X' -179%; 90/90: L6M -185%); parity lots (60/stop) bring ER>.30 -> 75/75 to PRE +11% (PA +12%, beyond the band) but L6M -9%, MID -206%, X' -54% and the placebo ranks are 0.46 / 0.47 / 0.48 (PRE) - pure volume; ER<=.15 -> 45/45 parity gives PRE +22% (PA +19%) with L6M -2%, MID -164%, X' -5% (ranks 0.33 / 0.39 / 0.33); ER<=.30 -> 45/45 parity PRE +13% (ranks .18-.20), L6M -12%, X' -31%. Combined cells (C1/C2) are negative in L6M and X'. Per book nothing is beyond the band (best: H7 ER>.30 -> 75/75 L6M +17% single window, K7 C1 L3M +10% view). The relation "sizer on exits": a bracket keyed on ER does not lower drawdown at the same mean on this base. Wide-bracket results are now measured (exact kernel), not indicative.
