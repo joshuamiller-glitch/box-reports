@@ -676,3 +676,16 @@ Reading: 40-60 is the plateau (reach 60 and 80 identical because the target dist
 
 ### 11f. Holdout-style check (nothing is fitted; compare halves)
 Halves: Spearman correlation across the 29 variants of saved dollars H1 vs H2 = 0.50; best variant in H1 = freshness away none (never expires) (142k in H1, 210k in H2); best in H2 = freshness away none (never expires) (142k in H1, 210k in H2); base definition (5m, print, 4h, away 0.5, reach 40): H1 80k, H2 120k. The base definition is positive in both halves (80k, 120k) and the single best variant is the same in both halves (no freshness limit), so the best variant does not migrate; the rank correlation of the 29 variants between halves is 0.50 (moderate): variants that work in 2023-24 mostly work in 2025-26. H2 is larger than H1 for most variants (the recent months carry more).
+
+
+## 12. Independent reimplementation (S4b clean room from the section 2 text only)
+Independent reimplementation check (S4b clean room from the one-pager text only): Jaccard of the candidate-row masks = 0.917
+| set                              |   candidate_rows |   taken |   mean_net |   L6M |   HOLD |   PRE |    X' |   ALL |
+|:---------------------------------|-----------------:|--------:|-----------:|------:|-------:|------:|------:|------:|
+| ZL-1 mask (2,819 candidate rows) |             2819 |    1035 |     -196.4 |  69.8 |   74.9 | 103.4 |  50.1 | 203.2 |
+| S4b clean-room primary (3,038)   |             3038 |    1104 |     -165.1 |  71.6 |   76.1 |  97.7 |  33.7 | 182.2 |
+| both                             |             2801 |    1029 |     -192   |  69   |   74.1 |  98.6 |  50.1 | 197.6 |
+| only ZL-1                        |               18 |       6 |     -942.9 |   0.8 |    0.8 |   4.9 |  -0   |   5.7 |
+| only S4b                         |              237 |      75 |      204.6 |   2.6 |    2   |  -0.9 | -16.4 | -15.3 |
+
+Reading: the one-page text reproduces the candidate rows to Jaccard 0.917 (0.983 after 2023-08); the saved dollars are 182k vs 203k, and the only-S4b rows are 207 rows from 2023-04..07 (before the L2-based events existed) plus 30 later ones; the only-ZL-1 rows are 18. S4b's list of definition choices (events from the first bar, break second excluded from the return test, a dropped swing cannot break, return in the signal second does not stale the level) is adopted as the frozen text; pinning of the remaining 30 + 18 rows to a data-source / warm-up difference is with S4b (row ids in out/zl_new/bt_mask_diff_rows.npz). Over 2023-04..07 the rule flags 69 taken trades that saved -15.9k (opposite sign), reported separately.

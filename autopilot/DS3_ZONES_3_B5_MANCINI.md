@@ -1028,3 +1028,132 @@ V13Y best-of-N null: families 1980 (offset 990 , shuffled-day 990 ); flagged tak
 ## Engine cells on V13Y (maxDD cut vs the V13Y base; V13Y base maxDD $k lock12 L3M 26.5, L6M 52.8, HOLD 90.4, MID 52.3, PRE 282, X' 131; lock None L3M 31.1, L6M 96.2, HOLD 103, MID 30.2, PRE 129.7, X' 69.7)
 BT swing F10 4h D40 skip: lock12 L3M +15%, L6M +8%, HOLD +36%, MID +20%, PRE +24%, X' 0% (BT events start 2023-08; the X' maxDD episode is before it); lock None +10%, +5%, +8%, +29%, +1%, -10%. Mean delta HOLD +4.5k/wk (12R, MDE 5.9k) and +2.4k/wk (lock None, MDE 3.0k). PUL k3 4h D20 skip on V13Y: lock12 L3M -8% L6M +1% HOLD 0 MID -1% PRE +6%; lock None L3M +1% L6M -6% MID -27% PRE -6%: DEAD on the fixed base (V13X LEAD(weak) -> V13Y DEAD).
 Verdict V13Y: BT swing flip stays LEAD as a MEAN-type effect (saved dollars beat every one of 1,980 same-density null families on the joint statistic: lock None 50k vs null max 17k, lock 12R 66k vs 15k; per-year 4/4, quarters 11/14; flagged taken trades -$209 vs +$182; walk-forward OOS +54k/+51k lock None); its drawdown cut is small and base-dependent (not RISK-KEEP). PUL k3 is withdrawn.
+
+
+# ZL-1 FLIP FAMILIES (16 other level families as 'broken level -> flip level'; prereg autopilot/ZL1_FLIP_FAMILIES_prereg.md, sha256 607cc2e6...3caa in DECISIONS.md, written before scoring; V13Y lock None taken trades, row-level saved $k = minus the flagged taken trades' net; single definition: broken by a print >= 10 pts, flip valid 4 h, fresh until price returns after leaving by 0.5 pt, flagged if a fresh flip level lies ahead within 40 pts / target distance; 'few' = fewer than 20 flagged taken trades, not scored)
+Best-of-N count: n = 818 earlier ZL-1 cells + 16 new family cells = 834. Reference: BT 5-min swing flip saved 184k in the same sample (2023-04..2026-10 taken trades).
+### Saved dollars by window
+| family               |   levels |   flip_events |   candidate_rows |   flagged_taken |   flag_mean |   L3M |   L6M |   HOLD |   MID |   PRE |     X |   fam_ALL |
+|:---------------------|---------:|--------------:|-----------------:|----------------:|------------:|------:|------:|-------:|------:|------:|------:|----------:|
+| 1 prior-day H/L      |     1852 |          1235 |              105 |              43 |      -378.4 |  -7.5 |  -6   |   -2.7 |   3.2 |  19.1 |   1.5 |      16.3 |
+| 10 round 50 handles  |    10208 |          5061 |              622 |             269 |      -105.6 |  -6.2 |   3.6 |   11   |  -0.9 |   2.7 |  25.1 |      28.4 |
+| 11 shipped 8 lines   |   104317 |         21547 |             2041 |             663 |        92.3 |  -7.2 | -16.4 |  -24.5 |   1.7 | -11.9 | -25.5 |     -61.2 |
+| 12 VWAP Asia bands   |   148375 |         27128 |             2530 |             812 |       183   |  14   | -24.5 |  -66   | -15.8 | -66.1 |  31.5 |    -148.6 |
+| 13 VWAP London bands |   138910 |         43784 |             3663 |             924 |       127.8 | -21.1 | -55.2 | -114.7 | -32.2 |   9   |   0.2 |    -118.1 |
+| 14 VWAP RTH bands    |   118535 |         32061 |             2934 |             490 |       -57   |  -7.3 | -10.2 |  -38.9 |  -3.6 |  50.9 |  44   |      27.9 |
+| 15 equal H/L 15m     |      739 |           679 |               69 |              22 |       -94.3 |   3.2 |   5.1 |    3.9 |  -0   |  -3.7 |   5.6 |       2.1 |
+| 16 equal H/L 1h      |       70 |            57 |                5 |               1 |       nan   | nan   | nan   |  nan   | nan   | nan   | nan   |     nan   |
+| 2 prior-day close    |      926 |           861 |              300 |             107 |       202   |  -2.1 |  -0.6 |   -0.7 |   6.6 | -38.3 |   2.8 |     -21.6 |
+| 3 Asia H/L           |     1854 |          1618 |              204 |              87 |       386.6 | -15.1 | -14.8 |  -14.7 |  -0   |  -6.2 |  10   |     -33.6 |
+| 4 London H/L         |     1854 |          1524 |               87 |              36 |      -287.4 |   0.4 |   1.6 |    5.9 |  -0   |   4.1 |   1.1 |      10.3 |
+| 5 overnight H/L      |     1854 |          1469 |              101 |              34 |        -7.1 | -10.6 |  -7.5 |   -9.3 |  -0   |   7.9 |   0.9 |       0.2 |
+| 6 RTH IB H/L         |     1848 |          1511 |               79 |              31 |       161   |   3.2 |   0.1 |   -8.6 |  -7.5 |   4.9 |  -0.2 |      -5   |
+| 7 week/month open    |      230 |           229 |               22 |               7 |       nan   | nan   | nan   |  nan   | nan   | nan   | nan   |     nan   |
+| 8 prior-week H/L     |      372 |           153 |                9 |               2 |       nan   | nan   | nan   |  nan   | nan   | nan   | nan   |     nan   |
+| 9 prior-month H/L    |       84 |            34 |                2 |               0 |       nan   | nan   | nan   |  nan   | nan   | nan   | nan   |     nan   |
+### Row-level placebo ranks (200 draws; A same count per book x session, B same count per day, C other-day same book x session; rank = share of placebo sums at least as good; low = real)
+| family               |   rkA_L6M |   rkB_L6M |   rkC_L6M |   rkA_HOLD |   rkB_HOLD |   rkC_HOLD |   rkA_PRE |   rkB_PRE |   rkC_PRE |   rkA_X |   rkB_X |   rkC_X |
+|:---------------------|----------:|----------:|----------:|-----------:|-----------:|-----------:|----------:|----------:|----------:|--------:|--------:|--------:|
+| 1 prior-day H/L      |     0.701 |     0.557 |     0.716 |      0.547 |      0.348 |      0.512 |     0.05  |     0.025 |     0.05  |   0.388 |   0.373 |   0.373 |
+| 10 round 50 handles  |     0.254 |     0.438 |     0.214 |      0.179 |      0.214 |      0.129 |     0.348 |     0.502 |     0.398 |   0.07  |   0.119 |   0.015 |
+| 11 shipped 8 lines   |     0.343 |     0.662 |     0.423 |      0.368 |      0.706 |      0.388 |     0.438 |     0.711 |     0.433 |   0.791 |   0.915 |   0.771 |
+| 12 VWAP Asia bands   |     0.254 |     0.542 |     0.294 |      0.333 |      0.597 |      0.393 |     0.697 |     0.886 |     0.756 |   0.144 |   0.313 |   0.159 |
+| 13 VWAP London bands |     0.826 |     0.716 |     0.781 |      0.935 |      0.861 |      0.92  |     0.498 |     0.433 |     0.537 |   0.478 |   0.672 |   0.478 |
+| 14 VWAP RTH bands    |     0.552 |     0.811 |     0.532 |      0.781 |      0.91  |      0.756 |     0.02  |     0.169 |     0.02  |   0.09  |   0.299 |   0.045 |
+| 15 equal H/L 15m     |     0.164 |     0.169 |     0.189 |      0.299 |      0.264 |      0.289 |     0.677 |     0.438 |     0.657 |   0.119 |   0.328 |   0.129 |
+| 16 equal H/L 1h      |   nan     |   nan     |   nan     |    nan     |    nan     |    nan     |   nan     |   nan     |   nan     | nan     | nan     | nan     |
+| 2 prior-day close    |     0.343 |     0.701 |     0.259 |      0.318 |      0.706 |      0.254 |     0.886 |     0.975 |     0.766 |   0.413 |   0.567 |   0.368 |
+| 3 Asia H/L           |     0.896 |     0.761 |     0.891 |      0.816 |      0.791 |      0.776 |     0.687 |     0.637 |     0.647 |   0.154 |   0.502 |   0.114 |
+| 4 London H/L         |     0.403 |     0.328 |     0.353 |      0.194 |      0.184 |      0.184 |     0.279 |     0.368 |     0.239 |   0.338 |   0.373 |   0.289 |
+| 5 overnight H/L      |     0.915 |     0.627 |     0.826 |      0.836 |      0.622 |      0.786 |     0.164 |     0.109 |     0.184 |   0.378 |   0.393 |   0.408 |
+| 6 RTH IB H/L         |     0.473 |     0.493 |     0.438 |      0.816 |      0.861 |      0.871 |     0.204 |     0.219 |     0.204 |   0.463 |   0.498 |   0.542 |
+| 7 week/month open    |   nan     |   nan     |   nan     |    nan     |    nan     |    nan     |   nan     |   nan     |   nan     | nan     | nan     | nan     |
+| 8 prior-week H/L     |   nan     |   nan     |   nan     |    nan     |    nan     |    nan     |   nan     |   nan     |   nan     | nan     | nan     | nan     |
+| 9 prior-month H/L    |   nan     |   nan     |   nan     |    nan     |    nan     |    nan     |   nan     |   nan     |   nan     | nan     | nan     | nan     |
+### Per year, halves, overlap with BT
+| family               |   y2023 |   y2024 |   y2025 |   y2026 |     H1 |      H2 |   jaccard_BT |   union_BT_ALL |   BT_ALL |
+|:---------------------|--------:|--------:|--------:|--------:|-------:|--------:|-------------:|---------------:|---------:|
+| 1 prior-day H/L      |    2.61 |    5.11 |   11.96 |   -3.4  |   6.67 |    8.55 |         0.02 |         197.99 |   184.13 |
+| 10 round 50 handles  |   20.66 |    0.15 |   -3.66 |   11.26 |  22.14 |    7.6  |         0.09 |         168.02 |   184.13 |
+| 11 shipped 8 lines   |  -42.02 |   -1.96 |    4.68 |  -21.89 | -34.81 |  -17.2  |         0.2  |         137.08 |   184.13 |
+| 12 VWAP Asia bands   |   38.52 |  -28.91 |  -98.31 |  -59.9  |  -3.46 | -158.21 |         0.16 |          60.47 |   184.13 |
+| 13 VWAP London bands |    5    |  -56.28 |    9.45 |  -76.23 | -58.52 |  -66.78 |         0.17 |          84.8  |   184.13 |
+| 14 VWAP RTH bands    |   42.77 |   60.76 |  -48.95 |  -26.66 |  86.23 |  -75.61 |         0.06 |         167.28 |   184.13 |
+| 15 equal H/L 15m     |    5.62 |   -3.32 |   -4.1  |    3.87 |  -1.01 |   -0.22 |         0.02 |         183.13 |   184.13 |
+| 16 equal H/L 1h      |  nan    |  nan    |  nan    |  nan    | nan    |  nan    |       nan    |         nan    |   nan    |
+| 2 prior-day close    |    3.03 |  -44.71 |   12.32 |    7.74 | -30.07 |   20.06 |         0.04 |         151.35 |   184.13 |
+| 3 Asia H/L           |    8.48 |  -10.3  |  -16.45 |  -15.36 |  -5.88 |  -31.81 |         0.05 |         176.29 |   184.13 |
+| 4 London H/L         |   -1.52 |   10.1  |    1.94 |   -0.17 |  10.57 |    1.76 |         0.02 |         194.34 |   184.13 |
+| 5 overnight H/L      |   -1.78 |    7.84 |    3.44 |   -9.26 |   8.5  |   -5.82 |         0.02 |         185.57 |   184.13 |
+| 6 RTH IB H/L         |   -2.32 |    5.8  |    0.12 |   -8.58 |   4.09 |   -8.47 |         0.01 |         176.76 |   184.13 |
+| 7 week/month open    |  nan    |  nan    |  nan    |  nan    | nan    |  nan    |       nan    |         nan    |   nan    |
+| 8 prior-week H/L     |  nan    |  nan    |  nan    |  nan    | nan    |  nan    |       nan    |         nan    |   nan    |
+| 9 prior-month H/L    |  nan    |  nan    |  nan    |  nan    | nan    |  nan    |       nan    |         nan    |   nan    |
+
+Reading: none of the 16 families is a lead. The prereg bar (saved dollars > 0 in L6M, HOLD and PRE with placebo ranks <= 0.05 in L6M and HOLD) is met by none: the largest positive totals are round-number handles (+28k, 269 flagged trades, L6M/HOLD ranks .13-.44) and VWAP RTH bands (+28k, L6M/HOLD ranks .55-.91, PRE +51k at ranks .02-.17 but negative in L6M and HOLD and in 2025-26), prior-day H/L (+16k from 43 trades; PRE rank .025-.05 only). The shipped zone-line values (-61k), the Asia and London VWAP bands (-149k, -118k) and the Asia session H/L (-34k) are NEGATIVE: skipping trades with those flipped levels ahead would lose money (the flagged trades are winners, +$92..+$387 each). Week/month opens, prior-week and prior-month levels, equal highs/lows 1 h produce fewer than 20 flagged trades and cannot be scored. Overlap with BT is small (Jaccard 0.01-0.20) and no union beats BT alone except prior-day H/L (198k vs 184k) and London H/L (194k). Conclusion: the effect is specific to recent 5-minute swing extremes that have just been broken, not a generic 'broken level acts as S/R for 4 hours' property of session, day, VWAP or round-number levels; the earlier 'dead as unbroken lines' result for these families is not rescued by the flip view. Best-of-N null not run because no family passes the screening bar (the null at BT's density is bnull2_V13Y).
+Files: out/zl_new/zflip_summ.pkl, flip_levels.pkl, flip_masks.npz; code zones3/zl1/zflip.py (+ zvarlib.py).
+
+
+# ZL-1 SIZE-UP of the winner families (prereg autopilot/ZL1_SIZEUP_FAMILIES_prereg.md sha256 25827761833cd74e5e718a589bba7c1f082abecbafe81b205e458dfb51f13c97, written before scoring; 5 families x 2 actions = 10 cells, planned lots x1.5 or restore full lots on layer-and-family rows; V13Y lock None)
+### row-level first-order gain $k (x1.5: +0.5 x flagged net; restore-full: + flagged-and-layer net) and placebo ranks (200 draws; share of placebo gains at least as good)
+| family               | action   |   flagged_taken |   jaccard_BT |   gain_L6M |   gain_HOLD |   gain_PRE |   gain_X |   rkA_L6M |   rkB_L6M |   rkC_L6M |   rkA_HOLD |   rkB_HOLD |   rkC_HOLD |   rkA_PRE |   rkB_PRE |   rkC_PRE |
+|:---------------------|:---------|----------------:|-------------:|-----------:|------------:|-----------:|---------:|----------:|----------:|----------:|-----------:|-----------:|-----------:|----------:|----------:|----------:|
+| 11 shipped 8 lines   | x15      |             663 |         0.2  |       8.19 |       12.23 |       5.94 |    12.73 |      0.61 |      0.36 |      0.68 |       0.62 |       0.28 |       0.67 |      0.55 |      0.28 |      0.64 |
+| 11 shipped 8 lines   | rf       |             364 |         0.2  |      26.32 |       25.28 |       7.77 |    -2.9  |      0.31 |      0.15 |      0.32 |       0.5  |       0.22 |       0.47 |      0.52 |      0.29 |      0.49 |
+| 12 VWAP Asia bands   | x15      |             812 |         0.16 |      12.26 |       33    |      33.05 |   -15.76 |      0.73 |      0.42 |      0.74 |       0.62 |       0.41 |       0.67 |      0.23 |      0.14 |      0.27 |
+| 12 VWAP Asia bands   | rf       |             268 |         0.16 |       0.97 |        3.81 |     -12.89 |   -10.1  |      0.7  |      0.39 |      0.66 |       0.74 |       0.38 |       0.73 |      0.68 |      0.59 |      0.71 |
+| 13 VWAP London bands | x15      |             924 |         0.17 |      27.59 |       57.34 |      -4.52 |    -0.08 |      0.19 |      0.32 |      0.16 |       0.08 |       0.16 |       0.04 |      0.53 |      0.54 |      0.45 |
+| 13 VWAP London bands | rf       |             329 |         0.17 |       4.74 |      -11.28 |       0.57 |     9.45 |      0.54 |      0.63 |      0.54 |       0.73 |       0.83 |       0.73 |      0.5  |      0.3  |      0.45 |
+| 3 Asia H/L           | x15      |              87 |         0.05 |       7.42 |        7.36 |       3.09 |    -5.01 |      0.18 |      0.21 |      0.11 |       0.23 |       0.2  |       0.23 |      0.34 |      0.29 |      0.41 |
+| 3 Asia H/L           | rf       |              45 |         0.05 |       1.5  |        2.04 |      -4.62 |     1.82 |      0.43 |      0.5  |      0.44 |       0.46 |       0.49 |       0.53 |      0.66 |      0.57 |      0.66 |
+| 2 prior-day close    | x15      |             107 |         0.04 |       0.3  |        0.34 |      19.17 |    -1.42 |      0.65 |      0.34 |      0.65 |       0.63 |       0.29 |       0.69 |      0.11 |      0.06 |      0.14 |
+| 2 prior-day close    | rf       |              36 |         0.04 |       0.45 |       -0.67 |       3.77 |    -3.17 |      0.54 |      0.45 |      0.59 |       0.63 |       0.59 |       0.65 |      0.46 |      0.47 |      0.47 |
+
+### per year gain $k
+| family               | action   |   y2023 |   y2024 |   y2025 |   y2026 |
+|:---------------------|:---------|--------:|--------:|--------:|--------:|
+| 11 shipped 8 lines   | x15      |    21   |     1   |    -2.3 |    10.9 |
+| 11 shipped 8 lines   | rf       |     6.8 |    -2.2 |    -5.4 |    30.8 |
+| 12 VWAP Asia bands   | x15      |   -19.3 |    14.5 |    49.2 |    29.9 |
+| 12 VWAP Asia bands   | rf       |    -9.8 |     2.4 |    -7.3 |     9.6 |
+| 13 VWAP London bands | x15      |    -2.5 |    28.1 |    -4.7 |    38.1 |
+| 13 VWAP London bands | rf       |     1.8 |    16.4 |    16.1 |   -11.9 |
+| 3 Asia H/L           | x15      |    -4.2 |     5.2 |     8.2 |     7.7 |
+| 3 Asia H/L           | rf       |     0.2 |     0.2 |    15.4 |     2   |
+| 2 prior-day close    | x15      |    -1.5 |    22.4 |    -6.2 |    -3.9 |
+| 2 prior-day close    | rf       |     4.5 |     1.4 |    -5.1 |    -0.7 |
+
+### engine (V13Y lock None): mean delta $k/wk, maxDD change, worst-20 change, equal-risk mean delta (cell mean scaled to the base worst-20 minus base mean)
+| family               | action   |   eng_dmean_k_L6M |   eng_maxdd_chg_L6M |   eng_w20_chg_L6M |   eq_risk_dmean_k_L6M |   eng_dmean_k_HOLD |   eng_maxdd_chg_HOLD |   eng_w20_chg_HOLD |   eq_risk_dmean_k_HOLD |   eng_dmean_k_PRE |   eng_maxdd_chg_PRE |   eng_w20_chg_PRE |   eq_risk_dmean_k_PRE |   eng_dmean_k_X' |   eng_maxdd_chg_X' |   eng_w20_chg_X' |   eq_risk_dmean_k_X' |
+|:---------------------|:---------|------------------:|--------------------:|------------------:|----------------------:|-------------------:|---------------------:|-------------------:|-----------------------:|------------------:|--------------------:|------------------:|----------------------:|-----------------:|-------------------:|-----------------:|---------------------:|
+| 11 shipped 8 lines   | x15      |             0.34  |              -0.01  |             0.078 |                -1.764 |              0.787 |                0.029 |             -0.055 |                  2.257 |            -0.028 |              -0.01  |             0.002 |                -0.056 |            0.024 |              0.023 |           -0.026 |                0.069 |
+| 11 shipped 8 lines   | rf       |             0.754 |               0.006 |             0.097 |                -1.862 |              0.133 |                0.018 |              0.005 |                  0.02  |            -0.142 |              -0.004 |             0.002 |                -0.164 |            0.035 |              0.137 |            0.022 |               -0.001 |
+| 12 VWAP Asia bands   | x15      |             0.659 |              -0.056 |             0.222 |                -4.691 |              1.298 |               -0.04  |             -0.076 |                  3.439 |            -0.417 |               0.222 |             0.054 |                -1.013 |           -0.208 |              0.066 |            0.029 |               -0.249 |
+| 12 VWAP Asia bands   | rf       |             0.068 |               0     |             0.046 |                -1.199 |             -0.137 |                0.026 |              0.019 |                 -0.601 |            -0.479 |               0.012 |             0.013 |                -0.627 |           -0.122 |              0.09  |            0.003 |               -0.127 |
+| 13 VWAP London bands | x15      |             0.583 |              -0.127 |             0.238 |                -5.048 |              1.062 |               -0.056 |             -0.021 |                  1.625 |            -0.336 |               0.063 |             0.022 |                -0.584 |            0.307 |              0.062 |           -0.036 |                0.379 |
+| 13 VWAP London bands | rf       |            -0.432 |               0.004 |             0.098 |                -2.963 |             -0.56  |                0.108 |              0.023 |                 -1.102 |             0.176 |               0.001 |             0.01  |                 0.056 |            0.265 |              0.006 |            0.006 |                0.254 |
+| 3 Asia H/L           | x15      |             0.154 |              -0     |             0.037 |                -0.887 |              0.083 |                0     |             -0.004 |                  0.185 |             0.086 |              -0.036 |            -0.005 |                 0.15  |           -0.288 |              0.101 |            0.011 |               -0.302 |
+| 3 Asia H/L           | rf       |            -0.117 |               0     |            -0.002 |                -0.05  |             -0.051 |                0     |             -0     |                 -0.04  |            -0.016 |              -0.033 |             0.004 |                -0.068 |           -0.134 |              0.12  |            0.006 |               -0.143 |
+| 2 prior-day close    | x15      |             0.871 |              -0.102 |             0.251 |                -5.065 |              0.512 |                0.011 |             -0.029 |                  1.273 |             0.221 |              -0.035 |            -0.015 |                 0.41  |           -0.026 |              0.022 |            0.033 |               -0.077 |
+| 2 prior-day close    | rf       |             0.254 |              -0.071 |             0.076 |                -1.789 |              0.11  |                0     |             -0.014 |                  0.468 |             0.018 |              -0.011 |            -0     |                 0.023 |           -0.088 |             -0.048 |            0.005 |               -0.095 |
+
+Reading: no size-up cell meets the prereg bar. The row-level first-order gains are positive in most cells (x1.5 of VWAP London bands +27.6k L6M, +57.3k HOLD, -4.5k PRE; VWAP Asia bands +12k / +33k / +33k; shipped lines +8k / +12k / +6k) but the 200-draw placebo ranks are 0.04-0.7: only VWAP London x1.5 reaches rank <= 0.05 and only in HOLD against placebo C (0.04; A .08, B .16; L6M .16-.32; PRE .45-.54); the per-year gains change sign (VWAP Asia x1.5: -19k in 2023, +49k in 2025; VWAP London: -4.7k in 2025). The engine mean deltas are +0.1..+1.3k per week in L6M/HOLD and negative or ~0 in PRE and X'; short windows (L3M, L6M, MID) have fewer than 20 losing weeks, so the worst-20 and the equal-risk columns are not tail measures there; in HOLD (52 weeks) the equal-risk mean delta is +0.2..+3.4k per week for x1.5 but the placebo ranks above do not support it (it is what extra volume on a mildly positive subset gives). Labels: all 10 cells VOLUME / DEAD. 'Skip the half' (restore full lots on layer rows) is smaller still. The skip result for these families (flagged trades are winners) is therefore not an exploitable size-up either.
+
+
+# ZL-1 BREAK-WITH-TREND (BWT) rows, the converse of the BT flip (prereg autopilot/ZL1_BWT_prereg.md sha256 38bef3af5ffec1f004d3cc8a3c1fa1beb7742f4d7d9253e54b5afb1711265d69, before scoring; V13Y lock None)
+BWT row = a fresh own-direction flip level (support after an upward break for a long, resistance after a downward break for a short) lies BEHIND the entry between entry and stop within min(40, stop distance): 28,241 candidate rows (32% of all rows), Jaccard 0.03 with the BT-flagged rows.
+### row-level first-order gain $k and placebo ranks (200 draws A/B; rank = share of placebo gains at least as good) and per year
+| cell                                 |   rows_changed |   candidate_BWT |   jaccard_BT |   gain_L6M |   rkA_L6M |   rkB_L6M |   gain_HOLD |   rkA_HOLD |   rkB_HOLD |   gain_PRE |   rkA_PRE |   rkB_PRE |   gain_X |   y2023 |   y2024 |   y2025 |   y2026 |
+|:-------------------------------------|---------------:|----------------:|-------------:|-----------:|----------:|----------:|------------:|-----------:|-----------:|-----------:|----------:|----------:|---------:|--------:|--------:|--------:|--------:|
+| (a) x1.5 on BWT rows                 |           6366 |           28241 |         0.03 |     136.13 |      0.45 |      0.16 |      200.62 |       0.64 |       0.28 |     165.41 |      0.1  |      0.28 |    49.99 |   21.18 |   97.68 |  177.88 |  174.59 |
+| (b) restore full on BWT & layer rows |           1314 |           28241 |         0.03 |      15.3  |      0.71 |      0.72 |       16.07 |       0.87 |       0.62 |     -26.98 |      0.86 |      0.66 |    12.76 |   17.34 |  -28.05 |    8.27 |   19.32 |
+| (c) skip BT + x1.5 BWT-not-BT        |           7093 |           28241 |         0.03 |     215.49 |    nan    |    nan    |      284.72 |     nan    |     nan    |     263.99 |    nan    |    nan    |   108.59 |   88.79 |  115.92 |  204.84 |  270.3  |
+
+### engine V13Y lock None: mean delta $k/wk, maxDD change, worst-20 change, equal-risk mean delta
+| cell                                 |   dmean_k_L6M |   maxdd_chg_L6M |   w20_chg_L6M |   eqrisk_dmean_k_L6M |   dmean_k_HOLD |   maxdd_chg_HOLD |   w20_chg_HOLD |   eqrisk_dmean_k_HOLD |   dmean_k_PRE |   maxdd_chg_PRE |   w20_chg_PRE |   eqrisk_dmean_k_PRE |   dmean_k_X' |   maxdd_chg_X' |   w20_chg_X' |   eqrisk_dmean_k_X' |
+|:-------------------------------------|--------------:|----------------:|--------------:|---------------------:|---------------:|-----------------:|---------------:|----------------------:|--------------:|----------------:|--------------:|---------------------:|-------------:|---------------:|-------------:|--------------------:|
+| (a) x1.5 on BWT rows                 |         3.963 |          -0.141 |         0.575 |               -7.978 |          5.8   |           -0.098 |         -0.115 |                 9.761 |        -0.653 |           0.418 |         0.326 |               -3.473 |        1.464 |         -0.185 |        0.036 |               1.357 |
+| (b) restore full on BWT & layer rows |         0.253 |           0.045 |        -0.08  |                2.788 |          0.237 |            0.123 |          0.03  |                -0.475 |        -0.12  |           0.185 |         0.116 |               -1.371 |        1.24  |          0.073 |       -0.049 |               1.387 |
+| (c) skip BT + x1.5 BWT-not-BT        |         6.83  |          -0.174 |         1.26  |              -13.011 |          7.037 |           -0.163 |         -0.128 |                11.675 |         0.336 |           0.331 |         0.353 |               -2.913 |        1.741 |          0.202 |       -0.04  |               1.881 |
+
+Reading: BWT is a VOLUME effect. Sizing up x1.5 the 6,366 BWT taken trades raises dollars (+136k L6M, +201k HOLD, +165k PRE at first order; engine mean +4.0k/wk L6M, +5.8k/wk HOLD) but random same-count rows give the same gain: placebo ranks A .45/.64/.10 and B .16/.28/.28 (L6M/HOLD/PRE), the equal-risk mean is -8.0k/wk in L6M and -3.5k/wk in PRE (positive only in HOLD +9.8k, 52 weeks) and the maxDD change is -14% L6M / -10% HOLD but +42% PRE. Restoring full lots on BWT-and-layer rows is smaller still (+15k L6M, -27k PRE, ranks .6-.9). The combined cell (skip BT + x1.5 BWT) adds +145k L6M over BT alone, which is the same size-up volume. Labels: (a) VOLUME, (b) DEAD, (c) = BT lead plus a VOLUME size-up; nothing new. Break-with-trend rows are not better than other rows once the sizing volume is controlled.

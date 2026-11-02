@@ -1,5 +1,5 @@
 # ZONES3_MASTER_TABLE - program-wide finalist x frame x noise band x placebo rank x carrying week x label (S5 light-job agent)
-Refreshed 2026-11-02 09:14Z. CSV: autopilot/ZONES3_MASTER_TABLE.csv (850 rows). BASE COLUMN: V13X = DEFECT BASE (add-fill ordering defect, BASE-4), V13Y = fixed base; only S5 rows exist on V13Y so far (others republish). Bases: V13X exact (S5, Z3 s3_v13x), ZL3 lock-off V13X, S4A stage2x_vx (v13_=lock12, nl_=lock-off) and stage2xn_vxn (v13_=lock-off headline, nl_=lock12), mapping CONFIRMED by S4a; S4A pA/pB/pC rank the mean of the L6M/HOLD/PRE/X cuts, not L6M alone, 40 draws. Band = Z3 V13X noise band (DS3_ZONES_3_NOISE.md, interim n~43), row by rows changed (S5 from flagged share; others: Z3 1,500 rows -> flip 2/5; S4A/ZL3 use rows/flags as stored x0.3 for live share, flip 5 when unknown); rule: cut > band in L6M AND (PRE or X'). Placebo ranks: S5 from its stored draws (rank = share of draws with cut >= real, 100/kind lock12 for 9 cells, lock-off for 5), S4A from its pA/pB/pC (see above); Z3 and ZL3 tables carry no placebo ranks (labelled 'BAND (placebo not in table)'). Carrying week: S5 only. Labels are mechanical; nothing is a lead without the robustness standard.
+Refreshed 2026-11-02 09:40Z. CSV: autopilot/ZONES3_MASTER_TABLE.csv (850 rows). BASE COLUMN: V13X = DEFECT BASE (add-fill ordering defect, BASE-4), V13Y = fixed base; only S5 rows exist on V13Y so far (others republish). Bases: V13X exact (S5, Z3 s3_v13x), ZL3 lock-off V13X, S4A stage2x_vx (v13_=lock12, nl_=lock-off) and stage2xn_vxn (v13_=lock-off headline, nl_=lock12), mapping CONFIRMED by S4a; S4A pA/pB/pC rank the mean of the L6M/HOLD/PRE/X cuts, not L6M alone, 40 draws. Band: V13X rows = Z3 V13X noise band (interim n~43); V13Y rows = Z3 V13Y SINGLE-PATH (phase 0) band from DS3_ZONES_3_NOISE.md (our cuts are single-path; the phase-averaged band, lock-off flip2/5 L6M 15.5/20 PRE 11.5/16 X' 14/22, applies only to phase-averaged cuts, which only Z3 computes), row by rows changed (S5 from flagged share; others: Z3 1,500 rows -> flip 2/5; S4A/ZL3 use rows/flags as stored x0.3 for live share, flip 5 when unknown); rule: cut > band in L6M AND (PRE or X'). Placebo ranks: S5 from its stored draws (rank = share of draws with cut >= real, 100/kind lock12 for 9 cells, lock-off for 5), S4A from its pA/pB/pC (see above); Z3 and ZL3 tables carry no placebo ranks (labelled 'BAND (placebo not in table)'). Carrying week: S5 only. Labels are mechanical; nothing is a lead without the robustness standard.
 
 ## Counts by program and frame
 
@@ -12,8 +12,8 @@ Refreshed 2026-11-02 09:14Z. CSV: autopilot/ZONES3_MASTER_TABLE.csv (850 rows). 
 | ('V13X (DEFECT BASE)', 'Z3 action table', 'lock12')    |     101 |           0 |        0 |              0 |
 | ('V13X (DEFECT BASE)', 'Z3 action table', 'lockoff')   |     101 |           0 |        0 |              0 |
 | ('V13X (DEFECT BASE)', 'ZL3 L2/tape zones', 'lockoff') |     418 |          56 |        0 |              0 |
-| ('V13Y', 'S5 density', 'lock12')                       |      33 |           1 |        0 |              0 |
-| ('V13Y', 'S5 density', 'lockoff')                      |      33 |           3 |        0 |              0 |
+| ('V13Y', 'S5 density', 'lock12')                       |      33 |           0 |        0 |              0 |
+| ('V13Y', 'S5 density', 'lockoff')                      |      33 |           4 |        0 |              0 |
 
 
 ## Every row that passes the band in a frame (necessary, not sufficient)
@@ -95,70 +95,70 @@ Refreshed 2026-11-02 09:14Z. CSV: autopilot/ZONES3_MASTER_TABLE.csv (850 rows). 
 | V13X (DEFECT BASE) | ZL3 L2/tape zones | act=skip|fam=TAPEALL|kind=DENS|rule=ratio_le:0.5|lat0 | lockoff | +22% | +22% | +40% | -29% | -12.1k (16.4k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
 | V13X (DEFECT BASE) | ZL3 L2/tape zones | arm=B|kind=LRN|model=exp|rule=skip20|lat0 | lockoff | +21% | +21% | +23% | +40% | -10.2k (12.6k) | 21/20/29% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
 | V13X (DEFECT BASE) | ZL3 L2/tape zones | D=20|act=skip|fam=('tape', 'TLQ_SES_asia')|kind=AH|tier=all|var=fresh|lat0 | lockoff | +11% | +5% | +13% | +12% | -0.0k (3.9k) | 10/14/8% | n/a/n/a/n/a |  | [defect base] BAND (placebo not in table) |
-| V13Y | S5 density | open60 half | lock12 | +47% | +29% | +30% | +2% | -4.1k (13.4k) | 36/28/29% | n/a/n/a/n/a | 202632 | BAND (placebo not in table) |
-| V13Y | S5 density | open60 half | lockoff | +42% | +10% | +4% | +33% | -7.4k (13.8k) | 21/20/29% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |
-| V13Y | S5 density | rho60>=2 skip | lockoff | +41% | +14% | +1% | +36% | -1.1k (12.7k) | 21/20/29% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) ONE-WEEK |
-| V13Y | S5 density | openA40 half | lockoff | +35% | +40% | +20% | +41% | -10.4k (12.9k) | 21/20/29% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |
+| V13Y | S5 density | open60 half | lockoff | +42% | +10% | +4% | +33% | -7.4k (13.8k) | 27/17/22% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |
+| V13Y | S5 density | open20 half | lockoff | +41% | +35% | +17% | +9% | -13.2k (14.5k) | 27/17/22% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |
+| V13Y | S5 density | rho60>=2 skip | lockoff | +41% | +14% | +1% | +36% | -1.1k (12.7k) | 27/17/22% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) ONE-WEEK |
+| V13Y | S5 density | openA40 half | lockoff | +35% | +40% | +20% | +41% | -10.4k (12.9k) | 27/17/22% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |
 
-## Per-family summary (band = Z3 band rule; no-harm = PRE and X' cuts >= 0 in the frame (provisional definition, replace when Z3 defines it); pass_all = band + no-harm + placebo ranks <= 0.10 where placebo exists). Chance expectation = cells x 0.040, the lock-off band+no-harm pass rate of 200 information-free same-size masks measured by S5 on V13Y (proxy for every family).
+## Per-family summary (band = Z3 band rule; no-harm = PRE and X' cuts >= 0 in the frame (provisional definition, replace when Z3 defines it); pass_all = band + no-harm + placebo ranks <= 0.10 where placebo exists). Chance expectation = cells x 0.065, the lock-off band+no-harm pass rate of 200 information-free same-size masks measured by S5 on V13Y (proxy for every family).
 
 | base               | family                             | frame   |   cells |   band |   band_noharm |   placebo_tested |   pass_all |   chance_expectation_passes |
 |:-------------------|:-----------------------------------|:--------|--------:|-------:|--------------:|-----------------:|-----------:|----------------------------:|
-| V13X (DEFECT BASE) | S4A ARR                            | lock12  |      11 |      1 |             1 |                8 |          0 |                        0.44 |
-| V13X (DEFECT BASE) | S4A ARR                            | lockoff |      11 |      4 |             0 |                3 |          0 |                        0.44 |
-| V13X (DEFECT BASE) | S4A CRT                            | lock12  |       1 |      0 |             0 |                1 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | S4A CRT                            | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | S4A DEV                            | lock12  |      10 |      1 |             0 |                4 |          0 |                        0.4  |
-| V13X (DEFECT BASE) | S4A DEV                            | lockoff |      10 |      3 |             0 |                6 |          0 |                        0.4  |
-| V13X (DEFECT BASE) | S4A EQL                            | lock12  |       2 |      0 |             0 |                0 |          0 |                        0.08 |
-| V13X (DEFECT BASE) | S4A EQL                            | lockoff |       2 |      0 |             0 |                2 |          0 |                        0.08 |
-| V13X (DEFECT BASE) | S4A FIB                            | lock12  |       8 |      0 |             0 |                3 |          0 |                        0.32 |
-| V13X (DEFECT BASE) | S4A FIB                            | lockoff |       8 |      1 |             0 |                5 |          0 |                        0.32 |
-| V13X (DEFECT BASE) | S4A MAS                            | lock12  |       4 |      0 |             0 |                1 |          0 |                        0.16 |
-| V13X (DEFECT BASE) | S4A MAS                            | lockoff |       4 |      1 |             1 |                3 |          1 |                        0.16 |
-| V13X (DEFECT BASE) | S4A PRF                            | lock12  |       3 |      0 |             0 |                2 |          0 |                        0.12 |
-| V13X (DEFECT BASE) | S4A PRF                            | lockoff |       3 |      0 |             0 |                1 |          0 |                        0.12 |
-| V13X (DEFECT BASE) | S4A SES                            | lock12  |       2 |      0 |             0 |                0 |          0 |                        0.08 |
-| V13X (DEFECT BASE) | S4A SES                            | lockoff |       2 |      0 |             0 |                2 |          0 |                        0.08 |
-| V13X (DEFECT BASE) | S4A SWG                            | lock12  |       7 |      0 |             0 |                5 |          0 |                        0.28 |
-| V13X (DEFECT BASE) | S4A SWG                            | lockoff |       7 |      3 |             2 |                2 |          1 |                        0.28 |
-| V13X (DEFECT BASE) | S5 cong                            | lock12  |      21 |      0 |             0 |                6 |          0 |                        0.84 |
-| V13X (DEFECT BASE) | S5 cong                            | lockoff |      21 |      1 |             0 |                4 |          0 |                        0.84 |
-| V13X (DEFECT BASE) | S5 nml                             | lock12  |       4 |      0 |             0 |                0 |          0 |                        0.16 |
-| V13X (DEFECT BASE) | S5 nml                             | lockoff |       4 |      0 |             0 |                0 |          0 |                        0.16 |
-| V13X (DEFECT BASE) | S5 open                            | lock12  |       4 |      0 |             0 |                1 |          0 |                        0.16 |
-| V13X (DEFECT BASE) | S5 open                            | lockoff |       4 |      3 |             3 |                3 |          0 |                        0.16 |
-| V13X (DEFECT BASE) | S5 ratio                           | lock12  |       5 |      0 |             0 |                2 |          0 |                        0.2  |
-| V13X (DEFECT BASE) | S5 ratio                           | lockoff |       5 |      1 |             1 |                1 |          0 |                        0.2  |
-| V13X (DEFECT BASE) | Z3 action table                    | lock12  |     101 |      0 |             0 |                0 |          0 |                        4.04 |
-| V13X (DEFECT BASE) | Z3 action table                    | lockoff |     101 |      0 |             0 |                0 |          0 |                        4.04 |
-| V13X (DEFECT BASE) | ZL3 AH ('tape', 'TCD_divbull')     | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 AH ('tape', 'TLQ_SES_asia')    | lockoff |       1 |      1 |             1 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 AH ('tape', 'TPF_hvn1_sw1h')   | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_hvn_day')   | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_hvn_sess')  | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_lvn_day')   | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_lvn_sess')  | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_poc_day')   | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_poc_sess')  | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_void_day')  | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_void_sess') | lockoff |       1 |      0 |             0 |                0 |          0 |                        0.04 |
-| V13X (DEFECT BASE) | ZL3 CONF TAPEALL                   | lockoff |      29 |      1 |             1 |                0 |          0 |                        1.16 |
-| V13X (DEFECT BASE) | ZL3 CONF TCD                       | lockoff |      29 |      0 |             0 |                0 |          0 |                        1.16 |
-| V13X (DEFECT BASE) | ZL3 CONF TCP                       | lockoff |      29 |      0 |             0 |                0 |          0 |                        1.16 |
-| V13X (DEFECT BASE) | ZL3 CONF TLP                       | lockoff |      29 |      0 |             0 |                0 |          0 |                        1.16 |
-| V13X (DEFECT BASE) | ZL3 CONF TPF                       | lockoff |      29 |      0 |             0 |                0 |          0 |                        1.16 |
-| V13X (DEFECT BASE) | ZL3 CONF TVP                       | lockoff |      93 |     10 |             0 |                0 |          0 |                        3.72 |
-| V13X (DEFECT BASE) | ZL3 DENS SET8                      | lockoff |      23 |      2 |             2 |                0 |          0 |                        0.92 |
-| V13X (DEFECT BASE) | ZL3 DENS SET8+L2ALL                | lockoff |      26 |      5 |             3 |                0 |          0 |                        1.04 |
-| V13X (DEFECT BASE) | ZL3 DENS TAPEALL                   | lockoff |      45 |      6 |             2 |                0 |          0 |                        1.8  |
-| V13X (DEFECT BASE) | ZL3 LRN nan                        | lockoff |      68 |     30 |            26 |                0 |          0 |                        2.72 |
-| V13X (DEFECT BASE) | ZL3 TWF nan                        | lockoff |       7 |      1 |             1 |                0 |          0 |                        0.28 |
-| V13Y               | S5 cong                            | lock12  |      20 |      0 |             0 |                2 |          0 |                        0.8  |
-| V13Y               | S5 cong                            | lockoff |      20 |      0 |             0 |                2 |          0 |                        0.8  |
-| V13Y               | S5 nml                             | lock12  |       4 |      0 |             0 |                0 |          0 |                        0.16 |
-| V13Y               | S5 nml                             | lockoff |       4 |      0 |             0 |                0 |          0 |                        0.16 |
-| V13Y               | S5 open                            | lock12  |       4 |      1 |             1 |                1 |          0 |                        0.16 |
-| V13Y               | S5 open                            | lockoff |       4 |      2 |             2 |                1 |          0 |                        0.16 |
-| V13Y               | S5 ratio                           | lock12  |       5 |      0 |             0 |                0 |          0 |                        0.2  |
-| V13Y               | S5 ratio                           | lockoff |       5 |      1 |             1 |                0 |          0 |                        0.2  |
+| V13X (DEFECT BASE) | S4A ARR                            | lock12  |      11 |      1 |             1 |                8 |          0 |                       0.715 |
+| V13X (DEFECT BASE) | S4A ARR                            | lockoff |      11 |      4 |             0 |                3 |          0 |                       0.715 |
+| V13X (DEFECT BASE) | S4A CRT                            | lock12  |       1 |      0 |             0 |                1 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | S4A CRT                            | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | S4A DEV                            | lock12  |      10 |      1 |             0 |                4 |          0 |                       0.65  |
+| V13X (DEFECT BASE) | S4A DEV                            | lockoff |      10 |      3 |             0 |                6 |          0 |                       0.65  |
+| V13X (DEFECT BASE) | S4A EQL                            | lock12  |       2 |      0 |             0 |                0 |          0 |                       0.13  |
+| V13X (DEFECT BASE) | S4A EQL                            | lockoff |       2 |      0 |             0 |                2 |          0 |                       0.13  |
+| V13X (DEFECT BASE) | S4A FIB                            | lock12  |       8 |      0 |             0 |                3 |          0 |                       0.52  |
+| V13X (DEFECT BASE) | S4A FIB                            | lockoff |       8 |      1 |             0 |                5 |          0 |                       0.52  |
+| V13X (DEFECT BASE) | S4A MAS                            | lock12  |       4 |      0 |             0 |                1 |          0 |                       0.26  |
+| V13X (DEFECT BASE) | S4A MAS                            | lockoff |       4 |      1 |             1 |                3 |          1 |                       0.26  |
+| V13X (DEFECT BASE) | S4A PRF                            | lock12  |       3 |      0 |             0 |                2 |          0 |                       0.195 |
+| V13X (DEFECT BASE) | S4A PRF                            | lockoff |       3 |      0 |             0 |                1 |          0 |                       0.195 |
+| V13X (DEFECT BASE) | S4A SES                            | lock12  |       2 |      0 |             0 |                0 |          0 |                       0.13  |
+| V13X (DEFECT BASE) | S4A SES                            | lockoff |       2 |      0 |             0 |                2 |          0 |                       0.13  |
+| V13X (DEFECT BASE) | S4A SWG                            | lock12  |       7 |      0 |             0 |                5 |          0 |                       0.455 |
+| V13X (DEFECT BASE) | S4A SWG                            | lockoff |       7 |      3 |             2 |                2 |          1 |                       0.455 |
+| V13X (DEFECT BASE) | S5 cong                            | lock12  |      21 |      0 |             0 |                6 |          0 |                       1.365 |
+| V13X (DEFECT BASE) | S5 cong                            | lockoff |      21 |      1 |             0 |                4 |          0 |                       1.365 |
+| V13X (DEFECT BASE) | S5 nml                             | lock12  |       4 |      0 |             0 |                0 |          0 |                       0.26  |
+| V13X (DEFECT BASE) | S5 nml                             | lockoff |       4 |      0 |             0 |                0 |          0 |                       0.26  |
+| V13X (DEFECT BASE) | S5 open                            | lock12  |       4 |      0 |             0 |                1 |          0 |                       0.26  |
+| V13X (DEFECT BASE) | S5 open                            | lockoff |       4 |      3 |             3 |                3 |          0 |                       0.26  |
+| V13X (DEFECT BASE) | S5 ratio                           | lock12  |       5 |      0 |             0 |                2 |          0 |                       0.325 |
+| V13X (DEFECT BASE) | S5 ratio                           | lockoff |       5 |      1 |             1 |                1 |          0 |                       0.325 |
+| V13X (DEFECT BASE) | Z3 action table                    | lock12  |     101 |      0 |             0 |                0 |          0 |                       6.565 |
+| V13X (DEFECT BASE) | Z3 action table                    | lockoff |     101 |      0 |             0 |                0 |          0 |                       6.565 |
+| V13X (DEFECT BASE) | ZL3 AH ('tape', 'TCD_divbull')     | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 AH ('tape', 'TLQ_SES_asia')    | lockoff |       1 |      1 |             1 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 AH ('tape', 'TPF_hvn1_sw1h')   | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_hvn_day')   | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_hvn_sess')  | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_lvn_day')   | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_lvn_sess')  | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_poc_day')   | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_poc_sess')  | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_void_day')  | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 CONF ('tape', 'TVP_void_sess') | lockoff |       1 |      0 |             0 |                0 |          0 |                       0.065 |
+| V13X (DEFECT BASE) | ZL3 CONF TAPEALL                   | lockoff |      29 |      1 |             1 |                0 |          0 |                       1.885 |
+| V13X (DEFECT BASE) | ZL3 CONF TCD                       | lockoff |      29 |      0 |             0 |                0 |          0 |                       1.885 |
+| V13X (DEFECT BASE) | ZL3 CONF TCP                       | lockoff |      29 |      0 |             0 |                0 |          0 |                       1.885 |
+| V13X (DEFECT BASE) | ZL3 CONF TLP                       | lockoff |      29 |      0 |             0 |                0 |          0 |                       1.885 |
+| V13X (DEFECT BASE) | ZL3 CONF TPF                       | lockoff |      29 |      0 |             0 |                0 |          0 |                       1.885 |
+| V13X (DEFECT BASE) | ZL3 CONF TVP                       | lockoff |      93 |     10 |             0 |                0 |          0 |                       6.045 |
+| V13X (DEFECT BASE) | ZL3 DENS SET8                      | lockoff |      23 |      2 |             2 |                0 |          0 |                       1.495 |
+| V13X (DEFECT BASE) | ZL3 DENS SET8+L2ALL                | lockoff |      26 |      5 |             3 |                0 |          0 |                       1.69  |
+| V13X (DEFECT BASE) | ZL3 DENS TAPEALL                   | lockoff |      45 |      6 |             2 |                0 |          0 |                       2.925 |
+| V13X (DEFECT BASE) | ZL3 LRN nan                        | lockoff |      68 |     30 |            26 |                0 |          0 |                       4.42  |
+| V13X (DEFECT BASE) | ZL3 TWF nan                        | lockoff |       7 |      1 |             1 |                0 |          0 |                       0.455 |
+| V13Y               | S5 cong                            | lock12  |      20 |      0 |             0 |                2 |          0 |                       1.3   |
+| V13Y               | S5 cong                            | lockoff |      20 |      0 |             0 |                2 |          0 |                       1.3   |
+| V13Y               | S5 nml                             | lock12  |       4 |      0 |             0 |                0 |          0 |                       0.26  |
+| V13Y               | S5 nml                             | lockoff |       4 |      0 |             0 |                0 |          0 |                       0.26  |
+| V13Y               | S5 open                            | lock12  |       4 |      0 |             0 |                1 |          0 |                       0.26  |
+| V13Y               | S5 open                            | lockoff |       4 |      3 |             3 |                1 |          0 |                       0.26  |
+| V13Y               | S5 ratio                           | lock12  |       5 |      0 |             0 |                0 |          0 |                       0.325 |
+| V13Y               | S5 ratio                           | lockoff |       5 |      1 |             1 |                0 |          0 |                       0.325 |
