@@ -414,3 +414,36 @@ Share of placebo draws with an L6M/HOLD/MID/PRE/X' maxDD cut at least as large a
 | PDmid_30touchedstk | cnt | 36 | +11% | 0.14 | 0.11 | 0.62 | 0.43 | 1.00 | 0.16 | 0.16 | no placebo beat |
 | PDmid_30touchedstk | vol | 36 | +11% | 0.11 | 0.11 | 0.62 | 0.35 | 0.95 | 0.14 | 0.14 | no placebo beat |
 | PDmid_30touchedstk | sday | 36 | +11% | 0.14 | 0.16 | 0.59 | 0.57 | 0.76 | 0.27 | 0.27 | no placebo beat |
+
+
+## s2 per-session stage and B3 cells in the headline frame (V13X lock=None, corrected score), ~06:25Z 2026-11-02
+Per-session (4 lines x 4 sessions, line setting changed in that session only, 36 settings each): **CRT4h acts in Asia** (11 STRICT / 7 TOLERANT / 22 NOW-ONLY of 36 settings; best 40pts fw2 L6M +9% HOLD +10% PRE +5%) and nowhere else; camH3 acts in London (5/5/18; 60pts touched L6M +16%, HOLD +14%, MID +25%); kijun1h in London (0 STRICT, 12 TOL, 29 NOW; tiny gains); PDmid nothing. Asia carries the stack in 2026, so a CRT4h-Asia-only line is the natural small product; its placebo is the CRT4h60asia row above (no beat at n=36). Per-session cells have NOT been put through a session-level best-of-N null.
+| line | session | cells | S_hon>0 | S_post>0 | best honest (S; L6M/HOLD/MID/PRE/X' Calmar gain) | best post-hoc (TOL gate if any) | STRICT/TOL/NOW |
+|---|---|---|---|---|---|---|---|
+| CRT4h | asia | 36 | 0.28 | 0.75 | 40pts|fw2: +0.040; +9% / +10% / +0% / +5% / +3% | 75%tgt|fw2: +0.097; +9% / +10% / +1% / -8% / +3% | 11/7/22 |
+| CRT4h | london | 36 | 0.81 | 0.50 | 75%tgt|touched: +0.042; -2% / -0% / +14% / +3% / +5% | 60pts|fresh: +0.018; +2% / +2% / +6% / +1% / -0% | 0/2/8 |
+| CRT4h | nyam | 36 | 0.17 | 0.61 | 30pts|fresh: +0.003; +0% / +0% / +0% / +1% / -0% | 20pts|touched (ungated): +0.003; +0% / +0% / +2% / -3% / -3% | 0/0/9 |
+| CRT4h | nypm | 36 | 0.19 | 0.53 | 60pts|fw2: +0.001; +0% / +0% / +0% / +0% / +0% | 60pts|touched (ungated): +0.002; +0% / +0% / +0% / -0% / -0% | 0/0/3 |
+| PDmid | asia | 36 | 0.67 | 0.28 | 10pts|fresh: +0.021; +2% / +1% / -2% / +4% / +0% | 15pts|touched (ungated): +0.116; +14% / +10% / -3% / +6% / -2% | 0/0/3 |
+| PDmid | london | 36 | 0.11 | 0.22 | 40pts|fresh: +0.003; -1% / -0% / -2% / -2% / +2% | 20pts|touched (ungated): +0.066; +6% / +7% / +1% / -4% / -9% | 0/0/1 |
+| PDmid | nyam | 36 | 0.58 | 0.39 | 30pts|touched: +0.022; -0% / +0% / -4% / +2% / +3% | 40pts|fresh (ungated): +0.018; +2% / +2% / +0% / -1% / +1% | 0/0/10 |
+| PDmid | nypm | 36 | 0.36 | 0.25 | 60pts|touched: +0.010; +0% / +0% / +0% / +2% / -0% | 60pts|touched: +0.002; +0% / +0% / +0% / +2% / -0% | 0/1/1 |
+| camH3 | asia | 36 | 0.56 | 0.42 | 15pts|touched: +0.019; -10% / -8% / +2% / +8% / -4% | 60pts|fw2 (ungated): +0.061; +6% / +6% / +6% / +3% / -4% | 0/0/15 |
+| camH3 | london | 36 | 0.28 | 0.72 | 60pts|touched: +0.032; +16% / +14% / +25% / +2% / +4% | 60pts|touched: +0.153; +16% / +14% / +25% / +2% / +4% | 5/5/18 |
+| camH3 | nyam | 36 | 0.44 | 0.19 | 10pts|fw2: +0.017; -0% / -0% / +0% / -1% / +4% | 60pts|fresh (ungated): +0.031; +3% / +3% / +0% / +0% / -0% | 0/0/0 |
+| camH3 | nypm | 36 | 0.31 | 0.28 | 30pts|touched: +0.008; -1% / -1% / -0% / +1% / +0% | 30pts|fresh (ungated): +0.000; +0% / +0% / +0% / +0% / +0% | 0/0/0 |
+| kijun1h | asia | 36 | 0.61 | 0.33 | 40pts|touched: +0.041; +1% / +3% / -26% / +7% / +1% | 15pts|touched (ungated): +0.047; +5% / +4% / -9% / +5% / +1% | 0/0/6 |
+| kijun1h | london | 36 | 0.25 | 0.81 | 10pts|fresh: +0.025; +1% / +0% / -12% / +5% / +0% | 75%tgt|fresh: +0.016; +1% / +2% / +7% / -1% / -4% | 0/12/29 |
+| kijun1h | nyam | 36 | 0.25 | 0.25 | 10pts|fresh: +0.007; -2% / -2% / +0% / -2% / +3% | 75%tgt|fresh (ungated): +0.005; +1% / +0% / +1% / -3% / +1% | 0/0/5 |
+| kijun1h | nypm | 36 | 0.42 | 0.58 | 60pts|fresh: +0.009; +0% / +0% / +2% / +1% / +1% | 60pts|fresh: +0.001; +0% / +0% / +2% / +1% / +1% | 3/3/21 |
+
+B3 (my cut; ZL-3 also owns B3 scoring): unfilled FVG 5m/15m/1h, Globex-open gap, RTH gap as ADDED lines: no STRICT cell; FVG15 and FVG1H have recent-only gains (L6M +15..+17%, MID -18% / +163% unstable), FVG5 honest score positive with MID -40%; NDOG/RTHG are sparse (95 / 9 trades within 20 pts). No lead.
+### B3 unfilled FVG 5m/15m/1h and Globex-open / RTH gap edges (V13X lock=None, ADDED to the half mask; 180 cells)
+
+| stream | cells | S_hon>0 | S_post>0 | best honest (cell: S, L6M/HOLD/MID/PRE/X' Calmar gain) | best post-hoc, TOL-gated if any | STRICT/TOL/NOW | max L6M maxDD cut | volume (kept trades) of best honest |
+|---|---|---|---|---|---|---|---|---|
+| FVG15 | 36 | 0.00 | 0.53 | 60pts|fw2: -0.028, +17% / +19% / -18% / +2% / -7% | 75%tgt|fw2: +0.167, +15% / +18% / -18% / +0% / -7% | 0/3/6 | +17% | n/a |
+| FVG1H | 36 | 0.06 | 0.33 | 60pts|fresh: +0.016, -4% / -5% / -7% / +0% / +3% | 40pts|touched (ungated): +0.180, +10% / +26% / +163% / -21% / +3% | 0/0/0 | +18% | n/a |
+| FVG5 | 36 | 0.94 | 0.14 | 30pts|fw2: +0.138, +4% / -3% / -40% / +20% / +8% | 40pts|fw2: +0.007, +7% / -5% / -44% / +10% / +8% | 0/7/8 | +11% | n/a |
+| NDOG | 36 | 0.03 | 0.69 | 60pts|fw2: +0.000, +0% / +0% / +0% / +1% / -1% | 30pts|fresh: +0.004, +0% / +0% / +0% / +2% / -2% | 0/18/24 | +0% | n/a |
+| RTHG | 36 | 0.25 | 0.14 | 20pts|touched: +0.180, -5% / +3% / +16% / +48% / -12% | 40pts|touched (ungated): +0.022, -2% / +7% / +39% / +33% / -10% | 0/0/2 | +14% | n/a |

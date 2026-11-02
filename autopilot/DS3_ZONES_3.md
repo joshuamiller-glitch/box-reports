@@ -43,3 +43,16 @@ RISK-KEEP: none. LEAD (weak/fragile, Shadow candidates): PUL k3 4h D20 skip (PRE
 
 ## 11. Open items (running; refreshed 12:00Z)
 B1 (Z1/ZL-1) session structure lines; B2/B3 (Z2/ZL-3) round numbers, gaps, FVGs; B4 done (DEAD); B5 Mancini (S4b); B6 done (Z3/BASE-4); B7 cube (ZL-2); B8 zone-as-target (S4a streams, BASE-4 shipped lines); B9 done (EMPTY); B10 combinations (Z3). User questions open: combined 12R stack lock live? live L2 grid 1-s vs 10-s and live ahead_rel? U7=SM/P7=PE mapping?
+
+## 12. CORRECTION / UPDATE (lead, ~06:50Z box clock) — the shipped layer itself vs random half-lot layers (Z1, V13X lock=None, 300 draws)
+Placebos: A random levels same count per day, B same-volume random half, C shuffled-day line sets, 100 each; rank = share of draws cutting at least as much (small = real beats chance).
+| window | real cut | rank A / B / C |
+|---|---|---|
+| L6M | +9% | 0.48 / 0.52 / 0.45 |
+| HOLD | +9% | 0.34 / 0.45 / 0.40 |
+| MID | +19% | 0.18 / 0.10 / 0.20 |
+| PRE | +27% | 0.12 / 0.08 / 0.08 |
+| X' | +29% | 0.38 / 0.36 / 0.42 |
+| ALL | +27% | 0.11 / 0.06 / 0.08 |
+None < 0.05. Worst-20 ranks also chance (PRE 0.10/0.07/0.08, X' 0.35/0.32/0.31). The PRE and X' cuts exceed Z3's flip noise band (PRE 17/24, X' 15/29) but the placebo rank does not agree: a random half-lot layer of the same size cuts about as much, i.e. the shipped layer's drawdown benefit is MOSTLY A VOLUME (size-reduction) EFFECT, not line information. Episode-proofing: L6M +9% is ONE-EPISODE (dropping ISO 2026-W27..W39 leaves -6%); HOLD +9..+11% survives any drop; PRE +21/+21/+27% when dropping each of the top-3 episodes (bootstrap CI [+1%, +39%], P(cut>0) 0.97, leave-month-out +21..+43%); X' dropping the whole 24-week episode leaves +16%, CI [-25%, +46%], P 0.80. Mean effect inside MDE everywhere (+2.3k/wk PRE, -0.6k L6M).
+**Consequence for the plain sentence in §10:** "the best zone layer is the shipped one" must be read as: the shipped layer is not distinguishable from a random half-lot layer of the same size on drawdown in the user's literal lock frame; it lowers PRE/X' drawdown (CI above zero in PRE) but that is what halving the same share of lots does by chance. Nothing we found beats it, and it does not beat chance either. The proposal in zones_policy.txt (keep the shipped layer) stands only as "no evidence to change it"; the evidence that the lines themselves matter is weak. Question for the user: if the layer is mostly a size effect, is a cheaper uniform size reduction on the same share of signals preferable?

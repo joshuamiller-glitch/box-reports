@@ -1,14 +1,14 @@
 # ZONES3_MASTER_TABLE - program-wide finalist x frame x noise band x placebo rank x carrying week x label (S5 light-job agent)
-Refreshed 2026-11-02 05:53Z. CSV: autopilot/ZONES3_MASTER_TABLE.csv (736 rows). Bases: V13X exact (S5, Z3 s3_v13x), ZL3 lock-off V13X, S4A stage2x_vx (nl_ columns = no-lock, v13_ columns read as lock12: assumption). Band = Z3 V13X noise band (DS3_ZONES_3_NOISE.md, interim n~43), row by rows changed (S5 from flagged share; others: Z3 1,500 rows -> flip 2/5; S4A/ZL3 use rows/flags as stored x0.3 for live share, flip 5 when unknown); rule: cut > band in L6M AND (PRE or X'). Placebo ranks: S5 from its stored draws (rank = share of draws with cut >= real, 100/kind lock12 for 9 cells, lock-off for 5), S4A from its pA/pB/pC; Z3 and ZL3 tables carry no placebo ranks (labelled 'BAND (placebo not in table)'). Carrying week: S5 only. Labels are mechanical; nothing is a lead without the robustness standard.
+Refreshed 2026-11-02 06:19Z. CSV: autopilot/ZONES3_MASTER_TABLE.csv (784 rows). Bases: V13X exact (S5, Z3 s3_v13x), ZL3 lock-off V13X, S4A stage2x_vx (v13_=lock12, nl_=lock-off) and stage2xn_vxn (v13_=lock-off headline, nl_=lock12), mapping CONFIRMED by S4a; S4A pA/pB/pC rank the mean of the L6M/HOLD/PRE/X cuts, not L6M alone, 40 draws. Band = Z3 V13X noise band (DS3_ZONES_3_NOISE.md, interim n~43), row by rows changed (S5 from flagged share; others: Z3 1,500 rows -> flip 2/5; S4A/ZL3 use rows/flags as stored x0.3 for live share, flip 5 when unknown); rule: cut > band in L6M AND (PRE or X'). Placebo ranks: S5 from its stored draws (rank = share of draws with cut >= real, 100/kind lock12 for 9 cells, lock-off for 5), S4A from its pA/pB/pC (see above); Z3 and ZL3 tables carry no placebo ranks (labelled 'BAND (placebo not in table)'). Carrying week: S5 only. Labels are mechanical; nothing is a lead without the robustness standard.
 
 ## Counts by program and frame
 
 |                                  |   cells |   band_pass |   volume |   band_placebo |
 |:---------------------------------|--------:|------------:|---------:|---------------:|
-| ('S4A streams', 'lock12')        |      24 |           1 |        1 |              0 |
-| ('S4A streams', 'lockoff')       |      24 |           4 |        4 |              0 |
+| ('S4A streams', 'lock12')        |      48 |           2 |        1 |              0 |
+| ('S4A streams', 'lockoff')       |      48 |          12 |        8 |              0 |
 | ('S5 density', 'lock12')         |      34 |           0 |        0 |              0 |
-| ('S5 density', 'lockoff')        |      34 |           5 |        2 |              0 |
+| ('S5 density', 'lockoff')        |      34 |           5 |        4 |              1 |
 | ('Z3 action table', 'lock12')    |     101 |           0 |        0 |              0 |
 | ('Z3 action table', 'lockoff')   |     101 |           0 |        0 |              0 |
 | ('ZL3 L2/tape zones', 'lockoff') |     418 |          56 |        0 |              0 |
@@ -18,15 +18,24 @@ Refreshed 2026-11-02 05:53Z. CSV: autopilot/ZONES3_MASTER_TABLE.csv (736 rows). 
 
 | program | cell | frame | L6M | HOLD | PRE | X' | mean d L6M (MDE) | band L6M/PRE/X' | placebo B/C/A | carrying week | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| S4A streams | DEV|day_L|so_far D40 half | lock12 | +50% | +30% | -46% | +34% | n/a | 36/28/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
 | S4A streams | ARR|iplFVG|15s D20 skip | lock12 | +36% | +48% | +9% | +32% | n/a | 36/28/29% | 1.00/1.00/1.00 |  | VOLUME |
-| S4A streams | SWG|f3L|15s D20 half | lockoff | +54% | +8% | -51% | +33% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME |
+| S4A streams | DEV|day_L|so_far D40 half | lockoff | +69% | +12% | -43% | +33% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:(L6M/recent only)] |
+| S4A streams | DEV|on_L|so_far D40 half | lockoff | +67% | +17% | -38% | +40% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:(L6M/recent only)] |
+| S4A streams | DEV|on_L|so_far D20 half | lockoff | +64% | +23% | -21% | +32% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:(L6M/recent only)] |
+| S4A streams | SWG|f3L|15s D20 half | lockoff | +54% | +8% | -51% | +33% | n/a | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
+| S4A streams | SWG|f3L|15s D40 half | lockoff | +45% | +31% | +6% | +41% | n/a | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
 | S4A streams | SWG|f3L|15s D40 half | lockoff | +45% | +31% | +6% | +41% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME |
-| S4A streams | ARR|iplFVG|15s D40 half | lockoff | +31% | +25% | -23% | +34% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME |
-| S4A streams | ARR|iplFVG|15s D20 half | lockoff | +30% | +6% | -24% | +38% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME |
-| S5 density | sopen40 half | lockoff | +51% | +44% | +22% | +11% | -6.9k (14.0k) | 21/20/29% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |
-| S5 density | open20 half | lockoff | +47% | +47% | +26% | +1% | -12.3k (15.6k) | 21/20/29% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |
+| S4A streams | ARR|iplFVG|15s D40 half | lockoff | +31% | +25% | -23% | +34% | n/a | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
+| S4A streams | ARR|iplFVG|15s D40 half | lockoff | +31% | +25% | -23% | +34% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:(L6M/recent only)] |
+| S4A streams | ARR|iplFVG|15s D20 half | lockoff | +30% | +6% | -24% | +38% | n/a | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
+| S4A streams | ARR|iplFVG|15s D20 half | lockoff | +30% | +6% | -24% | +38% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:(L6M/recent only)] |
+| S4A streams | FIB|ret50|1h D40 skip | lockoff | +23% | +23% | -13% | +31% | n/a | 21/20/29% | 1.00/1.00/1.00 |  | VOLUME [src:(L6M/recent only)] |
+| S4A streams | MAS|bb_mid|4h D20 skip | lockoff | +12% | +7% | +7% | +11% | n/a | 10/14/8% | 1.00/1.00/1.00 |  | VOLUME |
+| S5 density | sopen40 half | lockoff | +51% | +44% | +22% | +11% | -6.9k (14.0k) | 21/20/29% | 0.09/0.06/0.09 | 202630 | BAND+PLACEBO |
+| S5 density | open20 half | lockoff | +47% | +47% | +26% | +1% | -12.3k (15.6k) | 21/20/29% | 0.27/0.20/0.24 | 202630 | VOLUME |
 | S5 density | nA60>=1 skip | lockoff | +38% | +27% | -6% | +31% | -7.2k (14.5k) | 21/20/29% | 0.23/0.30/0.35 | 202630 | VOLUME |
-| S5 density | openA40 half | lockoff | +37% | +37% | +36% | +30% | -8.9k (14.0k) | 21/20/29% | n/a/n/a/n/a | 202630 | BAND (placebo not in table) |
+| S5 density | openA40 half | lockoff | +37% | +37% | +36% | +30% | -8.9k (14.0k) | 21/20/29% | 0.51/0.38/0.38 | 202630 | VOLUME |
 | S5 density | rho60>=2 skip | lockoff | +34% | +15% | +9% | +32% | -1.1k (13.2k) | 21/20/29% | 0.18/0.42/0.20 | 202630 | VOLUME |
 | ZL3 L2/tape zones | act=skip|fam=SET8|kind=DENS|rule=near_ge:40|lat0 | lockoff | +70% | +13% | +5% | +48% | -18.2k (26.8k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |
 | ZL3 L2/tape zones | arm=B|kind=LRN|model=shuf3|rule=pol2040|lat0 | lockoff | +67% | +19% | +10% | +64% | -18.9k (22.5k) | 21/20/29% | n/a/n/a/n/a |  | BAND (placebo not in table) |

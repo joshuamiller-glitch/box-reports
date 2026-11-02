@@ -134,3 +134,16 @@ Noise bands differ strongly between frames: flip 2% / flip 5% - lock 12R: L3M 25
 | lock 12R | flip 5.0 | 0.325 | 0.372 | 0.398 | 0.245 | 0.281 | 0.293 |
 | lock 12R | drop 30 | 0.068 | 0.076 | 0.069 | 0.057 | 0.116 | 0.081 |
 Practical thresholds for a zone unit of ~500-1,500 rows in the lock-off headline frame: L6M cut > 15-22% AND PRE cut > 17-24% (or X' > 15-29%). The full per-type tables are in `out/zones3/s3_v13x/noise_band_{lock12,off}.csv`. Best-of-N chance null (placebo matrix of the 7 finalist cells x 100 draws, standardised cut, V13X): lock 12R - best cell per window p vs the best-of-101 null 0.93-1.00 (O62_30 d5 L6M, bar4hmid wt MID/PRE, kijun1h wt X'); lock-off - ALL7 rt L6M p 0.69, bar4hmid wt MID 0.25, kijun1h wt X' 0.25, others 1.00 (vs best-of-10: 0.02-0.08 for those three). No finalist is distinguishable from the best of ~100 cells by chance in either frame.
+
+## FINAL lock-off band (HEADLINE frame), V13X, n = 107 draws per type (105 for flip 5.0); appended ~07:30Z
+| type | L3M | L6M | HOLD | MID | PRE | X' |
+|---|---|---|---|---|---|---|
+| drop 1 / 3 | 0.000 | 0.000-0.007 | 0.000-0.007 | 0.000 | 0.000-0.017 | 0.000-0.008 |
+| drop 10 | 0.025 | 0.023 | 0.023 | 0.018 | 0.035 | 0.062 |
+| drop 30 | 0.068 | 0.054 | 0.078 | 0.082 | 0.094 | 0.062 |
+| flip 0.5 | 0.090 | 0.063 | 0.071 | 0.074 | 0.093 | 0.085 |
+| flip 1.0 | 0.139 | 0.121 | 0.121 | 0.158 | 0.127 | 0.123 |
+| flip 2.0 | 0.166 | 0.162 | 0.153 | 0.203 | 0.215 | 0.148 |
+| flip 5.0 | 0.227 | 0.208 | 0.201 | 0.327 | 0.256 | 0.246 |
+**One-day lock-reset shift** (week key of every day moved one day later / earlier, no other change; one deterministic run each): maxDD cut vs unshifted lock-off base, +1 day: L3M -7.6%, L6M -23.7%, HOLD -23.7%, MID +12.4%, PRE -7.3%, X' -0.6%; -1 day: L3M +2.7%, L6M -18.2%, HOLD -18.2%, MID +6.7%, PRE +2.8%, X' +9.9%. A calendar-day shift of the lock reset alone moves L6M/HOLD maxDD by ~18-24% - the size of a 2-5% random half-lot flip - so lock-reset timing is itself a noise source of that size; the band above (flip 2% to 5%) is the right yardstick for any zone cell that changes ~500-1,500 rows.
+**Final rule (lock-off, headline): a zone cell counts only if its maxDD cut exceeds, for its size (flip 2.0 row for ~500 rows, flip 5.0 row for 1,000+ rows), BOTH the L6M band (16% / 21%) AND the PRE band (22% / 26%) or the X' band (15% / 25%), same sign; in lock 12R use the 12R rows (L6M 31% / 37%, PRE 21% / 28%, X' 21% / 29%, final n in the next line when the 12R run completes).** Z3's 91 cells: 0 pass in lock-off (rule recomputed with the final band; csv `noise_fin_mine_off.csv`). Best-of-N null with 100 draws per finalist in both frames: no finalist beats the best of ~100 cells (lock-off best-of-101 p >= 0.25, lock 12R >= 0.93).

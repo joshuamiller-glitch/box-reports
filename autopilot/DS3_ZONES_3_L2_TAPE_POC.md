@@ -59,8 +59,8 @@ Per book x session F9 delta ($k): KB-asia +12.6, KB-london +4.8, KB-nyam -5.9, P
 ## Placebos (draws per kind; rank = share of draws with a shallower cut than the real cell is... i.e. real cut beats the draw; 1.00 = best)
 | kind | draws | mean cut of the draws F9 | rank F9 | L3M | HOLD | PRE |
 |---|---|---|---|---|---|---|
-| same-volume random skip | 20 | +10% | 1.00 | 1.00 | 1.00 | 1.00 |
-| random rows, same count per day | 21 | +4% | 1.00 | 0.95 | 0.90 | 1.00 |
-| shuffled-day counts | 20 | +3% | 1.00 | 1.00 | 1.00 | 0.95 |
+| same-volume random skip | 100 | +12% | 1.00 | 1.00 | 0.95 | 0.98 |
+| random rows, same count per day | 100 | +7% | 1.00 | 0.99 | 0.94 | 0.99 |
+| shuffled-day counts | 100 | +5% | 1.00 | 1.00 | 0.98 | 0.98 |
 
 Delay 1 s / 3 s: not applicable to a skip decision taken at the signal second (the line state used is already as of the entry second); see the 1-s / 3-s variants in the main page for the other cells. Per-month chain: `chain_A40__TVP_poc_day__skip.csv` in /mnt/l2/l2vast/ds3_zones3_new/ZL-2/.

@@ -830,3 +830,40 @@ PUL k3 4h D20 skip, 100 draws per kind:
 | C      |     100 | PRE      |      0.166 |         -0.099 |       0.265 |  0.03  |
 | C      |     100 | X'       |      0.11  |          0.047 |       0.063 |  0.366 |
 Reading (lock=None): the PUL cell is a PRE effect: PRE cut +17% (corrected +19..+27%, placebo ranks 0.03-0.05 for all three kinds), positive at every D (D10 +9%, D30 +13%, D40 +14%, D60 +19%), X' +11% (ranks 0.03 random-rows, 0.28-0.37 the other two), but L3M/L6M/HOLD are 0 to +10% (placebo-corrected -4..+6%) and MID is -14% (rank 0.67-0.93 against it); BEHIND skip -28% L3M / -29% PRE (bad); half is worse than skip. So with the lock removed the recent windows (L6M, HOLD, MID, L3M) show no benefit, and the PRE/X' benefit (2023-2025) does not continue: LEAD (weak), historical only, no recent evidence; not RISK-KEEP.
+
+
+## B3 naked prior-day profile levels (NPD: POC / VAH / VAL of each CME day, 1 and 2 pt bins, from the de-duplicated tape; known at the 17:00 ET close, kept 20 days; naked = no return after price left by 0.5 pt) - V13X, both lock frames
+Streams: 926 levels each, 2023-04..2026-10 (a first build missed 2026-02-07..08 because the tape instrument ids differ from the L2 table's; fixed by taking the path offset from the tape-vs-path match; old files kept in zl1/v0_npd_missing_months). Causal audit: 100 random levels recomputed from the tape truncated at the day close, 0 mismatches; 0 index violations on 5,556 rows. Cells: AHEAD D20/40 skip/half, BEHIND D20 skip/half, AT size-up (43 per frame).
+Best cell per stream by min(L6M, PRE, X' cut):
+| stream         |   cells |   best_min |   best_L6M |   best_PRE |   best_Xp | lock   |
+|:---------------|--------:|-----------:|-----------:|-----------:|----------:|:-------|
+| NPD|poc_b1|20d |       7 |      0.016 |      0.016 |      0.222 |     0.484 | 12R    |
+| NPD|poc_b2|20d |       7 |      0.016 |      0.016 |      0.222 |     0.464 | 12R    |
+| NPD|vah_b1|20d |       7 |      0     |      0.028 |      0.012 |     0.36  | 12R    |
+| NPD|vah_b2|20d |       7 |      0     |      0.01  |      0.11  |     0.336 | 12R    |
+| NPD|val_b1|20d |       7 |      0.01  |      0.029 |      0.22  |     0.27  | 12R    |
+| NPD|val_b2|20d |       7 |     -0.007 |      0.022 |      0.204 |     0.238 | 12R    |
+| NPD|poc_b1|20d |       7 |      0.004 |      0.004 |      0.071 |     0.09  | none   |
+| NPD|poc_b2|20d |       7 |     -0.003 |      0.012 |      0.03  |     0.064 | none   |
+| NPD|vah_b1|20d |       7 |      0     |      0.094 |      0     |     0.013 | none   |
+| NPD|vah_b2|20d |       7 |     -0.005 |      0.111 |      0     |     0.062 | none   |
+| NPD|val_b1|20d |       7 |      0.023 |      0.023 |      0.031 |     0.192 | none   |
+| NPD|val_b2|20d |       7 |      0.027 |      0.044 |      0.085 |     0.08  | none   |
+Reading: no naked prior-day profile level cuts maxDD in L6M or PRE in either lock frame (L6M 0-4%, PRE <= 5%; the large X' / HOLD / MID numbers are single-window and the lock 12R frame shows them only for half-size cells); DEAD.
+
+## PUL parameter variants (k = wall size multiple of the median level): k2, k3 (shipped), k4, 4 h, skip/half D20/30
+| stream    | frame   |   D | act   |   nflag |    L3M |    L6M |   HOLD |    MID |    PRE |     X' |   dmean_HOLD |   mde_HOLD | lock   |
+|:----------|:--------|----:|:------|--------:|-------:|-------:|-------:|-------:|-------:|-------:|-------------:|-----------:|:-------|
+| PUL|k2|4h | AH      |  20 | half  |    5404 | -0.106 | -0.109 |  0.284 |  0.358 |  0.153 | -0.077 |    -2574.29  |   5346.63  | 12R    |
+| PUL|k2|4h | AH      |  20 | skip  |    5404 | -0.818 | -1.491 | -0.544 |  0.338 | -0.066 | -0.04  |    -5397.14  |  10734     | 12R    |
+| PUL|k2|4h | AH      |  30 | skip  |    6444 | -0.316 | -0.853 | -0.148 |  0.338 | -0.016 | -0.028 |    -3465.05  |   9683.68  | 12R    |
+| PUL|k2|4h | AH      |  20 | half  |    5404 | -0.285 | -0.326 | -0.326 | -0.112 | -0.008 |  0.002 |     -909.145 |   5337.08  | none   |
+| PUL|k2|4h | AH      |  20 | skip  |    5404 | -0.38  | -0.955 | -0.955 |  0.079 | -0.15  |  0.012 |    -3741.38  |   8242.63  | none   |
+| PUL|k2|4h | AH      |  30 | skip  |    6444 | -0.136 | -1.106 | -1.106 | -0.445 | -0.162 |  0.022 |    -4862.61  |   8476.97  | none   |
+| PUL|k4|4h | AH      |  20 | half  |     752 |  0.107 |  0.086 |  0.013 |  0.019 |  0.003 |  0.102 |      100.21  |    989.953 | 12R    |
+| PUL|k4|4h | AH      |  20 | skip  |     752 |  0.147 |  0.098 |  0.018 |  0.027 |  0.019 |  0.149 |      213.646 |   4085.51  | 12R    |
+| PUL|k4|4h | AH      |  30 | skip  |     910 |  0.147 |  0.095 |  0.045 |  0.058 | -0.035 |  0.225 |      207.2   |   4221.34  | 12R    |
+| PUL|k4|4h | AH      |  20 | half  |     752 |  0.045 | -0.087 | -0.087 | -0.113 |  0.034 |  0.064 |     -545.033 |   1555.2   | none   |
+| PUL|k4|4h | AH      |  20 | skip  |     752 |  0.124 |  0.156 |  0.073 | -0.082 |  0.019 |  0.12  |      106.202 |   2144.68  | none   |
+| PUL|k4|4h | AH      |  30 | skip  |     910 |  0.173 |  0.211 |  0.092 | -0.043 |  0.01  |  0.12  |      441.212 |   2214.03  | none   |
+Reading: the PRE effect is specific to k3 (k4: PRE +1..+2%, k2: see table); k4 is better in L6M with the lock off (+16..+21%) but PRE/X' do not follow: the PUL zone has no stable parameter plateau. Label stays LEAD (weak, historical).
