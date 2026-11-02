@@ -384,3 +384,20 @@ Episodes lookup: DS3_ZONES_EPISODES_V13Y.md. The 1-s page (DS3_D7_TAKE_LINES_V13
 - Placebos lock none (100 x 3): the cut beats random exit rows (P1 rank 0.00 all windows) and shuffled-day (P2 0.00-0.01 for the cut in F9/L6M/PRE) but NOT the same-volume pct-only exit without the L2 gate (P3 cut ranks 0.16-0.26 in F9/L6M/PRE); the mean is worse than P3 (rank 0.97-0.99). Same conclusion as 1-s: the take (exit on pct >= a) carries the drawdown effect; the depth gate adds nothing measurable.
 - Noise band (V13X lock-off band as proxy; V13Y band by Z3 pending): the cuts (22-27%) sit at the band edge in L6M/PRE (~20-21% for flip 5%) and below it in X' (29%): marginal; the effect is consistent in sign across all 8 windows, which random exits are not (P1/P2 median cut is negative everywhere).
 - Lock 12R frame: Part B of this page (no 12R placebos were run on V13Y; lock none is the headline).
+
+
+## D. Phase-averaged cut vs the V13Y noise band (Z3 estimator; BASE-4, K = 9 lock-reset phases = week-key shift -4..+4 label days)
+
+cut = (maxDD OFF - maxDD ON)/maxDD OFF at each phase (positive = shallower); PA cut = mean over the 9 phases (also shown: the cut of the phase-averaged maxDD, and the range over phases). Band = Z3 V13Y FINAL phase-averaged 95th percentile of |cut| for a no-information flip of 5% of live rows (the five lines change 4,000-7,000 rows => flip 5% row; flip 2% in brackets). Rule: PA cut must exceed the band in L6M AND in PRE or X'. Episodes lookup: DS3_ZONES_EPISODES_V13Y.md.
+
+### LOCK NONE (headline)
+| grid | L3M | L6M | HOLD | MID | PRE | X' | rule |
+|---|---|---|---|---|---|---|---|
+| 10-s grid | +65% [+62,+68] (cut of avg +65%) band 34% (31%) | +27% [+11,+37] (cut of avg +28%) band 20% (16%) | +27% [+13,+37] (cut of avg +28%) band 19% (14%) | +10% [-115,+57] (cut of avg +35%) band 37% (26%) | +10% [+4,+22] (cut of avg +11%) band 17% (11%) | +15% [-0,+24] (cut of avg +15%) band 23% (16%) | NOT beyond band |
+| 1-s grid | +43% [+36,+48] (cut of avg +43%) band 34% (31%) | +50% [+39,+56] (cut of avg +50%) band 20% (16%) | +25% [+3,+44] (cut of avg +26%) band 19% (14%) | -84% [-372,+19] (cut of avg -27%) band 37% (26%) | +6% [-1,+13] (cut of avg +7%) band 17% (11%) | +26% [+18,+34] (cut of avg +25%) band 23% (16%) | PASS |
+
+### 12R
+| grid | L3M | L6M | HOLD | MID | PRE | X' | rule |
+|---|---|---|---|---|---|---|---|
+| 10-s grid | +54% [+21,+69] (cut of avg +61%) band 23% (17%) | +42% [-6,+65] (cut of avg +51%) band 24% (12%) | +32% [-37,+59] (cut of avg +45%) band 12% (11%) | +7% [-35,+36] (cut of avg +16%) band 37% (24%) | -28% [-113,+33] (cut of avg -26%) band 13% (13%) | +14% [-22,+44] (cut of avg +21%) band 14% (10%) | NOT beyond band |
+| 1-s grid | +40% [+14,+60] (cut of avg +48%) band 23% (17%) | +22% [-57,+59] (cut of avg +38%) band 24% (12%) | +21% [-14,+47] (cut of avg +29%) band 12% (11%) | -97% [-377,+42] (cut of avg -34%) band 37% (24%) | -29% [-133,+39] (cut of avg -27%) band 13% (13%) | +32% [+22,+52] (cut of avg +33%) band 14% (10%) | NOT beyond band |

@@ -1013,9 +1013,9 @@ Band rule (Z3 V13X band, lock 12R, DS3_ZONES_3_NOISE.md; the earlier assumed-bas
 
 | cell | real L6M / PRE | B L6M (n) | C L6M | A L6M | B PRE | C PRE | A PRE | label |
 |---|---|---|---|---|---|---|---|---|
-| nA60>=1 skip | +30% / +46% | 0.00 (28) | 0.07 | 0.04 | 0.25 | 0.25 | 0.36 | placebos beaten |
-| sA40>=1 skip | +34% / +27% | 0.00 (29) | 0.04 | 0.04 | 0.69 | 0.68 | 0.57 | placebos beaten |
-| sopen40 half | +31% / +7% | 0.11 (28) | 0.00 | 0.11 | 0.86 | 0.86 | 0.89 | (volume effect) |
+| nA60>=1 skip | +30% / +46% | 0.03 (100) | 0.05 | 0.05 | 0.29 | 0.24 | 0.39 | placebos beaten |
+| sA40>=1 skip | +34% / +27% | 0.01 (100) | 0.04 | 0.02 | 0.68 | 0.57 | 0.62 | placebos beaten |
+| sopen40 half | +31% / +7% | 0.03 (100) | 0.04 | 0.05 | 0.83 | 0.83 | 0.88 | placebos beaten |
 
 ### 7d. Per-scope reruns on V13Y (rule applied only to the book / session; cut on the TOTAL composite)
 
@@ -1091,12 +1091,12 @@ Z3 noise-band rule (band computed on V13Y, recompute on V13Y pending) (band row 
 | cell | real L6M / PRE / X' | B L6M / PRE / X' (n) | C L6M / PRE / X' | A L6M / PRE / X' | label |
 |---|---|---|---|---|---|
 | sA40>=1 skip | +36% / +0% / -5% | 0.24 / 0.16 / 0.40 (100) | 0.27 / 0.13 / 0.44 | 0.27 / 0.20 / 0.51 | (volume effect) |
-| rho60>=2 skip | +41% / +1% / +36% | n/a / n/a / n/a (0) | n/a / n/a / n/a | n/a / n/a / n/a | UNTESTED |
+| rho60>=2 skip | +41% / +1% / +36% | 0.15 / 0.22 / 0.05 (100) | 0.20 / 0.12 / 0.04 | 0.10 / 0.15 / 0.03 | (volume effect) |
 | nA60>=1 skip | +36% / -36% / +7% | 0.27 / 0.65 / 0.31 (100) | 0.25 / 0.67 / 0.29 | 0.33 / 0.70 / 0.35 | (volume effect) |
-| sA40>=1 half | -8% / -6% / -11% | n/a / n/a / n/a (0) | n/a / n/a / n/a | n/a / n/a / n/a | UNTESTED |
-| nA60>=1 half | -10% / -6% / +16% | n/a / n/a / n/a (0) | n/a / n/a / n/a | n/a / n/a / n/a | UNTESTED |
-| open20 half | +41% / +17% / +9% | n/a / n/a / n/a (0) | n/a / n/a / n/a | n/a / n/a / n/a | UNTESTED |
-| openA40 half | +35% / +20% / +41% | n/a / n/a / n/a (0) | n/a / n/a / n/a | n/a / n/a / n/a | UNTESTED |
+| sA40>=1 half | -8% / -6% / -11% | 0.66 / 0.28 / 0.74 (100) | 0.66 / 0.25 / 0.67 | 0.76 / 0.25 / 0.76 | (volume effect) |
+| nA60>=1 half | -10% / -6% / +16% | 0.69 / 0.34 / 0.28 (100) | 0.79 / 0.31 / 0.32 | 0.74 / 0.41 / 0.31 | (volume effect) |
+| open20 half | +41% / +17% / +9% | 0.46 / 0.49 / 0.89 (100) | 0.38 / 0.58 / 0.88 | 0.34 / 0.54 / 0.79 | (volume effect) |
+| openA40 half | +35% / +20% / +41% | 0.53 / 0.34 / 0.29 (100) | 0.38 / 0.33 / 0.25 | 0.47 / 0.35 / 0.22 | (volume effect) |
 | sopen40 half | +41% / +11% / +21% | 0.24 / 0.26 / 0.37 (100) | 0.16 / 0.24 / 0.44 | 0.30 / 0.25 / 0.41 | (volume effect) |
 
 ### 7i. Priority cells in the lock=None frame (headline): episode-proofing, book x session, vol tercile, best-of-N null, causality audit
@@ -1168,6 +1168,6 @@ Vol tercile (day-range tercile; day-cumulative maxDD cut, mean d $k/day), lock=N
 * open20 half: +41% (+0.9) | +37% (-0.4) | +42% (-4.7)
 * openA40 half: +47% (+1.1) | +26% (-0.4) | +34% (-4.4)
 
-Best-of-N null: pooled 900 lock=None information-free masks (random rows / same-volume / shuffled-day of the 3-4 priority cells, same flag shares ~28-36%); best L6M cut among N=314 draws from that pool (2000 repeats): median +72%, 95th percentile +74%. Best real L6M cut among the 34 finalists in lock=None: +42%; sA40>=1 skip +36%, nA60>=1 skip +36%.
+Best-of-N null: pooled 2400 lock=None information-free masks (random rows / same-volume / shuffled-day of the 3-4 priority cells, same flag shares ~28-36%); best L6M cut among N=314 draws from that pool (2000 repeats): median +75%, 95th percentile +80%. Best real L6M cut among the 34 finalists in lock=None: +42%; sA40>=1 skip +36%, nA60>=1 skip +36%.
 
 Causality audit (audit.py): 100 random signals x 8 lines (800 line-checks): the ahead and behind fresh distance recomputed by brute force from the stream rows with knowable-index ek <= signal second, alive (cap > kin) and never touched (end > kin) equals the stored feature in 800 of 800 checks (0 mismatches); the stream knowable index ek is the POI store's causal timestamp (poi_core), not re-derived here.

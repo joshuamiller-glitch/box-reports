@@ -420,8 +420,25 @@ MaxDD carrier weeks (trough week of the weekly-cumulative maxDD): F9: off 202637
 
 ## C. Reading on V13Y (add-fill ordering fixed; 1-s evaluation; lock none = headline; post-hoc, no PASS)
 Episodes lookup: DS3_ZONES_EPISODES_V13Y.md. This page replaces the V13X pages (DS3_D7_TAKE_LINES.md / _1S.md), whose take exits were dropped on 721 rows (see DS3_V13Y_BASE.md).
-- **Verdict flipped for drawdown, not for mean.** Five lines ON vs OFF, lock none: maxDD F9 132.1k -> 80.2k (-39%), L6M the same, L3M 97.7k -> 53.5k (-45%), PRE 166.3k -> 149.5k (-10%), X' 91.2k -> 73.4k (-20%), HOLD 139.2k -> 134.9k (-3%), MID 51.2k -> 63.7k (+24% WORSE). Mean is lower in all windows but L3M: F9 -9.0k/wk (MDE 16.6k), L6M -6.3k (MDE 21.6k), HOLD -8.1k (MDE 13.0k), PRE -6.3k (MDE 8.0k), MID -14.4k (MDE 20.6k). The mean cost is inside MDE in every window; Calmar F9 0.26 -> 0.31.
+- **Verdict flipped for drawdown, not for mean.** SIGN CONVENTION on this page: every "maxDD cut" is (maxDD without lines - maxDD with lines) / maxDD without lines, so POSITIVE = shallower drawdown = better, negative = deeper = worse; "d mean" = mean with lines minus mean without ($k/wk, negative = lines earn less). Five lines ON vs OFF, lock none, 1-s grid: maxDD CUT F9 +39% (132.1k -> 80.2k), L6M +39% (same), L3M +45% (97.7k -> 53.5k), X' +20% (91.2k -> 73.4k), PRE +10% (166.3k -> 149.5k), HOLD +3% (139.2k -> 134.9k), MID -24% (51.2k -> 63.7k, i.e. DEEPER by 24%). The 10-s page (DS3_D7_TAKE_LINES_V13Y.md) uses the same convention: F9 +27%, L3M +68%, L6M +27%, HOLD +26%, MID +41%, PRE +22%, X' +24% (all shallower). Mean: d mean F9 -9.0k/wk (MDE 16.6k), L6M -6.3k (MDE 21.6k), HOLD -8.1k (MDE 13.0k), PRE -6.3k (MDE 8.0k), MID -14.4k (MDE 20.6k), L3M +0.9k; all inside MDE. Calmar F9 0.26 -> 0.31.
 - **Random same-size exits (100 draws x 3 kinds):** the lines beat random exit rows (P1 rank 0.00 for the cut in all windows but MID 0.02) and shuffled-day exits (P2 cut ranks 0.00 F9/L6M, 0.01 L3M/PRE, 0.02 X', 0.04 HOLD; MID 0.49) -- the timing carries information. They do NOT beat the same-volume pct-only early exit with no L2 gate (P3 cut ranks F9 0.10, L6M 0.13, L3M 0.27, HOLD 0.41, PRE 0.48, X' 0.30), and the mean is worse than P3 (rank 0.89-0.99): the pct take carries the effect, the depth gate adds nothing measurable.
 - **Noise band:** the V13Y band is being published by Z3; with the V13X lock-off band as proxy (flip 5%: L6M ~21%, PRE ~20%, X' ~29%) the F9/L6M cut (39%) and L3M (45%) exceed it, PRE (10%) and X' (20%) do not, so the rule 'L6M AND (PRE or X\')' is NOT met: NOISE in the older windows, a recent-window effect.
 - **One line at a time (A2):** ADD alone on the lines-off base, F9 maxDD cut: P7 +35% (mean -4.3k), H7 +23% (-3.8k), K7 +16% (+0.2k), W* +2% (+1.5k), U7 -15% (-2.6k). P7 and H7 carry the F9/L6M cut; U7 makes F9 and X' drawdown worse; K7 and W* are mean-neutral to positive (STRICT/TOLERANT/NOW-ONLY Y for K7 and W*, tiny effects). REMOVE one from the full package: removing P7 costs the F9 cut (104.6k vs 80.2k), removing H7 (116.1k), removing U7 helps F9 (68.0k vs 80.2k).
 - 10-s grid and the 12R frame follow in DS3_D7_TAKE_LINES_V13Y.md (queued) -- 12R numbers are in Part B of this page.
+
+
+## D. Phase-averaged cut vs the V13Y noise band (Z3 estimator; BASE-4, K = 9 lock-reset phases = week-key shift -4..+4 label days)
+
+cut = (maxDD OFF - maxDD ON)/maxDD OFF at each phase (positive = shallower); PA cut = mean over the 9 phases (also shown: the cut of the phase-averaged maxDD, and the range over phases). Band = Z3 V13Y FINAL phase-averaged 95th percentile of |cut| for a no-information flip of 5% of live rows (the five lines change 4,000-7,000 rows => flip 5% row; flip 2% in brackets). Rule: PA cut must exceed the band in L6M AND in PRE or X'. Episodes lookup: DS3_ZONES_EPISODES_V13Y.md.
+
+### LOCK NONE (headline)
+| grid | L3M | L6M | HOLD | MID | PRE | X' | rule |
+|---|---|---|---|---|---|---|---|
+| 10-s grid | +65% [+62,+68] (cut of avg +65%) band 34% (31%) | +27% [+11,+37] (cut of avg +28%) band 20% (16%) | +27% [+13,+37] (cut of avg +28%) band 19% (14%) | +10% [-115,+57] (cut of avg +35%) band 37% (26%) | +10% [+4,+22] (cut of avg +11%) band 17% (11%) | +15% [-0,+24] (cut of avg +15%) band 23% (16%) | NOT beyond band |
+| 1-s grid | +43% [+36,+48] (cut of avg +43%) band 34% (31%) | +50% [+39,+56] (cut of avg +50%) band 20% (16%) | +25% [+3,+44] (cut of avg +26%) band 19% (14%) | -84% [-372,+19] (cut of avg -27%) band 37% (26%) | +6% [-1,+13] (cut of avg +7%) band 17% (11%) | +26% [+18,+34] (cut of avg +25%) band 23% (16%) | PASS |
+
+### 12R
+| grid | L3M | L6M | HOLD | MID | PRE | X' | rule |
+|---|---|---|---|---|---|---|---|
+| 10-s grid | +54% [+21,+69] (cut of avg +61%) band 23% (17%) | +42% [-6,+65] (cut of avg +51%) band 24% (12%) | +32% [-37,+59] (cut of avg +45%) band 12% (11%) | +7% [-35,+36] (cut of avg +16%) band 37% (24%) | -28% [-113,+33] (cut of avg -26%) band 13% (13%) | +14% [-22,+44] (cut of avg +21%) band 14% (10%) | NOT beyond band |
+| 1-s grid | +40% [+14,+60] (cut of avg +48%) band 23% (17%) | +22% [-57,+59] (cut of avg +38%) band 24% (12%) | +21% [-14,+47] (cut of avg +29%) band 12% (11%) | -97% [-377,+42] (cut of avg -34%) band 37% (24%) | -29% [-133,+39] (cut of avg -27%) band 13% (13%) | +32% [+22,+52] (cut of avg +33%) band 14% (10%) | NOT beyond band |

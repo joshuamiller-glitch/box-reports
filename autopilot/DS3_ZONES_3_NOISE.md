@@ -169,3 +169,11 @@ Phase-averaged (K = 9 lock-reset phases: week key shifted -4..+4 label days), pa
 
 Shipped-layer maxDD across the 9 phases on V13Y ($k, mean / SD / range): lock-off L6M 118 / 9.5 / 96-126, PRE 138 / 7.7 / 129-150, X' 76 / 11.8 / 67-97, MID 30 / 1.3; lock 12R L6M 87 / 23 / 53-121, PRE 185 / 66 / 107-282, X' 99 / 30 / 75-145, MID 42 / 16.
 Rule (unchanged, now on the PA statistic): a phase-averaged cut counts only if it exceeds the PA band in L6M AND in PRE or X' (row = nearest in rows changed: flip 2 for ~500 rows, flip 5 for 1,000+). Lock-off: L6M 15.5 / 20, PRE 11.5 / 16, X' 14 / 22 %. Lock 12R: L6M 11 / 25, PRE 13 / 15, X' 10 / 13 %. Phase-averaging shrinks the 12R band 3x (L6M single-path flip-5 68% -> 25%) but only slightly in lock-off (L6M 27% -> 20%): the lock-off noise is mostly WHICH rows are halved (70-90% of the variance is draw-specific, V13X check), i.e. trade-selection noise of the maxDD extreme, not lock phase; it cannot be averaged away by phase and needs more draws/rows (a real effect must exceed it).
+
+## V13Y band FINAL (n = 60 draws per type, K = 9) - appended ~10:00Z
+| frame | flip | L3M | L6M | HOLD | MID | PRE | X |
+|---|---|---|---|---|---|---|---|
+| lock-off | 2% | 0.308 | 0.157 | 0.145 | 0.261 | 0.114 | 0.159 |
+| lock-off | 5% | 0.335 | 0.199 | 0.191 | 0.366 | 0.174 | 0.230 |
+| lock 12R | 2% | 0.171 | 0.117 | 0.112 | 0.239 | 0.131 | 0.100 |
+| lock 12R | 5% | 0.226 | 0.239 | 0.117 | 0.373 | 0.131 | 0.145 |

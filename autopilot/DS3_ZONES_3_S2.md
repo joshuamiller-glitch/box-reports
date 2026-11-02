@@ -612,3 +612,27 @@ V13Y l0 full screen: 1902 changed distinct-key cells; S_hon>0 0.42, S_post>0 0.3
 | camH3 | POST-HOC (ungated) | camH3|40pts|fw8|any | 88.5 / 103.8 / 30.1 / 131.2 / 64.7 | +10% / +2% / +1% / +1% / +40% | +0.3 (1.5) | S/-/N | no | 4, +0.01, 3/4 | -0.00 (202628-202632) |
 | kijun1h | HONEST | kijun1h|40pts|fw2|stk | 97.0 / 97.0 / 39.0 / 127.0 / 69.5 | -3% / +11% / -15% / +1% / +42% | -0.5 (1.7) | -/-/- | no | 4, +0.19, 4/4 | +0.21 (202411-202415) |
 | kijun1h | POST-HOC (ungated) | kijun1h|40pts|a1-4|any | 96.4 / 96.4 / 31.2 / 139.9 / 77.0 | +1% / +12% / +3% / -8% / +21% | +0.3 (1.0) | -/-/N | no | 4, -0.04, 2/4 | +0.01 (202606-202607) |
+
+
+## s2 V13Y lock=12R full screen (1,933 changed cells), ~10:15Z 2026-11-02
+STRICT 61, TOLERANT 137, NOW-ONLY 553 (TOL-B 427, TOL-nc 156); 0 cells meet the L6M RISK-KEEP rule. The 12R-frame post-hoc leader CRT4h 60pts fresh any (L6M maxDD cut +24%, Calmar +24% L6M / +10% HOLD / +68% MID / +3% PRE / +2% X', STRICT, 3/3 neighbours, LOEO min +0.17) has a lock=None L6M cut of about +3% (ONE-WEEK there) => **LOCK-ONLY**, not a lead under the lead's rule. kijun1h 40pts fresh any is S/T/N in the 12R frame (L6M +2%, HOLD +11%, PRE +19%, mean +3.0k, MDE 9.1) with an L6M cut of 0% in the lock-none frame: LOCK-ONLY as well. Candidates present in BOTH frames: camH3 40pts fw8 any (lock none STRICT-ish, lock 12R -5%): not consistent; PDmid 40pts fw1 stacked: lock none TOL, lock 12R mixed. Nothing is a lead in both frames on V13Y.
+V13Y l12 full screen: 1933 changed distinct-key cells; S_hon>0 0.38, S_post>0 0.49; STRICT 61, TOL 137, NOW 553, TOL-B 427, TOL-nc 156, RISK-KEEP(L6M rule) 0
+
+| line | pick | cell | maxDD $k L6M / HOLD / MID / PRE / X' | Calmar gain L6M / HOLD / MID / PRE / X' | mean d L6M (MDE) | S/T/N | RK | neighbours n, mean S, same sign | LOEO worst S (episode) |
+|---|---|---|---|---|---|---|---|---|---|
+| CRT4h | HONEST | CRT4h|15pts|fw2|any | 53.3 / 91.2 / 58.0 / 278.3 / 96.7 | -1% / -0% / -8% / +2% / +12% | +0.1 (0.6) | -/-/- | no | 4, +0.03, 4/4 | +0.03 (202314-202323) |
+| CRT4h | POST-HOC | CRT4h|60pts|fresh|any | 51.8 / 96.5 / 43.8 / 276.7 / 128.0 | +24% / +10% / +68% / +3% / +2% | +4.7 (9.1) | S/T/N | no | 3, +0.16, 3/3 | +0.17 (202435-202516) |
+| KCup4h | HONEST | KCup4h|60pts|fw1|solo | 53.1 / 90.7 / 52.3 / 194.9 / 138.1 | -1% / +1% / +13% / +34% / -3% | -0.1 (1.0) | -/-/- | no | 2, +0.01, 1/2 | +0.14 (202314-202323) |
+| KCup4h | POST-HOC | KCup4h|15pts|fresh|any | 52.8 / 90.4 / 52.3 / 281.3 / 131.5 | +0% / -0% / -5% / +4% / +0% | +0.0 (0.2) | -/T/N | no | 4, -0.00, 3/4 | -0.00 (202548-202550) |
+| OTE705 | HONEST | OTE705|75%tgt|fw4|any | 52.2 / 92.4 / 51.2 / 232.4 / 120.3 | +0% / -4% / +2% / +13% / +5% | -0.2 (1.6) | -/-/- | no | 3, +0.05, 2/3 | +0.01 (202435-202516) |
+| OTE705 | POST-HOC | OTE705|15pts|fresh|any | 52.8 / 90.7 / 60.9 / 277.1 / 131.2 | +7% / +3% / -24% / +1% / +0% | +1.4 (3.5) | S/T/N | no | 4, +0.04, 3/4 | +0.04 (202604-202608) |
+| OTE79 | HONEST | OTE79|60pts|fw2|solo | 52.2 / 101.3 / 53.3 / 266.9 / 131.5 | -2% / -15% / -10% / +3% / -2% | -0.6 (1.7) | -/-/- | no | 3, -0.03, 1/3 | -0.00 (202314-202323) |
+| OTE79 | POST-HOC (ungated) | OTE79|60pts|touched|solo | 64.7 / 64.7 / 48.7 / 310.7 / 120.9 | -18% / +53% / +14% / -14% / +1% | +0.1 (5.0) | -/-/- | no | 2, +0.04, 1/2 | -0.10 (202604-202608) |
+| PDmid | HONEST | PDmid|75%tgt|fresh|any | 52.9 / 88.1 / 47.7 / 259.0 / 108.0 | -3% / +10% / +28% / +12% / +11% | -0.5 (1.7) | -/-/- | no | 3, +0.06, 3/3 | +0.12 (202604-202608) |
+| PDmid | POST-HOC | PDmid|75%tgt|fw1|solo | 55.0 / 83.1 / 52.3 / 280.2 / 132.6 | -2% / +21% / +14% / +0% / -0% | +0.3 (0.8) | -/T/N | no | 2, +0.09, 2/2 | +0.01 (202604-202608) |
+| STK | HONEST | STK|C8|clu3|fresh|10pts|only | 51.7 / 120.2 / 77.7 / 279.4 / 67.3 | +12% / -12% / -19% / +8% / +83% | +2.1 (5.2) | -/-/- | no | 3, +0.26, 3/3 | -0.00 (202314-202323) |
+| STK | POST-HOC (ungated) | STK|C8|stk2|fresh|60pts|only | 52.1 / 93.4 / 74.3 / 342.9 / 76.9 | +20% / +16% / +14% / -21% / +12% | +3.9 (8.7) | -/-/N | no | 3, +0.15, 3/3 | +0.18 (202604-202608) |
+| camH3 | HONEST | camH3|60pts|touched|solo | 87.9 / 107.5 / 56.4 / 184.0 / 149.7 | -38% / -10% / -4% / +36% / -5% | +0.7 (10.2) | -/T/N | no | 2, +0.08, 2/2 | -0.04 (202435-202516) |
+| camH3 | POST-HOC | camH3|60pts|touched|any | 88.0 / 107.5 / 56.4 / 185.3 / 149.2 | -37% / -10% / -2% / +35% / -5% | +0.9 (10.4) | -/T/N | no | 2, -0.08, 1/2 | -0.30 (202604-202608) |
+| kijun1h | HONEST | kijun1h|40pts|fresh|any | 58.9 / 88.9 / 56.7 / 235.3 / 107.3 | +2% / +11% / -7% / +19% / +7% | +3.0 (9.1) | S/T/N | no | 4, +0.08, 4/4 | +0.10 (202314-202323) |
+| kijun1h | POST-HOC | kijun1h|40pts|fw1|solo | 58.0 / 90.0 / 54.1 / 270.0 / 125.7 | +5% / +11% / +1% / +3% / -1% | +3.3 (9.1) | -/T/N | no | 3, +0.03, 2/3 | +0.07 (202604-202608) |
