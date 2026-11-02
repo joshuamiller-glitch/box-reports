@@ -494,3 +494,42 @@ Status: strongest LEAD of section 2 (STRICT in V13X lock=None, 4/4 neighbours, 4
 **Action HALF:** if all of the above hold, the signal's planned lots are multiplied by 0.5 through the ER row multiplier exactly as the shipped zone HALF does (integer half-up, minimum 1 lot, the running-max SizeMult governor keeps the 0.5). This REPLACES the shipped CRT term (shipped: CRT midpoint fresh, any age, any confluence, D = 20): in the cell the CRT line half-sizes only when the three conditions above hold. The other six half-lines keep D20 fresh unchanged; OTE-62 B73 D30 unchanged.
 **Scope in the cell tested:** all books and sessions (lock=None headline). The per-session stage found the effect only in Asia (11 STRICT / 7 TOLERANT of 36 settings; London / NY flat), so an Asia-only version is the cleaner product; its placebos (Asia-restricted) are being run.
 **Forward shadow log (pointer in FORWARD_SHADOW_ZONES_SPEC.md; fields to add to shadow_zone_flags.csv for rule_id Z2_CRT4h30fw2solo):** signal_id, rule_id, variant=half, D_pts=30, frame=AHEAD, fresh_only=1, crt_line_px, crt_formed_ts_utc (ek), crt_age_s, crt_fresh (0/1), crt_dist_pts, crt_touched_ts_utc, for each of the 7 other set lines: px, fresh, dist_pts (NaN if none ahead within D), n_others_within_5pts, solo (0/1), shipped_crt_flag (D20, fresh, any age), cell_flag, would_action (half lots, min 1), lots_final_if_applied, and at trade close base_pnl_usd and pnl_with_action_usd. Controls: every signal row (flagged or not) so the same-count / same-volume / shuffled-day placebos can be built from the log; per day count of flagged signals; hourly heartbeat (4h bars seen, 1-s rows seen).
+
+
+## s2 NEXT-STEP RESULTS (Z2, ~08:00Z 2026-11-02): Asia-only cell with Asia-restricted placebos; phase-averaged check
+**(2) CRT4h 30pts fw2 solo as an ASIA-ONLY cell (V13X lock=None; the CRT line changed in Asia rows only):** STRICT in all five windows (L6M maxDD 132.6 -> 125.6k, -5%; Calmar gain L6M +7%, HOLD +8%, MID +1%, PRE +3%, X' +5%; mean +0.4k/wk, MDE 0.9k). Lock-12: L6M maxDD -10% (73.9 -> 66.3k), HOLD +2%, MID +48%, PRE +8%, TOL fails HOLD. **ONE-WEEK in the total series:** with the week carrying the shipped L6M maxDD (W34) dropped the cut is -0.4% (the Asia-session series itself: cut +0.0%, W33). Per book in Asia (lock none, change in maxDD $k, L6M / PRE / X'): K6 -0.7 / -0.7 / -1.3; P6 0 / -7.4 / 0 (mean +0.2k PRE, +0.6k X'); U6 -2.8 / 0 / +0.7; H6 -2.8 / +2.3 / -0.4; A6 +2.8 / 0 / 0; M6 none (no Asia lots). Asia-restricted placebos (120 draws per kind; cnt = same count of Asia rows at random levels by book; volA = same planned-lot volume of random Asia rows; sdayA = the CRT line fires taken from other Asia trades of the same stratum):
+| kind | n | L6M cut total (cell) | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank S_post | Asia-session series: L6M cut (cell) | rank L6M | rank PRE | rank X' | rank HOLD |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| cnt | 120 | +5% | 0.15 | 0.14 | 0.89 | 0.40 | 0.32 | 0.14 | +0% | 0.42 | 0.64 | 0.20 | 0.04 |
+| volA | 120 | +5% | 0.04 | 0.03 | 0.89 | 0.45 | 0.36 | 0.04 | +0% | 0.51 | 0.72 | 0.20 | 0.01 |
+| sdayA | 120 | +5% | 0.35 | 0.29 | 0.38 | 0.10 | 0.05 | 0.22 | +0% | 0.43 | 0.44 | 0.01 | 0.06 |
+
+Carrying week of the shipped L6M maxDD: total series wk 202634, cut with that week dropped -0% (ONE-WEEK); Asia-session series wk 202633, cut +0%, dropped +0% (not one-week).
+Flag test (rank <= 0.05 in L6M AND PRE or X' with the carrying week dropped): NOT met. volA gives L6M 0.04, HOLD 0.03, S_post 0.04, but PRE 0.45 / X' 0.36 and the total-series L6M cut is ONE-WEEK; sdayA gives X' 0.05 but L6M 0.35 and PRE 0.10; cnt gives nothing (0.15 / 0.40). The honest reading: the Asia-only version is a volume-sensitive L6M/HOLD effect (random Asia half-sizing of the same volume does almost as well), not a PRE/X' effect.
+**(3) Phase-averaged check (Z3 method: 5 lock-reset phases = week key shifted -2..+2 label days; V13X; ship and cell both re-run each phase):**
+| lock | cell | phase-avg L6M maxDD cut (range over 5 phases) | phase-avg Calmar gain L6M / HOLD / MID / PRE / X' | phases with L6M cut > 0 | phase-avg ship L6M maxDD (range) | phase-avg cell L6M maxDD |
+|---|---|---|---|---|---|---|
+| none | CRT4h30fw2solo | +10.5% (+6.3%..+12.4%) | +14% / +16% / +7% / +5% / +3% | 5/5 | 150.0k (132.6..164.0) | 134.0k |
+| none | CRT4h30asia | +4.3% (+3.1%..+5.3%) | +6% / +7% / +2% / +4% / +4% | 5/5 | 150.0k (132.6..164.0) | 143.6k |
+| none | camH3_40fw8any | +5.2% (+0.6%..+7.2%) | +6% / +8% / +37% / -0% / +5% | 5/5 | 150.0k (132.6..164.0) | 142.2k |
+| none | CRT4h60 | +7.3% (+4.1%..+9.6%) | +10% / +10% / +27% / -12% / +0% | 5/5 | 150.0k (132.6..164.0) | 138.9k |
+| none | PDmid_20touchedsolo | +4.5% (-1.8%..+7.1%) | +10% / +10% / +0% / +4% / +0% | 4/5 | 150.0k (132.6..164.0) | 143.3k |
+| 12 | CRT4h30fw2solo | +16.6% (+6.7%..+38.2%) | +25% / +14% / +14% / +6% / -3% | 5/5 | 103.7k (73.9..139.9) | 87.5k |
+| 12 | CRT4h30asia | +8.3% (+0.0%..+25.0%) | +13% / +10% / +18% / +6% / -3% | 4/5 | 103.7k (73.9..139.9) | 96.2k |
+| 12 | camH3_40fw8any | +1.9% (-9.6%..+10.5%) | +5% / +14% / +12% / +2% / +5% | 4/5 | 103.7k (73.9..139.9) | 101.4k |
+| 12 | CRT4h60 | +4.2% (-19.0%..+13.4%) | +9% / +6% / -6% / +1% / -12% | 4/5 | 103.7k (73.9..139.9) | 98.6k |
+| 12 | PDmid_20touchedsolo | +4.7% (+0.6%..+9.1%) | +11% / +14% / +8% / +0% / +6% | 5/5 | 103.7k (73.9..139.9) | 99.0k |
+
+CRT4h 30pts fw2 solo (all sessions) survives every phase: L6M maxDD cut +10.5% (+6.3..+12.4%) lock=None, +16.6% (+6.7..+38.2%) lock=12, 5/5 phases positive in both frames; phase-averaged Calmar gain L6M +14%, HOLD +16%, MID +7%, PRE +5%, X' +3% (lock none). The Asia-only cut is smaller (+4.3%) but 5/5; camH3 40 fw8 +5.2% (5/5) lock none and +1.9% (4/5) lock 12; CRT4h 60pts fresh solo +7.3% / +4.2% (4/5); PDmid 20 touched solo 4/5 and 5/5. Phase noise in the shipped L6M maxDD itself is large (132.6 .. 164.0k), which is why single-phase L6M cuts below about 10% are inside the lock-phase noise.
+
+
+## s2 B2 round numbers: same-volume placebos (100 draws) for the top 5 cells by post-hoc score (Z2, ~08:00Z 2026-11-02)
+The two 'any' rows are the identical mask to the 'fresh' rows (round-number lines are fresh/any-equivalent at these D). **Result: RECENT-ONLY, not a lead.** Against 100 random half-size draws of the same planned-lot volume the L6M maxDD cut ranks 0.07-0.11 (not at the 5% bar), HOLD 0.01-0.05 (beats), S_post 0.02-0.09; but PRE ranks 0.52-0.87 and X' 0.19-0.88 and the PRE Calmar gains are -18% to -62%: the lines help only after 2025-11 and hurt the older windows. They halve 10-25% of signals (R25 75%tgt: L6M maxDD cut +48% but Calmar -62% in PRE). Label: RECENT-ONLY / VOLUME-sensitive; shadow-log candidate only if the user wants a recent-regime test.
+| B2 cell (added to the half mask, lock=None) | L6M cut | Calmar gain L6M / HOLD / MID / PRE / X' | n | same-volume placebo rank: L6M cut | HOLD | MID | PRE | X' | S_post | label |
+|---|---|---|---|---|---|---|---|---|---|---|
+| B2|R25|75%tgt|any | +48% | +91% / +62% / -28% / -62% / -12% | 100 | 0.07 | 0.01 | 0.78 | 0.87 | 0.86 | 0.02 | VOLUME (placebo matches) |
+| B2|R25|75%tgt|fresh | +48% | +91% / +62% / -28% / -62% / -12% | 100 | 0.07 | 0.01 | 0.78 | 0.87 | 0.86 | 0.02 | VOLUME (placebo matches) |
+| B2|R25|40pts|fresh | +40% | +68% / +38% / -2% / -38% / -17% | 100 | 0.11 | 0.05 | 0.52 | 0.52 | 0.88 | 0.09 | VOLUME (placebo matches) |
+| B2|R25|40pts|any | +40% | +68% / +38% / -2% / -38% / -17% | 100 | 0.11 | 0.05 | 0.52 | 0.52 | 0.88 | 0.09 | VOLUME (placebo matches) |
+| B2|R50|75%tgt|fresh | +41% | +57% / +37% / +2% / -18% / +27% | 100 | 0.07 | 0.01 | 0.42 | 0.75 | 0.19 | 0.03 | VOLUME (placebo matches) |
+

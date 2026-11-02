@@ -2,7 +2,7 @@
 
 **BASE: D7 v1.3 EXACT (V13X, user paste 02:45Z). HEADLINE FRAME = combined stack lock OFF (lock=None: the engine's own per-book 12R week floor and day give-back locks remain), as the lead ordered at 04:30Z; the same cells with the combined 12R lock ON are in the columns marked 'lock12'. A cut that exists only with lock 12 is LOCK-ONLY. The older assumed-base file is DS3_ZONES_3_S4A_ASSUMED_BASE.md.**
 
-STATUS: S4a deliverable written 2026-11-02 07:12Z (interim: BEHIND/AT frames for the 19 best finalist streams; per-cell placebos 16 draws per kind). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
+STATUS: S4a deliverable written 2026-11-02 07:58Z (interim: BEHIND/AT frames for the 19 best finalist streams; per-cell placebos 16 draws per kind). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
 Prereg l2vast/ds3/prereg/ZONES3_S4A_prereg.md sha256 e8d9004f35ecf860d2beaac5372bdd274862c0db1225523eb12a877ac3fcb66d (DECISIONS.md). dead_lookup before: out/zones3_new/s4a_dead_lookup.txt (NOT FOUND for every spec); append_cells after: see end. NEW windows only (code/cap/windows.py): L1M L2M (view, n weeks 5/9) L3M L6M HOLD MID PRE X'. Old-cap numbers are not used.
 
 ## 0. Plain verdict
@@ -12,7 +12,7 @@ Prereg l2vast/ds3/prereg/ZONES3_S4A_prereg.md sha256 e8d9004f35ecf860d2beaac5372
   * FIB|ote705_dn|15m D20 skip: equal-risk cut (mean of L6M/HOLD/PRE/X', lock off) +0.13, screen +0.13, placebo ranks A/B/C 0.05/0.05/0.07 (n=40), label -.
   * FIB|ret50|1h D40 skip: equal-risk cut (mean of L6M/HOLD/PRE/X', lock off) +0.11, screen +0.16, placebo ranks A/B/C 1.00/1.00/1.00 (n=0), label (L6M/recent only).
   * ARR|iplFVG|15s D40 half: equal-risk cut (mean of L6M/HOLD/PRE/X', lock off) +0.09, screen +0.17, placebo ranks A/B/C 0.07/0.07/0.24 (n=40), label (L6M/recent only).
-  * EQL|EQL_tight|5m D40 skip: equal-risk cut (mean of L6M/HOLD/PRE/X', lock off) +0.09, screen +0.19, placebo ranks A/B/C 0.01/0.01/0.02 (n=100), label -.
+  * EQL|EQL_tight|5m D40 skip: equal-risk cut (mean of L6M/HOLD/PRE/X', lock off) +0.09, screen +0.19, placebo ranks A/B/C 0.00/0.00/0.01 (n=300), label -.
   * MAS|bb_lo|1h D40 skip: equal-risk cut (mean of L6M/HOLD/PRE/X', lock off) +0.07, screen +0.11, placebo ranks A/B/C 1.00/1.00/1.00 (n=0), label (L6M/recent only).
   * SES|asia_H|prev D20 skip: equal-risk cut (mean of L6M/HOLD/PRE/X', lock off) +0.07, screen +0.09, placebo ranks A/B/C 1.00/1.00/1.00 (n=0), label -.
   * FIB|ext127|15m D20 skip: equal-risk cut (mean of L6M/HOLD/PRE/X', lock off) +0.07, screen +0.12, placebo ranks A/B/C 1.00/1.00/1.00 (n=0), label (L6M/recent only).
@@ -93,14 +93,14 @@ Base (v1.3, U7, 12R): maxDD L3M 49867, L6M 132615, HOLD 132615, MID 62624, PRE 1
 | FIB|ote705_dn|15m | 20 | skip | 202634 | +0.17 | +0.20 | +0.07..+0.07 | -0.07..+0.20 | -0.12..+0.31 | 0.78 | 202516 | +0.11 | +0.02..+0.20 | +0.02..+0.23 | 0.05/0.05/0.07 (40) | +0.07 / +0.06 / +0.06 / +0.10 | untagged |
 | FIB|ret50|1h | 40 | skip | 202634 | +0.23 | +0.34 | +0.02..+0.02 | -0.31..+0.42 | -0.45..+0.48 | 0.63 | 202516 | -0.13 | -0.25..-0.05 | -0.40..-0.04 | 1.00/1.00/1.00 (0) | -0.01 / +0.10 / +0.18 / +0.12 | (L6M/recent only) |
 | ARR|iplFVG|15s | 40 | half | 202634 | +0.31 | +0.27 | -0.17..-0.17 | +0.14..+0.36 | -0.02..+0.37 | 0.95 | 202516 | -0.23 | -0.23..+0.13 | -0.33..+0.13 | 0.07/0.07/0.24 (40) | +0.13 / +0.12 / +0.13 / +0.12 | (L6M/recent only) |
-| EQL|EQL_tight|5m | 40 | skip | 202634 | +0.14 | +0.16 | -0.05..-0.05 | +0.05..+0.20 | -0.05..+0.30 | 0.83 | 202516 | +0.11 | +0.02..+0.11 | -0.04..+0.17 | 0.01/0.01/0.02 (100) | +0.14 / +0.17 / +0.19 / +0.18 | untagged |
+| EQL|EQL_tight|5m | 40 | skip | 202634 | +0.14 | +0.16 | -0.05..-0.05 | +0.05..+0.20 | -0.05..+0.30 | 0.83 | 202516 | +0.11 | +0.02..+0.11 | -0.04..+0.17 | 0.00/0.00/0.01 (300) | +0.14 / +0.17 / +0.19 / +0.18 | untagged |
 | MAS|bb_lo|1h | 40 | skip | 202634 | +0.32 | +0.46 | +0.03..+0.03 | -0.20..+0.54 | -0.27..+0.65 | 0.75 | 202516 | -0.03 | -0.03..+0.05 | -0.03..+0.08 | 1.00/1.00/1.00 (0) | +0.02 / +0.10 / +0.03 / -0.01 | (L6M/recent only) |
 | SES|asia_H|prev | 20 | skip | 202634 | +0.09 | +0.10 | +0.00..+0.00 | +0.02..+0.13 | -0.02..+0.18 | 0.75 | 202516 | +0.07 | +0.07..+0.07 | +0.05..+0.16 | 1.00/1.00/1.00 (0) | -0.01 / +0.06 / +0.11 / +0.09 | untagged |
 | FIB|ext127|15m | 20 | skip | 202634 | +0.31 | +0.32 | -0.02..-0.02 | +0.09..+0.36 | -0.07..+0.36 | 0.85 | 202516 | +0.02 | -0.09..+0.08 | -0.09..+0.16 | 1.00/1.00/1.00 (0) | -0.01 / +0.08 / +0.14 / +0.06 | (L6M/recent only) |
 | FIB|dr_high|15m | 20 | skip | 202634 | +0.04 | +0.03 | +0.05..+0.05 | -0.07..+0.04 | -0.08..+0.05 | 0.62 | 202516 | +0.01 | -0.10..+0.13 | -0.10..+0.13 | 1.00/1.00/1.00 (0) | +0.01 / +0.01 / +0.10 / +0.08 | untagged |
 | FIB|ote705_dn|1h | 40 | skip | 202634 | +0.04 | -0.02 | -0.01..-0.01 | -0.05..+0.13 | -0.07..+0.15 | 0.46 | 202516 | +0.08 | -0.02..+0.26 | -0.02..+0.26 | 1.00/1.00/1.00 (0) | -0.06 / -0.03 / +0.06 / +0.09 | FRAGILE |
 | MAS|supertrend|1h | 40 | skip | 202634 | +0.18 | +0.15 | +0.16..+0.16 | -0.01..+0.25 | -0.10..+0.26 | 0.87 | 202516 | +0.22 | +0.14..+0.23 | +0.11..+0.29 | 1.00/1.00/1.00 (0) | -0.05 / -0.01 / +0.04 / +0.02 | FRAGILE |
-| EQL|EQL_tight|5m | 20 | skip | 202634 | +0.08 | +0.09 | -0.03..-0.03 | +0.05..+0.08 | -0.01..+0.10 | 0.92 | 202516 | +0.08 | -0.00..+0.08 | -0.00..+0.13 | 0.02/0.02/0.02 (100) | +0.03 / +0.11 / +0.15 / +0.17 | untagged |
+| EQL|EQL_tight|5m | 20 | skip | 202634 | +0.08 | +0.09 | -0.03..-0.03 | +0.05..+0.08 | -0.01..+0.10 | 0.92 | 202516 | +0.08 | -0.00..+0.08 | -0.00..+0.13 | 0.01/0.01/0.01 (300) | +0.03 / +0.11 / +0.15 / +0.17 | untagged |
 | MAS|bb_mid|4h | 20 | skip | 202634 | +0.12 | +0.09 | +0.02..+0.02 | +0.08..+0.12 | +0.02..+0.12 | 0.99 | 202516 | +0.07 | +0.07..+0.09 | +0.06..+0.16 | 0.04/0.03/0.03 (100) | +0.07 / +0.08 / +0.01 / +0.02 | untagged |
 | DEV|on_L|so_far | 20 | half | 202634 | +0.64 | +0.63 | +0.30..+0.30 | +0.45..+0.70 | +0.45..+0.79 | 1.00 | 202516 | -0.21 | -0.21..+0.35 | -0.25..+0.18 | 0.01/0.01/0.01 (100) | +0.12 / +0.28 / +0.20 / +0.18 | (L6M/recent only) |
 | ARR|iplFVG|15s | 20 | half | 202634 | +0.30 | +0.34 | -0.18..-0.18 | -0.07..+0.38 | -0.25..+0.47 | 0.72 | 202516 | -0.24 | -0.24..+0.14 | -0.30..+0.14 | 1.00/1.00/1.00 (0) | -0.03 / -0.02 / +0.14 / +0.12 | FRAGILE |
@@ -262,6 +262,169 @@ Rule: when the nearest fresh line ahead lies between 4 pts and (target - 4 pts) 
 | ARR|iFVG|1h rt | +0.13 | +0.015 | +0.067 | 60 | 0.016 |
 | PIV|cam_H1|rth b73t | +0.10 | +0.085 | +0.127 | 60 | 0.344 |
 | PRF|hvn0|sess b73t | +0.09 | +0.017 | +0.085 | 60 | 0.066 |
+## 12. EQL|EQL_tight|5m (equal lows, tight 1.0 pt, 5-min bars) - the flagged family: band, episodes, phases, placebos, books, definition, audit, base flip
+
+**1. Noise band (Z3 final lock-off band, n=107: flip 2 % / flip 5 % of live rows): L6M 0.16 / 0.21, PRE 0.22 / 0.26, X' 0.15 / 0.25.** The cell changes 2,062 rows of ~25,800 live rows (about 8 %), so the flip-5 band applies (flip-2 shown in brackets).
+
+| cell (V13X lock None) | cut L6M | band | cut PRE | band | cut X' | band | above band? |
+|--|--|--|--|--|--|--|--|
+| EQL|EQL_tight|5m D40 skip | +0.14 | 0.21 (0.16) | +0.11 | 0.26 (0.22) | +0.41 | 0.25 (0.15) | X |
+| EQL|EQL_tight|5m D20 skip | +0.08 | 0.21 (0.16) | +0.08 | 0.26 (0.22) | +0.31 | 0.25 (0.15) | X |
+| FIB|ote705_dn|15m D20 skip | +0.17 | 0.21 (0.16) | +0.11 | 0.26 (0.22) | +0.07 | 0.25 (0.15) | none |
+| MAS|bb_mid|4h D20 skip | +0.12 | 0.21 (0.16) | +0.07 | 0.26 (0.22) | +0.11 | 0.25 (0.15) | none |
+| SWG|f3L|15s D40 half | +0.45 | 0.21 (0.16) | +0.06 | 0.26 (0.22) | +0.41 | 0.25 (0.15) | L6M, X |
+
+Rule: a cut counts only above the band in L6M AND in PRE or X'. EQL tight D40: L6M +0.14 and PRE +0.11 sit BELOW the band; only X' +0.41 is above. By the rule it is NOISE in L6M (fails the rule), with X' the one window that clears the band.
+
+**2. Leave-one-episode-out with the lock-None key episodes of DS3_ZONES_EPISODES.md (cut with that episode's weeks removed from both series)**
+
+| cell | window | cut | drop ep1 | drop ep2 | drop ep3 | trough week |
+|--|--|--|--|--|--|--|
+| EQL|EQL_tight|5m D40 | L6M | +0.14 | -0.05 | +0.14 | +0.14 | 202634 |
+| EQL|EQL_tight|5m D40 | PRE | +0.11 | +0.02 | +0.11 | +0.11 | 202516 |
+| EQL|EQL_tight|5m D40 | X | +0.41 |  |  |  | 202337 |
+| EQL|EQL_tight|5m D20 | L6M | +0.08 | -0.03 | +0.08 | +0.08 | 202634 |
+| EQL|EQL_tight|5m D20 | PRE | +0.08 | -0.00 | +0.08 | +0.08 | 202516 |
+| EQL|EQL_tight|5m D20 | X | +0.31 |  |  |  | 202337 |
+| FIB|ote705_dn|15m D20 | L6M | +0.17 | +0.07 | +0.17 | +0.17 | 202634 |
+| FIB|ote705_dn|15m D20 | PRE | +0.11 | +0.02 | +0.20 | +0.11 | 202516 |
+| FIB|ote705_dn|15m D20 | X | +0.07 |  |  |  | 202337 |
+| MAS|bb_mid|4h D20 | L6M | +0.12 | +0.02 | +0.12 | +0.12 | 202634 |
+| MAS|bb_mid|4h D20 | PRE | +0.07 | +0.09 | +0.07 | +0.07 | 202516 |
+| MAS|bb_mid|4h D20 | X | +0.11 |  |  |  | 202337 |
+
+**3. Phase-averaged cut (Z3 estimator: lock week key shifted by s = -2..+2 label days, K=5 phases; V13X)**
+
+| cell | lock | window | cut by phase s=-2,-1,0,+1,+2 | mean over phases | min |
+|--|--|--|--|--|--|
+| EQL|EQL_tight|5m D40 | none | L6M | +0.12 +0.12 +0.14 +0.11 +0.13 | +0.12 | +0.11 |
+| EQL|EQL_tight|5m D40 | none | PRE | +0.13 +0.05 +0.11 +0.11 +0.11 | +0.10 | +0.05 |
+| EQL|EQL_tight|5m D40 | none | X | +0.43 +0.41 +0.41 +0.37 +0.34 | +0.39 | +0.34 |
+| EQL|EQL_tight|5m D20 | none | L6M | +0.06 +0.06 +0.08 +0.06 +0.07 | +0.07 | +0.06 |
+| EQL|EQL_tight|5m D20 | none | PRE | +0.10 +0.03 +0.08 +0.07 +0.08 | +0.07 | +0.03 |
+| EQL|EQL_tight|5m D20 | none | X | +0.37 +0.20 +0.31 +0.32 +0.28 | +0.30 | +0.20 |
+| FIB|ote705_dn|15m D20 | none | L6M | +0.10 +0.14 +0.17 +0.14 +0.17 | +0.14 | +0.10 |
+| FIB|ote705_dn|15m D20 | none | PRE | +0.19 +0.09 +0.11 +0.16 +0.18 | +0.15 | +0.09 |
+| FIB|ote705_dn|15m D20 | none | X | +0.01 -0.11 +0.07 +0.13 +0.09 | +0.04 | -0.11 |
+| MAS|bb_mid|4h D20 | none | L6M | +0.08 +0.15 +0.12 +0.09 +0.02 | +0.09 | +0.02 |
+| MAS|bb_mid|4h D20 | none | PRE | +0.08 +0.08 +0.07 +0.08 +0.08 | +0.08 | +0.07 |
+| MAS|bb_mid|4h D20 | none | X | +0.09 -0.01 +0.11 +0.08 +0.02 | +0.06 | -0.01 |
+| SWG|f3L|15s D40 | none | L6M | +0.51 +0.44 +0.45 +0.41 +0.40 | +0.44 | +0.40 |
+| SWG|f3L|15s D40 | none | PRE | +0.08 +0.18 +0.06 +0.16 +0.12 | +0.12 | +0.06 |
+| SWG|f3L|15s D40 | none | X | +0.39 +0.24 +0.41 +0.46 +0.45 | +0.39 | +0.24 |
+| DEV|on_L|so_far D20 | none | L6M | +0.35 +0.52 +0.64 +0.48 +0.49 | +0.50 | +0.35 |
+| DEV|on_L|so_far D20 | none | PRE | -0.08 -0.46 -0.21 -0.18 -0.00 | -0.19 | -0.46 |
+| DEV|on_L|so_far D20 | none | X | +0.24 +0.07 +0.32 +0.33 +0.28 | +0.25 | +0.07 |
+| EQL|EQL_tight|5m D40 | 12 | L6M | +0.12 +0.07 +0.19 +0.02 +0.03 | +0.09 | +0.02 |
+| EQL|EQL_tight|5m D40 | 12 | PRE | +0.03 +0.03 -0.11 -0.11 +0.01 | -0.03 | -0.11 |
+| EQL|EQL_tight|5m D40 | 12 | X | +0.23 +0.19 -0.02 +0.03 -0.20 | +0.05 | -0.20 |
+| EQL|EQL_tight|5m D20 | 12 | L6M | +0.13 +0.07 +0.07 +0.02 +0.04 | +0.06 | +0.02 |
+| EQL|EQL_tight|5m D20 | 12 | PRE | +0.05 +0.02 -0.03 -0.08 +0.08 | +0.01 | -0.08 |
+| EQL|EQL_tight|5m D20 | 12 | X | +0.19 +0.04 -0.08 -0.05 -0.20 | -0.02 | -0.20 |
+| FIB|ote705_dn|15m D20 | 12 | L6M | -0.16 -0.32 -0.03 +0.04 +0.04 | -0.09 | -0.32 |
+| FIB|ote705_dn|15m D20 | 12 | PRE | +0.00 -0.04 +0.14 -0.19 -0.07 | -0.03 | -0.19 |
+| FIB|ote705_dn|15m D20 | 12 | X | -0.09 -0.14 +0.01 -0.16 -0.17 | -0.11 | -0.17 |
+| MAS|bb_mid|4h D20 | 12 | L6M | +0.04 +0.01 -0.04 +0.00 -0.16 | -0.03 | -0.16 |
+| MAS|bb_mid|4h D20 | 12 | PRE | +0.01 +0.05 +0.13 +0.03 +0.04 | +0.05 | +0.01 |
+| MAS|bb_mid|4h D20 | 12 | X | +0.03 -0.13 -0.10 -0.06 -0.55 | -0.16 | -0.55 |
+| SWG|f3L|15s D40 | 12 | L6M | +0.33 +0.35 +0.06 +0.17 +0.27 | +0.24 | +0.06 |
+| SWG|f3L|15s D40 | 12 | PRE | -0.06 +0.04 +0.17 +0.05 -0.12 | +0.02 | -0.12 |
+| SWG|f3L|15s D40 | 12 | X | +0.33 -0.10 +0.49 +0.69 +0.19 | +0.32 | -0.10 |
+| DEV|on_L|so_far D20 | 12 | L6M | +0.08 +0.05 +0.33 -0.06 +0.16 | +0.11 | -0.06 |
+| DEV|on_L|so_far D20 | 12 | PRE | -0.25 -0.16 -0.16 +0.03 -0.31 | -0.17 | -0.31 |
+| DEV|on_L|so_far D20 | 12 | X | +0.20 +0.29 +0.15 +0.51 -0.03 | +0.22 | -0.03 |
+
+**4. Placebos (V13X lock None; statistic = mean of L6M/HOLD/PRE/X' cuts; A random rows same count per book x session x side x target-half, B same-volume Bernoulli, C shuffled-day circular shift; rank = (1+#>=)/(1+n))**
+
+| cell | cell stat | kind | n | placebo mean | 95th pct | rank |
+|--|--|--|--|--|--|--|
+| EQL|EQL_tight|5m D40 | +0.19 | A | 300 | -0.023 | +0.099 | 0.003 |
+| EQL|EQL_tight|5m D40 | +0.19 | B | 300 | -0.021 | +0.096 | 0.003 |
+| EQL|EQL_tight|5m D40 | +0.19 | C | 300 | -0.005 | +0.105 | 0.007 |
+| EQL|EQL_tight|5m D20 | +0.14 | A | 300 | -0.016 | +0.087 | 0.013 |
+| EQL|EQL_tight|5m D20 | +0.14 | B | 300 | +0.001 | +0.089 | 0.013 |
+| EQL|EQL_tight|5m D20 | +0.14 | C | 300 | -0.001 | +0.095 | 0.010 |
+| FIB|ote705_dn|15m D20 | +0.13 | A | 40 | -0.027 | +0.095 | 0.049 |
+| FIB|ote705_dn|15m D20 | +0.13 | B | 40 | -0.013 | +0.084 | 0.049 |
+| FIB|ote705_dn|15m D20 | +0.13 | C | 40 | -0.005 | +0.103 | 0.073 |
+| MAS|bb_mid|4h D20 | +0.09 | A | 100 | -0.009 | +0.073 | 0.040 |
+| MAS|bb_mid|4h D20 | +0.09 | B | 100 | -0.009 | +0.077 | 0.030 |
+| MAS|bb_mid|4h D20 | +0.09 | C | 100 | -0.009 | +0.080 | 0.030 |
+
+**5. EQL tight D40 skip: per book x session (change in $ over HOLD, cut of the book x session maxDD in HOLD | PRE)**
+
+| book | asia | london | pre | nyam | nypm | close |
+|--|--|--|--|--|--|--|
+| K7 | -5052 (+0.02|-0.02) | -5407 (+0.00|-0.05) |  | +4405 (+0.28|+0.06) | +690 (+0.01|-0.05) |  |
+| P7 | +24969 (+0.00|+0.16) | +9427 (-0.13|-0.10) |  | +2937 (+0.00|+0.09) |  |  |
+| U7 | +8354 (+0.00|+0.05) | +606 (+0.00|+0.12) |  |  |  |  |
+| H7 | +1511 (-0.07|+0.02) |  |  | +2462 (+0.00|-0.11) |  |  |
+| M7 |  | -384 (+0.04|-0.10) |  | -6829 (-0.19|-0.01) |  |  |
+| A6 | -776 (+0.00|+0.21) |  |  |  |  |  |
+
+**6. Exact D7-computable definition of EQL|EQL_tight|5m ('equal lows, tight, 5-minute')**
+
+* Bars: 5-minute bars of the back-adjusted 1-s path (bar = 300 s, label by open; bar k is *closed* at its last second; ek of a bar = the SS index of the first print second after the bar's close).
+* Swing lows: fractal-5 (strength 2): bar j is a swing low if its low is strictly lower than the lows of the 2 bars before and the 2 bars after; it is CONFIRMED when bar j+2 has closed.
+* Equal lows (tight): for each confirmed swing low j2 (value v2) look back over the previous 8 confirmed swing lows (j1 with value v1, nearest first); the first j1 with |v1 - v2| <= 1.0 pt and with no bar low strictly between j1 and j2 below min(v1,v2) - 1.0 pt makes an 'equal-lows' level = min(v1, v2). Knowable at the close of bar j2+2 (ek). One level per j2.
+* Life: valid from ek until the first second whose low (SL) trades to or below the level ('touched', end) or 24 hours (cap = max(86400 s, 10 x 300 s)). FRESH = never touched since ek, evaluated at the signal second.
+* Neutral line (direction 0): it counts AHEAD for either side: for a trade with side s and entry E, the level L is ahead when it lies between the entry and the target, i.e. 0 <= s*(L - E) <= td (for a short, an equal-lows pool below the entry).
+* Rule tested: AHEAD D = 40 pts (and 20): if the nearest fresh equal-lows level lies within D pts of the entry in the travel direction (and before the target), SKIP the trade (core books; the shipped 7-line HALF layer is unchanged). Fires on 2,062 of 88,490 rows (about 2.3 % of planned lot volume) at D40, 1,094 rows at D20.
+
+**7. 100-row causal audit (out/zones3_new/s4a_eql_audit100.csv)**: 100 random fired rows (all books incl. library books DN/MA/PBL/ST/WT that D7 does not run; core-book rows are 62 of 100). Per row: (a) the stream row's ek <= signal second; (b) never traded through between ek and the signal second (min SL over (ek, kin] > level); (c) an independent rebuild of the equal lows from the 5-min bars (swing + equality rule above) reproduces the (ek, level) pair; (d) the distance equals the feature. Result: 100 of 100 OK; line age at the signal 0 s to 79441 s (median 16830 s, cap 86,400 s).
+
+**8. Why the L6M cut moved 0.46 (v1.1) -> 0.31 (assumed v1.3, U7 off) -> 0.04 (assumed v1.3 WITH the all-books U7 blackout) -> 0.14 (V13X lock None; -0.54 with lock 12)**
+
+The skip removes the same 2,062 rows each time; what changes is the base path. Weekly-delta decomposition of L6M (cell minus base, $): v1.1: base maxDD 136k (weeks 202628..202637), delta inside that episode +63k, largest weeks 202631 +52k, 202621 +22k; assumed v1.3 U7 off: base 107k, inside-episode +41k, 202638 -102k (the skip removed a +100k week), 202631 +31k; assumed v1.3 WITH U7: base 94k, inside-episode only +4k (the all-books both-sides blackout already blocks entries after a cut, many of the same rows, so the skip has little left to remove), largest weeks 202621 -14k, 202619 +10k; V13X lock 12: base 74k, inside +19k, but 202620 +129k, 202625 +44k, 202640 +37k outside the episode make the cell maxDD 114k (cut -0.54); V13X lock None: base 133k (weeks 202628..202634), inside +19k, 202637 +27k, 202623 -26k, cell 114k (cut +0.14). So the same ~+19k to +63k of rows inside the one W27-39 episode is a 14-46 % cut when the base episode is 136k and a 4 % cut when U7 has already thinned it; the sign flips when the lock and take lines move a +129k week. The cut is a property of one episode and of the lock/take-line stack, which is why it is below the band and flips with the base.
+
+**9. D scan, lock None, skip (cut by window; D = pts to the nearest fresh line, any D from 15 to 60)**
+
+| stream | D | cut L6M | HOLD | MID | PRE | X' | mean4 |
+|--|--|--|--|--|--|--|--|
+| FIB|ote705_dn|15m | 15 | +0.16 | +0.16 | -0.09 | +0.02 | -0.10 | +0.06 |
+| FIB|ote705_dn|15m | 20 | +0.17 | +0.15 | -0.02 | +0.11 | +0.07 | +0.13 |
+| FIB|ote705_dn|15m | 25 | +0.07 | +0.07 | +0.03 | +0.08 | +0.01 | +0.06 |
+| FIB|ote705_dn|15m | 30 | +0.15 | +0.15 | +0.02 | +0.10 | -0.00 | +0.10 |
+| FIB|ote705_dn|15m | 35 | +0.18 | +0.18 | +0.02 | +0.07 | -0.13 | +0.08 |
+| FIB|ote705_dn|15m | 40 | +0.22 | +0.22 | +0.02 | +0.09 | -0.25 | +0.07 |
+| FIB|ote705_dn|15m | 50 | +0.17 | +0.17 | +0.20 | +0.08 | -0.36 | +0.02 |
+| FIB|ote705_dn|15m | 60 | +0.24 | +0.24 | +0.20 | +0.08 | -0.31 | +0.06 |
+| EQL|EQL_tight|5m | 15 | +0.05 | +0.05 | +0.01 | +0.03 | +0.32 | +0.11 |
+| EQL|EQL_tight|5m | 20 | +0.08 | +0.08 | +0.01 | +0.08 | +0.31 | +0.14 |
+| EQL|EQL_tight|5m | 25 | +0.07 | +0.07 | +0.01 | +0.09 | +0.36 | +0.15 |
+| EQL|EQL_tight|5m | 30 | +0.12 | +0.10 | +0.01 | +0.08 | +0.37 | +0.17 |
+| EQL|EQL_tight|5m | 35 | +0.14 | +0.10 | +0.01 | +0.09 | +0.37 | +0.17 |
+| EQL|EQL_tight|5m | 40 | +0.14 | +0.10 | +0.01 | +0.11 | +0.41 | +0.19 |
+| EQL|EQL_tight|5m | 50 | +0.13 | +0.13 | +0.06 | +0.05 | +0.45 | +0.19 |
+| EQL|EQL_tight|5m | 60 | +0.14 | +0.13 | -0.06 | +0.00 | +0.47 | +0.18 |
+| MAS|bb_mid|4h | 15 | +0.07 | +0.07 | +0.09 | +0.03 | +0.16 | +0.08 |
+| MAS|bb_mid|4h | 20 | +0.12 | +0.07 | +0.13 | +0.07 | +0.11 | +0.09 |
+| MAS|bb_mid|4h | 25 | +0.07 | +0.07 | +0.25 | -0.02 | -0.07 | +0.01 |
+| MAS|bb_mid|4h | 30 | -0.06 | -0.06 | +0.22 | +0.08 | +0.13 | +0.02 |
+| MAS|bb_mid|4h | 35 | +0.05 | +0.05 | +0.00 | +0.08 | +0.10 | +0.07 |
+| MAS|bb_mid|4h | 40 | +0.08 | +0.08 | -0.18 | -0.00 | +0.13 | +0.07 |
+| MAS|bb_mid|4h | 50 | +0.10 | +0.10 | -0.36 | -0.12 | +0.29 | +0.09 |
+| MAS|bb_mid|4h | 60 | +0.07 | +0.07 | -0.26 | -0.15 | +0.27 | +0.07 |
+
+**6. Exact D7-computable definition of EQL|EQL_tight|5m ('equal lows, tight, 5-minute')**
+
+* Bars: 5-minute bars of the back-adjusted 1-s path (bar = 300 s, label by open; bar k is *closed* at its last second; ek of a bar = the SS index of the first print second after the bar's close).
+* Swing lows: fractal-5 (strength 2): bar j is a swing low if its low is strictly lower than the lows of the 2 bars before and the 2 bars after; it is CONFIRMED when bar j+2 has closed.
+* Equal lows (tight): for each confirmed swing low j2 (value v2) look back over the previous 8 confirmed swing lows (j1 with value v1, nearest first); the first j1 with |v1 - v2| <= 1.0 pt and with no bar low strictly between j1 and j2 below min(v1,v2) - 1.0 pt makes an 'equal-lows' level = min(v1, v2). Knowable at the close of bar j2+2 (ek). One level per j2.
+* Life: valid from ek until the first second whose low (SL) trades to or below the level ('touched', end) or 24 hours (cap = max(86400 s, 10 x 300 s)). FRESH = never touched since ek, evaluated at the signal second.
+* Neutral line (direction 0): it counts AHEAD for either side: for a trade with side s and entry E, the level L is ahead when it lies between the entry and the target, i.e. 0 <= s*(L - E) <= td (for a short, an equal-lows pool below the entry).
+* Rule tested: AHEAD D = 40 pts (and 20): if the nearest fresh equal-lows level lies within D pts of the entry in the travel direction (and before the target), SKIP the trade (core books; the shipped 7-line HALF layer is unchanged). Fires on 2,062 of 88,490 rows (about 2.3 % of planned lot volume) at D40, 1,094 rows at D20.
+
+**7. 100-row causal audit (out/zones3_new/s4a_eql_audit100.csv)**: 100 random fired rows (all books incl. library books DN/MA/PBL/ST/WT that D7 does not run; core-book rows are 62 of 100). Per row: (a) the stream row's ek <= signal second; (b) never traded through between ek and the signal second (min SL over (ek, kin] > level); (c) an independent rebuild of the equal lows from the 5-min bars (swing + equality rule above) reproduces the (ek, level) pair; (d) the distance equals the feature. Result: 100 of 100 OK; line age at the signal 0 s to 79441 s (median 16830 s, cap 86,400 s).
+
+**8. Why the L6M cut moved 0.46 (v1.1) -> 0.31 (assumed v1.3, U7 off) -> 0.04 (assumed v1.3 WITH the all-books U7 blackout) -> 0.14 (V13X lock None; -0.54 with lock 12)**
+
+The skip removes the same 2,062 rows each time; what changes is the base path. Weekly-delta decomposition of L6M (cell minus base, $): v1.1: base maxDD 136k (weeks 202628..202637), delta inside that episode +63k, largest weeks 202631 +52k, 202621 +22k; assumed v1.3 U7 off: base 107k, inside-episode +41k, 202638 -102k (the skip removed a +100k week), 202631 +31k; assumed v1.3 WITH U7: base 94k, inside-episode only +4k (the all-books both-sides blackout already blocks entries after a cut, many of the same rows, so the skip has little left to remove), largest weeks 202621 -14k, 202619 +10k; V13X lock 12: base 74k, inside +19k, but 202620 +129k, 202625 +44k, 202640 +37k outside the episode make the cell maxDD 114k (cut -0.54); V13X lock None: base 133k (weeks 202628..202634), inside +19k, 202637 +27k, 202623 -26k, cell 114k (cut +0.14). So the same ~+19k to +63k of rows inside the one W27-39 episode is a 14-46 % cut when the base episode is 136k and a 4 % cut when U7 has already thinned it; the sign flips when the lock and take lines move a +129k week. The cut is a property of one episode and of the lock/take-line stack, which is why it is below the band and flips with the base.
+
+**9. D scan, lock None, skip (cut by window; D = pts of travel to the nearest fresh line)**
+
+| stream | D | rows fired | cut L6M | HOLD | MID | PRE | X' | mean4 |
+|--|--|--|--|--|--|--|--|--|
 ## 8. Not done / named gaps
 * Only the AHEAD frame was swept over all 332 streams; BEHIND/AT were run for 19 streams. Placebo draws (16 per kind) are the compute budget; ranks have 0.06 resolution. The purged walk-forward is owned by Z3. 1-s/3-s decision delay was not run (AHEAD skip/half are signal-second decisions; B73/WT/re-target are in section 3). Parameter variants of the line itself (swing strength, profile bin, anchor shifts) are separate streams in the grid (SWG f3/f5/f7, PRF b1-b3, anchors), not re-parameterised. RND and BKS streams were not built. D7 v1.3 profit lines are an agent-built assumption (THP_POLICY_D7.txt not on disk); U7 is an assumption.
 

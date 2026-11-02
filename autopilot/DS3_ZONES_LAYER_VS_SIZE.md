@@ -83,3 +83,70 @@ Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Method: placebo layer = the sh
 | none layer, uniform lot scale 0.95 | 13.2 / DD 97.1 / Cal 0.136 / U 41.4 | 5.6 / DD 46.3 / Cal 0.121 / U 24.6 | 16.8 / DD 89.9 / Cal 0.187 / U 39.9 | 16.8 / DD 112.0 / Cal 0.150 / U 41.0 | 3.8 / DD 97.1 / Cal 0.040 / U 41.4 | 1.5 / DD 309.7 / Cal 0.005 / U 141.3 | -1.8 / DD 145.5 / Cal -0.012 / U 74.6 |
 | shipped layer, uniform lot scale 0.95 | 15.9 / DD 81.4 / Cal 0.195 / U 33.7 | 12.6 / DD 42.1 / Cal 0.298 / U 19.2 | 18.8 / DD 81.4 / Cal 0.231 / U 34.7 | 18.0 / DD 108.6 / Cal 0.166 / U 39.9 | 8.0 / DD 75.8 / Cal 0.106 / U 28.6 | 2.2 / DD 276.6 / Cal 0.008 / U 114.0 | -3.6 / DD 158.9 / Cal -0.023 / U 104.6 |
 | none layer, uniform lot scale 1.0 | 15.6 / DD 95.1 / Cal 0.165 / U 36.5 | 7.4 / DD 54.0 / Cal 0.137 / U 27.3 | 19.6 / DD 72.3 / Cal 0.271 / U 33.9 | 19.1 / DD 118.3 / Cal 0.162 / U 39.2 | 5.4 / DD 95.1 / Cal 0.057 / U 39.1 | 2.2 / DD 329.1 / Cal 0.007 / U 140.8 | -1.6 / DD 144.8 / Cal -0.011 / U 71.8 |
+
+
+# ATTRIBUTION OF THE SHIPPED LAYER'S PRE EDGE (lock none, equal risk; BASE-4, 2026-11-02T07:53Z)
+
+Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Equal risk = lot table scaled to the shipped layer's worst-20 (all history), residual gap corrected linearly. EDGE of a layer = its metric minus the median of random half-lot layers of the SAME live-row count per month (equal risk); contribution of a line = shipped edge minus the edge of the layer without that line (positive = the line carries edge). Post-hoc.
+
+## (1) Leave-one-line-out (the 8 shipped lines), shipped edge for reference: PRE: mean +2.3k, maxDD +34k better; F9: mean +0.2k, maxDD +3k better; L6M: mean +0.5k, maxDD +3k better
+| line removed | live rows halved | scale c / gap | PRE | F9 | L6M |
+|---|---|---|---|---|---|
+| kijun1h | 3393 | 1.000/1.6% | mean 9.9 (edge +3.1, ranks 0.05/0.05); maxDD 167 (edge -46); line carries mean -0.8 / maxDD -12 | mean 22.6 (edge -0.2, ranks 0.55/0.25); maxDD 132 (edge -13); line carries mean +0.4 / maxDD -10 | mean 26.6 (edge +0.3, ranks 0.40/0.25); maxDD 132 (edge -13); line carries mean +0.2 / maxDD -10 |
+| PDmid | 3687 | 1.063/2.5% | mean 9.7 (edge +3.3, ranks 0.00/0.15); maxDD 193 (edge -30); line carries mean -1.0 / maxDD +4 | mean 23.9 (edge +0.6, ranks 0.25/0.65); maxDD 143 (edge +11); line carries mean -0.4 / maxDD +14 | mean 27.9 (edge +0.7, ranks 0.20/0.65); maxDD 143 (edge +11); line carries mean -0.2 / maxDD +14 |
+| CRT4h | 3390 | 1.093/0.9% | mean 9.6 (edge +2.7, ranks 0.05/0.20); maxDD 193 (edge -34); line carries mean -0.5 / maxDD +1 | mean 24.9 (edge +2.5, ranks 0.10/0.75); maxDD 152 (edge +20); line carries mean -2.4 / maxDD +23 | mean 28.3 (edge +2.3, ranks 0.15/0.75); maxDD 152 (edge +20); line carries mean -1.8 / maxDD +23 |
+| KCup4h | 3565 | 1.029/1.1% | mean 10.0 (edge +2.5, ranks 0.00/0.05); maxDD 179 (edge -42); line carries mean -0.2 / maxDD -7 | mean 22.6 (edge -0.3, ranks 0.65/0.40); maxDD 134 (edge -11); line carries mean +0.5 / maxDD -8 | mean 25.9 (edge -1.0, ranks 0.60/0.40); maxDD 134 (edge -11); line carries mean +1.5 / maxDD -8 |
+| camH3 | 3183 | 1.010/2.9% | mean 9.9 (edge +2.1, ranks 0.00/0.00); maxDD 175 (edge -39); line carries mean +0.2 / maxDD -5 | mean 22.8 (edge +0.0, ranks 0.45/0.20); maxDD 128 (edge -11); line carries mean +0.1 / maxDD -8 | mean 26.3 (edge -0.4, ranks 0.55/0.20); maxDD 128 (edge -11); line carries mean +0.9 / maxDD -8 |
+| OTE705 | 3300 | 1.038/2.5% | mean 9.6 (edge +2.1, ranks 0.10/0.00); maxDD 178 (edge -53); line carries mean +0.2 / maxDD -19 | mean 23.0 (edge +0.3, ranks 0.40/0.30); maxDD 135 (edge -7); line carries mean -0.1 / maxDD -4 | mean 26.6 (edge +0.2, ranks 0.45/0.30); maxDD 135 (edge -7); line carries mean +0.3 / maxDD -4 |
+| OTE79 | 3246 | 1.040/1.5% | mean 9.5 (edge +2.0, ranks 0.00/0.30); maxDD 206 (edge -15); line carries mean +0.3 / maxDD +19 | mean 23.4 (edge +0.7, ranks 0.35/0.50); maxDD 141 (edge +2); line carries mean -0.5 / maxDD +5 | mean 26.9 (edge +0.6, ranks 0.35/0.50); maxDD 141 (edge +2); line carries mean -0.1 / maxDD +5 |
+| OTE62 B73 | 3824 | 1.030/4.3% | mean 9.0 (edge +3.0, ranks 0.00/0.05); maxDD 183 (edge -61); line carries mean -0.7 / maxDD -26 | mean 21.3 (edge +0.3, ranks 0.40/0.30); maxDD 130 (edge -9); line carries mean -0.2 / maxDD -6 | mean 24.7 (edge +0.2, ranks 0.45/0.30); maxDD 130 (edge -9); line carries mean +0.3 / maxDD -6 |
+
+"ranks a/b" = share of the 20 matched-count random layers at least as good on mean / maxDD (small = the layer without the line still beats random). "line carries" = shipped edge minus the without-line edge in $k/wk (mean, positive = the line adds mean) and maxDD $k reduction attributable (positive = the line adds protection).
+
+## (3) PRE split in thirds (shipped vs the 100 same-count equal-risk random layers; cumulative restarts in each third)
+| segment | mean ship / placebo med | rank mean | maxDD ship / med | rank maxDD | Calmar ship / med | rank Calmar |
+|---|---|---|---|---|---|---|
+| third 1: ISO 202405..202429 (25 wk) | 8.4 / 5.7 | 0.06 | 116 / 100 | 0.84 | 0.072 / 0.059 | 0.28 |
+| third 2: ISO 202430..202502 (25 wk) | 12.0 / 9.3 | 0.09 | 161 / 179 | 0.28 | 0.074 / 0.050 | 0.15 |
+| third 3: ISO 202503..202527 (25 wk) | 9.6 / 7.5 | 0.13 | 178 / 203 | 0.28 | 0.054 / 0.037 | 0.19 |
+
+
+## (2a) PRE edge by book and session (40 equal-risk random layers with cubes; own-series PRE mean $k/wk shipped / placebo median, rank = share of placebos at least as good; own maxDD $k)
+| unit | PRE mean ship / plc | rank mean | PRE maxDD ship / plc | rank maxDD |
+|---|---|---|---|---|
+| book K7 | +1.5 / +1.4 | 0.42 | 42 / 44 | 0.47 |
+| book P7 | +6.9 / +4.8 | 0.00 | 152 / 186 | 0.05 |
+| book U7 | +0.4 / +0.4 | 0.42 | 62 / 62 | 0.50 |
+| book H7 | -0.1 / -0.1 | 0.47 | 61 / 65 | 0.33 |
+| book M7 | -0.1 / -0.2 | 0.23 | 78 / 80 | 0.30 |
+| book A6 | +1.3 / +1.4 | 0.57 | 17 / 13 | 0.93 |
+| session asia | +7.7 / +5.9 | 0.00 | 79 / 86 | 0.20 |
+| session london | -5.2 / -4.9 | 0.72 | 448 / 431 | 0.70 |
+| session nyam | +7.2 / +6.6 | 0.15 | 69 / 67 | 0.62 |
+| session nypm | +0.2 / +0.2 | 0.45 | 33 / 39 | 0.17 |
+
+
+## (2b) The PRE episode ISO 2025-W05..W16 (shipped maxDD 178k, London carries -220k): sum of PRE P&L over those weeks by book / session, $k (shipped vs equal-risk random layers; rank = share of placebos at least as good)
+Total episode P&L: shipped -115k vs placebo median -148k [-203,-91], rank 0.10.
+| unit | shipped | placebo median [5,95] | rank |
+|---|---|---|---|
+| book K7 | +6 | -3 [-23,+13] | 0.23 |
+| book P7 | +7 | -8 [-56,+50] | 0.33 |
+| book U7 | -33 | -37 [-46,-30] | 0.30 |
+| book H7 | -36 | -37 [-48,-28] | 0.45 |
+| book M7 | -66 | -69 [-76,-62] | 0.28 |
+| book A6 | +7 | +7 [+2,+11] | 0.45 |
+| session asia | +106 | +60 [+27,+93] | 0.00 |
+| session london | -204 | -211 [-232,-190] | 0.28 |
+| session pre | +0 | +0 [+0,+0] | 1.00 |
+| session nyam | -18 | +17 [-29,+41] | 0.85 |
+| session nypm | +1 | -4 [-16,+8] | 0.15 |
+| session close | +0 | +0 [+0,+0] | 1.00 |
+
+
+## (2c) PRE edge by day vol tercile (day_regime vol_tag_today): PRE mean $k/wk contributed by days of each tag, shipped vs equal-risk random layers
+| tag | days | shipped | placebo median | rank |
+|---|---|---|---|---|
+| vol tag 0.0 | 130 | -2.2 | -1.9 | 0.75 |
+| vol tag 1.0 | 96 | -3.8 | -3.7 | 0.55 |
+| vol tag 2.0 | 138 | +15.9 | +13.3 | 0.00 |

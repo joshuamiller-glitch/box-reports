@@ -1,0 +1,14 @@
+# DS3_ZONES_3_L2_TAPE_REGIME - is the cumulative-delta (TCD) stream a DATA-REGIME artefact? (ZL-2, check requested by the lead)
+
+Question: TCD_ext (cum-delta high/low lines) beats random only in Feb-Oct 2026 and is worse than random in PRE; the cut sits in the LOW-strength tercile and grows with freshness. Is the tape source the same across 2023-02..2026-10?
+
+Method: per calendar month of the de-duplicated NQ tape (the same fp files every stream is built from): total volume, aggressor-side shares (buy / sell / neutral), prints-rows per second, volume per second, share of prints >= 25 lots per million contracts, and the monthly count of TCD events (cum-delta highs/lows, divergences, bursts) per million contracts; session shares of the cd-extreme events per half-year. Data: /mnt/l2/l2vast/ds3_zl/tcd_regime_monthly.csv and tcd_regime_session.csv.
+
+Findings (45 months):
+* **Aggressor flag**: the neutral (side 'N') volume share is 0.000 in every month, the buy share 0.497-0.503 in every month: no change in aggressor-side availability or quality.
+* **Source**: one source (Databento trade tape) throughout; the 11 duplicated-Sunday-hour months use the de-duplicated copies (monthly volume equals the L2 volume exactly, verified by TAPE-1); the 16 roll days are excluded from every stream. Monthly volume 7.9-16.7 M contracts, volume per active second 9.2-14.5 with a slow drift (no step).
+* **Event rate**: cd highs+lows per million contracts 28-54 per month, mean about 39, no step at 2026-02 or any other month (2026-02: 32.9; 2026-03..10: 29.6-48.4). Monthly TCD counts: cdhi 132-356, cdlo 129-322, bursts 34-92, divergences 7-103 (2026-10 divbull 103 is the one outlier month; one count only).
+* **Session mix** of the cd-extreme events: Asia share rises smoothly 34% (2023H1) -> 36 -> 36 -> 39 -> 38 -> 40 -> 41 -> 42% (2026H2), London falls 27% -> 22%; median |cd| of an event 1,070-1,410 contracts; share in the low-strength tercile 27-39%: a market-regime drift (more activity in Asia), no source break.
+* Print granularity: print-rows per second drift from 2.7-3.5 (2023) to 3.7-5.5 (2025-26) and large-print (>= 25 lots) rate per million contracts from about 210 (2023) to about 130-150 (2024-25 low) and back to 170-215 (2026): the contract/market microstructure changes slowly, not as a step.
+
+Verdict: **no tape-source break coincides with 2026-02 or any month**; the TCD stream is built from the same source and quality over the whole period. The Feb-Oct-only effect and the worse-than-random PRE are therefore a window/regime statement (and, with the lock off, a 38-week sample), not a data artefact. The user's earlier finding of source drift in the order-book counts (ZL-1: iceberg / defended-wall counts down 10x, pulled walls up 5x) does not appear in the TAPE: the tape counts above are stable.
