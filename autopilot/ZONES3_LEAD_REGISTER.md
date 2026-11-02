@@ -1,5 +1,7 @@
 # ZONES3_LEAD_REGISTER - every lead ever flagged, status by base (S5 light-job agent; refreshed with the master loop)
 
+**USER DECISIONS (2026-11-02 13:30Z, DIRECTIVE_USER_ANSWERS_20261102.md):** early-exit fill basis = N (live targets are resting limits, touched targets fill nominal; market exits measured 0.80 +- 0.22 pt); the five THP_POLICY_D7 take lines are PULLED from live (they lose ~19k/wk and deepen maxDD on N), no plain-pct take goes live; the resting 30% add is CANCELLED on any early book exit (TH-L2 cut, take, lock, flatten); NO combined all-books 12R lock live (per-book 12R week floor + per-book day give-back + ER(20) sizer): lock none = headline, combined 12R = reference only; truth base = V13T (V13Z with take lines OFF); LP_AGAINST stays NOISE unless it survives on V13Z without the take lines; BT swing flip goes to D7 v1.4 Shadow. Headline status columns below are V13T where available.
+
 V13X = DEFECT BASE (add-fill ordering defect), V13Y = fixed base. S5 rows read from ZONES3_MASTER_TABLE.csv (lock-off frame, single-path cuts, S5's own placebo ranks B/C/A, 100 draws); PA-band column = Z3 phase-averaged cuts (phase_y_leads_L0.csv, only 3 Z3 placebo draws so its ranks are not used); other owners' rows are their last reported status plus V13X-era chain numbers and are marked 'pending V13Y' until the owner republishes.
 
 | lead | owner | definition | V13X (defect base) status | V13Y status (single-path) | Z3 phase-averaged band | placebo ranks B/C/A (S5, 100 draws) | carrying week | clean-room reproduction | final label |
