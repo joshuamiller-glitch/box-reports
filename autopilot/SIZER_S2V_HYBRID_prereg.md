@@ -1,0 +1,9 @@
+# SIZER_S2V_HYBRID prereg (ZL-1, 2026-11-02, Lead order): volatility as a CAP only on the ER x1.5 side
+Written and hashed BEFORE any outcome statistic of these cells. Research only; ER ladder = KEEP/reference. Base and harness exactly as SIZER_S2V_prereg.md (sha a82a7b26...): V13T_LIVE, ts mode, sequential rounding, lock none, phase 0, cap 1.5.
+## Definition
+m_i = ER_i where ER_i = 0.5 (ER x0.5 side untouched) or NaN. Where ER_i = 1.5: m_i = 1.5 if COND_i else X, X in {1.0, 0.75}; COND_i true when the volatility measure says quiet; measure NaN -> COND true (live behaviour).
+Measures: (a) VT: v_i = median of earlier same-book signals' atr14_5m (min 100) / atr14_5m_i; COND: v_i >= th, th in {0.8, 0.9, 1.0, 1.1, 1.25} (th = 1.0 is "x1.5 only when ATR is below its median"; expanding same-book signal median stands in for the 20-day median); (b) expanding per-book percentile rank r of atr_ratio_5m, rv_ratio_30m, dayrange_atrd; COND: r < q, q in {0.33, 0.5, 0.67}.
+Cells: VT 5 x 2 = 10; ranks 3 features x 3 q x 2 X = 18; family = 28 cells.
+## Ranking and eligibility (same as S2V): eligible = mean >= ladder mean - paired MDE in L6M and PRE; key = mean of maxDD cuts (L6M, PRE) vs the live ladder; no-harm = no cut below -band2 in PRE, MID, X'. PA9 and 3 placebos (100 draws) for the top 3 eligible cells.
+## Family best-of-N null
+Per draw: the condition inputs (v and the three ranks) are permuted JOINTLY across rows within book x session (same index for all measures; keeps the ER ladder, lots and book structure, destroys the date alignment of volatility); all 28 cells are rebuilt and scored; statistic S1 = max over eligible cells of key; S2 = same restricted to no-harm cells. Rank p = (1 + #draws with S >= real)/(1 + n). n = 60 draws at least, more if time allows; the count is stated. All labels post-hoc.

@@ -1,0 +1,7 @@
+# SIZER_Q2_PREREG_ADDENDUM1 - PE-specific cells (ZL-2, 2026-11-02 ~19:10Z, written before any of these cells was scored; SIZER_Q2_PREREG.md sha256 e51cad52a897dac979cfc0fdb5cbb2542c4ba8145d61d64397e6bccf68f6027e stands)
+Reason: BASE-4's drawdown anatomy (DS3_SIZER_DRAWDOWN_ANATOMY.md): the x1.5 loss concentrates in PE (P6/P7) x1.5 trades (11 lots vs 7) with the split add filled, ended by the TH-L2 cut. Cells (12), all other books on the live ladder, ts base, same scoring, ranking, flag rule and winner tests as Q2:
+(5) PEX1: PE high-ER (ER >= .30) multiplier 1.0 instead of 1.5 (PE low ER stays x0.5).
+(6) PECAP_8 / PECAP_9 / PECAP_10: PE x1.5 with the post-multiplier lots capped at 8 / 9 / 10 (multiplier min(1.5, cap / rz) on PE high-ER rows).
+(7) add-aware x1.5: the ladder multiplier stays 1.5 on the total but the resting 30% add is held at its x1.0 size via the add_mult hook: ADDK_PE (PE high-ER rows, add_mult = 1/1.5) and ADDK_ALL (all books' high-ER rows, add_mult = 1/1.5); BASE-4's min-1-lot rule for the add applies (EXIT_API.md).
+(8) PE x1.5 only in some sessions (PE high-ER elsewhere x1.0): single sessions PE_S_asia, PE_S_london, PE_S_nyam and pairs PE_S_AL (asia+london), PE_S_AN (asia+nyam), PE_S_LN (london+nyam) (6 cells).
+Multiplicity: 12 more cells (52 scored in Q2 in total). Rank key and FLAG rule as in the Q2 prereg; winners (flagged cells and the top 3) get exposure_table, equal-risk, equal-mean-lots and the three placebos; a winner is a lead only if the placebo mean rank >= 0.95 in L6M and PRE, otherwise 'size effect'.
