@@ -203,3 +203,24 @@ A2 lotpar (n 100/100/100): PRE cut +13% ranks 0.178/0.198/0.168 ; L6M cut -12% r
 B1 lotpar (n 100/100/100): PRE cut +11% ranks 0.455/0.465/0.475 ; L6M cut -9% ranks 0.683/0.723/0.693 ; X cut -54% ranks 0.792/0.861/0.762
 
 Reading (corrected): tight low-ER brackets and wide high-ER brackets are both DEAD on V13T_LIVE with the exact kernel. Lots unchanged: every wide-bracket cell is far worse in all windows (75/75 ER>.30: L6M -99%, X' -179%; 90/90: L6M -185%); parity lots (60/stop) bring ER>.30 -> 75/75 to PRE +11% (PA +12%, beyond the band) but L6M -9%, MID -206%, X' -54% and the placebo ranks are 0.46 / 0.47 / 0.48 (PRE) - pure volume; ER<=.15 -> 45/45 parity gives PRE +22% (PA +19%) with L6M -2%, MID -164%, X' -5% (ranks 0.33 / 0.39 / 0.33); ER<=.30 -> 45/45 parity PRE +13% (ranks .18-.20), L6M -12%, X' -31%. Combined cells (C1/C2) are negative in L6M and X'. Per book nothing is beyond the band (best: H7 ER>.30 -> 75/75 L6M +17% single window, K7 C1 L3M +10% view). The relation "sizer on exits": a bracket keyed on ER does not lower drawdown at the same mean on this base. Wide-bracket results are now measured (exact kernel), not indicative.
+
+
+## 19:35Z addendum: ER>=0.30 trades only, T-SIZER base (run_v13t_ts), exact kernel
+Prereg SIZER_S3X_Z1_addendum2 (logged before the run). Base = run_v13t_ts (V13T_LIVE + live ER ladder, sequential rounding, lock R scaled only when mult > 1, per-book locks) + HALF layer: PA maxDD L3M 105k, L6M 170k, HOLD 170k, MID 45k, PRE 161k, X' 73k; mean L6M 38.5k, PRE 18.0k. Exact bracket kernel (run_v13t_ts({'bracket': ...})), lots not re-scaled, rows ER_5m_20 >= 0.30. Post-hoc, no PASS, Shadow only.
+
+**Answer:** the anatomy points at ER>=0.30 PE trades, but a tighter bracket on them does not lower drawdown at the same mean. PE only (stop 35/45/50 x target 45/60): no cell is beyond the PA9 band in any window; the 45/60 and 50/60 cells are neutral (L6M +1..+3%, PRE +4..+5%, mean ~0) and the x/45 cells make PRE and MID much worse (PRE -92..-141%) and cost 7-9k/wk. All six live books (ER>=0.30 trades): stop 45 / 50 with target 45 cut L6M +39% / +42% (PA +40% / +42%, beyond the band) but PRE -53% / -58%, MID -199% / -158%, mean -9.4 / -8.9k/wk in L6M (MDE 16) and -10.2 / -9.0 in PRE (MDE 6.7, beyond MDE); with the carrying episode (W29-W39) dropped the L6M cut is +10% / +11%: ONE-EPISODE and it fails PRE. No cell cuts L6M AND PRE at mean >= base (the two cells with mean >= base, PE 45/60 and ALL 50/60, are inside the band). No winner flagged.
+
+| scope ER>=0.30 | stop / target | maxDD cut L3M / L6M / HOLD / MID / PRE / X' (phase-avg) | beyond PA9 band | episode dropped L6M / PRE | mean d $k/wk (MDE) L6M / PRE | mean >= base? | worst-20 PRE b>a |
+|---|---|---|---|---|---|---|---|
+| PE | 35 / 45 | -1% (+2%) / -4% (-4%) / -4% (-5%) / -85% (-52%) / -141% (-141%) / -24% (-8%) | - | -13% / -141% | -9.0 (10.6) / -9.9 (6.7) | no | -823>-901 |
+| PE | 35 / 60 | -6% (-5%) / +1% (+0%) / +1% (+0%) / +15% (+14%) / -13% (-13%) / -10% (-12%) | - | -4% / -13% | -0.7 (2.5) / -4.0 (4.2) | no | -823>-824 |
+| PE | 45 / 45 | +8% (+10%) / -4% (-5%) / -4% (-5%) / -43% (-19%) / -92% (-79%) / -40% (-20%) | - | +6% / -92% | -7.3 (12.1) / -7.5 (5.6) | no | -823>-869 |
+| PE | 45 / 60 | +3% (+1%) / +1% (+0%) / +1% (+0%) / +15% (+10%) / +5% (+4%) / +3% (-7%) | - | -4% / +8% | +0.3 (0.8) / -1.0 (2.4) | yes | -823>-824 |
+| PE | 50 / 45 | +8% (+11%) / -1% (-1%) / -1% (-1%) / -65% (-25%) / -97% (-82%) / -59% (-32%) | - | +10% / -97% | -7.1 (12.1) / -7.3 (5.6) | no | -823>-863 |
+| PE | 50 / 60 | +2% (+1%) / +3% (+3%) / +3% (+3%) / -7% (+6%) / +4% (+4%) / +6% (+3%) | - | +1% / +9% | +0.8 (0.5) / -1.1 (2.1) | no | -823>-818 |
+| ALL | 35 / 45 | +7% (+14%) / +24% (+25%) / -14% (-24%) / -165% (-141%) / -141% (-139%) / -52% (-33%) | L6M | -5% / -141% | -14.3 (16.8) / -14.2 (8.2) | no | -823>-838 |
+| ALL | 35 / 60 | +9% (+7%) / +21% (+18%) / +21% (+18%) / +21% (-10%) / -39% (-55%) / -21% (-29%) | - | +7% / -39% | -2.3 (8.1) / -6.8 (5.8) | no | -823>-834 |
+| ALL | 45 / 45 | +20% (+25%) / +39% (+40%) / -15% (-27%) / -199% (-156%) / -53% (-43%) / -17% (-9%) | L3M, L6M | +10% / -53% | -9.4 (16.0) / -10.2 (6.7) | no | -823>-799 |
+| ALL | 45 / 60 | +9% (+5%) / +11% (+10%) / +11% (+10%) / +26% (-7%) / +1% (+0%) / +4% (-6%) | - | -1% / +12% | +1.2 (3.5) / -1.6 (3.0) | no | -823>-835 |
+| ALL | 50 / 45 | +21% (+27%) / +42% (+42%) / -5% (-15%) / -158% (-122%) / -58% (-43%) / -34% (-14%) | L3M, L6M | +11% / -58% | -8.9 (15.7) / -9.0 (6.8) | no | -823>-793 |
+| ALL | 50 / 60 | +5% (+3%) / +9% (+8%) / +9% (+8%) / +1% (-1%) / +6% (+5%) / -5% (-10%) | - | +2% / +11% | +0.9 (3.2) / -0.9 (2.3) | yes | -823>-820 |
