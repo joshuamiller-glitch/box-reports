@@ -45,3 +45,34 @@ Rules (1-s path, from each library row's entry second to its library exit second
 Fired on 1474 library rows (KB only).
 ## Not scored / caveats
 Scale-out (ZL-3). Rest-to-breakeven after a scale-out (the inject API cannot combine a partial and a later full exit without double counting). pulled_mult and ice_against gates (no 1-s array on disk). Entry second = library entry second (the 70/30 dip-fill timing is approximated; the engine ignores an injected exit at or before the real fill). A6 PB7 rows (22,357, no library trade row) untouched. Lock 12R reference, Z3's V13T PA band, per-book x session cuts and carrying-week naming are not run because no cell is eligible. Ledger: 61 cells appended to DEAD_CELLS (program EXITN_E2). Cubes /mnt/l2/l2vast/ds3_zones3_new/e2/cubes, table e2_table.pkl, code zones3/s4b/e2.py + e2_an.py.
+
+
+# E2b - FLOW-GATED TIGHTEN (added 14:07Z 2026-11-02)
+Prereg l2vast/ds3/prereg/EXITN_E2B_prereg.md sha256 4dea07a66bbf20636ea1cd72eb847fa4cb0f99b831fc8a7c66878000e4325c04 (logged before scoring). Same base (V13T_LIVE lock none), cost model, path rules and standards as above; the arming gate is pct >= P (0.3/0.5/0.7) AND a flow condition against the trade, from the shared 1-s arrays built for E1/E2/E3 (/mnt/l2/l2vast/ds3_flow1s/, README, audit 0 violations): F1 delta-turn against (delta5 against and delta30 with), F2 large print against (tier-2 >= 25 lots against in 30 s, more than with), F3 pulled own support mult5 >= 50 / 100, F3a pulled ahead-side liquidity (the other reading) >= 50 / 100, F4 iceberg against (ahead-side ratio) >= 100 / 300; actions BE0, BE1, TR7.5 (stop priced 2.45). 72 cells.
+## Plain sentence
+**Flow-gated tightening does not pay on true fills either:** 0 of 72 cells are eligible, the best HOLD mean change is -1.00k/wk (all negative), the best score is +0.009 (F2 large-print-against with a 7.5-pt trail at pct 0.5, HOLD maxDD +10% but PRE -12% and MID -30%). The large-print gate (F2) is the most selective (about 8k rows), the others arm on 14k-27k rows like the static gates; none of them picks the trades that reverse: the average armed trade still finishes better than its tightened exit once the 2.45-pt stop fill and the foregone target are paid.
+## Per gate
+| gate     |   cells |   rows_mean |   mean_dHOLD |   best_dHOLD |   mean_dPRE |   cutH_pos |   best_S |   elig |
+|:---------|--------:|------------:|-------------:|-------------:|------------:|-----------:|---------:|-------:|
+| F1_T0    |       9 |    26384.1  |       -13.12 |        -2.08 |      -10.33 |       0.22 |    -0.02 |      0 |
+| F2_T25   |       9 |     8195.22 |        -3.01 |        -1    |       -1.83 |       0.67 |     0.01 |      0 |
+| F3_T100  |       9 |    23250.9  |       -12.09 |        -1.44 |       -8.07 |       0.22 |    -0.01 |      0 |
+| F3_T50   |       9 |    27134.1  |       -14.49 |        -2.74 |      -10.86 |       0    |    -0.07 |      0 |
+| F3a_T100 |       9 |    24065.2  |       -12.17 |        -2.28 |       -8.58 |       0    |    -0.01 |      0 |
+| F3a_T50  |       9 |    27515.7  |       -14.19 |        -2.86 |      -10.73 |       0.11 |    -0.11 |      0 |
+| F4_T100  |       9 |    23919.1  |       -10.4  |        -3    |       -9.44 |       0    |    -0.1  |      0 |
+| F4_T300  |       9 |    14288.8  |        -2.51 |        -1.14 |       -4.18 |       0    |    -0.03 |      0 |
+## Top 10 by S
+| cell | rows | S | elig | cut HOLD / PRE / X' / L6M / MID | mean d HOLD / PRE $k/wk (MDE HOLD) |
+|---|---|---|---|---|---|
+| F2_T25_P0.5_TR7.5 | 13018 | +0.009 | n | +10% / -12% / +13% / +10% / -30% | -4.4 / -2.0 (6.2) |
+| F3a_T100_P0.7_BE0 | 8162 | -0.005 | n | -6% / -0% / +4% / -6% / -60% | -2.3 / -3.6 (7.4) |
+| F3_T100_P0.7_BE1 | 7931 | -0.007 | n | +4% / +3% / -4% / +11% / -48% | -1.9 / -2.1 (8.1) |
+| F3_T100_P0.7_BE0 | 7771 | -0.015 | n | +3% / +2% / -4% / +7% / -50% | -1.4 / -2.0 (7.3) |
+| F3a_T100_P0.7_BE1 | 8323 | -0.019 | n | -2% / -14% / +5% / -2% / -54% | -2.9 / -4.1 (8.1) |
+| F1_T0_P0.7_BE1 | 8924 | -0.021 | n | +6% / +6% / -35% / +6% / -50% | -2.6 / -4.5 (7.9) |
+| F4_T300_P0.7_BE0 | 4772 | -0.027 | n | -4% / -3% / -2% / -3% / -33% | -2.2 / -1.1 (3.1) |
+| F4_T300_P0.7_BE1 | 4873 | -0.029 | n | -3% / -3% / -5% / -3% / -32% | -2.2 / -1.0 (3.1) |
+| F1_T0_P0.7_BE0 | 8731 | -0.063 | n | +3% / +4% / -34% / +3% / -54% | -2.1 / -4.1 (7.3) |
+| F2_T25_P0.5_BE1 | 5266 | -0.063 | n | +12% / -8% / -20% / +12% / -15% | -1.0 / -0.6 (4.7) |
+Ledger: 72 cells appended (program EXITN_E2B). Cubes /mnt/l2/l2vast/ds3_zones3_new/e2/cubes_b, table e2b_table.pkl, code zones3/s4b/e2b.py.

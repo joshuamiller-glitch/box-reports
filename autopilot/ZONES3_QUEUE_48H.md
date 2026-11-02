@@ -12,3 +12,4 @@
 | S5 a1c47e5bc42bc345a | s5 on V13X, placebos for all untested density finalists | light jobs: DEAD_CELLS appends for every section, chain_*.csv per-month files for all leads, LOO-month/bootstrap on stored deltas |
 | BASE-4 af081da5d0e8f7275 | exact base done; 5 take lines scored (DS3_D7_TAKE_LINES.md) | then assist: forward shadow-log specs, composite layer vs v1.3 vs none for 06:00Z |
 Lead: assembles DS3_ZONES_3.md at 06:00Z / 12:00Z / 18:00Z / 00:00Z / 03:00Z, zones_policy.txt, flags RISK-KEEP leads at the top of MORNING.md.
+- T-SIZER starts after Tue 03:00Z final (DIRECTIVE_SIZER_20261102.md)

@@ -1,12 +1,14 @@
 # DS3_EXIT_N_LOSS - T-EXIT-N E1, LOSS SIDE (S4a)
 
-STATUS 2026-11-02 13:39Z: first table. Prereg autopilot/ZL_S4A_PREREG_EXIT_N_LOSS.md sha256 1ba0d3c23f262eeec067abc9b9f1dafddd7b938923e9ed5efa49d7f77159254f (DECISIONS.md). POST-HOC, Shadow only, no PASS claim. Base = V13T_LIVE (code/d7base/d7_v13t.py run_v13t_live: take lines empty, lock none = per-book locks, market exits 0.80 pt, stops 2.45 pt worse than nominal, targets at nominal, resting add cancelled on any exit). Reference cell = the SHIPPED TH-L2 loss cut (-30 pts / 5 s / 30x) on this base; every cut below is vs that reference, maxDD of the weekly cumulative total. Reference maxDD $k: L6M 151, HOLD 151, MID 44, PRE 166, X 92; weekly mean $: L6M 36747, HOLD 30405, MID 24008, PRE 17285, X 4801.
+STATUS 2026-11-02 14:21Z: first table. Prereg autopilot/ZL_S4A_PREREG_EXIT_N_LOSS.md sha256 1ba0d3c23f262eeec067abc9b9f1dafddd7b938923e9ed5efa49d7f77159254f (DECISIONS.md). POST-HOC, Shadow only, no PASS claim. Base = V13T_LIVE (code/d7base/d7_v13t.py run_v13t_live: take lines empty, lock none = per-book locks, market exits 0.80 pt, stops 2.45 pt worse than nominal, targets at nominal, resting add cancelled on any exit). Reference cell = the SHIPPED TH-L2 loss cut (-30 pts / 5 s / 30x) on this base; every cut below is vs that reference, maxDD of the weekly cumulative total. Reference maxDD $k: L6M 151, HOLD 151, MID 44, PRE 166, X 92; weekly mean $: L6M 36747, HOLD 30405, MID 24008, PRE 17285, X 4801.
 
 ## 0. Plain sentences
 
 * The shipped loss cut is a drawdown protector, not a profit tool: removing it makes maxDD worse in every window (L6M -0.31, HOLD -0.31, MID -2.90, PRE -0.70, X' -0.35) while costing only -1728 $/wk of mean (MDE 6929).
-* Of 82 alternative cells, 3 lower maxDD AND improve worst-20 in BOTH L6M and PRE on the single path: A arm30 pull50x w10s (cut L6M +0.18, PRE +0.01, X' -0.07, mean -487 $/wk); B flip K2 arm30 (cut L6M +0.04, PRE +0.07, X' -0.10, mean -415 $/wk); B flip SWP arm30 (cut L6M +0.21, PRE +0.09, X' -0.07, mean -450 $/wk). None of them is above the Z3 phase-averaged band in L6M AND (PRE or X') (section 4), so none is a lead.
+* Of 94 alternative cells, 3 lower maxDD AND improve worst-20 in BOTH L6M and PRE on the single path: A arm30 pull50x w10s (cut L6M +0.18, PRE +0.01, X' -0.07, mean -487 $/wk); B flip K2 arm30 (cut L6M +0.04, PRE +0.07, X' -0.10, mean -415 $/wk); B flip SWP arm30 (cut L6M +0.21, PRE +0.09, X' -0.07, mean -450 $/wk). None of them is above the Z3 phase-averaged band in L6M AND (PRE or X') (section 4), so none is a lead.
 * TIME-STOPS (no progress at <= 0 after 5/10/20/30 min) are harmful on true fills: mean change -18767 to -13099 $/wk and worse maxDD in nearly every window (they give up trades that come back). The exact U7 blackout (SM only, same side) has zero effect ('never binds'); the all-books both-sides blackout is mixed and costs $/wk.
+
+* FLOW-GATED replacement cuts on the 1-s path (sweep-against and iceberg-ahead, arms 15-40, S4b's flow arrays) are worse than the shipped cut in L6M and HOLD in all 12 cells (best L6M cut -0.14, median -0.32) and cost -14698 to -1078 $/wk: these flags are present on 40,000 of the 88,490 rows, so they are not selective. Delta-turn and large-print-against are S4b's (E2c).
 
 ## 1. F-A threshold grid (40 cells): maxDD cut vs the shipped cell, L6M | PRE | X' (single path, lock none)
 
@@ -68,6 +70,23 @@ STATUS 2026-11-02 13:39Z: first table. Prereg autopilot/ZL_S4A_PREREG_EXIT_N_LOS
 | WG | 35 | -0.30 | -0.30 | -2.86 | -0.62 | +0.02 | -216 | -256 | -2612 (6933) |
 | WG | 40 | -0.31 | -0.31 | -3.09 | -0.58 | +0.01 | -254 | -203 | -1954 (6934) |
 
+## 2b. F-B2 flow-gated cut on the 1-s path (sweep against / iceberg ahead; replaces the shipped cut)
+
+| cell | cut L6M | HOLD | MID | PRE | X' | w20 change L6M $k | w20 change PRE $k | mean $/wk (MDE) |
+|--|--|--|--|--|--|--|--|--|
+| B2 flow SWPF arm20 | -0.14 | -0.87 | -3.28 | +0.01 | -0.12 | -223 | +195 | -11263 (6855) |
+| B2 flow SWPF arm30 | -0.19 | -0.35 | -1.37 | +0.06 | +0.04 | -211 | +22 | -5874 (3791) |
+| B2 flow SWPF arm40 | -0.58 | -0.58 | +0.54 | -0.41 | -0.38 | -71 | -205 | -1078 (4412) |
+| B2 flow ICEF arm20 | -0.19 | -0.76 | -3.18 | -0.03 | -0.13 | -211 | +187 | -11201 (6749) |
+| B2 flow ICEF arm30 | -0.14 | -0.35 | -1.38 | -0.03 | +0.03 | -181 | -1 | -6005 (3732) |
+| B2 flow ICEF arm40 | -0.61 | -0.61 | +0.41 | -0.42 | -0.39 | -81 | -208 | -1286 (4458) |
+| B2 flow SWPF arm15 | -0.24 | -0.96 | -3.13 | -0.47 | -0.19 | -360 | +167 | -14698 (7850) |
+| B2 flow SWPF arm25 | -0.58 | -0.58 | -1.44 | -0.26 | -0.14 | -310 | +80 | -8892 (5315) |
+| B2 flow SWPF arm35 | -0.40 | -0.40 | -0.14 | -0.34 | -0.63 | -143 | -93 | -3707 (3516) |
+| B2 flow ICEF arm15 | -0.23 | -0.96 | -3.11 | -0.44 | -0.21 | -339 | +183 | -14035 (7876) |
+| B2 flow ICEF arm25 | -0.44 | -0.47 | -1.57 | -0.27 | -0.13 | -273 | +84 | -8573 (5335) |
+| B2 flow ICEF arm35 | -0.42 | -0.42 | -0.20 | -0.32 | -0.65 | -148 | -92 | -3737 (3484) |
+
 ## 3. F-C time-stops and F-D blackouts
 
 | cell | cut L6M | HOLD | MID | PRE | X' | mean $/wk (MDE) |
@@ -94,7 +113,7 @@ STATUS 2026-11-02 13:39Z: first table. Prereg autopilot/ZL_S4A_PREREG_EXIT_N_LOS
 | A arm20 pull10x w10s | +0.15 | +0.14 | -1.07 | +0.30 | +0.05 | +0.05/+0.22/-0.09 |  | yes | OK |  |
 | B flip IMB arm15 | +0.14 | +0.12 | -0.30 | -0.16 | -0.36 | -0.02/-0.34/-0.57 |  | NO | ONE |  |
 | A arm25 pull30x w5s | -0.21 | -0.21 | -0.30 | +0.04 | -0.00 | -0.50/-0.02/-0.12 |  | NO | OK |  |
-| B flip SWP arm30 | +0.19 | +0.17 | +0.01 | +0.08 | -0.13 | +0.17/+0.03/-0.15 |  | yes | ONE |  |
+| B flip SWP arm30 | +0.19 | +0.17 | +0.01 | +0.08 | -0.13 | +0.17/+0.03/-0.15 |  | yes | ONE | A 0.58 (n35) |
 | A arm30 pull50x w5s | +0.27 | +0.23 | +0.08 | -0.19 | +0.10 | +0.19/-0.27/+0.05 |  | NO | ONE |  |
 | B flip SWP arm15 | +0.41 | +0.31 | -1.40 | +0.32 | -0.19 | +0.29/+0.31/-0.32 | YES | NO | OK |  |
 | B flip K2 arm15 | +0.35 | +0.35 | -0.43 | +0.23 | -0.33 | +0.26/+0.19/-0.39 | YES | NO | OK |  |

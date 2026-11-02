@@ -42,3 +42,7 @@ Notes for the tests: (i) feed every print of the 4-hour window before the signal
 
 ## 7. What to verify before relying on it (Shadow acceptance)
 Replay 2026-10 with D7's own tape through this spec and compare with the research stream for the same days (out/zl_new/streams_book/BT|swing_F10|4h.parquet, ek index space, or the clean-room mask /mnt/l2/l2vast/ds3_zones3_new/s4b/cleanroom/mask_primary.npy): expect Jaccard >= 0.95 of flagged signals; then run live Shadow and read bt_forward_check.py weekly.
+
+
+## 8. Causal re-audit result (2026-11-02)
+100 flagged + 100 non-flagged rows recomputed from path data truncated at the signal second (up to and including it, and strictly before it): 200/200 agree with the research mask in both variants; no dependence on later bars, trade outcome or exit time. Evidence level update: against COUNT-MATCHED random-time-swing nulls the effect ranks 0.009-0.03 (min3/min4 on V13T), not at the floor; see DS3_BT_SWING_FLIP_CANDIDATE.md sec 16. Shadow line unchanged.
