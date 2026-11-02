@@ -680,3 +680,68 @@ Sweep-then-reverse frame (a swept-and-reclaimed level BEHIND the entry within 5 
 | SWP|ext_swing_N5|4h | BH      |   5 | up    |      88 | 0     | 0     |      0 |     0 |  0     |  0.004 |        0     |  0     |
 | SWP|ext_swing_N5|4h | BH      |  10 | up    |     248 | 0.008 | 0.004 |      0 |     0 | -0.113 | -0.006 |        7.84  | -0.113 |
 Reading: no liquidity-pool cell reaches 15% on L6M, PRE and X' together (best LQP swH 15m D20 half: L6M +8%, PRE +24%, X' +8%); unswept swing/equal levels ahead are not skip zones on the exact base, and the sweep-then-reverse size-up has no effect (nflag small, cuts about 0). DEAD. The measured pool sizes (tape) stay with ZL-2 (DS3_ZONES_3_L2_TAPE.md): the unswept levels cannot know their pool before the break, only after.
+
+
+## HEADLINE V13X (12R lock ON): PUL k3 4h D20 skip, 100 placebo draws per kind
+| kind   |   draws | window   |   cell_cut |   placebo_mean |   placebo_p95 |   corrected |   rank |
+|:-------|--------:|:---------|-----------:|---------------:|--------------:|------------:|-------:|
+| A      |     100 | L3M      |      0.141 |         -0.067 |         0.322 |       0.208 |  0.178 |
+| A      |     100 | L6M      |      0.291 |         -0.125 |         0.296 |       0.416 |  0.069 |
+| A      |     100 | HOLD     |      0.004 |          0.089 |         0.363 |      -0.085 |  0.683 |
+| A      |     100 | MID      |      0.007 |          0.042 |         0.285 |      -0.035 |  0.604 |
+| A      |     100 | PRE      |      0.223 |          0.085 |         0.317 |       0.138 |  0.208 |
+| A      |     100 | X'       |      0.198 |          0.021 |         0.296 |       0.178 |  0.208 |
+| B      |     100 | L3M      |      0.141 |         -0.024 |         0.372 |       0.166 |  0.267 |
+| B      |     100 | L6M      |      0.291 |         -0.057 |         0.321 |       0.348 |  0.099 |
+| B      |     100 | HOLD     |      0.004 |          0.024 |         0.137 |      -0.02  |  0.634 |
+| B      |     100 | MID      |      0.007 |          0.048 |         0.208 |      -0.042 |  0.663 |
+| B      |     100 | PRE      |      0.223 |          0.112 |         0.302 |       0.111 |  0.198 |
+| B      |     100 | X'       |      0.198 |          0.03  |         0.117 |       0.168 |  0.01  |
+| C      |     100 | L3M      |      0.141 |         -0.093 |         0.287 |       0.234 |  0.149 |
+| C      |     100 | L6M      |      0.291 |         -0.163 |         0.235 |       0.454 |  0.02  |
+| C      |     100 | HOLD     |      0.004 |          0.106 |         0.364 |      -0.102 |  0.723 |
+| C      |     100 | MID      |      0.007 |          0.06  |         0.348 |      -0.053 |  0.584 |
+| C      |     100 | PRE      |      0.223 |          0.055 |         0.289 |       0.168 |  0.139 |
+| C      |     100 | X'       |      0.198 |          0.03  |         0.287 |       0.168 |  0.149 |
+Reading: L6M corrected +35..+45% (ranks 0.02-0.10), PRE +11..+14% (0.14-0.21), X' +17..+18% (0.01-0.21), L3M +17..+23% (0.15-0.27), HOLD/MID negative. Only L6M (and X' with random rows) are at or below rank 0.1; the combined-lock dependence (lock off: L6M +1%) is in the section above. Label: LOCK-ONLY for L6M; PRE/X' = LEAD (weak, ranks 0.14-0.21).
+
+
+## HEADLINE (lock=None, V13X with the engine per-book locks only; user rule: headline lock=None, LOCK-ONLY label for lock=12-only cuts)
+Cells (maxDD cut vs the lock-off base; base maxDD $k L6M 132.6, PRE 178.4, X' 134.8, MID 62.6):
+| cell                            |   nflag |    L1M |    L3M |    L6M |   HOLD |    MID |    PRE |    X' |
+|:--------------------------------|--------:|-------:|-------:|-------:|-------:|-------:|-------:|------:|
+| SWP|lvl_swing_N5|4h|AH|60|skip  |    3214 | -0.057 |  0.09  |  0.209 |  0.08  |  0.113 | -0.007 | 0.095 |
+| SWP|lvl_swing_N5|4h|AH|40|skip  |    2929 | -0.057 | -0.049 |  0.009 |  0.009 |  0.092 |  0.024 | 0.074 |
+| LQP|swH|15m|AH|20|half          |    9426 |  0     | -0.03  | -0.091 | -0.091 | -0.052 |  0.111 | 0.059 |
+| ICE|R2N30|4h|AH|40|skip         |     736 |  0     |  0     | -0.009 | -0.009 |  0.238 | -0.003 | 0.069 |
+| SWP|lvl_sess_N5|4h|AH|40|half   |    1475 | -0.016 |  0.082 |  0.218 |  0.031 | -0.03  | -0.01  | 0.039 |
+| SWP|lvl_swing_N5|4h|AH|30|skip  |    2678 | -0.057 | -0.102 | -0.035 | -0.035 |  0.092 |  0.024 | 0.074 |
+| SWP|lvl_swing_N5|24h|AH|40|skip |    4360 | -0.088 |  0.062 |  0.041 |  0.041 |  0.197 |  0.008 | 0.042 |
+| PUL|k5|4h|AH|30|skip            |     457 |  0     |  0.098 |  0.079 |  0.073 | -0.204 | -0.023 | 0.104 |
+| PUL|k3|4h|AH|40|skip            |    2138 |  0.015 | -0.049 | -0.083 | -0.083 | -0.514 |  0.142 | 0.113 |
+| PUL|k3|4h|AH|20|skip            |    1564 |  0     | -0.01  |  0.014 |  0.014 | -0.138 |  0.166 | 0.11  |
+| PUL|k3|4h|AH|30|skip            |    1927 | -0.071 |  0.105 |  0.084 |  0.024 | -0.554 |  0.129 | 0.113 |
+| PUL|k3|24h|AH|20|skip           |    2164 |  0     |  0.057 |  0.061 | -0.003 | -0.16  |  0.133 | 0.104 |
+| PUL|k3|4h|AHA|20|skip           |     860 |  0     |  0.252 |  0.115 |  0.073 |  0.091 |  0.058 | 0.091 |
+Placebos on lock=None (PUL 60 draws per kind, SWP lvl_swing 20 per kind):
+| cell                    | kind   |   draws | window   |   cell_cut |   placebo_mean |   corrected |   rank |
+|:------------------------|:-------|--------:|:---------|-----------:|---------------:|------------:|-------:|
+| PUL|k3|4h D20           | A      |      60 | L6M      |      0.014 |          0.023 |      -0.009 |  0.59  |
+| PUL|k3|4h D20           | A      |      60 | PRE      |      0.166 |         -0.09  |       0.256 |  0.049 |
+| PUL|k3|4h D20           | A      |      60 | X'       |      0.11  |          0.025 |       0.085 |  0.246 |
+| PUL|k3|4h D20           | B      |      60 | L6M      |      0.014 |          0.023 |      -0.009 |  0.475 |
+| PUL|k3|4h D20           | B      |      60 | PRE      |      0.166 |         -0.016 |       0.183 |  0.066 |
+| PUL|k3|4h D20           | B      |      60 | X'       |      0.11  |          0.005 |       0.105 |  0.033 |
+| PUL|k3|4h D20           | C      |      60 | L6M      |      0.014 |          0.03  |      -0.016 |  0.525 |
+| PUL|k3|4h D20           | C      |      60 | PRE      |      0.166 |         -0.098 |       0.264 |  0.049 |
+| PUL|k3|4h D20           | C      |      60 | X'       |      0.11  |          0.061 |       0.049 |  0.475 |
+| SWP|lvl_swing_N5|4h D60 | A      |      20 | L6M      |      0.209 |          0.034 |       0.175 |  0.381 |
+| SWP|lvl_swing_N5|4h D60 | A      |      20 | PRE      |     -0.007 |         -0.065 |       0.057 |  0.333 |
+| SWP|lvl_swing_N5|4h D60 | A      |      20 | X'       |      0.095 |         -0.029 |       0.124 |  0.238 |
+| SWP|lvl_swing_N5|4h D60 | B      |      20 | L6M      |      0.209 |          0.047 |       0.162 |  0.095 |
+| SWP|lvl_swing_N5|4h D60 | B      |      20 | PRE      |     -0.007 |         -0.093 |       0.086 |  0.381 |
+| SWP|lvl_swing_N5|4h D60 | B      |      20 | X'       |      0.095 |          0.061 |       0.034 |  0.333 |
+| SWP|lvl_swing_N5|4h D60 | C      |      20 | L6M      |      0.209 |          0.042 |       0.167 |  0.19  |
+| SWP|lvl_swing_N5|4h D60 | C      |      20 | PRE      |     -0.007 |         -0.066 |       0.059 |  0.476 |
+| SWP|lvl_swing_N5|4h D60 | C      |      20 | X'       |      0.095 |          0.05  |       0.044 |  0.476 |
+Verdict (lock=None): PUL k3 4h skip D20 = LOCK-ONLY for the L6M cut (+29% with the 12R lock, +1% without); without the lock it keeps PRE +17% (placebo-corrected +18..+26%, ranks 0.05-0.07) and X' +11% (corrected +5..+10%, ranks 0.03-0.48), with MID -14%, HOLD +1%, L6M +1%: LEAD (weak) on PRE/X' only, no recent-window evidence, not RISK-KEEP. SWP lvl_swing 4h D60 (L6M +21% lock-off, +33% lock-on assumed base) has PRE -1% and X' +10% with placebo ranks 0.1-0.5: DEAD. The remaining cells (PUL k5, ICE R2N30 D40 MID +24% only, LQP swH 15m, SWP lvl_sess half L6M +22% but PRE -1%) fail at least one of L6M/PRE/X': DEAD. Per-cell files out/zl_new/lockoff_cells.csv, placebo_lockoff.csv.

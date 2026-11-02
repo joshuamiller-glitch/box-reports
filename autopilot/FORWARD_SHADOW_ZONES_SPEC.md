@@ -29,3 +29,7 @@ Per rule and per exit line: base P&L of flagged/fired rows, maxDD of the base se
 - No look-ahead: a zone event is usable from the first decision AFTER the end of its 1-s bin; a line condition is evaluated on state as of the end of the evaluation second.
 - Lock engine fields are logged from the engine the live D7 uses; if live D7 has no combined 12R stack lock, log lock_comb as always 0 (open question to the user, see MORNING).
 - Reproducibility check for every detector: compare live events with the stream rebuilt from the 1-s L2 table for the same days; log the match rate (target >= 95% same price and second).
+
+
+## ZL-1 pointer (2026-11-02): PUL k3 numbers for the forward register
+PUL k3 4h skip D20, V13X: lock=12R L6M +29% / PRE +22% / X' +20%; lock=None (headline) L6M +1% / PRE +17% / X' +11% / MID -14%. Label LEAD (weak, PRE/X' only), LOCK-ONLY on L6M. Detail and the live definition + log fields: autopilot/DS3_ZONES_3_S7_BOOK.md (sections "LIVE definition of the PULLED-WALL zone", "FORWARD SHADOW LOG spec", "HEADLINE (lock=None...)"). Per-cell files: /mnt/l2/l2vast/ds3_zones3_new/zl1/lockoff_cells.csv, placebo_lockoff.csv.

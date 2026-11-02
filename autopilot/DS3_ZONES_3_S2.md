@@ -260,3 +260,58 @@ V13X full screen: 1933 changed distinct-key cells; S_hon>0 0.45, S_post>0 0.57; 
 | camH3 | POST-HOC (ungated) | camH3|60pts|fresh|solo | 67.4 / 77.9 / 55.3 / 200.6 / 245.7 | +7% / +51% / +63% / +35% / -0% | -0.6 (3.2) | -/-/- | no | 3, +0.18, 3/3 | +0.05 (202604-202613) |
 | kijun1h | HONEST | kijun1h|10pts|touched|stk | 71.8 / 124.8 / 80.8 / 218.4 / 203.0 | +1% / -6% / -5% / +47% / +0% | -0.5 (1.5) | -/-/- | no | 2, +0.05, 1/2 | +0.02 (202435-202516) |
 | kijun1h | POST-HOC | kijun1h|60pts|fresh|solo | 71.7 / 112.6 / 78.3 / 217.1 / 151.7 | +10% / +2% / +1% / +29% / -4% | +1.5 (4.9) | -/T/N | no | 3, +0.01, 2/3 | +0.01 (202628-202637) |
+
+
+## s2 LOCK-OFF FRAME (V13X, lock=None = per-book locks only) = HEADLINE until the user confirms the combined 12R lock (Z2, ~05:00Z)
+Per the lead's rule every finalist is scored in both frames; a cut present only with lock=12 is LOCK-ONLY. In the lock-off frame the shipped layer reads L6M 26.9k/wk, maxDD 132.6k (HOLD 132.6k, MID 62.6k, PRE 178.4k). **CRT4h 60pts fresh solo: L6M maxDD 132.6 -> 127.2k (-4%), HOLD 132.6 -> 130.2k, MID 62.6 -> 56.4k (Calmar +38%), PRE 178.4 -> 203.5k (Calmar -16%), X' -6%; only NOW-ONLY (fails TOLERANT on PRE), cut +2% without the maxDD week (W34), 6/7 months, bootstrap -0.12..+0.11: the lock=12 headline (STRICT, L6M -8%, HOLD -15%, MID -15%) is largely LOCK-ONLY.** Others lock-off: PDmid post-hoc pick L6M Calmar +17%, HOLD +11%, X' +62%, PRE +2% (not TOL, 6/7 months); kijun1h L6M +10%; camH3 ~flat; OTE705 L6M -9% (the lock=12 RISK-KEEP is LOCK-ONLY). The full lock-off screen (1,192 masks) is running; its re-picks replace the picks above when done.
+
+### D7 v1.3 EXACT (V13X, lock=None: per-book locks only) - HEADLINE FRAME: shipped layer L6M 26.9k/wk maxDD 132.6k; HOLD maxDD 132.6k; MID maxDD 62.6k; PRE maxDD 178.4k
+
+| finalist | maxDD $k L6M / HOLD / MID / PRE / X' | Calmar gain L6M / HOLD / MID / PRE / X' | mean d L6M (MDE) | mean d MID (MDE) | S/T/N | ONE-WEEK (cut w/o maxDD week) | leave-one-week-out L6M cut: min, #weeks <=0 | LOMO | boot 5-95 | vol tercile mean d low/mid/high |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60 | 127.2 / 130.2 / 56.4 / 203.5 / 137.4 | +6% / +4% / +38% / -16% / -6% | +0.4 (2.0) | +2.6 (6.8) | -/-/N | no (+2%; wk 202634) | min -0.04, 1/27 | 6/7 months >0, min -0.04 | -0.12..+0.11 | +0.3/+0.5/-0.8 |
+| camH3 | 125.3 / 129.5 / 61.9 / 170.0 / 158.7 | +3% / -1% / -1% / +1% / +23% | -0.7 (3.0) | -0.2 (2.4) | -/-/- | no (+1%; wk 202634) | min +0.01, 0/27 | 7/7 months >0, min +0.01 | -0.07..+0.07 | -0.6/+0.1/-1.5 |
+| kijun1h | 117.3 / 123.7 / 69.0 / 174.8 / 142.2 | +10% / +4% / -9% / -0% / -18% | -0.8 (3.5) | +0.0 (2.5) | -/-/- | no (+9%; wk 202634) | min +0.01, 0/27 | 7/7 months >0, min +0.07 | +0.00..+0.12 | +0.2/-0.1/-0.6 |
+| PDmid | 116.3 / 122.9 / 66.0 / 176.9 / 150.4 | +17% / +11% / -5% / +2% / +62% | +0.8 (3.2) | +0.1 (2.7) | -/-/- | no (+14%; wk 202634) | min -0.00, 1/27 | 6/7 months >0, min -0.03 | -0.05..+0.22 | -0.1/+0.1/-0.2 |
+| CRT4h60asia | 127.6 / 131.3 / 58.2 / 200.6 / 132.6 | +6% / +4% / +22% / -14% / -16% | +0.5 (1.8) | +1.5 (6.1) | -/-/N | no (+3%; wk 202634) | min -0.03, 2/27 | 6/7 months >0, min -0.03 | -0.05..+0.04 | +0.4/+0.5/-0.7 |
+| OTE705 | 143.2 / 143.2 / 65.3 / 178.1 / 156.3 | -9% / -11% / +5% / +0% / +80% | -0.5 (3.2) | +1.0 (2.6) | -/-/- | no (-12%; wk 202634) | min -0.19, 26/27 | 1/7 months >0, min -0.19 | -0.23..+0.13 | -0.4/-0.6/-1.0 |
+
+#### CRT4h60 on V13X: per book x session, change in maxDD and mean ($k, cell minus shipped; negative maxDD change = shallower)
+
+| book | session | dDD L6M | dDD MID | dDD PRE | dDD X' | dmean L6M | dmean MID | dmean PRE | dmean X' |
+|---|---|---|---|---|---|---|---|---|---|
+| K6 | asia | -1.2 | -0.7 | +6.1 | -2.8 | +0.15 | -0.04 | -0.20 | +0.06 |
+| K6 | london | -0.0 | -2.1 | +3.9 | +0.5 | -0.05 | +0.29 | -0.05 | -0.02 |
+| K6 | nyam | +3.4 | -0.9 | +1.1 | +0.0 | -0.25 | +0.07 | +0.01 | -0.03 |
+| K6 | nypm | -1.2 | +1.6 | +4.3 | +0.0 | +0.04 | -0.09 | -0.15 | +0.00 |
+| P6 | asia | -5.2 | +0.7 | -7.4 | +3.8 | +0.00 | +1.02 | +0.22 | +0.47 |
+| P6 | london | +1.5 | +0.0 | +5.7 | +3.0 | +0.13 | -0.30 | +0.04 | -0.07 |
+| P6 | nyam | +0.0 | +12.9 | +0.5 | +0.0 | +0.00 | -1.08 | -0.09 | -0.34 |
+| U6 | asia | -2.0 | -3.1 | +0.0 | +0.3 | +0.26 | +0.53 | -0.11 | -0.02 |
+| U6 | london | +0.0 | -1.3 | +1.6 | +0.0 | +0.03 | +0.17 | +0.02 | +0.00 |
+| H6 | asia | -1.8 | +3.1 | -1.9 | -1.6 | +0.03 | +1.15 | -0.06 | +0.06 |
+| H6 | nyam | +1.9 | +2.3 | -0.4 | +0.2 | -0.09 | -0.18 | -0.01 | -0.04 |
+| M6 | london | +0.0 | -0.6 | -0.8 | +0.0 | +0.01 | +0.58 | +0.01 | +0.00 |
+| M6 | nyam | +0.0 | -0.9 | +0.0 | +0.0 | +0.00 | +0.40 | +0.02 | -0.00 |
+| A6 | asia | -1.9 | +0.0 | +0.0 | +0.0 | +0.12 | +0.10 | -0.03 | -0.03 |
+
+#### CRT4h60asia on V13X: per book x session, change in maxDD and mean ($k, cell minus shipped; negative maxDD change = shallower)
+
+| book | session | dDD L6M | dDD MID | dDD PRE | dDD X' | dmean L6M | dmean MID | dmean PRE | dmean X' |
+|---|---|---|---|---|---|---|---|---|---|
+| K6 | asia | -1.2 | -0.7 | +6.2 | -2.8 | +0.15 | -0.04 | -0.20 | +0.06 |
+| K6 | london | +0.0 | -1.4 | +1.6 | +0.0 | -0.01 | +0.23 | -0.02 | +0.00 |
+| K6 | nyam | +4.4 | -1.5 | +1.8 | +0.0 | -0.29 | +0.12 | +0.01 | +0.00 |
+| K6 | nypm | -1.8 | +2.4 | +1.2 | +0.0 | +0.07 | -0.20 | -0.11 | +0.00 |
+| P6 | asia | -5.2 | +0.7 | -7.4 | +3.8 | +0.00 | +1.02 | +0.22 | +0.47 |
+| P6 | london | +2.9 | +0.0 | +4.5 | +3.0 | +0.30 | -0.10 | +0.03 | -0.07 |
+| P6 | nyam | +0.0 | +12.9 | +0.0 | +0.0 | +0.00 | -1.08 | -0.02 | -0.32 |
+| U6 | asia | -2.0 | -3.1 | +0.0 | +0.3 | +0.26 | +0.53 | -0.11 | -0.02 |
+| H6 | asia | -1.8 | +3.1 | -1.9 | -1.6 | +0.03 | +1.15 | -0.06 | +0.06 |
+| H6 | nyam | +1.9 | +2.7 | -0.4 | +0.0 | -0.09 | -0.25 | -0.01 | +0.05 |
+| A6 | asia | -1.9 | +0.0 | +0.0 | +0.0 | +0.12 | +0.10 | -0.03 | -0.03 |
+
+#### placebo ranks on V13X (share of draws with an L6M / MID / PRE / X' maxDD cut at least as large; small = good)
+
+| finalist | kind | n | L6M cut (cell) | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M |
+|---|---|---|---|---|---|---|---|---|---|
