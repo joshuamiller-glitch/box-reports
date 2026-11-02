@@ -92,3 +92,18 @@ OTE-62 B73 D30 vs alternatives on the nine months: replacing B73 by half or skip
 ## Robustness (v1.3, robust_N.csv)
 Weeks carrying the shipped maxDD: HOLD/L6M 2026-08-17 (94.1k), MID 2026-03-23 (43.1k), PRE and ALL 2025-02-24 (175.1k / 265.3k). ALL7 skip HOLD ONE-WEEK; OTE705 skip ALL ONE-WEEK; O62_30 skip/half/rt/take MID cuts are 0..-36% (no cut). Bootstrap 90% intervals of the cut contain zero for every finalist except OTE705 rb HOLD (-0.2..-8%: negative end only). Still pending: definition sensitivity D +-25/50%, freshness/line-parameter variants, vol terciles, 1-s/3-s delay on acting variants, shuffled-day placebo, M/LC fills, equal-risk runs, per-book x session tables for the finalists (cubes stored).
 Correction to the v1.3 robustness paragraph: for OTE705 rb HOLD the month-block bootstrap 90% interval of the cut is -8.4%..+21.7% (P(cut>0) 0.83), leave-one-month-out minimum -0.2%, drop-5-weeks minimum +1.9%: positive in HOLD but it is -17% in PRE and -24% in SEL, so it stays (L6M only). All other finalist intervals contain zero.
+
+## Placebo ranks (v1.3, 40 draws per cell, N fills; random-level same-count rows of the zone pool with the same action; skip placebo = same-volume random skip of full-lot non-zone rows at half the count; share of draws the real maxDD cut beats; file out/zones3/s3_v13/placebo_ranks.csv; written 2026-11-02 01:25Z)
+| cell | HOLD/L6M | MID | PRE | SEL | X' |
+|---|---|---|---|---|---|
+| ALL7 skip | 0.88 / 0.82 | 0.65 | 0.55 | 0.22 | 0.05 |
+| ALL7 rt | 0.95 / 0.95 | 0.57 | 0.60 | 0.52 | 0.62 |
+| OTE705 skip | 0.72 / 0.72 | 0.62 | 0.80 | 0.75 | 0.28 |
+| OTE705 rb | 1.00 / 1.00 | 0.42 | 0.10 | 0.18 | 0.35 |
+| O62_30 half | 0.85 / 0.85 | 0.72 | 0.18 | 0.12 | 0.18 |
+| O62_30 skip | 0.45 / 0.90 | 0.57 | 0.48 | 0.20 | 0.08 |
+| bar4hmid d1 | 0.95 / 0.95 | 0.85 | 0.55 | 0.28 | 0.32 |
+| camH3 take (un-skip the camH3 half) | 0.82 / 0.82 | 1.00 | 0.90 | 0.90 | 0.80 |
+| OTE79 wt | 0.85 / 0.85 | 0.18 | 0.72 | 0.75 | 0.52 |
+| kijun1h wt | 0.18 / 0.18 | 1.00 | 0.78 | 0.98 | 0.92 |
+**Reading.** No cell beats its placebo at >= 0.95 in more than one window and none does on PRE+X' and the recent windows together: ALL7 skip is below the placebo median on X' (0.05) and SEL (0.22) (i.e. the HALF->SKIP reversion cuts less than a same-volume random skip on the older windows); OTE705 rb is rank 1.00 on L6M/HOLD but 0.10 on PRE (L6M only). Two cells sit above 0.90 on PRE+X'/SEL/MID but not on HOLD: kijun1h wt (MID 1.00, SEL 0.98, X' 0.92, HOLD 0.18) and camH3 take (MID 1.00, PRE 0.90, SEL 0.90, HOLD 0.82): both are single-line, placebo-draw-limited (40) post-hoc picks from a 101-cell sweep, with ONE-WEEK-type behaviour not yet checked; labelled LEAD-CANDIDATE (post-hoc, best-of-N not yet nulled; expected best-of-100 placebo rank is ~0.99, so a 0.98 is chance). No RISK-KEEP. The best-of-N chance null (placebo matrix across the 10 finalist cells x 40 draws) and the equal-risk, M/LC and definition-sensitivity runs are not done: entry points are final_r.py-style scripts in code/zones3_s3 (run_plc5.py, report5.py, robust5.py, wf5.py, wf_engine5.py, wf_an5.py, run_grid5.py).
