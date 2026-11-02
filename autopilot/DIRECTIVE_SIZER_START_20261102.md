@@ -1,0 +1,2 @@
+# USER ORDER (2026-11-02, after 17:xxZ): T-SIZER START NOW on all cores; do not wait for zones final. Zones continue ONLY for the flip-level count-matched null and the Monday forward script; everything else in ZONES-3 is closed. Hash the prereg and go.
+FIRST QUESTION before the 2,523 cells: on V13T_LIVE, the live ladder vs (a) size-DOWN only (x0.5 below 0.30, x1.0 above), (b) x1.5 only (x1.5 above 0.30, x1.0 below), (c) off: mean, maxDD, worst-20, per book x session, PA band, placebos. Report the table within 2 hours (user decides whether to keep the x1.5 side live tonight).

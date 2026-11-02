@@ -32,3 +32,39 @@ Every one of the 10 largest L6M+PRE cuts is paid for: mean change L6M -1.2 to -1
 * E1 cells are engine-path runs (th_loss override with a K-table flip combo through a monkey-patched lc_rows.fire_mask, thr >= 1000 as the combo switch); I reproduced them exactly with a copy of that patch, so their reproducibility depends on that convention (documented in e1_run.py, not in the page).
 * The first EXITN_E2/E2B/E2D cubes use the library entry second as the pct reference (entry-fill timing approximated); not part of this audit.
 * Not audited: E1 time-stop/blackout cells, E3 zone-as-gate and the five exact lines (they were outside the top 10), placebos and PA-band computations of the families (they use S5's harness).
+
+
+# EXTENSION (S4b, 17:48Z): the cells left out of the first audit, independent PA9 and a placebo
+## 6. E1 time-stop / blackout and E3 exact-line / plain-pct / zone-as-gate cells (12 cells recomputed from scratch)
+| family | cell | injected rows | maxDD $k L6M / HOLD / MID / PRE / X' (recomputed) | page values | max rel diff |
+|---|---|---|---|---|---|
+| E1 | C time-stop 10min | engine ov | 181.0/263.9/147.6/232.3/166.2 | 181.0/263.9/147.6/232.3/166.2 | 0.00% |
+| E1 | C time-stop 20min | engine ov | 176.6/218.7/132.7/206.1/239.6 | 176.6/218.7/132.7/206.1/239.6 | 0.00% |
+| E1 | C time-stop 30min | engine ov | 183.0/194.3/69.1/354.7/187.1 | 183.0/194.3/69.1/354.7/187.1 | 0.00% |
+| E1 | C time-stop 5min | engine ov | 156.7/321.2/166.5/209.8/122.4 | 156.7/321.2/166.5/209.8/122.4 | 0.00% |
+| E1 | D blackout assumed 15min | engine ov | 147.2/147.2/45.0/167.5/90.7 | 147.2/147.2/45.0/167.5/90.7 | 0.00% |
+| E1 | D blackout assumed 60min | engine ov | 141.3/141.3/46.0/194.5/152.5 | 141.3/141.3/46.0/194.5/152.5 | 0.00% |
+| E3 | R1|exact5 | engine ov | 163.8/177.5/107.3/222.9/80.5 | 163.8/177.5/107.3/222.9/80.5 | 0.04% |
+| E3 | R2|plain0.5 | engine ov | 97.0/142.4/105.8/186.3/75.2 | 97.0/142.4/105.8/186.3/75.2 | 0.02% |
+| E3 | R2|plain0.7 | engine ov | 118.4/118.4/48.0/145.5/64.2 | 118.4/118.4/48.0/145.5/64.2 | 0.08% |
+| E3 | R4|zone|ahead0.0 | 8624 | 117.1/117.1/29.5/171.2/129.0 | 117.1/117.1/29.5/171.2/129.0 | 0.04% |
+| E3 | R4|zone|ahead1.2 | 3712 | 138.7/138.7/34.2/159.7/112.7 | 138.7/138.7/34.2/159.7/112.7 | 0.12% |
+| E3 | R4|zone|ahead1.5 | 1801 | 171.2/171.2/44.2/171.9/115.3 | 171.2/171.2/44.2/171.9/115.3 | 0.06% |
+All 12 agree with the family pages to <= 0.12% of the maxDD (E1 cells exactly). Code: zones3/s4b/audit2.py (E1 time-stop kernel copied from e1_run.py, so the row set is S4a's; E3 plain/exact via the lines option, zone via take_rows(4,...)).
+## 7. Independent phase-averaged (K = 9) cuts, own code (zones3/s4b/audit3.py: week-key shift of de_engine._ENV['WK'] by -4..+4 for the base and the cell, cut = mean over the 9 shifts of the per-shift maxDD cut)
+| cell | my PA9 cut L6M / HOLD / MID / PRE / X' | page (E1 section 4, S5 harness) | max abs diff |
+|---|---|---|---|
+| B flip SWP arm15 | +0.41 / +0.31 / -1.40 / +0.32 / -0.19 | +0.41 / +0.31 / -1.40 / +0.32 / -0.19 | 0.004 |
+| B flip K2 arm15 | +0.35 / +0.35 / -0.43 / +0.23 / -0.33 | +0.35 / +0.35 / -0.43 / +0.23 / -0.33 | 0.005 |
+| B flip SWP arm30 | +0.19 / +0.17 / +0.01 / +0.08 / -0.13 | +0.19 / +0.17 / +0.01 / +0.08 / -0.13 | 0.004 |
+| B flip ICE arm15 | +0.32 / +0.32 / -0.38 / +0.15 / -0.30 | +0.32 / +0.32 / -0.38 / +0.15 / -0.30 | <= 0.005 (page table value) |
+The PA9 machinery used on the E1 page reproduces to the second decimal for all four cells.
+## 8. Independent placebo A (100 draws; random cut trades, same count per day, among trades that reach the same adverse threshold, run through the same V13T_LIVE engine path), own draw code
+| cell | real cut L6M / PRE / X' (phase 0) | placebo median cut L6M / PRE / X' | share of placebo draws below the real cut L6M / PRE / X' | rank with ties half (S4a's convention) L6M |
+|---|---|---|---|---|
+| B flip SWP arm30 | +0.207 / +0.093 / -0.070 | +0.207 / +0.119 / +0.110 | 0.00 / 0.00 / 0.00 | 0.50 (page: A 0.50, n 100) |
+| B flip SWP arm15 | +0.289 / +0.313 / -0.195 | +0.289 / +0.313 / -0.190 | 0.00 / 0.06 / 0.01 | 0.50 |
+| B flip K2 arm15 | +0.262 / +0.224 / -0.265 | +0.262 / +0.225 / -0.257 | 0.00 / 0.42 / 0.01 | 0.50 |
+**Finding: placebo A cannot test the L6M cut of the E1 cells.** The median placebo L6M cut equals the real cut to three decimals in all three cells, and the share of draws below the real cut is exactly 0 (all draws tie or exceed). Reason: the L6M (= HOLD) maxDD is carried by one week; on the days of that episode the 'same count per day among trades that reach the arm' draw selects ALL eligible trades (the count equals the pool), so the placebo cut set equals the real one there and reproduces the real L6M cut regardless of the flip flag. The page's 'A 0.50' for SWP arm30 is that tie (rank with ties counted half), not evidence that the flag is no better than random. The same placebo is informative in PRE, and there the cells do NOT beat random cut sets: the real PRE cut is above only 6% of the placebo draws for SWP arm15 and 42% for K2 arm15 (SWP arm30: real +0.093 against a placebo median +0.119, above 0%) and in X' (placebo median close to the real, all negative). So the E1 page's statement that the B-flip cells' L6M cuts are 'ONE-WEEK / not distinguishable from a random cut set' is right, but for a structural reason: a same-day random-trade placebo shares the carrying week with the cell. The same-volume placebo (B) or shuffled-day placebo (C) are the informative ones for the carrying week (SWP arm30: B 0.01, C 0.05 on the page).
+## 9. Ledger / flags
+S4a confirmed the e1_harness fix (pickle renamed e1_harness_INVALID.pkl, header note in e1_harness.py, E1 page sentence corrected); no note appended by me.

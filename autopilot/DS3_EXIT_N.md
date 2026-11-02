@@ -1,4 +1,4 @@
-# DS3_EXIT_N - integrator page for T-EXIT-N (S5 = E5). Refreshed 2026-11-02 17:27Z. Base = V13T_LIVE (V13Z take lines OFF, lock none = per-book locks; xcost 0.80, stopcost 2.45, targets nominal, resting add cancelled on any exit). POST-HOC, Shadow only.
+# DS3_EXIT_N - integrator page for T-EXIT-N (S5 = E5). Refreshed 2026-11-02 17:52Z. Base = V13T_LIVE (V13Z take lines OFF, lock none = per-book locks; xcost 0.80, stopcost 2.45, targets nominal, resting add cancelled on any exit). POST-HOC, Shadow only.
 
 Shared scorer for all families: autopilot/EXIT_HARNESS.md (code/zones3_s5/exit_harness.py). Rule for 'passes on N': drawdown cut > Z3 V13T_LIVE phase-averaged band (DS3_ZONES_3_NOISE_V13T_FINAL.md) in L6M AND (PRE or X'), no-harm (PRE and MID not worse than -(flip-2 band)), the carrying week dropped keeps the cut (not ONE-WEEK), three placebos (same count per day / same volume / shuffled-day, >= 100 draws, same cost model) rank <= 0.10, mean inside MDE or equal-risk mean not negative.
 
@@ -6,7 +6,7 @@ Shared scorer for all families: autopilot/EXIT_HARNESS.md (code/zones3_s5/exit_h
 
 | family | page | updated | size |
 |---|---|---|---|
-| E1 LOSS-side cuts (S4a) | DS3_EXIT_N_LOSS.md | 14:51Z | 14k |
+| E1 LOSS-side cuts (S4a) | DS3_EXIT_N_LOSS.md | 17:28Z | 14k |
 | E2 TIGHTEN + scale-out (S4b) | DS3_EXIT_N_TIGHTEN_SCALE.md | 14:07Z | 10k |
 | E3 TAKE (Z2) | DS3_EXIT_N_TAKE.md | 14:09Z | 26k |
 | E4 RE-TARGET + time/session (ZL-2) | DS3_EXIT_N_FLOW.md | 14:17Z | 4k |

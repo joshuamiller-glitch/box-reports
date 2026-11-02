@@ -905,3 +905,16 @@ The CRT4h line replaces its shipped term; L6M maxDD cut vs the shipped layer, si
 | D 60 (= 80), fw4 = fw8 = fresh (any age) | +36% | +63% | +17% | -1% | +1% | -1% | +1560 | -/T/N |
 | fresh, D 50 | +11% | +15% | +11% | -1% | +1% | -1% | +1005 | -/T/N |
 **Reading (the 'one D only' finding as a curve):** the cut is flat at 0 to +3% for D 10..50 pts and jumps to +22% at D 60; D 60, 70, 80 and 100 are IDENTICAL because the target distances of D7 signals do not exceed about 60 pts, i.e. the effective rule at D >= 60 is 'any fresh CRT midpoint between the entry and the target' (the AHEAD frame with no distance cap). So the effect is a threshold in the frame, not a tuned D, but it still needs lines 50-60 pts away (only the far lines matter) - the near lines carry nothing. Age: fw1 +2%, fw2 +22%, fw3 +39%, fw4/fw8/any age +36%: the age rule is not what makes the cell (any age is as good or better at L6M), and every variant has a cut of -1..+4% with the carrying episode W29-W39 dropped: the whole cut is the L6M episode. PRE maxDD is -1% for all of them.
+
+
+## s2 CRT4h best-of-N null at V13T_LIVE (xcost 0.80), PARKED at 75 of 100 worlds by the SIZER order (Z2, ~18:05Z 2026-11-02); prereg addendum ZONES3_S2_CRT_GAPS sha256 c64d2cbd4e74248acd99626cc72649eb03aae2b78d66ce02e751bb4a639155cd
+Null worlds complete: 75 (each: 7 lines x 9 D x fw2 = 63 cells incl. C, V13T_LIVE xcost 0.80 / stopcost 2.45, trade axis of all line features permuted within book x session x td-bin x side strata, per-world shipped layer = its own base). Real: 63 changed cells, max L6M cut +22.3%, max among STRICT/TOLERANT +22.3% (2 S/T cells), C = +22.3%, max PRE cut +9.4%.
+
+| statistic | real | null min / median / p95 / max | share of null worlds >= real (+1 smoothing) |
+|---|---|---|---|
+| max L6M cut over the 63 cells | +0.223 | +0.021 / +0.174 / +0.296 / +0.333 | 0.25 (n=75) |
+| max L6M cut among STRICT/TOLERANT cells | +0.223 | +0.000 / +0.081 / +0.232 / +0.333 | 0.08 (n=73) |
+| max PRE cut over the 63 cells | +0.094 | +0.013 / +0.067 / +0.159 / +0.179 | 0.25 (n=75) |
+| number of STRICT/TOLERANT cells | +2.000 | +0.000 / +6.000 / +19.600 / +26.000 | 0.93 (n=75) |
+| rank of C's own cut (+22.3%) against the world maxima | - | - | 0.25 |
+**Reading:** 63-cell fw2 grid, shuffled-day line sets. The grid's best L6M cut by chance has median +17.4% and 95th percentile +29.6%; the real best (+22.3%, the CRT4h cell) is exceeded or matched in 25% of worlds (0.25, n=75); among STRICT/TOLERANT cells in the null the best is +8.1% median, and the real +22.3% is matched in 8% of worlds (p ~ 0.08); but the real grid has only 2 STRICT/TOLERANT cells against a null median of 6 (the real lines pass the gates LESS often than permuted lines). So the maxDD-cut size of the best cell is not distinguishable from best-of-grid chance at the usual 5% level; label stays LEAD (L6M/HOLD), not RISK-KEEP. The D/age curve is in the section above; the line-parameter variants (CRT bar length/anchor, OTE705 fractal strength/number of swings, camH3 session/coefficient; streams built in out/zones3/s2/b2/b4_lines.npz, tie-outs: CRT_N4_s0 exact, OTE_n2_K3 98.9% pattern, jobs_gen_var.pkl 160 cells) were NOT scored: parked by the user order closing ZONES-3 (kijun1h variants dropped: no STRICT cell). Resume: `python3 -I worker_v12.py gen <0..2> 3 var` then rep_var.py.

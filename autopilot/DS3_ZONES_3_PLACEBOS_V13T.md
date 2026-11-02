@@ -50,3 +50,6 @@ Script tl_plc9_an.py, table out/zones3/s3_v13tl/placebos_tl9_table.csv. Same met
 | S5 sA40>=1 skip | .502 (.85 / .260) | .502 (.93) | -.323 (.52) | .219 (.79) | -.585 (.05) | +.068 | yes | NO (MID -.32) | no |
 | S4a SWG f5L 3m D20 half | .282 (.75 / .153) | .256 (.90) | -.125 (.60) | .086 (.83) | .176 (.83) | +.051 | yes | yes | no |
 Firmed-up reading (the 3-shift ranks were coarse): ranks move by at most 0.1; no lead reaches .95 together in L6M and PRE/X'. sA40 now fails no-harm at K=9 (MID -.32). EQL_tight keeps L6M/HOLD rank 1.00 but its PRE rank is .81, X' -.18 (rank .17) and the W29-W39 drop makes it -.05: one-episode. SWG f5L 3m keeps all three windows positive (L6M .28, PRE .09, X' .18) but ranks .75/.83/.83 and +.05 without W29-W39: lead only. CRT4h 60 fw2, FIB ret62 and BT swing flip 9-shift placebos are running (placebos_tl9b); results to be appended.
+
+### Parked (2026-11-02, USER ORDER: ZONES-3 closed except ZL-1 flip-level null and the Monday script)
+The 9-shift placebos for CRT4h 60 fw2 any, FIB ret62 and BT swing flip (placebos_tl9b) and the 60-chain walk-forward (wf11c) were stopped before completion; no results from them are claimed. The 30-chain walk-forward and the 9-shift results above stand. Partial pickles (if any) remain in out/zones3/s3_v13tl/placebos_tl9b_*.pkl, unanalysed.
