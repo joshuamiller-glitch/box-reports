@@ -1,6 +1,9 @@
 # BT_SHADOW_D7_V14_SPEC - implementation-ready spec of the BT swing-flip SHADOW line for D7 v1.4 (DS7.cs) (ZL-1, 2026-11-02; written from the frozen definition, DS3_BT_SWING_FLIP_CANDIDATE.md sec 13, plus one CORRECTION found while preparing the unit tests, section 2 rule 5)
 Status: SHADOW ONLY. The line computes a flag at each base signal and writes a log row; it never changes an order, a size or an exit. Base for the research numbers: truth base V13T (V13Z with the take lines off, lock none; fill basis N; live 1-s grid). Research evidence: autopilot/DS3_BT_SWING_FLIP_CANDIDATE.md (saved dollars L6M +121k, HOLD +165k, PRE +82k, X' +67k, 12/14 quarters positive; mean-type LEAD, NOT a drawdown cut).
 
+**Excess over structural null (read this first):** Excess over structural null (V13T, lock None, all 1,078 taken trades, 2023-04..2026-10): real saved $260k vs random-time-swing null mean $99k (300 count-matched families), so only $161k (62%) is excess (rank p 0.01); HOLD $167k vs $80k, excess $87k (p 0.01); grid-selection best-of-32 $107.7k vs 1,000 naive-offset families max $133.7k (p 0.002) but vs structural-null families (n=82 so far) p95 $111.6k (p 0.08). Judge forward saved dollars against the null mean, not against zero.
+
+
 ## 1. Inputs (all from D7's own tape; nothing else)
 * Trade print stream of the traded NQ contract: (exchange timestamp with at least 1-s resolution, price). Every print counts (no size filter, no side filter). Prices in the RAW contract frame (the research used a back-adjusted frame; only differences matter, see section 6).
 * The base signals (each book's entry decision): second of the decision, side (+1 long / -1 short), entry price E (the price the base would use for the signal, as D7 logs it), target distance td (points), stop distance (points), book, session.

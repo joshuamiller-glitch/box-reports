@@ -2,7 +2,7 @@
 
 **BASE LABEL: this file is on D7 V13Y (the fixed base: add-fill ordering fix; V13X results are in DS3_ZONES_3_S4A_V13X_DEFECT_BASE.md and are labelled defect base). Original V13X note: sections 0-14 were on V13X = DEFECT BASE (BASE-4 found d7lib dropped TH-L2 loss cuts and take-line exits that preceded the resting-add fill, 846 rows). Section 15 re-runs the leads on the FIXED base V13Y; the full V13Y re-screen is in progress and will replace the headline. Original header: D7 v1.3 EXACT (V13X, user paste 02:45Z). HEADLINE FRAME = combined stack lock OFF (lock=None: the engine's own per-book 12R week floor and day give-back locks remain), as the lead ordered at 04:30Z; the same cells with the combined 12R lock ON are in the columns marked 'lock12'. A cut that exists only with lock 12 is LOCK-ONLY. The older assumed-base file is DS3_ZONES_3_S4A_ASSUMED_BASE.md.**
 
-STATUS: S4a deliverable written 2026-11-02 13:18Z (V13Y; placebos 100 draws x3 for the 3 band-relevant cells, none for the rest; BEHIND/AT on V13Y pending, V13X versions are in the defect-base file). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
+STATUS: S4a deliverable written 2026-11-02 14:50Z (V13Y; placebos 100 draws x3 for the 3 band-relevant cells, none for the rest; BEHIND/AT on V13Y pending, V13X versions are in the defect-base file). POST-HOC, Shadow only, no PASS claim, nothing here is a lead until the robustness standard is met; labels below say how far each cell got.
 Prereg l2vast/ds3/prereg/ZONES3_S4A_prereg.md sha256 e8d9004f35ecf860d2beaac5372bdd274862c0db1225523eb12a877ac3fcb66d (DECISIONS.md). dead_lookup before: out/zones3_new/s4a_dead_lookup.txt (NOT FOUND for every spec); append_cells after: see end. NEW windows only (code/cap/windows.py): L1M L2M (view, n weeks 5/9) L3M L6M HOLD MID PRE X'. Old-cap numbers are not used.
 
 ## 0. Plain verdict
@@ -865,7 +865,7 @@ Base MID: weekly mean +16.4k, weekly SD 38.7k, maxDD 30.2k (trough week 202613; 
 | SWG f3L 3m D40 half London | -0.63 | 30.2 > 49.2 | +19.1 | +0.49 | -3.5 | -0.09 | 202607 -13.8, 202610 -13.7, 202618 -10.9 | P7 -36.6, K7 -5.6, U7 -4.6 | london -43.2, nypm -1.7, asia +0.0 |
 ## 24. Truth base V13T (V13Z with the five take lines OFF, lock none = per-book locks, fill basis N): re-run of the S4a finalists (user answers 13:30Z)
 
-V13T base maxDD (phase 0, $k): L6M 132, HOLD 139, MID 51, PRE 166, X 91. PA = phase-average of the paired cut over K=9 lock-reset phases. Band = Z3 V13Y final band (the V13T band is not yet published: provisional, flip-2 below 1,000 fired rows else flip-5). No-harm in DOLLARS (my recommendation): in every window the PA-mean maxDD increase vs base is <= max(band x base window maxDD, 0.5 x base weekly SD) and the PA mean change over ALL is not below minus the paired MDE. Two-episode rule with the V13T base's own carrying episodes: L6M weeks 202629-202637; PRE weeks 202435-202437; X weeks 202342-202347.
+V13T base maxDD (phase 0, $k): L6M 132, HOLD 139, MID 51, PRE 166, X 91. PA = phase-average of the paired cut over K=9 lock-reset phases. Band = Z3 V13T PA9 FINAL band (DS3_ZONES_3_NOISE_V13T_FINAL.md, n=100: flip-2 / flip-5 L6M .188/.219, HOLD .182/.205, MID .212/.322, PRE .078/.099, X' .145/.182; flip-2 if the cell acts on < 3.5 % of rows else flip-5). No-harm in DOLLARS (my recommendation): in every window the PA-mean maxDD increase vs base is <= max(band x base window maxDD, 0.5 x base weekly SD) and the PA mean change over ALL is not below minus the paired MDE. Two-episode rule with the V13T base's own carrying episodes: L6M weeks 202629-202637; PRE weeks 202435-202437; X weeks 202342-202347.
 
 | cell | fires | vol | PA cut L6M | HOLD | MID | PRE | X' | min phase L6M/PRE/X' | band rule | no-harm ($) | two-episode | PASS | V13Y PA L6M/PRE/X' (before) |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -884,13 +884,15 @@ V13T base maxDD (phase 0, $k): L6M 132, HOLD 139, MID 51, PRE 166, X 91. PA = ph
 | POOL D40 half | 48074 | 0.288 | +0.18 | +0.14 | +0.09 | +0.03 | +0.02 | -0.06/-0.14/-0.04 |  | NO | ONE |  |  |
 | EQL|EQL_tight|5m D40 skip | 2062 | 0.023 | +0.33 | +0.16 | -0.07 | +0.01 | -0.24 | +0.23/+0.01/-0.31 |  | NO | ONE |  | +0.09 / +0.05 / +0.26 |
 | SWG|f3L|15s D20 half | 34145 | 0.210 | +0.22 | +0.15 | +0.06 | -0.10 | -0.02 | +0.10/-0.27/-0.14 |  | NO | ONE |  | +0.48 / -0.11 / +0.22 |
-| SWG|f5L|3m D20 half | 14039 | 0.087 | +0.31 | +0.26 | -0.04 | +0.12 | +0.22 | +0.15/+0.03/+0.19 |  | yes | OK |  | +0.28 / -0.01 / +0.27 |
+| SWG|f5L|3m D20 half | 14039 | 0.087 | +0.31 | +0.26 | -0.04 | +0.12 | +0.22 | +0.15/+0.03/+0.19 | YES | yes | OK | PASS | +0.28 / -0.01 / +0.27 |
 | MAS|bb_up|1h D20 skip | 3120 | 0.027 | +0.14 | +0.14 | +0.30 | +0.06 | +0.10 | +0.11/+0.01/+0.03 |  | yes | OK |  | +0.14 / +0.02 / +0.03 |
 | PRF|vwap|day D20 skip | 2865 | 0.039 | +0.03 | -0.02 | -0.26 | +0.03 | +0.16 | -0.04/+0.02/+0.06 |  | yes | ONE |  |  |
 | SWG|f3L|15s D40 half London | 10214 | 0.069 | +0.05 | +0.05 | -0.35 | +0.10 | -0.15 | -0.04/+0.03/-0.24 |  | yes | OK |  |  |
 | POOL D20 half | 36171 | 0.211 | +0.52 | +0.43 | -0.21 | +0.18 | +0.02 | +0.41/+0.09/-0.03 | YES | NO | OK |  |  |
 
-Cells passing band rule + dollar no-harm + two-episode on V13T: 0.
+Cells passing band rule + dollar no-harm + two-episode on V13T: 1.
+
+**Passer SWG|f5L|3m D20 half: placebos (V13T lock none, n=100 per kind): ranks on the mean of L6M/HOLD/PRE/X' cuts A 0.01 / B 0.01 / C 0.02; mean change -3039 $/wk (placebo mean -1788). Carrying-episode drop (V13T base episodes): L6M +0.31 -> +0.07; PRE +0.24 -> +0.08; X +0.19 -> +0.22. With the carrying episode removed L6M and PRE fall below the band, so the cell is a LEAD (small, volume-priced), not RISK-KEEP.**
 
 ## 25. POOL D20 half on V13T: closest near-pass (band rule met, two-episode OK, dollar maxDD harm none; fails only the mean: -5843 $/wk)
 

@@ -1,9 +1,10 @@
-# DS3_ZONES_3_HALF_FINAL_V13T - is any line worth SKIP vs HALF on PRE + L6M together, or is HALF D20 final? (Z1; 2026-11-02 14:08Z)
+# DS3_ZONES_3_HALF_FINAL_V13T - is any line worth SKIP vs HALF on PRE + L6M together, or is HALF D20 final? (Z1; 2026-11-02 14:47Z)
 
 Base V13T = D7 V13Z with the five take lines OFF (lines=empty), lock none (per-book locks only), fill basis N, new cap 20261031. POST-HOC, no PASS, Shadow only. Prereg ZONES3_S1_addendum3_V13T_HALFFINAL (sha 15ce2722...) in DECISIONS.md. Drawdown first; windows L1M/L2M view only; worst-20 marked * when the window has < 20 weeks. "Left out" = the shipped HALF layer without that line (OTE-62: without its B73 D30 action). Episodes recomputed on V13T (largest drawdown episode of the shipped HALF layer in each window, ISO weeks peak..recovery) and removed from every variant before the cut is recomputed. Phase-averaged = trading days shifted 0..4 before bucketing into 5-day blocks. Equal-risk mean is the linear approximation (~).
 
 ## ANSWER
-(answer pending)
+No line is worth SKIP over HALF on PRE + L6M together, and HALF D20 is final in the sense that nothing beats it, but the layer itself is weak on the truth base. On V13T (take lines off, lock none, basis N) the shipped HALF layer cuts maxDD L6M +20% (165 > 132k), HOLD +15%, MID +20%, but is flat in PRE (-1%, 165 > 166k) and worse in X' (-19%); against 100 placebo draws per kind none of its cuts is distinguishable from a random half-lot layer (ranks L6M 0.32 / 0.48 / 0.31, HOLD 0.24 / 0.40 / 0.24, MID 0.36 / 0.28 / 0.25, PRE 0.70 / 0.74 / 0.57), and the L6M cut is one episode (drop ISO 202629-202637: +2%). The PRE protection the user's note attributes to 6 of 8 lines does not reproduce on V13T: per line, PRE contributions of the HALF action are +0..+4% (kijun1h +4%, KCup4h +0%, camH3 +1%) or negative (OTE705 -9%, OTE79 -3%), and with the carrying PRE episode dropped they are -4..+4%; the PRE edge seen on V13Y (+23%, placebo ranks 0.01-0.02) was an interaction with the take lines that are now being pulled. SKIP instead of HALF fails the pre-declared rule for every one of the 8 lines (needs SKIP - HALF > +3 pp in PRE and in L6M with the episode dropped, mean not below -0.5 MDE, random-row-skip placebo rank <= 0.10): the nearest is camH3 (PRE +12.6 pp, L6M 0.0 pp; placebo rank 0.049 / 0.082 in PRE only), the rest are negative on at least one of the two (PDmid -5.5 / -3.0, CRT4h -7.9 / -2.3, OTE705 -4.8 / 0.0, OTE62 +0.4 / -12.2); the whole-layer SKIP is worse than HALF (PRE +6%, L6M +4%, X' -38%). Every line is D-fragile (none keeps a PRE and L6M cut >= 5% at more than one of D 10/15/20/25/30). The only line-level signals are CRT4h HALF in HOLD/MID (cuts +14% / +31%, ranks 0.03-0.08 / 0.01-0.04) with X' -23% and camH3 SKIP in PRE (single window): single-window, not leads. Decision input: keep HALF D20 as the shipped action (SKIP adds nothing, and OTE-62 B73 D30 stays untouched), but do not claim PRE protection for the layer on V13T; its case rests on L6M/HOLD/MID, one episode.
+
 
 ## 1. Whole layer on V13T: NONE vs HALF vs SKIP
 | window (weeks) | carrying episode of the HALF layer (ISO peak..trough, depth $k, recovered?) | NONE maxDD | HALF maxDD (cut) | SKIP maxDD (cut) | phase-avg maxDD NONE / HALF / SKIP | maxDD with the episode dropped: NONE / HALF / SKIP (cuts) | worst-20 NONE / HALF / SKIP | Calmar NONE / HALF / SKIP | mean $k/wk NONE / HALF / SKIP (HALF-NONE, SKIP-NONE MDE) | ulcer NONE / HALF / SKIP | CVaR5 NONE / HALF / SKIP | equal-risk mean d (~linear) HALF / SKIP |
@@ -25,11 +26,11 @@ Base V13T = D7 V13Z with the five take lines OFF (lines=empty), lock none (per-b
 | kijun1h HALF (marginal vs left out) | +4% / +2% / -0% / -1% / -4% | 0.119/0.139/0.158 | 0.465/0.356/0.564 | 0.545/0.455/0.485 | 0.703/0.723/0.624 | 0.871/0.792/0.851 (100/100/100) |
 | PDmid HALF (marginal vs left out) | +0% / +5% / +0% / +0% / -36% | 0.822/0.832/0.792 | 0.119/0.119/0.139 | 0.416/0.584/0.426 | 0.812/0.941/0.842 | 1.000/1.000/1.000 (100/100/100) |
 | CRT4h HALF (marginal vs left out) | +1% / +8% / +14% / +31% / -23% | 0.594/0.406/0.653 | 0.218/0.198/0.178 | 0.079/0.030/0.059 | 0.030/0.040/0.010 | 0.960/0.980/0.980 (100/100/100) |
-| KCup4h HALF (marginal vs left out) | +0% / +1% / +0% / +0% / -4% | 0.505/0.485/0.427 | 0.386/0.426/0.354 | 0.584/0.554/0.542 | 0.782/0.752/0.865 | 0.871/0.743/0.927 (100/100/95) |
-| camH3 HALF (marginal vs left out) | +1% / +1% / -1% / -17% / -3% | 0.366/0.465/- | 0.277/0.436/- | 0.406/0.475/- | 0.970/0.931/- | 0.782/0.673/- (100/100/0) |
-| OTE705 HALF (marginal vs left out) | -9% / +0% / -5% / -17% / +2% | 1.000/1.000/- | 0.727/0.613/- | 0.727/0.645/- | 1.000/0.903/- | 0.636/0.419/- (10/30/0) |
-| OTE79 HALF (marginal vs left out) | -3% / +3% / -3% / -10% / +4% | -/-/- | -/-/- | -/-/- | -/-/- | -/-/- (0/0/0) |
-| OTE62 as D20 HALF line (vs left out) | +1% / -15% / -5% / +13% / +1% | -/-/- | -/-/- | -/-/- | -/-/- | -/-/- (0/0/0) |
+| KCup4h HALF (marginal vs left out) | +0% / +1% / +0% / +0% / -4% | 0.505/0.485/0.416 | 0.386/0.426/0.347 | 0.584/0.554/0.554 | 0.782/0.752/0.871 | 0.871/0.743/0.931 (100/100/100) |
+| camH3 HALF (marginal vs left out) | +1% / +1% / -1% / -17% / -3% | 0.366/0.465/0.218 | 0.277/0.436/0.366 | 0.406/0.475/0.535 | 0.970/0.931/0.980 | 0.782/0.673/0.743 (100/100/100) |
+| OTE705 HALF (marginal vs left out) | -9% / +0% / -5% / -17% / +2% | 1.000/0.990/0.990 | 0.515/0.535/0.535 | 0.644/0.644/0.723 | 0.941/0.931/0.931 | 0.455/0.436/0.386 (100/100/100) |
+| OTE79 HALF (marginal vs left out) | -3% / +3% / -3% / -10% / +4% | 0.871/0.891/0.822 | 0.396/0.416/0.495 | 0.554/0.584/0.574 | 0.931/0.861/0.931 | 0.396/0.347/0.366 (100/100/100) |
+| OTE62 as D20 HALF line (vs left out) | +1% / -15% / -5% / +13% / +1% | 0.584/0.465/0.465 | 0.881/0.960/0.931 | 0.822/0.950/0.861 | 0.079/0.030/0.030 | 0.505/0.574/0.436 (100/100/100) |
 
 ## 3. Per line: HALF vs SKIP vs left out (marginal-in-layer)
 | line | action | maxDD cut vs the line left out: PRE / L6M / HOLD / MID / X' | same, carrying episode dropped: PRE / L6M | phase-avg maxDD $k PRE / L6M | mean d vs left-out $k/wk (MDE) PRE / L6M | worst-20 PRE b>a |
@@ -54,14 +55,14 @@ Base V13T = D7 V13Z with the five take lines OFF (lines=empty), lock none (per-b
 ## 4. SKIP instead of HALF per line (gain over HALF; placebo = same number of random rows skipped instead)
 | line | SKIP - HALF maxDD cut (pp), carrying episode dropped: PRE / L6M | not dropped: PRE / L6M / HOLD / MID / X' | mean d SKIP-HALF $k/wk (MDE) PRE / L6M | random-row skip placebo (same row count skipped instead; share of draws with at least this gain A / B (n)): PRE / L6M | worth SKIP? (rule: both PRE and L6M > +3 pp with the episode dropped, mean not below -0.5 MDE, placebo rank <= 0.10) |
 |---|---|---|---|---|---|
-| kijun1h | -2.0 / +1.9 | +9.6 / -4.5 / -5.1 / -15.3 / +2.3 | +0.8 (1.3) / -1.3 (2.5) | A - / - ; B - / - (0/0) | no |
-| PDmid | -5.5 / -3.0 | +1.1 / +8.7 / +2.3 / +4.9 / -16.3 | -0.5 (0.9) / -3.2 (7.0) | A - / - ; B - / - (0/0) | no |
-| CRT4h | -7.9 / -2.3 | +1.3 / -6.2 / -16.8 / -45.7 / +13.0 | +1.1 (1.5) / -0.3 (2.2) | A - / - ; B - / - (0/0) | no |
-| KCup4h | +1.6 / -0.1 | +0.4 / +0.3 / +0.0 / +0.0 / -6.8 | -0.3 (1.5) / -0.0 (1.3) | A - / - ; B - / - (0/0) | no |
-| camH3 | +12.6 / +0.0 | +2.5 / -9.2 / -3.6 / -5.2 / -7.4 | +0.5 (1.8) / +0.2 (1.7) | A - / - ; B - / - (0/0) | no |
-| OTE705 | -4.8 / +0.0 | +4.2 / -8.0 / -2.6 / -6.2 / -4.7 | -0.1 (2.0) / +1.3 (3.0) | A - / - ; B - / - (0/0) | no |
-| OTE79 | -2.0 / +2.6 | -1.7 / -18.1 / -12.1 / -4.1 / -5.5 | +0.5 (1.6) / +0.4 (1.9) | A - / - ; B - / - (0/0) | no |
-| OTE62 | +0.4 / -12.2 | -1.8 / -25.2 / -25.2 / +1.8 / +17.8 | -0.5 (2.1) / -0.6 (5.1) | A - / - ; B - / - (0/0) | no |
+| kijun1h | -2.0 / +1.9 | +9.6 / -4.5 / -5.1 / -15.3 / +2.3 | +0.8 (1.3) / -1.3 (2.5) | A 0.656 / 0.689 ; B 0.623 / 0.557 (60/60) | no |
+| PDmid | -5.5 / -3.0 | +1.1 / +8.7 / +2.3 / +4.9 / -16.3 | -0.5 (0.9) / -3.2 (7.0) | A 0.639 / 0.918 ; B 0.803 / 0.836 (60/60) | no |
+| CRT4h | -7.9 / -2.3 | +1.3 / -6.2 / -16.8 / -45.7 / +13.0 | +1.1 (1.5) / -0.3 (2.2) | A 0.852 / 0.836 ; B 0.885 / 0.852 (60/60) | no |
+| KCup4h | +1.6 / -0.1 | +0.4 / +0.3 / +0.0 / +0.0 / -6.8 | -0.3 (1.5) / -0.0 (1.3) | A 0.410 / 0.689 ; B 0.443 / 0.754 (60/60) | no |
+| camH3 | +12.6 / +0.0 | +2.5 / -9.2 / -3.6 / -5.2 / -7.4 | +0.5 (1.8) / +0.2 (1.7) | A 0.049 / 0.705 ; B 0.082 / 0.705 (60/60) | no |
+| OTE705 | -4.8 / +0.0 | +4.2 / -8.0 / -2.6 / -6.2 / -4.7 | -0.1 (2.0) / +1.3 (3.0) | A 0.623 / 0.770 ; B 0.721 / 0.705 (60/60) | no |
+| OTE79 | -2.0 / +2.6 | -1.7 / -18.1 / -12.1 / -4.1 / -5.5 | +0.5 (1.6) / +0.4 (1.9) | A 0.639 / 0.672 ; B 0.623 / 0.541 (60/60) | no |
+| OTE62 | +0.4 / -12.2 | -1.8 / -25.2 / -25.2 / +1.8 / +17.8 | -0.5 (2.1) / -0.6 (5.1) | A 0.410 / 0.902 ; B 0.557 / 0.836 (60/60) | no |
 
 ## 5. D sensitivity (10 / 15 / 20 / 25 / 30 pts = D +-25 / 50%)
 | line | action | PRE cut vs left out at D = 10 / 15 / 20 / 25 / 30 | L6M cut at D = 10 / 15 / 20 / 25 / 30 | verdict |

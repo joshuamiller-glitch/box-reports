@@ -2,6 +2,10 @@
 
 Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Method: placebo layer = the shipped 7-line HALF mask (D20, half lots) replaced by a random half-lot mask with the same number of LIVE rows (A = same count per month, 100 draws; B = same count per month x book x session, 50 draws); OTE-62 B73, TH-L2 loss, profit lines, locks, sizer unchanged. Every placebo (and the references) has its WHOLE lot table scaled (engine lscale, integer-lot rounding) until the worst-20-weeks sum over ALL history equals the shipped layer's at scale 1 in the same frame (stop at |gap| <= 2.5% (<=5 engine runs); the residual gap is corrected linearly in mean, maxDD and ulcer: x target/achieved). Metrics per window: weekly mean ($k/wk), maxDD ($k, weekly cumulative), Calmar (mean/maxDD), ulcer (RMS of the weekly drawdown path, $k). RANK = share of placebo draws that are at least as GOOD as the shipped layer (higher mean / lower maxDD / higher Calmar / lower ulcer); small rank = the shipped layer beats random halving; ~0.5 = indistinguishable. Frames: lock none = per-book locks only (headline), 12R = + combined stack lock. Post-hoc.
 
+
+## ANSWER ON V13T_LIVE (xcost 0.80, stopcost 2.45, lines empty, lock none = per-book locks; lock-12 frame = reference only)
+**On the live-cost base the shipped HALF layer is indistinguishable from random halving at equal risk.** Lock none, 100 same-count random half-lot layers (+50 stratified), each scaled to the shipped worst-20: F9 / L6M / HOLD equal-risk mean ranks 0.27 / 0.25 / 0.52, maxDD ranks 0.59 / 0.59 / 0.56, Calmar ranks 0.53 / 0.51 / 0.55; MID maxDD 0.27; PRE mean rank 0.06 and Calmar 0.06 (maxDD 0.41); X' 0.47-0.85. The only slices where the layer beats random halving are book P7 in PRE (rank 0.00), vol tag 1 days (F9 / L6M / MID 0.00, HOLD 0.05) and a few session cells; multiplicity: 5 of 42 PRE book x session x vol-tag slices at rank <= 0.05 vs 2.1 expected (share of random layers with >= 5: 0.15) = inside chance. PRE thirds: mean edge only in the third (rank 0.05), maxDD in none. Shipped vs no layer (composite page): maxDD cut F9 / L6M / HOLD / PRE +7%, MID +25%, X' -16%, means within MDE. Net: on the true cost model the layer is a size effect (halving ~10% of rows), with no information edge that survives the multiplicity null; the V13Y edge (PRE and the recent windows) shrank on V13Z and is gone on V13T_LIVE. Episode carriers moved: F9 #1 is now ISO W28-W39 (depth 150.7k) carried by P7 -76k, K7 -64k, M7 -35k and sessions London -89k, Asia -32k (DS3_ZONES_EPISODES_V13T.md).
+
 ## LOCK NONE (headline)
 
 ### A: same count per month: 100 draws; equal-risk lot scale of the placebo layers: median 1.017 [0.979, 1.106] (shipped = 1.000); residual risk gap max 4.2%
@@ -79,3 +83,96 @@ Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Method: placebo layer = the sh
 | none layer, uniform lot scale 0.95 | 24.1 / DD 151.9 / Cal 0.159 / U 51.5 | 10.3 / DD 76.2 / Cal 0.135 / U 30.5 | 25.3 / DD 151.9 / Cal 0.167 / U 59.8 | 23.6 / DD 151.9 / Cal 0.156 / U 47.2 | 19.4 / DD 42.1 / Cal 0.460 / U 16.4 | 9.5 / DD 169.5 / Cal 0.056 / U 68.6 | -3.6 / DD 215.5 / Cal -0.017 / U 129.2 |
 | shipped layer, uniform lot scale 0.95 | 24.5 / DD 134.1 / Cal 0.183 / U 46.4 | 12.5 / DD 57.6 / Cal 0.217 / U 22.8 | 26.6 / DD 134.1 / Cal 0.198 / U 53.8 | 22.1 / DD 134.1 / Cal 0.165 / U 44.9 | 17.8 / DD 41.0 / Cal 0.433 / U 15.5 | 7.2 / DD 129.6 / Cal 0.056 / U 56.1 | -3.8 / DD 196.7 / Cal -0.019 / U 120.4 |
 | none layer, uniform lot scale 1.0 | 26.6 / DD 166.0 / Cal 0.160 / U 56.9 | 12.6 / DD 83.4 / Cal 0.151 / U 33.7 | 28.6 / DD 166.0 / Cal 0.172 / U 65.4 | 24.9 / DD 166.0 / Cal 0.150 / U 52.6 | 19.7 / DD 53.5 / Cal 0.369 / U 23.1 | 11.4 / DD 182.2 / Cal 0.063 / U 76.7 | -5.4 / DD 294.8 / Cal -0.018 / U 175.3 |
+
+
+# ATTRIBUTION OF THE SHIPPED LAYER'S PRE EDGE (lock none, equal risk; BASE-4, 2026-11-02T14:44Z)
+
+Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Equal risk = lot table scaled to the shipped layer's worst-20 (all history), residual gap corrected linearly. EDGE of a layer = its metric minus the median of random half-lot layers of the SAME live-row count per month (equal risk); contribution of a line = shipped edge minus the edge of the layer without that line (positive = the line carries edge). Post-hoc.
+
+## (1) Leave-one-line-out (the 8 shipped lines), shipped edge for reference: PRE: mean +2.2k, maxDD +2k better; F9: mean +1.3k, maxDD -4k better; L6M: mean +1.4k, maxDD -4k better
+| line removed | live rows halved | scale c / gap | PRE | F9 | L6M |
+|---|---|---|---|---|---|
+| kijun1h | 3393 | 1.031/2.2% | mean 16.7 (edge +1.0, ranks 0.00/0.75); maxDD 169 (edge +6); line carries mean +1.2 / maxDD +8 | mean 34.8 (edge +3.0, ranks 0.00/0.00); maxDD 102 (edge -42); line carries mean -1.7 / maxDD -47 | mean 38.5 (edge +4.2, ranks 0.10/0.00); maxDD 102 (edge -42); line carries mean -2.8 / maxDD -47 |
+| PDmid | 3687 | 1.041/0.2% | mean 17.5 (edge +2.8, ranks 0.00/0.55); maxDD 166 (edge +5); line carries mean -0.6 / maxDD +6 | mean 34.5 (edge +1.5, ranks 0.15/0.35); maxDD 133 (edge -7); line carries mean -0.2 / maxDD -11 | mean 38.1 (edge +2.6, ranks 0.10/0.35); maxDD 133 (edge -7); line carries mean -1.2 / maxDD -11 |
+| CRT4h | 3390 | 1.059/0.0% | mean 16.7 (edge +1.8, ranks 0.10/0.55); maxDD 168 (edge +1); line carries mean +0.4 / maxDD +2 | mean 33.9 (edge +2.6, ranks 0.15/0.50); maxDD 139 (edge +4); line carries mean -1.3 / maxDD -1 | mean 37.9 (edge +3.1, ranks 0.10/0.50); maxDD 139 (edge +4); line carries mean -1.7 / maxDD -1 |
+| KCup4h | 3565 | 1.017/1.0% | mean 16.6 (edge +2.9, ranks 0.00/0.25); maxDD 169 (edge -4); line carries mean -0.7 / maxDD -2 | mean 33.7 (edge +1.9, ranks 0.15/0.35); maxDD 137 (edge -7); line carries mean -0.6 / maxDD -11 | mean 36.9 (edge +2.4, ranks 0.20/0.35); maxDD 137 (edge -7); line carries mean -1.0 / maxDD -11 |
+| camH3 | 3183 | 0.988/3.6% | mean 14.5 (edge +0.5, ranks 0.35/0.55); maxDD 173 (edge +5); line carries mean +1.7 / maxDD +7 | mean 33.8 (edge +1.0, ranks 0.30/0.50); maxDD 134 (edge -3); line carries mean +0.3 / maxDD -8 | mean 36.3 (edge +0.9, ranks 0.35/0.50); maxDD 134 (edge -3); line carries mean +0.5 / maxDD -8 |
+| OTE705 | 3300 | 1.002/0.4% | mean 17.2 (edge +1.8, ranks 0.05/0.20); maxDD 159 (edge -14); line carries mean +0.4 / maxDD -12 | mean 33.8 (edge +1.5, ranks 0.10/0.70); maxDD 155 (edge +8); line carries mean -0.2 / maxDD +4 | mean 36.8 (edge +1.3, ranks 0.05/0.70); maxDD 155 (edge +8); line carries mean +0.1 / maxDD +4 |
+| OTE79 | 3246 | 1.002/1.6% | mean 17.1 (edge +2.6, ranks 0.10/0.10); maxDD 164 (edge -8); line carries mean -0.4 / maxDD -6 | mean 31.8 (edge -1.1, ranks 0.70/0.65); maxDD 151 (edge +7); line carries mean +2.4 / maxDD +3 | mean 34.1 (edge -1.6, ranks 0.75/0.65); maxDD 151 (edge +7); line carries mean +3.0 / maxDD +3 |
+| OTE62 B73 | 3824 | 1.049/1.7% | mean 17.1 (edge +2.2, ranks 0.05/0.25); maxDD 165 (edge -4); line carries mean +0.0 / maxDD -3 | mean 34.3 (edge +1.0, ranks 0.40/0.35); maxDD 131 (edge -4); line carries mean +0.3 / maxDD -9 | mean 38.0 (edge +1.6, ranks 0.25/0.35); maxDD 131 (edge -4); line carries mean -0.2 / maxDD -9 |
+
+"ranks a/b" = share of the 20 matched-count random layers at least as good on mean / maxDD (small = the layer without the line still beats random). "line carries" = shipped edge minus the without-line edge in $k/wk (mean, positive = the line adds mean) and maxDD $k reduction attributable (positive = the line adds protection).
+
+## (3) PRE split in thirds (shipped vs the 100 same-count equal-risk random layers; cumulative restarts in each third)
+| segment | mean ship / placebo med | rank mean | maxDD ship / med | rank maxDD | Calmar ship / med | rank Calmar |
+|---|---|---|---|---|---|---|
+| third 1: ISO 202405..202429 (25 wk) | 12.9 / 11.7 | 0.24 | 86 / 79 | 0.67 | 0.150 / 0.151 | 0.51 |
+| third 2: ISO 202430..202502 (25 wk) | 22.8 / 20.8 | 0.22 | 166 / 157 | 0.73 | 0.137 / 0.135 | 0.46 |
+| third 3: ISO 202503..202527 (25 wk) | 16.1 / 12.5 | 0.05 | 165 / 159 | 0.58 | 0.098 / 0.077 | 0.17 |
+
+
+## (2a) PRE edge by book and session (40 equal-risk random layers with cubes; own-series PRE mean $k/wk shipped / placebo median, rank = share of placebos at least as good; own maxDD $k)
+| unit | PRE mean ship / plc | rank mean | PRE maxDD ship / plc | rank maxDD |
+|---|---|---|---|---|
+| book K7 | +1.2 / +1.7 | 0.85 | 40 / 42 | 0.47 |
+| book P7 | +12.7 / +10.0 | 0.00 | 110 / 114 | 0.38 |
+| book U7 | +1.4 / +1.4 | 0.47 | 62 / 62 | 0.57 |
+| book H7 | +0.7 / +0.9 | 0.68 | 64 / 66 | 0.38 |
+| book M7 | +0.0 / +0.1 | 0.68 | 88 / 86 | 0.60 |
+| book A6 | +1.3 / +1.4 | 0.78 | 18 / 14 | 0.90 |
+| session asia | +11.2 / +9.9 | 0.03 | 64 / 66 | 0.42 |
+| session london | -2.8 / -2.7 | 0.60 | 326 / 323 | 0.50 |
+| session nyam | +8.9 / +8.0 | 0.12 | 57 / 61 | 0.30 |
+| session nypm | -0.0 / +0.1 | 0.90 | 43 / 44 | 0.47 |
+
+
+## (2b) The PRE episode ISO 2025-W05..W16 (shipped maxDD 178k, London carries -220k): sum of PRE P&L over those weeks by book / session, $k (shipped vs equal-risk random layers; rank = share of placebos at least as good)
+Total episode P&L: shipped -1k vs placebo median -39k [-100,+18], rank 0.15.
+| unit | shipped | placebo median [5,95] | rank |
+|---|---|---|---|
+| book K7 | -13 | -11 [-24,+1] | 0.60 |
+| book P7 | +117 | +86 [+17,+158] | 0.20 |
+| book U7 | -21 | -34 [-45,-24] | 0.00 |
+| book H7 | -17 | -14 [-23,-4] | 0.72 |
+| book M7 | -72 | -71 [-78,-66] | 0.62 |
+| book A6 | +6 | +6 [+1,+11] | 0.42 |
+| session asia | +180 | +149 [+114,+183] | 0.07 |
+| session london | -201 | -206 [-233,-180] | 0.40 |
+| session pre | +0 | +0 [+0,+0] | 1.00 |
+| session nyam | +35 | +38 [+3,+71] | 0.53 |
+| session nypm | -15 | -15 [-25,-8] | 0.53 |
+| session close | +0 | +0 [+0,+0] | 1.00 |
+
+
+## (2c) PRE edge by day vol tercile (day_regime vol_tag_today): PRE mean $k/wk contributed by days of each tag, shipped vs equal-risk random layers
+| tag | days | shipped | placebo median | rank |
+|---|---|---|---|---|
+| vol tag 0.0 | 130 | -2.6 | -2.9 | 0.17 |
+| vol tag 1.0 | 96 | -1.1 | -1.3 | 0.38 |
+| vol tag 2.0 | 138 | +21.0 | +19.8 | 0.07 |
+
+
+# CONSISTENCY AND MULTIPLICITY OF THE PRE EDGE (BASE-4, 2026-11-02T14:44Z; lock none, equal risk; 40 random half-lot layers with cubes)
+
+Episodes lookup: autopilot/DS3_ZONES_EPISODES.md. Heat table: cell = shipped minus random-layer MEDIAN of the slice's mean contribution ($k/wk) and, in brackets, the rank = share of the random layers with a contribution at least as high (small = the shipped layer beats random halving in that slice; PRE column is where the slices were found; the other columns are out-of-selection checks).
+
+## (1) Heat table: slice x window
+| slice | F9 | L6M | HOLD | MID | PRE | X' |
+|---|---|---|---|---|---|---|
+| book K7 | +0.3 (0.33) | +0.2 (0.30) | -0.0 (0.57) | +0.2 (0.33) | -0.5 (0.85) | -0.3 (0.88) |
+| book P7 | +1.3 (0.15) | +1.3 (0.25) | +0.7 (0.35) | +1.7 (0.15) | +2.7 (0.00) | -0.1 (0.57) |
+| book U7 | -0.3 (0.72) | +0.1 (0.42) | -0.5 (0.90) | -0.9 (0.88) | +0.0 (0.47) | +0.4 (0.10) |
+| book H7 | -0.2 (0.62) | -0.2 (0.57) | -0.1 (0.68) | -0.1 (0.57) | -0.1 (0.68) | -0.3 (0.78) |
+| book M7 | -0.3 (0.88) | -0.6 (1.00) | -0.2 (0.85) | +0.4 (0.12) | -0.1 (0.68) | +0.0 (0.42) |
+| book A6 | -0.2 (0.90) | -0.2 (0.68) | -0.2 (0.72) | -0.5 (0.80) | -0.1 (0.78) | +0.3 (0.05) |
+| sess asia | -1.1 (0.72) | +0.0 (0.50) | -0.9 (0.78) | -2.2 (0.90) | +1.3 (0.03) | +0.7 (0.23) |
+| sess london | +1.0 (0.17) | +1.1 (0.25) | +0.6 (0.28) | +0.7 (0.23) | -0.1 (0.60) | -0.3 (0.70) |
+| sess nyam | +0.5 (0.12) | -0.3 (0.75) | -0.2 (0.62) | +2.2 (0.03) | +0.9 (0.12) | -0.1 (0.55) |
+| sess nypm | +0.4 (0.07) | +0.5 (0.07) | +0.1 (0.23) | +0.2 (0.17) | -0.1 (0.90) | -0.3 (0.97) |
+| vol 0 | -1.1 (0.93) | +0.2 (0.45) | -1.5 (0.97) | -3.7 (1.00) | +0.4 (0.17) | -0.2 (0.78) |
+| vol 1 | +2.1 (0.00) | +1.9 (0.00) | +1.2 (0.05) | +2.3 (0.00) | +0.2 (0.38) | +0.1 (0.40) |
+| vol 2 | +0.1 (0.50) | -1.3 (0.62) | -0.1 (0.53) | +2.0 (0.05) | +1.2 (0.07) | +0.2 (0.35) |
+
+
+## (2) Multiplicity: 42 active book x session x vol-tag slices in PRE (6 books x 4 sessions x 3 tags, empty cells dropped)
+Shipped layer: 5 slices with rank <= 0.05 (better than random halving) and 2 with rank >= 0.95 (worse). NULL (each of the 40 random layers ranked against the other 39): slices with rank <= 0.05 per random layer: mean 2.1, median 2, 90th pct 5, max 6; rank >= 0.95: mean 2.1. Share of random layers with at least as many <=0.05 slices as the shipped layer: 0.15. (Resolution of a rank with 39-40 comparators is 0.025, so rank <= 0.05 means at most 2 random layers are as good.)

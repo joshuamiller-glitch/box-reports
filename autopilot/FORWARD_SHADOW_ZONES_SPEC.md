@@ -73,3 +73,6 @@ Aggressor tape flag: A = SELL aggressor, B = BUY aggressor (long trade: flag a s
 
 ## ZL-2 (2026-11-02, FINAL on V13T): LP_AGAINST_25_4h_D40 = NOISE (supersedes the LEAD/LEAD-weak wording of the two ZL-2 pointer sections above)
 On the truth base V13T (V13Z, take lines off, lock none) the natural-reading rule saves L6M +9.8k / HOLD +2.7k / PRE +75.0k / X' -13.5k (ALL +64.1k), 2,001-family null p 0.22 on min(L6M,HOLD,PRE), and the phase-averaged maxDD cut is L6M -2.3% / HOLD -1.7% (no cut). Per user directive 2026-11-02: kept as NOISE; logging is optional (if logged, log both touch conventions and A = sell / B = buy as above). Nothing acts on it. Page: DS3_ZONES_3_L2_TAPE_LP_AGAINST_V13T.md.
+
+## ZL-2 (2026-11-02, correction): LP_AGAINST mask excludes side-N prints
+A print with tape side N has no aggressor and must NEVER qualify as 'against' (my kernel did; 147 rows of the 2,081-row natural mask). Use A/B only: 1,934 rows (Jaccard 0.996 with ZL-1's clean room). Still NOISE on V13T_LIVE (PA9 cut L6M +4.5, X' -28.0; null p 0.14). Page: DS3_ZONES_3_L2_TAPE_V13T_REKEY.md.
