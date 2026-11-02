@@ -645,3 +645,153 @@ Reading: the learned mapping beats the (poor) hand ladder on L6M and PRE in all 
 
 ### Not done in this report
 3.6 sizer x lock (the engine does not expose R-from-base-lots vs R-from-sized-lots; waiting for BASE-4's live-faithful lock option, then the ranked cells are rerun); placebos for the learned cells and the third pair; per-book/vol-tercile split tables for the ranked cells (harness split option). 3.4 risk parity and 3.5 brackets: see the interim section above (no flags).
+
+## SIZER_S3X (Z1) - STRESS of the lot-scaled TH-L2 cut (2026-11-02 21:06Z)
+Prereg SIZER_S3X_Z1_addendum4 (sha ce70e27f...) logged before the run. Cell = arm_i = round(clip(X/(lots_i x $20), lo, hi)) pts on all six live books, all rows; real cell X=3500, clip 20..40; base = T-SIZER base (run_v13t_ts + HALF layer). Post-hoc, no PASS, Shadow only.
+
+**Answer: the flag STANDS as a LEAD with five qualifiers; it is not RISK-KEEP.**
+1. Best-of-16 null (100 worlds with shuffled-day lot assignments): the real best of the 16-cell grid beats every null world except ties at the floor: S1 (mean of PRE and X' PA cut) real 0.116 vs null best-of-16 median -0.088 / 95th 0.037 / max 0.069, rank 0.010; S2 (min of the episode-dropped L6M and PRE cuts) real 0.297 vs null median 0.024 / 95th 0.106, rank 0.010. The lot dependence is real; it is not search luck.
+2. Choice stability FAILS: the purged walk-forward on (X, clip) (trailing 12 m Calmar at trailing mean >= base) picks eight different configs in 34 months and the chain is worse than the base in L6M/HOLD (maxDD -4% cut = deeper, mean 32.0k vs 38.5k) and only +7% in PRE; the fixed X=3500 clip 20..40 is L6M +4%, PRE +11% but mean 35.4k vs 38.5k. So X and the clip are not fittable out of sample; the evidence is for the mechanism, not a tuned number.
+3. NEVER-LOOSER (arm = min(30, .), only 7+ lot trades get tighter): keeps the carrying-episode-dropped benefit (X=3500: L6M +22%, PRE +26% dropped) but the full-window cuts shrink (L6M -6%, PRE +5%, X' +3%, MID -7%) and the mean cost rises in PRE (-4.1k/wk vs MDE 6.6). The loosen half is what lifts PRE/X' from +5/+3 to +11/+12 (and costs MID); the tighten half carries the episode-dropped L6M/PRE gain.
+4. Frames agree: V13T2 (kfix) PRE +8% / X' +7% (episode dropped L6M +16%, PRE +31%); single rounding PRE +11% / X' +14% (episode dropped +27% / +33%).
+5. Stability: the cell loses money in the recent window and in PRE: monthly P&L difference vs base positive in 24 of 43 months, sums L6M -84k, PRE -140k, X' +94k, MID +83k (worst month 202505 -177k). Per book it is a PE (7-11 lot) effect: PE alone L6M -5%, PRE +6%, X' +6%, MID +14%, mean -1.8 / -2.8k/wk; the other books are +-4%.
+6. Lots basis matters decisively: with BASE lots (no ER x1.5/x0.5) the same rule does NOT work (X=3500: L6M -11%, PRE -14%, X' -15%, episode dropped -1% / +5%); the cut works only when keyed to the ACTUAL traded lots that include the x1.5 inflation, i.e. it is exactly a protection for the x1.5 big-lot trades.
+Flag rule of the prereg: beats on PRE and L6M with the carrying week dropped (+27.5% / +31.7%), mean >= base within 0.5 MDE (-3.1k vs MDE 13.8; -1.9k vs 7.4), null rank 0.010 <= 0.10, frames agree in sign on PRE and X': all met, so the flag stays; withdrawn items: none; qualifiers 2, 5 and the full-window L6M cut +4.6% (below the .219 band) keep it a LEAD.
+
+### (1) Best-of-N null
+Worlds complete: 100. Score S1 = mean(PA PRE cut, PA X' cut): real best of 16 = 0.116, null best-of-16 median -0.088 / 95th 0.037 / max 0.069 -> rank 0.010. Score S2 = min(L6M cut, PRE cut) with carrying episodes dropped: real best 0.297, null best median 0.024 / 95th 0.106 -> rank 0.010. The real cell ALL/all/3500 (S1 0.116, S2 0.275) vs its own shuffled-lots cell: S1 rank 0.010, S2 rank 0.010.
+
+### (2) Purged walk-forward and never-looser variants
+| series | maxDD $k L6M / HOLD / MID / PRE (X' = base before 2024-01 for the chain) | mean $k/wk L6M / HOLD / MID / PRE | worst-20 PRE |
+|---|---|---|---|
+| base (no lot-scaled cut) | 170 / 170 / 45 / 161 | 38.5 / 32.2 / 23.5 / 18.0 | -823 |
+| fixed X=3500 clip 20..40 | 163 / 163 / 53 / 149 | 35.4 / 31.4 / 27.0 / 16.2 | -806 |
+| walk-forward chain (trailing 12 m Calmar at mean >= base) | 177 / 177 / 45 / 150 | 32.0 / 29.6 / 30.3 / 15.3 | -867 |
+
+Chosen config counts over 34 months: (3500, 20, 50, False) x7, None x6, (3000, 15, 40, False) x4, (5000, 20, 50, False) x4, (5000, 20, 40, False) x4, (3000, 20, 50, False) x3, (3500, 15, 40, False) x2, (3500, 20, 40, False) x2, (4200, 20, 30, False) x2. Chain cut vs base: L6M -4%, HOLD -4%, MID +0%, PRE +7%.
+
+| config | maxDD cut L6M / HOLD / MID / PRE / X' (PA) | episode dropped L6M / PRE | mean d L6M / PRE $k/wk (MDE) |
+|---|---|---|---|
+| X=3000 clip 20..40 | +6% / +6% / -7% / +8% / +5% | +29% / +24% | -7.0 (16.8) / -2.6 (7.4) |
+| X=3000 clip 20..30 | -1% / -1% / -11% / +2% / +3% | +30% / +29% | -5.7 (15.4) / -4.2 (6.8) |
+| X=3000 clip 15..40 | +33% / +33% / -6% / -5% / +25% | +38% / +2% | -8.6 (20.5) / -4.1 (8.5) |
+| X=3000 clip 20..50 | +8% / +8% / -10% / +13% / -4% | +17% / +21% | -7.6 (18.4) / -1.4 (7.6) |
+| X=3000 clip 20..30 NEVER-LOOSER min(30,.) | -1% / -1% / -11% / +2% / +3% | +30% / +29% | -5.7 (15.4) / -4.2 (6.8) |
+| X=3500 clip 20..40 | +5% / +5% / -11% / +11% / +12% | +27% / +32% | -3.1 (13.8) / -1.9 (7.4) |
+| X=3500 clip 20..30 | -6% / -6% / -7% / +5% / +3% | +22% / +26% | -2.8 (13.3) / -4.1 (6.6) |
+| X=3500 clip 15..40 | +23% / +23% / -5% / +17% / +19% | +43% / +32% | -3.4 (16.2) / -3.5 (8.3) |
+| X=3500 clip 20..50 | +0% / +0% / -8% / +19% / -2% | -6% / +37% | -5.8 (15.3) / -1.3 (7.6) |
+| X=3500 clip 20..30 NEVER-LOOSER min(30,.) | -6% / -6% / -7% / +5% / +3% | +22% / +26% | -2.8 (13.3) / -4.1 (6.6) |
+| X=4200 clip 20..40 | -4% / -4% / +27% / +10% / +1% | +18% / +28% | -2.8 (13.3) / -1.7 (7.4) |
+| X=4200 clip 20..30 | -8% / -8% / +9% / +4% / +5% | +20% / +24% | -2.5 (12.9) / -3.9 (6.5) |
+| X=4200 clip 15..40 | +6% / +6% / +32% / +10% / +2% | +19% / +31% | -3.1 (14.9) / -1.1 (7.4) |
+| X=4200 clip 20..50 | -21% / -21% / +20% / +11% / -17% | +14% / +32% | -5.0 (13.5) / -1.6 (7.9) |
+| X=4200 clip 20..30 NEVER-LOOSER min(30,.) | -8% / -8% / +9% / +4% / +5% | +20% / +24% | -2.5 (12.9) / -3.9 (6.5) |
+| X=5000 clip 20..40 | -23% / -23% / +44% / -3% / -19% | -5% / +23% | -6.7 (14.9) / -0.2 (6.2) |
+| X=5000 clip 20..30 | -18% / -18% / +7% / +0% / -4% | +12% / +25% | -3.5 (11.5) / -2.8 (5.4) |
+| X=5000 clip 15..40 | -23% / -23% / +44% / -3% / -19% | -5% / +23% | -6.7 (14.9) / -0.2 (6.2) |
+| X=5000 clip 20..50 | -36% / -36% / +26% / +7% / -32% | +19% / +23% | -7.7 (14.6) / -0.0 (6.2) |
+| X=5000 clip 20..30 NEVER-LOOSER min(30,.) | -18% / -18% / +7% / +0% / -4% | +12% / +25% | -3.5 (11.5) / -2.8 (5.4) |
+
+### (3) Frames
+| frame | cell | maxDD cut vs the frame's own base: L6M / HOLD / MID / PRE / X' (PA) | episode dropped L6M / PRE | mean d L6M / PRE $k/wk (MDE) |
+|---|---|---|---|---|
+| V13T2 (kfix) | lot-scaled 3500 clip 20..40 | +10% / +10% / -7% / +8% / +7% | +16% / +31% | -3.2 (13.2) / -2.0 (7.0) |
+| V13T2 (kfix) | never looser min(30,.) | -1% / -1% / -24% / -0% / +7% | +26% / +28% | -1.8 (12.3) / -4.0 (6.3) |
+| single rounding | lot-scaled 3500 clip 20..40 | +0% / +0% / -10% / +11% / +14% | +27% / +33% | -3.1 (13.1) / -2.0 (7.2) |
+| single rounding | never looser min(30,.) | -7% / -7% / -7% / +5% / +10% | +22% / +25% | -2.9 (13.3) / -4.1 (6.6) |
+
+### (4) Monthly stability and per-book
+Monthly P&L difference cell - base (X=3500, clip 20..40, all books): positive in 24 of 43 months; sum by window: L6M -84k, PRE -140k, X' +94k, MID +83k.
+Months with the largest negative difference: 202505 -177k, 202606 -110k, 202506 -46k, 202509 -42k, 202603 -38k; largest positive: 202602 +97k, 202609 +54k, 202502 +51k, 202311 +48k, 202310 +38k.
+
+Per book (the real cell applied to ONE book at a time; full-stack PA cut vs base):
+
+| book | cut L6M / HOLD / MID / PRE / X' | mean d L6M / PRE $k/wk |
+|---|---|---|
+| KB | +3% / +3% / +2% / -2% / -3% | +0.1 / +0.5 |
+| PE | -5% / -5% / +14% / +6% / +6% | -1.8 / -2.8 |
+| SM | +3% / +3% / -12% / -1% / +2% | +1.0 / -0.2 |
+| HM | -1% / -1% / +3% / +4% / -2% | -1.8 / +0.5 |
+| MV | +4% / +4% / -3% / +1% / +3% | -0.7 / +0.2 |
+| PB | +0% / +0% / +0% / +0% / +0% | +0.0 / +0.0 |
+
+### (5) Lots basis
+| lots basis | variant | maxDD cut L6M / HOLD / MID / PRE / X' (PA) | episode dropped L6M / PRE | mean d L6M / PRE $k/wk (MDE) |
+|---|---|---|---|---|
+| base lots (no ER multiplier), clip 20..40 | X=3000 | -3% / -3% / +20% / -6% / -9% | +19% / +12% | -6.4 (18.3) / -4.2 (6.4) |
+| base lots, never looser min(30,.) | X=3000 | -4% / -4% / +4% / -13% / -3% | +18% / +10% | -6.8 (14.2) / -5.6 (6.2) |
+| base lots (no ER multiplier), clip 20..40 | X=3500 | -11% / -11% / +21% / -14% / -15% | -1% / +5% | -6.4 (15.8) / -2.5 (5.1) |
+| base lots, never looser min(30,.) | X=3500 | -10% / -10% / +7% / -12% / -1% | -0% / +4% | -6.0 (11.5) / -4.1 (4.6) |
+| base lots (no ER multiplier), clip 20..40 | X=4200 | +4% / +4% / +1% / -4% / -8% | -0% / +1% | -0.4 (7.4) / +1.6 (3.4) |
+| base lots, never looser min(30,.) | X=4200 | +0% / +0% / +0% / +0% / +0% | +0% / +0% | +0.0 (0.0) / +0.0 (0.0) |
+| base lots (no ER multiplier), clip 20..40 | X=5000 | -7% / -7% / +9% / -16% / -19% | -36% / -28% | -0.8 (17.1) / +3.3 (6.6) |
+| base lots, never looser min(30,.) | X=5000 | +0% / +0% / +0% / +0% / +0% | +0% / +0% | +0.0 (0.0) / +0.0 (0.0) |
+| ER-multiplied lots (the flagged cell) | X=3500 | +5% / +5% / -11% / +11% / +12% | +27% / +32% | |
+
+
+## SIZER_S2V_MEAN (ZL-1, 2026-11-02 ~22:15Z): mean-keeping quiet-vol cap on the ER x1.5 side (prereg SIZER_S2V_MEAN_prereg.md sha256 b0aea82d8874fe1b4d571a8d56a583ad26d580323cf081473fad43a8e3adf8ee, logged before scoring; post-hoc, research only; ladder = KEEP)
+Cap allows ER x1.5 when ATR14(5m) <= a x its expanding same-book median (a = 0.9 ... 2.0), else X (1.0 or 0.75); ER x0.5 rows untouched. 17 cells: F1 PE-only (10), F2 mild all-books X=1.0 (3: a 1.25/1.5/2.0), F3 compensation (4). Strict mean-keeping = mean >= ladder in L6M, PRE and HOLD.
+### Real cells (phase 0 vs the live ladder; cuts %, mean k$/wk vs ladder, total $k)
+| cell | cut L6M / PRE | carry-dropped L6M / PRE | HOLD / MID / X' | d mean L6M / PRE / HOLD | d total k | max mult | no-harm |
+|--|--|--|--|--|--|--|--|
+| PE a=0.9 X=1.0 | 23.9 / 12.5 | -8.8 / 22.5 | 23.9 / 37.2 / -16.3 | 0.0 / -2.7 / +0.7 | -225 | 1.5 | no |
+| PE a=1.0 X=1.0 | 21.1 / 9.3 | 11.1 / 22.3 | 21.1 / 34.3 / -21.8 | +0.6 / -2.1 / +1.6 | -154 | 1.5 | no |
+| PE a=1.25 X=1.0 | 12.4 / 8.8 | 2.0 / 15.7 | 12.4 / 41.9 / -16.1 | +3.9 / -1.5 / +3.2 | -8 | 1.5 | no (X') |
+| PE a=1.5 X=1.0 | 23.7 / 8.8 | -0.6 / 13.6 | 23.7 / 41.9 / -8.2 | +2.9 / -0.9 / +2.5 | +23 | 1.5 | yes (X' -8.2) |
+| PE a=2.0 X=1.0 | -6.3 / 6.3 | 3.8 / 2.1 | -6.3 / 28.9 / +1.4 | +0.2 / +0.1 / +0.8 | +34 | 1.5 | yes |
+| PE a=1.0 X=0.75 | 49.0 / 11.9 | 16.7 / 15.8 | 41.7 / 35.5 / -32.3 | -0.9 / -3.8 / +0.4 | -350 | 1.5 | no |
+| PE a=0.9 X=0.75 | 39.5 / 16.7 | -1.7 / 32.7 | 39.5 / 39.8 / -24.1 | -1.2 / -4.4 / -0.6 | -441 | 1.5 | no |
+| ALL a=1.25 X=1.0 | 15.5 / 13.4 | 20.2 / 17.4 | 15.5 / 33.9 / -27.9 | +1.9 / -2.2 / +0.9 | -180 | 1.5 | no |
+| ALL a=1.5 X=1.0 | 28.0 / 9.4 | 13.0 / 12.9 | 21.8 / 30.5 / -17.5 | +2.0 / -1.5 / +1.1 | -90 | 1.5 | no |
+| ALL a=2.0 X=1.0 | -3.8 / 6.3 | 8.6 / 2.2 | -3.8 / 23.3 / +1.4 | +0.8 / -0.3 / +0.6 | -5 | 1.5 | yes |
+(all 17 cells: ds3_zones3_new/sizer_s2v/mean_real.csv; MDE L6M about 13-16k/wk, PRE about 5-6k/wk, so all mean changes are inside the noise.)
+**(1) PE-only:** the mean is kept (L6M +0.0 to +3.9k/wk, HOLD +0.4 to +3.2k, total -225k to +34k) and the PRE cut is small (9-17%; carry-dropped PRE 13-33%), L6M cut 12-49% but with the carrying week dropped it collapses to -9..+17%, i.e. it is carried by one week for PE. No cell is strict mean-keeping with a cut: PRE mean is -1 to -4k/wk for every cell that cuts PRE by more than 8%. The no-harm cells are the ones that barely cap (a=1.5 X=1.0: L6M 23.7 carry-dropped -0.6, PRE 8.8; a=2.0: L6M -6.3). X' is harmed (-8 to -32%) by every PE-only cell with a <= 1.5 (least: a=1.5 X=1.0 at -8.2).
+**(2) Compensation (withheld lots added to quiet x1.5 trades, cap 1.75):** mean improves (CPE a=1.25: L6M +6.2k/wk, HOLD +5.2k, total +180k; CALL a=1.25: +5.7k, +4.2k, +101k) with L6M cut 21%, PRE cut about 0 or negative, X' -21 to -52. **Exposure FAILS for all four:** worst-day net lots 29-32 and stack risk $34.8-38.4k vs 28 / $33.6k for the ladder, max lots 12 vs 11 (mean lots 2.8-3.0). By the stated rule they are not eligible; PA9 / placebos for CALL a=1.0: PA9 40.1 / 1.2 (L6M / PRE), placebo cut ranks L6M .36-.39, PRE .19-.28.
+**(3) Milder cap, all books X=1.0:** a=1.25 cut 15.5 / 13.4 (carry-dropped 20.2 / 17.4), X' -27.9; a=1.5 cut 28.0 / 9.4, X' -17.5, mean +2.0k/-1.5k, total -90k; a=2.0 nothing (-3.8 / 6.3). The mean cost falls to 5-180k but the cut falls with it, and X' stays harmed.
+**Finalists (top 3 eligible by key, PA9, 3 placebos x100, equal-risk):**
+| cell | PA9 L6M / PRE / X' | carry-dropped PA9 L6M / PRE | placebo rank on CUT L6M (perm, dayshuf, ar1) | PRE | on MEAN L6M | equal-risk mean L6M / PRE / HOLD (ladder 37.6 / 17.8 / 31.8) |
+|--|--|--|--|--|--|--|
+| PE a=1.0 X=0.75 | 52.7 / 7.6 / -34.2 (fails band PRE 7.8) | 15.9 / 15.4 | .67 .68 .63 | .10 .20 .10 | .98 .86 .95 | 72.9 / 14.8 / 63.5 |
+| PE a=0.9 X=0.75 | 43.9 / 12.6 / -25.9 | -2.7 / 32.4 | .38 .47 .45 | .10 .24 .15 | .98 .83 .95 | 69.6 / 14.7 / 58.1 |
+| CALL a=1.0 X=1.0 (exposure-failed) | 40.1 / 1.2 / -53.9 | 40.1 / 10.9 | .37 .39 .36 | .28 .23 .19 | .81 .82 .88 | 58.1 / 15.9 / 46.9 |
+The PRE cuts of PE-only caps rank 0.1-0.2 against random multipliers (random does better on PRE), and the PRE equal-risk mean (14.7-15.9k) is below the ladder's 17.8k; HOLD equal-risk is high (46-64k vs 31.8k) with lscale about 1.6-2.05. The L6M cut is not above random for PE a=0.9 (rank .38-.47) and only moderately for PE a=1.0 (.63-.68). MEAN dollars rank .81-.98 vs random (the cap keeps dollars).
+**Family best-of-N null (13 cells F1+F2, 42 draws, joint permutation of the ATR ratio within book x session):** real best eligible key 30.4 (PE a=1.0 X=0.75) vs null mean 19.5, p95 31.1, max 33.2, p = 0.093; strict mean-keeping best key -0.01 (PE a=2.0) vs null (only 9 of 42 draws had any strict mean-keeping cell) mean 4.3, p 0.8. So no hybrid PE/mild cap is above the family's chance level once mean-keeping is required.
+### (4) X' harm: is it the 2023-24 high-vol regime where x1.5 paid? (ladder x1.5 taken trades; mean $/trade at actual lots by label year x ATR tercile of the expanding per-book rank of atr14_5m; T0 quiet, T2 volatile)
+| year | ALL books T0 / T1 / T2 ($/trade; n) | PE only T0 / T1 / T2 |
+|--|--|--|
+| 2023 (Apr-Dec) | 253 / -214 / 182 (401/281/245) | 554 / -1,209 / 480 (100/64/58) |
+| 2024 | 414 / 79 / 820 (631/649/536) | 933 / -530 / 2,258 (172/146/125) |
+| 2025 | 612 / 353 / 337 (727/814/706) | 1,129 / 993 / 2,077 (235/217/151) |
+| 2026 | 266 / 590 / 239 (480/1,078/921) | 175 / 1,446 / 41 (168/273/149) |
+X' window (2023-04..2024-01) ladder x1.5 trades, all books: T0 331 $/trade (n 474, +157k), T1 36 (326, +12k), T2 83 (271, +23k); PE only: T0 554 (118, +65k), T1 -566 (70, -40k), T2 57 (64, +4k). The rest (2024-02..2026-10): ALL T0 441 / T1 362 / T2 430; PE T0 799 / T1 786 / T2 **1,494** (n 557/630/419). Reading: the hypothesis is only half right. In X' the volatile (T1+T2) x1.5 trades earned little ($36-83/trade, +35k total) versus quiet ones ($331), so a cap removes trades that paid little there; but the harm to X' maxDD comes from the PATH (withheld lots no longer offset the losing stretch, and X' base maxDD is small, 92k), and over 2024-26 the volatile PE x1.5 trades are the BEST ($1,494 vs $799 quiet; 2024 T2 $2,258, 2025 T2 $2,077), 2026 the worst ($41). So the quiet-vol rule cuts PE's best trades in two of three recent years; it only pays in 2026. The ATR tercile is not a stable separator of x1.5 quality: sign changes by year (PE T1 negative in 2023-24, positive 2025-26). x0.5 trades: X' T0 52 / T1 137 / T2 -21 $/trade (n 495/337/438), rest 106 / 21 / 37.
+**Flag:** none. No cell beats the ladder on L6M and PRE with the carrying week dropped, is no-harm, AND is strict mean-keeping (the only strict cell is a=2.0 PE, which does nothing). The nearest candidates: PE a=1.5 X=1.0 (mean +2.9k L6M, +2.5k HOLD, -0.9k PRE, total +23k; cut 23.7 / 8.8 with carry-dropped -0.6 / 13.6, X' -8.2): not flaggable (L6M carry-dropped negative). Best-of-17 here, best-of-99 and best-of-28 earlier.
+Files: ds3_zones3_new/sizer_s2v/ (mean_real.csv, mean_null_*.csv, meanpa9_*, meanplc_*, meaneq_*, mean_exposure.pkl, regime_all.csv, regime_pe.csv); code zones3/sizer_s2v/ (s2v_mean.py, s2v_regime.py).
+
+
+## SIZER_S3X_STRESS addendum 5: rule-shaped lot-bucket TH-L2 arms (2026-11-02T21:15Z) POST-HOC, no PASS, Shadow only
+Prereg l2vast/ds3/prereg/SIZER_S3X_Z1_addendum5_prereg.md sha256 478d7a47...cd0 (DECISIONS.md 21:07Z), 8 fixed cells, no fitted parameter. Base = run_v13t_ts + HALF layer. Ledger: 48 stress+rule cells appended to the dead-cells ledger under SIZER_S3X_STRESS after dead_lookup (0 prior rows).
+Fact that changes the reading: in the live ladder the PE book trades only 2, 4, 6 and 11 lots (390 / 3198 / 181 / 2357 rows); 7-10 lots never occur. So "lots >= 7" = exactly the 11-lot rows (ER >= 0.30 x full size) and "5-7" = the 6-lot rows; SM trades 1, 2, 3, 6 lots.
+| cell | maxDD cut PA L6M / HOLD / MID / PRE / X' | PA9 band L6M/HOLD/MID/PRE/X | episode dropped L6M / PRE | S1 | mean d L6M / PRE $k/wk (MDE) | P&L total d $k |
+|---|---|---|---|---|---|---|
+| PE-R1 | -32% / -32% / +31% / -8% / +8% | .165/.205/.322/.099/.182 | -5% / +10% | 0.003 | -4.7 (9.0) / -1.8 (4.4) | -141 |
+| PE-R1n | -6% / -6% / +10% / -6% / +6% | .165/.205/.322/.099/.182 | +8% / +16% | 0.001 | -1.6 (10.2) / -2.6 (4.5) | -244 |
+| PE-R2 | -22% / -22% / +27% / -4% / -5% | .165/.205/.322/.099/.182 | -2% / +16% | -0.042 | -6.8 (11.2) / -2.8 (6.2) | -303 |
+| PE-R2n | -23% / -23% / +10% / -9% / -2% | .165/.205/.322/.099/.182 | +15% / +16% | -0.055 | -4.7 (12.8) / -3.7 (6.2) | -474 |
+| U7-R1 | +2% / +1% / -7% / -7% / -3% | .165/.205/.322/.099/.182 | +5% / -5% | -0.049 | +1.9 (4.2) / -0.5 (1.7) | +3 |
+| U7-R2 | +2% / +2% / +1% / -1% / +2% | .165/.205/.322/.099/.182 | -2% / +1% | 0.003 | +0.6 (1.4) / -0.0 (0.5) | +79 |
+| PEU7-R1 | -31% / -31% / +36% / -15% / +2% | .165/.205/.322/.099/.182 | -1% / +6% | -0.065 | -2.9 (11.1) / -2.3 (4.8) | -138 |
+| PEU7-R2 | -20% / -20% / +32% / -5% / -4% | .165/.205/.322/.099/.182 | -3% / +15% | -0.041 | -6.2 (11.1) / -2.8 (6.3) | -225 |
+
+Reading (positive = smaller drawdown; PA9 band in the second column): no rule-shaped cell cuts the phase-averaged drawdown on PRE or X' (PA PRE -4% to -15%, X' -5% to +8%, all inside or on the wrong side of the band), L6M PA is worse (-20% to -32%) for every PE cell, S1 (mean PA PRE, PA X') is about 0. The episode-dropped cuts are positive for PE-R1n (+8% L6M / +16% PRE) and PE-R2n (+15% / +16%), but each loses $244k / $474k of total P&L, mean changes are inside the MDE and PA PRE is negative, so they do not meet the "PA PRE cut > 0" reading of the prereg qualifier. Placebos A/B/C and the best-of-8 null were therefore NOT run (no cell qualified on PA); if the lead reads the qualifier as the episode-dropped cut only, PE-R1n and PE-R2n need the placebos and I will run them. U7 cells do nothing (|cut| <= 7%, P&L +3k / +79k). Verdict: the dollar-formula LEAD does not reduce to a simple lots rule; the rule shapes are DEAD for the drawdown objective, the flag text for the lot-scaled cut is unchanged (LEAD with qualifiers). Why: the formula arm for 11 lots is 3500/(11*20) = 16 -> clipped to 20, tighter than 22/25, and for 4 lots it is 40 (rule-shaped R1 gives 40 for <=6 too) but the 2- and 6-lot rows get 40 and 29 in the formula versus 40 and 40/30 here.
+
+### PE mechanics by lots bucket (item 3)
+Arms constant per PE row (25 / 30 / 40); rows = PE rows where the TH-L2 trigger changes the exit versus the library exit (stored cut delta in points x lots x $20; includes profitable trades cut early, not only losers). Exit-at-cut loss = -(arm + 0.80 xcost) x lots x $20 (a trade that is cut exactly at the arm):
+| lots | PE trades | cut trades arm 25 / 30 / 40 | mean cut delta pts vs library exit 25 / 30 / 40 | mean $ per cut trade 25 / 30 / 40 | total $ delta 25 / 30 / 40 | 25 minus 30 $ total | 40 minus 30 $ total | exit-at-cut loss -(arm+0.8)*lots*20 at 25 / 30 / 40 |
+|---|---|---|---|---|---|---|---|---|
+| 1-4 | 3588 | 2345 / 2190 / 1876 | -1.0 / -0.6 / 0.7 | -84 / -39 / +66 | -196660 / -84743 / +123390 | -111917 | +208133 | -1952 / -2330 / -3087 |
+| 5-6 | 181 | 121 / 118 / 106 | 17.4 / 14.7 / 12.3 | +2084 / +1766 / +1479 | +252164 / +208375 / +156731 | +43789 | -51643 | -3096 / -3696 / -4896 |
+| 11 | 2357 | 1506 / 1391 / 1226 | -1.9 / -0.5 / -1.0 | -412 / -106 / -228 | -620552 / -146930 / -279840 | -473622 | -132910 | -5676 / -6776 / -8976 |
+| 1-99 | 6126 | 3972 / 3699 / 3208 | -0.8 / -0.1 / 0.4 | -142 / -6 / +0 | -565049 / -23299 / +281 | -541749 | +23581 | -3419 / -4081 / -5406 |
+
+Exit-at-cut loss by lots (analytic, $ per cut trade at arm 25 / 30 / 40): 7 lots -3612 / -4312 / -5712; 9 lots -4644 / -5544 / -7344; 11 lots -5676 / -6776 / -8976 (7 and 9 lots do not occur in live PE; only 11 does). Tightening 30 -> 25 saves $700 per cut 7-lot trade, $900 at 9, $1,100 at 11, but at 11 lots arm 25 changes 115 more rows than arm 30 and the net total over all 11-lot rows is $474k worse than arm 30 (arm 40 is $133k worse): trades cut at 25 that would have recovered cost more than the saved loss. At 4 lots the picture reverses (arm 40 is +$208k better than 30, arm 25 -$112k), at 6 lots arm 25 is +$44k and arm 40 -$52k. That is the whole mechanism: large-lot rows prefer a tight arm only for drawdown containment, not for P&L.
