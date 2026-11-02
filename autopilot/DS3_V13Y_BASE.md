@@ -62,3 +62,7 @@ Rule: a result is AFFECTED if it is a P&L, drawdown, mean, equal-risk, rank or p
 | ZL-2 (tape zones, POC skip) | AFFECTED | |
 | ZL-3 (B73 / WT on L2 zones) | already corrected by ZL_B73FIX for B73 rows only; the 701 generic split rows and the take-line rows are NOT covered by its fix: re-run on V13Y | |
 | Anything with market entries only (PB) or X1-X5 shadow rows | UNAFFECTED except via lock interaction | |
+
+
+## BASIS CAVEAT (BASE-4, added after the fill-basis finding; see DS3_TAKE_FILL_ARTEFACT_V13Y.md)
+The take / tighten deltas of this page are measured against the MEASURED baseline (pts_lib - fill_cost_pts) while the engine baseline is basis N (target exits carry no limit-fill cost). A take on a trade that would have exited at the target is therefore credited fill_cost_pts (mean 3.39 pts per lot) that the N baseline never paid; placebo exits carry the same credit, so the placebo RANKS are internally consistent, but the MEAN and the drawdown cut of the take lines are overstated relative to a pure N-basis comparison. With nfix=True (N-basis consistent delta) the gated lines and the plain take LOSE the benefit: lock none 1-s, gated exact F9 cut +39% -> -32%, d mean -9.0k -> -21.7k/wk; plain 0.70 all F9 +57% -> +2%, d mean +7.1k -> -9.0k; L6M +57% -> +2%. Which baseline is right depends on whether live target limit orders suffer the measured 3.4-pt fill shortfall (basis M: then taking at 70% saves it and the first numbers hold) or fill at the touch (basis N). THIS IS A QUESTION FOR THE USER/LEAD before any take-line is called a finding.
