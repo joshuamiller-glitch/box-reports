@@ -1,6 +1,6 @@
 # DS3_ZONES_3_L2_TAPE_NEWCAP - tape zone streams on the NEW cap (to 2026-10-30), scored in the ZONES frames (ZL-2, s7)
 
-**Base: D7 v1.2 (INTERIM; v1.3 re-run of the finalists follows).** Research only; post-hoc, Shadow only, no PASS claims. New windows only (L1M L2M VIEW, L3M L6M HOLD MID PRE X'; Feb-Oct = F9 = 2026-02-07..10-31). Old-cap results are on `DS3_ZONES_3_L2_TAPE.md` (OLD CAP). Prereg autopilot/ZL2_TAPE_prereg.md (streams) and ZL2_TAPE_SCORE_prereg.md (scoring; sha256 in DECISIONS.md). Code l2vast/ds3/code/zl2/, cells /mnt/l2/l2vast/ds3_zones3_new/ZL-2/ (cells/, cells_summary.csv, robust_f1.csv, plc_rank.csv, interim_tables.md), streams out/zl/streams_tape_new/.
+**Base: D7 v1.2 and v1.3 as ASSUMED by BASE-1/2/3 ("assumed base": U7 on all books both sides, assumed NY-AM lots and profit lines; the EXACT v1.3 differs - see directive of 02:45Z); the V13X re-run of the finalists follows and becomes the headline.** Research only; post-hoc, Shadow only, no PASS claims. New windows only (L1M L2M VIEW, L3M L6M HOLD MID PRE X'; Feb-Oct = F9 = 2026-02-07..10-31). Old-cap results are on `DS3_ZONES_3_L2_TAPE.md` (OLD CAP). Prereg autopilot/ZL2_TAPE_prereg.md (streams) and ZL2_TAPE_SCORE_prereg.md (scoring; sha256 in DECISIONS.md). Code l2vast/ds3/code/zl2/, cells /mnt/l2/l2vast/ds3_zones3_new/ZL-2/ (cells/, cells_summary.csv, robust_f1.csv, plc_rank.csv, interim_tables.md), streams out/zl/streams_tape_new/.
 
 ## PAGE 1
 **DATA.** NQ 1-s print tape from the DE-DUPLICATED months/ext weeks (`NQ_dropin_redo`) 2023-02..2026-10-30, 169,627,126 fp rows, path ds3_g2_redo; 16 roll days (13 old + 3 new: 2026-03-17, 06-16, 09-15) excluded from every stream by a tape/path coverage test. 126 streams (profile lines incl. the three missing ones, composites 5/20/60 d, developing nodes and voids, delta-at-price, cum-delta, large prints, measured pools). The pool level sources (swing/equal/session/killzone/prior-day H/L) were re-implemented on the extended path because the POI store has none of them after the old cap. Disclosure: the old-cap fp build already contained 2026-02 to 02-27 (the path array was longer than the cap); nothing scored used it.
@@ -182,17 +182,17 @@ Vol terciles of the weeks (target-distance proxy): T1: 13 weeks, base -13.9, del
 | TCD_ext half | 60 | 19375 | +3% | +3% | +19% | FRAGILE |
 
 
-## On D7 v1.3 (profit side = gated take lines) - finalists and the cells run so far
-v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94.1k / +21.3; HOLD 94.1k / +23.5; MID 43.1k / +19.7; PRE 175.1k / +2.9; X' 234.6k / -3.9. Cells run on v1.3: 897.
+## On the ASSUMED D7 v1.3 base (profit side = gated take lines U6/P6) - finalists and the cells run so far
+v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94.1k / +21.3; HOLD 94.1k / +23.5; MID 43.1k / +19.7; PRE 175.1k / +2.9; X' 234.6k / -3.9. Cells run on v1.3: 961.
 
 | cell | rows | F9 | L1M | L3M | L6M | HOLD | MID | PRE | X' | mean L6M (MDE) | mean HOLD (MDE) | S/T/N | v1.2 F9 | one-week check F9 (cut without the key week) | placebo ranks sv/rd/sd (n) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | A40 TVP_lvn_sess skip | 27881 | -31% | -4% | -46% | -31% | +1% | -15% | -31% | -17% | +12.0 (+18.2) | +3.4 (+12.6) | -YY |  | +17% |  |
 | A40 TVP_hvn_sess skip | 14264 | -29% | -0% | +13% | -29% | -20% | -58% | +10% | -37% | +7.2 (+12.6) | +1.3 (+9.8) | --- |  | -6% ONE-WEEK |  |
 | A40 TVP_lvn skip | 39987 | -28% | -4% | -46% | -28% | -4% | -8% | -19% | -18% | +8.4 (+20.0) | -0.4 (+13.6) | -YY | -43% | +12% | 1.00/nan/nan (6) |
-| delay3s A40 TVP_hvn skip | 22929 | -27% | +5% | +27% | -27% | -20% | -12% | -28% | -55% | +4.7 (+11.9) | -1.6 (+10.1) | --- |  | -19% ONE-WEEK |  |
+| A40 TVP_hvn skip | 23410 | -27% | +5% | +27% | -27% | -20% | -12% | -36% | -55% | +4.4 (+11.9) | -2.1 (+10.1) | --- | -27% | -19% ONE-WEEK | 0.81/0.71/0.88 (16) |
 | delay1s A40 TVP_hvn skip | 23116 | -27% | +5% | +27% | -27% | -20% | -12% | -28% | -55% | +4.8 (+11.9) | -1.7 (+10.0) | --- |  | -19% ONE-WEEK |  |
-| A40 TVP_hvn skip | 23410 | -27% | +5% | +27% | -27% | -20% | -12% | -36% | -55% | +4.4 (+11.9) | -2.1 (+10.1) | --- | -27% | -19% ONE-WEEK | 0.77/0.71/0.92 (13) |
+| delay3s A40 TVP_hvn skip | 22929 | -27% | +5% | +27% | -27% | -20% | -12% | -28% | -55% | +4.7 (+11.9) | -1.6 (+10.1) | --- |  | -19% ONE-WEEK |  |
 | A50 TVP_hvn skip | 25791 | -25% | +5% | +30% | -25% | -25% | -39% | -39% | -58% | +3.5 (+12.7) | -0.0 (+8.8) | --- |  | -21% ONE-WEEK |  |
 | A40 TLQ_SES_close half | 5710 | -24% | +0% | -40% | -24% | -24% | -29% | -5% | +20% | +3.3 (+4.2) | -3.0 (+8.8) | -YY |  | +10% |  |
 | A20 TPF_sessday half | 14967 | -22% | -4% | -41% | -22% | -22% | -29% | -8% | -21% | -1.2 (+3.5) | -5.9 (+7.3) | --- | -16% | +10% | 0.67/nan/nan (6) |
@@ -209,24 +209,24 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A40 TLQ_SES_pre skip | 1765 | -18% | -1% | -38% | -18% | -18% | -0% | +4% | +11% | +1.4 (+3.0) | +0.4 (+1.9) | --Y |  | +0% ONE-WEEK |  |
 | A40 TLQ_SES_nypm half | 3421 | -18% | +0% | -46% | -18% | -18% | +3% | +15% | +28% | +1.4 (+3.6) | -1.3 (+7.0) | --Y |  | +0% ONE-WEEK |  |
 | A25 TVP_void skip | 4490 | -18% | +5% | -46% | -18% | -18% | -19% | -13% | -27% | +7.3 (+9.8) | +3.7 (+5.7) | Y-Y |  | +0% ONE-WEEK |  |
-| A40 TLQ_PDX_rth half | 3741 | -18% | +0% | -46% | -18% | -18% | +14% | -1% | +24% | +1.3 (+4.4) | +0.3 (+2.4) | -YY |  | -6% ONE-WEEK |  |
 | A40 TLQ_SES_rth half | 3741 | -18% | +0% | -46% | -18% | -18% | +14% | -1% | +24% | +1.3 (+4.4) | +0.3 (+2.4) | -YY |  | -6% ONE-WEEK |  |
+| A40 TLQ_PDX_rth half | 3741 | -18% | +0% | -46% | -18% | -18% | +14% | -1% | +24% | +1.3 (+4.4) | +0.3 (+2.4) | -YY |  | -6% ONE-WEEK |  |
 | INT LWEAK skip | 2102 | -17% | -8% | -55% | -17% | -17% | +1% | -20% | +10% | +7.7 (+12.7) | +1.5 (+7.9) | --Y |  | -6% ONE-WEEK |  |
 | A40 TCP_lvn0_5d half | 1499 | -17% | +0% | -46% | -17% | -17% | +0% | -2% | -3% | +2.5 (+5.0) | +1.5 (+2.7) | YYY |  | +0% ONE-WEEK |  |
+| A40 TCP_lvn0_5d skip | 1499 | -17% | +0% | -46% | -17% | -17% | +0% | -1% | -6% | +2.6 (+5.5) | +1.9 (+2.9) | Y-Y |  | -2% ONE-WEEK |  |
+| A20 TCD_divbull skip | 895 | -17% | +0% | -46% | -17% | -17% | +5% | +7% | -17% | +1.3 (+5.5) | +0.4 (+3.1) | -YY |  | -6% ONE-WEEK |  |
+| A20 TPF_hvn2_sw1h half | 1346 | -17% | -4% | -46% | -17% | -17% | +0% | +22% | +25% | +1.1 (+3.9) | +0.0 (+3.5) | --Y |  | -3% ONE-WEEK |  |
+| A20 TVP_poc_day skip | 1106 | -17% | +0% | -46% | -17% | -17% | +19% | -5% | -26% | +4.5 (+10.8) | +1.2 (+6.5) | YYY |  | +0% ONE-WEEK |  |
 | A20 TVP_poc_sess skip | 1646 | -17% | +0% | -45% | -17% | -17% | +12% | -14% | -31% | +4.7 (+10.8) | +1.1 (+6.5) | Y-Y |  | +0% ONE-WEEK |  |
+| A20 TVP_poc skip | 2198 | -17% | +0% | -39% | -17% | -17% | +19% | -19% | -26% | +4.6 (+10.8) | +1.1 (+6.6) | YYY | -13% | +0% ONE-WEEK | 1.00/nan/nan (6) |
+| A20 TPF_val_day half | 1014 | -17% | -4% | -46% | -17% | -17% | +5% | +27% | +14% | +2.9 (+5.7) | +0.8 (+3.9) | -YY |  | -0% ONE-WEEK |  |
+| A20 TLQ_KZ_kz_london half | 1925 | -17% | +0% | -46% | -17% | -17% | +4% | -6% | -3% | +5.4 (+10.9) | +2.6 (+5.7) | -YY |  | +0% ONE-WEEK |  |
+| A20 TLQ_KZ_kz_london skip | 1925 | -17% | +0% | -46% | -17% | -17% | +14% | -14% | -25% | +5.9 (+11.1) | +0.3 (+9.3) | YYY |  | +0% ONE-WEEK |  |
+| A20 TPF_lvn0_sess skip | 1584 | -17% | -4% | -46% | -17% | -17% | +1% | +6% | -38% | +3.2 (+5.0) | +1.7 (+2.8) | -YY |  | +0% ONE-WEEK |  |
 | A20 TCP_lvn0_5d half | 593 | -17% | +0% | -46% | -17% | -17% | +0% | +6% | +2% | +2.1 (+4.6) | +1.1 (+2.4) | -YY |  | -1% ONE-WEEK |  |
 | A40 TLQ_SES_pre half | 1765 | -17% | +0% | -46% | -17% | -17% | +0% | +2% | +5% | +1.7 (+3.6) | +0.8 (+1.9) | -YY |  | +0% ONE-WEEK |  |
 | A20 TPF_hvn2_sw1h skip | 1346 | -17% | -4% | -46% | -17% | -17% | +0% | -4% | +32% | +0.6 (+3.4) | -0.2 (+3.4) | --Y |  | -6% ONE-WEEK |  |
-| A40 TCP_lvn0_5d skip | 1499 | -17% | +0% | -46% | -17% | -17% | +0% | -1% | -6% | +2.6 (+5.5) | +1.9 (+2.9) | Y-Y |  | -2% ONE-WEEK |  |
-| A20 TPF_hvn2_sw1h half | 1346 | -17% | -4% | -46% | -17% | -17% | +0% | +22% | +25% | +1.1 (+3.9) | +0.0 (+3.5) | --Y |  | -3% ONE-WEEK |  |
-| A20 TVP_poc_day skip | 1106 | -17% | +0% | -46% | -17% | -17% | +19% | -5% | -26% | +4.5 (+10.8) | +1.2 (+6.5) | YYY |  | +0% ONE-WEEK |  |
-| A20 TPF_val_day half | 1014 | -17% | -4% | -46% | -17% | -17% | +5% | +27% | +14% | +2.9 (+5.7) | +0.8 (+3.9) | -YY |  | -0% ONE-WEEK |  |
-| A20 TVP_poc skip | 2198 | -17% | +0% | -39% | -17% | -17% | +19% | -19% | -26% | +4.6 (+10.8) | +1.1 (+6.6) | YYY | -13% | +0% ONE-WEEK | 1.00/nan/nan (6) |
-| A20 TCD_divbull skip | 895 | -17% | +0% | -46% | -17% | -17% | +5% | +7% | -17% | +1.3 (+5.5) | +0.4 (+3.1) | -YY |  | -6% ONE-WEEK |  |
-| A20 TLQ_KZ_kz_london half | 1925 | -17% | +0% | -46% | -17% | -17% | +4% | -6% | -3% | +5.4 (+10.9) | +2.6 (+5.7) | -YY |  | +0% ONE-WEEK |  |
 | A40 TVP_poc_day skip | 1768 | -17% | +0% | -46% | -17% | -17% | +19% | -2% | -25% | +5.6 (+10.6) | +2.7 (+6.9) | -YY |  | +0% ONE-WEEK |  |
-| A20 TLQ_KZ_kz_london skip | 1925 | -17% | +0% | -46% | -17% | -17% | +14% | -14% | -25% | +5.9 (+11.1) | +0.3 (+9.3) | YYY |  | +0% ONE-WEEK |  |
-| A20 TPF_lvn0_sess skip | 1584 | -17% | -4% | -46% | -17% | -17% | +1% | +6% | -38% | +3.2 (+5.0) | +1.7 (+2.8) | -YY |  | +0% ONE-WEEK |  |
 | A40 TPF_lvn1_day skip | 2498 | -17% | +0% | -46% | -17% | -17% | +4% | +7% | -27% | -0.0 (+8.7) | +0.0 (+5.2) | --- |  | -7% ONE-WEEK |  |
 | A40 TPF_val_day half | 2485 | -17% | -4% | -58% | -17% | -17% | -19% | +14% | -7% | +3.2 (+5.6) | +1.2 (+4.0) | -YY |  | -0% ONE-WEEK |  |
 | A40 TPF_vah_day half | 3623 | -17% | +0% | -57% | -17% | -17% | +1% | +45% | -3% | +2.2 (+4.1) | -0.3 (+3.7) | --Y |  | -0% ONE-WEEK |  |
@@ -252,8 +252,8 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A20 TPF_lvn0_sw15 skip | 1606 | -14% | +0% | -30% | -14% | -14% | +2% | +32% | -3% | +5.4 (+10.3) | +2.9 (+5.5) | --Y |  | -1% ONE-WEEK |  |
 | A40 TCP_poc_5d skip | 1761 | -13% | +0% | +12% | -13% | -13% | -4% | +1% | -12% | +1.4 (+4.6) | -0.5 (+4.4) | --- |  | -3% ONE-WEEK |  |
 | A30 TPF_sessday half | 21048 | -13% | +6% | -34% | -13% | -13% | -41% | +4% | -26% | -1.6 (+5.0) | -7.1 (+9.7) | --- |  | +5% ONE-WEEK | 0.67/nan/nan (6) |
-| A40 TVP_poc_day half | 1768 | -13% | +0% | -28% | -13% | -13% | +9% | +0% | -18% | +4.9 (+10.4) | +1.5 (+6.2) | -YY |  | +0% ONE-WEEK |  |
 | A20 TVP_poc_day half | 1106 | -13% | +0% | -28% | -13% | -13% | +9% | -2% | -14% | +4.3 (+10.2) | +1.1 (+6.1) | -YY |  | +0% ONE-WEEK |  |
+| A40 TVP_poc_day half | 1768 | -13% | +0% | -28% | -13% | -13% | +9% | +0% | -18% | +4.9 (+10.4) | +1.5 (+6.2) | -YY |  | +0% ONE-WEEK |  |
 | A40 TPF_lvn2_sw15 skip | 1663 | -13% | +30% | -25% | -13% | -13% | -23% | +9% | -29% | +2.9 (+9.2) | +1.5 (+4.9) | -YY |  | -0% ONE-WEEK |  |
 | A20 TLQ_SWG_f5_15m half | 13607 | -13% | +1% | -24% | -13% | -13% | +67% | +8% | +16% | +5.9 (+11.2) | -4.5 (+11.3) | --Y |  | -8% ONE-WEEK |  |
 | A40 TPF_hvn1_day half | 2857 | -13% | +0% | -5% | -13% | -13% | -26% | -16% | +3% | +2.6 (+5.5) | +1.8 (+3.0) | -YY |  | +5% ONE-WEEK |  |
@@ -263,7 +263,7 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A40 TPF_val_sw15 skip | 3773 | -12% | +37% | -39% | -12% | -12% | +9% | +22% | -11% | +1.0 (+10.2) | +0.4 (+7.3) | --Y |  | -6% ONE-WEEK |  |
 | delay3s A40 TPF_sessday half | 25111 | -12% | +6% | -40% | -12% | -12% | -33% | +21% | -25% | +1.3 (+7.6) | -5.0 (+10.0) | -YY |  | -20% ONE-WEEK |  |
 | delay1s A40 TPF_sessday half | 25208 | -12% | +6% | -40% | -12% | -12% | -33% | +21% | -27% | +1.3 (+7.6) | -5.0 (+10.0) | -YY |  | -20% ONE-WEEK |  |
-| A40 TPF_sessday half | 25294 | -12% | +6% | -40% | -12% | -12% | -33% | +21% | -27% | +1.3 (+7.6) | -5.0 (+10.0) | -YY | -29% | -20% ONE-WEEK | 0.54/0.46/0.85 (13) |
+| A40 TPF_sessday half | 25294 | -12% | +6% | -40% | -12% | -12% | -33% | +21% | -27% | +1.3 (+7.6) | -5.0 (+10.0) | -YY | -29% | -20% ONE-WEEK | 0.47/0.50/0.87 (15) |
 | A20 TVP_hvn_sess skip | 9388 | -12% | +7% | -46% | -12% | -12% | +19% | +8% | -39% | +6.3 (+11.6) | +3.5 (+6.9) | --Y |  | -7% ONE-WEEK |  |
 | B20 TPF_sessday skip | 3923 | -12% | +5% | -22% | -12% | -12% | +0% | +21% | +22% | -0.9 (+2.3) | -0.7 (+1.9) | --- | -14% | +2% ONE-WEEK | 0.50/nan/nan (6) |
 | A20 TPF_hvn1_day skip | 1209 | -12% | +0% | -8% | -12% | -12% | +0% | -10% | -16% | +3.6 (+10.6) | +2.0 (+5.6) | Y-Y |  | +4% ONE-WEEK |  |
@@ -290,12 +290,12 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A30 TVP_lvn half | 34672 | -8% | -4% | -46% | -8% | -8% | -33% | -15% | -24% | +3.9 (+14.7) | -1.3 (+9.7) | -YY |  | -2% | 0.33/nan/nan (6) |
 | A20 TPF_hvn0_sw15 skip | 1970 | -8% | -1% | -15% | -8% | -8% | +95% | -5% | -13% | +0.3 (+1.4) | -2.1 (+4.1) | --- |  | -12% |  |
 | A40 TLP_p25_1h skip | 3741 | -8% | +0% | -16% | -8% | -8% | -34% | +3% | +14% | +0.5 (+3.0) | -0.1 (+4.5) | --- |  | +1% |  |
-| A40 TPF_vah_week half | 746 | -8% | +0% | -18% | -8% | -8% | +4% | +41% | -1% | +0.3 (+0.8) | +0.1 (+0.7) | --Y |  | +0% |  |
 | A40 TPF_lvn0_week half | 541 | -8% | +0% | -18% | -8% | -8% | +0% | +4% | -2% | +0.1 (+1.0) | -0.0 (+0.6) | -YY |  | +0% |  |
+| A40 TPF_vah_week half | 746 | -8% | +0% | -18% | -8% | -8% | +4% | +41% | -1% | +0.3 (+0.8) | +0.1 (+0.7) | --Y |  | +0% |  |
 | A20 TPF_lvn1_sess half | 1061 | -8% | +2% | +0% | -8% | -8% | +3% | +7% | +29% | +0.3 (+1.1) | -1.6 (+4.4) | -YY |  | -0% |  |
 | A40 TPF_lvn0_sw15 skip | 2787 | -8% | -4% | -27% | -8% | -8% | -0% | +16% | +2% | +4.6 (+10.4) | +2.8 (+5.6) | --Y |  | -9% |  |
 | A40 TPF_lvn1_sess half | 2300 | -8% | +13% | +5% | -8% | -8% | -27% | +6% | +27% | +0.4 (+1.2) | -1.4 (+4.6) | --- |  | -0% |  |
-| A20 TVP_lvn half | 26373 | -8% | +21% | -39% | -8% | -8% | -40% | -22% | -16% | +3.0 (+12.4) | -2.1 (+8.8) | -YY | -16% | -3% | 0.62/0.50/0.50 (13) |
+| A20 TVP_lvn half | 26373 | -8% | +21% | -39% | -8% | -8% | -40% | -22% | -16% | +3.0 (+12.4) | -2.1 (+8.8) | -YY | -16% | -3% | 0.56/0.47/0.44 (16) |
 | A20 TPF_val_sess skip | 1740 | -8% | +0% | -7% | -8% | -8% | +1% | +20% | -3% | +0.2 (+1.4) | -0.2 (+1.4) | --Y |  | +2% |  |
 | A40 TCP_lvn2_60d skip | 478 | -8% | +0% | -17% | -8% | -8% | +1% | +3% | -2% | +3.6 (+10.0) | +0.6 (+6.5) | --Y |  | +0% |  |
 | A20 TPF_lvn1_sess skip | 1061 | -8% | +3% | -0% | -8% | -8% | -11% | +3% | +12% | +0.4 (+2.2) | -0.1 (+1.8) | --Y |  | -1% |  |
@@ -307,8 +307,8 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A30 TCD_ext half | 13563 | -7% | +7% | -46% | -7% | -7% | +22% | +13% | +24% | +5.8 (+13.5) | -0.0 (+9.1) | -YY |  | -13% | 0.50/nan/nan (6) |
 | delay3s A20 TVP_lvn half | 25535 | -7% | +19% | -42% | -7% | -7% | -46% | +4% | -19% | +3.3 (+12.5) | -2.0 (+8.8) | -YY |  | -4% |  |
 | A20 TCP_poc_5d half | 709 | -7% | +0% | +5% | -7% | -7% | +0% | -0% | -13% | +0.4 (+1.1) | -0.0 (+0.8) | --- |  | -2% |  |
+| A40 TCD_ext half | 15965 | -7% | +7% | -46% | -7% | -7% | +14% | +17% | +12% | +5.6 (+12.3) | -0.1 (+8.6) | -YY | -14% | -13% | 0.69/0.76/0.62 (16) |
 | delay1s A40 TCD_ext half | 15921 | -7% | +7% | -46% | -7% | -7% | +14% | +18% | +12% | +5.7 (+12.3) | -0.2 (+8.6) | -YY |  | -13% |  |
-| A40 TCD_ext half | 15965 | -7% | +7% | -46% | -7% | -7% | +14% | +17% | +12% | +5.6 (+12.3) | -0.1 (+8.6) | -YY | -14% | -13% | 0.69/0.71/0.57 (13) |
 | delay3s A40 TCD_ext half | 15822 | -7% | +7% | -46% | -7% | -7% | +14% | +23% | +12% | +5.6 (+12.2) | -2.6 (+11.0) | -YY |  | -13% |  |
 | A40 TPF_val_sess half | 3315 | -7% | +13% | -21% | -7% | -7% | -23% | +24% | -3% | +0.3 (+1.3) | -1.6 (+4.9) | --Y |  | -2% |  |
 | A20 TPF_hvn1_sw15 skip | 1768 | -6% | -4% | -25% | -6% | -6% | -32% | +15% | -0% | +2.7 (+9.8) | +2.2 (+5.2) | -YY |  | -4% |  |
@@ -324,20 +324,20 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A40 TVP_hvn_sess half | 14264 | -6% | +11% | -16% | -6% | -6% | +48% | -16% | -11% | +4.7 (+10.4) | +0.4 (+7.1) | -YY |  | -6% |  |
 | delay1s A20 TVP_lvn half | 25871 | -5% | +20% | -42% | -5% | -5% | -42% | -16% | -17% | +3.0 (+12.4) | -2.1 (+8.8) | -YY |  | -6% |  |
 | A40 TLP_p50_4h half | 1267 | -5% | +0% | -11% | -5% | -5% | +0% | +5% | -5% | -0.1 (+1.0) | -0.3 (+0.7) | --- |  | +0% |  |
-| A40 TVP_lvn half | 39987 | -5% | -4% | -46% | -5% | -5% | -44% | -19% | -26% | +3.6 (+14.9) | -1.8 (+10.3) | -YY | -31% | -7% | 0.25/0.54/0.38 (12) |
+| A40 TVP_lvn half | 39987 | -5% | -4% | -46% | -5% | -5% | -44% | -19% | -26% | +3.6 (+14.9) | -1.8 (+10.3) | -YY | -31% | -7% | 0.27/0.50/0.40 (15) |
 | A20 TCD_ext half | 10122 | -5% | +3% | -46% | -5% | -5% | +17% | +2% | +19% | +2.4 (+12.3) | +1.0 (+7.3) | -YY | -25% | -15% | 0.50/nan/nan (6) |
 | A20 TLQ_SES_nypm half | 1292 | -5% | +0% | -15% | -5% | -5% | +0% | +14% | +29% | +0.2 (+1.0) | +0.2 (+0.8) | --Y |  | -2% |  |
 | A40 TCP_hvn1_20d skip | 1173 | -5% | +0% | -18% | -5% | -5% | +0% | +39% | -15% | -0.1 (+1.4) | -0.1 (+2.0) | --- |  | -4% |  |
 | A40 TCP_hvn2_60d half | 523 | -5% | +0% | -12% | -5% | -5% | +0% | +0% | +3% | +0.2 (+0.4) | +0.4 (+0.8) | -YY |  | -1% |  |
 | A40 TPF_lvn2_day skip | 2057 | -5% | +25% | -32% | -17% | -5% | +107% | +3% | -18% | -2.6 (+4.0) | -4.6 (+5.3) | --- |  | -46% |  |
-| A20 TVP_void skip | 3497 | -5% | +0% | -11% | -5% | -5% | +31% | -2% | -5% | +3.1 (+4.3) | -0.3 (+5.0) | --Y | -32% | -1% | 0.69/0.54/0.54 (13) |
+| A20 TVP_void skip | 3497 | -5% | +0% | -11% | -5% | -5% | +31% | -2% | -5% | +3.1 (+4.3) | -0.3 (+5.0) | --Y | -32% | -1% | 0.73/0.56/0.60 (15) |
 | A40 TVP_void_sess half | 3304 | -5% | +0% | -32% | -5% | -5% | +2% | +2% | +27% | +3.5 (+5.3) | +1.7 (+3.1) | --Y |  | -12% |  |
 | A40 TLP_p50_1h half | 920 | -5% | +0% | -10% | -5% | -5% | +0% | +10% | -8% | -0.1 (+0.9) | -0.3 (+0.7) | --- |  | +0% |  |
 | A20 TVP_void_sess skip | 1638 | -5% | +0% | -13% | -5% | -5% | +5% | +1% | +5% | +3.4 (+3.2) | +0.1 (+4.7) | --Y |  | +0% |  |
 | A20 TPF_hvn2_sess skip | 1015 | -5% | +0% | -9% | -5% | -5% | +0% | +3% | +11% | -0.1 (+1.7) | -0.2 (+1.2) | --- |  | +0% |  |
-| A20 TCD_ext skip | 10122 | -4% | +2% | -32% | -4% | -4% | +2% | -25% | +2% | +1.4 (+17.5) | -3.2 (+13.2) | --Y | -4% | -16% | 0.46/0.50/0.57 (13) |
-| delay3s A20 TCD_ext skip | 9964 | -4% | +2% | -32% | -4% | -4% | +1% | -27% | +3% | +1.4 (+17.4) | -3.7 (+13.4) | --Y |  | -16% |  |
 | delay1s A20 TCD_ext skip | 10071 | -4% | +2% | -32% | -4% | -4% | +1% | -25% | -1% | +1.6 (+17.5) | -3.3 (+13.2) | --Y |  | -16% |  |
+| delay3s A20 TCD_ext skip | 9964 | -4% | +2% | -32% | -4% | -4% | +1% | -27% | +3% | +1.4 (+17.4) | -3.7 (+13.4) | --Y |  | -16% |  |
+| A20 TCD_ext skip | 10122 | -4% | +2% | -32% | -4% | -4% | +2% | -25% | +2% | +1.4 (+17.5) | -3.2 (+13.2) | --Y | -4% | -16% | 0.50/0.53/0.65 (16) |
 | A20 TVP_void_sess half | 1638 | -4% | +0% | -9% | -4% | -4% | +45% | +8% | +2% | +1.1 (+1.1) | -1.1 (+3.9) | --Y |  | -8% |  |
 | A40 TPF_hvn2_sess half | 2254 | -4% | +0% | +11% | -4% | -4% | -24% | -2% | +37% | +0.2 (+2.3) | -0.4 (+2.6) | --- |  | -5% |  |
 | A15 TCD_ext skip | 8086 | -4% | +2% | -46% | -4% | -4% | -6% | +39% | -8% | +0.9 (+17.7) | -3.5 (+13.1) | --Y |  | -17% |  |
@@ -411,28 +411,28 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A40 TPF_lvn2_sess skip | 1465 | -0% | +0% | +1% | -0% | -0% | -28% | +15% | +10% | -0.1 (+1.2) | -3.1 (+5.8) | --- |  | -1% |  |
 | A20 TPF_lvn0_sess half | 1584 | -0% | -4% | -0% | -0% | -0% | +0% | -0% | +3% | +0.2 (+0.4) | +0.0 (+0.4) | -YY |  | -0% |  |
 | A20 TCP_lvn1_5d half | 564 | -0% | +0% | -1% | -0% | -0% | +1% | +8% | +7% | -0.7 (+1.3) | -0.0 (+1.0) | --- |  | -0% |  |
-| A40 TDA_abs_5m half | 594 | +0% | +0% | +0% | +0% | +0% | +0% | +9% | +3% | +0.0 (+0.6) | -0.4 (+1.1) | --Y |  | +0% |  |
-| A40 TCP_lvn0_60d half | 396 | +0% | +0% | +0% | +0% | +0% | +0% | +8% | +2% | -0.3 (+1.1) | -0.3 (+0.7) | --- |  | +0% |  |
-| A40 TCP_lvn0_60d skip | 396 | +0% | +0% | +0% | +0% | +0% | +0% | +27% | +3% | -0.6 (+2.2) | -0.4 (+1.3) | --- |  | +0% |  |
-| A40 TCP_vah_60d half | 811 | +0% | +0% | +0% | +0% | +0% | +0% | +3% | +7% | +0.0 (+0.2) | -0.1 (+0.5) | --Y |  | +0% |  |
-| A40 TDA_abs_5m skip | 594 | +0% | +0% | +0% | +0% | +0% | +0% | -5% | -10% | +0.1 (+1.5) | -1.7 (+3.5) | --Y |  | +0% |  |
-| A40 TCP_vah_60d skip | 811 | +0% | +0% | +0% | +0% | +0% | +0% | +5% | +8% | +0.2 (+0.7) | -0.1 (+1.2) | -YY |  | +0% |  |
-| A40 TCP_lvn2_60d half | 478 | +0% | +0% | +0% | +0% | +0% | +0% | +1% | -1% | +0.0 (+0.0) | -0.3 (+1.0) | --- |  | +0% |  |
-| A20 TPF_lvn2_day skip | 825 | +0% | +3% | +0% | +0% | +0% | +49% | -0% | +7% | -1.7 (+2.4) | -2.1 (+4.0) | --- |  | -6% |  |
 | A40 TLQ_EQL_tight_1h skip | 373 | +0% | +0% | +0% | +0% | +0% | +0% | +0% | +19% | +0.1 (+0.4) | +0.1 (+0.2) | --- |  | +0% |  |
+| A20 TPF_lvn2_day skip | 825 | +0% | +3% | +0% | +0% | +0% | +49% | -0% | +7% | -1.7 (+2.4) | -2.1 (+4.0) | --- |  | -6% |  |
+| A20 TPF_lvn2_day half | 825 | +0% | +2% | +0% | +0% | +0% | +0% | +2% | +4% | -0.6 (+0.8) | -1.1 (+2.9) | --- |  | +0% |  |
+| A40 TPF_val_week half | 509 | +0% | +0% | +0% | +0% | +0% | +0% | +5% | +14% | +0.0 (+0.0) | -0.5 (+1.4) | --- |  | +0% |  |
+| A40 TCP_lvn0_60d half | 396 | +0% | +0% | +0% | +0% | +0% | +0% | +8% | +2% | -0.3 (+1.1) | -0.3 (+0.7) | --- |  | +0% |  |
+| A40 TCP_vah_60d skip | 811 | +0% | +0% | +0% | +0% | +0% | +0% | +5% | +8% | +0.2 (+0.7) | -0.1 (+1.2) | -YY |  | +0% |  |
+| A20 TCP_vah_20d half | 538 | +0% | +0% | +0% | +0% | +0% | +0% | +2% | -2% | -0.3 (+0.9) | -0.3 (+0.5) | --- |  | +0% |  |
 | A40 TLQ_EQL_tight_1h half | 373 | +0% | +0% | +0% | +0% | +0% | +0% | +1% | +21% | +0.1 (+0.4) | +0.1 (+0.2) | --- |  | +0% |  |
 | A20 TCP_hvn2_5d half | 661 | +0% | +0% | +0% | +0% | +0% | +0% | +15% | -7% | -0.0 (+0.5) | -0.0 (+0.6) | --- |  | +0% |  |
-| A40 TPF_val_week skip | 509 | +0% | +0% | +0% | +0% | +0% | +0% | +3% | +12% | +0.0 (+0.0) | -0.3 (+0.6) | --- |  | +0% |  |
-| A40 TPF_val_week half | 509 | +0% | +0% | +0% | +0% | +0% | +0% | +5% | +14% | +0.0 (+0.0) | -0.5 (+1.4) | --- |  | +0% |  |
-| A20 TCP_vah_20d half | 538 | +0% | +0% | +0% | +0% | +0% | +0% | +2% | -2% | -0.3 (+0.9) | -0.3 (+0.5) | --- |  | +0% |  |
-| A20 TCP_hvn2_5d skip | 661 | +0% | +0% | +0% | +0% | +0% | +0% | +13% | -3% | -0.0 (+0.6) | -0.4 (+1.0) | --- |  | +0% |  |
-| A20 TPF_lvn2_day half | 825 | +0% | +2% | +0% | +0% | +0% | +0% | +2% | +4% | -0.6 (+0.8) | -1.1 (+2.9) | --- |  | +0% |  |
 | A20 TDA_abs_5m skip | 471 | +0% | +0% | +0% | +0% | +0% | +0% | -3% | -10% | +0.1 (+0.3) | -1.5 (+3.5) | --- |  | +0% |  |
-| A20 TDA_abs_5m half | 471 | +0% | +0% | +0% | +0% | +0% | +0% | +9% | +0% | +0.1 (+0.1) | -0.4 (+1.1) | --- |  | +0% |  |
+| A20 TCP_hvn2_5d skip | 661 | +0% | +0% | +0% | +0% | +0% | +0% | +13% | -3% | -0.0 (+0.6) | -0.4 (+1.0) | --- |  | +0% |  |
 | A20 TCD_burst half | 346 | +0% | +0% | +0% | +0% | +0% | +0% | -1% | +6% | +0.0 (+0.1) | +0.0 (+0.3) | --- | +0% | +0% |  |
 | A20 TCD_divbear half | 1443 | +0% | +0% | +0% | +0% | +0% | +0% | +6% | +1% | -0.0 (+0.5) | -0.2 (+0.5) | --- |  | +0% |  |
-| A20 TCP_val_5d half | 497 | +0% | +0% | +0% | +0% | +0% | +1% | -0% | -0% | -0.0 (+0.1) | -0.2 (+1.5) | --- |  | +0% |  |
 | A20 TCP_val_5d skip | 497 | +0% | +0% | +0% | +0% | +0% | +0% | -0% | +12% | +0.0 (+0.1) | +0.3 (+0.8) | -YY |  | +0% |  |
+| A20 TDA_abs_5m half | 471 | +0% | +0% | +0% | +0% | +0% | +0% | +9% | +0% | +0.1 (+0.1) | -0.4 (+1.1) | --- |  | +0% |  |
+| A20 TCP_val_5d half | 497 | +0% | +0% | +0% | +0% | +0% | +1% | -0% | -0% | -0.0 (+0.1) | -0.2 (+1.5) | --- |  | +0% |  |
+| A40 TCP_vah_60d half | 811 | +0% | +0% | +0% | +0% | +0% | +0% | +3% | +7% | +0.0 (+0.2) | -0.1 (+0.5) | --Y |  | +0% |  |
+| A40 TDA_abs_5m skip | 594 | +0% | +0% | +0% | +0% | +0% | +0% | -5% | -10% | +0.1 (+1.5) | -1.7 (+3.5) | --Y |  | +0% |  |
+| A40 TPF_val_week skip | 509 | +0% | +0% | +0% | +0% | +0% | +0% | +3% | +12% | +0.0 (+0.0) | -0.3 (+0.6) | --- |  | +0% |  |
+| A40 TDA_abs_5m half | 594 | +0% | +0% | +0% | +0% | +0% | +0% | +9% | +3% | +0.0 (+0.6) | -0.4 (+1.1) | --Y |  | +0% |  |
+| A40 TCP_lvn0_60d skip | 396 | +0% | +0% | +0% | +0% | +0% | +0% | +27% | +3% | -0.6 (+2.2) | -0.4 (+1.3) | --- |  | +0% |  |
+| A40 TCP_lvn2_60d half | 478 | +0% | +0% | +0% | +0% | +0% | +0% | +1% | -1% | +0.0 (+0.0) | -0.3 (+1.0) | --- |  | +0% |  |
 | A40 TCP_hvn1_5d half | 1759 | +0% | +0% | -6% | +0% | +0% | -22% | +8% | +1% | +0.0 (+1.1) | -0.7 (+2.8) | --- |  | -6% |  |
 | A20 TCP_lvn1_5d skip | 564 | +0% | +0% | +0% | +0% | +0% | +2% | +11% | +12% | -0.9 (+2.2) | -0.2 (+1.5) | --- |  | -2% |  |
 | A20 TLP_p25_1h half | 2855 | +0% | +0% | -1% | +0% | +0% | -10% | +28% | -7% | -0.4 (+1.5) | -0.4 (+1.1) | --- |  | -4% |  |
@@ -544,10 +544,10 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A40 TPF_vah_sess skip | 4169 | +11% | +20% | +5% | +11% | +11% | +0% | -25% | +26% | -2.1 (+3.8) | -1.2 (+2.6) | --- |  | -13% |  |
 | A20 TCP_hvn0_20d skip | 383 | +11% | +0% | +9% | +11% | +11% | +0% | -6% | +6% | -0.2 (+0.9) | +0.2 (+0.7) | --- |  | -13% |  |
 | A40 TCP_hvn2_5d skip | 1723 | +11% | +0% | +25% | +11% | +11% | +0% | +12% | -10% | +0.6 (+2.2) | -3.9 (+8.2) | --- |  | -15% |  |
-| A20 TLQ_SWG_f3_15m half | 19697 | +11% | -4% | +20% | +11% | +11% | +36% | +3% | +5% | +2.9 (+10.2) | -5.2 (+11.1) | --- |  | -24% |  |
 | delay3s A20 TLQ_swg15 half | 19445 | +11% | -4% | +20% | +11% | +11% | +36% | +7% | +3% | +2.7 (+10.2) | -5.3 (+11.1) | --- |  | -24% |  |
-| A20 TLQ_swg15 half | 19762 | +11% | -4% | +20% | +11% | +11% | +36% | +3% | +3% | +2.9 (+10.2) | -5.2 (+11.1) | --- | -28% | -24% | 0.38/0.31/0.23 (13) |
 | delay1s A20 TLQ_swg15 half | 19628 | +11% | -4% | +20% | +11% | +11% | +36% | +5% | +3% | +2.8 (+10.2) | -5.3 (+11.1) | --- |  | -24% |  |
+| A20 TLQ_swg15 half | 19762 | +11% | -4% | +20% | +11% | +11% | +36% | +3% | +3% | +2.9 (+10.2) | -5.2 (+11.1) | --- | -28% | -24% | 0.40/0.31/0.25 (15) |
+| A20 TLQ_SWG_f3_15m half | 19697 | +11% | -4% | +20% | +11% | +11% | +36% | +3% | +5% | +2.9 (+10.2) | -5.2 (+11.1) | --- |  | -24% |  |
 | A40 TLQ_KZ_kz_london skip | 3966 | +12% | +19% | -45% | +12% | +12% | +26% | +13% | -10% | +0.7 (+6.6) | -2.1 (+7.9) | --- |  | -49% |  |
 | A20 TCD_cdlo skip | 4170 | +12% | +2% | +0% | +12% | +12% | -27% | +5% | +0% | +4.1 (+13.7) | +1.1 (+7.7) | --- |  | -25% |  |
 | A40 TCP_poc_20d skip | 1032 | +12% | +0% | +9% | +12% | +12% | +0% | -9% | +2% | -0.3 (+1.0) | +0.5 (+1.3) | --- |  | -15% |  |
@@ -620,8 +620,8 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A40 TPF_poc_sw1h half | 3915 | +24% | +44% | -13% | +24% | +24% | +9% | -4% | +12% | -0.4 (+3.8) | -0.9 (+3.4) | --- |  | -33% |  |
 | A40 TLQ_KZ_kz_ny skip | 3183 | +25% | +0% | +33% | +25% | +25% | +28% | +8% | +37% | -0.3 (+2.1) | -1.1 (+1.8) | --- |  | -31% |  |
 | A20 TLQ_SWG_f7_15m skip | 10858 | +25% | +19% | +39% | +25% | +25% | +73% | +3% | -29% | +1.7 (+15.0) | -2.3 (+9.5) | --- |  | -35% |  |
-| A40 TLQ_PDX_rth skip | 3741 | +25% | +0% | +32% | +25% | +25% | +34% | +3% | +32% | -1.7 (+5.9) | -2.5 (+4.4) | --- |  | -62% |  |
 | A40 TLQ_SES_rth skip | 3741 | +25% | +0% | +32% | +25% | +25% | +34% | +3% | +32% | -1.7 (+5.9) | -2.5 (+4.4) | --- |  | -62% |  |
+| A40 TLQ_PDX_rth skip | 3741 | +25% | +0% | +32% | +25% | +25% | +34% | +3% | +32% | -1.7 (+5.9) | -2.5 (+4.4) | --- |  | -62% |  |
 | A20 TPF_poc_sw15 half | 2054 | +25% | +0% | -0% | +25% | +25% | +47% | +5% | -9% | -0.8 (+2.5) | -1.8 (+3.9) | --- |  | -32% |  |
 | A40 TPF_vah_sw1h skip | 4615 | +25% | +30% | +32% | +25% | +25% | -23% | -7% | -4% | -0.3 (+4.0) | -1.3 (+4.4) | --- |  | -31% |  |
 | A20 TCP_hvn0_5d skip | 738 | +25% | +0% | +39% | +25% | +25% | +0% | +2% | -17% | -0.9 (+2.2) | -0.6 (+1.6) | --- |  | -31% |  |
@@ -667,10 +667,10 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 | A20 TLQ_SWG_f3_15m skip | 19697 | +102% | +6% | +207% | +102% | +102% | +44% | -8% | -26% | -5.0 (+13.6) | -8.4 (+9.8) | --- |  | -127% |  |
 
 
-**On D7 v1.3** (the profit side already removes part of the Sept drawdown: base F9 maxDD 127.8k -> 94.1k): 90 of 897 v1.3 cells still cut the Feb-Oct maxDD by >= 20%; every one of the 8 v1.2 finalists shrinks (TVP developing LVN D40 half -31% -> -5%). The v1.3 placebo means (4 draws per kind) are around zero to slightly negative for the finalists: random halves/skips of the same volume cut as much or more in most cases. Sensitivity: see the D table; ONE-WEEK labels are in the v1.3 table. Reading: **no tape zone is a drawdown lead on the robustness standard; the information content of order-flow lines for the drawdown is the same as a volume cut.**
+**On D7 v1.3** (the profit side already removes part of the Sept drawdown: base F9 maxDD 127.8k -> 94.1k): 103 of 961 v1.3 cells still cut the Feb-Oct maxDD by >= 20%; every one of the 8 v1.2 finalists shrinks (TVP developing LVN D40 half -31% -> -5%). The v1.3 placebo means (4 draws per kind) are around zero to slightly negative for the finalists: random halves/skips of the same volume cut as much or more in most cases. Sensitivity: see the D table; ONE-WEEK labels are in the v1.3 table. Reading: **no tape zone is a drawdown lead on the robustness standard; the information content of order-flow lines for the drawdown is the same as a volume cut.**
 
 
-## Robustness package on D7 v1.3 (finalists + screen)
+## Robustness package on the ASSUMED D7 v1.3 base (finalists + screen)
 **Named maxDD week per window (base v1.3) and the cut with / without that week** (cut = 1 - maxDD(cell)/maxDD(base); positive = shallower). L3M / L6M / HOLD / F9 share the week 2026-09-14; MID, PRE and X' are the other episodes.
 | cell | L3M (key week) cut / without | L6M (key week) cut / without | MID (key week) cut / without | PRE (key week) cut / without | X' (key week) cut / without |
 |---|---|---|---|---|---|
@@ -736,19 +736,19 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 **Placebos on v1.3 (draws per kind in brackets; rank = share of draws shallower-cut than the real cell on F9; mean draw cut beside)**
 | cell | real F9 | same-volume rank (n) mean draw | random-rows-per-day rank (n) mean draw | shuffled-day rank (n) mean draw |
 |---|---|---|---|---|
-| A40 TVP_lvn half | -5% | 0.25 (12) -16% | 0.54 (13) -7% | 0.38 (13) -14% |
-| A40 TPF_sessday half | -12% | 0.54 (13) -9% | 0.46 (13) -9% | 0.85 (13) +1% |
-| A20 TLQ_swg15 half | +11% | 0.38 (13) +5% | 0.31 (13) +0% | 0.23 (13) -4% |
-| A40 TVP_hvn skip | -27% | 0.77 (13) -2% | 0.71 (14) -2% | 0.92 (13) +8% |
+| A40 TVP_lvn half | -5% | 0.27 (15) -16% | 0.50 (16) -8% | 0.40 (15) -12% |
+| A40 TPF_sessday half | -12% | 0.47 (15) -10% | 0.50 (16) -8% | 0.87 (15) +2% |
+| A20 TLQ_swg15 half | +11% | 0.40 (15) +2% | 0.31 (16) +0% | 0.25 (16) -1% |
+| A40 TVP_hvn skip | -27% | 0.81 (16) +1% | 0.71 (17) -2% | 0.88 (16) +5% |
 | A30 TVP_void skip | -18% | 1.00 (6) +17% |  |  |
-| A40 TCD_ext half | -7% | 0.69 (13) +9% | 0.71 (14) +0% | 0.57 (14) +0% |
+| A40 TCD_ext half | -7% | 0.69 (16) +9% | 0.76 (17) +2% | 0.62 (16) +2% |
 | A40 TVP_lvn skip | -28% | 1.00 (6) +32% |  |  |
 | A40 TCD_div skip | -20% | 1.00 (6) +10% |  |  |
 | A20 TCP_60d half | -11% | 1.00 (6) +10% |  |  |
-| A20 TCD_ext skip | -4% | 0.46 (13) -8% | 0.50 (14) +5% | 0.57 (14) +14% |
+| A20 TVP_void skip | -5% | 0.73 (15) +5% | 0.56 (16) +2% | 0.60 (15) +6% |
+| A20 TCD_ext skip | -4% | 0.50 (16) -5% | 0.53 (17) +3% | 0.65 (17) +13% |
 | A40 TPF_sw15 half | -12% | 0.50 (6) -0% |  |  |
-| A20 TVP_void skip | -5% | 0.69 (13) +1% | 0.54 (13) +1% | 0.54 (13) +5% |
-| A20 TVP_lvn half | -8% | 0.62 (13) -4% | 0.50 (14) -9% | 0.50 (14) +0% |
+| A20 TVP_lvn half | -8% | 0.56 (16) -5% | 0.47 (17) -9% | 0.44 (16) -2% |
 | A20 TCD_ext half | -5% | 0.50 (6) -4% |  |  |
 | A40 TVP_hvn half | -11% | 0.50 (6) -13% |  |  |
 | A20 TVP_poc skip | -17% | 1.00 (6) +1% |  |  |
@@ -765,36 +765,36 @@ v1.3 base lines (maxDD / mean $k/wk): F9 94.1k / +21.4; L3M 43.6k / +8.2; L6M 94
 **Individual-stream screen on v1.3 (AHEAD fresh D20 / D40 skip + half; 404 cells): ranked by F9 maxDD cut; "excess" = real cut minus the cut a random same-volume halving/skip of the same fire share gives (linear fit on the placebo draws of all finalists, per action)**
 | cell | fired | F9 | expected from volume | excess | HOLD | PRE | X' | mean L6M (MDE) | flag |
 |---|---|---|---|---|---|---|---|---|---|
-| A40 TVP_lvn_sess skip | 27881 | -31% | +13% | -44% | +1% | -31% | -17% | +12.0 (+18.2) | above volume |
-| A40 TVP_hvn_sess skip | 14264 | -29% | +6% | -35% | -20% | +10% | -37% | +7.2 (+12.6) | above volume |
-| A40 TLQ_SES_close half | 5710 | -24% | +6% | -30% | -24% | -5% | +20% | +3.3 (+4.2) | above volume |
-| A40 TPF_lvn0_sw1h half | 3727 | -20% | +7% | -28% | -20% | +10% | +1% | +1.4 (+5.4) | above volume |
-| A40 TCD_divbull half | 1421 | -19% | +9% | -28% | -19% | +5% | -15% | +1.2 (+5.1) | above volume |
-| A20 TPF_lvn1_day skip | 1002 | -19% | -0% | -18% | -19% | +13% | -13% | +0.4 (+6.2) | above volume |
-| A40 TCD_divbull skip | 1421 | -18% | +0% | -18% | -18% | -7% | -21% | +0.8 (+5.8) | above volume |
-| A20 TCD_divbull half | 895 | -18% | +9% | -27% | -18% | +4% | -9% | +1.5 (+5.0) | above volume |
-| A40 TLQ_SES_nyam half | 3665 | -18% | +7% | -25% | -18% | -0% | +22% | +0.7 (+4.1) | above volume |
-| A40 TCP_lvn2_20d half | 781 | -18% | +9% | -27% | -18% | -0% | -9% | +1.3 (+5.3) | above volume |
-| A40 TLQ_SES_pre skip | 1765 | -18% | +0% | -18% | -18% | +4% | +11% | +1.4 (+3.0) | above volume |
-| A40 TLQ_SES_nypm half | 3421 | -18% | +7% | -25% | -18% | +15% | +28% | +1.4 (+3.6) | above volume |
-| A40 TLQ_SES_rth half | 3741 | -18% | +7% | -25% | -18% | -1% | +24% | +1.3 (+4.4) | above volume |
-| A40 TLQ_PDX_rth half | 3741 | -18% | +7% | -25% | -18% | -1% | +24% | +1.3 (+4.4) | above volume |
-| A40 TVP_poc_day skip | 1768 | -17% | +0% | -18% | -17% | -2% | -25% | +5.6 (+10.6) | above volume |
-| A40 TLQ_SES_pre half | 1765 | -17% | +8% | -26% | -17% | +2% | +5% | +1.7 (+3.6) | above volume |
-| A20 TPF_hvn2_sw1h half | 1346 | -17% | +9% | -26% | -17% | +22% | +25% | +1.1 (+3.9) | above volume |
-| A20 TPF_lvn0_sess skip | 1584 | -17% | +0% | -17% | -17% | +6% | -38% | +3.2 (+5.0) | above volume |
-| A40 TCP_lvn0_5d skip | 1499 | -17% | +0% | -17% | -17% | -1% | -6% | +2.6 (+5.5) | above volume |
-| A20 TPF_hvn2_sw1h skip | 1346 | -17% | -0% | -17% | -17% | -4% | +32% | +0.6 (+3.4) | above volume |
-| A20 TPF_val_day half | 1014 | -17% | +9% | -26% | -17% | +27% | +14% | +2.9 (+5.7) | above volume |
-| A40 TCP_lvn0_5d half | 1499 | -17% | +9% | -26% | -17% | -2% | -3% | +2.5 (+5.0) | above volume |
-| A20 TLQ_KZ_kz_london half | 1925 | -17% | +8% | -26% | -17% | -6% | -3% | +5.4 (+10.9) | above volume |
-| A20 TCD_divbull skip | 895 | -17% | -0% | -17% | -17% | +7% | -17% | +1.3 (+5.5) | above volume |
-| A20 TVP_poc_sess skip | 1646 | -17% | +0% | -17% | -17% | -14% | -31% | +4.7 (+10.8) | above volume |
-| A20 TLQ_KZ_kz_london skip | 1925 | -17% | +0% | -18% | -17% | -14% | -25% | +5.9 (+11.1) | above volume |
-| A20 TVP_poc_day skip | 1106 | -17% | -0% | -17% | -17% | -5% | -26% | +4.5 (+10.8) | above volume |
-| A20 TCP_lvn0_5d half | 593 | -17% | +9% | -27% | -17% | +6% | +2% | +2.1 (+4.6) | above volume |
-| A40 TPF_lvn1_day skip | 2498 | -17% | +1% | -18% | -17% | +7% | -27% | -0.0 (+8.7) | above volume |
-| A40 TPF_val_day half | 2485 | -17% | +8% | -25% | -17% | +14% | -7% | +3.2 (+5.6) | above volume |
+| A40 TVP_lvn_sess skip | 27881 | -31% | +13% | -44% | +1% | -31% | -17% | +12.0 (+18.2) | within placebo spread (volume effect) |
+| A40 TVP_hvn_sess skip | 14264 | -29% | +7% | -36% | -20% | +10% | -37% | +7.2 (+12.6) | within placebo spread (volume effect) |
+| A40 TLQ_SES_close half | 5710 | -24% | +7% | -31% | -24% | -5% | +20% | +3.3 (+4.2) | within placebo spread (volume effect) |
+| A40 TPF_lvn0_sw1h half | 3727 | -20% | +8% | -28% | -20% | +10% | +1% | +1.4 (+5.4) | within placebo spread (volume effect) |
+| A40 TCD_divbull half | 1421 | -19% | +10% | -29% | -19% | +5% | -15% | +1.2 (+5.1) | within placebo spread (volume effect) |
+| A20 TPF_lvn1_day skip | 1002 | -19% | +1% | -20% | -19% | +13% | -13% | +0.4 (+6.2) | within placebo spread (volume effect) |
+| A40 TCD_divbull skip | 1421 | -18% | +1% | -20% | -18% | -7% | -21% | +0.8 (+5.8) | within placebo spread (volume effect) |
+| A20 TCD_divbull half | 895 | -18% | +10% | -28% | -18% | +4% | -9% | +1.5 (+5.0) | within placebo spread (volume effect) |
+| A40 TLQ_SES_nyam half | 3665 | -18% | +8% | -26% | -18% | -0% | +22% | +0.7 (+4.1) | within placebo spread (volume effect) |
+| A40 TCP_lvn2_20d half | 781 | -18% | +10% | -28% | -18% | -0% | -9% | +1.3 (+5.3) | within placebo spread (volume effect) |
+| A40 TLQ_SES_pre skip | 1765 | -18% | +1% | -19% | -18% | +4% | +11% | +1.4 (+3.0) | within placebo spread (volume effect) |
+| A40 TLQ_SES_nypm half | 3421 | -18% | +8% | -26% | -18% | +15% | +28% | +1.4 (+3.6) | within placebo spread (volume effect) |
+| A40 TLQ_SES_rth half | 3741 | -18% | +8% | -26% | -18% | -1% | +24% | +1.3 (+4.4) | within placebo spread (volume effect) |
+| A40 TLQ_PDX_rth half | 3741 | -18% | +8% | -26% | -18% | -1% | +24% | +1.3 (+4.4) | within placebo spread (volume effect) |
+| A40 TVP_poc_day skip | 1768 | -17% | +1% | -19% | -17% | -2% | -25% | +5.6 (+10.6) | within placebo spread (volume effect) |
+| A40 TLQ_SES_pre half | 1765 | -17% | +9% | -27% | -17% | +2% | +5% | +1.7 (+3.6) | within placebo spread (volume effect) |
+| A20 TPF_hvn2_sw1h half | 1346 | -17% | +10% | -27% | -17% | +22% | +25% | +1.1 (+3.9) | within placebo spread (volume effect) |
+| A20 TPF_lvn0_sess skip | 1584 | -17% | +1% | -19% | -17% | +6% | -38% | +3.2 (+5.0) | within placebo spread (volume effect) |
+| A40 TCP_lvn0_5d skip | 1499 | -17% | +1% | -19% | -17% | -1% | -6% | +2.6 (+5.5) | within placebo spread (volume effect) |
+| A20 TPF_hvn2_sw1h skip | 1346 | -17% | +1% | -19% | -17% | -4% | +32% | +0.6 (+3.4) | within placebo spread (volume effect) |
+| A20 TPF_val_day half | 1014 | -17% | +10% | -27% | -17% | +27% | +14% | +2.9 (+5.7) | within placebo spread (volume effect) |
+| A40 TCP_lvn0_5d half | 1499 | -17% | +10% | -27% | -17% | -2% | -3% | +2.5 (+5.0) | within placebo spread (volume effect) |
+| A20 TLQ_KZ_kz_london half | 1925 | -17% | +9% | -27% | -17% | -6% | -3% | +5.4 (+10.9) | within placebo spread (volume effect) |
+| A20 TCD_divbull skip | 895 | -17% | +1% | -18% | -17% | +7% | -17% | +1.3 (+5.5) | within placebo spread (volume effect) |
+| A20 TVP_poc_sess skip | 1646 | -17% | +1% | -19% | -17% | -14% | -31% | +4.7 (+10.8) | within placebo spread (volume effect) |
+| A20 TLQ_KZ_kz_london skip | 1925 | -17% | +2% | -19% | -17% | -14% | -25% | +5.9 (+11.1) | within placebo spread (volume effect) |
+| A20 TVP_poc_day skip | 1106 | -17% | +1% | -19% | -17% | -5% | -26% | +4.5 (+10.8) | within placebo spread (volume effect) |
+| A20 TCP_lvn0_5d half | 593 | -17% | +10% | -28% | -17% | +6% | +2% | +2.1 (+4.6) | within placebo spread (volume effect) |
+| A40 TPF_lvn1_day skip | 2498 | -17% | +2% | -19% | -17% | +7% | -27% | -0.0 (+8.7) | within placebo spread (volume effect) |
+| A40 TPF_val_day half | 2485 | -17% | +9% | -26% | -17% | +14% | -7% | +3.2 (+5.6) | within placebo spread (volume effect) |
 
 **Interaction (input for ZL-3): a coded price line within 20 pts ahead that a tape zone CONFIRMS (a stream nearest-ahead within 5 pts of the line, any family) vs one with NO tape evidence**: LCONF = 6629 rows, LWEAK = 2102 rows (rows mapped to the POI-store redo trades only, 75% of engine rows). Cells: confirmed line skip / half, weak line x1.5 / skip.
 | cell | F9 | L3M | HOLD | PRE | X' | mean L6M (MDE) |

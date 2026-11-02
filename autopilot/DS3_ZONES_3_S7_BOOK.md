@@ -466,3 +466,24 @@ Needs the daily zones file? No: everything comes from D7's own book and tape; no
 One line per decision candidate (every base signal that D7 evaluates, whether or not it trades), to forward_register/pul_shadow.csv, appended, fields:
 ts_signal_utc, book, session, side, entry_price, target_dist_pts, stop_dist_pts, pul_flag_D20 (0/1), pul_flag_D30 (0/1), would_skip_D20, would_skip_D30 (same as the flags: the cell is skip), n_fresh_pul_ahead, nearest_fresh_pul_price, nearest_pul_dist_pts (E to level, along the trade direction), nearest_pul_age_s (signal minus event bin), nearest_pul_peak_size, nearest_pul_side (bid/ask wall), nearest_pul_t0, nearest_pul_median_level_size_at_event, n_fresh_pul_behind_within_stop, pul_events_last_1h, pul_events_last_24h (count; the regime check), book_span_ok (0/1: the current book has the 9-tick span), trade_taken (0/1) and, when taken, the realised P&L in dollars per the base so the skipped rows can be scored without a new build. Also one line per PULLED event itself to pul_events.csv (event_ts_utc, side, price, peak, t0, level index at pull, age) so the live detector can be compared with the stream rebuilt from the 1-s table for the same days (the reproducibility check; expected: same prices and seconds on at least 95% of events, any difference is logged).
 Scoring on the forward register: the skipped rows' base P&L sum and the maxDD of the base with them removed, per book x session (Asia first, because the finding is Asia-only), against the placebos of the same count (random rows per day); the cell is ON/OFF-checked monthly and nothing is acted on.
+
+
+## Follow-up 5 [ASSUMED BASE v1.3 - all tables above and here are on the assumed base, not V13X]: SWP lvl_swing 4h D60 skip, placebos (24 draws per kind; the run was stopped to move to V13X)
+|   D | kind   |   draws | window   |   cell_cut |   placebo_mean |   corrected |   rank |
+|----:|:-------|--------:|:---------|-----------:|---------------:|------------:|-------:|
+|  60 | A      |      24 | L3M      |      0.46  |          0.106 |       0.355 |   0.12 |
+|  60 | A      |      24 | L6M      |      0.326 |         -0.065 |       0.391 |   0.08 |
+|  60 | A      |      24 | HOLD     |      0.326 |         -0.082 |       0.407 |   0.08 |
+|  60 | A      |      24 | PRE      |      0.232 |         -0.026 |       0.257 |   0.08 |
+|  60 | A      |      24 | X'       |      0.103 |          0.052 |       0.051 |   0.28 |
+|  60 | B      |      24 | L3M      |      0.46  |          0.066 |       0.394 |   0.2  |
+|  60 | B      |      24 | L6M      |      0.326 |         -0.127 |       0.453 |   0.04 |
+|  60 | B      |      24 | HOLD     |      0.326 |         -0.125 |       0.451 |   0.04 |
+|  60 | B      |      24 | PRE      |      0.232 |         -0.021 |       0.252 |   0.16 |
+|  60 | B      |      24 | X'       |      0.103 |          0.022 |       0.081 |   0.24 |
+|  60 | C      |      24 | L3M      |      0.46  |          0.012 |       0.448 |   0.16 |
+|  60 | C      |      24 | L6M      |      0.326 |         -0.131 |       0.456 |   0.04 |
+|  60 | C      |      24 | HOLD     |      0.326 |         -0.131 |       0.456 |   0.04 |
+|  60 | C      |      24 | PRE      |      0.232 |         -0.086 |       0.317 |   0.08 |
+|  60 | C      |      24 | X'       |      0.103 |          0.057 |       0.046 |   0.28 |
+Reading: recent-window cut +33..+46% with placebo-corrected +36..+46% (ranks 0.04-0.20), PRE corrected +25..+32% (ranks 0.08-0.16), X' +5..+8% (ranks 0.24-0.28): the swing-level D60 cell is the stronger candidate on the assumed base, but D-fragile (D30/40: recent +4..+7%, MID collapses at D <= 20). Re-run on V13X pending (stage x1).

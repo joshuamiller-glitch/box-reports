@@ -179,3 +179,60 @@ CRT4h 60pts fresh solo with U7 ON, v1.3 (n about 67 draws per kind so far; the r
 
 ## BASE LABEL (Z2, 2026-11-02 ~02:50Z): every s2 row above is on the ASSUMED base
 All tables in the sections "s2 INTERIM", "s2 UPDATE", "s2 FINAL-FOR-NOW", "s2 on D7 v1.3" and "placebo ranks, interim" are on the ASSUMED base (D7 v1.1 sweep; v1.2 = U7 on all books both sides; v1.3-assumed = + U6/P6 take lines on rel_tot8), not the EXACT D7 v1.3 given by the user at 02:45Z. They are valid evidence about the assumed base only. Queued placebos finish on it; no new large grid is started on it. When BASE-4 announces V13X (d7_v13x.py) the finalists (CRT4h 60 fresh solo, CRT4h Asia-only, camH3, kijun1h, PDmid post-hoc picks) are re-run there and those rows become the headline; cut flips are reported as base-dependence.
+
+
+## s2 HEADLINE on D7 v1.3 EXACT (V13X) - finalists (Z2, ~03:25Z 2026-11-02). Old rows above = ASSUMED base
+Finalists are the picks made on the assumed v1.1 sweep; the full screen is re-run on V13X (s1x, then re-picks) and appended below when done. BASE-DEPENDENCE: CRT4h 60 fresh solo flips from assumed-v1.3 (L6M maxDD -5%, MID maxDD +62%, Calmar MID -58%) to V13X (L6M maxDD -8%, HOLD -15%, MID -15% with Calmar MID +104%, PRE -4%): the exact take lines remove the MID damage; kijun1h flips the other way (MID Calmar -76%). All inside MDE, STRICT/TOLERANT pass for CRT4h60 and CRT4h-Asia-only; placebo ranks pending.
+
+### D7 v1.3 EXACT (V13X, lock 12R): shipped layer L6M 22.4k/wk maxDD 73.9k; HOLD maxDD 119.2k; MID maxDD 78.5k; PRE maxDD 252.4k
+
+| finalist | maxDD $k L6M / HOLD / MID / PRE / X' | Calmar gain L6M / HOLD / MID / PRE / X' | mean d L6M (MDE) | mean d MID (MDE) | S/T/N | ONE-WEEK (cut w/o maxDD week) | leave-one-week-out L6M cut: min, #weeks <=0 | LOMO | boot 5-95 | vol tercile mean d low/mid/high |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CRT4h60 | 67.9 / 101.8 / 66.7 / 242.3 / 167.1 | +9% / +22% / +104% / +17% / +0% | +0.1 (1.3) | +3.9 (5.6) | S/T/N | no (+11%; wk 202637) | min +0.03, 0/27 | 7/7 months >0, min +0.01 | -0.00..+0.11 | +0.2/+0.9/+0.2 |
+| camH3 | 68.4 / 113.5 / 77.7 / 230.1 / 268.9 | +6% / +3% / +10% / -9% / +0% | -0.3 (2.8) | +0.5 (2.9) | -/-/- | no (+4%; wk 202637) | min +0.00, 1/27 | 5/7 months >0, min +0.00 | +0.00..+0.17 | +0.3/-0.7/-2.3 |
+| kijun1h | 68.6 / 126.1 / 81.5 / 220.8 / 197.8 | +12% / -7% / -76% / +27% / -0% | +0.9 (5.7) | -4.0 (10.8) | -/-/N | no (+4%; wk 202637) | min +0.02, 0/27 | 5/7 months >0, min +0.00 | -0.01..+0.28 | +0.5/+0.7/-2.2 |
+| PDmid | 64.4 / 116.0 / 77.9 / 223.5 / 226.8 | +18% / +7% / +2% / +65% / +0% | +0.6 (2.1) | +0.1 (1.5) | -/-/- | no (+11%; wk 202637) | min +0.03, 0/27 | 5/7 months >0, min +0.00 | -0.01..+0.11 | +1.0/+0.8/+0.2 |
+| CRT4h60asia | 68.1 / 116.4 / 73.4 / 242.3 / 160.5 | +9% / +6% / +59% / +15% / +0% | +0.1 (1.1) | +2.6 (5.1) | S/T/N | no (+11%; wk 202637) | min -0.00, 1/27 | 7/7 months >0, min +0.01 | -0.00..+0.11 | +0.2/+0.8/+0.1 |
+| OTE705 | 65.0 / 122.3 / 75.8 / 254.3 / 176.8 | +16% / -8% / +11% / -13% / -0% | +0.4 (2.3) | +0.4 (1.5) | -/-/- | no (+16%; wk 202637) | min +0.03, 0/27 | 5/7 months >0, min +0.00 | -0.18..+0.16 | -0.3/-0.9/-0.7 |
+
+#### CRT4h60 on V13X: per book x session, change in maxDD and mean ($k, cell minus shipped; negative maxDD change = shallower)
+
+| book | session | dDD L6M | dDD MID | dDD PRE | dDD X' | dmean L6M | dmean MID | dmean PRE | dmean X' |
+|---|---|---|---|---|---|---|---|---|---|
+| K6 | asia | +0.2 | -4.9 | +4.9 | -0.8 | +0.11 | +0.38 | -0.12 | +0.02 |
+| K6 | london | +0.0 | -8.7 | -9.4 | +0.3 | -0.04 | +0.73 | +0.16 | +0.06 |
+| K6 | nyam | +2.7 | +0.0 | -0.0 | +0.0 | -0.23 | -0.02 | +0.01 | -0.06 |
+| K6 | nypm | -2.4 | -0.2 | -3.6 | +0.0 | +0.09 | +0.02 | -0.01 | +0.07 |
+| P6 | asia | -2.9 | +0.0 | +3.9 | -1.0 | -0.07 | -0.02 | +0.21 | -0.11 |
+| P6 | london | +0.6 | +0.6 | -6.7 | -10.8 | -0.11 | -0.08 | +0.20 | +0.31 |
+| P6 | nyam | +0.0 | +0.0 | -9.6 | +2.1 | +0.00 | +0.00 | +0.18 | +0.02 |
+| U6 | asia | -2.7 | -2.0 | +3.6 | +0.0 | +0.23 | +0.39 | -0.06 | -0.01 |
+| U6 | london | +0.0 | -3.2 | -2.2 | +3.7 | +0.03 | +0.27 | +0.07 | -0.12 |
+| H6 | asia | -3.0 | +0.1 | +11.4 | -0.7 | +0.15 | +1.42 | -0.15 | -0.01 |
+| H6 | nyam | +2.2 | +0.7 | -2.5 | +0.6 | -0.11 | -0.14 | +0.03 | -0.13 |
+| M6 | london | +0.0 | -0.6 | +2.9 | -0.7 | +0.00 | +0.58 | +0.00 | +0.09 |
+| M6 | nyam | +0.0 | -1.0 | +0.0 | +0.0 | +0.00 | +0.49 | +0.04 | -0.00 |
+| A6 | asia | -2.1 | +0.0 | +1.2 | +0.0 | +0.08 | -0.11 | -0.09 | +0.03 |
+
+#### CRT4h60asia on V13X: per book x session, change in maxDD and mean ($k, cell minus shipped; negative maxDD change = shallower)
+
+| book | session | dDD L6M | dDD MID | dDD PRE | dDD X' | dmean L6M | dmean MID | dmean PRE | dmean X' |
+|---|---|---|---|---|---|---|---|---|---|
+| K6 | asia | +0.2 | -4.7 | +4.9 | -0.8 | +0.11 | +0.10 | -0.12 | +0.02 |
+| K6 | london | +0.0 | -7.9 | -8.6 | -0.1 | +0.00 | +0.66 | +0.14 | +0.05 |
+| K6 | nyam | +3.7 | +0.0 | -0.0 | +0.0 | -0.27 | -0.02 | +0.02 | -0.02 |
+| K6 | nypm | -3.1 | +0.6 | -2.9 | +0.0 | +0.11 | -0.05 | -0.02 | +0.07 |
+| P6 | asia | -2.9 | +0.0 | +5.4 | -1.0 | -0.07 | +0.32 | +0.19 | -0.11 |
+| P6 | london | +0.0 | +0.0 | -6.9 | -10.1 | -0.11 | +0.00 | +0.19 | +0.29 |
+| P6 | nyam | +0.0 | +0.0 | -9.6 | +0.0 | +0.00 | +0.00 | +0.19 | +0.07 |
+| U6 | asia | -2.7 | -2.0 | +3.6 | +0.0 | +0.23 | +0.43 | -0.06 | -0.02 |
+| U6 | london | +0.0 | -1.2 | -3.5 | +3.8 | +0.00 | +0.10 | +0.05 | -0.13 |
+| H6 | asia | -3.0 | +1.7 | +11.7 | -0.7 | +0.15 | +1.28 | -0.16 | -0.01 |
+| H6 | nyam | +2.2 | +1.5 | -2.5 | +0.0 | -0.11 | -0.21 | +0.03 | -0.03 |
+| M6 | london | +0.0 | +0.0 | +2.9 | -0.6 | +0.00 | +0.00 | +0.00 | +0.09 |
+| A6 | asia | -2.1 | +0.0 | +1.2 | +0.1 | +0.08 | -0.11 | -0.09 | +0.02 |
+
+#### placebo ranks on V13X (share of draws with an L6M / MID / PRE / X' maxDD cut at least as large; small = good)
+
+| finalist | kind | n | L6M cut (cell) | rank L6M | rank HOLD | rank MID | rank PRE | rank X' | rank Calmar L6M |
+|---|---|---|---|---|---|---|---|---|---|

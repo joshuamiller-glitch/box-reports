@@ -1,6 +1,6 @@
 **HEADLINE 1 (structural).** A fixed-point density rule is a different rule in each window: the share of signals with >= 2 set lines within 40 pts fell from 35% (2023-04) to 9% (2026-10) as NQ doubled (median entry 16.5k -> 29.9k). Price-scaled distance (x*E/20000) is the only form carried forward; the fixed-point cells below are kept for the record.
 **HEADLINE 2 (assumed v1.3 base, section 6).** The one lead-shaped v1.2 cell, price-scaled sA40>=1 skip, is FRAGILE on v1.3-assumed: L6M +32% only at the exact cut-off (x0.5 -29%, x0.75 -25%, x1.25 -4%, x1.5 -31%, x2 -8%), PRE -21%, X' -3%; v1.3 placebo ranks L6M B 0.10 / C 0.30 / A 0.10 (40 draws). PRE flips because the PRE base episode moves (v1.2 2024-W13..29, v1.3 2025-W06..19) and the skip removes big winning weeks in the 2025 drawdown. The half variants (sA40>=1/2, sA60>=1 half) are consistent on L6M/F9 (+25..31%) at every scale x0.75-x2 but are negative on PRE (-2% .. -49%) and are not placebo-clean (see 6g). Re-target: delaying the decision by 1 s or 3 s does not remove the (small) effect; the control rtc shows most of it is the market-entry convention. Three profile streams in the count (qA cells) do not improve on the 8-line count (qA40>=1 skip F9 -17% vs +32%; qA60>=1 half is the only q-cell with STRICT/TOL/NOW all Y, F9 +31% = same as sA60>=1 half). Not a lead anywhere.
-**Pending:** rows on the EXACT D7 v1.3 (V13X) when announced; Z3 noise band; remaining placebo draws (section 6g shows n).
+**HEADLINE 3 (Z3 noise band, assumed v1.3, section 6h).** 0 of 34 finalists pass the rule 'cut exceeds the band in L6M AND in PRE or X'' (bands from DS3_ZONES_3_NOISE.md interim). So the density family is NOISE under the program's own standard.\n**Pending:** rows on the EXACT D7 v1.3 (V13X) when announced; Z3 noise band; remaining placebo draws (section 6g shows n).
 
 # DS3_ZONES_3_S5 - zone density as a regime (ZONES-3 section 5). ALL ROWS ARE ON THE ASSUMED BASES (v1.2 interim, v1.3-assumed); V13X (exact D7 v1.3) rows are added when BASE-4 announces
 **Plain sentence.** Zone density does not give a drawdown cut that survives the robustness standard. Of 230 density / open-space / ratio / no-man's-land cells on D7 v1.2 (interim base), none is RISK-KEEP. The fixed-point cut-offs that look best on L6M are ONE-WEEK (the whole L6M/HOLD/F9 cut is the week 2026-W31; e.g. nA40>=1 skip -23% of maxDD becomes +0.1% without that week) or volume effects (placebo rank B > 0.10: open-space "half" cells cut 28-43% only because they halve 55-80% of the signals). The one lead-shaped cell is the PRICE-SCALED congestion-ahead rule sA40>=1 skip (skip when any of the 8 fresh set lines is within 40*E/20000 pts ahead; at E=29,000 that is 58 pts): v1.2 L6M/F9 maxDD -39%, PRE +15%, X' +22%, STRICT and TOLERANT, mean delta -3.5k/wk inside the 13.3k MDE, not ONE-WEEK (+17% after dropping the carrying week... see section 3), placebo ranks B 0.05 / C 0.25 / A 0.20 (20 draws): beats the same-volume placebo, not the shuffled-day or random-row ones; ROBUST to +-25/50% on x (F9 cut +8% at 0.5x, +37..40% at 0.75-1.5x); and it does NOT carry to D7 v1.3 (L6M +32% but PRE -21%, X' -3%, S/T/N n/n/Y). Label: LEAD-unconfirmed (v1.2), not a lead on v1.3. The no-man's land (middle third of PDR/ON/SESS) alone is not a drawdown rule: mid_PDR half cuts L6M 19% / PRE 11% / X' 48% but is ONE-WEEK; the "up" (x1.5) variants add risk. Re-target (rt): sA40>=1 rt L6M +14%, PRE -63% (worse); against its control (same market entry, original target) the re-target part is small, so most of any change is the entry convention.
@@ -603,6 +603,47 @@ Which of these need the 1-s tape: none. The lines need the existing POI engines;
 | sA40>=1 half | +25% / +25% / -29% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
 | nA60>=1 half | +25% / +25% / -23% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
 | rho60>=2 half | +21% / +21% / +15% | n/a | n/a | n/a | n/a | UNTESTED (n<5) |
+
+### 6h. Z3 maxDD NOISE BAND (DS3_ZONES_3_NOISE.md, interim, assumed base): a cut counts only if it exceeds the band in L6M AND in PRE or X' (same sign). Band row chosen by the cell's flagged share of rows (<1%: flip 0.5, 1-1.5%: flip 1, 1.5-3.5%: flip 2, else flip 5; lenient for big masks)
+
+| cell (v1.3 assumed) | flag % | band row | L6M cut / band | PRE cut / band | X' cut / band | passes the rule |
+|---|---|---|---|---|---|---|
+| nA40>=1 skip | 25.0 | flip 5 | -16% / 31% | -31% / 53% | +5% / 31% | NOISE |
+| nA40>=1 half | 25.0 | flip 5 | +14% / 31% | -34% / 53% | +20% / 31% | NOISE |
+| nB40>=1 skip | 21.0 | flip 5 | -9% / 31% | +46% / 53% | +60% / 31% | NOISE |
+| nB40>=1 half | 21.0 | flip 5 | +9% / 31% | +6% / 53% | +41% / 31% | NOISE |
+| nB40>=2 skip | 10.4 | flip 5 | -1% / 31% | +4% / 53% | +33% / 31% | NOISE |
+| nB40>=2 half | 10.4 | flip 5 | +3% / 31% | -3% / 53% | +41% / 31% | NOISE |
+| nB40>=3 skip | 5.5 | flip 5 | -9% / 31% | +3% / 53% | +33% / 31% | NOISE |
+| nB40>=3 half | 5.5 | flip 5 | -5% / 31% | +6% / 53% | +37% / 31% | NOISE |
+| nT40>=2 half | 20.1 | flip 5 | +8% / 31% | -5% / 53% | +37% / 31% | NOISE |
+| nT40>=4 half | 4.8 | flip 5 | -2% / 31% | -7% / 53% | +35% / 31% | NOISE |
+| nA60>=1 skip | 32.5 | flip 5 | +31% / 31% | +7% / 53% | -27% / 31% | NOISE |
+| nA60>=1 half | 32.5 | flip 5 | +25% / 31% | -23% / 53% | +17% / 31% | NOISE |
+| nA60>=2 half | 13.6 | flip 5 | +26% / 31% | -55% / 53% | -7% / 31% | NOISE |
+| nT60>=3 skip | 22.0 | flip 5 | -51% / 31% | -29% / 53% | +41% / 31% | NOISE |
+| nTany40>=2 half | 46.7 | flip 5 | +2% / 31% | +13% / 53% | +32% / 31% | NOISE |
+| open20 half | 81.4 | flip 5 | +37% / 31% | +22% / 53% | +11% / 31% | NOISE |
+| open60 half | 46.7 | flip 5 | +30% / 31% | +29% / 53% | +5% / 31% | NOISE |
+| openA40 half | 75.0 | flip 5 | +30% / 31% | +35% / 53% | +60% / 31% | NOISE |
+| rho40>=2 skip | 18.2 | flip 5 | +16% / 31% | -15% / 53% | -3% / 31% | NOISE |
+| rho40<=0.5 skip | 15.1 | flip 5 | -8% / 31% | +46% / 53% | +63% / 31% | NOISE |
+| rho60>=2 skip | 19.6 | flip 5 | +53% / 31% | +22% / 53% | -17% / 31% | NOISE |
+| rho60>=2 half | 19.6 | flip 5 | +21% / 31% | +15% / 53% | +6% / 31% | NOISE |
+| rho60<=0.5 half | 24.5 | flip 5 | -6% / 31% | -13% / 53% | +18% / 31% | NOISE |
+| mid_PDR half | 22.0 | flip 5 | +11% / 31% | +16% / 53% | +27% / 31% | NOISE |
+| mid_any3 half | 40.6 | flip 5 | -15% / 31% | +38% / 53% | +31% / 31% | NOISE |
+| mid_PDR&open40 up | 10.3 | flip 5 | +8% / 31% | -61% / 53% | -8% / 31% | NOISE |
+| mid_ON&nT40<=1 up | 10.1 | flip 5 | -10% / 31% | -68% / 53% | +4% / 31% | NOISE |
+| sA40>=1 skip | 28.0 | flip 5 | +32% / 31% | -21% / 53% | -3% / 31% | NOISE |
+| sA40>=1 half | 28.0 | flip 5 | +25% / 31% | -29% / 53% | +21% / 31% | NOISE |
+| sA40>=1 rt | 28.0 | flip 5 | +12% / 31% | -37% / 53% | +4% / 31% | NOISE |
+| sA40>=2 half | 10.5 | flip 5 | +26% / 31% | -11% / 53% | +5% / 31% | NOISE |
+| sB40>=3 half | 7.5 | flip 5 | -3% / 31% | -14% / 53% | +25% / 31% | NOISE |
+| sA60>=1 half | 35.9 | flip 5 | +31% / 31% | -2% / 53% | +15% / 31% | NOISE |
+| sopen40 half | 55.2 | flip 5 | +25% / 31% | +32% / 53% | +4% / 31% | NOISE |
+
+Passing the band: 0 of 34 finalists (necessary, not sufficient).
 
 ### 6f. Vol-tercile cuts (finalists, v1.2 and v1.3)
 
