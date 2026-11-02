@@ -745,3 +745,44 @@ Placebos on lock=None (PUL 60 draws per kind, SWP lvl_swing 20 per kind):
 | SWP|lvl_swing_N5|4h D60 | C      |      20 | PRE      |     -0.007 |         -0.066 |       0.059 |  0.476 |
 | SWP|lvl_swing_N5|4h D60 | C      |      20 | X'       |      0.095 |          0.05  |       0.044 |  0.476 |
 Verdict (lock=None): PUL k3 4h skip D20 = LOCK-ONLY for the L6M cut (+29% with the 12R lock, +1% without); without the lock it keeps PRE +17% (placebo-corrected +18..+26%, ranks 0.05-0.07) and X' +11% (corrected +5..+10%, ranks 0.03-0.48), with MID -14%, HOLD +1%, L6M +1%: LEAD (weak) on PRE/X' only, no recent-window evidence, not RISK-KEEP. SWP lvl_swing 4h D60 (L6M +21% lock-off, +33% lock-on assumed base) has PRE -1% and X' +10% with placebo ranks 0.1-0.5: DEAD. The remaining cells (PUL k5, ICE R2N30 D40 MID +24% only, LQP swH 15m, SWP lvl_sess half L6M +22% but PRE -1%) fail at least one of L6M/PRE/X': DEAD. Per-cell files out/zl_new/lockoff_cells.csv, placebo_lockoff.csv.
+
+
+## HEADLINE lock=None screen of every book / LQP stream (V13X, AHEAD D20/40, skip/half, 112 cells; base maxDD $k L6M 132.6, PRE 178.4, X' 134.8)
+Best cell per stream by min(L6M, PRE, X' cut), top 14:
+| stream              |   cells |   best_min |   best_L6M |   best_PRE |   best_Xp |
+|:--------------------|--------:|-----------:|-----------:|-----------:|----------:|
+| SWP|lvl_swing_N5|4h |       4 |      0.083 |      0.083 |      0.114 |     0.136 |
+| PUL|k3|24h          |       4 |      0.061 |      0.061 |      0.133 |     0.148 |
+| SWP|ext_pd_N5|4h    |       4 |      0.03  |      0.065 |      0.081 |     0.077 |
+| LQP|eqL2|15m        |       4 |      0.027 |      0.027 |      0.066 |     0.077 |
+| SWP|ext_swing_N5|4h |       4 |      0.015 |      0.189 |      0.015 |     0.217 |
+| PUL|k5|4h           |       4 |      0.014 |      0.079 |      0.014 |     0.104 |
+| LQP|eqH2|15m        |       4 |      0.005 |      0.005 |      0.006 |     0.152 |
+| LQP|eqH3|1h         |       4 |      0     |      0     |      0     |     0     |
+| LQP|eqH2|1h         |       4 |      0     |      0     |      0     |     0     |
+| LQP|eqH3|15m        |       4 |      0     |      0     |      0     |     0     |
+| ABS|k2N10|4h        |       4 |      0     |      0     |      0     |     0     |
+| ICE|R3N30|4h        |       4 |      0     |      0     |      0     |     0     |
+| ICE|R2N30|4h        |       4 |      0     |      0     |      0.045 |     0.121 |
+| LQP|eqL3|15m        |       4 |      0     |      0     |      0     |     0.005 |
+Reading: with the combined lock removed no book or liquidity-pool stream reaches a 10% cut on L6M, PRE and X' together (best: SWP lvl_swing 4h D20 half L6M +8%, PRE +9%, X' +14%; PUL k3 24h D20 skip +6/+13/+10 with MID -16%). DEAD in both lock frames; PUL k3 4h D20 remains the only LEAD (weak, PRE/X' only).
+
+
+## PUL k3 4h D20 skip, lock=None: where the cell-minus-base dollars come from (V13X, $k)
+
+L6M: total +22.4k; Asia +14.2k; London +10.4k; NY-AM -8.4k; NY-PM +6.1k
+HOLD: total -62.4k; Asia -18.2k; London -12.2k; NY-AM -36.2k; NY-PM +4.2k
+PRE: total +60.2k; Asia +32.5k; London +35.8k; NY-AM +1.6k; NY-PM -9.6k
+X': total +30.6k; Asia +23.6k; London +3.5k; NY-AM +2.3k; NY-PM +1.2k
+
+By realised-vol tercile:
+| window   | vol T1        | vol T2       | vol T3        |
+|:---------|:--------------|:-------------|:--------------|
+| L6M      | +18.9k (2d)   | +14.4k (36d) | -11.0k (93d)  |
+| HOLD     | +14.1k (17d)  | -10.4k (76d) | -66.1k (165d) |
+| PRE      | -4.3k (121d)  | -8.6k (122d) | +73.1k (121d) |
+| X'       | +26.2k (137d) | +4.4k (72d)  | +0.0k (7d)    |
+
+PRE episode-proofing (lock none): cut +0.166, maxDD week 202516, cut without it +0.077, leave-one-month-out [+0.133,+0.222], bootstrap 90% [-0.052,+0.349]
+X' episode-proofing (lock none): cut +0.110, maxDD week 202337, cut without it +0.110, LOO-month [+0.000,+0.157], bootstrap 90% [-0.079,+0.289]
+month chain (lock none): 43 months, positive 23, negative 15, zero 5; total +31.7k; largest month 2025-04 +48.7k; worst 2025-11 -34.3k
