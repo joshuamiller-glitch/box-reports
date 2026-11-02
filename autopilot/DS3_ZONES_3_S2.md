@@ -888,3 +888,20 @@ carrying week of the control L6M maxDD: 202637 ; cut with that week dropped 0.26
 | none | camH3_75fw8any | +8.8% (+7.6%..+9.8%) | +13% / +15% / +5% / -4% / +11% | 5/5 | 179.6k (163.6..195.3) | 163.8k |
 | none | kijun1h20tstk | +28.2% (+15.3%..+39.0%) | +48% / +33% / -2% / -3% / -7% | 5/5 | 179.6k (163.6..195.3) | 129.3k |
 
+
+
+## s2 CRT4h D / age curve at V13T_LIVE (Z2, ~17:40Z 2026-11-02; prereg addendum ZONES3_S2_CRT_GAPS sha256 c64d2cbd4e74248acd99626cc72649eb03aae2b78d66ce02e751bb4a639155cd)
+The CRT4h line replaces its shipped term; L6M maxDD cut vs the shipped layer, single phase, plus the cut with ISO W29..W39 dropped.
+| row | cut L6M | Calmar gain L6M | cut HOLD | cut PRE | cut X' | L6M cut with W29-W39 dropped | mean d L6M $/wk | S/T/N |
+|---|---|---|---|---|---|---|---|---|
+| fw2, D 10 | -5% | -4% | -5% | -1% | +2% | +3% | +84 | -/-/- |
+| fw2, D 20 | -0% | +1% | -0% | +0% | +4% | +3% | +363 | -/-/- |
+| fw2, D 30 | -1% | -1% | -1% | -1% | +5% | +3% | -3 | -/-/- |
+| fw2, D 40 | +1% | +3% | +1% | -2% | +13% | +3% | +408 | -/-/- |
+| fw2, D 50 | +3% | +5% | +3% | -2% | +4% | +3% | +547 | -/-/- |
+| fw2, D 60 = 70 = 80 = 100 | +22% | +34% | +20% | -1% | +4% | +4% | +1361 | S/T/N |
+| D 60 (= 80), fw1 | +2% | +3% | +2% | -1% | +9% | +3% | +462 | S/T/N |
+| D 60 (= 80), fw3 | +39% | +74% | +18% | -1% | +5% | +2% | +2468 | S/T/N |
+| D 60 (= 80), fw4 = fw8 = fresh (any age) | +36% | +63% | +17% | -1% | +1% | -1% | +1560 | -/T/N |
+| fresh, D 50 | +11% | +15% | +11% | -1% | +1% | -1% | +1005 | -/T/N |
+**Reading (the 'one D only' finding as a curve):** the cut is flat at 0 to +3% for D 10..50 pts and jumps to +22% at D 60; D 60, 70, 80 and 100 are IDENTICAL because the target distances of D7 signals do not exceed about 60 pts, i.e. the effective rule at D >= 60 is 'any fresh CRT midpoint between the entry and the target' (the AHEAD frame with no distance cap). So the effect is a threshold in the frame, not a tuned D, but it still needs lines 50-60 pts away (only the far lines matter) - the near lines carry nothing. Age: fw1 +2%, fw2 +22%, fw3 +39%, fw4/fw8/any age +36%: the age rule is not what makes the cell (any age is as good or better at L6M), and every variant has a cut of -1..+4% with the carrying episode W29-W39 dropped: the whole cut is the L6M episode. PRE maxDD is -1% for all of them.
