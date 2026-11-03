@@ -49,3 +49,13 @@ Claim to carry: nothing here is an ADDITION candidate that survives the family-l
 | NY-AM fade bundle (ON_RTH + VWAP + ORB30, 2 lots each), plain | nyam | +4,540 | 9.9k | 0.46 | 0.5x: 0.355; 0.755; 0.222 (1x: 0.503; 0.818; 0.239); equal-risk HOLD k=1.56: 0.228 -> 0.293 | HOLD +5,065 MID +11,284 PRE -2,422 X' -588 | LEAD-regime |
 | same, causal switch (trailing-40-day bundle P&L > 0) | nyam | +4,540 | 9.9k | 0.46 | 0.5x: 0.355; 0.755; 0.220 (1x: 0.503; 0.818; 0.237) | HOLD +4,758 MID +10,298 PRE -986 X' +354; best-of-12 null p 0.005 but only +6% S over plain; ER<x condition hurts; gate_v2 false for all 3 components (p_book 0.12 / 0.03 / 0.86), Bonferroni 1.0 | LEAD-regime (not cleared) |
 | diagnostic | - | - | - | - | - | no efficiency/autocorr/VR shift; open-hour range share +5.5 (NQ) +5.5 (ES) +7.3 (YM) pts p<=0.001; NQ ORB 0.25% hit rate -0.107 p 0.009; detection lag 5-30 days via own trailing P&L / ORB hit rate; ER too slow (47-157 d) | INFO |
+
+## 2026-11-04 DISC_E rows (prereg sha256 3b553875f812e4bf4e948e4fa7908cbfa1b9992e63b68da6c45409e640032588; DISCOVER_E.md; 412 cells DISC_E; cumulative n_tested 1,870)
+| book | session | mean/wk (L6M) | maxDD (L6M) | Calmar | stack Calmar with it (L6M; dropcar; HOLD) | windows | label |
+|---|---|---|---|---|---|---|---|
+| E1 NY positive-gamma fade at open+30 min (60/60, T60), 667 trades | nyam | +1,283 | 13.0k | 0.099 | 0.302; 0.729; 0.187 | HOLD +987 MID -32 PRE -712 X' +624; family p side 0.95 / shift 0.58; gate v2 p_book 0.41; overlap 67% | DEAD (echo of the 2026 NY-AM regime) |
+| E1 Asia negative-gamma momentum R1, h15 | asia | +649 (22 L6M trades) | 6.5k | | | thin | DEAD (thin) |
+| E2 ES-lead entry, Asia D10 4bp L1 60/60, 1,369 trades | asia | +318 | 7.6k | 0.042 | 0.304; 0.687; 0.196 | HOLD +385 MID +410 PRE -327; slip +1 pt L6M -309; L2 S -2; family p 0.70 / 0.10; overlap 79% | DEAD (below cost; latency-fragile) |
+| E3 L2 entry engine (72 books) | asia/london/nyam | best S -151 | | | | 0 of 72 S>0; p 0.83 / 0.63 | DEAD |
+| E4 all-day fade 10:30-13:30 (60/60, T60), 2,625 trades | nyam | +1,147 | 26.0k | 0.044 | 0.358; 0.609; 0.187 | HOLD +1,054 MID +61 PRE -262 X' -495; slip +2 pt L6M -690; p 0.85 / 0.98 | DEAD |
+| E4 quiet-day / wide-day flagged books (B02 exact) | nyam | quiet fade -232 / quiet cont -379 | | | | flag adds nothing over all-days | DEAD |
