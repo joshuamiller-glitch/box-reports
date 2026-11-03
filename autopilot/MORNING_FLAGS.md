@@ -166,3 +166,9 @@ Cells that KEEP x1.5 and rank best (exact definitions): K_PE = x1.5 only for PE 
 - 2026-11-03 00:29Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
 - 2026-11-03 00:54Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
+
+- 2026-11-03 01:19Z SIZER FLAG: 55 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
+
+- 2026-11-03 01:21Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
+
+- 2026-11-03T03:00Z S4a EQUAL-MEAN-LOTS FLAG (mechanical, weak): S1B cell A|KB|asia|t0.50_0.75_1.25 on the ts base. Definition: book KB, session asia only, multiplier = 1.25 if ER(20) on 5-min >= 0.50 else 0.75 (all other rows keep the live 0.30 ladder), whole vector x1.0125 so engine mean lots = 3.047 (ladder 3.010). Result vs the live ladder: maxDD cut L6M 18.2%, PRE 2.4%, L6M with carrying weeks dropped 3.5%, mean +1.9k/wk L6M and +63 PRE, genuine PA9 L6M 17.3% PRE 2.4% MID -14.4% X' -1.0% (inside no-harm). NOT a lead: PRE and carry-dropped cuts are inside the flip-5 noise band and equal-lots placebos match or beat the L6M cut (rank .13-.19). See SIZER_EQLOTSB.md. No S1 rank-mapping cell passes (all 11 fail MID).
