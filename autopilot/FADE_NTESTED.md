@@ -21,3 +21,7 @@
 | 2026-11-03T22:55Z | FADE_TP | S4b | 486 | screen: 7 tape triggers x 11 anchor groups x 4 sessions x 2 shapes (non-empty cells >= 40 trades); shape / buffer expansion later counted separately |
 | 2026-11-03T22:59Z | FADE_TP | S4b | 2484 | v2 after ZL-2 audit fixes: screen 486 + shape expansion 540 + neighbourhood 1,458 (two-sided and one-sided) |
 | 2026-11-03T22:59Z | FADE_TP | S4b | 2484 | v2 after ZL-2 audit fixes: screen 486 + shape expansion 540 + neighbourhood 1,458 (two-sided and one-sided) |
+| 2026-11-03T23:00Z | FADE_TP | S4b | 2484 | v2 all cells tried: 2484 |
+| 2026-11-03T23:02Z | FADE_MZ | Z1 | 2336 | mirror 96 cells + Mancini failed-break 2,240 cells (1,672 with trades) |
+| 2026-11-03T23:15Z | FADE_TP | S4b | 487 | screen: 7 tape triggers x 11 anchor groups x 4 sessions x 2 shapes (non-empty cells >= 40 trades); shape / buffer expansion later counted separately |
+| 2026-11-03T23:20Z | FADE_TP | S4b | 2485 | v2 all cells tried: 2485 |

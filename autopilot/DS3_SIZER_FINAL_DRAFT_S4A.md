@@ -1,4 +1,4 @@
-# DS3_SIZER FINAL DRAFT (S4a integrator, 2026-11-03 22:57Z); for the lead; numbers in section 2 regenerate every 25 min. Post-hoc, Shadow only; the user decides.
+# DS3_SIZER FINAL DRAFT (S4a integrator, 2026-11-03 23:23Z); for the lead; numbers in section 2 regenerate every 25 min. Post-hoc, Shadow only; the user decides.
 
 ## 1. Answer
 The live sizer stays as Q1-A (ER(20) on 5-min < 0.30 -> x0.5, else x1.0; live since 2026-11-02 19:30Z). Across S1, S1B, S1 hysteresis, S2, S2V (+hybrid/mean), S3, Q2-Q6, stack and the ER-at-the-add cells restated against Q1-A on the live-lot-order base (ts2) (S3X lock rows and S4b add cells not yet restated) no cell beats Q1-A on L6M AND PRE with the carrying week dropped, passes no-harm and the PA9 band, and is placebo-clean. sizer_policy proposal: live Q1-A ladder, no change (draft: autopilot/sizer_policy_DRAFT.txt).
@@ -16,7 +16,7 @@ The live sizer stays as Q1-A (ER(20) on 5-min < 0.30 -> x0.5, else x1.0; live si
 - SIZER_S1_HYST: 148 rows, 84 keep Q1-A's mean (strict), 0 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: fam#38 (down) L6M +0.307, PRE +0.032. Sentence: the ER sizer should stay as Q1-A for this family.
 - SIZER_S2(on Q1-A): 100 rows, 1 keep Q1-A's mean (strict), 0 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: ('rk_r2_5m_20', -1, 'D3', 'GD') (modifier) L6M +0.422, PRE -0.001. Sentence: the ER sizer should stay as Q1-A for this family.
 - SIZER_S2V(Q1-A): 389 rows, 100 keep Q1-A's mean (strict), 2 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: R|ATR|(0.3, 0.2, 0.2) (modifier) L6M +0.410, PRE -0.007. Sentence: the ER sizer should stay as Q1-A for this family.
-- SIZER_S3(Q1-A): 114 rows, 27 keep Q1-A's mean (strict), 0 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: 3.2 triple ers_5m_20 + rv_pct_5d + er_3m_14 MEAN (combo) L6M +0.394, PRE +0.156. Sentence: the ER sizer should stay as Q1-A for this family.
+- SIZER_S3(Q1-A): 123 rows, 36 keep Q1-A's mean (strict), 1 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: 3.2 pair delta10_s + delta30_s MINDOWN (combo) L6M +0.536, PRE +0.096. Sentence: the ER sizer should stay as Q1-A for this family.
 - STACK (BASE-4 Q1-A): 54 rows, 28 keep Q1-A's mean (strict), 0 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: cap17 (per owner) L6M +0.010, PRE +0.000. Sentence: the ER sizer should stay as Q1-A for this family.
 
 3. Exposure (SIZER_EXPOSURE.md, ts2): worst day (ts2): Q1-A 18 net lots / $21.6k stack risk; 3-tier T_0.25_0.60 25 / $31.2k; K_PE 22 / $26.4k; KB-asia cell 19 / $22.8k; mean lots over engine trades on ts2: 2.139 / 2.333 / 2.497 / 2.204 (Z2 audit; the 2.31 in older S4a text is the old-base flagged-taken universe).
@@ -30,7 +30,10 @@ The live sizer stays as Q1-A (ER(20) on 5-min < 0.30 -> x0.5, else x1.0; live si
 
 
 
-## 3a. Z3 lead (registered with caveats, not recommended)
+## 3a. Z3 lead (registered with caveats, not recommended). UPDATE: Z3's corrected LIVE4 rows (causal delta features, genuine PA9, corrected weeks) supersede the numbers in the next paragraph (pre-fix, Z2 rebuild): 123 rows, none meets the strict flag rule with no-harm; 29 are Z3 LEAD-candidates (PRE mean below Q1-A, placebos pending); final-multiplier worst day 26 lots / $31.2k (PROD, MINDOWN) and 25 / $30.0k (delta10_s + rv_pct_5d) vs Q1-A 18 / $21.6k, ts2 trade lots 2.06 / 2.03 / 2.01 vs 2.14.
+Z3's causal-feature numbers (23:20Z): PROD genuine PA9 L6M 31.8 / PRE 20.3 / MID 27.7 / X' 4.7, carry-dropped L6M 25.9 / PRE 7.5, mean L6M +6.4k / PRE -1.4k per week; MINDOWN PA9 31.4 / 22.1 / 29.0 / 13.7; delta10_s + rv_pct_5d MINDOWN PA9 21.2 / 28.4 / 35.3 / 18.8. Z2: not a candidate, WATCH only (fails strict mean-keeping on PRE, worst day +44%, placebos not clean).
+Placebos (Z3, genuine PA9, 3 kinds x 100): L6M ranks .44-.57 (chance), PRE .94-.99, MID .96-1.00, HOLD .88-1.00, X' .77-.97: label LEAD (Z3) / WATCH (Z2), not a FLAG under the same-or-better-mean rule (PRE mean -1.4k to -1.9k per week); shadow-register decision is open question 3b.
+(pre-fix paragraph, Z2 rebuild with the same-second delta features)
 SIZER_S3 3.2 pair rv_pct_5d + delta30_s (PROD / MINDOWN, two non-ER modifiers on Q1-A): single-phase L6M +46.0 / PRE +20; genuine PA9 L6M 26.4 / HOLD 1.9 / MID 25.8 / PRE 26.2 / X' 10.3; carry-dropped L6M +9.6, PRE +6..+8 (corrected weeks); mean L6M +3.3k, PRE -1.5k per week; placebo L6M ranks .81-.86 (not clean); simultaneous worst day 26 lots / $31.2k vs Q1-A 18 / $21.6k (+44%; Z3's '126 vs 130' is gross daily lots, a different measure); multiplier up to x2.0 (lock R scaled, max single-signal lots 11); delta30_s includes the signal second. Values from Z2's rebuild; the S3 rows in the master are Z3's ts2 live-universe cells (comb_live3_all: 114 rows, none strict mean-keeping with carry-dropped PRE > 0 and placebo-clean). Details: SIZER_LEAD_REGISTER.md.
 
 ## 3. Near-miss registered (implementable)
@@ -65,10 +68,14 @@ The PA9 noise band (flip-5: L6M .219, HOLD .205, MID .322, PRE .099, X' .182) wa
 ## 5. Exposure (SIZER_EXPOSURE.md, ts2)
 Worst day (ts2, verified by Z2): Q1-A 18 net lots / $21.6k stack risk; 3-tier T_0.25_0.60 25 / $31.2k; K_PE 22 / $26.4k; (the KB-asia S1B cell was an old-ladder result and is dropped; it stays in the exposure table only as a reference row). Z3's rv_pct_5d + delta30_s lead (Z2 rebuild): simultaneous worst day 26 lots / $31.2k (+44% vs Q1-A); Z3's '126 vs 130' is gross daily lots, a different measure. Mean lots over the engine's actual ts2 trades (Z2 audit): Q1-A 2.139, T_0.25_0.60 2.333, K_PE 2.497, KB-asia 2.204. NOTE: other S4a tables quote 'mean lots' and the equal-lots target 2.311 over the 17,396 flagged-taken rows of the old base (formula lots); that is a different universe from the 21,397 ts2 trades (2.14), so lots ratios are comparable inside S4a tables but the absolute 2.31 must not be read as ts2 trade lots. ZL-1/Z3 text quoting '2.31' (e.g. the near-miss 'lots 2.0 vs 2.31') is in that old universe.
 
+## 5b. S3X
+S3X lock/bracket rows are on the old x1.5-ladder base (and some on V13T_LIVE with a lock), not on Q1-A; they are not restated, not in the Q1-A ranking and removed from the summaries. Section 3.5 (sizer x lock under Q1-A, Z1) is the Q1-A answer for locks.
+
 ## 6. Questions open to the user
 1. Real order latency: every cell is scored on the 1-second grid with the modelled cost model (market exits 0.80 pt, stops 2.45 pt worse); a real latency between ER computation and the order, and for any sizer change, is not modelled. Does the user want a latency sensitivity?
 2. Rank hysteresis (ER percentile with margin) and every rank mapping: none survives on ts2 / live universe; does the user want any of them Shadow-logged anyway, or closed?
 3. The ZL-1 vol-target near-miss: log it Shadow-only, or close it?
+3b. Z3's causal two-modifier lead (rv_pct_5d + delta30_s, or delta10_s + rv_pct_5d): LEAD by Z3's label (PRE/MID/HOLD placebo-clean, L6M at chance, PRE mean -1.4k to -1.9k per week, worst day +44%): put it on the shadow register, or close it?
 4. PA9 / flip-5 noise band: calibrated on the old x1.5 ladder; should it be re-calibrated on Q1-A (ts2) before final judgements (a smaller base drawdown makes bands harder or easier)?
 5. Sizer x lock under Q1-A (section 3.5, Z1): result pending at the time of this draft.
 6. Add-side sizer (addendum 2.1): ER at the add cells under Q1-A are closed by ZL-2's Q6 (no cell keeps the mean); does the user accept closing it?

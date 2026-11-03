@@ -1,4 +1,4 @@
-# DS3_SIZER final plain sentences, filled from the master table by the integrator (2026-11-03 22:57Z); numbers regenerate every 25 min; hand-written notes at the end are S4a's. Post-hoc, Shadow only; the user decides.
+# DS3_SIZER final plain sentences, filled from the master table by the integrator (2026-11-03 23:23Z); numbers regenerate every 25 min; hand-written notes at the end are S4a's. Post-hoc, Shadow only; the user decides.
 
 1. The live sizer should stay as Q1-A (ER(20) on 5-min below 0.30 -> x0.5, else x1.0) unless a cell beats it on L6M AND PRE with the carrying week dropped, passes no-harm and the PA9 band, and is placebo-clean. Register: SIZER_LEAD_REGISTER.md. Policy draft: sizer_policy_DRAFT.txt (live Q1-A, no change).
 
@@ -14,7 +14,7 @@
 - SIZER_S1_HYST: 148 rows, 84 keep Q1-A's mean (strict), 0 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: fam#38 (down) L6M +0.307, PRE +0.032. Sentence: the ER sizer should stay as Q1-A for this family.
 - SIZER_S2(on Q1-A): 100 rows, 1 keep Q1-A's mean (strict), 0 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: ('rk_r2_5m_20', -1, 'D3', 'GD') (modifier) L6M +0.422, PRE -0.001. Sentence: the ER sizer should stay as Q1-A for this family.
 - SIZER_S2V(Q1-A): 389 rows, 100 keep Q1-A's mean (strict), 2 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: R|ATR|(0.3, 0.2, 0.2) (modifier) L6M +0.410, PRE -0.007. Sentence: the ER sizer should stay as Q1-A for this family.
-- SIZER_S3(Q1-A): 114 rows, 27 keep Q1-A's mean (strict), 0 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: 3.2 triple ers_5m_20 + rv_pct_5d + er_3m_14 MEAN (combo) L6M +0.394, PRE +0.156. Sentence: the ER sizer should stay as Q1-A for this family.
+- SIZER_S3(Q1-A): 123 rows, 36 keep Q1-A's mean (strict), 1 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: 3.2 pair delta10_s + delta30_s MINDOWN (combo) L6M +0.536, PRE +0.096. Sentence: the ER sizer should stay as Q1-A for this family.
 - STACK (BASE-4 Q1-A): 54 rows, 28 keep Q1-A's mean (strict), 0 meet the L6M+PRE cut rule, 0 also clear no-harm and the PA9 band. Best mean-keeping by (cut L6M + cut PRE)/2: cap17 (per owner) L6M +0.010, PRE +0.000. Sentence: the ER sizer should stay as Q1-A for this family.
 
 3. Exposure (SIZER_EXPOSURE.md, ts2): worst day (ts2): Q1-A 18 net lots / $21.6k stack risk; 3-tier T_0.25_0.60 25 / $31.2k; K_PE 22 / $26.4k; KB-asia cell 19 / $22.8k; mean lots over engine trades on ts2: 2.139 / 2.333 / 2.497 / 2.204 (Z2 audit; the 2.31 in older S4a text is the old-base flagged-taken universe).

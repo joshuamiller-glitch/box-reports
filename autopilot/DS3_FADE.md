@@ -252,3 +252,151 @@ Plain sentence: ZL-1's VB2 NY-PM touch-reject fade reproduces within a handful o
 | S4b shifted-line placebo (both lines, 10-80 pt, 60 draws) | n/a | L6M mean p .016 (rank 1.00), HOLD mean p .098, HOLD Calmar p .082, PRE mean p .525, stack gain HOLD p .54 | consistent | agrees with S4b: not significant for the stack. |
 | Z2 NY-AM VWAP-stretch reject (ST 2.0 S2 b0.5 0.5R T60, 932 trades) | Z2 flag (withdrawn) | 930 trades; +894 / +512 / +539 / +724 / +929 / -281 / -3 | exact except X' (+20) | signal window 10:00-11:59 per Z2's correction; lots 0.33-6, mean 2.3. |
 Earlier audits (this file): CAL F1 ON / AS / IB60 T2 exact (2 lots; table lacked the lots, text 0.1 ATR rule is Z1's Mancini text, code is the definition); Z2 ST 1.5 nyam exact; Z2 RNG 15 nyam T3 exact once the code's one-bar-late start (off 16) is applied.
+
+
+## Section 1 MANCINI FAILED-BREAK FADE, interim row 1 (2026-11-03T23:01Z) post-hoc, no PASS, Shadow only
+Prereg l2vast/ds3/prereg/FADE_MZ_mancini_prereg.md sha256 97325f1ed52e7a55ab720bf96974306859c4fda3be69f98bbeb79313c94ba59b and ADDENDUM 1 sha256 (DECISIONS.md) for the ROUND rebuild in the RAW contract frame (CAL warning: path-frame multiples of 50 are real round numbers on ~10% of days; the path-frame ROUND results had been seen and are DISCARDED). 2,240 registered cells, 1,672 have trades (>=5 events); harness = ZL-2 FadeHarness (live fill model, LIVE costs), lots = clip(1200 / (stop x 20), 0.25, 2.0) (lead cell: mean 1.18, 0.32-2.00). Code l2vast/ds3/code/zones3/fade_mz/ (events.py = the definition, sweep.py, fam.py, stage2.py), results out/fade_mz/.
+Definition (from events.py): level L; break = first 1-min close beyond L by >= X pt (resistance: close >= L+X after price was below L; support mirrored); reclaim = a 1-min close back through L within N minutes; signal at the reclaim bar close B; side = fade; first break per level per live window only. Stop = extreme (max high / min low from the break bar to the reclaim bar) +- b x ATR14(5-min, last closed bar); target = R x stop distance from the reclaim close; time stop 60 min; flat 16:55 ET; one position at a time. Groups: PD, ON, ASIA, LON, IB, SWING, ROUND(raw frame); sessions by the reclaim bar (Asia, London, NY-AM, NY-PM).
+Counts (all 1,672 cells): NOW-ONLY 453, TOLERANT 128, STRICT 39, gate_v2a (minimum sample) 32. By group (NOW-ONLY / TOLERANT / STRICT / v2a): ASIA 22/1/0/0; IB 147/62/19/3; LON 47/5/4/0; ON 72/19/0/10; PD 16/9/5/0; ROUND 53/21/8/12; SWING 96/11/3/7. By session: asia 49/24/6/0; london 47/3/0/1; nyam 190/39/11/31; nypm 167/62/22/0. Only 20% of cells have a positive L6M mean (L6M positive share 0.37, median -$66/wk), consistent with costs eating a no-edge family.
+Family null (100 worlds, every entry moved to the same clock time of a random other label day, all 1,148 cells with >= 20 L6M trades): best L6M mean $1,794/wk (SWING NY-AM X=5 N=5 b=.25 R=1) against a null best median $1,617, 95th $2,268, max $3,027 -> FAMILY p = 0.26 (raw p of that cell 0.01). The next cells are 0.30-0.63. The stack-maxDD-cut statistic (0.5x, L6M, carrying dropped) is degenerate in this null (cells with no L6M trades score exactly 0 and every other null cut is negative) and is dominated by net-LOSING cells that hedge the 2026 stack drawdown by accident (SWING London 15/30 cut +10.6% with L6M mean -$295..-$994/wk, HOLD maxDD +$3-5k): not a lead.
+One sentence: no failed-break fade clears the family null; the best tolerant leads are NY-AM swing-level failed breaks whose edge is 2026-only (switch ON on 100% of L6M days), whose ON-only PRE and X' are negative (REGIME, not CONDITIONAL), and whose family p is 0.26-1.0; nothing is flagged.
+Ranked table (all 10 tolerant cells of the placebo stage; placebo stage covered 58 cells: top 40 by stack maxDD cut + best 3 per group; 7 cells too small for the harness placebo):
+| book | session | anchor | trigger | shape | L1M | L3M | L6M | HOLD | MID | PRE | X' | regime-conditioned | placebo | stack gain | label |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| fade (Z1) | nyam | swing 5m fractal | failed break X=15 pt reclaim<=3 min | stop ext+0.50 ATR, target 1R, T60 | +242 | +818 | +964 | +566 | +1467 | +67 | -136 | F40-ON PRE -194 / X' -75 | harness p_HOLD 0.22, L6M<=0.06; shifted-line rank L6M 0.10 HOLD 0.02 | 0.5x stack maxDD -1.9k L6M / -1.9k HOLD, Calmar +0.031 / +0.006 | LEAD-weak, REGIME |
+| fade (Z1) | nyam | swing 5m fractal | failed break X=20 pt reclaim<=3 min | stop ext+0.50 ATR, target 1R, T60 | +34 | +194 | +899 | +416 | +1075 | +12 | -203 | F40-ON PRE -63 / X' -137 | harness p_HOLD 0.29, L6M<=0.08; shifted-line rank L6M 0.02 HOLD 0.02 | 0.5x stack maxDD -2.5k L6M / -1.8k HOLD, Calmar +0.038 / +0.005 | LEAD-weak, REGIME |
+| fade (Z1) | nyam | overnight H/L | failed break X=20 pt reclaim<=10 min | stop ext+0.50 ATR, target 2R, T60 | -273 | +870 | +780 | +297 | -126 | +183 | -130 | F40-ON PRE +27 / X' -71 | harness p_HOLD 0.85, L6M<=0.06; shifted-line rank L6M 0.02 HOLD 0.22 | 0.5x stack maxDD +1.3k L6M / +0.1k HOLD, Calmar -0.012 / -0.000 | NOW-ONLY / tolerant, placebo fails |
+| fade (Z1) | asia | prior RTH H/L | failed break X=20 pt reclaim<=30 min | stop ext+0.50 ATR, target 2R, T60 | +135 | +237 | +391 | +284 | +472 | +80 | +3 | F40-ON PRE -9 / X' +0 | harness p_HOLD nan, L6M<=nan; shifted-line rank L6M 0.10 HOLD 0.02 | 0.5x stack maxDD +0.6k L6M / +2.2k HOLD, Calmar -0.003 / -0.003 | LEAD-weak, REGIME |
+| fade (Z1) | nyam | overnight H/L | failed break X=20 pt reclaim<=15 min | stop ext+0.50 ATR, target 2R, T60 | -582 | +662 | +773 | +267 | -202 | +176 | -228 | F40-ON PRE -3 / X' -137 | harness p_HOLD 0.94, L6M<=0.04; shifted-line rank L6M 0.02 HOLD 0.22 | 0.5x stack maxDD +1.3k L6M / +0.5k HOLD, Calmar -0.012 / -0.001 | NOW-ONLY / tolerant, placebo fails |
+| fade (Z1) | asia | prior RTH H/L | failed break X=20 pt reclaim<=30 min | stop ext+0.50 ATR, target 1R, T60 | +128 | +316 | +439 | +219 | +99 | +67 | +3 | F40-ON PRE +2 / X' +0 | harness p_HOLD nan, L6M<=nan; shifted-line rank L6M 0.02 HOLD 0.02 | 0.5x stack maxDD +0.6k L6M / +2.2k HOLD, Calmar -0.003 / -0.003 | LEAD-weak, REGIME |
+| fade (Z1) | nyam | overnight H/L | failed break X=20 pt reclaim<=30 min | stop ext+0.50 ATR, target 2R, T60 | -800 | +494 | +839 | +206 | -302 | +194 | -37 | F40-ON PRE -40 / X' -52 | harness p_HOLD 0.97, L6M<=0.03; shifted-line rank L6M 0.02 HOLD 0.27 | 0.5x stack maxDD +1.3k L6M / +0.5k HOLD, Calmar -0.012 / -0.002 | NOW-ONLY / tolerant, placebo fails |
+| fade (Z1) | asia | prior RTH H/L | failed break X=20 pt reclaim<=30 min | stop ext+0.25 ATR, target 1R, T60 | +177 | +255 | +405 | +202 | +44 | +26 | +3 | F40-ON PRE -12 / X' +0 | harness p_HOLD nan, L6M<=nan; shifted-line rank L6M 0.05 HOLD 0.07 | 0.5x stack maxDD +0.6k L6M / +1.6k HOLD, Calmar -0.003 / -0.002 | LEAD-weak, REGIME |
+| fade (Z1) | asia | round 50 (raw frame) | failed break X=20 pt reclaim<=15 min | stop ext+0.50 ATR, target 1R, T60 | +1598 | +414 | +397 | +155 | +127 | +7 | -49 | F40-ON PRE -110 / X' -56 | harness p_HOLD 0.88, L6M<=0.19; shifted-line rank L6M 0.24 HOLD 0.49 | 0.5x stack maxDD -4.2k L6M / +0.4k HOLD, Calmar +0.054 / -0.000 | NOW-ONLY / tolerant, placebo fails |
+| fade (Z1) | nyam | swing 5m fractal | failed break X=20 pt reclaim<=30 min | stop ext+0.25 ATR, target 1R, T60 | -683 | +383 | +558 | -66 | +608 | +176 | +31 | F40-ON PRE -65 / X' +361 | harness p_HOLD 0.83, L6M<=0.30; shifted-line rank L6M 0.10 HOLD 0.20 | 0.5x stack maxDD -2.4k L6M / -2.0k HOLD, Calmar +0.029 / +0.002 | NOW-ONLY / tolerant, placebo fails |
+Reading of the best row (SWING NY-AM X=15, reclaim <= 3 min, stop ext+0.5 ATR, target 1R): 628 trades (L6M 127, hit 60%), mean +$964/wk L6M, +$566 HOLD, +$1,467 MID, +$67 PRE, -$136 X'; gate TOLERANT and v2a, 0.5x stack: maxDD -$1.9k (L6M) and -$1.9k (HOLD), Calmar +0.031 / +0.006; days-placebo p of the L6M mean 0.01, harness p_book (HOLD mean / stack gain, weakest of three kinds) 0.22, shifted-line placebo (40 draws, lines moved 10-80 pt) rank L6M 0.10 / HOLD 0.02; regime: with the CAL switch R_F40 ON on all 131 L6M days the numbers equal the pooled ones, ON-only PRE -$194 and X' -$75 (OFF-only PRE +$261): the edge is the 2026 regime; family p 1.0. Causality check: a truncated-data rerun (bars cut at the signal minute) reproduces the event (same bar, level, extreme) for 12 of 12 sampled signals. Label: LEAD-weak, REGIME, NOT a candidate.
+Status: next 6 h = zone-line anchors (BASE-4 census has them), VWAP-free level groups remain with BASE-4; deeper REGIME conditioning of the swing-level NY-AM family (X/N plateau) and the stack-gain portfolio.
+
+## Pointer (ZL-1, ~23:15Z): OR15 NYAM T2 full treatment, VB2 NYPM T1 audit tables and the 16-column rows of the FADE_LV slice are in autopilot/DS3_FADE_LV.md (detail) and autopilot/FADE_ROWS_LV.md (rows for CAL's merge). This file was overwritten once by my interim-1 write (my error: it used write mode); from now on ZL-1 only appends to it.
+
+
+# T-FADE audit response and follow-ups (S4b, after ZL-2's audit PARTIAL and the lead's orders) - 2026-11-03 ~23:20Z
+**Decisions and fixes (all numbers below regenerated):** (a) intended book = B, the one-sided text (PDH approached from below -> SHORT, PDL approached from above -> LONG); the as-coded book A (two-sided: also PDH-from-above longs and PDL-from-below shorts) is kept as a variant: it adds 35 trades (15 shorts, 20 longs, net -$10.0k) to B's 64 -> 94, and loses 5 B trades to the one-position rule; (b) ATR now = the last 5-min bar CLOSED at the 1-min bar close (the first version lagged one 5-min step when B is a 5-min boundary); (c) delta60 defined exactly: two adjacent 30-s windows of the 1-s flow table ending at the last print second <= ts+59 and 30 s earlier (inclusive, missing seconds 0); sensitivity to the end second and to a minimum |delta| below; (d) lots capped at 6 (lots = min(2,400 / (stop x $20), 6), mean 5.2 for B); (e) the whole pipeline (minute table, 486 screen cells incl. the one-sided group, 540 shape expansion, 1,458 neighbourhood cells = 2,484 cells) was rebuilt; the PRE and L6M carrying-week constants used by the harness stack gain were wrong (Z2 M1): all stack numbers here use L6M/HOLD 202630-202637, PRE 202506-202509, X' as in the harness; (f) the single code path for the definition is fade_nbhd.events + fade_screen.trades_of (streaming reproduction diff 0: 206 events two-sided, 132 events one-sided).
+## Book B vs book A (shape VWAP target, stop 1.0 ATR, T60) - windows $/wk at the stated lots
+| book | trades | L3M | L6M | HOLD | MID | PRE | X' |
+|---|---|---|---|---|---|---|---|
+| B one-sided | 64 | +1306 | +810 | +400 | -160 | +173 | -43 |
+| B one-sided T120 | 64 | +1314 | +956 | +509 | -138 | +133 | -27 |
+| A two-sided (as coded) | 94 | +975 | +1067 | +551 | +340 | +49 | -162 |
+| A T120 | 94 | +983 | +1214 | +667 | +389 | +9 | -187 |
+
+## Per year (net $ of the trade list at the stated lots) - REGIME or all-years?
+* B one-sided: 2023: 15 trades, +4233 $ / 2024: 19 trades, +742 $ / 2025: 11 trades, +7452 $ / 2026: 19 trades, +19936 $. Quarterly: 2023 Q2 +1905 | 2023 Q3 -805 | 2023 Q4 +3133 | 2024 Q1 -4729 | 2024 Q2 -1343 | 2024 Q3 +4187 | 2024 Q4 +2627 | 2025 Q1 -575 | 2025 Q2 +6687 | 2025 Q3 +491 | 2025 Q4 +849 | 2026 Q1 -1922 | 2026 Q2 +3967 | 2026 Q3 +7115 | 2026 Q4 +10777.
+* A two-sided: 2023: 18 trades, -1164 $ / 2024: 26 trades, -3657 $ / 2025: 18 trades, +3123 $ / 2026: 32 trades, +30369 $.
+Plain sentence: the one-sided book B is positive in every year 2023-2026 (and in 10 of 15 quarters), so it is not a 2026-only artefact, although 2026 carries about 60% of the total; the two-sided variant A is a 2026 regime book (2023 and 2024 negative), because its extra other-side trades lose.
+## Stack gain with the corrected carrying weeks (L6M 202630-37, HOLD same, PRE 202506-09, X' as the harness), B and A at 0.5x and 1x
+| book | scale | window | stack Calmar before -> after | stack maxDD before -> after ($k) |
+|---|---|---|---|---|
+| B | 0.5x | L6M | 0.701 -> 0.730 | 62.6 -> 60.9 |
+| B | 0.5x | HOLD | 0.238 -> 0.240 | 122.0 -> 122.0 |
+| B | 0.5x | PRE | 0.202 -> 0.206 | 75.1 -> 74.2 |
+| B | 0.5x | X' | 0.061 -> 0.056 | 49.4 -> 50.6 |
+| B | 1.0x | L6M | 0.701 -> 0.761 | 62.6 -> 59.2 |
+| B | 1.0x | HOLD | 0.238 -> 0.242 | 122.0 -> 122.0 |
+| B | 1.0x | PRE | 0.202 -> 0.207 | 75.1 -> 74.0 |
+| B | 1.0x | X' | 0.061 -> 0.051 | 49.4 -> 51.7 |
+| A | 0.5x | L6M | 0.701 -> 0.735 | 62.6 -> 60.9 |
+| A | 0.5x | HOLD | 0.238 -> 0.240 | 122.0 -> 122.6 |
+| A | 0.5x | PRE | 0.202 -> 0.206 | 75.1 -> 73.7 |
+| A | 0.5x | X' | 0.061 -> 0.058 | 49.4 -> 49.7 |
+| A | 1.0x | L6M | 0.701 -> 0.770 | 62.6 -> 59.2 |
+| A | 1.0x | HOLD | 0.238 -> 0.242 | 122.0 -> 123.2 |
+| A | 1.0x | PRE | 0.202 -> 0.209 | 75.1 -> 72.6 |
+| A | 1.0x | X' | 0.061 -> 0.054 | 49.4 -> 50.1 |
+
+## Delta-window alignment and minimum |delta| sensitivity (book B and A, T60 / T120): L6M / HOLD / PRE $/wk and trades
+| book | shape | end second -0 | -1 s | -2 s | |delta60| >= 10 | >= 20 | >= 40 |
+|---|---|---|---|---|---|---|---|
+| B_one_sided | vwap/1.0/T60 | n 67: +810 / +400 / +173 | n 69: +926 / +460 / +232 | n 65: +782 / +435 / +183 | n 43: +549 / +315 / -51 | n 31: +364 / +256 / -25 | n 18: +350 / +248 / -66 |
+| B_one_sided | vwap/1.0/T120 | n 67: +956 / +509 / +133 | n 69: +1152 / +611 / +192 | n 65: +1107 / +637 / +143 | n 43: +825 / +491 / -67 | n 31: +640 / +427 / -41 | n 18: +482 / +345 / -80 |
+| A_two_sided | vwap/1.0/T60 | n 97: +1067 / +551 / +49 | n 101: +1183 / +661 / +87 | n 101: +1039 / +636 / -42 | n 70: +994 / +457 / -203 | n 48: +954 / +433 / -56 | n 28: +963 / +412 / -100 |
+| A_two_sided | vwap/1.0/T120 | n 97: +1214 / +667 / +9 | n 101: +1410 / +818 / +47 | n 101: +1364 / +844 / -82 | n 70: +1269 / +633 / -219 | n 48: +1229 / +605 / -72 | n 28: +1096 / +509 / -115 |
+
+Plain sentence: the book is stable to a 1-2 s shift of the tape window (L6M and HOLD positive and larger at -1 s), but removing the near-zero-delta signals (minimum |delta60| 10 contracts) halves the sample and turns PRE slightly negative: the PRE gain is the noise-sensitive part.
+## Neighbourhood of the one-sided book (729 cells) vs the two-sided book (729)
+One-sided: TOLERANT 270 (37%), STRICT 32, NOW-ONLY 429, L6M > 0 in 70%, PRE > 0 in 58%; two-sided: TOLERANT 118 (16%), STRICT 14, NOW-ONLY 363, L6M > 0 73%, PRE > 0 41%. By delta window (one-sided TOLERANT share): 30 s 34%, 60 s 53%, 120 s 24%; by buffer 0.5 / 1.0 / 1.5 ATR: 13% / 52% / 46%; by target VWAP / mid / 1R: 47% / 51% / 13%; by time stop 30 / 60 / 90 min: 21% / 47% / 43%. Plain sentence: a plateau (buffer >= 1 ATR, VWAP / mid, 60-90 min) with a peak at the 60 s delta window, wider and better-signed than the two-sided book.
+## Shifted-line anchor placebo (PDH / PDL moved by 10-80 pt, random sign, 200 draws; additive shift = raw-frame equivalent)
+B: real L6M +810, HOLD +400, PRE +173; draws median L6M -226, HOLD -159, PRE -1; p(draw >= real): L6M 0.005, HOLD mean 0.020, HOLD Calmar 0.005, PRE 0.20. A: real L6M +1067, HOLD +551; draws median -236 / -198; p 0.005 / 0.010 / HOLD Calmar 0.005, PRE 0.48.
+## Overlap with the live books and the live London sleeve
+Correlation of the daily $ of B with the live stack -0.03, with the live London sleeve (sum of the six live books' London sessions) -0.02 (A -0.03 / -0.03); the sleeve is active on 89% of B's trade days (same-day share), so the overlap is in time but not in P&L: it neither duplicates nor hedges it (sleeve + book at 1x, L6M maxDD 68.2k -> 66.6k, HOLD 68.2k -> 66.6k, PRE 208k -> 200k). The live London sleeve by quarter ($k, all six books): 2023 Q2 -67 | 2023 Q3 +49 | 2023 Q4 +42 | 2024 Q1 +66 | 2024 Q2 -34 | 2024 Q3 -16 | 2024 Q4 +15 | 2025 Q1 -96 | 2025 Q2 -23 | 2025 Q3 +79 | 2025 Q4 +56 | 2026 Q1 +30 | 2026 Q2 +73 | 2026 Q3 +66 | 2026 Q4 -36. Its 2026 is NOT flat: Q1 +30, Q2 +73, Q3 +66, Q4 (to 10-30) -36; its weakness was 2025 Q1 (-96) and 2024 Q2; by book over the whole history: PE +$193k, KB +$42k, SM +$25k, MV -$57k, HM and PB none. So the 2026 NY-AM flattening does not show in London; the fade lead works in a session where the live trend books were mostly paying.
+## Family max-T null (all 2,484 cells tried, 100 worlds, random-side and shuffled-day): running (HOLD mean first, then L6M Calmar); the lead's max-T p and BH q are appended when it finishes.
+
+## ZL-2 re-audit 2026-11-04 (late): S4b London PDH/PDL book B (one-sided, literal), and a correction to my VB2 audit
+Plain sentence: S4b's book B reproduces from the written definition on 58 of its 64 events (stops, targets and lots identical to 3 decimals with S4b's ATR), with windows of the same size and sign; the sample is too thin to carry a lead; and my earlier VB2 audit used bars that ended 2026-10-16, so with full bars VB2 reproduces ZL-1's windows almost exactly.
+| claim | source | recomputed | match | note |
+|---|---|---|---|---|
+| Book B, one-sided literal (PDH short, PDL long), T60, 64 trades, lots min(2400/(stop x 20), 6) | S4b london_pd_B_onesided_T60_trades.csv, fade_nbhd.events + fade_screen.trades_of | 63 trades (own rebuild from the written definition, bars from the 1-s path to 2026-10-30, volume and delta from the L2T 1-s buy/sell table); 58 events common | yes, 6 S4b-only, 5 mine-only (mine-only before 2023-04-03 dropped) | stop, target, lots identical on the 58 (stop diff 0.017, target 0.002) when S4b's ATR is used; lots cap 6 confirmed (mean 5.2, max 6.0). |
+| Windows $/wk L1M / L3M / L6M / HOLD / MID / PRE / X' | S4b list through the harness: +2155 / +1306 / +810 / +400 / -160 / +173 / -43 | mine: +1829 / +1180 / +749 / +314 / -160 / +122 / -3 | close | same signs except X' (-43 vs -3); TOLERANT true, gate_v2a false (63-64 trades). |
+| Text vs code, ATR alignment | S4b fix list | S4b's ATR (minute table) is still one 5-min step staler than a fresh Wilder ATR14 on 5-min bars as of the last complete bar: with the library-style ATR stops differ by 1.4 pt on the common events and the windows move to +1891 / +1278 / +810 / +302 / -346 / +36 / +22 | NOT fixed | choose one and write it in the flag; S4b's code = the stale one. |
+| delta60 boundary | text: 60-s aggressor delta | code: windows ending at the bar's last second (adjacent 30-s windows from the flow table); mine: seconds [B-60, B-1] from the tape table; ending at B instead of B-1 loses 13 of 58 common events | yes | the 6 + 5 differences are mostly near-zero delta60 sign flips (e.g. 2023-05-16: S4b -1, mine +1) and 2023-11-24, 2023-12-13, 2024-09-17, 2026-10-21 (not resolved). |
+| Lots cap 6 | audit item d | confirmed (lots = min(2400/(stop x 20), 6); mean 5.2 vs 7.5 uncapped in book A) | yes | the cap lowers the effective risk on tight-stop trades. |
+| Placebos (100 draws, my rebuild; shift5 / side / days) | S4b | L6M mean .02 / .02 / .01; HOLD mean .05 / .08 / .04; HOLD stack gain .12 / .15 / .28; book p .277, Bonferroni 1.0 (n_tested 981) | consistent | stack-gain placebo not significant. |
+| Shifted-line placebo (both lines +-10-80 pt, 60 draws, own rebuild) | n/a | L6M mean p .016 (rank 1.00), HOLD mean p .033, HOLD Calmar p .016, PRE mean p .34, stack gain HOLD p .39 | lines matter | for L6M and HOLD, not for the stack. |
+| Stack gain, gate_v3 constants (S4b's list, 1x / 0.5x) | n/a | HOLD (L6M drop) +0.0027 / +0.0014 (maxDD +0); HOLD_dropH +0.0027 / +0.0014 (maxDD +550 / +275, worse); L6M +0.0551 / +0.0268 (maxDD -3.4k / -1.7k); PRE (202506-09) +0.0050 / +0.0035 (maxDD -1.1k / -0.9k) | sign positive everywhere | book B (one-sided) does not flip under HOLD_dropH, unlike book A (two-sided, -0.0018): the HOLD gain is tiny and maxDD gets worse by $0.3-0.6k. |
+| Thin sample (64 trades) | lead question | trades by year 2023 15 / 2024 19 / 2025 11 / 2026 19; L6M 17 trades (MDE $1,358/wk vs mean $810), HOLD 21 (MDE $771 vs $400), MID 2, L3M 11; top 5 trades = 84% of total $; winners 58% | below the bar | no window clears its own MDE; MID has 2 trades; the lead cannot be told apart from noise on the stack at this size. View: keep as a tracked watch (Shadow only), do not size or promote; wait for >= 60 L6M-comparable trades or a second instrument/regime check. |
+| CORRECTION to my VB2 audit | DS3_FADE.md 'ZL-2 audit' | I used bars that ended 2026-10-16 (te2 cache), which missed the last two weeks; with 1-min bars from the 1-s path to 2026-10-30: 527 trades, +212 / +128 / +384 / +238 / +17 / +36 / +14 vs ZL-1's +212 / +143 / +391 / +240 / +8 / +40 / +11 | yes (near exact) | the L1M gap I reported (+92 vs +212) was missing data, not a definition difference. My S4b book A rebuild had the same data end (3 of its S4b-only events in 2026-10). |
+
+
+# T-FADE v3 (S4b) - ATR aligned to the library (Wilder ATR14 on 5-min bars), both delta conventions, relabelled WATCH - 2026-11-03 23:21Z
+**SUPERSEDES the two sections above (the first flag and the first audit response used a rolling-mean ATR, one 5-min step off).** ZL-2's re-audit items: (1) ATR is now the Wilder ATR14 of 5-min bars with the gap rule, last bar closed at the 1-min close B (98% of bars identical to BookHarness.atr_at, the rest on roll days); the whole pipeline (minute table, 487 screen cells, 540 expansion, 1,458 neighbourhood cells = 2,485 cells) was rebuilt; (2) delta convention reported both ways; (3) RELABEL: **book B is a tracked Shadow WATCH only, not a lead**: thin sample, trades per window L3M 11 / L6M 17 / HOLD 22 / MID 3 / PRE 24 / X' 18, top-5 trades = 102% of its total P&L; (4) family null: running (see end); (5) out-of-instrument replication on ES and RTY below.
+## Book B (one-sided) and book A (two-sided as coded), VWAP target, stop 1.0 ATR beyond the 5-bar extreme, T60 / T120, lots capped at 6 - $/wk at the stated lots
+| book | trades | L3M | L6M | HOLD | MID | PRE | X' |
+|---|---|---|---|---|---|---|---|
+| B one-sided T60 | 66 | +1402 | +869 | +388 | -346 | +100 | -17 |
+| B one-sided T120 | 66 | +1434 | +1024 | +501 | -323 | +59 | -1 |
+| A two-sided T60 | 95 | +1080 | +1121 | +539 | +169 | +4 | -162 |
+| A two-sided T120 | 95 | +1112 | +1276 | +659 | +219 | -37 | -187 |
+Book A adds 34 other-side trades to B (15 shorts, 19 longs, net -5419 $) and drops 5 B trades to the one-position rule. B per year: 2023: 15 trades +5194$ / 2024: 20 trades +1501$ / 2025: 11 trades +1299$ / 2026: 20 trades +19322$. A per year: 2023: 19 trades -1346$ / 2024: 25 trades -666$ / 2025: 18 trades -3154$ / 2026: 33 trades +29755$.
+Placebos x100 for B T60 (shift5 / side / days): L6M mean p 0.06 / 0.02 / 0.01, HOLD mean p 0.06 / 0.04 / 0.04, stack-gain HOLD p 0.08 / 0.15 / 0.26. Plain sentence: B keeps its signs after the ATR alignment but the stack-gain placebo is no longer significant (p .08-.26); the book is a tracked Shadow WATCH.
+## Delta convention (window ending at the bar's last second ts+59 = the causal convention used above; '-1' = ending at B itself, one second later) and minimum |delta60|: L6M / HOLD / PRE $/wk (n trades)
+| book | shape | last second (used) | ends at B (-1) | 1 s earlier | 2 s earlier | min |delta| 10 | 20 | 40 |
+|---|---|---|---|---|---|---|---|---|
+| B_one_sided | vwap/1.0/T60 | n 69: +869 / +388 / +100 | n 71: +599 / +247 / +11 | n 72: +930 / +419 / +154 | n 67: +775 / +389 / +92 | n 44: +636 / +359 / -216 | n 32: +430 / +290 / -192 | n 19: +404 / +276 / -60 |
+| B_one_sided | vwap/1.0/T120 | n 69: +1024 / +501 / +59 | n 71: +892 / +433 / -5 | n 72: +1214 / +600 / +113 | n 67: +1157 / +621 / +51 | n 44: +920 / +540 / -233 | n 32: +715 / +466 / -209 | n 19: +549 / +380 / -77 |
+| A_two_sided | vwap/1.0/T60 | n 98: +1121 / +539 / +4 | n 100: +862 / +379 / -36 | n 103: +1182 / +620 / +40 | n 102: +1027 / +590 / -94 | n 69: +1087 / +504 / -299 | n 49: +1016 / +463 / -224 | n 29: +1011 / +436 / -92 |
+| A_two_sided | vwap/1.0/T120 | n 98: +1276 / +659 / -37 | n 100: +1156 / +571 / -52 | n 103: +1466 / +807 / -1 | n 102: +1408 / +828 / -135 | n 69: +1371 / +685 / -315 | n 49: +1300 / +639 / -241 | n 29: +1156 / +540 / -109 |
+Plain sentence: ending the window at B (using the second after the bar's last second, which a live box has not yet fully received) keeps L6M and HOLD positive but cuts them by about a third and takes PRE to zero; the lead uses the causal convention (last second ts+59); the minimum-|delta| filter flips PRE negative again.
+## Stack with the corrected carrying weeks (L6M/HOLD 202630-37, PRE 202506-09, X' as the harness), book B and A
+| book | scale | window | stack Calmar before -> after | stack maxDD before -> after ($k) |
+|---|---|---|---|---|
+| B | 0.5x | L6M | 0.701 -> 0.733 | 62.6 -> 60.8 |
+| B | 0.5x | HOLD | 0.238 -> 0.240 | 122.0 -> 122.0 |
+| B | 0.5x | PRE | 0.202 -> 0.202 | 75.1 -> 75.2 |
+| B | 0.5x | X' | 0.061 -> 0.056 | 49.4 -> 50.5 |
+| B | 1.0x | L6M | 0.701 -> 0.766 | 62.6 -> 58.9 |
+| B | 1.0x | HOLD | 0.238 -> 0.242 | 122.0 -> 122.0 |
+| B | 1.0x | PRE | 0.202 -> 0.203 | 75.1 -> 75.4 |
+| B | 1.0x | X' | 0.061 -> 0.052 | 49.4 -> 51.6 |
+| A | 0.5x | L6M | 0.701 -> 0.737 | 62.6 -> 60.8 |
+| A | 0.5x | HOLD | 0.238 -> 0.240 | 122.0 -> 122.6 |
+| A | 0.5x | PRE | 0.202 -> 0.203 | 75.1 -> 74.8 |
+| A | 0.5x | X' | 0.061 -> 0.057 | 49.4 -> 49.7 |
+| A | 1.0x | L6M | 0.701 -> 0.774 | 62.6 -> 58.9 |
+| A | 1.0x | HOLD | 0.238 -> 0.242 | 122.0 -> 123.2 |
+| A | 1.0x | PRE | 0.202 -> 0.204 | 75.1 -> 74.5 |
+| A | 1.0x | X' | 0.061 -> 0.054 | 49.4 -> 50.0 |
+## Neighbourhood (729 cells each; all rebuilt with the aligned ATR)
+One-sided: TOLERANT 272 (37%), STRICT 18, NOW-ONLY 488, L6M > 0 in 75%, PRE > 0 in 54%; by delta window (TOLERANT share) 30 33%, 60 57%, 120 22%; by buffer 0.5 15%, 1.0 47%, 1.5 50%; by target mid 50%, r1 20%, vwap 42%; by time stop 1800 23%, 3600 46%, 5400 42%. Two-sided: TOLERANT 141 (19%), STRICT 8, L6M > 0 76%, PRE > 0 42%.
+## Shifted-line anchor placebo (PDH/PDL moved 10-80 pt, 200 draws)
+B one-sided: real L6M +869, HOLD +388, PRE +100; draws median L6M -215, HOLD -173; p(draw >= real) L6M 0.005, HOLD mean 0.040, HOLD Calmar 0.015, PRE 0.353
+A two-sided: real L6M +1121, HOLD +539, PRE +4; draws median L6M -200, HOLD -132; p(draw >= real) L6M 0.005, HOLD mean 0.015, HOLD Calmar 0.005, PRE 0.527
+## Out-of-instrument replication (ES, RTY: prior-day-extreme fade in the London window, same rule and ATR-mapped points, multi-instrument harness, 1-min bars to 2026-10-16)
+There is no 1-s tape table for ES or RTY on disk, so the delta60 condition is replaced by the bar-delta PROXY sign(close - open) x volume. The proxy is a weaker filter: on NQ it agrees in sign with the real delta60 on 76% of bars (corr 0.64) and the NQ book with the proxy is weaker (below). Windows $/wk: L3M / L6M / HOLD / MID / PRE / X'.
+| instrument | delta | events | trades | windows | gate | placebo p |
+|---|---|---|---|---|---|---|
+| NQ | real | 133 | 66 | +1402 / +869 / +388 / -346 / +100 / -17 | TOLERANT | L6M p 0.06/0.02/0.01, HOLD p 0.06/0.04/0.04 |
+| NQ | proxy | 142 | 75 | +509 / +423 / +34 / -427 / -107 / -40 | NOW-ONLY | L6M p 0.08/0.04/0.07, HOLD p 0.26/0.36/0.37 |
+| ES | proxy | 139 | 73 | +93 / +137 / +159 / +638 / -90 / -230 | NOW-ONLY | L6M p 0.36/0.58/0.13, HOLD p 0.23/0.58/0.06 |
+| RTY | proxy | 134 | 75 | -138 / -100 / -87 / -489 / +16 / -32 | dead | L6M p 0.76/0.15/0.68, HOLD p 0.70/0.38/0.72 |
+Plain sentence: with the proxy, ES is flat-to-slightly positive in the recent windows (L6M +137, HOLD +159, placebo p 0.13-0.58) and RTY is negative: the prior-day-extreme delta-divergence fade is NOT replicated out of instrument with the available (weaker) trigger, and the NQ proxy run (L6M +423, HOLD +34) shows the proxy itself loses most of the effect, so the test is inconclusive-to-negative; a real tape table for ES (mbp-10 raw is on disk) would be needed for a proper replication.
+## Overlap with the live London sleeve
+Correlation of B's daily $ with the live London sleeve -0.015 and with the stack -0.018 (A: -0.037 / -0.015); live London sleeve by quarter ($k): 2023 Q2 -67 | 2023 Q3 +49 | 2023 Q4 +42 | 2024 Q1 +66 | 2024 Q2 -34 | 2024 Q3 -16 | 2024 Q4 +15 | 2025 Q1 -96 | 2025 Q2 -23 | 2025 Q3 +79 | 2025 Q4 +56 | 2026 Q1 +30 | 2026 Q2 +73 | 2026 Q3 +66 | 2026 Q4 -36; 2026 is not flat in London (Q1 +30, Q2 +73, Q3 +66, Q4 to 10-30 -36), its weak quarter is 2025 Q1 (-96).
