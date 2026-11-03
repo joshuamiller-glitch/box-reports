@@ -1,4 +1,4 @@
-# SIZER LEAD REGISTER (2026-11-03 06:44Z)
+# SIZER LEAD REGISTER (2026-11-03 07:09Z)
 
 Flag rule: cut>0 on L6M AND PRE vs live ER ladder, carrying week dropped (drop_L6M>0 and drop_PRE>0), mean delta >=0 on L6M and PRE. Post-hoc; nothing is a lead on one week or one month.
 
