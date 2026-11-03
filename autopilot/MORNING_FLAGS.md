@@ -188,3 +188,5 @@ Cells that KEEP x1.5 and rank best (exact definitions): K_PE = x1.5 only for PE 
 
 
 
+
+***FLAG (NEAR-MISS, REPORTED SAME HOUR)*** [2026-11-03 ZL-1 SIZER_Q1A_V, ts2 base, vs Q1-A] No cell of 389 meets the full rule. Closest: VT 1.0 DOWN-only on Q1-A: m = clip(Q1A_mult x min(1, max(0.5, M/ATR)), 0.25, 1.0); Q1A_mult = 0.5 if ER(20) 5m < 0.30 else 1.0; ATR = Wilder ATR14 of 5-min bars at the last closed bar at the signal second; M = expanding median of ATR over EARLIER signals of the same book (min 100, else factor 1); multiplier applied at the ER stage of the live order, lots rounded min 1. Genuine PA9 maxDD cut vs Q1-A: L6M 34.8, PRE 20.2, MID 18.2, X' +12.4 (carry-dropped L6M 36.9 / PRE 20.2); mean lots 2.09 vs 2.31; mean -0.5 / -2.3 / -2.1k/wk (L6M/PRE/HOLD, inside MDE); equal-risk mean >= Q1-A in PRE, HOLD and L6M; worst-day exposure unchanged (18 lots, $21.6k). NOT clean: placebo cut ranks L6M .63-.70, PRE .73-.83 (bar .90); not strict mean-keeping; total -280k; best-of-389. DS3_SIZER.md SIZER_Q1A_V.
