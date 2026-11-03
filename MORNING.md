@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 20:50Z 11-03 (t+199.8 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 21:20Z 11-03 (t+200.3 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 11% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 3.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
-Updated 2026-11-03T20:50:16Z. Box: CPU 9.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 7% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
+Updated 2026-11-03T21:20:24Z. Box: CPU 0.2%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -260,7 +260,7 @@ Updated 2026-11-03T20:50:16Z. Box: CPU 9.9%, slots busy 13/32, queue 0. Cores pe
 | ZL1 | ? | 0 | 0 / 0 | none | prereg |
 | ZL3 | ? | 0 | 0 / 0 | none | prereg |
 | ZONES3 | ? | 0 | 0 / 0 | none | prereg |
-| unattributed | - | 3.0 | - | - | - |
+| unattributed | - | 0.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -271,13 +271,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-03T20:56Z
+## TREND (TL) update 2026-11-03T21:26Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-03T20:47:26Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-03T21:17:26Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -1160,3 +1160,6 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - (wall 20:50Z) USER PINNED O7 (DIRECTIVE_O7_PIN_20261104.md): NY-AM opening drive pullback (drive = close 09:39 - open 09:30; armed |drive| >= 0.5 x median prior-20 5-min opening range, min 10 pts; pb1 first 1-min bar from 09:40 closing against the drive; enter at that close in drive direction before 09:45; stop 40 / target 90; exit 16:00; 1 lot/day). Earlier O7 approximations superseded; BASE-4 to implement exact O7 in the engine and slices to re-run O7. Live latency repeated: signal at 1-min close -> first fill ~1 s; 1 lot per 2 s; stops/targets resting.
 - (wall 20:57Z) BASE-4 exact O7 in the engine (INSTR_ENGINE.md sec 8): ties out 419/419 event days vs the T-OPEN library on NQ; O7 = TOPEN_B2_DR10m_pb1_rm0.5__c3_X40_90; NQ live-fill: PRE 201 trades +10.45 pt, X 106 -3.66, HOLD 90 +18.99, since 2026-02-07 88 trades +3.97; O7 NOT in the Q1-A ts2 stack; adding 1 lot: L6M +$359/wk, maxDD 104.8k -> 97.3k; corr .08; other instruments negative at scaled points. CONFIRM 'min 10 pts' = floor on arming threshold (MORNING_FLAGS).
 - 20:58Z Z2 INSTR_EQ O7 addendum: O7 (pinned) on ES/RTY/YM x 4 scalings: 0/12 pass gate v2a; no transfer. n_tested 420.
+- (wall 21:00Z) S4b T-INSTR interim 2 (GC, CL, NKD, BTC, MBT; 7 books incl. pinned O7; DS3_INSTR.md 'INTERIM 2'; ledger INSTR_CM 245; n_tested 255): nothing clears gate_v2 + stack Calmar gain carry-dropped. Of 189 base cells: 18 NOW-ONLY, 8 TOLERANT, 2 gate_v2a, 1 STRICT, 0 gate_v2; family-null best HOLD Calmar median .066, p95 .143. Closest: GC A7 asia (TOLERANT + v2a; means positive L3M/L6M/HOLD/MID/PRE; placebo ranks .93-1.00; corr with stack 0.00-.08; stack Calmar gain +.007 HOLD, -.057 L6M; family max-stat p .95; diversification at equal mean negative in HOLD): WATCH. BTC K7 london at the participation cap = $595-risk book +0.7k/wk L6M (not +2.9k); positive L6M/HOLD/MID up to a $89 fee but negative PRE and X' at every fee and under warm-up/bps scalings; the interim-1 walk-forward lead ranks .95-.97 vs random choice on the 12 cells chosen after interim 1 but only .72-.84 on all 28 BTC cells: a selection effect; Sunday-open entries (first 3 h after 18:00 ET) are the profitable BTC K7 subset (+$80k), reported separately. O7 as pinned: negative on GC, CL, MBT; NKD 204 trades, HOLD -0.4k, MID -2.1k. K7/U7 events match BASE-4's engine at 99.1-99.9%%; H7 VWAP reset switched to the library convention. Not covered: 1-s paths for GC/CL not used yet.
+- (wall 21:27Z) USER ORDER T-FADE (DIRECTIVE_T_FADE_20261104.md): find the rest of the NY-AM fade family (anchors x triggers x shapes x regime conditioning, portfolio of fades); all cores; deliverable DS3_FADE.md every 6 h; T-INSTR continues only for BTC K7 London + YM U7 NY-PM. Dispatching BASE-4 (fade engine), Z2 (VWAP/IB/OR anchors), ZL-1 (prior-day/week/overnight/Asia/London/round/gap anchors), Z1 (Mancini failed-break + zone-line anchors + mirror question), S4b (delta/L2/exhaustion triggers), CAL (regime conditioning + portfolio), ZL-2 (harness: regime-conditioned scoring, stack at 0.5x/1x, max-stat null).
+- 21:29Z Z2 YM U7 NY-PM follow-up in DS3_INSTR.md: WATCH (pocket, WF fails NOW-ONLY, stack gain ~0, fee not driving). Starting T-FADE VWAP/IB/OR slice (FADE_VW).
