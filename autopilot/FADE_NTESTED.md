@@ -13,3 +13,6 @@
 | 2026-11-03T21:46Z | FADE_LV | ZL-1 | 1054 | level-anchor fades: stage 1 (170 cells default shape) + stage 2 (12 cells x 72 shapes) + stage 3 (20 planned) |
 | 2026-11-03T21:46Z | FADE_RG | CAL | 1359 | F1 378 + RN offset placebos 9 + neighbourhood scan G (ON, AS, IB60 failed-break fade x 324 each, one family per anchor); prereg addendum FADE_RG |
 | 2026-11-03T21:53Z | FADE_VW_STNB | Z2 | 324 | NY-AM stretch-reject neighbourhood family |
+| 2026-11-03T22:01Z | FADE_TP | S4b | 981 | screen 441 + shape expansion 540 (12 cells x 45 shapes) |
+| 2026-11-03T22:14Z | FADE_TP | S4b | 1710 | all cells tried: 441 screen + 540 shape expansion + 729 neighbourhood |
+| 2026-11-03T22:24Z | FADE_LV | ZL-1 | 1054 | level-anchor fades: stage 1 (170 cells default shape) + stage 2 (12 cells x 72 shapes) + stage 3 (20 planned) |

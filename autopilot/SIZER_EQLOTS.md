@@ -44,3 +44,5 @@ Prereg ZL_S4A_PREREG_S1_EQUAL_MEAN_LOTS.md. ts base; ladder engine mean lots 3.0
 - Closest achievable engine mean lots 2.999-3.185 (ladder 3.010); tiered cells give a staircase so 'LIVE A' (3.185) and 'L3 A' (3.115, 3.087) are 3-6% above the ladder.
 - MID cut stays -1.0 to -1.7 and genuine PA9 MID -0.55 to -1.07 at equal lots: all 11 fail the flip-5 no-harm band. Genuine PA9 L6M 0.08-0.38; PRE -0.04 to 0.16. No S1 cell has lower drawdown with no-harm. No FLAG.
 - Placebos at the same lots: cut ranks 0.1-0.9 (mostly 0.2-0.5); the real cuts are what random re-sizing gives.
+
+NOTE (Z2 audit finding 2): the 'mean lots 2.311' equal-lots target of this page is over the 17,396 flagged-taken rows of the old base, not the 21,397 ts2 trades (Q1-A 2.139).

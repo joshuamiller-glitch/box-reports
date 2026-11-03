@@ -1,4 +1,4 @@
-# SIZER UNIVERSE AUDIT (S4a, 2026-11-03 17:36Z)
+# SIZER UNIVERSE AUDIT (S4a, 2026-11-03 22:22Z)
 
 Question (lead, after S4b retracted confirm_n15): do the sizer constructs that use earlier signals use a universe the live box cannot see? The engine d table has 88,490 signal rows (11 books); the live box evaluates only live-session signals (**27,902**: books HM, KB, MV, PB, PE, SM in their live sessions) and the ts2 Q1-A run takes **21,397**. DN, MA, PBL, ST, WT have no live session; PB has 22,357 rows of which 5,403 are live; HM 6,198 of which 3,304; PE 8,203 of which 6,126.
 
@@ -39,15 +39,15 @@ Top 20 of each family by (cut L6M + cut PRE)/2 among cells that kept Q1-A's mean
 | HYST     | live       |      13 |         7 |           0 |                  0 |           0.221 |          -0.241 |            0.114 |           -0.135 |
 | HYST     | old        |      13 |        13 |           0 |                  0 |           0.265 |          -0.192 |            0.146 |           -0.104 |
 | HYST     | taken      |      13 |         8 |           0 |                  0 |           0.257 |          -0.241 |            0.146 |           -0.119 |
-| S1       | live       |      20 |        18 |           3 |                  1 |           0.384 |          -0.052 |            0.216 |           -0.011 |
-| S1       | old        |      20 |        20 |           3 |                  1 |           0.359 |          -0.046 |            0.204 |            0.003 |
-| S1       | taken      |      20 |        17 |           3 |                  1 |           0.367 |          -0.055 |            0.209 |           -0.011 |
+| S1       | live       |      20 |        18 |           1 |                  1 |           0.384 |          -0.052 |            0.216 |           -0.011 |
+| S1       | old        |      20 |        20 |           0 |                  0 |           0.359 |          -0.046 |            0.204 |            0.003 |
+| S1       | taken      |      20 |        17 |           1 |                  1 |           0.367 |          -0.055 |            0.209 |           -0.011 |
 | S2       | live       |      20 |         0 |           0 |                  0 |           0.516 |           0.307 |            0.422 |            0.372 |
 | S2       | old        |      20 |         0 |           0 |                  0 |           0.516 |           0.31  |            0.422 |            0.372 |
 | S2       | taken      |      20 |         0 |           0 |                  0 |           0.516 |           0.301 |            0.422 |            0.372 |
 | S2V      | live       |      20 |        16 |           0 |                  0 |           0.089 |           0.001 |            0.062 |           -0.008 |
-| S2V      | old        |      20 |        20 |           4 |                  4 |           0.034 |           0.002 |            0.027 |           -0.008 |
-| S2V      | taken      |      20 |        13 |           1 |                  1 |           0.084 |           0.01  |            0.064 |           -0.002 |
+| S2V      | old        |      20 |        20 |           1 |                  1 |           0.034 |           0.002 |            0.027 |           -0.008 |
+| S2V      | taken      |      20 |        13 |           0 |                  0 |           0.084 |           0.01  |            0.064 |           -0.002 |
 
 ### Per cell: control vs live vs taken
 
@@ -69,9 +69,9 @@ Top 20 of each family by (cut L6M + cut PRE)/2 among cells that kept Q1-A's mean
 | S1       | ('g12', 'er_10m_14', 'L3', 'A')           |        0.35  |         0.413 |       -0.046 |        -0.061 |         -0.081 |        750.67  |         952.249 | False      | False       | False        |
 | S1       | ('g12', 'er_10m_14', 'L3', 'C')           |        0.35  |         0.413 |       -0.046 |        -0.061 |         -0.081 |        750.67  |         952.249 | False      | False       | False        |
 | S1       | ('g12', 'er_10m_14', 'LIN', 'A')          |        0.411 |         0.411 |       -0.05  |        -0.061 |         -0.061 |        603.158 |         905.854 | False      | False       | False        |
-| S1       | ('g12', 'er_10m_14', 'LIN', 'B')          |        0.242 |         0.28  |        0.03  |         0.033 |          0.025 |       1184.53  |        1002.74  | True       | True        | True         |
+| S1       | ('g12', 'er_10m_14', 'LIN', 'B')          |        0.242 |         0.28  |        0.03  |         0.033 |          0.025 |       1184.53  |        1002.74  | False      | False       | False        |
 | S1       | ('g12', 'er_10m_14', 'SIG', 'A')          |        0.36  |         0.38  |       -0.008 |        -0.02  |         -0.02  |        337.906 |         237.704 | False      | False       | False        |
-| S1       | ('g12', 'er_10m_14', 'SIG', 'B')          |        0.348 |         0.441 |        0.028 |         0.018 |          0.018 |       1547.66  |        1822.61  | True       | True        | True         |
+| S1       | ('g12', 'er_10m_14', 'SIG', 'B')          |        0.348 |         0.441 |        0.028 |         0.018 |          0.018 |       1547.66  |        1822.61  | False      | False       | False        |
 | S1       | ('g12', 'er_1m_100', 'L3', 'A')           |        0.226 |         0.263 |       -0.004 |         0.003 |          0.003 |        733.353 |         431.182 | False      | False       | False        |
 | S1       | ('g12', 'er_1m_100', 'L3', 'C')           |        0.226 |         0.263 |       -0.004 |         0.003 |          0.003 |        733.353 |         431.182 | False      | False       | False        |
 | S1       | ('g13', 'ers_10m_20', 1, 'L5', 'A')       |        0.397 |         0.388 |       -0.177 |        -0.161 |         -0.144 |       1910.88  |        1925.26  | False      | False       | False        |
@@ -85,7 +85,7 @@ Top 20 of each family by (cut L6M + cut PRE)/2 among cells that kept Q1-A's mean
 | S1       | ('g13', 'ers_5m_20', 1, 'L5', 'B')        |        0.302 |         0.313 |       -0.012 |        -0.053 |         -0.08  |       1003.47  |        1008.45  | False      | False       | False        |
 | S1       | ('g13', 'ers_5m_20', 1, 'LIN', 'B')       |        0.251 |         0.238 |        0.07  |         0.044 |          0.018 |       1318.82  |        1209.77  | False      | False       | False        |
 | S1       | ('g13', 'ers_5m_20', 1, 'LIN', 'C')       |        0.364 |         0.353 |        0.006 |         0.016 |          0.002 |       1007.03  |         315.604 | False      | False       | False        |
-| S1       | ('g13', 'ers_5m_20', 1, 'SIG', 'B')       |        0.234 |         0.158 |        0.027 |         0.025 |          0.022 |       1164.08  |         739.587 | True       | True        | True         |
+| S1       | ('g13', 'ers_5m_20', 1, 'SIG', 'B')       |        0.234 |         0.158 |        0.027 |         0.025 |          0.022 |       1164.08  |         739.587 | False      | True        | True         |
 | S2       | ('rk_bars_since_flip_5m', -1, 'D3', None) |        0.636 |         0.62  |        0.058 |         0.082 |          0.028 |       -749.413 |       -1231.93  | False      | False       | False        |
 | S2       | ('rk_big2_net30_s', 1, 'D3', None)        |        0.514 |         0.514 |        0.352 |         0.352 |          0.352 |     -10140.4   |      -10140.4   | False      | False       | False        |
 | S2       | ('rk_big2_net30_s', 1, 'L3', None)        |        0.467 |         0.467 |        0.305 |         0.305 |          0.305 |     -10062.5   |      -10062.5   | False      | False       | False        |
@@ -112,18 +112,18 @@ Top 20 of each family by (cut L6M + cut PRE)/2 among cells that kept Q1-A's mean
 | S2V      | V|atr_ratio_5m|LIN|UP|DIR|1.0             |       -0     |        -0.043 |        0.076 |         0.018 |          0.042 |         94.504 |        -240.405 | False      | False       | False        |
 | S2V      | V|atr_ratio_5m|LIN|UP|DIR|1.25            |        0.153 |         0.146 |       -0.062 |        -0.143 |         -0.153 |        372.08  |          98.711 | False      | False       | False        |
 | S2V      | V|atr_ratio_5m|SIG|UP|INV|1.0             |        0.083 |         0.106 |        0.08  |         0.105 |          0.01  |        359.708 |        1275.07  | False      | False       | False        |
-| S2V      | V|dayrange_atrd|L3|UP|DIR|1.0             |       -0.038 |         0.061 |       -0.015 |         0.008 |          0.011 |         30.407 |         260.238 | False      | False       | True         |
+| S2V      | V|dayrange_atrd|L3|UP|DIR|1.0             |       -0.038 |         0.061 |       -0.015 |         0.008 |          0.011 |         30.407 |         260.238 | False      | False       | False        |
 | S2V      | V|dayrange_atrd|LIN|UP|DIR|1.0            |       -0     |         0.045 |        0.01  |         0.006 |          0.019 |        176.838 |         768.243 | False      | False       | False        |
 | S2V      | V|dayrange_atrd|LIN|UP|INV|1.0            |       -0.001 |        -0.063 |        0.039 |         0.104 |          0.104 |        404.767 |         259.182 | False      | False       | False        |
 | S2V      | V|dayrange_atrd|SIG|UP|DIR|1.0            |       -0.008 |         0.075 |        0.002 |         0.017 |          0.043 |        280.014 |         519.625 | False      | False       | False        |
-| S2V      | V|pk_ratio_20d|LIN|UP|DIR|1.0             |        0.012 |        -0.015 |        0.043 |         0.045 |          0.058 |        112.187 |          98.056 | True       | False       | False        |
+| S2V      | V|pk_ratio_20d|LIN|UP|DIR|1.0             |        0.012 |        -0.015 |        0.043 |         0.045 |          0.058 |        112.187 |          98.056 | False      | False       | False        |
 | S2V      | V|pk_ratio_20d|LIN|UP|DIR|1.25            |        0.186 |         0.176 |       -0.13  |        -0.146 |         -0.17  |         24.402 |          65.41  | False      | False       | False        |
 | S2V      | V|pk_ratio_20d|LIN|UP|INV|1.0             |        0.17  |         0.18  |        0.012 |        -0.008 |         -0.013 |       1450.54  |        1118.28  | True       | False       | False        |
 | S2V      | V|pk_ratio_20d|LIN|UP|INV|1.25            |        0.437 |         0.428 |       -0.18  |        -0.256 |         -0.245 |       7844.05  |        6869.07  | False      | False       | False        |
-| S2V      | V|range_so_far_ratio|LIN|UP|DIR|1.0       |        0.006 |         0.027 |        0.002 |        -0.002 |          0.019 |        172.417 |         608.619 | True       | False       | False        |
+| S2V      | V|range_so_far_ratio|LIN|UP|DIR|1.0       |        0.006 |         0.027 |        0.002 |        -0.002 |          0.019 |        172.417 |         608.619 | False      | False       | False        |
 | S2V      | V|range_so_far_ratio|LIN|UP|INV|1.0       |       -0.002 |        -0.048 |        0.046 |         0.117 |          0.117 |          2.748 |          -0.14  | False      | False       | False        |
 | S2V      | V|range_so_far_ratio|SIG|UP|DIR|1.0       |        0.019 |         0.074 |        0.002 |         0.005 |          0.027 |        676.879 |         598.448 | False      | False       | False        |
-| S2V      | V|rv_ratio_30m|LIN|UP|DIR|1.0             |        0.001 |        -0.005 |        0.038 |         0.036 |          0.038 |        181.118 |        -467.235 | True       | False       | False        |
+| S2V      | V|rv_ratio_30m|LIN|UP|DIR|1.0             |        0.001 |        -0.005 |        0.038 |         0.036 |          0.038 |        181.118 |        -467.235 | False      | False       | False        |
 | S2V      | V|rv_ratio_30m|LIN|UP|INV|1.0             |        0.161 |         0.112 |       -0.035 |        -0.032 |         -0.002 |       1743.87  |        1153.61  | False      | False       | False        |
 | S2V      | V|rv_ratio_30m|SIG|UP|INV|1.0             |        0.134 |         0.17  |        0.001 |        -0.008 |         -0.019 |       1427.53  |        1787.26  | False      | False       | False        |
 
@@ -131,14 +131,12 @@ Top 20 of each family by (cut L6M + cut PRE)/2 among cells that kept Q1-A's mean
 
 | family   | cell                                |   cutL6M_old |   cutL6M_live |   cutPRE_old |   cutPRE_live |   cutPRE_taken |   dmeanL6M_old |   dmeanL6M_live | flag_old   | flag_live   | flag_taken   |
 |:---------|:------------------------------------|-------------:|--------------:|-------------:|--------------:|---------------:|---------------:|----------------:|:-----------|:------------|:-------------|
-| S2V      | V|dayrange_atrd|L3|UP|DIR|1.0       | -0.0381469   |     0.0613943 |  -0.014917   |    0.0076342  |      0.0109149 |         30.407 |        260.238  | False      | False       | True         |
-| S2V      | V|pk_ratio_20d|LIN|UP|DIR|1.0       |  0.0119591   |    -0.0148173 |   0.0433144  |    0.0445474  |      0.0578458 |        112.187 |         98.0564 | True       | False       | False        |
-| S2V      | V|pk_ratio_20d|LIN|UP|INV|1.0       |  0.170287    |     0.180294  |   0.0120902  |   -0.00766323 |     -0.0130946 |       1450.54  |       1118.28   | True       | False       | False        |
-| S2V      | V|range_so_far_ratio|LIN|UP|DIR|1.0 |  0.00550928  |     0.0274039 |   0.00198318 |   -0.00208462 |      0.0188356 |        172.417 |        608.619  | True       | False       | False        |
-| S2V      | V|rv_ratio_30m|LIN|UP|DIR|1.0       |  0.000805453 |    -0.0054999 |   0.0376975  |    0.0358181  |      0.0377173 |        181.118 |       -467.235  | True       | False       | False        |
+| S1       | ('g13', 'ers_5m_20', 1, 'SIG', 'B') |     0.233518 |      0.158437 |    0.0274921 |    0.0249422  |      0.0220772 |        1164.08 |         739.587 | False      | True        | True         |
+| S2V      | V|pk_ratio_20d|LIN|UP|INV|1.0       |     0.170287 |      0.180294 |    0.0120902 |   -0.00766323 |     -0.0130946 |        1450.54 |        1118.28  | True       | False       | False        |
 
-## 4. Conclusions (S4a)
-1. The universe error is real for every cross-signal construct S4a built (ranks_book / ranks_c / ranks_roll250, the hysteresis tier state) and for ZL-1's vol-target median and S4b's bk_* P&L-so-far features: all used the whole engine table (88,490 rows, 11 books) instead of what the box sees (27,902 live-session signals; 21,397 fills). The rank values move little on ER features (mean abs difference 0.02, correlation 0.994; 0.13 and correlation 0.77 on atr_ratio_5m) but the number of defined ranks falls (98.8% to 97.9% of live rows) because the 100-signal warm-up is counted on live signals only.
-2. Effect on the top-20 cells vs Q1-A on ts2: S1 rank mappings: flag_rule count 3 / 3 / 3 (old / live / taken), no-harm-passing 1 / 1 / 1; mean-keeping cells 20 / 18 / 17. S1_HYST: mean-keeping 13 / 7 / 8, none meets the cut rule in any universe. S2 (S4b, gated and mapped modifiers): unchanged, none keeps the mean. S2V (ZL-1 V| cells): flag_rule 4 -> 0 on the live universe and 1 on taken; the four old flags (pk_ratio_20d LIN UP DIR and INV, range_so_far_ratio LIN UP DIR, rv_ratio_30m LIN UP DIR) all lose it on live, and one new one appears on taken (dayrange_atrd L3 UP DIR). None of those had cuts above the PA9 band (cuts 1-4%), so none was a lead.
-3. No lead or flag from S1 / S1B / S1_HYST / S2 / S2V changes status from "none" in any universe. The retraction of confirm_n15 is consistent with this.
-4. Not rebuilt here: bk_sess_pnl_pts / bk_day_pnl_pts / bk_sess_n_closed (S4b: need taken-fill P&L), ZL-1's R| regime cells and hybrids, S3 combinations built from the rank vectors (Z3 uses mult_*.npy and cell_mult from ranks_book: need re-run from ranks_live), Q-series (ER thresholds, no cross-signal state). Rank files and masks are in /mnt/l2/l2vast/ds3_sizer/ and /mnt/l2/l2vast/ds3_zones3_new/sizer_s4a/ for the owners.
+## 4. Conclusions (S4a; counts corrected after the Z2 carrying-week audit)
+Carrying-week constants: the PRE carrying weeks used by every SIZER harness (2024 W34-W51) are the episode of the OLD base; Q1-A on ts2 has its PRE maxDD episode in 2025 W06-W09 (L6M 2026 W30-W37 inside W27-38, X' 2023 W29-W36 inside its window). Counts below use PRE = 2025 W06-09 for all ts2 rows (Z2 audit finding 1, verified by S4a).
+1. The universe error is real for every cross-signal construct S4a built (ranks_book / ranks_c / ranks_roll250, the rank-hysteresis tier state) and for ZL-1's vol-target median and S4b's bk_* P&L-so-far features: all used the whole engine table (88,490 rows, 11 books) instead of what the box sees (27,902 live-session signals; 21,397 fills). ER-feature ranks move little (mean absolute difference 0.02, correlation 0.994; 0.13 and 0.77 on atr_ratio_5m); the share of live rows with a defined rank falls from 98.8% to 97.9%.
+2. Effect on the top-20 cells vs Q1-A on ts2 (table above): the cut-rule counts are small in every universe (S1 0 / 1 / 1 old / live / taken, S2V 1 / 0 / 0); mean-keeping S1 20 / 18 / 17, S1_HYST 13 / 7 / 8; S2 (S4b) none keeps the mean. The single S1 cell that meets the rule on the live and taken universes has PA9 PRE -0.012 (inside the band) so it is not a candidate.
+3. No lead or flag of S1 / S1B / S1_HYST / S2 / S2V changes status from "none" in any universe. The retraction of confirm_n15 is consistent with this.
+4. Not rebuilt here: S4b's bk_* features (S4b has rebuilt res_pool_live / res_pool_taken), ZL-1's R| regime cells and hybrids, Z3's S3 combinations (Z3 re-running on ranks_live), Q-series (no cross-signal state).
