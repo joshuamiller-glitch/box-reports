@@ -1,4 +1,4 @@
-# SIZER EQUAL-MEAN-LOTS (S4a, 2026-11-03 00:05Z)
+# SIZER EQUAL-MEAN-LOTS (S4a, 2026-11-03 00:55Z)
 
 Prereg ZL_S4A_PREREG_S1_EQUAL_MEAN_LOTS.md. ts base; ladder engine mean lots 3.010. Multiplier rescaled to the closest achievable engine mean lots (tiered cells give a staircase, so some cells cannot hit 3.01: see eng_mean_lots). PA9 = genuine (scoring week key shifted -4..+4). Cuts are fractions vs the ladder; dmean in $/wk. Placebo rank = share of draws below the real cell at the same mean lots (formula-matched, so placebo lots are approx).
 
@@ -20,16 +20,16 @@ Prereg ZL_S4A_PREREG_S1_EQUAL_MEAN_LOTS.md. ts base; ladder engine mean lots 3.0
 
 ## Placebo ranks
 
-| cell                                 |   rk_cutL6M_perm |   rk_cutPRE_perm |   rk_meanL6M_perm |   rk_meanPRE_perm |
-|:-------------------------------------|-----------------:|-----------------:|------------------:|------------------:|
-| ('g13', 'ers_15m_20', 1, 'SIG', 'A') |              0.2 |             0.53 |              0.98 |                 1 |
-| ('g12', 'er_3m_100', 'L3', 'D')      |            nan   |           nan    |            nan    |               nan |
-| ('g13', 'ers_15m_20', 1, 'L3', 'A')  |            nan   |           nan    |            nan    |               nan |
-| ('g12', 'er_10m_30', 'L3', 'D')      |            nan   |           nan    |            nan    |               nan |
-| ('g13', 'ers_15m_20', 1, 'SIG', 'D') |            nan   |           nan    |            nan    |               nan |
-| ('g12', 'er_30m_10', 'LIN', 'B')     |            nan   |           nan    |            nan    |               nan |
-| ('g12', 'er_15m_20', 'L3', 'A')      |            nan   |           nan    |            nan    |               nan |
-| ('g12', 'er_15m_20', 'LIVE', 'A')    |            nan   |           nan    |            nan    |               nan |
-| ('g13', 'ers_10m_20', 1, 'LIN', 'B') |            nan   |           nan    |            nan    |               nan |
-| ('g12', 'er_10m_30', 'LIN', 'B')     |            nan   |           nan    |            nan    |               nan |
-| ('g12', 'er_15m_20', 'LIN', 'B')     |            nan   |           nan    |            nan    |               nan |
+| cell                                 |   rk_cutL6M_perm |   rk_cutPRE_perm |   rk_meanL6M_perm |   rk_meanPRE_perm |   rk_cutL6M_dayshuf |   rk_cutPRE_dayshuf |   rk_meanL6M_dayshuf |   rk_meanPRE_dayshuf |   rk_cutL6M_ar1 |   rk_cutPRE_ar1 |   rk_meanL6M_ar1 |   rk_meanPRE_ar1 |
+|:-------------------------------------|-----------------:|-----------------:|------------------:|------------------:|--------------------:|--------------------:|---------------------:|---------------------:|----------------:|----------------:|-----------------:|-----------------:|
+| ('g13', 'ers_15m_20', 1, 'SIG', 'A') |             0.27 |             0.51 |              0.99 |              1    |                0.25 |                0.35 |                 0.98 |                 0.99 |            0.35 |            0.31 |             0.99 |             0.98 |
+| ('g12', 'er_3m_100', 'L3', 'D')      |             0.35 |             0.55 |              0.98 |              1    |                0.26 |                0.51 |                 0.95 |                 0.99 |            0.34 |            0.56 |             0.97 |             0.98 |
+| ('g13', 'ers_15m_20', 1, 'L3', 'A')  |             0.35 |             0.4  |              1    |              0.98 |                0.21 |                0.32 |                 1    |                 1    |            0.39 |            0.3  |             1    |             0.98 |
+| ('g12', 'er_10m_30', 'L3', 'D')      |             0.43 |             0.82 |              0.84 |              0.99 |                0.37 |                0.87 |                 0.89 |                 0.99 |            0.35 |            0.87 |             0.87 |             0.97 |
+| ('g13', 'ers_15m_20', 1, 'SIG', 'D') |             0.78 |             0.15 |              1    |              0.94 |                0.68 |                0.19 |                 1    |                 0.91 |            0.81 |            0.1  |             1    |             0.9  |
+| ('g12', 'er_30m_10', 'LIN', 'B')     |             0.37 |             0.57 |              0.98 |              1    |                0.23 |                0.55 |                 0.96 |                 1    |            0.34 |            0.51 |             0.93 |             1    |
+| ('g12', 'er_15m_20', 'L3', 'A')      |             0.32 |             0.55 |              0.99 |              0.98 |                0.16 |                0.51 |                 0.98 |                 0.96 |            0.35 |            0.57 |             1    |             0.97 |
+| ('g12', 'er_15m_20', 'LIVE', 'A')    |             0.12 |             0.44 |              1    |              0.93 |                0.13 |                0.35 |                 1    |                 0.94 |            0.22 |            0.33 |             1    |             0.87 |
+| ('g13', 'ers_10m_20', 1, 'LIN', 'B') |             0.35 |             0.89 |              0.99 |              0.94 |                0.4  |                0.84 |                 0.99 |                 0.9  |            0.44 |            0.92 |             1    |             0.97 |
+| ('g12', 'er_10m_30', 'LIN', 'B')     |             0.11 |             0.6  |              1    |              0.95 |                0.13 |                0.44 |                 1    |                 0.88 |            0.1  |            0.52 |             1    |             0.93 |
+| ('g12', 'er_15m_20', 'LIN', 'B')     |             0.18 |             0.52 |              0.99 |              0.97 |                0.16 |                0.37 |                 1    |                 0.97 |            0.16 |            0.38 |             0.99 |             0.99 |
