@@ -206,3 +206,5 @@ Cells that KEEP x1.5 and rank best (exact definitions): K_PE = x1.5 only for PE 
 - 2026-11-03 07:59Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
 - 2026-11-03 08:24Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
+
+- 2026-11-03 08:49Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
