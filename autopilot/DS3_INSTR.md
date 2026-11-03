@@ -180,3 +180,114 @@ Plain sentence (interim): the NQ books do not transfer to ES, RTY or YM as separ
 
 ### Cross-check RECONCILED (ZL-1, ~21:15Z; supersedes the 'Not reconciled' paragraph above)
 The 1.6x trade-count gap was MY error: the cross-check run used my events from the start of the data (2022-01), the engine from 2023-04-03. Redone on the same window with the engine's cap lifted (`run_book(sym, book, end_ld=20261016, B=load_bars(sym, end_ld=20261016))`, Z1 bracket default): window 2023-04-01..2026-10-16, 28 pooled cells, my simulator vs engine trade counts: median ratio 0.986 (e.g. ZB K7 7,965 vs 8,396); engine net R per trade negative in 28 of 28 cells (ZN -0.24..-0.39, ZB -0.25..-0.39, 6E -0.10..-0.14, 6J -0.15..-0.19; L6M also negative in all 28). My gross-of-cost R in the same window: |t| > 2 in 1 of 28 pooled cells (chance 1.3). The earlier 'gross R' and 'gross t' columns of the 178-cell table used the full file from 2022-01; the NOW-ONLY / window / gate results (harness windows, 2023-04+) are unaffected. The only remaining difference with BASE-4 is O7 (mine PB7 on NY-AM, the engine PB NY-AM; no common events), pinned with the Lead. File: /mnt/l2/l2vast/instr_rf/crosscheck_engine.csv.
+
+### O7 re-run with the pinned definition (ZL-1, ~21:30Z; supersedes my PB7-on-NY-AM approximation for O7 everywhere above)
+Pinned O7 (DIRECTIVE_O7_PIN_20261104.md, INSTR_ENGINE.md section 8): opening-drive pullback, 09:30 ET clock on every instrument (NOT the own open of ZN/ZB/6E/6J; flag), bars to 2026-10-16, engine `run_book(sym,'O7',o7_kind=...)`, MultiHarness windows ($/wk at the engine's lots; stack = Q1-A ts2).
+| instrument | points | trades | win | mean R vs stop | L3M | L6M | HOLD | PRE | X' | NOW-ONLY | stack Calmar gain (HOLD) |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| ZN | z1 (floor .0156 / stop .078 / tgt .1875) | 405 | .215 | -0.65 | -1216 | -1076 | -826 | -1318 | -1746 | no | -0.009 |
+| ZN | z1_warm | 405 | .309 | -0.36 | -457 | -571 | -355 | -843 | -847 | no | -0.002 |
+| ZN | z1_bps | 302 | .351 | -0.24 | -147 | -244 | -104 | -427 | -466 | no | +0.001 |
+| ZB | z1 | 395 | .218 | -0.66 | -321 | -511 | -661 | -1264 | -1514 | no | -0.008 |
+| ZB | z1_warm | 395 | .271 | -0.44 | +68 | -90 | -302 | -1078 | -887 | no | -0.003 |
+| ZB | z1_bps | 395 | .246 | -0.51 | +78 | -280 | -448 | -1052 | -1180 | no | -0.005 |
+| 6E | z1 | 458 | .279 | -0.27 | -7 | -612 | -735 | -468 | -584 | no | -0.019 |
+| 6E | z1_warm | 328 | .338 | -0.16 | -37 | -2 | -84 | -359 | -279 | no | -0.010 |
+| 6E | z1_bps | 244 | .381 | -0.15 | -125 | -145 | -171 | -152 | -152 | no | -0.007 |
+| 6J | z1 | 384 | .367 | -0.11 | +221 | -204 | +148 | -430 | -119 | no | +0.016 |
+| 6J | z1_warm | 282 | .379 | -0.13 | +82 | -50 | -14 | -387 | +216 | no | +0.007 |
+| 6J | z1_bps | 282 | .390 | -0.14 | +70 | -30 | -7 | -349 | +33 | no | +0.005 |
+The unscaled NQ points (10 / 40 / 90) never arm on these instruments (0 trades). 0 of 12 O7 cells passes NOW-ONLY (the closest, 6J z1, has L3M +221 and HOLD +148 but L6M -204 and PRE -430); under the engine's z1_stress mean R is 0.1-0.4 lower. Caveat: MultiHarness window means were identical for z1 and z1_stress in this run (the harness numbers did not respond to the stress switch while the engine's R did), so the stress column is the engine's R only. The O7 rows of the 178-cell table (from my PB7 approximation) are superseded by this table. File /mnt/l2/l2vast/instr_rf/o7_pinned.csv. Conclusion of interim 1 unchanged: no transfer, no flag.
+
+## INSTR_EQ addendum (Z2): O7 (user-pinned definition, BASE-4 instr_engine, DIRECTIVE_O7_PIN_20261104) on ES, RTY, YM. n_tested now 420.
+O7 = 09:39 drive >= max(10 pt, 0.5 x median prior-20 opening range), first bar from 09:40 closing against the drive, enter in the drive direction before 09:45, stop 40 / target 90, 16:00 exit, one trade a day. Run through MultiHarness (live fill model, cost basis z1, 100 placebos, 1-min path) with four scalings (z1 ATR ratio, nq unscaled, z1_warm, z1_bps): 12 books, 144-477 trades each. ES: z1 L6M -467 / HOLD -431 / PRE +135 / MID -1,418 (p_book 0.95); nq L6M -103 / HOLD +93 / PRE -9 (p 0.34); z1_warm L6M -225; z1_bps L6M -198. RTY: z1 L6M +152 / HOLD +37 / PRE -539 (p 0.40); nq -99 / -78 / -14 (p 0.94); z1_warm +15 / -38 / -371; z1_bps +153 / +37 / -539. YM: z1 L1M +1,261 / L6M -150 / HOLD -1 / PRE -115; nq L6M -183; z1_warm -171; z1_bps -62. gate_v2a 0 of 12, gate_v2 0, ADDITION 0; stack Calmar gains -0.012..+0.014 (all within noise). The NQ reference with the same engine is +533 HOLD / +650 PRE / -181 X' $/wk at 1 lot-equivalent risk, so the NQ NY-AM drive-pullback shape does not carry to the three equity indices at the 09:30 ET clock. Plain sentence: O7 does not transfer to ES, RTY or YM under any of the four scalings. The O7 cells are not in the INSTR_EQ ledger rows (12 books, summary only: /mnt/l2/l2vast/ds3_zones3_new/Z2_instr/o7.pkl).
+
+
+# INTERIM 2 - 2026-11-03 20:59Z
+Shadow only, no PASS claims. Order of the lead (interim 2): BTC full treatment, GC/CL cash hours + stop x2, top-ups merged, P7/M7/A7/O7, crypto weekend caution. Changes since interim 1: H7 VWAP reset now the library convention (fixed UTC-4 day boundary; BASE-4 cross-check: my K7/U7 events agree 99.1-99.9% with the engine, H7 had a DST-reset difference); the harness bars are my merged series (cache + Databento top-ups) so windows run to 2026-10-30; books P7, M7, A7 from be_lib via instr_engine (A7 = Asia PB7, no busy rule NOT applied (harness one-position rule), label), O7 = the pinned drive-pullback book (separate table below; the PB-NY-AM O7 assumption of interim 1 is dropped); GC/CL extra cells: cash hours 09:00-14:30 ET and stop/target x2 (X2) and stop x2 with target as base (X2S).
+## Counts
+245 cells (7 books x 5 instruments x (ALL + sessions) + GC/CL cash-hours cell + GC/CL X2 / X2S ALL and cash): base cells 189, NOW-ONLY 18, TOLERANT 8, gate_v2a 2, STRICT 1, gate_v2 0, ADDITION 0. n_tested registered 255 (INSTR_NTESTED.md, with O7). Family null (60 random-side worlds over the same 245 cells): max HOLD Calmar median 0.066, p95 0.143, max 0.169: the real best HOLD Calmar among cells that pass anything is 0.070 (BTC K7 london) and 0.034 (GC A7 asia), i.e. inside the null.
+## NOW-ONLY or better cells
+
+## Placebos (100 x shift5 / side / days), family max-stat, stack Calmar gain
+* U7 GC base post: HOLD Calmar 0.004; p_maxstat 1.00 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.96, Bonferroni(245) 1.00; v2a False, v2 False, ADDITION False; stack Calmar gain HOLD -0.013 / L6M +0.040 / PRE -0.001; placebo ranks (HOLD mean / L6M mean) shift5 0.98/1.00, side 0.78/0.99, days 0.79/1.00
+* U7 GC base cash0900-1430: HOLD Calmar 0.008; p_maxstat 1.00 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.92, Bonferroni(245) 1.00; v2a True, v2 False, ADDITION False; stack Calmar gain HOLD -0.024 / L6M +0.140 / PRE +0.002; placebo ranks (HOLD mean / L6M mean) shift5 0.99/1.00, side 0.87/1.00, days 0.90/1.00
+* U7 GC X2S cash0900-1430: HOLD Calmar -0.002; p_maxstat 1.00 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.94, Bonferroni(245) 1.00; v2a True, v2 False, ADDITION False; stack Calmar gain HOLD -0.019 / L6M +0.055 / PRE +0.001; placebo ranks (HOLD mean / L6M mean) shift5 0.99/1.00, side 0.69/1.00, days 0.53/1.00
+* H7 GC base post: HOLD Calmar 0.007; p_maxstat 1.00 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.57, Bonferroni(245) 1.00; v2a False, v2 False, ADDITION False; stack Calmar gain HOLD -0.006 / L6M +0.032 / PRE +0.007; placebo ranks (HOLD mean / L6M mean) shift5 0.57/0.64, side 0.96/0.98, days 0.86/0.94
+* P7 GC base post: HOLD Calmar -0.010; p_maxstat 1.00 (family null over 245 cells: median 0.066, p95 0.143); p_book 1.00, Bonferroni(245) 1.00; v2a False, v2 False, ADDITION False; stack Calmar gain HOLD -0.050 / L6M -0.013 / PRE +0.000; placebo ranks (HOLD mean / L6M mean) shift5 0.42/0.87, side 0.68/0.93, days 0.20/0.95
+* A7 GC base asia: HOLD Calmar 0.034; p_maxstat 0.95 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.16, Bonferroni(245) 1.00; v2a True, v2 False, ADDITION False; stack Calmar gain HOLD +0.007 / L6M -0.057 / PRE +0.023; placebo ranks (HOLD mean / L6M mean) shift5 0.99/0.94, side 0.99/0.93, days 1.00/0.97
+* A7 GC base post: HOLD Calmar -0.012; p_maxstat 1.00 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.80, Bonferroni(245) 1.00; v2a False, v2 False, ADDITION False; stack Calmar gain HOLD -0.004 / L6M -0.009 / PRE +0.004; placebo ranks (HOLD mean / L6M mean) shift5 0.24/0.89, side 0.44/0.62, days 0.36/0.80
+* M7 GC base post: HOLD Calmar -0.004; p_maxstat 1.00 (family null over 245 cells: median 0.066, p95 0.143); p_book 1.00, Bonferroni(245) 1.00; v2a False, v2 False, ADDITION False; stack Calmar gain HOLD -0.047 / L6M -0.083 / PRE -0.002; placebo ranks (HOLD mean / L6M mean) shift5 0.12/0.31, side 0.66/0.88, days 0.46/0.81
+* O7 GC base post: HOLD Calmar 0.021; p_maxstat 0.98 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.91, Bonferroni(245) 1.00; v2a False, v2 False, ADDITION False; stack Calmar gain HOLD -0.017 / L6M +0.081 / PRE -0.002; placebo ranks (HOLD mean / L6M mean) shift5 0.60/0.87, side 0.93/1.00, days 0.98/1.00
+* K7 BTC base london: HOLD Calmar 0.070; p_maxstat 0.43 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.49, Bonferroni(245) 1.00; v2a False, v2 False, ADDITION False; stack Calmar gain HOLD +0.022 / L6M +0.024 / PRE -0.032; placebo ranks (HOLD mean / L6M mean) shift5 0.90/0.98, side 1.00/1.00, days 1.00/1.00
+* H7 BTC base london: HOLD Calmar 0.002; p_maxstat 1.00 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.35, Bonferroni(245) 1.00; v2a False, v2 False, ADDITION False; stack Calmar gain HOLD +0.005 / L6M -0.013 / PRE -0.014; placebo ranks (HOLD mean / L6M mean) shift5 0.81/0.88, side 0.87/0.95, days 0.81/0.93
+* A7 BTC base london: HOLD Calmar 0.023; p_maxstat 0.98 (family null over 245 cells: median 0.066, p95 0.143); p_book 0.20, Bonferroni(245) 1.00; v2a False, v2 False, ADDITION False; stack Calmar gain HOLD +0.033 / L6M +0.138 / PRE -0.058; placebo ranks (HOLD mean / L6M mean) shift5 0.98/0.96, side 0.95/0.84, days 0.97/0.83
+**Nothing clears gate_v2 + stack Calmar gain with the carrying week dropped: no flag.** Closest: GC A7 asia (PB7 Asia pullback book): TOLERANT and v2a, positive in L3M/L6M/HOLD/MID/PRE (+3.4 / +1.5 / +1.5 / +1.1 / +1.1 $k/wk, X' -0.2), placebo ranks 0.93-1.00 on the means, correlation with the stack and with every live book 0.00-0.08 (diversifying), S1/S2/2x-stress still positive, LITERAL cost (NQ 3.2/9.8 ticks) negative; but its stack Calmar gain is +0.007 (HOLD) / -0.057 (L6M) / +0.023 (PRE), p_book 0.16 (worst placebo p is the stack-gain one), family max-stat p 0.95 (HOLD Calmar 0.034 is below the null median 0.066), and at equal mean its diversification is negative in HOLD (maxDD +33% at 10% share). A weak WATCH item, not a lead.
+## 1. BTC full treatment
+* Participation cap (Z1 note): BTC median 5-min volume 14.0 contracts (all bars 2023-04..2026-10); 1.7% cap = 0.238 contracts per entry = $595 risk per trade at the 500-pt stop (the equal-risk size of $2,400 is 0.96 contracts, 4x over the cap). At cap size BTC K7 london = +0.7k/wk in L6M instead of +2.9k: the lead is a $600-risk book.
+* Fee: FEES.md has no BTC/MBT line. The interim-1 proxy 4.84 RT per 5-BTC contract is 0.14 bp of notional against MBT 1.78 per 0.1 BTC = 2.6 bp; parity with MBT would be about $89 RT per BTC contract. The CME BTC fee is not verified (no schedule read); sweep below (RT $ per contract):
+| book (london cell) | sizing | L6M mean $k/wk at fee 4.84 / 10 / 20 / 45 / 89 | L3M / HOLD / MID / PRE / X' at fee 4.84 |
+|---|---|---|---|
+| K7 | R2400 | 4: +2.9 / 10: +2.8 / 20: +2.7 / 45: +2.5 / 89: +2.2 | +1.5 / +2.0 / +4.0 / -1.3 / -0.6 |
+| K7 | cap | 4: +0.7 / 10: +0.7 / 20: +0.7 / 45: +0.6 / 89: +0.5 | +0.4 / +0.5 / +1.0 / -0.3 / -0.1 |
+| H7 | R2400 | 4: +0.9 / 10: +0.9 / 20: +0.8 / 45: +0.7 / 89: +0.4 | +4.4 / +0.1 / +0.1 / -0.6 / -1.1 |
+| H7 | cap | 4: +0.2 / 10: +0.2 / 20: +0.2 / 45: +0.2 / 89: +0.1 | +1.1 / +0.0 / +0.0 / -0.2 / -0.3 |
+| A7 | R2400 | 4: +0.6 / 10: +0.5 / 20: +0.5 / 45: +0.3 / 89: -0.0 | +0.4 / +0.6 / +1.5 / -0.9 / -0.8 |
+| A7 | cap | 4: +0.1 / 10: +0.1 / 20: +0.1 / 45: +0.1 / 89: -0.0 | +0.1 / +0.2 / +0.4 / -0.2 / -0.2 |
+K7 london stays positive in L6M/HOLD/MID at every fee up to $89 (cost is a small part of the risk at these sizes) but is negative in PRE and X' at every fee; H7 turns negative in HOLD at fee 45; A7 turns negative at 89. So the fee is not the binding point: the book is a recent-window effect (PRE -1.3k, X' -0.6k).
+* Scalings: warm-up ratio and bps ratio (S1/S2, f 3.3 instead of 8.4 = a 200-pt stop) flip K7/H7/A7 london L6M to -4.1k / -2.3k / -0.4k: FRAGILE.
+* Placebos and family null: see the list above (BTC K7 london: p_maxstat 0.43, Bonferroni 1.0, v2a False).
+* Walk-forward among the BTC cells (monthly choice by trailing-12m Calmar, 2024-01..2026-10), rank against 300 random-choice walk-forwards (mean/Calmar of L6M, HOLD, PRE):
+| candidate set | cells | OOS mean $k/wk L3M / L6M / HOLD / PRE / X' | rank vs random choice (L6M mean, Calmar, HOLD mean, Calmar, PRE mean, Calmar) | HOLD maxDD | stack Calmar HOLD before -> with the WF book |
+|---|---|---|---|---|---|
+| BTC15 | 12 | +1.5 / +1.6 / +1.1 / +0.3 / -0.1 | 0.97 / 0.97 / 0.96 / 0.95 / 0.80 / 0.75 | 30.3 | 0.1851 -> 0.2356 (carry dropped 0.2282 -> 0.2869) |
+| BTC35 | 28 | -0.4 / +0.1 / +0.3 / -0.2 / +0.2 | 0.72 / 0.72 / 0.82 / 0.84 / 0.58 / 0.59 | 30.3 | 0.1851 -> 0.2212 (carry dropped 0.2282 -> 0.2822) |
+The 15-cell set (K7/U7/H7 sessions, the one chosen after interim 1) ranks 0.95-0.97 on L6M/HOLD, but the 35-cell set (all 7 books) ranks only 0.72-0.84: the interim-1 BTC walk-forward lead is a selection effect of the candidate set, not distinguishable from random monthly choice once all books are included.
+* Diversification at equal mean (BTC 15-cell WF book): at 10% of the stack mean maxDD HOLD -36% (improves), at 20% +7% and at 30% +69% worse; PRE and L6M worse at every share; second-account no-deepening scale k=5 gives +4.7k/wk mean gain; correlation with the stack 0.03 (KB 0.06, others |r|<=0.03).
+* Weekend / Sunday-open exposure (BTC K7, all sessions): flat at 16:55 ET means no trade is held over the weekend; the CME halt gap exits (data gap > 30 min) are 79 of 7295 trades. Entries in the first 3 hours after the Sunday 18:00 ET open: 326 trades, net +80500 $ (the whole K7 BTC book is -356161 $): the Sunday-open entries are profitable (+$80k) against a negative book elsewhere; Friday 12:00-16:55 entries: 213 trades, +2282 $. Reported separately, not removed.
+## 2. GC and CL: cash hours (09:00-14:30 ET) and stop x2
+Cells with variant X2 / X2S and session cash0900-1430 are in the table above. Only GC U7 (cash hours, X2S) and CL P7/U7 X2 appear as NOW-ONLY; GC U7 cash0900-1430 is TOLERANT with v2a (L6M +2.2k, HOLD +0.4k, MID -1.6k, PRE +0.1k) with p_maxstat 1.00 and a negative HOLD stack Calmar gain (-0.024); CL has no TOLERANT cell in any variant. No stop x2 variant improves the picture: the X2 cells keep the L6M sign but lose HOLD/MID.
+## 3. Top-ups
+The harness bars are the merged series (cache_te2 + the Databento 10-13..10-31 top-ups, splice offset 0.0 on every instrument, overlap identical); the windows therefore include 2026-10-17..10-30 for GC, CL, NKD, BTC (to 10-31), MBT.
+## 4. P7 / M7 / A7 / O7
+P7, M7, A7 are in the table (be_lib native signals via instr_engine; A7 = PB7 Asia session): see the NOW-ONLY list. O7 as pinned (drive = 09:39 close - 09:30 open, armed at |drive| >= max(10 pt scaled, 0.5 x median opening range), pb1 entry before 09:45, stop 40 / target 90 scaled, time exit 16:00 ET), Z1-scaled points and NQ-literal points, Z1 BASE costs, windows $k/wk L3M / L6M / HOLD / MID / PRE / X':
+| book | instrument | scaling | trades | windows | gate_v1 | v2a |
+|---|---|---|---|---|---|---|
+| O7 | CL | z1 | 496 | -0.7 / -0.0 / -0.9 / -0.9 / -1.3 / -0.3 | dead | v2a False |
+| O7 | GC | nq | 95 | -0.4 / -0.5 / -0.6 / -1.0 / +0.0 / -0.0 | dead | v2a False |
+| O7 | GC | z1 | 502 | -0.0 / -0.6 / -0.7 / +0.4 / -0.8 / -0.5 | dead | v2a False |
+| O7 | MBT | nq | 373 | -5.4 / -4.0 / -5.5 / -6.4 / -6.1 / +0.3 | dead | v2a False |
+| O7 | MBT | z1 | 371 | +0.3 / -0.1 / -0.5 / -1.8 / -1.0 / -0.0 | dead | v2a False |
+| O7 | NKD | nq | 204 | +0.7 / +0.2 / -0.8 / -3.2 / -0.7 / -0.7 | NOW | v2a False |
+| O7 | NKD | z1 | 204 | +0.9 / +0.2 / -0.4 / -2.1 / +0.1 / -0.2 | TOL | v2a False |
+O7 on GC, CL, MBT is negative (L6M -0.6k / 0.0k / -0.1k); NKD z1 is TOLERANT-labelled by the T-SIXTY definition with 204 trades and HOLD -0.4k, MID -2.1k, below gate_v2a. BTC is dropped from O7 (09:30 ET is not a crypto cash open). 09:30 ET is used as the NQ cash open on all instruments.
+## 5. Crypto caution
+BTC/MBT futures: Sunday 18:00 open and the Friday 17:00 close are real in the bars; the 16:55 flat prevents weekend holds; Sunday-open entries are reported above and are the profitable subset of BTC K7; MBT and BTC differ only by the fee proxy per risk dollar (MBT 3.6% vs BTC 0.2% of risk): MBT is negative where BTC K7 london is positive, so the BTC result is not independent evidence about the signal.
+## Cells (all NOW-ONLY, TOLERANT, v2a, STRICT; the other cells are in the ledger INSTR_CM)
+| book | instrument | variant | session | trades | mean L6M ($k/wk) | maxDD L6M ($k) | mean HOLD | Calmar HOLD | stack Calmar HOLD with it (carry dropped; before) | windows $k/wk L3M / L6M / HOLD / MID / PRE / X' | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| A7 | BTC | base | london | 1500 | +0.6 | 17.7 | +0.6 | 0.023 | 0.2117 (0.2609; 0.1851) | +0.4 / +0.6 / +0.6 / +1.5 / -0.9 / -0.8 | NOW-ONLY FRAGILE(S1/S2) |
+| H7 | BTC | base | london | 1271 | +0.9 | 37.1 | +0.1 | 0.002 | 0.1944 (0.2334; 0.1851) | +4.4 / +0.9 / +0.1 / +0.1 / -0.6 / -1.1 | NOW-ONLY FRAGILE(S1/S2) |
+| K7 | BTC | base | london | 1838 | +2.9 | 12.8 | +2.0 | 0.070 | 0.2060 (0.2503; 0.1851) | +1.5 / +2.9 / +2.0 / +4.0 / -1.3 / -0.6 | NOW-ONLY FRAGILE(S1/S2) |
+| P7 | BTC | base | asia | 2303 | +0.3 | 39.8 | -1.2 | -0.009 | 0.1271 (0.1518; 0.1851) | +1.1 / +0.3 / -1.2 / -4.8 / -0.1 / +0.3 | NOW-ONLY FRAGILE(S1/S2) COST-FRAGILE(2x) |
+| P7 | CL | X2 | ALL | 3689 | +2.9 | 32.2 | +1.0 | 0.023 | 0.2024 (0.2431; 0.1851) | +0.2 / +2.9 / +1.0 / -0.2 / -1.0 / -0.9 | NOW-ONLY |
+| U7 | CL | X2 | cash0900-1430 | 464 | +0.8 | 9.2 | -0.1 | -0.003 | 0.1781 (0.2190; 0.1851) | +1.3 / +0.8 / -0.1 / -0.6 / -0.1 / +0.3 | NOW-ONLY |
+| U7 | CL | X2S | cash0900-1430 | 602 | +0.6 | 11.4 | +0.3 | 0.023 | 0.1885 (0.2303; 0.1851) | +0.4 / +0.6 / +0.3 / +0.7 / -0.3 / +0.1 | NOW-ONLY |
+| A7 | GC | base | asia | 1783 | +1.5 | 32.3 | +1.5 | 0.034 | 0.1973 (0.2357; 0.1851) | +3.4 / +1.5 / +1.5 / +1.1 / +1.1 / -0.2 | v2a |
+| A7 | GC | base | post | 205 | +0.1 | 10.9 | -0.3 | -0.012 | 0.1804 (0.2239; 0.1851) | +0.3 / +0.1 / -0.3 / +0.3 / +0.1 / +0.1 | TOLERANT FRAGILE(S1/S2) |
+| H7 | GC | base | post | 400 | +0.6 | 17.1 | +0.3 | 0.007 | 0.1821 (0.2221; 0.1851) | +0.7 / +0.6 / +0.3 / +2.9 / +0.1 / -0.1 | TOLERANT FRAGILE(S1/S2) |
+| H7 | GC | base | cash0900-1430 | 1759 | +0.1 | 38.4 | -0.5 | -0.007 | 0.1626 (0.1969; 0.1851) | +2.9 / +0.1 / -0.5 / +0.6 / -1.3 / -0.3 | NOW-ONLY FRAGILE(S1/S2) COST-FRAGILE(2x) |
+| M7 | GC | base | post | 596 | +0.5 | 16.6 | -0.3 | -0.004 | 0.1498 (0.1814; 0.1851) | +0.6 / +0.5 / -0.3 / +2.7 / +0.2 / +0.1 | TOLERANT |
+| O7 | GC | base | post | 406 | +1.5 | 9.7 | +0.7 | 0.021 | 0.1736 (0.2112; 0.1851) | +1.6 / +1.5 / +0.7 / +0.7 / +0.2 / +0.1 | STRICT |
+| P7 | GC | base | post | 613 | +0.9 | 10.6 | -0.7 | -0.010 | 0.1496 (0.1784; 0.1851) | +1.2 / +0.9 / -0.7 / -1.1 / +0.1 / -0.0 | TOLERANT FRAGILE(S1/S2) |
+| U7 | GC | base | ALL | 2295 | +1.8 | 20.6 | -1.0 | -0.008 | 0.1325 (0.1588; 0.1851) | +4.9 / +1.8 / -1.0 / -4.4 / -1.1 / -0.9 | NOW-ONLY FRAGILE(S1/S2) |
+| U7 | GC | base | asia | 943 | +1.0 | 21.6 | +0.2 | 0.003 | 0.1817 (0.2185; 0.1851) | +2.5 / +1.0 / +0.2 / -1.7 / -0.5 / -0.2 | NOW-ONLY FRAGILE(S1/S2) |
+| U7 | GC | base | pit | 704 | +1.4 | 13.3 | -0.3 | -0.005 | 0.1679 (0.2049; 0.1851) | +2.3 / +1.4 / -0.3 / -2.1 / -0.5 / -0.2 | NOW-ONLY FRAGILE(S1/S2) |
+| U7 | GC | base | post | 97 | +0.8 | 5.1 | +0.1 | 0.004 | 0.1762 (0.2155; 0.1851) | +0.7 / +0.8 / +0.1 / -1.0 / +0.1 / -0.1 | TOLERANT |
+| U7 | GC | base | cash0900-1430 | 580 | +2.2 | 12.8 | +0.4 | 0.008 | 0.1678 (0.2046; 0.1851) | +3.7 / +2.2 / +0.4 / -1.6 / +0.1 / -0.1 | v2a FRAGILE(S1/S2) |
+| U7 | GC | X2 | ALL | 1670 | +1.4 | 12.7 | -0.1 | -0.002 | 0.1540 (0.1880; 0.1851) | +0.2 / +1.4 / -0.1 / -4.4 / +0.2 / -0.7 | NOW-ONLY |
+| U7 | GC | X2 | cash0900-1430 | 337 | +0.7 | 10.2 | -0.4 | -0.008 | 0.1701 (0.2096; 0.1851) | +1.2 / +0.7 / -0.4 / -1.7 / -0.1 / +0.1 | NOW-ONLY |
+| U7 | GC | X2S | ALL | 1948 | +0.5 | 17.8 | -0.8 | -0.010 | 0.1495 (0.1810; 0.1851) | +0.8 / +0.5 / -0.8 / -3.5 / -0.2 / +0.1 | NOW-ONLY |
+| U7 | GC | X2S | cash0900-1430 | 445 | +1.1 | 8.3 | -0.1 | -0.002 | 0.1724 (0.2094; 0.1851) | +2.2 / +1.1 / -0.1 / -1.1 / +0.1 / +0.2 | v2a |
+| U7 | MBT | base | nyam | 484 | +0.2 | 10.6 | -0.3 | -0.009 | 0.1614 (0.1992; 0.1851) | +0.4 / +0.2 / -0.3 / -0.9 / -0.8 / +0.4 | NOW-ONLY FRAGILE(S1/S2) |
+| U7 | NKD | base | nyam | 419 | +0.5 | 14.8 | -0.0 | -0.000 | 0.1675 (0.2043; 0.1851) | +1.9 / +0.5 / -0.0 / +0.7 / -1.1 / -0.2 | NOW-ONLY FRAGILE(S1/S2) |

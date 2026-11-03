@@ -162,3 +162,47 @@ The live O7 spec is not on disk under that name. What exists: the user's tag lis
 | A7 | z1_bps (17.00) | -0.829 / -0.049 / -443 | -1.277 / -0.075 / -683 |
 
 Every cell is negative on ES (both brackets and both cost stresses); the warm-up and bps brackets (15.75 / 17 pt) lose less per R than the primary 11.75 pt for K7, P7, S7, W7 but more for H7 and A7. Research screen only.
+
+## 8. O7 = EXACT LIVE DEFINITION (user pin 2026-11-04, DIRECTIVE_O7_PIN_20261104.md) - supersedes every earlier O7 approximation (PB NY-AM in this engine, PB7 NY-AM in ZL-1's port) (2026-11-03T20:55Z)
+**Definition implemented** (`IE.signals_O7`, `run_book(sym, 'O7', ...)`): ET dates; qualifying day = every 1-min bar 09:30..09:59 exists with a close; rng5 = high-low of the 09:30..09:34 bars (stored for qualifying days; the median is of the FIVE-minute range also for the 10-minute drive, as in the T-OPEN code f_common.or_median(5, 570) = shift(1).rolling(20, min_periods=10).median()); drive = close of the 09:39 bar - open of the 09:30 bar; armed if |drive| >= max(floor, 0.5 x Median5) with floor = 10 pts ("min 10 pts" read as a floor on the threshold: on NQ it never binds, Median5 ~ 40 pt); pb1 = the first bar from 09:40 whose close is AGAINST the drive (doji is not a pullback); the order goes at that bar's close in the drive direction only before 09:45:00; stop 40 / target 90 from the fill, time exit 16:00 ET, one trade a day, 1 lot, exempt from the 09:00-09:59 block, single market entry, first fill ~1 s after the 1-min close (`fill='live'` = close of the decision second + 1 tick). This IS the T-OPEN cell TOPEN_B2_DR10m_pb1_rm0.5__c3_X40_90 (W1 = 09:30-09:45), not the DR5m cell of the older spec.
+**Tie-out against the T-OPEN library generator** (code/open2/f32_drive.build(10, 'pb1', 'rm0.5'), the library cell) on NQ 2023-04..2026-02-06: 419 of 419 event days identical (library and this engine, NY-AM window to 10:29), side 100%, signal minute 100%; with the W1 rule (< 09:45) 397 events in both, PRE 2024-02-01..2025-06-30 = 201 and X 2023-04-03..2024-01-31 = 106, exactly the counts of the spec (201 / 106); the first PRE/X entries equal the spec's identity list (2024-02-02 09:41 L, 2024-02-06 09:41 S, 2024-02-07 09:42 S; 2023-04-03 09:41 L, 2023-04-05 09:42 S, 2023-04-06 09:42 S; the spec shows :01 seconds, the engine the first print second).
+**NQ live-fill results** (1-s path, Z1/NQ live costs: stop slip 2.45 pt, market exit 0.80 pt, targets nominal, fee 0.242 pt; the library V0 numbers are measured on a different cost basis): PRE n 201, hit 0.408 (stops 58.7%, targets 39.3%, time 2.0%), mean net +10.45 pt (spec V0 +11.22; hit 0.413, stops 58%); X n 106, hit 0.302 (spec 0.302), mean -3.66 pt (spec -2.31); HOLD n 90, mean +18.99 pt (spec 17.81). Trade lists: /mnt/l2/l2vast/instr_o7/NQ_O7_live_trades.csv (485 trades 2023-04-03..2026-10-16, cache_te2 NQ bars + tick 1-s path; the same signals and exits as the library-frame list on the overlap: 106 / 201 / 90) and ds3_base4/o7_nq_trades_2026-02-06.csv (library frame to 2026-02-06). Since 2026-02-07 (88 trades, to 2026-10-16): hit 0.352, mean +3.97 pt.
+**Is O7 in the live NQ stack series?** NO: the Q1-A ts2 stack is the six engine books K6 P6 U6 H6 M6 A6 plus the cells X1-X5 (none is T-OPEN / O7); O7 (O6 1 lot in the live lot table) is a seventh book that was never added. Adding it at 1 NQ lot (about $800 risk per trade, at most one trade a day, about 485 trades in 3.5 years = roughly one day in two) to the Q1-A ts2 stack total (per-book locks moot for one trade a day; daily correlation with the stack 0.08):
+| window | stack (Q1-A ts2) mean / maxDD / worst-20 | + O7 at 1 NQ lot | change in mean / maxDD | O7 alone: mean $/wk / maxDD / SD |
+|---|---|---|---|---|
+| F9 | 24,505 / 104,809 / -186,181 | 24,689 / 97,278 / -185,810 | +184 / -7,531 | 184 / 7,685 / 1,874 |
+| L6M | 26,999 / 104,809 / 91,434 | 27,359 / 97,278 / 106,758 | +359 / -7,531 | 359 / 7,685 / 1,833 |
+| HOLD | 22,589 / 122,025 / -389,824 | 23,205 / 117,318 / -378,857 | +616 / -4,707 | 616 / 7,685 / 2,058 |
+| MID | 16,851 / 59,703 / -63,789 | 16,624 / 62,177 / -63,527 | -226 / +2,474 | -226 / 5,714 / 1,974 |
+| PRE | 13,202 / 88,180 / -489,630 | 13,762 / 83,561 / -480,021 | +560 / -4,619 | 560 / 5,714 / 1,647 |
+| X' | 3,293 / 80,802 / -303,399 | 3,116 / 73,956 / -310,315 | -176 / -6,846 | -176 / 15,858 / 1,857 |
+
+(Note: the ts2 stack axis ends 2026-10-30 and the O7 list 2026-10-16.)
+**Other instruments** (screen only; the 09:30 ET clock is applied to all instruments as the NQ cash open, which is NOT their own open for ZN ZB 6E 6J GC CL: flagged): `o7_kind='z1'` scales the points (floor 10, stop 40, target 90) by Z1's ATR ratio f_i (nearest tick, stops and target min 2 ticks); `o7_kind='nq'` keeps the unscaled NQ points (10 / 40 / 90 pts: meaningless for the rates and FX instruments, which then never arm or never reach the stop); `z1_warm` and `z1_bps` are the sensitivities. 1-min path, live fill, Z1 BASE costs, 2023-04..2026-10-16:
+| instrument | points | floor / stop / target (instrument pts) | trades | win | stop share | target share | mean net pts | mean R vs stop | $ total at the NQ-equal risk (1 NQ-lot equivalent) |
+|---|---|---|---|---|---|---|---|---|---|
+| ES | z1 | 2 / 7.75 / 17.5 | 477 | 0.312 | 0.688 | 0.300 | -0.4275 | -0.055 | -31,575 |
+| ES | nq | 10 / 40 / 90 | 185 | 0.497 | 0.319 | 0.059 | +1.757 | +0.044 | +9,753 |
+| RTY | z1 | 1.1 / 4.4 / 9.8 | 445 | 0.301 | 0.697 | 0.290 | -0.4696 | -0.107 | -56,990 |
+| RTY | nq | 10 / 40 / 90 | 144 | 0.424 | 0.132 | 0.014 | -1.811 | -0.045 | -7,824 |
+| YM | z1 | 13 / 50 / 113 | 461 | 0.317 | 0.679 | 0.312 | -1.612 | -0.032 | -17,835 |
+| YM | nq | 10 / 40 / 90 | 461 | 0.325 | 0.675 | 0.323 | -0.8763 | -0.022 | -12,119 |
+| ZN | z1 | 0.01562 / 0.07812 / 0.1875 | 405 | 0.215 | 0.763 | 0.190 | -0.0508 | -0.650 | -316,020 |
+| ZN | nq | 10 / 40 / 90 | 0 | | | | | | |
+| ZB | z1 | 0.03125 / 0.15625 / 0.34375 | 395 | 0.218 | 0.777 | 0.203 | -0.1026 | -0.656 | -311,135 |
+| ZB | nq | 10 / 40 / 90 | 0 | | | | | | |
+| 6E | z1 | 0.0002 / 0.0008 / 0.00185 | 458 | 0.279 | 0.716 | 0.242 | -0.00022 | -0.270 | -148,529 |
+| 6E | nq | 10 / 40 / 90 | 0 | | | | | | |
+| 6J | z1 | 0 / 1e-05 / 1e-05 | 384 | 0.367 | 0.589 | 0.281 | -0 | -0.112 | -51,381 |
+| 6J | nq | 10 / 40 / 90 | 0 | | | | | | |
+| GC | z1 | 1.5 / 5.9 / 13.2 | 502 | 0.333 | 0.627 | 0.221 | -0.6386 | -0.108 | -65,206 |
+| GC | nq | 10 / 40 / 90 | 95 | 0.358 | 0.316 | 0.042 | -3.085 | -0.077 | -8,792 |
+| CL | z1 | 0.07 / 0.29 / 0.65 | 496 | 0.294 | 0.700 | 0.264 | -0.04314 | -0.149 | -88,547 |
+| CL | nq | 10 / 40 / 90 | 0 | | | | | | |
+| NKD | z1 | 20 / 80 / 185 | 204 | 0.319 | 0.652 | 0.275 | -8.462 | -0.106 | -25,894 |
+| NKD | nq | 10 / 40 / 90 | 204 | 0.328 | 0.667 | 0.328 | -8.241 | -0.206 | -50,437 |
+| MBT | z1 | 85 / 335 / 750 | 371 | 0.299 | 0.701 | 0.286 | -46.85 | -0.140 | -62,267 |
+| MBT | nq | 10 / 40 / 90 | 373 | 0.244 | 0.756 | 0.244 | -39.37 | -0.984 | -440,542 |
+
+
+* Correction to the table above: the 6J row was printed rounded to 5 decimals; the actual 6J O7 constants are floor 1.5e-06 / stop 6.5e-06 / target 1.45e-05 = 3 / 13 / 29 ticks (Z1 check). ZN 1 / 5 / 12 ticks, 6E 4 / 16 / 37 ticks.
