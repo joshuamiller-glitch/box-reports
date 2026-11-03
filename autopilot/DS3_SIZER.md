@@ -1119,3 +1119,120 @@ Under Q1-A the live lock cell (floor 12R, give-back arm 2R keep 0.5) is NOT beat
 
 
 Correction (Z1): in the one-paragraph answer, "floor 8R differs by less than $25" holds only for the live give-back; 8R differs from none by small amounts in other give-back variants (see section 4), and floor 6R is worse than none on PRE for most give-backs (-30 -17Correction (Z1): in the one-paragraph answer, "floor 8R differs by less than $25" holds only for the live give-back; 8R differs slightly from none in other give-back variants (section 4), and floor 6R is worse than none on PRE for most give-backs (-3% to -17%) but +2% for arm 2R keep 0.75.
+
+
+# S4b SIZER_S2Q: section 2 RE-BASED on Q1-A (ts2: live lot order, Q1-A ladder) - 2026-11-03 (prereg SIZER_S2Q and SIZER_S2Q_CONFIRM in DECISIONS.md)
+Shadow only, no PASS claims. Reference = ts2 with Q1-A (ER<.30 x0.5, else x1.0); every cut/mean below is vs that reference, genuine PA9 (scoring week key shifted -4..+4), V13T flip-5 bands (L6M .219, HOLD .205, MID .322, PRE .099, X' .182). A section-2 cell is a MODIFIER: final lots = max(1, floor(Q1-A lots x factor + .5)), factor = clip(Q1A x mapping(rank), .25, 2)/Q1A (GD gate: the x0.5 is cancelled where the rank is in the top third); the lock R is scaled by the total multiplier when it exceeds 1 (live rule). A first pass that left the lock R unscaled flattered the up-size cells' PRE cut (confirm_n15 L3 PRE +19.9% unscaled vs -2.4% scaled): all numbers here are the scaled ones. WIN = band and no-harm and mean kept (L6M and HOLD) and carrying-week-dropped L6M > .219 and PRE > .099.
+**UNIVERSE CAVEAT (S4a audit, applies to every rank cell here):** the per-book ranks of ranks_book/ranks_flow are built on ALL 88,490 engine signal rows (live 27,902; taken 21,397); the box only sees live-session signals. S4a re-scores the top 20 on ranks_live/ranks_taken (autopilot/SIZER_UNIVERSE_AUDIT.md). Treat every cell below as UNIVERSE-UNVERIFIED.
+## 1. The 100 best section-2 cells as modifiers on Q1-A
+100 cells: band 60, band+no-harm 52, mean kept 8, carrying-drop band 54, band+no-harm+mean 3, WIN 2. Top 20 by L6M (PA9 cut %; mean $k/wk):
+| cell | L6M | HOLD | MID | PRE | X' | drop-carry L6M / PRE | mean L6M / HOLD / PRE ($k/wk) | all rules |
+|---|---|---|---|---|---|---|---|---|
+| r2_5m_20 d-1 D3 | +55.8 | +15.7 | +20.4 | +21.9 | -46.1 | +47.0 / +21.9 | -3.8 / -5.2 / -2.2 | band |
+| confirm_n5 d+1 L3 | +54.5 | +21.5 | +12.5 | -9.5 | -1.6 | +42.9 / +25.3 | +1.9 / +0.1 / -0.7 | no |
+| bars_since_flip_5m d-1 D3 | +53.7 | +7.7 | +17.7 | +3.1 | -29.8 | +45.8 / +3.1 | -0.8 / -1.7 / -4.5 | no |
+| confirm_n5 d+1 LIN | +53.0 | +12.0 | +6.8 | +7.1 | +7.8 | +35.0 / +15.2 | +2.0 / +0.2 / -2.2 | no |
+| confirm_n5 d+1 SIG | +52.2 | +12.0 | +6.8 | +3.7 | +6.6 | +32.9 / +13.4 | +2.0 / +0.1 / -1.8 | no |
+| fd_katz_5m_20 d+1 D3 | +51.5 | -3.8 | +4.4 | +21.7 | -8.6 | +26.0 / +21.7 | -5.9 / -5.3 / -3.5 | band+noharm |
+| confirm_n5 d+1 D3 | +51.0 | +15.5 | +19.6 | +24.1 | +25.7 | +42.8 / +28.6 | -2.8 / -3.1 / -3.2 | band+noharm |
+| r2_5m_20 d-1 L3 | +49.3 | -5.0 | -0.9 | +7.7 | -128.9 | +55.4 / +7.7 | -2.0 / -2.4 / +0.8 | no |
+| confirm_n15 d+1 D3 | +47.0 | +14.3 | +13.3 | +22.8 | +31.3 | +44.6 / +24.3 | -1.6 / -2.2 / -2.3 | band+noharm |
+| rst10_dist_atr d-1 D3 | +47.0 | -4.1 | -1.9 | +8.9 | +19.2 | +46.8 / +8.9 | -4.2 / -4.4 / -3.7 | band+noharm |
+| delta5_s d+1 D3 | +45.8 | -8.3 | -14.6 | +18.5 | -10.1 | +27.2 / +18.5 | -1.7 / -3.3 / -2.3 | band+noharm |
+| rst1_age_min d-1 D3 | +45.7 | +17.2 | +17.7 | +20.6 | -30.1 | +21.8 / +20.6 | -3.1 / -3.4 / -1.3 | band |
+| es_er_5m_20 d-1 D3 | +44.8 | -9.3 | +0.8 | +23.5 | -5.9 | +27.9 / +23.5 | +0.1 / -3.2 / -1.8 | band+noharm |
+| rst1_dir_s d+1 LIN | +43.6 | +18.8 | +30.7 | +29.6 | +27.9 | +46.2 / +29.6 | -8.2 / -7.4 / -4.1 | band+noharm |
+| rst1_dir_s d+1 SIG | +43.6 | +18.8 | +30.7 | +29.6 | +28.6 | +46.2 / +29.6 | -8.2 / -7.4 / -4.1 | band+noharm |
+| slope_atr_5m_20 d-1 D3 | +43.6 | +8.3 | -2.8 | +19.3 | -26.1 | +46.8 / +19.3 | -5.5 / -5.7 / -2.4 | band |
+| regime_with_5m d+1 L3 | +42.2 | +24.9 | +37.7 | +43.1 | +35.3 | +47.3 / +43.1 | -11.1 / -9.5 / -5.0 | band+noharm |
+| regime_with_5m d+1 D3 | +42.2 | +24.9 | +37.7 | +43.1 | +35.3 | +47.3 / +43.1 | -11.1 / -9.5 / -5.0 | band+noharm |
+| rst1_dir_s d+1 L3 | +42.2 | +24.9 | +37.7 | +43.1 | +35.3 | +47.3 / +43.1 | -11.1 / -9.5 / -5.0 | band+noharm |
+| rst1_dir_s d+1 D3 | +42.2 | +24.9 | +37.7 | +43.1 | +35.3 | +47.3 / +43.1 | -11.1 / -9.5 / -5.0 | band+noharm |
+
+Cells with band and no-harm and mean kept (the only 3 of 100; WIN needs the carrying-week drop too):
+| cell | L6M | HOLD | MID | PRE | X' | drop-carry L6M / PRE | mean L6M / HOLD / PRE ($k/wk) | all rules |
+|---|---|---|---|---|---|---|---|---|
+| confirm_n15 d+1 SIG | +37.0 | +12.3 | -0.5 | -5.6 | +26.4 | +19.3 / +6.6 | +1.7 / +1.4 / -0.8 | band+noharm |
+| confirm_n15 d+1 LIN | +41.2 | +9.6 | -1.8 | -2.0 | +22.3 | +25.5 / +13.1 | +1.8 / +1.2 / -1.0 | yes |
+| confirm_n15 d+1 L3 | +37.2 | +16.4 | -5.7 | -2.4 | +22.6 | +34.1 / +16.0 | +3.6 / +2.8 / -0.4 | yes |
+
+Equal-risk exact delta (lscale scan, linear fit over 0.7-1.75, vs the Q1-A fit; L6M lscales above 1.3 are extrapolations, R2 given) for the 12 best band+no-harm+drop-band cells and the mean-kept cells:
+| cell | lscale L6M | eq-risk mean delta L6M | R2 | lscale PRE | eq-risk mean delta PRE | R2 |
+|---|---|---|---|---|---|---|
+| rst1_dir_s d+1 D3 | 3.44 | +23.0 | 0.44 | 1.73 | -2.0 | 0.89 |
+| big2_net30_s d+1 D3 | 2.52 | +11.5 | 0.60 | 1.60 | -2.8 | 0.93 |
+| regime_with_5m d+1 LIN | 3.07 | +26.5 | 0.60 | 1.50 | -1.6 | 0.95 |
+| rst5_dir_s d+1 L3 | 4.45 | +51.9 | 0.47 | 1.55 | -2.0 | 0.92 |
+| big2_net30_s d+1 L3 | 2.13 | +7.6 | 0.75 | 1.42 | -3.4 | 0.95 |
+| rst10_dir_s d+1 L3 | 2.47 | +13.3 | 0.45 | 1.66 | -1.0 | 0.89 |
+| rst5_dir_s d+1 LIN | 3.45 | +36.2 | 0.31 | 1.45 | -2.3 | 0.99 |
+| big2_net30_s d+1 SIG | 2.16 | +9.1 | 0.71 | 1.37 | -3.4 | 0.96 |
+| adx14_1m d-1 D3 | 1.30 | +2.3 | 0.82 | 1.50 | +4.4 | 0.92 |
+| rst1_dir_s d+1 SIG | 3.47 | +29.1 | 0.54 | 1.42 | -2.3 | 0.96 |
+| bk_day_pnl_pts d+1 D3 | 1.43 | +3.9 | 0.81 | 1.09 | -1.7 | 0.97 |
+| tod_rem_range_pts d-1 SIG | 1.80 | +6.3 | 0.92 | 1.36 | +0.0 | 0.97 |
+| confirm_n15 d+1 SIG | 1.83 | +27.8 | 0.91 | 0.91 | -1.9 | 0.97 |
+| confirm_n5 d+1 L3 | 2.27 | +36.4 | 0.89 | 0.85 | -2.7 | 0.98 |
+| confirm_n15 d+1 LIN | 1.93 | +29.1 | 0.94 | 0.87 | -2.6 | 0.98 |
+| confirm_n5 d+1 SIG | 1.98 | +31.8 | 0.98 | 0.96 | -2.4 | 0.97 |
+| confirm_n5 d+1 LIN | 2.10 | +32.9 | 0.92 | 0.99 | -2.3 | 0.95 |
+| confirm_n15 d+1 L3 | 1.91 | +30.2 | 0.84 | 0.89 | -1.9 | 0.95 |
+| zone_set8_ahead_atr d-1 L3 | 1.42 | +13.4 | 0.85 | 1.15 | +0.7 | 0.96 |
+| r2_5m_20 d-1 D3 GD | 1.62 | +21.5 | 0.91 | 0.98 | +1.4 | 0.99 |
+
+**Reading:** the down-size-only cells (D3 of rst1_dir_s, big2_net30_s, regime_with_5m, adx14, ...) cut L6M/PRE by 40-50% but with mean -4 to -11k/wk in L6M: that is exposure removed, and at equal risk the PRE mean is below Q1-A for all but adx14_1m (+4.4k, which fails HOLD -24.5% and MID -29.9%, placebo ranks 0.0). The only cells that keep the mean are the confirm_n15 up/down cells, see section 2.
+## 2. confirm_n15 (L3 / LIN): first PASS on all rules, then RETRACTED by the causality audit (lead's stress tests)
+Definition (as built): confirm_n15 = number of OTHER books' signals in the same direction in the last 900 s; rank = share of the book's earlier confirm_n15 values below this one (>= 100 earlier); L3: bottom third x0.5, middle x1, top third x1.5 on the Q1-A lots.
+**Causality (item 1).** Recompute from the raw engine signal list (SS[kin], side, book) reproduces the stored feature exactly (max abs difference 0.0 on 88,490 rows; brute-force loop on 100 random rows: 0 mismatches); window [t-900, t) strictly before the signal second (a same-second signal of another book is NOT counted: 12 of the 100 audited rows had one); ranks rebuilt per book from earlier signals only reproduce the stored ranks to 3e-8. **But the count runs over all 88,490 engine rows, of which only 27,902 are live-session signals and 21,397 are taken**; the live box cannot know the other signals (non-live book-sessions). Rebuilding the count and the rank on the signals the box sees:
+| cell | L6M | HOLD | MID | PRE | X' | drop-carry L6M / PRE | mean L6M / HOLD / PRE | band | noharm | mean | drop-band | all |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| V0 L3 | +37.2 | +16.4 | -5.7 | -2.4 | +22.6 | +34.1 / +16.0 | +3.6 / +2.8 / -0.4 | True | True | True | True | True |
+| V0 down-only (=D3) | +47.0 | +14.3 | +13.3 | +22.8 | +31.3 | +44.6 / +24.3 | -1.6 / -2.2 / -2.3 | True | True | False | True | False |
+| V0 up-only | +14.8 | -4.7 | -15.9 | -5.8 | +3.9 | -1.0 / -5.8 | +5.5 / +4.5 / +1.7 | False | True | True | False | False |
+| V1 live-only L3 | +21.7 | -2.2 | +3.5 | -7.5 | -13.4 | -26.8 / -1.4 | +4.4 / +5.2 / +0.9 | False | True | True | False | False |
+| V2 taken-only L3 | +19.8 | +5.5 | +13.7 | -20.3 | -4.5 | -32.7 / -5.9 | -1.9 / +0.8 / -0.6 | False | False | False | False | False |
+| V1 down-only | +40.9 | +15.5 | +22.6 | +23.6 | +14.9 | +17.4 / +25.8 | -3.5 / -2.5 / -3.0 | True | True | False | False | False |
+| V1 up-only | -0.4 | -21.9 | -15.3 | -19.4 | -17.0 | -63.3 / -19.4 | +8.2 / +7.8 / +3.6 | False | False | True | False | False |
+Mean count per signal: all rows 1.46, live-session 0.48, taken 0.39. **On the live-visible universe the cell fails (L6M +21.7% / PRE -7.5%, carrying-dropped L6M -26.8%; taken-only worse).** The whole gain needs the not-traded streams as input.
+**Tiers (item 2)** on the all-rows universe: down-only (= D3, bottom third x0.5): L6M +47.0, PRE +22.8, mean -1.6k/-2.2k/-2.3k (mean not kept); up-only (top third x1.5): L6M +14.8%, carrying-dropped -1.0%, mean +5.5k/+4.5k/+1.7k (adds size and mean, no drawdown cut); the L3 gain is both tiers together.
+**Exposure (item 3, exposure_table, taken signals):** acceptance (worst-day net <= Q1-A's) FAILS for L3:
+| cell | max net lots (day) | max stack risk $ | max lots | mean lots | months positive vs Q1-A | sum vs Q1-A ($k) |
+|---|---|---|---|---|---|---|
+| Q1-A (ts2) | 18 (20240401) | 21600 | 7 | 2.14 | - | - |
+| confirm_n15 d+1 LIN | 21 (20250602) | 25200 | 10 | 2.00 | 20 of 43 | -11.5 |
+| confirm_n15 d+1 L3 | 26 (20250611) | 31200 | 11 | 2.17 | 24 of 43 | +201.7 |
+| adx14_1m d-1 D3 | 18 (20240715) | 21600 | 7 | 1.86 | 13 of 43 | -418.5 |
+| tod_rem_range_pts d-1 SIG | 18 (20230508) | 22800 | 10 | 1.62 | 12 of 43 | -677.1 |
+**Placebos (x100 each, ts2, scaled lock; rank = share of placebos below the real cell):**
+* confirm_n15 d+1 LIN: perm cut rank L6M 0.97 / PRE 0.54, mean rank L6M 1.00 / PRE 0.87; dayshuf cut rank L6M 0.96 / PRE 0.53, mean rank L6M 0.97 / PRE 0.92; ar1 cut rank L6M 1.00 / PRE 0.58, mean rank L6M 1.00 / PRE 0.97
+* confirm_n15 d+1 L3: perm cut rank L6M 0.93 / PRE 0.59, mean rank L6M 1.00 / PRE 0.67; dayshuf cut rank L6M 0.95 / PRE 0.69, mean rank L6M 0.94 / PRE 0.85; ar1 cut rank L6M 0.96 / PRE 0.63, mean rank L6M 0.97 / PRE 0.82
+* adx14_1m d-1 D3: perm cut rank L6M 0.66 / PRE 1.00, mean rank L6M 0.30 / PRE 0.85; dayshuf cut rank L6M 0.64 / PRE 1.00, mean rank L6M 0.28 / PRE 0.82; ar1 cut rank L6M 0.60 / PRE 1.00, mean rank L6M 0.31 / PRE 0.94
+* tod_rem_range_pts d-1 SIG: perm cut rank L6M 0.14 / PRE 0.96, mean rank L6M 0.37 / PRE 0.34; dayshuf cut rank L6M 0.50 / PRE 0.95, mean rank L6M 0.02 / PRE 0.34; ar1 cut rank L6M 0.49 / PRE 0.88, mean rank L6M 0.03 / PRE 0.72
+**Family null (item 4):** 700 shuffled-day draws (each = a random one of the 100 modifiers, its factors moved to other days, same rules): band 293 (42%), band+no-harm 264 (38%), band+no-harm+mean kept 0, carrying-drop band 260, ALL rules 0. Real grid: 2 of 100 pass everything (3 band+no-harm+mean). The null cannot produce the mean-kept pattern, so the confirm_n15 pass is not a multiple-testing artefact (rule-of-3 upper bound 0.43% per modifier; P(>=2 of 100) 6.9% at the upper bound): it is a UNIVERSE artefact (above).
+**Monthly (item 5):** L3 beats Q1-A in 24 of 43 months, sum +202k; LIN 20 of 43, sum -11k. Equal-risk: L3 L6M +30k/wk (lscale 1.9, extrapolated) but PRE -1.9k at lscale .9: no equal-risk gain on PRE.
+**Verdict: not a lead; the box would need the non-live streams' signals (all 183 POI streams of the books x sessions not traded) as live inputs. A live-universe version of the same idea is dead (above).**
+## 3. Addendum 2.1 close-out: ER at the add fill, under Q1-A (ts2; add hooks)
+ER(20) 5-min is recomputed at the add FILL second (library split-kernel capture; add fills 46,555 rows, mean 328 s after the signal; ER at the add >= .30 in 38.9% of add fills, agrees with the signal-second ER in 94.3%; the signal-second ER reproduces the stored feature to 3e-8). Cells (add lots from the live rule, min-1-lot rule: a multiplier below 1 cannot remove an add; only_if removes it):
+| cell | L6M | HOLD | MID | PRE | X' | drop-carry L6M / PRE | mean L6M / HOLD / PRE | total vs Q1-A ($k) | band / noharm / mean |
+|---|---|---|---|---|---|---|---|---|---|
+| only_if_ERadd>=0.20 | -32.7 | -24.3 | +1.6 | -57.8 | +2.9 | -27.2 / -51.0 | +9.9 / +7.6 / +2.9 | +952.2 | False/False/True |
+| only_if_ERadd>=0.30 | -22.7 | -9.6 | +13.0 | -69.9 | -0.2 | -28.0 / -52.9 | +11.0 / +8.0 / +2.7 | +841.5 | False/False/True |
+| only_if_ERadd>=0.40 | -12.4 | -2.4 | +21.1 | -55.1 | +22.6 | -5.0 / -37.9 | +6.9 / +6.5 / +2.1 | +799.4 | False/False/True |
+| only_if_ERadd>=0.50 | +53.1 | +19.6 | +14.0 | +27.1 | +42.0 | +38.8 / +29.0 | -3.8 / -3.6 / -3.1 | -396.2 | True/True/False |
+| mult_x0.5/x1_by_ERadd@0.30 | +0.8 | +0.6 | +1.6 | +2.3 | +3.0 | -0.0 / +2.3 | -0.1 / +0.2 / -0.3 | -45.5 | False/True/False |
+| mult_x0.5/x1_by_ERadd@0.40 | +17.0 | -0.3 | +6.0 | +1.7 | +8.7 | -2.6 / +1.7 | +0.1 / +0.3 / -1.3 | -101.3 | False/True/True |
+| only_if_ERsig>=0.30 (control) | +16.9 | +14.4 | +20.4 | +1.2 | +24.5 | +27.9 / +1.6 | -1.3 / -1.4 / -2.1 | -221.4 | False/True/False |
+| only_if_ERadd>=ERsig (trend persists) | +11.8 | +1.1 | -5.0 | +10.9 | +20.5 | +36.2 / +10.9 | -1.0 / -2.2 / -3.5 | -412.9 | False/True/False |
+| mult_x0.5_if_ERadd<ERsig else x1 | +0.5 | -0.0 | +5.2 | +2.8 | -0.1 | +6.3 / +2.8 | -1.0 / -0.5 / -1.3 | -149.7 | False/True/False |
+| BOUND_add_off | +59.0 | +24.9 | +21.8 | +29.6 | +35.2 | +51.7 / +29.6 | -5.9 / -5.7 / -3.8 | -633.1 | True/True/False |
+Placebos x40 (size-matched random add-off / permuted multipliers within book x session):
+* only_if_ERadd>=0.30: cut rank vs placebo L6M 0.00 / PRE 0.00; mean rank L6M 1.00 / PRE 1.00 (placebo median cut L6M +43.0%, PRE +10.9%)
+* mult_x0.5/x1_by_ERadd@0.30: cut rank vs placebo L6M 0.07 / PRE 0.38; mean rank L6M 1.00 / PRE 1.00 (placebo median cut L6M +9.5%, PRE +3.3%)
+Equal-risk (lscale scan) of 'add only if ER_add >= .30': L6M +34.3k/wk at lscale 1.21 vs Q1-A fit 26.7k/wk (+7.6k); PRE: maxDD not responsive to lscale in the scan (R2 0.17): undefined.
+**CLOSED (one paragraph).** Sizing the resting 30% add does not pay on drawdown. No feature tells which adds to drop: every rank/state feature in section 2 (ER at signal, delta, big prints, pulled liquidity, ice, vol ratio) fails either the placebo or the carrying-week drop on the add (previous sections), and the ER at the add fill is a mean lever, not a risk lever: removing adds when ER_add < .30 lifts the mean by +11.0k/wk in L6M, +8.0k HOLD, +2.7k PRE (+842k over the history; the placebo mean rank is 1.0), because low-ER adds lose money, but the PRE maxDD grows by 70% (cut rank 0.0 against the random add-off; L6M -22.7%) and the carrying-week-dropped cuts are -28% / -53%: the adds that remain, taken only in trends, are larger drawdown contributors. Threshold .50 (add only in strong trends) cuts L6M +53% / PRE +27% but costs mean -3.8k/wk, i.e. it is the add-off bound (add off: L6M +59%, mean -5.9k). The x0.5/x1.0 multiplier by ER_add is neutral (a multiplier below 1 cannot remove a 1-lot add). Recommendation: keep the add as live, no sizer on the add; the ER_add >= .30 filter is a MEAN idea (+11k/wk, rank 1.0) that fails drawdown-first and is listed for the mean programme, not as a risk keep.
+
+## SIZER_S3 (Z3) - report 4 (2026-11-03 ~17:50Z): 3.2 and 3.3 on the LIVE-UNIVERSE ranks (ranks_live.parquet), ts2 base, vs Q1-A
+Shadow only, no PASS claims. UNIVERSE = live (27,902 live signals; ranks and expanding medians built only on them; NaN rank off-universe -> multiplier 1.0, lots 0 there). Reports 1-3 above used the OLD all-rows ranks (ranks_book, 88,490 rows) and are superseded for the rank-based cells; 3.4 risk parity and 3.5 brackets use ATR/ER features, not ranks, so they stand. Base ts2, reference Q1-A (L6M maxDD 104.8k / mean 27.0k, PRE 88.2k / 13.2k). Pool P8 selection is unchanged (pool_inputs_s1/s2 are still the old-universe tables; S4a is rebuilding s1 on the live universe, then I rebuild P8 and rerun); the 50 reaction-speed vectors are excluded until I switch to S4a's live/mult_*.npy. Files: out/sizer_s3/ts2live/.
+* 3.2 (114 combinations): 0 pass the band rule vs Q1-A, 0 have L6M and PRE both positive; best L6M +8.8% (er_1m_100 + tot_rel MEAN: PRE -31.5, X' -45.1, MID -33.0). 13 cells positive in L6M and PRE only after dropping the carrying week (raw L6M negative). NO FLAG.
+* 3.3 learned mapping (3 seeds x L3(C)/LIN(C)/L3(A)): PRE is negative in all 9 cells (-0.6 to -65), MID -17 to -42, L6M +1 to +40 (LIN(C)); with the carrying week dropped L6M is -65 to +3; only seed2 LIN(C) passes no-harm (L6M +22.1, PRE -0.6). Does not beat Q1-A. NO FLAG.
+Plain sentence: on the live-universe ranks, ts2, vs Q1-A, no combination or learned mapping improves L6M and PRE together; stay on Q1-A. Next: rebuild P8 when pool_inputs_s1_live.csv lands and rerun; exposure table; add-sizing cells.
