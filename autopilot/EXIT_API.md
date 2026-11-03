@@ -210,3 +210,6 @@ Independent expectation (python, no engine code): a market exit at second kx and
 - `lots_mult` entries exactly 0 = SKIP the signal (extra_skip), because the integer rule has a 1-lot minimum.
 - Hooks that take the TS base: `bracket`, `add_mult` / `add_only_if`, stack exposure (`stack_expo.run_stack`), all compose with `lots_round='sequential'`.
 - V13T2 (`run_v13t2_live`, kfix): published rescoring DS3_V13T2_RESCORE.md.
+
+## TS2 BASE (BASE-4, 2026-11-03T14:29Z)
+`T.run_v13t_ts2(ov)` = V13T_LIVE with the live lot order (session -> A06 slot -> B02 -> ER Q1-A -> zone HALF last), see DS3_V13T_TS2_BASE.md (definition, A06 lists, B02 rule and its verification, census, tests, deltas vs ts). ladder = Q1A (default) | L | off; hooks (lots_mult, add_mult, bracket, stack_expo.run_stack(ladder=...)) run on it.

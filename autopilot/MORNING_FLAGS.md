@@ -132,15 +132,11 @@ Cells that KEEP x1.5 and rank best (exact definitions): K_PE = x1.5 only for PE 
 
 - 2026-11-02 21:34Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-02 21:34Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-02 21:43Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-02 21:43Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
 - 2026-11-02T21:47Z ***FLAG*** Z1: P4020 beats the live ladder base on PRE and L6M with the carrying week dropped (PA PRE +10%, X' +7%, dropped L6M +25% / PRE +30%, mean -2.7k/-1.7k per week inside 0.5 MDE, P&L -15k) and all three placebos (ranks 0.01-0.04; A on L6M-dropped 0.139); frames agree on PRE, kfix X' only +1%. EXACT DEFINITION: on run_v13t_ts + HALF layer, TH-L2 arm = 40 pts for any row whose traded lots (sequential rounding after zone half and ER ladder) are 1-4 in any book, arm = 20 pts for 11-lot rows (PE only), live arm 30 for all other rows (6-lot rows included). LEAD with qualifiers (post-hoc selected from the decomposition, PA L6M +2%, weak kfix X'); no PASS, Shadow only.
 
-- 2026-11-02 21:59Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
 - 2026-11-02T22:01Z Z1 FLAG UPDATE (P4020 lot-arm 40@lots<=4 / 20@11 lots): selection-aware null rank PA score S1 0.119 (not <= 0.10), dropped-episode score S2 0.010; out-of-time unstable (maxDD better in 8 of 15 quarters, whole-period -2.4%, P&L +136k first half / -150k second half); neighbours: ramp, 11-lot arm 18 as good (+13% PRE, +10% X', +23k), 22/25 lose the PA gain. Downgraded to WATCH-LEAD: do not put in Shadow on this evidence alone. Spec ready in autopilot/SIZER_LOT_ARM_SPEC.md if the lead wants it. Prereg e410702e.
 
@@ -149,86 +145,46 @@ Cells that KEEP x1.5 and rank best (exact definitions): K_PE = x1.5 only for PE 
 
 ***FLAG CORRECTION*** [2026-11-03 ZL-1] SIZER_S2V/HYBRID/MEAN 'PA9' columns were single-phase (engine week key does nothing on the ts base). Genuine PA9 (scoring week key shifted -4..+4) in DS3_SIZER.md CORRECTION BLOCK. rv_ratio_30m SIG DOWN DIR still passes but carry-dropped PA9 is only 5.5 (L6M) / 4.8 (PRE); the VT 0.75 DOWN/FULL and VT 1.0 DOWN cells now also meet the mechanical flag rule (PA9 L6M 35.6/35.1/28.9, PRE 32.5/30.5/19.8, X' -5.2/-0.9/-6.2, carry-dropped positive) but, like the DIR cells, they are lot reductions (total -0.8M, placebo ranks 0.3-0.5, not mean-keeping). Exact VT definition: m = clip(ER_mult x f, 0.25, 1.5), f = clip(0.75 x median(earlier same-book atr14_5m, min 100) / atr14_5m_signal, 0.5, 1.5) (DOWN: min(f,1)), ER_mult live binary ER(20)5m 0.30 ladder, sequential rounding.
 
-- 2026-11-02 22:24Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-02 22:26Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-02 22:49Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-02 23:14Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-02 23:39Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-02 23:55Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 00:04Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 00:29Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 00:54Z SIZER FLAG: 31 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 01:19Z SIZER FLAG: 55 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 01:21Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
 - 2026-11-03T03:00Z S4a EQUAL-MEAN-LOTS FLAG (mechanical, weak): S1B cell A|KB|asia|t0.50_0.75_1.25 on the ts base. Definition: book KB, session asia only, multiplier = 1.25 if ER(20) on 5-min >= 0.50 else 0.75 (all other rows keep the live 0.30 ladder), whole vector x1.0125 so engine mean lots = 3.047 (ladder 3.010). Result vs the live ladder: maxDD cut L6M 18.2%, PRE 2.4%, L6M with carrying weeks dropped 3.5%, mean +1.9k/wk L6M and +63 PRE, genuine PA9 L6M 17.3% PRE 2.4% MID -14.4% X' -1.0% (inside no-harm). NOT a lead: PRE and carry-dropped cuts are inside the flip-5 noise band and equal-lots placebos match or beat the L6M cut (rank .13-.19). See SIZER_EQLOTSB.md. No S1 rank-mapping cell passes (all 11 fail MID).
 
-- 2026-11-03 01:44Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 02:09Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 02:34Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 02:59Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 03:24Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 03:49Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 04:14Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 04:39Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 05:04Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 05:29Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 05:54Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 06:19Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 06:44Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 07:09Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 07:34Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 07:59Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 08:24Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 08:49Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 09:14Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 09:39Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 10:04Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 10:29Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 10:54Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 11:19Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 11:44Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 12:09Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 12:34Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 13:00Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 13:25Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
 
-- 2026-11-03 13:50Z SIZER FLAG: 56 cell(s) beat ER ladder on L6M and PRE, carrying week dropped, mean >= ladder (see SIZER_LEAD_REGISTER.md). Post-hoc.
+
