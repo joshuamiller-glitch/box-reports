@@ -1,4 +1,4 @@
-# DS3 SIZER SUMMARY (2026-11-03 22:28Z)
+# DS3 SIZER SUMMARY (2026-11-03 22:57Z)
 
 One line per family, ranked by (cut L6M + cut PRE)/2. Post-hoc, Shadow only. Detail: SIZER_MASTER_TABLE.md, SIZER_LEAD_REGISTER.md.
 
@@ -15,6 +15,4 @@ One line per family, ranked by (cut L6M + cut PRE)/2. Post-hoc, Shadow only. Det
 - SIZER_S1_EQLOTS: best cell ('g13', 'ers_15m_20', 1, 'SIG', 'D') cuts L6M 0.507, PRE 0.142; does not meet the flag rule (COSTS-MEAN). The ER sizer should stay as is for this family.
 - SIZER_S2V_MEAN: best cell PE|1|0.75 cuts L6M 0.490, PRE 0.119; does not meet the flag rule (COSTS-MEAN). The ER sizer should stay as is for this family.
 - SIZER_S1B_TS: best cell A|PE|london|t0.20_0.5_1.0 cuts L6M 0.345, PRE 0.071; meets the flag rule. Candidate to modify the ER sizer, needs one-week check and PA9 confirmation.
-- SIZER_S3X_STRESS: best cell STRESS|wf|X3500|lo15|hi40|nl0 cuts L6M 0.228, PRE 0.171; does not meet the flag rule (FRAGILE). The ER sizer should stay as is for this family.
 - SIZER_S1B_EQLOTS: best cell A|PE|london|t0.20_0.5_1.0 cuts L6M 0.288, PRE 0.012; does not meet the flag rule (FRAGILE). The ER sizer should stay as is for this family.
-- SIZER_S3X: best cell S3X|bracket|ALL|A1|par|V13T_LIVE cuts L6M -0.019, PRE 0.221; does not meet the flag rule (DEAD). The ER sizer should stay as is for this family.

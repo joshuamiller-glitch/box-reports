@@ -16,3 +16,8 @@
 | 2026-11-03T22:01Z | FADE_TP | S4b | 981 | screen 441 + shape expansion 540 (12 cells x 45 shapes) |
 | 2026-11-03T22:14Z | FADE_TP | S4b | 1710 | all cells tried: 441 screen + 540 shape expansion + 729 neighbourhood |
 | 2026-11-03T22:24Z | FADE_LV | ZL-1 | 1054 | level-anchor fades: stage 1 (170 cells default shape) + stage 2 (12 cells x 72 shapes) + stage 3 (20 planned) |
+| 2026-11-03T22:35Z | FADE_LV | ZL-1 | 1054 | level-anchor fades: stage 1 (170 cells default shape) + stage 2 (12 cells x 72 shapes) + stage 3 (20 planned) |
+| 2026-11-03T22:46Z | FADE_LV | ZL-1 | 1054 | level-anchor fades: stage 1 (170 cells default shape) + stage 2 (12 cells x 72 shapes) + stage 3 (20 planned) |
+| 2026-11-03T22:55Z | FADE_TP | S4b | 486 | screen: 7 tape triggers x 11 anchor groups x 4 sessions x 2 shapes (non-empty cells >= 40 trades); shape / buffer expansion later counted separately |
+| 2026-11-03T22:59Z | FADE_TP | S4b | 2484 | v2 after ZL-2 audit fixes: screen 486 + shape expansion 540 + neighbourhood 1,458 (two-sided and one-sided) |
+| 2026-11-03T22:59Z | FADE_TP | S4b | 2484 | v2 after ZL-2 audit fixes: screen 486 + shape expansion 540 + neighbourhood 1,458 (two-sided and one-sided) |

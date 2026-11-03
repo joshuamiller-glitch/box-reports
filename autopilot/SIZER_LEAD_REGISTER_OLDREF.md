@@ -1,4 +1,4 @@
-# SIZER LEAD REGISTER (2026-11-03 22:28Z)
+# SIZER LEAD REGISTER (2026-11-03 22:57Z)
 
 Flag rule: cut>0 on L6M AND PRE vs live ER ladder, carrying week dropped (drop_L6M>0 and drop_PRE>0), mean delta >=0 on L6M and PRE. Post-hoc; nothing is a lead on one week or one month.
 
@@ -47,22 +47,22 @@ Flag rule: cut>0 on L6M AND PRE vs live ER ladder, carrying week dropped (drop_L
 | SIZER_S1B        | A|SM|london|t0.50_0.5_1.0            | V13T_LIVE_seq(ts)             |       3.156 |     0.04  |     0.026 |      0.04  |    -0.092 |   -0.094 |      0.108 |      0.035 |     443.376 |      21.148 |     0.04  |     0.026 | LEAD-CANDIDATE(FLAG rule; post-hoc, one-week check pending) |
 | SIZER_S1B_TS     | A|SM|london|t0.50_0.5_1.0            | ts (run_v13t_ts), genuine PA9 |       2.955 |     0.04  |     0.026 |      0.04  |    -0.092 |   -0.094 |      0.108 |      0.035 |     443.376 |      21.148 |     0.025 |     0.013 | LEAD-CANDIDATE(FLAG rule; post-hoc, one-week check pending) |
 
-## Near misses (beat ladder on L6M and PRE but fail drop-carry or mean), top 25 of 3622
+## Near misses (beat ladder on L6M and PRE but fail drop-carry or mean), top 25 of 3602
 
 | program   | cell                         | base   |   mean_lots |   cut_L6M |   cut_PRE |   cut_HOLD |   cut_MID |   cut_Xp |   drop_L6M |   drop_PRE |   dmean_L6M |   dmean_PRE |   pa9_L6M |   pa9_PRE | label                  |
 |:----------|:-----------------------------|:-------|------------:|----------:|----------:|-----------:|----------:|---------:|-----------:|-----------:|------------:|------------:|----------:|----------:|:-----------------------|
 | SIZER_S2  | regime_with_5m|d+1|ALONE:LIN | ts     |         nan |     0.708 |     0.621 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | regime_with_5m|d+1|ALONE:LIN | ts     |         nan |     0.708 |     0.621 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
-| SIZER_S2  | rst1_dir_s|d+1|ALONE:D3      | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
-| SIZER_S2  | regime_with_5m|d+1|ALONE:L3  | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
-| SIZER_S2  | regime_with_5m|d+1|ALONE:D3  | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | rst1_dir_s|d+1|ALONE:L3      | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
-| SIZER_S2  | regime_with_5m|d+1|ALONE:SIG | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
-| SIZER_S2  | regime_with_5m|d+1|ALONE:SIG | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
+| SIZER_S2  | rst1_dir_s|d+1|ALONE:D3      | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | regime_with_5m|d+1|ALONE:D3  | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | regime_with_5m|d+1|ALONE:L3  | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
-| SIZER_S2  | rst1_dir_s|d+1|ALONE:D3      | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
+| SIZER_S2  | regime_with_5m|d+1|ALONE:D3  | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
+| SIZER_S2  | regime_with_5m|d+1|ALONE:L3  | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | rst1_dir_s|d+1|ALONE:L3      | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
+| SIZER_S2  | regime_with_5m|d+1|ALONE:SIG | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
+| SIZER_S2  | rst1_dir_s|d+1|ALONE:D3      | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
+| SIZER_S2  | regime_with_5m|d+1|ALONE:SIG | ts     |         nan |     0.708 |     0.604 |      0.305 |       nan |    0.079 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | big2_net30_s|d+1|ALONE:D3    | ts     |         nan |     0.71  |     0.587 |      0.304 |       nan |    0.072 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | big2_net30_s|d+1|ALONE:D3    | ts     |         nan |     0.71  |     0.587 |      0.304 |       nan |    0.072 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | big2_net30_s|d+1|ALONE:LIN   | ts     |         nan |     0.687 |     0.57  |      0.283 |       nan |    0.081 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
@@ -75,4 +75,4 @@ Flag rule: cut>0 on L6M AND PRE vs live ER ladder, carrying week dropped (drop_L
 | SIZER_S2  | rst1_dir_s|d+1|ALONE:LIN     | ts     |         nan |     0.694 |     0.553 |      0.236 |       nan |   -0.101 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | rst1_dir_s|d+1|ALONE:LIN     | ts     |         nan |     0.694 |     0.553 |      0.236 |       nan |   -0.101 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
 | SIZER_S2  | rst1_dir_s|d+1|ALONE:SIG     | ts     |         nan |     0.694 |     0.553 |      0.236 |       nan |    0.066 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
-| SIZER_S2  | rst10_dir_s|d+1|ALONE:L3     | ts     |         nan |     0.652 |     0.579 |      0.314 |       nan |    0.046 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
+| SIZER_S2  | rst10_dir_s|d+1|ALONE:D3     | ts     |         nan |     0.652 |     0.579 |      0.314 |       nan |    0.046 |        nan |        nan |         nan |         nan |       nan |       nan | FRAGILE(drop-carry<=0) |
