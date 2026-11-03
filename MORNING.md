@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 16:17Z 11-03 (t+195.3 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 16:47Z 11-03 (t+195.8 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 59% min 49% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 11.1, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
-Updated 2026-11-03T16:17:12Z. Box: CPU 62.1%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 57% min 49% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 9.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
+Updated 2026-11-03T16:47:44Z. Box: CPU 55.6%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -259,7 +259,7 @@ Updated 2026-11-03T16:17:12Z. Box: CPU 62.1%, slots busy 13/32, queue 0. Cores p
 | ZL1 | ? | 0 | 0 / 0 | none | prereg |
 | ZL3 | ? | 0 | 0 / 0 | none | prereg |
 | ZONES3 | ? | 0 | 0 / 0 | none | prereg |
-| unattributed | - | 11.1 | - | - | - |
+| unattributed | - | 9.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -270,13 +270,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-03T16:26Z
+## TREND (TL) update 2026-11-03T16:56Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-03T16:17:26Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-03T16:47:26Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -288,12 +288,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 14:51Z 11-03 (t+242.1 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 16:51Z 11-03 (t+244.1 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 172, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 18% min 0% (floor 90%), queue 0, by track {'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 57% min 50% (floor 90%), queue 0, by track {'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -1108,3 +1108,7 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - 15:46Z Z2 load: 3 engine workers (S1BQ family null), avail mem 44 GB; S1BQ ledger appended (172 cells)
 - 16:16Z Z2 load: 3 engine workers (S1BQ null), avail 51 GB
 - (wall 16:19Z) BASE-4 Q1-A items: STACK (DS3_STACK_EXPOSURE_Q1A.md): under Q1-A worst-day net is 18 lots (was 28), worst gross stack risk $21.6k; entries at 14/16/18+ lots: 261/70/10 of 21,397; ten largest stacks all 18 lots (HM4 SM4 PE7 KB2 PB1); caps 20-26, tail-only, $25k+ caps never bind; real-scale cells: cap8 L6M maxDD -29%% PRE -14%% at L6M mean 20.7k vs 27.0k; cap12 L6M +3%% PRE -4%%; same-direction x0.5 at N=12 L6M maxDD 98k at base mean, PRE no better; no cell beats Q1-A at same-or-better mean: no flag. ANATOMY (DS3_SIZER_DRAWDOWN_ANATOMY_Q1A.md): remaining drawdown (L6M 105k, PRE 88k) sits in ER>=.30 trades at x1.0 (2026: -105k = 50%% of gross loss on 36%% of trades; x0.5 trades about 0); ladder-OFF is -73k (2026) / -75k (PRE) vs -105k / -88k with Q1-A; London carries it (-60k 2026, -94k PRE); by book KB -52k, MV -25k, PE -23k (2026), PE -56k (PRE); all TH-L2 cut trades; add-filled trades -213k (2026) vs +108k when the add did not fill (add fill is outcome-conditional: price dipped against: not a usable signal); worst 30 trades still PE (4 or 7 lots) add filled. CORRECTION to the ts-era anatomy: x1.5 trades carry 62%%/74%% of gross loss (2026/PRE), multiplier adds ~-65k/-67k, 56-62%% of the ts-era drawdown was size excess. LOCK (lock_surf_ts2 Q1A): live cell PA9 L6M 105k (rank 43/60, mean 27.0k), PRE 88k (rank 7/60); give-back arm 2R keep .25 reaches L6M 75k at mean 29.5k but nothing beats the live cell in PRE at same-or-better mean: no flag.
+- 16:46Z Z2 load: 3 engine workers (S1BQ null), avail 57 GB
+- (wall 16:47Z) ***FLAG (PRELIMINARY)*** S4b: confirm_n15 (other books' same-direction signals in the last 900 s, rank-L3 bottom third x0.5 / middle x1.0 / top third x1.5 on top of Q1-A) passes band, no-harm, mean and carrying-week drop on ts2 (L6M +37.2%%, PRE -2.4%% headline, +16.0%% with carrying week dropped); exposure/placebo/causality pending: see MORNING_FLAGS.md. ER-at-add under Q1-A: add only if ER_add >= .30 raises mean +11k/wk L6M but PRE maxDD 70%% worse: closed.
+- (wall 16:52Z) S4a vs Q1-A restate (SIZER_VS_Q1A_S1FAMILY.md; SIZER_EXPOSURE.md; sizer_policy_DRAFT.txt; DS3_SIZER_FINAL_SKELETON.md; master table now Q1-A only, 2,038 rows, 13 meet cut rule, none clears the band): 'down' variant (min(m,1)) mean-keeping/meeting cut rule: S1 327/998 -> 8; S1B-A 12/80 -> 1; hysteresis 14/74 -> 0; closest S1 ers_5m_20 SIG A (PRE cut .103 beats 100/100 placebos, L6M .083 rank .04-.11, PA9 PRE -.002, HOLD/MID/X' -.28/-.21/-.23). Exposure (mean/max lots, worst-day net lots, stack risk): Q1-A 2.31/7/18/$21.6k; T_0.25_0.60 2.53/11/25/$31.2k; K_PE 2.71/11/22/$26.4k; KB-asia weak flag 2.37/7/19/$22.8k. Draft policy: live Q1-A ladder, no change (KB-asia as Shadow-only note). Removed a bug that wrote 47 duplicate SIZER FLAG lines into MORNING_FLAGS.
+- 16:54Z Z2: S1BQ re-run NATIVE on run_v13t_ts2 (bridge m_eff == ts2 lots exactly, core diff 0.0); results same as v1 bridge: 0 strict-clean cells vs Q1-A; placebos x100x3 running (3 workers), avail 65 GB

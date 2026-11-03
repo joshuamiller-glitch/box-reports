@@ -1,0 +1,7 @@
+# SIZER_S2Q_CONFIRM prereg (S4b, 2026-11-03 ~17:00Z): stress tests of the confirm_n15 modifier on Q1-A (ts2, lock R scaled by the factor)
+Written BEFORE the audit/tier/null/variant outcomes are computed (the 100-modifier screen, its two passing cells confirm_n15 LIN and L3, and the placebo run in progress are already known).
+1 CAUSALITY: recompute confirm_n15 from the raw signal list of the engine (SS[kin], side, book) with a brute-force loop for 100 random rows (window [t-900, t) strictly before the signal second; other books, same side); check equality with the stored feature for all rows; variants of the signal universe: V0 = all engine rows (stored), V1 = live-session signals only (session lots > 0), V2 = signals TAKEN in the Q1-A ts2 base run; ranks rebuilt per book (expanding, >=100 earlier). Cells = L3 on V0/V1/V2.
+2 TIERS (V0): down-only (bottom third x0.5, else x1; = D3), up-only (top third x1.5, else x1), L3 (both). Criteria as SIZER_S2Q (band, no-harm, mean kept, carrying-week-dropped L6M>.219 and PRE>.099, genuine PA9 vs Q1-A ts2).
+3 EXPOSURE: exposure_table of Q1-A and L3 (worst-day net lots, stack risk, max lots, lots per book x session); acceptance: worst-day net <= Q1-A's.
+4 FAMILY NULL: 1,200 draws, each = a random modifier of the 100 re-run with its multiplier vector moved to other days (dayshuf), gov scaled, genuine PA9 judged by band + no-harm + mean + carrying-drop; compare the real 2 of 100 with Binomial(100, p0).
+5 placebos x3 x100 (perm, dayshuf, ar1), equal-risk exact, monthly stability.

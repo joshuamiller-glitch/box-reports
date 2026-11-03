@@ -1,4 +1,4 @@
-# SIZER MASTER TABLE vs Q1-A (S4a integrator v2, 2026-11-03 16:18Z)
+# SIZER MASTER TABLE vs Q1-A (S4a integrator v2, 2026-11-03 16:56Z)
 
 Reference = Q1-A (ER(20)5m < .30 x0.5 else x1.0, live since 2026-11-02 19:30Z), bases: 'ts2' rows are on BASE-4's run_v13t_ts2 (live lot order session -> slot/B02 -> ER Q1-A -> zone); 'ts (old order)' rows come from other agents' runs not yet re-run on ts2 (their Q1-A reference is on the same old base). Cuts are fractions of weekly maxDD vs Q1-A (positive = smaller drawdown); dmean in $/wk vs Q1-A; drop = carrying weeks dropped; PA9 genuine where shown (blank = source did not provide). Rows from other agents are taken from their own Q1-A runs (stated in the src column of the csv); their equal-risk, placebo ranks and exposure are in their pages. Strict mean rule here: dmean >= 0 on L6M and PRE (other pages use a one-MDE tolerance). Rank key S = (cut L6M + cut PRE)/2 within program; 'asis' rows contain the x1.5 side and so add risk to Q1-A; 'down' rows are the cell with its x1.5 side removed (what it adds to Q1-A as a size-down rule). Old x1.5-ladder tables: SIZER_MASTER_TABLE_OLDREF.md. Post-hoc, Shadow only.
 
@@ -6,14 +6,24 @@ Reference = Q1-A (ER(20)5m < .30 x0.5 else x1.0, live since 2026-11-02 19:30Z), 
 
 |                                                            |   cells |   mean_keeping |   flag_rule |
 |:-----------------------------------------------------------|--------:|---------------:|------------:|
+| ('SIZER_ADD (ER at the add, ZL-2 Q6)', 'per owner')        |       3 |              0 |           0 |
 | ('SIZER_Q2(vs Q1-A)', 'asis (adds the x1.5 side to Q1-A)') |      52 |             42 |           0 |
-| ('SIZER_S1', 'asis')                                       |      77 |             52 |           0 |
+| ('SIZER_Q2/Q3 as adds to Q1-A (ZL-2 Q6)', 'per owner')     |      12 |              6 |           0 |
+| ('SIZER_Q6 (ER variants vs Q1-A)', 'per owner')            |      23 |              0 |           0 |
+| ('SIZER_S1', 'asis')                                       |     152 |            103 |           0 |
 | ('SIZER_S1', 'down')                                       |     998 |            327 |           8 |
+| ('SIZER_S1B(A)', 'asis')                                   |      80 |             80 |           0 |
+| ('SIZER_S1B(A)', 'down')                                   |      80 |             12 |           1 |
 | ('SIZER_S1_HYST', 'asis')                                  |      74 |             70 |           0 |
 | ('SIZER_S1_HYST', 'down')                                  |      74 |             14 |           0 |
 | ('SIZER_S2(on Q1-A)', 'modifier')                          |     100 |              0 |           0 |
 | ('SIZER_S2V(Q1-A)', 'modifier')                            |     389 |            111 |           4 |
 | ('SIZER_S3(Q1-A)', 'combo')                                |     114 |             82 |           0 |
+| ('STACK (BASE-4 Q1-A)', 'per owner')                       |      54 |             28 |           0 |
+
+## SIZER_ADD (ER at the add, ZL-2 Q6): top 20 among mean-keeping cells (0 of 3 rows)
+
+none (no cell keeps the mean of Q1-A)
 
 ## SIZER_Q2(vs Q1-A): top 20 among mean-keeping cells (42 of 52 rows)
 
@@ -40,7 +50,22 @@ Reference = Q1-A (ER(20)5m < .30 x0.5 else x1.0, live since 2026-11-02 19:30Z), 
 | PE_S_nyam   | asis (adds the x1.5 side to Q1-A) | ts (old order) |       2.88  |    -0.328 |    -0.408 |     -0.252 |     0.154 |   -0.192 |     -0.415 |     -0.408 |    3736.13  |    4045     |    -0.311 |    -0.355 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
 | PE_S_AN     | asis (adds the x1.5 side to Q1-A) | ts (old order) |       3.079 |    -0.273 |    -0.495 |     -0.2   |     0.219 |   -0.35  |     -0.257 |     -0.488 |    9566.99  |    5297.34  |    -0.241 |    -0.397 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
 
-## SIZER_S1: top 20 among mean-keeping cells (379 of 1075 rows)
+## SIZER_Q2/Q3 as adds to Q1-A (ZL-2 Q6): top 20 among mean-keeping cells (6 of 12 rows)
+
+| cell        | variant   | base                             |   mean_lots |   cut_L6M |   cut_PRE |   cut_HOLD |   cut_MID |   cut_X' |   drop_L6M |   drop_PRE |   dmean_L6M |   dmean_PRE |   pa9_L6M |   pa9_PRE |   harm_ok | label                                             |
+|:------------|:----------|:---------------------------------|------------:|----------:|----------:|-----------:|----------:|---------:|-----------:|-----------:|------------:|------------:|----------:|----------:|----------:|:--------------------------------------------------|
+| T_0.25_0.60 | per owner | ts2 (live lot order) per ZL-2 Q6 |         nan |     0.317 |    -0.061 |     -0.194 |    -0.051 |    0.078 |     -0.144 |     -0.061 |        5500 |         500 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| T_0.30_0.60 | per owner | ts2 (live lot order) per ZL-2 Q6 |         nan |     0.34  |    -0.092 |     -0.071 |    -0.088 |    0.199 |     -0.105 |     -0.092 |        4300 |        1200 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| T_0.20_0.60 | per owner | ts2 (live lot order) per ZL-2 Q6 |         nan |     0.285 |    -0.076 |     -0.299 |    -0.11  |   -0.049 |     -0.198 |     -0.076 |        2700 |        1400 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| T_0.30_0.45 | per owner | ts2 (live lot order) per ZL-2 Q6 |         nan |     0.197 |    -0.304 |     -0.171 |     0     |    0.232 |     -0.344 |     -0.304 |        9000 |        1900 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| CAPB_3      | per owner | ts2 (live lot order) per ZL-2 Q6 |         nan |    -0.232 |    -0.208 |     -0.058 |     0.343 |   -0.106 |     -0.224 |     -0.208 |         800 |        1200 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| CAPB_2      | per owner | ts2 (live lot order) per ZL-2 Q6 |         nan |    -0.232 |    -0.208 |     -0.058 |     0.343 |   -0.106 |     -0.224 |     -0.208 |         800 |        1200 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+
+## SIZER_Q6 (ER variants vs Q1-A): top 20 among mean-keeping cells (0 of 23 rows)
+
+none (no cell keeps the mean of Q1-A)
+
+## SIZER_S1: top 20 among mean-keeping cells (430 of 1150 rows)
 
 | cell                                 | variant   | base                 |   mean_lots |   cut_L6M |   cut_PRE |   cut_HOLD |   cut_MID |   cut_X' |   drop_L6M |   drop_PRE |   dmean_L6M |   dmean_PRE |   pa9_L6M |   pa9_PRE | harm_ok   | label                                             |
 |:-------------------------------------|:----------|:---------------------|------------:|----------:|----------:|-----------:|----------:|---------:|-----------:|-----------:|------------:|------------:|----------:|----------:|:----------|:--------------------------------------------------|
@@ -62,8 +87,33 @@ Reference = Q1-A (ER(20)5m < .30 x0.5 else x1.0, live since 2026-11-02 19:30Z), 
 | ('g13', 'ers_10m_20', 1, 'L5', 'B')  | down      | ts2 (live lot order) |       2.461 |     0.357 |    -0.116 |     -0.15  |     0.042 |   -0.256 |      0.003 |     -0.116 |    3923.85  |     352.677 |     0.218 |     0.046 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
 | ('g12', 'er_1m_100', 'L3', 'A')      | down      | ts2 (live lot order) |       2.602 |     0.226 |    -0.004 |     -0.252 |    -0.303 |   -0.272 |     -0.054 |     -0.004 |     733.353 |     280.063 |     0.113 |    -0.04  | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
 | ('g12', 'er_1m_100', 'L3', 'C')      | down      | ts2 (live lot order) |       2.602 |     0.226 |    -0.004 |     -0.252 |    -0.303 |   -0.272 |     -0.054 |     -0.004 |     733.353 |     280.063 |     0.113 |    -0.04  | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| ('g12', 'er_1m_100', 'L3', 'C')      | asis      | ts2 (live lot order) |       2.602 |     0.226 |    -0.004 |     -0.252 |    -0.303 |   -0.272 |     -0.054 |     -0.004 |     733.353 |     280.063 |     0.113 |    -0.04  | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
 | ('g13', 'ers_10m_20', 1, 'L5', 'A')  | down      | ts2 (live lot order) |       2.647 |     0.397 |    -0.177 |     -0.195 |    -0.295 |   -0.505 |      0.152 |     -0.177 |    1910.88  |    1070.89  |     0.22  |    -0.053 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
-| ('g13', 'ers_10m_20', 1, 'L5', 'C')  | down      | ts2 (live lot order) |       2.647 |     0.397 |    -0.177 |     -0.195 |    -0.295 |   -0.505 |      0.152 |     -0.177 |    1910.88  |    1070.89  |     0.22  |    -0.053 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+
+## SIZER_S1B(A): top 20 among mean-keeping cells (92 of 160 rows)
+
+| cell                        | variant   | base                 |   mean_lots |   cut_L6M |   cut_PRE |   cut_HOLD |   cut_MID |   cut_X' |   drop_L6M |   drop_PRE |   dmean_L6M |   dmean_PRE |   pa9_L6M |   pa9_PRE | harm_ok   | label                                             |
+|:----------------------------|:----------|:---------------------|------------:|----------:|----------:|-----------:|----------:|---------:|-----------:|-----------:|------------:|------------:|----------:|----------:|:----------|:--------------------------------------------------|
+| A|PE|asia|t0.35_0.75_1.25   | down      | ts2 (live lot order) |       2.36  |     0.096 |     0.051 |      0     |     0.006 |   -0.15  |     -0.171 |      0.051 |     308.677 |     165.034 |     0.061 |     0.012 | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|HM|asia|t0.20_0.5_1.0     | down      | ts2 (live lot order) |       2.347 |     0.133 |    -0.027 |     -0.027 |    -0.076 |   -0.04  |      0.037 |     -0.027 |     732.765 |     315.106 |     0.106 |    -0.009 | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|HM|asia|t0.20_0.5_1.5     | down      | ts2 (live lot order) |       2.347 |     0.133 |    -0.027 |     -0.027 |    -0.076 |   -0.04  |      0.037 |     -0.027 |     732.765 |     315.106 |     0.106 |    -0.009 | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|MV|london|t0.50_0.5_1.0   | down      | ts2 (live lot order) |       2.284 |     0.038 |     0.05  |     -0.005 |    -0.053 |   -0.02  |      0.02  |      0.05  |     143.855 |      51.44  |     0.041 |     0.054 | True      | INSIDE NOISE BAND / FAILS NO-HARM / no PA9        |
+| A|HM|asia|t0.50_1.0_1.5     | down      | ts2 (live lot order) |       2.421 |     0.114 |    -0.03  |     -0.079 |    -0.218 |   -0.176 |      0.091 |     -0.03  |     890.367 |     627.457 |     0.099 |    -0.03  | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|HM|asia|t0.40_1.0_1.5     | down      | ts2 (live lot order) |       2.421 |     0.114 |    -0.03  |     -0.079 |    -0.218 |   -0.176 |      0.091 |     -0.03  |     890.367 |     627.457 |     0.099 |    -0.03  | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|HM|asia|t0.20_1.0_1.5     | down      | ts2 (live lot order) |       2.421 |     0.114 |    -0.03  |     -0.079 |    -0.218 |   -0.176 |      0.091 |     -0.03  |     890.367 |     627.457 |     0.099 |    -0.03  | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|HM|asia|t0.20_0.75_1.25   | down      | ts2 (live lot order) |       2.39  |     0.116 |    -0.038 |     -0.072 |    -0.174 |   -0.094 |      0.051 |     -0.038 |     504.934 |     461.64  |     0.098 |    -0.026 | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|HM|asia|t0.35_0.75_1.25   | down      | ts2 (live lot order) |       2.369 |     0.061 |    -0.005 |     -0.067 |    -0.135 |   -0.074 |      0.037 |     -0.005 |      15.226 |     367.752 |     0.057 |    -0.015 | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|HM|asia|t0.25_0.75_1.25   | down      | ts2 (live lot order) |       2.381 |     0.071 |    -0.016 |     -0.034 |    -0.097 |   -0.077 |      0.037 |     -0.016 |     120.028 |     428.811 |     0.063 |    -0.009 | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|HM|asia|t0.30_0.75_1.25   | down      | ts2 (live lot order) |       2.375 |     0.061 |    -0.022 |     -0.034 |    -0.087 |   -0.069 |      0.018 |     -0.022 |     364.321 |     236.94  |     0.058 |    -0.018 | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|PE|asia|t0.30_0.5_1.0     | down      | ts2 (live lot order) |       2.311 |    -0     |    -0     |      0     |     0     |   -0     |      0     |     -0     |     138.605 |      34.94  |    -0     |    -0     | True      | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|PE|london|t0.50_0.5_1.0   | asis      | ts2 (live lot order) |       2.88  |     0.113 |    -0.31  |     -0.044 |     0.336 |   -0.416 |     -0.333 |     -0.31  |    9955.9   |    4621.7   |     0.008 |    -0.225 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|PE|london|t0.50_0.75_1.25 | asis      | ts2 (live lot order) |       2.964 |     0.154 |    -0.387 |     -0.104 |     0.247 |   -0.412 |     -0.282 |     -0.387 |   11505.3   |    4130.33  |    -0.001 |    -0.302 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|PE|london|t0.20_0.5_1.0   | asis      | ts2 (live lot order) |       2.995 |     0.193 |    -0.5   |     -0.253 |     0.296 |   -0.317 |     -0.352 |     -0.5   |   12739.2   |    4529.16  |     0.051 |    -0.356 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|PE|london|t0.50_0.5_1.5   | asis      | ts2 (live lot order) |       2.916 |     0.032 |    -0.384 |     -0.052 |     0.336 |   -0.287 |     -0.333 |     -0.384 |   10703.8   |    3948.78  |    -0.066 |    -0.314 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|PE|london|t0.25_0.5_1.0   | asis      | ts2 (live lot order) |       2.973 |     0.092 |    -0.483 |     -0.069 |     0.296 |   -0.285 |     -0.381 |     -0.483 |   11445.3   |    4439.75  |    -0.044 |    -0.348 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|PE|london|t0.30_0.5_1.0   | asis      | ts2 (live lot order) |       2.954 |    -0.047 |    -0.469 |     -0.053 |     0.319 |   -0.292 |     -0.381 |     -0.46  |    9912.18  |    4790.91  |    -0.14  |    -0.331 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|PE|london|t0.40_0.5_1.0   | asis      | ts2 (live lot order) |       2.911 |    -0.08  |    -0.451 |     -0.02  |     0.415 |   -0.386 |     -0.307 |     -0.403 |    9310.23  |    4037.82  |    -0.146 |    -0.323 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| A|PE|london|t0.50_1.0_1.5   | asis      | ts2 (live lot order) |       3.097 |    -0.06  |    -0.512 |     -0.354 |     0.029 |   -0.427 |     -0.185 |     -0.512 |   13197.7   |    3775.86  |    -0.257 |    -0.433 | False     | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
 
 ## SIZER_S1_HYST: top 20 among mean-keeping cells (84 of 148 rows)
 
@@ -143,4 +193,29 @@ none (no cell keeps the mean of Q1-A)
 | 3.2 pair er_1m_100 + pk_ratio_20d MEAN                  | combo     | ts (old order) per Z3 |       3.3   |    -0.235 |    -0.555 |     -0.506 |    -0.423 |   -0.206 |     -0.255 |     -0.555 |    9692.98  |    1926.55  |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
 | 3.2 pair ers_5m_20 + ahead_rel MEAN                     | combo     | ts (old order) per Z3 |       3.351 |    -0.167 |    -0.639 |     -0.354 |    -0.111 |   -0.047 |     -0.499 |     -0.314 |    9251.21  |    4744.17  |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
 | 3.2 pair ers_5m_20 + ahead_rel MINDOWN                  | combo     | ts (old order) per Z3 |       2.932 |    -0.55  |    -0.264 |     -0.462 |     0.428 |   -0.314 |     -0.562 |     -0.252 |    4751.29  |    1686.08  |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+
+## STACK (BASE-4 Q1-A): top 20 among mean-keeping cells (28 of 54 rows)
+
+| cell        | variant   | base           |   mean_lots |   cut_L6M |   cut_PRE |   cut_HOLD |   cut_MID |   cut_X' |   drop_L6M |   drop_PRE |   dmean_L6M |   dmean_PRE |   pa9_L6M |   pa9_PRE |   harm_ok | label                                             |
+|:------------|:----------|:---------------|------------:|----------:|----------:|-----------:|----------:|---------:|-----------:|-----------:|------------:|------------:|----------:|----------:|----------:|:--------------------------------------------------|
+| cap17       | per owner | ts2 per BASE-4 |         nan |      0.01 |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| tail16_skip | per owner | ts2 per BASE-4 |         nan |      0    |      0.01 |          0 |       nan |        0 |          0 |       0.01 |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| vol100k     | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| vol150k     | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| vol200k     | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| gate8       | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| gate10      | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| gate12      | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| gate16      | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| cap20       | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| cap22       | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| cap24       | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| cap26       | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| tail20_skip | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| tail22_skip | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| tail24_skip | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| tail26_skip | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| tail20_x0.5 | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| tail24_x0.5 | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
+| risk60k     | per owner | ts2 per BASE-4 |         nan |      0    |      0    |          0 |       nan |        0 |          0 |       0    |           0 |           0 |       nan |       nan |       nan | MEAN-KEEPING, DRAWDOWN NOT BETTER ON BOTH WINDOWS |
 
