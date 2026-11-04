@@ -379,3 +379,6 @@ Five worst HOLD weeks by book ($):
 | 202604 | -48055 | -65 | -40100 | -2938 | -4563 | 2236 | -2625 |
 | 202608 | -29860 | 3222 | -27234 | 3477 | -4901 | -663 | -3762 |
 | 202607 | -29843 | -2146 | -20294 | -5134 | -7325 | 1588 | 3468 |
+
+## CORRECTION NOTICE 2026-11-04 (ZL-2, appended; for DIS-AF's owner): live-window base
+The engine base takes entries at 09:30-09:59 and 18:00-18:04 that the live no-new-entry windows may block (DS3_LIVE_WINDOWS_BASE.md; status of the 09:00-09:59 block contradictory). Recomputed from the engine cube with the windows blocked (V2) using ZL-2's window definitions (HOLD 2025-11-01.., carrying weeks 202629-39): PE share HOLD 55% (was 53%), L6M 60% (63%), PRE 63% (61%); Asia share HOLD 76% (77%), L6M 81% (82%); top-5 weeks HOLD 42% (45%), L6M 69% (71%), PRE 41% (39%); without PE HOLD mean 12.8k / maxDD 27k (13.1k / 33k); PE share by year -7 / 54 / 70 / 57% (49 / 50 / 70 / 56%; the 2023 V2 total is near zero). The conclusions (PE carries the stack, mostly Asia, week concentration moderate) stand; tables in this report are on the engine as run.

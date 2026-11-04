@@ -93,3 +93,68 @@ HOLD episode $122.0k for scale. The resting-order scenarios (i / ii) cost lost p
 
 ## 6. Caveats
 Trade-level counterfactuals on the 1-s path: no engine re-run, so lock state, ER state, ER-dependent lots and other books are not re-simulated after a missed entry or exit (a skipped trade changes later locks); the delta of a skipped trade is the engine net of that trade; the stress scenarios (iv) and (v) and the worst-window numbers are conditional on the assumptions in section 5 and are labelled SYNTHETIC; windows start on trading minutes of the 1-s path (the brief's random times are those minutes, uniform); 'full session' uses fixed session lengths in ET (asia 18:00 + 480 min, london 02:00 + 390, NY-AM 09:30 + 150, NY-PM 12:00 + 180); slippage costs as the engine (stop 2.45, market 0.80). The D component uses 2 candidates only.
+
+
+## CORRECTION (2026-11-05, found by the DIS-BD cross-check; SUPERSEDES the numbers of sections 'Plain sentences' 2, 4, 5 and tables 1, 2, 4 above)
+ERROR: I read the engine record's exit-type codes wrongly. The correct codes (verified by comparing the exit level lv0 with the stop and target levels) are ty0 = 0 STOP (lv0 == stop level, 3.7% of trades), 1 TARGET (lv0 == target level, 38.9%), 2 BOX-SIDE exit (TH-L2 loss cut, time or session flat; lv0 is neither level; 57.4% of trades, of which only 1.8% are the session flat). I had treated code 2 as resting stops and code 0 as time exits, so the box-side exits (the cuts) were counted as exchange orders and the stops as box exits. The kernel is fixed (at_lib.py) and the numbers below are recomputed on the same population of 1,320,115 trading-minute starts.
+WHAT CHANGES: (1) box-side exits are 57% of trades, not 3.7%: a missed TH cut converts a cut exit (about -31 pt) into the position running on with its resting 60-pt stop; (2) scenarios (i) and (ii) are almost unchanged in the mean (the cost is still dominated by skipped entries: about $110-114 per outage-hour; worst 60-minute window still -$32.2k = skipped winners; p01 -$12.1k); (3) the worst-case numbers of the SYNTHETIC order-structure stresses are SMALLER than I wrote: NO RESTING ORDERS worst 60-minute window -$48.6k (2025-03-20 09:27 ET; was -$77.1k) and 1-minute -$30.0k (2024-03-08 08:30 ET, unchanged); NON-OCO worst 15-minute -$21.1k (was -$34.5k), 60-minute -$38.0k (was -$72.9k), and the full Asia session -$79.2k (was -$345k: that figure was an artefact of the mislabelled codes); (4) a new scenario (vi) 'TH cuts LOST' (the cut is an event and is not re-fired at reconnect; the position keeps its resting stop / target and runs to the flat): the 1st percentile of a 1-minute window is -$598 and of a 5-minute window -$3.6k vs 0 / -$2.5k when the cut is executed at reconnect; component means by minutes (1 / 5 / 15 / 60): box exit delayed to reconnect, cuts +0.02 / +0.25 / +0.52 / +3.14 and time-flat -0.00 / -0.02 / -0.08 / -0.31 per window (worst -$4.9k..-$11.9k and -$5.4k..-$6.2k); cuts lost +0.04 / +0.21 / +0.74 / +2.31 (worst -$8.5k / -$9.7k / -$9.7k / -$12.9k). Missing a cut is on average NOT a loss (the cut is on average slightly worse than letting the trade run) but it adds variance: the cut is a loss-limiter on the days it matters. Scenario (iii) (partial slices): unchanged for protected; NAKED worst -$14.3k / -$14.3k / -$27.7k / -$42.3k (1 / 5 / 15 / 60 min).
+CORRECTED TABLE (delta in $ vs the engine, population of all trading-minute starts; per outage-hour = mean / (N/60)):
+| scenario | N min | share nonzero | mean | p01 | worst | best | per outage-hour |
+|---|---|---|---|---|---|---|---|
+| i feed stops (A+B+C) | 1 | 2.3% | -2 | +0 | -16.7k | +20.7k | -114 |
+| ii platform down (A+B+C+D) | 1 | 2.3% | -2 | +0 | -16.7k | +20.7k | -114 |
+| vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | 1 | 2.3% | -2 | -598 | -16.7k | +24.3k | -113 |
+| iv NO resting orders (A+B+C+F) | 1 | 2.9% | -2 | -110 | -30.0k | +20.7k | -129 |
+| v NON-OCO leg survives (A+B+C+G) | 1 | 2.3% | -2 | +0 | -16.7k | +20.7k | -114 |
+| i feed stops (A+B+C) | 5 | 10.1% | -9 | -2.5k | -17.0k | +21.3k | -114 |
+| ii platform down (A+B+C+D) | 5 | 10.1% | -9 | -2.5k | -17.0k | +21.3k | -114 |
+| vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | 5 | 10.1% | -10 | -3.6k | -17.0k | +28.6k | -114 |
+| iv NO resting orders (A+B+C+F) | 5 | 12.0% | -11 | -2.5k | -41.1k | +37.5k | -128 |
+| v NON-OCO leg survives (A+B+C+G) | 5 | 10.1% | -9 | -2.5k | -17.0k | +21.3k | -114 |
+| i feed stops (A+B+C) | 15 | 24.1% | -29 | -6.1k | -18.3k | +28.6k | -116 |
+| ii platform down (A+B+C+D) | 15 | 24.1% | -29 | -6.1k | -18.3k | +28.6k | -116 |
+| vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | 15 | 24.1% | -29 | -6.4k | -18.3k | +32.1k | -115 |
+| iv NO resting orders (A+B+C+F) | 15 | 27.6% | -31 | -6.3k | -41.1k | +40.3k | -123 |
+| v NON-OCO leg survives (A+B+C+G) | 15 | 24.1% | -29 | -6.1k | -21.1k | +28.6k | -117 |
+| i feed stops (A+B+C) | 60 | 52.6% | -110 | -12.1k | -32.2k | +38.5k | -110 |
+| ii platform down (A+B+C+D) | 60 | 52.6% | -110 | -12.1k | -32.2k | +38.5k | -110 |
+| vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | 60 | 52.7% | -111 | -12.2k | -32.2k | +38.5k | -111 |
+| iv NO resting orders (A+B+C+F) | 60 | 56.4% | -111 | -12.3k | -48.6k | +99.3k | -111 |
+| v NON-OCO leg survives (A+B+C+G) | 60 | 52.7% | -106 | -12.2k | -38.0k | +117.6k | -106 |
+Worst placements (1 and 60 minutes):
+| scenario | N min | worst | start (ET) |
+|---|---|---|---|
+| i feed stops (A+B+C) | 1 | -16.7k | 2023-09-29 12:24 |
+| ii platform down (A+B+C+D) | 1 | -16.7k | 2023-09-29 12:24 |
+| vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | 1 | -16.7k | 2023-09-29 12:24 |
+| iv NO resting orders (A+B+C+F) | 1 | -30.0k | 2024-03-08 08:30 |
+| v NON-OCO leg survives (A+B+C+G) | 1 | -16.7k | 2023-09-29 12:24 |
+| i feed stops (A+B+C) | 60 | -32.2k | 2026-06-23 01:08 |
+| ii platform down (A+B+C+D) | 60 | -32.2k | 2026-06-23 01:08 |
+| vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | 60 | -32.2k | 2026-06-23 01:08 |
+| iv NO resting orders (A+B+C+F) | 60 | -48.6k | 2025-03-20 09:27 |
+| v NON-OCO leg survives (A+B+C+G) | 60 | -38.0k | 2025-04-06 18:17 |
+Full-session outages (mean / p01 across days / worst):
+| session | scenario | mean | p01 | worst |
+|---|---|---|---|---|
+| asia (480 min) | i feed stops (A+B+C) | -1.8k | -42.6k | -57.3k |
+| asia (480 min) | ii platform down (A+B+C+D) | -1.8k | -42.6k | -57.3k |
+| asia (480 min) | vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | -1.7k | -43.3k | -57.3k |
+| asia (480 min) | iv NO resting orders (A+B+C+F) | -1.8k | -42.6k | -57.3k |
+| asia (480 min) | v NON-OCO leg survives (A+B+C+G) | -1.8k | -44.9k | -79.2k |
+| london (390 min) | i feed stops (A+B+C) | -466 | -27.2k | -40.9k |
+| london (390 min) | ii platform down (A+B+C+D) | -467 | -27.2k | -40.9k |
+| london (390 min) | vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | -582 | -27.4k | -40.9k |
+| london (390 min) | iv NO resting orders (A+B+C+F) | -804 | -36.2k | -112.2k |
+| london (390 min) | v NON-OCO leg survives (A+B+C+G) | -271 | -30.5k | -66.6k |
+| nyam (150 min) | i feed stops (A+B+C) | -565 | -17.7k | -43.1k |
+| nyam (150 min) | ii platform down (A+B+C+D) | -565 | -17.7k | -43.1k |
+| nyam (150 min) | vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | -498 | -17.2k | -43.1k |
+| nyam (150 min) | iv NO resting orders (A+B+C+F) | -313 | -24.6k | -54.4k |
+| nyam (150 min) | v NON-OCO leg survives (A+B+C+G) | -470 | -20.4k | -44.5k |
+| nypm (180 min) | i feed stops (A+B+C) | -25 | -7.7k | -12.2k |
+| nypm (180 min) | ii platform down (A+B+C+D) | -25 | -7.7k | -12.2k |
+| nypm (180 min) | vi TH cuts LOST, other box exits at reconnect (A+B+C+H) | -35 | -7.7k | -12.2k |
+| nypm (180 min) | iv NO resting orders (A+B+C+F) | +126 | -9.8k | -22.0k |
+| nypm (180 min) | v NON-OCO leg survives (A+B+C+G) | +4 | -8.8k | -12.2k |
+Corrected plain sentences 4 and 5: 4. If the stops / targets are NOT resting at the exchange (SYNTHETIC), a 60-minute outage costs a mean -$111 per outage-hour and the worst placements are -$48.6k (60 min) and -$30.0k (1 min at the 2024-03-08 payroll release); if the stop and target are not OCO, the worst 60-minute window is -$38.0k and a full Asia session -$79.2k (this is 65% of the HOLD episode, not 2.8x). 5. Full-session outages with resting orders: asia -$1.84k mean, 1st percentile -$42.6k, worst -$57.3k; london -$0.47k / -$27.2k / -$40.9k; NY-AM -$0.57k / -$17.7k / -$43.1k; NY-PM -$25 / -$7.7k / -$12.2k. The question list in section 5 still stands; questions 3 (cancel-on-disconnect) and 5 (is the TH-L2 cut / 16:55 flat box-side) are now the main ones: the TH-L2 cut is box-side by construction and is missed or delayed in every outage that covers it.

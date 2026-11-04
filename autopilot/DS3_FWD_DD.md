@@ -70,3 +70,6 @@ Observed HOLD maxDD $122,025 sits at about the bootstrap p90 for 26 w (all-histo
 
 ## Plain sentence
 On the live stack's own history, a one-year drawdown deeper than $150k has a probability of roughly 10% (about 21% if the 2026 regime lasts the whole year), the median year's worst drawdown is about $90k, and the watch bundle would cut those tails by about a third only if its 2026-only performance repeats; nothing here is a PASS and nothing goes live.
+
+## AMENDMENT 2026-11-04 (ZL-2, appended): live-window base (DS3_LIVE_WINDOWS_BASE.md)
+Re-running the bootstrap on the weekly series with the 09:30-09:59 and 18:00-18:04 entries blocked (V2; same method, L=4, 20,000 paths, seed 2026): 52-week stack-alone maxDD median / p90 / p99 on all history 89.2 / 131.2 / 192.2 ($k; was 92.5 / 148.7 / 217.9), P(>$150k) .050 (was .095), P(>$100k) .291 (was .442); 2023-25 pool 78.6 / 124.4 / 178.6; 2026 pool 91.2 / 132.2 / 188.8 (was 122.0 / 181.7 / 263.3), P(>$150k) .053 (was .209); never-leaves 91.2 / 132.8 / 192.1; the watch bundle still lowers the 2026-pool tail (84.1 p90 vs 132.2). The V0 numbers above stand for the engine as run; which one the user's live book corresponds to depends on whether the windows are live. The HOLD episode is $91k (not $122k) on V2, so multiples of HOLD maxDD in the tables shift by about 25%.

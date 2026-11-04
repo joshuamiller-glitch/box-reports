@@ -22,3 +22,4 @@ Q7_NTESTED_PASS2: 32 cells (8 best pass-1 cells x {TICK_WITH, TICK_AGAINST} + x 
 DISAZ_NTESTED: 108 cells (6 books x 2 offsets x 3 timeouts x 3 strength); 120 shift5 worlds; Z2 2026-11-04
 DISBG_NTESTED: 14 cells (5 ORBF + 3 DISK + 6 live-book boundary); Z2 2026-11-04
 | 2026-11-04T22:56Z | INSTR_SC | Z1 | 12 | QA-2 note (Z1): INSTR_SC (scaling note cells, ledger program INSTR_SC) had no registry line; n = ledger rows 12; these are scaling/cost cells, not hypotheses |
+DISBK_NTESTED: 9 cells (5 post-2023 variants + 4 pre-2023 variants); ORBF selection N = 346 + 4 = 350; Z2 2026-11-04

@@ -64,3 +64,6 @@ python3 -I l2vast/ds3/code/zones3/shadow2/shadow2_weekly.py --regdir forward_reg
 MONDAY_FR=forward_register/ python3 -I .../zones3/standing/monday_all.py --dry --force      # dry run of the whole Monday table, writes nothing
 ```
 Tape format for every runner: csv/parquet with columns `sec, hi, lo, close` (one row per second with prints, contract frame), until G3 is fixed.
+
+## CORRECTION 2026-11-05 (found in DIS-BI)
+Section 4 G2 says the Shadow runners' default history-only path ends 2026-10-30. It ends **2026-10-16 20:59**: `fade_engine.path_nq()` loads `/mnt/l2/l2vast/instr_1s/NQ_S*.npy` (46,087,158 s), not `ds3_g2_redo` (which ends 10-30). The rehearsal windows and conclusions are unaffected (last-two-weeks runs used an explicit tape); BASE-4's `--tape` change is what makes live rows computable. See CACHE_REFRESH_PLAN.md section 3.

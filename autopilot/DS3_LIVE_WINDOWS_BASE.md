@@ -1,0 +1,54 @@
+# DS3_LIVE_WINDOWS_BASE: the Q1-A ts2 base re-stated with the live no-new-entry windows (DIS-BJ)
+
+Author ZL-2, 2026-11-04. Scope note l2vast/ds3/prereg/DISBJ_scope.md sha256 b373798c6c6b32d9525a475fe3621bc53e2c35cc23266b1a6f30c61b3de47a85 (DECISIONS.md, before any outcome). Measurement; no PASS claims; nothing live. Code l2vast/ds3/code/dis_x/ (bj_lib.py, bj_an.py, bj_front.py, bj_cost2.py, bj_conc.py, bj_gate.py, fwd_w.py, rf_an3.py); CSVs l2vast/ds3/out/dis_ba/ (DS3_RISK_FRONTIER_v3.csv = engine as run with the corrected pause clock, DS3_RISK_FRONTIER_W3_livewindows_v3.csv = V2 base). The question for the user is in MORNING_FLAGS.md: is the 09:00-09:59 block live for K7/P7/U7/H7/M7/A7?
+
+## Plain sentence
+The records do not settle whether the 09:00-09:59 entry block is live for the D7 books (the user's 10-20 and 10-22 answers say it was removed, the user's 10-31 and 11-03/04 texts say it exists), but the 18:00-18:05 and 15:00-16:54 windows are live in every record, and the engine as run does not apply the 18:00 window: applying it adds $73k (V1: total $2,593k, mean $17.5k/wk, HOLD maxDD $103k instead of $122k), applying the 09:00-09:59 block as well removes $131k (V2: total $2,462k, mean $16.5k/wk, HOLD maxDD $91k, Calmar 0.21 instead of 0.24); none of the findings that depend on the base changes direction or ranking, with one exception (with TH off the 2R gate goes from 0.00 to -0.58k/wk against no gate) (TH-L2 post-cap gain +$16.6k/wk instead of +$18.1k, PE share 55-63%, cap and gate orderings, frontier extremes) but the observed HOLD drawdown shrinks by 25% and the forward drawdown percentiles with it (P(52-week maxDD > $150k) .095 -> .050 on all history, .209 -> .053 on the 2026 pool), so quote the drawdown numbers with the base named.
+
+## 1. What the records say (verified in code and DECISIONS.md)
+| record | date | statement | supports |
+|---|---|---|---|
+| DECISIONS.md 2026-10-20 00:52Z / 00:53Z (user) | 10-20 | live no-new-entry windows 09:00-09:59, 18:00-18:05, 15:00-16:55 (conflict with 18:00-18:59; later message governs) | V2 |
+| code/census/night_ins/ap_live_windows.py (single source) and RUNBOOK_WEEKLY_EXTENSION.md | 10-20 | order label time; 09:00-09:59 in force 2026-10-19 ONLY; "the 09:00-09:59 block was REMOVED as of 2026-10-20"; live from 10-20: 18:00-18:05 (label minutes 18:00-18:04) and 15:00-16:54 | V1 |
+| DECISIONS.md 2026-10-22 16:42Z DS2-FIRM, Q12 answered by the user | 10-22 | "no RTH-open block; windows 18:00-18:05 + 15:00-16:54" | V1 |
+| DIRECTIVE_NO_TRADE_EXPANDED_20261031.md | 10-31 | "the 09:00-10:00 block already live (score it as a state too)" | V2 (09:00-10:00) |
+| DIRECTIVE_USER_REPLY_20261031_1430.md | 10-31 | O6 "opening drive, exempt from the 09:00-10:00 block" | V2 |
+| DIRECTIVE_O7_PIN_20261104.md (user answer 11-03 20:50Z) | 11-03 | O7 "exempt from the 09:00-09:59 block" | V2 |
+Reading: the 10-20/10-22 answers concern the DualStrat live pair (live + copier leader, books ST/HM/WT); the 10-31 and 11-03 texts are written for the D6/D7 books and come later, so the newest D7-specific statements favour V2, but they could be stale text carried from an earlier spec and they contradict the user's explicit 10-22 answer. The 18:00-18:05 and 15:00-16:54 windows are consistent in all records. Exempt lines: O6/O7 only (not in the core six; X1-X5 not in the core). Window semantics in the records: order label time (the bar-close signal time), minutes inclusive (18:00-18:04 for "18:00-18:05"). The engine blocks 09:00-09:29 and 15:00-16:54 only because the session lot table has zero lots in 'pre' and 'close'; 09:30-09:59 (inside NY-AM) and 18:00-18:04 (inside Asia) are open in the engine (ENGINE_CONFIG_LIVE_Q1A.md row 24).
+
+## 2. Variants (TH on, live lots, everything else as the reference; validation: V0 reproduces $2,520,149.07 when 09:00-09:29 and 15:00-16:54 are applied as an explicit mask)
+| variant | blocked windows (besides V0's) | total $k | trades | mean $k/wk | maxDD | Calmar | HOLD / PRE / L6M / X' / 2026 maxDD | worst day / week | mean 2023 / 2024 / 2025 / 2026 |
+|---|---|---|---|---|---|---|---|---|---|
+| V0 engine as run | none (09:30-09:59, 18:00-18:04 open) | 2,520.1 | 21,397 | 17.72 | 75.1 | 0.24 | 122.0 / 75.1 / 62.6 / 49.4 / 62.6 | -38.1 / -62.6 | -0.2 / 13.8 / 17.0 / 35.3 |
+| V1 Q3-answer reading (lead's W2) | 18:00-18:04 | 2,593.1 | 20,677 | 17.53 | 75.9 | 0.23 | 103.3 / 75.9 / 61.3 / 37.9 / 61.3 | -38.1 / -61.3 | 0.1 / 14.4 / 16.7 / 33.7 |
+| V2 latest-statements reading (lead's W1) | 09:30-09:59 and 18:00-18:04 | 2,462.3 | 19,025 | 16.54 | 77.5 | 0.21 | 91.2 / 64.9 / 60.0 / 77.5 / 60.0 | -37.2 / -60.0 | -2.2 / 13.3 / 15.2 / 34.8 |
+| V3 09:00-09:59 block only | 09:30-09:59 | 2,381.9 | 19,757 | 16.66 | 78.7 | 0.21 | 110.6 / 71.9 / 61.2 / 78.7 / 61.2 | -37.8 / -61.2 | -2.6 / 12.7 / 15.4 / 36.1 |
+TH-off reference: V0 mean 15.69 / maxDD 174.6; V1 15.67 / 166.9; V2 14.95 / 168.0; V3 14.74 / 177.6. The X' maxDD rises to $77.5-78.7k in V2/V3 (2023 without the 09:30-09:59 trades).
+Removed trades (valued in the V0 run; replacements are trades that the block lets the engine take instead):
+* 09:30-09:59 (V3 minus V0): 1,791 trades removed (direct count of entries in the window: 1,754), net +$144k in V0 (2023 +$24k, 2024 +$64k, 2025 +$71k, 2026 -$15k; by book PE +$119k, HM +$28k, KB +$15k, MV -$18k; all NY-AM/NY-PM); 151 replacement trades +$17k; total change -$138k. Confirms the +$154k direct figure (the difference is displacement).
+* 18:00-18:04 (V1 minus V0): 895 trades removed (direct count 773), net -$81k (direct -$101k; 2023 -$36k, 2024 -$19k, 2025 +$15k, 2026 -$41k; Asia; PE -$56k, KB -$24k, HM +$3k, PB -$5k); 175 replacement trades -$17k; total change +$73k.
+* Both (V2 minus V0): 2,656 trades removed, +$64k net in V0, 284 replacements +$8k; total change -$58k.
+
+## 3. Findings that depend on the base: old vs new
+| finding (report) | V0 (as published) | V1 | V2 | does any conclusion or ranking change? |
+|---|---|---|---|---|
+| TH-L2 post-cap gain, +/wk (DS3_TH_OOS) | +18.1k [7.8k, 27.6k] (25 weeks) | +17.3k | +16.6k [8.2k, 25.4k] | no: still a post-cap, PE-driven gain; in-sample (to 2026-02-06) -1.2k / -1.3k / -1.5k; 2025 -4.8k / -5.9k / -7.3k [-14.3k, -0.3k] |
+| TH-L2 cost break-even (DIS-AX, DS3_TH_COST) | post-cap zero at +3.7 pt extra (DIS-AX +3.5); full period zero at +0.70 pt | not run | post-cap +16.6k at 0 -> +11.9k (+1 pt), +7.7k (+2), +3.3k (+3), zero at +3.8 pt; full period +1.6k, zero at +0.62 pt | no: gain halves at +2 pt in both |
+| PE share and concentration (DIS-AF, DS3_CONCENTRATION; my windows) | PE share HOLD 53%, L6M 63%, PRE 61%; Asia HOLD 77%, L6M 82%; top-5 weeks HOLD 45%, L6M 71%, PRE 39%; without PE HOLD maxDD 33k, mean 13.1k | not run | PE 55%, 60%, 63%; Asia 76%, 81%; top-5 42%, 69%, 41%; without PE HOLD maxDD 27k, mean 12.8k | no; PE share by year 49/50/70/56% -> -7/54/70/57% (2023 flips because the V2 2023 total is near zero, so the share is not meaningful) |
+| Exposure cap table (DIS-AQ, DS3_EXPOSURE_CAP; pause 0, gate 2R) | cap 14/12/10/8 mean -2.4%/-5.8%/-12.6%/-21.4% vs live; HOLD maxDD removed 0.3/2.6/4.4/20.1k | not run | -2.4%/-6.8%/-14.0%/-21.2%; HOLD removed 0.3/2.6/5.9/19.9k; peak net 18/16/15/13/11 and synthetic tail $522k/464k/435k/377k/319k unchanged | no: same ranking, same tail |
+| Gate grid (DIS-AR, DS3_GATES; TH on) | mean 15.57 (1R), 16.89 (1.5R), **17.72 (2R)**, 17.40 (3R), 17.39 (4R), 17.37 (off); HOLD maxDD 127/120/122/130/138/140 | not run | 14.22, 15.76, **16.54**, 16.29, 16.21, 16.21; HOLD 104/95/91/98/106/107 | no: 2R still best on mean, gate value vs off +0.33k/wk (was +0.34k) and HOLD maxDD 16k lower (was 18k); with TH off the 2R gate is now -0.58k/wk vs off (was 0.00) |
+| Risk frontier live cell and frontier (DIS-BA, DS3_RISK_FRONTIER) | live 17.72k / worst-of maxDD 122.0k; 18 frontier cells after the pause-clock correction | not run | live 16.54k / 91.2k; 18 frontier cells, 12 common with V0 | no change in the structure: extremes are PE weight 0.5 / 0.75 + net-lot cap + 1R gate; V2 extreme (w0.50 cap8 gate1R) mean 10.39k, worst-of maxDD 39.3k, 2026 maxDD 34.8k; cost per $1k of maxDD removed $119 (V2) vs $101 (V0) at that cell |
+| Forward drawdown (DIS-V, DS3_FWD_DD; 52-week maxDD median / p90 / p99 $k; P(>150k)) | all history 92.5 / 148.7 / 217.9, .095; 2026 pool 122.0 / 181.7 / 263.3, .209; never-leaves 122.0 / 182.5 / 264.6, .213 | not run | all history 89.2 / 131.2 / 192.2, .050; 2026 pool 91.2 / 132.2 / 188.8, .053; never-leaves 91.2 / 132.8 / 192.1, .056 | the numbers move by 15-30% in the tail because the HOLD episode ($122k) is $91k without the 09:30-09:59 and 18:00 trades; the shape (2026-persistence worse than 2023-25) is smaller (p90 132k vs 124k in 2023-25) |
+| DIS-Z3R (Z3's forward drawdown re-run) | uses the V0 weekly series | | | will move the same way; Z3 should rerun with the V2 weekly series (out/dis_ba/bj_out.pkl) |
+Engine-based grids re-run for V2 because the live-cell mean moved by 6.7% (> 5%): the 92-cell frontier, the gate cells, caps and the TH cost sweep. Not re-run: DIS-AF full tables (re-stated from the V2 cube), V1 versions of the grids (headline only).
+
+## 4. Pause clock error found while re-running (affects pause rows only; see RECON_PAUSE.md)
+The re-entry pause cells (DS3_SLOT_CHANNEL, DS3_GATES, DS3_RISK_FRONTIER) were built with a clock in path-index units; the 1-second path contains only seconds with prints, so "30 minutes" was 1,800 indices = 60 real minutes in Asia, 48 in London and 30 in RTH. Real-clock rebuild: pause rows restated in RECON_PAUSE.md and the amendments appended to those reports. The V2 frontier above uses the real clock for its pause cells. The same index-unit clock was used for the time stops in DS3_SLOT_CHANNEL (rerun: still all below the cut and below TH-off in total, $1.2M-$1.6M) and for the minutes-to-arm in DS3_TH_MECHANISM (real minutes: 205 / 125 / 78 / 37 mean for 2023-26, not 89 / 51 / 31 / 18).
+
+## 5. Caveats
+* V1-V3 block by the signal second (order label time); a PE confirmation 45 s later is blocked or allowed by the signal second only. Variants are engine paths with displacement (blocked signals let later signals trade), so removed-trade values and total changes differ by design.
+* The block is applied to all six core books; an exemption for any core book would reduce the removal.
+* Which variant is the live base is for the user; every report that quotes the stack's drawdown, the HOLD episode or the frontier should name the base.
+
+## Key mapping for out/dis_ba/bj_out.pkl (added)
+Keys are (label, TH-on flag) with the labels of the scope note: 'W0' = V0 engine as run, 'W1' = V1 (18:00-18:04 blocked), 'W2' = V3 (09:30-09:59 blocked only), 'W3' = V2 (both blocked). Each value holds the daily core series (935 label days) and the book x session x day cube.

@@ -51,3 +51,9 @@ The TH-L2 live log does not exist on the box. Needed: (1) per live cut, a record
 * The direct per-cut diagnostic does not reproduce the engine's realized sign (section 2); the engine decomposition (section 3) is the stack-level truth and the per-cut statistics are the mechanism diagnostic.
 * Quarterly regime correlations have n = 12-14 and are inside chance; no variable is established.
 * Forward-safe throughout (the arm uses seconds up to the decision second; no time-shift placebo was needed).
+
+## AMENDMENT 2026-11-04 (ZL-2, appended): clock units
+The "minutes to the arm" (section 1: 89 / 51 / 31 / 18) and the "mean hold" minutes were computed from path-index differences; the 1-second path holds only seconds with prints, so real minutes are about 2.3 times larger: mean real minutes to the -30 arm 205 / 125 / 78 / 37 for 2023 / 2024 / 2025 / 2026 (median 97 / 44 / 24 / 13). The direction (adverse moves reach -30 several times faster as the market's point scale grows) is unchanged and stronger (5.5x in the mean). Probabilities, outcomes, per-cut deltas and the decomposition tables do not depend on the clock. The pause emulation in section 5 ("pausing after a cut") is superseded by RECON_PAUSE.md. Live-window base: DS3_LIVE_WINDOWS_BASE.md (decomposition numbers there are on the V0 engine as run).
+
+## AMENDMENT 2 2026-11-04 (ZL-2, appended; CLOCK_AUDIT_ZL2.md): hold durations
+The "mean hold ON / OFF (min)" column of section 3 (119 / 160, 70 / 103, 42 / 67, 24 / 39 for 2023 / 2024 / 2025 / 2026) and the sentence "mean hold 24 vs 39 minutes in 2026" were path-index differences. In real minutes (SS[tx] - SS[te]): cut ON 251 / 158 / 95 / 48, cut OFF 310 / 214 / 145 / 77; ratio 0.81 / 0.74 / 0.65 / 0.62 (2026 ratio unchanged at 0.62). The qualitative statements stand.

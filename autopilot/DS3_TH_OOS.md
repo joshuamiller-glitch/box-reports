@@ -54,3 +54,6 @@ The engine exposes only on/off (ov pe; the delay and pattern are not hooks and w
 * The research cap is not the live freeze: the user may have seen later data; no TH-L2 live log exists on the box.
 * Re-fit selection by Calmar is one rule fixed in advance; selection by mean gives (rank correlation 0.91) similar cells.
 * The leave-one-out and Shapley numbers differ by construction (interaction with lots, locks, ER, zones).
+
+## AMENDMENT 2026-11-04 (ZL-2, appended): live-window base (DS3_LIVE_WINDOWS_BASE.md)
+If the live no-entry windows (18:00-18:05, and possibly 09:00-09:59) apply, the post-cap TH-L2 gain (carrying weeks dropped, 25 weeks) is +$17.3k/wk (18:00 block only) or +$16.6k/wk [8.2k, 25.4k] (09:30-09:59 and 18:00-18:04 blocked) instead of +$18.1k [7.8k, 27.6k]; in-sample -$1.3k / -$1.5k (was -$1.2k); 2025 -$5.9k / -$7.3k [-14.3k, -0.3k]; the cost break-even after the cap is +3.8 pt (was +3.7). No conclusion changes. Also: the re-fit comparison used engine cells without a pause and is unaffected by the pause clock correction.
