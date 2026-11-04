@@ -25,3 +25,5 @@
 | 2026-11-03T23:02Z | FADE_MZ | Z1 | 2336 | mirror 96 cells + Mancini failed-break 2,240 cells (1,672 with trades) |
 | 2026-11-03T23:15Z | FADE_TP | S4b | 487 | screen: 7 tape triggers x 11 anchor groups x 4 sessions x 2 shapes (non-empty cells >= 40 trades); shape / buffer expansion later counted separately |
 | 2026-11-03T23:20Z | FADE_TP | S4b | 2485 | v2 all cells tried: 2485 |
+| 2026-11-04T00:15Z | FADE_XI | Z2 | 60 | 6 books x (NQ ref + ES RTY YM); ONRTH/VWAPF/ORBF x 4 scalings; ATR-based books one variant |
+| 2026-11-04T00:25Z | FADE_MZ | Z1 | 3104 | mirror 96 + Mancini failed-break 2,240 + zone-line failed-break 768 cells |
