@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 19:56Z 11-04 (t+222.9 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 20:27Z 11-04 (t+223.5 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 18% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 13.6, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
-Updated 2026-11-04T19:56:43Z. Box: CPU 69.1%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 41% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 10.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
+Updated 2026-11-04T20:27:06Z. Box: CPU 78.8%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -178,10 +178,15 @@ Updated 2026-11-04T19:56:43Z. Box: CPU 69.1%, slots busy 13/32, queue 0. Cores p
 | PULLBACK4 | D3PB* | 0 | 0 / ? | none | done (report) |
 | PY | ? | 0 | 0 / 0 | none | prereg |
 | Q | ? | 0 | 0 / 113 | none | prereg |
+| Q10 | ? | 0 | 0 / 0 | none | prereg |
+| Q11 | ? | 0 | 0 / 0 | none | prereg |
+| Q12 | ? | 0 | 0 / 0 | none | prereg |
 | Q4 | ? | 0 | 0 / 0 | none | prereg |
 | Q5 | ? | 0 | 0 / 0 | none | prereg |
 | Q6 | ? | 0 | 0 / 0 | none | prereg |
 | Q7 | ? | 0 | 0 / 0 | none | prereg |
+| Q8 | ? | 0 | 0 / 0 | none | prereg |
+| Q9 | ? | 0 | 0 / 0 | none | prereg |
 | R1 | ? | 0 | 0 / 134 | none | done (report) |
 | R2 | ? | 0 | 0 / 74 | none | done (report) |
 | R4 | ? | 0 | 0 / 58 | none | done (report) |
@@ -272,7 +277,7 @@ Updated 2026-11-04T19:56:43Z. Box: CPU 69.1%, slots busy 13/32, queue 0. Cores p
 | ZL1 | ? | 0 | 0 / 0 | none | prereg |
 | ZL3 | ? | 0 | 0 / 0 | none | prereg |
 | ZONES3 | ? | 0 | 0 / 0 | none | prereg |
-| unattributed | - | 13.6 | - | - | - |
+| unattributed | - | 10.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -283,13 +288,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-04T19:57Z
+## TREND (TL) update 2026-11-04T20:27Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-04T19:47:29Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-04T20:17:29Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -1296,3 +1301,12 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - (20:30Z) DIS-K CLOSED (Z2, 0 LEAD of 356; best nyam with-break breakout on top-third short/long ATR days: L6M +882/wk (MDE 1,898), HOLD +785, family p .46 -> best-of-F, Shadow-watch label only; overlays all within +-0.05 stack Calmar, 1.5x raises HOLD DD). STARTED per order: Q7 passive entries on Z2 ($0). Running Q-programs: Q5 ZL-2, Q6 fork, Q7 Z2; DIS-A/B/E/F/G/I/J continue.
 - (20:50Z) Q7 progress (Z2): prereg sha256 0ebaca55... (288 cells: limit at level/1/2/4 ticks better, rest 60/300 s, THRU and VOL(queue 50) fills, ES 1-s timing; cost scenarios with/without halving); six per-book runs executing, ~30-40 min/book, no results. NKD/ES-tick timing deferred -> second pass requested after pass 1.
 - (21:10Z) Q5 CLOSED (ZL-2, n_tested 450, 275 cell x shape rows): no exit shape beats the engine's own exit once drawdown comes first (pooled carry-dropped stack Calmar -0.01..-0.23 in HOLD/HOLD_dropH/PRE for every shape; max real paired t 1.90 vs null p95 3.87, family p>=.88). Best NOW-ONLY rows: KB NYAM 1xATR stop/3xATR target +1.7k/wk L6M (sign-flip p .034), SM Asia 2R +2.2k/wk (p .046; PRE +169) - both deepen HOLD_dropH/PRE DD. Pooled 2R +3.1k/wk L6M standalone but stack Calmar L6M -0.29. No lot mix beats live exit. Deviation: shift5/random-side placebos not run (no valid shifted baseline) - replaced by paired sign-flip + family max-T. STARTED: Q8 day-type switch on ZL-2 (Q6 stays on fork, Q7 on Z2).
+- (21:40Z) Q8 CLOSED (ZL-2, n_tested 100, 90 rule cells): no causal TREND/RANGE classifier at 10:00/10:30 (best of 14: walk-forward acc/AUC .56 vs base .49; logistic .50-.54); routing/overlay/gating add nothing over always-on fade bundle (always-on B3/B5 +$1,795/+$2,191/wk L6M vs gated +$831/+$755); oracle label would be valuable (B5 on oracle RANGE days +$1.6k/wk, stack Calmar +.13 L6M) but is known only after 15:00; family max-T p>=.55; no skill before/after 2025-12-15 break; 50-60 day lag not improved. STARTED: Q9 session-to-session conditional books on ZL-2 ($0). Running: Q6 fork, Q7 Z2, Q9 ZL-2 + DIS-A/B/E/F/G/I/J.
+- (20:09Z) LOAD: cores load 33.1/32 (saturated), mem 94G used/93G avail, agents running 8/10 (+Z2 Q7 jobs in background), programs: Q6/Q7/Q9, DIS-A/B/E/F/G/I/J, T-FADE & T-INSTR follow-ups, Q3 Shadow pack; load >= 8 so no re-dispatch
+- (20:25Z) Q9 CLOSED (ZL-2, n_tested 180, 172 cells): Asia shape does not predict London (London follows Asia 52.1%, p .22; NY-AM follows overnight only 46.0%, p .016 = slightly reverses); best entry book t 2.05 vs family p95 3.00, family p>=.64, tolerant 10/172; overlays inside family null (London sleeve off cuts DD mechanically). Only story cell: London sleeve off/halved after wide low-ER Asia (158 days, London lost $128k on them; stack Calmar L6M +.184, HOLD +.097, PRE +.077; placebo p .07/.05/.01) but t .48, family p .82-1.00, 89% of loss in 5 weeks, 2023 opposite sign -> REGIME/noise, forward Shadow candidate only (condition in DS3_DISCOVER.md). STARTED: Q10 earnings-season books on ZL-2 (coordinated with CAL DIS-F; $0).
+- (20:40Z) DIS-I CLOSED (BASE-4, 1,038 cells: 800 entry books + 238 overlays): no calendar flag survives family control. Entry books: 0/512 books with both L6M and HOLD means above MDE; 59 TOLERANT, 5 pass all placebos (NFP nypm DRIFT_S, RETAIL nypm DRIFT_S, ME3/MS3/TOM asia CONT) but fail family (HOLD Calmar family p .19/.02 side/days null, L6M .22/.83, BH q 1.00); top L6M = London short-drift on month-start days = 2026 REGIME only (PRE/X' negative). Overlays: 1 cell passes L6M and X' bands (MS3 asia QUARTER) but ONE-WEEK; family p .40. Stack effect within +-0.02 Calmar. STARTED: Q11 daily-trend-aligned books on BASE-4 ($0).
+- (21:00Z) Q10 CLOSED (ZL-2, n_tested 100, 88 cells): gaps tend to CONTINUE not fill on the day after a large-name report (gap-go +$359/trade on 172 F16 days vs -$323 others; MEGA5 +$747 vs -$255; family p .029 F16 / .056 MEGA5; not steady by year: 2023 +1,145, 2024 +1,744, 2025 -380, 2026 +626; negative after NVDA/AVGO/TSLA/NFLX/ADBE) but no earnings-conditioned book adds stack value (best paired L6M t 1.82 vs family p95 3.21, family p>=.96; best HOLD stack gain +0.021; flagged days 8-23 in L6M, all inside MDE). Q4 amplifier is not earnings-specific at book level (opening-move fade k=1.0 on non-flag days L6M +$1,225/wk > flagged). Live stack on earnings-reaction days: L6M $3.7k/day (23 days) vs $5.5k (104 non-flag), PRE $6.6k vs $2.1k - both inside MDE. STARTED: Q12 bar-type diversity on ZL-2 ($0).
+- (20:30Z) Q6 CLOSED (Q6 owner, autopilot/DS3_DISCOVER.md section 'Q6 - Pyramiding on continuation'; prereg sha 12a5a9ea...; ledger Q6 294 cells; FADE_ROWS_Q6.md): 0 of 288 pyramid cells pass the tolerant gate (best p_book 0.64, family p_maxstat >= .99, PA9 negative); median increment -$2.7k/wk at ~1.7x lots, stack maxDD worse in HOLD by median +12.9k; 70/30 dip proxy ~0; 2 REGIME (NOW-ONLY) L_SM cells (L6M +1.4k, PRE -3.1k, no excess over exposure). Nothing proposed.
+- (21:30Z) DIS-J interim 1 (ZL-1, n_tested 668, 652 cells): option-OI level books (call/put walls, max pain, OI centroid, top-3 strikes; NDX mapped by NDXP parity basis ~+230-250; raw frame) - 0 cells meet flag rule; stage 2: 268 NOW-ONLY, 29 TOLERANT, 0 STRICT; best NDX OI-centroid break-continuation NYAM L6M +926/wk (HOLD +343..605, MID/PRE negative) but NOT line-specific (shifted-line p .10 = generic NYAM trend continuation); none of 33 tolerant reaches L6M placebo p<=.10 (best .119); family max-T HOLD Calmar p .17/.32, smallest BH q .748; stack gain +.003..+.02 Calmar. OI only from 2024-03 (X' empty, gate_v2a cannot pass). Stage 3 (levels as stop/target placement on live KB) is first item of interim 2; family L6M max-T still running.
+- (21:35Z) ZL-1 told: finish DIS-J stage 3 + family max-T (interim 2), then start Q13 gap-conditioned books. Q14 queued for Z1 after DIS-G.
+- (21:45Z) Q6 CLOSED (fork, n_tested 294): pyramiding on continuation - none of 288 variants passes tolerant gate/placebos (best p_book .64, family max-stat p>=.99, PA9 negative); median variant -$2.7k/wk at ~1.7x lots, HOLD maxDD +$12.9k worse; dip add (70/30 proxy) ~0 (live split stays); REGIME: 2 L_SM cells +$1.4-1.5k/wk L6M, PRE -$3.1k, no gain beyond size. STARTED: Q14 NQ-ES spread books on a new fork ($0). Pending in order: Q7 (Z2, running), Q11 (BASE-4), Q12 (ZL-2), Q13 (ZL-1 after DIS-J), Q14 (fork).

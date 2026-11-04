@@ -37,3 +37,11 @@
 | 2026-11-04T19:24Z | DIS_E | S4b | 496 | queue-dynamics entry books: A IMB, B CAN, C ADD, D RFAIL, E LIQ-ORB, F ABS-ANCHOR |
 | 2026-11-04T19:36Z | DISI | BASE-4 | 1038 | FLOW-CALENDAR: 800 entry books (25 flags x 4 sessions x 4 kinds x 2 shapes) + 238 Q1-A overlay cells (25 flags x 5 scopes x 2 actions minus 12 EINT2-covered); prereg DISI_prereg sha be78eb84... |
 | 2026-11-04T19:54Z | Q5 | ZL-2 | 450 | hold shapes on the six live books: 11 shapes x ~41 book/session cells |
+| 2026-11-04T20:00Z | Q8 | ZL-2 | 100 | day-type switch: 14 classifiers x 6 rules + 2 oracle + classifier metrics |
+| 2026-11-04T20:04Z | DISJ | ZL-1 | 668 | option-OI level books on NQ: stage 1 84 + stage 2 8 x 72 + stage 3 8 planned |
+| 2026-11-04T20:07Z | Q9 | ZL-2 | 180 | session-to-session conditional books + overlays, 172 cells |
+| 2026-11-04T20:17Z | Q10 | ZL-2 | 100 | earnings-season books: 72 gap cells + 16 opening-move-fade cells + report |
+| 2026-11-04T20:18Z | Q6 | Q6-owner | 294 | pyramiding on continuation: 6 live books x (48 PYR cells) + 6 DIP7030 reference cells (NOADD = reference) |
+| 2026-11-04T20:23Z | Q11 | BASE-4 | 480 | daily-trend-aligned P7/A7 books: 360 entry cells (6 trend defs x WITH/COUNTER x 5 groups x sides x 2 shapes) + 120 descriptive cells for KB/SM/HM/MV; prereg Q11_prereg sha 8a523441... |
+| 2026-11-04T20:23Z | Q12 | ZL-2 | 160 | bar-type diversity: KB/SM/PB x 9 bar types + control x 5 sessions |
+| 2026-11-04T20:24Z | DISA_D2 | Z3 | 48 | D2 pyramids: 4 sources x session x trail x adds; prereg DIS_A sha 2280ce04 |
