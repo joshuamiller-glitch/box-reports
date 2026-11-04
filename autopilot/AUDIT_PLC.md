@@ -65,3 +65,5 @@ Reading: bar-follower engines are continuation signals, so the old placebo was i
 
 ## Programs with a CHANGED label
 None. Changed p-values (all logged above): Q9 reversion cells (stack-gain p up, real cells look less special), Q10 OMF cells (L6M p up to .15), Q12 three Asia cells (trigger p down to <= .05; still fail start / family).
+
+| Part 2 (AUDIT-L2, 2026-11-04T21:32Z) | L2 UNTIL_FOUND P3 within-trade shift | circular trigger shift (uf_p3_shift_lib.cshift) | Y | FLATTERING | rank 0.95 -> 0.49 (C4 B1trail); labels BEST-AVAILABLE-NEGATIVE unchanged | correction appended |

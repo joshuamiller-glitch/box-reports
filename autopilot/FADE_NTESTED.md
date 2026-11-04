@@ -56,3 +56,9 @@
 | 2026-11-04T21:07Z | DISM | BASE-4 | 112 | DIS-M drift benchmark: 24 random-time + 48 fixed-clock benchmark cells, 20 live groups (replica), 19 candidates (Shadow lines + own cells), 1 hedged stack; prereg DISM_prereg sha f32b5312... + addendum1 e28ad121... |
 | 2026-11-04T21:10Z | FADE_DISU | ZL-1 | 52 | DIS-U regime episodes/duration/detector replay (prereg DISU sha be47bffe...) |
 | 2026-11-04T21:27Z | DISY | BASE-4 | 22 | DIS-Y drift-excess table: 22 watch cells (12 ranked-list / DIS-Q, 8 NYAM-fade and FADE lines incl. bundle, 2 Q4 amplifier forms); prereg DISY sha 860b18ca... |
+| 2026-11-04T21:36Z | AUDITL2 | BASE-4 | 12 | AUDIT-L2 part 2: 4 fade survivors (+2 sensitivity) x 3 fair placebos; prereg AUDITL2 sha 2b587f93... |
+| 2026-11-04T21:44Z | FADE_DISG | S4a | 525 | DIS-G pre-market structure books: cells with n>=100 |
+| 2026-11-04T21:49Z | DISAA | BASE-4 | 6 | DIS-AA pre-2023 OOS: 5 lines + bundle x 4 benchmarks x 14 years (descriptive, 6 verdicts); scope DISAA sha 5927ec85... |
+| 2026-11-04T21:53Z | DISAC | Z3 | 288 | DIS-AC: Asia continuation hold regime book: asia sub-grid x 3 switches; prereg DIS_AC sha 3595f2c6 |
+| 2026-11-04T21:57Z | DISS | CAL | 86 | DIS-S equity-curve/streak: 44 serial-dependence tests + 28 engine overlay cells + 14 bundle cells; 100 draws x 3 placebos per cell, 100 family worlds |
+| 2026-11-04T21:58Z | DISAD | BASE-4 | 16 | DIS-AD PB asia reconcile: 4 Asia cells x 4 periods decomposition (+ yearly PB, O2/O3 windows); scope DISAD sha 9ce7146c... |
