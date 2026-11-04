@@ -27,3 +27,6 @@ A first forced refit (baseline) ran 01:21Z-01:36Z (15 min, rc 0 on all steps; th
 
 ## Update 2026-11-04 (Q3): monday_all now also runs the sizer Shadow runner
 `monday_all.py` (called by the same loop pid 3715292, next fire 2026-11-09T13:00Z) now runs `zones3/sizer_shadow/sizer_forward_weekly.py` (--regdir forward_register/sizer_shadow) and writes ONE markdown table with a row per Shadow line (BT flip, NY-AM fades bundle, the three top-3 books, the top-3 sum, OR15, sizer VT near-miss, Z3 two-modifier watch, monthly NYAM regime) and a verdict column; backup of the previous version: monday_all.py.bak_pre_table. See SHADOW_PACK.md.
+
+## Update 2026-11-04 (plugin hook): extra Shadow runners without editing monday_all.py
+`code/zones3/standing/runners.json` (JSON list; currently empty) registers extra runners: {"name", "key", "cmd": [script, args with {FR} {START} {SCR} placeholders]}. A runner prints markdown table rows `| <line> | <verdict> | <read> |` (and/or one line starting with `[`) on stdout and exits 0; monday_all.py copies the rows into the one Monday table. First user: ZL-1's SHADOW-2 runner (shadow2_weekly.py). Backup of the previous monday_all.py: monday_all.py.bak_pre_plugins.

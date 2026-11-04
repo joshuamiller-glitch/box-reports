@@ -45,3 +45,8 @@
 | 2026-11-04T20:23Z | Q11 | BASE-4 | 480 | daily-trend-aligned P7/A7 books: 360 entry cells (6 trend defs x WITH/COUNTER x 5 groups x sides x 2 shapes) + 120 descriptive cells for KB/SM/HM/MV; prereg Q11_prereg sha 8a523441... |
 | 2026-11-04T20:23Z | Q12 | ZL-2 | 160 | bar-type diversity: KB/SM/PB x 9 bar types + control x 5 sessions |
 | 2026-11-04T20:24Z | DISA_D2 | Z3 | 48 | D2 pyramids: 4 sources x session x trail x adds; prereg DIS_A sha 2280ce04 |
+| 2026-11-04T20:34Z | DISG | Z1 | 736 | DIS-G: NQ entry books driven by ES/RTY/YM state (G1-G5, 736 cells) |
+| 2026-11-04T20:38Z | Q14 | Q14-owner | 240 | NQ-vs-ES spread books NY-AM: A two-leg spread 96 + B NQ own move ES-flat 96 + B0 control 48 |
+| 2026-11-04T20:39Z | Q13 | ZL-1 | 477 | gap-conditioned books on NQ: stage 1 45 + stage 2 6 x 36 shapes (prereg said 72; code uses 36) ; n_tested bound 477 |
+| 2026-11-04T20:49Z | DISG | Z1 | 783 | DIS-G: 736 entry cells + 47 (filters 20, YM-conditioning 15, ES/RTY delta splits 12) |
+| 2026-11-04T20:50Z | DISF | CAL | 50 | DIS-F post-earnings-day overlay: 2 flags x 5 variants x (sleeve + 4 fade targets); placebos 10 shifts + 100/200 random + 100/200 circular, 150 family worlds |
