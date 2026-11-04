@@ -50,3 +50,9 @@
 | 2026-11-04T20:39Z | Q13 | ZL-1 | 477 | gap-conditioned books on NQ: stage 1 45 + stage 2 6 x 36 shapes (prereg said 72; code uses 36) ; n_tested bound 477 |
 | 2026-11-04T20:49Z | DISG | Z1 | 783 | DIS-G: 736 entry cells + 47 (filters 20, YM-conditioning 15, ES/RTY delta splits 12) |
 | 2026-11-04T20:50Z | DISF | CAL | 50 | DIS-F post-earnings-day overlay: 2 flags x 5 variants x (sleeve + 4 fade targets); placebos 10 shifts + 100/200 random + 100/200 circular, 150 family worlds |
+| 2026-11-04T21:01Z | DISQ | CAL | 440 | DIS-Q late-day books: 200 eligible-type + 240 calendar cross-tab cells (WITCH/RUSS empty); placebos 5 clock shifts + 100 side + 100 shift5 per eligible cell, 100 family worlds x 2 kinds |
+| 2026-11-04T21:05Z | DISN | Z1 | 817 | DIS-N: 777 clock overlay cells + 40 entry-delay cells |
+| 2026-11-04T21:06Z | DIST | ZL-2 | 60 | watch-bundle portfolio: estimators, leave-one-out, placebo bundle |
+| 2026-11-04T21:07Z | DISM | BASE-4 | 112 | DIS-M drift benchmark: 24 random-time + 48 fixed-clock benchmark cells, 20 live groups (replica), 19 candidates (Shadow lines + own cells), 1 hedged stack; prereg DISM_prereg sha f32b5312... + addendum1 e28ad121... |
+| 2026-11-04T21:10Z | FADE_DISU | ZL-1 | 52 | DIS-U regime episodes/duration/detector replay (prereg DISU sha be47bffe...) |
+| 2026-11-04T21:27Z | DISY | BASE-4 | 22 | DIS-Y drift-excess table: 22 watch cells (12 ranked-list / DIS-Q, 8 NYAM-fade and FADE lines incl. bundle, 2 Q4 amplifier forms); prereg DISY sha 860b18ca... |
