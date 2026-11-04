@@ -19,3 +19,6 @@ DISK_NTESTED: 278 cells (180 BO + 78 EX + 20 overlay); 120 family worlds + place
 DISK_NTESTED: 356 cells (180 BO + 156 EX + 20 overlay) - supersedes the 278 line above; Z2 2026-11-04
 Q7_NTESTED: 288 cells (6 books x 4 offsets x 3 timings x 2 windows x 2 fill models); 120 family worlds + 3x100 placebos; Z2 2026-11-04
 Q7_NTESTED_PASS2: 32 cells (8 best pass-1 cells x {TICK_WITH, TICK_AGAINST} + x {Q25, Q100}); total Q7 320; Z2 2026-11-04
+DISAZ_NTESTED: 108 cells (6 books x 2 offsets x 3 timeouts x 3 strength); 120 shift5 worlds; Z2 2026-11-04
+DISBG_NTESTED: 14 cells (5 ORBF + 3 DISK + 6 live-book boundary); Z2 2026-11-04
+| 2026-11-04T22:56Z | INSTR_SC | Z1 | 12 | QA-2 note (Z1): INSTR_SC (scaling note cells, ledger program INSTR_SC) had no registry line; n = ledger rows 12; these are scaling/cost cells, not hypotheses |

@@ -1,4 +1,4 @@
-# FADE_ROWS_DISB (S4a, DIS-B: Globex pre-market structure books, updated 2026-11-04 21:41Z)
+# FADE_ROWS_DISB (S4a, DIS-B: Globex pre-market structure books, updated 2026-11-04 22:38Z)
 Prereg autopilot/DIS_B_PREREG.md sha256 f8cf86b86e64bb5a246a9c6034073db9e6bce62b121aa61e6cf2c5dbb70c4563; FadeHarness live fill model, LIVE costs, lots = equal-$ risk $2,400 at the stop capped at 6 (window $/wk at those lots); 100 placebos (harness: random side / time / shuffled day), regime switch R_F40, stack marginal carry-dropped (gate_v3 constants: PRE weeks 2025 W06-09). 157 candidates of 1338 cells with >= 100 trades (candidate = L3M, L6M, HOLD > 0). Many rows differ only in time stop and are the same trades. Family test (all 1338 cells, >= 100 worlds): HOLD_mean: family p of the real max side 0.406 / days 0.168; L6M_calmar: family p of the real max side 0.426 / days 0.495.
 | book | session | anchor | trigger | shape | L1M | L3M | L6M | HOLD | MID | PRE | X' | regime-conditioned | placebo | stack gain | label |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|

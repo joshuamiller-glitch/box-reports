@@ -1,0 +1,62 @@
+# STANDING_HEALTH_20261105 - standing-program health check before the first real Monday run (OPS-1, CAL)
+Read-only: nothing was moved, deleted, restarted or edited; no PASS claims. Taken 2026-11-04 22:54-22:59Z on the box (uptime 25 d, load 9.4 of 32). Next scheduled events: THP stamp 23:00Z today, weekly NQ feed pull Sat 2026-11-07, Monday run 2026-11-09 13:00Z, ledger refit 2026-12-01 02:00Z.
+
+## 0. One-glance verdict
+All eleven standing loops you named are alive and fresh. Five things need a decision before Monday (details below): (1) root disk 95% used (24 GB free; 28 GB free earlier today), outputs/ grows about 2.8 GB/day; (2) the weekly feed pull on 11-07 is manual and nothing wires its tape into the Monday run (G2/G3 already assigned to BASE-4, due 11-08); (3) `forward_register/live/` and `shadow2/` do not exist yet, so the `lm` and `s2` plugins will print NO DATA / no data yet on 11-09 whatever D7 logs; (4) about 31 GB of RAM and ten file locks are held by processes stopped (SIGSTOP) 7-9 days ago; (5) `DS3_DISCOVER2.md` was overwritten at about 22:36Z (131 KB -> 39 KB) and restored by 22:45-22:53Z; the snapshot loop only alerts, it does not restore.
+
+## 1. Standing loops
+| loop | pid | alive since | last output | next | note |
+|--|--|--|--|--|--|
+| monday_all.sh (flock /tmp/monday_all.lock, held by 3715293) | 3715292 | 11-04 01:12Z | `monday_all.log`: "next fire 2026-11-09T13:00:00Z" | Mon 11-09 13:00Z, then `sleep 3600` | `autopilot/monday_all_state.json` does not exist yet (normal until the first real run; `--dry` never writes it). MORNING.md has no "MONDAY ALL" block yet. runners.json plugins: `s2` (SHADOW-2), `lm` (live monitor) |
+| exit_loop.sh (zones3_s5) | 3063277 | 11-02 14:07Z | 22:47Z: `DS3_EXIT_N.md` (7.2 KB) and `THP_POLICY_D7_N.txt` rewritten, `exit_loop.log` = "ok 4" | every 25 min, about 23:12Z | policy file state: "NO LINE PASSES ON N as of this refresh"; profit, loss and bracket sections EMPTY; live THP_POLICY_D7.txt stays empty |
+| master_loop.sh (S5 master.py, 25 min) and integrator_loop2.sh (S4a integrator) | 2870503 / 3649357 | 11-02 05:53Z / 11-03 22:32Z | master_loop.log 22:47Z; `/tmp/integrator.log` 22:42Z (221 KB, DeprecationWarning noise from final_draft.py) | 25 min | both alive |
+| fade_loop.sh (fade_consolidate.py, 2 h) | 3622106 | 11-03 21:45Z | 21:45Z: `DS3_FADE_RANKED.md` 737 KB, 1,653 rows | about 23:45Z | `fade_loop.log` 4.3 KB, no errors |
+| ds3_lead.py loop | 560815 | 10-26 16:57Z | MORNING.md `<!--DS3-BEGIN-->` block (lines 1-316) updated 22:43Z; util.jsonl 22:53Z (cpu 31.7%, 13 of 32 slots) | util 5 min, board 15 min (LEADERBOARD.md 7.2 MB, 22:47Z), morning block 15 min | **Backup frequency:** the code makes ONE backup, `MORNING.md.bak_pre_ds3` (Oct 26 12:45Z, 95 KB vs 920 KB now); the docstring's "then every 2 h" is not implemented. Real protection is the snapshot loops (10 min). `UTIL_ALERT.txt` appends a line every 5 min (CPU below the 90% floor) |
+| thp_daily.sh (23:00Z) | 3715480 | 11-04 01:12Z | `thp_daily.log`: only "next fire 2026-11-04T23:00:00Z" | today 23:00Z | **no stamp written yet** (first fire is tonight; MORNING.md has no "lines passing on N" line). It checks and restarts exit_loop.sh. `THP_POLICY_D7_N.txt` mtime 22:47Z, content as above |
+| ledger_monthly.sh (02:00Z check) | 3718423 | 11-04 01:21Z | 11-04 02:02Z: "not day 1 of the month or already refit for 202611" | daily 02:00Z; real run 2026-12-01 02:00Z | `ledger_monthly_state.json` last = "202611" (11-04 01:36Z) |
+| cron box-reports sync (`*/30`, flock /tmp/box_reports.lock) | cron 675317 | 10-26 | `~/box-reports-sync/cron.out` mtime 22:30Z, `last_verdicts.json` 22:30Z; 435 lines, all "gate hits: 0" | 23:00Z | cron.out has no timestamps; lock file not held between runs (normal) |
+| /mnt/l2/snapshots/snap_loop.sh | 4151258 | 22:17Z | 22:47Z snapshots | every 10 min | copies DS3_DISCOVER.md, DS3_DISCOVER2.md, MORNING_FLAGS.md, DECISIONS.md, MORNING.md, FADE_NTESTED.md, DS3_FADE.md, DS3_SIZER.md to `/mnt/l2/snapshots/autopilot/` only when changed, deletes copies older than 48 h |
+| /mnt/l2/snapshots/snap_loop2.sh | 4153625 | 22:20Z | 22:50Z | every 10 min | MORNING.md only |
+**SHRINK_ALERTS.log** has one line: `20261104T2237 SHRINK DS3_DISCOVER2.md 131405 -> 39057`. The overwritten state is kept as `/mnt/l2/snapshots/DS3_DISCOVER2.overwritten_2237.bak` (39,057 B). The page is now 194,615 B / 1,116 lines, restored sections are marked (BASE-4 "RESTORED 22:16Z" entries; DIS-F, DIS-S and DIS-Q sections of this slice are present). The alert fires on a >10% shrink vs the last backup only; the next backup after a restore is accepted silently.
+
+## 2. Disk, RAM, inodes
+| item | value |
+|--|--|
+| `/` (md0) | 439 G, 393 G used, **24 G free, 95%** (was 94% / 28 G free earlier today); inodes 2% used |
+| `/mnt/l2` (md1) | 3.5 T, 1.5 T used, 2.1 T free, 42%; inodes 1% |
+| RAM | 187 G total, 81 G used, 63 G free, 106 G available (44 G cache); **swap 0** (none configured) |
+| root consumers | `/home` 376 G of which `outputs/` 369 G (l2vast/ds3 235 G; autopilot 77 G: i 17 G, b 15 G, ddmin 9.3 G, c7 4.3 G, ext_1019 4.0 G; b10 15 G; n5 14 G; l2vast/pred 12 G), `/tmp` 15 G (`/tmp/claude-1000` 12 G, of which this session's scratchpad 9.9 G, `scr/idn` 930 M, `scr/fix` 505 M), `/usr` 1.8 G, pip cache 1.5 G |
+| growth last 24 h under outputs/ (files modified) | l2vast/ds3 2.05 GB (1,091 files), autopilot/l 0.77 GB (5 files), LEADERBOARD.md 7 MB; total about 2.8 GB/day. At this rate 24 G lasts about 8 days; `/tmp` scratch adds to it |
+| growing shared file | `l2vast/ds3/out/uf/DEAD_CELLS.csv` 539 MB, appended every few minutes; `dead_lookup.py` reads it whole on each use |
+
+## 3. Next scheduled events (what each reads and writes; paths that do not exist yet in bold)
+| event | when | reads | writes | status |
+|--|--|--|--|--|
+| THP daily stamp | tonight 23:00Z, then daily | `autopilot/THP_POLICY_D7_N.txt`, family pages `DS3_EXIT_N_*.md`, exit_loop liveness (`/proc` scan) | one line in MORNING.md; restarts exit_loop.sh if dead | all inputs exist |
+| Weekly NQ feed | Sat 2026-11-07 (about 06:00Z or later, 8 h licence lag) | Databento (needs `DATABENTO_API_KEY` from an interactive `bash -ic`), `autopilot/SPEND.json` (cap $8,000, spent $7,226.94, $773 left; one week about $1.15) | `l2vast/ds3/data_fwd/` **(directory does not exist)**: `NQ_ohlcv-1s_<start>_<end>.dbn.zst`, `MANIFEST.jsonl`, `path/*.parquet`; then `hm_feed.py --verify` / `--tape-out` -> tape.csv | **MANUAL AND GUARDED**: `pull_nov.py` defaults to a free dry run; a paid pull needs `--execute` + the exact confirm string from a fresh dry run + user-confirmed budget. No cron, loop or timer exists for it (crontab has only the box-reports line; `systemctl list-timers` shows only system timers). Nothing wires tape.csv into `monday_all.py` (G2) and hm_feed writes `high/low` while the Shadow runners read `hi/lo` (G3); both fixes due 11-08 |
+| Monday run | Mon 2026-11-09 13:00Z | `forward_register/{bt, nyam, fade, sizer_shadow}/` (all four exist and are EMPTY), **`forward_register/bt/bt_flip_shadow.csv`**, **`forward_register/shadow2/`**, **`forward_register/live/` (weekly_pnl/ signals_joined/ stops/ fills/ th_cuts/ control_pnl/ bars_1min, tape_1s.csv)**, **`forward_register/nyam/nyam_daily.csv`**, `live_monitor_baselines.json` (exists) | one block appended to MORNING.md, `autopilot/monday_all_state.json` (**new**), scratch files in /tmp | the seven runners exist and ran rc=0 in the dry rehearsals; with empty registers every row will read "no data yet" / NO DATA |
+| First-Monday regime read | Mon 2026-12-07 (11-09 is not the first Monday) | `nyam_daily.csv`, NQ 1-min bars | MORNING.md line | not due before December |
+| Monthly ledger refit | 2026-12-01 02:00Z (waits for >= 15 GB MemAvailable, 3 shards) | `l2vast/ds3/code/d7base/{lvq,layer_vs_size,lvs_an,q_layers,composite_q}.py` (all exist), the base's engine caches | `/mnt/l2/l2vast/ds3_base4/lvs_q/` (existing dir is renamed `lvs_q_202611`), `lvq_monthly_*.log`, `DS3_ZONES_LAYER_VS_SIZE_TS2Q1A.md`, `DS3_ZONES_COMPOSITE_TS2Q1A.md`, a MORNING.md note, `ledger_monthly_state.json` | inputs exist. Caveat: the job "does NOT refresh market data or engine caches"; the caches end at 2026-10-30, so the December refit repeats the same data unless the pipeline refreshes them |
+| box-reports sync | every 30 min | outputs pages, gate scan | `~/box-reports-sync/cron.out`, `last_verdicts.json` | healthy |
+
+## 4. Locks and stray processes
+- **Locks.** `/tmp/{monday_all,thp_daily,ledger_monthly}.lock` are each held by the live loop child (inodes found in /proc/locks): healthy. `/tmp/box_reports.lock` is unheld between cron runs (normal). `/tmp/z1mk.lock` (Nov 1) is unheld and harmless. No stale lock blocks Monday.
+- **Stopped processes.** 18 processes are in state `T` (SIGSTOP), from Oct 15-27 (`pro3_direct.py`, `so3_direct.py`, `pb2/pb4/pb4w/pro1_direct.py` orchestrators and workers, `mx_m9.py`, `mx_m10.py`, `launch3/launch29.sh`, and four bash tool shells of the lead's session 87042). They hold **30.6 GB RSS** and about ten flock entries (pids 693450, 984235, 1088654, 1090579, 1094145, 1102872 and others) but no Monday-relevant lock. RAM is not short (106 G available), so this is waste, not a risk today.
+- **Zombies.** 13 `<defunct>` entries (oldest pid 180452, 22 days) with parents among the stopped trees above; harmless, they disappear when the parents exit.
+- **Old shell loops** from Oct 14-26 still sleeping (`b10_status2.sh`, `d2/t3/d3/v5/ap_status.sh`, `gapmap_loop.sh`, `ap_portfolio_loop.sh`, `loop_p1b.sh`, `launch*.sh`, `ba_progress.sh`, `finish.sh`, `post_direct.sh`, `l2vast/ds3/pl/loop.sh`, `tl_loop.sh`, `code/pro3/progress2.sh`, three `watch*.sh`/`prog.sh` in the lead scratchpad). Their purpose was not checked; listed so the owner can confirm which are still wanted.
+
+## 5. Files over 100 MB modified today in outputs/ (nothing moved; recommended moves)
+| size | file | note | recommendation |
+|--|--|--|--|
+| 539 MB | `l2vast/ds3/out/uf/DEAD_CELLS.csv` | live ledger, appended continuously, path hard-coded in `dead_lookup.py` | keep on root; consider gzip or parquet plus a path change, or move to /mnt/l2 with a symlink at a quiet moment |
+| 387 MB | `autopilot/l/q34fwd/series_ES_fwd.npz` | one-off series | move to `/mnt/l2/l2vast/ds3_base4/` and leave a symlink |
+| 383 MB | `autopilot/l/g93v2/r5/series_GC_r5.npz` | one-off series | same |
+| 380 MB | `l2vast/ds3/out/dis_at/at_res.pkl` | DIS-AT result | move to /mnt/l2, symlink |
+| 364 MB | `l2vast/ds3/out/dis_ac/apx_bars.npz` | also a second copy in the session scratchpad | move one copy to /mnt/l2, delete the scratch copy later |
+| 3 x 143 MB | `l2vast/ds3/out/disao/worlds_{NQ,ES,YM}.pkl` | DIS-AO worlds | move to /mnt/l2, symlink |
+Also: 627 files over 100 MB already exist in outputs/ (all dates); this session's scratchpad `<tmp>` is 9.9 GB (ledger.pkl 809 MB, x_d.pkl 419 MB, apx_bars.npz 364 MB, others) and can be cleared when the session ends; pip cache 1.5 G and `.claude/projects` 1.1 G are small. Moving the eight files above frees about 2.5 GB on root, about one day of growth; the lasting fix is to point new bulk outputs at /mnt/l2 (2.1 T free).
+
+## ADDENDUM 2026-11-05 (after BASE-4's G2/G3 fix; OPS-1 continued)
+- `monday_all.py` was changed by BASE-4 (md5 now 17c975c3808ff6c98cd301c30212692e; it passes `--tape <FR>tape.csv` to the Shadow runners and accepts both tape layouts). Rehearsal through it with `MONDAY_FR=/mnt/l2/l2vast/ds3_base4/rehearsal_g23/forward_register/`: rc=0 for all seven runners, SHADOW-2 rows populated, `lm` rows show data. The running loop `monday_all.sh` launches `python3 -I monday_all.py` fresh at fire time, so it will use the edited file on 2026-11-09 (no restart needed).
+- Items 3 of the table above stay as written except: the Monday run still needs `forward_register/tape.csv` (written by `hm_feed.py --tape-out` after the Saturday pull, a manual step) and the live registers; with no tape the Shadow rows fall back to the history-only path and read "no data yet".
+- Still open from sections 2 and 4: root 95% / 24 G, stopped-process memory (30.6 GB), old shell loops, DS3_DISCOVER2.md overwrite risk. Nothing was moved or killed.

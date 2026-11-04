@@ -34,7 +34,7 @@ Reading so far: the ASIA-entry holds (Asia -> London exit) with a tight 1-ATR st
 Prereg autopilot/DIS_C_PREREG.md (sha256 in DECISIONS.md; n_tested 21 + 180 + 28 = 229, FADE-style registration DIS_C in FADE_NTESTED.md); ledger DIS_C; rows autopilot/FADE_ROWS_DISC.md; code l2vast/ds3/code/disc/ (dc_weekend.py, dc_sunday.py, dc_stage2.py, dc_stackasia.py); data /mnt/l2/l2vast/ds3_dc/. Shadow only; no PASS claims. **n is small: 244 weekends 2022-01..2026-10 (183 in the harness era 2023-04..), so a rank correlation needs |rho| >= 0.18 and the weekly-mean MDE of a Sunday cell is about $1.2-1.9k/wk.**
 ## (a) Does the BTC / MBT weekend move predict the NQ Sunday-open gap and the first hours?
 Method note: CME BTC / MBT futures are closed Fri 17:00 - Sun 18:00 ET, so the 'weekend move' is the Friday-close to Sunday-open JUMP, visible at the same 18:00 open as NQ: it is a coincident read of weekend crypto sentiment, not a lead.
-| sample | instrument | predictor | target | rho (or rate difference) | p | n | MDE (rho at 80%% power) / rates |
+| sample | instrument | predictor | target | rho (or rate difference) | p | n | MDE (rho at 80% power) / rates |
 |---|---|---|---|---|---|---|---|
 | all | mbt | rb | gap_bps | +0.443 | 0.000 | 243 | 0.18 |
 | all | mbt | |rb| | |gap_bps| | +0.217 | 0.001 | 243 | 0.18 |
@@ -114,6 +114,94 @@ Shuffled-weekend placebo (entries moved to another Sunday, 100 draws) and the ha
 ## Verdict and next
 DIS-C finds one coincident relationship (crypto jump <-> NQ gap, and size <-> early volatility) and no tradable one: no sign predictor, no gap-fill conditioner, no Sunday-open cell that survives the family null, no stack-Asia conditioning. The Sunday 18:30 continuation with a 2R target is the only WATCH-level cell (thin, inside its MDE). Not a lead.
 
+## DIS-G: GLOBEX WEEKDAY OPEN / ASIA / LONDON OPEN STRUCTURE BOOKS (S4a; interim table 2026-11-04 22:35Z; prereg autopilot/DIS_G_PREREG.md sha256 b9670af2...a3142; ledger DIS_G; rows FADE_ROWS_DISG.md)
+Question: do the Globex weekday 18:00 open gap, the Asia and London opening ranges, the Asia-range breaks / failed breaks during 02:00-04:00, the London-open stretch from the Asia VWAP and the 03:00 Frankfurt-open move trade as books (session families asia and london)? 28 event variants x shapes = 627 cells valued (525 with >= 100 trades); FadeHarness live fill model, costs stop 2.45 / exit 0.80 / fee 0.242, base Q1-A ts2 stack for marginal values. Post-hoc, Shadow only, no PASS claims; S4b's DIS-C (weekend / Sunday open) is separate.
+Stage 1: share of cells with L6M > 0 = 0.27, HOLD > 0 = 0.20, both L3M, L6M and HOLD > 0: 54 cells (31 Asia family, 23 London family). Placebo p <= 0.10: 29 of 54. Family max-T test over all 525 cells: HOLD_mean: family p of the real max side 0.634 / days 0.149; L6M_calmar: family p of the real max side 0.574 / days 0.693.
+Ranked table (placebo p, then L6M; first 25 of 54; labels per FADE_ROWS rules, nothing here is a lead until the family test and the carrying-week checks are read):
+
+| book | session | anchor | trigger | shape | L1M | L3M | L6M | HOLD | MID | PRE | X' | regime-conditioned | placebo | stack gain | label |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.5_any | tgt=r1 stop=0.50ATR T120m | +1218 | +968 | +1166 | +839 | -157 | -90 | -580 | ON L6M +1166 / HOLD +864 / MID -157 (n 127); 2023-25 same switch PRE -16 / X' -214 (n 51) | p 0.010 | 0.5x HOLD +0.012 / L6M +0.039; 1.0x HOLD +0.026 / L6M +0.082 | NOW-ONLY REGIME [family maxT p 0.95/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.5_any | tgt=r1 stop=0.50ATR T60m | +1218 | +889 | +1011 | +786 | -177 | -151 | -557 | ON L6M +1011 / HOLD +810 / MID -177 (n 127); 2023-25 same switch PRE +8 / X' -156 (n 51) | p 0.010 | 0.5x HOLD +0.012 / L6M +0.037; 1.0x HOLD +0.025 / L6M +0.078 | NOW-ONLY REGIME [family maxT p 0.99/1.00] |
+| DIS_G trend | london | AR | L_AR_brk_x0.25 | tgt=r1 stop=0.25ATR T30m | +1259 | +732 | +1016 | +410 | -463 | -409 | -403 | ON L6M +1016 / HOLD +251 / MID -463 (n 308); 2023-25 same switch PRE -126 / X' -143 (n 191) | p 0.020 | 0.5x HOLD +0.006 / L6M -0.009; 1.0x HOLD +0.013 / L6M -0.018 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.25_any | tgt=r1 stop=0.50ATR T120m | +1760 | +1402 | +1481 | +1161 | +323 | -471 | -340 | ON L6M +1481 / HOLD +1259 / MID +323 (n 213); 2023-25 same switch PRE +31 / X' -85 (n 101) | p 0.030 | 0.5x HOLD +0.012 / L6M +0.040; 1.0x HOLD +0.024 / L6M +0.083 | NOW-ONLY REGIME [family maxT p 0.63/0.98] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.25_any | tgt=r1 stop=1.00ATR T120m | -42 | +464 | +1121 | +1015 | +80 | -206 | -171 | ON L6M +1121 / HOLD +1076 / MID +80 (n 213); 2023-25 same switch PRE +84 / X' -95 (n 101) | p 0.030 | 0.5x HOLD +0.010 / L6M -0.020; 1.0x HOLD +0.021 / L6M -0.039 | NOW-ONLY REGIME [family maxT p 0.84/1.00] |
+| DIS_G trend | london | AR | L_AR_brk_x0.25 | tgt=r1 stop=0.25ATR T120m | +674 | +263 | +790 | +295 | -300 | -486 | -372 | ON L6M +790 / HOLD +136 / MID -300 (n 308); 2023-25 same switch PRE -126 / X' -117 (n 191) | p 0.030 | 0.5x HOLD +0.008 / L6M -0.011; 1.0x HOLD +0.016 / L6M -0.020 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G trend | london | AR | L_AR_brk_x0.25 | tgt=r1 stop=0.25ATR T60m | +674 | +263 | +790 | +295 | -300 | -486 | -372 | ON L6M +790 / HOLD +136 / MID -300 (n 308); 2023-25 same switch PRE -126 / X' -117 (n 191) | p 0.030 | 0.5x HOLD +0.008 / L6M -0.011; 1.0x HOLD +0.016 / L6M -0.020 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.25_any | tgt=r1 stop=0.50ATR T60m | +1760 | +1535 | +1428 | +1142 | +243 | -553 | -342 | ON L6M +1428 / HOLD +1239 / MID +243 (n 213); 2023-25 same switch PRE +64 / X' -64 (n 101) | p 0.040 | 0.5x HOLD +0.011 / L6M +0.038; 1.0x HOLD +0.024 / L6M +0.079 | NOW-ONLY REGIME [family maxT p 0.64/0.98] |
+| DIS_G trend | london | AR | L_AR_brk_x0.25 | tgt=r2 stop=0.25ATR T30m | +2722 | +1634 | +1253 | +135 | -837 | -495 | -526 | ON L6M +1253 / HOLD +130 / MID -837 (n 308); 2023-25 same switch PRE -228 / X' -272 (n 191) | p 0.040 | 0.5x HOLD +0.006 / L6M -0.007; 1.0x HOLD +0.013 / L6M -0.013 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.5_any | tgt=r1 stop=0.50ATR T30m | +1218 | +867 | +822 | +681 | -77 | -41 | -603 | ON L6M +822 / HOLD +705 / MID -77 (n 127); 2023-25 same switch PRE +50 / X' -112 (n 51) | p 0.040 | 0.5x HOLD +0.008 / L6M +0.035; 1.0x HOLD +0.016 / L6M +0.073 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.5_any | tgt=r1 stop=1.00ATR T120m | -569 | +252 | +801 | +695 | +104 | -112 | -455 | ON L6M +801 / HOLD +699 / MID +104 (n 127); 2023-25 same switch PRE +39 / X' -220 (n 51) | p 0.040 | 0.5x HOLD +0.011 / L6M -0.022; 1.0x HOLD +0.023 / L6M -0.042 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.25_any | tgt=r1 stop=0.25ATR T30m | -477 | +1016 | +745 | +761 | +1085 | -159 | -431 | ON L6M +745 / HOLD +863 / MID +1085 (n 206); 2023-25 same switch PRE -27 / X' -82 (n 100) | p 0.050 | 0.5x HOLD +0.008 / L6M +0.030; 1.0x HOLD +0.017 / L6M +0.062 | NOW-ONLY REGIME [family maxT p 0.99/1.00] |
+| DIS_G trend | london | AR | L_AR_brk_x0.0 | tgt=r1 stop=1.00ATR T30m | +453 | +1511 | +640 | +391 | +547 | -95 | -1112 | ON L6M +640 / HOLD +491 / MID +547 (n 320); 2023-25 same switch PRE -108 / X' -688 (n 198) | p 0.050 | 0.5x HOLD +0.009 / L6M +0.009; 1.0x HOLD +0.018 / L6M +0.019 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.5_any | tgt=r1 stop=0.25ATR T30m | -35 | +774 | +603 | +521 | +470 | -6 | -460 | ON L6M +603 / HOLD +557 / MID +470 (n 121); 2023-25 same switch PRE -5 / X' -90 (n 51) | p 0.050 | 0.5x HOLD +0.009 / L6M +0.032; 1.0x HOLD +0.018 / L6M +0.068 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G trend | london | AR | L_AR_brk_x0.25 | tgt=r1 stop=0.50ATR T120m | +936 | +483 | +875 | +62 | -702 | -454 | -767 | ON L6M +875 / HOLD +18 / MID -702 (n 308); 2023-25 same switch PRE -108 / X' -418 (n 191) | p 0.059 | 0.5x HOLD +0.005 / L6M +0.011; 1.0x HOLD +0.010 / L6M +0.022 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.25_any | tgt=r1 stop=0.25ATR T120m | -477 | +1066 | +778 | +648 | +711 | -163 | -427 | ON L6M +778 / HOLD +750 / MID +711 (n 206); 2023-25 same switch PRE -16 / X' -160 (n 100) | p 0.059 | 0.5x HOLD +0.007 / L6M +0.030; 1.0x HOLD +0.015 / L6M +0.063 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.25_any | tgt=r1 stop=0.25ATR T60m | -477 | +951 | +723 | +641 | +688 | -234 | -391 | ON L6M +723 / HOLD +742 / MID +688 (n 206); 2023-25 same switch PRE -9 / X' -119 (n 100) | p 0.059 | 0.5x HOLD +0.007 / L6M +0.030; 1.0x HOLD +0.015 / L6M +0.063 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G trend | london | AR | L_AR_brk_x0.25 | tgt=r1 stop=0.50ATR T60m | +936 | +483 | +875 | +62 | -702 | -454 | -767 | ON L6M +875 / HOLD +18 / MID -702 (n 308); 2023-25 same switch PRE -108 / X' -418 (n 191) | p 0.069 | 0.5x HOLD +0.005 / L6M +0.011; 1.0x HOLD +0.010 / L6M +0.022 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.5_any | tgt=r1 stop=0.25ATR T120m | -35 | +840 | +644 | +412 | +95 | -37 | -427 | ON L6M +644 / HOLD +448 / MID +95 (n 121); 2023-25 same switch PRE -75 / X' -168 (n 51) | p 0.069 | 0.5x HOLD +0.008 / L6M +0.033; 1.0x HOLD +0.017 / L6M +0.069 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.5_any | tgt=r1 stop=1.00ATR T60m | -221 | +384 | +630 | +615 | +307 | -115 | -456 | ON L6M +630 / HOLD +618 / MID +307 (n 127); 2023-25 same switch PRE +62 / X' -103 (n 51) | p 0.069 | 0.5x HOLD +0.008 / L6M -0.014; 1.0x HOLD +0.017 / L6M -0.027 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.5_any | tgt=r1 stop=1.00ATR T30m | -413 | +157 | +581 | +693 | +592 | -30 | -449 | ON L6M +581 / HOLD +696 / MID +592 (n 127); 2023-25 same switch PRE +78 / X' -30 (n 51) | p 0.069 | 0.5x HOLD +0.007 / L6M -0.009; 1.0x HOLD +0.015 / L6M -0.019 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.25_any | tgt=r1 stop=1.00ATR T30m | -280 | +319 | +1028 | +1100 | +627 | -231 | -198 | ON L6M +1028 / HOLD +1097 / MID +627 (n 213); 2023-25 same switch PRE +83 / X' +80 (n 101) | p 0.079 | 0.5x HOLD +0.007 / L6M -0.005; 1.0x HOLD +0.014 / L6M -0.011 | NOW-ONLY CONDITIONAL [family maxT p 0.71/1.00] |
+| DIS_G fade | asia | GAPFILL | A_GAPFILL_t01_g0.5_any | tgt=r1 stop=0.25ATR T60m | -35 | +694 | +574 | +397 | +72 | -53 | -412 | ON L6M +574 / HOLD +433 / MID +72 (n 121); 2023-25 same switch PRE -44 / X' -127 (n 51) | p 0.079 | 0.5x HOLD +0.008 / L6M +0.033; 1.0x HOLD +0.017 / L6M +0.069 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G trend | london | AR | L_AR_brk_x0.0 | tgt=r1 stop=1.00ATR T60m | -731 | +1030 | +471 | +300 | +614 | -267 | -1144 | ON L6M +471 / HOLD +410 / MID +614 (n 320); 2023-25 same switch PRE -198 / X' -669 (n 198) | p 0.079 | 0.5x HOLD +0.007 / L6M +0.004; 1.0x HOLD +0.015 / L6M +0.008 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_G trend | london | AR | L_AR_brk_x0.0 | tgt=r1 stop=0.50ATR T30m | +660 | +840 | +383 | +140 | -558 | -672 | -655 | ON L6M +383 / HOLD +146 / MID -558 (n 320); 2023-25 same switch PRE -245 / X' -366 (n 198) | p 0.079 | 0.5x HOLD +0.004 / L6M +0.020; 1.0x HOLD +0.009 / L6M +0.041 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+
+Reading (S4a, DIS-G final; post-hoc, Shadow only): 627 cells valued, 525 with >= 100 trades, 54 candidates (L3M, L6M, HOLD > 0), 29 with placebo p <= .10, every candidate labelled NOW-ONLY (PRE and X' negative for all; MID negative for many) and almost all REGIME. Family max-T over the 525 cells: HOLD mean p 0.63 (side) / 0.15 (days), L6M Calmar p 0.57 / 0.69: the best Asia / London opening book is what chance gives. The leading raw-p cells (A_GAPFILL_t01 g0.25-0.5 fills of the Globex weekday open gap, +$1.0-1.5k per week in L6M; L_AR_brk_x0.25 Asia-range breaks, +$0.8-1.0k) are 2026-only effects: no lead. DIS-G closes; Sunday-evening open books are S4b's DIS-C.
+
+## DIS-U INTERIM 1 (ZL-1, 2026-11-04 ~22:10Z; RE-APPENDED ZL-1 after the file overwrite; condensed from the original) - REGIME EPISODE HISTORY AND DURATION
+Prereg l2vast/ds3/prereg/DISU_prereg.md sha256 be47bffe3f8797ec07941cf1b684b2c4c9de20a24be6241ddb3064e709aee670 (logged first); dead_lookup first (no scored regime-duration cell); ledger DIS_U 20 rows; n_tested FADE_DISU 52. Code l2vast/ds3/code/disu/, output /mnt/l2/l2vast/ds3_disu/ (h1_log.txt, h234_log.txt). No PASS claim.
+Data limit: earliest NQ tick/L2 date on disk 2023-02-09; daily series 2023-04-03..2026-10-30 (935 days). (DIS-W later found 1-min NQ back to 2013 on disk; see DS3_HISTORY_EXTENSION.md.) Prereg note: the A2 formula in the prereg text has a stray factor 5; A2 = sum(R_k^2)/sum(r^2), 1 = random walk.
+H1: multiple mean-shift (exact DP, min segment 60 d, K<=4, BIC): BIC K=0/1/2/3/4 = 15,743.9/15,735.7/15,741.0/15,751.9/15,758.3, one shift. Bundle S1 (study lots 2; live 0.5x): 2023-04-03..2026-02-09 (746 d) -224 $/day (live -112); 2026-02-10..10-30 (189 d) +1,481 (live +740), Welch t 4.48; MAP 2026-02-10, median 2025-11-27, 90% 2025-06-13..2026-02-12. HMM: one switch 2025-11-20, ON absorbing (means -249/+1,196). K=2 (not selected) front-loads the episode (+2,844 to 2026-05-04, then +847). No earlier episode: 11 non-overlapping 60-day windows before 2026 have t between -1.44 and +0.97. Detection probability of the 2026 step (1,705 $/day) for 40/60/90 days: 0.65/0.82/0.94. ES, RTY, YM bundles: no shift. Live NY-AM sleeve S2: no shift, inside 187 vs outside 774 $/day (t -1.57).
+H2: first-hour share shifts up 2025-12-02 (t +3.30, agrees); gap-fill A3 shifts DOWN 2025-10-20 (.62 to .48, t -2.69, opposite to a gap-fill signature); OR-break S3 .894 to .813 (n.s.); lag-1 autocorrelation 10-11h A1 and VR(5) A2: no shift (inside -0.013 vs -0.004; .966 vs 1.016). 1 of 5 directional series agrees; shifted-label placebo P(>=1) = .15.
+H3 (exact Garwood): 0 ends in 189 ON days -> mean ON duration >= 63 d (90%) / 51 d (95%), no upper bound; OFF: 1 completed stretch 746 d (left-censored), start-rate 90% interval [0.00007, 0.00636]/day. P(still ON after D more days) at the 95%-upper hazard: D=21/63/126/252 -> .72/.37/.14/.02; at the point hazard 1/189: .89/.72/.51/.26.
+H4 (bundle at 0.5x; always-on $56,470 total; HOLD $2,786/wk, maxDD $23,311; PRE -$1,038/wk, maxDD $88,036): total gated $: weekly CUSUM k.4 h3/h4/h5 110,132/133,272/115,326 (false-ON days 195/196/16; the h3/h4 false alarm of 2025-05-12 never switched off); daily CUSUM k.2 h4/h5 86,535/68,649; R_F20 95,119; R_F40 109,407; R_F40ANY 81,672; R_AND 16,910. Only weekly h5 and R_F40 beat a circularly shifted copy on total (p .012); none beats it on Calmar (p .10-.50): the gain is mostly "being off in the long losing stretch". PRE maxDD gated: weekly h5 0 (not trading), R_F40 $30k, R_F20 $30k vs $88k always-on.
+Break-even: live-size ON +$740/day, OFF -$112/day. Gating beats always-on iff lag x 740 < OFF-stretch x 112 x (1 - false-ON share); required OFF stretch: lag 9 d (R_F20) 59 d; lag 27 d (R_F40) 178 d (292 d with its 39% false-ON); lag 56-61 d (weekly CUSUM) 370-403 d. The one OFF stretch seen was 746 d.
+Plain sentence: the NQ NY-AM reversion regime has occurred once in the 3.6 years of data then on disk (bundle shift 2026-02-10, 90% 2025-06..2026-02), no earlier episode of that size exists in 2023-04..2025-11, its duration cannot be bounded above from one censored episode (exact lower bound about 2-3 months), the 5-minute lag-1 and VR(5) statistics do not show it, and the causal switches earn their keep mostly by being OFF in the long losing stretch.
+
+## DIS-B: GLOBEX PRE-MARKET STRUCTURE BOOKS (S4a; interim table 2026-11-04 22:36Z; prereg autopilot/DIS_B_PREREG.md sha256 f8cf86b8...c4563; ledger DIS_B; rows FADE_ROWS_DISB.md)
+Question: do the Globex pre-market (04:00-09:30 ET) range / volume / VWAP / 08:30-release / pre-open structures trade as books, either with entries after 09:30 (N family, session nyam) or as pre-market entries (P family, flat by 09:25)? 61 event variants x shapes = 1341 cells valued (1338 with >= 100 trades); FadeHarness live fill model, costs stop 2.45 / exit 0.80 / fee 0.242, base Q1-A ts2 stack for marginal values. Post-hoc, Shadow only, no PASS claims.
+Stage 1: share of cells with L6M > 0 = 0.39, HOLD > 0 = 0.30, both L3M, L6M and HOLD > 0: 157 cells (140 N family, 17 P family). Placebo p <= 0.10: 14 of 157. Family max-T test over all 1338 cells: HOLD_mean: family p of the real max side 0.406 / days 0.168; L6M_calmar: family p of the real max side 0.426 / days 0.495.
+Ranked table (placebo p, then L6M; first 25 of 157; labels per FADE_ROWS rules, nothing here is a lead until the family test and the carrying-week checks are read):
+
+| book | session | anchor | trigger | shape | L1M | L3M | L6M | HOLD | MID | PRE | X' | regime-conditioned | placebo | stack gain | label |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| DIS_B fade | nyam | REL | N_REL_rev_m0.5 | tgt=mid stop=1.00ATR T60m | +73 | +322 | +1404 | +1207 | +195 | +144 | -550 | ON L6M +1404 / HOLD +993 / MID +195 (n 156); 2023-25 same switch PRE -120 / X' -507 (n 91) | p 0.010 | 0.5x HOLD +0.025 / L6M +0.002; 1.0x HOLD +0.056 / L6M +0.003 | TOLERANT REGIME [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | REL | N_REL_rev_m0.5 | tgt=mid stop=1.00ATR T120m | +73 | +322 | +1275 | +1165 | +305 | +216 | -550 | ON L6M +1275 / HOLD +951 / MID +305 (n 156); 2023-25 same switch PRE -127 / X' -507 (n 91) | p 0.010 | 0.5x HOLD +0.026 / L6M +0.002; 1.0x HOLD +0.056 / L6M +0.003 | TOLERANT REGIME [family maxT p 1.00/1.00] |
+| DIS_B trend | pre | REL | P_REL_cont_m1.0 | tgt=r1 stop=1.00ATR T30m | +367 | +911 | +410 | +707 | +850 | +298 | +517 | ON L6M +410 / HOLD +515 / MID +850 (n 188); 2023-25 same switch PRE +265 / X' +289 (n 116) | p 0.059 | 0.5x HOLD +0.008 / L6M +0.014; 1.0x HOLD +0.016 / L6M +0.028 | TOLERANT CONDITIONAL [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | GAPFILL | N_GAPFILL_t31_g1.0_hi | tgt=mid stop=1.00ATR T60m | -890 | +108 | +581 | +1168 | +825 | -151 | -690 | ON L6M +581 / HOLD +997 / MID +825 (n 122); 2023-25 same switch PRE -85 / X' -373 (n 61) | p 0.069 | 0.5x HOLD +0.031 / L6M -0.021; 1.0x HOLD +0.070 / L6M -0.041 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | GAPFILL | N_GAPFILL_t31_g1.0_hi | tgt=mid stop=1.00ATR T120m | -890 | +108 | +452 | +1101 | +825 | -80 | -690 | ON L6M +452 / HOLD +930 / MID +825 (n 122); 2023-25 same switch PRE -91 / X' -373 (n 61) | p 0.069 | 0.5x HOLD +0.031 / L6M -0.021; 1.0x HOLD +0.070 / L6M -0.041 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B trend | pre | REL | P_REL_cont_m1.0 | tgt=r2 stop=1.00ATR T30m | +12 | +935 | +284 | +663 | +801 | +197 | -82 | ON L6M +284 / HOLD +442 / MID +801 (n 188); 2023-25 same switch PRE +332 / X' +46 (n 116) | p 0.069 | 0.5x HOLD +0.009 / L6M -0.016; 1.0x HOLD +0.019 / L6M -0.032 | TOLERANT CONDITIONAL [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | IMB | N_IMB_rev_th0.1 | tgt=mid stop=0.25ATR T120m | -1353 | +516 | +1310 | +1853 | +576 | +266 | -416 | ON L6M +1310 / HOLD +1477 / MID +576 (n 96); 2023-25 same switch PRE -356 / X' -343 (n 53) | p 0.089 | 0.5x HOLD +0.024 / L6M -0.000; 1.0x HOLD +0.052 / L6M -0.001 | NOW-ONLY REGIME [family maxT p 0.97/1.00] |
+| DIS_B fade | nyam | REL | N_REL_rev_m0.5 | tgt=r1 stop=1.00ATR T120m | +2794 | +3342 | +2328 | +1314 | +233 | -363 | -694 | ON L6M +2328 / HOLD +1409 / MID +233 (n 270); 2023-25 same switch PRE +52 / X' -1069 (n 156) | p 0.099 | 0.5x HOLD +0.014 / L6M +0.009; 1.0x HOLD +0.030 / L6M +0.018 | NOW-ONLY REGIME [family maxT p 1.00/0.96] |
+| DIS_B fade | nyam | REL | N_REL_rev_m0.5 | tgt=r1 stop=1.00ATR T30m | +2794 | +3342 | +2328 | +1274 | +233 | -400 | -686 | ON L6M +2328 / HOLD +1369 / MID +233 (n 270); 2023-25 same switch PRE +67 / X' -958 (n 156) | p 0.099 | 0.5x HOLD +0.014 / L6M +0.009; 1.0x HOLD +0.030 / L6M +0.018 | NOW-ONLY REGIME [family maxT p 1.00/0.96] |
+| DIS_B fade | nyam | REL | N_REL_rev_m0.5 | tgt=r1 stop=1.00ATR T60m | +2794 | +3342 | +2328 | +1302 | +233 | -363 | -694 | ON L6M +2328 / HOLD +1396 / MID +233 (n 270); 2023-25 same switch PRE +52 / X' -1069 (n 156) | p 0.099 | 0.5x HOLD +0.014 / L6M +0.009; 1.0x HOLD +0.030 / L6M +0.018 | NOW-ONLY REGIME [family maxT p 1.00/0.96] |
+| DIS_B fade | nyam | IMB | N_IMB_rev_th0.1 | tgt=mid stop=0.25ATR T30m | -1353 | +516 | +1510 | +1845 | +93 | +201 | -416 | ON L6M +1510 / HOLD +1469 / MID +93 (n 96); 2023-25 same switch PRE -380 / X' -343 (n 53) | p 0.099 | 0.5x HOLD +0.024 / L6M -0.000; 1.0x HOLD +0.051 / L6M -0.001 | NOW-ONLY REGIME [family maxT p 0.97/1.00] |
+| DIS_B fade | nyam | IMB | N_IMB_rev_th0.1 | tgt=mid stop=0.25ATR T60m | -1353 | +516 | +1465 | +1896 | +415 | +255 | -416 | ON L6M +1465 / HOLD +1520 / MID +415 (n 96); 2023-25 same switch PRE -356 / X' -343 (n 53) | p 0.099 | 0.5x HOLD +0.024 / L6M -0.000; 1.0x HOLD +0.052 / L6M -0.001 | NOW-ONLY REGIME [family maxT p 0.97/1.00] |
+| DIS_B fade | nyam | GAPFILL | N_GAPFILL_t31_g0.5_hi | tgt=mid stop=1.00ATR T60m | -890 | +108 | +489 | +1066 | +825 | -220 | -632 | ON L6M +489 / HOLD +895 / MID +825 (n 126); 2023-25 same switch PRE -159 / X' -373 (n 63) | p 0.099 | 0.5x HOLD +0.031 / L6M -0.022; 1.0x HOLD +0.068 / L6M -0.043 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | GAPFILL | N_GAPFILL_t31_g0.5_hi | tgt=mid stop=1.00ATR T120m | -890 | +108 | +360 | +999 | +825 | -149 | -632 | ON L6M +360 / HOLD +828 / MID +825 (n 126); 2023-25 same switch PRE -165 / X' -373 (n 63) | p 0.099 | 0.5x HOLD +0.031 / L6M -0.022; 1.0x HOLD +0.068 / L6M -0.043 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | GAPFILL | N_GAPFILL_t31_g1.0_any | tgt=mid stop=0.25ATR T30m | -2555 | +156 | +1319 | +1088 | -1228 | +378 | -881 | ON L6M +1319 / HOLD +900 / MID -1228 (n 245); 2023-25 same switch PRE -197 / X' -486 (n 136) | p 0.109 | 0.5x HOLD +0.022 / L6M -0.033; 1.0x HOLD +0.047 / L6M -0.062 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B trend | nyam | GAPGO | N_GAPGO_t31_g1.0_lo | tgt=r1 stop=0.50ATR T60m | +555 | +205 | +637 | +657 | +1439 | -902 | -399 | ON L6M +637 / HOLD +686 / MID +1439 (n 192); 2023-25 same switch PRE -165 / X' -259 (n 121) | p 0.109 | 0.5x HOLD +0.007 / L6M -0.004; 1.0x HOLD +0.015 / L6M -0.009 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B trend | nyam | GAPGO | N_GAPGO_t31_g1.0_lo | tgt=r1 stop=0.50ATR T30m | +555 | +205 | +637 | +657 | +1439 | -902 | -439 | ON L6M +637 / HOLD +686 / MID +1439 (n 192); 2023-25 same switch PRE -165 / X' -283 (n 121) | p 0.109 | 0.5x HOLD +0.007 / L6M -0.004; 1.0x HOLD +0.015 / L6M -0.009 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B trend | nyam | GAPGO | N_GAPGO_t31_g1.0_lo | tgt=r1 stop=0.50ATR T120m | +555 | +205 | +637 | +657 | +1439 | -902 | -399 | ON L6M +637 / HOLD +686 / MID +1439 (n 192); 2023-25 same switch PRE -165 / X' -259 (n 121) | p 0.109 | 0.5x HOLD +0.007 / L6M -0.004; 1.0x HOLD +0.015 / L6M -0.009 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B trend | nyam | GAPGO | N_GAPGO_t31_g0.5_lo | tgt=r1 stop=0.50ATR T60m | +197 | +67 | +475 | +539 | +1439 | -670 | -304 | ON L6M +475 / HOLD +567 / MID +1439 (n 205); 2023-25 same switch PRE -149 / X' -213 (n 132) | p 0.109 | 0.5x HOLD +0.007 / L6M -0.007; 1.0x HOLD +0.013 / L6M -0.013 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B trend | nyam | GAPGO | N_GAPGO_t31_g0.5_lo | tgt=r1 stop=0.50ATR T120m | +197 | +67 | +475 | +539 | +1439 | -670 | -304 | ON L6M +475 / HOLD +567 / MID +1439 (n 205); 2023-25 same switch PRE -149 / X' -213 (n 132) | p 0.109 | 0.5x HOLD +0.007 / L6M -0.007; 1.0x HOLD +0.013 / L6M -0.013 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B trend | nyam | GAPGO | N_GAPGO_t31_g0.5_lo | tgt=r1 stop=0.50ATR T30m | +197 | +67 | +475 | +539 | +1439 | -670 | -344 | ON L6M +475 / HOLD +567 / MID +1439 (n 205); 2023-25 same switch PRE -149 / X' -237 (n 132) | p 0.109 | 0.5x HOLD +0.007 / L6M -0.007; 1.0x HOLD +0.013 / L6M -0.013 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | IMB | N_IMB_rev_th0.1 | tgt=vwap stop=0.25ATR T30m | -1353 | +278 | +1330 | +1597 | +190 | +308 | -312 | ON L6M +1330 / HOLD +1306 / MID +190 (n 93); 2023-25 same switch PRE -262 / X' -314 (n 52) | p 0.119 | 0.5x HOLD +0.024 / L6M -0.001; 1.0x HOLD +0.052 / L6M -0.003 | TOLERANT REGIME [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | IMB | N_IMB_rev_th0.1 | tgt=vwap stop=0.25ATR T60m | -1353 | +278 | +1285 | +1648 | +512 | +259 | -312 | ON L6M +1285 / HOLD +1356 / MID +512 (n 93); 2023-25 same switch PRE -340 / X' -314 (n 52) | p 0.119 | 0.5x HOLD +0.024 / L6M -0.001; 1.0x HOLD +0.053 / L6M -0.003 | TOLERANT REGIME [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | IMB | N_IMB_rev_th0.1 | tgt=vwap stop=0.25ATR T120m | -1353 | +278 | +1131 | +1591 | +611 | +259 | -312 | ON L6M +1131 / HOLD +1299 / MID +611 (n 93); 2023-25 same switch PRE -340 / X' -314 (n 52) | p 0.119 | 0.5x HOLD +0.025 / L6M -0.001; 1.0x HOLD +0.053 / L6M -0.003 | TOLERANT REGIME [family maxT p 1.00/1.00] |
+| DIS_B fade | nyam | GAPFILL | N_GAPFILL_t31_g0.5_any | tgt=mid stop=0.25ATR T30m | -2555 | +156 | +1337 | +1031 | -1228 | +162 | -933 | ON L6M +1337 / HOLD +842 / MID -1228 (n 255); 2023-25 same switch PRE -261 / X' -486 (n 143) | p 0.129 | 0.5x HOLD +0.021 / L6M -0.033; 1.0x HOLD +0.046 / L6M -0.062 | NOW-ONLY REGIME [family maxT p 1.00/1.00] |
+
+Reading (S4a, interim; post-hoc, Shadow only):
+- **P_REL_cont_m1.0 (08:30 release continuation, entry at the 08:35 close, flat by 09:25; the only cell positive in every window L1M..X')**: tgt R1, stop 1.0 ATR, time 30 min: 379 trades, +$67k total over the sample, mean $177 per trade at about 4.7 lots; the profit is SHORT-ONLY (shorts +$64.6k, longs +$2.5k), 2025 is negative (-$17k), non-event days +$56.7k vs event days +$10.4k, and its neighbours are NOT positive (stop 0.5 ATR -$11k, R2 +$12.8k, stop 0.25 ATR/60 min -$2.7k, R2/0.5 ATR -$23.5k; release threshold 0.5 ATR: +$47.9k only at the same shape, other shapes negative). Label: FRAGILE (single-shape spike, one side), not a lead.
+- **N_REL_rev_m0.5 (NY-AM reversal of the 08:30 release move, entry 09:31, target = PM mid)**: placebo p .01 (best in the family). It is a plateau along the 'mid' target shapes (stop 0.25 / 0.5 / 1.0 ATR, 60 min: +$101k / +$78k / +$41k, 313 / 321 / 304 trades; the R1 targets of the same trades are negative), but the years alternate (2023 -$34k, 2024 +$68k, 2025 -$34k, 2026 +$41k) and the profit sits on non-event days (+$47.5k vs -$6.3k on event days). Label: REGIME / year-alternating until the family test is read.
+- Release-move reversals at 08:35 (P_REL_rev) lose in every shape (-$80k..-$221k): the pre-market release move continues or noise, it does not mean-revert before 09:25.
+- **Family test, HOLD mean (all 1,338 cells with >= 100 trades, 100 worlds, random-side and shuffled-day nulls):** family p of the real max 0.41 (side) / 0.17 (days). The best cell, N_REL_rev_m0.5 mid / 0.25 ATR / 60 min (HOLD +$2,337 per week), has raw placebo p .01 but max-T p .41 and BH q .83; P_REL_cont_m1.0 (r1, 1.0, 30 min) has raw p .01, max-T p 1.0, q .83. Read: with 1,338 cells tried, the best pre-market book is what chance produces; no lead. L6M Calmar test running.
+- **Family test, L6M Calmar:** family p of the real max 0.43 (side) / 0.50 (days). Both statistics (HOLD mean, L6M Calmar) are inside the null of the best of 1,338 cells: **DIS-B closes with no lead**. The two ranked candidates (P_REL_cont_m1.0 r1/1.0/30 min and N_REL_rev_m0.5 mid/1.0/60 min) are carried as watch rows for ZL-2's DIS-T bundle (trade lists in /mnt/l2/l2vast/ds3_dist/), not as books.
+
+
+## RESTORED BY LEAD 2026-11-04T22:40Z from the 22:27Z snapshot after a second overwrite at 22:36Z (suspect: whole-file rewrite by an owner); sections below are verbatim, headers listed in MORNING.md
+
 ## DIS-B: GLOBEX PRE-MARKET STRUCTURE BOOKS (S4a; interim table 2026-11-04 21:41Z; prereg autopilot/DIS_B_PREREG.md sha256 f8cf86b8...c4563; ledger DIS_B; rows FADE_ROWS_DISB.md)
 Question: do the Globex pre-market (04:00-09:30 ET) range / volume / VWAP / 08:30-release / pre-open structures trade as books, either with entries after 09:30 (N family, session nyam) or as pre-market entries (P family, flat by 09:25)? 61 event variants x shapes = 1341 cells valued (1338 with >= 100 trades); FadeHarness live fill model, costs stop 2.45 / exit 0.80 / fee 0.242, base Q1-A ts2 stack for marginal values. Post-hoc, Shadow only, no PASS claims.
 Stage 1: share of cells with L6M > 0 = 0.39, HOLD > 0 = 0.30, both L3M, L6M and HOLD > 0: 157 cells (140 N family, 17 P family). Placebo p <= 0.10: 14 of 157. Family max-T test over all 1338 cells: HOLD_mean: family p of the real max side 0.406 / days 0.168; L6M_calmar: family p of the real max side 0.426 / days 0.495.
@@ -154,6 +242,7 @@ Reading (S4a, interim; post-hoc, Shadow only):
 - **Family test, HOLD mean (all 1,338 cells with >= 100 trades, 100 worlds, random-side and shuffled-day nulls):** family p of the real max 0.41 (side) / 0.17 (days). The best cell, N_REL_rev_m0.5 mid / 0.25 ATR / 60 min (HOLD +$2,337 per week), has raw placebo p .01 but max-T p .41 and BH q .83; P_REL_cont_m1.0 (r1, 1.0, 30 min) has raw p .01, max-T p 1.0, q .83. Read: with 1,338 cells tried, the best pre-market book is what chance produces; no lead. L6M Calmar test running.
 - **Family test, L6M Calmar:** family p of the real max 0.43 (side) / 0.50 (days). Both statistics (HOLD mean, L6M Calmar) are inside the null of the best of 1,338 cells: **DIS-B closes with no lead**. The two ranked candidates (P_REL_cont_m1.0 r1/1.0/30 min and N_REL_rev_m0.5 mid/1.0/60 min) are carried as watch rows for ZL-2's DIS-T bundle (trade lists in /mnt/l2/l2vast/ds3_dist/), not as books.
 
+
 ## DIS-A FINAL (Z3, 2026-11-04 ~22:00Z): D1 multi-hour holds and D2 pyramids - NO ADDITION; both families DEAD under the family max-stat null
 Prereg sha256 2280ce04cb18676efffb7d872d6054561e6ef0e68f31f1d6a9a118cbb4cc1945. n_tested registered: DISA_D1 264, DISA_D2 48 (FADE_NTESTED.md). Ledger program DIS_A: 312 cells appended after dead_lookup (0 duplicates). Rows: FADE_ROWS_DISA.md (28 rows, 16 columns). Code: l2vast/ds3/code/dis_a/ (dis_lib.py, d1_run.py, d1_top.py, d2_pyr.py, d2_run.py, disa_final.py); data: l2vast/ds3/out/dis_a/.
 Method as preregistered: standalone NQ books on the FadeHarness, Q1-A ts2 stack, live fills (first fill +1 s, stop 2.45 / market 0.80 / fee 0.242), equal-$-risk $1,200 per entry, flat 16:55, gate_v3 carry weeks. D2 pyramid simulator validated against the harness (adds off, no trail: 1,364 trades, correlation 0.9997, lots identical, max |diff| $372 from the slice-fill model).
@@ -168,11 +257,14 @@ Method as preregistered: standalone NQ books on the FadeHarness, Q1-A ts2 stack,
 ### Next (user standing rule: start the next untested proposal)
 Candidate for DIS-B (not yet run, no spend): the ASIA-entry continuation hold is the only repeated positive in D1 (and in CAL's D4 'Asia cont' rows). Proposal: test it as a REGIME book with the causal switch ONLY on Asia continuation (trailing-20/40-day Asia-continuation P&L > 0), 2023-25 under the same switch, walk-forward, with the family null restricted to the Asia sources; and a pairs test with the live Asia sleeve to see whether it is the same bet as K7/P7 Asia (correlation by session). Starting after the Lead's OK or on the next free worker.
 
+
 ## DIS-AA (BASE-4, 2026-11-04T21:49Z): PRE-2023 OUT-OF-SAMPLE OF THE FOUR FADE SURVIVORS - interim 1 (full page autopilot/DS3_FADE_OOS.md; scope DISAA_scope.md sha256 5927ec85d2caa1991a1fdeb43473019ec5c435047e75a099ee3cdf11600a6792; ledger DIS_AA; 1-minute signal-level object, not live P&L; no PASS)
 Verdicts (rule: positive excess in >= 5 of 10 pre-2023 years AND bootstrap CI not entirely below 0, against each of P1c / other-day causal fade / opposite side / delayed re-derived fade): N_REL_rev: SURVIVES PRE-2023 (weak rule; not a PASS); ORBF: SURVIVES PRE-2023 (weak rule; not a PASS); ONRTH: SURVIVES PRE-2023 (weak rule; not a PASS); VWAPF: POST-2023 ONLY / not supported before 2023 (fails vs P1c); VB2NYPM_T1: SURVIVES PRE-2023 (weak rule; not a PASS); NYAM_bundle: SURVIVES PRE-2023 (weak rule; not a PASS). Calibration on 2023-04..2026-10: signal recall 0.98-0.99, per-trade corr 0.86-0.94, weekly corr 0.80-0.94. Reading: pre-2023 raw means are about zero (bundle -0.49 pts/trade, -$148/wk), the excess is positive in point estimate mostly because the benchmarks lose money; strong version (CI lower > 0) only for ORBF and the bundle vs other-day and delayed-fade (and ONRTH vs delayed-fade).
 
+
 ## DIS-N interim row 2 / CLOSE (2026-11-04T21:56Z): year stability of the 8 exact-engine TOLERANT clock cells and plain sentence
 Stack delta of each cell by calendar year (exact engine, $ over the year; 15 active quarters): P7 minutes 30-34 skip -47,038 (2023) / -24,520 / -42,066 / +84,067 (2026), 7 of 15 quarters positive (half-size: -24,584 / -6,669 / -27,876 / +52,567); P7 minute :30 skip -26,887 / +42,828 / +2,264 / +61,036, 10 of 15 quarters positive (half: -11,606 / +19,776 / +3,282 / +13,088); H7 asia first-5-minutes skip +16,602 / -1,109 / -12,797 / -7,932, 5 of 15; London first-5-minutes all books skip -43 / +16,452 / +79 / -31,133, 7 of 14; P7 minutes 05-09 skip +1,225 / -9,161 / -6,120 / -2,745, 6 of 15. Only the P7 :30 cell is positive in three of four years, and it is a 56-row bucket (-$41k of P&L) selected from 471 cells with family p 1.00; the minutes 30-34 cell is a 2026-only gain (REGIME). Plain sentence (DIS-N closed): intraday-clock overlays on the six live signals - minute-of-hour marks, five-minute buckets, 08:30 / 10:00 / 14:00 release windows and session edges, as skip / half / double and as 1-5 minute entry delays - add nothing the stack can use: the best of 471 cells is inside the family null (p 0.80, BH q >= 0.14), the 8 exact-engine tolerant cells are small P7 and session-edge buckets whose gains are not stable by year, and entry delays worsen the stack in the low-fidelity screen; no flag, nothing applied. Open: P7 :30 as a forward-register observation only (56 rows in 3.5 years), and the unbuilt engine entry-delay hook. Ledger DIS_N 511 cells, rows FADE_ROWS_DISN.md (40), prereg 47c84c85....
+
 
 ## DIS-S (CAL, 2026-11-04) EQUITY-CURVE / STREAK DEPENDENCE of the live books - interim, no PASS claims
 Prereg l2vast/ds3/prereg/DISS_prereg.md sha256 a45e41f3100e79d0d605a3508422b358b7a62eb189b6e066424b92af604a8a53 (DECISIONS.md). Code l2vast/ds3/code/discover/{diss_trades.py, diss.py, diss_a.py, diss_supp.py, diss_report.py}; out/diss_cells.csv, diss_supp.csv, diss_a_streak.csv, diss_a_acf.csv; rows FADE_ROWS_DISS.md; ledger DIS_S (42 cell rows appended); n_tested line DISS = 86 in FADE_NTESTED.md.
@@ -185,14 +277,17 @@ The single cell that beats its own placebos: TR20 BOOK HALF (halve a book when i
 MDE: HOLD weekly paired MDE $3.2-10k for the engine cells (2.8 x SE), as large as most deltas; only the DD cuts, not the mean changes, are outside it.
 Verdict: the stack's own recent result does not predict its next result; equity-curve overlays cut drawdown only as much as trading less would, at a mean cost; no overlay earns a place. Drawdown view: keep the weekly floor / locks already live (HALT-RESUME conclusion unchanged on Q1-A ts2).
 
+
 ## DIS-AD (BASE-4, 2026-11-04T21:58Z): PB ASIA RECONCILED - full page autopilot/DS3_PB_ASIA.md; scope DISAD_scope.md sha256 9ce7146c0e0893c0a8de0470a01b61330fecee0c51c5e83e92fce87ccd0a3044; ledger DIS_AD; no PASS
 PB asia post-2023 net +3.98 pts/trade (V2) = unconditional side drift -1.22 + side/day information +4.20 + timing +1.00; timing +2.69 in 2023-25 and -1.79 in 2026, so the DIS-M "below drift" (L6M +12 vs delayed +532, excess -521) is a 2026-window statement about entry TIMING vs a delayed same-side entry (not drift); (i) is real for 2023-25 (gross -0.69 pre-2023, +5.01 post; 45% of post P&L in the top 5 weeks), (iii) +254 is the live-exit object in L6M (O3 +222 vs X3 replica +12). PB pre-2023 negativity: gross -0.69 (SE 1.15) + cost 1.43 under V2.
 
 Correction (BASE-4, 2026-11-04T22:01Z, from DIS-AD) to the DIS-M section: the statistic called 'excess over causal matched drift' (P1c: the same trades, same side, entry delayed 5..120 min) is NOT drift - it keeps the signal's side and day selection and measures ENTRY TIMING only; it is renamed 'excess over delayed same-side entry (timing excess)'. The true drift term is the side-independent random-time drift (DIS-M items 1 and 3 benchmark books, and DIS-AD's D: random minute in the session, side fixed or drawn independently of the signal). The DIS-M labels EXCESS SURVIVES (ORBF, VB2 NYPM T1) depended on the timing excess (P1c) plus the random-side and other-day placebos and the family test; the NEGATIVE EXCESS labels of the live groups (e.g. LIVE PB|asia, L6M +12 vs +532) are 'below the delayed entry' statements, dominated by 2026 (for PB asia the timing term is +2.69 in 2023-25 and -1.79 in 2026; DS3_PB_ASIA.md). No DIS-M label is changed; only the wording. AUDIT_L2 benchmarks (a), (b), (c) are separate and stand.
 Correction (BASE-4, 2026-11-04T22:01Z, from DIS-AD) to the DIS-Y section: 'causal drift' / 'drift_c' columns in FADE_ROWS_DISY.md are the delayed same-side entry (timing excess), not drift; all 22 DIS-Y labels depended on that statistic (P1c p <= .10 in L6M and HOLD) together with the random-side and other-day placebos and the 22-cell family test. Against the SIDE-INDEPENDENT random-time drift (random minute in the same session/day, side drawn independently with the list's own long/short share, 100 draws; disy_sideind.py, /mnt/l2/l2vast/ds3_base4/disy_sideind.pkl) the drift is about -50 to -500 $/wk (costs) for every list, and the four survivors clear it: N_REL_rev excess +1556 / +1421 (p .04 / .03), ORBF +1236 / +921 (.02 / .01), bundle +2700 / +3255 (.01 / .01), VB2 NYPM T1 +403 / +281 (.01 / .01). Ten more cells also clear it per cell (p <= .10 in L6M and HOLD) but not the timing-excess family test: Z1 swing, DIS-K, DIS-C, DIS-E, DIS-G, DIS-J, Q13, ONRTH, PD ASIA T2, OR15; not clearing: DIS-B P_REL_cont, DIS-Q 15:00 IMB, VWAPF, VB2 NYAM T3, the Q9 London-off sleeve and both Q4 amplifier forms (family test not recomputed on this statistic). No published label is changed; the survivors' label should be read as 'survives timing excess + placebos + family' and they also clear the true drift. AUDIT_L2 (a), (b), (c) are separate and stand.
 
+
 ## DIS-AG (BASE-4, 2026-11-04T22:06Z): SHADOW LOT CALIBRATION TABLE - autopilot/SHADOW_LOT_TABLE.md; scope DISAG_scope.md sha256 969561f947ac89f648129268252ae48064b9004ff063a3ab97ae6500d4ef46aa; ledger DIS_AG; a table for the user, not a recommendation; no PASS, nothing live
 14 lines (5 SHADOW-2, NYAM books + bundle, 3 top-3 fades, OR15, N_REL_rev) at fixed 1/2/3/4/6 lots and equal-risk ($600 / $1,200) through the live fill model: equal-risk lots per trade 1.0 (60/60 lines) to 3.7 (DIS-C); naive vs winner-deflated expectation, HOLD/PRE stack maxDD change, worst week and HOLD-episode loss at each L, ER-ladder effective lots. Conservative (A) weekly expectations are negative for most lines at every size; the 2026-regime naive levels are the best-year levels.
+
 
 ## DIS-AC (Z3, 2026-11-04 ~22:45Z): Asia continuation hold as a causal-regime book - REGIME-2026 LEAD, NOT AN ADDITION
 Prereg l2vast/ds3/prereg/DIS_AC_prereg.md sha256 3595f2c6fbfd6167b1d13ae267cb976b3388dd2aa77f3cf709ddfa7009976a83 (renamed from the DIS-B file sha 7c6fa241..., no statistic run before; DECISIONS.md). Ledger DIS_AC +288 cells (0 dup). Rows FADE_ROWS_DISAC.md (top 8 conditional books). n_tested DISAC = 288 (96 Asia hold books x 3 switches). Code l2vast/ds3/code/dis_a/ (dac_a.py, dac_b.py, dac_b_run.py, dac_b_an.py, dac_final.py); data out/dis_a/dac_a*.csv/pkl, out/dis_ac/dac_b_*.
@@ -205,19 +300,24 @@ Books = the DIS-A D1 Asia sub-grid (96 books with >= 100 trades: live HM/KB/PE/S
 * Plain sentence: the Asia-continuation hold is a 2024-26 regime (profitable only since 2024, on in 2020-21 only partly) and a causal 'trailing Asia-hold P&L > 0' switch makes the L_HM Asia hold look conditional in 2023-26 (family max-T p 0.079, positive stack gain carry-dropped), but the same ON state lost money in 2013-2022, the walk-forward allocation does not beat random books (rank 0.61-0.86), and the book is 0.6-0.7 correlated with the live Asia sleeve: REGIME-2026 LEAD, not an addition; watch it on the forward register only.
 
 
+
 ## DIS-P (Z1): POST-STOP COOLDOWN / LOSS-STREAK OVERLAYS on the six live books, interim row 1 (2026-11-04T22:12Z) post-hoc, no PASS, Shadow only, \$0, on-disk
 DIS-O (calendar-day overlays) is WITHDRAWN: dead_lookup shows it is covered (EINT2 590+ cells incl. d2.dow0.skip, d2.opexday.skip, d2.ev|fomc.skip, d2.ev|cpi.skip; NTE1 / NTE1C / RISKOFF_NTE2 more than 120,000 no-trade-expanded cells with event-relative and month-end timing; A2DDRR day-of-week halts; DD3 roll-week rollouts); gaps, overnight range and same-side concentration are also stored. Prereg l2vast/ds3/prereg/DISP_Z1_prereg.md sha256 26c73efa000bd0da328e4142b902d46248cf5853afc384598fdf955b0c20710f (DECISIONS.md before any DIS-P statistic); dead_lookup for the idea (consecutive loss, loss streak, after stop, cooldown): 0 hits. n_tested DISP = 336; 246 cells have >= 5 affected taken rows; ledger DIS_P; rows autopilot/FADE_ROWS_DISP.md (31 exact-engine rows). Code l2vast/ds3/code/zones3/fade_mz/disp_run.py.
 Definition: a stop-out = a taken row of the Q1-A ts2 run that exits at or beyond 0.9 x its library stop (817 of 21,646 taken rows, 3.8%: the live exits (TH-L2 cuts, locks) end most losers earlier); after a stop-out in the same book (B), in any book on the same side (S) or in any book (A), optionally after two consecutive stop-outs of the book in a label day (streak2), signals within M = 15 / 30 / 60 / 120 minutes of the stop-out's EXIT time are skipped or halved (strictly causal: the exit precedes the signal). 3 triggers x 2 streak x 4 M x 2 actions x 7 scopes = 336 cells.
 Results (surrogate first-order, carry dropped): NOW-ONLY 98, TOLERANT 16 of 246; family max-stat (100 worlds, one random shift of +-3..30 label days applied to the stop-out event times of ALL cells): null best S median 0.081, 95th 0.228, max 0.254; the best real cell (stop-out in any book on the same side, single, 30-minute cooldown, ALL books, skip; 167 rows) has S 0.098: stack maxDD cut L6M +14.1% / HOLD +5.6% / MID +7.7% / PRE -8.9% / X' +1.3%, mean change +\$119 / +\$120 per week (MDE \$3,146), cell placebos p 0.01 / 0.01 / 0.06 (event shift / random rows / shifted order) -> FAMILY p 0.39; minimum family p over all cells 0.39; BH q over the 53 screened cell-level (event-shift) p-values has minimum 0.03 but the cell-level placebo is not the family test; 6 screened cells have all three cell placebos <= 0.10. Exact engine (31 cells): TOLERANT 5, NOW-ONLY (REGIME) 18, DEAD 8; the surrogate-vs-exact correlation of the score is only 0.44. The exact best-S cells (any-book / same-side stop-out, 120-minute cooldown, book K7) cut L6M by 31-34% (PA9 +31% / +40%) but HOLD by -5% to -17%, MID -18% to -51% and PRE -1% to -11%: an L6M-only drawdown cut that makes HOLD and MID worse; they are NOT tolerant. The 5 exact-tolerant cells are tiny (18-153 affected rows; cuts of 1-2% on L6M and HOLD, X'/PRE 0) with family p 0.97-1.00.
 Plain sentence: a stop-out cooldown on the live signals does not help the stack beyond what random same-size skips give - the best surrogate cell (S 0.098) is inside the family null (p 0.39), the L6M-heavy exact cells worsen HOLD and MID, and the exact-tolerant cells are 18-153 rows with 1-2% cuts; no flag, nothing applied. Note: the stop-out definition (exit at 0.9 of the stop) catches only 3.8% of rows because the live exits cut losers earlier; a looser 'loss' trigger (any losing row) is NOT covered by this prereg and would be a separate, registered variant.
 
+
 ## DIS-AJ (BASE-4, 2026-11-04T22:12Z): TRUE-DRIFT TEST FINISHED - interim 1; scope DISAJ_scope.md sha256 799e91a152698d3bc458f451505198a0268b4f6abd5a91ce3834184b572971e3; ledger DIS_AJ; n_tested DISAJ; full table = the appended "RANKED LIST (true-drift family)" section in DS3_DISCOVER.md; no PASS, nothing live
 21 cells x 3 world sets x 200 worlds (W1 random minute + independent side, W2 day-shuffle, W3 matched clock). Labels: clears true drift + family 1 (NYAM fade bundle (ONRTH+VWAPF+ORBF)); clears per-cell only 13; drift-explained 7; negative 0. All four fade survivors pass the matched-clock test; only the NYAM bundle also clears the 21-cell family test (L6M 0.06 / HOLD 0.00). Corrects DIS-Y: its family test was on the timing excess.
 Correction (Z1, DIS-P interim 1): the exact best-S cells with the 120-minute cooldown are on P7 (book index 1: 'S single 120 skip' and 'A single 120 skip/half'), M7 (index 4) and ALL books, not K7. Their exact stack cuts are L6M +24% to +34% (PA9 L6M +28% to +40%) with HOLD -10% to -21%, MID -18% to -60% and PRE between +5% and -11% (e.g. any-book single-stop 120-min skip on ALL books: L6M +32.2%, HOLD -21.3%, MID -60.3%, PRE +4.7%); the conclusion is unchanged.
 
+
 ## RESTORED SECTIONS (BASE-4, 2026-11-04T22:16Z): DS3_DISCOVER2.md lost content between the 21:06Z snapshot and 21:58Z (file was 430 lines at 21:06Z, 189 lines in the 21:58Z sync copy); the sections below are copied verbatim from /tmp/DS3_DISCOVER2.bak2 (21:06Z snapshot) for headers that are missing now. Sections written after 21:06Z and lost (DIS-M, DIS-Y, DIS-T, DIS-U, others) are restored or must be re-appended by their owners; nothing else was changed.
+
 # DS3_DISCOVER2 - section S4b: DIS-E interim 2 (final) - plateau or point, other anchors, close - 2026-11-04 20:42Z
 Addendum autopilot/DIS_E_ADD1_PREREG.md (sha256 in DECISIONS.md; written before the neighbourhood scores; n_tested +672 and +48 control cells, cumulative DIS_E 1,216 in DISE_NTESTED.md). Code l2vast/ds3/code/disc/ (dise_nbhd.py, dise_final.py); data /mnt/l2/l2vast/ds3_dise/.
+
 ## 1. Is F prevday|FAILURE NY-AM a plateau or a point?
 **Neighbourhood N1 (648 cells: touch tolerance x lookback x refill-failure window x stop x target x time stop):**
 - N1 cells 648: NOW-ONLY 320, TOLERANT 202 (31%), STRICT 82 (13%); share of cells positive in L6M 69%, HOLD 80%, PRE 58%, X' 39%.
@@ -257,6 +357,7 @@ Placebos x100: shift5 L6M 0.03 / HOLD 0.02 / stack-gain 0.05, random side L6M 0.
 | 1.0x | PRE | 0.202 -> 0.212 | 75.1 -> 72.3 |
 | 1.0x | X' | 0.061 -> 0.065 | 49.4 -> 44.2 |
 | 1.0x | HOLD_dropH | 0.252 -> 0.261 | 104.8 -> 103.3 |
+
 ## 2. The same refill-failure signal at other anchors (pre-stated N2: 24 cells)
 | anchor | session | shape | trades | L3M | L6M | HOLD | MID | PRE | X' | gate |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -285,12 +386,15 @@ Placebos x100: shift5 L6M 0.03 / HOLD 0.02 / stack-gain 0.05, random side L6M 0.
 | round50 | nypm | 1.50 ATR 2R T30 | 751 | -1623 | -78 | -281 | -420 | +53 | -181 | - |
 | round50 | nypm | 1.50 ATR 1R T30 | 751 | -1328 | +247 | -215 | -589 | -19 | +29 | - |
 Family max-T over the 24 N2 cells (100 worlds, random side / shuffled day): HOLD mean family p 0.92 / 0.76, L6M Calmar family p 0.38 / 0.39. Plain sentence: the signal does NOT carry over to the overnight high/low (L6M ~0 to +0.4k, HOLD negative), to round numbers in NY-AM (negative or about zero) or to the previous-day extreme in NY-PM (negative); round numbers in NY-PM show one NOW-ONLY cell (T60: L6M +2.4k, HOLD +0.5k, PRE -0.6k, not tolerant). The refill-failure follow is specific to the previous-day extreme in the NY-AM session.
+
 ## DIS-E close
 **DIS-E closes: the book-pressure and queue-dynamics series (depth imbalance, cancel / add pressure, refill failure on their own, the liquidity-gated opening-range break, absorption and failure at round numbers and overnight extremes) are not entry signals; the one surviving book is 'follow the break of the previous-day high / low in NY-AM when the book has just shown refill failures' - a plateau, driven by the refill-failure condition (controls flat / negative without it), positive in 3 of 4 years and in every window L1M-X', but thin (317 trades, top-5 trades 72% of its P&L, L6M mean $1.4k/wk inside its $3.6k MDE, stack-gain placebo p .05-.32 on HOLD, family max-T over the small family 0.38-0.92) - a tracked Shadow WATCH, not a lead.**
 **Correction note (S4b, same hour):** the lead sits at the 93rd percentile of its N1 neighbourhood on L6M and the 77th on HOLD (the figures in the section text, not the 61st / 60th quoted in the message to the coordinator): it is among the better neighbours, so its own numbers are the flattering end of the plateau; the neighbourhood medians (L6M about +0.39k, HOLD +0.24k, PRE +0.06k per week) are the fairer expectation.
 
+
 ## DIS-J CLOSED (ZL-1, ~22:45Z): L6M-dollar family max-T (652 books, 100 worlds each of random side and shuffled-day)
 Family p of the real maximum (best book N_CENT NYAM T4 b1 1R T120, L6M +1,368/wk): 0.41 (side) / 0.040 (shuffled-day). 0 of 652 books reach max-T p <= 0.10 or BH q <= 0.10 (smallest max-T p 0.406, smallest q 0.612); requested books: N_CENT NYAM T4 default L6M +926 p_raw 0.069 / max-T 1.0 / q 0.612; Q_MP NYAM T2 +788 0.069 / 1.0 / 0.612; N_T2K NYAM T4 +657 0.02 / 1.0 / 0.612; N_MP NYAM T4 +272 0.327 / 1.0 / 0.786. With the HOLD-Calmar run (family p 0.17 / 0.32, min q 0.748) and the stage-3 result (option levels do not improve any live book's bracket), **DIS-J ends with no option-OI level book that survives a family test, and no flag.** Reserve item for a later program: SPX/SPXW OPRA and CME weekly option files (data gaps listed in Q4_NQ_STRUCTURE.md).
+
 
 
 ## DIS-G (Z1) interim row 2 (2026-11-04T20:48Z) post-hoc, no PASS, Shadow only, $0, on-disk
@@ -310,6 +414,7 @@ The flag (trailing 20-day mean ES-YM correlation below its trailing 250-day medi
 When ES and RTY 5-min delta CONFIRM the fade direction the G4 NY-AM cell does worse: mean $/trade confirm vs not L6M -12 vs +183 (p 0.34), HOLD -91 vs +173 (p 0.06), PRE -198 vs +44 (p 0.03), X' -173 vs -18 (p 0.25); ES 5-min alone L6M -29 vs +284 (p 0.11), HOLD -2 vs +189 (p 0.15); the two G1 cells show no consistent sign (ES5 / RTY5 / ES1 differences +-40..+170 per trade with p 0.11-1.0). 2 of 48 tests have p <= 0.05 (expected 2.4): noise; the sign (flow with the fade = worse) is the same in all four windows for the G4 cell but not for the G1 cells.
 Plain sentence: other-index state as a filter on the live books is dead (no cell is better than a random same-size skip except PRE-only for the NY-AM YM-decoupling halving), the YM-decoupling flag conditions nothing that survives multiplicity, and ES/RTY aggressor delta splits the G4 cell only at noise level; DIS-G stays unflagged.
 Correction (Z1, interim row 2, step B): 2 of 60 tests have p <= 0.05 (CAL NY-AM fade bundle X' p 0.011, H7 all sessions PRE p 0.043), not 3; M7 all sessions X' is p 0.055. Expected 3 by chance. Step C count (2 of 48 at p <= 0.05: the G4 cell RTY5 confirms PRE p 0.048 and ES5+RTY5 confirm PRE p 0.026) is correct.
+
 
 
 ## DIS-F: POST-EARNINGS-DAY OVERLAY (CAL; interim 1, 2026-11-04 20:50Z; no PASS claims; ledger DIS_F 50 cells; rows FADE_ROWS_DISF.md; n_tested line DISF in FADE_NTESTED.md)
@@ -335,8 +440,10 @@ Power (flagged days per window; day-level MDE = 2.8 x SE of flagged-minus-other)
 Verdict: no overlay carried; the post-earnings-day flag stays a descriptive fact (Q4_NQ_STRUCTURE.md, section CAL).
 
 
+
 # DS3_DISCOVER2 - section S4b: DIS-L NQ book state at the open (09:30-09:35) -> OR-break direction - interim 1, 2026-11-04 20:51Z
 Prereg autopilot/DIS_L_PREREG.md (sha256 in DECISIONS.md; n_tested 92 in DISL_NTESTED.md; two deviations / additions logged before the trading cells); ledger DIS_L; rows FADE_ROWS_DISL.md; code l2vast/ds3/code/disc/ (dl_feat.py, dl_analyze.py, dl_trade.py); data /mnt/l2/l2vast/ds3_dl/. Shadow only, no PASS claims. Target: the first 1-min close beyond the 30-minute opening range between 10:00 and 11:30 ET (900 days with a break 2023-04..2026-10, up share 52%); features from the NQ 1-s L2 tables (MBO-derived book / queue / flow fields) over 09:30:00-09:34:59.
+
 ## (a) Which open features predict the break direction (block permutation, 5-day blocks; MDE |rho| 0.09 at n = 900)
 | feature | rho with up-break | AUC | n | block-perm p | BH q (16) | MDE | 2026 only rho (p) | before 2025-10-23 rho (p) |
 |---|---|---|---|---|---|---|---|---|
@@ -357,6 +464,7 @@ Prereg autopilot/DIS_L_PREREG.md (sha256 in DECISIONS.md; n_tested 92 in DISL_NT
 | F15 refill-failure count | +0.034 | 0.517 | 900 | 0.3053 | 0.326 | 0.09 | +0.057 (0.450) | +0.030 (0.437) |
 | F9 add pressure | +0.004 | 0.502 | 900 | 0.9020 | 0.902 | 0.09 | +0.122 (0.079) | -0.031 (0.426) |
 Plain sentence: four open features carry a real, same-direction signal on which way the opening range breaks - the first-5-min return (rho +0.18, AUC 0.605), the 5-min order-flow-imbalance share (+0.19, AUC 0.608), the large-print imbalance (+0.14, AUC 0.576) and the aggressor delta share (+0.10, AUC 0.558), all BH q <= .016 - a continuation: early buying pressure means the range breaks up. The queue-dynamics fields (depth imbalance, cancel / add pressure, refill failure, microprice, spread, depth, trade-rate surge) do not predict it (q > .04, and the depth-imbalance and queue-absorption signs are slightly negative).
+
 ## (b) Walk-forward models (expanding window, 150-day minimum, 2-day purge, monthly refit, test 2024-02..2026-10)
 | model | OOS days | AUC | accuracy | log-loss (base) | permutation p |
 |---|---|---|---|---|---|
@@ -365,6 +473,7 @@ Plain sentence: four open features carry a real, same-direction signal on which 
 | MF11 | 668 | 0.610 | 0.578 | n/a | 0.003 |
 | M4 | 668 | 0.620 | 0.579 | n/a | 0.003 |
 Plain sentence: the book state predicts the break direction out of sample with AUC 0.58-0.62 and 58% accuracy (permutation p .002-.003), stable before the break date (AUC 0.59-0.64) and in 2026 (0.57); but the first-5-min return ALONE gives AUC 0.610 and the four-feature model 0.620: the MBO-derived book state adds about +0.01 AUC to what the price move already says. The 16-feature model is worse (0.583) than the 3-feature one (0.615).
+
 ## (c) 40 trading cells (live fill model, gate_v3, corrected carrying weeks; lots capped at 6)
 Baseline - every break traded WITH, unconditioned: stop 0.75 ATR 1R: 868 breaks, L6M -733, HOLD -1717, PRE -919 / stop 0.75 ATR 2R: 868 breaks, L6M +327, HOLD -1517, PRE -43 / stop 1.50 ATR 1R: 868 breaks, L6M -1665, HOLD -2198, PRE +332 / stop 1.50 ATR 2R: 868 breaks, L6M -1778, HOLD -1860, PRE +517.
 | rule | cells | median trades | median L6M | median HOLD | median PRE | NOW-ONLY | TOLERANT |
@@ -384,17 +493,22 @@ Best 8 by L6M:
 | M16 | fade | 1.50 | 1 | 279 | +620 | +776 | +553 | -913 | -11 | +0 | +1627 | NOW-ONLY |
 **Family max-T over the 40 cells (100 worlds):** HOLD mean family p 0.109 (random side) / 0.010 (shuffled day); L6M Calmar 1.000 / 0.782.
 Plain sentence: knowing the direction does not make a book. Trading the break WITH the book-state prediction loses or is flat in every window (median L6M -430, HOLD -972; no cell clears the gate except one M16 cell with a negative HOLD and MID); the FADE of a break that the book state did not expect pays in L6M / HOLD (median L6M +579, HOLD +674, up to +1.5k / +1.3k per week for the 16-feature model at 0.75 ATR 2R) but loses in PRE and X' (REGIME), no fade cell is TOLERANT, and the family null does not separate the best cell (HOLD mean family p 0.109 against random sides, 0.010 against shuffled days; L6M Calmar 0.78-1.0). The Q4 hypothesis (liquidity at the open and the OR-break outcome) is therefore reproduced as a PREDICTION result (price move and flow at the open predict the break direction) but not as a tradeable book.
+
 ## DIS-L close
 **DIS-L closes (interim, no lead):** the open book state predicts the OR-break direction (OOS AUC about 0.6, stable across the 2025-10-23 break date) but only through the first 5 minutes' price move and order flow (+0.01 AUC from the MBO-derived features); no WITH or FADE book built on it clears the tolerant gate, the family null, or the PRE / X' years; recorded as a tracked prediction fact (the opening 5 minutes tell the break direction ~58% of the time), not a book.
+
 
 ## DIS-G CLOSED (2026-11-04T20:53Z) - plain sentence
 DIS-G is closed with no flag: across 783 tested items (736 NQ entry cells driven by the state of ES, RTY and YM; 20 skip / half filters on the six live books; 15 YM-decoupling conditioning series x 4 windows; 12 ES / RTY aggressor-delta splits of the best cells) the state of the other indexes does not drive a tradable NQ entry or a useful filter beyond what the 2026 NY-AM regime gives any fade-like entry - the best of 728 entry cells has family p 0.56 (G4 beta-residual fade, NY-AM, L6M +$1,280/wk), no cell passes the tolerant gate with placebo p <= 0.10 (21 are tolerant with a failed placebo), none of the 20 live-book filters beats a random same-size skip except the NY-AM YM-decoupling halving in PRE alone (rank 0.04, not in HOLD, MID, X' or L6M), the YM-decoupling flag (on for 85% of L6M days, a recent-period marker) conditions nothing after multiplicity (2 of 60 at p <= 0.05, 3 expected), and ES / RTY aggressor delta splits the G4 cell only at noise level (2 of 48). Open items, not run: the exit-hook variant (a TH-L2-style cut driven by the other indexes; needs an engine hook) and tick-level order flow beyond the 1-min aggressor delta. Ledger DIS_G (748 cells), rows FADE_ROWS_DISG.md (63 + 20), prereg a8f296bb... and addendum 4afeb32c....
 
 
+
 # DS3_DISCOVER2 - section S4b: DIS-P the open-direction fact as a side filter / size overlay - interim 1, 2026-11-04 21:00Z
 Prereg autopilot/DIS_P_PREREG.md (sha256 in DECISIONS.md; n_tested 176 in DISP_NTESTED.md); ledger DIS_P; rows FADE_ROWS_DISP.md; code l2vast/ds3/code/disc/ (dp_build.py, dp_eval.py, dp_verify.py); data /mnt/l2/l2vast/ds3_dp/. dead_lookup first: no stored cell uses an open-direction overlay (grep 'side filter' 0 rows, 'openflow' 0 rows); neighbouring regions cited, not repeated: 'first5' 230 rows (NTE1, NTE1C, A2DDRR), 'drive' 3,290 rows (SDGAP2f5, DIS_G, NTE1), DIS_L 56 rows. Shadow only, no PASS claims, no purchases.
+
 ## Design
 The DIS_L predictors (first-5-min return, OFI5 share, their composite, the walk-forward M4 probability; all known at 09:35) are applied to entries in 09:35-10:30 ET only (entries before 09:35 are excluded: K7/H7/M7 NY-AM 2,426 eligible rows (all three together), Shadow ONRTH 310, VWAPF 960, ORBF 778, O7 397, OR15 628, VB2 503 trades). A trade 'agrees' when its side equals the predicted break direction. Actions: skip when it disagrees, x0.5 when it disagrees, x1.5 when it agrees, both. **Sizing constraint found:** the live NY-AM lots of K7, H7 and M7 are 1, so x0.5 is impossible (min 1 lot; the x0.5 cells are exactly null in the ts2 engine) and x1.5 rounds to 2 lots (x2); the Shadow lines are run at the study 2 lots (x0.5 -> 1, x1.5 -> 3). 9 books x 4 predictors x 4 actions + 16 NY-AM fade bundle + 16 live-three = 176 cells.
+
 ## Screen (paired daily difference from the row-level trade $; windows with the corrected carrying weeks; delta in $/wk)
 | book | cells | NOW-ONLY | TOLERANT | median delta L6M | median delta HOLD | median delta PRE | median L6M MDE |
 |---|---|---|---|---|---|---|---|
@@ -410,6 +524,7 @@ The DIS_L predictors (first-5-min return, OFI5 share, their composite, the walk-
 | VB2 | 16 | 7 | 0 | -94 | -79 | -52 | +772 |
 | VWAPF | 16 | 0 | 0 | -200 | -285 | +417 | +1342 |
 Cells NOW-ONLY (delta L3M and L6M > 0) 44, overlay-TOLERANT 8 (no worse than -0.5 MDE in PRE and X', stack / book maxDD not more than 2% worse in HOLD and PRE). Family max-T over all 176 cells (100 worlds, shifted-feature-day): family p of the best delta L6M 0.96, of the best delta HOLD 0.79; smallest cell-level max-T p 0.96 (L6M) / 0.79 (HOLD); BH q >= 0.9. Placebo p of NOW-ONLY cells (worst of shifted-feature-day, random same-count rows, random direction with the same up-share): 1 of 44 NOW-ONLY cells have p <= .10 on L6M, 0 on HOLD.
+
 ## The overlay-TOLERANT cells
 | book | predictor | action | acted rows | delta L1M | L3M | L6M | HOLD | MID | PRE | X' | L6M MDE | placebo p L6M / HOLD (worst of 3) | family max-T p L6M / HOLD | PA9 L6M / HOLD / PRE |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -421,6 +536,7 @@ Cells NOW-ONLY (delta L3M and L6M > 0) 44, overlay-TOLERANT 8 (no worse than -0.
 | K7 | P3 | A1 | 904 | +1156 | +817 | +377 | +264 | +171 | +192 | -78 | +782 | 0.50 / 0.54 | 1.00 / 1.00 | +0.060 / -0.015 / -0.026 |
 | H7 | P1 | A1 | 612 | +716 | +399 | +291 | +12 | -212 | -27 | -43 | +773 | 0.73 / 0.67 | 1.00 / 1.00 | +0.002 / -0.004 / +0.007 |
 | H7 | P2 | A1 | 612 | +368 | +184 | +189 | +38 | +44 | -23 | +51 | +691 | 0.89 / 0.64 | 1.00 / 1.00 | +0.014 / -0.001 / -0.002 |
+
 ## Engine verification of the stack-book cells (ts2 + lots_mult / extra_skip hooks, Q1-A reference, lock R scaled by the factor)
 | cell | engine total delta ($, whole history) | linear approximation | corr (daily) | delta mean L6M / HOLD / PRE ($/wk) | delta stack maxDD L6M / HOLD / PRE ($k; negative = better) |
 |---|---|---|---|---|---|
@@ -432,6 +548,7 @@ Cells NOW-ONLY (delta L3M and L6M > 0) 44, overlay-TOLERANT 8 (no worse than -0.
 | ('LIVE3', 'P2', 'A1') |  +40073 | +39520 | 0.98 | +934 / +203 / +242 | -6.7 / +2.9 / +9.7 |
 | ('LIVE3', 'P3', 'A1') |  +30118 | +31733 | 0.99 | +628 / +130 / +181 | -6.7 / +2.9 / +9.7 |
 Plain sentence: skipping the NY-AM entries of K7 / H7 / M7 (or of the live three together) that disagree with the open prediction raises the L6M mean by +0.2 to +0.9k/wk and cuts the L6M stack maxDD (-3.6k K7, -6.7k live three), but it RAISES the HOLD stack maxDD (+1.6k, +2.9k) and the PRE stack maxDD (+5.6k, +9.7k): the filter removes recent losers and some earlier hedge; every delta is inside its paired MDE (K7 +0.49k vs 0.75k; live three +0.84k vs 2.1k), the placebos are at chance (p .5-.9), the family p is 0.96 / 0.79, and PA9 of the stack maxDD cut is only +0.06-0.08 in L6M and negative in HOLD / PRE. The x1.5-when-agree overlay on M7 doubles the NY-AM lot (1 -> 2) and the engine shows no benefit (see rows).
+
 ## (b) Does the fade work when the open prediction was wrong? (NY-AM fade bundle and the other Shadow lines; mean $ per trade at the study lots; agree = the trade side equals the predicted break direction, i.e. the fade fights a break the open did NOT predict)
 | book | predictor | trades agreeing (side = predicted direction) | disagreeing | mean $/trade agree | disagree | 2026 agree | 2026 disagree | 2026 acted trades |
 |---|---|---|---|---|---|---|---|---|
@@ -452,10 +569,13 @@ Plain sentence: skipping the NY-AM entries of K7 / H7 / M7 (or of the live three
 | O7 | P3 | 356 | 41 | +382 | +443 | +1600 | +1759 | 19 |
 | O7 | P4 | 245 | 46 | +644 | +262 | +1923 | +40 | 19 |
 Plain sentence: for ORBF (which fades the break) a trade whose side agrees with the open prediction is a fade of an unexpected break; its mean is no better than the disagree trades (all years -166 vs -79 $/trade; 2026 +314 vs +337); ONRTH and OR15 earn more when the side agrees with the open (ONRTH 2026 +1,453 vs +583 per trade on 70 trades, OR15 2026 +226..+440 vs +700..+890 the other way), the signs are not stable across predictors, and the best bundle overlay (x1.5 when it agrees, composite predictor) adds +0.76k/wk in L6M and +2.3k in MID but loses -0.23k / -0.66k in PRE / X' (REGIME). **Nothing separates 'the fade works when the open was wrong'.**
+
 ## (c) O7 drive vs open-flow agreement
 O7 trades with the drive, and the drive direction almost always agrees with the first-5-min price/flow (356 of 397 O7 trades agree for the composite predictor); the 41 disagreeing trades earn +443 $/trade (2026: 19 trades) against +382 for the agreeing ones, so skipping them removes P&L; 0 of 16 O7 cells is NOW-ONLY. The gate is not a filter on O7.
+
 ## DIS-P verdict
 No overlay of the open-direction fact on the live or Shadow NY-AM books survives: every positive delta is inside its MDE, the placebos and the family max-T (0.96 / 0.79) are at chance, the skip filters on K7 / H7 / M7 trade L6M gains for HOLD / PRE drawdown, and the fade-bundle and O7 questions are answered no. The open-direction fact (DIS_L) stays a prediction fact, not a trading edge on the existing books.
+
 
 ## DIS-Q (CAL, 2026-11-04) LATE-DAY BOOKS 15:00-16:55 - interim, no PASS claims
 Prereg l2vast/ds3/prereg/DISQ_prereg.md sha256 aa115f2ddb8272f8c2d8b7c6ebc92c2858c6525042fae50b016c51cb95ce4f5a (DECISIONS.md). Code l2vast/ds3/code/discover/{disq.py, disq_supp.py, disq_report.py}; out/disq_cells.csv, disq_p1fine.csv, disq_engine_bucket.csv; rows FADE_ROWS_DISQ.md; ledger DIS_Q (440 cells appended; 120 thin WITCH/RUSS rows carry clk=nan); n_tested line DISQ = 440 in FADE_NTESTED.md.
@@ -469,6 +589,7 @@ Results (200 eligible cells, S = mean $/wk over L6M, HOLD, MID, PRE, X' at 2 lot
 5. The 16:00-16:55 post-cash-close entries (16:00, 16:30) are the weakest clocks (mean S -150, -134).
 Live stack P&L by clock bucket, descriptive (Q1-A ts2, taken rows, net_flat at live lots): the engine has NO entries after 15:00 and none in the 'close' session at all. nypm entries are all KB: before 13:00 +$21.7k over 322 trades (+114/wk), 13:00-14:00 -$4.3k (256), 14:00-15:00 -$8.3k (232); since 2026-05: +6.6k / -0.6k / -8.5k. So the live NY-PM book trades only until 15:00; the 15:00-16:55 window is unoccupied by the stack, which is why the late-day books have zero overlap (and no stack gain to speak of).
 MDE: weekly L6M MDE 1,200-2,300 $/wk, HOLD 800-1,700 per book (2.8 x SE), as large as most of the S values; only the very top cells exceed it. PA9 not applicable (shadow books outside the engine). Verdict: no late-day book earns a place; 15:50 DRIFT fade is the regime watch item.
+
 
 
 ## DIS-N (Z1): INTRADAY-CLOCK OVERLAYS on the six live books, interim row 1 (2026-11-04T21:04Z) post-hoc, no PASS, Shadow only, $0, on-disk
@@ -492,13 +613,17 @@ Plain sentence (interim): intraday-clock effects on the live signals are not dis
 Correction (Z1, DIS-N interim 1): (1) the session-edge TOLERANT cell 'asia first5' is on book index 3 = H7 (HM), not M7. (2) Release-window cells have 11-52 taken rows each (08:30 pre5 24, 10:00 pre5 21 / post5 34 / post15 52, 14:00 post5 15 / post15 11; no taken rows exist in the 08:30 post5 / post15 windows); my explanatory clause that they 'fall in the 09:00-09:59 block or in asia/london' was a conjecture and is withdrawn - the fact is only the small counts. (3) The minimum family p over the 471 cells is 0.80 (not 'below 0.80').
 
 
+
 ## DIS-M (BASE-4): DRIFT BENCHMARK - interim 1 (RESTORED 2026-11-04T22:16Z, short form; the original section was lost; full tables in FADE_ROWS_DISM.md and l2vast/ds3/prereg/DISM_prereg.md + DISM_prereg_addendum1.md)
 Drift benchmark books (random-time and fixed-clock long/short books per session x exit shape at live lots and at 1 lot), Shadow-watch candidates and live groups as excess over matched drift, stack with the drift hedged out. Look-ahead in the first placebo P1 found and corrected (addendum 1, causal P1c = delay 5..120 min). After the DIS-AD correction the statistic is the TIMING excess (excess over the delayed same-side entry), not drift. EXCESS survived only for NYAM ORBF (family .08 / .02, BH q .06 / .05) and VB2 NYPM T1 (.05 / .03). Plain sentence: most of the apparent edge of the live groups and watch lines in 2026 is the market's directional drift plus the timing of entries; the live-group NEGATIVE EXCESS labels (e.g. PB asia) are statements about entry timing in 2026.
+
 
 ## DIS-Y (BASE-4): DRIFT-EXCESS TABLE FOR THE WATCH CANDIDATES - interim 1 (RESTORED 2026-11-04T22:16Z, short form; table in FADE_ROWS_DISY.md; prereg l2vast/ds3/prereg/DISY_prereg.md sha256 860b18ca2f9c94ea180df13152816322f3fee19bb9c94f554adc1b85c8bbf9a3; ledger DIS_Y 22 rows; n_tested DISY 22)
 22 watch cells as excess over the delayed same-side entry (renamed timing excess by the DIS-AD correction), plus random-side and other-day placebos and a 22-cell family max-T. Four survived (DIS-B N_REL_rev, NYAM ORBF, NYAM fade bundle, VB2 NYPM T1); all four pass the AUDIT_L2 fair benchmarks; the true-drift family test is DIS-AJ (only the NYAM bundle clears). The drift-adjusted RANKED LIST sections are in DS3_DISCOVER.md.
 
+
 ## RE-APPENDED Z2 2026-11-04T22:10Z (file-loss restore): DIS_H and DIS_K sections
+
 
 ## DIS_H - after-stop / after-target follow-on books (Z2, 2026-11-04)
 Prereg l2vast/ds3/prereg/DISH_prereg.md sha256 55a4aa636456877b90b996acacc4b0082d656c3b677d281b68d1fe27656e89a6 (+ addendum: RE = add-on position). dead_lookup: no standalone follow-on cell in the ledger; nearest RC1_RA (reverse-confirm exit actions, negative) and RE5_CUTWAIT (DEAD), cited. Rows autopilot/FADE_ROWS_DISH.md; ledger DIS_H (108 cells); DISH_NTESTED 108. Code l2vast/ds3/code/dish/. No PASS claims.
@@ -506,17 +631,20 @@ Design: base = six live books (plain-bracket proxy, live Q1-A lots, P3 caveats).
 Result: nothing survives. Of 108 cells: 86 NULL, 16 tolerant+v2a ("best-of-F"), 6 tolerant with short samples; zero LEAD. Median size-1 L6M/HOLD $/wk: RS -388/+216 (join), RE +277/+4, SL -2465/-1228. The family max-stat kills the positives: the real maximum L6M mean over the 108 cells ($10.1k, L_PE RE 2x, itself gate-failed) is below the median of the 120 null worlds' maxima ($13.2k; 95th pct $24.9k), so p_maxstat is 0.7-1.0 for every cell (the statistic is unnormalised $, so the large-lot books dominate the null max, which makes it conservative for small cells). Tolerant-gate cells: L_PB SL (HOLD +300, L6M +472, but MID -953 and worst placebo p 0.83), L_PB RS (L6M +583, HOLD +876, placebo p 0.14, maxDD $13k), L_HM SL (L6M +1412 but L1M -3338, MID -3386, placebo p 0.72). Drawdowns at live lots are large (L_HM SL maxDD HOLD $48k) relative to the gains. Native 1.28 vs join 2.45 on the follow-on stop leg adds +$50-300/wk per cell but changes no label.
 Conclusion: no follow-on book (reverse, re-entry add-on, second leg) shows an edge beyond the shifted-trigger placebo; reversing at the stop does not recover the stop loss (RS L6M median negative); the continuation leg after a target is negative at median. Sessions recent first in FADE_ROWS_DISH.md.
 
+
 ## DIS_K - range compression / expansion books on NQ (Z2, 2026-11-04)
 Prereg l2vast/ds3/prereg/DISK_prereg.md sha256 0fcda083228285eb0fe52ce7f8c75517c40d7b8aceb1bd980f086fbe9841ad7d (+ addendum: EX125 threshold; n_tested 356). dead_lookup cited: NTE1 PDR.outside / squeeze skip rows (mostly DEAD), CF2-G1/G2 R_outside / RM_nr4 confirm entries, L2EB PDH/PDL level entries (1,350), SIZER_S2 range_so_far_ratio sizing; no standalone breakout/exhaustion book or state overlay existed. Rows autopilot/FADE_ROWS_DISK.md; ledger DIS_K 356 cells; DISK_NTESTED 356. Code l2vast/ds3/code/disk/, results /mnt/l2/l2vast/ds3_zones3_new/Z2_disk/. No PASS claims.
 Design: 919 RTH days (2023-02..2026-10), 15 states (NR4 NR7 INSIDE OUTSIDE CLOSE_TOP/BOT COMP_LO/HI VOV_LO/HI ORC_LO/HI RSF_LO/HI ALL), BO (first 5-min close beyond the 09:30-10:00 range, with / against), EX / EX125 (range-so-far >= 1.5 / 1.25 x bucket median at a day extreme, fade), 2 geometries (60/60 T3600, 40/40 T1800), sessions nyam / nypm / RTH, 2 lots, live fill model; 336 book cells + 20 overlays on the Q1-A ts2 stack. Event counts: 862 BO (823 nyam, ~40 nypm because the first break is usually before 12:00), only 15 EX and 22 EX125 events in 3.5 years - all EX cells and all nypm cells are sample-short.
 Result: no LEAD. 324 of 336 book cells NULL, 7 tolerant but sample short, 5 best-of-F (tolerant + gate_v2a): BO WITH-break on COMP_HI days (ATR5/ATR20 in its top third, i.e. expansion state), nyam: G1 L6M +882 / HOLD +785 / PRE +154 (MDE L6M 1,898, maxDD HOLD $9.8k, worst-20 -$33k), G2 L6M +893 / HOLD +557 / PRE +2 (MDE 1,368, maxDD $7.3k); RTH-pooled G1 +873 / +777 / +68. Their three placebos are favourable (shifted-state-date p 0.07-0.12, random side 0.01-0.05, shifted trigger time 0.02-0.08) but the family max-stat over 336 cells gives p_max 0.46-0.47 (the median of the world maxima is $843/wk, the real best cell is $893), the L6M mean is below its own MDE, MID is ~0 to -43 on the RTH pools, PA9 min HOLD Calmar only 0.07-0.08 and the stack Calmar gain is 0.000-0.002. Other best-of-F cells: CLOSE_BOT nyam WITH G2 (L6M +134, p_shift 0.33), ORC_LO nyam AGAINST G2 (L6M +329; p_state 0.02 but p_shift 0.43, p_max 1.00). Medians over all cells: BO WITH L6M -9 / HOLD +1, BO AGAINST 0 / -34, EX ~0 (too few events).
 Overlays (state days x 0.5 / 1.5 on the live stack, separate 20-cell family): the largest L6M extra is VOV_HI x1.5 (+7,924/wk, MDE 8,969, p_state 0.28, p_max 0.54, stack Calmar gain HOLD -0.02), none clears the family (p_max >= 0.54), stack-Calmar gains all within +-0.05 and the 1.5x overlays raise HOLD drawdown (COMP_HI x1.5: $134k vs $105k). Conclusion: compression/expansion state does not give a tradeable book or a usable size overlay beyond what the shifted-state placebo and the family max-stat allow; the COMP_HI breakout-with line is the only item worth a forward Shadow watch label (best-of-F), not a lead. Trade list for the watch bundle: /mnt/l2/l2vast/ds3_dist/DISK_comp_hi_trades.csv (282 rows, 2 lots).
 
+
 ## RE-APPENDED ZL-2 2026-11-04T22:30Z (my sections lost in the 21:06Z-21:58Z overwrite; re-appended with >> from MORNING.md / FADE_ROWS_DIST.md, not rewritten)
 ### DIS-T (ZL-2): watch-bundle portfolio of the 10 best-of-F candidates (condensed; full rows in FADE_ROWS_DIST.md, prereg DISTBUNDLE_prereg.md sha256 35e2d15318f4568f95a1a0f51aca30639248b49ca040278b728a4ba6487bf103, logged in DECISIONS.md 21:06Z before any outcome)
 Equal-risk ($1,200 mean $ risk to the stop per trade) weekly $, FadeHarness live fill model, corrected carrying weeks. The ten candidates are nearly independent bets (weekly correlation .02, about 9.5 effective bets, -.08 with the stack). The equal-risk bundle cuts the stack HOLD maxDD by $41k (Calmar +0.18; HOLD_dropH +0.37, PRE +0.02, X' -0.02; survives leave-one-program-out), but 92% of the bundle P&L is 2026 (+$5.9k/wk vs +$165/wk in 2023-25); noise best-of-F would give an L6M sum of $21k vs the real $7.4k (p 1.0); winner's-curse-deflated forward mean is negative (-$3.2k/wk full history); empirical-Bayes tau^2 = 0 (pooled). Reading: a regime-contingent diversifier, expected forward mean between about -$3k and +$5k/wk depending on the selection model. Nothing flagged, nothing live.
 Correction/confirmation (ZL-2, 2026-11-04T21:19Z, re-appended): BASE-4 AUDIT-PLC found my Q9/Q10/Q12 shifted-trigger placebos used a signed shift (entries could move earlier than the signal); the delay-only reruns in AUDIT_PLC.md are the valid numbers; no label changes. DIS-T used a noise best-of-F placebo bundle, not a shifted trigger, so no DIS-T label changes. Any time-shift placebo from here on uses only make_placebo(t,'shift5',rng) (forward-only).
 ### Pointers to my other deliverables (own files, intact): DS3_FWD_DD.md (DIS-V), DS3_STACK_2013.md (DIS-X: validation failed, stopped), DS3_SIGNALS_2013.md (signal-level 2013-2026), DS3_ERA_2023.md (DIS-Z), DS3_ATTRIBUTION.md (DIS-AB), DS3_TH_OOS.md (DIS-AE), DS3_TH_MECHANISM.md (DIS-AI); DIS-AK in progress.
+
 
 ## DIS-M (BASE-4): DRIFT BENCHMARK - interim 1, FULL SECTION RE-APPENDED 2026-11-04T22:19Z (the original was lost from this file; tables below are FADE_ROWS_DISM.md verbatim). Shadow only, no PASS claims, no purchases.
 Prereg l2vast/ds3/prereg/DISM_prereg.md sha256 f32b531299744a09a4088c010839c53dbe7dde12df48d3f56bf6aaae52b10104 + addendum 1 (causal P1c) e28ad121ccbeb072e43b94df6e4d5c381e263e4909ca5c380fc328231231a3d3 (DECISIONS.md, the addendum logged after the live-book P1 draws were seen, disclosed); ledger DIS_M 112 rows; n_tested DISM 112; code l2vast/ds3/code/dism/. Harness FadeHarness, Q1-A ts2 base, gate_v3 windows with the carrying weeks dropped, live fill model.
@@ -526,7 +654,9 @@ Prereg l2vast/ds3/prereg/DISM_prereg.md sha256 f32b531299744a09a4088c010839c53db
 **Plain sentence (DIS-M):** against a copy of themselves entered later in the same session, only NYAM ORBF and VB2 NYPM T1 of 21 candidates keep a significant excess, and four live groups (including PB asia in 2026) enter worse than their delayed copies; about 42% of the replica stack's HOLD mean ($3062 of $7363 per week) is what delayed same-side entries earn, so the stack's entry timing and exits, not the existence of the side, carry the rest.
 
 ### Tables (FADE_ROWS_DISM.md)
+
 # FADE_ROWS_DISM - DIS-M drift benchmark (BASE-4; prereg DISM_prereg.md sha256 f32b531299744a09a4088c010839c53dbe7dde12df48d3f56bf6aaae52b10104 + addendum 1 e28ad121ccbeb072e43b94df6e4d5c381e263e4909ca5c380fc328231231a3d3). $/wk. Nothing is a PASS.
+
 
 ## 1. Unconditional benchmark books, RANDOM-TIME (100 draws, one trade per day-session-side), 1 lot, live fill model
 | session | side | exit | L6M | HOLD | MID | PRE | X' | MDE_L6M | 5-95% L6M |
@@ -558,6 +688,7 @@ Prereg l2vast/ds3/prereg/DISM_prereg.md sha256 f32b531299744a09a4088c010839c53db
 
 Exit shapes: X1 60/60 T60 min; X2 stop 60 / target 120 / T120 min; X3 live 60/60 flat 16:55. Fixed-clock C15 / C60 and the half-hour profile: /mnt/l2/l2vast/ds3_base4/dism_bench.csv, dism_bench_profile.csv.
 
+
 ## 2. Live groups: real replica vs matched drift (P1c = same side, entry delayed 5..120 min; P1x = look-ahead control, entry anywhere in the session)
 | cell | L6M real / drift_c / drift_x | HOLD real / drift_c / drift_x | PRE real / drift_c | X' real / drift_c | P1c p (L6M / HOLD) | P2 side p | P3 day p | family max-T (L6M / HOLD) | label |
 |--|--|--|--|--|--|--|--|--|--|
@@ -582,6 +713,7 @@ Exit shapes: X1 60/60 T60 min; X2 stop 60 / target 120 / T120 min; X3 live 60/60
 | LIVE MV|pooled | -530 / -765 / +5153 | +81 / -53 / +5460 | +772 / -115 | -521 / +385 | 0.43 / 0.38 | 0.36 / 0.11 | 0.50 / 0.26 | 1.00 / 1.00 | DRIFT ONLY / inside the placebo band |
 | LIVE PB|pooled | +12 / +532 / +5992 | +213 / +359 / +5044 | +988 / +579 | +227 / +318 | 0.81 / 0.66 | 0.38 / 0.27 | 0.29 / 0.14 | 1.00 / 1.00 | NEGATIVE EXCESS (below the causal drift) |
 
+
 ## 3. Candidates re-expressed as EXCESS over the matched drift
 | book | trades | L1M | L3M | L6M | HOLD | MID | PRE | X' | drift_c L6M / HOLD | excess L6M / HOLD | P1c p (L6M / HOLD) | P2 p | P3 p | family max-T (L6M / HOLD) | BH q (L6M / HOLD) | label |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -605,6 +737,7 @@ Exit shapes: X1 60/60 T60 min; X2 stop 60 / target 120 / T120 min; X3 live 60/60
 | Q11 TD3_50 COUNTER PE_nyam ALL SH1 (live lots) | 1189 | +4446 | +8391 | +4368 | +4253 | -1200 | +2057 | +2876 | +2282 / +1009 | +2085 / +3244 | 0.20 / 0.06 | 0.22 / 0.11 | 0.07 / 0.04 | 1.00 / 0.79 | 0.35 / 0.17 | DRIFT ONLY / inside the placebo band |
 | Q11 TD3_20 COUNTER PE_asia SHORT SH2 (live lots) | 604 | +950 | +1455 | +3488 | +2536 | -658 | +2 | -547 | +2677 / +2793 | +811 / -257 | 0.36 / 0.60 | 0.10 / 0.10 | 0.06 / 0.04 | 1.00 / 1.00 | 0.56 / 0.73 | DRIFT ONLY / inside the placebo band |
 
+
 ## 4. Replica stack with the drift hedged out (carrying weeks dropped for maxDD)
 | window | engine core mean | replica mean | causal drift mean | hedged mean | replica maxDD | hedged maxDD | look-ahead drift mean (P1x) |
 |--|--|--|--|--|--|--|--|
@@ -620,9 +753,11 @@ Exit shapes: X1 60/60 T60 min; X2 stop 60 / target 120 / T120 min; X3 live 60/60
 Genuine PA9 maxDD cut of the hedged vs the replica stack (+ = hedging reduces the drawdown): L6M -53.4%, HOLD +10.1%, MID +5.2%, PRE +33.5%, X' +25.3%; daily correlation replica vs engine core 0.76; replica total / engine core total 0.63.
 
 
+
 # DIS-I (BASE-4): FLOW-CALENDAR books on NQ, as entry books AND as size overlays on the live Q1-A ts2 stack
 
 Shadow only, no PASS claims. Prereg l2vast/ds3/prereg/DISI_prereg.md sha256 be78eb84cf8ee640f09b3c347837597a0e69ce7bd361ee832fc9adefbf8b357b (DECISIONS.md, before any statistic); ledger program DIS_I; rows FADE_ROWS_DISI.md; n_tested DISI = 1,038 (800 entry books + 238 overlay cells). Harness FadeHarness, gate_v3 carry weeks, Q1-A ts2 base, live fill model, equal-$-risk entries ($1,200). Code l2vast/ds3/code/disi/ (disi_cal, disi_books, disi_run_entry, disi_run_overlay, disi_placebo_entry, disi_placebo_overlay, disi_family_entry, disi_family_overlay, disi_report); bulk /mnt/l2/l2vast/ds3_base4/disi_*.
+
 
 ## INTERIM 1 (2026-11-04 19:58 UTC) - everything scored; entry family test HOLD_calmar done, L6M_mean family and the one overlay placebo run still going
 
@@ -672,3 +807,497 @@ No calendar flag, as an entry book or as a size overlay, separates from chance o
 (DIS-I section RE-APPENDED 2026-11-04T22:19Z from the interim text /tmp/disi_interim.txt; rows in FADE_ROWS_DISI.md; ledger DIS_I 1,050 rows.)
 
 RE-APPENDED ZL-1 22:26Z (DIS-U interim 1 was lost from this file in the overwrite; text copied from the 22:17Z snapshot)
+
+- S4a DIS-B table: autopilot/DIS_B_TABLE.md (pointer only; append-only line)
+
+- S4a DIS-B2 table: autopilot/DIS_B2_TABLE.md (pointer only; append-only line)
+
+## DIS-AO (Z1, 2026-11-04 22:40Z): CROSS-INSTRUMENT REPLICATION of the NQ fade survivors on ES, RTY, YM - interim 1 (research only, no PASS, nothing live; re-appended 23:05Z after a stale-copy overwrite)
+Scope DISAO_scope.md sha256 8a187d121ea55e04f1f2134e185326c6992968b9a3a9bfa2c36f9dee34e62051 (logged in DECISIONS.md before any number); ledger DIS_AO (24 cells); n_tested FADE_DISAO 400; code l2vast/ds3/code/disao/; tables l2vast/ds3/out/disao/disao_cells.csv, disao_boot.csv, disao_warm.csv.
+**Plain sentence:** once scaled by each index ATR, the NY-AM fade excess over a random-minute trade is NOT NQ-only in 2026: ES shows the same sign and a significant per-cell excess for VWAPF and the bundle in HOLD and 2026 (not in L6M), YM is weaker, RTY shows nothing or the opposite; NQ-minus-ES is not distinguishable from zero (paired bootstrap), NQ is larger than RTY and YM; before 2023 there is no excess on any instrument; no family-level evidence (L6M family min p 0.76). No PASS.
+**Method / departures:** Z2 xi_gen generators for ONRTH, VWAPF, ORBF, VB2 NYPM T1; N_REL_rev per DIS-B (09:31 entry); bracket 60 f; one numba 1-min simulator for all four (next-bar open + max(0.8f,1 tick) slip, stop first, stop slip max(2.45f,2 ticks), target needs 1-tick trade-through, per-trade time stop, 16:55 ET flat, one position per line, fee 4.84). Cross-check ES ONRTH equal-risk L6M 14.8 / HOLD 78.9 vs FADE_XI 9.9 / 72.9. New-cap windows but bars end 2026-10-16 (RTY 10-23): L6M 25 wk, HOLD 50. Statistic = equal-risk $/wk at $2,400 stop risk. ORBF W1 window 09:30-12:00 as scope. Bundle = sum of components. Family max-T over 24 combos with independent draws. 200 W1 and W3 worlds, warm-up sensitivity 100 W1.
+**Equal-risk excess over W1 drift, $/wk (p) HOLD / 2026 / pre-2023:**
+| line | NQ | ES | RTY | YM |
+|--|--|--|--|--|
+| ONRTH | +1463 (p 0.00) / +1174 (p 0.00) / +50 (p 0.29) | +363 (p 0.19) / +786 (p 0.06) / -10 (p 0.58) | -112 (p 0.58) / +60 (p 0.44) / +10 (p 0.51) | +496 (p 0.19) / +623 (p 0.15) / -83 (p 0.80) |
+| VWAPF | +2735 (p 0.02) / +3298 (p 0.00) / -32 (p 0.64) | +2103 (p 0.03) / +2863 (p 0.00) / +20 (p 0.48) | +674 (p 0.28) / +660 (p 0.31) / -456 (p 0.86) | +18 (p 0.49) / +11 (p 0.50) / +65 (p 0.35) |
+| ORBF | +873 (p 0.15) / +665 (p 0.24) / -164 (p 0.86) | +23 (p 0.51) / -148 (p 0.61) / +131 (p 0.21) | -652 (p 0.81) / -665 (p 0.80) / -494 (p 0.95) | +331 (p 0.30) / +950 (p 0.13) / +64 (p 0.35) |
+| VB2 | +440 (p 0.11) / +301 (p 0.20) / -20 (p 0.53) | +77 (p 0.43) / +477 (p 0.15) / -38 (p 0.58) | -77 (p 0.58) / -39 (p 0.54) / +191 (p 0.13) | +238 (p 0.23) / +16 (p 0.48) / -312 (p 0.98) |
+| N_REL_rev | +1042 (p 0.03) / +1052 (p 0.04) / -41 (p 0.58) | +436 (p 0.17) / +467 (p 0.16) / +215 (p 0.08) | -261 (p 0.69) / -121 (p 0.59) / -298 (p 0.90) | +342 (p 0.24) / +681 (p 0.14) / -172 (p 0.87) |
+| BUNDLE | +5071 (p 0.00) / +5136 (p 0.00) / -146 (p 0.70) | +2489 (p 0.04) / +3501 (p 0.01) / +141 (p 0.29) | -90 (p 0.50) / +55 (p 0.46) / -939 (p 0.95) | +845 (p 0.28) / +1584 (p 0.18) / +46 (p 0.42) |
+
+| line | inst | L6M exc (p) | HOLD exc (p) | family p L6M / HOLD | real pts/trade NQ-eq L6M / HOLD | W3 L6M / HOLD (p) | label |
+|--|--|--|--|--|--|--|--|
+| ONRTH | NQ | +953 (0.09) | +1463 (0.00) | 0.91 / 0.11 | +7.1 / +10.5 | +955 (0.11) / +1411 (0.01) | PER-CELL ONLY | W3 fails |
+| ONRTH | ES | +234 (0.37) | +363 (0.19) | 1.00 / 1.00 | +0.6 / +1.2 | +330 (0.32) / +422 (0.21) | DRIFT-EXPLAINED | W3 fails |
+| ONRTH | RTY | -296 (0.64) | -112 (0.58) | 1.00 / 1.00 | -6.1 / -3.7 | -281 (0.62) / -63 (0.58) | NEGATIVE | W3 fails |
+| ONRTH | YM | +1174 (0.08) | +496 (0.19) | 0.89 / 1.00 | +8.3 / +1.8 | +1098 (0.12) / +432 (0.21) | DRIFT-EXPLAINED | W3 fails |
+| VWAPF | NQ | +1393 (0.23) | +2735 (0.02) | 1.00 / 0.43 | +0.1 / +3.8 | +1079 (0.31) / +2374 (0.03) | DRIFT-EXPLAINED | W3 fails |
+| VWAPF | ES | +61 (0.49) | +2103 (0.03) | 1.00 / 0.53 | -4.9 / +1.0 | -109 (0.52) / +1944 (0.04) | DRIFT-EXPLAINED | W3 fails |
+| VWAPF | RTY | -220 (0.56) | +674 (0.28) | 1.00 / 1.00 | -4.5 / -2.0 | -498 (0.64) / +369 (0.38) | DRIFT-EXPLAINED | W3 fails |
+| VWAPF | YM | -333 (0.55) | +18 (0.49) | 1.00 / 1.00 | -4.0 / -2.9 | -380 (0.60) / -86 (0.51) | DRIFT-EXPLAINED | W3 fails |
+| ORBF | NQ | +687 (0.27) | +873 (0.15) | 1.00 / 0.97 | +0.8 / +2.0 | +548 (0.33) / +811 (0.17) | DRIFT-EXPLAINED | W3 fails |
+| ORBF | ES | -373 (0.65) | +23 (0.51) | 1.00 / 1.00 | -5.1 / -3.0 | -296 (0.61) / +60 (0.50) | DRIFT-EXPLAINED | W3 fails |
+| ORBF | RTY | -1320 (0.91) | -652 (0.81) | 1.00 / 1.00 | -9.2 / -5.7 | -1164 (0.89) / -585 (0.79) | NEGATIVE | W3 fails |
+| ORBF | YM | +1050 (0.17) | +331 (0.30) | 1.00 / 1.00 | +3.5 / -0.7 | +1137 (0.18) / +353 (0.36) | DRIFT-EXPLAINED | W3 fails |
+| VB2 | NQ | +287 (0.27) | +440 (0.11) | 1.00 / 0.96 | +3.2 / +2.6 | +278 (0.33) / +450 (0.15) | DRIFT-EXPLAINED | W3 fails |
+| VB2 | ES | +407 (0.24) | +77 (0.43) | 1.00 / 1.00 | -2.0 / -2.2 | +444 (0.24) / +143 (0.41) | DRIFT-EXPLAINED | W3 fails |
+| VB2 | RTY | +70 (0.46) | -77 (0.58) | 1.00 / 1.00 | -4.1 / -5.1 | +40 (0.48) / -84 (0.56) | DRIFT-EXPLAINED | W3 fails |
+| VB2 | YM | -349 (0.73) | +238 (0.23) | 1.00 / 1.00 | -2.5 / -0.8 | -394 (0.73) / +241 (0.29) | DRIFT-EXPLAINED | W3 fails |
+| N_REL_rev | NQ | +1525 (0.01) | +1042 (0.03) | 0.81 / 0.80 | +19.6 / +12.8 | +983 (0.08) / +663 (0.09) | PER-CELL ONLY | W3 PASS |
+| N_REL_rev | ES | +1106 (0.04) | +436 (0.17) | 0.76 / 0.98 | +11.8 / +2.3 | +1018 (0.07) / +782 (0.05) | DRIFT-EXPLAINED | W3 PASS |
+| N_REL_rev | RTY | -524 (0.78) | -261 (0.69) | 1.00 / 1.00 | -5.1 / -3.1 | -340 (0.77) / +255 (0.23) | NEGATIVE | W3 fails |
+| N_REL_rev | YM | +1043 (0.12) | +342 (0.24) | 0.85 / 1.00 | +11.1 / +2.7 | +975 (0.07) / +386 (0.22) | DRIFT-EXPLAINED | W3 fails |
+| BUNDLE | NQ | +3034 (0.08) | +5071 (0.00) | 0.91 / 0.02 | +1.3 / +4.4 | +2582 (0.12) / +4596 (0.00) | PER-CELL ONLY | W3 fails |
+| BUNDLE | ES | -77 (0.53) | +2489 (0.04) | 1.00 / 0.62 | -4.1 / -0.1 | -75 (0.52) / +2427 (0.06) | DRIFT-EXPLAINED | W3 fails |
+| BUNDLE | RTY | -1836 (0.84) | -90 (0.50) | 1.00 / 1.00 | -6.2 / -3.3 | -1944 (0.86) / -279 (0.52) | NEGATIVE | W3 fails |
+| BUNDLE | YM | +1891 (0.18) | +845 (0.28) | 1.00 / 1.00 | -0.0 / -1.5 | +1855 (0.20) / +699 (0.30) | DRIFT-EXPLAINED | W3 fails |
+
+**NQ minus instrument, paired day bootstrap, daily excess in NQ-eq points (mean diff [95%]; * = excludes 0):**
+| line | vs | L6M | HOLD | 2026 | pre-2023 |
+|--|--|--|--|--|--|
+| ONRTH | ES | +3.7 [-7.3, +14.4] | +5.5 [-1.8, +13.1] | +2.0 [-6.2, +10.5] | +0.3 [-0.9, +1.4] |
+| ONRTH | RTY | +5.2 [-5.9, +16.7] | +7.3 [-0.7, +15.5] | +4.9 [-3.7, +13.6] | +0.4 [-2.2, +2.9] |
+| ONRTH | YM | -1.1 [-12.2, +10.5] | +4.9 [-3.8, +13.4] | +2.8 [-6.2, +11.3] | +0.7 [-0.8, +2.2] |
+| VWAPF | ES | +7.0 [-13.3, +26.3] | +3.3 [-9.1, +16.0] | +2.4 [-11.4, +15.8] | -0.2 [-2.1, +1.6] |
+| VWAPF | RTY | +7.6 [-11.6, +26.3] | +10.2 [-3.1, +24.1] | +13.1 [-2.6, +28.0] | +2.1 [-1.9, +6.3] |
+| VWAPF | YM | +9.3 [-13.3, +30.5] | +14.0 [-0.9, +29.5] | +17.1 [+1.4, +32.3]* | -0.4 [-2.8, +2.1] |
+| ORBF | ES | +5.5 [-7.6, +18.6] | +4.3 [-4.0, +12.5] | +4.1 [-5.0, +13.2] | -1.5 [-3.1, +0.1] |
+| ORBF | RTY | +10.7 [-3.1, +26.1] | +7.8 [-2.0, +17.3] | +6.9 [-3.8, +17.9] | +0.2 [-3.3, +3.8] |
+| ORBF | YM | -1.9 [-16.3, +12.6] | +2.7 [-7.3, +12.6] | -1.5 [-12.5, +9.5] | -1.1 [-3.2, +0.8] |
+| VB2 | ES | +1.8 [-3.6, +7.0] | +1.8 [-1.7, +5.5] | +0.2 [-3.4, +4.0] | +0.0 [-0.5, +0.6] |
+| VB2 | RTY | +2.8 [-2.2, +8.1] | +3.2 [-0.3, +6.8] | +3.5 [-0.4, +7.4] | -0.0 [-1.0, +1.0] |
+| VB2 | YM | +2.5 [-1.6, +7.0] | +1.3 [-1.4, +4.3] | +1.8 [-1.4, +5.1] | +0.5 [-0.1, +1.2] |
+| N_REL_rev | ES | +3.2 [-4.1, +10.5] | +3.2 [-0.9, +7.4] | +3.5 [-1.2, +8.5] | -0.4 [-0.9, +0.1] |
+| N_REL_rev | RTY | +7.5 [-1.1, +16.1] | +4.7 [-1.3, +11.0] | +4.3 [-2.4, +11.2] | +0.8 [-0.6, +2.1] |
+| N_REL_rev | YM | +3.6 [-7.2, +15.1] | +3.6 [-3.3, +10.3] | +3.3 [-4.7, +11.6] | +0.1 [-0.6, +0.9] |
+| BUNDLE | ES | +16.2 [-11.1, +43.7] | +13.2 [-4.3, +30.7] | +8.5 [-9.2, +26.6] | -1.4 [-4.3, +1.6] |
+| BUNDLE | RTY | +23.5 [-2.8, +51.0] | +25.2 [+7.6, +44.8]* | +24.8 [+3.3, +45.9]* | +2.6 [-4.2, +9.1] |
+| BUNDLE | YM | +6.2 [-25.9, +37.4] | +21.6 [+1.7, +42.1]* | +18.4 [-4.5, +40.6] | -0.8 [-4.7, +3.0] |
+
+Reading: ES real P&L is negative in L6M (bundle -2,967 $/wk) and its HOLD excess comes from a very negative random-minute benchmark (~-2.9k $/wk): the fade loses less than random. MDE (2.12 sd) ~1,000-1,700 $/wk per line, 3,000-4,700 bundle. Answer: favours a market-wide 2026 effect strongest in NQ and ES, nil pre-2023; NQ not shown different from ES. Closed at this interim; no PASS, nothing live.
+- Protocol disclosure (Z1, 2026-11-04): for DIS-AO the dead_lookup was run AFTER scoring (to be run BEFORE); it returned no DIS_AO cells, only FADE_XI ES ONRTH overlap used as cross-check; nothing changed.
+
+## DIS-AX (BASE-4, 2026-11-04T22:41Z): TH-L2 CUT COST / LATENCY SENSITIVITY - full page autopilot/DS3_TH_COST.md; scope DISAX_scope.md sha256 371a8908c9f97489855ea85ac4752e8efee49c33624069d6def8e3d7b0b5b0e3; ledger DIS_AX; no PASS, nothing live
+TH-L2 post-cap gain +18076/wk at the engine cut cost (0.80 pt), +12902 at +1 pt, +7761 at +2, +2498 at +3; zero at +3.5 pts (total about 4.3 pt/lot); 2023-26 gain +2029/wk, zero at +0.69 pts; latency 0-3 s changes it by +0.5k..+1.5k; slicing no change; PE carries it.
+
+
+# DS3_DISCOVER2 - section S4b: DIS-AU irregular-session behaviour of the live books, interim 1 - 2026-11-04 22:41Z
+Prereg autopilot/DIS_AU_PREREG.md (sha256 5261b7a0bed063480f27445e1e40b4ee5df357a8a44f9ef94f349808eb2e5f2a in DECISIONS.md, before any statistic); n_tested 49 (DISAU_NTESTED.md); code l2vast/ds3/code/disc/da_build.py, da_eval.py, da_fam.py; data /mnt/l2/l2vast/ds3_dr/. Reference: Q1-A ts2 rows (88,490 engine rows, 21,397 taken here as 20,997 with finite P&L over 927 label days 2023-04..2026-10). Measurement only, Shadow, no PASS claims.
+Day classes found: NORMAL 891, EARLY 34 (13:00 closes: Memorial/Juneteenth/Jul 3-4/Labour/Thanksgiving Friday/Christmas Eve and the Monday holidays MLK/Presidents), DAY_AFTER 30, HOLIDAY_OPEN 4 (20230407, 20250109, 20260403, 20261019 - the last is not a CME holiday and looks like a data-gap day: check by the lead), plus 1,495 Sunday-18:00 session trades on 185 Sundays.
+## Do the live rules misbehave?
+- **Early closes:** the engine's flat deadline on EARLY days is 12:59 (13:14 on the 3 July / Thanksgiving-Friday / Christmas Eve 13:15-type days); none of the 299 early-day trades has a flat deadline after the day's last RTH bar (0 of 299). The 84 entries after the last RTH bar on those days are all Asia-session entries at 18:01-23:58 ET, i.e. after the Globex reopen, not entries into a closed market.
+- **Maintenance halt:** the flat deadline on every normal-length day is 16:54 ET, before the 17:00 halt, so no trade is held through the halt by construction (0 CROSS_MAINT by deadline). The ENTRY_CLOSED flag finds 24 entries with no minute bar within +-60 s (not on a specific class; listed in da_trades.pkl). **Not measurable at this layer:** actual exit second and exit price per trade (the engine rows expose the flat deadline, not the realised exit), so stop slippage by class is not measured and no substitute was invented.
+## Performance by class (mean net $/trade at Q1-A lots versus NORMAL, same book; day-block bootstrap)
+| class | book | trades | days | mean $/trade | NORMAL $/trade | diff | MDE (2.8 SE) | block-boot p | BH q | label |
+|---|---|---|---|---|---|---|---|---|---|---|
+| EARLY | HM | 48 | 26 | +118 | +92 | +26 | 913 | 0.95 | 0.95 | inside MDE |
+| EARLY | KB | 85 | 30 | +63 | +25 | +38 | 431 | 0.81 | 0.95 | inside MDE |
+| EARLY | MV | 50 | 23 | -77 | +1 | -77 | 437 | 0.61 | 0.91 | inside MDE |
+| EARLY | PB | 17 | - | thin | - | - | - | - | - | thin, not tested |
+| EARLY | PE | 73 | 29 | +54 | +317 | -263 | 1650 | 0.64 | 0.91 | inside MDE |
+| EARLY | SM | 26 | 22 | +362 | +204 | +159 | 1334 | 0.77 | 0.95 | inside MDE |
+| EARLY | STACK | 299 | 33 | +95 | +107 | -13 | 705 | 0.90 | 0.95 | inside MDE |
+| HOLIDAY_OPEN | HM | 6 | - | thin | - | - | - | - | - | thin, not tested |
+| HOLIDAY_OPEN | KB | 15 | - | thin | - | - | - | - | - | thin, not tested |
+| HOLIDAY_OPEN | MV | 1 | - | thin | - | - | - | - | - | thin, not tested |
+| HOLIDAY_OPEN | PB | 1 | - | thin | - | - | - | - | - | thin, not tested |
+| HOLIDAY_OPEN | PE | 9 | - | thin | - | - | - | - | - | thin, not tested |
+| HOLIDAY_OPEN | SM | 5 | - | thin | - | - | - | - | - | thin, not tested |
+| HOLIDAY_OPEN | STACK | 37 | 4 | -539 | +107 | -647 | 555 | 0.00 | 0.00 | exceeds MDE |
+| DAY_AFTER | HM | 108 | 29 | +240 | +92 | +148 | 504 | 0.43 | 0.78 | inside MDE |
+| DAY_AFTER | KB | 241 | 29 | +150 | +25 | +125 | 179 | 0.03 | 0.34 | inside MDE |
+| DAY_AFTER | MV | 111 | 28 | -110 | +1 | -111 | 306 | 0.33 | 0.78 | inside MDE |
+| DAY_AFTER | PB | 43 | 25 | +338 | +105 | +233 | 525 | 0.20 | 0.63 | inside MDE |
+| DAY_AFTER | PE | 138 | 29 | +318 | +317 | +1 | 1034 | 0.93 | 0.95 | inside MDE |
+| DAY_AFTER | SM | 46 | 26 | +665 | +204 | +461 | 1041 | 0.21 | 0.63 | inside MDE |
+| DAY_AFTER | STACK | 687 | 29 | +202 | +107 | +95 | 312 | 0.42 | 0.78 | inside MDE |
+| SUNDAY | HM | 320 | 184 | +342 | +92 | +250 | 394 | 0.05 | 0.36 | inside MDE |
+| SUNDAY | KB | 436 | 185 | +74 | +25 | +49 | 147 | 0.35 | 0.78 | inside MDE |
+| SUNDAY | MV | 0 | - | thin | - | - | - | - | - | thin, not tested |
+| SUNDAY | PB | 212 | 131 | -16 | +105 | -120 | 249 | 0.19 | 0.63 | inside MDE |
+| SUNDAY | PE | 399 | 185 | +399 | +317 | +82 | 713 | 0.73 | 0.95 | inside MDE |
+| SUNDAY | SM | 128 | 105 | +388 | +204 | +184 | 747 | 0.47 | 0.78 | inside MDE |
+| SUNDAY | STACK | 1495 | 185 | +232 | +107 | +125 | 288 | 0.22 | 0.63 | inside MDE |
+
+Family: day-shuffled class-label null over the 20 testable class x book cells, max |t| observed 3.22, family p 0.134 (200 worlds); BH q: HOLIDAY_OPEN STACK 0.000 at cell level but it is 37 trades on 4 days (all four days negative: -2.2k, -1.0k, -4.9k, -11.9k), so thin and not a rule; next best DAY_AFTER KB p 0.034 q 0.34, SUNDAY HM p 0.054 q 0.36.
+**Plain sentence:** the live books do not misbehave on early closes or around the maintenance halt (flat deadlines respect the early close and the 17:00 halt; the day_complete=false cases SHADOW-2 flagged are research-filter artefacts of those same irregular days, not live rule breaks); the only large class gap is the HOLIDAY_OPEN stack loss on 4 days (one of which, 20261019, may be a data gap), which is thin and not family-significant (p 0.134); day-after-holiday and Sunday-open means are higher than NORMAL for KB and HM but inside or near MDE with q >= 0.34. No irregular-session switch is proposed. Stop slippage by class is not measurable from the engine rows.
+Next in DIS-AU: (i) check 20261019 against the raw 1-s tables (data gap vs real session), (ii) 2013+ signal-level entry counts on irregular sessions (no P&L claim, per DIS-X), (iii) hold-time of EARLY-day trades if an exit-second can be recovered from the 1-s engine.
+Correction note (S4b, DIS-AU interim 1): the reference line should read "88,490 engine rows, 21,397 taken trades with finite P&L over 927 label days" (my text above wrote 20,997 in error); and the early-day flat deadlines are 12:59 on most early days and 13:14 on the 3 July / Thanksgiving-Friday / Christmas-Eve type days (max observed 13:14), not 13:15. Class trade counts: NORMAL 18,879, SUNDAY 1,495, DAY_AFTER 687, EARLY 299, HOLIDAY_OPEN 37.
+
+## DIS-AV (Z1, 2026-11-04 23:40Z): WHY ES BUT NOT RTY/YM? Descriptive link between the 2026 fade excess and each instrument's own intraday-structure changes - interim 1 (no causal claim, no PASS, nothing live)
+Scope DISAV_scope.md sha256 9ec9d1dd4bc6b8bb29030170535f95e8b315c0fbc3f3c168dd7918fd9ce5d7b5 (logged in DECISIONS.md before any number); ledger DIS_AV (24 link cells); n_tested FADE_DISAV 69; code l2vast/ds3/code/disav/av.py; tables l2vast/ds3/out/disav/levels.csv, links.csv, pooled.csv, rank.csv.
+**Plain sentence:** the 2026 move of the first hour toward a larger share of the day range and volume is visible on NQ, ES and YM (95% block-bootstrap intervals exclude 0) and not on RTY, and the 10-11h reversal rate did not change on any instrument; but the daily link between those changes and the fade excess is nil once forward-safe (lag 1: pooled r 0.02, 0.08 and 0.06 in absolute size, none passing the family test), and YM has the LARGEST first-hour concentration shift with a smaller excess than ES, so these three one-minute structure metrics do not explain why ES carries the excess and RTY/YM do not. Same-day reversal rate correlates +0.21 to +0.25 with the fade excess on every instrument (family p <= .025 each, pooled r 0.23 [0.17, 0.29]), but that is mechanical (the fade lines trade those hours) and vanishes at lag 1 (pooled 0.02). No PASS.
+**Level shift 2026 vs baseline 2024-02..2025-10 (95% block bootstrap):** | inst | metric | baseline | 2026 | shift [CI] |
+|--|--|--|--|--|
+| NQ | rev1011 | 0.492 | 0.503 | +0.011 [-0.100, +0.093] |
+| NQ | fh_range_share | 0.608 | 0.668 | +0.060 [+0.020, +0.097] * |
+| NQ | fh_vol_share | 0.275 | 0.299 | +0.025 [+0.011, +0.035] * |
+| ES | rev1011 | 0.481 | 0.495 | +0.013 [-0.073, +0.100] |
+| ES | fh_range_share | 0.536 | 0.593 | +0.057 [+0.026, +0.092] * |
+| ES | fh_vol_share | 0.240 | 0.251 | +0.011 [+0.002, +0.021] * |
+| RTY | rev1011 | 0.482 | 0.483 | +0.001 [-0.074, +0.089] |
+| RTY | fh_range_share | 0.659 | 0.683 | +0.024 [-0.018, +0.062] |
+| RTY | fh_vol_share | 0.294 | 0.298 | +0.004 [-0.009, +0.016] |
+| YM | rev1011 | 0.485 | 0.490 | +0.005 [-0.071, +0.090] |
+| YM | fh_range_share | 0.606 | 0.688 | +0.082 [+0.051, +0.120] * |
+| YM | fh_vol_share | 0.309 | 0.354 | +0.045 [+0.032, +0.057] * |
+
+**Daily links over HOLD days (r with block-bootstrap CI; placebo p = circular day-shift; family p = max-|r| over the 24 tests):** | inst | metric | lag | r [CI] | p | family p | BH q | label |
+|--|--|--|--|--|--|--|--|
+| NQ | rev1011 | 0 | +0.233 [+0.125, +0.342] | 0.010 | 0.015 | 0.06 | ASSOCIATED |
+| NQ | rev1011 | 1 | +0.096 [-0.010, +0.192] | 0.139 | 0.995 | 0.41 | NONE |
+| NQ | fh_range_share | 0 | -0.110 [-0.235, +0.005] | 0.114 | 0.940 | 0.39 | NONE |
+| NQ | fh_range_share | 1 | -0.070 [-0.176, +0.069] | 0.264 | 1.000 | 0.57 | NONE |
+| NQ | fh_vol_share | 0 | -0.011 [-0.167, +0.134] | 0.841 | 1.000 | 0.92 | NONE |
+| NQ | fh_vol_share | 1 | -0.012 [-0.125, +0.114] | 0.821 | 1.000 | 0.92 | NONE |
+| ES | rev1011 | 0 | +0.212 [+0.085, +0.336] | 0.010 | 0.025 | 0.06 | ASSOCIATED |
+| ES | rev1011 | 1 | -0.071 [-0.193, +0.013] | 0.284 | 1.000 | 0.57 | NONE |
+| ES | fh_range_share | 0 | -0.039 [-0.159, +0.104] | 0.577 | 1.000 | 0.87 | NONE |
+| ES | fh_range_share | 1 | -0.054 [-0.155, +0.079] | 0.353 | 1.000 | 0.65 | NONE |
+| ES | fh_vol_share | 0 | +0.033 [-0.089, +0.168] | 0.622 | 1.000 | 0.88 | NONE |
+| ES | fh_vol_share | 1 | -0.107 [-0.218, -0.010] | 0.090 | 0.965 | 0.36 | PER-TEST ONLY |
+| RTY | rev1011 | 0 | +0.213 [+0.100, +0.324] | 0.005 | 0.025 | 0.06 | ASSOCIATED |
+| RTY | rev1011 | 1 | +0.053 [-0.110, +0.183] | 0.388 | 1.000 | 0.67 | NONE |
+| RTY | fh_range_share | 0 | -0.101 [-0.228, +0.029] | 0.154 | 0.975 | 0.41 | NONE |
+| RTY | fh_range_share | 1 | -0.042 [-0.197, +0.083] | 0.542 | 1.000 | 0.87 | NONE |
+| RTY | fh_vol_share | 0 | -0.023 [-0.166, +0.121] | 0.726 | 1.000 | 0.91 | NONE |
+| RTY | fh_vol_share | 1 | -0.028 [-0.174, +0.088] | 0.667 | 1.000 | 0.89 | NONE |
+| YM | rev1011 | 0 | +0.253 [+0.137, +0.370] | 0.010 | 0.015 | 0.06 | ASSOCIATED |
+| YM | rev1011 | 1 | +0.003 [-0.120, +0.109] | 0.925 | 1.000 | 0.93 | NONE |
+| YM | fh_range_share | 0 | -0.020 [-0.132, +0.107] | 0.761 | 1.000 | 0.91 | NONE |
+| YM | fh_range_share | 1 | -0.144 [-0.239, -0.036] | 0.025 | 0.393 | 0.12 | PER-TEST ONLY |
+| YM | fh_vol_share | 0 | -0.012 [-0.116, +0.092] | 0.881 | 1.000 | 0.92 | NONE |
+| YM | fh_vol_share | 1 | -0.091 [-0.162, -0.000] | 0.179 | 1.000 | 0.43 | NONE |
+
+Pooled (4 instruments stacked, day-block bootstrap): rev1011 lag 0 r +0.228 [+0.165, +0.291]; rev1011 lag 1 r +0.021 [-0.043, +0.065]; fh_range_share lag 0 r -0.068 [-0.140, +0.003]; fh_range_share lag 1 r -0.077 [-0.149, -0.000]; fh_vol_share lag 0 r -0.003 [-0.079, +0.073]; fh_vol_share lag 1 r -0.059 [-0.134, +0.006].
+Between-instrument rank agreement of the 2026 level shift with the 2026 bundle excess (n = 4, descriptive, minimum one-sided p 0.042): rev1011 Spearman 0.8; fh_range_share Spearman 0.4; fh_vol_share Spearman 0.4. Excess pts/week 2026: NQ 128, ES 86, YM 37, RTY -1. Reading: RTY is the one index with no first-hour range/volume concentration shift AND no excess, which fits a flow-concentration story descriptively (3 of 4 points), but YM breaks the ordering (largest shift, smaller excess), and the reversal rate, the metric closest to the fade, did not shift anywhere.
+Limits: spread and depth are not used (no daily series for all four, YM has no L2; Q4_NQ_STRUCTURE.md shows market-wide thinning on NQ/ES/RTY, so it does not separate ES from RTY either); n = 4 instruments; data end 2026-10-16; metrics are one-minute, so ES tick and NQ L2 daily series remain an open item. DIS-AV closed at this interim.
+
+
+# DS3_DISCOVER2 - section S4b: DIS-AU interim 2 (data-gap day, HOLIDAY_OPEN revised, 2013+ counts) - 2026-11-04 22:45Z
+Append-only; supersedes the HOLIDAY_OPEN / DAY_AFTER lines of interim 1 where stated.
+## 20261019 verified: a derived-table gap, not a holiday and not a missing-data day in the 1-s tables
+2026-10-19 is a Monday and not a CME equity holiday. The raw 1-s NQ tables hold 1,381 distinct minutes with rows for that label day (the normal count is 1,380), but the derived minute table ds3_fade/minute.parquet has only 120 bars for it (and 1,260 on 20261020, the missing 120 minutes being the same hole across the 18:00 label-day boundary). The 1-s engine therefore ran the day in full: 12 taken trades, -$11,916 at Q1-A lots (all in the stack). It is relabelled DATA_GAP (minute-table gap) and removed from HOLIDAY_OPEN; 20261020 is relabelled NORMAL (it had been classed DAY_AFTER only because of the hole).
+**Revised HOLIDAY_OPEN:** n = 3 days (20230407 Good Friday, 20250109 national day of mourning, 20260403 Good Friday), 25 stack trades, -322 $/trade vs NORMAL +107 = diff -429 (MDE 374, block-bootstrap p < .001, BH q 0.28 over 20 cells). Family max-T (200 day-shuffled worlds) p 0.194. Three days only: thin, not a rule. DAY_AFTER (28 days, 644 trades): stack +219 vs +107 (diff +112, MDE 330); KB +137 (p 0.024, q 0.17), SM +694 (p 0.026, q 0.17) - inside MDE for the stack, not family-significant. SUNDAY unchanged (HM +251, p 0.052, q 0.26). Other classes unchanged.
+## Other days with 1-s coverage < 98% of the live-session hours (2023-04-03..2026-10-30, 927 label days)
+Coverage = minutes with at least one 1-s row divided by the minute-table bar count of the same label day (and by the class's own expected length). **Only 20261019 fails** (11.5 x: the minute table is the short one); every other label day has 1-s minute coverage within 100% of its minute-table bars, so there are no further 1-s data-gap days in 2023-26; the NORMAL-day minute count is 1,353-1,380 (1% quantile 1,369). The irregular days are short by design (early closes 1,140 minutes; Good Friday 909).
+**How day_complete handles gap days:** Shadow2 Q13 requires >= 300 RTH bars, a 09:30 first bar and a 15:59 last bar from the streamed bars, so a day with a minute-bar hole is day_complete = False and the research row is dropped while the live logger still records its signals (the 8 / 12 / 1 flagged days of SHADOW_PACK_2 are of this kind and of the early-close kind); DIS-K requires >= 20,000 seconds with data; the 1-s engine has no completeness test and trades the day as it comes, which is why 20261019 carries 12 trades. A minute-table rebuild of 20261019 from the 1-s tables is needed before any minute-table research uses that day (flag for the lead; nothing in the live path is affected).
+## 2013-2026 irregular-session entry counts (APX 1-minute signal layer of DIS-Y/X, entry streams with the APX flat rules; **signal-level, not live-stack P&L, no P&L claim**)
+| period | class | days | APX entries | entries/day | mean $/trade at 1 lot (APX, not live) | win | spans 17:00 halt | open past early close | entry after early close |
+|---|---|---|---|---|---|---|---|---|---|
+| pre | NORMAL | 2473 | 26479 | 10.7 | -37 | 0.49 | 0 | 0 | 0 |
+| pre | EARLY | 76 | 421 | 5.5 | +8 | 0.48 | 0 | 0 | 0 |
+| pre | HOLIDAY_OPEN | 4 | 16 | 4.0 | +198 | 0.62 | 0 | 0 | 0 |
+| pre | DAY_AFTER | 80 | 873 | 10.9 | +97 | 0.55 | 0 | 0 | 0 |
+| pre | SUNDAY | 522 | 2563 | 4.9 | -20 | 0.49 | 0 | 0 | 0 |
+| post | NORMAL | 853 | 21872 | 25.6 | +16 | 0.51 | 0 | 0 | 0 |
+| post | EARLY | 33 | 348 | 10.5 | +62 | 0.52 | 0 | 0 | 0 |
+| post | HOLIDAY_OPEN | 3 | 28 | 9.3 | -212 | 0.39 | 0 | 0 | 0 |
+| post | DAY_AFTER | 28 | 736 | 26.3 | +119 | 0.55 | 0 | 0 | 0 |
+| post | SUNDAY | 183 | 1470 | 8.0 | +77 | 0.54 | 0 | 0 | 0 |
+Plain sentence: entries per day on EARLY days are about half of NORMAL in both eras (5.5 vs 10.7 pre-2023, 10.6 vs 25.6 from 2023), as expected for a 13:00 close; DAY_AFTER and SUNDAY entry rates are in line (DAY_AFTER 10.9 vs 10.7 / 26.3 vs 25.6); no APX trade spans the 17:00-18:00 halt, stays open past an early close, or enters after the early close in RTH (all zero) - but that is a property of the APX flat rules, so it confirms the sim, not the live engine, which was checked separately above (flat deadlines 12:59-13:14 on early days, 16:54 otherwise). Mean $/trade by class at the APX layer is of mixed sign and not claimed (HOLIDAY_OPEN has 16 and 28 trades). Only 4 pre-2023 and 3 post-2023 no-RTH-bar days exist in the cache, so holiday-open behaviour is not testable beyond n = 3-4 days per era.
+**DIS-AU status:** measurement complete at the engine and APX layers; no irregular-session rule defect found; stop slippage by class not measurable from the engine rows (no exit price exposed). Closing DIS-AU; ledger revised rows appended.
+
+## DIS-BC (Z1, 2026-11-05 ~00:30Z): DAILY LIQUIDITY SERIES (NQ, ES, RTY 1-s L2) vs the fade-bundle excess - interim 1 (descriptive, no causal claim, no PASS, nothing live)
+Scope DISBC_scope.md sha256 1131b4e80fbbeaa3eacb0d9fd7fc40ea6843ce19d2cee27596b7bd7afabff1cf (in DECISIONS.md before any number; dead_lookup first, no rows); ledger DIS_BC (72 cells); n_tested FADE_DISBC 168; code l2vast/ds3/code/disbc/ (bc_micro.py, bc_an.py); tables l2vast/ds3/out/disbc/ (micro.parquet, levels.csv, nq_vs.csv, links.csv).
+**Plain sentence:** from the 1-s L2 tables, the 2026 market got thinner on all three indices (top-of-book and 5-level depth down 0.5 to 1.0 baseline sd, trades smaller, spread wider), NQ with the largest spread widening (+0.9 sd against +0.3 on ES and RTY), and refill per print moved the opposite way on NQ (-0.9 sd) than on ES (+1.7) and RTY (+1.3); but none of these series, lagged one day, associates with the fade-bundle excess (36 tests, smallest family p 0.48; one per-test hit, ES 10-11h spread, p .07), and nothing separates ES (which has the excess) from RTY (which does not), because the thinning is common to both. So the liquidity data do not explain ES vs RTY; a YM comparison is impossible (no L2/tick table for YM). No PASS.
+**Data/definitions:** 1-s tables NQ 2023-02.., ES and RTY 2023-08..2026-10 (the ES trade ticks under rootmoves were not needed: the 1-s table carries trades and book); YM and nothing else has no L2/ticks, so spread, depth, rate, size and refill cannot be built for YM, and the 4-instrument comparison of DIS-AV is impossible for them. RTY was added (its 1-s tables exist). Windows H1 09:30-10:29, H2 10:00-10:59 ET, day-window needs >= 80% of seconds. spread = mean 1-s spread_t (time-weighted, ticks, clip 0-50); tob = bsz1+asz1; depth5 = 5 levels both sides; rate = trades/s; msize = volume/trades; refill = refill_n/trades (refill SPEED in seconds is not stored; this is the refill count per print). Instrument units differ (NQ spread in 0.25 ticks), hence standardised shifts.
+**Level shift 2026 vs 2024-02..2025-10, in baseline sd [95% block bootstrap]; * = excludes 0:** | inst | window | series | baseline | 2026 | z [CI] |
+|--|--|--|--|--|--|
+| NQ | H1 | spread | 2.574 | 3.382 | +0.90 [+0.47, +1.41] * |
+| NQ | H1 | tob | 4.811 | 3.594 | -1.04 [-1.38, -0.72] * |
+| NQ | H1 | depth5 | 45.015 | 32.428 | -0.97 [-1.30, -0.66] * |
+| NQ | H1 | rate | 21.862 | 23.593 | +0.25 [-0.05, +0.48] |
+| NQ | H1 | msize | 1.459 | 1.373 | -1.18 [-1.63, -0.77] * |
+| NQ | H1 | refill | 0.407 | 0.349 | -0.88 [-1.35, -0.47] * |
+| NQ | H2 | spread | 2.448 | 3.172 | +0.84 [+0.41, +1.33] * |
+| NQ | H2 | tob | 5.134 | 3.877 | -0.92 [-1.27, -0.60] * |
+| NQ | H2 | depth5 | 48.794 | 35.917 | -0.91 [-1.25, -0.59] * |
+| NQ | H2 | rate | 16.591 | 17.127 | +0.09 [-0.14, +0.33] |
+| NQ | H2 | msize | 1.490 | 1.404 | -1.05 [-1.48, -0.68] * |
+| NQ | H2 | refill | 0.417 | 0.371 | -0.77 [-1.30, -0.28] * |
+| ES | H1 | spread | 1.042 | 1.069 | +0.32 [+0.02, +0.60] * |
+| ES | H1 | tob | 73.831 | 44.527 | -0.79 [-1.08, -0.54] * |
+| ES | H1 | depth5 | 629.577 | 394.681 | -0.88 [-1.20, -0.63] * |
+| ES | H1 | rate | 24.241 | 27.184 | +0.26 [-0.01, +0.53] |
+| ES | H1 | msize | 3.070 | 2.806 | -0.53 [-0.89, -0.20] * |
+| ES | H1 | refill | 0.260 | 0.378 | +1.73 [+1.45, +2.05] * |
+| ES | H2 | spread | 1.035 | 1.059 | +0.29 [+0.01, +0.54] * |
+| ES | H2 | tob | 76.574 | 48.913 | -0.74 [-1.03, -0.48] * |
+| ES | H2 | depth5 | 662.311 | 438.512 | -0.82 [-1.14, -0.55] * |
+| ES | H2 | rate | 19.580 | 21.555 | +0.19 [-0.07, +0.46] |
+| ES | H2 | msize | 3.125 | 2.894 | -0.46 [-0.83, -0.13] * |
+| ES | H2 | refill | 0.259 | 0.375 | +1.68 [+1.39, +2.02] * |
+| RTY | H1 | spread | 1.804 | 1.898 | +0.31 [+0.01, +0.69] * |
+| RTY | H1 | tob | 10.704 | 8.572 | -0.62 [-1.03, -0.31] * |
+| RTY | H1 | depth5 | 134.547 | 103.024 | -0.82 [-1.27, -0.47] * |
+| RTY | H1 | rate | 6.222 | 6.863 | +0.26 [-0.05, +0.60] |
+| RTY | H1 | msize | 1.756 | 1.631 | -0.89 [-1.28, -0.56] * |
+| RTY | H1 | refill | 0.536 | 0.593 | +1.33 [+0.98, +1.62] * |
+| RTY | H2 | spread | 1.750 | 1.853 | +0.33 [+0.03, +0.71] * |
+| RTY | H2 | tob | 11.417 | 9.352 | -0.54 [-0.98, -0.20] * |
+| RTY | H2 | depth5 | 145.813 | 112.609 | -0.78 [-1.25, -0.43] * |
+| RTY | H2 | rate | 4.171 | 4.473 | +0.14 [-0.13, +0.44] |
+| RTY | H2 | msize | 1.768 | 1.660 | -0.73 [-1.16, -0.37] * |
+| RTY | H2 | refill | 0.548 | 0.608 | +1.34 [+1.03, +1.65] * |
+
+**NQ minus ES / RTY difference of standardised shifts [95%]:** | vs | window | series | NQ z | other z | diff [CI] |
+|--|--|--|--|--|--|
+| ES | H1 | spread | +0.90 | +0.32 | +0.58 [+0.08, +1.17] * |
+| ES | H1 | tob | -1.04 | -0.79 | -0.24 [-0.69, +0.18] |
+| ES | H1 | depth5 | -0.97 | -0.88 | -0.09 [-0.50, +0.37] |
+| ES | H1 | rate | +0.25 | +0.26 | -0.01 [-0.41, +0.33] |
+| ES | H1 | msize | -1.18 | -0.53 | -0.65 [-1.19, -0.11] * |
+| ES | H1 | refill | -0.88 | +1.73 | -2.61 [-3.18, -2.10] * |
+| ES | H2 | spread | +0.84 | +0.29 | +0.55 [+0.05, +1.09] * |
+| ES | H2 | tob | -0.92 | -0.74 | -0.18 [-0.61, +0.24] |
+| ES | H2 | depth5 | -0.91 | -0.82 | -0.09 [-0.53, +0.38] |
+| ES | H2 | rate | +0.09 | +0.19 | -0.10 [-0.48, +0.24] |
+| ES | H2 | msize | -1.05 | -0.46 | -0.60 [-1.12, -0.07] * |
+| ES | H2 | refill | -0.77 | +1.68 | -2.45 [-3.08, -1.94] * |
+| RTY | H1 | spread | +0.90 | +0.31 | +0.59 [+0.01, +1.15] * |
+| RTY | H1 | tob | -1.04 | -0.62 | -0.42 [-0.89, +0.11] |
+| RTY | H1 | depth5 | -0.97 | -0.82 | -0.15 [-0.61, +0.39] |
+| RTY | H1 | rate | +0.25 | +0.26 | -0.01 [-0.49, +0.37] |
+| RTY | H1 | msize | -1.18 | -0.89 | -0.29 [-0.84, +0.29] |
+| RTY | H1 | refill | -0.88 | +1.33 | -2.21 [-2.77, -1.64] * |
+| RTY | H2 | spread | +0.84 | +0.33 | +0.51 [-0.09, +1.07] |
+| RTY | H2 | tob | -0.92 | -0.54 | -0.38 [-0.85, +0.17] |
+| RTY | H2 | depth5 | -0.91 | -0.78 | -0.13 [-0.60, +0.46] |
+| RTY | H2 | rate | +0.09 | +0.14 | -0.05 [-0.44, +0.29] |
+| RTY | H2 | msize | -1.05 | -0.73 | -0.32 [-0.86, +0.24] |
+| RTY | H2 | refill | -0.77 | +1.34 | -2.11 [-2.72, -1.55] * |
+
+**Lag-1 (forward-safe) link of the series change to the bundle excess over HOLD days (r [CI], placebo p, family p of 36, BH q):** | inst | window | series | r [CI] | p | family p | q | label |
+|--|--|--|--|--|--|--|--|
+| NQ | H1 | spread | -0.02 [-0.14, +0.11] | 0.697 | 1.000 | 0.90 | NONE |
+| NQ | H1 | tob | -0.04 [-0.18, +0.11] | 0.587 | 1.000 | 0.84 | NONE |
+| NQ | H1 | depth5 | -0.05 [-0.19, +0.10] | 0.463 | 1.000 | 0.84 | NONE |
+| NQ | H1 | rate | -0.02 [-0.16, +0.10] | 0.731 | 1.000 | 0.90 | NONE |
+| NQ | H1 | msize | -0.04 [-0.17, +0.12] | 0.587 | 1.000 | 0.84 | NONE |
+| NQ | H1 | refill | +0.01 [-0.10, +0.12] | 0.826 | 1.000 | 0.91 | NONE |
+| NQ | H2 | spread | -0.04 [-0.15, +0.10] | 0.577 | 1.000 | 0.84 | NONE |
+| NQ | H2 | tob | -0.05 [-0.22, +0.10] | 0.463 | 1.000 | 0.84 | NONE |
+| NQ | H2 | depth5 | -0.05 [-0.20, +0.09] | 0.468 | 0.995 | 0.84 | NONE |
+| NQ | H2 | rate | -0.01 [-0.14, +0.12] | 0.945 | 1.000 | 0.95 | NONE |
+| NQ | H2 | msize | -0.04 [-0.18, +0.12] | 0.557 | 1.000 | 0.84 | NONE |
+| NQ | H2 | refill | -0.00 [-0.11, +0.09] | 0.930 | 1.000 | 0.95 | NONE |
+| ES | H1 | spread | +0.11 [-0.03, +0.21] | 0.144 | 0.736 | 0.84 | NONE |
+| ES | H1 | tob | -0.06 [-0.17, +0.07] | 0.438 | 0.990 | 0.84 | NONE |
+| ES | H1 | depth5 | -0.07 [-0.17, +0.06] | 0.443 | 0.985 | 0.84 | NONE |
+| ES | H1 | rate | -0.03 [-0.15, +0.09] | 0.612 | 1.000 | 0.84 | NONE |
+| ES | H1 | msize | -0.06 [-0.17, +0.06] | 0.463 | 0.990 | 0.84 | NONE |
+| ES | H1 | refill | +0.11 [-0.03, +0.21] | 0.179 | 0.771 | 0.84 | NONE |
+| ES | H2 | spread | +0.14 [-0.00, +0.25] | 0.070 | 0.483 | 0.84 | PER-TEST ONLY |
+| ES | H2 | tob | -0.05 [-0.17, +0.07] | 0.473 | 0.995 | 0.84 | NONE |
+| ES | H2 | depth5 | -0.06 [-0.17, +0.08] | 0.527 | 0.990 | 0.84 | NONE |
+| ES | H2 | rate | +0.01 [-0.11, +0.16] | 0.900 | 1.000 | 0.95 | NONE |
+| ES | H2 | msize | -0.03 [-0.14, +0.08] | 0.751 | 1.000 | 0.90 | NONE |
+| ES | H2 | refill | +0.07 [-0.06, +0.18] | 0.338 | 0.965 | 0.84 | NONE |
+| RTY | H1 | spread | +0.06 [-0.04, +0.16] | 0.388 | 0.990 | 0.84 | NONE |
+| RTY | H1 | tob | -0.05 [-0.14, +0.08] | 0.378 | 1.000 | 0.84 | NONE |
+| RTY | H1 | depth5 | -0.04 [-0.14, +0.08] | 0.373 | 1.000 | 0.84 | NONE |
+| RTY | H1 | rate | +0.01 [-0.12, +0.14] | 0.831 | 1.000 | 0.91 | NONE |
+| RTY | H1 | msize | -0.06 [-0.16, +0.07] | 0.249 | 0.995 | 0.84 | NONE |
+| RTY | H1 | refill | -0.07 [-0.14, +0.05] | 0.229 | 0.975 | 0.84 | NONE |
+| RTY | H2 | spread | +0.04 [-0.07, +0.14] | 0.632 | 1.000 | 0.84 | NONE |
+| RTY | H2 | tob | -0.05 [-0.14, +0.07] | 0.289 | 1.000 | 0.84 | NONE |
+| RTY | H2 | depth5 | -0.04 [-0.14, +0.07] | 0.358 | 1.000 | 0.84 | NONE |
+| RTY | H2 | rate | +0.04 [-0.09, +0.16] | 0.463 | 1.000 | 0.84 | NONE |
+| RTY | H2 | msize | -0.01 [-0.12, +0.13] | 0.811 | 1.000 | 0.91 | NONE |
+| RTY | H2 | refill | -0.07 [-0.16, +0.04] | 0.204 | 0.975 | 0.84 | NONE |
+
+Same-day links are mechanical and descriptive only: on ES eight of twelve same-day correlations have p <= .05 (spread +0.17/+0.18, top-of-book -0.17/-0.19, refill +0.23, mean size -0.18), on NQ none and on RTY three (H2 mean size -0.14, H2 refill +0.16, H1 mean size -0.11); this is the ES day-level co-movement with the fade bundle (more refill and wider spread on days the fade pays), not forward information (lag 1 is nil).
+Limits: three instruments; ES/RTY start 2023-08; refill is a count per print, not a time; no tick-level spread (the 1-s grid is time-weighted); data end 2026-10-30 for the L2 tables but the DIS-AO excess ends 2026-10-16/23. DIS-BC closed at this interim.
+- Correction (Z1, DIS-BC): on ES nine (not eight) of the twelve same-day correlations have p <= .05 (H1: spread, top-of-book, 5-level depth, refill; H2: spread, top-of-book, 5-level depth, mean size, refill); the rest of the paragraph stands.
+
+## DIS-BB (BASE-4, 2026-11-04T22:53Z): CAN THE TH-L2 CUT BE A RESTING STOP? - full page autopilot/DS3_TH_AS_STOP.md; scope DISBB_scope.md sha256 833bc47c14ffa6ec1cfc6ea2365ec9bd34c6ed51a7e0704c7161f5861fcc5133; ledger DIS_BB; no PASS, nothing live
+TH-L2 -30 as a resting 30-pt stop: post-cap gain vs TH off at the same stop cost +1880 / +2060 / -36 $/wk at c = 0.80 / 1.28 / 2.45 (box-side cut +12368 / +14597 / +18076), 2023-26 -7616 / -7945 / -9129, HOLD maxDD $208388 at c = 1.28 (TH off $85551, TH on $121322); break-even stop cost 2.43 pt post-cap, none over 2023-26; the liquidity condition adds about +1.4k/wk post-cap and all of the 2023-26 gain.
+
+
+# DS3_DISCOVER2 - section S4b: DIS-BF stop and TARGET fills of the live signal streams (extends Z3 DS3_TAIL_STRESS section 4) - interim 1, 2026-11-04 22:56Z
+Prereg autopilot/DIS_BF_PREREG.md (sha256 24098e733d33f465bb63f0196be3524eab0eb90e9ae15a4cec37e4d9da5bd8bb in DECISIONS.md, before any statistic); n_tested 24 (DISBF_NTESTED.md); code l2vast/ds3/code/disc/bf_run.py, bf_an.py, bf_bound.py (Z3 object reused from tail_stress/slip_tape.py: dis_a sources(), 60/60 bracket, lots 1, BookHarness.simulate on the 1-s path); data /mnt/l2/l2vast/ds3_dr/bf_*.pkl. Measurement only, Shadow, no PASS claims. **Object caveat: it is Z3's signal-level 60/60 bracket object, not the live exit stack (no Trade-Health exits, locks, zones, 70/30), so the dollar bound below is for that object only.**
+**Reproduction check passed:** 12,955 stop exits, slip_next mean 0.147 pt, median -0.25, p95 5.0, p99 16.5, max 102.2 (Z3: 12,955; 0.15; -0.25; 5.0; 16.5; 102.3). Exit counts: 12,955 stops, 14,325 targets, 622 time exits.
+## Stop slippage (slip_next = stop level minus the path close one second after the touch; adverse positive, points)
+| factor | level | exits | mean (pt) | 95% CI | p95 | p99 |
+|---|---|---|---|---|---|---|
+| tod | 00-02 | 814 | -0.01 | -0.25..0.22 | 3.5 | 14.4 |
+| tod | 02-08:30 | 3813 | -0.03 | -0.19..0.14 | 3.5 | 8.0 |
+| tod | 08:30-09:30 | 718 | 2.23 | -0.02..4.12 | 34.5 | 74.4 |
+| tod | 09:30-10:30 | 2135 | 0.11 | -0.13..0.40 | 7.1 | 13.5 |
+| tod | 10:30-12 | 1709 | 0.03 | -0.16..0.23 | 5.5 | 11.2 |
+| tod | 12-14 | 1064 | -0.12 | -0.36..0.10 | 4.0 | 8.3 |
+| tod | 14-16 | 533 | -0.10 | -0.55..0.31 | 5.8 | 15.4 |
+| tod | 16-17 | 30 | -0.33 | -1.14..0.48 | 3.4 | 4.0 |
+| tod | 18-24 | 2139 | 0.16 | -0.01..0.33 | 4.8 | 11.2 |
+| vol | V1 low | 2577 | -0.13 | -0.42..0.13 | 3.5 | 9.0 |
+| vol | V2 mid | 3921 | 0.32 | 0.06..0.63 | 4.8 | 18.8 |
+| vol | V3 high | 6457 | 0.15 | -0.04..0.32 | 6.0 | 20.0 |
+| sess | asia | 2953 | 0.11 | -0.03..0.26 | 4.2 | 11.5 |
+| sess | close | 257 | -0.03 | -0.40..0.41 | 3.3 | 11.6 |
+| sess | london | 3813 | -0.03 | -0.17..0.14 | 3.5 | 8.0 |
+| sess | nyam | 3844 | 0.07 | -0.08..0.25 | 6.2 | 12.8 |
+| sess | nypm | 1370 | -0.14 | -0.38..0.10 | 4.8 | 10.5 |
+| sess | pre | 718 | 2.23 | 0.19..4.30 | 34.5 | 74.4 |
+| book | HM | 1513 | 0.17 | -0.05..0.37 | 5.2 | 13.4 |
+| book | KB | 3751 | 0.19 | 0.03..0.40 | 5.5 | 17.5 |
+| book | MV | 1741 | 0.37 | 0.09..0.67 | 6.2 | 22.6 |
+| book | PB | 2397 | -0.14 | -0.44..0.16 | 3.5 | 9.5 |
+| book | PE | 2922 | 0.09 | -0.10..0.28 | 5.2 | 18.4 |
+| book | SM | 631 | 0.59 | 0.02..1.30 | 5.5 | 42.3 |
+
+Plain finding: stop slippage is concentrated in the 08:30-09:30 ET release hour (the 'pre' session): mean 2.23 pt (n 718) against about 0 for every other hour, p95 34.5 and p99 74.4 pt; the other time-of-day buckets have means -0.33..+0.16 pt. The engine's flat 2.45 pt stop cost is about right on average in that hour and too high everywhere else, but the tail is what matters: the share of stop exits slipping more than 2.45 pt is 21% in 08:30-09:30 and 09:30-10:30 versus 8-9% overnight; by volatility tercile the mean is -0.13 / +0.32 / +0.15 pt (V1/V2/V3) and the tail share rises 9.6% -> 12.1% -> 16.0% with the day's range. Books: SM 0.59 and MV 0.37 pt highest, PB -0.14 lowest; the book factor is not significant (omnibus p 0.94).
+| factor | level | exits | mean (pt) | 95% CI | p95 | p99 |
+|---|---|---|---|---|---|---|
+| tod | 00-02 | 814 | 1.35 | 1.12..1.58 | 4.8 | 13.3 |
+| tod | 02-08:30 | 3813 | 1.30 | 1.18..1.44 | 4.3 | 12.0 |
+| tod | 08:30-09:30 | 718 | 5.48 | 4.17..7.11 | 29.4 | 58.5 |
+| tod | 09:30-10:30 | 2135 | 1.94 | 1.78..2.14 | 6.5 | 14.5 |
+| tod | 10:30-12 | 1709 | 1.52 | 1.39..1.68 | 5.5 | 10.2 |
+| tod | 12-14 | 1064 | 1.34 | 1.21..1.50 | 4.5 | 11.3 |
+| tod | 14-16 | 533 | 1.71 | 1.42..2.07 | 6.8 | 16.9 |
+| tod | 16-17 | 30 | 0.83 | 0.39..1.37 | 3.4 | 5.8 |
+| tod | 18-24 | 2139 | 1.68 | 1.41..2.03 | 5.5 | 12.2 |
+| vol | V1 low | 2577 | 1.22 | 1.09..1.38 | 4.3 | 11.3 |
+| vol | V2 mid | 3921 | 1.75 | 1.54..2.04 | 5.8 | 18.5 |
+| vol | V3 high | 6457 | 1.97 | 1.81..2.14 | 6.8 | 18.2 |
+
+## Tail share (stop exits with slip_next > 2.45 pt = the engine's stop cost)
+| factor | level | exits | share | 95%% CI |
+|---|---|---|---|---|
+| tod | 00-02 | 814 | 0.080 | 0.058..0.102 |
+| tod | 02-08:30 | 3813 | 0.089 | 0.077..0.101 |
+| tod | 08:30-09:30 | 718 | 0.213 | 0.170..0.255 |
+| tod | 09:30-10:30 | 2135 | 0.207 | 0.187..0.229 |
+| tod | 10:30-12 | 1709 | 0.143 | 0.122..0.164 |
+| tod | 12-14 | 1064 | 0.133 | 0.114..0.155 |
+| tod | 14-16 | 533 | 0.120 | 0.094..0.154 |
+| tod | 16-17 | 30 | 0.167 | 0.034..0.333 |
+| tod | 18-24 | 2139 | 0.139 | 0.122..0.153 |
+| vol | V1 low | 2577 | 0.096 | 0.082..0.108 |
+| vol | V2 mid | 3921 | 0.121 | 0.108..0.134 |
+| vol | V3 high | 6457 | 0.160 | 0.149..0.171 |
+| sess | asia | 2953 | 0.123 | 0.109..0.135 |
+| sess | close | 257 | 0.101 | 0.063..0.144 |
+| sess | london | 3813 | 0.089 | 0.077..0.101 |
+| sess | nyam | 3844 | 0.179 | 0.163..0.196 |
+| sess | nypm | 1370 | 0.135 | 0.116..0.154 |
+| sess | pre | 718 | 0.213 | 0.171..0.259 |
+| cls | DAY_AFTER | 382 | 0.110 | 0.071..0.147 |
+| cls | EARLY | 166 | 0.108 | 0.058..0.160 |
+| cls | NORMAL | 12381 | 0.136 | 0.129..0.143 |
+
+## TARGET fills (new; margin = ticks (0.25 pt) by which the touch second's extreme went THROUGH the target level; touch-only = margin < 1 tick, i.e. the level was reached but not printed through in the touch second; reversal = touch-only and the next-second close is back on the entry side by >= 1 tick)
+| factor | level | exits | mean (ticks) | 95% CI | p95 | p99 |
+|---|---|---|---|---|---|---|
+| tod | 00-02 | 1036 | 7.24 | 5.96..8.70 | 30.2 | 57.3 |
+| tod | 02-08:30 | 4294 | 5.93 | 5.47..6.43 | 22.0 | 50.0 |
+| tod | 08:30-09:30 | 863 | 19.34 | 14.34..25.82 | 113.0 | 255.5 |
+| tod | 09:30-10:30 | 2210 | 6.79 | 6.36..7.36 | 24.0 | 48.0 |
+| tod | 10:30-12 | 1812 | 6.18 | 5.67..6.85 | 23.0 | 52.0 |
+| tod | 12-14 | 1131 | 6.21 | 5.39..7.07 | 22.0 | 46.8 |
+| tod | 14-16 | 616 | 6.21 | 5.42..7.32 | 23.2 | 53.0 |
+| tod | 16-17 | 34 | 21.59 | 10.35..33.95 | 114.1 | 119.3 |
+| tod | 18-24 | 2329 | 8.28 | 7.40..9.36 | 29.6 | 81.7 |
+| vol | V1 low | 2115 | 5.42 | 4.63..6.44 | 18.3 | 51.0 |
+| vol | V2 mid | 4310 | 7.56 | 6.56..8.74 | 26.0 | 92.8 |
+| vol | V3 high | 7900 | 7.93 | 7.49..8.50 | 29.0 | 65.0 |
+| sess | asia | 3365 | 7.96 | 7.18..9.01 | 30.0 | 68.7 |
+| sess | close | 275 | 7.75 | 5.79..9.82 | 33.3 | 88.3 |
+| sess | london | 4294 | 5.93 | 5.47..6.39 | 22.0 | 50.0 |
+| sess | nyam | 4022 | 6.52 | 6.13..6.91 | 24.0 | 49.8 |
+| sess | nypm | 1506 | 6.28 | 5.67..7.05 | 22.8 | 52.8 |
+| sess | pre | 863 | 19.34 | 14.25..25.13 | 113.0 | 255.5 |
+
+Of 14,325 target exits, 19.8% are touch-only and 14.2% are touch-only followed by a reversal in the next second. Touch-only share falls with volatility (V1 24.1% -> V2 21.3% -> V3 17.8%), is highest in the london / close sessions (22.9% / 24.7%) and lowest in nyam 09:30-10:30 (15.9%); irregular days are not different (EARLY 16.1%, DAY_AFTER 20.8%, n 224 / 514). The 08:30-09:30 target margin averages 19 ticks (p95 113) against 5-8 elsewhere: when the release moves price, targets are overshot, not just touched.
+| factor | level | exits | share | 95%% CI |
+|---|---|---|---|---|
+| tod | 00-02 | 1036 | 0.191 | 0.161..0.221 |
+| tod | 02-08:30 | 4294 | 0.229 | 0.215..0.244 |
+| tod | 08:30-09:30 | 863 | 0.181 | 0.151..0.210 |
+| tod | 09:30-10:30 | 2210 | 0.159 | 0.142..0.176 |
+| tod | 10:30-12 | 1812 | 0.195 | 0.175..0.217 |
+| tod | 12-14 | 1131 | 0.197 | 0.173..0.223 |
+| tod | 14-16 | 616 | 0.216 | 0.181..0.249 |
+| tod | 16-17 | 34 | 0.235 | 0.105..0.400 |
+| tod | 18-24 | 2329 | 0.184 | 0.168..0.201 |
+| vol | V1 low | 2115 | 0.241 | 0.220..0.261 |
+| vol | V2 mid | 4310 | 0.213 | 0.199..0.227 |
+| vol | V3 high | 7900 | 0.178 | 0.170..0.187 |
+| sess | asia | 3365 | 0.186 | 0.171..0.200 |
+| sess | close | 275 | 0.247 | 0.195..0.297 |
+| sess | london | 4294 | 0.229 | 0.217..0.246 |
+| sess | nyam | 4022 | 0.175 | 0.160..0.188 |
+| sess | nypm | 1506 | 0.197 | 0.176..0.217 |
+| sess | pre | 863 | 0.181 | 0.152..0.210 |
+| cls | DATA_GAP | 36 | 0.222 | 0.222..0.222 |
+| cls | DAY_AFTER | 514 | 0.208 | 0.166..0.257 |
+| cls | EARLY | 224 | 0.161 | 0.101..0.212 |
+| cls | NORMAL | 13544 | 0.198 | 0.191..0.205 |
+
+| factor | level | exits | share | 95%% CI |
+|---|---|---|---|---|
+| tod | 00-02 | 1036 | 0.142 | 0.119..0.166 |
+| tod | 02-08:30 | 4294 | 0.164 | 0.151..0.175 |
+| tod | 08:30-09:30 | 863 | 0.124 | 0.102..0.150 |
+| tod | 09:30-10:30 | 2210 | 0.111 | 0.097..0.124 |
+| tod | 10:30-12 | 1812 | 0.143 | 0.127..0.161 |
+| tod | 12-14 | 1131 | 0.151 | 0.131..0.170 |
+| tod | 14-16 | 616 | 0.170 | 0.139..0.207 |
+| tod | 16-17 | 34 | 0.088 | 0.000..0.189 |
+| tod | 18-24 | 2329 | 0.128 | 0.116..0.142 |
+| vol | V1 low | 2115 | 0.173 | 0.155..0.190 |
+| vol | V2 mid | 4310 | 0.152 | 0.140..0.164 |
+| vol | V3 high | 7900 | 0.129 | 0.121..0.136 |
+| sess | asia | 3365 | 0.132 | 0.121..0.146 |
+| sess | close | 275 | 0.185 | 0.131..0.232 |
+| sess | london | 4294 | 0.164 | 0.151..0.178 |
+| sess | nyam | 4022 | 0.125 | 0.116..0.138 |
+| sess | nypm | 1506 | 0.151 | 0.134..0.168 |
+| sess | pre | 863 | 0.124 | 0.102..0.151 |
+
+### Dollar bound on the touch-only targets (the 60/60 signal object, 1 lot, $20/pt; engine total = sum of net points of all exits 2023-26)
+| book | target exits | touch-only flagged | engine total (1 lot, 60/60 object) | delta if flagged targets are not filled (run on) | per flagged trade |
+|---|---|---|---|---|---|
+| KB | 3951 | 736 | +20807 | +223058 | +303 |
+| PE | 3117 | 605 | +60795 | +91885 | +152 |
+| SM | 722 | 135 | +69803 | -86243 | -639 |
+| HM | 1722 | 347 | +154823 | -78446 | -226 |
+| MV | 1857 | 343 | +33993 | +24294 | +71 |
+| PB | 2956 | 670 | +524171 | +77978 | +116 |
+
+Reading: if every touch-only target were NOT filled and the trade ran on to its stop / time exit, the object's total would change by +$252,526 (+29% of the engine total; +$182,231 if only the 2,038 reversal cases are unfilled), because on average these trades continue in favour: +$89 per flagged trade; the result is book dependent (KB +$303, PE +$152, MV +$71, PB +$116 per flagged trade; SM -$639 and HM -$226 per flagged trade lose if the target is not filled). So a missed fill at the touch is NOT a cost on average in this object, but the SM and HM books are the exposed ones. This is a 60/60 bracket object without the live trailing logic: do not read it as a live-P&L bound.
+## Omnibus tests (equal group means, day-block permutation) with BH over the 24 registered tests
+| kind | metric | factor | omnibus p (day-block perm.) | BH q (24 registered) |
+|---|---|---|---|---|
+| stop | slip_next | tod | 0.079 | 0.126 |
+| stop | slip_next | vol | 0.034 | 0.068 |
+| stop | slip_next | sess | 0.015 | 0.035 |
+| stop | slip_next | book | 0.941 | 0.996 |
+| stop | slip_within | tod | 0.016 | 0.035 |
+| stop | slip_within | vol | 0.001 | 0.004 |
+| stop | slip_within | sess | 0.003 | 0.009 |
+| stop | slip_within | book | 0.890 | 0.996 |
+| stop | tail | tod | 0.140 | 0.210 |
+| stop | tail | vol | 0.001 | 0.004 |
+| stop | tail | sess | 0.002 | 0.007 |
+| stop | tail | book | 0.946 | 0.996 |
+| target | t_margin | tod | 0.006 | 0.016 |
+| target | t_margin | vol | 0.001 | 0.004 |
+| target | t_margin | sess | 0.001 | 0.004 |
+| target | t_margin | book | 0.996 | 0.996 |
+| target | touch_only | tod | 0.351 | 0.468 |
+| target | touch_only | vol | 0.001 | 0.004 |
+| target | touch_only | sess | 0.052 | 0.089 |
+| target | touch_only | book | 0.978 | 0.996 |
+| target | rev | tod | 0.192 | 0.271 |
+| target | rev | vol | 0.001 | 0.004 |
+| target | rev | sess | 0.037 | 0.068 |
+| target | rev | book | 0.996 | 0.996 |
+
+**Plain sentence:** stop slippage is time-of-day and volatility dependent, not book dependent: the 08:30-09:30 release hour carries 2.2 pt mean and a 74 pt p99 per stop exit, and high-volatility days carry a 16% tail share against 9.6% on quiet days (BH q 0.004); about one in five target exits only touches the level (a queue-fill risk proxy, higher in quiet markets and in london / close), and the cost of a missed touch is small on average but not zero for SM and HM. The pooled engine stop cost (2.45 pt) is not violated on average; the tails are concentrated in a known hour. Nothing here is a trading edge; it is an input for the live stop-cost assumption and the Monday 08:30 release-hour caution.
+DIS-BF significance note (S4b): by BH over the 24 registered tests the strong effects are volatility (stop tail share q 0.004, slip_within q 0.004, target margin q 0.004, touch-only share q 0.004, reversal q 0.004), session (stop slip_next q 0.035, slip_within q 0.009, tail q 0.007, target margin q 0.004) and time of day for slip_within (q 0.035) and target margin (q 0.016); time of day for slip_next itself is not significant after BH (p 0.079, q 0.126), i.e. the 08:30-09:30 mean of 2.23 pt is carried by the 'pre' session factor (q 0.035) and a heavy tail, not by a smooth hour-of-day pattern; book is null for all six metrics (q >= 0.996). The 08:30-09:30 CI for slip_next by hour (-0.02..4.12) includes zero; by session label 'pre' it is 0.19..4.30. Dollar bound per flagged trade values: KB +303, PE +152, MV +71, PB +116, SM -639, HM -226.
+
+## CORRECTION DIS_K (Z2, 2026-11-04T23:35Z): the DIS-K simulation ignored the time stops - rerun, conclusion unchanged
+Found while building DIS-BG: my lib `dish_lib.DH.sim_raw` (used by DIS-K) did not apply the `tstop_s` column (flat 16:55 only); DIS-K lists carry tstop 3,600 s (G1) / 1,800 s (G2). Fixed (time stop = min(flat, signal + 1 s + tstop)); DIS-H, P3, Q7, DIS-AZ lists have no time stop and are not affected; ZL-2's own DIS-T / ranked-list runs apply tstop in their harness. DIS-K rerun with the fix (336 book cells, same prereg, same 120 worlds / 3 placebos; ledger program DIS_K_R2, rows autopilot/FADE_ROWS_DISK2.md; v1 files kept in /mnt/l2/l2vast/ds3_zones3_new/Z2_disk/v1_no_tstop/): still 0 LEAD; 322 NULL, 9 tolerant but sample short, 5 best-of-F. The best cell BO COMP_HI nyam G1: L6M +905 / HOLD +644 / PRE +91 (v1 +882 / +785 / +154), MDE L6M 1,875, placebo p_state 0.10 / side 0.04 / shifted time 0.07, family p_max 0.31 (v1 0.46; world-max median $793, 95th pct $1,404), PA9 min HOLD Calmar -0.00 not positive, stack Calmar gain -0.00; G2 cell is now NULL (not tolerant); RTH-pooled G1 +896 / +636. Others: CLOSE_TOP nyam WITH G1 best-of-F (L6M +35, HOLD -81), ORC_LO against G2 best-of-F (L6M +224). Overlays unchanged (+7,924 VOV_HI x1.5, p_max 0.54). Label stays best-of-F (Shadow-watch only); the 282 trade list sent to ZL-2 (DISK_comp_hi_trades.csv) has the same signal seconds in v1 and v2 (checked).

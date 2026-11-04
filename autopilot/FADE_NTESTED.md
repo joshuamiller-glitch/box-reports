@@ -67,3 +67,22 @@
 | 2026-11-04T22:11Z | DISAH | CAL | 61 | DIS-AH per-book lot weights on Q1-A ts2 (locks re-run): PE grid 5, PE x HM 30, KB/MV/SM/PB 20, risk-parity 6; bootstrap 2,000 draws; PA9 best 6 |
 | 2026-11-04T22:12Z | DISAJ | BASE-4 | 63 | DIS-AJ true-drift family test: 21 cells x 3 world sets (random-minute drift, day-shuffle, matched clock) x 200 worlds; scope DISAJ sha 799e91a1... |
 | 2026-11-04T22:14Z | DISP | Z1 | 336 | DIS-P: post-stop cooldown / loss-streak overlays (336 cells) |
+| 2026-11-04T22:32Z | FADE_DISAO | Z1 | 400 | DIS-AO: 24 combos x 6 windows x 2 nulls = 288 excess tests + 72 NQ-vs-instrument bootstraps + 40 warm-up sensitivity; ledger DIS_AO |
+| 2026-11-04T22:41Z | DISAX | BASE-4 | 26 | DIS-AX TH-L2 cut cost/latency/slicing sensitivity (settings, not hypotheses); scope DISAX sha 371a8908... |
+| 2026-11-04T22:43Z | FADE_DISAV | Z1 | 69 | DIS-AV: 48 link tests (24 x bootstrap+placebo) + 12 level shifts + 6 pooled + 3 rank; ledger DIS_AV |
+| 2026-11-04T22:47Z | FADE_DISBC | Z1 | 168 | DIS-BC: 36 level shifts + 24 NQ-vs diffs + 36 lag-1 links x 2 nulls + 36 same-day; ledger DIS_BC |
+| 2026-11-04T22:53Z | DISBB | BASE-4 | 57 | DIS-BB TH-L2 -30 as a resting stop: 57 engine configurations (stops 25-40, targets, costs 0.80-5.0, per book, arm-only/full); scope DISBB sha 833bc47c... |
+| 2026-11-04T22:56Z | FADE_RG | CAL | 1359 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | FADE_VW_STNB | Z2 | 324 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | Q4_ZL2 | ZL-2 | 85 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | Q5 | ZL-2 | 450 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | Q8 | ZL-2 | 100 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | Q9 | ZL-2 | 180 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | Q10 | ZL-2 | 100 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | Q12 | ZL-2 | 160 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | DIST | ZL-2 | 60 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | AUDITL2 | BASE-4 | 12 | QA-2 note (Z1, 2026-11-04T22:56Z): registry only, ledger rows not stored (no DEAD_CELLS program for this slice; numbers are in its report); n_tested unchanged |
+| 2026-11-04T22:56Z | DISN | Z1 | 817 | QA-2 note (Z1, 2026-11-04T22:56Z): DIS_N ledger holds 511 rows = 471 sweep cells that produced trades + 40 entry-delay cells; the other 306 of the 817 registered grid cells had no trades and were not stored (checked against disn_sweep.pkl); n_tested unchanged |
+| 2026-11-04T22:56Z | DISP | Z1 | 336 | QA-2 note (Z1, 2026-11-04T22:56Z): DIS_P (Z1, = DIS-AN) ledger holds 246 rows = the 246 of the 336 grid cells that produced trades (disp_sweep.pkl); the 90 empty cells were not stored; n_tested unchanged |
+| 2026-11-04T22:56Z | DISG | Z1 | 783 | QA-2 note (Z1, 2026-11-04T22:56Z): DIS_G (Z1) ledger holds 748 of the 783 registered cells; the 35 missing are cells without trades by the same rule (not re-verified cell by cell); n_tested unchanged |
+| 2026-11-04T22:56Z | DISAQ | Z3 | 10 | QA-2 note (Z1): DIS-AQ had no registry line; n = ledger rows (program DIS_AQ, 10 rows) pending the owner's own test count; owner to confirm or re-append |
