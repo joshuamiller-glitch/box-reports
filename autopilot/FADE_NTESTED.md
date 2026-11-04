@@ -35,3 +35,5 @@
 | 2026-11-04T19:18Z | FADE_DISB | S4a | 1338 | DIS-B pre-market structure books: cells with n>=100 |
 | 2026-11-04T19:20Z | FADE_DISB | S4a | 1338 | DIS-B pre-market structure books: cells with n>=100 |
 | 2026-11-04T19:24Z | DIS_E | S4b | 496 | queue-dynamics entry books: A IMB, B CAN, C ADD, D RFAIL, E LIQ-ORB, F ABS-ANCHOR |
+| 2026-11-04T19:36Z | DISI | BASE-4 | 1038 | FLOW-CALENDAR: 800 entry books (25 flags x 4 sessions x 4 kinds x 2 shapes) + 238 Q1-A overlay cells (25 flags x 5 scopes x 2 actions minus 12 EINT2-covered); prereg DISI_prereg sha be78eb84... |
+| 2026-11-04T19:54Z | Q5 | ZL-2 | 450 | hold shapes on the six live books: 11 shapes x ~41 book/session cells |

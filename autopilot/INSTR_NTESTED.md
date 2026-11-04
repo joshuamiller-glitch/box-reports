@@ -15,3 +15,6 @@
 P3_NTESTED: 96 simulated cells (12 books x 8 scenarios), no hypothesis tests; Z2 2026-11-04
 P3_NTESTED: 144 simulated cells (prereg 96 + addendum 48 fade at 2 lots), no hypothesis tests; Z2 2026-11-04
 DISH_NTESTED: 108 cells (6 books x 3 variants x 3 sizes x 2 cost bases); 120 family worlds + 3x100 placebos on size-1 cells; Z2 2026-11-04
+DISK_NTESTED: 278 cells (180 BO + 78 EX + 20 overlay); 120 family worlds + placebos; Z2 2026-11-04
+DISK_NTESTED: 356 cells (180 BO + 156 EX + 20 overlay) - supersedes the 278 line above; Z2 2026-11-04
+Q7_NTESTED: 288 cells (6 books x 4 offsets x 3 timings x 2 windows x 2 fill models); 120 family worlds + 3x100 placebos; Z2 2026-11-04
