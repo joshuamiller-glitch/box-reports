@@ -1,9 +1,9 @@
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 18:56Z 11-04 (t+221.9 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 19:26Z 11-04 (t+222.4 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 0% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
-Updated 2026-11-04T18:56:08Z. Box: CPU 0.2%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 4% min 0% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 7.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
+Updated 2026-11-04T19:26:17Z. Box: CPU 31.6%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -82,7 +82,10 @@ Updated 2026-11-04T18:56:08Z. Box: CPU 0.2%, slots busy 13/32, queue 0. Cores pe
 | DD3 | ? | 0 | 0 / 0 | none | prereg |
 | DDRR | ? | 0 | 0 / 0 | none | prereg |
 | DIPENTRY | ? | 0 | 0 / 0 | none | done (report) |
+| DIS | ? | 0 | 0 / 0 | none | prereg |
 | DISC | ? | 0 | 0 / 0 | none | prereg |
+| DISF | ? | 0 | 0 / 0 | none | prereg |
+| DISG | ? | 0 | 0 / 0 | none | prereg |
 | DV2B | ? | 0 | 0 / 0 | none | prereg |
 | DV2C | ? | 0 | 0 / 0 | none | prereg |
 | DV2D | ? | 0 | 0 / 0 | none | prereg |
@@ -151,6 +154,7 @@ Updated 2026-11-04T18:56:08Z. Box: CPU 0.2%, slots busy 13/32, queue 0. Cores pe
 | OPEN | ? | 0 | 0 / 592 | none | prereg |
 | OPENBOOK | ? | 0 | 0 / 0 | none | prereg |
 | P | ? | 0 | 0 / 157 | none | prereg |
+| P3 | ? | 0 | 0 / 0 | none | prereg |
 | P4 | ? | 0 | 0 / 177 | none | prereg |
 | P7 | ? | 0 | 0 / 0 | none | prereg |
 | PB2 | D3PB* | 0 | 0 / 28 | none | prereg |
@@ -171,6 +175,7 @@ Updated 2026-11-04T18:56:08Z. Box: CPU 0.2%, slots busy 13/32, queue 0. Cores pe
 | PULLBACK4 | D3PB* | 0 | 0 / ? | none | done (report) |
 | PY | ? | 0 | 0 / 0 | none | prereg |
 | Q | ? | 0 | 0 / 113 | none | prereg |
+| Q4 | ? | 0 | 0 / 0 | none | prereg |
 | R1 | ? | 0 | 0 / 134 | none | done (report) |
 | R2 | ? | 0 | 0 / 74 | none | done (report) |
 | R4 | ? | 0 | 0 / 58 | none | done (report) |
@@ -261,7 +266,7 @@ Updated 2026-11-04T18:56:08Z. Box: CPU 0.2%, slots busy 13/32, queue 0. Cores pe
 | ZL1 | ? | 0 | 0 / 0 | none | prereg |
 | ZL3 | ? | 0 | 0 / 0 | none | prereg |
 | ZONES3 | ? | 0 | 0 / 0 | none | prereg |
-| unattributed | - | 0.0 | - | - | - |
+| unattributed | - | 7.0 | - | - | - |
 Portfolio verdict: DS3 books: 2 PASS, 1 CANDIDATE: PASS TE7_kelt3m_n14_m1.0, TE6_st10m_n7_m3.0; CANDIDATE TE7_emax5m_f30_s50. DS2 alone: $25,840/wk, SD 106,637, maxDD 537,851. DS2+DS3: $39,391/wk, SD 123,683, maxDD 518,953, worst week -261,281, CI [8,401, 18,767], placebo r 1.000 (WF; holdout 0.994), holdout + (DS2+DS3 $38,598/wk vs DS2 $27,848, diff +$10,750, CI [3,255, 18,600]), peak lots 50 (DS2 27 + DS3 23; sum of book peaks).
 Leaderboard section: autopilot/LEADERBOARD.md (DS3). DS2 baseline series: l2vast/ds3/out/DS2_weekly.parquet. Deliverables ~48 h: DS3_BOOKS.md, DS3_PORTFOLIO.md, DS3_SPEC_*.md.
 <!--DS3-END-->
@@ -272,13 +277,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-04T18:57Z
+## TREND (TL) update 2026-11-04T19:27Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-04T18:47:28Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-04T19:17:28Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -1250,3 +1255,29 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - (17:37Z) LOAD: cores load 0.12/32 (idle by design), mem 57 GB used / 129 GB avail, agents running 0/10 (unchanged), programs: T-FADE / T-INSTR / T-SIZER closed; standing programs alive; waiting for the user's OK on proposals Q2-Q4.
 - (18:09Z) LOAD: cores load 0.24/32 (idle by design), mem 57 GB used / 129 GB avail, agents running 0/10 (unchanged), programs: T-FADE / T-INSTR / T-SIZER closed; standing programs alive; waiting for the user's OK on proposals Q2-Q4.
 - (18:37Z) LOAD: cores load 0.01/32 (idle by design), mem 57 GB used / 129 GB avail, agents running 0/10 (unchanged), programs: T-FADE / T-INSTR / T-SIZER closed; standing programs alive; waiting for the user's OK on proposals Q2-Q4.
+- (wall 19:06Z) USER ORDER: Q1 Q3 Q4 all cores + five untried discovery programs by 22:00Z. Q1 (gamma) already done negative -> folded into Q4 regime-predictor search; dispatching Z2/Z1/S4b/ZL-1/ZL-2/CAL on Q4 hypotheses, BASE-4 on Q3, DQ on quotes (equities, VX) for the proposals.
+- (19:06Z) USER STANDING RULE: when a program closes, do not wait for OK: start the next proposal on the lead's list immediately and tell the user what started (idle is never a state; the user redirects). Purchases still need OK. Saved to memory.
+- (19:08Z) STARTED (standing rule, no OK needed): Q4 (Z2 volume profile/opening structure, Z1 cross-instrument intraday stats, S4b NQ tape/L2 microstructure, ZL-1 options/0DTE structure, ZL-2 change-point dating + causal detectors, CAL mega-cap earnings/rebalance calendar) -> autopilot/Q4_NQ_STRUCTURE.md by 21:00Z; Q3 (BASE-4: unified Shadow table incl. sizer shadow lines) -> SHADOW_PACK.md +3 h; Q1 gamma already closed negative (folded into Q4); quotes for the proposals (DQ, metadata only) by 21:00Z; and two untried discovery programs: DIS-A (Z3: D1/D2 multi-hour holds and pyramids), DIS-B (S4a: Globex pre-market structure books), both $0 data. Agents 10/10. Five-program proposal due in MORNING.md by 22:00Z.
+- (19:09Z) LOAD: cores load 1.3/32 (ramping up), mem 63 GB used / 123 GB avail, agents running 11 listed as running (cap 10: Z3, Z1, S4a, S4b, ZL-2, Z2, ZL-1, CAL, BASE-4, DQ + 1 stale entry), programs: Q4 (6 slices), Q3 Shadow pack, DIS-A (Z3), DIS-B (S4a), quotes (DQ); five-program proposal due 22:00Z.
+- (19:10Z) correction to the 19:09Z line: agents running = exactly 10/10 (Z3, Z1, S4a, S4b, ZL-2, Z2, ZL-1, CAL, BASE-4, DQ); no stale entry.
+- (19:12Z) S4b Q4 report (Q4_NQ_STRUCTURE.md section S4b; NQ 967 label days 2023-02..2026-10-30; ES/RTY 839 days from 2023-08; windows PRE 09:00-09:29, OPEN 09:30-09:59, MID 10:00-11:29 ET; n_tested 85 shift/DiD + 78 prediction in Q4_NTESTED.md; one deviation logged before any outcome: absorption threshold 10 saturated at .999, used 100): shift at 2025-10-23 (120 days after vs 120 before, 107 placebo break dates): NO series is NQ-only (none separates NQ from both ES and RTY at p <= .10); partial NQ-vs-one candidates: L1 cancel/add pressure at the open NQ -0.82 sd vs ES +1.14 sd (NQ-ES p .01, NQ-RTY p .44); absorption frequency at the open NQ-ES p .01; imbalance magnitude at the open NQ-RTY p .01. Shared shift on all three indices: spreads wider (+0.7..+1.1 sd), top-of-book and 5-level depth thinner (-0.5..-1.0 sd), smaller mean trade size (-0.4..-0.8 sd), higher trade rate (+0.5..+0.8 sd). No clear break on NQ: 09:30 surge, sweep share, large-print share, aggressor persistence, refill rate. PREDICTION of next-day fade-bundle P&L / OR-break outcome (previous-day or pre-open values; 5-day block permutation, 20,000 draws for leaders): nothing survives multiplicity: best previous-day mid-session refill-failure share vs fade bundle rho +.117, p .0008, BH q .062 (series almost always zero); a correlated liquidity cluster (tight deep pre-open book, larger prints) predicts higher OR-break win rate, best p .005, BH q .13, Bonferroni .37; 20 of 78 tests p <= .05 whole sample vs ~4 expected; 7 of 78 in 2026 only vs 2 of 78 before the break: concentrated after the break but not significant after correction. Plain answer: no NQ-only microstructure change at the break found; the thinner, wider market of the last year is shared by ES and RTY.
+- (19:12Z) STARTED (standing rule): DIS-C weekend / Sunday-open books (S4b, $0: BTC/MBT weekend move -> NQ Sunday gap, Sunday 18:00-20:00 session, Monday Asia conditioned on BTC weekend state) after S4b's Q4 slice closed. Draft program list in MORNING_FLAGS.md gains item (6).
+- 2026-11-04 ~19:30Z Q4 slices in: Z1 (no stat NQ-specific by prereg, n=232; NQ/ES vol ratio up 12.5% all day but YM moved other way; 10-11h flipped persistence->reversal on all four indexes, market-wide; NY-AM live sleeve flattened Jun 2025, not at break), ZL-2 (NQ fade bundle one step -285 -> +1,427 $/day, best date 2026-02-10, median 2025-12-18, 90% 2025-08-15..2026-02-23, placebo p .002; causal CUSUM needs 50-60 days; no improvement over lag switches; n=85), Z2 (no volume/opening series explains it; gap-fill rate and OR-continuation break NQ-only near reference but suggestive; n=240). ZL-2 break-test tool relayed to ZL-1 and CAL. STARTED (standing rule): P3 execution-realism program on Z2 ($0), report autopilot/DS3_P3_EXEC.md, interim +4 h.
+- 2026-11-04 ~19:40Z DIS-C interim 1 (S4b, n_tested 229, 244 weekends): BTC/MBT weekend jump is coincident with the NQ gap (rho +.44/+.48), no sign prediction beyond 30 min, no gap-fill effect; Sunday 18:00-20:00 family: 180 cells, 1 STRICT, family max-T p .81-.98, best cell Sunday 18:30 with-trend (L6M +0.8-0.9k/wk, inside MDE ~1.7k) = WATCH only; Monday/Tuesday Asia vs MBT jump: 0/28 at p<=.05. Verdict: not a lead. Ledger DIS_C 201 rows.
+- 2026-11-04 ~19:50Z STARTED (standing rule): DIS-E NQ order-book/queue-dynamics entry books on S4b ($0, on-disk L2 only; ledger DIS_E, interim in DS3_DISCOVER2.md +4 h). DIS-C interim done (not a lead).
+- DISCOVER QUOTE 2 (DQ 2026-11-04): equities top-10 NDX+QQQ via EQUS.MINI: 1m $2.9 + RTH 1s ~$44 + RTH trades ~$57; VX front 1m full $163 (L12M $48; 1s/trades pricey: $831/$1768 full); VIX/NDX index NOT available; NQ MBO 20x(09:25-10:30) pilot $9.84; YM 1s $83.8. Recommended set ~$278 (equities 104 + VX 1m 163 + MBO 10). Details: outputs/autopilot/DISCOVER_QUOTES_2.md. USER OK needed.
+- 2026-11-04 ~20:00Z Q4 CAL slice in (n=108): event mix same before/after 2025-10-23; 2026 regime exists on non-earnings days (+1,006/day vs -398); post top-8 earnings day amplifies fade bundle +1,230/day (p .013) and NY-AM sleeve +2,062/day after top-16 (p .001), family p .018, both periods; no earnings event book feasible (62.5 pt move before 1-min-close fill; no post-filing edge). STARTED (standing rule): DIS-F post-earnings-day overlay on CAL ($0; ledger DIS_F; interim +4 h).
+- 2026-11-04 ~20:15Z FIVE UNTRIED DISCOVERY PROGRAMS (lead, per user order; quotes = metadata only, nothing bought; spend still $7,288.26 of $8,000, $711.74 left):
+  (1) DIS-A multi-hour holds + pyramids on live signals - RUNNING (Z3), data on disk, $0.
+  (2) DIS-B Globex pre-market structure books (Asia/London into NY open) - RUNNING (S4a), data on disk, $0.
+  (3) Mega-cap equity leaders + QQQ/NQ basis lead-lag (NVDA AAPL MSFT AMZN GOOGL META AVGO TSLA COST NFLX + QQQ, EQUS.MINI, RTH, 2023-03..now): 1-min $2.93, RTH 1-s ~$44, RTH trades ~$57 -> ~$104 all three, ~$47 without trades. NEEDS OK.
+  (4) VX volatility lead (XCBF.PITCH VX.v.0; VIX index itself not available): full-window 1-min $162.55 + daily $1.05 = ~$164; cheaper last-12-month 1-min + daily ~$49 (1-s only if 1-min shows edge). NEEDS OK.
+  (5) NQ MBO queue-dynamics pilot beyond on-disk L2: 20 days 09:25-10:30 ET (2026-10-05..10-30) 104.8M records 5.87 GB $9.84 (full 3.5 yrs ~$450, not proposed). NEEDS OK. DIS-E (on-disk L2, $0) is the free precursor, RUNNING (S4b).
+  Also running at $0: DIS-C weekend/Sunday (interim: not a lead), DIS-F post-earnings-day overlay (CAL), P3 execution realism (Z2). Dropped: mega-cap earnings event books (CAL: infeasible at 1-s latency, no post-filing edge). Reserve: YM 1-s $83.78, QQQ options 20-day sample ~$12-15.
+  Total ask for (3)+(4 cheap)+(5) = ~$104+$49+$9.84 = ~$163; with VX full-window ~$278. Leaves ~$430-550 of $711.74. No pull until the user says OK.
+- 2026-11-04 ~20:20Z STARTED (standing rule): DIS-G cross-index (ES/RTY/YM) lead-lag/relative-value entry books for NQ on DQ ($0, on-disk; ledger DIS_G; interim +4 h).
+- 2026-11-04 ~20:30Z CORRECTION: DQ declined DIS-G (no harness context; nothing written/bought). DIS-G reassigned to Z1 (harness pointers + ZL-2 as support); ledger DIS_G; interim +4 h. DQ idle (quotes done).
+2026-11-04T19:25Z Z2 P3 EXEC: report autopilot/DS3_P3_EXEC.md - latency cost small/insignificant at path level (+-$90/wk); total live-vs-idealised dominated by bracket re-anchoring noise (L_PE -766 [-1689,+399]); native stop-market worth +$3,097/wk across the six live books (1.28 vs 2.45 pt, n=8/21); 144 cells ledgered P3_EXEC; no PASS
+- 2026-11-04 ~20:45Z P3 CLOSED (Z2, autopilot/DS3_P3_EXEC.md, 144 sim cells): entry latency/slicing cost little (within +-$90/wk at live lots; 14/18 CIs include 0); total live-vs-idealised gap is noise-dominated; ONE mechanical lever: native stop-market vs join-then-market ~+$3,097/wk across six live books (PE +1,711 [1,429,2,004], KB +531, HM +325, MV +256, SM +208, PB +66) but rests on 8 native vs 21 join stops (forward A/B pending; plain-bracket proxy). Most latency-sensitive: PE, KB, HM, MV, SM. STARTED (standing rule): DIS-H after-stop/after-target follow-on books on Z2 ($0, ledger DIS_H, interim +4 h). USER DECISION NEEDED: native stop-market order type per book (see FORWARD_STOP_AB.md).
+- 2026-11-04 ~21:00Z Q3 CLOSED (BASE-4, autopilot/SHADOW_PACK.md): monday_all.py (next 2026-11-09 13:00Z) now writes one Monday table for all Shadow lines (BT flip, NY-AM bundle, top-3 fade books + sum, OR15, sizer vol-target near-miss VT_Q1A, Z3 two-modifier watch Z3_RVD30, monthly NYAM regime read); streaming sizer lines reproduce research multipliers with 0 diffs (88,490 rows; restart 360/360, roll 660/660); sizer verdicts 'MECH IN BAND; EARLY' (VT needs ~128k signals). NEEDED FROM D7 BOX (user/platform): per live signal q1a_mult, lots_l1, zone_half, lots_actual, plus a fills row per real trade (else delta-$ stays empty). Caveat: rv_pct_5d research uses back-adjusted path, live raw drifts slightly up; Z3 raises worst-day lots ~44% in research. STARTED (standing rule): DIS-I flow-calendar books on BASE-4 ($0, ledger DIS_I, interim +4 h).
+- 2026-11-04 ~21:05Z Q4 CLOSED: all slices in (S4b, Z1, ZL-2, Z2, CAL, ZL-1). ZL-1 (n=110): options flow does not break at the fade-bundle break (11 series, all p>=.115; slow trends, 0DTE share 59->76%, volume +72%); two tiny associations (put/call volume vs reversal rho +.108 family p .054; OI put/call vs bundle rho -.130 family p .010; R2<2%, opposite signs). Data gaps: SPX/SPXW OPRA, CME weeklies, NDXP OI. Q4 LEAD SUMMARY: no tested structure explains or predicts the NQ-only 2026 NY-AM reversion; the 10-11h flip is market-wide, microstructure shift is shared with ES/RTY, NQ fade-bundle step dated 2026-02-10 (90% 2025-08..2026-02); causal detectors need 50-60 days; only candidates are post-earnings-day amplifier (family p .018) and NQ-only gap-fill/OR-continuation breaks (suggestive). STARTED (standing rule): DIS-J option-level (OI strike/wall) books on ZL-1 ($0, ledger DIS_J, interim +4 h). Reserve data ideas from ZL-1: SPX/SPXW/RUT/DJX OPRA panel, NDXP 0DTE trades with aggressor flags, CME weekly NQ/ES option bars (quotes not yet requested).

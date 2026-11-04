@@ -29,3 +29,9 @@
 | 2026-11-04T00:25Z | FADE_MZ | Z1 | 3104 | mirror 96 + Mancini failed-break 2,240 + zone-line failed-break 768 cells |
 | 2026-11-04T00:40Z | FADE_GM | CAL | 60 | gamma regime: 7 fade series + 6 live NY-AM books x 3 predictors (G_POS/NEG, ZGD, WALL) + family max-stat; prereg FADE_GM_prereg sha ca77055d |
 | 2026-11-04T01:10Z | FADE_LV | ZL-1 | 1054 | level-anchor fades: stage 1 (170 cells default shape) + stage 2 (12 cells x 72 shapes) + stage 3 (20 planned) |
+| 2026-11-04T19:08Z | Q4_ZL2 | ZL-2 | 85 | change-point dating, common break, online detectors, candidate-vs-break demo |
+| 2026-11-04T19:11Z | DISA_D1 | Z3 | 264 | D1 multi-hour holds: 9 sources x session x stop x time stop x target; prereg DIS_A sha 2280ce04 |
+| 2026-11-04T19:17Z | DIS_C | S4b | 229 | weekend / Sunday-open: 21 predictor tests + 180 Sunday cells + 28 stack-Asia tests |
+| 2026-11-04T19:18Z | FADE_DISB | S4a | 1338 | DIS-B pre-market structure books: cells with n>=100 |
+| 2026-11-04T19:20Z | FADE_DISB | S4a | 1338 | DIS-B pre-market structure books: cells with n>=100 |
+| 2026-11-04T19:24Z | DIS_E | S4b | 496 | queue-dynamics entry books: A IMB, B CAN, C ADD, D RFAIL, E LIQ-ORB, F ABS-ANCHOR |

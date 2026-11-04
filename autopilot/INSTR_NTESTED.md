@@ -12,3 +12,6 @@
 | 2026-11-03T20:57Z | INSTR_CM | S4b | 255 | interim 2 + O7 (pinned drive-pullback) on 5 instruments x 2 scalings |
 | 2026-11-03T20:58Z | INSTR_EQ | Z2 | 420 | 408 + O7 (ES RTY YM x 4 scalings = 12) |
 | 2026-11-03T20:58Z | INSTR_CM | S4b | 253 | interim 2 + O7 (pinned drive-pullback) on 4 instruments x 2 scalings (BTC dropped: 09:30 ET has no meaning for crypto and Z1 has no BTC ratio) |
+P3_NTESTED: 96 simulated cells (12 books x 8 scenarios), no hypothesis tests; Z2 2026-11-04
+P3_NTESTED: 144 simulated cells (prereg 96 + addendum 48 fade at 2 lots), no hypothesis tests; Z2 2026-11-04
+DISH_NTESTED: 108 cells (6 books x 3 variants x 3 sizes x 2 cost bases); 120 family worlds + 3x100 placebos on size-1 cells; Z2 2026-11-04

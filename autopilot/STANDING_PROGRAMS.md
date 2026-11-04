@@ -24,3 +24,6 @@ A first forced refit (baseline) ran 01:21Z-01:36Z (15 min, rc 0 on all steps; th
 
 ## Health check (one line each)
 `ps -eo pid,args | grep -E "monday_all.sh|thp_daily.sh|ledger_monthly.sh|exit_loop.sh" | grep -v grep` should list four loops; each log prints its next fire time at (re)start.
+
+## Update 2026-11-04 (Q3): monday_all now also runs the sizer Shadow runner
+`monday_all.py` (called by the same loop pid 3715292, next fire 2026-11-09T13:00Z) now runs `zones3/sizer_shadow/sizer_forward_weekly.py` (--regdir forward_register/sizer_shadow) and writes ONE markdown table with a row per Shadow line (BT flip, NY-AM fades bundle, the three top-3 books, the top-3 sum, OR15, sizer VT near-miss, Z3 two-modifier watch, monthly NYAM regime) and a verdict column; backup of the previous version: monday_all.py.bak_pre_table. See SHADOW_PACK.md.
