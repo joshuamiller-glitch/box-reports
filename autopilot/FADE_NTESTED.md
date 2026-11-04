@@ -62,3 +62,8 @@
 | 2026-11-04T21:53Z | DISAC | Z3 | 288 | DIS-AC: Asia continuation hold regime book: asia sub-grid x 3 switches; prereg DIS_AC sha 3595f2c6 |
 | 2026-11-04T21:57Z | DISS | CAL | 86 | DIS-S equity-curve/streak: 44 serial-dependence tests + 28 engine overlay cells + 14 bundle cells; 100 draws x 3 placebos per cell, 100 family worlds |
 | 2026-11-04T21:58Z | DISAD | BASE-4 | 16 | DIS-AD PB asia reconcile: 4 Asia cells x 4 periods decomposition (+ yearly PB, O2/O3 windows); scope DISAD sha 9ce7146c... |
+| 2026-11-04T22:06Z | DISAG | BASE-4 | 98 | DIS-AG Shadow lot calibration: 14 lines x 7 sizings (L1,2,3,4,6, equal-risk 600/1200); scope DISAG sha 969561f9... |
+| 2026-11-04T22:08Z | DISAC | Z3 | 288 | DIS-AC: Asia continuation hold regime book: asia sub-grid x 3 switches; prereg DIS_AC sha 3595f2c6 |
+| 2026-11-04T22:11Z | DISAH | CAL | 61 | DIS-AH per-book lot weights on Q1-A ts2 (locks re-run): PE grid 5, PE x HM 30, KB/MV/SM/PB 20, risk-parity 6; bootstrap 2,000 draws; PA9 best 6 |
+| 2026-11-04T22:12Z | DISAJ | BASE-4 | 63 | DIS-AJ true-drift family test: 21 cells x 3 world sets (random-minute drift, day-shuffle, matched clock) x 200 worlds; scope DISAJ sha 799e91a1... |
+| 2026-11-04T22:14Z | DISP | Z1 | 336 | DIS-P: post-stop cooldown / loss-streak overlays (336 cells) |
