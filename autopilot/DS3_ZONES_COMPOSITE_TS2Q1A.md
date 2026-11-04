@@ -1,4 +1,4 @@
-# DS3 ZONES COMPOSITE on D7 ts2 Q1-A (live lot order: session -> A06 slot -> B02 -> ER Q1-A -> zone HALF last; xcost 0.80, stopcost 2.45, lines empty, lock none = per-book locks; lock-12 frame = reference; MONTHLY REFIT, BASE-4, 2026-11-04T01:20Z; LOCK-NONE-FIRST)
+# DS3 ZONES COMPOSITE on D7 ts2 Q1-A (live lot order: session -> A06 slot -> B02 -> ER Q1-A -> zone HALF last; xcost 0.80, stopcost 2.45, lines empty, lock none = per-book locks; lock-12 frame = reference; MONTHLY REFIT, BASE-4, 2026-11-04T01:36Z; LOCK-NONE-FIRST)
 
 Episodes lookup: autopilot/DS3_ZONES_EPISODES_V13Y.md. Base = lvq.run_q (= V13T.run_v13t_ts2, ladder Q1A). Cells: mean$k/wk (MDE) / maxDD / worst-20 / Calmar / linear equal-risk mean (x worst-20-ALL of the shipped layer / the row's). Candidates are NOT leads (no placebo/walk-forward here). Monthly refit of DS3_ZONES_COMPOSITE_V13T.md on the latest base. Candidate cubes rebuilt by BASE-4 on V13Y from the other agents' masks (S5 cells sA40/nA60, ZL-1 PUL feats, Z2 CRT4h masks); other agents' own V13Y cubes are added when they exist (edit composite_y.py).
 
