@@ -28,3 +28,4 @@
 | 2026-11-04T00:15Z | FADE_XI | Z2 | 60 | 6 books x (NQ ref + ES RTY YM); ONRTH/VWAPF/ORBF x 4 scalings; ATR-based books one variant |
 | 2026-11-04T00:25Z | FADE_MZ | Z1 | 3104 | mirror 96 + Mancini failed-break 2,240 + zone-line failed-break 768 cells |
 | 2026-11-04T00:40Z | FADE_GM | CAL | 60 | gamma regime: 7 fade series + 6 live NY-AM books x 3 predictors (G_POS/NEG, ZGD, WALL) + family max-stat; prereg FADE_GM_prereg sha ca77055d |
+| 2026-11-04T01:10Z | FADE_LV | ZL-1 | 1054 | level-anchor fades: stage 1 (170 cells default shape) + stage 2 (12 cells x 72 shapes) + stage 3 (20 planned) |

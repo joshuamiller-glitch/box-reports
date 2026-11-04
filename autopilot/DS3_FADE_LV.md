@@ -12,3 +12,17 @@ Cell: opening-range 15-minute failed break, NY-AM. **Definition (generated from 
 ## OR15 family max-T, L6M mean $/wk (405 books, 100 worlds side + shuffled-day; ~23:40Z): the lead shape (OR15 end 12:00 b1 2R T120, L6M +2,663/wk) is the family maximum: family p 0.059 (side) / 0.010 (shuffled-day), BH q 0.057; neighbours (end 13:00 +2,554 p_maxT 0.099, end 11:00 +2,443 p_maxT 0.168). So on the RECENT-dollar statistic the OR15 failed-break family is a real 2026-regime effect (max-T about 0.06 / 0.01), on the scale-free HOLD-Calmar statistic it is not (family p 0.62 / 0.22) and in 2023-25 it is net negative: a REGIME book (CONDITIONAL only inside the R_F40-ON subset).
 
 ## Data-layer fix (print-time volume), ~00:10Z 2026-11-04: minute volume now grouped by (ts - 1 s)//60 s (BASE-4 finding). VB2 NYPM T1 (b0.5 0.5R T60): 523 trades, L1M +212 / L3M +128 / L6M +384 / HOLD +238 / MID +17 / PRE +38 / X' +20 (STRICT, TOLERANT); VB2 NYAM T3 (b0.5 1R T120): 893 trades, L3M +631 / L6M +402 / HOLD +356 / MID -20 / PRE +15 / X' -107. Rows in FADE_ROWS_LV.md regenerated with the new volume; old-volume copies of stage tables kept as *_oldvol.
+
+## Scale-free family max-T, HOLD Calmar (1,034 books: 170 stage-1 + 864 stage-2 shapes, 100 worlds each of random side and shuffled-day, ZL-2 fh.family_maxstat; run finished 23:39Z on the OLD-volume books, rerun on the print-time-volume books started 01:15Z, ETA ~02:10Z)
+Family p of the real maximum (best book OR15 NYAM T2 b1 VWAP T120, Calmar 0.151): 0.72 (side) / 0.57 (shuffled-day). **0 of 1,034 books reach max-T p <= 0.10 or BH q <= 0.10** (smallest q 0.556). Requested books (stat = HOLD Calmar; p_raw = single-test placebo p, worse of the two kinds; max-T p; BH q):
+| book | HOLD Calmar | p_raw | max-T p | BH q |
+|--|--|--|--|--|
+| VB2 NYPM T1 default (stage 1) | 0.065 | 0.02 | 1.0 | 0.556 |
+| VB2 NYPM T1 b0.5 0.5R T60 (lead shape) | 0.076 | 0.05 | 1.0 | 0.556 |
+| PD ASIA T2 default (stage 1) | 0.033 | 0.089 | 1.0 | 0.567 |
+| PD ASIA T2 b1 2R T15 | 0.070 | 0.02 | 1.0 | 0.556 |
+| PD NYAM T1 default | 0.013 | 0.248 | 1.0 | 0.615 |
+| RN NYAM T1 default (raw frame) | 0.037 | 0.04 | 1.0 | 0.556 |
+| VB2 NYAM T3 b0.5 1R T120 | 0.068 | 0.04 | 1.0 | 0.556 |
+| OR15 NYAM T2 b1 2R T120 (lead shape) | 0.016 | 0.317 | 1.0 | 0.649 |
+**Answer: VB2 NYPM T1 does NOT survive a scale-free family test** (single-test p 0.02-0.05, family-adjusted 1.0, q 0.556); neither do PD ASIA T2, VB2 NYAM T3, RN NYAM T1, PD NYAM T1 or OR15 NYAM T2. The recent-dollar (L6M) max-T supports only the OR15 NY-AM family (family p 0.059 / 0.010). All leads stay provisional Shadow candidates on the strength of their placebo and line-placebo p-values, not on family-level control.

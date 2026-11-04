@@ -1319,3 +1319,13 @@ All 389 SIZER_Q1A_V cells and the near-miss rows were re-evaluated with CAR[PRE]
 
 ### SIZER_S3 (Z3) - placebo result for the causal lead (2026-11-04 ~00:05Z)
 Placebos (3 kinds x 100, genuine-PA9 scoring, ts2 vs Q1-A, ranks_live_causal): rv_pct_5d + delta30_s PROD L6M .53/.55/.57, HOLD .97/.88/.88, MID .96/.99/.97, PRE .98/.94/.97, X' .83/.77/.82 (perm/dayshuf/ar1); MINDOWN L6M .54/.52/.47, PRE .98/.94/.97, MID .96/1.00/.98, X' .92/.90/.96; delta10_s + rv_pct_5d MINDOWN L6M .44/.54/.47, PRE .97/.99/.99, MID 1.00/.99/1.00, X' .96/.93/.97. Verdict: LEAD, not RISK-KEEP (L6M is chance level; PRE/MID/HOLD stand out). Final sentence for Section 3: stay on Q1-A; the two-modifier lead (rv_pct_5d x delta30_s) goes on the shadow/forward register: it improves PRE/MID/HOLD more than chance, but not L6M, is not strict mean-keeping, and raises the simultaneous worst-day exposure (26 lots / $31.2k vs 18 / $21.6k).
+
+### SIZER_S3 (Z3) - plain-language note for the user (Section 3, 2026-11-04)
+1. Your live ER sizer (half size when ER(20) is below 0.30, full size otherwise) was not beaten by any mix of two or three sizers, by a small learned rule, by volatility-based risk parity, or by tighter exits on low-ER trades.
+2. The mixes that cut the drawdown most mostly do it by trading fewer lots, so they are just smaller positions, not a better signal.
+3. The one mix with a real pattern, an extra half-size cut when the 5-day volatility is high and when the last 30 seconds of order flow already ran with the trade, helps PRE, MID and HOLD more than luck would, but its recent-six-months gain looks like chance.
+4. That mix also gives up some PRE profit and raises the largest simultaneous position from 18 to 26 lots, so I would watch it on the forward register, not trade it.
+5. Recommendation: keep the ER ladder as it is live today.
+
+## SIZER FINAL (S4a integrator, 2026-11-04): plain sentence and pointers
+**The ER sizer should stay exactly as live: ER(20) on the 5-minute series, x0.5 below 0.30 and x1.0 at or above it (Q1-A, live since 2026-11-02 19:30Z); sizer_policy.txt proposes the live Q1-A ladder, no change.** Against Q1-A on ts2 and the live-visible universe, no restated cell (S1, S1B, hysteresis, S2, S2V, S3, Q2-Q6, ER-at-the-add, stack) cuts L6M AND PRE drawdown with the carrying week dropped while keeping the mean, inside no-harm and the PA9 band, and placebo-clean; the lock is not beaten either (Z1 S35). Tracked Shadow-only watches, not recommendations: the time-based vol-target near-miss and Z3's two-modifier lead. Final page: autopilot/DS3_SIZER_FINAL_S4A.md; detail: DS3_SIZER_FINAL_DRAFT_S4A.md, SIZER_MASTER_TABLE.md, SIZER_LEAD_REGISTER.md, SIZER_EXPOSURE.md, SIZER_UNIVERSE_AUDIT.md.
