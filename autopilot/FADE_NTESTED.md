@@ -96,3 +96,7 @@
 | 2026-11-05T00:02Z | DISBV | BASE-4 | 6 | DIS-BV TH-L2 trigger fidelity: 6 engine runs (TH off, stored, rebuilt-on-stored-rows, rebuilt-every-second, two arm-only) on 37 sample weeks (settings, not hypotheses); scope DISBV sha 42716f5e... |
 | 2026-11-05T00:29Z | DISBY | BASE-4 | 23 | DIS-BY TH-L2 evaluation clock: 23 engine runs (clock x slippage x two bases, arm-only variants; settings, not hypotheses), one event-driven rebuild on 37 weeks; scope DISBY sha b2f5e75d... |
 | 2026-11-05T19:34Z | T2_EVAL | BASE-4 | 0 | T-INSTR-2 shared evaluator (measuring instrument; no hypotheses tested; synthetic controls only; one ES interface smoke run not registered) |
+| 2026-11-05T20:05Z | T2_RTY | Z2 | 502740 | T-INSTR-2 grid for RTY under Z1 prereg (665 configs x 756 cells); +12 stage-2 cells re-run through instr2_eval; ledger T2_RTY holds the top 1500 tolerant + 1500 NOW-ONLY cells |
+| 2026-11-05T20:05Z | T2_YM | Z2 | 502740 | T-INSTR-2 grid for YM under Z1 prereg (665 configs x 756 cells); +12 stage-2 cells re-run through instr2_eval; ledger T2_YM holds the top 1500 tolerant + 1500 NOW-ONLY cells |
+T2_ZN_NTESTED: 5426 stage-A rows (490 signal cells x sessions x 2 ref brackets); T2_ZB_NTESTED: 5426; T2_6E_NTESTED: 5400; T2_6J_NTESTED: 5336 (stage A; stage B counted separately); Z3 2026-11-05
+| 2026-11-05T20:20Z | T2_ES | Z1 | 502740 | T-INSTR-2 ES own grid: 665 signal configs x 2 orientations x 6 sessions x 63 brackets (stage-1 cells; stage-2 reruns counted separately); ledger T2_ES holds tolerant + family p <= .5 + NOW-ONLY z_j >= 3 cells |

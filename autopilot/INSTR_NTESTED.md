@@ -25,3 +25,5 @@ DISBG_NTESTED: 14 cells (5 ORBF + 3 DISK + 6 live-book boundary); Z2 2026-11-04
 DISBK_NTESTED: 9 cells (5 post-2023 variants + 4 pre-2023 variants); ORBF selection N = 346 + 4 = 350; Z2 2026-11-04
 T2_SESSIONS_NTESTED: 72 descriptive measurement cells (12 instruments x 6 sessions); Z2 2026-11-05
 | 2026-11-05T19:46:29Z | T2_NQ13 | ZL-2 | 9855 | cell-sessions (3483 cells, live sessions x 9 brackets); ledger T2_NQ13 |
+T2WF_NTESTED: 72 selector cells (3 instruments x 12 x top1/top3); Z2 2026-11-05
+T2_STAGE_A_NTESTED: ZN 5426, ZB 5426, 6E 5400, 6J 5336 stage-A cells (library families, 2 reference brackets); Z3 2026-11-05
