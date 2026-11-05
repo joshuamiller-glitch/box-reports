@@ -101,3 +101,4 @@
 T2_ZN_NTESTED: 5426 stage-A rows (490 signal cells x sessions x 2 ref brackets); T2_ZB_NTESTED: 5426; T2_6E_NTESTED: 5400; T2_6J_NTESTED: 5336 (stage A; stage B counted separately); Z3 2026-11-05
 | 2026-11-05T20:20Z | T2_ES | Z1 | 502740 | T-INSTR-2 ES own grid: 665 signal configs x 2 orientations x 6 sessions x 63 brackets (stage-1 cells; stage-2 reruns counted separately); ledger T2_ES holds tolerant + family p <= .5 + NOW-ONLY z_j >= 3 cells |
 | 2026-11-05T20:43Z | T2_CL_B | BASE-4 | 3744 | T-INSTR-2 CL block B; scope sha 3989bea5... |
+| 2026-11-05T22:29Z | T2_6E_B | ZL-2 | 3,744 | T-INSTR-2 6E block B; scope sha 92604fab... |

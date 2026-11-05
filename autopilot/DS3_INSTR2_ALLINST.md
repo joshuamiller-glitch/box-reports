@@ -88,3 +88,12 @@ Every tolerant cell with its joint p and BH q: /mnt/l2/l2vast/allinst_zl1_tolera
 (rows 1-10 shown; rows 11-30 in the pickle.)
 
 Diversifier-bar verdict for CL / 6E / 6J: no cell passes tolerant gate + joint family p <= .10 (or q <= .10) + 13-year sign; walk-forward, correlation and Calmar tests were already negative for the stage-2 finalists (DS3_INSTR2_CL.md / _6E.md / _6J.md). No MORNING alert.
+
+## BLOCK ZL-1 UPDATE (2026-11-05): GC added to the joint null (S4a artifacts instr2_gc/allinst_M.npy, 132,304 eligible cells, same hash_u clock; S4a's engine uses float lots and n >= 100 / 60 trade floors, its own greedy no-overlap walk - stated difference)
+Joint maximum over ES, RTY, YM, CL, 6E, 6J, GC: median 3.88, p95 4.28; pool of 1,696,255 eligible cells. | inst | eligible | tolerant | best tolerant zj | best tolerant joint p | cells joint p <= .10 | BH q <= .10 |
+|--|--|--|--|--|--|--|
+| CL | 64,230 | 7,883 | 3.24 | 1.000 | 0 | 0 |
+| 6E | 63,888 | 2,676 | 2.63 | 1.000 | 0 | 0 |
+| 6J | 64,323 | 310 | 1.12 | 1.000 | 0 | 0 |
+| GC | 132,304 | 2,111 | 3.09 | 1.000 | 0 | 0 |
+**Plain sentence: with GC (best tolerant zj 3.09, own null max median 3.49) and CL / 6E / 6J added the joint null covers 1,696,255 eligible cells over 7 instruments; no tolerant cell has joint p <= .10 or BH q <= .10, so nothing in the extended family clears.** Every tolerant GC cell with its joint p and q: /mnt/l2/l2vast/allinst_zl1_tolerant_GC.csv (CL / 6E / 6J: allinst_zl1_tolerant_*.csv were computed against the 6-instrument joint max; the 7-instrument p/q are in instr2_<sym>/allinst_table.pkl columns after this update is re-run, summary above). The GC 13-year check is S4a's (GC_oos13.pkl); not repeated here.
