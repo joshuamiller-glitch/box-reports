@@ -95,3 +95,4 @@
 | 2026-11-04T23:40Z | FADE_DISBS | ZL-1 | 363 | DIS-BS YM U7 NY-PM 181 cells x 2 frames + BTC K7 London pre-2023 (prereg DISBS sha b5da27dc...) |
 | 2026-11-05T00:02Z | DISBV | BASE-4 | 6 | DIS-BV TH-L2 trigger fidelity: 6 engine runs (TH off, stored, rebuilt-on-stored-rows, rebuilt-every-second, two arm-only) on 37 sample weeks (settings, not hypotheses); scope DISBV sha 42716f5e... |
 | 2026-11-05T00:29Z | DISBY | BASE-4 | 23 | DIS-BY TH-L2 evaluation clock: 23 engine runs (clock x slippage x two bases, arm-only variants; settings, not hypotheses), one event-driven rebuild on 37 weeks; scope DISBY sha b2f5e75d... |
+| 2026-11-05T19:34Z | T2_EVAL | BASE-4 | 0 | T-INSTR-2 shared evaluator (measuring instrument; no hypotheses tested; synthetic controls only; one ES interface smoke run not registered) |
