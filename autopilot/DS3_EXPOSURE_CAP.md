@@ -51,3 +51,26 @@ Caveats: single-path engine runs (no phase averaging; Q1-A has no lock-phase dep
 
 ## CORRECTION NOTICE 2026-11-04 (ZL-2, appended): live-window base
 On the live-window base (09:30-09:59 and 18:00-18:04 entries blocked, DS3_LIVE_WINDOWS_BASE.md V2) the cap rows move as follows (mean vs the V2 live cell; HOLD maxDD removed; peak net lots and synthetic tail unchanged): cap 14 / 12 / 10 / 8: mean -2.4% / -6.8% / -14.0% / -21.2% (V0: -2.4% / -5.8% / -12.6% / -21.4%); HOLD maxDD removed $0.3k / 2.6k / 5.9k / 19.9k (V0: 0.3 / 2.6 / 4.4 / 20.1); live HOLD maxDD $91.2k (was $122.0k), worst day -$37.2k, worst week -$60.0k. Ranking and conclusions unchanged. The day-loss-stop rows were not re-run.
+
+
+## RESTATEMENT ON THE LIVE-WINDOW BASES (appended 2026-11-05)
+Same cap hook (stack_expo.run_stack, ladder Q1A, up to 8 passes, all converged) with the live-window mask ORed into extra_skip every pass. Bases: V0 = engine as run (reproduces the table above); V1 = 18:00-18:04 blocked; V2 = 09:30-09:59 and 18:00-18:04 blocked. Ties: the cap-none cells reproduce ZL-2's V1 / V2 series to 0.000 $.
+| base cap | total | maxDD L6M / HOLD / PRE (no carry-drop here) | worst day | worst week | maxDD all | peak net lots |
+|---|---|---|---|---|---|---|
+| V0 cap- | $2520k | $105k / $122k / $88k | $-38k | $-63k | $122k | 18 |
+| V0 cap8 | $1975k | $74k / $102k / $76k | $-35k | $-56k | $102k | 11 |
+| V0 cap10 | $2183k | $80k / $118k / $87k | $-35k | $-62k | $118k | 13 |
+| V0 cap12 | $2352k | $101k / $119k / $92k | $-37k | $-61k | $119k | 15 |
+| V0 cap14 | $2447k | $108k / $122k / $91k | $-38k | $-63k | $122k | 16 |
+| V1 cap- | $2593k | $67k / $103k / $82k | $-38k | $-61k | $103k | 18 |
+| V1 cap8 | $2103k | $47k / $85k / $67k | $-34k | $-53k | $85k | 11 |
+| V1 cap10 | $2265k | $52k / $100k / $78k | $-34k | $-59k | $100k | 13 |
+| V1 cap12 | $2436k | $63k / $101k / $83k | $-37k | $-60k | $101k | 15 |
+| V1 cap14 | $2530k | $68k / $103k / $82k | $-38k | $-61k | $103k | 16 |
+| V2 cap- | $2462k | $65k / $91k / $94k | $-37k | $-60k | $94k | 18 |
+| V2 cap8 | $1937k | $42k / $71k / $80k | $-32k | $-48k | $80k | 11 |
+| V2 cap10 | $2100k | $51k / $85k / $90k | $-34k | $-53k | $90k | 13 |
+| V2 cap12 | $2277k | $61k / $89k / $95k | $-35k | $-59k | $95k | 15 |
+| V2 cap14 | $2398k | $65k / $91k / $94k | $-36k | $-60k | $94k | 16 |
+Reading: the caps bind the same way under the live windows. Peak net lots are 18 / 11 / 13 / 15 / 16 for none / cap 8 / 10 / 12 / 14 under all three bases (the windows remove no 18-lot moment); the cost in total P&L of cap 8 is -21.6% (V0), -18.9% (V1), -21.3% (V2); the maxDD cut of cap 8 is $20.1k (V0, $122.0k -> $101.9k), $18.6k (V1, $103.3k -> $84.7k), $14.1k (V2, $94.0k -> $79.9k): the windows take over part of what the cap removed, so the drawdown benefit of the cap shrinks from 16% (V0) to 18% (V1) to 15% (V2) of the base maxDD in relative terms but from $20k to $14k in dollars. The worst day moves from -$38.1k (V0 and V1) to -$37.2k (V2) with no cap and to -$34.6k / -$33.5k / -$32.1k with cap 8; the worst week from -$62.6k / -$61.3k / -$60.0k to -$56.1k / -$52.6k / -$47.7k with cap 8. The synthetic tail ($522k at 18 lots) is unchanged because the peak net lots are unchanged. The day-loss stops were not re-run (the wrapper is path-chaotic; stated).
+(Clarification of the reading above: cap 8 removes $20.1k / $18.6k / $14.1k of maxDD under V0 / V1 / V2, i.e. 16.5% / 18.0% / 15.0% of each base's own maxDD: the relative benefit is similar, the dollar benefit falls as the windows take part of the same drawdown.)

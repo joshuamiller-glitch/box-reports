@@ -60,3 +60,29 @@ Reading. (1) Nothing REPLICATES: every q_BH is 1.00 (the family max-T is 0.18-1.
 
 ## 5. Limits
 Same as DIS-W: one feed, volume-front additive back-adjustment with roll days dropped, 1-minute fills (late and rough: levels differ from the 1-s tables; correlations above), signal-level objects (no Trade-Health, locks, zones, 70/30). The DIS-Q volume sign is a bar proxy of the research feature (the research code itself uses it). The PCT frame is a per-roll-segment rescale, not a per-trade r. NYAM ORBF-B2 is not in this set: the lead named Z2's 'DIS-BK', but ZL-2 reports no DIS-BK assignment, so no owner is confirmed; BASE-4's DIS-AA ran ORBF. Not run (feasible): T-INSTR YM U7 NYPM pocket (YM 1-minute owned), RTY lines (RTY from 2017-07).
+
+## WATCH LINES: PRE-2023 STATUS (appended by ZL-1, 2026-11-05; all programs, one table)
+Sources: DIS-W (DS3_HISTORY_EXTENSION.md), DIS-BM (this file), DIS-BS (DS3_INSTR_OOS.md), DIS-AA (DS3_FADE_OOS.md), DIS-BK (DS3_ORBF_B2.md), DIS-Y (DS3_SIGNALS_2013.md). Level objects = mean points (or R) per trade of the 1-minute signal-level line, OOS 2013-01..2023-04-02; DIS-AA / DIS-BK also report excess over drift benchmarks.
+| watch line | pre-2023 result | verdict | source |
+|--|--|--|--|
+| Z1 swing failed break (nyam) | -6.0 / -5.7 pt (raw / pct), t -2.3 / -2.9 | NEGATIVE: REGIME-ONLY | DS3_OOS_REMAINING.md |
+| DIS-B P_REL_cont (pre) | -1.3 / -1.5, t -2.5 / -2.0 | NEGATIVE: REGIME-ONLY | DS3_HISTORY_EXTENSION.md, DS3_OOS_REMAINING.md |
+| DIS-B N_REL_rev_m0.5 (nyam) | -0.41 pt per trade (V2); excess over drift +45 $/wk vs P1c, 7 of 10 years, CI (-59,+153) | weak rule SURVIVES, strong rule none; level negative | DS3_FADE_OOS.md |
+| DIS-K BO COMP_HI (nyam) | +0.55 raw (n.s.), -0.25 pct | no formal verdict (calibration 0.83) | DS3_OOS_REMAINING.md |
+| DIS-C Sunday 18:30 | -3.6 / -4.7, t -4.6 / -4.4 | NEGATIVE: REGIME-ONLY | same |
+| DIS-E prevday-FAILURE (nyam) | not testable (refill-failure needs L2) | NOT TESTABLE | DS3_HISTORY_EXTENSION.md |
+| DIS-G G1 NQ-ES ratio (nyam) | -3.1 / -3.8, t -6.4 / -5.4, 0 of 11 years positive | NEGATIVE: REGIME-ONLY | DS3_OOS_REMAINING.md |
+| DIS-J N_CENT NYAM T4 | not testable (no pre-2023 options OI) | NOT TESTABLE | DS3_HISTORY_EXTENSION.md |
+| Q13 middle-tercile gap-fill | -2.1 / -1.0 | NEGATIVE: REGIME-ONLY | same |
+| DIS-Q 15:00 IMB fade | -1.8 / -1.8, t -3.2 / -2.5 | NEGATIVE: REGIME-ONLY | DS3_OOS_REMAINING.md |
+| DIS-Q 15:50 DRIFT fade | -2.4 / -2.9 | no formal verdict (calibration 0.83) | same |
+| T-INSTR YM U7 NY-PM pocket (75 pt) | -0.050 R raw (t -1.96), -0.040 R pct; 0 of 181 neighbourhood cells with q <= 0.10 | NEGATIVE: REGIME-ONLY | DS3_INSTR_OOS.md |
+| T-INSTR BTC K7 London | 10 months only (CME BTC owned from 2022-01): -0.085 R, MDE 0.20 R | NO INFORMATION (not verdict-grade) | DS3_INSTR_OOS.md |
+| NYAM ORBF-B2 (1-min close beyond) | signal-level excess over drift positive in 7 / 8 / 8 of 10 pre-2023 years (weak rule passes; strong only vs other-day and delayed fade, not vs P1c: CI [-12, +354]); post-2023 PRE -1,403 / X' -594 $/wk, tolerant gate fails; selection charge N = 350 | REGIME (NOW-ONLY) / Shadow-watch; weak pre-2023 support in excess-over-drift form | DS3_ORBF_B2.md |
+| NYAM ORBF (per-second, 1-min proxy) | +0.27 pt per trade pre-2023 (V2), +26 $/wk; excess +171 vs P1c | weak rule SURVIVES (not a PASS) | DS3_FADE_OOS.md |
+| NYAM ONRTH / VWAPF / 3-book bundle | ONRTH -0.83 / -1.49 pt (DIS-W / BM) vs +0.05 (DIS-AA V2); VWAPF no verdict, DIS-AA POST-2023 ONLY; bundle -0.49 pt, excess +331 $/wk vs P1c (CI -33..+724) | ONRTH NEGATIVE (n.s.); VWAPF POST-2023 ONLY; bundle weak rule SURVIVES | DS3_HISTORY_EXTENSION.md, DS3_FADE_OOS.md |
+| T-FADE VB2 NYPM T1 / VB2 NYAM T3 / PD ASIA T2 / OR15 NYAM T2 | -0.95 (no verdict, DIS-AA weak rule survives) / -2.31 (t -4.2, no formal verdict, sign robust) / -0.31 (NEGATIVE marginal) / +0.35 raw, +1.12 pct (NULL: shift5 placebo p 0.71) | none replicates | DS3_HISTORY_EXTENSION.md, DS3_OOS_REMAINING.md |
+| six live books' raw entries (ST HM WT KB SM PE) | all six lost money in 2013-2022 (-0.6 to -2.4 pt per trade) and made money in 2023-26 | 2023-26 in the best 5% of the 2013-2023 block bootstrap for 5 of 6 | DS3_SIGNALS_2013.md |
+| Q9 London sleeve, sizers VT_Q1A / Z3_RVD30 | stack-level objects: the 1-minute stack approximation failed validation (0.66-0.69) | NOT RUN | DS3_SIGNALS_2013.md |
+
+**Pooled-sleeve implication (one sentence): no watch line has positive pre-2023 evidence at the level of points per trade (the equal-weight sum of the 14 DIS-W / DIS-BM lines at their own lots was about -$3,160 a week in the percent frame over 2013-2023, only OR15 NYAM T2 positive and not significant), the only weak positive pre-2023 support is the NY-AM reversion family's signal-level EXCESS OVER DRIFT (ORBF, ORBF-B2, N_REL_rev, ONRTH, VB2 NYPM T1, the 3-book bundle on the weak rule, with confidence intervals that include zero), so a pooled sleeve of the 2026 watch lines should be treated as a 2026-regime sleeve with a pre-2023 expectation of zero or below, not as a diversified edge.**

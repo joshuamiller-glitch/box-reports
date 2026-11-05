@@ -74,3 +74,29 @@ Limit-style move (SYNTHETIC): 7% / 13% / 20% of 25,000 = 1,750 / 3,250 / 5,000 p
 
 ## 8. Caveats
 Object A is a signal-level approximation (weekly correlation with the live stack 0.66-0.69, DS3_STACK_2013.md): no Trade-Health exits, locks, zones, PE confirmation or 70/30; its dollar figures overstate the live stack's tail losses (compare the 2025-04-09 row: A -$69.8k vs engine -$23.8k). The V2 percent bracket is the comparable pre-2023 object; V1 is native only for 2023-26. The tail-day sets are selected on the days' own range, which is look-ahead by construction (this is a stress replay, not a trading rule). Percent-of-price moves use raw closes, point moves the additive back-adjusted series. Bootstrap CIs are stationary block bootstraps (2,000 draws) over days (mean block 5 days; tail-day mean: i.i.d.). Slippage on the tape is measured with the signal-second close as the entry (not the engine fill) and is a property of stop touches, not of the live fills. CME items are from memory.
+
+
+## RESTATEMENT OF THE ENGINE ROWS ON THE LIVE-WINDOW BASES (appended 2026-11-05)
+Bases: V0 = engine as run (the tables above); V1 = 18:00-18:04 blocked; V2 = 09:30-09:59 and 18:00-18:04 blocked (ZL-2, DS3_LIVE_WINDOWS_BASE.md); my window masks reproduce ZL-2's daily series to 0.000 $. Engine rows only (live lock vs no floor / no give-back, stop cost x1 and x5); the signal-level raw-entry object (Object A) and the synthetic rows are NOT restated (Object A would need the windows applied to its signals; the synthetic rows scale with peak net lots, which is 18 under all three bases).
+| base | lock | stop cost | total | worst day (label day) | worst week (ISO week) | maxDD | tail-day mean (20 days) | worst tail day (label day) |
+|---|---|---|---|---|---|---|---|---|
+| V0 | live lock | 1x | $2520k | $-38k (20250120) | $-63k (202644) | $122k | +12.2k | $-28k (20250403) |
+| V0 | live lock | 5x | $2252k | $-40k (20250120) | $-65k (202644) | $128k | +11.8k | $-28k (20250403) |
+| V0 | no floor / no give-back | 1x | $2594k | $-38k (20250120) | $-66k (202606) | $131k | +12.5k | $-28k (20250403) |
+| V0 | no floor / no give-back | 5x | $2306k | $-40k (20250120) | $-68k (202606) | $137k | +12.0k | $-30k (20250409) |
+| V1 | live lock | 1x | $2593k | $-38k (20250120) | $-61k (202644) | $103k | +11.6k | $-30k (20250409) |
+| V1 | live lock | 5x | $2330k | $-40k (20250120) | $-63k (202644) | $109k | +11.2k | $-31k (20250409) |
+| V1 | no floor / no give-back | 1x | $2680k | $-38k (20250120) | $-63k (202606) | $112k | +12.2k | $-30k (20250409) |
+| V1 | no floor / no give-back | 5x | $2399k | $-40k (20250120) | $-65k (202606) | $119k | +11.6k | $-31k (20250409) |
+| V2 | live lock | 1x | $2462k | $-37k (20240905) | $-60k (202644) | $94k | +12.0k | $-28k (20250410) |
+| V2 | live lock | 5x | $2223k | $-38k (20240905) | $-62k (202644) | $100k | +11.6k | $-29k (20250410) |
+| V2 | no floor / no give-back | 1x | $2537k | $-37k (20240905) | $-60k (202606) | $100k | +12.2k | $-28k (20250410) |
+| V2 | no floor / no give-back | 5x | $2284k | $-38k (20240905) | $-62k (202644) | $106k | +11.6k | $-29k (20250410) |
+Per book, engine live lock, worst day / worst week ($): 
+| base | per book |
+|---|---|
+| V0 | {'KB': (-5920, -15563), 'PE': (-28230, -56897), 'SM': (-11113, -21638), 'HM': (-10942, -19383), 'MV': (-5960, -14284), 'PB': (-2625, -7640)} |
+| V1 | {'KB': (-5920, -12693), 'PE': (-28230, -52191), 'SM': (-11113, -21638), 'HM': (-10942, -15777), 'MV': (-5960, -14284), 'PB': (-2625, -7640)} |
+| V2 | {'KB': (-5674, -14855), 'PE': (-28230, -52191), 'SM': (-11113, -21638), 'HM': (-10942, -15840), 'MV': (-5451, -12798), 'PB': (-2625, -7640)} |
+Reading: the worst single day of the engine is -$38.1k under V0 and V1 (2025-01-20) and -$37.2k under V2 (2024-09-05), so the live windows do not bound the worst day; the worst week is -$62.6k / -$61.3k / -$60.0k; the maxDD (the HOLD episode) falls $122.0k / $103.3k / $94.0k; the 20 tail-range days stay net positive for the live stack (mean +$12.2k / +$11.6k / +$12.0k per day); the worst tail day is -$28.3k / -$30.3k / -$28.4k. The lock effect (give-back lock vs none) keeps its sign: the lock trims the worst week by $3.9k / $1.7k / $0.4k and the maxDD by $8.8k / $8.8k / $6.4k at a cost of $74k / $87k / $75k of total P&L under V0 / V1 / V2.
+CLOCK AUDIT NOTE (2026-11-05): slip_next in section 4 is the stop level minus the close of the NEXT PRINT SECOND on the 1-s path (index k+1), not strictly 'one second after the touch': the path holds only seconds with prints, so in thin hours k+1 can be several seconds later. All time windows in this page and in DS3_OUTAGE.md are epoch-second arithmetic (searchsorted on the second stamps); no window was built by adding a count to a path index.
