@@ -23,3 +23,4 @@ DISAZ_NTESTED: 108 cells (6 books x 2 offsets x 3 timeouts x 3 strength); 120 sh
 DISBG_NTESTED: 14 cells (5 ORBF + 3 DISK + 6 live-book boundary); Z2 2026-11-04
 | 2026-11-04T22:56Z | INSTR_SC | Z1 | 12 | QA-2 note (Z1): INSTR_SC (scaling note cells, ledger program INSTR_SC) had no registry line; n = ledger rows 12; these are scaling/cost cells, not hypotheses |
 DISBK_NTESTED: 9 cells (5 post-2023 variants + 4 pre-2023 variants); ORBF selection N = 346 + 4 = 350; Z2 2026-11-04
+T2_SESSIONS_NTESTED: 72 descriptive measurement cells (12 instruments x 6 sessions); Z2 2026-11-05
