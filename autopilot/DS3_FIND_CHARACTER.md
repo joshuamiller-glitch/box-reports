@@ -1,0 +1,1 @@
+# DS3_FIND_CHARACTER.md - T-FIND Step 1 character map per instrument (append-only; CHAR-A pages ES RTY YM NQ; CHAR-B/CHAR-C pages for the rest). Shared library: l2vast/ds3/code/find/char_lib.py (landed 2026-11-05T21:24Z, prereg sha256 980bedf6bad3f1669de9efb93831fa4622d88577c892d9359b7f57ba93c9dbcf in DECISIONS.md).
