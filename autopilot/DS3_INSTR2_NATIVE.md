@@ -58,3 +58,70 @@ Families: London AM/PM fix drift and reaction, COMEX 08:20 opening range (5/15/3
 Stage 2 (40 finalists through the evaluator): 40 of 40 FAIL. Best placebo p_book .02-.05 only for AMFIX_pre_k0.5_fade usd1200, but its 13-year percent-frame result is -$85k to -$88k with 0 of 11 years positive. Every finalist is negative over 2013-2026; no finalist has a positive 13-year total.
 Plain sentence: GC native books show no edge that survives the evaluator; the gate-passer excess is a 2026-only regime effect, same as the generic GC grid. No PASS claimed. Shadow only.
 Not run (and not worth it with 0 positive 13y totals): WF selector per group G1..G4 on GC_native_W.npy is queued behind ALLINST.
+
+# DS3_INSTR2_NATIVE - BLOCK crypto / NKD native books (ZL-1, user addendum A, 2026-11-05). Research only. No PASS claim. Shadow only.
+
+**Plain sentence: none of the native crypto / Nikkei books clears the diversifier bar - MBT (the tradable crypto leg): the Sunday-open gap and Sunday-open range books never have L3M and L6M both positive, the 09:30 NQ-sympathy fade (BTC against NQ's first 5 minutes) is positive in 2026 but placebo p_book >= 0.18, funding-time books are near zero; NKD: the Tokyo 15-minute opening-range FAILED-break fade (ATR6, 2R) earns +$1.4k a week in L6M but loses in 2024-25 and before 2023 and its placebo p_book is 0.60 (CAP-BREACH anyway), the BoJ decision-day book has 11-15 events and no NOW-ONLY cell; BTC standard has one cell with p_book 0.06 / p_family 0.04 (funding-time 08:00 UTC +5 min against the last hour, 3 ATR, 1R, 240 min) that is not tolerant (PRE -$700 a week) and is CAP-BREACH: REGIME, no lead.**
+Books (scope T2_NATIVE_scope.md sha256 88410ae53d667c6055c48f14bde30f2cfbca17affe12aaa5ab2a4bfd4f5c8ae6, DECISIONS.md before any cell): BTC/MBT H1 Sunday-open gap (go / fade), H2 funding time 00/08/16 UTC, H3 09:30 ET sympathy with NQ, H4 Sunday-open range break / fade; NKD H5 Tokyo opening range (break / fade / failed), H6 Tokyo lunch break, H7 Tokyo close drift, H8 BoJ decision days. Already dead at these horizons and not repeated (WHAT_IS_DEAD_20261105.md): DIS-C weekend jump vs NQ, T-INSTR transfers of the six NQ books to BTC / MBT / NKD, DS3_INSTR K7/U7/H7 on BTC and NKD. BoJ decision days used (published calendar as known; 2026 dates after my knowledge cutoff to be verified): 20230118, 20230310, 20230428, 20230616, 20230728, 20230922, 20231031, 20231219, 20240123, 20240319, 20240426, 20240614, 20240731, 20240920, 20241031, 20241219, 20250124, 20250319, 20250501, 20250617, 20250731, 20250919, 20251030, 20251219, 20260123, 20260319, 20260428, 20260616, 20260731, 20260918, 20261030. Code l2vast/ds3/code/t2native/ (native.py, native_grid.py, native_stage2.py, native_stage3.py, native_finish.py); output /mnt/l2/l2vast/instr2_native_<sym>/; ledger T2_MBT / T2_BTC / T2_NKD_NATIVE; rows FADE_ROWS_T2_NATIVE.md.
+
+## MBT
+Cells 2304 (stage 1; ledger T2_MBT), NOW-ONLY 283 (12.3%), tolerant-lite 134, median L6M $-7/wk. Finalists 30 through instr2_eval (placebos x100 forward-only, family size 2304, walk-forward over the same book family, corr to stack V0/V2): gate_v2a pass 4, p_book <= .10: 0 (min 0.16), p_family <= .10: 0 (min 0.39, a lower bound over the finalists only), walk-forward positive at both lookbacks 0, max corr to stack 0.27. Registry total 1,877,139. Frames with entry / stop / target prices: /mnt/l2/l2vast/instr2_trades/MBT_native/ (30).
+| book | cells | NOW-ONLY share | tolerant-lite share | median L6M $/wk | median HOLD $/wk |
+|--|--|--|--|--|--|
+| funding_time | 1152 | 14.4% | 6.5% | -15 | -11 |
+| sunday_gap | 576 | 0.0% | 0.0% | -0 | -1 |
+| sunday_range | 144 | 0.0% | 0.0% | -1 | -4 |
+| sympathy | 432 | 27.1% | 13.7% | -80 | -59 |
+
+| book | params | bracket | n | lots | L1M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M | gate_v2a | p_book | p_family | max corr |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| funding_time | {'hour': 0, 'o': 5, 'L': 60, 'mode': 'wi | ('atr', 2) 1R T120 | 621 | 1.0 | -9 | 2 | -3 | 3 | -26 | -6 | -6 | 244 | n | 0.16 | 0.39 | 0.11 |
+| sympathy | {'N': 5, 'thr': 0.0, 'mode': 'against'} | ('atr', 6) 1R T120 | 796 | 6.9 | 249 | 224 | 91 | 144 | 280 | -119 | 21 | 2267 | Y | 0.18 | 0.78 | 0.04 |
+| sympathy | {'N': 5, 'thr': 0.0, 'mode': 'against'} | ('atr', 6) 1R T60 | 796 | 6.9 | 31 | 146 | 84 | 88 | 68 | -178 | -102 | 1150 | n | 0.21 | 0.80 | 0.04 |
+| sympathy | {'N': 5, 'thr': 0.0, 'mode': 'against'} | ('atr', 6) 2R T120 | 796 | 6.9 | 585 | 530 | 231 | 173 | 33 | -157 | -26 | 2767 | Y | 0.21 | 0.85 | 0.05 |
+| funding_time | {'hour': 8, 'o': 5, 'L': 60, 'mode': 'ag | ('atr', 2) 1R T240 | 578 | 1.0 | 3 | -5 | -2 | -1 | -13 | -14 | -1 | 240 | n | 0.23 | 0.91 | 0.09 |
+| funding_time | {'hour': 0, 'o': 15, 'L': 60, 'mode': 'a | ('atr', 4) 1R T240 | 617 | 1.0 | 4 | 0 | 14 | 13 | 42 | -15 | -14 | 162 | n | 0.24 | 0.87 | 0.13 |
+| funding_time | {'hour': 0, 'o': -30, 'L': 240, 'mode':  | ('atr', 6) 1R T240 | 465 | 1.0 | 12 | -1 | 2 | 0 | -2 | -19 | -0 | 277 | n | 0.31 | 1.00 | 0.05 |
+| sympathy | {'N': 5, 'thr': 20.0, 'mode': 'against'} | ('atr', 6) 1R T120 | 488 | 6.9 | 632 | 607 | 130 | 114 | 169 | -76 | 114 | 2597 | Y | 0.33 | 0.95 | 0.11 |
+
+## BTC **CAP-BREACH** (1.7% participation cap < 1 contract in every session; equal-risk lots WITHOUT the cap; reported, never a lead)
+Cells 2304 (stage 1; ledger T2_BTC), NOW-ONLY 453 (19.7%), tolerant-lite 318, median L6M $-55/wk. Finalists 30 through instr2_eval (placebos x100 forward-only, family size 2304, walk-forward over the same book family, corr to stack V0/V2): gate_v2a pass 8, p_book <= .10: 1 (min 0.06), p_family <= .10: 1 (min 0.04, a lower bound over the finalists only), walk-forward positive at both lookbacks 2, max corr to stack 0.17. Registry total 1,879,443. Frames with entry / stop / target prices: /mnt/l2/l2vast/instr2_trades/BTC_native/ (30).
+| book | cells | NOW-ONLY share | tolerant-lite share | median L6M $/wk | median HOLD $/wk |
+|--|--|--|--|--|--|
+| funding_time | 1152 | 27.3% | 19.7% | -149 | -61 |
+| sunday_gap | 576 | 0.0% | 0.0% | 15 | 2 |
+| sunday_range | 144 | 0.0% | 0.0% | 18 | -6 |
+| sympathy | 432 | 32.2% | 21.1% | -182 | -157 |
+
+| book | params | bracket | n | lots | L1M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M | gate_v2a | p_book | p_family | max corr |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| funding_time | {'hour': 8, 'o': 5, 'L': 60, 'mode': 'ag | ('atr', 3) 1R T240 | 454 | 1.1 | 987 | 555 | 1012 | 399 | -142 | -700 | -579 | 6584 | n | 0.06 | 0.66 | 0.04 |
+| funding_time | {'hour': 0, 'o': 5, 'L': 240, 'mode': 'w | ('atr', 4) 1R T240 | 326 | 1.0 | 2314 | 1963 | 958 | 541 | -116 | -604 | -258 | 5964 | n | 0.15 | 0.98 | 0.04 |
+| funding_time | {'hour': 8, 'o': 5, 'L': 60, 'mode': 'ag | ('atr', 4) 1R T240 | 454 | 1.1 | 1327 | 640 | 1074 | 325 | -927 | -460 | -759 | 8459 | n | 0.15 | 0.91 | 0.07 |
+| funding_time | {'hour': 0, 'o': 5, 'L': 60, 'mode': 'wi | ('atr', 2) 2R T60 | 422 | 1.1 | 168 | 472 | 358 | 893 | -137 | -236 | -671 | 5228 | n | 0.16 | 0.14 | 0.13 |
+| sympathy | {'N': 5, 'thr': 0.0, 'mode': 'against'} | ('atr', 6) 2R T60 | 802 | 1.0 | 1624 | 2891 | 1078 | 799 | -74 | -1310 | -1091 | 6299 | n | 0.24 | 0.96 | 0.06 |
+| funding_time | {'hour': 0, 'o': 5, 'L': 60, 'mode': 'wi | ('atr', 2) 1R T240 | 422 | 1.1 | -167 | -28 | 174 | 522 | -479 | 62 | -529 | 7013 | n | 0.28 | 0.88 | 0.11 |
+| sympathy | {'N': 5, 'thr': 0.0, 'mode': 'against'} | ('atr', 6) 2R T120 | 802 | 1.0 | 4759 | 4495 | 1400 | 976 | -324 | -1044 | -458 | 18448 | Y | 0.29 | 0.99 | 0.08 |
+| sympathy | {'N': 5, 'thr': 0.0, 'mode': 'against'} | ('atr', 6) 1R T60 | 802 | 1.0 | 1254 | 2031 | 731 | 633 | 349 | -1268 | -687 | 9852 | n | 0.30 | 0.96 | 0.06 |
+
+## NKD **CAP-BREACH** (1.7% participation cap < 1 contract in every session; equal-risk lots WITHOUT the cap; reported, never a lead)
+Cells 552 (stage 1; ledger T2_NKD_NATIVE), NOW-ONLY 126 (22.8%), tolerant-lite 50, median L6M $-36/wk. Finalists 15 through instr2_eval (placebos x100 forward-only, family size 552, walk-forward over the same book family, corr to stack V0/V2): gate_v2a pass 0, p_book <= .10: 0 (min 0.30), p_family <= .10: 0 (min 0.22, a lower bound over the finalists only), walk-forward positive at both lookbacks 2, max corr to stack 0.22. Registry total 1,879,995. Frames with entry / stop / target prices: /mnt/l2/l2vast/instr2_trades/NKD_native/ (15).
+| book | cells | NOW-ONLY share | tolerant-lite share | median L6M $/wk | median HOLD $/wk |
+|--|--|--|--|--|--|
+| boj_day | 144 | 0.0% | 0.0% | -3 | 3 |
+| tokyo_close | 96 | 40.6% | 21.9% | -71 | -68 |
+| tokyo_lunch | 96 | 15.6% | 3.1% | -49 | -43 |
+| tokyo_or | 216 | 33.3% | 12.0% | -21 | -128 |
+
+| book | params | bracket | n | lots | L1M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M | gate_v2a | p_book | p_family | max corr |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| tokyo_or | {'R': 60, 'mode': 'break'} | ('atr', 2) 2R T120 | 713 | 1.9 | 323 | 667 | 595 | 26 | -195 | -810 | -855 | 3349 | n | 0.30 | 0.96 | 0.18 |
+| tokyo_or | {'R': 60, 'mode': 'break'} | ('atr', 2) 2R T60 | 713 | 1.9 | -32 | 252 | 340 | -28 | 184 | -817 | -860 | 3198 | n | 0.32 | 0.94 | 0.18 |
+| tokyo_lunch | {'mode': 'go', 'resume_min': 0} | ('atr', 2) 2R T60 | 330 | 2.3 | 23 | 23 | -24 | 14 | -337 | -283 | -555 | 2460 | n | 0.39 | 0.74 | 0.22 |
+| tokyo_or | {'R': 60, 'mode': 'break'} | ('atr', 2) 1R T120 | 713 | 1.9 | 453 | 627 | 435 | -56 | 151 | -992 | -540 | 2924 | n | 0.39 | 0.98 | 0.17 |
+| tokyo_or | {'R': 15, 'mode': 'failed'} | ('atr', 6) 2R T60 | 656 | 1.0 | 590 | 888 | 1443 | 527 | 554 | -424 | -216 | 5094 | n | 0.60 | 0.24 | 0.13 |
+| tokyo_or | {'R': 15, 'mode': 'failed'} | ('atr', 4) 2R T60 | 656 | 1.2 | 400 | 698 | 1074 | 363 | 454 | -483 | -358 | 5469 | n | 0.61 | 0.37 | 0.11 |
+| tokyo_or | {'R': 15, 'mode': 'failed'} | ('atr', 6) 1R T60 | 662 | 1.0 | 590 | 888 | 1244 | 424 | 467 | -420 | -205 | 5094 | n | 0.65 | 0.22 | 0.10 |
+| tokyo_close | {'mode': 'with', 'thr_atr': 0.0} | ('atr', 4) 2R T60 | 467 | 1.4 | 321 | 321 | 55 | 117 | 220 | -341 | -267 | 4069 | n | 0.83 | 0.29 | 0.08 |
+
+13-year percent-frame check (NKD 1-minute 2013-06..2023-03, Tokyo books only): tokyo_or {'R': 15, 'mode': 'failed'}: mean/trade -55.9, years+ 1/11; tokyo_or {'R': 15, 'mode': 'failed'}: mean/trade -55.8, years+ 1/11; tokyo_or {'R': 15, 'mode': 'failed'}: mean/trade -53.9, years+ 1/11; tokyo_or {'R': 60, 'mode': 'break'}: mean/trade -45.5, years+ 2/11; tokyo_close {'mode': 'with', 'thr_atr': : mean/trade 2.6, years+ 5/11; tokyo_close {'mode': 'with', 'thr_atr': : mean/trade 2.6, years+ 5/11; tokyo_close {'mode': 'with', 'thr_atr': : mean/trade 2.6, years+ 5/11; tokyo_or {'R': 60, 'mode': 'break'}: mean/trade -28.9, years+ 4/11
