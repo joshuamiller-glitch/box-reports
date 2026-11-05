@@ -21,3 +21,9 @@ Plain sentence: of 5426 stage-A rows, 30 have L3M, L6M and HOLD all positive and
 | ZB | nyam | supertrend_flip | {'k': 10, 'n': 14, 'm': 3} | usd1200_1.5R_60 | 367 | 124 | 124 | -17 | 15 | 104 | -46 | 48 | 1325 | 0.5 | n/a | n/a | n/a | SCREEN (fails older-window gate) |
 
 Columns L1M..X' are net $/week (carry dropped) at the cell's own lots, rank = min(L3M, L6M, HOLD). Stage-B (300 x 84 brackets) and the evaluator (placebos, walk-forward, stack correlation, 13-year check) follow; finalist trade frames go to /mnt/l2/l2vast/instr2_trades/ZB/. Rows are screening numbers: best-of-5426, NOT leads.
+
+## Walk-forward selector diagnostic (Z2 wf_selector.py, weekly equal-risk matrix of all 25,200 stage-B cells; trailing 26 and 52 weeks, purge 1 week, top-1/top-3; Z3 2026-11-05T20:47Z)
+Out-of-sample mean USD/week of the monthly re-selected cell, by session and lookback (details: l2vast/ds3/out/instr2/ZB/WF.pkl): negative or zero in all 12 session x lookback combinations (no combination is positive; several are exactly 0 because no candidate was eligible). The selector does not rescue any ZB book: the parameter choice does not carry forward.
+
+## Plain sentence (ZB)
+No ZB book on its own grid clears the diversifier bar: of 30 finalists none passes the tolerant gate with placebo, walk-forward and stack checks, every recent positive is NOW-ONLY/regime (0 of 60 tested cells positive in most pre-2023 years), and a one-tick cost change flips the sign of the best screen cell; ZB is DEAD for this grid (ranked table above), not a lead. Base for numbers: library families, evaluator basis, 2023-04..2026-10-16, USD 1,200 risk, carrying weeks dropped.
