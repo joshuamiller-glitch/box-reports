@@ -298,3 +298,194 @@ Changed bars: 555 highs (and 799 further o/l/c values) of 4,819,789. Mean |HOLD 
 ### RTY (Z2 stage-2 top 12 tolerant cells, repaired xbars; originals from ds3_instr2_z2wf/RTY/stage2.pkl)
 Changed values: 989. Largest |HOLD change| 78 $/wk (cell K|b10|ema8|atr14|m2.0 tgt 1.5: HOLD 384 -> 306, L6M 986 -> 780), tolerant-gate flips: 0, 5 of 12 verdict strings differ only in the p_book number (all 12 still FAIL: p_book 0.24-0.74, family p 1.00). Last bars 10-16..10-23 (extension) are not covered by the repaired copy and are unrepaired.
 
+
+
+## REPAIRED-RATES-CRYPTO (ZL-1, 2026-11-06): ZN, ZB, MBT, BTC, NKD (+ the GC block B survivors) re-run on CHAR-C's repaired 1-minute bars (cc_audit v1; paths and sha256 in autopilot/REPAIRED_BARS_PATHS.md)
+Method: every pipeline re-run END TO END on repaired copies of its own feed through source copies in l2vast/ds3/code/rr/ (originals, ledgers, trade-frame stores and pages untouched; outputs under /mnt/l2/l2vast/rr_*): LRS (find_lrs_rep), my native books (rr_native_*), BASE-4 block B (rr_base4), Z3 ZN/ZB (rr_z3, own repaired instr2_z3 files: ZN 565 / ZB 583 bad bars, matching the audit), S4b crypto / NKD grids + cluster (rr_t2). Per-cell tables: L6M / HOLD / PRE / X' = $/week at the pipeline's own lots (carry weeks dropped; S4b grids: mean R per trade), original -> repaired.
+
+### Summary per pipeline
+| pipeline | what | original | repaired | flips |
+|--|--|--|--|--|
+| LRS ZN | candidates / best joint z / best p_family / clears | 648 / 2.58 / 0.279 / 0 | 648 / 2.70 / 0.269 / 0 | cell-level z correlation orig vs rep 0.47 (the learned-rule search is unstable at the cell level to 0.01% bar repairs; family verdict unchanged) |
+| LRS ZB | candidates / best joint z / best p_family / clears | 648 / 2.65 / 0.274 / 0 | 648 / 2.52 / 0.378 / 0 | cell-level z correlation orig vs rep 0.52 (the learned-rule search is unstable at the cell level to 0.01% bar repairs; family verdict unchanged) |
+| LRS MBT | candidates / best joint z / best p_family / clears | 648 / 1.97 / 0.836 / 0 | 648 / 1.79 / 0.960 / 0 | cell-level z correlation orig vs rep 0.41 (the learned-rule search is unstable at the cell level to 0.01% bar repairs; family verdict unchanged) |
+| LRS BTC | candidates / best joint z / best p_family / clears | 486 / 0.00 / 1.000 / 0 | 486 / 0.00 / 1.000 / 0 | cell-level z correlation orig vs rep nan (the learned-rule search is unstable at the cell level to 0.01% bar repairs; family verdict unchanged) |
+| LRS NKD | candidates / best joint z / best p_family / clears | 484 / 0.00 / 1.000 / 0 | 486 / 0.00 / 1.000 / 0 | cell-level z correlation orig vs rep nan (the learned-rule search is unstable at the cell level to 0.01% bar repairs; family verdict unchanged) |
+| LRS BTC_CAPBREACH | candidates / best joint z / best p_family / clears | 486 / 2.37 / 0.318 / 0 | 486 / 2.79 / 0.080 / 0 | cell-level z correlation orig vs rep 0.35 (the learned-rule search is unstable at the cell level to 0.01% bar repairs; family verdict unchanged) |
+| LRS NKD_CAPBREACH | candidates / best joint z / best p_family / clears | 484 / 2.14 / 0.542 / 0 | 486 / 2.11 / 0.622 / 0 | cell-level z correlation orig vs rep 0.47 (the learned-rule search is unstable at the cell level to 0.01% bar repairs; family verdict unchanged) |
+| native MBT | cells / NOW-ONLY / tolerant / finalists passing the evaluator gate | 2304 / 283 / 134 / 4 | 2304 / 283 / 134 / 4 | tolerant flips 0, NOW-ONLY flips 0 |
+| native BTC | cells / NOW-ONLY / tolerant / finalists passing the evaluator gate | 2304 / 453 / 318 / 8 | 2304 / 453 / 318 / 8 | tolerant flips 0, NOW-ONLY flips 0 |
+| native NKD | cells / NOW-ONLY / tolerant / finalists passing the evaluator gate | 552 / 126 / 50 / 0 | 552 / 126 / 47 / 0 | tolerant flips 3, NOW-ONLY flips 0 |
+| block B MBT_B | scored / tolerant / tolerant with p_book <= .10 / family-surviving | 2052 / 55 / 9 / 0 | 2052 / 57 / 9 / 0 | see survivor table |
+| block B GC_B | scored / tolerant / tolerant with p_book <= .10 / family-surviving | 3840 / 392 / 42 / 0 | 3840 / 397 / 35 / 0 | see survivor table |
+| Z3 ZN | stage A rows / screen-gate passers / L3M+L6M+HOLD all positive / stage-B gate rows | 5426 / 8 / 57 / 315 | 5426 / 7 / 50 / 333 | 32 finalist cells re-evaluated: 0 gate flips (all FAIL both) |
+| Z3 ZB | stage A rows / screen-gate passers / L3M+L6M+HOLD all positive / stage-B gate rows | 5426 / 3 / 30 / 332 | 5426 / 3 / 14 / 339 | 32 finalist cells re-evaluated: 0 gate flips (all FAIL both) |
+| S4b MBT grid | cells / tolerant / clear (gate + persistence) | 144396 / 2120 / 102 | 144480 / 2170 / 107 | tolerant flips 132, clear flips 7 |
+| S4b BTC grid | cells / tolerant / clear (gate + persistence) | 144480 / 1723 / 25 | 144480 / 1701 / 20 | tolerant flips 114, clear flips 9 |
+| S4b BTCM grid | cells / tolerant / clear (gate + persistence) | 144312 / 1359 / 119 | 144312 / 1374 / 118 | tolerant flips 119, clear flips 9 |
+| S4b NKD grid | cells / tolerant / clear (gate + persistence) | 144564 / 102 / 0 | 144564 / 102 / 0 | tolerant flips 0, clear flips 0 |
+
+### LRS finalists (the ORIGINAL top-3 per series re-evaluated on repaired bars; no walk-forward)
+| series | cell | L6M | HOLD | PRE | X' | evaluator gate |
+|--|--|--|--|--|--|--|
+| ZN | gp/h60/pre/q0.7/('atr',3.0)/None/s2 | +155 -> -1401 | -348 -> -1640 | -1156 -> -912 | -837 -> -844 | FAIL -> FAIL |
+| ZN | tree_rev/h30/london/q0.85/('atr',3.0)/2R/s1 | -8346 -> -8389 | -9927 -> -9807 | -9864 -> -9725 | -7836 -> -7618 | FAIL -> FAIL |
+| ZN | gp/h60/pre/q0.7/('atr',3.0)/2R/s2 | +339 -> -1111 | -270 -> -1554 | -1249 -> -966 | -804 -> -781 | FAIL -> FAIL |
+| ZB | tree_mom/h30/nyam/q0.85/('atr',2.0)/1.5R/s1 | -1508 -> -1613 | -2901 -> -2583 | -2465 -> -2134 | -3109 -> -2602 | FAIL -> FAIL |
+| ZB | tree_rev/h30/nyam/q0.7/('atr',3.0)/2R/s0 | -2809 -> -2488 | -3761 -> -3556 | -3385 -> -3652 | -3114 -> -3387 | FAIL -> FAIL |
+| ZB | tree_rev/h30/nyam/q0.7/('atr',3.0)/None/s0 | -2796 -> -2535 | -3756 -> -3593 | -3388 -> -3684 | -3167 -> -3439 | FAIL -> FAIL |
+| MBT | gp/h60/nypm/q0.85/('atr',2.0)/1.5R/s2 | -8 -> -45 | +37 -> -30 | -6 -> -13 | -20 -> -21 | FAIL -> FAIL |
+| MBT | tree_mom/h60/pre/q0.7/('atr',3.0)/None/s1 | +30 -> -25 | +6 -> +3 | -5 -> -11 | +0 -> +0 | FAIL -> FAIL |
+| MBT | tree_mom/h30/pre/q0.85/('atr',3.0)/None/s0 | +24 -> +42 | +40 -> +54 | -13 -> -8 | +0 -> +0 | FAIL -> FAIL |
+| BTC | tree_mom/h15/london/q0.7/('atr',2.0)/1.5R/s0 | -1608 -> -1844 | -1851 -> -1408 | +42 -> +245 | -783 -> -784 | FAIL -> FAIL |
+| BTC | tree_mom/h15/london/q0.7/('atr',3.0)/2R/s0 | -1907 -> -2152 | -2079 -> -1476 | -160 -> +34 | -494 -> -577 | FAIL -> FAIL |
+| BTC | tree_mom/h15/london/q0.7/('atr',3.0)/None/s0 | -2236 -> -2091 | -2218 -> -1463 | -124 -> +77 | -560 -> -558 | FAIL -> FAIL |
+| NKD | tree_mom/h15/london/q0.7/('atr',2.0)/1.5R/s0 | -350 -> -398 | -214 -> -232 | -1178 -> -1105 | -640 -> -711 | FAIL -> FAIL |
+| NKD | tree_mom/h15/london/q0.7/('atr',3.0)/2R/s0 | -553 -> -524 | -228 -> -217 | -1115 -> -1021 | -602 -> -678 | FAIL -> FAIL |
+| NKD | tree_mom/h15/london/q0.7/('atr',3.0)/None/s0 | -553 -> -524 | -223 -> -212 | -1084 -> -1018 | -585 -> -662 | FAIL -> FAIL |
+| BTC_CAPBREACH | gp/h15/london/q0.7/('atr',3.0)/None/s0 | -218 -> -275 | -199 -> -387 | +45 -> -225 | -194 -> -255 | FAIL -> FAIL |
+| BTC_CAPBREACH | gp/h15/london/q0.7/('atr',3.0)/2R/s0 | -170 -> -313 | -155 -> -402 | +100 -> -264 | -68 -> -129 | FAIL -> FAIL |
+| BTC_CAPBREACH | gp/h30/nypm/q0.85/('atr',3.0)/None/s2 | +29 -> -24 | +296 -> +310 | -487 -> -265 | -377 -> +700 | FAIL -> FAIL |
+| NKD_CAPBREACH | tree_mom/h60/nypm/q0.85/('atr',3.0)/2R/s1 | +282 -> +282 | +157 -> +157 | -372 -> -368 | -555 -> -555 | FAIL -> FAIL |
+| NKD_CAPBREACH | tree_mom/h60/nypm/q0.85/('atr',2.0)/1.5R/s1 | +215 -> +215 | +118 -> +118 | -481 -> -489 | -534 -> -534 | FAIL -> FAIL |
+| NKD_CAPBREACH | tree_mom/h60/nypm/q0.85/('atr',3.0)/None/s1 | +245 -> +245 | +145 -> +145 | -339 -> -336 | -526 -> -526 | FAIL -> FAIL |
+
+### Block B survivors (per-cell p_book <= .10 in the original; $/wk)
+| cell | L6M | HOLD | PRE | X' | tolerant | p_book | p_family |
+|--|--|--|--|--|--|--|--|
+| MBT_B donchian k=1,mode=break,n=34 nyam stop6 tgt 1R | +343 -> +340 | +186 -> +185 | +3 -> -20 | -97 -> -97 | pass -> pass | 0.04 -> 0.04 | 1.00 -> 1.00 |
+| MBT_B donchian k=5,mode=break,n=34 pre stop4 tgt 2R | +48 -> +48 | +19 -> +19 | -37 -> -36 | +20 -> +20 | pass -> pass | 0.06 -> 0.05 | 1.00 -> 1.00 |
+| MBT_B donchian k=5,mode=break,n=34 pre stop4 tgt none | +51 -> +51 | +13 -> +13 | -36 -> -36 | -18 -> -18 | pass -> pass | 0.09 -> 0.13 | 1.00 -> 1.00 |
+| MBT_B donchian k=5,mode=break,n=55 pre stop3 tgt 2R | +53 -> +53 | +18 -> +28 | -37 -> -37 | +8 -> +8 | pass -> pass | 0.07 -> 0.04 | 1.00 -> 1.00 |
+| MBT_B donchian k=5,mode=break,n=55 pre stop3 tgt none | +33 -> +33 | -4 -> -4 | -26 -> -26 | -8 -> -8 | pass -> pass | 0.07 -> 0.07 | 1.00 -> 1.00 |
+| MBT_B donchian k=5,mode=break,n=55 pre stop4 tgt none | +51 -> +51 | +11 -> +11 | -26 -> -26 | -10 -> -10 | pass -> pass | 0.10 -> 0.13 | 1.00 -> 1.00 |
+| MBT_B donchian k=5,mode=break,n=55 pre stop6 tgt 1R | +53 -> +53 | +36 -> +45 | -45 -> -45 | -10 -> -10 | pass -> pass | 0.04 -> 0.04 | 1.00 -> 1.00 |
+| MBT_B donchian k=5,mode=break,n=55 pre stop6 tgt 2R | +71 -> +71 | +8 -> +8 | -31 -> -31 | -28 -> -28 | pass -> pass | 0.07 -> 0.12 | 1.00 -> 1.00 |
+| MBT_B donchian k=5,mode=break,n=55 pre stop6 tgt none | +64 -> +64 | +20 -> +20 | -33 -> -33 | -26 -> -26 | pass -> pass | 0.06 -> 0.10 | 1.00 -> 1.00 |
+| GC_B donchian k=1,mode=break,n=10 nyam stop2 tgt 1R | +3706 -> +3703 | +2694 -> +2702 | -216 -> -231 | +907 -> +575 | pass -> pass | 0.01 -> 0.01 | 0.24 -> 0.25 |
+| GC_B donchian k=1,mode=break,n=10 nyam stop2 tgt none | +951 -> +1145 | +1727 -> +1806 | -104 -> -121 | +184 -> +6 | pass -> pass | 0.02 -> 0.02 | 1.00 -> 1.00 |
+| GC_B donchian k=1,mode=break,n=20 nyam stop2 tgt 1R | +1783 -> +1781 | +1579 -> +1571 | -591 -> -642 | +837 -> +625 | pass -> pass | 0.04 -> 0.04 | 1.00 -> 1.00 |
+| GC_B orb_fade anchor_hm=180,end_hm=480,minutes=15 london stop3 tgt 1R | +1004 -> +1005 | +529 -> +529 | -158 -> -158 | -434 -> -342 | pass -> pass | 0.07 -> 0.07 | 1.00 -> 1.00 |
+| GC_B session_extreme_fade anchor_hm=180,cooldown=30,min_bars=30,span_min=390 pre stop2 tgt 1R | +496 -> +318 | +256 -> +86 | -158 -> -240 | -556 -> -596 | pass -> pass | 0.08 -> 0.19 | 1.00 -> 1.00 |
+| GC_B orb_break anchor_hm=500,end_hm=800,minutes=5 nyam stop3 tgt 1R | +392 -> +392 | +152 -> +152 | +33 -> +33 | +222 -> +220 | pass -> pass | 0.07 -> 0.07 | 1.00 -> 1.00 |
+| GC_B orb_break anchor_hm=500,end_hm=800,minutes=5 nyam stop4 tgt 1R | +505 -> +505 | +208 -> +208 | -116 -> -116 | +361 -> +361 | pass -> pass | 0.06 -> 0.06 | 1.00 -> 1.00 |
+| GC_B session_extreme_fade anchor_hm=180,cooldown=30,min_bars=30,span_min=600 pre stop2 tgt 1R | +496 -> +318 | +256 -> +86 | -158 -> -240 | -556 -> -596 | pass -> pass | 0.08 -> 0.19 | 1.00 -> 1.00 |
+| GC_B session_extreme_fade anchor_hm=180,cooldown=30,min_bars=30,span_min=600 nyam stop2 tgt 1R | +769 -> +769 | +1012 -> +1066 | -164 -> -165 | -465 -> -464 | pass -> pass | 0.04 -> 0.04 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=break,n=34 asia stop6 tgt 2R | +2153 -> +2153 | +2512 -> +2389 | -246 -> -242 | -557 -> -557 | pass -> pass | 0.04 -> 0.06 | 1.00 -> 1.00 |
+| GC_B orb_fade anchor_hm=570,end_hm=870,minutes=15 nyam stop6 tgt 1R | +956 -> +956 | +276 -> +277 | +39 -> +39 | -386 -> -341 | pass -> pass | 0.06 -> 0.07 | 1.00 -> 1.00 |
+| GC_B orb_fade anchor_hm=570,end_hm=870,minutes=15 nyam stop6 tgt 2R | +994 -> +994 | +373 -> +373 | +102 -> +101 | -372 -> -327 | pass -> pass | 0.07 -> 0.07 | 1.00 -> 1.00 |
+| GC_B orb_fade anchor_hm=570,end_hm=870,minutes=15 nyam stop6 tgt none | +893 -> +893 | +208 -> +209 | +99 -> +99 | -372 -> -327 | pass -> pass | 0.10 -> 0.11 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=10 nyam stop4 tgt 2R | +918 -> +918 | +1761 -> +1589 | -174 -> -174 | -256 -> -255 | pass -> pass | 0.04 -> 0.03 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=10 nyam stop4 tgt none | +1003 -> +1003 | +1777 -> +1607 | -107 -> -105 | -360 -> -359 | pass -> pass | 0.03 -> 0.04 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=10 nyam stop6 tgt 1R | +910 -> +910 | +1340 -> +1339 | -229 -> -210 | -321 -> -320 | pass -> pass | 0.07 -> 0.10 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=10 nyam stop6 tgt 2R | +1231 -> +1231 | +1850 -> +1850 | -97 -> -80 | -337 -> -336 | pass -> pass | 0.02 -> 0.02 | 0.99 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=10 nyam stop6 tgt none | +1231 -> +1231 | +1699 -> +1699 | -96 -> -77 | -337 -> -336 | pass -> pass | 0.03 -> 0.05 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=20 nypm stop2 tgt none | +361 -> +361 | +486 -> +486 | -326 -> -339 | -644 -> -641 | pass -> pass | 0.07 -> 0.07 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=20 nypm stop3 tgt 1R | +1001 -> +1001 | +655 -> +654 | -74 -> -74 | -384 -> -384 | pass -> pass | 0.09 -> 0.09 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=20 nypm stop4 tgt none | +961 -> +961 | +414 -> +414 | +63 -> +59 | -81 -> -81 | pass -> pass | 0.06 -> 0.06 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=55 nyam stop2 tgt 2R | +1297 -> +1297 | +1503 -> +1504 | -354 -> -331 | -552 -> -510 | pass -> pass | 0.04 -> 0.08 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=55 nyam stop3 tgt 1R | +1399 -> +1399 | +1451 -> +1451 | -34 -> -45 | -307 -> -270 | pass -> pass | 0.03 -> 0.02 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=55 nyam stop6 tgt 2R | +1608 -> +1608 | +1990 -> +1990 | -274 -> -276 | -224 -> -223 | pass -> pass | 0.01 -> 0.01 | 1.00 -> 1.00 |
+| GC_B donchian k=5,mode=fade,n=55 nyam stop6 tgt none | +1608 -> +1608 | +1835 -> +1835 | -262 -> -262 | -224 -> -223 | pass -> pass | 0.02 -> 0.02 | 1.00 -> 1.00 |
+| GC_B vwap_reclaim anchor_hm=500,hold=5,min_bars=15,span_min=600 london stop4 tgt 2R | +1689 -> +1689 | +897 -> +897 | -76 -> +41 | +36 -> +237 | pass -> pass | 0.01 -> 0.01 | 0.81 -> 0.80 |
+| GC_B vwap_reject anchor_hm=500,hold=5,min_bars=15,span_min=600 nypm stop2 tgt none | +1324 -> +1324 | +664 -> +694 | -191 -> -176 | -237 -> -338 | pass -> pass | 0.09 -> 0.13 | 1.00 -> 1.00 |
+| GC_B vwap_reject anchor_hm=500,hold=5,min_bars=15,span_min=600 nypm stop3 tgt none | +1445 -> +1445 | +634 -> +660 | -28 -> -28 | +44 -> -24 | pass -> pass | 0.06 -> 0.16 | 1.00 -> 1.00 |
+| GC_B vwap_reject anchor_hm=500,hold=5,min_bars=15,span_min=600 nypm stop4 tgt none | +1472 -> +1472 | +621 -> +647 | -34 -> -67 | -101 -> -133 | pass -> pass | 0.06 -> 0.09 | 1.00 -> 1.00 |
+| GC_B vwap_reject anchor_hm=500,hold=5,min_bars=15,span_min=600 nypm stop6 tgt none | +1564 -> +1564 | +650 -> +676 | +20 -> +20 | -155 -> -191 | pass -> pass | 0.07 -> 0.22 | 1.00 -> 1.00 |
+| GC_B vwap_reject anchor_hm=570,hold=5,min_bars=15,span_min=390 nypm stop2 tgt none | +1494 -> +1494 | +1205 -> +1205 | -394 -> -378 | +63 -> +63 | pass -> pass | 0.03 -> 0.01 | 1.00 -> 0.96 |
+| GC_B donchian k=15,mode=fade,n=20 nyam stop6 tgt 1R | +1232 -> +1232 | +850 -> +831 | -203 -> -226 | +68 -> +68 | pass -> pass | 0.08 -> 0.12 | 1.00 -> 1.00 |
+| GC_B donchian k=15,mode=fade,n=20 nyam stop6 tgt 2R | +1217 -> +1217 | +925 -> +906 | -180 -> -204 | +36 -> +36 | pass -> pass | 0.07 -> 0.11 | 1.00 -> 1.00 |
+| GC_B donchian k=15,mode=fade,n=20 nyam stop6 tgt none | +1217 -> +1217 | +747 -> +728 | -180 -> -204 | +36 -> +36 | pass -> pass | 0.10 -> 0.12 | 1.00 -> 1.00 |
+| GC_B donchian k=15,mode=fade,n=34 nyam stop4 tgt 2R | +724 -> +724 | +842 -> +664 | -148 -> -168 | +66 -> +66 | pass -> pass | 0.09 -> 0.11 | 1.00 -> 1.00 |
+| GC_B donchian k=15,mode=fade,n=34 nyam stop6 tgt 2R | +605 -> +605 | +636 -> +616 | -121 -> -142 | -4 -> -4 | pass -> pass | 0.09 -> 0.08 | 1.00 -> 1.00 |
+| GC_B pdhl_break rth=(500, 810),x_atr=0.25 london stop4 tgt 1R | +29 -> +29 | +211 -> +211 | +127 -> +127 | -337 -> -269 | pass -> pass | 0.10 -> 0.12 | 1.00 -> 1.00 |
+| GC_B failed_or anchor_hm=570,minutes=5 nyam stop3 tgt 1R | +972 -> +972 | +247 -> +251 | +33 -> +24 | +161 -> +164 | pass -> pass | 0.08 -> 0.12 | 1.00 -> 1.00 |
+| GC_B failed_or anchor_hm=570,minutes=5 nyam stop3 tgt 2R | +1668 -> +1668 | +140 -> +144 | +17 -> +9 | +195 -> +201 | pass -> pass | 0.09 -> 0.09 | 1.00 -> 1.00 |
+| GC_B failed_or anchor_hm=570,minutes=5 nyam stop4 tgt 1R | +1308 -> +1308 | +480 -> +481 | -91 -> -90 | +133 -> +132 | pass -> pass | 0.05 -> 0.04 | 1.00 -> 1.00 |
+| GC_B failed_or anchor_hm=570,minutes=5 nyam stop4 tgt 2R | +1211 -> +1211 | +138 -> +138 | -52 -> -30 | +10 -> +10 | pass -> pass | 0.10 -> 0.12 | 1.00 -> 1.00 |
+| GC_B session_extreme_fade anchor_hm=570,cooldown=30,min_bars=30,span_min=600 nyam stop2 tgt 1R | +189 -> +325 | +818 -> +874 | -256 -> -256 | -812 -> -801 | pass -> pass | 0.10 -> 0.07 | 1.00 -> 1.00 |
+
+### Z3 ZN / ZB finalists (evaluator of record, 100 placebo worlds, carry dropped; $/wk) - gate FAIL before and after for all 32 cells
+| cell | L6M | HOLD | PRE | X' | p_book |
+|--|--|--|--|--|--|
+| ZB__keltner_flip__nyam__atr3_1R_120__24c24048 | -812 -> -839 | -1136 -> -1155 | -1322 -> -1332 | -947 -> -991 | 0.61 -> 0.69 |
+| ZB__session_extreme_fade__pre__atr4_1R_60__50b9c6e0 | -148 -> -148 | -136 -> -135 | -293 -> -269 | -296 -> -334 | 0.78 -> 0.69 |
+| ZB__supertrend_flip__nyam__atr3_1R_120__12c224e6 | -268 -> -268 | -77 -> -77 | -370 -> -376 | -320 -> -370 | 0.33 -> 0.40 |
+| ZB__supertrend_flip__nyam__atr3_1R_120__94bca246 | -157 -> -157 | -197 -> -216 | -501 -> -477 | -493 -> -493 | 0.07 -> 0.08 |
+| ZB__supertrend_flip__nyam__atr3_1R_120__bd448b1f | -153 -> -153 | -156 -> -168 | -80 -> -53 | -281 -> -281 | 0.78 -> 0.78 |
+| ZB__supertrend_flip__nyam__atr3_1R_120__e65e8251 | n/a -> +54 | n/a -> -170 | n/a -> -631 | n/a -> -493 | n/a -> 0.17 |
+| ZB__supertrend_flip__nyam__atr3_1R_120__f4d35af0 | -122 -> -122 | -34 -> -44 | -266 -> -290 | -155 -> -159 | 0.38 -> 0.32 |
+| ZB__supertrend_flip__nyam__atr3_1R_90__9728c774 | -110 -> -110 | -273 -> -273 | -597 -> -625 | -602 -> -611 | 0.74 -> 0.74 |
+| ZB__supertrend_flip__nyam__atr4_1R_120__c3796c6e | -127 -> -127 | -162 -> -148 | -460 -> -460 | -478 -> -520 | 0.22 -> 0.16 |
+| ZB__supertrend_flip__nyam__atr4_1R_120__e65e8251 | +98 -> +98 | +75 -> +91 | -409 -> -420 | -228 -> -265 | 0.06 -> 0.07 |
+| ZB__supertrend_flip__nyam__usd600_1R_120__0c887278 | -49 -> -49 | -45 -> -55 | -163 -> -167 | -95 -> -147 | 0.26 -> 0.29 |
+| ZB__supertrend_flip__nyam__usd600_1R_120__342bb5d8 | -14 -> -26 | -47 -> -52 | -162 -> -138 | -213 -> -213 | 0.49 -> 0.33 |
+| ZB__supertrend_flip__nyam__usd600_1R_120__946778a9 | -7 -> -7 | +9 -> +9 | -128 -> -128 | -360 -> -360 | 0.86 -> 0.86 |
+| ZB__supertrend_flip__nyam__usd600_1R_120__ca206250 | -67 -> -67 | +34 -> +34 | -114 -> -113 | -236 -> -228 | 0.83 -> 0.76 |
+| ZB__supertrend_flip__nyam__usd600_1R_90__64cf9e27 | -94 -> -94 | -58 -> -50 | -221 -> -217 | -125 -> -125 | 0.27 -> 0.27 |
+| ZB__supertrend_flip__nyam__usd600_1R_90__c00796a8 | -12 -> -12 | -7 -> -7 | -201 -> -201 | -268 -> -268 | 0.33 -> 0.34 |
+| ZN__keltner_flip__nyam__atr2_1R_90__6cb8faa3 | -246 -> -246 | -267 -> -267 | -327 -> -324 | -219 -> -219 | 0.31 -> 0.32 |
+| ZN__keltner_flip__nyam__atr3_1R_120__6fa89086 | -25 -> -25 | -267 -> -267 | -662 -> -683 | -172 -> -190 | 0.56 -> 0.53 |
+| ZN__keltner_flip__nyam__atr3_1R_120__92e812b0 | -137 -> -137 | -39 -> -39 | -203 -> -217 | +103 -> +103 | 0.82 -> 0.77 |
+| ZN__keltner_flip__nyam__usd600_2R_90__9f0dbc80 | -34 -> -34 | -29 -> -29 | -79 -> -80 | +161 -> +161 | 0.69 -> 0.72 |
+| ZN__supertrend_flip__nyam__atr3_1R_120__342bb5d8 | +37 -> +1 | -144 -> -156 | -227 -> -214 | -149 -> -149 | 0.29 -> 0.26 |
+| ZN__supertrend_flip__nyam__atr3_1R_120__946778a9 | +58 -> +58 | -161 -> -160 | -313 -> -326 | -117 -> -117 | 0.35 -> 0.34 |
+| ZN__supertrend_flip__nyam__atr3_1R_120__ca206250 | -100 -> -100 | -172 -> -171 | -206 -> -190 | -191 -> -191 | 0.27 -> 0.26 |
+| ZN__supertrend_flip__nyam__atr4_1R_120__12c224e6 | -117 -> -117 | -169 -> -168 | -274 -> -233 | -11 -> -11 | 0.18 -> 0.27 |
+| ZN__supertrend_flip__nyam__atr4_1R_60__4b0eb7ac | -198 -> -198 | -222 -> -213 | -318 -> -328 | -354 -> -379 | 0.57 -> 0.64 |
+| ZN__supertrend_flip__nyam__usd600_1.5R_60__94bca246 | -30 -> -30 | -59 -> -59 | -125 -> -119 | -69 -> -69 | 0.31 -> 0.35 |
+| ZN__supertrend_flip__nyam__usd600_1.5R_60__e65e8251 | n/a -> +28 | n/a -> -46 | n/a -> -133 | n/a -> -83 | n/a -> 0.24 |
+| ZN__supertrend_flip__nyam__usd600_1.5R_90__9728c774 | +50 -> +50 | -58 -> -58 | -127 -> -126 | +48 -> +53 | 0.21 -> 0.21 |
+| ZN__supertrend_flip__nyam__usd600_1R_60__e65e8251 | +14 -> +28 | -52 -> -46 | -127 -> -129 | -98 -> -108 | 0.33 -> 0.24 |
+| ZN__supertrend_flip__nyam__usd600_1R_90__09dc2f0a | -9 -> -16 | -43 -> -47 | -157 -> -141 | +30 -> +29 | 0.08 -> 0.15 |
+| ZN__supertrend_flip__nyam__usd600_2R_90__c00796a8 | +17 -> +17 | -53 -> -53 | -108 -> -113 | -9 -> -9 | 0.17 -> 0.13 |
+| ZN__supertrend_flip__pre__atr3_1R_60__e65e8251 | +131 -> +46 | -228 -> -266 | -394 -> -401 | -636 -> -640 | 0.53 -> 0.55 |
+
+### Native books: finalists that pass the evaluator gate before or after, and every gate flip ($/wk; L6M HOLD PRE X')
+| series | cell | L6M | HOLD | PRE | X' | gate |
+|--|--|--|--|--|--|--|
+| MBT | sympathy {'N': 5, 'thr': 0.0, 'mode': 'against' stop ('atr', 6) 2R T120 | +231 -> +232 | +173 -> +173 | -157 -> -157 | -26 -> -26 | pass -> pass |
+| MBT | sympathy {'N': 5, 'thr': 20.0, 'mode': 'against stop ('atr', 6) 1R T120 | +130 -> +131 | +114 -> +114 | -76 -> -76 | +114 -> +113 | pass -> pass |
+| MBT | sympathy {'N': 5, 'thr': 0.0, 'mode': 'against' stop ('atr', 6) 1R T120 | +91 -> +92 | +144 -> +145 | -119 -> -119 | +21 -> +20 | pass -> pass |
+| MBT | funding_time {'hour': 8, 'o': 15, 'L': 60, 'mode':  stop ('atr', 6) 2R T240 | +12 -> n/a | +5 -> n/a | -1 -> n/a | +9 -> n/a | FAIL -> n/a |
+| MBT | funding_time {'hour': 0, 'o': 15, 'L': 60, 'mode':  stop ('atr', 6) 2R T240 | +3 -> +3 | +10 -> +10 | -13 -> -13 | -15 -> -15 | pass -> pass |
+| BTC | sympathy {'N': 5, 'thr': 0.0, 'mode': 'against' stop ('atr', 6) 2R T120 | +1400 -> +1400 | +976 -> +977 | -1044 -> -1043 | -458 -> -457 | pass -> pass |
+| BTC | sympathy {'N': 30, 'thr': 40.0, 'mode': 'with'} stop ('atr', 4) 1R T120 | +391 -> +391 | +778 -> +779 | +236 -> +316 | -58 -> -58 | pass -> pass |
+| BTC | funding_time {'hour': 0, 'o': -30, 'L': 240, 'mode' stop ('atr', 2) 2R T60 | +30 -> +30 | +123 -> +123 | -40 -> -40 | -223 -> -221 | pass -> pass |
+| BTC | funding_time {'hour': 0, 'o': 5, 'L': 60, 'mode': ' stop ('atr', 2) 2R T120 | +91 -> +91 | +1080 -> +1080 | -188 -> -188 | -423 -> -422 | pass -> pass |
+| BTC | funding_time {'hour': 0, 'o': 0, 'L': 240, 'mode':  stop ('atr', 4) 1R T120 | +107 -> +107 | +168 -> +168 | +321 -> +321 | +34 -> +33 | pass -> pass |
+| BTC | funding_time {'hour': 8, 'o': -30, 'L': 60, 'mode': stop ('atr', 6) 2R T120 | +735 -> +735 | +221 -> +221 | +11 -> +11 | -120 -> -120 | pass -> pass |
+| BTC | sympathy {'N': 15, 'thr': 0.0, 'mode': 'against stop ('atr', 6) 2R T60 | +409 -> +409 | +154 -> +154 | -1140 -> -1140 | +193 -> +263 | pass -> pass |
+| BTC | funding_time {'hour': 8, 'o': 0, 'L': 60, 'mode': ' stop ('atr', 4) 2R T240 | +509 -> +509 | +113 -> +113 | +587 -> +587 | -230 -> -230 | pass -> pass |
+| NKD | tokyo_close {'mode': 'with', 'thr_atr': 0.0} stop ('atr', 4) 2R T60 | +55 -> n/a | +117 -> n/a | -341 -> n/a | -267 -> n/a | FAIL -> n/a |
+| NKD | tokyo_close {'mode': 'with', 'thr_atr': 0.0} stop ('atr', 6) 2R T240 | +55 -> n/a | +92 -> n/a | -159 -> n/a | -176 -> n/a | FAIL -> n/a |
+
+### S4b grids: top clearing cells (mean R per trade, windows; the S4b gate = tolerant + persistence)
+| series | cell | L6M | HOLD | PRE | X' | tolerant | clear |
+|--|--|--|--|--|--|--|--|
+| MBT | F1_keltner b10_ema13_atr14_m2.5 6ATR/2R/T120 asia | 0.240 -> 0.240 | 0.207 -> 0.207 | -0.035 -> -0.035 | -0.107 -> -0.107 | pass -> pass | pass -> pass |
+| MBT | F1_keltner b10_ema8_atr20_m2.5 3ATR/1.5R/T30 asia | 0.304 -> 0.304 | 0.286 -> 0.286 | -0.084 -> -0.084 | 0.019 -> 0.019 | pass -> pass | pass -> pass |
+| MBT | F1_keltner b10_ema13_atr20_m2.5 6ATR/1R/T120 asia | 0.181 -> 0.181 | 0.189 -> 0.189 | -0.160 -> -0.160 | -0.180 -> -0.197 | pass -> pass | pass -> pass |
+| MBT | F1_keltner b10_ema8_atr20_m2.5 3ATR/1.5R/T120 asia | 0.380 -> 0.380 | 0.322 -> 0.322 | 0.194 -> 0.194 | -0.018 -> -0.018 | pass -> pass | pass -> pass |
+| MBT | F1_keltner b10_ema8_atr20_m2.5 2ATR/2R/T30 asia | 0.398 -> 0.398 | 0.366 -> 0.366 | -0.150 -> -0.150 | -0.099 -> -0.099 | pass -> pass | pass -> pass |
+| MBT | F1_keltner b10_ema8_atr20_m2.5 $1200/2R/T30 asia | 0.431 -> 0.431 | 0.351 -> 0.351 | 0.148 -> 0.148 | -0.068 -> -0.068 | pass -> pass | pass -> pass |
+| MBT | F1_keltner b10_ema13_atr20_m2.5 6ATR/2R/T120 asia | 0.179 -> 0.179 | 0.191 -> 0.191 | -0.112 -> -0.112 | -0.218 -> -0.218 | pass -> pass | pass -> pass |
+| MBT | F1_keltner b10_ema8_atr20_m2.5 2ATR/1.5R/T30 asia | 0.352 -> 0.352 | 0.334 -> 0.334 | -0.099 -> -0.099 | -0.224 -> -0.224 | pass -> pass | pass -> pass |
+| BTC | F1_keltner b5_ema13_atr7_m0.5 3ATR/noTP/T120 nyam | 0.176 -> 0.176 | 0.114 -> 0.114 | -0.032 -> -0.031 | 0.025 -> 0.026 | pass -> pass | pass -> pass |
+| BTC | F2_supertrend b15_atr14_m4 4ATR/1R/T120 asia | 0.094 -> 0.094 | 0.133 -> 0.133 | 0.158 -> 0.158 | 0.040 -> 0.039 | pass -> pass | pass -> pass |
+| BTC | F5_hmavwap b1_hma20 $2400/noTP/T120 nyam | 0.157 -> 0.157 | 0.132 -> 0.132 | 0.008 -> 0.008 | -0.021 -> -0.021 | pass -> pass | pass -> pass |
+| BTC | F2_supertrend b15_atr14_m4 $2400/1R/T120 asia | 0.086 -> 0.086 | 0.156 -> 0.156 | 0.086 -> 0.086 | 0.082 -> 0.082 | pass -> pass | pass -> pass |
+| BTC | F2_supertrend b15_atr5_m2 $2400/1R/T30 nyam | 0.071 -> 0.071 | 0.064 -> 0.064 | 0.137 -> 0.137 | -0.000 -> -0.005 | pass -> pass | pass -> pass |
+| BTC | F2_supertrend b15_atr14_m4 6ATR/1R/T120 asia | 0.063 -> 0.063 | 0.091 -> 0.091 | 0.132 -> 0.132 | 0.087 -> 0.087 | pass -> pass | pass -> pass |
+| BTC | F2_supertrend b5_atr10_m4 $2400/2R/T60 nyam | 0.096 -> 0.096 | 0.077 -> 0.077 | -0.018 -> -0.018 | 0.001 -> 0.001 | pass -> pass | pass -> pass |
+| BTC | F5_hmavwap b1_hma55 4ATR/1.5R/T120 nyam | 0.137 -> 0.137 | 0.077 -> 0.077 | 0.137 -> 0.137 | 0.022 -> 0.022 | pass -> pass | FAIL -> pass |
+| BTCM | F1_keltner b10_ema13_atr14_m2.5 6ATR/2R/T120 asia | 0.238 -> 0.238 | 0.203 -> 0.203 | -0.035 -> -0.035 | -0.093 -> -0.093 | pass -> pass | pass -> pass |
+| BTCM | F1_keltner b10_ema13_atr14_m2.5 6ATR/1R/T120 asia | 0.210 -> 0.210 | 0.183 -> 0.183 | -0.057 -> -0.057 | 0.006 -> 0.006 | pass -> pass | pass -> pass |
+| BTCM | F1_keltner b10_ema8_atr20_m2.5 3ATR/1.5R/T30 asia | 0.304 -> 0.304 | 0.286 -> 0.286 | -0.084 -> -0.084 | 0.528 -> 0.528 | pass -> pass | pass -> pass |
+| BTCM | F1_keltner b10_ema13_atr14_m2.5 6ATR/noTP/T120 asia | 0.220 -> 0.220 | 0.191 -> 0.191 | -0.085 -> -0.085 | -0.093 -> -0.093 | pass -> pass | pass -> FAIL |
+| BTCM | F1_keltner b10_ema8_atr20_m2.5 3ATR/1.5R/T120 asia | 0.377 -> 0.377 | 0.321 -> 0.321 | 0.194 -> 0.194 | 0.612 -> 0.612 | pass -> pass | pass -> pass |
+| BTCM | F1_keltner b10_ema13_atr20_m2.5 6ATR/1R/T120 asia | 0.179 -> 0.195 | 0.188 -> 0.199 | -0.184 -> -0.184 | -0.009 -> -0.009 | pass -> pass | pass -> pass |
+| BTCM | F1_keltner b10_ema13_atr14_m2.5 6ATR/1.5R/T120 asia | 0.201 -> 0.201 | 0.176 -> 0.176 | -0.060 -> -0.060 | -0.062 -> -0.062 | pass -> pass | pass -> pass |
+| BTCM | F1_keltner b10_ema8_atr20_m2.5 $1200/2R/T30 asia | 0.431 -> 0.431 | 0.351 -> 0.351 | 0.148 -> 0.148 | 0.165 -> 0.165 | pass -> pass | pass -> pass |
+
+**Plain sentence (REPAIRED-RATES-CRYPTO): re-running every ZN, ZB, MBT, BTC and NKD pipeline of mine / BASE-4 / Z3 / S4b on CHAR-C's repaired bars moves no label, no gate verdict that mattered and no frozen spec: the Z3 rates books stay DEAD (ZN screen-gate passers 8 -> 7, ZB 3 -> 3, all 32 finalist cells FAIL before and after), the native books keep the same tolerant sets (MBT 134 -> 134, BTC 318 -> 318, NKD 50 -> 47) and the same finalists, block B keeps 0 family-surviving cells (MBT_B 9 -> 9 per-cell survivors, GC_B 42 -> 35 per-cell survivors, tolerant 392 -> 397), the S4b crypto grids change by 0-2.4% of their tolerant cells (MBT 2,120 -> 2,170, BTC 1,723 -> 1,701, BTCM 1,359 -> 1,374, NKD 102 -> 102) with the clear-cell sets moving by 7-9 cells each, and the learned-rule search stays at 0 clears in all seven series (BTC CAP-BREACH best p_family .318 -> .080, still no clear); the MBT Asia Keltner spec (WATCH_BTCM_KELTNER_SPEC.md, sha256 b82f1d44533083113644e8f11dc0f9aa19f732df141940a3b59641a2497bb8d9) is untouched: its PRIMARY cell has the same n = 164, net mean R +0.151 (t 2.000 -> 1.999) and identical L6M +0.341, HOLD +0.285, MID +0.184, PRE +0.174, X' -0.108 on the repaired bars (secondary S1 +0.164 -> +0.159, S2 identical, S3 +0.103 -> +0.106).** What does move: (a) the learned-rule search is chaotic at the cell level (cell-level joint-z correlation .35-.52 between the original and repaired runs and the same three finalists lose or gain several hundred dollars per week, e.g. ZN gp h60 pre L6M +155 -> -1,401), a property of the method, not of the bars; (b) GC block B loses 7 of its 42 per-cell survivors (p_book above .10 after repair) and keeps none family-surviving; (c) the GC finding quoted on my GC page (493 -> 475 gate passers, PRE -270 -> -337) is the same effect and stays as reported there.
