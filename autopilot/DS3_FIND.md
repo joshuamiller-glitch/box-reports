@@ -1002,3 +1002,5 @@ Prereg sha fa5c5c13.. + addendum1 (DECISIONS). Spread = causal beta-hedged pseud
 - 6E-6J: reverts at 5-15 min in NY-PM/close (VR(30) 0.65), room 3.2-4.4x the 97 cost; all 546 cells lose in HOLD (median -$1,508/wk). Does not clear.
 - GC-CL: correlation 0.04-0.07 with a sign that flips by year; no stable hedge, no spread. 
 Common reading: every spread reverts in the tape but by less than two legs' costs; the map's reversion is mostly asynchronous last-print noise in the two legs.
+
+FEE CORRECTION pointer (S4b, 2026-11-06 02:22Z): the BTC / MBT Asia Keltner cluster block above was computed on a grid that charged no per-contract fee; see autopilot/FEE_AUDIT_INSTR2.md (fee-adjusted: MBT cluster 3 distinct sets, best t 2.12; label WATCH, weaker). All T-FIND books by CHAR-A / B / C and the LRS sweeps charge the json fee in the evaluator.

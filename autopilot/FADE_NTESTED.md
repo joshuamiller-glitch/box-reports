@@ -106,3 +106,4 @@ T2_ZN_NTESTED: 5426 stage-A rows (490 signal cells x sessions x 2 ref brackets);
 | 2026-11-05T22:59Z | T2_YM_B | BASE-4 | 3168 | T-INSTR-2 YM block B; scope sha 564f690a... |
 | 2026-11-06T01:30Z | T2_GC_B | BASE-4 | 5400 | T-INSTR-2 GC block B; scope sha 0c822b07... |
 | 2026-11-06T01:49Z | T2_ZN_B | BASE-4 | 4320 | T-INSTR-2 ZN block B; scope sha 832d7489... |
+| 2026-11-06T02:07Z | T2_MBT_B | BASE-4 | 3168 | T-INSTR-2 MBT block B; scope sha da844295... |
