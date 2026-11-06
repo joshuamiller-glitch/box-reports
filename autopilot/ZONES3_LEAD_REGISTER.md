@@ -24,7 +24,3 @@ V13X = DEFECT BASE (add-fill ordering defect), V13Y = fixed base. S5 rows read f
 | PRF/vwap/day D40 skip | S4a | VWAP-day line ahead within 40: skip | S4A PRF/vwap/day D40 skip: total +191k, P(>0) 0.88, best-month 23% | pending V13Y | n/a | n/a | n/a | not clean-roomed | owner label pending |
 | FIB/ote705_dn D40 skip | S4a | OTE705 down line ahead within 40: skip | S4A FIB/ote705_dn/15m D40 skip: total +23k, P(>0) 0.57, best-month 226% | pending V13Y | n/a | n/a | n/a | not clean-roomed | ONE-MONTH (best month > 100%) |
 | ALL7 skip / camH3 wt / kijun1h wt | Z3 | action table units | ALL7 skip: total +399k, P(>0) 0.98, best-month 38% // camH3 wt: total +301k, P(>0) 0.93, best-month 64% | Z3 V13Y survivors: 0 of 183 cells pass the single-path band | n/a | n/a | n/a | not clean-roomed | kijun1h wt ONE-MONTH; others band-NOISE |
-
-## Exit rules (T-EXIT-N)
-
-See autopilot/DS3_EXIT_N.md. Status: no exit rule (loss cut variants, tighten, scale-out, take incl. the five erased THP lines, re-target, time exits) is reported as passing on basis N; the five THP_POLICY_D7 take lines are pulled (user, 2026-11-02).
