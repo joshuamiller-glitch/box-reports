@@ -1,0 +1,79 @@
+# TH_REDO_PROGRAM_PLAN - T-TH-REDO programs A-G: exact grids, units, windows, gates, compute, order, owners, refit calendar, launch (CHAR-B, 2026-11-06 ~19:40Z)
+Research only, Shadow only, nothing live, no PASS claims. **No TH number exists yet; nothing here is computed on the engine.** Authority: autopilot/DIRECTIVE_T_TH_REDO_20261106.md (incl. 'TH POLICY CADENCE' and 'G'), the clarification that Gate 0 = the fixed engine reproduces the ALREADY-LIVE blind week (trades >= 85% matched, net within 15%, cuts >= 85% matched, cut dollars within 10%) and that A-F start the moment it passes (next week's seal runs in parallel and does not gate them). Folds in CHAR-A's TH_REDO_RECIPE_SKELETON.md, TH_FAMILY_RESCORE_PLAN.md, TH_WITHDRAWN_REGISTER.md and WHAT_IS_DEAD_TH_ADDENDUM_20261106.md. Code and preregs: autopilot/th_redo/ (tested on a toy tree; shas below).
+
+## 0. What is staged and tested (so launch is minutes)
+| piece | file (autopilot/th_redo/) | status |
+|--|--|--|
+| exact grids A-G with cell counts | grids.py (`python3 grids.py` prints the table in section 2) | frozen by prereg sha |
+| ENTER / PULL predicates (code-checkable, for S4a's harness) | policy_rules.py: `recent_pass`, `tolerant_gate`, `drawdown_first`, `enters(stats, p_placebo, p_family, wf_positive)`, `pulled(stats_live_line)`, `refit_calendar()` | frozen; unit-tested |
+| scoring pipeline (delta windows L1M L2M L3M L6M HOLD MID PRE X', carrying week dropped, MDE, drawdown first, placebos = random exits of the same count, family max-stat over ALL screened unit-cells, purged walk-forward, phase-averaged ladder) | score.py | frozen |
+| finalist tiers, cost and concurrency | finalists.py (Tier 1: A 150 / B 100 / C 100 / D 100 / E 100 pairs through the 36-run ladder; Tier 2: 400 per program one-run screen, top 10 promoted) | frozen; timing from BASE-4 staging |
+| engine adapter CONTRACT + toy adapter | adapter.py (5 methods: baseline, run(rule, base, fill, phase), screen, placebo(rule, world), live_week) | BASE-4/S4a must write adapter_engine.py with the same class |
+| program driver (sharded stage 1, stage 2 ladder) | run_program.py PROG ADAPTER OUTDIR --stage screen/final --shard i/n | tested on toy |
+| E driver, F policy writer, G stub | run_E.py, make_policy.py, run_G.py | E and F tested on toy; G staged (needs per-second feature rows, ZL-1) |
+| launcher and status page | launch_AF.sh ENGINE_CONFIG [OUTROOT] -> orchestrate.py; status.py -> OUTROOT/STATUS.md and th_redo/STATUS.md | tested end to end on toy (4 min 35 s) |
+| preregs A-G | prereg/TH_REDO_PREREG_{A..G}.md, prereg_shas.txt, make_preregs.py | sha256 logged in DECISIONS.md |
+Stages: screen (sharded) -> select (diversity rule, family null over all screened cells) -> ladder (tier 1, sharded, resumable) / tier2 -> collect (walk-forward, ENTER, promotion list) -> E (build pairs, same stages) -> F -> G. Toy tests (`python3 test_toy.py`; full launcher on the toy tree 3 min 48 s): grid counts equal the frozen counts; planted-effect toy -> ENTER (12 of 12 finalists, family p .048); null toy -> 0 ENTER over the same grid; an all-negative profit toy -> 0 finalists; predicates (one failing window does not pull; failing L3M and L6M pulls; gates). **The launcher refuses unless OUTROOT/GATE0.json carries the sha256 of the engine config handed to it and the four Gate 0 criteria, the 7 prereg files are unchanged, engine_timing.json exists and MemAvailable >= 40 GB.** BASE-4 writes GATE0.json and engine_timing.json when the blind-week proof passes; then: `th_redo/launch_AF.sh <engine_config.json>`.
+
+## 1. Evaluation unit, windows, bars (common to all programs; also in each prereg)
+* Unit = the 14 live book x session units of the core six books with nonzero live lots (KB asia/london/nyam/nypm, PE asia/london/nyam, SM asia/london, HM asia/nyam, MV london/nyam, PB asia; ENGINE_CONFIG_LIVE_Q1A.md row 3), live lots, D7 v1.4 exact base, per-book locks, kfix on, unthinned exit-aware rows, 1-s clock. CHAR-A's skeleton counts 11 books x 6 sessions (66 units); sessions with zero live lots and the non-core books carry no live TH line, so they are not searched (stated assumption; flag if you want them).
+* Statistic = paired DELTA (stack with the rule minus the same engine without it, same entries), weekly sums. Windows: L1M = 30 d, L2M = 60 d, L3M = 90 d, L6M = 182 d, HOLD = 365 d before the as-of date; MID, PRE, X' fixed (instr2_eval). Every cell prints all eight. Carrying week dropped = the single ISO week with the largest |paired delta| in the window (windows >= 8 weeks) - an algorithmic assumption; the fixed-week convention is printed beside. MDE = 2.8 sd/sqrt(n). Drawdown first: stack maxDD with the rule not worse in L6M and PRE.
+* ENTER (policy line allowed) = recents pass (L3M and L6M deltas > 0, L1M and L2M not below -0.5 MDE) AND tolerant gate (PRE and X' >= -0.5 MDE, sample floors L3M 8, L6M 20, PRE 30, X' 20 weeks) AND drawdown first AND placebo p <= .10 AND family p <= .10 AND purged walk-forward positive. PULL (live line removed) = L3M AND L6M deltas both <= 0 with the carrying week dropped; never one bad week, never L1M/L2M alone. (policy_rules.py)
+* Fills: MEASURED (market exit 0.80 pt, stops 2.45, cut cost measured 1.18 pt, entries 3.5 pt worse than the old engine, targets nominal) is the decision basis; OLD printed beside; the 3.39 pt/lot target-fill artefact never credited.
+* Nulls: random exits of the same count at random times on the same trades (shared world seeds across cells = ALLINST style), 1,000 draws per finalist; family null = per-world max of the standardised statistic over ALL screened unit-cells with W_fam = 200 stage-1 worlds; p = (1+#{null >= obs})/(W+1). Forward-only shifted-trigger and random-side placebos where the rule has a side.
+* Walk-forward: purged by month, own-parameter refit (best trailing 12-month delta with a 1-month purge among ALL screened cells -> next month), against 200 random choices.
+* Stage 2 ladder = 9 lock-reset phases x 2 bases (V0, V2) x 2 fills (measured, old) = 36 engine runs per finalist; statistics on the phase-averaged series, phase band printed.
+
+## 2. The exact grids and cell counts (python3 grids.py; frozen)
+| program | sub-grids (exact in the prereg) | rule cells | unit-cells (family size) |
+|--|--|--|--|
+| A LOSS L2 | A1 arm {15,20,25,30,35,40,45,50} x pulled-support multiple {5,10,20,30,60,100,200} x window {2,3,5,10,15} s x persistence {1,2,3,5,10} s x new-adverse-extreme {off,on} = 2,800 (per unit x14); A2 book-flip triggers {imbalance, iceberg, delta turn, sweep} x 6 strength quantiles = 24 (x14); A4 post-cut blackout {0,5,15,30,60} min x {same side, both} on 6 base rules = 60; A5 lot-scaled arm 3 (x14); A6 sustained-cut dwell {2,5,10,20,30} s x {20,30,40} pt = 15 (x14); A7 HM a30/3of3/w10 neighbourhood = the 161-cell RETEST family (HM) | 3,063 | 40,009 |
+| B LOSS L1 | B1 ThMinPoints 5 x ThRequired {2,3,4} x momentum 9 x stall 9 x efficiency 6 x eval frequency {1 s, 10 s} = 14,580 per book (x6 books); B2 the 18 THL_BOOKS cells; B3 combined with A: {ReplacePath, AddToPath} x top-10 A x top-10 B = 200. Sanity read: the published 960-cell screen / 0 of 4,800 | 14,798 | 87,788 |
+| C PROFIT L2 | C1 thick-book multiple x seconds x trail ticks 48; C2 gated take lines pct x {ahead_rel, tot_rel, pulled_mult, ice_against} 64 + two-gate 24 + 12; C3 lock-to-breakeven 9; C4 scale-out half 9; C5 trail by book state 32 (each x14) | 198 | 2,772 |
+| D PROFIT L1 | D1 PhMin x PhReq x PhTrail 150; D2 chandelier 20; D3 ATR trail 40; D4 time-decay 20; D5 scale-outs 20 (each x14); D6 combined with top-10 C = 100 | 350 | 3,600 |
+| E BOTH | per book top-5 loss x top-5 profit = 25 x 6 books = 150 + 5 references (plain 60/60, live rule, best loss only, best profit only, best both) | 155 | 155 (control family = A-D) |
+| F POLICY | no search; THP_POLICY_D7.txt from E, only rules that ENTER; empty sides stated with the reason | 0 | 0 |
+| G LEARNED | per book (6) x side (loss, profit) x horizon {30,60,120} s x q {.7,.85} x learner {tree <= 6 leaves, GP <= 9 nodes} x seeds {0,1,2} | 432 | 432 (ALLINST family null, W = 200) |
+| **total** | | **18996** | **134,756** (`total_unit_cells`) |
+Two flags to CHAR-A: (1) B1: the product of the skeleton's stated factors (5 x 3 x 9 x 9 x 6 x 2) is 14,580, not 29,160; the factor sets are frozen as listed. (2) C and D grids here are supersets of the skeleton's ~150 / ~250 per entry. **'Sustained-cut' is undefined on every page: reading taken (CHAR-A's, TH_FAMILY_RESCORE_PLAN.md): persistence and dwell variants of the TH-L2 cut (A1 persistence axis, A6) plus the HM a30/3of3/w10 neighbourhood (A7); logged in the prereg and MORNING_FLAGS.**
+
+## 3. Program G (learned TH rule; owner ZL-1 with lrs_lib)
+Tree (<= 6 leaves, monotone) and GP (<= 9 nodes) from lrs_lib.py (ZL-1; LRS_METHOD_prereg.md sha 3cd4b45d..). Features at EVERY evaluation second of an open trade: L1 path (adverse/favourable excursion, pct of target, momentum 15/30/60 s, stall seconds, pullback, efficiency 30/60/120 s, elapsed, ATR5, PhMin state) + L2 book (pulled-support multiple, imbalance, iceberg-against, delta turn, sweep, thick-book rel_tot8 / rel_ahead8) + book, session, lots. Target = decision value y = P&L(hold h more seconds) - P&L(exit now) from the 1-s path; the rule acts when predicted y < -threshold(q). Purged walk-forward by month (train 24 months, embargo = max holding), 3 seeds, ALLINST hash-world family null (W = 200) over the 432 candidates; counts only if p_family <= 1/201 AND z_L6M > 0 AND z_PRE > 0; compared with E's best hand rule on the same windows. Output: a policy line per book, or the sentence 'no learned rule beats the hand rule'. Needs `adapter.second_rows(book)` (per-second rows of every trade from the proven engine); run_G.py is a staged stub that writes status and refuses to run without it.
+
+## 4. Compute and machine budget (BASE-4 PRE-PROOF staging timings, MORNING.md 2026-11-06T19:31Z; timing only, no results)
+Measured inputs: loss-row replay 159 cells/s per book-session (full 9,450-cell grid per book-session ~60 s on one worker; 36 book-sessions ~5 min on 8 workers); engine run 15 s compute + ~18 s tree/K-table load = 33-34 s wall; 3 runs in parallel do not slow each other; peak RAM ~8-10 GB per run. So the screen is cheap and the engine ladder is the budget.
+| item | formula | estimate |
+|--|--|--|
+| stage-1 observed replay | 134,169 unit-cells (A-D) x 6.3 ms | 0.24 core-h |
+| stage-1 family placebos | W_fam = 200 shared-seed worlds x 134,169 unit-cells x 6.3 ms (upper bound: KB-asia-size units are the largest) | up to 47 core-h on 24 light workers = about 2 h wall |
+| TIER 1 full ladder (36 runs, tree/K loaded once per finalist) | 550 finalists (A 150, B 100, C 100, D 100, E 100 pairs) x (36 x 15 s + 18 s) = 9.3 min each | 19,800 runs = 85 core-h |
+| TIER 2 one-run screen | next 400 cells of each of A-D = 1,600 runs x 15 s (+ load per 10 cells) | 7 core-h |
+| promotion ladders | top 10 per program from Tier 2 = 40 finalists x 36 runs | 6 core-h |
+| **engine total** | finalists.cost() | **about 99 core-h** |
+| placebos for finalists | 1,000 draws x 590 finalists on the stage-1 path; WF 200 draws per program | < 5 core-h |
+| G | 432 candidates, per-second features subsampled for training | about 40 core-h, 64 GB RAM (ZL-1 assumption) |
+Concurrency and memory (assumption stated): each engine process needs ~10 GB; the 40 GB guard for the rest of the box is kept; workers = min(8, floor((MemAvailable - 40 GB) / 10 GB)) re-read before every launch (finalists.workers()): 8 workers need MemAvailable >= 120 GB (wall ~12 h for the engine), 4 workers at ~80 GB (~25 h), 2 at 60 GB (~50 h); MemAvailable was 49-98 GB during today's runs. If memory stays low the user can (a) keep the tiers and wait, (b) free the 18 stopped processes (30.6 GB, MORNING_FLAGS), or (c) approve a prereg addendum that cuts Tier 1 to 40 per program. Light stages (screens, select, collect) run 24 at a time (little RAM). Disk: everything under /mnt/l2/l2vast/th_redo/ (root filesystem is 96% full); estimate 12 GB (19,800 + 3,000 trade frames are NOT stored, only per-variant JSON statistics ~ 100 KB each; loss-row tables ~1 GB; G features ~2 GB).
+At t_compute 30 s (twice BASE-4's number) the engine cost doubles to 194 core-h; the tiers stay fixed (a shrink needs an addendum).
+
+## 5. Order of cells (cheapest and most informative first)
+0. Gate 0 controls through the full ladder first: plain 60/60 and the live rule (arm 30 / x60 / 5 s / persistence 1 / extreme off = CFG_V2; and the user's 30x). They must reproduce Gate 0 and anchor every delta.
+1. A1 live neighbourhood: one-axis sweeps through the live point (arm, multiple, window, persistence, extreme; about 20 cells) - tells whether the live cell is a plateau or a spike before anything else.
+2. A7 (161 HM cells; a known family, cheap) and B2 (18 THL cells) and the published-960 B sanity read.
+3. Stage 1 in parallel: loss track A1 (39,200 unit-cells) + A2/A5/A6, B1 (87,480); profit track C (2,772) then D (3,600). Family placebos run in the same pass.
+4. Ladders by value: A and C finalists first (live families), then B and D; inside a program: controls, then stage-1 rank with the diversity rule (at most 2 finalists per sub-grid x first-two-parameter group).
+5. Combinations once top lists exist: A4 blackout, B3 (A+B), D6 (C+D).
+6. E (needs A-D finalists), then F (writes the policy proposal), G runs on ZL-1's own cores from the start.
+
+## 6. Owners (proposal)
+ZL-2: A + B loss (stage-1 loss rows; says the per-cell speed). Z1: C + D profit. S4a: E, F and the harness (implements `adapter_engine.py` with BASE-4, wires `policy_rules.py`). ZL-1: G (lrs_lib). BASE-4: Gate 0, GATE0.json, engine_timing.json. CHAR-C: independent QA of each program page. CHAR-A: withdrawn-evidence registers and the ledger notes. CHAR-B (me): scheduling, preregs, launcher, status page, the plain-sentence page DS3_TH_REDO.md assembly.
+
+## 7. Policy cadence, refit calendar and review dates (user addition)
+* THP_POLICY_D7.txt is refit on the fixed engine every 14 days on SUNDAY before the 18:00 ET open (first 2026-11-15 if Gate 0 passed), reviewed monthly; each refit is sealed (sha256 logged before the week) and scored against that week's live CSV; the daily 23:00Z refit loop is stopped (done).
+* Refit Sundays: 2026-11-15, 11-29, 12-13, 12-27, 2027-01-10, 01-24, 02-07, 02-21, 03-07, 03-21, 04-04, 04-18, 05-02, 05-16, 05-30, 06-13, 06-27 (policy_rules.refit_calendar()). Monthly review (first Monday, proposal): 2026-12-07, 2027-01-04, 02-01, 03-01, 04-05, 05-03, 06-07.
+* A refit uses the as-of date of that Sunday for the windows; a line ENTERS only through `policy_rules.enters` and a live line is PULLED only through `policy_rules.pulled`. The standing acceptance test: a TH verdict that fails to reproduce the live cuts of the latest week is withdrawn automatically.
+
+## 8. Prereg template and shas
+Template = prereg/TH_REDO_PREREG_*.md (common frame + program grid + frozen code shas + sha line), generated by make_preregs.py. sha256 of each file and of the frozen code is in DECISIONS.md (lines `T-TH-REDO PREREG <A..G> sha256 ...`) before any number. Nothing is tuned after Gate 0 results: a change to grids.py, policy_rules.py, finalists.py, score.py or a prereg file needs an addendum with its own sha256 first; orchestrate.py asserts the sealed shas.
+
+## 9. Open inputs (non-blocking; defaults stated)
+(1) t_compute / t_load / RAM of the PROVEN tree (BASE-4's staging numbers are on a synthetic-trigger engine; engine_timing.json at Gate 0 replaces them; default 15 s / 18 s / 10 GB); (2) stage-1 per-cell speed (ZL-2/BASE-4: 6.3 ms measured on KB asia); (4) whether the 11-book / 66-unit extension is wanted (default no); (5) C/D grids are supersets of the skeleton (default keep); (6) engine budget 240 core-h (default; edit finalists.py BEFORE sealing only).

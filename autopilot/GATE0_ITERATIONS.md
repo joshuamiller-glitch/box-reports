@@ -23,3 +23,5 @@
 | 2026-11-06 19:19Z | WS3 ws3_noslots_nope (P0 skip slots off diagnostics; no locks; uncalibrated stop; in-sample fills) | ws3:v0 | pred sha 81b925466bc3 | 0.515 F | 0.414 F | 0.246 F | 0.724 F | FAIL |
 | 2026-11-06 19:19Z | WS3 ws3_noslots_nope_nozone (P0 skip slots off diagnostics; no locks; uncalibrated stop; in-sample fills) | ws3:v0 | pred sha 0d927020e61d | 0.505 F | 0.464 F | 0.236 F | 0.745 F | FAIL |
 | 2026-11-06 19:22Z | I1-real-series engine v3 (kfix+all_ea+real ZL-2 series N1 lat1, K cols z/sh/ice/swp/wg/imbf zero-filled; uncalibrated stop) | v3run:ee86dc64|s | pred sha 864ebdf898d1 | 0.493 F | 0.458 F | 0.194 F | 0.068 P | FAIL |
+| 2026-11-06 19:53Z | WS3 on tree v3 (MV/ST/MA unthinned, PB7 loss rows; live default rule N1; no locks; uncalibrated stop; fills in-sample) | ws3:v0|tree:v3 | pred sha 858b1666cc08 | 0.493 F | 0.264 F | 0.234 F | 0.459 F | FAIL |
+| 2026-11-06 19:57Z | I-engine v3 tree v3 + real 1-s series for ALL layers (ZL-2 span files; live default rule N1 lat1; uncalibrated stop; fills = engine kernel) | v3run:harness4|t | pred sha ddb43c2e8d84 | 0.491 F | 0.483 F | 0.206 F | 0.135 F | FAIL |
