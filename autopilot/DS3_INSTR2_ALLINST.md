@@ -97,3 +97,17 @@ Joint maximum over ES, RTY, YM, CL, 6E, 6J, GC: median 3.88, p95 4.28; pool of 1
 | 6J | 64,323 | 310 | 1.12 | 1.000 | 0 | 0 |
 | GC | 132,304 | 2,111 | 3.09 | 1.000 | 0 | 0 |
 **Plain sentence: with GC (best tolerant zj 3.09, own null max median 3.49) and CL / 6E / 6J added the joint null covers 1,696,255 eligible cells over 7 instruments; no tolerant cell has joint p <= .10 or BH q <= .10, so nothing in the extended family clears.** Every tolerant GC cell with its joint p and q: /mnt/l2/l2vast/allinst_zl1_tolerant_GC.csv (CL / 6E / 6J: allinst_zl1_tolerant_*.csv were computed against the 6-instrument joint max; the 7-instrument p/q are in instr2_<sym>/allinst_table.pkl columns after this update is re-run, summary above). The GC 13-year check is S4a's (GC_oos13.pkl); not repeated here.
+
+## BLOCK S4a (2026-11-05): joint null extended to BTC, MBT, NKD, ZN, ZB - all 12 instruments
+Prereg addendum l2vast/ds3/prereg/ALLINST_addendum_S4A_5INST.md sha256 6d094ebc09bfd02a6dd5f8f444a4a6aab776d479dfb36088794cf467e03c4322 (filed before any world draw). Base: the owner's (S4b) engines re-simulated per world: BTC/MBT/NKD generic grid (t2_grid.py, NKD percent frame REFPX 40000), ZN/ZB native event books (t2n.py); 200 hash_u(entry second, world) random-side worlds; z on sums of R; windows L6M and HOLD 2025-11-01..2026-10-31; eligibility 10 L6M / 30 HOLD / n >= 30. Code l2vast/ds3/code/t2s4a/allinst_s4b.py, report allinst_report_s4b.py.
+Stated differences: R units not $; variant-level long share; the owner's tolerant flag (its HOLD starts 2026-03-01); the worlds simulate only signals from label day 2025-11-01 on (exact because the 16:55 flat closes every position daily; asserted against the full real run for every set); S4b's own nulls (ZN_null, ZB_null, BTCM_null) were NOT reused because their clock differs (numpy rng sides, t-statistic, owner HOLD window).
+Joint maximum over ES, RTY, YM, CL, 6E, 6J, GC, BTC, MBT, NKD, ZN, ZB: median 3.94, p95 4.37; pooled eligible cells 2,129,018.
+| inst | eligible | tolerant | best tolerant zj | best tolerant joint p | cells joint p <= .10 | BH q <= .10 | own null max median / p95 |
+|--|--|--|--|--|--|--|--|
+| BTC | 142,121 | 1,723 | 3.15 | 1.000 | 0 | 0 | 3.48 / 3.94 |
+| MBT | 141,449 | 2,120 | 3.50 | 0.995 | 0 | 0 | 3.51 / 4.00 |
+| NKD | 140,961 | 102 | 2.39 | 1.000 | 0 | 0 | 3.41 / 4.03 |
+| ZN | 4,536 | 13 | 1.07 | 1.000 | 0 | 0 | 2.08 / 2.89 |
+| ZB | 3,696 | 0 | n/a | n/a | 0 | 0 | 2.08 / 2.86 |
+(CL, 6E, 6J, GC unchanged: 0 cells with joint p <= .10 or q <= .10 under the 12-instrument maximum; best tolerant joint p 1.000.)
+**Plain sentence: with BTC, MBT, NKD, ZN and ZB added, the joint null covers 2.13 million eligible cells over 12 instruments (joint max median 3.94); no tolerant cell of any new instrument has joint p <= .10 or BH q <= .10, and the best untolerated real zj of each instrument (BTC 3.92, MBT 3.86, NKD 3.71) sits inside its own null, so nothing in the family clears.** Tolerant cells with zj: /mnt/l2/l2vast/allinst_s4a_tolerant_<SYM>.csv; per-instrument M.npy and cell tables in /mnt/l2/l2vast/instr2_<sym>/allinst_*. No PASS claimed; shadow only.
