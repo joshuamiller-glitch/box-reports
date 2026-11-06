@@ -29,3 +29,10 @@
 | 2026-11-06 21:11Z | WS3b N2 tree v3c (+O7 book arm20 hyp, +X3/X4/X5 engine book 2 lots; live default rule; no locks; uncalibrated stop; fills in-sample) | ws3b:b8cd7be8|tr | pred sha 53f54a2e657b | 0.500 F | 0.264 F | 0.236 F | 0.536 F | FAIL |
 | 2026-11-06 21:14Z | I-engine v3c tree (kfix + real 1-s series N1 lat1; engine harness core books = v3 identical, O7/X not in harness; X rows = Z1-file P0 trades; uncalibrated stop) | v3run:engine_v3_ | pred sha bb06379a3a99 | 0.491 F | 0.483 F | 0.206 F | 0.135 F | FAIL |
 | 2026-11-06 21:14Z | I-engine v3c harness core books + ws3b O7/X books (real 1-s series N1; O7 arm20 hyp; uncalibrated stop) | comb:engine_v3_r | pred sha 2faced04f649 | 0.505 F | 0.441 F | 0.217 F | 0.201 F | FAIL |
+| 2026-11-06 22:11Z | REPRO V1 sealed list (frozen file) | - | pred sha b739a9aad0f8 | 0.494 F | 0.665 F | 0.180 F | 0.006 P | FAIL |
+| 2026-11-06 22:11Z | REPRO V2 variant (frozen file) | - | pred sha 4af884e17819 | 0.496 F | 0.484 F | 0.176 F | 0.179 F | FAIL |
+| 2026-11-06 22:11Z | REPRO control live-as-engine (frozen file) | - | pred sha 056398df8481 | 1.000 P | 0.000 P | 1.000 P | 0.000 P | PASS |
+| 2026-11-06 22:11Z | RERUN of WS3b N1 on FROZEN blind-week live copy (identity check, source-path switch only) | ws3b:7797c603|tr | pred sha 72da4323b71c | 0.507 F | 0.222 F | 0.244 F | 0.525 F | FAIL |
+| 2026-11-06 22:17Z | REPRO2 V1 (frozen_path) | - | pred sha b739a9aad0f8 | 0.494 F | 0.665 F | 0.180 F | 0.006 P | FAIL |
+| 2026-11-06 22:17Z | REPRO2 V2 (frozen_path) | - | pred sha 4af884e17819 | 0.496 F | 0.484 F | 0.176 F | 0.179 F | FAIL |
+| 2026-11-06 22:17Z | REPRO2 control (frozen_path) | - | pred sha 056398df8481 | 1.000 P | 0.000 P | 1.000 P | 0.000 P | PASS |

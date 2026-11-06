@@ -41,3 +41,12 @@ Tape-based (live fill, per-second state, 186 live trades with series, 92 live cu
 - R2's secs_ext<=5 clause never binds beyond R1 on these paths (identical counts), so it does not explain live lateness.
 - 12 live trades reached -30 and were NOT cut (Targets/Stops/PolicyTake/BookLock). R1, R2 AND R2b all qualify on all 12 before their live exit (K7 Wed 21:51 and P7 Thu 02:53 only after 7-12 min). So neither first-second firing nor persistence explains live holding them; the live code must have a HOLD precedence/gate (not in the policy file we have) or a different trigger. This is the A1 cascade root.
 - Conclusion: engine fires on the first qualifying second; live lags it by a median 3-7 s on the cuts it does take (consistent with persistence/latency), and holds 12 of 12 qualifying others. Needs the user's TH/order log to identify the hold rule. No Gate 0 claim; Gate 0 still NOT passed.
+
+## Live-csv reader audit (BASE-4, 2026-11-06T22:17:25Z) - all readers go through code/blind/live_frozen.frozen_path()
+\`grep -rn "data/live/StratTrades" code/blind code/blind/defects /mnt/l2/l2vast/ds3_base4/defects\` result:
+zl2_fills.py:1:"""BLIND_DEFECTS_ZL2: live fills vs tape/L2 1-s (P2 tables). Reads ONLY data/live/StratTrades_DS7_<acct>.csv (seal 1ffc16d5 logged before the fil
+zl2_fills.py:3:L = pd.read_csv('<repo>/data/live/StratTrades_DS7_<acct>.csv'); L['book'] = L.strategy.str[:2]; L['xt'] = L.exitName.str.sp
+live_frozen.py:1:"""live_frozen (ZL-1, 2026-11-06): the blind-week live file is FROZEN (the daily 22:05Z sync overwrote data/live/StratTrades_DS7_<acct>.csv wit
+zl2_fills_report.py:10:P('# BLIND_DEFECTS_ZL2 - live fills and data vs the engine assumptions (ZL-2, 2026-11-06; input: data/live/StratTrades_DS7_<acct>.csv sha
+(end of grep: no remaining reader; ws3b rerun gives identical trade list)
+CORRECTION to the line above: the grep still lists zl2_fills.py (line 3, a live read) which is ZL-2's file, not BASE-4's; zl2_fills_report.py and live_frozen.py only mention the path in text. Every BASE-4 file is clean. blind_defects.py (S4a's) was switched to frozen_path() by BASE-4 on the lead's order; its other live read, data/live/nt8log_latest.txt, is a platform log and was left. Fri 11-06 rows not used.
