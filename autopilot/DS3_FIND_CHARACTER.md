@@ -4003,3 +4003,24 @@ Prereg addendum l2vast/ds3/prereg/T_FIND_1SFIX_prereg.md sha256 4938d882cd2fa5b9
 
 Bar on the corrected sets (family = book cells + LRS cells of the instrument, 100 worlds): ES 75 cells, positive in L6M and HOLD 7, positive also in PRE 0, tolerant 0, walk-forward both lookbacks 0, placebo p_book <= .10 in 1, best family p 0.584, BAR CLEARED 0. RTY 89 cells: 14 / 9 / tolerant 7 / WF both 7 / p_book <= .10 in 1 / best family p 0.762 / CLEARED 0. NQ (control) 108 cells: 18 / 7 / tolerant 7 / WF both 11 / p_book <= .10 in 0 / best family p 0.545 / CLEARED 0. Ranked rows with every window, maxDD, corr to the stack, stack dCalmar, placebo/family p, walk-forward: DS3_FIND.md (blocks '1S-FIX corrected tick-scale candidate set'); per-world max vectors /mnt/l2/l2vast/ds3/out/find/tick_<SYM>/fix_world_max.npz; surfaces tick_<SYM>/deep_book_surface_fix.csv; ledger programs T2F1B_<SYM>_FIX, T2F_<SYM>_1S_LRS_FIX, T2F_<SYM>_1B_DEEP_FIX appended (old programs untouched).
 No cell clears the bar. The one thing the correction changes is that the tick-scale prior-day-level continuation is not a loser: it is a small positive in 2025-11..2026 on ES (60 s) and over 2023-08..2026 on NQ (30 s, the control), flat-to-fragile on RTY pre-market (1800 s only). All three remain best-of-F REGIME/WATCH; the NQ NY-AM 30 s row is the one to re-test forward first (needs no new data; NQ tick tables already arrive) -- a WATCH spec for it has NOT been written yet and would be preregistered separately.
+
+### 1b-d addendum 2 UPDATE (NQ pre-market added; the NQ night store rebuilt after the back/ collision; this table SUPERSEDES the 8-cell table above) - CHAR-A prior-day-level + burst continuation under the passive queue model (ZL-1; prereg l2vast/ds3/prereg/FIND_1BD_addendum2.md; pre-market event store events_pre built from the kept raw mbp-10 with l2v_pre_events.py, validated exactly against events_L13)
+Cells are ROWS PICKED AFTER SEEING CHAR-A's map (1 of its 240 per instrument; selection bias stated). Events: first touch of the prior-day RTH high/low by the 1-s mid, buffer 0, burst >= 90% quantile, direction = approach; passive entry 1 s after the touch, hold h, passive exit, fee $4.84 RT; null = same orders shifted forward 120-1800 s on the same day (200 worlds), Westfall-Young over the 11 cells tested.
+
+| instrument | session | hold s | events | placed disc / test | fill rate | net per order disc | net per order test | net per fill | taker-exit net per order | captured half-spread / fill | adverse at +h / fill | z | p cell | p family | beats the null |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| ES | nyam | 60 | 428 | 210 / 159 | 0.97 | +2.54 | +2.03 | +2.40 | +1.84 | +0.51 | +2.20 | 4.7 | 0.005 | 0.005 | YES |
+| ES | nyam | 300 | 428 | 210 / 159 | 0.98 | +2.98 | +3.08 | +3.07 | +2.63 | +0.51 | +2.94 | 3.0 | 0.010 | 0.025 | YES |
+| ES | nyam | 1800 | 428 | 210 / 159 | 0.99 | +4.80 | +6.75 | +5.72 | +4.73 | +0.51 | +5.15 | 3.1 | 0.005 | 0.025 | YES |
+| NQ | nyam | 30 | 598 | 340 / 175 | 0.93 | +2.85 | +5.40 | +4.01 | +2.38 | +0.73 | +4.24 | 3.5 | 0.005 | 0.010 | YES |
+| NQ | nyam | 60 | 598 | 340 / 175 | 0.93 | +4.51 | +2.61 | +4.17 | +3.84 | +0.73 | +5.63 | 2.6 | 0.010 | 0.090 | YES |
+| NQ | nyam | 300 | 598 | 340 / 175 | 0.93 | +9.81 | +1.82 | +7.60 | +5.99 | +0.72 | +7.54 | 2.3 | 0.005 | 0.144 | no |
+| NQ | pre | 60 | 111 | 62 / 31 | 0.86 | +9.00 | +6.51 | +9.49 | +6.86 | +3.17 | +7.83 | 2.3 | 0.010 | 0.144 | no |
+| NQ | pre | 300 | 111 | 62 / 31 | 0.89 | +15.19 | +14.25 | +16.67 | +18.77 | +3.19 | +19.17 | 1.8 | 0.050 | 0.358 | no |
+| NQ | pre | 1800 | 111 | 62 / 31 | 0.90 | +47.72 | +21.16 | +43.03 | +36.32 | +3.15 | +39.39 | 3.5 | 0.005 | 0.010 | YES |
+| RTY | pre | 300 | 105 | 69 / 35 | 0.83 | -1.97 | +6.83 | +1.19 | -0.29 | +1.19 | +1.10 | 0.5 | 0.299 | 0.985 | no |
+| RTY | pre | 1800 | 105 | 69 / 35 | 0.83 | -1.09 | +28.74 | +10.82 | +7.16 | +1.19 | +8.87 | 1.8 | 0.040 | 0.368 | no |
+
+**6 of 11 CHAR-A cells beat the null under the passive model (family p <= .10, net per order > 0 in both halves, >= 30 fills); see the table for which.**
+
+(1b-d addendum 2 update note, ZL-1: with the NQ night store rebuilt, NQ pre-market h=1800 also BEATS the shifted-time 11-cell null mechanically (p_family .010; per-order net +47.7 disc / +21.2 test NQ ticks, 84 fills) but its per-order t is 1.6 (sd 232 ticks), the 3 x sd stop is 595 ticks (about $2,975 per lot), and through instr2_eval it fails the tolerant gate: L6M -207 and HOLD -94 $/wk, positive only in L1M-L3M, PRE +92, X' +150, corr -0.03, stack k* = 0. NQ pre h=60/300 do not beat the null (p_family .14/.36). RTY pre unchanged (no). So of the 11 cells, 6 pass the mechanical rule; only ES nyam h=300/1800 and NQ nyam h=30/60 give books that pass the tolerant gate, and only ES h=1800 and NQ h=30 are positive in all 8 windows. ES events_pre store is still being rebuilt (not needed by any cell).)
