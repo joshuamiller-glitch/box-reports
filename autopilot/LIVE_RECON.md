@@ -1,4 +1,4 @@
-# LIVE_RECON - live fill vs replay expectation, per trade (generated 2026-11-05 17:24 ET; source <repo>/data/live/StratTrades_DualStrat2_<acct>.csv)
+# LIVE_RECON - live fill vs replay expectation, per trade (generated 2026-11-06 11:09 ET; source <repo>/data/live/StratTrades_DualStrat2_<acct>.csv)
 
 Replay fill = the corrected P9 replay expectations (per-trade matched-signal replay needs L2 for the day; the per-trade L2 replay of the 18 stop joins with the 10-20..23 tape is in JOIN_RECON.md section 5 / join_recon2/join_replay_per_attempt.csv; the replay column below stays the replay MEAN for that exit class (comparison basis of the earlier version): all stops -0.52 pts, market fallback -1.74 pts; entry S14x1 mean 1.90 (ST) / 1.77 (HM) ticks vs mid at decision). Signal reference for entry slip: REF.csv mid if present, else 1-min bar open if the NQ series covers the minute, else "-".
 NQ 1-min series ends 2026-10-30 20:59:00 UTC.
