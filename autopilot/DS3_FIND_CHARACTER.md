@@ -2657,3 +2657,228 @@ Calendars from public rules (findb/fb_cal.py: EIA Wed 10:30 with holiday-week Th
 | ZB | month-end 15:00 settle | 145 | -0.011 | -0.004 | -0.12 | 0.908 | 1.00 | 10.9 |
 
 Plain reading: none of the 25 event-clock windows (EIA, expiry week, Monday reopen, 14:30 settle, London fixes, NFP/CPI/claims, 10Y/30Y auctions, refunding, 15:00 settle, month-end) shows a continuation or reversal beyond the same-size random-day null (smallest raw p = 0.196 apart from the all-day control rows; family p = 1.00). The event bars are large (CL EIA 10:30 reaction 43 bp mean absolute, GC NFP 45 bp, ZB NFP 36 bp) but the move after the reaction is a coin flip, so the Addendum A event books (S4a CL/GC, S4b ZN/ZB) have no map support at this horizon from CHAR-B; they stay with their owners.
+
+## 1b-b (CHAR-A): level sweeps / absorption on the 1-second book tables, ES RTY (NQ control), 2023-08..2026-10 -- NO PRE-2023 EVIDENCE (L2 starts 2023-08)
+Prereg l2vast/ds3/prereg/T_FIND_TICKMAP_prereg.md sha256 081e392b3c5dba6e11bf244c1f465ede0684fcc8426124397d65c3c4d210e326 (DECISIONS.md, before any number). Base: 1-s mid of the front contract per label day, reference mid[t0+1] (1 s latency), level touch = first mid cross from the natural side per level per session, 'burst' = 5-s traded volume >= prior-day 90th pct. F = mean(approach-direction x (mid[t0+1+h]-mid[t0+1])) in ticks (positive = follow-through, negative = fade). Null: within-month level transplant, B=60 draws, round numbers 60 random grid phases; p_family = Westfall-Young max-|z| over 240 cells. Truncation test: 0 failures in 282 (ES) / 252 (RTY) cuts; negative control (IB used before complete) fails 19/282 and 18/252.
+
+### ES: 240 cells, 2 with p_family<=.05, 3 <=.10
+| level | session | class | h (s) | n | F ticks | null | z | p_family | period sign share | spread ticks | net ticks (market in/out, fee 4.84) | room | frozen rule |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| PD | nyam | burst | 5 | 428 | +0.75 | -0.06 | +4.0 | 0.033 | 1.00 | 1.0 | -0.64 | 2.3 | no (net<=0 or room<=2) |
+| PD | nyam | burst | 60 | 428 | +2.55 | +0.15 | +3.7 | 0.049 | 0.75 | 1.0 | +1.17 | 6.7 | PASS->book |
+| PD | nyam | all | 60 | 557 | +1.90 | +0.05 | +3.4 | 0.082 | 0.75 | - | - | - | no (p_family>.05) |
+| PD | nyam | all | 5 | 557 | +0.48 | -0.05 | +3.2 | 0.197 | 0.75 | - | - | - | no (p_family>.05) |
+| PD | nyam | all | 30 | 557 | +1.20 | +0.06 | +3.0 | 0.393 | 1.00 | - | - | - | no (p_family>.05) |
+| PD | nyam | burst | 30 | 428 | +1.52 | +0.08 | +2.9 | 0.459 | 0.75 | - | - | - | no (p_family>.05) |
+| PD | london | all | 1800 | 396 | +0.54 | -3.54 | +2.9 | 0.557 | 1.00 | - | - | - | no (p_family>.05) |
+| PD | pre | burst | 1800 | 83 | -1.31 | -14.14 | +2.5 | 0.902 | 0.75 | - | - | - | no (p_family>.05) |
+
+Books from the rows that pass the frozen rule (ES): 6 cells on the 1-s path (6 per row: stop 1.0/1.5/2.0 x expanding median move, target none or 1R, time stop = h), L6M>0 and HOLD>0: 0, tolerant 0, BAR CLEARED 0, best family p 0.01.
+
+### RTY: 240 cells, 3 with p_family<=.05, 3 <=.10
+| level | session | class | h (s) | n | F ticks | null | z | p_family | period sign share | spread ticks | net ticks (market in/out, fee 4.84) | room | frozen rule |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| PD | pre | burst | 1800 | 105 | +13.37 | -29.40 | +4.3 | 0.016 | 1.00 | 4.0 | +8.40 | 16.7 | PASS->book |
+| PD | pre | burst | 300 | 105 | +6.14 | -17.41 | +4.4 | 0.016 | 1.00 | 4.0 | +1.17 | 11.8 | PASS->book |
+| PD | pre | all | 300 | 260 | +2.01 | -7.73 | +3.9 | 0.033 | 1.00 | 2.0 | -0.96 | 11.7 | no (net<=0 or room<=2) |
+| VW2 | close | all | 1800 | 208 | -12.15 | -1.96 | -3.1 | 0.246 | 0.75 | - | - | - | no (p_family>.05) |
+| PD | pre | burst | 30 | 105 | +12.30 | -1.95 | +3.1 | 0.295 | 1.00 | - | - | - | no (p_family>.05) |
+| PD | pre | all | 60 | 260 | +5.59 | -1.12 | +3.0 | 0.361 | 1.00 | - | - | - | no (p_family>.05) |
+| PD | pre | all | 1800 | 260 | -0.94 | -15.07 | +3.0 | 0.410 | 1.00 | - | - | - | no (p_family>.05) |
+| PD | pre | all | 30 | 260 | +4.56 | -0.76 | +2.9 | 0.508 | 1.00 | - | - | - | no (p_family>.05) |
+
+Books from the rows that pass the frozen rule (RTY): 12 cells on the 1-s path (6 per row: stop 1.0/1.5/2.0 x expanding median move, target none or 1R, time stop = h), L6M>0 and HOLD>0: 12, tolerant 8, BAR CLEARED 0, best family p 0.49.
+
+### NQ (control): 240 cells, 3 with p_family<=.05, 3 <=.10
+| level | session | class | h (s) | n | F ticks | null | z | p_family | period sign share | spread ticks | net ticks (market in/out, fee 4.84) | room | frozen rule |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| IB | nypm | all | 5 | 728 | +2.07 | -0.28 | +4.2 | 0.016 | 1.00 | 2.0 | -0.89 | 3.3 | no (net<=0 or room<=2) |
+| PD | nyam | all | 30 | 673 | +5.47 | -0.08 | +3.5 | 0.033 | 0.80 | 2.0 | +2.50 | 12.4 | PASS->book |
+| PD | pre | burst | 1800 | 111 | +24.94 | -48.88 | +3.4 | 0.033 | 1.00 | 4.0 | +19.97 | 31.4 | PASS->book |
+| PD | nyam | burst | 30 | 598 | +5.96 | +0.07 | +3.1 | 0.311 | 0.80 | - | - | - | no (p_family>.05) |
+| PD | nyam | burst | 60 | 598 | +8.63 | +0.65 | +3.0 | 0.328 | 0.60 | - | - | - | no (p_family>.05) |
+| PD | nyam | all | 60 | 673 | +7.22 | +0.37 | +3.0 | 0.426 | 0.60 | - | - | - | no (p_family>.05) |
+| IB | nypm | burst | 5 | 360 | +2.76 | -0.50 | +3.0 | 0.426 | 0.80 | - | - | - | no (p_family>.05) |
+| PD | pre | all | 300 | 274 | +4.11 | -13.34 | +2.8 | 0.656 | 1.00 | - | - | - | no (p_family>.05) |
+
+Books from the rows that pass the frozen rule (NQ): 12 cells on the 1-s path (6 per row: stop 1.0/1.5/2.0 x expanding median move, target none or 1R, time stop = h), L6M>0 and HOLD>0: 0, tolerant 1, BAR CLEARED 0, best family p 0.60.
+
+Plain paragraph: At tick scale the one regularity that survives the family correction is that the first touch of the PRIOR-DAY HIGH/LOW in the 09:30-12:00 session is followed by CONTINUATION (ES, NQ) -- after a volume burst ES drifts +0.75 tick in 5 s and +2.6 ticks (about $32) in 60 s beyond the touch, against a null of about 0 -- and RTY/NQ pre-market (08:30-09:30) touches of the prior-day level continue +6 to +25 ticks over 5-30 min; the 1-min map (bounce vs 0.5A reversal) could not see it because the move is 2-3 ticks. IB-edge touches in 12:00-15:00 give NQ +2 ticks in 5 s. Overnight-high/low, VWAP +-1/2 sigma and round numbers show nothing beyond the null. It does not turn into money: ES 60 s needs 1.4 ticks of cost per round trip (net +1.2 on the mid-to-mid average) but the bracketed books on the 1-s prints lose (HOLD -$91..-264/wk, placebo p_book 0.01-0.03 i.e. systematically worse than random-side) because entry on the first print at/after t0+1 gives back the drift and stops cut the winners; RTY pre-market books are positive in L1M..PRE but have 95 trades, X' is negative and the placebo p_book is .12-.87; NQ control books lose. Nothing clears; Shadow only. The other 1b blocks (a) imbalance/OFI, (c) flow bursts, (d) passive entries, (e) cost ratio are owned by ZL-1, Z1, ZL-2.
+CORRECTION to the 1b-b ES sentence (CHAR-A): the ES prior-day-level books lose money in absolute terms (HOLD -$91..-264/wk, PRE -$361..-671/wk, X' negative) but beat the random-side/shifted placebos (placebo p_book 0.01-0.03; the placebos lose more because they pay the same costs with no drift), so the tick-scale follow-through is real but smaller than the round-trip cost plus the first-print entry give-up; it is not 'worse than random'. The best family p of 0.01 for ES is over a 6-cell family and is not a lead (L6M and HOLD are negative, so the tolerant gate fails).
+
+## 1b-c - trade-size and aggressor-flow bursts: ES, RTY, NQ control (Z1, 2026-11-06)
+Prereg l2vast/ds3/prereg/FIND_1BC_prereg.md sha256 b6879c2e2cfb453b08f79e8c3d0904273297b1bbc3d7ab963da23f05a9cf8e51 (logged in DECISIONS.md before any outcome). Data: tables/<SYM>/1s 2023-08-01..2026-10-30 (833 label days; NO pre-2023 evidence; X' window is partial 2023-08..2024-01). Features: large-print net (class-2 prints), sweep net, buy-sell imbalance, run (sign count) over w = 1,5,15,60,300 s; event when |stat| exceeds the trailing-20-day same-ET-hour q = .95/.99 quantile; horizons 5, 15, 60, 300, 900 s; entry = quote 1 s after the decision, cost = measured spread at entry and exit (half each) + $4.84 fee; one event per max(w,h) s. 10,440 cells per instrument (6 sessions + 23 ET hours, continuation and reversal), n >= 300 events to be scored. Null = 200 shuffled-day worlds (days permuted within the calendar month, forward move taken at the same second-of-day), family = max net t over all scored cells. Truncation test (24 random day/second cuts per instrument): 24/24 ES, 24/24 RTY, 24/24 NQ. Code l2vast/ds3/code/find1bc/ (engine.py, run.py, analyze.py, test_trunc.py, book.py); cells /mnt/l2/l2vast/find_1bc/<SYM>_cells.parquet.
+Plain paragraph: **ES, RTY and NQ do not show a net-of-cost continuation or reversal after size or flow bursts at 1 s .. 15 min.** Pooled over the six sessions the average gross move after a burst (in ticks, in the burst direction) is within about +-0.4 tick at every horizon up to 15 min on ES (large-print +0.00/-0.01/-0.02/-0.15/-0.35 at 5/15/60/300/900 s; sweep and imbalance slightly negative = mild reversal; run about 0), RTY within +-0.25 tick except sweep -0.25 at 900 s, NQ within +-1.0 tick (sweep -1.0 tick at 300 s, large-print +0.2 at 60 s, run +0.7 at 900 s). The cost to trade it (measured half-spreads at entry and exit plus fee) is 1.4 ticks on ES, 2.6-3.0 on RTY and 3.7-4.0 on NQ, so the room is negative almost everywhere: net > 0 in 87 of 10,388 scored ES cells, 55 of 9,738 RTY, 270 of 10,416 NQ.
+| instrument | cells scored | net>0 | best cell (feature, w, q, h, group, side) | n | gross / cost / net ticks | net t | family p | joint p (3 inst.) | halves net |
+|---|---|---|---|---|---|---|---|---|---|
+| ES | 10,388 | 87 | F2 sweep net, 60 s, q .99, 900 s, ET 12:00-12:59, reversal | 547 | 4.89 / 1.44 / +3.46 | 2.40 | 0.050 | 0.39 | +1.85 / +4.87 |
+| RTY | 9,738 | 55 | F3 imbalance, 300 s, q .99, 900 s, ET 12, reversal | 546 | 5.06 / 2.65 / +2.41 | 1.23 | 0.54 | - | +4.05 / +0.83 |
+| NQ (control) | 10,416 | 270 | F1 large-print, 300 s, q .99, 300 s, ET 09, continuation | 515 | 20.6 / 3.7 / +16.9 | 2.76 | 0.104 | - | +5.8 / +29.5 |
+World max net t: median 1.52 / 1.27 / 2.29 and 95th percentile 2.28 / 1.99 / 2.99 (ES / RTY / NQ); the true maxima are 2.40 / 1.23 / 2.76. One cell clears the ES instrument-family null at p .05 (it passes my frozen 'beats the null' rule: family p <= .10, net > 0 in both halves, n >= 300); against the joint ES+RTY+NQ family it has p .39. Its neighbours (w 15 and 300, q .95, h 300) are all negative or near zero net (-0.3 .. +0.6 ticks; only h = 900 s is positive), so there is no plateau. Cells with net > 0 and per-cell p <= .05: 66 ES, 45 RTY, 129 NQ out of 10,000 cells each, consistent with the multiplicity.
+**Book from the frozen rule (one ES row):** sweep-buy burst reversal, 60 s sweep net above the trailing q .99, ET 12:00-12:59, fade it at the 1-s-delayed quote, 900 s time stop, stop 3 x trailing-20-day median 5-min range, equal-risk lots R $1,200, instr2_eval windows L1M..X' (545 trades, mean +$30.8/trade at 1 lot): L1M -$632/wk (5 weeks), L3M -$1,037 (carry dropped), L6M -$160 (16 wk), HOLD +$99 (41 wk), MID +$299 (12), PRE +$18 (71), X' +$189 (23); gate FAILS (NOW-ONLY: L3M and L6M not both > 0), persistence 50%, stack Calmar not up. Placebo and walk-forward not run because the gate fails first. Label NEGATIVE (recent windows negative; spike without plateau; joint family p .39). No PASS claim.
+
+### CHAR-C addendum to the 6J and NKD pages: 1-second tape (2026-11-06)
+The purchased 1-s tapes exist (/mnt/l2/l2vast/ds3/discover_data/, SPEND.json LEAN_20261103) and aggregate exactly to the owned 1-min bars (100% equal O/H/L/C), so every 1-min number above is unchanged for 2023-04..2026-10. On the 1-s grid 6J reverts at 5-60 seconds in every session (lag correlation -0.024 to -0.093, p_family .003; the close and NY-PM keep -0.03 at 5 minutes), which is the last-print bid-ask bounce itself; NKD shows nothing sub-minute beyond |0.037| (thin prints). Details and the 1-s book re-run: DS3_FIND.md section 'on the 1-SECOND path'.
+
+## 1b-DEEP (CHAR-A): first touch of the prior-day H/L after a volume burst -> continuation (RTY 08:30-09:30, ES 09:30-12:00, NQ control). LABEL: REGIME / WATCH (does not clear the bar). No pre-2023 evidence on the 1-s data; the 1-min proxy fails calibration.
+Prereg l2vast/ds3/prereg/T_FIND_1BDEEP_prereg.md (sha256 in DECISIONS.md 2026-11-06, filed before any deep number). Data 2023-08..2026-10 1-s tables; the 1-s tables cannot resolve 0.5 s latency, so the latency grid is 0/1/2/3 s.
+
+### (1) Plateau surface. Mid-to-mid net (ticks) = F - median spread at the touch - fee (ES 0.39, RTY/NQ 0.97 ticks), 27 nodes per hold = burst q {.80,.90,.95} x touch buffer {0,1,2 ticks} x latency {1,2,3 s}; cost +-1 tick shown in the cost column of deep_surface.csv. PLATEAU = base node net>0 and >=70% of nodes net>0.
+| instrument | session | hold s | n (base) | F base | net base | net base +1 tick cost | share of 27 nodes net>0 | share incl. cost +-1 | label |
+|--|--|--|--|--|--|--|--|--|--|
+| ES | nyam | 30 | 428 | +1.52 | +0.13 | -0.87 | 0.15 | 0.38 | SPIKE/NO |
+| ES | nyam | 60 | 428 | +2.55 | +1.17 | +0.17 | 1.00 | 0.77 | PLATEAU |
+| ES | nyam | 300 | 428 | +2.68 | +1.30 | +0.30 | 0.74 | 0.63 | PLATEAU |
+| ES | nyam | 1800 | 428 | +4.64 | +3.25 | +2.25 | 0.89 | 0.91 | PLATEAU |
+| NQ | nyam | 30 | 598 | +5.96 | +2.99 | +1.99 | 1.00 | 0.96 | PLATEAU |
+| NQ | nyam | 60 | 598 | +8.63 | +5.67 | +4.67 | 1.00 | 1.00 | PLATEAU |
+| NQ | nyam | 300 | 598 | +11.57 | +8.60 | +7.60 | 1.00 | 1.00 | PLATEAU |
+| NQ | nyam | 1800 | 598 | +2.64 | -0.33 | -1.33 | 0.04 | 0.06 | SPIKE/NO |
+| NQ | pre | 30 | 111 | +4.32 | -0.64 | -1.64 | 0.30 | 0.35 | SPIKE/NO |
+| NQ | pre | 60 | 111 | +11.88 | +6.91 | +5.91 | 1.00 | 0.99 | PLATEAU |
+| NQ | pre | 300 | 111 | +10.70 | +5.73 | +4.73 | 1.00 | 0.99 | PLATEAU |
+| NQ | pre | 1800 | 111 | +24.94 | +19.97 | +18.97 | 1.00 | 1.00 | PLATEAU |
+| RTY | pre | 30 | 105 | +12.30 | +7.33 | +6.33 | 1.00 | 0.99 | PLATEAU |
+| RTY | pre | 60 | 105 | +12.94 | +7.97 | +6.97 | 1.00 | 1.00 | PLATEAU |
+| RTY | pre | 300 | 105 | +6.14 | +1.17 | +0.17 | 0.44 | 0.43 | SPIKE/NO |
+| RTY | pre | 1800 | 105 | +13.37 | +8.40 | +7.40 | 0.74 | 0.73 | PLATEAU |
+Reading: the RTY pre-market rows are a plateau in the burst threshold only for q>=.90 (q=.80 gives net <= 0 at 300 s and ~+1.5 ticks at 1800 s; the effect rises with burst intensity), the touch buffer (confirmed breaks are weaker than the bare touch) and latency 2-3 s costs 2-3 ticks of 1800 s edge; ES helps at 60 s and 1800 s (net +1.2 / +3.3) and fails at 30 s; NQ nyam passes at 30-300 s and fails at 1800 s. All maps are mid-to-mid and from ONE selected row of 240 (selection bias); the nodes are strongly correlated.
+
+### Book surface (1-s prints, 3 stops x 2 targets x latency 1/2/3 s x cost -1/0/+1 tick = 54 nodes per row, no placebos, $/wk at equal-risk $1,200 lots, carry dropped)
+| instrument | session | hold s | HOLD>0 share | L6M>0 share | PRE>0 share | all three >0 | median HOLD $/wk | HOLD>0 at cost +1 tick |
+|--|--|--|--|--|--|--|--|--|
+| ES | nyam | 60 | 0.24 | 0.20 | 0.00 | 0.00 | -195 | 0.00 |
+| NQ | nyam | 30 | 0.00 | 0.22 | 0.00 | 0.00 | -144 | 0.00 |
+| NQ | pre | 1800 | 0.06 | 0.17 | 0.83 | 0.00 | -94 | 0.06 |
+| RTY | pre | 300 | 0.69 | 1.00 | 0.65 | 0.50 | +23 | 0.67 |
+| RTY | pre | 1800 | 0.91 | 1.00 | 0.59 | 0.52 | +105 | 0.83 |
+Only RTY pre-market is a book-level plateau (HOLD>0 in 69% (300 s) and 91% (1800 s) of nodes, L6M>0 in all, PRE>0 in 59-65%); ES and NQ map rows do not survive the 1-s book (median HOLD -$195 / -$144 /wk): the map-to-book gap is entry on the first print plus stops.
+
+### (2) Pre-2023 1-min proxy (percent frame; 1-min volume at the touch bar >= q* x prior-day RTH 1-min 90th pct; outcome close-to-close 5 / 30 min after the touch minute, in ticks at the 2023-26 price). Calibration on 2023-08..2026-10 (best-F1 q*):
+| instrument | session | q* | 1-s events | proxy events | matched | recall | precision | weekly corr h300 | weekly corr h1800 | verdict |
+|--|--|--|--|--|--|--|--|--|--|--|
+| NQ | nyam | 0.5 | 598 | 547 | 489 | 0.82 | 0.89 | 0.77 | 0.85 | NO FORMAL VERDICT (weekly corr < .90) |
+| ES | nyam | 0.75 | 428 | 476 | 384 | 0.90 | 0.81 | 0.67 | 0.79 | NO FORMAL VERDICT (weekly corr < .90) |
+| RTY | pre | 0.75 | 105 | 107 | 81 | 0.77 | 0.76 | 0.59 | 0.77 | NO FORMAL VERDICT (weekly corr < .90) |
+| NQ | pre | 0.5 | 111 | 105 | 75 | 0.68 | 0.71 | 0.56 | 0.74 | NO FORMAL VERDICT (weekly corr < .90) |
+Because no row reaches weekly corr .90, the yearly tables below are INFORMAL (labelled, not a verdict). Mean 30-min continuation after the touch+burst in ticks (se in brackets), proxy:
+* ES nyam: 2013: -2.4 (4.0, n 149); 2014: -3.5 (3.8, n 142); 2015: +1.1 (4.5, n 136); 2016: +3.9 (4.8, n 133); 2017: +2.0 (2.9, n 136); 2018: -3.1 (5.0, n 121); 2019: +4.9 (4.5, n 131); 2020: -10.5 (8.1, n 117); 2021: +5.7 (4.0, n 134); 2022: -0.2 (9.9, n 140); 2023: +6.9 (4.1, n 156); 2024: -2.9 (3.6, n 145); 2025: +2.9 (5.2, n 138); 2026: +1.3 (5.2, n 125)
+* NQ nyam: 2013: -17.5 (15.6, n 154); 2014: -3.4 (18.7, n 167); 2015: -10.0 (20.6, n 144); 2016: -3.7 (16.1, n 169); 2017: -27.2 (14.4, n 168); 2018: +10.3 (23.9, n 160); 2019: +38.6 (20.7, n 157); 2020: +37.8 (31.8, n 159); 2021: -33.7 (24.1, n 164); 2022: +3.2 (38.7, n 176); 2023: +12.6 (21.6, n 181); 2024: -12.7 (18.0, n 161); 2025: -49.0 (32.8, n 163); 2026: +31.7 (24.2, n 141)
+* NQ pre: 2013: +6.6 (40.0, n 13); 2014: -1.9 (35.9, n 17); 2015: +22.4 (60.0, n 20); 2016: -22.4 (43.2, n 14); 2017: -24.8 (27.9, n 19); 2018: -55.1 (74.9, n 14); 2019: +100.3 (60.2, n 19); 2020: +9.7 (87.8, n 22); 2021: -40.5 (38.9, n 20); 2022: +106.3 (83.5, n 38); 2023: -47.7 (47.4, n 44); 2024: +22.1 (32.4, n 37); 2025: +60.9 (46.4, n 25); 2026: +21.8 (38.9, n 27)
+* RTY pre: 2018: -42.2 (25.7, n 6); 2019: +29.6 (13.4, n 8); 2020: +107.8 (63.5, n 5); 2021: -59.1 (16.9, n 12); 2022: +81.9 (19.1, n 22); 2023: +20.9 (23.9, n 25); 2024: -8.3 (17.2, n 45); 2025: -34.2 (15.2, n 29); 2026: -2.3 (21.5, n 22)
+Reading: no year before 2023 is distinguishable from zero for ES (every |mean| < 1.5 se except none) and the RTY pre-market proxy has 5-45 events per year with se 13-64 ticks; NQ nyam/pre bounce between +-40 ticks with se 15-80. There is no pre-2023 evidence for or against the effect; the 2024-26 RTY proxy means are -8 / -34 / -2 ticks (30 min), opposite in sign to the 1-s events, i.e. the proxy does not reproduce the 1-s result (weekly corr .74-.77), so it cannot be used to extend the sample.
+
+### (3) RTY book anatomy
+Trade counts: 95 trades in 34 of 39 months (2024: 45, 2025: 28, 2026: 22, none in 2023 because the causal scale needs 10 prior events: the first 10 touches (Aug-Dec 2023, ~10 events) are burn-in). X' (2023-04..2024-01, data only from 2023-08) therefore holds 3 trades, all in 2024-01, total -$2,216 (m1.0) / -$507 (m1.5) at 1 lot-equal-risk: X' 'negative' is 3 trades in one month, not a regime. Burn-in 5 events does not change HOLD>0 share (0.69 / 0.91) or the count (~100). Per cell (m1.5, no target, 1800 s): L1M +1113, L6M +605, HOLD +179, MID -293, PRE +53, X' -22 $/wk; by year net $ 2024 +4,987, 2025 -3,522, 2026 +6,269 (not persistent by year). Walk-forward of its own parameters: positive for m1.5/1800 s (6 m: +$72/wk OOS, p_rand .27; 12 m: +$28/wk, p_rand .50) but negative for m1.0/300 s (-$18 / -$15). Placebo p_book .12-.87 (best .12, m2.0/1800 s); family p 1.00 over the 12 RTY cells. Correlation to the NQ stack: |corr| <= .09 (V0 and V2, daily/weekly). Stack Calmar with carry dropped: dCalmar HOLD +0.013, L6M +0.050 at k*=5, but MID -0.031 and PRE -0.024 (not up in all windows). Tolerant gate: fails on min sample (L3M trades 7/10, L6M 13/20, PRE 57/60).
+
+### (4) Passive-entry variant: ZL-2's 1b-d queue model had not landed in MORNING.md at scoring time; NOT run (no own queue model substituted, to keep to the prereg). To be added when it lands.
+
+LABEL: REGIME / WATCH. RTY pre-market prior-day-level continuation after a burst is a real tick-scale effect with a plateau in the 1-s book on 2023-08..2026-10 and zero correlation to the NQ stack, but it has ~100 trades, placebo p_book .12+, family p 1.0, no calibrated pre-2023 evidence and unstable yearly sign; it does not clear. ES and NQ-control map rows do not survive the 1-s book.
+
+## 1b-a - L2 depth imbalance, microprice and order-flow imbalance at 1/5/15/60 s (ZL-1; prereg l2vast/ds3/prereg/FIND_1BA_prereg.md; library l1ba.py; 1-s mbp-10 tables, 2023-08..2026-10-30, NO pre-2023 evidence)
+
+Design: 12 features x 4 horizons x (23 ET hours + 6 sessions) x 2 extreme classes = 2,784 cells per instrument; classes (10%/90% per half-hour) and the direction of each cell are frozen on DISCOVERY 2023-08..2025-06 and scored once on TEST 2025-07..2026-10; costs = measured half-spread at entry and exit + $4.84 fee, entry 1 s after the decision; null = days permuted within calendar month (200 worlds), Westfall-Young max-z over all cells of the instrument. A row beats the null only if p_family <= .10 AND net > 0 AND gross > 0 in discovery and test.
+
+### ES
+Scored cells 2784; cells with family p <= .10: 370 (gross structure real vs the shuffled null); cells with test net > 0: 0; rows that BEAT the null (p <= .10, net > 0 both halves): 0. Null maximum z median 3.28, 95th percentile 4.01. Median quoted spread 1.00 ticks, fee 0.39 ticks, so a taker round trip costs about 1.39 ticks (spread + fee) before any slippage beyond the touch.
+
+| session | h s | best gross ticks (test, frozen dir) | feature / class | its net ticks | its p_family | best net ticks in session | feature / class |
+|--|--|--|--|--|--|--|--|
+| asia | 1 | +0.042 | imb1 e0 | -1.48 | 0.005 | -1.48 | imb1 e0 |
+| asia | 5 | +0.087 | imb1 e0 | -1.43 | 0.005 | -1.43 | imb1 e0 |
+| asia | 15 | +0.096 | imb1 e1 | -1.43 | 0.005 | -1.43 | imb1 e1 |
+| asia | 60 | +0.090 | micro_dev e1 | -1.45 | 0.005 | -1.43 | imb1 e1 |
+| london | 1 | +0.036 | imb1 e1 | -1.49 | 0.005 | -1.49 | imb1 e0 |
+| london | 5 | +0.065 | imb1 e1 | -1.46 | 0.005 | -1.46 | imb1 e0 |
+| london | 15 | +0.079 | micro_dev e1 | -1.46 | 0.005 | -1.45 | imb1 e1 |
+| london | 60 | +0.108 | micro_dev e1 | -1.43 | 0.005 | -1.42 | imb5 e1 |
+| pre | 1 | +0.027 | micro_dev e0 | -1.48 | 1.000 | -1.46 | imb1 e0 |
+| pre | 5 | +0.043 | ofi1_w5 e0 | -1.44 | 0.383 | -1.44 | ofi5_w1 e0 |
+| pre | 15 | +0.117 | ofi5_w15 e1 | -1.37 | 1.000 | -1.37 | ofi5_w15 e1 |
+| pre | 60 | +0.274 | ofi5_w15 e1 | -1.21 | 1.000 | -1.21 | ofi5_w15 e1 |
+| nyam | 1 | +0.011 | imb5 e1 | -1.43 | 1.000 | -1.42 | ofi1_w5 e1 |
+| nyam | 5 | +0.026 | imb10 e1 | -1.42 | 1.000 | -1.41 | ofi1_w1 e0 |
+| nyam | 15 | +0.072 | imb10 e1 | -1.37 | 1.000 | -1.36 | ofi1_w60 e1 |
+| nyam | 60 | +0.129 | ofi5_w60 e1 | -1.30 | 1.000 | -1.30 | ofi5_w60 e1 |
+| nypm | 1 | +0.015 | micro_dev e0 | -1.41 | 0.030 | -1.40 | ofi5_w1 e0 |
+| nypm | 5 | +0.032 | imb1 e0 | -1.39 | 0.005 | -1.39 | imb1 e0 |
+| nypm | 15 | +0.033 | micro_dev e1 | -1.43 | 1.000 | -1.39 | ofi1_w15 e1 |
+| nypm | 60 | +0.130 | imb10 e1 | -1.31 | 1.000 | -1.29 | ofi1_w60 e1 |
+| close | 1 | +0.030 | micro_dev e1 | -1.41 | 0.005 | -1.40 | imb1 e1 |
+| close | 5 | +0.058 | micro_dev e0 | -1.38 | 0.005 | -1.37 | imb1 e1 |
+| close | 15 | +0.077 | ofi5_w60 e1 | -1.35 | 0.965 | -1.35 | ofi5_w60 e1 |
+| close | 60 | +0.317 | imb10 e0 | -1.13 | 0.672 | -1.13 | imb10 e0 |
+
+Best six cells by test net: imb10 h60 h15 e0: gross disc +0.010 test +0.380 net -1.05 z 1.9 p 1.000 (n 26726); ofi5_w60 h60 h09 e1: gross disc +0.176 test +0.359 net -1.09 z 1.9 p 1.000 (n 36083); imb10 h60 s_close e0: gross disc +0.070 test +0.317 net -1.13 z 3.1 p 0.672 (n 74558); imb10 h60 h16 e1: gross disc +0.086 test +0.300 net -1.16 z 2.6 p 0.995 (n 51225); imb5 h60 h16 e1: gross disc +0.131 test +0.291 net -1.17 z 3.5 p 0.328 (n 49637); ofi5_w60 h60 h14 e0: gross disc +0.051 test +0.245 net -1.17 z 1.9 p 1.000 (n 38951)
+
+**ES: the thing it does is that depth imbalance, microprice deviation and order flow at 1-60 s carry a small real forward mid-price signal (best frozen test gross 0.38 ticks; 370 cells beat the shuffled-day family null on gross structure); the book that fits would be a 1-60 s taker book, and it does not clear because a taker round trip costs about 1.4 ticks (spread 1.00 + fee 0.39) against that gross, best test net -1.05 ticks, 0 cells with net > 0.**
+
+### RTY
+Scored cells 2784; cells with family p <= .10: 265 (gross structure real vs the shuffled null); cells with test net > 0: 0; rows that BEAT the null (p <= .10, net > 0 both halves): 0. Null maximum z median 3.19, 95th percentile 3.96. Median quoted spread 2.00 ticks, fee 0.97 ticks, so a taker round trip costs about 2.97 ticks (spread + fee) before any slippage beyond the touch.
+
+| session | h s | best gross ticks (test, frozen dir) | feature / class | its net ticks | its p_family | best net ticks in session | feature / class |
+|--|--|--|--|--|--|--|--|
+| asia | 1 | +0.050 | imb1 e0 | -3.30 | 0.005 | -3.30 | imb1 e1 |
+| asia | 5 | +0.122 | imb1 e0 | -3.24 | 0.005 | -3.24 | imb1 e0 |
+| asia | 15 | +0.158 | imb1 e0 | -3.21 | 0.005 | -3.21 | imb1 e0 |
+| asia | 60 | +0.181 | imb1 e0 | -3.20 | 0.005 | -3.20 | imb1 e0 |
+| london | 1 | +0.043 | imb1 e1 | -3.23 | 0.005 | -3.23 | imb1 e1 |
+| london | 5 | +0.089 | imb1 e1 | -3.20 | 0.005 | -3.20 | imb1 e1 |
+| london | 15 | +0.095 | imb1 e1 | -3.20 | 0.005 | -3.20 | imb1 e1 |
+| london | 60 | +0.186 | imb10 e0 | -3.30 | 0.975 | -3.15 | imb1 e1 |
+| pre | 1 | +0.036 | micro_dev e1 | -3.28 | 1.000 | -3.01 | imb1 e0 |
+| pre | 5 | +0.075 | ofi1_w15 e1 | -3.01 | 0.965 | -2.98 | imb1 e0 |
+| pre | 15 | +0.156 | ofi1_w60 e1 | -2.93 | 1.000 | -2.93 | ofi1_w15 e1 |
+| pre | 60 | +0.263 | ofi1_w60 e1 | -2.81 | 1.000 | -2.81 | ofi1_w15 e1 |
+| nyam | 1 | +0.015 | ofi5_w5 e0 | -2.65 | 0.005 | -2.64 | ofi5_w60 e0 |
+| nyam | 5 | +0.048 | ofi1_w60 e0 | -2.62 | 0.005 | -2.61 | ofi5_w60 e0 |
+| nyam | 15 | +0.135 | ofi1_w60 e0 | -2.53 | 0.050 | -2.53 | ofi1_w60 e0 |
+| nyam | 60 | +0.266 | ofi1_w60 e0 | -2.40 | 1.000 | -2.40 | ofi1_w60 e0 |
+| nypm | 1 | +0.014 | imb5 e0 | -2.83 | 1.000 | -2.55 | imb1 e1 |
+| nypm | 5 | +0.028 | imb5 e0 | -2.82 | 1.000 | -2.56 | imb1 e1 |
+| nypm | 15 | +0.050 | imb5 e0 | -2.80 | 1.000 | -2.55 | imb1 e1 |
+| nypm | 60 | +0.079 | imb10 e0 | -2.79 | 1.000 | -2.52 | ofi5_w60 e0 |
+| close | 1 | +0.018 | micro_dev e0 | -2.73 | 1.000 | -2.49 | imb1 e0 |
+| close | 5 | +0.049 | micro_dev e0 | -2.69 | 1.000 | -2.49 | imb1 e1 |
+| close | 15 | +0.098 | micro_dev e0 | -2.64 | 1.000 | -2.46 | imb1 e0 |
+| close | 60 | +0.157 | micro_dev e0 | -2.58 | 1.000 | -2.42 | imb1 e1 |
+
+Best six cells by test net: ofi1_w60 h60 h09 e0: gross disc +0.107 test +0.656 net -2.14 z 2.3 p 1.000 (n 69484); ofi1_w15 h60 h09 e0: gross disc +0.025 test +0.597 net -2.20 z 3.7 p 0.154 (n 71887); ofi5_w15 h60 h09 e0: gross disc +0.071 test +0.553 net -2.24 z 3.1 p 0.567 (n 61091); ofi5_w60 h60 h09 e0: gross disc +0.136 test +0.516 net -2.28 z 1.4 p 1.000 (n 57825); imb10 h60 h09 e0: gross disc +0.101 test +0.561 net -2.36 z 2.1 p 1.000 (n 48182); imb10 h60 h14 e1: gross disc +0.030 test +0.303 net -2.36 z 1.2 p 1.000 (n 51840)
+
+**RTY: the thing it does is that depth imbalance, microprice deviation and order flow at 1-60 s carry a small real forward mid-price signal (best frozen test gross 0.66 ticks; 265 cells beat the shuffled-day family null on gross structure); the book that fits would be a 1-60 s taker book, and it does not clear because a taker round trip costs about 3.0 ticks (spread 2.00 + fee 0.97) against that gross, best test net -2.14 ticks, 0 cells with net > 0.**
+
+### NQ
+Scored cells 2784; cells with family p <= .10: 29 (gross structure real vs the shuffled null); cells with test net > 0: 0; rows that BEAT the null (p <= .10, net > 0 both halves): 0. Null maximum z median 3.25, 95th percentile 3.89. Median quoted spread 3.00 ticks, fee 0.97 ticks, so a taker round trip costs about 3.97 ticks (spread + fee) before any slippage beyond the touch.
+
+| session | h s | best gross ticks (test, frozen dir) | feature / class | its net ticks | its p_family | best net ticks in session | feature / class |
+|--|--|--|--|--|--|--|--|
+| asia | 1 | +0.035 | imb1 e0 | -5.08 | 1.000 | -4.93 | imb5 e0 |
+| asia | 5 | +0.058 | micro_dev e0 | -5.72 | 1.000 | -4.92 | imb5 e0 |
+| asia | 15 | +0.101 | micro_dev e1 | -5.50 | 1.000 | -4.89 | imb1 e1 |
+| asia | 60 | +0.350 | ofi1_w60 e1 | -5.16 | 1.000 | -4.82 | imb5 e0 |
+| london | 1 | +0.020 | ofi1_w15 e1 | -5.16 | 1.000 | -4.71 | imb5 e0 |
+| london | 5 | +0.041 | imb1 e0 | -4.74 | 0.358 | -4.71 | imb5 e0 |
+| london | 15 | +0.155 | ofi5_w15 e0 | -4.96 | 1.000 | -4.75 | imb10 e0 |
+| london | 60 | +0.222 | ofi1_w60 e1 | -4.96 | 1.000 | -4.64 | imb5 e0 |
+| pre | 1 | +0.043 | ofi5_w15 e0 | -4.35 | 1.000 | -4.00 | imb1 e1 |
+| pre | 5 | +0.212 | ofi5_w60 e1 | -4.19 | 1.000 | -3.95 | imb1 e0 |
+| pre | 15 | +0.518 | ofi5_w15 e1 | -3.87 | 1.000 | -3.79 | imb1 e0 |
+| pre | 60 | +1.276 | ofi5_w15 e1 | -3.09 | 1.000 | -3.09 | ofi5_w15 e1 |
+| nyam | 1 | +0.027 | ofi1_w15 e1 | -3.82 | 1.000 | -3.56 | imb1 e1 |
+| nyam | 5 | +0.121 | ofi5_w1 e1 | -3.72 | 0.995 | -3.52 | imb1 e1 |
+| nyam | 15 | +0.330 | ofi1_w15 e0 | -3.61 | 1.000 | -3.47 | imb1 e1 |
+| nyam | 60 | +1.257 | ofi1_w60 e1 | -2.56 | 1.000 | -2.56 | ofi1_w60 e1 |
+| nypm | 1 | +0.019 | imb5 e1 | -4.04 | 1.000 | -3.53 | ofi5_w1 e0 |
+| nypm | 5 | +0.091 | ofi5_w15 e1 | -3.45 | 0.980 | -3.45 | ofi5_w15 e1 |
+| nypm | 15 | +0.120 | ofi5_w1 e0 | -3.42 | 0.149 | -3.42 | ofi5_w1 e0 |
+| nypm | 60 | +0.302 | imb10 e0 | -3.81 | 1.000 | -3.40 | ofi5_w1 e0 |
+| close | 1 | +0.037 | ofi1_w15 e1 | -3.99 | 1.000 | -3.55 | imb1 e0 |
+| close | 5 | +0.110 | imb10 e1 | -3.89 | 1.000 | -3.52 | imb1 e0 |
+| close | 15 | +0.361 | ofi5_w60 e1 | -3.64 | 1.000 | -3.49 | imb1 e1 |
+| close | 60 | +0.397 | ofi5_w60 e1 | -3.60 | 1.000 | -3.27 | imb1 e1 |
+
+Best six cells by test net: ofi1_w60 h60 h09 e0: gross disc +0.515 test +2.790 net -1.46 z 2.9 p 0.881 (n 81525); ofi1_w60 h60 h13 e1: gross disc +0.042 test +1.107 net -2.45 z 1.6 p 1.000 (n 73671); ofi1_w60 h60 h10 e1: gross disc +1.074 test +1.422 net -2.45 z 1.2 p 1.000 (n 79850); ofi1_w60 h60 s_nyam e1: gross disc +0.548 test +1.257 net -2.56 z 1.8 p 1.000 (n 206069); ofi5_w15 h60 h14 e1: gross disc +0.698 test +0.971 net -2.58 z 1.5 p 1.000 (n 50254); ofi5_w5 h60 h14 e1: gross disc +0.407 test +0.844 net -2.70 z 1.6 p 1.000 (n 55056)
+
+**NQ: the thing it does is that depth imbalance, microprice deviation and order flow at 1-60 s carry a small real forward mid-price signal (best frozen test gross 2.79 ticks; 29 cells beat the shuffled-day family null on gross structure); the book that fits would be a 1-60 s taker book, and it does not clear because a taker round trip costs about 4.0 ticks (spread 3.00 + fee 0.97) against that gross, best test net -1.46 ticks, 0 cells with net > 0.**
+
+(1b-a correction note, ZL-1: the "median quoted spread" in the three 1b-a blocks above was sampled over 18:00-10:40 ET and so mixes the wider overnight book. Over RTH 09:30-16:00 ET the median quoted spread is ES 1.0 tick, RTY 2.0 ticks, NQ 2.0 ticks (mean 1.04 / 1.75 / 2.65); with the fee ($4.84 = 0.39 / 0.97 / 0.97 ticks) a taker round trip costs about ES 1.4, RTY 3.0, NQ 3.0 ticks in RTH. The cell nets use the measured spread at each fill, so the table values are unaffected; only the sentence's cost figure is.)
