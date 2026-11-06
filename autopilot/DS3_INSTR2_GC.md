@@ -106,3 +106,100 @@ Z2 wf_selector.py (monthly decisions from the previous 26 or 52 weeks, purge 1 w
 | nypm | 52 | top1 | 20459 | -331 | 42378 | -661 | -427 | -234 | 0.64 | 0.86 | 0.99 | -0.013 |
 | nypm | 52 | top3 | 20459 | -246 | 31429 | -416 | -235 | -159 | 0.29 | 0.60 | 0.98 | -0.003 |
 **Plain sentence: the walk-forward choice of GC parameters does not work out of sample: 19 of the 20 session x lookback x top-k selectors have a NEGATIVE out-of-sample mean per week over 2024-2026 (the one positive, asia 26-week top-1 +$251 a week, has L6M -$1,775 and HOLD -$32 and a bootstrap p of 0.10); the small p-values against a random cell (London, asia) only say the selector picks less bad cells than a random one, not that it makes money, and none has a positive stack Calmar gain beyond +0.012 at k=1. Consistent with the REGIME label: GC trend cells paid only in 2026.**
+
+## GC-DISSECT (ZL-1, 2026-11-06; prereg l2vast/ds3/prereg/GC_DISSECT_prereg.md; code l2vast/ds3/code/gcdis/; data /mnt/l2/l2vast/gcdis/) - what drives S4a's tolerant-gate count excess (493, p .0099)
+
+**GC: the thing it does in 2023-26 is that Keltner (excess +171 passers) and Supertrend (+57) trend flips in NY-AM (+130) and the 08:30 pre session (+114) pass the tolerant gate far more often than the random-side null (493 real vs null median 251, maximum 288 over 24 worlds), but the dominant cluster's cleanest strong representative (KELT b5 e34 n14 m0.5, NY-AM, stop ATR3 R1.5 T60) pays ONLY in 2026 (+19781 $ at screen lots; 2023 -24044, 2024 +107, 2025 -10536; 2013-2022 -137670; 2 of 10 pre-2023 years positive), and its 2026 profit is the short side (+24372 vs long -4591) of a net-down year (gold -3.4% on the continuous contract) with the highest volatility since 2013 (28.6% annualised, 5-min abs move 6.7 bp): a pure forced-short book at the same entry times earned +26924 in 2026 and a forced-long -26722, while trend persistence did not change (VR12 0.996 in 2026, 1.024 in 2023); gold's own trailing variance ratio, volatility rank, trend-day share and drift/vol ratio do not predict when it pays (walk-forward family p >= 0.82); the book is REGIME (2026 short-drift + vol), not a trend book, and it does not clear: placebo p_book 0.82, family p 1.00 (F=132,286), walk-forward not positive, stack Calmar not up at any weight (k* = 0).**
+
+### 1. Where the excess comes from (reproduction: 4200 cells, 493 passers = S4a's 493; 24 random-side worlds seeds 5000..5023: passers median 251, min 230, max 288)
+| family | real passers | null mean | excess |
+|--|--|--|--|
+| KELT | 314 | 143.0 | +171.0 |
+| SUPT | 122 | 64.6 | +57.4 |
+| VWR | 11 | 3.8 | +7.2 |
+| MOM | 13 | 6.4 | +6.6 |
+| HMAV | 7 | 3.8 | +3.2 |
+| PDF | 2 | 0.1 | +1.9 |
+
+| session | real passers | null mean | excess |
+|--|--|--|--|
+| nyam | 197 | 67.5 | +129.5 |
+| pre | 230 | 115.6 | +114.4 |
+| asia | 30 | 17.1 | +12.9 |
+| london | 9 | 16.6 | -7.6 |
+| nypm | 27 | 36.0 | -9.0 |
+
+Bracket: stop ATR3 240 real vs 109 null; stop $1,200 253 vs 144. Largest (family, session) excesses: KELT|pre 157 vs 64.6 (x2.4); KELT|nyam 113 vs 37.2 (x3.0); SUPT|nyam 67 vs 19.2 (x3.5); SUPT|pre 42 vs 29.9 (x1.4); MOM|pre 13 vs 3.2 (x4.1). 96% of the excess is Keltner + Supertrend flips, 100% is NY-AM + 08:30 pre.
+
+### 2. Clusters of the 493 passers (weekly P&L 2023-04..2026-10, average linkage on 1-corr, cut at corr 0.6)
+| cluster | size | mean within-corr | families | sessions | stop bracket | median HOLD $/wk |
+|--|--|--|--|--|--|--|
+| 44 | 35 | 0.67 | {'SUPT': 20, 'KELT': 15} | {'nyam': 35} | {"('atr', 3.0)": 35} | 354 |
+| 11 | 33 | 0.68 | {'KELT': 33} | {'pre': 33} | {"('atr', 3.0)": 24, "('usd', 1200.0)": 9} | 228 |
+| 46 | 32 | 0.67 | {'KELT': 28, 'SUPT': 4} | {'nyam': 32} | {"('atr', 3.0)": 32} | 264 |
+| 21 | 25 | 0.66 | {'KELT': 21, 'SUPT': 4} | {'pre': 25} | {"('usd', 1200.0)": 24, "('atr', 3.0)": 1} | 270 |
+| 17 | 24 | 0.69 | {'KELT': 18, 'SUPT': 6} | {'pre': 24} | {"('usd', 1200.0)": 24} | 356 |
+| 10 | 20 | 0.73 | {'KELT': 13, 'SUPT': 7} | {'pre': 20} | {"('usd', 1200.0)": 19, "('atr', 3.0)": 1} | 187 |
+
+95 clusters in total; the passers are NOT one pattern but several correlated families of the same trade (flip entries on 5-15 min bars in the same sessions); the dominant cluster (35 cells: Supertrend and Keltner, NY-AM, stop ATR3) has mean within-cluster correlation 0.67. Plateau score (share of one-step parameter neighbours that also pass) over all 448 passers' sets: median 0.50, 123 cells >= 0.70.
+
+### 3. Representatives
+Frozen rule (highest plateau, ties highest HOLD): **SUPT b2 n10 m4.0 NY-AM stop ATR3** (plateau 1.00 on only 4 neighbours, HOLD $38/wk at screen lots) - degenerate: the rule picks a borderline cell whose neighbours also barely pass. DISCLOSED secondary (max HOLD among dominant-cluster members with plateau >= .70 and >= 5 neighbours): **KELT b5 e34 n14 m0.5 NY-AM stop ATR3 R1.5 T60** (plateau 0.83 over 6 neighbours, HOLD $456/wk, L6M $689/wk at screen lots). Both are evaluated; the analysis below follows the secondary.
+
+### 4. Yearly table 2013-2026 of the secondary representative (percent frame before 2023-04, roll days dropped; screen lots = min($1,200 / stop, 6); drift books = same entry times, side forced)
+| year | trades | net $ | mean ticks | long $ | short $ | weeks positive | forced-long $ | forced-short $ |
+|--|--|--|--|--|--|--|--|--|
+| 2013 | 191 | -706 | +3.3 | +2111 | -2817 | 0.45 | -9499 | -16761 |
+| 2014 | 187 | -7030 | -0.3 | -13336 | +6306 | 0.41 | -26869 | +8823 |
+| 2015 | 188 | -7632 | -1.3 | -7256 | -376 | 0.38 | -20232 | -7471 |
+| 2016 | 221 | -8816 | -2.2 | -10036 | +1220 | 0.46 | -30520 | -7909 |
+| 2017 | 236 | -42309 | -4.6 | -18537 | -23772 | 0.29 | -19021 | -38205 |
+| 2018 | 187 | -39048 | -5.7 | -21559 | -17490 | 0.27 | -30345 | -14039 |
+| 2019 | 219 | -38458 | -5.1 | -14273 | -24185 | 0.25 | -10849 | -26882 |
+| 2020 | 229 | +2962 | +5.3 | +1314 | +1649 | 0.43 | -13580 | -11158 |
+| 2021 | 204 | +5115 | +1.7 | +5980 | -864 | 0.50 | -4195 | -13788 |
+| 2022 | 225 | -1748 | -1.2 | -1839 | +91 | 0.56 | -9660 | -1938 |
+| 2023 | 227 | -24044 | -6.2 | -13717 | -10327 | 0.37 | -20819 | -2893 |
+| 2024 | 223 | +107 | -0.5 | -3185 | +3292 | 0.50 | -21033 | +2277 |
+| 2025 | 209 | -10536 | -5.2 | +90 | -10626 | 0.53 | +7986 | -21212 |
+| 2026 | 182 | +19781 | +14.8 | -4591 | +24372 | 0.60 | -26722 | +26924 |
+Dominant-cluster top-10 by plateau: 2013-2022 total $-137k to $-216k each, 1-3 of 10 pre-2023 years positive, 2023-2026 total $-31k to +$2k each. Calibration of the 1-min kernel against the tick-built 1-s path was measured by S4a for its 40 finalists (weekly correlation 0.93-1.00); this representative was not among them, so its pre-2023 table is INFORMAL (same pipeline, not separately calibrated).
+
+### 5. What changed (GC 1-min closes, label days, percent frame)
+| year | days | vol ann % | 5-min abs bp | VR(6) z | VR(12) z | VR(36) z | lag-1 corr 30-min | trend-day share | gold return % |
+|--|--|--|--|--|--|--|--|--|--|
+| 2013 | 242 | 22.1 | 4.48 | 0.970 (-1.2) | 0.973 (-0.8) | 1.052 (1.0) | -0.014 | 0.48 | -28.5 |
+| 2014 | 241 | 14.6 | 3.30 | 0.928 (-3.5) | 0.937 (-2.2) | 0.970 (-0.7) | +0.000 | 0.39 | -0.4 |
+| 2015 | 248 | 13.9 | 3.41 | 0.986 (-0.6) | 0.997 (-0.1) | 1.075 (1.6) | +0.016 | 0.40 | -11.6 |
+| 2016 | 248 | 15.9 | 3.79 | 0.997 (-0.1) | 1.020 (0.6) | 1.111 (2.0) | +0.019 | 0.40 | +8.6 |
+| 2017 | 247 | 10.4 | 2.59 | 0.951 (-3.0) | 0.952 (-2.0) | 0.977 (-0.6) | -0.012 | 0.49 | +13.3 |
+| 2018 | 248 | 10.0 | 2.59 | 0.954 (-2.9) | 0.974 (-1.1) | 1.026 (0.7) | +0.005 | 0.41 | -1.6 |
+| 2019 | 248 | 12.5 | 2.80 | 0.960 (-1.9) | 0.980 (-0.7) | 1.027 (0.6) | +0.008 | 0.41 | +18.3 |
+| 2020 | 249 | 21.3 | 5.01 | 0.951 (-1.9) | 0.960 (-1.1) | 1.035 (0.6) | +0.021 | 0.42 | +25.1 |
+| 2021 | 248 | 13.9 | 3.55 | 1.020 (0.9) | 1.022 (0.7) | 1.039 (0.8) | +0.028 | 0.38 | -3.7 |
+| 2022 | 248 | 15.3 | 3.84 | 0.991 (-0.5) | 1.021 (0.8) | 1.066 (1.5) | +0.011 | 0.44 | -0.0 |
+| 2023 | 247 | 13.1 | 3.11 | 1.020 (1.0) | 1.024 (0.8) | 1.126 (2.7) | -0.009 | 0.40 | +13.2 |
+| 2024 | 249 | 16.3 | 3.52 | 1.013 (0.7) | 1.037 (1.4) | 1.102 (2.4) | -0.000 | 0.47 | +27.4 |
+| 2025 | 248 | 20.6 | 4.67 | 1.001 (0.1) | 1.014 (0.6) | 1.019 (0.4) | +0.009 | 0.46 | +64.1 |
+| 2026 | 197 | 28.6 | 6.65 | 0.999 (-0.0) | 0.996 (-0.1) | 0.968 (-0.5) | +0.016 | 0.48 | -3.4 |
+Rank correlation across the 14 years between each indicator and the representative's yearly P&L: vol_ann_pct +0.75, abs5_bp +0.75, VR6 +0.30, VR12 +0.20, VR36 +0.02, ac30 +0.45, trend_day_share +0.01, gold_ret_pct -0.28 (n = 14, rank only). Volatility and the 5-min move size line up with the P&L (+0.75); variance ratios, lag-1 autocorrelation and trend-day share do not, and VR is within noise of 1 in every year from 2021 on: nothing about persistence changed in 2023; what changed is volatility, rising from 13% (2023) to 29% (2026). The central-bank-bid hypothesis cannot be tested with owned data (no reserves series); it is named, not tested.
+
+### 6. Regime awareness (one-sided gates on gold's own trailing indicators, expanding walk-forward 2017-2026, 2-week purge, 2,000 within-year permutations, family max over the 4)
+| indicator | share of weeks on | uplift $/wk vs always-on | 2017-21 | 2022-26 | gated mean / maxDD | always-on mean / maxDD | p cell | p family |
+|--|--|--|--|--|--|--|--|--|
+| VR12_20d | 0.45 | +123 | +283 | -45 | -128 / 83356 | -251 / 155206 | 0.702 | 1.000 |
+| volpct_60d | 0.44 | +217 | +425 | -0 | -34 / 47901 | -251 / 155206 | 0.793 | 0.818 |
+| trendshare_20d | 0.46 | +159 | +325 | -14 | -92 / 59207 | -251 / 155206 | 0.617 | 1.000 |
+| absret_over_vol_60d | 0.33 | +178 | +305 | +45 | -73 / 45787 | -251 / 155206 | 0.348 | 0.994 |
+
+Verdict: not regime-aware (no indicator has family p <= .10 with a positive uplift in both OOS halves); the gates cut the loss mainly by being off in 2017-2019, not by anticipating 2026.
+
+### 7. Evaluator and stack (instr2_eval.evaluate, 100 placebo worlds, family F = 132,286, integer equal-risk lots - the screen used fractional lots, so $ differ)
+| book | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | HOLD maxDD | corr V0/V2 daily | stack k* | placebo p_book | walk-forward 6m / 12m OOS $/wk | label |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| SUPT b2 n10 m4.0 NY-AM (frozen) | -92 | +34 | +34 | -366 | -247 | +27 | -190 | +148 | 31798 | 0.02 / 0.01 | 0.00 | 0.96 | -520 / -413 | FAILS: tolerant gate (NOW-ONLY fails (L3M/L6M mean not both > 0)) ; persistence 50% <= 60% ; placebo p_book 0.96 > .10 ; family p 1.00 > .10 ; walk-forward not positive (6m: OOS -520/wk, p_rand 1.00,  |
+| KELT b5 e34 n14 m0.5 NY-AM (secondary) | +249 | +269 | +269 | +1004 | +557 | +37 | -270 | -204 | 25176 | 0.03 / 0.02 | 0.00 | 0.82 | +169 / -17 | FAILS: placebo p_book 0.82 > .10 ; family p 1.00 > .10 ; walk-forward not positive (6m: OOS 169/wk, p_rand 0.13, 12m: OOS -17/wk, p_rand 0.52) ; stack Calmar not up at equal risk (HOLD/L6M, carry drop |
+
+Sizing of the secondary at the real contract (2023-26 trades, n 783): equal-risk lots median 1.0 (IQR 1.0-2.0), risk per GC lot (stop distance) median $1040; rounding to integer GC lots changes the realised risk by more than 25% in 45% of trades (GC integer-lot risk p10-p90 $936-$2490); with MGC (10 oz, tick $1) contracts = round(10 x lots), median 10 contracts, risk p10-p90 $936-$2490; participation cap binds in 0% of trades. MGC fee is unmeasured (the $4.84 GC fee per contract is NOT assumed for MGC).
+
+Label: **REGIME** (2026 short-drift + volatility; 10-year pre-2023 negative; placebo, family, walk-forward and stack tests fail); WATCH spec: autopilot/WATCH_GC_TREND_SPEC.md.
