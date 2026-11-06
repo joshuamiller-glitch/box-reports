@@ -1071,3 +1071,11 @@ Corrected set: 108 cells (12 1b-b book cells + 96 1-s LRS cells); positive in L6
 | 1SLRS_close_mom_h1800|seed0_1sfix | 1577 | -870 | -1285 | +687 | +65 | +434 | -676 | +0 | 14426 | 0.03 | +0.000 / +0.000 | 0.50 / 1.00 | +37 (True) / +46 (True) | FAILS: tolerant gate (NOW-ONLY fails (L3M/L6M mean not both > 0); PRE mean -676 < -0.5 MDE (-373); X': no data) | persistence 38% <= 60% | placebo p_b |
 
 ## 1S-FIX note for DS3_FIND.md (CHAR-A, 2026-11-06): all DS3_FIND.md blocks of CHAR-A built from the buggy 1-s simulator are SUPERSEDED by the '1S-FIX corrected tick-scale candidate set' blocks directly above: '1b-DEEP' rows, 'DS3_FIND ES/RTY/NQ ... tickb' rows (T2F1B_*) and the '1s-LRS' rows (T2F_*|1SLRS_*). The label-change table is in DS3_FIND_CHARACTER.md '1S-FIX'.
+
+## EVENTS-1S rows (Z1, 2026-11-06) - scheduled releases at 1-s, prereg sha 293fb7dc...
+| instrument | session | regularity found | book | params | L1M..X' | maxDD | Calmar | corr | stack gain | placebo | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| RTY | 14:00 FOMC decision | continuation after a volume shock, +45 ticks gross in 2 min (18 events) | market, 1 s latency, stop 3 x 30-s range | D 30 s, hold 120 s | L3M 1 trade, L6M 3 trades +$280/wk, HOLD +$109 (1), PRE +$155 (10), X' +$65 (2) | $3.8k (PRE) | n/a | +0.09 weekly | n/a | event/control null family p .044 | WATCH (small N, fails min sample) |
+| RTY | 08:30 CPI | continuation after a volume shock, +33 ticks gross in 30 s (30 events) | same | D 30 s, hold 30 s | L6M -$92 (2), HOLD -$33 (7), PRE +$205 (12) | $3.8k | n/a | -0.10 | no | family p .098 | WATCH, fails NOW-ONLY |
+| ES | 08:30/10:00/14:00 | none: 0 of 960 cells clear | none | - | - | - | - | - | - | - | NEGATIVE |
+| NQ (control) | same | none: 0 of 1,024 | none | - | - | - | - | - | - | - | NEGATIVE |
