@@ -1079,3 +1079,12 @@ Corrected set: 108 cells (12 1b-b book cells + 96 1-s LRS cells); positive in L6
 | RTY | 08:30 CPI | continuation after a volume shock, +33 ticks gross in 30 s (30 events) | same | D 30 s, hold 30 s | L6M -$92 (2), HOLD -$33 (7), PRE +$205 (12) | $3.8k | n/a | -0.10 | no | family p .098 | WATCH, fails NOW-ONLY |
 | ES | 08:30/10:00/14:00 | none: 0 of 960 cells clear | none | - | - | - | - | - | - | - | NEGATIVE |
 | NQ (control) | same | none: 0 of 1,024 | none | - | - | - | - | - | - | - | NEGATIVE |
+
+## 1b-d addendum 3 rows (ZL-1; passive queue model, whole CHAR-A family paid for, no pre-2023 evidence)
+| instrument | session | regularity | book | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD | Calmar | corr | stack gain | placebo | label |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| RTY | pre | PD level touch, all class, direction continue, passive join at touch | passive maker book hold 30 s, stop 134 ticks | family cell | +170 | +171 | +171 | +51 | +75 | +45 | +45 | -38 | 598 | 0.13 | -0.03/-0.03 | k*=5.0 | shifted-time family p .005 (200 worlds, all 147-149 cells); placebos not run | REGIME/WATCH: beats the family null, fails the tolerant gate in dollars (X' mean -38 < -0.5 MDE (-28)) |
+| RTY | pre | PD level touch, all class, direction continue, passive join at touch | passive maker book hold 60 s, stop 168 ticks | family cell | +135 | +137 | +137 | +28 | +63 | +108 | +22 | -29 | 354 | 0.18 | -0.04/-0.04 | k*=5.0 | shifted-time family p .005 (200 worlds, all 147-149 cells); placebos not run | REGIME/WATCH: beats the family null, fails the tolerant gate in dollars (X' mean -29 < -0.5 MDE (-18)) |
+| ES | nypm | IB level touch, all class, direction continue, passive join at touch | passive maker book hold 300 s, stop 57 ticks | family cell | -294 | -827 | -827 | +220 | +428 | +661 | +92 | -32 | 4134 | 0.10 | 0.02/0.01 | k*=5.0 | shifted-time family p .005 (200 worlds, all 147-149 cells); placebos not run | REGIME/WATCH: beats the family null, fails the tolerant gate in dollars (NOW-ONLY fails (L3M/L6M mean not both > 0)) |
+| ES / NQ | NY-AM | PD-level + burst continuation (addendum 2 cells) | passive maker book | see 1b-d addendum 2 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | WHOLE-FAMILY p_family ES h60 .43, NQ h30 .78 | no lead: selection from the 149-152-cell family explains them; sensitivities positive; 87%% of ES fills rely on modeled cancels |
+(format note: '87%%' in the last row above reads 87%.)

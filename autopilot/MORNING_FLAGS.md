@@ -281,3 +281,9 @@ CHAR-A's RTY premarket prior-day-level continuation (REGIME/WATCH, ~95 trades, s
 
 ## 2026-11-06 04:07Z NEEDS THE USER BY SATURDAY 2026-11-07 ~08:00Z: approve the NQ ohlcv-1s weekly pull (~$1.14)
 Window 2026-11-01T23:00Z -> 2026-11-07T00:00Z, command in FEED_RUNBOOK_20261107.md (pull_nov.py, --max-usd 2.00, confirm string from a dry run). Without it Monday 2026-11-09's first real table shows no outcome data and the Monday-long / NQ_PDL watches have no forward prices. Spend after: ~$7,312.8 of $8,000. Default taken: NO pull (nothing bought); also unanswered: MONDAY_START default 2026-11-04.
+
+## 2026-11-06 05:06Z LOW-PRIORITY QUESTION: pre-2023 ES/NQ L2 (quotes only, nothing bought)
+Only way to get pre-2023 evidence for any tick-scale item. One year (2022-08..2023-07): ES $420 / NQ $391 (903 / 840 GB); 2020-2023: $1,348 / $1,242; 2017-2023: $1,816 / $1,674. Budget left $688.37 (so one year of ES or NQ fits, both do not). Lead recommendation: no - after the family correction nothing at tick scale survives (best effect ~$25/order, ~130 orders/yr), so more years would price an answer we expect to be NULL. Default taken: no purchase.
+
+## 2026-11-06 05:23Z (veto window) Monday long watch: kill rule amended before any forward data
+Lead approved a dated amendment (WATCH_MONDAY_LONG_AMENDMENT_1.md, being filed by CHAR-A): the '13 consecutive weeks cum <= 0' clause (fires 46% of the time with no edge in CHAR-B's simulation) is replaced by an SPRT; hard-loss kill and the 26-Monday pass read stay. Original spec untouched. Say so if you want it reversed. All 15 open decisions with defaults: DECISION_PACK_20261106.md Part 3.

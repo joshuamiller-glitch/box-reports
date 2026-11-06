@@ -4037,3 +4037,130 @@ Prereg l2vast/ds3/prereg/T2F_EV1S_prereg.md sha256 293fb7dcb28435e9efa763655e4d1
 The two RTY rows that beat the null: FOMC decision with a volume shock, decision at 30 s, hold 120 s, continuation (18 events, +45 ticks gross, 4.3 cost, +41 net, +45 / +35 in the two halves, p_family .044) and CPI with a volume shock, 30 s, hold 30 s, continuation (30 events, +33 gross, 7.2 cost, +25.5 net, +42 / +13 in the halves, p_family .098). The same direction is positive but not significant on ES and NQ (CPI +7 / +30 ticks at 30 s). Per-cell p for shock cells is not meaningful (control days rarely carry a shock, so the shock cells have few control events) and is set aside; the family p uses all scored cells.
 **Books (frozen map -> book rule, RTY only, instr2_eval_1s, 1 lot, taker, stop 3 x trailing 30-s mid range min 4 ticks, +1 tick on stops):** RTY FOMC-shock D30 h120: 18 trades, +$132 per trade (7 stops), PRE +$155/wk (10 trades), X' +$65 (2), HOLD +$109 (1), L6M +$280 (1), L3M 1 trade; RTY CPI-shock D30 h30: 30 trades, +$112 per trade, PRE +$205/wk (12), X' +$45 (2), MID -$83 (3), HOLD -$33 (7), L6M -$92 (2). Both fail the minimum sample (L6M 3 and 5 trades against 20; L3M 1-2 against 10), NOW-ONLY and persistence (50% / 25%); weekly correlation to the NQ stack +0.09 / -0.10. Passive variants not run: the taker nets already beat the cost (room 4.5x and 10x), and the 08:30 releases are outside ZL-1's RTH event store; the 14:00 FOMC passive variant would add nothing at 18 events.
 Plain sentences: ES: the release moves the price about 7 ticks in the first 30 s for CPI and 10 for FOMC and gives most of it back or nothing more; nothing clears (0 of 960 cells) and the book would be 25-37 events a year with 1.6-2.5 ticks of cost, so no book. NQ: the same pattern is larger in ticks (CPI +30, FOMC +47 gross) but no cell clears (control); ISM reverses at 30 min but family p .6. RTY: continuation after CPI and FOMC volume shocks clears the family at p .044 / .098 with 18 and 30 events, positive in both halves and 4-10x the cost, but the recent windows hold 1-5 trades, so there is no formal verdict. Label: RTY FOMC-shock continuation and CPI-shock continuation = PER-CELL/FAMILY-MARGINAL, SMALL N (REGIME/WATCH; the recent window cannot confirm); ES, NQ NEGATIVE. No PASS claim.
+
+## 1b-d addendum 3 - paying for the selection: the passive queue model on the WHOLE CHAR-A level-touch family (ZL-1; prereg l2vast/ds3/prereg/FIND_1BD_addendum3.md sha256 13a70adccb27533b0b5128868c1fa2f087250b43601b60b09753a92c226a40ff; code maker_family.py, maker_sens.py, maker.py rest_x / eval_order_x; no pre-2023 evidence)
+
+Design: every cell of CHAR-A's events_b family (level type x session x class all/burst x hold 5/30/60/300/1800 s; cells with >= 30 discovery events), direction FROZEN on the discovery half (sign of the mean CHAR-A move: continuation or fade), statistic = net ticks per order placed on the TEST half 2025-07..2026-10 only, null = the same test orders shifted forward 120-1800 s on the same day (200 worlds), Westfall-Young max-z over all scored cells of the instrument. Orders are simulated only inside the event-store coverage (ET 04:00:30 to 16:00 minus the order life): asia and London before 04:00 are NOT covered, so those cells have too few covered orders and drop out (counts per cell in the cell tables).
+
+| instrument | scored cells | cells with test net > 0 | cells p_cell <= .10 (expected under no edge about 10% of cells) | cells p_family <= .10 | best p_family | cells that BEAT the null |
+|--|--|--|--|--|--|--|
+| ES | 149 | 56 | 32 (15 expected) | 2 | 0.005 | 1 |
+| RTY | 147 | 36 | 29 (15 expected) | 8 | 0.005 | 2 |
+| NQ | 152 | 53 | 33 (15 expected) | 3 | 0.060 | 0 |
+
+Joint family over the three instruments (per-world maximum of the three nulls): best z 6.47 (RTY), joint p_family 0.005; null maximum median 2.89, p95 3.67.
+
+### ES - top eight cells by z (test half)
+| level | session | class | hold s | direction | test orders | fill rate | net/order discovery | net/order test | z | p cell | p family | beats |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| IB | nypm | all | 300 | continue | 257 | 0.99 | +0.88 | +2.91 | 4.2 | 0.005 | 0.005 | YES |
+| VW2 | nyam | burst | 1800 | fade | 286 | 0.98 | +0.40 | -2.97 | 3.4 | 0.005 | 0.030 | no |
+| IB | nyam | burst | 5 | fade | 200 | 0.92 | -0.62 | +0.29 | 3.0 | 0.005 | 0.134 | no |
+| IB | nypm | all | 60 | continue | 257 | 0.97 | -0.25 | +0.94 | 3.0 | 0.010 | 0.149 | no |
+| IB | nypm | burst | 300 | continue | 121 | 0.98 | +1.63 | +3.62 | 2.8 | 0.005 | 0.234 | no |
+| PD | nyam | burst | 60 | continue | 181 | 0.97 | +1.85 | +2.34 | 2.6 | 0.015 | 0.433 | no |
+| IB | nyam | all | 5 | fade | 326 | 0.92 | -0.46 | +0.04 | 2.6 | 0.010 | 0.438 | no |
+| PD | nyam | all | 5 | continue | 238 | 0.91 | -0.59 | +0.22 | 2.6 | 0.005 | 0.448 | no |
+
+The addendum-2 cells in the family (PD, burst, ES): nyam h5: test net +0.39 (disc -0.48), p cell 0.005, p family 0.478; nyam h30: test net +0.85 (disc +0.92), p cell 0.060, p family 0.995; nyam h60: test net +2.34 (disc +1.85), p cell 0.015, p family 0.433; nyam h300: test net +3.01 (disc +2.48), p cell 0.040, p family 0.995; nyam h1800: test net +6.11 (disc +3.58), p cell 0.080, p family 1.000
+
+### RTY - top eight cells by z (test half)
+| level | session | class | hold s | direction | test orders | fill rate | net/order discovery | net/order test | z | p cell | p family | beats |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| PD | pre | all | 60 | continue | 98 | 0.65 | +1.22 | +6.46 | 6.5 | 0.005 | 0.005 | YES |
+| PD | pre | burst | 5 | continue | 35 | 0.80 | +0.14 | +4.45 | 6.1 | 0.005 | 0.005 | no |
+| PD | pre | burst | 30 | continue | 35 | 0.83 | +3.47 | +10.20 | 6.0 | 0.005 | 0.005 | no |
+| PD | pre | all | 30 | continue | 98 | 0.64 | +1.02 | +3.83 | 5.7 | 0.005 | 0.005 | YES |
+| PD | pre | all | 5 | continue | 98 | 0.56 | -0.32 | +1.24 | 5.6 | 0.005 | 0.005 | no |
+| PD | pre | burst | 60 | continue | 35 | 0.83 | +4.17 | +10.88 | 4.5 | 0.005 | 0.005 | no |
+| IB | close | all | 30 | fade | 106 | 0.71 | -0.58 | +2.13 | 4.0 | 0.005 | 0.010 | no |
+| IB | close | burst | 30 | fade | 34 | 0.82 | -0.63 | +7.97 | 4.0 | 0.005 | 0.010 | no |
+
+The addendum-2 cells in the family (PD, burst, RTY): nyam h5: test net -1.89 (disc -1.84), p cell 0.856, p family 1.000; nyam h30: test net -0.20 (disc -0.24), p cell 0.129, p family 1.000; nyam h60: test net -6.07 (disc -0.74), p cell 1.000, p family 1.000; nyam h300: test net -6.78 (disc -2.47), p cell 0.980, p family 1.000; nyam h1800: test net -7.32 (disc -5.45), p cell 0.731, p family 1.000; pre h5: test net +4.45 (disc +0.14), p cell 0.005, p family 0.005; pre h30: test net +10.20 (disc +3.47), p cell 0.005, p family 0.005; pre h60: test net +10.88 (disc +4.17), p cell 0.005, p family 0.005; pre h300: test net +6.83 (disc -1.97), p cell 0.114, p family 1.000; pre h1800: test net +28.74 (disc -1.09), p cell 0.005, p family 0.303
+
+### NQ - top eight cells by z (test half)
+| level | session | class | hold s | direction | test orders | fill rate | net/order discovery | net/order test | z | p cell | p family | beats |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| VW2 | nypm | burst | 300 | continue | 105 | 0.95 | -1.30 | +33.22 | 3.4 | 0.005 | 0.060 | no |
+| IB | nypm | burst | 30 | continue | 102 | 0.86 | -0.42 | +9.93 | 3.4 | 0.005 | 0.085 | no |
+| IB | nypm | all | 30 | continue | 224 | 0.83 | -1.09 | +4.48 | 3.3 | 0.005 | 0.100 | no |
+| ON | nyam | burst | 300 | fade | 308 | 0.95 | +1.12 | +20.57 | 3.2 | 0.005 | 0.124 | no |
+| ON | nyam | all | 300 | fade | 342 | 0.94 | -1.37 | +17.91 | 3.0 | 0.005 | 0.184 | no |
+| IB | nyam | all | 5 | fade | 302 | 0.91 | -1.07 | +0.63 | 2.9 | 0.010 | 0.234 | no |
+| VW1 | nyam | burst | 5 | fade | 329 | 0.88 | -1.21 | +0.98 | 2.9 | 0.010 | 0.254 | no |
+| IB | nyam | burst | 5 | fade | 247 | 0.91 | -0.65 | +0.73 | 2.7 | 0.010 | 0.358 | no |
+
+The addendum-2 cells in the family (PD, burst, NQ): nyam h5: test net -1.61 (disc +1.16), p cell 0.284, p family 1.000; nyam h30: test net +5.56 (disc +4.22), p cell 0.015, p family 0.781; nyam h60: test net +6.72 (disc +7.53), p cell 0.030, p family 0.985; nyam h300: test net +2.70 (disc +11.37), p cell 0.279, p family 1.000; nyam h1800: test net -19.64 (disc +12.60), p cell 0.786, p family 1.000; pre h5: test net -11.75 (disc +7.01), p cell 1.000, p family 1.000; pre h30: test net -5.26 (disc -3.41), p cell 0.716, p family 1.000; pre h60: test net +6.51 (disc +9.00), p cell 0.154, p family 1.000; pre h300: test net +14.25 (disc +15.19), p cell 0.149, p family 1.000; pre h1800: test net +21.16 (disc +47.72), p cell 0.214, p family 1.000
+
+### Pessimistic queue sensitivities for the six cells of addendum 2 (net ticks per order placed, both halves pooled, fee included; each scenario has its own 200-world forward-shift null; p cell in the second table)
+| cell | S0 base | S1 no cancel benefit | S2 through-print fills only | S3 exit +1 tick adverse | S4 queue x1.3 | S5 queue x0.7 | S6 cancel latency 2 s | S8 combined (S1+S3+S4+S6) |
+|--|--|--|--|--|--|--|--|--|
+| ES nyam h1800 | +5.64 | +4.26 | +3.41 | +4.65 | +5.64 | +5.71 | +5.67 | +3.85 |
+| ES nyam h300 | +3.02 | +2.59 | +1.38 | +2.04 | +3.03 | +3.23 | +3.06 | +1.33 |
+| ES nyam h60 | +2.32 | +1.65 | +0.82 | +1.35 | +2.31 | +2.48 | +2.32 | +0.74 |
+| NQ nyam h30 | +3.72 | +3.26 | +2.38 | +2.79 | +3.71 | +4.00 | +3.33 | +2.03 |
+| NQ nyam h60 | +3.86 | +3.15 | +2.92 | +2.94 | +3.91 | +4.01 | +3.70 | +2.13 |
+| NQ pre h1800 | +38.87 | +39.61 | +40.61 | +37.96 | +38.87 | +38.93 | +36.53 | +34.86 |
+
+| cell | S0 base | S1 no cancel benefit | S2 through-print fills only | S3 exit +1 tick adverse | S4 queue x1.3 | S5 queue x0.7 | S6 cancel latency 2 s | S8 combined (S1+S3+S4+S6) |
+|--|--|--|--|--|--|--|--|--|
+| ES nyam h1800 | 0.015 | 0.020 | 0.030 | 0.015 | 0.015 | 0.015 | 0.015 | 0.015 |
+| ES nyam h300 | 0.005 | 0.005 | 0.025 | 0.005 | 0.005 | 0.005 | 0.005 | 0.010 |
+| ES nyam h60 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 |
+| NQ nyam h30 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 |
+| NQ nyam h60 | 0.015 | 0.010 | 0.010 | 0.015 | 0.015 | 0.010 | 0.010 | 0.010 |
+| NQ pre h1800 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.010 | 0.005 | 0.005 |
+
+Fill rates under S0 / S2 (through-print fills only) / S8: ES nyam h1800 0.99 / 0.71 / 0.90; ES nyam h300 0.98 / 0.70 / 0.88; ES nyam h60 0.97 / 0.69 / 0.87; NQ nyam h30 0.93 / 0.86 / 0.92; NQ nyam h60 0.93 / 0.86 / 0.92; NQ pre h1800 0.90 / 0.86 / 0.90. S7 (50% partial fill) scales net per order and fee by 0.5 and leaves the sign and p unchanged: S0 x 0.5 = ES nyam h1800 +2.82, ES nyam h300 +1.51, ES nyam h60 +1.16, NQ nyam h30 +1.86, NQ nyam h60 +1.93, NQ pre h1800 +19.43.
+
+### Tape check: is the fill real? (fills of the real world, base model)
+| cell | fills | through-print fill | tape confirms (level prints >= queue ahead) | tape CANNOT confirm (relies on modeled cancels ahead) | net/fill through | net/fill confirmed | net/fill unconfirmed | median queue ahead | median level print volume before fill |
+|--|--|--|--|--|--|--|--|--|--|
+| ES nyam h60 | 357 | 2.8% | 10.4% | 86.8% | +18.21 | -2.09 | +2.42 | 32 | 12 |
+| ES nyam h300 | 363 | 2.8% | 10.5% | 86.8% | +10.61 | -0.33 | +3.24 | 32 | 12 |
+| ES nyam h1800 | 364 | 2.7% | 10.4% | 86.8% | +10.91 | +18.45 | +4.02 | 32 | 12 |
+| NQ nyam h30 | 477 | 36.7% | 30.4% | 32.9% | +12.46 | +2.16 | -3.69 | 2 | 1 |
+| NQ nyam h60 | 477 | 36.7% | 30.4% | 32.9% | +15.31 | +0.36 | -4.73 | 2 | 1 |
+| NQ pre h1800 | 84 | 40.5% | 32.1% | 27.4% | +96.97 | -1.30 | +15.34 | 2 | 1 |
+
+### Pre-2023 and the L2 quote (metadata only, nothing bought)
+There is NO pre-2023 evidence in this program: the event store begins 2023-08 (ES / RTY; NQ 1-s tables 2023-02) and X' is only partly covered. Databento mbp-10 (GLBX.MDP3, free metadata.get_cost; key from the login shell, never printed; no batch job, no download):
+
+| span | ES USD | ES GB | NQ USD | NQ GB |
+|--|--|--|--|--|
+| 2022-08-01..2023-08-01 | 420 | 903 | 391 | 840 |
+| 2020-01-01..2023-08-01 | 1348 | 2894 | 1242 | 2667 |
+| 2017-06-01..2023-08-01 | 1816 | 3899 | 1674 | 3596 |
+
+For scale: autopilot/SPEND.json shows the $8,000 cap with about $7,227 spent and a documented balance of $711.74 (DISCOVER_QUOTES_4), so ONE year of ES ($420) or of NQ ($391) fits and both together ($811) do not; the 2022-08..2023-07 year would give an X' window plus 2022 H2 for the same cells. The quote covers the full 23-hour day; the store used here needs ET 04:00-16:00 only, but Databento prices the requested time range, so day-window requests would save roughly the share of overnight records only. DECISION FOR THE USER; ZL-1 bought nothing.
+
+### Pessimistic sensitivities for the family cells that BEAT the null (and the two PD burst comparators), TEST half only, net ticks per order placed, fee included (p cell in the second table)
+| cell | S0 base | S1 no cancel benefit | S2 through-print fills only | S3 exit +1 tick adverse | S4 queue x1.3 | S5 queue x0.7 | S6 cancel latency 2 s | S8 combined (S1+S3+S4+S6) |
+|--|--|--|--|--|--|--|--|--|
+| ES IB nypm all 300 | +2.91 | +2.61 | +2.19 | +1.92 | +2.94 | +2.91 | +2.91 | +1.80 |
+| ES PD nyam burst 60 | +2.34 | +1.42 | +0.40 | +1.37 | +2.32 | +2.48 | +2.34 | +0.25 |
+| NQ PD nyam burst 30 | +5.56 | +5.81 | +4.40 | +4.66 | +5.56 | +8.01 | +4.90 | +4.19 |
+| NQ PD nyam burst 60 | +6.72 | +5.43 | +6.21 | +5.82 | +6.72 | +8.44 | +6.21 | +4.17 |
+| RTY PD pre all 30 | +3.83 | +2.77 | +2.41 | +3.18 | +3.86 | +4.42 | +3.22 | +1.62 |
+| RTY PD pre all 60 | +6.46 | +6.73 | +6.29 | +5.81 | +6.48 | +6.39 | +6.18 | +5.65 |
+
+| cell | S0 base | S1 no cancel benefit | S2 through-print fills only | S3 exit +1 tick adverse | S4 queue x1.3 | S5 queue x0.7 | S6 cancel latency 2 s | S8 combined (S1+S3+S4+S6) |
+|--|--|--|--|--|--|--|--|--|
+| ES IB nypm all 300 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 |
+| ES PD nyam burst 60 | 0.010 | 0.015 | 0.060 | 0.010 | 0.010 | 0.005 | 0.010 | 0.020 |
+| NQ PD nyam burst 30 | 0.020 | 0.010 | 0.025 | 0.020 | 0.020 | 0.005 | 0.020 | 0.010 |
+| NQ PD nyam burst 60 | 0.050 | 0.060 | 0.020 | 0.050 | 0.050 | 0.025 | 0.055 | 0.065 |
+| RTY PD pre all 30 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 |
+| RTY PD pre all 60 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 | 0.005 |
+
+### Books of the family cells that beat the null (stop 3 x discovery sd of CHAR-A's move, min 2 ticks; both halves; equal-risk lots with the session cap; placebos not run; no pre-2023 evidence; F = 720)
+| book | orders | fills | net/fill ticks | t | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | corr V0/V2 | stack k* | gate |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| RTY PD pre all 30 | 258 | 185 | +2.60 | 0.93 | +170 | +171 | +171 | +51 | +75 | +45 | +45 | -38 | -0.03 / -0.03 | 5.0 | FAIL: X' mean -38 < -0.5 MDE (-28); min sample X' (trades 29/40, active weeks 18/20) |
+| RTY PD pre all 60 | 258 | 188 | +4.50 | 1.33 | +135 | +137 | +137 | +28 | +63 | +108 | +22 | -29 | -0.04 / -0.04 | 5.0 | FAIL: X' mean -29 < -0.5 MDE (-18); min sample X' (trades 29/40, active weeks 18/20) |
+| ES IB nypm all 300 | 683 | 662 | +1.58 | 1.88 | -294 | -827 | -827 | +220 | +428 | +661 | +92 | -32 | 0.02 / 0.01 | 5.0 | FAIL: NOW-ONLY fails (L3M/L6M mean not both > 0) |
+| ES PD nyam burst 60 | 428 | 416 | +1.82 | 2.98 | +66 | -34 | -34 | +165 | +180 | +65 | +66 | +20 | -0.01 / -0.02 | 0.0 | FAIL: NOW-ONLY fails (L3M/L6M mean not both > 0) |
+
+**Plain sentence: paying for the selection removes the ES / NQ NY-AM prior-day-level result. Across CHAR-A's whole level-touch family (149 / 147 / 152 scored cells for ES / RTY / NQ, direction frozen on the discovery half, test half only, 200 forward same-day shifts, Westfall-Young over every cell) the best family p is .005 (ES IB-edge continuation in NY-PM, 300 s), .005 (RTY prior-day-level continuation in the 08:30 pre-market, 5-60 s) and .060 (NQ); the cells that beat the null are 1 (ES), 2 (RTY) and 0 (NQ). The six addendum-2 cells do NOT survive it: ES PD-burst NY-AM h60 / 300 / 1800 have family p .43 / .995 / n.s. and NQ h30 / h60 .78 / .985, because 149 cells with ~2x the expected number of p<=.10 cells (32 / 29 / 33 against ~15) let selection alone produce them. They stay positive under every pessimistic queue scenario (S8 combined +0.7 to +3.9 ticks per order, p cell <= .03) and only 3% of ES fills are through-prints and 10% are confirmed by level prints >= the queue ahead, so 87% of the modeled ES fills rely on cancels ahead that the tape cannot show. Label stays REGIME / WATCH; no lead, no book; RTY pre-market PD continuation (the one cell family that survives both the family test and every scenario, test net +3.8 to +6.5 ticks per order, 98 test orders) fails the X' window and the tolerant gate in dollars (X' -38 / -29 per week) and has per-order t 0.9-1.3 over all fills.**
+
+(Precision note for the addendum-3 sentence, ZL-1: the exact family p of the addendum-2 cells in the whole-family test: ES PD nyam burst h5: test +0.39 disc -0.48 p_cell 0.005 p_family 0.478 (181 test orders); ES PD nyam burst h30: test +0.85 disc +0.92 p_cell 0.060 p_family 0.995 (181 test orders); ES PD nyam burst h60: test +2.34 disc +1.85 p_cell 0.015 p_family 0.433 (181 test orders); ES PD nyam burst h300: test +3.01 disc +2.48 p_cell 0.040 p_family 0.995 (181 test orders); ES PD nyam burst h1800: test +6.11 disc +3.58 p_cell 0.080 p_family 1.000 (181 test orders); NQ PD nyam burst h5: test -1.61 disc +1.16 p_cell 0.284 p_family 1.000 (214 test orders); NQ PD nyam burst h30: test +5.56 disc +4.22 p_cell 0.015 p_family 0.781 (214 test orders); NQ PD nyam burst h60: test +6.72 disc +7.53 p_cell 0.030 p_family 0.985 (214 test orders); NQ PD nyam burst h300: test +2.70 disc +11.37 p_cell 0.279 p_family 1.000 (214 test orders); NQ PD nyam burst h1800: test -19.64 disc +12.60 p_cell 0.786 p_family 1.000 (214 test orders); NQ PD pre burst h5: test -11.75 disc +7.01 p_cell 1.000 p_family 1.000 (31 test orders); NQ PD pre burst h30: test -5.26 disc -3.41 p_cell 0.716 p_family 1.000 (31 test orders); NQ PD pre burst h60: test +6.51 disc +9.00 p_cell 0.154 p_family 1.000 (31 test orders); NQ PD pre burst h300: test +14.25 disc +15.19 p_cell 0.149 p_family 1.000 (31 test orders); NQ PD pre burst h1800: test +21.16 disc +47.72 p_cell 0.214 p_family 1.000 (31 test orders). The "n.s." for ES h1800 in the sentence is the value in this list.)

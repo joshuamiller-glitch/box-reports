@@ -82,3 +82,24 @@ Correction (appended): in the R3 plain sentence 'moves by less than .01' should 
 ## R2 BTCM count test: STOPPED by order of the lead (2026-11-06); handed to S4b's fee-adjusted null (prereg T2_BTCM_NULL_FEE_PREREG.md)
 Correction of my interim statement: the 119 clear / 1,358 tolerant counts that my fast re-implementation of the S4b gate reproduced are the FEE-LESS counts (the post-patch engine, t2_lib.sim_one with the fee-points argument, was used with T2_FEEPTS at its default 0, i.e. the original fee-less grid; my note 'the current engine includes the fee fix' was wrong for that run). S4b's fee-adjusted counts are 62 (tolerant + persistence) and 540 tolerant, and the old p .01 (100 random-side worlds) also belongs to the fee-less 119. No fresh-world result of mine for BTCM exists (the worlds had not completed when the run was stopped); the fee-adjusted BTCM family null is S4b's. Nothing in this page presents 119 as a fee-adjusted count; the R2 row of the status table reads: old p .01 (fee-less, 119) -> new fee-adjusted test owned by S4b, pending; label: WATCH of the BTCM cluster stays as S4b set it.
 Correction (appended): one fee-LESS shifted-trigger world did complete before the stop (tolerant 2,106, clear 14, max t_min 2.87; file /mnt/l2/l2vast/ds3_t2/BTCM_rep_0.pkl); it is one world, not a test, and it is fee-less, so it is not used.
+
+## R1 GC count excess: 1,000 fresh worlds per kind (seeds 1000-1999; family.py unchanged: 448 signal sets x 5 sessions x {ATR3, $1,200} x R1.5 x T60, 4,200 cells with >= 100 trades; same tolerant gate; 12,200 s on 4 workers)
+Real values (unchanged): 493 of 4,200 cells pass the tolerant gate; max HOLD mean $1,407 a week; max L6M Calmar 0.654.
+| statistic | null | old p (100 worlds) | new p (1,000 worlds) [95% CI] | null median / p95 / max |
+|--|--|--|--|--|
+| gate-passer count, random side | 493 | 0.0099 | **0.0010 [0.0010, 0.0047]** (0 of 1,000 worlds reach 493) | 252 / 281 / 323 |
+| gate-passer count, shifted trigger (1-5 label days) | 493 | 0.0099 | **0.0010 [0.0010, 0.0047]** (0 of 1,000 reach 493) | 393 / 425 / 453 |
+| max HOLD mean $/wk, random side | 1,407 | 0.861 | 0.845 [0.821, 0.867] | median 1,644, p95 2,214 |
+| max HOLD mean $/wk, shifted | 1,407 | 0.584 | 0.621 [0.591, 0.652] | median 1,484, p95 2,114 |
+| max L6M Calmar, random side / shifted | 0.654 | 0.713 / 0.990 | 0.704 [0.675, 0.732] / 0.989 [0.980, 0.995] | - |
+**Plain sentence: the GC count excess is real and now pinned down: none of 2,000 fresh worlds reaches the 493 tolerant cells (random-side maximum 323, shifted-trigger maximum 453, so the shifted null is the closer one: 493 is 40 above its largest of 1,000 worlds), p = 0.001 on both nulls with an upper 95% bound of 0.005; the single-cell statistics stay well inside the nulls (max HOLD p .85 / .62, max L6M Calmar p .70 / .99), so there is still no GC cell better than the best of a random family. Label unchanged: GC = REGIME (a real 2026 trend-regime count excess, negative in 2013-2023 for all 40 finalists), not a book.**
+
+## Final status table (supersedes the interim one above)
+| item | old p | new p (95% CI) | label change |
+|--|--|--|--|
+| R1 GC count excess 493 / 4,200 | .0099 / .0099 | .0010 / .0010 [.0010, .0047] (1,000 worlds per kind) | none: REGIME |
+| R2 BTCM count (119 fee-less; fee-adjusted 62 / 540) | .01 (fee-less, 100 random-side worlds) | not run by S4a (stopped on the lead's order); fee-adjusted null owned by S4b | none from this page |
+| R3 equity Monday joint family (RTY Monday) | .15 | .141 [.137, .146] (20,000 draws); all-65-cell family .506 | none: best-of-F, WATCH/REGIME |
+| R4 FIND_DAILY 36 tolerant cells | .33 / .48 | .593 / .240 (1,000 worlds per null) | none: LEAD 0 |
+| R5 6E TSMOM-252 | shift .005 / random-side 1.00 | shift .005 [.002, .012] / random-side 1.00 (1,000 worlds); the shift null is the contaminated one | none: NULL |
+Correction (appended): R5 shift-null p for 6E TSMOM-252 is .0050 with 95% CI [.0021, .0112] (the final table row shows [.002, .012]).
