@@ -1088,3 +1088,58 @@ Corrected set: 108 cells (12 1b-b book cells + 96 1-s LRS cells); positive in L6
 | ES | nypm | IB level touch, all class, direction continue, passive join at touch | passive maker book hold 300 s, stop 57 ticks | family cell | -294 | -827 | -827 | +220 | +428 | +661 | +92 | -32 | 4134 | 0.10 | 0.02/0.01 | k*=5.0 | shifted-time family p .005 (200 worlds, all 147-149 cells); placebos not run | REGIME/WATCH: beats the family null, fails the tolerant gate in dollars (NOW-ONLY fails (L3M/L6M mean not both > 0)) |
 | ES / NQ | NY-AM | PD-level + burst continuation (addendum 2 cells) | passive maker book | see 1b-d addendum 2 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | WHOLE-FAMILY p_family ES h60 .43, NQ h30 .78 | no lead: selection from the 149-152-cell family explains them; sensitivities positive; 87%% of ES fills rely on modeled cancels |
 (format note: '87%%' in the last row above reads 87%.)
+
+## REPAIRED-FIND (CHAR-A slice, 2026-11-06T06:17Z): T-FIND books and WATCH cells re-run on repaired bars. Method: 1-min = CHAR-C repaired copies /mnt/l2/l2vast/find_c/cache_c/<SYM>.npz (DATA_BAD_PRINTS.md rule); 1-s = my scan of instr_1s with the same rule (neighbours within 3 s, sigma = 1.4826 x block median |close change| of the previous 3,600 bars), clamped copies in /mnt/l2/l2vast/ds3/out/find/instr1s_repaired/. Same signals, specs, costs, seeds, 100 placebo worlds; originals untouched.
+**Verdict: no label, family result or frozen spec moves; only marginal gate flips and learned-rule retrains.**
+
+### 1-s bad-print scan (2023-08..2026-10-16)
+| product | bars | confirmed-neighbour bars | BAD | share | max excursion (ticks) |
+|--|--|--|--|--|--|
+| ES | 36.1M | 30.0M | 6,293 | 0.021% | 90 |
+| NQ | 40.1M | 34.4M | 4,714 | 0.014% | 203 |
+| RTY | 21.0M | 15.4M | 1,094 | 0.007% | 122 |
+Some flagged bars on a prints-only 1-s tape may be genuine one-lot spikes; the repair clamps into the 10-sigma band, so it is conservative.
+
+### Map statistics on the repaired 1-min bars (descriptive pages not recomputed in full)
+ES / NQ / RTY / YM: max |change| of the pooled lag correlation over horizons 1/5/15/30 min x 6 sessions = 0.0004 / 0.0014 / 0.0050 / 0.0011 (all at the 1-minute pre-market cell); max |change| of a variance ratio 0.0008 / 0.0017 / 0.0037 / 0.0013; max |change| of a level-reaction / continuation / gap / day-type event rate 0.0069 / 0.0047 / 0.0086 / 0.0077. The Monday legs of ES and NQ (label-day open to 16:55 close) are identical to the last digit (NQ Monday FULL mean 17.54 bps, sd 120.57, 2023+ mean 31.52; ES 12.71 / 97.85 / 23.62), so WATCH_MONDAY_LONG_SPEC.md and AMENDMENT_1 stand.
+
+### 1-min finalists re-run on repaired bars: 126 book cells (top-30 by min(L6M,HOLD) + all tolerant cells per instrument, ES/RTY/YM) and 18 learned-rule cells (top-6 per instrument, instr2/lrs.py)
+* Books (126): median |change| in L6M / HOLD / PRE / X' = 0 / 0 / 0 / 0 $/wk; maximum |change| L6M 76, HOLD 206 $/wk; 37 books have a different trade count (max 6 trades). Sign flips: L6M 0, HOLD 2 (all marginal cells near zero, listed below); tolerant-gate flips 4.
+* Learned rules (18; trees retrained on repaired features, so the trade set changes): maximum |change| L6M 831, HOLD 477 $/wk; sign flips L6M 8, HOLD 5; tolerant flips 0. This is the sensitivity of a retrained tree to 0.003% of its input bars, not a result.
+* The four tolerant flips are YM NY-PM 5-minute fades at the gate's edge (PRE -216 -> -215 $/wk against the -0.5 MDE line; L6M and HOLD unchanged); the best-family-p cells of ES, RTY and YM that are in the finalist list (the YM VR NY-PM 5-min z1.5 f0.5 cell, p .15, is) do not change tolerance or sign. None of these was ever a lead.
+
+Every cell that flips sign in L6M or HOLD, or flips the tolerant gate (original -> repaired, $/wk, carry dropped):
+| cell | L6M | HOLD | PRE | tolerant |
+|--|--|--|--|--|
+| T2F_ES|LRS_nyam_rev_h30|seed0 | +539 -> +346 | +81 -> -44 | -636 -> -958 | False -> False |
+| T2F_ES|LRS_pre_rev_h15|seed2 | +258 -> -111 | -21 -> -229 | -642 -> -779 | False -> False |
+| T2F_ES|LRS_nyam_rev_h15|seed2 | +349 -> -106 | -94 -> -115 | -1870 -> -1601 | False -> False |
+| T2F_RTY|LRS_pre_rev_h60|seed0 | +628 -> +941 | +264 -> -160 | -0 -> -63 | True -> True |
+| T2F_RTY|LRS_close_rev_h30|seed2 | +42 -> -44 | +59 -> -169 | -437 -> -354 | False -> False |
+| T2F_RTY|LRS_pre_rev_h30|seed2 | +121 -> -128 | -77 -> -183 | -130 -> -387 | False -> False |
+| T2F_YM|AC_nypm_5m_all|fade|z02.0_f0.5_tm2.0 | +458 -> +458 | +238 -> +238 | -216 -> -215 | True -> False |
+| T2F_YM|VR_nypm_5m|fade|z02.0_f0.5_tm2.0 | +458 -> +458 | +238 -> +238 | -216 -> -215 | True -> False |
+| T2F_YM|VR_nypm_15m|fade|z01.5_f0.5_tm2.0 | +328 -> +261 | +40 -> -5 | -465 -> -469 | False -> False |
+| T2F_YM|VR_nypm_5m|fade|z02.0_f1.0_tm2.0 | +166 -> +166 | +34 -> +34 | -150 -> -150 | True -> False |
+| T2F_YM|AC_nypm_5m_all|fade|z02.0_f1.0_tm2.0 | +166 -> +166 | +34 -> +34 | -150 -> -150 | True -> False |
+| T2F_YM|VR_nypm_15m|fade|z01.5_f0.5_tm1.0 | +422 -> +355 | +31 -> -36 | -481 -> -485 | False -> False |
+| T2F_YM|LRS_nyam_rev_h60|seed2 | +98 -> -426 | +397 -> +250 | -528 -> -580 | False -> False |
+| T2F_YM|LRS_london_mom_h60|seed0 | -45 -> -133 | +76 -> -205 | -299 -> -290 | False -> False |
+| T2F_YM|LRS_pre_rev_h15|seed0 | -47 -> +5 | +103 -> +258 | -402 -> -428 | False -> False |
+| T2F_YM|LRS_london_mom_h60|seed2 | -11 -> +74 | -83 -> +122 | -334 -> -353 | False -> False |
+| T2F_YM|LRS_london_mom_h60|seed1 | +1 -> -55 | -115 -> -222 | -354 -> -274 | False -> False |
+
+### 1-s WATCH-relevant cells (T2F1B books with the corrected simulator; originals = the '_1sfix' cells)
+| cell | L6M | HOLD | PRE | X' | n |
+|--|--|--|--|--|--|
+| ES b_PD_nyam_burst_h60|m1.0_tNone | +474 -> +474 | +605 -> +605 | -971 -> -971 | -779 -> -779 | 414 -> 414 |
+| RTY b_PD_pre_burst_h1800|m1.5_t1.0 | +375 -> +375 | +82 -> +82 | +13 -> +13 | +35 -> +35 | 95 -> 95 |
+| NQ b_PD_pre_burst_h1800|m1.0_tNone | -341 -> -341 | -330 -> -330 | -12 -> +141 | +61 -> +61 | 94 -> 94 |
+| NQ b_PD_pre_burst_h1800|m1.0_t1.0 | +130 -> +130 | -35 -> -99 | +26 -> +63 | +86 -> +86 | 94 -> 94 |
+| NQ b_PD_pre_burst_h1800|m1.5_tNone | -82 -> -82 | -192 -> -192 | +13 -> +13 | +107 -> +107 | 94 -> 94 |
+| NQ b_PD_pre_burst_h1800|m1.5_t1.0 | -70 -> -70 | -45 -> -45 | +92 -> +92 | +149 -> +149 | 94 -> 94 |
+| NQ b_PD_pre_burst_h1800|m2.0_tNone | -48 -> -48 | -93 -> -93 | -39 -> +4 | +107 -> +107 | 94 -> 94 |
+| NQ b_PD_pre_burst_h1800|m2.0_t1.0 | -45 -> -45 | -36 -> -36 | -30 -> -7 | +107 -> +107 | 94 -> 94 |
+| NQ b_PD_nyam_all_h30|m1.0_t1.0 | +199 -> +199 | +418 -> +418 | +8 -> +8 | -120 -> -120 | 578 -> 578 |
+All 30 tick-scale book cells (ES 6, RTY 12, NQ 12): trade counts identical, L6M and X' identical, HOLD changes <= $64/wk (NQ), PRE changes <= $153/wk (NQ pre-market 1800 s variants, all with negative HOLD), tolerant flips 0, placebo p_book changes <= .05 on every cell. ES prior-day-burst 60 s, RTY pre-market 1800 s and NQ NY-AM 30 s keep their windows exactly. NQ_PDL bar-based replay on repaired bars: events 561 (unchanged), trades 551, L6M -404 / HOLD -119 / PRE -254 (was -239) / X' -325, per-trade -$8.5 (was -$8.9), MNQ sd $12.86 (was $12.91), overlap with the L2 version 78.2% (was 77.9%), weekly corr to the L2 version .561 (was .573): the frozen thresholds of WATCH_NQ_PDL_SPEC.md (sd $12.91, kill -2 sigma sqrt(n)) change by 0.4% and are NOT amended.
+**Which labels or frozen specs move: none.** WATCH_RTY_PREMARKET_SPEC.md (tick h1800 cells identical), WATCH_NQ_PDL_SPEC.md (thresholds unchanged), WATCH_MONDAY_LONG_SPEC.md and AMENDMENT_1 (Monday legs identical); the corrected 1S-FIX labels and every 'does not clear' conclusion stand. Files: /mnt/l2/l2vast/ds3/out/find/{ES,RTY,YM}/repaired_rerun.csv, repaired_rerun_all.csv, repaired_tickb.csv; code rerun_1min.py, repair_1s.py, scan_1s_badprints.py, tick_books_rep.py, nq_pdl_replay_rep.py in l2vast/ds3/code/find/.
