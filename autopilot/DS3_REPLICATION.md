@@ -120,3 +120,25 @@ Per-year (net per placed order, ticks; placed orders): (a) ES IB h300: 2025 +1.5
 Tape-confirmed share (fills with a print through the level, or print volume at the level >= the queue ahead): ES IB h300 17.7% of 254 fills (through-print 1.2%); RTY PD pre h30 60.3% of 63 fills (through 25.4%), h60 59.4% of 64, h5 67.3% of 55, h300 57.4% of 68. The ES result therefore rests mostly on fills the tape cannot confirm; the RTY result is about 60% confirmed. (c) and (d) are market-order books, share not applicable.
 Label changes: none upgraded; (a), (b), (c) -> 'null-dependent, not confirmed' (still best-of-F, no PASS); (d) five of six cells -> 'selection artefact' (p_book > .10 under the original placebos), m1.0_t1.0 stays weak (p .050, loses money 2023-25).
 Files: code l2vast/ds3/code/repl_tick/{repl_family.py, repl_an_family.py, repl_ev.py, repl_burst.py}; outputs /mnt/l2/l2vast/repl_tick/{ES,RTY}_family_W2000.pkl, {ES,RTY}_an_W2000.pkl, RTY_ev_W2000.pkl, ES_burst_W2000_S20261111.pkl. Seeds 20261107-20261111 as in the prereg. Caveat: random-side family p near 1 reflects the many correlated cells of the max-statistic under that null; read the cell-level N2 p as well.
+
+
+## Fee-adjusted fresh-world family null, BTCM full grid (S4b, 2026-11-06 07:17Z)
+Prereg addendum autopilot/T2_BTCM_NULL_FEE_PREREG.md (sha256 e04082d8dab35e4dd4dc1258e85a71d58b7c463853940acc24b4fefc3728da72, before any fee-adjusted null world); code l2vast/ds3/code/t2/t2_null2.py; per-world vectors /mnt/l2/l2vast/ds3_t2/BTCM_fee_null2.pkl. Observed = the full 144,648-cell BTCM grid re-run with the MBT fee proxy $1.78 (17.8 points, half on every side incl. target exits) and the same slippage; each null world re-simulates the full grid with the same fee: random-side and forward-shifted-trigger placebos (the 'impossible' earlier-entry placebo is never used). Completed worlds: 132 random-side, 131 shifted-trigger (about 435 CPU-s per world, 5 workers, ~5 h budget). The p-values below replace the fee-less ones (count .01, max-stat .13).
+| random side (N = 132 worlds) | observed (fee-adjusted) | null median / 95th / max | worlds >= observed | p = (k+1)/(N+1) | 95% CI of the true tail probability |
+|---|---|---|---|---|---|
+| tolerant cells | 540 | 400 / 563 / 632 | 12 | 0.098 | 0.048-0.153 |
+| tolerant + persistent cells | 62 | 1 / 8 / 21 | 0 | 0.008 | 0.000-0.028 |
+| distinct signal sets with a passing cell | 3 | 1 / 2 / 3 | 3 | 0.030 | 0.005-0.065 |
+| max over cells of min(t_L6M, t_HOLD) | 2.77 | 2.65 / 3.25 / 4.17 | 41 | 0.316 | 0.233-0.397 |
+| max full-sample t | 2.80 | 1.84 / 2.49 / 3.05 | 3 | 0.030 | 0.005-0.065 |
+
+| forward-shifted trigger 5-60 min, same side (N = 131 worlds) | observed (fee-adjusted) | null median / 95th / max | worlds >= observed | p = (k+1)/(N+1) | 95% CI of the true tail probability |
+|---|---|---|---|---|---|
+| tolerant cells | 540 | 267 / 406 / 507 | 0 | 0.008 | 0.000-0.028 |
+| tolerant + persistent cells | 62 | 1 / 8 / 16 | 0 | 0.008 | 0.000-0.028 |
+| distinct signal sets with a passing cell | 3 | 1 / 2 / 4 | 4 | 0.038 | 0.008-0.076 |
+| max over cells of min(t_L6M, t_HOLD) | 2.77 | 2.37 / 2.85 / 3.17 | 15 | 0.121 | 0.066-0.182 |
+| max full-sample t | 2.80 | 1.94 / 2.60 / 2.86 | 1 | 0.015 | 0.000-0.042 |
+
+Decision rule (fixed in the prereg): the cluster survives the family test only if S4 and S5 have p <= .10 against BOTH placebos. side: S4 p 0.316, S5 p 0.030 -> does not pass; shift: S4 p 0.121, S5 p 0.015 -> does not pass. 
+Interpretation (S4b): 263 fee-adjusted worlds completed (132 random-side, 131 shifted-trigger; each world re-simulates the 144,648 cells). The preregistered rule (S4 AND S5 at p <= .10 against BOTH placebos) is NOT met because S4, the strength of the best cell in the RECENT windows (min of the L6M and HOLD t-statistics), is unremarkable against the null (p 0.32 random side, 0.12 shifted trigger; observed 2.77 vs null medians 2.65 and 2.37). What the fee-adjusted null does show is that the full-sample and persistence structure of the cluster is rarer than the placebos produce: max full-sample t 2.80 vs null 95th 2.49 / 2.60 (p 0.030 and 0.015, CI 0.005-0.065 and 0-0.042), tolerant + persistent cells 62 vs null max 21 / 16 (p 0.008 for both; the true tail probability is below 0.03), and 3 distinct signal sets vs null median 1 (p 0.03-0.04). The earlier fee-less statement 'count p .01 holds, max-stat p .13' is therefore replaced by: after the fee, the family-wise p of the best full-sample t is about 0.02-0.03 and the count test still holds, but the recent-window max-stat is not significant; the WATCH label is unchanged (the rule is not met), and the Shadow watch (WATCH_BTCM_KELTNER_SPEC.md) remains the only out-of-selection test. Caveats: the null re-uses the same entries / brackets with random side or delayed entry, so it tests direction and timing skill, not the Asia-session-clock choice; the fee, slippage and spread are proxies (MBT L2 / ticks not owned); 2022-2026 is one regime sample. Per-world vectors: /mnt/l2/l2vast/ds3_t2/BTCM_fee_null2.pkl.
