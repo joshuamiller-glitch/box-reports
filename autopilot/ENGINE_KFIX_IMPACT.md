@@ -14,3 +14,4 @@ Pages that quote the stack's maxDD, Calmar, exposure caps, risk frontier, the Sh
 ## Files
 autopilot/BLIND_DEFECTS_BASE4.md (FOLLOW-UP, FOLLOW-UP-2); prereg l2vast/ds3/prereg/KFIX_IMPACT_scope.md (sha256 b4591615...); runs /mnt/l2/l2vast/ds3_base4/defects/kfix/.
 Not done in this pass: the variant with TH-L2 cuts switched on for the A7/pb7 book (its loss rows do not exist and need a new build, 2-3 h); the evidence for A7 is in BLIND_DEFECTS_BASE4.md FOLLOW-UP section (3) and 4b.
+Update 17:50Z: the A7/pb7 variant was built afterwards (ZL-1's private tree, seal manifest unchanged): with TH-L2 cuts on A7 the engine's A7 falls from +9.1k to +1.5k (live -1.4k), cut count 15 vs live 14, and the blind-week engine total goes to 27.3k (20.3k with the kfix fix). Details: BLIND_DEFECTS_BASE4.md FOLLOW-UP-3.
