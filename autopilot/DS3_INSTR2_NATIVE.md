@@ -125,3 +125,15 @@ Cells 552 (stage 1; ledger T2_NKD_NATIVE), NOW-ONLY 126 (22.8%), tolerant-lite 5
 | tokyo_close | {'mode': 'with', 'thr_atr': 0.0} | ('atr', 4) 2R T60 | 467 | 1.4 | 321 | 321 | 55 | 117 | 220 | -341 | -267 | 4069 | n | 0.83 | 0.29 | 0.08 |
 
 13-year percent-frame check (NKD 1-minute 2013-06..2023-03, Tokyo books only): tokyo_or {'R': 15, 'mode': 'failed'}: mean/trade -55.9, years+ 1/11; tokyo_or {'R': 15, 'mode': 'failed'}: mean/trade -55.8, years+ 1/11; tokyo_or {'R': 15, 'mode': 'failed'}: mean/trade -53.9, years+ 1/11; tokyo_or {'R': 60, 'mode': 'break'}: mean/trade -45.5, years+ 2/11; tokyo_close {'mode': 'with', 'thr_atr': : mean/trade 2.6, years+ 5/11; tokyo_close {'mode': 'with', 'thr_atr': : mean/trade 2.6, years+ 5/11; tokyo_close {'mode': 'with', 'thr_atr': : mean/trade 2.6, years+ 5/11; tokyo_or {'R': 60, 'mode': 'break'}: mean/trade -28.9, years+ 4/11
+
+## UPDATE (S4a, 2026-11-06): GC native books, Z2 purged walk-forward selector per group, ledger and rows
+Ledger T2_NATIVE_GC (2,142 cells) appended; rows autopilot/FADE_ROWS_T2_NATIVE_GC.md (40 finalists, all FAIL). Z2 wf_selector.py on /mnt/l2/l2vast/ds3_t2/GC_native_W.npy with the groups as sessions (G1 London AM fix, G2 PM fix, G3 08:20 opening range, G4 gold-yield divergence), lookbacks 26 and 52 weeks, OOS 2024-01..2026-10, structural n >= 300 eligibility (378 / 504 / 378 candidate cells; G4 has none with n >= 300, its cells have 138-270 trades), 200 random-cell and 200 permutation placebos (code wf_native.py, results GC_native_wfres.pkl):
+| group | lookback | pick | OOS mean $/wk | maxDD $ | L6M $/wk | HOLD $/wk | PRE $/wk | p random cell | p permuted | p bootstrap |
+|--|--|--|--|--|--|--|--|--|--|--|
+| G1 AM fix | 26 | top1 / top3 | -78 / -41 | 23,115 / 18,682 | 681 / 540 | 77 / 120 | -175 / -138 | .33 / .12 | .78 / .66 | .77 / .67 |
+| G1 AM fix | 52 | top1 / top3 | +70 / +113 | 11,505 / 11,099 | 423 / 372 | 121 / 253 | -229 / -176 | .09 / .005 | .30 / .15 | .31 / .17 |
+| G2 PM fix | 26 | top1 / top3 | +45 / -69 | 31,180 / 42,936 | 25 / -27 | 120 / 38 | 109 / -40 | .19 / .43 | .13 / .42 | .40 / .70 |
+| G2 PM fix | 52 | top1 / top3 | -114 / -200 | 33,745 / 40,517 | 61 / -344 | 200 / 51 | -333 / -371 | .58 / .92 | .53 / .77 | .80 / .91 |
+| G3 08:20 range | 26 | top1 / top3 | -404 / -341 | 76,377 / 70,459 | 598 / 597 | -140 / -40 | -625 / -675 | .93 / .96 | .92 / .91 | .99 / .99 |
+| G3 08:20 range | 52 | top1 / top3 | -25 / +27 | 17,976 / 18,237 | 433 / 607 | 112 / 337 | -64 / -115 | .29 / .10 | .19 / .07 | .60 / .43 |
+**Plain sentence: the walk-forward selector finds no money in the GC native books either: of 12 selector variants 4 have a positive out-of-sample mean (G1 52-week top-1 +$70 and top-3 +$113 a week, G2 26-week top-1 +$45, G3 52-week top-3 +$27); the best (G1, 52 weeks, top-3) has p 0.005 against a random cell but 0.15 against permuted weeks and a bootstrap p of 0.17, a PRE of -$176 a week, and the cells behind it all failed the evaluator (DS3_INSTR2_NATIVE.md GC block) - best-of-F, no lead. No PASS; Shadow only.**

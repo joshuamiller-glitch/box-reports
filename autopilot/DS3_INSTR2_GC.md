@@ -80,3 +80,29 @@ Files: /mnt/l2/l2vast/ds3_t2/GC_screen.parquet (132,286 cells), GC_stage2.pkl, G
 Real: max HOLD mean over the cells $1,407/wk, max L6M Calmar 0.654, **493 of 4,200 cells pass the tolerant gate**. Null (random side): max HOLD mean median $1,661, 95th pct $2,412 (p of the real max 0.86); max L6M Calmar p 0.71; gate passers median 250.5 (**p of the real count 0.0099: no world reaches 493**). Null (forward shift5): max HOLD median $1,477, p95 $1,973 (p 0.58); Calmar p 0.99; gate passers median 394 (**p 0.0099**).
 Reading: no single GC cell is better than the best of a random-side family (the max statistic is inside both nulls); but the NUMBER of cells passing the tolerant gate (493) exceeds every null world, i.e. the 2026 gold trend regime that the Keltner / Supertrend flips (and the other trend families) exploit is real in the 2023-2026 data, and it is not a single parameter spike. It is also absent before 2023: all 40 finalists lose over 2013-2023 (percent frame, calibrated). Conclusion stays REGIME (2026-only), not a book; a persistent gold book would need the pre-2023 years to be at least non-negative.
 Note: the full 141,120-cell max-T (63 brackets per signal set) was not run (about 14 h per world set); finalists carry the Bonferroni family p over 132,286 cells from the shared evaluator. Pending (parked for the blind-week order): Z2 walk-forward selector over the full grid (wf_grid.py), GC native books (Addendum A), T-FIND step 2.
+
+## UPDATE (S4a, 2026-11-06): Z2 purged walk-forward selector on the whole generic GC grid (own parameter choice)
+Z2 wf_selector.py (monthly decisions from the previous 26 or 52 weeks, purge 1 week, eligibility mean > 0 / older-half tolerance / >= 50% positive months, choice = best trailing Sharpe; top-1 and top-3 equal-weight), weekly matrix of every GC cell with >= 100 trades (23,101-26,775 eligible cells per session), OOS 2024-01..2026-10, 200 random-cell and 200 permutation placebos; /mnt/l2/l2vast/ds3_t2/GC_wfres.pkl.
+| session | lookback (wk) | pick | eligible candidates | OOS mean $/wk 2024-26 | maxDD $ | L6M $/wk | HOLD $/wk | PRE $/wk | p vs random choice | p vs permuted | p boot (mean<=0) | stack Calmar gain HOLD k=1 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| asia | 26 | top1 | 23393 | 251 | 29231 | -1775 | -32 | 121 | 0.01 | 0.01 | 0.10 | 0.001 |
+| asia | 26 | top3 | 23393 | -14 | 21716 | -1281 | -188 | -47 | 0.01 | 0.12 | 0.50 | -0.005 |
+| asia | 52 | top1 | 23393 | -276 | 46419 | -2058 | -183 | -131 | 0.45 | 0.75 | 0.82 | -0.000 |
+| asia | 52 | top3 | 23393 | -71 | 25653 | -1797 | -78 | 31 | 0.07 | 0.37 | 0.58 | 0.002 |
+| london | 26 | top1 | 26775 | -162 | 46983 | -581 | -255 | -152 | 0.04 | 0.26 | 0.83 | 0.005 |
+| london | 26 | top3 | 26775 | -270 | 48510 | -81 | -339 | -276 | 0.01 | 0.46 | 0.97 | 0.002 |
+| london | 52 | top1 | 26775 | -24 | 17063 | 102 | 22 | -60 | 0.01 | 0.18 | 0.54 | -0.010 |
+| london | 52 | top3 | 26775 | -129 | 20632 | 110 | -118 | -160 | 0.01 | 0.31 | 0.78 | 0.002 |
+| pre | 26 | top1 | 19035 | -216 | 43780 | 236 | -84 | -183 | 0.77 | 0.63 | 0.84 | -0.005 |
+| pre | 26 | top3 | 19035 | -207 | 38473 | 370 | -92 | -298 | 0.90 | 0.70 | 0.94 | -0.004 |
+| pre | 52 | top1 | 19035 | -37 | 22132 | -177 | -86 | -29 | 0.44 | 0.30 | 0.56 | -0.009 |
+| pre | 52 | top3 | 19035 | -66 | 18328 | -51 | -34 | -150 | 0.57 | 0.34 | 0.65 | -0.008 |
+| nyam | 26 | top1 | 23101 | -301 | 53182 | 176 | -232 | -468 | 0.77 | 0.84 | 0.98 | -0.027 |
+| nyam | 26 | top3 | 23101 | -253 | 46463 | 74 | -25 | -493 | 0.85 | 0.82 | 0.99 | -0.014 |
+| nyam | 52 | top1 | 23101 | -136 | 29594 | -61 | 33 | -415 | 0.53 | 0.64 | 0.80 | 0.001 |
+| nyam | 52 | top3 | 23101 | -70 | 22305 | 443 | 205 | -263 | 0.26 | 0.42 | 0.77 | -0.004 |
+| nypm | 26 | top1 | 20459 | -103 | 25150 | -782 | -29 | -214 | 0.14 | 0.14 | 0.70 | 0.012 |
+| nypm | 26 | top3 | 20459 | -156 | 25703 | -618 | -154 | -230 | 0.04 | 0.24 | 0.92 | 0.003 |
+| nypm | 52 | top1 | 20459 | -331 | 42378 | -661 | -427 | -234 | 0.64 | 0.86 | 0.99 | -0.013 |
+| nypm | 52 | top3 | 20459 | -246 | 31429 | -416 | -235 | -159 | 0.29 | 0.60 | 0.98 | -0.003 |
+**Plain sentence: the walk-forward choice of GC parameters does not work out of sample: 19 of the 20 session x lookback x top-k selectors have a NEGATIVE out-of-sample mean per week over 2024-2026 (the one positive, asia 26-week top-1 +$251 a week, has L6M -$1,775 and HOLD -$32 and a bootstrap p of 0.10); the small p-values against a random cell (London, asia) only say the selector picks less bad cells than a random one, not that it makes money, and none has a positive stack Calmar gain beyond +0.012 at k=1. Consistent with the REGIME label: GC trend cells paid only in 2026.**

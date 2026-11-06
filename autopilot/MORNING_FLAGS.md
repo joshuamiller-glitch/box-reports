@@ -273,3 +273,8 @@ Live-side files already sit on the box under <repo>/data/live/ (StratTrades_DS7_
 
 ## 2026-11-06 00:17Z QUESTION (non-blocking): RTY premarket watch needs forward L2 data
 CHAR-A's RTY premarket prior-day-level continuation (REGIME/WATCH, ~95 trades, sign not persistent) can only be forward-tested with new RTY mbp-10 (the weekly extension: NQ+ES+RTY about $36-38/week; RTY alone is a fraction - quote via metadata first). Default taken: no purchase, spec written (WATCH_RTY_PREMARKET_SPEC.md); say yes and the weekly RTY pull + a pass/fail after 40 new trades starts.
+
+## 2026-11-06 01:52Z DECISIONS FOR THE USER (from DS3_FIND_FINAL.md; none blocks work)
+1. Intraday-index discovery: close it and run only the forward Shadow watches (default taken: keep running the existing queue to its end, no new index-intraday searches), or fund something that changes the cost wall (fee/rebate tier, pre-2023 ES/RTY mbp-10 quote, other products).
+2. Monday long Shadow watch on NQ/MNQ from 2026-11-09 (spec WATCH_MONDAY_LONG_SPEC.md): default taken: logged paper-only via monday_watch_log.py on the existing NQ feed, nothing traded; it enters at Sunday 18:00 where the live V2 window blocks 18:00-18:04/05, so the live entry-window question (V0..V3) matters for any real use.
+3. RTY pre-market watch data: default no purchase (item NOT-TESTABLE unless a metadata quote + your OK).

@@ -2,3 +2,4 @@
 | 2026-11-05T19:35Z | T2_MBT | S4b | 144648 | single-series grid (same 287 sets x 84 brackets x 6 session views) registered before running; MBT own 1-min series
 | 2026-11-05T19:35Z | T2_BTCstd | S4b | 144648 | single-series grid (same 287 sets x 84 brackets x 6 session views) registered before running; BTCstd own 1-min series
 | 2026-11-05T19:35Z | T2_NKD | S4b | 144648 | single-series grid (same 287 sets x 84 brackets x 6 session views) registered before running; NKD own 1-min series
+| 2026-11-06T01:40Z | T2_BTC_CLUSTER | S4b | 4536 | 54 F1 Keltner signal sets (b 5/10/15, EMA 8/13/21, ATR 14/20, m 2/2.5/3) x 84 brackets x Asia session, on BTCM / MBT / BTC (same cells per series); plus 200 fresh null worlds (seeds 1001-1200) registered before running |

@@ -31,3 +31,4 @@ T2_STAGE_B_NTESTED: ZN 25200, ZB 25200 stage-B cells (frozen top-300 x 84 bracke
 | 2026-11-05T20:32:53Z | T2_NQ13_ESXFER | ZL-2 | 0 | descriptive ES run of the same 3483 NQ cells x V0/V2, no selection, no new search |
 | 2026-11-05T20:39:30Z | T2_NQ13_ENG | ZL-2 | 126 | engine-in-the-loop bracket cells (9 x 14 live pairs), ledger T2_NQ13_ENG |
 | 2026-11-06T01:25:01Z | T_FIND_1B_DE | ZL-2 | 810 | measurement cells (ES/RTY/NQ x 9 signals x 6 sessions x 5 horizons), passive-entry fill + measured-cost room; no tests |
+| 2026-11-06T01:45:20Z | T2F_DAILY3 | ZL-2 | 684 | Block C 156 vol-regime cells + Block D 2 bases x 264 stack-regime rules (ledger T2F_DAILY3_C 156 rows, T2F_DAILY3_D 264 rows at s=0) |
