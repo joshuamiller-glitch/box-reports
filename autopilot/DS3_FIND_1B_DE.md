@@ -114,3 +114,47 @@ At 1-s measured spreads, entering and leaving at market gives a negative net on 
 
 
 ## CORRECTION 2 2026-11-06T00:47:57Z (ZL-2): BUG FOUND - every P(fill) and passive-net value for h = 60 and 300 s in the tables above (both the original and the first correction) is WRONG: cells that never filled were coded with fill time T+1 = 31 s and counted as filled whenever k < h. The market-in/market-out columns (room, G_mkt net) and all h <= 15 values are unaffected. A fixed run (filled = k < h and k <= T) is being recomputed; its tables will be appended below and replace these values. Original csv kept in out/find_1b_de/_bug_unfilled_as_filled/.
+
+## CORRECTED RESULTS 2026-11-06T01:24Z (ZL-2) - rerun after the fill-flag fix (filled = k < h and k <= 30 s). These replace every passive/P(fill) number above; market-in/out and room numbers above were unaffected and are reproduced here.
+
+### ES
+Median measured spread 1.07 ticks; 270 cells.
+- room > 2 in 43% of cells; market-in/out net G > 0 in 0 of 270 (best -1.17 ticks); passive net per trigger > 0 in 0 of 216 cells with fills, with P(fill) >= 0.2 in 0.
+- median P(fill) by h: 5s 0.43, 15s 0.54, 60s 0.56, 300s 0.56; median passive net per fill by h: 5s -1.29, 15s -1.25, 60s -1.24, 300s -1.25 ticks
+
+| signal | session | h | n | P(fill) | room | G_mkt net | passive net / trigger | passive net / fill |
+|--|--|--|--|--|--|--|--|--|
+| imb1 | asia | 5 | 874890 | 0.24 | 0.46 | -1.48 | -0.316 | -1.29 |
+| micro_off | asia | 5 | 866543 | 0.25 | 0.48 | -1.52 | -0.330 | -1.33 |
+| imb5_ema10s | asia | 5 | 369350 | 0.26 | 0.43 | -1.53 | -0.338 | -1.30 |
+| imb10 | asia | 5 | 494745 | 0.27 | 0.49 | -1.53 | -0.352 | -1.32 |
+| imb5 | asia | 5 | 532982 | 0.27 | 0.51 | -1.52 | -0.365 | -1.35 |
+
+### RTY
+Median measured spread 2.02 ticks; 270 cells.
+- room > 2 in 37% of cells; market-in/out net G > 0 in 0 of 270 (best -1.95 ticks); passive net per trigger > 0 in 0 of 216 cells with fills, with P(fill) >= 0.2 in 0.
+- median P(fill) by h: 5s 0.45, 15s 0.51, 60s 0.51, 300s 0.51; median passive net per fill by h: 5s -2.36, 15s -2.32, 60s -2.32, 300s -2.32 ticks
+
+| signal | session | h | n | P(fill) | room | G_mkt net | passive net / trigger | passive net / fill |
+|--|--|--|--|--|--|--|--|--|
+| imb1 | asia | 5 | 601027 | 0.29 | 0.34 | -3.48 | -0.669 | -2.29 |
+| imb5_ema10s | asia | 5 | 191259 | 0.30 | 0.31 | -3.54 | -0.675 | -2.22 |
+| micro_off | asia | 5 | 481403 | 0.29 | 0.35 | -3.82 | -0.696 | -2.36 |
+| imb5 | asia | 5 | 312737 | 0.32 | 0.36 | -3.60 | -0.741 | -2.30 |
+| imb10 | asia | 5 | 280342 | 0.33 | 0.36 | -3.64 | -0.753 | -2.31 |
+
+### NQ
+Median measured spread 2.92 ticks; 270 cells.
+- room > 2 in 61% of cells; market-in/out net G > 0 in 0 of 270 (best -1.18 ticks); passive net per trigger > 0 in 0 of 216 cells with fills, with P(fill) >= 0.2 in 0.
+- median P(fill) by h: 5s 0.53, 15s 0.53, 60s 0.53, 300s 0.53; median passive net per fill by h: 5s -3.87, 15s -3.84, 60s -3.78, 300s -3.92 ticks
+
+| signal | session | h | n | P(fill) | room | G_mkt net | passive net / trigger | passive net / fill |
+|--|--|--|--|--|--|--|--|--|
+| imb5_ema10s | close | 300 | 105890 | 0.52 | 9.01 | -3.40 | -1.349 | -2.59 |
+| imb5_ema10s | asia | 5 | 408470 | 0.44 | 0.68 | -4.64 | -1.356 | -3.06 |
+| imb5_ema10s | close | 60 | 115272 | 0.52 | 3.91 | -3.49 | -1.438 | -2.77 |
+| imb1 | asia | 5 | 1542926 | 0.44 | 0.77 | -4.78 | -1.439 | -3.24 |
+| imb5_ema10s | close | 5 | 118144 | 0.48 | 1.07 | -3.62 | -1.468 | -3.08 |
+
+## Reading (corrected)
+With measured 1-s spreads and a queue-aware passive entry, no (a) trigger cell of ES, RTY or NQ is positive after fee and exit half-spread unless the table above lists it; a passive order mostly fills when price moves through it (adverse selection) so P(fill) and edge move in opposite directions. Nothing here is a book candidate: the map -> book rule belongs to CHAR-A (p_family <= 0.05 on the (a) rows).

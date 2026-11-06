@@ -30,3 +30,4 @@ T2_STAGE_A_NTESTED: ZN 5426, ZB 5426, 6E 5400, 6J 5336 stage-A cells (library fa
 T2_STAGE_B_NTESTED: ZN 25200, ZB 25200 stage-B cells (frozen top-300 x 84 brackets); family size for placebo/Bonferroni per instrument = 5426 + 25200 = 30626; Z3 2026-11-05
 | 2026-11-05T20:32:53Z | T2_NQ13_ESXFER | ZL-2 | 0 | descriptive ES run of the same 3483 NQ cells x V0/V2, no selection, no new search |
 | 2026-11-05T20:39:30Z | T2_NQ13_ENG | ZL-2 | 126 | engine-in-the-loop bracket cells (9 x 14 live pairs), ledger T2_NQ13_ENG |
+| 2026-11-06T01:25:01Z | T_FIND_1B_DE | ZL-2 | 810 | measurement cells (ES/RTY/NQ x 9 signals x 6 sessions x 5 horizons), passive-entry fill + measured-cost room; no tests |

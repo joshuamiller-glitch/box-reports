@@ -2882,3 +2882,1061 @@ Best six cells by test net: ofi1_w60 h60 h09 e0: gross disc +0.515 test +2.790 n
 **NQ: the thing it does is that depth imbalance, microprice deviation and order flow at 1-60 s carry a small real forward mid-price signal (best frozen test gross 2.79 ticks; 29 cells beat the shuffled-day family null on gross structure); the book that fits would be a 1-60 s taker book, and it does not clear because a taker round trip costs about 4.0 ticks (spread 3.00 + fee 0.97) against that gross, best test net -1.46 ticks, 0 cells with net > 0.**
 
 (1b-a correction note, ZL-1: the "median quoted spread" in the three 1b-a blocks above was sampled over 18:00-10:40 ET and so mixes the wider overnight book. Over RTH 09:30-16:00 ET the median quoted spread is ES 1.0 tick, RTY 2.0 ticks, NQ 2.0 ticks (mean 1.04 / 1.75 / 2.65); with the fee ($4.84 = 0.39 / 0.97 / 0.97 ticks) a taker round trip costs about ES 1.4, RTY 3.0, NQ 3.0 ticks in RTH. The cell nets use the measured spread at each fill, so the table values are unaffected; only the sentence's cost figure is.)
+
+## 1b-d - queue-position-aware PASSIVE entries and exits (maker side) on the 1b-a gross-structure cells (ZL-1; prereg l2vast/ds3/prereg/FIND_1BD_prereg.md + addendum 1; library maker.py, maker_study.py; events_L13 store, RTH only, 2023-08..2026-10, NO pre-2023 evidence)
+
+Model: join the touch on the side of the frozen direction, arrival 1.0 s after the decision (ts is the bin END), queue ahead = displayed touch size at arrival, trades at our price deplete it, fill-removal rows are matched before any cancel is counted, cancels ahead proportional (sensitivities none / all), timeout 2h, adverse cancel at -1 tick (+1 s latency); after the fill hold h s, exit passive at the opposite touch (wait h s, then taker fallback). Net = captured half-spread - adverse selection - fee $4.84, per ORDER PLACED (unfilled count 0). Null = the same orders shifted forward 120-1800 s on the same day, 100 worlds, Westfall-Young max-z over the selected cells; a cell beats the null only if p_family <= .10 on the test half AND per-order net > 0 in BOTH halves AND >= 300 test fills.
+
+### ES (28 cells selected from the 2784 1b-a cells with family p <= .10, positive gross in both halves, RTH groups; 493 discovery / 346 test days with events)
+Per filled order, test half, fill-weighted mean over the selected cells (ticks): captured half-spread +0.49; adverse selection after the fill at +1 s -0.51, +5 s -0.49, +h -0.45; fee -0.39; net per fill (passive exit) -0.53, (taker exit) see column; fill rate 0.73; net per ORDER PLACED -0.35 (discovery -0.44). Cells with net per order > 0: test 1 of 28, discovery 0 of 28, both 0. Cells that BEAT the null: 0. Null max z median 2.00, 95th percentile 2.74.
+
+Sensitivities (test, mean net per order over cells): proportional cancels -0.36; no cancel benefit (conservative) -0.48; all cancels ahead (optimistic) -0.26; join one tick back -0.09 (fill rate 0.20); taker exit instead of passive exit -0.60.
+
+| group | cells | mean fill rate | mean net/order test | best net/order test | mean net/fill |
+|--|--|--|--|--|--|
+| h12 | 1 | 0.57 | -0.47 | -0.47 | -0.82 |
+| h13 | 4 | 0.63 | -0.40 | -0.37 | -0.65 |
+| h14 | 2 | 0.75 | -0.43 | -0.37 | -0.58 |
+| s_close | 13 | 0.74 | -0.36 | +0.50 | -0.53 |
+| s_nypm | 8 | 0.64 | -0.33 | -0.19 | -0.55 |
+
+Top five by z: ofi5_w5 h60 s_close e1: test net/order +0.50 (disc -0.22), fill 0.94, z 4.0, p_family 0.010; imb1 h5 s_nypm e0: test net/order -0.26 (disc -0.39), fill 0.75, z 2.4, p_family 0.168; imb1 h15 s_nypm e1: test net/order -0.19 (disc -0.44), fill 0.86, z 2.0, p_family 0.535; micro_dev h1 s_nypm e0: test net/order -0.32 (disc -0.38), fill 0.47, z 1.7, p_family 0.802; ofi5_w1 h1 s_nypm e0: test net/order -0.33 (disc -0.42), fill 0.54, z 1.6, p_family 0.802
+Cells with p_family <= .10 that FAIL the both-halves rule (test-half only, not leads): ofi5_w5 h60 s_close e1: test +0.50, discovery -0.22
+
+**ES: the thing it does is that the 1-60 s L2 structure is real but small, and a passive order captures only the half-spread (+0.49 ticks per fill); adverse selection after the fill (-0.45 ticks at +h) and the fee (-0.39) take more than that, so net is -0.53 ticks per fill and -0.35 per order placed; the book that fits would be a queue-aware maker book at the touch, and it does not clear because 0 of 28 selected cells beat the null (net positive in both halves and family p <= .10).**
+
+### RTY (94 cells selected from the 2784 1b-a cells with family p <= .10, positive gross in both halves, RTH groups; 488 discovery / 343 test days with events)
+Per filled order, test half, fill-weighted mean over the selected cells (ticks): captured half-spread +0.38; adverse selection after the fill at +1 s -0.63, +5 s -0.58, +h -0.57; fee -0.97; net per fill (passive exit) -1.65, (taker exit) see column; fill rate 0.60; net per ORDER PLACED -0.97 (discovery -0.96). Cells with net per order > 0: test 1 of 94, discovery 0 of 94, both 0. Cells that BEAT the null: 0. Null max z median 2.39, 95th percentile 2.97.
+
+Sensitivities (test, mean net per order over cells): proportional cancels -0.95; no cancel benefit (conservative) -0.92; all cancels ahead (optimistic) -0.94; join one tick back -0.46 (fill rate 0.30); taker exit instead of passive exit -1.13.
+
+| group | cells | mean fill rate | mean net/order test | best net/order test | mean net/fill |
+|--|--|--|--|--|--|
+| h09 | 7 | 0.77 | -1.01 | +0.01 | -1.33 |
+| h10 | 9 | 0.58 | -1.03 | -0.89 | -1.78 |
+| h11 | 1 | 0.64 | -1.00 | -1.00 | -1.57 |
+| h12 | 7 | 0.48 | -0.86 | -0.73 | -1.83 |
+| h13 | 18 | 0.52 | -0.87 | -0.61 | -1.70 |
+| h14 | 1 | 0.35 | -0.67 | -0.67 | -1.94 |
+| h15 | 1 | 0.42 | -0.73 | -0.73 | -1.72 |
+| s_close | 8 | 0.65 | -0.90 | -0.63 | -1.42 |
+| s_nyam | 21 | 0.64 | -1.07 | -0.78 | -1.70 |
+| s_nypm | 21 | 0.51 | -0.90 | -0.60 | -1.81 |
+
+Top five by z: ofi1_w60 h15 h09 e0: test net/order +0.01 (disc -0.66), fill 0.84, z 4.8, p_family 0.010; ofi5_w1 h5 s_nyam e0: test net/order -0.83 (disc -1.11), fill 0.66, z 2.5, p_family 0.386; ofi5_w5 h15 h13 e0: test net/order -0.61 (disc -0.73), fill 0.67, z 2.5, p_family 0.406; ofi5_w60 h1 h09 e0: test net/order -0.93 (disc -1.08), fill 0.69, z 2.3, p_family 0.574; ofi1_w60 h15 s_nyam e0: test net/order -0.78 (disc -0.91), fill 0.73, z 2.3, p_family 0.604
+Cells with p_family <= .10 that FAIL the both-halves rule (test-half only, not leads): ofi1_w60 h15 h09 e0: test +0.01, discovery -0.66
+
+**RTY: the thing it does is that the 1-60 s L2 structure is real but small, and a passive order captures only the half-spread (+0.38 ticks per fill); adverse selection after the fill (-0.57 ticks at +h) and the fee (-0.97) take more than that, so net is -1.65 ticks per fill and -0.97 per order placed; the book that fits would be a queue-aware maker book at the touch, and it does not clear because 0 of 94 selected cells beat the null (net positive in both halves and family p <= .10).**
+
+### NQ (8 cells selected from the 2784 1b-a cells with family p <= .10, positive gross in both halves, RTH groups; 493 discovery / 346 test days with events)
+Per filled order, test half, fill-weighted mean over the selected cells (ticks): captured half-spread +0.38; adverse selection after the fill at +1 s -0.88, +5 s -1.24, +h -1.02; fee -0.97; net per fill (passive exit) -2.57, (taker exit) see column; fill rate 0.69; net per ORDER PLACED -1.79 (discovery -1.45). Cells with net per order > 0: test 0 of 8, discovery 0 of 8, both 0. Cells that BEAT the null: 0. Null max z median 1.31, 95th percentile 2.44.
+
+Sensitivities (test, mean net per order over cells): proportional cancels -1.77; no cancel benefit (conservative) -2.10; all cancels ahead (optimistic) -1.77; join one tick back -1.33 (fill rate 0.54); taker exit instead of passive exit -2.05.
+
+| group | cells | mean fill rate | mean net/order test | best net/order test | mean net/fill |
+|--|--|--|--|--|--|
+| h11 | 1 | 0.69 | -1.74 | -1.74 | -2.51 |
+| h12 | 1 | 0.66 | -1.44 | -1.44 | -2.17 |
+| h13 | 1 | 0.75 | -1.87 | -1.87 | -2.48 |
+| h14 | 1 | 0.59 | -1.58 | -1.58 | -2.68 |
+| h15 | 1 | 0.65 | -1.66 | -1.66 | -2.56 |
+| s_close | 2 | 0.72 | -1.91 | -1.73 | -2.65 |
+| s_nyam | 1 | 0.72 | -2.08 | -2.08 | -2.87 |
+
+Top five by z: imb1 h1 h12 e1: test net/order -1.44 (disc -1.36), fill 0.66, z 0.7, p_family 0.881; imb1 h1 h11 e0: test net/order -1.74 (disc -1.74), fill 0.69, z 0.1, p_family 0.990; imb1 h1 s_nyam e1: test net/order -2.08 (disc -1.58), fill 0.72, z -0.3, p_family 1.000; imb1 h1 h14 e0: test net/order -1.58 (disc -1.29), fill 0.59, z -0.4, p_family 1.000; imb1 h1 h15 e0: test net/order -1.66 (disc -1.35), fill 0.65, z -0.7, p_family 1.000
+
+**NQ: the thing it does is that the 1-60 s L2 structure is real but small, and a passive order captures only the half-spread (+0.38 ticks per fill); adverse selection after the fill (-1.02 ticks at +h) and the fee (-0.97) take more than that, so net is -2.57 ticks per fill and -1.79 per order placed; the book that fits would be a queue-aware maker book at the touch, and it does not clear because 0 of 8 selected cells beat the null (net positive in both halves and family p <= .10).**
+
+BLOCKED (not a negative result): CHAR-A's RTY pre-market prior-day-level + burst continuation (and any pre-09:30 or overnight cell): the events_L13 store has RTH events only, so a queue simulation is impossible; re-reducing the kept raw months with l2v_reduce.py --night would unblock it (cost: compute only).
+
+## 1b-d (maker side) - RTY and NQ runs of ZL-1's queue-position model (Z1, 2026-11-06)
+ZL-1 owns the model and prereg (FIND_1BD_prereg.md sha256 3097a16a2a85559fba0eeb09d346dc8136fa4e29214a52962bb99483b66f923f, addendum 1 ec914d67...); I ran maker_study.py unchanged (W = 100 forward-shift worlds, K = 4 orders per cell and day, truncation 24/24 on RTY and 24/24 on NQ before any number was read). Event store = RTH only, 2023-08..2026-10-30, no pre-2023 evidence; tick data begin 2023-08. Discovery half 2023-08..2025-06, test half 2025-07..2026-10.
+| instrument | 1b-a cells selected (family p <= .10, gross > 0 both halves, RTH group) | median fill rate | median net per order placed (test, exit P) | median capture / adverse at h per fill (ticks) | cells net > 0 test / both halves | cells with p_family <= .10 | cells that BEAT the null |
+|---|---|---|---|---|---|---|---|
+| RTY | 94 of 2,784 | 0.58 | -0.94 | +0.38 / -0.62 | 1 / 0 | 1 | 0 |
+| NQ | 8 of ~2,800 | 0.68 | -1.73 | +0.38 / -0.93 | 0 / 0 | 0 | 0 |
+The one RTY cell with p_family .01 (ofi1 w60, h 15, ET 09, long) is +0.011 ticks per order in the test half and -0.66 in discovery: it beats the null but not zero. Reading: the passive side captures about 0.4 tick of spread per fill but pays about 0.6-0.9 tick adverse selection over the hold, misses 30-40% of fills, and still pays the fee, so the 1b-a gross structure is not tradeable passively either (RTY -0.9, NQ -1.7 ticks per order placed). No book is built.
+**CHAR-A prior-day-level continuation:** RTY pre-market (08:30-09:30 ET) is BLOCKED: the event store holds RTH events only (09:30-16:00), the passive model cannot be run there (needs a re-reduction with the night option). NQ nyam (CHAR-A 1b-DEEP base node: burst q .90, buffer 0, 598 events 2023-08..2026-10, selected as one row of 240): the same model, unchanged, applied to those events with hold 30 / 60 / 300 s (order at the touch second, direction = continuation, joins the touch, same forward-shift null, W = 100):
+| hold s | placed (disc / test) | fills test | net per order disc | net per order test | null mean test | z test | p_family test (3 cells) | taker net per order test |
+|---|---|---|---|---|---|---|---|---|
+| 30 | 274 / 175 | 156 | +4.61 | +5.40 | -2.75 | 2.1 | 0.069 | +4.33 |
+| 60 | 274 / 175 | 156 | +6.96 | +2.61 | -3.01 | 1.1 | 0.337 | +4.87 |
+| 300 | 274 / 175 | 158 | +13.45 | +1.82 | -1.86 | 0.4 | 0.713 | -0.87 |
+Fill rate 0.89 (most orders fill because price runs through the level); capture +0.73 tick, adverse over the hold +4.8 .. +15 (disc) and +6.8 / +7.3 / +0.1 (test), i.e. the touch continuation is real in the sample but the passive entry adds about the same as a taker entry (taker +4.3 / +4.9 at 30 / 60 s). The prereg rule 'fills >= 300 in the test half' fails (156), so formally no cell beats the null; the 30-s node is the only one with p_family <= .10 in test (0.069) and discovery (0.020). It rests on 175 test orders from one selected row of 240 (selection bias, noted by CHAR-A), and CHAR-A's 1-s book for the same row is negative at HOLD (median -$144/wk). Label: WATCH (underpowered, unconfirmed), not a lead; no PASS claim.
+
+### 1b-d fee sensitivity (ZL-1): what per-side fee would make the passive model break even?
+Pre-fee result = net ticks per fill (passive exit, test half) + the $4.84 round-trip fee in ticks; break-even fee = pre-fee ticks x tick value, per side = half of it. A NEGATIVE break-even fee means the model loses even at zero fee and would need a rebate of that size per side.
+
+| instrument | cells | fee now ($ RT) | pre-fee net per fill (ticks) | break-even round-trip fee ($) | break-even per side ($) | pre-fee net per ORDER placed (ticks) | break-even per side on per-order basis ($) | best single cell pre-fee per fill (ticks) / per side ($) |
+|--|--|--|--|--|--|--|--|--|
+| ES | 28 | 4.84 | -0.14 | -1.77 | -0.88 | -0.10 | -0.61 | +0.92 / +5.72 |
+| RTY | 94 | 4.84 | -0.68 | -3.41 | -1.70 | -0.39 | -0.98 | +0.98 / +2.45 |
+| NQ | 8 | 4.84 | -1.61 | -8.03 | -4.02 | -1.11 | -2.77 | -1.20 / -3.01 |
+
+# RV block - relative-value spread character maps (CHAR-B, 2026-11-06). Prereg l2vast/ds3/prereg/FIND_RV_prereg.md sha256 fa5c5c13e62de0d398fd0a27c2e76f437fa60d703cb60042fb7813fa2e933b6c + addendum1 (integer hedge unit). Pairs ES-RTY, ES-YM, RTY-YM, ZN-ZB, 6E-6J; GC-CL descriptive only. Q14 (NQ-vs-ES, dead) and DISC_A not repeated.
+
+## RV ESRTY - relative-value spread character map (CHAR-B via char_lib, 2026-11-06T01:13Z)
+Base: RV_ESRTY CME front-month (.v.0) 1-min bars from 2017-01 to 2026-10, percent frame (multiplicative roll-adjusted), 1-min approximation (no tick path), 2143 usable label days; ET clock, sessions asia 18:00-02:00 / london 02:00-08:30 / pre 08:30-09:30 / nyam 09:30-12:00 / nypm 12:00-15:00 / close 15:00-16:55. Nulls: within-year shuffled-day (AC B=300; structure B=100 worlds; levels recomputed on the shuffled path; round numbers 60 random grid phases); p_family = Westfall-Young max-|z| over the block (AC family 153 cells, structure family 92 cells). `**` p_family<=.05, `*` <=.10. Prereg sha256 980bedf6bad3f1669de9efb93831fa4622d88577c892d9359b7f57ba93c9dbcf. Descriptive only: no PASS, nothing live.
+
+### Plain paragraph
+At 1 minute every session has negative autocorrelation (-0.247 to -0.025; bid-ask bounce / last-print noise, not a tradable edge by itself). asia: reverts at 5/15/30/60 min (-0.133, -0.075, -0.048, -0.037). london: reverts at 5/15/30/60 min (-0.083, -0.047, -0.029, -0.038). pre: reverts at 5 min (-0.057). nyam: reverts at 5 min (-0.015). nypm: reverts at 5/15 min (-0.049, -0.021). close: reverts at 5 min (-0.027). Day types (RTH): 52% trend days (efficiency ratio >= .5; shuffled null 50%, p_fam 0.852), 21% range days (<.25; null 24%, p_fam 0.279); the IB (09:30-10:30) is extended on one side only on 76% of days and on both on 20%, and a one-sided extension closes beyond the IB edge 65% of the time (null 66%). RTH variance ratio at 30 min 0.871 (shuffled null 1.000, p_fam 0.016); Hurst 0.488. The RTH range forms 9:30 (48%), 10:00 (21%), 11:00 (9%) of the range increments. Level reactions that beat the family null: PD|london bounces 47% of touches (more than the shuffled null 40%). Failed-break follow-through beating the null: PD|asia 38% (null 50%). Room (median 3xATR14(5m) $ / round-trip cost $167 per lot): asia 1.7x, london 1.8x, pre 2.3x, nyam 4.8x, nypm 4.0x, close 3.8x (1xATR5 room 1.6x in nyam, 0.6x in asia).
+
+### 1. Autocorrelation of h-min returns (corr(past h, next h), both inside the session), pooled; cell = corr (pre-2023 mean | 2023+ mean) p_family
+| session | 1 min | 5 min | 15 min | 30 min | 60 min | 120 min |
+|--|--|--|--|--|--|--|
+| asia | -0.247 (-0.263|-0.207) p0.003** ys1.00 | -0.133 (-0.163|-0.110) p0.003** ys1.00 | -0.075 (-0.101|-0.069) p0.003** ys1.00 | -0.048 (-0.079|-0.043) p0.003** ys1.00 | -0.037 (-0.053|-0.030) p0.010** ys0.70 | -0.012 (-0.050|-0.002) p1.000 ys0.70 |
+| london | -0.178 (-0.240|-0.118) p0.003** ys1.00 | -0.083 (-0.118|-0.065) p0.003** ys1.00 | -0.047 (-0.046|-0.044) p0.003** ys1.00 | -0.029 (-0.030|-0.010) p0.007** ys0.70 | -0.038 (-0.048|-0.031) p0.013** ys1.00 | -0.050 (-0.064|-0.045) p0.053* ys0.90 |
+| pre | -0.088 (-0.133|-0.061) p0.003** ys1.00 | -0.057 (-0.065|-0.043) p0.003** ys0.90 | -0.031 (-0.071|-0.001) p0.233 ys0.60 | -0.039 (-0.096|-0.004) p1.000 ys0.80 | - | - |
+| nyam | -0.025 (-0.042|-0.019) p0.003** ys1.00 | -0.015 (-0.036|-0.009) p0.030** ys0.90 | +0.004 (-0.029|+0.014) p1.000 ys0.50 | +0.014 (-0.029|+0.027) p1.000 ys0.60 | +0.020 (+0.027|+0.031) p1.000 ys0.50 | - |
+| nypm | -0.070 (-0.090|-0.055) p0.003** ys1.00 | -0.049 (-0.065|-0.040) p0.003** ys1.00 | -0.021 (-0.027|+0.006) p0.030** ys0.50 | +0.006 (-0.022|+0.022) p1.000 ys0.40 | +0.014 (-0.080|+0.040) p1.000 ys0.50 | - |
+| close | -0.062 (-0.089|-0.037) p0.003** ys1.00 | -0.027 (-0.032|-0.026) p0.003** ys0.90 | -0.009 (-0.040|-0.012) p1.000 ys0.70 | +0.018 (+0.028|-0.009) p1.000 ys0.60 | - | - |
+
+Hour cells (h >= 5) beating the family null, top 14 by |z| (hour = ET hour of the decision bar):
+| h | session | hour ET | corr | z | p_family | year sign share | pre-2023 | 2023+ |
+|--|--|--|--|--|--|--|--|--|
+| 5 | asia | 23 | -0.172 | -40.5 | 0.003 | 1.00 | -0.209 | -0.129 |
+| 5 | asia | 00 | -0.160 | -34.1 | 0.003 | 1.00 | -0.198 | -0.125 |
+| 5 | asia | 22 | -0.155 | -33.9 | 0.003 | 1.00 | -0.201 | -0.118 |
+| 5 | asia | 01 | -0.134 | -28.9 | 0.003 | 1.00 | -0.165 | -0.094 |
+| 5 | asia | 21 | -0.119 | -27.3 | 0.003 | 1.00 | -0.157 | -0.099 |
+| 5 | asia | 19 | -0.122 | -24.8 | 0.003 | 1.00 | -0.160 | -0.095 |
+| 5 | asia | 18 | -0.124 | -24.3 | 0.003 | 1.00 | -0.137 | -0.116 |
+| 5 | asia | 20 | -0.116 | -24.0 | 0.003 | 1.00 | -0.140 | -0.112 |
+| 5 | london | 02 | -0.101 | -21.3 | 0.003 | 1.00 | -0.152 | -0.076 |
+| 5 | london | 06 | -0.085 | -18.1 | 0.003 | 1.00 | -0.142 | -0.065 |
+| 5 | london | 07 | -0.094 | -17.9 | 0.003 | 1.00 | -0.110 | -0.081 |
+| 5 | london | 05 | -0.083 | -17.6 | 0.003 | 1.00 | -0.096 | -0.059 |
+| 5 | london | 03 | -0.072 | -13.8 | 0.003 | 1.00 | -0.116 | -0.060 |
+| 5 | nypm | 13 | -0.062 | -13.0 | 0.003 | 1.00 | -0.073 | -0.055 |
+
+### 2. Variance ratio VR(q) and Hurst (1.0 = random walk; <1 reverting; edge-bias corrected), cell = value (null) p_family
+| session | VR5 | VR15 | VR30 | VR60 | VR120 | Hurst |
+|--|--|--|--|--|--|--|
+| asia | 0.562 (0.998) p0.016** | 0.453 (0.998) p0.016** | 0.415 (1.000) p0.016** | 0.393 (1.001) p0.016** | 0.383 (1.001) p0.016** | 0.440 (0.501) p0.016** |
+| london | 0.692 (0.998) p0.016** | 0.611 (0.997) p0.016** | 0.582 (0.996) p0.016** | 0.568 (0.996) p0.016** | 0.549 (0.995) p0.016** | 0.464 (0.500) p0.016** |
+| pre | 0.826 (0.999) p0.016** | 0.754 (0.999) p0.016** | - | - | - | 0.459 (0.500) p0.016** |
+| nyam | 0.950 (1.000) p0.016** | 0.927 (1.000) p0.016** | 0.922 (1.001) p0.016** | - | - | 0.492 (0.500) p0.262 |
+| nypm | 0.862 (0.999) p0.016** | 0.805 (0.998) p0.016** | 0.787 (0.997) p0.016** | 0.787 (0.996) p0.016** | - | 0.481 (0.499) p0.016** |
+| close | 0.888 (0.998) p0.016** | 0.855 (0.997) p0.016** | 0.859 (0.998) p0.016** | - | - | 0.490 (0.500) p0.557 |
+| rth | 0.921 (1.000) p0.016** | 0.885 (0.999) p0.016** | 0.871 (1.000) p0.016** | 0.862 (1.000) p0.016** | 0.855 (1.001) p0.016** | 0.488 (0.500) p0.016** |
+
+### 3. Day types (ex-post labels of the RTH day)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| day|trend | 0.521 | 2143 | 0.499 | +2.2 | 0.852 | 0.70 | 0.498 | 0.521 | REGIME(2023+ only) |
+| day|range | 0.211 | 2143 | 0.239 | -2.8 | 0.279 | 0.90 | 0.223 | 0.194 | stable |
+| day|er | 0.516 | 2143 | 0.494 | +3.7 | 0.033** | 0.70 | 0.500 | 0.526 | stable |
+| day|ib_none | 0.042 | 2143 | 0.032 | +2.5 | 0.574 | 0.60 | 0.037 | 0.053 | stable |
+| day|ib_one | 0.759 | 2143 | 0.726 | +3.5 | 0.066* | 0.80 | 0.748 | 0.772 | stable |
+| day|ib_both | 0.199 | 2143 | 0.241 | -4.8 | 0.016** | 0.80 | 0.215 | 0.175 | stable |
+| day|ib_one_closebeyond | 0.653 | 1626 | 0.657 | -0.4 | 1.000 | 0.60 | 0.640 | 0.654 | stable |
+
+### 4. 1A -> 2A continuation vs give-back-half from the session open (A = 3 x ATR14(5m)); value = P(continue | resolved)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| cont|asia | 0.346 | 800 | 0.409 | -5.3 | 0.016** | 0.90 | 0.319 | 0.352 | stable |
+| cont|london | 0.329 | 2122 | 0.439 | -10.9 | 0.016** | 0.90 | 0.285 | 0.356 | stable |
+| cont|pre | 0.364 | 1155 | 0.455 | -6.5 | 0.016** | 1.00 | 0.301 | 0.395 | stable |
+| cont|nyam | 0.547 | 2129 | 0.530 | +1.6 | 1.000 | 0.70 | 0.550 | 0.557 | stable |
+| cont|nypm | 0.307 | 1142 | 0.376 | -5.3 | 0.016** | 1.00 | 0.295 | 0.337 | stable |
+| cont|close | 0.370 | 1238 | 0.427 | -4.7 | 0.016** | 0.80 | 0.381 | 0.375 | stable |
+| cont|rth | 0.546 | 2141 | 0.530 | +1.6 | 1.000 | 0.60 | 0.550 | 0.556 | stable |
+
+### 5. Gap fill by size bucket (b0 .05-.10, b1 .10-.25, b2 .25-.50, b3 >.50 of the 20-day mean RTH range); day = filled during RTH, h1 = within 60 min
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| gap|b0|day | 0.834 | 253 | 0.848 | -0.6 | 1.000 | 0.50 | 0.868 | 0.838 | REGIME(2023+ only) |
+| gap|b0|h1 | 0.755 | 253 | 0.750 | +0.2 | 1.000 | 0.60 | 0.807 | 0.740 | stable |
+| gap|b1|day | 0.716 | 666 | 0.746 | -1.6 | 1.000 | 0.60 | 0.683 | 0.754 | stable |
+| gap|b1|h1 | 0.589 | 666 | 0.584 | +0.2 | 1.000 | 0.50 | 0.516 | 0.635 | REGIME(2023+ only) |
+| gap|b2|day | 0.560 | 598 | 0.547 | +0.8 | 1.000 | 0.50 | 0.546 | 0.581 | REGIME(2023+ only) |
+| gap|b2|h1 | 0.363 | 598 | 0.318 | +2.4 | 0.738 | 0.90 | 0.347 | 0.406 | stable |
+| gap|b3|day | 0.299 | 371 | 0.262 | +2.2 | 0.852 | 0.70 | 0.298 | 0.309 | stable |
+| gap|b3|h1 | 0.100 | 371 | 0.080 | +1.9 | 0.967 | 0.70 | 0.150 | 0.092 | stable |
+
+### 6. Level reaction: first touch -> bounce (0.5A reverse) vs break-through (0.5A beyond) within 60 min; value = P(bounce)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| rx|PD|asia | 0.435 | 543 | 0.385 | +3.1 | 0.197 | 0.90 | 0.454 | 0.410 | stable |
+| rx|PD|london | 0.467 | 833 | 0.402 | +3.9 | 0.033** | 0.90 | 0.456 | 0.452 | stable |
+| rx|PD|pre | 0.401 | 509 | 0.388 | +0.5 | 1.000 | 0.50 | 0.425 | 0.361 | unstable |
+| rx|PD|nyam | 0.340 | 1454 | 0.359 | -1.4 | 1.000 | 0.50 | 0.354 | 0.340 | unstable |
+| rx|PD|nypm | 0.426 | 749 | 0.417 | +0.5 | 1.000 | 0.50 | 0.409 | 0.427 | REGIME(2023+ only) |
+| rx|PD|close | 0.414 | 527 | 0.390 | +1.1 | 1.000 | 0.70 | 0.464 | 0.432 | stable |
+| rx|ON|nyam | 0.320 | 2351 | 0.344 | -2.6 | 0.541 | 0.70 | 0.328 | 0.316 | stable |
+| rx|ON|nypm | 0.455 | 1002 | 0.423 | +2.1 | 0.852 | 0.80 | 0.478 | 0.452 | stable |
+| rx|ON|close | 0.399 | 724 | 0.392 | +0.4 | 1.000 | 0.60 | 0.469 | 0.367 | stable |
+| rx|IB|nyam | 0.429 | 1638 | 0.417 | +1.0 | 1.000 | 0.60 | 0.420 | 0.446 | stable |
+| rx|IB|nypm | 0.428 | 1309 | 0.421 | +0.5 | 1.000 | 0.50 | 0.417 | 0.433 | REGIME(2023+ only) |
+| rx|IB|close | 0.402 | 909 | 0.394 | +0.4 | 1.000 | 0.50 | 0.393 | 0.392 | unstable |
+| rx|VW1|nyam | 0.421 | 2921 | 0.408 | +1.5 | 1.000 | 0.70 | 0.433 | 0.416 | stable |
+| rx|VW1|nypm | 0.440 | 2089 | 0.422 | +1.6 | 1.000 | 0.60 | 0.426 | 0.452 | stable |
+| rx|VW1|close | 0.431 | 1552 | 0.393 | +3.2 | 0.131 | 0.90 | 0.455 | 0.418 | stable |
+| rx|VW2|nyam | 0.416 | 1823 | 0.408 | +0.8 | 1.000 | 0.80 | 0.444 | 0.426 | stable |
+| rx|VW2|nypm | 0.461 | 1127 | 0.421 | +2.7 | 0.361 | 0.80 | 0.468 | 0.443 | stable |
+| rx|VW2|close | 0.424 | 783 | 0.388 | +2.2 | 0.852 | 0.70 | 0.486 | 0.367 | stable |
+| rx|RN|asia | 0.449 | 7865 | 0.451 | -1.3 | 1.000 | 0.60 | 0.451 | 0.446 | REGIME(2023+ only) |
+| rx|RN|london | 0.442 | 10011 | 0.442 | -0.2 | 1.000 | 0.70 | 0.445 | 0.435 | REGIME(2023+ only) |
+| rx|RN|pre | 0.426 | 2451 | 0.419 | +1.6 | 1.000 | 0.60 | 0.361 | 0.422 | REGIME(2023+ only) |
+| rx|RN|nyam | 0.397 | 9868 | 0.400 | -1.4 | 1.000 | 0.60 | 0.401 | 0.396 | REGIME(2023+ only) |
+| rx|RN|nypm | 0.437 | 7402 | 0.436 | +0.3 | 1.000 | 0.50 | 0.438 | 0.440 | unstable |
+| rx|RN|close | 0.400 | 3437 | 0.404 | -1.1 | 1.000 | 0.50 | 0.413 | 0.400 | REGIME(2023+ only) |
+
+### 7. Failed break (close .25A beyond, back inside within 10 bars): fade follow-through P(0.5A back before 0.5A out)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| fb|PD|asia | 0.377 | 403 | 0.500 | -6.4 | 0.016** | 1.00 | 0.319 | 0.429 | stable |
+| fb|PD|london | 0.432 | 669 | 0.500 | -3.6 | 0.066* | 0.80 | 0.412 | 0.436 | stable |
+| fb|PD|pre | 0.440 | 373 | 0.501 | -2.1 | 0.918 | 0.90 | 0.411 | 0.437 | stable |
+| fb|PD|nyam | 0.468 | 1072 | 0.500 | -2.0 | 0.934 | 0.60 | 0.476 | 0.485 | stable |
+| fb|PD|nypm | 0.457 | 564 | 0.497 | -1.8 | 0.984 | 0.80 | 0.466 | 0.432 | stable |
+| fb|PD|close | 0.458 | 391 | 0.498 | -1.7 | 0.984 | 0.50 | 0.495 | 0.473 | unstable |
+| fb|ON|nyam | 0.488 | 1563 | 0.500 | -0.9 | 1.000 | 0.60 | 0.448 | 0.520 | stable |
+| fb|ON|nypm | 0.493 | 755 | 0.497 | -0.2 | 1.000 | 0.50 | 0.489 | 0.513 | unstable |
+| fb|ON|close | 0.455 | 527 | 0.498 | -2.0 | 0.934 | 0.70 | 0.475 | 0.423 | stable |
+| fb|IB|nyam | 0.455 | 797 | 0.499 | -2.6 | 0.541 | 0.80 | 0.431 | 0.466 | stable |
+| fb|IB|nypm | 0.456 | 927 | 0.498 | -2.3 | 0.803 | 0.90 | 0.436 | 0.468 | stable |
+| fb|IB|close | 0.451 | 657 | 0.502 | -2.9 | 0.262 | 0.90 | 0.400 | 0.460 | stable |
+
+### 8. Where the range forms
+RTH range increments by bin: 9:30 47.9%, 10:00 20.9%, 11:00 9.4%, 12:00 5.6%, 13:00 4.3%, 14:00 4.6%, 15:00 7.1%
+Label-day range increments by ET hour (percent of the day): 00h 1.0, 01h 1.3, 02h 2.1, 03h 3.2, 04h 2.9, 05h 2.2, 06h 1.9, 07h 2.2, 08h 4.1, 09h 20.6, 10h 11.9, 11h 6.1, 12h 3.7, 13h 3.0, 14h 3.1, 15h 5.1, 16h 1.7, 18h 11.9, 19h 3.3, 20h 3.5, 21h 2.4, 22h 1.5, 23h 1.1
+
+### 9. Room and liquidity (all years, raw-frame $, 1 lot)
+| session | ATR14(5m) $ | A=3xATR5 $ | RT cost $ | room(1 ATR5) | room(A) | median 5-min vol | 1.7% cap (contracts/5min) | lots for $1,200 at 3xATR5 stop |
+|--|--|--|--|--|--|--|--|--|
+| asia | 94 | 283 | 167 | 0.57 | 1.70 | 36 | 0.0 | 4.2 |
+| london | 100 | 299 | 167 | 0.60 | 1.80 | 109 | 0.7 | 4.0 |
+| pre | 128 | 385 | 167 | 0.77 | 2.31 | 394 | 2.7 | 3.1 |
+| nyam | 265 | 794 | 167 | 1.59 | 4.76 | 1790 | 10.3 | 1.5 |
+| nypm | 225 | 675 | 167 | 1.35 | 4.05 | 865 | 4.7 | 1.8 |
+| close | 210 | 631 | 167 | 1.26 | 3.79 | 872 | 5.0 | 1.9 |
+
+room(A) by year: asia: 2017:1.2 2018:1.3 2019:1.2 2020:1.6 2021:1.7 2022:1.6 2023:1.5 2024:2.6 2025:2.4 2026:2.5; london: 2017:1.2 2018:1.3 2019:1.2 2020:1.7 2021:1.9 2022:1.6 2023:1.6 2024:3.3 2025:2.9 2026:2.6; pre: 2017:1.3 2018:1.6 2019:1.5 2020:2.0 2021:2.4 2022:1.9 2023:2.3 2024:4.9 2025:4.0 2026:3.3; nyam: 2017:2.5 2018:3.2 2019:3.1 2020:4.0 2021:4.9 2022:4.9 2023:5.0 2024:8.2 2025:7.7 2026:6.9; nypm: 2017:2.3 2018:3.0 2019:2.9 2020:3.5 2021:4.0 2022:3.7 2023:3.9 2024:6.5 2025:5.9 2026:5.0; close: 2017:2.3 2018:3.0 2019:2.7 2020:3.5 2021:3.7 2022:3.4 2023:3.6 2024:6.4 2025:5.3 2026:4.4
+
+### 11. Map rows that become book candidates under the FROZEN rule (p_family <= .05 AND room_A(session) > 2.0)
+| map row | direction | stat | p_family | room_A | year sign share | stability | 1.7% cap >= 1 contract/5min in session |
+|--|--|--|--|--|--|--|--|
+| AC|pre|5m | reversion | -0.057 | 0.003 | 2.3 | 0.90 |  | yes |
+| AC|nyam|5m | reversion | -0.015 | 0.030 | 4.8 | 0.90 |  | yes |
+| AC|nypm|5m | reversion | -0.049 | 0.003 | 4.0 | 1.00 |  | yes |
+| AC|close|5m | reversion | -0.027 | 0.003 | 3.8 | 0.90 |  | yes |
+| AC|nypm|15m | reversion | -0.021 | 0.030 | 4.0 | 0.50 |  | yes |
+| vr|pre|5 | reversion | +0.826 | 0.016 | 2.3 | 1.00 | stable | yes |
+| vr|pre|15 | reversion | +0.754 | 0.016 | 2.3 | 1.00 | stable | yes |
+| hurst|pre | reversion | +0.459 | 0.016 | 2.3 | 1.00 | stable | yes |
+| vr|nyam|5 | reversion | +0.950 | 0.016 | 4.8 | 1.00 | stable | yes |
+| vr|nyam|15 | reversion | +0.927 | 0.016 | 4.8 | 1.00 | stable | yes |
+| vr|nyam|30 | reversion | +0.922 | 0.016 | 4.8 | 1.00 | stable | yes |
+| vr|nypm|5 | reversion | +0.862 | 0.016 | 4.0 | 1.00 | stable | yes |
+| vr|nypm|15 | reversion | +0.805 | 0.016 | 4.0 | 1.00 | stable | yes |
+| vr|nypm|30 | reversion | +0.787 | 0.016 | 4.0 | 1.00 | stable | yes |
+| vr|nypm|60 | reversion | +0.787 | 0.016 | 4.0 | 0.90 | stable | yes |
+| hurst|nypm | reversion | +0.481 | 0.016 | 4.0 | 0.90 | stable | yes |
+| vr|close|5 | reversion | +0.888 | 0.016 | 3.8 | 1.00 | stable | yes |
+| vr|close|15 | reversion | +0.855 | 0.016 | 3.8 | 0.90 | stable | yes |
+| vr|close|30 | reversion | +0.859 | 0.016 | 3.8 | 0.80 | stable | yes |
+| vr|rth|5 | reversion | +0.921 | 0.016 | 4.8 | 1.00 | stable | yes |
+| vr|rth|15 | reversion | +0.885 | 0.016 | 4.8 | 1.00 | stable | yes |
+| vr|rth|30 | reversion | +0.871 | 0.016 | 4.8 | 1.00 | stable | yes |
+| vr|rth|60 | reversion | +0.862 | 0.016 | 4.8 | 1.00 | stable | yes |
+| vr|rth|120 | reversion | +0.855 | 0.016 | 4.8 | 0.90 | stable | yes |
+| hurst|rth | reversion | +0.488 | 0.016 | 4.8 | 0.90 | stable | yes |
+
+### RV extra: spread half-life (AR(1) of x minus its 120-min mean, 5-min sampling) and stability
+| session | phi(5 min) all years | half-life min | years with half-life < 60 min / years |
+|--|--|--|--|
+| asia | 0.904 | 34 | 10 / 10 |
+| london | 0.920 | 41 | 10 / 10 |
+| nyam | 0.935 | 51 | 7 / 10 |
+| nypm | 0.927 | 46 | 8 / 10 |
+| close | 0.930 | 48 | 6 / 9 |
+
+RV note: spread = causal beta-hedged pseudo-price of the two legs (beta from the previous 20 label days of 5-min returns; prereg sha fa5c5c13.. + addendum 1); sessions analysed have both legs printing in >= 90% of minutes: asia, london, pre, nyam, nypm, close. Round-number rows are meaningless for a spread and not used. Cost/room are for the integer hedge unit (a:b contracts) with BOTH legs paid (PROXY-STD fees, 1 tick in + 2 ticks stop slip per leg). Base: 1-min .v.0 percent frame, data end 2026-10-16.
+
+## RV ESYM - relative-value spread character map (CHAR-B via char_lib, 2026-11-06T01:14Z)
+Base: RV_ESYM CME front-month (.v.0) 1-min bars from 2013-01 to 2026-10, percent frame (multiplicative roll-adjusted), 1-min approximation (no tick path), 3425 usable label days; ET clock, sessions asia 18:00-02:00 / london 02:00-08:30 / pre 08:30-09:30 / nyam 09:30-12:00 / nypm 12:00-15:00 / close 15:00-16:55. Nulls: within-year shuffled-day (AC B=300; structure B=100 worlds; levels recomputed on the shuffled path; round numbers 60 random grid phases); p_family = Westfall-Young max-|z| over the block (AC family 153 cells, structure family 92 cells). `**` p_family<=.05, `*` <=.10. Prereg sha256 980bedf6bad3f1669de9efb93831fa4622d88577c892d9359b7f57ba93c9dbcf. Descriptive only: no PASS, nothing live.
+
+### Plain paragraph
+At 1 minute every session has negative autocorrelation (-0.331 to -0.064; bid-ask bounce / last-print noise, not a tradable edge by itself). asia: reverts at 5/15/30/60 min (-0.224, -0.126, -0.085, -0.040). london: reverts at 5/15/30 min (-0.126, -0.060, -0.037). pre: reverts at 5/15 min (-0.114, -0.054). nypm: reverts at 5/15 min (-0.078, -0.029). close: reverts at 5/15 min (-0.070, -0.035). Day types (RTH): 50% trend days (efficiency ratio >= .5; shuffled null 49%, p_fam 1.000), 22% range days (<.25; null 24%, p_fam 0.967); the IB (09:30-10:30) is extended on one side only on 77% of days and on both on 16%, and a one-sided extension closes beyond the IB edge 60% of the time (null 65%). RTH variance ratio at 30 min 0.741 (shuffled null 0.998, p_fam 0.016); Hurst 0.479. The RTH range forms 9:30 (53%), 10:00 (20%), 11:00 (9%) of the range increments. Level reactions that beat the family null: PD|asia bounces 52% of touches (more than the shuffled null 40%); PD|london bounces 49% of touches (more than the shuffled null 41%); ON|nypm bounces 47% of touches (more than the shuffled null 43%); VW1|close bounces 44% of touches (more than the shuffled null 41%); VW2|nypm bounces 49% of touches (more than the shuffled null 43%); VW2|close bounces 46% of touches (more than the shuffled null 40%). Failed-break follow-through beating the null: PD|asia 33% (null 50%); PD|london 36% (null 50%); PD|pre 42% (null 50%); PD|nypm 41% (null 50%); PD|close 42% (null 50%); ON|nypm 43% (null 50%); ON|close 41% (null 50%); IB|nyam 42% (null 50%); IB|nypm 38% (null 50%); IB|close 40% (null 50%). Room (median 3xATR14(5m) $ / round-trip cost $62 per lot): asia 1.8x, london 2.0x, pre 2.5x, nyam 4.3x, nypm 3.5x, close nanx (1xATR5 room 1.4x in nyam, 0.6x in asia).
+
+### 1. Autocorrelation of h-min returns (corr(past h, next h), both inside the session), pooled; cell = corr (pre-2023 mean | 2023+ mean) p_family
+| session | 1 min | 5 min | 15 min | 30 min | 60 min | 120 min |
+|--|--|--|--|--|--|--|
+| asia | -0.331 (-0.356|-0.230) p0.003** ys1.00 | -0.224 (-0.283|-0.111) p0.003** ys1.00 | -0.126 (-0.201|-0.054) p0.003** ys1.00 | -0.085 (-0.159|-0.035) p0.003** ys0.86 | -0.040 (-0.110|+0.001) p0.003** ys0.71 | -0.017 (-0.076|-0.003) p1.000 ys0.79 |
+| london | -0.277 (-0.325|-0.134) p0.003** ys1.00 | -0.126 (-0.194|-0.043) p0.003** ys1.00 | -0.060 (-0.120|-0.017) p0.003** ys1.00 | -0.037 (-0.092|-0.005) p0.003** ys0.79 | -0.017 (-0.065|+0.012) p0.963 ys0.71 | -0.022 (-0.064|-0.021) p1.000 ys0.79 |
+| pre | -0.198 (-0.261|-0.091) p0.003** ys1.00 | -0.114 (-0.160|-0.073) p0.003** ys1.00 | -0.054 (-0.083|-0.042) p0.003** ys0.93 | -0.067 (-0.098|-0.023) p0.063* ys0.86 | - | - |
+| nyam | -0.064 (-0.134|-0.013) p0.003** ys0.86 | -0.010 (-0.040|+0.006) p0.628 ys0.71 | +0.004 (-0.014|+0.015) p1.000 ys0.43 | +0.021 (+0.029|+0.013) p0.947 ys0.93 | +0.002 (+0.018|-0.008) p1.000 ys0.57 | - |
+| nypm | -0.185 (-0.240|-0.080) p0.003** ys1.00 | -0.078 (-0.119|-0.043) p0.003** ys1.00 | -0.029 (-0.060|+0.005) p0.003** ys0.71 | +0.001 (+0.000|+0.007) p1.000 ys0.50 | +0.022 (+0.026|+0.018) p1.000 ys0.57 | - |
+| close | -0.170 (-0.228|-0.061) p0.003** ys1.00 | -0.070 (-0.108|-0.034) p0.003** ys1.00 | -0.035 (-0.064|-0.016) p0.003** ys0.86 | +0.009 (-0.023|+0.019) p1.000 ys0.36 | - | - |
+
+Hour cells (h >= 5) beating the family null, top 14 by |z| (hour = ET hour of the decision bar):
+| h | session | hour ET | corr | z | p_family | year sign share | pre-2023 | 2023+ |
+|--|--|--|--|--|--|--|--|--|
+| 5 | asia | 23 | -0.255 | -80.5 | 0.003 | 1.00 | -0.294 | -0.153 |
+| 5 | asia | 00 | -0.240 | -75.3 | 0.003 | 1.00 | -0.289 | -0.126 |
+| 5 | asia | 22 | -0.241 | -72.2 | 0.003 | 1.00 | -0.288 | -0.145 |
+| 5 | asia | 19 | -0.232 | -66.7 | 0.003 | 1.00 | -0.301 | -0.106 |
+| 5 | asia | 21 | -0.221 | -64.8 | 0.003 | 1.00 | -0.280 | -0.113 |
+| 5 | asia | 01 | -0.230 | -63.3 | 0.003 | 1.00 | -0.290 | -0.097 |
+| 5 | london | 02 | -0.200 | -58.5 | 0.003 | 1.00 | -0.256 | -0.090 |
+| 5 | asia | 20 | -0.208 | -56.5 | 0.003 | 1.00 | -0.289 | -0.101 |
+| 5 | asia | 18 | -0.193 | -54.0 | 0.003 | 1.00 | -0.263 | -0.095 |
+| 5 | london | 03 | -0.153 | -44.5 | 0.003 | 1.00 | -0.222 | -0.065 |
+| 5 | london | 05 | -0.159 | -43.2 | 0.003 | 1.00 | -0.237 | -0.057 |
+| 5 | london | 04 | -0.109 | -26.5 | 0.003 | 0.86 | -0.201 | -0.022 |
+| 5 | london | 07 | -0.095 | -24.8 | 0.003 | 1.00 | -0.141 | -0.045 |
+| 15 | asia | 23 | -0.143 | -23.1 | 0.003 | 1.00 | -0.200 | -0.089 |
+
+### 2. Variance ratio VR(q) and Hurst (1.0 = random walk; <1 reverting; edge-bias corrected), cell = value (null) p_family
+| session | VR5 | VR15 | VR30 | VR60 | VR120 | Hurst |
+|--|--|--|--|--|--|--|
+| asia | 0.423 (0.998) p0.016** | 0.290 (0.998) p0.016** | 0.250 (0.998) p0.016** | 0.228 (0.999) p0.016** | 0.221 (0.999) p0.016** | 0.398 (0.500) p0.016** |
+| london | 0.536 (0.998) p0.016** | 0.444 (0.998) p0.016** | 0.419 (0.998) p0.016** | 0.408 (0.998) p0.016** | 0.399 (0.998) p0.016** | 0.454 (0.500) p0.016** |
+| pre | 0.637 (0.998) p0.016** | 0.518 (0.996) p0.016** | - | - | - | 0.406 (0.499) p0.016** |
+| nyam | 0.897 (1.000) p0.016** | 0.874 (0.999) p0.016** | 0.864 (0.998) p0.016** | - | - | 0.489 (0.500) p0.016** |
+| nypm | 0.689 (0.999) p0.016** | 0.617 (0.998) p0.016** | 0.597 (0.998) p0.016** | 0.599 (0.998) p0.016** | - | 0.471 (0.500) p0.016** |
+| close | 0.711 (0.999) p0.016** | 0.645 (0.998) p0.016** | 0.634 (0.997) p0.016** | - | - | 0.467 (0.500) p0.016** |
+| rth | 0.814 (0.999) p0.016** | 0.763 (0.998) p0.016** | 0.741 (0.998) p0.016** | 0.727 (0.998) p0.016** | 0.713 (0.997) p0.016** | 0.479 (0.500) p0.016** |
+
+### 3. Day types (ex-post labels of the RTH day)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| day|trend | 0.505 | 3425 | 0.494 | +1.3 | 1.000 | 0.64 | 0.499 | 0.518 | stable |
+| day|range | 0.225 | 3425 | 0.240 | -2.0 | 0.967 | 0.64 | 0.230 | 0.210 | stable |
+| day|er | 0.511 | 3425 | 0.491 | +4.5 | 0.016** | 0.79 | 0.506 | 0.524 | stable |
+| day|ib_none | 0.072 | 3425 | 0.041 | +8.6 | 0.016** | 0.86 | 0.063 | 0.096 | stable |
+| day|ib_one | 0.765 | 3425 | 0.724 | +5.5 | 0.016** | 0.93 | 0.754 | 0.792 | stable |
+| day|ib_both | 0.163 | 3425 | 0.235 | -10.6 | 0.016** | 0.93 | 0.183 | 0.112 | stable |
+| day|ib_one_closebeyond | 0.605 | 2621 | 0.653 | -5.3 | 0.016** | 0.86 | 0.607 | 0.596 | stable |
+
+### 4. 1A -> 2A continuation vs give-back-half from the session open (A = 3 x ATR14(5m)); value = P(continue | resolved)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| cont|asia | 0.277 | 1355 | 0.406 | -16.2 | 0.016** | 0.86 | 0.166 | 0.376 | stable |
+| cont|london | 0.272 | 3115 | 0.422 | -17.9 | 0.016** | 1.00 | 0.213 | 0.378 | stable |
+| cont|pre | 0.344 | 1216 | 0.414 | -6.9 | 0.016** | 0.79 | 0.247 | 0.416 | stable |
+| cont|nyam | 0.541 | 3290 | 0.493 | +6.6 | 0.016** | 0.79 | 0.517 | 0.596 | stable |
+| cont|nypm | 0.308 | 1399 | 0.366 | -6.3 | 0.016** | 1.00 | 0.291 | 0.347 | stable |
+| cont|close | 0.307 | 1444 | 0.404 | -9.3 | 0.016** | 0.93 | 0.263 | 0.372 | stable |
+| cont|rth | 0.535 | 3390 | 0.491 | +6.2 | 0.016** | 0.79 | 0.512 | 0.594 | stable |
+
+### 5. Gap fill by size bucket (b0 .05-.10, b1 .10-.25, b2 .25-.50, b3 >.50 of the 20-day mean RTH range); day = filled during RTH, h1 = within 60 min
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| gap|b0|day | 0.843 | 381 | 0.852 | -0.4 | 1.000 | 0.64 | 0.848 | 0.816 | stable |
+| gap|b0|h1 | 0.764 | 381 | 0.756 | +0.3 | 1.000 | 0.50 | 0.768 | 0.749 | unstable |
+| gap|b1|day | 0.756 | 980 | 0.744 | +0.6 | 1.000 | 0.43 | 0.751 | 0.773 | unstable |
+| gap|b1|h1 | 0.631 | 980 | 0.590 | +1.7 | 0.984 | 0.79 | 0.619 | 0.664 | stable |
+| gap|b2|day | 0.585 | 1001 | 0.543 | +2.4 | 0.738 | 0.86 | 0.582 | 0.602 | stable |
+| gap|b2|h1 | 0.426 | 1001 | 0.323 | +6.4 | 0.016** | 1.00 | 0.411 | 0.473 | stable |
+| gap|b3|day | 0.287 | 694 | 0.209 | +8.6 | 0.016** | 1.00 | 0.306 | 0.261 | stable |
+| gap|b3|h1 | 0.161 | 694 | 0.061 | +17.2 | 0.016** | 1.00 | 0.177 | 0.145 | stable |
+
+### 6. Level reaction: first touch -> bounce (0.5A reverse) vs break-through (0.5A beyond) within 60 min; value = P(bounce)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| rx|PD|asia | 0.524 | 934 | 0.401 | +12.7 | 0.016** | 0.86 | 0.564 | 0.478 | stable |
+| rx|PD|london | 0.491 | 1537 | 0.413 | +7.1 | 0.016** | 1.00 | 0.514 | 0.439 | stable |
+| rx|PD|pre | 0.455 | 943 | 0.405 | +2.9 | 0.295 | 0.71 | 0.477 | 0.392 | stable |
+| rx|PD|nyam | 0.369 | 2316 | 0.374 | -0.4 | 1.000 | 0.50 | 0.383 | 0.335 | REGIME(2023+ only) |
+| rx|PD|nypm | 0.434 | 1095 | 0.430 | +0.2 | 1.000 | 0.43 | 0.442 | 0.395 | unstable |
+| rx|PD|close | 0.450 | 826 | 0.402 | +3.3 | 0.098* | 0.71 | 0.441 | 0.464 | stable |
+| rx|ON|nyam | 0.350 | 3641 | 0.359 | -0.9 | 1.000 | 0.50 | 0.359 | 0.331 | unstable |
+| rx|ON|nypm | 0.472 | 1379 | 0.428 | +3.8 | 0.016** | 0.79 | 0.484 | 0.432 | stable |
+| rx|ON|close | 0.440 | 1016 | 0.402 | +2.8 | 0.311 | 0.79 | 0.434 | 0.439 | stable |
+| rx|IB|nyam | 0.444 | 2426 | 0.424 | +2.1 | 0.918 | 0.64 | 0.456 | 0.418 | stable |
+| rx|IB|nypm | 0.442 | 1881 | 0.427 | +1.5 | 1.000 | 0.57 | 0.450 | 0.420 | unstable |
+| rx|IB|close | 0.440 | 1299 | 0.405 | +3.5 | 0.082* | 0.64 | 0.457 | 0.390 | stable |
+| rx|VW1|nyam | 0.435 | 4344 | 0.418 | +2.5 | 0.656 | 0.71 | 0.431 | 0.444 | stable |
+| rx|VW1|nypm | 0.456 | 3149 | 0.428 | +3.3 | 0.098* | 0.71 | 0.471 | 0.409 | stable |
+| rx|VW1|close | 0.445 | 2364 | 0.407 | +3.6 | 0.049** | 0.71 | 0.458 | 0.401 | stable |
+| rx|VW2|nyam | 0.439 | 2613 | 0.424 | +2.0 | 0.967 | 0.64 | 0.441 | 0.443 | stable |
+| rx|VW2|nypm | 0.489 | 1572 | 0.430 | +6.1 | 0.016** | 0.86 | 0.502 | 0.447 | stable |
+| rx|VW2|close | 0.461 | 1110 | 0.403 | +4.7 | 0.016** | 0.79 | 0.473 | 0.426 | stable |
+| rx|RN|asia | 0.464 | 7394 | 0.464 | -0.0 | 1.000 | 0.43 | 0.476 | 0.443 | REGIME(2023+ only) |
+| rx|RN|london | 0.456 | 8606 | 0.456 | +0.2 | 1.000 | 0.57 | 0.468 | 0.434 | unstable |
+| rx|RN|pre | 0.443 | 1972 | 0.442 | +0.2 | 1.000 | 0.50 | 0.450 | 0.423 | unstable |
+| rx|RN|nyam | 0.408 | 6811 | 0.407 | +0.1 | 1.000 | 0.43 | 0.418 | 0.394 | unstable |
+| rx|RN|nypm | 0.450 | 4770 | 0.448 | +0.7 | 1.000 | 0.50 | 0.457 | 0.437 | unstable |
+| rx|RN|close | 0.423 | 2249 | 0.428 | -1.3 | 1.000 | 0.57 | 0.435 | 0.404 | REGIME(2023+ only) |
+
+### 7. Failed break (close .25A beyond, back inside within 10 bars): fade follow-through P(0.5A back before 0.5A out)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| fb|PD|asia | 0.327 | 682 | 0.499 | -15.2 | 0.016** | 1.00 | 0.283 | 0.381 | stable |
+| fb|PD|london | 0.363 | 1195 | 0.500 | -12.2 | 0.016** | 1.00 | 0.317 | 0.446 | stable |
+| fb|PD|pre | 0.421 | 648 | 0.501 | -3.8 | 0.016** | 0.79 | 0.438 | 0.397 | stable |
+| fb|PD|nyam | 0.481 | 1735 | 0.499 | -1.2 | 1.000 | 0.79 | 0.482 | 0.478 | stable |
+| fb|PD|nypm | 0.407 | 805 | 0.503 | -5.9 | 0.016** | 0.86 | 0.404 | 0.436 | stable |
+| fb|PD|close | 0.421 | 579 | 0.499 | -4.0 | 0.016** | 0.86 | 0.401 | 0.487 | stable |
+| fb|ON|nyam | 0.491 | 2288 | 0.499 | -0.6 | 1.000 | 0.64 | 0.477 | 0.520 | stable |
+| fb|ON|nypm | 0.433 | 1085 | 0.500 | -4.2 | 0.016** | 0.79 | 0.429 | 0.450 | stable |
+| fb|ON|close | 0.409 | 740 | 0.500 | -4.8 | 0.016** | 0.93 | 0.379 | 0.503 | stable |
+| fb|IB|nyam | 0.424 | 1073 | 0.498 | -5.1 | 0.016** | 0.79 | 0.401 | 0.488 | stable |
+| fb|IB|nypm | 0.384 | 1361 | 0.501 | -10.2 | 0.016** | 1.00 | 0.361 | 0.450 | stable |
+| fb|IB|close | 0.403 | 925 | 0.501 | -6.2 | 0.016** | 0.93 | 0.378 | 0.474 | stable |
+
+### 8. Where the range forms
+RTH range increments by bin: 9:30 53.3%, 10:00 20.2%, 11:00 8.7%, 12:00 5.5%, 13:00 4.1%, 14:00 3.7%, 15:00 4.4%
+Label-day range increments by ET hour (percent of the day): 00h 1.1, 01h 1.4, 02h 2.1, 03h 2.9, 04h 3.2, 05h 2.2, 06h 2.3, 07h 3.1, 08h 4.4, 09h 20.3, 10h 10.9, 11h 5.3, 12h 3.4, 13h 2.7, 14h 2.5, 15h 2.9, 16h 2.4, 18h 14.8, 19h 3.3, 20h 3.4, 21h 2.4, 22h 1.7, 23h 1.3
+
+### 9. Room and liquidity (all years, raw-frame $, 1 lot)
+| session | ATR14(5m) $ | A=3xATR5 $ | RT cost $ | room(1 ATR5) | room(A) | median 5-min vol | 1.7% cap (contracts/5min) | lots for $1,200 at 3xATR5 stop |
+|--|--|--|--|--|--|--|--|--|
+| asia | 38 | 113 | 62 | 0.61 | 1.82 | 64 | 0.0 | 10.6 |
+| london | 41 | 123 | 62 | 0.66 | 1.97 | 189 | 1.0 | 9.8 |
+| pre | 52 | 156 | 62 | 0.84 | 2.51 | 413 | 4.0 | 7.7 |
+| nyam | 90 | 270 | 62 | 1.45 | 4.35 | 1575 | 17.0 | 4.4 |
+| nypm | 73 | 219 | 62 | 1.17 | 3.52 | 734 | 7.0 | 5.5 |
+| close | nan | nan | nan | nan | nan | nan | nan | nan |
+
+room(A) by year: asia: 2013:0.8 2014:1.3 2015:1.1 2016:0.7 2017:0.8 2018:1.1 2019:1.0 2020:1.6 2021:1.6 2022:1.4 2023:1.1 2024:3.4 2025:1.8 2026:4.8; london: 2013:0.8 2014:1.1 2015:1.0 2016:0.7 2017:0.9 2018:1.1 2019:1.0 2020:1.6 2021:1.7 2022:1.5 2023:1.3 2024:3.9 2025:2.0 2026:4.6; pre: 2013:1.0 2014:1.5 2015:1.1 2016:0.8 2017:1.0 2018:1.3 2019:1.1 2020:1.8 2021:2.2 2022:1.8 2023:1.8 2024:5.3 2025:2.6 2026:5.5; nyam: 2013:1.2 2014:2.0 2015:1.6 2016:1.1 2017:1.4 2018:2.1 2019:1.8 2020:3.2 2021:4.3 2022:3.8 2023:3.7 2024:9.6 2025:4.9 2026:11.8; nypm: 2013:1.1 2014:1.7 2015:1.3 2016:1.0 2017:1.2 2018:1.8 2019:1.5 2020:2.5 2021:3.3 2022:2.6 2023:2.5 2024:7.4 2025:3.5 2026:8.8; close: 
+
+### 11. Map rows that become book candidates under the FROZEN rule (p_family <= .05 AND room_A(session) > 2.0)
+| map row | direction | stat | p_family | room_A | year sign share | stability | 1.7% cap >= 1 contract/5min in session |
+|--|--|--|--|--|--|--|--|
+| AC|pre|5m | reversion | -0.114 | 0.003 | 2.5 | 1.00 |  | yes |
+| AC|nypm|5m | reversion | -0.078 | 0.003 | 3.5 | 1.00 |  | yes |
+| AC|pre|15m | reversion | -0.054 | 0.003 | 2.5 | 0.93 |  | yes |
+| AC|nypm|15m | reversion | -0.029 | 0.003 | 3.5 | 0.71 |  | yes |
+| fb|PD|pre | level-break | +0.421 | 0.016 | 2.5 | 0.79 | stable | yes |
+| fb|PD|nypm | level-break | +0.407 | 0.016 | 3.5 | 0.86 | stable | yes |
+| fb|PD|close | level-break | +0.421 | 0.016 | nan | 0.86 | stable | NO (illiquid) |
+| rx|ON|nypm | level-bounce | +0.472 | 0.016 | 3.5 | 0.79 | stable | yes |
+| fb|ON|nypm | level-break | +0.433 | 0.016 | 3.5 | 0.79 | stable | yes |
+| fb|ON|close | level-break | +0.409 | 0.016 | nan | 0.93 | stable | NO (illiquid) |
+| fb|IB|nyam | level-break | +0.424 | 0.016 | 4.3 | 0.79 | stable | yes |
+| fb|IB|nypm | level-break | +0.384 | 0.016 | 3.5 | 1.00 | stable | yes |
+| fb|IB|close | level-break | +0.403 | 0.016 | nan | 0.93 | stable | NO (illiquid) |
+| rx|VW1|close | level-bounce | +0.445 | 0.049 | nan | 0.71 | stable | NO (illiquid) |
+| rx|VW2|nypm | level-bounce | +0.489 | 0.016 | 3.5 | 0.86 | stable | yes |
+| rx|VW2|close | level-bounce | +0.461 | 0.016 | nan | 0.79 | stable | NO (illiquid) |
+| gap|b2|h1 | level-bounce | +0.426 | 0.016 | 4.3 | 1.00 | stable | yes |
+| gap|b3|day | level-bounce | +0.287 | 0.016 | 4.3 | 1.00 | stable | yes |
+| gap|b3|h1 | level-bounce | +0.161 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|pre|5 | reversion | +0.637 | 0.016 | 2.5 | 1.00 | stable | yes |
+| vr|pre|15 | reversion | +0.518 | 0.016 | 2.5 | 1.00 | stable | yes |
+| hurst|pre | reversion | +0.406 | 0.016 | 2.5 | 1.00 | stable | yes |
+| vr|nyam|5 | reversion | +0.897 | 0.016 | 4.3 | 0.93 | stable | yes |
+| vr|nyam|15 | reversion | +0.874 | 0.016 | 4.3 | 0.86 | stable | yes |
+| vr|nyam|30 | reversion | +0.864 | 0.016 | 4.3 | 0.79 | stable | yes |
+| hurst|nyam | reversion | +0.489 | 0.016 | 4.3 | 0.64 | stable | yes |
+| vr|nypm|5 | reversion | +0.689 | 0.016 | 3.5 | 1.00 | stable | yes |
+| vr|nypm|15 | reversion | +0.617 | 0.016 | 3.5 | 1.00 | stable | yes |
+| vr|nypm|30 | reversion | +0.597 | 0.016 | 3.5 | 1.00 | stable | yes |
+| vr|nypm|60 | reversion | +0.599 | 0.016 | 3.5 | 1.00 | stable | yes |
+| hurst|nypm | reversion | +0.471 | 0.016 | 3.5 | 1.00 | stable | yes |
+| vr|close|5 | reversion | +0.711 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| vr|close|15 | reversion | +0.645 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| vr|close|30 | reversion | +0.634 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| hurst|close | reversion | +0.467 | 0.016 | nan | 0.93 | stable | NO (illiquid) |
+| vr|rth|5 | reversion | +0.814 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|rth|15 | reversion | +0.763 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|rth|30 | reversion | +0.741 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|rth|60 | reversion | +0.727 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|rth|120 | reversion | +0.713 | 0.016 | 4.3 | 0.93 | stable | yes |
+| hurst|rth | reversion | +0.479 | 0.016 | 4.3 | 0.93 | stable | yes |
+
+### RV extra: spread half-life (AR(1) of x minus its 120-min mean, 5-min sampling) and stability
+| session | phi(5 min) all years | half-life min | years with half-life < 60 min / years |
+|--|--|--|--|
+| asia | 0.884 | 28 | 13 / 14 |
+| london | 0.922 | 43 | 13 / 14 |
+| nyam | 0.938 | 54 | 13 / 14 |
+| nypm | 0.927 | 46 | 14 / 14 |
+
+RV note: spread = causal beta-hedged pseudo-price of the two legs (beta from the previous 20 label days of 5-min returns; prereg sha fa5c5c13.. + addendum 1); sessions analysed have both legs printing in >= 90% of minutes: asia, london, pre, nyam, nypm. Round-number rows are meaningless for a spread and not used. Cost/room are for the integer hedge unit (a:b contracts) with BOTH legs paid (PROXY-STD fees, 1 tick in + 2 ticks stop slip per leg). Base: 1-min .v.0 percent frame, data end 2026-10-16.
+
+## RV RTYYM - relative-value spread character map (CHAR-B via char_lib, 2026-11-06T01:13Z)
+Base: RV_RTYYM CME front-month (.v.0) 1-min bars from 2017-01 to 2026-10, percent frame (multiplicative roll-adjusted), 1-min approximation (no tick path), 2126 usable label days; ET clock, sessions asia 18:00-02:00 / london 02:00-08:30 / pre 08:30-09:30 / nyam 09:30-12:00 / nypm 12:00-15:00 / close 15:00-16:55. Nulls: within-year shuffled-day (AC B=300; structure B=100 worlds; levels recomputed on the shuffled path; round numbers 60 random grid phases); p_family = Westfall-Young max-|z| over the block (AC family 153 cells, structure family 92 cells). `**` p_family<=.05, `*` <=.10. Prereg sha256 980bedf6bad3f1669de9efb93831fa4622d88577c892d9359b7f57ba93c9dbcf. Descriptive only: no PASS, nothing live.
+
+### Plain paragraph
+At 1 minute every session has negative autocorrelation (-0.251 to -0.011; bid-ask bounce / last-print noise, not a tradable edge by itself). asia: reverts at 5/15/30/60 min (-0.155, -0.084, -0.064, -0.065). london: reverts at 5/15/30 min (-0.057, -0.037, -0.038). pre: reverts at 5 min (-0.060). nypm: reverts at 5 min (-0.033). close: reverts at 5/15/30 min (-0.043, -0.032, -0.062). Day types (RTH): 48% trend days (efficiency ratio >= .5; shuffled null 50%, p_fam 0.984), 26% range days (<.25; null 24%, p_fam 0.344); the IB (09:30-10:30) is extended on one side only on 77% of days and on both on 16%, and a one-sided extension closes beyond the IB edge 60% of the time (null 62%). RTH variance ratio at 30 min 0.915 (shuffled null 0.998, p_fam 0.016); Hurst 0.486. The RTH range forms 9:30 (53%), 10:00 (22%), 11:00 (8%) of the range increments. Level reactions that beat the family null: PD|asia bounces 48% of touches (more than the shuffled null 38%); PD|london bounces 46% of touches (more than the shuffled null 40%). Failed-break follow-through beating the null: PD|asia 41% (null 50%); PD|london 43% (null 50%). Room (median 3xATR14(5m) $ / round-trip cost $99 per lot): asia 2.0x, london 2.1x, pre 3.0x, nyam 7.1x, nypm 5.4x, close 4.6x (1xATR5 room 2.4x in nyam, 0.7x in asia).
+
+### 1. Autocorrelation of h-min returns (corr(past h, next h), both inside the session), pooled; cell = corr (pre-2023 mean | 2023+ mean) p_family
+| session | 1 min | 5 min | 15 min | 30 min | 60 min | 120 min |
+|--|--|--|--|--|--|--|
+| asia | -0.251 (-0.281|-0.200) p0.003** ys1.00 | -0.155 (-0.196|-0.110) p0.003** ys1.00 | -0.084 (-0.103|-0.063) p0.003** ys1.00 | -0.064 (-0.080|-0.055) p0.003** ys0.90 | -0.065 (-0.054|-0.073) p0.003** ys0.90 | -0.038 (-0.039|-0.027) p0.179 ys0.70 |
+| london | -0.155 (-0.214|-0.097) p0.003** ys1.00 | -0.057 (-0.100|-0.025) p0.003** ys1.00 | -0.037 (-0.054|-0.022) p0.003** ys1.00 | -0.038 (-0.066|-0.013) p0.003** ys0.90 | -0.021 (-0.046|+0.000) p0.980 ys0.70 | -0.022 (-0.078|+0.016) p1.000 ys0.70 |
+| pre | -0.061 (-0.095|-0.034) p0.003** ys1.00 | -0.060 (-0.063|-0.056) p0.003** ys0.90 | -0.036 (-0.062|-0.015) p0.186 ys0.80 | -0.082 (-0.111|-0.073) p0.213 ys1.00 | - | - |
+| nyam | -0.011 (-0.012|-0.025) p0.017** ys0.70 | -0.001 (-0.006|-0.009) p1.000 ys0.70 | -0.007 (-0.006|-0.012) p1.000 ys0.50 | +0.009 (-0.005|-0.008) p1.000 ys0.50 | -0.031 (-0.043|-0.035) p1.000 ys0.70 | - |
+| nypm | -0.050 (-0.041|-0.056) p0.003** ys1.00 | -0.033 (-0.028|-0.047) p0.003** ys1.00 | -0.022 (-0.015|-0.030) p0.063* ys0.80 | -0.019 (+0.024|-0.042) p0.997 ys0.70 | -0.005 (-0.013|+0.025) p1.000 ys0.30 | - |
+| close | -0.070 (-0.072|-0.053) p0.003** ys1.00 | -0.043 (-0.047|-0.035) p0.003** ys1.00 | -0.032 (-0.066|-0.017) p0.047** ys0.90 | -0.062 (-0.086|-0.047) p0.013** ys1.00 | - | - |
+
+Hour cells (h >= 5) beating the family null, top 14 by |z| (hour = ET hour of the decision bar):
+| h | session | hour ET | corr | z | p_family | year sign share | pre-2023 | 2023+ |
+|--|--|--|--|--|--|--|--|--|
+| 5 | asia | 23 | -0.182 | -42.4 | 0.003 | 1.00 | -0.223 | -0.141 |
+| 5 | asia | 01 | -0.191 | -41.7 | 0.003 | 1.00 | -0.228 | -0.138 |
+| 5 | asia | 22 | -0.174 | -39.5 | 0.003 | 1.00 | -0.199 | -0.121 |
+| 5 | asia | 00 | -0.156 | -36.5 | 0.003 | 1.00 | -0.189 | -0.129 |
+| 5 | asia | 18 | -0.164 | -31.4 | 0.003 | 1.00 | -0.193 | -0.129 |
+| 5 | asia | 19 | -0.144 | -30.3 | 0.003 | 1.00 | -0.197 | -0.084 |
+| 5 | asia | 21 | -0.143 | -30.3 | 0.003 | 1.00 | -0.200 | -0.091 |
+| 5 | london | 02 | -0.136 | -28.0 | 0.003 | 1.00 | -0.178 | -0.106 |
+| 5 | asia | 20 | -0.122 | -23.8 | 0.003 | 1.00 | -0.171 | -0.088 |
+| 5 | close | 16 | -0.088 | -15.4 | 0.003 | 1.00 | -0.104 | -0.065 |
+| 15 | asia | 23 | -0.124 | -14.9 | 0.003 | 1.00 | -0.157 | -0.079 |
+| 5 | london | 03 | -0.076 | -14.3 | 0.003 | 0.90 | -0.136 | -0.039 |
+| 15 | asia | 19 | -0.112 | -13.7 | 0.003 | 0.80 | -0.117 | -0.075 |
+| 5 | london | 05 | -0.061 | -12.4 | 0.003 | 0.90 | -0.117 | -0.016 |
+
+### 2. Variance ratio VR(q) and Hurst (1.0 = random walk; <1 reverting; edge-bias corrected), cell = value (null) p_family
+| session | VR5 | VR15 | VR30 | VR60 | VR120 | Hurst |
+|--|--|--|--|--|--|--|
+| asia | 0.552 (0.998) p0.016** | 0.431 (0.998) p0.016** | 0.394 (0.998) p0.016** | 0.370 (0.999) p0.016** | 0.348 (0.998) p0.016** | 0.429 (0.500) p0.016** |
+| london | 0.734 (0.999) p0.016** | 0.673 (0.999) p0.016** | 0.649 (0.999) p0.016** | 0.632 (0.999) p0.016** | 0.625 (0.998) p0.016** | 0.474 (0.500) p0.016** |
+| pre | 0.864 (1.000) p0.016** | 0.790 (1.000) p0.016** | - | - | - | 0.459 (0.500) p0.016** |
+| nyam | 0.983 (0.999) p0.016** | 0.975 (0.998) p0.148 | 0.959 (0.998) p0.049** | - | - | 0.493 (0.500) p0.787 |
+| nypm | 0.903 (0.999) p0.016** | 0.857 (0.998) p0.016** | 0.832 (0.997) p0.016** | 0.807 (0.997) p0.016** | - | 0.478 (0.499) p0.016** |
+| close | 0.868 (0.999) p0.016** | 0.813 (0.999) p0.016** | 0.788 (0.998) p0.016** | - | - | 0.473 (0.500) p0.016** |
+| rth | 0.959 (0.999) p0.016** | 0.937 (0.998) p0.016** | 0.915 (0.998) p0.016** | 0.901 (0.998) p0.016** | 0.874 (0.997) p0.016** | 0.486 (0.500) p0.016** |
+
+### 3. Day types (ex-post labels of the RTH day)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| day|trend | 0.479 | 2126 | 0.498 | -1.9 | 0.984 | 0.70 | 0.486 | 0.474 | stable |
+| day|range | 0.261 | 2126 | 0.238 | +2.7 | 0.344 | 0.80 | 0.223 | 0.281 | REGIME(2023+ only) |
+| day|er | 0.490 | 2126 | 0.493 | -0.6 | 1.000 | 0.60 | 0.492 | 0.489 | stable |
+| day|ib_none | 0.073 | 2126 | 0.059 | +2.9 | 0.279 | 0.50 | 0.050 | 0.102 | REGIME(2023+ only) |
+| day|ib_one | 0.767 | 2126 | 0.769 | -0.2 | 1.000 | 0.40 | 0.746 | 0.767 | unstable |
+| day|ib_both | 0.160 | 2126 | 0.172 | -1.5 | 1.000 | 0.60 | 0.203 | 0.131 | REGIME(2023+ only) |
+| day|ib_one_closebeyond | 0.600 | 1631 | 0.620 | -1.8 | 1.000 | 0.50 | 0.630 | 0.582 | REGIME(2023+ only) |
+
+### 4. 1A -> 2A continuation vs give-back-half from the session open (A = 3 x ATR14(5m)); value = P(continue | resolved)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| cont|asia | 0.268 | 675 | 0.403 | -13.3 | 0.016** | 1.00 | 0.198 | 0.299 | stable |
+| cont|london | 0.310 | 2116 | 0.448 | -12.8 | 0.016** | 1.00 | 0.293 | 0.344 | stable |
+| cont|pre | 0.409 | 1259 | 0.483 | -5.6 | 0.016** | 0.80 | 0.365 | 0.474 | stable |
+| cont|nyam | 0.582 | 2108 | 0.561 | +1.9 | 0.967 | 0.60 | 0.600 | 0.563 | stable |
+| cont|nypm | 0.307 | 973 | 0.356 | -3.5 | 0.049** | 0.80 | 0.348 | 0.282 | stable |
+| cont|close | 0.355 | 1079 | 0.407 | -3.9 | 0.033** | 1.00 | 0.352 | 0.364 | stable |
+| cont|rth | 0.582 | 2119 | 0.561 | +1.9 | 0.967 | 0.60 | 0.600 | 0.565 | stable |
+
+### 5. Gap fill by size bucket (b0 .05-.10, b1 .10-.25, b2 .25-.50, b3 >.50 of the 20-day mean RTH range); day = filled during RTH, h1 = within 60 min
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| gap|b0|day | 0.818 | 307 | 0.847 | -1.2 | 1.000 | 0.50 | 0.789 | 0.833 | unstable |
+| gap|b0|h1 | 0.730 | 307 | 0.768 | -1.3 | 1.000 | 0.70 | 0.705 | 0.764 | stable |
+| gap|b1|day | 0.751 | 674 | 0.743 | +0.4 | 1.000 | 0.50 | 0.751 | 0.734 | unstable |
+| gap|b1|h1 | 0.645 | 674 | 0.615 | +1.5 | 1.000 | 0.80 | 0.649 | 0.655 | stable |
+| gap|b2|day | 0.578 | 533 | 0.551 | +1.4 | 1.000 | 0.80 | 0.596 | 0.578 | stable |
+| gap|b2|h1 | 0.413 | 533 | 0.366 | +2.3 | 0.787 | 0.80 | 0.409 | 0.397 | stable |
+| gap|b3|day | 0.364 | 280 | 0.274 | +4.7 | 0.016** | 0.70 | 0.272 | 0.373 | REGIME(2023+ only) |
+| gap|b3|h1 | 0.189 | 280 | 0.115 | +5.3 | 0.016** | 0.70 | 0.194 | 0.180 | stable |
+
+### 6. Level reaction: first touch -> bounce (0.5A reverse) vs break-through (0.5A beyond) within 60 min; value = P(bounce)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| rx|PD|asia | 0.475 | 408 | 0.384 | +4.7 | 0.016** | 0.80 | 0.529 | 0.431 | stable |
+| rx|PD|london | 0.463 | 792 | 0.400 | +4.2 | 0.016** | 0.80 | 0.427 | 0.451 | stable |
+| rx|PD|pre | 0.401 | 544 | 0.367 | +1.7 | 1.000 | 0.60 | 0.410 | 0.366 | stable |
+| rx|PD|nyam | 0.336 | 1588 | 0.353 | -1.2 | 1.000 | 0.60 | 0.309 | 0.357 | stable |
+| rx|PD|nypm | 0.441 | 700 | 0.426 | +1.0 | 1.000 | 0.50 | 0.439 | 0.431 | unstable |
+| rx|PD|close | 0.431 | 478 | 0.401 | +1.5 | 1.000 | 0.60 | 0.393 | 0.428 | REGIME(2023+ only) |
+| rx|ON|nyam | 0.319 | 2551 | 0.324 | -0.5 | 1.000 | 0.70 | 0.303 | 0.349 | stable |
+| rx|ON|nypm | 0.405 | 912 | 0.423 | -1.2 | 1.000 | 0.80 | 0.361 | 0.437 | stable |
+| rx|ON|close | 0.411 | 577 | 0.400 | +0.6 | 1.000 | 0.80 | 0.394 | 0.435 | REGIME(2023+ only) |
+| rx|IB|nyam | 0.434 | 1558 | 0.420 | +1.3 | 1.000 | 0.90 | 0.445 | 0.426 | stable |
+| rx|IB|nypm | 0.442 | 1143 | 0.424 | +1.2 | 1.000 | 0.60 | 0.414 | 0.489 | REGIME(2023+ only) |
+| rx|IB|close | 0.444 | 710 | 0.401 | +2.4 | 0.705 | 0.90 | 0.465 | 0.451 | stable |
+| rx|VW1|nyam | 0.422 | 2767 | 0.405 | +2.1 | 0.934 | 0.70 | 0.425 | 0.426 | stable |
+| rx|VW1|nypm | 0.428 | 1818 | 0.423 | +0.6 | 1.000 | 0.50 | 0.408 | 0.430 | REGIME(2023+ only) |
+| rx|VW1|close | 0.433 | 1338 | 0.402 | +2.5 | 0.639 | 0.80 | 0.449 | 0.416 | stable |
+| rx|VW2|nyam | 0.430 | 1745 | 0.411 | +2.0 | 0.951 | 0.70 | 0.445 | 0.433 | stable |
+| rx|VW2|nypm | 0.458 | 896 | 0.425 | +2.2 | 0.820 | 0.70 | 0.445 | 0.472 | stable |
+| rx|VW2|close | 0.447 | 523 | 0.395 | +2.6 | 0.525 | 0.80 | 0.473 | 0.436 | stable |
+| rx|RN|asia | 0.452 | 4936 | 0.456 | -2.3 | 0.754 | 0.70 | 0.459 | 0.447 | REGIME(2023+ only) |
+| rx|RN|london | 0.439 | 6933 | 0.440 | -0.6 | 1.000 | 0.50 | 0.452 | 0.418 | REGIME(2023+ only) |
+| rx|RN|pre | 0.399 | 1615 | 0.414 | -2.7 | 0.344 | 0.90 | 0.399 | 0.391 | stable |
+| rx|RN|nyam | 0.395 | 7455 | 0.394 | +0.2 | 1.000 | 0.60 | 0.389 | 0.396 | REGIME(2023+ only) |
+| rx|RN|nypm | 0.439 | 4720 | 0.435 | +1.5 | 1.000 | 0.80 | 0.429 | 0.442 | REGIME(2023+ only) |
+| rx|RN|close | 0.418 | 2117 | 0.413 | +1.3 | 1.000 | 0.80 | 0.419 | 0.413 | stable |
+
+### 7. Failed break (close .25A beyond, back inside within 10 bars): fade follow-through P(0.5A back before 0.5A out)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| fb|PD|asia | 0.415 | 340 | 0.499 | -4.0 | 0.016** | 0.70 | 0.406 | 0.428 | stable |
+| fb|PD|london | 0.427 | 623 | 0.501 | -4.4 | 0.016** | 1.00 | 0.335 | 0.439 | stable |
+| fb|PD|pre | 0.457 | 385 | 0.498 | -1.7 | 1.000 | 0.80 | 0.411 | 0.457 | stable |
+| fb|PD|nyam | 0.509 | 1150 | 0.497 | +0.8 | 1.000 | 0.70 | 0.534 | 0.499 | stable |
+| fb|PD|nypm | 0.532 | 543 | 0.498 | +1.6 | 1.000 | 0.90 | 0.542 | 0.527 | stable |
+| fb|PD|close | 0.461 | 358 | 0.499 | -1.4 | 1.000 | 0.70 | 0.432 | 0.489 | stable |
+| fb|ON|nyam | 0.497 | 1742 | 0.499 | -0.2 | 1.000 | 0.50 | 0.495 | 0.520 | unstable |
+| fb|ON|nypm | 0.479 | 685 | 0.503 | -1.2 | 1.000 | 0.60 | 0.472 | 0.478 | stable |
+| fb|ON|close | 0.468 | 462 | 0.503 | -1.5 | 1.000 | 0.80 | 0.469 | 0.446 | stable |
+| fb|IB|nyam | 0.508 | 730 | 0.499 | +0.5 | 1.000 | 0.60 | 0.503 | 0.496 | stable |
+| fb|IB|nypm | 0.463 | 794 | 0.502 | -2.3 | 0.754 | 0.80 | 0.460 | 0.460 | stable |
+| fb|IB|close | 0.465 | 523 | 0.501 | -1.6 | 1.000 | 0.70 | 0.366 | 0.503 | stable |
+
+### 8. Where the range forms
+RTH range increments by bin: 9:30 53.2%, 10:00 21.7%, 11:00 8.5%, 12:00 5.0%, 13:00 3.5%, 14:00 3.5%, 15:00 4.6%
+Label-day range increments by ET hour (percent of the day): 00h 0.7, 01h 0.8, 02h 1.4, 03h 2.6, 04h 2.9, 05h 2.2, 06h 2.6, 07h 2.8, 08h 5.5, 09h 26.2, 10h 13.7, 11h 5.9, 12h 3.6, 13h 2.5, 14h 2.5, 15h 3.4, 16h 0.9, 18h 10.5, 19h 2.7, 20h 2.6, 21h 1.9, 22h 1.2, 23h 0.9
+
+### 9. Room and liquidity (all years, raw-frame $, 1 lot)
+| session | ATR14(5m) $ | A=3xATR5 $ | RT cost $ | room(1 ATR5) | room(A) | median 5-min vol | 1.7% cap (contracts/5min) | lots for $1,200 at 3xATR5 stop |
+|--|--|--|--|--|--|--|--|--|
+| asia | 66 | 199 | 99 | 0.67 | 2.01 | 29 | 0.0 | 6.0 |
+| london | 71 | 213 | 99 | 0.72 | 2.15 | 91 | 0.5 | 5.6 |
+| pre | 101 | 302 | 99 | 1.02 | 3.05 | 289 | 2.0 | 4.0 |
+| nyam | 236 | 707 | 99 | 2.37 | 7.12 | 1298 | 8.5 | 1.7 |
+| nypm | 178 | 535 | 99 | 1.80 | 5.39 | 605 | 3.5 | 2.2 |
+| close | 152 | 455 | 99 | 1.53 | 4.58 | 533 | 3.0 | 2.6 |
+
+room(A) by year: asia: 2017:1.1 2018:2.0 2019:1.9 2020:2.5 2021:4.9 2022:2.5 2023:1.6 2024:2.4 2025:2.5 2026:3.1; london: 2017:1.1 2018:1.8 2019:1.8 2020:2.5 2021:4.9 2022:2.4 2023:1.9 2024:3.4 2025:3.1 2026:3.4; pre: 2017:1.5 2018:2.3 2019:2.4 2020:3.3 2021:6.9 2022:3.1 2023:3.0 2024:5.4 2025:4.5 2026:4.7; nyam: 2017:4.0 2018:6.3 2019:6.6 2020:6.8 2021:14.2 2022:9.5 2023:7.7 2024:10.1 2025:8.7 2026:10.1; nypm: 2017:3.5 2018:5.5 2019:5.7 2020:5.5 2021:12.4 2022:7.0 2023:5.3 2024:6.8 2025:6.4 2026:7.2; close: 2017:3.3 2018:4.7 2019:4.9 2020:4.9 2021:10.7 2022:5.8 2023:4.2 2024:6.0 2025:5.5 2026:6.2
+
+### 11. Map rows that become book candidates under the FROZEN rule (p_family <= .05 AND room_A(session) > 2.0)
+| map row | direction | stat | p_family | room_A | year sign share | stability | 1.7% cap >= 1 contract/5min in session |
+|--|--|--|--|--|--|--|--|
+| AC|asia|5m | reversion | -0.155 | 0.003 | 2.0 | 1.00 |  | NO (illiquid) |
+| AC|london|5m | reversion | -0.057 | 0.003 | 2.1 | 1.00 |  | NO (illiquid) |
+| AC|pre|5m | reversion | -0.060 | 0.003 | 3.0 | 0.90 |  | yes |
+| AC|nypm|5m | reversion | -0.033 | 0.003 | 5.4 | 1.00 |  | yes |
+| AC|close|5m | reversion | -0.043 | 0.003 | 4.6 | 1.00 |  | yes |
+| AC|asia|15m | reversion | -0.084 | 0.003 | 2.0 | 1.00 |  | NO (illiquid) |
+| AC|london|15m | reversion | -0.037 | 0.003 | 2.1 | 1.00 |  | NO (illiquid) |
+| AC|close|15m | reversion | -0.032 | 0.047 | 4.6 | 0.90 |  | yes |
+| AC|asia|30m | reversion | -0.064 | 0.003 | 2.0 | 0.90 |  | NO (illiquid) |
+| AC|london|30m | reversion | -0.038 | 0.003 | 2.1 | 0.90 |  | NO (illiquid) |
+| AC|close|30m | reversion | -0.062 | 0.013 | 4.6 | 1.00 |  | yes |
+| AC|asia|60m | reversion | -0.065 | 0.003 | 2.0 | 0.90 |  | NO (illiquid) |
+| rx|PD|asia | level-bounce | +0.475 | 0.016 | 2.0 | 0.80 | stable | NO (illiquid) |
+| fb|PD|asia | level-break | +0.415 | 0.016 | 2.0 | 0.70 | stable | NO (illiquid) |
+| rx|PD|london | level-bounce | +0.463 | 0.016 | 2.1 | 0.80 | stable | NO (illiquid) |
+| fb|PD|london | level-break | +0.427 | 0.016 | 2.1 | 1.00 | stable | NO (illiquid) |
+| gap|b3|day | level-bounce | +0.364 | 0.016 | 7.1 | 0.70 | REGIME(2023+ only) | yes |
+| gap|b3|h1 | level-bounce | +0.189 | 0.016 | 7.1 | 0.70 | stable | yes |
+| vr|asia|5 | reversion | +0.552 | 0.016 | 2.0 | 1.00 | stable | NO (illiquid) |
+| vr|asia|15 | reversion | +0.431 | 0.016 | 2.0 | 1.00 | stable | NO (illiquid) |
+| vr|asia|30 | reversion | +0.394 | 0.016 | 2.0 | 1.00 | stable | NO (illiquid) |
+| vr|asia|60 | reversion | +0.370 | 0.016 | 2.0 | 1.00 | stable | NO (illiquid) |
+| vr|asia|120 | reversion | +0.348 | 0.016 | 2.0 | 1.00 | stable | NO (illiquid) |
+| hurst|asia | reversion | +0.429 | 0.016 | 2.0 | 1.00 | stable | NO (illiquid) |
+| vr|london|5 | reversion | +0.734 | 0.016 | 2.1 | 1.00 | stable | NO (illiquid) |
+| vr|london|15 | reversion | +0.673 | 0.016 | 2.1 | 1.00 | stable | NO (illiquid) |
+| vr|london|30 | reversion | +0.649 | 0.016 | 2.1 | 1.00 | stable | NO (illiquid) |
+| vr|london|60 | reversion | +0.632 | 0.016 | 2.1 | 1.00 | stable | NO (illiquid) |
+| vr|london|120 | reversion | +0.625 | 0.016 | 2.1 | 1.00 | stable | NO (illiquid) |
+| hurst|london | reversion | +0.474 | 0.016 | 2.1 | 0.90 | stable | NO (illiquid) |
+| vr|pre|5 | reversion | +0.864 | 0.016 | 3.0 | 0.90 | stable | yes |
+| vr|pre|15 | reversion | +0.790 | 0.016 | 3.0 | 0.80 | stable | yes |
+| hurst|pre | reversion | +0.459 | 0.016 | 3.0 | 0.80 | stable | yes |
+| vr|nyam|5 | reversion | +0.983 | 0.016 | 7.1 | 0.80 | stable | yes |
+| vr|nyam|30 | reversion | +0.959 | 0.049 | 7.1 | 0.80 | stable | yes |
+| vr|nypm|5 | reversion | +0.903 | 0.016 | 5.4 | 1.00 | stable | yes |
+| vr|nypm|15 | reversion | +0.857 | 0.016 | 5.4 | 1.00 | stable | yes |
+| vr|nypm|30 | reversion | +0.832 | 0.016 | 5.4 | 1.00 | stable | yes |
+| vr|nypm|60 | reversion | +0.807 | 0.016 | 5.4 | 0.90 | stable | yes |
+| hurst|nypm | reversion | +0.478 | 0.016 | 5.4 | 0.90 | stable | yes |
+| vr|close|5 | reversion | +0.868 | 0.016 | 4.6 | 1.00 | stable | yes |
+| vr|close|15 | reversion | +0.813 | 0.016 | 4.6 | 1.00 | stable | yes |
+| vr|close|30 | reversion | +0.788 | 0.016 | 4.6 | 1.00 | stable | yes |
+| hurst|close | reversion | +0.473 | 0.016 | 4.6 | 1.00 | stable | yes |
+| vr|rth|5 | reversion | +0.959 | 0.016 | 7.1 | 0.90 | stable | yes |
+| vr|rth|15 | reversion | +0.937 | 0.016 | 7.1 | 0.90 | stable | yes |
+| vr|rth|30 | reversion | +0.915 | 0.016 | 7.1 | 1.00 | stable | yes |
+| vr|rth|60 | reversion | +0.901 | 0.016 | 7.1 | 1.00 | stable | yes |
+| vr|rth|120 | reversion | +0.874 | 0.016 | 7.1 | 1.00 | stable | yes |
+| hurst|rth | reversion | +0.486 | 0.016 | 7.1 | 0.80 | stable | yes |
+
+### RV extra: spread half-life (AR(1) of x minus its 120-min mean, 5-min sampling) and stability
+| session | phi(5 min) all years | half-life min | years with half-life < 60 min / years |
+|--|--|--|--|
+| asia | 0.899 | 33 | 10 / 10 |
+| london | 0.929 | 47 | 10 / 10 |
+| nyam | 0.934 | 51 | 10 / 10 |
+| nypm | 0.926 | 45 | 10 / 10 |
+| close | 0.917 | 40 | 10 / 10 |
+
+RV note: spread = causal beta-hedged pseudo-price of the two legs (beta from the previous 20 label days of 5-min returns; prereg sha fa5c5c13.. + addendum 1); sessions analysed have both legs printing in >= 90% of minutes: asia, london, pre, nyam, nypm, close. Round-number rows are meaningless for a spread and not used. Cost/room are for the integer hedge unit (a:b contracts) with BOTH legs paid (PROXY-STD fees, 1 tick in + 2 ticks stop slip per leg). Base: 1-min .v.0 percent frame, data end 2026-10-16.
+
+## RV ZNZB - relative-value spread character map (CHAR-B via char_lib, 2026-11-06T01:14Z)
+Base: RV_ZNZB CME front-month (.v.0) 1-min bars from 2013-01 to 2026-10, percent frame (multiplicative roll-adjusted), 1-min approximation (no tick path), 3140 usable label days; ET clock, sessions asia 18:00-02:00 / london 02:00-08:30 / pre 08:30-09:30 / nyam 09:30-12:00 / nypm 12:00-15:00 / close 15:00-16:55. Nulls: within-year shuffled-day (AC B=300; structure B=100 worlds; levels recomputed on the shuffled path; round numbers 60 random grid phases); p_family = Westfall-Young max-|z| over the block (AC family 153 cells, structure family 92 cells). `**` p_family<=.05, `*` <=.10. Prereg sha256 980bedf6bad3f1669de9efb93831fa4622d88577c892d9359b7f57ba93c9dbcf. Descriptive only: no PASS, nothing live.
+
+### Plain paragraph
+At 1 minute every session has negative autocorrelation (-0.397 to -0.290; bid-ask bounce / last-print noise, not a tradable edge by itself). asia: reverts at 5/15/30/60/120 min (-0.354, -0.295, -0.221, -0.151, -0.081). london: reverts at 5/15/30/60/120 min (-0.325, -0.205, -0.164, -0.144, -0.104). pre: reverts at 5/15 min (-0.203, -0.100). nyam: reverts at 5/15/30/60 min (-0.244, -0.139, -0.100, -0.070). nypm: reverts at 5/15/30/60 min (-0.273, -0.151, -0.087, -0.077). close: reverts at 5/15/30 min (-0.329, -0.232, -0.200). Day types (RTH): 40% trend days (efficiency ratio >= .5; shuffled null 48%, p_fam 0.016), 30% range days (<.25; null 24%, p_fam 0.016); the IB (09:30-10:30) is extended on one side only on 62% of days and on both on 36%, and a one-sided extension closes beyond the IB edge 61% of the time (null 78%). RTH variance ratio at 30 min 0.186 (shuffled null 0.996, p_fam 0.016); Hurst 0.377. The RTH range forms 9:30 (41%), 10:00 (23%), 11:00 (11%) of the range increments. Level reactions that beat the family null: PD|asia bounces 73% of touches (more than the shuffled null 37%); PD|london bounces 64% of touches (more than the shuffled null 39%); PD|nyam bounces 52% of touches (more than the shuffled null 42%); PD|nypm bounces 50% of touches (more than the shuffled null 42%); PD|close bounces 52% of touches (more than the shuffled null 41%); ON|nyam bounces 62% of touches (more than the shuffled null 42%); ON|nypm bounces 54% of touches (more than the shuffled null 42%); ON|close bounces 57% of touches (more than the shuffled null 41%); IB|nyam bounces 67% of touches (more than the shuffled null 42%); IB|nypm bounces 60% of touches (more than the shuffled null 42%); IB|close bounces 55% of touches (more than the shuffled null 41%); VW1|nyam bounces 58% of touches (more than the shuffled null 42%); VW1|nypm bounces 57% of touches (more than the shuffled null 42%); VW1|close bounces 56% of touches (more than the shuffled null 41%); VW2|nyam bounces 68% of touches (more than the shuffled null 43%); VW2|nypm bounces 68% of touches (more than the shuffled null 43%); VW2|close bounces 75% of touches (more than the shuffled null 42%). Failed-break follow-through beating the null: PD|asia 22% (null 50%); PD|london 25% (null 50%); PD|pre 33% (null 50%); PD|nyam 29% (null 50%); PD|nypm 21% (null 50%); PD|close 14% (null 50%); ON|nyam 27% (null 50%); ON|nypm 23% (null 50%); ON|close 20% (null 50%); IB|nyam 28% (null 50%); IB|nypm 24% (null 50%); IB|close 20% (null 50%). Room (median 3xATR14(5m) $ / round-trip cost $254 per lot): asia nanx, london 0.6x, pre 0.8x, nyam 0.8x, nypm 0.8x, close 0.7x (1xATR5 room 0.3x in nyam, nanx in asia).
+
+### 1. Autocorrelation of h-min returns (corr(past h, next h), both inside the session), pooled; cell = corr (pre-2023 mean | 2023+ mean) p_family
+| session | 1 min | 5 min | 15 min | 30 min | 60 min | 120 min |
+|--|--|--|--|--|--|--|
+| asia | -0.290 (-0.281|-0.296) p0.003** ys1.00 | -0.354 (-0.343|-0.388) p0.003** ys1.00 | -0.295 (-0.290|-0.333) p0.003** ys1.00 | -0.221 (-0.225|-0.257) p0.003** ys1.00 | -0.151 (-0.151|-0.227) p0.003** ys0.93 | -0.081 (-0.092|-0.207) p0.003** ys0.86 |
+| london | -0.391 (-0.390|-0.394) p0.003** ys1.00 | -0.325 (-0.319|-0.347) p0.003** ys1.00 | -0.205 (-0.205|-0.239) p0.003** ys1.00 | -0.164 (-0.169|-0.178) p0.003** ys1.00 | -0.144 (-0.148|-0.135) p0.003** ys1.00 | -0.104 (-0.095|-0.153) p0.003** ys0.86 |
+| pre | -0.350 (-0.354|-0.347) p0.003** ys1.00 | -0.203 (-0.222|-0.198) p0.003** ys1.00 | -0.100 (-0.121|-0.094) p0.003** ys1.00 | -0.057 (-0.075|-0.066) p0.439 ys0.93 | - | - |
+| nyam | -0.394 (-0.392|-0.400) p0.003** ys1.00 | -0.244 (-0.251|-0.251) p0.003** ys1.00 | -0.139 (-0.142|-0.155) p0.003** ys1.00 | -0.100 (-0.119|-0.090) p0.003** ys0.93 | -0.070 (-0.095|-0.066) p0.003** ys0.93 | - |
+| nypm | -0.397 (-0.391|-0.410) p0.003** ys1.00 | -0.273 (-0.267|-0.306) p0.003** ys1.00 | -0.151 (-0.148|-0.187) p0.003** ys1.00 | -0.087 (-0.086|-0.113) p0.003** ys0.93 | -0.077 (-0.091|-0.096) p0.003** ys0.93 | - |
+| close | -0.397 (-0.392|-0.406) p0.003** ys1.00 | -0.329 (-0.327|-0.349) p0.003** ys1.00 | -0.232 (-0.232|-0.247) p0.003** ys1.00 | -0.200 (-0.198|-0.214) p0.003** ys1.00 | - | - |
+
+Hour cells (h >= 5) beating the family null, top 14 by |z| (hour = ET hour of the decision bar):
+| h | session | hour ET | corr | z | p_family | year sign share | pre-2023 | 2023+ |
+|--|--|--|--|--|--|--|--|--|
+| 5 | london | 06 | -0.352 | -119.9 | 0.003 | 1.00 | -0.344 | -0.377 |
+| 5 | london | 05 | -0.347 | -118.3 | 0.003 | 1.00 | -0.341 | -0.371 |
+| 5 | asia | 21 | -0.353 | -116.0 | 0.003 | 1.00 | -0.338 | -0.402 |
+| 5 | asia | 00 | -0.370 | -115.7 | 0.003 | 1.00 | -0.353 | -0.408 |
+| 5 | asia | 23 | -0.374 | -112.6 | 0.003 | 1.00 | -0.357 | -0.413 |
+| 5 | london | 02 | -0.338 | -110.9 | 0.003 | 1.00 | -0.339 | -0.351 |
+| 5 | london | 04 | -0.343 | -109.9 | 0.003 | 1.00 | -0.332 | -0.378 |
+| 5 | asia | 01 | -0.372 | -109.1 | 0.003 | 1.00 | -0.355 | -0.411 |
+| 5 | asia | 22 | -0.369 | -108.6 | 0.003 | 1.00 | -0.357 | -0.404 |
+| 5 | london | 03 | -0.325 | -106.7 | 0.003 | 1.00 | -0.321 | -0.356 |
+| 5 | asia | 20 | -0.351 | -104.6 | 0.003 | 1.00 | -0.341 | -0.383 |
+| 5 | asia | 19 | -0.348 | -102.5 | 0.003 | 1.00 | -0.344 | -0.365 |
+| 5 | close | 15 | -0.321 | -101.3 | 0.003 | 1.00 | -0.318 | -0.340 |
+| 5 | london | 07 | -0.306 | -99.6 | 0.003 | 1.00 | -0.303 | -0.324 |
+
+### 2. Variance ratio VR(q) and Hurst (1.0 = random walk; <1 reverting; edge-bias corrected), cell = value (null) p_family
+| session | VR5 | VR15 | VR30 | VR60 | VR120 | Hurst |
+|--|--|--|--|--|--|--|
+| asia | 0.412 (0.998) p0.016** | 0.208 (0.997) p0.016** | 0.146 (0.997) p0.016** | 0.113 (0.997) p0.016** | 0.096 (0.998) p0.016** | 0.268 (0.500) p0.016** |
+| london | 0.323 (0.998) p0.016** | 0.181 (0.997) p0.016** | 0.142 (0.997) p0.016** | 0.117 (0.997) p0.016** | 0.097 (0.997) p0.016** | 0.314 (0.500) p0.016** |
+| pre | 0.418 (0.997) p0.016** | 0.293 (0.997) p0.016** | - | - | - | 0.339 (0.500) p0.016** |
+| nyam | 0.359 (0.998) p0.016** | 0.241 (0.997) p0.016** | 0.209 (0.997) p0.016** | - | - | 0.346 (0.500) p0.016** |
+| nypm | 0.340 (0.997) p0.016** | 0.216 (0.997) p0.016** | 0.183 (0.996) p0.016** | 0.171 (0.995) p0.016** | - | 0.360 (0.499) p0.016** |
+| close | 0.319 (0.998) p0.016** | 0.175 (0.998) p0.016** | 0.134 (0.998) p0.016** | - | - | 0.255 (0.500) p0.016** |
+| rth | 0.344 (0.998) p0.016** | 0.220 (0.997) p0.016** | 0.186 (0.996) p0.016** | 0.167 (0.995) p0.016** | 0.156 (0.995) p0.016** | 0.377 (0.500) p0.016** |
+
+### 3. Day types (ex-post labels of the RTH day)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| day|trend | 0.401 | 3140 | 0.484 | -9.6 | 0.016** | 1.00 | 0.392 | 0.420 | stable |
+| day|range | 0.301 | 3140 | 0.244 | +7.4 | 0.016** | 0.93 | 0.304 | 0.298 | stable |
+| day|er | 0.422 | 3140 | 0.481 | -12.0 | 0.016** | 1.00 | 0.419 | 0.428 | stable |
+| day|ib_none | 0.016 | 3140 | 0.002 | +16.8 | 0.016** | 1.00 | 0.014 | 0.019 | stable |
+| day|ib_one | 0.621 | 3140 | 0.542 | +9.1 | 0.016** | 1.00 | 0.610 | 0.645 | stable |
+| day|ib_both | 0.364 | 3140 | 0.456 | -10.6 | 0.016** | 1.00 | 0.376 | 0.336 | stable |
+| day|ib_one_closebeyond | 0.614 | 1949 | 0.784 | -19.4 | 0.016** | 1.00 | 0.624 | 0.583 | stable |
+
+### 4. 1A -> 2A continuation vs give-back-half from the session open (A = 3 x ATR14(5m)); value = P(continue | resolved)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| cont|asia | 0.152 | 947 | 0.403 | -24.7 | 0.016** | 1.00 | 0.156 | 0.126 | stable |
+| cont|london | 0.118 | 2778 | 0.495 | -42.0 | 0.016** | 1.00 | 0.121 | 0.110 | stable |
+| cont|pre | 0.409 | 702 | 0.411 | -0.2 | 1.000 | 0.57 | 0.378 | 0.452 | unstable |
+| cont|nyam | 0.194 | 1087 | 0.396 | -21.1 | 0.016** | 1.00 | 0.161 | 0.226 | stable |
+| cont|nypm | 0.227 | 856 | 0.394 | -19.2 | 0.016** | 1.00 | 0.228 | 0.215 | stable |
+| cont|close | 0.125 | 288 | 0.377 | -21.1 | 0.016** | 1.00 | 0.122 | 0.143 | stable |
+| cont|rth | 0.221 | 2136 | 0.403 | -21.2 | 0.016** | 1.00 | 0.209 | 0.234 | stable |
+
+### 5. Gap fill by size bucket (b0 .05-.10, b1 .10-.25, b2 .25-.50, b3 >.50 of the 20-day mean RTH range); day = filled during RTH, h1 = within 60 min
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| gap|b0|day | 0.919 | 209 | 0.884 | +1.3 | 1.000 | 0.64 | 0.922 | 0.904 | stable |
+| gap|b0|h1 | 0.809 | 209 | 0.720 | +2.2 | 0.852 | 0.71 | 0.803 | 0.799 | stable |
+| gap|b1|day | 0.769 | 635 | 0.763 | +0.3 | 1.000 | 0.43 | 0.782 | 0.722 | unstable |
+| gap|b1|h1 | 0.554 | 635 | 0.478 | +3.3 | 0.115 | 0.79 | 0.562 | 0.537 | stable |
+| gap|b2|day | 0.525 | 804 | 0.552 | -1.4 | 1.000 | 0.64 | 0.528 | 0.513 | stable |
+| gap|b2|h1 | 0.250 | 804 | 0.166 | +5.7 | 0.016** | 1.00 | 0.257 | 0.233 | stable |
+| gap|b3|day | 0.204 | 1238 | 0.190 | +1.3 | 1.000 | 0.79 | 0.210 | 0.191 | stable |
+| gap|b3|h1 | 0.041 | 1238 | 0.010 | +12.2 | 0.016** | 0.93 | 0.036 | 0.050 | stable |
+
+### 6. Level reaction: first touch -> bounce (0.5A reverse) vs break-through (0.5A beyond) within 60 min; value = P(bounce)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| rx|PD|asia | 0.729 | 1387 | 0.365 | +35.3 | 0.016** | 1.00 | 0.739 | 0.691 | stable |
+| rx|PD|london | 0.642 | 2107 | 0.390 | +27.2 | 0.016** | 1.00 | 0.633 | 0.662 | stable |
+| rx|PD|pre | 0.432 | 1336 | 0.396 | +2.4 | 0.770 | 0.86 | 0.449 | 0.399 | stable |
+| rx|PD|nyam | 0.518 | 1538 | 0.423 | +7.2 | 0.016** | 1.00 | 0.525 | 0.503 | stable |
+| rx|PD|nypm | 0.504 | 1249 | 0.420 | +6.1 | 0.016** | 1.00 | 0.500 | 0.512 | stable |
+| rx|PD|close | 0.516 | 707 | 0.411 | +6.1 | 0.016** | 0.93 | 0.528 | 0.484 | stable |
+| rx|ON|nyam | 0.616 | 1818 | 0.424 | +16.6 | 0.016** | 1.00 | 0.634 | 0.594 | stable |
+| rx|ON|nypm | 0.541 | 1395 | 0.420 | +10.0 | 0.016** | 1.00 | 0.551 | 0.519 | stable |
+| rx|ON|close | 0.570 | 827 | 0.411 | +11.1 | 0.016** | 1.00 | 0.573 | 0.566 | stable |
+| rx|IB|nyam | 0.668 | 2407 | 0.425 | +27.0 | 0.016** | 1.00 | 0.675 | 0.668 | stable |
+| rx|IB|nypm | 0.598 | 2259 | 0.421 | +20.0 | 0.016** | 1.00 | 0.590 | 0.631 | stable |
+| rx|IB|close | 0.551 | 1275 | 0.412 | +11.0 | 0.016** | 1.00 | 0.529 | 0.598 | stable |
+| rx|VW1|nyam | 0.575 | 4199 | 0.418 | +22.0 | 0.016** | 1.00 | 0.579 | 0.573 | stable |
+| rx|VW1|nypm | 0.572 | 3156 | 0.422 | +17.7 | 0.016** | 1.00 | 0.575 | 0.571 | stable |
+| rx|VW1|close | 0.560 | 2067 | 0.413 | +13.9 | 0.016** | 1.00 | 0.543 | 0.596 | stable |
+| rx|VW2|nyam | 0.677 | 3179 | 0.427 | +32.7 | 0.016** | 1.00 | 0.688 | 0.660 | stable |
+| rx|VW2|nypm | 0.681 | 2251 | 0.426 | +27.6 | 0.016** | 1.00 | 0.676 | 0.708 | stable |
+| rx|VW2|close | 0.748 | 1170 | 0.417 | +28.7 | 0.016** | 1.00 | 0.748 | 0.756 | stable |
+| rx|RN|asia | 0.472 | 4281 | 0.474 | -0.9 | 1.000 | 0.57 | 0.467 | 0.479 | unstable |
+| rx|RN|london | 0.476 | 6730 | 0.477 | -0.2 | 1.000 | 0.57 | 0.472 | 0.480 | unstable |
+| rx|RN|pre | 0.450 | 1343 | 0.453 | -0.7 | 1.000 | 0.71 | 0.452 | 0.435 | stable |
+| rx|RN|nyam | 0.467 | 3029 | 0.470 | -1.4 | 1.000 | 0.64 | 0.464 | 0.467 | stable |
+| rx|RN|nypm | 0.475 | 3037 | 0.474 | +0.4 | 1.000 | 0.71 | 0.472 | 0.477 | REGIME(2023+ only) |
+| rx|RN|close | 0.476 | 1267 | 0.473 | +1.0 | 1.000 | 0.50 | 0.471 | 0.482 | REGIME(2023+ only) |
+
+### 7. Failed break (close .25A beyond, back inside within 10 bars): fade follow-through P(0.5A back before 0.5A out)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| fb|PD|asia | 0.219 | 908 | 0.500 | -19.1 | 0.016** | 1.00 | 0.228 | 0.197 | stable |
+| fb|PD|london | 0.249 | 1581 | 0.501 | -24.3 | 0.016** | 1.00 | 0.247 | 0.250 | stable |
+| fb|PD|pre | 0.327 | 851 | 0.498 | -9.1 | 0.016** | 1.00 | 0.315 | 0.348 | stable |
+| fb|PD|nyam | 0.289 | 1072 | 0.500 | -17.1 | 0.016** | 1.00 | 0.283 | 0.292 | stable |
+| fb|PD|nypm | 0.211 | 942 | 0.501 | -20.0 | 0.016** | 1.00 | 0.209 | 0.215 | stable |
+| fb|PD|close | 0.143 | 511 | 0.499 | -17.6 | 0.016** | 1.00 | 0.148 | 0.145 | stable |
+| fb|ON|nyam | 0.273 | 962 | 0.500 | -15.6 | 0.016** | 1.00 | 0.277 | 0.241 | stable |
+| fb|ON|nypm | 0.231 | 985 | 0.502 | -19.1 | 0.016** | 1.00 | 0.250 | 0.180 | stable |
+| fb|ON|close | 0.203 | 580 | 0.499 | -15.2 | 0.016** | 1.00 | 0.207 | 0.188 | stable |
+| fb|IB|nyam | 0.283 | 976 | 0.500 | -18.0 | 0.016** | 1.00 | 0.277 | 0.253 | stable |
+| fb|IB|nypm | 0.244 | 1618 | 0.500 | -27.8 | 0.016** | 1.00 | 0.250 | 0.213 | stable |
+| fb|IB|close | 0.203 | 905 | 0.500 | -18.3 | 0.016** | 1.00 | 0.208 | 0.185 | stable |
+
+### 8. Where the range forms
+RTH range increments by bin: 9:30 40.6%, 10:00 23.0%, 11:00 10.9%, 12:00 7.1%, 13:00 6.9%, 14:00 6.9%, 15:00 4.6%
+Label-day range increments by ET hour (percent of the day): 00h 1.4, 01h 1.7, 02h 3.2, 03h 4.0, 04h 3.2, 05h 2.5, 06h 2.2, 07h 3.1, 08h 10.3, 09h 6.2, 10h 5.9, 11h 3.4, 12h 2.6, 13h 2.8, 14h 3.5, 15h 2.2, 16h 1.3, 18h 23.0, 19h 5.3, 20h 4.9, 21h 3.4, 22h 2.2, 23h 1.6
+
+### 9. Room and liquidity (all years, raw-frame $, 1 lot)
+| session | ATR14(5m) $ | A=3xATR5 $ | RT cost $ | room(1 ATR5) | room(A) | median 5-min vol | 1.7% cap (contracts/5min) | lots for $1,200 at 3xATR5 stop |
+|--|--|--|--|--|--|--|--|--|
+| asia | nan | nan | nan | nan | nan | nan | nan | nan |
+| london | 51 | 154 | 254 | 0.20 | 0.61 | 452 | 11.0 | 7.8 |
+| pre | 64 | 192 | 254 | 0.25 | 0.76 | 2486 | 55.0 | 6.3 |
+| nyam | 67 | 202 | 254 | 0.26 | 0.79 | 2373 | 52.0 | 6.0 |
+| nypm | 64 | 192 | 254 | 0.25 | 0.76 | 1239 | 33.0 | 6.2 |
+| close | 63 | 189 | 254 | 0.25 | 0.74 | 730 | 27.0 | 6.4 |
+
+room(A) by year: asia: ; london: 2013:0.6 2014:0.6 2015:0.7 2016:0.7 2017:0.6 2018:0.6 2019:0.6 2020:0.6 2021:0.7 2022:0.7 2023:0.6 2024:0.6 2025:0.6 2026:0.5; pre: 2013:0.8 2014:0.7 2015:0.8 2016:0.8 2017:0.8 2018:0.8 2019:0.8 2020:0.7 2021:0.8 2022:0.9 2023:0.8 2024:0.7 2025:0.8 2026:0.7; nyam: 2013:0.9 2014:0.8 2015:0.9 2016:0.9 2017:0.8 2018:0.8 2019:0.8 2020:0.8 2021:0.9 2022:1.0 2023:0.9 2024:0.7 2025:0.8 2026:0.7; nypm: 2013:0.8 2014:0.7 2015:0.8 2016:0.8 2017:0.8 2018:0.8 2019:0.8 2020:0.8 2021:0.8 2022:0.9 2023:0.8 2024:0.7 2025:0.8 2026:0.7; close: 2013:0.8 2014:0.7 2015:0.8 2016:0.8 2017:0.8 2018:0.8 2019:0.8 2020:0.8 2021:0.8 2022:0.8 2023:0.8 2024:0.7 2025:0.7 2026:0.7
+
+### 11. Map rows that become book candidates under the FROZEN rule (p_family <= .05 AND room_A(session) > 2.0)
+| map row | direction | stat | p_family | room_A | year sign share | stability | 1.7% cap >= 1 contract/5min in session |
+|--|--|--|--|--|--|--|--|
+| rx|PD|asia | level-bounce | +0.729 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| fb|PD|asia | level-break | +0.219 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| vr|asia|5 | reversion | +0.412 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| vr|asia|15 | reversion | +0.208 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| vr|asia|30 | reversion | +0.146 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| vr|asia|60 | reversion | +0.113 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| vr|asia|120 | reversion | +0.096 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+| hurst|asia | reversion | +0.268 | 0.016 | nan | 1.00 | stable | NO (illiquid) |
+
+### RV extra: spread half-life (AR(1) of x minus its 120-min mean, 5-min sampling) and stability
+| session | phi(5 min) all years | half-life min | years with half-life < 60 min / years |
+|--|--|--|--|
+| london | 0.827 | 18 | 14 / 14 |
+| nyam | 0.872 | 25 | 14 / 14 |
+| nypm | 0.887 | 29 | 14 / 14 |
+| close | 0.783 | 14 | 14 / 14 |
+
+RV note: spread = causal beta-hedged pseudo-price of the two legs (beta from the previous 20 label days of 5-min returns; prereg sha fa5c5c13.. + addendum 1); sessions analysed have both legs printing in >= 90% of minutes: london, pre, nyam, nypm, close. Round-number rows are meaningless for a spread and not used. Cost/room are for the integer hedge unit (a:b contracts) with BOTH legs paid (PROXY-STD fees, 1 tick in + 2 ticks stop slip per leg). Base: 1-min .v.0 percent frame, data end 2026-10-16.
+
+## RV 6E6J - relative-value spread character map (CHAR-B via char_lib, 2026-11-06T01:13Z)
+Base: RV_6E6J CME front-month (.v.0) 1-min bars from 2013-01 to 2026-10, percent frame (multiplicative roll-adjusted), 1-min approximation (no tick path), 3290 usable label days; ET clock, sessions asia 18:00-02:00 / london 02:00-08:30 / pre 08:30-09:30 / nyam 09:30-12:00 / nypm 12:00-15:00 / close 15:00-16:55. Nulls: within-year shuffled-day (AC B=300; structure B=100 worlds; levels recomputed on the shuffled path; round numbers 60 random grid phases); p_family = Westfall-Young max-|z| over the block (AC family 153 cells, structure family 92 cells). `**` p_family<=.05, `*` <=.10. Prereg sha256 980bedf6bad3f1669de9efb93831fa4622d88577c892d9359b7f57ba93c9dbcf. Descriptive only: no PASS, nothing live.
+
+### Plain paragraph
+At 1 minute every session has negative autocorrelation (-0.230 to -0.069; bid-ask bounce / last-print noise, not a tradable edge by itself). asia: reverts at 5/15/30 min (-0.060, -0.037, -0.028). london: reverts at 5 min (-0.029). pre: reverts at 5 min (-0.024). nyam: reverts at 5 min (-0.037). nypm: reverts at 5/15 min (-0.083, -0.035). close: reverts at 5/15/30 min (-0.137, -0.091, -0.058). Day types (RTH): 46% trend days (efficiency ratio >= .5; shuffled null 51%, p_fam 0.016), 26% range days (<.25; null 23%, p_fam 0.049); the IB (09:30-10:30) is extended on one side only on 67% of days and on both on 30%, and a one-sided extension closes beyond the IB edge 66% of the time (null 72%). RTH variance ratio at 30 min 0.653 (shuffled null 0.998, p_fam 0.016); Hurst 0.472. The RTH range forms 9:30 (36%), 10:00 (32%), 11:00 (12%) of the range increments. Level reactions that beat the family null: PD|asia bounces 44% of touches (more than the shuffled null 37%); ON|nypm bounces 46% of touches (more than the shuffled null 35%); ON|close bounces 42% of touches (more than the shuffled null 35%); IB|nyam bounces 43% of touches (more than the shuffled null 40%); IB|nypm bounces 42% of touches (more than the shuffled null 37%); IB|close bounces 43% of touches (more than the shuffled null 36%); VW1|nyam bounces 44% of touches (more than the shuffled null 40%); VW1|nypm bounces 43% of touches (more than the shuffled null 38%); VW1|close bounces 42% of touches (more than the shuffled null 37%); VW2|nyam bounces 46% of touches (more than the shuffled null 39%); VW2|nypm bounces 44% of touches (more than the shuffled null 35%); VW2|close bounces 44% of touches (more than the shuffled null 35%). Failed-break follow-through beating the null: PD|nyam 42% (null 50%); PD|nypm 40% (null 50%); PD|close 31% (null 50%); ON|close 41% (null 50%); IB|nypm 44% (null 50%); IB|close 37% (null 50%). Room (median 3xATR14(5m) $ / round-trip cost $97 per lot): asia 2.0x, london 3.3x, pre 3.9x, nyam 4.3x, nypm 3.2x, close 2.3x (1xATR5 room 1.4x in nyam, 0.7x in asia).
+
+### 1. Autocorrelation of h-min returns (corr(past h, next h), both inside the session), pooled; cell = corr (pre-2023 mean | 2023+ mean) p_family
+| session | 1 min | 5 min | 15 min | 30 min | 60 min | 120 min |
+|--|--|--|--|--|--|--|
+| asia | -0.104 (-0.112|-0.097) p0.003** ys1.00 | -0.060 (-0.074|-0.047) p0.003** ys1.00 | -0.037 (-0.051|-0.014) p0.003** ys0.86 | -0.028 (-0.043|-0.003) p0.003** ys0.86 | -0.012 (-0.031|+0.002) p0.990 ys0.79 | -0.011 (-0.044|+0.011) p1.000 ys0.79 |
+| london | -0.074 (-0.089|-0.035) p0.003** ys1.00 | -0.029 (-0.039|-0.017) p0.003** ys1.00 | -0.010 (-0.015|-0.001) p0.243 ys0.86 | -0.006 (-0.013|+0.009) p1.000 ys0.57 | +0.013 (+0.002|+0.038) p1.000 ys0.64 | +0.013 (+0.002|+0.036) p1.000 ys0.57 |
+| pre | -0.069 (-0.078|-0.042) p0.003** ys1.00 | -0.024 (-0.020|-0.044) p0.007** ys0.71 | +0.017 (+0.026|-0.016) p1.000 ys0.64 | +0.018 (+0.031|-0.014) p1.000 ys0.57 | - | - |
+| nyam | -0.091 (-0.105|-0.031) p0.003** ys1.00 | -0.037 (-0.051|-0.026) p0.003** ys1.00 | -0.016 (-0.022|-0.008) p0.236 ys0.79 | -0.003 (-0.008|-0.006) p1.000 ys0.50 | +0.010 (+0.010|+0.010) p1.000 ys0.57 | - |
+| nypm | -0.209 (-0.151|-0.066) p0.003** ys1.00 | -0.083 (-0.090|-0.031) p0.003** ys0.86 | -0.035 (-0.039|-0.033) p0.003** ys0.86 | -0.008 (-0.013|-0.005) p1.000 ys0.57 | -0.018 (-0.027|-0.015) p1.000 ys0.64 | - |
+| close | -0.230 (-0.170|-0.097) p0.003** ys1.00 | -0.137 (-0.139|-0.067) p0.003** ys1.00 | -0.091 (-0.104|-0.053) p0.003** ys1.00 | -0.058 (-0.058|-0.072) p0.003** ys0.93 | - | - |
+
+Hour cells (h >= 5) beating the family null, top 14 by |z| (hour = ET hour of the decision bar):
+| h | session | hour ET | corr | z | p_family | year sign share | pre-2023 | 2023+ |
+|--|--|--|--|--|--|--|--|--|
+| 5 | close | 16 | -0.171 | -39.7 | 0.003 | 1.00 | -0.170 | -0.096 |
+| 5 | close | 15 | -0.115 | -28.8 | 0.003 | 1.00 | -0.119 | -0.051 |
+| 5 | nypm | 12 | -0.093 | -24.2 | 0.003 | 1.00 | -0.099 | -0.061 |
+| 5 | asia | 18 | -0.088 | -20.8 | 0.003 | 1.00 | -0.098 | -0.070 |
+| 5 | nypm | 13 | -0.084 | -20.0 | 0.003 | 0.79 | -0.092 | -0.018 |
+| 5 | nypm | 14 | -0.072 | -17.9 | 0.003 | 0.79 | -0.079 | -0.009 |
+| 5 | nyam | 11 | -0.069 | -16.5 | 0.003 | 0.93 | -0.087 | -0.048 |
+| 5 | asia | 19 | -0.066 | -16.2 | 0.003 | 0.93 | -0.084 | -0.027 |
+| 5 | asia | 00 | -0.068 | -15.6 | 0.003 | 0.86 | -0.079 | -0.041 |
+| 5 | asia | 20 | -0.063 | -15.6 | 0.003 | 1.00 | -0.077 | -0.046 |
+| 5 | asia | 23 | -0.065 | -15.4 | 0.003 | 0.93 | -0.098 | -0.045 |
+| 5 | london | 07 | -0.058 | -13.7 | 0.003 | 0.93 | -0.061 | -0.073 |
+| 15 | close | 16 | -0.103 | -13.7 | 0.003 | 0.93 | -0.135 | -0.010 |
+| 15 | close | 15 | -0.084 | -13.2 | 0.003 | 1.00 | -0.086 | -0.078 |
+
+### 2. Variance ratio VR(q) and Hurst (1.0 = random walk; <1 reverting; edge-bias corrected), cell = value (null) p_family
+| session | VR5 | VR15 | VR30 | VR60 | VR120 | Hurst |
+|--|--|--|--|--|--|--|
+| asia | 0.802 (0.999) p0.016** | 0.730 (0.998) p0.016** | 0.703 (0.997) p0.016** | 0.686 (0.996) p0.016** | 0.686 (0.995) p0.016** | 0.475 (0.499) p0.016** |
+| london | 0.874 (0.998) p0.016** | 0.840 (0.997) p0.016** | 0.834 (0.997) p0.016** | 0.835 (0.996) p0.016** | 0.848 (0.996) p0.016** | 0.495 (0.500) p0.639 |
+| pre | 0.878 (0.999) p0.016** | 0.855 (0.999) p0.016** | - | - | - | 0.488 (0.500) p0.098* |
+| nyam | 0.846 (0.999) p0.016** | 0.802 (0.998) p0.016** | 0.791 (0.999) p0.016** | - | - | 0.481 (0.500) p0.016** |
+| nypm | 0.642 (0.998) p0.016** | 0.568 (0.998) p0.016** | 0.545 (0.998) p0.016** | 0.542 (0.998) p0.016** | - | 0.465 (0.500) p0.016** |
+| close | 0.589 (0.998) p0.016** | 0.473 (0.997) p0.016** | 0.430 (0.996) p0.016** | - | - | 0.411 (0.499) p0.016** |
+| rth | 0.739 (0.998) p0.016** | 0.675 (0.998) p0.016** | 0.653 (0.998) p0.016** | 0.637 (0.999) p0.016** | 0.613 (0.997) p0.016** | 0.472 (0.500) p0.016** |
+
+### 3. Day types (ex-post labels of the RTH day)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| day|trend | 0.456 | 3290 | 0.510 | -5.9 | 0.016** | 0.79 | 0.446 | 0.469 | stable |
+| day|range | 0.261 | 3290 | 0.230 | +4.0 | 0.049** | 0.64 | 0.270 | 0.245 | stable |
+| day|er | 0.464 | 3290 | 0.500 | -7.2 | 0.016** | 0.86 | 0.458 | 0.474 | stable |
+| day|ib_none | 0.033 | 3290 | 0.013 | +12.2 | 0.016** | 0.93 | 0.035 | 0.033 | stable |
+| day|ib_one | 0.665 | 3290 | 0.627 | +4.7 | 0.016** | 0.79 | 0.646 | 0.702 | stable |
+| day|ib_both | 0.302 | 3290 | 0.360 | -7.3 | 0.016** | 0.86 | 0.320 | 0.266 | stable |
+| day|ib_one_closebeyond | 0.664 | 2188 | 0.723 | -6.2 | 0.016** | 0.93 | 0.661 | 0.669 | stable |
+
+### 4. 1A -> 2A continuation vs give-back-half from the session open (A = 3 x ATR14(5m)); value = P(continue | resolved)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| cont|asia | 0.374 | 3113 | 0.471 | -11.2 | 0.016** | 1.00 | 0.364 | 0.393 | stable |
+| cont|london | 0.418 | 3288 | 0.461 | -4.7 | 0.016** | 0.93 | 0.407 | 0.445 | stable |
+| cont|pre | 0.429 | 1584 | 0.488 | -5.7 | 0.016** | 0.79 | 0.424 | 0.429 | stable |
+| cont|nyam | 0.401 | 2578 | 0.445 | -4.6 | 0.016** | 0.79 | 0.402 | 0.385 | stable |
+| cont|nypm | 0.357 | 1446 | 0.464 | -10.7 | 0.016** | 0.93 | 0.374 | 0.312 | stable |
+| cont|close | 0.336 | 1000 | 0.477 | -11.0 | 0.016** | 0.86 | 0.343 | 0.278 | stable |
+| cont|rth | 0.402 | 3050 | 0.448 | -5.3 | 0.016** | 0.86 | 0.403 | 0.388 | stable |
+
+### 5. Gap fill by size bucket (b0 .05-.10, b1 .10-.25, b2 .25-.50, b3 >.50 of the 20-day mean RTH range); day = filled during RTH, h1 = within 60 min
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| gap|b0|day | 0.869 | 153 | 0.856 | +0.5 | 1.000 | 0.50 | 0.851 | 0.913 | REGIME(2023+ only) |
+| gap|b0|h1 | 0.765 | 153 | 0.665 | +2.9 | 0.197 | 0.86 | 0.759 | 0.793 | stable |
+| gap|b1|day | 0.733 | 475 | 0.724 | +0.4 | 1.000 | 0.50 | 0.723 | 0.763 | REGIME(2023+ only) |
+| gap|b1|h1 | 0.512 | 475 | 0.441 | +3.0 | 0.164 | 0.71 | 0.491 | 0.579 | stable |
+| gap|b2|day | 0.476 | 685 | 0.528 | -2.9 | 0.246 | 0.71 | 0.490 | 0.432 | stable |
+| gap|b2|h1 | 0.197 | 685 | 0.202 | -0.3 | 1.000 | 0.57 | 0.204 | 0.184 | REGIME(2023+ only) |
+| gap|b3|day | 0.183 | 1823 | 0.169 | +1.5 | 1.000 | 0.50 | 0.203 | 0.161 | unstable |
+| gap|b3|h1 | 0.038 | 1823 | 0.024 | +4.0 | 0.033** | 0.71 | 0.044 | 0.035 | stable |
+
+### 6. Level reaction: first touch -> bounce (0.5A reverse) vs break-through (0.5A beyond) within 60 min; value = P(bounce)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| rx|PD|asia | 0.441 | 2093 | 0.366 | +7.0 | 0.016** | 0.86 | 0.443 | 0.425 | stable |
+| rx|PD|london | 0.412 | 2835 | 0.389 | +2.3 | 0.803 | 0.79 | 0.418 | 0.404 | stable |
+| rx|PD|pre | 0.391 | 1120 | 0.373 | +1.2 | 1.000 | 0.64 | 0.387 | 0.400 | stable |
+| rx|PD|nyam | 0.400 | 1555 | 0.394 | +0.5 | 1.000 | 0.43 | 0.389 | 0.436 | REGIME(2023+ only) |
+| rx|PD|nypm | 0.384 | 975 | 0.356 | +1.9 | 0.984 | 0.64 | 0.376 | 0.402 | stable |
+| rx|PD|close | 0.369 | 529 | 0.354 | +0.6 | 1.000 | 0.64 | 0.388 | 0.385 | stable |
+| rx|ON|nyam | 0.420 | 2036 | 0.386 | +3.2 | 0.115 | 0.86 | 0.426 | 0.411 | stable |
+| rx|ON|nypm | 0.458 | 1164 | 0.347 | +8.7 | 0.016** | 1.00 | 0.449 | 0.484 | stable |
+| rx|ON|close | 0.424 | 557 | 0.349 | +3.6 | 0.049** | 0.79 | 0.415 | 0.466 | stable |
+| rx|IB|nyam | 0.430 | 3014 | 0.396 | +4.3 | 0.016** | 0.86 | 0.432 | 0.432 | stable |
+| rx|IB|nypm | 0.423 | 2161 | 0.366 | +6.0 | 0.016** | 0.93 | 0.436 | 0.382 | stable |
+| rx|IB|close | 0.425 | 1025 | 0.362 | +4.3 | 0.016** | 0.93 | 0.430 | 0.421 | stable |
+| rx|VW1|nyam | 0.438 | 5104 | 0.396 | +6.6 | 0.016** | 1.00 | 0.434 | 0.447 | stable |
+| rx|VW1|nypm | 0.428 | 3145 | 0.375 | +6.1 | 0.016** | 0.93 | 0.428 | 0.420 | stable |
+| rx|VW1|close | 0.416 | 1712 | 0.373 | +3.9 | 0.049** | 0.93 | 0.410 | 0.443 | stable |
+| rx|VW2|nyam | 0.456 | 3686 | 0.392 | +8.1 | 0.016** | 1.00 | 0.454 | 0.462 | stable |
+| rx|VW2|nypm | 0.436 | 1899 | 0.352 | +8.3 | 0.016** | 1.00 | 0.421 | 0.465 | stable |
+| rx|VW2|close | 0.443 | 810 | 0.345 | +6.0 | 0.016** | 1.00 | 0.456 | 0.456 | stable |
+| rx|RN|asia | 0.424 | 7126 | 0.425 | -0.5 | 1.000 | 0.57 | 0.422 | 0.430 | unstable |
+| rx|RN|london | 0.419 | 11002 | 0.419 | +0.1 | 1.000 | 0.57 | 0.419 | 0.424 | REGIME(2023+ only) |
+| rx|RN|pre | 0.403 | 2262 | 0.406 | -0.5 | 1.000 | 0.57 | 0.402 | 0.409 | unstable |
+| rx|RN|nyam | 0.420 | 5055 | 0.421 | -0.3 | 1.000 | 0.50 | 0.418 | 0.427 | unstable |
+| rx|RN|nypm | 0.423 | 3971 | 0.427 | -1.0 | 1.000 | 0.71 | 0.426 | 0.417 | stable |
+| rx|RN|close | 0.411 | 1559 | 0.406 | +0.6 | 1.000 | 0.71 | 0.406 | 0.428 | stable |
+
+### 7. Failed break (close .25A beyond, back inside within 10 bars): fade follow-through P(0.5A back before 0.5A out)
+| cell | value | n | null | z | p_family | ys | pre-2023 | 2023+ | read |
+|--|--|--|--|--|--|--|--|--|--|
+| fb|PD|asia | 0.479 | 1547 | 0.499 | -1.6 | 1.000 | 0.64 | 0.477 | 0.471 | stable |
+| fb|PD|london | 0.473 | 2267 | 0.499 | -2.5 | 0.590 | 0.64 | 0.467 | 0.482 | stable |
+| fb|PD|pre | 0.460 | 785 | 0.503 | -2.5 | 0.541 | 0.64 | 0.455 | 0.477 | stable |
+| fb|PD|nyam | 0.423 | 1195 | 0.499 | -6.2 | 0.016** | 0.93 | 0.410 | 0.450 | stable |
+| fb|PD|nypm | 0.404 | 736 | 0.500 | -5.1 | 0.016** | 0.79 | 0.395 | 0.454 | stable |
+| fb|PD|close | 0.305 | 390 | 0.499 | -7.8 | 0.016** | 0.93 | 0.292 | 0.368 | stable |
+| fb|ON|nyam | 0.491 | 1082 | 0.498 | -0.5 | 1.000 | 0.57 | 0.484 | 0.509 | unstable |
+| fb|ON|nypm | 0.476 | 804 | 0.499 | -1.4 | 1.000 | 0.57 | 0.464 | 0.541 | unstable |
+| fb|ON|close | 0.405 | 395 | 0.502 | -4.0 | 0.033** | 0.86 | 0.414 | 0.423 | stable |
+| fb|IB|nyam | 0.472 | 1431 | 0.501 | -2.0 | 0.984 | 0.79 | 0.475 | 0.455 | stable |
+| fb|IB|nypm | 0.444 | 1488 | 0.500 | -4.9 | 0.016** | 0.93 | 0.436 | 0.454 | stable |
+| fb|IB|close | 0.370 | 706 | 0.498 | -7.2 | 0.016** | 0.93 | 0.354 | 0.429 | stable |
+
+### 8. Where the range forms
+RTH range increments by bin: 9:30 35.5%, 10:00 32.0%, 11:00 12.3%, 12:00 6.8%, 13:00 5.3%, 14:00 5.0%, 15:00 3.0%
+Label-day range increments by ET hour (percent of the day): 00h 2.0, 01h 2.8, 02h 6.2, 03h 8.7, 04h 6.6, 05h 4.4, 06h 3.5, 07h 3.6, 08h 6.3, 09h 5.2, 10h 6.0, 11h 3.1, 12h 1.9, 13h 1.6, 14h 2.0, 15h 1.0, 16h 0.7, 18h 11.4, 19h 5.8, 20h 7.2, 21h 4.9, 22h 3.0, 23h 2.0
+
+### 9. Room and liquidity (all years, raw-frame $, 1 lot)
+| session | ATR14(5m) $ | A=3xATR5 $ | RT cost $ | room(1 ATR5) | room(A) | median 5-min vol | 1.7% cap (contracts/5min) | lots for $1,200 at 3xATR5 stop |
+|--|--|--|--|--|--|--|--|--|
+| asia | 64 | 193 | 97 | 0.66 | 1.99 | 84 | 0.7 | 6.2 |
+| london | 107 | 321 | 97 | 1.10 | 3.31 | 274 | 2.7 | 3.7 |
+| pre | 127 | 380 | 97 | 1.30 | 3.91 | 562 | 5.3 | 3.2 |
+| nyam | 141 | 422 | 97 | 1.45 | 4.35 | 643 | 6.3 | 2.8 |
+| nypm | 104 | 312 | 97 | 1.07 | 3.22 | 244 | 2.7 | 3.8 |
+| close | 76 | 227 | 97 | 0.78 | 2.34 | 105 | 1.0 | 5.3 |
+
+room(A) by year: asia: 2013:2.9 2014:2.0 2015:2.7 2016:2.3 2017:1.8 2018:1.9 2019:1.5 2020:1.6 2021:1.4 2022:2.7 2023:1.7 2024:1.4 2025:1.8 2026:1.6; london: 2013:4.9 2014:3.5 2015:4.7 2016:3.8 2017:2.9 2018:3.4 2019:2.6 2020:3.0 2021:2.5 2022:4.6 2023:2.9 2024:2.4 2025:2.7 2026:2.4; pre: 2013:6.2 2014:4.4 2015:5.7 2016:4.4 2017:3.2 2018:3.8 2019:3.2 2020:3.4 2021:3.0 2022:5.4 2023:3.5 2024:2.9 2025:3.4 2026:2.8; nyam: 2013:6.8 2014:4.7 2015:5.9 2016:4.9 2017:3.4 2018:4.1 2019:3.5 2020:3.9 2021:3.4 2022:6.0 2023:4.0 2024:3.3 2025:3.7 2026:3.1; nypm: 2013:5.0 2014:3.6 2015:4.7 2016:3.7 2017:2.7 2018:3.3 2019:2.6 2020:2.7 2021:2.3 2022:4.4 2023:2.7 2024:2.3 2025:2.7 2026:2.4; close: 2013:3.9 2014:2.7 2015:3.7 2016:2.8 2017:2.1 2018:2.3 2019:1.8 2020:2.0 2021:1.7 2022:3.1 2023:1.9 2024:1.6 2025:2.1 2026:1.7
+
+### 11. Map rows that become book candidates under the FROZEN rule (p_family <= .05 AND room_A(session) > 2.0)
+| map row | direction | stat | p_family | room_A | year sign share | stability | 1.7% cap >= 1 contract/5min in session |
+|--|--|--|--|--|--|--|--|
+| AC|london|5m | reversion | -0.029 | 0.003 | 3.3 | 1.00 |  | yes |
+| AC|pre|5m | reversion | -0.024 | 0.007 | 3.9 | 0.71 |  | yes |
+| AC|nyam|5m | reversion | -0.037 | 0.003 | 4.3 | 1.00 |  | yes |
+| AC|nypm|5m | reversion | -0.083 | 0.003 | 3.2 | 0.86 |  | yes |
+| AC|close|5m | reversion | -0.137 | 0.003 | 2.3 | 1.00 |  | yes |
+| AC|nypm|15m | reversion | -0.035 | 0.003 | 3.2 | 0.86 |  | yes |
+| AC|close|15m | reversion | -0.091 | 0.003 | 2.3 | 1.00 |  | yes |
+| AC|close|30m | reversion | -0.058 | 0.003 | 2.3 | 0.93 |  | yes |
+| fb|PD|nyam | level-break | +0.423 | 0.016 | 4.3 | 0.93 | stable | yes |
+| fb|PD|nypm | level-break | +0.404 | 0.016 | 3.2 | 0.79 | stable | yes |
+| fb|PD|close | level-break | +0.305 | 0.016 | 2.3 | 0.93 | stable | yes |
+| rx|ON|nypm | level-bounce | +0.458 | 0.016 | 3.2 | 1.00 | stable | yes |
+| rx|ON|close | level-bounce | +0.424 | 0.049 | 2.3 | 0.79 | stable | yes |
+| fb|ON|close | level-break | +0.405 | 0.033 | 2.3 | 0.86 | stable | yes |
+| rx|IB|nyam | level-bounce | +0.430 | 0.016 | 4.3 | 0.86 | stable | yes |
+| rx|IB|nypm | level-bounce | +0.423 | 0.016 | 3.2 | 0.93 | stable | yes |
+| fb|IB|nypm | level-break | +0.444 | 0.016 | 3.2 | 0.93 | stable | yes |
+| rx|IB|close | level-bounce | +0.425 | 0.016 | 2.3 | 0.93 | stable | yes |
+| fb|IB|close | level-break | +0.370 | 0.016 | 2.3 | 0.93 | stable | yes |
+| rx|VW1|nyam | level-bounce | +0.438 | 0.016 | 4.3 | 1.00 | stable | yes |
+| rx|VW1|nypm | level-bounce | +0.428 | 0.016 | 3.2 | 0.93 | stable | yes |
+| rx|VW1|close | level-bounce | +0.416 | 0.049 | 2.3 | 0.93 | stable | yes |
+| rx|VW2|nyam | level-bounce | +0.456 | 0.016 | 4.3 | 1.00 | stable | yes |
+| rx|VW2|nypm | level-bounce | +0.436 | 0.016 | 3.2 | 1.00 | stable | yes |
+| rx|VW2|close | level-bounce | +0.443 | 0.016 | 2.3 | 1.00 | stable | yes |
+| gap|b3|h1 | level-bounce | +0.038 | 0.033 | 4.3 | 0.71 | stable | yes |
+| vr|london|5 | reversion | +0.874 | 0.016 | 3.3 | 1.00 | stable | yes |
+| vr|london|15 | reversion | +0.840 | 0.016 | 3.3 | 1.00 | stable | yes |
+| vr|london|30 | reversion | +0.834 | 0.016 | 3.3 | 1.00 | stable | yes |
+| vr|london|60 | reversion | +0.835 | 0.016 | 3.3 | 1.00 | stable | yes |
+| vr|london|120 | reversion | +0.848 | 0.016 | 3.3 | 0.93 | stable | yes |
+| vr|pre|5 | reversion | +0.878 | 0.016 | 3.9 | 1.00 | stable | yes |
+| vr|pre|15 | reversion | +0.855 | 0.016 | 3.9 | 0.93 | stable | yes |
+| vr|nyam|5 | reversion | +0.846 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|nyam|15 | reversion | +0.802 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|nyam|30 | reversion | +0.791 | 0.016 | 4.3 | 1.00 | stable | yes |
+| hurst|nyam | reversion | +0.481 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|nypm|5 | reversion | +0.642 | 0.016 | 3.2 | 1.00 | stable | yes |
+| vr|nypm|15 | reversion | +0.568 | 0.016 | 3.2 | 0.93 | stable | yes |
+| vr|nypm|30 | reversion | +0.545 | 0.016 | 3.2 | 1.00 | stable | yes |
+| vr|nypm|60 | reversion | +0.542 | 0.016 | 3.2 | 0.93 | stable | yes |
+| hurst|nypm | reversion | +0.465 | 0.016 | 3.2 | 0.79 | stable | yes |
+| vr|close|5 | reversion | +0.589 | 0.016 | 2.3 | 1.00 | stable | yes |
+| vr|close|15 | reversion | +0.473 | 0.016 | 2.3 | 1.00 | stable | yes |
+| vr|close|30 | reversion | +0.430 | 0.016 | 2.3 | 1.00 | stable | yes |
+| hurst|close | reversion | +0.411 | 0.016 | 2.3 | 1.00 | stable | yes |
+| vr|rth|5 | reversion | +0.739 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|rth|15 | reversion | +0.675 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|rth|30 | reversion | +0.653 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|rth|60 | reversion | +0.637 | 0.016 | 4.3 | 1.00 | stable | yes |
+| vr|rth|120 | reversion | +0.613 | 0.016 | 4.3 | 1.00 | stable | yes |
+| hurst|rth | reversion | +0.472 | 0.016 | 4.3 | 0.86 | stable | yes |
+
+### RV extra: spread half-life (AR(1) of x minus its 120-min mean, 5-min sampling) and stability
+| session | phi(5 min) all years | half-life min | years with half-life < 60 min / years |
+|--|--|--|--|
+| asia | 0.925 | 44 | 14 / 14 |
+| london | 0.928 | 46 | 13 / 14 |
+| nyam | 0.917 | 40 | 13 / 14 |
+| nypm | 0.806 | 16 | 11 / 14 |
+| close | 0.768 | 13 | 12 / 14 |
+
+RV note: spread = causal beta-hedged pseudo-price of the two legs (beta from the previous 20 label days of 5-min returns; prereg sha fa5c5c13.. + addendum 1); sessions analysed have both legs printing in >= 90% of minutes: asia, london, pre, nyam, nypm, close. Round-number rows are meaningless for a spread and not used. Cost/room are for the integer hedge unit (a:b contracts) with BOTH legs paid (PROXY-STD fees, 1 tick in + 2 ticks stop slip per leg). Base: 1-min .v.0 percent frame, data end 2026-10-16.
+
+## RV GC-CL - descriptive correlation only (CHAR-B, 2026-11-06)
+Correlation of non-overlapping h-minute log returns of GC and CL by session, percent frame, 1-min .v.0, 2013-01..2026-10-16. Plain reading: GC and CL are essentially uncorrelated (all-years 0.04-0.07, NY-AM 60-min 0.07; 2023+ is slightly NEGATIVE in london/close/nypm), and the NY-AM 60-min correlation flips sign by year (-0.22 in 2019 to +0.35 in 2022; -0.13 in 2026), so there is no stable hedge ratio and therefore no spread to trade; no book built.
+| session | h min | 2013-2022 | 2023+ | all |
+|--|--|--|--|--|
+| asia | 5 | +0.057 | +0.007 | +0.038 |
+| asia | 15 | +0.082 | -0.009 | +0.049 |
+| asia | 60 | +0.105 | +0.009 | +0.071 |
+| close | 5 | +0.058 | -0.124 | -0.005 |
+| close | 15 | +0.051 | -0.118 | -0.010 |
+| close | 60 | +0.102 | -0.048 | +0.043 |
+| london | 5 | +0.103 | -0.093 | +0.044 |
+| london | 15 | +0.105 | -0.116 | +0.036 |
+| london | 60 | +0.101 | -0.144 | +0.027 |
+| nyam | 5 | +0.097 | -0.005 | +0.066 |
+| nyam | 15 | +0.091 | +0.010 | +0.067 |
+| nyam | 60 | +0.095 | +0.015 | +0.071 |
+| nypm | 5 | +0.076 | -0.060 | +0.044 |
+| nypm | 15 | +0.089 | -0.064 | +0.049 |
+| nypm | 60 | +0.080 | -0.089 | +0.038 |
+| pre | 5 | +0.110 | -0.022 | +0.073 |
+| pre | 15 | +0.111 | -0.023 | +0.073 |
