@@ -63,3 +63,34 @@ $/wk at equal-$-risk lots, carry-dropped. These are the best-of-F rows by constr
 
 Note (appended): section 2 p_book is the stage-2 per-cell p of z = min(HOLD z, L6M z) (HOLD-window placebo worlds); section 3 re-computes p_book inside the full evaluator (HOLD mean, L6M mean and the stack-Calmar-gain statistic with its own seed and full-history placebo sims), which is why the 13 per-cell-only cells show larger p there (0.16-0.32). Neither changes the family result: family p = 1.00 for all of them. Finalist trade frames: /mnt/l2/l2vast/instr2_trades/CL/<cell_id>.parquet (25 evaluated cells).
 Correction to the note above: 10 cells were run through the full evaluator (the 10 best per-cell-only cells; 0 family survivors), so 10 trade frames come from this block (the CL folder also holds frames from other owners).
+
+
+## REPAIRED-BLOCKB (Z1, 2026-11-06): block-B survivors and gate flips on the BAD-PRINT-REPAIRED bars, original vs repaired
+Source of the repair: CHAR-C's repaired 1-min copies (find_c/cache_c, rule cc_audit.py: bars whose high/low/close lie more than 10 sigma + 4 ticks outside their neighbours are clamped; originals untouched). The block-B bars (ohlcv1m dbn files) were matched by timestamp to the repaired copy and the o/h/l/c of every matched bar replaced (changed bars: YM 995, CL 523, 6E 19,721, 6J 14,455; all other cells of the bars identical). Everything else is unchanged: same signal sets, brackets, costs, caps, evaluator, gate. Code l2vast/ds3/code/repair_z1/ (rerun.py, compare.py, doc.py); results /mnt/l2/l2vast/repair_z1/.
+Method (stated limits): (1) STAGE 1 for EVERY cell of the grid on repaired bars (exact, deterministic): tolerant-gate and NOW-ONLY status compared with the stored original of the same cell. (2) Placebo worlds (HOLD-window hash/side/shift5/days worlds as in the block) re-run for every cell that is tolerant in the original OR the repaired version, on the repaired bars AND, with the same per-cell seed, on the original bars again (the 'control'), because the placebos draw random numbers and the original runs used a different random stream: original-vs-control differences are Monte-Carlo noise. (3) p_family is evaluated against the ORIGINAL family world-max distribution M (the full family of ~2,600-3,000 eligible cells was not re-simulated; a few changed cells cannot move the max of the family materially, but this is an approximation and is labelled so).
+| instrument | bad bars repaired | cells scored | cells whose L6M or HOLD mean changed (any / > 10%) | tolerant gate: original -> repaired (lost / gained) | NOW-ONLY (lost / gained) | tolerant + p_book <= .10: original / original-bars rerun (MC control) / repaired | in both original and repaired | only original / only repaired | family-surviving (p_family <= .10): original -> repaired |
+|---|---|---|---|---|---|---|---|---|---|
+| CL | 523 | 2964 | 1673 / 540 | 242 -> 247 (3 / 8) | 15 / 13 | 13 / 17 / 16 | 11 | 2 / 5 | 0 -> 0 |
+### CL - tolerant + p_book <= .10 in the original or in the repaired run (L6M / HOLD / PRE in $/wk at equal-risk lots, carry dropped; p_book original / original-bars rerun / repaired; p_family vs the original max)
+| cell | L6M orig -> rep | HOLD orig -> rep | PRE orig -> rep | tolerant orig -> rep | p_book o / ctl / r | p_family o -> r |
+|--|--|--|--|--|--|--|
+| donchian k=5,mode=fade,n=34 nyam stop4ATR tgt 1R | +306 -> +288 | +316 -> +310 | -101 -> -105 | True -> True | 0.09 / 0.06 / 0.09 | 1.00 -> 1.00 |
+| donchian k=5,mode=fade,n=34 nyam stop6ATR tgt 1R | +560 -> +560 | +465 -> +465 | -45 -> -48 | True -> True | 0.04 / 0.04 / 0.04 | 1.00 -> 1.00 |
+| donchian k=5,mode=fade,n=34 nyam stop6ATR tgt 2R | +444 -> +444 | +410 -> +410 | +123 -> +120 | True -> True | 0.07 / 0.08 / 0.08 | 1.00 -> 1.00 |
+| donchian k=5,mode=fade,n=34 nyam stop6ATR tgt none | +444 -> +444 | +410 -> +410 | +117 -> +114 | True -> True | 0.04 / 0.09 / 0.09 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.25 london stop3ATR tgt 2R | +780 -> +797 | +398 -> +405 | -221 -> -221 | True -> True | 0.03 / 0.02 / 0.04 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.25 london stop4ATR tgt 2R | +350 -> +368 | +238 -> +244 | -64 -> -64 | True -> True | 0.13 / 0.08 / 0.08 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.25 london stop6ATR tgt 1R | +342 -> +359 | +215 -> +222 | -79 -> -79 | True -> True | 0.09 / 0.05 / 0.09 | 1.00 -> 1.00 |
+| donchian k=15,mode=break,n=55 pre stop3ATR tgt none | +164 -> +164 | +186 -> +188 | -38 -> -38 | True -> True | 0.17 / 0.10 / 0.10 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.1 london stop4ATR tgt 2R | +364 -> +382 | +190 -> +197 | -73 -> -53 | True -> True | 0.10 / 0.09 / 0.08 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.1 london stop6ATR tgt 1R | +385 -> +402 | +176 -> +183 | -130 -> -130 | True -> True | 0.05 / 0.05 / 0.07 | 1.00 -> 1.00 |
+| vwap_reject anchor_hm=180,hold=5,min_bars=15,span_min=600 nypm stop2ATR tgt none | +433 -> +398 | +140 -> +76 | -169 -> -169 | True -> True | 0.09 / 0.19 / 0.24 | 1.00 -> 1.00 |
+| vwap_reject anchor_hm=180,hold=5,min_bars=15,span_min=600 nypm stop4ATR tgt 2R | +331 -> +313 | +139 -> +110 | -70 -> -70 | True -> True | 0.11 / 0.09 / 0.10 | 1.00 -> 1.00 |
+| vwap_reject anchor_hm=180,hold=5,min_bars=15,span_min=600 nypm stop4ATR tgt none | +291 -> +274 | +124 -> +95 | -63 -> -63 | True -> True | 0.09 / 0.10 / 0.13 | 1.00 -> 1.00 |
+| orb_failed anchor_hm=540,end_hm=840,fail_bars=10,minutes=15 pre stop4ATR tgt 1R | +285 -> +285 | +264 -> +264 | +23 -> +38 | True -> True | 0.08 / 0.08 / 0.08 | 1.00 -> 1.00 |
+| failed_or anchor_hm=540,minutes=15 pre stop4ATR tgt 1R | +386 -> +386 | +357 -> +357 | -1 -> +14 | True -> True | 0.11 / 0.07 / 0.07 | 1.00 -> 1.00 |
+| vwap_reclaim anchor_hm=570,hold=5,min_bars=15,span_min=600 nyam stop3ATR tgt 2R | +809 -> +664 | +804 -> +748 | -488 -> -486 | True -> True | 0.04 / 0.07 / 0.07 | 1.00 -> 1.00 |
+| vwap_reclaim anchor_hm=570,hold=5,min_bars=15,span_min=600 nyam stop4ATR tgt 2R | +611 -> +642 | +469 -> +481 | -364 -> -386 | True -> True | 0.12 / 0.14 / 0.09 | 1.00 -> 1.00 |
+| vwap_reclaim anchor_hm=570,hold=5,min_bars=15,span_min=600 nyam stop4ATR tgt none | +528 -> +560 | +408 -> +420 | -368 -> -379 | True -> True | 0.06 / 0.05 / 0.04 | 1.00 -> 1.00 |
+
+Full table and method limits: autopilot/REPAIRED_BARS_RERUN.md.

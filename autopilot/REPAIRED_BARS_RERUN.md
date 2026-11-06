@@ -217,3 +217,84 @@ Other cells with |delta net| > $5,000 (21):
 #### Labels moved
 FIND_DAILY: one: 6J Donchian-60 stop-and-reverse is tolerant on the ORIGINAL bars (13-year net $126.4k, 9 years positive) and NOT on the repaired bars (net $109.2k, 8 years positive, maxDD $51.1k -> $63.5k): best-of-F -> NULL; it was never a family-p candidate (p 1.00 both). Counts: best-of-F 37 -> 36 (the published figure), NULL 282 -> 283, REGIME 89 = 89. DAILY-R6: no tolerant flag moves (14 = 14); two NULL cells (ZT Donchian-20 SAR and EX) become REGIME on the repaired bars; best tolerant family p 0.777 -> 0.776 (A); no LEAD either way.
 **Plain sentence: the repair moves 42 of 408 FIND_DAILY cells and 73 of 578 DAILY-R6 cells by more than $1 (up to $17k and $21k over 13 years), but only the Donchian cells (the ones that read daily highs and lows), a handful of closes-based cells and the portfolios built from them; one tolerant flag moves (6J Donchian-60, to NULL), no family p crosses .10, no LEAD appears or disappears, and the frozen CL watch thresholds (K1 $47,782, K2 -$26,761), the CL plateau count and the rates plateau counts are unchanged. Since the published daily results were already computed on the repaired copy, nothing published needs a correction.**
+
+# REPAIRED_BARS_RERUN - Z1 slice (CL, YM, 6E, 6J block B; ES, RTY finalists). Append-only; GC/ZN/ZB/MBT/BTC/NKD are ZL-1's.
+
+## REPAIRED-BLOCKB (Z1, 2026-11-06): block-B survivors and gate flips on the BAD-PRINT-REPAIRED bars, original vs repaired
+Source of the repair: CHAR-C's repaired 1-min copies (find_c/cache_c, rule cc_audit.py: bars whose high/low/close lie more than 10 sigma + 4 ticks outside their neighbours are clamped; originals untouched). The block-B bars (ohlcv1m dbn files) were matched by timestamp to the repaired copy and the o/h/l/c of every matched bar replaced (changed bars: YM 995, CL 523, 6E 19,721, 6J 14,455; all other cells of the bars identical). Everything else is unchanged: same signal sets, brackets, costs, caps, evaluator, gate. Code l2vast/ds3/code/repair_z1/ (rerun.py, compare.py, doc.py); results /mnt/l2/l2vast/repair_z1/.
+Method (stated limits): (1) STAGE 1 for EVERY cell of the grid on repaired bars (exact, deterministic): tolerant-gate and NOW-ONLY status compared with the stored original of the same cell. (2) Placebo worlds (HOLD-window hash/side/shift5/days worlds as in the block) re-run for every cell that is tolerant in the original OR the repaired version, on the repaired bars AND, with the same per-cell seed, on the original bars again (the 'control'), because the placebos draw random numbers and the original runs used a different random stream: original-vs-control differences are Monte-Carlo noise. (3) p_family is evaluated against the ORIGINAL family world-max distribution M (the full family of ~2,600-3,000 eligible cells was not re-simulated; a few changed cells cannot move the max of the family materially, but this is an approximation and is labelled so).
+| instrument | bad bars repaired | cells scored | cells whose L6M or HOLD mean changed (any / > 10%) | tolerant gate: original -> repaired (lost / gained) | NOW-ONLY (lost / gained) | tolerant + p_book <= .10: original / original-bars rerun (MC control) / repaired | in both original and repaired | only original / only repaired | family-surviving (p_family <= .10): original -> repaired |
+|---|---|---|---|---|---|---|---|---|---|
+| CL | 523 | 2964 | 1673 / 540 | 242 -> 247 (3 / 8) | 15 / 13 | 13 / 17 / 16 | 11 | 2 / 5 | 0 -> 0 |
+| YM | 995 | 2268 | 1478 / 739 | 207 -> 208 (11 / 12) | 9 / 11 | 12 / 13 / 11 | 9 | 3 / 2 | 0 -> 0 |
+| 6E | 19721 | 2964 | 2120 / 256 | 8 -> 10 (0 / 2) | 0 / 0 | 0 / 1 / 1 | 0 | 0 / 1 | 0 -> 0 |
+| 6J | 14455 | 3468 | 2948 / 945 | 36 -> 42 (3 / 9) | 26 / 11 | 7 / 6 / 10 | 6 | 1 / 4 | 0 -> 0 |
+
+**Reading.** The repair moves cell means by a few $/wk in most cells and by more than 10% in a minority, flips the tolerant gate of a handful of cells in both directions (CL 3 lost / 8 gained, YM 11 / 12, 6E 0 / 2, 6J 3 / 9) and changes the set of 'tolerant + per-cell p_book <= .10' cells by an amount that is the same size as the Monte-Carlo difference between the original run and the same-bars control (CL 13 / 17 / 16, YM 12 / 13 / 11, 6E 0 / 1 / 1, 6J 7 / 6 / 10). No cell enters the family-surviving set (p_family <= .10): all p_family stay 0.86-1.00 against the original family max. No block-B verdict, label or lead changes; the repaired bars do not create or remove a diversifier. 6E and 6J are the instruments with the large 2013-2015 repair (19,721 and 14,455 bars) but their tolerant sets are small and recent-window based, so the 2013-15 repair only shows in the pre-2023 columns (PRE/X' means) not in the NOW gates.
+
+### CL - tolerant + p_book <= .10 in the original or in the repaired run (L6M / HOLD / PRE in $/wk at equal-risk lots, carry dropped; p_book original / original-bars rerun / repaired; p_family vs the original max)
+| cell | L6M orig -> rep | HOLD orig -> rep | PRE orig -> rep | tolerant orig -> rep | p_book o / ctl / r | p_family o -> r |
+|--|--|--|--|--|--|--|
+| donchian k=5,mode=fade,n=34 nyam stop4ATR tgt 1R | +306 -> +288 | +316 -> +310 | -101 -> -105 | True -> True | 0.09 / 0.06 / 0.09 | 1.00 -> 1.00 |
+| donchian k=5,mode=fade,n=34 nyam stop6ATR tgt 1R | +560 -> +560 | +465 -> +465 | -45 -> -48 | True -> True | 0.04 / 0.04 / 0.04 | 1.00 -> 1.00 |
+| donchian k=5,mode=fade,n=34 nyam stop6ATR tgt 2R | +444 -> +444 | +410 -> +410 | +123 -> +120 | True -> True | 0.07 / 0.08 / 0.08 | 1.00 -> 1.00 |
+| donchian k=5,mode=fade,n=34 nyam stop6ATR tgt none | +444 -> +444 | +410 -> +410 | +117 -> +114 | True -> True | 0.04 / 0.09 / 0.09 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.25 london stop3ATR tgt 2R | +780 -> +797 | +398 -> +405 | -221 -> -221 | True -> True | 0.03 / 0.02 / 0.04 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.25 london stop4ATR tgt 2R | +350 -> +368 | +238 -> +244 | -64 -> -64 | True -> True | 0.13 / 0.08 / 0.08 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.25 london stop6ATR tgt 1R | +342 -> +359 | +215 -> +222 | -79 -> -79 | True -> True | 0.09 / 0.05 / 0.09 | 1.00 -> 1.00 |
+| donchian k=15,mode=break,n=55 pre stop3ATR tgt none | +164 -> +164 | +186 -> +188 | -38 -> -38 | True -> True | 0.17 / 0.10 / 0.10 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.1 london stop4ATR tgt 2R | +364 -> +382 | +190 -> +197 | -73 -> -53 | True -> True | 0.10 / 0.09 / 0.08 | 1.00 -> 1.00 |
+| pdhl_break rth=(570, 960),x_atr=0.1 london stop6ATR tgt 1R | +385 -> +402 | +176 -> +183 | -130 -> -130 | True -> True | 0.05 / 0.05 / 0.07 | 1.00 -> 1.00 |
+| vwap_reject anchor_hm=180,hold=5,min_bars=15,span_min=600 nypm stop2ATR tgt none | +433 -> +398 | +140 -> +76 | -169 -> -169 | True -> True | 0.09 / 0.19 / 0.24 | 1.00 -> 1.00 |
+| vwap_reject anchor_hm=180,hold=5,min_bars=15,span_min=600 nypm stop4ATR tgt 2R | +331 -> +313 | +139 -> +110 | -70 -> -70 | True -> True | 0.11 / 0.09 / 0.10 | 1.00 -> 1.00 |
+| vwap_reject anchor_hm=180,hold=5,min_bars=15,span_min=600 nypm stop4ATR tgt none | +291 -> +274 | +124 -> +95 | -63 -> -63 | True -> True | 0.09 / 0.10 / 0.13 | 1.00 -> 1.00 |
+| orb_failed anchor_hm=540,end_hm=840,fail_bars=10,minutes=15 pre stop4ATR tgt 1R | +285 -> +285 | +264 -> +264 | +23 -> +38 | True -> True | 0.08 / 0.08 / 0.08 | 1.00 -> 1.00 |
+| failed_or anchor_hm=540,minutes=15 pre stop4ATR tgt 1R | +386 -> +386 | +357 -> +357 | -1 -> +14 | True -> True | 0.11 / 0.07 / 0.07 | 1.00 -> 1.00 |
+| vwap_reclaim anchor_hm=570,hold=5,min_bars=15,span_min=600 nyam stop3ATR tgt 2R | +809 -> +664 | +804 -> +748 | -488 -> -486 | True -> True | 0.04 / 0.07 / 0.07 | 1.00 -> 1.00 |
+| vwap_reclaim anchor_hm=570,hold=5,min_bars=15,span_min=600 nyam stop4ATR tgt 2R | +611 -> +642 | +469 -> +481 | -364 -> -386 | True -> True | 0.12 / 0.14 / 0.09 | 1.00 -> 1.00 |
+| vwap_reclaim anchor_hm=570,hold=5,min_bars=15,span_min=600 nyam stop4ATR tgt none | +528 -> +560 | +408 -> +420 | -368 -> -379 | True -> True | 0.06 / 0.05 / 0.04 | 1.00 -> 1.00 |
+
+### YM - tolerant + p_book <= .10 in the original or in the repaired run (L6M / HOLD / PRE in $/wk at equal-risk lots, carry dropped; p_book original / original-bars rerun / repaired; p_family vs the original max)
+| cell | L6M orig -> rep | HOLD orig -> rep | PRE orig -> rep | tolerant orig -> rep | p_book o / ctl / r | p_family o -> r |
+|--|--|--|--|--|--|--|
+| orb_fade anchor_hm=570,end_hm=870,minutes=5 nyam stop4ATR tgt 2R | +1168 -> +1168 | +767 -> +784 | -169 -> -206 | True -> True | 0.09 / 0.12 / 0.14 | 1.00 -> 1.00 |
+| orb_fade anchor_hm=570,end_hm=870,minutes=5 nyam stop4ATR tgt none | +1156 -> +1156 | +777 -> +797 | -204 -> -232 | True -> True | 0.07 / 0.07 / 0.08 | 1.00 -> 1.00 |
+| orb_fade anchor_hm=570,end_hm=870,minutes=5 nyam stop6ATR tgt 1R | +986 -> +985 | +672 -> +664 | -214 -> -205 | True -> True | 0.10 / 0.06 / 0.09 | 1.00 -> 1.00 |
+| orb_fade anchor_hm=570,end_hm=870,minutes=5 nyam stop6ATR tgt 2R | +1081 -> +1081 | +845 -> +835 | -154 -> -145 | True -> True | 0.07 / 0.06 / 0.05 | 1.00 -> 1.00 |
+| orb_fade anchor_hm=570,end_hm=870,minutes=5 nyam stop6ATR tgt none | +1081 -> +1081 | +830 -> +821 | -223 -> -214 | True -> True | 0.03 / 0.03 / 0.03 | 1.00 -> 1.00 |
+| orb_failed anchor_hm=570,end_hm=870,fail_bars=10,minutes=5 nyam stop4ATR tgt 2R | +859 -> +859 | +477 -> +446 | -225 -> -197 | True -> True | 0.07 / 0.07 / 0.08 | 1.00 -> 1.00 |
+| orb_failed anchor_hm=570,end_hm=870,fail_bars=10,minutes=5 nyam stop6ATR tgt 2R | +652 -> +652 | +407 -> +400 | -109 -> -87 | True -> True | 0.07 / 0.07 / 0.07 | 1.00 -> 1.00 |
+| orb_failed anchor_hm=570,end_hm=870,fail_bars=10,minutes=5 nyam stop6ATR tgt none | +652 -> +652 | +375 -> +368 | -115 -> -94 | True -> True | 0.07 / 0.10 / 0.12 | 1.00 -> 1.00 |
+| failed_or anchor_hm=570,minutes=5 nyam stop6ATR tgt none | +644 -> +644 | +274 -> +259 | -207 -> -190 | True -> True | 0.10 / 0.10 / 0.18 | 1.00 -> 1.00 |
+| session_extreme_fade anchor_hm=570,cooldown=30,min_bars=30,span_min=390 close stop2ATR tgt 1R | +39 -> +39 | +254 -> +254 | -5 -> -5 | True -> True | 0.11 / 0.06 / 0.06 | 1.00 -> 1.00 |
+| orb_failed anchor_hm=570,end_hm=870,fail_bars=10,minutes=15 nyam stop4ATR tgt 2R | +49 -> +57 | +199 -> +175 | -246 -> -236 | True -> True | 0.10 / 0.10 / 0.10 | 1.00 -> 1.00 |
+| vwap_reject anchor_hm=570,hold=5,min_bars=15,span_min=390 nyam stop2ATR tgt 1R | +1213 -> +1261 | +433 -> +420 | -72 -> -51 | True -> True | 0.09 / 0.09 / 0.07 | 1.00 -> 1.00 |
+| vwap_reclaim anchor_hm=570,hold=5,min_bars=15,span_min=390 nyam stop2ATR tgt 1R | +834 -> +833 | +278 -> +315 | -34 -> -46 | True -> True | 0.07 / 0.05 / 0.04 | 1.00 -> 0.86 |
+| vwap_reclaim anchor_hm=570,hold=5,min_bars=15,span_min=390 nyam stop3ATR tgt 1R | +886 -> +810 | +594 -> +525 | +11 -> +24 | True -> True | 0.02 / 0.02 / 0.03 | 1.00 -> 0.98 |
+
+### 6E - tolerant + p_book <= .10 in the original or in the repaired run (L6M / HOLD / PRE in $/wk at equal-risk lots, carry dropped; p_book original / original-bars rerun / repaired; p_family vs the original max)
+| cell | L6M orig -> rep | HOLD orig -> rep | PRE orig -> rep | tolerant orig -> rep | p_book o / ctl / r | p_family o -> r |
+|--|--|--|--|--|--|--|
+| donchian k=15,mode=fade,n=10 pre stop4ATR tgt 1R | +83 -> +83 | +27 -> +20 | -205 -> -205 | True -> True | 0.11 / 0.07 / 0.08 | 1.00 -> 1.00 |
+
+### 6J - tolerant + p_book <= .10 in the original or in the repaired run (L6M / HOLD / PRE in $/wk at equal-risk lots, carry dropped; p_book original / original-bars rerun / repaired; p_family vs the original max)
+| cell | L6M orig -> rep | HOLD orig -> rep | PRE orig -> rep | tolerant orig -> rep | p_book o / ctl / r | p_family o -> r |
+|--|--|--|--|--|--|--|
+| donchian k=5,mode=fade,n=34 pre stop4ATR tgt 1R | +39 -> +35 | -193 -> -196 | -199 -> -226 | True -> True | 0.09 / 0.04 / 0.15 | 1.00 -> 1.00 |
+| donchian k=5,mode=fade,n=34 nyam stop6ATR tgt 2R | -17 -> +64 | -208 -> -167 | -145 -> -136 | False -> True | 0.12 / 0.26 / 0.10 | 1.00 -> 1.00 |
+| donchian k=5,mode=fade,n=55 nyam stop6ATR tgt 2R | +71 -> +164 | -170 -> -123 | -147 -> -145 | True -> True | 0.10 / 0.17 / 0.06 | 1.00 -> 1.00 |
+| donchian k=5,mode=fade,n=55 nyam stop6ATR tgt none | -10 -> +43 | -202 -> -171 | -140 -> -138 | False -> True | 0.13 / 0.16 / 0.07 | 1.00 -> 1.00 |
+| session_extreme_fade anchor_hm=180,cooldown=30,min_bars=30,span_min=600 nyam stop6ATR tgt 2R | +81 -> +57 | +83 -> +83 | -73 -> -52 | True -> True | 0.03 / 0.02 / 0.04 | 1.00 -> 1.00 |
+| session_extreme_fade anchor_hm=180,cooldown=30,min_bars=30,span_min=600 nyam stop6ATR tgt none | +81 -> +57 | +83 -> +83 | -73 -> -52 | True -> True | 0.03 / 0.02 / 0.02 | 1.00 -> 1.00 |
+| session_extreme_fade anchor_hm=570,cooldown=30,min_bars=30,span_min=390 nyam stop4ATR tgt 2R | +103 -> +67 | -85 -> -101 | -265 -> -231 | False -> True | 0.05 / 0.07 / 0.05 | 1.00 -> 1.00 |
+| session_extreme_fade anchor_hm=570,cooldown=30,min_bars=30,span_min=390 nyam stop4ATR tgt none | +82 -> +46 | -93 -> -109 | -249 -> -208 | False -> True | 0.08 / 0.07 / 0.10 | 1.00 -> 1.00 |
+| session_extreme_fade anchor_hm=570,cooldown=30,min_bars=30,span_min=390 nyam stop6ATR tgt 1R | +73 -> +37 | -15 -> -32 | -125 -> -111 | True -> True | 0.03 / 0.02 / 0.02 | 1.00 -> 1.00 |
+| session_extreme_fade anchor_hm=570,cooldown=30,min_bars=30,span_min=390 nyam stop6ATR tgt 2R | +88 -> +51 | -25 -> -42 | -89 -> -63 | True -> True | 0.03 / 0.04 / 0.05 | 1.00 -> 1.00 |
+| session_extreme_fade anchor_hm=570,cooldown=30,min_bars=30,span_min=390 nyam stop6ATR tgt none | +88 -> +51 | -25 -> -42 | -89 -> -63 | True -> True | 0.03 / 0.03 / 0.04 | 1.00 -> 1.00 |
+
+### ES (my 30 stage-2 finalists of the 502,740-cell grid, original vs repaired bars; same shared evaluator, 100 worlds, seed 1; the full grid was NOT re-simulated)
+Changed bars: 555 highs (and 799 further o/l/c values) of 4,819,789. Mean |HOLD change| 12 $/wk (largest 111), tolerant-gate flips: 0, verdict label changes: 1 (the only text change is which of the failing reasons is listed first). All 30 still FAIL (placebo p_book or family p 1.00). Per-cell table: /mnt/l2/l2vast/repair_z1/ES_compare.pkl.
+
+### RTY (Z2 stage-2 top 12 tolerant cells, repaired xbars; originals from ds3_instr2_z2wf/RTY/stage2.pkl)
+Changed values: 989. Largest |HOLD change| 78 $/wk (cell K|b10|ema8|atr14|m2.0 tgt 1.5: HOLD 384 -> 306, L6M 986 -> 780), tolerant-gate flips: 0, 5 of 12 verdict strings differ only in the p_book number (all 12 still FAIL: p_book 0.24-0.74, family p 1.00). Last bars 10-16..10-23 (extension) are not covered by the repaired copy and are unrepaired.
+
