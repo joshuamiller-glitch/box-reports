@@ -278,3 +278,6 @@ CHAR-A's RTY premarket prior-day-level continuation (REGIME/WATCH, ~95 trades, s
 1. Intraday-index discovery: close it and run only the forward Shadow watches (default taken: keep running the existing queue to its end, no new index-intraday searches), or fund something that changes the cost wall (fee/rebate tier, pre-2023 ES/RTY mbp-10 quote, other products).
 2. Monday long Shadow watch on NQ/MNQ from 2026-11-09 (spec WATCH_MONDAY_LONG_SPEC.md): default taken: logged paper-only via monday_watch_log.py on the existing NQ feed, nothing traded; it enters at Sunday 18:00 where the live V2 window blocks 18:00-18:04/05, so the live entry-window question (V0..V3) matters for any real use.
 3. RTY pre-market watch data: default no purchase (item NOT-TESTABLE unless a metadata quote + your OK).
+
+## 2026-11-06 04:07Z NEEDS THE USER BY SATURDAY 2026-11-07 ~08:00Z: approve the NQ ohlcv-1s weekly pull (~$1.14)
+Window 2026-11-01T23:00Z -> 2026-11-07T00:00Z, command in FEED_RUNBOOK_20261107.md (pull_nov.py, --max-usd 2.00, confirm string from a dry run). Without it Monday 2026-11-09's first real table shows no outcome data and the Monday-long / NQ_PDL watches have no forward prices. Spend after: ~$7,312.8 of $8,000. Default taken: NO pull (nothing bought); also unanswered: MONDAY_START default 2026-11-04.
