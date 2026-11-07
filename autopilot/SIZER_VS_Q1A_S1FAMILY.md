@@ -1,4 +1,4 @@
-# S4a cells restated vs Q1-A (ts2 base: live lot order session -> slot/B02 -> ER -> zone) (2026-11-07 01:48Z)
+# S4a cells restated vs Q1-A (ts2 base: live lot order session -> slot/B02 -> ER -> zone) (2026-11-07 02:13Z)
 
 Reference = Q1-A (ER(20)5m < .30 x0.5 else x1.0). Variant 'down' = the cell with its x1.5 side removed (min(m,1)): what the cell adds to Q1-A; 'asis' = the cell vector unchanged (contains x1.5). Ranking key S = (cut L6M + cut PRE)/2 among cells with mean >= Q1-A on L6M and PRE (strict), drawdown first. Cuts are fractions of weekly maxDD vs Q1-A; PA9 genuine (scoring week key); drop = carrying weeks (L6M W27-38 2026, PRE W34-51 2024) dropped. Band = flip-5 (L6M .219 HOLD .205 MID .322 PRE .099 X' .182), calibrated vs the old ladder. mean_lots = formula lots over the 17,396 flagged-taken rows of the old base (Q1-A there: 2.311), NOT over the 21,397 ts2 trades (Q1-A 2.139); ratios are comparable, absolutes are not. Post-hoc, Shadow only, no PASS claims.
 

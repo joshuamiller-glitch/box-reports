@@ -103,3 +103,17 @@
 | 2026-11-07 01:43Z | BASE8 r8o DIAGNOSTIC ONLY (oracle live profit exits + exact SizeMult) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild8 | pred sha - | 0.748 F | 0.456 F | 0.496 F | 0.458 F | FAIL |
 | 2026-11-07 01:46Z | BASE8 r8t DIAGNOSTIC SENSITIVITY (r8 + market entry at opposite touch) [G3 window 10 s spec] | rebuild8 | pred sha - | 0.757 F | 0.452 F | 0.357 F | 0.422 F | FAIL |
 | 2026-11-07 01:46Z | BASE8 r8t DIAGNOSTIC SENSITIVITY (r8 + market entry at opposite touch) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild8 | pred sha - | 0.757 F | 0.452 F | 0.481 F | 0.422 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 PRIMARY(r8+F1-F5) [G3 window 10 s spec] | rebuild9 | pred sha - | 0.717 F | 0.521 F | 0.349 F | 0.269 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 PRIMARY(r8+F1-F5) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.717 F | 0.521 F | 0.470 F | 0.269 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9a(profit/take off) [G3 window 10 s spec] | rebuild9 | pred sha - | 0.717 F | 0.514 F | 0.349 F | 0.269 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9a(profit/take off) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.717 F | 0.514 F | 0.470 F | 0.269 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9o DIAGNOSTIC ONLY(oracle profit exits) [G3 window 10 s spec] | rebuild9 | pred sha - | 0.770 F | 0.500 F | 0.377 F | 0.308 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9o DIAGNOSTIC ONLY(oracle profit exits) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.770 F | 0.500 F | 0.500 F | 0.308 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 nocap(F3 off,ablation) [G3 window 10 s spec] | rebuild9 | pred sha - | 0.717 F | 0.540 F | 0.349 F | 0.283 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 nocap(F3 off,ablation) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.717 F | 0.540 F | 0.470 F | 0.283 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 noote(F4 off,ablation) [G3 window 10 s spec] | rebuild9 | pred sha - | 0.717 F | 0.521 F | 0.349 F | 0.269 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 noote(F4 off,ablation) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.717 F | 0.521 F | 0.470 F | 0.269 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 nofill(F5 off,ablation) [G3 window 10 s spec] | rebuild9 | pred sha - | 0.708 F | 0.394 F | 0.345 F | 0.363 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 nofill(F5 off,ablation) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.708 F | 0.394 F | 0.463 F | 0.363 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 nontz(F1 off,ablation) [G3 window 10 s spec] | rebuild9 | pred sha - | 0.707 F | 0.531 F | 0.347 F | 0.319 F | FAIL |
+| 2026-11-07 02:22Z | BASE9 r9 nontz(F1 off,ablation) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.707 F | 0.531 F | 0.467 F | 0.319 F | FAIL |
