@@ -1,4 +1,4 @@
-# SIZER MASTER TABLE, OLD REFERENCE (x1.5 ladder, superseded by SIZER_MASTER_TABLE.md vs Q1-A) (integrator, 2026-11-07 03:29Z)
+# SIZER MASTER TABLE, OLD REFERENCE (x1.5 ladder, superseded by SIZER_MASTER_TABLE.md vs Q1-A) (integrator, 2026-11-07 03:55Z)
 
 Post-hoc, Shadow only, no PASS claims. Cuts are fractions of weekly-cumulative maxDD vs the live binary ER ladder (positive = smaller drawdown), all converted from percent where the source used percent. Base column says ts/V13T_LIVE sequential; ledger-only rows (S2, ADD, STRESS) are tagged by their spec text; S3X is PA maxDD in dollars and sits in the ledger only (not a cut). Q1/Q2 exist only as DS3_SIZER_Q1.md/Q2.md prose and are not yet machine-merged. Full table: SIZER_MASTER_TABLE.csv (6454 rows). Missing columns (equal-risk delta, placebo ranks, best-of-N null, worst-day exposure) are filled only where the source file has them; see per-program pages. 'ER sizer off' is never a ranked cell.
 
