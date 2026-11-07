@@ -1143,3 +1143,16 @@ Every cell that flips sign in L6M or HOLD, or flips the tolerant gate (original 
 | NQ b_PD_nyam_all_h30|m1.0_t1.0 | +199 -> +199 | +418 -> +418 | +8 -> +8 | -120 -> -120 | 578 -> 578 |
 All 30 tick-scale book cells (ES 6, RTY 12, NQ 12): trade counts identical, L6M and X' identical, HOLD changes <= $64/wk (NQ), PRE changes <= $153/wk (NQ pre-market 1800 s variants, all with negative HOLD), tolerant flips 0, placebo p_book changes <= .05 on every cell. ES prior-day-burst 60 s, RTY pre-market 1800 s and NQ NY-AM 30 s keep their windows exactly. NQ_PDL bar-based replay on repaired bars: events 561 (unchanged), trades 551, L6M -404 / HOLD -119 / PRE -254 (was -239) / X' -325, per-trade -$8.5 (was -$8.9), MNQ sd $12.86 (was $12.91), overlap with the L2 version 78.2% (was 77.9%), weekly corr to the L2 version .561 (was .573): the frozen thresholds of WATCH_NQ_PDL_SPEC.md (sd $12.91, kill -2 sigma sqrt(n)) change by 0.4% and are NOT amended.
 **Which labels or frozen specs move: none.** WATCH_RTY_PREMARKET_SPEC.md (tick h1800 cells identical), WATCH_NQ_PDL_SPEC.md (thresholds unchanged), WATCH_MONDAY_LONG_SPEC.md and AMENDMENT_1 (Monday legs identical); the corrected 1S-FIX labels and every 'does not clear' conclusion stand. Files: /mnt/l2/l2vast/ds3/out/find/{ES,RTY,YM}/repaired_rerun.csv, repaired_rerun_all.csv, repaired_tickb.csv; code rerun_1min.py, repair_1s.py, scan_1s_badprints.py, tick_books_rep.py, nq_pdl_replay_rep.py in l2vast/ds3/code/find/.
+
+## T-FIND coverage audit (resume check, 2026-11-07; no new compute, no cells scored, DEAD_CELLS untouched). Shadow only, no PASS claims, nothing live.
+| instrument | Step-1 map page | Step-2 book table (this file) | learned-rule search (lrs_lib) | other | clears the bar |
+|--|--|--|--|--|--|
+| ES | CHARACTER | yes (4 blocks + 1S-FIX) | yes (lrs_lib + instr2/lrs.py) | 1b-DEEP, 1S-LRS | no |
+| RTY | CHARACTER | yes (4 blocks + 1S-FIX) | yes | 1b-DEEP, WATCH pre-market item | no |
+| YM | CHARACTER | yes | yes | - | no |
+| NQ (control) | CHARACTER | yes | yes | 1S-FIX | no |
+| GC CL ZN ZB | CHARACTER | yes (CHAR-B, top 25 each) | yes | RV spreads | no |
+| 6E 6J | CHARACTER | yes (CHAR-C; 6J also 1-s) | yes | - | no |
+| BTC MBT | CHARACTER | yes (MBT + BTC cross-check) | yes (+ CAP-BREACH rerun, seed replication) | - | no |
+| NKD | CHARACTER | yes (CAP-BREACH; also 1-s) | yes (+ CAP-BREACH rerun) | - | no |
+Result: no instrument lacks a Step-2 book table or an LRS run, so there is nothing missing to run; launching more workers would only re-score cells already in DEAD_CELLS. Final answer stays DS3_FIND_FINAL.md (0 of 1,683 map-book cells and 207 ES/RTY/YM learned rules cleared; WATCH items only). Nothing for the top of MORNING.md.
