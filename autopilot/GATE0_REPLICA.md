@@ -571,3 +571,56 @@ Census vs the 187 live trades (+35 replica-only): MATCH 86, MATCH_QTY (exit with
 | G3 cuts matched, 60 s | 0.460 (63 pairs) | >= 0.85 FAIL |
 | G4 cut dollars | 0.271 | <= 0.10 FAIL |
 iter13 (fee 1.18): identical gates and trades. Seal manifest 759f2258... unchanged; no pkill.
+
+# ITERATION 6 (appended 2026-11-07; prereg l2vast/ds3/prereg/REPLICA_ITER14_prereg.md sha 98d2c863d1a76566...) - PRE-PROOF, Gate 0 still NOT passed
+Headline unchanged = iter12 (user inputs + code defaults). Analysis plus pre-registered reading variants; nothing selected.
+
+## 1. Size gap in paired trades (size_gap.csv): what is missing and what the C# defines
+**C# facts.** (a) The 30 % reserve is armed as a *dip trigger*, not a resting order: L2Arm (L1474-1489) submits the first part at market, sets Armed and the reserve lots; L2Pump (L1492-1523) fires when dip >= L2GateMinDipPts 3 AND one L2 confirmation (1 s throttle) and then submits **a market order** (L2AddStage L1525-1530, OrderType.Market); there is no resting limit in the code. The text "resting limit 3 pts against" in GATE0_ANSWERS s3/s5 describes the trigger; the code is the trigger + market. (b) Slices: SubmitEntry (L2709-2714) sends 1 lot at market, SlicesSent=1, SliceNext=now+2000 ms; PumpEntry (L2739-2750, called from the tick loop L3156) sends the next lot at the first tick >= SliceNext; the pump stops (EntryActive=false) when Side==0, ExitPending or StopTriggered (L2742) and RequestBookExit sets EntryActive=false (L2909); an entry fill arriving after the trade closed is an orphan and is undone at market (L3037-3045). So unsent slices are dropped when a stop/target/cut exit fires; an in-flight slice can fill after the exit request. (c) L2AddStage sets `SlicesSent = Qty` after `Qty += lots` (L1528): every first-part slice not yet sent is dropped. (d) If the confirmation arrives before the first slice has filled (InTrade false), L2Pump calls SubmitEntry again (L1521) with ArmFillLots = reserve: that re-enters with `Qty = min(max(1, reserve), SessionLots)` (L2700), Side/PosQty/PendingPnl reset (L2704): the whole trade is then sized by the reserve. This happens 3 times in the replica (P7 11-03 10:46:30, M7 11-04 06:00, P7 11-04 08:05). (e) SubmitEntry caps the first part at the session table lots (L2700), not at the ER/SS/NTZ-reduced lots.
+Paired trades whose filled contracts differ (target exits; live filled from pnl/move):
+| book | signal | live qty / filled | replica lots (first+reserve) / add time / filled | missing part | C# rule |
+|--|--|--|--|--|--|
+| P7 | 11-03 21:56 | 4 / 4 | 4 (3+1) / 2.7 s / 2 | 1 first-part slice (3rd) | add at 2.7 s sets SlicesSent=Qty (L1528) |
+| P7 | 11-04 00:30 | 7 / 6 | 7 (5+2) / 1.9 s / 3 | 4 slices dropped, live dropped 1 | same; live add came at 6-8 s |
+| P7 | 11-04 01:31 | 7 / 7 | 7 (5+2) / 3.3 s / 4 | 3 slices dropped, live none | same; live add after all 5 slices |
+| P7 | 11-05 10:39 (confirm) | 5 / 5 | 7 (5+2) / 1.2 s / 3 | replica added at 1.2 s, live never | same (live: first part only) |
+| P7 | 11-03 10:46:30 (confirm) | 4 / 3 | 4 (3+1) / 0.1 s before the first fill / 2 | re-entry path: Qty:=reserve 1 (L2700, L1521) | SubmitEntry re-entry |
+| U7 | 11-03 08:20 | 2 / 2 | 4 (3+1) / 5.0 s / 3 | ER at the hole edge: replica ER 0.375 (high), the 5-min bar closing 08:20 excluded gives 0.168 (low) = lots 2 as live | ER read L1705 |
+| M7 | 11-03 08:20 | 1 / 1 | 2 (1+1) / 5.0 s / 2 | same ER edge (low => 1 lot, no reserve) or reserve not added | same |
+| K7 | 11-03 18:39 | 1 / 1 | 2 (1+1) / 5.3 s / 2 | reserve added in replica (one gate: absorption), not in live | L2Pump n>=1 |
+| U7 | 11-04 07:10 | 1 / 1 | 2 (1+1) / 8.5 s / 2 | reserve added in replica (absorption), not in live; or ER excl (0.142) + NTZ half => 1 lot | L2Pump / ER |
+| K7 | 11-02 13:33 | 1 / 2 | 1 / none / 1 | live filled 2 with logged qty 1 (live-side accounting, e.g. an add counted outside Qty) - unexplained | - |
+Net: live minus replica contracts = +8 over these ten pairs (add-drop trades +8, others cancel). ER convention check over all 136 live entries paired with a replica ARM: callback-order ER (asc) matches live quantity in 133, same-timestamp 5-min bar (headline) in 134; they differ on 5 entries (M7 Mon 02:35 and U7 Thu 02:10 favour the same-timestamp bar; U7 Tue 08:20 favours exclusion; two are ambiguous), so the one clear contradiction to the headline convention is the hole-edge entry.
+**Pre-registered readings (contracts live-minus-replica over the paired size-gap set; replica partial-fill trades; net):**
+| reading | contracts gap | partial trades | cuts +-2 s | G1 | G2 | G3 10/60 | G4 | net |
+|--|--|--|--|--|--|--|--|--|
+| iter12 literal (callback 1.0 s, timer bar close) | +8 | 17 | 41 | .733 | .422 | .325/.460 | .271 | +60.2k |
+| callback latency 0.5 s | +8 | 16 | 38 | .736 | .458 | .306/.444 | .278 | +56.4k |
+| callback latency 2.5 s | +7 | 18 | 15 | .656 | .575 | .255/.343 | .208 | +44.3k |
+| bar close at first print | +10 | 18 | 39 | .733 | .426 | .290/.429 | .256 | +59.7k |
+| NON-literal diagnostic NO_DROP (slices continue after an add) | -9 | 2 | 41 | .737 | .329 | .327/.463 | .348 | +69.8k |
+No literal reading changes the deficit (7-10 contracts); latency only moves cut timing (2.5 s destroys the cut match). Removing the drop altogether over-fills (-9: the replica would hold 9 more contracts than live on these pairs) and raises net by 9.6k: so the drop rule is real (live shows it at P7 11-04 00:30, 6 of 7 filled) but the replica adds earlier than live in 5 of the 7 add trades; the earlier-add cause is the gate/book content (iteration 4), not slice cadence, hole, or fills.
+
+## 2. P7 chain from Nov 3 18:13 (replica cut 18:34:42 -6,095 vs live PolicyCut 18:37:42 -6,510)
+Entry: live avg 28457.61 (7 lots, 18:13:03); replica avg 28457.86 (7 filled by 18:13:13). Both paths from the same print stream, AdvExt reset at each fill, unreal vs own average:
+| time | px | unreal live avg / replica avg | secs_ext | pulled/Med |
+|--|--|--|--|--|
+| 18:34:38.57 | 28426.00 | -31.61 / -31.86 | 18.6 | 10.5 |
+| 18:34:39.62 | 28418.00 | -39.61 / -39.86 | 0.0 | 25.7 |
+| 18:34:41.41 | 28417.00 | -40.61 / -40.86 | 0.9 | **30.3** (first print with armed unreal + newMae + pm>=30) |
+| 18:34:42.56 | 28416.75 | -40.86 / -41.11 | 0.8 | 39.0 (replica cut decision) |
+| 18:34:43.56 | 28418.00 | -39.61 / -39.86 | 1.8 | 39.4 |
+| 18:34:45.28 | 28420.00 | -37.61 / -37.86 | 3.5 | 17.9 |
+| ... 18:34:51 price +30 pts (pm 82-168, unreal > -7) | | | | |
+| 18:37:41.94 | 28411.00 | -46.61 / -46.86 | 0.4 | 53.4 (live exit decision, filled 18:37:42) |
+The two entry averages differ by 0.25 pt; the unreal, secs_ext and pm series are the same to the print; the 0.25 pt changes no condition (unreal is -39.6/-39.9 against the -30 arm; the policy arm 0.5*stopDist is 30.1-30.9). First divergent state: **the cut input** - at 18:34:41-43 the replica has pm 30.3-39.4 (marginal), live did not cut for 3 min 1 s and cut when pm reached 53.4. Not entry average, not fill timing, not newMae (secs_ext 0.8-1.8), not DepthLive. Live pm at 18:34:42 would have to be below 30 (a factor <= 0.77-0.99 of the replica's pulled), the same marginal pattern as the other cuts (ZL-3: sim pulled > live in 34 cuts). After that the replica is flat while live is in the trade until 18:37:42, re-enters 18:36 and the two P7 day paths separate (section 3 of iteration 5).
+
+## 3. Audit of the false cuts whose live-path condition is TRUE (live pm 33.8-76.6): is there a C# gate that would suppress the cut live and that the replica lacks?
+The false cuts with condition true on the live path: P7 Sun 19:23:46 (live pm 33.8, unreal -32.2), P7 Wed 07:31:41 (54.2), P7 11-04 19:30:14 (39.1), K7 Tue 02:29:21 (76.6, the stall), M7 Tue 02:29:17 (47.6), K7 11-04 22:06:52 (50.8), M7 11-05 02:56:23 (37.1). Gates between a print and RequestBookExit, all read (DS7.cs):
+- OnMarketData routing L3118-3141: chart-instrument Last only; price-distance routing |px-Closes[0][0]|/ref <= 5 %; Bid/Ask only set lastBid/lastAsk. Present in the replica (prints of the chart instrument).
+- L3150 block: `sgn != 0` gates only deltaSamples and L2OnPrint (l2.Prints used for `traded`), not the snapshot/pulled computation; replica identical (cb/ca use classified prints for traded).
+- Book loop L3151-3168: `ExitPending -> PumpExit; continue` (replica: skipped while exit pending, same); `!InTrade -> continue` (Side != 0 && PosQty > 0: live in trade, yes); AdvExt/FavExt update from the print; ManageLoss/ManageProfit only if ThL2Mode != ReplacePath (they are off); `ThL2Mode != Off && !ExitPending -> ManageThL2`.
+- ManageThL2 L1574-1608: ExitPending/Bip/NoBracket return; trail check (ThL2TrailPx 0 in the loss case); shadow return (mode is ReplacePath); DepthLive (>=5 levels, <120 s); 1-s throttle; unreal > 0 -> profit branch (a profit state would suppress the loss branch: unreal is computed from b.EntryPx = running average including the add fill; in these trades unreal is -30..-47 on both averages); loss: ThL2LossOn, -unreal >= 30, MedLevel > 0, pulled >= 30*Med, newMae (now - AdvExtTime <= 5 s, AdvExtTime reset by every fill L3050, including the 30 % add).
+- ManagePolicy L2173-2223: no DepthLive gate; its throttle is reset at every fill.
+- Adds in flight (EntryActive) and Armed L2 states: not referenced by ManageThL2/ManagePolicy; ExitPending is the only state that stops them. A pending exit from another request would also have cancelled the target (live exited by Target), so it cannot be present.
+Verdict: **no C# gate found that the replica lacks.** Every path that could suppress a cut (ExitPending, InTrade, profit branch, DepthLive, throttle, MedLevel, newMae anchoring on the last fill, sgn filter) is implemented the same; for P7 11-05 02:56 and K7/P7 11-03 21:50/21:56 the condition is false on the live path because the live entry average is 0.5-3 pts better (loss peaks at 26-29 pts, fill-price cause). The remaining 7 are decided by the pulled value (pm 33.8-76.6 in the owned stream; the live value is not recoverable without th_eval.csv).
