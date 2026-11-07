@@ -117,3 +117,4 @@
 | 2026-11-07 02:22Z | BASE9 r9 nofill(F5 off,ablation) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.708 F | 0.394 F | 0.463 F | 0.363 F | FAIL |
 | 2026-11-07 02:22Z | BASE9 r9 nontz(F1 off,ablation) [G3 window 10 s spec] | rebuild9 | pred sha - | 0.707 F | 0.531 F | 0.347 F | 0.319 F | FAIL |
 | 2026-11-07 02:22Z | BASE9 r9 nontz(F1 off,ablation) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.707 F | 0.531 F | 0.467 F | 0.319 F | FAIL |
+| 2026-11-07 W2 PREP | W2 harness tools built on SYNTHETIC rows (l2vast/ds3/code/gate0/w2/, autopilot/W2_HARNESS_PREP.md); no scoring, no live data, no gate result | - | - | - | - | - | - | n/a |
