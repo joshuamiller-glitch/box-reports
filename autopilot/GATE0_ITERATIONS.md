@@ -118,3 +118,4 @@
 | 2026-11-07 02:22Z | BASE9 r9 nontz(F1 off,ablation) [G3 window 10 s spec] | rebuild9 | pred sha - | 0.707 F | 0.531 F | 0.347 F | 0.319 F | FAIL |
 | 2026-11-07 02:22Z | BASE9 r9 nontz(F1 off,ablation) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild9 | pred sha - | 0.707 F | 0.531 F | 0.467 F | 0.319 F | FAIL |
 | 2026-11-07 W2 PREP | W2 harness tools built on SYNTHETIC rows (l2vast/ds3/code/gate0/w2/, autopilot/W2_HARNESS_PREP.md); no scoring, no live data, no gate result | - | - | - | - | - | - | n/a |
+| 2026-11-07 03:17Z | W2B week-parametrized copies (ws10.py, zl2_cut_stream_w.py, stream7_w.py) | rebuild10 | regression on blind params: ws10 T/gated identical to ws9 r9 (196, +49.9k), gates .717/.521/.349/.269 (60s .470); zl2 stream byte-identical (sha 3af23c6f) | PASS (tooling only, no new gate result) |
