@@ -1,4 +1,4 @@
-# SIZER LEAD REGISTER vs Q1-A (2026-11-07 00:06Z)
+# SIZER LEAD REGISTER vs Q1-A (2026-11-07 00:57Z)
 
 Flag rule: cut > 0 on L6M AND PRE vs Q1-A, carrying week dropped still > 0 on both, mean >= Q1-A on L6M and PRE (strict). Candidates are those that also pass no-harm (PA9 band flip-5, where PA9 exists) and are then taken to placebos / equal-risk / exposure. Post-hoc, Shadow only.
 

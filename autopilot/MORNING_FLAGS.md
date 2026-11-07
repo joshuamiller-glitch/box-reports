@@ -323,3 +323,4 @@ BASE-4 + ZL-2: the largest remaining Gate 0 lever is 8-12 live trades the engine
 
 ## 2026-11-06T21:14Z SMALL ASK (user): the policy-file loss-line arm for O7 (and per-book arms generally)
 BASE-4: the 3 live O7 trades are reproduced only if the O7 policy loss-line arm is 0.5 x stop = 20 pt on the 40-pt stop (live cuts at -22 and -35); with arm 30 the engine would not cut them. That is a hypothesis fitted on n=3. What is the O7 policy loss-line arm (and the per-book arms for the other books: K7, P7, U7, H7, M7, A7) in the live THP_POLICY file? A copy of the live policy file(s) for 11-01..11-05 would answer it for all books at once.
+- (wall 2026-11-07T00:32Z) Q for user: DS7.cs vs your answers §3: Z1 reads Native stop mode as native stop-market only (no strategy-worked 60 / catastrophe 80); the 30% add as market at first print 3 pt against signal, stop at signal+-60. Which is live? Engine uses the code reading meanwhile.
