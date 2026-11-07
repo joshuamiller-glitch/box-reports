@@ -154,3 +154,26 @@
 | 2026-11-07 15:27Z | REPLICA iter5b25 SENSITIVITY (exchange fill book at +0.25 s, callback +1.0 s) | 93494927 | pred sha 02bedf0aceba | 0.767 F | 0.327 F | 0.315 F | 0.171 F | FAIL |
 | 2026-11-07 15:27Z | REPLICA iter5tick SENSITIVITY (bar close at first print after boundary) | 93494927 | pred sha 48a1649fb929 | 0.755 F | 0.327 F | 0.275 F | 0.170 F | FAIL |
 | 2026-11-07 15:27Z | REPLICA iter5thr SENSITIVITY (target fills strictly through) | 93494927 | pred sha 011a5f6a6ba1 | 0.758 F | 0.312 F | 0.293 F | 0.170 F | FAIL |
+| 2026-11-07 15:32Z | REPLICA iter6 PRIMARY (iter5 + same-timestamp 5-min ER) | 64af6f93 | pred sha 0f50b39c03a6 | 0.755 F | 0.237 F | 0.291 F | 0.158 F | FAIL |
+| 2026-11-07 15:32Z | REPLICA iter6asc SENSITIVITY (callback-order ER, i.e. iter5) | 64af6f93 | pred sha d5870ddbcdc9 | 0.755 F | 0.319 F | 0.291 F | 0.175 F | FAIL |
+| 2026-11-07 15:32Z | REPLICA iter6ss SENSITIVITY (SS group-14 rules LIVE) | 64af6f93 | pred sha 279dc1149582 | 0.725 F | 0.268 F | 0.285 F | 0.129 F | FAIL |
+| 2026-11-07 15:32Z | REPLICA iter6b25 SENSITIVITY (exchange fill book +0.25 s) | 64af6f93 | pred sha e128c000cccf | 0.767 F | 0.244 F | 0.315 F | 0.152 F | FAIL |
+| 2026-11-07 15:36Z | REPLICA iter8 PRIMARY (user inputs only; literal port on raw mbp-10) | 509df386 | pred sha d2c5a1cdf99e | 0.752 F | 0.238 F | 0.296 F | 0.167 F | FAIL |
+| 2026-11-07 15:36Z | REPLICA iter8st ALTERNATIVE (inferred blind starts Tue 02:10 and 19:19:30; pending NT8 log) | 509df386 | pred sha 7ddddb79ba94 | 0.770 F | 0.282 F | 0.306 F | 0.116 F | FAIL |
+| 2026-11-07 15:36Z | REPLICA iter8ss ALTERNATIVE (SS group-14 rules LIVE) | 509df386 | pred sha f84861937a02 | 0.723 F | 0.268 F | 0.289 F | 0.138 F | FAIL |
+| 2026-11-07 15:36Z | REPLICA iter8lb ALTERNATIVE (exchange-fill book +0.25 s) | 509df386 | pred sha 38ca64362ce3 | 0.765 F | 0.244 F | 0.320 F | 0.161 F | FAIL |
+| 2026-11-07 15:36Z | REPLICA iter8asc ALTERNATIVE (callback-order ER) | 509df386 | pred sha bc16d7373ce8 | 0.752 F | 0.319 F | 0.296 F | 0.184 F | FAIL |
+| 2026-11-07 15:39Z | REPLICA iter9 (SS v1.0b header slots LIVE to Mon 08:50; user inputs only) | d61fb368 | pred sha 026b2bd479b3 | 0.760 F | 0.194 F | 0.305 F | 0.151 F | FAIL |
+| 2026-11-07 15:39Z | REPLICA iter9st (iter9 + inferred blind starts Tue 02:10 / 19:19:30; pending NT8 log) | d61fb368 | pred sha 79a74b5e42a5 | 0.778 F | 0.238 F | 0.315 F | 0.101 F | FAIL |
+2026-11-07 T-REPLICA (REPLICA-ENG) first end-to-end report autopilot/GATE0_REPLICA.md (literal DS7.cs port on raw mbp-10, code/replica/): NO PASS. iter1 .705/.397/.287(.399)/.114; iter9 best-supported .760/.194/.305(.417)/.151, iter9st (inferred stalls, pending NT8 log) .778/.238/.315(.433)/.101; cuts within 2 s 40/92, 28 held + 18 no-trade replica cuts; U7/M7 08:20:00 and Tue K7/M7 native-stop exits reproduced from bar-hole / blind-window logic; causes + UNKNOWN INPUTS in the report
+| 2026-11-07 15:42Z | REPLICA iter10 HEADLINE (user inputs + code defaults; SS user wording) | ba33852d | pred sha f84861937a02 | 0.723 F | 0.268 F | 0.289 F | 0.138 F | FAIL |
+| 2026-11-07 15:42Z | REPLICA iter10p SENS (SS passive = code default) | ba33852d | pred sha d2c5a1cdf99e | 0.752 F | 0.238 F | 0.296 F | 0.167 F | FAIL |
+| 2026-11-07 15:42Z | REPLICA iter10v SENS (SS v1.0b slots) | ba33852d | pred sha 026b2bd479b3 | 0.760 F | 0.194 F | 0.305 F | 0.151 F | FAIL |
+| 2026-11-07 15:42Z | REPLICA iter10st DIAGNOSTIC (inferred stalls) | ba33852d | pred sha f032100e2f98 | 0.740 F | 0.312 F | 0.299 F | 0.088 P | FAIL |
+| 2026-11-07 15:42Z | REPLICA iter10lb SENS (LAT_BOOK 0.25) | ba33852d | pred sha 1386f850e379 | 0.735 F | 0.276 F | 0.313 F | 0.133 F | FAIL |
+| 2026-11-07 15:42Z | REPLICA iter10thr SENS (targets strictly through) | ba33852d | pred sha c54e36a26864 | 0.726 F | 0.261 F | 0.291 F | 0.133 F | FAIL |
+| 2026-11-07 15:42Z | REPLICA iter10asc SENS (callback-order ER) | ba33852d | pred sha 9642f41b6d82 | 0.723 F | 0.350 F | 0.289 F | 0.156 F | FAIL |
+| 2026-11-07 15:42Z | REPLICA iter10tr SENS (TrendSize half-even) | ba33852d | pred sha f84861937a02 | 0.723 F | 0.268 F | 0.289 F | 0.138 F | FAIL |
+| 2026-11-07 15:47Z | REPLICA iter10c SENS (cumulative-volume resting targets) | b8bbaa92 | pred sha 78e4142d2362 | 0.723 F | 0.268 F | 0.289 F | 0.138 F | FAIL |
+| 2026-11-07 15:47Z | REPLICA iter10m SENS (cumvol targets + measured 0.175 s exchange-fill book latency) | b8bbaa92 | pred sha 0de6a4edb164 | 0.735 F | 0.303 F | 0.311 F | 0.140 F | FAIL |
+| 2026-11-07 16:3xZ | REPLICA iteration 2 (appended section of GATE0_REPLICA.md): headline iter10 .723/.268/.289(.400)/.138 FAIL; sensitivities iter10p/v/st(diagnostic)/lb/thr/asc/tr/c/m, measured: cumvol targets fit 84/85 live target exits, exchange-fill book latency 0.15-0.20 s (27/88 exact vs 4/88 at 1.0 s), add cadence literal 28/36 live fill counts; chains rooted; cut residual per ZL-3/4 |  |  |  |  |  |  |  |
