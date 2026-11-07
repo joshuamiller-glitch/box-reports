@@ -51,3 +51,21 @@
 | 2026-11-07 00:43Z | REBUILD4 ablation d_nocf (r3b without live Confirm (library PE rows); PRE-PROOF; diagnostic) | 419e800525f2 | pred sha 34e1347460e5 | 0.664 F | 0.536 F | 0.333 F | 0.364 F | FAIL |
 | 2026-11-07 00:43Z | REBUILD4 r2b WITH optional windows excluded (Mon 14:01-18:21, Tue 13:08-18:06; unconfirmed; PRE-PROOF; post-hoc) | 419e800525f2 [excl-optional] | pred sha 423b90f85164 | 0.661 F | 0.079 P | 0.347 F | 0.282 F | FAIL |
 | 2026-11-07 00:43Z | REBUILD4 r3b WITH optional windows excluded (Mon 14:01-18:21, Tue 13:08-18:06; unconfirmed; PRE-PROOF; post-hoc) | 419e800525f2 [excl-optional] | pred sha 2ead4aeeed23 | 0.696 F | 0.345 F | 0.352 F | 0.394 F | FAIL |
+| 2026-11-07 01:02Z | BASE5 r4 (r2b base) [G3 window 10 s spec] | rebuild5 | pred sha - | 0.668 F | 0.227 F | 0.342 F | 0.291 F | FAIL |
+| 2026-11-07 01:02Z | BASE5 r4 (r2b base) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild5 | pred sha - | 0.668 F | 0.227 F | 0.457 F | 0.291 F | FAIL |
+| 2026-11-07 01:02Z | BASE5 r4_nohole (r2b base) [G3 window 10 s spec] | rebuild5 | pred sha - | 0.653 F | 0.080 P | 0.342 F | 0.291 F | FAIL |
+| 2026-11-07 01:02Z | BASE5 r4_nohole (r2b base) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild5 | pred sha - | 0.653 F | 0.080 P | 0.457 F | 0.291 F | FAIL |
+| 2026-11-07 01:13Z | BASE6 r5 [G3 window 10 s spec] | rebuild6 | pred sha - | 0.704 F | 0.477 F | 0.347 F | 0.418 F | FAIL |
+| 2026-11-07 01:13Z | BASE6 r5 [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild6 | pred sha - | 0.704 F | 0.477 F | 0.467 F | 0.418 F | FAIL |
+| 2026-11-07 01:14Z | BASE6 r5 sensitivity Ss history start 2026-08-03 [G3 window 10 s spec] | rebuild6 | pred sha - | 0.704 F | 0.477 F | 0.347 F | 0.418 F | FAIL |
+| 2026-11-07 01:14Z | BASE6 r5 sensitivity Ss history start 2026-08-03 [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild6 | pred sha - | 0.704 F | 0.477 F | 0.467 F | 0.418 F | FAIL |
+| 2026-11-07 01:14Z | BASE6 r5 sensitivity Ss history start 2026-10-24 [G3 window 10 s spec] | rebuild6 | pred sha - | 0.704 F | 0.477 F | 0.347 F | 0.418 F | FAIL |
+| 2026-11-07 01:14Z | BASE6 r5 sensitivity Ss history start 2026-10-24 [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild6 | pred sha - | 0.704 F | 0.477 F | 0.467 F | 0.418 F | FAIL |
+| 2026-11-07 01:14Z | BASE6 r5 diagnostic R3 SizeHi off [G3 window 10 s spec] | rebuild6 | pred sha - | 0.704 F | 0.492 F | 0.347 F | 0.403 F | FAIL |
+| 2026-11-07 01:14Z | BASE6 r5 diagnostic R3 SizeHi off [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild6 | pred sha - | 0.704 F | 0.492 F | 0.467 F | 0.403 F | FAIL |
+| 2026-11-07 01:14Z | BASE6 r5 diagnostic no Ss rules (rows nosig) [G3 window 10 s spec] | rebuild6 | pred sha - | 0.704 F | 0.492 F | 0.347 F | 0.403 F | FAIL |
+| 2026-11-07 01:14Z | BASE6 r5 diagnostic no Ss rules (rows nosig) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild6 | pred sha - | 0.704 F | 0.492 F | 0.467 F | 0.403 F | FAIL |
+| 2026-11-07 01:15Z | BASE6 r5 code-fact diagnostic lock accounting net of NQ fee 4.84 RT/contract (found after first scoring; NOT the pre-registered primary) [G3 window 10 s spec] | rebuild6 | pred sha - | 0.704 F | 0.477 F | 0.347 F | 0.418 F | FAIL |
+| 2026-11-07 01:15Z | BASE6 r5 code-fact diagnostic lock accounting net of NQ fee 4.84 RT/contract (found after first scoring; NOT the pre-registered primary) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild6 | pred sha - | 0.704 F | 0.477 F | 0.467 F | 0.418 F | FAIL |
+| 2026-11-07 01:21Z | BASE6 r5 WITH optional windows excluded (Mon 14:01-18:21, Tue 13:08-18:06; unconfirmed) [G3 window 10 s spec] | rebuild6 | pred sha - | 0.710 F | 0.465 F | 0.352 F | 0.409 F | FAIL |
+| 2026-11-07 01:21Z | BASE6 r5 WITH optional windows excluded (Mon 14:01-18:21, Tue 13:08-18:06; unconfirmed) [G3 window 60 s LABELLED ALTERNATIVE, proposed] | rebuild6 | pred sha - | 0.710 F | 0.465 F | 0.474 F | 0.409 F | FAIL |
