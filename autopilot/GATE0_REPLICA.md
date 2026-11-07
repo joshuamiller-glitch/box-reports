@@ -451,3 +451,123 @@ Pre-registered readings (conventions, not tuning knobs), all on the iter11 base:
 | E = B + C (no reset at all) | 39 (47) | 30 | 9 / 97 | 0.311 / 0.445 | +73.4k |
 | D both throttles on wall-clock second boundaries | 32 (41) | 32 | 10 / 99 | 0.256 / 0.386 | +70.0k |
 B, C and E are identical to A (the locked phase is set by the last print before the cut, not by the fill resets); D worsens the match. None of the readings moves the label split: the replica's policy arm is 0.5*|entry - ArmStop| and is below 30 in 41 % of the replica's cuts yet policy still rarely fires first. In the owned data the Policy/ThL2 split cannot be produced by any throttle convention; per iteration 3 it would need ThL2 skipped on about half of its evaluations.
+
+# ITERATION 5 (appended 2026-11-07; prereg l2vast/ds3/prereg/REPLICA_ITER13_prereg.md sha e9b4c0b6b3621ead...; addendum for iter13 in DECISIONS.md) - PRE-PROOF, Gate 0 still NOT passed
+Analysis-only on the iter12 headline (user inputs + code defaults; no parameter changed). The one code-derived change is labelled iter13 (lock-accounting fee, section 3) and does not move any number of this week.
+
+## 1. Dollar decomposition of live (+104,095) vs iter12 (+60,200): gap +43,895 (decomp.csv, delta_vs_iter11.csv)
+| component | n | gap (live - replica) |
+|--|--|--|
+| live-only trades | 19 | +2,900 |
+| replica-only trades | 35 | -9,390 |
+| matched pairs (168) | 168 | +50,385 = size -1,356, entry +3,810, exit +47,931 |
+Matched pairs by exit class (gap; of which size / entry / exit):
+| class | n | gap | size | entry | exit |
+|--|--|--|--|--|--|
+| FALSE CUT, live ran to Target | 7 | +57,770 | -1,285 | +1,191 | +57,864 |
+| Target / Target (level and timing) | 72 | +7,230 | +7,208 | +1,442 | -1,420 |
+| FALSE CUT, live BookLock | 1 | +1,935 | -1,350 | -154 | +3,439 |
+| cut / cut (timing, size, entry) | 78 | -7,000 | -5,929 | +1,501 | -2,572 |
+| MISSED CUT (live cut, replica Target) | 3 | -5,405 | 0 | -210 | -5,195 |
+| FALSE CUT, live Stop (Tue stall) | 2 | -1,385 | 0 | +5 | -1,390 |
+| ThL2Trail / Target (tighten not reproduced) | 2 | -1,355 | 0 | +15 | -1,370 |
+| PolicyTake / Target | 2 | -995 | 0 | +10 | -1,005 |
+| BookLock / BookLock | 1 | -410 | 0 | +10 | -420 |
+By book: P7 +53,675 (pairs +56,640, live-only +6,640, replica-only -9,605), A7 -6,355, U7 -6,425, K7 +245, others |x| < 1,100.
+**Top-5 causes in dollars:** (1) false cuts of live winners: 7 trades +57,770 (P7 Sun 19:11 +18,825, P7 Tue 11-04 19:27 +12,915, P7 11-05 02:53 +10,825, P7 11-03 21:56 +6,085, K7 11-03 21:39 +3,755, M7 11-05 02:53 +3,615, K7 11-04 21:51 +1,750) - in all seven the cut input is the unresolved item (section 2); (2) Target/Target pairs +7,230 (size +7.2k: replica filled fewer contracts - add-gate/slice drops, iteration 4); (3) cut/cut pairs -7,000 (size -5.9k, timing); (4) replica-only trades -9,390 (35 trades, 16 without an upstream chain); (5) missed live cuts -5,405 (3 trades) and live-only +2,900. Sum of the false-cut line alone exceeds the whole gap.
+**iter11 (+73,405) -> iter12 (+60,200) = -13,205 by trade** (193 trades unchanged; only the P7 Sunday sequence and K7 changed; times ET of the signal; the SS slots now follow the code):
+| signal | book | in | iter11 | iter12 | | change |
+|--|--|--|--|--|--|--|
+| 11-01 18:36 | P7 | iter12 only | - | 4 lots Target +4800 |  | +4800 |
+| 11-01 18:42 | K7 | iter12 only | - | 3 lots Target +3605 |  | +3605 |
+| 11-01 18:51 | P7 | iter11 only | 10 lots Target +12020 | - |  | -12020 |
+| 11-01 19:11 | P7 | iter12 only | - | 10 lots ThL2Cut -6815 |  | -6815 |
+| 11-01 19:28 | P7 | iter12 only | - | 10 lots ThL2Cut -6530 |  | -6530 |
+| 11-01 19:46 | P7 | iter12 only | - | 2 lots Target +2405 |  | +2405 |
+| 11-01 20:25 | P7 | iter12 only | - | 6 lots Target +7215 |  | +7215 |
+| 11-01 20:45 | P7 | iter11 only | 4 lots ThL2Cut -2655 | - |  | +2655 |
+| 11-01 21:31 | P7 | iter11 only | 4 lots Target +4800 | - |  | -4800 |
+| 11-01 22:36 | K7 | iter11 only | 1 lots ThL2Cut -650 | - |  | +650 |
+| 11-01 22:42 | P7 | iter12 only | - | 10 lots ThL2Cut -5585 |  | -5585 |
+| 11-01 22:48 | K7 | iter12 only | - | 3 lots ThL2Cut -1835 |  | -1835 |
+| 11-02 00:53 | P7 | iter11 only | 4 lots ThL2Cut -2530 | - |  | +2530 |
+| 11-02 05:01 | P7 | iter12 only | - | 3 lots Target +3595 |  | +3595 |
+| 11-02 06:48 | P7 | iter11 only | 2 lots Target +2400 | - |  | -2400 |
+| 11-02 07:54 | K7 | iter12 only | - | 1 lots ThL2Cut -675 |  | -675 |
+By book: P7 -14,950 (Sun 18:51 10-lot Target +12,020 and 20:45/21:31 Targets gone, replaced by two 10-lot ThL2Cuts -6.8k/-6.5k and -5.6k), K7 +1,745. The 10-lot P7 entries come from SizeHi x1.5 on the code slot; their exits are cuts in the replica where live held to Target (the false-cut line again).
+
+## 2. Cut inputs on both sides, iter12 trade state (cut_inputs_live_cuts.csv, false_cuts_inputs.csv)
+Method: for each live cut, the replica's own TH-L2/policy loss logic (arm 30 pts, 20 on O7; newMae secs_ext<=5; DepthLive; pm = pulled(5 s)/MedLevel) is evaluated on every print in the 0-10 s before the live exit, starting from (a) the LIVE average entry and fill time, and (b) the replica's entry state (average after its fills), ignoring the 1-s throttle phase (so the result is an upper bound under ANY convention).
+| | live entry (92 live cuts) | replica entry state (80 paired live cuts) |
+|--|--|--|
+| A reproducible: a print with armed unreal, newMae, pm>=30 exists | 82 | 73 |
+| B needs pm<30 (armed+newMae prints exist, best pm < 30): impossible from the owned stream | 10 | 6 |
+| C never armed in the window (loss < arm with that entry: entry-price driven) | 0 | 2 |
+So at most 82 of the 92 live cuts can be reproduced under any convention that keeps the literal rule; the 10 B trades (best pm 13.9-29.2) cannot:
+| book | live entry | live exit | type | best pm in the window |
+|--|--|--|--|--|
+| H7 | 11-01 22:50:00 | 11-02 01:21:10 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 25.3) |
+| P7 | 11-01 23:03:00 | 11-02 01:21:10 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 25.3) |
+| U7 | 11-02 02:40:00 | 11-02 03:01:49 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 17.1) |
+| X4 | 11-02 04:39:15 | 11-02 07:06:08 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 25.9) |
+| K7 | 11-03 01:36:01 | 11-03 01:47:31 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 24.4) |
+| P7 | 11-03 22:15:00 | 11-03 22:16:23 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 29.2) |
+| K7 | 11-04 01:06:00 | 11-04 01:19:12 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 24.4) |
+| K7 | 11-04 02:12:00 | 11-04 02:21:31 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 21.8) |
+| P7 | 11-05 03:33:02 | 11-05 03:48:37 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 13.9) |
+| M7 | 11-05 03:41:00 | 11-05 03:48:37 | ThL2Cut | B needs pm<30 (armed+newMae prints exist, best pm 13.9) |
+The replica reproduces 41 within +-2 s (49 within 10 s), i.e. about half of the upper bound ; the remainder is throttle phase, entry price and cuts that fire earlier than live on a condition that is still satisfied.
+False cuts (30 replica cuts with no live cut): replica-side values and, where a live trade exists, the live-side values on the live average entry at that print (columns: replica unreal, pm, secs_ext, MedLevel | live entry: pm, unreal, secs_ext, class A/C | filled replica/live):
+| book | replica cut | type | live | unreal | pm | secs_ext | MedLevel | live-entry values | fills R/L |
+|--|--|--|--|--|--|--|--|--|--|
+| P7 | 11-01 19:23:46 | ThL2Cut | trade, exit Target | -33.8 | 32.6 | 0.07 | 2.52 | pm 33.8 unreal -32.2 secs_ext 0.3 -> A | 10/10 |
+| K7 | 11-03 02:29:21 | ThL2Cut | trade, exit Stop | -45.5 | 69.8 | 0.00 | 2.16 | pm 76.6 unreal -46.8 secs_ext 0.0 -> A | 1/1 |
+| M7 | 11-03 02:29:17 | ThL2Cut | trade, exit Stop | -45.8 | 40.7 | 1.00 | 2.16 | pm 47.6 unreal -46.0 secs_ext 2.8 -> A | 1/1 |
+| K7 | 11-03 21:50:12 | ThL2Cut | trade, exit Target | -33.0 | 32.5 | 0.98 | 1.79 | pm -1.0 unreal -27.6 secs_ext nan -> C | 2/2 |
+| P7 | 11-03 21:56:20 | ThL2Cut | trade, exit Target | -30.5 | 48.0 | 0.00 | 2.13 | pm -1.0 unreal -26.2 secs_ext nan -> C | 2/4 |
+| P7 | 11-04 07:31:41 | ThL2Cut | trade, exit BookLock | -32.1 | 51.5 | 0.97 | 2.15 | pm 54.2 unreal -35.1 secs_ext 1.7 -> A | 3/5 |
+| P7 | 11-04 19:30:13 | ThL2Cut | trade, exit Target | -31.3 | 30.2 | 1.19 | 2.35 | pm 39.1 unreal -34.6 secs_ext 0.0 -> A | 7/7 |
+| K7 | 11-04 22:06:52 | ThL2Cut | trade, exit Target | -30.0 | 47.6 | 0.00 | 2.14 | pm 50.8 unreal -31.0 secs_ext 0.0 -> A | 1/1 |
+| P7 | 11-05 02:56:23 | PolicyCut | trade, exit Target | -29.7 | 35.6 | 0.00 | 2.11 | pm -1.0 unreal -29.1 secs_ext nan -> C | 6/7 |
+| M7 | 11-05 02:56:23 | ThL2Cut | trade, exit Target | -30.0 | 35.6 | 0.00 | 2.11 | pm 37.1 unreal -30.2 secs_ext 0.8 -> A | 2/2 |
+| P7 | 11-01 19:31:06 | ThL2Cut | no live trade | -31.0 | 49.9 | 1.13 | 2.62 | - | 10/- |
+| P7 | 11-02 01:44:17 | ThL2Cut | no live trade | -31.8 | 46.7 | 0.88 | 2.72 | - | 10/- |
+| A7 | 11-02 01:44:17 | ThL2Cut | no live trade | -39.0 | 46.7 | 0.88 | 2.72 | - | 1/- |
+| X4 | 11-02 02:27:24 | ThL2Cut | no live trade | -31.4 | 70.0 | 0.00 | 2.54 | - | 2/- |
+| P7 | 11-02 04:15:59 | ThL2Cut | no live trade | -35.8 | 32.5 | 0.00 | 2.37 | - | 1/- |
+| X4 | 11-02 07:35:25 | ThL2Cut | no live trade | -54.0 | 53.2 | 0.05 | 2.89 | - | 2/- |
+| X3 | 11-02 08:36:45 | ThL2Cut | no live trade | -35.0 | 45.3 | 0.26 | 2.63 | - | 2/- |
+| X3 | 11-02 08:47:49 | ThL2Cut | no live trade | -31.5 | 66.1 | 0.00 | 2.50 | - | 2/- |
+| K7 | 11-02 20:38:24 | ThL2Cut | no live trade | -32.5 | 30.0 | 0.33 | 2.13 | - | 1/- |
+| K7 | 11-02 22:22:34 | ThL2Cut | no live trade | -32.5 | 49.1 | 0.76 | 2.38 | - | 1/- |
+| P7 | 11-03 02:29:17 | ThL2Cut | no live trade | -47.6 | 40.7 | 1.00 | 2.16 | - | 4/- |
+| K7 | 11-03 02:42:20 | ThL2Cut | no live trade | -31.0 | 47.3 | 0.73 | 2.16 | - | 1/- |
+| H7 | 11-03 11:10:50 | ThL2Cut | no live trade | -31.0 | 49.5 | 0.28 | 4.38 | - | 1/- |
+| K7 | 11-03 12:33:47 | ThL2Cut | no live trade | -31.0 | 37.5 | 0.00 | 4.56 | - | 1/- |
+| P7 | 11-03 18:38:52 | PolicyCut | no live trade | -28.9 | 74.8 | 2.03 | 2.01 | - | 3/- |
+| A7 | 11-03 19:38:55 | ThL2Cut | no live trade | -30.0 | 39.7 | 0.00 | 1.91 | - | 1/- |
+| P7 | 11-04 08:05:27 | ThL2Cut | no live trade | -34.9 | 86.8 | 0.16 | 2.11 | - | 2/- |
+| P7 | 11-04 19:45:21 | PolicyCut | no live trade | -29.7 | 34.4 | 0.00 | 2.15 | - | 4/- |
+| P7 | 11-05 03:03:57 | PolicyCut | no live trade | -29.8 | 43.6 | 0.00 | 2.06 | - | 4/- |
+| M7 | 11-05 04:02:03 | ThL2Cut | no live trade | -33.8 | 51.9 | 1.57 | 2.45 | - | 2/- |
+Of the 10 false cuts that have a live trade, 7 are condition-true on the live path too (A: live held with armed unreal, newMae, pm 33.8-76.6 - the cut input cannot be settled from the owned stream, ZL-3/4) and 3 are entry-price driven (C: with the live entry the loss peaks at 26.2-29.1 < 30). The other 20 are cuts on replica-only trades (no live trade). Throttle phase: all 30 are single decisions on a locked phase pair (iteration 4); the phase is not a separate cause.
+
+## 3. BookLock replay (C# CheckBookLock L3413-3451; lock_replay.py; replay of the C# arithmetic on the LIVE trade path and on the replica path, 2-s checks)
+R = BaseQty*max(1,SizeMult)*StopPts*20 (SizeMult 1.0 after Mon 13:30): P7 8,400, K7 2,400, A7 1,200; arm when day (realized net + open) peak >= 2R, lock when day <= 0.5*peak.
+| book | live lock | live path replay (fee 0 / 1.0 / 2.42 / 4.84 RT) | replica path (iter12) |
+|--|--|--|--|
+| P7 Wed | 07:25:04 | arm 03:47:10; lock 07:25:01 / 07:25:01 / 07:00:02 / 07:00:02 | never arms (peak 11,031 < 16,800) |
+| K7 Thu | 04:35:14 | arm 00:52:23; lock 04:34:04 / 04:34:04 / 04:33:06 / 04:33:06 | arms 03:13:08, locks 04:31:41 (3.5 min early; the replica's own CheckBookLock fires 04:31:41.8) |
+| A7 Mon | 01:44:15 | arm 00:33:21; lock 01:44:16 at every fee | arms 22:46:04, no lock (day ends 1,695 > 0.5*2,943) |
+Findings: (a) the C# arithmetic on the live trades reproduces the live A7 lock to 1 s, the P7 lock to 3 s (at commission <= 1.2 RT) and the K7 lock to 70-130 s; (b) the lock accounting uses execution.Commission (L3010, L3062, L3085) = the NinjaTrader commission only, 0.59/side = 1.18 RT from FEES.md, not the 4.84 all-in used so far: at 4.84 the P7 lock fires at 07:00:02 instead of 07:25 because the day sits 180 dollars above the 50 % line; iter13 sets FEE_RT = 1.18 (no effect on this week's replica trades: the replica P7 never arms); (c) P7 in the replica never arms because its day path is lower from the first trade on: the first divergent state is Nov 3 18:13 (7 lots, live exit 18:37:42 PolicyCut -6,510, replica ThL2Cut 18:34:42 -6,095 three minutes earlier), after which the replica re-enters at 18:36 and the paths separate (live realized +15,255 at 03:09 vs replica +7,815); no lock-rule difference is involved.
+
+## 4. Census and gates, iter12 (outage 02:55-08:20 excluded by the frozen harness)
+Census vs the 187 live trades (+35 replica-only): MATCH 86, MATCH_QTY (exit within 2 s, quantity differs) 3, EXIT_TIME (same trade, exit apart) 62, EXIT_TYPE (cut vs target, stop, ...) 17, LIVE_ONLY 19; REPLICA_ONLY 35.
+| gate | value | threshold |
+|--|--|--|
+| G1 trades matched / union | 0.733 | >= 0.85 FAIL |
+| G2 net gap | 0.422 (replica +60,200 vs live +104,095) | <= 0.15 FAIL |
+| G3 cuts matched, 10 s | 0.325 (49 pairs of 92 live / 108 replica cuts) | >= 0.85 FAIL |
+| G3 cuts matched, 60 s | 0.460 (63 pairs) | >= 0.85 FAIL |
+| G4 cut dollars | 0.271 | <= 0.10 FAIL |
+iter13 (fee 1.18): identical gates and trades. Seal manifest 759f2258... unchanged; no pkill.
