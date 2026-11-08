@@ -48,3 +48,8 @@ Details autopilot/DS3_TH_REDO_A.md (addendum).
 
 ## Program G (learned TH rule, REPLICA) - TH-G, 2026-11-08 - cut-input agreement with live: 14% at 0% false (best FIT-selected convention) / literal reading 45 of 92 within +-2 s with 23 false; engine Gate 0 NOT passed; PRE-PROOF
 432 candidates (6 books x loss/profit x h 30/60/120 x tree/GBDT x 3 seeds x 2 rates), 16.0 M feature rows, purged CV + walk-forward, 12 finalists replayed on the exact replica over 43 months. Best Z_S 1.72 (SM loss); family null (W=12) max up to 2.22, smallest p_family 0.154, none <= 0.10. G01/G03/G06/G08 are placebo-clean, positive L6M and PRE by only +$22..+$234/wk and $31..$106/wk but fail the family gate. No learned rule beats the live rule; GP learner, perturbation set and FIT conventions not run. Details: DS3_TH_REDO_G.md.
+
+## Program E (loss x profit combined, REPLICA, PRE-PROOF) - TH-E, 2026-11-08 - cut-input agreement with live: 14% at 0% false (best FIT-selected convention) / literal reading 45 of 92 within +-2 s with 23 false; engine Gate 0 NOT passed; PRE-PROOF
+| program | combos | on 43 months | result | detail |
+|--|--|--|--|--|
+| E | 54 (9 loss x 6 profit), 40 Tier 1, stage 1 on L6M | 10 | none enters: best family p 0.28, walk-forward p 0.83, below MDE, fragile cap failed; A:P10+D F07/F08 L6M +8.0k/+7.3k PRE +5.4k/+5.1k fail tolerant (X' -4k); B:F07+C4 passes recents/tolerant/dd-first but family p 0.71; blind week: combos +0.1k..+7.7k vs HOLD, each below its loss rule alone | autopilot/DS3_TH_REDO_E.md |
