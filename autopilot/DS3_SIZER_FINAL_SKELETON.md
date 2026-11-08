@@ -1,4 +1,4 @@
-# DS3_SIZER final plain sentences, filled from the master table by the integrator (2026-11-08 15:06Z); numbers regenerate every 25 min; hand-written notes at the end are S4a's. Post-hoc, Shadow only; the user decides.
+# DS3_SIZER final plain sentences, filled from the master table by the integrator (2026-11-08 15:57Z); numbers regenerate every 25 min; hand-written notes at the end are S4a's. Post-hoc, Shadow only; the user decides.
 
 1. The live sizer should stay as Q1-A (ER(20) on 5-min below 0.30 -> x0.5, else x1.0) unless a cell beats it on L6M AND PRE with the carrying week dropped, passes no-harm and the PA9 band, and is placebo-clean. Register: SIZER_LEAD_REGISTER.md. Policy draft: sizer_policy_DRAFT.txt (live Q1-A, no change).
 

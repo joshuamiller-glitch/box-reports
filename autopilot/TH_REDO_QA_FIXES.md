@@ -1,3 +1,5 @@
+> **VOID — engine failed Gate 0.** (user order 2026-11-08 15:00Z: this page is WITHDRAWN as a finding; the engine reproduces the live cut at 14% strict agreement and cannot rank cut rules, including "the live cell stays". No TH ranking from this page may be quoted. Original content below, unchanged. Backup: /mnt/l2/l2vast/_th_void_backup/)
+
 # TH_REDO_QA_FIXES (TH-FIX, 2026-11-08T13:11Z; PRE-PROOF, Gate 0 NOT passed)
 All corrections appended (>>) to existing files; other agents' text untouched. Numbers from /mnt/l2/l2vast/_th_fix/fix.out.
 1. BASIS (A scored ALL trades incl. O7): appended 14-unit table for P02..P24, A4 BO_both_5 to DS3_TH_REDO_A.md. Changed numbers: P05 X' -1160 -> +116, PRE 3007 -> 2664; P06/P07/P11 PRE down 150-320; P18 L3M +17 -> -238. Changed conclusion: only the sentence "X' negative for all candidates" (true on ALL basis only). No lead changes status; no ENTER rule.

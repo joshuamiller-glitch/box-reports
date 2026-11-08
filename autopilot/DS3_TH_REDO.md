@@ -1,3 +1,5 @@
+> **VOID — engine failed Gate 0.** (user order 2026-11-08 15:00Z: this page is WITHDRAWN as a finding; the engine reproduces the live cut at 14% strict agreement and cannot rank cut rules, including "the live cell stays". No TH ranking from this page may be quoted. Original content below, unchanged. Backup: /mnt/l2/l2vast/_th_void_backup/)
+
 
 ## Program D (profit side L1) - summary rows, 2026-11-08, TH-D. cut-input agreement with live: 14% at 0% false (best FIT-selected convention) / literal reading 45 of 92 within +-2 s with 23 false; engine Gate 0 NOT passed; PRE-PROOF
 Live L1 profit = none (PhOn=false everywhere): hold-to-bracket. 250 rule cells D1-D5 screened (Tier S), 12 finalists + live-Ph control replayed on the replica over 43 months. Pooled cells with S>0: 0 of 250. Best finalists: F08 PE nyam time-decay 45 min <20% (L6M +168, PRE +401, placebo p .015, family p .89, walk-forward not positive), F10 MV london scale-out 20% trail15 (L6M +385, PRE -69). Fragile-cut share of every finalist 5x-17x (cap 30%): none qualifies; profit side L1 stays empty. D6 not run (C finalists absent). Details: DS3_TH_REDO_D.md.

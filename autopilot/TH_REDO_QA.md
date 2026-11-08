@@ -1,3 +1,5 @@
+> **VOID — engine failed Gate 0.** (user order 2026-11-08 15:00Z: this page is WITHDRAWN as a finding; the engine reproduces the live cut at 14% strict agreement and cannot rank cut rules, including "the live cell stays". No TH ranking from this page may be quoted. Original content below, unchanged. Backup: /mnt/l2/l2vast/_th_void_backup/)
+
 # TH_REDO_QA - independent audit of the T-TH-REDO results (programs A-G, replica engine)
 Auditor TH-REPORT, 2026-11-08. PRE-PROOF. Label carried by every number below: cut-input agreement with live 14% at 0% false (best FIT-selected convention) / literal reading 45 of 92 within +-2 s with 23 false cuts; engine Gate 0 NOT passed. Read-only audit; no report of another agent was edited, no policy file touched. Scratch: /mnt/l2/l2vast/_th_report/ (recompute.py, rc2..rc8.py). Seal: md5 of /mnt/l2/l2vast/ds3_all_ea/manifest_after.json = 6baf7cf4a8b4052da3d7fb3a9a2fffc8 before and after (sha256 prefix 759f2258daac9d28, as the reports state).
 Source checked: DS7.cs sha256 54697597a7057cfd2003f3d698b62fe01358c308a87adfbbfb5a764ab0cb63a7 (data/live_code/DS7.cs, matches).
