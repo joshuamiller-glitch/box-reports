@@ -113,3 +113,6 @@ maxDD columns: stack maxDD without > with the rule (weeks kept). p_uni / p_tim =
 * Family over the 198-cell Tier S grid (shared 200 worlds): all 198 pooled cells have S <= 0 and family p ~ 1; the lock cells are negative in Tier S pooled (the screen missed them, see section 5). The replay-set family (21 cells) gives p_family 1.0 for every positive cell; the only low p values belong to cells with clearly negative S (placebo exits do better).
 * MORNING.md: nothing appended (no cell is placebo-clean, convention-stable and drawdown-first at once).
 * Operational: the first extension pool was stopped (pid kill, no pkill) when memory fell below the lead's guard and the last 3 months were finished by a 2-worker relaunch; no results were lost.
+
+## Note (TH-FIX, 2026-11-08): adoption label scope
+The adoption label under the title (PRE-PROOF; cut-input agreement 14% at 0% false / literal 45 of 92 within +-2 s with 23 false cuts; Gate 0 NOT passed; no PASS claim) applies to every table in this report. Tables without a literal label line within 6 lines above: the section 3 thick-trigger table and the section 6 Tier S sub-grid summary. "NOT a pass of the fragile-cut cap" is a negation, not a pass claim.

@@ -48,3 +48,13 @@ Walk-forward (monthly refit over all screened cells, 12-month trailing, 1-month 
 
 ## Files
 Code /mnt/l2/l2vast/_th_redo_replica/D/code (dkern.py 9811dd26, dprep.py f4af60d5, dstage1.py 9b0ea998, dtier1.py, dreport.py, dfinal.py); outputs /mnt/l2/l2vast/_th_redo_replica/D/out (D_pooled.parquet, D_unitcells.parquet, D_cand_stage1.csv, finalists.json, tier1_stats.json, fragile.json, walkforward.json). Seal manifest_after.json 759f2258 unchanged; private trees only; nothing killed.
+
+## CORRECTION: stack basis (TH-FIX, 2026-11-08; PRE-PROOF, label as above; Gate 0 NOT passed; no PASS claim)
+The tier1 table above (dfinal.py) is the delta of ONE unit (PE_nyam for F08, MV_london for F10), although the text says 14 units. Recomputed on the whole stack (all trades of the full replica run, minus hist/A2 HOLD; 14 live units and ALL trades give identical numbers because the D changes touch only those units' trades). Weekly mean USD, carrying week dropped, as of 2026-10-30. Script /mnt/l2/l2vast/_th_fix/fix.py.
+| id | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | (unit-series as published) |
+|---|---|---|---|---|---|---|---|---|---|
+| F07 | 589 | 0 | 245 | 328 | 30 | 0 | 238 | 82 | n/a |
+| F08 | 0 | 174 | 350 | 168 | 232 | 485 | 528 | 321 | 0/174/350/168/301/485/401/293 |
+| F10 | 235 | 320 | 554 | -190 | -675 | -1866 | -21 | -32 | 370/645/571/385/-287/-1772/-69/-82 |
+Other D finalists on the stack: F09 L6M -391, F11 -294, F12 -392, F01 -1034, F04 -601, F05 -363, F06 -179, F13 -14758 (all L6M <= 0; F02/F03 -199/-282; full rows in /mnt/l2/l2vast/_th_fix/fix.out).
+Corrected statement: the unit-series claim "F10 clears recents / tolerant / drawdown-first" does NOT hold on the stack: F10 L6M is -190 (L3M +554, PRE -21, X' -32). F08 stays positive on L3M/L6M/PRE/X' on the stack (L6M +168, PRE +528, X' +321, HOLD +232 vs +301 on the unit series). Neither qualifies (family p .89, walk-forward not positive, fragile 5.3x); DS3_TH_REDO.md D row (F10 L6M +385) repeats the unit figure and is superseded by this table.

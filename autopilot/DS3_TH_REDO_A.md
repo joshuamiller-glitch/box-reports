@@ -182,3 +182,24 @@ F07 (pooled, B's engine-clean finalist) and F10 (KB scope, B's lead) x A's P05, 
 Reading: **F10 + A rule (KB only) is positive on every recent window and on PRE and X'**: with P11 (arm 35 / 10x / 3 s / pers 3): L1M +2,115, L2M +2,971, L3M +3,275, L6M +3,188 (MDE 2,686), HOLD +2,219, MID +370, PRE +190 (MDE 1,427), X' +97 USD/week; recents, tolerant gate and drawdown-first all pass. With P24 and P05 similar (L6M +1,850 / +2,504, PRE +401 / +589). F10 alone is L6M +911, PRE +1,608; the stacks lift L6M and L1M/L2M but PRE falls to +190..+589. F07 stacks are large on L6M (+4k) but PRE +270..+620 and X' -1.3k..-1.5k and fail drawdown-first.
 **Not placebo-clean / not ENTER:** F10's Tier S placebo p is 1.0 in B's report (99% of its cuts fragile under input offsets), no placebo/family null exists for a stack, PRE is far below MDE, nothing is known about the convention set beyond A's and B's. Best of 10. It is a LEAD (KB-only, B3_F10_P11), not a rule; nothing for the policy file.
 Files: a7_port.py, tierF2.py (ADD/REP injection), final_B7.py, final_B3.py, fin3.json; tables A7_pooled_table.csv, A7_finalists.csv, B3_finalists.csv under /mnt/l2/l2vast/_th_redo_replica/out/. Ledger: 22 rows appended (program THA_REPLICA_PREPROOF).
+## CORRECTION: 14-unit basis (TH-FIX, 2026-11-08; PRE-PROOF, same label as above: cut-input agreement with live 14% at 0% false / literal 45 of 92 within +-2 s with 23 false cuts; Gate 0 NOT passed; no PASS claim)
+Why: the Tier F tables above score ALL trades including book O7 (not one of the six mapped live books); the prereg unit is the 14 live book x session units. Recomputed from the stored parquets (hist/F_A2, F2_A2 minus hist/A2 trades_hold, same windows, carrying week dropped, as of 2026-10-30), 14 units only. Script /mnt/l2/l2vast/_th_fix/fix.py, output fix.out. Weekly mean USD delta vs HOLD.
+| id | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | (ALL-trades L6M / PRE / X' as published) |
+|---|---|---|---|---|---|---|---|---|---|
+| P02 | -3792 | -6153 | 776 | 3350 | -311 | -6585 | 3449 | -2063 | 3330 / 3573 / -1932 |
+| P05 | -1835 | 941 | 3638 | 4588 | 2161 | -428 | 2664 | +116 | 4565 / 3007 / -1160 |
+| P06 | -611 | -5004 | 2378 | 5593 | 4862 | 1073 | 1550 | -849 | 5576 / 1866 / -703 |
+| P07 | -583 | -4979 | 2520 | 4927 | 4622 | 1419 | 1570 | -1282 | 4909 / 1886 / -1136 |
+| P10 | -8588 | -3304 | 1131 | 3632 | 1731 | -6789 | 4790 | -3225 | 3506 / 4943 / -3111 |
+| P11 | -4222 | -4530 | 466 | 5382 | 3654 | 4717 | 2001 | -1929 | 5364 / 2147 / -1910 |
+| P12 | -8796 | -4633 | 502 | 3227 | 1229 | -8861 | 4994 | -3267 | 3102 / 5147 / -3153 |
+| P13 | -2331 | -2677 | 1649 | 3309 | 2033 | -55 | 469 | -1179 | 3389 / 645 / -1078 |
+| P14 | -1820 | -534 | 2722 | 1717 | 783 | -4220 | 959 | -1452 | 1788 / 1141 / -1337 |
+| P17 | 1068 | -2009 | 470 | 4127 | 2221 | -2245 | 681 | -3476 | 4142 / 775 / -3388 |
+| P18 | 1676 | -1977 | -238 | 2483 | 258 | 985 | 185 | -2692 | 2555 / 339 / -2580 |
+| P24 | -5097 | -3024 | 2098 | 4807 | 3506 | 6348 | 2932 | -2406 | 4803 / 3253 / -2223 |
+| A4 BO_both_5 | 2426 | 1948 | 1643 | 3390 | 1833 | -41 | 647 | 263 | identical (no O7 trades affected) |
+Status effect: no lead changes status. L6M and PRE keep their sign for all 12 pooled finalists and for the A4 5-minute blackout; the only sign flip is P05 X' -1160 -> +116 (the earlier text "X' deltas are negative for all candidates" holds only on the ALL basis; on 14 units P05 X' is slightly positive, and the A4 blackout X' was already +263). P05 PRE 3007 -> 2664, P06 PRE 1866 -> 1550, P07 PRE 1886 -> 1570, P11 PRE 2147 -> 2001. P18 L3M becomes -238 (was +17). Nulls, MDE, walk-forward and fragile-cut columns were not recomputed (they were screened on the stage-1 path); the verdict (no ENTER rule, nothing to the policy file) is unchanged.
+
+## Note (TH-FIX): adoption label scope and wording
+The adoption label under the title applies to every table in this report. Sections lacking a literal label line within 6 lines above their table: main Tier F table (Table section), "Candidates that beat the live cell" table, Addendum Tier F table, A7 Tier F table, B3 table, and the CORRECTION table above carries its own. The phrase "Smoke test passed" (Plain result) should be read as: smoke = exact reproduction of the replica headline (203 trades, +60,200, 108 cuts), not a PASS.

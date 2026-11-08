@@ -63,3 +63,12 @@ No PASS claims, research only, nothing live, no policy-file change. Prereg E a32
 | B:F10+D:F10_MVlon_scale20t15 | +386 | +177 | +721 | +1587 | 0.88 | 0.03 | 0.74 | 0.87 | 0.48 | 0.54 |
 
 (add_* = loss-only + profit-only; int_* = combo minus add; t = sign-flip statistic of min(L6M,PRE); p_plc = sign-flip p; p_fam = max-stat over 40; top-3 share = share of the window total carried by its 3 best weeks.)
+
+## CORRECTION: L6M under three bases (TH-FIX, 2026-11-08; PRE-PROOF, label as above; Gate 0 NOT passed; no PASS claim)
+Weekly mean USD delta vs HOLD, L6M (2026-05-02..2026-10-30), recomputed from stored parquets (hist/F_A2/P10, E/runs/*).
+| combo | 14 units, carrying week DROPPED (prereg decision basis) | 14 units, week KEPT | ALL trades, week dropped | ALL trades, week kept |
+|---|---|---|---|---|
+| A:P10 (loss only) | 3632 | 5235 | 3506 | 5153 |
+| A:P10+D:F07 | 8016 | 5901 | 4151 | 5818 |
+| A:P10+D:F08 | 7313 | 5244 | 7241 | 5161 |
+Which basis the ENTER test uses: prereg E (a32a651d) Unit line = the 14 live book x session units; "Carrying-week column: ... carrying week dropped (decision) and WITHOUT dropping it (shown beside)". So the ENTER/decision basis is 14 units with the carrying week dropped (first column). Note that this column is the least stable for the D:F07 combo: dropping the week RAISES L6M from 5.9k to 8.0k there (dropping the largest-|delta| week removes a negative week), and the ALL basis gives 4.2k. Treat the L6M as 4-8k, not 8k; no combo clears the full ENTER test.

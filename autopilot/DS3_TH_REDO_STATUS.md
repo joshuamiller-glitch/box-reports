@@ -1,0 +1,2 @@
+# DS3_TH_REDO status (TH-FIX, 2026-11-08T13:11Z)
+Gate 0 NOT passed; engine PRE-PROOF. Every TH-REDO number (programs A-G, DS3_TH_REDO*.md) carries the label: cut-input agreement with live 14% at 0% false (best FIT-selected convention) / literal reading 45 of 92 within +-2 s with 23 false cuts. No PASS claim, nothing to the policy file. Smoke = exact reproduction of the replica headline, not a PASS. Corrections to programs A (14-unit basis), D (stack basis), E (carrying-week bases): see TH_REDO_QA_FIXES.md.
