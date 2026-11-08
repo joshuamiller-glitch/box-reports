@@ -67,3 +67,48 @@ Policy-file expression of a candidate (for the record only; persistence and the 
 - Not run: A2 flip triggers, A4 blackout, A5 lot-scaled arm, A6 dwell, A7 HM neighbourhood (no replica wiring this pass); listed as open in DS3_TH_REDO.md.
 - Dead ledger: dead_lookup before (live spec not found; TH-withdrawn note applies, nothing counts as dead); 40 finalist rows appended after (program THA_REPLICA_PREPROOF); ledger not rebuilt.
 - Files: code /mnt/l2/l2vast/_th_redo_replica/code, tables /mnt/l2/l2vast/_th_redo_replica/out (A1_finalists_A2.csv, A1_pooled_table_A2.csv, A1_unit_table_A2.parquet, A1_convset_cells.csv, A1_candidates_beat_live.csv). Seal manifest_after.json re-hashed unchanged (smoke + record runs).
+
+## Addendum: sub-programs A2, A4, A5, A6, A7 (TH-A, 2026-11-08)
+**cut-input agreement with live: 14% at 0% false (best FIT-selected convention) / literal reading 45 of 92 within +-2 s with 23 false cuts; engine Gate 0 NOT passed; PRE-PROOF**
+
+Tier F used 16 more full-replica finalists (24 + 16 = 40 total, the prereg limit). Same windows, paired deltas vs the live cell, carrying week dropped, no PASS words, nothing proposed for the policy file. Pool kept at 2-3 processes by the lead's memory orders; the seal manifest hash is unchanged (759f2258...).
+
+### What is expressible on the replica, and what is not
+- **A6 sustained-cut (15 cells), A5 lot-scaled arm (3), A2 flip triggers (24), A7 (15 of the 161) - Tier S** on the same 37.6 M rows and hybrid worlds as A1, same three nulls (random-timing, thinning, family over the 57 new cells x 14 units = 798 unit-cells). Offline features from the HIST-PIPE day arrays (no engine run): imbalance / iceberg / sweep / delta-turn (A2) and 1-s close path features (A7).
+- **A2 definitions are mine** (the prereg names the triggers, not formulas): imbalance = top-5-level depth imbalance against the position; iceberg-against = recency of an opposite-side iceberg detection; sweep = recency of an adverse sweep; delta-turn = signed volume of the last 5 s against the position given the prior 10 s was with it. Trigger cell = loss >= 30 pt AND strength >= history-wide quantile q (look-ahead in the threshold, stated). Persistence 1.
+- **A5**: lot_ref = median lots of the unit; arm = 30 x (lots/lot_ref)^gamma on the live 30x / 5 s / new-extreme structure.
+- **A6**: loss >= lvl for dwell seconds of consecutive evaluations, no pulled-support condition.
+- **A7**: only the NINE named cells (arm 20/25/30 x window 10/20/30; 3 of 3: >= 4 pt worse than W s ago, no new adverse extreme for W s with recovery <= 4 pt, efficiency < 0.35) plus six one-at-a-time neighbours of the primary a30/w10 (momentum 3/5, recovery 3/5, efficiency 0.30/0.40) = 15. The other ~146 cells of the 161-cell RETEST family are NOT wired: the old 158-rule grid definition (windows 30/60/120 and its vote variants) is in the DS3 THL code, not in the replica, and I did not port it. Evaluated per second from 1-s closes; MAE and the extreme price are approximated from the trade's secs-since-extreme. A7 is an L1 price-path rule: the replica has no C# for it (as for B).
+- **A4 blackout**: needs the cascade, so Tier F only. Replica mechanism generalised by parameter (TH BLACKOUT_BOOKS = all books, BLACKOUT_MINS, same-side native; both-sides by clearing blackout_side). It acts after a ThL2 cut only (the literal code sets no blackout after a PolicyCut). Tested on the live rule: same/both x 5/15/30/60 min and 0 (U7's live 30-min blackout switched off) = 9 runs. The '+5 best A1 rules' x blackout part (50 cells) was not run (Tier F budget). No Tier S null exists for blackouts.
+- **Per book x session thresholds**: done in A1 (unit tables, composites CMP_*), see above.
+- Not expressible and not run: the A6/A7 rules as policy-file lines (policy grammar has no dwell, no path features); A2 in the engine (features are offline; Tier F for A6/A7 injects the Tier S fire time of each (book, entry) into the full replica instead, literal cut off for those trades; unmatched entries keep the live rule; blackout after injected cuts follows the TH constants).
+
+### Tier S result (pooled, 57 cells; table /mnt/l2/l2vast/_th_redo_replica/out/B_pooled_table_A2.csv)
+- A2: 0 of 24 cells have S>0 (best S -602). A5: 0 of 3 (best -1,763). A6: 5 of 15 positive, all at lvl 40 (best l40/d10: L6M +3,717, PRE +3,199; all three nulls clean). A7: 3 of 15 positive, best pooled S +645 (a20/w10); on the HM units alone S is at most +88 USD/week (HM_nyam), i.e. immaterial.
+
+### Tier F (full replica; weekly USD delta vs live; recents first, older months only for survivors)
+| id | months | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | recents | tolerant | dd first |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| S_A6_l40_d10 | 12 | -13595 | -5814 | 2858 | 2504 | 3167 | 6274 |  |  | False | True | True |
+| S_A6_l40_d20 | 12 | -16892 | -6597 | 1159 | 272 | 3336 | 540 |  |  | False | True | True |
+| S_A6_l40_d2 | 12 | -14004 | -5854 | -3716 | 2557 | 2489 | -1346 |  |  | False | True | True |
+| S_A6_l40_d5 | 12 | -12018 | -3919 | 2994 | 962 | 2573 | -899 |  |  | False | True | True |
+| S_A7_a30_w10 | 12 | -191 | 536 | -2 | -6 | 147 | -739 |  |  | False | True | False |
+| S_A7_a25_w30 | 12 | -412 | 41 | -445 | -207 | -259 | -656 |  |  | False | True | False |
+| S_A7_a20_w10 | 12 | -817 | 306 | -70 | -242 | -6 | -737 |  |  | False | True | False |
+| BO_same_5 | 43 | -408 | 761 | 260 | 546 | 822 | 92 | 708 | 38 | True | True | True |
+| BO_same_15 | 43 | 1079 | 1232 | 621 | 524 | 935 | 493 | -495 | 277 | True | True | False |
+| BO_same_30 | 12 | -550 | 378 | -362 | 1008 | 680 | 1575 |  |  | False | True | False |
+| BO_same_60 | 12 | 5993 | 2735 | -494 | 5087 | 4182 | 6605 |  |  | False | True | True |
+| BO_both_5 | 43 | 2426 | 1948 | 1643 | 3390 | 1833 | -41 | 647 | 263 | True | True | True |
+| BO_both_15 | 43 | 1572 | 4470 | 3944 | 1605 | 1390 | 270 | -298 | 1113 | True | True | False |
+| BO_both_30 | 43 | 3433 | 1828 | 1511 | 2885 | 2477 | 521 | -495 | 1066 | True | True | True |
+| BO_both_60 | 12 | 8056 | -6530 | -37 | 1421 | 1033 | -965 |  |  | False | True | True |
+| BO_off | 12 | 0 | 0 | 0 | 0 | 0 | 0 |  |  | False | True | True |
+
+### Plain reading
+- **Sustained-cut (A6) and the L1 path rule (A7) lose on the full engine in recent windows**: l40 dwell cells are negative on L1M/L2M and fail recents; the HM path rule is ~0 (L6M -6 to -242 per week). Tier S flattered A6 for the same reason as in A1 (cut-later artefact without cascade). A2 and A5 never reach positive S, so they were not sent to Tier F.
+- **Blackout (A4)**: both-sides blackouts after a ThL2 cut help on every recent window: BO_both_5 min: L1M +2,426, L2M +1,948, L3M +1,643, L6M +3,390, HOLD +1,833, MID -41, PRE +647, X' +263 per week, drawdown-first met, tolerant gate met; BO_both_30 and BO_both_15 positive on recents but PRE -495/-298; same-side 5/15 smaller. Individually every delta is below its MDE (BO_both_5: L6M 3,390 vs MDE 4,046; PRE 647 vs 1,759). The blackout has no placebo or family null (not expressible in Tier S), so it cannot clear the ENTER test: it is a LEAD that needs a placebo (random-time blackouts of the same length after the same cuts) before any claim; best of 9 runs, so best-of-F applies.
+- BO_off (U7's live 30-min same-side blackout removed) equals the live engine to the dollar on the 12 months it covers (11 months complete; one month missing because the pool was restarted), i.e. the U7 blackout is not binding in the replica over those months.
+- Nothing here changes the program-A verdict: the live cell stays; no policy-file line.
+- Ledger: dead_lookup before (not found); 16 rows appended (program THA_REPLICA_PREPROOF). Files: tiers_B.py, feat_extract.py, tierF2.py, final_B.py under /mnt/l2/l2vast/_th_redo_replica/code; tables B_*.csv and B_sched_A2.pkl in .../out.

@@ -25,3 +25,23 @@ Header: cut-input agreement with live: 14% at 0% false (best FIT-selected conven
 |---|---|---|---|---|
 | A (loss, L2) | 4,200 rule cells x 14 units (Tier S, 43 months) | 40 run on recents, 24 on all 43 months | no rule clears ENTER; 12 pooled finalists beat live on L6M and PRE (placebo/thin/family clean) but all below MDE, WF p=0.38, convention sign/fragile cap met only by P06/P07 which fail drawdown-first; live cell stays; never-cut control worse than live | autopilot/DS3_TH_REDO_A.md |
 | A2,A4,A5,A6,A7 | not run | - | open (no replica wiring this pass) | |
+
+### Program C extension (TH-C, 2026-11-08) - PRE-PROOF; header as above
+| item | result |
+|--|--|
+| Tier 1 replays | 23 cells (11 + 12 book-scoped by the DECISIONS.md rule), 43 months each |
+| best cell | C3 lock 70%/+2 pt on KB: L6M +2,577/wk, PRE +342, X' +23, MID -325; recents + tolerant pass, drawdown-first FAILS in PRE (161,280 -> 172,810), placebo p 1.0, family p 1.0 |
+| 1,000-draw placebo (3 named cells) | C3 lock .7/+4 p 1.0; C5 iceberg arm .3 p 1.0, arm .5 p 1.0 (random in-profit exits do better) |
+| purged month walk-forward | lock .7/+4 gated -30.8k vs always-on -270k (on 2 of 34 months); cell-selection WF -81k vs random -196k |
+| lock benefit split (L6M/wk, all-unit) | +22.4k on HOLD loss-cut trades, -21.2k on others: depends on the 14%-agreement loss-cut input; conventions not injectable -> not testable |
+| MORNING.md | nothing appended |
+
+## Program A sub-programs (TH-A, 2026-11-08) - label: cut-input agreement with live 14% at 0% false (best FIT convention) / literal 45 of 92 within +-2 s with 23 false; Gate 0 NOT passed; PRE-PROOF
+| sub-program | cells | result | detail |
+|---|---|---|---|
+| A2 flip triggers | 24 (own feature definitions) | Tier S: 0 positive | not sent to Tier F |
+| A5 lot-scaled arm | 3 | Tier S: 0 positive | not sent to Tier F |
+| A6 sustained cut | 15 | Tier S 5 positive (lvl 40); Tier F fails recents | engine L1M/L2M negative |
+| A7 HM path rule | 15 of 161 (9 named + 6 neighbours) | pooled ~0, HM units <= +88/wk; Tier F ~0 | other cells need the old THL grid, not wired |
+| A4 blackout | 9 engine runs on the live rule | both-sides 5 min: positive on every recent window and PRE/X', below MDE, no placebo possible | LEAD only; +5 best A1 rules not run |
+Details autopilot/DS3_TH_REDO_A.md (addendum).
