@@ -99,3 +99,9 @@ ALONE: pooled cells with S>0 1944 of 14,580, best pooled S +4373 $/wk, unit-cell
 * Month chunks restart flat; history config is the settled D7 week; 100-ms causal book; Gate 0 not passed.
 * One engine run per finalist (no 9-phase lock ladder on this engine); 11 finalists, not 40.
 * Files: code/th_redo/thB_rec.py, thB_core.py, thB_stage1.py, thB_select.py, thB_fin.py, thB_engine_score.py; private /mnt/l2/l2vast/_th_redo_replica/B/ (hist, out, fin).
+
+
+## Addendum (B3, run by TH-A on the lead's order, 2026-11-08)
+**cut-input agreement with live: 14% at 0% false (best FIT-selected convention) / literal reading 45 of 92 within +-2 s with 23 false cuts; engine Gate 0 NOT passed; PRE-PROOF**
+
+B3 was not run in the first B pass because A had no list. Now run: B finalists F07 and F10 (B's rule dicts, fin.json) merged with A's P05, P06, P07, P11, P24 (AddToPath, rules_replica.merge_rules), full replica, 12 recent months then 43 for the 7 survivors. Result in plain words: F10 + an A rule (KB scope) is positive on all recent windows and PRE/X', best B3_F10_P11 (L6M +3,188, PRE +190 USD/week, drawdown-first and tolerant gate met, L6M above its MDE 2,686, PRE below MDE); F07 stacks fail drawdown-first. No placebo/family/convention null exists for the stack and F10 alone has Tier S placebo p 1.0, so it is a lead, not a rule. Table and details: autopilot/DS3_TH_REDO_A.md, Addendum 3. Cells: /mnt/l2/l2vast/_th_redo_replica/out/fin3.json; results B3_finalists.csv.

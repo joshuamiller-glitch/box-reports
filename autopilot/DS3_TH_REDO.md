@@ -53,3 +53,9 @@ Details autopilot/DS3_TH_REDO_A.md (addendum).
 | program | combos | on 43 months | result | detail |
 |--|--|--|--|--|
 | E | 54 (9 loss x 6 profit), 40 Tier 1, stage 1 on L6M | 10 | none enters: best family p 0.28, walk-forward p 0.83, below MDE, fragile cap failed; A:P10+D F07/F08 L6M +8.0k/+7.3k PRE +5.4k/+5.1k fail tolerant (X' -4k); B:F07+C4 passes recents/tolerant/dd-first but family p 0.71; blind week: combos +0.1k..+7.7k vs HOLD, each below its loss rule alone | autopilot/DS3_TH_REDO_E.md |
+
+## A7 completed and B3 (TH-A, 2026-11-08) - label: cut-input agreement with live 14% at 0% false (best FIT convention) / literal 45 of 92 within +-2 s, 23 false; Gate 0 NOT passed; PRE-PROOF
+| program | cells | result | detail |
+|---|---|---|---|
+| A7 (DS3 THL grid on HM, port) | 131 of 161 x ADD/REP (L7 stop-tightening 22 and L8 partial 8 not ported); 10 Tier F | Tier S: 0 positive; Tier F: recents-positive L2/L3/L4 cells turn negative on PRE; the L6 live-grid cells ~0 or negative; no qualifying rule | DS3_TH_REDO_A.md Addendum 3 |
+| B3 (B finalists x A top rules) | 10 (F07,F10 x P05,P06,P07,P11,P24), AddToPath | F10+A rule (KB) positive on L1M..PRE, X' (best F10+P11: L6M +3,188, PRE +190); F07 stacks fail drawdown-first; no stack null exists -> LEAD, not a rule | DS3_TH_REDO_A.md Addendum 3; DS3_TH_REDO_B.md addendum |

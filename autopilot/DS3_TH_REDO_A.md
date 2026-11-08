@@ -134,3 +134,51 @@ Cell: after every ThL2 cut on every book, no new entry on either side for 5 minu
 4. **U7 interaction:** U7's live 30-minute same-side blackout is not binding on the covered months (the no-blackout control equals the live engine to the dollar). Replacing it with 5 min both-sides (BO_both_5) vs keeping it (blackout on the other books only): L6M +3,390 vs +3,533, L1M +2,426 vs +3,385; U7 alone with the 5-min both-side: L6M +49, L1M -959. The cell's benefit comes from the other books; for U7 it is redundant (and slightly worse than leaving the live U7 rule).
 
 **Verdict:** the BO_both_5 lead stays a LEAD, not a rule: marginal on L6M against a random-timed blackout, not distinguishable on L1M-L3M, walk-forward negative, fails the fragile-cut cap on the available days, below MDE, best of 9. Nothing for the policy file. Files: tierF3.py, analyze_BO.py, robust_keys.py; results /mnt/l2/l2vast/_th_redo_replica/out/BO_null_results.json; seal manifest unchanged.
+
+
+## Addendum 3: A7 completed (DS3 THL grid port) and B3 (B's finalists stacked on A's rules) - TH-A, 2026-11-08
+**cut-input agreement with live: 14% at 0% false (best FIT-selected convention) / literal reading 45 of 92 within +-2 s with 23 false cuts; engine Gate 0 NOT passed; PRE-PROOF**
+
+Extra budget logged in DECISIONS.md before the runs: A7 up to 12 Tier F cells (10 used), B3 up to 10 cells (10 used). Pool 3 processes / 30 GB. Seal manifest unchanged.
+
+### A7 port: what was ported
+- The DS3 THL kernel (thl_kern.py, copied unchanged to the private tree, sha 8311a68b0b417f27) and the rule table of thl_lib.rules(): families L1 fixed cut, L2 time under water, L3 MAE-recovery, L4 stall, L5 velocity/efficiency, L6 the live TH-loss grid (a x r x w) = 128 market-trigger cells + the 3 window-20 cells = **131 cells**, each in two modes: **ADD** (path rule added to the live L2 cut, earliest wins) and **REP** (path rule replaces the live L2 cut on HM trades; removal of the live cut is then part of the delta). Not ported: **L7 stop tightening (22 cells) and L8 partial cuts (8 cells)** - they change the resting stop / split the position and need the replica's stop-join and scale-out model, not a market-cut fill. 161 - 30 = 131 cells expressible; that is all of the family except those 30.
+- Path: 1-s high/low/close from the HIST-PIPE day arrays on each HM trade from entry to its natural exit; trigger = the DS3 kernel at second close; fill = replica 10-level book walk at fire + 0.5 s + LAT_BOOK; natural outcome from the hybrid world; HM trades only (other books keep the live outcome).
+### A7 Tier S
+262 cell-modes: **0 have S > 0** (best S about 0; ADD: 26 pass recents, REP: 13). Only 7 cell-modes pass recents + tolerant gate and none passes drawdown-first. The HM book is small (a few hundred USD per week of effect at most).
+### A7 Tier F (10 cells, full replica with the Tier S fire time injected; recents first, older months for survivors)
+| id | months | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | recents | tolerant | dd first |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A7_L3_m20_y25_n900_ADD | 43 | 878 | 1004 | 610 | 339 | -108 | -363 | -394 | -12 | True | False | False |
+| A7_L2_x10_t60_ADD | 43 | 162 | 342 | 228 | 235 | 97 | 35 | -200 | -339 | True | True | False |
+| A7_L3_m20_y25_n900_REP | 43 | 476 | 988 | 415 | 371 | -48 | -862 | -262 | 179 | True | True | False |
+| A7_L4_x20_n600_ADD | 43 | 661 | 689 | 285 | 159 | 96 | -108 | -143 | 73 | True | True | False |
+| A7_L3_m20_y50_n900_REP | 43 | 268 | 1039 | 710 | 395 | -11 | -909 | -399 | -242 | True | True | False |
+| A7_L4_x30_n600_ADD | 12 | 41 | 24 | 23 | -41 | -102 | -445 |  |  | False | True | True |
+| A7_L6_a30_r3_w20_REP | 12 | 683 | 757 | 83 | -51 | -278 | -1059 |  |  | False | True | False |
+| A7_L6_a30_r3_w10_ADD | 12 | -381 | -169 | -191 | -38 | -106 | -44 |  |  | False | True | False |
+| A7_L6_a25_r3_w10_ADD | 43 | -90 | 226 | 277 | 63 | -111 | 291 | 161 | 83 | True | True | False |
+| A7_L6_a30_r3_w10_REP | 12 | -50 | 244 | -76 | -111 | -272 | -1228 |  |  | False | True | False |
+
+Reading: L3 (MAE recovery, 900 s) and L2/L4 cells are positive on recents (+160..+900 USD/week) and negative on PRE (-140..-400); the L6 grid (the live TH loss rule family) is about 0 or negative. None passes tolerant+drawdown-first on all windows. **A7 has no qualifying rule.** The named primary a30/3of3/w10 is -38 (ADD) / -111 (REP) USD/week on L6M.
+
+### B3: B finalists on A's top rules (10 cells, AddToPath: A rule replaces the live ThL2 parameters, B's path rule added, l2loss kept)
+F07 (pooled, B's engine-clean finalist) and F10 (KB scope, B's lead) x A's P05, P06, P07, P11, P24, merged with rules_replica.merge_rules; B's scope applies to the merged rule, so F10 stacks act on KB only. Recents first; survivors (7) on all 43 months.
+| id | months | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | recents | tolerant | dd first |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| B3_F07_P05 | 12 | -2656 | -154 | -215 | 2510 | 4101 | 3909 |  |  | False | True | True |
+| B3_F07_P06 | 43 | -813 | 35 | 844 | 4118 | 5640 | 4184 | 270 | -1342 | True | True | False |
+| B3_F07_P07 | 43 | -813 | -51 | 873 | 3944 | 5641 | 4544 | 618 | -1473 | True | True | False |
+| B3_F07_P11 | 12 | -2590 | -5772 | -1720 | 5095 | 4634 | 5036 |  |  | False | True | True |
+| B3_F07_P24 | 12 | -2085 | -520 | -880 | 4240 | 4828 | 1603 |  |  | False | True | True |
+| B3_F10_P05 | 43 | 4624 | 3211 | 1834 | 2504 | 1854 | -1675 | 589 | -60 | True | True | True |
+| B3_F10_P06 | 43 | 4189 | 2931 | 1871 | 2174 | 1577 | -1720 | -120 | 18 | True | True | False |
+| B3_F10_P07 | 43 | 4189 | 2932 | 1881 | 2188 | 1595 | -1720 | -110 | -146 | True | True | False |
+| B3_F10_P11 | 43 | 2115 | 2971 | 3275 | 3188 | 2219 | 370 | 190 | 97 | True | True | True |
+| B3_F10_P24 | 43 | 2619 | 1536 | 838 | 1850 | 1734 | -976 | 401 | 66 | True | True | True |
+| F07_alone | 43 | 1182 | 1129 | 2763 | 2569 | 3289 | -941 | 5219 | -2926 | True | False | True |
+| F10_alone | 43 | 1298 | 2552 | 2166 | 911 | 1355 | 1003 | 1608 | -440 | True | True | False |
+
+Reading: **F10 + A rule (KB only) is positive on every recent window and on PRE and X'**: with P11 (arm 35 / 10x / 3 s / pers 3): L1M +2,115, L2M +2,971, L3M +3,275, L6M +3,188 (MDE 2,686), HOLD +2,219, MID +370, PRE +190 (MDE 1,427), X' +97 USD/week; recents, tolerant gate and drawdown-first all pass. With P24 and P05 similar (L6M +1,850 / +2,504, PRE +401 / +589). F10 alone is L6M +911, PRE +1,608; the stacks lift L6M and L1M/L2M but PRE falls to +190..+589. F07 stacks are large on L6M (+4k) but PRE +270..+620 and X' -1.3k..-1.5k and fail drawdown-first.
+**Not placebo-clean / not ENTER:** F10's Tier S placebo p is 1.0 in B's report (99% of its cuts fragile under input offsets), no placebo/family null exists for a stack, PRE is far below MDE, nothing is known about the convention set beyond A's and B's. Best of 10. It is a LEAD (KB-only, B3_F10_P11), not a rule; nothing for the policy file.
+Files: a7_port.py, tierF2.py (ADD/REP injection), final_B7.py, final_B3.py, fin3.json; tables A7_pooled_table.csv, A7_finalists.csv, B3_finalists.csv under /mnt/l2/l2vast/_th_redo_replica/out/. Ledger: 22 rows appended (program THA_REPLICA_PREPROOF).
