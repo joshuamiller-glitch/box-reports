@@ -221,3 +221,5 @@
 2026-11-08T21:47Z S2-G done: DS3_TH_STATE_G.md; no learned rule ENTERs vs S1-COMB; null W=50 (cap); Stage 2 not run (no finalist)
 2026-11-08T21:55Z S2-CD: engine chain queued after C0: X2 (C re-screen picks + D extras), D1 (D per-book best), X4 (D extras + live reference rows REFLIVE, 2024-02..2026-10); chain pid 2872003
 2026-11-08 BASE-S1: PLAIN6060 reference (no TH of any kind, 43 months, /mnt/l2/l2vast/_th_state/base/PLAIN6060/) DONE; vs-plain-60/60 window metrics now in autopilot/TH_STATE_BASE_S1.md (S1-COMB and S1-UNIF partial months); S1-UNIF full 43 months running on 2 processes
+2026-11-08T23:08Z S2-CD: partial-exit subclass code/th_redo/state_profit.py regressions: REG/REGOFF (inert scale-out + inert state cells) == S1-COMB all columns (202304, 202305); REGPLAIN (inert) == PLAIN6060 202305; REGNOCUT == stored never-cut 202305; C0 43 months done
+2026-11-08 BASE-S1: S1-UNIF full 43 months DONE (regression vs Stage 2 UNIF identical, see TH_STATE_BASE_S1.md); S1-COMB, S1-UNIF, PLAIN6060 all complete; live-cell/NOCUT/HOLD sample-month regressions finishing

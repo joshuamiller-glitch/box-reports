@@ -33,33 +33,33 @@ Common: S1-COMB cell of the trade's unit c0 = (ARM0, MULT0, W0, PERS0, newMae0, 
 
 ## 4. Best rule per book and family (all windows, nulls, walk-forward, live week)
 
-Columns: USD/week delta vs S1-COMB, carrying week dropped; placebo p v1 (prereg-literal eligibility) / v2 (like-for-like: L1 rows within 6 pt of the adverse extreme; identical for A cells); family p = placebo-world max-stat over the whole program (36 worlds; A4: random-removal worlds), program cell family = A2+A5+A6+A7; walk-forward = purged monthly refit of the family procedure on the trailing 12 months (total USD 2024-01..2026-10; L6M/PRE of the out-of-sample series); live week = first-order delta on the 180 live trades.
+Columns: USD/week delta vs S1-COMB, carrying week dropped; placebo p v1 (prereg-literal eligibility) / v2 (like-for-like: L1 rows within 6 pt of the adverse extreme; identical for A cells); family p = placebo-world max-stat over the whole program (100 worlds; A4: random-removal worlds), program cell family = A2+A5+A6+A7; walk-forward = purged monthly refit of the family procedure on the trailing 12 months (total USD 2024-01..2026-10; L6M/PRE of the out-of-sample series); live week = first-order delta on the 180 live trades.
 
 | book | family | rule (cell) | tier | nfire | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | MDE L6M/PRE | placebo p v1/v2 | family p | walk-fwd (total; L6M/PRE) | live week | verdict |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | K7 | A2 | A2_swp_q99 | E3 | 3287 | -623 | -708 | -818 | -960 | -576 | +235 | -1128 | +395 | +1921/+1354 | 0.001/0.001 | 1.000 | -173707; -1417/-907 | +332 | no gain over S1-COMB |
 | K7 | A4 | A4_N15_both | E1 | 678 | -622 | +91 | +53 | +496 | +468 | +946 | +294 | -69 | +1366/+542 | 0.002/0.002 | 0.030 | +27090; +429/+309 | n/a | LEAD (best-of-F) |
 | K7 | A5 | A5_a25_g+0.25 | E2 | 853 | -374 | -924 | -790 | -2 | -409 | -454 | -203 | +175 | +1444/+697 | 0.001/0.001 | 1.000 | -35330; -1015/-299 | -730 | no gain over S1-COMB |
-| K7 | A6 | A6b_Dh60 | E2 | 153 | -30 | -40 | +22 | -54 | -49 | -81 | -10 | -6 | +154/+42 | 0.869/0.869 | 0.973 | -20851; -37/-4 | +0 | no gain over S1-COMB |
-| P7 | A2 | A2_dlt_q99 | E3 | 2215 | -6101 | +1174 | -3245 | -2429 | +663 | +1397 | -2051 | +441 | +7012/+3997 | 0.001/0.001 | 1.000 | -380172; -2765/-2258 | -6788 | no gain over S1-COMB |
+| K7 | A6 | A6b_Dh60 | E2 | 153 | -30 | -40 | +22 | -54 | -49 | -81 | -10 | -6 | +154/+42 | 0.869/0.869 | 0.980 | -20851; -37/-4 | +0 | no gain over S1-COMB |
+| P7 | A2 | A2_dlt_q99 | E3 | 2215 | -6101 | +1174 | -3245 | -2429 | +663 | +1397 | -2051 | +441 | +7012/+3997 | 0.001/0.001 | 0.990 | -380172; -2765/-2258 | -6788 | no gain over S1-COMB |
 | P7 | A4 | A4_N15_same | E1 | 151 | +805 | +578 | +420 | +296 | +182 | -807 | +331 | +107 | +3340/+1014 | 0.048/0.048 | 0.229 | -4118; -151/-208 | n/a | LEAD (best-of-F) |
-| P7 | A5 | A5_a50_g-1.00 | E1 | 1687 | -5473 | -558 | +550 | +1948 | +2189 | +5832 | -1249 | +514 | +8324/+4656 | 0.001/0.001 | 0.027 | -35470; -4032/-116 | -6646 | no gain over S1-COMB |
-| P7 | A6 | A6a_D2_X20 | E1 | 1979 | -118 | -160 | +8 | +134 | +181 | +345 | +157 | +20 | +481/+135 | 0.001/0.001 | 0.027 | +45343; -766/+77 | +700 | LEAD (best-of-F) |
-| M7 | A2 | A2_ice_q95 | E4 | 1207 | +610 | +317 | +181 | +211 | +169 | -91 | -27 | +164 | +480/+635 | 0.001/0.001 | 0.027 | -31246; +109/-323 | +74 | no gain over S1-COMB |
+| P7 | A5 | A5_a50_g-1.00 | E1 | 1687 | -5473 | -558 | +550 | +1948 | +2189 | +5832 | -1249 | +514 | +8324/+4656 | 0.001/0.001 | 0.010 | -35470; -4032/-116 | -6646 | no gain over S1-COMB |
+| P7 | A6 | A6a_D2_X20 | E1 | 1979 | -118 | -160 | +8 | +134 | +181 | +345 | +157 | +20 | +481/+135 | 0.001/0.001 | 0.010 | +45343; -766/+77 | +700 | LEAD (best-of-F) |
+| M7 | A2 | A2_ice_q95 | E4 | 1207 | +610 | +317 | +181 | +211 | +169 | -91 | -27 | +164 | +480/+635 | 0.001/0.001 | 0.010 | -31246; +109/-323 | +74 | no gain over S1-COMB |
 | M7 | A4 | A4_N15_same | E1 | 273 | -97 | -173 | +48 | +619 | +363 | +412 | -86 | -17 | +1010/+306 | 0.518/0.518 | 0.985 | -30623; -114/-251 | n/a | no gain over S1-COMB |
 | M7 | A5 | A5_a45_g+1.00 | E3 | 2470 | -646 | -1234 | -1231 | -552 | -338 | +216 | -589 | +35 | +2330/+1011 | 0.001/0.001 | 1.000 | +33070; -254/-557 | -2066 | no gain over S1-COMB |
-| M7 | A6 | A6b_Dh10 | E2 | 373 | +22 | +21 | +20 | -8 | +12 | +56 | +10 | -5 | +60/+25 | 0.001/0.001 | 0.027 | +56740; -100/-120 | -425 | no gain over S1-COMB |
+| M7 | A6 | A6b_Dh10 | E2 | 373 | +22 | +21 | +20 | -8 | +12 | +56 | +10 | -5 | +60/+25 | 0.001/0.001 | 0.010 | +56740; -100/-120 | -425 | no gain over S1-COMB |
 | U7 | A2 | A2_dlt_q99 | E1 | 585 | +1155 | +1301 | +992 | +696 | +1111 | +1335 | -238 | +646 | +2182/+1362 | 0.019/0.019 | 1.000 | -58672; -79/-593 | +0 | no gain over S1-COMB |
-| U7 | A5 | A5_a25_g+0.25 | E1 | 32 | -1453 | +479 | +446 | +92 | +23 | +2 | +136 | +0 | +946/+174 | 0.001/0.001 | 0.027 | -25375; -447/-30 | +0 | LEAD (best-of-F) |
-| U7 | A6 | A6b_Dh10 | E1 | 82 | +8 | +72 | +18 | +7 | -11 | +1 | -7 | +0 | +91/+16 | 0.085/0.085 | 0.135 | +2013; -88/+0 | +88 | no gain over S1-COMB |
+| U7 | A5 | A5_a25_g+0.25 | E1 | 32 | -1453 | +479 | +446 | +92 | +23 | +2 | +136 | +0 | +946/+174 | 0.001/0.001 | 0.010 | -25375; -447/-30 | +0 | LEAD (best-of-F) |
+| U7 | A6 | A6b_Dh10 | E1 | 82 | +8 | +72 | +18 | +7 | -11 | +1 | -7 | +0 | +91/+16 | 0.085/0.085 | 0.139 | +2013; -88/+0 | +88 | no gain over S1-COMB |
 | A7 | A2 | A2_ice_q99 | E1 | 156 | +0 | +17 | +12 | +35 | +56 | +21 | -81 | +84 | +53/+259 | 0.056/0.056 | 1.000 | -19711; +92/-173 | +0 | no gain over S1-COMB |
-| A7 | A5 | A5_a30_g+0.25 | E1 | 69 | +461 | +310 | +390 | +346 | +125 | +69 | -3 | +15 | +359/+101 | 0.002/0.002 | 0.054 | -4068; -261/+0 | +53 | no gain over S1-COMB |
-| A7 | A6 | A6a_D2_X20 | E2 | 101 | -6 | +4 | +8 | -4 | -1 | -2 | -2 | +1 | +19/+5 | 0.010/0.010 | 0.054 | -2134; -139/+0 | +52 | no gain over S1-COMB |
-| H7 | A2 | A2_ice_q99 | E1 | 288 | -258 | -32 | +14 | +10 | +30 | +275 | -34 | +135 | +344/+526 | 0.015/0.015 | 0.514 | -55140; -251/+61 | +0 | no gain over S1-COMB |
+| A7 | A5 | A5_a30_g+0.25 | E1 | 69 | +461 | +310 | +390 | +346 | +125 | +69 | -3 | +15 | +359/+101 | 0.002/0.002 | 0.030 | -4068; -261/+0 | +53 | no gain over S1-COMB |
+| A7 | A6 | A6a_D2_X20 | E2 | 101 | -6 | +4 | +8 | -4 | -1 | -2 | -2 | +1 | +19/+5 | 0.010/0.010 | 0.030 | -2134; -139/+0 | +52 | no gain over S1-COMB |
+| H7 | A2 | A2_ice_q99 | E1 | 288 | -258 | -32 | +14 | +10 | +30 | +275 | -34 | +135 | +344/+526 | 0.015/0.015 | 0.505 | -55140; -251/+61 | +0 | no gain over S1-COMB |
 | H7 | A4 | A4_N60_both | E2 | 31 | -239 | -149 | +174 | -108 | -44 | +0 | -42 | +0 | +460/+296 | 0.718/0.718 | 0.751 | +0; +0/+0 | n/a | no gain over S1-COMB |
-| H7 | A5 | A5_a25_g+0.25 | E2 | 46 | -160 | -368 | -269 | +140 | -140 | -340 | +46 | +0 | +1108/+62 | 0.001/0.001 | 0.027 | -26476; -765/-148 | +0 | best-of-F |
+| H7 | A5 | A5_a25_g+0.25 | E2 | 46 | -160 | -368 | -269 | +140 | -140 | -340 | +46 | +0 | +1108/+62 | 0.001/0.001 | 0.010 | -26476; -765/-148 | +0 | best-of-F |
 | H7 | A6 | A6b_Dh30 | E2 | 142 | -34 | +1 | -69 | -129 | -82 | -324 | +2 | -5 | +176/+20 | 0.003/0.003 | 1.000 | -19675; +135/-7 | +0 | no gain over S1-COMB |
-| H7 | A7 | A7_a30_w20_add | E2 | 376 | -690 | -859 | -413 | -24 | -170 | +166 | +102 | +543 | +1093/+607 | 1.000/0.003 | 0.324 | -70188; -1249/+31 | +0 | no gain over S1-COMB |
+| H7 | A7 | A7_a30_w20_add | E2 | 376 | -690 | -859 | -413 | -24 | -170 | +166 | +102 | +543 | +1093/+607 | 1.000/0.003 | 0.376 | -70188; -1249/+31 | +0 | no gain over S1-COMB |
 | O7 | A2 | A2_imb_q99 | E2 | 54 | +0 | +0 | +0 | +0 | +1 | +0 | +10 | -21 | +0/+18 | 0.998/0.998 | 1.000 | -4188; -80/+26 | +0 | no gain over S1-COMB |
 | O7 | A5 | A5_a20_g+0.25 | E3 | 269 | +214 | +184 | +204 | +56 | -155 | -130 | -208 | +81 | +398/+293 | 0.073/0.073 | 1.000 | -9733; -97/-159 | +0 | no gain over S1-COMB |
 | O7 | A6 | A6a_D2_X20 | E1 | 164 | +4 | +3 | +11 | +4 | +11 | +12 | -5 | +2 | +24/+14 | 0.931/0.931 | 1.000 | -1778; -27/-45 | +0 | no gain over S1-COMB |
@@ -73,7 +73,7 @@ Columns: USD/week delta vs S1-COMB, carrying week dropped; placebo p v1 (prereg-
 | M7 | A4 | A4_N15_same | E1 | -86 | +619 | -86 | no gain over S1-COMB | L6M/PRE not above MDE (+619>+1010, -86>+306); placebo p=0.518; family p=0.985; walk-forward | `KEEP the S1-COMB cell: no cell of this program improves it on min(L6M, PRE); best-of-family for the record: ThL2BlackoutMins=15; ThL2BlackoutBooks="M7"; ThL2BlackoutSameSideOnly=true` |  |
 | U7 | A5 | A5_a25_g+0.25 | E1 | +92 | +92 | +136 | LEAD (best-of-F) | L6M/PRE not above MDE (+92>+946, +136>+174); walk-forward | `loss U7 * pct<=-clip(25*(lots/4)^+0.25,15,50)/60 pulled_mult>=60 cut   # COMB cell U7: ARM 30 MULT 60 W 15 PERS 5 newMae off var V2; PERS=5 W=15` | lots feature and an arithmetic expression in the pct threshold (lot-scaled arm); persist field (PERS=5); per-rule pulled window W=15 s |
 | A7 | A5 | A5_a30_g+0.25 | E1 | -3 | +346 | -3 | no gain over S1-COMB | L6M/PRE not above MDE (+346>+359, -3>+101); walk-forward | `KEEP the S1-COMB cell: no cell of this program improves it on min(L6M, PRE); best-of-family for the record: loss A7 * pct<=-clip(30*(lots/4)^+0.25,15,50)/60 pulled_mult>=60 cut   # COMB cell A7: ARM 30 MULT 60 W 15 PERS 3 newMae off var V0; PERS=3 W=15` |  |
-| H7 | A2 | A2_ice_q99 | E1 | -34 | +10 | -34 | no gain over S1-COMB | L6M/PRE not above MDE (+10>+344, -34>+526); family p=0.514; walk-forward | `KEEP the S1-COMB cell: no cell of this program improves it on min(L6M, PRE); best-of-family for the record: loss H7 * pct<=-0.2500 pulled_mult>=30 secs_ext<=10 cut; loss H7 * pct<=-0.5000 ice_against>=3 cut   # A2 add-on (earliest of the two lines)` |  |
+| H7 | A2 | A2_ice_q99 | E1 | -34 | +10 | -34 | no gain over S1-COMB | L6M/PRE not above MDE (+10>+344, -34>+526); family p=0.505; walk-forward | `KEEP the S1-COMB cell: no cell of this program improves it on min(L6M, PRE); best-of-family for the record: loss H7 * pct<=-0.2500 pulled_mult>=30 secs_ext<=10 cut; loss H7 * pct<=-0.5000 ice_against>=3 cut   # A2 add-on (earliest of the two lines)` |  |
 | O7 | A6 | A6a_D2_X20 | E1 | -5 | +4 | -5 | no gain over S1-COMB | L6M/PRE not above MDE (+4>+24, -5>+14); placebo p=0.931; family p=1.000; walk-forward | `KEEP the S1-COMB cell: no cell of this program improves it on min(L6M, PRE); best-of-family for the record: loss O7 * pct<=-0.6250 pulled_mult>=20 cut  confirm 2 s while pct<=-0.3333   # COMB cell O7: ARM 25 MULT 20 W 10 PERS 10 newMae off var V0; PERS=10 W=10` |  |
 
 
@@ -194,9 +194,9 @@ Engine cascade (replica engine, true fills, re-entries and locks included), poli
 
 | policy | what | months run | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M with/without | maxDD PRE with/without |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| A_BO | A4 blackout: K7 15 min both sides, P7 15 min same side | 9 (202602..202610) | +720 (+7359) | +392 (+4944) | -712 (+4088) | -1172 (+5316) | +390 (+3243) | +68 (+4832) | n/a | n/a | +93162/+79709 | n/a |
-| A_U7LIVE | U7 30 min same-side blackout armed by the state cut (the D7 v1.2 live rule, absent from the S1 base) | 8 (202603..202610) | +0 (+0) | +0 (+0) | -100 (+279) | +22 (+241) | +11 (+117) | +0 (+0) | n/a | n/a | +79709/+79709 | n/a |
-| A_STACK | P7 dwell 2s/20pt (A6a) + U7, H7 lot-scaled arm 25x(lots/4)^0.25 (A5) + K7/P7/U7 blackouts (A4) | 8 (202603..202610) | -2543 (+9233) | +412 (+3284) | -210 (+3161) | -229 (+5711) | +113 (+3056) | -1143 (+5365) | n/a | n/a | +90066/+79709 | n/a |
+| A_BO | A4 blackout: K7 15 min both sides, P7 15 min same side | 16 (202507..202610) | +720 (+7359) | +392 (+4944) | -712 (+4088) | -1172 (+5316) | +989 (+3549) | +68 (+4832) | n/a | n/a | +93162/+79709 | n/a |
+| A_U7LIVE | U7 30 min same-side blackout armed by the state cut (the D7 v1.2 live rule, absent from the S1 base) | 15 (202508..202610) | +0 (+0) | +0 (+0) | -100 (+279) | +22 (+241) | +11 (+117) | +0 (+0) | n/a | n/a | +79709/+79709 | n/a |
+| A_STACK | P7 dwell 2s/20pt (A6a) + U7, H7 lot-scaled arm 25x(lots/4)^0.25 (A5) + K7/P7/U7 blackouts (A4) | 14 (202509..202610) | -2543 (+9233) | +412 (+3284) | -210 (+3161) | -229 (+5711) | +1038 (+3652) | -1660 (+5758) | n/a | n/a | +90066/+79709 | n/a |
 
 
 ## 7. ENTER verdict per finalist policy (vs S1-COMB, engine cascade)
@@ -217,9 +217,9 @@ PLAIN6060 (no TH of any kind) engine months available: 43 (202304..202610) of 43
 | row | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
 |---|---|---|---|---|---|---|---|---|
 | S1-COMB vs PLAIN6060 (engine) | +12301 (+17228) | +11780 (+13411) | +10145 (+13982) | +9975 (+10798) | +7031 (+7518) | +914 (+13193) | +2142 (+4192) | +973 (+2986) |
-| A_BO vs PLAIN6060 (engine, 9 months) | +13021 (+15442) | +11459 (+13377) | +13749 (+10666) | +9576 (+11658) | +6991 (+7120) | +8355 (+13144) | n/a | n/a |
-| A_U7LIVE vs PLAIN6060 (engine, 8 months) | +12301 (+17228) | +11997 (+13026) | +10190 (+13752) | +9901 (+10648) | +5612 (+6242) | +414 (+12561) | n/a | n/a |
-| A_STACK vs PLAIN6060 (engine, 8 months) | +9757 (+13397) | +10084 (+12290) | +8404 (+12560) | +10404 (+11230) | +6083 (+6656) | +6746 (+14192) | n/a | n/a |
+| A_BO vs PLAIN6060 (engine, 16 months) | +13021 (+15442) | +11459 (+13377) | +13749 (+10666) | +9576 (+11658) | +8020 (+7631) | +8355 (+13144) | n/a | n/a |
+| A_U7LIVE vs PLAIN6060 (engine, 15 months) | +12301 (+17228) | +11997 (+13026) | +10190 (+13752) | +9901 (+10648) | +6995 (+7465) | +914 (+13193) | n/a | n/a |
+| A_STACK vs PLAIN6060 (engine, 14 months) | +9757 (+13397) | +10084 (+12290) | +8404 (+12560) | +10404 (+11230) | +8069 (+7639) | +6729 (+14353) | n/a | n/a |
 
 
 NEVER-CUT engine rows exist only through the stage-2 comparison (S1-COMB vs never-cut, section 2); the S1 NOCUT base run was not started by BASE-S1 (0 months at the time of writing).
@@ -228,7 +228,7 @@ NEVER-CUT engine rows exist only through the stage-2 comparison (S1-COMB vs neve
 
 * Tier S is first-order (world W0): each trade as if alone on its 1-s path to the bracket proxy; the engine rows in section 6 carry re-entries, locks, caps and true fills and are the cascade check. The W0 S1-COMB vs NEVER-CUT row differs from the engine row (section 2): first-order is a screening statistic, not an expected P&L.
 * S1-COMB itself passes the engine regression exactly (an empty-spec rule reproduces the S1-COMB trade list of 2026-10 trade for trade).
-* Addendum 1 (DECISIONS.md, before any family-null number was read): the first family null (signal circularly shifted inside each trade, 80 worlds) was discarded because it leaks look-ahead (the later rows of a losing trade carry its outcome; shifted TH_LIVE scored +600k vs -200k real on K7). It was replaced by the prereg-literal Westfall-Young placebo worlds (random exits of the same acting trades, shared uniforms, per-world maximum over the program's cells; 36 worlds). The same flaw very likely inflates the shifted-block family null of DS3_TH_STATE.md section 5 (null mean above the observed best cell); that page should be re-read with this in mind.
+* Addendum 1 (DECISIONS.md, before any family-null number was read): the first family null (signal circularly shifted inside each trade, 80 worlds) was discarded because it leaks look-ahead (the later rows of a losing trade carry its outcome; shifted TH_LIVE scored +600k vs -200k real on K7). It was replaced by the prereg-literal Westfall-Young placebo worlds (random exits of the same acting trades, shared uniforms, per-world maximum over the program's cells; 100 worlds). The same flaw very likely inflates the shifted-block family null of DS3_TH_STATE.md section 5 (null mean above the observed best cell); that page should be re-read with this in mind.
 * Addendum 1b: the prereg-literal placebo eligibility for L1 cells (adverse extreme >= ThMinPoints, any later second) lets a random exit land after a rebound and is kinder than the rule; the like-for-like version v2 (rows within 6 pt of the adverse extreme) was added after the first placebo pass and both are reported; the gate requires both.
 * Zero rows: a book whose best cell has S <= 0 keeps the S1-COMB cell; the best-of-family cell is shown for the record only.
 * Dead ledger: dead_lookup found no prior match for any family before scoring (A2 flip, A4 blackout, A5 lot arm, A6 dwell, B1/B2 L1 cells); one row per family-book best is appended to DEAD_CELLS.csv after the run with program tags THS2_A / THS2_B (append only).

@@ -1,7 +1,7 @@
 # TH_STATE_BASE_S1 - engine base v-S1: replica engine (ITER14_PRM) with TH-L2-S as the live L2 cut
 **Label: base = replica engine with TH-L2-S as live L2 cut (COMB per-book / UNIF); entries not live-matched; per-book procedure fails the out-of-sample walk-forward (DS3_TH_STATE.md section 5)**
 
-Status: S1-COMB 43 months DONE (G recorder ON); S1-UNIF months done: 13/43 (IN PROGRESS - a later append-only line in GATE0_ITERATIONS.md marks completion); regression below. Private tree: /mnt/l2/l2vast/_th_state/base/ . Seal manifest_after.json sha256 759f2258daac9d28 (unchanged).
+Status: S1-COMB 43 months DONE (G recorder ON); S1-UNIF months done: 43/43 (complete); regression below. Private tree: /mnt/l2/l2vast/_th_state/base/ . Seal manifest_after.json sha256 759f2258daac9d28 (unchanged).
 
 ## 1. What the base is
 - Engine: hist adapter (code/hist_pipe/hist_adapter.py) on the replica (code/th_redo/adapter_replica.py, rules_replica.py, sim.py unchanged), ITER14_PRM + HIST_PRM, 10 warm days, monthly chunks 2023-04..2026-10 (43 months).
@@ -27,7 +27,7 @@ S1-UNIF (one cell for every book): ARM 30 / MULT 10 / W 5 / PERS 10 / newMae on 
 
 ## 3. Regression (exact, all columns of the trade list, order-insensitive)
 - S1-COMB vs stage2:COMB: 43 months compared, IDENTICAL (all columns); trades 21067 vs 21067, net 2566937.50 vs 2566937.50, state cuts 6694 vs 6694, old ThL2Cut/PolicyCut exits in base 0
-- S1-UNIF vs stage2:UNIF: 13 months compared, IDENTICAL (all columns); trades 4307 vs 4307, net 329867.50 vs 329867.50, state cuts 290 vs 290, old ThL2Cut/PolicyCut exits in base 0
+- S1-UNIF vs stage2:UNIF: 43 months compared, IDENTICAL (all columns); trades 19746 vs 19746, net 2256283.50 vs 2256283.50, state cuts 3036 vs 3036, old ThL2Cut/PolicyCut exits in base 0
 
 ## 4. Window metrics (USD/week, net of the 4.84 fee proxy, carrying week dropped; windows as of 2026-10-31 = STATE-SCORE; delta = base minus reference, same engine)
 | row | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
@@ -37,16 +37,17 @@ S1-UNIF (one cell for every book): ARM 30 / MULT 10 / W 5 / PERS 10 / newMae on 
 | S1-COMB vs old live-cut HOLD | +2830 | +1247 | +7270 | +7179 | +4360 | -7369 | +8047 | -3294 |
 | S1-COMB vs plain 60/60 | +12301 | +11780 | +10145 | +9975 | +7031 | +914 | +2142 | +973 |
 | S1-COMB vs plain 60/60 MDE | 17228 | 13411 | 13982 | 10798 | 7518 | 13193 | 4192 | 2986 |
-| S1-UNIF vs never-cut | +0 | -1107 | -282 | -135 | -66 | +0 | +8 | +136 |
-| S1-UNIF vs never-cut MDE | 0 | 10217 | 6890 | 3233 | 1568 | 0 | 337 | 631 |
-| S1-UNIF vs old live-cut HOLD | +0 | -2232 | -786 | -377 | -185 | +0 | -87 | -3357 |
-| S1-UNIF vs plain 60/60 | +0 | -1107 | -282 | -135 | -66 | +0 | +8 | +136 |
-| S1-UNIF vs plain 60/60 MDE | 0 | 10217 | 6890 | 3233 | 1568 | 0 | 337 | 631 |
+| S1-UNIF vs never-cut | +1194 | -204 | -1877 | -848 | +372 | +3402 | +1082 | +136 |
+| S1-UNIF vs never-cut MDE | 12133 | 12560 | 9316 | 7205 | 5730 | 8505 | 3033 | 631 |
+| S1-UNIF vs old live-cut HOLD | -8277 | -3075 | -3430 | -3325 | -3959 | -4882 | +5785 | -3357 |
+| S1-UNIF vs plain 60/60 | +1194 | -204 | -1877 | -848 | +372 | +3402 | +1082 | +136 |
+| S1-UNIF vs plain 60/60 MDE | 12133 | 12560 | 9316 | 7205 | 5730 | 8505 | 3033 | 631 |
 | S1-COMB level (weekly net, plain mean, no week dropped) | +5480 | +25303 | +21376 | +26778 | +17513 | +11228 | +13383 | +1552 |
-| S1-UNIF level (weekly net) | +0 | +15261 | +12337 | +6168 | +3084 | +0 | +720 | +1649 |
+| S1-UNIF level (weekly net) | -5626 | +12838 | +4601 | +13010 | +11805 | +14134 | +13242 | +1649 |
 | never-cut level (weekly net) | -6820 | +17939 | +9740 | +15529 | +12323 | +7725 | +11743 | +1353 |
 | plain 60/60 level (weekly net, plain mean, no week dropped) | -6820 | +17939 | +9740 | +15529 | +12323 | +7725 | +11743 | +1353 |
 
+Finding: the plain 60/60 run is trade-for-trade IDENTICAL to the stored never-cut run in every month checked (5 of 43 compared; all columns): in the hist replay config (PERIODS off, policy file in force from the start with no live profit lines) the only active TH component was the L2 loss cut, so vs-never-cut and vs-plain-60/60 deltas coincide (the vs-plain MDEs differ only through the month subset).
 S1-COMB vs never-cut reproduces DS3_TH_STATE.md section 6 exactly (L1M +12301 ... X' +973). Caveat carried: the COMB gain is below its MDE on L6M and PRE, the per-book procedure fails the out-of-sample walk-forward, so S1-COMB is an in-sample base.
 
 ## 5. Files
@@ -62,7 +63,7 @@ S1-COMB vs never-cut reproduces DS3_TH_STATE.md section 6 exactly (L1M +12301 ..
   - ce68f510167e94fa86e9da28c2d587e393f714f2c99db3e2e64d37c29ef75058  th_state_score/common.py
 - trade lists (per month trades.parquet [+ rows.parquet = G feature rows, every 5th wall second per open book, thG_rec format, S1-COMB/S1-UNIF only], DONE json):
   - S1-COMB: 43 months, dir /mnt/l2/l2vast/_th_state/base/S1-COMB/, feature-row files 43, sha-of-shas 5a643457bf9c41e8
-  - S1-UNIF: 13 months, dir /mnt/l2/l2vast/_th_state/base/S1-UNIF/, feature-row files 13, sha-of-shas 4c71d5a5eced4de5
+  - S1-UNIF: 43 months, dir /mnt/l2/l2vast/_th_state/base/S1-UNIF/, feature-row files 43, sha-of-shas 9885831a363a65bd
   - S1-LIVE: 0 months, dir /mnt/l2/l2vast/_th_state/base/S1-LIVE/, feature-row files 0, sha-of-shas e3b0c44298fc1c14
   - NOCUT: 0 months, dir /mnt/l2/l2vast/_th_state/base/NOCUT/, feature-row files 0, sha-of-shas e3b0c44298fc1c14
   - HOLD: 0 months, dir /mnt/l2/l2vast/_th_state/base/HOLD/, feature-row files 0, sha-of-shas e3b0c44298fc1c14
