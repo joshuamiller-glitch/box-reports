@@ -213,3 +213,4 @@
 - 2026-11-08 TH-STATE (state build for TH-L2-S) DONE: 931 day files 20230403..20261105 under /mnt/l2/l2vast/_th_state/days, validations (a)-(e) PASS, see autopilot/TH_STATE_BUILD.md; seal unchanged
 2026-11-08T17:57Z STATE-SCORE: per-book finalists published /mnt/l2/l2vast/_th_state/score/loss_finalists.json (selection data through 2026-10-31; Stage 2 + family null still running; see warning: walk-forward of the per-book procedure is negative)
 2026-11-08T19:23Z STATE-SCORE DONE: autopilot/DS3_TH_STATE.md written (per-book finalists /mnt/l2/l2vast/_th_state/score/loss_finalists.json); Stage 1 8,400 cells, Stage 2 COMB/UNIF/LIVE x 43 months; seal manifest_after sha unchanged 759f2258...; walk-forward and held-out live week negative for the per-book procedure; dead ledger not touched
+2026-11-08 PROFIT-STATE: DS3_TH_STATE_PROFIT.md written (8 books rules delivered, none ENTER; stage1 + live week + E first-order + Stage-2 cascade; U7/H7 F4 not in cascade)
