@@ -112,3 +112,25 @@ Tier F used 16 more full-replica finalists (24 + 16 = 40 total, the prereg limit
 - BO_off (U7's live 30-min same-side blackout removed) equals the live engine to the dollar on the 12 months it covers (11 months complete; one month missing because the pool was restarted), i.e. the U7 blackout is not binding in the replica over those months.
 - Nothing here changes the program-A verdict: the live cell stays; no policy-file line.
 - Ledger: dead_lookup before (not found); 16 rows appended (program THA_REPLICA_PREPROOF). Files: tiers_B.py, feat_extract.py, tierF2.py, final_B.py under /mnt/l2/l2vast/_th_redo_replica/code; tables B_*.csv and B_sched_A2.pkl in .../out.
+
+## Addendum 2: the A4 5-minute both-side blackout as a NULL test (TH-A, 2026-11-08)
+**cut-input agreement with live: 14% at 0% false (best FIT-selected convention) / literal reading 45 of 92 within +-2 s with 23 false cuts; engine Gate 0 NOT passed; PRE-PROOF**
+
+Cell: after every ThL2 cut on every book, no new entry on either side for 5 minutes (BO_both_5). Full replica, last 12 months (2025-11..2026-10); the custom blackout hook reproduces the engine exactly (live-rule sanity run = HOLD to the dollar; BO_both_5 re-implemented = the earlier run to the dollar). Tier S cannot express a cascade, so all nulls are full-replica runs. 20 worlds, so the smallest possible p is 1/21 = 0.048.
+
+1. **Random-time placebo (20 worlds):** same cuts, same 5-minute both-side blackout, but starting a random delay U(0,60 min) after each cut (seeded per world and trade). Weekly USD delta vs live, carrying week dropped:
+
+| window | BO_both_5 observed | placebo mean (sd) | p |
+|---|---|---|---|
+| L1M | +2,426 | +1,045 (2,738) | 0.24 |
+| L2M | +1,948 | +449 (1,356) | 0.19 |
+| L3M | +1,643 | +578 (1,063) | 0.33 |
+| L6M | +3,390 | +428 (1,315) | 0.048 |
+| 12 months (HOLD window) | +1,705 | +394 (765) | 0.095 |
+
+ Reading: on L6M the cell is at the placebo floor (best possible p with 20 worlds); on the three shorter windows it is not distinguishable from a randomly timed blackout; the placebo mean itself is positive (+0.4k to +1.0k), i.e. part of any blackout's gain is generic "trade less after a cut". Not placebo-clean on L1M-L3M. The full ENTER test also needs PRE and a family null, which 12 months of runs cannot give.
+2. **Walk-forward** (the five variants with all 43 months: same-side 5/15, both-sides 5/15/30; monthly refit on the trailing 12 months with a 1-month purge, 2024-01..2026-10, 30 months): realised +61.2k vs random-variant mean +133.6k (p 0.89): NOT positive. Choosing the blackout length on past months did worse than picking at random.
+3. **Fragile cuts / robust set** (only the 8 tape days can supply conventions; Oct 28-30 in the engine): 96 live cuts, only 8 are present under the literal reading and all three FIT conventions (within 10 s). Blackout after all cuts in those three days: +7,455 (3 days); blackout after only the 8 robust cuts: +0 (no re-entry affected). So on the days where the convention set is available the whole benefit sits on cuts that the 14% agreement cannot support; with 3 days this is an indication, not a measurement. Fragile-cut share on that sample: 100% of the benefit (cap 30%) -> fails the fragile-cut cap.
+4. **U7 interaction:** U7's live 30-minute same-side blackout is not binding on the covered months (the no-blackout control equals the live engine to the dollar). Replacing it with 5 min both-sides (BO_both_5) vs keeping it (blackout on the other books only): L6M +3,390 vs +3,533, L1M +2,426 vs +3,385; U7 alone with the 5-min both-side: L6M +49, L1M -959. The cell's benefit comes from the other books; for U7 it is redundant (and slightly worse than leaving the live U7 rule).
+
+**Verdict:** the BO_both_5 lead stays a LEAD, not a rule: marginal on L6M against a random-timed blackout, not distinguishable on L1M-L3M, walk-forward negative, fails the fragile-cut cap on the available days, below MDE, best of 9. Nothing for the policy file. Files: tierF3.py, analyze_BO.py, robust_keys.py; results /mnt/l2/l2vast/_th_redo_replica/out/BO_null_results.json; seal manifest unchanged.
