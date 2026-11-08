@@ -220,3 +220,4 @@
 2026-11-08T21:34Z S2-CD: PO run stopped after 5 months identical to S1-COMB (S1-COMB has 0 live profit exits in 43 months, so S1-COMB == S1-COMB-PO); started C0 (PROFIT-STATE finalists, per-book) + REGOFF regression; pid 2847608
 2026-11-08T21:47Z S2-G done: DS3_TH_STATE_G.md; no learned rule ENTERs vs S1-COMB; null W=50 (cap); Stage 2 not run (no finalist)
 2026-11-08T21:55Z S2-CD: engine chain queued after C0: X2 (C re-screen picks + D extras), D1 (D per-book best), X4 (D extras + live reference rows REFLIVE, 2024-02..2026-10); chain pid 2872003
+2026-11-08 BASE-S1: PLAIN6060 reference (no TH of any kind, 43 months, /mnt/l2/l2vast/_th_state/base/PLAIN6060/) DONE; vs-plain-60/60 window metrics now in autopilot/TH_STATE_BASE_S1.md (S1-COMB and S1-UNIF partial months); S1-UNIF full 43 months running on 2 processes
