@@ -1,11 +1,14 @@
 # DS3_TH_STATE - TH-L2-S state cut: best cut per book, scored on the exact 1-s MBP-10 state arrays
-**Label: TH-L2-S on exact 1-s MBP-10; entries from the replica engine (not live-matched); first-order Stage 1 + cascade Stage 2.** Prereg: autopilot/PREREG_TH_L2_S.md (Amendment 2) with sha lines in DECISIONS.md. Selection data: label days 2023-04-01..2026-10-31; the blind/live week 2026-11-01..11-05 was held out of selection. No PASS words.
+**Label: TH-L2-S on exact 1-s MBP-10; entries from the replica engine (not live-matched); first-order Stage 1 + cascade Stage 2.** Prereg: autopilot/PREREG_TH_L2_S.md (Amendment 2) with sha lines in DECISIONS.md. Selection data: label days 2023-04-01..2026-10-31; the blind/live week 2026-11-01..11-05 was held out of selection.
 Caveats: replica entries are NOT live-matched (about 100 of 187 blind-week trades match); Stage 1 scores each trade as if alone (re-entries/locks ignored); hold-to-bracket = stop signal -+ 60 / target fill average +- 60 (O7 40/90) with the stop/target at the level and time exits at 16:55 ET (O7 16:00) with the same 0.80 cost; deltas are USD per week at live lots, gross (fees cancel), carrying week dropped in windows of >= 8 weeks, MDE = 2.8 sd/sqrt(n).
 
 ## 1. Verdict
-1. The best state cut per book was found in-sample and is listed in section 2, but the per-book PROCEDURE does not survive the checks that do not use its own selection data: purged monthly walk-forward of the per-book procedure is NEGATIVE (section 5: total -384272 USD vs the live cell -99685 over 2024-01..2026-10 vs hold-to-bracket) and the held-out live week (187 trades) is -32043 USD for the combined per-book policy vs the actual live exits (per-book cells without session overrides -223, best uniform cell +1389, live cell on state -15708). The in-sample gain is large (COMBINED vs hold-to-bracket L6M +10655, PRE +250 per week; vs the live cell L6M +10827, PRE +997), the random-timing placebo is clean (p = 0.001) so the state/timing information is not random, but the identity of the per-book cell is not stable across time.
-2. The live cell (30/30x/5 s/p1/newMae) on exact state is NEGATIVE vs hold-to-bracket in PRE (-747) and about zero on L6M (+500): as coded on exact state it is not a good cut.
-3. "No cut" is a reference row only (hold-to-bracket and the engine never-cut run); comparisons to it are in sections 3 and 6.
+Deliverable: the best state cut per book (section 2) with policy lines and the fields the grammar lacks. Plain reading of the evidence:
+1. In sample (selection data to 2026-10-31) the combined per-book policy beats the live cell and both references on L6M and PRE with the carrying week dropped: Stage 1 vs hold-to-bracket L6M +10655, PRE +250; vs the live cell L6M +10827, PRE +997. Stage 2 (engine cascade, 43 months, fee proxy net) vs the engine never-cut run: L6M +9975 (MDE 10798), PRE +2142 (MDE 4192); vs the engine live-cut HOLD run: L6M +7179, PRE +8047. Both Stage 2 gains are BELOW their MDE, and the PRE stack drawdown with the policy is worse than without it (150123 vs 141791). The carrying week of the L6M gain is ISO week 202630 (+43092 USD of +292478 total in L6M).
+2. It does NOT hold out of sample: (a) purged monthly walk-forward of the per-book procedure is negative (total -384272 USD vs the fixed live cell -99685, 2024-01..2026-10); (b) the held-out live week (187 trades) gives -32043 USD for the combined policy vs the actual live exits (per-book cells without session overrides -223, best uniform cell +1389, live cell on state -15708); (c) the family max-stat null (200 worlds, per-book best-of-8,400 re-selection on shifted state) has p = 1.0: the observed best-cell sum +3365 is below the null mean +8450. The random-timing placebo is clean (p = 0.001), i.e. a cut at the state-flagged second beats a cut at a random second of the same trade, but a random thinning of the same arm families does as well.
+3. The live cell (30/30x/5 s/p1/newMae) on exact state is about zero vs the engine never-cut run (Stage 2 L6M +354, PRE +653) and negative vs hold-to-bracket in Stage 1 PRE (-747): as coded it does not earn its place; the best uniform cell (30/10x/5s/p10/mae/V0) is -848 / +1082 vs never-cut (Stage 2 L6M / PRE).
+4. Reference, ARM-only cut (no state condition, cut as soon as -unreal >= ARM, pooled, Stage 1 USD/week vs hold-to-bracket, L6M / PRE): 15: -15346 / -21978; 20: -13286 / -21414; 25: -4988 / -21106; 30: +788 / -15450; 35: +5951 / -9908; 40: +10614 / -8354; 45: +4471 / -3618; 50: +3000 / -2526. A plain tighter stop wins in the last six months and loses heavily in PRE; the state condition removes most of the PRE damage but does not add a stable edge on top (point 2).
+5. Which one to code: the per-book table below is the exact in-sample answer requested. Because the walk-forward, the held-out week and the family null do not support it, the evidence-weighted choice is to code the per-book table ONLY as a shadow/forward-test line next to the live cell, and not to treat its in-sample L6M gain as an expected live gain. "No cut" is a reference row and was not a candidate.
 
 ## 2. Best cut per book (exact definition) and policy lines
 Definition for every cell: per exchange second s (row interval (s-1, s]); own side = bid for longs, ask for shorts; cancelled_s = sum over own-side levels present at s-1 of max(0, size(s-1) - size(s) - traded at that price in (s-1, s]); pulledW = sum of cancelled over the last W seconds; MedLevel = 0.001 EWMA of (top-5 bid + top-5 ask)/10 each second; fire at second s when -unreal >= ARM (unreal on the per-second mid vs the fill average) AND pulledW >= MULT x MedLevel AND (newMae off OR the adverse extreme was set within the last W seconds, ties count) for PERS consecutive seconds; decision at the end of second s, exit executes at second s+1 at mid(s+1) -+ 0.80 pt; a bracket touch in (s, s+1] wins. W is applied to the pulled window and the newMae window together. Tie rule in the selection: lexicographic key, simpler cell wins (fewer of persistence > 1, newMae on, V1/V2, then lower PERS/window/ARM). Sessions are ENTRY sessions (asia 18:00-02:00 ET, london -08:30, pre -09:30, nyam -12:00, nypm -15:00, close).
@@ -74,7 +77,7 @@ Share of cells with S > 0 by axis value and the best S (V0 fixed-point grid, ARM
 
 ## 5. Nulls and walk-forward
 - Placebo (random exit among seconds with -unreal >= the arm, same fired trades, 1,000 draws): COMB S_obs = +250, placebo mean -2575, p95 -2253, p = 0.001.
-- Family max-stat: still running at report time (see section 8).
+- Family max-stat (200 worlds; each world shifts pulled/age blocks within each trade, re-selects the best cell per book from 8,400): combined observed best-cell S sum +3365 vs world mean +8450, p95 +9611, p = 1.000; per book p: K7 1.000, P7 1.000, M7 1.000, U7 1.000, A7 1.000, H7 0.985, O7 0.975.
 - Purged walk-forward by month (2024-01..2026-10, 7-day purge, training = weeks before the cut; simplified key without drawdown-first, older-window sign standing in for PRE/X'), delta vs hold-to-bracket USD/week:
 | row | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
 |---|---|---|---|---|---|---|---|---|
@@ -89,14 +92,14 @@ Out-of-sample the per-book procedure loses to the fixed live cell on the totals;
 Reference rows: engine never-cut run (hist/A2 trades_nocut) and engine live-cut HOLD run; USD/week net of the 4.84 fee proxy, carrying week dropped. Months run per row in the count column.
 | row | months | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
 |---|---|---|---|---|---|---|---|---|---|
-| COMB per-book policy vs engine never-cut | 6 | +12301 | +11780 | +10145 | +9975 | +4932 | +0 | +0 | +0 |
-| best uniform cell vs engine never-cut | 5 | +1194 | -204 | -1877 | +44 | +21 | +0 | +0 | +0 |
-| live cell 30/30/5/1/mae vs engine never-cut | 3 | -54 | -1585 | -1365 | -655 | -321 | +0 | +0 | +0 |
-| COMB per-book policy vs engine live-cut HOLD | 6 | +2830 | +1247 | +7270 | +7179 | +3454 | +0 | +0 | +0 |
-| best uniform cell vs engine live-cut HOLD | 5 | -8277 | -3075 | -3430 | -4143 | -2031 | +0 | +0 | +0 |
-| live cell 30/30/5/1/mae vs engine live-cut HOLD | 3 | -9525 | -1405 | -1135 | -545 | -267 | +0 | +0 | +0 |
-| engine never-cut level (weekly net) | | -6820 | +17939 | +9740 | +15529 | +7480 | +0 | +0 | +0 |
-| engine live-cut HOLD level (weekly net) | | +2651 | +19061 | +11111 | +18098 | +8869 | +0 | +0 | +0 |
+| COMB per-book policy vs engine never-cut | 43 | +12301 | +11780 | +10145 | +9975 | +7031 | +914 | +2142 | +973 |
+| best uniform cell vs engine never-cut | 43 | +1194 | -204 | -1877 | -848 | +372 | +3402 | +1082 | +136 |
+| live cell 30/30/5/1/mae vs engine never-cut | 43 | -54 | -1585 | -1365 | +354 | +427 | +3844 | +653 | +77 |
+| COMB per-book policy vs engine live-cut HOLD | 43 | +2830 | +1247 | +7270 | +7179 | +4360 | -7369 | +8047 | -3294 |
+| best uniform cell vs engine live-cut HOLD | 43 | -8277 | -3075 | -3430 | -3325 | -3959 | -4882 | +5785 | -3357 |
+| live cell 30/30/5/1/mae vs engine live-cut HOLD | 43 | -9525 | -1405 | -1135 | -3442 | -2314 | +114 | +4522 | -3503 |
+| engine never-cut level (weekly net) | | -6820 | +17939 | +9740 | +15529 | +12323 | +7725 | +11743 | +1353 |
+| engine live-cut HOLD level (weekly net) | | +2651 | +19061 | +11111 | +18098 | +14471 | +13335 | +6404 | +3990 |
 
 ## 7. Live week held-out (187 live trades, entries/lots/actual exits from the frozen live file; first-order; cut decisions on the state arrays; bracket proxy = actual exit time)
 Actual live net P&L +104095 USD with 92 live cut exits. Delta = state-cut result minus the actual exit, USD at live lots (negative = the actual live exit was better).
