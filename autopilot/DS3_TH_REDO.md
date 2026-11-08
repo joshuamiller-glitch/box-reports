@@ -19,3 +19,9 @@ Header: cut-input agreement with live: 14% at 0% false (best FIT-selected conven
 | thick trigger (rel>=2.0, 10 s, open>=30 pt) | fires: 595 of 23,788 trades literal (482 / 810 under 100-ms / 1-s snapshot proxies); not inert |
 | Tier S, 198 cells | 0 with S=min(L6M,PRE)>0; none enters |
 | Tier 1, 11 replays | none passes; C3 lock 70%/+4 pt: L6M +2,404 /wk, PRE -1,995, X' -541 (fails tolerant gate; regime-only); live tighten L6M -1,711; live Monday lines L6M -9,121 |
+
+## Program A (TH-A, replica engine, PRE-PROOF) - 2026-11-08 - cut-input agreement with live: 14% at 0% false (best FIT-selected convention) / literal 45 of 92 within +-2 s, 23 false; engine Gate 0 NOT passed; PRE-PROOF
+| program | cells screened | finalists (Tier F) | result | detail |
+|---|---|---|---|---|
+| A (loss, L2) | 4,200 rule cells x 14 units (Tier S, 43 months) | 40 run on recents, 24 on all 43 months | no rule clears ENTER; 12 pooled finalists beat live on L6M and PRE (placebo/thin/family clean) but all below MDE, WF p=0.38, convention sign/fragile cap met only by P06/P07 which fail drawdown-first; live cell stays; never-cut control worse than live | autopilot/DS3_TH_REDO_A.md |
+| A2,A4,A5,A6,A7 | not run | - | open (no replica wiring this pass) | |
