@@ -1,5 +1,5 @@
-# DS3_SIZER_VOLTARGET - T-SIZER-EXHAUST Addendum 2 (SZ-VT), refreshed 2026-11-09 16:52Z
-**Post-hoc, Shadow only, no PASS claims. PRE-PROOF (entry match < .85). Numbers below are FIRST-ORDER SCREEN unless a row says [EXACT]. Prereg: autopilot/SZ_VT_PREREG.md (sha in DECISIONS.md).**
+# DS3_SIZER_VOLTARGET - T-SIZER-EXHAUST Addendum 2 (SZ-VT), refreshed 2026-11-09 17:03Z
+**Post-hoc, Shadow only, no PASS claims. PRE-PROOF (entry match < .85). Numbers below are FIRST-ORDER SCREEN unless a row says [EXACT]. Prereg: autopilot/SZ_VT_PREREG.md (sha in DECISIONS.md). ALL EXACT ROWS ARE PENDING/VOID until re-run with the fixed sz_exact driver (key bug found 17:00Z).**
 
 **VERDICT (plain, provisional: first-order screen, exact rows in section 7 pending): no vol-target cell is yet confirmed at equal mean out of sample; the skip rules that win in-sample (quantile/multiple skip of 55-60 % of signals) FAIL the equal-mean walk-forward (-17 % / -11 %) and lose $40-80k of the +$104.8k high-vol live week, while the rules that scale instead of skip (half, graded 3-step, continuous (ref/now)^p, per-book P7+K7, stack-P&L target-vol, all-measure consensus) hold in the first-order walk-forward at +15 to +39 % maxDD cut at the realised equal mean and cost $34-78/wk of mean per $1k of maxDD cut against $118 for simply sizing down; the exact engine historically shrinks first-order cuts 2-5x, so the claim stands or falls on section 7.**
 
@@ -112,6 +112,7 @@ Base-change proof (Q1-A zero-rule row, first-order series on each trade list):
 
 Across 36973 cells present on both bases: correlation of L6M cut new vs old 0.69; of the tolerant equal-mean score 0.72; top-50 overlap (new top-50 that are also in the old top-50) 0. Every row differs from the old base number (no identical-to-the-dollar rows): the vol rules are not exit-independent, and the old-base top cells are not the new-base top cells.
 
+**EXACT STATUS (17:05Z): all earlier VT exact runs (VT_E1, VT_E7) were VOID (sz_exact table-mode key bug: multipliers keyed on arm time, not the signal second; fixed by SZ-CORE, runs quarantined). All exact rows below are PENDING until re-run with the fixed driver; every number in sections 1-6, 8-10 is first-order screen only. Table mode (static M) is used for these cells; rule mode (sz_rules) would need the quantile features inside the engine, listed as v1.6 work.**
 ## 7. EXACT engine rows (sz_exact static M tables on the S1b tick engine; windows shown only when every month is present)
 | set | cell | window | exact cut | exact EQ cut | exact d mean $/wk | first-order cut | first-order EQ cut | first-order d mean |
 |---|---|---|---|---|---|---|---|---|
