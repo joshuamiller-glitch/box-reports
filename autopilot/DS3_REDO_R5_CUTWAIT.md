@@ -1,4 +1,4 @@
-# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-09 19:20Z first version / refresh
+# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-09 19:48Z first version / refresh
 
 ## 0. Summary block (setting | live value | best on the state base | holds OOS? | change recommended | panel field)
 
@@ -206,6 +206,12 @@ Zone-as-target (DS3_B8_ZONE_TARGET_SHIPPED, old V13X): ALL8 rt100 cut L6M/PRE/X'
 | ntz | N1 D=60 act=rethalf | 14/30/15/21 | 43/43/-12/23 | 28/28/-8/20 |
 
 ## 5. Exact engine status (SZ-CORE queue, prefix R5_)
-No R5_ set has completed a month yet; identity test R5_TEST (hooks with empty par must reproduce the base on 202610) and R5_BO_LIVE are queued first.
+Exact rows (hooks, table windows complete only; cut = maxDD cut vs the exact S1b-COMB list, all weeks, ROLL-EXCL; EXACT only where L6M, PRE and X' are all present, else [EXACT partial]):
+
+| set | months | par | cut % L6M/HOLD/PRE/X' | equal-mean cut L6M/PRE/X' | d mean L6M $/wk | w20 cut L6M | status |
+|---|---|---|---|---|---|---|---|
+| R5_TEST | 1 | {} | -/-/-/- | -/-/- | - | - | [EXACT partial] |
+
+Months done per set: R5_TEST 1. Identity test R5_TEST (empty hooks par) on 202610: 823 trades, net 47,330.50, all columns identical to base_b/S1-COMB (PASSED).
 
 Hook semantics and the first-order-vs-exact lesson (SZ_BASE_PROOF): first-order overstates anything that adds lots or changes exits; only the drawdown RANKING is usable first-order; all retarget / OTE / O7 rows are screens.

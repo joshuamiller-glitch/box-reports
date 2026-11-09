@@ -2,25 +2,32 @@
 **Labels: ROLL-EXCL (the 33 engine roll-artifact trades, key (book, entry second), 13 of them P7, are removed from every window, every series and the exported per-trade tables; SZ_BASE_PROOF.md section 9). Base S1b (tick bar close). First-order screen = P7 trades of S1b-NOCUT + exact 1-s MBP-10 state arrays; EXACT = replica engine re-run with only the P7 cut cell changed (other books = S1-COMB cells). Windows as of 2026-11-09, carrying week dropped from MEANS only (never before maxDD). Prereg sha256 9ca3a614122c5586 (DECISIONS.md). No PASS claims.**
 
 ## 1. Verdict
-@@VERDICT@@
+**Plain sentence.** The most aggressive P7 cut that does not raise L6M or PRE maxDD vs v2 is **none of the cells that could be tested exactly: the v2 line itself (45 pts / 5x / win 5 / persist 10, no newMae)**. The one faster cell that lowers exact L6M maxDD, fixed 40 pts / 5x / win 5 / persist 3 / noMae (5 pts earlier arm, persistence 3 instead of 10), changes the L6M stack mean by +3.6k $/wk (P7 alone +4.3k) and cuts L6M stack maxDD 17% (P7 alone 51%), but raises exact PRE stack maxDD by 25% (P7 alone 62%) with PRE mean -1.1k $/wk, so it does not hold. Cuts of last night's 4 stops (11-08/09): n/a, that night's rows are not on the box (0 evaluable); on the frozen week it would have cut 24 of 53 P7 trades (21 of the 24 live-cut trades; 7 of them were target-bracket trades), -56k vs the hold-to-bracket proxy (v2 -33k, old cell -14k).
+
+1. Exact (ROLL-EXCL, S1b engine, only the P7 cut changed): of five candidate cells run on the L6M months, only 40/5x/w5/p3 lowers L6M maxDD vs v2; 35/5x/p3 (+10%), 25/20x/p3 (+28%) and the OLD live cell (+81%, mean -4.4k) raise it. 40/5x/w5/p3 then fails PRE (+25%). 45/5x/w5/p5 and V2 lots-scaled 25/5x/p4 were not completed (killed for time). Exact PRE exists only for v2 and 40/5x/p3.
+2. The first-order screen (13,680 cells x 4 scopes, section 3-4) ranked the faster cells as large drawdown cutters; the exact engine reverses that for P7 (earlier cuts free the book and day lock for re-entries). First-order drawdown ranking is NOT usable for P7; the first-order table is shown only because the user asked for the full grid.
+3. Nulls do not support any cell: family p over the grid is not significant, purged monthly walk-forward re-selection loses to fixed v2 (+17% / +41% maxDD), the held-out frozen live week loses to hold-to-bracket for every cut cell, the plain placebo does not discriminate.
+4. S1b-COMB as run (exact L6M: stack mean 23.3k, maxDD 79.9k; P7 alone 14.8k / 91.2k) uses the asia override 50/5x/w3/p3/newMae V1 plus v2 elsewhere and beats the pooled v2 line on exact L6M (PRE not run). This is the only exact-confirmed faster P7 configuration, in L6M only. NOT proposed: no PRE exact result, in-sample selection.
+5. MORNING.md top: nothing qualifies (no faster cell lowers drawdown at equal or better mean in BOTH exact L6M and PRE). Shadow only; the v2 line stays.
 
 ## 2. EXACT engine rows (reference = exact v2 line, P7 cell 45/5x/w5/p10 noMae in every session; S1b-COMB as run uses the asia override 50/5x/w3/p3/newMae V1 and is shown separately)
 Exact windows are reported only when every month of the window was run (L6M = 202605-202610; PRE = 202402-202506). Stack = all 7 books; P7 = the P7 book alone. dd cut % = (v2 maxDD - cell maxDD) / v2 maxDD, positive = lower drawdown.
 | cell | window | months run | stack mean $/wk | stack maxDD | stack dd cut % | stack mean vs v2 | stack Ulcer | stack worst-20 | P7 mean | P7 maxDD | P7 dd cut % | P7 mean vs v2 | P7 cuts on the 13 roll trades (first-order) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | v2 (45/5x/w5/p10 noMae, fixed) | L6M | 6 | 20393 | 95245 | 0 | 0 | 40845 | 89055 | 11807 | 84540 | 0 | 0 | 1 |
+| v2 (45/5x/w5/p10 noMae, fixed) | PRE | 17 | 13438 | 106877 | 0 | 0 | 32254 | -653766 | 5752 | 71013 | 0 | 0 | 1 |
 | OLD live (30/30x/w5/p1 newMae, fixed) | L6M | 6 | 16745 | 172620 | -81.2 | -4424 | 64857 | -7507 | 6989 | 216619 | -156.2 | -4534 | 0 |
-| OLD live (30/30x/w5/p1 newMae, fixed) | PRE | 0 of 105 | not complete | | | | | | | | | | 0 |
+| OLD live (30/30x/w5/p1 newMae, fixed) | PRE | 0 of 17 | not complete | | | | | | | | | | 0 |
 | X1 fixed 35/5x/w5/p3 noMae | L6M | 6 | 23255 | 104923 | -10.2 | +2086 | 40366 | 132086 | 12629 | 121985 | -44.3 | +1105 | 1 |
-| X1 fixed 35/5x/w5/p3 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 1 |
+| X1 fixed 35/5x/w5/p3 noMae | PRE | 0 of 17 | not complete | | | | | | | | | | 1 |
 | X4 fixed 25/20x/w5/p3 noMae | L6M | 6 | 15518 | 121696 | -27.8 | -5650 | 46743 | 11874 | 6722 | 140009 | -65.6 | -4801 | 0 |
-| X4 fixed 25/20x/w5/p3 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 0 |
+| X4 fixed 25/20x/w5/p3 noMae | PRE | 0 of 17 | not complete | | | | | | | | | | 0 |
 | X5 fixed 40/5x/w5/p3 noMae | L6M | 6 | 24722 | 79107 | +16.9 | +3554 | 30531 | 212819 | 15823 | 41005 | +51.5 | +4300 | 1 |
-| X5 fixed 40/5x/w5/p3 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 1 |
-| X6 fixed 45/5x/w5/p5 noMae | L6M | 1 of 6 | not complete | | | | | | | | | | 1 |
-| X6 fixed 45/5x/w5/p5 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 1 |
+| X5 fixed 40/5x/w5/p3 noMae | PRE | 17 | 13753 | 133779 | -25.2 | -1056 | 38919 | -643992 | 5279 | 114902 | -61.8 | -1201 | 1 |
+| X6 fixed 45/5x/w5/p5 noMae | L6M | 2 of 6 | not complete | | | | | | | | | | 1 |
+| X6 fixed 45/5x/w5/p5 noMae | PRE | 0 of 17 | not complete | | | | | | | | | | 1 |
 | X2 V2 lots-scaled 25/5x/w5/p4 noMae | L6M | 0 of 6 | not complete | | | | | | | | | | 1 |
-| X2 V2 lots-scaled 25/5x/w5/p4 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 1 |
+| X2 V2 lots-scaled 25/5x/w5/p4 noMae | PRE | 0 of 17 | not complete | | | | | | | | | | 1 |
 
 ## 3. First-order screen: reference rows by window (P7 alone and stack; dd = maxDD $, mean $/wk, worst-20 = sum of the 20 worst weeks, Ulcer)
 First-order caveat: re-entries, locks and day caps after an earlier cut are NOT re-simulated; the exact rows in section 2 show the first-order drawdown ranking is NOT predictive for P7 (e.g. first-order says 35/5x/p3 cuts L6M stack maxDD 26% vs v2, exact says +10%).
@@ -113,3 +120,12 @@ First-order heat, pooled fixed arm, noMae, win 5: stack min(dd cut L6M, PRE) % b
 | X6 fixed 45/5x/w5/p5 noMae | 20 | 19 | 4 | 16 | 86637 | -28085 | -22752 |
 Every cut cell loses to hold-to-bracket in this week (6 of the 24 live cuts were followed by a target). Per-trade table of the 24 live-cut trades for v2 and X5 (second after entry @ mid price at the cut second+1): /mnt/l2/l2vast/_th_p7cut/live24_table.csv
 Would-have-cut for the 4 stops of the night 11-08/09: not evaluable (file not on the box; MORNING_FLAGS.md).
+
+## 7. v1.5 policy line (exact grammar of DS7.cs v1.4: `side book regime cond [cond ...] action`, cond = feature op value, no spaces inside a cond; pct = unrealised / stop distance (60 pt), so ARM pts = 60 x |pct|)
+- v2 line (the reference, unchanged): `loss P7 * pct<=-0.7500 pulled_mult>=5 win=5 persist=10 cut`
+- best faster cell by exact L6M (fails exact PRE, NOT proposed): `loss P7 * pct<=-0.6667 pulled_mult>=5 win=5 persist=3 cut`  (ARM 40, no secs_ext condition because newMae is off)
+- OLD live cell on state, for reference: `loss P7 * pct<=-0.5000 pulled_mult>=30 secs_ext<=5 win=5 persist=1 cut`
+Fields the v1.4 grammar lacks for ANY of these lines (DS3_TH_STATE section 2): (a) `win=` per-rule window for the exact state pulled quantity (cancels NET of trades, own side, MedLevel EWMA 0.001; today one global ThL2PulledSecs and the per-print PulledSupport), (b) `persist=` consecutive seconds the whole condition holds, (c) `armlots=v1|v2` (lot-scaled arm, needs a `lots` feature) and `armusd=X` for the dollar arm clip(X/(lots*20),15,50) - neither needed by the 40/5x/p3 or v2 line, (d) session regime = CURRENT session at evaluation while the scored scope is the ENTRY session (needed for per-session cells), (e) evaluation once per second with a 1 s decision latency and market-exit cost 0.80 pt as scored. For the winning cell (none) the missing fields are (a) and (b) only.
+
+## 8. Files, rules
+Code: outputs/code/th_p7cut/ (prep_p7, kern_p7, score_p7, run_grid, run_score, final_rank, famnull, wf, placebo, live_prep, live_eval, p7_exact, exact_score, export_joint, gen_report). Data: /mnt/l2/l2vast/_th_p7cut/ (private; exact runs under exact/runs/<SET>/<yyyymm>). Joint export: /mnt/l2/l2vast/_th_joint/layers/cut/ (topK.json, roll_excl flag column). Live files read: P7 rows only of data/live/StratTrades_DS7_<acct>.csv and data/live_frozen/..., nt8log_latest.txt (no P7 lines). Regression: exact runner with the S1-COMB P7 cells reproduces S1-COMB 202610 exactly (823 trades). Pre-ROLL-EXCL tables kept in _th_p7cut/pre_rollexcl/. Exact rows were run with the roll trades inside the engine and excluded at scoring.

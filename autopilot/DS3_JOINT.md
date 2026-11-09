@@ -1,4 +1,4 @@
-# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-09 18:11Z)
+# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-09 19:43Z)
 
 **ROLL-EXCL (33 contract-roll artifact trades excluded). FIRST-ORDER SCREEN ONLY. PRE-PROOF, post-hoc, shadow only, no PASS claims. Every layer stays ON in every stack: option 0 of each layer is the live setting (multiplier 1).** The layer pools are stand-ins built by SZ-IJK from the owners' multiplier files (M_*.npz, the lot-level layers only) until the owners write /mnt/l2/l2vast/_th_joint/layers/<layer>/topK.json. Cut / profit-rule / lock / entry layers are NOT multiplier-composable and are not in this version.
 
@@ -91,22 +91,28 @@ Key = min over L6M / PRE / X' of the maxDD cut at EQUAL MEAN to the live stack (
 | J01 | L2M | +57.8 | +52.9 | -2976 | 162k / 263k |
 | J01 | L3M | +57.8 | +53.0 | -450 | 132k / 215k |
 | J01 | L6M | +11.9 | +1.9 | -2287 | 114k / 165k |
+| J01 | PRE | +31.5 | +23.7 | -4319 | -488k / -700k |
 | J02 | L1M | +44.2 | +32.4 | +15441 | -45k / -3k |
 | J02 | L2M | +35.5 | +22.0 | -5228 | 133k / 263k |
 | J02 | L3M | +13.9 | -4.2 | -5353 | 63k / 215k |
 | J02 | L6M | +13.9 | -4.2 | -3878 | 45k / 165k |
+| J02 | PRE | +39.1 | +26.3 | -4191 | -447k / -700k |
 | J03 | L1M | +56.4 | +57.2 | +19492 | -35k / -3k |
 | J03 | L2M | +56.4 | +57.2 | -679 | 167k / 263k |
 | J03 | L3M | +52.0 | +52.9 | +513 | 131k / 215k |
 | J03 | L6M | +18.9 | +20.4 | +434 | 133k / 165k |
+| J03 | PRE | +31.5 | +32.8 | -6395 | -450k / -700k |
 | J04 | L1M | +65.5 | +58.1 | +17668 | -28k / -3k |
 | J04 | L2M | +65.5 | +58.1 | -6817 | 131k / 263k |
 | J04 | L3M | +59.8 | +51.2 | -2448 | 108k / 215k |
 | J04 | L6M | +13.8 | -4.7 | -3945 | 104k / 165k |
+| J04 | PRE | +43.4 | +31.2 | -4611 | -425k / -700k |
 
 ## Exact vs first-order (so far)
 
-Exact L6M for the first four joint stacks (J01-J04, first-order key about 86-88% equal-mean cut): exact equal-mean L6M cut +1.9 / -4.2 / +20.4 / -4.7%, d mean -2.3k / -3.9k / +0.4k / -3.9k per week. The first-order joint screen of stacked down-sizing layers is NOT predictive of the engine: re-entries, locks and slice fills undo most of the stacked multiplier gains. Only the exact numbers count. Exact PRE / X' / HOLD for these stacks are running.
+First-order keys of these stacks were 86-88% (equal-mean cut). Exact engine: J01: L6M eq-mean cut +1.9 / d mean -2287, PRE eq-mean cut +23.7 / d mean -4319; J02: L6M eq-mean cut -4.2 / d mean -3878, PRE eq-mean cut +26.3 / d mean -4191; J03: L6M eq-mean cut +20.4 / d mean +434, PRE eq-mean cut +32.8 / d mean -6395; J04: L6M eq-mean cut -4.7 / d mean -3945, PRE eq-mean cut +31.2 / d mean -4611.
+
+Reading: the first-order joint screen of stacked down-sizing layers is NOT predictive of the engine. In the exact run a skipped signal frees the book, which then takes the next signal, and re-entries / locks / slice fills change; so a table that skips 60-85% of signals first-order removes only about 18% of the trades in the engine (F08 pair: 672 vs 823 trades in 202610, lots 1440 vs 1746) and behaves like a mild global lot reduction. Only exact numbers count. Missing windows are still running.
 
 ## Plain sentence
 
