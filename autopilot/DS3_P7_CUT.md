@@ -129,3 +129,30 @@ Fields the v1.4 grammar lacks for ANY of these lines (DS3_TH_STATE section 2): (
 
 ## 8. Files, rules
 Code: outputs/code/th_p7cut/ (prep_p7, kern_p7, score_p7, run_grid, run_score, final_rank, famnull, wf, placebo, live_prep, live_eval, p7_exact, exact_score, export_joint, gen_report). Data: /mnt/l2/l2vast/_th_p7cut/ (private; exact runs under exact/runs/<SET>/<yyyymm>). Joint export: /mnt/l2/l2vast/_th_joint/layers/cut/ (topK.json, roll_excl flag column). Live files read: P7 rows only of data/live/StratTrades_DS7_<acct>.csv and data/live_frozen/..., nt8log_latest.txt (no P7 lines). Regression: exact runner with the S1-COMB P7 cells reproduces S1-COMB 202610 exactly (823 trades). Pre-ROLL-EXCL tables kept in _th_p7cut/pre_rollexcl/. Exact rows were run with the roll trades inside the engine and excluded at scoring.
+## 9. STANDING RULES 2 / 2a relabel (recents first; bi-weekly re-pick walk-forward = primary OOS test; ROLL-EXCL; first-order for the picks)
+**Bi-weekly re-pick WF (P7 cut family, 54,720 cell x scope series, stack):** refit every 14 days from 2024-01-01 (74 periods), pick on the trailing 26 weeks ending 7 days before the refit (purge), hold 14 days. Pick key B = lowest training stack maxDD among cells whose training mean >= the live (v2) training mean and maxDD < v2's (else stay on v2); key A = lowest training maxDD only. Live setting = v2 line (45/5x/w5/p10); S1b-COMB as run (asia override) is the second reference. Files: /mnt/l2/l2vast/_th_p7cut/wf2_periods.csv, wf2_summary.json (outputs/code/th_p7cut/wf2.py).
+| series (OOS, stack, first-order) | share of 74 refit periods beating v2 (P&L of the 2 weeks) | since 2026-05 (13 periods) | OOS mean $/wk all / L6M-part / PRE-part | OOS maxDD all / L6M-part / PRE-part |
+|---|---|---|---|---|
+| v2 (live) | - | - | 13.6k / 19.4k / 12.6k | 123k / 117k / 123k |
+| bi-weekly re-pick, key B | 42% | 54% | 10.8k / 19.8k / 7.5k | 122k / 103k / 122k |
+| bi-weekly re-pick, key A | 42% | 54% | 9.1k / 18.9k / 5.3k | 112k / 103k / 85k |
+| S1b-COMB as run (fixed) | 70% | 69% | 14.1k / 22.2k / 13.3k | 144k / 110k / 108k |
+| fixed 40/5x/w5/p3 (first-order) | 53% | 77% | 13.6k / 22.7k / 11.6k | 107k / 95k / 107k |
+| fixed 40/5x/w5/p3, EXACT periods | L6M window 7 of 13 periods (54%); PRE window 17 of 36 (47%) | | exact L6M +3.6k, PRE -1.1k vs v2 | exact L6M stack maxDD -17%, PRE +25% |
+**The re-pick procedure beats the live setting in 42% of refit periods (< 60%): rule 2a allowance = 15%, not 25%.** (The WF % for fixed 40/5x/w5/p3 is 53% first-order / 54% exact L6M / 47% exact PRE, also < 60%.) The procedure's OOS mean is below v2 (10.8k vs 13.6k, PRE-part 7.5k vs 12.6k): re-picking on the trailing 26 weeks does not improve on v2 here.
+
+**Relabel (exact numbers, vs exact v2; allowance = min(25, L6M maxDD cut % + 10) only if WF >= 60%, else 15%; PRE mean floor -$1k/wk):**
+| cell | exact L6M stack maxDD cut / mean chg | exact PRE stack maxDD vs v2 | exact PRE stack mean chg (P7 alone) | allowance used | label |
+|---|---|---|---|---|---|
+| 40/5x/w5/p3/noMae | -17% maxDD (+3.6k) | +25.2% deeper (P7 alone +62%) | -1.06k (P7 alone -1.2k) | 15% (WF 42-54% < 60%; even at 25% the maxDD is outside, and the mean is below the -1k floor) | **RECENT-ONLY** (both numbers: L6M maxDD -17% / PRE +25%; WF 42% procedure, 54% / 47% fixed cell) |
+| 35/5x/w5/p3/noMae | exact L6M maxDD +10% (worse), mean +2.1k | not run | not run | 15% | fails the recents gate (L6M deeper); no PRE label |
+| 25/20x/w5/p3/noMae | exact L6M +28% (worse), mean -5.7k | not run | not run | 15% | fails the recents gate |
+| OLD live 30/30x/w5/p1/newMae | exact L6M +81% (worse), mean -4.4k | not run | not run | 15% | fails the recents gate |
+| S1b-COMB as run (asia 50/5x/w3/p3/newMae V1, v2 elsewhere) | exact L6M stack maxDD 79.9k vs v2 95.2k = -16% (mean +2.9k); first-order WF 70% >= 60% | not run (exact PRE not run) | not run | min(25, 16+10) = 25% if WF >= 60% (first-order, fixed cell) | recents PASS-LIKE, PRE UNTESTED exactly: not labelled; first-order PRE stack maxDD 108k vs v2 123k (-12%), mean 13.3k vs 12.6k |
+Everything else in the 13,680-cell first-order grid is not relabelled one by one: the first-order drawdown ranking is not predictive for P7 (section 2), and the re-pick procedure itself is under 60%.
+
+## 10. REFIT 2026-11-22 (what the bi-weekly procedure picks today; trailing 26 weeks to the data end 2026-11-05; first-order, ROLL-EXCL)
+- Key B pick: **pooled USD arm clip($2000/(lots x 20), 15, 50 pts) / MULT 20x / win 7 s / persist 1 s / noMae**. Key A pick: USD $2000 / 8x / win 3 / persist 2 (pooled).
+- First-order comparison, stack maxDD / mean $/wk: L6M 54k / 21.4k vs v2 117k / 15.8k vs COMB-as-run 110k / 22.3k vs 40/5x/p3 95k / 22.1k; L3M 54k / 7.8k vs v2 85k / 16.4k vs COMB 92k / 16.2k; L1M 40k / -13.4k vs v2 75k / -25.1k vs COMB 64k / +9.8k; PRE 75k / 7.9k vs v2 123k / 13.9k (mean -6.0k/wk below the -1k floor) vs COMB 108k / 13.0k.
+- Reading: the pick lowers first-order drawdown in every recent window but gives up mean in L3M and PRE, it has not been run in the exact engine, and first-order drawdown for P7 has been shown unreliable (the exact engine reversed 3 of 4 first-order-ranked faster cells). The procedure beat v2 in only 42% of past refit periods. **Not proposed; v2 stays live; COMB-as-run (asia override) is the only exactly confirmed recent improvement.** Exact run of the pick (6 L6M + 17 PRE months) was not done (time, memory cap).
+- If adopted anyway the v1.5 line differs from live: `loss P7 * pct<=-0.2500 pulled_mult>=20 win=7 persist=1 armusd=2000 cut` (pct is the 15-pt floor of the clip, the arm is the dollar rule: needs the `armusd=` extension, plus `win=` and `persist=`; lots-scaled arm needs a `lots` feature). The live (v2) line remains `loss P7 * pct<=-0.7500 pulled_mult>=5 win=5 persist=10 cut`.

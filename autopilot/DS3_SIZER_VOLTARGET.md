@@ -1,4 +1,4 @@
-# DS3_SIZER_VOLTARGET - T-SIZER-EXHAUST Addendum 2 (SZ-VT), refreshed 2026-11-09 20:33Z
+# DS3_SIZER_VOLTARGET - T-SIZER-EXHAUST Addendum 2 (SZ-VT), refreshed 2026-11-09 21:03Z
 **Post-hoc, Shadow only, no PASS claims. PRE-PROOF (entry match < .85). Numbers below are FIRST-ORDER SCREEN unless a row says [EXACT]. Prereg: autopilot/SZ_VT_PREREG.md (sha in DECISIONS.md). ROLL-EXCL (the 33 base trades alive across a contract roll carry weight 0 in every first-order number; key book7 x signal second). ALL EXACT ROWS ARE PENDING/VOID until re-run with the fixed sz_exact driver (key bug found 17:00Z).**
 
 **VERDICT (plain, provisional, first-order; ALL exact rows pending): every D7 layer stays ON, so the candidates are scale rules (never to zero) on top of the live ER sizer, and the skip-to-zero vol rules are reference/UP rows only. Skip rules that win in-sample (+80/+57/+76 for the best cell) fail the equal-mean walk-forward and lose $40-80k of the $104.8k high-vol live week, and the in-sample winner on the S1b base ranks #826 (of ~30k) on the old base, so in-sample picks do not carry. Pre-registered 5-test stability (WF 26/52 wk, split-half A/B, time split; cut at the realised equal mean): SCALE single measure (worst test +29.4 %), per-book/session scope (worst test +22.0 %), SCALE P7+K7 scope (worst test +7.4 %), composite pooled (worst test +6.7 %), composite graded/half/cont (worst test +6.7 %), half (lo=.5) steps (worst test +6.6 %), SCALE consensus measure (worst test +5.9 %), SCALE pooled (worst test +5.3 %), SCALE rules (never zero) all (worst test +4.4 %) are positive in all 5, while the skip, graded-to-zero, z-score, special and interactions families flip sign; the single-measure scale rows are optimistic (measure list ranked on the whole sample) and the consensus-measure rows (no measure picked) are the clean test; PRIMARY OOS test (STANDING RULE 2, bi-weekly re-pick of trailing 26 weeks, 74 periods): best family composite graded/half/cont cuts OOS maxDD 40 % at the realised equal mean (47 % at equal lots) but the picked setting beats live P&L in only 39 % of 2-week periods and gives up $2.1k/wk at equal lots; all 16 families are positive on maxDD, none free of mean cost; nothing is confirmed on the exact engine, so if the exact rows (section 7) do not hold, keep the live Q1-A sizer. Scale rules cost about -$34k to -$48k of the live week at p=2 floor .25 (that week was 69 % above 1.25x vol).**
@@ -98,57 +98,57 @@ All five are table-mode (static M keyed on the signal second, fixed driver). Rul
 
 Reading: Q1-A bi-weekly OOS mean $16576/wk. Every family cuts OOS maxDD at equal lots (+17 to +47 %) and at the realised equal mean (+2 to +40 %), but the picked setting beats live P&L in only 35-54 % of 2-week periods and gives up $0.9-6k/wk of mean at equal lots: the drawdown gain is paid in mean, as the section 8 rate table says. Composite graded/half/cont (+40 % at the realised equal mean, 39 % of periods beating live) and per-book/session scope (+40 %) lead; the skip rules have the largest mean cost (-$4.9k/wk).
 
-## 1g. REFIT 2026-11-22: the vol-target setting the bi-weekly procedure would pick today (trailing 26 weeks to 2026-11-05; top 3 per family; recents-first columns, then PRE/X' with the prior flag: PRE maxDD <= 15 %% deeper than live and PRE d mean >= -$1k/wk, else RECENT-ONLY)
+## 1g. REFIT 2026-11-22: the vol-target setting the bi-weekly procedure would pick today (trailing 26 weeks to 2026-11-05; top 3 per family; recents-first columns, then PRE/X' with the prior flag: Z.prior_info: allowed PRE deepening min(25, L6M cut + 10) %% if the bi-weekly WF beats live in >= 60 %% of periods else 15 %%, PRE d mean >= -$1k/wk, else RECENT-ONLY)
 | family | cell | scope | train-26 EQ cut | s | cut L6M / L3M / L1M | d mean $/wk L6M / L3M / L1M | PRE cut / d mean | X' cut / d mean | label |
 |---|---|---|---|---|---|---|---|---|---|
-| continuous (ref/now)^p | r_rv5_w24_all10 cont [2, 0] | [pool] | +56 | 0.92 | +52/+52/+54 | +241/+1104/-2386 | +23 / -1523 | +70 / +2293 | RECENT-ONLY |
-| continuous (ref/now)^p | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY |
-| continuous (ref/now)^p | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY |
-| half (lo=.5) steps | r_atr1_n14_all10 step [1.1, 0.5] | [pool] | +48 | 0.91 | +42/+42/+54 | +577/+1092/-1686 | +19 / -1364 | +43 / +1179 | RECENT-ONLY |
-| half (lo=.5) steps | q_park15_w12_all10 step [0.6, 0.5] | [pool] | +46 | 0.95 | +43/+43/+45 | +2113/+2620/+3833 | +20 / -2117 | +59 / +1879 | RECENT-ONLY |
-| half (lo=.5) steps | q_ewma5_l90_all40 step [0.6, 0.5] | [pool] | +45 | 0.90 | +39/+39/+43 | +3207/+1363/-1829 | +27 / -1314 | +61 / +250 | RECENT-ONLY |
-| graded 3-step | q_atr15_n14_slot10 g3 [0.6, 0.8] | [pool] | +71 | 1.05 | +73/+73/+89 | +1504/+3130/+4449 | +50 / -929 | +12 / +1390 | does OK prior |
-| graded 3-step | q_ewma5_l90_all10 g3 [0.6, 0.8] | [pool] | +71 | 1.02 | +72/+76/+80 | +733/+3495/+28278 | +45 / -6671 | +38 / -739 | RECENT-ONLY |
-| graded 3-step | q_atr1_n5_all10 g3 [0.6, 0.8] | [pool] | +68 | 0.95 | +67/+69/+69 | +2591/+10075/+29322 | +43 / -4168 | +60 / +1928 | RECENT-ONLY |
-| skip steps (lo=0), pooled grid | r_atr1_n5_all10 step [1.1, 0] | [pool] | +77 | 1.03 | +78/+78/+79 | +702/+8257/+29060 | +45 / -6982 | +39 / -2002 | RECENT-ONLY |
-| skip steps (lo=0), pooled grid | q_atr15_n14_slot10 step [0.7, 0] | [pool] | +76 | 1.05 | +78/+85/+100 | -4932/+125/+3175 | +32 / -3574 | +11 / +2031 | RECENT-ONLY |
-| skip steps (lo=0), pooled grid | r_park1_w10_all40 step [1.1, 0] | [pool] | +75 | 1.01 | +76/+78/+90 | +1349/+8962/+25619 | +43 / -8495 | +70 / +1895 | RECENT-ONLY |
-| per-book/session scope | q_park15_w12_all10 step [0.6, 0] | [book, P7, K7] | +66 | 1.01 | +67/+67/+66 | +1688/+2744/-844 | +48 / -6095 | +63 / +2962 | RECENT-ONLY |
-| per-book/session scope | r_ewma5_l90_all40 step [1.1, 0] | [book, P7] | +63 | 0.92 | +60/+60/+60 | +4094/+8006/+16373 | +45 / -3166 | +63 / +2196 | RECENT-ONLY |
-| per-book/session scope | r_ewma5_l90_all40 step [1.1, 0] | [book, P7, K7] | +61 | 0.97 | +60/+60/+65 | +2746/+9584/+21089 | +52 / -5402 | +65 / +526 | RECENT-ONLY |
-| stack/book P&L target-vol | tvol_ALL tvol [20, 0.8, 2, 0.5, "ALL"] | [pool] | +24 | 1.45 | +47/+47/+47 | -6672/-7153/-6375 | +43 / -3246 | +2 / -340 | RECENT-ONLY |
-| stack/book P&L target-vol | tvol_ALL tvol [15, 0.8, 2, 0.5, "ALL"] | [pool] | +22 | 1.48 | +47/+47/+47 | -6972/-2925/-6375 | +43 / -2952 | +9 / -204 | RECENT-ONLY |
-| stack/book P&L target-vol | tvol_P7 tvol [20, 0.8, 2, 0.5, "P7"] | [book, P7] | +11 | 1.24 | +28/+28/+37 | -3763/-1445/-4627 | +30 / -1674 | +10 / -23 | RECENT-ONLY |
-| composite pooled | q_COMP_all10 step [0.5, 0] | [pool] | +55 | 1.32 | +66/+66/+72 | -4240/-2375/-156 | +54 / -6278 | +62 / +211 | RECENT-ONLY |
-| composite pooled | r_COMP_all5 step [1.1, 0] | [pool] | +53 | 0.98 | +52/+52/+65 | +2160/-1835/-6324 | +30 / -4968 | +62 / +1878 | RECENT-ONLY |
-| composite pooled | q_COMP_all5 step [0.6, 0] | [pool] | +53 | 1.00 | +53/+53/+73 | +2069/-121/-2781 | +46 / -5031 | +45 / +1582 | RECENT-ONLY |
-| composite graded/half/cont | q_COMP_all10 g3 [0.5, 0.8] | [pool] | +51 | 0.99 | +50/+53/+67 | +2146/+1525/-6935 | +53 / -4231 | +67 / +2100 | RECENT-ONLY |
-| composite graded/half/cont | q_COMP_all10 g3 [0.5, 0.8] | [book, P7, K7] | +46 | 0.96 | +43/+43/+61 | +2930/+731/-6358 | +42 / -3102 | +57 / +1227 | RECENT-ONLY |
-| composite graded/half/cont | q_COMP_slot10 g3 [0.5, 0.8] | [pool] | +46 | 1.11 | +51/+51/+100 | -241/-4081/-7275 | +59 / -4970 | +38 / +2328 | RECENT-ONLY |
-| SCALE rules (never zero) all | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY |
-| SCALE rules (never zero) all | r_rv5_w24_all10 cont [2, 0.25] | [book, K7, P7, M7, A7, O7] | +48 | 0.93 | +44/+46/+46 | +265/+539/+12269 | +19 / -1181 | +66 / +1910 | RECENT-ONLY |
-| SCALE rules (never zero) all | r_rv5_w24_all10 cont [2, 0.25] | [book, P7, K7] | +47 | 0.94 | +44/+44/+44 | -131/+439/+11829 | +19 / -1252 | +65 / +1781 | RECENT-ONLY |
-| SCALE pooled | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY |
-| SCALE pooled | r_rv5_w24_all10 cont [2, 0.5] | [pool] | +41 | 0.93 | +37/+37/+46 | +178/+935/-523 | +13 / -1082 | +68 / +825 | RECENT-ONLY |
-| SCALE pooled | r_rv5_w24_all10 step [1.25, 0.5] | [pool] | +39 | 0.89 | +31/+31/+38 | +1676/+869/-3224 | +13 / -804 | +67 / +1031 | does OK prior |
-| SCALE P7+K7 scope | r_rv5_w24_all10 cont [2, 0.25] | [book, P7, K7] | +47 | 0.94 | +44/+44/+44 | -131/+439/+11829 | +19 / -1252 | +65 / +1781 | RECENT-ONLY |
-| SCALE P7+K7 scope | r_rv5_w24_all10 cont [2, 0.5] | [book, P7, K7] | +34 | 0.95 | +31/+31/+35 | -26/+305/+9377 | +14 / -792 | +64 / +1779 | does OK prior |
-| SCALE P7+K7 scope | r_rv5_w24_all10 cont [1, 0.25] | [book, P7, K7] | +33 | 0.95 | +30/+30/+31 | +1927/+654/+8160 | +17 / -774 | +59 / +1362 | does OK prior |
-| SCALE consensus measure | r_COMP_all10 cont [2, 0.25] | [pool] | +33 | 0.98 | +32/+32/+46 | +1399/-497/-3091 | +22 / -1163 | +67 / +1160 | RECENT-ONLY |
-| SCALE consensus measure | r_COMP_all10 step [1.1, 0.5] | [pool] | +32 | 1.02 | +34/+34/+49 | +412/-720/-3206 | +16 / -903 | +53 / +254 | does OK prior |
-| SCALE consensus measure | r_COMP_all10 cont [2, 0.25] | [book, K7, P7, M7, A7, O7] | +32 | 0.97 | +30/+30/+40 | +1535/-1042/-4839 | +21 / -687 | +51 / +926 | does OK prior |
-| SCALE single measure | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY |
-| SCALE single measure | r_rv5_w24_all10 cont [2, 0.25] | [book, K7, P7, M7, A7, O7] | +48 | 0.93 | +44/+46/+46 | +265/+539/+12269 | +19 / -1181 | +66 / +1910 | RECENT-ONLY |
-| SCALE single measure | r_rv5_w24_all10 cont [2, 0.25] | [book, P7, K7] | +47 | 0.94 | +44/+44/+44 | -131/+439/+11829 | +19 / -1252 | +65 / +1781 | RECENT-ONLY |
-| special rules | q_atr5_n14_all20 special [] | [pool] | +53 | 0.91 | +48/+48/+49 | +4710/+2744/-5996 | +41 / -6311 | +63 / +1907 | RECENT-ONLY |
-| special rules | q_ewma5_l94_all20 special [] | [pool] | +52 | 0.87 | +45/+45/+75 | +1417/+5875/-1060 | +43 / -3396 | -14 / -965 | RECENT-ONLY |
-| special rules | q_gk1_w30_all20 special [] | [pool] | +47 | 0.80 | +35/+35/+58 | +2133/+1096/-8941 | +30 / -5013 | +68 / +2589 | RECENT-ONLY |
-| interactions | q_park1_w10_all10 step [0.6, 0] | [pool] | +94 | 1.06 | +94/+94/+95 | -6000/-6736/+29719 | +58 / -9794 | +25 / -87 | RECENT-ONLY |
-| interactions | q_park15_w12_all10 step [0.6, 0] | [pool] | +88 | 1.09 | +89/+89/+100 | -105/+1449/+803 | +52 / -11335 | +71 / +476 | RECENT-ONLY |
-| interactions | r_park1_w10_all40 step [1.1, 0] | [pool] | +84 | 1.22 | +87/+92/+100 | -2729/+5821/+30253 | +59 / -9231 | +28 / -893 | RECENT-ONLY |
-| z-score steps | z_park1_w10_slot5 step [1.0, 0] | [pool] | +53 | 1.01 | +54/+54/+76 | +2485/+6991/+33284 | +20 / -2887 | +30 / +1307 | RECENT-ONLY |
-| z-score steps | z_gk1_w30_slotx5 step [1.0, 0] | [pool] | +49 | 1.09 | +53/+53/+62 | +884/+3927/+16443 | +22 / -2005 | -5 / -395 | RECENT-ONLY |
-| z-score steps | z_park15_w24_all10 step [1.0, 0] | [pool] | +48 | 0.83 | +37/+37/+48 | +6750/+12984/+12864 | +24 / -1445 | +50 / +2621 | RECENT-ONLY |
+| continuous (ref/now)^p | r_rv5_w24_all10 cont [2, 0] | [pool] | +56 | 0.92 | +52/+52/+54 | +241/+1104/-2386 | +23 / -1523 | +70 / +2293 | RECENT-ONLY (allow 15%) |
+| continuous (ref/now)^p | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY (allow 15%) |
+| continuous (ref/now)^p | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY (allow 15%) |
+| half (lo=.5) steps | r_atr1_n14_all10 step [1.1, 0.5] | [pool] | +48 | 0.91 | +42/+42/+54 | +577/+1092/-1686 | +19 / -1364 | +43 / +1179 | RECENT-ONLY (allow 15%) |
+| half (lo=.5) steps | q_park15_w12_all10 step [0.6, 0.5] | [pool] | +46 | 0.95 | +43/+43/+45 | +2113/+2620/+3833 | +20 / -2117 | +59 / +1879 | RECENT-ONLY (allow 15%) |
+| half (lo=.5) steps | q_ewma5_l90_all40 step [0.6, 0.5] | [pool] | +45 | 0.90 | +39/+39/+43 | +3207/+1363/-1829 | +27 / -1314 | +61 / +250 | RECENT-ONLY (allow 15%) |
+| graded 3-step | q_atr15_n14_slot10 g3 [0.6, 0.8] | [pool] | +71 | 1.05 | +73/+73/+89 | +1504/+3130/+4449 | +50 / -929 | +12 / +1390 | OK-PRIOR (allow 15%) |
+| graded 3-step | q_ewma5_l90_all10 g3 [0.6, 0.8] | [pool] | +71 | 1.02 | +72/+76/+80 | +733/+3495/+28278 | +45 / -6671 | +38 / -739 | RECENT-ONLY (allow 15%) |
+| graded 3-step | q_atr1_n5_all10 g3 [0.6, 0.8] | [pool] | +68 | 0.95 | +67/+69/+69 | +2591/+10075/+29322 | +43 / -4168 | +60 / +1928 | RECENT-ONLY (allow 15%) |
+| skip steps (lo=0), pooled grid | r_atr1_n5_all10 step [1.1, 0] | [pool] | +77 | 1.03 | +78/+78/+79 | +702/+8257/+29060 | +45 / -6982 | +39 / -2002 | RECENT-ONLY (allow 15%) |
+| skip steps (lo=0), pooled grid | q_atr15_n14_slot10 step [0.7, 0] | [pool] | +76 | 1.05 | +78/+85/+100 | -4932/+125/+3175 | +32 / -3574 | +11 / +2031 | RECENT-ONLY (allow 15%) |
+| skip steps (lo=0), pooled grid | r_park1_w10_all40 step [1.1, 0] | [pool] | +75 | 1.01 | +76/+78/+90 | +1349/+8962/+25619 | +43 / -8495 | +70 / +1895 | RECENT-ONLY (allow 15%) |
+| per-book/session scope | q_park15_w12_all10 step [0.6, 0] | [book, P7, K7] | +66 | 1.01 | +67/+67/+66 | +1688/+2744/-844 | +48 / -6095 | +63 / +2962 | RECENT-ONLY (allow 15%) |
+| per-book/session scope | r_ewma5_l90_all40 step [1.1, 0] | [book, P7] | +63 | 0.92 | +60/+60/+60 | +4094/+8006/+16373 | +45 / -3166 | +63 / +2196 | RECENT-ONLY (allow 15%) |
+| per-book/session scope | r_ewma5_l90_all40 step [1.1, 0] | [book, P7, K7] | +61 | 0.97 | +60/+60/+65 | +2746/+9584/+21089 | +52 / -5402 | +65 / +526 | RECENT-ONLY (allow 15%) |
+| stack/book P&L target-vol | tvol_ALL tvol [20, 0.8, 2, 0.5, "ALL"] | [pool] | +24 | 1.45 | +47/+47/+47 | -6672/-7153/-6375 | +43 / -3246 | +2 / -340 | RECENT-ONLY (allow 15%) |
+| stack/book P&L target-vol | tvol_ALL tvol [15, 0.8, 2, 0.5, "ALL"] | [pool] | +22 | 1.48 | +47/+47/+47 | -6972/-2925/-6375 | +43 / -2952 | +9 / -204 | RECENT-ONLY (allow 15%) |
+| stack/book P&L target-vol | tvol_P7 tvol [20, 0.8, 2, 0.5, "P7"] | [book, P7] | +11 | 1.24 | +28/+28/+37 | -3763/-1445/-4627 | +30 / -1674 | +10 / -23 | RECENT-ONLY (allow 15%) |
+| composite pooled | q_COMP_all10 step [0.5, 0] | [pool] | +55 | 1.32 | +66/+66/+72 | -4240/-2375/-156 | +54 / -6278 | +62 / +211 | RECENT-ONLY (allow 15%) |
+| composite pooled | r_COMP_all5 step [1.1, 0] | [pool] | +53 | 0.98 | +52/+52/+65 | +2160/-1835/-6324 | +30 / -4968 | +62 / +1878 | RECENT-ONLY (allow 15%) |
+| composite pooled | q_COMP_all5 step [0.6, 0] | [pool] | +53 | 1.00 | +53/+53/+73 | +2069/-121/-2781 | +46 / -5031 | +45 / +1582 | RECENT-ONLY (allow 15%) |
+| composite graded/half/cont | q_COMP_all10 g3 [0.5, 0.8] | [pool] | +51 | 0.99 | +50/+53/+67 | +2146/+1525/-6935 | +53 / -4231 | +67 / +2100 | RECENT-ONLY (allow 15%) |
+| composite graded/half/cont | q_COMP_all10 g3 [0.5, 0.8] | [book, P7, K7] | +46 | 0.96 | +43/+43/+61 | +2930/+731/-6358 | +42 / -3102 | +57 / +1227 | RECENT-ONLY (allow 15%) |
+| composite graded/half/cont | q_COMP_slot10 g3 [0.5, 0.8] | [pool] | +46 | 1.11 | +51/+51/+100 | -241/-4081/-7275 | +59 / -4970 | +38 / +2328 | RECENT-ONLY (allow 15%) |
+| SCALE rules (never zero) all | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY (allow 15%) |
+| SCALE rules (never zero) all | r_rv5_w24_all10 cont [2, 0.25] | [book, K7, P7, M7, A7, O7] | +48 | 0.93 | +44/+46/+46 | +265/+539/+12269 | +19 / -1181 | +66 / +1910 | RECENT-ONLY (allow 15%) |
+| SCALE rules (never zero) all | r_rv5_w24_all10 cont [2, 0.25] | [book, P7, K7] | +47 | 0.94 | +44/+44/+44 | -131/+439/+11829 | +19 / -1252 | +65 / +1781 | RECENT-ONLY (allow 15%) |
+| SCALE pooled | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY (allow 15%) |
+| SCALE pooled | r_rv5_w24_all10 cont [2, 0.5] | [pool] | +41 | 0.93 | +37/+37/+46 | +178/+935/-523 | +13 / -1082 | +68 / +825 | RECENT-ONLY (allow 15%) |
+| SCALE pooled | r_rv5_w24_all10 step [1.25, 0.5] | [pool] | +39 | 0.89 | +31/+31/+38 | +1676/+869/-3224 | +13 / -804 | +67 / +1031 | OK-PRIOR (allow 15%) |
+| SCALE P7+K7 scope | r_rv5_w24_all10 cont [2, 0.25] | [book, P7, K7] | +47 | 0.94 | +44/+44/+44 | -131/+439/+11829 | +19 / -1252 | +65 / +1781 | RECENT-ONLY (allow 15%) |
+| SCALE P7+K7 scope | r_rv5_w24_all10 cont [2, 0.5] | [book, P7, K7] | +34 | 0.95 | +31/+31/+35 | -26/+305/+9377 | +14 / -792 | +64 / +1779 | OK-PRIOR (allow 15%) |
+| SCALE P7+K7 scope | r_rv5_w24_all10 cont [1, 0.25] | [book, P7, K7] | +33 | 0.95 | +30/+30/+31 | +1927/+654/+8160 | +17 / -774 | +59 / +1362 | OK-PRIOR (allow 15%) |
+| SCALE consensus measure | r_COMP_all10 cont [2, 0.25] | [pool] | +33 | 0.98 | +32/+32/+46 | +1399/-497/-3091 | +22 / -1163 | +67 / +1160 | RECENT-ONLY (allow 15%) |
+| SCALE consensus measure | r_COMP_all10 step [1.1, 0.5] | [pool] | +32 | 1.02 | +34/+34/+49 | +412/-720/-3206 | +16 / -903 | +53 / +254 | OK-PRIOR (allow 15%) |
+| SCALE consensus measure | r_COMP_all10 cont [2, 0.25] | [book, K7, P7, M7, A7, O7] | +32 | 0.97 | +30/+30/+40 | +1535/-1042/-4839 | +21 / -687 | +51 / +926 | OK-PRIOR (allow 15%) |
+| SCALE single measure | r_rv5_w24_all10 cont [2, 0.25] | [pool] | +54 | 0.93 | +50/+50/+53 | +63/+1143/-2546 | +18 / -1761 | +70 / +1973 | RECENT-ONLY (allow 15%) |
+| SCALE single measure | r_rv5_w24_all10 cont [2, 0.25] | [book, K7, P7, M7, A7, O7] | +48 | 0.93 | +44/+46/+46 | +265/+539/+12269 | +19 / -1181 | +66 / +1910 | RECENT-ONLY (allow 15%) |
+| SCALE single measure | r_rv5_w24_all10 cont [2, 0.25] | [book, P7, K7] | +47 | 0.94 | +44/+44/+44 | -131/+439/+11829 | +19 / -1252 | +65 / +1781 | RECENT-ONLY (allow 15%) |
+| special rules | q_atr5_n14_all20 special [] | [pool] | +53 | 0.91 | +48/+48/+49 | +4710/+2744/-5996 | +41 / -6311 | +63 / +1907 | RECENT-ONLY (allow 15%) |
+| special rules | q_ewma5_l94_all20 special [] | [pool] | +52 | 0.87 | +45/+45/+75 | +1417/+5875/-1060 | +43 / -3396 | -14 / -965 | RECENT-ONLY (allow 15%) |
+| special rules | q_gk1_w30_all20 special [] | [pool] | +47 | 0.80 | +35/+35/+58 | +2133/+1096/-8941 | +30 / -5013 | +68 / +2589 | RECENT-ONLY (allow 15%) |
+| interactions | q_park1_w10_all10 step [0.6, 0] | [pool] | +94 | 1.06 | +94/+94/+95 | -6000/-6736/+29719 | +58 / -9794 | +25 / -87 | RECENT-ONLY (allow 15%) |
+| interactions | q_park15_w12_all10 step [0.6, 0] | [pool] | +88 | 1.09 | +89/+89/+100 | -105/+1449/+803 | +52 / -11335 | +71 / +476 | RECENT-ONLY (allow 15%) |
+| interactions | r_park1_w10_all40 step [1.1, 0] | [pool] | +84 | 1.22 | +87/+92/+100 | -2729/+5821/+30253 | +59 / -9231 | +28 / -893 | RECENT-ONLY (allow 15%) |
+| z-score steps | z_park1_w10_slot5 step [1.0, 0] | [pool] | +53 | 1.01 | +54/+54/+76 | +2485/+6991/+33284 | +20 / -2887 | +30 / +1307 | RECENT-ONLY (allow 15%) |
+| z-score steps | z_gk1_w30_slotx5 step [1.0, 0] | [pool] | +49 | 1.09 | +53/+53/+62 | +884/+3927/+16443 | +22 / -2005 | -5 / -395 | RECENT-ONLY (allow 15%) |
+| z-score steps | z_park15_w24_all10 step [1.0, 0] | [pool] | +48 | 0.83 | +37/+37/+48 | +6750/+12984/+12864 | +24 / -1445 | +50 / +2621 | RECENT-ONLY (allow 15%) |
 
 The REFIT pick is a first-order screen choice among table-mode cells; it is not on the exact queue except where it coincides with VT_S1..S5, and it moves every two weeks: the live setting must be the procedure (re-pick every 2 weeks from the trailing 26 weeks), not one fixed cell. The live Q1-A sizer stays in place until the exact engine confirms a pick.
 

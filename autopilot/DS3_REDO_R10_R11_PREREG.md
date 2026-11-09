@@ -1,0 +1,4 @@
+# DS3_REDO_R10 / R11 PREREG (REDO-R9 agent, 2026-11-09 ~22:15Z) - before scoring
+R10 grid: events = trade signalled while an opposite-side other book is open; policies SKIP, HALF, SKIPS, NET, FLIP vs BOTH(live); scopes ALL, ordered book pairs (>=25 events), session of newer signal, newer book. NET/FLIP price = 1-s mid at signal+1s -/+ 0.80 pt.
+R11 grid: flag = same-side Target within N in {5,10,15,30,60,120} min (own book / any book); HALF/SKIP; scopes ALL, book, session (>=25 flagged). Continuation variant: pullback k in {5,10,20,30} within 60 min, frac {0.5,1}, 60/60 bracket, stop slip 2.45, fee 4.84/lot.
+Metrics common to R9: Z.score_daily windows, key=mean(eq-mean cut L6M,L3M,L1M), placebo B=100, family max-stat, bi-weekly WF, rule 2a label, REFIT 2026-11-22. First-order = screen only; exact for top-3 + references. No PASS claims.
