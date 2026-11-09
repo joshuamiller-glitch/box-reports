@@ -1,4 +1,4 @@
-# SZ_AB - T-SIZER-EXHAUST families A (ER) and B (volatility-target) + K (P7) slice  (refreshed 2026-11-09 17:41Z)
+# SZ_AB - T-SIZER-EXHAUST families A (ER) and B (volatility-target) + K (P7) slice  (refreshed 2026-11-09 18:28Z)
 **ROLL-EXCL: the 33 engine roll-artifact base trades (31 of 21,135 on S1b-COMB; key book + signal second, list /mnt/l2/l2vast/_th_exh/hi/roll_bracket_trades.csv) are excluded from every number on this page (their P&L set to 0 in cell and reference); flag per trade in /mnt/l2/l2vast/_th_sz/ab/roll_excl_S1B-COMB.npy (M_AB.npz keeps the row order and the multipliers of these trades). FIRST-ORDER SCREEN ONLY unless a row says EXACT (exact-engine rows are in the exact section, top-5 + mild twin only). Label: base S1b-COMB (live D7 v1.5 state cut), FIRST-ORDER trade-level scoring (pnl per planned lot x new lots; first-order mean is not reliable, drawdown ranking is usable), in-sample, PRE-PROOF, post-hoc, Shadow only, no PASS claims. Windows as of 2026-11-09; carrying week (largest |cell - Q1-A| weekly delta) dropped from means; maxDD/worst-20/Ulcer on all weeks.**
 Prereg: autopilot/SZ_AB_PREREG.md (sha in DECISIONS.md). Ledger /mnt/l2/l2vast/_th_sz/ledger_AB.parquet (copy at _th_sz/ab/ledger_AB.parquet; 63914 cells, 34622 down-only equal-mean valid). J-pair multipliers /mnt/l2/l2vast/_th_sz/M_AB.npz (new lots / base lots, 21135 trades in C.prepare(load_trades(S1B-COMB)) order).
 
@@ -339,11 +339,7 @@ Across the 400 top cells (M_AB set) the tolerant score is > 0 on NOCUT for 98 % 
 Best: ER-hyst-P7 hy_b5_n30_35_50 [0.5, 0.0] (min): equal-mean cut +22/+44/+52 % L6M/PRE/X', own p 0.03, family p 0.98. Pooled hysteresis median tolerant score 3.4 vs plain ER-NQ min-mode median 9.5: hysteresis adds no robust edge beyond P7.
 
 ## Exact-engine re-runs (VOID: the first batch used the sz_exact keying bug and was withdrawn at 17:00Z; all six sets re-queued with the fixed driver, no exact verdict yet; sz_exact.py; lead cut 2026-11-09: only the top 3 finalists = AB_F00..AB_F04 (top-5: first three finalists, best ER cell, best P7-slice cell) plus AB_F12 = mild 0.5 twin of AB_F00; months L6M, then PRE, then X-prime; <=2 workers, MemAvailable >= 55 GB; the other 9 finalists stay first-order)
-
-| set (cell) | months | window | exact: maxDD cut % | exact: d mean $/wk | exact: equal-mean cut % | exact: worst-20 d% | first-order cut % | first-order d mean |
-|--|--|--|--|--|--|--|--|--|
-
-Rows above (if any) come only from runs with the fixed driver.
+no scored window yet (EmptyDataError)
 
 Cross-check: ab_score.py vs sz_core.Z.score on 27 cells (12 finalists + top 20): max abs difference in maxDD 0.001 $, worst-20 0.002 $, cut 0.0 pp, equal-mean cut 0.0 pp, mean/d mean 0.0 after aligning the carrying-week rule (weeks > 3 -> drop the largest |cell-ref| week from MEANS only; maxDD/worst-20/Ulcer always on ALL weeks; partial edge weeks count as weeks in both).
 

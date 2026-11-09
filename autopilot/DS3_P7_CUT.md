@@ -1,0 +1,115 @@
+# DS3_P7_CUT - the most aggressive P7 state cut that still holds (ROLL-EXCL; PRE-PROOF; shadow only, nothing goes live)
+**Labels: ROLL-EXCL (the 33 engine roll-artifact trades, key (book, entry second), 13 of them P7, are removed from every window, every series and the exported per-trade tables; SZ_BASE_PROOF.md section 9). Base S1b (tick bar close). First-order screen = P7 trades of S1b-NOCUT + exact 1-s MBP-10 state arrays; EXACT = replica engine re-run with only the P7 cut cell changed (other books = S1-COMB cells). Windows as of 2026-11-09, carrying week dropped from MEANS only (never before maxDD). Prereg sha256 9ca3a614122c5586 (DECISIONS.md). No PASS claims.**
+
+## 1. Verdict
+@@VERDICT@@
+
+## 2. EXACT engine rows (reference = exact v2 line, P7 cell 45/5x/w5/p10 noMae in every session; S1b-COMB as run uses the asia override 50/5x/w3/p3/newMae V1 and is shown separately)
+Exact windows are reported only when every month of the window was run (L6M = 202605-202610; PRE = 202402-202506). Stack = all 7 books; P7 = the P7 book alone. dd cut % = (v2 maxDD - cell maxDD) / v2 maxDD, positive = lower drawdown.
+| cell | window | months run | stack mean $/wk | stack maxDD | stack dd cut % | stack mean vs v2 | stack Ulcer | stack worst-20 | P7 mean | P7 maxDD | P7 dd cut % | P7 mean vs v2 | P7 cuts on the 13 roll trades (first-order) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| v2 (45/5x/w5/p10 noMae, fixed) | L6M | 6 | 20393 | 95245 | 0 | 0 | 40845 | 89055 | 11807 | 84540 | 0 | 0 | 1 |
+| OLD live (30/30x/w5/p1 newMae, fixed) | L6M | 6 | 16745 | 172620 | -81.2 | -4424 | 64857 | -7507 | 6989 | 216619 | -156.2 | -4534 | 0 |
+| OLD live (30/30x/w5/p1 newMae, fixed) | PRE | 0 of 105 | not complete | | | | | | | | | | 0 |
+| X1 fixed 35/5x/w5/p3 noMae | L6M | 6 | 23255 | 104923 | -10.2 | +2086 | 40366 | 132086 | 12629 | 121985 | -44.3 | +1105 | 1 |
+| X1 fixed 35/5x/w5/p3 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 1 |
+| X4 fixed 25/20x/w5/p3 noMae | L6M | 6 | 15518 | 121696 | -27.8 | -5650 | 46743 | 11874 | 6722 | 140009 | -65.6 | -4801 | 0 |
+| X4 fixed 25/20x/w5/p3 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 0 |
+| X5 fixed 40/5x/w5/p3 noMae | L6M | 6 | 24722 | 79107 | +16.9 | +3554 | 30531 | 212819 | 15823 | 41005 | +51.5 | +4300 | 1 |
+| X5 fixed 40/5x/w5/p3 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 1 |
+| X6 fixed 45/5x/w5/p5 noMae | L6M | 1 of 6 | not complete | | | | | | | | | | 1 |
+| X6 fixed 45/5x/w5/p5 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 1 |
+| X2 V2 lots-scaled 25/5x/w5/p4 noMae | L6M | 0 of 6 | not complete | | | | | | | | | | 1 |
+| X2 V2 lots-scaled 25/5x/w5/p4 noMae | PRE | 0 of 105 | not complete | | | | | | | | | | 1 |
+
+## 3. First-order screen: reference rows by window (P7 alone and stack; dd = maxDD $, mean $/wk, worst-20 = sum of the 20 worst weeks, Ulcer)
+First-order caveat: re-entries, locks and day caps after an earlier cut are NOT re-simulated; the exact rows in section 2 show the first-order drawdown ranking is NOT predictive for P7 (e.g. first-order says 35/5x/p3 cuts L6M stack maxDD 26% vs v2, exact says +10%).
+| row | scope | L1M dd / mean | L2M dd / mean | L3M dd / mean | L6M dd / mean | HOLD dd / mean | MID dd / mean | PRE dd / mean | X' dd / mean |
+|---|---|---|---|---|---|---|---|---|---|
+| v2 (45/5x/w5/p10 noMae, fixed) | P7 alone | 53k / -17.7k | 53k / 12.2k | 53k / 7.1k | 152k / 7.3k | 152k / 5.5k | 74k / 2.8k | 121k / 4.8k | 139k / -0.4k |
+| v2 (45/5x/w5/p10 noMae, fixed) | stack | 75k / -25.1k | 75k / 25.6k | 85k / 12.0k | 117k / 16.9k | 117k / 11.3k | 103k / 9.0k | 123k / 13.0k | 136k / 1.5k |
+| OLD live (30/30x/w5/p1 newMae, fixed) | P7 alone | 65k / 12.2k | 65k / 21.6k | 98k / 9.4k | 199k / 9.5k | 199k / 7.4k | 59k / 7.2k | 103k / 5.9k | 148k / -1.4k |
+| OLD live (30/30x/w5/p1 newMae, fixed) | stack | 87k / 17.1k | 87k / 36.4k | 130k / 15.5k | 165k / 19.9k | 165k / 13.3k | 93k / 12.8k | 108k / 14.2k | 139k / 0.8k |
+| never cut | P7 alone | 74k / 10.5k | 74k / 23.3k | 79k / 11.2k | 199k / 6.8k | 199k / 5.5k | 79k / 8.1k | 117k / 4.6k | 149k / -1.4k |
+| never cut | stack | 96k / 15.4k | 96k / 38.2k | 115k / 17.5k | 164k / 16.1k | 164k / 11.3k | 110k / 12.6k | 126k / 12.8k | 139k / 0.8k |
+| X1 fixed 35/5x/w5/p3 noMae | P7 alone | 47k / -4.5k | 47k / 4.1k | 48k / 1.0k | 92k / 10.9k | 92k / 7.7k | 41k / 7.3k | 94k / 2.7k | 137k / -0.9k |
+| X1 fixed 35/5x/w5/p3 noMae | stack | 67k / 2.4k | 67k / 14.3k | 80k / 4.2k | 87k / 19.9k | 94k / 12.9k | 94k / 11.8k | 86k / 10.7k | 140k / 0.7k |
+| X4 fixed 25/20x/w5/p3 noMae | P7 alone | 29k / -8.9k | 29k / 11.9k | 39k / 7.9k | 96k / 12.8k | 96k / 8.2k | 45k / 14.8k | 106k / 5.2k | 111k / 0.4k |
+| X4 fixed 25/20x/w5/p3 noMae | stack | 49k / -16.3k | 49k / 22.2k | 72k / 11.1k | 84k / 21.8k | 92k / 13.8k | 73k / 20.3k | 88k / 13.4k | 122k / 1.5k |
+| X5 fixed 40/5x/w5/p3 noMae | P7 alone | 52k / -4.6k | 52k / 13.0k | 52k / 6.4k | 101k / 12.5k | 101k / 9.6k | 40k / 12.1k | 89k / 3.9k | 136k / -1.2k |
+| X5 fixed 40/5x/w5/p3 noMae | stack | 61k / 2.3k | 61k / 28.7k | 84k / 13.2k | 95k / 22.1k | 95k / 15.4k | 93k / 17.7k | 107k / 12.4k | 144k / 0.9k |
+| X6 fixed 45/5x/w5/p5 noMae | P7 alone | 61k / 14.4k | 61k / 21.0k | 71k / 8.6k | 171k / 11.2k | 171k / 7.2k | 52k / 9.5k | 117k / 4.2k | 137k / -0.0k |
+| X6 fixed 45/5x/w5/p5 noMae | stack | 83k / 19.2k | 83k / 35.8k | 111k / 14.8k | 136k / 21.7k | 136k / 13.0k | 98k / 14.0k | 125k / 12.5k | 137k / 1.9k |
+
+First-order worst-20 weeks / Ulcer, L6M and PRE (stack): v2: w20 16k/-665k, Ulcer 49k/38k; OLD: w20 -33k/-654k, Ulcer 62k/33k; X1: w20 139k/-603k, Ulcer 35k/33k; X4: w20 161k/-652k, Ulcer 32k/34k; X5: w20 101k/-669k, Ulcer 38k/38k; X6: w20 -3k/-715k, Ulcer 53k/42k
+
+## 4. Ranked table (first-order, ROBUST-gated: stack AND P7-alone maxDD <= v2 in L6M, PRE, HOLD and X'; own-null p <= 0.20), drawdown first = min(stack dd cut L6M, PRE), mean tie-break; UNRELIABLE for P7 per section 2 - use it only to choose exact candidates
+7090 of 54720 cells are ROBUST-gated; 3711 of those have own-null p <= 0.20. Columns: dd cut % (stack) L6M/PRE/HOLD/X'; stack mean change vs v2 $/wk L6M/PRE; P7-alone dd cut % L6M/PRE; cuts = trades cut of 4,682.
+| # | cell (arm spec A / MULT / win / persist / newMae) | scope | eff arm (median pt) | cuts | stack dd cut % L6M/PRE/HOLD/X' | stack mean chg L6M/PRE | P7 dd cut % L6M/PRE | own-null p |
+|---|---|---|---|---|---|---|---|---|
+| 1 | USD $2000 / 3x / w2 / p4 / newMae | pooled | 25 | 2279 | +43/+42/+21/+40 | +3135/-3602 | +73/+37 | 0.02 |
+| 2 | V1 25 / 20x / w10 / p1 / newMae | pooled | 25 | 2687 | +45/+39/+4/+51 | -417/-3747 | +48/+11 | 0.05 |
+| 3 | fixed 25 / 5x / w2 / p3 / noMae | pooled | 25 | 2742 | +37/+36/+9/+25 | +448/-3903 | +50/+2 | 0.17 |
+| 4 | V1 25 / 5x / w3 / p4 / newMae | pooled | 25 | 2413 | +38/+35/+12/+38 | +5435/-2786 | +67/+21 | 0.02 |
+| 5 | V1 25 / 3x / w2 / p4 / newMae | pooled | 25 | 2310 | +34/+40/+18/+23 | +4871/-2617 | +69/+37 | 0.02 |
+| 6 | fixed 25 / 20x / w7 / p4 / noMae | pooled | 25 | 2265 | +43/+32/+11/+7 | +4517/-1682 | +53/+12 | 0.20 |
+| 7 | V1 30 / 10x / w7 / p5 / newMae | pooled | 30 | 2576 | +31/+38/+3/+49 | -11/-4710 | +43/+2 | 0.10 |
+| 8 | fixed 25 / 10x / w5 / p5 / newMae | pooled | 25 | 2405 | +33/+31/+8/+8 | +4185/-2839 | +61/+28 | 0.07 |
+| 9 | V2 25 / 15x / w6 / p2 / newMae | pooled | 25 | 2503 | +31/+31/+2/+5 | +1854/-2729 | +47/+7 | 0.02 |
+| 10 | fixed 30 / 10x / w2 / p1 / noMae | pooled | 30 | 2535 | +35/+30/+15/+21 | +4383/-1329 | +46/+20 | 0.05 |
+| 11 | USD $2000 / 8x / w3 / p4 / newMae | pooled | 25 | 1366 | +30/+31/+21/+14 | +3172/-1610 | +56/+45 | 0.02 |
+| 12 | fixed 25 / 20x / w7 / p5 / noMae | pooled | 25 | 2096 | +34/+30/+15/+21 | +3994/-2463 | +54/+18 | 0.12 |
+| 13 | USD $2000 / 20x / w10 / p4 / newMae | pooled | 25 | 2359 | +47/+30/+6/+22 | +167/-4691 | +61/+6 | 0.07 |
+| 14 | fixed 30 / 8x / w2 / p2 / noMae | pooled | 30 | 2533 | +34/+30/+21/+31 | +3057/-1517 | +52/+19 | 0.05 |
+| 15 | fixed 25 / 20x / w6 / p4 / noMae | pooled | 25 | 1914 | +33/+30/+20/+18 | +3812/-1376 | +40/+27 | 0.10 |
+| 16 | V1 35 / 3x / w6 / p5 / newMae | pooled | 35 | 2526 | +32/+30/+16/+31 | +2792/-4052 | +64/+1 | 0.05 |
+| 17 | V1 35 / 10x / w3 / p1 / newMae | pooled | 35 | 2245 | +33/+30/+2/+24 | +4744/-3234 | +65/+34 | 0.02 |
+| 18 | fixed 25 / 5x / w4 / p5 / newMae | pooled | 25 | 2743 | +30/+34/+12/+28 | +670/-4439 | +51/+4 | 0.10 |
+| 19 | fixed 25 / 30x / w10 / p3 / newMae | pooled | 25 | 1483 | +30/+29/+11/+8 | +4753/-768 | +44/+17 | 0.02 |
+| 20 | V1 35 / 8x / w3 / p2 / newMae | pooled | 35 | 2274 | +29/+30/+1/+14 | +4941/-2348 | +57/+11 | 0.02 |
+
+Aggressiveness ladder (most aggressive = lowest effective arm, then most cuts; ROBUST-gated, own p <= 0.20), best by drawdown per arm level:
+| eff arm | best cell | cuts | stack dd cut L6M/PRE | stack mean chg L6M/PRE |
+|---|---|---|---|---|
+| 25 | D 2000/3x/w2/p4/M | 2279 | +43/+42 | +3135/-3602 |
+| 30 | V1 30/10x/w7/p5/M | 2576 | +31/+38 | -11/-4710 |
+| 35 | V1 35/3x/w6/p5/M | 2526 | +32/+30 | +2792/-4052 |
+| 38 | D 3000/8x/w4/p5/- | 2124 | +27/+27 | +6419/-2804 |
+| 40 | V1 40/5x/w5/p3/- | 2425 | +29/+28 | +6764/-3097 |
+| 45 | V1 45/20x/w9/p3/- | 1873 | +22/+22 | +3062/-325 |
+| 50 | D 4000/5x/w3/p3/M | 2129 | +24/+24 | +4324/-2027 |
+
+Per entry session (other sessions stay at v2), best ROBUST cell by drawdown first-order:
+| session | best cell | cuts | stack dd cut L6M/PRE | stack mean chg L6M/PRE |
+|---|---|---|---|---|
+| pooled | D 2000/3x/w2/p4/M | 2279 | +43/+42 | +3135/-3602 |
+| asia | F 30/3x/w3/p5/M | 1140 | +23/+24 | +4340/-620 |
+| london | V2 45/8x/w4/p2/- | 715 | +14/+13 | +1720/-84 |
+| nyam | V1 25/20x/w6/p2/M | 364 | +25/+21 | +3927/-2019 |
+
+First-order heat, pooled fixed arm, noMae, win 5: stack min(dd cut L6M, PRE) % by ARM x MULT at persist 3 (positive = both windows cut):
+| ARM \ MULT | 3 | 5 | 8 | 10 | 15 | 20 | 30 | 40 |
+|---|---|---|---|---|---|---|---|---|
+| 25 | +24 | +24 | +26 | +30 | +32 | +28 | -19 | -39 |
+| 30 | +36 | +36 | +31 | +30 | +19 | +14 | -29 | -39 |
+| 35 | +26 | +26 | +26 | +25 | +9 | +13 | -34 | -39 |
+| 40 | +13 | +13 | +11 | +15 | +4 | -0 | -42 | -39 |
+| 45 | -7 | -8 | -12 | -10 | -16 | -12 | -40 | -39 |
+
+## 5. Nulls and walk-forward
+- Family null over the full P7 grid (54,720 cell x scope; 40 worlds, each circularly shifts the pulled-support series within every trade so the state condition is decoupled from price; statistic = max over cells of min(stack dd cut L6M, PRE) vs the real v2): null mean 48.9, max 52.0; observed best 51.7; family p = 0.049. The observed best cells are 25-pt cells with large mean loss; most of the dd cut is available from the ARM condition alone.
+- Placebo (random same-count cuts at random seconds beyond the arm, 100 draws, pre ROLL-EXCL shortlist of 950 cells): every cell p = 0.0099 (the floor); random cuts raise maxDD by 97% (L6M) / 153% (PRE) on average, so this placebo does not discriminate; the shifted-pulled worlds above are the informative null (own-null p column).
+- Purged monthly walk-forward over 2024-01..2026-10 (7-day embargo, 26-week training, whole 54,720-cell set per month; stack): v2 mean 13619 / maxDD 123101; pick = lowest training maxDD: mean 8544 / maxDD 144491; pick = no-worse-than-v2 training maxDD, highest training mean: mean 13893 / maxDD 173069. Re-selecting cells month by month LOSES to the fixed v2 line on drawdown (+17% / +41%): no selection procedure here is supported out of sample.
+- Older-windows-select / newer-windows-test (first-order, 54,720 cells): cells that do not raise PRE and X' maxDD (stack and P7-alone) also do not raise L6M and HOLD in 63% of cases against a 31% base rate.
+
+## 6. Held-out live week (frozen file P7 rows only: 53 P7 trades, 24 live cuts = 13 PolicyCut + 11 ThL2Cut, 0 stops, actual P7 net $86,010; bracket proxy = stop signal -+ 60 / target fill -+ 60 on the 1-s arrays, $114,722). The old per-print live cuts are NOT ground truth. The night of 11-08/09 (4 stops) is NOT on the box; the 7 later P7 rows of the unfrozen file have no state arrays (label day 11-06): not scored.
+| cell | cuts of 53 | cuts on the 24 live-cut trades | cuts on trades whose bracket was a target | cuts on stop-bracket trades | week net if cell cuts, else bracket $ | vs bracket proxy | vs actual on the 24 |
+|---|---|---|---|---|---|---|---|
+| v2 (45/5x/w5/p10 noMae, fixed) | 17 | 16 | 4 | 13 | 81440 | -33282 | -21884 |
+| OLD live (30/30x/w5/p1 newMae, fixed) | 9 | 8 | 2 | 7 | 100672 | -14050 | -4467 |
+| X1 fixed 35/5x/w5/p3 noMae | 28 | 24 | 10 | 18 | 36790 | -77931 | -8733 |
+| X4 fixed 25/20x/w5/p3 noMae | 27 | 23 | 10 | 17 | 38914 | -75808 | 3511 |
+| X5 fixed 40/5x/w5/p3 noMae | 24 | 21 | 7 | 17 | 58879 | -55843 | -18017 |
+| X6 fixed 45/5x/w5/p5 noMae | 20 | 19 | 4 | 16 | 86637 | -28085 | -22752 |
+Every cut cell loses to hold-to-bracket in this week (6 of the 24 live cuts were followed by a target). Per-trade table of the 24 live-cut trades for v2 and X5 (second after entry @ mid price at the cut second+1): /mnt/l2/l2vast/_th_p7cut/live24_table.csv
+Would-have-cut for the 4 stops of the night 11-08/09: not evaluable (file not on the box; MORNING_FLAGS.md).

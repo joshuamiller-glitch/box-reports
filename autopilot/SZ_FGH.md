@@ -1,8 +1,10 @@
+> STANDING RULE (user 17:20Z): every D7 layer stays ON; this page recommends SETTINGS only (P7 session lots, slots, gates), never dropping a layer; live setting is always the reference row and stays if nothing beats it OOS.
+> VOID: every earlier EXACT table-mode row (sz_exact keyed on arm time, fixed to the signal second) is void and not shown; exact sets are re-queued with the fixed driver. ROLL FIX: NQ roll jumps (12 quarterly, 2 were flagged) are now adjusted in the FGH bars; affected features were gap, on_ratio, TWAP deviation/slope, dip, EMA slope, ATR/ADX on roll nights; zone-line features inherit the raw replica frame and were not re-derived.
 > ALL NUMBERS BELOW ARE FIRST-ORDER SCREEN ONLY (pnl per planned lot x lots) unless marked EXACT. User addendum 1: first-order is not a verdict. EXACT runs (SZ-CORE queue, memory-bound): FGH_P744 0 months done; FGH_P644 0 months done; FGH_P444 0 months done; FGH_GREEDY 0 months done; FGH_BESTH 0 months done; FGH_BESTG 0 months done; FGH_DOW2 0 months done; FGH_TREND 0 months done; FGH_L2K2 0 months done.
 
 TESTING-DEFECT CHECK (addendum 1c) across my three live-chain bases (COMB, NOCUT, UNIF): of 6788 common cells, L6M maxDD identical to the dollar: 0; PRE: 0. No defect found among my own scores; the first-order scorer cannot see exit/re-entry/lock changes, so the verdict needs EXACT runs.
 
-# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-09 16:36Z
+# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-09 18:10Z
 
 Label: PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER on S1b-COMB (pnl per lot x lots; mean unreliable, drawdown ranking usable), no PASS claims, entry match < .85. Prereg SZ_FGH_PREREG.md (sha in DECISIONS.md). 6786 cells x 3 bases (COMB live, NOCUT, UNIF controls). Ledger /mnt/l2/l2vast/_th_sz/ledger_FGH*.parquet; lots ratios of top cells M_FGH.npz.
 
@@ -13,143 +15,143 @@ Calendar: FOMC/CPI/NFP dates entered from public schedules (memory); CHECKED aga
 ## 1. Walk-forward of the picking procedure (purged monthly, 26 w train, 7 d embargo, 2024-01..2026-10, picks max equal-mean maxDD cut on the train weeks, 34 months)
 | subset | OOS maxDD cut raw % | at equal mean % | d mean $/wk | w20 OOS/ref | picks/months |
 |--|--|--|--|--|--|
-| COMB F | -0.0 | -18.8 | -2618 | 1.00 | 34/34 |
-| COMB G | 21.2 | -79.0 | -9279 | 0.65 | 34/34 |
-| COMB H | 18.3 | -69.7 | -8597 | 0.85 | 34/34 |
-| COMB K | 38.5 | 36.4 | -543 | 0.78 | 34/34 |
-| COMB ALL | 21.2 | -81.9 | -9395 | 0.68 | 34/34 |
-| COMB F_slot48 | 4.6 | 2.6 | -341 | 0.97 | 34/34 |
-| COMB F_lot_table | 31.1 | 32.5 | +349 | 0.79 | 34/34 |
-| COMB G_qgate | 23.1 | -60.7 | -8643 | 0.69 | 34/34 |
-| COMB H_regime | 18.3 | -69.7 | -8597 | 0.85 | 34/34 |
-| COMB H_atr | -7.8 | -27.8 | -2594 | 0.93 | 34/34 |
-| COMB H_atr_P7 | -7.8 | -18.0 | -1434 | 0.89 | 33/34 |
-| COMB K_joint | 35.6 | 27.9 | -1764 | 0.79 | 31/34 |
-| COMB F_event_dow_edge | 5.8 | -17.0 | -3228 | 0.97 | 34/34 |
-| COMB G_zone_l2 | 16.2 | -10.8 | -4036 | 0.82 | 34/34 |
-| COMB UP_allowed_lot_table | 1.5 | 8.3 | +1235 | 0.94 | 34/34 |
-| NOCUT K | 27.6 | 20.8 | -1247 | 0.79 | 34/34 |
-| NOCUT K_joint | 38.1 | 34.0 | -886 | 0.74 | 34/34 |
-| NOCUT F_lot_table | 11.3 | 3.6 | -1139 | 0.84 | 34/34 |
-| NOCUT H_atr | -29.7 | -60.9 | -2796 | 0.82 | 34/34 |
-| NOCUT F | 12.6 | -3.1 | -2198 | 0.85 | 34/34 |
-| NOCUT G | 17.6 | -46.1 | -6284 | 0.75 | 34/34 |
-| NOCUT H | 15.9 | -26.6 | -4840 | 0.77 | 34/34 |
-| UNIF K | 25.9 | 27.1 | +247 | 0.76 | 34/34 |
-| UNIF K_joint | 34.4 | 25.1 | -1873 | 0.77 | 34/34 |
+| COMB F | 5.8 | -13.7 | -2827 | 1.02 | 34/34 |
+| COMB G | 34.9 | -58.5 | -9757 | 0.65 | 34/34 |
+| COMB H | 20.5 | -56.4 | -8134 | 0.89 | 34/34 |
+| COMB K | 38.5 | 35.2 | -840 | 0.78 | 34/34 |
+| COMB ALL | 11.0 | -189.0 | -11454 | 0.68 | 34/34 |
+| COMB F_slot48 | 4.6 | 1.4 | -542 | 0.97 | 34/34 |
+| COMB F_lot_table | 31.1 | 32.6 | +367 | 0.80 | 34/34 |
+| COMB G_qgate | 23.1 | -57.7 | -8481 | 0.69 | 34/34 |
+| COMB H_regime | 20.5 | -56.4 | -8134 | 0.89 | 34/34 |
+| COMB H_atr | -7.8 | -25.4 | -2318 | 0.93 | 34/34 |
+| COMB H_atr_P7 | -7.8 | -17.8 | -1399 | 0.90 | 33/34 |
+| COMB K_joint | 35.6 | 29.8 | -1368 | 0.79 | 31/34 |
+| COMB F_event_dow_edge | 5.8 | -21.2 | -3686 | 1.01 | 34/34 |
+| COMB G_zone_l2 | 16.2 | -2.6 | -3031 | 0.82 | 34/34 |
+| COMB UP_allowed_lot_table | 1.5 | 6.5 | +894 | 0.94 | 34/34 |
+| NOCUT K | 21.3 | 16.1 | -897 | 0.79 | 34/34 |
+| NOCUT K_joint | 29.6 | 26.8 | -554 | 0.77 | 33/34 |
+| NOCUT F_lot_table | 11.3 | 6.6 | -713 | 0.83 | 34/34 |
+| NOCUT H_atr | 3.3 | -34.5 | -4046 | 0.83 | 34/34 |
+| NOCUT F | 11.4 | -10.0 | -2800 | 0.90 | 34/34 |
+| NOCUT G | 11.8 | -33.9 | -4911 | 0.78 | 34/34 |
+| NOCUT H | 41.4 | 15.9 | -4363 | 0.71 | 34/34 |
+| UNIF K | 25.9 | 27.0 | +242 | 0.76 | 34/34 |
+| UNIF K_joint | 35.7 | 28.0 | -1620 | 0.78 | 34/34 |
 | UNIF F_lot_table | 25.9 | 29.1 | +687 | 0.80 | 34/34 |
-| UNIF H_atr | 21.3 | 9.3 | -2004 | 0.76 | 34/34 |
-| UNIF F | 26.8 | 27.4 | +117 | 0.81 | 34/34 |
-| UNIF G | -19.7 | -113.9 | -6637 | 0.84 | 34/34 |
-| UNIF H | -7.0 | -58.6 | -4900 | 0.78 | 34/34 |
+| UNIF H_atr | 29.5 | 23.8 | -1129 | 0.72 | 34/34 |
+| UNIF F | 22.8 | 17.0 | -1051 | 0.87 | 34/34 |
+| UNIF G | 8.5 | -60.3 | -6464 | 0.76 | 34/34 |
+| UNIF H | 37.6 | 18.9 | -3485 | 0.73 | 34/34 |
 
 ### Greedy joint lot table (coordinate descent over the 15 book x session cells, daily P&L additive across disjoint trades; the picking procedure re-run each month on trailing 26 weeks)
 | base | variant | WF OOS cut raw % | at equal mean % | d mean $/wk | in-sample table (book|session: lots) | in-sample cut L6M/PRE/X' % |
 |--|--|--|--|--|--|--|
-| COMB | down-only | 53.5 | -0.7 | -8921 | {"K7|1": 0, "K7|4": 0, "M7|1": 1, "M7|3": 0, "P7|1": 5, "P7|3": 0, "U7|1": 2} | 36/55/53 |
-| COMB | up (UP, labelled) | 30.6 | 26.8 | -875 | {"A7|0": 7, "H7|0": 7, "H7|3": 6, "K7|0": 1, "K7|1": 0, "K7|3": 6, "M7|1": 1, "O7|3": 7, "P7|0": 6, "P7|1": 8, "P7|3": 0, "U7|0": 7, "U7|1": 2} | -13/36/25 |
-| NOCUT | down-only | 31.1 | -69.2 | -8543 | {"H7|0": 1, "H7|3": 0, "K7|0": 1, "K7|1": 0, "M7|1": 1, "P7|0": 4, "P7|1": 1, "P7|3": 0, "U7|0": 2} | 74/62/64 |
-| NOCUT | up (UP, labelled) | 9.5 | 17.0 | +1293 | {"A7|0": 8, "H7|0": 6, "H7|3": 8, "K7|0": 1, "K7|1": 5, "K7|3": 2, "K7|4": 3, "M7|1": 1, "O7|3": 8, "P7|0": 0, "P7|1": 5, "P7|3": 1, "U7|1": 5} | 47/16/16 |
-| UNIF | down-only | 32.0 | -40.2 | -7760 | {"H7|0": 1, "K7|0": 1, "K7|4": 0, "M7|1": 1, "P7|0": 6, "P7|1": 6, "P7|3": 0, "U7|1": 3} | 51/40/30 |
-| UNIF | up (UP, labelled) | 10.7 | 23.9 | +2621 | {"A7|0": 8, "H7|0": 2, "H7|3": 8, "K7|0": 4, "K7|1": 5, "K7|4": 6, "M7|1": 1, "M7|3": 2, "O7|3": 6, "P7|0": 6, "P7|1": 8, "P7|3": 1, "U7|0": 8, "U7|1": 1} | 34/4/-1 |
+| COMB | down-only | 57.0 | 9.7 | -8678 | {"K7|0": 1, "K7|1": 0, "K7|4": 0, "M7|1": 1, "M7|3": 0, "P7|0": 6, "P7|1": 3, "P7|3": 0, "U7|1": 0} | 44/66/65 |
+| COMB | up (UP, labelled) | 25.0 | 20.3 | -968 | {"A7|0": 6, "H7|0": 6, "H7|3": 4, "K7|0": 1, "K7|1": 1, "K7|3": 2, "K7|4": 0, "M7|1": 1, "M7|3": 0, "O7|3": 3, "P7|0": 8, "P7|3": 0, "U7|1": 6} | 2/40/36 |
+| NOCUT | down-only | 42.7 | -34.2 | -8252 | {"H7|0": 1, "H7|3": 0, "K7|0": 1, "K7|1": 0, "M7|1": 1, "P7|0": 4, "P7|1": 1, "P7|3": 0, "U7|1": 3} | 75/63/68 |
+| NOCUT | up (UP, labelled) | 7.7 | 17.7 | +1749 | {"A7|0": 8, "H7|0": 1, "H7|3": 8, "K7|0": 3, "K7|1": 7, "K7|3": 2, "K7|4": 5, "O7|3": 8, "P7|0": 6, "P7|1": 1, "P7|3": 0, "U7|1": 5} | 40/-2/9 |
+| UNIF | down-only | 33.8 | -46.7 | -8260 | {"H7|0": 1, "H7|3": 0, "K7|1": 1, "M7|1": 1, "P7|0": 5, "P7|1": 4, "P7|3": 0, "U7|1": 2} | 64/53/54 |
+| UNIF | up (UP, labelled) | 9.7 | 19.4 | +1802 | {"A7|0": 8, "H7|0": 1, "H7|3": 2, "K7|0": 5, "K7|1": 1, "K7|4": 8, "M7|1": 1, "M7|3": 4, "O7|3": 5, "P7|0": 6, "P7|1": 5, "P7|3": 0, "U7|1": 1} | 36/24/18 |
 
 ## 2. Lead 1 - P7 lot table by session (K slice): joint asia/london/nyam lots 3-7 (live 7/7/7). Top 12 of 20, drawdown-first by SEL
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| P7_lot_table_joint | {"q_asia": 7, "q_london": 4, "q_nyam": 4} | P7 | 27/5/32/26 | +359/-428 | 28/33/27 | 1.37 | 0.76 | +17 | 0.12 | 0.01 / 1.00 | 30,26 / 29,35 | -3802 | True |
-| P7_lot_table_joint | {"q_asia": 7, "q_london": 3, "q_nyam": 4} | P7 | 26/1/36/25 | -330/-765 | 25/35/24 | 1.30 | 0.75 | -16 | 0.12 | 0.08 / 1.00 | 31,29 / 30,39 | -5373 | True |
-| P7_lot_table_joint | {"q_asia": 6, "q_london": 4, "q_nyam": 4} | P7 | 29/17/33/36 | -1983/-1242 | 24/27/31 | 1.24 | 0.71 | -85 | 0.22 | 0.01 / 1.00 | 39,29 / 36,32 | -15368 | True |
-| P7_lot_table_joint | {"q_asia": 7, "q_london": 4, "q_nyam": 3} | P7 | 28/8/32/26 | -438/-486 | 26/31/24 | 1.34 | 0.75 | -20 | 0.13 | 0.16 / 1.00 | 33,31 / 29,38 | -7404 | True |
-| P7_lot_table_joint | {"q_asia": 6, "q_london": 3, "q_nyam": 4} | P7 | 28/12/36/35 | -2615/-1580 | 20/29/28 | 1.16 | 0.71 | -117 | 0.22 | 0.04 / 1.00 | 39,33 / 37,37 | -16939 | True |
-| P7_lot_table_joint | {"q_asia": 7, "q_london": 3, "q_nyam": 3} | P7 | 26/4/36/24 | -1128/-742 | 23/33/21 | 1.27 | 0.76 | -54 | 0.13 | 0.40 / 1.00 | 34,35 / 30,42 | -8974 | True |
-| P7_lot_table_joint | {"q_asia": 6, "q_london": 4, "q_nyam": 3} | P7 | 30/19/33/36 | -2747/-1234 | 22/25/28 | 1.20 | 0.70 | -116 | 0.22 | 0.03 / 1.00 | 42,35 / 35,35 | -18970 | True |
-| P7_lot_table_joint | {"q_asia": 5, "q_london": 3, "q_nyam": 4} | P7 | 28/14/33/33 | -2071/-1586 | 21/26/26 | 1.09 | 0.72 | -91 | 0.22 | 0.10 / 1.00 | 46,32 / 38,31 | -25196 | True |
-| P7_lot_table_joint | {"q_asia": 6, "q_london": 3, "q_nyam": 3} | P7 | 28/14/36/35 | -3379/-1490 | 18/27/25 | 1.13 | 0.70 | -149 | 0.22 | 0.14 / 1.00 | 42,38 / 37,40 | -20540 | True |
-| P7_lot_table_joint | {"q_asia": 5, "q_london": 3, "q_nyam": 3} | P7 | 29/16/33/33 | -2723/-2250 | 18/23/23 | 1.05 | 0.71 | -119 | 0.23 | 0.35 / 1.00 | 49,33 / 38,34 | -28797 | True |
-| P7_lot_table_joint | {"q_asia": 5, "q_london": 4, "q_nyam": 4} | P7 | 30/19/30/33 | -3627/-1314 | 19/19/23 | 1.15 | 0.72 | -153 | 0.22 | 0.02 / 1.00 | 46,29 / 36,26 | -23625 | True |
-| P7_lot_table_joint | {"q_asia": 4, "q_london": 4, "q_nyam": 4} | P7 | 28/30/30/39 | -3956/-1837 | 12/14/25 | 0.94 | 0.70 | -174 | 0.23 | 0.02 / 1.00 | 51,28 / 36,23 | -34489 | True |
+| P7_lot_table_joint | {"q_asia": 7, "q_london": 4, "q_nyam": 4} | P7 | 27/21/32/24 | +359/-428 | 28/33/25 | 1.37 | 0.76 | +17 | 0.12 | 0.01 / 1.00 | 30,28 / 29,35 | -3802 | True |
+| P7_lot_table_joint | {"q_asia": 7, "q_london": 3, "q_nyam": 4} | P7 | 26/21/36/22 | -330/-765 | 25/35/21 | 1.30 | 0.75 | -16 | 0.12 | 0.07 / 1.00 | 31,32 / 30,39 | -5373 | True |
+| P7_lot_table_joint | {"q_asia": 6, "q_london": 4, "q_nyam": 4} | P7 | 29/31/33/34 | -1935/-1229 | 24/27/28 | 1.24 | 0.71 | -83 | 0.22 | 0.01 / 1.00 | 39,32 / 36,32 | -15368 | True |
+| P7_lot_table_joint | {"q_asia": 7, "q_london": 4, "q_nyam": 3} | P7 | 28/21/32/23 | -438/-486 | 26/31/22 | 1.34 | 0.75 | -20 | 0.13 | 0.14 / 1.00 | 33,34 / 29,38 | -7404 | True |
+| P7_lot_table_joint | {"q_asia": 6, "q_london": 3, "q_nyam": 4} | P7 | 28/29/36/33 | -2567/-1567 | 20/29/26 | 1.16 | 0.71 | -115 | 0.22 | 0.04 / 1.00 | 39,35 / 37,37 | -16939 | True |
+| P7_lot_table_joint | {"q_asia": 7, "q_london": 3, "q_nyam": 3} | P7 | 26/21/36/22 | -1128/-742 | 23/33/18 | 1.27 | 0.76 | -54 | 0.13 | 0.40 / 1.00 | 34,36 / 30,42 | -8974 | True |
+| P7_lot_table_joint | {"q_asia": 6, "q_london": 4, "q_nyam": 3} | P7 | 30/31/33/33 | -2699/-1221 | 22/25/26 | 1.20 | 0.70 | -114 | 0.22 | 0.03 / 1.00 | 42,35 / 35,35 | -18970 | True |
+| P7_lot_table_joint | {"q_asia": 5, "q_london": 3, "q_nyam": 4} | P7 | 28/31/33/32 | -2071/-1560 | 21/26/25 | 1.09 | 0.72 | -91 | 0.22 | 0.10 / 1.00 | 46,32 / 38,31 | -25196 | True |
+| P7_lot_table_joint | {"q_asia": 6, "q_london": 3, "q_nyam": 3} | P7 | 28/31/36/32 | -3331/-1477 | 18/27/23 | 1.13 | 0.70 | -147 | 0.22 | 0.15 / 1.00 | 42,38 / 37,40 | -20540 | True |
+| P7_lot_table_joint | {"q_asia": 5, "q_london": 3, "q_nyam": 3} | P7 | 29/31/33/32 | -2723/-2224 | 18/23/22 | 1.05 | 0.71 | -119 | 0.23 | 0.33 / 1.00 | 49,33 / 38,34 | -28797 | True |
+| P7_lot_table_joint | {"q_asia": 5, "q_london": 4, "q_nyam": 4} | P7 | 30/31/30/32 | -3579/-1289 | 19/19/21 | 1.15 | 0.72 | -151 | 0.22 | 0.02 / 1.00 | 46,29 / 36,26 | -23625 | True |
+| P7_lot_table_joint | {"q_asia": 4, "q_london": 4, "q_nyam": 4} | P7 | 28/41/30/38 | -3956/-1797 | 12/14/24 | 0.94 | 0.70 | -174 | 0.23 | 0.02 / 1.00 | 51,28 / 36,23 | -34489 | True |
 
 ### Session lot-table cells (one book x session at a time, down-only), top 12 of 41
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 1, "sess": 1} | P7 | 28/-26/44/9 | +243/-165 | 29/45/10 | 1.12 | 0.78 | +11 | 0.08 | 0.03 / 1.00 | 25,28 / 29,42 | +654 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 0, "sess": 1} | P7 | 28/-41/51/6 | -639/-104 | 25/49/3 | 1.03 | 0.73 | -29 | 0.08 | 1.00(degenerate) / 1.00 | 29,33 / 31,49 | -385 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 0, "sess": 3} | P7 | 15/22/16/35 | +711/-1990 | 18/18/37 | 1.57 | 0.84 | +57 | 0.06 | 1.00(degenerate) / 1.00 | 35,28 / 26,29 | -15995 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 1, "sess": 3} | P7 | 15/18/12/34 | +1298/-1513 | 19/16/37 | 1.49 | 0.84 | +110 | 0.05 | 0.01 / 1.00 | 30,24 / 21,23 | -11696 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 2, "sess": 3} | P7 | 11/18/11/25 | +1110/-1492 | 15/15/28 | 1.43 | 0.87 | +121 | 0.05 | 0.07 / 1.00 | 26,21 / 17,21 | -11696 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 2, "sess": 1} | P7 | 23/-27/40/7 | -1824/-212 | 18/36/-0 | 1.07 | 0.81 | -99 | 0.08 | 0.25 / 1.00 | 20,27 / 25,37 | +2242 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 3, "sess": 1} | P7 | 19/-16/28/7 | -305/-310 | 17/27/6 | 1.01 | 0.88 | -20 | 0.08 | 0.32 / 1.00 | 14,23 / 19,27 | +824 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 4, "sess": 1} | P7 | 17/-12/25/10 | -906/+28 | 14/22/6 | 1.08 | 0.88 | -69 | 0.08 | 0.07 / 1.00 | 14,20 / 17,23 | +2394 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 4, "sess": 3} | P7 | 5/13/8/17 | +1088/-662 | 9/11/21 | 1.31 | 0.94 | +263 | 0.05 | 0.04 / 1.00 | 16,14 / 12,12 | -6197 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 3, "sess": 3} | P7 | 5/13/7/14 | +290/-1466 | 6/9/15 | 1.28 | 0.93 | +67 | 0.05 | 0.55 / 1.00 | 19,14 / 11,15 | -9798 | True |
-| lot_table_cell | {"book": "U7", "live_q": 4, "q": 0, "sess": 1} | U7 | 14/-12/13/-1 | +15/-232 | 14/13/-1 | 0.98 | 0.95 | +1 | 0.03 | 1.00(degenerate) / 1.00 | 3,17 / -1,14 | +4160 | True |
-| lot_table_cell | {"book": "U7", "live_q": 4, "q": 1, "sess": 1} | U7 | 8/-6/9/7 | -159/-138 | 8/9/6 | 0.94 | 0.99 | -24 | 0.03 | 0.19 / 1.00 | 2,12 / -1,10 | +3966 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 1, "sess": 1} | P7 | 28/-5/44/8 | +243/-165 | 29/45/9 | 1.12 | 0.78 | +11 | 0.08 | 0.03 / 1.00 | 25,31 / 29,42 | +654 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 0, "sess": 1} | P7 | 28/-20/51/5 | -639/-104 | 25/49/3 | 1.03 | 0.73 | -29 | 0.08 | 1.00(degenerate) / 1.00 | 29,36 / 31,49 | -385 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 0, "sess": 3} | P7 | 15/22/16/32 | +711/-1990 | 18/18/34 | 1.57 | 0.84 | +57 | 0.06 | 1.00(degenerate) / 1.00 | 35,28 / 26,29 | -15995 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 1, "sess": 3} | P7 | 15/18/12/31 | +1298/-1513 | 19/16/34 | 1.49 | 0.84 | +110 | 0.05 | 0.01 / 1.00 | 30,24 / 21,23 | -11696 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 2, "sess": 3} | P7 | 11/18/11/23 | +1110/-1492 | 15/15/26 | 1.43 | 0.87 | +121 | 0.05 | 0.07 / 1.00 | 26,21 / 17,21 | -11696 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 2, "sess": 1} | P7 | 23/-6/40/6 | -1824/-212 | 18/36/-1 | 1.07 | 0.81 | -99 | 0.08 | 0.25 / 1.00 | 20,30 / 25,37 | +2242 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 3, "sess": 1} | P7 | 19/5/28/7 | -305/-310 | 17/27/5 | 1.01 | 0.88 | -20 | 0.08 | 0.33 / 1.00 | 14,25 / 19,27 | +824 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 4, "sess": 1} | P7 | 17/8/25/9 | -906/+28 | 14/22/6 | 1.08 | 0.88 | -69 | 0.08 | 0.07 / 1.00 | 14,22 / 17,23 | +2394 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 4, "sess": 3} | P7 | 5/13/8/16 | +1088/-662 | 9/11/19 | 1.31 | 0.94 | +263 | 0.05 | 0.03 / 1.00 | 16,14 / 12,12 | -6197 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 3, "sess": 3} | P7 | 5/13/7/13 | +290/-1466 | 6/9/14 | 1.28 | 0.93 | +67 | 0.05 | 0.54 / 1.00 | 19,14 / 11,15 | -9798 | True |
+| lot_table_cell | {"book": "U7", "live_q": 4, "q": 0, "sess": 1} | U7 | 14/0/13/-1 | +15/-232 | 14/13/-1 | 0.98 | 0.95 | +1 | 0.03 | 1.00(degenerate) / 1.00 | 3,17 / -1,14 | +4160 | True |
+| lot_table_cell | {"book": "U7", "live_q": 4, "q": 1, "sess": 1} | U7 | 8/-1/9/5 | -159/-138 | 8/9/5 | 0.94 | 0.99 | -24 | 0.03 | 0.19 / 1.00 | 2,12 / -1,10 | +3966 | True |
 
 ### UP-allowed lot-table cells (labelled UP, never promoted), top 6
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| lot_table_cell | {"book": "A7", "live_q": 1, "q": 7, "sess": 0} | A7 | -15/-12/15/6 | +2691/+3979 | -3/24/16 | 1.02 | 1.19 | -230 | 0.05 | 0.49 / 1.00 | -5,3 / -5,4 | -6330 | True |
-| lot_table_cell | {"book": "A7", "live_q": 1, "q": 6, "sess": 0} | A7 | -12/-9/12/12 | +2117/+3153 | -3/20/20 | 1.05 | 1.16 | -213 | 0.05 | 0.38 / 1.00 | -3,2 / -3,4 | -4915 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 5, "sess": 1} | P7 | 8/-3/17/10 | +50/+98 | 8/17/10 | 1.01 | 0.98 | +8 | 0.07 | 0.09 / 1.00 | 7,15 / 8,16 | +2233 | True |
-| lot_table_cell | {"book": "A7", "live_q": 1, "q": 5, "sess": 0} | A7 | -9/-8/10/10 | +1794/+2653 | -1/17/17 | 1.10 | 1.14 | -248 | 0.05 | 0.48 / 1.00 | -3,2 / -3,3 | -4220 | True |
-| lot_table_cell | {"book": "A7", "live_q": 1, "q": 8, "sess": 0} | A7 | -20/-16/18/-2 | +3014/+4480 | -6/27/10 | 0.96 | 1.22 | -190 | 0.05 | 0.53 / 1.00 | -5,3 / -4,5 | -7025 | False |
-| lot_table_cell | {"book": "U7", "live_q": 4, "q": 8, "sess": 0} | U7 | 3/-10/-7/4 | +2530/+1312 | 13/4/13 | 1.37 | 0.99 | +937 | 0.03 | 1.00(degenerate) / 1.00 | 17,-8 / 14,-10 | +2405 | True |
+| lot_table_cell | {"book": "A7", "live_q": 1, "q": 8, "sess": 0} | A7 | -15/-11/18/11 | +3083/+4392 | -2/27/21 | 1.00 | 1.18 | -250 | 0.05 | 0.39 / 1.00 | -4,3 / -3,5 | -7025 | True |
+| lot_table_cell | {"book": "A7", "live_q": 1, "q": 7, "sess": 0} | A7 | -11/-9/15/11 | +2743/+3903 | 0/24/20 | 1.05 | 1.16 | -299 | 0.05 | 0.31 / 1.00 | -4,3 / -4,4 | -6330 | True |
+| lot_table_cell | {"book": "A7", "live_q": 1, "q": 6, "sess": 0} | A7 | -10/-6/12/11 | +2169/+3090 | -1/20/18 | 1.08 | 1.13 | -264 | 0.05 | 0.34 / 1.00 | -2,2 / -2,4 | -4915 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 5, "sess": 1} | P7 | 8/3/17/9 | +50/+98 | 8/17/9 | 1.01 | 0.98 | +8 | 0.07 | 0.09 / 1.00 | 7,15 / 8,16 | +2233 | True |
+| lot_table_cell | {"book": "A7", "live_q": 1, "q": 5, "sess": 0} | A7 | -8/-6/10/9 | +1829/+2602 | 0/17/15 | 1.12 | 1.12 | -300 | 0.05 | 0.46 / 1.00 | -3,2 / -3,3 | -4220 | True |
+| lot_table_cell | {"book": "U7", "live_q": 4, "q": 8, "sess": 0} | U7 | 3/-10/-7/1 | +2530/+1312 | 13/4/11 | 1.37 | 0.99 | +937 | 0.03 | 1.00(degenerate) / 1.00 | 17,-8 / 14,-10 | +2405 | True |
 
-## 3. Lead 2 - ATR regime (>= 1.3-1.6x the prior-20-day median of the daily median 5-min ATR): skip or halve. Picking-procedure WF FAILS (-7.8% raw, -27.8% equal mean)
+## 3. Lead 2 - ATR regime (>= 1.3-1.6x the prior-20-day median of the daily median 5-min ATR): skip or halve. Picking-procedure WF FAILS (-7.8% raw, -25.4% equal mean)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| regime | {"cond": "atr_rel_ge1.3", "m": 0} | ALL | -2/18/53/54 | +2322/-6995 | 7/57/58 | 1.32 | 0.66 | -1477 | 0.52 | 0.06 / 1.00 | 37,-3 / 30,29 | -81695 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0} | P7 | -1/19/40/61 | +2390/-2946 | 8/45/64 | 1.33 | 0.74 | -2958 | 0.12 | 0.09 / 1.00 | 37,5 / 32,37 | -51095 | True |
-| regime | {"cond": "atr_rel_ge1.6", "m": 0} | P7 | 22/27/36/49 | +524/-2592 | 23/37/50 | 1.40 | 0.75 | +30 | 0.09 | 0.02 / 1.00 | 26,38 / 12,49 | -39590 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | ALL | 6/24/21/56 | +1681/-1475 | 12/26/59 | 1.27 | 0.78 | +370 | 0.16 | 0.01 / 1.00 | 19,15 / 23,22 | -27584 | True |
-| regime | {"cond": "atr_rel_ge1.6", "m": 0} | ALL | 6/25/41/62 | -2553/-5363 | -3/35/58 | 1.09 | 0.91 | -526 | 0.40 | 0.01 / 1.00 | 17,47 / 9,55 | -61700 | True |
-| regime | {"cond": "atr_rel_ge1.6", "m": 0.5} | ALL | 12/19/25/51 | -238/-1152 | 11/24/51 | 1.27 | 0.85 | -25 | 0.11 | 0.01 / 0.98 | 10,25 / 6,32 | -22102 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | P7 | 2/21/17/49 | +1927/-998 | 9/23/52 | 1.28 | 0.87 | +1240 | 0.11 | 0.01 / 1.00 | 20,7 / 22,16 | -22162 | True |
-| regime | {"cond": "atr_rel_ge1.6", "m": 0.5} | P7 | 12/22/19/39 | +980/-824 | 15/22/41 | 1.36 | 0.86 | +104 | 0.08 | 0.01 / 1.00 | 13,23 / 8,23 | -17009 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0} | M7 | -1/13/8/13 | +1090/+32 | 4/13/17 | 1.22 | 1.01 | -1770 | 0.12 | 0.04 / 1.00 | -4,17 / 5,18 | -8350 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0} | K7 | 3/-9/4/6 | +171/-1691 | 3/5/7 | 1.09 | 0.94 | +81 | 0.20 | 0.12 / 1.00 | 5,-3 / 13,4 | -16475 | True |
+| regime | {"cond": "atr_rel_ge1.6", "m": 0} | P7 | 22/37/36/54 | +3463/-2590 | 32/44/60 | 1.39 | 0.75 | +199 | 0.09 | 0.02 / 1.00 | 26,38 / 12,49 | -39590 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0} | ALL | -2/18/53/58 | +2990/-6889 | 10/58/63 | 1.31 | 0.67 | -1902 | 0.51 | 0.05 / 1.00 | 37,-3 / 30,29 | -81695 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0} | P7 | -1/19/43/64 | +2572/-2874 | 9/48/67 | 1.36 | 0.74 | -3183 | 0.12 | 0.08 / 1.00 | 37,5 / 32,37 | -51095 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | ALL | 6/24/22/57 | +2021/-1428 | 13/28/61 | 1.28 | 0.78 | +446 | 0.16 | 0.01 / 1.00 | 19,16 / 23,22 | -27584 | True |
+| regime | {"cond": "atr_rel_ge1.6", "m": 0} | ALL | 6/25/41/62 | -2187/-5352 | -2/36/58 | 1.08 | 0.91 | -451 | 0.40 | 0.03 / 1.00 | 17,47 / 9,55 | -61700 | True |
+| regime | {"cond": "atr_rel_ge1.6", "m": 0.5} | ALL | 12/19/25/46 | -46/-1140 | 12/24/46 | 1.27 | 0.85 | -5 | 0.11 | 0.01 / 1.00 | 10,26 / 6,32 | -22102 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | P7 | 2/21/18/42 | +2018/-963 | 10/25/47 | 1.30 | 0.87 | +1298 | 0.11 | 0.01 / 1.00 | 20,10 / 22,16 | -22162 | True |
+| regime | {"cond": "atr_rel_ge1.6", "m": 0.5} | P7 | 12/26/19/36 | +980/-823 | 15/22/38 | 1.36 | 0.86 | +104 | 0.08 | 0.01 / 1.00 | 13,26 / 8,23 | -17009 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0} | M7 | -1/13/8/12 | +1090/+32 | 4/13/16 | 1.22 | 1.01 | -1770 | 0.12 | 0.04 / 1.00 | -4,18 / 5,18 | -8350 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0} | K7 | 3/-9/4/7 | +75/-1671 | 3/5/7 | 1.07 | 0.94 | +35 | 0.20 | 0.11 / 1.00 | 5,-3 / 13,4 | -16475 | True |
 
-## 4F. F Time / session excluding lot tables (584 down-only cells, 197 gate, 54 gate + control-bases ok)
+## 4F. F Time / session excluding lot tables (584 down-only cells, 198 gate, 56 gate + control-bases ok)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| dow | {"dow": 2, "m": 0} | ALL | 51/27/4/35 | +1171/-2509 | 54/8/39 | 0.88 | 0.56 | +29 | 0.20 | 0.01 / 1.00 | 55,31 / 39,24 | -28160 | True |
-| dow | {"dow": 0, "m": 0} | ALL | 24/-119/22/52 | -1865/-2093 | 18/15/48 | 0.58 | 0.73 | -96 | 0.19 | 0.08 / 1.00 | 1,23 / 16,16 | -28440 | True |
-| dow | {"dow": 2, "m": 0} | P7 | 32/12/11/32 | +427/-1255 | 33/12/34 | 0.99 | 0.69 | +17 | 0.05 | 0.02 / 1.00 | 41,26 / 26,16 | -9060 | True |
-| dow | {"dow": 0, "m": 0} | P7 | 1/-43/13/51 | -798/-562 | -2/10/50 | 0.93 | 0.93 | -733 | 0.05 | 0.08 / 1.00 | 9,11 / 25,6 | -24760 | True |
-| slot48 | {"m": 0, "slot": 20} | ALL | 4/11/3/35 | +503/-800 | 6/5/36 | 1.26 | 0.96 | +158 | 0.09 | 0.18 / 1.00 | 18,-0 / 16,16 | +5745 | True |
-| dow | {"dow": 2, "m": 0.5} | P7 | 14/6/6/19 | +578/-475 | 16/8/21 | 1.07 | 0.89 | +50 | 0.04 | 0.02 / 1.00 | 17,12 / 14,7 | -3410 | True |
-| slot48 | {"m": 0, "slot": 20} | P7 | 7/13/4/32 | +298/-96 | 8/5/33 | 1.20 | 0.96 | +55 | 0.02 | 0.20 / 1.00 | 20,7 / 17,15 | +5610 | True |
-| dow | {"dow": 2, "m": 0.5} | ALL | 15/11/6/23 | -50/-895 | 15/6/23 | 0.99 | 0.88 | -4 | 0.07 | 0.05 / 1.00 | 21,10 / 15,5 | -6193 | True |
-| slot48 | {"m": 0, "slot": 22} | P7 | 7/-2/5/13 | +1559/-838 | 12/11/18 | 1.21 | 0.96 | +281 | 0.01 | 0.09 / 1.00 | 11,7 / 7,3 | -6000 | True |
-| slot48 | {"m": 0, "slot": 15} | ALL | 2/-21/9/2 | +2463/+189 | 11/17/11 | 1.11 | 1.09 | +1483 | 0.02 | 0.07 / 1.00 | -15,12 / -0,12 | +5425 | True |
+| dow | {"dow": 2, "m": 0} | ALL | 51/27/0/41 | +1120/-2427 | 54/5/44 | 0.88 | 0.56 | +27 | 0.20 | 0.01 / 1.00 | 55,31 / 39,24 | -28160 | True |
+| dow | {"dow": 2, "m": 0} | P7 | 32/12/8/36 | +715/-1215 | 34/11/38 | 0.99 | 0.69 | +28 | 0.05 | 0.02 / 1.00 | 41,26 / 26,16 | -9060 | True |
+| dow | {"dow": 0, "m": 0} | ALL | 24/-98/22/47 | -1865/-2093 | 18/15/43 | 0.58 | 0.73 | -96 | 0.19 | 0.09 / 1.00 | 1,23 / 16,16 | -28440 | True |
+| dow | {"dow": 0, "m": 0} | P7 | 1/-22/13/47 | -798/-562 | -2/10/45 | 0.93 | 0.93 | -733 | 0.05 | 0.11 / 1.00 | 9,11 / 25,6 | -24760 | True |
+| dow | {"dow": 2, "m": 0.5} | P7 | 14/6/6/20 | +674/-453 | 17/9/22 | 1.07 | 0.89 | +59 | 0.04 | 0.02 / 1.00 | 17,12 / 14,7 | -3410 | True |
+| slot48 | {"m": 0, "slot": 20} | ALL | 4/11/3/35 | +503/-800 | 6/5/37 | 1.26 | 0.96 | +158 | 0.09 | 0.19 / 1.00 | 18,2 / 16,16 | +5745 | True |
+| dow | {"dow": 2, "m": 0.5} | ALL | 15/11/6/25 | +46/-873 | 15/6/25 | 0.99 | 0.88 | +4 | 0.07 | 0.03 / 1.00 | 21,10 / 15,5 | -6193 | True |
+| slot48 | {"m": 0, "slot": 20} | P7 | 7/13/4/29 | +298/-96 | 8/5/30 | 1.20 | 0.96 | +55 | 0.02 | 0.19 / 1.00 | 20,9 / 17,15 | +5610 | True |
+| slot48 | {"m": 0, "slot": 22} | P7 | 7/7/5/11 | +1559/-838 | 12/11/17 | 1.21 | 0.96 | +281 | 0.01 | 0.10 / 1.00 | 11,7 / 7,3 | -6000 | True |
+| slot48 | {"m": 0, "slot": 15} | ALL | 2/-2/9/2 | +2463/+189 | 11/17/11 | 1.11 | 1.09 | +1483 | 0.02 | 0.07 / 1.00 | -15,12 / -0,12 | +5425 | True |
 
-## 4G. G Signal quality excluding lot tables (3542 down-only cells, 966 gate, 401 gate + control-bases ok)
+## 4G. G Signal quality excluding lot tables (3542 down-only cells, 973 gate, 411 gate + control-bases ok)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| qgate | {"feat": "dB", "m": 0, "q": 0.2, "tail": "high"} | P7 | 28/39/33/0 | +3484/-4163 | 37/42/13 | 1.17 | 0.61 | +158 | 0.06 | 0.07 / 1.00 | 48,6 / 37,29 | -55565 | True |
-| qgate | {"feat": "dA", "m": 0, "q": 0.1, "tail": "high"} | ALL | 10/-0/33/0 | +3427/-1359 | 22/42/13 | 1.24 | 0.89 | +417 | 0.09 | 0.04 / 1.00 | 19,17 / 12,28 | +710 | True |
-| qgate | {"feat": "dA", "m": 0, "q": 0.3, "tail": "high"} | ALL | 15/1/21/0 | +3995/-2321 | 28/33/15 | 1.25 | 0.67 | +327 | 0.24 | 0.05 / 1.00 | 26,19 / 20,43 | -28410 | True |
-| qgate | {"feat": "dA", "m": 0, "q": 0.3, "tail": "high"} | P7 | -2/10/32/0 | +3723/-1185 | 13/42/14 | 1.37 | 0.91 | -2690 | 0.06 | 0.09 / 1.00 | 36,17 / 22,35 | -12670 | True |
-| qgate_x_er | {"er": "erhigh", "feat": "f_sweep2_w30", "m": 0, "q": 0.2, "tail": "high"} | ALL | 18/10/22/0 | +2811/-2709 | 27/31/11 | 1.34 | 0.64 | +195 | 0.10 | 0.10 / 1.00 | 53,24 / 44,35 | +0 | True |
-| qgate_x_er | {"er": "erhigh", "feat": "dA", "m": 0, "q": 0.2, "tail": "high"} | ALL | 5/-2/35/0 | +2943/-1810 | 15/42/11 | 1.05 | 1.00 | +757 | 0.07 | 0.05 / 1.00 | -12,20 / -0,40 | +10570 | True |
-| qgate | {"feat": "dB", "m": 0.5, "q": 0.2, "tail": "high"} | P7 | 14/21/32/0 | +2027/-1686 | 21/38/8 | 1.18 | 0.81 | +178 | 0.06 | 0.01 / 1.00 | 25,7 / 27,32 | -24625 | True |
-| qgate | {"feat": "dA", "m": 0, "q": 0.5, "tail": "high"} | P7 | 14/8/15/0 | +3416/-303 | 26/26/14 | 1.26 | 0.84 | +306 | 0.09 | 0.10 / 1.00 | 45,16 / 28,35 | -12950 | True |
-| qgate_x_er | {"er": "erhigh", "feat": "dip30", "m": 0, "q": 0.5, "tail": "high"} | ALL | 31/-1/50/0 | -1845/-4440 | 26/46/-7 | 1.26 | 0.48 | -74 | 0.20 | 0.01 / 1.00 | 58,51 / 52,58 | -52620 | False |
-| qgate | {"feat": "dB", "m": 0, "q": 0.1, "tail": "high"} | P7 | -6/8/35/0 | +3318/-2603 | 7/43/12 | 1.14 | 0.93 | -691 | 0.03 | 0.15 / 1.00 | 1,6 / -9,25 | -37575 | True |
+| qgate | {"feat": "dB", "m": 0, "q": 0.2, "tail": "high"} | P7 | 28/39/33/0 | +3484/-4160 | 37/42/13 | 1.17 | 0.61 | +158 | 0.06 | 0.08 / 1.00 | 48,8 / 37,31 | -55565 | True |
+| qgate_x_er | {"er": "erhigh", "feat": "f_sweep2_w30", "m": 0, "q": 0.2, "tail": "high"} | ALL | 18/8/27/0 | +3486/-2334 | 29/37/13 | 1.47 | 0.62 | +242 | 0.09 | 0.04 / 1.00 | 52,24 / 44,35 | +0 | True |
+| qgate | {"feat": "dA", "m": 0, "q": 0.3, "tail": "high"} | ALL | 15/1/23/0 | +3995/-2240 | 28/35/15 | 1.25 | 0.67 | +327 | 0.24 | 0.06 / 1.00 | 26,22 / 20,42 | -28410 | True |
+| qgate | {"feat": "dA", "m": 0, "q": 0.1, "tail": "high"} | ALL | 10/21/33/0 | +3427/-1359 | 22/42/13 | 1.24 | 0.89 | +417 | 0.09 | 0.03 / 1.00 | 19,17 / 12,23 | +710 | True |
+| qgate | {"feat": "dA", "m": 0, "q": 0.3, "tail": "high"} | P7 | -2/18/32/0 | +3723/-1120 | 13/42/14 | 1.36 | 0.91 | -2690 | 0.06 | 0.09 / 1.00 | 36,17 / 22,35 | -12670 | True |
+| qgate | {"feat": "dA", "m": 0, "q": 0.5, "tail": "high"} | P7 | 14/12/17/0 | +3416/-238 | 26/28/14 | 1.26 | 0.84 | +306 | 0.09 | 0.11 / 1.00 | 45,16 / 28,35 | -12950 | True |
+| qgate_x_er | {"er": "erhigh", "feat": "dA", "m": 0, "q": 0.2, "tail": "high"} | ALL | 2/14/35/0 | +3303/-1854 | 13/42/12 | 1.08 | 0.98 | +2135 | 0.06 | 0.04 / 1.00 | -14,20 / -2,35 | +10570 | True |
+| qgate | {"feat": "dB", "m": 0.5, "q": 0.2, "tail": "high"} | P7 | 14/21/32/0 | +2027/-1685 | 21/38/8 | 1.18 | 0.81 | +178 | 0.06 | 0.01 / 1.00 | 25,10 / 27,32 | -24625 | True |
+| qgate | {"feat": "dB", "m": 0, "q": 0.1, "tail": "high"} | P7 | -6/15/35/0 | +3318/-2601 | 7/43/12 | 1.14 | 0.93 | -691 | 0.03 | 0.15 / 1.00 | 1,9 / -9,28 | -37575 | True |
+| qgate_x_er | {"er": "erhigh", "feat": "dip30", "m": 0, "q": 0.5, "tail": "high"} | ALL | 23/22/55/0 | -1993/-3656 | 16/51/-8 | 1.38 | 0.52 | -110 | 0.20 | 0.01 / 1.00 | 54,49 / 47,57 | -47815 | False |
 
-## 4H. H Regime excluding lot tables (854 down-only cells, 284 gate, 119 gate + control-bases ok)
+## 4H. H Regime excluding lot tables (854 down-only cells, 290 gate, 124 gate + control-bases ok)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| regime | {"cond": "atr_rel_ge1.3", "m": 0} | ALL | -2/18/53/54 | +2322/-6995 | 7/57/58 | 1.32 | 0.66 | -1477 | 0.52 | 0.06 / 1.00 | 37,-3 / 30,29 | -81695 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0} | P7 | -1/19/40/61 | +2390/-2946 | 8/45/64 | 1.33 | 0.74 | -2958 | 0.12 | 0.09 / 1.00 | 37,5 / 32,37 | -51095 | True |
-| regime | {"cond": "atr_rel_ge1.6", "m": 0} | P7 | 22/27/36/49 | +524/-2592 | 23/37/50 | 1.40 | 0.75 | +30 | 0.09 | 0.02 / 1.00 | 26,38 / 12,49 | -39590 | True |
-| regime | {"cond": "adx5_ge20", "m": 0} | P7 | 36/7/57/45 | -3607/-5926 | 23/48/34 | 1.22 | 0.42 | -125 | 0.19 | 0.06 / 1.00 | 79,40 / 67,59 | -68150 | True |
-| regime | {"cond": "adx5_ge20", "m": 0.5} | P7 | 40/21/26/38 | -522/-2149 | 38/24/36 | 1.30 | 0.65 | -17 | 0.18 | 0.01 / 1.00 | 56,25 / 48,27 | -29763 | True |
-| regime | {"cond": "adx5_ge20", "m": 0.5} | ALL | 41/20/38/43 | -2574/-3575 | 33/29/35 | 1.09 | 0.57 | -78 | 0.30 | 0.01 / 1.00 | 59,27 / 61,39 | -33303 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | ALL | 6/24/21/56 | +1681/-1475 | 12/26/59 | 1.27 | 0.78 | +370 | 0.16 | 0.01 / 1.00 | 19,15 / 23,22 | -27584 | True |
-| regime | {"cond": "on_ratio_ge0.6", "m": 0} | P7 | 32/18/48/37 | -2159/-616 | 24/42/30 | 0.96 | 0.63 | -84 | 0.11 | 0.35 / 1.00 | 69,56 / 41,46 | -41335 | True |
-| regime | {"cond": "prior_trend_day", "m": 0} | ALL | 6/-38/41/58 | -1383/-127 | -1/36/55 | 0.80 | 0.90 | -296 | 0.33 | 0.02 / 1.00 | 30,42 / 52,48 | -16660 | True |
-| regime | {"cond": "atr_rel_ge1.6", "m": 0} | ALL | 6/25/41/62 | -2553/-5363 | -3/35/58 | 1.09 | 0.91 | -526 | 0.40 | 0.01 / 1.00 | 17,47 / 9,55 | -61700 | True |
+| regime | {"cond": "atr_rel_ge1.6", "m": 0} | P7 | 22/37/36/54 | +3463/-2590 | 32/44/60 | 1.39 | 0.75 | +199 | 0.09 | 0.02 / 1.00 | 26,38 / 12,49 | -39590 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0} | ALL | -2/18/53/58 | +2990/-6889 | 10/58/63 | 1.31 | 0.67 | -1902 | 0.51 | 0.05 / 1.00 | 37,-3 / 30,29 | -81695 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0} | P7 | -1/19/43/64 | +2572/-2874 | 9/48/67 | 1.36 | 0.74 | -3183 | 0.12 | 0.08 / 1.00 | 37,5 / 32,37 | -51095 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | ALL | 6/24/22/57 | +2021/-1428 | 13/28/61 | 1.28 | 0.78 | +446 | 0.16 | 0.01 / 1.00 | 19,16 / 23,22 | -27584 | True |
+| regime | {"cond": "adx5_ge20", "m": 0} | P7 | 36/28/57/42 | -3511/-5949 | 23/48/30 | 1.22 | 0.42 | -122 | 0.19 | 0.12 / 1.00 | 79,40 / 67,59 | -68150 | True |
+| regime | {"cond": "on_ratio_ge0.6", "m": 0} | P7 | 32/40/48/34 | -1308/-778 | 28/45/29 | 0.96 | 0.63 | -51 | 0.11 | 0.29 / 1.00 | 69,56 / 41,46 | -41335 | True |
+| regime | {"cond": "adx5_ge20", "m": 0.5} | P7 | 40/21/26/37 | -522/-2163 | 38/24/36 | 1.30 | 0.65 | -17 | 0.18 | 0.01 / 1.00 | 56,26 / 48,27 | -29763 | True |
+| regime | {"cond": "adx5_ge20", "m": 0.5} | ALL | 41/20/38/42 | -2574/-3578 | 33/29/34 | 1.09 | 0.57 | -78 | 0.30 | 0.01 / 1.00 | 59,26 / 61,39 | -33303 | True |
+| regime | {"cond": "prior_trend_day", "m": 0} | ALL | 6/-17/41/62 | -1433/-90 | -1/36/59 | 0.80 | 0.90 | -307 | 0.33 | 0.02 / 1.00 | 30,42 / 52,48 | -16660 | True |
+| regime | {"cond": "atr_rel_ge1.6", "m": 0} | ALL | 6/25/41/62 | -2187/-5352 | -2/36/58 | 1.08 | 0.91 | -451 | 0.40 | 0.03 / 1.00 | 17,47 / 9,55 | -61700 | True |
 
 ## 4K. K P7 excluding lot tables (0 down-only cells, 0 gate, 0 gate + control-bases ok)
 none
@@ -157,116 +159,118 @@ none
 ## 4U. UP-allowed G/H variants (x1.5 on the flagged trades; labelled UP, never promoted; first-order overstates up-size mean by 10-18k/wk), top 8 of 1346
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| qgate_UP | {"feat": "f_ice_ag_w30", "m": 1.5, "q": 0.5, "tail": "low"} | ALL | -18/-52/-3/0 | +11156/+4664 | 22/32/34 | 1.84 | 1.14 | -758 | 0.41 | 0.02 / 1.00 | -9,-29 / -1,-9 | +0 | True |
-| regime_UP | {"cond": "twap_slope_with_ge0.10", "m": 1.5} | ALL | -22/-61/-19/-0 | +12261/+6928 | 21/22/35 | 1.93 | 1.25 | -706 | 0.47 | 0.02 / 1.00 | -38,-18 / -41,-23 | +46453 | True |
-| qgate_UP | {"feat": "f_dlt_w30", "m": 1.5, "q": 0.5, "tail": "low"} | ALL | -13/-45/-8/0 | +10329/+5355 | 22/25/31 | 1.63 | 1.21 | -983 | 0.39 | 0.01 / 1.00 | -4,-27 / 0,-18 | +0 | True |
-| regime_UP | {"cond": "both_agree_60", "m": 1.5} | ALL | -25/-39/-39/-3 | +13360/+7608 | 23/14/37 | 2.07 | 1.26 | -682 | 0.76 | 0.01 / 0.99 | -39,-50 / -35,-55 | +0 | True |
-| qgate_UP | {"feat": "f_spread_t", "m": 1.5, "q": 0.5, "tail": "high"} | ALL | -46/-55/-26/0 | +13865/+8471 | 10/23/39 | 1.76 | 1.52 | -374 | 0.67 | 0.02 / 1.00 | -38,-60 / -24,-51 | +0 | True |
-| qgate_UP | {"feat": "f_mom60", "m": 1.5, "q": 0.5, "tail": "low"} | ALL | -16/-42/7/0 | +8131/+3285 | 14/31/26 | 1.69 | 1.13 | -626 | 0.32 | 0.05 / 1.00 | -14,3 / -7,12 | +0 | True |
-| qgate_UP | {"feat": "f_ema20_rel", "m": 1.5, "q": 0.5, "tail": "low"} | ALL | -23/-35/-4/0 | +8900/+3197 | 13/27/29 | 1.48 | 1.24 | -488 | 0.28 | 0.01 / 1.00 | -9,-18 / -23,3 | +0 | True |
-| qgate_UP | {"feat": "f_tot_rel_base", "m": 1.5, "q": 0.5, "tail": "high"} | ALL | -15/-29/-3/0 | +8812/+4160 | 16/25/27 | 1.81 | 1.08 | -722 | 0.36 | 0.01 / 1.00 | 5,-10 / -8,-0 | +0 | True |
+| qgate_UP | {"feat": "f_ice_ag_w30", "m": 1.5, "q": 0.5, "tail": "low"} | ALL | -18/-52/-3/0 | +11156/+4552 | 22/32/34 | 1.84 | 1.14 | -758 | 0.41 | 0.02 / 1.00 | -9,-25 / -1,-9 | +0 | True |
+| qgate_UP | {"feat": "f_dlt_w30", "m": 1.5, "q": 0.5, "tail": "low"} | ALL | -13/-36/-8/0 | +10475/+5245 | 22/25/31 | 1.63 | 1.21 | -997 | 0.39 | 0.01 / 1.00 | -4,-27 / 0,-18 | +0 | True |
+| qgate_UP | {"feat": "f_spread_t", "m": 1.5, "q": 0.5, "tail": "high"} | ALL | -46/-55/-26/0 | +13884/+8359 | 11/24/40 | 1.76 | 1.52 | -374 | 0.67 | 0.02 / 1.00 | -38,-60 / -24,-51 | +0 | True |
+| regime_UP | {"cond": "twap_slope_with_ge0.10", "m": 1.5} | ALL | -22/-38/-19/-7 | +12158/+6771 | 20/22/30 | 1.93 | 1.25 | -700 | 0.47 | 0.02 / 1.00 | -38,-18 / -41,-23 | +46453 | True |
+| regime_UP | {"cond": "both_agree_60", "m": 1.5} | ALL | -25/-39/-39/-7 | +13360/+7576 | 24/14/34 | 2.07 | 1.26 | -682 | 0.76 | 0.01 / 1.00 | -39,-50 / -35,-55 | +0 | True |
+| qgate_UP | {"feat": "f_mom60", "m": 1.5, "q": 0.5, "tail": "low"} | ALL | -16/-24/7/0 | +8278/+3205 | 14/32/26 | 1.69 | 1.13 | -637 | 0.32 | 0.05 / 1.00 | -14,3 / -7,12 | +0 | True |
+| qgate_UP | {"feat": "f_ema20_rel", "m": 1.5, "q": 0.5, "tail": "low"} | ALL | -23/-35/-4/0 | +8900/+3101 | 13/27/30 | 1.48 | 1.24 | -488 | 0.28 | 0.01 / 1.00 | -9,-13 / -23,3 | +0 | True |
+| qgate_UP | {"feat": "f_tot_rel_base", "m": 1.5, "q": 0.5, "tail": "high"} | ALL | -15/-8/-3/0 | +8812/+4141 | 16/25/27 | 1.81 | 1.08 | -722 | 0.36 | 0.02 / 1.00 | 5,-6 / -8,-0 | +0 | True |
 
 ## 5. Calmar frontier vs Q1-A (down-only, first-order; mean is the weak side)
-Cells that dominate Q1-A on BOTH L6M mean and maxDD (d mean L6M > 0, cut L6M > 0, cut PRE > 0, cut X' > -3): 464 (of 5041 down-only). Top 10 by SEL:
+Cells that dominate Q1-A on BOTH L6M mean and maxDD (d mean L6M > 0, cut L6M > 0, cut PRE > 0, cut X' > -3): 456 (of 5041 down-only). Top 10 by SEL:
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| regime | {"cond": "atr_rel_ge1.6", "m": 0} | P7 | 22/27/36/49 | +524/-2592 | 23/37/50 | 1.40 | 0.75 | +30 | 0.09 | 0.02 / 1.00 | 26,38 / 12,49 | -39590 | True |
-| dow | {"dow": 2, "m": 0} | ALL | 51/27/4/35 | +1171/-2509 | 54/8/39 | 0.88 | 0.56 | +29 | 0.20 | 0.01 / 1.00 | 55,31 / 39,24 | -28160 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | ALL | 6/24/21/56 | +1681/-1475 | 12/26/59 | 1.27 | 0.78 | +370 | 0.16 | 0.01 / 1.00 | 19,15 / 23,22 | -27584 | True |
-| qgate | {"feat": "dB", "m": 0, "q": 0.2, "tail": "high"} | P7 | 28/39/33/0 | +3484/-4163 | 37/42/13 | 1.17 | 0.61 | +158 | 0.06 | 0.07 / 1.00 | 48,6 / 37,29 | -55565 | True |
-| P7_lot_table_joint | {"q_asia": 7, "q_london": 4, "q_nyam": 4} | P7 | 27/5/32/26 | +359/-428 | 28/33/27 | 1.37 | 0.76 | +17 | 0.12 | 0.01 / 1.00 | 30,26 / 29,35 | -3802 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | P7 | 2/21/17/49 | +1927/-998 | 9/23/52 | 1.28 | 0.87 | +1240 | 0.11 | 0.01 / 1.00 | 20,7 / 22,16 | -22162 | True |
-| lot_table_cell | {"book": "P7", "live_q": 7, "q": 1, "sess": 1} | P7 | 28/-26/44/9 | +243/-165 | 29/45/10 | 1.12 | 0.78 | +11 | 0.08 | 0.03 / 1.00 | 25,28 / 29,42 | +654 | True |
-| dow | {"dow": 2, "m": 0} | P7 | 32/12/11/32 | +427/-1255 | 33/12/34 | 0.99 | 0.69 | +17 | 0.05 | 0.02 / 1.00 | 41,26 / 26,16 | -9060 | True |
-| regime | {"cond": "atr_rel_ge1.6", "m": 0.5} | P7 | 12/22/19/39 | +980/-824 | 15/22/41 | 1.36 | 0.86 | +104 | 0.08 | 0.01 / 1.00 | 13,23 / 8,23 | -17009 | True |
-| qgate | {"feat": "dA", "m": 0, "q": 0.1, "tail": "high"} | ALL | 10/-0/33/0 | +3427/-1359 | 22/42/13 | 1.24 | 0.89 | +417 | 0.09 | 0.04 / 1.00 | 19,17 / 12,28 | +710 | True |
+| regime | {"cond": "atr_rel_ge1.6", "m": 0} | P7 | 22/37/36/54 | +3463/-2590 | 32/44/60 | 1.39 | 0.75 | +199 | 0.09 | 0.02 / 1.00 | 26,38 / 12,49 | -39590 | True |
+| dow | {"dow": 2, "m": 0} | ALL | 51/27/0/41 | +1120/-2427 | 54/5/44 | 0.88 | 0.56 | +27 | 0.20 | 0.01 / 1.00 | 55,31 / 39,24 | -28160 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | ALL | 6/24/22/57 | +2021/-1428 | 13/28/61 | 1.28 | 0.78 | +446 | 0.16 | 0.01 / 1.00 | 19,16 / 23,22 | -27584 | True |
+| qgate | {"feat": "dB", "m": 0, "q": 0.2, "tail": "high"} | P7 | 28/39/33/0 | +3484/-4160 | 37/42/13 | 1.17 | 0.61 | +158 | 0.06 | 0.08 / 1.00 | 48,8 / 37,31 | -55565 | True |
+| P7_lot_table_joint | {"q_asia": 7, "q_london": 4, "q_nyam": 4} | P7 | 27/21/32/24 | +359/-428 | 28/33/25 | 1.37 | 0.76 | +17 | 0.12 | 0.01 / 1.00 | 30,28 / 29,35 | -3802 | True |
+| lot_table_cell | {"book": "P7", "live_q": 7, "q": 1, "sess": 1} | P7 | 28/-5/44/8 | +243/-165 | 29/45/9 | 1.12 | 0.78 | +11 | 0.08 | 0.03 / 1.00 | 25,31 / 29,42 | +654 | True |
+| dow | {"dow": 2, "m": 0} | P7 | 32/12/8/36 | +715/-1215 | 34/11/38 | 0.99 | 0.69 | +28 | 0.05 | 0.02 / 1.00 | 41,26 / 26,16 | -9060 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0.5} | P7 | 2/21/18/42 | +2018/-963 | 10/25/47 | 1.30 | 0.87 | +1298 | 0.11 | 0.01 / 1.00 | 20,10 / 22,16 | -22162 | True |
+| qgate_x_er | {"er": "erhigh", "feat": "f_sweep2_w30", "m": 0, "q": 0.2, "tail": "high"} | ALL | 18/8/27/0 | +3486/-2334 | 29/37/13 | 1.47 | 0.62 | +242 | 0.09 | 0.04 / 1.00 | 52,24 / 44,35 | +0 | True |
+| qgate | {"feat": "dA", "m": 0, "q": 0.3, "tail": "high"} | ALL | 15/1/23/0 | +3995/-2240 | 28/35/15 | 1.25 | 0.67 | +327 | 0.24 | 0.06 / 1.00 | 26,22 / 20,42 | -28410 | True |
 
-Cells that cut drawdown by giving up mean (gate on, d mean <= 0): 315; cheapest rate ($ weekly mean per $1k L6M maxDD removed), top 8:
+Cells that cut drawdown by giving up mean (gate on, d mean <= 0): 328; cheapest rate ($ weekly mean per $1k L6M maxDD removed), top 8:
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| regime | {"cond": "RTY_leads_against_60", "m": 0} | K7 | 0/-2/5/5 | -1124/-1586 | -5/0/0 | 0.89 | 0.95 | -12943 | 0.17 | 0.47 / 1.00 | 23,-3 / 13,1 | +0 | True |
-| regime | {"cond": "RTY_disagree_60", "m": 0} | P7 | 0/13/19/33 | -971/-733 | -5/15/30 | 1.04 | 1.05 | -11180 | 0.05 | 0.20 / 1.00 | 9,13 / 17,13 | +0 | True |
-| regime | {"cond": "RTY_leads_against_15", "m": 0.5} | P7 | 0/12/11/11 | -960/-944 | -4/8/7 | 1.03 | 0.93 | -11062 | 0.09 | 0.58 / 1.00 | 29,14 / 30,8 | +0 | True |
-| regime | {"cond": "RTY_lags_60", "m": 0} | M7 | 0/4/3/3 | -638/-421 | -2/0/1 | 1.04 | 1.05 | -10209 | 0.06 | 0.52 / 1.00 | 4,12 / 3,8 | +0 | True |
-| regime | {"cond": "RTY_lags_15", "m": 0} | M7 | 0/-1/11/8 | -597/+73 | -2/9/6 | 1.06 | 1.02 | -6881 | 0.06 | 0.13 / 1.00 | 1,16 / 3,16 | +0 | True |
-| regime | {"cond": "RTY_leads_against_60", "m": 0.5} | K7 | 0/-3/2/13 | -421/-300 | -2/1/11 | 0.97 | 1.04 | -4847 | 0.03 | 0.04 / 1.00 | 6,-1 / 5,-0 | +0 | True |
-| slot48 | {"m": 0.5, "slot": 6} | P7 | 0/2/3/7 | -417/+21 | -2/1/5 | 1.00 | 1.06 | -3694 | 0.01 | 0.47 / 1.00 | -4,4 / -1,4 | +1025 | True |
-| regime | {"cond": "RTY_disagree_60", "m": 0.5} | P7 | 0/12/10/16 | -236/-394 | -1/9/15 | 1.09 | 1.05 | -2720 | 0.04 | 0.17 / 1.00 | 5,7 / 8,7 | +0 | True |
+| regime | {"cond": "RTY_disagree_60", "m": 0} | P7 | 0/20/19/39 | -971/-666 | -5/15/36 | 1.04 | 1.05 | -11180 | 0.05 | 0.17 / 1.00 | 9,13 / 17,13 | +0 | True |
+| regime | {"cond": "RTY_leads_against_15", "m": 0.5} | P7 | 0/12/11/12 | -960/-935 | -4/8/8 | 1.03 | 0.93 | -11062 | 0.09 | 0.56 / 1.00 | 29,14 / 30,8 | +0 | True |
+| regime | {"cond": "RTY_lags_60", "m": 0} | M7 | 0/4/3/3 | -638/-421 | -2/0/1 | 1.04 | 1.05 | -10209 | 0.06 | 0.54 / 1.00 | 4,12 / 3,8 | +0 | True |
+| regime | {"cond": "RTY_lags_15", "m": 0.5} | ALL | 0/10/25/10 | -695/-1215 | -3/23/8 | 1.21 | 1.01 | -8005 | 0.09 | 0.08 / 1.00 | 30,25 / 28,31 | +0 | True |
+| regime | {"cond": "RTY_lags_15", "m": 0} | M7 | 0/-1/11/7 | -597/+73 | -2/9/5 | 1.06 | 1.02 | -6881 | 0.06 | 0.14 / 1.00 | 1,16 / 3,16 | +0 | True |
+| regime | {"cond": "RTY_leads_against_60", "m": 0.5} | K7 | 0/-3/2/12 | -421/-300 | -2/1/10 | 0.97 | 1.04 | -4847 | 0.03 | 0.05 / 1.00 | 6,-1 / 5,-0 | +0 | True |
+| slot48 | {"m": 0.5, "slot": 6} | P7 | 0/2/3/6 | -417/+21 | -2/1/4 | 1.00 | 1.06 | -3694 | 0.01 | 0.49 / 1.00 | -4,4 / -1,4 | +1025 | True |
+| regime | {"cond": "RTY_disagree_60", "m": 0.5} | P7 | 0/14/10/14 | -236/-360 | -1/9/14 | 1.09 | 1.05 | -2720 | 0.04 | 0.18 / 1.00 | 5,7 / 8,7 | +0 | True |
 
 ## 6. Per-book breakdown: best gated down-only cell acting on one book only (scope = book; stack effect), by SEL
 
-**K7** (220 gated cells)
+**K7** (214 gated cells)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| regime | {"cond": "prior_trend_day", "m": 0} | K7 | 5/13/7/21 | +211/-981 | 6/8/22 | 1.06 | 1.04 | +52 | 0.11 | 0.08 / 1.00 | 0,3 / 4,2 | +5090 | True |
-| dow | {"dow": 2, "m": 0} | K7 | 3/5/4/7 | +939/-326 | 7/8/10 | 1.10 | 1.00 | +398 | 0.07 | 0.06 / 1.00 | 7,2 / 8,2 | -7620 | True |
-| regime | {"cond": "prior_dir_with", "m": 0} | K7 | 3/-5/7/22 | -664/-1165 | -0/5/20 | 0.88 | 1.03 | -333 | 0.17 | 0.13 / 1.00 | 12,4 / 6,4 | -5885 | True |
+| regime | {"cond": "prior_trend_day", "m": 0} | K7 | 5/14/7/19 | -29/-963 | 5/7/19 | 1.06 | 1.04 | -7 | 0.11 | 0.12 / 1.00 | 0,3 / 4,2 | +5090 | True |
+| regime | {"cond": "prior_close_high", "m": 0} | K7 | 7/0/2/15 | -54/-1203 | 7/2/15 | 0.95 | 1.03 | -10 | 0.09 | 0.09 / 1.00 | 5,-4 / 3,-4 | +0 | True |
+| dow | {"dow": 2, "m": 0} | K7 | 3/5/4/7 | +699/-297 | 6/7/10 | 1.10 | 1.00 | +296 | 0.07 | 0.08 / 1.00 | 7,2 / 8,2 | -7620 | True |
 
-**P7** (224 gated cells)
+**P7** (228 gated cells)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| regime | {"cond": "atr_rel_ge1.3", "m": 0} | P7 | -1/19/40/61 | +2390/-2946 | 8/45/64 | 1.33 | 0.74 | -2958 | 0.12 | 0.09 / 1.00 | 37,5 / 32,37 | -51095 | True |
-| regime | {"cond": "atr_rel_ge1.6", "m": 0} | P7 | 22/27/36/49 | +524/-2592 | 23/37/50 | 1.40 | 0.75 | +30 | 0.09 | 0.02 / 1.00 | 26,38 / 12,49 | -39590 | True |
-| regime | {"cond": "adx5_ge20", "m": 0} | P7 | 36/7/57/45 | -3607/-5926 | 23/48/34 | 1.22 | 0.42 | -125 | 0.19 | 0.06 / 1.00 | 79,40 / 67,59 | -68150 | True |
+| regime | {"cond": "atr_rel_ge1.6", "m": 0} | P7 | 22/37/36/54 | +3463/-2590 | 32/44/60 | 1.39 | 0.75 | +199 | 0.09 | 0.02 / 1.00 | 26,38 / 12,49 | -39590 | True |
+| regime | {"cond": "atr_rel_ge1.3", "m": 0} | P7 | -1/19/43/64 | +2572/-2874 | 9/48/67 | 1.36 | 0.74 | -3183 | 0.12 | 0.08 / 1.00 | 37,5 / 32,37 | -51095 | True |
+| regime | {"cond": "adx5_ge20", "m": 0} | P7 | 36/28/57/42 | -3511/-5949 | 23/48/30 | 1.22 | 0.42 | -122 | 0.19 | 0.12 / 1.00 | 79,40 / 67,59 | -68150 | True |
 
-**M7** (401 gated cells)
+**M7** (398 gated cells)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | qgate | {"feat": "dip15", "m": 0, "q": 0.5, "tail": "high"} | M7 | 17/10/16/0 | +1759/-203 | 22/21/6 | 1.31 | 0.87 | +129 | 0.09 | 0.01 / 1.00 | 4,10 / 13,12 | +390 | True |
 | l2_confirm_count_PROXY | {"k": 2, "m": 0} | M7 | 15/5/20/-3 | +842/-382 | 18/22/0 | 1.30 | 0.91 | +70 | 0.09 | 0.01 / 1.00 | 11,23 / 14,20 | +0 | True |
-| regime | {"cond": "atr_rel_ge1.3", "m": 0} | M7 | -1/13/8/13 | +1090/+32 | 4/13/17 | 1.22 | 1.01 | -1770 | 0.12 | 0.04 / 1.00 | -4,17 / 5,18 | -8350 | True |
+| qgate | {"feat": "f_ahead_rel_base", "m": 0, "q": 0.3, "tail": "low"} | M7 | 6/6/17/0 | +774/-308 | 9/20/3 | 1.20 | 0.99 | +155 | 0.05 | 0.03 / 1.00 | 13,14 / 15,20 | +0 | True |
 
-**U7** (159 gated cells)
+**U7** (169 gated cells)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | qgate | {"feat": "f_er20_5m", "m": 0, "q": 0.5, "tail": "low"} | U7 | 17/-5/3/0 | +924/-171 | 20/7/4 | 1.21 | 0.90 | +70 | 0.03 | 0.02 / 1.00 | 16,5 / 10,3 | +0 | True |
-| regime | {"cond": "adx5_le20", "m": 0} | U7 | 11/11/10/3 | +499/+319 | 13/12/5 | 1.02 | 0.97 | +58 | 0.02 | 0.07 / 1.00 | 0,-4 / -1,10 | +3890 | True |
-| regime | {"cond": "RTY_lags_15", "m": 0} | U7 | 0/5/2/26 | -76/-177 | -0/1/26 | 1.01 | 1.06 | -879 | 0.01 | 0.02 / 1.00 | 8,5 / 7,8 | +0 | True |
+| regime | {"cond": "adx5_le20", "m": 0} | U7 | 11/11/10/3 | +307/+297 | 12/11/4 | 1.02 | 0.97 | +36 | 0.02 | 0.07 / 1.00 | 0,2 / -1,10 | +3890 | True |
+| lot_table_cell | {"book": "U7", "live_q": 4, "q": 0, "sess": 1} | U7 | 14/0/13/-1 | +15/-232 | 14/13/-1 | 0.98 | 0.95 | +1 | 0.03 | 1.00(degenerate) / 1.00 | 3,17 / -1,14 | +4160 | True |
 
-**A7** (57 gated cells)
+**A7** (59 gated cells)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| regime | {"cond": "prior_dir_with", "m": 0} | A7 | 5/0/1/1 | +559/-259 | 7/3/3 | 1.02 | 1.02 | +139 | 0.03 | 0.01 / 0.99 | 4,2 / 3,3 | +2425 | True |
-| dow | {"dow": 2, "m": 0} | A7 | 2/1/1/-1 | +570/-70 | 5/3/2 | 1.06 | 1.04 | +339 | 0.01 | 0.02 / 1.00 | 2,3 / 3,3 | +1360 | True |
-| regime | {"cond": "atr_rel_ge1.6", "m": 0} | A7 | -2/-1/0/2 | +499/-104 | 1/3/4 | 1.00 | 1.04 | -416 | 0.01 | 0.10 / 1.00 | -1,1 / -1,1 | +795 | True |
+| regime | {"cond": "prior_dir_with", "m": 0} | A7 | 5/0/1/1 | +559/-246 | 7/3/3 | 1.02 | 1.02 | +139 | 0.03 | 0.01 / 1.00 | 4,2 / 3,3 | +2425 | True |
+| dow | {"dow": 2, "m": 0} | A7 | 2/1/1/-1 | +570/-58 | 5/3/2 | 1.06 | 1.04 | +339 | 0.01 | 0.03 / 1.00 | 2,3 / 3,3 | +1360 | True |
+| qgate | {"feat": "twap_slope_sg", "m": 0, "q": 0.1, "tail": "low"} | A7 | 2/0/0/0 | +506/-111 | 4/2/2 | 1.06 | 1.05 | +285 | 0.00 | 0.04 / 1.00 | 1,0 / -0,0 | +670 | True |
 
-**H7** (114 gated cells)
+**H7** (121 gated cells)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| regime | {"cond": "prior_close_low", "m": 0} | H7 | 3/0/-1/13 | -130/-317 | 2/-1/13 | 0.95 | 1.05 | -56 | 0.01 | 0.02 / 1.00 | -1,-1 / -1,-1 | +0 | True |
-| regime | {"cond": "adx5_ge40", "m": 0} | H7 | 0/1/-1/8 | +102/-180 | 0/-0/9 | 0.96 | 1.07 | n/a | 0.00 | 0.05 / 1.00 | -1,-1 / 2,-1 | +0 | True |
-| regime | {"cond": "RTY_disagree_60", "m": 0} | H7 | 0/2/1/0 | +493/-496 | 2/3/3 | 1.07 | 1.05 | +5678 | 0.01 | 0.04 / 1.00 | 3,1 / 3,1 | +0 | True |
+| regime | {"cond": "prior_close_low", "m": 0} | H7 | 3/0/-1/12 | -130/-317 | 2/-1/11 | 0.95 | 1.05 | -56 | 0.01 | 0.02 / 1.00 | -1,-1 / -1,-1 | +0 | True |
+| regime | {"cond": "adx5_ge40", "m": 0} | H7 | 0/1/-1/8 | +102/-180 | 0/-0/8 | 0.96 | 1.07 | n/a | 0.00 | 0.06 / 1.00 | -1,-1 / 2,-1 | +0 | True |
+| regime | {"cond": "RTY_disagree_60", "m": 0} | H7 | 0/2/1/0 | +493/-496 | 2/3/2 | 1.07 | 1.05 | +5678 | 0.01 | 0.04 / 1.00 | 3,1 / 3,1 | +0 | True |
 
-**O7** (89 gated cells)
+**O7** (88 gated cells)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | regime | {"cond": "RTY_disagree_60", "m": 0} | O7 | 0/-2/1/6 | +278/-364 | 1/2/7 | 1.03 | 1.07 | n/a | 0.01 | 0.01 / 1.00 | 0,1 / 1,1 | +0 | True |
 | regime | {"cond": "adx5_ge35", "m": 0} | O7 | 0/0/1/2 | +161/-218 | 1/2/3 | 1.00 | 1.07 | n/a | 0.01 | 0.06 / 1.00 | -0,2 / 0,2 | +695 | True |
-| qgate | {"feat": "twap_slope_sg", "m": 0, "q": 0.3, "tail": "low"} | O7 | 0/-1/1/0 | +365/-6 | 2/2/2 | 1.01 | 1.08 | n/a | 0.00 | 0.08 / 1.00 | 1,1 / 2,1 | +0 | True |
+| qgate | {"feat": "twap_slope_sg", "m": 0, "q": 0.3, "tail": "low"} | O7 | 0/-1/1/0 | +337/-6 | 1/2/1 | 1.01 | 1.08 | n/a | 0.00 | 0.06 / 1.00 | 1,1 / 2,1 | +0 | True |
 
 ## 7. Finalists (<= 12): down-only, tolerant gate, w20 not worse, p own <= .10; one per technique x scope; controls-ok cells first (NOCUT and UNIF cut > 0 on L6M and PRE), then the rest by SEL with the failing ones labelled in the last list below. NONE has p fam <= .10; none is a CANDIDATE; EXACT engine re-run pending (needs the lots-override hook).
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| dow | {"dow": 2, "m": 0} | ALL | 51/27/4/35 | +1171/-2509 | 54/8/39 | 0.88 | 0.56 | +29 | 0.20 | 0.01 / 1.00 | 55,31 / 39,24 | -28160 | True |
-| regime | {"cond": "prior_trend_day", "m": 0} | ALL | 6/-38/41/58 | -1383/-127 | -1/36/55 | 0.80 | 0.90 | -296 | 0.33 | 0.02 / 1.00 | 30,42 / 52,48 | -16660 | True |
-| dow | {"dow": 2, "m": 0} | P7 | 32/12/11/32 | +427/-1255 | 33/12/34 | 0.99 | 0.69 | +17 | 0.05 | 0.02 / 1.00 | 41,26 / 26,16 | -9060 | True |
-| qgate | {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} | ALL | 18/23/38/0 | -214/-2022 | 17/37/-1 | 1.00 | 0.81 | -15 | 0.11 | 0.07 / 1.00 | 28,10 / 27,33 | -30428 | True |
-| P7_lot_table_joint | {"q_asia": 4, "q_london": 4, "q_nyam": 4} | P7 | 28/30/30/39 | -3956/-1837 | 12/14/25 | 0.94 | 0.70 | -174 | 0.23 | 0.02 / 1.00 | 51,28 / 36,23 | -34489 | True |
-| l2_confirm_count_PROXY | {"k": 2, "m": 0.5} | ALL | 28/30/19/27 | -3264/-2378 | 15/6/14 | 0.87 | 0.75 | -147 | 0.19 | 0.08 / 1.00 | 25,28 / 6,34 | +0 | True |
-| zone_near_behind | {"dist": 30, "m": 0.5} | P7 | 1/2/0/18 | +52/-772 | 1/0/19 | 0.96 | 1.07 | +68 | 0.03 | 0.04 / 1.00 | 6,1 / 0,1 | +0 | True |
-| qgate | {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} | O7 | 0/-1/1/0 | +199/+0 | 1/1/1 | 1.00 | 1.08 | n/a | 0.00 | 0.10 / 1.00 | 1,1 / 2,1 | +0 | True |
-| regime | {"cond": "prior_close_high", "m": 0} | K7 | 7/0/2/16 | -54/-1219 | 7/2/16 | 0.95 | 1.03 | -10 | 0.09 | 0.09 / 1.00 | 5,-4 / 3,-4 | +0 | True |
-| l2_confirm_count_PROXY | {"k": 2, "m": 0} | U7 | 5/-1/14/8 | -344/-1453 | 4/13/7 | 0.97 | 1.01 | -85 | 0.04 | 0.03 / 1.00 | 2,19 / -6,19 | +0 | True |
-| qgate | {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} | U7 | 4/-0/13/0 | +393/-545 | 6/14/2 | 0.93 | 1.01 | +111 | 0.02 | 0.08 / 1.00 | 2,11 / -6,18 | +0 | True |
-| regime | {"cond": "prior_close_low", "m": 0} | H7 | 3/0/-1/13 | -130/-317 | 2/-1/13 | 0.95 | 1.05 | -56 | 0.01 | 0.02 / 1.00 | -1,-1 / -1,-1 | +0 | True |
+| dow | {"dow": 2, "m": 0} | ALL | 51/27/0/41 | +1120/-2427 | 54/5/44 | 0.88 | 0.56 | +27 | 0.20 | 0.01 / 1.00 | 55,31 / 39,24 | -28160 | True |
+| regime | {"cond": "prior_trend_day", "m": 0} | ALL | 6/-17/41/62 | -1433/-90 | -1/36/59 | 0.80 | 0.90 | -307 | 0.33 | 0.02 / 1.00 | 30,42 / 52,48 | -16660 | True |
+| dow | {"dow": 2, "m": 0} | P7 | 32/12/8/36 | +715/-1215 | 34/11/38 | 0.99 | 0.69 | +28 | 0.05 | 0.02 / 1.00 | 41,26 / 26,16 | -9060 | True |
+| qgate | {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} | ALL | 18/23/38/0 | -214/-2021 | 17/37/-1 | 1.00 | 0.81 | -15 | 0.11 | 0.07 / 1.00 | 28,13 / 27,36 | -30428 | True |
+| P7_lot_table_joint | {"q_asia": 4, "q_london": 4, "q_nyam": 4} | P7 | 28/41/30/38 | -3956/-1797 | 12/14/24 | 0.94 | 0.70 | -174 | 0.23 | 0.02 / 1.00 | 51,28 / 36,23 | -34489 | True |
+| l2_confirm_count_PROXY | {"k": 2, "m": 0.5} | ALL | 28/40/19/31 | -3168/-2337 | 16/6/19 | 0.87 | 0.75 | -143 | 0.19 | 0.06 / 1.00 | 25,31 / 6,34 | +0 | True |
+| zone_near_behind | {"dist": 30, "m": 0.5} | P7 | 1/2/0/17 | +52/-790 | 1/0/17 | 0.96 | 1.07 | +68 | 0.03 | 0.06 / 1.00 | 6,1 / 0,1 | +0 | True |
+| qgate | {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} | O7 | 0/-1/1/0 | +199/+0 | 1/1/1 | 1.00 | 1.08 | n/a | 0.00 | 0.09 / 1.00 | 1,1 / 2,1 | +0 | True |
+| l2_confirm_count_PROXY | {"k": 2, "m": 0} | U7 | 5/13/14/9 | -344/-1453 | 4/13/8 | 0.97 | 1.01 | -85 | 0.04 | 0.03 / 1.00 | 2,19 / -6,19 | +0 | True |
+| regime | {"cond": "prior_close_high", "m": 0} | K7 | 7/0/2/15 | -54/-1203 | 7/2/15 | 0.95 | 1.03 | -10 | 0.09 | 0.09 / 1.00 | 5,-4 / 3,-4 | +0 | True |
+| qgate | {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} | U7 | 4/-0/13/0 | +393/-545 | 6/14/2 | 0.93 | 1.01 | +111 | 0.02 | 0.09 / 1.00 | 2,14 / -6,18 | +0 | True |
+| regime | {"cond": "prior_close_low", "m": 0} | H7 | 3/0/-1/12 | -130/-317 | 2/-1/11 | 0.95 | 1.05 | -56 | 0.01 | 0.02 / 1.00 | -1,-1 / -1,-1 | +0 | True |
 
-Control-base requirement: dow {"dow": 2, "m": 0} ALL = controls ok; regime {"cond": "prior_trend_day", "m": 0} ALL = controls ok; dow {"dow": 2, "m": 0} P7 = controls ok; qgate {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} ALL = controls ok; P7_lot_table_joint {"q_asia": 4, "q_london": 4, "q_nyam": 4} P7 = controls ok; l2_confirm_count_PROXY {"k": 2, "m": 0.5} ALL = controls ok; zone_near_behind {"dist": 30, "m": 0.5} P7 = controls ok; qgate {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} O7 = controls ok; regime {"cond": "prior_close_high", "m": 0} K7 = FAILS control-base requirement (display only); l2_confirm_count_PROXY {"k": 2, "m": 0} U7 = FAILS control-base requirement (display only); qgate {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} U7 = FAILS control-base requirement (display only); regime {"cond": "prior_close_low", "m": 0} H7 = FAILS control-base requirement (display only)
+Control-base requirement: dow {"dow": 2, "m": 0} ALL = controls ok; regime {"cond": "prior_trend_day", "m": 0} ALL = controls ok; dow {"dow": 2, "m": 0} P7 = controls ok; qgate {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} ALL = controls ok; P7_lot_table_joint {"q_asia": 4, "q_london": 4, "q_nyam": 4} P7 = controls ok; l2_confirm_count_PROXY {"k": 2, "m": 0.5} ALL = controls ok; zone_near_behind {"dist": 30, "m": 0.5} P7 = controls ok; qgate {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} O7 = controls ok; l2_confirm_count_PROXY {"k": 2, "m": 0} U7 = FAILS control-base requirement (display only); regime {"cond": "prior_close_high", "m": 0} K7 = FAILS control-base requirement (display only); qgate {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} U7 = FAILS control-base requirement (display only); regime {"cond": "prior_close_low", "m": 0} H7 = FAILS control-base requirement (display only)
+
+ZONE-RAW flag: finalists using zone-line features (dA, dB, nA, nB) inherit the raw replica 1-min frame, which has contract-roll jumps (about 1% of days affected, not re-derived): qgate {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} ALL
 
 Finalist live definitions (all multiplicative on live lots, round, min 1): see params; P7 table cells = SessionLots P7 asia,london,nyam; regime/slot/gate cells = multiplier x0 / x0.5 on the stated trades.
 
-sz_core placebo (same lot-change values on random trades, same book x session; p of the cut): dow {"dow": 2, "m": 0} ALL: L6M 0.01 PRE 0.74; regime {"cond": "prior_trend_day", "m": 0} ALL: L6M 0.50 PRE 0.19; dow {"dow": 2, "m": 0} P7: L6M 0.04 PRE 0.55; qgate {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} ALL: L6M 0.07 PRE 0.01; P7_lot_table_joint {"q_asia": 4, "q_london": 4, "q_nyam": 4} P7: L6M 0.18 PRE 0.37; l2_confirm_count_PROXY {"k": 2, "m": 0.5} ALL: L6M 0.07 PRE 0.37; zone_near_behind {"dist": 30, "m": 0.5} P7: L6M 0.35 PRE 0.70; qgate {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} O7: L6M 0.75 PRE 0.16; regime {"cond": "prior_close_high", "m": 0} K7: L6M 0.04 PRE 0.65; l2_confirm_count_PROXY {"k": 2, "m": 0} U7: L6M 0.23 PRE 0.29; qgate {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} U7: L6M 0.15 PRE 0.05; regime {"cond": "prior_close_low", "m": 0} H7: L6M 0.01 PRE 0.27
+sz_core placebo (same lot-change values on random trades, same book x session; p of the cut): dow {"dow": 2, "m": 0} ALL: L6M 0.01 PRE 0.80; regime {"cond": "prior_trend_day", "m": 0} ALL: L6M 0.50 PRE 0.19; dow {"dow": 2, "m": 0} P7: L6M 0.04 PRE 0.62; qgate {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} ALL: L6M 0.07 PRE 0.01; P7_lot_table_joint {"q_asia": 4, "q_london": 4, "q_nyam": 4} P7: L6M 0.18 PRE 0.37; l2_confirm_count_PROXY {"k": 2, "m": 0.5} ALL: L6M 0.07 PRE 0.37; zone_near_behind {"dist": 30, "m": 0.5} P7: L6M 0.35 PRE 0.70; qgate {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} O7: L6M 0.75 PRE 0.16; l2_confirm_count_PROXY {"k": 2, "m": 0} U7: L6M 0.23 PRE 0.29; regime {"cond": "prior_close_high", "m": 0} K7: L6M 0.04 PRE 0.65; qgate {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} U7: L6M 0.15 PRE 0.05; regime {"cond": "prior_close_low", "m": 0} H7: L6M 0.01 PRE 0.27
 
-## 8. Scorer difference (fgh complete-weeks scorer vs sz_core): maxDD cut on L6M, PRE, X' identical to 0.1 point for the top-20 cells; the equal-mean columns differ because L6M means differ (carry-week and window edge). Gate counts COMB: sz_core 2281, fgh scorer 2202.
+## 8. Scorer difference (fgh complete-weeks scorer vs sz_core): maxDD cut on L6M, PRE, X' identical to 0.1 point for the top-20 cells; the equal-mean columns differ because L6M means differ (carry-week and window edge). Gate counts COMB: sz_core 2306, fgh scorer 2215.
 
 ## 9. What is expressible in D7 v1.5 today vs v1.6 (finalists and leads)
 v1.5 fields used: per-book session lot table (six values asia,london,pre,nyam,nypm,close, lots 0-8), A06 slot half-hour list (x0.5 only, books K7 H7 P7 U7 today), B02 quiet-overnight halving (K7 P7 H7), TrendEr ladder (Q1-A: ER(20,5m)<0.30 -> x0.5), zone HALF. Rounding is rnd(lots x mult), min 1, in the order session -> slot/B02 -> ER -> zone.
@@ -281,8 +285,8 @@ v1.5 fields used: per-book session lot table (six values asia,london,pre,nyam,ny
 | l2_confirm_count_PROXY {"k": 2, "m": 0.5} ALL | v1.6 code (needs l2_confirm_count_PROXY feature / calendar at the entry second) |
 | zone_near_behind {"dist": 30, "m": 0.5} P7 | v1.6 code (needs zone_near_behind feature / calendar at the entry second) |
 | qgate {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} O7 | v1.6 code (needs qgate feature / calendar at the entry second) |
-| regime {"cond": "prior_close_high", "m": 0} K7 | v1.6 code (needs regime feature / calendar at the entry second) |
 | l2_confirm_count_PROXY {"k": 2, "m": 0} U7 | v1.6 code (needs l2_confirm_count_PROXY feature / calendar at the entry second) |
+| regime {"cond": "prior_close_high", "m": 0} K7 | v1.6 code (needs regime feature / calendar at the entry second) |
 | qgate {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} U7 | v1.6 code (needs qgate feature / calendar at the entry second) |
 | regime {"cond": "prior_close_low", "m": 0} H7 | v1.6 code (needs regime feature / calendar at the entry second) |
 | P7_lot_table_joint {"q_asia": 7, "q_london": 4, "q_nyam": 4} P7 | v1.5 panel TODAY: P7 SessionLots = "7,4,0,4,0,0" (asia,london,pre,nyam,nypm,close; live "7,7,0,7,0,0") |
@@ -291,7 +295,7 @@ v1.5 fields used: per-book session lot table (six values asia,london,pre,nyam,ny
 | P7_lot_table_joint {"q_asia": 7, "q_london": 4, "q_nyam": 3} P7 | v1.5 panel TODAY: P7 SessionLots = "7,4,0,3,0,0" (asia,london,pre,nyam,nypm,close; live "7,7,0,7,0,0") |
 
 Effective P7 lots through the chain (session table -> slot/B02 halving -> Q1-A ladder; zone HALF not shown): table 7 -> 7 normal, 4 in slots 0330/0500/0830 or quiet B02 days; ER<0.30 halves again (7 -> 4 -> 2 in a half slot). Table 4: 4 -> 2 in half slots, 2 on ER<0.30 (round half up, min 1). So the 7/4/4 table means asia 7, london 4, nyam 4 before the halvings.
-Session lot-table re-fit (greedy, in-sample, COMB down-only): {"K7|1": 0, "K7|4": 0, "M7|1": 1, "M7|3": 0, "P7|1": 5, "P7|3": 0, "U7|1": 2} (book|session index 0 asia 1 london 2 pre 3 nyam 4 nypm 5 close: lots); NOT recommended (walk-forward at equal mean -0.7%). Only the P7 cells walk forward positive; each is a per-session value in the P7 session string, expressible today without code.
+Session lot-table re-fit (greedy, in-sample, COMB down-only): {"K7|0": 1, "K7|1": 0, "K7|4": 0, "M7|1": 1, "M7|3": 0, "P7|0": 6, "P7|1": 3, "P7|3": 0, "U7|1": 0} (book|session index 0 asia 1 london 2 pre 3 nyam 4 nypm 5 close: lots); NOT recommended (walk-forward at equal mean -0.7%). Only the P7 cells walk forward positive; each is a per-session value in the P7 session string, expressible today without code.
 
 ## 10. OLD base vs new (S1b-COMB) - my cells re-scored on OLD-BASE (replica ITER14 HOLD, timer bar close, per-print old cut), same grid, same scorer. FIRST-ORDER SCREEN ONLY on both.
 
@@ -302,23 +306,23 @@ Base-change proof (Q1-A lots row = the zero-rule row for sizing): trades | cut e
 
 | cell | cut L6M/PRE/X' NEW | cut L6M/PRE/X' OLD | delta L6M/PRE | SEL new / old | rank new / old (of 6786) | identical to the dollar? |
 |--|--|--|--|--|--|--|
-| dow {"dow": 2, "m": 0} ALL | 51/4/35 | 49/1/-36 | +2/+2 | 33.6 / 14.7 | 5 / 232 | no |
-| regime {"cond": "prior_trend_day", "m": 0} ALL | 6/41/58 | 25/39/-29 | -19/+2 | 30.4 / 11.8 | 11 / 388 | no |
-| dow {"dow": 2, "m": 0} P7 | 32/11/32 | 42/-5/-1 | -11/+15 | 26.2 / 17.3 | 22 / 148 | no |
-| qgate {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} ALL | 18/38/0 | 22/30/0 | -5/+7 | 17.7 / 4.7 | 104 / 1170 | no |
-| P7_lot_table_joint {"q_asia": 4, "q_london": 4, "q_nyam": 4} P7 | 28/30/39 | 41/40/19 | -12/-10 | 17.0 / 20.1 | 115 / 92 | no |
-| l2_confirm_count_PROXY {"k": 2, "m": 0.5} ALL | 28/19/27 | 3/10/30 | +25/+9 | 11.8 / -2.8 | 266 / 4715 | no |
-| zone_near_behind {"dist": 30, "m": 0.5} P7 | 1/0/18 | 1/1/18 | +0/-1 | 6.7 / 10.1 | 623 / 512 | no |
-| qgate {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} O7 | 0/1/0 | 0/-0/0 | -0/+1 | 1.0 / 0.7 | 1900 / 2687 | no |
-| regime {"cond": "prior_close_high", "m": 0} K7 | 7/2/16 | 7/-8/9 | -0/+10 | 7.9 / 3.6 | 486 / 1417 | no |
-| l2_confirm_count_PROXY {"k": 2, "m": 0} U7 | 5/14/8 | -6/-10/18 | +11/+24 | 7.8 / -5.5 | 497 / 5324 | no |
-| qgate {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} U7 | 4/13/0 | 1/0/0 | +4/+13 | 7.4 / -2.4 | 536 / 4580 | no |
-| regime {"cond": "prior_close_low", "m": 0} H7 | 3/-1/13 | 1/-1/5 | +2/+1 | 4.6 / 0.1 | 845 / 3136 | no |
-| P7_lot_table_joint {"q_asia": 7, "q_london": 4, "q_nyam": 4} P7 | 27/32/26 | 21/37/-0 | +6/-5 | 29.4 / 17.0 | 14 / 151 | no |
-| P7_lot_table_joint {"q_asia": 7, "q_london": 3, "q_nyam": 4} P7 | 26/36/25 | 22/41/1 | +4/-6 | 27.9 / 15.9 | 17 / 176 | no |
-| P7_lot_table_joint {"q_asia": 6, "q_london": 4, "q_nyam": 4} P7 | 29/33/36 | 32/41/8 | -3/-9 | 27.3 / 25.3 | 19 / 36 | no |
-| P7_lot_table_joint {"q_asia": 7, "q_london": 4, "q_nyam": 3} P7 | 28/32/26 | 17/37/-8 | +10/-5 | 27.2 / 9.6 | 20 / 555 | no |
-| P7_lot_table_joint {"q_asia": 6, "q_london": 3, "q_nyam": 4} P7 | 28/36/35 | 33/45/8 | -5/-9 | 25.8 / 24.4 | 24 / 46 | no |
-| P7_lot_table_joint {"q_asia": 7, "q_london": 3, "q_nyam": 3} P7 | 26/36/24 | 19/41/-6 | +8/-5 | 25.5 / 8.2 | 29 / 673 | no |
+| dow {"dow": 2, "m": 0} ALL | 51/0/41 | 49/1/-36 | +2/-1 | 34.3 / 14.7 | 4 / 246 | no |
+| regime {"cond": "prior_trend_day", "m": 0} ALL | 6/41/62 | 25/39/-29 | -19/+2 | 31.6 / 11.8 | 10 / 398 | no |
+| dow {"dow": 2, "m": 0} P7 | 32/8/36 | 42/-5/-1 | -11/+13 | 27.4 / 17.3 | 16 / 145 | no |
+| qgate {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} ALL | 18/38/0 | 22/30/0 | -5/+7 | 17.7 / 4.7 | 112 / 1178 | no |
+| P7_lot_table_joint {"q_asia": 4, "q_london": 4, "q_nyam": 4} P7 | 28/30/38 | 41/40/19 | -12/-10 | 16.6 / 20.1 | 133 / 92 | no |
+| l2_confirm_count_PROXY {"k": 2, "m": 0.5} ALL | 28/19/31 | 3/10/30 | +25/+9 | 13.7 / -2.8 | 192 / 4701 | no |
+| zone_near_behind {"dist": 30, "m": 0.5} P7 | 1/0/17 | 1/1/18 | +0/-1 | 6.1 / 10.1 | 684 / 525 | no |
+| qgate {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} O7 | 0/1/0 | 0/-0/0 | -0/+1 | 1.0 / 0.7 | 1903 / 2695 | no |
+| l2_confirm_count_PROXY {"k": 2, "m": 0} U7 | 5/14/9 | -6/-10/18 | +11/+24 | 8.1 / -5.5 | 471 / 5314 | no |
+| regime {"cond": "prior_close_high", "m": 0} K7 | 7/2/15 | 7/-8/9 | -0/+10 | 7.8 / 3.6 | 517 / 1422 | no |
+| qgate {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} U7 | 4/13/0 | 1/0/0 | +4/+13 | 7.4 / -2.4 | 555 / 4571 | no |
+| regime {"cond": "prior_close_low", "m": 0} H7 | 3/-1/12 | 1/-1/5 | +2/+1 | 4.2 / 0.1 | 927 / 3139 | no |
+| P7_lot_table_joint {"q_asia": 7, "q_london": 4, "q_nyam": 4} P7 | 27/32/24 | 21/37/-0 | +6/-5 | 28.6 / 17.0 | 14 / 150 | no |
+| P7_lot_table_joint {"q_asia": 7, "q_london": 3, "q_nyam": 4} P7 | 26/36/22 | 22/41/1 | +4/-6 | 27.1 / 15.9 | 19 / 179 | no |
+| P7_lot_table_joint {"q_asia": 6, "q_london": 4, "q_nyam": 4} P7 | 29/33/34 | 32/41/8 | -3/-9 | 26.5 / 25.3 | 20 / 41 | no |
+| P7_lot_table_joint {"q_asia": 7, "q_london": 4, "q_nyam": 3} P7 | 28/32/23 | 17/37/-8 | +10/-5 | 26.4 / 9.6 | 21 / 577 | no |
+| P7_lot_table_joint {"q_asia": 6, "q_london": 3, "q_nyam": 4} P7 | 28/36/33 | 33/45/8 | -5/-9 | 25.1 / 24.4 | 30 / 50 | no |
+| P7_lot_table_joint {"q_asia": 7, "q_london": 3, "q_nyam": 3} P7 | 26/36/22 | 19/41/-6 | +8/-5 | 24.7 / 8.2 | 33 / 698 | no |
 
 Spearman rank correlation of SEL, new vs old base, all 6766 common cells: 0.65. Cells with L6M and PRE maxDD identical to the dollar on both bases: 0 (these six are degenerate count-feature gates, nA20/nA40/nB20 >= quantile 0, that switch off EVERY trade: zero P&L on both bases, cut 100%; not a base-independence defect; cells with > 90% of trades changed are now excluded from the tables).
