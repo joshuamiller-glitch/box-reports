@@ -1,0 +1,98 @@
+# EXH_G - family G (combinations + learned shapes), EX-LG - FIRST PAGE (learned tree, pooled scope)
+Status 04:05Z. Entry match PRE-PROOF. null_ver 2. Learned tree (LightGBM single tree, <=8 leaves, 265 EX-FEAT features + book index, monotone + on pulled-own-side, 3 seeds, purged monthly walk-forward from 202310, thr lattice 0..3200 USD, objectives DD / DDT (tail-loss weighted, DDT = one vote per trade) and MEAN / MEANT). 240 cells (pooled scope) registered as G_TREE_WF/G/loss, agent EX-LG; per-book trees and the pair/vote crosses are running next (addenda in DECISIONS.md). Causality: a fire at second k uses only the feature row k (EX-FEAT noise-after-s0 test passed, their report); labels use the future but only in training rows of months before the test month with a 7-day purge; the kernel only reads F[0,0] and the path up to k+1 (market exit at k+1 is the contract). Live week: month 202611 is a walk-forward test month (trained on earlier months only), so every cell's live delta is out of sample. Honest-null note: the family null is the whole ledger; no G cell is ENTER.
+
+## Headline
+- No learned tree beats never-cut on L6M mean: every cell with a large maxDD reduction pays for it in mean (best L6M dmean among cells with nfire>=20 is below zero for DD/DDT/MEAN; MEANT only small positives with <100 fires).
+- The drawdown-first winners cut the L6M stack maxDD from 117.6k to 67-71k (DDT/DD, thr 0-400) but they fire 7-14k times, lose 9-22k per week vs never-cut in L6M, and raise PRE maxDD (178k -> 256-441k): fail the PRE gate; labelled no.
+- Row-weighted training (DD, MEAN) over-cuts (cut-everything-armed learned from the long-armed stop trades); one-vote-per-trade weighting (DDT, MEANT) is better (median L6M dmean -9.9k / -1.3k vs -22.0k / -3.3k), still negative.
+- Plain sentence stack: the learned tree lowers drawdown most with DDT seed 2 thr 50 (L6M maxDD 67.1k vs 117.6k); it costs 14.4k/week against never-cut in L6M, raises PRE maxDD to 266k and does not hold out of sample: it is cutting almost every armed trade, a clock/regime rule, not a shape.
+- Seeds disagree a lot (e.g. DDT seed 1 vs 2 at the same thr): the tree shape is not stable, which is itself the finding of "no signal beyond regime/clock" despite the richer feature set.
+
+Cells registered by EX-LG: 9240 rows (120 cells).
+### Stack (all books), top by L6M maxDD reduction, nfire>=20
+| tech | obj | scope | seed | thr$ | nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G_TREE_WF | DDT | pooled | 2 | 0 | 12722 | -3887/11482/4746/6255 | 67138 / 117593 | 265968 / 177634 | -68433 / 89449 | -14959 | 0.14 | -1399 | no |
+| G_TREE_WF | DDT | pooled | 2 | 50 | 12352 | -5602/10878/4344/6823 | 67138 / 117593 | 265968 / 177634 | -71595 / 89449 | -14391 | 0.08 | -1399 | no |
+| G_TREE_WF | DDT | pooled | 2 | 25 | 12533 | -5602/10878/4344/6823 | 67138 / 117593 | 265968 / 177634 | -71595 / 89449 | -14391 | 0.09 | -1399 | no |
+| G_TREE_WF | DDT | pooled | 2 | 10 | 12657 | -3887/11482/4746/6255 | 67138 / 117593 | 265968 / 177634 | -68433 / 89449 | -14959 | 0.11 | -1399 | no |
+| G_TREE_WF | DDT | pooled | 1 | 400 | 7615 | -8966/12612/4053/12194 | 67832 / 117593 | 256058 / 177634 | -25558 / 89449 | -9019 | 0.05 | -16265 | no |
+| G_TREE_WF | DD | pooled | 0 | 10 | 14367 | -15040/1914/-439/-759 | 70702 / 117593 | 441226 / 177634 | -200199 / 89449 | -21973 | 0.75 | -10278 | no |
+| G_TREE_WF | DD | pooled | 0 | 25 | 14356 | -15040/1914/-439/-759 | 70702 / 117593 | 441226 / 177634 | -200199 / 89449 | -21973 | 0.75 | -10278 | no |
+| G_TREE_WF | DD | pooled | 0 | 0 | 14367 | -15040/1914/-439/-759 | 70702 / 117593 | 441226 / 177634 | -200199 / 89449 | -21973 | 0.58 | -10278 | no |
+| G_TREE_WF | DD | pooled | 0 | 100 | 14327 | -13178/1914/-439/-759 | 70702 / 117593 | 390125 / 177634 | -192752 / 89449 | -21973 | 0.65 | -10278 | no |
+| G_TREE_WF | DD | pooled | 0 | 50 | 14356 | -15040/1914/-439/-759 | 70702 / 117593 | 441226 / 177634 | -200199 / 89449 | -21973 | 0.63 | -10278 | no |
+| G_TREE_WF | DDT | pooled | 1 | 800 | 3193 | 4341/11172/3093/13695 | 71318 / 117593 | 146232 / 177634 | -768 / 89449 | -7518 | 0.02 | -18389 | no |
+| G_TREE_WF | DD | pooled | 2 | 1600 | 3129 | -617/11266/3944/7058 | 74675 / 117593 | 179069 / 177634 | -84953 / 89449 | -14156 | 0.05 | -8803 | no |
+
+### Book K7 (all sessions)
+| tech | obj | scope | seed | thr$ | nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G_TREE_WF | DDT | pooled | 0 | 50 | 2279 | 3281/4744/3075/1740 | 14245 / 26983 | 35357 / 30403 | -8532 / -15009 | -977 | 0.11 | 0 | no |
+| G_TREE_WF | MEAN | pooled | 0 | 25 | 1937 | 5290/5553/3358/2269 | 14730 / 26983 | 24739 / 30403 | -31221 / -15009 | -263 | 0.43 | 0 | no |
+| G_TREE_WF | MEAN | pooled | 0 | 0 | 2375 | 5290/5553/3358/2269 | 14730 / 26983 | 24739 / 30403 | -31221 / -15009 | -263 | 0.49 | 0 | no |
+| G_TREE_WF | MEAN | pooled | 0 | 10 | 2287 | 5290/5553/3358/2269 | 14730 / 26983 | 24739 / 30403 | -31221 / -15009 | -263 | 0.45 | 0 | no |
+| G_TREE_WF | DD | pooled | 1 | 0 | 4912 | 1441/2294/891/97 | 16843 / 26983 | 58355 / 30403 | -32579 / -15009 | -2435 | 0.66 | 3298 | no |
+| G_TREE_WF | DD | pooled | 0 | 25 | 4909 | 1441/2294/891/97 | 16843 / 26983 | 56617 / 30403 | -32579 / -15009 | -2435 | 0.63 | 3298 | no |
+
+### Book P7 (all sessions)
+| tech | obj | scope | seed | thr$ | nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G_TREE_WF | DDT | pooled | 2 | 400 | 2444 | -5757/8239/5197/11687 | 66117 / 126710 | 176576 / 131881 | 19076 / -2075 | -1428 | 0.02 | -4786 | no |
+| G_TREE_WF | DDT | pooled | 2 | 800 | 2179 | -5757/8239/5197/11687 | 66117 / 126710 | 142954 / 131881 | 19076 / -2075 | -1428 | 0.02 | -4786 | no |
+| G_TREE_WF | MEANT | pooled | 2 | 0 | 2166 | -4171/5006/2264/8294 | 66455 / 126710 | 274342 / 131881 | -500 / -2075 | -4821 | 0.05 | 2954 | no |
+| G_TREE_WF | MEANT | pooled | 2 | 10 | 1951 | -4171/5006/2264/8294 | 66455 / 126710 | 136895 / 131881 | -500 / -2075 | -4821 | 0.02 | 2954 | no |
+| G_TREE_WF | DD | pooled | 0 | 10 | 3457 | -9550/2080/2470/-512 | 72095 / 126710 | 352925 / 131881 | -145323 / -2075 | -13627 | 0.32 | -13281 | no |
+| G_TREE_WF | DD | pooled | 0 | 0 | 3457 | -9550/2080/2470/-512 | 72095 / 126710 | 352925 / 131881 | -145323 / -2075 | -13627 | 0.35 | -13281 | no |
+
+### Book M7 (all sessions)
+| tech | obj | scope | seed | thr$ | nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G_TREE_WF | MEAN | pooled | 0 | 0 | 1462 | -1180/1710/-695/190 | 26410 / 43318 | 61660 / 48984 | -46656 / -68462 | -305 | 0.11 | 0 | no |
+| G_TREE_WF | MEAN | pooled | 0 | 25 | 1157 | -1180/1710/-695/190 | 26410 / 43318 | 46445 / 48984 | -46656 / -68462 | -305 | 0.08 | 0 | no |
+| G_TREE_WF | MEAN | pooled | 0 | 10 | 1374 | -1180/1710/-695/190 | 26410 / 43318 | 61660 / 48984 | -46656 / -68462 | -305 | 0.12 | 0 | no |
+| G_TREE_WF | DDT | pooled | 2 | 200 | 2427 | -1190/-336/-923/-780 | 30792 / 43318 | 67970 / 48984 | -47335 / -68462 | -277 | 0.86 | 0 | no |
+| G_TREE_WF | DDT | pooled | 1 | 0 | 2763 | -685/120/-683/-481 | 31716 / 43318 | 92129 / 48984 | -44789 / -68462 | 22 | 0.75 | 0 | no |
+| G_TREE_WF | DDT | pooled | 1 | 50 | 2763 | -685/120/-683/-481 | 31716 / 43318 | 93119 / 48984 | -44789 / -68462 | 22 | 0.77 | 0 | no |
+
+### Book U7 (all sessions)
+| tech | obj | scope | seed | thr$ | nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G_TREE_WF | DD | pooled | 0 | 200 | 659 | -2814/1517/801/3328 | 12509 / 21436 | 24179 / 42883 | 8975 / 45 | 170 | 0.34 | 0 | CANDIDATE-DD |
+| G_TREE_WF | DDT | pooled | 1 | 200 | 920 | -3349/492/-792/1736 | 13398 / 21436 | 39273 / 42883 | -34486 / 45 | -1200 | 0.14 | 0 | no |
+| G_TREE_WF | DDT | pooled | 1 | 400 | 779 | -3349/908/212/2146 | 13398 / 21436 | 35758 / 42883 | -22184 / 45 | -592 | 0.17 | 0 | no |
+| G_TREE_WF | DD | pooled | 0 | 100 | 984 | -1407/741/688/1416 | 14445 / 21436 | 30591 / 42883 | -38189 / 45 | -1322 | 0.49 | 0 | no |
+| G_TREE_WF | DD | pooled | 0 | 10 | 988 | -1407/741/688/1416 | 14445 / 21436 | 29190 / 42883 | -38189 / 45 | -1322 | 0.51 | 0 | no |
+| G_TREE_WF | DD | pooled | 0 | 25 | 988 | -1407/741/688/1416 | 14445 / 21436 | 29190 / 42883 | -38189 / 45 | -1322 | 0.57 | 0 | no |
+
+### Book A7 (all sessions)
+| tech | obj | scope | seed | thr$ | nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G_TREE_WF | MEAN | pooled | 2 | 200 | 241 | 1268/894/738/1116 | 7410 / 12456 | 9027 / 6208 | -9321 / -17012 | 93 | 0.05 | 0 | LEAD |
+| G_TREE_WF | MEAN | pooled | 2 | 400 | 190 | 1268/894/738/1116 | 7410 / 12456 | 6183 / 6208 | -9321 / -17012 | 93 | 0.06 | 0 | CANDIDATE-DD |
+| G_TREE_WF | MEAN | pooled | 2 | 0 | 486 | 49/872/801/297 | 7831 / 12456 | 10154 / 6208 | -11882 / -17012 | -190 | 0.25 | 129 | no |
+| G_TREE_WF | MEAN | pooled | 2 | 100 | 366 | 481/347/774/1037 | 7831 / 12456 | 7731 / 6208 | -13863 / -17012 | -177 | 0.31 | 0 | no |
+| G_TREE_WF | MEAN | pooled | 2 | 25 | 469 | -830/91/281/47 | 7831 / 12456 | 7731 / 6208 | -18125 / -17012 | -440 | 0.09 | 129 | no |
+| G_TREE_WF | MEAN | pooled | 2 | 10 | 476 | -830/91/281/47 | 7831 / 12456 | 7731 / 6208 | -18125 / -17012 | -440 | 0.20 | 129 | no |
+
+### Book H7 (all sessions)
+| tech | obj | scope | seed | thr$ | nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G_TREE_WF | MEANT | pooled | 2 | 50 | 302 | 1600/2205/983/2707 | 11815 / 16682 | 14791 / 20667 | -3156 / -36140 | 940 | 0.05 | 0 | CANDIDATE-DD |
+| G_TREE_WF | MEAN | pooled | 0 | 0 | 458 | -58/283/-932/723 | 12041 / 16682 | 14410 / 20667 | -18629 / -36140 | -20 | 0.09 | 0 | no |
+| G_TREE_WF | MEAN | pooled | 0 | 10 | 445 | -58/283/-932/723 | 12041 / 16682 | 14410 / 20667 | -18629 / -36140 | -20 | 0.08 | 0 | no |
+| G_TREE_WF | MEAN | pooled | 0 | 50 | 292 | -58/283/-932/2428 | 12041 / 16682 | 12562 / 20667 | -1944 / -36140 | 587 | 0.02 | 0 | CANDIDATE-DD |
+| G_TREE_WF | MEAN | pooled | 0 | 25 | 379 | -58/283/-932/723 | 12041 / 16682 | 14410 / 20667 | -18629 / -36140 | -20 | 0.06 | 0 | no |
+| G_TREE_WF | MEAN | pooled | 1 | 100 | 380 | 1110/1694/246/1923 | 13867 / 16682 | 11901 / 20667 | -23560 / -36140 | 314 | 0.37 | 0 | CANDIDATE-DD |
+
+### Book O7 (all sessions)
+| tech | obj | scope | seed | thr$ | nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G_TREE_WF | DD | pooled | 2 | 25 | 372 | -216/199/101/224 | 3695 / 7489 | 9523 / 5097 | -4075 / -9447 | 47 | 0.06 | 0 | LEAD |
+| G_TREE_WF | DDT | pooled | 1 | 0 | 345 | -261/-160/-1/175 | 3695 / 7489 | 9681 / 5097 | -5193 / -9447 | -2 | 0.06 | 0 | no |
+| G_TREE_WF | DDT | pooled | 1 | 100 | 324 | -261/-160/-1/143 | 3695 / 7489 | 7173 / 5097 | -5869 / -9447 | -34 | 0.06 | 0 | no |
+| G_TREE_WF | DD | pooled | 1 | 400 | 372 | -216/199/101/224 | 3695 / 7489 | 9523 / 5097 | -4075 / -9447 | 47 | 0.06 | 0 | LEAD |
+| G_TREE_WF | DD | pooled | 0 | 100 | 372 | -216/199/101/224 | 3695 / 7489 | 9523 / 5097 | -4075 / -9447 | 47 | 0.09 | 0 | LEAD |
+| G_TREE_WF | DD | pooled | 1 | 0 | 372 | -216/199/101/224 | 3695 / 7489 | 9523 / 5097 | -4075 / -9447 | 47 | 0.08 | 0 | LEAD |
+
+Rows are sorted by the drawdown key (L6M maxDD reduction vs never-cut); the label column is the ledger rule. Means are weekly USD at live lots, carrying week dropped.

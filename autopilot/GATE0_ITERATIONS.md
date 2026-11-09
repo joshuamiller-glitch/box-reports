@@ -247,3 +247,10 @@
 2026-11-09 EX-CORE: placebo leak audit, v2 causal placebos, leak_test, rescore of ledger nulls started (EXH_API section 9)
 2026-11-09T03:21Z EX-LBC: 96,768 B/C cells screened (63 features, 44 months of panels, full history); noise-after-k causality test on the lattice kernel 2,729,879 fires <= k0 checked, 0 changed; ledgering ~280 top cells with null_ver 2 (re-run after exh_metrics v2)
 2026-11-09 EX-CORE: ledger incremental consolidate, family_p fix, WY streaming + wk6, live-week label gate, STATUS block (EXH_API section 10)
+2026-11-09 EX-CORE: stage2 tr_off fix, kernel_leak_test, WY degenerate-cell fix + audit (EXH_API section 11)
+2026-11-09T04:04:04Z EX-PHI: corrected re-score (nfire fix, live=, null_ver2) running; EXH_HI.md bannered VOID until 893 cells; 2-h report loop hi_loop.sh
+2026-11-09 EX-CORE: PHI quarantine + score_cell guard in; page shows QUARANTINE / PENDING for H/I
+2026-11-09 EX-CORE: WF vectorised (65 s for ~4.5k cells/book-side pool), page refreshed
+2026-11-09T04:17Z EX-CORE: universe U2 built (19161 trades), U1 kept; refs_U2.npz; universe_ver plumbing; page banner (EXH_API section 12)
+2026-11-09 EX-LDEF: Stage1 903 D/F cells + 348 E cells scored (agent EX-LDEF); Stage 2 sets ldef_perbook, ldef_uniform started 04:20Z (ATR rules excluded from S2)
+2026-11-09 EX-CORE: stale.py clean on all 44 months vs U2 (EX-FEAT confirmed)

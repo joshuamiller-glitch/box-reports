@@ -1,196 +1,194 @@
 # EXH_A - loss family A (pulled-support), EX-LA
-Stage 1 first-order on the state universe (entry match PRE-PROOF); 400 cells registered so far of 16,160 pre-registered (DECISIONS 03:05Z); loss action = market cut at k+1 mid -+ 0.80. Kernel causality (noise after k0 in mid/high/low/panels, k0 = 300/900/2500, 400 random cells x 2 months): 100,114 fires checked, 0 changed. Null version 2 placebos (B=64, 3 modes). Pick key: L6M maxDD, worst-20, Ulcer, Calmar; subject to L6M mean >= never-cut, nfire >= 20, PRE maxDD <= 1.05 x never. Mean = USD/week of the technique (carrying week dropped); 'w/wo' = with rule / never-cut. Table rows are per book, sessions pooled; session-level bests follow.
+Stage 1 first-order on the state universe (entry match PRE-PROOF); 28 U2-universe cells registered so far of 16,160 pre-registered (DECISIONS 03:05Z; plus 7060 U1 screening cells in the ledger, screen-only per EX-CORE); loss action = market cut at k+1 mid -+ 0.80. Kernel causality (noise after k0 in mid/high/low/panels, k0 = 300/900/2500, 400 random cells x 2 months): 100,114 fires checked, 0 changed. Null version 2 placebos (B=64, 3 modes). Pick key: L6M maxDD, worst-20, Ulcer, Calmar; subject to L6M mean >= never-cut, nfire >= 20, PRE maxDD <= 1.05 x never. Mean = USD/week of the technique (carrying week dropped); 'w/wo' = with rule / never-cut. Table rows are per book, sessions pooled; session-level bests follow.
 
 ## ALL
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +39469 +29180 +19186 +26303 +18431 +7253 +13258 +2924 | 79634/117593 | 126171/177634 | 203476/89449 | 5962 | 0.02 | CANDIDATE-DD |
-| REFERENCE S1b-COMB (live row) | +11588 +31519 +16583 +23991 +18462 +14853 +12266 +1591 | 82873 | 144002 | 190560 | | | |
-| REFERENCE never-cut (hold to bracket) | +39825 +33914 +15825 +21214 +17689 +4056 +12902 +1841 | 117593 | 177634 | 89449 | | | |
-| A:fixed10 x60 W15 p5 mae- e001/own/net | +10264 +31127 +17183 +27673 +17905 +10339 +14267 +1951 | 59272/117593 | 102778/177634 | 267292/89449 | 3128 | 0.02 | CANDIDATE-DD |
-| A:fixed10 x60 W15 p1 mae- e001/own/net | +11408 +32665 +19305 +26856 +13947 +4867 +12353 +568 | 59512/117593 | 86886/177634 | 225661/89449 | 5326 | 0.72 | CANDIDATE-DD |
-| A:fixed10 x60 W15 p2 mae- e001/own/net | +10553 +30270 +16930 +27742 +16285 +6507 +13671 +2893 | 73907/117593 | 86615/177634 | 268739/89449 | 4597 | 0.18 | CANDIDATE-DD |
-| A:fixed10 x2 W2 p10 maeW2 e001/own/net | +29338 +28782 +15029 +25090 +14711 +8920 +13837 +2322 | 78305/117593 | 102632/177634 | 214278/89449 | 3288 | 0.28 | CANDIDATE-DD |
-| A:fixed10 x4 W2 p10 mae- e001/own/net | +27648 +28342 +13597 +25551 +12914 -484 +13570 +1839 | 79716/117593 | 128374/177634 | 206057/89449 | 3901 | 0.03 | CANDIDATE-DD |
-| A:fixed10 x30 W10 p10 mae- e001/own/net | +12389 +23940 +13302 +21230 +12096 +7914 +10463 +1530 | 79961/117593 | 93104/177634 | 162243/89449 | 6636 | 0.62 | CANDIDATE-DD |
-| lowest L6M maxDD ignoring gates: A:fixed10 x2 W2 p5 maeW2 e001/own/net | +1463 +9536 +5441 +11668 +3187 +2037 +1440 +2564 | 37045/117593 | 245342/177634 | 30349/89449 | 13065 | 0.02 | no |
-| highest L6M mean: A:fixed10 x60 W15 p3 mae- e001/own/net | +11424 +30823 +17097 +28400 +17146 +8509 +13768 +2103 | 80303/117593 | 96753/177634 | 258304/89449 | 4031 | 0.72 | CANDIDATE-DD |
+| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +37916 +28654 +17604 +25737 +18327 +8780 +14188 +2924 | 76357/121381 | 99204/152455 | 185983/77580 | 5979 | 0.02 | -223 | CANDIDATE-DD |
+| REFERENCE S1b-COMB (live row) | +11588 +31519 +16583 +23991 +18462 +14646 +12266 +1591 | 82873 | 144002 | 190560 | | | | |
+| REFERENCE never-cut (hold to bracket) | +35468 +31777 +14768 +20752 +17509 +5247 +14153 +1841 | 121381 | 152455 | 77580 | | | | |
+| E:fixed25 x20 W10 p10 mae- e001/own/net | +16987 +17694 +8606 +21082 +11435 +13401 +11237 +2127 | 69154/121381 | 85777/152455 | 178188/77580 | 9492 | 0.14 | -43362 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| E:v115 x30 W10 p2 maeW10 e001/own/net | +11320 +28712 +17270 +22648 +10459 +1208 +9648 +1988 | 72291/121381 | 72427/152455 | 185951/77580 | 6955 | 0.20 | -88777 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| A:fixed15 x2 W2 p10 maeW2 e001/own/net | +28174 +28782 +15363 +24103 +13251 +7119 +15776 +2226 | 80982/121381 | 92281/152455 | 173036/77580 | 2847 | 0.49 | -8916 | CANDIDATE-DD |
+| E:fixed30 x10 W2 p2 mae- e001/own/net | +21123 +29913 +15102 +26051 +15528 +14275 +12862 +3330 | 84401/121381 | 90959/152455 | 220513/77580 | 8671 | 0.05 | -20267 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| A:fixed10 x120 W30 p1 mae- e001/own/net | +14209 +35925 +20796 +30598 +17974 +9821 +16257 +1206 | 92925/121381 | 124953/152455 | 253314/77580 | 1975 | 0.08 | -44788 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| A:fixed10 x120 W30 p3 mae- e001/own/net | +26235 +32667 +16363 +26892 +16533 +7483 +17419 +1107 | 93286/121381 | 115680/152455 | 205589/77580 | 1534 | 0.09 | -47572 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| lowest L6M maxDD ignoring gates: A:fixed15 x2 W2 p10 mae- e001/own/net | +2458 +15965 +9512 +17423 +6186 +3058 +7366 +1786 | 67471/121381 | 83735/152455 | 120655/77580 | 10620 | 0.26 | -63456 | no |
+| highest L6M mean: A:fixed10 x120 W30 p1 mae- e001/own/net | +14209 +35925 +20796 +30598 +17974 +9821 +16257 +1206 | 92925/121381 | 124953/152455 | 253314/77580 | 1975 | 0.08 | -44788 | CANDIDATE-DD FAILS-LIVE-WEEK |
 
-ALL loss: the technique that lowers drawdown most (gated) is A:fixed10 x60 W15 p5 mae- e001/own/net; L6M maxDD 59272 vs never-cut 117593, mean +6459/wk vs never-cut (+3682 vs the live row), PRE maxDD 102778 vs 177634; label CANDIDATE-DD (placebo p 0.02; family p and walk-forward are assigned at Stage 2 / by the lead's page).
+ALL loss: the technique that lowers drawdown most (gated) is E:fixed25 x20 W10 p10 mae- e001/own/net; L6M maxDD 69154 vs never-cut 121381, mean +330/wk vs never-cut (-2909 vs the live row), PRE maxDD 85777 vs 152455; label CANDIDATE-DD FAILS-LIVE-WEEK (placebo p 0.14; family p and walk-forward are assigned at Stage 2 / by the lead's page).
 
 ## K7
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +7165 +8515 +4423 +4358 +2300 +1582 +2688 -118 | 31538/26983 | 18315/30403 | 14535/-15009 | 1549 | 0.89 | no |
-| REFERENCE S1b-COMB (live row) | +7873 +8450 +3436 +3530 +2241 +3740 +2740 -164 | 41849 | 23073 | -20339 | | | |
-| REFERENCE never-cut (hold to bracket) | +4971 +8571 +3128 +3575 +1824 +651 +2656 -80 | 26983 | 30403 | -15009 | | | |
-| A:fixed10 x2 W15 p20 maeW15 e001/own/net | +7659 +7214 +4649 +2947 +687 -2024 +502 -136 | 13228/26983 | 28794/30403 | 8599/-15009 | 4905 | 0.12 | CANDIDATE-DD |
-| A:fixed10 x30 W15 p20 mae- e001/own/net | +9268 +8274 +4657 +4013 +2443 +395 +2033 +408 | 16410/26983 | 22969/30403 | 24129/-15009 | 2824 | 0.06 | CANDIDATE-DD |
-| A:fixed10 x30 W10 p2 maeW10 e001/own/net | +4737 +5529 +2529 +2820 +1756 +4108 +1648 +568 | 18052/26983 | 18888/30403 | 7014/-15009 | 3243 | 0.58 | CANDIDATE-DD |
-| A:fixed10 x15 W10 p20 maeW10 e001/own/net | +8555 +8927 +4974 +3903 +1702 +764 +2068 +358 | 18502/26983 | 17185/30403 | 20719/-15009 | 2375 | 0.14 | CANDIDATE-DD |
-| A:fixed10 x2 W1 p10 mae- e001/own/net | +5221 +7353 +2963 +3703 +2044 +437 +2792 +340 | 20709/26983 | 23861/30403 | -6528/-15009 | 112 | 0.35 | CANDIDATE-DD |
-| A:fixed10 x2 W5 p20 maeW5 e001/own/net | +9151 +8137 +4937 +4511 +2498 +1783 +1632 +745 | 21679/26983 | 27938/30403 | 16231/-15009 | 3133 | 0.34 | CANDIDATE-DD |
-| lowest L6M maxDD ignoring gates: A:fixed10 x15 W10 p20 mae- e001/own/net | +8022 +6172 +3829 +3262 +1527 +1349 +1367 +791 | 9715/26983 | 30737/30403 | 16479/-15009 | 3740 | 0.03 | no |
-| highest L6M mean: A:fixed10 x2 W5 p20 maeW5 e001/own/net | +9151 +8137 +4937 +4511 +2498 +1783 +1632 +745 | 21679/26983 | 27938/30403 | 16231/-15009 | 3133 | 0.34 | CANDIDATE-DD |
+| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +6191 +8088 +4244 +4764 +2744 +2632 +2742 -118 | 24942/20902 | 18425/26707 | 24931/1791 | 1555 | 0.89 | +1500 | no |
+| REFERENCE S1b-COMB (live row) | +7873 +8450 +3436 +3530 +2241 +3740 +2616 -164 | 41849 | 23073 | -20339 | | | | |
+| REFERENCE never-cut (hold to bracket) | +4952 +8594 +3229 +4245 +2469 +1911 +2803 -80 | 20902 | 26707 | 1791 | | | | |
+| A:fixed15 x2 W1 p10 mae- e001/own/net | +4837 +7177 +3007 +4288 +2730 +3231 +3016 +340 | 17926/20902 | 25574/26707 | 12300/1791 | 83 | 0.58 | +0 | CANDIDATE-DD |
+| A:fixed10 x120 W15 p1 mae- e001/own/net | +4952 +6514 +3132 +4031 +2583 +1211 +3067 +340 | 19467/20902 | 26707/26707 | 3227/1791 | 33 | 0.58 | +0 | CANDIDATE-DD |
+| A:fixed10 x120 W15 p3 mae- e001/own/net | +4952 +6514 +3132 +4031 +2601 +1331 +3089 +340 | 19529/20902 | 26707/26707 | 3164/1791 | 31 | 0.57 | +0 | CANDIDATE-DD |
+| A:fixed10 x120 W15 p2 mae- e001/own/net | +4952 +6514 +3132 +4031 +2607 +1332 +3065 +340 | 19557/20902 | 26707/26707 | 3137/1791 | 32 | 0.65 | +0 | CANDIDATE-DD |
+| A:fixed10 x120 W10 p5 mae- e001/own/net | +4952 +6514 +3132 +4031 +2551 +1346 +3109 +340 | 20158/20902 | 26707/26707 | 2535/1791 | 24 | 0.26 | +0 | CANDIDATE-DD |
+| A:fixed10 x120 W15 p5 mae- e001/own/net | +4952 +6514 +3132 +4031 +2585 +1325 +3109 +340 | 20226/20902 | 26707/26707 | 2468/1791 | 28 | 1.00 | +0 | CANDIDATE-DD |
+| lowest L6M maxDD ignoring gates: A:fixed15 x2 W1 p5 maeW1 e001/own/net | +5172 +5017 +1624 +3357 +2389 +2561 +2972 +358 | 17304/20902 | 28155/26707 | -1228/1791 | 460 | 0.23 | +851 | no |
+| highest L6M mean: E:fixed30 x10 W2 p2 mae- e001/own/net | +9177 +5797 +2436 +3823 +2322 +2358 +2011 +542 | 40659/20902 | 13140/26707 | 7961/1791 | 3018 | 0.91 | +2769 | no |
 
-K7 loss: the technique that lowers drawdown most (gated) is A:fixed10 x2 W15 p20 maeW15 e001/own/net; L6M maxDD 13228 vs never-cut 26983, mean +229/wk vs never-cut (+281 vs the live row), PRE maxDD 28794 vs 30403; label CANDIDATE-DD (placebo p 0.12; family p and walk-forward are assigned at Stage 2 / by the lead's page).
+K7 loss: the technique that lowers drawdown most (gated) is A:fixed15 x2 W1 p10 mae- e001/own/net; L6M maxDD 17926 vs never-cut 20902, mean +121/wk vs never-cut (+524 vs the live row), PRE maxDD 25574 vs 26707; label CANDIDATE-DD (placebo p 0.58; family p and walk-forward are assigned at Stage 2 / by the lead's page).
 
 Entry-session bests (same gates):
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| session 0: A:fixed10 x30 W15 p10 maeW15 e001/own/net | +3640 +2710 +1828 +2786 +1245 +133 +1055 -110 | 9798/23228 | 14229/14762 | 4097/-10100 | 1123 | 0.09 | CANDIDATE-DD |
-| session 1: A:fixed10 x15 W10 p20 maeW10 e001/own/net | +188 +2268 +889 +1226 +212 -527 +327 -38 | 4187/13569 | 15417/16206 | -3094/-31166 | 674 | 0.11 | CANDIDATE-DD |
-| session 3: A:fixed10 x60 W15 p5 mae- e001/own/net | +1699 +46 -59 +254 -245 -164 +657 +146 | 12406/20697 | 6082/6231 | -22763/-31954 | 273 | 0.51 | CANDIDATE-DD |
-| session 4: A:fixed10 x30 W10 p5 maeW10 e001/own/net | +899 +898 +208 +979 +695 +1196 +131 +46 | 4820/6324 | 37175/39576 | -3859/-7330 | 352 | 0.25 | CANDIDATE-DD |
+| session 0: A:fixed15 x2 W1 p10 mae- e001/own/net | +4841 +5309 +3105 +3184 +2458 +2832 +1384 -71 | 22336/22104 | 13344/13344 | -1911/-6120 | 35 | 0.74 |  | no |
+| session 1: A:fixed15 x2 W2 p10 maeW2 e001/own/net | -702 +1753 +1016 +805 +151 -292 +297 +104 | 8892/14952 | 17994/18704 | -19142/-27616 | 306 | 0.62 |  | CANDIDATE-DD |
+| session 3: A:fixed10 x120 W30 p1 mae- e001/own/net | +1472 -884 -947 -19 -484 -363 +824 +178 | 18728/23185 | 6208/6211 | -23883/-34239 | 179 | 0.80 |  | CANDIDATE-DD |
+| session 4: E:v245 x10 W2 p3 mae- e001/own/net | +895 +1148 +435 +1299 +1002 +603 +427 +110 | 5940/6369 | 24762/33629 | -1205/-7470 | 213 | 0.46 |  | CANDIDATE-DD |
 
 ## P7
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +30126 +17289 +13131 +14676 +8392 +6830 +7666 +1299 | 86290/126710 | 87158/131881 | 18943/-2075 | 1893 | 0.14 | CANDIDATE-DD |
-| REFERENCE S1b-COMB (live row) | +5700 +18966 +12054 +14708 +10485 +8283 +6746 +168 | 96490 | 106914 | 53844 | | | |
-| REFERENCE never-cut (hold to bracket) | +37881 +24670 +15389 +13115 +8875 +5910 +8271 +183 | 126710 | 131881 | -2075 | | | |
-| A:fixed10 x30 W10 p5 mae- e001/own/net | +10517 +13843 +9570 +14292 +4602 -9148 +2989 +724 | 35309/126710 | 123788/131881 | 110517/-2075 | 2420 | 0.02 | CANDIDATE-DD |
-| A:fixed10 x4 W2 p5 maeW2 e001/own/net | +2114 +13794 +8953 +15238 +8445 +2866 +3857 -335 | 47043/126710 | 99873/131881 | 101804/-2075 | 1763 | 0.05 | CANDIDATE-DD |
-| A:fixed10 x15 W5 p5 maeW5 e001/own/net | +3010 +12976 +9787 +14309 +5639 -1508 +2497 -87 | 54063/126710 | 115301/131881 | 108301/-2075 | 1880 | 0.18 | CANDIDATE-DD |
-| A:fixed10 x15 W10 p20 maeW10 e001/own/net | +5576 +10586 +9496 +13950 +4685 -6151 +4090 -375 | 54132/126710 | 98616/131881 | 114902/-2075 | 1710 | 0.03 | CANDIDATE-DD |
-| A:fixed10 x60 W15 p5 mae- e001/own/net | +9837 +25541 +17242 +21142 +13129 +3170 +7352 +351 | 54317/126710 | 93234/131881 | 188083/-2075 | 777 | 0.43 | CANDIDATE-DD |
-| A:fixed10 x2 W2 p10 maeW2 e001/own/net | +21976 +15821 +10499 +15948 +10311 +4794 +7240 +718 | 57606/126710 | 98554/131881 | 114306/-2075 | 852 | 0.03 | CANDIDATE-DD |
-| lowest L6M maxDD ignoring gates: A:fixed10 x2 W3 p10 maeW3 e001/own/net | +713 +7429 +6740 +8597 +1449 -2866 +3361 +274 | 31063/126710 | 84964/131881 | 36802/-2075 | 2748 | 0.02 | no |
-| highest L6M mean: A:fixed10 x60 W15 p3 mae- e001/own/net | +9856 +24395 +16829 +21977 +12792 -1326 +7602 +422 | 70713/126710 | 72575/131881 | 176113/-2075 | 977 | 0.89 | CANDIDATE-DD |
+| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +29847 +17377 +11536 +13711 +8120 +8013 +7729 +1299 | 105456/133887 | 81745/109442 | 8219/-29902 | 1911 | 0.85 | +49 | CANDIDATE-DD |
+| REFERENCE S1b-COMB (live row) | +5700 +18966 +12054 +14708 +10485 +8283 +6746 +168 | 96490 | 106914 | 53844 | | | | |
+| REFERENCE never-cut (hold to bracket) | +33625 +22555 +13873 +11894 +8318 +6680 +8641 +183 | 133887 | 109442 | -29902 | | | | |
+| E:fixed25 x20 W10 p10 mae- e001/own/net | +12754 +8414 +6183 +13460 +7501 +7020 +5458 -407 | 52727/133887 | 80762/109442 | 92651/-29902 | 2320 | 0.02 | -43795 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| E:v115 x30 W10 p2 maeW10 e001/own/net | +9093 +16858 +12503 +14099 +6634 -8133 +3459 -432 | 53875/133887 | 83613/109442 | 86584/-29902 | 2021 | 0.05 | -76155 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| A:fixed15 x2 W2 p10 maeW2 e001/own/net | +24192 +18180 +13019 +15546 +9533 +497 +8256 +575 | 60891/133887 | 89542/109442 | 76832/-29902 | 731 | 0.02 | -8709 | CANDIDATE-DD |
+| A:fixed10 x120 W30 p3 mae- e001/own/net | +21332 +23586 +15012 +17650 +11044 +3624 +9037 -118 | 75318/133887 | 93887/109442 | 111178/-29902 | 390 | 0.42 | -41354 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| A:fixed10 x120 W30 p1 mae- e001/own/net | +10849 +25375 +17213 +20465 +11859 +1546 +8183 -118 | 76921/133887 | 95212/109442 | 141945/-29902 | 491 | 0.88 | -41349 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| A:fixed10 x120 W30 p2 mae- e001/own/net | +14828 +24291 +15443 +18833 +11166 +4663 +9008 -118 | 86527/133887 | 93742/109442 | 140046/-29902 | 437 | 0.95 | -38149 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| lowest L6M maxDD ignoring gates: A:fixed15 x2 W2 p10 mae- e001/own/net | -2423 +5978 +5124 +10804 +4781 +946 +3410 -306 | 48645/133887 | 83877/109442 | 11918/-29902 | 2635 | 0.02 | -58285 | no |
+| highest L6M mean: A:fixed10 x120 W30 p1 mae- e001/own/net | +10849 +25375 +17213 +20465 +11859 +1546 +8183 -118 | 76921/133887 | 95212/109442 | 141945/-29902 | 491 | 0.88 | -41349 | CANDIDATE-DD FAILS-LIVE-WEEK |
 
-P7 loss: the technique that lowers drawdown most (gated) is A:fixed10 x30 W10 p5 mae- e001/own/net; L6M maxDD 35309 vs never-cut 126710, mean +1177/wk vs never-cut (-415 vs the live row), PRE maxDD 123788 vs 131881; label CANDIDATE-DD (placebo p 0.02; family p and walk-forward are assigned at Stage 2 / by the lead's page).
+P7 loss: the technique that lowers drawdown most (gated) is E:fixed25 x20 W10 p10 mae- e001/own/net; L6M maxDD 52727 vs never-cut 133887, mean +1566/wk vs never-cut (-1248 vs the live row), PRE maxDD 80762 vs 109442; label CANDIDATE-DD FAILS-LIVE-WEEK (placebo p 0.02; family p and walk-forward are assigned at Stage 2 / by the lead's page).
 
 Entry-session bests (same gates):
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| session 0: A:fixed10 x4 W2 p5 maeW2 e001/own/net | +4715 +5255 +4451 +12172 +7541 +6148 +4162 -1272 | 27854/106637 | 79450/78845 | 76482/49424 | 771 | 0.02 | CANDIDATE-DD |
-| session 1: A:fixed10 x4 W2 p10 mae- e001/own/net | -354 +8053 +6482 +6806 +2638 -3073 -1379 +116 | 24328/44287 | 139867/160840 | 11323/-16876 | 378 | 0.03 | CANDIDATE-DD |
-| session 3: A:fixed10 x4 W2 p2 mae- e001/own/net | +1480 +1137 +28 +697 -566 -260 -737 +306 | 17730/103128 | 66492/75038 | -41385/-164165 | 934 | 0.02 | CANDIDATE-DD |
+| session 0: A:fixed15 x2 W2 p10 maeW2 e001/own/net | +38158 +25014 +19154 +17405 +10396 +5417 +5856 -1007 | 71011/116210 | 59241/66531 | 50456/8506 | 345 | 0.02 |  | CANDIDATE-DD |
+| session 1: A:fixed10 x120 W30 p2 mae- e001/own/net | -2610 +10620 +5397 +6091 +2467 -1243 -981 -112 | 28394/51796 | 143596/150275 | -6215/-20541 | 150 | 0.02 |  | CANDIDATE-DD |
+| session 3: A:fixed15 x2 W3 p1 maeW3 e001/own/net | +661 +1755 +477 +939 +116 +2684 -817 +595 | 16820/86629 | 77434/77956 | -43159/-147642 | 883 | 0.02 |  | CANDIDATE-DD |
 
 ## M7
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +204 +1607 +440 +201 -229 +2264 -47 +20 | 22726/43318 | 31454/48984 | -32771/-68462 | 1809 | 0.02 | CANDIDATE-DD |
-| REFERENCE S1b-COMB (live row) | +40 +1085 -1230 -1152 -1092 +1825 +373 +49 | 46547 | 25812 | -64633 | | | |
-| REFERENCE never-cut (hold to bracket) | +406 +789 -1400 -503 -167 +782 -222 -6 | 43318 | 48984 | -68462 | | | |
-| E:fixed30 x10 W2 p2 mae- e001/own/net | +204 +1607 +440 +201 -229 +2264 -47 +20 | 22726/43318 | 31454/48984 | -32771/-68462 | 1809 | 0.03 | CANDIDATE-DD |
-| A:fixed10 x2 W5 p20 maeW5 e001/own/net | +830 +1336 +344 +104 -1024 -808 -126 +147 | 23694/43318 | 46152/48984 | -33103/-68462 | 1923 | 0.38 | CANDIDATE-DD |
-| A:fixed10 x60 W30 p20 maeW30 e001/own/net | -46 +1468 -256 +199 -621 +702 -115 -195 | 24283/43318 | 46823/48984 | -37861/-68462 | 1619 | 0.72 | CANDIDATE-DD |
-| A:fixed10 x15 W10 p20 maeW10 e001/own/net | +1499 +1507 +533 -195 -486 +248 -106 +247 | 26832/43318 | 51272/48984 | -36866/-68462 | 1477 | 0.91 | CANDIDATE-DD |
-| A:fixed10 x60 W30 p20 mae- e001/own/net | +549 +428 -388 -292 -648 +875 -453 +472 | 27239/43318 | 45378/48984 | -38931/-68462 | 2004 | 0.89 | CANDIDATE-DD |
-| E:fixed25 x20 W10 p10 mae- e001/own/net | +1302 +1362 -228 +74 -221 +1846 -240 +83 | 28290/43318 | 36516/48984 | -37943/-68462 | 1996 | 0.46 | CANDIDATE-DD |
-| lowest L6M maxDD ignoring gates: E:fixed30 x10 W2 p2 mae- e001/own/net | +204 +1607 +440 +201 -229 +2264 -47 +20 | 22726/43318 | 31454/48984 | -32771/-68462 | 1809 | 0.03 | CANDIDATE-DD |
-| highest L6M mean: A:fixed10 x30 W5 p3 mae- e001/own/net | +2946 +3458 +933 +315 +653 +2354 +636 +119 | 33909/43318 | 39233/48984 | -43490/-68462 | 632 | 0.35 | CANDIDATE-DD |
+| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +180 +1607 +758 +386 +118 +1726 +55 +20 | 21152/44425 | 33312/50321 | -29988/-68299 | 1805 | 0.02 | -2271 | CANDIDATE-DD |
+| REFERENCE S1b-COMB (live row) | +40 +1085 -1230 -1152 -623 +1825 +373 +49 | 46547 | 25812 | -64633 | | | | |
+| REFERENCE never-cut (hold to bracket) | +419 +798 -1098 -540 +12 +32 -93 -6 | 44425 | 50321 | -68299 | | | | |
+| E:fixed30 x10 W2 p2 mae- e001/own/net | +180 +1607 +758 +386 +118 +1726 +55 +20 | 21152/44425 | 33312/50321 | -29988/-68299 | 1805 | 0.02 | -2271 | CANDIDATE-DD |
+| A:fixed15 x2 W1 p5 maeW1 e001/own/net | -249 +1682 -205 -343 -264 +1064 +203 +174 | 33628/44425 | 44053/50321 | -64267/-68299 | 272 | 0.06 | -227 | CANDIDATE-DD |
+| A:fixed15 x2 W2 p10 maeW2 e001/own/net | +255 +1308 -560 -302 -309 +1460 -83 -75 | 34348/44425 | 44417/50321 | -48261/-68299 | 573 | 0.35 | -2449 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| A:fixed10 x120 W30 p3 mae- e001/own/net | +271 +1873 -44 +317 +109 +716 +501 -128 | 40736/44425 | 46206/50321 | -63525/-68299 | 371 | 0.65 | -1310 | CANDIDATE-DD |
+| A:fixed15 x2 W1 p10 mae- e001/own/net | +677 +2697 +206 -241 +13 +1400 +96 +29 | 42292/44425 | 48170/50321 | -63875/-68299 | 41 | 1.00 | +0 | CANDIDATE-DD |
+| A:fixed10 x120 W15 p1 mae- e001/own/net | +419 +3095 -54 +545 +80 +1095 -2 +29 | 43121/44425 | 50321/50321 | -67486/-68299 | 21 | 0.18 | +0 | CANDIDATE-DD |
+| lowest L6M maxDD ignoring gates: E:fixed30 x10 W2 p2 mae- e001/own/net | +180 +1607 +758 +386 +118 +1726 +55 +20 | 21152/44425 | 33312/50321 | -29988/-68299 | 1805 | 0.02 | -2271 | CANDIDATE-DD |
+| highest L6M mean: E:fixed30 x10 W2 p2 mae- e001/own/net | +180 +1607 +758 +386 +118 +1726 +55 +20 | 21152/44425 | 33312/50321 | -29988/-68299 | 1805 | 0.02 | -2271 | CANDIDATE-DD |
 
-M7 loss: the technique that lowers drawdown most (gated) is E:fixed30 x10 W2 p2 mae- e001/own/net; L6M maxDD 22726 vs never-cut 43318, mean +704/wk vs never-cut (+1353 vs the live row), PRE maxDD 31454 vs 48984; label CANDIDATE-DD (placebo p 0.03; family p and walk-forward are assigned at Stage 2 / by the lead's page).
+M7 loss: the technique that lowers drawdown most (gated) is E:fixed30 x10 W2 p2 mae- e001/own/net; L6M maxDD 21152 vs never-cut 44425, mean +927/wk vs never-cut (+1538 vs the live row), PRE maxDD 33312 vs 50321; label CANDIDATE-DD (placebo p 0.02; family p and walk-forward are assigned at Stage 2 / by the lead's page).
 
 Entry-session bests (same gates):
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| session 1: A:fixed10 x60 W30 p20 maeW30 e001/own/net | -761 +781 -399 +19 -419 +774 -433 +327 | 16437/34745 | 61090/70941 | -26221/-61665 | 944 | 0.74 | CANDIDATE-DD |
-| session 3: A:fixed10 x30 W3 p1 mae- e001/own/net | +1248 +1129 +548 +803 +345 -429 +790 -124 | 9848/12246 | 7137/7533 | -10927/-18056 | 114 | 0.03 | CANDIDATE-DD |
+| session 1: E:fixed25 x20 W10 p10 mae- e001/own/net | -236 -135 +399 -292 -302 +546 -653 -39 | 18752/38178 | 55434/69890 | -34081/-64988 | 1216 | 0.14 |  | CANDIDATE-DD |
+| session 3: E:v115 x30 W10 p2 maeW10 e001/own/net | +1557 +1111 +577 +386 +74 +667 +479 -222 | 9491/11667 | 6471/7583 | -10970/-17931 | 554 | 0.18 |  | CANDIDATE-DD |
 
 ## U7
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | -2401 +1479 +1417 +3985 +2390 +2952 +1703 +1219 | 17833/21436 | 41615/42883 | 12374/45 | 115 | 0.09 | CANDIDATE-DD |
-| REFERENCE S1b-COMB (live row) | -3377 +1351 +1976 +3493 +2276 +3779 +1664 +1053 | 16419 | 39155 | 8146 | | | |
-| REFERENCE never-cut (hold to bracket) | -4144 +882 +720 +3025 +1989 +2445 +1629 +1159 | 21436 | 42883 | 45 | | | |
-| A:fixed10 x30 W15 p20 maeW15 e001/own/net | -1830 +2016 +1491 +3183 +1063 +646 +1554 +1406 | 13788/21436 | 41596/42883 | -12098/45 | 288 | 0.05 | CANDIDATE-DD |
-| A:fixed10 x30 W15 p20 mae- e001/own/net | -1150 +3593 +1679 +3326 +1597 -407 +1247 +1292 | 13912/21436 | 44018/42883 | -609/45 | 515 | 0.08 | CANDIDATE-DD |
-| A:fixed10 x4 W2 p5 mae- e001/own/net | -1130 +3378 +1856 +2909 +1589 +237 +307 +1718 | 15045/21436 | 42630/42883 | -7744/45 | 864 | 0.38 | CANDIDATE-DD |
-| A:fixed10 x4 W2 p10 mae- e001/own/net | -2635 +3502 +1842 +3744 +1892 +446 +1511 +1112 | 15175/21436 | 41888/42883 | 17959/45 | 259 | 0.17 | CANDIDATE-DD |
-| A:fixed10 x30 W3 p1 mae- e001/own/net | -1016 +346 +136 +3196 +2079 +1979 +881 +1169 | 15583/21436 | 44184/42883 | 6766/45 | 114 | 0.03 | CANDIDATE-DD |
-| E:v230 x60 W15 p5 mae- e001/own/net | -2401 +1479 +1417 +3985 +2390 +2952 +1703 +1219 | 17833/21436 | 41615/42883 | 12374/45 | 115 | 0.11 | CANDIDATE-DD |
-| lowest L6M maxDD ignoring gates: A:fixed10 x15 W5 p5 maeW5 e001/own/net | -1066 +2364 +1697 +2203 +1785 +1026 +1004 +1521 | 8491/21436 | 56679/42883 | 1282/45 | 462 | 0.02 | no |
-| highest L6M mean: A:fixed10 x2 W1 p5 maeW1 e001/own/net | -1721 +1720 +905 +4664 +2623 +953 +1359 +1390 | 17877/21436 | 51252/42883 | 38687/45 | 104 | 0.37 | LEAD |
+| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | -2443 +1455 +1393 +4054 +2407 +3227 +1467 +1219 | 17958/21561 | 41615/42226 | 11276/120 | 114 | 0.08 | +243 | CANDIDATE-DD |
+| REFERENCE S1b-COMB (live row) | -3377 +1351 +1976 +3493 +2276 +3779 +1290 +1053 | 16419 | 39155 | 8146 | | | | |
+| REFERENCE never-cut (hold to bracket) | -4186 +858 +695 +3115 +2000 +2648 +1381 +1159 | 21561 | 42226 | 120 | | | | |
+| A:fixed10 x120 W30 p3 mae- e001/own/net | -2501 +696 +238 +3246 +1797 +2373 +1424 +1322 | 16340/21561 | 38806/42226 | -5927/120 | 84 | 0.65 | +458 | CANDIDATE-DD |
+| A:fixed15 x2 W1 p5 maeW1 e001/own/net | -2880 +1484 +1228 +4547 +2468 +817 +1407 +1390 | 18902/21561 | 43177/42226 | 25488/120 | 85 | 0.18 | +0 | CANDIDATE-DD |
+| A:fixed10 x120 W30 p1 mae- e001/own/net | -4916 +723 +679 +3851 +2029 +331 +1341 +1354 | 21487/21561 | 43083/42226 | 146/120 | 115 | 0.92 | +1874 | CANDIDATE-DD |
+| A:fixed10 x120 W30 p2 mae- e001/own/net | -5415 +378 -198 +3419 +1871 +2371 +1458 +1354 | 21737/21561 | 38896/42226 | -11860/120 | 99 | 1.00 | +403 | no |
+| lowest L6M maxDD ignoring gates: E:fixed30 x10 W2 p2 mae- e001/own/net | -3612 +2820 +1643 +2780 +2041 +1538 +721 +1419 | 15542/21561 | 47720/42226 | -6298/120 | 609 | 0.14 | +23 | no |
+| highest L6M mean: A:fixed15 x2 W1 p5 maeW1 e001/own/net | -2880 +1484 +1228 +4547 +2468 +817 +1407 +1390 | 18902/21561 | 43177/42226 | 25488/120 | 85 | 0.18 | +0 | CANDIDATE-DD |
 
-U7 loss: the technique that lowers drawdown most (gated) is A:fixed10 x30 W15 p20 maeW15 e001/own/net; L6M maxDD 13788 vs never-cut 21436, mean +17/wk vs never-cut (-38 vs the live row), PRE maxDD 41596 vs 42883; label CANDIDATE-DD (placebo p 0.05; family p and walk-forward are assigned at Stage 2 / by the lead's page).
+U7 loss: the technique that lowers drawdown most (gated) is A:fixed10 x120 W30 p3 mae- e001/own/net; L6M maxDD 16340 vs never-cut 21561, mean +173/wk vs never-cut (-9 vs the live row), PRE maxDD 38806 vs 42226; label CANDIDATE-DD (placebo p 0.65; family p and walk-forward are assigned at Stage 2 / by the lead's page).
 
 Entry-session bests (same gates):
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| session 0: A:fixed10 x60 W15 p2 mae- e001/own/net | -576 +2724 +3270 +3248 +1369 +541 +1110 +1978 | 7211/9836 | 26217/31041 | 12412/10132 | 120 | 0.09 | CANDIDATE-DD |
-| session 1: A:fixed10 x30 W15 p1 mae- e001/own/net | -1323 +736 +126 -162 +135 +493 -275 -84 | 10172/33738 | 33981/39568 | -28841/-56352 | 515 | 0.02 | CANDIDATE-DD |
+| session 0: A:fixed10 x120 W30 p1 mae- e001/own/net | +1224 +3231 +3368 +2993 +1367 +1688 +1215 +1904 | 10944/9906 | 31026/31026 | 9679/9960 | 45 | 0.88 |  | no |
+| session 1: E:v115 x30 W10 p2 maeW10 e001/own/net | -4445 +287 -1341 +435 +388 -57 +589 -146 | 19175/32749 | 24151/33984 | -38361/-53967 | 261 | 0.09 |  | CANDIDATE-DD |
 
 ## A7
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +1304 +1048 +843 +1403 +993 +271 +1012 +333 | 8240/12456 | 6338/6208 | -3817/-17012 | 119 | 0.02 | CANDIDATE-DD |
-| REFERENCE S1b-COMB (live row) | -1287 +111 +99 +787 +714 +167 +991 +343 | 8518 | 7325 | -11915 | | | |
-| REFERENCE never-cut (hold to bracket) | +394 +761 +480 +873 +698 +136 +994 +319 | 12456 | 6208 | -17012 | | | |
-| A:fixed10 x30 W5 p1 mae- e001/own/net | -284 +312 +87 +624 +431 -225 +805 +187 | 5896/12456 | 5884/6208 | -16762/-17012 | 325 | 0.28 | CANDIDATE-DD |
-| E:v245 x10 W2 p3 mae- e001/own/net | -774 +523 +114 +1339 +862 +979 +930 +254 | 5990/12456 | 6089/6208 | -5159/-17012 | 270 | 0.02 | CANDIDATE-DD |
-| A:fixed10 x60 W15 p2 mae- e001/own/net | -416 +395 +377 +1460 +936 -111 +879 +175 | 6143/12456 | 6089/6208 | -665/-17012 | 239 | 0.38 | CANDIDATE-DD |
-| A:fixed10 x30 W5 p2 mae- e001/own/net | -40 +633 +672 +972 +819 +381 +873 +184 | 6157/12456 | 6221/6208 | -10242/-17012 | 227 | 0.20 | CANDIDATE-DD |
-| E:fixed30 x10 W2 p2 mae- e001/own/net | -347 +1081 +658 +910 +750 +603 +794 +338 | 6259/12456 | 4567/6208 | -13960/-17012 | 536 | 0.02 | CANDIDATE-DD |
-| A:fixed10 x60 W15 p3 mae- e001/own/net | -796 +258 +285 +1428 +881 -262 +941 +209 | 6473/12456 | 6089/6208 | -3271/-17012 | 217 | 0.48 | CANDIDATE-DD |
-| lowest L6M maxDD ignoring gates: A:fixed10 x60 W15 p1 mae- e001/own/net | +18 +669 +458 +1292 +882 +21 +771 +128 | 5497/12456 | 7020/6208 | -3735/-17012 | 278 | 0.02 | LEAD |
-| highest L6M mean: A:fixed10 x60 W15 p2 mae- e001/own/net | -416 +395 +377 +1460 +936 -111 +879 +175 | 6143/12456 | 6089/6208 | -665/-17012 | 239 | 0.38 | CANDIDATE-DD |
+| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +1072 +1217 +857 +1660 +1031 +273 +1008 +333 | 8849/12461 | 6468/6089 | -5783/-17069 | 117 | 0.02 | +255 | LEAD |
+| REFERENCE S1b-COMB (live row) | -1287 +431 +312 +1079 +785 +167 +991 +343 | 8518 | 7325 | -11915 | | | | |
+| REFERENCE never-cut (hold to bracket) | +389 +946 +505 +1215 +797 +138 +988 +319 | 12461 | 6089 | -17069 | | | | |
+| E:fixed30 x10 W2 p2 mae- e001/own/net | -222 +1150 +645 +1049 +826 +617 +806 +338 | 6199/12461 | 4522/6089 | -10244/-17069 | 536 | 0.02 | +547 | CANDIDATE-DD |
+| E:v245 x10 W2 p3 mae- e001/own/net | -770 +533 +24 +1167 +778 +986 +921 +254 | 6450/12461 | 6327/6089 | -6465/-17069 | 273 | 0.02 | -1332 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| A:fixed15 x2 W2 p10 maeW2 e001/own/net | +1293 +501 +189 +1093 +746 -90 +730 +294 | 9837/12461 | 6089/6089 | -9661/-17069 | 190 | 0.14 | +405 | CANDIDATE-DD |
+| A:fixed15 x2 W1 p5 maeW1 e001/own/net | +539 +788 +612 +1227 +903 +291 +952 +234 | 9987/12461 | 6332/6089 | -8685/-17069 | 93 | 0.18 | +417 | CANDIDATE-DD |
+| A:fixed10 x120 W30 p3 mae- e001/own/net | -1521 +159 -143 +873 +732 -150 +1010 +207 | 10182/12461 | 6089/6089 | -16174/-17069 | 74 | 1.00 | -2848 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| A:fixed10 x120 W30 p1 mae- e001/own/net | -1689 -207 -239 +904 +767 -62 +1021 +222 | 10542/12461 | 6089/6089 | -13586/-17069 | 94 | 0.98 | -2064 | CANDIDATE-DD FAILS-LIVE-WEEK |
+| lowest L6M maxDD ignoring gates: E:fixed30 x10 W2 p2 mae- e001/own/net | -222 +1150 +645 +1049 +826 +617 +806 +338 | 6199/12461 | 4522/6089 | -10244/-17069 | 536 | 0.02 | +547 | CANDIDATE-DD |
+| highest L6M mean: E:v245 x10 W2 p3 mae- e001/own/net | -770 +533 +24 +1167 +778 +986 +921 +254 | 6450/12461 | 6327/6089 | -6465/-17069 | 273 | 0.02 | -1332 | CANDIDATE-DD FAILS-LIVE-WEEK |
 
-A7 loss: the technique that lowers drawdown most (gated) is A:fixed10 x30 W5 p1 mae- e001/own/net; L6M maxDD 5896 vs never-cut 12456, mean +28/wk vs never-cut (-197 vs the live row), PRE maxDD 5884 vs 6208; label CANDIDATE-DD (placebo p 0.28; family p and walk-forward are assigned at Stage 2 / by the lead's page).
+A7 loss: the technique that lowers drawdown most (gated) is E:fixed30 x10 W2 p2 mae- e001/own/net; L6M maxDD 6199 vs never-cut 12461, mean +449/wk vs never-cut (+228 vs the live row), PRE maxDD 4522 vs 6089; label CANDIDATE-DD (placebo p 0.02; family p and walk-forward are assigned at Stage 2 / by the lead's page).
 
 Entry-session bests (same gates):
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| session 0: A:fixed10 x30 W5 p1 mae- e001/own/net | -284 +312 +87 +624 +431 -225 +805 +187 | 5896/12456 | 5884/6208 | -16762/-17012 | 325 | 0.28 | CANDIDATE-DD |
+| session 0: E:fixed30 x10 W2 p2 mae- e001/own/net | -222 +1150 +645 +1049 +826 +617 +806 +338 | 6199/12461 | 4522/6089 | -10244/-17069 | 536 | 0.02 |  | CANDIDATE-DD |
 
 ## H7
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +2581 +1798 +290 +2231 +435 -1204 +1630 +187 | 11007/16682 | 20223/20667 | 26/-36140 | 306 | 0.03 | CANDIDATE-DD |
-| REFERENCE S1b-COMB (live row) | +3186 +2043 +996 +2609 +656 -704 +1468 +220 | 8818 | 19256 | 11007 | | | |
-| REFERENCE never-cut (hold to bracket) | -58 +283 -1399 +1032 -273 -908 +1518 +103 | 16682 | 20667 | -36140 | | | |
-| A:fixed10 x15 W5 p10 mae- e001/own/net | +1374 +942 +727 +2153 +405 -1042 +1619 +31 | 8200/16682 | 20667/20667 | -8881/-36140 | 172 | 0.02 | CANDIDATE-DD |
-| A:fixed10 x30 W10 p3 maeW10 e001/own/net | +2074 +1805 +558 +1631 +92 -1045 +1462 +198 | 8432/16682 | 18073/20667 | -12189/-36140 | 376 | 0.02 | CANDIDATE-DD |
-| A:fixed10 x30 W10 p10 maeW10 e001/own/net | +301 +520 +688 +2221 +538 -81 +1439 +352 | 8698/16682 | 18880/20667 | -21474/-36140 | 131 | 0.02 | CANDIDATE-DD |
-| A:fixed10 x60 W15 p1 maeW15 e001/own/net | +2091 +2564 +1422 +2389 +380 -1221 +1596 +103 | 9033/16682 | 20667/20667 | -10671/-36140 | 142 | 0.02 | CANDIDATE-DD |
-| A:fixed10 x30 W10 p5 maeW10 e001/own/net | +1422 +1940 +903 +1916 -122 -2000 +1529 +207 | 9446/16682 | 18880/20667 | -14342/-36140 | 288 | 0.03 | CANDIDATE-DD |
-| A:fixed10 x30 W15 p20 maeW15 e001/own/net | +1454 +1418 +744 +2320 +211 -1405 +1378 +640 | 9799/16682 | 20667/20667 | -9045/-36140 | 211 | 0.02 | CANDIDATE-DD |
-| lowest L6M maxDD ignoring gates: A:fixed10 x15 W5 p10 mae- e001/own/net | +1374 +942 +727 +2153 +405 -1042 +1619 +31 | 8200/16682 | 20667/20667 | -8881/-36140 | 172 | 0.02 | CANDIDATE-DD |
-| highest L6M mean: E:fixed25 x20 W10 p10 mae- e001/own/net | +1547 +983 -345 +2481 +651 -1322 +1576 +151 | 24612/16682 | 17629/20667 | -18250/-36140 | 488 | 1.00 | no |
+| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | +2551 +1786 +349 +2089 +264 -1227 +1586 +187 | 10199/15477 | 20223/20667 | 375/-32750 | 306 | 0.03 | +0 | CANDIDATE-DD |
+| REFERENCE S1b-COMB (live row) | +3186 +2043 +996 +2609 +656 -704 +1468 +220 | 8818 | 19256 | 11007 | | | | |
+| REFERENCE never-cut (hold to bracket) | -88 +270 -1307 +1121 -331 -927 +1453 +103 | 15477 | 20667 | -32750 | | | | |
+| E:v115 x30 W10 p2 maeW10 e001/own/net | +2551 +1786 +349 +2089 +264 -1227 +1586 +187 | 10199/15477 | 20223/20667 | 375/-32750 | 306 | 0.03 | +0 | CANDIDATE-DD |
+| A:fixed15 x2 W1 p5 maeW1 e001/own/net | -153 +398 -1055 +1322 -36 -1777 +1722 +352 | 13481/15477 | 20667/20667 | -27728/-32750 | 42 | 0.82 | +0 | CANDIDATE-DD |
+| A:fixed10 x120 W30 p2 mae- e001/own/net | +424 +1687 -236 +1819 +47 -2437 +1725 +149 | 13958/15477 | 20667/20667 | -29689/-32750 | 70 | 0.11 | +374 | CANDIDATE-DD |
+| A:fixed10 x120 W30 p1 mae- e001/own/net | +623 +1885 -110 +1943 +128 -2366 +1638 +151 | 14033/15477 | 20667/20667 | -26575/-32750 | 84 | 0.20 | +394 | CANDIDATE-DD |
+| A:fixed10 x120 W30 p3 mae- e001/own/net | +270 +1864 -167 +2350 +319 -2451 +1714 +149 | 14549/15477 | 20667/20667 | -25872/-32750 | 61 | 0.31 | +319 | CANDIDATE-DD |
+| A:fixed15 x2 W3 p5 maeW3 e001/own/net | +2800 +1410 +53 +1664 +527 -427 +640 +321 | 16992/15477 | 12112/20667 | -7963/-32750 | 784 | 0.58 | +762 | no |
+| lowest L6M maxDD ignoring gates: E:v115 x30 W10 p2 maeW10 e001/own/net | +2551 +1786 +349 +2089 +264 -1227 +1586 +187 | 10199/15477 | 20223/20667 | 375/-32750 | 306 | 0.03 | +0 | CANDIDATE-DD |
+| highest L6M mean: E:fixed25 x20 W10 p10 mae- e001/own/net | +1487 +955 -332 +2477 +474 -1806 +1505 +151 | 24101/15477 | 17629/20667 | -17037/-32750 | 490 | 1.00 | +86 | no |
 
-H7 loss: the technique that lowers drawdown most (gated) is A:fixed10 x15 W5 p10 mae- e001/own/net; L6M maxDD 8200 vs never-cut 16682, mean +259/wk vs never-cut (-515 vs the live row), PRE maxDD 20667 vs 20667; label CANDIDATE-DD (placebo p 0.02; family p and walk-forward are assigned at Stage 2 / by the lead's page).
+H7 loss: the technique that lowers drawdown most (gated) is E:v115 x30 W10 p2 maeW10 e001/own/net; L6M maxDD 10199 vs never-cut 15477, mean +968/wk vs never-cut (-520 vs the live row), PRE maxDD 20223 vs 20667; label CANDIDATE-DD (placebo p 0.03; family p and walk-forward are assigned at Stage 2 / by the lead's page).
 
 Entry-session bests (same gates):
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| session 0: A:fixed10 x15 W5 p10 mae- e001/own/net | +288 +796 +60 +1530 +150 -1137 +1563 +38 | 7382/16891 | 17912/17912 | -17536/-42912 | 94 | 0.02 | CANDIDATE-DD |
-| session 3: A:fixed10 x30 W15 p20 mae- e001/own/net | +612 +152 +122 +268 +195 +65 -162 -66 | 2106/3747 | 20588/23673 | -2427/-5368 | 169 | 0.03 | CANDIDATE-DD |
+| session 0: E:v115 x30 W10 p2 maeW10 e001/own/net | +1976 +1944 +571 +1851 +110 -1081 +1569 +131 | 9445/14606 | 17912/17912 | -2600/-39488 | 174 | 0.02 |  | CANDIDATE-DD |
+| session 3: E:fixed30 x10 W2 p2 mae- e001/own/net | +624 -88 -146 +281 +231 +58 -47 -16 | 4062/3762 | 19399/23608 | -4422/-5403 | 181 | 0.66 |  | no |
 
 ## O7
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | -550 -180 +143 +316 +772 +16 +617 -63 | 7113/7489 | 3680/5097 | -8555/-9447 | 171 | 0.35 | CANDIDATE-DD |
-| REFERENCE S1b-COMB (live row) | -988 -396 +115 +322 +687 -127 +646 -69 | 6656 | 4532 | -8247 | | | |
-| REFERENCE never-cut (hold to bracket) | -667 -289 -60 +180 +669 -178 +600 -100 | 7489 | 5097 | -9447 | | | |
-| A:fixed10 x60 W15 p1 mae- e001/own/net | -55 +229 +282 +335 +676 -33 +589 -103 | 5138/7489 | 4475/5097 | -5083/-9447 | 159 | 0.05 | CANDIDATE-DD |
-| A:fixed10 x60 W15 p1 maeW15 e001/own/net | -292 -64 +211 +290 +660 +68 +597 -116 | 6152/7489 | 5219/5097 | -8031/-9447 | 126 | 0.22 | CANDIDATE-DD |
-| A:fixed10 x60 W15 p2 mae- e001/own/net | -180 +94 +164 +392 +818 +297 +588 -123 | 6600/7489 | 5043/5097 | -6035/-9447 | 128 | 0.22 | CANDIDATE-DD |
-| E:fixed30 x10 W2 p2 mae- e001/own/net | -594 +142 +50 +294 +644 -433 +697 -51 | 6769/7489 | 4624/5097 | -8675/-9447 | 126 | 0.26 | CANDIDATE-DD |
-| A:fixed10 x2 W5 p20 maeW5 e001/own/net | -604 -229 +58 +277 +664 -101 +660 -193 | 6805/7489 | 4783/5097 | -10720/-9447 | 139 | 0.29 | CANDIDATE-DD |
-| E:fixed25 x20 W10 p10 mae- e001/own/net | -550 -180 +143 +316 +772 +16 +617 -63 | 7113/7489 | 3680/5097 | -8555/-9447 | 171 | 0.45 | CANDIDATE-DD |
-| lowest L6M maxDD ignoring gates: A:fixed10 x2 W2 p1 mae- e001/own/net | -216 +199 +100 +224 +370 -84 -21 +19 | 3695/7489 | 9673/5097 | -4056/-9447 | 432 | 0.11 | LEAD |
-| highest L6M mean: A:fixed10 x4 W3 p10 mae- e001/own/net | -317 +523 +417 +545 +645 -198 +451 -485 | 7546/7489 | 6917/5097 | -4613/-9447 | 287 | 0.94 | no |
+| REFERENCE live per-book line (S1b-COMB D7 v1.5, ledgered cell) | -523 -170 +141 +324 +771 +14 +653 -63 | 7121/7469 | 3685/5102 | -8564/-9532 | 171 | 0.46 | +0 | CANDIDATE-DD |
+| REFERENCE S1b-COMB (live row) | -988 -396 +115 +322 +687 -127 +646 -69 | 6656 | 4532 | -8247 | | | | |
+| REFERENCE never-cut (hold to bracket) | -685 -298 -65 +176 +667 -181 +633 -100 | 7469 | 5102 | -9532 | | | | |
+| E:fixed30 x10 W2 p2 mae- e001/own/net | -556 +334 +65 +289 +648 -426 +730 -51 | 6883/7469 | 4629/5102 | -8755/-9532 | 127 | 0.14 | +0 | CANDIDATE-DD |
+| E:fixed25 x20 W10 p10 mae- e001/own/net | -523 -170 +141 +324 +771 +14 +653 -63 | 7121/7469 | 3685/5102 | -8564/-9532 | 171 | 0.37 | +0 | CANDIDATE-DD |
+| A:fixed15 x2 W2 p10 maeW2 e001/own/net | -685 -50 +79 +279 +707 +150 +626 -97 | 7469/7469 | 4848/5102 | -9433/-9532 | 26 | 1.00 | +0 | no |
+| A:fixed10 x120 W30 p1 mae- e001/own/net | -468 -236 +266 +379 +704 -238 +737 -119 | 7548/7469 | 5150/5102 | -8857/-9532 | 61 | 0.86 | +176 | no |
+| A:fixed10 x120 W30 p2 mae- e001/own/net | -465 -253 +225 +426 +735 -61 +704 -119 | 7868/7469 | 4612/5102 | -8667/-9532 | 53 | 0.91 | +186 | no |
+| A:fixed10 x120 W30 p3 mae- e001/own/net | -634 -335 +156 +381 +769 +247 +721 -119 | 8263/7469 | 3734/5102 | -9217/-9532 | 48 | 0.95 | +0 | no |
+| lowest L6M maxDD ignoring gates: A:fixed10 x2 W1 p1 mae- e001/own/net | -273 +169 +67 +203 +352 -117 +26 +1 | 3745/7469 | 9932/5102 | -4469/-9532 | 430 | 0.12 | +538 | LEAD |
+| highest L6M mean: E:fixed25 x20 W10 p10 mae- e001/own/net | -523 -170 +141 +324 +771 +14 +653 -63 | 7121/7469 | 3685/5102 | -8564/-9532 | 171 | 0.37 | +0 | CANDIDATE-DD |
 
-O7 loss: the technique that lowers drawdown most (gated) is A:fixed10 x60 W15 p1 mae- e001/own/net; L6M maxDD 5138 vs never-cut 7489, mean +158/wk vs never-cut (+109 vs the live row), PRE maxDD 4475 vs 5097; label CANDIDATE-DD (placebo p 0.05; family p and walk-forward are assigned at Stage 2 / by the lead's page).
+O7 loss: the technique that lowers drawdown most (gated) is E:fixed30 x10 W2 p2 mae- e001/own/net; L6M maxDD 6883 vs never-cut 7469, mean +113/wk vs never-cut (-33 vs the live row), PRE maxDD 4629 vs 5102; label CANDIDATE-DD (placebo p 0.14; family p and walk-forward are assigned at Stage 2 / by the lead's page).
 
 Entry-session bests (same gates):
-| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | label (family p / WF pending: Stage 2) |
-|---|---|---|---|---|---|---|---|
+| params | mean/wk L1M L2M L3M L6M HOLD MID PRE X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | live-week delta USD | label (family p / WF pending: Stage 2) |
+|---|---|---|---|---|---|---|---|---|
 
-| session 3: A:fixed10 x60 W15 p1 mae- e001/own/net | -55 +229 +282 +335 +676 -33 +589 -103 | 5138/7489 | 4475/5097 | -5083/-9447 | 159 | 0.05 | CANDIDATE-DD |
+| session 3: E:fixed30 x10 W2 p2 mae- e001/own/net | -556 +334 +65 +289 +648 -426 +730 -51 | 6883/7469 | 4629/5102 | -8755/-9532 | 127 | 0.14 |  | CANDIDATE-DD |
