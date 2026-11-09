@@ -1,5 +1,7 @@
 # DS3_TH_STATE_B - program B (L1 loss: B1 DS3 TH-loss grid alone and on top of the state cut, B2 THL_BOOKS cells, B3 stacks on the A finalists) on the S1-COMB base
 
+**STATUS: S1 timer-close, superseded by T-TH-EXHAUST; interim (A_K7BO/A_P7DWELL engine months 2024-02..06 and 2025-02 not run).**
+
 **Label: base = replica engine with TH-L2-S as live L2 cut (COMB per-book); entries not live-matched; the per-book COMB procedure fails the out-of-sample walk-forward (DS3_TH_STATE.md section 5) so S1-COMB is an in-sample base**
 
 Prereg: autopilot/DS3_TH_STATE_AB_PREREG.md (sha256 4e5836fb... logged in DECISIONS.md before any candidate result; two later addenda, section 9). Selection data: label days 2023-04-01..2026-10-31; the live week 2026-11-01..11-05 is held out (180 of the 187 live trades are D7-book trades with a day file; the 7 X-book trades are outside the seven S1 books). Old DS3_TH_REDO_*.md pages stay VOID and are not edited.
@@ -8,6 +10,13 @@ Prereg: autopilot/DS3_TH_STATE_AB_PREREG.md (sha256 4e5836fb... logged in DECISI
 
 **No cell of program B ENTERS vs S1-COMB.** Every per-book best rule below fails at least one gate (column "failed gates"); the S1-COMB cell stays the live cell of this base for every book.
 LEAD (positive S with recents, tolerant gate and drawdown first, but a null or the walk-forward fails -> best-of-F, not a rule): K7 B1 B1_4127, K7 B1_alone B1a_7428, P7 B1 B1_12765, M7 B1 B1_7085, U7 B1 B1_7001, U7 B1_alone B1a_7409, A7 B1 B1_1909, H7 B1 B1_13517, O7 B1 B1_7430.
+
+Plain reading:
+
+1. No B cell ENTERS. The B1 grid (14,580 cells per book, two modes) contains positive first-order cells on top of the state cut (AddToPath best per book S = K7 +174, P7 +875, M7 +192, U7 +568, A7 +105, H7 +193, O7 +31) but every one of them fails the prereg-literal placebo (random exits of the same acting trades after eligibility do better, p = 1.000), while the like-for-like version (random exits within 6 pt of the adverse extreme) is beaten by most cells: the vote timing is better than random timing near the extreme, but cutting later after a rebound does better still, so the gain is not a timing edge. The family null (100 placebo worlds) is not cleared by the best cell of K7, P7, M7, U7 (p > .10) -> best-of-F.
+2. Policy level: B_ADD (best AddToPath cell per book with S > 0) engine cascade (33 months): L6M +2000 (MDE +5164), PRE +551 (MDE +2230), maxDD L6M +76456 vs +79709; path-only (B_ALONE, the path replaces the state cut) engine cascade (33 months): L6M -1685 (MDE +5686), PRE +611 (MDE +1904), maxDD L6M +89328 vs +79709; B3 (B_ADD on top of the A_STACK state variants) engine cascade (33 months): L6M -1495 (MDE +7053), PRE +620 (MDE +3422), maxDD L6M +87163 vs +79709. The state cut stays the base of the loss side; the L1 path rules add at best a below-MDE amount on top of it.
+3. B2 (the 8 mappable THL_BOOKS cells) are negative against S1-COMB in every window that matters (K7 TH_LIVE AddToPath S = -1322, P7 TH_LIVE path-only S = -6343): the DS3 live-default TH-loss rule (15 pt, 3 of 3, 30 s windows) costs money next to the state cut and as a replacement. Their engine one-month check (2026-10, K7) lost 22.9k USD.
+4. Answer per book: keep the S1-COMB state cut and leave the path TH off (ReplacePath = the S1-COMB row); the per-book best B1 cells are listed in section 5 only as best-of-F records with their D7 parameter sets.
 
 Every cell is scored per book on the S1-COMB trade list (21,067 trades, 43 months): the other books stay at their S1-COMB cell, so the stack delta of a book-cell is that book alone. Windows are USD/week of the delta vs S1-COMB with the carrying week dropped (windows >= 8 weeks), (MDE = 2.8 sd/sqrt(n)); S = min(L6M, PRE). Because S1-COMB is itself an in-sample best-of-8,400 cell per book, an improvement over it is a second-stage selection and every table is read with that in mind. first-order Tier S (world W0: hold-to-bracket proxy, re-entries/locks ignored) unless a row says ENGINE.
 
@@ -158,7 +167,7 @@ PLAIN6060 (no TH of any kind) engine months available: 43 (202304..202610) of 43
 | B3_ADD_ON_ASTACK vs NEVER-CUT (engine, 33 months) | +7305 (+23381) | +1615 (+21451) | +6641 (+15299) | +9171 (+13252) | +5349 (+8552) | +4807 (+14212) | +2345 (+4670) | n/a |
 
 
-NEVER-CUT engine rows exist only through the stage-2 comparison (S1-COMB vs never-cut, section 2); the S1 NOCUT base run was not started by BASE-S1 (0 months at the time of writing).
+PLAIN6060 (BASE-S1, 43 months) and the stage-2 NEVER-CUT engine run (hist/A2 trades_nocut) are trade-for-trade identical in the five months compared (2023-04, 2024-10, 2025-01, 2026-06, 2026-10) and give identical delta rows above: with the loss cut removed the engine's remaining profit-side TH never fires, so the two reference rows coincide. The BASE-S1 NOCUT run had 3 of 43 months when this page was written; the stage-2 file is used for NEVER-CUT.
 
 ## 9. Method notes, deviations, caveats
 
@@ -167,6 +176,7 @@ NEVER-CUT engine rows exist only through the stage-2 comparison (S1-COMB vs neve
 * S1-COMB itself passes the engine regression exactly (an empty-spec rule reproduces the S1-COMB trade list of 2026-10 trade for trade).
 * Addendum 1 (DECISIONS.md, before any family-null number was read): the first family null (signal circularly shifted inside each trade, 80 worlds) was discarded because it leaks look-ahead (the later rows of a losing trade carry its outcome; shifted TH_LIVE scored +600k vs -200k real on K7). It was replaced by the prereg-literal Westfall-Young placebo worlds (random exits of the same acting trades, shared uniforms, per-world maximum over the program's cells; 100 worlds). The same flaw very likely inflates the shifted-block family null of DS3_TH_STATE.md section 5 (null mean above the observed best cell); that page should be re-read with this in mind.
 * Addendum 1b: the prereg-literal placebo eligibility for L1 cells (adverse extreme >= ThMinPoints, any later second) lets a random exit land after a rebound and is kinder than the rule; the like-for-like version v2 (rows within 6 pt of the adverse extreme) was added after the first placebo pass and both are reported; the gate requires both.
+* Tier 1 (cap 40 per program) = the best cell of every (family, book) of the program (A: up to 5 families x 7 books, B: 3 x 7), each with placebo v1/v2, the family null, the purged walk-forward and the live-week table (section 4). Full engine cascade re-runs (cap 12 policies per program): A 5 policies, B 3 policies, 33 engine months each (2024-02..2026-10; X' only first-order), chosen from the first-order per-book picks with S > 0 before any engine number was seen (policies_v1.json); the two single-rule A policies A_K7BO and A_P7DWELL were added after the first-order tables because K7 A4 and P7 A6a were the only near-ENTER cells (policies_v2.json, logged in DECISIONS.md).
 * Zero rows: a book whose best cell has S <= 0 keeps the S1-COMB cell; the best-of-family cell is shown for the record only.
 * Dead ledger: dead_lookup found no prior match for any family before scoring (A2 flip, A4 blackout, A5 lot arm, A6 dwell, B1/B2 L1 cells); one row per family-book best is appended to DEAD_CELLS.csv after the run with program tags THS2_A / THS2_B (append only).
 * Seal safety: manifest_after.json sha256 759f2258daac9d28 before and after (unchanged); private trees /mnt/l2/l2vast/_th_state/s2/; at most 2 replica processes.

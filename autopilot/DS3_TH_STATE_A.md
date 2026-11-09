@@ -1,5 +1,7 @@
 # DS3_TH_STATE_A - program A (L2 loss, remaining families: A2 book-flip triggers, A4 post-cut blackout, A5 lot-scaled arms beyond the grid, A6 sustained-cut cells, A7 HM path rule) on the S1-COMB base
 
+**STATUS: S1 timer-close, superseded by T-TH-EXHAUST; interim (A_K7BO/A_P7DWELL engine months 2024-02..06 and 2025-02 not run).**
+
 **Label: base = replica engine with TH-L2-S as live L2 cut (COMB per-book); entries not live-matched; the per-book COMB procedure fails the out-of-sample walk-forward (DS3_TH_STATE.md section 5) so S1-COMB is an in-sample base**
 
 Prereg: autopilot/DS3_TH_STATE_AB_PREREG.md (sha256 4e5836fb... logged in DECISIONS.md before any candidate result; two later addenda, section 9). Selection data: label days 2023-04-01..2026-10-31; the live week 2026-11-01..11-05 is held out (180 of the 187 live trades are D7-book trades with a day file; the 7 X-book trades are outside the seven S1 books). Old DS3_TH_REDO_*.md pages stay VOID and are not edited.
@@ -8,6 +10,13 @@ Prereg: autopilot/DS3_TH_STATE_AB_PREREG.md (sha256 4e5836fb... logged in DECISI
 
 **No cell of program A ENTERS vs S1-COMB.** Every per-book best rule below fails at least one gate (column "failed gates"); the S1-COMB cell stays the live cell of this base for every book.
 LEAD (positive S with recents, tolerant gate and drawdown first, but a null or the walk-forward fails -> best-of-F, not a rule): K7 A4 A4_N15_both, P7 A4 A4_N15_same, P7 A6 A6a_D2_X20, U7 A5 A5_a25_g+0.25.
+
+Plain reading:
+
+1. Nothing in A2/A4/A5/A6/A7 beats S1-COMB by more than its MDE on L6M AND PRE for any book. The closest cell is the K7 post-cut blackout of 15 min on both sides (first-order L6M +496 vs MDE +1366, PRE +294 vs MDE +542, placebo p 0.002, family p 0.030, purged walk-forward +27090, live week n/a): all nulls pass, the size does not; engine cascade (29 months): L6M +1152 (MDE +1988), PRE -149 (MDE +729), maxDD L6M +84017 vs +79709 -> LEAD, not ENTER.
+2. The base has no post-cut blackout at all: the live D7 U7 30-min same-side blackout is armed only by the old ThL2Cut, which the S1 base removes. Re-arming it from the state cut is a no-op on this base (engine A_U7LIVE: engine cascade (33 months): L6M +22 (MDE +241), PRE -49 (MDE +186), maxDD L6M +79709 vs +79709); the U7 cut count is too small for a blackout to bite (A4 U7: no cell with >= 30 removed trades).
+3. Lot-scaled arms beyond the grid (A5), flip triggers (A2: every best cell is negative for K7, P7, M7), sustained cuts (A6a/A6b) and the HM path rule on H7 (A7) add nothing durable: the best-per-book cells are within +-0.1 MDE or negative; P7 A6a (dwell 2 s at -20 pt) is the only other tier-E1 positive (engine cascade (28 months): L6M +149 (MDE +695), PRE +155 (MDE +341), maxDD L6M +80050 vs +79709) and fails the walk-forward on L6M. Stack of the positive cells (A_STACK): engine cascade (33 months): L6M -229 (MDE +5711), PRE -87 (MDE +2962), maxDD L6M +90066 vs +79709.
+4. Answer per book: keep the S1-COMB cell for K7, P7, M7, U7, A7, H7, O7; the K7 15-min both-side blackout and the P7 dwell-2-s cut are the two shadow/forward-test candidates (section 5). The first-order screen tracks the engine poorly month by month (section 9), so every first-order gain here is a screening number only.
 
 Every cell is scored per book on the S1-COMB trade list (21,067 trades, 43 months): the other books stay at their S1-COMB cell, so the stack delta of a book-cell is that book alone. Windows are USD/week of the delta vs S1-COMB with the carrying week dropped (windows >= 8 weeks), (MDE = 2.8 sd/sqrt(n)); S = min(L6M, PRE). Because S1-COMB is itself an in-sample best-of-8,400 cell per book, an improvement over it is a second-stage selection and every table is read with that in mind. first-order Tier S (world W0: hold-to-bracket proxy, re-entries/locks ignored) unless a row says ENGINE.
 
@@ -188,6 +197,8 @@ Fields/grammar the D7 policy file lacks for these rules (all books): persist fie
 | A_BO | A4 blackout: K7 15 min both sides, P7 15 min same side | +182(+3674) / -49(+2471) / +551(+2813) / -365(+3585) / +134(+2415) / +736(+3459) / +236(+1135) / +84(+408) | +721 | K7 +721 |
 | A_U7LIVE | U7 30 min same-side blackout armed by the state cut (the D7 v1.2 live rule, absent from the S1 base) | +0(+0) / +0(+0) / +0(+0) / +0(+0) / +0(+0) / +0(+0) / +0(+0) / +0(+0) | +0 |  |
 | A_STACK | P7 dwell 2s/20pt (A6a) + U7, H7 lot-scaled arm 25x(lots/4)^0.25 (A5) + K7/P7/U7 blackouts (A4) | -1548(+7155) / +1526(+2290) / +2174(+3205) / -132(+4251) / +127(+2684) / +1584(+3833) / +463(+1156) / +37(+439) | +1421 | K7 +721, P7 +700 |
+| A_K7BO | K7 only: 15 min both-side blackout after a state cut | -622(+2495) / +91(+1932) / +53(+1748) / +496(+1366) / +468(+1124) / +946(+2384) / +294(+542) / -69(+306) | +721 | K7 +721 |
+| A_P7DWELL | P7 only: A6a sustained cut, dwell 2 s at -20 pt | -118(+642) / -160(+582) / +8(+508) / +134(+481) / +181(+326) / +345(+521) / +157(+135) / +20(+131) | +700 | P7 +700 |
 
 
 Engine cascade (replica engine, true fills, re-entries and locks included), policy vs the S1-COMB engine run on the same months, USD/week net of the 4.84 fee proxy, carrying week dropped, label day of the exit (STATE-SCORE stage-2 convention); (MDE):
@@ -197,6 +208,8 @@ Engine cascade (replica engine, true fills, re-entries and locks included), poli
 | A_BO | A4 blackout: K7 15 min both sides, P7 15 min same side | 33 (202402..202610) | +720 (+7359) | +392 (+4944) | -712 (+4088) | -1172 (+5316) | +989 (+3549) | +68 (+4832) | -192 (+2851) | n/a | +93162/+79709 | +100108/+98140 |
 | A_U7LIVE | U7 30 min same-side blackout armed by the state cut (the D7 v1.2 live rule, absent from the S1 base) | 33 (202402..202610) | +0 (+0) | +0 (+0) | -100 (+279) | +22 (+241) | +11 (+117) | +0 (+0) | -49 (+186) | n/a | +79709/+79709 | +150123/+150123 |
 | A_STACK | P7 dwell 2s/20pt (A6a) + U7, H7 lot-scaled arm 25x(lots/4)^0.25 (A5) + K7/P7/U7 blackouts (A4) | 33 (202402..202610) | -2543 (+9233) | +412 (+3284) | -210 (+3161) | -229 (+5711) | +1038 (+3652) | -1660 (+5758) | -87 (+2962) | n/a | +90066/+79709 | +97377/+98140 |
+| A_K7BO | K7 only: 15 min both-side blackout after a state cut | 29 (202406..202610) | +1347 (+3282) | +523 (+1837) | +3 (+2218) | +1152 (+1988) | +516 (+1411) | +268 (+2420) | -149 (+729) | n/a | +84017/+79709 | +145052/+150123 |
+| A_P7DWELL | P7 only: A6a sustained cut, dwell 2 s at -20 pt | 28 (202406..202610) | -2922 (+6950) | -260 (+842) | -76 (+651) | +149 (+695) | +257 (+533) | +334 (+466) | +155 (+341) | n/a | +80050/+79709 | +175862/+185836 |
 
 
 ## 7. ENTER verdict per finalist policy (vs S1-COMB, engine cascade)
@@ -206,6 +219,8 @@ Engine cascade (replica engine, true fills, re-entries and locks included), poli
 | A_BO | -1172 (+5316) | -192 (+2851) | no | worse / worse | +721 | no | NOT ENTER (not above MDE, drawdown, components fail nulls/walk-forward) |
 | A_U7LIVE | +22 (+241) | -49 (+186) | no | ok / ok | +0 | no | NOT ENTER (not above MDE, components fail nulls/walk-forward) |
 | A_STACK | -229 (+5711) | -87 (+2962) | no | worse / ok | +1421 | no | NOT ENTER (not above MDE, drawdown, components fail nulls/walk-forward) |
+| A_K7BO | +1152 (+1988) | -149 (+729) | no | worse / ok | +721 | no | NOT ENTER (not above MDE, drawdown, components fail nulls/walk-forward) |
+| A_P7DWELL | +149 (+695) | +155 (+341) | no | worse / ok | +700 | no | NOT ENTER (not above MDE, drawdown, components fail nulls/walk-forward) |
 
 
 A policy ENTERS only if every component rule ENTERS in section 4 (placebo v1+v2, family, walk-forward, live, above MDE) AND the engine cascade is above MDE on L6M and PRE, drawdown not worse and the live week is not negative. The X' window is absent from the engine rows (months 2023-04..2024-01 are not in the engine run; the first-order X' column in section 6 covers it).
@@ -220,6 +235,8 @@ PLAIN6060 (no TH of any kind) engine months available: 43 (202304..202610) of 43
 | A_BO vs PLAIN6060 (engine, 33 months) | +13021 (+15442) | +11459 (+13377) | +13749 (+10666) | +9576 (+11658) | +8020 (+7631) | +8355 (+13144) | +1299 (+4661) | n/a |
 | A_U7LIVE vs PLAIN6060 (engine, 33 months) | +12301 (+17228) | +11997 (+13026) | +10190 (+13752) | +9901 (+10648) | +6995 (+7465) | +914 (+13193) | +2077 (+4219) | n/a |
 | A_STACK vs PLAIN6060 (engine, 33 months) | +9757 (+13397) | +10084 (+12290) | +8404 (+12560) | +10404 (+11230) | +8069 (+7639) | +6729 (+14353) | +1398 (+4711) | n/a |
+| A_K7BO vs PLAIN6060 (engine, 29 months) | +13648 (+17181) | +13311 (+13552) | +10372 (+14228) | +10452 (+10851) | +7372 (+7678) | +6524 (+12524) | +984 (+3993) | n/a |
+| A_P7DWELL vs PLAIN6060 (engine, 28 months) | +9379 (+15864) | +9996 (+12638) | +9012 (+13772) | +9619 (+10416) | +7116 (+7365) | +1402 (+13135) | +1853 (+3957) | n/a |
 
 | NEVER-CUT engine reference (hist/A2 trades_nocut) | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
 |---|---|---|---|---|---|---|---|---|
@@ -227,17 +244,20 @@ PLAIN6060 (no TH of any kind) engine months available: 43 (202304..202610) of 43
 | A_BO vs NEVER-CUT (engine, 33 months) | +13021 (+15442) | +11459 (+13377) | +13749 (+10666) | +9576 (+11658) | +8020 (+7631) | +8355 (+13144) | +1299 (+4661) | n/a |
 | A_U7LIVE vs NEVER-CUT (engine, 33 months) | +12301 (+17228) | +11997 (+13026) | +10190 (+13752) | +9901 (+10648) | +6995 (+7465) | +914 (+13193) | +2077 (+4219) | n/a |
 | A_STACK vs NEVER-CUT (engine, 33 months) | +9757 (+13397) | +10084 (+12290) | +8404 (+12560) | +10404 (+11230) | +8069 (+7639) | +6729 (+14353) | +1398 (+4711) | n/a |
+| A_K7BO vs NEVER-CUT (engine, 29 months) | +13648 (+17181) | +13311 (+13552) | +10372 (+14228) | +10452 (+10851) | +7372 (+7678) | +6524 (+12524) | +984 (+3993) | n/a |
+| A_P7DWELL vs NEVER-CUT (engine, 28 months) | +9379 (+15864) | +9996 (+12638) | +9012 (+13772) | +9619 (+10416) | +7116 (+7365) | +1402 (+13135) | +1853 (+3957) | n/a |
 
 
-NEVER-CUT engine rows exist only through the stage-2 comparison (S1-COMB vs never-cut, section 2); the S1 NOCUT base run was not started by BASE-S1 (0 months at the time of writing).
+PLAIN6060 (BASE-S1, 43 months) and the stage-2 NEVER-CUT engine run (hist/A2 trades_nocut) are trade-for-trade identical in the five months compared (2023-04, 2024-10, 2025-01, 2026-06, 2026-10) and give identical delta rows above: with the loss cut removed the engine's remaining profit-side TH never fires, so the two reference rows coincide. The BASE-S1 NOCUT run had 3 of 43 months when this page was written; the stage-2 file is used for NEVER-CUT.
 
 ## 9. Method notes, deviations, caveats
 
 * Tier S is first-order (world W0): each trade as if alone on its 1-s path to the bracket proxy; the engine rows in section 6 carry re-entries, locks, caps and true fills and are the cascade check. The W0 S1-COMB vs NEVER-CUT row differs from the engine row (section 2): first-order is a screening statistic, not an expected P&L.
-* First-order vs engine fidelity (monthly deltas of the finalist policies, USD): A_BO: first-order total +40116 vs engine total +63502 over the 33 engine months, monthly correlation 0.16; A_U7LIVE: first-order total +0 vs engine total -5590 over the 33 engine months, monthly correlation nan; A_STACK: first-order total +62992 vs engine total +82009 over the 33 engine months, monthly correlation 0.23. The first-order Tier S is therefore a screening statistic: the cascade (re-entries after a cut, locks, caps, true fills) moves individual months a lot; the engine rows are the decision rows.
+* First-order vs engine fidelity (monthly deltas of the finalist policies, USD): A_BO: first-order total +40116 vs engine total +63502 over the 33 engine months, monthly correlation 0.16; A_U7LIVE: first-order total +0 vs engine total -5590 over the 33 engine months, monthly correlation nan; A_STACK: first-order total +62992 vs engine total +82009 over the 33 engine months, monthly correlation 0.23; A_K7BO: first-order total +43906 vs engine total +16018 over the 29 engine months, monthly correlation 0.60; A_P7DWELL: first-order total +18652 vs engine total +21303 over the 28 engine months, monthly correlation 0.42. The first-order Tier S is therefore a screening statistic: the cascade (re-entries after a cut, locks, caps, true fills) moves individual months a lot; the engine rows are the decision rows.
 * S1-COMB itself passes the engine regression exactly (an empty-spec rule reproduces the S1-COMB trade list of 2026-10 trade for trade).
 * Addendum 1 (DECISIONS.md, before any family-null number was read): the first family null (signal circularly shifted inside each trade, 80 worlds) was discarded because it leaks look-ahead (the later rows of a losing trade carry its outcome; shifted TH_LIVE scored +600k vs -200k real on K7). It was replaced by the prereg-literal Westfall-Young placebo worlds (random exits of the same acting trades, shared uniforms, per-world maximum over the program's cells; 100 worlds). The same flaw very likely inflates the shifted-block family null of DS3_TH_STATE.md section 5 (null mean above the observed best cell); that page should be re-read with this in mind.
 * Addendum 1b: the prereg-literal placebo eligibility for L1 cells (adverse extreme >= ThMinPoints, any later second) lets a random exit land after a rebound and is kinder than the rule; the like-for-like version v2 (rows within 6 pt of the adverse extreme) was added after the first placebo pass and both are reported; the gate requires both.
+* Tier 1 (cap 40 per program) = the best cell of every (family, book) of the program (A: up to 5 families x 7 books, B: 3 x 7), each with placebo v1/v2, the family null, the purged walk-forward and the live-week table (section 4). Full engine cascade re-runs (cap 12 policies per program): A 5 policies, B 3 policies, 33 engine months each (2024-02..2026-10; X' only first-order), chosen from the first-order per-book picks with S > 0 before any engine number was seen (policies_v1.json); the two single-rule A policies A_K7BO and A_P7DWELL were added after the first-order tables because K7 A4 and P7 A6a were the only near-ENTER cells (policies_v2.json, logged in DECISIONS.md).
 * Zero rows: a book whose best cell has S <= 0 keeps the S1-COMB cell; the best-of-family cell is shown for the record only.
 * Dead ledger: dead_lookup found no prior match for any family before scoring (A2 flip, A4 blackout, A5 lot arm, A6 dwell, B1/B2 L1 cells); one row per family-book best is appended to DEAD_CELLS.csv after the run with program tags THS2_A / THS2_B (append only).
 * Seal safety: manifest_after.json sha256 759f2258daac9d28 before and after (unchanged); private trees /mnt/l2/l2vast/_th_state/s2/; at most 2 replica processes.

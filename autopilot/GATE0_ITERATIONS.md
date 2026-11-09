@@ -241,3 +241,8 @@
 2026-11-09 EX-CORE: Stage 2 driver (stage2.py), exh_drivers.py (wf, wy, cross), page box items + S1/S2 marks added; EXH_API section 7; universe rebuilt (5797 S1b NOCUT trades, 13086 S1 timer, 201 live)
 2026-11-09 EX-FEAT: feature store complete 202304..202611 (44 months, 19,081 trades, 203.5 M trade-seconds, 265 float32 features) at /mnt/l2/l2vast/_th_exh/feat/; validation (a) 500/523 COMB StateCut first-fire exact, (b) no look-ahead 0 diffs, (c) NaN/inf in json; EXH_FEATURES.md; seal manifest_after unchanged (759f2258 sha256)
 2026-11-09 EX-CORE: extended paths (paths_ext, U.ext()) built for K-family cells; page box items rewritten as NOT VERIFIED
+2026-11-09 EX-CORE: Stage 2 validated on 202304 K7: ExhCut 3 = S1b-COMB StateCut 3, exit time and gross identical, K7 net -518.0 = COMB, other books = NOCUT (EXH_API section 7)
+2026-11-09T03:10:14Z EX-PHI: families H/I 893 cells Stage1 scoring started (hi_score.py, 6 threads)
+2026-11-09 S2-AB interim close (superseded by T-TH-EXHAUST): DS3_TH_STATE_A.md/_B.md written; no ENTER in A or B; engine v1 33 months done, v2 partial; own processes stopped
+2026-11-09 EX-CORE: placebo leak audit, v2 causal placebos, leak_test, rescore of ledger nulls started (EXH_API section 9)
+2026-11-09T03:21Z EX-LBC: 96,768 B/C cells screened (63 features, 44 months of panels, full history); noise-after-k causality test on the lattice kernel 2,729,879 fires <= k0 checked, 0 changed; ledgering ~280 top cells with null_ver 2 (re-run after exh_metrics v2)
