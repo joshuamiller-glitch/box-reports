@@ -1,4 +1,4 @@
-# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-09 18:59Z first version / refresh
+# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-09 19:20Z first version / refresh
 
 ## 0. Summary block (setting | live value | best on the state base | holds OOS? | change recommended | panel field)
 
@@ -87,6 +87,56 @@ By family (best by equal-mean score): N1 global D/action, N2 Kijun substitution,
 | N2 | N2 D=20 act=half p=52 tf=30m | 0/0/0/0 | 1/1/1 | 237 | UP (report, never promoted) |
 | N3 | N3 Dk=40 act=skip p=52 tf=4h | 6/0/5/-13 | 9/8/-10 | 733 | UP (report, never promoted) |
 
+Per book x session for the top-3 NTZ cells (>= 15 changed trades; cut % L6M/HOLD/PRE/X' on that scope):
+
+| cell | scope | n changed | cut L6M/HOLD/PRE/X' | d mean L6M | equal-mean L6M/PRE/X' |
+|---|---|---|---|---|---|
+| N1 D=60 act=retarget | KB s0 | 877 | 12/12/-9/29 | -776 | -25/-54/0 |
+| N1 D=60 act=retarget | KB s1 | 517 | 15/13/14/17 | -11 | 2/0/4 |
+| N1 D=60 act=retarget | KB s3 | 477 | 16/35/-12/46 | -154 | -/-/- |
+| N1 D=60 act=retarget | KB s4 | 336 | 54/-4/31/28 | -41 | 52/29/26 |
+| N1 D=60 act=retarget | PE s0 | 732 | 10/13/-16/-0 | -779 | 5/-23/-6 |
+| N1 D=60 act=retarget | PE s1 | 424 | 29/29/-8/21 | 224 | 41/9/33 |
+| N1 D=60 act=retarget | PE s3 | 290 | -8/-3/-11/-22 | -316 | -/-/- |
+| N1 D=60 act=retarget | SM s0 | 330 | -2/7/-0/13 | 296 | 6/8/21 |
+| N1 D=60 act=retarget | SM s1 | 248 | 0/-22/9/-23 | 212 | 44/49/31 |
+| N1 D=60 act=retarget | HM s0 | 274 | 41/-21/20/35 | -279 | 33/10/27 |
+| N1 D=60 act=retarget | HM s3 | 106 | -0/10/15/-8 | -24 | -4/11/-12 |
+| N1 D=60 act=retarget | MV s1 | 770 | -8/0/18/4 | 6 | -/-/- |
+| N1 D=60 act=retarget | MV s3 | 368 | 10/2/-5/-7 | 65 | 33/23/21 |
+| N1 D=60 act=retarget | PB s0 | 409 | 15/-5/-4/45 | -352 | -30/-58/16 |
+| N1 D=60 act=retarget | OD s3 | 110 | 0/0/-2/-2 | -68 | -21/-24/-23 |
+| N1 D=50 act=retarget | KB s0 | 776 | 12/12/-9/29 | -713 | -21/-49/3 |
+| N1 D=50 act=retarget | KB s1 | 462 | 16/14/14/17 | 9 | 25/23/26 |
+| N1 D=50 act=retarget | KB s3 | 416 | 17/31/-12/47 | -133 | -/-/- |
+| N1 D=50 act=retarget | KB s4 | 278 | 54/-2/31/19 | -24 | 53/30/17 |
+| N1 D=50 act=retarget | PE s0 | 613 | 10/13/-15/3 | -717 | 5/-21/-2 |
+| N1 D=50 act=retarget | PE s1 | 351 | 9/9/-2/21 | -324 | -26/-43/-11 |
+| N1 D=50 act=retarget | PE s3 | 239 | -4/1/-11/-21 | -203 | -/-/- |
+| N1 D=50 act=retarget | SM s0 | 292 | -2/7/-0/13 | 150 | 2/4/17 |
+| N1 D=50 act=retarget | SM s1 | 223 | 0/-22/9/-23 | 233 | 47/51/34 |
+| N1 D=50 act=retarget | HM s0 | 253 | 41/-20/20/35 | -261 | 34/11/28 |
+| N1 D=50 act=retarget | HM s3 | 99 | -0/10/15/-8 | -24 | -4/12/-12 |
+| N1 D=50 act=retarget | MV s1 | 679 | -19/-8/20/8 | -142 | -/-/- |
+| N1 D=50 act=retarget | MV s3 | 312 | 11/4/-5/-4 | 75 | 37/26/27 |
+| N1 D=50 act=retarget | PB s0 | 366 | 15/-2/-4/45 | -319 | -23/-50/20 |
+| N1 D=50 act=retarget | OD s3 | 90 | 0/0/-2/-4 | -33 | -17/-20/-22 |
+| N1 D=40 act=retarget | KB s0 | 645 | 10/10/-7/31 | -632 | -18/-41/10 |
+| N1 D=40 act=retarget | KB s1 | 385 | 19/18/12/21 | 91 | 63/59/63 |
+| N1 D=40 act=retarget | KB s3 | 355 | 19/31/-23/49 | -179 | -/-/- |
+| N1 D=40 act=retarget | KB s4 | 220 | 54/2/31/21 | -200 | 47/20/9 |
+| N1 D=40 act=retarget | PE s0 | 505 | -15/-11/-15/-3 | -1280 | -26/-26/-13 |
+| N1 D=40 act=retarget | PE s1 | 293 | 9/9/-7/21 | -65 | 4/-13/16 |
+| N1 D=40 act=retarget | PE s3 | 195 | -1/1/-11/-23 | -87 | -/-/- |
+| N1 D=40 act=retarget | SM s0 | 245 | -2/7/10/13 | 186 | 3/15/18 |
+| N1 D=40 act=retarget | SM s1 | 199 | 0/-22/9/-27 | 233 | 47/51/32 |
+| N1 D=40 act=retarget | HM s0 | 216 | 41/-20/22/36 | -356 | 31/10/26 |
+| N1 D=40 act=retarget | HM s3 | 83 | -0/10/15/-5 | -24 | -4/12/-10 |
+| N1 D=40 act=retarget | MV s1 | 579 | -13/-1/22/13 | -333 | -/-/- |
+| N1 D=40 act=retarget | MV s3 | 267 | 16/0/-6/-1 | 38 | 30/12/16 |
+| N1 D=40 act=retarget | PB s0 | 295 | -1/-2/-4/51 | -365 | -57/-61/24 |
+| N1 D=40 act=retarget | OD s3 | 65 | 0/0/-2/-4 | 0 | 0/-2/-4 |
+
 ## 3. OTE-62 (live: .62 line, D 30, B73 70/30, no max minutes for the reserve)
 First-order via a mini bracket simulator on 1-s print extremes (stop at the signal level -60, target = average fill +60 re-based after the add, base non-bracket exits kept); variant minus live-state delta added to the base P&L only on trades whose OTE state changes. WF of the pick: cut vs live -5.6%, WF ok = False.
 | cell | n changed | maxDD cut % L6M/HOLD/PRE/X' | equal-mean cut % L6M/PRE/X' | w20 L6M cell/ref | d mean $/wk L6M | placebo p L6M/PRE | family p | label |
@@ -139,6 +189,21 @@ Base change: old DS3 engine = per-print TH-L2 cut on 54-57% of exits, 1-min H7, 
 | A7 | PB x30 N30 any | 5821 | DEAD | N=30 same=both scope=book:A7 trig=cut | 2/0/0/0 | 0 | CANDIDATE (own-p only; family p 1.00) PRE-PROOF |
 
 Zone-as-target (DS3_B8_ZONE_TARGET_SHIPPED, old V13X): ALL8 rt100 cut L6M/PRE/X' -11/-9/-34 %% (worse) and rt7030 -19/+11/-11; new first-order retarget (N1 D 40/50/60, all 8 lines, lots restored, 1-s path) +17..20/+16..18/+22..25 %% with UP exposure; old and new SIGNS DISAGREE, so the retarget verdict is the exact rows (R5_NTZ_1 vs R5_NTZ_LIVE). B73 ordering note (exit before the add fill): the state-base engine cancels the 30% reserve when the position exits (l2_pump "trade is exiting"), so the old orphan-add behaviour is not in the base; OTE cells here inherit that. O7: old approximations (ZL-1 PB7-on-NY-AM, engine PB-on-NY-AM) are SUPERSEDED by the user answer of 11-04; the live cell is the reference and all O7 variants are measured against the own-sim live row.
+
+## 7. Control bases (NOCUT, UNIF): the same top cells re-scored (first-order, params matched)
+
+| layer | cell | COMB cut L6M/HOLD/PRE/X' | NOCUT cut L6M/HOLD/PRE/X' | UNIF cut L6M/HOLD/PRE/X' |
+|---|---|---|---|---|
+| blackout | N=120 same=both scope=allbooks trig=cut | 27/-17/30/-46 | pending | 37/23/28/0 |
+| blackout | N=120 same=both scope=allbooks trig=cutstop | 29/-27/36/-27 | 17/17/40/-27 | 54/11/39/-27 |
+| blackout | N=30 same=same scope=book:P7 trig=cutstop | 9/4/18/2 | 4/4/11/-8 | 11/11/11/-3 |
+| blackout | N=45 same=same scope=allbooks trig=cutstop | 14/12/19/-1 | 10/10/15/-3 | 22/22/12/0 |
+| blackout | N=120 same=both scope=allbooks trig=stop | 23/-3/33/6 | 17/17/40/-27 | 21/21/37/-23 |
+| ntz | N1 D=60 act=retarget | 20/26/18/22 | 41/41/-8/29 | 20/20/-3/29 |
+| ntz | N1 D=50 act=retarget | 20/25/17/25 | 31/31/-6/32 | 19/19/-3/32 |
+| ntz | N1 D=40 act=retarget | 17/25/16/25 | 13/13/1/36 | 7/7/-4/35 |
+| ntz | N3 Dk=40 act=skip p=52 tf=4h | 6/0/5/-13 | 1/1/9/-22 | 1/1/7/-22 |
+| ntz | N1 D=60 act=rethalf | 14/30/15/21 | 43/43/-12/23 | 28/28/-8/20 |
 
 ## 5. Exact engine status (SZ-CORE queue, prefix R5_)
 No R5_ set has completed a month yet; identity test R5_TEST (hooks with empty par must reproduce the base on 202610) and R5_BO_LIVE are queued first.
