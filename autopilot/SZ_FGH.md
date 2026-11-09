@@ -1,10 +1,11 @@
+> ROLL-EXCL: the 33 base trades alive across a contract roll carry weight 0 in every first-order number below (COMB, NOCUT, UNIF; OLD-BASE comparison rows are not roll-excluded).
 > STANDING RULE (user 17:20Z): every D7 layer stays ON; this page recommends SETTINGS only (P7 session lots, slots, gates), never dropping a layer; live setting is always the reference row and stays if nothing beats it OOS.
 > VOID: every earlier EXACT table-mode row (sz_exact keyed on arm time, fixed to the signal second) is void and not shown; exact sets are re-queued with the fixed driver. ROLL FIX: NQ roll jumps (12 quarterly, 2 were flagged) are now adjusted in the FGH bars; affected features were gap, on_ratio, TWAP deviation/slope, dip, EMA slope, ATR/ADX on roll nights; zone-line features inherit the raw replica frame and were not re-derived.
 > ALL NUMBERS BELOW ARE FIRST-ORDER SCREEN ONLY (pnl per planned lot x lots) unless marked EXACT. User addendum 1: first-order is not a verdict. EXACT runs (SZ-CORE queue, memory-bound): FGH_P744 0 months done; FGH_P644 0 months done; FGH_P444 0 months done; FGH_GREEDY 0 months done; FGH_BESTH 0 months done; FGH_BESTG 0 months done; FGH_DOW2 0 months done; FGH_TREND 0 months done; FGH_L2K2 0 months done.
 
 TESTING-DEFECT CHECK (addendum 1c) across my three live-chain bases (COMB, NOCUT, UNIF): of 6788 common cells, L6M maxDD identical to the dollar: 0; PRE: 0. No defect found among my own scores; the first-order scorer cannot see exit/re-entry/lock changes, so the verdict needs EXACT runs.
 
-# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-09 18:10Z
+# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-09 18:30Z
 
 Label: PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER on S1b-COMB (pnl per lot x lots; mean unreliable, drawdown ranking usable), no PASS claims, entry match < .85. Prereg SZ_FGH_PREREG.md (sha in DECISIONS.md). 6786 cells x 3 bases (COMB live, NOCUT, UNIF controls). Ledger /mnt/l2/l2vast/_th_sz/ledger_FGH*.parquet; lots ratios of top cells M_FGH.npz.
 

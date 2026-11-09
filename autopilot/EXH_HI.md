@@ -1,5 +1,5 @@
 # EXH_HI - EX-PHI: profit families H (take) and I (tighten/trail), Stage 1 first order
-Generated 2026-11-09 17:22Z. 893 cells scored (all ledgered, agent PHI). Label: PRE-PROOF (entries not live-matched). Fills: market exit k+1 mid -+0.80, targets nominal, stops at level. Features exist per month from the EX-FEAT store (rows with no feature never fire). Causality test (noise after second 900 on path, high/low/last and all feature panels; 17,926 exits <= 900 s over 128 sampled cells x 2 months, both directions): 0 changed - all kernels use only data <= decision second. Placebos null_ver 2 (cells re-scored after the leak audit). Family p, walk-forward and the live week are in the FINALISTS table at the top (finalists only). Labels in the generic tables below are CAND-DD only (L6M maxDD lower, L6M mean delta >= 0, PRE maxDD <= 1.05 x never-cut); the page label in FINALISTS uses labels_df.
+Generated 2026-11-09 18:46Z. 1077 cells scored (all ledgered, agent PHI). Label: PRE-PROOF (entries not live-matched). Fills: market exit k+1 mid -+0.80, targets nominal, stops at level. Features exist per month from the EX-FEAT store (rows with no feature never fire). Causality test (noise after second 900 on path, high/low/last and all feature panels; 17,926 exits <= 900 s over 128 sampled cells x 2 months, both directions): 0 changed - all kernels use only data <= decision second. Placebos null_ver 2 (cells re-scored after the leak audit). Family p, walk-forward and the live week are in the FINALISTS table at the top (finalists only). Labels in the generic tables below are CAND-DD only (L6M maxDD lower, L6M mean delta >= 0, PRE maxDD <= 1.05 x never-cut); the page label in FINALISTS uses labels_df.
 
 Ranking key: L6M maxDD (weekly, scope), then L6M worst-20, then Ulcer, then Calmar; filter nfire>=20, L6M mean >= never-cut. Delta mean columns are vs never-cut hold-to-bracket (the S1b-COMB live reference deltas are in the ledger columns *_dmean_c).
 ## FINALISTS (U2, Stage 1 first order; Stage 2 section below when complete)
@@ -152,10 +152,10 @@ Drawdown-first top (L6M mean >= never-cut):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
 | H_gated | arm=0.7 feat=tot_rel_fast secs=1 thr=2 | +3680 / -4505 / +522 / +655 / +1007 / +4519 / -2499 / -1342 | 71485 / 133887 | 107157 / 109442 | 64089 / -29902 | 1028 | 0.092 | pers 0.75 | CAND-DD |
+| NT_retarget | k=8 | +2611 / -2261 / +535 / +1658 / +2001 / -1154 / -358 / -498 | 77449 / 133887 | 111128 / 109442 | 59878 / -29902 | 1857 | 0.031 | pers 0.75 | CAND-DD |
 | I_trail | X=15 arm=0.9 | -5654 / -1939 / +757 / +1179 / +135 / -3353 / -2422 / -579 | 78294 / 133887 | 127068 / 109442 | 28267 / -29902 | 646 | 0.015 | pers 0.50 |  |
 | H_gated | arm=0.8 feat=tot_rel_fast secs=1 thr=2 | -2786 / -3368 / -173 / +525 / +399 / -2576 / -1154 / -622 | 82220 / 133887 | 110881 / 109442 | 34321 / -29902 | 725 | 0.154 | pers 0.25 | CAND-DD |
 | I_trail | X=20 arm=0.9 | -6900 / -2706 / +46 / +961 / +1159 / -6301 / -2499 / -884 | 84167 / 133887 | 125763 / 109442 | 23738 / -29902 | 529 | 0.108 | pers 0.50 |  |
-| H_gated | arm=0.7 feat=pr_e001_own_w10 secs=1 thr=35 | -2754 / -1166 / +1354 / +1116 / -971 / -3047 / -2087 / -465 | 84343 / 133887 | 128744 / 109442 | 23907 / -29902 | 926 | 0.523 | pers 0.50 |  |
 Best mean (for reference):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
