@@ -1,4 +1,4 @@
-# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 10:05Z)
+# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 10:57Z)
 **Universe U2 = full S1b tick-close never-cut (43 months) + the u5 live-week entries; this page shows U2 cells only.** The S1b-COMB live reference row is unchanged (S1b).
 
 **Reading guide.** ENTER = passes every gate (recents, tolerant older windows, drawdown not worse in L6M and PRE, delta above MDE, placebo p <= .10, family p <= .10, walk-forward ok, not FAILS-LIVE-WEEK). CANDIDATE-DD = lowers L6M maxDD at equal or better L6M mean and PRE maxDD within +5% (even inside MDE); LEAD = L6M mean and drawdown not worse with >60% of L1M..L6M windows positive. FAILS-LIVE-WEEK = the held-out live-week delta is below -1 MDE-week of that scope (never ENTER). Sub-flags in the label cell: rec-ok/rec-FAIL (no L1M..L6M delta below -1 MDE-week), wf-ok/wf-FAIL, plc-ok/plc-FAIL (placebo p <= .10), exposure (fires on more than 50% of trades = exposure shrink). **ENTER cells on this page: 0.**
@@ -11,8 +11,8 @@ v1.5 NOT VERIFIED: the v1.5 source is absent from the box (requested from the us
 Null audit: placebo version 2 (causal, leak-tested; EXH_API section 9). Placebo p of cells scored with the version-1 (leaky) null were recomputed or set to NaN (shown as nan, treated as 1.0 by the labels).
 Evidence level: stage S1 rows are first-order (each trade alone on its stored path, bracket exits at level, 1-s decision latency, 0.80 pt market-exit cost); rows marked S2 went through the replica engine cascade (re-entries, locks, stack gates). Entry match to the live week is below .85, so the page is PRE-PROOF.
 Label: state base S1b universe (never-cut hold-to-bracket path; months not yet rebuilt are S1 timer-close, flagged src in the universe), entry match to the live week not yet >= .85 unless stated: PRE-PROOF. Windows as of 2026-11-09 (data to 2026-11-05). USD per ISO week at live lots net of 4.84/contract; delta = rule minus never-cut with the carrying week dropped; "w/wo" = with the rule / without (never-cut). LIVE REFERENCE ROW = S1b-COMB (live week from the u5 replica).
-QUARANTINE: 0 cells of agent PHI from the flawed first scoring pass (nfire == ntrades, leg 2 fed back into a new Outcome) are excluded from every table, nulls and the family max-stat; they stay on disk. H/I (take / trail) section: corrected cells in the ledger 892 of 892 expected so far.
-Cells scored: 17043; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_flow', 'D', 'E', 'F', 'G', 'J_scale', 'K_target', 'L_cond', 'L_cross', 'L_learned', 'PHI_H', 'PHI_I', 'X_cross']. Labels: {'no': 88887, 'CANDIDATE-DD': 25710, 'LEAD': 6889, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4391, 'LEAD FAILS-LIVE-WEEK': 1572, 'S2-partial (older windows pending)': 40}
+QUARANTINE: 0 cells of agent PHI from the flawed first scoring pass (nfire == ntrades, leg 2 fed back into a new Outcome) are excluded from every table, nulls and the family max-stat; they stay on disk. H/I (take / trail) section: corrected cells in the ledger 893 of 893 expected so far.
+Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_flow', 'D', 'E', 'F', 'G', 'J_scale', 'K_target', 'L_cond', 'L_cross', 'L_learned', 'PHI_H', 'PHI_H/I', 'PHI_I', 'X_cross']. Labels: {'no': 88905, 'CANDIDATE-DD': 25720, 'LEAD': 6891, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4391, 'LEAD FAILS-LIVE-WEEK': 1572, 'S2-partial (older windows pending)': 40}
 
 ## ALL
 | ref | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M | maxDD PRE | worst-20 L6M |
@@ -300,7 +300,7 @@ Cells scored: 17043; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | K1_target | {"m": 1.1} | 120 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 184 / 664 | 0 / 0 | -184 / -664 | 2 | 1.00 | 1.00 / - |  |  | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL] |
 | PJKL_perbook_best | {"picks": {"H7": ["K1_target", "{\"m\": 0.5}"], "K7": ["K1_t | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
 | PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
-| J1_scale | {"b": 0, "p": 0.9, "rest": "be"} | -60 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 904 / 664 | 0 / 0 | -904 / -664 | 2 | 0.83 | 1.00 / - |  |  | S1 | no |
+| PHI_perbook_s2able | {"rules": {"A7": {"cell_id": "a66d38e1ce5f", "pct": 0.4, "te | 0 | 0 | 0 | 0 | 0 | 0 |  |  | 0 / 0 |  /  | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
 
 ### X3 both
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
@@ -365,8 +365,8 @@ Cells scored: 17043; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | K1_target | {"m": 1.1} | 60 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 1 | 1.00 | 1.00 / - |  |  | S1 | no |
 | PJKL_perbook_best | {"picks": {"H7": ["K1_target", "{\"m\": 0.5}"], "K7": ["K1_t | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
 | PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
+| PHI_perbook_s2able | {"rules": {"A7": {"cell_id": "a66d38e1ce5f", "pct": 0.4, "te | 0 | 0 | 0 | 0 | 0 | 0 |  |  | 0 / 0 |  /  | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
 | J3_statescale | {"a": 0.4, "f": "ahead_rel_slow", "rest": "hold", "s": 3, "t | -17 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 18 / 0 | 0 / 0 | -18 / 0 | 1 | 1.00 | 1.00 / - |  |  | S1 | no |
-| J3_statescale | {"a": 0.6, "f": "ahead_rel_slow", "rest": "hold", "s": 3, "t | -17 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 18 / 0 | 0 / 0 | -18 / 0 | 1 | 1.00 | 1.00 / - |  |  | S1 | no |
 
 ### X5 both
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |

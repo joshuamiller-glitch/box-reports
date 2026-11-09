@@ -1,6 +1,6 @@
-# EXH_STAGE2 - the decisive table: do the per-book cells still lower drawdown in the ENGINE cascade? (auto-generated 2026-11-09 10:01Z)
+# EXH_STAGE2 - the decisive table: do the per-book cells still lower drawdown in the ENGINE cascade? (auto-generated 2026-11-09 10:50Z)
 Engine S2 = the set run through the replica engine (re-entries, locks, stack gates, other books) vs engine never-cut (base_b/NOCUT) and vs the S1b-COMB live reference row; months/windows covered are in the stage tag. Stage 1 here = the same rule first-order on U2 (kernel re-run, panels from the state files of the previous and the label day). Live week = 186 live trades first-order (the engine run does not include 2026-11). S2 rows carry no placebo draws, so no S2 row can be ENTER; Stage 1 placebo/WY/WF of the finalists are in the owners reports (EXH_*.md) and the ledger.
-<!--TP-->Stage 2 months/hour (last 1.3 h): ldef_perbook_u2 0.0 (43/43), pjkl_PB 0.0 (43/43), bc_a_recent 0.0 (43/43), bc_m7_cps 0.0 (4/43), exla_pb1 3.7 (43/43), exla_pb2 0.0 (33/43), ldef_uniform_u2 20.1 (35/43), pjkl_UNI 16.4 (39/43), bc_c_uniform 17.8 (39/43)<!--/TP-->
+<!--TP-->Stage 2 months/hour (last 1.2 h): ldef_perbook_u2 0.0 (43/43), pjkl_PB 0.0 (43/43), bc_a_recent 0.0 (43/43), bc_m7_cps 24.4 (33/43), exla_pb1 0.0 (43/43), exla_pb2 8.4 (43/43), exla_uni 0.0 (29/43), ldef_uniform_u2 6.7 (43/43), pjkl_UNI 3.4 (43/43), bc_c_uniform 3.4 (43/43), bc_b_ddbest 0.0 (16/43)<!--/TP-->
 USD per ISO week at live lots, net of 4.84/contract; delta = rule minus never-cut with the carrying week dropped; maxDD/worst-20 on all weeks of the window.
 
 ## Plain reading (auto)
@@ -22,7 +22,22 @@ Every per-book cell below that lowers the L6M maxDD in the engine while keeping 
 - exla_pb1 A7 (STRICT): L6M maxDD 6,849 vs 9,361, PRE maxDD 5,200 vs 8,625, L6M mean -532/wk, PRE mean -225/wk, live week -1,305, recents ok, label no; Stage 1 L6M gain kept in the engine: 34%.
 - exla_pb1 H7 (STRICT): L6M maxDD 7,348 vs 16,242, PRE maxDD 16,721 vs 18,436, L6M mean 286/wk, PRE mean -157/wk, live week 319, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 109%.
 - exla_pb1 O7 (STRICT): L6M maxDD 5,668 vs 6,958, PRE maxDD 4,172 vs 4,797, L6M mean 70/wk, PRE mean 11/wk, live week 77, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 54%.
+- exla_pb2 K7 (STRICT): L6M maxDD 26,854 vs 35,969, PRE maxDD 20,717 vs 22,188, L6M mean -943/wk, PRE mean -625/wk, live week 312, recents ok, label no; Stage 1 L6M gain kept in the engine: 117%.
+- exla_pb2 P7 (weak): L6M maxDD 159,250 vs 203,542, PRE maxDD 121,093 vs 122,169, L6M mean 822/wk, PRE mean 57/wk, live week -5,309, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 54%.
+- exla_pb2 M7 (STRICT): L6M maxDD 24,083 vs 48,019, PRE maxDD 30,278 vs 44,205, L6M mean 245/wk, PRE mean 108/wk, live week -2,837, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 79%.
+- exla_pb2 A7 (STRICT): L6M maxDD 6,128 vs 9,361, PRE maxDD 7,884 vs 8,625, L6M mean -187/wk, PRE mean -216/wk, live week -169, recents ok, label no; Stage 1 L6M gain kept in the engine: 45%.
+- exla_pb2 H7 (STRICT): L6M maxDD 10,170 vs 16,242, PRE maxDD 17,557 vs 18,436, L6M mean -62/wk, PRE mean -21/wk, live week 194, recents ok, label no; Stage 1 L6M gain kept in the engine: 76%.
+- exla_pb2 O7 (STRICT): L6M maxDD 5,668 vs 6,958, PRE maxDD 4,172 vs 4,797, L6M mean 70/wk, PRE mean 11/wk, live week 77, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 54%.
+- ldef_uniform_u2 P7 (weak): L6M maxDD 179,872 vs 203,542, PRE maxDD 126,002 vs 122,169, L6M mean 846/wk, PRE mean -179/wk, live week -24,336, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 38%.
+- ldef_uniform_u2 M7 (STRICT): L6M maxDD 43,917 vs 48,019, PRE maxDD 30,453 vs 44,205, L6M mean -458/wk, PRE mean -183/wk, live week 3,427, recents ok, label no; Stage 1 L6M gain kept in the engine: 156%.
+- ldef_uniform_u2 U7 (weak): L6M maxDD 13,577 vs 17,816, PRE maxDD 40,623 vs 39,542, L6M mean 94/wk, PRE mean -382/wk, live week 346, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 40%.
+- ldef_uniform_u2 A7 (STRICT): L6M maxDD 5,537 vs 9,361, PRE maxDD 5,415 vs 8,625, L6M mean 32/wk, PRE mean -240/wk, live week -1,018, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 50%.
+- ldef_uniform_u2 H7 (STRICT): L6M maxDD 11,345 vs 16,242, PRE maxDD 16,436 vs 18,436, L6M mean -79/wk, PRE mean -536/wk, live week 660, recents ok, label no; Stage 1 L6M gain kept in the engine: n/a.
 - pjkl_UNI H7 (weak): L6M maxDD 15,922 vs 16,242, PRE maxDD 18,436 vs 18,436, L6M mean 13/wk, PRE mean -18/wk, live week 0, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 12%.
+- bc_c_uniform K7 (STRICT): L6M maxDD 25,881 vs 35,969, PRE maxDD 21,466 vs 22,188, L6M mean 305/wk, PRE mean -310/wk, live week 1,817, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: n/a.
+- bc_c_uniform P7 (weak): L6M maxDD 183,796 vs 203,542, PRE maxDD 123,623 vs 122,169, L6M mean 1,886/wk, PRE mean 136/wk, live week 2,806, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 48%.
+- bc_c_uniform U7 (weak): L6M maxDD 17,213 vs 17,816, PRE maxDD 41,373 vs 39,542, L6M mean 247/wk, PRE mean -95/wk, live week 0, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: n/a.
+- bc_c_uniform A7 (weak): L6M maxDD 8,444 vs 9,361, PRE maxDD 8,592 vs 8,625, L6M mean 108/wk, PRE mean 1/wk, live week -1,638, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 70%.
 
 ## ldef_perbook_u2  (LDEF_perbook, side loss, stage S2, 43 of 43 months run)
 Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): ldef_perbook_u2 202610 K7 | Stage 1 kernel fires 63 | engine ExhCut on those 44 | equal second (+-1 s) 44 | equal px 43 | engine ExhCut total 68
@@ -94,6 +109,42 @@ Stack (all books of the set together, engine):
 
 **Decisive reading for exla_pb1:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): K7, M7, A7, H7, O7. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): K7, M7, U7, A7, H7, O7. (strict-lowering: K7, P7, M7, A7, H7, O7; weak-lowering: K7, P7, M7, U7, A7, H7, O7; recents-ok: K7, P7, M7, U7, A7, H7, O7; live-ok: K7, M7, U7, A7, H7, O7).
 
+## exla_pb2  (A_perbook_best2, side loss, stage S2, 43 of 43 months run)
+Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): exla_pb2 202610 K7 | Stage 1 kernel fires 115 | engine ExhCut on those 75 | equal second (+-1 s) 75 | equal px 75 | engine ExhCut total 173
+
+| book | rule | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | live week | S1 L6M maxDD w/wo | S1 L6M gain kept in S2 | recents | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| K7 | [0, 10, 15, 10, 20, 1, 10, 0, 0, 0] | 5,237 | -3,894 | -1,382 | -943 | -1,454 | -89 | -625 | 102 | 26,854 / 35,969 | 20,717 / 22,188 | -2,845 / -20,829 | 312 | 13,112 / 20,902 | 117% | rec-ok | no |
+| P7 | [0, 30, 4, 5, 10, 1, 5, 0, 0, 0] | -1,471 | -1,117 | 536 | 822 | 540 | -3,308 | 57 | -109 | 159,250 / 203,542 | 121,093 / 122,169 | -127,680 / -181,468 | -5,309 | 51,165 / 133,887 | 54% | rec-ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| M7 | [0, 15, 8, 1, 1, 1, 1, 0, 0, 0] | -1,881 | -311 | 648 | 245 | -771 | -915 | 108 | -263 | 24,083 / 48,019 | 30,278 / 44,205 | -50,247 / -73,536 | -2,837 | 14,217 / 44,425 | 79% | rec-ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| U7 | [0, 30, 20, 5, 1, 0, 0, 0, 2, 0] | 1,521 | 386 | 287 | 268 | 492 | -71 | -153 | 122 | 13,684 / 17,816 | 46,887 / 39,542 | 26,116 / 17,704 | 0 | 8,603 / 21,561 | 32% | rec-ok | LEAD |
+| A7 | [0, 20, 15, 3, 1, 1, 3, 0, 0, 0] | 1,136 | 48 | 215 | -187 | -219 | 322 | -216 | 25 | 6,128 / 9,361 | 7,884 / 8,625 | -5,791 / -7,321 | -169 | 5,218 / 12,461 | 45% | rec-ok | no |
+| H7 | [0, 10, 30, 10, 10, 1, 10, 0, 0, 0] | -459 | -77 | 444 | -62 | 104 | 267 | -21 | -1 | 10,170 / 16,242 | 17,557 / 18,436 | -14,181 / -13,688 | 194 | 7,484 / 15,477 | 76% | rec-ok | no |
+| O7 | [0, 10, 60, 15, 1, 0, 0, 0, 0, 0] | 344 | 462 | 290 | 70 | -36 | 243 | 11 | 31 | 5,668 / 6,958 | 4,172 / 4,797 | -7,698 / -11,023 | 77 | 5,063 / 7,469 | 54% | rec-ok | CANDIDATE-DD |
+
+Stack (all books of the set together, engine):
+- L6M maxDD 126,889 vs 191,045 never-cut vs 82,873 S1b-COMB; PRE maxDD 113,537 vs 130,824; L6M mean delta 754 (MDE 7,526); worst-20 L6M 19,652 vs -63,404.
+
+**Decisive reading for exla_pb2:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): K7, A7, H7, O7. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): K7, A7, H7, O7. (strict-lowering: K7, M7, A7, H7, O7; weak-lowering: K7, P7, M7, A7, H7, O7; recents-ok: K7, P7, M7, U7, A7, H7, O7; live-ok: K7, U7, A7, H7, O7).
+
+## ldef_uniform_u2  (LDEF_uniform, side loss, stage S2, 43 of 43 months run)
+Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): ldef_uniform_u2 202610 K7 | Stage 1 kernel fires 138 | engine ExhCut on those 78 | equal second (+-1 s) 78 | equal px 77 | engine ExhCut total 163
+
+| book | rule | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | live week | S1 L6M maxDD w/wo | S1 L6M gain kept in S2 | recents | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| K7 | [3.0, 15.0, 50.0, 0.0, 0.0, 0.0, 0.0, 0. | 6,463 | -1,668 | 70 | 679 | -527 | 442 | -1,894 | 260 | 12,875 / 35,969 | 36,525 / 22,188 | 28,296 / -20,829 | 1,758 | 45,518 / 20,902 | n/a | rec-ok | LEAD |
+| P7 | [3.0, 15.0, 50.0, 0.0, 0.0, 0.0, 0.0, 0. | 233 | -2,285 | -1,265 | 846 | 316 | -3,933 | -179 | 349 | 179,872 / 203,542 | 126,002 / 122,169 | -131,075 / -181,468 | -24,336 | 70,880 / 133,887 | 38% | rec-ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| M7 | [3.0, 15.0, 50.0, 0.0, 0.0, 0.0, 0.0, 0. | -931 | -175 | -189 | -458 | -871 | 206 | -183 | -741 | 43,917 / 48,019 | 30,453 / 44,205 | -68,854 / -73,536 | 3,427 | 41,801 / 44,425 | 156% | rec-ok | no |
+| U7 | [3.0, 15.0, 50.0, 0.0, 0.0, 0.0, 0.0, 0. | 1,581 | 264 | 454 | 94 | 84 | -659 | -382 | -304 | 13,577 / 17,816 | 40,623 / 39,542 | 18,955 / 17,704 | 346 | 10,892 / 21,561 | 40% | rec-ok | CANDIDATE-DD |
+| A7 | [3.0, 15.0, 50.0, 0.0, 0.0, 0.0, 0.0, 0. | 366 | 351 | 391 | 32 | 43 | -29 | -240 | 192 | 5,537 / 9,361 | 5,415 / 8,625 | -2,330 / -7,321 | -1,018 | 4,785 / 12,461 | 50% | rec-ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| H7 | [3.0, 15.0, 50.0, 0.0, 0.0, 0.0, 0.0, 0. | 345 | -8 | 311 | -79 | -197 | -89 | -536 | -19 | 11,345 / 16,242 | 16,436 / 18,436 | -8,440 / -13,688 | 660 | 24,260 / 15,477 | n/a | rec-ok | no |
+| O7 | [3.0, 15.0, 50.0, 0.0, 0.0, 0.0, 0.0, 0. | 328 | 356 | 422 | 255 | -17 | -151 | 62 | -70 | 7,875 / 6,958 | 4,616 / 4,797 | -7,504 / -11,023 | 563 | 8,341 / 7,469 | n/a | rec-ok | no |
+
+Stack (all books of the set together, engine):
+- L6M maxDD 133,346 vs 191,045 never-cut vs 82,873 S1b-COMB; PRE maxDD 123,037 vs 130,824; L6M mean delta 1,565 (MDE 7,075); worst-20 L6M 37,736 vs -63,404.
+
+**Decisive reading for ldef_uniform_u2:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): M7, H7. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): M7, U7, H7. (strict-lowering: M7, A7, H7; weak-lowering: P7, M7, U7, A7, H7; recents-ok: K7, P7, M7, U7, A7, H7, O7; live-ok: K7, M7, U7, H7, O7).
+
 ## pjkl_UNI  (PJKL_uniform_best, side profit, stage S2, 43 of 43 months run)
 Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): pjkl_UNI 202610 K7 | Stage 1 kernel fires 38 | engine ExhCut on those 0 | equal second (+-1 s) 0 | equal px 0 | engine ExhCut total 0
 
@@ -111,3 +162,21 @@ Stack (all books of the set together, engine):
 - L6M maxDD 195,966 vs 191,045 never-cut vs 82,873 S1b-COMB; PRE maxDD 126,466 vs 130,824; L6M mean delta -1,088 (MDE 2,930); worst-20 L6M -124,016 vs -63,404.
 
 **Decisive reading for pjkl_UNI:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): NONE. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): H7. (strict-lowering: none; weak-lowering: H7; recents-ok: K7, P7, M7, U7, A7, H7, O7; live-ok: K7, A7, H7, O7).
+
+## bc_c_uniform  (LBC_C_uniform, side loss, stage S2, 43 of 43 months run)
+Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): bc_c_uniform 202610 K7 | Stage 1 kernel fires 44 | engine ExhCut on those 31 | equal second (+-1 s) 29 | equal px 29 | engine ExhCut total 37
+
+| book | rule | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | live week | S1 L6M maxDD w/wo | S1 L6M gain kept in S2 | recents | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| K7 | [1, 22.0, 12, 0, 0, 40.0] | 1,495 | 226 | 797 | 305 | -91 | -799 | -310 | -72 | 25,881 / 35,969 | 21,466 / 22,188 | -12,138 / -20,829 | 1,817 | 24,815 / 20,902 | n/a | rec-ok | CANDIDATE-DD |
+| P7 | [1, 22.0, 12, 0, 0, 40.0] | 1,318 | 1,387 | 1,518 | 1,886 | 167 | -3,977 | 136 | -319 | 183,796 / 203,542 | 123,623 / 122,169 | -115,666 / -181,468 | 2,806 | 92,482 / 133,887 | 48% | rec-ok | CANDIDATE-DD |
+| M7 | [1, 22.0, 12, 0, 0, 40.0] | -156 | 128 | -265 | 39 | -159 | 58 | -21 | 34 | 41,495 / 48,019 | 49,926 / 44,205 | -68,849 / -73,536 | 501 | 42,814 / 44,425 | 405% | rec-ok | no |
+| U7 | [1, 22.0, 12, 0, 0, 40.0] | -329 | 120 | 128 | 247 | 298 | 193 | -95 | 31 | 17,213 / 17,816 | 41,373 / 39,542 | 18,299 / 17,704 | 0 | 24,618 / 21,561 | n/a | rec-ok | CANDIDATE-DD |
+| A7 | [1, 22.0, 12, 0, 0, 40.0] | -315 | 276 | 339 | 108 | 36 | -121 | 1 | -16 | 8,444 / 9,361 | 8,592 / 8,625 | -7,599 / -7,321 | -1,638 | 11,144 / 12,461 | 70% | rec-ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| H7 | [1, 22.0, 12, 0, 0, 40.0] | -226 | -53 | 68 | 237 | 105 | 2 | -106 | 32 | 14,995 / 16,242 | 19,425 / 18,436 | -14,130 / -13,688 | 0 | 15,870 / 15,477 | n/a | rec-ok | no |
+| O7 | [1, 22.0, 12, 0, 0, 40.0] | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6,958 / 6,958 | 4,797 / 4,797 | -11,023 / -11,023 | 0 | 7,469 / 7,469 | n/a | rec-ok | no |
+
+Stack (all books of the set together, engine):
+- L6M maxDD 147,999 vs 191,045 never-cut vs 82,873 S1b-COMB; PRE maxDD 135,690 vs 130,824; L6M mean delta 1,357 (MDE 4,662); worst-20 L6M 24,508 vs -63,404.
+
+**Decisive reading for bc_c_uniform:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): K7. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): K7, P7, U7. (strict-lowering: K7; weak-lowering: K7, P7, U7, A7; recents-ok: K7, P7, M7, U7, A7, H7, O7; live-ok: K7, P7, M7, U7, H7, O7).

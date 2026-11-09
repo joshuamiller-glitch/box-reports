@@ -1,4 +1,4 @@
-# DS3_TH_EXHAUST_FINAL - two-sided per-book exit policy, drawdown first   **[DRAFT SKELETON - compiled 2026-11-09 10:09Z]**
+# DS3_TH_EXHAUST_FINAL - two-sided per-book exit policy, drawdown first   **[DRAFT SKELETON - compiled 2026-11-09 10:50Z]**
 Label: state base, universe U2 (U2 = full S1b tick-close never-cut, 43 months + live-week entries); entry match to the live week below .85: PRE-PROOF. USD per ISO week at live lots net of 4.84/contract; windows as of 2026-11-09.
 
 ## Box-confirmation items for v1.5 fidelity
@@ -11,24 +11,53 @@ Evidence level: stage S1 rows are first-order (each trade alone on its stored pa
 
 
 ## Reference rows (live v1.5 / never-cut / plain 60/60)
+Levels: USD per ISO week, net of 4.84/contract, with the single largest-|delta| week (the carrying week) dropped from the MEANS; they differ from the plain-mean levels in TH_STATE_BASE_S1.md. maxDD and worst-20 are on all weeks.
+
 | row | book | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M | maxDD PRE | worst-20 L6M |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| S1b-COMB (live v1.5 seven state-cut lines, replica) | ALL | 11,588 | 35,818 | 20,608 | 23,721 | 15,294 | 9,807 | 13,959 | 1,679 | 82,873 | 144,002 | 190,560 |
-| engine never-cut (= plain 60/60 in the replica, ENTRY_MATCH finding) | ALL | -14,622 | 23,859 | 8,518 | 13,389 | 9,695 | 4,729 | 12,875 | 1,870 | 191,045 | 130,824 | -63,404 |
-| S1b-COMB (live v1.5 seven state-cut lines, replica) | K7 | 7,873 | 7,336 | 3,232 | 3,429 | 1,994 | 3,113 | 2,723 | 183 | 41,849 | 23,073 | -20,339 |
-| engine never-cut (= plain 60/60 in the replica, ENTRY_MATCH finding) | K7 | 662 | 3,876 | 1,286 | 2,735 | 2,025 | 2,174 | 3,000 | 647 | 35,969 | 22,188 | -20,829 |
-| S1b-COMB (live v1.5 seven state-cut lines, replica) | P7 | 5,700 | 21,351 | 15,192 | 14,220 | 9,899 | 4,615 | 6,054 | -143 | 96,490 | 106,914 | 53,844 |
-| engine never-cut (= plain 60/60 in the replica, ENTRY_MATCH finding) | P7 | -8,308 | 13,521 | 6,656 | 4,434 | 3,922 | 328 | 4,982 | -581 | 203,542 | 122,169 | -181,468 |
-| S1b-COMB (live v1.5 seven state-cut lines, replica) | M7 | 40 | 2,355 | -568 | -1,108 | -840 | -160 | 547 | 86 | 46,547 | 25,812 | -64,633 |
-| engine never-cut (= plain 60/60 in the replica, ENTRY_MATCH finding) | M7 | -2,372 | 1,938 | -878 | -738 | -367 | 326 | 12 | 224 | 48,019 | 44,205 | -73,536 |
-| S1b-COMB (live v1.5 seven state-cut lines, replica) | U7 | -3,377 | 2,510 | 1,393 | 3,493 | 2,197 | 3,362 | 1,481 | 1,112 | 16,419 | 39,155 | 8,146 |
-| engine never-cut (= plain 60/60 in the replica, ENTRY_MATCH finding) | U7 | -3,891 | 2,598 | 1,466 | 3,588 | 2,313 | 2,607 | 1,431 | 1,117 | 17,816 | 39,542 | 17,704 |
-| S1b-COMB (live v1.5 seven state-cut lines, replica) | A7 | -1,287 | 202 | 148 | 661 | 704 | 17 | 954 | 268 | 8,518 | 7,325 | -11,915 |
-| engine never-cut (= plain 60/60 in the replica, ENTRY_MATCH finding) | A7 | -405 | 629 | 430 | 987 | 838 | 340 | 988 | 267 | 9,361 | 8,625 | -7,321 |
-| S1b-COMB (live v1.5 seven state-cut lines, replica) | H7 | 3,186 | 1,936 | 1,001 | 2,757 | 665 | -1,000 | 1,583 | 320 | 8,818 | 19,256 | 11,007 |
-| engine never-cut (= plain 60/60 in the replica, ENTRY_MATCH finding) | H7 | 928 | 1,595 | -290 | 2,330 | 407 | -989 | 1,816 | 270 | 16,242 | 18,436 | -13,688 |
-| S1b-COMB (live v1.5 seven state-cut lines, replica) | O7 | -988 | -93 | 63 | 199 | 640 | -140 | 617 | -147 | 6,656 | 4,532 | -8,247 |
-| engine never-cut (= plain 60/60 in the replica, ENTRY_MATCH finding) | O7 | -1,236 | -299 | -151 | 52 | 557 | -58 | 647 | -73 | 6,958 | 4,797 | -11,023 |
+| never-cut (NOCUT, = plain 60/60 in the replica) | ALL | -14,622 | 23,859 | 8,518 | 13,389 | 9,695 | 4,729 | 12,875 | 1,870 | 191,045 | 130,824 | -63,404 |
+| HOLD-old (old live L2 cut) | ALL | 783 | 38,368 | 13,026 | 20,499 | 13,754 | 9,964 | 7,588 | 5,260 | 132,342 | 171,684 | 25,602 |
+| S1b-COMB (live v1.5 seven state-cut lines) | ALL | -1,799 | 18,811 | 14,975 | 26,560 | 17,412 | 17,246 | 13,203 | 2,431 | 82,873 | 144,002 | 137,012 |
+| S1b-UNIF (one cell for all books) | ALL | -15,356 | 28,860 | 3,866 | 14,267 | 11,192 | 10,913 | 13,197 | 2,001 | 185,610 | 137,647 | -102,473 |
+| S1b-LIVE (30/30/5/1 cell on state) | ALL | -10,396 | 21,616 | 3,175 | 19,836 | 12,779 | 8,613 | 12,453 | 1,952 | 196,906 | 129,487 | -44,000 |
+| never-cut (NOCUT, = plain 60/60 in the replica) | K7 | 662 | 3,876 | 1,286 | 2,735 | 2,025 | 2,174 | 3,000 | 647 | 35,969 | 22,188 | -20,829 |
+| HOLD-old (old live L2 cut) | K7 | 4,376 | 2,717 | -206 | 2,315 | 1,294 | 214 | 1,789 | 1,091 | 31,791 | 43,726 | -39,563 |
+| S1b-COMB (live v1.5 seven state-cut lines) | K7 | 4,426 | 6,727 | 2,383 | 2,681 | 1,684 | 4,950 | 2,926 | 396 | 41,849 | 23,073 | -30,965 |
+| S1b-UNIF (one cell for all books) | K7 | 4,869 | 4,732 | 841 | 2,377 | 2,077 | 5,198 | 3,051 | 922 | 18,987 | 18,921 | -18,865 |
+| S1b-LIVE (30/30/5/1 cell on state) | K7 | 323 | 3,107 | 984 | 3,566 | 1,545 | 2,382 | 3,109 | 592 | 37,425 | 21,298 | -13,916 |
+| never-cut (NOCUT, = plain 60/60 in the replica) | P7 | -8,308 | 13,521 | 6,656 | 4,434 | 3,922 | 328 | 4,982 | -581 | 203,542 | 122,169 | -181,468 |
+| HOLD-old (old live L2 cut) | P7 | -529 | 10,079 | 7,585 | 12,182 | 9,542 | 7,055 | 2,118 | 1,229 | 128,194 | 165,749 | -48,297 |
+| S1b-COMB (live v1.5 seven state-cut lines) | P7 | -2,928 | 17,036 | 9,346 | 16,263 | 11,963 | 4,891 | 5,662 | 395 | 96,490 | 106,914 | 19,331 |
+| S1b-UNIF (one cell for all books) | P7 | -12,449 | 11,933 | 1,519 | 5,912 | 5,167 | 5,823 | 5,706 | 200 | 196,293 | 111,170 | -154,283 |
+| S1b-LIVE (30/30/5/1 cell on state) | P7 | -4,096 | 14,116 | 1,402 | 9,368 | 6,288 | 6,012 | 4,581 | -667 | 217,740 | 111,865 | -161,846 |
+| never-cut (NOCUT, = plain 60/60 in the replica) | M7 | -2,372 | 1,938 | -878 | -738 | -367 | 326 | 12 | 224 | 48,019 | 44,205 | -73,536 |
+| HOLD-old (old live L2 cut) | M7 | -1,737 | 2,836 | 29 | -1,349 | -793 | 2,150 | -180 | 140 | 63,275 | 41,730 | -93,690 |
+| S1b-COMB (live v1.5 seven state-cut lines) | M7 | -1,305 | 412 | -1,678 | -1,150 | -758 | 1,825 | 602 | 248 | 46,547 | 25,812 | -69,923 |
+| S1b-UNIF (one cell for all books) | M7 | -2,191 | 289 | -581 | -1,128 | -435 | 1,065 | 153 | 201 | 60,698 | 39,327 | -83,139 |
+| S1b-LIVE (30/30/5/1 cell on state) | M7 | -2,438 | 1,876 | -606 | -84 | -12 | 1,086 | 203 | 65 | 45,180 | 46,357 | -75,226 |
+| never-cut (NOCUT, = plain 60/60 in the replica) | U7 | -3,891 | 2,598 | 1,466 | 3,588 | 2,313 | 2,607 | 1,431 | 1,117 | 17,816 | 39,542 | 17,704 |
+| HOLD-old (old live L2 cut) | U7 | -2,971 | 1,682 | 2,269 | 4,394 | 2,776 | 4,618 | 765 | 1,296 | 16,061 | 56,548 | 25,628 |
+| S1b-COMB (live v1.5 seven state-cut lines) | U7 | -3,092 | 1,040 | 1,031 | 3,539 | 2,299 | 1,620 | 1,664 | 1,053 | 15,278 | 39,155 | 9,288 |
+| S1b-UNIF (one cell for all books) | U7 | -4,310 | 2,300 | 1,233 | 3,184 | 1,789 | 2,053 | 1,697 | 1,273 | 17,442 | 48,367 | -16,051 |
+| S1b-LIVE (30/30/5/1 cell on state) | U7 | -3,452 | 659 | 1,391 | 4,182 | 2,323 | 830 | 1,401 | 1,180 | 16,059 | 42,606 | 23,192 |
+| never-cut (NOCUT, = plain 60/60 in the replica) | A7 | -405 | 629 | 430 | 987 | 838 | 340 | 988 | 267 | 9,361 | 8,625 | -7,321 |
+| HOLD-old (old live L2 cut) | A7 | -43 | 693 | 645 | 1,365 | 849 | 522 | 781 | 471 | 6,972 | 7,224 | -1,687 |
+| S1b-COMB (live v1.5 seven state-cut lines) | A7 | -1,257 | 706 | 496 | 579 | 612 | 469 | 991 | 267 | 8,518 | 7,325 | -11,794 |
+| S1b-UNIF (one cell for all books) | A7 | -1,316 | 554 | 330 | 1,119 | 743 | 129 | 794 | 256 | 9,776 | 7,983 | -10,668 |
+| S1b-LIVE (30/30/5/1 cell on state) | A7 | -202 | 924 | 520 | 1,239 | 791 | 346 | 943 | 267 | 9,663 | 9,385 | -8,502 |
+| never-cut (NOCUT, = plain 60/60 in the replica) | H7 | 928 | 1,595 | -290 | 2,330 | 407 | -989 | 1,816 | 270 | 16,242 | 18,436 | -13,688 |
+| HOLD-old (old live L2 cut) | H7 | 2,431 | 1,353 | 649 | 2,762 | 565 | -825 | 1,406 | 599 | 12,317 | 12,561 | 390 |
+| S1b-COMB (live v1.5 seven state-cut lines) | H7 | 3,510 | 2,206 | 1,228 | 2,443 | 797 | -445 | 1,468 | 220 | 8,818 | 19,256 | 12,306 |
+| S1b-UNIF (one cell for all books) | H7 | 1,277 | 2,317 | 209 | 2,516 | 505 | -1,115 | 1,735 | 34 | 16,068 | 18,436 | -19,153 |
+| S1b-LIVE (30/30/5/1 cell on state) | H7 | 704 | 1,241 | -534 | 2,359 | 465 | -1,548 | 1,507 | 206 | 15,603 | 18,436 | -20,428 |
+| never-cut (NOCUT, = plain 60/60 in the replica) | O7 | -1,236 | -299 | -151 | 52 | 557 | -58 | 647 | -73 | 6,958 | 4,797 | -11,023 |
+| HOLD-old (old live L2 cut) | O7 | -745 | 368 | 202 | 116 | 360 | -604 | 392 | -150 | 5,513 | 5,222 | -8,543 |
+| S1b-COMB (live v1.5 seven state-cut lines) | O7 | -1,153 | -478 | 189 | 357 | 674 | -127 | 646 | -69 | 6,656 | 4,532 | -8,908 |
+| S1b-UNIF (one cell for all books) | O7 | -1,236 | -299 | -151 | 52 | 522 | -58 | 661 | -55 | 6,958 | 4,797 | -11,023 |
+| S1b-LIVE (30/30/5/1 cell on state) | O7 | -1,236 | -540 | -205 | 208 | 607 | -26 | 688 | -73 | 8,806 | 4,797 | -12,796 |
+
+S1b-COMB vs never-cut, USD/wk (stack, carrying week dropped): L1M +12,824 (MDE 15,728), L2M +9,199 (MDE 11,442), L3M +6,130 (MDE 13,002), L6M +6,536 (MDE 9,935), HOLD +6,246 (MDE 6,998), MID +8,032 (MDE 14,081), PRE +1,599 (MDE 4,255), X' +772 (MDE 2,860). All below MDE. Windows here are as of 2026-11-09 (L1M 20261011-, L2M 20260911-, L3M 20260812-, L6M 20260512-), the ENTRY-MATCH / TH_STATE_BASE_S1B.md table uses windows as of 2026-10-31 (L1M +9,184, L2M +8,476, L3M +6,532, L6M +7,290; HOLD, MID, PRE, X' are identical): the L1M-L6M differences are the window shift; the base_b runs end 2026-10-31, so the live week (2026-11-02..05) is not in these reference rows.
+Regression status: only a one-month tick/timer-close regression (202304) exists for the S1b engine base; none exists for the references (NOCUT, HOLD-old, S1b-UNIF, S1b-LIVE). The S1b references are the full 43-month rebuilds of ENTRY-MATCH (autopilot/TH_STATE_BASE_S1B.md).
 
 Plain 60/60: in the replica the plain 60/60 run is trade-for-trade identical to the never-cut run (ENTRY_MATCH, S1 comparison); the S1b PLAIN6060 rebuild exists for part of the months only, so the never-cut row stands for it. The live v1.5 row is the S1b-COMB replica; the live-week actuals are in the held-out columns.
 
@@ -90,7 +119,22 @@ See autopilot/EXH_STAGE2.md (per completed set and per book: engine vs never-cut
 - exla_pb1 A7 (STRICT): L6M maxDD 6,849 vs 9,361, PRE maxDD 5,200 vs 8,625, L6M mean -532/wk, PRE mean -225/wk, live week -1,305, recents ok, label no; Stage 1 L6M gain kept in the engine: 34%.
 - exla_pb1 H7 (STRICT): L6M maxDD 7,348 vs 16,242, PRE maxDD 16,721 vs 18,436, L6M mean 286/wk, PRE mean -157/wk, live week 319, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 109%.
 - exla_pb1 O7 (STRICT): L6M maxDD 5,668 vs 6,958, PRE maxDD 4,172 vs 4,797, L6M mean 70/wk, PRE mean 11/wk, live week 77, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 54%.
+- exla_pb2 K7 (STRICT): L6M maxDD 26,854 vs 35,969, PRE maxDD 20,717 vs 22,188, L6M mean -943/wk, PRE mean -625/wk, live week 312, recents ok, label no; Stage 1 L6M gain kept in the engine: 117%.
+- exla_pb2 P7 (weak): L6M maxDD 159,250 vs 203,542, PRE maxDD 121,093 vs 122,169, L6M mean 822/wk, PRE mean 57/wk, live week -5,309, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 54%.
+- exla_pb2 M7 (STRICT): L6M maxDD 24,083 vs 48,019, PRE maxDD 30,278 vs 44,205, L6M mean 245/wk, PRE mean 108/wk, live week -2,837, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 79%.
+- exla_pb2 A7 (STRICT): L6M maxDD 6,128 vs 9,361, PRE maxDD 7,884 vs 8,625, L6M mean -187/wk, PRE mean -216/wk, live week -169, recents ok, label no; Stage 1 L6M gain kept in the engine: 45%.
+- exla_pb2 H7 (STRICT): L6M maxDD 10,170 vs 16,242, PRE maxDD 17,557 vs 18,436, L6M mean -62/wk, PRE mean -21/wk, live week 194, recents ok, label no; Stage 1 L6M gain kept in the engine: 76%.
+- exla_pb2 O7 (STRICT): L6M maxDD 5,668 vs 6,958, PRE maxDD 4,172 vs 4,797, L6M mean 70/wk, PRE mean 11/wk, live week 77, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 54%.
+- ldef_uniform_u2 P7 (weak): L6M maxDD 179,872 vs 203,542, PRE maxDD 126,002 vs 122,169, L6M mean 846/wk, PRE mean -179/wk, live week -24,336, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 38%.
+- ldef_uniform_u2 M7 (STRICT): L6M maxDD 43,917 vs 48,019, PRE maxDD 30,453 vs 44,205, L6M mean -458/wk, PRE mean -183/wk, live week 3,427, recents ok, label no; Stage 1 L6M gain kept in the engine: 156%.
+- ldef_uniform_u2 U7 (weak): L6M maxDD 13,577 vs 17,816, PRE maxDD 40,623 vs 39,542, L6M mean 94/wk, PRE mean -382/wk, live week 346, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 40%.
+- ldef_uniform_u2 A7 (STRICT): L6M maxDD 5,537 vs 9,361, PRE maxDD 5,415 vs 8,625, L6M mean 32/wk, PRE mean -240/wk, live week -1,018, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 50%.
+- ldef_uniform_u2 H7 (STRICT): L6M maxDD 11,345 vs 16,242, PRE maxDD 16,436 vs 18,436, L6M mean -79/wk, PRE mean -536/wk, live week 660, recents ok, label no; Stage 1 L6M gain kept in the engine: n/a.
 - pjkl_UNI H7 (weak): L6M maxDD 15,922 vs 16,242, PRE maxDD 18,436 vs 18,436, L6M mean 13/wk, PRE mean -18/wk, live week 0, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 12%.
+- bc_c_uniform K7 (STRICT): L6M maxDD 25,881 vs 35,969, PRE maxDD 21,466 vs 22,188, L6M mean 305/wk, PRE mean -310/wk, live week 1,817, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: n/a.
+- bc_c_uniform P7 (weak): L6M maxDD 183,796 vs 203,542, PRE maxDD 123,623 vs 122,169, L6M mean 1,886/wk, PRE mean 136/wk, live week 2,806, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 48%.
+- bc_c_uniform U7 (weak): L6M maxDD 17,213 vs 17,816, PRE maxDD 41,373 vs 39,542, L6M mean 247/wk, PRE mean -95/wk, live week 0, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: n/a.
+- bc_c_uniform A7 (weak): L6M maxDD 8,444 vs 9,361, PRE maxDD 8,592 vs 8,625, L6M mean 108/wk, PRE mean 1/wk, live week -1,638, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 70%.
 
 ## Fields the v1.5 grammar still lacks (for v1.6)
 - state-cut extensions: pulled_mult as the exact state quantity with a per-rule window (win=), persist= (consecutive seconds), armlots= (lots-scaled arm), entry_session (the grammar matches the CURRENT session; scored scope is the ENTRY session), 1-s evaluation with 1 s decision latency and the 0.80 pt market-exit cost.
@@ -115,11 +159,11 @@ Recents method L1M..L6M then HOLD/MID/PRE/X'; placebos v2 (causal, leak-tested),
 ## Family sections (state at compile)
 | family | file | status | last written |
 |---|---|---|---|
-| A (EX-LA) | EXH_A.md | in | 09:41Z |
+| A (EX-LA) | EXH_A.md | in | 10:50Z |
 | B/C (EX-LBC) | EXH_BC.md | in | 09:46Z |
-| D/E/F (EX-LDEF) | EXH_DEF.md | in | 09:41Z |
+| D/E/F (EX-LDEF) | EXH_DEF.md | in | 10:25Z |
 | G (EX-LG) | EXH_G.md | in | 09:21Z |
-| H/I (EX-PHI) | EXH_HI.md | in | 09:13Z |
+| H/I (EX-PHI) | EXH_HI.md | in | 10:19Z |
 | J/K/L (EX-PJKL) | EXH_JKL.md | in | 09:57Z |
 
 ## wf-ok flags: what they mean
