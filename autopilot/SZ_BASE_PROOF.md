@@ -257,3 +257,80 @@ F/G/H/K top-5 by new equal-mean L6M cut, same rule on the replica OLD-BASE (owne
 | K | P7_lot_table_joint | {"q_asia": 7, "q_london": 3, "q_nyam": 4} | 26.0 / 22.4 | -330 / -1463 | 25.1 / 16.9 | 5 / 48 |
 
 Across 5,137 matched F/G/H/K cells: cut correlation 0.70, equal-mean Spearman 0.49; 16 cells with d mean L6M identical new/old are all zero-change cells in L6M (no lot change in the window), not defects. H "gap_abs" / "on_ratio" cells keep +26-36% cut on the new base and fall to ranks 785-833 on the old base (cut -3 / +19); the nA40 quality gate and Wednesday skip (F dow=2) are the only cells that hold rank 1-2 on both bases.
+
+## 9. Contract-roll integrity check (EX-PHI finding): alive-across-roll and roll-second bracket exits in the exact base trade lists
+
+**One-line answer: yes - for the S1b bases (COMB / NOCUT / UNIF) the X' maxDD changes by +10% (116.9k -> 128.9k COMB, 129.1k -> 141.9k NOCUT, 125.1k -> 137.8k UNIF) when the 33 roll-second trades are removed, so any X' maxDD or X' cut number moves materially (reference rows: sizer off X' cut -73.8 -> -66.9, ladder L -2.7 -> -8.0, vol-target +45.9 -> +48.0; 15 of 49 top cells move > 3 points on X', 16 of 49 move > 3 points on HOLD, up to 21 points, because their own HOLD maxDD includes roll trades while Q1-A's does not); L6M numbers do not change (<0.1%), PRE changes < 3.5 points, replica HOLD-old PRE maxDD +3.1%. Worst-20 changes: COMB HOLD +3.4%, NOCUT L6M -5.4%, HOLD-old L6M -3.7%.**
+
+Roll seconds: the 14 inst changes in the 1-s state arrays (/mnt/l2/l2vast/_th_state/days/*.npz, flag roll) - 20230614, 20230913, 20231213, 20240313, 20240619, 20240918, 20241219, 20250320, 20250618, 20250918, 20251217, 20260318, 20260617, 20260916, all at 00:00:00 UTC (= 20:00 ET; 20240918 at 23:59:59), mid jump +185 to +316 pts every time (all upward). The 14 days are the same in every base: the engine reads one shared day-file set, so the roll list is base-independent (file rolls.csv in the SZ-BASE scratch; list in section 9 table).
+
+**Engine check: the artifact is IN the engine.** replica ITER14 (hist_pipe/hist_adapter.py, hp_core.py) is built on the stitched raw print / mbp-10 stream across contracts with NO back-adjustment: hp_core is roll-aware only for its L2 state (DOM counters, iceberg/sweep snapshot reset at an instrument change) - the price path is the raw stitched series, so a position alive at the roll sees a 185-316 pt jump. Evidence in the exact trade lists: in S1b-COMB, NOCUT, UNIF and HOLD-old exactly 33 trades are alive across a roll second and 31 of them exit (Target 19 / Stop 14, all bracket exits) within 2 s of the roll second; none of the cut / lock / market exits fires there. Their entry-to-exit move is not the fake jump in most rows (bracket fills at the target/stop level: +60 pts on longs - Target - at a roll, and stops on shorts at the stop price or the jump level), but the P&L is a roll artifact. The old DS3 V0 engine (V13T library on the back-adjusted frame) is clean: 41 trades alive across a roll, 0 exits within 2 s of one (exits are TH cuts / flatten / target).
+
+| base | trades | alive across a roll | exit within 2 s of a roll | net $ of the flagged trades | lots (sum) | $ of Target exits (fake wins) | $ of Stop exits | largest single loss |
+|--|--|--|--|--|--|--|--|--|
+| S1B-COMB | 21135 | 33 | 31 | 20234 | 75 | 49187 (19) | -28952 (14) | -16785 |
+| S1B-NOCUT | 18960 | 33 | 31 | 18298 | 79 | 49187 (19) | -30889 (14) | -16785 |
+| S1B-UNIF | 19797 | 33 | 31 | 18678 | 76 | 49187 (19) | -30509 (14) | -16785 |
+| S1B-HOLD | 23855 | 33 | 31 | 18298 | 79 | 49187 (19) | -30889 (14) | -16785 |
+| V0 old | 21397 | 41 | 0 | -7685 | 112 | 41725 (12) | -2508 (2) | -6114 |
+| V0 old NOCUT | 19864 | 43 | 0 | -5052 | 115 | 57377 (17) | -62750 (22) | -8116 |
+
+S1b-COMB flagged trades: longs 19 trades +$49,187 (all Target, +60 pts each), shorts 14 trades -$28,952; worst: P7 4 lots short 2026-03-17 -$16,785 (move -210 pts), K7 short 2026-09-15 -$6,061 (-303 pts), K7 short 2026-03-17 -$4,406; P7 7-lot long 2023-06-14 +$8,402 and 2025-09-17 +$8,392. Net +$20,234 at live lots (EX-PHI: +$7,222 for the never-cut universe at hold lots; 30 of the 33 trades coincide with their roll_bracket_trades.csv, 3 + 3 differ because their list is the universe book and ours is the engine trade list). Per roll day (n / net $ / lots): 20230613 3/12003/10; 20230912 2/774/5; 20231212 3/3596/3; 20240312 2/6004/5; 20240618 2/2398/2; 20240917 2/-3564/8; 20241218 2/341/3; 20250319 2/4800/4; 20250617 3/1228/9; 20250917 4/11988/10; 20251216 2/655/4; 20260317 2/-21191/5; 20260616 2/2461/2; 20260915 2/-1261/5.
+
+### maxDD / worst-20 / mean with and without the flagged trades (all weeks, carrying weeks included, ALL books incl O7; Q1-A lots of each base)
+
+| base | window | flagged in window | maxDD with | maxDD without | change % | worst-20 with | without | change % | $/wk with | without |
+|--|--|--|--|--|--|--|--|--|--|--|
+| S1B-COMB | L6M | 4 | 79907 | 79907 | +0.0 | 165224 | 165224 | +0.0 | 24476 | 24430 |
+| S1B-COMB | HOLD | 8 | 99496 | 99496 | +0.0 | -595703 | -575167 | +3.4 | 16409 | 16780 |
+| S1B-COMB | PRE | 13 | 140288 | 140288 | +0.0 | -692551 | -699709 | -1.0 | 14325 | 14175 |
+| S1B-COMB | X' | 8 | 116941 | 128944 | +10.3 | -347116 | -347890 | -0.2 | 1792 | 1420 |
+| S1B-NOCUT | L6M | 4 | 182380 | 182380 | -0.0 | -38785 | -40867 | -5.4 | 16663 | 16632 |
+| S1B-NOCUT | HOLD | 8 | 182380 | 182380 | +0.0 | -716956 | -695707 | +3.0 | 11813 | 12222 |
+| S1B-NOCUT | PRE | 13 | 127656 | 127656 | +0.0 | -671314 | -679716 | -1.3 | 13188 | 13038 |
+| S1B-NOCUT | X' | 8 | 129112 | 141889 | +9.9 | -338100 | -338874 | -0.2 | 1831 | 1459 |
+| S1B-UNIF | L6M | 4 | 174856 | 174856 | -0.0 | -75673 | -75673 | +0.0 | 14701 | 14655 |
+| S1B-UNIF | HOLD | 8 | 174856 | 174856 | +0.0 | -705912 | -684721 | +3.0 | 11996 | 12398 |
+| S1B-UNIF | PRE | 13 | 134464 | 134464 | +0.0 | -639310 | -645315 | -0.9 | 14494 | 14345 |
+| S1B-UNIF | X' | 8 | 125099 | 137804 | +10.2 | -329486 | -330260 | -0.2 | 2118 | 1745 |
+| S1B-HOLD | L6M | 4 | 119980 | 119980 | -0.0 | 55990 | 53909 | -3.7 | 20889 | 20858 |
+| S1B-HOLD | HOLD | 8 | 119980 | 119980 | +0.0 | -508594 | -487403 | +4.2 | 14708 | 15117 |
+| S1B-HOLD | PRE | 13 | 155580 | 160380 | +3.1 | -687120 | -697925 | -1.6 | 8043 | 7893 |
+| S1B-HOLD | X' | 8 | 75870 | 75870 | +0.0 | -309983 | -310216 | -0.1 | 4590 | 4218 |
+| V0 old | L6M | 5 | 104809 | 104809 | +0.0 | 131820 | 131820 | +0.0 | 27858 | 28292 |
+| V0 old | HOLD | 9 | 122025 | 122025 | +0.0 | -393604 | -393604 | +0.0 | 20870 | 21082 |
+| V0 old | PRE | 17 | 88180 | 88180 | +0.0 | -489630 | -485652 | +0.8 | 13202 | 13382 |
+| V0 old | X' | 12 | 80802 | 80802 | +0.0 | -303399 | -306723 | -1.1 | 3293 | 3158 |
+| V0 old NOCUT | L6M | 6 | 222071 | 222071 | +0.0 | -168887 | -161049 | +4.6 | 13738 | 13807 |
+| V0 old NOCUT | HOLD | 11 | 222071 | 222071 | +0.0 | -610969 | -602403 | +1.4 | 13415 | 13541 |
+| V0 old NOCUT | PRE | 17 | 174642 | 179467 | +2.8 | -658242 | -651176 | +1.1 | 13170 | 13320 |
+| V0 old NOCUT | X' | 12 | 113305 | 97063 | -14.3 | -321498 | -306558 | +4.6 | 2688 | 2646 |
+(V0 rows: the flagged V0 trades are legitimate alive-across-roll trades on the back-adjusted frame; shown for completeness, not an artifact; the X' -14% on V0 NOCUT is just 12 normal trades.)
+
+### Effect on the sizing cuts (S1b-COMB first-order; cut vs Q1-A recomputed with the 33 trades removed from both cell and reference)
+
+| cell | window | cut with | cut without | change (points) |
+|--|--|--|--|--|
+| L | L6M | -46.0 | -46.0 | +0.0 |
+| L | PRE | -47.9 | -47.9 | +0.0 |
+| L | X' | -2.7 | -8.0 | -5.3 |
+| L | HOLD | -30.9 | -30.9 | +0.0 |
+| B | L6M | -73.3 | -73.3 | +0.0 |
+| B | PRE | -51.2 | -51.2 | +0.0 |
+| B | X' | -57.6 | -57.8 | -0.2 |
+| B | HOLD | -66.4 | -66.4 | +0.0 |
+| C | L6M | -35.2 | -35.2 | -0.0 |
+| C | PRE | -8.1 | -8.1 | +0.0 |
+| C | X' | -73.8 | -66.9 | +6.9 |
+| C | HOLD | -35.6 | -35.6 | +0.0 |
+| VT_ZL1 | L6M | 13.0 | 13.0 | +0.0 |
+| VT_ZL1 | PRE | 19.7 | 19.7 | +0.0 |
+| VT_ZL1 | X' | 45.9 | 48.0 | +2.1 |
+| VT_ZL1 | HOLD | 26.1 | 26.1 | +0.0 |
+
+- L6M: family top cells (n=49) with |change| > 3 points: 0; max |change| 0.0 points.
+- HOLD: family top cells (n=49) with |change| > 3 points: 16; max |change| 21.3 points.
+- PRE: family top cells (n=49) with |change| > 3 points: 3; max |change| 3.4 points.
+- X': family top cells (n=49) with |change| > 3 points: 15; max |change| 6.9 points.
+
+Reading: the artifact trades are mostly winners (+$20k net at Q1-A lots) sitting in 8 X' trades (2023-24 rolls; 2023-06-14 alone is +$12.0k) - removing them deepens X' drawdown by 10% because they were fake recoveries in that window; for HOLD the Q1-A maxDD does not change but several cells whose drawdown path crosses the roll days change by up to 21 points. Needed: (1) back-adjust / skip the roll second in the engine (flag trades alive across a roll and exclude or re-price at the old contract), (2) re-run bases and exact sizing runs, or at minimum publish X' and HOLD cuts with the 33 trades excluded (this section is the exclusion rescore for S1b-COMB), (3) other sections of this page that quote X' or HOLD numbers (section 1 X' maxDD, section 2 X' cuts) should be read as WITH artifacts.
