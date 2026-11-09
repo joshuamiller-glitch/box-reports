@@ -1,4 +1,4 @@
-# DS3_TH_EXHAUST_FINAL - two-sided per-book exit policy, drawdown first   **[DRAFT SKELETON - compiled 2026-11-09 09:38Z]**
+# DS3_TH_EXHAUST_FINAL - two-sided per-book exit policy, drawdown first   **[DRAFT SKELETON - compiled 2026-11-09 10:09Z]**
 Label: state base, universe U2 (U2 = full S1b tick-close never-cut, 43 months + live-week entries); entry match to the live week below .85: PRE-PROOF. USD per ISO week at live lots net of 4.84/contract; windows as of 2026-11-09.
 
 ## Box-confirmation items for v1.5 fidelity
@@ -71,7 +71,26 @@ D7 v1.5 policy grammar used here: `loss <book> <session|*> <conds> cut` and `pro
 ```
 
 ## Engine (Stage 2) evidence
-See autopilot/EXH_STAGE2.md (per completed set and per book: engine vs never-cut and vs S1b-COMB, live week, Stage 1 gain kept). Strict engine survivors listed there are the only cells with cascade evidence.
+See autopilot/EXH_STAGE2.md (per completed set and per book: engine vs never-cut and vs S1b-COMB, live week, Stage 1 gain kept). The cells below are the only ones with engine-cascade evidence (weak = L6M maxDD lower and PRE within +5%; STRICT = both at least 2% lower); a label of CANDIDATE-DD without FAILS-LIVE-WEEK is the bar for a shadow forward test.
+
+- ldef_perbook_u2 M7 (weak): L6M maxDD 37,288 vs 48,019, PRE maxDD 44,115 vs 44,205, L6M mean -133/wk, PRE mean -212/wk, live week -1,985, recents ok, label no; Stage 1 L6M gain kept in the engine: 35%.
+- ldef_perbook_u2 U7 (weak): L6M maxDD 13,232 vs 17,816, PRE maxDD 39,558 vs 39,542, L6M mean -93/wk, PRE mean -369/wk, live week 346, recents ok, label no; Stage 1 L6M gain kept in the engine: 37%.
+- ldef_perbook_u2 A7 (STRICT): L6M maxDD 5,897 vs 9,361, PRE maxDD 5,370 vs 8,625, L6M mean 129/wk, PRE mean -167/wk, live week -1,314, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 45%.
+- ldef_perbook_u2 O7 (STRICT): L6M maxDD 6,088 vs 6,958, PRE maxDD 3,761 vs 4,797, L6M mean 155/wk, PRE mean -28/wk, live week -11, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 63%.
+- pjkl_PB P7 (weak): L6M maxDD 200,861 vs 203,542, PRE maxDD 120,071 vs 122,169, L6M mean 627/wk, PRE mean 66/wk, live week -1,177, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 10%.
+- pjkl_PB M7 (weak): L6M maxDD 45,824 vs 48,019, PRE maxDD 43,648 vs 44,205, L6M mean -186/wk, PRE mean -18/wk, live week -382, recents ok, label no; Stage 1 L6M gain kept in the engine: 11%.
+- pjkl_PB U7 (STRICT): L6M maxDD 8,119 vs 17,816, PRE maxDD 30,546 vs 39,542, L6M mean -570/wk, PRE mean -299/wk, live week -2,110, recents ok, label no; Stage 1 L6M gain kept in the engine: 89%.
+- pjkl_PB H7 (STRICT): L6M maxDD 12,781 vs 16,242, PRE maxDD 11,190 vs 18,436, L6M mean -348/wk, PRE mean -717/wk, live week 3,175, recents ok, label no; Stage 1 L6M gain kept in the engine: 45%.
+- bc_a_recent M7 (STRICT): L6M maxDD 39,410 vs 48,019, PRE maxDD 28,806 vs 44,205, L6M mean 108/wk, PRE mean 449/wk, live week -620, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: n/a.
+- bc_a_recent U7 (weak): L6M maxDD 14,897 vs 17,816, PRE maxDD 40,537 vs 39,542, L6M mean -550/wk, PRE mean -117/wk, live week 4,315, recents ok, label no; Stage 1 L6M gain kept in the engine: 19%.
+- exla_pb1 K7 (STRICT): L6M maxDD 32,823 vs 35,969, PRE maxDD 19,161 vs 22,188, L6M mean -179/wk, PRE mean -22/wk, live week 477, recents ok, label no; Stage 1 L6M gain kept in the engine: 40%.
+- exla_pb1 P7 (STRICT): L6M maxDD 170,616 vs 203,542, PRE maxDD 111,795 vs 122,169, L6M mean -62/wk, PRE mean -825/wk, live week -15,056, recents ok, label no; Stage 1 L6M gain kept in the engine: 39%.
+- exla_pb1 M7 (STRICT): L6M maxDD 30,434 vs 48,019, PRE maxDD 28,296 vs 44,205, L6M mean 615/wk, PRE mean 398/wk, live week 724, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 57%.
+- exla_pb1 U7 (weak): L6M maxDD 12,944 vs 17,816, PRE maxDD 40,501 vs 39,542, L6M mean 136/wk, PRE mean -243/wk, live week 0, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 35%.
+- exla_pb1 A7 (STRICT): L6M maxDD 6,849 vs 9,361, PRE maxDD 5,200 vs 8,625, L6M mean -532/wk, PRE mean -225/wk, live week -1,305, recents ok, label no; Stage 1 L6M gain kept in the engine: 34%.
+- exla_pb1 H7 (STRICT): L6M maxDD 7,348 vs 16,242, PRE maxDD 16,721 vs 18,436, L6M mean 286/wk, PRE mean -157/wk, live week 319, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 109%.
+- exla_pb1 O7 (STRICT): L6M maxDD 5,668 vs 6,958, PRE maxDD 4,172 vs 4,797, L6M mean 70/wk, PRE mean 11/wk, live week 77, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 54%.
+- pjkl_UNI H7 (weak): L6M maxDD 15,922 vs 16,242, PRE maxDD 18,436 vs 18,436, L6M mean 13/wk, PRE mean -18/wk, live week 0, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 12%.
 
 ## Fields the v1.5 grammar still lacks (for v1.6)
 - state-cut extensions: pulled_mult as the exact state quantity with a per-rule window (win=), persist= (consecutive seconds), armlots= (lots-scaled arm), entry_session (the grammar matches the CURRENT session; scored scope is the ENTRY session), 1-s evaluation with 1 s decision latency and the 0.80 pt market-exit cost.
@@ -96,12 +115,12 @@ Recents method L1M..L6M then HOLD/MID/PRE/X'; placebos v2 (causal, leak-tested),
 ## Family sections (state at compile)
 | family | file | status | last written |
 |---|---|---|---|
-| A (EX-LA) | EXH_A.md | in | 09:38Z |
-| B/C (EX-LBC) | EXH_BC.md | in | 07:44Z |
-| D/E/F (EX-LDEF) | EXH_DEF.md | in | 09:31Z |
+| A (EX-LA) | EXH_A.md | in | 09:41Z |
+| B/C (EX-LBC) | EXH_BC.md | in | 09:46Z |
+| D/E/F (EX-LDEF) | EXH_DEF.md | in | 09:41Z |
 | G (EX-LG) | EXH_G.md | in | 09:21Z |
 | H/I (EX-PHI) | EXH_HI.md | in | 09:13Z |
-| J/K/L (EX-PJKL) | EXH_JKL.md | in | 07:32Z |
+| J/K/L (EX-PJKL) | EXH_JKL.md | in | 09:57Z |
 
 ## wf-ok flags: what they mean
 The wf flag on a candidate row is the TECHNIQUE-level walk-forward (picking among the cells of that one technique on trailing 26 weeks, applied to the next month; wf-ok = total delta >= 0 and WF maxDD within +5% of never-cut). It is a weak test: e.g. O7 loss LBC_dtot8_rel_w15 (13 cells) is wf-ok with +1,917 USD over 35 test months, but its WF maxDD equals the never-cut maxDD (7,469), i.e. the picks did not lower the drawdown, and the global picking procedure for O7 loss (6,272 cells) is wf-FAIL (-44,366). Read wf-ok as not-negative, not as out-of-sample drawdown evidence. No cell is ENTER.

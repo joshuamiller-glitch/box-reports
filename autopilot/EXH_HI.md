@@ -1,5 +1,5 @@
 # EXH_HI - EX-PHI: profit families H (take) and I (tighten/trail), Stage 1 first order
-Generated 2026-11-09 09:13Z. 893 cells scored (all ledgered, agent PHI). Label: PRE-PROOF (entries not live-matched). Fills: market exit k+1 mid -+0.80, targets nominal, stops at level. Features exist per month from the EX-FEAT store (rows with no feature never fire). Causality test (noise after second 900 on path, high/low/last and all feature panels; 17,926 exits <= 900 s over 128 sampled cells x 2 months, both directions): 0 changed - all kernels use only data <= decision second. Placebos null_ver 2 (cells re-scored after the leak audit). Family p, walk-forward and the live week are in the FINALISTS table at the top (finalists only). Labels in the generic tables below are CAND-DD only (L6M maxDD lower, L6M mean delta >= 0, PRE maxDD <= 1.05 x never-cut); the page label in FINALISTS uses labels_df.
+Generated 2026-11-09 10:19Z. 893 cells scored (all ledgered, agent PHI). Label: PRE-PROOF (entries not live-matched). Fills: market exit k+1 mid -+0.80, targets nominal, stops at level. Features exist per month from the EX-FEAT store (rows with no feature never fire). Causality test (noise after second 900 on path, high/low/last and all feature panels; 17,926 exits <= 900 s over 128 sampled cells x 2 months, both directions): 0 changed - all kernels use only data <= decision second. Placebos null_ver 2 (cells re-scored after the leak audit). Family p, walk-forward and the live week are in the FINALISTS table at the top (finalists only). Labels in the generic tables below are CAND-DD only (L6M maxDD lower, L6M mean delta >= 0, PRE maxDD <= 1.05 x never-cut); the page label in FINALISTS uses labels_df.
 
 Ranking key: L6M maxDD (weekly, scope), then L6M worst-20, then Ulcer, then Calmar; filter nfire>=20, L6M mean >= never-cut. Delta mean columns are vs never-cut hold-to-bracket (the S1b-COMB live reference deltas are in the ledger columns *_dmean_c).
 ## FINALISTS (U2, Stage 1 first order; Stage 2 section below when complete)
@@ -17,6 +17,40 @@ Ranking key: L6M maxDD (weekly, scope), then L6M worst-20, then Ulcer, then Calm
 | ALL recents | I_swing | arm=0.5 buf=2 swing=swag5m | +11562 / -914 / +2521 / +4670 / -168 / -3104 / -7696 / -1784 | 83702 / 121381 | 136367 / 152455 | 127763 / 77580 | 5489 | 0.462 | 0.994 | n/a (+nan) | +375 (14 fired) | 1/0 | CANDIDATE-DD |
 | K7 stage2-able alt | I_bookarm | X=20 arm=0.25 feat=ice_ag_w30 secs=30 thr=3 | +396 / +1700 / +3068 / +267 / -1218 / -2179 / -1365 / +255 | 12342 / 20902 | 18862 / 26707 | 10147 / 1791 | 3536 | 0.400 | 1.000 | n/a (+nan) | +619 (24 fired) | 200/0 | CANDIDATE-DD |
 | P7 stage2-able alt | H_pcthour | pct=0.6 window=am | +3049 / -4417 / -614 / +654 / +116 / -1774 / -1051 / -554 | 103198 / 133887 | 85948 / 109442 | 36262 / -29902 | 1025 | 0.892 | 1.000 | n/a (+nan) | -4320 (2 fired) | 100/0 | CANDIDATE-DD |
+
+## Stage 2: engine cascade of the Stage-2-able finalists (set phi_pb; one rule per book; re-entries, locks, stack gates, caps, measured fills)
+Coverage: S2[L1M,L2M,L3M,L6M,HOLD,MID-covered], 23 months run. Windows not fully covered are n/a. Reference = engine never-cut (base_b/NOCUT). Label PRE-PROOF.
+
+| book | rule | stage-2 mean delta vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD HOLD with / without | maxDD PRE with / without |
+|---|---|---|---|---|---|
+| K7 | I_bookarm X=20 arm=0.25 feat=ice_ag_w30 secs=30 thr=3 | -1524 / +1709 / +808 / -1689 / -1839 / -663 / n/a / n/a | 23159 / 35969 | 50680 / 40365 | n/a / n/a |
+| P7 | H_pcthour pct=0.6 window=am | -1772 / -392 / -786 / +236 / -39 / -3249 / n/a / n/a | 191674 / 203542 | 191674 / 203542 | n/a / n/a |
+| M7 | H_tip pct=0 secs=600 | -2456 / -437 / +497 / -141 / -35 / +810 / n/a / n/a | 46661 / 48019 | 48834 / 48019 | n/a / n/a |
+| U7 | H_pcthour pct=0.3 window=ldn | +1827 / +227 / +355 / -562 / -446 / +14 / n/a / n/a | 14388 / 17816 | 21115 / 20695 | n/a / n/a |
+| A7 | H_pcthour pct=0.4 window=asia | -511 / -364 / -115 / -188 / +7 / +250 / n/a / n/a | 6023 / 9361 | 6023 / 9361 | n/a / n/a |
+| H7 | H_mom arm=0.25 feat=vel30<= secs=1 thr=0 | -357 / -584 / +78 / -670 / -442 / -517 / n/a / n/a | 11897 / 16242 | 54775 / 47806 | n/a / n/a |
+| O7 | I_step lag=1 step=10 | +1232 / +307 / +282 / +251 / -250 / -49 / n/a / n/a | 4210 / 6958 | 4685 / 6958 | n/a / n/a |
+
+K7 profit, Stage 2: L6M maxDD 35969 -> 23159, L6M mean delta -1689 USD/wk; PRE not yet covered. Does not hold in L6M through the engine (drawdown or mean worse than never-cut).
+P7 profit, Stage 2: L6M maxDD 203542 -> 191674, L6M mean delta +236 USD/wk; PRE not yet covered. Holds the drawdown and mean in L6M through the engine.
+M7 profit, Stage 2: L6M maxDD 48019 -> 46661, L6M mean delta -141 USD/wk; PRE not yet covered. Does not hold in L6M through the engine (drawdown or mean worse than never-cut).
+U7 profit, Stage 2: L6M maxDD 17816 -> 14388, L6M mean delta -562 USD/wk; PRE not yet covered. Does not hold in L6M through the engine (drawdown or mean worse than never-cut).
+A7 profit, Stage 2: L6M maxDD 9361 -> 6023, L6M mean delta -188 USD/wk; PRE not yet covered. Does not hold in L6M through the engine (drawdown or mean worse than never-cut).
+H7 profit, Stage 2: L6M maxDD 16242 -> 11897, L6M mean delta -670 USD/wk; PRE not yet covered. Does not hold in L6M through the engine (drawdown or mean worse than never-cut).
+O7 profit, Stage 2: L6M maxDD 6958 -> 4210, L6M mean delta +251 USD/wk; PRE not yet covered. Holds the drawdown and mean in L6M through the engine.
+
+## Profit rule for the FINAL page (per book, best Stage-2-able CANDIDATE-DD; PRE-PROOF; no ENTER)
+| book | rule | Stage 1 L6M maxDD with/without | Stage 2 L6M maxDD with/without | Stage 2 L6M mean delta |
+|---|---|---|---|---|
+| K7 | I_bookarm X=20 arm=0.25 feat=ice_ag_w30 secs=30 thr=3 | see FINALISTS | 23159 / 35969 | -1689 |
+| P7 | H_pcthour pct=0.6 window=am | see FINALISTS | 191674 / 203542 | +236 |
+| M7 | H_tip pct=0 secs=600 | see FINALISTS | 46661 / 48019 | -141 |
+| U7 | H_pcthour pct=0.3 window=ldn | see FINALISTS | 14388 / 17816 | -562 |
+| A7 | H_pcthour pct=0.4 window=asia | see FINALISTS | 6023 / 9361 | -188 |
+| H7 | H_mom arm=0.25 feat=vel30<= secs=1 thr=0 | see FINALISTS | 11897 / 16242 | -670 |
+| O7 | I_step lag=1 step=10 | see FINALISTS | 4210 / 6958 | +251 |
+
+K7 equality check (202610, Stage 1 kernel vs engine ExhCut): 92 of 92 matched exits equal in second (+-1 s) and price; U7 2 of 2. Unmatched Stage 1 fires are engine re-entry/lock/stack-gate differences.
 
 ## Plain sentences per book (profit)
 K7 profit: H_thick (arm=0.5 feat=tot_rel_slow secs=1 thr=2.0) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 20902 -> 10243 and PRE maxDD 26707 -> 23821, L6M mean +2 USD/wk, PRE mean -410. Placebo p 0.015, family (Westfall-Young) p 0.974, purged walk-forward does not hold (negative) (-137879), live week +1984 USD over 15 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.
