@@ -1,4 +1,4 @@
-# EXH_STAGE2 - the decisive table: do the per-book cells still lower drawdown in the ENGINE cascade? (auto-generated 2026-11-09 11:36Z)
+# EXH_STAGE2 - the decisive table: do the per-book cells still lower drawdown in the ENGINE cascade? (auto-generated 2026-11-09 12:03Z)
 Engine S2 = the set run through the replica engine (re-entries, locks, stack gates, other books) vs engine never-cut (base_b/NOCUT) and vs the S1b-COMB live reference row; months/windows covered are in the stage tag. Stage 1 here = the same rule first-order on U2 (kernel re-run, panels from the state files of the previous and the label day). Live week = 186 live trades first-order (the engine run does not include 2026-11). S2 rows carry no placebo draws, so no S2 row can be ENTER; Stage 1 placebo/WY/WF of the finalists are in the owners reports (EXH_*.md) and the ledger.
 <!--TP-->Stage 2 months/hour (last 1.6 h): ldef_perbook_u2 0.0 (43/43), pjkl_PB 0.0 (43/43), bc_a_recent 0.0 (43/43), bc_m7_cps 24.4 (42/43), phi_pb 0.0 (38/43), exla_pb1 0.0 (43/43), exla_pb2 6.4 (43/43), exla_uni 0.0 (40/43), ldef_uniform_u2 5.1 (43/43), pjkl_UNI 2.6 (43/43), bc_c_uniform 2.6 (43/43), bc_b_ddbest 0.0 (21/43)<!--/TP-->
 USD per ISO week at live lots, net of 4.84/contract; delta = rule minus never-cut with the carrying week dropped; maxDD/worst-20 on all weeks of the window.
@@ -47,6 +47,7 @@ Every per-book cell below that lowers the L6M maxDD in the engine while keeping 
 - bc_c_uniform P7 (weak): L6M maxDD 183,796 vs 203,542, PRE maxDD 123,623 vs 122,169, L6M mean 1,886/wk, PRE mean 136/wk, live week 2,806, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 48%.
 - bc_c_uniform U7 (weak): L6M maxDD 17,213 vs 17,816, PRE maxDD 41,373 vs 39,542, L6M mean 247/wk, PRE mean -95/wk, live week 0, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: n/a.
 - bc_c_uniform A7 (weak): L6M maxDD 8,444 vs 9,361, PRE maxDD 8,592 vs 8,625, L6M mean 108/wk, PRE mean 1/wk, live week -1,638, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 70%.
+- bc_b_ddbest P7 (weak): L6M maxDD 144,229 vs 203,542, PRE maxDD 122,252 vs 122,169, L6M mean 3,966/wk, PRE mean -770/wk, live week -71,288, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 61%.
 
 ## ldef_perbook_u2  (LDEF_perbook, side loss, stage S2, 43 of 43 months run)
 Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): ldef_perbook_u2 202610 K7 | Stage 1 kernel fires 63 | engine ExhCut on those 44 | equal second (+-1 s) 44 | equal px 43 | engine ExhCut total 68
@@ -100,7 +101,7 @@ Stack (all books of the set together, engine):
 
 **Decisive reading for bc_a_recent:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): M7. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): M7, U7. (strict-lowering: M7; weak-lowering: M7, U7; recents-ok: K7, P7, M7, U7, A7, H7, O7; live-ok: K7, P7, M7, U7, H7, O7).
 
-## bc_m7_cps  (LBC_cps_rel_w10, side loss, stage S2, 40 of 43 months run)
+## bc_m7_cps  (LBC_cps_rel_w10, side loss, stage S2, 43 of 43 months run)
 Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): bc_m7_cps 202610 M7 | Stage 1 kernel fires 85 | engine ExhCut on those 62 | equal second (+-1 s) 62 | equal px 62 | engine ExhCut total 93
 
 | book | rule | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | live week | S1 L6M maxDD w/wo | S1 L6M gain kept in S2 | recents | label |
@@ -237,3 +238,17 @@ Stack (all books of the set together, engine):
 - L6M maxDD 147,999 vs 191,045 never-cut vs 82,873 S1b-COMB; PRE maxDD 135,690 vs 130,824; L6M mean delta 1,357 (MDE 4,662); worst-20 L6M 24,508 vs -63,404.
 
 **Decisive reading for bc_c_uniform:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): K7. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): K7, P7, U7. (strict-lowering: K7; weak-lowering: K7, P7, U7, A7; recents-ok: K7, P7, M7, U7, A7, H7, O7; live-ok: K7, P7, M7, U7, H7, O7).
+
+## bc_b_ddbest  (LBC_B_ddbest, side loss, stage S2, 43 of 43 months run)
+Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): bc_b_ddbest 202610 K7 | Stage 1 kernel fires 156 | engine ExhCut on those 108 | equal second (+-1 s) 108 | equal px 106 | engine ExhCut total 266
+
+| book | rule | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | live week | S1 L6M maxDD w/wo | S1 L6M gain kept in S2 | recents | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| K7 | [1, 4.0, 12, 0, 0, 10.0] | 506 | -953 | 1,660 | -499 | -659 | -2,210 | -1,922 | -194 | 20,203 / 35,969 | 51,806 / 22,188 | -16,602 / -20,829 | -15,890 | 5,514 / 20,902 | 102% | rec-ok | no FAILS-LIVE-WEEK |
+| P7 | [1, 6.0, 1, 0, 0, 10.0] | 3,829 | 1,707 | 3,788 | 3,966 | 2,035 | -4,449 | -770 | -45 | 144,229 / 203,542 | 122,252 / 122,169 | -58,835 / -181,468 | -71,288 | 36,977 / 133,887 | 61% | rec-ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| M7 | [-1, -0.08928599953651428, 20, 0, 1, 0.3 | -328 | 0 | 0 | -1 | -0 | 0 | -10 | -0 | 48,039 / 48,019 | 44,960 / 44,205 | -74,866 / -73,536 | 0 | 44,425 / 44,425 | n/a | rec-ok | no |
+
+Stack (all books of the set together, engine):
+- L6M maxDD 117,999 vs 191,045 never-cut vs 82,873 S1b-COMB; PRE maxDD 126,503 vs 130,824; L6M mean delta 4,510 (MDE 7,088); worst-20 L6M 12,405 vs -63,404.
+
+**Decisive reading for bc_b_ddbest:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): NONE. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): NONE. (strict-lowering: none; weak-lowering: P7; recents-ok: K7, P7, M7; live-ok: M7).
