@@ -246,3 +246,4 @@
 2026-11-09 S2-AB interim close (superseded by T-TH-EXHAUST): DS3_TH_STATE_A.md/_B.md written; no ENTER in A or B; engine v1 33 months done, v2 partial; own processes stopped
 2026-11-09 EX-CORE: placebo leak audit, v2 causal placebos, leak_test, rescore of ledger nulls started (EXH_API section 9)
 2026-11-09T03:21Z EX-LBC: 96,768 B/C cells screened (63 features, 44 months of panels, full history); noise-after-k causality test on the lattice kernel 2,729,879 fires <= k0 checked, 0 changed; ledgering ~280 top cells with null_ver 2 (re-run after exh_metrics v2)
+2026-11-09 EX-CORE: ledger incremental consolidate, family_p fix, WY streaming + wk6, live-week label gate, STATUS block (EXH_API section 10)
