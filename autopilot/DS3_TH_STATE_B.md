@@ -123,18 +123,18 @@ Engine cascade (replica engine, true fills, re-entries and locks included), poli
 
 | policy | what | months run | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M with/without | maxDD PRE with/without |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| B_ADD | B1 AddToPath, best cell per book (books with S>0) | 14 (202509..202610) | +1032 (+9778) | +3535 (+8253) | +830 (+7389) | +2000 (+5164) | +2008 (+3650) | +3360 (+7845) | n/a | n/a | +76456/+79709 | n/a |
-| B_ALONE | B1 path-only, best cell per book (books with S>0) | 14 (202509..202610) | -6345 (+8825) | -3596 (+5700) | -4048 (+4398) | -1685 (+5686) | -1028 (+4329) | +195 (+8182) | n/a | n/a | +89328/+79709 | n/a |
-| B3_ADD_ON_ASTACK | B3: B_ADD cells added to the A_STACK state variants (AddToPath) | 14 (202509..202610) | -4996 (+12945) | -371 (+10044) | -1766 (+8066) | -1495 (+7053) | +91 (+5206) | +2459 (+8333) | n/a | n/a | +87163/+79709 | n/a |
+| B_ADD | B1 AddToPath, best cell per book (books with S>0) | 33 (202402..202610) | +1032 (+9778) | +3535 (+8253) | +830 (+7389) | +2000 (+5164) | +2008 (+3650) | +3360 (+7845) | +551 (+2230) | n/a | +76456/+79709 | +88047/+98140 |
+| B_ALONE | B1 path-only, best cell per book (books with S>0) | 33 (202402..202610) | -6345 (+8825) | -3596 (+5700) | -4048 (+4398) | -1685 (+5686) | -1028 (+4329) | +195 (+8182) | +611 (+1904) | n/a | +89328/+79709 | +143567/+150123 |
+| B3_ADD_ON_ASTACK | B3: B_ADD cells added to the A_STACK state variants (AddToPath) | 33 (202402..202610) | -4996 (+12945) | -371 (+10044) | -1766 (+8066) | -1495 (+7053) | +91 (+5206) | +2459 (+8333) | +620 (+3422) | n/a | +87163/+79709 | +88665/+98140 |
 
 
 ## 7. ENTER verdict per finalist policy (vs S1-COMB, engine cascade)
 
 | policy | engine L6M (MDE) | engine PRE (MDE) | above MDE on both | drawdown not worse L6M / PRE | live week (first-order, USD) | components ENTER | policy verdict |
 |---|---|---|---|---|---|---|---|
-| B_ADD | +2000 (+5164) | +0 (+0) | no | ok / ok | -2386 | no | NOT ENTER (not above MDE, live week, components fail nulls/walk-forward) |
-| B_ALONE | -1685 (+5686) | +0 (+0) | no | worse / ok | -892 | no | NOT ENTER (not above MDE, drawdown, live week, components fail nulls/walk-forward) |
-| B3_ADD_ON_ASTACK | -1495 (+7053) | +0 (+0) | no | worse / ok | -966 | no | NOT ENTER (not above MDE, drawdown, live week, components fail nulls/walk-forward) |
+| B_ADD | +2000 (+5164) | +551 (+2230) | no | ok / ok | -2386 | no | NOT ENTER (not above MDE, live week, components fail nulls/walk-forward) |
+| B_ALONE | -1685 (+5686) | +611 (+1904) | no | worse / ok | -892 | no | NOT ENTER (not above MDE, drawdown, live week, components fail nulls/walk-forward) |
+| B3_ADD_ON_ASTACK | -1495 (+7053) | +620 (+3422) | no | worse / ok | -966 | no | NOT ENTER (not above MDE, drawdown, live week, components fail nulls/walk-forward) |
 
 
 A policy ENTERS only if every component rule ENTERS in section 4 (placebo v1+v2, family, walk-forward, live, above MDE) AND the engine cascade is above MDE on L6M and PRE, drawdown not worse and the live week is not negative. The X' window is absent from the engine rows (months 2023-04..2024-01 are not in the engine run; the first-order X' column in section 6 covers it).
@@ -146,9 +146,16 @@ PLAIN6060 (no TH of any kind) engine months available: 43 (202304..202610) of 43
 | row | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
 |---|---|---|---|---|---|---|---|---|
 | S1-COMB vs PLAIN6060 (engine) | +12301 (+17228) | +11780 (+13411) | +10145 (+13982) | +9975 (+10798) | +7031 (+7518) | +914 (+13193) | +2142 (+4192) | +973 (+2986) |
-| B_ADD vs PLAIN6060 (engine, 14 months) | +13333 (+25462) | +5100 (+25861) | +8956 (+17532) | +11164 (+12170) | +7605 (+8090) | +333 (+14285) | n/a | n/a |
-| B_ALONE vs PLAIN6060 (engine, 14 months) | +5955 (+22051) | +6278 (+17074) | +4240 (+15546) | +8876 (+10634) | +6155 (+7731) | -2065 (+12878) | n/a | n/a |
-| B3_ADD_ON_ASTACK vs PLAIN6060 (engine, 14 months) | +7305 (+23381) | +1615 (+21451) | +6641 (+15299) | +9171 (+13252) | +5349 (+8552) | +4807 (+14212) | n/a | n/a |
+| B_ADD vs PLAIN6060 (engine, 33 months) | +13333 (+25462) | +5100 (+25861) | +8956 (+17532) | +11164 (+12170) | +7605 (+8090) | +333 (+14285) | +3027 (+4148) | n/a |
+| B_ALONE vs PLAIN6060 (engine, 33 months) | +5955 (+22051) | +6278 (+17074) | +4240 (+15546) | +8876 (+10634) | +6155 (+7731) | -2065 (+12878) | +1400 (+4672) | n/a |
+| B3_ADD_ON_ASTACK vs PLAIN6060 (engine, 33 months) | +7305 (+23381) | +1615 (+21451) | +6641 (+15299) | +9171 (+13252) | +5349 (+8552) | +4807 (+14212) | +2345 (+4670) | n/a |
+
+| NEVER-CUT engine reference (hist/A2 trades_nocut) | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
+|---|---|---|---|---|---|---|---|---|
+| S1-COMB vs NEVER-CUT (engine) | +12301 (+17228) | +11780 (+13411) | +10145 (+13982) | +9975 (+10798) | +7031 (+7518) | +914 (+13193) | +2142 (+4192) | +973 (+2986) |
+| B_ADD vs NEVER-CUT (engine, 33 months) | +13333 (+25462) | +5100 (+25861) | +8956 (+17532) | +11164 (+12170) | +7605 (+8090) | +333 (+14285) | +3027 (+4148) | n/a |
+| B_ALONE vs NEVER-CUT (engine, 33 months) | +5955 (+22051) | +6278 (+17074) | +4240 (+15546) | +8876 (+10634) | +6155 (+7731) | -2065 (+12878) | +1400 (+4672) | n/a |
+| B3_ADD_ON_ASTACK vs NEVER-CUT (engine, 33 months) | +7305 (+23381) | +1615 (+21451) | +6641 (+15299) | +9171 (+13252) | +5349 (+8552) | +4807 (+14212) | +2345 (+4670) | n/a |
 
 
 NEVER-CUT engine rows exist only through the stage-2 comparison (S1-COMB vs never-cut, section 2); the S1 NOCUT base run was not started by BASE-S1 (0 months at the time of writing).
@@ -156,6 +163,7 @@ NEVER-CUT engine rows exist only through the stage-2 comparison (S1-COMB vs neve
 ## 9. Method notes, deviations, caveats
 
 * Tier S is first-order (world W0): each trade as if alone on its 1-s path to the bracket proxy; the engine rows in section 6 carry re-entries, locks, caps and true fills and are the cascade check. The W0 S1-COMB vs NEVER-CUT row differs from the engine row (section 2): first-order is a screening statistic, not an expected P&L.
+* First-order vs engine fidelity (monthly deltas of the finalist policies, USD): B_ADD: first-order total +146746 vs engine total +117256 over the 33 engine months, monthly correlation 0.20; B_ALONE: first-order total +116496 vs engine total +17048 over the 33 engine months, monthly correlation 0.66; B3_ADD_ON_ASTACK: first-order total +195089 vs engine total +158086 over the 33 engine months, monthly correlation 0.20. The first-order Tier S is therefore a screening statistic: the cascade (re-entries after a cut, locks, caps, true fills) moves individual months a lot; the engine rows are the decision rows.
 * S1-COMB itself passes the engine regression exactly (an empty-spec rule reproduces the S1-COMB trade list of 2026-10 trade for trade).
 * Addendum 1 (DECISIONS.md, before any family-null number was read): the first family null (signal circularly shifted inside each trade, 80 worlds) was discarded because it leaks look-ahead (the later rows of a losing trade carry its outcome; shifted TH_LIVE scored +600k vs -200k real on K7). It was replaced by the prereg-literal Westfall-Young placebo worlds (random exits of the same acting trades, shared uniforms, per-world maximum over the program's cells; 100 worlds). The same flaw very likely inflates the shifted-block family null of DS3_TH_STATE.md section 5 (null mean above the observed best cell); that page should be re-read with this in mind.
 * Addendum 1b: the prereg-literal placebo eligibility for L1 cells (adverse extreme >= ThMinPoints, any later second) lets a random exit land after a rebound and is kinder than the rule; the like-for-like version v2 (rows within 6 pt of the adverse extreme) was added after the first placebo pass and both are reported; the gate requires both.
