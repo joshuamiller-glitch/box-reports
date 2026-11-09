@@ -1,5 +1,5 @@
 # EXH_HI - EX-PHI: profit families H (take) and I (tighten/trail), Stage 1 first order
-Generated 2026-11-09 12:20Z. 893 cells scored (all ledgered, agent PHI). Label: PRE-PROOF (entries not live-matched). Fills: market exit k+1 mid -+0.80, targets nominal, stops at level. Features exist per month from the EX-FEAT store (rows with no feature never fire). Causality test (noise after second 900 on path, high/low/last and all feature panels; 17,926 exits <= 900 s over 128 sampled cells x 2 months, both directions): 0 changed - all kernels use only data <= decision second. Placebos null_ver 2 (cells re-scored after the leak audit). Family p, walk-forward and the live week are in the FINALISTS table at the top (finalists only). Labels in the generic tables below are CAND-DD only (L6M maxDD lower, L6M mean delta >= 0, PRE maxDD <= 1.05 x never-cut); the page label in FINALISTS uses labels_df.
+Generated 2026-11-09 12:46Z. 893 cells scored (all ledgered, agent PHI). Label: PRE-PROOF (entries not live-matched). Fills: market exit k+1 mid -+0.80, targets nominal, stops at level. Features exist per month from the EX-FEAT store (rows with no feature never fire). Causality test (noise after second 900 on path, high/low/last and all feature panels; 17,926 exits <= 900 s over 128 sampled cells x 2 months, both directions): 0 changed - all kernels use only data <= decision second. Placebos null_ver 2 (cells re-scored after the leak audit). Family p, walk-forward and the live week are in the FINALISTS table at the top (finalists only). Labels in the generic tables below are CAND-DD only (L6M maxDD lower, L6M mean delta >= 0, PRE maxDD <= 1.05 x never-cut); the page label in FINALISTS uses labels_df.
 
 Ranking key: L6M maxDD (weekly, scope), then L6M worst-20, then Ulcer, then Calmar; filter nfire>=20, L6M mean >= never-cut. Delta mean columns are vs never-cut hold-to-bracket (the S1b-COMB live reference deltas are in the ledger columns *_dmean_c).
 ## FINALISTS (U2, Stage 1 first order; Stage 2 section below when complete)
@@ -39,7 +39,7 @@ A7 profit, Stage 2: L6M maxDD 9361 -> 6023, L6M mean delta -188 USD/wk; PRE maxD
 H7 profit, Stage 2: L6M maxDD 16242 -> 11897, L6M mean delta -670 USD/wk; PRE maxDD 18436 -> 13803, mean delta -457. Does not hold in L6M through the engine (drawdown or mean worse than never-cut).
 O7 profit, Stage 2: L6M maxDD 6958 -> 4210, L6M mean delta +251 USD/wk; PRE maxDD 4797 -> 4720, mean delta -494. Holds the drawdown and mean in L6M through the engine.
 
-Stage 2 verdict: the engine cascade keeps the L6M drawdown cut for every book but the L6M mean stays at or above never-cut only for P7, O7; the Stage 1 first-order gains do not carry through re-entries, locks and stack gates for the others, and PRE means are negative for 6 of 7 books; the with-rule maxDD is also worse than never-cut in HOLD for K7, H7, M7 and U7(slightly) and in PRE for M7, U7 and A7. No book qualifies as ENTER; the rules are delivered as PRE-PROOF profit rules because every book must have one.
+Stage 2 verdict: L6M maxDD is cut for every book here; the L6M mean stays at or above never-cut only for P7, O7. PRE mean is negative for K7, M7, U7, A7, H7, O7. maxDD with the rule is worse than never-cut in: K7 HOLD, M7 HOLD, M7 PRE, U7 HOLD, U7 PRE, A7 PRE, H7 HOLD. No book qualifies as ENTER; delivered as PRE-PROOF profit rules because every book must have one.
 
 ## Profit rule for the FINAL page (per book, best Stage-2-able CANDIDATE-DD; PRE-PROOF; no ENTER)
 | book | rule | Stage 1 L6M maxDD with/without | Stage 2 L6M maxDD with/without | Stage 2 L6M mean delta |
@@ -54,8 +54,29 @@ Stage 2 verdict: the engine cascade keeps the L6M drawdown cut for every book bu
 
 K7 equality check (202610, Stage 1 kernel vs engine ExhCut): 92 of 92 matched exits equal in second (+-1 s) and price; U7 2 of 2. Unmatched Stage 1 fires are engine re-entry/lock/stack-gate differences.
 
-## Stage 2: engine cascade of the thick-book finalists (K7, P7, M7 first choices; slot-baseline panel now computed in the engine, identical to the feature store: max abs diff 0 over 48,000 values) (set phi_thick)
-not scored yet
+## Stage 2: engine cascade of the thick-book finalists (K7, P7, M7 first choices; slot-baseline panel now computed in the engine, identical to the feature store: max abs diff 0 over 48,000 values) (set phi_thick; re-entries, locks, stack gates, caps, measured fills)
+Coverage: S2, 43 months run. Windows not fully covered are n/a. Reference = engine never-cut (base_b/NOCUT). Label PRE-PROOF.
+
+| book | rule | stage-2 mean delta vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD HOLD with / without | maxDD PRE with / without |
+|---|---|---|---|---|---|
+| K7 | H_thick arm=0.5 feat=tot_rel_slow secs=1 thr=2.0 | +4400 / +1759 / +1560 / +656 / +102 / -1713 / -17 / -519 | 20056 / 35969 | 41589 / 40365 | 29349 / 22188 |
+| P7 | H_gated arm=0.7 feat=tot_rel_fast secs=1 thr=2 | +2393 / -657 / +842 / +295 / +145 / +827 / -163 / -417 | 186789 / 203542 | 186789 / 203542 | 121413 / 122169 |
+| M7 | H_thick arm=0.1 feat=tot_rel_slow secs=1 thr=1.3 | -219 / -412 / -1232 / -389 / -154 / +368 / -577 / -611 | 30068 / 48019 | 49598 / 48019 | 67688 / 44205 |
+
+K7 profit, Stage 2: L6M maxDD 35969 -> 20056, L6M mean delta +656 USD/wk; PRE maxDD 22188 -> 29349, mean delta -17. Holds the drawdown and mean in L6M through the engine.
+P7 profit, Stage 2: L6M maxDD 203542 -> 186789, L6M mean delta +295 USD/wk; PRE maxDD 122169 -> 121413, mean delta -163. Holds the drawdown and mean in L6M through the engine.
+M7 profit, Stage 2: L6M maxDD 48019 -> 30068, L6M mean delta -389 USD/wk; PRE maxDD 44205 -> 67688, mean delta -577. Does not hold in L6M through the engine (drawdown or mean worse than never-cut).
+
+Stage 2 verdict: L6M maxDD is cut for every book here; the L6M mean stays at or above never-cut only for K7, P7. PRE mean is negative for K7, P7, M7. maxDD with the rule is worse than never-cut in: K7 HOLD, K7 PRE, M7 HOLD, M7 PRE. No book qualifies as ENTER; delivered as PRE-PROOF profit rules because every book must have one.
+
+## Profit rule for the FINAL page (per book, best Stage-2-able CANDIDATE-DD; PRE-PROOF; no ENTER)
+| book | rule | Stage 1 L6M maxDD with/without | Stage 2 L6M maxDD with/without | Stage 2 L6M mean delta |
+|---|---|---|---|---|
+| K7 | H_thick arm=0.5 feat=tot_rel_slow secs=1 thr=2.0 | see FINALISTS | 20056 / 35969 | +656 |
+| P7 | H_gated arm=0.7 feat=tot_rel_fast secs=1 thr=2 | see FINALISTS | 186789 / 203542 | +295 |
+| M7 | H_thick arm=0.1 feat=tot_rel_slow secs=1 thr=1.3 | see FINALISTS | 30068 / 48019 | -389 |
+
+K7 equality check (202610, Stage 1 kernel vs engine ExhCut): 92 of 92 matched exits equal in second (+-1 s) and price; U7 2 of 2. Unmatched Stage 1 fires are engine re-entry/lock/stack-gate differences.
 
 ## Plain sentences per book (profit)
 K7 profit: H_thick (arm=0.5 feat=tot_rel_slow secs=1 thr=2.0) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 20902 -> 10243 and PRE maxDD 26707 -> 23821, L6M mean +2 USD/wk, PRE mean -410. Placebo p 0.015, family (Westfall-Young) p 0.974, purged walk-forward does not hold (negative) (-137879), live week +1984 USD over 15 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.

@@ -85,19 +85,25 @@ D7 v1.5 policy grammar used here: `loss <book> <session|*> <conds> cut` and `pro
 | book | Stage 1 best profit (technique, L6M maxDD w/wo, L6M mean) | Stage 2 engine rule (set) | S2 L6M maxDD w/wo | S2 L6M mean | S2 PRE maxDD w/wo | S2 PRE mean | months run | verdict |
 |---|---|---|---|---|---|---|---|---|
 | K7 | J3_statescale, 8,893 / 20,902, 666 | I_bookarm X=20 arm=0.25 feat=ice_ag_w30 secs=30 thr=3 (phi_pb) | 23,159 / 35,969 | -1,689 | 19,141 / 22,188 | -719 | 43 | drawdown for profit (mean < 0) |
-| P7 | H_gated, 71,485 / 133,887, 655 | H_pcthour pct=0.6 window=am (phi_pb) | 191,674 / 203,542 | 236 | 120,861 / 122,169 | 701 | 43 | engine-confirmed (dd lower, mean >= 0) |
+| K7 | J3_statescale, 8,893 / 20,902, 666 | H_thick arm=0.5 feat=tot_rel_slow secs=1 thr=2.0 (phi_thick) | 20,056 / 35,969 | 656 | 29,349 / 22,188 | -17 | 36 | L6M ok but PRE maxDD worse |
+| P7 | H_gated, 71,485 / 133,887, 655 | H_pcthour pct=0.6 window=am (phi_pb) | 191,674 / 203,542 | 236 | 120,861 / 122,169 | 701 | 43 | engine-confirmed (dd lower, mean >= 0, PRE maxDD within +5%) |
+| P7 | H_gated, 71,485 / 133,887, 655 | H_gated arm=0.7 feat=tot_rel_fast secs=1 thr=2 (phi_thick) | 186,789 / 203,542 | 295 | 121,413 / 122,169 | -163 | 36 | engine-confirmed (dd lower, mean >= 0, PRE maxDD within +5%) |
 | M7 | I_decay, 21,793 / 44,425, 383 | H_tip pct=0 secs=600 (phi_pb) | 46,661 / 48,019 | -141 | 66,091 / 44,205 | -616 | 43 | drawdown for profit (mean < 0) |
+| M7 | I_decay, 21,793 / 44,425, 383 | H_thick arm=0.1 feat=tot_rel_slow secs=1 thr=1.3 (phi_thick) | 30,068 / 48,019 | -389 | 67,688 / 44,205 | -577 | 36 | drawdown for profit (mean < 0) |
 | U7 | H_pcthour, 8,700 / 21,561, 153 | H_pcthour pct=0.3 window=ldn (phi_pb) | 14,388 / 17,816 | -562 | 41,634 / 39,542 | -651 | 43 | drawdown for profit (mean < 0) |
 | A7 | H_pcthour, 3,268 / 12,461, 427 | H_pcthour pct=0.4 window=asia (phi_pb) | 6,023 / 9,361 | -188 | 15,274 / 8,625 | -455 | 43 | drawdown for profit (mean < 0) |
 | H7 | H_mom, 5,961 / 15,477, 137 | H_mom arm=0.25 feat=vel30<= secs=1 thr=0 (phi_pb) | 11,897 / 16,242 | -670 | 13,803 / 18,436 | -457 | 43 | drawdown for profit (mean < 0) |
-| O7 | I_step, 4,420 / 7,469, 215 | I_step lag=1 step=10 (phi_pb) | 4,210 / 6,958 | 251 | 4,720 / 4,797 | -494 | 43 | engine-confirmed (dd lower, mean >= 0) |
+| O7 | I_step, 4,420 / 7,469, 215 | I_step lag=1 step=10 (phi_pb) | 4,210 / 6,958 | 251 | 4,720 / 4,797 | -494 | 43 | engine-confirmed (dd lower, mean >= 0, PRE maxDD within +5%) |
 
 Stage 2 overturns or fails to confirm the Stage 1 profit pick on 5 of 7 books (Stage 1 picks that cannot run through the engine count as not confirmed). Every book keeps a profit line below, labelled PRE-PROOF; only engine-confirmed rules are un-commented candidates, none is ENTER.
 
 ```
 #! # profit K7 * [I_bookarm X=20 arm=0.25 feat=ice_ag_w30 secs=30 thr=3] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 23,159/35,969, L6M mean -1,689
+#! # profit K7 * [H_thick arm=0.5 feat=tot_rel_slow secs=1 thr=2.0] (engine phi_thick; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 20,056/35,969, L6M mean 656
 # profit P7 * [H_pcthour pct=0.6 window=am] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 191,674/203,542, L6M mean 236
+# profit P7 * [H_gated arm=0.7 feat=tot_rel_fast secs=1 thr=2] (engine phi_thick; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 186,789/203,542, L6M mean 295
 #! # profit M7 * [H_tip pct=0 secs=600] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 46,661/48,019, L6M mean -141
+#! # profit M7 * [H_thick arm=0.1 feat=tot_rel_slow secs=1 thr=1.3] (engine phi_thick; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 30,068/48,019, L6M mean -389
 #! # profit U7 * [H_pcthour pct=0.3 window=ldn] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 14,388/17,816, L6M mean -562
 #! # profit A7 * [H_pcthour pct=0.4 window=asia] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 6,023/9,361, L6M mean -188
 #! # profit H7 * [H_mom arm=0.25 feat=vel30<= secs=1 thr=0] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 11,897/16,242, L6M mean -670
@@ -196,8 +202,11 @@ Recents method L1M..L6M then HOLD/MID/PRE/X'; placebos v2 (causal, leak-tested),
 | B/C (EX-LBC) | EXH_BC.md | in | 11:45Z |
 | D/E/F (EX-LDEF) | EXH_DEF.md | in | 11:31Z |
 | G (EX-LG) | EXH_G.md | in | 11:22Z |
-| H/I (EX-PHI) | EXH_HI.md | in | 11:38Z |
+| H/I (EX-PHI) | EXH_HI.md | in | 12:20Z |
 | J/K/L (EX-PJKL) | EXH_JKL.md | in | 12:02Z |
 
 ## wf-ok flags: what they mean
 The wf flag on a candidate row is the TECHNIQUE-level walk-forward (picking among the cells of that one technique on trailing 26 weeks, applied to the next month; wf-ok = total delta >= 0 and WF maxDD within +5% of never-cut). It is a weak test: e.g. O7 loss LBC_dtot8_rel_w15 (13 cells) is wf-ok with +1,917 USD over 35 test months, but its WF maxDD equals the never-cut maxDD (7,469), i.e. the picks did not lower the drawdown, and the global picking procedure for O7 loss (6,272 cells) is wf-FAIL (-44,366). Read wf-ok as not-negative, not as out-of-sample drawdown evidence. No cell is ENTER.
+
+## Final QA (3 random rows per section re-derived from the ledger / base_b trades)
+QA (final, 2026-11-09 12:39Z): Reference rows: 3 random rows re-derived from base_b trades: 3/3 match (HOLD-old (old live L2  P7: OK; S1b-UNIF (one cell for ALL: OK; HOLD-old (old live L2  H7: OK). Per-book policy table: 3 random rows looked up in the ledger (U2, stage 1): 3/3 match (M7 loss F3_stop_extreme: OK; A7 profit H_pcthour: OK; P7 loss D3_pullback@after30: OK). Profit side table: 3 random rows vs the Stage 2 ledger rows of the set named in the row: 3/3 match (U7: OK; M7: OK; P7: OK). Engine evidence lines: 3 random lines vs the Stage 2 ledger: 3/3 match (ldef_perbook_u2 M7: OK; exla_uni P7: OK; pjkl_PB U7: OK). ALL SAMPLED ROWS MATCH.

@@ -173,11 +173,11 @@ Table 4 (S1B-COMB): exact re-run vs S1B-COMB (= exact Q1-A), d mean $/wk / maxDD
 
 | cell | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
 |--|--|--|--|--|--|--|--|--|
-| X_VT | -5160 / +37.2% ; first-order +1928 / +29.3% | -6712 / +37.2% ; first-order -1321 / +29.3% |  |  |  |  |  |  |
-| X_L | -14529 / -76.3% ; first-order +2360 / -46.2% | -11380 / -76.3% ; first-order +2838 / -46.2% |  |  |  |  |  |  |
-| X_B | -14049 / -68.9% ; first-order +6918 / -59.1% |  |  |  |  |  |  |  |
-| X_C | -5850 / +18.5% ; first-order +4558 / -12.9% |  |  |  |  |  |  |  |
-| X_MVL | -495 / -1.3% ; first-order +83 / +1.9% |  |  |  |  |  |  |  |
+| X_VT | -5160 / +37.2% ; first-order +1928 / +29.3% | -6712 / +37.2% ; first-order -1321 / +29.3% | -6712 / +37.2% ; first-order -1321 / +29.3% | -351 / +37.2% ; first-order -881 / +29.3% | -1595 / +21.1% ; first-order -838 / +26.1% | -2842 / +11.3% ; first-order -1953 / +18.9% |  |  |
+| X_L | -14529 / -76.3% ; first-order +2360 / -46.2% | -11380 / -76.3% ; first-order +2838 / -46.2% | -11380 / -76.3% ; first-order +2838 / -46.2% | +83 / -76.3% ; first-order +10210 / -46.2% | +674 / -41.5% ; first-order +8015 / -30.9% | +3089 / -37.2% ; first-order +8749 / -31.1% |  |  |
+| X_B | -14049 / -68.9% ; first-order +6918 / -59.1% | -10739 / -68.9% ; first-order +10878 / -59.1% | -10739 / -68.9% ; first-order +10878 / -59.1% | +2024 / -68.9% ; first-order +19841 / -59.1% | +2862 / -52.6% ; first-order +13779 / -66.4% | +31 / -71.6% ; first-order +12006 / -48.7% |  |  |
+| X_C | -5850 / +18.5% ; first-order +4558 / -12.9% | -1375 / +18.5% ; first-order +8040 / -12.9% | -1375 / +18.5% ; first-order +8040 / -12.9% | -391 / +7.2% ; first-order +9631 / -26.8% | -1058 / -38.6% ; first-order +5765 / -35.6% | -5182 / -55.8% ; first-order +3257 / -33.9% |  |  |
+| X_MVL | -495 / -1.3% ; first-order +83 / +1.9% | -543 / -1.3% ; first-order -132 / +1.9% | -543 / -1.3% ; first-order -132 / +1.9% | +7 / -1.3% ; first-order +228 / +1.9% | +195 / +6.8% ; first-order +383 / +2.1% | -117 / -0.8% ; first-order +161 / +4.7% |  |  |
 
 ## Versus the superseded S1 (timer) page
 

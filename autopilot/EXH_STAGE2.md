@@ -1,6 +1,6 @@
-# EXH_STAGE2 - the decisive table: do the per-book cells still lower drawdown in the ENGINE cascade? (auto-generated 2026-11-09 12:03Z)
+# EXH_STAGE2 - the decisive table: do the per-book cells still lower drawdown in the ENGINE cascade? (auto-generated 2026-11-09 12:38Z)
 Engine S2 = the set run through the replica engine (re-entries, locks, stack gates, other books) vs engine never-cut (base_b/NOCUT) and vs the S1b-COMB live reference row; months/windows covered are in the stage tag. Stage 1 here = the same rule first-order on U2 (kernel re-run, panels from the state files of the previous and the label day). Live week = 186 live trades first-order (the engine run does not include 2026-11). S2 rows carry no placebo draws, so no S2 row can be ENTER; Stage 1 placebo/WY/WF of the finalists are in the owners reports (EXH_*.md) and the ledger.
-<!--TP-->Stage 2 months/hour (last 1.6 h): ldef_perbook_u2 0.0 (43/43), pjkl_PB 0.0 (43/43), bc_a_recent 0.0 (43/43), bc_m7_cps 24.4 (42/43), phi_pb 0.0 (38/43), exla_pb1 0.0 (43/43), exla_pb2 6.4 (43/43), exla_uni 0.0 (40/43), ldef_uniform_u2 5.1 (43/43), pjkl_UNI 2.6 (43/43), bc_c_uniform 2.6 (43/43), bc_b_ddbest 0.0 (21/43)<!--/TP-->
+<!--TP-->Stage 2 months/hour (last 1.5 h): ldef_perbook_u2 0.0 (43/43), pjkl_PB 0.0 (43/43), bc_a_recent 0.0 (43/43), bc_m7_cps 0.6 (43/43), phi_pb 3.2 (43/43), phi_thick 0.0 (43/43), exla_pb1 0.0 (43/43), exla_pb2 0.0 (43/43), exla_uni 1.9 (43/43), ldef_uniform_u2 0.0 (43/43), pjkl_UNI 0.0 (43/43), bc_c_uniform 0.0 (43/43), bc_b_ddbest 14.2 (43/43)<!--/TP-->
 USD per ISO week at live lots, net of 4.84/contract; delta = rule minus never-cut with the carrying week dropped; maxDD/worst-20 on all weeks of the window.
 
 ## Plain reading (auto)
