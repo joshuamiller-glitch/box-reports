@@ -1,4 +1,4 @@
-# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 12:52Z)
+# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 13:22Z)
 **Universe U2 = full S1b tick-close never-cut (43 months) + the u5 live-week entries; this page shows U2 cells only.** The S1b-COMB live reference row is unchanged (S1b).
 
 **Reading guide.** ENTER = passes every gate (recents, tolerant older windows, drawdown not worse in L6M and PRE, delta above MDE, placebo p <= .10, family p <= .10, walk-forward ok, not FAILS-LIVE-WEEK). CANDIDATE-DD = lowers L6M maxDD at equal or better L6M mean and PRE maxDD within +5% (even inside MDE); LEAD = L6M mean and drawdown not worse with >60% of L1M..L6M windows positive. FAILS-LIVE-WEEK = the held-out live-week delta is below -1 MDE-week of that scope (never ENTER). Sub-flags in the label cell: rec-ok/rec-FAIL (no L1M..L6M delta below -1 MDE-week), wf-ok/wf-FAIL, plc-ok/plc-FAIL (placebo p <= .10), exposure (fires on more than 50% of trades = exposure shrink). **ENTER cells on this page: 0.**
@@ -300,7 +300,7 @@ Cells scored: 17047; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | K1_target | {"m": 1.1} | 120 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 184 / 664 | 0 / 0 | -184 / -664 | 2 | 1.00 | 1.00 / - |  |  | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL] |
 | PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
 | PJKL_perbook_best | {"picks": {"H7": ["K1_target", "{\"m\": 0.5}"], "K7": ["K1_t | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
-| PHI_perbook_s2able | {"rules": {"A7": {"cell_id": "a66d38e1ce5f", "pct": 0.4, "te | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
+| PHI_thick_s2 | {"rules": {"K7": {"arm": 0.5, "cell_id": "ea18c34401b3", "fe | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
 
 ### X3 both
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
@@ -365,8 +365,8 @@ Cells scored: 17047; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | K1_target | {"m": 1.1} | 60 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 1 | 1.00 | 1.00 / - |  |  | S1 | no |
 | PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
 | PJKL_perbook_best | {"picks": {"H7": ["K1_target", "{\"m\": 0.5}"], "K7": ["K1_t | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
-| PHI_perbook_s2able | {"rules": {"A7": {"cell_id": "a66d38e1ce5f", "pct": 0.4, "te | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
 | PHI_thick_s2 | {"rules": {"K7": {"arm": 0.5, "cell_id": "ea18c34401b3", "fe | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
+| PHI_perbook_s2able | {"rules": {"A7": {"cell_id": "a66d38e1ce5f", "pct": 0.4, "te | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
 
 ### X5 both
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |

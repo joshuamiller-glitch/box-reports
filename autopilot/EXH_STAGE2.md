@@ -1,4 +1,4 @@
-# EXH_STAGE2 - the decisive table: do the per-book cells still lower drawdown in the ENGINE cascade? (auto-generated 2026-11-09 12:38Z)
+# EXH_STAGE2 - the decisive table: do the per-book cells still lower drawdown in the ENGINE cascade? (auto-generated 2026-11-09 13:07Z)
 Engine S2 = the set run through the replica engine (re-entries, locks, stack gates, other books) vs engine never-cut (base_b/NOCUT) and vs the S1b-COMB live reference row; months/windows covered are in the stage tag. Stage 1 here = the same rule first-order on U2 (kernel re-run, panels from the state files of the previous and the label day). Live week = 186 live trades first-order (the engine run does not include 2026-11). S2 rows carry no placebo draws, so no S2 row can be ENTER; Stage 1 placebo/WY/WF of the finalists are in the owners reports (EXH_*.md) and the ledger.
 <!--TP-->Stage 2 months/hour (last 1.5 h): ldef_perbook_u2 0.0 (43/43), pjkl_PB 0.0 (43/43), bc_a_recent 0.0 (43/43), bc_m7_cps 0.6 (43/43), phi_pb 3.2 (43/43), phi_thick 0.0 (43/43), exla_pb1 0.0 (43/43), exla_pb2 0.0 (43/43), exla_uni 1.9 (43/43), ldef_uniform_u2 0.0 (43/43), pjkl_UNI 0.0 (43/43), bc_c_uniform 0.0 (43/43), bc_b_ddbest 14.2 (43/43)<!--/TP-->
 USD per ISO week at live lots, net of 4.84/contract; delta = rule minus never-cut with the carrying week dropped; maxDD/worst-20 on all weeks of the window.
@@ -20,6 +20,7 @@ Every per-book cell below that lowers the L6M maxDD in the engine while keeping 
 - phi_pb P7 (weak): L6M maxDD 191,674 vs 203,542, PRE maxDD 120,861 vs 122,169, L6M mean 236/wk, PRE mean 701/wk, live week -4,320, recents ok, label CANDIDATE-DD FAILS-LIVE-WEEK; Stage 1 L6M gain kept in the engine: 39%.
 - phi_pb H7 (STRICT): L6M maxDD 11,897 vs 16,242, PRE maxDD 13,803 vs 18,436, L6M mean -670/wk, PRE mean -457/wk, live week 2,524, recents ok, label no; Stage 1 L6M gain kept in the engine: 46%.
 - phi_pb O7 (weak): L6M maxDD 4,210 vs 6,958, PRE maxDD 4,720 vs 4,797, L6M mean 251/wk, PRE mean -494/wk, live week 1,167, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 90%.
+- phi_thick P7 (weak): L6M maxDD 186,789 vs 203,542, PRE maxDD 121,413 vs 122,169, L6M mean 295/wk, PRE mean -163/wk, live week -1,317, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 27%.
 - exla_pb1 K7 (STRICT): L6M maxDD 32,823 vs 35,969, PRE maxDD 19,161 vs 22,188, L6M mean -179/wk, PRE mean -22/wk, live week 477, recents ok, label no; Stage 1 L6M gain kept in the engine: 40%.
 - exla_pb1 P7 (STRICT): L6M maxDD 170,616 vs 203,542, PRE maxDD 111,795 vs 122,169, L6M mean -62/wk, PRE mean -825/wk, live week -15,056, recents ok, label no; Stage 1 L6M gain kept in the engine: 39%.
 - exla_pb1 M7 (STRICT): L6M maxDD 30,434 vs 48,019, PRE maxDD 28,296 vs 44,205, L6M mean 615/wk, PRE mean 398/wk, live week 724, recents ok, label CANDIDATE-DD; Stage 1 L6M gain kept in the engine: 57%.
@@ -130,6 +131,20 @@ Stack (all books of the set together, engine):
 - L6M maxDD 186,180 vs 191,045 never-cut vs 82,873 S1b-COMB; PRE maxDD 117,523 vs 130,824; L6M mean delta -3,030 (MDE 3,963); worst-20 L6M -101,664 vs -63,404.
 
 **Decisive reading for phi_pb:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): K7, H7. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): K7, H7, O7. (strict-lowering: K7, H7; weak-lowering: K7, P7, H7, O7; recents-ok: K7, P7, M7, U7, A7, H7, O7; live-ok: K7, M7, U7, A7, H7, O7).
+
+## phi_thick  (PHI_thick_s2, side profit, stage S2, 43 of 43 months run)
+Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): phi_thick 202610 K7 | Stage 1 kernel fires 82 | engine ExhCut on those 56 | equal second (+-1 s) 56 | equal px 56 | engine ExhCut total 84
+
+| book | rule | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | live week | S1 L6M maxDD w/wo | S1 L6M gain kept in S2 | recents | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| K7 | [1.0, 3.0, 2.0, 1.0, 0.5, 1.0] | 4,400 | 1,759 | 1,560 | 656 | 102 | -1,713 | -17 | -519 | 20,056 / 35,969 | 29,349 / 22,188 | 6,749 / -20,829 | 1,984 | 10,243 / 20,902 | 149% | rec-ok | LEAD |
+| P7 | [1.0, 2.0, 2.0, 1.0, 0.7, 1.0] | 2,393 | -657 | 842 | 295 | 145 | 827 | -163 | -417 | 186,789 / 203,542 | 121,413 / 122,169 | -171,892 / -181,468 | -1,317 | 71,485 / 133,887 | 27% | rec-ok | CANDIDATE-DD |
+| M7 | [1.0, 3.0, 1.3, 1.0, 0.1, 1.0] | -219 | -412 | -1,232 | -389 | -154 | 368 | -577 | -611 | 30,068 / 48,019 | 67,688 / 44,205 | -58,188 / -73,536 | -2,874 | 14,461 / 44,425 | 60% | rec-ok | no FAILS-LIVE-WEEK |
+
+Stack (all books of the set together, engine):
+- L6M maxDD 161,597 vs 191,045 never-cut vs 82,873 S1b-COMB; PRE maxDD 136,308 vs 130,824; L6M mean delta 177 (MDE 4,254); worst-20 L6M -11,503 vs -63,404.
+
+**Decisive reading for phi_thick:** STRICT (L6M and PRE maxDD both at least 2% lower than the engine never-cut, recents ok, live week not failing): NONE. WEAK (L6M maxDD lower, PRE within +5%, recents ok, live ok): P7. (strict-lowering: none; weak-lowering: P7; recents-ok: K7, P7, M7; live-ok: K7, P7).
 
 ## exla_pb1  (A_perbook_best1, side loss, stage S2, 43 of 43 months run)
 Spot-check (Stage 1 kernel vs engine ExhCut exits, newest month): exla_pb1 202610 K7 | Stage 1 kernel fires 55 | engine ExhCut on those 34 | equal second (+-1 s) 34 | equal px 33 | engine ExhCut total 39

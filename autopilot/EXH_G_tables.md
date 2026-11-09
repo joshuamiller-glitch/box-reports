@@ -1,5 +1,5 @@
 # EXH_G - family G (combinations + learned shapes), EX-LG
-generated 11-09 11:22 UTC; entry match PRE-PROOF; null_ver 2; family p not yet attached (label computed with p_family=1, WF=False, so ENTER is impossible here; CANDIDATE-DD/LEAD are the live labels).
+generated 11-09 13:22 UTC; entry match PRE-PROOF; null_ver 2; family p not yet attached (label computed with p_family=1, WF=False, so ENTER is impossible here; CANDIDATE-DD/LEAD are the live labels).
 
 Cells registered by EX-LG: 107338 rows (1394 cells).
 ### Stack (all books), top by L6M maxDD reduction, nfire>=20
