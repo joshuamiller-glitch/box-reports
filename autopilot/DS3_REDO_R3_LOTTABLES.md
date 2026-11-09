@@ -1,4 +1,4 @@
-# DS3_REDO_R3_LOTTABLES - session lot tables per book x 6 sessions on the state base (S1b-COMB), first version 2026-11-09 18:30Z
+# DS3_REDO_R3_LOTTABLES - session lot tables per book x 6 sessions on the state base (S1b-COMB), first version 2026-11-09 20:27Z
 
 > FIRST-ORDER SCREEN ONLY, ROLL-EXCL, PRE-PROOF, post-hoc, Shadow only; exact runs pending (FGH_P744, P644, P444, GREEDY in the SZ-CORE queue). STANDING RULE: every layer stays ON; the table is a setting; the live table is the reference row. Tables are the six-number strings D7 reads (asia,london,pre,nyam,nypm,close). A cell going to 0 shows the P&L it removes. Equal-$-risk parity row (2 lots every 60-pt cell, O7 3) is a REFERENCE ROW only.
 
