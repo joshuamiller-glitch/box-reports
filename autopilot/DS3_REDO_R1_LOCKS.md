@@ -1,4 +1,4 @@
-# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-09 21:24Z)
+# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-09 22:55Z)
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. FIRST-ORDER SCREEN ONLY unless a row is in the exact table below. ROLL-EXCL: the 31 roll-artifact base trades are excluded from every number. STANDING RULE: every lock stays ON; "off" rows are reference rows only; the deliverable is the best SETTING (drawdown first at equal mean, holds OOS); if nothing beats the live setting the live setting stays.**
 
@@ -179,11 +179,11 @@ Pick: **R1;pb_rbasis;R_on_sized_lots;P7** (live retained: False; train end 2026-
 |--|--|--|--|--|--|
 | LIVE (S1-COMB) | S1-COMB | 79907 / +0 / +0.0% | 140288 / +0 / +0.0% | 128944 / +0 / +0.0% | 99496 / +0 / +0.0% |
 | NOLOCK reference | CDE_NOLOCK | 100720 / -2394 / -26.0% | 162725 / -992 / -16.0% | 117066 / +493 / +9.2% | 115787 / -817 / -16.4% |
-| R1/pb_rbasis/R_on_sized_lots/ALL | CDE_R1_1 | 53773 / -7992 / +32.7% | 65905 / +15 / +53.0% | not run yet | not run yet |
-| R1/pb_rbasis/R_on_sized_lots/P7 | CDE_R1_2 | 66329 / -5164 / +17.0% | 72057 / +265 / +48.6% | not run yet | not run yet |
-| R1/pb_daycaps/win4_loss1(arm2,keep.5,floor12)/P7 | CDE_R1_3 | 59357 / +492 / +25.7% | 116454 / +1108 / +17.0% | not run yet | not run yet |
-| R1/pb_daycaps/win8_loss1(arm2,keep.5,floor12)/P7 | CDE_R1_4 | 59357 / +66 / +25.7% | 116454 / +917 / +17.0% | not run yet | not run yet |
-| R1/pb_giveback/arm1_keep0.7(win5,loss2,floor12)/P7 | CDE_R1_5 | 77439 / -4034 / +3.1% | 99383 / +1 / +29.2% | not run yet | not run yet |
+| R1/pb_rbasis/R_on_sized_lots/ALL | CDE_R1_1 | 53773 / -7992 / +32.7% | 65905 / +15 / +53.0% | 115916 / -1617 / +10.1% | not run yet |
+| R1/pb_rbasis/R_on_sized_lots/P7 | CDE_R1_2 | 66329 / -5164 / +17.0% | 72057 / +265 / +48.6% | 127013 / -2363 / +1.5% | not run yet |
+| R1/pb_daycaps/win4_loss1(arm2,keep.5,floor12)/P7 | CDE_R1_3 | 59357 / +492 / +25.7% | 116454 / +1108 / +17.0% | 121067 / -1076 / +6.1% | 100551 / +170 / -1.1% |
+| R1/pb_daycaps/win8_loss1(arm2,keep.5,floor12)/P7 | CDE_R1_4 | 59357 / +66 / +25.7% | 116454 / +917 / +17.0% | 121067 / -1076 / +6.1% | 100551 / -80 / -1.1% |
+| R1/pb_giveback/arm1_keep0.7(win5,loss2,floor12)/P7 | CDE_R1_5 | 77439 / -4034 / +3.1% | 99383 / +1 / +29.2% | 63428 / +1531 / +50.8% | not run yet |
 
 
 NOLOCK reference: the live locks are doing real work; any setting that removes them is a reference row, never a candidate.
@@ -215,11 +215,11 @@ Worked examples (today's P7 -20,985 day halt and the K7 give-back halts): those 
 |--|--|--|--|--|
 | S1-COMB live | 31 | 3 | 121 | 0 |
 | CDE_NOLOCK | 27 | 3 | 152 | 0 |
-| CDE_R1_1 | 15 | 1 | 30 | 1 |
-| CDE_R1_2 | 15 | 1 | 52 | 1 |
-| CDE_R1_3 | 15 | 1 | 59 | 0 |
-| CDE_R1_4 | 15 | 1 | 59 | 0 |
-| CDE_R1_5 | 15 | 1 | 57 | 1 |
+| CDE_R1_1 | 23 | 1 | 32 | 1 |
+| CDE_R1_2 | 23 | 1 | 65 | 1 |
+| CDE_R1_3 | 27 | 3 | 96 | 0 |
+| CDE_R1_4 | 27 | 3 | 96 | 0 |
+| CDE_R1_5 | 23 | 1 | 73 | 2 |
 
 Detail (S1-COMB live): K7 20230614 pnl 1199 Target then 5 trades; P7 20230614 pnl 8402 Target then 0 trades; U7 20230614 pnl 2403 Target then 1 trades; P7 20230913 pnl -425 Stop then 4 trades; K7 20230913 pnl 1199 Target then 3 trades; A7 20231213 pnl 1199 Target then 0 trades; P7 20231213 pnl 1199 Target then 1 trades; K7 20231213 pnl 1199 Target then 2 trades; K7 20240313 pnl 1199 Target then 0 trades; P7 20240313 pnl 4805 Target then 0 trades; K7 20240619 pnl 1199 Target then 0 trades; A7 20240619 pnl 1199 Target then 0 trades; P7 20240918 pnl -3178 Stop then 3 trades; K7 20240918 pnl -386 Stop then 9 trades; K7 20241219 pnl 164 Stop then 16 trades; P7 20241219 pnl 178 Stop then 8 trades; K7 20250320 pnl 1199 Target then 9 trades; P7 20250320 pnl 3601 Target then 6 trades; P7 20250618 pnl 1362 Stop then 5 trades; K7 20250618 pnl 143 Stop then 9 trades; A7 20250618 pnl -276 Stop then 1 trades; A7 20250918 pnl 1199 Target then 2 trades; H7 20250918 pnl 1199 Target then 2 trades; P7 20250918 pnl 8392 Target then 0 trades; K7 20250918 pnl 1199 Target then 6 trades; K7 20251217 pnl -186 Stop then 9 trades; P7 20251217 pnl -4169 StateCut then 4 trades; P7 20260318 pnl -16785 Stop then 5 trades; K7 20260318 pnl -4406 Stop then 11 trades; K7 20260916 pnl -6061 Stop then 0 trades; P7 20260916 pnl 4800 Target then 0 trades
 

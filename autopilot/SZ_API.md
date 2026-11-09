@@ -94,3 +94,4 @@ Measured throughput (last 3 h): 184.3 cell-months/h overall (553 finished); mean
 
 ETA (pending / throughput; 2 workers | 3 workers): tier 0: 0.0 h | 0.0 h; tier 0-1: 0.0 h | 0.0 h; + top-1 list (1.5): 4.6 h | 3.1 h; + tier 2 (L6M then PRE only within the trim): 16.5 h | 11.0 h.
 <!--/Q12-->
+- **w20cut sign (fixed 2026-11-09 22:45Z):** `w20cut_<w>` = 100*(w20_cell - w20_live)/|w20_live| where w20 = SUM of the 20 worst weekly P&Ls; + = improvement (larger, less negative). Earlier core numbers had the opposite sign (KCAP3 / 7-4-4 "-70.6% / -46% worse" were actually improvements). See autopilot/SZ_P7_W20_NOTE.md.

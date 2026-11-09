@@ -4,7 +4,7 @@
 
 > **ROLL-EXCL (lead 17:35Z): every first-order and exact number on this page excludes the 31 base trades (of the 33 listed in roll_bracket_trades.csv; 2 listed rows are not in the COMB list) alive across a contract roll (key book + entry second +-2 s); their P&L is zeroed before state and scoring. Engine-internal state of the exact runs (lock/cooldown/equity states) still saw those artifact P&L jumps; the 14 roll days are checked in the lock/cooldown exact runs on the R1 page.**
 
-# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-09 21:14Z
+# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-09 22:54Z
 
 **Label: first-order on base S1b-COMB (live D7 v1.5 with the seven state-cut lines), 21135 trades 2023-04..2026-10 (last label day 20261030; the 2026-11-01..05 live weeks are not in the list, so L1M/L2M/L3M windows end 2026-10-30); entries not live-matched; in-sample; PRE-PROOF; post-hoc; Shadow only; no PASS claims.** Reference = Q1-A (the base lots). 3274 cells (C 140, D 1980, E 1110, K 44). Prereg: autopilot/SZ_CDE_PREREG.md (sha in DECISIONS.md).
 
@@ -311,7 +311,7 @@ Best per technique (one row each, by the joint cut):
 NOT first-order scorable (exact driver only): StackCutPct 0-100 x sessions and StackAsiaOnly variants; lock/give-back values looser than live (win cap 6-8R, give-back arm 3R/keep .3, floor 14-16R); every re-entry-dependent cell needs state_sizer_b-style engine support (the current exact driver patches only the ER lots step: rules D/E need a new engine hook = v1.6-style code, flagged to lead).
 
 
-M_CDE.npz row alignment spot-check (M x base P&L in C.prepare(C.load_trades) order, maxDD re-derived on L6M/PRE/X' must equal the ledger): C|riskcap_per_trade|R$2400|P7 L6M maxDD 44621 vs ledger 44621 MISMATCH; D|eqdd_book_20d_R|Y2R_f0.50_sticky|P7_sess_london L6M maxDD 76187 vs ledger 76187 MISMATCH; K|P7_after_P7_stop|same_session_N120min_f0.5|P7 L6M maxDD 78932 vs ledger 78932 MISMATCH. Windows: the COMB list ends with label day 20261030 (2026-10-31 is a Saturday, base_b has no later trade), so L1M-L3M end there and the live weeks 11-01..05 are only in the held-out live-week columns.
+M_CDE.npz row alignment spot-check (M x base P&L in C.prepare(C.load_trades) order, maxDD re-derived on L6M/PRE/X' must equal the ledger): C|riskcap_per_trade|R$2400|P7 L6M maxDD 44621 vs ledger 44621 MISMATCH; D|dayloss_book_R|X0.5R_f0.00|P7_sess_nyam L6M maxDD 70203 vs ledger 70203 MISMATCH; K|P7_lots_by_session|L4_nyam|P7 L6M maxDD 74568 vs ledger 74568 MISMATCH. Windows: the COMB list ends with label day 20261030 (2026-10-31 is a Saturday, base_b has no later trade), so L1M-L3M end there and the live weeks 11-01..05 are only in the held-out live-week columns.
 
 
 ## Exact-engine status of the finalists (hook code/th_sz_cde/cde_exact.py; regression month 202304 with a never-firing rule == S1-COMB; 2 workers; order: six best (F00 F01 F03 F11 F02 F04) on L6M, PRE, X', then the other six, HOLD last). EXACT-CONFIRMED = exact maxDD cut > 0 on every window that is complete; a window shown as na is not run yet; every other cell in this page is FIRST-ORDER ONLY.
@@ -337,10 +337,15 @@ M_CDE.npz row alignment spot-check (M x base P&L in C.prepare(C.load_trades) ord
 | set | cell | technique / params | window | exact maxDD cut | first-order cut | exact d mean | FO d mean | exact equal-mean cut | trades in S1-COMB with no exact counterpart (removed) n / net P&L | exact-only trades (re-entries / shifted) n / net P&L | first-after-removed n / P&L | exact total vs ref total |
 |--|--|--|--|--|--|--|--|--|--|--|--|
 | CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | L6M | +18.9 | +21.2 | -2239 | +2735 | +12.1 | 873 / +3202 | 377 / -20408 | 540 / +185986 | +655684 vs +646409 |
+| CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | PRE | -0.2 | +22.8 | -1634 | -3516 | -13.6 | 1350 / +215646 | 649 / +107540 | 866 / +292559 | +952470 vs +1063132 |
 | CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | L6M | +15.5 | +17.1 | -4326 | +2727 | +0.8 | 1519 / -2745 | 759 / -38204 | 853 / +230181 | +636755 vs +646409 |
+| CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | PRE | -1.7 | +32.0 | -1312 | -3757 | -12.3 | 2302 / +255761 | 1225 / +107452 | 1352 / +379951 | +909861 vs +1063132 |
 | CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | L6M | +26.6 | +21.9 | -3022 | +1537 | +18.1 | 1063 / +25577 | 228 / +10804 | 398 / +15157 | +622925 vs +646409 |
+| CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | PRE | +19.8 | +46.5 | -1762 | -1290 | +8.1 | 1066 / +60046 | 186 / -95765 | 527 / +91373 | +912820 vs +1063132 |
 | CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | L6M | +11.9 | +16.9 | +1889 | +652 | +17.2 | 838 / -71736 | 188 / +31468 | 348 / +27165 | +743653 vs +646409 |
+| CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | PRE | +34.5 | +38.4 | -821 | -780 | +30.4 | 753 / +4210 | 125 / -75087 | 372 / +59508 | +987526 vs +1063132 |
 | CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | L6M | -2.4 | +14.9 | -2068 | +1026 | -10.3 | 384 / +23199 | 157 / -16132 | 229 / +131614 | +628385 vs +646409 |
+| CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | PRE | +37.5 | +33.2 | +2010 | -867 | +45.4 | 520 / -19271 | 206 / +88252 | 331 / +212530 | +1196867 vs +1063132 |
 
 Cross-check vs sz_core (Z.score on the 12 finalists + top 20, M_CDE arrays): maxDD L6M and PRE identical (max abs diff 0 $). Means and equal-mean cuts differ by ~4k $/wk and a few points because this page ends the windows at label day 2026-10-30 (last day of the COMB trade list; 10-31 is a Saturday) while sz_core runs its calendar to 2026-11-05 and counts the empty weeks (zero P&L) in L1M-L6M means. Exact-run cut numbers use this page's windows.
 
