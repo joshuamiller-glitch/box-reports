@@ -1,5 +1,5 @@
 <!--STATUS-->
-STATUS 2026-11-09 07:47Z (auto, make_page): cells in the book-level ledger 16132 (S1 16132, S2 0); families 14; labels (book level) {'no': 82270, 'CANDIDATE-DD': 25056, 'LEAD': 6590, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4327, 'LEAD FAILS-LIVE-WEEK': 1565}; placebo null v2 on 135940 of 135940 rows; WY p on 88890 rows. Stage 2 months/hour (last 0.0 h): ldef_perbook_u2 0.0 (20/43), pjkl_PB 0.0 (41/43), bc_a_recent 0.0 (28/43), exla_pb1 0.0 (6/43)
+STATUS 2026-11-09 08:25Z (auto, make_page): cells in the book-level ledger 16141 (S1 16134, S2 3); families 15; labels (book level) {'no': 82306, 'CANDIDATE-DD': 25063, 'LEAD': 6594, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4327, 'LEAD FAILS-LIVE-WEEK': 1565, 'S2-partial (older windows pending)': 40}; placebo null v2 on 135959 of 136036 rows; WY p on 88890 rows. Stage 2 months/hour (last 0.0 h): ldef_perbook_u2 0.0 (20/43), pjkl_PB 0.0 (41/43), bc_a_recent 0.0 (28/43), exla_pb1 0.0 (6/43) Stage 2 headline (engine, per-book cells; strict = L6M and PRE maxDD both >= 2% lower, recents ok, live week ok): ldef_perbook_u2: strict survivors O7; weak M7, U7, O7 | pjkl_PB: strict survivors U7, H7; weak P7, U7, H7 | bc_a_recent: strict survivors M7; weak M7, U7
 <!--/STATUS-->
 # EXH_API - T-TH-EXHAUST framework API (EX-CORE). Part 1 (universe layout, published early for EX-FEAT); parts 2-5 appended below as they land.
 

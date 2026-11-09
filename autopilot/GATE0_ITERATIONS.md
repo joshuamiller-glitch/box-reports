@@ -258,3 +258,4 @@
 2026-11-09T06:50Z EX-CORE: stage2 --order windows + partial-coverage score + s2_chain.py running; ldef_perbook_u2 restarted newest-first (8 chrono months kept)
 2026-11-09T07:25Z EX-CORE: stage2 start gate rewritten (short lock, STAGE2_MEM_GATE 44), pjkl/bc/exla chains restarted newest-first; throughput 07:12-07:23: ldef +6, bc +5, pjkl +2, exla +2 months
 2026-11-09T07:36Z EX-CORE: stage2 maxtasksperchild=1 + gate priority; pjkl_PB/exla_pb1/ldef_perbook_u2 restarted (idle workers freed ~40 GB: MemAvailable 21 -> 80 GB); throughput line in STATUS
+2026-11-09T08:25Z EX-CORE: ldef_uniform_u2 started; EXH_STAGE2.md (stage2_headline.py) built for the 3 complete sets, auto-refreshed by s2_chain
