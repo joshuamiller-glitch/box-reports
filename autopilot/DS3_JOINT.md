@@ -1,4 +1,4 @@
-# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-09 19:43Z)
+# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-09 20:42Z)
 
 **ROLL-EXCL (33 contract-roll artifact trades excluded). FIRST-ORDER SCREEN ONLY. PRE-PROOF, post-hoc, shadow only, no PASS claims. Every layer stays ON in every stack: option 0 of each layer is the live setting (multiplier 1).** The layer pools are stand-ins built by SZ-IJK from the owners' multiplier files (M_*.npz, the lot-level layers only) until the owners write /mnt/l2/l2vast/_th_joint/layers/<layer>/topK.json. Cut / profit-rule / lock / entry layers are NOT multiplier-composable and are not in this version.
 
@@ -22,18 +22,18 @@ Exact engine throughput about 24 cell-months/hour/worker with month batching, 6 
 
 Key = min over L6M / PRE / X' of the maxDD cut at EQUAL MEAN to the live stack (global lot scale), then HOLD, worst-20; d mean at equal lots shown. Window cuts below are at equal mean.
 
-| # | SIZER | LOT | SIGQ | REG | STACK | COOL | ZONE | key | eq cut L6M / HOLD / PRE / X' | cut at equal lots L6M | d mean L6M | worst-20 L6M cell / live | stage |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | sizer_vt:cab7b88a3ae5 | p7_other:b8c7a11b7c62 | live | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:6e18cc85a3d6 | live | 80.8 | +89.9 / +43.3 / +80.8 / +82.5 | +91.3 | -2942 | 250k / 165k | FIRST-ORDER SCREEN ONLY |
-| 2 | sizer_vt:cab7b88a3ae5 | p7_other:b8c7a11b7c62 | signal_quality:73c32e59f366 | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:6e18cc85a3d6 | live | 80.0 | +93.1 / +50.2 / +80.0 / +81.6 | +94.3 | -3877 | 232k / 165k | FIRST-ORDER SCREEN ONLY |
-| 3 | sizer_vt:cab7b88a3ae5 | p7_other:b8c7a11b7c62 | signal_quality:73c32e59f366 | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$2400|P7 | cooldown:6e18cc85a3d6 | live | 79.8 | +88.4 / +41.5 / +79.8 / +81.9 | +91.8 | -6571 | 189k / 165k | FIRST-ORDER SCREEN ONLY |
-| 4 | sizer_vt:cab7b88a3ae5 | p7_other:b8c7a11b7c62 | signal_quality:f591c705629b | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:6e18cc85a3d6 | live | 79.5 | +85.3 / +36.6 / +79.5 / +81.1 | +88.1 | -4329 | 226k / 165k | FIRST-ORDER SCREEN ONLY |
-| 5 | sizer_vt:ed624ef2d5e6 | p7_other:b8c7a11b7c62 | signal_quality:f591c705629b | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:6e18cc85a3d6 | live | 79.4 | +82.4 / +39.2 / +79.4 / +80.4 | +83.8 | -1731 | 271k / 165k | FIRST-ORDER SCREEN ONLY |
-| 6 | sizer_vt:cab7b88a3ae5 | p7_other:2710ebd7314f | live | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:fbe1c726c9b2 | live | 79.1 | +93.9 / +49.9 / +79.1 / +79.9 | +94.4 | -1843 | 258k / 165k | FIRST-ORDER SCREEN ONLY |
-| 7 | sizer_vt:cab7b88a3ae5 | p7_other:ac4e6310f17b | live | regime:e18edff4f8d3 | live | cooldown:c1b730e63dd6 | live | 79.1 | +90.6 / +62.5 / +79.5 / +79.1 | +91.0 | -798 | 264k / 165k | FIRST-ORDER SCREEN ONLY |
-| 8 | sizer_vt:cab7b88a3ae5 | live | live | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:c1b730e63dd6 | live | 79.1 | +89.2 / +62.0 / +79.1 / +79.9 | +91.2 | -4167 | 213k / 165k | FIRST-ORDER SCREEN ONLY |
-| 9 | sizer_vt:cab7b88a3ae5 | live | signal_quality:f591c705629b | live | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:c1b730e63dd6 | live | 78.9 | +83.9 / +54.8 / +80.8 / +78.9 | +87.6 | -5059 | 186k / 165k | FIRST-ORDER SCREEN ONLY |
-| 10 | sizer_vt:cab7b88a3ae5 | live | signal_quality:73c32e59f366 | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$2400|P7 | cooldown:6e18cc85a3d6 | live | 78.9 | +87.7 / +42.4 / +78.9 / +82.4 | +91.2 | -6332 | 189k / 165k | FIRST-ORDER SCREEN ONLY |
+| # | SIZER | LOT | SIGQ | REG | STACK | COOL | ZONE | key | eq cut L6M / HOLD / PRE / X' | cut at equal lots L6M | d mean L6M | worst-20 L6M cell / live | PRE tolerance | stage |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | sizer_vt:cab7b88a3ae5 | p7_other:b8c7a11b7c62 | live | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:6e18cc85a3d6 | live | 80.8 | +89.9 / +43.3 / +80.8 / +82.5 | +91.3 | -2942 | 250k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
+| 2 | sizer_vt:cab7b88a3ae5 | p7_other:b8c7a11b7c62 | signal_quality:73c32e59f366 | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:6e18cc85a3d6 | live | 80.0 | +93.1 / +50.2 / +80.0 / +81.6 | +94.3 | -3877 | 232k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
+| 3 | sizer_vt:cab7b88a3ae5 | p7_other:b8c7a11b7c62 | signal_quality:73c32e59f366 | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$2400|P7 | cooldown:6e18cc85a3d6 | live | 79.8 | +88.4 / +41.5 / +79.8 / +81.9 | +91.8 | -6571 | 189k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
+| 4 | sizer_vt:cab7b88a3ae5 | p7_other:b8c7a11b7c62 | signal_quality:f591c705629b | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:6e18cc85a3d6 | live | 79.5 | +85.3 / +36.6 / +79.5 / +81.1 | +88.1 | -4329 | 226k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
+| 5 | sizer_vt:ed624ef2d5e6 | p7_other:b8c7a11b7c62 | signal_quality:f591c705629b | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:6e18cc85a3d6 | live | 79.4 | +82.4 / +39.2 / +79.4 / +80.4 | +83.8 | -1731 | 271k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
+| 6 | sizer_vt:cab7b88a3ae5 | p7_other:2710ebd7314f | live | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:fbe1c726c9b2 | live | 79.1 | +93.9 / +49.9 / +79.1 / +79.9 | +94.4 | -1843 | 258k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
+| 7 | sizer_vt:cab7b88a3ae5 | p7_other:ac4e6310f17b | live | regime:e18edff4f8d3 | live | cooldown:c1b730e63dd6 | live | 79.1 | +90.6 / +62.5 / +79.5 / +79.1 | +91.0 | -798 | 264k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
+| 8 | sizer_vt:cab7b88a3ae5 | live | live | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:c1b730e63dd6 | live | 79.1 | +89.2 / +62.0 / +79.1 / +79.9 | +91.2 | -4167 | 213k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
+| 9 | sizer_vt:cab7b88a3ae5 | live | signal_quality:f591c705629b | live | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:c1b730e63dd6 | live | 78.9 | +83.9 / +54.8 / +80.8 / +78.9 | +87.6 | -5059 | 186k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
+| 10 | sizer_vt:cab7b88a3ae5 | live | signal_quality:73c32e59f366 | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$2400|P7 | cooldown:6e18cc85a3d6 | live | 78.9 | +87.7 / +42.4 / +78.9 / +82.4 | +91.2 | -6332 | 189k / 165k | RECENT-ONLY | FIRST-ORDER SCREEN ONLY |
 
 ## Coordinate descent (live + 10 random starts, one layer at a time against the key)
 
@@ -80,7 +80,8 @@ Key = min over L6M / PRE / X' of the maxDD cut at EQUAL MEAN to the live stack (
 ## Validation of the joint pick (first-order)
 
 - Placebo / family null over the joint space: 5000 random stacks over the full grids give key quantiles median 52.1, 90% 67.5, 99% 75.6, max 84.6. The best factorial stack key is 80.8: it is below the best random stack, i.e. the full-grid random search finds stacks as good as the top-K factorial (no evidence that top-K selection matters; family p for the best stack over this joint space is about 1 (it is the maximum of a searched set)).
-- Joint walk-forward (monthly, purged 7 d, trailing 26 weeks, candidate pool = live + 1500 random stacks NOT selected on full-sample data, pick by equal-mean train maxDD): OOS maxDD cut +59.9% vs live, d mean -10966 $/wk, live kept in 0 of 34 months. The pick procedure does cut OOS maxDD but gives up mean (it is mostly an exposure reduction).
+- Joint walk-forward (monthly, purged 7 d, trailing 26 weeks, candidate pool = live + 1500 random stacks NOT selected on full-sample data, pick by equal-mean train maxDD): OOS maxDD cut +60.9% vs live, d mean -10013 $/wk, live kept in 0 of 34 months. The pick procedure does cut OOS maxDD but gives up mean (it is mostly an exposure reduction).
+- STANDING RULE 2 primary OOS test, bi-weekly re-pick WF (trailing 26 weeks -> next 2 weeks, purged 7 d) of the whole joint procedure: 75 refit periods since 2024-01, OOS maxDD cut +70.7% with d mean -9825 $/wk; the pick beat live (period P&L >= live and in-period drawdown <= live) in 31% of periods (P&L alone 31%); since 2026-05-12 (13 periods): 31% beat, 31% P&L-ge.
 - Held-out live week: n/a for stacks (the owners' M arrays cover the 21,135 base rows only).
 
 ## Exact engine results for joint stacks (table mode: the stack multiplier applied after the Q1-A ladder, before zone HALF)
@@ -113,6 +114,12 @@ Key = min over L6M / PRE / X' of the maxDD cut at EQUAL MEAN to the live stack (
 First-order keys of these stacks were 86-88% (equal-mean cut). Exact engine: J01: L6M eq-mean cut +1.9 / d mean -2287, PRE eq-mean cut +23.7 / d mean -4319; J02: L6M eq-mean cut -4.2 / d mean -3878, PRE eq-mean cut +26.3 / d mean -4191; J03: L6M eq-mean cut +20.4 / d mean +434, PRE eq-mean cut +32.8 / d mean -6395; J04: L6M eq-mean cut -4.7 / d mean -3945, PRE eq-mean cut +31.2 / d mean -4611.
 
 Reading: the first-order joint screen of stacked down-sizing layers is NOT predictive of the engine. In the exact run a skipped signal frees the book, which then takes the next signal, and re-entries / locks / slice fills change; so a table that skips 60-85% of signals first-order removes only about 18% of the trades in the engine (F08 pair: 672 vs 823 trades in 202610, lots 1440 vs 1746) and behaves like a mild global lot reduction. Only exact numbers count. Missing windows are still running.
+
+## REFIT 2026-11-22 (what the bi-weekly procedure would pick today; first-order screen, train = trailing 26 weeks to 2026-11-05, pick = lowest equal-mean train maxDD among live + 1500 random stacks)
+
+Pick: SIZER=sizer_vt:e7400edefb68 | LOT=p7_other:e5ca0f7bd605 | SIGQ=signal_quality:9aa6b9141aa1 | REG=regime:a4041f165b35 | STACK=equity_state:D|eqdd_book_20d_R|Y1R_f0.25_sticky|sess_london | COOL=cooldown:50db603d2c5a | ZONE=zone:d58e6420fc65. Train maxDD at equal mean 214 vs live 79907. NOT exact-confirmed; the verdict needs the exact runs.
+
+Standing rule 2 tolerance check of the top-10 stacks: PRE maxDD not more than 15% deeper than live and PRE mean not below live - 1k; failing stacks are labelled RECENT-ONLY (reported, not killed).
 
 ## Plain sentence
 
