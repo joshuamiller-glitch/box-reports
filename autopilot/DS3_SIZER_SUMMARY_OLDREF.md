@@ -1,4 +1,4 @@
-# DS3 SIZER SUMMARY (2026-11-09 08:57Z)
+# DS3 SIZER SUMMARY (2026-11-09 09:22Z)
 
 One line per family, ranked by (cut L6M + cut PRE)/2. Post-hoc, Shadow only. Detail: SIZER_MASTER_TABLE.md, SIZER_LEAD_REGISTER.md.
 

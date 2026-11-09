@@ -198,17 +198,17 @@ Entry-session bests (same gates):
 ## Finalists (Stage 2 sets exla_pb1 = per-book best-1, exla_uni = uniform fixed25, exla_pb2 = per-book best-2; kernel leak test 0 changed of 2,330 legs checked)
 | cell | scope | params | L6M maxDD w/wo | PRE maxDD w/wo | L6M mean vs never | placebo p | WY p | WF ok / total | live-week delta | label |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 6b6d718fc673 | ALL | A:fixed25 x15 W5 p3 maeW5 e001/own/net | 63154/121381 | 112282/152455 | +807 | 0.02 | 0.956 | False / -970636 | -14809 | CANDIDATE-DD |
-| 6b6d718fc673 | P7 | A:fixed25 x15 W5 p3 maeW5 e001/own/net | 49145/133887 | 87956/109442 | +892 | 0.02 | 0.745 | False / -541581 | -15057 | CANDIDATE-DD |
-| 052073e25748 | ALL | A:fixed25 x30 W10 p2 maeW10 e001/own/net | 63570/121381 | 81504/152455 | +4144 | 0.02 | 0.966 | False / -970636 | -12691 | CANDIDATE-DD |
+| 6b6d718fc673 | ALL | A:fixed25 x15 W5 p3 maeW5 e001/own/net | 63154/121381 | 112282/152455 | +807 | 0.02 | 0.958 | False / -970636 | -14809 | CANDIDATE-DD |
+| 6b6d718fc673 | P7 | A:fixed25 x15 W5 p3 maeW5 e001/own/net | 49145/133887 | 87956/109442 | +892 | 0.02 | 0.790 | False / -541581 | -15057 | CANDIDATE-DD |
+| 052073e25748 | ALL | A:fixed25 x30 W10 p2 maeW10 e001/own/net | 63570/121381 | 81504/152455 | +4144 | 0.02 | 0.968 | False / -970636 | -12691 | CANDIDATE-DD |
 | 46d2adce875e | K7 | A:fixed45 x8 W5 p10 maeW5 e001/own/net | 13000/20902 | 22963/26707 | +590 | 1.00 | 1.000 | False / -168181 | +476 | CANDIDATE-DD |
 | f83174bd1f14 | K7 | A:fixed10 x15 W10 p20 maeW10 e001/own/net | 13113/20902 | 18680/26707 | +1241 | 0.11 | 1.000 | False / -168181 | +311 | CANDIDATE-DD |
-| da94b0d512db | P7 | A:fixed30 x4 W5 p10 maeW5 e001/own/net | 51168/133887 | 98865/109442 | +7465 | 0.26 | 0.972 | False / -541581 | -5309 | CANDIDATE-DD |
-| 80f5c2307f67 | M7 | A:fixed10 x4 W5 p20 maeW5 e001/own/net | 13485/44425 | 31252/50321 | +1741 | 0.02 | 0.439 | False / -18261 | +724 | CANDIDATE-DD |
-| 9e5d0ccd40ad | M7 | A:fixed15 x8 W1 p1 maeW1 e001/own/net | 14218/44425 | 26832/50321 | +527 | 0.72 | 0.040 | False / -18261 | -2838 | CANDIDATE-DD |
-| 9e5d0ccd40ad | A7 | A:fixed15 x8 W1 p1 maeW1 e001/own/net | 5011/12461 | 5315/6089 | +60 | 0.11 | 0.545 | False / -50405 | -1306 | CANDIDATE-DD |
+| da94b0d512db | P7 | A:fixed30 x4 W5 p10 maeW5 e001/own/net | 51168/133887 | 98865/109442 | +7465 | 0.26 | 0.986 | False / -541581 | -5309 | CANDIDATE-DD |
+| 80f5c2307f67 | M7 | A:fixed10 x4 W5 p20 maeW5 e001/own/net | 13485/44425 | 31252/50321 | +1741 | 0.02 | 0.537 | False / -18261 | +724 | CANDIDATE-DD |
+| 9e5d0ccd40ad | M7 | A:fixed15 x8 W1 p1 maeW1 e001/own/net | 14218/44425 | 26832/50321 | +527 | 0.72 | 0.062 | False / -18261 | -2838 | CANDIDATE-DD |
+| 9e5d0ccd40ad | A7 | A:fixed15 x8 W1 p1 maeW1 e001/own/net | 5011/12461 | 5315/6089 | +60 | 0.11 | 0.569 | False / -50405 | -1306 | CANDIDATE-DD |
 | 5a5cdb090e19 | U7 | C:fixed30 x20 W5 p3 mae- e001/against/net | 7821/21561 | 40947/42226 | +652 | 0.02 | 0.978 | False / -129230 | +0 | CANDIDATE-DD |
 | f82dfc94818f | U7 | C:fixed30 x20 W5 p1 mae- e001/against/net | 8604/21561 | 42563/42226 | +1028 | 0.05 | 0.986 | False / -129230 | +0 | CANDIDATE-DD |
-| 27cda52948b2 | A7 | A:fixed20 x15 W3 p1 maeW3 e001/own/net | 5218/12461 | 6308/6089 | +92 | 0.02 | 0.567 | False / -50405 | -169 | CANDIDATE-DD |
-| afa4804db573 | H7 | A:fixed10 x30 W10 p3 maeW10 e001/own/net | 7329/15477 | 18073/20667 | +607 | 0.02 | 0.715 | False / -96789 | +319 | CANDIDATE-DD |
-| 279f4e7921e2 | H7 | A:fixed10 x30 W10 p10 maeW10 e001/own/net | 7484/15477 | 18880/20667 | +382 | 0.02 | 0.559 | False / -96789 | +194 | CANDIDATE-DD |
+| 27cda52948b2 | A7 | A:fixed20 x15 W3 p1 maeW3 e001/own/net | 5218/12461 | 6308/6089 | +92 | 0.02 | 0.599 | False / -50405 | -169 | CANDIDATE-DD |
+| afa4804db573 | H7 | A:fixed10 x30 W10 p3 maeW10 e001/own/net | 7329/15477 | 18073/20667 | +607 | 0.02 | 0.776 | False / -96789 | +319 | CANDIDATE-DD |
+| 279f4e7921e2 | H7 | A:fixed10 x30 W10 p10 maeW10 e001/own/net | 7484/15477 | 18880/20667 | +382 | 0.02 | 0.613 | False / -96789 | +194 | CANDIDATE-DD |

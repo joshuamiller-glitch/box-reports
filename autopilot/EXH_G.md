@@ -13,10 +13,35 @@ Entry match PRE-PROOF. null_ver 2. Tables below are universe U2 (cells with univ
 - Not done yet (handoff): pair pool and WF on U2 once B/C are re-scored on U2; E conditioners on finalists; per-book learned trees (ran one test month then stopped for the 2-process budget; code supports g_wf.py OBJ SEEDS B); Stage 2 for finalists (none qualifies); causality: fire at second k reads only the feature row k (EX-FEAT noise test), training labels use the future only inside earlier months with 7-day purge; kernel_leak_test not yet run on the G kernel (it only reads F[0,0] and calls market_exit; its br_k guard duplicates the contract).
 
 Cells registered by EX-LG: 101486 rows (1318 cells).
-# EXH_G - family G (combinations + learned shapes), EX-LG
-generated 11-09 07:18 UTC; entry match PRE-PROOF; null_ver 2; family p not yet attached (label computed with p_family=1, WF=False, so ENTER is impossible here; CANDIDATE-DD/LEAD are the live labels).
 
-Cells registered by EX-LG: 107030 rows (1390 cells).
+## FINAL SECTION (EX-LG, written 09:30Z; U2; drawdown-first; walk-forward cells only; entry match PRE-PROOF)
+Honest cells = the pairing procedures run INSIDE the purged walk-forward (G_PAIRWF: top-3 singles per family from A,B_book,C_flow,D, now 12,845 singles on U2 incl. 525 B and 403 C, all cross pairs AND/OR + singles; G_CONDWF: 5 best singles x 36 EX-LDEF contexts; each in per-book and one-rule-for-all mode, chosen on the trailing 26 weeks, 7-day embargo, applied the next month; first test month 202310). Learned trees (pooled and per book) all lose out of sample (see headline). Candidate counts per cell are in the cell params (candidates_examined). Columns: L6M maxDD with/without (weekly, live lots, stack of that book), L6M mean change per week, PRE maxDD with/without, share of the book's trades exited early, live-week delta vs the universe never-cut bracket of the live-week entries (the walk-forward month 202611, trained on earlier months only; this is not the actual live exit, so treat as indicative).
+
+| scope | best WF cell by L6M maxDD | L6M maxDD w/wo | L6M dmean /wk | PRE maxDD w/wo | exited early | label |
+|---|---|---|---|---|---|---|
+| Stack | PAIRWF one-rule-for-all | 77.8k / 121.4k | -4.7k | 93.2k / 152.5k | 44% | no (costs mean; live week -146k) |
+| K7 | none lowers L6M maxDD (best CONDWF_ALL 23.2k vs 20.9k) | - | +350 | - | 35% | no |
+| P7 | PAIRWF one-rule-for-all | 92.6k / 133.9k | -4.3k | 145.6k / 109.4k | 44% | no (PRE worse, mean lost, live -120k) |
+| M7 | PAIRWF one-rule-for-all | 25.1k / 44.4k | +252 | 52.3k / 50.3k | 45% | CANDIDATE-DD but FAILS-LIVE-WEEK (-11.7k) |
+| U7 | CONDWF per-book | 18.6k / 21.6k | +323 | 34.3k / 42.2k | 48% | CANDIDATE-DD but FAILS-LIVE-WEEK (-7.2k) |
+| A7 | CONDWF one-rule-for-all | 8.8k / 12.5k | +228 | 5.5k / 6.1k | 38% | CANDIDATE-DD but FAILS-LIVE-WEEK (-8.7k) |
+| H7 | none (PAIRWF_ALL 18.2k vs 15.5k) | - | +361 | - | 45% | no |
+| O7 | none (PAIRWF_ALL 7.1k vs 7.5k, PRE 5.5k vs 5.1k) | - | +21 | - | 33% | no |
+
+Plain sentences (loss side).
+- K7 loss: no walk-forward technique of family G lowers drawdown; the learned tree and the pair/conditioned rules all fail; keep the live line. It does not hold out of sample because the pair chosen on trailing weeks does not repeat next month.
+- P7 loss: the technique that lowers drawdown most is the one-rule-for-all pair (L6M maxDD 133.9k to 92.6k); it costs 4.3k per week, raises PRE maxDD (109k to 146k), cuts 44% of trades and loses 120k in the live week: no.
+- M7 loss: the one-rule-for-all pair lowers L6M maxDD 44.4k to 25.1k at +252 per week and PRE within 4%, but it exits 45% of trades (an exposure shrink) and fails the live week (-11.7k): CANDIDATE-DD, not ENTER.
+- U7 loss: the per-book conditioned rule lowers L6M maxDD 21.6k to 18.6k and PRE 42.2k to 34.3k at +323 per week, but exits 48% of trades and fails the live week (-7.2k): CANDIDATE-DD, not ENTER.
+- A7 loss: the conditioned one-rule-for-all rule lowers L6M maxDD 12.5k to 8.8k and PRE 6.1k to 5.5k at +228 per week, exits 38% of trades, fails the live week (-8.7k): CANDIDATE-DD, not ENTER.
+- H7 and O7 loss: no walk-forward cell lowers L6M maxDD at non-negative mean; no.
+- Stack: the one-rule-for-all pair lowers L6M maxDD 121.4k to 77.8k and PRE 152.5k to 93.2k but gives up 4.7k per week and the live-week delta is -146k (P7 dominates); drawdown is bought with exposure, not with timing information. Per-book beats one-rule-for-all on the stack only for the conditioned variant (72.0k vs 82.7k L6M).
+- Survivor rule (CANDIDATE-DD and rec-ok and plc-ok and not FAILS-LIVE-WEEK): no G cell survives.
+Grammar fields v1.6 would need to express any G cell: none recommended (no survivor). Conclusion for the order: the richer feature set and the 8-leaf learned shapes found nothing beyond regime/clock out of sample; pairs and conditioners reduce drawdown only by exiting 35-60% of trades early.
+# EXH_G - family G (combinations + learned shapes), EX-LG
+generated 11-09 09:21 UTC; entry match PRE-PROOF; null_ver 2; family p not yet attached (label computed with p_family=1, WF=False, so ENTER is impossible here; CANDIDATE-DD/LEAD are the live labels).
+
+Cells registered by EX-LG: 107338 rows (1394 cells).
 ### Stack (all books), top by L6M maxDD reduction, nfire>=20
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -56,12 +81,12 @@ Cells registered by EX-LG: 107030 rows (1390 cells).
 ### Book M7 (all sessions)
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| G_PAIRWF_ALL | WF ALL cand=34613.0 | 1720 (45%) | -481/1742/-254/-240 | 25130 / 44425 | 52257 / 50321 | -44879 / -68299 | 252 | 0.58 | nan | CANDIDATE-DD |
 | G_CONDWF_BOOK | WF BOOK cand=60800.0 | 1532 (40%) | 117/1213/1039/187 | 26034 / 44425 | 32668 / 50321 | -45974 / -68299 | 728 | 0.05 | nan | CANDIDATE-DD |
 | G_TREE_WF | DDT perbook s1 thr800 | 463 (12%) | -1878/136/-1259/-140 | 28901 / 44425 | 37524 / 50321 | -54341 / -68299 | 352 | 0.18 | 0 | CANDIDATE-DD |
 | G_TREE_WF | DDT perbook s0 thr800 | 469 (12%) | -666/-48/-1381/69 | 30499 / 44425 | 39905 / 50321 | -55553 / -68299 | 275 | 0.12 | 0 | CANDIDATE-DD |
 | G_PAIRWF_ALL | WF ALL cand=34410.0 | 1729 (46%) | -481/1742/-254/-468 | 30828 / 44425 | 46658 / 50321 | -47381 / -68299 | 24 | 0.60 | nan | CANDIDATE-DD |
 | G_TREE_WF | DDT perbook s1 thr200 | 737 (19%) | -2956/-324/-1627/-192 | 31162 / 44425 | 27331 / 50321 | -61560 / -68299 | 300 | 0.65 | 0 | CANDIDATE-DD |
-| G_TREE_WF | DDT perbook s1 thr100 | 1710 (45%) | -2956/-324/-1627/-192 | 31162 / 44425 | 48304 / 50321 | -61560 / -68299 | 300 | 0.60 | 0 | CANDIDATE-DD |
 
 ### Book U7 (all sessions)
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
@@ -76,12 +101,12 @@ Cells registered by EX-LG: 107030 rows (1390 cells).
 ### Book A7 (all sessions)
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| G_CONDWF_ALL | WF ALL cand=60800.0 | 442 (38%) | -1236/382/190/829 | 8801 / 12461 | 5508 / 6089 | -12927 / -17069 | 228 | 0.95 | nan | CANDIDATE-DD |
 | G_PAIRWF_BOOK | WF BOOK cand=12821.0 | 694 (59%) | -1638/151/234/952 | 10097 / 12461 | 6393 / 6089 | -14619 / -17069 | 352 | 0.69 | nan | CANDIDATE-DD |
 | G_TREE_WF | MEANT pooled s0 thr0 | 351 (30%) | -1528/357/23/798 | 10331 / 12461 | 5043 / 6089 | -18788 / -17069 | 197 | 0.94 | 616 | CANDIDATE-DD |
 | G_TREE_WF | MEANT pooled s0 thr25 | 351 (30%) | -1528/357/23/798 | 10331 / 12461 | 5043 / 6089 | -18788 / -17069 | 197 | 0.91 | 616 | CANDIDATE-DD |
 | G_TREE_WF | MEANT pooled s0 thr10 | 351 (30%) | -1528/357/23/798 | 10331 / 12461 | 5043 / 6089 | -18788 / -17069 | 197 | 0.89 | 616 | CANDIDATE-DD |
 | G_PAIRWF_ALL | WF ALL cand=30973.0 | 496 (42%) | -1494/132/-241/755 | 10740 / 12461 | 4291 / 6089 | -18468 / -17069 | 154 | 0.29 | nan | CANDIDATE-DD |
-| G_PAIRWF_ALL | WF ALL cand=34410.0 | 530 (45%) | -1494/-144/-260/749 | 10740 / 12461 | 4521 / 6089 | -15736 / -17069 | 148 | 1.00 | nan | CANDIDATE-DD |
 
 ### Book H7 (all sessions)
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |

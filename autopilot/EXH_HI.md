@@ -1,23 +1,56 @@
 # EXH_HI - EX-PHI: profit families H (take) and I (tighten/trail), Stage 1 first order
-Generated 2026-11-09 08:04Z. 893 cells scored (all ledgered, agent PHI). Label: PRE-PROOF (entries not live-matched). Fills: market exit k+1 mid -+0.80, targets nominal, stops at level. Features exist per month from the EX-FEAT store (rows with no feature never fire). Causality test (noise after second 900 on path, high/low/last and all feature panels; 17,926 exits <= 900 s over 128 sampled cells x 2 months, both directions): 0 changed - all kernels use only data <= decision second. Placebos null_ver 2 (cells re-scored after the leak audit). Family p / WF / live week: not yet computed for these cells (lead runs family_p / walk_forward from the ledger); labels here are CAND-DD (L6M maxDD lower, L6M mean delta >= 0, PRE maxDD <= 1.05 x never-cut) only.
+Generated 2026-11-09 09:13Z. 893 cells scored (all ledgered, agent PHI). Label: PRE-PROOF (entries not live-matched). Fills: market exit k+1 mid -+0.80, targets nominal, stops at level. Features exist per month from the EX-FEAT store (rows with no feature never fire). Causality test (noise after second 900 on path, high/low/last and all feature panels; 17,926 exits <= 900 s over 128 sampled cells x 2 months, both directions): 0 changed - all kernels use only data <= decision second. Placebos null_ver 2 (cells re-scored after the leak audit). Family p, walk-forward and the live week are in the FINALISTS table at the top (finalists only). Labels in the generic tables below are CAND-DD only (L6M maxDD lower, L6M mean delta >= 0, PRE maxDD <= 1.05 x never-cut); the page label in FINALISTS uses labels_df.
 
 Ranking key: L6M maxDD (weekly, scope), then L6M worst-20, then Ulcer, then Calmar; filter nfire>=20, L6M mean >= never-cut. Delta mean columns are vs never-cut hold-to-bracket (the S1b-COMB live reference deltas are in the ledger columns *_dmean_c).
-## Plain sentences
-K7 profit: the technique that lowers L6M drawdown most is H_gated (arm=0.5 feat=ice_ag_w30 secs=1 thr=4); stack-scope maxDD 10465 vs 26983 never-cut, L6M mean delta +365 USD/wk, PRE maxDD 29099 vs 30403; placebo p 0.046; CANDIDATE-DD.
+## FINALISTS (U2, Stage 1 first order; Stage 2 section below when complete)
+| book kind | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD PRE with / without | worst-20 L6M with / without | nfire | placebo p | family p | WF | live week USD | kernel leak test (checked/changed at <=900 s) | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| K7 dd-first | H_thick | arm=0.5 feat=tot_rel_slow secs=1 thr=2.0 | +128 / -805 / +758 / +2 / -272 / -1807 / -410 / -224 | 10243 / 20902 | 23821 / 26707 | 22354 / 1791 | 1748 | 0.015 | 0.974 | neg (-137879) | +1984 (15 fired) | 125/0 | CANDIDATE-DD |
+| P7 dd-first | H_gated | arm=0.7 feat=tot_rel_fast secs=1 thr=2 | +3680 / -4505 / +522 / +655 / +1007 / +4519 / -2499 / -1342 | 71485 / 133887 | 107157 / 109442 | 64089 / -29902 | 1028 | 0.092 | 0.962 | neg (-647399) | -1317 (8 fired) | 27/0 | CANDIDATE-DD |
+| M7 dd-first | H_thick | arm=0.1 feat=tot_rel_slow secs=1 thr=1.3 | -72 / -3687 / -1015 / +219 / -180 / -472 / -744 / -1059 | 14461 / 44425 | 49060 / 50321 | -28224 / -68299 | 2923 | 0.046 | 0.323 | neg (-17582) | -2874 (20 fired) | 835/0 | CANDIDATE-DD |
+| M7 recents | H_tip | pct=0 secs=600 | -175 / +60 / +981 / +480 / +343 / -125 / -781 / -630 | 30376 / 44425 | 49262 / 50321 | -41511 / -68299 | 2175 | 0.138 | 1.000 | n/a (+nan) | +4544 (8 fired) | 251/0 | CANDIDATE-DD |
+| U7 dd-first | H_pcthour | pct=0.3 window=ldn | +4858 / +1091 / +1509 / +153 / +464 / +1037 / -1294 / -919 | 8700 / 21561 | 42735 / 42226 | 3983 / 120 | 769 | 0.031 | 0.956 | n/a (+nan) | +7540 (4 fired) | 208/0 | CANDIDATE-DD |
+| A7 dd-first | H_pcthour | pct=0.4 window=asia | +788 / -536 / -75 / +427 / -45 / -810 / -289 / +43 | 3268 / 12461 | 6089 / 6089 | -1783 / -17069 | 680 | 0.015 | 0.547 | n/a (+nan) | +665 (13 fired) | 120/0 | CANDIDATE-DD |
+| H7 dd-first | H_mom | arm=0.25 feat=vel30<= secs=1 thr=0 | +1418 / +639 / +1607 / +137 / +535 / -570 / -975 / -504 | 5961 / 15477 | 10161 / 20667 | 2693 / -32750 | 847 | 0.015 | 0.545 | neg (-78529) | +2524 (3 fired) | 523/0 | CANDIDATE-DD |
+| O7 dd-first | I_step | lag=1 step=10 | +1130 / +289 / +203 / +215 / -335 / -170 / -498 / +29 | 4420 / 7469 | 4995 / 5102 | -891 / -9532 | 406 | 0.092 | 0.962 | n/a (+nan) | +1167 (3 fired) | 583/0 | CANDIDATE-DD |
+| ALL dd-first | I_swing | arm=0.7 buf=2 swing=swag5m | +11689 / -4649 / -538 / +1202 / +1341 / +1692 / -4778 / -2186 | 81103 / 121381 | 137290 / 152455 | 131325 / 77580 | 3242 | 0.354 | 0.958 | n/a (+nan) | -5874 (6 fired) | 0/0 | CANDIDATE-DD |
+| ALL recents | I_swing | arm=0.5 buf=2 swing=swag5m | +11562 / -914 / +2521 / +4670 / -168 / -3104 / -7696 / -1784 | 83702 / 121381 | 136367 / 152455 | 127763 / 77580 | 5489 | 0.462 | 0.994 | n/a (+nan) | +375 (14 fired) | 1/0 | CANDIDATE-DD |
+| K7 stage2-able alt | I_bookarm | X=20 arm=0.25 feat=ice_ag_w30 secs=30 thr=3 | +396 / +1700 / +3068 / +267 / -1218 / -2179 / -1365 / +255 | 12342 / 20902 | 18862 / 26707 | 10147 / 1791 | 3536 | 0.400 | 1.000 | n/a (+nan) | +619 (24 fired) | 200/0 | CANDIDATE-DD |
+| P7 stage2-able alt | H_pcthour | pct=0.6 window=am | +3049 / -4417 / -614 / +654 / +116 / -1774 / -1051 / -554 | 103198 / 133887 | 85948 / 109442 | 36262 / -29902 | 1025 | 0.892 | 1.000 | n/a (+nan) | -4320 (2 fired) | 100/0 | CANDIDATE-DD |
 
-P7 profit: the technique that lowers L6M drawdown most is H_gated (arm=0.8 feat=pr_e001_own_w10 secs=1 thr=35); stack-scope maxDD 75303 vs 126710 never-cut, L6M mean delta +697 USD/wk, PRE maxDD 112606 vs 131881; placebo p 0.031; CANDIDATE-DD.
+## Plain sentences per book (profit)
+K7 profit: H_thick (arm=0.5 feat=tot_rel_slow secs=1 thr=2.0) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 20902 -> 10243 and PRE maxDD 26707 -> 23821, L6M mean +2 USD/wk, PRE mean -410. Placebo p 0.015, family (Westfall-Young) p 0.974, purged walk-forward does not hold (negative) (-137879), live week +1984 USD over 15 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.
 
-M7 profit: the technique that lowers L6M drawdown most is H_thick (arm=0.1 feat=tot_rel_slow secs=1 thr=1.3); stack-scope maxDD 16114 vs 43318 never-cut, L6M mean delta +1058 USD/wk, PRE maxDD 62827 vs 48984; placebo p 0.015; does not qualify as CANDIDATE-DD.
+P7 profit: H_gated (arm=0.7 feat=tot_rel_fast secs=1 thr=2) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 133887 -> 71485 and PRE maxDD 109442 -> 107157, L6M mean +655 USD/wk, PRE mean -2499. Placebo p 0.092, family (Westfall-Young) p 0.962, purged walk-forward does not hold (negative) (-647399), live week -1317 USD over 8 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.
 
-U7 profit: the technique that lowers L6M drawdown most is I_trail (X=30 arm=0.3); stack-scope maxDD 7325 vs 21436 never-cut, L6M mean delta +28 USD/wk, PRE maxDD 47919 vs 42883; placebo p 0.015; does not qualify as CANDIDATE-DD.
+M7 profit: H_thick (arm=0.1 feat=tot_rel_slow secs=1 thr=1.3) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 44425 -> 14461 and PRE maxDD 50321 -> 49060, L6M mean +219 USD/wk, PRE mean -744. Placebo p 0.046, family (Westfall-Young) p 0.323, purged walk-forward does not hold (negative) (-17582), live week -2874 USD over 20 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.
 
-A7 profit: the technique that lowers L6M drawdown most is H_gated (arm=0.25 feat=pr_e001_own_w5 secs=1 thr=10); stack-scope maxDD 3743 vs 12456 never-cut, L6M mean delta +39 USD/wk, PRE maxDD 5327 vs 6208; placebo p 0.015; CANDIDATE-DD.
+U7 profit: H_pcthour (pct=0.3 window=ldn) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 21561 -> 8700 and PRE maxDD 42226 -> 42735, L6M mean +153 USD/wk, PRE mean -1294. Placebo p 0.031, family (Westfall-Young) p 0.956, purged walk-forward not available in the WF table (+nan), live week +7540 USD over 4 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.
 
-H7 profit: the technique that lowers L6M drawdown most is H_mom (arm=0.25 feat=vel30<= secs=1 thr=1); stack-scope maxDD 6026 vs 16682 never-cut, L6M mean delta +96 USD/wk, PRE maxDD 8089 vs 20667; placebo p 0.015; CANDIDATE-DD.
+A7 profit: H_pcthour (pct=0.4 window=asia) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 12461 -> 3268 and PRE maxDD 6089 -> 6089, L6M mean +427 USD/wk, PRE mean -289. Placebo p 0.015, family (Westfall-Young) p 0.547, purged walk-forward not available in the WF table (+nan), live week +665 USD over 13 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.
 
-O7 profit: the technique that lowers L6M drawdown most is H_thick (arm=0.1 feat=ahead_rel_slow secs=1 thr=1.3); stack-scope maxDD 2875 vs 7489 never-cut, L6M mean delta +111 USD/wk, PRE maxDD 6153 vs 5097; placebo p 0.031; does not qualify as CANDIDATE-DD.
+H7 profit: H_mom (arm=0.25 feat=vel30<= secs=1 thr=0) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 15477 -> 5961 and PRE maxDD 20667 -> 10161, L6M mean +137 USD/wk, PRE mean -975. Placebo p 0.015, family (Westfall-Young) p 0.545, purged walk-forward does not hold (negative) (-78529), live week +2524 USD over 3 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.
 
-ALL profit: the technique that lowers L6M drawdown most is I_trail (X=30 arm=0.7); stack-scope maxDD 47230 vs 117593 never-cut, L6M mean delta +3252 USD/wk, PRE maxDD 108770 vs 177634; placebo p 0.015; CANDIDATE-DD.
+O7 profit: I_step (lag=1 step=10) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 7469 -> 4420 and PRE maxDD 5102 -> 4995, L6M mean +215 USD/wk, PRE mean -498. Placebo p 0.092, family (Westfall-Young) p 0.962, purged walk-forward not available in the WF table (+nan), live week +1167 USD over 3 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.
+
+ALL profit: I_swing (arm=0.7 buf=2 swing=swag5m) (pooled sessions). Against plain 60/60 hold-to-bracket (= never-cut) it moves L6M maxDD 121381 -> 81103 and PRE maxDD 152455 -> 137290, L6M mean +1202 USD/wk, PRE mean -4778. Placebo p 0.354, family (Westfall-Young) p 0.958, purged walk-forward not available in the WF table (+nan), live week -5874 USD over 6 fired trades. Label CANDIDATE-DD. It is not shown to hold out of sample (walk-forward negative or unavailable, family p not significant); it is delivered as the book's profit rule because every book must have one, not as an ENTER.
+
+## Best drawdown-first cell per book (Stage-1 screen, sessions pooled)
+K7 profit: the technique that lowers L6M drawdown most is H_gated (arm=0.5 feat=ice_ag_w30 secs=1 thr=4); stack-scope maxDD 9694 vs 20902 never-cut, L6M mean delta +180 USD/wk, PRE maxDD 29792 vs 26707; placebo p 0.138; does not qualify as CANDIDATE-DD.
+
+P7 profit: the technique that lowers L6M drawdown most is H_gated (arm=0.7 feat=tot_rel_fast secs=1 thr=2); stack-scope maxDD 71485 vs 133887 never-cut, L6M mean delta +655 USD/wk, PRE maxDD 107157 vs 109442; placebo p 0.092; CANDIDATE-DD.
+
+M7 profit: the technique that lowers L6M drawdown most is H_thick (arm=0.1 feat=tot_rel_slow secs=1 thr=1.3); stack-scope maxDD 14461 vs 44425 never-cut, L6M mean delta +219 USD/wk, PRE maxDD 49060 vs 50321; placebo p 0.046; CANDIDATE-DD.
+
+U7 profit: the technique that lowers L6M drawdown most is H_pcthour (pct=0.3 window=ldn); stack-scope maxDD 8700 vs 21561 never-cut, L6M mean delta +153 USD/wk, PRE maxDD 42735 vs 42226; placebo p 0.031; CANDIDATE-DD.
+
+A7 profit: the technique that lowers L6M drawdown most is H_pcthour (pct=0.4 window=asia); stack-scope maxDD 3268 vs 12461 never-cut, L6M mean delta +427 USD/wk, PRE maxDD 6089 vs 6089; placebo p 0.015; CANDIDATE-DD.
+
+H7 profit: the technique that lowers L6M drawdown most is H_mom (arm=0.25 feat=vel30<= secs=1 thr=0); stack-scope maxDD 5961 vs 15477 never-cut, L6M mean delta +137 USD/wk, PRE maxDD 10161 vs 20667; placebo p 0.015; CANDIDATE-DD.
+
+O7 profit: the technique that lowers L6M drawdown most is H_thick (arm=0.1 feat=ahead_rel_slow secs=1 thr=1.3); stack-scope maxDD 2825 vs 7469 never-cut, L6M mean delta +122 USD/wk, PRE maxDD 6213 vs 5102; placebo p 0.015; does not qualify as CANDIDATE-DD.
+
+ALL profit: the technique that lowers L6M drawdown most is I_trail (X=30 arm=0.7); stack-scope maxDD 39556 vs 121381 never-cut, L6M mean delta +4034 USD/wk, PRE maxDD 100321 vs 152455; placebo p 0.015; CANDIDATE-DD.
 
 ## Tables
 
@@ -25,275 +58,110 @@ ALL profit: the technique that lowers L6M drawdown most is I_trail (X=30 arm=0.7
 Drawdown-first top (L6M mean >= never-cut):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| H_gated | arm=0.5 feat=ice_ag_w30 secs=1 thr=4 | +1189 / -873 / +1398 / +365 / -827 / -1770 / -1305 / -103 | 10465 / 26983 | 29099 / 30403 | 13512 / -15009 | 4019 | 0.046 | pers 0.75 | CAND-DD |
-| H_thick | arm=0.5 feat=tot_rel_slow secs=1 thr=2.0 | -49 / -971 / +672 / +57 / -212 / -1687 / -388 / -224 | 10997 / 26983 | 23591 / 30403 | 6330 / -15009 | 1713 | 0.031 | pers 0.50 | CAND-DD |
-| H_thick | arm=0.1 feat=tot_rel_slow secs=3 thr=2.0 | +607 / -668 / +348 / +117 / -680 / -946 / -813 / +222 | 11035 / 26983 | 29498 / 30403 | -8938 / -15009 | 1998 | 0.092 | pers 0.75 | CAND-DD |
-| I_chand | arm=0.3 atr=atr5m k=2 | +752 / +1515 / +2591 / +852 / -135 / +1909 / -1369 / +28 | 12340 / 26983 | 46776 / 30403 | 11519 / -15009 | 2816 | 0.031 | pers 1.00 |  |
-| H_thick | arm=0.1 feat=tot_rel_fast secs=3 thr=2.5 | -468 / -18 / -515 / +538 / +162 / -1014 / -1061 / +190 | 12682 / 26983 | 25987 / 30403 | -1056 / -15009 | 1149 | 0.723 | pers 0.25 | CAND-DD |
+| H_gated | arm=0.5 feat=ice_ag_w30 secs=1 thr=4 | +1176 / -1211 / +978 / +180 / -1173 / -2234 / -1175 / -103 | 9694 / 20902 | 29792 / 26707 | 22808 / 1791 | 4094 | 0.138 | pers 0.75 |  |
+| I_bookarm | X=20 arm=0.5 feat=ice_ag_w30 secs=30 thr=3 | -378 / -936 / +1557 / +209 / -826 / -1726 / -483 / -197 | 9899 / 20902 | 20040 / 26707 | 35611 / 1791 | 2239 | 0.046 | pers 0.50 | CAND-DD |
+| H_thick | arm=0.5 feat=tot_rel_slow secs=1 thr=2.0 | +128 / -805 / +758 / +2 / -272 / -1807 / -410 / -224 | 10243 / 20902 | 23821 / 26707 | 22354 / 1791 | 1748 | 0.015 | pers 0.75 | CAND-DD |
+| H_thick | arm=0.1 feat=tot_rel_slow secs=3 thr=2.0 | +496 / -386 / +663 / +19 / -925 / -1587 / -1108 / +222 | 11309 / 20902 | 33872 / 26707 | 4348 / 1791 | 2049 | 0.200 | pers 0.75 |  |
+| I_bookarm | X=5 arm=0.5 feat=ice_ag_w30 secs=10 thr=3 | +2058 / -1026 / +1421 / +232 / -1128 / -2951 / -718 / -318 | 11655 / 20902 | 29861 / 26707 | 20430 / 1791 | 3850 | 0.323 | pers 0.75 |  |
 Best mean (for reference):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| I_lock | X=3 arm=0.5 | +2189 / +881 / +2582 / +1425 / -346 / -1442 / -531 / +229 | 24637 / 26983 | 25165 / 30403 | 28190 / -15009 | 2042 | 0.477 | pers 1.00 | CAND-DD |
-
-### K7 - entry session 0
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.25 feat=tot_rel_slow secs=1 thr=2.0 | -2160 / -988 / +76 / +498 / -52 / -934 / -437 / +411 | 12837 / 23228 | 14903 / 14762 | 11519 / -10100 | 981 | 0.138 | pers 0.50 | CAND-DD |
-| H_thick | arm=0.1 feat=tot_rel_fast secs=3 thr=2.0 | -1524 / -2435 / -1499 / +279 / +160 / -943 / -598 / -84 | 12891 / 23228 | 27395 / 14762 | 7628 / -10100 | 972 | 0.108 | pers 0.25 |  |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=tot_rel_fast secs=3 thr=2.5 | -416 / -1224 / -604 / +963 / +462 / -704 / -212 / +94 | 15687 / 23228 | 17198 / 14762 | 19240 / -10100 | 547 | 0.615 | pers 0.25 |  |
-
-### K7 - entry session 1
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=1.5 | +1908 / +563 / +642 / +1123 / +471 / +507 / -638 / -2 | 4190 / 13569 | 20374 / 16206 | 975 / -31166 | 1189 | 0.015 | pers 1.00 |  |
-| H_thick | arm=0.1 feat=tot_rel_fast secs=1 thr=1.3 | +1710 / +650 / +592 / +979 / +369 / +265 / -460 / -27 | 4832 / 13569 | 17196 / 16206 | -3166 / -31166 | 1236 | 0.092 | pers 1.00 |  |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=1.5 | +1908 / +563 / +642 / +1123 / +471 / +507 / -638 / -2 | 4190 / 13569 | 20374 / 16206 | 975 / -31166 | 1189 | 0.015 | pers 1.00 |  |
-
-### K7 - entry session 3
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=tot_rel_fast secs=1 thr=1.3 | -540 / +411 / +571 / +273 / +427 / -238 / -869 / -619 | 4587 / 20697 | 23561 / 6231 | -9047 / -31954 | 1171 | 0.046 | pers 0.75 |  |
-| H_dturn | arm=0.5 feat=dlt_med_w30<= secs=1 thr=-10 | +96 / +620 / +712 / +473 / +128 / -492 / -411 / -318 | 4778 / 20697 | 12089 / 6231 | -11545 / -31954 | 864 | 0.031 | pers 1.00 |  |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_dturn | arm=0.5 feat=dlt_med_w30<= secs=1 thr=-10 | +96 / +620 / +712 / +473 / +128 / -492 / -411 / -318 | 4778 / 20697 | 12089 / 6231 | -11545 / -31954 | 864 | 0.031 | pers 1.00 |  |
-
-### K7 - entry session 4
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_pcthour | pct=0.5 window=all | +619 / -41 / +316 / +90 / -420 / -831 / -212 / +337 | 2312 / 6324 | 23228 / 39576 | -1185 / -7330 | 741 | 0.015 | pers 0.75 | CAND-DD |
-| H_pcthour | pct=0.5 window=pm | +619 / -41 / +316 / +90 / -420 / -831 / -212 / +337 | 2312 / 6324 | 23228 / 39576 | -1185 / -7330 | 741 | 0.015 | pers 0.75 | CAND-DD |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_swing | arm=0.5 buf=0 swing=swag1m | +283 / +158 / +442 / +544 / -209 / -628 / -241 / +273 | 4985 / 6324 | 44481 / 39576 | 2133 / -7330 | 417 | 0.969 | pers 1.00 |  |
+| I_swing | arm=0.5 buf=0 swing=swag1m | +1385 / +1106 / +2784 / +1276 / -315 / -1177 / -1337 / +9 | 21480 / 20902 | 33516 / 26707 | 20446 / 1791 | 2732 | 0.877 | pers 1.00 |  |
 
 ### P7 - pooled sessions
 Drawdown-first top (L6M mean >= never-cut):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| H_gated | arm=0.8 feat=pr_e001_own_w10 secs=1 thr=35 | -8757 / -4418 / -1359 / +697 / -156 / -2288 / -356 / -310 | 75303 / 126710 | 112606 / 131881 | 40493 / -2075 | 486 | 0.031 | pers 0.25 | CAND-DD |
-| H_gated | arm=0.7 feat=tot_rel_fast secs=1 thr=2 | -993 / -1202 / -739 / +284 / +1151 / +2678 / -1711 / -1342 | 75587 / 126710 | 116005 / 131881 | 64376 / -2075 | 992 | 0.708 | pers 0.25 | CAND-DD |
-| I_trail | X=15 arm=0.9 | -7714 / -2973 / -111 / +1063 / -123 / -3212 / -1693 / -579 | 82400 / 126710 | 125379 / 131881 | 43840 / -2075 | 643 | 0.108 | pers 0.25 | CAND-DD |
-| H_thick | arm=0.5 feat=tot_rel_fast secs=30 thr=1.3 | +6011 / -739 / +1622 / +1695 / +1736 / +4577 / -2380 / -463 | 82486 / 126710 | 116156 / 131881 | 61085 / -2075 | 622 | 0.123 | pers 0.75 | CAND-DD |
-| I_swing | arm=0.5 buf=2 swing=swag5m | +6266 / -534 / +1553 / +3085 / -703 / -717 / -3927 / -543 | 83696 / 126710 | 125783 / 131881 | 35703 / -2075 | 1385 | 0.431 | pers 0.75 | CAND-DD |
+| H_gated | arm=0.7 feat=tot_rel_fast secs=1 thr=2 | +3680 / -4505 / +522 / +655 / +1007 / +4519 / -2499 / -1342 | 71485 / 133887 | 107157 / 109442 | 64089 / -29902 | 1028 | 0.092 | pers 0.75 | CAND-DD |
+| I_trail | X=15 arm=0.9 | -5654 / -1939 / +757 / +1179 / +135 / -3353 / -2422 / -579 | 78294 / 133887 | 127068 / 109442 | 28267 / -29902 | 646 | 0.015 | pers 0.50 |  |
+| H_gated | arm=0.8 feat=tot_rel_fast secs=1 thr=2 | -2786 / -3368 / -173 / +525 / +399 / -2576 / -1154 / -622 | 82220 / 133887 | 110881 / 109442 | 34321 / -29902 | 725 | 0.154 | pers 0.25 | CAND-DD |
+| I_trail | X=20 arm=0.9 | -6900 / -2706 / +46 / +961 / +1159 / -6301 / -2499 / -884 | 84167 / 133887 | 125763 / 109442 | 23738 / -29902 | 529 | 0.108 | pers 0.50 |  |
+| H_gated | arm=0.7 feat=pr_e001_own_w10 secs=1 thr=35 | -2754 / -1166 / +1354 / +1116 / -971 / -3047 / -2087 / -465 | 84343 / 133887 | 128744 / 109442 | 23907 / -29902 | 926 | 0.523 | pers 0.50 |  |
 Best mean (for reference):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| I_step | lag=2 step=20 | -7100 / -4447 / -92 / +3433 / +1092 / -1051 / -3032 / -443 | 102000 / 126710 | 129132 / 131881 | 76337 / -2075 | 865 | 0.615 | pers 0.25 | CAND-DD |
-
-### P7 - entry session 0
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_trail | X=25 arm=0.8 | +1249 / +1383 / +768 / +457 / +315 / -1236 / -1178 / +158 | 74617 / 106637 | 76691 / 78845 | 62235 / 49424 | 405 | 0.046 | pers 1.00 | CAND-DD |
-| H_gated | arm=0.8 feat=pr_e001_own_w5 secs=1 thr=20 | -6521 / -1085 / -246 / +2 / -918 / -4210 / -933 / -47 | 79017 / 106637 | 81792 / 78845 | 70483 / 49424 | 413 | 0.062 | pers 0.25 | CAND-DD |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_swing | arm=0.5 buf=5 swing=swag5m | +6143 / +6744 / +3987 / +2534 / +775 / +759 / -1724 / +57 | 108210 / 106637 | 78515 / 78845 | 88241 / 49424 | 742 | 0.538 | pers 1.00 |  |
-
-### P7 - entry session 1
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_gated | arm=0.6 feat=tot_rel_fast secs=1 thr=2 | +125 / -2716 / -54 / +205 / +44 / -1254 / -592 / -567 | 35782 / 44287 | 147525 / 160840 | -21424 / -16876 | 340 | 0.646 | pers 0.50 | CAND-DD |
-| H_thick | arm=0.1 feat=tot_rel_slow secs=30 thr=1.3 | +48 / -3327 / -412 / +194 / +24 / +3901 / -111 / -1630 | 40964 / 44287 | 148248 / 160840 | -14469 / -16876 | 253 | 1.000 | pers 0.50 | CAND-DD |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_swing | arm=0.5 buf=0 swing=swag1m | -2195 / -7053 / -4573 / +705 / -707 / -3982 / +1037 / -1823 | 43695 / 44287 | 108322 / 160840 | -27979 / -16876 | 595 | 0.431 | pers 0.25 | CAND-DD |
-
-### P7 - entry session 3
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_step | lag=1 step=5 | +7994 / -2868 / +929 / +2906 / +987 / -1881 / -1498 / -925 | 10816 / 103128 | 7870 / 75038 | 2128 / -164165 | 1062 | 0.015 | pers 0.75 | CAND-DD |
-| H_thick | arm=0.1 feat=ahead_rel_fast secs=1 thr=1.3 | +9636 / -2551 / +1504 / +3156 / +1025 / -1280 / -2851 / -1053 | 15504 / 103128 | 31542 / 75038 | -16296 / -164165 | 972 | 0.015 | pers 0.75 | CAND-DD |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_lock | X=0 arm=0.3 | +1991 / +3373 / +5355 / +3823 / +1513 / -200 / -1670 / +468 | 46389 / 103128 | 45766 / 75038 | -93766 / -164165 | 589 | 0.046 | pers 1.00 | CAND-DD |
+| I_step | lag=2 step=20 | -4653 / -3269 / +209 / +3816 / +1314 / -1026 / -3374 / -443 | 103981 / 133887 | 101168 / 109442 | 67869 / -29902 | 869 | 0.800 | pers 0.50 | CAND-DD |
 
 ### M7 - pooled sessions
 Drawdown-first top (L6M mean >= never-cut):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=tot_rel_slow secs=1 thr=1.3 | -65 / -3632 / -676 / +1058 / +88 / -1326 / -394 / -1059 | 16114 / 43318 | 62827 / 48984 | -30554 / -68462 | 2866 | 0.015 | pers 0.25 |  |
-| H_thick | arm=0.1 feat=tot_rel_slow secs=3 thr=1.3 | -108 / -3016 / -468 / +1146 / +391 / -1304 / -78 / -1254 | 19558 / 43318 | 41987 / 48984 | -30085 / -68462 | 2422 | 0.077 | pers 0.25 | CAND-DD |
-| H_thick | arm=0.1 feat=tot_rel_fast secs=1 thr=1.5 | -186 / -2845 / -414 / +785 / -62 / -789 / -260 / -913 | 21574 / 43318 | 50569 / 48984 | -39624 / -68462 | 2741 | 0.123 | pers 0.25 | CAND-DD |
-| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=1.5 | +1688 / -3004 / +11 / +90 / -335 / -1063 / -442 / -1113 | 21723 / 43318 | 65275 / 48984 | -23335 / -68462 | 2918 | 0.077 | pers 0.75 |  |
-| H_pcthour | pct=0.3 window=ldn | -1091 / -1913 / -768 / +549 / +80 / -1559 / +348 / -126 | 22791 / 43318 | 23616 / 48984 | -34570 / -68462 | 1585 | 0.031 | pers 0.25 | CAND-DD |
+| H_thick | arm=0.1 feat=tot_rel_slow secs=1 thr=1.3 | -72 / -3687 / -1015 / +219 / -180 / -472 / -744 / -1059 | 14461 / 44425 | 49060 / 50321 | -28224 / -68299 | 2923 | 0.046 | pers 0.25 | CAND-DD |
+| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=1.5 | +1398 / -2880 / -238 / +299 / -93 / -327 / -728 / -1113 | 19927 / 44425 | 52736 / 50321 | -22948 / -68299 | 2978 | 0.277 | pers 0.50 | CAND-DD |
+| I_decay | X0=40 Xmin=5 arm=0.3 rate=2 | -220 / -62 / +655 / +370 / -175 / +137 / -738 / -968 | 21098 / 44425 | 58862 / 50321 | -30842 / -68299 | 2624 | 0.046 | pers 0.50 |  |
+| I_decay | X0=30 Xmin=5 arm=0.3 rate=1 | -331 / -282 / +464 / +383 / -85 / +424 / -673 / -847 | 21793 / 44425 | 52180 / 50321 | -24876 / -68299 | 2622 | 0.046 | pers 0.50 | CAND-DD |
+| I_decay | X0=40 Xmin=10 arm=0.3 rate=2 | -144 / -289 / +480 / +283 / -178 / +324 / -751 / -886 | 21883 / 44425 | 59500 / 50321 | -32131 / -68299 | 2585 | 0.108 | pers 0.50 |  |
 Best mean (for reference):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=tot_rel_slow secs=3 thr=1.3 | -108 / -3016 / -468 / +1146 / +391 / -1304 / -78 / -1254 | 19558 / 43318 | 41987 / 48984 | -30085 / -68462 | 2422 | 0.077 | pers 0.25 | CAND-DD |
-
-### M7 - entry session 1
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_tip | pct=0 secs=60 | +353 / -2953 / -221 / +337 / +84 / -1267 / +594 / -33 | 5487 / 34745 | 38717 / 70941 | -6867 / -61665 | 2026 | 0.015 | pers 0.50 | CAND-DD |
-| H_thick | arm=0.1 feat=tot_rel_fast secs=1 thr=1.3 | +1016 / -2107 / +241 / +708 / +109 / -2219 / +595 / -179 | 7894 / 34745 | 33102 / 70941 | -9988 / -61665 | 1839 | 0.015 | pers 0.75 | CAND-DD |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_gated | arm=0.4 feat=ice_ag_w30 secs=1 thr=4 | -472 / +426 / +948 / +914 / +659 / +1220 / -43 / -510 | 22289 / 34745 | 66425 / 70941 | -37781 / -61665 | 1467 | 0.092 | pers 0.75 | CAND-DD |
-
-### M7 - entry session 3
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_chand | arm=0.7 atr=atr5m k=1 | +801 / +195 / +246 / +278 / +40 / +179 / -190 / -114 | 9416 / 12246 | 10377 / 7533 | -16422 / -18056 | 344 | 0.615 | pers 1.00 |  |
-| I_chand | arm=0.3 atr=atr5m k=1.5 | +896 / +163 / +260 / +254 / -83 / +81 / -387 / -216 | 9569 / 12246 | 8098 / 7533 | -14656 / -18056 | 571 | 0.108 | pers 1.00 |  |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_chand | arm=0.5 atr=atr1m k=4 | +1005 / +387 / +551 / +349 / +102 / +338 / -374 / +92 | 11474 / 12246 | 8541 / 7533 | -14356 / -18056 | 398 | 0.308 | pers 1.00 |  |
+| I_swing | arm=0.3 buf=2 swing=swag5m | -670 / -375 / +17 / +917 / +395 / -116 / -1062 / -1231 | 29095 / 44425 | 90967 / 50321 | -47053 / -68299 | 1464 | 0.046 | pers 0.50 |  |
 
 ### U7 - pooled sessions
 Drawdown-first top (L6M mean >= never-cut):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| I_trail | X=30 arm=0.3 | +4392 / -1352 / +595 / +28 / +173 / -1112 / -981 / -1051 | 7325 / 21436 | 47919 / 42883 | 33498 / 45 | 761 | 0.015 | pers 0.75 |  |
-| H_pcthour | pct=0.3 window=ldn | +4824 / +1085 / +1758 / +235 / +681 / +2024 / -1216 / -919 | 8705 / 21436 | 43895 / 42883 | 3967 / 45 | 770 | 0.046 | pers 1.00 | CAND-DD |
-| I_trail | X=25 arm=0.7 | +4993 / -349 / +2036 / +1461 / +805 / -730 / -226 / -608 | 9981 / 21436 | 33544 / 42883 | 39206 / 45 | 387 | 0.077 | pers 0.75 | CAND-DD |
-| I_bookarm | X=20 arm=0.25 feat=ice_ag_w30 secs=3 thr=3 | +5868 / +1524 / +69 / +376 / -34 / -710 / -1511 / -1030 | 9985 / 21436 | 67745 / 42883 | 16433 / 45 | 870 | 0.277 | pers 1.00 |  |
-| I_chand | arm=0.7 atr=atr5m k=1 | +5814 / -287 / +2177 / +1269 / +813 / -1399 / -89 / -463 | 10001 / 21436 | 32763 / 42883 | 39938 / 45 | 502 | 0.046 | pers 0.75 | CAND-DD |
+| H_pcthour | pct=0.3 window=ldn | +4858 / +1091 / +1509 / +153 / +464 / +1037 / -1294 / -919 | 8700 / 21561 | 42735 / 42226 | 3983 / 120 | 769 | 0.031 | pers 1.00 | CAND-DD |
+| I_bookarm | X=20 arm=0.25 feat=ice_ag_w30 secs=3 thr=3 | +5854 / +1301 / -86 / +296 / -113 / -1172 / -1779 / -1030 | 10015 / 21561 | 65213 / 42226 | 15471 / 120 | 904 | 0.369 | pers 0.75 |  |
+| I_trail | X=25 arm=0.7 | +4988 / -480 / +1950 / +1154 / +899 / -376 / -243 / -608 | 10126 / 21561 | 33544 / 42226 | 37905 / 120 | 387 | 0.062 | pers 0.75 | CAND-DD |
+| I_chand | arm=0.7 atr=atr5m k=1 | +5809 / -604 / +1967 / +1036 / +891 / -1280 / -318 / -463 | 10146 / 21561 | 35510 / 42226 | 38825 / 120 | 527 | 0.046 | pers 0.75 | CAND-DD |
+| I_lock | X=20 arm=0.7 | +5370 / +74 / +2240 / +1598 / +1119 / -197 / -248 / -532 | 11031 / 21561 | 35820 / 42226 | 45962 / 120 | 342 | 0.400 | pers 1.00 | CAND-DD |
 Best mean (for reference):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| I_lock | X=0 arm=0.7 | +3299 / -90 / +1198 / +1725 / +670 / -527 / -333 / -396 | 14881 / 21436 | 29397 / 42883 | 29925 / 45 | 231 | 1.000 | pers 0.75 | CAND-DD |
-
-### U7 - entry session 0
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_lock | X=0 arm=0.3 | +1514 / -1778 / -1301 / +169 / +2 / -1527 / -791 / -805 | 2637 / 9836 | 36298 / 31041 | 38624 / 10132 | 369 | 0.015 | pers 0.50 |  |
-| I_chand | arm=0.3 atr=atr5m k=2 | +1857 / +398 / -190 / +689 / +174 / -1071 / -736 / -992 | 2727 / 9836 | 28225 / 31041 | 56677 / 10132 | 390 | 0.062 | pers 0.75 | CAND-DD |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_trail | X=30 arm=0.7 | +3084 / +153 / +1685 / +1299 / +678 / -596 / -202 / -691 | 8631 / 9836 | 30588 / 31041 | 53881 / 10132 | 185 | 0.554 | pers 1.00 | CAND-DD |
-
-### U7 - entry session 1
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=ahead_rel_slow secs=3 thr=1.5 | +5638 / +951 / +1829 / +413 / -327 / -358 / -557 / -1 | 13487 / 33738 | 67082 / 39568 | -34170 / -56352 | 475 | 0.092 | pers 1.00 |  |
-| H_thick | arm=0.1 feat=ahead_rel_fast secs=3 thr=1.5 | +5390 / +899 / +1687 / +354 / -194 / -647 / -363 / +91 | 13928 / 33738 | 48242 / 39568 | -31786 / -56352 | 501 | 0.031 | pers 1.00 |  |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=tot_rel_slow secs=3 thr=2.0 | +3867 / +484 / +1898 / +1472 / +444 / -2185 / -232 / +14 | 21017 / 33738 | 43839 / 39568 | -19350 / -56352 | 259 | 0.877 | pers 1.00 |  |
+| I_lock | X=2 arm=0.7 | +3489 / -584 / +932 / +1634 / +815 / +72 / -348 / -417 | 14576 / 21561 | 28407 / 42226 | 30137 / 120 | 235 | 0.923 | pers 0.75 | CAND-DD |
 
 ### A7 - pooled sessions
 Drawdown-first top (L6M mean >= never-cut):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| H_gated | arm=0.25 feat=pr_e001_own_w5 secs=1 thr=10 | -85 / -876 / -167 / +39 / -428 / -671 / -420 / +16 | 3743 / 12456 | 5327 / 6208 | -3815 / -17012 | 907 | 0.015 | pers 0.25 | CAND-DD |
-| H_pcthour | pct=0.3 window=all | +479 / -660 / +238 / +311 / -258 / -617 / -423 / +169 | 3963 / 12456 | 3612 / 6208 | 1639 / -17012 | 947 | 0.015 | pers 0.75 | CAND-DD |
-| H_gated | arm=0.25 feat=pr_e001_own_w5 secs=1 thr=20 | -44 / -1360 / -217 / +324 / -54 / -833 / -201 / -176 | 4185 / 12456 | 5570 / 6208 | 589 / -17012 | 723 | 0.015 | pers 0.25 | CAND-DD |
-| H_pcthour | pct=0.4 window=all | +194 / -1093 / -502 / +117 / -336 / -393 / -175 / +12 | 4308 / 12456 | 4461 / 6208 | -7488 / -17012 | 889 | 0.015 | pers 0.50 | CAND-DD |
-| H_gated | arm=0.25 feat=pr_e001_own_w10 secs=1 thr=20 | -192 / -1030 / -94 / +67 / -381 / -629 / -284 / -116 | 4334 / 12456 | 4568 / 6208 | -2985 / -17012 | 873 | 0.015 | pers 0.25 | CAND-DD |
+| H_pcthour | pct=0.4 window=asia | +788 / -536 / -75 / +427 / -45 / -810 / -289 / +43 | 3268 / 12461 | 6089 / 6089 | -1783 / -17069 | 680 | 0.015 | pers 0.50 | CAND-DD |
+| H_pcthour | pct=0.4 window=all | +788 / -806 / -30 / +374 / +106 / -546 / -183 / +12 | 3268 / 12461 | 4461 / 6089 | -2128 / -17069 | 892 | 0.015 | pers 0.50 | CAND-DD |
+| H_gated | arm=0.25 feat=pr_e001_own_w10 secs=1 thr=20 | +422 / -731 / +229 / +328 / +62 / -681 / -246 / -116 | 3723 / 12461 | 4568 / 6089 | 1459 / -17069 | 905 | 0.015 | pers 0.75 | CAND-DD |
+| H_gated | arm=0.25 feat=pr_e001_own_w5 secs=1 thr=20 | +574 / -1177 / +165 / +587 / +22 / -968 / -148 / -176 | 3733 / 12461 | 4455 / 6089 | 6397 / -17069 | 754 | 0.015 | pers 0.75 | CAND-DD |
+| H_gated | arm=0.25 feat=pr_e001_own_w5 secs=1 thr=10 | +519 / -582 / +173 / +272 / +35 / -694 / -431 / +16 | 3750 / 12461 | 5327 / 6089 | 1017 / -17069 | 939 | 0.015 | pers 0.75 | CAND-DD |
 Best mean (for reference):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| H_gated | arm=0.25 feat=pr_e001_own_w5 secs=1 thr=20 | -44 / -1360 / -217 / +324 / -54 / -833 / -201 / -176 | 4185 / 12456 | 5570 / 6208 | 589 / -17012 | 723 | 0.015 | pers 0.25 | CAND-DD |
-
-### A7 - entry session 0
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_gated | arm=0.25 feat=pr_e001_own_w5 secs=1 thr=10 | -85 / -876 / -167 / +39 / -428 / -671 / -420 / +16 | 3743 / 12456 | 5327 / 6208 | -3815 / -17012 | 907 | 0.015 | pers 0.25 | CAND-DD |
-| H_pcthour | pct=0.3 window=all | +479 / -660 / +238 / +311 / -258 / -617 / -423 / +169 | 3963 / 12456 | 3612 / 6208 | 1639 / -17012 | 947 | 0.015 | pers 0.75 | CAND-DD |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_gated | arm=0.25 feat=pr_e001_own_w5 secs=1 thr=20 | -44 / -1360 / -217 / +324 / -54 / -833 / -201 / -176 | 4185 / 12456 | 5570 / 6208 | 589 / -17012 | 723 | 0.015 | pers 0.25 | CAND-DD |
+| H_gated | arm=0.25 feat=pr_e001_own_w5 secs=1 thr=20 | +574 / -1177 / +165 / +587 / +22 / -968 / -148 / -176 | 3733 / 12461 | 4455 / 6089 | 6397 / -17069 | 754 | 0.015 | pers 0.75 | CAND-DD |
 
 ### H7 - pooled sessions
 Drawdown-first top (L6M mean >= never-cut):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| H_mom | arm=0.25 feat=vel30<= secs=1 thr=1 | +1265 / +442 / +1596 / +96 / +477 / -377 / -574 / -477 | 6026 / 16682 | 8089 / 20667 | -467 / -36140 | 833 | 0.015 | pers 1.00 | CAND-DD |
-| H_mom | arm=0.25 feat=vel30<= secs=1 thr=2 | +1212 / +383 / +1529 / +124 / +506 / -383 / -534 / -523 | 6206 / 16682 | 7967 / 20667 | -1244 / -36140 | 837 | 0.015 | pers 1.00 | CAND-DD |
-| H_gated | arm=0.25 feat=ahead_rel_fast secs=1 thr=1.5 | +2523 / +1088 / +2016 / +432 / +581 / -206 / -517 / -349 | 6546 / 16682 | 9332 / 20667 | 6057 / -36140 | 800 | 0.015 | pers 1.00 | CAND-DD |
-| H_thick | arm=0.25 feat=ahead_rel_fast secs=1 thr=1.5 | +2523 / +1088 / +2016 / +432 / +581 / -206 / -517 / -349 | 6546 / 16682 | 9332 / 20667 | 6057 / -36140 | 800 | 0.015 | pers 1.00 | CAND-DD |
-| H_thick | arm=0.25 feat=ahead_rel_fast secs=1 thr=1.3 | +2175 / +851 / +1821 / +240 / +482 / -355 / -563 / -467 | 6579 / 16682 | 9387 / 20667 | 4092 / -36140 | 824 | 0.015 | pers 1.00 | CAND-DD |
+| H_mom | arm=0.25 feat=vel30<= secs=1 thr=0 | +1418 / +639 / +1607 / +137 / +535 / -570 / -975 / -504 | 5961 / 15477 | 10161 / 20667 | 2693 / -32750 | 847 | 0.015 | pers 1.00 | CAND-DD |
+| H_gated | arm=0.4 feat=imb_ag5 secs=1 thr=0.2 | +1263 / +524 / +1252 / +301 / +589 / -348 / -634 / -225 | 5992 / 15477 | 10534 / 20667 | -533 / -32750 | 791 | 0.015 | pers 1.00 | CAND-DD |
+| H_mom | arm=0.25 feat=vel30<= secs=1 thr=1 | +1236 / +414 / +1458 / +116 / +583 / -357 / -675 / -477 | 6016 / 15477 | 8137 / 20667 | 2354 / -32750 | 853 | 0.015 | pers 1.00 | CAND-DD |
+| H_mom | arm=0.25 feat=vel30<= secs=1 thr=2 | +1250 / +397 / +1417 / +74 / +579 / -383 / -654 / -523 | 6241 / 15477 | 8042 / 20667 | 399 / -32750 | 856 | 0.015 | pers 1.00 | CAND-DD |
+| H_gated | arm=0.4 feat=pr_e001_own_w10 secs=1 thr=10 | +1765 / +715 / +1285 / +194 / +631 / +13 / -800 / -86 | 6390 / 15477 | 14345 / 20667 | -1620 / -32750 | 796 | 0.015 | pers 1.00 | CAND-DD |
 Best mean (for reference):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| I_chand | arm=0.7 atr=atr5m k=2 | +1869 / +208 / +700 / +1386 / +658 / +121 / -386 / +14 | 10553 / 16682 | 21288 / 20667 | -5806 / -36140 | 242 | 0.015 | pers 1.00 | CAND-DD |
-
-### H7 - entry session 0
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_mom | arm=0.25 feat=vel30_chg15<= secs=1 thr=-1 | +2433 / +705 / +1377 / +287 / +611 / -102 / -597 / -345 | 7198 / 16891 | 9795 / 17912 | -5906 / -42912 | 525 | 0.031 | pers 1.00 | CAND-DD |
-| H_mom | arm=0.25 feat=vel30_chg15<= secs=1 thr=-2 | +2440 / +735 / +1404 / +331 / +641 / -102 / -528 / -286 | 7271 / 16891 | 9160 / 17912 | -5331 / -42912 | 525 | 0.015 | pers 1.00 | CAND-DD |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_lock | X=2 arm=0.7 | +1266 / -138 / +409 / +1314 / +653 / +641 / -214 / +40 | 9529 / 16891 | 17912 / 17912 | -12596 / -42912 | 119 | 0.785 | pers 0.75 | CAND-DD |
-
-### H7 - entry session 3
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_mom | arm=0.5 feat=vel30_chg15<= secs=1 thr=-4 | -790 / -352 / +108 / +46 / -44 / -216 / -141 / -181 | 2159 / 3747 | 29831 / 23673 | 2624 / -5368 | 258 | 0.015 | pers 0.50 |  |
-| H_dturn | arm=0.5 feat=dlt_med_w10<= secs=1 thr=-1 | -861 / -416 / +46 / +1 / -54 / -210 / -83 / -243 | 2179 / 3747 | 28145 / 23673 | 1669 / -5368 | 261 | 0.015 | pers 0.50 |  |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_chand | arm=0.3 atr=atr5m k=1.5 | +47 / -69 / +271 / +164 / +81 / +107 / +25 / -59 | 4490 / 3747 | 25915 / 23673 | -4704 / -5368 | 175 | 0.800 | pers 0.75 |  |
+| I_chand | arm=0.7 atr=atr5m k=2 | +1874 / +207 / +699 / +1387 / +860 / +122 / -496 / +14 | 9348 / 15477 | 21288 / 20667 | -2391 / -32750 | 253 | 0.015 | pers 1.00 | CAND-DD |
 
 ### O7 - pooled sessions
 Drawdown-first top (L6M mean >= never-cut):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=1.3 | +746 / +156 / +89 / +111 / -411 / +47 / -615 / +47 | 2875 / 7489 | 6153 / 5097 | -448 / -9447 | 366 | 0.031 | pers 1.00 |  |
-| H_thick | arm=0.1 feat=tot_rel_slow secs=1 thr=1.3 | +1212 / +452 / +268 / +30 / -291 / +142 / -547 / +73 | 3248 / 7489 | 6158 / 5097 | 529 / -9447 | 353 | 0.031 | pers 1.00 |  |
-| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=1.5 | +1132 / +396 / +240 / +35 / -358 / +12 / -603 / +68 | 3248 / 7489 | 7906 / 5097 | 339 / -9447 | 353 | 0.046 | pers 1.00 |  |
-| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=2.0 | +1361 / +365 / +217 / +311 / -252 / -53 / -430 / +122 | 3248 / 7489 | 7257 / 5097 | -1155 / -9447 | 311 | 0.015 | pers 1.00 |  |
-| H_thick | arm=0.1 feat=ahead_rel_fast secs=1 thr=2.5 | +1056 / +316 / -53 / +19 / -185 / +195 / -229 / +80 | 3431 / 7489 | 8986 / 5097 | -1363 / -9447 | 243 | 0.015 | pers 0.75 |  |
+| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=1.3 | +801 / +192 / +111 / +122 / -388 / +46 / -650 / +47 | 2825 / 7469 | 6213 / 5102 | -258 / -9532 | 367 | 0.015 | pers 1.00 |  |
+| H_thick | arm=0.1 feat=tot_rel_slow secs=1 thr=1.3 | +1212 / +454 / +267 / +30 / -274 / +141 / -582 / +73 | 3243 / 7469 | 6193 / 5102 | 454 / -9532 | 354 | 0.031 | pers 1.00 |  |
+| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=1.5 | +1132 / +404 / +244 / +37 / -339 / +11 / -638 / +68 | 3243 / 7469 | 7956 / 5102 | 276 / -9532 | 354 | 0.031 | pers 1.00 |  |
+| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=2.0 | +1361 / +363 / +214 / +310 / -234 / -54 / -465 / +122 | 3243 / 7469 | 7322 / 5102 | -1205 / -9532 | 312 | 0.015 | pers 1.00 |  |
+| H_thick | arm=0.1 feat=ahead_rel_fast secs=1 thr=2.5 | +1056 / +316 / -55 / +18 / -197 / +195 / -264 / +80 | 3426 / 7469 | 9051 / 5102 | -1438 / -9532 | 243 | 0.015 | pers 0.75 |  |
 Best mean (for reference):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| I_chand | arm=0.5 atr=atr1m k=1 | +1217 / +374 / +456 / +410 / -32 / -345 / -375 / +24 | 6701 / 7489 | 6826 / 5097 | -6435 / -9447 | 221 | 0.154 | pers 1.00 |  |
-
-### O7 - entry session 3
-Drawdown-first top (L6M mean >= never-cut):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| H_thick | arm=0.1 feat=ahead_rel_slow secs=1 thr=1.3 | +746 / +156 / +89 / +111 / -411 / +47 / -615 / +47 | 2875 / 7489 | 6153 / 5097 | -448 / -9447 | 366 | 0.031 | pers 1.00 |  |
-| H_thick | arm=0.1 feat=tot_rel_slow secs=1 thr=1.3 | +1212 / +452 / +268 / +30 / -291 / +142 / -547 / +73 | 3248 / 7489 | 6158 / 5097 | 529 / -9447 | 353 | 0.031 | pers 1.00 |  |
-Best mean (for reference):
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
-|---|---|---|---|---|---|---|---|---|---|
-| I_chand | arm=0.5 atr=atr1m k=1 | +1217 / +374 / +456 / +410 / -32 / -345 / -375 / +24 | 6701 / 7489 | 6826 / 5097 | -6435 / -9447 | 221 | 0.154 | pers 1.00 |  |
+| I_chand | arm=0.5 atr=atr1m k=1 | +1217 / +525 / +557 / +459 / -31 / -446 / -409 / +24 | 5522 / 7469 | 6816 / 5102 | -5261 / -9532 | 221 | 0.031 | pers 1.00 |  |
 
 ### ALL - pooled sessions
 Drawdown-first top (L6M mean >= never-cut):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| I_trail | X=30 arm=0.7 | -1415 / -718 / +7350 / +3252 / +1606 / -1407 / -4275 / -430 | 47230 / 117593 | 108770 / 177634 | 188622 / 89449 | 4506 | 0.015 | pers 0.50 | CAND-DD |
-| I_lock | X=10 arm=0.7 | -2699 / -2357 / +5568 / +3824 / +1634 / -2430 / -3150 / -402 | 49295 / 117593 | 125031 / 177634 | 192269 / 89449 | 3596 | 0.015 | pers 0.50 | CAND-DD |
-| I_trail | X=40 arm=0.7 | -2766 / -3168 / +5263 / +2748 / +502 / -3668 / -5094 / -125 | 51072 / 117593 | 127897 / 177634 | 154682 / 89449 | 3659 | 0.015 | pers 0.50 | CAND-DD |
-| I_lock | X=15 arm=0.7 | -1757 / -1405 / +5978 / +3240 / +1572 / -1497 / -3269 / +283 | 53488 / 117593 | 116479 / 177634 | 176613 / 89449 | 3986 | 0.015 | pers 0.50 | CAND-DD |
-| I_bookarm | X=20 arm=0.5 feat=ice_ag_w30 secs=30 thr=3 | -2914 / -3384 / +6934 / +1293 / -1272 / -6572 / -4261 / -2434 | 54082 / 117593 | 99253 / 177634 | 148713 / 89449 | 6604 | 0.015 | pers 0.50 | CAND-DD |
+| I_trail | X=30 arm=0.7 | +1706 / +1072 / +7978 / +4034 / +2252 / -954 / -5322 / -430 | 39556 / 121381 | 100321 / 152455 | 180274 / 77580 | 4534 | 0.015 | pers 1.00 | CAND-DD |
+| I_lock | X=10 arm=0.7 | -1007 / -1221 / +5479 / +4513 / +2280 / -1383 / -3986 / -402 | 41951 / 121381 | 117200 / 152455 | 184415 / 77580 | 3622 | 0.015 | pers 0.50 | CAND-DD |
+| I_trail | X=40 arm=0.7 | +309 / -1625 / +5664 / +3347 / +939 / +1735 / -4779 / -125 | 45635 / 121381 | 119526 / 152455 | 163943 / 77580 | 3683 | 0.015 | pers 0.75 | CAND-DD |
+| H_gated | arm=0.5 feat=pr_e001_own_w10 secs=1 thr=35 | -15557 / -4245 / +4473 / +1653 / -3027 / -8993 / -2702 / +602 | 47569 / 121381 | 95799 / 152455 | 173355 / 77580 | 6199 | 0.123 | pers 0.50 | CAND-DD |
+| H_gated | arm=0.6 feat=pr_e001_own_w10 secs=1 thr=35 | -7129 / -165 / +5754 / +1473 / -1863 / -6673 / -2930 / -994 | 48072 / 121381 | 137331 / 152455 | 149728 / 77580 | 4908 | 0.015 | pers 0.50 | CAND-DD |
 Best mean (for reference):
 | technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' (USD/wk) | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | persistence | label |
 |---|---|---|---|---|---|---|---|---|---|
-| I_lock | X=3 arm=0.6 | -14566 / -8829 / +3406 / +5954 / +958 / -4406 / -5049 / -1762 | 55605 / 117593 | 132167 / 177634 | 240091 / 89449 | 4558 | 0.015 | pers 0.50 | CAND-DD |
+| I_lock | X=0 arm=0.6 | -11256 / -9624 / +1333 / +5440 / +471 / -5457 / -5507 / -299 | 73489 / 121381 | 121459 / 152455 | 237076 / 77580 | 4333 | 0.015 | pers 0.50 | CAND-DD |

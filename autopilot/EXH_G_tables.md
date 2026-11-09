@@ -1,7 +1,7 @@
 # EXH_G - family G (combinations + learned shapes), EX-LG
-generated 11-09 07:18 UTC; entry match PRE-PROOF; null_ver 2; family p not yet attached (label computed with p_family=1, WF=False, so ENTER is impossible here; CANDIDATE-DD/LEAD are the live labels).
+generated 11-09 09:21 UTC; entry match PRE-PROOF; null_ver 2; family p not yet attached (label computed with p_family=1, WF=False, so ENTER is impossible here; CANDIDATE-DD/LEAD are the live labels).
 
-Cells registered by EX-LG: 107030 rows (1390 cells).
+Cells registered by EX-LG: 107338 rows (1394 cells).
 ### Stack (all books), top by L6M maxDD reduction, nfire>=20
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -41,12 +41,12 @@ Cells registered by EX-LG: 107030 rows (1390 cells).
 ### Book M7 (all sessions)
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| G_PAIRWF_ALL | WF ALL cand=34613.0 | 1720 (45%) | -481/1742/-254/-240 | 25130 / 44425 | 52257 / 50321 | -44879 / -68299 | 252 | 0.58 | nan | CANDIDATE-DD |
 | G_CONDWF_BOOK | WF BOOK cand=60800.0 | 1532 (40%) | 117/1213/1039/187 | 26034 / 44425 | 32668 / 50321 | -45974 / -68299 | 728 | 0.05 | nan | CANDIDATE-DD |
 | G_TREE_WF | DDT perbook s1 thr800 | 463 (12%) | -1878/136/-1259/-140 | 28901 / 44425 | 37524 / 50321 | -54341 / -68299 | 352 | 0.18 | 0 | CANDIDATE-DD |
 | G_TREE_WF | DDT perbook s0 thr800 | 469 (12%) | -666/-48/-1381/69 | 30499 / 44425 | 39905 / 50321 | -55553 / -68299 | 275 | 0.12 | 0 | CANDIDATE-DD |
 | G_PAIRWF_ALL | WF ALL cand=34410.0 | 1729 (46%) | -481/1742/-254/-468 | 30828 / 44425 | 46658 / 50321 | -47381 / -68299 | 24 | 0.60 | nan | CANDIDATE-DD |
 | G_TREE_WF | DDT perbook s1 thr200 | 737 (19%) | -2956/-324/-1627/-192 | 31162 / 44425 | 27331 / 50321 | -61560 / -68299 | 300 | 0.65 | 0 | CANDIDATE-DD |
-| G_TREE_WF | DDT perbook s1 thr100 | 1710 (45%) | -2956/-324/-1627/-192 | 31162 / 44425 | 48304 / 50321 | -61560 / -68299 | 300 | 0.60 | 0 | CANDIDATE-DD |
 
 ### Book U7 (all sessions)
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
@@ -61,12 +61,12 @@ Cells registered by EX-LG: 107030 rows (1390 cells).
 ### Book A7 (all sessions)
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| G_CONDWF_ALL | WF ALL cand=60800.0 | 442 (38%) | -1236/382/190/829 | 8801 / 12461 | 5508 / 6089 | -12927 / -17069 | 228 | 0.95 | nan | CANDIDATE-DD |
 | G_PAIRWF_BOOK | WF BOOK cand=12821.0 | 694 (59%) | -1638/151/234/952 | 10097 / 12461 | 6393 / 6089 | -14619 / -17069 | 352 | 0.69 | nan | CANDIDATE-DD |
 | G_TREE_WF | MEANT pooled s0 thr0 | 351 (30%) | -1528/357/23/798 | 10331 / 12461 | 5043 / 6089 | -18788 / -17069 | 197 | 0.94 | 616 | CANDIDATE-DD |
 | G_TREE_WF | MEANT pooled s0 thr25 | 351 (30%) | -1528/357/23/798 | 10331 / 12461 | 5043 / 6089 | -18788 / -17069 | 197 | 0.91 | 616 | CANDIDATE-DD |
 | G_TREE_WF | MEANT pooled s0 thr10 | 351 (30%) | -1528/357/23/798 | 10331 / 12461 | 5043 / 6089 | -18788 / -17069 | 197 | 0.89 | 616 | CANDIDATE-DD |
 | G_PAIRWF_ALL | WF ALL cand=30973.0 | 496 (42%) | -1494/132/-241/755 | 10740 / 12461 | 4291 / 6089 | -18468 / -17069 | 154 | 0.29 | nan | CANDIDATE-DD |
-| G_PAIRWF_ALL | WF ALL cand=34410.0 | 530 (45%) | -1494/-144/-260/749 | 10740 / 12461 | 4521 / 6089 | -15736 / -17069 | 148 | 1.00 | nan | CANDIDATE-DD |
 
 ### Book H7 (all sessions)
 | tech | params |  nfire | L1M/L2M/L3M/L6M mean | maxDD L6M w/wo | maxDD PRE w/wo | worst20 L6M w/wo | L6M dmean | placebo p | live dUSD | label |

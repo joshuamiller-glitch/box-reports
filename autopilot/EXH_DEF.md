@@ -1,6 +1,6 @@
 # EXH_DEF - EX-LDEF: loss families D (price-path), E (conditioners), F (actions)
 
-Generated 2026-11-09 05:29 UTC. Cells scored by EX-LDEF: 1251 (registered in the ledger, agent EX-LDEF). Entry match label: PRE-PROOF. Columns: technique | params | delta vs never-cut USD/week L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | family p | WF | live week delta vs actual | label. Gate: PRE maxDD with the rule <= 1.05 x without. Causality: noise-after-k0 (k0=900 s) test of every D kernel and the F2 half-cut on 2026-08..10 trades: 0 changed fire decisions out of ~30k checked (ldef_causal.py); F3/F4 stop-level actions read the path after the trigger by construction (resting stop). Live-week column: ATR-based rules (D10, D11) cannot be evaluated on the live week (no entry ATR in the live universe), shown as 0/blank. Placebo/family p are the ledger values (null_ver in ledger; v1 cells are re-scored by EX-CORE rescore). Selection key: drawdown first (L6M maxDD, worst-20, Ulcer, Calmar), nfire>=20, L6M mean delta >= 0.
+Generated 2026-11-09 09:16 UTC. Cells scored by EX-LDEF: 1251 (registered in the ledger, agent EX-LDEF). Entry match label: PRE-PROOF. Columns: technique | params | delta vs never-cut USD/week L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | family p | WF | live week delta vs actual | label. Gate: PRE maxDD with the rule <= 1.05 x without. Causality: noise-after-k0 (k0=900 s) test of every D kernel and the F2 half-cut on 2026-08..10 trades: 0 changed fire decisions out of ~30k checked (ldef_causal.py); F3/F4 stop-level actions read the path after the trigger by construction (resting stop). Live-week column: ATR-based rules (D10, D11) cannot be evaluated on the live week (no entry ATR in the live universe), shown as 0/blank. Placebo/family p are the ledger values (null_ver in ledger; v1 cells are re-scored by EX-CORE rescore). Selection key: drawdown first (L6M maxDD, worst-20, Ulcer, Calmar), nfire>=20, L6M mean delta >= 0.
 
 ## ALL (pooled sessions), top 8 by the drawdown-first key
 | technique | params | delta L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | family p | WF | live week | worst of L1M-L3M / recent gate | label |
@@ -420,8 +420,43 @@ no cell with nfire>=20, L6M mean >= never-cut and PRE maxDD within 1.05x of neve
 | D7_time@t_2_10m | X=40 ctx=t_2_10m min=5 | -10088 / -1001 / +405 / +1141 / -2446 / -343 / -1566 / -140 | 114881 / 121381 | 112721 / 152455 | 89374 / 77580 | 1339 | 0.29 | 1.00 | n/a | -12877 (n=7) | -10088 rec-ok | CANDIDATE-DD FAILS-LIVE-WEEK |
 | D7_time@t_gt10m | X=40 ctx=t_gt10m min=5 | -2331 / -4701 / -3133 / +3888 / +3128 / +7126 / -6891 / +863 | 87821 / 121381 | 111653 / 152455 | 167604 / 77580 | 9323 | 0.05 | 1.00 | n/a | -3752 (n=13) | -4701 rec-FAIL | CANDIDATE-DD |
 
-## Finalists and Stage 2 (engine cascade; finalist sets ldef_perbook = best gated cell per book, ldef_uniform = best single cell; kernel leak test 0 changed of 244-1242 checked legs per finalist; Stage 2 excludes ATR rules)
-Stage 2 running (43 months x 2 workers); rows appear here when scored (python3 stage2.py score <set>).
+## Finalists: Stage 1 (universe U2) vs Stage 2 (engine cascade, vs engine never-cut base_b/NOCUT, 43 months or as stated)
+Finalists (<= 12): the per-book best cell (gated PRE<=1.05x, live-week not failing, no ATR rules; recents-consistent preferred) and the best single cell (D3_pullback X15 pb50 on all books). Kernel leak test (X.kernel_leak_test, k0=900): 0 changed legs on every finalist (163-1242 checked each). Held-out live week = the live_delta column of the finalist rows (Stage 1, actual live exits).
+
+LDEF_perbook (43 of 43 months run; months not run are filled from never-cut)
+| book | cell | Stage 2 L6M mean delta (MDE) | L6M maxDD w/wo | PRE mean delta | PRE maxDD w/wo | L6M worst-20 w/wo | Stage 1 L6M maxDD w/wo | Stage 1 live-week delta | months S2 |
+|---|---|---|---|---|---|---|---|---|---|
+| ALL | all books | -845 (5893) | 186059 / 191045 | -1080 | 123968 / 130824 | -43367 / -63404 | n/a | n/a | 43 |
+| K7 | D4_eff {"X": 30, "thr": 0.3, "w": 120} | +642 (2343) | 27455 / 35969 | -1045 | 25051 / 22188 | -9348 / -20829 | 16066 / 20902 | +1189 (n=4) | 43 |
+| P7 | F3_stop_extreme {"X": 40, "k": 2} | +321 (4292) | 203778 / 203542 | +1507 | 113897 / 122169 | -151804 / -181468 | 73646 / 133887 | -7065 (n=4) | 43 |
+| M7 | F3_stop_extreme {"X": 10, "k": 0} | -133 (2874) | 37288 / 48019 | -212 | 44115 / 44205 | -59617 / -73536 | 13450 / 44425 | -1985 (n=21) | 43 |
+| U7 | D3_pullback {"X": 10, "pb": 50} | -93 (1107) | 13232 / 17816 | -369 | 39558 / 39542 | 15665 / 17704 | 9322 / 21561 | +346 (n=1) | 43 |
+| A7 | D3_pullback {"X": 20, "pb": 50} | +129 (983) | 5897 / 9361 | -167 | 5370 / 8625 | -244 / -7321 | 4760 / 12461 | -1314 (n=7) | 43 |
+| H7 | D1_mom {"X": 15, "pts": 12, "w": 30} | -585 (1523) | 11961 / 16242 | -457 | 24640 / 18436 | -17621 / -13688 | 8823 / 15477 | +697 (n=2) | 43 |
+| O7 | D3_pullback {"X": 20, "pb": 30} | +155 (465) | 6088 / 6958 | -28 | 3761 / 4797 | -6479 / -11023 | 6093 / 7469 | -11 (n=1) | 43 |
+
+LDEF_uniform (27 of 43 months run; months not run are filled from never-cut)
+| book | cell | Stage 2 L6M mean delta (MDE) | L6M maxDD w/wo | PRE mean delta | PRE maxDD w/wo | L6M worst-20 w/wo | Stage 1 L6M maxDD w/wo | Stage 1 live-week delta | months S2 |
+|---|---|---|---|---|---|---|---|---|---|
+| ALL | all books | +1565 (7075) | 133346 / 191045 | +nan | nan / nan | 37736 / -63404 | n/a | n/a | 27 |
+| K7 | D3_pullback X15 pb50 | +679 (3904) | 12875 / 35969 | +nan | nan / nan | 28296 / -20829 | 45518 / 20902 | +1758 (n=22) | 27 |
+| P7 | D3_pullback X15 pb50 | +846 (3344) | 179872 / 203542 | +nan | nan / nan | -131075 / -181468 | 70880 / 133887 | -24336 (n=18) | 27 |
+| M7 | D3_pullback X15 pb50 | -458 (2159) | 43917 / 48019 | +nan | nan / nan | -68854 / -73536 | 41801 / 44425 | +3427 (n=7) | 27 |
+| U7 | D3_pullback X15 pb50 | +94 (1031) | 13577 / 17816 | +nan | nan / nan | 18955 / 17704 | 10892 / 21561 | +346 (n=1) | 27 |
+| A7 | D3_pullback X15 pb50 | +32 (925) | 5537 / 9361 | +nan | nan / nan | -2330 / -7321 | 4785 / 12461 | -1018 (n=8) | 27 |
+| H7 | D3_pullback X15 pb50 | -79 (787) | 11345 / 16242 | +nan | nan / nan | -8440 / -13688 | 24260 / 15477 | +660 (n=2) | 27 |
+| O7 | D3_pullback X15 pb50 | +255 (284) | 7875 / 6958 | +nan | nan / nan | -7504 / -11023 | 8341 / 7469 | +563 (n=2) | 27 |
+
+## FINAL section: per-book loss sentences (D price-path, E conditioners, F actions)
+K7 loss: the technique that lowers drawdown most is D4_eff {"X": 30, "thr": 0.3, "w": 120}; Stage 1 L6M maxDD 16066 vs 20902 without and L6M +768 USD/week (MDE 2186), PRE -1212; in the engine cascade L6M maxDD is 27455 vs 35969 and mean +642/week, PRE maxDD 25051 vs 22188; the rule lowers L6M drawdown in the engine at equal-or-better mean but RAISES PRE drawdown beyond the gate (the mean gain is inside the MDE; drawdown-candidate only); held-out live week +1189 USD vs actual; placebo p 0.82.
+P7 loss: the technique that lowers drawdown most is F3_stop_extreme {"X": 40, "k": 2}; Stage 1 L6M maxDD 73646 vs 133887 without and L6M +5390 USD/week (MDE 11940), PRE -934; in the engine cascade L6M maxDD is 203778 vs 203542 and mean +321/week, PRE maxDD 113897 vs 122169; the rule does not hold in the engine (the mean gain is inside the MDE; drawdown-candidate only); held-out live week -7065 USD vs actual; placebo p 0.05.
+M7 loss: the technique that lowers drawdown most is F3_stop_extreme {"X": 10, "k": 0}; Stage 1 L6M maxDD 13450 vs 44425 without and L6M +737 USD/week (MDE 4183), PRE -812; in the engine cascade L6M maxDD is 37288 vs 48019 and mean -133/week, PRE maxDD 44115 vs 44205; the rule does not hold in the engine (the mean gain is inside the MDE; drawdown-candidate only); held-out live week -1985 USD vs actual; placebo p 0.03.
+U7 loss: the technique that lowers drawdown most is D3_pullback {"X": 10, "pb": 50}; Stage 1 L6M maxDD 9322 vs 21561 without and L6M +963 USD/week (MDE 2528), PRE -933; in the engine cascade L6M maxDD is 13232 vs 17816 and mean -93/week, PRE maxDD 39558 vs 39542; the rule does not hold in the engine (the mean gain is inside the MDE; drawdown-candidate only); held-out live week +346 USD vs actual; placebo p 0.02.
+A7 loss: the technique that lowers drawdown most is D3_pullback {"X": 20, "pb": 50}; Stage 1 L6M maxDD 4760 vs 12461 without and L6M +511 USD/week (MDE 1399), PRE -146; in the engine cascade L6M maxDD is 5897 vs 9361 and mean +129/week, PRE maxDD 5370 vs 8625; the rule holds in the engine on L6M drawdown and mean (the mean gain is inside the MDE; drawdown-candidate only); held-out live week -1314 USD vs actual; placebo p 0.02.
+H7 loss: the technique that lowers drawdown most is D1_mom {"X": 15, "pts": 12, "w": 30}; Stage 1 L6M maxDD 8823 vs 15477 without and L6M +461 USD/week (MDE 2708), PRE -318; in the engine cascade L6M maxDD is 11961 vs 16242 and mean -585/week, PRE maxDD 24640 vs 18436; the rule does not hold in the engine (the mean gain is inside the MDE; drawdown-candidate only); held-out live week +697 USD vs actual; placebo p 0.03.
+O7 loss: the technique that lowers drawdown most is D3_pullback {"X": 20, "pb": 30}; Stage 1 L6M maxDD 6093 vs 7469 without and L6M +61 USD/week (MDE 584), PRE -3; in the engine cascade L6M maxDD is 6088 vs 6958 and mean +155/week, PRE maxDD 3761 vs 4797; the rule holds in the engine on L6M drawdown and mean (the mean gain is inside the MDE; drawdown-candidate only); held-out live week -11 USD vs actual; placebo p 0.29.
+
+Reading: stop-tightening and pullback cuts that look large in Stage 1 against the universe hold-to-bracket reference shrink or vanish in the engine cascade (P7: Stage 1 L6M maxDD 74k vs 134k, engine 204k vs 204k), because the engine never-cut run already carries locks, stack gates and StopJoin. Nothing in D/E/F is ENTER; entry-filter (blackout) and context conditioners are reported separately above and are not exit techniques.
 
 ## Plain sentence per book (loss side)
 K7 loss: the cut that lowers L6M drawdown most is D1_mom@lots2_4 ({"X": 10, "ctx": "lots2_4", "pts": 20, "w": 60}); L6M maxDD 12159 vs 20902 without, PRE maxDD 23440 vs 26707; it earns 534 USD/week vs never-cut in L6M and -424 in PRE; placebo p 0.03; label CANDIDATE-DD.

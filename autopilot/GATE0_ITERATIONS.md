@@ -259,3 +259,5 @@
 2026-11-09T07:25Z EX-CORE: stage2 start gate rewritten (short lock, STAGE2_MEM_GATE 44), pjkl/bc/exla chains restarted newest-first; throughput 07:12-07:23: ldef +6, bc +5, pjkl +2, exla +2 months
 2026-11-09T07:36Z EX-CORE: stage2 maxtasksperchild=1 + gate priority; pjkl_PB/exla_pb1/ldef_perbook_u2 restarted (idle workers freed ~40 GB: MemAvailable 21 -> 80 GB); throughput line in STATUS
 2026-11-09T08:25Z EX-CORE: ldef_uniform_u2 started; EXH_STAGE2.md (stage2_headline.py) built for the 3 complete sets, auto-refreshed by s2_chain
+2026-11-09 EX-LDEF: ldef_perbook_u2 Stage 2 scored (43 months); FINAL section written in EXH_DEF.md; ldef_uniform_u2 at 25/43 months (started by lead)
+2026-11-09T09:20Z EX-CORE: WY audit on U2 (0 cells <= .01; 213 <= .10, 208 P7 exposure-shrink), DS3_TH_EXHAUST_FINAL skeleton (make_final.py), S2 rows get p_plc NaN (ldef_report fix), spot-check + throughput block in EXH_STAGE2.md
