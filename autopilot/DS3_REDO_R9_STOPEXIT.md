@@ -1,5 +1,5 @@
 # DS3_REDO_R9_STOPEXIT - stop-exit and cut-exit mechanics on the state base (T-STACK-REDO R9)  [FIRST-ORDER SCREEN, tape microsim; PRE-PROOF until entry match >= .85; no PASS claims]
-Generated 2026-11-09 21:54 UTC (elapsed 10 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
+Generated 2026-11-09 22:17 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
 Registry: /mnt/l2/l2vast/_th_joint/layers/stopexit/topK.json. Cell ledger: /mnt/l2/l2vast/_th_stack/r9/cells_r9.parquet.
 
 ## 0. What was measured, how, and the limits
@@ -155,9 +155,6 @@ Cut-exit join fill share: CJ1_i0 0.10, CJ2_i0 0.10, CJ3_i0 0.10 (fallback = mark
 Exact L6M (202605-202610) vs the as-run base (engine assignment K7 M7 U7 P7 join, H7 A7 O7 native), ENGINE fill basis (native fills optimistic, see section 1):
 | set | setting | months | L6M maxDD cut % | L6M d mean $/wk | w20 cut % | eq-mean cut % | L3M cut % | L1M cut % |
 |---|---|---|---|---|---|---|---|---|
-| REF_R9_STOP_CODE | DS7.cs defaults: join on K7 M7 U7 P7 A7 H7 | 6 | -0.0 | -129 | 1.0 | -0.6 | -0.0 | 1.1 |
-| REF_R9_STOP_G0 | Gate0: join on K7 H7, rest native | 6 | 5.3 | +966 | -14.5 | 8.6 | 5.3 | 5.2 |
-| REF_R9_STOP_NAT | all books native | 6 | 6.7 | +1270 | -19.2 | 11.0 | 6.7 | 6.6 |
 Reading: moving M7/U7/P7 (and A7/O7 as listed) to Native on the engine basis gains because the engine fills a native stop 1.9 pt BETTER than the level (live: 1.28 pt worse). The gain is a fill-basis artefact until the native fill is re-based: at +1.28 pt the same exact change is worth about the first-order live-calibrated row NATLIVE (section 4a), i.e. a few hundred $/wk, inside noise.
 
 ## 7. Family null, procedure walk-forward, old-vs-new
@@ -189,3 +186,7 @@ Trailing 26 weeks to the data end, drawdown first: pick = **R9S_ALL_NAT** (live 
 | R9S_ALL_NATLIVE    | 78594.7 |    133370 | 33786.4 | 24262.9 | False  | PRIOR-UNKNOWN |
 | R9S_ALL_J10_i1_c20 | 79377.3 |    129819 | 33863.6 | 24452.7 | False  | PRIOR-UNKNOWN |
 | R9S_P7_NATLIVE     | 79438.1 |    127499 | 34241.9 | 24074.5 | False  | PRIOR-UNKNOWN |
+
+## EXACT rows (appended)
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R9_J5_i1_c10 0, R9_J10_i1_c10 0, R9_J10_i0_c10 0, R9_STRAT0_c10 0
+no exact month finished yet (queue tier of R10_/R11_/R9_ prefixes pending).

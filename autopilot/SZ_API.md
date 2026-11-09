@@ -56,3 +56,41 @@ CANDIDATE = down-only AND cut_L6M > 0 AND cut_PRE > 0 AND cut_X' > 0 (one of the
 - `Z.refit_pick(series_dict, ref_key, date='2026-11-22', train_weeks=26, scores=None)` -> (ranked table, info): ranks on the trailing 26 weeks ending the day before `date` (or the data end), drawdown first (maxDD, worst-20, Ulcer, then mean), attaches prior_label from `scores` (cell -> Z.score row), returns the pick; the live setting is retained when no cell has a lower trailing maxDD.
 - Ledger schema additions (optional): wf2w_cut, wf2w_mean, wf2w_beat_pct, prior_ok ('OK-PRIOR' / 'RECENT-ONLY'), cut_L1M, cut_L3M, dmean_PRE. The page ranks by key = mean(eq-mean L6M cut, L3M cut, L1M cut) over CORE-RESCORED or EXACT rows only (owner ledgers that dropped carry weeks before maxDD inflate cuts), shows the bi-weekly WF column and the OK-PRIOR / RECENT-ONLY label, and has a 'REFIT 2026-11-22' section; every FINAL page carries it.
 - Labels (page): CANDIDATE = recents (L6M cut > 0, L3M cut > -3) + OK-PRIOR + worst-20 not worse + placebo p <= .10 + bi-weekly WF (>= 50% of periods beaten and cut > 0, else monthly WF) ; 'LEAD+' = recents + placebo ok; 'LEAD' = recents; RECENT-ONLY rows keep both numbers in the label (PRE cut / d mean).
+
+<!--Q12-->
+## 12. Exact queue status (2026-11-09 22:29 UTC, after the hard trim; written by code/th_sz/queue_status.py)
+
+Hard trim in force: strict order (tier, window L6M > PRE > X' > HOLD, month-major) across all sets; X'/HOLD months of a set are dropped until the set has finished L6M + PRE; R1_3/R1_4 X'/HOLD are run by SZ-CDE itself; *_LIVE sets are skipped (live = base) except exact_keep_live.txt; identity tests (_ID/_TEST/_HOOKREF) first; J-stack and REF_ sets are tier 1; top-1 list (exact_top1.txt, rebuilt from the layer registries every 30 min) = tier 1.5. Workers: 3 when MemAvailable >= 55 GB and load < 24, else 2 when >= 45 GB (hard stop at load > 32).
+
+| tier | done | pending |
+|--|--|--|
+| 0 | 65 | 0 |
+| 1 | 151 | 0 |
+| 1.5 | 11 | 290 |
+| 2 | 26 | 752 |
+| 3 | 0 | 158 |
+| 4 | 15 | 170 |
+
+| prefix | done | pending |
+|--|--|--|
+| R5_ | 26 | 275 |
+| ZS_ | 0 | 192 |
+| R6_ | 0 | 184 |
+| R7_ | 2 | 115 |
+| AB_ | 23 | 115 |
+| VT_ | 0 | 115 |
+| R12_ | 0 | 115 |
+| Q_ | 99 | 64 |
+| ZNC_ | 0 | 58 |
+| FD_ | 1 | 30 |
+| R10_ | 0 | 24 |
+| R9_ | 0 | 24 |
+| X_ | 65 | 23 |
+| R11_ | 0 | 18 |
+| R8_ | 0 | 12 |
+| REF_ | 52 | 6 |
+
+Measured throughput (last 3 h): 184.3 cell-months/h overall (553 finished); mean 114 s per cell inside a batch process => about 31.6 cell-months/h per worker, 63.3 with 2 workers, 94.9 with 3.
+
+ETA (pending / throughput; 2 workers | 3 workers): tier 0: 0.0 h | 0.0 h; tier 0-1: 0.0 h | 0.0 h; + top-1 list (1.5): 4.6 h | 3.1 h; + tier 2 (L6M then PRE only within the trim): 16.5 h | 11.0 h.
+<!--/Q12-->
