@@ -1,4 +1,4 @@
-# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 10:57Z)
+# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 11:19Z)
 **Universe U2 = full S1b tick-close never-cut (43 months) + the u5 live-week entries; this page shows U2 cells only.** The S1b-COMB live reference row is unchanged (S1b).
 
 **Reading guide.** ENTER = passes every gate (recents, tolerant older windows, drawdown not worse in L6M and PRE, delta above MDE, placebo p <= .10, family p <= .10, walk-forward ok, not FAILS-LIVE-WEEK). CANDIDATE-DD = lowers L6M maxDD at equal or better L6M mean and PRE maxDD within +5% (even inside MDE); LEAD = L6M mean and drawdown not worse with >60% of L1M..L6M windows positive. FAILS-LIVE-WEEK = the held-out live-week delta is below -1 MDE-week of that scope (never ENTER). Sub-flags in the label cell: rec-ok/rec-FAIL (no L1M..L6M delta below -1 MDE-week), wf-ok/wf-FAIL, plc-ok/plc-FAIL (placebo p <= .10), exposure (fires on more than 50% of trades = exposure shrink). **ENTER cells on this page: 0.**
@@ -12,7 +12,7 @@ Null audit: placebo version 2 (causal, leak-tested; EXH_API section 9). Placebo 
 Evidence level: stage S1 rows are first-order (each trade alone on its stored path, bracket exits at level, 1-s decision latency, 0.80 pt market-exit cost); rows marked S2 went through the replica engine cascade (re-entries, locks, stack gates). Entry match to the live week is below .85, so the page is PRE-PROOF.
 Label: state base S1b universe (never-cut hold-to-bracket path; months not yet rebuilt are S1 timer-close, flagged src in the universe), entry match to the live week not yet >= .85 unless stated: PRE-PROOF. Windows as of 2026-11-09 (data to 2026-11-05). USD per ISO week at live lots net of 4.84/contract; delta = rule minus never-cut with the carrying week dropped; "w/wo" = with the rule / without (never-cut). LIVE REFERENCE ROW = S1b-COMB (live week from the u5 replica).
 QUARANTINE: 0 cells of agent PHI from the flawed first scoring pass (nfire == ntrades, leg 2 fed back into a new Outcome) are excluded from every table, nulls and the family max-stat; they stay on disk. H/I (take / trail) section: corrected cells in the ledger 893 of 893 expected so far.
-Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_flow', 'D', 'E', 'F', 'G', 'J_scale', 'K_target', 'L_cond', 'L_cross', 'L_learned', 'PHI_H', 'PHI_H/I', 'PHI_I', 'X_cross']. Labels: {'no': 88905, 'CANDIDATE-DD': 25720, 'LEAD': 6891, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4391, 'LEAD FAILS-LIVE-WEEK': 1572, 'S2-partial (older windows pending)': 40}
+Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_flow', 'D', 'E', 'F', 'G', 'J_scale', 'K_target', 'L_cond', 'L_cross', 'L_learned', 'PHI_H', 'PHI_H/I', 'PHI_I', 'X_cross']. Labels: {'no': 88915, 'CANDIDATE-DD': 25720, 'LEAD': 6891, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4391, 'LEAD FAILS-LIVE-WEEK': 1572, 'S2-partial (older windows pending)': 30}
 
 ## ALL
 | ref | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M | maxDD PRE | worst-20 L6M |
@@ -42,7 +42,7 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CROSS[966d0f8e1e9e+9cdf7469ba89] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba | -39,428 | -11,483 | -416 | -8,838 | -11,557 | -12,911 | -11,867 | -3,167 | 43,078 / 121,381 | 225,516 / 152,455 | 12,283 / 77,580 | 12,235 | 0.82 | 1.00 / 0.88 | 0 |  | S1 | no |
-| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -38,113 | -12,222 | -1,688 | -11,171 | -12,499 | -13,464 | -13,874 | -4,222 | 43,510 / 121,381 | 282,758 / 152,455 | -41,223 / 77,580 | 13,472 | 0.52 | 1.00 / 0.88 |  |  | S1 | no |
+| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -38,113 | -12,222 | -1,688 | -11,171 | -12,499 | -13,464 | -13,874 | -4,222 | 43,510 / 121,381 | 282,758 / 152,455 | -41,223 / 77,580 | 13,472 | 0.52 | 1.00 / 0.88 | 0 |  | S1 | no |
 | CROSS[254d02cb61ad+9cdf7469ba89] | {"book": "P7", "loss": "254d02cb61ad", "profit": "9cdf7469ba | -32,560 | -20,213 | -10,879 | -9,397 | -11,899 | -9,772 | -10,393 | -8 | 77,173 / 121,381 | 151,329 / 152,455 | -4,977 / 77,580 | 10,882 | 0.45 | 1.00 / 0.95 | 0 |  | S1 | no |
 | CROSS[e7c0088d2553+2c9eb23c8f1d] | {"book": "U7", "loss": "e7c0088d2553", "profit": "2c9eb23c8f | -30,130 | -35,888 | -28,786 | -20,418 | -24,218 | -17,361 | -20,761 | -5,068 | 232,660 / 121,381 | 546,408 / 152,455 | -253,661 / 77,580 | 14,101 | 1.00 | 1.00 / 1.00 | 0 |  | S1 | no |
 | CROSS[cd4451a22198+87cd2ee2381f] | {"book": "K7", "loss": "cd4451a22198", "profit": "87cd2ee238 | -59,010 | -32,978 | -25,254 | -36,190 | -32,233 | -22,784 | -22,355 | -9,661 | 406,212 / 121,381 | 673,184 / 152,455 | -526,357 / 77,580 | 13,276 | 1.00 | 1.00 / 0.88 | 0 |  | S1 | no |
@@ -76,7 +76,7 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CROSS[966d0f8e1e9e+9cdf7469ba89] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba | -3,325 | -599 | 1,945 | -1,115 | -1,464 | 399 | -1,816 | -323 | 8,298 / 20,902 | 43,335 / 26,707 | 4,693 / 1,791 | 4,112 | 0.18 | 1.00 / 0.44 | -2,336 |  | S1 | no |
 | CROSS[cd4451a22198+87cd2ee2381f] | {"book": "K7", "loss": "cd4451a22198", "profit": "87cd2ee238 | -5,570 | -963 | 1,904 | -1,755 | -2,174 | -323 | -2,709 | -663 | 12,829 / 20,902 | 52,166 / 26,707 | -13,392 / 1,791 | 4,084 | 0.42 | 1.00 / 0.73 | -10,676 |  | S1 | no |
-| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -3,900 | -1,220 | 1,106 | -2,168 | -2,351 | -580 | -2,370 | -551 | 14,494 / 20,902 | 52,848 / 26,707 | -17,117 / 1,791 | 4,633 | 0.30 | 1.00 / 0.50 |  |  | S1 | no |
+| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -3,900 | -1,220 | 1,106 | -2,168 | -2,351 | -580 | -2,370 | -551 | 14,494 / 20,902 | 52,848 / 26,707 | -17,117 / 1,791 | 4,633 | 0.30 | 1.00 / 0.50 | -9,166 |  | S1 | no |
 | CROSS[e0fb6a9abc57+8e7c342b397d] | {"book": "M7", "loss": "e0fb6a9abc57", "profit": "8e7c342b39 | -4,163 | -4,573 | -1,407 | -4,158 | -3,263 | -336 | -3,580 | -1,455 | 31,237 / 20,902 | 69,931 / 26,707 | -44,587 / 1,791 | 5,527 | 1.00 | 1.00 / 0.59 | -29,780 |  | S1 | no |
 | CROSS[d8088d34f428+87cd2ee2381f] | {"book": "K7", "loss": "d8088d34f428", "profit": "87cd2ee238 | -4,471 | -69 | -51 | -2,182 | -2,464 | -180 | -2,640 | -234 | 37,843 / 20,902 | 53,526 / 26,707 | -30,807 / 1,791 | 3,296 | 0.97 | 1.00 / 1.00 | -21,028 |  | S1 | no |
 
@@ -108,7 +108,7 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CROSS[966d0f8e1e9e+9cdf7469ba89] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba | -33,626 | -8,066 | -2,745 | -2,283 | -6,501 | -7,547 | -9,178 | -1,662 | 26,813 / 133,887 | 178,169 / 109,442 | 20,561 / -29,902 | 3,178 | 0.03 | 1.00 / 0.21 | 0 |  | S1 | no |
-| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -31,445 | -6,862 | -1,756 | -1,789 | -5,659 | -6,620 | -9,527 | -1,706 | 37,485 / 133,887 | 203,578 / 109,442 | 33,034 / -29,902 | 3,247 | 0.03 | 1.00 / 0.37 |  |  | S1 | no |
+| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -31,445 | -6,862 | -1,756 | -1,789 | -5,659 | -6,620 | -9,527 | -1,706 | 37,485 / 133,887 | 203,578 / 109,442 | 33,034 / -29,902 | 3,247 | 0.03 | 1.00 / 0.37 | 0 |  | S1 | no |
 | CROSS[254d02cb61ad+9cdf7469ba89] | {"book": "P7", "loss": "254d02cb61ad", "profit": "9cdf7469ba | -30,791 | -13,682 | -8,608 | -2,939 | -7,029 | -6,418 | -8,098 | -986 | 45,473 / 133,887 | 152,285 / 109,442 | -16,581 / -29,902 | 2,981 | 0.03 | 1.00 / 0.41 | 0 |  | S1 | no |
 | CROSS[e7c0088d2553+2c9eb23c8f1d] | {"book": "U7", "loss": "e7c0088d2553", "profit": "2c9eb23c8f | -35,154 | -32,544 | -26,288 | -15,368 | -18,497 | -15,180 | -12,938 | -2,932 | 238,845 / 133,887 | 459,309 / 109,442 | -279,528 / -29,902 | 4,163 | 1.00 | 1.00 / 1.00 | 0 |  | S1 | no |
 | CROSS[63c14ae16fd1+2dd5c144c1a7] | {"book": "U7", "loss": "63c14ae16fd1", "profit": "2dd5c144c1 | -49,137 | -24,819 | -20,957 | -19,572 | -19,200 | -12,679 | -12,481 | -3,144 | 249,975 / 133,887 | 466,013 / 109,442 | -396,572 / -29,902 | 4,420 | 1.00 | 1.00 / 0.15 | 0 |  | S1 | no |
@@ -133,18 +133,18 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | H_thick | {"P": [1.0, 3.0, 1.3, 1.0, 0.1, 1.0], "arm": 0.1, "feat": "t | -72 | -3,687 | -1,015 | 219 | -180 | -472 | -744 | -1,059 | 14,461 / 44,425 | 49,060 / 50,321 | -28,224 / -68,299 | 2,923 | 0.05 | 1.00 / 0.32 | -17,582 | -2,874 | S1 | CANDIDATE-DD [rec-FAIL wf-FAIL plc-ok exposure] |
 | H_thick | {"P": [1.0, 1.0, 1.5, 1.0, 0.1, 1.0], "arm": 0.1, "feat": "a | 1,398 | -2,880 | -238 | 299 | -93 | -327 | -728 | -1,113 | 19,927 / 44,425 | 52,736 / 50,321 | -22,948 / -68,299 | 2,978 | 0.28 | 1.00 / 0.95 | -17,582 | -2,338 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL exposure] |
-| I_decay | {"P": [9.0, 30.0, 5.0, 1.0, 0.3], "X0": 30, "Xmin": 5, "arm" | -331 | -282 | 464 | 383 | -85 | 424 | -673 | -847 | 21,793 / 44,425 | 52,180 / 50,321 | -24,876 / -68,299 | 2,622 | 0.05 | 1.00 / 0.99 |  | 3,872 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| H_pcthour | {"P": [3.0, 0.3, 120.0, 510.0], "pct": 0.3, "window": "ldn"} | -1,088 | -1,922 | -1,095 | 673 | 300 | -751 | 293 | -126 | 21,934 / 44,425 | 22,514 / 50,321 | -32,139 / -68,299 | 1,594 | 0.03 | 1.00 / 1.00 |  | -328 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
-| H_pcthour | {"P": [3.0, 0.3, 0.0, 1440.0], "pct": 0.3, "window": "all"} | -1,202 | -1,038 | -1,271 | 43 | 100 | 1,254 | -290 | -420 | 22,817 / 44,425 | 30,733 / 50,321 | -30,035 / -68,299 | 2,927 | 0.09 | 1.00 / 0.98 |  | 2 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| I_decay | {"P": [9.0, 30.0, 5.0, 1.0, 0.3], "X0": 30, "Xmin": 5, "arm" | -331 | -282 | 464 | 383 | -85 | 424 | -673 | -847 | 21,793 / 44,425 | 52,180 / 50,321 | -24,876 / -68,299 | 2,622 | 0.05 | 1.00 / 0.99 | 9,392 | 3,872 | S1 | CANDIDATE-DD [rec-ok wf-ok plc-ok exposure] |
+| H_pcthour | {"P": [3.0, 0.3, 120.0, 510.0], "pct": 0.3, "window": "ldn"} | -1,088 | -1,922 | -1,095 | 673 | 300 | -751 | 293 | -126 | 21,934 / 44,425 | 22,514 / 50,321 | -32,139 / -68,299 | 1,594 | 0.03 | 1.00 / 1.00 | 13,060 | -328 | S1 | CANDIDATE-DD [rec-ok wf-ok plc-ok] |
+| H_pcthour | {"P": [3.0, 0.3, 0.0, 1440.0], "pct": 0.3, "window": "all"} | -1,202 | -1,038 | -1,271 | 43 | 100 | 1,254 | -290 | -420 | 22,817 / 44,425 | 30,733 / 50,321 | -30,035 / -68,299 | 2,927 | 0.09 | 1.00 / 0.98 | 13,060 | 2 | S1 | CANDIDATE-DD [rec-ok wf-ok plc-ok exposure] |
 
 ### M7 both
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CROSS[966d0f8e1e9e+9cdf7469ba89] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba | -1,143 | -1,185 | -352 | -345 | -560 | -318 | -689 | 5 | 34,844 / 44,425 | 66,902 / 50,321 | -47,794 / -68,299 | 2,491 | 0.52 | 1.00 / 0.77 | -6,040 |  | S1 | no |
 | CROSS[e0fb6a9abc57+8e7c342b397d] | {"book": "M7", "loss": "e0fb6a9abc57", "profit": "8e7c342b39 | -1,942 | -1,859 | -53 | -492 | -1,022 | -2,671 | -1,375 | -933 | 35,034 / 44,425 | 84,737 / 50,321 | -45,579 / -68,299 | 3,296 | 0.42 | 1.00 / 0.59 | -3,016 |  | S1 | no |
-| CROSS[e7c0088d2553+a66d38e1ce5f] | {"book": "A7", "loss": "e7c0088d2553", "profit": "a66d38e1ce | 132 | 295 | 361 | -1,039 | -957 | 1,592 | -926 | -613 | 38,416 / 44,425 | 82,068 / 50,321 | -54,836 / -68,299 | 2,496 | 0.82 | 1.00 / 1.00 |  |  | S1 | no |
+| CROSS[e7c0088d2553+a66d38e1ce5f] | {"book": "A7", "loss": "e7c0088d2553", "profit": "a66d38e1ce | 132 | 295 | 361 | -1,039 | -957 | 1,592 | -926 | -613 | 38,416 / 44,425 | 82,068 / 50,321 | -54,836 / -68,299 | 2,496 | 0.82 | 1.00 / 1.00 | -22,915 |  | S1 | no |
 | CROSS[cd4451a22198+87cd2ee2381f] | {"book": "K7", "loss": "cd4451a22198", "profit": "87cd2ee238 | -934 | -2,709 | -1,182 | -203 | -743 | -841 | -846 | -504 | 41,584 / 44,425 | 74,700 / 50,321 | -50,616 / -68,299 | 2,500 | 0.91 | 1.00 / 1.00 | -15,298 |  | S1 | no |
-| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -1,166 | -1,333 | -604 | -665 | -810 | -595 | -1,083 | -239 | 42,687 / 44,425 | 92,894 / 50,321 | -57,919 / -68,299 | 2,761 | 0.91 | 1.00 / 0.90 |  |  | S1 | no |
+| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -1,166 | -1,333 | -604 | -665 | -810 | -595 | -1,083 | -239 | 42,687 / 44,425 | 92,894 / 50,321 | -57,919 / -68,299 | 2,761 | 0.91 | 1.00 / 0.90 | -19,395 |  | S1 | no |
 
 ## U7
 | ref | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M | maxDD PRE | worst-20 L6M |
@@ -164,17 +164,17 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 ### U7 profit
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| H_pcthour | {"P": [3.0, 0.3, 120.0, 510.0], "pct": 0.3, "window": "ldn"} | 4,858 | 1,091 | 1,509 | 153 | 464 | 1,037 | -1,294 | -919 | 8,700 / 21,561 | 42,735 / 42,226 | 3,983 / 120 | 769 | 0.03 | 1.00 / 0.96 |  | 7,540 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| I_trail | {"P": [4.0, 25.0, 0.7, 0.0], "X": 25, "arm": 0.7} | 4,988 | -480 | 1,950 | 1,154 | 899 | -376 | -243 | -608 | 10,126 / 21,561 | 33,544 / 42,226 | 37,905 / 120 | 387 | 0.06 | 1.00 / 1.00 |  | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
-| I_chand | {"P": [4.0, 1.0, 0.7, 2.0], "arm": 0.7, "atr": "atr5m", "k": | 5,809 | -604 | 1,967 | 1,036 | 891 | -1,280 | -318 | -463 | 10,146 / 21,561 | 35,510 / 42,226 | 38,825 / 120 | 527 | 0.05 | 1.00 / 1.00 |  | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
+| H_pcthour | {"P": [3.0, 0.3, 120.0, 510.0], "pct": 0.3, "window": "ldn"} | 4,858 | 1,091 | 1,509 | 153 | 464 | 1,037 | -1,294 | -919 | 8,700 / 21,561 | 42,735 / 42,226 | 3,983 / 120 | 769 | 0.03 | 1.00 / 0.96 | -50,249 | 7,540 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| I_trail | {"P": [4.0, 25.0, 0.7, 0.0], "X": 25, "arm": 0.7} | 4,988 | -480 | 1,950 | 1,154 | 899 | -376 | -243 | -608 | 10,126 / 21,561 | 33,544 / 42,226 | 37,905 / 120 | 387 | 0.06 | 1.00 / 1.00 | -46,005 | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
+| I_chand | {"P": [4.0, 1.0, 0.7, 2.0], "arm": 0.7, "atr": "atr5m", "k": | 5,809 | -604 | 1,967 | 1,036 | 891 | -1,280 | -318 | -463 | 10,146 / 21,561 | 35,510 / 42,226 | 38,825 / 120 | 527 | 0.05 | 1.00 / 1.00 | -52,984 | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | X2_target_trail | {"arm": 0.7, "m": 2, "x": 20} | 6,557 | -148 | 1,992 | 551 | 525 | -1,411 | -704 | -575 | 10,319 / 21,561 | 38,921 / 42,226 | 20,588 / 120 | 849 | 0.03 | 1.00 / 1.00 | -76,727 |  | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| I_lock | {"P": [8.0, 0.7, 20.0], "X": 20, "arm": 0.7} | 5,370 | 74 | 2,240 | 1,598 | 1,119 | -197 | -248 | -532 | 11,031 / 21,561 | 35,820 / 42,226 | 45,962 / 120 | 342 | 0.40 | 1.00 / 1.00 |  | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL] |
+| I_lock | {"P": [8.0, 0.7, 20.0], "X": 20, "arm": 0.7} | 5,370 | 74 | 2,240 | 1,598 | 1,119 | -197 | -248 | -532 | 11,031 / 21,561 | 35,820 / 42,226 | 45,962 / 120 | 342 | 0.40 | 1.00 / 1.00 | -59,271 | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL] |
 
 ### U7 both
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CROSS[e7c0088d2553+2c9eb23c8f1d] | {"book": "U7", "loss": "e7c0088d2553", "profit": "2c9eb23c8f | 1,141 | -1,906 | -1,782 | -1,284 | -1,749 | -1,232 | -2,182 | -1,370 | 12,841 / 21,561 | 78,568 / 42,226 | -22,711 / 120 | 1,150 | 0.12 | 1.00 / 0.96 | 0 |  | S1 | no |
-| CROSS[892462577f14+2874a7dfe132] | {"book": "U7", "loss": "892462577f14", "profit": "2874a7dfe1 | 1,635 | 435 | 120 | -2,768 | -3,405 | -3,459 | -3,641 | -3,017 | 13,469 / 21,561 | 178,279 / 42,226 | -41,770 / 120 | 1,140 | 1.00 | 1.00 / 0.90 |  |  | S1 | no |
+| CROSS[892462577f14+2874a7dfe132] | {"book": "U7", "loss": "892462577f14", "profit": "2874a7dfe1 | 1,635 | 435 | 120 | -2,768 | -3,405 | -3,459 | -3,641 | -3,017 | 13,469 / 21,561 | 178,279 / 42,226 | -41,770 / 120 | 1,140 | 1.00 | 1.00 / 0.90 | 0 |  | S1 | no |
 | CROSS[63c14ae16fd1+2dd5c144c1a7] | {"book": "U7", "loss": "63c14ae16fd1", "profit": "2dd5c144c1 | 5,250 | 1,759 | 1,036 | -1,086 | -1,175 | -1,969 | -3,078 | -963 | 16,992 / 21,561 | 150,582 / 42,226 | -23,365 / 120 | 1,282 | 1.00 | 1.00 / 1.00 | 0 |  | S1 | no |
 | CROSS[254d02cb61ad+9cdf7469ba89] | {"book": "P7", "loss": "254d02cb61ad", "profit": "9cdf7469ba | 739 | -2,641 | -1,533 | -1,539 | -790 | -1,196 | -952 | 453 | 18,512 / 21,561 | 51,925 / 42,226 | -36,857 / 120 | 805 | 0.48 | 1.00 / 1.00 | -6,381 |  | S1 | no |
 | CROSS[e3877cab15a7+55aab8e87e08] | {"book": "O7", "loss": "e3877cab15a7", "profit": "55aab8e87e | 1,935 | -4,174 | -2,504 | -4,352 | -2,926 | -1,692 | -2,200 | -1,059 | 25,307 / 21,561 | 63,301 / 42,226 | -48,700 / 120 | 1,076 | 1.00 | 1.00 / 1.00 | 0 |  | S1 | no |
@@ -197,8 +197,8 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 ### A7 profit
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| H_pcthour | {"P": [3.0, 0.4, 1080.0, 120.0], "pct": 0.4, "window": "asia | 788 | -536 | -75 | 427 | -45 | -810 | -289 | 43 | 3,268 / 12,461 | 6,089 / 6,089 | -1,783 / -17,069 | 680 | 0.02 | 1.00 / 0.55 |  | 665 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| H_pcthour | {"P": [3.0, 0.4, 0.0, 1440.0], "pct": 0.4, "window": "all"} | 788 | -806 | -30 | 374 | 106 | -546 | -183 | 12 | 3,268 / 12,461 | 4,461 / 6,089 | -2,128 / -17,069 | 892 | 0.02 | 1.00 / 0.56 |  | 665 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| H_pcthour | {"P": [3.0, 0.4, 1080.0, 120.0], "pct": 0.4, "window": "asia | 788 | -536 | -75 | 427 | -45 | -810 | -289 | 43 | 3,268 / 12,461 | 6,089 / 6,089 | -1,783 / -17,069 | 680 | 0.02 | 1.00 / 0.55 | -21,380 | 665 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| H_pcthour | {"P": [3.0, 0.4, 0.0, 1440.0], "pct": 0.4, "window": "all"} | 788 | -806 | -30 | 374 | 106 | -546 | -183 | 12 | 3,268 / 12,461 | 4,461 / 6,089 | -2,128 / -17,069 | 892 | 0.02 | 1.00 / 0.56 | -21,380 | 665 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | H_gated | {"P": [1.0, 5.0, 20.0, 1.0, 0.25, 1.0], "arm": 0.25, "feat": | 422 | -731 | 229 | 328 | 62 | -681 | -246 | -116 | 3,723 / 12,461 | 4,568 / 6,089 | 1,459 / -17,069 | 905 | 0.02 | 1.00 / 0.61 | -61,186 | 161 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | H_gated | {"P": [1.0, 4.0, 20.0, 1.0, 0.25, 1.0], "arm": 0.25, "feat": | 574 | -1,177 | 165 | 587 | 22 | -968 | -148 | -176 | 3,733 / 12,461 | 4,455 / 6,089 | 6,397 / -17,069 | 754 | 0.02 | 1.00 / 0.63 | -61,186 | -1,592 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | H_gated | {"P": [1.0, 4.0, 10.0, 1.0, 0.25, 1.0], "arm": 0.25, "feat": | 519 | -582 | 173 | 272 | 35 | -694 | -431 | 16 | 3,750 / 12,461 | 5,327 / 6,089 | 1,017 / -17,069 | 939 | 0.02 | 1.00 / 0.59 | -61,186 | 339 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
@@ -209,7 +209,7 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | CROSS[e7c0088d2553+2c9eb23c8f1d] | {"book": "U7", "loss": "e7c0088d2553", "profit": "2c9eb23c8f | -907 | 293 | 148 | 521 | 204 | 21 | -232 | 80 | 4,415 / 12,461 | 4,374 / 6,089 | -7,646 / -17,069 | 732 | 0.03 | 1.00 / 0.60 | 4,462 |  | S1 | CANDIDATE-DD [rec-ok wf-ok plc-ok exposure] |
 | CROSS[d37df9ed0314+8e7c342b397d] | {"book": "M7", "loss": "d37df9ed0314", "profit": "8e7c342b39 | -79 | 1,126 | 656 | 252 | -23 | 302 | -59 | 30 | 6,506 / 12,461 | 5,710 / 6,089 | -13,365 / -17,069 | 453 | 0.06 | 1.00 / 0.81 | -24,127 |  | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | CROSS[254d02cb61ad+9cdf7469ba89] | {"book": "P7", "loss": "254d02cb61ad", "profit": "9cdf7469ba | -1,696 | -428 | -114 | -293 | -266 | 279 | -236 | -3 | 10,135 / 12,461 | 5,229 / 6,089 | -17,946 / -17,069 | 591 | 0.76 | 1.00 / 0.86 | -10,659 |  | S1 | no |
-| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -2,354 | -221 | 173 | -345 | -255 | -897 | -492 | 180 | 11,977 / 12,461 | 13,504 / 6,089 | -14,811 / -17,069 | 786 | 1.00 | 1.00 / 0.95 |  |  | S1 | no |
+| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -2,354 | -221 | 173 | -345 | -255 | -897 | -492 | 180 | 11,977 / 12,461 | 13,504 / 6,089 | -14,811 / -17,069 | 786 | 1.00 | 1.00 / 0.95 | -2,137 |  | S1 | no |
 | CROSS[e0fb6a9abc57+8e7c342b397d] | {"book": "M7", "loss": "e0fb6a9abc57", "profit": "8e7c342b39 | -2,756 | -591 | -261 | -763 | -484 | 610 | -713 | 51 | 13,144 / 12,461 | 10,762 / 6,089 | -24,434 / -17,069 | 977 | 0.79 | 1.00 / 0.81 | -806 |  | S1 | no |
 
 ## H7
@@ -230,10 +230,10 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 ### H7 profit
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| H_mom | {"P": [1.0, 9.0, 0.0, 1.0, 0.25, -1.0], "arm": 0.25, "feat": | 1,418 | 639 | 1,607 | 137 | 535 | -570 | -975 | -504 | 5,961 / 15,477 | 10,161 / 20,667 | 2,693 / -32,750 | 847 | 0.02 | 1.00 / 0.54 | -78,529 | 2,524 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| H_mom | {"P": [1.0, 9.0, 0.0, 1.0, 0.25, -1.0], "arm": 0.25, "feat": | 1,418 | 639 | 1,607 | 137 | 535 | -570 | -975 | -504 | 5,961 / 15,477 | 10,161 / 20,667 | 2,693 / -32,750 | 847 | 0.02 | 1.00 / 0.54 | -87,704 | 2,524 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | H_gated | {"P": [1.0, 7.0, 0.2, 1.0, 0.4, 1.0], "arm": 0.4, "feat": "i | 1,263 | 524 | 1,252 | 301 | 589 | -348 | -634 | -225 | 5,992 / 15,477 | 10,534 / 20,667 | -533 / -32,750 | 791 | 0.02 | 1.00 / 0.55 | -42,458 | 2,741 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| H_mom | {"P": [1.0, 9.0, 1.0, 1.0, 0.25, -1.0], "arm": 0.25, "feat": | 1,236 | 414 | 1,458 | 116 | 583 | -357 | -675 | -477 | 6,016 / 15,477 | 8,137 / 20,667 | 2,354 / -32,750 | 853 | 0.02 | 1.00 / 0.53 | -78,529 | 2,369 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| H_mom | {"P": [1.0, 9.0, 2.0, 1.0, 0.25, -1.0], "arm": 0.25, "feat": | 1,250 | 397 | 1,417 | 74 | 579 | -383 | -654 | -523 | 6,241 / 15,477 | 8,042 / 20,667 | 399 / -32,750 | 856 | 0.02 | 1.00 / 0.52 | -78,529 | 2,361 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| H_mom | {"P": [1.0, 9.0, 1.0, 1.0, 0.25, -1.0], "arm": 0.25, "feat": | 1,236 | 414 | 1,458 | 116 | 583 | -357 | -675 | -477 | 6,016 / 15,477 | 8,137 / 20,667 | 2,354 / -32,750 | 853 | 0.02 | 1.00 / 0.53 | -87,704 | 2,369 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| H_mom | {"P": [1.0, 9.0, 2.0, 1.0, 0.25, -1.0], "arm": 0.25, "feat": | 1,250 | 397 | 1,417 | 74 | 579 | -383 | -654 | -523 | 6,241 / 15,477 | 8,042 / 20,667 | 399 / -32,750 | 856 | 0.02 | 1.00 / 0.52 | -87,704 | 2,361 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | H_gated | {"P": [1.0, 5.0, 10.0, 1.0, 0.4, 1.0], "arm": 0.4, "feat": " | 1,765 | 715 | 1,285 | 194 | 631 | 13 | -800 | -86 | 6,390 / 15,477 | 14,345 / 20,667 | -1,620 / -32,750 | 796 | 0.02 | 1.00 / 0.55 | -42,458 | 2,659 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 
 ### H7 both
@@ -242,7 +242,7 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | CROSS[e3e1c7125354+e1e6e2a7d150] | {"book": "H7", "loss": "e3e1c7125354", "profit": "e1e6e2a7d1 | 833 | 290 | 1,243 | -409 | -277 | 1,160 | -1,332 | -1,073 | 7,541 / 15,477 | 25,504 / 20,667 | -12,559 / -32,750 | 872 | 0.36 | 1.00 / 0.38 | 1,213 |  | S1 | no |
 | CROSS[966d0f8e1e9e+9cdf7469ba89] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba | -646 | -413 | 580 | -177 | 257 | 1,924 | 67 | 426 | 9,891 / 15,477 | 19,959 / 20,667 | -16,547 / -32,750 | 603 | 0.24 | 1.00 / 0.69 | -12,327 |  | S1 | no |
 | CROSS[e3877cab15a7+55aab8e87e08] | {"book": "O7", "loss": "e3877cab15a7", "profit": "55aab8e87e | 228 | 288 | 948 | -303 | -12 | 356 | -1,122 | -682 | 9,991 / 15,477 | 23,638 / 20,667 | -10,538 / -32,750 | 869 | 0.94 | 1.00 / 0.70 | -32,897 |  | S1 | no |
-| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -781 | -490 | 509 | -397 | 37 | 1,510 | -295 | 346 | 10,769 / 15,477 | 19,947 / 20,667 | -19,684 / -32,750 | 714 | 0.55 | 1.00 / 0.69 |  |  | S1 | no |
+| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | -781 | -490 | 509 | -397 | 37 | 1,510 | -295 | 346 | 10,769 / 15,477 | 19,947 / 20,667 | -19,684 / -32,750 | 714 | 0.55 | 1.00 / 0.69 | -42,015 |  | S1 | no |
 | CROSS[afa4804db573+e1e6e2a7d150] | {"book": "H7", "loss": "afa4804db573", "profit": "e1e6e2a7d1 | -536 | -708 | 210 | -1,609 | -990 | 728 | -1,369 | -784 | 15,597 / 15,477 | 22,528 / 20,667 | -36,028 / -32,750 | 914 | 0.79 | 1.00 / 0.56 | -3,845 |  | S1 | no |
 
 ## O7
@@ -263,20 +263,20 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 ### O7 profit
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| I_step | {"P": [7.0, 10.0, 1.0], "lag": 1, "step": 10} | 1,130 | 289 | 203 | 215 | -335 | -170 | -498 | 29 | 4,420 / 7,469 | 4,995 / 5,102 | -891 / -9,532 | 406 | 0.09 | 1.00 / 0.96 |  | 1,167 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| I_step | {"P": [7.0, 10.0, 1.0], "lag": 1, "step": 10} | 1,130 | 289 | 203 | 215 | -335 | -170 | -498 | 29 | 4,420 / 7,469 | 4,995 / 5,102 | -891 / -9,532 | 406 | 0.09 | 1.00 / 0.96 | -11,633 | 1,167 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | H_thick | {"P": [1.0, 3.0, 1.3, 1.0, 0.25, 1.0], "arm": 0.25, "feat":  | 728 | 219 | 291 | 262 | -148 | -191 | -507 | 85 | 4,450 / 7,469 | 5,025 / 5,102 | -1,790 / -9,532 | 299 | 0.03 | 1.00 / 0.97 | -25,014 | 636 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | K3_structtarget | {"buf": 0, "level": "prior_day", "lim": 150} | 1,208 | 377 | 464 | 27 | -183 | 96 | -54 | -31 | 5,487 / 7,469 | 3,920 / 5,102 | -2,571 / -9,532 | 151 | 0.08 | 1.00 / 1.00 | -6,496 |  | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | K3_structtarget | {"buf": 0, "level": "prior_day", "lim": 90} | 1,208 | 377 | 464 | 27 | -183 | 96 | -54 | -31 | 5,487 / 7,469 | 3,920 / 5,102 | -2,571 / -9,532 | 151 | 0.02 | 1.00 / 1.00 | -6,496 |  | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
-| I_step | {"P": [7.0, 5.0, 3.0], "lag": 3, "step": 5} | 1,239 | 267 | 301 | 272 | -245 | -191 | -501 | 145 | 5,672 / 7,469 | 5,284 / 5,102 | -266 / -9,532 | 361 | 0.31 | 1.00 / 1.00 |  | 807 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL exposure] |
+| I_step | {"P": [7.0, 5.0, 3.0], "lag": 3, "step": 5} | 1,239 | 267 | 301 | 272 | -245 | -191 | -501 | 145 | 5,672 / 7,469 | 5,284 / 5,102 | -266 / -9,532 | 361 | 0.31 | 1.00 / 1.00 | -11,633 | 807 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL exposure] |
 
 ### O7 both
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CROSS[966d0f8e1e9e+9cdf7469ba89] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba | 366 | 286 | 61 | 68 | -344 | 194 | -603 | 112 | 2,425 / 7,469 | 8,075 / 5,102 | -3,682 / -9,532 | 430 | 0.06 | 1.00 / 0.35 | -11,998 |  | S1 | LEAD [rec-ok wf-FAIL plc-ok exposure] |
-| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | 366 | 244 | 33 | 14 | -384 | 194 | -605 | 70 | 2,425 / 7,469 | 8,927 / 5,102 | -4,194 / -9,532 | 453 | 0.03 | 1.00 / 0.28 |  |  | S1 | LEAD [rec-ok wf-FAIL plc-ok exposure] |
+| CROSS[966d0f8e1e9e+01618af6c2a8] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "01618af6c2 | 366 | 244 | 33 | 14 | -384 | 194 | -605 | 70 | 2,425 / 7,469 | 8,927 / 5,102 | -4,194 / -9,532 | 453 | 0.03 | 1.00 / 0.28 | -5,079 |  | S1 | LEAD [rec-ok wf-FAIL plc-ok exposure] |
 | CROSS[e0fb6a9abc57+8e7c342b397d] | {"book": "M7", "loss": "e0fb6a9abc57", "profit": "8e7c342b39 | 581 | -16 | 199 | 110 | -194 | 219 | -590 | 263 | 2,941 / 7,469 | 9,135 / 5,102 | -2,554 / -9,532 | 431 | 0.06 | 1.00 / 0.44 | -14,495 |  | S1 | LEAD [rec-ok wf-FAIL plc-ok exposure] |
 | CROSS[cd4451a22198+87cd2ee2381f] | {"book": "K7", "loss": "cd4451a22198", "profit": "87cd2ee238 | 510 | -64 | 176 | 37 | -273 | 182 | -582 | 187 | 3,560 / 7,469 | 9,106 / 5,102 | -4,548 / -9,532 | 395 | 0.06 | 1.00 / 0.48 | -7,025 |  | S1 | LEAD [rec-ok wf-FAIL plc-ok exposure] |
-| CROSS[892462577f14+2874a7dfe132] | {"book": "U7", "loss": "892462577f14", "profit": "2874a7dfe1 | 142 | 494 | 117 | 37 | -298 | -104 | -671 | 86 | 3,639 / 7,469 | 14,653 / 5,102 | -4,672 / -9,532 | 436 | 0.15 | 1.00 / 0.49 |  |  | S1 | LEAD [rec-ok wf-FAIL plc-FAIL exposure] |
+| CROSS[892462577f14+2874a7dfe132] | {"book": "U7", "loss": "892462577f14", "profit": "2874a7dfe1 | 142 | 494 | 117 | 37 | -298 | -104 | -671 | 86 | 3,639 / 7,469 | 14,653 / 5,102 | -4,672 / -9,532 | 436 | 0.15 | 1.00 / 0.49 | -7,574 |  | S1 | LEAD [rec-ok wf-FAIL plc-FAIL exposure] |
 
 ## X3
 | ref | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M | maxDD PRE | worst-20 L6M |
@@ -300,7 +300,7 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | K1_target | {"m": 1.1} | 120 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 184 / 664 | 0 / 0 | -184 / -664 | 2 | 1.00 | 1.00 / - |  |  | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL] |
 | PJKL_perbook_best | {"picks": {"H7": ["K1_target", "{\"m\": 0.5}"], "K7": ["K1_t | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
 | PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
-| PHI_perbook_s2able | {"rules": {"A7": {"cell_id": "a66d38e1ce5f", "pct": 0.4, "te | 0 | 0 | 0 | 0 | 0 | 0 |  |  | 0 / 0 |  /  | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
+| PHI_perbook_s2able | {"rules": {"A7": {"cell_id": "a66d38e1ce5f", "pct": 0.4, "te | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID,PRE-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
 
 ### X3 both
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
@@ -365,7 +365,7 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | K1_target | {"m": 1.1} | 60 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 1 | 1.00 | 1.00 / - |  |  | S1 | no |
 | PJKL_perbook_best | {"picks": {"H7": ["K1_target", "{\"m\": 0.5}"], "K7": ["K1_t | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
 | PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
-| PHI_perbook_s2able | {"rules": {"A7": {"cell_id": "a66d38e1ce5f", "pct": 0.4, "te | 0 | 0 | 0 | 0 | 0 | 0 |  |  | 0 / 0 |  /  | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
+| PHI_perbook_s2able | {"rules": {"A7": {"cell_id": "a66d38e1ce5f", "pct": 0.4, "te | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID,PRE-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
 | J3_statescale | {"a": 0.4, "f": "ahead_rel_slow", "rest": "hold", "s": 3, "t | -17 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 18 / 0 | 0 / 0 | -18 / 0 | 1 | 1.00 | 1.00 / - |  |  | S1 | no |
 
 ### X5 both
@@ -416,8 +416,8 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 ### A7 survivors (1072 cells)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| H_pcthour | {"P": [3.0, 0.4, 1080.0, 120.0], "pct": 0.4, "window": "asia | 788 | -536 | -75 | 427 | -45 | -810 | -289 | 43 | 3,268 / 12,461 | 6,089 / 6,089 | -1,783 / -17,069 | 680 | 0.02 | 1.00 / 0.55 |  | 665 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| H_pcthour | {"P": [3.0, 0.4, 0.0, 1440.0], "pct": 0.4, "window": "all"} | 788 | -806 | -30 | 374 | 106 | -546 | -183 | 12 | 3,268 / 12,461 | 4,461 / 6,089 | -2,128 / -17,069 | 892 | 0.02 | 1.00 / 0.56 |  | 665 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| H_pcthour | {"P": [3.0, 0.4, 1080.0, 120.0], "pct": 0.4, "window": "asia | 788 | -536 | -75 | 427 | -45 | -810 | -289 | 43 | 3,268 / 12,461 | 6,089 / 6,089 | -1,783 / -17,069 | 680 | 0.02 | 1.00 / 0.55 | -21,380 | 665 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| H_pcthour | {"P": [3.0, 0.4, 0.0, 1440.0], "pct": 0.4, "window": "all"} | 788 | -806 | -30 | 374 | 106 | -546 | -183 | 12 | 3,268 / 12,461 | 4,461 / 6,089 | -2,128 / -17,069 | 892 | 0.02 | 1.00 / 0.56 | -21,380 | 665 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | H_gated | {"P": [1.0, 5.0, 20.0, 1.0, 0.25, 1.0], "arm": 0.25, "feat": | 422 | -731 | 229 | 328 | 62 | -681 | -246 | -116 | 3,723 / 12,461 | 4,568 / 6,089 | 1,459 / -17,069 | 905 | 0.02 | 1.00 / 0.61 | -61,186 | 161 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 
 ### H7 survivors (456 cells)
@@ -445,30 +445,30 @@ Cells scored: 17046; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 ## Walk-forward of the picking procedure (all cells of a book/side; purged monthly, 7-day embargo, trailing 26 weeks, key = maxDD, worst-20, Ulcer, -mean)
 | book   | side   |   ncells |   total |   dd_never |   dd_wf |   share_pos |   npick |   months | wf_ok   |
 |:-------|:-------|---------:|--------:|-----------:|--------:|------------:|--------:|---------:|:--------|
-| ALL    | loss   |    13392 | -970761 |     153255 |  193549 |           0 |      35 |       35 | False   |
-| ALL    | profit |     1055 | -644276 |     153255 |  200591 |           0 |      35 |       35 | False   |
-| ALL    | both   |       13 |       0 |     153255 |  153255 |           0 |       0 |       35 | True    |
-| K7     | loss   |    12100 | -190946 |      42831 |   37873 |           0 |      35 |       35 | False   |
-| K7     | profit |      969 | -119026 |      42831 |   49331 |           0 |      35 |       35 | False   |
-| K7     | both   |       13 |  -97760 |      42831 |   42831 |           0 |       7 |       35 | False   |
-| P7     | loss   |    12199 | -457318 |     144370 |  143827 |           0 |      35 |       35 | False   |
-| P7     | profit |     1031 | -436138 |     144370 |  161195 |           0 |      35 |       35 | False   |
-| P7     | both   |       13 |       0 |     144370 |  144370 |           0 |       0 |       35 | True    |
-| M7     | loss   |    11832 |  -35965 |      68802 |   42852 |           1 |      35 |       35 | False   |
-| M7     | profit |      921 |  -21327 |      68802 |   40280 |           0 |      35 |       35 | False   |
-| M7     | both   |       13 |  -16238 |      68802 |   67488 |           0 |       7 |       35 | False   |
-| U7     | loss   |    11150 |  -49721 |      42226 |   33074 |           1 |      35 |       35 | False   |
-| U7     | profit |      976 | -173957 |      42226 |   57483 |           0 |      35 |       35 | False   |
-| U7     | both   |       13 |  -37600 |      42226 |   42226 |           0 |       3 |       35 | False   |
-| A7     | loss   |    11029 |  -32911 |      14181 |   11878 |           0 |      35 |       35 | False   |
-| A7     | profit |      580 |  -49969 |      14181 |   19480 |           0 |      35 |       35 | False   |
-| A7     | both   |       13 |  -16568 |      14181 |   14181 |           0 |      23 |       35 | False   |
-| H7     | loss   |    11013 |  -93264 |      57397 |   34472 |           0 |      35 |       35 | False   |
-| H7     | profit |      929 |  -60835 |      57397 |   51334 |           0 |      35 |       35 | False   |
-| H7     | both   |       13 |  -77850 |      57397 |   72445 |           0 |      18 |       35 | False   |
-| O7     | loss   |     6272 |  -44366 |       7469 |    9479 |           0 |      35 |       35 | False   |
-| O7     | profit |      454 |  -19808 |       7469 |    7469 |           0 |      35 |       35 | False   |
-| O7     | both   |       13 |  -19861 |       7469 |    7469 |           0 |      27 |       35 | False   |
+| ALL    | loss   |    13394 | -970761 |     153255 |  193549 |           0 |      35 |       35 | False   |
+| ALL    | profit |     1447 | -603467 |     153255 |  258770 |           0 |      35 |       35 | False   |
+| ALL    | both   |       19 |       0 |     153255 |  153255 |           0 |       0 |       35 | True    |
+| K7     | loss   |    12102 | -190946 |      42831 |   37873 |           0 |      35 |       35 | False   |
+| K7     | profit |     1359 | -179806 |      42831 |   51451 |           0 |      35 |       35 | False   |
+| K7     | both   |       19 |  -97760 |      42831 |   42831 |           0 |       7 |       35 | False   |
+| P7     | loss   |    12201 | -457318 |     144370 |  143827 |           0 |      35 |       35 | False   |
+| P7     | profit |     1421 | -426034 |     144370 |  161195 |           0 |      35 |       35 | False   |
+| P7     | both   |       19 |       0 |     144370 |  144370 |           0 |       0 |       35 | True    |
+| M7     | loss   |    11834 |  -35965 |      68802 |   42852 |           1 |      35 |       35 | False   |
+| M7     | profit |     1298 |   11872 |      68802 |   53347 |           1 |      35 |       35 | True    |
+| M7     | both   |       19 |  -29877 |      68802 |   67488 |           0 |       9 |       35 | False   |
+| U7     | loss   |    11152 |  -49721 |      42226 |   33074 |           1 |      35 |       35 | False   |
+| U7     | profit |     1358 | -169244 |      42226 |   70265 |           0 |      35 |       35 | False   |
+| U7     | both   |       19 |  -73603 |      42226 |   42226 |           0 |       4 |       35 | False   |
+| A7     | loss   |    11031 |  -32911 |      14181 |   11878 |           0 |      35 |       35 | False   |
+| A7     | profit |      961 |  -29916 |      14181 |   17412 |           0 |      35 |       35 | False   |
+| A7     | both   |       19 |  -18098 |      14181 |   14181 |           0 |      23 |       35 | False   |
+| H7     | loss   |    11015 |  -93264 |      57397 |   34472 |           0 |      35 |       35 | False   |
+| H7     | profit |     1315 |  -50314 |      57397 |   51334 |           0 |      35 |       35 | False   |
+| H7     | both   |       19 |  -92933 |      57397 |   87529 |           0 |      19 |       35 | False   |
+| O7     | loss   |     6274 |  -44366 |       7469 |    9479 |           0 |      35 |       35 | False   |
+| O7     | profit |      775 |  -29926 |       7469 |    7469 |           0 |      35 |       35 | False   |
+| O7     | both   |       19 |  -19861 |       7469 |    7469 |           0 |      27 |       35 | False   |
 
 ## Stack view and one rule for all books (first-order, IN-SAMPLE best-of-thousands picks per book: read them against the walk-forward table above, which is negative for almost every book/side)
 Per-book picks stacked: L6M maxDD 32,994 vs never-cut 121,381; PRE maxDD 141,395 vs 152,455; L6M dmean 3,878. Best single cell on all books: X1_scale_target ({"m": 0.75, "p": 0.7, "rest": "trail", "x": 10}), L6M maxDD 33,846, dmean 574.
@@ -487,16 +487,16 @@ Per-book picks stacked: L6M maxDD 32,994 vs never-cut 121,381; PRE maxDD 141,395
 - M7 profit: the technique that lowers drawdown most is H_thick ({"P": [1.0, 3.0, 1.3, 1.0, 0.1, 1.0], "arm": 0.1, "feat": "tot_rel_slow", "secs": 1, "thr": 1.3}); L6M maxDD 14,461 vs 44,425 never-cut (-29,964); it earns 1,214 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
 - M7 both: the technique that lowers drawdown most is CROSS[966d0f8e1e9e+9cdf7469ba89] ({"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba89"}); L6M maxDD 34,844 vs 44,425 never-cut (-9,582); it earns 267 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the placebo p is 0.52, the family p over all cells is 1.00, the purged walk-forward is not positive, PRE drawdown is worse than without it. Label no.
 - U7 loss: the technique that lowers drawdown most is LBC_ice_ag_w10 ({"arm": 0.15, "arm_kind": "pct", "dir": 1, "feat": "ice_ag_w10", "mode": "cur", "months": "202304-202611(44)", "pers": 5, "thr": 4.0}); L6M maxDD 6,061 vs 21,561 never-cut (-15,500); it earns 482 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
-- U7 profit: the technique that lowers drawdown most is H_pcthour ({"P": [3.0, 0.3, 120.0, 510.0], "pct": 0.3, "window": "ldn"}); L6M maxDD 8,700 vs 21,561 never-cut (-12,861); it costs 104 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, no walk-forward has been run. Label CANDIDATE-DD.
+- U7 profit: the technique that lowers drawdown most is H_pcthour ({"P": [3.0, 0.3, 120.0, 510.0], "pct": 0.3, "window": "ldn"}); L6M maxDD 8,700 vs 21,561 never-cut (-12,861); it costs 104 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
 - U7 both: the technique that lowers drawdown most is CROSS[e7c0088d2553+2c9eb23c8f1d] ({"book": "U7", "loss": "e7c0088d2553", "profit": "2c9eb23c8f1d"}); L6M maxDD 12,841 vs 21,561 never-cut (-8,720); it costs 1,411 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the placebo p is 0.12, the family p over all cells is 1.00, PRE drawdown is worse than without it. Label no.
 - A7 loss: the technique that lowers drawdown most is D3_pullback ({"X": 20, "pb": 50}); L6M maxDD 4,760 vs 12,461 never-cut (-7,701); it earns 606 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
-- A7 profit: the technique that lowers drawdown most is H_pcthour ({"P": [3.0, 0.4, 1080.0, 120.0], "pct": 0.4, "window": "asia"}); L6M maxDD 3,268 vs 12,461 never-cut (-9,192); it earns 349 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, no walk-forward has been run. Label CANDIDATE-DD.
+- A7 profit: the technique that lowers drawdown most is H_pcthour ({"P": [3.0, 0.4, 1080.0, 120.0], "pct": 0.4, "window": "asia"}); L6M maxDD 3,268 vs 12,461 never-cut (-9,192); it earns 349 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
 - A7 both: the technique that lowers drawdown most is CROSS[e7c0088d2553+2c9eb23c8f1d] ({"book": "U7", "loss": "e7c0088d2553", "profit": "2c9eb23c8f1d"}); L6M maxDD 4,415 vs 12,461 never-cut (-8,046); it earns 301 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00. Label CANDIDATE-DD.
 - H7 loss: the technique that lowers drawdown most is LBC_sweep8_w10 ({"arm": 10.0, "arm_kind": "abs", "dir": 1, "feat": "sweep8_w10", "mode": "latch", "months": "202304-202611(44)", "pers": 3, "thr": 4.0}); L6M maxDD 4,988 vs 15,477 never-cut (-10,489); it earns 11 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
 - H7 profit: the technique that lowers drawdown most is H_mom ({"P": [1.0, 9.0, 0.0, 1.0, 0.25, -1.0], "arm": 0.25, "feat": "vel30<=", "secs": 1, "thr": 0}); L6M maxDD 5,961 vs 15,477 never-cut (-9,516); it costs 1,133 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
 - H7 both: the technique that lowers drawdown most is CROSS[e3e1c7125354+e1e6e2a7d150] ({"book": "H7", "loss": "e3e1c7125354", "profit": "e1e6e2a7d150"}); L6M maxDD 7,541 vs 15,477 never-cut (-7,936); it costs 1,679 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the placebo p is 0.36, the family p over all cells is 1.00, PRE drawdown is worse than without it. Label no.
 - O7 loss: the technique that lowers drawdown most is LBC_dtot8_rel_w15 ({"arm": 0.15, "arm_kind": "pct", "dir": -1, "feat": "dtot8_rel_w15", "mode": "latch", "months": "202304-202611(44)", "pers": 1, "thr": -0.044443998485803604}); L6M maxDD 2,725 vs 7,469 never-cut (-4,743); it earns 273 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00. Label CANDIDATE-DD.
-- O7 profit: the technique that lowers drawdown most is I_step ({"P": [7.0, 10.0, 1.0], "lag": 1, "step": 10}); L6M maxDD 4,420 vs 7,469 never-cut (-3,048); it earns 164 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, no walk-forward has been run. Label CANDIDATE-DD.
+- O7 profit: the technique that lowers drawdown most is I_step ({"P": [7.0, 10.0, 1.0], "lag": 1, "step": 10}); L6M maxDD 4,420 vs 7,469 never-cut (-3,048); it earns 164 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
 - O7 both: the technique that lowers drawdown most is CROSS[966d0f8e1e9e+9cdf7469ba89] ({"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba89"}); L6M maxDD 2,425 vs 7,469 never-cut (-5,043); it earns 17 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive, PRE drawdown is worse than without it. Label LEAD.
 - X3 loss: the technique that lowers drawdown most is A_pulled ({"W": 30, "arm": "fixed", "armval": 10, "blk": "A", "cancels": "net", "maeW": 0, "med": "e001", "mult": 120, "newmae": 0, "pers": 2, "pulled": "own"}); L6M maxDD 0 vs 664 never-cut (-664); it earns 0 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the placebo p is 0.49, the family p over all cells is 1.00, no walk-forward has been run. Label CANDIDATE-DD.
 - X3 profit: the technique that lowers drawdown most is K2_atrtarget ({"c": 6}); L6M maxDD 0 vs 664 never-cut (-664); it earns 0 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the placebo p is 1.00, the family p over all cells is 1.00, no walk-forward has been run. Label CANDIDATE-DD.

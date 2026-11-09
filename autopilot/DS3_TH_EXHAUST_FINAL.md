@@ -1,4 +1,4 @@
-# DS3_TH_EXHAUST_FINAL - two-sided per-book exit policy, drawdown first   **[DRAFT SKELETON - compiled 2026-11-09 10:50Z]**
+# DS3_TH_EXHAUST_FINAL - two-sided per-book exit policy, drawdown first   **[DRAFT SKELETON - compiled 2026-11-09 11:10Z]**
 Label: state base, universe U2 (U2 = full S1b tick-close never-cut, 43 months + live-week entries); entry match to the live week below .85: PRE-PROOF. USD per ISO week at live lots net of 4.84/contract; windows as of 2026-11-09.
 
 ## Box-confirmation items for v1.5 fidelity
@@ -71,7 +71,7 @@ D7 v1.5 policy grammar used here: `loss <book> <session|*> <conds> cut` and `pro
 | P7 | loss | D3_pullback@after30 | {"X": 20, "ctx": "after30", "pb": 40} | 38,077 / 133,887 | 57,033 / 109,442 | 3,938 | -5,504 | -3,790 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | P7 | profit | H_gated | {"P": [1.0, 2.0, 2.0, 1.0, 0.7, 1.0], "arm": 0.7, "feat": "tot_rel_fas | 71,485 / 133,887 | 107,157 / 109,442 | 655 | -2,499 | -1,317 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | M7 | loss | F3_stop_extreme | {"X": 10, "k": 0} | 13,450 / 44,425 | 45,329 / 50,321 | 737 | -812 | -1,985 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| M7 | profit | I_decay | {"P": [9.0, 30.0, 5.0, 1.0, 0.3], "X0": 30, "Xmin": 5, "arm": 0.3, "ra | 21,793 / 44,425 | 52,180 / 50,321 | 383 | -673 | 3,872 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| M7 | profit | I_decay | {"P": [9.0, 30.0, 5.0, 1.0, 0.3], "X0": 30, "Xmin": 5, "arm": 0.3, "ra | 21,793 / 44,425 | 52,180 / 50,321 | 383 | -673 | 3,872 | S1 | CANDIDATE-DD [rec-ok wf-ok plc-ok exposure] |
 | U7 | loss | LBC_ice_ag_w10 | {"arm": 0.15, "arm_kind": "pct", "dir": 1, "feat": "ice_ag_w10", "mode | 6,061 / 21,561 | 35,033 / 42,226 | 809 | -624 | 2,829 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | U7 | profit | H_pcthour | {"P": [3.0, 0.3, 120.0, 510.0], "pct": 0.3, "window": "ldn"} | 8,700 / 21,561 | 42,735 / 42,226 | 153 | -1,294 | 7,540 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | A7 | loss | D3_pullback | {"X": 20, "pb": 50} | 4,760 / 12,461 | 5,445 / 6,089 | 511 | -146 | -1,314 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
@@ -80,6 +80,29 @@ D7 v1.5 policy grammar used here: `loss <book> <session|*> <conds> cut` and `pro
 | H7 | profit | H_mom | {"P": [1.0, 9.0, 0.0, 1.0, 0.25, -1.0], "arm": 0.25, "feat": "vel30<=" | 5,961 / 15,477 | 10,161 / 20,667 | 137 | -975 | 2,524 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | O7 | loss | LBC_dtot8_rel_w15 | {"arm": 0.15, "arm_kind": "pct", "dir": -1, "feat": "dtot8_rel_w15", " | 2,725 / 7,469 | 5,195 / 5,102 | 325 | -395 | 940 | S1 | CANDIDATE-DD [rec-ok wf-ok plc-ok exposure] |
 | O7 | profit | I_step | {"P": [7.0, 10.0, 1.0], "lag": 1, "step": 10} | 4,420 / 7,469 | 4,995 / 5,102 | 215 | -498 | 1,167 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+
+## Profit side: Stage 1 best vs Stage 2 engine-confirmed rule (per book)
+| book | Stage 1 best profit (technique, L6M maxDD w/wo, L6M mean) | Stage 2 engine rule (set) | S2 L6M maxDD w/wo | S2 L6M mean | S2 PRE maxDD w/wo | S2 PRE mean | months run | verdict |
+|---|---|---|---|---|---|---|---|---|
+| K7 | J3_statescale, 8,893 / 20,902, 666 | I_bookarm X=20 arm=0.25 feat=ice_ag_w30 secs=30 thr=3 (phi_pb) | 23,159 / 35,969 | -1,689 | 19,141 / 22,188 | -719 | 33 | drawdown for profit (mean < 0) |
+| P7 | H_gated, 71,485 / 133,887, 655 | H_pcthour pct=0.6 window=am (phi_pb) | 191,674 / 203,542 | 236 | 120,861 / 122,169 | 701 | 33 | engine-confirmed (dd lower, mean >= 0) |
+| M7 | I_decay, 21,793 / 44,425, 383 | H_tip pct=0 secs=600 (phi_pb) | 46,661 / 48,019 | -141 | 66,091 / 44,205 | -616 | 33 | drawdown for profit (mean < 0) |
+| U7 | H_pcthour, 8,700 / 21,561, 153 | H_pcthour pct=0.3 window=ldn (phi_pb) | 14,388 / 17,816 | -562 | 41,634 / 39,542 | -651 | 33 | drawdown for profit (mean < 0) |
+| A7 | H_pcthour, 3,268 / 12,461, 427 | H_pcthour pct=0.4 window=asia (phi_pb) | 6,023 / 9,361 | -188 | 15,274 / 8,625 | -455 | 33 | drawdown for profit (mean < 0) |
+| H7 | H_mom, 5,961 / 15,477, 137 | H_mom arm=0.25 feat=vel30<= secs=1 thr=0 (phi_pb) | 11,897 / 16,242 | -670 | 13,803 / 18,436 | -457 | 33 | drawdown for profit (mean < 0) |
+| O7 | I_step, 4,420 / 7,469, 215 | I_step lag=1 step=10 (phi_pb) | 4,210 / 6,958 | 251 | 4,720 / 4,797 | -494 | 33 | engine-confirmed (dd lower, mean >= 0) |
+
+Stage 2 overturns or fails to confirm the Stage 1 profit pick on 5 of 7 books (Stage 1 picks that cannot run through the engine count as not confirmed). Every book keeps a profit line below, labelled PRE-PROOF; only engine-confirmed rules are un-commented candidates, none is ENTER.
+
+```
+#! # profit K7 * [I_bookarm X=20 arm=0.25 feat=ice_ag_w30 secs=30 thr=3] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 23,159/35,969, L6M mean -1,689
+# profit P7 * [H_pcthour pct=0.6 window=am] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 191,674/203,542, L6M mean 236
+#! # profit M7 * [H_tip pct=0 secs=600] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 46,661/48,019, L6M mean -141
+#! # profit U7 * [H_pcthour pct=0.3 window=ldn] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 14,388/17,816, L6M mean -562
+#! # profit A7 * [H_pcthour pct=0.4 window=asia] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 6,023/9,361, L6M mean -188
+#! # profit H7 * [H_mom arm=0.25 feat=vel30<= secs=1 thr=0] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 11,897/16,242, L6M mean -670
+# profit O7 * [I_step lag=1 step=10] (engine phi_pb; PRE-PROOF)   # NEEDS: exit action beyond take-at-pct; Stage 2 L6M maxDD 4,210/6,958, L6M mean 251
+```
 
 ## Policy lines in the v1.5 grammar (survivors live-readable; non-survivors and untranslatable cells commented with `#!`/`#`)
 ```
@@ -163,7 +186,7 @@ Recents method L1M..L6M then HOLD/MID/PRE/X'; placebos v2 (causal, leak-tested),
 | B/C (EX-LBC) | EXH_BC.md | in | 09:46Z |
 | D/E/F (EX-LDEF) | EXH_DEF.md | in | 10:25Z |
 | G (EX-LG) | EXH_G.md | in | 09:21Z |
-| H/I (EX-PHI) | EXH_HI.md | in | 10:19Z |
+| H/I (EX-PHI) | EXH_HI.md | in | 11:09Z |
 | J/K/L (EX-PJKL) | EXH_JKL.md | in | 09:57Z |
 
 ## wf-ok flags: what they mean

@@ -264,3 +264,4 @@
 2026-11-09T09:45Z EX-CORE: wf-ok O7 note verified (technique-level, WF dd = never dd; global O7 loss WF -44,366), make_final.py gets family-section gate (FINAL=1 refuses with blockers), M7 cps_rel Stage 2 requested from EX-LBC
 2026-11-09T09:58Z EX-PJKL done: autopilot/EXH_JKL.md (565 U2 cells, Stage 2 pjkl_PB + pjkl_UNI 43 months)
 2026-11-09 ENTRY-MATCH S1b references DONE (NOCUT, HOLD, S1b-UNIF, S1b-LIVE; 43 months each; PLAIN6060 skipped per lead): manifest autopilot/TH_STATE_BASE_S1B.md; S1b-COMB vs never-cut L1M +9184 L2M +8476 L3M +6532 L6M +7290 HOLD +6246 MID +8032 PRE +1599 X' +772
+2026-11-09T11:02Z EX-CORE: FINAL compiled (FINAL=1), base_b like-for-like references, Stage 2 evidence block; rerun at 13:00Z

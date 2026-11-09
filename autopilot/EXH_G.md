@@ -39,7 +39,7 @@ Plain sentences (loss side).
 - Survivor rule (CANDIDATE-DD and rec-ok and plc-ok and not FAILS-LIVE-WEEK): no G cell survives.
 Grammar fields v1.6 would need to express any G cell: none recommended (no survivor). Conclusion for the order: the richer feature set and the 8-leaf learned shapes found nothing beyond regime/clock out of sample; pairs and conditioners reduce drawdown only by exiting 35-60% of trades early.
 # EXH_G - family G (combinations + learned shapes), EX-LG
-generated 11-09 09:21 UTC; entry match PRE-PROOF; null_ver 2; family p not yet attached (label computed with p_family=1, WF=False, so ENTER is impossible here; CANDIDATE-DD/LEAD are the live labels).
+generated 11-09 11:22 UTC; entry match PRE-PROOF; null_ver 2; family p not yet attached (label computed with p_family=1, WF=False, so ENTER is impossible here; CANDIDATE-DD/LEAD are the live labels).
 
 Cells registered by EX-LG: 107338 rows (1394 cells).
 ### Stack (all books), top by L6M maxDD reduction, nfire>=20
