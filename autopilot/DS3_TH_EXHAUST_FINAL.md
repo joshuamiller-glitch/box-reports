@@ -1,4 +1,4 @@
-# DS3_TH_EXHAUST_FINAL - two-sided per-book exit policy, drawdown first   **[DRAFT SKELETON - compiled 2026-11-09 09:13Z]**
+# DS3_TH_EXHAUST_FINAL - two-sided per-book exit policy, drawdown first   **[DRAFT SKELETON - compiled 2026-11-09 09:38Z]**
 Label: state base, universe U2 (U2 = full S1b tick-close never-cut, 43 months + live-week entries); entry match to the live week below .85: PRE-PROOF. USD per ISO week at live lots net of 4.84/contract; windows as of 2026-11-09.
 
 ## Box-confirmation items for v1.5 fidelity
@@ -92,3 +92,16 @@ See autopilot/EXH_STAGE2.md (per completed set and per book: engine vs never-cut
 
 ## Method and nulls
 Recents method L1M..L6M then HOLD/MID/PRE/X'; placebos v2 (causal, leak-tested), Westfall-Young family null (common permutations), purged monthly walk-forward, held-out live week; see autopilot/EXH_API.md sections 9-13 and DS3_TH_EXHAUST.md for the ranked tables. Family pages: EXH_*.md.
+
+## Family sections (state at compile)
+| family | file | status | last written |
+|---|---|---|---|
+| A (EX-LA) | EXH_A.md | in | 09:38Z |
+| B/C (EX-LBC) | EXH_BC.md | in | 07:44Z |
+| D/E/F (EX-LDEF) | EXH_DEF.md | in | 09:31Z |
+| G (EX-LG) | EXH_G.md | in | 09:21Z |
+| H/I (EX-PHI) | EXH_HI.md | in | 09:13Z |
+| J/K/L (EX-PJKL) | EXH_JKL.md | in | 07:32Z |
+
+## wf-ok flags: what they mean
+The wf flag on a candidate row is the TECHNIQUE-level walk-forward (picking among the cells of that one technique on trailing 26 weeks, applied to the next month; wf-ok = total delta >= 0 and WF maxDD within +5% of never-cut). It is a weak test: e.g. O7 loss LBC_dtot8_rel_w15 (13 cells) is wf-ok with +1,917 USD over 35 test months, but its WF maxDD equals the never-cut maxDD (7,469), i.e. the picks did not lower the drawdown, and the global picking procedure for O7 loss (6,272 cells) is wf-FAIL (-44,366). Read wf-ok as not-negative, not as out-of-sample drawdown evidence. No cell is ENTER.

@@ -261,3 +261,5 @@
 2026-11-09T08:25Z EX-CORE: ldef_uniform_u2 started; EXH_STAGE2.md (stage2_headline.py) built for the 3 complete sets, auto-refreshed by s2_chain
 2026-11-09 EX-LDEF: ldef_perbook_u2 Stage 2 scored (43 months); FINAL section written in EXH_DEF.md; ldef_uniform_u2 at 25/43 months (started by lead)
 2026-11-09T09:20Z EX-CORE: WY audit on U2 (0 cells <= .01; 213 <= .10, 208 P7 exposure-shrink), DS3_TH_EXHAUST_FINAL skeleton (make_final.py), S2 rows get p_plc NaN (ldef_report fix), spot-check + throughput block in EXH_STAGE2.md
+2026-11-09T09:45Z EX-CORE: wf-ok O7 note verified (technique-level, WF dd = never dd; global O7 loss WF -44,366), make_final.py gets family-section gate (FINAL=1 refuses with blockers), M7 cps_rel Stage 2 requested from EX-LBC
+2026-11-09T09:58Z EX-PJKL done: autopilot/EXH_JKL.md (565 U2 cells, Stage 2 pjkl_PB + pjkl_UNI 43 months)

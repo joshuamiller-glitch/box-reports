@@ -1,4 +1,4 @@
-# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 09:21Z)
+# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 09:46Z)
 **Universe U2 = full S1b tick-close never-cut (43 months) + the u5 live-week entries; this page shows U2 cells only.** The S1b-COMB live reference row is unchanged (S1b).
 
 **Reading guide.** ENTER = passes every gate (recents, tolerant older windows, drawdown not worse in L6M and PRE, delta above MDE, placebo p <= .10, family p <= .10, walk-forward ok, not FAILS-LIVE-WEEK). CANDIDATE-DD = lowers L6M maxDD at equal or better L6M mean and PRE maxDD within +5% (even inside MDE); LEAD = L6M mean and drawdown not worse with >60% of L1M..L6M windows positive. FAILS-LIVE-WEEK = the held-out live-week delta is below -1 MDE-week of that scope (never ENTER). Sub-flags in the label cell: rec-ok/rec-FAIL (no L1M..L6M delta below -1 MDE-week), wf-ok/wf-FAIL, plc-ok/plc-FAIL (placebo p <= .10), exposure (fires on more than 50% of trades = exposure shrink). **ENTER cells on this page: 0.**
@@ -299,7 +299,7 @@ Cells scored: 17042; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 | K2_atrtarget | {"c": 6} | 393 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 664 | 0 / 0 | 0 / -664 | 2 | 1.00 | 1.00 / - |  |  | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL] |
 | K1_target | {"m": 1.1} | 120 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 184 / 664 | 0 / 0 | -184 / -664 | 2 | 1.00 | 1.00 / - |  |  | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL] |
 | PJKL_perbook_best | {"picks": {"H7": ["K1_target", "{\"m\": 0.5}"], "K7": ["K1_t | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
-| PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 |  |  | 0 / 0 |  /  | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
+| PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID,PRE-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
 | J1_scale | {"b": 0, "p": 0.9, "rest": "be"} | -60 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 904 / 664 | 0 / 0 | -904 / -664 | 2 | 0.83 | 1.00 / - |  |  | S1 | no |
 
 ### X3 both
@@ -364,7 +364,7 @@ Cells scored: 17042; families: ['A', 'A_pulled', 'B_book', 'B_book/C_flow', 'C_f
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | K1_target | {"m": 1.1} | 60 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 1 | 1.00 | 1.00 / - |  |  | S1 | no |
 | PJKL_perbook_best | {"picks": {"H7": ["K1_target", "{\"m\": 0.5}"], "K7": ["K1_t | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2 | no |
-| PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 |  |  | 0 / 0 |  /  | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
+| PJKL_uniform_best | {"cell": "{\"m\": 0.75, \"p\": 0.7, \"rest\": \"trail\", \"x | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  | 0 / 0 | 0 / 0 | 0 / 0 |  | nan | 1.00 / - |  |  | S2[L1M,L2M,L3M,L6M,HOLD,MID,PRE-covered] | S2-partial (older windows pending) [rec-ok wf-FAIL plc-FAIL] |
 | J3_statescale | {"a": 0.4, "f": "ahead_rel_slow", "rest": "hold", "s": 3, "t | -17 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 18 / 0 | 0 / 0 | -18 / 0 | 1 | 1.00 | 1.00 / - |  |  | S1 | no |
 | J3_statescale | {"a": 0.6, "f": "ahead_rel_slow", "rest": "hold", "s": 3, "t | -17 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 18 / 0 | 0 / 0 | -18 / 0 | 1 | 1.00 | 1.00 / - |  |  | S1 | no |
 

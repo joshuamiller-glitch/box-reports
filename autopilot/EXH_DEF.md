@@ -1,6 +1,6 @@
 # EXH_DEF - EX-LDEF: loss families D (price-path), E (conditioners), F (actions)
 
-Generated 2026-11-09 09:16 UTC. Cells scored by EX-LDEF: 1251 (registered in the ledger, agent EX-LDEF). Entry match label: PRE-PROOF. Columns: technique | params | delta vs never-cut USD/week L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | family p | WF | live week delta vs actual | label. Gate: PRE maxDD with the rule <= 1.05 x without. Causality: noise-after-k0 (k0=900 s) test of every D kernel and the F2 half-cut on 2026-08..10 trades: 0 changed fire decisions out of ~30k checked (ldef_causal.py); F3/F4 stop-level actions read the path after the trigger by construction (resting stop). Live-week column: ATR-based rules (D10, D11) cannot be evaluated on the live week (no entry ATR in the live universe), shown as 0/blank. Placebo/family p are the ledger values (null_ver in ledger; v1 cells are re-scored by EX-CORE rescore). Selection key: drawdown first (L6M maxDD, worst-20, Ulcer, Calmar), nfire>=20, L6M mean delta >= 0.
+Generated 2026-11-09 09:41 UTC. Cells scored by EX-LDEF: 1251 (registered in the ledger, agent EX-LDEF). Entry match label: PRE-PROOF. Columns: technique | params | delta vs never-cut USD/week L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with/without | maxDD PRE with/without | worst-20 L6M with/without | nfire | placebo p | family p | WF | live week delta vs actual | label. Gate: PRE maxDD with the rule <= 1.05 x without. Causality: noise-after-k0 (k0=900 s) test of every D kernel and the F2 half-cut on 2026-08..10 trades: 0 changed fire decisions out of ~30k checked (ldef_causal.py); F3/F4 stop-level actions read the path after the trigger by construction (resting stop). Live-week column: ATR-based rules (D10, D11) cannot be evaluated on the live week (no entry ATR in the live universe), shown as 0/blank. Placebo/family p are the ledger values (null_ver in ledger; v1 cells are re-scored by EX-CORE rescore). Selection key: drawdown first (L6M maxDD, worst-20, Ulcer, Calmar), nfire>=20, L6M mean delta >= 0.
 
 ## ALL (pooled sessions), top 8 by the drawdown-first key
 | technique | params | delta L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo | nfire | placebo p | family p | WF | live week | worst of L1M-L3M / recent gate | label |
@@ -435,17 +435,17 @@ LDEF_perbook (43 of 43 months run; months not run are filled from never-cut)
 | H7 | D1_mom {"X": 15, "pts": 12, "w": 30} | -585 (1523) | 11961 / 16242 | -457 | 24640 / 18436 | -17621 / -13688 | 8823 / 15477 | +697 (n=2) | 43 |
 | O7 | D3_pullback {"X": 20, "pb": 30} | +155 (465) | 6088 / 6958 | -28 | 3761 / 4797 | -6479 / -11023 | 6093 / 7469 | -11 (n=1) | 43 |
 
-LDEF_uniform (27 of 43 months run; months not run are filled from never-cut)
+LDEF_uniform (33 of 43 months run; months not run are filled from never-cut)
 | book | cell | Stage 2 L6M mean delta (MDE) | L6M maxDD w/wo | PRE mean delta | PRE maxDD w/wo | L6M worst-20 w/wo | Stage 1 L6M maxDD w/wo | Stage 1 live-week delta | months S2 |
 |---|---|---|---|---|---|---|---|---|---|
-| ALL | all books | +1565 (7075) | 133346 / 191045 | +nan | nan / nan | 37736 / -63404 | n/a | n/a | 27 |
-| K7 | D3_pullback X15 pb50 | +679 (3904) | 12875 / 35969 | +nan | nan / nan | 28296 / -20829 | 45518 / 20902 | +1758 (n=22) | 27 |
-| P7 | D3_pullback X15 pb50 | +846 (3344) | 179872 / 203542 | +nan | nan / nan | -131075 / -181468 | 70880 / 133887 | -24336 (n=18) | 27 |
-| M7 | D3_pullback X15 pb50 | -458 (2159) | 43917 / 48019 | +nan | nan / nan | -68854 / -73536 | 41801 / 44425 | +3427 (n=7) | 27 |
-| U7 | D3_pullback X15 pb50 | +94 (1031) | 13577 / 17816 | +nan | nan / nan | 18955 / 17704 | 10892 / 21561 | +346 (n=1) | 27 |
-| A7 | D3_pullback X15 pb50 | +32 (925) | 5537 / 9361 | +nan | nan / nan | -2330 / -7321 | 4785 / 12461 | -1018 (n=8) | 27 |
-| H7 | D3_pullback X15 pb50 | -79 (787) | 11345 / 16242 | +nan | nan / nan | -8440 / -13688 | 24260 / 15477 | +660 (n=2) | 27 |
-| O7 | D3_pullback X15 pb50 | +255 (284) | 7875 / 6958 | +nan | nan / nan | -7504 / -11023 | 8341 / 7469 | +563 (n=2) | 27 |
+| ALL | all books | +1565 (7075) | 133346 / 191045 | -3321 | 123037 / 130824 | 37736 / -63404 | n/a | n/a | 33 |
+| K7 | D3_pullback X15 pb50 | +679 (3904) | 12875 / 35969 | -1894 | 36525 / 22188 | 28296 / -20829 | 45518 / 20902 | +1758 (n=22) | 33 |
+| P7 | D3_pullback X15 pb50 | +846 (3344) | 179872 / 203542 | -179 | 126002 / 122169 | -131075 / -181468 | 70880 / 133887 | -24336 (n=18) | 33 |
+| M7 | D3_pullback X15 pb50 | -458 (2159) | 43917 / 48019 | -183 | 30453 / 44205 | -68854 / -73536 | 41801 / 44425 | +3427 (n=7) | 33 |
+| U7 | D3_pullback X15 pb50 | +94 (1031) | 13577 / 17816 | -382 | 40623 / 39542 | 18955 / 17704 | 10892 / 21561 | +346 (n=1) | 33 |
+| A7 | D3_pullback X15 pb50 | +32 (925) | 5537 / 9361 | -240 | 5415 / 8625 | -2330 / -7321 | 4785 / 12461 | -1018 (n=8) | 33 |
+| H7 | D3_pullback X15 pb50 | -79 (787) | 11345 / 16242 | -536 | 16436 / 18436 | -8440 / -13688 | 24260 / 15477 | +660 (n=2) | 33 |
+| O7 | D3_pullback X15 pb50 | +255 (284) | 7875 / 6958 | +62 | 4616 / 4797 | -7504 / -11023 | 8341 / 7469 | +563 (n=2) | 33 |
 
 ## FINAL section: per-book loss sentences (D price-path, E conditioners, F actions)
 K7 loss: the technique that lowers drawdown most is D4_eff {"X": 30, "thr": 0.3, "w": 120}; Stage 1 L6M maxDD 16066 vs 20902 without and L6M +768 USD/week (MDE 2186), PRE -1212; in the engine cascade L6M maxDD is 27455 vs 35969 and mean +642/week, PRE maxDD 25051 vs 22188; the rule lowers L6M drawdown in the engine at equal-or-better mean but RAISES PRE drawdown beyond the gate (the mean gain is inside the MDE; drawdown-candidate only); held-out live week +1189 USD vs actual; placebo p 0.82.
