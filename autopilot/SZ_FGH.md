@@ -1,8 +1,12 @@
-# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-09 14:35Z
+> ALL NUMBERS BELOW ARE FIRST-ORDER SCREEN ONLY (pnl per planned lot x lots) unless marked EXACT. User addendum 1: first-order is not a verdict. EXACT runs (SZ-CORE queue, memory-bound): FGH_P744 0 months done; FGH_P644 0 months done; FGH_P444 0 months done; FGH_GREEDY 0 months done; FGH_BESTH 0 months done; FGH_BESTG 0 months done; FGH_DOW2 0 months done; FGH_TREND 0 months done; FGH_L2K2 0 months done.
 
-Label: PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER on S1b-COMB (pnl per lot x lots; mean unreliable, drawdown ranking usable), no PASS claims, entry match < .85. Prereg SZ_FGH_PREREG.md (sha in DECISIONS.md). 6796 cells x 3 bases (COMB live, NOCUT, UNIF controls). Ledger /mnt/l2/l2vast/_th_sz/ledger_FGH*.parquet; lots ratios of top cells M_FGH.npz.
+TESTING-DEFECT CHECK (addendum 1c) across my three live-chain bases (COMB, NOCUT, UNIF): of 6788 common cells, L6M maxDD identical to the dollar: 0; PRE: 0. No defect found among my own scores; the first-order scorer cannot see exit/re-entry/lock changes, so the verdict needs EXACT runs.
 
-Reading: cut = maxDD cut vs Q1-A at equal lots (objective a, + = shallower); eq-mean cut = objective b (every cell scaled by one global factor so L6M mean = Q1-A, size-down-everything cannot win); SEL = mean of eq-mean cut on L6M/PRE/X'; w20/Ulcer = cell/ref on L6M at equal lots (<1 better); $/wk per $1k = L6M mean change per $1k of L6M maxDD removed (+ = the cell also gains mean); p own = lot ratio permuted within book x session (100 draws), "degenerate" = whole book x session group moved, placebo cannot vary; p fam = max-stat over all cells (about 1 for everything with 6796 cells: labelled, not used to kill). All numbers are sz_core.Z.score (SZ-CORE convention: rolling windows as of 2026-11-09, maxDD/worst-20/Ulcer on ALL weeks of the window, carrying week dropped from means only); my own scorer (complete weeks only) agrees on L6M/PRE maxDD cuts exactly and differs in the equal-mean columns (L6M mean window), see section 8. Base data end 2026-10-30. Placebo p own = fgh SEL statistic (permutation within book x session, 100 draws); finalists also get sz_core placebo p (L6M/PRE cut).
+# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-09 16:36Z
+
+Label: PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER on S1b-COMB (pnl per lot x lots; mean unreliable, drawdown ranking usable), no PASS claims, entry match < .85. Prereg SZ_FGH_PREREG.md (sha in DECISIONS.md). 6786 cells x 3 bases (COMB live, NOCUT, UNIF controls). Ledger /mnt/l2/l2vast/_th_sz/ledger_FGH*.parquet; lots ratios of top cells M_FGH.npz.
+
+Reading: cut = maxDD cut vs Q1-A at equal lots (objective a, + = shallower); eq-mean cut = objective b (every cell scaled by one global factor so L6M mean = Q1-A, size-down-everything cannot win); SEL = mean of eq-mean cut on L6M/PRE/X'; w20/Ulcer = cell/ref on L6M at equal lots (<1 better); $/wk per $1k = L6M mean change per $1k of L6M maxDD removed (+ = the cell also gains mean); p own = lot ratio permuted within book x session (100 draws), "degenerate" = whole book x session group moved, placebo cannot vary; p fam = max-stat over all cells (about 1 for everything with 6786 cells: labelled, not used to kill). All numbers are sz_core.Z.score (SZ-CORE convention: rolling windows as of 2026-11-09, maxDD/worst-20/Ulcer on ALL weeks of the window, carrying week dropped from means only); my own scorer (complete weeks only) agrees on L6M/PRE maxDD cuts exactly and differs in the equal-mean columns (L6M mean window), see section 8. Base data end 2026-10-30. Placebo p own = fgh SEL statistic (permutation within book x session, 100 draws); finalists also get sz_core placebo p (L6M/PRE cut).
 Unavailable and proxied: DS7 St1Dist/signal-state arrays are not owned at trade level (proxies: dip size, EMA/TWAP slope, TWAP deviation, zone distances, EX-FEAT entry-second L2 features, 83% matched); L2 confirmation count is a proxy; no volume in nq1m_state (TWAP not VWAP); ES/RTY 1-s data ends 2026-10-16 (later trades neutral).
 Calendar: FOMC/CPI/NFP dates entered from public schedules (memory); CHECKED against the owned NQ 1-min bars: median 08:30 ET one-minute range on listed CPI days 12.6x the pre-open norm (norm 2.1x), NFP 9.8x, FOMC 14:00 10.0x; 83% of CPI and 97% of FOMC days sit above the 90th percentile of all days; two NFP entries were wrong (2024-10 should be 10-04; 2025-10 had no release) and were fixed; the 08:30 spikes not on my list are PPI/ECI days (not used). Opex = 3rd Friday, roll_wk = days 7-14 of Mar/Jun/Sep/Dec, half-days = day after Thanksgiving, Dec 24, Jul 3 weekdays. Not checked against an official file.
 
@@ -119,7 +123,7 @@ Calendar: FOMC/CPI/NFP dates entered from public schedules (memory); CHECKED aga
 | slot48 | {"m": 0, "slot": 22} | P7 | 7/-2/5/13 | +1559/-838 | 12/11/18 | 1.21 | 0.96 | +281 | 0.01 | 0.09 / 1.00 | 11,7 / 7,3 | -6000 | True |
 | slot48 | {"m": 0, "slot": 15} | ALL | 2/-21/9/2 | +2463/+189 | 11/17/11 | 1.11 | 1.09 | +1483 | 0.02 | 0.07 / 1.00 | -15,12 / -0,12 | +5425 | True |
 
-## 4G. G Signal quality excluding lot tables (3548 down-only cells, 966 gate, 401 gate + control-bases ok)
+## 4G. G Signal quality excluding lot tables (3542 down-only cells, 966 gate, 401 gate + control-bases ok)
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | qgate | {"feat": "dB", "m": 0, "q": 0.2, "tail": "high"} | P7 | 28/39/33/0 | +3484/-4163 | 37/42/13 | 1.17 | 0.61 | +158 | 0.06 | 0.07 / 1.00 | 48,6 / 37,29 | -55565 | True |
@@ -150,7 +154,7 @@ Calendar: FOMC/CPI/NFP dates entered from public schedules (memory); CHECKED aga
 ## 4K. K P7 excluding lot tables (0 down-only cells, 0 gate, 0 gate + control-bases ok)
 none
 
-## 4U. UP-allowed G/H variants (x1.5 on the flagged trades; labelled UP, never promoted; first-order overstates up-size mean by 10-18k/wk), top 8 of 1350
+## 4U. UP-allowed G/H variants (x1.5 on the flagged trades; labelled UP, never promoted; first-order overstates up-size mean by 10-18k/wk), top 8 of 1346
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | qgate_UP | {"feat": "f_ice_ag_w30", "m": 1.5, "q": 0.5, "tail": "low"} | ALL | -18/-52/-3/0 | +11156/+4664 | 22/32/34 | 1.84 | 1.14 | -758 | 0.41 | 0.02 / 1.00 | -9,-29 / -1,-9 | +0 | True |
@@ -163,7 +167,7 @@ none
 | qgate_UP | {"feat": "f_tot_rel_base", "m": 1.5, "q": 0.5, "tail": "high"} | ALL | -15/-29/-3/0 | +8812/+4160 | 16/25/27 | 1.81 | 1.08 | -722 | 0.36 | 0.01 / 1.00 | 5,-10 / -8,-0 | +0 | True |
 
 ## 5. Calmar frontier vs Q1-A (down-only, first-order; mean is the weak side)
-Cells that dominate Q1-A on BOTH L6M mean and maxDD (d mean L6M > 0, cut L6M > 0, cut PRE > 0, cut X' > -3): 464 (of 5047 down-only). Top 10 by SEL:
+Cells that dominate Q1-A on BOTH L6M mean and maxDD (d mean L6M > 0, cut L6M > 0, cut PRE > 0, cut X' > -3): 464 (of 5041 down-only). Top 10 by SEL:
 | technique | params | scope | cut L6M/HOLD/PRE/X' | d mean L6M/PRE | eq-mean cut L6M/PRE/X' | w20 L6M vs ref | Ulcer L6M vs ref | $/wk per $1k cut | chg share | p own / fam | NOCUT / UNIF cut L6M,PRE | live d$ | gate |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | regime | {"cond": "atr_rel_ge1.6", "m": 0} | P7 | 22/27/36/49 | +524/-2592 | 23/37/50 | 1.40 | 0.75 | +30 | 0.09 | 0.02 / 1.00 | 26,38 / 12,49 | -39590 | True |
@@ -262,7 +266,7 @@ Finalist live definitions (all multiplicative on live lots, round, min 1): see p
 
 sz_core placebo (same lot-change values on random trades, same book x session; p of the cut): dow {"dow": 2, "m": 0} ALL: L6M 0.01 PRE 0.74; regime {"cond": "prior_trend_day", "m": 0} ALL: L6M 0.50 PRE 0.19; dow {"dow": 2, "m": 0} P7: L6M 0.04 PRE 0.55; qgate {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} ALL: L6M 0.07 PRE 0.01; P7_lot_table_joint {"q_asia": 4, "q_london": 4, "q_nyam": 4} P7: L6M 0.18 PRE 0.37; l2_confirm_count_PROXY {"k": 2, "m": 0.5} ALL: L6M 0.07 PRE 0.37; zone_near_behind {"dist": 30, "m": 0.5} P7: L6M 0.35 PRE 0.70; qgate {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} O7: L6M 0.75 PRE 0.16; regime {"cond": "prior_close_high", "m": 0} K7: L6M 0.04 PRE 0.65; l2_confirm_count_PROXY {"k": 2, "m": 0} U7: L6M 0.23 PRE 0.29; qgate {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} U7: L6M 0.15 PRE 0.05; regime {"cond": "prior_close_low", "m": 0} H7: L6M 0.01 PRE 0.27
 
-## 8. Scorer difference (fgh complete-weeks scorer vs sz_core): maxDD cut on L6M, PRE, X' identical to 0.1 point for the top-20 cells; the equal-mean columns differ because L6M means differ (carry-week and window edge). Gate counts COMB: sz_core 2285, fgh scorer 2206.
+## 8. Scorer difference (fgh complete-weeks scorer vs sz_core): maxDD cut on L6M, PRE, X' identical to 0.1 point for the top-20 cells; the equal-mean columns differ because L6M means differ (carry-week and window edge). Gate counts COMB: sz_core 2281, fgh scorer 2202.
 
 ## 9. What is expressible in D7 v1.5 today vs v1.6 (finalists and leads)
 v1.5 fields used: per-book session lot table (six values asia,london,pre,nyam,nypm,close, lots 0-8), A06 slot half-hour list (x0.5 only, books K7 H7 P7 U7 today), B02 quiet-overnight halving (K7 P7 H7), TrendEr ladder (Q1-A: ER(20,5m)<0.30 -> x0.5), zone HALF. Rounding is rnd(lots x mult), min 1, in the order session -> slot/B02 -> ER -> zone.
@@ -288,3 +292,33 @@ v1.5 fields used: per-book session lot table (six values asia,london,pre,nyam,ny
 
 Effective P7 lots through the chain (session table -> slot/B02 halving -> Q1-A ladder; zone HALF not shown): table 7 -> 7 normal, 4 in slots 0330/0500/0830 or quiet B02 days; ER<0.30 halves again (7 -> 4 -> 2 in a half slot). Table 4: 4 -> 2 in half slots, 2 on ER<0.30 (round half up, min 1). So the 7/4/4 table means asia 7, london 4, nyam 4 before the halvings.
 Session lot-table re-fit (greedy, in-sample, COMB down-only): {"K7|1": 0, "K7|4": 0, "M7|1": 1, "M7|3": 0, "P7|1": 5, "P7|3": 0, "U7|1": 2} (book|session index 0 asia 1 london 2 pre 3 nyam 4 nypm 5 close: lots); NOT recommended (walk-forward at equal mean -0.7%). Only the P7 cells walk forward positive; each is a per-session value in the P7 session string, expressible today without code.
+
+## 10. OLD base vs new (S1b-COMB) - my cells re-scored on OLD-BASE (replica ITER14 HOLD, timer bar close, per-print old cut), same grid, same scorer. FIRST-ORDER SCREEN ONLY on both.
+
+Base-change proof (Q1-A lots row = the zero-rule row for sizing): trades | cut exits | mean trade $ | top exits | maxDD L6M / HOLD / PRE
+|--|--|--|--|--|--|
+| S1b-COMB (new) | 21135 | 7144 | 117 | Target 9565, StateCut 6709, StopJoin 1819, StopJoinFallback 1143, Stop 891 | 79907 / 99496 / 140288 |
+| OLD-BASE | 23776 | 13631 | 76 | ThL2Cut 12242, Target 9149, PolicyCut 1262, StopJoin 240, TimeBlock 222 | 141835 / 141835 / 165018 |
+
+| cell | cut L6M/PRE/X' NEW | cut L6M/PRE/X' OLD | delta L6M/PRE | SEL new / old | rank new / old (of 6786) | identical to the dollar? |
+|--|--|--|--|--|--|--|
+| dow {"dow": 2, "m": 0} ALL | 51/4/35 | 49/1/-36 | +2/+2 | 33.6 / 14.7 | 5 / 232 | no |
+| regime {"cond": "prior_trend_day", "m": 0} ALL | 6/41/58 | 25/39/-29 | -19/+2 | 30.4 / 11.8 | 11 / 388 | no |
+| dow {"dow": 2, "m": 0} P7 | 32/11/32 | 42/-5/-1 | -11/+15 | 26.2 / 17.3 | 22 / 148 | no |
+| qgate {"feat": "dB", "m": 0.5, "q": 0.3, "tail": "high"} ALL | 18/38/0 | 22/30/0 | -5/+7 | 17.7 / 4.7 | 104 / 1170 | no |
+| P7_lot_table_joint {"q_asia": 4, "q_london": 4, "q_nyam": 4} P7 | 28/30/39 | 41/40/19 | -12/-10 | 17.0 / 20.1 | 115 / 92 | no |
+| l2_confirm_count_PROXY {"k": 2, "m": 0.5} ALL | 28/19/27 | 3/10/30 | +25/+9 | 11.8 / -2.8 | 266 / 4715 | no |
+| zone_near_behind {"dist": 30, "m": 0.5} P7 | 1/0/18 | 1/1/18 | +0/-1 | 6.7 / 10.1 | 623 / 512 | no |
+| qgate {"feat": "twap_dev_sg", "m": 0, "q": 0.2, "tail": "low"} O7 | 0/1/0 | 0/-0/0 | -0/+1 | 1.0 / 0.7 | 1900 / 2687 | no |
+| regime {"cond": "prior_close_high", "m": 0} K7 | 7/2/16 | 7/-8/9 | -0/+10 | 7.9 / 3.6 | 486 / 1417 | no |
+| l2_confirm_count_PROXY {"k": 2, "m": 0} U7 | 5/14/8 | -6/-10/18 | +11/+24 | 7.8 / -5.5 | 497 / 5324 | no |
+| qgate {"feat": "f_r_ab8", "m": 0, "q": 0.3, "tail": "high"} U7 | 4/13/0 | 1/0/0 | +4/+13 | 7.4 / -2.4 | 536 / 4580 | no |
+| regime {"cond": "prior_close_low", "m": 0} H7 | 3/-1/13 | 1/-1/5 | +2/+1 | 4.6 / 0.1 | 845 / 3136 | no |
+| P7_lot_table_joint {"q_asia": 7, "q_london": 4, "q_nyam": 4} P7 | 27/32/26 | 21/37/-0 | +6/-5 | 29.4 / 17.0 | 14 / 151 | no |
+| P7_lot_table_joint {"q_asia": 7, "q_london": 3, "q_nyam": 4} P7 | 26/36/25 | 22/41/1 | +4/-6 | 27.9 / 15.9 | 17 / 176 | no |
+| P7_lot_table_joint {"q_asia": 6, "q_london": 4, "q_nyam": 4} P7 | 29/33/36 | 32/41/8 | -3/-9 | 27.3 / 25.3 | 19 / 36 | no |
+| P7_lot_table_joint {"q_asia": 7, "q_london": 4, "q_nyam": 3} P7 | 28/32/26 | 17/37/-8 | +10/-5 | 27.2 / 9.6 | 20 / 555 | no |
+| P7_lot_table_joint {"q_asia": 6, "q_london": 3, "q_nyam": 4} P7 | 28/36/35 | 33/45/8 | -5/-9 | 25.8 / 24.4 | 24 / 46 | no |
+| P7_lot_table_joint {"q_asia": 7, "q_london": 3, "q_nyam": 3} P7 | 26/36/24 | 19/41/-6 | +8/-5 | 25.5 / 8.2 | 29 / 673 | no |
+
+Spearman rank correlation of SEL, new vs old base, all 6766 common cells: 0.65. Cells with L6M and PRE maxDD identical to the dollar on both bases: 0 (these six are degenerate count-feature gates, nA20/nA40/nB20 >= quantile 0, that switch off EVERY trade: zero P&L on both bases, cut 100%; not a base-independence defect; cells with > 90% of trades changed are now excluded from the tables).

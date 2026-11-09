@@ -1,5 +1,5 @@
-# SZ_AB - T-SIZER-EXHAUST families A (ER) and B (volatility-target) + K (P7) slice  (refreshed 2026-11-09 15:09Z)
-**Label: base S1b-COMB (live D7 v1.5 state cut), FIRST-ORDER trade-level scoring (pnl per planned lot x new lots; first-order mean is not reliable, drawdown ranking is usable), in-sample, PRE-PROOF, post-hoc, Shadow only, no PASS claims. Windows as of 2026-11-09; carrying week (largest |cell - Q1-A| weekly delta) dropped from means; maxDD/worst-20/Ulcer on all weeks.**
+# SZ_AB - T-SIZER-EXHAUST families A (ER) and B (volatility-target) + K (P7) slice  (refreshed 2026-11-09 16:58Z)
+**FIRST-ORDER SCREEN ONLY unless a row says EXACT (exact-engine rows are in the exact section, top-5 + mild twin only). Label: base S1b-COMB (live D7 v1.5 state cut), FIRST-ORDER trade-level scoring (pnl per planned lot x new lots; first-order mean is not reliable, drawdown ranking is usable), in-sample, PRE-PROOF, post-hoc, Shadow only, no PASS claims. Windows as of 2026-11-09; carrying week (largest |cell - Q1-A| weekly delta) dropped from means; maxDD/worst-20/Ulcer on all weeks.**
 Prereg: autopilot/SZ_AB_PREREG.md (sha in DECISIONS.md). Ledger /mnt/l2/l2vast/_th_sz/ledger_AB.parquet (copy at _th_sz/ab/ledger_AB.parquet; 63914 cells, 34625 down-only equal-mean valid). J-pair multipliers /mnt/l2/l2vast/_th_sz/M_AB.npz (new lots / base lots, 21135 trades in C.prepare(load_trades(S1B-COMB)) order).
 
 Objectives: (a) equal lots - maxDD cut vs Q1-A (+ = shallower); (b) equal mean - lots of the cell scaled by one global factor s (column eq scale) so L6M mean = Q1-A, then maxDD cut (valid only for 0 < s <= 2; cells needing s > 2 are excluded from ranking). Tolerant eq score = second-smallest of the equal-mean cuts over L6M/PRE/X' (tolerant on one window). worst-20 ok = equal-mean worst-20 not worse than -5%.
@@ -10,6 +10,37 @@ Objectives: (a) equal lots - maxDD cut vs Q1-A (+ = shallower); (b) equal mean -
 | Q1-A (ER<.30 x0.5) | +22996 / 79907 | +15522 / 99496 | +14777 / 140288 | +2181 / 116941 |
 | sizer off (x1) | +30122 / 108038 | +20265 / 134892 | +16662 / 151592 | +656 / 203191 |
 | old ladder (x.5/x1.5) | +27181 / 116699 | +20273 / 130207 | +19241 / 207515 | +742 / 120096 |
+
+**VOID NOTICE (17:00Z): the first exact rows for AB_F00/F01/F02/F12 (L6M cut +10.4 / +4.4 / +19.1 / +2.0 %) are VOID: sz_exact.py keyed the multiplier table on the arm second, not the signal second (SZ-CORE defect). The reading that first-order cuts are overstated 2-5x is WITHDRAWN. All six exact sets were re-queued from scratch with the fixed driver; there is no exact verdict yet and every number here is FIRST-ORDER SCREEN ONLY.**
+
+## ADDENDUM 1 - results move with the base (FIRST-ORDER SCREEN ONLY)
+**Testing-defect check: 0 of 400 cells have an L6M maxDD identical to the dollar on OLD-BASE and S1b-COMB: none, so no cached-list defect. Score correlation new vs old (Pearson 0.32, Spearman 0.24) shows the sizing answer moves with the base.** First-order pnl-per-lot scaling cannot see exits by construction; the base dependence seen here comes only from which trades the base produces. The exact runs below are the verdict.
+
+Base proof (same Q1-A reference row on each base; OLD-BASE = replica ITER14 per-print/ThL2 cut, S1b-COMB = state cut):
+
+| base | trades | cut-exit share | stop share | target share | mean trade $ | zero-rule (Q1-A) L6M mean/wk | L6M maxDD | HOLD maxDD | PRE maxDD |
+|--|--|--|--|--|--|--|--|--|--|
+| OLD-BASE | 23776 | 0.57 | 0.007 | 0.385 | 76 | 19583 | 141835 | 141835 | 165018 |
+| S1B-COMB | 21135 | 0.34 | 0.042 | 0.453 | 117 | 24476 | 79907 | 99496 | 140288 |
+| S1B-NOCUT | 18960 | 0.04 | 0.065 | 0.501 | 114 | 16663 | 182380 | 182380 | 127656 |
+| S1B-UNIF | 19797 | 0.19 | 0.052 | 0.480 | 115 | 14701 | 174856 | 174856 | 134464 |
+
+Finalists old base vs new base (first-order; tolerant equal-mean score, maxDD cut L6M/PRE; rank among the 400 M_AB cells):
+
+| cell | tol new | tol old | delta | L6M cut new/old | PRE cut new/old | rank new -> old |
+|--|--|--|--|--|--|--|
+| VOL-pool vr_gk_w30_g20 [1.25, 0.0] onQ1A | 62.0 | 56.7 | +5.3 | +34/+69 | +52/+48 | 1 -> 12 |
+| VOL-pool vr_park_w10_g20 [1.25, 0.0] onQ1A | 59.3 | 43.6 | +15.7 | +53/+51 | +49/+57 | 2 -> 77 |
+| VOL-pool vr_gk_w10_g20 [1.25, 0.0] onQ1A | 59.0 | 65.1 | -6.1 | +54/+62 | +58/+56 | 3 -> 1 |
+| VOL-pool vr_gk_w10_bk [1.25, 0.0] onQ1A | 59.0 | 63.1 | -4.1 | +17/+58 | +53/+57 | 4 -> 3 |
+| VOL-P7 vr_rv1_w240_bk [1.25, 0.0] onQ1A | 54.7 | 52.6 | +2.1 | +43/+41 | +43/+54 | 16 -> 26 |
+| VOL-P7 vr_park_w60_bk [1.1, 0.0] onQ1A | 50.1 | 42.3 | +7.8 | -3/+39 | +43/+32 | 27 -> 88 |
+| ER-NQ er_nq_b3_n10 [0.2, 0.4, 0.25, 0.5, 1.0] min | 41.3 | 10.3 | +31.0 | +35/+49 | +20/+7 | 82 -> 377 |
+| ER-NQ-P7 er_nq_b15_n20 [0.3, 0.0, 1.0] min | 41.2 | 43.3 | -2.0 | +37/+32 | +47/+47 | 83 -> 82 |
+| ER-hyst-P7 hy_b15_n20_30_40 [0.5, 0.0] min | 35.2 | 44.8 | -9.6 | +30/+37 | +46/+49 | 168 -> 71 |
+| RANGE rr_sofar_n20 [1.5, 0.0] onQ1A | 31.5 | 35.1 | -3.5 | +8/+48 | +50/+45 | 299 -> 173 |
+| RANGE-P7 rr_sofar_n20 [1.5, 0.0] onQ1A | 39.0 | 48.6 | -9.6 | +8/+40 | +48/+54 | 105 -> 47 |
+| ER-xinst-P7 er_min3_b15_n20 [0.35, 0.0, 1.0] min | 35.9 | 39.0 | -3.1 | +47/+66 | +57/+57 | 149 -> 121 |
 
 ## Plain sentences
 
@@ -31,7 +62,7 @@ Objectives: (a) equal lots - maxDD cut vs Q1-A (+ = shallower); (b) equal mean -
 | VOL-pool | +40.9 | +17.9 | -4642 | 140288 |
 | P7 (K slice) | +28.3 | +9.2 | -3482 | 140288 |
 
-## Finalists for the exact engine re-run (<= 12; ids in /mnt/l2/l2vast/_th_sz/ab/finalists.json; down-only, worst-20 ok, own p <= .10; placebo B=400 within book x session lot-ratio permutations)
+## Finalists (FIRST-ORDER SCREEN ONLY; <= 12; ids in /mnt/l2/l2vast/_th_sz/ab/finalists.json; down-only, worst-20 ok, own p <= .10; placebo B=400 within book x session lot-ratio permutations)
 
 | sub | cell | mode/dir | scope | maxDD cut % L/H/P/X' (equal lots) | worst-20 d% L6M/PRE | Ulcer cut % L6M | d mean $/wk L6M | $ mean lost per $1k DD cut | equal-mean maxDD cut % L6M/PRE/X' | share lots changed | p own/family | eq scale s | placebo | live week | tolerant eq score |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -48,7 +79,7 @@ Objectives: (a) equal lots - maxDD cut vs Q1-A (+ = shallower); (b) equal mean -
 | RANGE-P7 | rr_sofar_n20 stepv[1.5,0.0] | onQ1A/down | ["book","P7"] | +8 / -1 / +48 / +35 | +14 / +27 | +19 | +1562 | - | +14 / +51 / +39 | 0.08 | 0.02/1.00 | 0.94 | plc400 0.010 | live d$ -47815 dd +0 | 39.0 |
 | ER-xinst-P7 | er_min3_b15_n20 t2[0.35,0.0,1.0] | min/down | ["book","P7"] | +47 / -11 / +57 / +58 | -29 / +43 | +58 | -7407 | 195 | +22 / +36 / +37 | 0.21 | 0.03/1.00 | 1.49 | plc400 0.040 | live d$ -63305 dd -6905 | 35.9 |
 
-## Ranked family tables (top 6 per sub-family by tolerant equal-mean score; down-only; worst-20 ok; family p = max-stat over all 63914 cells, B=64 common permutations, own p B=64)
+## Ranked family tables (FIRST-ORDER SCREEN ONLY; top 6 per sub-family by tolerant equal-mean score; down-only; worst-20 ok; family p = max-stat over all 63914 cells, B=64 common permutations, own p B=64)
 
 ### ER-NQ (1917 valid cells; 1045 with own p <= .10)
 | sub | cell | mode/dir | scope | maxDD cut % L/H/P/X' (equal lots) | worst-20 d% L6M/PRE | Ulcer cut % L6M | d mean $/wk L6M | $ mean lost per $1k DD cut | equal-mean maxDD cut % L6M/PRE/X' | share lots changed | p own/family | eq scale s | placebo | live week | tolerant eq score |
@@ -302,16 +333,12 @@ Across the 400 top cells (M_AB set) the tolerant score is > 0 on NOCUT for 98 % 
 ## Hysteresis ER (enter/exit) - 184 strictly-down cells (bars 5/15, n 10/20/30, 8 enter/exit pairs, lo 0 or 0.5, pooled and P7)
 Best: ER-hyst-P7 hy_b5_n30_35_50 [0.5, 0.0] (min): equal-mean cut +22/+44/+47 % L6M/PRE/X', own p 0.03, family p 1.00. Pooled hysteresis median tolerant score 4.3 vs plain ER-NQ min-mode median 9.3: hysteresis adds no robust edge beyond P7.
 
-## Exact-engine re-runs of the finalists (sz_exact.py; lead cut 2026-11-09: only the top 3 finalists = AB_F00..AB_F02 (first three rows of the finalist table) plus AB_F12 = mild 0.5 twin of AB_F00; months L6M, then PRE, then X-prime; <=2 workers, MemAvailable >= 55 GB; the other 9 finalists stay first-order)
+## Exact-engine re-runs (VOID: the first batch used the sz_exact keying bug and was withdrawn at 17:00Z; all six sets re-queued with the fixed driver, no exact verdict yet; sz_exact.py; lead cut 2026-11-09: only the top 3 finalists = AB_F00..AB_F04 (top-5: first three finalists, best ER cell, best P7-slice cell) plus AB_F12 = mild 0.5 twin of AB_F00; months L6M, then PRE, then X-prime; <=2 workers, MemAvailable >= 55 GB; the other 9 finalists stay first-order)
 
 | set (cell) | months | window | exact: maxDD cut % | exact: d mean $/wk | exact: equal-mean cut % | exact: worst-20 d% | first-order cut % | first-order d mean |
 |--|--|--|--|--|--|--|--|--|
-| AB_F00 vr_gk_w30_g20 [1.25, 0.0] | 6 | L6M | +10 | +335 | +12 | +0 | +34 | +6308 |
-| AB_F01 vr_park_w10_g20 [1.25, 0.0] | 6 | L6M | +4 | +1416 | +10 | +6 | +53 | +3560 |
-| AB_F02 vr_gk_w10_g20 [1.25, 0.0] | 6 | L6M | +19 | +1498 | +24 | +10 | +54 | +2243 |
-| AB_F12 (mild 0.5 twin of F00; first-order = F00 strict) | 6 | L6M | +2 | +1337 | +8 | -3 | +34 | +6308 |
 
-Reading: the exact engine keeps the sign of the first-order DD cut but shrinks it a lot on L6M (state-cut arm sizes and re-entries absorb part of the skipped drawdown); first-order cuts overstate by a factor of about 2-5. Exact d mean is small and positive.
+Rows above (if any) come only from runs with the fixed driver.
 
 Cross-check: ab_score.py vs sz_core.Z.score on 27 cells (12 finalists + top 20): max abs difference in maxDD 0.001 $, worst-20 0.002 $, cut 0.0 pp, equal-mean cut 0.0 pp, mean/d mean 0.0 after aligning the carrying-week rule (weeks > 3 -> drop the largest |cell-ref| week from MEANS only; maxDD/worst-20/Ulcer always on ALL weeks; partial edge weeks count as weeks in both).
 

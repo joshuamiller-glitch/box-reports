@@ -1,3 +1,5 @@
+> **SUPERSEDED (2026-11-09 SZ-CORE): do not use the cell numbers on this page.** Its maxDD dropped the carrying weeks 202629-39 BEFORE computing drawdown, so L1M = L2M = L3M are identical to the dollar for every cell, and first-order pnl-per-lot scaling cannot see exits (SZ-BASE: ladder L cut -76 exact vs -43 first-order, B -143 vs -73; up-size net overstated by $290k-$820k over 26 months). The sizing verdict is in autopilot/DS3_SIZER_EXHAUST.md (exact engine runs, all-weeks maxDD).
+
 # DS3_TH_S3_SIZER_S1B - S3: Q1-A vs the ER ladder on the S1b base (S345-RUN, 2026-11-09)
 
 **Label: base S1b = replica engine ITER14 + tick bar close with TH-L2-S (COMB per-book) as live L2 cut; entries not live-matched (entry match < .85); in-sample base; PRE-PROOF**
