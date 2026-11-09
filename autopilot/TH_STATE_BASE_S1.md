@@ -28,6 +28,9 @@ S1-UNIF (one cell for every book): ARM 30 / MULT 10 / W 5 / PERS 10 / newMae on 
 ## 3. Regression (exact, all columns of the trade list, order-insensitive)
 - S1-COMB vs stage2:COMB: 43 months compared, IDENTICAL (all columns); trades 21067 vs 21067, net 2566937.50 vs 2566937.50, state cuts 6694 vs 6694, old ThL2Cut/PolicyCut exits in base 0
 - S1-UNIF vs stage2:UNIF: 43 months compared, IDENTICAL (all columns); trades 19746 vs 19746, net 2256283.50 vs 2256283.50, state cuts 3036 vs 3036, old ThL2Cut/PolicyCut exits in base 0
+- S1-LIVE vs stage2:LIVE: 3 months compared, IDENTICAL (all columns); trades 1334 vs 1334, net 257383.50 vs 257383.50, state cuts 107 vs 107, old ThL2Cut/PolicyCut exits in base 0
+- NOCUT vs A2:nocut: 3 months compared, IDENTICAL (all columns); trades 1295 vs 1295, net 290985.00 vs 290985.00, state cuts 0 vs 0, old ThL2Cut/PolicyCut exits in base 0
+- HOLD vs A2:hold: 3 months compared, IDENTICAL (all columns); trades 1620 vs 1620, net 172570.00 vs 172570.00, state cuts 0 vs 0, old ThL2Cut/PolicyCut exits in base 916
 
 ## 4. Window metrics (USD/week, net of the 4.84 fee proxy, carrying week dropped; windows as of 2026-10-31 = STATE-SCORE; delta = base minus reference, same engine)
 | row | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' |
@@ -64,9 +67,9 @@ S1-COMB vs never-cut reproduces DS3_TH_STATE.md section 6 exactly (L1M +12301 ..
 - trade lists (per month trades.parquet [+ rows.parquet = G feature rows, every 5th wall second per open book, thG_rec format, S1-COMB/S1-UNIF only], DONE json):
   - S1-COMB: 43 months, dir /mnt/l2/l2vast/_th_state/base/S1-COMB/, feature-row files 43, sha-of-shas 5a643457bf9c41e8
   - S1-UNIF: 43 months, dir /mnt/l2/l2vast/_th_state/base/S1-UNIF/, feature-row files 43, sha-of-shas 9885831a363a65bd
-  - S1-LIVE: 0 months, dir /mnt/l2/l2vast/_th_state/base/S1-LIVE/, feature-row files 0, sha-of-shas e3b0c44298fc1c14
-  - NOCUT: 0 months, dir /mnt/l2/l2vast/_th_state/base/NOCUT/, feature-row files 0, sha-of-shas e3b0c44298fc1c14
-  - HOLD: 0 months, dir /mnt/l2/l2vast/_th_state/base/HOLD/, feature-row files 0, sha-of-shas e3b0c44298fc1c14
+  - S1-LIVE: 3 months, dir /mnt/l2/l2vast/_th_state/base/S1-LIVE/, feature-row files 0, sha-of-shas 1c5893c0b18405b4
+  - NOCUT: 3 months, dir /mnt/l2/l2vast/_th_state/base/NOCUT/, feature-row files 0, sha-of-shas 904bf013ed94f971
+  - HOLD: 3 months, dir /mnt/l2/l2vast/_th_state/base/HOLD/, feature-row files 0, sha-of-shas 04221b559f2fe562
   - PLAIN6060: 43 months, dir /mnt/l2/l2vast/_th_state/base/PLAIN6060/, feature-row files 0, sha-of-shas 80f7335605765e25
 - manifest.json, metrics.json, regress.json, logs/ in /mnt/l2/l2vast/_th_state/base/
 - usage: python3 -I code/th_redo/state_base.py run <S1-COMB|S1-UNIF|S1-LIVE|NOCUT|HOLD|PLAIN6060> <yyyymm,..|a-b> <workers> [--norec]; python3 -I code/th_redo/state_base.py selftest

@@ -1,0 +1,5 @@
+# ENTRY_MATCH_S1B_PREREG (2026-11-09, PRE-PROOF)
+Order: lead after ENTRY_MATCH. Rebuild S1-COMB as S1b-COMB, 43 months 2023-04..2026-10, new copy code/th_redo/state_base_b.py (BASE_DIR /mnt/l2/l2vast/_th_state/base_b/, G recorder off), single change = prm BAR_CLOSE='tick' (ENTRY_MATCH F1). Not ported because inert in history: half-even TrendSize rounding (applies only while PERIODS and now < Mon 13:30 ET of the blind week; HIST_PRM has PERIODS=False), X-book volume/range bar rules (X_LIVE=False, X books off in history). 
+Diff to be scored vs S1-COMB (unchanged files): trade count, net, state cuts, per-month deltas, window metrics L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' vs never-cut and plain 60/60 (same definitions as TH_STATE_BASE_S1.md section 4), months with trades differing > 2 %.
+Materiality rule (fixed now): S1 stands if trades differ < 2 % and net < 5 % in every window; else list affected S2/S3/S4/S5 outputs.
+Regression: one month with S1B_BAR_CLOSE=timer must equal S1-COMB for that month (all columns).
