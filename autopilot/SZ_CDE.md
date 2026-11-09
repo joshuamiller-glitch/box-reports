@@ -1,4 +1,4 @@
-# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-09 14:23Z
+# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-09 15:34Z
 
 **Label: first-order on base S1b-COMB (live D7 v1.5 with the seven state-cut lines), 21135 trades 2023-04..2026-10 (last label day 20261030; the 2026-11-01..05 live weeks are not in the list, so L1M/L2M/L3M windows end 2026-10-30); entries not live-matched; in-sample; PRE-PROOF; post-hoc; Shadow only; no PASS claims.** Reference = Q1-A (the base lots). 3274 cells (C 140, D 1980, E 1110, K 44). Prereg: autopilot/SZ_CDE_PREREG.md (sha in DECISIONS.md).
 
@@ -290,18 +290,24 @@ M_CDE.npz row alignment spot-check (M x base P&L in C.prepare(C.load_trades) ord
 
 | set | cell | L6M exact cut / first-order cut | PRE exact / FO | X' exact / FO | L6M d mean exact / FO | HOLD exact / FO | status |
 |--|--|--|--|--|--|--|--|
-| CDE_F00 | D ; eqdd_book_20d_R ; Y1R_f0.50_sticky ; ALL | na / na | na / na | na / na | na / na | na / na | no exact window yet |
-| CDE_F01 | E ; max_books_on ; n1_f0.5 ; sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
-| CDE_F02 | D ; eqdd_book_20d_R ; Y4R_f0.25_sticky ; P7 | na / na | na / na | na / na | na / na | na / na | no exact window yet |
-| CDE_F03 | C ; riskcap_per_trade ; R$3600 ; P7 | na / na | na / na | na / na | na / na | na / na | no exact window yet |
-| CDE_F04 | D ; eqdd_stack_20d ; Y20000_f0.25_sticky ; sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
+| CDE_F00 | D ; eqdd_book_20d_R ; Y1R_f0.50_sticky ; ALL | +24.0 / +46.6 | na / na | na / na | -8998.6 / -8535.1 | na / na | EXACT-CONFIRMED on L6M (partial) |
+| CDE_F01 | E ; max_books_on ; n1_f0.5 ; sess_london | +25.8 / +27.5 | na / na | na / na | +800.3 / +145.4 | na / na | EXACT-CONFIRMED on L6M (partial) |
+| CDE_F02 | D ; eqdd_book_20d_R ; Y4R_f0.25_sticky ; P7 | +10.7 / +30.3 | na / na | na / na | -9137.8 / -4178.8 | na / na | EXACT-CONFIRMED on L6M (partial) |
+| CDE_F03 | C ; riskcap_per_trade ; R$3600 ; P7 | +18.9 / +37.4 | na / na | na / na | -12096.0 / -7558.3 | na / na | EXACT-CONFIRMED on L6M (partial) |
+| CDE_F04 | D ; eqdd_stack_20d ; Y20000_f0.25_sticky ; sess_london | +30.2 / +29.8 | na / na | na / na | -1576.1 / +15.5 | na / na | EXACT-CONFIRMED on L6M (partial) |
 | CDE_F05 | D ; week_loss_book_R ; X2R_f0.00 ; P7_sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F06 | E ; same_side_lots_cap ; cap6_trunc ; sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F07 | D ; eqdd_stack_20d ; Y30000_f0.25_sticky ; sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F08 | E ; total_lots_cap ; cap6_skip ; sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F09 | E ; same_side_lots_cap ; cap6_skip ; P7_sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F10 | E ; total_lots_cap ; cap6_skip ; P7_sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
-| CDE_F11 | K ; P7_lots_by_session ; L4_nyam ; P7 | na / na | na / na | na / na | na / na | na / na | no exact window yet |
+| CDE_F11 | K ; P7_lots_by_session ; L4_nyam ; P7 | +12.6 / +6.7 | na / na | na / na | +2788.0 / +1860.2 | na / na | EXACT-CONFIRMED on L6M (partial) |
 
 
 Cross-check vs sz_core (Z.score on the 12 finalists + top 20, M_CDE arrays): maxDD L6M and PRE identical (max abs diff 0 $). Means and equal-mean cuts differ by ~4k $/wk and a few points because this page ends the windows at label day 2026-10-30 (last day of the COMB trade list; 10-31 is a Saturday) while sz_core runs its calendar to 2026-11-05 and counts the empty weeks (zero P&L) in L1M-L6M means. Exact-run cut numbers use this page's windows.
+
+
+## Exact vs first-order, L6M (first exact result, 2026-11-09 15:35Z; six priority finalists, L6M months 2026-05..10 complete; PRE and X' running)
+Survive in the engine (exact L6M maxDD cut about the first-order cut, equal-mean cut positive): E max_books_on n1 f0.5 on the London session (exact +25.8% vs FO +27.5%, d mean +800 $/wk, equal-mean +27.8%); D eqdd_stack_20d Y20000 f0.25 sticky on London (exact +30.2% vs FO +29.8%, d mean -1.6k, equal-mean +26.2%); K P7 lots cap 4 in NYAM (exact +12.6% vs FO +6.7%, d mean +2.8k, equal-mean +20.2%).
+Deflate and fail at equal mean: D eqdd_book_20d_R Y1R f0.50 sticky ALL (FO +46.6% -> exact +24.0%; d mean -9.0k; equal-mean -9.9%: the first-order cut was mostly size-down); D eqdd_book_20d_R Y4R f0.25 P7 (FO +30.3% -> +10.7%, equal-mean -30.1%); C riskcap R$3600 on P7 (FO +37.4% -> +18.9%, equal-mean -38.7%).
+So the broad/book-level state and risk-cap cells lose half or more of the first-order cut in the engine and do not beat size-down at equal mean; the session-scoped London/NYAM cells survive on L6M only. PRE and X' not yet exact; no cell is a candidate on L6M alone.
