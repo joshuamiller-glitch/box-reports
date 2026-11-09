@@ -1,4 +1,4 @@
-# EXH_JKL - profit families J (scale), K (target), L (crosses) - 2026-11-09 07:15Z
+# EXH_JKL - profit families J (scale), K (target), L (crosses) - 2026-11-09 07:32Z
 PRE-PROOF (entries not live-matched). 565 cells scored, all registered in the ledger (agent ex-pjkl). Stage 1 first-order on the EX-CORE universe; target cells (K, X) walk the NEW target over paths extended to the flat time (my memmap store, pjkl/ext) but with the same horizon convention as the EX-CORE U.ext(): a trade whose new target/stop is unresolved 14,400 s after the original bracket is market-exited there (type 3) - this affects only wide targets (m >= 1.5, K4 extensions) on trades whose original exit was the target; EX-FEAT panel length mismatches make feature rules inert on a few trades. Deltas are USD/week vs never-cut (hold-to-bracket), carrying week dropped; "w/wo" = with rule / without. WF = purged monthly walk-forward of the technique group (table below). Placebo for target cells = the cell's own per-trade deltas re-assigned to other trades of the same book (no decision second exists). Prereg autopilot/EXH_JKL_PREREG.md. Causality: my own noise-after-k test (code/th_exh/causality_pjkl.py, 750 decisions) and EX-CORE X.kernel_leak_test (code/th_exh/kleak_pjkl.py, 2,743 legs over J1/J2/J3/K1/X1 kernels) both show 0 legs changed when path data after second k0 is replaced by noise; K1/K2/K3 targets are functions of the entry row only; the first J2 version (second scale leg filled after the trail had already closed the position) was a look-ahead, was found by review, fixed and re-scored. Live-week column = rule applied on the 186 live trades to the ACTUAL live exit (one week; not selected on).
 
 
@@ -334,14 +334,14 @@ Stage 2 kernel validation (validate_kernel_s2.py, pjkl_PB, month 202606): K7 (K1
 
 | set | months run | book | L6M mean delta vs engine never-cut | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo |
 |---|---|---|---|---|---|---|
-| PJKL_perbook_best | 39 | ALL |  |  /  | 149,858 / 130,824 |  /  |
-| PJKL_perbook_best | 39 | K7 |  |  /  | 25,019 / 22,188 |  /  |
-| PJKL_perbook_best | 39 | P7 |  |  /  | 120,071 / 122,169 |  /  |
-| PJKL_perbook_best | 39 | M7 |  |  /  | 43,648 / 44,205 |  /  |
-| PJKL_perbook_best | 39 | U7 |  |  /  | 30,546 / 39,542 |  /  |
-| PJKL_perbook_best | 39 | A7 |  |  /  | 7,355 / 8,625 |  /  |
-| PJKL_perbook_best | 39 | H7 |  |  /  | 11,190 / 18,436 |  /  |
-| PJKL_perbook_best | 39 | O7 |  |  /  | 4,797 / 4,797 |  /  |
+| PJKL_perbook_best | 43 | ALL | -1,665 | 153,389 / 191,045 | 149,858 / 130,824 | -50,573 / -63,404 |
+| PJKL_perbook_best | 43 | K7 | -529 | 21,984 / 35,969 | 25,019 / 22,188 | -21,121 / -20,829 |
+| PJKL_perbook_best | 43 | P7 | 627 | 200,861 / 203,542 | 120,071 / 122,169 | -161,384 / -181,468 |
+| PJKL_perbook_best | 43 | M7 | -186 | 45,824 / 48,019 | 43,648 / 44,205 | -76,678 / -73,536 |
+| PJKL_perbook_best | 43 | U7 | -570 | 8,119 / 17,816 | 30,546 / 39,542 | 19,791 / 17,704 |
+| PJKL_perbook_best | 43 | A7 | 83 | 10,416 / 9,361 | 7,355 / 8,625 | -6,866 / -7,321 |
+| PJKL_perbook_best | 43 | H7 | -348 | 12,781 / 16,242 | 11,190 / 18,436 | -1,938 / -13,688 |
+| PJKL_perbook_best | 43 | O7 | 0 | 6,958 / 6,958 | 4,797 / 4,797 | -11,023 / -11,023 |
 
 ## Finalists (<=12; held-out live week where the cell is a scale/limit rule; K1 cells with m <= 1 are evaluated on the live week (a tighter target is checked against the path up to the actual exit); wider-target, ATR and extension cells have no live evaluation because the live bracket is the actual exit)
 

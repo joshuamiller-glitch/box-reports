@@ -1,5 +1,5 @@
 <!--STATUS-->
-STATUS 2026-11-09 07:27Z (auto, make_page): cells in the book-level ledger 15908 (S1 15908, S2 0); families 14; labels (book level) {'no': 80982, 'CANDIDATE-DD': 24621, 'LEAD': 6491, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4183, 'LEAD FAILS-LIVE-WEEK': 1545}; placebo null v2 on 133730 of 133730 rows; WY p on 88890 rows. 
+STATUS 2026-11-09 07:47Z (auto, make_page): cells in the book-level ledger 16132 (S1 16132, S2 0); families 14; labels (book level) {'no': 82270, 'CANDIDATE-DD': 25056, 'LEAD': 6590, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4327, 'LEAD FAILS-LIVE-WEEK': 1565}; placebo null v2 on 135940 of 135940 rows; WY p on 88890 rows. Stage 2 months/hour (last 0.0 h): ldef_perbook_u2 0.0 (20/43), pjkl_PB 0.0 (41/43), bc_a_recent 0.0 (28/43), exla_pb1 0.0 (6/43)
 <!--/STATUS-->
 # EXH_API - T-TH-EXHAUST framework API (EX-CORE). Part 1 (universe layout, published early for EX-FEAT); parts 2-5 appended below as they land.
 

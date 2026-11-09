@@ -1,11 +1,11 @@
-# EXH_BC - loss families B (book-state) and C (flow), EX-LBC; generated 2026-11-09 05:44Z
+# EXH_BC - loss families B (book-state) and C (flow), EX-LBC; generated 2026-11-09 07:44Z
 Entry match label: PRE-PROOF. The live-week column is the HELD-OUT week: the 186 actual live trades with the EX-FEAT live panel (feat_live), delta vs the actual live exit; it is computed for book-level rows only. Features: EX-FEAT panels, all 44 months 202304-202611 (full history). Rules: each alone as a market cut (decision k, execute k+1 at mid -+ 0.80), armed on adverse excursion ARM (latch = armed once; cur = current), persistence 1-20 s, threshold lattice per prereg (DECISIONS 2026-11-09T02:57Z).
-Screened: 63 features x 432 rule-thresholds x 7 persistence x 16 arms x 2 arm modes = 96,768 cells, all 77 scopes each (bc/screen_*.parquet). Ledgered with score_cell (null_ver 2): 134 cells = the top per scope by the drawdown-first key. Family p covers ledgered cells only, so it is optimistic against 96,768 screened.
+Screened: 63 features x 432 rule-thresholds x 7 persistence x 16 arms x 2 arm modes = 96,768 cells, all 77 scopes each (bc/screen_*.parquet). Ledgered with score_cell (null_ver 2): 928 cells = the top per scope by the drawdown-first key. Family p covers ledgered cells only, so it is optimistic against 96,768 screened.
 Causality: noise-after-k0 test on the lattice kernel (6 features, k0 = 300 and 900 s, mid and feature replaced after k0): 2,729,879 fires at <= k0 checked, 0 changed. Pass.
 Label rules: EXH_API section 3 (ENTER / CANDIDATE-DD / LEAD / no). A cell is picked per book (sessions pooled) by (L6M maxDD, worst-20, Ulcer, -mean), valid = nfire>=20, L6M mean >= never-cut, PRE maxDD <= never*1.05.
 
-## ALL loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -507835.58, "dd_never": 153255.2, "dd_wf": 153255.2, "share_pos": 0.37, "npick": 28, "months": 35, "wf_ok": false}
-Reference rows: never-cut L1M..X' mean = 35468 / 31777 / 14768 / 20752 / 13342 / 12409 / 16843 / 950; maxDD L6M 121381 PRE 152455 w20 L6M 77580. Live S1b-COMB: mean 11588 / 31519 / 16583 / 23991 / 15430 / 18454 / 14960 / 902; maxDD L6M 82873 PRE 144002 w20 L6M 190560.
+## ALL loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -598926.24, "dd_never": 153255.2, "dd_wf": 154340.56, "share_pos": 0.4, "npick": 35, "months": 35, "wf_ok": false}
+Reference rows: never-cut L1M..X' mean = 35468 / 31777 / 14768 / 20752 / 13342 / -3552 / 16838 / -6; maxDD L6M 121381 PRE 152455 w20 L6M 77580. Live S1b-COMB: mean 11588 / 31519 / 16583 / 23991 / 15430 / 4801 / 15015 / -529; maxDD L6M 82873 PRE 144002 w20 L6M 190560.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | sweep8_w30 | thr 4 pers 5 latch arm pct 0.3 | 5232 | 29550 | 19284 | 21427 | 8082 | -4792 | 6905 | 1564 | 36812/121381 | 107422/152455 | 127045/77580 | 10337 | 0.02 | 1.00 | -95004 | -30237 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
@@ -16,138 +16,138 @@ Reference rows: never-cut L1M..X' mean = 35468 / 31777 / 14768 / 20752 / 13342 /
 
 ALL loss: the rule that lowers L6M drawdown most is sweep8_w30 (f >= 4 for 5 s, armed latch 0.3); L6M maxDD 36812 vs 121381 never-cut (live line 82873), L6M mean 21427 vs 20752 never-cut, PRE maxDD 107422 vs 152455; placebo p 0.02, family p 1.00, live week delta -95004; label CANDIDATE-DD FAILS-LIVE-WEEK.
 
-Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 10 cells
+Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 100 cells
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| tot_rel_slow | thr 0.7891 pers 2 latch arm abs 40 | 40047 | 37921 | 20146 | 29479 | 16642 | 17009 | 14155 | 2210 | 66689/121381 | 86161/152455 | 203922/77580 | 8208 | 0.02 | 1.00 | -16577 | -1046 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| tot_rel_base | thr 0.8129 pers 3 latch arm abs 40 | 46047 | 42445 | 22584 | 29086 | 16487 | 18108 | 14186 | 1945 | 68757/121381 | 87532/152455 | 195030/77580 | 7949 | 0.11 | 1.00 | -12415 | 3023 | ok | CANDIDATE-DD |
 | retr_w10 | thr 14 pers 20 latch arm abs 25 | 20638 | 30363 | 20134 | 27094 | 15456 | 4062 | 13547 | 900 | 69144/121381 | 148955/152455 | 233015/77580 | 3158 | 0.02 | 1.00 | -28027 | -14830 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| retr_w10 | thr 22 pers 12 latch arm abs 40 | 28383 | 34985 | 21128 | 27372 | 14976 | 5980 | 15292 | 1048 | 71641/121381 | 112350/152455 | 233478/77580 | 3024 | 0.02 | 1.00 | 3485 | -7085 | ok | CANDIDATE-DD |
-| retr_w10 | thr 14 pers 20 latch arm abs 20 | 22035 | 29142 | 20887 | 28562 | 15594 | 2481 | 13128 | 288 | 74855/121381 | 134881/152455 | 259300/77580 | 3557 | 0.23 | 1.00 | -30189 | -13433 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-## K7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -112667.0, "dd_never": 42831.12, "dd_wf": 40803.98, "share_pos": 0.26, "npick": 28, "months": 35, "wf_ok": false}
-Reference rows: never-cut L1M..X' mean = 4952 / 8594 / 3828 / 3245 / 2177 / 829 / 2881 / 595; maxDD L6M 20902 PRE 26707 w20 L6M 1791. Live S1b-COMB: mean 7873 / 8450 / 3532 / 3232 / 1955 / 2979 / 2738 / 436; maxDD L6M 41849 PRE 23073 w20 L6M -20339.
+## K7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -183352.5, "dd_never": 42831.12, "dd_wf": 41369.62, "share_pos": 0.26, "npick": 35, "months": 35, "wf_ok": false}
+Reference rows: never-cut L1M..X' mean = 4952 / 5000 / 1432 / 3382 / 2075 / -1276 / 2748 / 555; maxDD L6M 20902 PRE 26707 w20 L6M 1791. Live S1b-COMB: mean 7873 / 5607 / 1636 / 2666 / 1568 / 902 / 2580 / 392; maxDD L6M 41849 PRE 23073 w20 L6M -20339.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | sweep8_w30 | thr 4 pers 12 latch arm abs 10 | 1104 | 6026 | 5102 | 3657 | 1688 | -240 | 1481 | -19 | 5514/20902 | 27025/26707 | 25164/1791 | 3787 | 0.11 | 1.00 | -15890 | -3848 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| adv_best_move | thr 3 pers 5 latch arm pct 0.15 | 5861 | 7785 | 5020 | 4368 | 2154 | -128 | 1611 | 456 | 8636/20902 | 23900/26707 | 28728/1791 | 3051 | 0.05 | 1.00 | 126 | 909 | ok | CANDIDATE-DD |
 | sweep4_w10 | thr 4 pers 12 latch arm abs 10 | 684 | 5120 | 3083 | 3606 | 1790 | 1366 | 1446 | -32 | 9097/20902 | 23670/26707 | 13419/1791 | 3060 | 0.57 | 1.00 | -11824 | -4268 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| sweep4_w10 | thr 4 pers 12 latch arm pct 0.15 | 1937 | 5428 | 3187 | 3551 | 1754 | 1247 | 1508 | -3 | 10702/20902 | 26726/26707 | 15505/1791 | 3113 | 0.68 | 1.00 | -11352 | -3014 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| sweep8_w30 | thr 4 pers 20 cur arm abs 15 | 4922 | 7055 | 4542 | 5302 | 3156 | 1966 | 1978 | -243 | 10790/20902 | 18946/26707 | 28688/1791 | 2471 | 0.17 | 1.00 | -6625 | -29 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| sweep8_w30 | thr 4 pers 20 cur arm pct 0.3 | 6037 | 8329 | 5256 | 5646 | 3360 | 2377 | 2201 | 167 | 11354/20902 | 17706/26707 | 33167/1791 | 2319 | 0.03 | 1.00 | -5284 | 1085 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| tot_rel_base | thr 1.01 pers 20 cur arm abs 40 | 5871 | 6853 | 3521 | 4939 | 2389 | 1329 | 2545 | -12 | 9396/20902 | 25381/26707 | 39604/1791 | 2191 | 0.03 | 1.00 | 879 | 839 | ok | CANDIDATE-DD |
+| imb_ag10 | thr 0.4043 pers 2 cur arm pct 0.45 | 4650 | 6269 | 2954 | 4065 | 2363 | 1375 | 2695 | 399 | 9560/20902 | 21646/26707 | 18437/1791 | 1148 | 0.02 | 1.00 | 0 | -302 | ok | CANDIDATE-DD |
 
 K7 loss: the rule that lowers L6M drawdown most is sweep8_w30 (f >= 4 for 12 s, armed latch 10); L6M maxDD 5514 vs 20902 never-cut (live line 41849), L6M mean 3657 vs 3245 never-cut, PRE maxDD 27025 vs 26707; placebo p 0.11, family p 1.00, live week delta -15890; label CANDIDATE-DD FAILS-LIVE-WEEK.
 
-Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 5 cells
+Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 63 cells
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| sweep8_w30 | thr 4 pers 20 cur arm pct 0.3 | 6037 | 8329 | 5256 | 5646 | 3360 | 2377 | 2201 | 167 | 11354/20902 | 17706/26707 | 33167/1791 | 2319 | 0.03 | 1.00 | -5284 | 1085 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| dlt_med_w30 | thr -52.16 pers 2 cur arm pct 0.15 | 7175 | 6645 | 3459 | 3602 | 2349 | 1189 | 2389 | 698 | 11759/20902 | 23921/26707 | 21340/1791 | 2553 | 0.86 | 1.00 | -6326 | -1202 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| dlt_med_w30 | thr -52.16 pers 2 cur arm abs 20 | 6120 | 5957 | 2860 | 3878 | 2688 | 1084 | 2853 | 288 | 13741/20902 | 18069/26707 | 24874/1791 | 2180 | 0.95 | 1.00 | -2900 | 495 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-## P7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -159453.01, "dd_never": 144369.91, "dd_wf": 124747.88, "share_pos": 0.43, "npick": 31, "months": 35, "wf_ok": false}
-Reference rows: never-cut L1M..X' mean = 33625 / 22555 / 13873 / 11894 / 8318 / 6680 / 8641 / -628; maxDD L6M 133887 PRE 109442 w20 L6M -29902. Live S1b-COMB: mean 5700 / 18966 / 12054 / 14708 / 10485 / 8283 / 6746 / -321; maxDD L6M 96490 PRE 106914 w20 L6M 53844.
+| tot_rel_base | thr 1.01 pers 20 cur arm abs 40 | 5871 | 6853 | 3521 | 4939 | 2389 | 1329 | 2545 | -12 | 9396/20902 | 25381/26707 | 39604/1791 | 2191 | 0.03 | 1.00 | 879 | 839 | ok | CANDIDATE-DD |
+| imb_ag10 | thr 0.4043 pers 2 cur arm pct 0.45 | 4650 | 6269 | 2954 | 4065 | 2363 | 1375 | 2695 | 399 | 9560/20902 | 21646/26707 | 18437/1791 | 1148 | 0.02 | 1.00 | 0 | -302 | ok | CANDIDATE-DD |
+| r_ab8 | thr 2.133 pers 3 cur arm pct 0.6 | 6383 | 8630 | 4893 | 4740 | 3190 | 1588 | 2676 | 443 | 10152/20902 | 18772/26707 | 28557/1791 | 1231 | 0.29 | 1.00 | 497 | 784 | ok | CANDIDATE-DD |
+## P7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -496817.83, "dd_never": 144369.91, "dd_wf": 112272.16, "share_pos": 0.37, "npick": 35, "months": 35, "wf_ok": false}
+Reference rows: never-cut L1M..X' mean = 33625 / 22555 / 13873 / 11894 / 8318 / 4310 / 6595 / -741; maxDD L6M 133887 PRE 109442 w20 L6M -29902. Live S1b-COMB: mean 5700 / 18966 / 12054 / 14708 / 10485 / 11110 / 4903 / -839; maxDD L6M 96490 PRE 106914 w20 L6M 53844.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | sweep8_w30 | thr 6 pers 1 latch arm abs 10 | 25653 | 31594 | 23256 | 22753 | 9606 | -3335 | 4064 | -607 | 36977/133887 | 78726/109442 | 264422/-29902 | 1891 | 0.02 | 1.00 | -71288 | -7972 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
 | sweep4_w10 | thr 4 pers 8 cur arm abs 15 | 7362 | 15882 | 11850 | 18700 | 9890 | -6458 | 3858 | -725 | 37113/133887 | 89280/109442 | 161302/-29902 | 2301 | 0.02 | 1.00 | -83434 | -26264 | FAIL | CANDIDATE-DD FAILS-LIVE-WEEK |
+| sweep8_w10 | thr 2 pers 2 cur arm abs 20 | 2044 | 10520 | 7610 | 15327 | 7247 | 2077 | 1418 | 2120 | 40468/133887 | 64839/109442 | 119037/-29902 | 2769 | 0.02 | 1.00 | -65651 | -31581 | FAIL | CANDIDATE-DD FAILS-LIVE-WEEK |
 | retr_w10 | thr 22 pers 5 cur arm pct 0.3 | 2450 | 12900 | 9942 | 13651 | 7076 | 2474 | 1344 | 958 | 40579/133887 | 76049/109442 | 94591/-29902 | 2794 | 0.02 | 1.00 | -75937 | -31175 | FAIL | CANDIDATE-DD FAILS-LIVE-WEEK |
-| sweep4_w10 | thr 4 pers 8 cur arm pct 0.15 | -969 | 12460 | 9579 | 17487 | 7189 | -5218 | 2684 | 15 | 41466/133887 | 100647/109442 | 113523/-29902 | 2534 | 0.02 | 1.00 | -105237 | -34594 | FAIL | CANDIDATE-DD FAILS-LIVE-WEEK |
-| sweep8_w30 | thr 6 pers 1 latch arm pct 0.15 | 24336 | 30945 | 23039 | 22801 | 9164 | -2462 | 4112 | -444 | 41615/133887 | 76035/109442 | 271730/-29902 | 1901 | 0.02 | 1.00 | -82335 | -9289 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| retr_w30 | thr 26 pers 12 cur arm pct 0.3 | -126 | 8083 | 5768 | 13725 | 7101 | 8339 | 1150 | 245 | 41105/133887 | 74208/109442 | 75880/-29902 | 2937 | 0.02 | 1.00 | -76572 | -33751 | FAIL | CANDIDATE-DD FAILS-LIVE-WEEK |
 
 P7 loss: the rule that lowers L6M drawdown most is sweep8_w30 (f >= 6 for 1 s, armed latch 10); L6M maxDD 36977 vs 133887 never-cut (live line 96490), L6M mean 22753 vs 11894 never-cut, PRE maxDD 78726 vs 109442; placebo p 0.02, family p 1.00, live week delta -71288; label CANDIDATE-DD FAILS-LIVE-WEEK.
 
-Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 14 cells
+Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 91 cells
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | retr_w10 | thr 14 pers 20 latch arm abs 10 | 16754 | 21012 | 18305 | 21837 | 11645 | 2372 | 6097 | -2038 | 56327/133887 | 99925/109442 | 203969/-29902 | 1022 | 0.02 | 1.00 | -24551 | -16871 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| retr_w10 | thr 9 pers 20 latch arm abs 35 | 29230 | 23604 | 18505 | 17132 | 7760 | 499 | 8189 | -18 | 65982/133887 | 82562/109442 | 122503/-29902 | 1349 | 0.02 | 1.00 | -16630 | -4395 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| retr_w10 | thr 14 pers 20 latch arm abs 15 | 21507 | 20394 | 15662 | 19910 | 11235 | 3171 | 6179 | -1983 | 66983/133887 | 109020/109442 | 172311/-29902 | 930 | 0.02 | 1.00 | -19851 | -12118 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-## M7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -61223.0, "dd_never": 68802.24, "dd_wf": 77402.96, "share_pos": 0.4, "npick": 30, "months": 35, "wf_ok": false}
-Reference rows: never-cut L1M..X' mean = 419 / 4773 / 1552 / 526 / 12 / 32 / -93 / -107; maxDD L6M 44425 PRE 50321 w20 L6M -68299. Live S1b-COMB: mean 40 / 3817 / 592 / -555 / -623 / 1825 / 373 / 28; maxDD L6M 46547 PRE 25812 w20 L6M -64633.
+| dlt_med_w60 | thr -43.42 pers 20 cur arm abs 35 | 30342 | 27335 | 27945 | 21762 | 12635 | 6784 | 7572 | -1000 | 59918/133887 | 86090/109442 | 94113/-29902 | 1252 | 0.02 | 1.00 | 0 | -3283 | ok | CANDIDATE-DD |
+| dlt_med_w10 | thr -4.47 pers 20 cur arm abs 30 | 39691 | 53126 | 34291 | 23091 | 11012 | -3927 | 7903 | -399 | 60170/133887 | 63167/109442 | 107131/-29902 | 1426 | 0.02 | 1.00 | -158 | 2068 | ok | CANDIDATE-DD |
+## M7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -48035.0, "dd_never": 68802.24, "dd_wf": 55411.76, "share_pos": 0.4, "npick": 34, "months": 35, "wf_ok": false}
+Reference rows: never-cut L1M..X' mean = 419 / 1473 / -648 / -540 / -338 / -23 / -78 / 140; maxDD L6M 44425 PRE 50321 w20 L6M -68299. Live S1b-COMB: mean 40 / 1747 / -788 / -1152 / -1092 / -932 / 439 / 177; maxDD L6M 46547 PRE 25812 w20 L6M -64633.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| sweep8_w30 | thr 4 pers 3 latch arm abs 20 | -413 | 1451 | 926 | 58 | -79 | 734 | -144 | -61 | 22535/44425 | 41974/50321 | -32527/-68299 | 2175 | 0.17 | 1.00 | -3521 | -832 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 2 latch arm abs 20 | -349 | 1439 | 905 | -3 | -85 | 736 | -190 | -99 | 25180/44425 | 41486/50321 | -34792/-68299 | 2189 | 0.32 | 1.00 | -3451 | -767 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 1 latch arm abs 20 | -395 | 1583 | 1049 | 64 | -77 | 644 | -222 | -179 | 25636/44425 | 41853/50321 | -36446/-68299 | 2204 | 0.29 | 1.00 | -3289 | -813 | ok | CANDIDATE-DD |
-| retr_w10 | thr 14 pers 8 cur arm pct 0.6 | 1284 | 2288 | 665 | -29 | -836 | -94 | -186 | -374 | 28479/44425 | 45015/50321 | -41041/-68299 | 2010 | 0.08 | 1.00 | 947 | 456 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 5 latch arm abs 20 | -524 | 1504 | 768 | -85 | -112 | 695 | -102 | -48 | 28851/44425 | 37508/50321 | -38211/-68299 | 2134 | 0.12 | 1.00 | -3200 | -943 | ok | CANDIDATE-DD |
+| dtot8_rel_w15 | thr -0.004938 pers 12 latch arm abs 15 | -1623 | -354 | -464 | 308 | -627 | -958 | -476 | -288 | 13767/44425 | 48783/50321 | -28007/-68299 | 2323 | 0.03 | 1.00 | -1886 | -2042 | ok | CANDIDATE-DD |
+| cps_rel_w10 | thr 3.139 pers 8 latch arm pct 0.3 | 69 | 1464 | 842 | 14 | -428 | -951 | -283 | -619 | 14306/44425 | 37643/50321 | -34516/-68299 | 2397 | 0.06 | 1.00 | -1135 | -3309 | FAIL | CANDIDATE-DD |
+| dtot8_rel_w15 | thr -0.004938 pers 12 cur arm pct 0.15 | -702 | 2226 | 1005 | 416 | -332 | -466 | -282 | -285 | 14612/44425 | 35366/50321 | -24573/-68299 | 2092 | 0.15 | 1.00 | 1968 | -2548 | FAIL | CANDIDATE-DD |
+| cps_rel_w10 | thr 3.139 pers 3 latch arm pct 0.3 | 369 | 1768 | 818 | 98 | -441 | 427 | -485 | -521 | 14882/44425 | 50928/50321 | -28055/-68299 | 2539 | 0.32 | 1.00 | -3316 | -3006 | FAIL | CANDIDATE-DD FAILS-LIVE-WEEK |
+| cps_rel_w10 | thr 2.203 pers 5 cur arm abs 10 | -695 | 1485 | 275 | 315 | -525 | -365 | -442 | -567 | 15453/44425 | 41772/50321 | -27764/-68299 | 2787 | 0.26 | 1.00 | -4293 | -3288 | FAIL | CANDIDATE-DD FAILS-LIVE-WEEK |
 
-M7 loss: the rule that lowers L6M drawdown most is sweep8_w30 (f >= 4 for 3 s, armed latch 20); L6M maxDD 22535 vs 44425 never-cut (live line 46547), L6M mean 58 vs -540 never-cut, PRE maxDD 41974 vs 50321; placebo p 0.17, family p 1.00, live week delta -3521; label CANDIDATE-DD.
+M7 loss: the rule that lowers L6M drawdown most is dtot8_rel_w15 (f ><= -0.004938 for 12 s, armed latch 15); L6M maxDD 13767 vs 44425 never-cut (live line 46547), L6M mean 308 vs -540 never-cut, PRE maxDD 48783 vs 50321; placebo p 0.03, family p 1.00, live week delta -1886; label CANDIDATE-DD.
 
-Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 23 cells
+Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 287 cells
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| sweep8_w30 | thr 4 pers 3 latch arm abs 20 | -413 | 1451 | 926 | 58 | -79 | 734 | -144 | -61 | 22535/44425 | 41974/50321 | -32527/-68299 | 2175 | 0.17 | 1.00 | -3521 | -832 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 2 latch arm abs 20 | -349 | 1439 | 905 | -3 | -85 | 736 | -190 | -99 | 25180/44425 | 41486/50321 | -34792/-68299 | 2189 | 0.32 | 1.00 | -3451 | -767 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 1 latch arm abs 20 | -395 | 1583 | 1049 | 64 | -77 | 644 | -222 | -179 | 25636/44425 | 41853/50321 | -36446/-68299 | 2204 | 0.29 | 1.00 | -3289 | -813 | ok | CANDIDATE-DD |
-## U7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -181421.67, "dd_never": 42226.48, "dd_wf": 48388.02, "share_pos": 0.34, "npick": 35, "months": 35, "wf_ok": false}
-Reference rows: never-cut L1M..X' mean = -4186 / 858 / 264 / 2822 / 1627 / 690 / 1386 / 909; maxDD L6M 21561 PRE 42226 w20 L6M 120. Live S1b-COMB: mean -3377 / 1351 / 1238 / 2949 / 1808 / 1620 / 1325 / 669; maxDD L6M 16419 PRE 39155 w20 L6M 8146.
+| dtot8_rel_w15 | thr -0.004938 pers 12 latch arm abs 15 | -1623 | -354 | -464 | 308 | -627 | -958 | -476 | -288 | 13767/44425 | 48783/50321 | -28007/-68299 | 2323 | 0.03 | 1.00 | -1886 | -2042 | ok | CANDIDATE-DD |
+| cdiv_w60 | thr -1 pers 2 cur arm abs 10 | -1535 | 348 | -116 | -258 | -677 | 79 | -426 | -454 | 15496/44425 | 45570/50321 | -33008/-68299 | 2764 | 0.11 | 1.00 | -3414 | -1954 | ok | CANDIDATE-DD |
+| dlt_v60_w30 | thr -0.08929 pers 20 latch arm pct 0.3 | -769 | 460 | 496 | 280 | -751 | -702 | -466 | -130 | 15798/44425 | 52692/50321 | -27496/-68299 | 2666 | 0.20 | 1.00 | -5033 | -1188 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+## U7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -40818.33, "dd_never": 42226.48, "dd_wf": 38622.02, "share_pos": 0.51, "npick": 35, "months": 35, "wf_ok": false}
+Reference rows: never-cut L1M..X' mean = -4186 / 2816 / 1570 / 2776 / 1600 / 2648 / 1356 / 1021; maxDD L6M 21561 PRE 42226 w20 L6M 120. Live S1b-COMB: mean -3377 / 3156 / 2441 / 3103 / 1856 / 3779 / 1387 / 863; maxDD L6M 16419 PRE 39155 w20 L6M 8146.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 3 pers 20 latch arm abs 45 | -1932 | 3908 | 1628 | 3291 | 2250 | 2825 | 1651 | 1830 | 9886/21561 | 43161/42226 | 3532/120 | 571 | 0.03 | 1.00 | 0 | 469 | ok | CANDIDATE-DD |
-| dlt_med_w30 | thr -16.96 pers 20 cur arm abs 30 | -2426 | 2488 | 1370 | 3492 | 2748 | 4361 | 800 | 1252 | 10440/21561 | 38079/42226 | 8302/120 | 673 | 0.02 | 1.00 | 0 | 388 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 8 latch arm pct 0.75 | -1801 | 3776 | 1474 | 3864 | 2154 | 1396 | 1615 | 1869 | 10819/21561 | 42523/42226 | 9790/120 | 320 | 0.20 | 1.00 | 0 | 306 | ok | CANDIDATE-DD |
-| dlt_med_w30 | thr -52.16 pers 2 latch arm pct 0.3 | -2493 | 1534 | 2346 | 4235 | 2361 | 2380 | 1277 | 1231 | 12618/21561 | 41403/42226 | 24798/120 | 462 | 0.05 | 1.00 | 0 | -80 | ok | CANDIDATE-DD |
-| dlt_med_w30 | thr -52.16 pers 2 latch arm abs 20 | -3752 | 140 | 1647 | 3854 | 2224 | 2457 | 1437 | 1221 | 15371/21561 | 37018/42226 | 15274/120 | 449 | 0.03 | 1.00 | 0 | 116 | ok | CANDIDATE-DD |
+| ice_ag_w10 | thr 4 pers 5 cur arm pct 0.15 | 180 | 2954 | 2146 | 3585 | 2343 | 2569 | 814 | 598 | 6061/21561 | 35033/42226 | 21429/120 | 777 | 0.02 | 1.00 | 2829 | 809 | ok | CANDIDATE-DD |
+| ice_ag_w10 | thr 4 pers 5 cur arm abs 10 | 140 | 3855 | 1843 | 3550 | 2249 | 2416 | 880 | 598 | 6061/21561 | 30662/42226 | 20553/120 | 768 | 0.02 | 1.00 | 2829 | 774 | ok | CANDIDATE-DD |
+| ice_ag_w30 | thr 6 pers 5 cur arm pct 0.15 | -366 | 1310 | 1460 | 3632 | 2385 | 1413 | 1366 | -84 | 6621/21561 | 20630/42226 | 28980/120 | 792 | 0.02 | 1.00 | 2829 | -1506 | FAIL | CANDIDATE-DD |
+| r_ab8 | thr 2.5 pers 1 latch arm abs 45 | -234 | 4709 | 2560 | 4403 | 2938 | 2774 | 1828 | 1897 | 7200/21561 | 40937/42226 | 21278/120 | 490 | 0.02 | 1.00 | 0 | 382 | ok | CANDIDATE-DD |
+| lp_ag_w10 | thr 3 pers 20 cur arm abs 35 | -1219 | 3734 | 1965 | 3788 | 3062 | 3134 | 457 | 1011 | 7341/21561 | 43069/42226 | 17164/120 | 686 | 0.02 | 1.00 | 0 | 395 | ok | CANDIDATE-DD |
 
-U7 loss: the rule that lowers L6M drawdown most is retr_w10 (f >= 3 for 20 s, armed latch 45); L6M maxDD 9886 vs 21561 never-cut (live line 16419), L6M mean 3291 vs 2822 never-cut, PRE maxDD 43161 vs 42226; placebo p 0.03, family p 1.00, live week delta 0; label CANDIDATE-DD.
+U7 loss: the rule that lowers L6M drawdown most is ice_ag_w10 (f >= 4 for 5 s, armed cur 0.15); L6M maxDD 6061 vs 21561 never-cut (live line 16419), L6M mean 3585 vs 2776 never-cut, PRE maxDD 35033 vs 42226; placebo p 0.02, family p 1.00, live week delta 2829; label CANDIDATE-DD.
 
-Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 15 cells
+Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 112 cells
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 3 pers 20 latch arm abs 45 | -1932 | 3908 | 1628 | 3291 | 2250 | 2825 | 1651 | 1830 | 9886/21561 | 43161/42226 | 3532/120 | 571 | 0.03 | 1.00 | 0 | 469 | ok | CANDIDATE-DD |
-| dlt_med_w30 | thr -16.96 pers 20 cur arm abs 30 | -2426 | 2488 | 1370 | 3492 | 2748 | 4361 | 800 | 1252 | 10440/21561 | 38079/42226 | 8302/120 | 673 | 0.02 | 1.00 | 0 | 388 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 8 latch arm pct 0.75 | -1801 | 3776 | 1474 | 3864 | 2154 | 1396 | 1615 | 1869 | 10819/21561 | 42523/42226 | 9790/120 | 320 | 0.20 | 1.00 | 0 | 306 | ok | CANDIDATE-DD |
-## A7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -33653.0, "dd_never": 14180.76, "dd_wf": 10454.78, "share_pos": 0.37, "npick": 29, "months": 35, "wf_ok": false}
-Reference rows: never-cut L1M..X' mean = 389 / -97 / -190 / 601 / 538 / 140 / 859 / 179; maxDD L6M 12461 PRE 6089 w20 L6M -17069. Live S1b-COMB: mean -1287 / 217 / 169 / 821 / 731 / 328 / 808 / 212; maxDD L6M 8518 PRE 7325 w20 L6M -11915.
+| ice_ag_w10 | thr 4 pers 5 cur arm pct 0.15 | 180 | 2954 | 2146 | 3585 | 2343 | 2569 | 814 | 598 | 6061/21561 | 35033/42226 | 21429/120 | 777 | 0.02 | 1.00 | 2829 | 809 | ok | CANDIDATE-DD |
+| ice_ag_w10 | thr 4 pers 5 cur arm abs 10 | 140 | 3855 | 1843 | 3550 | 2249 | 2416 | 880 | 598 | 6061/21561 | 30662/42226 | 20553/120 | 768 | 0.02 | 1.00 | 2829 | 774 | ok | CANDIDATE-DD |
+| r_ab8 | thr 2.5 pers 1 latch arm abs 45 | -234 | 4709 | 2560 | 4403 | 2938 | 2774 | 1828 | 1897 | 7200/21561 | 40937/42226 | 21278/120 | 490 | 0.02 | 1.00 | 0 | 382 | ok | CANDIDATE-DD |
+## A7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -52419.5, "dd_never": 14180.76, "dd_wf": 17645.52, "share_pos": 0.4, "npick": 35, "months": 35, "wf_ok": false}
+Reference rows: never-cut L1M..X' mean = 389 / 466 / 184 / 780 / 626 / 29 / 859 / 151; maxDD L6M 12461 PRE 6089 w20 L6M -17069. Live S1b-COMB: mean -1287 / -94 / 58 / 768 / 705 / 17 / 808 / 225; maxDD L6M 8518 PRE 7325 w20 L6M -11915.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| lp_ag_w30 | thr 18 pers 12 latch arm abs 15 | -721 | 385 | 49 | 939 | 411 | 146 | 391 | 398 | 5157/12461 | 5621/6089 | -8141/-17069 | 657 | 0.17 | 1.00 | -449 | -1110 | ok | CANDIDATE-DD |
+| lp_ag_w30 | thr 18 pers 8 latch arm abs 15 | -778 | 342 | -12 | 915 | 396 | 125 | 387 | 406 | 5274/12461 | 5681/6089 | -8918/-17069 | 657 | 0.25 | 1.00 | -417 | -1168 | ok | CANDIDATE-DD |
+| lp_ag_w30 | thr 18 pers 1 latch arm abs 15 | -754 | 342 | -5 | 874 | 390 | 181 | 396 | 410 | 5322/12461 | 5588/6089 | -9248/-17069 | 663 | 0.22 | 1.00 | -87 | -1144 | ok | CANDIDATE-DD |
+| lp_ag_w30 | thr 18 pers 20 latch arm abs 15 | -572 | 409 | 67 | 954 | 418 | 121 | 388 | 392 | 5332/12461 | 5633/6089 | -7398/-17069 | 657 | 0.17 | 1.00 | -272 | -961 | ok | CANDIDATE-DD |
+| lp_ag_w30 | thr 18 pers 2 latch arm abs 15 | -731 | 359 | 10 | 892 | 395 | 164 | 390 | 409 | 5344/12461 | 5586/6089 | -8894/-17069 | 661 | 0.25 | 1.00 | 33 | -1120 | ok | CANDIDATE-DD |
+
+A7 loss: the rule that lowers L6M drawdown most is lp_ag_w30 (f >= 18 for 12 s, armed latch 15); L6M maxDD 5157 vs 12461 never-cut (live line 8518), L6M mean 939 vs 601 never-cut, PRE maxDD 5621 vs 6089; placebo p 0.17, family p 1.00, live week delta -449; label CANDIDATE-DD.
+
+Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 148 cells
+| technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ice_ag_w60 | thr 6 pers 20 cur arm abs 25 | 1021 | 1145 | 493 | 1721 | 879 | 429 | 782 | 351 | 5392/12461 | 4857/6089 | 1164/-17069 | 584 | 0.03 | 1.00 | -952 | 109 | ok | CANDIDATE-DD |
 | retr_w10 | thr 14 pers 8 cur arm pct 0.6 | 272 | 996 | 471 | 1218 | 856 | 404 | 774 | 345 | 5407/12461 | 5469/6089 | -2246/-17069 | 573 | 0.02 | 1.00 | -1854 | -118 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| sweep8_w30 | thr 3 pers 5 cur arm pct 0.6 | -856 | 621 | 127 | 1155 | 840 | 121 | 791 | 316 | 6795/12461 | 6324/6089 | -11220/-17069 | 401 | 0.03 | 1.00 | -1775 | -1245 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| dlt_med_w30 | thr -52.16 pers 3 cur arm abs 10 | -314 | 95 | -146 | 879 | 683 | 238 | 848 | 446 | 6971/12461 | 5643/6089 | -10472/-17069 | 349 | 0.03 | 1.00 | -1936 | -703 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| retr_w10 | thr 9 pers 20 cur arm pct 0.45 | 240 | 443 | -7 | 1011 | 706 | 807 | 967 | 363 | 7152/12461 | 5995/6089 | -10416/-17069 | 272 | 0.03 | 1.00 | 1098 | -149 | ok | CANDIDATE-DD |
-| retr_w10 | thr 9 pers 5 cur arm abs 35 | -427 | 890 | 328 | 963 | 635 | 592 | 637 | 371 | 7520/12461 | 6335/6089 | -12345/-17069 | 660 | 0.03 | 1.00 | -1675 | -816 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-
-A7 loss: the rule that lowers L6M drawdown most is retr_w10 (f >= 14 for 8 s, armed cur 0.6); L6M maxDD 5407 vs 12461 never-cut (live line 8518), L6M mean 1218 vs 601 never-cut, PRE maxDD 5469 vs 6089; placebo p 0.02, family p 1.00, live week delta -1854; label CANDIDATE-DD FAILS-LIVE-WEEK.
-
-Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 8 cells
+| micro_sg | thr -1.333 pers 1 cur arm abs 40 | -72 | 283 | 96 | 986 | 577 | 47 | 737 | 339 | 5895/12461 | 6053/6089 | -5412/-17069 | 370 | 0.02 | 1.00 | 0 | -462 | ok | CANDIDATE-DD |
+## H7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -103389.0, "dd_never": 57397.21, "dd_wf": 48581.21, "share_pos": 0.4, "npick": 35, "months": 35, "wf_ok": false}
+Reference rows: never-cut L1M..X' mean = -88 / 270 / -1307 / 1121 / -331 / -2452 / 1453 / 88; maxDD L6M 15477 PRE 20667 w20 L6M -32750. Live S1b-COMB: mean 3186 / 2043 / 996 / 2609 / 656 / -1655 / 1468 / 57; maxDD L6M 8818 PRE 19256 w20 L6M 11007.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 14 pers 8 cur arm pct 0.6 | 272 | 996 | 471 | 1218 | 856 | 404 | 774 | 345 | 5407/12461 | 5469/6089 | -2246/-17069 | 573 | 0.02 | 1.00 | -1854 | -118 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| sweep8_w30 | thr 3 pers 5 cur arm pct 0.6 | -856 | 621 | 127 | 1155 | 840 | 121 | 791 | 316 | 6795/12461 | 6324/6089 | -11220/-17069 | 401 | 0.03 | 1.00 | -1775 | -1245 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-| dlt_med_w30 | thr -52.16 pers 3 cur arm abs 10 | -314 | 95 | -146 | 879 | 683 | 238 | 848 | 446 | 6971/12461 | 5643/6089 | -10472/-17069 | 349 | 0.03 | 1.00 | -1936 | -703 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
-## H7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -31739.5, "dd_never": 57397.21, "dd_wf": 53389.82, "share_pos": 0.49, "npick": 35, "months": 35, "wf_ok": false}
-Reference rows: never-cut L1M..X' mean = -88 / 270 / -1307 / 1121 / -331 / -2452 / 1453 / 103; maxDD L6M 15477 PRE 20667 w20 L6M -32750. Live S1b-COMB: mean 3186 / 2043 / 996 / 2609 / 656 / -1655 / 1468 / 220; maxDD L6M 8818 PRE 19256 w20 L6M 11007.
-| technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| sweep8_w10 | thr 4 pers 3 latch arm abs 10 | 1201 | 2100 | 920 | 2114 | 445 | -303 | 1569 | -58 | 4988/15477 | 15783/20667 | 6350/-32750 | 338 | 0.02 | 1.00 | 394 | 322 | ok | CANDIDATE-DD |
+| adv_best_move | thr 6 pers 3 latch arm abs 10 | 255 | 427 | 437 | 1217 | 350 | -426 | 1551 | 573 | 5048/15477 | 19458/20667 | -3411/-32750 | 496 | 0.02 | 1.00 | 109 | -58 | FAIL | CANDIDATE-DD |
+| adv_best_move | thr 6 pers 3 latch arm pct 0.15 | 135 | 367 | 397 | 1094 | 299 | -426 | 1489 | 554 | 5048/15477 | 20484/20667 | -4679/-32750 | 504 | 0.02 | 1.00 | 109 | -98 | FAIL | CANDIDATE-DD |
+| sweep8_w60 | thr 6 pers 20 cur arm pct 0.15 | 1462 | 2383 | 1527 | 1823 | 142 | -434 | 1567 | 382 | 5146/15477 | 16156/20667 | 3037/-32750 | 394 | 0.02 | 1.00 | 244 | 604 | ok | CANDIDATE-DD |
 | sweep8_w30 | thr 6 pers 5 latch arm pct 0.15 | 320 | 575 | 962 | 1487 | 44 | -266 | 1531 | 72 | 5190/15477 | 15940/20667 | -922/-32750 | 354 | 0.03 | 1.00 | 374 | 305 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 6 pers 5 latch arm abs 10 | 516 | 673 | 1042 | 1454 | 23 | -266 | 1585 | 94 | 5375/15477 | 14744/20667 | -2569/-32750 | 347 | 0.02 | 1.00 | 374 | 403 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 6 pers 1 latch arm pct 0.15 | 461 | 1679 | 969 | 1427 | 87 | -271 | 1497 | -76 | 5466/15477 | 18613/20667 | -928/-32750 | 395 | 0.06 | 1.00 | 394 | 354 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 6 pers 1 latch arm abs 10 | 620 | 1758 | 1089 | 1378 | 58 | -275 | 1538 | -55 | 5486/15477 | 17364/20667 | -1823/-32750 | 387 | 0.02 | 1.00 | 394 | 434 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 20 cur arm pct 0.15 | 754 | 2946 | 1513 | 2061 | 407 | -326 | 1435 | 437 | 5505/15477 | 16303/20667 | 579/-32750 | 389 | 0.02 | 1.00 | 244 | 458 | ok | CANDIDATE-DD |
 
-H7 loss: the rule that lowers L6M drawdown most is sweep8_w30 (f >= 6 for 5 s, armed latch 0.15); L6M maxDD 5190 vs 15477 never-cut (live line 8818), L6M mean 1487 vs 833 never-cut, PRE maxDD 15940 vs 20667; placebo p 0.03, family p 1.00, live week delta 374; label CANDIDATE-DD.
+H7 loss: the rule that lowers L6M drawdown most is sweep8_w10 (f >= 4 for 3 s, armed latch 10); L6M maxDD 4988 vs 15477 never-cut (live line 8818), L6M mean 2114 vs 833 never-cut, PRE maxDD 15783 vs 20667; placebo p 0.02, family p 1.00, live week delta 394; label CANDIDATE-DD.
 
-Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 74 cells
+Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 186 cells
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| sweep8_w10 | thr 4 pers 3 latch arm abs 10 | 1201 | 2100 | 920 | 2114 | 445 | -303 | 1569 | -58 | 4988/15477 | 15783/20667 | 6350/-32750 | 338 | 0.02 | 1.00 | 394 | 322 | ok | CANDIDATE-DD |
+| sweep8_w60 | thr 6 pers 20 cur arm pct 0.15 | 1462 | 2383 | 1527 | 1823 | 142 | -434 | 1567 | 382 | 5146/15477 | 16156/20667 | 3037/-32750 | 394 | 0.02 | 1.00 | 244 | 604 | ok | CANDIDATE-DD |
 | sweep8_w30 | thr 6 pers 5 latch arm pct 0.15 | 320 | 575 | 962 | 1487 | 44 | -266 | 1531 | 72 | 5190/15477 | 15940/20667 | -922/-32750 | 354 | 0.03 | 1.00 | 374 | 305 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 6 pers 5 latch arm abs 10 | 516 | 673 | 1042 | 1454 | 23 | -266 | 1585 | 94 | 5375/15477 | 14744/20667 | -2569/-32750 | 347 | 0.02 | 1.00 | 374 | 403 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 6 pers 1 latch arm pct 0.15 | 461 | 1679 | 969 | 1427 | 87 | -271 | 1497 | -76 | 5466/15477 | 18613/20667 | -928/-32750 | 395 | 0.06 | 1.00 | 394 | 354 | ok | CANDIDATE-DD |
-## O7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -39742.5, "dd_never": 7468.56, "dd_wf": 10378.2, "share_pos": 0.43, "npick": 35, "months": 35, "wf_ok": false}
-Reference rows: never-cut L1M..X' mean = -685 / 149 / -65 / 176 / 653 / -181 / 644 / -136; maxDD L6M 7469 PRE 5102 w20 L6M -9532. Live S1b-COMB: mean -988 / 75 / 115 / 322 / 669 / -127 / 653 / -166; maxDD L6M 6656 PRE 4532 w20 L6M -8247.
+## O7 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {"total": -34793.5, "dd_never": 7468.56, "dd_wf": 8033.08, "share_pos": 0.37, "npick": 35, "months": 35, "wf_ok": false}
+Reference rows: never-cut L1M..X' mean = -685 / -397 / -65 / 176 / 633 / -255 / 587 / -198; maxDD L6M 7469 PRE 5102 w20 L6M -9532. Live S1b-COMB: mean -988 / -176 / 115 / 322 / 597 / -327 / 569 / -198; maxDD L6M 6656 PRE 4532 w20 L6M -8247.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 37 pers 5 latch arm pct 0.15 | 116 | 240 | 377 | 302 | 496 | 95 | 311 | -71 | 4635/7469 | 5183/5102 | -3886/-9532 | 340 | 0.09 | 1.00 | 986 | 128 | ok | CANDIDATE-DD |
-| retr_w10 | thr 29 pers 8 cur arm pct 0.15 | -255 | 139 | 231 | 222 | 571 | 73 | 378 | -182 | 4985/7469 | 4917/5102 | -3971/-9532 | 295 | 0.17 | 1.00 | 656 | -115 | ok | CANDIDATE-DD |
-| dlt_med_w30 | thr -52.16 pers 2 latch arm pct 0.45 | -809 | 47 | 426 | 289 | 501 | -636 | 308 | -34 | 5048/7469 | 4204/5102 | -7323/-9532 | 352 | 0.11 | 1.00 | 443 | -125 | ok | CANDIDATE-DD |
-| dlt_med_w30 | thr -28.69 pers 8 latch arm pct 0.45 | -783 | 105 | 465 | 227 | 489 | -532 | 268 | -173 | 5099/7469 | 4983/5102 | -6024/-9532 | 369 | 0.15 | 1.00 | 516 | -98 | ok | CANDIDATE-DD |
-| retr_w10 | thr 22 pers 12 latch arm abs 20 | -503 | 436 | 553 | 540 | 652 | -422 | 591 | 53 | 6710/7469 | 4986/5102 | -6283/-9532 | 205 | 0.32 | 1.00 | 0 | 181 | ok | CANDIDATE-DD |
+| dtot8_rel_w15 | thr -0.04444 pers 1 latch arm pct 0.15 | -111 | 426 | 581 | 498 | 659 | -238 | 216 | -148 | 2725/7469 | 5195/5102 | -437/-9532 | 355 | 0.02 | 1.00 | 940 | 173 | ok | CANDIDATE-DD |
+| dlt_med_w10 | thr -28.11 pers 1 latch arm pct 0.15 | -363 | 11 | 116 | 207 | 343 | -47 | 87 | -33 | 3243/7469 | 4699/5102 | -4802/-9532 | 448 | 0.05 | 1.00 | -243 | 34 | ok | CANDIDATE-DD |
+| dlt_med_w10 | thr -28.11 pers 2 latch arm pct 0.15 | -61 | 181 | 226 | 240 | 435 | -44 | 92 | -68 | 3600/7469 | 5318/5102 | -4838/-9532 | 441 | 0.11 | 1.00 | 1302 | 66 | ok | CANDIDATE-DD |
+| vol_ag_w30 | thr 588 pers 12 cur arm pct 0.15 | -272 | -76 | 115 | 244 | 297 | -384 | 83 | -202 | 3828/7469 | 4509/5102 | -4860/-9532 | 381 | 0.09 | 1.00 | -1193 | 71 | ok | CANDIDATE-DD FAILS-LIVE-WEEK |
+| sweep8_w10 | thr 4 pers 5 cur arm pct 0.15 | -223 | 275 | 336 | 286 | 467 | -103 | 552 | 28 | 3859/7469 | 4241/5102 | -4740/-9532 | 220 | 0.03 | 1.00 | 826 | 41 | ok | CANDIDATE-DD |
 
-O7 loss: the rule that lowers L6M drawdown most is retr_w10 (f >= 37 for 5 s, armed latch 0.15); L6M maxDD 4635 vs 7469 never-cut (live line 6656), L6M mean 302 vs 173 never-cut, PRE maxDD 5183 vs 5102; placebo p 0.09, family p 1.00, live week delta 986; label CANDIDATE-DD.
+O7 loss: the rule that lowers L6M drawdown most is dtot8_rel_w15 (f ><= -0.04444 for 1 s, armed latch 0.15); L6M maxDD 2725 vs 7469 never-cut (live line 6656), L6M mean 498 vs 173 never-cut, PRE maxDD 5195 vs 5102; placebo p 0.02, family p 1.00, live week delta 940; label CANDIDATE-DD.
 
-Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 7 cells
+Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 109 cells
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 22 pers 12 latch arm abs 20 | -503 | 436 | 553 | 540 | 652 | -422 | 591 | 53 | 6710/7469 | 4986/5102 | -6283/-9532 | 205 | 0.32 | 1.00 | 0 | 181 | ok | CANDIDATE-DD |
-| retr_w10 | thr 14 pers 20 latch arm abs 25 | -595 | -174 | 83 | 325 | 702 | -112 | 663 | -48 | 6772/7469 | 4025/5102 | -10511/-9532 | 89 | 0.57 | 1.00 | 0 | 83 | ok | CANDIDATE-DD |
-| retr_w10 | thr 9 pers 20 latch arm abs 25 | -594 | -80 | 158 | 301 | 735 | -51 | 631 | -70 | 6779/7469 | 4192/5102 | -9331/-9532 | 162 | 0.52 | 1.00 | 0 | 90 | ok | CANDIDATE-DD |
+| sweep8_w10 | thr 4 pers 5 cur arm pct 0.15 | -223 | 275 | 336 | 286 | 467 | -103 | 552 | 28 | 3859/7469 | 4241/5102 | -4740/-9532 | 220 | 0.03 | 1.00 | 826 | 41 | ok | CANDIDATE-DD |
+| sweep8_w10 | thr 4 pers 8 cur arm pct 0.15 | -505 | -96 | 84 | 305 | 520 | 21 | 619 | 24 | 4019/7469 | 3820/5102 | -4654/-9532 | 159 | 0.02 | 1.00 | 399 | 129 | ok | CANDIDATE-DD |
+| sweep8_w10 | thr 3 pers 8 cur arm pct 0.3 | -555 | -50 | 251 | 257 | 482 | -401 | 584 | -113 | 4218/7469 | 4516/5102 | -4290/-9532 | 252 | 0.03 | 1.00 | 591 | 42 | ok | CANDIDATE-DD |
 ## X3 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {}
 Reference rows: never-cut L1M..X' mean = -166 / 0 / 0 / 0 / 0 / 0 / 0 / 0; maxDD L6M 664 PRE 0 w20 L6M -664. Live S1b-COMB: mean -448 / 0 / 0 / 0 / 0 / 0 / 0 / 0; maxDD L6M 1794 PRE 0 w20 L6M -1794.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
@@ -157,7 +157,7 @@ Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <
 X3 loss: no ledgered cell passes the validity filter.
 
 ## X4 loss (sessions pooled)  walk-forward of the picking over the ledgered cells: {}
-Reference rows: never-cut L1M..X' mean = 1195 / 598 / 398 / 191 / 94 / 0 / 0 / 0; maxDD L6M 0 PRE 0 w20 L6M 0. Live S1b-COMB: mean 795 / 398 / 265 / 127 / 62 / 0 / 0 / 0; maxDD L6M 0 PRE 0 w20 L6M 0.
+Reference rows: never-cut L1M..X' mean = 1195 / 0 / 0 / 0 / 0 / 0 / 0 / 0; maxDD L6M 0 PRE 0 w20 L6M 0. Live S1b-COMB: mean 795 / 0 / 0 / 0 / 0 / 0 / 0 / 0; maxDD L6M 0 PRE 0 w20 L6M 0.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 Recents-consistent subset (L1M, L2M >= -0.5 MDE, L3M, L6M delta > 0, PRE maxDD <= never*1.05, PRE delta >= -0.5 MDE): 0 cells
@@ -177,62 +177,62 @@ X5 loss: no ledgered cell passes the validity filter.
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | sweep8_w30 | thr 3 pers 20 latch arm abs 15 | 1481 | 3772 | 3346 | 2739 | 1468 | 143 | 976 | 163 | 4306/22104 | 12257/13344 | 16637/-6120 | 1175 | 0.03 | 1.00 |  | -3108 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 8 latch arm abs 15 | 1705 | 4471 | 3950 | 2968 | 1539 | 51 | 959 | 268 | 4613/22104 | 13710/13344 | 12772/-6120 | 1043 | 0.02 | 1.00 |  | -2884 | ok | CANDIDATE-DD |
+| sweep8_w10 | thr 3 pers 1 latch arm abs 10 | 246 | 3383 | 3320 | 2979 | 1613 | 645 | 1136 | 45 | 4437/22104 | 13136/13344 | 13994/-6120 | 1220 | 0.02 | 1.00 |  | -4343 | ok | CANDIDATE-DD |
 ### K7 london (session 1)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| sweep4_w10 | thr 4 pers 8 cur arm pct 0.3 | 18 | 2311 | 1475 | 412 | 323 | -174 | 208 | 250 | 7920/14952 | 18504/18704 | -15558/-27616 | 754 | 0.31 | 1.00 |  | 576 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 8 cur arm pct 0.3 | -1483 | 1640 | 502 | 552 | 234 | -38 | 180 | 40 | 8889/14952 | 15021/18704 | -20750/-27616 | 693 | 0.11 | 1.00 |  | -506 | ok | CANDIDATE-DD |
+| tot_rel_base | thr 1.01 pers 8 cur arm abs 35 | -798 | 1481 | 759 | 937 | 378 | -1187 | 197 | -114 | 5596/14952 | 17577/18704 | -4354/-27616 | 783 | 0.06 | 1.00 |  | -106 | ok | CANDIDATE-DD |
+| tot_rel_base | thr 1.01 pers 20 cur arm pct 0.45 | -720 | 2584 | 1502 | 843 | 254 | -1328 | 136 | -9 | 5702/14952 | 19265/18704 | -12124/-27616 | 746 | 0.34 | 1.00 |  | 291 | ok | CANDIDATE-DD |
 ### K7 nyam (session 3)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| dlt_med_w30 | thr -16.96 pers 20 cur arm pct 0.15 | 398 | -22 | 192 | 34 | -275 | -746 | 148 | 140 | 5268/23185 | 6222/6211 | -12971/-34239 | 1168 | 0.14 | 1.00 |  | -1339 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 6 pers 5 cur arm abs 25 | 2046 | 558 | 330 | 177 | -272 | -86 | 531 | 369 | 8104/23185 | 5792/6211 | -18730/-34239 | 531 | 0.71 | 1.00 |  | 234 | ok | CANDIDATE-DD |
+| tot_rel_h1 | thr 0.9942 pers 8 latch arm abs 15 | 1012 | 1064 | 986 | 590 | -12 | -849 | 299 | 175 | 2262/23185 | 5980/6211 | -3776/-34239 | 1075 | 0.02 | 1.00 |  | -725 | ok | CANDIDATE-DD |
+| tot_rel_h1 | thr 0.9942 pers 5 latch arm abs 10 | 861 | 609 | 683 | 414 | 11 | -567 | 98 | 41 | 2503/23185 | 5586/6211 | -2111/-34239 | 1223 | 0.03 | 1.00 |  | -876 | ok | CANDIDATE-DD |
 ### K7 nypm (session 4)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| sweep8_w30 | thr 4 pers 2 cur arm pct 0.3 | 1392 | 251 | 509 | 742 | 251 | -748 | 351 | 148 | 3428/6369 | 29321/33629 | -4989/-7470 | 576 | 0.22 | 1.00 |  | -64 | FAIL | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 8 cur arm pct 0.3 | 1397 | 451 | 55 | 737 | 251 | -775 | 343 | 156 | 3976/6369 | 27123/33629 | -3974/-7470 | 542 | 0.29 | 1.00 |  | 43 | ok | CANDIDATE-DD |
+| tot_rel_base | thr 1.01 pers 12 latch arm abs 20 | 1279 | 637 | 232 | 702 | 384 | 968 | 220 | 239 | 1832/6369 | 25325/33629 | 180/-7470 | 680 | 0.03 | 1.00 |  | 8 | ok | CANDIDATE-DD |
+| tot_rel_base | thr 0.5962 pers 1 cur arm abs 15 | 195 | 568 | 453 | 1197 | 800 | 1079 | 251 | 195 | 2018/6369 | 32362/33629 | 1172/-7470 | 444 | 0.03 | 1.00 |  | -574 | FAIL | CANDIDATE-DD |
 ### P7 asia (session 0)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| adv_best_move | thr 8 pers 2 cur arm pct 0.15 | 8797 | 9438 | 7455 | 12407 | 6763 | 3088 | 5426 | -705 | 34805/116210 | 29287/66531 | 72112/8506 | 1018 | 0.02 | 1.00 |  | -24519 | FAIL | CANDIDATE-DD |
 | retr_w10 | thr 37 pers 1 cur arm pct 0.15 | 7281 | 12612 | 9581 | 11804 | 7014 | 3531 | 4186 | -1311 | 35019/116210 | 43328/66531 | 32192/8506 | 1085 | 0.02 | 1.00 |  | -26035 | FAIL | CANDIDATE-DD |
-| retr_w10 | thr 37 pers 2 cur arm pct 0.15 | 5293 | 13616 | 10040 | 13407 | 7792 | 1362 | 5418 | -841 | 35813/116210 | 35147/66531 | 45801/8506 | 966 | 0.02 | 1.00 |  | -28023 | FAIL | CANDIDATE-DD |
 ### P7 london (session 1)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 14 pers 20 latch arm abs 20 | 3483 | 13280 | 8717 | 8970 | 3701 | -1391 | -1675 | -551 | 26766/51796 | 153007/150275 | 66288/-20541 | 287 | 0.02 | 1.00 |  | -4136 | FAIL | CANDIDATE-DD |
-| retr_w10 | thr 14 pers 20 latch arm pct 0.3 | 3483 | 12222 | 8012 | 8623 | 3501 | -1539 | -1649 | -575 | 26766/51796 | 151095/150275 | 62996/-20541 | 297 | 0.02 | 1.00 |  | -5194 | FAIL | CANDIDATE-DD |
+| dlt_v60_w60 | thr -0.35 pers 20 latch arm pct 0.15 | 4120 | 3384 | 3945 | 4417 | 1170 | -4684 | -965 | 816 | 25430/51796 | 153520/150275 | -7972/-20541 | 904 | 0.25 | 1.00 |  | -5965 | FAIL | CANDIDATE-DD |
+| tot_rel_h1 | thr 0.6156 pers 3 cur arm pct 0.15 | -1027 | 8937 | 4960 | 6218 | 2501 | -2691 | -526 | 701 | 26001/51796 | 116661/150275 | 39925/-20541 | 453 | 0.34 | 1.00 |  | -4066 | FAIL | CANDIDATE-DD |
 ### P7 nyam (session 3)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| sweep4_w10 | thr 4 pers 12 latch arm pct 0.15 | 2898 | 4029 | 1857 | 1799 | 383 | 2856 | 782 | 674 | 13560/86629 | 40328/77956 | -27231/-147642 | 645 | 0.02 | 1.00 |  | -772 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 6 pers 1 latch arm pct 0.15 | 1028 | 4914 | 3930 | 2394 | 786 | 2963 | 1043 | 426 | 15071/86629 | 43476/77956 | -21548/-147642 | 560 | 0.02 | 1.00 |  | 113 | ok | CANDIDATE-DD |
+| tot_rel_base | thr 0.8129 pers 1 latch arm abs 10 | 1383 | 1981 | 1353 | 1372 | -209 | 2086 | 837 | -547 | 10279/86629 | 39716/77956 | -24316/-147642 | 848 | 0.02 | 1.00 |  | -2821 | ok | CANDIDATE-DD |
+| tot_rel_base | thr 1.01 pers 2 cur arm abs 15 | 40 | 2656 | 1037 | 1691 | 142 | 3080 | 213 | 1367 | 11662/86629 | 39965/77956 | -33270/-147642 | 785 | 0.02 | 1.00 |  | -2146 | FAIL | CANDIDATE-DD |
 ### M7 london (session 1)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| sweep8_w30 | thr 4 pers 3 latch arm abs 20 | -1774 | 12 | -274 | -443 | -58 | 650 | -547 | 54 | 14564/38178 | 49163/69890 | -33858/-64988 | 1212 | 0.02 | 1.00 |  | -1078 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 4 pers 2 latch arm abs 20 | -1713 | 21 | -282 | -504 | -66 | 650 | -573 | -22 | 16781/38178 | 51257/69890 | -35518/-64988 | 1219 | 0.02 | 1.00 |  | -1018 | ok | CANDIDATE-DD |
+| pps_rel_w30 | thr 2.626 pers 5 latch arm abs 15 | 582 | 1891 | 627 | 487 | 34 | -451 | -628 | -196 | 10106/38178 | 59809/69890 | -15408/-64988 | 1660 | 0.02 | 1.00 |  | -1641 | FAIL | CANDIDATE-DD |
+| pps_rel_w30 | thr 2.626 pers 5 latch arm pct 0.3 | 345 | 1326 | 804 | 513 | 31 | -311 | -572 | -387 | 10207/38178 | 48110/69890 | -19934/-64988 | 1583 | 0.02 | 1.00 |  | -2206 | FAIL | CANDIDATE-DD |
 ### M7 nyam (session 3)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | sweep8_w30 | thr 6 pers 5 cur arm abs 25 | 1986 | 1787 | 1425 | 749 | 117 | 162 | 591 | 38 | 4575/11667 | 7431/7583 | -3655/-17931 | 547 | 0.02 | 1.00 |  | 399 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 3 pers 5 cur arm pct 0.6 | 1743 | 1555 | 1544 | 793 | 31 | 532 | 646 | -360 | 6958/11667 | 6027/7583 | -5261/-17931 | 763 | 0.02 | 1.00 |  | 107 | ok | CANDIDATE-DD |
+| pps_rel_w30 | thr 1.149 pers 3 cur arm abs 20 | 1203 | 1338 | 1535 | 619 | -104 | -589 | 225 | 63 | 4804/11667 | 6031/7583 | -5020/-17931 | 1013 | 0.02 | 1.00 |  | 89 | ok | CANDIDATE-DD |
 ### U7 asia (session 0)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 22 pers 12 latch arm abs 20 | 1366 | 4841 | 3440 | 4429 | 2156 | 638 | 1130 | 1649 | 5578/9906 | 32027/31026 | 38162/9960 | 132 | 0.42 | 1.00 |  | 152 | ok | CANDIDATE-DD |
-| retr_w10 | thr 22 pers 12 latch arm pct 0.15 | 71 | 930 | 2777 | 3844 | 1765 | 331 | 997 | 1594 | 6917/9906 | 32027/31026 | 29034/9960 | 159 | 0.98 | 1.00 |  | -1142 | FAIL | CANDIDATE-DD |
+| ahead_rel_slow | thr 1.15 pers 12 cur arm pct 0.3 | 3386 | 3467 | 3587 | 4107 | 2690 | 2593 | 953 | 1268 | 1223/9906 | 27165/31026 | 45438/9960 | 350 | 0.02 | 1.00 |  | 89 | ok | CANDIDATE-DD |
+| pps_rel_w30 | thr 2.626 pers 12 cur arm abs 15 | 2950 | 5065 | 3612 | 4688 | 3111 | 2655 | 821 | 1187 | 1788/9906 | 26115/31026 | 49523/9960 | 426 | 0.02 | 1.00 |  | 115 | ok | CANDIDATE-DD |
 ### U7 london (session 1)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 9 pers 20 cur arm pct 0.45 | -4799 | -494 | -2104 | 408 | 480 | 1802 | 538 | -131 | 25579/32749 | 33395/33984 | -51698/-53967 | 169 | 0.95 | 1.00 |  | -17 | ok | CANDIDATE-DD |
-| dlt_med_w30 | thr -52.16 pers 2 cur arm pct 0.15 | -4834 | -1759 | -1869 | 270 | 616 | 1130 | 573 | -453 | 25697/32749 | 33563/33984 | -51194/-53967 | 239 | 0.91 | 1.00 |  | 312 | ok | CANDIDATE-DD |
+| ice_ag_w30 | thr 3 pers 20 latch arm abs 10 | -1341 | 402 | -109 | 322 | 175 | -166 | -399 | -215 | 9434/32749 | 35452/33984 | -24790/-53967 | 572 | 0.02 | 1.00 |  | 850 | ok | CANDIDATE-DD |
+| ice_ag_w60 | thr 4 pers 12 latch arm pct 0.15 | -1343 | 265 | -2 | 187 | 94 | 92 | -279 | -269 | 9542/32749 | 31075/33984 | -24103/-53967 | 584 | 0.03 | 1.00 |  | 715 | ok | CANDIDATE-DD |
 ### A7 asia (session 0)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 14 pers 8 cur arm pct 0.6 | 272 | 996 | 471 | 1218 | 856 | 404 | 774 | 345 | 5407/12461 | 5469/6089 | -2246/-17069 | 573 | 0.02 | 1.00 |  | -118 | ok | CANDIDATE-DD |
-| sweep8_w30 | thr 3 pers 5 cur arm pct 0.6 | -856 | 621 | 127 | 1155 | 840 | 121 | 791 | 316 | 6795/12461 | 6324/6089 | -11220/-17069 | 401 | 0.03 | 1.00 |  | -1245 | ok | CANDIDATE-DD |
+| lp_ag_w30 | thr 18 pers 12 latch arm abs 15 | -721 | 385 | 49 | 939 | 411 | 146 | 391 | 398 | 5157/12461 | 5621/6089 | -8141/-17069 | 657 | 0.17 | 1.00 |  | -1110 | ok | CANDIDATE-DD |
+| lp_ag_w30 | thr 18 pers 8 latch arm abs 15 | -778 | 342 | -12 | 915 | 396 | 125 | 387 | 406 | 5274/12461 | 5681/6089 | -8918/-17069 | 657 | 0.25 | 1.00 |  | -1168 | ok | CANDIDATE-DD |
 ### H7 asia (session 0)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -241,28 +241,37 @@ X5 loss: no ledgered cell passes the validity filter.
 ### H7 nyam (session 3)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 14 pers 12 cur arm abs 20 | 436 | -61 | -4 | 355 | 147 | 182 | -125 | 126 | 2803/3762 | 16886/23608 | -3526/-5403 | 233 | 0.25 | 1.00 |  | -715 | ok | CANDIDATE-DD |
-| retr_w10 | thr 14 pers 8 cur arm pct 0.6 | 468 | 56 | -52 | 327 | 222 | -8 | -115 | 121 | 3328/3762 | 21351/23608 | -4921/-5403 | 228 | 0.71 | 1.00 |  | -682 | ok | CANDIDATE-DD |
+| cps_rel_w30 | thr 1.439 pers 3 cur arm abs 15 | 762 | 237 | 328 | 463 | 113 | 185 | -194 | 114 | 1491/3762 | 21333/23608 | -337/-5403 | 292 | 0.05 | 1.00 |  | -498 | FAIL | CANDIDATE-DD |
+| cps_rel_w30 | thr 1.439 pers 12 cur arm abs 15 | 1121 | 405 | 343 | 569 | 162 | 213 | -216 | 119 | 1511/3762 | 21955/23608 | 1708/-5403 | 278 | 0.03 | 1.00 |  | -330 | ok | CANDIDATE-DD |
 ### O7 nyam (session 3)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | w20 L6M w/wo | nfire | plc p | fam p | HELD-OUT live-week delta (186 actual trades, vs actual) | worst recent window delta | recents | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| retr_w10 | thr 37 pers 5 latch arm pct 0.15 | 116 | 240 | 377 | 302 | 496 | 95 | 311 | -71 | 4635/7469 | 5183/5102 | -3886/-9532 | 340 | 0.09 | 1.00 |  | 128 | ok | CANDIDATE-DD |
-| retr_w10 | thr 29 pers 8 cur arm pct 0.15 | -255 | 139 | 231 | 222 | 571 | 73 | 378 | -182 | 4985/7469 | 4917/5102 | -3971/-9532 | 295 | 0.17 | 1.00 |  | -115 | ok | CANDIDATE-DD |
+| dtot8_rel_w15 | thr -0.04444 pers 1 latch arm pct 0.15 | -111 | 426 | 581 | 498 | 659 | -238 | 216 | -148 | 2725/7469 | 5195/5102 | -437/-9532 | 355 | 0.02 | 1.00 |  | 173 | ok | CANDIDATE-DD |
+| dlt_med_w10 | thr -28.11 pers 1 latch arm pct 0.15 | -363 | 11 | 116 | 207 | 343 | -47 | 87 | -33 | 3243/7469 | 4699/5102 | -4802/-9532 | 448 | 0.05 | 1.00 |  | 34 | ok | CANDIDATE-DD |
 # Lot-scaled ARM variants (V1 clip(ARM*sqrt(4/lots),15,50), V2 clip(ARM*sqrt(lots/4),15,50), USD clip($/(lots*20),10,55)): 14,742 further cells screened on the 29 features of the best rules; best valid cell per book vs the best lattice (fixed/pct) cell (L6M maxDD, mean); top 3 per book-level scope ledgered
-lot-arm table failed: [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_exh/bc/valid_ranked_lot
+| book | best lot-scaled cell | L6M maxDD | L6M mean | best fixed/pct cell | L6M maxDD | L6M mean |
+|---|---|---|---|---|---|---|
+| ALL | sweep8_w30 thr 4 pers 8 latch USD 800 | 32480 | 21247 | sweep8_w30 thr 4 pers 5 | 36812 | 21427 |
+| K7 | sweep8_w30 thr 4 pers 20 cur V2 25 | 7753 | 5506 | sweep8_w30 thr 4 pers 12 | 5514 | 3657 |
+| P7 | sweep8_w30 thr 4 pers 5 latch USD 1200 | 25981 | 14175 | sweep8_w30 thr 6 pers 1 | 36977 | 22753 |
+| M7 | cps_rel_w10 thr 3.139 pers 3 latch V1 10 | 11646 | 417 | dtot8_rel_w15 thr -0.004938 pers 12 | 13767 | 308 |
+| U7 | ice_ag_w30 thr 6 pers 8 cur USD 800 | 7756 | 3057 | ice_ag_w10 thr 4 pers 5 | 6061 | 3585 |
+| A7 | lp_ag_w30 thr 18 pers 12 latch V2 10 | 5157 | 939 | lp_ag_w30 thr 18 pers 12 | 5157 | 939 |
+| H7 | sweep8_w60 thr 6 pers 20 latch V2 10 | 6034 | 1631 | sweep8_w10 thr 4 pers 3 | 4988 | 2114 |
+| O7 | tot_rel_base thr 1.01 pers 2 cur V2 10 | 4345 | 342 | dtot8_rel_w15 thr -0.04444 pers 1 | 2725 | 498 |
+Reading: lot-scaled arms do not beat the fixed/pct arms on drawdown except P7 (USD 1600: L6M maxDD lower); none changes the picture.
 # Finalists (12) and Stage 2
 Groups: A_recent = best recents-consistent supported rule per book (live-week delta >= 0 preferred), B_ddbest = pure drawdown-best for contrast, C_uniform = one rule on all books. Stage 2 sets: /mnt/l2/l2vast/_th_exh/stage2/sets/bc_a_recent.json, bc_b_ddbest.json, bc_c_uniform.json (kernel bc_s2.kern_bc, panel functions bc_s2.pan_<feature> = feat_core.prim on a state slice; verified equal to the EX-FEAT panel to 0.0 on 8+5 features incl. multi-day concatenated Z). Stage 2 progress: see ledger stage2_* parts (agent S2) and /mnt/l2/l2vast/_th_exh/bc/s2_*.log.
 | group | book | rule | thr | pers | mode | arm | L6M maxDD w/wo | L6M mean | held-out live-week delta | nfire |
 |---|---|---|---|---|---|---|---|---|---|---|
-| A_recent | K7 | sweep8_w30 | 4 | 20 | cur | pct 0.3 | 8634/26983 | 5259 | -5284 | 2306 |
-| A_recent | P7 | spread_t | 6 | 20 | latch | abs 15 | 73778/126710 | 13535 | -54560 | 862 |
-| A_recent | M7 | ice_ag_w10 | 2 | 1 | cur | pct 0.6 | 28482/43318 | -147 | 867 | 2188 |
-| A_recent | U7 | ice_ag_w10 | 4 | 5 | cur | pct 0.15 | 7277/21436 | 3591 | 2829 | 779 |
-| A_recent | A7 | dlt_v60_w120 | -0.5588 | 3 | cur | abs 35 | 5134/12456 | 1080 | 101 | 535 |
-| A_recent | H7 | sweep8_w10 | 4 | 3 | latch | abs 10 | 5354/16682 | 2005 | 394 | 338 |
-| A_recent | O7 | sweep8_w10 | 4 | 5 | cur | pct 0.15 | 3924/7489 | 269 | 826 | 220 |
-| C_uniform | ALL | sweep8_w10 | 3 | 8 | cur | pct 0.3 | 88465/117593 | 26484 | -38535 | 5274 |
-| B_ddbest | K7 | sweep8_w30 | 4 | 12 | latch | abs 10 | 6384/26983 | 3186 | -15890 | 3769 |
-| B_ddbest | P7 | sweep8_w30 | 4 | 8 | latch | USD 1600 | 23789/126710 | 15872 | -75321 | 2168 |
-| B_ddbest | M7 | micro_sg | -1.333 | 3 | latch | abs 15 | 19143/43318 | 922 | -253 | 761 |
-| B_ddbest | U7 | ice_ag_w30 | 6 | 5 | cur | pct 0.15 | 6611/21436 | 3598 | 2829 | 794 |
+| A_recent | K7 | imb_ag10 | 0.4043 | 2 | cur | pct 0.45 | 9560/20902 | 4065 | 0 | 1148 |
+| A_recent | P7 | dlt_med_w60 | -43.42 | 20 | cur | abs 35 | 59918/133887 | 21762 | 0 | 1252 |
+| A_recent | M7 | dlt_v60_w120 | -0.5588 | 2 | latch | abs 15 | 18648/44425 | 558 | 1799 | 1903 |
+| A_recent | U7 | ice_ag_w10 | 4 | 5 | cur | pct 0.15 | 6061/21561 | 3585 | 2829 | 777 |
+| A_recent | A7 | micro_sg | -1.333 | 1 | cur | abs 40 | 5895/12461 | 986 | 0 | 370 |
+| A_recent | H7 | sweep8_w10 | 4 | 3 | latch | abs 10 | 4988/15477 | 2114 | 394 | 338 |
+| A_recent | O7 | sweep8_w10 | 4 | 5 | cur | pct 0.15 | 3859/7469 | 286 | 826 | 220 |
+| C_uniform | ALL | retr_w10 | 22 | 12 | latch | abs 40 | 71641/121381 | 27372 | 3485 | 3024 |
+| B_ddbest | K7 | sweep8_w30 | 4 | 12 | latch | abs 10 | 5514/20902 | 3657 | -15890 | 3787 |
+| B_ddbest | P7 | sweep8_w30 | 6 | 1 | latch | abs 10 | 36977/133887 | 22753 | -71288 | 1891 |
+| B_ddbest | M7 | dlt_v60_w30 | -0.08929 | 20 | latch | pct 0.3 | 15798/44425 | 280 | -5033 | 2666 |
