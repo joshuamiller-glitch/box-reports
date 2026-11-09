@@ -1,4 +1,4 @@
-# SZ_AB - T-SIZER-EXHAUST families A (ER) and B (volatility-target) + K (P7) slice  (refreshed 2026-11-09 14:35Z)
+# SZ_AB - T-SIZER-EXHAUST families A (ER) and B (volatility-target) + K (P7) slice  (refreshed 2026-11-09 15:09Z)
 **Label: base S1b-COMB (live D7 v1.5 state cut), FIRST-ORDER trade-level scoring (pnl per planned lot x new lots; first-order mean is not reliable, drawdown ranking is usable), in-sample, PRE-PROOF, post-hoc, Shadow only, no PASS claims. Windows as of 2026-11-09; carrying week (largest |cell - Q1-A| weekly delta) dropped from means; maxDD/worst-20/Ulcer on all weeks.**
 Prereg: autopilot/SZ_AB_PREREG.md (sha in DECISIONS.md). Ledger /mnt/l2/l2vast/_th_sz/ledger_AB.parquet (copy at _th_sz/ab/ledger_AB.parquet; 63914 cells, 34625 down-only equal-mean valid). J-pair multipliers /mnt/l2/l2vast/_th_sz/M_AB.npz (new lots / base lots, 21135 trades in C.prepare(load_trades(S1B-COMB)) order).
 
@@ -303,7 +303,15 @@ Across the 400 top cells (M_AB set) the tolerant score is > 0 on NOCUT for 98 % 
 Best: ER-hyst-P7 hy_b5_n30_35_50 [0.5, 0.0] (min): equal-mean cut +22/+44/+47 % L6M/PRE/X', own p 0.03, family p 1.00. Pooled hysteresis median tolerant score 4.3 vs plain ER-NQ min-mode median 9.3: hysteresis adds no robust edge beyond P7.
 
 ## Exact-engine re-runs of the finalists (sz_exact.py; lead cut 2026-11-09: only the top 3 finalists = AB_F00..AB_F02 (first three rows of the finalist table) plus AB_F12 = mild 0.5 twin of AB_F00; months L6M, then PRE, then X-prime; <=2 workers, MemAvailable >= 55 GB; the other 9 finalists stay first-order)
-no scored window yet (FileNotFoundError)
+
+| set (cell) | months | window | exact: maxDD cut % | exact: d mean $/wk | exact: equal-mean cut % | exact: worst-20 d% | first-order cut % | first-order d mean |
+|--|--|--|--|--|--|--|--|--|
+| AB_F00 vr_gk_w30_g20 [1.25, 0.0] | 6 | L6M | +10 | +335 | +12 | +0 | +34 | +6308 |
+| AB_F01 vr_park_w10_g20 [1.25, 0.0] | 6 | L6M | +4 | +1416 | +10 | +6 | +53 | +3560 |
+| AB_F02 vr_gk_w10_g20 [1.25, 0.0] | 6 | L6M | +19 | +1498 | +24 | +10 | +54 | +2243 |
+| AB_F12 (mild 0.5 twin of F00; first-order = F00 strict) | 6 | L6M | +2 | +1337 | +8 | -3 | +34 | +6308 |
+
+Reading: the exact engine keeps the sign of the first-order DD cut but shrinks it a lot on L6M (state-cut arm sizes and re-entries absorb part of the skipped drawdown); first-order cuts overstate by a factor of about 2-5. Exact d mean is small and positive.
 
 Cross-check: ab_score.py vs sz_core.Z.score on 27 cells (12 finalists + top 20): max abs difference in maxDD 0.001 $, worst-20 0.002 $, cut 0.0 pp, equal-mean cut 0.0 pp, mean/d mean 0.0 after aligning the carrying-week rule (weeks > 3 -> drop the largest |cell-ref| week from MEANS only; maxDD/worst-20/Ulcer always on ALL weeks; partial edge weeks count as weeks in both).
 
