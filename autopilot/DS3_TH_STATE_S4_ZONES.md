@@ -2,6 +2,13 @@
 
 **Label: base = replica engine with TH-L2-S as live L2 cut (COMB per-book); entries not live-matched (entry match being closed by ENTRY-MATCH); in-sample base; PRE-PROOF**
 
+**Summary (zone layer, FIRST-ORDER lots scaling, replica PoiSet features; 100-draw placebos)**
+- The live zone half itself (ZOFF = undo it): cut -1.0 / -2.5 / -19.1% on L6M / PRE / X' (S1-COMB): undoing it deepens drawdown; UNIF and PLAIN6060 the same sign on PRE and X'.
+- Half-type leads (open20 / open40 / open60 / openA40 / openA60 / sopen40 half) keep a positive cut on every window of every base (one exception: open60 half HOLD on PLAIN6060, -8.4%): S1-COMB L6M +26 to +36%, PRE +36 to +42%, X' +17 to +30%, HOLD +5 to +30%. They halve 47-81% of all trades, so the mean falls by 2.6k-9.2k/wk on L6M (S1-COMB) and the placebo (same count at random within book x session) is the test: ranks L6M / PRE open20 0.69 / 0.69, openA40 0.71 / 0.85, sopen40 0.82 / 0.91, open40 0.93 / 0.83, open60 0.94 / 0.98 on S1-COMB; open40 0.98 / 0.97 and open60 0.93 / 0.98 on PLAIN6060, open60 0.95 / 0.99 on S1-UNIF. Only open40 / open60 reach ranks near or above 0.95, on PRE for open60 on all three bases; the others remain inside the VOLUME band (random halving gives a similar cut).
+- Skip-type leads (nA20 / nA40 / nA60 >= k, rho60 >= 2) do not survive: L6M cut is negative or zero on S1-COMB (nA40>=1 -15%, nA60>=1 -28%, rho60>=2 -20%) with placebo ranks 0.05-0.22; PRE is positive but small (+7 to +15%) and the ranks are 0.2-0.4. The same flip is already present on the replica HOLD base (S345_PREP: nA60>=1 L6M +1.8, rho60>=2 +16.7 vs published +36 / +41), so it is not caused by the TH-L2-S cut: the V13T 8-line freshness features and the replica PoiSet differ and the skip results do not tie across engines.
+- Versus the published V13Y verdicts: openA40 half TIES; open20, open60, sopen40 half same signs but PRE much larger on this base; rho60>=2, nA60>=1 and nA40>=1 skips FLIP on L6M (nA60>=1 also on PRE: published -36, new +11). No lead is labelled above VOLUME/NOISE: halving cuts DD mostly by cutting risk, placebo ranks stay below 0.95 except open40 / open60.
+- Caveats: zone features come from the replica PoiSet replay (88.9% agreement with the zone half inferred from base lots; V13T feats.npz matches only 46-71% of the replica signals); pnl at the new lots is per-lot scaling (first-order; the exact engine zone-half re-run was not built); entries not live-matched.
+
 Zone features: the replica own PoiSet (8 live lines) replayed on the 1-min bars at each trade signal second (not the V13T feats.npz, which matches only 46-71% of replica signals). Replay vs the half inferred from base lots: agree S1-COMB 89.0%, S1-UNIF 88.9%, PLAIN6060 88.9%.
 Reference = the base as it stands (its live zone HALF inside the lots). Half cells halve lots (rounded, min 1) on top of the live half; skip cells drop the signal. Placebo: same count at random within book x session, 100 draws, rank = share of draws with a smaller maxDD cut. Cuts are carrying-week-dropped; mean effects are per week.
 
@@ -80,7 +87,7 @@ Table (PLAIN6060): maxDD cut vs the base zone layer by window (+ = shallower), m
 
 ## Zone leads on the new base vs the published V13Y verdicts (ZONES3_LEAD_REGISTER, single path)
 
-Tie = same sign on L6M and PRE and both within 20 points of the published cut; flip = sign change on L6M or PRE (new |cut| >= 5); otherwise same-sign-different-size. "Survives" = cut > 0 on L6M, HOLD, MID, PRE and X' on all three bases. nA40>=1 is compared with both published nA40>=1 (v1.2-assumed) and sA40>=1 rows.
+Tie = same sign on L6M and PRE and both within 20 points of the published cut; flip = sign change on L6M or PRE (new |cut| >= 5); otherwise same-sign-different-size. "Survives" = cut > 0 on L6M, HOLD, MID, PRE and X' on all three bases. nA40>=1 is compared with both published nA40>=1 (v1.2-assumed) and sA40>=1 rows. [Label: base = replica engine with TH-L2-S as live L2 cut (COMB per-book); entries not live-matched (entry match being closed by ENTRY-MATCH); in-sample base; PRE-PROOF]
 
 | lead | published V13Y L6M/PRE/X' (label) | new S1-COMB L6M/PRE/X' | verdict vs published | survives on all 3 bases | placebo rank L6M/PRE: COMB, UNIF, PLAIN |
 |--|--|--|--|--|--|
