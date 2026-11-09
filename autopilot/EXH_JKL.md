@@ -1,4 +1,4 @@
-# EXH_JKL - profit families J (scale), K (target), L (crosses) - 2026-11-09 05:37Z
+# EXH_JKL - profit families J (scale), K (target), L (crosses) - 2026-11-09 07:15Z
 PRE-PROOF (entries not live-matched). 565 cells scored, all registered in the ledger (agent ex-pjkl). Stage 1 first-order on the EX-CORE universe; target cells (K, X) walk the NEW target over paths extended to the flat time (my memmap store, pjkl/ext) but with the same horizon convention as the EX-CORE U.ext(): a trade whose new target/stop is unresolved 14,400 s after the original bracket is market-exited there (type 3) - this affects only wide targets (m >= 1.5, K4 extensions) on trades whose original exit was the target; EX-FEAT panel length mismatches make feature rules inert on a few trades. Deltas are USD/week vs never-cut (hold-to-bracket), carrying week dropped; "w/wo" = with rule / without. WF = purged monthly walk-forward of the technique group (table below). Placebo for target cells = the cell's own per-trade deltas re-assigned to other trades of the same book (no decision second exists). Prereg autopilot/EXH_JKL_PREREG.md. Causality: my own noise-after-k test (code/th_exh/causality_pjkl.py, 750 decisions) and EX-CORE X.kernel_leak_test (code/th_exh/kleak_pjkl.py, 2,743 legs over J1/J2/J3/K1/X1 kernels) both show 0 legs changed when path data after second k0 is replaced by noise; K1/K2/K3 targets are functions of the entry row only; the first J2 version (second scale leg filled after the trail had already closed the position) was a look-ahead, was found by review, fixed and re-scored. Live-week column = rule applied on the 186 live trades to the ACTUAL live exit (one week; not selected on).
 
 
@@ -328,11 +328,22 @@ Best candidate by entry session:
 
 Not scored (stated): J4 scale-and-re-add (report row only, needs a second entry leg); K structure target "flip level ahead" (no state series in the store); K target extension on "delta with" (dlt sign convention not verified); time-of-day target table (the hour blocks enter only as L1 conditioners hour0..7, with the K/J cells as the rule inside the block). Tight-target cells (K1 m < 1, X1 m < 1) change the bracket itself, i.e. a different 30/60 style bracket rather than an exit technique.
 
+Stage 2 kernel validation (validate_kernel_s2.py, pjkl_PB, month 202606): K7 (K1 target 0.5) Stage 1 kernel fires 220, engine ExhCut on 193 of them, equal second (+-1 s) 172, equal price 160; H7 (K1 0.5) 32 fires, 32 ExhCut, 24 equal second, 15 equal price; M7 (J1 scale 0.3 + trail 10) Stage 1 fires 24, engine ExhCut 0: the engine position quantity at the first manage call is the first-fill lot count, so multi-lot scale-outs on books that stage their fills (M7, P7, U7) are largely INERT in Stage 2 (a stated limit of the ExhRep hook: the kernel lots are the entry-time quantity). Tight-target legs (K1) agree on most trades; differences of 1-3 points are fill/state-time differences between the universe path and the engine.
+
 ## Stage 2 (replica engine cascade; ExhRep; months not yet run are filled from engine never-cut so a partial run shows what it has)
 
-Stage 2 sets pjkl_PB (per-book best Stage-2-able J/X1/K1 cell) and pjkl_UNI (best uniform cell) are queued/running; table is filled when they finish.
+| set | months run | book | L6M mean delta vs engine never-cut | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo |
+|---|---|---|---|---|---|---|
+| PJKL_perbook_best | 39 | ALL |  |  /  | 149,858 / 130,824 |  /  |
+| PJKL_perbook_best | 39 | K7 |  |  /  | 25,019 / 22,188 |  /  |
+| PJKL_perbook_best | 39 | P7 |  |  /  | 120,071 / 122,169 |  /  |
+| PJKL_perbook_best | 39 | M7 |  |  /  | 43,648 / 44,205 |  /  |
+| PJKL_perbook_best | 39 | U7 |  |  /  | 30,546 / 39,542 |  /  |
+| PJKL_perbook_best | 39 | A7 |  |  /  | 7,355 / 8,625 |  /  |
+| PJKL_perbook_best | 39 | H7 |  |  /  | 11,190 / 18,436 |  /  |
+| PJKL_perbook_best | 39 | O7 |  |  /  | 4,797 / 4,797 |  /  |
 
-## Finalists (<=12; held-out live week where the cell is a scale/limit rule; K target cells have no live evaluation because the live bracket is the actual exit)
+## Finalists (<=12; held-out live week where the cell is a scale/limit rule; K1 cells with m <= 1 are evaluated on the live week (a tighter target is checked against the path up to the actual exit); wider-target, ATR and extension cells have no live evaluation because the live bracket is the actual exit)
 
 | cell | params | live-week delta USD (ALL) | live fires | L6M maxDD w/wo |
 |---|---|---|---|---|

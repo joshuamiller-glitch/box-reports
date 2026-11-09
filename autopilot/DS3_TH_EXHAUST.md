@@ -1,4 +1,4 @@
-# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 06:55Z)
+# DS3_TH_EXHAUST - every exit technique, both sides, drawdown first (auto-generated 2026-11-09 07:27Z)
 **Universe U2 = full S1b tick-close never-cut (43 months) + the u5 live-week entries; this page shows U2 cells only.** The S1b-COMB live reference row is unchanged (S1b).
 
 **Reading guide.** ENTER = passes every gate (recents, tolerant older windows, drawdown not worse in L6M and PRE, delta above MDE, placebo p <= .10, family p <= .10, walk-forward ok, not FAILS-LIVE-WEEK). CANDIDATE-DD = lowers L6M maxDD at equal or better L6M mean and PRE maxDD within +5% (even inside MDE); LEAD = L6M mean and drawdown not worse with >60% of L1M..L6M windows positive. FAILS-LIVE-WEEK = the held-out live-week delta is below -1 MDE-week of that scope (never ENTER). Sub-flags in the label cell: rec-ok/rec-FAIL (no L1M..L6M delta below -1 MDE-week), wf-ok/wf-FAIL, plc-ok/plc-FAIL (placebo p <= .10), exposure (fires on more than 50% of trades = exposure shrink). **ENTER cells on this page: 0.**
@@ -12,7 +12,7 @@ Null audit: placebo version 2 (causal, leak-tested; EXH_API section 9). Placebo 
 Evidence level: stage S1 rows are first-order (each trade alone on its stored path, bracket exits at level, 1-s decision latency, 0.80 pt market-exit cost); rows marked S2 went through the replica engine cascade (re-entries, locks, stack gates). Entry match to the live week is below .85, so the page is PRE-PROOF.
 Label: state base S1b universe (never-cut hold-to-bracket path; months not yet rebuilt are S1 timer-close, flagged src in the universe), entry match to the live week not yet >= .85 unless stated: PRE-PROOF. Windows as of 2026-11-09 (data to 2026-11-05). USD per ISO week at live lots net of 4.84/contract; delta = rule minus never-cut with the carrying week dropped; "w/wo" = with the rule / without (never-cut). LIVE REFERENCE ROW = S1b-COMB (live week from the u5 replica).
 QUARANTINE: 0 cells of agent PHI from the flawed first scoring pass (nfire == ntrades, leg 2 fed back into a new Outcome) are excluded from every table, nulls and the family max-stat; they stay on disk. H/I (take / trail) section: corrected cells in the ledger 0 of 0 expected so far.
-Cells scored: 15700; families: ['A', 'A_pulled', 'B_book', 'C_flow', 'D', 'E', 'F', 'G', 'J_scale', 'K_target', 'L_cond', 'L_cross', 'L_learned', 'X_cross']. Labels: {'no': 79788, 'CANDIDATE-DD': 24220, 'LEAD': 6399, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4100, 'LEAD FAILS-LIVE-WEEK': 1520}
+Cells scored: 15908; families: ['A', 'A_pulled', 'B_book', 'C_flow', 'D', 'E', 'F', 'G', 'J_scale', 'K_target', 'L_cond', 'L_cross', 'L_learned', 'X_cross']. Labels: {'no': 80982, 'CANDIDATE-DD': 24621, 'LEAD': 6491, 'CANDIDATE-DD FAILS-LIVE-WEEK': 4183, 'LEAD FAILS-LIVE-WEEK': 1545}
 
 ## ALL
 | ref | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M | maxDD PRE | worst-20 L6M |
@@ -155,11 +155,11 @@ Cells scored: 15700; families: ['A', 'A_pulled', 'B_book', 'C_flow', 'D', 'E', '
 ### U7 loss
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| LBC_ice_ag_w10 | {"arm": 0.15, "arm_kind": "pct", "dir": 1, "feat": "ice_ag_w | 4,365 | 3,585 | 2,874 | 809 | 534 | 845 | -624 | -423 | 6,061 / 21,561 | 35,033 / 42,226 | 21,429 / 120 | 777 | 0.02 | 1.00 / - |  | 2,829 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| LBC_ice_ag_w10 | {"arm": 10.0, "arm_kind": "abs", "dir": 1, "feat": "ice_ag_w | 4,325 | 1,039 | 860 | 774 | 439 | 692 | -559 | -423 | 6,061 / 21,561 | 30,662 / 42,226 | 20,553 / 120 | 768 | 0.02 | 1.00 / - |  | 2,829 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| LBC_ice_ag_w30 | {"arm": 0.15, "arm_kind": "pct", "dir": 1, "feat": "ice_ag_w | 3,819 | -1,506 | -110 | 856 | 785 | -1,235 | 10 | -1,105 | 6,621 / 21,561 | 20,630 / 42,226 | 28,980 / 120 | 792 | 0.02 | 1.00 / - |  | 2,829 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| LBC_r_ab8 | {"arm": 45.0, "arm_kind": "abs", "dir": 1, "feat": "r_ab8",  | 3,951 | 1,893 | 991 | 382 | 729 | 2,083 | 358 | 987 | 7,200 / 21,561 | 40,937 / 42,226 | 21,278 / 120 | 490 | 0.02 | 1.00 / - |  | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | A_pulled | {"W": 5, "arm": "fixed", "armval": 30, "blk": "C", "cancels" | 4,731 | 2,325 | 1,591 | 894 | 1,188 | 1,309 | -33 | 553 | 7,335 / 21,561 | 37,858 / 42,226 | 21,476 / 120 | 430 | 0.02 | 1.00 / 0.98 | -129,230 | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
-| LBC_cps_rel_w10 | {"arm": 0.3, "arm_kind": "pct", "dir": 1, "feat": "cps_rel_w | 4,182 | 654 | 990 | 584 | 771 | -1,528 | -1,200 | -561 | 7,524 / 21,561 | 27,019 / 42,226 | 35,085 / 120 | 879 | 0.02 | 1.00 / 0.99 | -96,400 | 2,304 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| LBC_cps_rel_w30 | {"arm": 0.3, "arm_kind": "pct", "dir": 1, "feat": "cps_rel_w | 3,040 | -701 | 265 | 67 | 360 | -1,253 | -1,682 | -300 | 7,703 / 21,561 | 42,355 / 42,226 | 19,651 / 120 | 947 | 0.03 | 1.00 / 0.97 | -95,444 | 2,109 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| LBC_cps_rel_w30 | {"arm": 0.3, "arm_kind": "pct", "dir": 1, "feat": "cps_rel_w | 3,902 | -336 | 472 | 200 | 412 | -1,336 | -1,686 | -368 | 7,763 / 21,561 | 43,056 / 42,226 | 24,231 / 120 | 943 | 0.05 | 1.00 / 0.98 | -95,444 | 2,304 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| A_pulled | {"W": 5, "arm": "fixed", "armval": 30, "blk": "C", "cancels" | 4,219 | 1,896 | 1,221 | 652 | 1,126 | 1,032 | -43 | 455 | 7,821 / 21,561 | 40,947 / 42,226 | 16,988 / 120 | 397 | 0.02 | 1.00 / 0.98 | -129,230 | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 
 ### U7 profit
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
@@ -192,7 +192,7 @@ Cells scored: 15700; families: ['A', 'A_pulled', 'B_book', 'C_flow', 'D', 'E', '
 | D3_pullback | {"X": 15, "pb": 50} | -11 | 288 | 199 | 129 | 24 | 223 | -207 | 201 | 4,785 / 12,461 | 4,912 / 6,089 | -4,174 / -17,069 | 713 | 0.02 | 1.00 / 0.59 | -12,489 | -1,018 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | A_pulled | {"W": 5, "arm": "fixed", "armval": 20, "blk": "C", "cancels" | -737 | 848 | 651 | 298 | -18 | 306 | -199 | 37 | 4,900 / 12,461 | 5,378 / 6,089 | -11,330 / -17,069 | 521 | 0.11 | 1.00 / 0.59 | -50,405 | -42 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL] |
 | A_pulled | {"W": 1, "arm": "fixed", "armval": 15, "blk": "A", "cancels" | -1,359 | 469 | 197 | 60 | -86 | 140 | -263 | -96 | 5,011 / 12,461 | 5,315 / 6,089 | -15,604 / -17,069 | 573 | 0.11 | 1.00 / 0.54 | -50,405 | -1,306 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL] |
-| A_pulled | {"W": 3, "arm": "fixed", "armval": 20, "blk": "A", "cancels" | -868 | 953 | 693 | 92 | -87 | -196 | -195 | 32 | 5,218 / 12,461 | 6,308 / 6,089 | -13,403 / -17,069 | 477 | 0.02 | 1.00 / 0.57 | -50,405 | -169 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
+| LBC_lp_ag_w30 | {"arm": 15.0, "arm_kind": "abs", "dir": 1, "feat": "lp_ag_w3 | -1,110 | 482 | 239 | 339 | -128 | 116 | -468 | 247 | 5,157 / 12,461 | 5,621 / 6,089 | -8,141 / -17,069 | 657 | 0.17 | 1.00 / - |  | -449 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-FAIL exposure] |
 
 ### A7 profit
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
@@ -378,56 +378,56 @@ Cells scored: 15700; families: ['A', 'A_pulled', 'B_book', 'C_flow', 'D', 'E', '
 | CROSS[966d0f8e1e9e+9cdf7469ba89] | {"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba | 226 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 2 | 0.76 | 1.00 / - |  |  | S1 | no |
 
 ## Survivors per book (CANDIDATE-DD and rec-ok and plc-ok and not FAILS-LIVE-WEEK; wf shown, not required; top 3 by drawdown-first)
-### ALL survivors (1042 cells)
+### ALL survivors (1064 cells)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | L1_cond | {"base": {"b": 2, "p": 0.6, "rest": "be"}, "base_tech": "J1_ | 1,664 | 2,177 | 4,874 | 3,824 | 2,515 | 264 | -1,426 | -501 | 55,296 / 121,381 | 117,149 / 152,455 | 250,937 / 77,580 | 1,789 | 0.02 | 1.00 / 0.94 | -216,598 | -6,398 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | L1_cond | {"base": {"b": 0, "p": 0.6, "rest": "be"}, "base_tech": "J1_ | 1,905 | 2,072 | 5,258 | 3,836 | 2,563 | 166 | -1,514 | -574 | 56,444 / 121,381 | 115,335 / 152,455 | 251,176 / 77,580 | 1,789 | 0.04 | 1.00 / 0.94 | -216,598 | -6,398 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | L1_cond | {"base": {"b": 2, "p": 0.6, "rest": "be"}, "base_tech": "J1_ | -2,493 | -1,781 | 2,031 | 1,299 | -1,659 | -1,045 | -5,749 | -1,200 | 57,492 / 121,381 | 120,670 / 152,455 | 258,667 / 77,580 | 3,720 | 0.04 | 1.00 / 0.94 | -216,598 | -3,806 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 
-### K7 survivors (159 cells)
+### K7 survivors (170 cells)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | LBC_adv_best_move | {"arm": 0.15, "arm_kind": "pct", "dir": 1, "feat": "adv_best | 909 | 2,784 | 3,589 | 1,123 | -23 | 1,148 | -1,202 | 9 | 8,636 / 20,902 | 23,900 / 26,707 | 28,728 / 1,791 | 3,051 | 0.05 | 1.00 / 0.99 | -107,558 | 126 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | J3_statescale | {"a": 0.2, "f": "ahead_rel_slow", "rest": "trail", "s": 3, " | 1,717 | 728 | 1,963 | 666 | -5 | 100 | -673 | 390 | 8,893 / 20,902 | 23,892 / 26,707 | 16,614 / 1,791 | 636 | 0.02 | 1.00 / 0.91 | -41,710 | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | X1_scale_target | {"m": 0.75, "p": 0.5, "rest": "trail", "x": 10} | 2,081 | -874 | 1,144 | 277 | -389 | -1,516 | -399 | 463 | 9,147 / 20,902 | 17,406 / 26,707 | 39,575 / 1,791 | 969 | 0.04 | 1.00 / 0.99 | -34,760 | -40 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 
-### P7 survivors (291 cells)
+### P7 survivors (307 cells)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | D3_pullback@after30 | {"X": 20, "ctx": "after30", "pb": 40} | -33,284 | -14,544 | -9,266 | 3,938 | -2,898 | -2,253 | -5,504 | 424 | 38,077 / 133,887 | 57,033 / 109,442 | 95,825 / -29,902 | 2,730 | 0.02 | 1.00 / 0.67 | -244,967 | -3,790 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | D0_plain@after30 | {"X": 30, "ctx": "after30"} | -26,936 | -13,786 | -8,177 | 2,195 | -2,050 | 843 | -5,691 | 703 | 45,910 / 133,887 | 88,649 / 109,442 | 86,435 / -29,902 | 2,600 | 0.02 | 1.00 / 0.75 | -188,556 | 991 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | A_pulled | {"W": 5, "arm": "fixed", "armval": 25, "blk": "A", "cancels" | -18,744 | -19,970 | -11,421 | 892 | -1,176 | 9,213 | -2,698 | -728 | 49,145 / 133,887 | 87,956 / 109,442 | 56,330 / -29,902 | 2,017 | 0.02 | 1.00 / 0.74 | -541,581 | -15,057 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 
-### M7 survivors (790 cells)
+### M7 survivors (810 cells)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | F3_stop_extreme | {"X": 10, "k": 0} | -1,522 | -1,232 | -1,921 | 737 | 108 | -1,018 | -812 | -447 | 13,450 / 44,425 | 45,329 / 50,321 | -26,663 / -68,299 | 3,214 | 0.03 | 1.00 / 0.04 | -12,478 | -1,985 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | A_pulled | {"W": 5, "arm": "fixed", "armval": 10, "blk": "A", "cancels" | 2,543 | 1,840 | 3,151 | 1,741 | 14 | -865 | 238 | 113 | 13,485 / 44,425 | 31,252 / 50,321 | -12,409 / -68,299 | 1,195 | 0.02 | 1.00 / 0.44 | -18,261 | 724 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | LBC_pps_rel_w30 | {"arm": 15.0, "arm_kind": "abs", "dir": 1, "feat": "pps_rel_ | 813 | -1,701 | -437 | 1,036 | 673 | -54 | -260 | -119 | 16,985 / 44,425 | 40,526 / 50,321 | -26,252 / -68,299 | 1,893 | 0.02 | 1.00 / 0.72 | -38,488 | 1,099 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 
-### U7 survivors (303 cells)
+### U7 survivors (328 cells)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| A_pulled | {"W": 5, "arm": "fixed", "armval": 30, "blk": "C", "cancels" | 4,731 | 2,325 | 1,591 | 894 | 1,188 | 1,309 | -33 | 553 | 7,335 / 21,561 | 37,858 / 42,226 | 21,476 / 120 | 430 | 0.02 | 1.00 / 0.98 | -129,230 | 0 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
-| LBC_cps_rel_w10 | {"arm": 0.3, "arm_kind": "pct", "dir": 1, "feat": "cps_rel_w | 4,182 | 654 | 990 | 584 | 771 | -1,528 | -1,200 | -561 | 7,524 / 21,561 | 27,019 / 42,226 | 35,085 / 120 | 879 | 0.02 | 1.00 / 0.99 | -96,400 | 2,304 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
-| LBC_cps_rel_w30 | {"arm": 0.3, "arm_kind": "pct", "dir": 1, "feat": "cps_rel_w | 3,040 | -701 | 265 | 67 | 360 | -1,253 | -1,682 | -300 | 7,703 / 21,561 | 42,355 / 42,226 | 19,651 / 120 | 947 | 0.03 | 1.00 / 0.97 | -95,444 | 2,109 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| LBC_ice_ag_w10 | {"arm": 0.15, "arm_kind": "pct", "dir": 1, "feat": "ice_ag_w | 4,365 | 3,585 | 2,874 | 809 | 534 | 845 | -624 | -423 | 6,061 / 21,561 | 35,033 / 42,226 | 21,429 / 120 | 777 | 0.02 | 1.00 / - |  | 2,829 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| LBC_ice_ag_w10 | {"arm": 10.0, "arm_kind": "abs", "dir": 1, "feat": "ice_ag_w | 4,325 | 1,039 | 860 | 774 | 439 | 692 | -559 | -423 | 6,061 / 21,561 | 30,662 / 42,226 | 20,553 / 120 | 768 | 0.02 | 1.00 / - |  | 2,829 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
+| LBC_ice_ag_w30 | {"arm": 0.15, "arm_kind": "pct", "dir": 1, "feat": "ice_ag_w | 3,819 | -1,506 | -110 | 856 | 785 | -1,235 | 10 | -1,105 | 6,621 / 21,561 | 20,630 / 42,226 | 28,980 / 120 | 792 | 0.02 | 1.00 / - |  | 2,829 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 
-### A7 survivors (982 cells)
+### A7 survivors (996 cells)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CROSS[e7c0088d2553+2c9eb23c8f1d] | {"book": "U7", "loss": "e7c0088d2553", "profit": "2c9eb23c8f | -907 | 293 | 148 | 521 | 204 | 21 | -232 | 80 | 4,415 / 12,461 | 4,374 / 6,089 | -7,646 / -17,069 | 732 | 0.03 | 1.00 / 0.57 | 4,462 |  | S1 | CANDIDATE-DD [rec-ok wf-ok plc-ok exposure] |
 | D3_pullback | {"X": 20, "pb": 50} | 34 | 855 | 467 | 511 | 183 | 304 | -146 | 183 | 4,760 / 12,461 | 5,445 / 6,089 | -6,160 / -17,069 | 700 | 0.02 | 1.00 / 0.60 | -12,489 | -1,314 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 | D3_pullback | {"X": 15, "pb": 50} | -11 | 288 | 199 | 129 | 24 | 223 | -207 | 201 | 4,785 / 12,461 | 4,912 / 6,089 | -4,174 / -17,069 | 713 | 0.02 | 1.00 / 0.59 | -12,489 | -1,018 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
 
-### H7 survivors (365 cells)
+### H7 survivors (371 cells)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | LBC_sweep8_w10 | {"arm": 10.0, "arm_kind": "abs", "dir": 1, "feat": "sweep8_w | 1,289 | 322 | 1,222 | 1,281 | 917 | 834 | -138 | -22 | 4,988 / 15,477 | 15,783 / 20,667 | 6,350 / -32,750 | 338 | 0.02 | 1.00 / 0.73 | -45,009 | 394 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | LBC_adv_best_move | {"arm": 10.0, "arm_kind": "abs", "dir": 1, "feat": "adv_best | 343 | 157 | -58 | 384 | 822 | 712 | -43 | 137 | 5,048 / 15,477 | 19,458 / 20,667 | -3,411 / -32,750 | 496 | 0.02 | 1.00 / 0.36 | -6,353 | 109 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 | LBC_adv_best_move | {"arm": 0.15, "arm_kind": "pct", "dir": 1, "feat": "adv_best | 223 | 97 | -98 | 261 | 772 | 712 | -105 | 118 | 5,048 / 15,477 | 20,484 / 20,667 | -4,679 / -32,750 | 504 | 0.02 | 1.00 / 0.35 | -6,353 | 109 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok] |
 
-### O7 survivors (96 cells)
+### O7 survivors (130 cells)
 | technique | params | L1M | L2M | L3M | L6M | HOLD | MID | PRE | X' | maxDD L6M w/wo | maxDD PRE w/wo | worst-20 L6M w/wo (sum of the P&L of the 20 worst weeks of 26, higher = less bad) | nfire | placebo p | family p (indep / WY) | WF (picking procedure, technique-family total) | live week | stage | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | LBC_dlt_med_w10 | {"arm": 0.15, "arm_kind": "pct", "dir": -1, "feat": "dlt_med | 321 | 309 | 116 | 34 | -308 | 134 | -500 | 165 | 3,243 / 7,469 | 4,699 / 5,102 | -4,802 / -9,532 | 448 | 0.05 | 1.00 / 0.30 | -20,988 | -243 | S1 | CANDIDATE-DD [rec-ok wf-FAIL plc-ok exposure] |
@@ -471,7 +471,7 @@ Cells scored: 15700; families: ['A', 'A_pulled', 'B_book', 'C_flow', 'D', 'E', '
 | O7     | both   |        7 |  -11378 |       7469 |    7469 |           0 |      25 |       35 | False   |
 
 ## Stack view and one rule for all books (first-order, IN-SAMPLE best-of-thousands picks per book: read them against the walk-forward table above, which is negative for almost every book/side)
-Per-book picks stacked: L6M maxDD 32,068 vs never-cut 121,381; PRE maxDD 143,861 vs 152,455; L6M dmean 4,842. Best single cell on all books: X1_scale_target ({"m": 0.75, "p": 0.7, "rest": "trail", "x": 10}), L6M maxDD 33,846, dmean 574.
+Per-book picks stacked: L6M maxDD 33,118 vs never-cut 121,381; PRE maxDD 148,985 vs 152,455; L6M dmean 4,134. Best single cell on all books: X1_scale_target ({"m": 0.75, "p": 0.7, "rest": "trail", "x": 10}), L6M maxDD 33,846, dmean 574.
 
 ## Plain sentences
 - ALL loss: the technique that lowers drawdown most is D3_pullback@after30 ({"X": 20, "ctx": "after30", "pb": 40}); L6M maxDD 54,622 vs 121,381 never-cut (-66,759); it costs 1,361 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the placebo p is 0.12, the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
@@ -486,7 +486,7 @@ Per-book picks stacked: L6M maxDD 32,068 vs never-cut 121,381; PRE maxDD 143,861
 - M7 loss: the technique that lowers drawdown most is F3_stop_extreme ({"X": 10, "k": 0}); L6M maxDD 13,450 vs 44,425 never-cut (-30,976); it earns 1,349 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
 - M7 profit: the technique that lowers drawdown most is J1_scale ({"p": 0.3, "rest": "trail", "x": 10}); L6M maxDD 25,111 vs 44,425 never-cut (-19,314); it earns 1,250 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00. Label CANDIDATE-DD.
 - M7 both: the technique that lowers drawdown most is CROSS[966d0f8e1e9e+9cdf7469ba89] ({"book": "P7", "loss": "966d0f8e1e9e", "profit": "9cdf7469ba89"}); L6M maxDD 34,844 vs 44,425 never-cut (-9,582); it earns 267 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the placebo p is 0.52, the family p over all cells is 1.00, no walk-forward has been run, PRE drawdown is worse than without it. Label no.
-- U7 loss: the technique that lowers drawdown most is A_pulled ({"W": 5, "arm": "fixed", "armval": 30, "blk": "C", "cancels": "net", "maeW": 0, "med": "h1", "mult": 20, "newmae": 0, "pers": 3, "pulled": "against"}); L6M maxDD 7,335 vs 21,561 never-cut (-14,226); it earns 937 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
+- U7 loss: the technique that lowers drawdown most is LBC_ice_ag_w10 ({"arm": 0.15, "arm_kind": "pct", "dir": 1, "feat": "ice_ag_w10", "mode": "cur", "months": "202304-202611(44)", "pers": 5, "thr": 4.0}); L6M maxDD 6,061 vs 21,561 never-cut (-15,500); it earns 482 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, no walk-forward has been run. Label CANDIDATE-DD.
 - U7 profit: the technique that lowers drawdown most is X2_target_trail ({"arm": 0.7, "m": 2, "x": 20}); L6M maxDD 10,319 vs 21,561 never-cut (-11,242); it earns 545 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.
 - U7 both: the technique that lowers drawdown most is CROSS[e7c0088d2553+2c9eb23c8f1d] ({"book": "U7", "loss": "e7c0088d2553", "profit": "2c9eb23c8f1d"}); L6M maxDD 12,841 vs 21,561 never-cut (-8,720); it costs 1,411 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the placebo p is 0.12, the family p over all cells is 1.00, PRE drawdown is worse than without it. Label no.
 - A7 loss: the technique that lowers drawdown most is D3_pullback ({"X": 20, "pb": 50}); L6M maxDD 4,760 vs 12,461 never-cut (-7,701); it earns 606 USD/week vs the live line (S1b-COMB, L6M); it does not hold out of sample because the family p over all cells is 1.00, the purged walk-forward is not positive. Label CANDIDATE-DD.

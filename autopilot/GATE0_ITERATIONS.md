@@ -256,3 +256,5 @@
 2026-11-09 EX-CORE: stale.py clean on all 44 months vs U2 (EX-FEAT confirmed)
 2026-11-09 EX-LDEF: U2 rescore done (903 D/F + 348 E); stage2 ldef_perbook_u2 running (2 workers) -> python3 stage2.py score ldef_perbook_u2 when done
 2026-11-09T06:50Z EX-CORE: stage2 --order windows + partial-coverage score + s2_chain.py running; ldef_perbook_u2 restarted newest-first (8 chrono months kept)
+2026-11-09T07:25Z EX-CORE: stage2 start gate rewritten (short lock, STAGE2_MEM_GATE 44), pjkl/bc/exla chains restarted newest-first; throughput 07:12-07:23: ldef +6, bc +5, pjkl +2, exla +2 months
+2026-11-09T07:36Z EX-CORE: stage2 maxtasksperchild=1 + gate priority; pjkl_PB/exla_pb1/ldef_perbook_u2 restarted (idle workers freed ~40 GB: MemAvailable 21 -> 80 GB); throughput line in STATUS
