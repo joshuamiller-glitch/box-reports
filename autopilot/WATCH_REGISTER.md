@@ -29,3 +29,13 @@ Design prereg: l2vast/ds3/prereg/WATCH_REGISTER_design_prereg.md. Forward floor:
 | 2026-11-06T03:26Z | MBT_ASIA_KELTNER | b82f1d445330 | NO-DATA | no MBT data at or after the watch floor 2026-11-01T00:00:00Z (last table second 2026-10-31 23:43:00Z) | 0 | - | - | - | next run |
 | 2026-11-06T03:26Z | GC_REGIME | - | SPEC-PENDING | spec file WATCH_GC_REGIME_SPEC.md not present (owner ZL-1) | 0 | - | - | - | - |
 | 2026-11-06T03:26Z | NQ_PDL | 8f7faa58137c | NO-DATA | no NQ data at or after the watch floor 2026-11-01T23:00:00Z (last table second noneZ) | 0 | - | - | - | next run |
+
+## WATCH REGISTER run 2026-11-09T14:00Z
+| run (UTC) | watch | spec sha12 | status | forward coverage and note | n_trades | mean net $/trade | cum net $ | mean F (ticks) | next |
+|--|--|--|--|--|--|--|--|--|--|
+| 2026-11-09T14:00Z | RTY_PREMARKET | c9b8563d51b4 | NO-DATA | no RTY data at or after the watch floor 2026-11-01T23:00:00Z (last table second 2026-10-30 21:00:01Z) | 0 | - | - | - | next run |
+| 2026-11-09T14:00Z | MONDAY_LONG | 337347600d74 +AMEND1 bf02a93c14c2 | ACCUMULATING (N=0 of 26; week 1 = Monday 2026-11-09, first read Tuesday 2026-11-10 after the roll) | forward label days >= 20261109, data to 2026-11-05 16:05:00Z; no completed forward Monday yet | bad-print check (cc_audit rule, flag only): 0 flagged of 5197 bars since the watch floor | 0 | nan | 0.0 | +nan | weekly Mon 14:00Z |
+| 2026-11-09T14:00Z | CL_DONCHIAN | ce175343cad5 | NO-DATA | no CL data at or after the watch floor 2026-10-17T00:00:00Z (last table second 2026-10-16 20:59:00Z) | 0 | - | - | - | next run |
+| 2026-11-09T14:00Z | MBT_ASIA_KELTNER | b82f1d445330 | NO-DATA | no MBT data at or after the watch floor 2026-11-01T00:00:00Z (last table second 2026-10-31 23:43:00Z) | 0 | - | - | - | next run |
+| 2026-11-09T14:00Z | GC_TREND | 6c62d9c56508 | NO-DATA | no GC data at or after the watch floor 2026-11-08T22:00:00Z (last table second 2026-10-16 20:59:00Z) | 0 | - | - | - | next run |
+| 2026-11-09T14:00Z | NQ_PDL | 8f7faa58137c | ACCUMULATING (N=0 of 60; waiting for the weekly NQ ohlcv-1s pull) | forward label days >= 20261102, data to 2026-11-06 21:59:59Z; no forward trade yet | bad-print check: not applicable (tick/1-s feed, no 1-min bars) | 0 | nan | 0.0 | +nan | weekly Mon 14:00Z |
