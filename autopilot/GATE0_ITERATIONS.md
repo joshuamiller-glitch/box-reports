@@ -255,3 +255,4 @@
 2026-11-09 EX-LDEF: Stage1 903 D/F cells + 348 E cells scored (agent EX-LDEF); Stage 2 sets ldef_perbook, ldef_uniform started 04:20Z (ATR rules excluded from S2)
 2026-11-09 EX-CORE: stale.py clean on all 44 months vs U2 (EX-FEAT confirmed)
 2026-11-09 EX-LDEF: U2 rescore done (903 D/F + 348 E); stage2 ldef_perbook_u2 running (2 workers) -> python3 stage2.py score ldef_perbook_u2 when done
+2026-11-09T06:50Z EX-CORE: stage2 --order windows + partial-coverage score + s2_chain.py running; ldef_perbook_u2 restarted newest-first (8 chrono months kept)
