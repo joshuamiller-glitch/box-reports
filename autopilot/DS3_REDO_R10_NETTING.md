@@ -314,3 +314,7 @@ Trailing 26 weeks, drawdown first: pick **R10_newer_K7_NET** (live retained: Fal
 | R10_U7>K7_FLIP     | 74081.5 |  174693   | 31065.6 | 25678.1 | False  | PRIOR-UNKNOWN |
 | R10_newer_U7_SKIPS | 75070.8 |  142692   | 31342.6 | 24390   | False  | PRIOR-UNKNOWN |
 | R10_newer_U7_SKIP  | 75070.8 |  135978   | 32112.7 | 23782.6 | False  | PRIOR-UNKNOWN |
+
+## EXACT rows (appended)
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R10_sess_london_SKIP 0, R10_newer_K7_NET 0, R10_U7_K7_FLIP 0, R10_ALL_FLIP 0
+no exact month finished yet (queue tier of R10_/R11_/R9_ prefixes pending).

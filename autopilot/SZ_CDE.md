@@ -4,7 +4,7 @@
 
 > **ROLL-EXCL (lead 17:35Z): every first-order and exact number on this page excludes the 31 base trades (of the 33 listed in roll_bracket_trades.csv; 2 listed rows are not in the COMB list) alive across a contract roll (key book + entry second +-2 s); their P&L is zeroed before state and scoring. Engine-internal state of the exact runs (lock/cooldown/equity states) still saw those artifact P&L jumps; the 14 roll days are checked in the lock/cooldown exact runs on the R1 page.**
 
-# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-10 02:31Z
+# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-10 04:31Z
 
 **Label: first-order on base S1b-COMB (live D7 v1.5 with the seven state-cut lines), 21135 trades 2023-04..2026-10 (last label day 20261030; the 2026-11-01..05 live weeks are not in the list, so L1M/L2M/L3M windows end 2026-10-30); entries not live-matched; in-sample; PRE-PROOF; post-hoc; Shadow only; no PASS claims.** Reference = Q1-A (the base lots). 3274 cells (C 140, D 1980, E 1110, K 44). Prereg: autopilot/SZ_CDE_PREREG.md (sha in DECISIONS.md).
 
@@ -318,18 +318,18 @@ M_CDE.npz row alignment spot-check (M x base P&L in C.prepare(C.load_trades) ord
 
 | set | cell | L6M exact cut / first-order cut | PRE exact / FO | X' exact / FO | L6M d mean exact / FO | HOLD exact / FO | status |
 |--|--|--|--|--|--|--|--|
-| CDE_F00 | D ; eqdd_book_20d_R ; Y1R_f0.50_sticky ; ALL | +24.0 / +46.6 | +15.3 / +44.6 | na / na | -8885.2 / -8362.9 | na / na | EXACT-CONFIRMED on L6M/PRE (partial) |
-| CDE_F01 | E ; max_books_on ; n1_f0.5 ; sess_london | +25.8 / +27.5 | +11.8 / +25.6 | na / na | +679.0 / +145.4 | na / na | EXACT-CONFIRMED on L6M/PRE (partial) |
-| CDE_F02 | D ; eqdd_book_20d_R ; Y4R_f0.25_sticky ; P7 | +10.7 / +30.3 | +34.4 / +44.9 | na / na | -9238.6 / -4029.3 | na / na | EXACT-CONFIRMED on L6M/PRE (partial) |
-| CDE_F03 | C ; riskcap_per_trade ; R$3600 ; P7 | +18.9 / +37.4 | +18.3 / +39.0 | na / na | -12447.3 / -7610.8 | na / na | EXACT-CONFIRMED on L6M/PRE (partial) |
-| CDE_F04 | D ; eqdd_stack_20d ; Y20000_f0.25_sticky ; sess_london | +30.2 / +29.8 | +36.5 / +43.4 | na / na | -1745.7 / -46.8 | na / na | EXACT-CONFIRMED on L6M/PRE (partial) |
+| CDE_F00 | D ; eqdd_book_20d_R ; Y1R_f0.50_sticky ; ALL | +24.0 / +46.6 | +15.3 / +44.6 | +27.6 / +47.4 | -8885.2 / -8362.9 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F01 | E ; max_books_on ; n1_f0.5 ; sess_london | +25.8 / +27.5 | +11.8 / +25.6 | +7.9 / +16.9 | +679.0 / +145.4 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F02 | D ; eqdd_book_20d_R ; Y4R_f0.25_sticky ; P7 | +10.7 / +30.3 | +34.4 / +44.9 | +0.6 / +53.2 | -9238.6 / -4029.3 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F03 | C ; riskcap_per_trade ; R$3600 ; P7 | +18.9 / +37.4 | +18.3 / +39.0 | +51.2 / +40.5 | -12447.3 / -7610.8 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F04 | D ; eqdd_stack_20d ; Y20000_f0.25_sticky ; sess_london | +30.2 / +29.8 | +36.5 / +43.4 | -0.9 / +12.8 | -1745.7 / -46.8 | na / na | EXACT does not confirm on X' |
 | CDE_F05 | D ; week_loss_book_R ; X2R_f0.00 ; P7_sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F06 | E ; same_side_lots_cap ; cap6_trunc ; sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F07 | D ; eqdd_stack_20d ; Y30000_f0.25_sticky ; sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F08 | E ; total_lots_cap ; cap6_skip ; sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F09 | E ; same_side_lots_cap ; cap6_skip ; P7_sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F10 | E ; total_lots_cap ; cap6_skip ; P7_sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
-| CDE_F11 | K ; P7_lots_by_session ; L4_nyam ; P7 | +12.6 / +6.7 | +4.3 / +7.5 | na / na | +2710.1 / +1860.2 | na / na | EXACT-CONFIRMED on L6M/PRE (partial) |
+| CDE_F11 | K ; P7_lots_by_session ; L4_nyam ; P7 | +12.6 / +6.7 | +4.3 / +7.5 | +7.8 / +12.5 | +2710.1 / +1860.2 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
 
 
 ## Family L (SZ-L cooldowns / chop pauses) top-5 EXACT vs first-order (hook codes 20 chop pause, 21 session-loss in cde_exact.py; windows as on this page, ref = S1-COMB trades; first-order from SZ-L raw_L.parquet whose windows run to 11-05)

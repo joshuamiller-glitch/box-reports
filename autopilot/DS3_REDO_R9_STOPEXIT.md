@@ -186,3 +186,7 @@ Trailing 26 weeks to the data end, drawdown first: pick = **R9S_ALL_NAT** (live 
 | R9S_ALL_NATLIVE    | 78594.7 |    133370 | 33786.4 | 24262.9 | False  | PRIOR-UNKNOWN |
 | R9S_ALL_J10_i1_c20 | 79377.3 |    129819 | 33863.6 | 24452.7 | False  | PRIOR-UNKNOWN |
 | R9S_P7_NATLIVE     | 79438.1 |    127499 | 34241.9 | 24074.5 | False  | PRIOR-UNKNOWN |
+
+## EXACT rows (appended)
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R9_J5_i1_c10 0, R9_J10_i1_c10 0, R9_J10_i0_c10 0, R9_STRAT0_c10 0
+no exact month finished yet (queue tier of R10_/R11_/R9_ prefixes pending).

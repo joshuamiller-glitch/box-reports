@@ -1,5 +1,5 @@
 # DS3_REDO_R11_REENTRY - re-entry after a win / after a target on the state base (T-STACK-REDO R11)  [FIRST-ORDER SCREEN; PRE-PROOF until entry match >= .85; no PASS claims]
-Generated 2026-11-10 01:29 UTC (elapsed 46 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
+Generated 2026-11-10 04:30 UTC (elapsed 47 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
 
 ## 0. Definition
 - FLAGGED trade j = its signal comes within N min (5/10/15/30/60/120) after a Target exit of the SAME side, of the same book ("own") or of any book ("any"). Policy FULL (live = reference) / HALF / SKIP on flagged trades. These are lot-multiplier tables keyed on the signal second: exact in table mode (queue prefix R11_), first-order here is a screen (mean overstated for up-size only; these are down-only).

@@ -1,5 +1,5 @@
 # ZN_STRUCT - T-ZONES-EXHAUST families C (swing/market structure), D (MA/bands), E (round numbers/grid)
-Updated 2026-11-10 04:28Z. PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER SCREEN ONLY unless the exact table below says otherwise. **ROLL-EXCL applied** (33 roll-artifact base trades weighted 0 via sz_core Base.rollw; every number rescored incl. X-prime and HOLD). No PASS claims.
+Updated 2026-11-10 04:58Z. PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER SCREEN ONLY unless the exact table below says otherwise. **ROLL-EXCL applied** (33 roll-artifact base trades weighted 0 via sz_core Base.rollw; every number rescored incl. X-prime and HOLD). No PASS claims.
 
 **Price source:** ZN-CORE roll-continuous 1-min bars from the 1-s state arrays (/mnt/l2/l2vast/_th_zn/bars.npz, cont = raw - cum, 14 quarterly rolls); all levels on the continuous axis, distances to the last closed 1-min close at the signal second; round numbers / open-grid use the live price (cont + cum/4). bars1m_NQ.npz (back-adjusted) is NOT used. Entry proxy vs trade-list entry_px: median 0.8 pt, 99th pct 25 pts (fills/slippage and roll seconds).
 

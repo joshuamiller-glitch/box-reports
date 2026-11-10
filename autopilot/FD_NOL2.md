@@ -1,4 +1,4 @@
-# FD_NOL2 - T-FIND-DRESSED, NO-L2 STACK (FD-NOL2), 2026-11-10 01:50Z
+# FD_NOL2 - T-FIND-DRESSED, NO-L2 STACK (FD-NOL2), 2026-11-10 04:50Z
 
 Research only, Shadow only, no PASS claims, first-order (no exact engine covers YM GC CL ZN ZB 6E 6J MBT NKD BTC). Every row is labelled **NO-L2 STACK** (ER sizer, price-path TH loss + profit, structural zones, locks/cooldowns, stack rules, near-target take / BE lock; the L2 state cut, book zones and L2 gate are NOT available: no depth on the box). Prereg line in DECISIONS.md (2026-11-09T19:25Z, code outputs/code/fd_nol2/). Windows as of 2026-11-09 (sz_core.WIN); **data end 2026-10-16** for every instrument here (L1M = 10-11..10-16 only, the live weeks 11-02..05 and 11-08.. are NOT in these lists: live-week column is n/a and nothing is labelled cleared).
 
