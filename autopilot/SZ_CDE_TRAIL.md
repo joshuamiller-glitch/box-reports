@@ -1,4 +1,4 @@
-# SZ_CDE_TRAIL - T-TRAIL-L2 profit-state lines for M7, A7, O7 (SZ-CDE) - 2026-11-10 18:10Z
+# SZ_CDE_TRAIL - T-TRAIL-L2 profit-state lines for M7, A7, O7 (SZ-CDE) - 2026-11-10 20:25Z
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. FIRST-ORDER SCREEN on the shared PTR engine (REDO-R5, LPB_BASE trade list, slip 1.2 central, equal lots, stack = LPB_BASE with the book's fired trades replaced; re-entries / locks / follow-on trades not re-simulated, so ranking only; exact promotion by SZ-IJK from /mnt/l2/l2vast/_th_ptr/top20_<book>.txt). Prereg: autopilot/SZ_CDE_TRAIL_PREREG.md. Windows L1M / L3M / L6M / HOLD / PRE / X-prime, carrying week dropped from means only; Rule 2a label via Z.prior_info (PRE mean floor = 25% of the live PRE mean; old fixed-floor label beside), bi-weekly WF = the line vs LPB_BASE (26 weeks train, 2 weeks test).**
 
@@ -181,3 +181,87 @@ Per entry session (rule applied to that session only), L6M stack maxDD cut, top 
 ## Reading
 - M7 / A7 / O7 profit lines that win on drawdown are early-take lines: arm 0.2-0.3 x target plus a market-pressure condition that is true on most trades after arming (sweep / pulled / delta), so they cut drawdown by realising small profits early and give up mean (M7 about -$0.6k per week on L6M); the equal-MEAN column shows how much of the cut survives when each line lots are rescaled to the live L6M mean (it is the honest comparison). The placebo (random exit at the same arm and count) shows whether the CONDITION adds anything beyond the early take: own p L6M is low for M7 but PRE own p is high; no line reaches family p <= .10 on PRE.
 - Nothing here is a CANDIDATE: first-order only, WF below 60% on every line, and the exact rows are queued with SZ-IJK (PTR_<book>_<nn>).
+
+
+## EXACT rows (SZ-IJK, ROLLFIX1 exact engine at slip 0.8, LPB base; ex_* = exact, FO = first-order screen; windows only where all months are present; equal-mean uses the LPB_BASE L6M mean 21495 $/wk)
+
+### M7
+
+| set | line | FO L6M cut | exact L6M cut / d mean / equal-mean | exact L3M cut / L1M cut | exact HOLD cut / d mean | PRE months | status |
+|--|--|--|--|--|--|--|--|
+| PTR_M7_01 | `profit M7 * pct>=0.2 sweep_against>=3 take win=8 persist=2 wall_ticks=8` | +32.7 | -24.9 / -1583 / -34.8 | +25.4 / -43.5 | -33.1 / -944 | 10/17 | PARTIAL |
+| PTR_M7_02 | `profit M7 * pct>=0.2 pulled_mult>=3 take win=5 persist=3 wall_ticks=8` | +32.1 | -31.5 / -781 / -36.4 | +28.2 / -33.2 | -34.7 / -958 | 7/17 | PARTIAL |
+| PTR_M7_03 | `profit M7 * pct>=0.2 pulled_mult>=3 tighten 5 win=5 persist=3 wall_ticks=8` | +31.7 | -14.7 / -1318 / -22.1 | +42.9 / -1.0 | na / na | nan | PARTIAL |
+| PTR_M7_04 | `profit M7 * pct>=0.2 sweep_against>=4 take win=8 persist=2 wall_ticks=8` | +31.9 | -32.5 / -799 / -37.7 | +18.1 / -35.6 | na / na | nan | PARTIAL |
+| PTR_M7_05 | `profit M7 * pct>=0.2 pulled_against_mult>=10 take win=5 persist=2 wall_ticks=8` | +31.6 | -17.4 / -1420 / -25.7 | +37.0 / -38.7 | na / na | nan | PARTIAL |
+| PTR_M7_06 | `profit M7 * pct>=0.2 pulled_against_mult>=20 tighten 5 win=15 persist=2 wall_ticks=8` | +31.3 | na / na / na | na / -0.0 | na / na | nan | PARTIAL |
+| PTR_M7_07 | `profit M7 * pct>=0.2 imb10<=-0.1 tighten 5 win=0 persist=1 wall_ticks=8` | +30.0 | na / na / na | na / +12.3 | na / na | nan | PARTIAL |
+| PTR_M7_08 | `profit M7 * pct>=0.2 imb5<=-0.1 take win=0 persist=2 wall_ticks=8` | +30.2 | na / na / na | na / -16.9 | na / na | nan | PARTIAL |
+| PTR_M7_09 | `profit M7 * pct>=0.6 ice_against>=1 tighten 20 win=30 persist=1 wall_ticks=8` | +14.5 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_10 | `profit M7 * pct>=0.5 dd>=3 step 20 win=0 persist=5 wall_ticks=8` | +13.0 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_11 | `profit M7 * pct>=0.6 ice_against>=1 tighten 20 win=30 persist=2 wall_ticks=8` | +14.9 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_12 | `profit M7 * pct>=0.5 dd>=5 take win=0 persist=1 wall_ticks=8` | +12.8 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_13 | `profit M7 * pct>=0.2 imb5<=-0.1 lock 5 win=0 persist=2 wall_ticks=8` | +25.8 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_14 | `profit M7 * pct>=0.2 imb10<=-0.1 lock 10 win=0 persist=3 wall_ticks=8` | +23.7 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_15 | `profit M7 * pct>=0.2 ahead_rel_slow>=1.5 lock 10 win=0 persist=1 wall_ticks=8` | +22.2 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_16 | `profit M7 * pct>=0.2 ahead_rel>=1.5 lock 10 win=0 persist=1 wall_ticks=8` | +21.0 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_17 | `profit M7 * pct>=0.2 sweep_against>=3 tighten 5 win=8 persist=2 wall_ticks=8` | +31.7 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_18 | `profit M7 * pct>=0.2 sweep_against>=3 lock 10 win=8 persist=2 wall_ticks=8` | +28.5 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_19 | `profit M7 * pct>=0.2 pulled_mult>=3 step 5 win=5 persist=3 wall_ticks=8` | +30.6 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_M7_20 | `profit M7 * pct>=0.2 sweep_against>=4 scale 0.5 win=8 persist=2 wall_ticks=8` | +9.7 | na / na / na | na / na | na / na | nan | NONE |
+
+### A7
+
+| set | line | FO L6M cut | exact L6M cut / d mean / equal-mean | exact L3M cut / L1M cut | exact HOLD cut / d mean | PRE months | status |
+|--|--|--|--|--|--|--|--|
+| PTR_A7_01 | `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8` | +9.9 | +28.7 / -146 / +28.2 | +4.1 / +31.8 | +4.1 / -58 | 12/17 | PARTIAL |
+| PTR_A7_02 | `profit A7 * pct>=0.3 pulled_against_mult>=30 or pulled_mult>=20 take win=10 persist=3 wall_ticks=8` | +10.3 | +35.5 / -18 / +35.4 | +44.9 / +55.2 | +36.2 / +150 | 11/17 | PARTIAL |
+| PTR_A7_03 | `profit A7 * pct>=0.2 pulled_against_mult>=30 take win=10 persist=5 wall_ticks=8` | +10.0 | +24.6 / +340 / +25.7 | +9.0 / +50.9 | na / na | nan | PARTIAL |
+| PTR_A7_04 | `profit A7 * pct>=0.3 pulled_mult>=30 sweep_against>=6 take win=15 persist=1 wall_ticks=8` | +10.1 | +28.9 / +3 / +28.9 | +64.4 / +74.8 | na / na | nan | PARTIAL |
+| PTR_A7_05 | `profit A7 * pct>=0.2 pulled_against_mult>=50 take win=15 persist=2 wall_ticks=8` | +10.4 | +30.2 / +97 / +30.5 | +16.2 / +38.5 | na / na | nan | PARTIAL |
+| PTR_A7_06 | `profit A7 * pct>=0.3 pulled_mult>=30 take win=15 persist=2 wall_ticks=8` | +9.8 | +39.2 / +4 / +39.3 | +52.9 / +48.8 | na / na | nan | PARTIAL |
+| PTR_A7_07 | `profit A7 * pct>=0.3 pulled_mult>=30 take win=15 persist=1 wall_ticks=8` | +9.9 | +32.3 / +44 / +32.4 | +64.4 / +75.3 | na / na | nan | PARTIAL |
+| PTR_A7_08 | `profit A7 * pct>=0.2 sweep_against>=6 step 10 win=5 persist=10 wall_ticks=8` | +9.1 | -7.4 / -75 / -7.7 | -23.7 / +14.4 | na / na | nan | PARTIAL |
+| PTR_A7_09 | `profit A7 * pct>=0.5 take` | +6.4 | +46.6 / -14 / +46.6 | +67.3 / +100.0 | na / na | nan | PARTIAL |
+| PTR_A7_10 | `profit A7 * pct>=0.5 tighten 5` | +6.4 | +44.1 / +242 / +44.7 | +55.1 / +100.0 | na / na | nan | PARTIAL |
+| PTR_A7_11 | `profit A7 * pct>=0.5 wall_ahead_mult>=5 step 10 win=0 persist=3 wall_ticks=4` | +3.8 | na / na / na | +59.4 / +69.4 | na / na | nan | PARTIAL |
+| PTR_A7_12 | `profit A7 * pct>=0.5 wall_ahead_mult>=5 tighten 5 win=0 persist=3 wall_ticks=4` | +3.5 | na / na / na | +66.8 / +89.2 | na / na | nan | PARTIAL |
+| PTR_A7_13 | `profit A7 * pct>=0.2 sweep_against>=4 take win=8 persist=10 wall_ticks=8` | +8.8 | na / na / na | +34.6 / +59.1 | na / na | nan | PARTIAL |
+| PTR_A7_14 | `profit A7 * pct>=0.3 delta_mult>=2 take win=5 persist=1 wall_ticks=8` | +8.9 | na / na / na | na / +3.3 | na / na | nan | PARTIAL |
+| PTR_A7_15 | `profit A7 * pct>=0.4 dd>=5 take win=0 persist=1 wall_ticks=8` | +6.4 | na / na / na | na / +100.0 | na / na | nan | PARTIAL |
+| PTR_A7_16 | `profit A7 * pct>=0.4 dd>=5 tighten 5 win=0 persist=1 wall_ticks=8` | +6.4 | na / na / na | na / +100.0 | na / na | nan | PARTIAL |
+| PTR_A7_17 | `profit A7 * pct>=0.2 pulled_against_mult>=30 tighten 5 win=10 persist=5 wall_ticks=8` | +9.6 | na / na / na | na / +39.6 | na / na | nan | PARTIAL |
+| PTR_A7_18 | `profit A7 * pct>=0.2 sweep_against>=4 lock 10 win=8 persist=10 wall_ticks=8` | +7.2 | na / na / na | na / +48.7 | na / na | nan | PARTIAL |
+| PTR_A7_19 | `profit A7 * pct>=0.3 delta_mult>=2 step 5 win=2 persist=2 wall_ticks=8` | +9.3 | na / na / na | na / +45.2 | na / na | nan | PARTIAL |
+| PTR_A7_20 | `profit A7 * pct>=0.3 sweep_against>=6 pulled_mult>=10 take win=3 persist=1 wall_ticks=8` | +10.1 | na / na / na | na / +49.4 | na / na | nan | PARTIAL |
+
+### O7
+
+| set | line | FO L6M cut | exact L6M cut / d mean / equal-mean | exact L3M cut / L1M cut | exact HOLD cut / d mean | PRE months | status |
+|--|--|--|--|--|--|--|--|
+| PTR_O7_01 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` | +4.8 | +17.4 / +30 / +17.5 | +58.3 / +63.1 | +17.4 / -127 | 6/17 | PARTIAL |
+| PTR_O7_02 | `profit O7 * pct>=0.2 delta_mult>=5 take win=10 persist=10 wall_ticks=8` | +4.6 | -2.1 / +48 / -1.8 | +47.5 / +61.8 | -2.1 / -197 | 2/17 | PARTIAL |
+| PTR_O7_03 | `profit O7 * pct>=0.4 imb5<=-0.1 take win=0 persist=2 wall_ticks=8` | +5.2 | +23.5 / -99 / +23.2 | +39.9 / +36.2 | na / na | nan | PARTIAL |
+| PTR_O7_04 | `profit O7 * pct>=0.3 imb5<=-0.1 take win=0 persist=2 wall_ticks=8` | +5.0 | +11.0 / -276 / +9.9 | +57.1 / +62.2 | na / na | nan | PARTIAL |
+| PTR_O7_05 | `profit O7 * pct>=0.3 delta_mult>=5 imb5<=-0.1 take win=10 persist=1 wall_ticks=8` | +4.0 | +8.4 / -228 / +7.4 | +57.3 / +63.7 | na / na | nan | PARTIAL |
+| PTR_O7_06 | `profit O7 * pct>=0.3 pulled_against_mult>=20 step 10 win=10 persist=5 wall_ticks=8` | +4.1 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_07 | `profit O7 * pct>=0.3 imb10<=-0.2 step 10 win=0 persist=1 wall_ticks=8` | +4.1 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_08 | `profit O7 * pct>=0.2 dd>=12 step 10 win=0 persist=10 wall_ticks=8` | +4.1 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_09 | `profit O7 * pct>=0.9 take` | +1.0 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_10 | `profit O7 * pct>=0.7 imb5<=-0.1 or pulled_against_mult>=10 take win=2 persist=3 wall_ticks=8` | +0.9 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_11 | `profit O7 * pct>=0.8 take` | +0.8 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_12 | `profit O7 * pct>=0.3 wall_ahead_mult>=5 step 10 win=0 persist=1 wall_ticks=8` | +4.1 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_13 | `profit O7 * pct>=0.3 wall_ahead_mult>=5 step 10 win=0 persist=1 wall_ticks=20` | +4.1 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_14 | `profit O7 * pct>=0.3 pulled_against_mult>=5 step 10 win=3 persist=5 wall_ticks=8` | +4.1 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_15 | `profit O7 * pct>=0.4 imb10<=-0.1 step 10 win=0 persist=1 wall_ticks=8` | +4.1 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_16 | `profit O7 * pct>=0.3 delta_mult>=2 tighten 5 win=10 persist=10 wall_ticks=8` | +4.6 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_17 | `profit O7 * pct>=0.2 wall_ahead_mult>=5 lock 10 win=0 persist=1 wall_ticks=4` | +2.8 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_18 | `profit O7 * pct>=0.3 delta_mult>=2 step 5 win=10 persist=10 wall_ticks=8` | +4.6 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_19 | `profit O7 * pct>=0.2 delta_mult>=2 take win=8 persist=10 wall_ticks=8` | +4.6 | na / na / na | na / na | na / na | nan | NONE |
+| PTR_O7_20 | `profit O7 * pct>=0.3 pulled_mult>=30 take win=15 persist=10 wall_ticks=8` | +3.9 | na / na / na | na / na | na / na | nan | NONE |
+
+
+Best exact line per book so far (by exact L6M cut): M7 `profit M7 * pct>=0.2 pulled_mult>=3 tighten 5 win=5 persist=3 wall_ticks=8` exact L6M -14.7 / HOLD na / equal-mean -22.1; A7 `profit A7 * pct>=0.5 take` exact L6M +46.6 / HOLD na / equal-mean +46.6; O7 `profit O7 * pct>=0.4 imb5<=-0.1 take win=0 persist=2 wall_ticks=8` exact L6M +23.5 / HOLD na / equal-mean +23.2
+
+
+**Exact vs first-order:** wherever exact windows exist, the exact engine (re-entries, locks, slice fills, the live ThL2 branch) disagrees with the first-order screen for the early-take lines: a line that cuts the stack maxDD in the screen can be DEEPER in the engine because the book re-enters after the early exit. Only the exact columns carry a verdict; the first-order tables above are rankings. Rule 2a labels need exact PRE and are therefore pending for the exact rows.

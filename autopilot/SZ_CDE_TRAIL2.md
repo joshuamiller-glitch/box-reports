@@ -1,4 +1,4 @@
-# SZ_CDE_TRAIL2 - T-TRAIL-L2 items 2 and 3: STATE-ADAPTIVE trail distance and the PROFIT CUT (loss-cut mirror), seven books (SZ-CDE) - 2026-11-10 17:53Z
+# SZ_CDE_TRAIL2 - T-TRAIL-L2 items 2 and 3: STATE-ADAPTIVE trail distance and the PROFIT CUT (loss-cut mirror), seven books (SZ-CDE) - 2026-11-10 20:25Z
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. FIRST-ORDER on the shared PTR engine (LPB_BASE trade list, slip 1.2, equal lots, stack = LPB_BASE with the book's fired trades replaced; re-entries/locks not re-simulated: ranking only). Windows L1M/L3M/L6M/HOLD/PRE/X-prime; equal-MEAN cut = stack maxDD cut at lots rescaled to the live L6M mean; placebo = random exit at the same arm pct and count (100 draws) with own-draw p and the family null over the top-100 cells of the family; bi-weekly WF vs LPB_BASE; Rule 2a label via Z.prior_info [old fixed-floor label beside].**
 

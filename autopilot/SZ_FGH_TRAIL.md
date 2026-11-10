@@ -1,4 +1,4 @@
-# SZ_FGH_TRAIL - T-TRAIL-L2: profit-state screens for U7 and H7 (all sessions), 2026-11-10 17:47Z
+# SZ_FGH_TRAIL - T-TRAIL-L2: profit-state screens for U7 and H7 (all sessions), 2026-11-10 20:25Z
 
 > Label: FIRST-ORDER SCREEN (REDO-R5 PTR engine, 1-s top-10 state paths of the LPB_BASE trade list, decision at the close of second s, market exit at the next row, slip 1.2 central / 0.57 low / 1.6 high) unless a row says EXACT. Base = live panel (LPB_BASE: P7 cap 8,400, 7/4/4, P7 cut 40/5x/w5/p3, all layers ON); the live profit branch stays ON and the rule acts on top. ROLLFIX1. PRE-PROOF, post-hoc, Shadow only, no PASS claims. Grid and promotion by SZ-IJK (ptr_screen.py stage 1 / ptr_stage2.py, about 18.6k cells per book, dead_lookup 0 hits, cells appended to DEAD_CELLS as program PTRL2); top-20 per book by recents key (mean equal-mean cut L6M/L3M/L1M), files /mnt/l2/l2vast/_th_ptr/top20_U7.txt / top20_H7.txt, tables table_U7.csv / table_H7.csv. Placebo = random exit at the same arm pct and same count (B=100); own-draw p shown; **family p here is over the 20 reported lines only, not the whole ~18.6k grid, so it UNDERSTATES the multiplicity (read it as an upper bound on the strength; the whole-grid family p would be larger)**. WF = bi-weekly re-pick of the single cell vs the live panel base (% of periods the cell beats live; 60% is the bar). Rule 2a label at the 25% PRE-mean floor. The live-week replay (clipped targets / caught give-backs) needs the frozen-week state features and is delivered by REDO-R13; pending.
 
@@ -69,7 +69,19 @@ The D7 v1.5 coded TH-L2 profit branch (`ThL2ProfitOn`, tighten 30 pts behind the
 The week has very few events for this book (3 Target exits, 0 give-backs), so the replay is an anecdote, not evidence.
 
 ### U7 EXACT rows (promoted PTR_U7_nn sets vs LPB, slip 0.8 engine hook)
-pending: SZ-IJK promotes the top-20 lines as PTR_U7_nn (queue order L6M, PRE, X', HOLD); no complete window yet.
+| set | line | months | cut L6M / PRE / X' / HOLD | d mean L6M / PRE | label |
+|--|--|--|--|--|--|
+| PTR_U7_01 | profit U7 * pct>=0.3 pulled_against_mult>=20 ahead_rel_slow>=1.2 take win=5 persist=3 | 12 | 16.9 / n/a / n/a / -1.3 | +585 / +nan |  |
+| PTR_U7_02 | profit U7 * pct>=0.3 pulled_against_mult>=20 tighten 20 win=5 persist=5 | 12 | 16.2 / n/a / n/a / -12.1 | +389 / +nan |  |
+| PTR_U7_03 | profit U7 * pct>=0.3 pulled_against_mult>=20 step 5 win=5 persist=5 | 10 | 16.1 / n/a / n/a / n/a | -374 / +nan |  |
+| PTR_U7_04 | profit U7 * pct>=0.3 pulled_against_mult>=20 take win=5 persist=5 | 10 | 16.5 / n/a / n/a / n/a | -435 / +nan |  |
+| PTR_U7_05 | profit U7 * pct>=0.3 pulled_against_mult>=20 tighten 8 win=5 persist=5 | 10 | 16.5 / n/a / n/a / n/a | -369 / +nan |  |
+| PTR_U7_PC01 | profit U7 * pct>=0.5 pulled_mult>=3 secs_fav<=2 take win=8 persist=10 wall_ticks=8 | 12 | 33.2 / n/a / n/a / -7.4 | +958 / +nan |  |
+| PTR_U7_PC02 | profit U7 * pct>=0.5 pulled_mult>=3 secs_fav<=2 take win=10 persist=10 wall_ticks=8 | 12 | 33.1 / n/a / n/a / -7.4 | +845 / +nan |  |
+| PTR_U7_PC03 | profit U7 * pct>=0.5 pulled_mult>=3 secs_fav<=2 take win=15 persist=10 wall_ticks=8 | 10 | 33.1 / n/a / n/a / n/a | +845 / +nan |  |
+| PTR_U7_PC04 | profit U7 * pct>=0.5 pulled_mult>=5 secs_fav<=2 take win=10 persist=10 wall_ticks=8 | 10 | 20.6 / n/a / n/a / n/a | +754 / +nan |  |
+| PTR_U7_PC05 | profit U7 * pct>=0.5 pulled_mult>=5 secs_fav<=2 take win=15 persist=10 wall_ticks=8 | 10 | 33.1 / n/a / n/a / n/a | +845 / +nan |  |
+| PTR_U7_S01 | profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5 | 10 | 9.1 / n/a / n/a / n/a | +1074 / +nan |  |
 
 **Plain sentence, U7 (first-order screen, not a verdict):** the best-screening U7 line is "* pct>=0.3 pulled_against_mult>=20 ahead_rel_slow>=1.2 take win=5 persist=3": L6M stack maxDD cut 27% (equal-mean 30.3%) and +1087 $/wk on L6M, but PRE +3.7% (equal-mean 8.4%), X' -10.3%, HOLD -0.2%, bi-weekly WF 14% of periods (bar 60%) and own placebo p 0.27. **U7: the book-based protection is: take the profit at +0.3 of target when against-side cancellations reach 20x MedLevel over 5 s and against depth is 1.2x its slow baseline; in the held-out week it kept 0 of 0 give-backs (U7 had none) and clipped 0 of 3 live targets (cost $0), so the live week says nothing either way; the first-order cost on the fills is the PRE/X'/HOLD columns.** It fires on 252 of the book's trades. The live U7 profit setting stays until exact rows confirm.
 
@@ -140,7 +152,29 @@ The D7 v1.5 coded TH-L2 profit branch (`ThL2ProfitOn`, tighten 30 pts behind the
 The week has very few events for this book (1 Target exits, 2 give-backs), so the replay is an anecdote, not evidence.
 
 ### H7 EXACT rows (promoted PTR_H7_nn sets vs LPB, slip 0.8 engine hook)
-pending: SZ-IJK promotes the top-20 lines as PTR_H7_nn (queue order L6M, PRE, X', HOLD); no complete window yet.
+| set | line | months | cut L6M / PRE / X' / HOLD | d mean L6M / PRE | label |
+|--|--|--|--|--|--|
+| PTR_H7_01 | profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5 | 23 | 4.8 / n/a / n/a / 3.0 | +367 / +nan |  |
+| PTR_H7_02 | profit H7 * pct>=0.4 dd>=20 or ice_against>=3 tighten 16 persist=5 | 23 | 4.3 / n/a / n/a / 3.0 | +286 / +nan |  |
+| PTR_H7_03 | profit H7 * pct>=0.3 pulled_mult>=20 secs_fav<=0 take win=10 persist=2 | 10 | 11.2 / n/a / n/a / n/a | -262 / +nan |  |
+| PTR_H7_04 | profit H7 * pct>=0.2 ice_against>=3 or pulled_mult>=30 take win=5 persist=3 | 10 | 7.2 / n/a / n/a / n/a | +319 / +nan |  |
+| PTR_H7_05 | profit H7 * pct>=0.5 dd>=16 tighten 20 persist=10 | 10 | 1.7 / n/a / n/a / n/a | +189 / +nan |  |
+| PTR_H7_06 | profit H7 * pct>=0.4 sweep_against>=8 tighten 5 win=5 persist=10 | 10 | 8.6 / n/a / n/a / n/a | +30 / +nan |  |
+| PTR_H7_07 | profit H7 * pct>=0.4 sweep_against>=8 take win=5 persist=10 | 10 | 8.8 / n/a / n/a / n/a | +7 / +nan |  |
+| PTR_H7_08 | profit H7 * pct>=0.4 sweep_against>=8 tighten 8 win=5 persist=10 | 10 | 8.5 / n/a / n/a / n/a | +10 / +nan |  |
+| PTR_H7_09 | profit H7 * pct>=0.5 dd>=16 or sweep_against>=8 take win=3 persist=5 | 10 | 5.1 / n/a / n/a / n/a | +118 / +nan |  |
+| PTR_H7_10 | profit H7 * pct>=0.4 sweep_against>=8 step 5 win=5 persist=10 | 10 | 8.2 / n/a / n/a / n/a | +17 / +nan |  |
+| PTR_H7_11 | profit H7 * pct>=0.5 ice_against>=1 tighten 8 persist=3 | 10 | 6.0 / n/a / n/a / n/a | +39 / +nan |  |
+| PTR_H7_12 | profit H7 * pct>=0.5 dd>=16 step 10 persist=10 | 10 | 0.4 / n/a / n/a / n/a | +144 / +nan |  |
+| PTR_H7_13 | profit H7 * pct>=0.2 pulled_mult>=30 take win=8 persist=10 | 10 | 4.5 / n/a / n/a / n/a | +316 / +nan |  |
+| PTR_H7_14 | profit H7 * pct>=0.5 ice_against>=1 step 5 persist=3 | 10 | 5.0 / n/a / n/a / n/a | +54 / +nan |  |
+| PTR_H7_15 | profit H7 * pct>=0.4 delta_mult>=10 lock 10 win=10 persist=10 | 10 | 2.2 / n/a / n/a / n/a | -208 / +nan |  |
+| PTR_H7_16 | profit H7 * pct>=0.4 delta_mult>=10 lock 5 win=10 persist=10 | 10 | 2.5 / n/a / n/a / n/a | +94 / +nan |  |
+| PTR_H7_17 | profit H7 * pct>=0.4 delta_mult>=10 lock 5 win=8 persist=3 | 10 | 5.8 / n/a / n/a / n/a | -30 / +nan |  |
+| PTR_H7_18 | profit H7 * pct>=0.4 delta_mult>=10 lock 2 win=10 persist=10 | 10 | 2.0 / n/a / n/a / n/a | +118 / +nan |  |
+| PTR_H7_19 | profit H7 * pct>=0.2 pulled_mult>=30 scale 0.5 win=8 persist=10 | 2 | n/a / n/a / n/a / n/a | +nan / +nan |  |
+| PTR_H7_20 | profit H7 * pct>=0.2 pulled_mult>=30 scale 0.75 win=5 persist=3 | 2 | n/a / n/a / n/a / n/a | +nan / +nan |  |
+| PTR_H7_S01 | profit H7 * pct>=0.5 dd>=16 or sweep_against>=8 tighten 16 win=3 persist=5 | 23 | 3.4 / n/a / n/a / -1.0 | +115 / +nan |  |
 
 **Plain sentence, H7 (first-order only, not a verdict):** the best H7 line is "* pct>=0.4 dd>=20 or ice_against>=3 take persist=5": it cuts L6M stack maxDD by 10% (HOLD +3.1%, PRE +1.9%, X' +17.1%) with d mean +597$/wk L6M, own placebo p 0.04, and a bi-weekly WF of 34% (bar 60%). H7 is a small book (about 1,100 trades), so every cut here is inside the noise of the stack; the protection is "take when the giveback from the extreme reaches 20 points or against-side refills reach 3", costing a few hundred dollars a week on PRE. A book whose best cell is this small is still delivered with the number; the live H7 setting stays. **H7: the book-based protection is "take when the giveback from the extreme reaches 20 points or against-side refills reach 3, from +0.4 of target"; in the held-out week it caught 0 of H7's 2 give-backs (-$1,974) and clipped its 1 live target (cost $659): it keeps none of the give-backs and costs the one fill - one-week anecdote.**
 
