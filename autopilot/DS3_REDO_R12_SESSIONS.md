@@ -1,6 +1,6 @@
 # DS3_REDO_R12_SESSIONS - session boundaries, blocks, flatten, day-of-week / roll / event days on the state base (REDO-R12)
 
-Version 2026-11-09 21:33Z. **PRE-PROOF**. **FIRST-ORDER SCREEN ONLY** (removals, lot re-reads, flatten re-walks, calendar multipliers on the S1B-COMB trade list; stack metrics, drawdown first, equal-mean key, permutation placebo B=100 within book, family max over this page, bi-weekly WF as its own column, rule 2a prior label). Exact hooks (guards / ends / flat / cal) are in code/th_r7/r7_hooks.py; exact runs for the top cells are queued after R7 (R12_ prefix, tier 2). No PASS claims; shadow only.
+Version 2026-11-10 00:34Z. **PRE-PROOF**. **FIRST-ORDER SCREEN ONLY** (removals, lot re-reads, flatten re-walks, calendar multipliers on the S1B-COMB trade list; stack metrics, drawdown first, equal-mean key, permutation placebo B=100 within book, family max over this page, bi-weekly WF as its own column, rule 2a prior label). Exact hooks (guards / ends / flat / cal) are in code/th_r7/r7_hooks.py; exact runs for the top cells are queued after R7 (R12_ prefix, tier 2). No PASS claims; shadow only.
 
 ## 0. Plain verdict
 Nothing here changes a live setting. (a) The 09:00-09:59 block, the Asia guard 15:00-17:59 and the 09:00-09:29 part of the block are INERT in the engine as configured: the pre (08:30-09:30) and close (15:00-18:00) sessions carry lots 0 for every book, so only 09:30-09:59 (nyam lots K7 1, H7 1, M7 1, P7 7) and the 18:00-18:04 asia-open window carry trades; opening them ADDS trades the base does not contain and needs the engine (exact only), a first-order screen cannot score it. (b) Flatten: 17:00 is ~neutral (+39 $/wk L6M), 16:30 / 16:45 are slightly worse, hold-through for asia entries touches only 34 trades. (c) Calendar: most x0 / x0.5 cells lose mean and deepen maxDD (exceptions: NFP-day x0 / x0.5 gain +587 / +333 $/wk L6M with PRE dM -342 / -4); cells flagged LEAD+ have family p >= .1 and a bi-weekly WF beating live in <= 53 % of periods, so none is a CANDIDATE. (d) Session-clock moves: asia end 03:00 removes 882 M7 trades from 02:00-03:00 (london lots M7 2 -> asia 0) with a small eq cut and PRE dM -463; london end 08:00 and nyam end 11:30 lose mean.
@@ -69,7 +69,7 @@ Pick: **dow Thu x0** (trailing maxDD 66426 vs live 79907); screen label LEAD+, p
 | calendar (dow / roll / events) | normal | dow Thu x0 | no (label LEAD+, WF beat 28 %) | no | day-of-week / event lot policy (not in panel) |
 | 09:00-09:59 block / Asia guard 15:00-17:59 | block / on | not scored (additions, exact only; 09:00-09:29 and the guard are inert at lots 0) | n/a | no | guard constants |
 
-## 9. EXACT engine results (auto-refreshed 2026-11-09 21:33Z) - R12 cells
+## 9. EXACT engine results (auto-refreshed 2026-11-10 00:34Z) - R12 cells
 Set | months done | cut/dM per complete window vs exact Q1-A (ROLL-EXCL, all weeks for maxDD) | bi-weekly WF on the exact block
 - R12_FLAT1700: 0 months done (queued)
 - R12_ASIA3: 0 months done (queued)
