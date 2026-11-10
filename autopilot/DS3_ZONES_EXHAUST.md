@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST - T-ZONES-EXHAUST (2026-11-10 04:16Z)
+# DS3_ZONES_EXHAUST - T-ZONES-EXHAUST (2026-11-10 05:17Z)
 
 STATUS: ROLL-EXCL (33 roll-artifact trades excluded, sz_core.Base rollw), PRE-PROOF, post-hoc, Shadow only, no PASS claims. FIRST-ORDER SCREEN ONLY unless the stage column says EXACT (exact engine rows are queued with SZ-CORE; none labelled EXACT here yet). Base S1b-COMB (live D7 v1.5 state cut, Q1-A, HALF D20 + OTE-62 B73 D30 in the base), carry week dropped from means only, maxDD/worst-20/Ulcer on all weeks, windows as of 2026-11-09, trade lists end 2026-10-30. Zone sources: 1-s state arrays (levels causal at the signal bar; volume = traded prints), see ZN_API.md. Held-out live week = frozen live file only; the 92 live cuts and the v1.5 night cuts are NOT used.
 
@@ -252,13 +252,13 @@ Cells labelled CANDIDATE in the merged ledgers: %d (all first-order screen, fami
 
 ## Exact-engine rows (REF_ZOFF = zone layer off REFERENCE row; ZNC_* = ZN-CORE top cells)
 
-Months landed: {'REF_ZOFF': 33, 'ZNC_A0': 26, 'ZNC_A1': 0, 'ZNC_B0': 25, 'ZNC_B1': 0}. Rows appear when a whole window (L6M 202605-202610, PRE 202402-202506, X' 202304-202401, HOLD 202511-202604) is present; stage [EXACT partial] otherwise.
+Months landed: {'REF_ZOFF': 33, 'ZNC_A0': 26, 'ZNC_A1': 0, 'ZNC_B0': 27, 'ZNC_B1': 0}. Rows appear when a whole window (L6M 202605-202610, PRE 202402-202506, X' 202304-202401, HOLD 202511-202604) is present; stage [EXACT partial] otherwise.
 
 | set      |   months |   cut_L1M |   dmean_L1M |   eq_cut_L1M |   cut_L2M |   dmean_L2M |   eq_cut_L2M |   cut_L3M |   dmean_L3M |   eq_cut_L3M |   cut_L6M |   dmean_L6M |   eq_cut_L6M |   cut_PRE |   dmean_PRE |   eq_cut_PRE |   cut_X' |   dmean_X' |   eq_cut_X' |
 |:---------|---------:|----------:|------------:|-------------:|----------:|------------:|-------------:|----------:|------------:|-------------:|----------:|------------:|-------------:|----------:|------------:|-------------:|---------:|-----------:|------------:|
 | REF_ZOFF |       33 |     -12.9 |      -626.2 |         -7.8 |     -12.9 |      1655.5 |         -7.8 |     -12.8 |       454.5 |         -7.7 |     -12.8 |      1138.5 |         -7.7 |      19.2 |       239.9 |         22.8 |    -35.4 |     -408.4 |       -29.3 |
 | ZNC_A0   |       26 |       2.8 |       753.4 |          9.1 |       2.8 |       178.9 |          9.1 |      -9.9 |     -3435.7 |         -2.9 |      -9.9 |      1675.6 |         -2.9 |      -5.4 |      -704.9 |          1.4 |    nan   |      nan   |       nan   |
-| ZNC_B0   |       25 |      -6.9 |      -266   |          2.7 |      -6.9 |     -1551.5 |          2.7 |      -6.8 |      -388.4 |          2.8 |      -6.8 |      2414.1 |          2.8 |      30.6 |     -1319.7 |         36.8 |    nan   |      nan   |       nan   |
+| ZNC_B0   |       27 |      -6.9 |      -266   |          2.7 |      -6.9 |     -1551.5 |          2.7 |      -6.8 |      -388.4 |          2.8 |      -6.8 |      2414.1 |          2.8 |      30.6 |     -1319.7 |         36.8 |    nan   |      nan   |       nan   |
 
 
 ## Old-vs-new: every published ZONES-3 / S4 zone cell, with the base-change proof

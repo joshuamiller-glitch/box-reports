@@ -1,4 +1,4 @@
-# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables (SZ-CORE, 2026-11-10 03:01Z)
+# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables (SZ-CORE, 2026-11-10 05:00Z)
 
 **Label: base S1b-COMB (live D7 v1.5 with the seven state-cut lines), controls NOCUT / UNIF where the owner ran them; first-order unless stage says S2 (exact); entries not live-matched (entry match < .85); in-sample; PRE-PROOF. Post-hoc, Shadow only, no PASS claims.**
 
@@ -105,11 +105,11 @@ Old bases: V0 = research ts2 reference behind DS3_SIZER S4A (run_v13t_ts2; ledge
 | reference cell (EXACT, S1b-COMB, vs exact Q1-A = base; engine_ver in the next-to-last column) | L6M cut / d mean | HOLD | PRE | X' | complete months | bi-weekly WF (cut / d mean / % beat) | prior label (rule 2a: allowance, WF) |
 |--|--|--|--|--|--|--|--|
 | Q1-A (live reference) | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | all 43 | - | - |
-| sizer off (x1) | -28.2 / -2511 | -6.4 / -970 | +19.2 / +3121 | -3.1 / +2587 | 43 | +28.3 / +1552 / 13% | OK-PRIOR (allow 15%, WF 13%) |
-| old ladder L (x0.5/x1.5) | -76.1 / -504 | -41.5 / -103 | -17.0 / +3667 | -0.8 / +1018 | 43 | +0.0 / +0 / 0% | RECENT-ONLY (allow 15%, WF 0%) |
-| B (x1/x1.5, up only) | -142.6 / +2723 | -94.8 / +2856 | -15.2 / +6947 | +3.9 / +4550 | 43 | +0.0 / +621 / 1% | RECENT-ONLY (allow 15%, WF 1%) |
-| ZL-1 vol-target (factor built on unadjusted bars; 97 trades differ after adjustment; X_VTA pending) | +28.3 / +10 | +29.1 / -684 | -6.3 / -2010 | +62.4 / +961 | 43 | -6.3 / -2183 / 57% | RECENT-ONLY (allow 15%, WF 57%) |
-| MV-london override | -1.2 / -107 | +6.8 / +28 | pending | pending | 26 | +0.3 / +11 / 55% | PRIOR-UNKNOWN (allow %, WF n/a) |
+| sizer off (x1) | -28.2 / -1571 | pending | +19.9 / +3204 | +2.2 / +2687 | 40 | +28.3 / +2230 / 20% | OK-PRIOR (allow 15%, WF 20%) |
+| old ladder L (x0.5/x1.5) | -76.1 / -1487 | pending | -17.0 / +3874 | +5.5 / +1002 | 40 | +0.0 / +0 / 0% | RECENT-ONLY (allow 15%, WF 0%) |
+| B (x1/x1.5, up only) | -142.6 / +2450 | pending | -15.2 / +6998 | +9.9 / +4631 | 40 | +0.0 / +975 / 2% | RECENT-ONLY (allow 15%, WF 2%) |
+| ZL-1 vol-target (factor built on unadjusted bars; 97 trades differ after adjustment; X_VTA pending) | +28.3 / -101 | pending | -6.3 / -1833 | +63.7 / +1068 | 40 | -6.3 / -2309 / 59% | RECENT-ONLY (allow 15%, WF 59%) |
+| MV-london override | -1.2 / -107 | pending | pending | pending | 23 | +0.3 / -159 / 42% | PRIOR-UNKNOWN (allow %, WF n/a) |
 
 ## Vol-target family (SZ-VT, autopilot/DS3_SIZER_VOLTARGET.md, user top priority; exact engine from the start; first 70 lines, incl. executability rows: scale factor s, max single-trade $ risk, max lots on at once)
 

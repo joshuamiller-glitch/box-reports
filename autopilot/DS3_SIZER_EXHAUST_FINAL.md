@@ -1,4 +1,4 @@
-# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 04:14Z)
+# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 05:14Z)
 
 **Label: base S1b-COMB (live D7 v1.5 with the seven state-cut lines), controls NOCUT / UNIF where the owner ran them; first-order unless stage says S2 (exact); entries not live-matched (entry match < .85); in-sample; PRE-PROOF. Post-hoc, Shadow only, no PASS claims.**
 
@@ -28,7 +28,7 @@ Windows as of 2026-11-09 (L6M 20260512-, HOLD 20251111-, PRE 20240201-20250630, 
 
 > **TESTING-DEFECT BOX.** Cells whose new-base d mean equals the old-base page to the dollar: 0.
 
-**USER ADDENDUM 1 (16:30Z) status:** first-order is a SCREEN ONLY; the sizing verdict needs EXACT engine runs for every family top-5 and every reference row on L6M, PRE, X', HOLD. Exact-confirmed cells on this page: 10 of 23877 with any exact window, 3 with all of L6M/PRE/X' (the label carries [EXACT] / [EXACT partial] / [FIRST-ORDER SCREEN ONLY]). Exact queue: autopilot SZ-CORE queue, reference rows first, then family top-5; windows L6M, PRE, X', HOLD.
+**USER ADDENDUM 1 (16:30Z) status:** first-order is a SCREEN ONLY; the sizing verdict needs EXACT engine runs for every family top-5 and every reference row on L6M, PRE, X', HOLD. Exact-confirmed cells on this page: 10 of 23877 with any exact window, 4 with all of L6M/PRE/X' (the label carries [EXACT] / [EXACT partial] / [FIRST-ORDER SCREEN ONLY]). Exact queue: autopilot SZ-CORE queue, reference rows first, then family top-5; windows L6M, PRE, X', HOLD.
 
 **Rule (SZ-BASE, 2026-11-09):** first-order pnl-per-lot scaling is a SCREEN ONLY. It cannot see exits: exact shows ladder L cut -76 against -43 first-order and B -143 against -73, and first-order overstates the up-size net by $290k-$820k over 26 months. Exact engine runs are required for every family top-5 and every reference row. Exact rows are labelled by mode: table (static multiplier keyed by book and signal second; signals created by changed exits get m = 1, 4-8% of trades), rule (multiplier computed from causal features at the signal second of any signal), or engine-sizer.
 
@@ -433,7 +433,7 @@ Procedure: re-screen every layer on the trailing 26 weeks (L1M/L3M/L6M first, PR
 | family | technique | params | key (mean of eq L6M / L3M / L1M cut) | PRE cut / d mean | label |
 |--|--|--|--|--|--|
 | J | J pair min | {"a": "ext-K:d16e6b6b3c26", "b": "ext-SZQ:AB_d852c8_0"} | +71.4 | +67 / -6589 | LEAD+ (placebo ok) RECENT-ONLY-UNKNOWN-WF (PRE cut +67%, allowance 15% deeper, d mean -6589; WF n/a) [EXACT partial] |
-| B | VOL-pool vr_gk_w30_g20 stepv | [1.25, 0.0] | +47.3 | +52 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +52%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
+| B | VOL-pool vr_gk_w30_g20 stepv | [1.25, 0.0] | +47.3 | +52 /  | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +39%, allowance 15% deeper, d mean -3113; WF 34%) [EXACT ROLL-FIXED engine_ver=ROLLFIX1] |
 | K | K6 ext-B on P7 only | {"cell": "9806533560c9", "orig": "ext ext-B {\"cell\": \"980 | +45.7 | +29 /  | CANDIDATE (own-p only; family p 0.87) OK-PRIOR-UNKNOWN-WF (PRE cut +29%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | K | K1 P7 lot cap by session | {"asia": 5, "london": 3, "nyam": 3} | +30.9 | +34 /  | CANDIDATE OK-PRIOR-UNKNOWN-WF (PRE cut +34%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | D | eqdd_book_20d_R | Y1R_f0.50_sticky | +30.4 | +45 /  | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +15%, allowance 25% deeper, d mean -3719; WF 64%) [EXACT ROLL-EXCL engine_ver=ROLLEXCL] |
@@ -536,5 +536,5 @@ Equal-mean frontier data (exact, chart-ready CSV: /mnt/l2/l2vast/_th_sz/frontier
 
 ### Exact vs first-order inventory
 
-Rows on the family tables: 23877; with any exact window: 10; with exact L6M, PRE and X': 3; everything else is FIRST-ORDER SCREEN ONLY (ROLL-EXCL where tagged). Exact sets still queued: see SZ_API.md section 12.
+Rows on the family tables: 23877; with any exact window: 10; with exact L6M, PRE and X': 4; everything else is FIRST-ORDER SCREEN ONLY (ROLL-EXCL where tagged). Exact sets still queued: see SZ_API.md section 12.
 

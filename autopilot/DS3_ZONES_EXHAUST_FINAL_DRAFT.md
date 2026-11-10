@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST_FINAL_DRAFT - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 04:16Z)
+# DS3_ZONES_EXHAUST_FINAL_DRAFT - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 05:17Z)
 
 **Labels: ROLL-FIXED (ROLLFIX1 base S1BRF-COMB, 21,163 trades; first-order tables use M tables lifted with Z.lift_M, 59 new rows m = 1); PRE-PROOF (entries not live-matched); post-hoc; Shadow only; NO PASS CLAIMS; FIRST-ORDER SCREEN unless a row says EXACT.** Standing rules: (1) the zone layer stays ON, "no zones / skip all / off" are reference rows only; (2) recents first: L6M/L3M/L1M, then the bi-weekly re-pick walk-forward (trailing 26 weeks -> next 2 weeks, purged 7 d), PRE/X' only as a tolerant check; (2a) PRE deepening allowed = min(25, L6M cut + 10)% only when the bi-weekly WF beats live in >= 60% of refit periods, else 15%, PRE mean floor -$1k/wk; worse = RECENT-ONLY (still reported). Engine caveats at the end.
 
@@ -23,9 +23,9 @@ Reading: removing the layer (exact) deepens L6M and X' drawdown and shallows PRE
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | REF_ZOFF | 33.0 | ROLLFIX1,old | -12.9 | -7.8 | -626.2 | -12.8 | -7.7 | 454.5 | -12.8 | -7.7 | 1138.5 | 19.2 | 22.8 | 239.9 | -35.4 | -29.3 | -408.4 |
 | ZNC_A0 | 26.0 | ROLLEXCL,ROLLFIX1,old | 2.8 | 9.1 | 753.4 | -9.9 | -2.9 | -3435.7 | -9.9 | -2.9 | 1675.6 | -5.4 | 1.4 | -704.9 |  |  |  |
-| ZNC_B0 | 25.0 | ROLLEXCL,ROLLFIX1,old | -6.9 | 2.7 | -266.0 | -6.8 | 2.8 | -388.4 | -6.8 | 2.8 | 2414.1 | 30.6 | 36.8 | -1319.7 |  |  |  |
-| ZS_C0 | 24.0 | ROLLEXCL,ROLLFIX1 | 14.9 | 23.4 | 3962.3 | 15.0 | 23.4 | -1936.3 | 15.0 | 23.4 | 2344.4 | 17.1 | 25.4 | -923.5 |  |  |  |
-| ZS_D0 | 26.0 | ROLLEXCL,ROLLFIX1 | 29.2 | 26.7 | -5069.2 | 20.3 | 17.5 | 2954.9 | 20.3 | 17.5 | -837.9 | 38.7 | 36.5 | -873.3 |  |  |  |
+| ZNC_B0 | 27.0 | ROLLEXCL,ROLLFIX1,old | -6.9 | 2.7 | -266.0 | -6.8 | 2.8 | -388.4 | -6.8 | 2.8 | 2414.1 | 30.6 | 36.8 | -1319.7 |  |  |  |
+| ZS_C0 | 27.0 | ROLLEXCL,ROLLFIX1 | 14.9 | 23.4 | 3962.3 | 15.0 | 23.4 | -1936.3 | 15.0 | 23.4 | 2344.4 | 17.1 | 25.4 | -923.5 |  |  |  |
+| ZS_D0 | 29.0 | ROLLEXCL,ROLLFIX1 | 29.2 | 26.7 | -5069.2 | 20.3 | 17.5 | 2954.9 | 20.3 | 17.5 | -837.9 | 38.7 | 36.5 | -873.3 |  |  |  |
 
 Compare first-order vs exact for the same cells in the pool table below (column "fo L6M").
 
@@ -100,8 +100,8 @@ Exact-confirmed so far means complete exact L6M and PRE rows with cut > 0 in sec
 | cell | owner | level / geometry / action | scope | expression |
 |---|---|---|---|---|
 | LIVE_HALF_D20_OTE62_B73_D30 | | reference row; exact base by definition | | live panel values: PoiSet = PD_mid, RTH_camH3, Kijun_1h, CRT_mid_4h, KC_up_4h, OTE62/705/79_15m; NtzAction = HALF; NtzDistancePts = 20; OTE-62 B73 D30 unchanged |
-| ZS_D0_b0c41cc34961 | | EXACT L6M +20.3 / PRE +38.7 (X'/HOLD pending); bbup_5 v0 hw0 pt15 AA quarter london: maxDD cut L6M/PRE/X' 36/44/46%, equal-mean min cut 38%, gain over group-wide 23 pts, shifted-level gain 18 pts, placebo p 0.06, live-week d$ 3225, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_D0: 26 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
-| ZS_C0_6e93e2da912d | | EXACT L6M +15.0 / PRE +17.1 (X'/HOLD pending); sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55/38%, equal-mean min cut 44%, gain over group-wide 61 pts, shifted-level gain 42 pts, placebo p 0.08, live-week d$ 19865, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_C0: 24 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
+| ZS_D0_b0c41cc34961 | | EXACT L6M +20.3 / PRE +38.7 (X'/HOLD pending); bbup_5 v0 hw0 pt15 AA quarter london: maxDD cut L6M/PRE/X' 36/44/46%, equal-mean min cut 38%, gain over group-wide 23 pts, shifted-level gain 18 pts, placebo p 0.06, live-week d$ 3225, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_D0: 29 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
+| ZS_C0_6e93e2da912d | | EXACT L6M +15.0 / PRE +17.1 (X'/HOLD pending); sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55/38%, equal-mean min cut 44%, gain over group-wide 61 pts, shifted-level gain 42 pts, placebo p 0.08, live-week d$ 19865, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_C0: 27 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
 | ZS_E0_d87874dba5c6 | | ; grid0.5 v0 hw2 pt5 BA quarter london: maxDD cut L6M/PRE/X' 36/48/34%, equal-mean min cut 29%, gain over group-wide 14 pts, shifted-level gain 17 pts, placebo p 0.06, live-week d$ 3873, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_E0: 0 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
 | ZNB_F00 | | ZN-BOOK ice_w600_n1 AH:D20|s-1|any|any quarter b:PE: equal-mean cut L6M/PRE/X 35/39/37, p_own 0.05, p_fam 1.00, FIRST-ORDER, ROLL-EXCL | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZNB_F00: 0 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
 
@@ -226,4 +226,4 @@ Procedure: trailing 26 weeks of data to 2026-11-05, pool = scope top 40 cells + 
 - Hypothesis counts: CORE 347,553 cells; STRUCT 9,263,348 evaluated; BOOK 32,155; TRIG 1,334,592. Family p uses the conservative independent max-stat; with these counts nothing can reach p <= .10 without a very large effect.
 - Not built: delay-until-through, re-target, structure-stop, 70/30 add and cooldown-after-lost-level actions (exact engine only); per-line marginals of the published eight lines (need the engine with one line left out).
 
-Generated by code/th_zn/zn_final.py (2026-11-10 04:16Z).
+Generated by code/th_zn/zn_final.py (2026-11-10 05:17Z).
