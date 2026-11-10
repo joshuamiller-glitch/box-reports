@@ -1,4 +1,4 @@
-# SZ_CDE_TRAIL - T-TRAIL-L2 profit-state lines for M7, A7, O7 (SZ-CDE) - 2026-11-10 20:25Z
+# SZ_CDE_TRAIL - T-TRAIL-L2 profit-state lines for M7, A7, O7 (SZ-CDE) - 2026-11-10 20:58Z
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. FIRST-ORDER SCREEN on the shared PTR engine (REDO-R5, LPB_BASE trade list, slip 1.2 central, equal lots, stack = LPB_BASE with the book's fired trades replaced; re-entries / locks / follow-on trades not re-simulated, so ranking only; exact promotion by SZ-IJK from /mnt/l2/l2vast/_th_ptr/top20_<book>.txt). Prereg: autopilot/SZ_CDE_TRAIL_PREREG.md. Windows L1M / L3M / L6M / HOLD / PRE / X-prime, carrying week dropped from means only; Rule 2a label via Z.prior_info (PRE mean floor = 25% of the live PRE mean; old fixed-floor label beside), bi-weekly WF = the line vs LPB_BASE (26 weeks train, 2 weeks test).**
 
@@ -15,7 +15,7 @@ Screened per book: stage 1 = the whole take grid (arm 0.2..0.9 x persist 1/2/3/5
 
 **M7, best selective line: `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8`; fires on 850 trades, clips 557 winners (-469735 $) and catches 293 non-winners (+437019 $); stack maxDD L6M / HOLD / PRE / X-prime +15.3 / +6.3 / -4.8 / -14.8 % (positive = shallower); at EQUAL MEAN the L6M / PRE cut is +17.6 / -1.9 %; d mean +473 / -624 $/wk (L6M / PRE); placebo p own L6M 0.02, PRE 0.69; WF beats live in 25% of periods; Rule 2a OK-PRIOR [old OK-PRIOR].**
 
-### Reference rows: no rule (= LPB_BASE, cut 0 / d mean 0 by definition) and the live tighten line re-expressed in the grammar (LPB_BASE already contains the live ThL2 profit branch, so these rows are comparisons, not additions)
+### Reference rows: no rule (= LPB_BASE, cut 0 / d mean 0 by definition) and the live tighten line re-expressed in the grammar (CORRECTION from REDO-R5: LPB_BASE has NO profit-side rule - native bracket + BookLock only; the live policy lines are not in the base - so the live tighten line is an ADDITION on top of the bare base and the no-rule row is bracket + BookLock only)
 
 | # | line | nfire (of armed) | stack maxDD cut L6M / L3M / L1M | HOLD | PRE | X' | equal-MEAN cut L6M / PRE | d mean L6M / PRE $/wk | worst-20 cut L6M | clipped winners n / $ | non-winners caught n / $ | placebo p own L6M / PRE | family p (this set / top-300 lines) | WF beats % | Rule 2a [old] |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -75,7 +75,7 @@ Per entry session (rule applied to that session only), L6M stack maxDD cut, top 
 
 **A7, best selective line: `profit A7 * pct>=0.3 pulled_against_mult>=50 pulled_mult>=30 take win=15 persist=1 wall_ticks=8`; fires on 253 trades, clips 184 winners (-118074 $) and catches 69 non-winners (+97463 $); stack maxDD L6M / HOLD / PRE / X-prime +10.3 / +3.0 / -1.8 / -0.5 % (positive = shallower); at EQUAL MEAN the L6M / PRE cut is +9.0 / -3.3 %; d mean -299 / -178 $/wk (L6M / PRE); placebo p own L6M 0.01, PRE 0.82; WF beats live in 10% of periods; Rule 2a OK-PRIOR [old OK-PRIOR].**
 
-### Reference rows: no rule (= LPB_BASE, cut 0 / d mean 0 by definition) and the live tighten line re-expressed in the grammar (LPB_BASE already contains the live ThL2 profit branch, so these rows are comparisons, not additions)
+### Reference rows: no rule (= LPB_BASE, cut 0 / d mean 0 by definition) and the live tighten line re-expressed in the grammar (CORRECTION from REDO-R5: LPB_BASE has NO profit-side rule - native bracket + BookLock only; the live policy lines are not in the base - so the live tighten line is an ADDITION on top of the bare base and the no-rule row is bracket + BookLock only)
 
 | # | line | nfire (of armed) | stack maxDD cut L6M / L3M / L1M | HOLD | PRE | X' | equal-MEAN cut L6M / PRE | d mean L6M / PRE $/wk | worst-20 cut L6M | clipped winners n / $ | non-winners caught n / $ | placebo p own L6M / PRE | family p (this set / top-300 lines) | WF beats % | Rule 2a [old] |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -132,7 +132,7 @@ Per entry session (rule applied to that session only), L6M stack maxDD cut, top 
 
 **O7, best selective line: `profit O7 * pct>=0.3 pulled_mult>=30 lock 2 win=10 persist=5 wall_ticks=8`; fires on 87 trades, clips 31 winners (-49445 $) and catches 56 non-winners (+36730 $); stack maxDD L6M / HOLD / PRE / X-prime +2.1 / +0.6 / -1.8 / -0.2 % (positive = shallower); at EQUAL MEAN the L6M / PRE cut is +2.4 / -1.5 %; d mean +55 / -31 $/wk (L6M / PRE); placebo p own L6M 0.22, PRE 0.98; WF beats live in 19% of periods; Rule 2a OK-PRIOR [old OK-PRIOR].**
 
-### Reference rows: no rule (= LPB_BASE, cut 0 / d mean 0 by definition) and the live tighten line re-expressed in the grammar (LPB_BASE already contains the live ThL2 profit branch, so these rows are comparisons, not additions)
+### Reference rows: no rule (= LPB_BASE, cut 0 / d mean 0 by definition) and the live tighten line re-expressed in the grammar (CORRECTION from REDO-R5: LPB_BASE has NO profit-side rule - native bracket + BookLock only; the live policy lines are not in the base - so the live tighten line is an ADDITION on top of the bare base and the no-rule row is bracket + BookLock only)
 
 | # | line | nfire (of armed) | stack maxDD cut L6M / L3M / L1M | HOLD | PRE | X' | equal-MEAN cut L6M / PRE | d mean L6M / PRE $/wk | worst-20 cut L6M | clipped winners n / $ | non-winners caught n / $ | placebo p own L6M / PRE | family p (this set / top-300 lines) | WF beats % | Rule 2a [old] |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -189,8 +189,8 @@ Per entry session (rule applied to that session only), L6M stack maxDD cut, top 
 
 | set | line | FO L6M cut | exact L6M cut / d mean / equal-mean | exact L3M cut / L1M cut | exact HOLD cut / d mean | PRE months | status |
 |--|--|--|--|--|--|--|--|
-| PTR_M7_01 | `profit M7 * pct>=0.2 sweep_against>=3 take win=8 persist=2 wall_ticks=8` | +32.7 | -24.9 / -1583 / -34.8 | +25.4 / -43.5 | -33.1 / -944 | 10/17 | PARTIAL |
-| PTR_M7_02 | `profit M7 * pct>=0.2 pulled_mult>=3 take win=5 persist=3 wall_ticks=8` | +32.1 | -31.5 / -781 / -36.4 | +28.2 / -33.2 | -34.7 / -958 | 7/17 | PARTIAL |
+| PTR_M7_01 | `profit M7 * pct>=0.2 sweep_against>=3 take win=8 persist=2 wall_ticks=8` | +32.7 | -24.9 / -1583 / -34.8 | +25.4 / -43.5 | -33.1 / -944 | 12/17 | PARTIAL |
+| PTR_M7_02 | `profit M7 * pct>=0.2 pulled_mult>=3 take win=5 persist=3 wall_ticks=8` | +32.1 | -31.5 / -781 / -36.4 | +28.2 / -33.2 | -34.7 / -958 | 12/17 | PARTIAL |
 | PTR_M7_03 | `profit M7 * pct>=0.2 pulled_mult>=3 tighten 5 win=5 persist=3 wall_ticks=8` | +31.7 | -14.7 / -1318 / -22.1 | +42.9 / -1.0 | na / na | nan | PARTIAL |
 | PTR_M7_04 | `profit M7 * pct>=0.2 sweep_against>=4 take win=8 persist=2 wall_ticks=8` | +31.9 | -32.5 / -799 / -37.7 | +18.1 / -35.6 | na / na | nan | PARTIAL |
 | PTR_M7_05 | `profit M7 * pct>=0.2 pulled_against_mult>=10 take win=5 persist=2 wall_ticks=8` | +31.6 | -17.4 / -1420 / -25.7 | +37.0 / -38.7 | na / na | nan | PARTIAL |
@@ -214,8 +214,8 @@ Per entry session (rule applied to that session only), L6M stack maxDD cut, top 
 
 | set | line | FO L6M cut | exact L6M cut / d mean / equal-mean | exact L3M cut / L1M cut | exact HOLD cut / d mean | PRE months | status |
 |--|--|--|--|--|--|--|--|
-| PTR_A7_01 | `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8` | +9.9 | +28.7 / -146 / +28.2 | +4.1 / +31.8 | +4.1 / -58 | 12/17 | PARTIAL |
-| PTR_A7_02 | `profit A7 * pct>=0.3 pulled_against_mult>=30 or pulled_mult>=20 take win=10 persist=3 wall_ticks=8` | +10.3 | +35.5 / -18 / +35.4 | +44.9 / +55.2 | +36.2 / +150 | 11/17 | PARTIAL |
+| PTR_A7_01 | `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8` | +9.9 | +28.7 / -146 / +28.2 | +4.1 / +31.8 | +4.1 / -58 | 14/17 | PARTIAL |
+| PTR_A7_02 | `profit A7 * pct>=0.3 pulled_against_mult>=30 or pulled_mult>=20 take win=10 persist=3 wall_ticks=8` | +10.3 | +35.5 / -18 / +35.4 | +44.9 / +55.2 | +36.2 / +150 | 14/17 | PARTIAL |
 | PTR_A7_03 | `profit A7 * pct>=0.2 pulled_against_mult>=30 take win=10 persist=5 wall_ticks=8` | +10.0 | +24.6 / +340 / +25.7 | +9.0 / +50.9 | na / na | nan | PARTIAL |
 | PTR_A7_04 | `profit A7 * pct>=0.3 pulled_mult>=30 sweep_against>=6 take win=15 persist=1 wall_ticks=8` | +10.1 | +28.9 / +3 / +28.9 | +64.4 / +74.8 | na / na | nan | PARTIAL |
 | PTR_A7_05 | `profit A7 * pct>=0.2 pulled_against_mult>=50 take win=15 persist=2 wall_ticks=8` | +10.4 | +30.2 / +97 / +30.5 | +16.2 / +38.5 | na / na | nan | PARTIAL |
@@ -239,8 +239,8 @@ Per entry session (rule applied to that session only), L6M stack maxDD cut, top 
 
 | set | line | FO L6M cut | exact L6M cut / d mean / equal-mean | exact L3M cut / L1M cut | exact HOLD cut / d mean | PRE months | status |
 |--|--|--|--|--|--|--|--|
-| PTR_O7_01 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` | +4.8 | +17.4 / +30 / +17.5 | +58.3 / +63.1 | +17.4 / -127 | 6/17 | PARTIAL |
-| PTR_O7_02 | `profit O7 * pct>=0.2 delta_mult>=5 take win=10 persist=10 wall_ticks=8` | +4.6 | -2.1 / +48 / -1.8 | +47.5 / +61.8 | -2.1 / -197 | 2/17 | PARTIAL |
+| PTR_O7_01 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` | +4.8 | +17.4 / +30 / +17.5 | +58.3 / +63.1 | +17.4 / -127 | 12/17 | PARTIAL |
+| PTR_O7_02 | `profit O7 * pct>=0.2 delta_mult>=5 take win=10 persist=10 wall_ticks=8` | +4.6 | -2.1 / +48 / -1.8 | +47.5 / +61.8 | -2.1 / -197 | 11/17 | PARTIAL |
 | PTR_O7_03 | `profit O7 * pct>=0.4 imb5<=-0.1 take win=0 persist=2 wall_ticks=8` | +5.2 | +23.5 / -99 / +23.2 | +39.9 / +36.2 | na / na | nan | PARTIAL |
 | PTR_O7_04 | `profit O7 * pct>=0.3 imb5<=-0.1 take win=0 persist=2 wall_ticks=8` | +5.0 | +11.0 / -276 / +9.9 | +57.1 / +62.2 | na / na | nan | PARTIAL |
 | PTR_O7_05 | `profit O7 * pct>=0.3 delta_mult>=5 imb5<=-0.1 take win=10 persist=1 wall_ticks=8` | +4.0 | +8.4 / -228 / +7.4 | +57.3 / +63.7 | na / na | nan | PARTIAL |
