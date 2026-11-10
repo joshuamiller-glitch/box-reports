@@ -1,4 +1,12 @@
-# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 11:42Z first version / refresh
+# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 12:25Z FINAL
+
+## Verdict (exact L6M + PRE for the top-3 cells per layer; L6M / PRE / X' / HOLD for R5_BO_3)
+
+1. **The first-order screens mostly do not survive the exact engine.** Exact L6M maxDD cut vs the S1b-COMB list: all-books N=120 both-side post-cut blackout (R5_BO_1) -26% with mean -$6.4k/wk (screen said +27% / +$3.8k); NTZ retarget D60 (R5_NTZ_1) +7% L6M but equal-mean -21% and mean -$5.3k/wk (screen +20%); NTZ_2 +10% cut, equal-mean -18%, mean -$5.4k; OTE cells -28..+4%, mean -$1.1k..-$3.3k; O7 variants move the stack by <= 1 point. The retarget sign disagreement with the old B8 page is resolved by the exact engine in the old direction: lots-restored retarget costs mean and does not cut drawdown at equal mean.
+2. **Live-setting rows are exact and identical to the base** (R5_BO_LIVE, R5_NTZ_LIVE, R5_OTE_LIVE, R5_O7_LIVE: L6M cut 0, d mean 0; R5_TEST 202610 all columns identical): the hooks are validated, and the live U7 30-min same-side blackout is a no-op on the state base (U7 never re-signals inside 30 min).
+3. **One cell holds up on the exact numbers so far: R5_BO_3 = P7, post-CUT or post-STOP blackout, 30 min, same side (first-order rank 3 by the recents key).** Exact L6M maxDD cut +8% (equal-mean +17%), d mean +$3.0k/wk, worst-20 cut +72%; PRE cut +9% (equal-mean +18%), X' +1% (equal-mean +11%), but **HOLD -9% (deeper than live; the Nov-2025..Apr-2026 window)**: it does not hold across windows. Placebo p .14 / .12 and the family max-stat (p 1.00) do NOT clear, so it is a LEAD, not a CANDIDATE, and with the HOLD result no change is recommended. The gain comes from the post-stop part (cut-only P7 first-order: L6M +5%, PRE +21%, d mean PRE -$18/wk); post-stop blackout has no D7 panel field (ThL2BlackoutBooks / Mins / SameSideOnly cover post-CUT only), so it would be a code change. Policy line if the user wants it: "P7: after a Stop or StateCut exit, no same-side P7 signal for 30 minutes". No change is recommended on this evidence; it is in the REFIT 2026-11-22 candidate list.
+4. **Kijun NTZ, OTE-62 band / WT, O7 arm / trigger / stop-target / time exit / lots: no exact evidence of any setting better than live;** the live settings stay (OTE-62 .62 D30 B73, NTZ Half D20, O7 live cell). Best-setting-per-layer statement per the standing rule: NTZ best = live (Half D20; exact alternatives all cost mean); OTE best = live; O7 best = live (exact O7_2 / O7_3 +1 point L6M, mean -$157 / -$75 per week, inside noise).
+5. Status caveats: first-order cells use the 90%-agreement PoiSet replay, 1-s print path (optimistic fills for retarget) and own-sim O7; roll months of the exact sets were re-run on the ROLLFIX engine by SZ-CORE; HOLD / X' windows were cut from the exact ask by the lead (queue capacity).
 
 ## 0. Summary block (setting | live value | best on the state base | holds OOS? | change recommended | panel field)
 
@@ -240,7 +248,7 @@ Exact rows (hooks, table windows complete only; cut = maxDD cut vs the exact S1b
 |---|---|---|---|---|---|---|---|---|
 | R5_BO_1 | 23 | {"bo": {"trig": "cut", "N": 120, "same": false, "trig_books": ["K7", "P7", "M7", "U7", "A7", "H7"], "block_boo | -26/-/40/- | -74/16/- | -6417 | -49 | 27 / 3811 | [EXACT partial] |
 | R5_BO_2 | 23 | {"bo": {"trig": "cutstop", "N": 120, "same": false, "trig_books": ["K7", "P7", "M7", "U7", "A7", "H7"], "block | -3/-/47/- | -31/33/- | -4784 | -66 | 29 / 2516 | [EXACT partial] |
-| R5_BO_3 | 32 | {"bo": {"trig": "cutstop", "N": 30, "same": true, "trig_books": ["P7"], "block_books": ["P7"], "own": true}} | 8/-/9/- | 17/18/- | 3005 | 72 | 25 / 387 | [EXACT partial] |
+| R5_BO_3 | 39 | {"bo": {"trig": "cutstop", "N": 30, "same": true, "trig_books": ["P7"], "block_books": ["P7"], "own": true}} | 8/-9/9/1 | 17/18/11 | 3005 | 72 | 25 / 387 | [EXACT] |
 | R5_BO_LIVE | 6 | {"bo": {"trig": "cut", "N": 30, "same": true, "trig_books": ["U7"], "block_books": ["U7"], "own": true}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
 | R5_NTZ_1 | 23 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 7/-/-6/- | -21/-37/- | -5268 | -36 | 20 / 576 | [EXACT partial] |
 | R5_NTZ_2 | 23 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 10/-/-2/- | -18/-33/- | -5375 | -36 | 20 / -6 | [EXACT partial] |
@@ -256,6 +264,17 @@ Exact rows (hooks, table windows complete only; cut = maxDD cut vs the exact S1b
 | R5_OTE_LIVE | 6 | {"ote": {"line": "OTE62_15m", "D": 30, "action": "B73", "f": []}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
 | R5_TEST | 1 | {} | -/-/-/- | -/-/- | - | - | - | [EXACT partial] |
 
-Months done per set: R5_BO_1 23, R5_BO_2 23, R5_BO_3 32, R5_BO_LIVE 6, R5_NTZ_1 23, R5_NTZ_2 23, R5_NTZ_3 23, R5_NTZ_LIVE 6, R5_O7_1 23, R5_O7_2 23, R5_O7_3 23, R5_O7_LIVE 6, R5_OTE_1 23, R5_OTE_2 23, R5_OTE_3 23, R5_OTE_LIVE 6, R5_TEST 1. Identity test R5_TEST (empty hooks par) on 202610: 823 trades, net 47,330.50, all columns identical to base_b/S1-COMB (PASSED).
+Months done per set: R5_BO_1 23, R5_BO_2 23, R5_BO_3 39, R5_BO_LIVE 6, R5_NTZ_1 23, R5_NTZ_2 23, R5_NTZ_3 23, R5_NTZ_LIVE 6, R5_O7_1 23, R5_O7_2 23, R5_O7_3 23, R5_O7_LIVE 6, R5_OTE_1 23, R5_OTE_2 23, R5_OTE_3 23, R5_OTE_LIVE 6, R5_TEST 1. Identity test R5_TEST (empty hooks par) on 202610: 823 trades, net 47,330.50, all columns identical to base_b/S1-COMB (PASSED).
 
 Hook semantics and the first-order-vs-exact lesson (SZ_BASE_PROOF): first-order overstates anything that adds lots or changes exits; only the drawdown RANKING is usable first-order; all retarget / OTE / O7 rows are screens.
+
+## 9. R5_BO_3 = P7 post-stop / post-cut same-side 30-min blackout: code-change note (rule 2 / 2a labelled)
+
+- **Panel field:** none for the post-STOP part. D7 v1.4/1.5 only has ThL2BlackoutMins / ThL2BlackoutBooks / ThL2BlackoutSameSideOnly, which fire on the loss CUT. The screen shows the gain comes from the post-stop trigger, so adopting it is a code change in DS7.cs (set b.BlackoutUntil / BlackoutSide on every Stop / StopJoin / StopJoinFallback exit of P7 as the cut path does). Policy line: "P7: after a Stop or StateCut exit, no same-side P7 signal for 30 minutes."
+- **Rule 2 (recents first):** exact L6M cut 8% (equal-mean 17%), d mean 3005 $/wk, worst-20 cut 72%; L3M / L1M exact: see the table in section 5 (windows listed there).
+- **Rule 2a (prior):** OK-PRIOR (PRE exact cut 9%, d mean PRE 235 $/wk; bi-weekly WF2w beat 66% of refits on the blackout family; allowance 18%). X' and HOLD: exact months present 39 of 43 (X' = 202304-202401, HOLD = 202511-202604); all four windows are now exact: cut L6M +8 / HOLD -9 / PRE +9 / X' +1 (HOLD is deeper than live). Label: **LEAD (placebo p .14/.12, family p 1.00; not CANDIDATE)**, no change recommended.
+
+## 10. Dead-cell discipline and prereg timing
+
+- dead_lookup was run per scored cell (spec strings blackout / ntz / ote62 / o7) and every scored cell was appended to DEAD_CELLS.csv with program R5REDO (append only; code/th_r5/r5_dead.py; hit count printed there and in DECISIONS.md).
+- **Prereg timing:** a build-check run of the blackout screen (403 cells) and of the NTZ screen preceded the prereg sha line in DECISIONS.md (same grids, used to debug the code); the official re-score of every cell (all four families) was run AFTER the sha line and is what this page reports.

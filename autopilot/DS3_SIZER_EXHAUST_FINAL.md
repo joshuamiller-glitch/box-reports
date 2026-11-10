@@ -1,4 +1,4 @@
-# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 11:19Z)
+# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 12:20Z)
 
 **Label: base S1b-COMB (live D7 v1.5 with the seven state-cut lines), controls NOCUT / UNIF where the owner ran them; first-order unless stage says S2 (exact); entries not live-matched (entry match < .85); in-sample; PRE-PROOF. Post-hoc, Shadow only, no PASS claims.**
 
