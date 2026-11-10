@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST - T-ZONES-EXHAUST (2026-11-10 14:21Z)
+# DS3_ZONES_EXHAUST - T-ZONES-EXHAUST (2026-11-10 14:41Z)
 
 STATUS: ROLL-EXCL (33 roll-artifact trades excluded, sz_core.Base rollw), PRE-PROOF, post-hoc, Shadow only, no PASS claims. FIRST-ORDER SCREEN ONLY unless the stage column says EXACT (exact engine rows are queued with SZ-CORE; none labelled EXACT here yet). Base S1b-COMB (live D7 v1.5 state cut, Q1-A, HALF D20 + OTE-62 B73 D30 in the base), carry week dropped from means only, maxDD/worst-20/Ulcer on all weeks, windows as of 2026-11-09, trade lists end 2026-10-30. Zone sources: 1-s state arrays (levels causal at the signal bar; volume = traded prints), see ZN_API.md. Held-out live week = frozen live file only; the 92 live cuts and the v1.5 night cuts are NOT used.
 

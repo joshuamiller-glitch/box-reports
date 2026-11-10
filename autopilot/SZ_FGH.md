@@ -1,11 +1,11 @@
 > ROLL-EXCL: the 33 base trades alive across a contract roll carry weight 0 in every first-order number below (COMB, NOCUT, UNIF; OLD-BASE comparison rows are not roll-excluded).
 > STANDING RULE (user 17:20Z): every D7 layer stays ON; this page recommends SETTINGS only (P7 session lots, slots, gates), never dropping a layer; live setting is always the reference row and stays if nothing beats it OOS.
 > VOID: every earlier EXACT table-mode row (sz_exact keyed on arm time, fixed to the signal second) is void and not shown; exact sets are re-queued with the fixed driver. ROLL FIX: NQ roll jumps (12 quarterly, 2 were flagged) are now adjusted in the FGH bars; affected features were gap, on_ratio, TWAP deviation/slope, dip, EMA slope, ATR/ADX on roll nights; zone-line features inherit the raw replica frame and were not re-derived.
-> ALL NUMBERS BELOW ARE FIRST-ORDER SCREEN ONLY (pnl per planned lot x lots) unless marked EXACT. User addendum 1: first-order is not a verdict. EXACT runs (SZ-CORE queue, memory-bound): FGH_P744 0 months done; FGH_P644 23 months done; FGH_P444 23 months done; FGH_GREEDY 33 months done; FGH_BESTH 0 months done; FGH_BESTG 0 months done; FGH_DOW2 0 months done; FGH_TREND 0 months done; FGH_L2K2 0 months done.
+> ALL NUMBERS BELOW ARE FIRST-ORDER SCREEN ONLY (pnl per planned lot x lots) unless marked EXACT. User addendum 1: first-order is not a verdict. EXACT runs (SZ-CORE queue, memory-bound): FGH_P744 0 months done; FGH_P644 33 months done; FGH_P444 23 months done; FGH_GREEDY 33 months done; FGH_BESTH 0 months done; FGH_BESTG 0 months done; FGH_DOW2 0 months done; FGH_TREND 0 months done; FGH_L2K2 0 months done.
 
 TESTING-DEFECT CHECK (addendum 1c) across my three live-chain bases (COMB, NOCUT, UNIF): of 6788 common cells, L6M maxDD identical to the dollar: 0; PRE: 0. No defect found among my own scores; the first-order scorer cannot see exit/re-entry/lock changes, so the verdict needs EXACT runs.
 
-# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-10 10:54Z
+# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-10 14:31Z
 
 Label: PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER on S1b-COMB (pnl per lot x lots; mean unreliable, drawdown ranking usable), no PASS claims, entry match < .85. Prereg SZ_FGH_PREREG.md (sha in DECISIONS.md). 6786 cells x 3 bases (COMB live, NOCUT, UNIF controls). Ledger /mnt/l2/l2vast/_th_sz/ledger_FGH*.parquet; lots ratios of top cells M_FGH.npz.
 
@@ -14,20 +14,8 @@ Unavailable and proxied: DS7 St1Dist/signal-state arrays are not owned at trade 
 Calendar: FOMC/CPI/NFP dates entered from public schedules (memory); CHECKED against the owned NQ 1-min bars: median 08:30 ET one-minute range on listed CPI days 12.6x the pre-open norm (norm 2.1x), NFP 9.8x, FOMC 14:00 10.0x; 83% of CPI and 97% of FOMC days sit above the 90th percentile of all days; two NFP entries were wrong (2024-10 should be 10-04; 2025-10 had no release) and were fixed; the 08:30 spikes not on my list are PPI/ECI days (not used). Opex = 3rd Friday, roll_wk = days 7-14 of Mar/Jun/Sep/Dec, half-days = day after Thanksgiving, Dec 24, Jul 3 weekdays. Not checked against an official file.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <!--FGHFINAL-->
-## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 14:01Z)
+## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 14:31Z)
 | set | exact maxDD cut % (d mean $/wk) by window | exact worst-20 cut % (+ = better) |
 |--|--|--|
 | P7 7,4,0,4,0,0 (Q_P7_744), 39 months | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |
@@ -40,7 +28,7 @@ Calendar: FOMC/CPI/NFP dates entered from public schedules (memory); CHECKED aga
 | B02 all books L20 thr 1.0 all-day x0 (FGH_B02B), 23 months | L1M 55.0 (+16159) / L3M 12.9 (-708) / L6M -6.7 (-283) / PRE -17.1 (-2191) | L6M -33 / PRE 13 |
 | K cap 3 (Q_KCAP3, reference to compare, not mine), 39 months | L1M 29.8 (-4656) / L3M 29.8 (+307) / L6M 26.9 (+2833) / HOLD 15.3 (+1379) / PRE 15.8 (+15) / X' 41.3 (+2029) | L6M 69 / HOLD 25 / PRE 17 |
 
-### Rule 2a labels on the EXACT rows (USER DECISION 13:45Z: PRE mean floor = 25%% of the live PRE mean; old fixed -$1k label beside)
+### Rule 2a labels on the EXACT rows (USER DECISION 13:45Z: PRE mean floor = 25% of the live PRE mean; old fixed -$1k label beside)
 | set | L6M cut / d mean | PRE cut / d mean | bi-weekly exact WF % beat | allowed PRE deepening | PRE mean floor (new) | label NEW | label OLD (-$1k floor) |
 |--|--|--|--|--|--|--|--|
 | Q_P7_744 | 22.5 / +489 | 14.8 / -1021 | 73 | 25% | -3490 | **OK-PRIOR** | RECENT-ONLY |

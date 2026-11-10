@@ -1,4 +1,4 @@
-# DS3_REDO_R2_STACKRULES - A06 slots and B02 quiet-overnight on the state base (S1b-COMB), first version 2026-11-10 12:00Z
+# DS3_REDO_R2_STACKRULES - A06 slots and B02 quiet-overnight on the state base (S1b-COMB), first version 2026-11-10 14:31Z
 
 > FIRST-ORDER SCREEN ONLY (pnl per lot x lots; exact runs pending in the SZ-CORE queue), ROLL-EXCL (33 trades alive across a roll carry weight 0), PRE-PROOF, post-hoc, Shadow only. STANDING RULE: every layer stays ON; this page proposes settings only; the live setting is the reference row and stays unless a setting beats it out of sample. Numbers = sz_core.Z.score (all-week maxDD/w20/Ulcer, carry week dropped from means only). Rolls in the NQ bars fixed. Old-vs-new base: pending (old-base R2 cells were never published; OLD-BASE rerun of these grids not yet done).
 
@@ -13,14 +13,8 @@
 
 
 
-
-
-
-
-
-
 <!--FGHFINAL-->
-## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 14:01Z)
+## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 14:31Z)
 | set | exact maxDD cut % (d mean $/wk) by window | exact worst-20 cut % (+ = better) |
 |--|--|--|
 | P7 7,4,0,4,0,0 (Q_P7_744), 39 months | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |
@@ -33,7 +27,7 @@
 | B02 all books L20 thr 1.0 all-day x0 (FGH_B02B), 23 months | L1M 55.0 (+16159) / L3M 12.9 (-708) / L6M -6.7 (-283) / PRE -17.1 (-2191) | L6M -33 / PRE 13 |
 | K cap 3 (Q_KCAP3, reference to compare, not mine), 39 months | L1M 29.8 (-4656) / L3M 29.8 (+307) / L6M 26.9 (+2833) / HOLD 15.3 (+1379) / PRE 15.8 (+15) / X' 41.3 (+2029) | L6M 69 / HOLD 25 / PRE 17 |
 
-### Rule 2a labels on the EXACT rows (USER DECISION 13:45Z: PRE mean floor = 25%% of the live PRE mean; old fixed -$1k label beside)
+### Rule 2a labels on the EXACT rows (USER DECISION 13:45Z: PRE mean floor = 25% of the live PRE mean; old fixed -$1k label beside)
 | set | L6M cut / d mean | PRE cut / d mean | bi-weekly exact WF % beat | allowed PRE deepening | PRE mean floor (new) | label NEW | label OLD (-$1k floor) |
 |--|--|--|--|--|--|--|--|
 | Q_P7_744 | 22.5 / +489 | 14.8 / -1021 | 73 | 25% | -3490 | **OK-PRIOR** | RECENT-ONLY |
