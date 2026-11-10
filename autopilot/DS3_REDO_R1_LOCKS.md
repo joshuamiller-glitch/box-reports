@@ -1,6 +1,6 @@
-# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-10 13:58Z)
+# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-10 15:12Z)
 
-> **FINAL DRAFT 2026-11-10 13:59Z: exact ROLL-FIXED rows (ROLLFIX1 engine, patched live reference), WF% beside every label, REFIT 2026-11-22 over all exact cells. Sections: R1 locks (grid, summary block, P7 -1R decision pack), R1b StackCut, L cooldowns, G candidates, joint lines for R1_3.**
+> **FINAL DRAFT 2026-11-10 15:13Z: exact ROLL-FIXED rows (ROLLFIX1 engine, patched live reference), WF% beside every label, REFIT 2026-11-22 over all exact cells. Sections: R1 locks (grid, summary block, P7 -1R decision pack), R1b StackCut, L cooldowns, G candidates, joint lines for R1_3.**
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. FIRST-ORDER SCREEN ONLY unless a row is in the exact table below. ROLL-EXCL: the 31 roll-artifact base trades are excluded from every number. STANDING RULE: every lock stays ON; "off" rows are reference rows only; the deliverable is the best SETTING (drawdown first at equal mean, holds OOS); if nothing beats the live setting the live setting stays.**
 
@@ -179,13 +179,14 @@ Pick: **R1;pb_rbasis;R_on_sized_lots;P7** (live retained: False; train end 2026-
 
 | row | set | L6M maxDD / d mean / cut vs live | PRE maxDD / d mean / cut vs live | X' maxDD / d mean / cut vs live | HOLD maxDD / d mean / cut vs live |
 |--|--|--|--|--|--|
-| LIVE (S1-COMB) | S1-COMB | 79907 / +0 / +0.0% [ROLL-FIXED] | 140288 / +0 / +0.0% [ROLL-FIXED] | 137520 / +0 / +0.0% [ROLL-FIXED] | 99496 / +0 / +0.0% [ROLL-FIXED] |
+| LIVE (S1-COMB = DS7.cs defaults, P7 loss cap 16,800) | S1-COMB | 79907 / +0 / +0.0% [ROLL-FIXED] | 140288 / +0 / +0.0% [ROLL-FIXED] | 137520 / +0 / +0.0% [ROLL-FIXED] | 99496 / +0 / +0.0% [ROLL-FIXED] |
 | NOLOCK reference | CDE_NOLOCK | 100720 / -2521 / -26.0% [ROLL-FIXED] | 162725 / -795 / -16.0% [ROLL-FIXED] | 124998 / +480 / +9.1% [ROLL-FIXED] | 116421 / -1132 / -17.0% [ROLL-FIXED] |
 | R1/pb_rbasis/R_on_sized_lots/ALL | CDE_R1_1 | 53773 / -8025 / +32.7% [ROLL-FIXED] | 65905 / +81 / +53.0% [ROLL-FIXED] | 126784 / -1464 / +7.8% [ROLL-FIXED] | 80084 / -6718 / +19.5% [ROLL-FIXED] |
 | R1/pb_rbasis/R_on_sized_lots/P7 | CDE_R1_2 | 66329 / -5089 / +17.0% [ROLL-FIXED] | 72057 / +269 / +48.6% [ROLL-FIXED] | 136075 / -2168 / +1.1% [ROLL-FIXED] | 118530 / -6309 / -19.1% [ROLL-FIXED] |
 | R1/pb_daycaps/win4_loss1(arm2,keep.5,floor12)/P7 | CDE_R1_3 | 59357 / +492 / +25.7% [ROLL-FIXED] | 116454 / +1108 / +17.0% [ROLL-FIXED] | 129643 / -1076 / +5.7% [ROLL-FIXED] | 92001 / +242 / +7.5% [ROLL-FIXED] |
 | R1/pb_daycaps/win8_loss1(arm2,keep.5,floor12)/P7 | CDE_R1_4 | 59357 / +66 / +25.7% [ROLL-FIXED] | 116454 / +917 / +17.0% [ROLL-FIXED] | 129643 / -1076 / +5.7% [ROLL-FIXED] | 92001 / -8 / +7.5% [ROLL-FIXED] |
 | R1/pb_giveback/arm1_keep0.7(win5,loss2,floor12)/P7 | CDE_R1_5 | 77439 / -5048 / +3.1% [ROLL-FIXED] | 99383 / +81 / +29.2% [ROLL-FIXED] | 68550 / +1608 / +50.2% [ROLL-FIXED] | 86135 / -5555 / +13.4% [ROLL-FIXED] |
+| R1_FD installed fixed-dollar P7 cap (win 42,000 / loss 8,400) | CDE_R1_FD | not run yet | not run yet | not run yet | not run yet |
 
 
 NOLOCK reference: the live locks are doing real work; any setting that removes them is a reference row, never a candidate.
@@ -195,7 +196,7 @@ NOLOCK reference: the live locks are doing real work; any setting that removes t
 
 | setting | live value | best on the state base (first-order screen, equal mean) | holds OOS (dim WF eq cut) | change recommended | panel field |
 |--|--|--|--|--|--|
-| Day profit / loss caps | +5R / -2R per book | win4_loss1(arm2,keep.5,floor12) P7 (cut +33.7/+19.1/+20.9, d mean +2211) | -10.0 | candidate for exact; live stays until exact confirms | P7MaxDailyLoss (DS7.cs: DayPnl <= -MaxDayLoss * max(1, SizeMult), realized day P&L); R1_3 line: P7MaxDailyLoss 16,800 -> 8,400 |
+| Day profit / loss caps | +5R / -2R per book | win4_loss1(arm2,keep.5,floor12) P7 (cut +33.7/+19.1/+20.9, d mean +2211) | -10.0 | KEEP the installed P7MaxDailyLoss 8,400 (it is the R1_3 value; better than the DS7.cs default 16,800 on L6M/PRE/X-prime/HOLD, exact) | P7MaxDailyLoss (fixed dollars; DS7.cs CheckLimits: DayPnl <= -MaxDayLoss * max(1, SizeMult)); R1_3 = the installed 8,400 (default 16,800): keep |
 | Give-back arm / keep | arm 2R keep 50% | arm1_keep0.7(win5,loss2,floor12) P7 (cut +12.4/+34.1/+5.6, d mean +1823) | +20.5 | candidate for exact; live stays until exact confirms | GiveBackArmR / GiveBackKeepPct |
 | Week floor | 12R per book | floor6(win5,loss2,arm2/.5) ALL (cut -4.5/+8.2/+5.5, d mean -521) | -2.5 | no (live stays) | ComboWeekFloorR |
 | R basis | base lots | R_on_sized_lots P7 (cut +46.7/+44.6/+26.0, d mean +4488) | -5.2 | candidate for exact; live stays until exact confirms | v1.6 (R on sized lots not a field) |
@@ -271,8 +272,15 @@ Reading: a NEGATIVE follower net P&L means the cap stops bleeding (the trades it
 Reading: in the frozen week the -1R cap would have fired on P7 on label day 20261104 (about 20:03 ET) and removed the 16 later trades of that day, which made +21,185 (day finished +9,060): there it stops a recovery, not a bleed. Over L6M / PRE / HOLD (table B) the trades after a -1R touch net negative overall (stops bleeding: -19.7k / -35.5k / -35.1k) but positive in X-prime (+38.2k: stops a recovery), and split by session the Asia followers are positive (recovery) and London / NY-AM followers negative.
 
 
-### D. Definition and panel line
-DS7.cs field: **P7MaxDailyLoss** (a dollar amount; check `DayPnl <= -MaxDayLoss * max(1, SizeMult)`, REALIZED day P&L only, blocks new entries for the rest of the label day and exits an open trade). The engine (DAYCAP table) uses the same: P7 -16,800 USD = 2R with R = BASE lots x 60 pt x $20 = 7 x 1,200 = $8,400; under Q1-A the size multiplier never exceeds 1, so the cap is on BASE lots, not on the lots actually traded (the sized-lot R of R1_1/R1_2 is a different setting). **R1_3 line: P7MaxDailyLoss 16,800 -> 8,400** (all other books and the P7 daily profit cap unchanged).
+### D. Definition, installed panel and panel line
+
+**DS7.cs semantics (data/live_code/DS7.cs, CheckLimits line 3463-3469):** P7MaxDailyProfit and P7MaxDailyLoss are FIXED DOLLAR properties (source defaults 42,000 / 16,800, line 423), checked as `DayPnl >= MaxDayProfit * max(1, SizeMult)` and `DayPnl <= -MaxDayLoss * max(1, SizeMult)`; DayPnl is realized day P&L; a hit sets DayHalt (no new entries until the next session) and exits an open trade. Under Q1-A SizeMult never exceeds 1, so the cap is a fixed dollar amount.
+
+**What the R1_3 cell is:** the engine lock override uses R on BASE lots (P7: 7 x 60 pt x $20 = $8,400 per R) for the caps, so R1_3 = a fixed $8,400 loss cap and a $33,600 (4R) win cap, independent of the lots actually traded (4 lots in London / NY-AM do NOT shrink it). It is therefore equivalent to a fixed-dollar cap, not the sized-lot R variant (R1_1 / R1_2, where 1R at 4 lots = $4,800). A composed cell that scales R with the session lots (1R = $4,800 at 4 lots) would differ from R1_3 and is not what these numbers measure.
+
+**Installed panel vs the reference base (SZ-IJK, LPB_BASE):** the installed panel already has P7 Max Daily Profit 42,000 / Max Daily Loss 8,400 (fixed dollars). The S1b-COMB reference used on this page models the DS7.cs defaults (P7 loss cap 16,800). So the R1_3 evidence says: the installed 8,400 loss cap is better than the 16,800 default on L6M / PRE / X-prime / HOLD (cuts above), i.e. it supports KEEPING the installed 8,400; it is not a change to the installed panel. The only difference between R1_3 and the installed cap is the win cap (R1_3 4R = $33,600; installed $42,000 = 5R); the exact cell R1_FD (P7 win $42,000 / loss $8,400, other books live) is the installed cap exactly and is in the exact table above (rows fill as the 39 months finish). The LPB_BASE vs LPB_EMPTY comparison of SZ-IJK is on a different base (7/4/4 table and P7 cut 40/5x/w5/p3 as well), so it is not a like-for-like measure of the cap and is not reproduced here.
+
+**Policy line:** relative to the DS7.cs default: P7MaxDailyLoss 16,800 -> 8,400 (the installed value); relative to the installed panel: no change (keep P7MaxDailyLoss 8,400; keep P7MaxDailyProfit 42,000).
 
 
 ## R1b. StackCut (hard-coded 50% / Asia-only in the engine): exact variants, counterfactual of the cut exits
@@ -424,8 +432,8 @@ Roll-artifact note: the spurious RollFlat trades found in non-roll months (posit
 
 ## Joint stacks containing R1_3 (SZ-IJK, exact ROLL-FIXED, DS3_JOINT.md)
 
-| JP01 | JN04 + R1_3 P7 MaxDailyLoss 8400 lock | +42.6 / +42.6 / +50.8 | +49.6 | +3109 / +3822 | +49.6 / -2559 | +41.7 / -3218 | +66.2 / +1165 | 85% (91%) | RECENT-ONLY (allow 25.0%, WF 85%) |
-| JP06 | JN04 x ZS_D0 + R1_3 lock + F04 | +34.6 / +38.7 / +78.0 | +30.2 | -1426 / +998 | +31.9 / -6025 | +48.6 / -3607 | n/a / n/a | 82% (82%) | RECENT-ONLY (allow 25.0%, WF 82%) |
+| JP01 | JN04 + R1_3 P7 MaxDailyLoss 8400 lock | +42.6 / +42.6 / +50.8 | +49.6 | +3109 / +3822 | +49.6 / -2559 | +41.7 / -3218 | +66.2 / +1165 | 85% (91%) | OK-PRIOR [old fixed-floor: RECENT-ONLY; floor -3490] (allow 25.0%, WF 85%) |
+| JP06 | JN04 x ZS_D0 + R1_3 lock + F04 | +34.6 / +38.7 / +78.0 | +30.2 | -1426 / +998 | +31.9 / -6025 | +48.6 / -3607 | n/a / n/a | 82% (82%) | RECENT-ONLY [old fixed-floor: RECENT-ONLY; floor -3490] (allow 25.0%, WF 82%) |
 
 
 ## REFIT 2026-11-22: the bi-weekly procedure over ALL exact cells with the full 2026-05..10 block (trailing 26 weeks to 2026-10-30, DD-first, live retained when nothing is lower)

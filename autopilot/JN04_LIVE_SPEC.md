@@ -165,7 +165,7 @@ Evidence rows (old base, exact; JR01 = rule-mode STACK when done):
 (Section by REDO-R5, included as written from autopilot/JN04_SPEC_POSTSTOP_BLACKOUT.md; the IJK cross-check of the rule against the exact rows is in section F.)
 
 # JN04_SPEC_POSTSTOP_BLACKOUT - P7 post-stop / post-cut same-side 30-min blackout (R5_BO_3) as an exact live definition for D7 v1.6
-REDO-R5, 2026-11-10 14:22Z. SHADOW / spec only, no PASS claim. **Label: LEAD (not CANDIDATE)**: exact windows below, placebo p .14 / .12, family p 1.00, HOLD window is deeper than live. Rule 2 / 2a: recents first (L6M +8%, d mean +$3.0k/wk); rule 2a PRE floor = 25% of the live PRE mean (PRE d mean +$10/wk is far inside it) -> OK-PRIOR; but the bi-weekly WF is a screen-only result and HOLD (-9%) fails, so no change is recommended on this evidence. This page only fixes WHAT the rule is, so it can be coded and run in Shadow.
+REDO-R5, 2026-11-10 15:01Z. SHADOW / spec only, no PASS claim. **Label: LEAD (not CANDIDATE)**: exact windows below, placebo p .14 / .12, family p 1.00, HOLD window is deeper than live. Rule 2 / 2a: recents first (L6M +8%, d mean +$3.0k/wk); rule 2a PRE floor = 25% of the live PRE mean (PRE d mean +$10/wk is far inside it) -> OK-PRIOR; but the bi-weekly WF is a screen-only result and HOLD (-9%) fails, so no change is recommended on this evidence. This page only fixes WHAT the rule is, so it can be coded and run in Shadow.
 
 ## 1. The rule (exactly what the exact engine ran; code/th_r5/r5_hooks.py, `bo` key, exec_exit + try_entry)
 - **Books:** P7 only (trigger book = blocked book = P7; no other book's exits trigger it, no other book's signals are blocked).
@@ -242,4 +242,14 @@ Running (LPB_JN04 via the r5_hooks panel hooks, 43 months, 4 workers; regression
 - Table-mode caveat (section B point 4) and the pending rule-mode STACK run JR01.
 - LOT / SIGQ / REG / STACK all need new v1.6 code; none exists in DS7 v1.4. Only the entry change CF_EN_45 (`ConfirmPatternA`=Engulf) of JP07 is a pure panel value.
 - The live-panel-base table multipliers (LOT state, STACK state, SIGQ history) were computed from the S1b-COMB base; on the live panel base the P7 lots and state differ (744 table), so the LPB_JN04 run applies the same per-signal multiplier table keyed by signal second, an approximation that a rule-mode run would replace.
+
+## G. Day-cap definitions used by each stack (cross-checked against the hook code and DS7.cs CheckLimits lines 3463-3469)
+
+| stack / base | P7 day LOSS cap | P7 day PROFIT cap | SizeMult scaling max(1, SizeMult) | source |
+|---|---|---|---|---|
+| S1b-COMB (old base, JN04 exact rows in E1) | 16,800 (the DS7 default P7MaxDailyLoss; the engine's sim.DAYCAP default) | 42,000 | none under Q1-A | engine default |
+| LPB_BASE / LPB_JN04 (live panel base) | **fixed $8,400** (panel P7MaxDailyLoss, sim.DAYCAP[P7] = (42,000, 8,400)) | 42,000 (kept) | max(1, SizeMult) = 1 under Q1-A (the ER sizer never goes above 1.0, so the scaling factor is 1), and the JN04 multiplier table never changes size_mult | code/th_r5/r5_hooks.py panel hook |
+| JP01 / JP06 (compose cells on the OLD base) | **fixed $8,400** = 1R where R is computed on BASE lots (rbasis base: base_qty 7 x stop 60 x $20 x max(1, SizeMult) = 8,400) | **$33,600** (4R, not the installed 42,000) | same: 1 | CDE_R1_3 lock via cde_exact.check_book_lock |
+
+Correction: an earlier note of mine said R1_3 was R on SIZED lots (1R = $4,800 at 4 lots); the hook code uses BASE lots, so JP01/JP06 are the fixed-dollar $8,400 loss cap like the installed panel; the difference between them and the installed panel is the win cap (33,600 vs 42,000) and that they sit on the old base (S1b-COMB: default 16,800 loss cap, 7,7,0,7 table, S1-COMB P7 cut). The LPB row is the canonical live-panel base for every section of this spec.
 

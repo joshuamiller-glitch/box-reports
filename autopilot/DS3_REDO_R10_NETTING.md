@@ -1,6 +1,16 @@
 # DS3_REDO_R10_NETTING - direction conflict / netting on the state base (T-STACK-REDO R10)  [FIRST-ORDER SCREEN; PRE-PROOF until entry match >= .85; no PASS claims]
+<!--SUMMARY-->
+**FINAL (draft status 2026-11-10 15:12 UTC): exact-row status as of now - L6M complete for every row below; PRE/X' months are still landing in the SZ queue (refresh in order r9_score, r10_score, r11_score, exact_append when they do).** PRE-PROOF (entry match < .85); no PASS claims; stop-fill caveat applies.
+
+| setting | live value | best exact row | holds OOS (L6M / L3M / L1M / HOLD / PRE under the 25% floor / X' / bi-weekly WF) | change recommended | panel field |
+|---|---|---|---|---|---|
+| direction conflict (newer signal vs open opposite book) | take both, opposite-flip exit OFF | R10_sess_london_SKIP | maxDD cut L6M -8.7, L3M -8.7, L1M -8.9; HOLD n/a; PRE 6.3 (d mean -1361.6/wk; NEW 2a(25%): OK-PRIOR (PRE d mean -1362 vs floor -3549, live PRE 14197/wk)); X' n/a; WF 32 / -0.4 | no (L6M d mean +1126/wk; see verdict) | no panel field (needs a new policy line); flip = KbOppOn / SmOppOn ... OppRef |
+| opposite-flip exit, ALL books | OFF | R10_ALL_FLIP | maxDD cut L6M -31.1, L3M -31.1, L1M 78.5; HOLD n/a; PRE -25.8 (d mean -4055.3/wk; NEW 2a(25%): RECENT-ONLY (PRE d mean -4055 vs floor -3433, live PRE 13730/wk)); X' n/a; WF 9 / -0.0 | no (L6M d mean -4771/wk; see verdict) | OppOn per book |
+| net smaller vs larger, newer K7 | take both | R10_newer_K7_NET | maxDD cut L6M 5.6, L3M 5.6, L1M 9.6; HOLD n/a; PRE n/a (d mean n/a/wk; PRIOR-UNKNOWN (PRE pending)); X' n/a; WF n/a (block < 8 months) | no (L6M d mean -805/wk; see verdict) | no panel field |
+<!--/SUMMARY-->
+
 **CAVEAT (stop fills / stop exits):** the engine fills a native stop 1.9 pt better than the stop level; live native stops were 1.28 pt worse, join 2.45 pt worse (old stack). Conflict / re-entry deltas that depend on a stopped trade inherit this optimism; netting exits use mid -/+ 0.80 pt market. Exact rows use the ROLL-FIXED engine; first-order rows use ROLL-EXCL weights of the old base list.
-Generated 2026-11-10 13:59 UTC (elapsed 6 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL), windows as of 2026-11-09. Code code/th_stack_r9/r10_score.py (+ fo_lib.py). Registry /mnt/l2/l2vast/_th_joint/layers/netting/topK.json.
+Generated 2026-11-10 15:11 UTC (elapsed 6 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL), windows as of 2026-11-09. Code code/th_stack_r9/r10_score.py (+ fo_lib.py). Registry /mnt/l2/l2vast/_th_joint/layers/netting/topK.json.
 
 ## 0. Definition and limits
 - Event = trade B whose signal second falls while another book A holds the OPPOSITE side (A.entry <= B.signal < A.exit; one position per book as live). Policies on the newer signal B vs the older open book(s) A: BOTH (live, reference) / SKIP B / HALF B / SKIPS (skip B only when B is the smaller side) / NET (older book exits min(lots) at market at signal+1 s, mid -/+ 0.80 pt; B enters lots_B - m) / FLIP (older book(s) exit fully at market = the opposite-flip exit, currently OFF live; B unchanged).
@@ -317,14 +327,14 @@ Trailing 26 weeks, drawdown first: pick **R10_newer_K7_NET** (live retained: Fal
 | R10_newer_U7_SKIP  | 75070.8 |  135978   | 32112.7 | 23782.6 | False  | PRIOR-UNKNOWN |
 
 ## EXACT rows (appended)
-Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R10_sess_london_SKIP 24, R10_newer_K7_NET 6, R10_U7_K7_FLIP 6, R10_ALL_FLIP 23
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R10_sess_london_SKIP 29, R10_newer_K7_NET 6, R10_U7_K7_FLIP 6, R10_ALL_FLIP 29
 | set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % | bi-weekly WF beat % / cut % (exact, own block) | label (rule 2a) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R10_sess_london_SKIP | 24 | -8.7 | 1125.8 | 4.8 | -3.9 | -8.7 | -8.9 | 6.3 | -1361.6 | n/a | 32 / -0.4 | NEW 2a(25%): OK-PRIOR (PRE d mean -1362 vs floor -3549, live PRE 14197/wk) | OLD(-$1k): RECENT-ONLY |
+| R10_sess_london_SKIP | 29 | -8.7 | 1125.8 | 4.8 | -3.9 | -8.7 | -8.9 | 6.3 | -1361.6 | n/a | 32 / -0.4 | NEW 2a(25%): OK-PRIOR (PRE d mean -1362 vs floor -3549, live PRE 14197/wk) | OLD(-$1k): RECENT-ONLY |
 | R10_newer_K7_NET | 6 | 5.6 | -804.5 | 7.3 | 2.5 | 5.6 | 9.6 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
 | R10_U7_K7_FLIP | 6 | 5.3 | 37.1 | 7.7 | 5.5 | 5.3 | 5.2 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
-| R10_ALL_FLIP | 23 | -31.1 | -4771.4 | -49.3 | -63.2 | -31.1 | 78.5 | -25.8 | -4055.3 | n/a | 9 / -0.0 | NEW 2a(25%): RECENT-ONLY (PRE d mean -4055 vs floor -3433, live PRE 13730/wk) | OLD(-$1k): RECENT-ONLY |
+| R10_ALL_FLIP | 29 | -31.1 | -4771.4 | -49.3 | -63.2 | -31.1 | 78.5 | -25.8 | -4055.3 | n/a | 9 / -0.0 | NEW 2a(25%): RECENT-ONLY (PRE d mean -4055 vs floor -3433, live PRE 13730/wk) | OLD(-$1k): RECENT-ONLY |
 Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
 
 ## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
-Take-both (live) stays. (Under the new 25% PRE floor R10_sess_london_SKIP is OK-PRIOR, old floor RECENT-ONLY, but its L6M exact cut is negative and WF 32%.) Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 14:00 UTC)
+Take-both (live) stays. (Under the new 25% PRE floor R10_sess_london_SKIP is OK-PRIOR, old floor RECENT-ONLY, but its L6M exact cut is negative and WF 32%.) Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 15:12 UTC)

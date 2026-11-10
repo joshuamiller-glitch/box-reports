@@ -1,8 +1,8 @@
 # DS3_REDO_R12_SESSIONS - session boundaries, blocks, flatten, day-of-week / roll / event days on the state base (REDO-R12)
 
-**FINAL DRAFT 2026-11-10 14:41Z** - exact L6M + PRE rows (section 9) are in for every set; where exact and first-order disagree the exact row governs. Rules 2/2a labels and the bi-weekly WF are beside every cell. Live settings stay.
+**FINAL DRAFT 2026-11-10 15:00Z** - exact L6M + PRE rows (section 9) are in for every set; where exact and first-order disagree the exact row governs. Rules 2/2a labels and the bi-weekly WF are beside every cell. Live settings stay.
 
-Version 2026-11-10 14:41Z. **ROLL-FIXED rows (exact)**. Sections 0-4 are the FIRST-ORDER SCREEN; EXACT L6M + PRE rows are in section 9 and govern (removals, lot re-reads, flatten re-walks, calendar multipliers on the S1B-COMB trade list; stack metrics, drawdown first, equal-mean key, permutation placebo B=100 within book, family max over this page, bi-weekly WF as its own column, rule 2a prior label). Exact hooks (guards / ends / flat / cal) are in code/th_r7/r7_hooks.py; exact runs: R12_FLAT1700, R12_ASIA3, R12_OPEN930, R12_BLK0, R12_NFP0. No PASS claims; shadow only.
+Version 2026-11-10 15:00Z. **ROLL-FIXED rows (exact)**. Sections 0-4 are the FIRST-ORDER SCREEN; EXACT L6M + PRE rows are in section 9 and govern (removals, lot re-reads, flatten re-walks, calendar multipliers on the S1B-COMB trade list; stack metrics, drawdown first, equal-mean key, permutation placebo B=100 within book, family max over this page, bi-weekly WF as its own column, rule 2a prior label). Exact hooks (guards / ends / flat / cal) are in code/th_r7/r7_hooks.py; exact runs: R12_FLAT1700, R12_ASIA3, R12_OPEN930, R12_BLK0, R12_NFP0. No PASS claims; shadow only.
 
 ## 0. Plain verdict
 Nothing here changes a live setting. (a) The 09:00-09:59 block, the Asia guard 15:00-17:59 and the 09:00-09:29 part of the block are INERT in the engine as configured: the pre (08:30-09:30) and close (15:00-18:00) sessions carry lots 0 for every book, so only 09:30-09:59 (nyam lots K7 1, H7 1, M7 1, P7 7) and the 18:00-18:04 asia-open window carry trades; opening them ADDS trades the base does not contain and needs the engine (exact only), a first-order screen cannot score it. (b) Flatten: 17:00 is ~neutral (+39 $/wk L6M), 16:30 / 16:45 are slightly worse, hold-through for asia entries touches only 34 trades. (c) Calendar: most x0 / x0.5 cells lose mean and deepen maxDD (exceptions: NFP-day x0 / x0.5 gain +587 / +333 $/wk L6M with PRE dM -342 / -4); cells flagged LEAD+ have family p >= .1 and a bi-weekly WF beating live in <= 53 % of periods, so none is a CANDIDATE. (d) Session-clock moves: asia end 03:00 removes 882 M7 trades from 02:00-03:00 (london lots M7 2 -> asia 0) with a small eq cut and PRE dM -463; london end 08:00 and nyam end 11:30 lose mean.
@@ -72,14 +72,14 @@ Pick: **dow Thu x0** (trailing maxDD 66426 vs live 79907); screen label LEAD+, p
 | calendar (dow / roll / events) | normal | dow Thu x0 | no (label LEAD+, WF beat 28 %) | no | day-of-week / event lot policy (not in panel) |
 | 09:00-09:59 block / Asia guard 15:00-17:59 | block / on | not scored (additions, exact only; 09:00-09:29 and the guard are inert at lots 0) | n/a | no | guard constants |
 
-## 9. EXACT engine results (auto-refreshed 2026-11-10 14:41Z) - R12 cells
+## 9. EXACT engine results (auto-refreshed 2026-11-10 15:00Z) - R12 cells
 Prior label = rule 2a with the PRE mean floor at 25 % of the live PRE mean (user decision 2026-11-10 13:45Z); the old fixed -$1k label is shown in brackets. Engine column: ROLLFIX1 = every contract-roll month of the set ran on the roll-patched engine (RollRep) and is scored against base_b_rollfix = ROLL-FIXED; ROLLEXCL = old unpatched runs scored with the 33 roll-alive trades excluded (superseded, shown until the rerun lands). L6M = 202605-202610, PRE = 202402-202506; X' = 202304-202401 and HOLD = 202511-202604 only for R7_P3 and R12_OPEN930 (the leads). cuts = maxDD cut % vs exact Q1-A, all weeks; eq = at equal L6M mean; dM = $/wk mean vs live; WF = bi-weekly re-pick on the exact block (beat % of periods / OOS cut %); prior = rule 2a label; no placebo on exact rows, so the highest label is LEAD.
 
 | set | engine | months | L6M cut / eq / dM | L3M cut | L1M cut | PRE cut / dM | X' cut / dM | HOLD cut / dM | WF beat % / cut % | prior | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | R12_FLAT1700 | ROLLFIX1 | 23 | 0.1 / 1.6 / 342 | 0.1 | 0.0 | 0.0 / -311 | nan / nan | nan / nan | 5 / 0.0 | OK-PRIOR (old -$1k floor: OK-PRIOR) | LEAD ; WF fails |
 | R12_ASIA3 | ROLLFIX1 | 23 | -4.9 / -10.8 / -1289 | -4.9 | -1.8 | -1.0 / -304 | nan / nan | nan / nan | 36 / 3.2 | OK-PRIOR (old -$1k floor: OK-PRIOR) | no |
-| R12_OPEN930 | ROLLFIX1 | 35 | -38.3 / -45.5 / -1171 | -38.3 | -24.4 | 2.7 / 1499 | nan / nan | -11.1 / -344 | 36 / 2.7 | OK-PRIOR (old -$1k floor: OK-PRIOR) | no |
+| R12_OPEN930 | ROLLFIX1 | 39 | -38.3 / -45.5 / -1171 | -38.3 | -24.4 | 2.7 / 1499 | 7.7 / 250 | -11.1 / -344 | 27 / 2.7 | OK-PRIOR (old -$1k floor: OK-PRIOR) | no |
 | R12_BLK0 | ROLLFIX1 | 23 | -12.3 / -21.5 / -1777 | -12.3 | 7.5 | -2.3 / -1426 | nan / nan | nan / nan | 0 / -2.5 | OK-PRIOR (old -$1k floor: RECENT-ONLY) | no |
 | R12_NFP0 | ROLLFIX1 | 23 | 0.1 / -3.5 / -922 | 0.1 | 0.0 | 0.0 / -473 | nan / nan | nan / nan | 14 / 0.0 | OK-PRIOR (old -$1k floor: OK-PRIOR) | LEAD (mean given up: eq cut <= 0) ; WF fails |
 

@@ -1,4 +1,4 @@
-# DS3_REDO_R3_LOTTABLES - session lot tables per book x 6 sessions on the state base (S1b-COMB), first version 2026-11-10 14:31Z
+# DS3_REDO_R3_LOTTABLES - session lot tables per book x 6 sessions on the state base (S1b-COMB), FINAL (rebuilt 2026-11-10 15:18Z)
 
 > FIRST-ORDER SCREEN ONLY, ROLL-EXCL, PRE-PROOF, post-hoc, Shadow only; exact runs pending (FGH_P744, P644, P444, GREEDY in the SZ-CORE queue). STANDING RULE: every layer stays ON; the table is a setting; the live table is the reference row. Tables are the six-number strings D7 reads (asia,london,pre,nyam,nypm,close). A cell going to 0 shows the P&L it removes. Equal-$-risk parity row (2 lots every 60-pt cell, O7 3) is a REFERENCE ROW only.
 
@@ -17,7 +17,7 @@
 
 
 <!--FGHFINAL-->
-## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 14:31Z)
+## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 15:19Z)
 | set | exact maxDD cut % (d mean $/wk) by window | exact worst-20 cut % (+ = better) |
 |--|--|--|
 | P7 7,4,0,4,0,0 (Q_P7_744), 39 months | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |

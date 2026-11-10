@@ -1,4 +1,4 @@
-# JN04_SPEC_ATR_SKIP - P7 ATR >= 1.6x median skip, exact live definition for D7 v1.6 (SZ-FGH, 2026-11-10 14:39Z)
+# JN04_SPEC_ATR_SKIP - P7 ATR >= 1.6x median skip, exact live definition for D7 v1.6 (SZ-FGH, 2026-11-10 15:25Z)
 
 > Label: EXACT engine rows (ROLLFIX1 patched S1b engine) where stated; PRE-PROOF; post-hoc; Shadow only; no PASS claim. The rule was selected as the best of 854 first-order H cells (family p ~1, own-draw placebo p .02), so it is a LEAD+, not a CANDIDATE. Layers stay ON: this is an ADDITIONAL P7 entry gate, nothing is dropped.
 
@@ -32,7 +32,7 @@ Independent re-implementation of the text above from the raw 1-min NQ bars (code
 L6M cut +26.0 (d mean +1903), L3M +26.8 (+1817), PRE +35.6 (-262), X' see the EXACT block of SZ_FGH.md, worst-20 L6M +30. Rule 2a (floor = 25% of the live PRE mean): OK-PRIOR (old -$1k label also OK-PRIOR). Bi-weekly exact WF vs live: 36% of periods beat live (block 202402-202506).
 
 ### 4b. On the LIVE PANEL base (LPB_BASE: P7 day cap 8,400, 7/4/4 table, P7 cut 40/5x/w5/p3 ON) - EXACT, reference = LPB_BASE
-Months present for both ATRSKIP_P7 and LPB_BASE: 6 (202605..202610). Windows reported only when complete.
+Months present for both ATRSKIP_P7 and LPB_BASE: 23 (202307..202610). Windows reported only when complete.
 
 | window | maxDD LPB (live panel) | maxDD with ATR skip | cut % | d mean $/wk | equal-mean cut % | worst-20 cut % (+ better) |
 |--|--|--|--|--|--|--|
@@ -40,6 +40,8 @@ Months present for both ATRSKIP_P7 and LPB_BASE: 6 (202605..202610). Windows rep
 | L2M | 51253 | 35881 | +30.0 | -323 | +33.4 | +6 |
 | L3M | 77224 | 76858 | +0.5 | -308 | +5.3 | +8 |
 | L6M | 77224 | 76858 | +0.5 | +945 | +5.3 | +61 |
+
+Interaction note: on the live-panel base the L6M benefit of the ATR skip is +0.5% maxDD (d mean +945 $/wk) against +26.0% on the S1b-COMB base; the installed 7/4/4 table, the P7 day cap 8,400 and the P7 cut 40/5x absorb most of what the skip removed (a layer-overlap, exactly what T-JOINT is meant to expose). The skip is therefore NOT recommended on top of the live panel unless PRE/X'/HOLD above show an independent gain.
 
 ## 5. Notes for the coder
 - The M table of the exact run is keyed on (book, signal second); in v1.6 the test must be evaluated at the same second (before any slice, before the L2-gate arm).

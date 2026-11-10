@@ -1,4 +1,4 @@
-# DS3_REDO_R2_STACKRULES - A06 slots and B02 quiet-overnight on the state base (S1b-COMB), first version 2026-11-10 14:31Z
+# DS3_REDO_R2_STACKRULES - A06 slots and B02 quiet-overnight on the state base (S1b-COMB), FINAL (rebuilt 2026-11-10 15:18Z)
 
 > FIRST-ORDER SCREEN ONLY (pnl per lot x lots; exact runs pending in the SZ-CORE queue), ROLL-EXCL (33 trades alive across a roll carry weight 0), PRE-PROOF, post-hoc, Shadow only. STANDING RULE: every layer stays ON; this page proposes settings only; the live setting is the reference row and stays unless a setting beats it out of sample. Numbers = sz_core.Z.score (all-week maxDD/w20/Ulcer, carry week dropped from means only). Rolls in the NQ bars fixed. Old-vs-new base: pending (old-base R2 cells were never published; OLD-BASE rerun of these grids not yet done).
 
@@ -14,7 +14,7 @@
 
 
 <!--FGHFINAL-->
-## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 14:31Z)
+## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 15:19Z)
 | set | exact maxDD cut % (d mean $/wk) by window | exact worst-20 cut % (+ = better) |
 |--|--|--|
 | P7 7,4,0,4,0,0 (Q_P7_744), 39 months | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |

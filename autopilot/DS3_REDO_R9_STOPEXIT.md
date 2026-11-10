@@ -1,6 +1,16 @@
 # DS3_REDO_R9_STOPEXIT - stop-exit and cut-exit mechanics on the state base (T-STACK-REDO R9)  [FIRST-ORDER SCREEN, tape microsim; PRE-PROOF until entry match >= .85; no PASS claims]
+<!--SUMMARY-->
+**FINAL (draft status 2026-11-10 15:12 UTC): exact-row status as of now - L6M complete for every row below; PRE/X' months are still landing in the SZ queue (refresh in order r9_score, r10_score, r11_score, exact_append when they do).** PRE-PROOF (entry match < .85); no PASS claims; stop-fill caveat applies.
+
+| setting | live value | best exact row | holds OOS (L6M / L3M / L1M / HOLD / PRE under the 25% floor / X' / bi-weekly WF) | change recommended | panel field |
+|---|---|---|---|---|---|
+| stop exit: JoinThenMarket wait / join price / catastrophe (join books) | engine as run: 3 s, at touch best, 20 pts (live panel value of StStopExitMode per book unconfirmed) | R9_J5_i1_c10 | maxDD cut L6M 4.8, L3M 4.8, L1M 4.7; HOLD n/a; PRE 1.1 (d mean 91.6/wk; NEW 2a(25%): OK-PRIOR (PRE d mean 92 vs floor -3517, live PRE 14068/wk)); X' n/a; WF 32 / 1.1 | no (L6M d mean +297/wk; see verdict) | StStopExitMode / StStopJoinSecs / StCatastrophePts (ST), HmStop* (H7) |
+| stop exit: strategy-worked market at touch (wait 0) | same | R9_STRAT0_c10 | maxDD cut L6M 4.1, L3M 4.1, L1M 4.0; HOLD n/a; PRE -1.5 (d mean -21.8/wk; NEW 2a(25%): OK-PRIOR (PRE d mean -22 vs floor -3517, live PRE 14068/wk)); X' n/a; WF 14 / -1.5 | no (L6M d mean +190/wk; see verdict) | StStopJoinSecs = 0 equivalent (no such mode in the panel) |
+| stop-mode per book (Native vs JoinThenMarket) | engine: K7 M7 U7 P7 join, H7 A7 O7 native | REF_R9_STOP_G0 | maxDD cut L6M 5.3, L3M 5.3, L1M 5.2; HOLD n/a; PRE 6.1 (d mean 858.9/wk; NEW 2a(25%): OK-PRIOR (PRE d mean 859 vs floor -3864, live PRE 15454/wk)); X' 6.1; WF 45 / 3.8 | no (L6M d mean +967/wk; see verdict) | StStopExitMode, HmStopExitMode (engine-basis artefact, see caveat) |
+<!--/SUMMARY-->
+
 **CAVEAT (stop fills / stop exits, every R9-R11 page):** the engine fills a native stop 1.9 pt BETTER than the stop level (zero-latency walk of the pre-print book); live native stops were 1.28 pt WORSE and join stops 2.45 pt worse (old stack, 8 / 21 stops). Every dollar here that depends on a stop fill is on the optimistic engine basis unless marked live-calibrated; the live stop-exit mode per book is an open input (section 0b). Exact rows use the ROLL-FIXED engine; first-order rows use the ROLL-EXCL weights of the old base list.
-Generated 2026-11-10 13:57 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
+Generated 2026-11-10 15:11 UTC (elapsed 9 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
 Registry: /mnt/l2/l2vast/_th_joint/layers/stopexit/topK.json. Cell ledger: /mnt/l2/l2vast/_th_stack/r9/cells_r9.parquet.
 
 ## 0. What was measured, how, and the limits
@@ -186,17 +196,17 @@ Trailing 26 weeks to the data end, drawdown first: pick = **R9S_ALL_NAT** (live 
 | R9S_P7_NATLIVE     | 79438.1 |    127499 | 34241.9 | 24074.5 | False  | PRIOR-UNKNOWN |
 
 ## EXACT rows (appended)
-Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: REF_R9_STOP_CODE 6, REF_R9_STOP_G0 33, REF_R9_STOP_NAT 33, R9_J5_i1_c10 23, R9_J10_i1_c10 6, R9_J10_i0_c10 6, R9_STRAT0_c10 23
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: REF_R9_STOP_CODE 6, REF_R9_STOP_G0 33, REF_R9_STOP_NAT 33, R9_J5_i1_c10 29, R9_J10_i1_c10 6, R9_J10_i0_c10 6, R9_STRAT0_c10 28
 | set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % | bi-weekly WF beat % / cut % (exact, own block) | label (rule 2a) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | REF_R9_STOP_CODE | 6 | -0.0 | -129.0 | -1.0 | -0.6 | -0.0 | 1.1 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
 | REF_R9_STOP_G0 | 33 | 5.3 | 966.6 | 14.5 | 8.6 | 5.3 | 5.2 | 6.1 | 858.9 | 6.1 | 45 / 3.8 | NEW 2a(25%): OK-PRIOR (PRE d mean 859 vs floor -3864, live PRE 15454/wk) | OLD(-$1k): OK-PRIOR |
 | REF_R9_STOP_NAT | 33 | 6.7 | 1289.5 | 19.2 | 11.0 | 6.7 | 6.6 | 7.7 | 1543.3 | 14.1 | 61 / 7.7 | NEW 2a(25%): OK-PRIOR (PRE d mean 1543 vs floor -3864, live PRE 15454/wk) | OLD(-$1k): OK-PRIOR |
-| R9_J5_i1_c10 | 23 | 4.8 | 297.0 | 7.5 | 5.8 | 4.8 | 4.7 | 1.1 | 91.6 | n/a | 32 / 1.1 | NEW 2a(25%): OK-PRIOR (PRE d mean 92 vs floor -3517, live PRE 14068/wk) | OLD(-$1k): OK-PRIOR |
+| R9_J5_i1_c10 | 29 | 4.8 | 297.0 | 7.5 | 5.8 | 4.8 | 4.7 | 1.1 | 91.6 | n/a | 32 / 1.1 | NEW 2a(25%): OK-PRIOR (PRE d mean 92 vs floor -3517, live PRE 14068/wk) | OLD(-$1k): OK-PRIOR |
 | R9_J10_i1_c10 | 6 | -9.2 | -1959.3 | -37.0 | -19.7 | -9.2 | -5.1 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
 | R9_J10_i0_c10 | 6 | -9.1 | -1644.4 | -32.6 | -17.8 | -9.1 | -4.8 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
-| R9_STRAT0_c10 | 23 | 4.1 | 190.3 | 6.2 | 4.8 | 4.1 | 4.0 | -1.5 | -21.8 | n/a | 14 / -1.5 | NEW 2a(25%): OK-PRIOR (PRE d mean -22 vs floor -3517, live PRE 14068/wk) | OLD(-$1k): OK-PRIOR |
+| R9_STRAT0_c10 | 28 | 4.1 | 190.3 | 6.2 | 4.8 | 4.1 | 4.0 | -1.5 | -21.8 | n/a | 14 / -1.5 | NEW 2a(25%): OK-PRIOR (PRE d mean -22 vs floor -3517, live PRE 14068/wk) | OLD(-$1k): OK-PRIOR |
 Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
 
 ## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
-The live stop setting stays unless a PRE/X'-complete exact row beats it with the bi-weekly WF. L6M exact: join 5 s one tick inside, catastrophe 10 (R9_J5_i1_c10) cuts maxDD 4.8% at +$297/wk, STRAT0 (strategy-worked market, c10) 4.1%; waits of 10 s HURT (-9%). The native / mode rows (REF_R9_STOP_G0, _NAT: +5.3% / +6.7%, +$967 / +$1,290/wk) are fill-basis artefacts of the optimistic engine native fill (section 1) and are not a recommendation; the installed panel stop-mode per book is the open input. Nothing here is proposed for the panel. (draft generated 2026-11-10 14:00 UTC)
+The live stop setting stays unless a PRE/X'-complete exact row beats it with the bi-weekly WF. L6M exact: join 5 s one tick inside, catastrophe 10 (R9_J5_i1_c10) cuts maxDD 4.8% at +$297/wk, STRAT0 (strategy-worked market, c10) 4.1%; waits of 10 s HURT (-9%). The native / mode rows (REF_R9_STOP_G0, _NAT: +5.3% / +6.7%, +$967 / +$1,290/wk) are fill-basis artefacts of the optimistic engine native fill (section 1) and are not a recommendation; the installed panel stop-mode per book is the open input. Nothing here is proposed for the panel. (draft generated 2026-11-10 15:12 UTC)

@@ -5,7 +5,7 @@
 
 TESTING-DEFECT CHECK (addendum 1c) across my three live-chain bases (COMB, NOCUT, UNIF): of 6788 common cells, L6M maxDD identical to the dollar: 0; PRE: 0. No defect found among my own scores; the first-order scorer cannot see exit/re-entry/lock changes, so the verdict needs EXACT runs.
 
-# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-10 14:31Z
+# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-10 15:18Z
 
 Label: PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER on S1b-COMB (pnl per lot x lots; mean unreliable, drawdown ranking usable), no PASS claims, entry match < .85. Prereg SZ_FGH_PREREG.md (sha in DECISIONS.md). 6786 cells x 3 bases (COMB live, NOCUT, UNIF controls). Ledger /mnt/l2/l2vast/_th_sz/ledger_FGH*.parquet; lots ratios of top cells M_FGH.npz.
 
@@ -15,7 +15,7 @@ Calendar: FOMC/CPI/NFP dates entered from public schedules (memory); CHECKED aga
 
 
 <!--FGHFINAL-->
-## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 14:31Z)
+## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 15:19Z)
 | set | exact maxDD cut % (d mean $/wk) by window | exact worst-20 cut % (+ = better) |
 |--|--|--|
 | P7 7,4,0,4,0,0 (Q_P7_744), 39 months | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |

@@ -15,11 +15,12 @@ Single source for the engine: outputs/code/th_r13/panel_installed.json (edit the
 | State cut mechanics | 1-s top-10 states, cancelled net of trades, EWMA 0.001 MedLevel, decision latency 1 s, market exit 0.80 pt | DIRECTIVE_TH_L2_S_20261108 | engine |
 | Brackets | all sliced books stop 60 / target 60 from the fill average (target re-based after the add); O7 40/90, 1 lot, time exit 16:00; native stop-market 80 catastrophe beside the strategy-worked 60 (code reading, open question in MORNING_FLAGS 11-07) | GATE0_ANSWERS s3 | sim.STOPPTS / TARGETR; panel.stop_pts / target_r empty = live 60/60 |
 | Stop exit mode | K7 and H7 JoinThenMarket (3 s), P7/U7/M7/A7/O7 Native | GATE0_ANSWERS s3 (our engine code JOIN_BOOKS = K7 M7 U7 P7: DISAGREES, see 3) | engine |
+| P7 day cap | profit 42,000 / loss 8,400 (user; = SZ-CORE LPB_BASE p7_daycap) | user / LPB_BASE | panel.daycap.P7 |
 | Locks | day caps +5R/-2R, give-back arm +2R keep 50%, week floor -12R per book, PerBook | GATE0_ANSWERS s3 | engine |
 | Bug exits | the 10 v1.5 state cuts of the night 11-08/09 (1 H7 + 9 M7): ES/RTY depth pollution, fixed in v1.5a | user | panel.bug_* (window 11-08 18:00 .. 11-09 09:00 ET, books H7/M7, cut exit names: ASSUMED window) |
 
 ## 2. Derived / adopted in the engine run
-- Seven state-cut lines read as ONE LINE PER BOOK (K7 P7 M7 U7 A7 H7 O7): S1-COMB's two session overrides (P7 asia 50/5/3/3 newMae, H7 nyam 35/20/2/1) are NOT lines in the policy file as far as we know, so panel.drop_session_overrides = true replaces them by the book's own cell. ASSUMED.
+- (FINAL 11-10: panel_installed.json now mirrors SZ-CORE LPB_BASE, which keeps the H7 nyam override and uses P7 40/5x/w5/p3 uniformly; drop_session_overrides = false.) Seven state-cut lines read as ONE LINE PER BOOK (K7 P7 M7 U7 A7 H7 O7): S1-COMB's two session overrides (P7 asia 50/5/3/3 newMae, H7 nyam 35/20/2/1) are NOT lines in the policy file as far as we know, so panel.drop_session_overrides = true replaces them by the book's own cell. ASSUMED.
 - Settled configuration for a new week: PERIODS off, X books off (HIST_PRM). If X1-X5 are installed live this week they are not in the engine run: their live rows are listed as class A (they cannot be reproduced) unless the user sends the X parameter string (open since 11-07).
 - Bar close = tick (F1), TrendSize half-even rounding inert after Mon 13:30 ET (ENTRY_MATCH F2).
 
