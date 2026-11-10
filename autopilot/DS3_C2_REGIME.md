@@ -1,4 +1,4 @@
-# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-10 21:26Z)
+# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-10 22:24Z)
 
 > **CONVENTIONS (agreed with SZ-IJK 21:4xZ): d mean = weekly mean difference cell minus reference with the carrying week (largest |cell - reference| weekly delta) dropped, the sz_core / Z.score_daily convention; the all-weeks d mean is in brackets because a single week can move the carry-dropped number by several $k/wk (GAP has 17 weeks). maxDD / cuts on all weeks. Windows are calendar-month based here (GAP 202507-202510, H2-2024 202407-202412, HOLD 202511-202610, L6M 202605-202610), sz_core windows start on 2026-05-12 / 2025-11-10 (so L6M / HOLD d means differ from SZ-IJK by a week at the edge). Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. Exact engine ROLLFIX1 rows; mean $/wk = carrying week dropped (largest |cell - NEVER-CUT| week), the all-weeks mean is shown beside it because GAP has only 17 weeks. Leave-one-out rows are DIAGNOSTIC reference rows (standing rule: every layer stays ON). Prereg: autopilot/SZ_C2_PREREG.md (+ Addendum 1).**
 
@@ -78,7 +78,7 @@
 ## E. Exact regime stacks on the live-panel base (43 months)
 
 
-SZ-CDE C2 processes (IJK driver state_sizer_ijk rbjobs masters, 2 + 1 workers, each below 4 GB per worker as accounted; memory gate 62 GB): c2_a=519355 (not running), c2_b=519443 (not running)
+SZ-CDE C2 processes (IJK driver state_sizer_ijk rbjobs masters, 2 + 1 workers, each below 4 GB per worker as accounted; memory gate 62 GB): c2_a=1124629, c2_b=1143424
 
 | set | candidate | months | L1M / L3M / L6M cut vs LPB_BASE | L6M d mean | (b) eq-mean L6M cut | HOLD cut / d mean | PRE cut / d mean | X' cut / d mean | GAP cut / d mean | H2-2024 cut / d mean | WF vs live: beats % / OOS cut / d mean | WF vs JN04RM: beats % | Rule 2a label |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|

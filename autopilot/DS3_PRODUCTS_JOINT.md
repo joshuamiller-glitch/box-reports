@@ -1,4 +1,4 @@
-# DS3_PRODUCTS_JOINT (FD-CORE, 2026-11-10 21:54Z). Post-hoc, Shadow only, no PASS claim. Standing rules 1 / 2 / 2a. STANDALONE bar (D8) and SEAT bar side by side; "fails the seat bar" is never a verdict on the product.
+# DS3_PRODUCTS_JOINT (FD-CORE, 2026-11-10 22:26Z). Post-hoc, Shadow only, no PASS claim. Standing rules 1 / 2 / 2a. STANDALONE bar (D8) and SEAT bar side by side; "fails the seat bar" is never a verdict on the product.
 
 ## 0. Data cost line
 T-NEXT data top-up bought 2026-11-10 17:25Z: GLBX.MDP3 ohlcv-1m .v.0, YM GC CL ZN ZB 6E 6J MBT NKD to 2026-11-10 08:00Z (historical licence ends 08:59Z same day) and NQ ES RTY from 10-30; quote $1.007 (under the $100 authorisation), logged in SPEND.json: running total $7,328.94 of $8,000. Files data/ext_20261110/*_ohlcv1m_20261110.dbn.zst. Merge into the 1-min series / nol2 bars = CPU work deferred past the 21:30Z pause; until then L1M/L2M in this page end 2026-10-16 (30 for NQ/ES/RTY).
@@ -60,6 +60,77 @@ T-NEXT data top-up bought 2026-11-10 17:25Z: GLBX.MDP3 ohlcv-1m .v.0, YM GC CL Z
 | MBT.s2.be457e72 | close | +380 / +29 | +268 / +181 | +13.3 / - (+9.7) | +1046 | +37 / +51 / -18.8 / -134 | OK-PRIOR (old OK-PRIOR) | 0.14 | +1.00 | fails: wf_ge60,placebo_le10,family_le10 | +0.5 / +0.2 (0.07) | +0.8 / +0.4 | STK |
 | MBT.donchian.e7096026 | pre | +389 / -47 | +335 / +74 | +13.2 / +20.2 (+6.8) | +1325 | +68 / +72 / +64.3 / +129 | OK-PRIOR (old OK-PRIOR) | 0.04 | +1.00 | fails: family_le10 | +1.0 / +0.7 (-0.13) | +1.3 / +1.1 | STK |
 | GC.T2FGC.69ed20b1 | london | +240 / -316 | +300 / +523 | +12.8 / - (+2.5) | +1215 | +32 / +57 / +31.3 / -50 | OK-PRIOR (old OK-PRIOR) | 0.07 | +1.00 | fails: wf_ge60,family_le10 | +0.7 / +2.1 (-0.04) | +1.0 / +2.4 | ZON |
+
+## 3b. NO-L2 v2 (lists regenerated on the merged bars to 2026-11-10; v1 rows above kept for comparison; 7 CL T2F cells whose v1/v2 P&L differs on 2-6% of trades are flagged: NOT a roll effect (identical bars; one tick of exit fill or an exit one bar earlier, <= $222/lot over 3.5 years per cell, immaterial; v1 came from an earlier generator run))
+| id | v2 L6M / L3M Calmar | v1 L6M / L3M Calmar | v2 L6M mean | v1 L6M mean | v2 WF % | v2 STANDALONE | v2 SEAT add L6M / PRE | flag |
+|--|--|--|--|--|--|--|--|--|
+| 6E.15.21a4a7f2 | +53.3 / - | +53.3 / - | +123 | +123 | +15 | no | +0.2 / +0.2 |  |
+| YM.T2FYM.d6afba67 | +35.3 / +88.2 | +7.4 / +18.4 | +274 | +57 | +9 | no | -0.2 / +0.3 |  |
+| GC.T2FGC.53477fb1 | +26.8 / - | +28.4 / +639.4 | +626 | +834 | +41 | no | +1.0 / +1.1 |  |
+| GC.vwap_reject.e86771b9 | +25.2 / +6.4 | +23.4 / -0.0 | +851 | +791 | +68 | no | +2.5 / +1.0 |  |
+| 6E.15.167c0bee | +24.6 / +71.0 | +24.6 / +71.0 | +43 | +43 | +15 | no | +0.0 / +0.0 |  |
+| MBT.s2.469fdc02 | +23.7 / - | +14.1 / - | +238 | +283 | +37 | no | +0.6 / +0.1 |  |
+| GC.T2FGC.065984d2 | +23.6 / +9.8 | +40.3 / - | +577 | +662 | +4 | no | +0.7 / +1.5 |  |
+| GC.T2FGC.f80ca7a6 | +23.6 / +9.8 | +40.3 / - | +577 | +662 | +4 | no | +0.7 / +1.5 |  |
+| MBT.s2.be457e72 | +23.3 / +147.4 | +13.3 / - | +234 | +268 | +37 | no | +0.5 / +0.3 |  |
+| GC.donchian.1deefb1e | +22.8 / +140.0 | +19.2 / +78.8 | +3792 | +3186 | +62 | no | +16.1 / +5.9 |  |
+| GC.T2FGC.56c1e879 | +20.5 / - | +16.1 / - | +587 | +463 | +52 | no | +1.0 / +0.6 |  |
+| YM.T2FYM.ac7f61e0 | +20.4 / +50.9 | +7.0 / +17.6 | +158 | +55 | +7 | no | -0.2 / +0.3 |  |
+| GC.T2FGC.888590b0 | +18.3 / +52.7 | +18.3 / +52.7 | +1138 | +1138 | +9 | no | +1.3 / -0.4 |  |
+| GC.T2FGC.7cbd7d38 | +17.8 / +40.0 | +18.9 / +42.9 | +1106 | +1177 | +71 | no | +1.3 / +2.5 |  |
+| MBT.s0.bf528dd8 | +17.3 / +13.9 | +17.3 / +13.9 | +226 | +226 | +51 | no | +0.1 / +0.1 |  |
+| MBT.donchian.e7096026 | +17.2 / +27.1 | +13.2 / +20.2 | +438 | +335 | +68 | no | +0.4 / +1.0 |  |
+| YM.T2FYM.35295767 | +17.1 / +25.6 | - / - | +405 | - | +52 | no | -0.6 / +0.8 |  |
+| MBT.mom_h30_pre_q0.85_atr_3.0_None_s0.e66f84fe | +16.9 / +2.9 | +16.9 / +2.9 | +332 | +332 | +62 | no | +0.3 / -0.3 |  |
+| YM.orb_fade.76862175 | +16.1 / +12.9 | +15.6 / +11.7 | +923 | +895 | +59 | no | +1.9 / +4.8 |  |
+| YM.orb_fade.9fdaa654 | +16.0 / +10.5 | +21.6 / +10.9 | +916 | +917 | +61 | no | +2.0 / +6.0 |  |
+| YM.vwap_reclaim.493a70ff | +15.2 / +40.3 | +5.5 / +22.4 | +548 | +228 | +61 | no | +4.9 / +8.3 |  |
+| YM.T2FYM.6aa7ce71 | +15.0 / +37.4 | +15.0 / +37.4 | +233 | +233 | +6 | no | -0.9 / +0.1 |  |
+| GC.T2FGC.02f618b6 | +14.3 / +21.1 | +4.0 / +5.0 | +485 | +328 | +54 | no | +0.4 / +0.9 |  |
+| GC.T2FGC.c6440e21 | +14.3 / +21.1 | +4.0 / +5.0 | +485 | +328 | +54 | no | +0.4 / +0.9 |  |
+| GC.vwap_reclaim.4018ab72 | +14.2 / +5.2 | +8.9 / +0.6 | +1331 | +836 | +58 | no | +6.1 / +4.6 |  |
+| GC.T2FGC.6c920936 | +13.7 / +21.3 | +5.2 / +0.0 | +97 | +37 | +11 | no | +0.5 / +0.6 |  |
+| GC.T2FGC.cf6cd25f | +13.5 / +21.8 | +0.0 / +0.0 | +96 | +0 | +7 | no | +0.5 / +0.6 |  |
+| GC.T2FGC.398a806e | +13.0 / +41.2 | +14.0 / +17.5 | +629 | +538 | +49 | no | +0.9 / +0.9 |  |
+| GC.T2FGC.fea033f9 | +13.0 / +41.2 | +14.0 / +17.5 | +629 | +538 | +49 | no | +0.9 / +0.9 |  |
+| GC.T2FGC.69ed20b1 | +12.8 / - | +12.8 / - | +300 | +300 | +31 | no | +0.7 / +2.1 |  |
+| YM.T2FYM.0d80268b | +12.0 / +6.6 | +7.5 / -4.9 | +412 | +259 | +60 | no | -0.2 / +0.9 |  |
+| GC.T2FGC.3f595fd7 | +11.7 / +5.4 | +10.1 / +1.1 | +762 | +750 | +58 | no | +3.3 / +2.3 |  |
+| GC.T2FGC.ad632fba | +11.6 / +93.3 | +8.9 / +39.1 | +406 | +313 | +58 | no | +0.6 / +0.2 |  |
+| BTC.30.02e1038e | +11.5 / -2.9 | +11.5 / -2.9 | +763 | +763 | +60 | no | +0.6 / +1.6 |  |
+| GC.T2FGC.d1f37823 | +11.5 / +25.4 | +11.5 / +25.4 | +521 | +521 | +4 | no | +0.6 / -1.2 |  |
+| GC.T2FGC.feb85183 | +11.4 / +10.6 | +9.8 / +2.2 | +645 | +552 | +52 | no | +0.7 / +0.6 |  |
+| BTC.60.fab5dd4f | +10.8 / +1.4 | +10.8 / +1.4 | +727 | +727 | +49 | no | -0.1 / +1.1 |  |
+| YM.T2FYM.b860301c | +10.8 / +8.3 | +1.7 / -7.7 | +295 | +84 | +49 | no | +1.7 / +0.3 |  |
+| YM.T2FYM.7fb19bc3 | +10.7 / +13.5 | +7.0 / +4.3 | +651 | +425 | +60 | no | +0.7 / +2.3 |  |
+| GC.T2FGC.bb7c28d7 | +10.3 / +16.1 | +3.9 / +0.0 | +97 | +37 | +9 | no | +0.4 / +0.5 |  |
+
+## 3c. NO-L2 v2 LEADS (FD-NOL2 label LEAD, 14 dressed rows; lists regenerated to 2026-11-09 so L1M/L2M are real); LEAD = reported with the number, not a CANDIDATE
+| id | sess | own null p / family p | bi-weekly WF % (n) | Calmar L1M / L2M / L3M / L6M | PRE rule 2a | placebo p | seat corr (add cut L6M / PRE) | STANDALONE |
+|--|--|--|--|--|--|--|--|--|
+| GC.T2FGC.8816beed | nyam | +0.18 / +1.00 | +60 (+73) | +30.5 / +5.4 / +4.6 / +8.7 | OK-PRIOR | 0.12 | -0.06 (+5.2 / +2.2) | no: placebo_le10,family_le10 |
+| GC.T2FGC.c478779e | nyam | +0.12 / +1.00 | +58 (+73) | +50.2 / +8.2 / +6.2 / +7.8 | OK-PRIOR | 0.13 | -0.12 (+6.7 / +3.7) | no: wf_ge60,placebo_le10,family_le10 |
+| GC.T2FGC.a6f08616 | nyam | +0.16 / +1.00 | +60 (+73) | +48.3 / +7.7 / +7.7 / +6.8 | OK-PRIOR | 0.15 | -0.06 (+4.8 / +3.8) | no: placebo_le10,family_le10 |
+| GC.T2FGC.ea208d8d | pre | +0.24 / +1.00 | +73 (+74) | +22.0 / +60.5 / +27.5 / +5.5 | OK-PRIOR | 0.11 | -0.03 (+3.3 / +1.2) | no: placebo_le10,family_le10 |
+| GC.T2FGC.5571faa5 | pre | +0.08 / +1.00 | +73 (+74) | +22.0 / +60.5 / +27.5 / +5.5 | OK-PRIOR | 0.11 | -0.04 (+3.3 / +1.2) | no: placebo_le10,family_le10 |
+| GC.T2FGC.4d02584a | nypm | +0.92 / +1.00 | +59 (+74) | -5.9 / -5.9 / -4.0 / +3.7 | OK-PRIOR | 0.11 | 0.14 (+1.0 / +0.5) | no: l3m_calmar_pos,wf_ge60,placebo_le10,family_le10 |
+| GC.T2FGC.5cf492de | asia | +0.77 / +1.00 | +76 (+72) | -1.1 / -4.7 / -4.7 / +3.5 | OK-PRIOR | 0.25 | -0.08 (+4.0 / +3.4) | no: l3m_calmar_pos,placebo_le10,family_le10 |
+| CL.T2FCL.8469f21e | nypm | +1.00 / +1.00 | +56 (+73) | - / +7.2 / +7.2 / +3.5 | OK-PRIOR | 0.25 | 0.02 (+3.3 / +0.9) | no: wf_ge60,placebo_le10,family_le10 |
+| YM.T2FYM.a26b5100 | pre | +0.86 / +1.00 | +72 (+74) | +2.5 / +13.6 / +13.6 / +2.9 | OK-PRIOR | 0.26 | 0.07 (+2.4 / +3.7) | no: placebo_le10,family_le10 |
+| GC.T2FGC.709934a8 | nyam | +0.24 / +1.00 | +59 (+73) | +49.6 / +11.0 / +10.5 / +2.6 | OK-PRIOR | 0.36 | -0.06 (+3.8 / +1.6) | no: wf_ge60,placebo_le10,family_le10 |
+| GC.T2FGC.4722bad0 | asia | +0.99 / +1.00 | +57 (+74) | +20.4 / +1.0 / +1.0 / +2.5 | OK-PRIOR | 0.62 | -0.03 (+2.5 / +0.3) | no: wf_ge60,placebo_le10,family_le10 |
+| GC.T2FGC.6fd681fb | nyam | +0.08 / +1.00 | +76 (+74) | +32.4 / +41.3 / +10.9 / +2.1 | OK-PRIOR | 0.34 | -0.00 (-0.7 / -1.6) | no: placebo_le10,family_le10 |
+| GC.T2FGC.140552d8 | nyam | +0.02 / +1.00 | +80 (+74) | - / +48.5 / +32.1 / +1.5 | OK-PRIOR | 0.47 | -0.05 (+1.6 / -0.2) | no: placebo_le10,family_le10 |
+| GC.T2FGC.be193059 | nyam | +0.08 / +1.00 | +65 (+74) | - / +58.1 / +38.4 / +0.5 | OK-PRIOR | 0.67 | -0.01 (+1.5 / -1.1) | no: placebo_le10,family_le10 |
+
+## 3d. Per-instrument verdicts on v2 numbers (NO-L2; v1 verdicts in section 5 kept)
+- 6E: best finalist 6E.15.21a4a7f2 (london, carrier STK): standalone L6M Calmar 53.3 (naked 60.9), WF 15% of 52 periods; PRE OK-PRIOR; placebo p 0.02, family p 1.00; standalone: no (not yet / fails: wf_ge60,family_le10); seat: corr -0.00, add cut L6M/PRE +0.2/+0.2% -> yes. [3 finalists, 0 clear standalone]
+- BTC: best finalist BTC.30.02e1038e (close, carrier ZON): standalone L6M Calmar 11.5 (naked 7.4), WF 60% of 73 periods; PRE OK-PRIOR; placebo p 0.08, family p 1.00; standalone: no (not yet / fails: l3m_calmar_pos,family_le10); seat: corr 0.09, add cut L6M/PRE +0.6/+1.6% -> yes. [9 finalists, 0 clear standalone]
+- CL: best finalist CL.T2FCL.4604e30c (nypm, carrier SIZ): standalone L6M Calmar 5.8 (naked -0.1), WF 62% of 69 periods; PRE OK-PRIOR; placebo p 0.17, family p 1.00; standalone: no (not yet / fails: placebo_le10,family_le10); seat: corr 0.05, add cut L6M/PRE +0.5/+0.5% -> yes. [14 finalists, 0 clear standalone]
+- GC: best finalist GC.T2FGC.53477fb1 (london, carrier ZON): standalone L6M Calmar 26.8 (naked 9.6), WF 41% of 59 periods; PRE OK-PRIOR; placebo p 0.07, family p 1.00; standalone: no (not yet / fails: wf_ge60,family_le10); seat: corr 0.01, add cut L6M/PRE +1.0/+1.1% -> yes. [138 finalists, 0 clear standalone]
+- MBT: best finalist MBT.s0.bf528dd8 (close, carrier ZON): standalone L6M Calmar 17.3 (naked 2.9), WF 51% of 55 periods; PRE OK-PRIOR; placebo p 0.06, family p 1.00; standalone: no (not yet / fails: wf_ge60,family_le10); seat: corr -0.08, add cut L6M/PRE +0.1/+0.1% -> yes. [20 finalists, 0 clear standalone]
+- YM: best finalist YM.T2FYM.35295767 (close, carrier SIZ): standalone L6M Calmar 17.1 (naked 0.1), WF 52% of 62 periods; PRE OK-PRIOR; placebo p 0.04, family p 1.00; standalone: no (not yet / fails: wf_ge60,family_le10); seat: corr 0.07, add cut L6M/PRE -0.6/+0.8% -> no. [49 finalists, 0 clear standalone]
+
 
 ## 4. ES / RTY with L2 (FD-LIQ): see DS3_PRODUCTS_JOINT_ES.md and DS3_PRODUCTS_JOINT_RTY.md; zone-as-entry books (ZN-BOOK): DS3_PRODUCTS_ZONEBOOKS.md (ES/RTY naked: best pooled t 2.74 / 1.84 vs grid null, family p 1.0, bi-weekly WF 44% / 47%; no-L2 structural-zone versions not started - inputs: code/fd_nol2/feats.py InstFeats.fam on nol2/bars/*.npz).
 
