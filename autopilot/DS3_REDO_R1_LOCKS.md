@@ -1,6 +1,6 @@
-# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-10 10:58Z)
+# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-10 11:55Z)
 
-> **FINAL DRAFT 2026-11-10 10:59Z: exact ROLL-FIXED rows (ROLLFIX1 engine, patched live reference), WF% beside every label, REFIT 2026-11-22 over all exact cells. Sections: R1 locks (grid, summary block, P7 -1R decision pack), R1b StackCut, L cooldowns, G candidates, joint lines for R1_3.**
+> **FINAL DRAFT 2026-11-10 11:56Z: exact ROLL-FIXED rows (ROLLFIX1 engine, patched live reference), WF% beside every label, REFIT 2026-11-22 over all exact cells. Sections: R1 locks (grid, summary block, P7 -1R decision pack), R1b StackCut, L cooldowns, G candidates, joint lines for R1_3.**
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. FIRST-ORDER SCREEN ONLY unless a row is in the exact table below. ROLL-EXCL: the 31 roll-artifact base trades are excluded from every number. STANDING RULE: every lock stays ON; "off" rows are reference rows only; the deliverable is the best SETTING (drawdown first at equal mean, holds OOS); if nothing beats the live setting the live setting stays.**
 
@@ -195,7 +195,7 @@ NOLOCK reference: the live locks are doing real work; any setting that removes t
 
 | setting | live value | best on the state base (first-order screen, equal mean) | holds OOS (dim WF eq cut) | change recommended | panel field |
 |--|--|--|--|--|--|
-| Day profit / loss caps | +5R / -2R per book | win4_loss1(arm2,keep.5,floor12) P7 (cut +33.7/+19.1/+20.9, d mean +2211) | -10.0 | candidate for exact; live stays until exact confirms | ComboLimits / MaxDayProfit, MaxDayLoss (per book) |
+| Day profit / loss caps | +5R / -2R per book | win4_loss1(arm2,keep.5,floor12) P7 (cut +33.7/+19.1/+20.9, d mean +2211) | -10.0 | candidate for exact; live stays until exact confirms | P7MaxDailyLoss (DS7.cs: DayPnl <= -MaxDayLoss * max(1, SizeMult), realized day P&L); R1_3 line: P7MaxDailyLoss 16,800 -> 8,400 |
 | Give-back arm / keep | arm 2R keep 50% | arm1_keep0.7(win5,loss2,floor12) P7 (cut +12.4/+34.1/+5.6, d mean +1823) | +20.5 | candidate for exact; live stays until exact confirms | GiveBackArmR / GiveBackKeepPct |
 | Week floor | 12R per book | floor6(win5,loss2,arm2/.5) ALL (cut -4.5/+8.2/+5.5, d mean -521) | -2.5 | no (live stays) | ComboWeekFloorR |
 | R basis | base lots | R_on_sized_lots P7 (cut +46.7/+44.6/+26.0, d mean +4488) | -5.2 | candidate for exact; live stays until exact confirms | v1.6 (R on sized lots not a field) |
@@ -272,7 +272,7 @@ Reading: in the frozen week the -1R cap would have fired on P7 on label day 2026
 
 
 ### D. Definition and panel line
-The engine (and DS7 DAYCAP table: P7 +42,000 / -16,800 USD) defines the per-book daily loss cap as a fixed dollar amount = k R with R = BASE lots x 60 pt x $20 x max(1, day size multiplier): P7 base lots 7 -> 1R = $8,400; under Q1-A the size multiplier is never above 1, so R is on BASE lots, not on the lots actually traded (sized-lot R is the R1_1/R1_2 variant and is a different, riskier-to-implement setting). The check uses REALIZED day P&L only (closed trades), blocks new entries for the rest of the label day, and exits an open trade if any. Policy line: P7 daily max loss $16,800 (2R) -> $8,400 (1R), all other books and the P7 win cap (42,000 = 5R) unchanged. The exact panel field name for the per-book daily max loss is not documented in the files I can read (only ComboWeekFloorR / ComboGiveBackArmR / ComboGiveBackPct are named): to be confirmed against DS7.cs before any panel value is quoted.
+DS7.cs field: **P7MaxDailyLoss** (a dollar amount; check `DayPnl <= -MaxDayLoss * max(1, SizeMult)`, REALIZED day P&L only, blocks new entries for the rest of the label day and exits an open trade). The engine (DAYCAP table) uses the same: P7 -16,800 USD = 2R with R = BASE lots x 60 pt x $20 = 7 x 1,200 = $8,400; under Q1-A the size multiplier never exceeds 1, so the cap is on BASE lots, not on the lots actually traded (the sized-lot R of R1_1/R1_2 is a different setting). **R1_3 line: P7MaxDailyLoss 16,800 -> 8,400** (all other books and the P7 daily profit cap unchanged).
 
 
 ## R1b. StackCut (hard-coded 50% / Asia-only in the engine): exact variants, counterfactual of the cut exits
@@ -403,6 +403,14 @@ Standard note: after a pause the engine re-enters at different seconds, so remov
 | CDE_R1_3 | 56% (X-prime+PRE) / +17.0% / +273 | RECENT-OK / OK-PRIOR (allow 15%, WF 56%) |
 | CDE_R1_4 | 56% (X-prime+PRE) / +17.0% / +191 | RECENT-OK / OK-PRIOR (allow 15%, WF 56%) |
 | CDE_R1_5 | 9% (X-prime+PRE) / +31.2% / +1790 | recent: no / OK-PRIOR (allow 15%, WF 9%) |
+
+
+## Walk-forward reconciliation for R1_3
+
+The figures differ because they are different tests: exact, R1_3 alone vs live, block A = X-prime+PRE (refit 2023-11-06..2025-06-30): beats live in 56% of 43 refit periods (OOS cut +17.0%); exact, block B = HOLD+L6M (refit 2026-05-04..2026-10-30): 58% of 12 periods; first-order screen on the NOLOCK exact list, picker over the whole pb_daycaps group (all daily-cap cells, all scopes) vs live, 74 refit periods 2024-01..2026-10: 64%. The 56% (exact block A) is the one used for the Rule 2a allowance of R1_3 itself (15%); the ~64% is the first-order group picker (whole daily-cap family) and the joint driver's figure covers a different candidate set / block. The 64% would clear the 60% bar, but it is a first-order screen of a family picker, not of the cell itself, so the exact 56% / 58% (blocks A / B) govern the label.
+
+
+Roll-artifact note: the spurious RollFlat trades found in non-roll months (positions open at the monthly chunk end closed by a later roll event) were already fixed in SZ-CORE's RollRep with no effect on the references or the P7 cells; my driver and loaders carry the same fix (cde_roll.clean drops RollFlat rows that are not at that month's own roll second; new runs schedule only in-month roll events).
 
 
 ## Joint stacks containing R1_3 (SZ-IJK, exact ROLL-FIXED, DS3_JOINT.md)

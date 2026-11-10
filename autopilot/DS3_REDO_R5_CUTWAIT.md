@@ -1,4 +1,4 @@
-# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 10:33Z first version / refresh
+# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 11:42Z first version / refresh
 
 ## 0. Summary block (setting | live value | best on the state base | holds OOS? | change recommended | panel field)
 
@@ -240,7 +240,7 @@ Exact rows (hooks, table windows complete only; cut = maxDD cut vs the exact S1b
 |---|---|---|---|---|---|---|---|---|
 | R5_BO_1 | 23 | {"bo": {"trig": "cut", "N": 120, "same": false, "trig_books": ["K7", "P7", "M7", "U7", "A7", "H7"], "block_boo | -26/-/40/- | -74/16/- | -6417 | -49 | 27 / 3811 | [EXACT partial] |
 | R5_BO_2 | 23 | {"bo": {"trig": "cutstop", "N": 120, "same": false, "trig_books": ["K7", "P7", "M7", "U7", "A7", "H7"], "block | -3/-/47/- | -31/33/- | -4784 | -66 | 29 / 2516 | [EXACT partial] |
-| R5_BO_3 | 23 | {"bo": {"trig": "cutstop", "N": 30, "same": true, "trig_books": ["P7"], "block_books": ["P7"], "own": true}} | 8/-/9/- | 17/18/- | 3005 | 72 | 25 / 387 | [EXACT partial] |
+| R5_BO_3 | 32 | {"bo": {"trig": "cutstop", "N": 30, "same": true, "trig_books": ["P7"], "block_books": ["P7"], "own": true}} | 8/-/9/- | 17/18/- | 3005 | 72 | 25 / 387 | [EXACT partial] |
 | R5_BO_LIVE | 6 | {"bo": {"trig": "cut", "N": 30, "same": true, "trig_books": ["U7"], "block_books": ["U7"], "own": true}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
 | R5_NTZ_1 | 23 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 7/-/-6/- | -21/-37/- | -5268 | -36 | 20 / 576 | [EXACT partial] |
 | R5_NTZ_2 | 23 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 10/-/-2/- | -18/-33/- | -5375 | -36 | 20 / -6 | [EXACT partial] |
@@ -256,6 +256,6 @@ Exact rows (hooks, table windows complete only; cut = maxDD cut vs the exact S1b
 | R5_OTE_LIVE | 6 | {"ote": {"line": "OTE62_15m", "D": 30, "action": "B73", "f": []}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
 | R5_TEST | 1 | {} | -/-/-/- | -/-/- | - | - | - | [EXACT partial] |
 
-Months done per set: R5_BO_1 23, R5_BO_2 23, R5_BO_3 23, R5_BO_LIVE 6, R5_NTZ_1 23, R5_NTZ_2 23, R5_NTZ_3 23, R5_NTZ_LIVE 6, R5_O7_1 23, R5_O7_2 23, R5_O7_3 23, R5_O7_LIVE 6, R5_OTE_1 23, R5_OTE_2 23, R5_OTE_3 23, R5_OTE_LIVE 6, R5_TEST 1. Identity test R5_TEST (empty hooks par) on 202610: 823 trades, net 47,330.50, all columns identical to base_b/S1-COMB (PASSED).
+Months done per set: R5_BO_1 23, R5_BO_2 23, R5_BO_3 32, R5_BO_LIVE 6, R5_NTZ_1 23, R5_NTZ_2 23, R5_NTZ_3 23, R5_NTZ_LIVE 6, R5_O7_1 23, R5_O7_2 23, R5_O7_3 23, R5_O7_LIVE 6, R5_OTE_1 23, R5_OTE_2 23, R5_OTE_3 23, R5_OTE_LIVE 6, R5_TEST 1. Identity test R5_TEST (empty hooks par) on 202610: 823 trades, net 47,330.50, all columns identical to base_b/S1-COMB (PASSED).
 
 Hook semantics and the first-order-vs-exact lesson (SZ_BASE_PROOF): first-order overstates anything that adds lots or changes exits; only the drawdown RANKING is usable first-order; all retarget / OTE / O7 rows are screens.

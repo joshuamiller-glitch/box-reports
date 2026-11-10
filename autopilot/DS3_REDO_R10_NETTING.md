@@ -327,4 +327,4 @@ Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mo
 Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
 
 ## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
-Take-both (live) stays. Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 10:55 UTC)
+Take-both (live) stays. Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 11:44 UTC)

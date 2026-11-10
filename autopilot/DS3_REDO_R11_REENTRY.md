@@ -168,4 +168,4 @@ Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mo
 Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
 
 ## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
-FULL re-entry (live) stays. Exact L6M: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts maxDD 19.0% at +$1,481/wk (first-order screen said 50%); own-book N120 and any-book N60 do not hold. The first-order PRE mean of the N30 cell is about -$3.3k/wk, so expect RECENT-ONLY under rule 2a unless the exact PRE row says otherwise; not a panel change until PRE/X' and the WF are in. (draft generated 2026-11-10 10:55 UTC)
+FULL re-entry (live) stays. Exact L6M: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts maxDD 19.0% at +$1,481/wk (first-order screen said 50%); own-book N120 and any-book N60 do not hold. The first-order PRE mean of the N30 cell is about -$3.3k/wk, so expect RECENT-ONLY under rule 2a unless the exact PRE row says otherwise; not a panel change until PRE/X' and the WF are in. (draft generated 2026-11-10 11:44 UTC)
