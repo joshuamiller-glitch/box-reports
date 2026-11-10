@@ -1,4 +1,4 @@
-# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-10 03:56Z)
+# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-10 06:17Z)
 
 **ROLL-FIXED reference (engine ROLLFIX1: flatten at the 14 rolls; live reference = base_b_rollfix S1-COMB, 21,163 rows; M tables lifted by Z.lift_M, new rows m=1). FIRST-ORDER SCREEN ONLY. PRE-PROOF, post-hoc, shadow only, no PASS claims. Every layer stays ON in every stack: option 0 of each layer is the live setting (multiplier 1).** The layer pools are stand-ins built by SZ-IJK from the owners' multiplier files (M_*.npz, the lot-level layers only) until the owners write /mnt/l2/l2vast/_th_joint/layers/<layer>/topK.json. Cut / profit-rule / lock / entry layers are NOT multiplier-composable and are not in this version.
 
@@ -18,13 +18,13 @@ Exact engine throughput about 24 cell-months/hour/worker with month batching, 6 
 | COOL | 61 | cooldown |
 | ZONE | 65 | reg, zone |
 | A06 | 2 | reg |
-| B02 | 5 | reg |
+| B02 | 4 | reg |
 
 ## Registered layers (/mnt/l2/l2vast/_th_joint/layers/*/topK.json)
 
-Static-M layers (multiplier arrays, composable first-order by product): a06_slots: 2 cells incl. live; b02: 5 cells incl. live; brackets: 1 cells incl. live; cooldown_r5: 1 cells incl. live; cooldowns: 1 cells incl. live; entry: 1 cells incl. live; hm5: 1 cells incl. live; locks: 1 cells incl. live; lot_tables: 4 cells incl. live; netting: 1 cells incl. live; ntz: 1 cells incl. live; o7: 1 cells incl. live; ote: 1 cells incl. live; reentry: 1 cells incl. live; session_blocks: 1 cells incl. live; shadow: 2 cells incl. live; signals: 7 cells incl. live; sizer: 5 cells incl. live; stack_cut: 1 cells incl. live; stopexit: 4 cells incl. live; zone: 5 cells incl. live. In the screen: SIZER, LOT, ZONE, A06, B02 take the registered cells first (then the stand-in grids); hm5 and stack_cut registered only the live setting.
+Static-M layers (multiplier arrays, composable first-order by product): a06_slots: 2 cells incl. live; b02: 4 cells incl. live; brackets: 1 cells incl. live; cooldown_r5: 1 cells incl. live; cooldowns: 1 cells incl. live; entry: 1 cells incl. live; hm5: 1 cells incl. live; locks: 1 cells incl. live; lot_tables: 4 cells incl. live; netting: 1 cells incl. live; ntz: 1 cells incl. live; o7: 1 cells incl. live; ote: 1 cells incl. live; reentry: 1 cells incl. live; session_blocks: 1 cells incl. live; shadow: 2 cells incl. live; signals: 7 cells incl. live; sizer: 5 cells incl. live; sizer_state: 1 cells incl. live; stack_cut: 1 cells incl. live; stack_exposure: 1 cells incl. live; stopexit: 4 cells incl. live; zone: 5 cells incl. live. In the screen: SIZER, LOT, ZONE, A06, B02 take the registered cells first (then the stand-in grids); hm5 and stack_cut registered only the live setting.
 
-Trade-list / hook layers (NOT multiplier-composable: they change exits, re-entries, locks, entries; verdicts only from joint exact runs through their hooks): a06_slots: 1 cells; brackets: 4 cells; cooldown_r5: 5 cells; cooldowns: 5 cells; cut: 5 cells; entry: 4 cells; locks: 5 cells; lot_tables: 1 cells; netting: 4 cells; ntz: 5 cells; o7: 4 cells; ote: 4 cells; profit: 64 cells; reentry: 5 cells; session_blocks: 4 cells; shadow: 8 cells; signals: 28 cells; stopexit: 4 cells.
+Trade-list / hook layers (NOT multiplier-composable: they change exits, re-entries, locks, entries; verdicts only from joint exact runs through their hooks): a06_slots: 1 cells; brackets: 4 cells; cooldown_r5: 5 cells; cooldowns: 5 cells; cut: 5 cells; entry: 4 cells; locks: 5 cells; lot_tables: 1 cells; netting: 4 cells; ntz: 5 cells; o7: 4 cells; ote: 4 cells; profit: 64 cells; reentry: 5 cells; session_blocks: 4 cells; shadow: 8 cells; signals: 28 cells; sizer_state: 1 cells; stack_exposure: 1 cells; stopexit: 4 cells.
 
 
 ## Top-10 joint stacks, first-order screen (full factorial of the top-5 per layer, distinct lot arrays)
@@ -33,31 +33,31 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 
 | # | SIZER | LOT | SIGQ | REG | STACK | COOL | ZONE | A06 | B02 | key | eq cut L6M / HOLD / PRE / X' | cut at equal lots L6M | d mean L6M | worst-20 L6M cell / live | PRE tolerance | stage |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | live | reg:lot_tables:lot_P7_744 | live | regime:e18edff4f8d3 | live | cooldown:5adf9b2c9b46 | reg:zone:ZNC_B0 | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +89.4 / +85.0 / +87.6 | +100.0 | -1081 | 275k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
-| 2 | live | live | live | regime:e18edff4f8d3 | live | cooldown:5adf9b2c9b46 | reg:zone:ZNC_B0 | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +87.8 / +83.4 / +89.6 | +100.0 | -189 | 295k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
-| 3 | live | reg:lot_tables:lot_P7_644 | live | regime:e18edff4f8d3 | live | cooldown:5adf9b2c9b46 | reg:zone:ZNC_B0 | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +89.5 / +83.9 / +86.6 | +100.0 | -2331 | 268k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
-| 4 | reg:sizer:AB_73ca99b0ec2d | reg:lot_tables:lot_greedy_down | live | regime:e18edff4f8d3 | live | cooldown:fbe1c726c9b2 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +87.9 / +84.8 / +84.9 | +100.0 | -4921 | 221k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
-| 5 | live | reg:lot_tables:lot_greedy_down | live | regime:e18edff4f8d3 | live | cooldown:6e18cc85a3d6 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +89.2 / +85.0 / +82.9 | +100.0 | -3463 | 246k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
-| 6 | reg:sizer:AB_73ca99b0ec2d | reg:lot_tables:lot_greedy_down | live | regime:e18edff4f8d3 | live | cooldown:6e18cc85a3d6 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +90.9 / +82.5 / +83.7 | +100.0 | -4959 | 227k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
-| 7 | live | reg:lot_tables:lot_greedy_down | live | regime:e18edff4f8d3 | live | cooldown:fbe1c726c9b2 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +86.6 / +85.3 / +85.1 | +100.0 | -3426 | 241k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
-| 8 | reg:sizer:AB_73ca99b0ec2d | live | live | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:fbe1c726c9b2 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +81.5 / +84.5 / +86.8 | +100.0 | -5072 | 240k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
-| 9 | reg:sizer:VT_S2 | reg:lot_tables:lot_P7_744 | live | regime:e18edff4f8d3 | live | cooldown:6e18cc85a3d6 | reg:zone:ZNC_B0 | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +86.1 / +81.9 / +83.9 | +100.0 | -3039 | 247k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
-| 10 | live | reg:lot_tables:lot_P7_644 | live | regime:e18edff4f8d3 | live | cooldown:fbe1c726c9b2 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +83.4 / +84.4 / +83.9 | +100.0 | -7106 | 272k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 1 | reg:sizer:AB_73ca99b0ec2d | reg:lot_tables:lot_greedy_down | live | regime:e18edff4f8d3 | live | cooldown:fbe1c726c9b2 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +87.9 / +84.8 / +84.9 | +100.0 | -4921 | 221k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 2 | live | reg:lot_tables:lot_greedy_down | live | regime:e18edff4f8d3 | live | cooldown:6e18cc85a3d6 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +89.2 / +85.0 / +82.9 | +100.0 | -3463 | 246k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 3 | reg:sizer:AB_73ca99b0ec2d | reg:lot_tables:lot_greedy_down | live | regime:e18edff4f8d3 | live | cooldown:6e18cc85a3d6 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +90.9 / +82.5 / +83.7 | +100.0 | -4959 | 227k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 4 | live | reg:lot_tables:lot_greedy_down | live | regime:e18edff4f8d3 | live | cooldown:fbe1c726c9b2 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +86.6 / +85.3 / +85.1 | +100.0 | -3426 | 241k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 5 | live | reg:lot_tables:lot_P7_744 | live | regime:e18edff4f8d3 | live | cooldown:5adf9b2c9b46 | reg:zone:ZS_C0_6e93e2da912d | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +86.9 / +84.7 / +81.8 | +100.0 | -1430 | 265k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 6 | reg:sizer:AB_73ca99b0ec2d | live | live | regime:e18edff4f8d3 | equal_risk:C|riskcap_per_trade|R$3600|P7 | cooldown:fbe1c726c9b2 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +81.5 / +84.5 / +86.8 | +100.0 | -5072 | 240k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 7 | live | live | live | regime:e18edff4f8d3 | live | cooldown:5adf9b2c9b46 | reg:zone:ZS_C0_6e93e2da912d | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +86.3 / +84.1 / +81.4 | +100.0 | -1126 | 274k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 8 | live | reg:lot_tables:lot_P7_644 | live | regime:e18edff4f8d3 | live | cooldown:fbe1c726c9b2 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +83.4 / +84.4 / +83.9 | +100.0 | -7106 | 272k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 9 | reg:sizer:VT_S2 | live | live | regime:e18edff4f8d3 | live | cooldown:fbe1c726c9b2 | live | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.4 | +100.0 / +78.0 / +85.9 / +87.4 | +100.0 | -639 | 275k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
+| 10 | live | live | signal_quality:73c32e59f366 | regime:e18edff4f8d3 | live | cooldown:5adf9b2c9b46 | reg:zone:ZS_C0_6e93e2da912d | reg:a06_slots:a06_greedy_down | reg:b02:B02_K7P7H7_20_1.00_alld_0.0 | 100.3 | +100.0 / +79.9 / +82.5 / +81.7 | +100.0 | -2963 | 241k / 165k | RECENT-ONLY-UNKNOWN-WF | FIRST-ORDER SCREEN ONLY |
 
 ## Coordinate descent (live + 10 random starts, one layer at a time against the key)
 
 | start | local optimum | key |
 |---|---|---|
 | live | SIZER=sizer_vt:e3f124a36d05 / LOT=reg:lot_tables:lot_P7_744 / SIGQ=signal_quality:7f7622673f09 / REG=regime:3cf7b58e25a6 / STACK=exposure_stack:E|total_lots_ca / COOL=cooldown:f511b70e6d8d / ZONE=live / A06=live / B02=reg:b02:B02_K7P7H7_20_1.00_all | 100.3 |
-| random | SIZER=sizer_vt:c5f9e199982a / LOT=p7_other:3f44a5a78d9d / SIGQ=signal_quality:4a5f60bba7ac / REG=regime:27a5724a4970 / STACK=exposure_stack:E|corr_same_sid / COOL=live / ZONE=zone:02625bc77f17 / A06=live / B02=reg:b02:B02_allbooks_5_1.50_al | 100.3 |
-| random | SIZER=sizer_vol:1b5942ac8cd6 / LOT=p7_other:5cc859f6b289 / SIGQ=signal_quality:2b44cb2c7a67 / REG=regime:8715ffc91335 / STACK=exposure_stack:E|same_side_lot / COOL=cooldown:9f55d2c16275 / ZONE=zone:465821f8c60d / A06=live / B02=reg:b02:B02_allbooks_5_1.50_al | 100.3 |
-| random | SIZER=sizer_vt:cc447c626f19 / LOT=p7_other:3720d0d6b4b1 / SIGQ=signal_quality:f591c705629b / REG=regime:e18edff4f8d3 / STACK=exposure_stack:E|same_side_lot / COOL=live / ZONE=zone:7570c5ff7f2d / A06=live / B02=reg:b02:B02_allbooks_5_1.50_al | 100.3 |
-| random | SIZER=sizer_vt:419ae68d5979 / LOT=p7_other:3e206f50c848 / SIGQ=signal_quality:aa09f9fe883b / REG=regime:e933d2e9378d / STACK=equity_state:D|dayloss_stack$| / COOL=cooldown:8b279ff8d6b8 / ZONE=zone:855dd27acc89 / A06=reg:a06_slots:a06_greedy_down / B02=reg:b02:B02_K7P7H7_20_1.00_all | 100.4 |
-| random | SIZER=sizer_vt:419ae68d5979 / LOT=p7_other:f4181da4c118 / SIGQ=signal_quality:e37f04b47dd5 / REG=regime:910b86c59480 / STACK=exposure_stack:E|same_side_lot / COOL=cooldown:2f1c1eaa9261 / ZONE=zone:7570c5ff7f2d / A06=reg:a06_slots:a06_greedy_down / B02=reg:b02:B02_allbooks_5_1.50_al | 100.4 |
-| random | SIZER=sizer_vt:92ddfe458baa / LOT=p7_other:28402d9ed83a / SIGQ=signal_quality:98d80d0f642a / REG=regime:4ea126879bc5 / STACK=exposure_stack:E|same_side_lot / COOL=cooldown:f511b70e6d8d / ZONE=zone:e34226b932fa / A06=reg:a06_slots:a06_greedy_down / B02=reg:b02:B02_K7P7H7_20_1.00_all | 100.4 |
+| random | SIZER=sizer_vt:d65ad35f7583 / LOT=p7_other:17dc82660d90 / SIGQ=signal_quality:894921a2d1c4 / REG=regime:72ffa1d9c2fa / STACK=equity_state:D|eqdd_stack_20d| / COOL=cooldown:fbe1c726c9b2 / ZONE=zone:7570c5ff7f2d / A06=live / B02=reg:b02:B02_K7P7H7_20_1.00_all | 100.4 |
+| random | SIZER=sizer_vol:1b5942ac8cd6 / LOT=p7_other:5cc859f6b289 / SIGQ=signal_quality:2b44cb2c7a67 / REG=regime:8715ffc91335 / STACK=exposure_stack:E|same_side_lot / COOL=cooldown:9f55d2c16275 / ZONE=zone:465821f8c60d / A06=live / B02=live | 100.3 |
+| random | SIZER=reg:sizer:AB_e2058312a643 / LOT=p7_other:9ce43e948920 / SIGQ=signal_quality:da5d92c18f1f / REG=regime:ffe1dffa4c6a / STACK=equity_state:D|consec_loss|boo / COOL=cooldown:f4edae75e179 / ZONE=zone:0a3bc6037631 / A06=live / B02=reg:b02:B02_allbooks_20_1.00_a | 94.4 |
+| random | SIZER=sizer_vt:7b692e38e6f1 / LOT=p7_other:3720d0d6b4b1 / SIGQ=signal_quality:6b7b2de4509f / REG=regime:d11857aae126 / STACK=equity_state:D|eqdd_book_20d_R / COOL=cooldown:21142bd69657 / ZONE=zone:8031aee5ac1d / A06=reg:a06_slots:a06_greedy_down / B02=reg:b02:B02_K7P7H7_20_1.20_all | 100.3 |
+| random | SIZER=reg:sizer:AB_e2058312a643 / LOT=p7_other:3e206f50c848 / SIGQ=signal_quality:98d80d0f642a / REG=regime:d11857aae126 / STACK=equity_state:D|dayloss_stack$| / COOL=cooldown:f511b70e6d8d / ZONE=zone:f8fbee4f18de / A06=reg:a06_slots:a06_greedy_down / B02=reg:b02:B02_allbooks_20_1.00_a | 100.4 |
+| random | SIZER=sizer_vt:e7400edefb68 / LOT=live / SIGQ=signal_quality:894921a2d1c4 / REG=regime:910b86c59480 / STACK=exposure_stack:E|total_lots_ca / COOL=cooldown:0ca796d7b606 / ZONE=zone:e34226b932fa / A06=reg:a06_slots:a06_greedy_down / B02=reg:b02:B02_K7P7H7_20_1.00_all | 100.4 |
 | random | SIZER=sizer_vol:faebfc320da8 / LOT=p7_other:17dc82660d90 / SIGQ=signal_quality:98d80d0f642a / REG=regime:9a89fe48f047 / STACK=exposure_stack:E|corr_same_sid / COOL=live / ZONE=zone:7570c5ff7f2d / A06=reg:a06_slots:a06_greedy_down / B02=reg:b02:B02_K7P7H7_20_1.00_all | 100.4 |
 | random | SIZER=sizer_vt:f7d0f18fbc1b / LOT=p7_other:b1c8bbda384d / SIGQ=signal_quality:a08183547df2 / REG=regime:47eaf3230c33 / STACK=exposure_stack:E|same_side_lot / COOL=cooldown:38737e4187ce / ZONE=zone:0c17aec1653b / A06=reg:a06_slots:a06_greedy_down / B02=live | 100.3 |
-| random | SIZER=sizer_vt:7b692e38e6f1 / LOT=p7_other:b1c8bbda384d / SIGQ=signal_quality:2aeb93aa1b83 / REG=regime:4ea126879bc5 / STACK=exposure_stack:E|total_lots_ca / COOL=cooldown:6e18cc85a3d6 / ZONE=reg:zone:ZNS_6e93e2da912d / A06=live / B02=reg:b02:B02_K7P7H7_20_1.20_all | 98.1 |
+| random | SIZER=sizer_vt:c5f9e199982a / LOT=p7_other:2e1688481e8c / SIGQ=signal_quality:2b44cb2c7a67 / REG=regime:0c9d251dc8cd / STACK=exposure_stack:E|same_side_lot / COOL=cooldown:1b987436da19 / ZONE=zone:f8fbee4f18de / A06=live / B02=live | 100.3 |
 | random | SIZER=sizer_vol:d852c862a088 / LOT=p7_other:049180332953 / SIGQ=signal_quality:98d80d0f642a / REG=regime:9ecb10dea3f9 / STACK=exposure_stack:E|max_books_on| / COOL=cooldown:f511b70e6d8d / ZONE=zone:2427fb49a296 / A06=reg:a06_slots:a06_greedy_down / B02=reg:b02:B02_K7P7H7_20_1.20_all | 100.3 |
 
 ## Interaction table (best single cell per layer by key; pair gain minus the sum of single gains, equal-mean L6M cut points; FLAG = |interaction| > 10% of either single gain)
@@ -103,9 +103,9 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 
 ## Validation of the joint pick (first-order)
 
-- Placebo / family null over the joint space: 5000 random stacks over the full grids give key quantiles median 68.4, 90% 85.5, 99% 95.1, max 100.3. The best factorial stack key is 100.4: it is above the best random stack, i.e. the full-grid random search finds stacks as good as the top-K factorial (no evidence that top-K selection matters; family p for the best stack over this joint space is about 1 (it is the maximum of a searched set)).
-- Joint walk-forward (monthly, purged 7 d, trailing 26 weeks, candidate pool = live + 1500 random stacks NOT selected on full-sample data, pick by equal-mean train maxDD): OOS maxDD cut +75.1% vs live, d mean -9175 $/wk, live kept in 0 of 34 months. The pick procedure does cut OOS maxDD but gives up mean (it is mostly an exposure reduction).
-- STANDING RULE 2 primary OOS test, bi-weekly re-pick WF (trailing 26 weeks -> next 2 weeks, purged 7 d) of the whole joint procedure: 75 refit periods since 2024-01, OOS maxDD cut +72.0% with d mean -9626 $/wk; the pick beat live (period P&L >= live and in-period drawdown <= live) in 39% of periods (P&L alone 39%); since 2026-05-12 (13 periods): 46% beat, 46% P&L-ge.
+- Placebo / family null over the joint space: 5000 random stacks over the full grids give key quantiles median 67.5, 90% 85.0, 99% 94.4, max 100.3. The best factorial stack key is 100.4: it is above the best random stack, i.e. the full-grid random search finds stacks as good as the top-K factorial (no evidence that top-K selection matters; family p for the best stack over this joint space is about 1 (it is the maximum of a searched set)).
+- Joint walk-forward (monthly, purged 7 d, trailing 26 weeks, candidate pool = live + 1500 random stacks NOT selected on full-sample data, pick by equal-mean train maxDD): OOS maxDD cut +76.9% vs live, d mean -9529 $/wk, live kept in 0 of 34 months. The pick procedure does cut OOS maxDD but gives up mean (it is mostly an exposure reduction).
+- STANDING RULE 2 primary OOS test, bi-weekly re-pick WF (trailing 26 weeks -> next 2 weeks, purged 7 d) of the whole joint procedure: 75 refit periods since 2024-01, OOS maxDD cut +76.5% with d mean -9669 $/wk; the pick beat live (period P&L >= live and in-period drawdown <= live) in 36% of periods (P&L alone 36%); since 2026-05-12 (13 periods): 46% beat, 46% P&L-ge.
 - Held-out live week: n/a for stacks (the owners' M arrays cover the 21,135 base rows only).
 
 ## Exact engine results for joint stacks (table mode: the stack multiplier applied after the Q1-A ladder, before zone HALF)
@@ -157,6 +157,26 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 | JL06 | L3M | +43.6 | +45.7 | +138 | 125k / 216k |  |
 | JL06 | L6M | +22.6 | +25.6 | +882 | 137k / 165k |  |
 | JL06 | PRE | +23.2 | +26.1 | -4592 | -455k / -717k | RECENT-ONLY (allow 15.0%, WF 59%) |
+| JN02 | L1M | +78.4 | +81.2 | +21324 | 21k / -3k |  |
+| JN02 | L3M | +28.8 | +37.9 | +3649 | 220k / 216k |  |
+| JN02 | L6M | +28.8 | +37.9 | +3297 | 247k / 165k |  |
+| JN02 | PRE | +36.9 | +45.0 | -3265 | -479k / -717k | RECENT-ONLY (allow 25.0%, WF 86%) |
+| JN03 | L1M | +40.2 | +43.3 | +12466 | -8k / -3k |  |
+| JN03 | L3M | +39.0 | +42.2 | +1102 | 187k / 216k |  |
+| JN03 | L6M | +39.0 | +42.2 | +1251 | 218k / 165k |  |
+| JN03 | PRE | +37.6 | +40.9 | -3107 | -458k / -717k | RECENT-ONLY (allow 25.0%, WF 68%) |
+| JN04 | L1M | +67.9 | +73.7 | +18072 | 13k / -3k |  |
+| JN04 | L3M | +43.4 | +53.5 | +5959 | 249k / 216k |  |
+| JN04 | L6M | +43.4 | +53.5 | +4860 | 284k / 165k |  |
+| JN04 | PRE | +31.4 | +43.7 | -3620 | -462k / -717k | RECENT-ONLY (allow 25.0%, WF 82%) |
+| JN05 | L1M | +56.2 | +59.1 | +14954 | 5k / -3k |  |
+| JN05 | L3M | +35.2 | +39.5 | +3448 | 221k / 216k |  |
+| JN05 | L6M | +35.2 | +39.5 | +1610 | 215k / 165k |  |
+| JN05 | PRE | +18.4 | +23.9 | -4001 | -503k / -717k | RECENT-ONLY (allow 25.0%, WF 73%) |
+| JN06 | L1M | +54.5 | +59.4 | -6311 | 12k / -3k |  |
+| JN06 | L3M | +27.0 | +34.7 | +3981 | 229k / 216k |  |
+| JN06 | L6M | +27.0 | +34.7 | +2896 | 246k / 165k |  |
+| JN06 | PRE | +29.4 | +36.8 | -3311 | -487k / -717k | RECENT-ONLY (allow 25.0%, WF 77%) |
 | JY01 | L1M | +87.0 | +65.4 | +27878 | -7k / -3k |  |
 | JY02 | L1M | +86.6 | +61.8 | +27547 | -7k / -3k |  |
 | JY03 | L1M | +87.3 | +58.4 | +27376 | -4k / -3k |  |
@@ -182,7 +202,7 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 
 ## Exact vs first-order (so far)
 
-First-order keys of these stacks were 86-88% (equal-mean cut). Exact engine: J01: L6M eq-mean cut +4.2 / d mean -1809, PRE eq-mean cut +25.5 / d mean -4092, X' eq-mean cut +62.4 / d mean +915; J02: L6M eq-mean cut -1.7 / d mean -3422, PRE eq-mean cut +29.4 / d mean -4187, X' eq-mean cut +69.5 / d mean +4485; J03: L6M eq-mean cut +21.6 / d mean +769, PRE eq-mean cut +35.2 / d mean -6170, X' eq-mean cut +73.5 / d mean +3623, HOLD eq-mean cut +31.6 / d mean -1809; J04: L6M eq-mean cut -3.7 / d mean -3767, PRE eq-mean cut +31.9 / d mean -4383, X' eq-mean cut +64.0 / d mean +2093; JL01: L6M eq-mean cut +36.5 / d mean +2625, PRE eq-mean cut +44.5 / d mean -4452; JL02: L6M eq-mean cut +21.3 / d mean +699, PRE eq-mean cut +10.0 / d mean -3773; JL03: L6M eq-mean cut +21.1 / d mean +1750, PRE eq-mean cut +33.2 / d mean -5161; JL04: L6M eq-mean cut +23.8 / d mean +876, PRE eq-mean cut +24.7 / d mean -5740; JL05: L6M eq-mean cut +9.8 / d mean -94, PRE eq-mean cut +26.9 / d mean -6661; JL06: L6M eq-mean cut +25.6 / d mean +882, PRE eq-mean cut +26.1 / d mean -4592; JY01: ; JY02: ; JY03: ; JY04: ; JY05: ; JY06: ; JZ01: L6M eq-mean cut +0.5 / d mean -5790, PRE eq-mean cut +39.8 / d mean -4554; JZ02: L6M eq-mean cut -4.6 / d mean -3587, PRE eq-mean cut +37.9 / d mean -5056; JZ03: L6M eq-mean cut -39.0 / d mean -3944, PRE eq-mean cut +35.9 / d mean -3919; JZ04: L6M eq-mean cut -28.8 / d mean -5200, PRE eq-mean cut +20.7 / d mean -4926.
+First-order keys of these stacks were 86-88% (equal-mean cut). Exact engine: J01: L6M eq-mean cut +4.2 / d mean -1809, PRE eq-mean cut +25.5 / d mean -4092, X' eq-mean cut +62.4 / d mean +915; J02: L6M eq-mean cut -1.7 / d mean -3422, PRE eq-mean cut +29.4 / d mean -4187, X' eq-mean cut +69.5 / d mean +4485; J03: L6M eq-mean cut +21.6 / d mean +769, PRE eq-mean cut +35.2 / d mean -6170, X' eq-mean cut +73.5 / d mean +3623, HOLD eq-mean cut +31.6 / d mean -1809; J04: L6M eq-mean cut -3.7 / d mean -3767, PRE eq-mean cut +31.9 / d mean -4383, X' eq-mean cut +64.0 / d mean +2093; JL01: L6M eq-mean cut +36.5 / d mean +2625, PRE eq-mean cut +44.5 / d mean -4452; JL02: L6M eq-mean cut +21.3 / d mean +699, PRE eq-mean cut +10.0 / d mean -3773; JL03: L6M eq-mean cut +21.1 / d mean +1750, PRE eq-mean cut +33.2 / d mean -5161; JL04: L6M eq-mean cut +23.8 / d mean +876, PRE eq-mean cut +24.7 / d mean -5740; JL05: L6M eq-mean cut +9.8 / d mean -94, PRE eq-mean cut +26.9 / d mean -6661; JL06: L6M eq-mean cut +25.6 / d mean +882, PRE eq-mean cut +26.1 / d mean -4592; JN02: L6M eq-mean cut +37.9 / d mean +3297, PRE eq-mean cut +45.0 / d mean -3265; JN03: L6M eq-mean cut +42.2 / d mean +1251, PRE eq-mean cut +40.9 / d mean -3107; JN04: L6M eq-mean cut +53.5 / d mean +4860, PRE eq-mean cut +43.7 / d mean -3620; JN05: L6M eq-mean cut +39.5 / d mean +1610, PRE eq-mean cut +23.9 / d mean -4001; JN06: L6M eq-mean cut +34.7 / d mean +2896, PRE eq-mean cut +36.8 / d mean -3311; JY01: ; JY02: ; JY03: ; JY04: ; JY05: ; JY06: ; JZ01: L6M eq-mean cut +0.5 / d mean -5790, PRE eq-mean cut +39.8 / d mean -4554; JZ02: L6M eq-mean cut -4.6 / d mean -3587, PRE eq-mean cut +37.9 / d mean -5056; JZ03: L6M eq-mean cut -39.0 / d mean -3944, PRE eq-mean cut +35.9 / d mean -3919; JZ04: L6M eq-mean cut -28.8 / d mean -5200, PRE eq-mean cut +20.7 / d mean -4926.
 
 Reading: the first-order joint screen of stacked down-sizing layers is NOT predictive of the engine. In the exact run a skipped signal frees the book, which then takes the next signal, and re-entries / locks / slice fills change; so a table that skips 60-85% of signals first-order removes only about 18% of the trades in the engine (F08 pair: 672 vs 823 trades in 202610, lots 1440 vs 1746) and behaves like a mild global lot reduction. Only exact numbers count. Missing windows are still running.
 
@@ -208,8 +228,22 @@ Reading: the STACK exposure cap (E same_side cap6_trunc london) carries the L6M 
 
 New stacks queued for exact L6M + PRE (built from the leave-one-out; JN01 = JL01): JN01 = JL01: J03 minus SIZER; JN02 = JL01 minus SIGQ; JN03 = JL01 with LOT = LOT_P7_744; JN04 = JL01 minus COOL; JN05 = JL01 with STACK = E|same_side_lots_cap|cap8_skip|sess_london; JN06 = JL01 minus REG.
 
+## Exact stack comparison (ROLL-FIXED engine, exact; standing rules 2 / 2a)
+
+| stack | what | cut L6M / L3M / L1M | eq-mean L6M | d mean L6M / L3M | HOLD cut / d mean | PRE cut / d mean | WF beat | 2a label (PRE allowance, WF%) |
+|---|---|---|---|---|---|---|---|---|
+| J03 | full J03 (SIZER VT, LOT P7 cap, SIGQ, REG, STACK E cap6, COOL) | +18.9 / +52.0 / +56.4 | +21.6 | +769 / +513 | +29.2 / -1809 | +33.0 / -6170 | 68% | RECENT-ONLY (allow 25.0%, WF 68%) |
+| JL01 | J03 minus SIZER (= JN01) | +29.0 / +29.0 / +71.4 | +36.5 | +2625 / +3211 | n/a / n/a | +37.9 / -4452 | 82% | RECENT-ONLY (allow 25.0%, WF 82%) |
+| JN02 | JL01 minus SIGQ | +28.8 / +28.8 / +78.4 | +37.9 | +3297 / +3649 | n/a / n/a | +36.9 / -3265 | 86% | RECENT-ONLY (allow 25.0%, WF 86%) |
+| JN03 | JL01 with LOT = LOT_P7_744 | +39.0 / +39.0 / +40.2 | +42.2 | +1251 / +1102 | n/a / n/a | +37.6 / -3107 | 68% | RECENT-ONLY (allow 25.0%, WF 68%) |
+| JN04 | JL01 minus COOL | +43.4 / +43.4 / +67.9 | +53.5 | +4860 / +5959 | n/a / n/a | +31.4 / -3620 | 82% | RECENT-ONLY (allow 25.0%, WF 82%) |
+| JN05 | JL01 with STACK = E|same_side_lots_cap|cap8_skip|sess_london | +35.2 / +35.2 / +56.2 | +39.5 | +1610 / +3448 | n/a / n/a | +18.4 / -4001 | 73% | RECENT-ONLY (allow 25.0%, WF 73%) |
+| JN06 | JL01 minus REG | +27.0 / +27.0 / +54.5 | +34.7 | +2896 / +3981 | n/a / n/a | +29.4 / -3311 | 77% | RECENT-ONLY (allow 25.0%, WF 77%) |
+
+JPV is the regression of the new JointRep driver against the JN04 table run (must equal JN04 on the months run). CF_EN_45 (entry engulf hook) is not composed here; it needs the EntryMixin class swap.
+
 ## Plain sentence
 
-EXACT (recents first): the best exact joint stack so far is JL01: it lowers L6M maxDD +29.0% at equal lots (+36.5% at equal mean, d mean +2625 $/wk), L3M +29.0%, L1M +71.4%; it differs from live in these layers: ?. On the prior it reads: PRE cut +37.9% with d mean -4452 $/wk and X' cut n/a%; standing rule 2a label: RECENT-ONLY (allow 25.0%, WF 82%).
+EXACT (recents first): the best exact joint stack so far is JN04: it lowers L6M maxDD +43.4% at equal lots (+53.5% at equal mean, d mean +4860 $/wk), L3M +43.4%, L1M +67.9%; it differs from live in these layers: ?. On the prior it reads: PRE cut +31.4% with d mean -3620 $/wk and X' cut n/a%; standing rule 2a label: RECENT-ONLY (allow 25.0%, WF 82%).
 
-First-order screen: the best first-order joint stack lowers L6M maxDD +100.0% at equal mean (PRE +85.0%, X' +87.6%) and differs from live in these layers: LOT=reg:lot_tables:lot_P7_744, REG=regime:e18edff4f8d3, COOL=cooldown:5adf9b2c9b46, ZONE=reg:zone:ZNC_B0, A06=reg:a06_slots:a06_greedy_down, B02=reg:b02:B02_K7P7H7_20_1.00_alld_0.0. The screen is lot-level layers only, in-sample, and first-order overstates badly (exact J-pair and joint-stack runs gave a fraction of it). The verdict comes from exact runs, the bi-weekly re-pick WF and the REFIT section; cut / profit / lock / entry / NTZ layers join only through exact hooks.
+First-order screen: the best first-order joint stack lowers L6M maxDD +100.0% at equal mean (PRE +84.8%, X' +84.9%) and differs from live in these layers: SIZER=reg:sizer:AB_73ca99b0ec2d, LOT=reg:lot_tables:lot_greedy_down, REG=regime:e18edff4f8d3, COOL=cooldown:fbe1c726c9b2, A06=reg:a06_slots:a06_greedy_down, B02=reg:b02:B02_K7P7H7_20_1.00_alld_0.0. The screen is lot-level layers only, in-sample, and first-order overstates badly (exact J-pair and joint-stack runs gave a fraction of it). The verdict comes from exact runs, the bi-weekly re-pick WF and the REFIT section; cut / profit / lock / entry / NTZ layers join only through exact hooks.

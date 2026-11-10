@@ -4,7 +4,7 @@
 
 > **ROLL-EXCL (lead 17:35Z): every first-order and exact number on this page excludes the 31 base trades (of the 33 listed in roll_bracket_trades.csv; 2 listed rows are not in the COMB list) alive across a contract roll (key book + entry second +-2 s); their P&L is zeroed before state and scoring. Engine-internal state of the exact runs (lock/cooldown/equity states) still saw those artifact P&L jumps; the 14 roll days are checked in the lock/cooldown exact runs on the R1 page.**
 
-# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-10 04:31Z
+# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-10 06:06Z
 
 **Label: first-order on base S1b-COMB (live D7 v1.5 with the seven state-cut lines), 21135 trades 2023-04..2026-10 (last label day 20261030; the 2026-11-01..05 live weeks are not in the list, so L1M/L2M/L3M windows end 2026-10-30); entries not live-matched; in-sample; PRE-PROOF; post-hoc; Shadow only; no PASS claims.** Reference = Q1-A (the base lots). 3274 cells (C 140, D 1980, E 1110, K 44). Prereg: autopilot/SZ_CDE_PREREG.md (sha in DECISIONS.md).
 
@@ -318,39 +318,39 @@ M_CDE.npz row alignment spot-check (M x base P&L in C.prepare(C.load_trades) ord
 
 | set | cell | L6M exact cut / first-order cut | PRE exact / FO | X' exact / FO | L6M d mean exact / FO | HOLD exact / FO | status |
 |--|--|--|--|--|--|--|--|
-| CDE_F00 | D ; eqdd_book_20d_R ; Y1R_f0.50_sticky ; ALL | +24.0 / +46.6 | +15.3 / +44.6 | +27.6 / +47.4 | -8885.2 / -8362.9 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
-| CDE_F01 | E ; max_books_on ; n1_f0.5 ; sess_london | +25.8 / +27.5 | +11.8 / +25.6 | +7.9 / +16.9 | +679.0 / +145.4 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
-| CDE_F02 | D ; eqdd_book_20d_R ; Y4R_f0.25_sticky ; P7 | +10.7 / +30.3 | +34.4 / +44.9 | +0.6 / +53.2 | -9238.6 / -4029.3 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
-| CDE_F03 | C ; riskcap_per_trade ; R$3600 ; P7 | +18.9 / +37.4 | +18.3 / +39.0 | +51.2 / +40.5 | -12447.3 / -7610.8 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
-| CDE_F04 | D ; eqdd_stack_20d ; Y20000_f0.25_sticky ; sess_london | +30.2 / +29.8 | +36.5 / +43.4 | -0.9 / +12.8 | -1745.7 / -46.8 | na / na | EXACT does not confirm on X' |
+| CDE_F00 | D ; eqdd_book_20d_R ; Y1R_f0.50_sticky ; ALL | +24.0 / +46.6 | +15.3 / +44.6 | +31.4 / +47.4 | -8807.3 / -8362.9 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F01 | E ; max_books_on ; n1_f0.5 ; sess_london | +25.8 / +27.5 | +11.8 / +25.6 | +12.1 / +16.9 | +757.0 / +145.4 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F02 | D ; eqdd_book_20d_R ; Y4R_f0.25_sticky ; P7 | +10.7 / +30.3 | +34.8 / +44.9 | +5.3 / +53.2 | -9137.0 / -4029.3 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F03 | C ; riskcap_per_trade ; R$3600 ; P7 | +18.9 / +37.4 | +18.3 / +39.0 | +53.5 / +40.5 | -12345.8 / -7610.8 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F04 | D ; eqdd_stack_20d ; Y20000_f0.25_sticky ; sess_london | +30.2 / +29.8 | +36.5 / +43.4 | +4.2 / +12.8 | -1667.8 / -46.8 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
 | CDE_F05 | D ; week_loss_book_R ; X2R_f0.00 ; P7_sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F06 | E ; same_side_lots_cap ; cap6_trunc ; sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F07 | D ; eqdd_stack_20d ; Y30000_f0.25_sticky ; sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F08 | E ; total_lots_cap ; cap6_skip ; sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F09 | E ; same_side_lots_cap ; cap6_skip ; P7_sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F10 | E ; total_lots_cap ; cap6_skip ; P7_sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
-| CDE_F11 | K ; P7_lots_by_session ; L4_nyam ; P7 | +12.6 / +6.7 | +4.3 / +7.5 | +7.8 / +12.5 | +2710.1 / +1860.2 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F11 | K ; P7_lots_by_session ; L4_nyam ; P7 | +12.6 / +6.7 | +4.3 / +7.5 | +12.4 / +12.5 | +2788.0 / +1860.2 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
 
 
 ## Family L (SZ-L cooldowns / chop pauses) top-5 EXACT vs first-order (hook codes 20 chop pause, 21 session-loss in cde_exact.py; windows as on this page, ref = S1-COMB trades; first-order from SZ-L raw_L.parquet whose windows run to 11-05)
 
 | set | cell | technique / params | window | exact maxDD cut | first-order cut | exact d mean | FO d mean | exact equal-mean cut | trades in S1-COMB with no exact counterpart (removed) n / net P&L | exact-only trades (re-entries / shifted) n / net P&L | first-after-removed n / P&L | exact total vs ref total |
 |--|--|--|--|--|--|--|--|--|--|--|--|
-| CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | L6M | +18.9 | +21.2 | -2218 | +2735 | +12.2 | 876 / +8007 | 396 / -12726 | 542 / +190234 | +656196 vs +646409 |
-| CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | PRE | -0.2 | +22.8 | -1757 | -3516 | -14.7 | 1368 / +221886 | 665 / +104671 | 871 / +294751 | +943363 vs +1063132 |
-| CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | X' | +51.6 | +24.6 | +1888 | -122 | +72.2 | 540 / -15753 | 318 / +69987 | 360 / +77715 | +148467 vs +62459 |
-| CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | L6M | +15.5 | +17.1 | -4252 | +2727 | +1.1 | 1523 / -867 | 775 / -31809 | 855 / +237374 | +638528 vs +646409 |
-| CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | PRE | -1.7 | +32.0 | -1367 | -3757 | -12.8 | 2312 / +258968 | 1236 / +106615 | 1355 / +385943 | +905818 vs +1063132 |
-| CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | X' | +42.1 | +23.5 | +1401 | +390 | +62.6 | 827 / -9545 | 546 / +58504 | 515 / +82028 | +127988 vs +62459 |
-| CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | L6M | +26.6 | +21.9 | -2921 | +1537 | +18.4 | 1070 / +45212 | 247 / +35233 | 401 / +18506 | +625354 vs +646409 |
-| CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | PRE | +19.4 | +46.5 | -1977 | -1290 | +5.9 | 1080 / +60410 | 204 / -110637 | 532 / +99750 | +896934 vs +1063132 |
-| CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | X' | -0.3 | +15.1 | -24 | +1034 | -1.3 | 80 / -10156 | 33 / -10907 | 65 / +618 | +62729 vs +62459 |
-| CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | L6M | +11.9 | +16.9 | +1811 | +652 | +17.0 | 844 / -51362 | 209 / +52337 | 350 / +31413 | +741782 vs +646409 |
-| CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | PRE | +34.5 | +38.4 | -1052 | -780 | +29.1 | 768 / +5773 | 143 / -89959 | 377 / +67885 | +970442 vs +1063132 |
-| CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | X' | +12.7 | +21.8 | +363 | +267 | +23.5 | 40 / -24145 | 18 / -3654 | 35 / -6598 | +82950 vs +62459 |
-| CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | L6M | -2.4 | +14.9 | -2496 | +1026 | -12.0 | 388 / +32794 | 175 / -14454 | 230 / +131072 | +618103 vs +646409 |
-| CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | PRE | +37.5 | +33.2 | +1862 | -867 | +44.9 | 538 / -13031 | 222 / +83605 | 337 / +215921 | +1185981 vs +1063132 |
-| CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | X' | +25.2 | +32.7 | +373 | -880 | +34.7 | 141 / +13031 | 79 / +36651 | 99 / +82131 | +84514 vs +62459 |
+| CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | L6M [ROLL-FIXED] | +18.9 | +21.2 | -2140 | +2735 | +12.4 | 871 / -7568 | 376 / -28795 | 541 / +174089 | +655630 vs +643973 |
+| CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | PRE [ROLL-FIXED] | +1.3 | +22.8 | -1532 | -3516 | -11.2 | 1353 / +209255 | 651 / +108678 | 868 / +279235 | +943925 vs +1047056 |
+| CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | X' [ROLL-FIXED] | +54.3 | +24.6 | +1995 | -122 | +75.1 | 537 / -16915 | 311 / +73432 | 357 / +79069 | +146401 vs +55787 |
+| CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | L6M [ROLL-FIXED] | +15.5 | +17.1 | -4188 | +2727 | +1.3 | 1525 / -10372 | 763 / -42124 | 857 / +215721 | +637645 vs +643973 |
+| CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | PRE [ROLL-FIXED] | -0.2 | +32.0 | -1142 | -3757 | -9.3 | 2309 / +248003 | 1234 / +112287 | 1355 / +370767 | +906380 vs +1047056 |
+| CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | X' [ROLL-FIXED] | +45.3 | +23.5 | +1508 | +390 | +66.4 | 827 / -7133 | 542 / +65523 | 515 / +82028 | +125922 vs +55787 |
+| CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | L6M [ROLL-FIXED] | +26.6 | +21.9 | -2843 | +1537 | +18.6 | 1066 / +21278 | 228 / +10804 | 401 / +12830 | +624788 vs +643973 |
+| CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | PRE [ROLL-FIXED] | +20.9 | +46.5 | -1752 | -1290 | +9.2 | 1068 / +55385 | 193 / -99024 | 527 / +91373 | +897497 vs +1047056 |
+| CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | X' [ROLL-FIXED] | +4.8 | +15.1 | +83 | +1034 | +8.0 | 77 / -11318 | 26 / -7462 | 62 / +1972 | +60663 vs +55787 |
+| CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | L6M [ROLL-FIXED] | +11.9 | +16.9 | +1889 | +652 | +17.3 | 838 / -71736 | 188 / +31468 | 348 / +24551 | +741216 vs +643973 |
+| CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | PRE [ROLL-FIXED] | +34.5 | +38.4 | -827 | -780 | +30.3 | 756 / +748 | 132 / -78346 | 372 / +59508 | +971004 vs +1047056 |
+| CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | X' [ROLL-FIXED] | +17.0 | +21.8 | +470 | +267 | +30.6 | 37 / -25307 | 11 / -209 | 32 / -5245 | +80884 vs +55787 |
+| CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | L6M [ROLL-FIXED] | -2.4 | +14.9 | -6075 | +1026 | -29.5 | 383 / +17219 | 155 / -30522 | 230 / +119718 | +617537 vs +643973 |
+| CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | PRE [ROLL-FIXED] | +37.5 | +33.2 | +2087 | -867 | +45.8 | 522 / -20227 | 207 / +93047 | 333 / +206757 | +1186544 vs +1047056 |
+| CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | X' [ROLL-FIXED] | +28.4 | +32.7 | +480 | -880 | +40.3 | 138 / +11870 | 72 / +40096 | 96 / +83485 | +82448 vs +55787 |
 
 Cross-check vs sz_core (Z.score on the 12 finalists + top 20, M_CDE arrays): maxDD L6M and PRE identical (max abs diff 0 $). Means and equal-mean cuts differ by ~4k $/wk and a few points because this page ends the windows at label day 2026-10-30 (last day of the COMB trade list; 10-31 is a Saturday) while sz_core runs its calendar to 2026-11-05 and counts the empty weeks (zero P&L) in L1M-L6M means. Exact-run cut numbers use this page's windows.
 
@@ -422,6 +422,53 @@ Q1-A reference rows (maxDD $ / mean $/wk, carrying week dropped) from the three 
 | OLD-BASE | K | K ; P7_lots_by_session ; L4_london ; P7 | +15.4 | +10.4 | +25.1 | +16.5 | 3 | 5 |
 | OLD-BASE | K | K ; P7_lots_by_session ; L5_london ; P7 | +8.4 | +5.8 | +14.7 | +10.7 | 4 | 8 |
 | OLD-BASE | K | K ; P7_lots_by_session ; L6_all ; P7 | +7.7 | +15.9 | +9.9 | +13.6 | 5 | 4 |
+
+## F01 / F04 decision pack (exact, ROLLFIX1; first-order screen numbers only where stated)
+
+### 1. Bi-weekly re-pick WF (Z.wf_biweekly: 26 weeks train -> next 2 weeks, 7-day purge, DD-first picker; the picker chooses between live and the candidate cell(s); uncovered months carry the live series for both so the WF is run only inside contiguous exact blocks)
+
+| block | cells | OOS maxDD cut vs live % | d mean $/wk | refit periods beating live | switches / periods |
+|--|--|--|--|--|--|
+| X-prime+PRE (202304-202506, contiguous) | CDE_F01+CDE_F04 | 31.2 | -860 | 49% | 33 of 43 |
+| X-prime+PRE (202304-202506, contiguous) | CDE_F01 alone vs live | 11.8 | -1120 | 47% | 30 of 43 |
+| X-prime+PRE (202304-202506, contiguous) | CDE_F04 alone vs live | 31.2 | -178 | 26% | 21 of 43 |
+| HOLD+L6M (202511-202610, contiguous) | not covered yet (CDE_F01, CDE_F04) | | | | |
+
+### 2. Rule 2a label (Z.prior_info: allowed PRE deepening = min(25, L6M cut + 10)% only if the bi-weekly WF beats live in >= 60% of periods else 15%; PRE mean floor -1k/wk of live)
+
+| cell | L6M cut (exact) | PRE maxDD cut (exact) | PRE d mean | bi-weekly WF beats live % (block X-prime+PRE, cell alone) | label | allowance % | PRE deeper % |
+|--|--|--|--|--|--|--|--|
+| CDE_F01 | +25.8 | +11.8 | -1490 | 47 | **RECENT-ONLY** | 15 | -11.8 |
+| CDE_F04 | +30.2 | +36.5 | -462 | 26 | **OK-PRIOR** | 15 | -36.5 |
+
+F01 PRE d mean is below the -1k/wk floor, so the mean floor decides: RECENT-ONLY regardless of the WF allowance (the PRE maxDD itself is shallower, so only the mean floor binds). F04 passes both PRE tests.
+
+### 3. Placebo and family p (first-order screen nulls; 100 draws; same-count random removals within book x session; joint stat = min of L6M, PRE, X-prime equal-mean cut; own = this cell, family = max over the E grid / the D grid / the whole CDE set)
+
+| cell | own-draw p | family p (own family grid) | family p (whole CDE set) |
+|--|--|--|--|
+| CDE_F01 | 0.09 | 0.80 | 0.98 |
+| CDE_F04 | 0.04 | 1.00 | 1.00 |
+
+Both clear the own-draw bar on the first-order screen (p <= .10) but not the family bar: they are own-draw only.
+
+### 4. What they remove (exact; trades in the patched live list with no exact counterpart within 5 s = removed; exact-only = re-entries / shifted trades; first-after = first surviving trade of a book after a removed one). Net P&L columns are the reliable ones (see the churn caveat in the cooldown section).
+
+| cell | window | exact trades vs live | lots ratio | removed n / net P&L | by book (n / P&L) | by session (n / P&L) | exact-only n / net P&L | first-after n / P&L | London trades live -> cell | London lots live -> cell | London net live -> cell |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| CDE_F01 | L6M [ROLL-FIXED] | 4987 vs 4861 | 0.930 | 26 / +1668 | K7 12 / +4286; M7 2 / +158; P7 12 / -2777 | london 9 / +5948; nyam 13 / -5794; nypm 4 / +1514 | 152 / +9361 | 16 / +1033 | 1703 -> 1752 | 3636 -> 2741 | +43589 -> +30626 |
+| CDE_F01 | PRE [ROLL-FIXED] | 8016 vs 7923 | 0.912 | 44 / +30410 | K7 10 / +2059; M7 17 / +7398; P7 17 / +20954 | asia 2 / -169; london 27 / +21521; nyam 12 / +8463; nypm 3 / +595 | 137 / -19439 | 27 / -10706 | 2562 -> 2585 | 5583 -> 4003 | +30535 -> -71194 |
+| CDE_F01 | X' [ROLL-FIXED] | 3007 vs 2995 | 0.917 | 8 / -727 | K7 4 / -3592; M7 2 / +1635; P7 2 / +1229 | london 4 / +2865; nyam 1 / -1191; nypm 3 / -2401 | 20 / +113 | 5 / -1296 | 771 -> 775 | 1659 -> 1147 | +17619 -> +5985 |
+| CDE_F04 | L6M [ROLL-FIXED] | 4949 vs 4861 | 0.924 | 19 / -6378 | K7 12 / +3218; M7 1 / +2398; P7 6 / -11994 | london 9 / -6382; nyam 5 / -170; nypm 5 / +175 | 107 / -20714 | 12 / -1524 | 1703 -> 1734 | 3636 -> 2721 | +43589 -> +46270 |
+| CDE_F04 | PRE [ROLL-FIXED] | 8015 vs 7923 | 0.902 | 33 / -21502 | K7 9 / +511; M7 7 / +155; P7 16 / -20661; U7 1 / -1506 | asia 2 / -169; london 25 / -28462; nyam 2 / +7198; nypm 4 / -69 | 125 / -16086 | 21 / +8379 | 2562 -> 2583 | 5583 -> 3818 | +30535 -> +16554 |
+| CDE_F04 | X' [ROLL-FIXED] | 3011 vs 2995 | 0.911 | 4 / +3656 | M7 2 / +1635; P7 2 / +2020 | london 4 / +3656 | 20 / +3266 | 4 / -6297 | 771 -> 775 | 1659 -> 1100 | +17619 -> +8627 |
+
+Reading: the equal-mean cut (L6M +27.7% F01, +26.0% F04) already says the drawdown cut is more than the size reduction would give; the trade/lot counts above show how much London activity is removed.
+
+### 5. Registry and panel lines
+- F01 (max books on = 1 in London at half lots, i.e. a London signal arriving while any other book holds a position is taken at x0.5, rounded, min 1): no D7 v1.5 panel field exists for it (the nearest existing fields are the session lot tables and StackCutPct/StackAsiaOnly, which act on STOPS, not on entry exposure) -> v1.6 code: a per-signal open-books count and a London-only x0.5 entry multiplier. Registered in layers/stack_exposure/topK.json with the live setting (no exposure rule) as the live row.
+- F04 (stack equity-DD size-down: when the stack equity is >= $20k below its 20-label-day high, London entries at x0.25 until the high is regained): no D7 v1.5 field (the existing locks work per book on day/week P&L, not on a stack equity high) -> v1.6 code: stack realized-equity high-water over 20 days, a London size multiplier, sticky release at the old high. Registered in layers/sizer_state/topK.json with the live Q1-A sizer as the live row.
+
 
 ## Exact vs first-order, L6M (first exact result, 2026-11-09 15:35Z; six priority finalists, L6M months 2026-05..10 complete; PRE and X' running)
 Survive in the engine (exact L6M maxDD cut about the first-order cut, equal-mean cut positive): E max_books_on n1 f0.5 on the London session (exact +25.8% vs FO +27.5%, d mean +800 $/wk, equal-mean +27.8%); D eqdd_stack_20d Y20000 f0.25 sticky on London (exact +30.2% vs FO +29.8%, d mean -1.6k, equal-mean +26.2%); K P7 lots cap 4 in NYAM (exact +12.6% vs FO +6.7%, d mean +2.8k, equal-mean +20.2%).

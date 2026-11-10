@@ -1,4 +1,4 @@
-# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 05:55Z)
+# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 06:15Z)
 
 **Label: base S1b-COMB (live D7 v1.5 with the seven state-cut lines), controls NOCUT / UNIF where the owner ran them; first-order unless stage says S2 (exact); entries not live-matched (entry match < .85); in-sample; PRE-PROOF. Post-hoc, Shadow only, no PASS claims.**
 
@@ -105,11 +105,11 @@ Old bases: V0 = research ts2 reference behind DS3_SIZER S4A (run_v13t_ts2; ledge
 | reference cell (EXACT, S1b-COMB, vs exact Q1-A = base; engine_ver in the next-to-last column) | L6M cut / d mean | HOLD | PRE | X' | complete months | bi-weekly WF (cut / d mean / % beat) | prior label (rule 2a: allowance, WF) |
 |--|--|--|--|--|--|--|--|
 | Q1-A (live reference) | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | all 43 | - | - |
-| sizer off (x1) | -28.2 / -1571 | pending | +19.9 / +3204 | +2.2 / +2687 | 40 | +28.3 / +2230 / 20% | OK-PRIOR (allow 15%, WF 20%) |
-| old ladder L (x0.5/x1.5) | -76.1 / -1487 | pending | -17.0 / +3874 | +5.5 / +1002 | 40 | +0.0 / +0 / 0% | RECENT-ONLY (allow 15%, WF 0%) |
-| B (x1/x1.5, up only) | -142.6 / +2450 | pending | -15.2 / +6998 | +9.9 / +4631 | 40 | +0.0 / +975 / 2% | RECENT-ONLY (allow 15%, WF 2%) |
-| ZL-1 vol-target (factor built on unadjusted bars; 97 trades differ after adjustment; X_VTA pending) | +28.3 / -101 | pending | -6.3 / -1833 | +63.7 / +1068 | 40 | -6.3 / -2309 / 59% | RECENT-ONLY (allow 15%, WF 59%) |
-| MV-london override | -1.2 / -107 | pending | pending | pending | 23 | +0.3 / -159 / 42% | PRIOR-UNKNOWN (allow %, WF n/a) |
+| sizer off (x1) | -28.2 / -1571 | -6.4 / -321 | +19.9 / +3204 | +2.2 / +2687 | 43 | +24.6 / +1608 / 13% | OK-PRIOR (allow 15%, WF 13%) |
+| old ladder L (x0.5/x1.5) | -76.1 / -1487 | -41.5 / -395 | -17.0 / +3874 | +5.5 / +1002 | 43 | +0.0 / +0 / 0% | RECENT-ONLY (allow 15%, WF 0%) |
+| B (x1/x1.5, up only) | -142.6 / +2450 | -94.8 / +3136 | -15.2 / +6998 | +9.9 / +4631 | 43 | +0.0 / +605 / 1% | RECENT-ONLY (allow 15%, WF 1%) |
+| ZL-1 vol-target (factor built on unadjusted bars; 97 trades differ after adjustment; X_VTA pending) | +28.3 / -101 | +29.1 / -872 | -6.3 / -1833 | +63.7 / +1068 | 43 | -6.3 / -1973 / 59% | RECENT-ONLY (allow 15%, WF 59%) |
+| MV-london override | -1.2 / -107 | +6.8 / +28 | pending | pending | 26 | +0.3 / +300 / 55% | PRIOR-UNKNOWN (allow %, WF n/a) |
 
 ## Vol-target family (SZ-VT, autopilot/DS3_SIZER_VOLTARGET.md, user top priority; exact engine from the start; first 70 lines, incl. executability rows: scale factor s, max single-trade $ risk, max lots on at once)
 
@@ -519,7 +519,7 @@ Policy per book: KB, SM, HM, MV, PB, OD: live Q1-A sizing retained (no exact cel
 |--|--|--|--|--|--|--|--|
 | P7 cap min(lots,3) London+NYAM (v1.6 field) | ROLLFIX1 | +26.9 / +2833 / +69% | +15.3 / +1379 / +25% | +15.8 / +15 / +17% | +41.3 / +2029 / +28% | +15.8 / -739 / 80% | OK-PRIOR (allow 25%, WF 80%) |
 | P7 session table 7,4,0,4,0,0 (v1.5 panel) | ROLLFIX1 | +22.5 / +489 / +28% | +10.0 / -436 / +18% | +14.8 / -1021 / +16% | +18.8 / +613 / +14% | +14.8 / -1610 / 73% | RECENT-ONLY (allow 25%, WF 73%) |
-| P7 session table 5,4,0,4,0,0 | ROLLFIX1 | +2.5 / -4392 / -37% | pending | +7.1 / -2858 / +19% | +55.1 / +795 / +34% | +7.1 / -3185 / 80% | RECENT-ONLY (allow 15%, WF 80%) |
+| P7 session table 5,4,0,4,0,0 | ROLLFIX1 | +2.5 / -4392 / -37% | +18.6 / -5361 / +15% | +7.1 / -2858 / +19% | +55.1 / +795 / +34% | +7.1 / -3185 / 80% | RECENT-ONLY (allow 15%, WF 80%) |
 
 Equal-mean frontier data (exact, chart-ready CSV: /mnt/l2/l2vast/_th_sz/frontier_exact.csv): cut at equal lots, cut at equal L6M mean (every cell scaled by one global factor), $/wk of mean given up per $1k of maxDD cut.
 

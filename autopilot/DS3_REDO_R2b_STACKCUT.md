@@ -1,10 +1,10 @@
-# DS3_REDO_R2b_STACKCUT - StackCut variants, exact engine (ROLLFIX1), 2026-11-10 05:05Z
+# DS3_REDO_R2b_STACKCUT - StackCut variants, exact engine (ROLLFIX1), 2026-11-10 06:06Z
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. EXACT engine rows (patched ROLLFIX1 S1b engine), reference = patched S1-COMB. STANDING RULE: StackCut stays ON; OFF is a reference row only. Rule 2/2a labels use sz_core.prior_info; the bi-weekly walk-forward cannot be computed because the variants were run only on the L6M and PRE months (WF label suffix UNKNOWN-WF, 15% allowance).**
 
 Live rule (replica sim.stack_on_stop): when a book is STOPPED and its entry session is Asia, every other open position on the same side is cut by 50% (rounded up; one lot = exit all) with exit name StackCut. Variants run: pct 25/75/100, sessions all / Asia+London, trigger = second same-side stop within 30 min / either side / other same-side open lots >= 4.
 
-Identity test (live spec through the new hook vs the patched S1-COMB lists): L6M: 6 of 6 months identical to the patched S1-COMB; PRE: 1 of 1 months identical to the patched S1-COMB.
+Identity test (live spec through the new hook vs the patched S1-COMB lists): L6M: 6 of 6 months identical to the patched S1-COMB; PRE: 6 of 6 months identical to the patched S1-COMB.
 
 ## Exact rows vs live (maxDD cut; d mean $/wk; (b) equal-mean cut; worst-20 cut; StackCut exits)
 

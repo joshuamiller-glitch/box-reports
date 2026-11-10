@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST_FINAL_DRAFT - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 05:17Z)
+# DS3_ZONES_EXHAUST_FINAL_DRAFT - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 06:17Z)
 
 **Labels: ROLL-FIXED (ROLLFIX1 base S1BRF-COMB, 21,163 trades; first-order tables use M tables lifted with Z.lift_M, 59 new rows m = 1); PRE-PROOF (entries not live-matched); post-hoc; Shadow only; NO PASS CLAIMS; FIRST-ORDER SCREEN unless a row says EXACT.** Standing rules: (1) the zone layer stays ON, "no zones / skip all / off" are reference rows only; (2) recents first: L6M/L3M/L1M, then the bi-weekly re-pick walk-forward (trailing 26 weeks -> next 2 weeks, purged 7 d), PRE/X' only as a tolerant check; (2a) PRE deepening allowed = min(25, L6M cut + 10)% only when the bi-weekly WF beats live in >= 60% of refit periods, else 15%, PRE mean floor -$1k/wk; worse = RECENT-ONLY (still reported). Engine caveats at the end.
 
@@ -13,30 +13,30 @@ Keep the live zone layer (HALF D20 on the PoiSet lines + OTE-62 B73 D30) in ever
 | REF_LIVE (live layer: HALF D20 + OTE-62 B73 D30) | 22949 | 79907 | 79907 | 79821 | 99496 | 140288 | 137520 | 165224 | 34734 | exact base by definition |
 | REF_NOZONE_FO | 28122 | 91798 | 91798 | 83462 | 112018 | 144258 | 146301 | 167377 | 36566 | first-order, labelled UP |
 | REF_S4A (first-order ZREPLAY) | 22439 | 90644 | 89078 | 81532 | 107041 | 139299 | 128424 | 140228 | 37824 | first-order cross-check; the exact row of the S4A published layer is REF_LIVE |
-| REF_ZOFF EXACT (zone layer off, reference only) [33 months, engine ROLLFIX1,old] | 25405 | 90124 | 90124 | 90124 |  | 113391 | 186140 | 173487 | | cut vs live L6M/PRE/X' = -13/19/-35 |
+| REF_ZOFF EXACT (zone layer off, reference only) [39 months, engine ROLLFIX1,old] | 25405 | 90124 | 90124 | 90124 | 104074 | 113391 | 186140 | 173487 | | cut vs live L6M/PRE/X' = -13/19/-35 |
 
 Reading: removing the layer (exact) deepens L6M and X' drawdown and shallows PRE; it is a reference only. The user's earlier old-engine number (L6M -12.8 / PRE +19.2 / X' -38.6, WF 16%) is the same sign pattern.
 
 ## 2. Exact-engine rows landed (reference = ROLLFIX1 base daily; windows reported only when every month of the window landed; cut + = shallower maxDD)
 
-| set | months | engine | cut_L1M | eq_cut_L1M | dmean_L1M | cut_L3M | eq_cut_L3M | dmean_L3M | cut_L6M | eq_cut_L6M | dmean_L6M | cut_PRE | eq_cut_PRE | dmean_PRE | cut_X' | eq_cut_X' | dmean_X' |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| REF_ZOFF | 33.0 | ROLLFIX1,old | -12.9 | -7.8 | -626.2 | -12.8 | -7.7 | 454.5 | -12.8 | -7.7 | 1138.5 | 19.2 | 22.8 | 239.9 | -35.4 | -29.3 | -408.4 |
-| ZNC_A0 | 26.0 | ROLLEXCL,ROLLFIX1,old | 2.8 | 9.1 | 753.4 | -9.9 | -2.9 | -3435.7 | -9.9 | -2.9 | 1675.6 | -5.4 | 1.4 | -704.9 |  |  |  |
-| ZNC_B0 | 27.0 | ROLLEXCL,ROLLFIX1,old | -6.9 | 2.7 | -266.0 | -6.8 | 2.8 | -388.4 | -6.8 | 2.8 | 2414.1 | 30.6 | 36.8 | -1319.7 |  |  |  |
-| ZS_C0 | 27.0 | ROLLEXCL,ROLLFIX1 | 14.9 | 23.4 | 3962.3 | 15.0 | 23.4 | -1936.3 | 15.0 | 23.4 | 2344.4 | 17.1 | 25.4 | -923.5 |  |  |  |
-| ZS_D0 | 29.0 | ROLLEXCL,ROLLFIX1 | 29.2 | 26.7 | -5069.2 | 20.3 | 17.5 | 2954.9 | 20.3 | 17.5 | -837.9 | 38.7 | 36.5 | -873.3 |  |  |  |
+| set | months | engine | cut_L1M | eq_cut_L1M | dmean_L1M | cut_L3M | eq_cut_L3M | dmean_L3M | cut_L6M | eq_cut_L6M | dmean_L6M | cut_HOLD | eq_cut_HOLD | dmean_HOLD | cut_PRE | eq_cut_PRE | dmean_PRE | cut_X' | eq_cut_X' | dmean_X' |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF_ZOFF | 39.0 | ROLLFIX1,old | -12.9 | -7.8 | -626.2 | -12.8 | -7.7 | 454.5 | -12.8 | -7.7 | 1138.5 | -4.6 | 0.1 | 1030.8 | 19.2 | 22.8 | 239.9 | -35.4 | -29.3 | -408.4 |
+| ZNC_A0 | 26.0 | ROLLEXCL,ROLLFIX1,old | 2.8 | 9.1 | 753.4 | -9.9 | -2.9 | -3435.7 | -9.9 | -2.9 | 1675.6 |  |  |  | -5.4 | 1.4 | -704.9 |  |  |  |
+| ZNC_B0 | 33.0 | ROLLEXCL,ROLLFIX1,old | -6.9 | 2.7 | -266.0 | -6.8 | 2.8 | -388.4 | -6.8 | 2.8 | 2414.1 |  |  |  | 30.6 | 36.8 | -1319.7 | 23.7 | 30.6 | 1922.1 |
+| ZS_C0 | 33.0 | ROLLEXCL,ROLLFIX1 | 14.9 | 23.4 | 3962.3 | 15.0 | 23.4 | -1936.3 | 15.0 | 23.4 | 2344.4 |  |  |  | 17.1 | 25.4 | -923.5 | 44.5 | 50.1 | 1642.7 |
+| ZS_D0 | 33.0 | ROLLEXCL,ROLLFIX1 | 29.2 | 26.7 | -5069.2 | 20.3 | 17.5 | 2954.9 | 20.3 | 17.5 | -837.9 |  |  |  | 38.7 | 36.5 | -873.3 | 33.4 | 31.0 | 2634.6 |
 
-Compare first-order vs exact for the same cells in the pool table below (column "fo L6M").
+First-order vs exact for the same cells: see the cell-details table right below.
 
 ### Exact sets: cell details (first-order vs exact) and ROLL-FIX status
 
 | set | owner | level | geometry | action | scope | level-specific? | gain over whole-scope action (pts, first-order) | first-order cut L6M | first-order eq-mean L6M | EXACT cut L6M | EXACT cut PRE | EXACT cut X' | roll months not yet ROLLFIX1 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | ZNC_A0 | CORE | ldnl | ahead 1atr | skip | london | SCOPE-EFFECT/unproven | 9.1 | 31 | 35 | -9.9 | -5.4 |  | none |
-| ZNC_B0 | CORE | ALL | ahead 0.25atr hw5 fresh=t1 age<=1d | skip | london | SCOPE-EFFECT/unproven | 19.7 | 34 | 45 | -6.8 | 30.6 |  | none |
-| ZS_C0 | STRUCT | sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55 | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 45 | 50 | 15.0 | 17.1 |  | none |
-| ZS_D0 | STRUCT | bbup_5 | v0 hw0 pt15 AA | quarter | london | level-specific | 13.6 | 36 | 38 | 20.3 | 38.7 |  | none |
+| ZNC_B0 | CORE | ALL | ahead 0.25atr hw5 fresh=t1 age<=1d | skip | london | SCOPE-EFFECT/unproven | 19.7 | 34 | 45 | -6.8 | 30.6 | 23.7 | none |
+| ZS_C0 | STRUCT | sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55 | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 45 | 50 | 15.0 | 17.1 | 44.5 | none |
+| ZS_D0 | STRUCT | bbup_5 | v0 hw0 pt15 AA | quarter | london | level-specific | 13.6 | 36 | 38 | 20.3 | 38.7 | 33.4 | none |
 
 ## 3. The zone layer per book x session (SETTING = live layer unless an exact-confirmed cell beats it)
 
@@ -100,8 +100,8 @@ Exact-confirmed so far means complete exact L6M and PRE rows with cut > 0 in sec
 | cell | owner | level / geometry / action | scope | expression |
 |---|---|---|---|---|
 | LIVE_HALF_D20_OTE62_B73_D30 | | reference row; exact base by definition | | live panel values: PoiSet = PD_mid, RTH_camH3, Kijun_1h, CRT_mid_4h, KC_up_4h, OTE62/705/79_15m; NtzAction = HALF; NtzDistancePts = 20; OTE-62 B73 D30 unchanged |
-| ZS_D0_b0c41cc34961 | | EXACT L6M +20.3 / PRE +38.7 (X'/HOLD pending); bbup_5 v0 hw0 pt15 AA quarter london: maxDD cut L6M/PRE/X' 36/44/46%, equal-mean min cut 38%, gain over group-wide 23 pts, shifted-level gain 18 pts, placebo p 0.06, live-week d$ 3225, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_D0: 29 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
-| ZS_C0_6e93e2da912d | | EXACT L6M +15.0 / PRE +17.1 (X'/HOLD pending); sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55/38%, equal-mean min cut 44%, gain over group-wide 61 pts, shifted-level gain 42 pts, placebo p 0.08, live-week d$ 19865, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_C0: 27 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
+| ZS_D0_b0c41cc34961 | | EXACT L6M +20.3 / PRE +38.7 (X'/HOLD pending); bbup_5 v0 hw0 pt15 AA quarter london: maxDD cut L6M/PRE/X' 36/44/46%, equal-mean min cut 38%, gain over group-wide 23 pts, shifted-level gain 18 pts, placebo p 0.06, live-week d$ 3225, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_D0: 33 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
+| ZS_C0_6e93e2da912d | | EXACT L6M +15.0 / PRE +17.1 (X'/HOLD pending); sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55/38%, equal-mean min cut 44%, gain over group-wide 61 pts, shifted-level gain 42 pts, placebo p 0.08, live-week d$ 19865, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_C0: 33 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
 | ZS_E0_d87874dba5c6 | | ; grid0.5 v0 hw2 pt5 BA quarter london: maxDD cut L6M/PRE/X' 36/48/34%, equal-mean min cut 29%, gain over group-wide 14 pts, shifted-level gain 17 pts, placebo p 0.06, live-week d$ 3873, family p 1.00 (all hyp), FIRST-ORDER | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZS_E0: 0 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
 | ZNB_F00 | | ZN-BOOK ice_w600_n1 AH:D20|s-1|any|any quarter b:PE: equal-mean cut L6M/PRE/X 35/39/37, p_own 0.05, p_fam 1.00, FIRST-ORDER, ROLL-EXCL | | v1.6 proposed: ZoneLevelSet / ZoneGeometry (side, reach pts|ATR, half-width, freshness, age) / ZoneAction (HALF|QUARTER|SKIP) / ZoneScope (book|session); exact status: set ZNB_F00: 0 exact months landed (see DS3_ZONES_EXHAUST_FINAL.md section 2) |
 
@@ -226,4 +226,4 @@ Procedure: trailing 26 weeks of data to 2026-11-05, pool = scope top 40 cells + 
 - Hypothesis counts: CORE 347,553 cells; STRUCT 9,263,348 evaluated; BOOK 32,155; TRIG 1,334,592. Family p uses the conservative independent max-stat; with these counts nothing can reach p <= .10 without a very large effect.
 - Not built: delay-until-through, re-target, structure-stop, 70/30 add and cooldown-after-lost-level actions (exact engine only); per-line marginals of the published eight lines (need the engine with one line left out).
 
-Generated by code/th_zn/zn_final.py (2026-11-10 05:17Z).
+Generated by code/th_zn/zn_final.py (2026-11-10 06:17Z).
