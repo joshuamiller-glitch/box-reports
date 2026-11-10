@@ -1,4 +1,4 @@
-# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-10 06:17Z)
+# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-10 06:48Z)
 
 **ROLL-FIXED reference (engine ROLLFIX1: flatten at the 14 rolls; live reference = base_b_rollfix S1-COMB, 21,163 rows; M tables lifted by Z.lift_M, new rows m=1). FIRST-ORDER SCREEN ONLY. PRE-PROOF, post-hoc, shadow only, no PASS claims. Every layer stays ON in every stack: option 0 of each layer is the live setting (multiplier 1).** The layer pools are stand-ins built by SZ-IJK from the owners' multiplier files (M_*.npz, the lot-level layers only) until the owners write /mnt/l2/l2vast/_th_joint/layers/<layer>/topK.json. Cut / profit-rule / lock / entry layers are NOT multiplier-composable and are not in this version.
 
@@ -177,6 +177,24 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 | JN06 | L3M | +27.0 | +34.7 | +3981 | 229k / 216k |  |
 | JN06 | L6M | +27.0 | +34.7 | +2896 | 246k / 165k |  |
 | JN06 | PRE | +29.4 | +36.8 | -3311 | -487k / -717k | RECENT-ONLY (allow 25.0%, WF 77%) |
+| JP01 | L1M | +50.8 | +56.8 | +13523 | -4k / -3k |  |
+| JP01 | L3M | +42.6 | +49.6 | +3822 | 220k / 216k |  |
+| JP01 | L6M | +42.6 | +49.6 | +3109 | 275k / 165k |  |
+| JP02 | L1M | +65.6 | +66.3 | +17454 | 13k / -3k |  |
+| JP02 | L3M | +56.6 | +57.5 | -938 | 245k / 216k |  |
+| JP02 | L6M | +40.4 | +41.6 | +550 | 273k / 165k |  |
+| JP03 | L1M | +76.0 | +76.0 | -635 | 31k / -3k |  |
+| JP03 | L3M | +46.5 | +46.6 | -1456 | 234k / 216k |  |
+| JP03 | L6M | +42.2 | +42.4 | +73 | 243k / 165k |  |
+| JP04 | L1M | +84.6 | +85.8 | +23904 | 20k / -3k |  |
+| JP04 | L3M | +48.1 | +51.8 | +4347 | 220k / 216k |  |
+| JP04 | L6M | +48.1 | +51.8 | +1729 | 217k / 165k |  |
+| JP05 | L1M | +32.1 | +36.3 | +11756 | -2k / -3k |  |
+| JP05 | L3M | +32.2 | +36.4 | +2176 | 208k / 216k |  |
+| JP05 | L6M | +32.2 | +36.4 | +1472 | 251k / 165k |  |
+| JP06 | L1M | +78.0 | +76.5 | +22248 | 13k / -3k |  |
+| JP06 | L3M | +38.7 | +34.6 | +998 | 177k / 216k |  |
+| JP06 | L6M | +34.6 | +30.2 | -1426 | 185k / 165k |  |
 | JY01 | L1M | +87.0 | +65.4 | +27878 | -7k / -3k |  |
 | JY02 | L1M | +86.6 | +61.8 | +27547 | -7k / -3k |  |
 | JY03 | L1M | +87.3 | +58.4 | +27376 | -4k / -3k |  |
@@ -202,7 +220,7 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 
 ## Exact vs first-order (so far)
 
-First-order keys of these stacks were 86-88% (equal-mean cut). Exact engine: J01: L6M eq-mean cut +4.2 / d mean -1809, PRE eq-mean cut +25.5 / d mean -4092, X' eq-mean cut +62.4 / d mean +915; J02: L6M eq-mean cut -1.7 / d mean -3422, PRE eq-mean cut +29.4 / d mean -4187, X' eq-mean cut +69.5 / d mean +4485; J03: L6M eq-mean cut +21.6 / d mean +769, PRE eq-mean cut +35.2 / d mean -6170, X' eq-mean cut +73.5 / d mean +3623, HOLD eq-mean cut +31.6 / d mean -1809; J04: L6M eq-mean cut -3.7 / d mean -3767, PRE eq-mean cut +31.9 / d mean -4383, X' eq-mean cut +64.0 / d mean +2093; JL01: L6M eq-mean cut +36.5 / d mean +2625, PRE eq-mean cut +44.5 / d mean -4452; JL02: L6M eq-mean cut +21.3 / d mean +699, PRE eq-mean cut +10.0 / d mean -3773; JL03: L6M eq-mean cut +21.1 / d mean +1750, PRE eq-mean cut +33.2 / d mean -5161; JL04: L6M eq-mean cut +23.8 / d mean +876, PRE eq-mean cut +24.7 / d mean -5740; JL05: L6M eq-mean cut +9.8 / d mean -94, PRE eq-mean cut +26.9 / d mean -6661; JL06: L6M eq-mean cut +25.6 / d mean +882, PRE eq-mean cut +26.1 / d mean -4592; JN02: L6M eq-mean cut +37.9 / d mean +3297, PRE eq-mean cut +45.0 / d mean -3265; JN03: L6M eq-mean cut +42.2 / d mean +1251, PRE eq-mean cut +40.9 / d mean -3107; JN04: L6M eq-mean cut +53.5 / d mean +4860, PRE eq-mean cut +43.7 / d mean -3620; JN05: L6M eq-mean cut +39.5 / d mean +1610, PRE eq-mean cut +23.9 / d mean -4001; JN06: L6M eq-mean cut +34.7 / d mean +2896, PRE eq-mean cut +36.8 / d mean -3311; JY01: ; JY02: ; JY03: ; JY04: ; JY05: ; JY06: ; JZ01: L6M eq-mean cut +0.5 / d mean -5790, PRE eq-mean cut +39.8 / d mean -4554; JZ02: L6M eq-mean cut -4.6 / d mean -3587, PRE eq-mean cut +37.9 / d mean -5056; JZ03: L6M eq-mean cut -39.0 / d mean -3944, PRE eq-mean cut +35.9 / d mean -3919; JZ04: L6M eq-mean cut -28.8 / d mean -5200, PRE eq-mean cut +20.7 / d mean -4926.
+First-order keys of these stacks were 86-88% (equal-mean cut). Exact engine: J01: L6M eq-mean cut +4.2 / d mean -1809, PRE eq-mean cut +25.5 / d mean -4092, X' eq-mean cut +62.4 / d mean +915; J02: L6M eq-mean cut -1.7 / d mean -3422, PRE eq-mean cut +29.4 / d mean -4187, X' eq-mean cut +69.5 / d mean +4485; J03: L6M eq-mean cut +21.6 / d mean +769, PRE eq-mean cut +35.2 / d mean -6170, X' eq-mean cut +73.5 / d mean +3623, HOLD eq-mean cut +31.6 / d mean -1809; J04: L6M eq-mean cut -3.7 / d mean -3767, PRE eq-mean cut +31.9 / d mean -4383, X' eq-mean cut +64.0 / d mean +2093; JL01: L6M eq-mean cut +36.5 / d mean +2625, PRE eq-mean cut +44.5 / d mean -4452; JL02: L6M eq-mean cut +21.3 / d mean +699, PRE eq-mean cut +10.0 / d mean -3773; JL03: L6M eq-mean cut +21.1 / d mean +1750, PRE eq-mean cut +33.2 / d mean -5161; JL04: L6M eq-mean cut +23.8 / d mean +876, PRE eq-mean cut +24.7 / d mean -5740; JL05: L6M eq-mean cut +9.8 / d mean -94, PRE eq-mean cut +26.9 / d mean -6661; JL06: L6M eq-mean cut +25.6 / d mean +882, PRE eq-mean cut +26.1 / d mean -4592; JN02: L6M eq-mean cut +37.9 / d mean +3297, PRE eq-mean cut +45.0 / d mean -3265; JN03: L6M eq-mean cut +42.2 / d mean +1251, PRE eq-mean cut +40.9 / d mean -3107; JN04: L6M eq-mean cut +53.5 / d mean +4860, PRE eq-mean cut +43.7 / d mean -3620; JN05: L6M eq-mean cut +39.5 / d mean +1610, PRE eq-mean cut +23.9 / d mean -4001; JN06: L6M eq-mean cut +34.7 / d mean +2896, PRE eq-mean cut +36.8 / d mean -3311; JP01: L6M eq-mean cut +49.6 / d mean +3109; JP02: L6M eq-mean cut +41.6 / d mean +550; JP03: L6M eq-mean cut +42.4 / d mean +73; JP04: L6M eq-mean cut +51.8 / d mean +1729; JP05: L6M eq-mean cut +36.4 / d mean +1472; JP06: L6M eq-mean cut +30.2 / d mean -1426; JY01: ; JY02: ; JY03: ; JY04: ; JY05: ; JY06: ; JZ01: L6M eq-mean cut +0.5 / d mean -5790, PRE eq-mean cut +39.8 / d mean -4554; JZ02: L6M eq-mean cut -4.6 / d mean -3587, PRE eq-mean cut +37.9 / d mean -5056; JZ03: L6M eq-mean cut -39.0 / d mean -3944, PRE eq-mean cut +35.9 / d mean -3919; JZ04: L6M eq-mean cut -28.8 / d mean -5200, PRE eq-mean cut +20.7 / d mean -4926.
 
 Reading: the first-order joint screen of stacked down-sizing layers is NOT predictive of the engine. In the exact run a skipped signal frees the book, which then takes the next signal, and re-entries / locks / slice fills change; so a table that skips 60-85% of signals first-order removes only about 18% of the trades in the engine (F08 pair: 672 vs 823 trades in 202610, lots 1440 vs 1746) and behaves like a mild global lot reduction. Only exact numbers count. Missing windows are still running.
 
@@ -239,8 +257,38 @@ New stacks queued for exact L6M + PRE (built from the leave-one-out; JN01 = JL01
 | JN04 | JL01 minus COOL | +43.4 / +43.4 / +67.9 | +53.5 | +4860 / +5959 | n/a / n/a | +31.4 / -3620 | 82% | RECENT-ONLY (allow 25.0%, WF 82%) |
 | JN05 | JL01 with STACK = E|same_side_lots_cap|cap8_skip|sess_london | +35.2 / +35.2 / +56.2 | +39.5 | +1610 / +3448 | n/a / n/a | +18.4 / -4001 | 73% | RECENT-ONLY (allow 25.0%, WF 73%) |
 | JN06 | JL01 minus REG | +27.0 / +27.0 / +54.5 | +34.7 | +2896 / +3981 | n/a / n/a | +29.4 / -3311 | 77% | RECENT-ONLY (allow 25.0%, WF 77%) |
+| JP01 | JN04 + R1_3 P7 MaxDailyLoss 8400 lock | +42.6 / +42.6 / +50.8 | +49.6 | +3109 / +3822 | n/a / n/a | n/a / n/a | n/a | PRIOR-UNKNOWN |
+| JP02 | JN04 + CDE F04 stack equity-DD London x0.25 sticky | +40.4 / +56.6 / +65.6 | +41.6 | +550 / -938 | n/a / n/a | n/a / n/a | n/a | PRIOR-UNKNOWN |
+| JP03 | JN04 + CDE F01 max books on 1 London x0.5 | +42.2 / +46.5 / +76.0 | +42.4 | +73 / -1456 | n/a / n/a | n/a / n/a | n/a | PRIOR-UNKNOWN |
+| JP04 | JN04 x ZS_D0 zone table | +48.1 / +48.1 / +84.6 | +51.8 | +1729 / +4347 | n/a / n/a | n/a / n/a | n/a | PRIOR-UNKNOWN |
+| JP05 | JN04 with LOT = P7 table 7,4,0,4,0,0 | +32.2 / +32.2 / +32.1 | +36.4 | +1472 / +2176 | n/a / n/a | n/a / n/a | n/a | PRIOR-UNKNOWN |
+| JP06 | JN04 x ZS_D0 + R1_3 lock + F04 | +34.6 / +38.7 / +78.0 | +30.2 | -1426 / +998 | n/a / n/a | n/a / n/a | n/a | PRIOR-UNKNOWN |
 
 JPV is the regression of the new JointRep driver against the JN04 table run (must equal JN04 on the months run). CF_EN_45 (entry engulf hook) is not composed here; it needs the EntryMixin class swap.
+
+## REFIT 2026-11-22 from EXACT ROLL-FIXED series (27 exact stacks with the full 2026-05..10 block; train = trailing 26 weeks to 2026-11-05)
+
+Ranking = Z.refit_pick (maxDD, worst-20, Ulcer, mean). Live trailing: maxDD 79907, mean 24125/wk.
+
+Pick among all candidates: **JP04**. Pick among candidates whose trailing mean is not below live: **JN04**.
+
+| rank | stack | trailing maxDD | worst-20 | mean/wk | rule 2a label (PRE exact) |
+|---|---|---|---|---|---|
+| 1 | JP04 | 41501 | 204974 | 23946 | PRIOR-UNKNOWN |
+| 2 | JN04 | 45203 | 266189 | 27187 | RECENT-ONLY (allow 25.0%, WF 82%) |
+| 3 | JP01 | 45880 | 233710 | 25352 | PRIOR-UNKNOWN |
+| 4 | JP03 | 46157 | 220338 | 25450 | PRIOR-UNKNOWN |
+| 5 | JP02 | 47594 | 251694 | 26137 | PRIOR-UNKNOWN |
+| 6 | JN03 | 48727 | 203100 | 23553 | RECENT-ONLY (allow 25.0%, WF 68%) |
+| 7 | JN05 | 51781 | 202875 | 24141 | RECENT-ONLY (allow 25.0%, WF 73%) |
+| 8 | JP06 | 52249 | 163702 | 20945 | PRIOR-UNKNOWN |
+| 9 | JP05 | 54192 | 227278 | 24082 | PRIOR-UNKNOWN |
+| 10 | JL01 | 56706 | 234827 | 25172 | RECENT-ONLY (allow 25.0%, WF 82%) |
+
+Candidates with trailing mean >= live, best 5: JN04 (maxDD 45203, mean 27187, RECENT-ONLY); JP01 (maxDD 45880, mean 25352, PRIOR-UNKNOWN); JP03 (maxDD 46157, mean 25450, PRIOR-UNKNOWN); JP02 (maxDD 47594, mean 26137, PRIOR-UNKNOWN); JN05 (maxDD 51781, mean 24141, RECENT-ONLY).
+
+This is the pick of a screen over 27 stacks chosen by earlier steps (in-sample over the recent block), not a validated deployment; the bi-weekly WF columns above are the out-of-sample evidence.
+
 
 ## Plain sentence
 
