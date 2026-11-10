@@ -1,4 +1,4 @@
-# DS3_REDO_SUMMARY - T-STACK-REDO rounds R1-R13 in one page (written 2026-11-10 17:10Z by SZ-CORE; refreshed hourly)
+# DS3_REDO_SUMMARY - T-STACK-REDO rounds R1-R13 in one page (written 2026-11-10 18:10Z by SZ-CORE; refreshed hourly)
 
 **PRE-PROOF; post-hoc; Shadow only; no PASS claims.** Base = S1b-COMB (live D7 v1.5 with the seven state-cut lines), engine ROLLFIX1 where a row says ROLL-FIXED; entries not live-matched (match < .85). STANDING RULES: (1) every layer stays ON, off/no-rule rows are references, the live setting is retained where nothing beats it; (2)/(2a) recents first (L1M/L3M/L6M), bi-weekly re-pick WF is the primary OOS test, PRE/X' tolerant with the allowance min(25, L6M cut + 10)% when the WF beats live in >= 60% of periods else 15%, and the PRE mean floor = 25% of the live PRE mean (live PRE mean $13,961/wk, floor -$3,490/wk; user decision 2026-11-10 13:45Z); (3) exact engine runs decide, first-order is a screen only. The stop fill model is optimistic: ABSOLUTE means are optimistic everywhere; drawdown ranking is the usable output.
 
