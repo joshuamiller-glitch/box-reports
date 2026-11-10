@@ -1,4 +1,4 @@
-# DS3_FIND_DRESSED (FD-CORE, 2026-11-10 07:15Z). Post-hoc, Shadow only, no PASS claim, nothing live.
+# DS3_FIND_DRESSED (FD-CORE, 2026-11-10 10:15Z). Post-hoc, Shadow only, no PASS claim, nothing live.
 User order: judge every candidate book WITH the stack on it, not naked. Seat test on the S1b-COMB stack drawdown (API: FD_API.md). MV is the weakest live book on L6M stack-Calmar contribution (removing it alone cuts L6M maxDD 14% at equal mean, so replace seats are credited only beyond that drop-only row).
 
 ## INSTRUMENTS COVERED (user request 21:10Z; counts from candidates.parquet, owner ledgers and liq/ nol2/ directories at page time)
