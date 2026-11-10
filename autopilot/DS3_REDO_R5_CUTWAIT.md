@@ -1,4 +1,4 @@
-# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 01:57Z first version / refresh
+# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 02:57Z first version / refresh
 
 ## 0. Summary block (setting | live value | best on the state base | holds OOS? | change recommended | panel field)
 
@@ -6,12 +6,12 @@ All "best" values are FIRST-ORDER screens until the exact rows land (section 5);
 
 | setting | live value | best on the state base (screen) | holds OOS? | change recommended | panel field |
 |---|---|---|---|---|---|
-| post-cut / post-stop blackout (books, minutes, side) | U7, 30 min, same side, on StateCut | N=120 same=both scope=allbooks trig=cut | placebo p 0.27/0.47, family p 1.00, WF ok | no (screen only; U7 live row changes nothing in the list) | ThL2BlackoutMins / ThL2BlackoutBooks / ThL2BlackoutSameSideOnly (post-stop blackout has no panel field) |
+| post-cut / post-stop blackout (books, minutes, side) | U7, 30 min, same side, on StateCut | N=120 same=both scope=allbooks trig=cut | placebo p 0.27/0.47, family p 1.00, WF ok; EXACT (15 months): cut L6M -26 / PRE -, equal-mean L6M -74, d mean L6M -6417 | no (screen only; U7 live row changes nothing in the list) | ThL2BlackoutMins / ThL2BlackoutBooks / ThL2BlackoutSameSideOnly (post-stop blackout has no panel field) |
 | blackout, single-book best (P7) | none on P7 | N=30 same=same scope=book:P7 trig=cutstop | placebo p 0.14/0.12, family p 1.00, WF ok | no | ThL2BlackoutBooks |
-| NTZ action / distance (global) | Half, D 20 | N1 D=60 act=retarget | placebo p 0.30/0.18, family p 1.00, WF ok | no (UP / optimistic retarget path; exact R5_NTZ_1 decides) | NtzAction / NtzDistancePts |
+| NTZ action / distance (global) | Half, D 20 | N1 D=60 act=retarget | placebo p 0.30/0.18, family p 1.00, WF ok; EXACT (15 months): cut L6M 7 / PRE -, equal-mean L6M -21, d mean L6M -5268 | no (UP / optimistic retarget path; exact R5_NTZ_1 decides) | NtzAction / NtzDistancePts |
 | Kijun line (timeframe, period, own D / action) | Kijun 1h, 26 periods, D 20 Half | N3 Dk=40 act=skip p=52 tf=4h | placebo p 0.02/0.17, family p 1.00, WF ok | no | none (Kijun definition is in code, not a panel field) |
-| OTE-62 band / D / action / max minutes | .62, D 30, B73, 60 | {"D": 10, "act": "WT", "f": 0.65, "maxmin": 15} | placebo p 0.06/0.15, family p 1.00, WF fails | no | OteMode / OteAction / OteDistancePts / OteMaxMinutes |
-| O7 opening drive (arm, trigger, window, stop/target, time exit, lots) | 0.5 x median5, pb1, before 09:45, 40/90, 16:00, 1 lot | lots=1.0 rm=0.5 stop=30 texit=1400 tgt=90 trig=pb1 wend=945 | placebo p 0.18/0.58, family p 1.00, WF ok | no (stack effect < 2 points; O7-only drawdown cells listed) | O7Enabled / O7Qty (the rest is hardcoded in OpenDriveEngine) |
+| OTE-62 band / D / action / max minutes | .62, D 30, B73, 60 | {"D": 10, "act": "WT", "f": 0.65, "maxmin": 15} | placebo p 0.06/0.15, family p 1.00, WF fails; EXACT (15 months): cut L6M 4 / PRE -, equal-mean L6M 0, d mean L6M -1142 | no | OteMode / OteAction / OteDistancePts / OteMaxMinutes |
+| O7 opening drive (arm, trigger, window, stop/target, time exit, lots) | 0.5 x median5, pb1, before 09:45, 40/90, 16:00, 1 lot | lots=1.0 rm=0.5 stop=30 texit=1400 tgt=90 trig=pb1 wend=945 | placebo p 0.18/0.58, family p 1.00, WF ok; EXACT (15 months): cut L6M -1 / PRE -, equal-mean L6M -1, d mean L6M 23 | no (stack effect < 2 points; O7-only drawdown cells listed) | O7Enabled / O7Qty (the rest is hardcoded in OpenDriveEngine) |
 STATUS: post-hoc, Shadow only, no PASS claims, PRE-PROOF (entry match < .85), ROLL-EXCL (33 roll-artifact trades weight 0). Base S1b-COMB (live D7 v1.5 state cut, Q1-A, HALF D20 + OTE-62 B73 D30); carrying week dropped from MEANS only, maxDD / worst-20 / Ulcer on all weeks; windows as of 2026-11-09, trade lists end 2026-10-30. **Every cell below is a FIRST-ORDER SCREEN unless the exact column says EXACT**; exact runs go through the SZ-CORE queue (prefix R5_, tier 2, hooks code/th_r5/r5_hooks.py). Prereg autopilot/R5_PREREG.md (sha in DECISIONS.md). Standing rule: every layer stays ON; the live setting is a reference row; "no rule" never a verdict. Held-out live week = frozen file only; 11-08/09 night v1.5 cuts are bug exits and live NQ cuts are not ground truth, so no live-cut input is used (the live week is used for stop-triggered blackout and O7 only, see section 6).
 ## 1. Blackouts (post-cut / post-stop; all books)
 First-order skip table processed in signal order (a skipped trade does not trigger). **Live reference** = U7, 30 min, same side, on the state cut: in the base list it removes NOTHING (U7 has 0 same-side signals within 30 min of a StateCut: Supertrend 10-min does not re-signal that fast), so the live row equals the base to the dollar by construction (not a testing defect: no signal falls in the window); the engine base itself carries NO blackout (the old per-print ThL2Cut that set it is neutralised), the exact hook row R5_BO_LIVE checks the reconstruction. 402 cells scored; purged monthly WF of the pick (lowest trailing maxDD): WF maxDD cut vs live 28.9%, picks differ from live in 34 of 34 months, WF ok = True.
@@ -238,16 +238,16 @@ Exact rows (hooks, table windows complete only; cut = maxDD cut vs the exact S1b
 
 | set | months | par | cut % L6M/HOLD/PRE/X' | equal-mean cut L6M/PRE/X' | d mean L6M $/wk | w20 cut L6M | first-order screen (cut L6M / d mean L6M, same cell) | status |
 |---|---|---|---|---|---|---|---|---|
-| R5_BO_1 | 9 | {"bo": {"trig": "cut", "N": 120, "same": false, "trig_books": ["K7", "P7", "M7", "U7", "A7", "H7"], "block_boo | -26/-/-/- | -74/-/- | -6417 | -49 | 27 / 3811 | [EXACT partial] |
+| R5_BO_1 | 15 | {"bo": {"trig": "cut", "N": 120, "same": false, "trig_books": ["K7", "P7", "M7", "U7", "A7", "H7"], "block_boo | -26/-/-/- | -74/-/- | -6417 | -49 | 27 / 3811 | [EXACT partial] |
 | R5_BO_LIVE | 6 | {"bo": {"trig": "cut", "N": 30, "same": true, "trig_books": ["U7"], "block_books": ["U7"], "own": true}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
-| R5_NTZ_1 | 9 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 7/-/-/- | -21/-/- | -5268 | -36 | 20 / 576 | [EXACT partial] |
+| R5_NTZ_1 | 15 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 7/-/-/- | -21/-/- | -5268 | -36 | 20 / 576 | [EXACT partial] |
 | R5_NTZ_LIVE | 6 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
-| R5_O7_1 | 9 | {"o7": {"rm": 0.35, "trig": "imm", "wend": 942, "stop": 40, "tgt": 90, "texit": 1600, "lots": 1}} | -1/-/-/- | -1/-/- | 23 | -2 | 1 / 208 | [EXACT partial] |
+| R5_O7_1 | 15 | {"o7": {"rm": 0.35, "trig": "imm", "wend": 942, "stop": 40, "tgt": 90, "texit": 1600, "lots": 1}} | -1/-/-/- | -1/-/- | 23 | -2 | 1 / 208 | [EXACT partial] |
 | R5_O7_LIVE | 6 | {"o7": {"rm": 0.5, "trig": "pb1", "wend": 945, "stop": 40, "tgt": 90, "texit": 1600, "lots": 1}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
-| R5_OTE_1 | 9 | {"ote": {"line": "OTE_650", "D": 10, "action": "WT", "maxmin": 15, "f": [0.65]}} | 4/-/-/- | 0/-/- | -1142 | -7 | 3 / 688 | [EXACT partial] |
+| R5_OTE_1 | 15 | {"ote": {"line": "OTE_650", "D": 10, "action": "WT", "maxmin": 15, "f": [0.65]}} | 4/-/-/- | 0/-/- | -1142 | -7 | 3 / 688 | [EXACT partial] |
 | R5_OTE_LIVE | 6 | {"ote": {"line": "OTE62_15m", "D": 30, "action": "B73", "f": []}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
 | R5_TEST | 1 | {} | -/-/-/- | -/-/- | - | - | - | [EXACT partial] |
 
-Months done per set: R5_BO_1 9, R5_BO_LIVE 6, R5_NTZ_1 9, R5_NTZ_LIVE 6, R5_O7_1 9, R5_O7_LIVE 6, R5_OTE_1 9, R5_OTE_LIVE 6, R5_TEST 1. Identity test R5_TEST (empty hooks par) on 202610: 823 trades, net 47,330.50, all columns identical to base_b/S1-COMB (PASSED).
+Months done per set: R5_BO_1 15, R5_BO_LIVE 6, R5_NTZ_1 15, R5_NTZ_LIVE 6, R5_O7_1 15, R5_O7_LIVE 6, R5_OTE_1 15, R5_OTE_LIVE 6, R5_TEST 1. Identity test R5_TEST (empty hooks par) on 202610: 823 trades, net 47,330.50, all columns identical to base_b/S1-COMB (PASSED).
 
 Hook semantics and the first-order-vs-exact lesson (SZ_BASE_PROOF): first-order overstates anything that adds lots or changes exits; only the drawdown RANKING is usable first-order; all retarget / OTE / O7 rows are screens.
