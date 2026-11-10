@@ -1,5 +1,5 @@
 # DS3_REDO_R9_STOPEXIT - stop-exit and cut-exit mechanics on the state base (T-STACK-REDO R9)  [FIRST-ORDER SCREEN, tape microsim; PRE-PROOF until entry match >= .85; no PASS claims]
-Generated 2026-11-10 01:28 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
+Generated 2026-11-10 04:29 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
 Registry: /mnt/l2/l2vast/_th_joint/layers/stopexit/topK.json. Cell ledger: /mnt/l2/l2vast/_th_stack/r9/cells_r9.parquet.
 
 ## 0. What was measured, how, and the limits
@@ -186,7 +186,3 @@ Trailing 26 weeks to the data end, drawdown first: pick = **R9S_ALL_NAT** (live 
 | R9S_ALL_NATLIVE    | 78594.7 |    133370 | 33786.4 | 24262.9 | False  | PRIOR-UNKNOWN |
 | R9S_ALL_J10_i1_c20 | 79377.3 |    129819 | 33863.6 | 24452.7 | False  | PRIOR-UNKNOWN |
 | R9S_P7_NATLIVE     | 79438.1 |    127499 | 34241.9 | 24074.5 | False  | PRIOR-UNKNOWN |
-
-## EXACT rows (appended)
-Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R9_J5_i1_c10 0, R9_J10_i1_c10 0, R9_J10_i0_c10 0, R9_STRAT0_c10 0
-no exact month finished yet (queue tier of R10_/R11_/R9_ prefixes pending).

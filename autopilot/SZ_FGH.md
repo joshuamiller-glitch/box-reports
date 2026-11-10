@@ -5,13 +5,58 @@
 
 TESTING-DEFECT CHECK (addendum 1c) across my three live-chain bases (COMB, NOCUT, UNIF): of 6788 common cells, L6M maxDD identical to the dollar: 0; PRE: 0. No defect found among my own scores; the first-order scorer cannot see exit/re-entry/lock changes, so the verdict needs EXACT runs.
 
-# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-09 20:27Z
+# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-10 04:13Z
 
 Label: PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER on S1b-COMB (pnl per lot x lots; mean unreliable, drawdown ranking usable), no PASS claims, entry match < .85. Prereg SZ_FGH_PREREG.md (sha in DECISIONS.md). 6786 cells x 3 bases (COMB live, NOCUT, UNIF controls). Ledger /mnt/l2/l2vast/_th_sz/ledger_FGH*.parquet; lots ratios of top cells M_FGH.npz.
 
 Reading: cut = maxDD cut vs Q1-A at equal lots (objective a, + = shallower); eq-mean cut = objective b (every cell scaled by one global factor so L6M mean = Q1-A, size-down-everything cannot win); SEL = mean of eq-mean cut on L6M/PRE/X'; w20/Ulcer = cell/ref on L6M at equal lots (<1 better); $/wk per $1k = L6M mean change per $1k of L6M maxDD removed (+ = the cell also gains mean); p own = lot ratio permuted within book x session (100 draws), "degenerate" = whole book x session group moved, placebo cannot vary; p fam = max-stat over all cells (about 1 for everything with 6786 cells: labelled, not used to kill). All numbers are sz_core.Z.score (SZ-CORE convention: rolling windows as of 2026-11-09, maxDD/worst-20/Ulcer on ALL weeks of the window, carrying week dropped from means only); my own scorer (complete weeks only) agrees on L6M/PRE maxDD cuts exactly and differs in the equal-mean columns (L6M mean window), see section 8. Base data end 2026-10-30. Placebo p own = fgh SEL statistic (permutation within book x session, 100 draws); finalists also get sz_core placebo p (L6M/PRE cut).
 Unavailable and proxied: DS7 St1Dist/signal-state arrays are not owned at trade level (proxies: dip size, EMA/TWAP slope, TWAP deviation, zone distances, EX-FEAT entry-second L2 features, 83% matched); L2 confirmation count is a proxy; no volume in nq1m_state (TWAP not VWAP); ES/RTY 1-s data ends 2026-10-16 (later trades neutral).
 Calendar: FOMC/CPI/NFP dates entered from public schedules (memory); CHECKED against the owned NQ 1-min bars: median 08:30 ET one-minute range on listed CPI days 12.6x the pre-open norm (norm 2.1x), NFP 9.8x, FOMC 14:00 10.0x; 83% of CPI and 97% of FOMC days sit above the 90th percentile of all days; two NFP entries were wrong (2024-10 should be 10-04; 2025-10 had no release) and were fixed; the 08:30 spikes not on my list are PPI/ECI days (not used). Opex = 3rd Friday, roll_wk = days 7-14 of Mar/Jun/Sep/Dec, half-days = day after Thanksgiving, Dec 24, Jul 3 weekdays. Not checked against an official file.
+
+
+<!--FGHFINAL-->
+## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 04:13Z)
+| set | exact maxDD cut % (d mean $/wk) by window | exact worst-20 cut % (+ = better) |
+|--|--|--|
+| P7 7,4,0,4,0,0 (Q_P7_744, 39 months) | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |
+| P7 5,4,0,4,0,0 (Q_P7_544, 33 months) | L1M 2.4 (+630) / L3M 2.5 (-3672) / L6M 2.5 (-4392) / PRE 7.1 (-2858) / X' 55.1 (+795) | L6M -37 / PRE 19 |
+| K cap 3 (Q_KCAP3, reference to compare, not mine) | L1M 29.8 (-4656) / L3M 29.8 (+307) / L6M 26.9 (+2833) / HOLD 15.3 (+1379) / PRE 15.8 (+15) / X' 41.3 (+2029) | L6M 69 / HOLD 25 / PRE 17 |
+
+First-order screen of the same P7 7/4/4 (sz_core, ROLL-EXCL): cut L6M 29.4 / HOLD 18.5 / PRE 32.1 / X' 27.4, d mean L6M +372 / PRE -446. Exact: L6M 22.5 / HOLD 10.0 / PRE 14.8 / X' 18.8, d mean L6M +489 / PRE -1021. The first-order screen overstates PRE (about +17 points) and X'; L6M agrees within 6.9 points; only exact numbers are verdicts.
+
+Rule 2/2a label of the exact P7 7,4,0,4,0,0: recents L1M/L3M/L6M cut 22.5/22.5/22.5 (d mean L6M +489); PRE cut 14.8% and d mean -1021$/wk; allowed PRE deepening 25% (bi-weekly re-pick WF of the P7-table family with the equal-mean picker beats live in 86% of 74 refit periods, OOS cut 36.1%, d mean -1344$/wk) -> **RECENT-ONLY** (PRE mean floor is -$1,000/wk: the exact PRE mean is -1021). The lead-reported exact WF for 7/4/4 itself is 73% beat.
+
+### Bi-weekly re-pick walk-forward (PRIMARY OOS test; trailing 26 w -> next 2 w, 7-day purge; first-order daily series, ROLL-EXCL; pick = lowest trailing maxDD else live)
+| family | candidates | picker: lowest trailing maxDD: OOS cut % / d mean $/wk / % periods beating live | picker: best EQUAL-MEAN cut: OOS cut % / d mean $/wk / % beating live | switches / periods (eq picker) |
+|--|--|--|--|--|
+| P7_tables | 125 | 36.1 / -3624 / 91 | 36.1 / -1344 / 86 | 74 / 74 |
+| U7_tables | 49 | 12.6 / -1362 / 42 | -5.7 / -1483 / 34 | 72 / 74 |
+| B02 | 72 | 25.7 / -4178 / 89 | 11.9 / -264 / 91 | 74 / 74 |
+| B02_liveform | 12 | 0.0 / -364 / 61 | 5.1 / -984 / 62 | 74 / 74 |
+
+### REFIT 2026-11-22 - what the bi-weekly procedure would pick today (trailing 26 weeks ending 2026-11-21 / data end 2026-10-30, drawdown first; live retained unless a cell has a lower trailing maxDD), first-order
+| family | pick | live retained? | trailing maxDD pick / live | trailing mean pick / live | prior label |
+|--|--|--|--|--|--|
+| P7_tables | LOT_P7_544 | False | 52861 / 79907 | +21405 / +24124 | RECENT-ONLY-UNKNOWN-WF |
+| U7_tables | LOT_U7_60 | False | 67082 / 79907 | +25140 / +24124 | OK-PRIOR-UNKNOWN-WF |
+| B02 | B02_allbooks_5_1.50_alld_0.0 | False | 16390 / 79907 | +14865 / +24124 | RECENT-ONLY-UNKNOWN-WF |
+| B02_liveform | B02_K7P7H7_20_1.20_1030_0.0 | False | 63264 / 79907 | +24155 / +24124 | OK-PRIOR-UNKNOWN-WF |
+
+### Rule-2 ranking key (recents): mean of equal-mean cut on L6M, L3M, L1M, first-order sz_core rows; labels by rule 2a
+| candidate | recents key | cut L1M/L3M/L6M | PRE cut / d mean | prior label (allow %) | bi-weekly WF beat % (equal-mean picker, family) |
+|--|--|--|--|--|--|
+| P7 7,4,0,4,0,0 | 31.9 | 32.0/31.5/29.4 | 32.1 / -446 | OK-PRIOR (25%) | 86 |
+| P7 6,4,0,4,0,0 | 28.5 | 33.4/33.5/33.5 | 32.6 / -1247 | RECENT-ONLY (25%) | 86 |
+| P7 4,4,0,4,0,0 | 19.0 | 36.7/32.7/32.7 | 30.2 / -1815 | RECENT-ONLY (25%) | 86 |
+| stack greedy lot table (down; in-sample table, bi-weekly WF not valid) | 40.9 | 56.6/56.6/43.6 | 66.4 / -3815 | RECENT-ONLY-UNKNOWN-WF (15%) | nan |
+| stack greedy lot table (UP, labelled) | 42.4 | 42.1/42.1/16.0 | 51.8 / +4102 | OK-PRIOR-UNKNOWN-WF (15%) | nan |
+| A06 48-slot greedy (down; in-sample table) | 66.5 | 63.1/63.2/62.3 | 78.6 / -1993 | RECENT-ONLY-UNKNOWN-WF (15%) | nan |
+| B02 K7P7H7 L20 1.20 allday x0.0 | 68.5 | 73.3/73.3/57.7 | 16.7 / -499 | OK-PRIOR (25%) | 91 |
+| B02 K7P7H7 L20 1.00 allday x0.0 | 63.7 | 82.7/78.1/34.7 | 14.6 / +751 | OK-PRIOR (25%) | 91 |
+| B02 allbooks L20 1.00 allday x0.0 | 70.2 | 99.7/68.7/33.7 | 23.3 / +332 | OK-PRIOR (25%) | 91 |
+
+Bi-weekly WF is NOT reported for the greedy A06 / lot tables: they are single tables fitted on the whole history, so a bi-weekly re-pick between them and live would leak the future. Their out-of-sample test is the monthly re-fit of the greedy procedure itself (SZ_FGH.md section 1 / R3 page): A06 greedy WF at equal mean -22% (FAILS), stack lot-table greedy down 22% raw/eq with mean -6443$/wk, UP 38% eq / +705$/wk.
+<!--/FGHFINAL-->
 
 ## 1. Walk-forward of the picking procedure (purged monthly, 26 w train, 7 d embargo, 2024-01..2026-10, picks max equal-mean maxDD cut on the train weeks, 34 months)
 | subset | OOS maxDD cut raw % | at equal mean % | d mean $/wk | w20 OOS/ref | picks/months |

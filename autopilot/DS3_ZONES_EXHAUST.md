@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST - T-ZONES-EXHAUST (2026-11-09 18:12Z)
+# DS3_ZONES_EXHAUST - T-ZONES-EXHAUST (2026-11-10 04:16Z)
 
 STATUS: ROLL-EXCL (33 roll-artifact trades excluded, sz_core.Base rollw), PRE-PROOF, post-hoc, Shadow only, no PASS claims. FIRST-ORDER SCREEN ONLY unless the stage column says EXACT (exact engine rows are queued with SZ-CORE; none labelled EXACT here yet). Base S1b-COMB (live D7 v1.5 state cut, Q1-A, HALF D20 + OTE-62 B73 D30 in the base), carry week dropped from means only, maxDD/worst-20/Ulcer on all weeks, windows as of 2026-11-09, trade lists end 2026-10-30. Zone sources: 1-s state arrays (levels causal at the signal bar; volume = traded prints), see ZN_API.md. Held-out live week = frozen live file only; the 92 live cuts and the v1.5 night cuts are NOT used.
 
@@ -11,6 +11,32 @@ Grid screened: 347553 unique cells (family-level + per-level-type), 235159 with 
 | REF_LIVE | 22948 | 79907 | 140288 | 128944 | 99496 | 165224 | live layer (HALF D20 + OTE-62 B73 D30 as in the exact base) |
 | REF_NOZONE_FO | 28121 | 91798 | 144258 | 136616 | 112018 | 167377 | live zone halves undone at chain_nz lots (first-order; labelled UP; exact no-zone row queued) |
 | REF_S4A | published S4A layer | | | | | | see DS3_TH_S4_ZONES_S1B.md; exact rows from SZ-CORE queue |
+
+## Family ? - ?
+
+?: the best equal-mean cell is a **nan** when the ? nan nan (level set nan) is within reach, scope ALL: stack maxDD cut // % (L6M/PRE/X') at equal lots and // % at equal mean, touching % of trades; label ****. It does not hold as a setting because the family max-stat over the whole zone set (p 1.00) is not cleared. The live HALF D20 + OTE-62 B73 D30 layer stays ON.
+
+Ranked by min(equal-mean cut L6M, PRE) among screen passers; top 15 (full grid in /mnt/l2/l2vast/_th_zn/grid_all.parquet).
+
+| level | geometry | action | scope (book|session) | maxDD cut % L6M/HOLD/PRE/X' | maxDD $ cell|ref L6M/PRE | equal-mean cut % L6M/PRE/X' | worst-20 L6M cell|ref | d mean $/wk L6M | trades touched % | placebo p L6M/PRE (B400) | shift/day placebo p | own p | family p (max) | WF ok | live-week d$ | stage | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| nan | nan nan | nan | ALL | /// | 77463|/146235| | // | | |  |  | / | / | 0.16/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 30927|/31749| | // | | |  |  | / | / | 0.16/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 26626|/30095| | // | | |  |  | / | / | 0.03/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 27256|/54073| | // | | |  |  | / | / | 0.02/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 43569|/47963| | // | | |  |  | / | / | 0.15/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 18515|/50276| | // | | |  |  | / | / | 0.07/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 23707|/53726| | // | | |  |  | / | / | 0.02/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 17514|/34382| | // | | |  |  | / | / | 0.02/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 35260|/34492| | // | | |  |  | / | / | 0.08/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 40979|/25008| | // | | |  |  | / | / | 0.02/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 17461|/20684| | // | | |  |  | / | / | 0.16/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 28943|/16514| | // | | |  |  | / | / | 0.18/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 13289|/35149| | // | | |  |  | / | / | 0.05/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 6262|/26951| | // | | |  |  | / | / | 0.07/1.00 |  |  | nan |  |
+| nan | nan nan | nan | ALL | /// | 7867|/28933| | // | | |  |  | / | / | 0.03/1.00 |  |  | nan |  |
+
+Label counts in the ledger: {'': 97827}
 
 ## Family A - Prior structure (prior-day/week/month H/L/C, overnight/Asia/London/pre-market, IB 30/60 + extensions, opening ranges, yesterday VWAP, settlement, gaps)
 
@@ -226,9 +252,13 @@ Cells labelled CANDIDATE in the merged ledgers: %d (all first-order screen, fami
 
 ## Exact-engine rows (REF_ZOFF = zone layer off REFERENCE row; ZNC_* = ZN-CORE top cells)
 
-Months landed: {'REF_ZOFF': 0, 'ZNC_A0': 0, 'ZNC_A1': 0, 'ZNC_B0': 0, 'ZNC_B1': 0}. Rows appear when a whole window (L6M 202605-202610, PRE 202402-202506, X' 202304-202401, HOLD 202511-202604) is present; stage [EXACT partial] otherwise.
+Months landed: {'REF_ZOFF': 33, 'ZNC_A0': 26, 'ZNC_A1': 0, 'ZNC_B0': 25, 'ZNC_B1': 0}. Rows appear when a whole window (L6M 202605-202610, PRE 202402-202506, X' 202304-202401, HOLD 202511-202604) is present; stage [EXACT partial] otherwise.
 
-No exact month has landed yet (queue position behind tiers 0-1).
+| set      |   months |   cut_L1M |   dmean_L1M |   eq_cut_L1M |   cut_L2M |   dmean_L2M |   eq_cut_L2M |   cut_L3M |   dmean_L3M |   eq_cut_L3M |   cut_L6M |   dmean_L6M |   eq_cut_L6M |   cut_PRE |   dmean_PRE |   eq_cut_PRE |   cut_X' |   dmean_X' |   eq_cut_X' |
+|:---------|---------:|----------:|------------:|-------------:|----------:|------------:|-------------:|----------:|------------:|-------------:|----------:|------------:|-------------:|----------:|------------:|-------------:|---------:|-----------:|------------:|
+| REF_ZOFF |       33 |     -12.9 |      -626.2 |         -7.8 |     -12.9 |      1655.5 |         -7.8 |     -12.8 |       454.5 |         -7.7 |     -12.8 |      1138.5 |         -7.7 |      19.2 |       239.9 |         22.8 |    -35.4 |     -408.4 |       -29.3 |
+| ZNC_A0   |       26 |       2.8 |       753.4 |          9.1 |       2.8 |       178.9 |          9.1 |      -9.9 |     -3435.7 |         -2.9 |      -9.9 |      1675.6 |         -2.9 |      -5.4 |      -704.9 |          1.4 |    nan   |      nan   |       nan   |
+| ZNC_B0   |       25 |      -6.9 |      -266   |          2.7 |      -6.9 |     -1551.5 |          2.7 |      -6.8 |      -388.4 |          2.8 |      -6.8 |      2414.1 |          2.8 |      30.6 |     -1319.7 |         36.8 |    nan   |      nan   |       nan   |
 
 
 ## Old-vs-new: every published ZONES-3 / S4 zone cell, with the base-change proof

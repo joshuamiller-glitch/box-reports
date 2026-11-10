@@ -1,4 +1,4 @@
-# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 03:13Z)
+# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 04:14Z)
 
 **Label: base S1b-COMB (live D7 v1.5 with the seven state-cut lines), controls NOCUT / UNIF where the owner ran them; first-order unless stage says S2 (exact); entries not live-matched (entry match < .85); in-sample; PRE-PROOF. Post-hoc, Shadow only, no PASS claims.**
 
@@ -28,7 +28,7 @@ Windows as of 2026-11-09 (L6M 20260512-, HOLD 20251111-, PRE 20240201-20250630, 
 
 > **TESTING-DEFECT BOX.** Cells whose new-base d mean equals the old-base page to the dollar: 0.
 
-**USER ADDENDUM 1 (16:30Z) status:** first-order is a SCREEN ONLY; the sizing verdict needs EXACT engine runs for every family top-5 and every reference row on L6M, PRE, X', HOLD. Exact-confirmed cells on this page: 9 of 23877 with any exact window, 3 with all of L6M/PRE/X' (the label carries [EXACT] / [EXACT partial] / [FIRST-ORDER SCREEN ONLY]). Exact queue: autopilot SZ-CORE queue, reference rows first, then family top-5; windows L6M, PRE, X', HOLD.
+**USER ADDENDUM 1 (16:30Z) status:** first-order is a SCREEN ONLY; the sizing verdict needs EXACT engine runs for every family top-5 and every reference row on L6M, PRE, X', HOLD. Exact-confirmed cells on this page: 10 of 23877 with any exact window, 3 with all of L6M/PRE/X' (the label carries [EXACT] / [EXACT partial] / [FIRST-ORDER SCREEN ONLY]). Exact queue: autopilot SZ-CORE queue, reference rows first, then family top-5; windows L6M, PRE, X', HOLD.
 
 **Rule (SZ-BASE, 2026-11-09):** first-order pnl-per-lot scaling is a SCREEN ONLY. It cannot see exits: exact shows ladder L cut -76 against -43 first-order and B -143 against -73, and first-order overstates the up-size net by $290k-$820k over 26 months. Exact engine runs are required for every family top-5 and every reference row. Exact rows are labelled by mode: table (static multiplier keyed by book and signal second; signals created by changed exits get m = 1, 4-8% of trades), rule (multiplier computed from causal features at the signal second of any signal), or engine-sizer.
 
@@ -105,11 +105,11 @@ Old bases: V0 = research ts2 reference behind DS3_SIZER S4A (run_v13t_ts2; ledge
 | reference cell (EXACT, S1b-COMB, vs exact Q1-A = base; engine_ver in the next-to-last column) | L6M cut / d mean | HOLD | PRE | X' | complete months | bi-weekly WF (cut / d mean / % beat) | prior label (rule 2a: allowance, WF) |
 |--|--|--|--|--|--|--|--|
 | Q1-A (live reference) | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | all 43 | - | - |
-| sizer off (x1) | pending | pending | pending | +2.2 / +2687 | 34 | -60.4 / -180 / 4% | PRIOR-UNKNOWN (allow %, WF n/a) |
-| old ladder L (x0.5/x1.5) | pending | pending | pending | +5.5 / +1002 | 34 | +0.0 / +0 / 0% | PRIOR-UNKNOWN (allow %, WF n/a) |
-| B (x1/x1.5, up only) | pending | pending | pending | +9.9 / +4631 | 34 | +0.0 / +617 / 0% | PRIOR-UNKNOWN (allow %, WF n/a) |
-| ZL-1 vol-target (factor built on unadjusted bars; 97 trades differ after adjustment; X_VTA pending) | pending | pending | pending | +63.7 / +1068 | 34 | +0.9 / -3277 / 87% | PRIOR-UNKNOWN (allow %, WF n/a) |
-| MV-london override | pending | pending | pending | pending | 17 | pending (needs a complete block) | PRIOR-UNKNOWN (allow %, WF n/a) |
+| sizer off (x1) | -28.2 / -1571 | pending | +19.9 / +3204 | +2.2 / +2687 | 40 | +28.3 / +2230 / 20% | OK-PRIOR (allow 15%, WF 20%) |
+| old ladder L (x0.5/x1.5) | -76.1 / -1487 | pending | -17.0 / +3874 | +5.5 / +1002 | 40 | +0.0 / +0 / 0% | RECENT-ONLY (allow 15%, WF 0%) |
+| B (x1/x1.5, up only) | -142.6 / +2450 | pending | -15.2 / +6998 | +9.9 / +4631 | 40 | +0.0 / +975 / 2% | RECENT-ONLY (allow 15%, WF 2%) |
+| ZL-1 vol-target (factor built on unadjusted bars; 97 trades differ after adjustment; X_VTA pending) | +28.3 / -101 | pending | -6.3 / -1833 | +63.7 / +1068 | 40 | -6.3 / -2309 / 59% | RECENT-ONLY (allow 15%, WF 59%) |
+| MV-london override | -1.2 / -107 | pending | pending | pending | 23 | +0.3 / -159 / 42% | PRIOR-UNKNOWN (allow %, WF n/a) |
 
 ## Vol-target family (SZ-VT, autopilot/DS3_SIZER_VOLTARGET.md, user top priority; exact engine from the start; first 70 lines, incl. executability rows: scale factor s, max single-trade $ risk, max lots on at once)
 
@@ -433,6 +433,7 @@ Procedure: re-screen every layer on the trailing 26 weeks (L1M/L3M/L6M first, PR
 | family | technique | params | key (mean of eq L6M / L3M / L1M cut) | PRE cut / d mean | label |
 |--|--|--|--|--|--|
 | J | J pair min | {"a": "ext-K:d16e6b6b3c26", "b": "ext-SZQ:AB_d852c8_0"} | +71.4 | +67 / -6589 | LEAD+ (placebo ok) RECENT-ONLY-UNKNOWN-WF (PRE cut +67%, allowance 15% deeper, d mean -6589; WF n/a) [EXACT partial] |
+| B | VOL-pool vr_gk_w30_g20 stepv | [1.25, 0.0] | +47.3 | +52 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +52%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | K | K6 ext-B on P7 only | {"cell": "9806533560c9", "orig": "ext ext-B {\"cell\": \"980 | +45.7 | +29 /  | CANDIDATE (own-p only; family p 0.87) OK-PRIOR-UNKNOWN-WF (PRE cut +29%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | K | K1 P7 lot cap by session | {"asia": 5, "london": 3, "nyam": 3} | +30.9 | +34 /  | CANDIDATE OK-PRIOR-UNKNOWN-WF (PRE cut +34%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | D | eqdd_book_20d_R | Y1R_f0.50_sticky | +30.4 | +45 /  | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +15%, allowance 25% deeper, d mean -3719; WF 64%) [EXACT ROLL-EXCL engine_ver=ROLLEXCL] |
@@ -444,7 +445,6 @@ Procedure: re-screen every layer on the trailing 26 weeks (L1M/L3M/L6M first, PR
 | A | ER-xinst er_max2_b15_n20 t2 | [0.35, 0.0, 1.0] | +59.6 | +44 / -6928 | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +44%, allowance 15% deeper, d mean -6928; WF 53%) [FIRST-ORDER SCREEN ONLY] |
 | E | same_side_lots_cap | cap4_skip | +58.9 | +43 / -7625 | LEAD RECENT-ONLY (PRE cut +43%, allowance 25% deeper, d mean -7625; WF 86%) [FIRST-ORDER SCREEN ONLY] |
 | B | VOL-pool vr_park_w10_g20 stepv | [1.25, 0.0] | +58.8 | +45 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +45%, allowance 15% deeper, d mean ; WF n/a) [FIRST-ORDER SCREEN ONLY] |
-| B | VOL-pool vr_gk_w10_g20 stepv | [1.25, 0.0] | +58.7 | +57 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +57%, allowance 15% deeper, d mean ; WF n/a) [FIRST-ORDER SCREEN ONLY] |
 | E | total_lots_cap | cap4_skip | +56.5 | +71 / -7659 | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +71%, allowance 25% deeper, d mean -7659; WF 86%) [FIRST-ORDER SCREEN ONLY] |
 | G | qgate_x_er | {"er": "erhigh", "feat": "f_ice_ag_w30", "m": 0, "q": 0.5, " | +55.0 | +37 / -4011 | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +37%, allowance 15% deeper, d mean -4011; WF 50%) [FIRST-ORDER SCREEN ONLY] |
 | F | dow | {"dow": 2, "m": 0} | +53.6 | +0 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +0%, allowance 15% deeper, d mean ; WF n/a) [FIRST-ORDER SCREEN ONLY] |
@@ -525,10 +525,10 @@ Equal-mean frontier data (exact, chart-ready CSV: /mnt/l2/l2vast/_th_sz/frontier
 
 | set | engine | L6M cut | equal-mean L6M cut | $/wk per $1k cut | Calmar L6M | PRE cut | equal-mean PRE cut | X' cut | d mean L6M |
 |--|--|--|--|--|--|--|--|--|--|
-| X_VT | ROLLFIX1 |  |  |  |  |  |  | +63.7 |  |
-| X_L | ROLLFIX1 |  |  |  |  |  |  | +5.5 |  |
-| X_B | ROLLFIX1 |  |  |  |  |  |  | +9.9 |  |
-| X_C | ROLLFIX1 |  |  |  |  |  |  | +2.2 |  |
+| X_VT | ROLLFIX1 | +28.3 | +27.9 | +4 | 20.16 | -6.3 | -6.8 | +63.7 | -101 |
+| X_L | ROLLFIX1 | -76.1 | -88.7 | -24 | 7.72 | -17.0 | -25.3 | +5.5 | -1487 |
+| X_B | ROLLFIX1 | -142.6 | -123.0 | +22 | 8.15 | -15.2 | -5.9 | +9.9 | +2450 |
+| X_C | ROLLFIX1 | -28.2 | -36.1 | -70 | 12.83 | +19.9 | +14.9 | +2.2 | -1571 |
 | Q_KCAP3 | ROLLFIX1 | +26.9 | +33.9 | -132 | 26.40 | +15.8 | +23.9 | +41.3 | +2833 |
 | Q_P7_744 | ROLLFIX1 | +22.5 | +23.9 | -27 | 22.95 | +14.8 | +16.4 | +18.8 | +489 |
 | Q_P7_544 | ROLLFIX1 | +2.5 | -18.9 | +2222 | 13.36 | +7.1 | -13.3 | +55.1 | -4392 |
@@ -536,5 +536,5 @@ Equal-mean frontier data (exact, chart-ready CSV: /mnt/l2/l2vast/_th_sz/frontier
 
 ### Exact vs first-order inventory
 
-Rows on the family tables: 23877; with any exact window: 9; with exact L6M, PRE and X': 3; everything else is FIRST-ORDER SCREEN ONLY (ROLL-EXCL where tagged). Exact sets still queued: see SZ_API.md section 12.
+Rows on the family tables: 23877; with any exact window: 10; with exact L6M, PRE and X': 3; everything else is FIRST-ORDER SCREEN ONLY (ROLL-EXCL where tagged). Exact sets still queued: see SZ_API.md section 12.
 
