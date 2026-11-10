@@ -1,4 +1,4 @@
-# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-10 16:58Z)
+# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-10 17:58Z)
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. Exact engine ROLLFIX1 rows; mean $/wk = carrying week dropped (largest |cell - NEVER-CUT| week), the all-weeks mean is shown beside it because GAP has only 17 weeks. Leave-one-out rows are DIAGNOSTIC reference rows (standing rule: every layer stays ON). Prereg: autopilot/SZ_C2_PREREG.md (+ Addendum 1).**
 
@@ -17,8 +17,8 @@
 | layer left out | GAP 2025-07..10: mean (all-weeks mean) / maxDD / d mean / cut | H2-2024: mean / maxDD / d mean / cut | HOLD: mean / maxDD / d mean / cut | L6M: mean / maxDD / d mean / cut |
 |--|--|--|--|--|
 | LPB_JN04 (all four layers + base items) | 9935 (all 12229) / 54667 / -7755 / +14.0 | 16855 (all 14874) / 36624 / -3468 / +55.3 | 16084 (all 15759) / 72382 / +418 / +8.2 | 25256 (all 24225) / 72382 / +5376 / +6.3 |
-| minus LOT | months missing | months missing | months missing | months missing |
-| minus SIGQ | months missing | months missing | months missing | months missing |
+| minus LOT | 9588 (all 12806) / 54166 / -8103 / +14.8 | months missing | months missing | months missing |
+| minus SIGQ | 9791 (all 12093) / 57734 / -7899 / +9.1 | months missing | months missing | months missing |
 | minus REG | months missing | months missing | months missing | months missing |
 | minus STACK | months missing | months missing | months missing | months missing |
 | minus table 7,4,0,4,0,0 (P7 table back to 7,7,0,7,0,0) | months missing | months missing | months missing | months missing |
