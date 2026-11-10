@@ -1,6 +1,6 @@
 # DS3_REDO_R11_REENTRY - re-entry after a win / after a target on the state base (T-STACK-REDO R11)  [FIRST-ORDER SCREEN; PRE-PROOF until entry match >= .85; no PASS claims]
 <!--SUMMARY-->
-**FINAL (draft status 2026-11-10 15:12 UTC): exact-row status as of now - L6M complete for every row below; PRE/X' months are still landing in the SZ queue (refresh in order r9_score, r10_score, r11_score, exact_append when they do).** PRE-PROOF (entry match < .85); no PASS claims; stop-fill caveat applies.
+**FINAL (draft status 2026-11-10 16:35 UTC): exact-row status as of now - L6M complete for every row below; PRE/X' months are still landing in the SZ queue (refresh in order r9_score, r10_score, r11_score, exact_append when they do).** PRE-PROOF (entry match < .85); no PASS claims; stop-fill caveat applies.
 
 | setting | live value | best exact row | holds OOS (L6M / L3M / L1M / HOLD / PRE under the 25% floor / X' / bi-weekly WF) | change recommended | panel field |
 |---|---|---|---|---|---|
@@ -9,7 +9,7 @@
 <!--/SUMMARY-->
 
 **CAVEAT (stop fills / stop exits):** the engine fills a native stop 1.9 pt better than the stop level; live native stops were 1.28 pt worse, join 2.45 pt worse (old stack). Conflict / re-entry deltas that depend on a stopped trade inherit this optimism; netting exits use mid -/+ 0.80 pt market. Exact rows use the ROLL-FIXED engine; first-order rows use ROLL-EXCL weights of the old base list.
-Generated 2026-11-10 15:12 UTC (elapsed 47 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
+Generated 2026-11-10 16:35 UTC (elapsed 46 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
 
 ## 0. Definition
 - FLAGGED trade j = its signal comes within N min (5/10/15/30/60/120) after a Target exit of the SAME side, of the same book ("own") or of any book ("any"). Policy FULL (live = reference) / HALF / SKIP on flagged trades. These are lot-multiplier tables keyed on the signal second: exact in table mode (queue prefix R11_), first-order here is a screen (mean overstated for up-size only; these are down-only).
@@ -177,4 +177,4 @@ Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mo
 Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
 
 ## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
-FULL re-entry (live) stays. Exact: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts L6M maxDD 19.0% at +$1,481/wk and PRE maxDD 18.5% (PRE d mean -$1,558/wk): OK-PRIOR under the new 25% floor (OLD -$1k floor: RECENT-ONLY). Its bi-weekly WF beats live in only 36% of refit periods, so it is a LEAD (recents + prior ok), not a CANDIDATE; X' and the remaining months are still pending. Own-book N120 and any-book N60 do not hold. Not a panel change. (draft generated 2026-11-10 15:12 UTC)
+FULL re-entry (live) stays. Exact: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts L6M maxDD 19.0% at +$1,481/wk and PRE maxDD 18.5% (PRE d mean -$1,558/wk): OK-PRIOR under the new 25% floor (OLD -$1k floor: RECENT-ONLY). Its bi-weekly WF beats live in only 36% of refit periods, so it is a LEAD (recents + prior ok), not a CANDIDATE; X' and the remaining months are still pending. Own-book N120 and any-book N60 do not hold. Not a panel change. (draft generated 2026-11-10 16:35 UTC)

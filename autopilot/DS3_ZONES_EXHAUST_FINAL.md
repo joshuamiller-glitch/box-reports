@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 14:54Z)
+# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 16:41Z)
 
 **Labels: ROLL-FIXED (ROLLFIX1 base S1BRF-COMB, 21,163 trades; first-order tables use M tables lifted with Z.lift_M, 59 new rows m = 1); PRE-PROOF (entries not live-matched); post-hoc; Shadow only; NO PASS CLAIMS; FIRST-ORDER SCREEN unless a row says EXACT.** Standing rules: (1) the zone layer stays ON, "no zones / skip all / off" are reference rows only; (2) recents first: L6M/L3M/L1M, then the bi-weekly re-pick walk-forward (trailing 26 weeks -> next 2 weeks, purged 7 d), PRE/X' only as a tolerant check; (2a) PRE deepening allowed = min(25, L6M cut + 10)% only when the bi-weekly WF beats live in >= 60% of refit periods, else 15%, PRE mean floor = 25% of the live PRE mean (user decision 2026-11-10 13:45Z; d mean PRE >= -0.25 x live PRE mean, i.e. -$3.5k/wk; the old fixed -$1k label is shown beside); worse = RECENT-ONLY (still reported). Engine caveats at the end.
 
@@ -22,7 +22,7 @@ Reading: removing the layer (exact) deepens L6M and X' drawdown and shallows PRE
 | set | months | engine | cut_L1M | eq_cut_L1M | dmean_L1M | cut_L3M | eq_cut_L3M | dmean_L3M | cut_L6M | eq_cut_L6M | dmean_L6M | cut_HOLD | eq_cut_HOLD | dmean_HOLD | cut_PRE | eq_cut_PRE | dmean_PRE | cut_X' | eq_cut_X' | dmean_X' |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | REF_ZOFF | 39.0 | ROLLFIX1,old | -12.9 | -7.8 | -626.2 | -12.8 | -7.7 | 454.5 | -12.8 | -7.7 | 1138.5 | -4.6 | 0.1 | 1030.8 | 19.2 | 22.8 | 239.9 | -35.4 | -29.3 | -408.4 |
-| ZNC_A0 | 32.0 | ROLLEXCL,ROLLFIX1,old | 2.8 | 9.1 | 753.4 | -9.9 | -2.9 | -3435.7 | -9.9 | -2.9 | 1675.6 | 11.7 | 17.4 | 2168.9 | -5.4 | 1.4 | -730.0 |  |  |  |
+| ZNC_A0 | 39.0 | ROLLEXCL,ROLLFIX1,old | 2.8 | 9.1 | 753.4 | -9.9 | -2.9 | -3435.7 | -9.9 | -2.9 | 1675.6 | 11.7 | 17.4 | 2168.9 | -5.4 | 1.4 | -730.0 | 40.6 | 44.5 | 2729.6 |
 | ZNC_B0 | 39.0 | ROLLEXCL,ROLLFIX1,old | -6.9 | 2.7 | -266.0 | -6.8 | 2.8 | -388.4 | -6.8 | 2.8 | 2414.1 | 14.2 | 22.0 | 2868.7 | 30.6 | 36.8 | -1344.9 | 23.7 | 30.6 | 1922.1 |
 | ZS_C0 | 39.0 | ROLLEXCL,ROLLFIX1 | 14.9 | 23.4 | 3962.3 | 15.0 | 23.4 | -1936.3 | 15.0 | 23.4 | 2344.4 | 16.7 | 25.0 | 725.4 | 17.1 | 25.4 | -948.7 | 44.5 | 50.1 | 1642.7 |
 | ZS_D0 | 39.0 | ROLLEXCL,ROLLFIX1 | 29.2 | 26.7 | -5069.2 | 20.3 | 17.5 | 2954.9 | 20.3 | 17.5 | -837.9 | -12.6 | -16.6 | -504.9 | 38.7 | 36.5 | -898.5 | 33.4 | 31.0 | 2634.6 |
@@ -33,7 +33,7 @@ First-order vs exact for the same cells: see the cell-details table right below.
 
 | set | owner | level | geometry | action | scope | level-specific? | gain over whole-scope action (pts, first-order) | first-order cut L6M | first-order eq-mean L6M | EXACT cut L6M | EXACT cut PRE | EXACT cut X' | roll months not yet ROLLFIX1 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ZNC_A0 | CORE | ldnl | ahead 1atr | skip | london | SCOPE-EFFECT/unproven | 9.1 | 31 | 35 | -9.9 | -5.4 |  | none |
+| ZNC_A0 | CORE | ldnl | ahead 1atr | skip | london | SCOPE-EFFECT/unproven | 9.1 | 31 | 35 | -9.9 | -5.4 | 40.6 | none |
 | ZNC_B0 | CORE | ALL | ahead 0.25atr hw5 fresh=t1 age<=1d | skip | london | SCOPE-EFFECT/unproven | 19.7 | 34 | 45 | -6.8 | 30.6 | 23.7 | none |
 | ZS_C0 | STRUCT | sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55 | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 45 | 50 | 15.0 | 17.1 | 44.5 | none |
 | ZS_D0 | STRUCT | bbup_5 | v0 hw0 pt15 AA | quarter | london | level-specific | 13.6 | 36 | 38 | 20.3 | 38.7 | 33.4 | none |
@@ -230,6 +230,54 @@ Procedure: trailing 26 weeks of data to 2026-11-05, pool = scope top 40 cells + 
 | MV|nyam | BOOK maxsz_w900 AH:D90|s-1|any|any skip (first-order only; exact required before adoption) | 78470 / 79907 | 24575 / 24125 |
 | PB|asia | BOOK wall_k2_p5 BH-absent:B5 skip (first-order only; exact required before adoption) | 79517 / 79907 | 23713 / 24125 |
 
+## UPDATE (zone-STATE actions and per-line marginals; exact engine, ROLLFIX1; first rows as months land)
+
+Hooks: code/th_zn_act/zone_hooks.py (mixin on the live engine with the live zone layer ON; level table = nearest family level ahead/behind at the signal second, ZN-CORE lv_A / lv_B; regression: the empty-config set ZNA_NULL reproduces the S1b-COMB base list for 202610 to the dollar, 823 trades). Signals created only by the new engine path (re-entries after a held/dropped signal) carry no level row and run live. Sets ZNA_*, queue code/th_zn_act/zone_queue.py (2 workers, gate MemAvailable >= 55 GB, load < 32), order L6M then PRE months; HOLD / X' for the top 3 by L6M + PRE after those land. Cut = maxDD cut vs the ROLLFIX1 base (+ = shallower); WF = bi-weekly re-pick (single cell vs live, exact daily series; months not run count as live); rule 2a by Z.prior_info.
+
+### Zone-state actions
+
+| set | action | months | cut L1M/L3M/L6M | HOLD/PRE/X' cut | equal-mean L6M/PRE | d mean $/wk L6M/PRE | trades vs base | WF beat% (non-live picks) / OOS cut% | rule 2a label (old) |
+|---|---|---|---|---|---|---|---|---|---|
+| ZNA_DELAY_A | delay-until-through: family-A level ahead within 20 pts; hold <= 20 min; stop unchanged | 2 | 2// | // | / | / | 1413 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_RET_A | re-target to the family-A level ahead (within 60 pts) minus 0.5 pt | 2 | 77// | // | / | / | 1811 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_RETB_A | re-target BEYOND the family-A level ahead (within 40 pts) by +5 pts (magnet) | 1 | 64// | // | / | / | 986 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_STOP_A | structure stop just beyond the family-A level behind (6-40 pts, buffer 2) with lots scaled for equal $ risk (cap 3x) | 2 | 13// | // | / | / | 1505 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_B73_A | generalised B73 (70% now / 30% when price trades through) at the family-A level ahead within 30 pts | 1 | -5// | // | / | / | 805 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_COOL_A | cooldown 15 min after the family-A level behind (within 40 pts) is lost | 1 | -4// | // | / | / | 820 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_DELAY_B | delay-until-through, family-B level ahead within 20 pts | 1 | -5// | // | / | / | 826 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_RET_B | re-target to the family-B level ahead (within 60 pts) minus 0.5 pt | 1 | 82// | // | / | / | 994 vs 21163 | n/a (< 12 months) | PRE pending |
+
+### Per-line marginals of the eight published zone lines (the live layer with ONE line left out; cut vs the live layer: negative = the line HELPS)
+
+| line left out | months | cut L1M/L3M/L6M | HOLD/PRE/X' | d mean $/wk L6M/PRE | trades vs base |
+|---|---|---|---|---|---|
+| PD_mid | 1 | 0// | // | / | 823 vs 21163 |
+| RTH_camH3 | 1 | -3// | // | / | 823 vs 21163 |
+| Kijun_1h | 1 | -3// | // | / | 823 vs 21163 |
+| CRT_mid_4h | 1 | 0// | // | / | 823 vs 21163 |
+| KC_up_4h | 1 | 0// | // | / | 823 vs 21163 |
+| OTE62_15m | 1 | 0// | // | / | 825 vs 21163 |
+| OTE705_15m | 1 | -5// | // | / | 824 vs 21163 |
+| OTE79_15m | 1 | 0// | // | / | 822 vs 21163 |
+
+### Leave-one-out proof (counters from the hook, all months run so far)
+
+| line left out | runs (months) | NTZ checks | checks where the line was eligible (<= 20 ahead, untouched) | ... and it was the ONLY eligible line | zone-HALF decisions changed | OTE-62 B73 paths suppressed |
+|---|---|---|---|---|---|---|
+| PD_mid | 1 | 792 | 3 | 1 | 1 | 0 |
+| RTH_camH3 | 1 | 792 | 7 | 5 | 5 | 0 |
+| Kijun_1h | 1 | 792 | 6 | 3 | 3 | 0 |
+| CRT_mid_4h | 1 | 792 | 9 | 8 | 8 | 0 |
+| KC_up_4h | 1 | 792 | 5 | 4 | 4 | 0 |
+| OTE62_15m | 1 | 825 | 24 | 20 | 20 | 31 |
+| OTE705_15m | 1 | 794 | 16 | 13 | 13 | 0 |
+| OTE79_15m | 1 | 791 | 11 | 9 | 9 | 0 |
+
+A line only changes the zone action when it is the only eligible line; the counts show how often that happens (most eligible checks are sole-eligible, so the lines are NOT redundant by construction, but each changes only a handful of decisions per month). An earlier first-pass run showed exactly zero effect for the single lines because of an engine load-cache bug (every set in a batch inherited the first set's config); it was fixed and all ZNA runs were redone.
+
+Placebo / family null for these exact cells: only 16 exact cells exist, so the family max-stat is not meaningful; the exact placebo is the shifted-level rerun of the top 3 (levels +25 pts; sets ZNA_*_SH25 queued after the L6M + PRE rows land). Zone-state actions NOT built: state-cut arm widening (cut layer owner), 70/30 add with a true resting limit at the level (needs the entry-limit hooks of R4 composed; B73-generalised above is the market-through variant).
+
+
 ## 7. Caveats
 
 - First-order vs exact: first-order rescales pnl per lot and cannot see re-entries, caps, locks or exit-type changes; every exact re-run so far (section 2) is far smaller than the first-order cut for skip/quarter cells. The exact table is the evidence; the first-order tables are screens.
@@ -238,4 +286,4 @@ Procedure: trailing 26 weeks of data to 2026-11-05, pool = scope top 40 cells + 
 - Hypothesis counts: CORE 347,553 cells; STRUCT 9,263,348 evaluated; BOOK 32,155; TRIG 1,334,592. Family p uses the conservative independent max-stat; with these counts nothing can reach p <= .10 without a very large effect.
 - Not built: delay-until-through, re-target, structure-stop, 70/30 add and cooldown-after-lost-level actions (exact engine only); per-line marginals of the published eight lines (need the engine with one line left out).
 
-Generated by code/th_zn/zn_final.py (2026-11-10 14:54Z).
+Generated by code/th_zn/zn_final.py (2026-11-10 16:41Z).

@@ -249,6 +249,33 @@ Rule 2a (25% PRE floor) label on the live panel base: OK-PRIOR [old fixed-floor:
 
 Reading: on the live panel base JN04 passes every gate - recents L6M +6.3 / L3M +6.3 / L1M +77.5, HOLD cut +8.2 with d mean +1141, PRE cut +36.5 with d mean -861 (inside the floor), X' cut +57.1 with d mean +2352, contiguous bi-weekly WF 81% of periods beaten. The recents gain is much smaller than on the old base (L6M +6.3% vs +43.4%) because the live panel base already contains the installed 7/4/4 table, the 8,400 day cap and the 40/5x/w5/p3 cut. CAVEAT: the four layers were applied as the same per-signal multiplier table built on the old base (LOT / STACK / SIGQ states computed from S1b-COMB trades), not recomputed on the live panel base; a rule-mode run on the panel base would replace this approximation.
 
+### E3. RULE-MODE JN04 on the live panel base (JN04RM) - the layers recomputed from the written rules, not from the old-base table
+
+What was run: LPB state spec + r5_hooks panel hooks (8,400 day loss cap, 7/4/4, cut 40/5x/w5/p3) + the four layers as rules: LOT = P7 shadow Calmar over the 10 completed label days (shadow = the P7 base-lot P&L of the un-gated live-panel run), SIGQ = dA at the signal (engine PoiSet lines, signal price) against the monthly 70th percentile of dA of the reference run's trades in previous months, REG = 5-min ATR(14) atr_rel from the NQ bars at the signal second, STACK = engine cde code 8 on the engine's own open positions. Lots rule: one rounding of the raw multipliers before zone HALF (section B point 1).
+
+Months: 43 of 43 (cell) vs 43 (reference). Reference = live panel base without the layers.
+
+| window | cut | eq-mean cut | d mean $/wk | worst-20 cell / ref | maxDD cell / ref | table-mode (E2) cut / d mean |
+|---|---|---|---|---|---|---|
+| L1M | +47.2 | +42.9 | -6886 | 15k / 1k | 27056 / 51253 | +77.5 / -3774 |
+| L3M | +46.0 | +41.6 | -2202 | 164k / 155k | 41699 / 77224 | +6.3 / -4373 |
+| L6M | +46.0 | +41.6 | -1633 | 138k / 102k | 41699 / 77224 | +6.3 / +3191 |
+| HOLD | +7.7 | +0.1 | -3586 | -285k / -377k | 72757 / 78842 | +8.2 / +1141 |
+| PRE | +32.9 | +27.4 | -1834 | -328k / -529k | 66714 / 99479 | +36.5 / -861 |
+| X' | +47.7 | +43.4 | -357 | -222k / -321k | 64077 / 122553 | +57.1 / +2352 |
+
+Rule 2a (25% PRE floor) label, rule mode: OK-PRIOR [old fixed-floor: RECENT-ONLY; floor -3490 computed on the ROLLFIX1 S1b live; allowance 25.0%, WF 90%].
+
+Do the written rules reproduce the multipliers? Signals of the rule-mode run matched to the old-base table signals, where a halving changes the lots (lots in >= 2); table = old-base multiplier table, rule = in-engine rule on the panel base:
+
+| layer | signals | rule fires | table fires | both | rule only | table only | differ | % differ |
+|---|---|---|---|---|---|---|---|---|
+| LOT | 4382 | 2643 | 2297 | 1856 | 787 | 441 | 1228 | 28.0 |
+| SIGQ | 8522 | 2035 | 1848 | 1830 | 205 | 18 | 223 | 2.6 |
+| REG | 4382 | 2277 | 2045 | 2045 | 232 | 0 | 232 | 5.3 |
+
+Check of the rule text itself: with the SAME state (S1b-COMB P7 shadow) the written LOT rule reproduces the table on 4,871 of 4,896 P7 signals with lots >= 2 (25 differ, 0.5%%). So the LOT difference above is STATE-driven (the P7 shadow equity differs on the live panel base because of the 7/4/4 table, the day cap and the new cut), not a rule mismatch. SIGQ and REG reproduce the table to within about 4% (the rest is path divergence).
+
 ## F. Cross-checks and open items
 
 - The four layer rules above were rebuilt from the FGH / CDE / IJK cell definitions and reproduce the table multipliers used in the exact run: the "layer multiplier" column of the worked rows is the exact-run table ratio, and the feature columns (Calmar, dA vs threshold, atr_rel, same-side lots) are recomputed from the rule text.

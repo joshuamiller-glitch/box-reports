@@ -474,3 +474,6 @@ Exact runs go through SZ-CORE's queue, prefix `R8_` (tier 2), plateau centre per
 
 ## 11. Amendments to the prereg
 (a) 21:40Z surrogate dressing (g[kind, MAE bin]) added after seeing that plain naked deltas ignore the state cut; (b) plateau rule made scale-aware (neighbours beating live in recents, neighbour mean key >= 80% of the centre) after the literal 20%-of-cut rule rejected every cell; both amendments were made after the first look at SM/KB/OD output. Plateau/verdict logic is otherwise as preregistered.
+
+## 12. Dead-cell discipline
+dead_lookup on 507 scored cells (505 first-order grid cells + the 2 exact rows): 0 EXACT/NEAR hits; all 507 appended to DEAD_CELLS.csv under program R8REDO (append only; code/th_r8/r8_dead.py).

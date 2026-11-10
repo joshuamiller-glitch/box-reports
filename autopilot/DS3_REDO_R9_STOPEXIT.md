@@ -1,6 +1,6 @@
 # DS3_REDO_R9_STOPEXIT - stop-exit and cut-exit mechanics on the state base (T-STACK-REDO R9)  [FIRST-ORDER SCREEN, tape microsim; PRE-PROOF until entry match >= .85; no PASS claims]
 <!--SUMMARY-->
-**FINAL (draft status 2026-11-10 15:12 UTC): exact-row status as of now - L6M complete for every row below; PRE/X' months are still landing in the SZ queue (refresh in order r9_score, r10_score, r11_score, exact_append when they do).** PRE-PROOF (entry match < .85); no PASS claims; stop-fill caveat applies.
+**FINAL (draft status 2026-11-10 16:35 UTC): exact-row status as of now - L6M complete for every row below; PRE/X' months are still landing in the SZ queue (refresh in order r9_score, r10_score, r11_score, exact_append when they do).** PRE-PROOF (entry match < .85); no PASS claims; stop-fill caveat applies.
 
 | setting | live value | best exact row | holds OOS (L6M / L3M / L1M / HOLD / PRE under the 25% floor / X' / bi-weekly WF) | change recommended | panel field |
 |---|---|---|---|---|---|
@@ -10,7 +10,7 @@
 <!--/SUMMARY-->
 
 **CAVEAT (stop fills / stop exits, every R9-R11 page):** the engine fills a native stop 1.9 pt BETTER than the stop level (zero-latency walk of the pre-print book); live native stops were 1.28 pt WORSE and join stops 2.45 pt worse (old stack, 8 / 21 stops). Every dollar here that depends on a stop fill is on the optimistic engine basis unless marked live-calibrated; the live stop-exit mode per book is an open input (section 0b). Exact rows use the ROLL-FIXED engine; first-order rows use the ROLL-EXCL weights of the old base list.
-Generated 2026-11-10 15:11 UTC (elapsed 9 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
+Generated 2026-11-10 16:34 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
 Registry: /mnt/l2/l2vast/_th_joint/layers/stopexit/topK.json. Cell ledger: /mnt/l2/l2vast/_th_stack/r9/cells_r9.parquet.
 
 ## 0. What was measured, how, and the limits
@@ -209,4 +209,4 @@ Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mo
 Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
 
 ## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
-The live stop setting stays unless a PRE/X'-complete exact row beats it with the bi-weekly WF. L6M exact: join 5 s one tick inside, catastrophe 10 (R9_J5_i1_c10) cuts maxDD 4.8% at +$297/wk, STRAT0 (strategy-worked market, c10) 4.1%; waits of 10 s HURT (-9%). The native / mode rows (REF_R9_STOP_G0, _NAT: +5.3% / +6.7%, +$967 / +$1,290/wk) are fill-basis artefacts of the optimistic engine native fill (section 1) and are not a recommendation; the installed panel stop-mode per book is the open input. Nothing here is proposed for the panel. (draft generated 2026-11-10 15:12 UTC)
+The live stop setting stays unless a PRE/X'-complete exact row beats it with the bi-weekly WF. L6M exact: join 5 s one tick inside, catastrophe 10 (R9_J5_i1_c10) cuts maxDD 4.8% at +$297/wk, STRAT0 (strategy-worked market, c10) 4.1%; waits of 10 s HURT (-9%). The native / mode rows (REF_R9_STOP_G0, _NAT: +5.3% / +6.7%, +$967 / +$1,290/wk) are fill-basis artefacts of the optimistic engine native fill (section 1) and are not a recommendation; the installed panel stop-mode per book is the open input. Nothing here is proposed for the panel. (draft generated 2026-11-10 16:35 UTC)
