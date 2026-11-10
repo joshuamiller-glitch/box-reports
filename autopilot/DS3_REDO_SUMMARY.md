@@ -1,4 +1,4 @@
-# DS3_REDO_SUMMARY - T-STACK-REDO rounds R1-R13 in one page (written 2026-11-10 16:10Z by SZ-CORE; refreshed hourly)
+# DS3_REDO_SUMMARY - T-STACK-REDO rounds R1-R13 in one page (written 2026-11-10 17:10Z by SZ-CORE; refreshed hourly)
 
 **PRE-PROOF; post-hoc; Shadow only; no PASS claims.** Base = S1b-COMB (live D7 v1.5 with the seven state-cut lines), engine ROLLFIX1 where a row says ROLL-FIXED; entries not live-matched (match < .85). STANDING RULES: (1) every layer stays ON, off/no-rule rows are references, the live setting is retained where nothing beats it; (2)/(2a) recents first (L1M/L3M/L6M), bi-weekly re-pick WF is the primary OOS test, PRE/X' tolerant with the allowance min(25, L6M cut + 10)% when the WF beats live in >= 60% of periods else 15%, and the PRE mean floor = 25% of the live PRE mean (live PRE mean $13,961/wk, floor -$3,490/wk; user decision 2026-11-10 13:45Z); (3) exact engine runs decide, first-order is a screen only. The stop fill model is optimistic: ABSOLUTE means are optimistic everywhere; drawdown ranking is the usable output.
 
@@ -6,18 +6,18 @@
 
 | round | topic | page | last written | status |
 |--|--|--|--|--|
-| R1 | Locks (day caps, give-back, week floor, P7MaxDailyLoss) | DS3_REDO_R1_LOCKS.md | 11-10 15:13Z | FINAL DRAFT on disk - FINAL DRAFT 2026-11-10 15:13Z: exact ROLL-FIXED row |
+| R1 | Locks (day caps, give-back, week floor, P7MaxDailyLoss) | DS3_REDO_R1_LOCKS.md | 11-10 16:19Z | FINAL DRAFT on disk - FINAL 2026-11-10 16:19Z: exact ROLL |
 | R2 | A06 slots, B02 quiet-overnight, StackCut, HM5 bars | DS3_REDO_R2_STACKRULES.md | 11-10 15:19Z | FINAL DRAFT on disk - FINAL (rebuilt 2026-11-10 15:18Z) |
 | R2b | StackCut variants (exact) | DS3_REDO_R2b_STACKCUT.md | 11-10 13:57Z | NOT YET FINAL (first version / screen) |
 | R3 | Session lot tables per book | DS3_REDO_R3_LOTTABLES.md | 11-10 15:19Z | FINAL DRAFT on disk - FINAL (rebuilt 2026-11-10 15:18Z) |
 | R4 | Entry mechanics (split, dip gate, confirmation, PB3B) | DS3_REDO_R4_ENTRY.md | 11-10 15:10Z | FINAL DRAFT on disk - FINAL - entry mechanics re-scored o |
 | R5 | Cut-wait / post-cut blackout, NTZ, OTE, O7 | DS3_REDO_R5_CUTWAIT.md | 11-10 14:22Z | FINAL DRAFT on disk - FINAL |
-| R6 | Shadow lines (signal-state, X1-X5, flip-level) | DS3_REDO_R6_SHADOW.md | 11-10 15:59Z | NOT YET FINAL (first version / screen) |
+| R6 | Shadow lines (signal-state, X1-X5, flip-level) | DS3_REDO_R6_SHADOW.md | 11-10 16:58Z | NOT YET FINAL (first version / screen) |
 | R7 | Stop / target / ATR / time exit per book x session | DS3_REDO_R7_BRACKETS.md | 11-10 15:00Z | FINAL DRAFT on disk - FINAL DRAFT 2026-11-10 15:00Z** - exact L6M + PRE r |
-| R8 | Live books own signal parameters | DS3_REDO_R8_SIGNALS.md | 11-10 16:01Z | FINAL DRAFT on disk - FINAL. PRE label per rule 2a as pat |
-| R9 | Stop-exit and cut-exit mechanics (stop fill model) | DS3_REDO_R9_STOPEXIT.md | 11-10 15:12Z | NOT YET FINAL (first version / screen) - FINAL (draft status 2026-11-10 15:1 |
-| R10 | Direction conflict / netting | DS3_REDO_R10_NETTING.md | 11-10 15:12Z | NOT YET FINAL (first version / screen) - FINAL (draft status 2026-11-10 15:1 |
-| R11 | Re-entry after a win / target | DS3_REDO_R11_REENTRY.md | 11-10 15:12Z | NOT YET FINAL (first version / screen) - FINAL (draft status 2026-11-10 15:1 |
+| R8 | Live books own signal parameters | DS3_REDO_R8_SIGNALS.md | 11-10 16:32Z | FINAL DRAFT on disk - FINAL. PRE label per rule 2a as pat |
+| R9 | Stop-exit and cut-exit mechanics (stop fill model) | DS3_REDO_R9_STOPEXIT.md | 11-10 17:09Z | NOT YET FINAL (first version / screen) - FINAL (draft status 2026-11-10 17:0 |
+| R10 | Direction conflict / netting | DS3_REDO_R10_NETTING.md | 11-10 17:09Z | NOT YET FINAL (first version / screen) - FINAL (draft status 2026-11-10 17:0 |
+| R11 | Re-entry after a win / target | DS3_REDO_R11_REENTRY.md | 11-10 17:09Z | NOT YET FINAL (first version / screen) - FINAL (draft status 2026-11-10 17:0 |
 | R12 | Session boundaries, blocks, flatten, dow / roll / event days | DS3_REDO_R12_SESSIONS.md | 11-10 15:00Z | FINAL DRAFT on disk - FINAL DRAFT 2026-11-10 15:00Z** - exact L6M + PRE r |
 | R13 | Fidelity loop and fill model; installed-panel fidelity (JN04 layers) | DS3_REDO_R13_FIDELITY.md | 11-10 15:11Z | FINAL DRAFT on disk - FINAL version 2026-11-10 15:11Z) |
 
@@ -163,15 +163,15 @@ STATUS: post-hoc, Shadow only, no PASS claims, PRE-PROOF (entry match < .85), RO
 
 ### R9 - Stop-exit and cut-exit mechanics (stop fill model) (DS3_REDO_R9_STOPEXIT.md)
 
-The live stop setting stays unless a PRE/X'-complete exact row beats it with the bi-weekly WF. L6M exact: join 5 s one tick inside, catastrophe 10 (R9_J5_i1_c10) cuts maxDD 4.8% at +$297/wk, STRAT0 (strategy-worked market, c10) 4.1%; waits of 10 s HURT (-9%). The native / mode rows (REF_R9_STOP_G0, _NAT: +5.3% / +6.7%, +$967 / +$1,290/wk) are fill-basis artefacts of the optimistic engine native fill (section 1) and are not a recommendation; the installed panel stop-mode per book is the open input. Nothing here is proposed for the panel. (draft generated 2026-11-10 15:12 UTC)
+The live stop setting stays unless a PRE/X'-complete exact row beats it with the bi-weekly WF. L6M exact: join 5 s one tick inside, catastrophe 10 (R9_J5_i1_c10) cuts maxDD 4.8% at +$297/wk, STRAT0 (strategy-worked market, c10) 4.1%; waits of 10 s HURT (-9%). The native / mode rows (REF_R9_STOP_G0, _NAT: +5.3% / +6.7%, +$967 / +$1,290/wk) are fill-basis artefacts of the optimistic engine native fill (section 1) and are not a recommendation; the installed panel stop-mode per book is the open input. Nothing here is proposed for the panel. (draft generated 2026-11-10 17:09 UTC)
 
 ### R10 - Direction conflict / netting (DS3_REDO_R10_NETTING.md)
 
-Take-both (live) stays. (Under the new 25% PRE floor R10_sess_london_SKIP is OK-PRIOR, old floor RECENT-ONLY, but its L6M exact cut is negative and WF 32%.) Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 15:12 UTC)
+Take-both (live) stays. (Under the new 25% PRE floor R10_sess_london_SKIP is OK-PRIOR, old floor RECENT-ONLY, but its L6M exact cut is negative and WF 32%.) Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 17:09 UTC)
 
 ### R11 - Re-entry after a win / target (DS3_REDO_R11_REENTRY.md)
 
-FULL re-entry (live) stays. Exact: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts L6M maxDD 19.0% at +$1,481/wk and PRE maxDD 18.5% (PRE d mean -$1,558/wk): OK-PRIOR under the new 25% floor (OLD -$1k floor: RECENT-ONLY). Its bi-weekly WF beats live in only 36% of refit periods, so it is a LEAD (recents + prior ok), not a CANDIDATE; X' and the remaining months are still pending. Own-book N120 and any-book N60 do not hold. Not a panel change. (draft generated 2026-11-10 15:12 UTC)
+FULL re-entry (live) stays. Exact: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts L6M maxDD 19.0% at +$1,481/wk and PRE maxDD 18.5% (PRE d mean -$1,558/wk): OK-PRIOR under the new 25% floor (OLD -$1k floor: RECENT-ONLY). Its bi-weekly WF beats live in only 36% of refit periods, so it is a LEAD (recents + prior ok), not a CANDIDATE; X' and the remaining months are still pending. Own-book N120 and any-book N60 do not hold. Not a panel change. (draft generated 2026-11-10 17:09 UTC)
 
 ### R12 - Session boundaries, blocks, flatten, dow / roll / event days (DS3_REDO_R12_SESSIONS.md)
 

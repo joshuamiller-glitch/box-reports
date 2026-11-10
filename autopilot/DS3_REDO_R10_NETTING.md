@@ -1,6 +1,6 @@
 # DS3_REDO_R10_NETTING - direction conflict / netting on the state base (T-STACK-REDO R10)  [FIRST-ORDER SCREEN; PRE-PROOF until entry match >= .85; no PASS claims]
 <!--SUMMARY-->
-**FINAL (draft status 2026-11-10 16:35 UTC): exact-row status as of now - L6M complete for every row below; PRE/X' months are still landing in the SZ queue (refresh in order r9_score, r10_score, r11_score, exact_append when they do).** PRE-PROOF (entry match < .85); no PASS claims; stop-fill caveat applies.
+**FINAL (draft status 2026-11-10 17:09 UTC): exact-row status as of now - L6M complete for every row below; PRE/X' months are still landing in the SZ queue (refresh in order r9_score, r10_score, r11_score, exact_append when they do).** PRE-PROOF (entry match < .85); no PASS claims; stop-fill caveat applies.
 
 | setting | live value | best exact row | holds OOS (L6M / L3M / L1M / HOLD / PRE under the 25% floor / X' / bi-weekly WF) | change recommended | panel field |
 |---|---|---|---|---|---|
@@ -10,7 +10,7 @@
 <!--/SUMMARY-->
 
 **CAVEAT (stop fills / stop exits):** the engine fills a native stop 1.9 pt better than the stop level; live native stops were 1.28 pt worse, join 2.45 pt worse (old stack). Conflict / re-entry deltas that depend on a stopped trade inherit this optimism; netting exits use mid -/+ 0.80 pt market. Exact rows use the ROLL-FIXED engine; first-order rows use ROLL-EXCL weights of the old base list.
-Generated 2026-11-10 16:34 UTC (elapsed 6 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL), windows as of 2026-11-09. Code code/th_stack_r9/r10_score.py (+ fo_lib.py). Registry /mnt/l2/l2vast/_th_joint/layers/netting/topK.json.
+Generated 2026-11-10 17:08 UTC (elapsed 6 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL), windows as of 2026-11-09. Code code/th_stack_r9/r10_score.py (+ fo_lib.py). Registry /mnt/l2/l2vast/_th_joint/layers/netting/topK.json.
 
 ## 0. Definition and limits
 - Event = trade B whose signal second falls while another book A holds the OPPOSITE side (A.entry <= B.signal < A.exit; one position per book as live). Policies on the newer signal B vs the older open book(s) A: BOTH (live, reference) / SKIP B / HALF B / SKIPS (skip B only when B is the smaller side) / NET (older book exits min(lots) at market at signal+1 s, mid -/+ 0.80 pt; B enters lots_B - m) / FLIP (older book(s) exit fully at market = the opposite-flip exit, currently OFF live; B unchanged).
@@ -327,14 +327,69 @@ Trailing 26 weeks, drawdown first: pick **R10_newer_K7_NET** (live retained: Fal
 | R10_newer_U7_SKIP  | 75070.8 |  135978   | 32112.7 | 23782.6 | False  | PRIOR-UNKNOWN |
 
 ## EXACT rows (appended)
-Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R10_sess_london_SKIP 29, R10_newer_K7_NET 6, R10_U7_K7_FLIP 6, R10_ALL_FLIP 29
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R10_sess_london_SKIP 32, R10_newer_K7_NET 6, R10_U7_K7_FLIP 6, R10_ALL_FLIP 32
 | set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % | bi-weekly WF beat % / cut % (exact, own block) | label (rule 2a) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R10_sess_london_SKIP | 29 | -8.7 | 1125.8 | 4.8 | -3.9 | -8.7 | -8.9 | 6.3 | -1361.6 | n/a | 32 / -0.4 | NEW 2a(25%): OK-PRIOR (PRE d mean -1362 vs floor -3549, live PRE 14197/wk) | OLD(-$1k): RECENT-ONLY |
+| R10_sess_london_SKIP | 32 | -8.7 | 1125.8 | 4.8 | -3.9 | -8.7 | -8.9 | 6.3 | -1361.6 | n/a | 32 / -0.4 | NEW 2a(25%): OK-PRIOR (PRE d mean -1362 vs floor -3549, live PRE 14197/wk) | OLD(-$1k): RECENT-ONLY |
 | R10_newer_K7_NET | 6 | 5.6 | -804.5 | 7.3 | 2.5 | 5.6 | 9.6 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
 | R10_U7_K7_FLIP | 6 | 5.3 | 37.1 | 7.7 | 5.5 | 5.3 | 5.2 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
-| R10_ALL_FLIP | 29 | -31.1 | -4771.4 | -49.3 | -63.2 | -31.1 | 78.5 | -25.8 | -4055.3 | n/a | 9 / -0.0 | NEW 2a(25%): RECENT-ONLY (PRE d mean -4055 vs floor -3433, live PRE 13730/wk) | OLD(-$1k): RECENT-ONLY |
+| R10_ALL_FLIP | 32 | -31.1 | -4771.4 | -49.3 | -63.2 | -31.1 | 78.5 | -25.8 | -4055.3 | n/a | 9 / -0.0 | NEW 2a(25%): RECENT-ONLY (PRE d mean -4055 vs floor -3433, live PRE 13730/wk) | OLD(-$1k): RECENT-ONLY |
 Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
 
 ## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
-Take-both (live) stays. (Under the new 25% PRE floor R10_sess_london_SKIP is OK-PRIOR, old floor RECENT-ONLY, but its L6M exact cut is negative and WF 32%.) Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 16:35 UTC)
+Take-both (live) stays. (Under the new 25% PRE floor R10_sess_london_SKIP is OK-PRIOR, old floor RECENT-ONLY, but its L6M exact cut is negative and WF 32%.) Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 17:09 UTC)
+
+## CALIBRATED STOP-FILL / MARKET-EXIT SLIP MODEL (T-NEXT D2, post-processing; engine NOT rebuilt)
+Source: ONLY data/live_frozen/StratTrades_DS7_<acct>_BLINDWEEK_reconstructed.csv (187 trades, 2026-11-01..05) against the 1-s owned-tape mid (entry offset vs tape mid on 99 trades: mean -0.03 pt, sd 2.35, so clock and contract line up). Adverse slip = fill vs mid at the fill second (long exit sells: mid - fill).
+| exit type | n (frozen) | adverse slip vs fill-second mid, pts: mean (SE) [2-SE band] | median | engine convention | calibrated value used | band |
+|---|---|---|---|---|---|---|
+| market cut (ThL2Cut / PolicyCut / ThL2Trail) | 94 | 1.19 (0.21) [0.78, 1.60] | 0.88 | StateCut = mid -/+ 0.80 | **1.19** | 0.80-1.60 |
+| BookLock market | 3 | 0.88 (0.52) [-0.17, 1.92] | 1.12 | same 0.80 | 1.19 (use the cut figure: n=3, band covers it) | 0.80-1.60 |
+| StackCut market | 0 | no stack cut in the frozen week | n/a | same 0.80 | 1.19 (assumed = market cut) | 0.80-1.60 |
+| stop, native 80 level (stall, no strategy join) | 2 | vs the native 80 trigger: M7 0.75, K7 3.00 -> mean 1.88 (SE 1.12); vs fill-second mid 2.31 | n/a | engine native stop fill: 1.9 pt BETTER than the level (cost -1.9) | **1.4** (pooled native: 8 old-stack stops at 1.28 + these 2) | 1.0-3.0 |
+| stop, JoinThenMarket (_StopJoin / Fallback) | 0 | no join exit in the frozen file | n/a | engine mix of join fills and fallbacks, -0.5 pt pooled | 2.45 (old-stack, 21 stops, UNVALIDATED here) | 1.0-3.0 |
+
+Honest uncertainty: the two frozen stops are Tuesday-stall exits (entered 01:48-02:04 ET, exited 02:47-02:55 after the platform gap), 0.75 and 3.00 pt past the native level: n=2 cannot fit a slip, the 2-SE band is wider than the 1.0-3.0 sensitivity band, and they are not representative of normal stops. The market-cut figure is well supported (n=94, SE 0.21): about 1.2 pt vs the fill-second mid (2.7 pt vs the mid one second before the fill, i.e. the price runs while the order travels). The engine convention (0.80) is therefore ~0.4 pt too cheap per market exit; the engine stop fills are ~3.3 pt too cheap per native stop at the central value.
+
+Restatement method (no engine change): every base trade whose exit is Stop / StopJoin / StopJoinFallback (and whose engine cost vs the level is < 8 pt; catastrophe and gap fills left as run) has its P&L shifted by -(s - cost_engine) x lots x $20; StateCut / StackCut / BookLock by -(m - 0.80) x lots x $20; s in {1.0, 1.4, 1.875, 2.45, 3.0}, m = 1.19 (market band 0.8 / 1.6 at s = 1.4). All first-order cells (R9, R10, R11) are re-scored on the shifted base, ranking key as before. R9 live-calibrated native cost is set to s.
+
+
+### Restated first-order rows (R10 conflict policies): key = mean(eq-mean maxDD cut L6M/L3M/L1M); L6M cut % / d mean $/wk per calibration
+| cell | uncalibrated key | uncal L6M cut / d mean | C10 (s=1.0,m=1.19) | C14 (s=1.4,m=1.19) | C19 (s=1.875,m=1.19) | C245 (s=2.45,m=1.19) | C30 (s=3.0,m=1.19) | C14m08 (s=1.4,m=0.8) | C14m16 (s=1.4,m=1.6) |
+|---|---|---|---|---|---|---|---|---|---|
+| R10_sess_london_SKIP | 12.2 | 4.9 / +1961 | 17.5 key, 10.5 cut / +2070 | 17.6 key, 10.5 cut / +2085 | 17.8 key, 10.4 cut / +2103 | 18.1 key, 10.3 cut / +2125 | 18.3 key, 10.3 cut / +2145 | 17.3 key, 11.1 cut / +2018 | 18.7 key, 11.7 cut / +2155 |
+| R10_newer_K7_NET | 11.2 | 12.2 / -566 | 6.6 key, 7.2 cut / -1053 | 6.1 key, 5.9 cut / -1036 | 5.5 key, 4.3 cut / -1016 | 4.9 key, 2.5 cut / -992 | 4.2 key, 0.8 cut / -970 | 8.4 key, 11.3 cut / -1060 | 3.8 key, 0.2 cut / -1011 |
+| R10_U7>K7_FLIP | 10.3 | 7.3 / +915 | 14.0 key, 12.4 cut / +915 | 13.9 key, 12.2 cut / +915 | 13.8 key, 12.1 cut / +915 | 13.8 key, 11.9 cut / +915 | 13.7 key, 11.8 cut / +915 | 14.4 key, 13.1 cut / +915 | 14.1 key, 13.3 cut / +915 |
+| R10_sess_london_HALF | 9.4 | 6.0 / +888 | 13.6 key, 11.3 cut / +926 | 13.6 key, 11.2 cut / +930 | 13.6 key, 11.1 cut / +935 | 13.6 key, 10.9 cut / +940 | 13.6 key, 10.8 cut / +945 | 13.8 key, 12.0 cut / +911 | 14.0 key, 12.3 cut / +950 |
+| R10_sess_nyam_SKIP | 6.5 | 4.4 / +625 | 7.6 key, 5.4 cut / +652 | 7.6 key, 5.4 cut / +654 | 7.6 key, 5.3 cut / +656 | 7.6 key, 5.3 cut / +659 | 7.6 key, 5.3 cut / +662 | 7.5 key, 5.4 cut / +651 | 8.3 key, 7.3 cut / +658 |
+| R10_newer_U7_SKIPS | 5.6 | 6.1 / -112 | 9.2 key, 11.4 cut / -76 | 9.2 key, 11.4 cut / -70 | 9.2 key, 11.2 cut / -62 | 9.1 key, 11.1 cut / -53 | 8.4 key, 9.1 cut / -44 | 9.8 key, 12.2 cut / -70 | 7.9 key, 8.6 cut / -70 |
+| R10_newer_K7_SKIPS | 5.5 | 3.3 / +561 | 10.0 key, 8.9 cut / +640 | 10.1 key, 8.8 cut / +659 | 10.2 key, 8.7 cut / +682 | 10.4 key, 8.6 cut / +709 | 10.5 key, 8.6 cut / +736 | 10.2 key, 9.5 cut / +633 | 10.7 key, 10.1 cut / +686 |
+| R10_ALL_NET | 5.5 | 10.3 / -1619 | -1.0 key, -7.6 cut / -1456 | -1.3 key, -8.7 cut / -1428 | -1.7 key, -10.0 cut / -1395 | -2.2 key, -11.5 cut / -1355 | -2.7 key, -13.0 cut / -1317 | 1.4 key, -1.8 cut / -1493 | -3.3 key, -13.3 cut / -1360 |
+| R10_ALL_SKIP | 0.5 | -6.8 / +1697 | -1.4 key, 0.4 cut / +74 | -1.1 key, 0.5 cut / +107 | -0.9 key, 0.5 cut / +146 | -0.5 key, 0.6 cut / +193 | -0.2 key, 0.7 cut / +239 | -1.7 key, 0.7 cut / -17 | 0.3 key, 2.4 cut / +237 |
+| R10_ALL_FLIP | -12.6 | -11.9 / -3737 | -26.3 key, -29.1 cut / -3737 | -27.4 key, -30.3 cut / -3737 | -28.8 key, -31.7 cut / -3737 | -30.5 key, -33.4 cut / -3737 | -32.1 key, -35.0 cut / -3737 | -21.9 key, -23.2 cut / -3737 | -32.3 key, -34.4 cut / -3737 |
+
+Rank of the uncalibrated top cell R10_sess_london_SKIP on the calibrated bases: C10: rank 1 of 185; C14: rank 1 of 185; C19: rank 1 of 185; C245: rank 1 of 185; C30: rank 1 of 185; C14m08: rank 1 of 185; C14m16: rank 1 of 185.
+
+### EXACT sets restated by post-processing (s=1.40, m=1.19; ROLL-EXCL weights; windows only where every month is done): maxDD cut % / d mean $/wk, uncalibrated in brackets
+| set | months | L6M | L3M | L1M | PRE |
+|---|---|---|---|---|---|
+| R10_sess_london_SKIP | 32 | -7.9 / +1188 (-8.7 / +1146) | -7.9 / -234 (-8.7 / -153) | -8.2 / -2343 (-8.9 / -2356) | -14.8 / -1327 (6.3 / -1586) |
+| R10_newer_K7_NET | 6 | 6.4 / -866 (5.6 / -782) | 6.4 / -4641 (5.6 / -4190) | 8.0 / +2289 (9.6 / +203) | n/a |
+| R10_U7_K7_FLIP | 6 | 11.1 / +180 (5.3 / +57) | 11.1 / -96 (5.3 / -187) | 5.4 / +1553 (5.2 / +1388) | n/a |
+| R10_ALL_FLIP | 32 | -28.8 / -4181 (-31.1 / -4733) | -28.8 / -3477 (-31.1 / -3960) | 74.6 / +21310 (78.5 / +20884) | -23.4 / -3358 (-25.8 / -4280) |
+
+### EXACT sets restated by post-processing (s=3.00, m=1.19; ROLL-EXCL weights; windows only where every month is done): maxDD cut % / d mean $/wk, uncalibrated in brackets
+| set | months | L6M | L3M | L1M | PRE |
+|---|---|---|---|---|---|
+| R10_sess_london_SKIP | 32 | -9.0 / +1204 (-8.7 / +1146) | -9.0 / -228 (-8.7 / -153) | -7.8 / -2311 (-8.9 / -2356) | -15.6 / -1251 (6.3 / -1586) |
+| R10_newer_K7_NET | 6 | 7.0 / -794 (5.6 / -782) | 7.0 / -4599 (5.6 / -4190) | 7.8 / +2300 (9.6 / +203) | n/a |
+| R10_U7_K7_FLIP | 6 | 10.9 / +242 (5.3 / +57) | 10.9 / -13 (5.3 / -187) | 5.5 / +1638 (5.2 / +1388) | n/a |
+| R10_ALL_FLIP | 32 | -27.6 / -7662 (-31.1 / -4733) | -27.6 / -10961 (-31.1 / -3960) | 72.6 / -9577 (78.5 / +20884) | -17.5 / -3013 (-25.8 / -4280) |
+
+### What the Monday file must contain to validate the calibration (>= 20 stops)
+- >= 20 stop exits (target 30+), >= 10 in each stop mode actually installed (native stop-market, _StopJoin fills, _StopJoinFallback), spread over >= 3 sessions and not inside a platform stall; the strategy and native stop prices per trade (fields: strategy stop level, native/catastrophe level, order route, exit name) and the `STOP touched` timestamp from the strategy log (forward_register or NT8 log) so that slip is measured from the touch, not from the fill clock.
+- For every exit (stop, cut, BookLock, StackCut, target): order-submit, ack and fill timestamps (ms) and fill price per partial fill; the market-cut and BookLock figures then split into latency vs price drift.
+- The panel StStopExitMode / HmStopExitMode / StopJoinSecs / CatastrophePts as installed that week (this decides which mode each book is in).
+- Acceptance: pooled stop slip within 1.0-3.0 pt with SE <= 0.4 pt at n >= 20; the market-cut figure within 1.2 +/- 0.4 pt; otherwise the calibrated table is revised and every row above re-stated.
+- PROPOSAL (not executed; needs the user): engine change for the post-FINAL rebuild - native stop fill = walk of the book LAT_BOOK after the touch with a measured per-mode slip (central 1.4 pt native, 2.45 pt join-fallback blend) instead of the zero-latency pre-print walk; StateCut COST 0.80 -> 1.19 vs the fill-second mid; join fill probability calibrated to the live p_fallback 0.57.
+
