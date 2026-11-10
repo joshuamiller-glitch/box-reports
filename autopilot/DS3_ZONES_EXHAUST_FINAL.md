@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 16:41Z)
+# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 21:35Z)
 
 **Labels: ROLL-FIXED (ROLLFIX1 base S1BRF-COMB, 21,163 trades; first-order tables use M tables lifted with Z.lift_M, 59 new rows m = 1); PRE-PROOF (entries not live-matched); post-hoc; Shadow only; NO PASS CLAIMS; FIRST-ORDER SCREEN unless a row says EXACT.** Standing rules: (1) the zone layer stays ON, "no zones / skip all / off" are reference rows only; (2) recents first: L6M/L3M/L1M, then the bi-weekly re-pick walk-forward (trailing 26 weeks -> next 2 weeks, purged 7 d), PRE/X' only as a tolerant check; (2a) PRE deepening allowed = min(25, L6M cut + 10)% only when the bi-weekly WF beats live in >= 60% of refit periods, else 15%, PRE mean floor = 25% of the live PRE mean (user decision 2026-11-10 13:45Z; d mean PRE >= -0.25 x live PRE mean, i.e. -$3.5k/wk; the old fixed -$1k label is shown beside); worse = RECENT-ONLY (still reported). Engine caveats at the end.
 
@@ -238,40 +238,40 @@ Hooks: code/th_zn_act/zone_hooks.py (mixin on the live engine with the live zone
 
 | set | action | months | cut L1M/L3M/L6M | HOLD/PRE/X' cut | equal-mean L6M/PRE | d mean $/wk L6M/PRE | trades vs base | WF beat% (non-live picks) / OOS cut% | rule 2a label (old) |
 |---|---|---|---|---|---|---|---|---|---|
-| ZNA_DELAY_A | delay-until-through: family-A level ahead within 20 pts; hold <= 20 min; stop unchanged | 2 | 2// | // | / | / | 1413 vs 21163 | n/a (< 12 months) | PRE pending |
-| ZNA_RET_A | re-target to the family-A level ahead (within 60 pts) minus 0.5 pt | 2 | 77// | // | / | / | 1811 vs 21163 | n/a (< 12 months) | PRE pending |
-| ZNA_RETB_A | re-target BEYOND the family-A level ahead (within 40 pts) by +5 pts (magnet) | 1 | 64// | // | / | / | 986 vs 21163 | n/a (< 12 months) | PRE pending |
-| ZNA_STOP_A | structure stop just beyond the family-A level behind (6-40 pts, buffer 2) with lots scaled for equal $ risk (cap 3x) | 2 | 13// | // | / | / | 1505 vs 21163 | n/a (< 12 months) | PRE pending |
-| ZNA_B73_A | generalised B73 (70% now / 30% when price trades through) at the family-A level ahead within 30 pts | 1 | -5// | // | / | / | 805 vs 21163 | n/a (< 12 months) | PRE pending |
-| ZNA_COOL_A | cooldown 15 min after the family-A level behind (within 40 pts) is lost | 1 | -4// | // | / | / | 820 vs 21163 | n/a (< 12 months) | PRE pending |
-| ZNA_DELAY_B | delay-until-through, family-B level ahead within 20 pts | 1 | -5// | // | / | / | 826 vs 21163 | n/a (< 12 months) | PRE pending |
-| ZNA_RET_B | re-target to the family-B level ahead (within 60 pts) minus 0.5 pt | 1 | 82// | // | / | / | 994 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_DELAY_A | delay-until-through: family-A level ahead within 20 pts; hold <= 20 min; stop unchanged | 3 | 2/-10/ | // | / | / | 2062 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_RET_A | re-target to the family-A level ahead (within 60 pts) minus 0.5 pt | 3 | 77/-19/ | // | / | / | 2616 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_RETB_A | re-target BEYOND the family-A level ahead (within 40 pts) by +5 pts (magnet) | 3 | 64/-25/ | // | / | / | 2686 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_STOP_A | structure stop just beyond the family-A level behind (6-40 pts, buffer 2) with lots scaled for equal $ risk (cap 3x) | 3 | 13/-63/ | // | / | / | 2222 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_B73_A | generalised B73 (70% now / 30% when price trades through) at the family-A level ahead within 30 pts | 3 | -5/-30/ | // | / | / | 2152 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_COOL_A | cooldown 15 min after the family-A level behind (within 40 pts) is lost | 3 | -4/-4/ | // | / | / | 2158 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_DELAY_B | delay-until-through, family-B level ahead within 20 pts | 3 | -5/-5/ | // | / | / | 2137 vs 21163 | n/a (< 12 months) | PRE pending |
+| ZNA_RET_B | re-target to the family-B level ahead (within 60 pts) minus 0.5 pt | 3 | 82/-72/ | // | / | / | 2652 vs 21163 | n/a (< 12 months) | PRE pending |
 
 ### Per-line marginals of the eight published zone lines (the live layer with ONE line left out; cut vs the live layer: negative = the line HELPS)
 
 | line left out | months | cut L1M/L3M/L6M | HOLD/PRE/X' | d mean $/wk L6M/PRE | trades vs base |
 |---|---|---|---|---|---|
-| PD_mid | 1 | 0// | // | / | 823 vs 21163 |
-| RTH_camH3 | 1 | -3// | // | / | 823 vs 21163 |
-| Kijun_1h | 1 | -3// | // | / | 823 vs 21163 |
-| CRT_mid_4h | 1 | 0// | // | / | 823 vs 21163 |
-| KC_up_4h | 1 | 0// | // | / | 823 vs 21163 |
-| OTE62_15m | 1 | 0// | // | / | 825 vs 21163 |
-| OTE705_15m | 1 | -5// | // | / | 824 vs 21163 |
-| OTE79_15m | 1 | 0// | // | / | 822 vs 21163 |
+| PD_mid | 3 | 0/0/ | // | / | 2177 vs 21163 |
+| RTH_camH3 | 3 | -3/-4/ | // | / | 2176 vs 21163 |
+| Kijun_1h | 3 | -3/-3/ | // | / | 2175 vs 21163 |
+| CRT_mid_4h | 3 | 0/0/ | // | / | 2177 vs 21163 |
+| KC_up_4h | 2 | 0// | // | / | 1504 vs 21163 |
+| OTE62_15m | 2 | 0// | // | / | 1504 vs 21163 |
+| OTE705_15m | 2 | -5// | // | / | 1501 vs 21163 |
+| OTE79_15m | 2 | 0// | // | / | 1503 vs 21163 |
 
 ### Leave-one-out proof (counters from the hook, all months run so far)
 
 | line left out | runs (months) | NTZ checks | checks where the line was eligible (<= 20 ahead, untouched) | ... and it was the ONLY eligible line | zone-HALF decisions changed | OTE-62 B73 paths suppressed |
 |---|---|---|---|---|---|---|
-| PD_mid | 1 | 792 | 3 | 1 | 1 | 0 |
-| RTH_camH3 | 1 | 792 | 7 | 5 | 5 | 0 |
-| Kijun_1h | 1 | 792 | 6 | 3 | 3 | 0 |
-| CRT_mid_4h | 1 | 792 | 9 | 8 | 8 | 0 |
-| KC_up_4h | 1 | 792 | 5 | 4 | 4 | 0 |
-| OTE62_15m | 1 | 825 | 24 | 20 | 20 | 31 |
-| OTE705_15m | 1 | 794 | 16 | 13 | 13 | 0 |
-| OTE79_15m | 1 | 791 | 11 | 9 | 9 | 0 |
+| PD_mid | 2 | 1435 | 6 | 3 | 3 | 0 |
+| RTH_camH3 | 2 | 1434 | 15 | 11 | 11 | 0 |
+| Kijun_1h | 2 | 1437 | 14 | 10 | 10 | 0 |
+| CRT_mid_4h | 2 | 1435 | 19 | 18 | 18 | 0 |
+| KC_up_4h | 2 | 1450 | 11 | 10 | 10 | 0 |
+| OTE62_15m | 2 | 1505 | 37 | 31 | 31 | 55 |
+| OTE705_15m | 2 | 1448 | 28 | 21 | 21 | 0 |
+| OTE79_15m | 2 | 1449 | 31 | 22 | 22 | 0 |
 
 A line only changes the zone action when it is the only eligible line; the counts show how often that happens (most eligible checks are sole-eligible, so the lines are NOT redundant by construction, but each changes only a handful of decisions per month). An earlier first-pass run showed exactly zero effect for the single lines because of an engine load-cache bug (every set in a batch inherited the first set's config); it was fixed and all ZNA runs were redone.
 
@@ -286,4 +286,4 @@ Placebo / family null for these exact cells: only 16 exact cells exist, so the f
 - Hypothesis counts: CORE 347,553 cells; STRUCT 9,263,348 evaluated; BOOK 32,155; TRIG 1,334,592. Family p uses the conservative independent max-stat; with these counts nothing can reach p <= .10 without a very large effect.
 - Not built: delay-until-through, re-target, structure-stop, 70/30 add and cooldown-after-lost-level actions (exact engine only); per-line marginals of the published eight lines (need the engine with one line left out).
 
-Generated by code/th_zn/zn_final.py (2026-11-10 16:41Z).
+Generated by code/th_zn/zn_final.py (2026-11-10 21:35Z).

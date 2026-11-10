@@ -1,4 +1,4 @@
-# SZ_FGH_C1A5 - T-NEXT C1 (sizer/lot-side leads composed on the live-panel base, EXACT) and A5 (ES/RTY measures as NQ signal-second features); 2026-11-10 16:59Z
+# SZ_FGH_C1A5 - T-NEXT C1 (sizer/lot-side leads composed on the live-panel base, EXACT) and A5 (ES/RTY measures as NQ signal-second features); 2026-11-10 21:31Z
 
 > Label: EXACT engine rows (ROLLFIX1) for every row marked EXACT, reference = LPB_BASE (live panel: P7 day cap 8,400 + P7 7,4,0,4,0,0 + P7 cut 40/5x/w5/p3, all layers ON; LPB_EMPTY where the SZ-CORE run is missing); the A5 first-order tables are FIRST-ORDER SCREEN ONLY. PRE-PROOF, post-hoc, Shadow only, no PASS claims. Prereg autopilot/SZ_FGH_C1A5_PREREG.md (sha in DECISIONS.md). Standing rules 1/2/2a: layers stay ON; the live setting (LPB) is the reference row; rule 2a PRE mean floor = 25% of the live-panel PRE mean. Inputs to DS3_JOINT_2.md.
 
@@ -8,14 +8,24 @@ Leads: A = ATR>=1.6x skip (P7), K = P7 lots cap min(lots,3) (rule layer), V = VT
 | stack | months done / common with LPB | cut % L1M / L3M / L6M / HOLD / PRE / X' | d mean $/wk L6M / PRE | eq-mean cut % L6M / PRE | worst-20 cut % L6M / PRE | rule 2a (floor 25% of the live PRE mean) |
 |--|--|--|--|--|--|--|
 | A (ATR>=1.6 P7 skip) | 43 / 43 | 30.0 / 0.5 / 0.5 / -8.3 / 16.0 / 13.3 | +945 / -222 | 5.3 / 20.1 | +61 / +10 | OK-PRIOR-UNKNOWN-WF (old OK-PRIOR-UNKNOWN-WF) |
-| K (P7 lots cap 3) | pending (0 months done) | - | - | - | - | - |
-| V (VT_S2 vol-target step) | pending (0 months done) | - | - | - | - | - |
-| AK (ATR + cap3) | pending (0 months done) | - | - | - | - | - |
-| AV (ATR + VT_S2) | pending (0 months done) | - | - | - | - | - |
-| KV (cap3 + VT_S2) | pending (0 months done) | - | - | - | - | - |
-| AKV (ATR + cap3 + VT_S2) | pending (0 months done) | - | - | - | - | - |
-| V1 (VT_S1 vol-target scale) | pending (0 months done) | - | - | - | - | - |
-| AKV1 (ATR + cap3 + VT_S1) | pending (0 months done) | - | - | - | - | - |
+| K (P7 lots cap 3) | 3 / 3 | 14.4 / 24.5 / n/a / n/a / n/a / n/a | +nan / +nan | nan / nan | +nan / +nan |  |
+| V (VT_S2 vol-target step) | 3 / 3 | 86.6 / 31.7 / n/a / n/a / n/a / n/a | +nan / +nan | nan / nan | +nan / +nan |  |
+| R (R11 re-entry any-N30 skip) | pending (0 months done) | - | - | - | - | - |
+| F (flip-level skip R6_FL_LIVE) | pending (0 months done) | - | - | - | - | - |
+| BO (P7 post-stop 30-min blackout (R5_BO_3)) | 12 / 12 | 12.5 / 2.2 / 2.2 / 4.2 / n/a / n/a | +1674 / +nan | 10.6 / nan | +44 / +nan |  |
+| AK (ATR + cap3) | 4 / 4 | 28.7 / 40.6 / n/a / n/a / n/a / n/a | +nan / +nan | nan / nan | +nan / +nan |  |
+| AV (ATR + VT_S2) | 4 / 4 | 95.2 / 26.8 / n/a / n/a / n/a / n/a | +nan / +nan | nan / nan | +nan / +nan |  |
+| KV (cap3 + VT_S2) | 3 / 3 | 90.1 / 47.6 / n/a / n/a / n/a / n/a | +nan / +nan | nan / nan | +nan / +nan |  |
+| AKV (ATR + cap3 + VT_S2) | 4 / 4 | 95.4 / 43.0 / n/a / n/a / n/a / n/a | +nan / +nan | nan / nan | +nan / +nan |  |
+| V1 (VT_S1 vol-target scale) | 3 / 3 | 60.6 / 16.5 / n/a / n/a / n/a / n/a | +nan / +nan | nan / nan | +nan / +nan |  |
+| AKV1 (ATR + cap3 + VT_S1) | 4 / 4 | 87.5 / 42.3 / n/a / n/a / n/a / n/a | +nan / +nan | nan / nan | +nan / +nan |  |
+| ALL (ALL = A+K+V2+R11+FL on the blackout base) | pending (0 months done) | - | - | - | - | - |
+| mA (ALL minus ATR skip) | pending (0 months done) | - | - | - | - | - |
+| mK (ALL minus cap3) | pending (0 months done) | - | - | - | - | - |
+| mV (ALL minus VT_S2) | pending (0 months done) | - | - | - | - | - |
+| mR (ALL minus R11) | pending (0 months done) | - | - | - | - | - |
+| mF (ALL minus flip skip) | pending (0 months done) | - | - | - | - | - |
+| mBO (ALL minus blackout) | pending (0 months done) | - | - | - | - | - |
 
 ### Interaction table (pair cut minus the sum of the two single cuts; |interaction| > 10% of either single is flagged)
 | pair | L6M: pair / single1 / single2 / interaction | PRE: pair / single1 / single2 / interaction | flag |
@@ -24,6 +34,17 @@ Leads: A = ATR>=1.6x skip (P7), K = P7 lots cap min(lots,3) (rule layer), V = VT
 | A + V | nan / 0.5 / nan / +nan | nan / 16.0 / nan / +nan | n/a |
 | K + V | nan / nan / nan / +nan | nan / nan / nan / +nan | n/a |
 
+### Leave-one-out from ALL (A+K+V2+R11+FL on the blackout base): what each lead contributes inside the joint stack
+| stack | L6M cut | PRE cut | d mean L6M | d mean PRE | contribution of the dropped lead (ALL minus this): L6M cut / PRE cut |
+|--|--|--|--|--|--|
+| ALL | nan | nan | +nan | +nan | - |
+| drop ATR skip | nan | nan | +nan | +nan | +nan / +nan |
+| drop cap3 | nan | nan | +nan | +nan | +nan / +nan |
+| drop VT_S2 | nan | nan | +nan | +nan | +nan / +nan |
+| drop R11 | nan | nan | +nan | +nan | +nan / +nan |
+| drop flip skip | nan | nan | +nan | +nan | +nan / +nan |
+| drop blackout | nan | nan | +nan | +nan | +nan / +nan |
+
 ### Leave-one-out from the triple (A+K+V)
 | stack | L6M cut | PRE cut | d mean L6M | d mean PRE |
 |--|--|--|--|--|
@@ -31,6 +52,8 @@ Leads: A = ATR>=1.6x skip (P7), K = P7 lots cap min(lots,3) (rule layer), V = VT
 | drop A (K+V) | nan | nan | +nan | +nan |
 | drop K (A+V) | nan | nan | +nan | +nan |
 | drop V (A+K) | nan | nan | +nan | +nan |
+
+Bi-weekly WF between the stacks: pending (common contiguous block of complete months < 12 so far).
 
 ## 2. A5 - ES/RTY state-base measures as NQ signal-second features (FIRST-ORDER SCREEN on S1b-COMB, sz_core numbers, ROLL-EXCL) and the D7 EsLeadSize hook
 Data: FD-LIQ table xfeat_ES_RTY.parquet (21,135 rows in Z.Base order, causal at the end of second sig-1, signed by trade side; pull/imbalance coverage about 95%, none before 2023-08 so X' is mostly untestable and shows ~0) + an emulation of the D7 EsLeadSize hook (ES last completed 1-min bar in ticks). ES sweep is not built. 2292 cells (163 UP-labelled, never promoted). Bar: recents key (mean equal-mean cut L6M/L3M/L1M) > 0, own placebo p <= .10 on the L6M cut, rule 2a label, family max-stat p, bi-weekly WF of the family. **Family WF (equal-mean picker, 74 refit periods): OOS maxDD cut -9.4%, d mean -5096 $/wk, beats live in 66% of periods -> the family does not pass as a PICKING procedure; individual cells below are leads only.** Family max-stat p (L6M cut) is about 1 for every cell over 2292 cells (labelled, not a kill).
@@ -78,8 +101,9 @@ Data: FD-LIQ table xfeat_ES_RTY.parquet (21,135 rows in Z.Base order, causal at 
 ### EXACT on the live-panel base (reference LPB)
 | set | what | cut L6M / PRE / X' / HOLD | d mean L6M / PRE | label |
 |--|--|--|--|--|
-| LPB_A5_H1 | A5 ES hook min1 with1.0 against0.5 | pending (0 months) | | |
-| LPB_A5_H0 | A5 ES hook min1 with1.0 against0 | pending (0 months) | | |
-| LPB_A5_R1 | A5 RTY last-1-min against skip (P7, q.2) | pending (0 months) | | |
+| LPB_A5_HLIVE | D7 EsLeadSize hook as shipped (2 ticks, with x1.5, against x0.5; UP-labelled reference) | pending (0 months) | | |
+| LPB_A5_H1 | A5 ES hook min1 with1.0 against0.5 | n/a / n/a / n/a / n/a | +nan / +nan |  |
+| LPB_A5_H0 | A5 ES hook min1 with1.0 against0 | n/a / n/a / n/a / n/a | +nan / +nan |  |
+| LPB_A5_R1 | A5 RTY last-1-min against skip (P7, q.2) | n/a / n/a / n/a / n/a | +nan / +nan |  |
 
 Plain sentences are added with the exact rows when they land.

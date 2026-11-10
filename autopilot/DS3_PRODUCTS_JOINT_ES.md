@@ -1,24 +1,24 @@
-# DS3_PRODUCTS_JOINT - ES section (FD-LIQ, T-NEXT A1/A3). Updated 2026-11-10 17:14Z
+# DS3_PRODUCTS_JOINT - ES section (FD-LIQ, T-NEXT A1/A3). Updated 2026-11-10 21:42Z
 
 FIRST-ORDER, PRE-PROOF, Shadow only, no PASS claims. D7 book families ported with families.py (KB keltner_flip, PE/PB7 pullback_band, SM supertrend_flip, HM hma_vwap_cross, MV momentum_vote, O7 orb_break) on ES 1-min bars built from the 1-s series; grids of parameters x ATR14(5m) stop multiples (2/3/4) x target (1R/2R), 60-min time stop, per session; per (family,session) the top-3 by naked Calmar plus 2 mid-rank cells are dressed with the full layer set (CUT L2/PP, PRO, SIZ, ZON, LCK, STK) top-3 per layer -> joint 3^6 -> bi-weekly WF of the whole procedure (26 wk train, next 2 wk, 7 d embargo) -> permuted-effect null. Exact engine: pending SZ-CORE (ES base not yet built); the D7 families here are the instr2 family code, not the DS7.cs port, so definitions differ in details (45-s confirm of PE not modelled).
 
-Dressed cells: 145 (groups family x session). With bi-weekly WF share >= 60%: 13; with own null p <= .10 as well: 1.
+Dressed cells: 145 (groups family x session). With bi-weekly WF share >= 60%: 13; with own null p <= .10 as well: 2.
 
 ## Ranking (recents first): STANDALONE bar columns, then SEAT bar where run
 | id | family | session | n_search | naked L6M mean / maxDD | dressed L6M Cal / maxDD / mean | dressed L3M Cal / maxDD | bi-weekly WF % beat / n | WF OOS d vs n | PRE (2a) | own null p | carrier | standalone bar |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|
-| ES.GEN_PE_pre.0d015f4f | GEN_PE_pre | pre | 36 | -1554 / 26652 | -1.29 / 4914 / -122 | -2.66 / 2984 | 71 / 72 | -15832 vs -64676 | ok | n/a | ZON ZN('PD', 'behind', 0.8, 0.0) | no |
-| ES.GEN_PE_close.a26ab4c1 | GEN_PE_close | close | 36 | -258 / 28326 | -0.41 / 2704 / -21 | 0.35 / 1624 | 67 / 72 | -22185 vs -100083 | ok | n/a | STK SK(30, 15, 3) | no |
+| ES.GEN_PE_pre.0d015f4f | GEN_PE_pre | pre | 36 | -1554 / 26652 | -1.29 / 4914 / -122 | -2.66 / 2984 | 71 / 72 | -15832 vs -64676 | ok | 0.49 | ZON ZN('PD', 'behind', 0.8, 0.0) | no |
+| ES.GEN_PE_close.a26ab4c1 | GEN_PE_close | close | 36 | -258 / 28326 | -0.41 / 2704 / -21 | 0.35 / 1624 | 67 / 72 | -22185 vs -100083 | ok | 0.56 | STK SK(30, 15, 3) | no |
 | ES.GEN_HM_close.220bc3f9 | GEN_HM_close | close | 24 | -85 / 3359 | 10.67 / 904 / 186 | 16.42 / 313 | 65 / 72 | 4817 vs -25984 | ok | 0.64 | PRO NT(0.5,) | no |
-| ES.GEN_PE_pre.9d0e84a4 | GEN_PE_pre | pre | 36 | -1664 / 30384 | -1.21 / 5137 / -119 | -1.52 / 3208 | 64 / 72 | -15932 vs -110710 | ok | n/a | PRO NT(0.5,) | no |
-| ES.GEN_MV_close.70069fbb | GEN_MV_close | close | 36 | -92 / 7153 | 12.91 / 320 / 79 | 3.64 / 320 | 62 / 72 | -4468 vs -29867 | ok | n/a | PRO NT(0.5,) | no |
-| ES.GEN_KB_pre.b460ed27 | GEN_KB_pre | pre | 216 | -306 / 17480 | 5.32 / 1670 / 171 | 37.68 / 286 | 62 / 72 | -228 vs -70430 | ok | n/a | SIZ ER(40, 0.3, 'low', 0.25) | no |
-| ES.GEN_KB_pre.ad9faee7 | GEN_KB_pre | pre | 216 | -1593 / 29017 | -0.96 / 4621 / -86 | -0.44 / 4297 | 62 / 72 | -37319 vs -106717 | ok | n/a | SIZ ER(20, 0.3, 'low', 0.25) | no |
-| ES.GEN_PE_pre.233d0830 | GEN_PE_pre | pre | 36 | -1462 / 24377 | -1.31 / 7427 / -187 | -4.00 / 2445 | 62 / 72 | -16720 vs -66352 | ok | n/a | ZON ZN('PD', 'behind', 0.8, 0.0) | no |
-| ES.GEN_MV_nypm.897a8587 | GEN_MV_nypm | nypm | 36 | -489 / 14114 | 3.19 / 2781 / 170 | -0.46 / 2674 | 61 / 72 | -11030 vs -43632 | ok | n/a | PRO NT(0.65,) | no |
+| ES.GEN_PE_pre.9d0e84a4 | GEN_PE_pre | pre | 36 | -1664 / 30384 | -1.21 / 5137 / -119 | -1.52 / 3208 | 64 / 72 | -15932 vs -110710 | ok | 0.50 | PRO NT(0.5,) | no |
+| ES.GEN_MV_close.70069fbb | GEN_MV_close | close | 36 | -92 / 7153 | 12.91 / 320 / 79 | 3.64 / 320 | 62 / 72 | -4468 vs -29867 | ok | 0.80 | PRO NT(0.5,) | no |
+| ES.GEN_KB_pre.b460ed27 | GEN_KB_pre | pre | 216 | -306 / 17480 | 5.32 / 1670 / 171 | 37.68 / 286 | 62 / 72 | -228 vs -70430 | ok | 0.67 | SIZ ER(40, 0.3, 'low', 0.25) | no |
+| ES.GEN_KB_pre.ad9faee7 | GEN_KB_pre | pre | 216 | -1593 / 29017 | -0.96 / 4621 / -86 | -0.44 / 4297 | 62 / 72 | -37319 vs -106717 | ok | 0.95 | SIZ ER(20, 0.3, 'low', 0.25) | no |
+| ES.GEN_PE_pre.233d0830 | GEN_PE_pre | pre | 36 | -1462 / 24377 | -1.31 / 7427 / -187 | -4.00 / 2445 | 62 / 72 | -16720 vs -66352 | ok | 0.36 | ZON ZN('PD', 'behind', 0.8, 0.0) | no |
+| ES.GEN_MV_nypm.897a8587 | GEN_MV_nypm | nypm | 36 | -489 / 14114 | 3.19 / 2781 / 170 | -0.46 / 2674 | 61 / 72 | -11030 vs -43632 | ok | 0.80 | PRO NT(0.65,) | no |
 | ES.GEN_SM_nypm.11e3c421 | GEN_SM_nypm | nypm | 108 | -47 / 1713 | 1.61 / 923 / 29 | -0.68 / 923 | 61 / 72 | 12970 vs 7761 | ok | 0.08 | SIZ ER(40, 0.3, 'low', 0.25) | YES (WF>=60, null<=.10, L6M Cal>0) |
-| ES.GEN_KB_close.9f75a538 | GEN_KB_close | close | 216 | 471 / 23427 | 1.26 / 4154 / 101 | 5.45 / 1061 | 61 / 72 | -7164 vs -33856 | ok | n/a | SIZ ER(40, 0.2, 'high', 0.25) | no |
-| ES.GEN_MV_pre.9b1fcbc2 | GEN_MV_pre | pre | 36 | -588 / 11456 | 0.85 / 1387 / 23 | 0.10 / 1387 | 61 / 72 | -10484 vs -38485 | ok | n/a | STK SK(0, 15, 4) | no |
+| ES.GEN_KB_close.9f75a538 | GEN_KB_close | close | 216 | 471 / 23427 | 1.26 / 4154 / 101 | 5.45 / 1061 | 61 / 72 | -7164 vs -33856 | ok | 0.06 | SIZ ER(40, 0.2, 'high', 0.25) | YES (WF>=60, null<=.10, L6M Cal>0) |
+| ES.GEN_MV_pre.9b1fcbc2 | GEN_MV_pre | pre | 36 | -588 / 11456 | 0.85 / 1387 / 23 | 0.10 / 1387 | 61 / 72 | -10484 vs -38485 | ok | 0.66 | STK SK(0, 15, 4) | no |
 | ES.GEN_MV_nyam.7ed3be01 | GEN_MV_nyam | nyam | 36 | -250 / 9128 | -1.23 / 4343 / -102 | -3.14 / 4343 | 61 / 72 | 2637 vs -35266 | ok | 0.57 | STK SK(30, 0, 0) | no |
 | ES.GEN_KB_nypm.73abb31e | GEN_KB_nypm | nypm | 216 | 128 / 3476 | 9.35 / 2418 / 434 | 11.13 / 1135 | 60 / 72 | -690 vs -22468 | ok | n/a | ZON ZN('PD', 'ahead', 0.8, 0.0) | no |
 | ES.GEN_HM_nypm.0bf276e6 | GEN_HM_nypm | nypm | 24 | 83 / 32682 | 11.82 / 1515 / 344 | 14.70 / 1159 | 58 / 72 | 2836 vs -90987 | ok | 0.82 | SIZ ER(10, 0.4, 'low', 0.25) | no |
