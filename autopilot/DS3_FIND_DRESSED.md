@@ -1,12 +1,12 @@
-# DS3_FIND_DRESSED (FD-CORE, 2026-11-10 16:15Z). Post-hoc, Shadow only, no PASS claim, nothing live.
+# DS3_FIND_DRESSED (FD-CORE, 2026-11-10 19:15Z). Post-hoc, Shadow only, no PASS claim, nothing live.
 User order: judge every candidate book WITH the stack on it, not naked. Seat test on the S1b-COMB stack drawdown (API: FD_API.md). MV is the weakest live book on L6M stack-Calmar contribution (removing it alone cuts L6M maxDD 14% at equal mean, so replace seats are credited only beyond that drop-only row).
 
 ## INSTRUMENTS COVERED (user request 21:10Z; counts from candidates.parquet, owner ledgers and liq/ nol2/ directories at page time)
 | instrument | candidates in inventory | naked lists exported | dressed | data end (candidate lists) | L2 / depth on box (quotes: FD_NOL2.md section 5, nothing bought) | stack used | why not dressed / note |
 |--|--|--|--|--|--|--|--|
 | NQ | 441 | 345 | 343 (FD-LIQ liq/) | 2026-10-26 (state to 11-05) | yes (full MBP-10 on disk) | FULL STACK | candidates with no stop distance / no price path not dressed; registry rows without lists |
-| ES | 1010 | 1008 | 1006 (FD-LIQ liq/) | 2026-10-26 (state to 11-05) | yes (MBP-10 from 2023-08) | FULL STACK | as NQ |
-| RTY | 684 | 681 | 649 (FD-LIQ liq/) | 2026-10-26 (state to 11-05) | yes (MBP-10 from 2023-08) | FULL STACK | as NQ |
+| ES | 1010 | 1008 | 1151 (FD-LIQ liq/) | 2026-10-26 (state to 11-05) | yes (MBP-10 from 2023-08) | FULL STACK | as NQ |
+| RTY | 684 | 681 | 789 (FD-LIQ liq/) | 2026-10-26 (state to 11-05) | yes (MBP-10 from 2023-08) | FULL STACK | as NQ |
 | YM | 681 | 678 | 642 in the NO-L2 pool (inv0); finalists 46 | 2026-10-16 | no; MBP-10 quote $527 hist 2023-04..2026-10 / $152 12 mo / $2.25 per wk | NO-L2 STACK | 2,819 dressed = every NO-L2 list with prices and >= 60 trades since 2023-04; the rest lack a price path or have < 60 trades |
 | GC | 785 | 779 | 733 in the NO-L2 pool (inv0); finalists 138 | 2026-10-16 (1-s too) | no; $408 / $174 / $3.36 per wk | NO-L2 STACK | same |
 | CL | 555 | 551 | 503 in the NO-L2 pool (inv0); finalists 15 | 2026-10-16 (1-s too) | no; $374 / $107 / $2.28 per wk | NO-L2 STACK | same |
