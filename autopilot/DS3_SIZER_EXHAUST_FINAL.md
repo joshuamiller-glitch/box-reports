@@ -1,4 +1,4 @@
-# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 07:16Z)
+# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 08:17Z)
 
 **Label: base S1b-COMB (live D7 v1.5 with the seven state-cut lines), controls NOCUT / UNIF where the owner ran them; first-order unless stage says S2 (exact); entries not live-matched (entry match < .85); in-sample; PRE-PROOF. Post-hoc, Shadow only, no PASS claims.**
 
@@ -434,7 +434,7 @@ Procedure: re-screen every layer on the trailing 26 weeks (L1M/L3M/L6M first, PR
 |--|--|--|--|--|--|
 | J | J pair min | {"a": "ext-K:d16e6b6b3c26", "b": "ext-SZQ:AB_d852c8_0"} | +71.4 | +67 / -6589 | LEAD+ (placebo ok) RECENT-ONLY-UNKNOWN-WF (PRE cut +67%, allowance 15% deeper, d mean -6589; WF n/a) [EXACT partial] |
 | B | VOL-pool vr_gk_w10_g20 stepv | [1.25, 0.0] | +58.7 | +57 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +57%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
-| B | VOL-pool vr_gk_w30_g20 stepv | [1.25, 0.0] | +47.3 | +52 /  | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +39%, allowance 15% deeper, d mean -3113; WF 34%) [EXACT ROLL-FIXED engine_ver=ROLLFIX1] |
+| B | VOL-pool vr_gk_w30_g20 stepv | [1.25, 0.0] | +47.3 | +52 /  | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +39%, allowance 15% deeper, d mean -3138; WF 34%) [EXACT ROLL-FIXED engine_ver=ROLLFIX1] |
 | K | K6 ext-B on P7 only | {"cell": "9806533560c9", "orig": "ext ext-B {\"cell\": \"980 | +45.7 | +29 /  | CANDIDATE (own-p only; family p 0.87) OK-PRIOR-UNKNOWN-WF (PRE cut +29%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | K | K1 P7 lot cap by session | {"asia": 5, "london": 3, "nyam": 3} | +30.9 | +34 /  | CANDIDATE OK-PRIOR-UNKNOWN-WF (PRE cut +34%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | D | eqdd_book_20d_R | Y1R_f0.50_sticky | +30.4 | +45 /  | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +15%, allowance 25% deeper, d mean -3719; WF 64%) [EXACT ROLL-EXCL engine_ver=ROLLEXCL] |

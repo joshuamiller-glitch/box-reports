@@ -4,7 +4,7 @@
 
 > **ROLL-EXCL (lead 17:35Z): every first-order and exact number on this page excludes the 31 base trades (of the 33 listed in roll_bracket_trades.csv; 2 listed rows are not in the COMB list) alive across a contract roll (key book + entry second +-2 s); their P&L is zeroed before state and scoring. Engine-internal state of the exact runs (lock/cooldown/equity states) still saw those artifact P&L jumps; the 14 roll days are checked in the lock/cooldown exact runs on the R1 page.**
 
-# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-10 06:31Z
+# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-10 08:17Z
 
 **Label: first-order on base S1b-COMB (live D7 v1.5 with the seven state-cut lines), 21135 trades 2023-04..2026-10 (last label day 20261030; the 2026-11-01..05 live weeks are not in the list, so L1M/L2M/L3M windows end 2026-10-30); entries not live-matched; in-sample; PRE-PROOF; post-hoc; Shadow only; no PASS claims.** Reference = Q1-A (the base lots). 3274 cells (C 140, D 1980, E 1110, K 44). Prereg: autopilot/SZ_CDE_PREREG.md (sha in DECISIONS.md).
 
@@ -319,10 +319,10 @@ M_CDE.npz row alignment spot-check (M x base P&L in C.prepare(C.load_trades) ord
 | set | cell | L6M exact cut / first-order cut | PRE exact / FO | X' exact / FO | L6M d mean exact / FO | HOLD exact / FO | status |
 |--|--|--|--|--|--|--|--|
 | CDE_F00 | D ; eqdd_book_20d_R ; Y1R_f0.50_sticky ; ALL | +24.0 / +46.6 | +15.3 / +44.6 | +31.4 / +47.4 | -8807.3 / -8362.9 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
-| CDE_F01 | E ; max_books_on ; n1_f0.5 ; sess_london | +25.8 / +27.5 | +11.8 / +25.6 | +12.1 / +16.9 | +757.0 / +145.4 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F01 | E ; max_books_on ; n1_f0.5 ; sess_london | +25.8 / +27.5 | +11.8 / +25.6 | +12.1 / +16.9 | +757.0 / +145.4 | -18.3 / -18.2 | EXACT-CONFIRMED on L6M/PRE/X' |
 | CDE_F02 | D ; eqdd_book_20d_R ; Y4R_f0.25_sticky ; P7 | +10.7 / +30.3 | +34.8 / +44.9 | +5.3 / +53.2 | -9137.0 / -4029.3 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
 | CDE_F03 | C ; riskcap_per_trade ; R$3600 ; P7 | +18.9 / +37.4 | +18.3 / +39.0 | +53.5 / +40.5 | -12345.8 / -7610.8 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
-| CDE_F04 | D ; eqdd_stack_20d ; Y20000_f0.25_sticky ; sess_london | +30.2 / +29.8 | +36.5 / +43.4 | +4.2 / +12.8 | -1667.8 / -46.8 | na / na | EXACT-CONFIRMED on L6M/PRE/X' |
+| CDE_F04 | D ; eqdd_stack_20d ; Y20000_f0.25_sticky ; sess_london | +30.2 / +29.8 | +36.5 / +43.4 | +4.2 / +12.8 | -1667.8 / -46.8 | -25.3 / -25.1 | EXACT-CONFIRMED on L6M/PRE/X' |
 | CDE_F05 | D ; week_loss_book_R ; X2R_f0.00 ; P7_sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F06 | E ; same_side_lots_cap ; cap6_trunc ; sess_london | na / na | na / na | na / na | na / na | na / na | no exact window yet |
 | CDE_F07 | D ; eqdd_stack_20d ; Y30000_f0.25_sticky ; sess_nyam | na / na | na / na | na / na | na / na | na / na | no exact window yet |
@@ -432,7 +432,9 @@ Q1-A reference rows (maxDD $ / mean $/wk, carrying week dropped) from the three 
 | X-prime+PRE (202304-202506, contiguous) | CDE_F01+CDE_F04 | 31.2 | -860 | 49% | 33 of 43 |
 | X-prime+PRE (202304-202506, contiguous) | CDE_F01 alone vs live | 11.8 | -1120 | 47% | 30 of 43 |
 | X-prime+PRE (202304-202506, contiguous) | CDE_F04 alone vs live | 31.2 | -178 | 26% | 21 of 43 |
-| HOLD+L6M (202511-202610, contiguous) | not covered yet (CDE_F01, CDE_F04) | | | | |
+| HOLD+L6M (202511-202610, contiguous) | CDE_F01+CDE_F04 | 0.0 | -636 | 0% | 1 of 12 |
+| HOLD+L6M (202511-202610, contiguous) | CDE_F01 alone vs live | 0.0 | -73 | 8% | 1 of 12 |
+| HOLD+L6M (202511-202610, contiguous) | CDE_F04 alone vs live | 0.0 | -636 | 0% | 1 of 12 |
 
 ### 2. Rule 2a label (Z.prior_info: allowed PRE deepening = min(25, L6M cut + 10)% only if the bi-weekly WF beats live in >= 60% of periods else 15%; PRE mean floor -1k/wk of live)
 
@@ -440,6 +442,9 @@ Q1-A reference rows (maxDD $ / mean $/wk, carrying week dropped) from the three 
 |--|--|--|--|--|--|--|--|
 | CDE_F01 | +25.8 | +11.8 | -1490 | 47 | **RECENT-ONLY** | 15 | -11.8 |
 | CDE_F04 | +30.2 | +36.5 | -462 | 26 | **OK-PRIOR** | 15 | -36.5 |
+
+HOLD exact (2025-11..2026-10, ROLL-FIXED): CDE_F01 maxDD 117669 vs live 99496 (cut -18.3%, d mean -1439 $/wk, equal-mean -15.3%); CDE_F04 maxDD 124680 vs live 99496 (cut -25.3%, d mean -1541 $/wk, equal-mean -32.9%). Both are DEEPER than live on HOLD: the cut is concentrated in L6M, PRE and X-prime and the 2025-11..2026-04 months get worse; the HOLD+L6M bi-weekly WF picks live in 11 of 12 periods and beats live in 0% / 8% of periods.
+
 
 F01 PRE d mean is below the -1k/wk floor, so the mean floor decides: RECENT-ONLY regardless of the WF allowance (the PRE maxDD itself is shallower, so only the mean floor binds). F04 passes both PRE tests.
 
