@@ -1,4 +1,4 @@
-# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 09:18Z)
+# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables FINAL (SZ-CORE, 2026-11-10 09:39Z)
 
 **Label: base S1b-COMB (live D7 v1.5 with the seven state-cut lines), controls NOCUT / UNIF where the owner ran them; first-order unless stage says S2 (exact); entries not live-matched (entry match < .85); in-sample; PRE-PROOF. Post-hoc, Shadow only, no PASS claims.**
 
@@ -9,6 +9,15 @@ Windows as of 2026-11-09 (L6M 20260512-, HOLD 20251111-, PRE 20240201-20250630, 
 **ROLL-EXCL (SZ-BASE section 9, 2026-11-09):** the replica engine runs on stitched raw prints (14 contract rolls, +185-316 pts); 33 trades alive across a roll (31 exit by Target/Stop within 2 s, net +$20.2k in COMB) are EXCLUDED from every window metric: first-order scoring (sz_core Base weight 0, M length unchanged), exact scoring (sz_exact.py score/report) and the reference rows. X' maxDD of the base changes +10% (116.9k to 128.9k), HOLD cuts move up to 21 pts, L6M is unchanged. Rows marked "ROLL-EXCL (core rescore)" are re-scored by sz_core; ledger numbers marked "owner number, NOT roll-excluded" are the owners' own scorers and are flagged OLD COLUMNS until the owners re-score. FIRST-ORDER numbers are ROLL-EXCL only: they remove the 33 trades but cannot see the follow-on effects of those trades on locks, day states, stack caps and re-entries (exact rows can, but the exact base itself still contains the 33 until the engine patch is run; exact scoring excludes the same 33 keys). The engine fix (flatten-at-roll patch prepared in code/th_sz/sz_exact_roll.py; runbook in SZ_API.md section 10) and the base rebuild are deferred until after the FINAL pages.
 
 **STANDING RULE (user, 2026-11-09 17:20Z, autopilot/STANDING_RULE_LAYERS_ON_20261109.md):** every D7 layer stays ON. "Off", "no rule", "empty side" and "plain 60/60" are REFERENCE rows only. Each program delivers the best SETTING of its layer (the live setting is retained if nothing beats it) and the best profit rule per book even if inside MDE. In this study: sizer-off is a reference row; the deliverable is the best sizing setting per book and for the stack, with "live setting retained" stated where nothing beats it.
+
+## DECISIONS FOR THE USER (default for every item: the live setting is retained; evidence in one line each; all numbers exact ROLL-FIXED engine, ROLL-FIXED = engine_ver ROLLFIX1, vs the study base S1b-COMB; post-hoc, PRE-PROOF, Shadow only)
+| # | decision | evidence (one line) | default |
+|--|--|--|--|
+| a | P7 session table 7,4,0,4,0,0 (per lead already installed) vs the P7 cap min(lots,3) London+NYAM (needs a v1.6 cap field) | 7,4,0,4,0,0: maxDD cut L6M +22.5 / HOLD +10.0 / PRE +14.8 / X' +18.8%, d mean +$489 / -$436 / -$1,021 / +$613 per week, worst-20 better, WF 73% beat; RECENT-ONLY by $21 on the PRE mean floor. Cap: +26.9 / +15.3 / +15.8 / +41.3%, d mean +$2,833 / +$1,379 / +$15 / +$2,030, worst-20 +69% / +17%, WF 79.5%, OK-PRIOR. | keep 7,4,0,4,0,0 installed; cap = v1.6 request |
+| b | P7MaxDailyLoss 16,800 -> 8,400 (R1_3, SZ-CDE) | stack maxDD L6M 79,907 -> 59,357 (+25.7%), HOLD 99,496 -> 92,001 (+7.5%), PRE 140,288 -> 116,454 (+17.0%), X' 137,520 -> 129,643 (+5.7%); mean +$492 / +$242 / +$1,108 / -$1,076 per week (L6M / HOLD / PRE / X'); L6M worst-20 226.7k -> 281.3k; all four windows ROLL-FIXED | live 16,800 retained unless you approve 8,400 |
+| c | rule 2a PRE mean floor: fixed -$1,000/wk vs a share of the live PRE mean (live PRE mean is about $14k/wk, so 7% = -$1k) | the floor alone makes 7/4/4 (-$1,021), the joint stacks JN04/JP04 (-$3.6k) and ZL-1 (-$1,833) RECENT-ONLY while their PRE maxDD is shallower | keep the fixed -$1k (conservative) |
+| d | stop-exit mode and the stop fill bias (REDO-R9) | engine stop fills are optimistic: ABSOLUTE means are optimistic everywhere; drawdown ranking is the usable output; stop-exit modes are unresolved (hooks out of this rebuild) | no change |
+| e | joint stack JN04 / JP04 as a SHADOW candidate (JN04 = J03 without the sizer and the cooldown layer) | JN04: maxDD cut L6M +43.4 / L3M +43.4 / L1M +67.9, equal-mean +53.5, d mean +$4,860/wk (L6M), HOLD +45.6 (-$1,456), PRE +31.4 (-$3,620), WF 82% beat; RECENT-ONLY only through the PRE mean floor | shadow only, live retained |
 
 ## Scoreboard
 
@@ -501,6 +510,16 @@ Status of this section: provisional until the exact rows below finish (tier 1.5 
 
 Policy per book: KB, SM, HM, MV, PB, OD: live Q1-A sizing retained (no exact cell with OK-PRIOR and a recents gain was found at book level; first-order book-level screens are in the family tables, FIRST-ORDER SCREEN ONLY). PE (P7): live 7,7,0,7,0,0 -> candidate 7,4,0,4,0,0 (panel today) or the cap (v1.6). Stack: live Q1-A retained; no stack-level sizing cell beats it exact.
 
+### Newest facts integrated (2026-11-10 ~09:45Z)
+- **P7MaxDailyLoss 16,800 -> 8,400 (R1_3, SZ-CDE, exact, all four windows ROLL-FIXED):** stack maxDD cut L6M +25.7%, HOLD +7.5%, PRE +17.0%, X' +5.7%; mean +$492 / +$242 / +$1,108 / -$1,076 per week. See decision (b); the lock table is in DS3_REDO_R1_LOCKS.md.
+- **R1b StackCut (SZ-CDE page DS3_REDO_R2b_STACKCUT.md):** the live setting (50%, Asia-only, first stop, same side) stays best; OFF is a reference row only (L6M maxDD -4.5% deeper, mean -$4,174/wk); the other pct / session / trigger variants do not beat it on recents with OK-PRIOR.
+- **F01 / F04 (SZ-CDE stack-equity and max-books London rules):** worse than live on HOLD (d mean -$73 / -$636 per week at no maxDD gain): not candidates.
+- **Joint stacks (SZ-IJK, DS3_JOINT.md, ROLL-FIXED exact):** JN04 and the JP stacks built on it cut L6M maxDD +43%, WF 82% beat live, but all are RECENT-ONLY because their PRE mean is -$3.6k to -$3.7k per week (floor -$1k): shadow candidates only (decision e).
+- **R4 entry (REDO-R4):** live entry stays; the CF_EN_45 variant is a SHADOW candidate (no sizing impact).
+- **R9 stop-exit modes / stop fill model:** unresolved; ABSOLUTE means are optimistic (stop fill bias); drawdown ranking is the usable output; hooks are out of the ROLLFIX1 rebuild.
+- **RollRep defect fix:** SZ-CDE found that pending roll events past the chunk end closed positions open at the data end (67 'RollFlat' rows, 34 sets, one month 202411, +$1,861 net per set); fixed and stripped; the reference rows and P7 cells (X_VT, X_L, X_B, X_C, KCAP3, 7/4/4, 5/4/4, REF_ZOFF) are unchanged on every window.
+- **Standing rules in force:** (1) every layer stays ON (off = reference rows only, best SETTING delivered, live retained if nothing beats it); (2) recents first (L1M/L3M/L6M), bi-weekly re-pick walk-forward is the primary OOS test, PRE/X' tolerant; (2a) PRE allowance = min(25, L6M cut % + 10)% when the WF beats live in >= 60% of periods else 15%, PRE mean floor -$1k/wk, label RECENT-ONLY (never silently killed); (3) exact engine runs decide, first-order is a screen only.
+
 ## B. Expressible in D7 v1.5 panel values today vs v1.6 code
 - **v1.5 today (exact panel values):** TrendEr* (ER period/threshold/lo-multiplier as live Q1-A; any other ladder value is an ER cell); per-book session lot table (six values asia,london,pre,nyam,nypm,close; lots 0-8) -> P7 `7,4,0,4,0,0`; A06 half-hour slot list (x0.5, K7 H7 P7 U7); B02 quiet-overnight halving (K7 P7 H7); StackCutPct / StackAsiaOnly; lock R caps / give-back / week floor / P7MaxDailyLoss as in R1_3; L2 gate stages.
 - **v1.6 code needed:** a post-chain per-book/session lot CAP (KCAP3); vol-target fields (VolMeasure, VolBars, VolBarMin, VolRefDays, VolRefType, VolRefStat, VolMode, VolP, VolFloor, VolBreak1/2, VolLoMult1/2, VolBookMask, VolWithEr, VolEventExclude, VolMaxCap; stack target-vol StackVol*; section 11 of DS3_SIZER_VOLTARGET.md); signal-state / regime / dow-event multipliers (FGH G/H/F families need a calendar and feature panel at the entry second); equity-curve / day-state sizers (CDE D/E: need engine state: open lots, day P&L); cooldown / chop-pause rules (family L); book-level recent-performance gates (IJK I).
@@ -512,6 +531,11 @@ Policy per book: KB, SM, HM, MV, PB, OD: live Q1-A sizing retained (no exact cel
 - **Stop fill model bias:** the engine's stop fills are optimistic, so ABSOLUTE means are optimistic and the stop-exit modes (REDO-R9) are unresolved; drawdown ranking between sizing cells is the usable output, absolute $/week is not an expectation. The stop-fill model and stop-exit-mode hooks are OUT of this rebuild.
 - **Entries are not live-matched (entry match < .85):** PRE-PROOF; everything is post-hoc and Shadow only; no PASS claims.
 - **Held-out live week:** first-order rows only (no losing day in the week for any cell); exact live-week rows are not available (the blind week is not in the S1b pipeline); the user finding stands that live cuts of the 11-08/09 night are bug exits and are excluded.
+
+## D. Readiness of this FINAL (09:45Z) - what is still provisional and why
+- **Done (exact, ROLL-FIXED, all four windows):** reference rows Q1-A / sizer off / old ladder L / B / ZL-1 (43 months each; X_VTA, the adjusted-bars ZL-1 variant, is not run yet: reference only, 97 trades differ); P7 KCAP3 and 7/4/4 (HOLD done: KCAP3 +15.3%, 7/4/4 +10.0%; 5/4/4 HOLD +18.6% with d mean -$5,361); REF_ZOFF; layer top-1 sets on L6M, PRE, X' (tier 1.5 complete).
+- **Provisional:** tier 2 / tier 3 sets (R5-R12, VT, ZNC/ZS, AB, FGH) still finishing L6M + PRE in the queue (see SZ_API.md section 12); X' and HOLD months of non-top-1 sets are trimmed and stay FIRST-ORDER SCREEN ONLY; the book-level policy rows are first-order screens (no exact book-level cell beat live with OK-PRIOR); owner-driver exact rows (CDE, IJK) are summarised from their pages and were not re-scored by SZ-CORE; the stop fill bias applies to every absolute mean.
+- **REFIT 2026-11-22:** the section below carries the provisional recents-first leaders and the procedure.
 
 ## P7 section - exact ROLL-FIXED table (worst-20 sign corrected: + = better; windows complete only)
 
