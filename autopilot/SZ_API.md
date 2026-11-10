@@ -58,41 +58,42 @@ CANDIDATE = down-only AND cut_L6M > 0 AND cut_PRE > 0 AND cut_X' > 0 (one of the
 - Labels (page): CANDIDATE = recents (L6M cut > 0, L3M cut > -3) + OK-PRIOR + worst-20 not worse + placebo p <= .10 + bi-weekly WF (>= 50% of periods beaten and cut > 0, else monthly WF) ; 'LEAD+' = recents + placebo ok; 'LEAD' = recents; RECENT-ONLY rows keep both numbers in the label (PRE cut / d mean).
 
 <!--Q12-->
-## 12. Exact queue status (2026-11-10 03:11 UTC, after the hard trim; written by code/th_sz/queue_status.py)
+## 12. Exact queue status (2026-11-10 05:55 UTC, after the hard trim; written by code/th_sz/queue_status.py)
 
 Hard trim in force: strict order (tier, window L6M > PRE > X' > HOLD, month-major) across all sets; X'/HOLD months of a set are dropped until the set has finished L6M + PRE; R1_3/R1_4 X'/HOLD are run by SZ-CDE itself; *_LIVE sets are skipped (live = base) except exact_keep_live.txt; identity tests (_ID/_TEST/_HOOKREF) first; J-stack and REF_ sets are tier 1; top-1 list (exact_top1.txt, rebuilt from the layer registries every 30 min) = tier 1.5. Workers: 3 when MemAvailable >= 55 GB and load < 24, else 2 when >= 45 GB (hard stop at load > 32).
 
 | tier | done | pending |
 |--|--|--|
-| 0 | 117 | 0 |
-| 1 | 151 | 0 |
-| 1.5 | 211 | 90 |
-| 2 | 30 | 748 |
-| 3 | 0 | 158 |
-| 4 | 39 | 158 |
+| 0 | 147 | 0 |
+| 1 | 230 | 0 |
+| 1.5 | 358 | 0 |
+| 2 | 81 | 697 |
+| 3 | 26 | 165 |
+| 4 | 35 | 291 |
 
 | prefix | done | pending |
 |--|--|--|
-| R5_ | 89 | 212 |
-| ZS_ | 32 | 160 |
-| R6_ | 32 | 152 |
-| R7_ | 2 | 115 |
-| R12_ | 0 | 115 |
-| AB_ | 36 | 102 |
-| VT_ | 32 | 83 |
+| R5_ | 125 | 176 |
+| ZS_ | 66 | 158 |
+| R6_ | 72 | 144 |
+| R7_ | 7 | 110 |
+| R12_ | 5 | 110 |
+| AB_ | 48 | 100 |
+| VT_ | 69 | 78 |
+| FGH_ | 79 | 69 |
 | Q_ | 111 | 52 |
-| FD_ | 1 | 30 |
-| ZNC_ | 32 | 26 |
-| R10_ | 0 | 24 |
-| R9_ | 0 | 24 |
-| X_ | 65 | 23 |
-| R11_ | 0 | 18 |
-| R8_ | 0 | 12 |
+| X_ | 95 | 35 |
+| ZNC_ | 59 | 31 |
+| FD_ | 11 | 20 |
+| R9_ | 4 | 20 |
+| R10_ | 5 | 19 |
+| R11_ | 3 | 15 |
+| R8_ | 2 | 10 |
 | REF_ | 52 | 6 |
 | RB_ | 64 | 0 |
 
-Measured throughput (last 3 h): 203.7 cell-months/h overall (611 finished); mean 113 s per cell inside a batch process => about 31.8 cell-months/h per worker, 63.7 with 2 workers, 95.5 with 3.
+Measured throughput (last 3 h): 164.3 cell-months/h overall (493 finished); mean 115 s per cell inside a batch process => about 31.4 cell-months/h per worker, 62.8 with 2 workers, 94.2 with 3.
 
-ETA (pending / throughput; 2 workers | 3 workers): tier 0: 0.0 h | 0.0 h; tier 0-1: 0.0 h | 0.0 h; + top-1 list (1.5): 1.4 h | 0.9 h; + tier 2 (L6M then PRE only within the trim): 13.2 h | 8.8 h.
+ETA (pending / throughput; 2 workers | 3 workers): tier 0: 0.0 h | 0.0 h; tier 0-1: 0.0 h | 0.0 h; + top-1 list (1.5): 0.0 h | 0.0 h; + tier 2 (L6M then PRE only within the trim): 11.1 h | 7.4 h.
 <!--/Q12-->
 - **w20cut sign (fixed 2026-11-09 22:45Z):** `w20cut_<w>` = 100*(w20_cell - w20_live)/|w20_live| where w20 = SUM of the 20 worst weekly P&Ls; + = improvement (larger, less negative). Earlier core numbers had the opposite sign (KCAP3 / 7-4-4 "-70.6% / -46% worse" were actually improvements). See autopilot/SZ_P7_W20_NOTE.md.
