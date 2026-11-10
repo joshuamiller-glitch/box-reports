@@ -1,6 +1,6 @@
-# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-10 11:55Z)
+# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-10 12:37Z)
 
-> **FINAL DRAFT 2026-11-10 11:56Z: exact ROLL-FIXED rows (ROLLFIX1 engine, patched live reference), WF% beside every label, REFIT 2026-11-22 over all exact cells. Sections: R1 locks (grid, summary block, P7 -1R decision pack), R1b StackCut, L cooldowns, G candidates, joint lines for R1_3.**
+> **FINAL DRAFT 2026-11-10 12:38Z: exact ROLL-FIXED rows (ROLLFIX1 engine, patched live reference), WF% beside every label, REFIT 2026-11-22 over all exact cells. Sections: R1 locks (grid, summary block, P7 -1R decision pack), R1b StackCut, L cooldowns, G candidates, joint lines for R1_3.**
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. FIRST-ORDER SCREEN ONLY unless a row is in the exact table below. ROLL-EXCL: the 31 roll-artifact base trades are excluded from every number. STANDING RULE: every lock stays ON; "off" rows are reference rows only; the deliverable is the best SETTING (drawdown first at equal mean, holds OOS); if nothing beats the live setting the live setting stays.**
 
@@ -312,7 +312,7 @@ Identity test (live spec through the new hook vs the patched S1-COMB lists): L6M
 Reading: the -$439k is the P&L of the trades that ended by StackCut (they were losers: the other leg of a stopped book on the same side); the same trades held to their bracket would have made about the same (-$439k), so the cut itself is worth about +$21.6k over 43 months, all of it in Asia (+$28.8k) and slightly negative in London (-$5.6k) and NY-AM (-$1.6k): the rule is not the source of the loss, it avoided a small part of it; the loss is the stop of the first book.
 
 
-## L. Cooldowns / chop pauses (SZ-L top-5, exact ROLL-FIXED; HOLD months not run). Label per Rule 2/2a; WF is the bi-weekly re-pick walk-forward of the cell vs live on the contiguous exact block.
+## L. Cooldowns / chop pauses (SZ-L top-5, exact ROLL-FIXED; L6M, PRE, X-prime and HOLD). Label per Rule 2/2a; WF is the bi-weekly re-pick walk-forward of the cell vs live on the contiguous exact block.
 
 ### L top-5 exact rows
 
@@ -321,32 +321,37 @@ Reading: the -$439k is the P&L of the trades that ended by StackCut (they were l
 | CDE_L1 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | L6M | +18.9 | -2140 | +12.4 | ROLL-FIXED |
 | CDE_L1 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | PRE | +1.3 | -1532 | -6.5 | ROLL-FIXED |
 | CDE_L1 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | X' | +54.3 | +1995 | +50.6 | ROLL-FIXED |
+| CDE_L1 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | HOLD | +1.4 | -1403 | -6.5 | ROLL-FIXED |
 | CDE_L2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | L6M | +15.5 | -4188 | +1.3 | ROLL-FIXED |
 | CDE_L2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | PRE | -0.2 | -1142 | -17.0 | ROLL-FIXED |
 | CDE_L2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | X' | +45.3 | +1508 | +36.1 | ROLL-FIXED |
+| CDE_L2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | HOLD | -6.2 | -1820 | -24.1 | ROLL-FIXED |
 | CDE_L3 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | L6M | +26.6 | -2843 | +18.6 | ROLL-FIXED |
 | CDE_L3 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | PRE | +20.9 | -1752 | +12.3 | ROLL-FIXED |
 | CDE_L3 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | X' | +4.8 | +83 | -5.5 | ROLL-FIXED |
+| CDE_L3 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | HOLD | -10.9 | -2917 | -22.9 | ROLL-FIXED |
 | CDE_L4 | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | L6M | +11.9 | +1889 | +17.3 | ROLL-FIXED |
 | CDE_L4 | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | PRE | +34.5 | -827 | +38.5 | ROLL-FIXED |
 | CDE_L4 | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | X' | +17.0 | +470 | +22.0 | ROLL-FIXED |
+| CDE_L4 | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | HOLD | -15.2 | -1256 | -8.2 | ROLL-FIXED |
 | CDE_L5 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | L6M | -2.4 | -6075 | -29.5 | ROLL-FIXED |
 | CDE_L5 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | PRE | +37.5 | +2087 | +20.9 | ROLL-FIXED |
 | CDE_L5 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | X' | +28.4 | +480 | +9.4 | ROLL-FIXED |
+| CDE_L5 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | HOLD | +17.7 | -4558 | -4.0 | ROLL-FIXED |
 
 | set | bi-weekly WF (block) beats live % / OOS cut / d mean | label (Rule 2/2a) |
 |--|--|--|
 | CDE_L1 | 33% (X-prime+PRE) / -3.3% / -1 | RECENT-OK / RECENT-ONLY (allow 15%, WF 33%) |
-| CDE_L2 | 21% (X-prime+PRE) / +0.0% / -844 | recent: no / RECENT-ONLY (allow 15%, WF 21%) |
-| CDE_L3 | 42% (X-prime+PRE) / +0.0% / -1575 | RECENT-OK / RECENT-ONLY (allow 15%, WF 42%) |
-| CDE_L4 | 19% (X-prime+PRE) / +0.0% / -2087 | RECENT-OK / OK-PRIOR (allow 15%, WF 19%) |
+| CDE_L2 | 21% (X-prime+PRE) / +0.0% / -844 | recent: no / RECENT-ONLY (allow 15%, WF 21%) / HOLD deeper -6.2% |
+| CDE_L3 | 42% (X-prime+PRE) / +0.0% / -1575 | RECENT-OK / RECENT-ONLY (allow 15%, WF 42%) / HOLD deeper -10.9% |
+| CDE_L4 | 19% (X-prime+PRE) / +0.0% / -2087 | RECENT-OK / OK-PRIOR (allow 15%, WF 19%) / HOLD deeper -15.2% |
 | CDE_L5 | 49% (X-prime+PRE) / +31.2% / +1025 | recent: no / OK-PRIOR (allow 15%, WF 49%) |
 
 
 Standard note: after a pause the engine re-enters at different seconds, so removed/exact-only trade COUNTS are churn; read net P&L and the equal-mean cuts. Frozen-week reading (first-order, SZ-L): no cooldown removes the P7 Asia/London chop losses without removing winners (best ratio: London stack-loss rule).
 
 
-## G. Recents-first candidates from the E / D screens (CDE_G1-G4; exact L6M and PRE; X-prime/HOLD not run unless shown)
+## G. Recents-first candidates from the E / D screens (CDE_G1-G4; G1 and G2: L6M, PRE, X-prime and HOLD; G3 and G4: L6M and PRE only)
 
 ### G exact rows
 
@@ -354,8 +359,12 @@ Standard note: after a pause the engine re-enters at different seconds, so remov
 |--|--|--|--|--|--|--|
 | CDE_G1 | E;corr_same_side;N30min_f0.0_ge1_others;sess_london | L6M | +14.7 | -1872 | +8.8 | ROLL-FIXED |
 | CDE_G1 | E;corr_same_side;N30min_f0.0_ge1_others;sess_london | PRE | +22.1 | -792 | +16.7 | ROLL-FIXED |
+| CDE_G1 | E;corr_same_side;N30min_f0.0_ge1_others;sess_london | X' | +19.9 | +2231 | +14.3 | ROLL-FIXED |
+| CDE_G1 | E;corr_same_side;N30min_f0.0_ge1_others;sess_london | HOLD | +7.8 | -345 | +1.5 | ROLL-FIXED |
 | CDE_G2 | E;corr_same_side;N30min_f0.5_ge1_others;sess_london | L6M | +18.6 | -1351 | +14.7 | ROLL-FIXED |
 | CDE_G2 | E;corr_same_side;N30min_f0.5_ge1_others;sess_london | PRE | -2.7 | -1131 | -7.7 | ROLL-FIXED |
+| CDE_G2 | E;corr_same_side;N30min_f0.5_ge1_others;sess_london | X' | +10.0 | +764 | +5.6 | ROLL-FIXED |
+| CDE_G2 | E;corr_same_side;N30min_f0.5_ge1_others;sess_london | HOLD | +11.1 | -1358 | +6.8 | ROLL-FIXED |
 | CDE_G3 | E;newentry_haircut_day_dd;Y3000_f0.0;K7 | L6M | +4.7 | -5640 | -18.3 | ROLL-FIXED |
 | CDE_G3 | E;newentry_haircut_day_dd;Y3000_f0.0;K7 | PRE | +9.6 | -726 | -12.2 | ROLL-FIXED |
 | CDE_G4 | D;dayloss_stack$;X3000_f0.00;K7 | L6M | +1.8 | -6490 | -26.4 | ROLL-FIXED |
@@ -363,8 +372,8 @@ Standard note: after a pause the engine re-enters at different seconds, so remov
 
 | set | bi-weekly WF (block) beats live % / OOS cut / d mean | label (Rule 2/2a) |
 |--|--|--|
-| CDE_G1 | 43% (PRE only (26w train inside PRE)) / +22.1% / -905 | RECENT-OK / OK-PRIOR (allow 15%, WF 43%) |
-| CDE_G2 | 33% (PRE only (26w train inside PRE)) / -2.7% / -1748 | RECENT-OK / RECENT-ONLY (allow 15%, WF 33%) |
+| CDE_G1 | 51% (X-prime+PRE) / +22.1% / -289 | RECENT-OK / OK-PRIOR (allow 15%, WF 51%) |
+| CDE_G2 | 51% (X-prime+PRE) / -2.7% / -718 | RECENT-OK / RECENT-ONLY (allow 15%, WF 51%) |
 | CDE_G3 | 52% (PRE only (26w train inside PRE)) / +8.2% / -2259 | recent: no / OK-PRIOR (allow 15%, WF 52%) |
 | CDE_G4 | 48% (PRE only (26w train inside PRE)) / +7.2% / -1826 | recent: no / OK-PRIOR (allow 15%, WF 48%) |
 

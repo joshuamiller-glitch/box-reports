@@ -4,7 +4,7 @@
 
 > **ROLL-EXCL (lead 17:35Z): every first-order and exact number on this page excludes the 31 base trades (of the 33 listed in roll_bracket_trades.csv; 2 listed rows are not in the COMB list) alive across a contract roll (key book + entry second +-2 s); their P&L is zeroed before state and scoring. Engine-internal state of the exact runs (lock/cooldown/equity states) still saw those artifact P&L jumps; the 14 roll days are checked in the lock/cooldown exact runs on the R1 page.**
 
-# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-10 11:53Z
+# SZ-CDE - families C (parity), D (equity-curve/state/locks), E (exposure), K slice (P7)  - 2026-11-10 12:37Z
 
 **Label: first-order on base S1b-COMB (live D7 v1.5 with the seven state-cut lines), 21135 trades 2023-04..2026-10 (last label day 20261030; the 2026-11-01..05 live weeks are not in the list, so L1M/L2M/L3M windows end 2026-10-30); entries not live-matched; in-sample; PRE-PROOF; post-hoc; Shadow only; no PASS claims.** Reference = Q1-A (the base lots). 3274 cells (C 140, D 1980, E 1110, K 44). Prereg: autopilot/SZ_CDE_PREREG.md (sha in DECISIONS.md).
 
@@ -339,18 +339,23 @@ M_CDE.npz row alignment spot-check (M x base P&L in C.prepare(C.load_trades) ord
 | CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | L6M [ROLL-FIXED] | +18.9 | +21.2 | -2140 | +2735 | +12.4 | 871 / -7568 | 376 / -28795 | 541 / +174089 | +655630 vs +643973 |
 | CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | PRE [ROLL-FIXED] | +1.3 | +22.8 | -1532 | -3516 | -11.2 | 1353 / +209255 | 651 / +108678 | 868 / +279235 | +943925 vs +1047056 |
 | CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | X' [ROLL-FIXED] | +54.3 | +24.6 | +1995 | -122 | +75.1 | 537 / -16915 | 311 / +73432 | 357 / +79069 | +146401 vs +55787 |
+| CDE_L1 | fbe1c726c9b2 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "exKB"} | HOLD [ROLL-FIXED] | +1.4 | -36.7 | -1403 | -835 | -6.1 | 1529 / +62221 | 669 / -18489 | 955 / +173336 | +921384 vs +971267 |
 | CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | L6M [ROLL-FIXED] | +15.5 | +17.1 | -4188 | +2727 | +1.3 | 1525 / -10372 | 763 / -42124 | 857 / +215721 | +637645 vs +643973 |
 | CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | PRE [ROLL-FIXED] | -0.2 | +32.0 | -1142 | -3757 | -9.3 | 2309 / +248003 | 1234 / +112287 | 1355 / +370767 | +906380 vs +1047056 |
 | CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | X' [ROLL-FIXED] | +45.3 | +23.5 | +1508 | +390 | +66.4 | 827 / -7133 | 542 / +65523 | 515 / +82028 | +125922 vs +55787 |
+| CDE_L2 | 6e18cc85a3d6 | L_chop {"H": 30, "M": 1, "N": 2, "cond": "rng60_3.0", "eff": 0.0, "post": 1.0, "scope": "ALL"} | HOLD [ROLL-FIXED] | -6.2 | -15.3 | -1820 | -620 | -16.9 | 2643 / +63509 | 1293 / -43348 | 1511 / +232220 | +883068 vs +971267 |
 | CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | L6M [ROLL-FIXED] | +26.6 | +21.9 | -2843 | +1537 | +18.6 | 1066 / +21278 | 228 / +10804 | 401 / +12830 | +624788 vs +643973 |
 | CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | PRE [ROLL-FIXED] | +20.9 | +46.5 | -1752 | -1290 | +9.2 | 1068 / +55385 | 193 / -99024 | 527 / +91373 | +897497 vs +1047056 |
 | CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | X' [ROLL-FIXED] | +4.8 | +15.1 | +83 | +1034 | +8.0 | 77 / -11318 | 26 / -7462 | 62 / +1972 | +60663 vs +55787 |
+| CDE_L3 | 21142bd69657 | L_sessloss {"eff": 0.0, "n": 2, "sess": [1], "state": "stack"} | HOLD [ROLL-FIXED] | -10.9 | -31.8 | -2917 | -1721 | -29.9 | 1776 / +148917 | 352 / +20148 | 693 / -22445 | +832627 vs +971267 |
 | CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | L6M [ROLL-FIXED] | +11.9 | +16.9 | +1889 | +652 | +17.3 | 838 / -71736 | 188 / +31468 | 348 / +24551 | +741216 vs +643973 |
 | CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | PRE [ROLL-FIXED] | +34.5 | +38.4 | -827 | -780 | +30.3 | 756 / +748 | 132 / -78346 | 372 / +59508 | +971004 vs +1047056 |
 | CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | X' [ROLL-FIXED] | +17.0 | +21.8 | +470 | +267 | +30.6 | 37 / -25307 | 11 / -209 | 32 / -5245 | +80884 vs +55787 |
+| CDE_L4 | 953a73f259cd | L_sessloss {"eff": 0.0, "n": 3, "sess": [1], "state": "stack"} | HOLD [ROLL-FIXED] | -15.2 | -45.2 | -1256 | -664 | -22.9 | 1435 / +68188 | 286 / +44738 | 604 / -43141 | +930276 vs +971267 |
 | CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | L6M [ROLL-FIXED] | -2.4 | +14.9 | -6075 | +1026 | -29.5 | 383 / +17219 | 155 / -30522 | 230 / +119718 | +617537 vs +643973 |
 | CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | PRE [ROLL-FIXED] | +37.5 | +33.2 | +2087 | -867 | +45.8 | 522 / -20227 | 207 / +93047 | 333 / +206757 | +1186544 vs +1047056 |
 | CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | X' [ROLL-FIXED] | +28.4 | +32.7 | +480 | -880 | +40.3 | 138 / +11870 | 72 / +40096 | 96 / +83485 | +82448 vs +55787 |
+| CDE_L5 | f5ef3a4814f4 | L_chop_book {"H": 0, "M": 3, "N": 2, "cond": "rng60_3.5", "eff": 0.0, "post": 1.0, "scope": "PE"} | HOLD [ROLL-FIXED] | +17.7 | -32.3 | -4558 | -2733 | -6.6 | 639 / +78480 | 270 / -2847 | 382 / +110993 | +905109 vs +971267 |
 
 Cross-check vs sz_core (Z.score on the 12 finalists + top 20, M_CDE arrays): maxDD L6M and PRE identical (max abs diff 0 $). Means and equal-mean cuts differ by ~4k $/wk and a few points because this page ends the windows at label day 2026-10-30 (last day of the COMB trade list; 10-31 is a Saturday) while sz_core runs its calendar to 2026-11-05 and counts the empty weeks (zero P&L) in L1M-L6M means. Exact-run cut numbers use this page's windows.
 

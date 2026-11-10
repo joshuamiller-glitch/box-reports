@@ -1,10 +1,8 @@
 # DS3_REDO_R7_BRACKETS - stop / target / ATR / time exit per book x entry session on the state base (REDO-R7)
 
-**FINAL DRAFT 2026-11-10 10:56Z** - exact L6M + PRE rows (section 9) are in for every set; where exact and first-order disagree the exact row governs. Rules 2/2a labels and the bi-weekly WF are beside every cell. Live settings stay.
+**FINAL DRAFT 2026-11-10 12:53Z** - exact L6M + PRE rows (section 9) are in for every set; where exact and first-order disagree the exact row governs. Rules 2/2a labels and the bi-weekly WF are beside every cell. Live settings stay.
 
-
-
-Version 2026-11-10 10:54Z. **PRE-PROOF** (entry match < .85). Sections 1-8 are the FIRST-ORDER SCREEN; the EXACT engine rows for the five joint policies (L6M + PRE, sets R7_P1..R7_P5, hooks module code/th_r7/r7_hooks.py, hook regression R7_HOOKREF identical) are in section 9 and GOVERN where they disagree (first-order ranks did not survive the engine). No PASS claims. Shadow only.
+Version 2026-11-10 12:53Z. **ROLL-FIXED rows (exact)** (entry match < .85). Sections 1-8 are the FIRST-ORDER SCREEN; the EXACT engine rows for the five joint policies (L6M + PRE, sets R7_P1..R7_P5, hooks module code/th_r7/r7_hooks.py, hook regression R7_HOOKREF identical) are in section 9 and GOVERN where they disagree (first-order ranks did not survive the engine). No PASS claims. Shadow only.
 
 ## 0. Plain verdict
 No bracket cell survives the whole bar (family-max p <= .10 + bi-weekly WF >= 50 % beat + tolerant PRE + placebo). Every per-group lead has a family p of .33-.86 over the 1,440-cell grid and a per-cell bi-weekly WF that beats live in only 3-34 % of refit periods (the procedure that picks the lowest trailing-26-week maxDD cell across the whole grid beats live in 40-60 % of periods and its OOS cut is negative or ~0 in 14 of 15 groups). **Live brackets stay (K7/M7/U7/P7/H7/A7 60/60, O7 40/90)**. Exact (section 9): none of the five joint policies passes recents + prior + WF; R7_P3 (percent arm) has L6M/L3M/L1M cuts 33.9/48.2/48.1 % at equal mean but PRE -39.6 % and WF beat 18 % (RECENT-ONLY, fails WF); R7_P2 loses half the weekly mean.
@@ -262,14 +260,14 @@ Done for L6M + PRE (23 months each) for R7_P1..P5 and R12 cells, see section 9. 
 | bracket U7 london | 60/60 | atr1_k1|R1.00|tx_none|arm_pct | no (WF beat 18.9 %) | no | policy line `bracket U7 london ...` |
 | state-cut arm vs stop | points held fixed | points | yes (screen) | no | state-cut arm lines (points) |
 
-## 9. EXACT engine results (auto-refreshed 2026-11-10 10:56Z) - R7 joint bracket policies (hook regression R7_HOOKREF identical on 202610; R7_TEST confirmed the hooks act)
+## 9. EXACT engine results (auto-refreshed 2026-11-10 12:53Z) - R7 joint bracket policies (hook regression R7_HOOKREF identical on 202610; R7_TEST confirmed the hooks act)
 Engine column: ROLLFIX1 = every contract-roll month of the set ran on the roll-patched engine (RollRep) and is scored against base_b_rollfix = ROLL-FIXED; ROLLEXCL = old unpatched runs scored with the 33 roll-alive trades excluded (superseded, shown until the rerun lands). L6M = 202605-202610, PRE = 202402-202506; X' = 202304-202401 and HOLD = 202511-202604 only for R7_P3 and R12_OPEN930 (the leads). cuts = maxDD cut % vs exact Q1-A, all weeks; eq = at equal L6M mean; dM = $/wk mean vs live; WF = bi-weekly re-pick on the exact block (beat % of periods / OOS cut %); prior = rule 2a label; no placebo on exact rows, so the highest label is LEAD.
 
 | set | engine | months | L6M cut / eq / dM | L3M cut | L1M cut | PRE cut / dM | X' cut / dM | HOLD cut / dM | WF beat % / cut % | prior | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | R7_P1 | ROLLFIX1 | 23 | -110.3 / -357.7 / -12065 | -26.1 | 65.6 | -38.4 / -11089 | nan / nan | nan / nan | 14 / -0.0 | RECENT-ONLY | no |
-| R7_P2 | ROLLEXCL | 15 | nan / nan / nan | nan | 73.8 | nan / nan | nan / nan | nan / nan | nan / nan | PRIOR-UNKNOWN | no |
-| R7_P3 | ROLLEXCL | 15 | nan / nan / nan | nan | 48.1 | nan / nan | nan / nan | nan / nan | nan / nan | PRIOR-UNKNOWN | no |
+| R7_P2 | ROLLFIX1 | 23 | 15.7 / -57.3 / -12262 | 55.3 | 73.8 | 13.5 / -11088 | nan / nan | nan / nan | 36 / 21.7 | RECENT-ONLY | LEAD (mean given up: eq cut <= 0) RECENT-ONLY (WF 36%) ; WF fails |
+| R7_P3 | ROLLFIX1 | 33 | 33.9 / 34.8 / 346 | 48.2 | 48.1 | -39.6 / -6241 | nan / nan | -60.0 / -8786 | 18 / -0.0 | RECENT-ONLY | LEAD RECENT-ONLY (WF 18%) ; WF fails |
 | R7_P4 | ROLLFIX1 | 23 | -254.1 / -977.4 / -15021 | -113.8 | 89.9 | -451.6 / -23360 | nan / nan | nan / nan | 0 / 0.0 | RECENT-ONLY | no |
 | R7_P5 | ROLLFIX1 | 23 | -75.7 / -359.0 / -14426 | 28.2 | 28.1 | -17.9 / -8371 | nan / nan | nan / nan | 18 / 31.2 | RECENT-ONLY | no |
 
@@ -280,6 +278,8 @@ Engine column: ROLLFIX1 = every contract-roll month of the set ran on the roll-p
 | set | policy | first-order L6M eq cut / dM / PRE cut | exact L6M eq cut / dM / PRE cut |
 |---|---|---|---|
 | R7_P1 | BEST_KEY | -39.0 / -7318 / -62.1 | -357.7 / -12065 / -38.4 |
+| R7_P2 | BEST_ARM_PTS | 17.5 / -3626 / 16.8 | -57.3 / -12262 / 13.5 |
+| R7_P3 | BEST_ARM_PCT | -2.4 / 612 / -66.6 | 34.8 / 346 / -39.6 |
 | R7_P4 | BEST_EQRISK | -157.3 / -3293 / -75.4 | -977.4 / -15021 / -451.6 |
 | R7_P5 | BEST_OKPRIOR | -27.9 / -5438 / -5.8 | -359.0 / -14426 / -17.9 |
 

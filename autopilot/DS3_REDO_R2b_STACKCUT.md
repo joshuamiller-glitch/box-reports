@@ -1,4 +1,4 @@
-# DS3_REDO_R2b_STACKCUT - StackCut variants, exact engine (ROLLFIX1), 2026-11-10 11:53Z
+# DS3_REDO_R2b_STACKCUT - StackCut variants, exact engine (ROLLFIX1), 2026-11-10 12:37Z
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. EXACT engine rows (patched ROLLFIX1 S1b engine), reference = patched S1-COMB. STANDING RULE: StackCut stays ON; OFF is a reference row only. Rule 2/2a labels use sz_core.prior_info; the bi-weekly walk-forward cannot be computed because the variants were run only on the L6M and PRE months (WF label suffix UNKNOWN-WF, 15% allowance).**
 

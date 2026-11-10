@@ -1,4 +1,4 @@
-# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-10 10:51Z)
+# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-10 12:41Z)
 
 **ROLL-FIXED reference (engine ROLLFIX1: flatten at the 14 rolls; live reference = base_b_rollfix S1-COMB, 21,163 rows; M tables lifted by Z.lift_M, new rows m=1). FIRST-ORDER SCREEN ONLY. PRE-PROOF, post-hoc, shadow only, no PASS claims. Every layer stays ON in every stack: option 0 of each layer is the live setting (multiplier 1).** The layer pools are stand-ins built by SZ-IJK from the owners' multiplier files (M_*.npz, the lot-level layers only) until the owners write /mnt/l2/l2vast/_th_joint/layers/<layer>/topK.json. Cut / profit-rule / lock / entry layers are NOT multiplier-composable and are not in this version.
 
@@ -162,7 +162,8 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 | JN02 | L1M | +78.4 | +81.2 | +21324 | 21k / -3k |  |
 | JN02 | L3M | +28.8 | +37.9 | +3649 | 220k / 216k |  |
 | JN02 | L6M | +28.8 | +37.9 | +3297 | 247k / 165k |  |
-| JN02 | PRE | +36.9 | +45.0 | -3265 | -479k / -717k | RECENT-ONLY (allow 25.0%, WF 86%) |
+| JN02 | HOLD | +12.8 | +24.0 | -1521 | -384k / -551k |  |
+| JN02 | PRE | +36.9 | +45.0 | -3265 | -479k / -717k | RECENT-ONLY (allow 25.0%, WF 82%) |
 | JN03 | L1M | +40.2 | +43.3 | +12466 | -8k / -3k |  |
 | JN03 | L3M | +39.0 | +42.2 | +1102 | 187k / 216k |  |
 | JN03 | L6M | +39.0 | +42.2 | +1251 | 218k / 165k |  |
@@ -173,16 +174,18 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 | JN04 | L3M | +43.4 | +53.5 | +5959 | 249k / 216k |  |
 | JN04 | L6M | +43.4 | +53.5 | +4860 | 284k / 165k |  |
 | JN04 | HOLD | +45.6 | +55.3 | -1456 | -329k / -551k |  |
-| JN04 | PRE | +31.4 | +43.7 | -3620 | -462k / -717k | RECENT-ONLY (allow 25.0%, WF 85%) |
+| JN04 | PRE | +31.4 | +43.7 | -3620 | -462k / -717k | RECENT-ONLY (allow 25.0%, WF 76%) |
 | JN04 | X' | +68.6 | +74.2 | +2252 | -156k / -348k |  |
 | JN05 | L1M | +56.2 | +59.1 | +14954 | 5k / -3k |  |
 | JN05 | L3M | +35.2 | +39.5 | +3448 | 221k / 216k |  |
 | JN05 | L6M | +35.2 | +39.5 | +1610 | 215k / 165k |  |
-| JN05 | PRE | +18.4 | +23.9 | -4001 | -503k / -717k | RECENT-ONLY (allow 25.0%, WF 73%) |
+| JN05 | HOLD | +14.9 | +20.6 | -1484 | -388k / -551k |  |
+| JN05 | PRE | +18.4 | +23.9 | -4001 | -503k / -717k | RECENT-ONLY (allow 25.0%, WF 70%) |
 | JN06 | L1M | +54.5 | +59.4 | -6311 | 12k / -3k |  |
 | JN06 | L3M | +27.0 | +34.7 | +3981 | 229k / 216k |  |
 | JN06 | L6M | +27.0 | +34.7 | +2896 | 246k / 165k |  |
-| JN06 | PRE | +29.4 | +36.8 | -3311 | -487k / -717k | RECENT-ONLY (allow 25.0%, WF 77%) |
+| JN06 | HOLD | +33.7 | +40.8 | -2519 | -363k / -551k |  |
+| JN06 | PRE | +29.4 | +36.8 | -3311 | -487k / -717k | RECENT-ONLY (allow 25.0%, WF 76%) |
 | JP01 | L1M | +50.8 | +56.8 | +13523 | -4k / -3k |  |
 | JP01 | L3M | +42.6 | +49.6 | +3822 | 220k / 216k |  |
 | JP01 | L6M | +42.6 | +49.6 | +3109 | 275k / 165k |  |
@@ -205,7 +208,7 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 | JP04 | L3M | +48.1 | +51.8 | +4347 | 220k / 216k |  |
 | JP04 | L6M | +48.1 | +51.8 | +1729 | 217k / 165k |  |
 | JP04 | HOLD | +37.6 | +42.1 | -3198 | -322k / -551k |  |
-| JP04 | PRE | +41.7 | +45.9 | -3207 | -434k / -717k | RECENT-ONLY (allow 25.0%, WF 85%) |
+| JP04 | PRE | +41.7 | +45.9 | -3207 | -434k / -717k | RECENT-ONLY (allow 25.0%, WF 81%) |
 | JP04 | X' | +72.5 | +74.5 | +2451 | -136k / -348k |  |
 | JP05 | L1M | +32.1 | +36.3 | +11756 | -2k / -3k |  |
 | JP05 | L3M | +32.2 | +36.4 | +2176 | 208k / 216k |  |
@@ -216,26 +219,45 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 | JP06 | L1M | +78.0 | +76.5 | +22248 | 13k / -3k |  |
 | JP06 | L3M | +38.7 | +34.6 | +998 | 177k / 216k |  |
 | JP06 | L6M | +34.6 | +30.2 | -1426 | 185k / 165k |  |
+| JP06 | HOLD | +31.9 | +27.2 | -6025 | -329k / -551k |  |
 | JP06 | PRE | +48.6 | +45.1 | -3607 | -423k / -717k | RECENT-ONLY (allow 25.0%, WF 82%) |
 | JP07 | L1M | +82.8 | +85.0 | -2401 | 31k / -3k |  |
 | JP07 | L3M | +50.1 | +56.6 | +713 | 266k / 216k |  |
 | JP07 | L6M | +50.1 | +56.6 | +4166 | 357k / 165k |  |
 | JP07 | HOLD | +56.1 | +61.8 | +465 | -276k / -551k |  |
-| JP07 | PRE | +46.9 | +53.8 | -3068 | -426k / -717k | RECENT-ONLY (allow 25.0%, WF 82%) |
+| JP07 | PRE | +46.9 | +53.8 | -3068 | -426k / -717k | RECENT-ONLY (allow 25.0%, WF 76%) |
 | JP07 | X' | +65.2 | +69.7 | +2195 | -159k / -348k |  |
 | JP08 | L1M | +88.4 | +88.6 | -1251 | 39k / -3k |  |
 | JP08 | L3M | +57.6 | +58.4 | -1815 | 240k / 216k |  |
 | JP08 | L6M | +52.1 | +52.9 | +505 | 285k / 165k |  |
 | JP08 | HOLD | +48.1 | +49.0 | -1240 | -272k / -551k |  |
-| JP08 | PRE | +51.9 | +52.8 | -2741 | -427k / -717k | RECENT-ONLY (allow 25.0%, WF 82%) |
+| JP08 | PRE | +51.9 | +52.8 | -2741 | -427k / -717k | RECENT-ONLY (allow 25.0%, WF 75%) |
 | JP08 | X' | +72.0 | +72.5 | +2281 | -148k / -348k |  |
 | JPE0 | L1M | +67.9 | +45.1 | +18072 | 13k / -3k |  |
-| JY01 | L1M | +87.0 | +65.4 | +27878 | -7k / -3k |  |
-| JY02 | L1M | +86.6 | +61.8 | +27547 | -7k / -3k |  |
-| JY03 | L1M | +87.3 | +58.4 | +27376 | -4k / -3k |  |
-| JY04 | L1M | +73.3 | +14.7 | +24601 | -21k / -3k |  |
-| JY05 | L1M | +55.6 | -1892.7 | +17885 | -30k / -3k |  |
-| JY06 | L1M | +77.3 | +9.1 | +23883 | -18k / -3k |  |
+| JY01 | L1M | +87.0 | +87.1 | +27878 | -7k / -3k |  |
+| JY01 | L3M | +31.1 | +31.9 | -1623 | 109k / 216k |  |
+| JY01 | L6M | -22.7 | -21.3 | +270 | 109k / 165k |  |
+| JY01 | PRE | +2.0 | +3.1 | -4700 | -424k / -717k | RECENT-ONLY (allow 15.0%, WF 50%) |
+| JY02 | L1M | +86.6 | +86.3 | +27547 | -7k / -3k |  |
+| JY02 | L3M | +22.0 | +20.4 | -2762 | 97k / 216k |  |
+| JY02 | L6M | -27.2 | -30.0 | -472 | 91k / 165k |  |
+| JY02 | PRE | +5.0 | +2.9 | -5000 | -427k / -717k | RECENT-ONLY (allow 15.0%, WF 50%) |
+| JY03 | L1M | +87.3 | +86.5 | +27376 | -4k / -3k |  |
+| JY03 | L3M | +37.5 | +33.3 | -1580 | 114k / 216k |  |
+| JY03 | L6M | -26.4 | -34.9 | -1407 | 108k / 165k |  |
+| JY03 | PRE | +2.3 | -4.3 | -5164 | -434k / -717k | RECENT-ONLY (allow 15.0%, WF 50%) |
+| JY04 | L1M | +73.3 | +69.9 | +24601 | -21k / -3k |  |
+| JY04 | L3M | +8.5 | -3.3 | -4615 | 69k / 216k |  |
+| JY04 | L6M | -27.3 | -43.7 | -2550 | 37k / 165k |  |
+| JY04 | PRE | -3.2 | -16.5 | -6071 | -484k / -717k | RECENT-ONLY (allow 15.0%, WF 27%) |
+| JY05 | L1M | +55.6 | +15.1 | +17885 | -30k / -3k |  |
+| JY05 | L3M | -9.8 | -110.0 | -9931 | 16k / 216k |  |
+| JY05 | L6M | -38.3 | -164.4 | -10648 | -102k / 165k |  |
+| JY05 | PRE | +18.3 | -56.2 | -5051 | -516k / -717k | RECENT-ONLY (allow 15.0%, WF 64%) |
+| JY06 | L1M | +77.3 | +72.1 | +23883 | -18k / -3k |  |
+| JY06 | L3M | +30.3 | +14.4 | -3558 | 87k / 216k |  |
+| JY06 | L6M | -31.0 | -61.0 | -4166 | 40k / 165k |  |
+| JY06 | PRE | -2.9 | -26.6 | -6507 | -500k / -717k | RECENT-ONLY (allow 15.0%, WF 27%) |
 | JZ01 | L1M | +40.0 | +19.0 | +16121 | -48k / -3k |  |
 | JZ01 | L3M | +28.9 | +4.0 | -7928 | 28k / 216k |  |
 | JZ01 | L6M | +26.3 | +0.5 | -5790 | 30k / 165k |  |
@@ -255,7 +277,7 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 
 ## Exact vs first-order (so far)
 
-First-order keys of these stacks were 86-88% (equal-mean cut). Exact engine: J01: L6M eq-mean cut +4.2 / d mean -1809, PRE eq-mean cut +25.5 / d mean -4092, X' eq-mean cut +62.4 / d mean +915; J02: L6M eq-mean cut -1.7 / d mean -3422, PRE eq-mean cut +29.4 / d mean -4187, X' eq-mean cut +69.5 / d mean +4485; J03: L6M eq-mean cut +21.6 / d mean +769, PRE eq-mean cut +35.2 / d mean -6170, X' eq-mean cut +73.5 / d mean +3623, HOLD eq-mean cut +31.6 / d mean -1809; J04: L6M eq-mean cut -3.7 / d mean -3767, PRE eq-mean cut +31.9 / d mean -4383, X' eq-mean cut +64.0 / d mean +2093; JL01: L6M eq-mean cut +36.5 / d mean +2625, PRE eq-mean cut +44.5 / d mean -4452, X' eq-mean cut +74.3 / d mean +2509, HOLD eq-mean cut +36.7 / d mean -3207; JL02: L6M eq-mean cut +21.3 / d mean +699, PRE eq-mean cut +10.0 / d mean -3773; JL03: L6M eq-mean cut +21.1 / d mean +1750, PRE eq-mean cut +33.2 / d mean -5161; JL04: L6M eq-mean cut +23.8 / d mean +876, PRE eq-mean cut +24.7 / d mean -5740; JL05: L6M eq-mean cut +9.8 / d mean -94, PRE eq-mean cut +26.9 / d mean -6661; JL06: L6M eq-mean cut +25.6 / d mean +882, PRE eq-mean cut +26.1 / d mean -4592; JN02: L6M eq-mean cut +37.9 / d mean +3297, PRE eq-mean cut +45.0 / d mean -3265; JN03: L6M eq-mean cut +42.2 / d mean +1251, PRE eq-mean cut +40.9 / d mean -3107, X' eq-mean cut +70.4 / d mean +2543, HOLD eq-mean cut +28.7 / d mean -2593; JN04: L6M eq-mean cut +53.5 / d mean +4860, PRE eq-mean cut +43.7 / d mean -3620, X' eq-mean cut +74.2 / d mean +2252, HOLD eq-mean cut +55.3 / d mean -1456; JN05: L6M eq-mean cut +39.5 / d mean +1610, PRE eq-mean cut +23.9 / d mean -4001; JN06: L6M eq-mean cut +34.7 / d mean +2896, PRE eq-mean cut +36.8 / d mean -3311; JP01: L6M eq-mean cut +49.6 / d mean +3109, PRE eq-mean cut +48.8 / d mean -3218, X' eq-mean cut +70.3 / d mean +1165, HOLD eq-mean cut +55.8 / d mean -2559; JP02: L6M eq-mean cut +41.6 / d mean +550, PRE eq-mean cut +55.1 / d mean -3622, X' eq-mean cut +68.4 / d mean +1147, HOLD eq-mean cut +31.3 / d mean -3148; JP03: L6M eq-mean cut +42.4 / d mean +73, PRE eq-mean cut +47.2 / d mean -3713, X' eq-mean cut +69.8 / d mean +419, HOLD eq-mean cut +22.1 / d mean -3947; JP04: L6M eq-mean cut +51.8 / d mean +1729, PRE eq-mean cut +45.9 / d mean -3207, X' eq-mean cut +74.5 / d mean +2451, HOLD eq-mean cut +42.1 / d mean -3198; JP05: L6M eq-mean cut +36.4 / d mean +1472, PRE eq-mean cut +36.1 / d mean -2290, X' eq-mean cut +65.3 / d mean +2090, HOLD eq-mean cut +32.0 / d mean -1516; JP06: L6M eq-mean cut +30.2 / d mean -1426, PRE eq-mean cut +45.1 / d mean -3607; JP07: L6M eq-mean cut +56.6 / d mean +4166, PRE eq-mean cut +53.8 / d mean -3068, X' eq-mean cut +69.7 / d mean +2195, HOLD eq-mean cut +61.8 / d mean +465; JP08: L6M eq-mean cut +52.9 / d mean +505, PRE eq-mean cut +52.8 / d mean -2741, X' eq-mean cut +72.5 / d mean +2281, HOLD eq-mean cut +49.0 / d mean -1240; JPE0: ; JY01: ; JY02: ; JY03: ; JY04: ; JY05: ; JY06: ; JZ01: L6M eq-mean cut +0.5 / d mean -5790, PRE eq-mean cut +39.8 / d mean -4554; JZ02: L6M eq-mean cut -4.6 / d mean -3587, PRE eq-mean cut +37.9 / d mean -5056; JZ03: L6M eq-mean cut -39.0 / d mean -3944, PRE eq-mean cut +35.9 / d mean -3919; JZ04: L6M eq-mean cut -28.8 / d mean -5200, PRE eq-mean cut +20.7 / d mean -4926.
+First-order keys of these stacks were 86-88% (equal-mean cut). Exact engine: J01: L6M eq-mean cut +4.2 / d mean -1809, PRE eq-mean cut +25.5 / d mean -4092, X' eq-mean cut +62.4 / d mean +915; J02: L6M eq-mean cut -1.7 / d mean -3422, PRE eq-mean cut +29.4 / d mean -4187, X' eq-mean cut +69.5 / d mean +4485; J03: L6M eq-mean cut +21.6 / d mean +769, PRE eq-mean cut +35.2 / d mean -6170, X' eq-mean cut +73.5 / d mean +3623, HOLD eq-mean cut +31.6 / d mean -1809; J04: L6M eq-mean cut -3.7 / d mean -3767, PRE eq-mean cut +31.9 / d mean -4383, X' eq-mean cut +64.0 / d mean +2093; JL01: L6M eq-mean cut +36.5 / d mean +2625, PRE eq-mean cut +44.5 / d mean -4452, X' eq-mean cut +74.3 / d mean +2509, HOLD eq-mean cut +36.7 / d mean -3207; JL02: L6M eq-mean cut +21.3 / d mean +699, PRE eq-mean cut +10.0 / d mean -3773; JL03: L6M eq-mean cut +21.1 / d mean +1750, PRE eq-mean cut +33.2 / d mean -5161; JL04: L6M eq-mean cut +23.8 / d mean +876, PRE eq-mean cut +24.7 / d mean -5740; JL05: L6M eq-mean cut +9.8 / d mean -94, PRE eq-mean cut +26.9 / d mean -6661; JL06: L6M eq-mean cut +25.6 / d mean +882, PRE eq-mean cut +26.1 / d mean -4592; JN02: L6M eq-mean cut +37.9 / d mean +3297, PRE eq-mean cut +45.0 / d mean -3265, HOLD eq-mean cut +24.0 / d mean -1521; JN03: L6M eq-mean cut +42.2 / d mean +1251, PRE eq-mean cut +40.9 / d mean -3107, X' eq-mean cut +70.4 / d mean +2543, HOLD eq-mean cut +28.7 / d mean -2593; JN04: L6M eq-mean cut +53.5 / d mean +4860, PRE eq-mean cut +43.7 / d mean -3620, X' eq-mean cut +74.2 / d mean +2252, HOLD eq-mean cut +55.3 / d mean -1456; JN05: L6M eq-mean cut +39.5 / d mean +1610, PRE eq-mean cut +23.9 / d mean -4001, HOLD eq-mean cut +20.6 / d mean -1484; JN06: L6M eq-mean cut +34.7 / d mean +2896, PRE eq-mean cut +36.8 / d mean -3311, HOLD eq-mean cut +40.8 / d mean -2519; JP01: L6M eq-mean cut +49.6 / d mean +3109, PRE eq-mean cut +48.8 / d mean -3218, X' eq-mean cut +70.3 / d mean +1165, HOLD eq-mean cut +55.8 / d mean -2559; JP02: L6M eq-mean cut +41.6 / d mean +550, PRE eq-mean cut +55.1 / d mean -3622, X' eq-mean cut +68.4 / d mean +1147, HOLD eq-mean cut +31.3 / d mean -3148; JP03: L6M eq-mean cut +42.4 / d mean +73, PRE eq-mean cut +47.2 / d mean -3713, X' eq-mean cut +69.8 / d mean +419, HOLD eq-mean cut +22.1 / d mean -3947; JP04: L6M eq-mean cut +51.8 / d mean +1729, PRE eq-mean cut +45.9 / d mean -3207, X' eq-mean cut +74.5 / d mean +2451, HOLD eq-mean cut +42.1 / d mean -3198; JP05: L6M eq-mean cut +36.4 / d mean +1472, PRE eq-mean cut +36.1 / d mean -2290, X' eq-mean cut +65.3 / d mean +2090, HOLD eq-mean cut +32.0 / d mean -1516; JP06: L6M eq-mean cut +30.2 / d mean -1426, PRE eq-mean cut +45.1 / d mean -3607, HOLD eq-mean cut +27.2 / d mean -6025; JP07: L6M eq-mean cut +56.6 / d mean +4166, PRE eq-mean cut +53.8 / d mean -3068, X' eq-mean cut +69.7 / d mean +2195, HOLD eq-mean cut +61.8 / d mean +465; JP08: L6M eq-mean cut +52.9 / d mean +505, PRE eq-mean cut +52.8 / d mean -2741, X' eq-mean cut +72.5 / d mean +2281, HOLD eq-mean cut +49.0 / d mean -1240; JPE0: ; JY01: L6M eq-mean cut -21.3 / d mean +270, PRE eq-mean cut +3.1 / d mean -4700; JY02: L6M eq-mean cut -30.0 / d mean -472, PRE eq-mean cut +2.9 / d mean -5000; JY03: L6M eq-mean cut -34.9 / d mean -1407, PRE eq-mean cut -4.3 / d mean -5164; JY04: L6M eq-mean cut -43.7 / d mean -2550, PRE eq-mean cut -16.5 / d mean -6071; JY05: L6M eq-mean cut -164.4 / d mean -10648, PRE eq-mean cut -56.2 / d mean -5051; JY06: L6M eq-mean cut -61.0 / d mean -4166, PRE eq-mean cut -26.6 / d mean -6507; JZ01: L6M eq-mean cut +0.5 / d mean -5790, PRE eq-mean cut +39.8 / d mean -4554; JZ02: L6M eq-mean cut -4.6 / d mean -3587, PRE eq-mean cut +37.9 / d mean -5056; JZ03: L6M eq-mean cut -39.0 / d mean -3944, PRE eq-mean cut +35.9 / d mean -3919; JZ04: L6M eq-mean cut -28.8 / d mean -5200, PRE eq-mean cut +20.7 / d mean -4926.
 
 Reading: the first-order joint screen of stacked down-sizing layers is NOT predictive of the engine. In the exact run a skipped signal frees the book, which then takes the next signal, and re-entries / locks / slice fills change; so a table that skips 60-85% of signals first-order removes only about 18% of the trades in the engine (F08 pair: 672 vs 823 trades in 202610, lots 1440 vs 1746) and behaves like a mild global lot reduction. Only exact numbers count. Missing windows are still running.
 
@@ -283,42 +305,48 @@ New stacks queued for exact L6M + PRE (built from the leave-one-out; JN01 = JL01
 
 ## Exact stack comparison (ROLL-FIXED engine, exact; standing rules 2 / 2a)
 
-| stack | what | cut L6M / L3M / L1M | eq-mean L6M | d mean L6M / L3M | HOLD cut / d mean | PRE cut / d mean | X' cut / d mean | WF beat all (block B) | 2a label (PRE allowance, WF%) |
+| stack | what | cut L6M / L3M / L1M | eq-mean L6M | d mean L6M / L3M | HOLD cut / d mean | PRE cut / d mean | X' cut / d mean | WF beat all (since 2026-05-18) | 2a label (PRE allowance, WF%) |
 |---|---|---|---|---|---|---|---|---|---|
 | J03 | full J03 (SIZER VT, LOT P7 cap, SIGQ, REG, STACK E cap6, COOL) | +18.9 / +52.0 / +56.4 | +21.6 | +769 / +513 | +29.2 / -1809 | +33.0 / -6170 | +72.6 / +3623 | 65% (55%) | RECENT-ONLY (allow 25.0%, WF 65%) |
 | JL01 | J03 minus SIZER (= JN01) | +29.0 / +29.0 / +71.4 | +36.5 | +2625 / +3211 | +29.3 / -3207 | +37.9 / -4452 | +71.3 / +2509 | 85% (73%) | RECENT-ONLY (allow 25.0%, WF 85%) |
-| JN02 | JL01 minus SIGQ | +28.8 / +28.8 / +78.4 | +37.9 | +3297 / +3649 | n/a / n/a | +36.9 / -3265 | n/a / n/a | 86% (n/a) | RECENT-ONLY (allow 25.0%, WF 86%) |
+| JN02 | JL01 minus SIGQ | +28.8 / +28.8 / +78.4 | +37.9 | +3297 / +3649 | +12.8 / -1521 | +36.9 / -3265 | n/a / n/a | 82% (73%) | RECENT-ONLY (allow 25.0%, WF 82%) |
 | JN03 | JL01 with LOT = LOT_P7_744 | +39.0 / +39.0 / +40.2 | +42.2 | +1251 / +1102 | +24.8 / -2593 | +37.6 / -3107 | +68.8 / +2543 | 82% (73%) | RECENT-ONLY (allow 25.0%, WF 82%) |
-| JN04 | JL01 minus COOL | +43.4 / +43.4 / +67.9 | +53.5 | +4860 / +5959 | +45.6 / -1456 | +31.4 / -3620 | +68.6 / +2252 | 85% (82%) | RECENT-ONLY (allow 25.0%, WF 85%) |
-| JN05 | JL01 with STACK = E|same_side_lots_cap|cap8_skip|sess_london | +35.2 / +35.2 / +56.2 | +39.5 | +1610 / +3448 | n/a / n/a | +18.4 / -4001 | n/a / n/a | 73% (n/a) | RECENT-ONLY (allow 25.0%, WF 73%) |
-| JN06 | JL01 minus REG | +27.0 / +27.0 / +54.5 | +34.7 | +2896 / +3981 | n/a / n/a | +29.4 / -3311 | n/a / n/a | 77% (n/a) | RECENT-ONLY (allow 25.0%, WF 77%) |
+| JN04 | JL01 minus COOL | +43.4 / +43.4 / +67.9 | +53.5 | +4860 / +5959 | +45.6 / -1456 | +31.4 / -3620 | +68.6 / +2252 | 76% (73%) | RECENT-ONLY (allow 25.0%, WF 76%) |
+| JN05 | JL01 with STACK = E|same_side_lots_cap|cap8_skip|sess_london | +35.2 / +35.2 / +56.2 | +39.5 | +1610 / +3448 | +14.9 / -1484 | +18.4 / -4001 | n/a / n/a | 70% (64%) | RECENT-ONLY (allow 25.0%, WF 70%) |
+| JN06 | JL01 minus REG | +27.0 / +27.0 / +54.5 | +34.7 | +2896 / +3981 | +33.7 / -2519 | +29.4 / -3311 | n/a / n/a | 76% (73%) | RECENT-ONLY (allow 25.0%, WF 76%) |
 | JP01 | JN04 + R1_3 P7 MaxDailyLoss 8400 lock | +42.6 / +42.6 / +50.8 | +49.6 | +3109 / +3822 | +49.6 / -2559 | +41.7 / -3218 | +66.2 / +1165 | 85% (91%) | RECENT-ONLY (allow 25.0%, WF 85%) |
 | JP02 | JN04 + CDE F04 stack equity-DD London x0.25 sticky | +40.4 / +56.6 / +65.6 | +41.6 | +550 / -938 | +29.9 / -3148 | +54.2 / -3622 | +67.8 / +1147 | 84% (64%) | RECENT-ONLY (allow 25.0%, WF 84%) |
 | JP03 | JN04 + CDE F01 max books on 1 London x0.5 | +42.2 / +46.5 / +76.0 | +42.4 | +73 / -1456 | +21.9 / -3947 | +47.0 / -3713 | +69.7 / +419 | 80% (64%) | RECENT-ONLY (allow 25.0%, WF 80%) |
-| JP04 | JN04 x ZS_D0 zone table | +48.1 / +48.1 / +84.6 | +51.8 | +1729 / +4347 | +37.6 / -3198 | +41.7 / -3207 | +72.5 / +2451 | 85% (73%) | RECENT-ONLY (allow 25.0%, WF 85%) |
+| JP04 | JN04 x ZS_D0 zone table | +48.1 / +48.1 / +84.6 | +51.8 | +1729 / +4347 | +37.6 / -3198 | +41.7 / -3207 | +72.5 / +2451 | 81% (73%) | RECENT-ONLY (allow 25.0%, WF 81%) |
 | JP05 | JN04 with LOT = P7 table 7,4,0,4,0,0 | +32.2 / +32.2 / +32.1 | +36.4 | +1472 / +2176 | +27.5 / -1516 | +31.9 / -2290 | +63.0 / +2090 | 84% (73%) | RECENT-ONLY (allow 25.0%, WF 84%) |
-| JP06 | JN04 x ZS_D0 + R1_3 lock + F04 | +34.6 / +38.7 / +78.0 | +30.2 | -1426 / +998 | n/a / n/a | +48.6 / -3607 | n/a / n/a | 82% (n/a) | RECENT-ONLY (allow 25.0%, WF 82%) |
-| JP07 | JN04 + CF_EN_45 entry engulf @45 s (P7 nyam/nypm; EntryMixin composed, regression JPE0 = JN04) | +50.1 / +50.1 / +82.8 | +56.6 | +4166 / +713 | +56.1 / +465 | +46.9 / -3068 | +65.2 / +2195 | 82% (82%) | RECENT-ONLY (allow 25.0%, WF 82%) |
-| JP08 | JN04 x ZS_D0 + CF_EN_45 entry | +52.1 / +57.6 / +88.4 | +52.9 | +505 / -1815 | +48.1 / -1240 | +51.9 / -2741 | +72.0 / +2281 | 82% (82%) | RECENT-ONLY (allow 25.0%, WF 82%) |
+| JP06 | JN04 x ZS_D0 + R1_3 lock + F04 | +34.6 / +38.7 / +78.0 | +30.2 | -1426 / +998 | +31.9 / -6025 | +48.6 / -3607 | n/a / n/a | 82% (82%) | RECENT-ONLY (allow 25.0%, WF 82%) |
+| JP07 | JN04 + CF_EN_45 entry engulf @45 s (P7 nyam/nypm; EntryMixin composed, regression JPE0 = JN04) | +50.1 / +50.1 / +82.8 | +56.6 | +4166 / +713 | +56.1 / +465 | +46.9 / -3068 | +65.2 / +2195 | 76% (91%) | RECENT-ONLY (allow 25.0%, WF 76%) |
+| JP08 | JN04 x ZS_D0 + CF_EN_45 entry | +52.1 / +57.6 / +88.4 | +52.9 | +505 / -1815 | +48.1 / -1240 | +51.9 / -2741 | +72.0 / +2281 | 75% (91%) | RECENT-ONLY (allow 25.0%, WF 75%) |
+| JY01 | first-order screen top stack (7-layer search) JY01 | -22.7 / +31.1 / +87.0 | -21.3 | +270 / -1623 | n/a / n/a | +2.0 / -4700 | n/a / n/a | 50% (n/a) | RECENT-ONLY (allow 15.0%, WF 50%) |
+| JY02 | first-order top stack JY02 | -27.2 / +22.0 / +86.6 | -30.0 | -472 / -2762 | n/a / n/a | +5.0 / -5000 | n/a / n/a | 50% (n/a) | RECENT-ONLY (allow 15.0%, WF 50%) |
+| JY03 | first-order top stack JY03 | -26.4 / +37.5 / +87.3 | -34.9 | -1407 / -1580 | n/a / n/a | +2.3 / -5164 | n/a / n/a | 50% (n/a) | RECENT-ONLY (allow 15.0%, WF 50%) |
+| JY04 | first-order top stack JY04 | -27.3 / +8.5 / +73.3 | -43.7 | -2550 / -4615 | n/a / n/a | -3.2 / -6071 | n/a / n/a | 27% (n/a) | RECENT-ONLY (allow 15.0%, WF 27%) |
+| JY05 | first-order top stack JY05 (CD optimum) | -38.3 / -9.8 / +55.6 | -164.4 | -10648 / -9931 | n/a / n/a | +18.3 / -5051 | n/a / n/a | 64% (n/a) | RECENT-ONLY (allow 15.0%, WF 64%) |
+| JY06 | first-order top stack JY06 | -31.0 / +30.3 / +77.3 | -61.0 | -4166 / -3558 | n/a / n/a | -2.9 / -6507 | n/a / n/a | 27% (n/a) | RECENT-ONLY (allow 15.0%, WF 27%) |
 
-JPV is the regression of the new JointRep driver against the JN04 table run (must equal JN04 on the months run). CF_EN_45 is composed through the R4 EntryMixin (JP07, JP08) with the ROLLFIX1 blackout guard; JPE0 (entry {} on the JN04 table) equals JN04 on 202606 and 202610.
+JPV is the regression of the new JointRep driver against the JN04 table run (must equal JN04 on the months run). CF_EN_45 is composed through the R4 EntryMixin (JP07, JP08) with the ROLLFIX1 blackout guard; JPE0 (entry {} on the JN04 table) equals JN04 on 202606 and 202610. JY01-JY06 (the top stacks of the first-order screen) FAIL exact: L6M cuts -23% to -38% with negative d mean, so the first-order key picks losers; none is a candidate.
 
 ## Per-period exact view (ROLL-FIXED; weekly sums, all weeks; maxDD cut and d mean per week vs live in each period)
 
-| stack | HOLD 2025-11..2026-04 | X' 2023-04..2023-12 | X'/PRE 2024-01..2024-06 | PRE 2024-07..2024-12 | PRE 2025-01..2025-06 | L6M 2026-05..10 |
-|---|---|---|---|---|---|---|
-| J03 | +29.2 / -6375 | +72.6 / +5023 | +28.3 / +1011 | +21.0 / -11427 | +33.0 / -4077 | +18.9 / -2855 |
-| JL01 | +29.3 / -5378 | +71.3 / +4050 | +46.1 / -1404 | +38.5 / -9700 | +37.9 / -2810 | +29.0 / +936 |
-| JN04 | +45.6 / -4037 | +68.6 / +3635 | +48.5 / -1347 | +39.6 / -7361 | +31.4 / -3072 | +43.4 / +3301 |
-| JP01 | +49.6 / -4457 | +66.2 / +2734 | +46.1 / -2042 | +29.5 / -8105 | +41.7 / -1099 | +42.6 / +1428 |
-| JP04 | +37.6 / -3900 | +72.5 / +3951 | +46.7 / -2112 | +45.7 / -7376 | +41.7 / -1300 | +48.1 / -223 |
-| JP05 | +27.5 / -1333 | +63.0 / +3163 | +55.2 / +1530 | +1.0 / -7543 | +33.3 / -1868 | +32.2 / +74 |
-| JP07 | +56.1 / -2665 | +65.2 / +3372 | +41.8 / -1551 | +34.1 / -7312 | +46.9 / -1772 | +50.1 / +5811 |
-| JP08 | +48.1 / -2486 | +72.0 / +3689 | +47.3 / -2502 | +40.7 / -7565 | +51.9 / +1 | +52.1 / +2319 |
+| stack | HOLD 2025-11..2026-04 | X' 2023-04..2023-12 | X'/PRE 2024-01..2024-06 | PRE 2024-07..2024-12 | PRE 2025-01..2025-06 | L6M 2026-05..10 | GAP 2025-07..2025-10 |
+|---|---|---|---|---|---|---|---|
+| J03 | +29.2 / -6375 | +72.6 / +5023 | +28.3 / +1011 | +21.0 / -11427 | +33.0 / -4077 | +18.9 / -2855 | n/a |
+| JL01 | +29.3 / -5378 | +71.3 / +4050 | +46.1 / -1404 | +38.5 / -9700 | +37.9 / -2810 | +29.0 / +936 | n/a |
+| JN04 | +45.6 / -4037 | +68.6 / +3635 | +48.5 / -1347 | +39.6 / -7361 | +31.4 / -3072 | +43.4 / +3301 | -1.2 / -7148 |
+| JP01 | +49.6 / -4457 | +66.2 / +2734 | +46.1 / -2042 | +29.5 / -8105 | +41.7 / -1099 | +42.6 / +1428 | n/a |
+| JP04 | +37.6 / -3900 | +72.5 / +3951 | +46.7 / -2112 | +45.7 / -7376 | +41.7 / -1300 | +48.1 / -223 | +0.6 / -7945 |
+| JP05 | +27.5 / -1333 | +63.0 / +3163 | +55.2 / +1530 | +1.0 / -7543 | +33.3 / -1868 | +32.2 / +74 | n/a |
+| JP07 | +56.1 / -2665 | +65.2 / +3372 | +41.8 / -1551 | +34.1 / -7312 | +46.9 / -1772 | +50.1 / +5811 | -5.7 / -7967 |
+| JP08 | +48.1 / -2486 | +72.0 / +3689 | +47.3 / -2502 | +40.7 / -7565 | +51.9 / +1 | +52.1 / +2319 | -3.8 / -8764 |
 
-Reading: the mean loss of these stacks is concentrated in 2024-H2 (-7k to -11k per week while the live made +23k) and in the HOLD months 2025-11..2026-04 (-1.3k to -6.4k); 2025-H1 loses 1-4k; X' 2023 is mean-positive (+2.7k to +5.0k per week) with 63-73% maxDD cuts; L6M is flat to positive. The PRE problem is therefore not a PRE-only artifact: HOLD shows the same sign, so these stacks buy their drawdown cut with mean in strong-trend months.
+Reading: in the 2025-07..2025-10 months (run now, so the walk-forward block is contiguous) these stacks cut NO drawdown (-6% to +1%) and lose 7-9k per week of mean; the mean loss of these stacks is concentrated in 2024-H2 (-7k to -11k per week while the live made +23k) and in the HOLD months 2025-11..2026-04 (-1.3k to -6.4k); 2025-H1 loses 1-4k; X' 2023 is mean-positive (+2.7k to +5.0k per week) with 63-73% maxDD cuts; L6M is flat to positive. The PRE problem is therefore not a PRE-only artifact: HOLD shows the same sign, so these stacks buy their drawdown cut with mean in strong-trend months.
 
-## REFIT 2026-11-22 from EXACT ROLL-FIXED series (29 exact stacks with the full 2026-05..10 block; train = trailing 26 weeks to 2026-11-05)
+## REFIT 2026-11-22 from EXACT ROLL-FIXED series (35 exact stacks with the full 2026-05..10 block; train = trailing 26 weeks to 2026-11-05)
 
 Ranking = Z.refit_pick (maxDD, worst-20, Ulcer, mean). Live trailing: maxDD 79907, mean 24125/wk.
 
@@ -326,24 +354,24 @@ Pick among all candidates: **JP08**. Pick among candidates whose trailing mean i
 
 | rank | stack | trailing maxDD | worst-20 | mean/wk | rule 2a label (PRE exact) |
 |---|---|---|---|---|---|
-| 1 | JP08 | 38301 | 272333 | 26122 | RECENT-ONLY (allow 25.0%, WF 82%) |
-| 2 | JP07 | 39878 | 326224 | 29334 | RECENT-ONLY (allow 25.0%, WF 82%) |
-| 3 | JP04 | 41501 | 204974 | 23946 | RECENT-ONLY (allow 25.0%, WF 85%) |
-| 4 | JN04 | 45203 | 266189 | 27187 | RECENT-ONLY (allow 25.0%, WF 85%) |
+| 1 | JP08 | 38301 | 272333 | 26122 | RECENT-ONLY (allow 25.0%, WF 75%) |
+| 2 | JP07 | 39878 | 326224 | 29334 | RECENT-ONLY (allow 25.0%, WF 76%) |
+| 3 | JP04 | 41501 | 204974 | 23946 | RECENT-ONLY (allow 25.0%, WF 81%) |
+| 4 | JN04 | 45203 | 266189 | 27187 | RECENT-ONLY (allow 25.0%, WF 76%) |
 | 5 | JP01 | 45880 | 233710 | 25352 | RECENT-ONLY (allow 25.0%, WF 85%) |
 | 6 | JP03 | 46157 | 220338 | 25450 | RECENT-ONLY (allow 25.0%, WF 80%) |
 | 7 | JP02 | 47594 | 251694 | 26137 | RECENT-ONLY (allow 25.0%, WF 84%) |
 | 8 | JN03 | 48727 | 203100 | 23553 | RECENT-ONLY (allow 25.0%, WF 82%) |
-| 9 | JN05 | 51781 | 202875 | 24141 | RECENT-ONLY (allow 25.0%, WF 73%) |
+| 9 | JN05 | 51781 | 202875 | 24141 | RECENT-ONLY (allow 25.0%, WF 70%) |
 | 10 | JP06 | 52249 | 163702 | 20945 | RECENT-ONLY (allow 25.0%, WF 82%) |
 
 Candidates with trailing mean >= live, best 5: JP08 (maxDD 38301, mean 26122, RECENT-ONLY); JP07 (maxDD 39878, mean 29334, RECENT-ONLY); JN04 (maxDD 45203, mean 27187, RECENT-ONLY); JP01 (maxDD 45880, mean 25352, RECENT-ONLY); JP03 (maxDD 46157, mean 25450, RECENT-ONLY).
 
-This is the pick of a screen over 29 stacks chosen by earlier steps (in-sample over the recent block), not a validated deployment; the bi-weekly WF columns above are the out-of-sample evidence.
+This is the pick of a screen over 35 stacks chosen by earlier steps (in-sample over the recent block), not a validated deployment; the bi-weekly WF columns above are the out-of-sample evidence.
 
 
 ## Plain sentence
 
-EXACT (recents first): the best exact joint stack so far is JP07: it lowers L6M maxDD +50.1% at equal lots (+56.6% at equal mean, d mean +4166 $/wk), L3M +50.1%, L1M +82.8%; it differs from live in these layers: ?. On the prior it reads: PRE cut +46.9% with d mean -3068 $/wk and X' cut +65.2%; standing rule 2a label: RECENT-ONLY (allow 25.0%, WF 82%).
+EXACT (recents first): the best exact joint stack so far is JP07: it lowers L6M maxDD +50.1% at equal lots (+56.6% at equal mean, d mean +4166 $/wk), L3M +50.1%, L1M +82.8%; it differs from live in these layers: ?. On the prior it reads: PRE cut +46.9% with d mean -3068 $/wk and X' cut +65.2%; standing rule 2a label: RECENT-ONLY (allow 25.0%, WF 76%).
 
 First-order screen: the best first-order joint stack lowers L6M maxDD +100.0% at equal mean (PRE +84.8%, X' +84.9%) and differs from live in these layers: SIZER=reg:sizer:AB_73ca99b0ec2d, LOT=reg:lot_tables:lot_greedy_down, REG=regime:e18edff4f8d3, COOL=cooldown:fbe1c726c9b2, A06=reg:a06_slots:a06_greedy_down, B02=reg:b02:B02_K7P7H7_20_1.00_alld_0.0. The screen is lot-level layers only, in-sample, and first-order overstates badly (exact J-pair and joint-stack runs gave a fraction of it). The verdict comes from exact runs, the bi-weekly re-pick WF and the REFIT section; cut / profit / lock / entry / NTZ layers join only through exact hooks.
