@@ -1,5 +1,5 @@
 # DS3_REDO_R11_REENTRY - re-entry after a win / after a target on the state base (T-STACK-REDO R11)  [FIRST-ORDER SCREEN; PRE-PROOF until entry match >= .85; no PASS claims]
-Generated 2026-11-09 22:15 UTC (elapsed 47 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
+Generated 2026-11-10 01:29 UTC (elapsed 46 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
 
 ## 0. Definition
 - FLAGGED trade j = its signal comes within N min (5/10/15/30/60/120) after a Target exit of the SAME side, of the same book ("own") or of any book ("any"). Policy FULL (live = reference) / HALF / SKIP on flagged trades. These are lot-multiplier tables keyed on the signal second: exact in table mode (queue prefix R11_), first-order here is a screen (mean overstated for up-size only; these are down-only).
@@ -26,88 +26,88 @@ Share of all trades flagged (own / any): N=5 4.4% / 8.2%, N=10 7.2% / 13.3%, N=1
 ## 2. Table cells on ALL books, by N and policy (own / any)
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N30_ALL_SKIP | any N=30 SKIP | ALL | 6052 | -572380 | 1739 | 49.7 | 53.4/88.3/100.0 | 32.5 | -28.5 | -9.4 | 0.01/0.01 | 80.6 |
-| R11_own_N120_ALL_SKIP | own N=120 SKIP | ALL | 6514 | -674424 | -3602 | 58.7 | 50.5/50.5/90.9 | 44.7 | 8.7 | 2.9 | 0.01/0.01 | 64.0 |
-| R11_any_N60_ALL_SKIP | any N=60 SKIP | ALL | 7959 | -745401 | -4467 | 39.6 | 24.5/49.7/100.0 | 41.0 | -12.0 | 40.0 | 0.01/0.01 | 58.1 |
-| R11_own_N60_ALL_SKIP | own N=60 SKIP | ALL | 5253 | -605034 | -3465 | 44.0 | 33.4/33.4/100.0 | 45.1 | -3.2 | 17.5 | 0.01/0.01 | 55.6 |
-| R11_any_N120_ALL_SKIP | any N=120 SKIP | ALL | 9636 | -937224 | -7895 | 44.3 | 14.0/38.5/100.0 | 39.8 | 3.0 | 66.5 | 0.01/0.01 | 50.8 |
-| R11_own_N30_ALL_SKIP | own N=30 SKIP | ALL | 3770 | -544849 | -1888 | 28.9 | 22.2/22.2/91.1 | 33.0 | -17.7 | 6.4 | 0.01/0.01 | 45.1 |
-| R11_any_N30_ALL_HALF | any N=30 HALF | ALL | 2836 | -128334 | -1029 | 26.7 | 23.9/36.8/54.7 | 26.6 | -7.8 | -39.6 | 0.01/0.02 | 38.5 |
-| R11_any_N120_ALL_HALF | any N=120 HALF | ALL | 4128 | -242164 | -2141 | 34.1 | 27.1/27.2/57.6 | 37.0 | 8.6 | -3.4 | 0.01/0.01 | 37.3 |
-| R11_any_N60_ALL_HALF | any N=60 HALF | ALL | 3668 | -167652 | -1014 | 25.5 | 21.9/23.9/54.0 | 38.0 | 4.9 | -16.9 | 0.01/0.01 | 33.3 |
-| R11_own_N120_ALL_HALF | own N=120 HALF | ALL | 2952 | -178779 | -1120 | 25.2 | 21.2/21.2/42.0 | 21.7 | 13.4 | -19.0 | 0.01/0.02 | 28.1 |
-| R11_own_N60_ALL_HALF | own N=60 HALF | ALL | 2530 | -167465 | -971 | 18.0 | 14.2/14.2/42.2 | 20.8 | 9.5 | -20.0 | 0.01/0.03 | 23.5 |
-| R11_own_N30_ALL_HALF | own N=30 HALF | ALL | 1855 | -164593 | -760 | 15.5 | 12.5/12.5/42.0 | 13.3 | -1.5 | -18.4 | 0.02/0.10 | 22.4 |
+| R11_any_N30_ALL_SKIP | any N=30 SKIP | ALL | 6052 | -572380 | 1739 | 49.7 | 53.4/88.3/100.0 | 32.5 | -28.5 | 9.4 | 0.01/0.01 | 80.6 |
+| R11_own_N120_ALL_SKIP | own N=120 SKIP | ALL | 6514 | -674424 | -3602 | 58.7 | 50.5/50.5/90.9 | 44.7 | 8.7 | -2.9 | 0.01/0.01 | 64.0 |
+| R11_any_N60_ALL_SKIP | any N=60 SKIP | ALL | 7959 | -745401 | -4467 | 39.6 | 24.5/49.7/100.0 | 41.0 | -12.0 | -40.0 | 0.01/0.01 | 58.1 |
+| R11_own_N60_ALL_SKIP | own N=60 SKIP | ALL | 5253 | -605034 | -3465 | 44.0 | 33.4/33.4/100.0 | 45.1 | -3.2 | -17.5 | 0.01/0.01 | 55.6 |
+| R11_any_N120_ALL_SKIP | any N=120 SKIP | ALL | 9636 | -937224 | -7895 | 44.3 | 14.0/38.5/100.0 | 39.8 | 3.0 | -66.5 | 0.01/0.01 | 50.8 |
+| R11_own_N30_ALL_SKIP | own N=30 SKIP | ALL | 3770 | -544849 | -1888 | 28.9 | 22.2/22.2/91.1 | 33.0 | -17.7 | -6.4 | 0.01/0.01 | 45.1 |
+| R11_any_N30_ALL_HALF | any N=30 HALF | ALL | 2836 | -128334 | -1029 | 26.7 | 23.9/36.8/54.7 | 26.6 | -7.8 | 39.6 | 0.01/0.02 | 38.5 |
+| R11_any_N120_ALL_HALF | any N=120 HALF | ALL | 4128 | -242164 | -2141 | 34.1 | 27.1/27.2/57.6 | 37.0 | 8.6 | 3.4 | 0.01/0.01 | 37.3 |
+| R11_any_N60_ALL_HALF | any N=60 HALF | ALL | 3668 | -167652 | -1014 | 25.5 | 21.9/23.9/54.0 | 38.0 | 4.9 | 16.9 | 0.01/0.01 | 33.3 |
+| R11_own_N120_ALL_HALF | own N=120 HALF | ALL | 2952 | -178779 | -1120 | 25.2 | 21.2/21.2/42.0 | 21.7 | 13.4 | 19.0 | 0.01/0.02 | 28.1 |
+| R11_own_N60_ALL_HALF | own N=60 HALF | ALL | 2530 | -167465 | -971 | 18.0 | 14.2/14.2/42.2 | 20.8 | 9.5 | 20.0 | 0.01/0.03 | 23.5 |
+| R11_own_N30_ALL_HALF | own N=30 HALF | ALL | 1855 | -164593 | -760 | 15.5 | 12.5/12.5/42.0 | 13.3 | -1.5 | 18.4 | 0.02/0.10 | 22.4 |
 
 ## 3. Best table cell per book
 
 **K7**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_own_N5_K7_HALF | own N=5 HALF | K7 | 99 | -12610 | 126 | -0.1 | 0.5/0.5/0.5 | -0.3 | -0.9 | 0.2 | 0.27/0.53 | 0.5 |
-| R11_own_N10_K7_HALF | own N=10 HALF | K7 | 140 | -16312 | 108 | -0.1 | 0.4/0.4/0.5 | -1.1 | 0.8 | 0.5 | 0.27/0.71 | 0.4 |
+| R11_own_N5_K7_HALF | own N=5 HALF | K7 | 99 | -12610 | 126 | -0.1 | 0.5/0.5/0.5 | -0.3 | -0.9 | -0.2 | 0.27/0.53 | 0.5 |
+| R11_own_N10_K7_HALF | own N=10 HALF | K7 | 140 | -16312 | 108 | -0.1 | 0.4/0.4/0.5 | -1.1 | 0.8 | -0.5 | 0.27/0.71 | 0.4 |
 
 **M7**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N60_M7_SKIP | any N=60 SKIP | M7 | 1832 | 69583 | 954 | 8.1 | 11.3/11.3/11.2 | 8.7 | 2.4 | -31.5 | 0.06/0.13 | 11.3 |
-| R11_any_N30_M7_SKIP | any N=30 SKIP | M7 | 1293 | 53033 | 704 | 8.7 | 11.0/11.0/10.9 | 3.5 | -2.8 | -29.3 | 0.04/0.24 | 11.0 |
+| R11_any_N60_M7_SKIP | any N=60 SKIP | M7 | 1832 | 69583 | 954 | 8.1 | 11.3/11.3/11.2 | 8.7 | 2.4 | 31.5 | 0.06/0.13 | 11.3 |
+| R11_any_N30_M7_SKIP | any N=30 SKIP | M7 | 1293 | 53033 | 704 | 8.7 | 11.0/11.0/10.9 | 3.5 | -2.8 | 29.3 | 0.04/0.24 | 11.0 |
 
 **U7**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N10_U7_SKIP | any N=10 SKIP | U7 | 216 | 39189 | 1976 | 19.7 | 25.2/25.2/25.1 | 12.4 | -2.8 | -22.3 | 0.01/0.14 | 25.2 |
-| R11_any_N15_U7_SKIP | any N=15 SKIP | U7 | 233 | 25221 | 1825 | 17.9 | 23.1/23.1/24.7 | 14.0 | -2.8 | -20.0 | 0.01/0.11 | 23.7 |
+| R11_any_N10_U7_SKIP | any N=10 SKIP | U7 | 216 | 39189 | 1976 | 19.7 | 25.2/25.2/25.1 | 12.4 | -2.8 | 22.3 | 0.01/0.14 | 25.2 |
+| R11_any_N15_U7_SKIP | any N=15 SKIP | U7 | 233 | 25221 | 1825 | 17.9 | 23.1/23.1/24.7 | 14.0 | -2.8 | 20.0 | 0.01/0.11 | 23.7 |
 
 **P7**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N120_P7_SKIP | any N=120 SKIP | P7 | 2807 | -566060 | -5367 | 46.8 | 30.0/30.0/100.0 | 38.6 | 12.7 | 40.4 | 0.01/0.01 | 53.3 |
-| R11_any_N30_P7_SKIP | any N=30 SKIP | P7 | 1862 | -363981 | -3962 | 38.6 | 28.3/41.1/90.0 | 30.3 | -23.4 | -13.4 | 0.01/0.01 | 53.1 |
+| R11_any_N120_P7_SKIP | any N=120 SKIP | P7 | 2807 | -566060 | -5367 | 46.8 | 30.0/30.0/100.0 | 38.6 | 12.7 | -40.4 | 0.01/0.01 | 53.3 |
+| R11_any_N30_P7_SKIP | any N=30 SKIP | P7 | 1862 | -363981 | -3962 | 38.6 | 28.3/41.1/90.0 | 30.3 | -23.4 | 13.4 | 0.01/0.01 | 53.1 |
 
 **H7**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_own_N120_H7_SKIP | own N=120 SKIP | H7 | 42 | -23746 | 113 | 0.0 | 0.5/0.5/0.5 | -2.6 | -0.0 | -2.7 | 1.00/0.80 | 0.5 |
-| R11_own_N120_H7_HALF | own N=120 HALF | H7 | 24 | -12337 | 13 | 0.0 | 0.1/0.1/0.1 | -0.9 | 0.0 | -0.7 | 1.00/0.79 | 0.1 |
+| R11_own_N120_H7_SKIP | own N=120 SKIP | H7 | 42 | -23746 | 113 | 0.0 | 0.5/0.5/0.5 | -2.6 | -0.0 | 2.7 | 1.00/0.80 | 0.5 |
+| R11_own_N120_H7_HALF | own N=120 HALF | H7 | 24 | -12337 | 13 | 0.0 | 0.1/0.1/0.1 | -0.9 | 0.0 | 0.7 | 1.00/0.79 | 0.1 |
 
 **A7**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N60_A7_SKIP | any N=60 SKIP | A7 | 487 | -46356 | 71 | 3.2 | 3.6/3.6/8.2 | -3.0 | -0.0 | -4.1 | 0.03/0.76 | 5.1 |
-| R11_any_N30_A7_SKIP | any N=30 SKIP | A7 | 448 | -46936 | 43 | 3.2 | 3.4/3.4/7.2 | -3.0 | -0.0 | -4.8 | 0.02/0.84 | 4.7 |
+| R11_any_N60_A7_SKIP | any N=60 SKIP | A7 | 487 | -46356 | 71 | 3.2 | 3.6/3.6/8.2 | -3.0 | -0.0 | 4.1 | 0.03/0.76 | 5.1 |
+| R11_any_N30_A7_SKIP | any N=30 SKIP | A7 | 448 | -46936 | 43 | 3.2 | 3.4/3.4/7.2 | -3.0 | -0.0 | 4.8 | 0.02/0.84 | 4.7 |
 
 **O7**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N120_O7_SKIP | any N=120 SKIP | O7 | 220 | -32199 | -113 | 0.0 | -0.5/-0.5/3.2 | 0.0 | -1.1 | 3.0 | 0.50/1.00 | 0.7 |
-| R11_any_N60_O7_SKIP | any N=60 SKIP | O7 | 155 | -32459 | 82 | 0.0 | 0.3/0.3/0.3 | 0.0 | -2.0 | 1.4 | 1.00/1.00 | 0.3 |
+| R11_any_N120_O7_SKIP | any N=120 SKIP | O7 | 220 | -32199 | -113 | 0.0 | -0.5/-0.5/3.2 | 0.0 | -1.1 | -3.0 | 0.50/1.00 | 0.7 |
+| R11_any_N60_O7_SKIP | any N=60 SKIP | O7 | 155 | -32459 | 82 | 0.0 | 0.3/0.3/0.3 | 0.0 | -2.0 | -1.4 | 1.00/1.00 | 0.3 |
 
 ## 4. Best table cell per session (flagged trades of that session)
 
 **asia**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N30_sess_asia_SKIP | any N=30 SKIP | sess_asia | 1784 | -493639 | -3392 | 9.1 | -7.6/-7.6/47.1 | 8.4 | -4.2 | 41.6 | 0.01/0.13 | 10.6 |
-| R11_own_N120_sess_asia_HALF | own N=120 HALF | sess_asia | 921 | -172587 | -975 | 0.5 | -4.1/-4.1/26.0 | 4.2 | -2.5 | -5.1 | 0.09/0.13 | 5.9 |
+| R11_any_N30_sess_asia_SKIP | any N=30 SKIP | sess_asia | 1784 | -493639 | -3392 | 9.1 | -7.6/-7.6/47.1 | 8.4 | -4.2 | -41.6 | 0.01/0.13 | 10.6 |
+| R11_own_N120_sess_asia_HALF | own N=120 HALF | sess_asia | 921 | -172587 | -975 | 0.5 | -4.1/-4.1/26.0 | 4.2 | -2.5 | 5.1 | 0.09/0.13 | 5.9 |
 
 **london**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N30_sess_london_SKIP | any N=30 SKIP | sess_london | 2082 | 33903 | 1690 | 28.6 | 32.9/50.7/50.7 | 36.2 | -5.4 | -49.3 | 0.01/0.01 | 44.8 |
-| R11_any_N60_sess_london_SKIP | any N=60 SKIP | sess_london | 2728 | 26243 | 306 | 33.3 | 34.1/44.1/44.0 | 34.5 | 2.4 | -51.6 | 0.01/0.02 | 40.7 |
+| R11_any_N30_sess_london_SKIP | any N=30 SKIP | sess_london | 2082 | 33903 | 1690 | 28.6 | 32.9/50.7/50.7 | 36.2 | -5.4 | 49.3 | 0.01/0.01 | 44.8 |
+| R11_any_N60_sess_london_SKIP | any N=60 SKIP | sess_london | 2728 | 26243 | 306 | 33.3 | 34.1/44.1/44.0 | 34.5 | 2.4 | 51.6 | 0.01/0.02 | 40.7 |
 
 **nyam**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N60_sess_nyam_SKIP | any N=60 SKIP | sess_nyam | 2547 | -39308 | 208 | 9.6 | 10.4/10.4/33.9 | 12.6 | -12.5 | -46.3 | 0.05/0.07 | 18.2 |
-| R11_any_N30_sess_nyam_SKIP | any N=30 SKIP | sess_nyam | 1817 | -87423 | 987 | 10.1 | 13.6/13.6/18.9 | 2.5 | -26.0 | -45.4 | 0.02/0.19 | 15.4 |
+| R11_any_N60_sess_nyam_SKIP | any N=60 SKIP | sess_nyam | 2547 | -39308 | 208 | 9.6 | 10.4/10.4/33.9 | 12.6 | -12.5 | 46.3 | 0.05/0.07 | 18.2 |
+| R11_any_N30_sess_nyam_SKIP | any N=30 SKIP | sess_nyam | 1817 | -87423 | 987 | 10.1 | 13.6/13.6/18.9 | 2.5 | -26.0 | 45.4 | 0.02/0.19 | 15.4 |
 
 **nypm**
 | cell | policy | scope | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_own_N5_sess_nypm_HALF | own N=5 HALF | sess_nypm | 31 | -1866 | 92 | 0.0 | 0.4/0.4/0.4 | 0.0 | 0.0 | 0.7 | 0.76/0.92 | 0.4 |
-| R11_own_N10_sess_nypm_HALF | own N=10 HALF | sess_nypm | 44 | -2358 | 92 | 0.0 | 0.4/0.4/0.4 | -0.9 | 0.9 | 0.7 | 0.76/0.83 | 0.4 |
+| R11_own_N5_sess_nypm_HALF | own N=5 HALF | sess_nypm | 31 | -1866 | 92 | 0.0 | 0.4/0.4/0.4 | 0.0 | 0.0 | -0.7 | 0.76/0.92 | 0.4 |
+| R11_own_N10_sess_nypm_HALF | own N=10 HALF | sess_nypm | 44 | -2358 | 92 | 0.0 | 0.4/0.4/0.4 | -0.9 | 0.9 | -0.7 | 0.76/0.83 | 0.4 |
 
 ## 5. Continuation variant (pullback re-entry after a target; ADDED trades)
 | cell | k pts | lots frac | scope | trades added | mean $/trade | win % | L6M mean d | L6M maxDD cut % | eq cut L6M/L3M/L1M | PRE cut % | p plc L6M |

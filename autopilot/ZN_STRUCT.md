@@ -1,5 +1,5 @@
 # ZN_STRUCT - T-ZONES-EXHAUST families C (swing/market structure), D (MA/bands), E (round numbers/grid)
-Updated 2026-11-10 00:54Z. PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER SCREEN ONLY unless the exact table below says otherwise. **ROLL-EXCL applied** (33 roll-artifact base trades weighted 0 via sz_core Base.rollw; every number rescored incl. X-prime and HOLD). No PASS claims.
+Updated 2026-11-10 01:26Z. PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER SCREEN ONLY unless the exact table below says otherwise. **ROLL-EXCL applied** (33 roll-artifact base trades weighted 0 via sz_core Base.rollw; every number rescored incl. X-prime and HOLD). No PASS claims.
 
 **Price source:** ZN-CORE roll-continuous 1-min bars from the 1-s state arrays (/mnt/l2/l2vast/_th_zn/bars.npz, cont = raw - cum, 14 quarterly rolls); all levels on the continuous axis, distances to the last closed 1-min close at the signal second; round numbers / open-grid use the live price (cont + cum/4). bars1m_NQ.npz (back-adjusted) is NOT used. Entry proxy vs trade-list entry_px: median 0.8 pt, 99th pct 25 pts (fills/slippage and roll seconds).
 
@@ -161,8 +161,14 @@ For every book x session not listed, no level-specific cell cleared the screen: 
 ## EXACT engine results for the queued ZS_* sets (exact vs first-order maxDD cut; windows present only when all their months have landed)
 | set | cell | level / geometry / action / scope | window | exact cut | first-order cut | exact equal-mean cut | exact d mean $/wk | stage |
 |---|---|---|---|---|---|---|---|---|
-| ZS_C0 | 6e93e2da912d |  | L1M | 14.9 | 44.5 | 3.1 | 3962 | [EXACT partial] |
-| ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | L1M | 29.2 | 40.1 | 2.3 | -5069 | [EXACT partial] |
+| ZS_C0 | 6e93e2da912d |  | L1M | 14.9 | 44.5 | 23.4 | 3962 | [EXACT partial] |
+| ZS_C0 | 6e93e2da912d |  | L2M | 14.9 | 44.5 | 23.4 | -1967 | [EXACT partial] |
+| ZS_C0 | 6e93e2da912d |  | L3M | 15.0 | 44.6 | 23.4 | -1936 | [EXACT partial] |
+| ZS_C0 | 6e93e2da912d |  | L6M | 15.0 | 44.6 | 23.4 | 2344 | [EXACT partial] |
+| ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | L1M | 29.2 | 40.1 | 26.7 | -5069 | [EXACT partial] |
+| ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | L2M | 29.2 | 40.1 | 26.7 | -4717 | [EXACT partial] |
+| ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | L3M | 20.3 | 39.9 | 17.5 | 2955 | [EXACT partial] |
+| ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | L6M | 20.3 | 36.4 | 17.5 | -838 | [EXACT partial] |
 
 ## Top-5 per family for exact (level-specific, p_own <= .10; QUEUED with SZ-CORE as sets ZS_C0-4 / ZS_D0-4 / ZS_E0-4: L6M months for all 15, PRE, X-prime and HOLD for the top-2 per family; M table /mnt/l2/l2vast/_th_zn/M_ZN_STRUCT.npz; registry file /mnt/l2/l2vast/_th_zn/topK_STRUCT.json
 - C Swing / market structure: e2b9736063c7 (sw15_3 v7 hw0 pt90 BA skip PE), b6032b93a83c (sw1_5 v18 hw0 atr1.5 AP skip PE), afc2cc12b466 (sw1_2 v18 hw5 pt20 BA skip PE), 2aa652b6eec4 (fvg15 v20 hw5 pt20 BA skip PE), 9584448d018a (sw5_3 v7 hw5 pt40 BA skip PE)

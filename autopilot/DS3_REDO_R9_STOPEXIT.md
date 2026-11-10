@@ -1,5 +1,5 @@
 # DS3_REDO_R9_STOPEXIT - stop-exit and cut-exit mechanics on the state base (T-STACK-REDO R9)  [FIRST-ORDER SCREEN, tape microsim; PRE-PROOF until entry match >= .85; no PASS claims]
-Generated 2026-11-09 22:17 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
+Generated 2026-11-10 01:28 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
 Registry: /mnt/l2/l2vast/_th_joint/layers/stopexit/topK.json. Cell ledger: /mnt/l2/l2vast/_th_stack/r9/cells_r9.parquet.
 
 ## 0. What was measured, how, and the limits
@@ -69,40 +69,40 @@ Pooled: engine join-book stops cost -0.48 pt (fallback share 0.37); engine nativ
 **4a. LIVE-CALIBRATED basis (primary):** native = +1.28 pt, join fill = +0.5 pt, fallback = +3.9 pt (+ the tape drift of the longer wait), reference per book = engine assignment (join books JLIVE_3, others NATLIVE). Break-even: a native stop must cost <= 1.79 pt (mean live-calibrated J3 cost on the join-book stops) for native to beat the 3-s join; live-measured native is 1.28 pt.
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9S_ALL_NATLIVE | ALL | NATLIVE | 2615 | 1849 | 425 | 1.6 | 3.3/3.3/4.4 | 0.2 | 3.6 | -1.9 | 0.13/0.39 | 3.7 |
-| R9S_ALL_JLIVE_10 | ALL | JLIVE_10 | 1658 | -6226 | 49 | 0.3 | 0.5/0.5/0.9 | -0.7 | 2.2 | 0.3 | 0.14/0.86 | 0.6 |
-| R9S_ALL_JLIVE_5 | ALL | JLIVE_5 | 1603 | -9971 | -70 | 0.3 | -0.0/-0.0/0.3 | -1.1 | 2.1 | 0.6 | 0.09/1.00 | 0.1 |
-| R9S_ALL_JLIVE_3 | ALL | JLIVE_3 | 735 | -13107 | -75 | -0.3 | -0.6/-0.6/-0.7 | -0.1 | 0.1 | 1.1 | 0.38/0.66 | -0.6 |
-| R9S_ALL_JLIVE_1 | ALL | JLIVE_1 | 1933 | -17050 | -113 | -0.4 | -0.9/-0.9/-0.8 | -1.5 | -0.6 | 1.4 | 0.39/1.00 | -0.9 |
+| R9S_ALL_NATLIVE | ALL | NATLIVE | 2615 | 1849 | 425 | 1.6 | 3.3/3.3/4.4 | 0.2 | 3.6 | 1.9 | 0.13/0.39 | 3.7 |
+| R9S_ALL_JLIVE_10 | ALL | JLIVE_10 | 1658 | -6226 | 49 | 0.3 | 0.5/0.5/0.9 | -0.7 | 2.2 | -0.3 | 0.14/0.86 | 0.6 |
+| R9S_ALL_JLIVE_5 | ALL | JLIVE_5 | 1603 | -9971 | -70 | 0.3 | -0.0/-0.0/0.3 | -1.1 | 2.1 | -0.6 | 0.09/1.00 | 0.1 |
+| R9S_ALL_JLIVE_3 | ALL | JLIVE_3 | 735 | -13107 | -75 | -0.3 | -0.6/-0.6/-0.7 | -0.1 | 0.1 | -1.1 | 0.38/0.66 | -0.6 |
+| R9S_ALL_JLIVE_1 | ALL | JLIVE_1 | 1933 | -17050 | -113 | -0.4 | -0.9/-0.9/-0.8 | -1.5 | -0.6 | -1.4 | 0.39/1.00 | -0.9 |
 
 **4b. ENGINE basis (secondary, optimistic native fills; deltas vs the engine fill in the base):**
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9S_ALL_NAT | ALL | NAT | 2372 | 192245 | 1373 | 5.3 | 9.9/9.9/9.8 | 7.4 | 9.5 | -19.0 | 0.18/0.49 | 9.9 |
-| R9S_ALL_STRAT0_c10 | ALL | STRAT0_c10 | 3101 | -9770 | -97 | 2.2 | 1.9/1.9/1.8 | -2.0 | 0.3 | -1.1 | 0.06/0.89 | 1.9 |
-| R9S_ALL_J5_i1_c10 | ALL | J5_i1_c10 | 3127 | 21470 | 104 | 0.4 | 0.9/0.9/0.8 | 0.8 | 1.4 | -1.6 | 0.32/0.59 | 0.8 |
-| R9S_ALL_J10_i1_c10 | ALL | J10_i1_c10 | 3168 | 25040 | 124 | 0.1 | 0.7/0.7/0.6 | 1.1 | 2.0 | -1.9 | 0.56/0.62 | 0.6 |
-| R9S_ALL_J10_i0_c10 | ALL | J10_i0_c10 | 1671 | 11930 | 94 | 0.3 | 0.7/0.7/0.5 | 1.4 | 0.4 | -3.0 | 0.22/0.51 | 0.6 |
-| R9S_ALL_J10_i1_c20 | ALL | J10_i1_c20 | 3121 | 6020 | -37 | 0.7 | 0.5/0.5/0.8 | -0.3 | 2.8 | 0.0 | 0.13/0.87 | 0.6 |
-| R9S_ALL_J10_i0_c40 | ALL | J10_i0_c40 | 1665 | -35125 | 6 | 0.1 | 0.1/0.1/1.5 | -4.5 | 0.3 | 0.9 | 0.17/1.00 | 0.6 |
-| R9S_ALL_J5_i0_c10 | ALL | J5_i0_c10 | 1622 | 6090 | 23 | 0.5 | 0.6/0.6/0.5 | 1.1 | 0.1 | -2.2 | 0.23/0.46 | 0.5 |
-| R9S_ALL_J10_i1_c30 | ALL | J10_i1_c30 | 3184 | 170 | 39 | -0.2 | 0.0/0.0/1.5 | 0.1 | 2.6 | 0.1 | 0.31/0.64 | 0.5 |
-| R9S_ALL_J3_i1_c10 | ALL | J3_i1_c10 | 2620 | 20015 | 73 | 0.2 | 0.5/0.5/0.4 | 1.2 | 1.2 | -1.2 | 0.37/0.57 | 0.5 |
-| R9S_ALL_J3_i0_c10 | ALL | J3_i0_c10 | 827 | 3195 | -10 | 0.3 | 0.3/0.3/0.2 | 1.3 | -0.3 | -1.8 | 0.20/0.47 | 0.2 |
-| R9S_ALL_J5_i1_c20 | ALL | J5_i1_c20 | 3075 | 660 | -79 | 0.6 | 0.2/0.2/0.1 | -0.9 | 2.0 | 0.7 | 0.14/0.93 | 0.2 |
+| R9S_ALL_NAT | ALL | NAT | 2372 | 192245 | 1373 | 5.3 | 9.9/9.9/9.8 | 7.4 | 9.5 | 19.0 | 0.18/0.49 | 9.9 |
+| R9S_ALL_STRAT0_c10 | ALL | STRAT0_c10 | 3101 | -9770 | -97 | 2.2 | 1.9/1.9/1.8 | -2.0 | 0.3 | 1.1 | 0.06/0.89 | 1.9 |
+| R9S_ALL_J5_i1_c10 | ALL | J5_i1_c10 | 3127 | 21470 | 104 | 0.4 | 0.9/0.9/0.8 | 0.8 | 1.4 | 1.6 | 0.32/0.59 | 0.8 |
+| R9S_ALL_J10_i1_c10 | ALL | J10_i1_c10 | 3168 | 25040 | 124 | 0.1 | 0.7/0.7/0.6 | 1.1 | 2.0 | 1.9 | 0.56/0.62 | 0.6 |
+| R9S_ALL_J10_i0_c10 | ALL | J10_i0_c10 | 1671 | 11930 | 94 | 0.3 | 0.7/0.7/0.5 | 1.4 | 0.4 | 3.0 | 0.22/0.51 | 0.6 |
+| R9S_ALL_J10_i1_c20 | ALL | J10_i1_c20 | 3121 | 6020 | -37 | 0.7 | 0.5/0.5/0.8 | -0.3 | 2.8 | -0.0 | 0.13/0.87 | 0.6 |
+| R9S_ALL_J10_i0_c40 | ALL | J10_i0_c40 | 1665 | -35125 | 6 | 0.1 | 0.1/0.1/1.5 | -4.5 | 0.3 | -0.9 | 0.17/1.00 | 0.6 |
+| R9S_ALL_J5_i0_c10 | ALL | J5_i0_c10 | 1622 | 6090 | 23 | 0.5 | 0.6/0.6/0.5 | 1.1 | 0.1 | 2.2 | 0.23/0.46 | 0.5 |
+| R9S_ALL_J10_i1_c30 | ALL | J10_i1_c30 | 3184 | 170 | 39 | -0.2 | 0.0/0.0/1.5 | 0.1 | 2.6 | -0.1 | 0.31/0.64 | 0.5 |
+| R9S_ALL_J3_i1_c10 | ALL | J3_i1_c10 | 2620 | 20015 | 73 | 0.2 | 0.5/0.5/0.4 | 1.2 | 1.2 | 1.2 | 0.37/0.57 | 0.5 |
+| R9S_ALL_J3_i0_c10 | ALL | J3_i0_c10 | 827 | 3195 | -10 | 0.3 | 0.3/0.3/0.2 | 1.3 | -0.3 | 1.8 | 0.20/0.47 | 0.2 |
+| R9S_ALL_J5_i1_c20 | ALL | J5_i1_c20 | 3075 | 660 | -79 | 0.6 | 0.2/0.2/0.1 | -0.9 | 2.0 | -0.7 | 0.14/0.93 | 0.2 |
 
 Reference row REF_G0 (Gate0 assignment, engine basis; exact-pending):
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| REF_G0_assignment | ALL | G0 | 1149 | 115315 | 909 | 3.9 | 7.6/7.6/7.5 | 5.3 | 5.7 | -12.4 | 0.17/0.60 | 7.6 |
+| REF_G0_assignment | ALL | G0 | 1149 | 115315 | 909 | 3.9 | 7.6/7.6/7.5 | 5.3 | 5.7 | 12.4 | 0.17/0.60 | 7.6 |
 
 Worst stack-wide cells (engine basis):
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9S_ALL_NAT175 | ALL | NAT175 | 3165 | -268020 | -540 | -1.1 | -3.4/-3.4/-1.9 | -4.4 | -1.3 | 10.5 | 0.07/0.30 | -2.9 |
-| R9S_ALL_J3_i0_c30 | ALL | J3_i0_c30 | 743 | -38660 | -134 | -2.5 | -3.0/-3.0/-0.8 | 0.4 | -1.3 | 3.3 | 0.72/0.19 | -2.3 |
-| R9S_ALL_J1_i0_c30 | ALL | J1_i0_c30 | 1911 | -51315 | -265 | -1.8 | -2.8/-2.8/-1.1 | -3.5 | -2.0 | 3.2 | 0.55/0.96 | -2.2 |
-| R9S_ALL_J5_i0_c30 | ALL | J5_i0_c30 | 1601 | -34375 | -61 | -2.4 | -2.7/-2.7/0.7 | -0.2 | 0.3 | 2.3 | 0.75/0.42 | -1.5 |
+| R9S_ALL_NAT175 | ALL | NAT175 | 3165 | -268020 | -540 | -1.1 | -3.4/-3.4/-1.9 | -4.4 | -1.3 | -10.5 | 0.07/0.30 | -2.9 |
+| R9S_ALL_J3_i0_c30 | ALL | J3_i0_c30 | 743 | -38660 | -134 | -2.5 | -3.0/-3.0/-0.8 | 0.4 | -1.3 | -3.3 | 0.72/0.19 | -2.3 |
+| R9S_ALL_J1_i0_c30 | ALL | J1_i0_c30 | 1911 | -51315 | -265 | -1.8 | -2.8/-2.8/-1.1 | -3.5 | -2.0 | -3.2 | 0.55/0.96 | -2.2 |
+| R9S_ALL_J5_i0_c30 | ALL | J5_i0_c30 | 1601 | -34375 | -61 | -2.4 | -2.7/-2.7/0.7 | -0.2 | 0.3 | -2.3 | 0.75/0.42 | -1.5 |
 
 ## 5. Per-book best policy (single book changed, the rest stays at the live reference)
 | book | best policy by key | dmean L6M $/wk | L6M cut % | eq cut L6M | PRE cut / dmean | WF2w beat % | prior label |
@@ -118,35 +118,35 @@ Worst stack-wide cells (engine basis):
 ## 6. Cut exit (StateCut): market vs join 1 / 2 / 3 s (tape; market baseline = walk at cut + 1.0 s request path; delta applied to the engine StateCut fill)
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9C_ALL_CJ1_i1 | ALL | CJ1_i1 | 5759 | 22905 | 318 | -0.7 | 0.7/0.7/0.6 | 0.5 | 1.3 | -2.9 | 0.90/0.50 | 0.7 |
-| R9C_ALL_CJ2_i1 | ALL | CJ2_i1 | 5759 | 22905 | 318 | -0.7 | 0.7/0.7/0.6 | 0.5 | 1.3 | -2.9 | 0.94/0.50 | 0.7 |
-| R9C_ALL_CJ3_i1 | ALL | CJ3_i1 | 5759 | 22905 | 318 | -0.7 | 0.7/0.7/0.6 | 0.5 | 1.3 | -2.9 | 0.88/0.48 | 0.7 |
-| R9C_ALL_CJ1_i0 | ALL | CJ1_i0 | 5604 | 11855 | 214 | -0.9 | 0.1/0.1/-0.0 | 0.0 | 0.6 | -1.5 | 0.93/0.72 | 0.0 |
-| R9C_ALL_CJ2_i0 | ALL | CJ2_i0 | 5604 | 11855 | 214 | -0.9 | 0.1/0.1/-0.0 | 0.0 | 0.6 | -1.5 | 0.92/0.74 | 0.0 |
-| R9C_ALL_CJ3_i0 | ALL | CJ3_i0 | 5604 | 11855 | 214 | -0.9 | 0.1/0.1/-0.0 | 0.0 | 0.6 | -1.5 | 0.90/0.79 | 0.0 |
+| R9C_ALL_CJ1_i1 | ALL | CJ1_i1 | 5759 | 22905 | 318 | -0.7 | 0.7/0.7/0.6 | 0.5 | 1.3 | 2.9 | 0.90/0.50 | 0.7 |
+| R9C_ALL_CJ2_i1 | ALL | CJ2_i1 | 5759 | 22905 | 318 | -0.7 | 0.7/0.7/0.6 | 0.5 | 1.3 | 2.9 | 0.94/0.50 | 0.7 |
+| R9C_ALL_CJ3_i1 | ALL | CJ3_i1 | 5759 | 22905 | 318 | -0.7 | 0.7/0.7/0.6 | 0.5 | 1.3 | 2.9 | 0.88/0.48 | 0.7 |
+| R9C_ALL_CJ1_i0 | ALL | CJ1_i0 | 5604 | 11855 | 214 | -0.9 | 0.1/0.1/-0.0 | 0.0 | 0.6 | 1.5 | 0.93/0.72 | 0.0 |
+| R9C_ALL_CJ2_i0 | ALL | CJ2_i0 | 5604 | 11855 | 214 | -0.9 | 0.1/0.1/-0.0 | 0.0 | 0.6 | 1.5 | 0.92/0.74 | 0.0 |
+| R9C_ALL_CJ3_i0 | ALL | CJ3_i0 | 5604 | 11855 | 214 | -0.9 | 0.1/0.1/-0.0 | 0.0 | 0.6 | 1.5 | 0.90/0.79 | 0.0 |
 
 Per book (best join variant by key):
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9C_K7_CJ1_i0 | K7 | CJ1_i0 | 1451 | 1660 | 18 | 0.0 | 0.1/0.1/0.1 | 0.0 | 0.0 | -0.6 | 0.40/0.53 | 0.1 |
+| R9C_K7_CJ1_i0 | K7 | CJ1_i0 | 1451 | 1660 | 18 | 0.0 | 0.1/0.1/0.1 | 0.0 | 0.0 | 0.6 | 0.40/0.53 | 0.1 |
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9C_M7_CJ1_i1 | M7 | CJ1_i1 | 1807 | 4535 | 44 | 0.0 | 0.2/0.2/0.6 | 0.4 | 0.2 | -0.8 | 0.54/0.01 | 0.4 |
+| R9C_M7_CJ1_i1 | M7 | CJ1_i1 | 1807 | 4535 | 44 | 0.0 | 0.2/0.2/0.6 | 0.4 | 0.2 | 0.8 | 0.54/0.01 | 0.4 |
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9C_U7_CJ1_i1 | U7 | CJ1_i1 | 106 | 0 | -18 | -0.2 | -0.2/-0.2/-0.4 | 0.1 | -0.0 | 0.4 | 0.88/0.22 | -0.3 |
+| R9C_U7_CJ1_i1 | U7 | CJ1_i1 | 106 | 0 | -18 | -0.2 | -0.2/-0.2/-0.4 | 0.1 | -0.0 | -0.4 | 0.88/0.22 | -0.3 |
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9C_P7_CJ1_i1 | P7 | CJ1_i1 | 1929 | 14300 | 202 | -0.7 | 0.1/0.1/-0.1 | -0.1 | 1.2 | -1.6 | 0.89/0.81 | 0.0 |
+| R9C_P7_CJ1_i1 | P7 | CJ1_i1 | 1929 | 14300 | 202 | -0.7 | 0.1/0.1/-0.1 | -0.1 | 1.2 | 1.6 | 0.89/0.81 | 0.0 |
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9C_H7_CJ1_i1 | H7 | CJ1_i1 | 199 | 1155 | 13 | -0.1 | -0.0/-0.0/0.0 | 0.0 | -0.0 | -0.3 | 0.66/0.20 | -0.0 |
+| R9C_H7_CJ1_i1 | H7 | CJ1_i1 | 199 | 1155 | 13 | -0.1 | -0.0/-0.0/0.0 | 0.0 | -0.0 | 0.3 | 0.66/0.20 | -0.0 |
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9C_A7_CJ1_i1 | A7 | CJ1_i1 | 84 | 530 | 2 | -0.0 | 0.0/0.0/-0.1 | -0.0 | 0.0 | -0.0 | 0.57/0.75 | -0.0 |
+| R9C_A7_CJ1_i1 | A7 | CJ1_i1 | 84 | 530 | 2 | -0.0 | 0.0/0.0/-0.1 | -0.0 | 0.0 | 0.0 | 0.57/0.75 | -0.0 |
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9C_O7_CJ1_i0 | O7 | CJ1_i0 | 151 | 125 | 6 | 0.0 | 0.1/0.1/0.0 | -0.0 | -0.0 | -0.0 | 0.12/0.81 | 0.1 |
+| R9C_O7_CJ1_i0 | O7 | CJ1_i0 | 151 | 125 | 6 | 0.0 | 0.1/0.1/0.0 | -0.0 | -0.0 | 0.0 | 0.12/0.81 | 0.1 |
 
 Mean $ per cut (matched = all cuts) of join vs market, by session (ALL books): asia: CJ1_i0 6 / CJ3_i0 6; london: CJ1_i0 2 / CJ3_i0 2; nyam: CJ1_i0 -3 / CJ3_i0 -3; nypm: CJ1_i0 2 / CJ3_i0 2
 Cut-exit join fill share: CJ1_i0 0.10, CJ2_i0 0.10, CJ3_i0 0.10 (fallback = market after the wait; the price path after a cut signal runs against the position, so a join that waits pays the drift).
@@ -166,14 +166,14 @@ Reading: moving M7/U7/P7 (and A7/O7 as listed) to Native on the engine basis gai
 Best 8 cells overall by key:
 | cell | scope | policy | n aff | d$ total | L6M mean d | L6M maxDD cut % | eq-mean cut L6M/L3M/L1M | PRE cut % | X' cut % | w20 cut L6M % | p plc L6M/PRE | key |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R9S_ALL_NAT | ALL | NAT | 2372 | 192245 | 1373 | 5.3 | 9.9/9.9/9.8 | 7.4 | 9.5 | -19.0 | 0.18/0.49 | 9.9 |
-| R9S_P7_NAT | P7 | NAT | 229 | 78790 | 570 | 2.6 | 5.0/5.0/4.9 | 4.0 | 3.2 | -7.8 | 0.25/0.63 | 5.0 |
-| R9S_ALL_NATLIVE | ALL | NATLIVE | 2615 | 1849 | 425 | 1.6 | 3.3/3.3/4.4 | 0.2 | 3.6 | -1.9 | 0.13/0.39 | 3.7 |
-| R9S_K7_NAT | K7 | NAT | 1455 | 63105 | 412 | 1.5 | 3.0/3.0/2.9 | 2.1 | 3.4 | -6.5 | 0.03/0.10 | 3.0 |
-| R9S_P7_J10_i0_c40 | P7 | J10_i0_c40 | 93 | 9370 | 200 | 1.0 | 1.8/1.8/2.9 | -2.4 | 1.3 | -0.3 | 0.11/0.98 | 2.2 |
-| R9S_P7_J10_i1_c30 | P7 | J10_i1_c30 | 239 | 12330 | 151 | 0.9 | 1.5/1.5/2.6 | -1.5 | 2.5 | -1.2 | 0.13/0.90 | 1.9 |
-| R9S_ALL_STRAT0_c10 | ALL | STRAT0_c10 | 3101 | -9770 | -97 | 2.2 | 1.9/1.9/1.8 | -2.0 | 0.3 | -1.1 | 0.06/0.89 | 1.9 |
-| R9S_P7_J10_i1_c20 | P7 | J10_i1_c20 | 224 | 13405 | 141 | 0.9 | 1.5/1.5/2.5 | -0.4 | 2.5 | -2.0 | 0.05/0.90 | 1.8 |
+| R9S_ALL_NAT | ALL | NAT | 2372 | 192245 | 1373 | 5.3 | 9.9/9.9/9.8 | 7.4 | 9.5 | 19.0 | 0.18/0.49 | 9.9 |
+| R9S_P7_NAT | P7 | NAT | 229 | 78790 | 570 | 2.6 | 5.0/5.0/4.9 | 4.0 | 3.2 | 7.8 | 0.25/0.63 | 5.0 |
+| R9S_ALL_NATLIVE | ALL | NATLIVE | 2615 | 1849 | 425 | 1.6 | 3.3/3.3/4.4 | 0.2 | 3.6 | 1.9 | 0.13/0.39 | 3.7 |
+| R9S_K7_NAT | K7 | NAT | 1455 | 63105 | 412 | 1.5 | 3.0/3.0/2.9 | 2.1 | 3.4 | 6.5 | 0.03/0.10 | 3.0 |
+| R9S_P7_J10_i0_c40 | P7 | J10_i0_c40 | 93 | 9370 | 200 | 1.0 | 1.8/1.8/2.9 | -2.4 | 1.3 | 0.3 | 0.11/0.98 | 2.2 |
+| R9S_P7_J10_i1_c30 | P7 | J10_i1_c30 | 239 | 12330 | 151 | 0.9 | 1.5/1.5/2.6 | -1.5 | 2.5 | 1.2 | 0.13/0.90 | 1.9 |
+| R9S_ALL_STRAT0_c10 | ALL | STRAT0_c10 | 3101 | -9770 | -97 | 2.2 | 1.9/1.9/1.8 | -2.0 | 0.3 | 1.1 | 0.06/0.89 | 1.9 |
+| R9S_P7_J10_i1_c20 | P7 | J10_i1_c20 | 224 | 13405 | 141 | 0.9 | 1.5/1.5/2.5 | -0.4 | 2.5 | 2.0 | 0.05/0.90 | 1.8 |
 
 The live setting stays unless an exact-engine row beats it with the walk-forward; the screen only nominates candidates. Join waits >= 5 s and inside-1 joins are the questions that can move the stop cost; the tape queue model makes the first-order sign trustworthy, the size is an upper/lower bound as stated in s0.
 

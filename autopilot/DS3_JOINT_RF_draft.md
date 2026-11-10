@@ -1,4 +1,4 @@
-# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-09 23:57Z)
+# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-10 01:26Z)
 
 **ROLL-FIXED reference (engine ROLLFIX1: flatten at the 14 rolls; live reference = base_b_rollfix S1-COMB, 21,163 rows; M tables lifted by Z.lift_M, new rows m=1). FIRST-ORDER SCREEN ONLY. PRE-PROOF, post-hoc, shadow only, no PASS claims. Every layer stays ON in every stack: option 0 of each layer is the live setting (multiplier 1).** The layer pools are stand-ins built by SZ-IJK from the owners' multiplier files (M_*.npz, the lot-level layers only) until the owners write /mnt/l2/l2vast/_th_joint/layers/<layer>/topK.json. Cut / profit-rule / lock / entry layers are NOT multiplier-composable and are not in this version.
 
@@ -22,9 +22,9 @@ Exact engine throughput about 24 cell-months/hour/worker with month batching, 6 
 
 ## Registered layers (/mnt/l2/l2vast/_th_joint/layers/*/topK.json)
 
-Static-M layers (multiplier arrays, composable first-order by product): a06_slots: 2 cells incl. live; b02: 5 cells incl. live; cooldown_r5: 1 cells incl. live; cooldowns: 1 cells incl. live; entry: 1 cells incl. live; hm5: 1 cells incl. live; locks: 1 cells incl. live; lot_tables: 4 cells incl. live; ntz: 1 cells incl. live; o7: 1 cells incl. live; ote: 1 cells incl. live; shadow: 2 cells incl. live; sizer: 5 cells incl. live; stack_cut: 1 cells incl. live; zone: 5 cells incl. live. In the screen: SIZER, LOT, ZONE, A06, B02 take the registered cells first (then the stand-in grids); hm5 and stack_cut registered only the live setting.
+Static-M layers (multiplier arrays, composable first-order by product): a06_slots: 2 cells incl. live; b02: 5 cells incl. live; brackets: 1 cells incl. live; cooldown_r5: 1 cells incl. live; cooldowns: 1 cells incl. live; entry: 1 cells incl. live; hm5: 1 cells incl. live; locks: 1 cells incl. live; lot_tables: 4 cells incl. live; netting: 1 cells incl. live; ntz: 1 cells incl. live; o7: 1 cells incl. live; ote: 1 cells incl. live; reentry: 1 cells incl. live; session_blocks: 1 cells incl. live; shadow: 2 cells incl. live; signals: 7 cells incl. live; sizer: 5 cells incl. live; stack_cut: 1 cells incl. live; stopexit: 4 cells incl. live; zone: 5 cells incl. live. In the screen: SIZER, LOT, ZONE, A06, B02 take the registered cells first (then the stand-in grids); hm5 and stack_cut registered only the live setting.
 
-Trade-list / hook layers (NOT multiplier-composable: they change exits, re-entries, locks, entries; verdicts only from joint exact runs through their hooks): a06_slots: 1 cells; cooldown_r5: 5 cells; cooldowns: 5 cells; cut: 5 cells; entry: 4 cells; locks: 5 cells; lot_tables: 1 cells; ntz: 5 cells; o7: 4 cells; ote: 4 cells; profit: 64 cells; shadow: 8 cells.
+Trade-list / hook layers (NOT multiplier-composable: they change exits, re-entries, locks, entries; verdicts only from joint exact runs through their hooks): a06_slots: 1 cells; brackets: 4 cells; cooldown_r5: 5 cells; cooldowns: 5 cells; cut: 5 cells; entry: 4 cells; locks: 5 cells; lot_tables: 1 cells; netting: 4 cells; ntz: 5 cells; o7: 4 cells; ote: 4 cells; profit: 64 cells; reentry: 5 cells; session_blocks: 4 cells; shadow: 8 cells; signals: 28 cells; stopexit: 4 cells.
 
 
 ## Top-10 joint stacks, first-order screen (full factorial of the top-5 per layer, distinct lot arrays)
@@ -108,6 +108,59 @@ Key (standing rule 2, recents first) = min over L6M / L3M of the maxDD cut at EQ
 - STANDING RULE 2 primary OOS test, bi-weekly re-pick WF (trailing 26 weeks -> next 2 weeks, purged 7 d) of the whole joint procedure: 75 refit periods since 2024-01, OOS maxDD cut +72.0% with d mean -9626 $/wk; the pick beat live (period P&L >= live and in-period drawdown <= live) in 39% of periods (P&L alone 39%); since 2026-05-12 (13 periods): 46% beat, 46% P&L-ge.
 - Held-out live week: n/a for stacks (the owners' M arrays cover the 21,135 base rows only).
 
+## Exact engine results for joint stacks (table mode: the stack multiplier applied after the Q1-A ladder, before zone HALF)
+
+| stack | window | cut | eq-mean cut | d mean | worst-20 | standing rule 2a label (PRE row) |
+|---|---|---|---|---|---|---|
+| J01 | L1M | +57.8 | +54.0 | +18143 | -26k / -3k |  |
+| J01 | L3M | +57.8 | +54.1 | -450 | 133k / 216k |  |
+| J01 | L6M | +11.9 | +4.2 | -1809 | 114k / 165k |  |
+| J01 | PRE | +31.6 | +25.5 | -4092 | -493k / -717k | RECENT-ONLY (allow 21.935724552964608%, WF 61%) |
+| J01 | X' | +65.5 | +62.4 | +915 | -211k / -348k |  |
+| J02 | L1M | +44.2 | +34.0 | +15441 | -45k / -3k |  |
+| J02 | L3M | +13.9 | -1.7 | -5353 | 64k / 216k |  |
+| J02 | L6M | +13.9 | -1.7 | -3422 | 45k / 165k |  |
+| J02 | PRE | +40.2 | +29.4 | -4187 | -471k / -717k | RECENT-ONLY (allow 15.0%, WF 59%) |
+| J02 | X' | +74.2 | +69.5 | +4485 | -213k / -348k |  |
+| J03 | L1M | +56.4 | +57.9 | +19492 | -35k / -3k |  |
+| J03 | L3M | +52.0 | +53.6 | +513 | 132k / 216k |  |
+| J03 | L6M | +18.9 | +21.6 | +769 | 140k / 165k |  |
+| J03 | PRE | +33.0 | +35.2 | -6170 | -454k / -717k | RECENT-ONLY (allow 25.0%, WF 68%) |
+| J03 | X' | +72.6 | +73.5 | +3623 | -175k / -348k |  |
+| J04 | L1M | +65.5 | +58.5 | +17668 | -28k / -3k |  |
+| J04 | L3M | +59.8 | +51.7 | -2675 | 106k / 216k |  |
+| J04 | L6M | +13.8 | -3.7 | -3767 | 104k / 165k |  |
+| J04 | PRE | +43.4 | +31.9 | -4383 | -428k / -717k | RECENT-ONLY (allow 23.7830892631387%, WF 64%) |
+| J04 | X' | +70.1 | +64.0 | +2093 | -170k / -348k |  |
+| JY01 | L1M | +87.0 | +65.4 | +27878 | -7k / -3k |  |
+| JY02 | L1M | +86.6 | +61.8 | +27547 | -7k / -3k |  |
+| JY03 | L1M | +87.3 | +58.4 | +27376 | -4k / -3k |  |
+| JY04 | L1M | +73.3 | +14.7 | +24601 | -21k / -3k |  |
+| JY05 | L1M | +55.6 | -1892.7 | +17885 | -30k / -3k |  |
+| JY06 | L1M | +77.3 | +9.1 | +23883 | -18k / -3k |  |
+| JZ01 | L1M | +40.0 | +19.0 | +16121 | -48k / -3k |  |
+| JZ01 | L3M | +28.9 | +4.0 | -7928 | 28k / 216k |  |
+| JZ01 | L6M | +26.3 | +0.5 | -5790 | 30k / 165k |  |
+| JZ01 | PRE | +55.5 | +39.8 | -4554 | -446k / -717k | RECENT-ONLY (allow 25.0%, WF 68%) |
+| JZ02 | L1M | +88.5 | +86.3 | +27160 | -2k / -3k |  |
+| JZ02 | L3M | +32.0 | +19.0 | -6782 | 54k / 216k |  |
+| JZ02 | L6M | +12.2 | -4.6 | -3587 | 98k / 165k |  |
+| JZ02 | PRE | +47.9 | +37.9 | -5056 | -409k / -717k | RECENT-ONLY (allow 22.19294748141969%, WF 73%) |
+| JZ03 | L1M | +51.1 | +40.6 | +17356 | -35k / -3k |  |
+| JZ03 | L3M | +10.4 | -8.8 | -6056 | 59k / 216k |  |
+| JZ03 | L6M | -14.4 | -39.0 | -3944 | 39k / 165k |  |
+| JZ03 | PRE | +47.3 | +35.9 | -3919 | -532k / -717k | RECENT-ONLY (allow 15.0%, WF 59%) |
+| JZ04 | L1M | +32.1 | +11.5 | +12160 | -54k / -3k |  |
+| JZ04 | L3M | +1.2 | -28.8 | -4148 | 79k / 216k |  |
+| JZ04 | L6M | +1.2 | -28.8 | -5200 | 48k / 165k |  |
+| JZ04 | PRE | +39.1 | +20.7 | -4926 | -498k / -717k | RECENT-ONLY (allow 15.0%, WF 64%) |
+
+## Exact vs first-order (so far)
+
+First-order keys of these stacks were 86-88% (equal-mean cut). Exact engine: J01: L6M eq-mean cut +4.2 / d mean -1809, PRE eq-mean cut +25.5 / d mean -4092, X' eq-mean cut +62.4 / d mean +915; J02: L6M eq-mean cut -1.7 / d mean -3422, PRE eq-mean cut +29.4 / d mean -4187, X' eq-mean cut +69.5 / d mean +4485; J03: L6M eq-mean cut +21.6 / d mean +769, PRE eq-mean cut +35.2 / d mean -6170, X' eq-mean cut +73.5 / d mean +3623; J04: L6M eq-mean cut -3.7 / d mean -3767, PRE eq-mean cut +31.9 / d mean -4383, X' eq-mean cut +64.0 / d mean +2093; JY01: ; JY02: ; JY03: ; JY04: ; JY05: ; JY06: ; JZ01: L6M eq-mean cut +0.5 / d mean -5790, PRE eq-mean cut +39.8 / d mean -4554; JZ02: L6M eq-mean cut -4.6 / d mean -3587, PRE eq-mean cut +37.9 / d mean -5056; JZ03: L6M eq-mean cut -39.0 / d mean -3944, PRE eq-mean cut +35.9 / d mean -3919; JZ04: L6M eq-mean cut -28.8 / d mean -5200, PRE eq-mean cut +20.7 / d mean -4926.
+
+Reading: the first-order joint screen of stacked down-sizing layers is NOT predictive of the engine. In the exact run a skipped signal frees the book, which then takes the next signal, and re-entries / locks / slice fills change; so a table that skips 60-85% of signals first-order removes only about 18% of the trades in the engine (F08 pair: 672 vs 823 trades in 202610, lots 1440 vs 1746) and behaves like a mild global lot reduction. Only exact numbers count. Missing windows are still running.
+
 ## REFIT 2026-11-22 (what the bi-weekly procedure would pick today; first-order screen, train = trailing 26 weeks to 2026-11-05, pick = lowest equal-mean train maxDD among live + 1500 random stacks)
 
 Pick: SIZER=sizer_vt:4ddecada7421 | LOT=p7_other:29234d9766a9 | SIGQ=signal_quality:b9a6edabcd7b | REG=regime:9ecb10dea3f9 | STACK=equity_state:D|eqdd_book_20d_R|Y1R_f0.50_sticky|sess_london | COOL=cooldown:f511b70e6d8d | ZONE=zone:a4a12796db42 | A06=reg:a06_slots:a06_greedy_down | B02=live. Train maxDD at equal mean 94 vs live 79907. NOT exact-confirmed; the verdict needs the exact runs.
@@ -116,5 +169,6 @@ Standing rule 2 tolerance check of the top-10 stacks: PRE maxDD not more than 15
 
 ## Plain sentence
 
+EXACT (recents first): the best exact joint stack so far is J03: it lowers L6M maxDD +18.9% at equal lots (+21.6% at equal mean, d mean +769 $/wk), L3M +52.0%, L1M +56.4%; it differs from live in these layers: SIZER=sizer_vt:b914834619ab, LOT=p7_other:f4181da4c118, SIGQ=signal_quality:b9a6edabcd7b, REG=regime:f1f4301eae70, STACK=exposure_stack:E, same_side_lots_cap, cap6_trunc, sess_london, COOL=cooldown:52f0e4f39d4c. On the prior it reads: PRE cut +33.0% with d mean -6170 $/wk and X' cut +72.6%; standing rule 2a label: RECENT-ONLY (allow 25.0%, WF 68%).
 
 First-order screen: the best first-order joint stack lowers L6M maxDD +100.0% at equal mean (PRE +85.0%, X' +87.6%) and differs from live in these layers: LOT=reg:lot_tables:lot_P7_744, REG=regime:e18edff4f8d3, COOL=cooldown:5adf9b2c9b46, ZONE=reg:zone:ZNC_B0, A06=reg:a06_slots:a06_greedy_down, B02=reg:b02:B02_K7P7H7_20_1.00_alld_0.0. The screen is lot-level layers only, in-sample, and first-order overstates badly (exact J-pair and joint-stack runs gave a fraction of it). The verdict comes from exact runs, the bi-weekly re-pick WF and the REFIT section; cut / profit / lock / entry / NTZ layers join only through exact hooks.

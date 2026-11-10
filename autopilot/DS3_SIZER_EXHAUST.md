@@ -1,4 +1,4 @@
-# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables (SZ-CORE, 2026-11-09 23:01Z)
+# DS3_SIZER_EXHAUST - T-SIZER-EXHAUST ranked tables (SZ-CORE, 2026-11-10 01:00Z)
 
 **Label: base S1b-COMB (live D7 v1.5 with the seven state-cut lines), controls NOCUT / UNIF where the owner ran them; first-order unless stage says S2 (exact); entries not live-matched (entry match < .85); in-sample; PRE-PROOF. Post-hoc, Shadow only, no PASS claims.**
 
@@ -28,7 +28,7 @@ Windows as of 2026-11-09 (L6M 20260512-, HOLD 20251111-, PRE 20240201-20250630, 
 
 > **TESTING-DEFECT BOX.** Cells whose new-base d mean equals the old-base page to the dollar: 0.
 
-**USER ADDENDUM 1 (16:30Z) status:** first-order is a SCREEN ONLY; the sizing verdict needs EXACT engine runs for every family top-5 and every reference row on L6M, PRE, X', HOLD. Exact-confirmed cells on this page: 10 of 23877 with any exact window, 2 with all of L6M/PRE/X' (the label carries [EXACT] / [EXACT partial] / [FIRST-ORDER SCREEN ONLY]). Exact queue: autopilot SZ-CORE queue, reference rows first, then family top-5; windows L6M, PRE, X', HOLD.
+**USER ADDENDUM 1 (16:30Z) status:** first-order is a SCREEN ONLY; the sizing verdict needs EXACT engine runs for every family top-5 and every reference row on L6M, PRE, X', HOLD. Exact-confirmed cells on this page: 9 of 23877 with any exact window, 2 with all of L6M/PRE/X' (the label carries [EXACT] / [EXACT partial] / [FIRST-ORDER SCREEN ONLY]). Exact queue: autopilot SZ-CORE queue, reference rows first, then family top-5; windows L6M, PRE, X', HOLD.
 
 **Rule (SZ-BASE, 2026-11-09):** first-order pnl-per-lot scaling is a SCREEN ONLY. It cannot see exits: exact shows ladder L cut -76 against -43 first-order and B -143 against -73, and first-order overstates the up-size net by $290k-$820k over 26 months. Exact engine runs are required for every family top-5 and every reference row. Exact rows are labelled by mode: table (static multiplier keyed by book and signal second; signals created by changed exits get m = 1, 4-8% of trades), rule (multiplier computed from causal features at the signal second of any signal), or engine-sizer.
 
@@ -102,13 +102,13 @@ Old bases: V0 = research ts2 reference behind DS3_SIZER S4A (run_v13t_ts2; ledge
 
 ## Reference rows (EXACT engine; every row needed on L6M, HOLD, PRE, X')
 
-| reference cell (EXACT, S1b-COMB, vs exact Q1-A = base) | L6M cut / d mean | HOLD | PRE | X' | complete months | bi-weekly WF (cut / d mean / % beat) | prior label (rule 2a: allowance, WF) |
+| reference cell (EXACT, S1b-COMB, vs exact Q1-A = base; engine_ver in the next-to-last column) | L6M cut / d mean | HOLD | PRE | X' | complete months | bi-weekly WF (cut / d mean / % beat) | prior label (rule 2a: allowance, WF) |
 |--|--|--|--|--|--|--|--|
 | Q1-A (live reference) | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | all 43 | - | - |
-| sizer off (x1) | -28.2 / -2511 | -6.4 / -970 | +28.3 / +3359 | +0.5 / +2617 | 43 | +28.3 / +1552 / 13% | OK-PRIOR (allow 15%, WF 13%) |
-| old ladder L (x0.5/x1.5) | -76.1 / -504 | -41.5 / -103 | -17.0 / +3887 | -0.8 / +996 | 43 | +0.0 / +0 / 0% | RECENT-ONLY (allow 15%, WF 0%) |
-| B (x1/x1.5, up only) | -142.6 / +2723 | -94.8 / +2856 | -15.2 / +7200 | +3.9 / +4649 | 43 | +0.0 / +621 / 1% | RECENT-ONLY (allow 15%, WF 1%) |
-| ZL-1 vol-target (factor built on unadjusted bars; 97 trades differ after adjustment; X_VTA pending) | +28.3 / +10 | +29.1 / -684 | -6.3 / -1877 | +59.9 / +825 | 43 | -6.3 / -2135 / 58% | RECENT-ONLY (allow 15%, WF 58%) |
+| sizer off (x1) | -28.2 / -2511 | -6.4 / -970 | +19.2 / +3121 | -3.1 / +2587 | 43 | +28.3 / +1552 / 13% | OK-PRIOR (allow 15%, WF 13%) |
+| old ladder L (x0.5/x1.5) | -76.1 / -504 | -41.5 / -103 | -17.0 / +3667 | -0.8 / +1018 | 43 | +0.0 / +0 / 0% | RECENT-ONLY (allow 15%, WF 0%) |
+| B (x1/x1.5, up only) | -142.6 / +2723 | -94.8 / +2856 | -15.2 / +6947 | +3.9 / +4550 | 43 | +0.0 / +621 / 1% | RECENT-ONLY (allow 15%, WF 1%) |
+| ZL-1 vol-target (factor built on unadjusted bars; 97 trades differ after adjustment; X_VTA pending) | +28.3 / +10 | +29.1 / -684 | -6.3 / -2010 | +62.4 / +961 | 43 | -6.3 / -2183 / 57% | RECENT-ONLY (allow 15%, WF 57%) |
 | MV-london override | -1.2 / -107 | +6.8 / +28 | pending | pending | 26 | +0.3 / +11 / 55% | PRIOR-UNKNOWN (allow %, WF n/a) |
 
 ## Vol-target family (SZ-VT, autopilot/DS3_SIZER_VOLTARGET.md, user top priority; exact engine from the start; first 70 lines, incl. executability rows: scale factor s, max single-trade $ risk, max lots on at once)
@@ -381,7 +381,7 @@ Book-level recent performance: 188 cells (186 down-only); best by equal-mean L6M
 | I3 book rolling Calmar [ROLL-EXCL] | {"D": 20, "mult": 0.0, "x": 0.5} | +25 / +40 / +18 / +47 | -30 | +14 | -2302 | +16 / +32 / +9 / +40 | 14.0 | 47% | FIRST-ORDER SCREEN ONLY | -18 / +43.1 / +127 | 0.22 | 1.00 | +21 / -5369 / 54% | -80455 | FIRST-ORDER SCREEN ONLY | LEAD RECENT-ONLY (PRE cut +18%, allowance 15% deeper, d mean -9387; WF 54%) [FIRST-ORDER SCREEN ONLY] |
 | I5 stack rolling Calmar [ROLL-EXCL] | {"D": 20, "mult": 0.5, "x": 3.0} | +34 / +47 / +41 / +49 | -25 | +41 | -4095 | +19 / +35 / +27 / +37 | 19.6 | 28% | +8 /  /  /  (-1488; table (IJK driver) mode) | -13 / +47.6 / +133 | 0.07 | 0.86 | n/a (monthly WF +41) | -37680 | FIRST-ORDER SCREEN ONLY | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +41%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | I2 last-D-days R [ROLL-EXCL] | {"D": 5, "mult": 0.0, "thr_R": 3} | +14 / +18 / +33 / -7 | -30 | -9 | -297 | +13 / +17 / +32 / -8 | 16.0 | 17% | FIRST-ORDER SCREEN ONLY | -15 / +28.7 / +97 | 0.32 | 1.00 | +0 / -2548 / 41% | -29410 | FIRST-ORDER SCREEN ONLY | LEAD RECENT-ONLY (PRE cut +33%, allowance 15% deeper, d mean -2328; WF 41%) [FIRST-ORDER SCREEN ONLY] |
-| I3 book rolling Calmar [ROLL-EXCL] | {"D": 10, "mult": 0.5, "x": 1.0} | +22 / +32 / +47 / +47 | +1 | +24 | -1239 | +17 / +27 / +43 / +43 | 17.8 | 23% | +23 /  / +13 / +60 (-1466; table (IJK driver) mode) | +8 / +14.1 / +7 | 0.10 | 0.98 | n/a (monthly WF +41) | -38365 | FIRST-ORDER SCREEN ONLY | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +13%, allowance 25% deeper, d mean -3173; WF 61%) [EXACT] |
+| I3 book rolling Calmar [ROLL-EXCL] | {"D": 10, "mult": 0.5, "x": 1.0} | +22 / +32 / +47 / +47 | +1 | +24 | -1239 | +17 / +27 / +43 / +43 | 17.8 | 23% | +23 /  / +13 / +60 (-1466; table (IJK driver) mode) | +8 / +14.1 / +7 | 0.10 | 0.98 | n/a (monthly WF +41) | -38365 | FIRST-ORDER SCREEN ONLY | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +13%, allowance 25% deeper, d mean -3173; WF 61%) [EXACT ROLL-EXCL engine_ver=ROLLEXCL] |
 | I3 book rolling Calmar [ROLL-EXCL] | {"D": 40, "mult": 0.0, "x": 0.0} | +20 / +0 / +23 / +31 | -25 | +16 | -2351 | +10 / -12 / +13 / +23 | 14.5 | 28% | FIRST-ORDER SCREEN ONLY | -4 / +24.6 / +86 | 0.38 | 1.00 | -2 / -4017 / 35% | +560 | FIRST-ORDER SCREEN ONLY | LEAD RECENT-ONLY (PRE cut +23%, allowance 15% deeper, d mean -4135; WF 35%) [FIRST-ORDER SCREEN ONLY] |
 | I3 book rolling Calmar [ROLL-EXCL] | {"D": 10, "mult": 0.5, "x": 2.0} | +34 / +47 / +47 / +51 | -34 | +31 | -4857 | +15 / +32 / +32 / +36 | 23.4 | 28% | +11 /  /  /  (-4702; table (IJK driver) mode) | -0 / +34.5 / +99 | 0.13 | 0.96 | n/a (monthly WF +41) | -38365 | FIRST-ORDER SCREEN ONLY | LEAD OK-PRIOR-UNKNOWN-WF (PRE cut +47%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 
@@ -436,12 +436,12 @@ Procedure: re-screen every layer on the trailing 26 weeks (L1M/L3M/L6M first, PR
 | B | VOL-pool vr_gk_w30_g20 stepv | [1.25, 0.0] | +47.3 | +52 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +52%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | K | K6 ext-B on P7 only | {"cell": "9806533560c9", "orig": "ext ext-B {\"cell\": \"980 | +45.7 | +29 /  | CANDIDATE (own-p only; family p 0.87) OK-PRIOR-UNKNOWN-WF (PRE cut +29%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | K | K1 P7 lot cap by session | {"asia": 5, "london": 3, "nyam": 3} | +30.9 | +34 /  | CANDIDATE OK-PRIOR-UNKNOWN-WF (PRE cut +34%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
-| D | eqdd_book_20d_R | Y1R_f0.50_sticky | +30.4 | +45 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +45%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
 | I | I5 stack rolling Calmar | {"D": 20, "mult": 0.5, "x": 3.0} | +18.6 | +41 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +41%, allowance 15% deeper, d mean ; WF n/a) [EXACT partial] |
-| I | I3 book rolling Calmar | {"D": 10, "mult": 0.5, "x": 1.0} | +17.3 | +47 /  | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +13%, allowance 25% deeper, d mean -3173; WF 61%) [EXACT] |
+| I | I3 book rolling Calmar | {"D": 10, "mult": 0.5, "x": 1.0} | +17.3 | +47 /  | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +13%, allowance 25% deeper, d mean -3173; WF 61%) [EXACT ROLL-EXCL engine_ver=ROLLEXCL] |
 | J | J pair min | {"a": "I:83d7d23f2f5d", "b": "ext-VT:c5f9e199982a"} | +99.0 | +70 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +70%, allowance 15% deeper, d mean ; WF n/a) [FIRST-ORDER SCREEN ONLY] |
 | D | consec_loss | stack_k4_f0.00 | +78.7 | +27 / -684 | LEAD+ (placebo ok) OK-PRIOR (PRE cut +27%, allowance 15% deeper, d mean -684; WF 38%) [FIRST-ORDER SCREEN ONLY] |
 | A | ER-NQ er_nq_b15_n20 t2 | [0.45, 0.0, 1.0] | +64.7 | +63 / -8606 | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +63%, allowance 15% deeper, d mean -8606; WF 58%) [FIRST-ORDER SCREEN ONLY] |
+| D | consec_loss | stack_k5_f0.00 | +62.5 | +47 / +482 | LEAD+ (placebo ok) OK-PRIOR (PRE cut +47%, allowance 15% deeper, d mean +482; WF 43%) [FIRST-ORDER SCREEN ONLY] |
 | A | ER-xinst er_max2_b15_n20 t2 | [0.35, 0.0, 1.0] | +59.6 | +44 / -6928 | LEAD+ (placebo ok) RECENT-ONLY (PRE cut +44%, allowance 15% deeper, d mean -6928; WF 53%) [FIRST-ORDER SCREEN ONLY] |
 | E | same_side_lots_cap | cap4_skip | +58.9 | +43 / -7625 | LEAD RECENT-ONLY (PRE cut +43%, allowance 25% deeper, d mean -7625; WF 86%) [FIRST-ORDER SCREEN ONLY] |
 | B | VOL-pool vr_park_w10_g20 stepv | [1.25, 0.0] | +58.8 | +45 /  | LEAD+ (placebo ok) OK-PRIOR-UNKNOWN-WF (PRE cut +45%, allowance 15% deeper, d mean ; WF n/a) [FIRST-ORDER SCREEN ONLY] |
