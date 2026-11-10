@@ -1,5 +1,5 @@
 # DS3_REDO_R9_STOPEXIT - stop-exit and cut-exit mechanics on the state base (T-STACK-REDO R9)  [FIRST-ORDER SCREEN, tape microsim; PRE-PROOF until entry match >= .85; no PASS claims]
-Generated 2026-11-10 04:29 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
+Generated 2026-11-10 07:30 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
 Registry: /mnt/l2/l2vast/_th_joint/layers/stopexit/topK.json. Cell ledger: /mnt/l2/l2vast/_th_stack/r9/cells_r9.parquet.
 
 ## 0. What was measured, how, and the limits
@@ -188,5 +188,11 @@ Trailing 26 weeks to the data end, drawdown first: pick = **R9S_ALL_NAT** (live 
 | R9S_P7_NATLIVE     | 79438.1 |    127499 | 34241.9 | 24074.5 | False  | PRIOR-UNKNOWN |
 
 ## EXACT rows (appended)
-Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R9_J5_i1_c10 0, R9_J10_i1_c10 0, R9_J10_i0_c10 0, R9_STRAT0_c10 0
-no exact month finished yet (queue tier of R10_/R11_/R9_ prefixes pending).
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R9_J5_i1_c10 6, R9_J10_i1_c10 6, R9_J10_i0_c10 6, R9_STRAT0_c10 6
+| set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % |
+|---|---|---|---|---|---|---|---|---|---|---|
+| R9_J5_i1_c10 | 6 | 4.8 | 297.0 | 7.5 | 5.8 | 4.8 | 4.7 | n/a | n/a | n/a |
+| R9_J10_i1_c10 | 6 | -9.2 | -1959.3 | -37.0 | -19.7 | -9.2 | -5.1 | n/a | n/a | n/a |
+| R9_J10_i0_c10 | 6 | -9.1 | -1644.4 | -32.6 | -17.8 | -9.1 | -4.8 | n/a | n/a | n/a |
+| R9_STRAT0_c10 | 6 | 4.1 | 190.3 | 6.2 | 4.8 | 4.1 | 4.0 | n/a | n/a | n/a |
+Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.

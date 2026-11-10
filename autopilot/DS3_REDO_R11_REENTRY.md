@@ -1,5 +1,5 @@
 # DS3_REDO_R11_REENTRY - re-entry after a win / after a target on the state base (T-STACK-REDO R11)  [FIRST-ORDER SCREEN; PRE-PROOF until entry match >= .85; no PASS claims]
-Generated 2026-11-10 04:30 UTC (elapsed 47 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
+Generated 2026-11-10 07:31 UTC (elapsed 47 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
 
 ## 0. Definition
 - FLAGGED trade j = its signal comes within N min (5/10/15/30/60/120) after a Target exit of the SAME side, of the same book ("own") or of any book ("any"). Policy FULL (live = reference) / HALF / SKIP on flagged trades. These are lot-multiplier tables keyed on the signal second: exact in table mode (queue prefix R11_), first-order here is a screen (mean overstated for up-size only; these are down-only).
@@ -158,5 +158,10 @@ Trailing 26 weeks, drawdown first: pick **R11_own_N120_ALL_SKIP** (live retained
 | R11_own_N60_ALL_SKIP  | 44766.5 |   95192.3 | 13881.5 | 17513.6 | False  | PRIOR-UNKNOWN |
 
 ## EXACT rows (appended)
-Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R11_any_N30_ALL_SKIP 0, R11_own_N120_ALL_SKIP 0, R11_any_N60_ALL_SKIP 0
-no exact month finished yet (queue tier of R10_/R11_/R9_ prefixes pending).
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R11_any_N30_ALL_SKIP 6, R11_own_N120_ALL_SKIP 6, R11_any_N60_ALL_SKIP 6
+| set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % |
+|---|---|---|---|---|---|---|---|---|---|---|
+| R11_any_N30_ALL_SKIP | 6 | 19.0 | 1481.3 | 2.2 | 24.0 | 23.9 | 23.8 | n/a | n/a | n/a |
+| R11_own_N120_ALL_SKIP | 6 | 0.3 | 862.4 | -5.8 | 4.0 | 0.3 | 0.2 | n/a | n/a | n/a |
+| R11_any_N60_ALL_SKIP | 6 | -6.4 | -4575.6 | -79.2 | -33.8 | -6.4 | -6.5 | n/a | n/a | n/a |
+Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.

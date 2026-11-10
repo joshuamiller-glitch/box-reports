@@ -1,5 +1,5 @@
 # DS3_REDO_R10_NETTING - direction conflict / netting on the state base (T-STACK-REDO R10)  [FIRST-ORDER SCREEN; PRE-PROOF until entry match >= .85; no PASS claims]
-Generated 2026-11-10 04:29 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL), windows as of 2026-11-09. Code code/th_stack_r9/r10_score.py (+ fo_lib.py). Registry /mnt/l2/l2vast/_th_joint/layers/netting/topK.json.
+Generated 2026-11-10 07:31 UTC (elapsed 6 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL), windows as of 2026-11-09. Code code/th_stack_r9/r10_score.py (+ fo_lib.py). Registry /mnt/l2/l2vast/_th_joint/layers/netting/topK.json.
 
 ## 0. Definition and limits
 - Event = trade B whose signal second falls while another book A holds the OPPOSITE side (A.entry <= B.signal < A.exit; one position per book as live). Policies on the newer signal B vs the older open book(s) A: BOTH (live, reference) / SKIP B / HALF B / SKIPS (skip B only when B is the smaller side) / NET (older book exits min(lots) at market at signal+1 s, mid -/+ 0.80 pt; B enters lots_B - m) / FLIP (older book(s) exit fully at market = the opposite-flip exit, currently OFF live; B unchanged).
@@ -316,5 +316,11 @@ Trailing 26 weeks, drawdown first: pick **R10_newer_K7_NET** (live retained: Fal
 | R10_newer_U7_SKIP  | 75070.8 |  135978   | 32112.7 | 23782.6 | False  | PRIOR-UNKNOWN |
 
 ## EXACT rows (appended)
-Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R10_sess_london_SKIP 0, R10_newer_K7_NET 0, R10_U7_K7_FLIP 0, R10_ALL_FLIP 0
-no exact month finished yet (queue tier of R10_/R11_/R9_ prefixes pending).
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R10_sess_london_SKIP 6, R10_newer_K7_NET 6, R10_U7_K7_FLIP 6, R10_ALL_FLIP 6
+| set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % |
+|---|---|---|---|---|---|---|---|---|---|---|
+| R10_sess_london_SKIP | 6 | -8.7 | 1125.8 | 4.8 | -3.9 | -8.7 | -8.9 | n/a | n/a | n/a |
+| R10_newer_K7_NET | 6 | 5.6 | -804.5 | 7.3 | 2.5 | 5.6 | 9.6 | n/a | n/a | n/a |
+| R10_U7_K7_FLIP | 6 | 5.3 | 37.1 | 7.7 | 5.5 | 5.3 | 5.2 | n/a | n/a | n/a |
+| R10_ALL_FLIP | 6 | -31.1 | -4771.4 | -49.3 | -63.2 | -31.1 | 78.5 | n/a | n/a | n/a |
+Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
