@@ -1,9 +1,9 @@
-# FD_LIQ - T-FIND-DRESSED, NQ / ES / RTY candidates dressed with the FULL stack (FD-LIQ). Updated 2026-11-10 03:10Z
+# FD_LIQ - T-FIND-DRESSED, NQ / ES / RTY candidates dressed with the FULL stack (FD-LIQ). Updated 2026-11-10 11:01Z
 
 Post-hoc, Shadow only, no PASS claims. First-order per-trade re-simulation on 1-s paths (ES/RTY L2 state arrays built slim from raw mbp-10; coverage per candidate in column l2cov); exact engine only where the DS7 replica covers the instrument/book: NOT used here (first-order, flagged). Lots continuous at equal $1,200 risk per trade. Pair (RV) books and daily books are not dressed here (no stop distance / two legs).
 Procedure per candidate (own trades): layer screens -> top-3 per layer (CUT loss cut L2/PP, PRO profit rule, SIZ ER sizer, ZON zones, LCK cooldown/locks, STK stack-rule slots) by all-weeks Calmar -> joint 3^6 stack, pick = max in-sample Calmar -> validation of the WHOLE procedure: purged monthly walk-forward (26 w train, 7 d embargo, from 2024-02) and a permuted-effect null that repeats the whole screen+joint search on layer effects re-assigned to random trades (B=60). In-sample dressed numbers are search maxima and are NOT evidence by themselves.
 
-Candidates dressed so far: 1816. L2 variant WF ok: 51; with null p <= .10 as well: 4.
+Candidates dressed so far: 1928. L2 variant WF ok: 61; with null p <= .10 as well: 5.
 
 ## Ranking (Standing Rule 2): (1) recent L6M drawdown and mean, (2) bi-weekly WF of the whole procedure (primary OOS), (3) PRE/X tolerant. Top 40 by share of refit periods beating naked, then recent OOS $
 | id | instr | sess | l2cov | naked L6M mean / maxDD | dressed L6M mean / maxDD | dressed L3M mean | biweekly WF: % periods beating naked / n periods | OOS total d vs n | last 13 periods d vs n | WF cal d vs n | null p | PRE check | carrier | label |
@@ -76,6 +76,7 @@ Candidates dressed so far: 1816. L2 variant WF ok: 51; with null p <= .10 as wel
 | ES | mom_h30_nypm_q0.7_atr_3.0_None_s2 | 1 | 1.00 | 2189 | 2189 | 3555 | 0.91 |
 | ES | rev_h30_pre_q0.85_atr_2.0_1.5R_s0 | 1 | 1.00 | 6540 | 6540 | 3140 | 0.88 |
 | ES | rev_h30_pre_q0.85_atr_3.0_2R_s0 | 1 | 1.00 | 3961 | 3961 | 5096 | 0.88 |
+| NQ |  | 112 | 0.51 | 173 | 53532 | 17306 | 1.00 |
 | NQ | LRS | 3 | 0.33 | -3031 | -9267 | -3605 | 1.00 |
 | NQ | T2F1B | 36 | 0.32 | -580 | -30386 | -24588 | 1.00 |
 | NQ | T2FNQ | 192 | 0.59 | 1496 | 393971 | 29858 | 1.00 |
@@ -83,13 +84,13 @@ Candidates dressed so far: 1816. L2 variant WF ok: 51; with null p <= .10 as wel
 | RTY | T2F1B | 36 | 0.58 | 214 | 5475 | -1586 | 1.00 |
 | RTY | T2FRTY | 590 | 0.51 | 75 | 5848 | 25320 | 0.92 |
 
-Plain sentence: across 596 candidates the L2 variant adds a median of $192 and a sum of $497581 of OOS P&L over the no-L2 variant (positive for 0.53 of candidates).
+Plain sentence: across 697 candidates the L2 variant adds a median of $180 and a sum of $551113 of OOS P&L over the no-L2 variant (positive for 0.53 of candidates).
 
 ## L2 adds per instrument (bi-weekly WF OOS, dressed-L2 minus dressed-noL2; candidates where both variants had a WF)
 | instrument | n cand | median dMean $/wk (OOS, ~70 wk) | share > 0 | median OOS maxDD cut L2 vs no-L2 (pct pts of naked OOS maxDD) | l2cov median |
 |--|--|--|--|--|--|
 | ES | 212 | 3.9 | 0.55 | 0.6 | 0.94 |
-| NQ | 142 | 8.0 | 0.53 | 0.4 | 1.00 |
+| NQ | 243 | 7.0 | 0.52 | 0.3 | 1.00 |
 | RTY | 242 | 1.3 | 0.52 | 0.2 | 0.97 |
 
 Family null (F.family_p_fd, all NQ/ES/RTY dressed + naked rows): best p_fam = 0.39 (a naked row); no dressed candidate has p_fam <= .10. Nothing clears; per-candidate own-null p <= .10 hits are consistent with chance across ~1,800 tests.
