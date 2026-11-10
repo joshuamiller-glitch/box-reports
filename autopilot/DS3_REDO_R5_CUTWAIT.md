@@ -1,4 +1,4 @@
-# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 12:25Z FINAL
+# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 13:57Z FINAL
 
 ## Verdict (exact L6M + PRE for the top-3 cells per layer; L6M / PRE / X' / HOLD for R5_BO_3)
 
@@ -25,11 +25,11 @@ STATUS: post-hoc, Shadow only, no PASS claims, PRE-PROOF (entry match < .85), RO
 First-order skip table processed in signal order (a skipped trade does not trigger). **Live reference** = U7, 30 min, same side, on the state cut: in the base list it removes NOTHING (U7 has 0 same-side signals within 30 min of a StateCut: Supertrend 10-min does not re-signal that fast), so the live row equals the base to the dollar by construction (not a testing defect: no signal falls in the window); the engine base itself carries NO blackout (the old per-print ThL2Cut that set it is neutralised), the exact hook row R5_BO_LIVE checks the reconstruction. 402 cells scored; purged monthly WF of the pick (lowest trailing maxDD): WF maxDD cut vs live 28.9%, picks differ from live in 34 of 34 months, WF ok = True.
 | cell | n changed | cut L1M/L3M | prior (PRE tolerant) | maxDD cut % L6M/HOLD/PRE/X' | equal-mean cut % L6M/PRE/X' | w20 L6M cell/ref | d mean $/wk L6M | placebo p L6M/PRE | family p | label |
 |---|---|---|---|---|---|---|---|---|---|---|
-| N=120 same=both scope=allbooks trig=cut | 5437 | 27/27 | OK-PRIOR (PRE deeper -30%, allow 25%, WF2w 66%, d mean -832) | 27/-17/30/-46 | 38/40/-26 | 223005/165224 | 3811 | 0.27/0.47 | 1.00 | LEAD PRE-PROOF |
-| N=120 same=both scope=allbooks trig=cutstop | 7137 | 29/29 | OK-PRIOR (PRE deeper -36%, allow 25%, WF2w 66%, d mean -407) | 29/-27/36/-27 | 36/42/-14 | 212092/165224 | 2516 | 0.28/0.38 | 1.00 | LEAD PRE-PROOF |
-| N=45 same=both scope=allbooks trig=cutstop | 4768 | 45/25 | OK-PRIOR (PRE deeper 14%, allow 25%, WF2w 66%, d mean -483) | 25/-66/-14/-61 | 26/-13/-59 | 228624/165224 | 387 | 0.19/0.98 | 1.00 | no |
-| N=30 same=same scope=book:P7 trig=cutstop | 401 | 20/9 | OK-PRIOR (PRE deeper -18%, allow 19%, WF2w 66%, d mean 692) | 9/4/18/2 | 22/29/16 | 231958/165224 | 3881 | 0.14/0.12 | 1.00 | LEAD PRE-PROOF |
-| N=45 same=both scope=allbooks trig=stop | 1675 | 23/20 | OK-PRIOR (PRE deeper -6%, allow 25%, WF2w 66%, d mean 897) | 20/6/6/6 | 22/8/8 | 176877/165224 | 609 | 0.03/0.58 | 1.00 | LEAD PRE-PROOF |
+| N=120 same=both scope=allbooks trig=cut | 5437 | 27/27 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper -30%, allow 25%, WF2w 66%, d mean -832 vs floor -3899) | 27/-17/30/-46 | 38/40/-26 | 223005/165224 | 3811 | 0.27/0.47 | 1.00 | LEAD PRE-PROOF |
+| N=120 same=both scope=allbooks trig=cutstop | 7137 | 29/29 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper -36%, allow 25%, WF2w 66%, d mean -407 vs floor -3899) | 29/-27/36/-27 | 36/42/-14 | 212092/165224 | 2516 | 0.28/0.38 | 1.00 | LEAD PRE-PROOF |
+| N=45 same=both scope=allbooks trig=cutstop | 4768 | 45/25 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper 14%, allow 25%, WF2w 66%, d mean -483 vs floor -3918) | 25/-66/-14/-61 | 26/-13/-59 | 228624/165224 | 387 | 0.19/0.98 | 1.00 | no |
+| N=30 same=same scope=book:P7 trig=cutstop | 401 | 20/9 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper -18%, allow 19%, WF2w 66%, d mean 692 vs floor -3434) | 9/4/18/2 | 22/29/16 | 231958/165224 | 3881 | 0.14/0.12 | 1.00 | LEAD PRE-PROOF |
+| N=45 same=both scope=allbooks trig=stop | 1675 | 23/20 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper -6%, allow 25%, WF2w 66%, d mean 897 vs floor -3409) | 20/6/6/6 | 22/8/8 | 176877/165224 | 609 | 0.03/0.58 | 1.00 | LEAD PRE-PROOF |
 **Bi-weekly WF (primary OOS; trailing 26 wk -> next 2 wk, 7-day embargo, 74 refits from 2024-01):** the pick differs from live in 74 refits; OOS maxDD 102855 vs live 140288 (cut 27%), OOS mean delta -3367 $/wk, switched picks beat live in 27 of 74 switched refits. Pick for the next refit (2026-11-22): 34d1e3c7f657. Caveat: the pick rule is lowest trailing maxDD only, so it prefers whichever cell removes the most exposure; read the OOS mean delta beside the cut.
 
 Best cell per scope (equal-mean score = min of L6M and PRE equal-mean cut):
@@ -94,11 +94,11 @@ Per book x session (top-3 cells, only scopes with >= 15 blocked trades; maxDD cu
 First-order: line states from a replay of the live PoiSet on 1-min bars (agreement with the half inferred from base lots: 90% overall, precision .93, recall .53 because A06/B02 halves are in the same lot signature), lots chain per trade; retarget = target to the line minus 2 ticks via the 1-s print MFE before the base exit (optimistic: touch = fill, no queue). Cells with M > 1 (live half undone) are UP rows (report only). WF of the pick: maxDD cut vs live 5.0%, WF ok = True. REF_REPLAY (live rule through the model) must be 0 everywhere = model self-check.
 | cell | n changed | cut L1M/L3M | prior (PRE tolerant) | maxDD cut % L6M/HOLD/PRE/X' | equal-mean cut % L6M/PRE/X' | w20 L6M cell/ref | d mean $/wk L6M | placebo p L6M/PRE | family p | label |
 |---|---|---|---|---|---|---|---|---|---|---|
-| N1 D=60 act=retarget | 843 | 22/22 | OK-PRIOR (PRE deeper -18%, allow 15%, WF2w 50%, d mean -682) | 20/26/18/22 | 22/20/24 | 184833/165224 | 576 | 0.30/0.18 | 1.00 | UP (report, never promoted) |
-| N1 D=50 act=retarget | 843 | 22/23 | OK-PRIOR (PRE deeper -17%, allow 15%, WF2w 50%, d mean -350) | 20/25/17/25 | 20/17/25 | 169922/165224 | -6 | 0.22/0.29 | 1.00 | UP (report, never promoted) |
-| N1 D=40 act=retarget | 843 | 17/17 | OK-PRIOR (PRE deeper -16%, allow 15%, WF2w 50%, d mean -122) | 17/25/16/25 | 16/15/24 | 153437/165224 | -313 | 0.31/0.18 | 1.00 | UP (report, never promoted) |
-| N3 Dk=60 act=retarget p=26 tf=1h | 214 | 8/8 | OK-PRIOR (PRE deeper 3%, allow 15%, WF2w 50%, d mean -562) | 8/0/-3/-0 | 10/-1/2 | 204657/165224 | 551 | 0.18/0.72 | 1.00 | UP (report, never promoted) |
-| N3 Dk=60 act=retarget p=52 tf=30m | 205 | 7/7 | RECENT-ONLY (PRE deeper 3%, allow 15%, WF2w 50%, d mean -1263) | 7/0/-3/2 | 9/0/5 | 213784/165224 | 754 | 0.24/0.72 | 1.00 | UP (report, never promoted) |
+| N1 D=60 act=retarget | 843 | 22/22 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper -18%, allow 15%, WF2w 50%, d mean -682 vs floor -3292) | 20/26/18/22 | 22/20/24 | 184833/165224 | 576 | 0.30/0.18 | 1.00 | UP (report, never promoted) |
+| N1 D=50 act=retarget | 843 | 22/23 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper -17%, allow 15%, WF2w 50%, d mean -350 vs floor -3292) | 20/25/17/25 | 20/17/25 | 169922/165224 | -6 | 0.22/0.29 | 1.00 | UP (report, never promoted) |
+| N1 D=40 act=retarget | 843 | 17/17 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper -16%, allow 15%, WF2w 50%, d mean -122 vs floor -3292) | 17/25/16/25 | 16/15/24 | 153437/165224 | -313 | 0.31/0.18 | 1.00 | UP (report, never promoted) |
+| N3 Dk=60 act=retarget p=26 tf=1h | 214 | 8/8 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper 3%, allow 15%, WF2w 50%, d mean -562 vs floor -3581) | 8/0/-3/-0 | 10/-1/2 | 204657/165224 | 551 | 0.18/0.72 | 1.00 | UP (report, never promoted) |
+| N3 Dk=60 act=retarget p=52 tf=30m | 205 | 7/7 | OK-PRIOR (old rule: RECENT-ONLY) (PRE deeper 3%, allow 15%, WF2w 50%, d mean -1263 vs floor -3581) | 7/0/-3/2 | 9/0/5 | 213784/165224 | 754 | 0.24/0.72 | 1.00 | UP (report, never promoted) |
 **Bi-weekly WF (primary OOS; trailing 26 wk -> next 2 wk, 7-day embargo, 74 refits from 2024-01):** the pick differs from live in 74 refits; OOS maxDD 136024 vs live 140288 (cut 3%), OOS mean delta -785 $/wk, switched picks beat live in 34 of 74 switched refits. Pick for the next refit (2026-11-22): 4fb9ccee5b03. Caveat: the pick rule is lowest trailing maxDD only, so it prefers whichever cell removes the most exposure; read the OOS mean delta beside the cut.
 
 
@@ -164,11 +164,11 @@ Per book x session for the top-3 NTZ cells (>= 15 changed trades; cut % L6M/HOLD
 First-order via a mini bracket simulator on 1-s print extremes (stop at the signal level -60, target = average fill +60 re-based after the add, base non-bracket exits kept); variant minus live-state delta added to the base P&L only on trades whose OTE state changes. WF of the pick: cut vs live -5.6%, WF ok = False.
 | cell | n changed | cut L1M/L3M | prior (PRE tolerant) | maxDD cut % L6M/HOLD/PRE/X' | equal-mean cut % L6M/PRE/X' | w20 L6M cell/ref | d mean $/wk L6M | placebo p L6M/PRE | family p | label |
 |---|---|---|---|---|---|---|---|---|---|---|
-| {"D": 10, "act": "WT", "f": 0.65, "maxmin": 15} | 1239 | 6/3 | OK-PRIOR (PRE deeper -4%, allow 15%, WF2w 43%, d mean -98) | 3/0/4/-11 | 6/7/-8 | 172275/165224 | 688 | 0.06/0.15 | 1.00 | LEAD PRE-PROOF |
-| {"D": 50, "act": "B73", "f": 0.68, "maxmin": 0} | 1844 | 3/3 | OK-PRIOR (PRE deeper -3%, allow 15%, WF2w 43%, d mean 70) | 3/1/3/1 | 4/4/2 | 151148/165224 | 279 | 0.02/0.15 | 1.00 | LEAD PRE-PROOF |
-| {"D": 30, "act": "WT", "f": 0.6, "maxmin": 15} | 1261 | 3/1 | OK-PRIOR (PRE deeper 4%, allow 15%, WF2w 43%, d mean -320) | 1/3/-4/9 | 3/-2/10 | 167504/165224 | 456 | 0.16/0.63 | 1.00 | no |
-| {"D": 50, "act": "B73", "f": 0.72, "maxmin": 0} | 2080 | 4/2 | OK-PRIOR (PRE deeper 4%, allow 15%, WF2w 43%, d mean -99) | 2/-0/-4/-2 | 2/-3/-2 | 157021/165224 | 176 | 0.10/0.94 | 1.00 | no |
-| {"D": 40, "act": "B73", "f": 0.72, "maxmin": 0} | 1953 | 4/2 | OK-PRIOR (PRE deeper 4%, allow 15%, WF2w 43%, d mean -16) | 2/-0/-4/-3 | 2/-4/-2 | 156327/165224 | 149 | 0.07/0.97 | 1.00 | no |
+| {"D": 10, "act": "WT", "f": 0.65, "maxmin": 15} | 1239 | 6/3 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper -4%, allow 15%, WF2w 43%, d mean -98 vs floor -3384) | 3/0/4/-11 | 6/7/-8 | 172275/165224 | 688 | 0.06/0.15 | 1.00 | LEAD PRE-PROOF |
+| {"D": 50, "act": "B73", "f": 0.68, "maxmin": 0} | 1844 | 3/3 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper -3%, allow 15%, WF2w 43%, d mean 70 vs floor -3632) | 3/1/3/1 | 4/4/2 | 151148/165224 | 279 | 0.02/0.15 | 1.00 | LEAD PRE-PROOF |
+| {"D": 30, "act": "WT", "f": 0.6, "maxmin": 15} | 1261 | 3/1 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper 4%, allow 15%, WF2w 43%, d mean -320 vs floor -3409) | 1/3/-4/9 | 3/-2/10 | 167504/165224 | 456 | 0.16/0.63 | 1.00 | no |
+| {"D": 50, "act": "B73", "f": 0.72, "maxmin": 0} | 2080 | 4/2 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper 4%, allow 15%, WF2w 43%, d mean -99 vs floor -3588) | 2/-0/-4/-2 | 2/-3/-2 | 157021/165224 | 176 | 0.10/0.94 | 1.00 | no |
+| {"D": 40, "act": "B73", "f": 0.72, "maxmin": 0} | 1953 | 4/2 | OK-PRIOR (old rule: OK-PRIOR) (PRE deeper 4%, allow 15%, WF2w 43%, d mean -16 vs floor -3632) | 2/-0/-4/-3 | 2/-4/-2 | 156327/165224 | 149 | 0.07/0.97 | 1.00 | no |
 **Bi-weekly WF (primary OOS; trailing 26 wk -> next 2 wk, 7-day embargo, 74 refits from 2024-01):** the pick differs from live in 74 refits; OOS maxDD 132670 vs live 140288 (cut 5%), OOS mean delta -846 $/wk, switched picks beat live in 30 of 74 switched refits. Pick for the next refit (2026-11-22): 3d75c2cebd75. Caveat: the pick rule is lowest trailing maxDD only, so it prefers whichever cell removes the most exposure; read the OOS mean delta beside the cut.
 
 
@@ -272,7 +272,7 @@ Hook semantics and the first-order-vs-exact lesson (SZ_BASE_PROOF): first-order 
 
 - **Panel field:** none for the post-STOP part. D7 v1.4/1.5 only has ThL2BlackoutMins / ThL2BlackoutBooks / ThL2BlackoutSameSideOnly, which fire on the loss CUT. The screen shows the gain comes from the post-stop trigger, so adopting it is a code change in DS7.cs (set b.BlackoutUntil / BlackoutSide on every Stop / StopJoin / StopJoinFallback exit of P7 as the cut path does). Policy line: "P7: after a Stop or StateCut exit, no same-side P7 signal for 30 minutes."
 - **Rule 2 (recents first):** exact L6M cut 8% (equal-mean 17%), d mean 3005 $/wk, worst-20 cut 72%; L3M / L1M exact: see the table in section 5 (windows listed there).
-- **Rule 2a (prior):** OK-PRIOR (PRE exact cut 9%, d mean PRE 235 $/wk; bi-weekly WF2w beat 66% of refits on the blackout family; allowance 18%). X' and HOLD: exact months present 39 of 43 (X' = 202304-202401, HOLD = 202511-202604); all four windows are now exact: cut L6M +8 / HOLD -9 / PRE +9 / X' +1 (HOLD is deeper than live). Label: **LEAD (placebo p .14/.12, family p 1.00; not CANDIDATE)**, no change recommended.
+- **Rule 2a (prior; PRE mean floor = 25% of live PRE mean per the user decision of 13:45Z; old fixed -$1k label: OK-PRIOR):** OK-PRIOR (PRE exact cut 9%, d mean PRE 235 $/wk; bi-weekly WF2w beat 66% of refits on the blackout family; allowance 18%). X' and HOLD: exact months present 39 of 43 (X' = 202304-202401, HOLD = 202511-202604); all four windows are now exact: cut L6M +8 / HOLD -9 / PRE +9 / X' +1 (HOLD is deeper than live). Label: **LEAD (placebo p .14/.12, family p 1.00; not CANDIDATE)**, no change recommended.
 
 ## 10. Dead-cell discipline and prereg timing
 

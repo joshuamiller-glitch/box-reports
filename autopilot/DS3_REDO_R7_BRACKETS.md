@@ -1,8 +1,9 @@
 # DS3_REDO_R7_BRACKETS - stop / target / ATR / time exit per book x entry session on the state base (REDO-R7)
 
-**FINAL DRAFT 2026-11-10 12:53Z** - exact L6M + PRE rows (section 9) are in for every set; where exact and first-order disagree the exact row governs. Rules 2/2a labels and the bi-weekly WF are beside every cell. Live settings stay.
+**FINAL DRAFT 2026-11-10 13:59Z** - exact L6M + PRE rows (section 9) are in for every set; where exact and first-order disagree the exact row governs. Rules 2/2a labels and the bi-weekly WF are beside every cell. Live settings stay.
 
-Version 2026-11-10 12:53Z. **ROLL-FIXED rows (exact)** (entry match < .85). Sections 1-8 are the FIRST-ORDER SCREEN; the EXACT engine rows for the five joint policies (L6M + PRE, sets R7_P1..R7_P5, hooks module code/th_r7/r7_hooks.py, hook regression R7_HOOKREF identical) are in section 9 and GOVERN where they disagree (first-order ranks did not survive the engine). No PASS claims. Shadow only.
+
+Version 2026-11-10 13:58Z. **ROLL-FIXED rows (exact)** (entry match < .85). Sections 1-8 are the FIRST-ORDER SCREEN; the EXACT engine rows for the five joint policies (L6M + PRE, sets R7_P1..R7_P5, hooks module code/th_r7/r7_hooks.py, hook regression R7_HOOKREF identical) are in section 9 and GOVERN where they disagree (first-order ranks did not survive the engine). No PASS claims. Shadow only.
 
 ## 0. Plain verdict
 No bracket cell survives the whole bar (family-max p <= .10 + bi-weekly WF >= 50 % beat + tolerant PRE + placebo). Every per-group lead has a family p of .33-.86 over the 1,440-cell grid and a per-cell bi-weekly WF that beats live in only 3-34 % of refit periods (the procedure that picks the lowest trailing-26-week maxDD cell across the whole grid beats live in 40-60 % of periods and its OOS cut is negative or ~0 in 14 of 15 groups). **Live brackets stay (K7/M7/U7/P7/H7/A7 60/60, O7 40/90)**. Exact (section 9): none of the five joint policies passes recents + prior + WF; R7_P3 (percent arm) has L6M/L3M/L1M cuts 33.9/48.2/48.1 % at equal mean but PRE -39.6 % and WF beat 18 % (RECENT-ONLY, fails WF); R7_P2 loses half the weekly mean.
@@ -21,9 +22,9 @@ Columns: eq cuts = equal-mean maxDD cut % of the STACK; dM = delta mean $/wk (L6
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| stop40|R1.75|tx_180m|arm_pct | fixed | 6.2 / 6.2 / 6.5 | 102.6 | -2.6 / -383.5 | 27.0 / -2.6 | 0.04 / 0.78 | OK-PRIOR | LEAD+ |
-| stop40|R1.75|tx_sess|arm_pct | eqrisk | 9.0 / 9.0 / 8.9 | -124.7 | -2.4 / 171.1 | 24.3 / -2.4 | - / - | OK-PRIOR | LEAD |
-| atr1_k2|R1.50|tx_180m|arm_pts | eqrisk | 7.8 / 7.8 / 7.7 | 147.7 | -2.3 / -251.4 | 6.8 / -2.3 | - / - | OK-PRIOR | LEAD |
+| stop40|R1.75|tx_180m|arm_pct | fixed | 6.2 / 6.2 / 6.5 | 102.6 | -2.6 / -383.5 | 27.0 / -2.6 | 0.04 / 0.78 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| stop40|R1.75|tx_sess|arm_pct | eqrisk | 9.0 / 9.0 / 8.9 | -124.7 | -2.4 / 171.1 | 24.3 / -2.4 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| atr1_k2|R1.50|tx_180m|arm_pts | eqrisk | 7.8 / 7.8 / 7.7 | 147.7 | -2.3 / -251.4 | 6.8 / -2.3 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
 
 Median key over the grid: arm in POINTS -2.8, arm as PERCENT of stop -4.0.
 
@@ -31,11 +32,11 @@ Median key over the grid: arm in POINTS -2.8, arm as PERCENT of stop -4.0.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| stop50|R2.25|tx_none|arm_pts | fixed | 6.1 / 6.1 / 14.7 | 720.4 | 3.7 / 39.0 | 44.6 / 0.0 | 0.16 / 0.61 | OK-PRIOR | LEAD |
-| atr5_k4|R2.25|tx_180m|arm_pts | fixed | 8.9 / 8.9 / 8.8 | 219.0 | 3.9 / -1030.2 | 25.7 / 0.0 | 0.06 / 0.61 | RECENT-ONLY | LEAD+ RECENT-ONLY |
-| stop50|R2.25|tx_none|arm_pct | fixed | 5.0 / 5.0 / 14.0 | 255.7 | 3.8 / -14.1 | 41.9 / 0.0 | 0.12 / 0.65 | OK-PRIOR | LEAD |
-| stop50|R2.25|tx_none|arm_pts | eqrisk | 9.5 / 9.5 / 18.0 | 902.2 | 3.7 / 278.4 | 23.0 / 0.0 | - / - | OK-PRIOR | LEAD |
-| stop50|R2.25|tx_none|arm_pct | eqrisk | 8.2 / 8.2 / 17.2 | 352.2 | 3.8 / 229.7 | 23.0 / 0.0 | - / - | OK-PRIOR | LEAD |
+| stop50|R2.25|tx_none|arm_pts | fixed | 6.1 / 6.1 / 14.7 | 720.4 | 3.7 / 39.0 | 44.6 / 0.0 | 0.16 / 0.61 | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| atr5_k4|R2.25|tx_180m|arm_pts | fixed | 8.9 / 8.9 / 8.8 | 219.0 | 3.9 / -1030.2 | 25.7 / 0.0 | 0.06 / 0.61 | OK-PRIOR (old: RECENT-ONLY) | LEAD+ |
+| stop50|R2.25|tx_none|arm_pct | fixed | 5.0 / 5.0 / 14.0 | 255.7 | 3.8 / -14.1 | 41.9 / 0.0 | 0.12 / 0.65 | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| stop50|R2.25|tx_none|arm_pts | eqrisk | 9.5 / 9.5 / 18.0 | 902.2 | 3.7 / 278.4 | 23.0 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| stop50|R2.25|tx_none|arm_pct | eqrisk | 8.2 / 8.2 / 17.2 | 352.2 | 3.8 / 229.7 | 23.0 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
 
 Median key over the grid: arm in POINTS -4.3, arm as PERCENT of stop -6.8.
 
@@ -51,8 +52,8 @@ Median key over the grid: arm in POINTS 2.3, arm as PERCENT of stop 2.0.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| atr1_k3|R2.00|tx_none|arm_pct | eqrisk | 12.6 / 12.6 / 15.8 | -251.5 | -0.7 / -1017.4 | 13.5 / 0.0 | - / - | RECENT-ONLY | LEAD RECENT-ONLY |
-| atr1_k4|R1.75|tx_sess|arm_pct | eqrisk | 11.2 / 11.2 / 17.4 | 888.2 | -0.7 / -672.9 | 5.4 / 0.0 | - / - | OK-PRIOR | LEAD |
+| atr1_k3|R2.00|tx_none|arm_pct | eqrisk | 12.6 / 12.6 / 15.8 | -251.5 | -0.7 / -1017.4 | 13.5 / 0.0 | - / - | OK-PRIOR (old: RECENT-ONLY) | LEAD |
+| atr1_k4|R1.75|tx_sess|arm_pct | eqrisk | 11.2 / 11.2 / 17.4 | 888.2 | -0.7 / -672.9 | 5.4 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
 
 Median key over the grid: arm in POINTS -10.8, arm as PERCENT of stop -15.8.
 
@@ -60,11 +61,11 @@ Median key over the grid: arm in POINTS -10.8, arm as PERCENT of stop -15.8.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| stop80|R1.25|tx_120m|arm_pct | fixed | 10.3 / 10.3 / 11.0 | -377.2 | -2.4 / 67.6 | 24.3 / 0.0 | 0.04 / 0.67 | OK-PRIOR | LEAD+ |
-| stop80|R0.50|tx_120m|arm_pct | fixed | 6.6 / 6.6 / 6.5 | 196.8 | -3.1 / -123.0 | 36.5 / -3.1 | 0.02 / 0.86 | OK-PRIOR | LEAD+ |
-| atr5_k4|R0.75|tx_120m|arm_pct | fixed | 6.0 / 6.0 / 6.4 | -127.9 | 5.2 / 81.4 | 45.9 / 5.2 | 0.14 / 0.90 | OK-PRIOR | LEAD |
-| stop80|R1.25|tx_120m|arm_pct | eqrisk | 10.3 / 10.3 / 11.0 | -377.2 | -2.4 / 67.6 | 24.3 / 0.0 | - / - | OK-PRIOR | LEAD |
-| stop90|R0.75|tx_120m|arm_pct | eqrisk | 7.1 / 7.1 / 7.1 | -254.4 | 1.0 / -387.5 | 33.8 / 1.0 | - / - | OK-PRIOR | LEAD |
+| stop80|R1.25|tx_120m|arm_pct | fixed | 10.3 / 10.3 / 11.0 | -377.2 | -2.4 / 67.6 | 24.3 / 0.0 | 0.04 / 0.67 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| stop80|R0.50|tx_120m|arm_pct | fixed | 6.6 / 6.6 / 6.5 | 196.8 | -3.1 / -123.0 | 36.5 / -3.1 | 0.02 / 0.86 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| atr5_k4|R0.75|tx_120m|arm_pct | fixed | 6.0 / 6.0 / 6.4 | -127.9 | 5.2 / 81.4 | 45.9 / 5.2 | 0.14 / 0.90 | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| stop80|R1.25|tx_120m|arm_pct | eqrisk | 10.3 / 10.3 / 11.0 | -377.2 | -2.4 / 67.6 | 24.3 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| stop90|R0.75|tx_120m|arm_pct | eqrisk | 7.1 / 7.1 / 7.1 | -254.4 | 1.0 / -387.5 | 33.8 / 1.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
 
 Median key over the grid: arm in POINTS -4.2, arm as PERCENT of stop -5.7.
 
@@ -72,11 +73,11 @@ Median key over the grid: arm in POINTS -4.2, arm as PERCENT of stop -5.7.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| atr5_k4|R0.50|tx_none|arm_pct | fixed | 5.1 / 5.1 / 5.9 | 501.7 | -3.6 / -327.4 | 10.8 / 0.0 | 0.04 / 0.76 | OK-PRIOR | LEAD+ |
-| atr5_k4|R2.25|tx_240m|arm_pts | fixed | 1.1 / 1.1 / 11.5 | 1177.1 | 10.3 / 575.6 | 10.8 / 0.0 | 0.14 / 0.84 | OK-PRIOR | LEAD |
-| atr5_k1|R1.50|tx_240m|arm_pts | fixed | 3.5 / 3.5 / 5.8 | 655.1 | 0.5 / -238.0 | 36.5 / 0.0 | 0.04 / 0.84 | OK-PRIOR | LEAD+ |
-| atr5_k4|R0.50|tx_none|arm_pct | eqrisk | 5.1 / 5.1 / 5.9 | 501.7 | -3.6 / -330.4 | 10.8 / 0.0 | - / - | OK-PRIOR | LEAD |
-| atr5_k4|R2.25|tx_240m|arm_pts | eqrisk | 1.1 / 1.1 / 11.5 | 1177.1 | 10.3 / 572.8 | 10.8 / 0.0 | - / - | OK-PRIOR | LEAD |
+| atr5_k4|R0.50|tx_none|arm_pct | fixed | 5.1 / 5.1 / 5.9 | 501.7 | -3.6 / -327.4 | 10.8 / 0.0 | 0.04 / 0.76 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| atr5_k4|R2.25|tx_240m|arm_pts | fixed | 1.1 / 1.1 / 11.5 | 1177.1 | 10.3 / 575.6 | 10.8 / 0.0 | 0.14 / 0.84 | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| atr5_k1|R1.50|tx_240m|arm_pts | fixed | 3.5 / 3.5 / 5.8 | 655.1 | 0.5 / -238.0 | 36.5 / 0.0 | 0.04 / 0.84 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| atr5_k4|R0.50|tx_none|arm_pct | eqrisk | 5.1 / 5.1 / 5.9 | 501.7 | -3.6 / -330.4 | 10.8 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| atr5_k4|R2.25|tx_240m|arm_pts | eqrisk | 1.1 / 1.1 / 11.5 | 1177.1 | 10.3 / 572.8 | 10.8 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
 
 Median key over the grid: arm in POINTS -0.7, arm as PERCENT of stop -3.1.
 
@@ -84,8 +85,8 @@ Median key over the grid: arm in POINTS -0.7, arm as PERCENT of stop -3.1.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| stop30|R1.25|tx_sess|arm_pts | eqrisk | 16.1 / 16.1 / 16.0 | 107.2 | -0.3 / 2.6 | 5.4 / -0.3 | - / - | OK-PRIOR | LEAD |
-| stop30|R1.50|tx_60m|arm_pct | eqrisk | 11.7 / 11.7 / 16.8 | 209.5 | 1.8 / -121.4 | 21.6 / 0.0 | - / - | OK-PRIOR | LEAD |
+| stop30|R1.25|tx_sess|arm_pts | eqrisk | 16.1 / 16.1 / 16.0 | 107.2 | -0.3 / 2.6 | 5.4 / -0.3 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| stop30|R1.50|tx_60m|arm_pct | eqrisk | 11.7 / 11.7 / 16.8 | 209.5 | 1.8 / -121.4 | 21.6 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
 
 Median key over the grid: arm in POINTS 2.6, arm as PERCENT of stop 2.7.
 
@@ -93,9 +94,9 @@ Median key over the grid: arm in POINTS 2.6, arm as PERCENT of stop 2.7.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| atr1_k4|R1.25|tx_180m|arm_pct | fixed | 6.4 / 6.4 / 14.1 | 2.7 | -39.4 / -913.9 | 45.9 / 0.0 | 0.06 / 0.75 | RECENT-ONLY | LEAD+ RECENT-ONLY |
-| atr1_k4|R1.25|tx_none|arm_pct | fixed | 6.3 / 6.3 / 14.0 | -18.4 | -39.4 / -906.9 | 45.9 / 0.0 | 0.06 / 0.75 | RECENT-ONLY | LEAD+ RECENT-ONLY |
-| atr1_k4|R1.25|tx_240m|arm_pct | fixed | 6.3 / 6.3 / 14.0 | -18.4 | -39.4 / -930.7 | 45.9 / 0.0 | 0.06 / 0.75 | RECENT-ONLY | LEAD+ RECENT-ONLY |
+| atr1_k4|R1.25|tx_180m|arm_pct | fixed | 6.4 / 6.4 / 14.1 | 2.7 | -39.4 / -913.9 | 45.9 / 0.0 | 0.06 / 0.75 | RECENT-ONLY (old: RECENT-ONLY) | LEAD+ RECENT-ONLY |
+| atr1_k4|R1.25|tx_none|arm_pct | fixed | 6.3 / 6.3 / 14.0 | -18.4 | -39.4 / -906.9 | 45.9 / 0.0 | 0.06 / 0.75 | RECENT-ONLY (old: RECENT-ONLY) | LEAD+ RECENT-ONLY |
+| atr1_k4|R1.25|tx_240m|arm_pct | fixed | 6.3 / 6.3 / 14.0 | -18.4 | -39.4 / -930.7 | 45.9 / 0.0 | 0.06 / 0.75 | RECENT-ONLY (old: RECENT-ONLY) | LEAD+ RECENT-ONLY |
 
 Median key over the grid: arm in POINTS -1.2, arm as PERCENT of stop -5.0.
 
@@ -103,8 +104,8 @@ Median key over the grid: arm in POINTS -1.2, arm as PERCENT of stop -5.0.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| stop40|R2.00|tx_240m|arm_pts | eqrisk | 6.4 / 6.4 / 14.4 | 1375.1 | 1.1 / 740.8 | 9.5 / 0.0 | - / - | OK-PRIOR | LEAD |
-| atr1_k1|R2.25|tx_sess|arm_pts | eqrisk | 6.2 / 6.2 / 14.6 | 782.9 | -1.0 / -643.4 | 18.9 / 0.0 | - / - | OK-PRIOR | LEAD |
+| stop40|R2.00|tx_240m|arm_pts | eqrisk | 6.4 / 6.4 / 14.4 | 1375.1 | 1.1 / 740.8 | 9.5 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| atr1_k1|R2.25|tx_sess|arm_pts | eqrisk | 6.2 / 6.2 / 14.6 | 782.9 | -1.0 / -643.4 | 18.9 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
 
 Median key over the grid: arm in POINTS 0.3, arm as PERCENT of stop -1.2.
 
@@ -112,11 +113,11 @@ Median key over the grid: arm in POINTS 0.3, arm as PERCENT of stop -1.2.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop40/R2.25 (live 40/90)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| stop30|R1.25|tx_none|arm_pts | fixed | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -446.4 | 18.9 / 0.0 | 0.04 / 0.65 | OK-PRIOR | LEAD+ |
-| stop30|R1.25|tx_120m|arm_pts | fixed | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -437.7 | 18.9 / 0.0 | 0.04 / 0.65 | OK-PRIOR | LEAD+ |
-| stop30|R1.25|tx_180m|arm_pts | fixed | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -439.4 | 18.9 / 0.0 | 0.04 / 0.65 | OK-PRIOR | LEAD+ |
-| stop30|R1.25|tx_sess|arm_pts | eqrisk | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -438.2 | 18.9 / 0.0 | - / - | OK-PRIOR | LEAD |
-| stop30|R1.25|tx_240m|arm_pts | eqrisk | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -431.3 | 18.9 / 0.0 | - / - | OK-PRIOR | LEAD |
+| stop30|R1.25|tx_none|arm_pts | fixed | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -446.4 | 18.9 / 0.0 | 0.04 / 0.65 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| stop30|R1.25|tx_120m|arm_pts | fixed | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -437.7 | 18.9 / 0.0 | 0.04 / 0.65 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| stop30|R1.25|tx_180m|arm_pts | fixed | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -439.4 | 18.9 / 0.0 | 0.04 / 0.65 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| stop30|R1.25|tx_sess|arm_pts | eqrisk | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -438.2 | 18.9 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| stop30|R1.25|tx_240m|arm_pts | eqrisk | 2.3 / 2.3 / 2.6 | 40.9 | 0.0 / -431.3 | 18.9 / 0.0 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
 
 Median key over the grid: arm in POINTS -0.7, arm as PERCENT of stop -1.4.
 
@@ -124,9 +125,9 @@ Median key over the grid: arm in POINTS -0.7, arm as PERCENT of stop -1.4.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| stop40|R1.25|tx_180m|arm_pts | fixed | 9.3 / 9.3 / 18.5 | -1233.4 | 6.8 / -2550.0 | 35.1 / 6.8 | 0.08 / 0.90 | RECENT-ONLY | LEAD+ RECENT-ONLY |
-| atr5_k3|R1.25|tx_180m|arm_pts | eqrisk | 19.1 / 30.4 / 30.3 | -1433.2 | -14.1 / -3146.4 | 12.2 / -2.9 | - / - | RECENT-ONLY | LEAD RECENT-ONLY |
-| atr5_k3|R1.25|tx_none|arm_pts | eqrisk | 14.0 / 28.5 / 32.7 | 247.7 | -0.1 / -1933.9 | 2.7 / 0.0 | - / - | RECENT-ONLY | LEAD RECENT-ONLY |
+| stop40|R1.25|tx_180m|arm_pts | fixed | 9.3 / 9.3 / 18.5 | -1233.4 | 6.8 / -2550.0 | 35.1 / 6.8 | 0.08 / 0.90 | OK-PRIOR (old: RECENT-ONLY) | LEAD+ |
+| atr5_k3|R1.25|tx_180m|arm_pts | eqrisk | 19.1 / 30.4 / 30.3 | -1433.2 | -14.1 / -3146.4 | 12.2 / -2.9 | - / - | OK-PRIOR (old: RECENT-ONLY) | LEAD |
+| atr5_k3|R1.25|tx_none|arm_pts | eqrisk | 14.0 / 28.5 / 32.7 | 247.7 | -0.1 / -1933.9 | 2.7 / 0.0 | - / - | OK-PRIOR (old: RECENT-ONLY) | LEAD |
 
 Median key over the grid: arm in POINTS -88.6, arm as PERCENT of stop -125.9.
 
@@ -134,10 +135,10 @@ Median key over the grid: arm in POINTS -88.6, arm as PERCENT of stop -125.9.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| atr1_k2|R2.25|tx_180m|arm_pts | fixed | 41.2 / 41.2 / 41.1 | 130.9 | -25.5 / -253.4 | 24.3 / -25.5 | 0.02 / 0.35 | RECENT-ONLY | LEAD+ RECENT-ONLY |
-| atr1_k2|R2.00|tx_240m|arm_pts | fixed | 41.1 / 41.1 / 41.0 | -105.3 | -28.4 / -164.0 | 14.9 / -28.4 | 0.02 / 0.37 | RECENT-ONLY | LEAD+ RECENT-ONLY |
-| atr1_k2|R2.00|tx_none|arm_pts | fixed | 41.1 / 41.1 / 41.0 | -105.3 | -28.4 / -164.0 | 14.9 / -28.4 | 0.02 / 0.37 | RECENT-ONLY | LEAD+ RECENT-ONLY |
-| atr1_k2|R1.50|tx_60m|arm_pct | eqrisk | 40.3 / 40.3 / 41.3 | 2246.5 | -24.4 / -2659.2 | 6.8 / -3.0 | - / - | RECENT-ONLY | LEAD RECENT-ONLY |
+| atr1_k2|R2.25|tx_180m|arm_pts | fixed | 41.2 / 41.2 / 41.1 | 130.9 | -25.5 / -253.4 | 24.3 / -25.5 | 0.02 / 0.35 | RECENT-ONLY (old: RECENT-ONLY) | LEAD+ RECENT-ONLY |
+| atr1_k2|R2.00|tx_240m|arm_pts | fixed | 41.1 / 41.1 / 41.0 | -105.3 | -28.4 / -164.0 | 14.9 / -28.4 | 0.02 / 0.37 | RECENT-ONLY (old: RECENT-ONLY) | LEAD+ RECENT-ONLY |
+| atr1_k2|R2.00|tx_none|arm_pts | fixed | 41.1 / 41.1 / 41.0 | -105.3 | -28.4 / -164.0 | 14.9 / -28.4 | 0.02 / 0.37 | RECENT-ONLY (old: RECENT-ONLY) | LEAD+ RECENT-ONLY |
+| atr1_k2|R1.50|tx_60m|arm_pct | eqrisk | 40.3 / 40.3 / 41.3 | 2246.5 | -24.4 / -2659.2 | 6.8 / -3.0 | - / - | RECENT-ONLY (old: RECENT-ONLY) | LEAD RECENT-ONLY |
 
 Median key over the grid: arm in POINTS 3.3, arm as PERCENT of stop 2.3.
 
@@ -145,11 +146,11 @@ Median key over the grid: arm in POINTS 3.3, arm as PERCENT of stop 2.3.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| atr5_k3|R0.50|tx_180m|arm_pct | fixed | 17.0 / 17.0 / 21.8 | 2425.2 | -15.1 / -1029.4 | 12.2 / 0.0 | 0.10 / 0.84 | RECENT-ONLY | LEAD+ RECENT-ONLY |
-| atr5_k3|R0.50|tx_240m|arm_pct | fixed | 16.4 / 16.4 / 16.3 | 2084.4 | -15.1 / -1418.9 | 9.5 / 0.0 | 0.08 / 0.86 | RECENT-ONLY | LEAD+ RECENT-ONLY |
-| atr5_k4|R0.50|tx_120m|arm_pct | fixed | 5.0 / 5.0 / 33.2 | 3824.7 | -5.1 / 522.4 | 9.5 / 0.0 | 0.16 / 0.92 | OK-PRIOR | LEAD |
-| atr5_k4|R0.50|tx_240m|arm_pct | eqrisk | 13.0 / 13.0 / 27.6 | 1325.8 | 6.5 / -1651.7 | 33.8 / 0.0 | - / - | RECENT-ONLY | LEAD RECENT-ONLY |
-| atr5_k4|R0.50|tx_none|arm_pct | eqrisk | 7.8 / 7.8 / 27.0 | 1108.2 | 6.5 / -1538.7 | 32.4 / 0.0 | - / - | RECENT-ONLY | LEAD RECENT-ONLY |
+| atr5_k3|R0.50|tx_180m|arm_pct | fixed | 17.0 / 17.0 / 21.8 | 2425.2 | -15.1 / -1029.4 | 12.2 / 0.0 | 0.10 / 0.84 | RECENT-ONLY (old: RECENT-ONLY) | LEAD+ RECENT-ONLY |
+| atr5_k3|R0.50|tx_240m|arm_pct | fixed | 16.4 / 16.4 / 16.3 | 2084.4 | -15.1 / -1418.9 | 9.5 / 0.0 | 0.08 / 0.86 | RECENT-ONLY (old: RECENT-ONLY) | LEAD+ RECENT-ONLY |
+| atr5_k4|R0.50|tx_120m|arm_pct | fixed | 5.0 / 5.0 / 33.2 | 3824.7 | -5.1 / 522.4 | 9.5 / 0.0 | 0.16 / 0.92 | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| atr5_k4|R0.50|tx_240m|arm_pct | eqrisk | 13.0 / 13.0 / 27.6 | 1325.8 | 6.5 / -1651.7 | 33.8 / 0.0 | - / - | OK-PRIOR (old: RECENT-ONLY) | LEAD |
+| atr5_k4|R0.50|tx_none|arm_pct | eqrisk | 7.8 / 7.8 / 27.0 | 1108.2 | 6.5 / -1538.7 | 32.4 / 0.0 | - / - | OK-PRIOR (old: RECENT-ONLY) | LEAD |
 
 Median key over the grid: arm in POINTS -2.4, arm as PERCENT of stop -2.3.
 
@@ -157,11 +158,11 @@ Median key over the grid: arm in POINTS -2.4, arm as PERCENT of stop -2.3.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| stop40|R1.50|tx_sess|arm_pts | fixed | 6.2 / 6.2 / 6.1 | 514.2 | -2.8 / -678.9 | 17.6 / 0.0 | 0.04 / 0.80 | OK-PRIOR | LEAD+ |
-| stop40|R1.50|tx_240m|arm_pts | fixed | 6.2 / 6.2 / 6.1 | 595.7 | -2.8 / -286.7 | 25.7 / 0.0 | 0.08 / 0.80 | OK-PRIOR | LEAD+ |
-| stop40|R1.50|tx_180m|arm_pts | fixed | 6.1 / 6.1 / 6.0 | 577.8 | -2.8 / -437.9 | 25.7 / 0.0 | 0.06 / 0.80 | OK-PRIOR | LEAD+ |
-| stop40|R2.00|tx_sess|arm_pts | eqrisk | 7.6 / 7.6 / 7.5 | 2591.8 | -7.8 / -634.9 | 16.2 / -7.8 | - / - | OK-PRIOR | LEAD |
-| stop40|R0.50|tx_60m|arm_pts | eqrisk | 2.8 / 7.7 / 7.6 | 151.7 | -6.0 / -1571.3 | 10.8 / 0.0 | - / - | RECENT-ONLY | LEAD RECENT-ONLY |
+| stop40|R1.50|tx_sess|arm_pts | fixed | 6.2 / 6.2 / 6.1 | 514.2 | -2.8 / -678.9 | 17.6 / 0.0 | 0.04 / 0.80 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| stop40|R1.50|tx_240m|arm_pts | fixed | 6.2 / 6.2 / 6.1 | 595.7 | -2.8 / -286.7 | 25.7 / 0.0 | 0.08 / 0.80 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| stop40|R1.50|tx_180m|arm_pts | fixed | 6.1 / 6.1 / 6.0 | 577.8 | -2.8 / -437.9 | 25.7 / 0.0 | 0.06 / 0.80 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| stop40|R2.00|tx_sess|arm_pts | eqrisk | 7.6 / 7.6 / 7.5 | 2591.8 | -7.8 / -634.9 | 16.2 / -7.8 | - / - | OK-PRIOR (old: OK-PRIOR) | LEAD |
+| stop40|R0.50|tx_60m|arm_pts | eqrisk | 2.8 / 7.7 / 7.6 | 151.7 | -6.0 / -1571.3 | 10.8 / 0.0 | - / - | OK-PRIOR (old: RECENT-ONLY) | LEAD |
 
 Median key over the grid: arm in POINTS -12.5, arm as PERCENT of stop -13.6.
 
@@ -169,9 +170,9 @@ Median key over the grid: arm in POINTS -12.5, arm as PERCENT of stop -13.6.
 | cell | lots | eqcut L6M/L3M/L1M | dM L6M | PRE cut / dM | WF beat / cut | p own / fam | prior | label |
 |---|---|---|---|---|---|---|---|---|
 | **LIVE stop60/R1.00 (live 60/60)** | fixed | 0 / 0 / 0 | 0 | 0 / 0 | - | - | - | reference |
-| atr1_k1|R1.00|tx_none|arm_pct | fixed | 13.7 / 13.7 / 28.0 | 402.5 | 18.8 / -467.3 | 18.9 / 18.8 | 0.02 / 0.33 | OK-PRIOR | LEAD+ |
-| atr1_k1|R1.00|tx_60m|arm_pct | fixed | 13.7 / 13.7 / 28.0 | 402.5 | 18.8 / -479.7 | 18.9 / 18.8 | 0.02 / 0.33 | OK-PRIOR | LEAD+ |
-| atr1_k1|R1.00|tx_180m|arm_pct | fixed | 13.7 / 13.7 / 28.0 | 402.5 | 18.8 / -467.3 | 18.9 / 18.8 | 0.02 / 0.33 | OK-PRIOR | LEAD+ |
+| atr1_k1|R1.00|tx_none|arm_pct | fixed | 13.7 / 13.7 / 28.0 | 402.5 | 18.8 / -467.3 | 18.9 / 18.8 | 0.02 / 0.33 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| atr1_k1|R1.00|tx_60m|arm_pct | fixed | 13.7 / 13.7 / 28.0 | 402.5 | 18.8 / -479.7 | 18.9 / 18.8 | 0.02 / 0.33 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
+| atr1_k1|R1.00|tx_180m|arm_pct | fixed | 13.7 / 13.7 / 28.0 | 402.5 | 18.8 / -467.3 | 18.9 / 18.8 | 0.02 / 0.33 | OK-PRIOR (old: OK-PRIOR) | LEAD+ |
 
 Median key over the grid: arm in POINTS 3.7, arm as PERCENT of stop 4.5.
 
@@ -187,7 +188,7 @@ All windows are first-order stack numbers vs the live stack; every policy FAILS 
 | BEST_ARM_PTS | 10 | 28.8 | 17.5 | 67.2 | 92.9 | -3626.5 | 16.8 | -10089.0 | 28.0 | 16.2 | -1.7 | RECENT-ONLY |
 | BEST_ARM_PCT | 8 | -5.1 | -2.4 | 59.4 | 80.5 | 612.3 | -66.6 | -3139.3 | 19.2 | 23.0 | -32.9 | RECENT-ONLY |
 | BEST_EQRISK | 12 | -125.3 | -157.3 | 13.7 | 59.9 | -3292.6 | -75.4 | -9788.7 | -98.9 | 0.0 | 0.0 | RECENT-ONLY |
-| BEST_OKPRIOR | 10 | -1.6 | -27.9 | 68.6 | 68.6 | -5438.0 | -5.8 | -3576.4 | 0.3 | 10.8 | -46.6 | RECENT-ONLY |
+| BEST_OKPRIOR | 11 | 3.6 | -41.6 | 19.0 | 76.1 | -8434.2 | 1.0 | -6724.9 | 6.8 | 35.1 | 1.0 | RECENT-ONLY |
 
 BEST_KEY mixes arm modes per group (hook pctfix is a policy-wide switch; set R7_P1 uses the majority). Equal-$-risk policy: the lot rule is `eqrisk` (lots x 60/stop; O7 40/stop) applied after the live chain.
 
@@ -198,9 +199,9 @@ bracket K7 london stop=80 target=1.25R time=120m lotmult=1.0  # fixed lots eqcut
 bracket K7 nyam stop=4xATR5 target=2.25R time=240m lotmult=1.0  # fixed lots eqcut L6M 1.1 label LEAD
 bracket M7 london stop=1xATR5 target=1.5R time=60m lotmult=1.0  # fixed lots eqcut L6M 6.1 label LEAD+
 bracket O7 nyam stop=30 target=1.25R lotmult=1.0  # fixed lots eqcut L6M 2.3 label LEAD+
-bracket P7 asia stop=40 target=1.25R time=180m lotmult=1.0  # fixed lots eqcut L6M 9.3 label LEAD+ RECENT-ONLY
+bracket P7 asia stop=40 target=1.25R time=180m lotmult=1.0  # fixed lots eqcut L6M 9.3 label LEAD+
 bracket P7 london stop=2xATR1 target=2.25R time=180m lotmult=1.0  # fixed lots eqcut L6M 41.2 label LEAD+ RECENT-ONLY
-bracket P7 nyam stop=70 target=2.25R time=sess lotmult=1.0  # fixed lots eqcut L6M 12.9 label LEAD+ RECENT-ONLY
+bracket P7 nyam stop=70 target=2.25R time=sess lotmult=1.0  # fixed lots eqcut L6M 12.9 label LEAD+
 bracket U7 asia stop=40 target=1.5R time=sess lotmult=1.0  # fixed lots eqcut L6M 6.2 label LEAD+
 bracket U7 london stop=1xATR1 target=1R time=180m lotmult=1.0  # fixed lots eqcut L6M 13.6 label LEAD+
 ```
@@ -219,7 +220,7 @@ Trailing 26 weeks to the data end, drawdown first on the STACK (maxDD, worst-20,
 | group | pick | trailing maxDD live -> pick | trailing mean live -> pick | prior (PRE cut / dM) |
 |---|---|---|---|---|
 | A7 asia | stop40|R1.75|tx_180m|arm_pct | 79907.3 -> 75245.3 | 24124.4 -> 23834.1 | OK-PRIOR (-2.6 / -383.5) |
-| H7 asia | stop70|R2.00|tx_180m|arm_pct | 79907.3 -> 72093.6 | 24124.4 -> 25478.6 | RECENT-ONLY (4.2 / -1123.4) |
+| H7 asia | stop70|R2.00|tx_180m|arm_pct | 79907.3 -> 72093.6 | 24124.4 -> 25478.6 | OK-PRIOR (4.2 / -1123.4) |
 | H7 nyam | stop90|R1.25|tx_240m|arm_pts | 79907.3 -> 74093.8 | 24124.4 -> 24971.1 | OK-PRIOR (-2.6 / 110.8) |
 | K7 asia | stop50|R0.75|tx_sess|arm_pts | 79907.3 -> 74985.3 | 24124.4 -> 23830.5 | OK-PRIOR (0.1 / -712.6) |
 | K7 london | stop80|R1.25|tx_120m|arm_pct | 79907.3 -> 70495.8 | 24124.4 -> 23171.4 | OK-PRIOR (-2.4 / 67.6) |
@@ -228,9 +229,9 @@ Trailing 26 weeks to the data end, drawdown first on the STACK (maxDD, worst-20,
 | M7 london | atr1_k1|R0.50|tx_none|arm_pts | 79907.3 -> 67468.2 | 24124.4 -> 24576.5 | OK-PRIOR (10.9 / -7.3) |
 | M7 nyam | atr1_k2|R1.50|tx_60m|arm_pts | 79907.3 -> 76279.1 | 24124.4 -> 24091.0 | OK-PRIOR (-3.1 / -568.6) |
 | O7 nyam | stop30|R1.25|tx_none|arm_pts | 79907.3 -> 78207.8 | 24124.4 -> 24051.9 | OK-PRIOR (0.0 / -446.4) |
-| P7 asia | stop40|R1.50|tx_180m|arm_pts | 79907.3 -> 68325.8 | 24124.4 -> 22706.2 | RECENT-ONLY (4.6 / -2846.8) |
+| P7 asia | stop40|R1.50|tx_180m|arm_pts | 79907.3 -> 68325.8 | 24124.4 -> 22706.2 | OK-PRIOR (4.6 / -2846.8) |
 | P7 london | atr1_k2|R2.00|tx_none|arm_pts | 79907.3 -> 46870.3 | 24124.4 -> 22895.0 | RECENT-ONLY (-28.4 / -164.0) |
-| P7 nyam | atr1_k1|R0.75|tx_none|arm_pct | 79907.3 -> 60549.3 | 24124.4 -> 25678.4 | RECENT-ONLY (-5.7 / -2291.0) |
+| P7 nyam | atr1_k1|R0.75|tx_none|arm_pct | 79907.3 -> 60549.3 | 24124.4 -> 25678.4 | OK-PRIOR (-5.7 / -2291.0) |
 | U7 asia | atr5_k4|R0.50|tx_60m|arm_pts | 79907.3 -> 73810.9 | 24124.4 -> 23681.7 | OK-PRIOR (7.3 / -518.3) |
 | U7 london | stop30|R2.25|tx_60m|arm_pts | 79907.3 -> 67992.9 | 24124.4 -> 23277.7 | OK-PRIOR (9.0 / -719.8) |
 
@@ -260,16 +261,16 @@ Done for L6M + PRE (23 months each) for R7_P1..P5 and R12 cells, see section 9. 
 | bracket U7 london | 60/60 | atr1_k1|R1.00|tx_none|arm_pct | no (WF beat 18.9 %) | no | policy line `bracket U7 london ...` |
 | state-cut arm vs stop | points held fixed | points | yes (screen) | no | state-cut arm lines (points) |
 
-## 9. EXACT engine results (auto-refreshed 2026-11-10 12:53Z) - R7 joint bracket policies (hook regression R7_HOOKREF identical on 202610; R7_TEST confirmed the hooks act)
-Engine column: ROLLFIX1 = every contract-roll month of the set ran on the roll-patched engine (RollRep) and is scored against base_b_rollfix = ROLL-FIXED; ROLLEXCL = old unpatched runs scored with the 33 roll-alive trades excluded (superseded, shown until the rerun lands). L6M = 202605-202610, PRE = 202402-202506; X' = 202304-202401 and HOLD = 202511-202604 only for R7_P3 and R12_OPEN930 (the leads). cuts = maxDD cut % vs exact Q1-A, all weeks; eq = at equal L6M mean; dM = $/wk mean vs live; WF = bi-weekly re-pick on the exact block (beat % of periods / OOS cut %); prior = rule 2a label; no placebo on exact rows, so the highest label is LEAD.
+## 9. EXACT engine results (auto-refreshed 2026-11-10 13:59Z) - R7 joint bracket policies (hook regression R7_HOOKREF identical on 202610; R7_TEST confirmed the hooks act)
+Prior label = rule 2a with the PRE mean floor at 25 % of the live PRE mean (user decision 2026-11-10 13:45Z); the old fixed -$1k label is shown in brackets. Engine column: ROLLFIX1 = every contract-roll month of the set ran on the roll-patched engine (RollRep) and is scored against base_b_rollfix = ROLL-FIXED; ROLLEXCL = old unpatched runs scored with the 33 roll-alive trades excluded (superseded, shown until the rerun lands). L6M = 202605-202610, PRE = 202402-202506; X' = 202304-202401 and HOLD = 202511-202604 only for R7_P3 and R12_OPEN930 (the leads). cuts = maxDD cut % vs exact Q1-A, all weeks; eq = at equal L6M mean; dM = $/wk mean vs live; WF = bi-weekly re-pick on the exact block (beat % of periods / OOS cut %); prior = rule 2a label; no placebo on exact rows, so the highest label is LEAD.
 
 | set | engine | months | L6M cut / eq / dM | L3M cut | L1M cut | PRE cut / dM | X' cut / dM | HOLD cut / dM | WF beat % / cut % | prior | label |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| R7_P1 | ROLLFIX1 | 23 | -110.3 / -357.7 / -12065 | -26.1 | 65.6 | -38.4 / -11089 | nan / nan | nan / nan | 14 / -0.0 | RECENT-ONLY | no |
-| R7_P2 | ROLLFIX1 | 23 | 15.7 / -57.3 / -12262 | 55.3 | 73.8 | 13.5 / -11088 | nan / nan | nan / nan | 36 / 21.7 | RECENT-ONLY | LEAD (mean given up: eq cut <= 0) RECENT-ONLY (WF 36%) ; WF fails |
-| R7_P3 | ROLLFIX1 | 33 | 33.9 / 34.8 / 346 | 48.2 | 48.1 | -39.6 / -6241 | nan / nan | -60.0 / -8786 | 18 / -0.0 | RECENT-ONLY | LEAD RECENT-ONLY (WF 18%) ; WF fails |
-| R7_P4 | ROLLFIX1 | 23 | -254.1 / -977.4 / -15021 | -113.8 | 89.9 | -451.6 / -23360 | nan / nan | nan / nan | 0 / 0.0 | RECENT-ONLY | no |
-| R7_P5 | ROLLFIX1 | 23 | -75.7 / -359.0 / -14426 | 28.2 | 28.1 | -17.9 / -8371 | nan / nan | nan / nan | 18 / 31.2 | RECENT-ONLY | no |
+| R7_P1 | ROLLFIX1 | 23 | -110.3 / -357.7 / -12065 | -26.1 | 65.6 | -38.4 / -11089 | nan / nan | nan / nan | 14 / -0.0 | RECENT-ONLY (old -$1k floor: RECENT-ONLY) | no |
+| R7_P2 | ROLLFIX1 | 23 | 15.7 / -57.3 / -12262 | 55.3 | 73.8 | 13.5 / -11088 | nan / nan | nan / nan | 36 / 21.7 | RECENT-ONLY (old -$1k floor: RECENT-ONLY) | LEAD (mean given up: eq cut <= 0) RECENT-ONLY (WF 36%) ; WF fails |
+| R7_P3 | ROLLFIX1 | 33 | 33.9 / 34.8 / 346 | 48.2 | 48.1 | -39.6 / -6241 | nan / nan | -60.0 / -8786 | 18 / -0.0 | RECENT-ONLY (old -$1k floor: RECENT-ONLY) | LEAD RECENT-ONLY (WF 18%) ; WF fails |
+| R7_P4 | ROLLFIX1 | 23 | -254.1 / -977.4 / -15021 | -113.8 | 89.9 | -451.6 / -23360 | nan / nan | nan / nan | 0 / 0.0 | RECENT-ONLY (old -$1k floor: RECENT-ONLY) | no |
+| R7_P5 | ROLLFIX1 | 23 | -75.7 / -359.0 / -14426 | 28.2 | 28.1 | -17.9 / -8371 | nan / nan | nan / nan | 18 / 31.2 | RECENT-ONLY (old -$1k floor: RECENT-ONLY) | no |
 
 **Live-stays line:** no exact row passes recents + eq-mean + prior + WF; the live setting stays (brackets 60/60, O7 40/90; flatten 16:55; blocks and session clock as live).
 
@@ -281,6 +282,6 @@ Engine column: ROLLFIX1 = every contract-roll month of the set ran on the roll-p
 | R7_P2 | BEST_ARM_PTS | 17.5 / -3626 / 16.8 | -57.3 / -12262 / 13.5 |
 | R7_P3 | BEST_ARM_PCT | -2.4 / 612 / -66.6 | 34.8 / 346 / -39.6 |
 | R7_P4 | BEST_EQRISK | -157.3 / -3293 / -75.4 | -977.4 / -15021 / -451.6 |
-| R7_P5 | BEST_OKPRIOR | -27.9 / -5438 / -5.8 | -359.0 / -14426 / -17.9 |
+| R7_P5 | BEST_OKPRIOR | -41.6 / -8434 / 1.0 | -359.0 / -14426 / -17.9 |
 
 Reading: re-entries, locks and the stack cut interact with every exit change (SZ_BASE_PROOF: first-order is blind to exits), so first-order brackets ranks are not reliable: the points-arm policy R7_P2 looked best (+17.5 eq cut) and loses ~half the weekly mean in the engine, while the percent-arm policy R7_P3 (cells chosen with the arm as a percent of the stop) shows an exact L6M/L3M/L1M cut of 33.9 / 48.2 / 48.1 % at equal-to-higher mean (dM +346 $/wk) but PRE -39.6 % (dM -6,241) and a bi-weekly WF beating live in 18 % of periods: RECENT-ONLY, FAILS the walk-forward. Verdict unchanged: **live brackets stay**; R7_P3 is the one lead to carry into the joint stage (as a labelled RECENT-ONLY layer candidate), the percent arm is NOT recommended on this evidence (reverses the first-order advice for the arm convention; the exact test of pct vs points is P3 vs P2, mixed: P3 better on L6M, worse on PRE).
