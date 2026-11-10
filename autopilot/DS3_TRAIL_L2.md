@@ -1,4 +1,4 @@
-# DS3_TRAIL_L2 - profit-state engine on the live panel base: per-book profit lines, 2026-11-10 21:23Z FINAL
+# DS3_TRAIL_L2 - profit-state engine on the live panel base: per-book profit lines, 2026-11-10 22:59Z FINAL
 
 STATUS: Shadow only, post-hoc, no PASS claims, PRE-PROOF. Prereg autopilot/TRAIL_L2_PREREG.md (sha in DECISIONS.md); engine autopilot/PTR_ENGINE_API.md (code/th_ptr). Base = LPB_BASE exact trade list (live panel: P7 day cap 8,400 loss, P7 7/4/4, P7 cut 40/5x/w5/p3), ROLL-fixed engine; the "v2.5 near-target retargets" are not a separate switch in the engine on the box (no spec found) and are NOT in these runs. **Rows are FIRST-ORDER SCREENS (cached 1-s feature paths, slip 1.2 central) unless marked EXACT**; first-order vs exact: about 26-28% of the fires of a line differ between them (SZ-IJK PTR_T1 check: re-entries and path divergence), so first-order winners are screens, exact decides. Equal lots; stack maxDD (all weeks) cuts vs the live panel base, mean change with the carrying week dropped; recents first (L6M / L3M / L1M), rule 2a (floor = 25% of the live PRE mean) via Z.prior_info; market-exit slip cases central 1.2 / low 0.57 / high 1.6 pts (REDO-R9, vs the fill-second mid; decision at the close of second s and exit at row s+1 is the second-delay frame, no extra delay added) and the engine 0.80 for exact continuity.
 
@@ -6,17 +6,17 @@ STATUS: Shadow only, post-hoc, no PASS claims, PRE-PROOF. Prereg autopilot/TRAIL
 
 | book | best line ACROSS windows (basis) | four-window cut (FO slip 1.2, stack: L6M/HOLD/PRE/X') | EXACT stack cut L6M/L3M/L1M/HOLD/PRE/X', d mean L6M (engine slip 0.80) | live week: Targets clipped / cost, give-backs caught / saved | plain sentence |
 |---|---|---|---|---|---|
-| K7 | `profit K7 * pct>=0.4 dd>=3 lock 0 persist=5` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 7 candidate sets with exact rows)) **RECENTS-ONLY: deeper in HOLD (stack -10%, d mean -1000 $/wk)** | 32/-2/-7/15 | 37/37/13/-10/-12/15, 1212 (stack scope) | 6/31 clipped (-11209$), 12/13 give-backs caught (10671$), net -1106$ | K7: the book-based protection is `profit K7 * pct>=0.4 dd>=3 lock 0 persist=5`; it keeps 92% of the give-backs (12 of 13 caught) and costs 19% of the fills (6 of 31 live Targets clipped) and, in the HOLD window (Nov 2025 - Apr 2026), it is deeper than live by 10% (stack) at -1000 $/wk. |
-| P7 | `profit P7 * pct>=0.2 pulled_mult>=50 tot_rel_slow>=1.2 take win=15 persist=1` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 10 candidate sets with exact rows)) **RECENTS-ONLY: deeper in HOLD (stack -17%, d mean -2630 $/wk)** [P7 contradiction: first-order 43-month L6M cut and mean look good for profit-cut / pulled-against lines (SZ-CDE P7 PC r1 +66% / +$1,271/wk first-order) while the frozen-week replay loses (P7 PC r1 -$54.5k; P7 carried $159k of Targets in that one trending week): the history is mostly choppy weeks where the rule saves give-backs, the live week was a trend week where it clips winners; exact L6M/HOLD rows are the arbiter] | 62/15/-24/1 | 24/24/62/-17/-29/-, -1376 (stack scope) | 17/28 clipped (-61122$), 4/7 give-backs caught (20155$), net -23843$ | P7: the book-based protection is `profit P7 * pct>=0.2 pulled_mult>=50 tot_rel_slow>=1.2 take win=15 persist=1`; it keeps 57% of the give-backs (4 of 7 caught) and costs 61% of the fills (17 of 28 live Targets clipped) and, in the HOLD window (Nov 2025 - Apr 2026), it is deeper than live by 17% (stack) at -2630 $/wk. |
-| M7 | `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 6 candidate sets with exact rows)) | 15/6/-5/-15 | 17/17/3/8/-9/-, 267 (stack scope) | 2/13 clipped (-1341$), 3/4 give-backs caught (5787$), net 4447$ | M7: the book-based protection is `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8`; it keeps 75% of the give-backs (3 of 4 caught) and costs 15% of the fills (2 of 13 live Targets clipped). |
-| U7 | `profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 11 candidate sets with exact rows)) | 25/-0/4/-0 | 9/9/15/-1/-/-, 1074 (stack scope) | no live trade of this book with a path (replay n/a) | - |
-| H7 | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 19 candidate sets with exact rows)) | 10/3/2/17 | 5/5/0/3/-0/-, 367 (stack scope) | 1/1 clipped (-659$), 0/2 give-backs caught (0$), net -659$ | H7: the book-based protection is `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5`; it keeps 0% of the give-backs (0 of 2 caught) and costs 100% of the fills (1 of 1 live Targets clipped). |
-| A7 | `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 21 candidate sets with exact rows)) | 10/2/2/-4 | 5/5/29/-2/-10/-1, 320 (stack scope) | 7/7 clipped (-5346$), 4/4 give-backs caught (4226$), net -1196$ | A7: the book-based protection is `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8`; it keeps 100% of the give-backs (4 of 4 caught) and costs 100% of the fills (7 of 7 live Targets clipped). |
-| O7 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 6 candidate sets with exact rows)) | 5/1/-1/3 | 5/5/2/1/-1/-, 30 (stack scope) | 1/1 clipped (-176$), 1/1 give-backs caught (1048$), net 872$ | O7: the book-based protection is `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8`; it keeps 100% of the give-backs (1 of 1 caught) and costs 100% of the fills (1 of 1 live Targets clipped). |
+| K7 | `profit K7 * pct>=0.3 delta_mult>=5 lock 0 win=10 persist=10` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 7 candidate sets with exact rows)) **RECENTS-ONLY: deeper in HOLD (stack -5%, d mean -396 $/wk)** | 33/5/-2/10 | 32/32/-2/-5/1/14, -435 (stack scope) | 5/31 clipped (-10059$), 9/13 give-backs caught (8150$), net -2478$ | K7: the book-based protection is `profit K7 * pct>=0.3 delta_mult>=5 lock 0 win=10 persist=10`; it keeps 69% of the give-backs (9 of 13 caught) and costs 16% of the fills (5 of 31 live Targets clipped) and, in the HOLD window (Nov 2025 - Apr 2026), it is deeper than live by 5% (stack) at -396 $/wk. |
+| P7 | `profit P7 * pct>=0.3 pulled_against_mult>=5 tighten 5 win=5 persist=10` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 10 candidate sets with exact rows)) **RECENTS-ONLY: deeper in HOLD (stack -17%, d mean -7983 $/wk)** [P7 contradiction: first-order 43-month L6M cut and mean look good for profit-cut / pulled-against lines (SZ-CDE P7 PC r1 +66% / +$1,271/wk first-order) while the frozen-week replay loses (P7 PC r1 -$54.5k; P7 carried $159k of Targets in that one trending week): the history is mostly choppy weeks where the rule saves give-backs, the live week was a trend week where it clips winners; exact L6M/HOLD rows are the arbiter] | 65/-6/22/25 | 17/17/18/-17/-7/15, -6486 (stack scope) | 27/28 clipped (-101689$), 7/7 give-backs caught (41560$), net -52461$ | P7: the book-based protection is `profit P7 * pct>=0.3 pulled_against_mult>=5 tighten 5 win=5 persist=10`; it keeps 100% of the give-backs (7 of 7 caught) and costs 96% of the fills (27 of 28 live Targets clipped) and, in the HOLD window (Nov 2025 - Apr 2026), it is deeper than live by 17% (stack) at -7983 $/wk. |
+| M7 | `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 6 candidate sets with exact rows)) | 15/6/-5/-15 | 17/17/3/8/-9/-3, 267 (stack scope) | 2/13 clipped (-1341$), 3/4 give-backs caught (5787$), net 4447$ | M7: the book-based protection is `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8`; it keeps 75% of the give-backs (3 of 4 caught) and costs 15% of the fills (2 of 13 live Targets clipped). |
+| U7 | `profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 11 candidate sets with exact rows)) | 25/-0/4/-0 | 9/9/15/-1/4/1, 1074 (stack scope) | no live trade of this book with a path (replay n/a) | - |
+| H7 | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 19 candidate sets with exact rows)) | 10/3/2/17 | 5/5/0/3/-0/20, 367 (stack scope) | 1/1 clipped (-659$), 0/2 give-backs caught (0$), net -659$ | H7: the book-based protection is `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5`; it keeps 0% of the give-backs (0 of 2 caught) and costs 100% of the fills (1 of 1 live Targets clipped). |
+| A7 | `profit A7 * pct>=0.3 pulled_against_mult>=50 pulled_mult>=30 take win=15 persist=1 wall_ticks=8` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 21 candidate sets with exact rows)) | 10/3/-2/-0 | 12/12/21/-0/-1/-0, 554 (stack scope) | 7/7 clipped (-4698$), 2/4 give-backs caught (2382$), net -1317$ | A7: the book-based protection is `profit A7 * pct>=0.3 pulled_against_mult>=50 pulled_mult>=30 take win=15 persist=1 wall_ticks=8`; it keeps 50% of the give-backs (2 of 4 caught) and costs 100% of the fills (7 of 7 live Targets clipped). |
+| O7 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` (EXACT stack scope, engine slip 0.80, best ACROSS the windows (candidates with the most complete exact windows first, then the best worst-window cut; 6 candidate sets with exact rows)) | 5/1/-1/3 | 5/5/2/1/-1/3, 30 (stack scope) | 1/1 clipped (-176$), 1/1 give-backs caught (1048$), net 872$ | O7: the book-based protection is `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8`; it keeps 100% of the give-backs (1 of 1 caught) and costs 100% of the fills (1 of 1 live Targets clipped). |
 
 ## 0a. First profit-rule candidate: PTR_K7_01 `profit K7 * pct>=0.4 dd>=3 lock 0 persist=5` (exact rows complete so far)
 
-Exact coverage at publication (SZ-CORE completeness.tsv): 123 PTR sets with rows, 80 complete on L6M, 0 complete on all four windows. PARTIAL windows are NOT shown as exact; the page publishes the exact rows completed so far, flagged. Windows below are listed only when every month of the window has run.
+Exact coverage at publication (SZ-CORE completeness.tsv): 123 PTR sets with rows, 80 complete on L6M, 7 complete on all four windows. PARTIAL windows are NOT shown as exact; the page publishes the exact rows completed so far, flagged. Windows below are listed only when every month of the window has run.
 
 | scope | window | months | maxDD cut vs LPB_BASE % | equal-mean cut % | d mean $/wk | maxDD cell / base | worst-20 cell / base |
 |---|---|---|---|---|---|---|---|
@@ -61,12 +61,12 @@ No line below is recommended for the panel unless the column says YES: a line th
 
 | book | line | beats no rule (exact, stack)? | fields v1.5 lacks |
 |---|---|---|---|
-| K7 | `profit K7 * pct>=0.4 dd>=3 lock 0 persist=5` | NO: worst complete window -12%, d mean L6M 1212 | dd (points given back from the favourable extreme) as a condition; persist=<s> (consecutive seconds) |
-| P7 | `profit P7 * pct>=0.2 pulled_mult>=50 tot_rel_slow>=1.2 take win=15 persist=1` | NO: worst complete window -29%, d mean L6M -1376 | persist=<s> (consecutive seconds); slow half-hour baseline for tot_rel / ahead_rel; win=<s> (feature window) |
+| K7 | `profit K7 * pct>=0.3 delta_mult>=5 lock 0 win=10 persist=10` | NO: worst complete window -5%, d mean L6M -435 | delta_mult (aggressor delta against / MedLevel over win); persist=<s> (consecutive seconds); win=<s> (feature window) |
+| P7 | `profit P7 * pct>=0.3 pulled_against_mult>=5 tighten 5 win=5 persist=10` | NO: worst complete window -17%, d mean L6M -6486 | persist=<s> (consecutive seconds); pulled_against_mult (OTHER side cancelled / MedLevel); tighten latched trail semantics (ratchet in favour only) - check v1.5 tighten; win=<s> (feature window) |
 | M7 | `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8` | NO: worst complete window -9%, d mean L6M 267 | action step X; persist=<s> (consecutive seconds); win=<s> (feature window) |
 | U7 | `profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5` | NO: worst complete window -1%, d mean L6M 1074 | delta_mult (aggressor delta against / MedLevel over win); persist=<s> (consecutive seconds); tighten latched trail semantics (ratchet in favour only) - check v1.5 tighten; win=<s> (feature window) |
 | H7 | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5` | NO: worst complete window -0%, d mean L6M 367 | OR between two conditions; dd (points given back from the favourable extreme) as a condition; persist=<s> (consecutive seconds) |
-| A7 | `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8` | NO: worst complete window -10%, d mean L6M 320 | delta_mult (aggressor delta against / MedLevel over win); persist=<s> (consecutive seconds); tighten latched trail semantics (ratchet in favour only) - check v1.5 tighten; win=<s> (feature window) |
+| A7 | `profit A7 * pct>=0.3 pulled_against_mult>=50 pulled_mult>=30 take win=15 persist=1 wall_ticks=8` | NO: worst complete window -1%, d mean L6M 554 | persist=<s> (consecutive seconds); pulled_against_mult (OTHER side cancelled / MedLevel); win=<s> (feature window) |
 | O7 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` | NO: worst complete window -1%, d mean L6M 30 | delta_mult (aggressor delta against / MedLevel over win); persist=<s> (consecutive seconds); win=<s> (feature window) |
 
 v1.7 profit state engine (grammar of the order): one evaluation per exchange second on the 1-s top-10 state, decision at the close of second s, market exit at the next print; features pct, secs_fav, pulled_mult, pulled_against_mult, wall_ahead_mult (wall_ticks), ice_against, imb5/imb10, delta_mult, tot_rel, ahead_rel, sweep_against, dd; actions take / tighten X (ratchet in favour only) / lock X / step X / scale F; modifiers win=, persist=; AND / OR between two conditions.
@@ -75,13 +75,13 @@ v1.7 profit state engine (grammar of the order): one evaluation per exchange sec
 
 | book | best line at 21:22Z (set, complete windows) | best line now (set, complete windows) | changed? |
 |---|---|---|---|
-| K7 | `profit K7 * pct>=0.4 dd>=3 lock 0 persist=5` (PTR_K7_01, 6 windows) | `profit K7 * pct>=0.4 dd>=3 lock 0 persist=5` (PTR_K7_01, 6 windows) | same |
-| P7 | `profit P7 * pct>=0.2 pulled_mult>=50 tot_rel_slow>=1.2 take win=15 persist=1` (PTR_P7_01, 5 windows) | `profit P7 * pct>=0.2 pulled_mult>=50 tot_rel_slow>=1.2 take win=15 persist=1` (PTR_P7_01, 5 windows) | same |
-| M7 | `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8` (PTR_M7_S01, 5 windows) | `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8` (PTR_M7_S01, 5 windows) | same |
-| U7 | `profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5` (PTR_U7_S01, 4 windows) | `profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5` (PTR_U7_S01, 4 windows) | same |
-| H7 | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5` (PTR_H7_01, 5 windows) | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5` (PTR_H7_01, 5 windows) | same |
-| A7 | `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8` (PTR_A7_01, 6 windows) | `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8` (PTR_A7_01, 6 windows) | same |
-| O7 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` (PTR_O7_01, 5 windows) | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` (PTR_O7_01, 5 windows) | same |
+| K7 | `profit K7 * pct>=0.4 dd>=3 lock 0 persist=5` (PTR_K7_01, 6 windows) | `profit K7 * pct>=0.3 delta_mult>=5 lock 0 win=10 persist=10` (PTR_K7_02, 6 windows) | NEW LINE |
+| P7 | `profit P7 * pct>=0.2 pulled_mult>=50 tot_rel_slow>=1.2 take win=15 persist=1` (PTR_P7_01, 5 windows) | `profit P7 * pct>=0.3 pulled_against_mult>=5 tighten 5 win=5 persist=10` (PTR_P7_02, 6 windows) | NEW LINE |
+| M7 | `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8` (PTR_M7_S01, 5 windows) | `profit M7 * pct>=0.3 tot_rel>=2 step 10 win=0 persist=2 wall_ticks=8` (PTR_M7_S01, 6 windows) | more windows complete |
+| U7 | `profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5` (PTR_U7_S01, 4 windows) | `profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5` (PTR_U7_S01, 6 windows) | more windows complete |
+| H7 | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5` (PTR_H7_01, 5 windows) | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5` (PTR_H7_01, 6 windows) | more windows complete |
+| A7 | `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8` (PTR_A7_01, 6 windows) | `profit A7 * pct>=0.3 pulled_against_mult>=50 pulled_mult>=30 take win=15 persist=1 wall_ticks=8` (PTR_A7_S01, 6 windows) | NEW LINE |
+| O7 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` (PTR_O7_01, 5 windows) | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` (PTR_O7_01, 6 windows) | more windows complete |
 
 Dead-cell discipline: dead_lookup (family level, 190 K7 / 194 P7 distinct feature x action specs, 0 EXACT/NEAR hits) and append_cells of 18,578 scored cells per book (K7, P7) to DEAD_CELLS.csv, program PTRL2 (code/th_ptr/ptr_dead.py); the other books' cells are appended by their screen owners.
 
@@ -92,7 +92,7 @@ First-order top-20 by the recents key (mean equal-mean cut on L6M/L3M/L1M), at m
 | # | line | fires | FO cut L6M/L3M/L1M | FO cut HOLD/PRE/X' | FO d mean L6M / PRE | placebo p / family p / WF2w % | EXACT cut L6M/L3M/L1M/HOLD/PRE/X' | EXACT d mean L6M | rule 2a (FO) |
 |---|---|---|---|---|---|---|---|---|---|
 | K7_01 | `profit K7 * pct>=0.4 dd>=3 lock 0 persist=5` | 2060 | 32/32/14 | -2/-7/15 | 1266 / -1147 | 0.74 / 1.00 / 29 | 37/37/13/-10/-12/15 | 1212 | OK-PRIOR |
-| K7_02 | `profit K7 * pct>=0.3 delta_mult>=5 lock 0 win=10 persist=10` | 2115 | 33/33/10 | 5/-2/10 | 1542 / -1045 | 0.41 / 1.00 / 46 | 32/32/-2/-5/1/- | -435 | OK-PRIOR |
+| K7_02 | `profit K7 * pct>=0.3 delta_mult>=5 lock 0 win=10 persist=10` | 2115 | 33/33/10 | 5/-2/10 | 1542 / -1045 | 0.41 / 1.00 / 46 | 32/32/-2/-5/1/14 | -435 | OK-PRIOR |
 | K7_03 | `profit K7 * pct>=0.4 dd>=5 lock 0 persist=5` | 1865 | 34/34/9 | 2/-2/10 | 1213 / -741 | 0.64 / 1.00 / 41 | 35/35/13/-/-/- | 208 | OK-PRIOR |
 | K7_04 | `profit K7 * pct>=0.5 sweep_against>=2 lock 0 win=15 persist=3` | 1847 | 33/33/9 | 0/-6/10 | 1114 / -787 | 0.63 / 1.00 / 33 | 31/31/13/-/-/- | 69 | OK-PRIOR |
 | K7_05 | `profit K7 * pct>=0.5 pulled_against_mult>=3 tighten 30 win=5 persist=3` | 2397 | 32/32/13 | 3/-2/16 | 812 / -1141 | 0.41 / 1.00 / 33 | 30/30/22/-/-/- | 853 | OK-PRIOR |
@@ -154,25 +154,25 @@ Best cell per action type (stage 2/3, first-order, by the recents key):
 
 Loss-cut mirror (pulled_mult at a new favourable extreme, secs_fav<=0): best arm 0.3 x pulled_mult>=10.0 win 5 persist 1: fires 2507, cut L6M/L3M/L1M 28/28/-2, PRE 0, d mean L6M -38.
 
-Slip sensitivity of the best line `profit K7 * pct>=0.4 dd>=3 lock 0 persist=5` (first-order, stack cut % / d mean $/wk):
+Slip sensitivity of the best line `profit K7 * pct>=0.3 delta_mult>=5 lock 0 win=10 persist=10` (first-order, stack cut % / d mean $/wk):
 
 | slip pts | cut L6M | cut L3M | cut L1M | cut HOLD | cut PRE | cut X' | d mean L6M | d mean PRE |
 |---|---|---|---|---|---|---|---|---|
-| 0.57 | 33 | 33 | 15 | -1 | -6 | 16 | 1527 | -997 |
-| 0.80 | 33 | 33 | 15 | -1 | -7 | 16 | 1432 | -1052 |
-| 1.20 | 32 | 32 | 14 | -2 | -7 | 15 | 1266 | -1147 |
-| 1.60 | 32 | 32 | 14 | -2 | -8 | 14 | 1101 | -1241 |
+| 0.57 | 33 | 33 | 11 | 6 | -1 | 11 | 1793 | -892 |
+| 0.80 | 33 | 33 | 10 | 5 | -2 | 11 | 1702 | -948 |
+| 1.20 | 33 | 33 | 10 | 5 | -2 | 10 | 1542 | -1045 |
+| 1.60 | 32 | 32 | 10 | 5 | -2 | 9 | 1383 | -1143 |
 
-By window (best line, slip 1.2, first-order): L1M cut 14 / d mean 191; L3M cut 32 / d mean 2313; L6M cut 32 / d mean 1266; HOLD cut -2 / d mean -639; PRE cut -7 / d mean -1147; X' cut 15 / d mean 608. The held-out live week (11-01..05) sits inside L1M, a trending week: P7 carried about $159k of Targets that week, so any rule that exits winners early pays for itself only in the choppy weeks of the history; the single-week replay (REDO-R13: autopilot/R13_TRAIL_LIVE_REPLAY_BOOKS.md) and the 43-month first-order table are different regimes and are both shown, not averaged.
+By window (best line, slip 1.2, first-order): L1M cut 10 / d mean -842; L3M cut 33 / d mean 2133; L6M cut 33 / d mean 1542; HOLD cut 5 / d mean -156; PRE cut -2 / d mean -1045; X' cut 10 / d mean 695. The held-out live week (11-01..05) sits inside L1M, a trending week: P7 carried about $159k of Targets that week, so any rule that exits winners early pays for itself only in the choppy weeks of the history; the single-week replay (REDO-R13: autopilot/R13_TRAIL_LIVE_REPLAY_BOOKS.md) and the 43-month first-order table are different regimes and are both shown, not averaged.
 
 By entry session (the same line applied to one session only; stack effect): 
 
 | session | trades | fires | cut L6M | cut PRE | d mean L6M | d mean PRE |
 |---|---|---|---|---|---|---|
-| asia | 1893 | 708 | 14 | -14 | 391 | -463 |
-| london | 1378 | 524 | 10 | -2 | -34 | -388 |
-| nyam | 1301 | 473 | 1 | 6 | 283 | -320 |
-| nypm | 1055 | 355 | 7 | 4 | 107 | -167 |
+| asia | 1893 | 723 | 13 | -10 | 39 | -366 |
+| london | 1378 | 536 | 10 | 0 | 483 | -355 |
+| nyam | 1301 | 495 | 3 | 3 | 162 | -180 |
+| nypm | 1055 | 361 | 7 | 5 | -200 | -216 |
 
 ## P7 (3937 trades with a path; no-rule = LPB_BASE reference row: cut 0 by definition)
 
@@ -180,12 +180,12 @@ First-order top-20 by the recents key (mean equal-mean cut on L6M/L3M/L1M), at m
 
 | # | line | fires | FO cut L6M/L3M/L1M | FO cut HOLD/PRE/X' | FO d mean L6M / PRE | placebo p / family p / WF2w % | EXACT cut L6M/L3M/L1M/HOLD/PRE/X' | EXACT d mean L6M | rule 2a (FO) |
 |---|---|---|---|---|---|---|---|---|---|
-| P7_PC01 | `profit P7 * pct>=0.2 pulled_mult>=30 secs_fav<=5 take win=15 persist=2 wall_ticks=8` | 2031 | 66/71/60 | 1/41/15 | 1271 / -392 | - / - / - | 12/12/32/-30/-/- | -3927 | nan |
-| P7_PC02 | `profit P7 * pct>=0.2 pulled_mult>=30 secs_fav<=5 take win=15 persist=3 wall_ticks=8` | 1785 | 67/67/50 | 10/48/12 | 1574 / 42 | - / - / - | -0/-0/35/-27/-/- | -2757 | nan |
+| P7_PC01 | `profit P7 * pct>=0.2 pulled_mult>=30 secs_fav<=5 take win=15 persist=2 wall_ticks=8` | 2031 | 66/71/60 | 1/41/15 | 1271 / -392 | - / - / - | 12/12/32/-30/8/1 | -3927 | nan |
+| P7_PC02 | `profit P7 * pct>=0.2 pulled_mult>=30 secs_fav<=5 take win=15 persist=3 wall_ticks=8` | 1785 | 67/67/50 | 10/48/12 | 1574 / 42 | - / - / - | -0/-0/35/-27/17/-6 | -2757 | nan |
 | P7_PC03 | `profit P7 * pct>=0.2 pulled_mult>=20 secs_fav<=5 take win=8 persist=2 wall_ticks=8` | 1979 | 65/65/48 | -15/18/16 | 1762 / 353 | - / - / - | 3/3/45/-/-/- | -6615 | nan |
 | P7_PC04 | `profit P7 * pct>=0.2 pulled_mult>=30 secs_fav<=2 take win=15 persist=1 wall_ticks=8` | 1937 | 63/63/47 | 21/37/14 | 2048 / 753 | - / - / - | 17/17/43/-/-/- | -3588 | nan |
-| P7_01 | `profit P7 * pct>=0.2 pulled_mult>=50 tot_rel_slow>=1.2 take win=15 persist=1` | 994 | 62/62/66 | 15/-24/1 | -374 / -854 | 0.95 / 1.00 / 16 | 24/24/62/-17/-29/- | -1376 | RECENT-ONLY |
-| P7_02 | `profit P7 * pct>=0.3 pulled_against_mult>=5 tighten 5 win=5 persist=10` | 3217 | 65/65/61 | -6/22/25 | -1172 / -1172 | 0.01 / 0.04 / 58 | 17/17/18/-17/-/- | -6486 | OK-PRIOR |
+| P7_01 | `profit P7 * pct>=0.2 pulled_mult>=50 tot_rel_slow>=1.2 take win=15 persist=1` | 994 | 62/62/66 | 15/-24/1 | -374 / -854 | 0.95 / 1.00 / 16 | 24/24/62/-17/-29/2 | -1376 | RECENT-ONLY |
+| P7_02 | `profit P7 * pct>=0.3 pulled_against_mult>=5 tighten 5 win=5 persist=10` | 3217 | 65/65/61 | -6/22/25 | -1172 / -1172 | 0.01 / 0.04 / 58 | 17/17/18/-17/-7/15 | -6486 | OK-PRIOR |
 | P7_PC06 | `profit P7 * pct>=0.2 pulled_mult>=20 secs_fav<=5 take win=8 persist=3 wall_ticks=8` | 1582 | 60/60/51 | -11/12/20 | 1562 / 1001 | - / - / - | -/-/-/-/-/- | - | nan |
 | P7_03 | `profit P7 * pct>=0.3 pulled_against_mult>=5 step 5 win=5 persist=10` | 3170 | 62/71/62 | -1/19/29 | -1932 / -1189 | 0.01 / 0.19 / 58 | 10/25/17/-/-/- | -6748 | OK-PRIOR |
 | P7_04 | `profit P7 * pct>=0.3 pulled_against_mult>=20 tighten 5 win=8 persist=3` | 2949 | 67/67/54 | 20/15/22 | -1160 / -1011 | 0.04 / 0.63 / 62 | 19/19/15/-/-/- | -6667 | OK-PRIOR |
@@ -243,24 +243,24 @@ Best cell per action type (stage 2/3, first-order, by the recents key):
 
 Loss-cut mirror (pulled_mult at a new favourable extreme, secs_fav<=0): best arm 0.3 x pulled_mult>=5.0 win 3 persist 1: fires 2411, cut L6M/L3M/L1M 55/55/59, PRE -8, d mean L6M 722.
 
-Slip sensitivity of the best line `profit P7 * pct>=0.2 pulled_mult>=50 tot_rel_slow>=1.2 take win=15 persist=1` (first-order, stack cut % / d mean $/wk):
+Slip sensitivity of the best line `profit P7 * pct>=0.3 pulled_against_mult>=5 tighten 5 win=5 persist=10` (first-order, stack cut % / d mean $/wk):
 
 | slip pts | cut L6M | cut L3M | cut L1M | cut HOLD | cut PRE | cut X' | d mean L6M | d mean PRE |
 |---|---|---|---|---|---|---|---|---|
-| 0.57 | 64 | 64 | 68 | 17 | -23 | 2 | 336 | -694 |
-| 0.80 | 63 | 63 | 67 | 16 | -23 | 2 | 77 | -753 |
-| 1.20 | 62 | 62 | 66 | 15 | -24 | 1 | -374 | -854 |
-| 1.60 | 61 | 61 | 65 | 15 | -24 | 1 | -826 | -956 |
+| 0.57 | 67 | 69 | 63 | -0 | 26 | 34 | 46 | -511 |
+| 0.80 | 66 | 67 | 62 | -3 | 24 | 31 | -399 | -752 |
+| 1.20 | 65 | 65 | 61 | -6 | 22 | 25 | -1172 | -1172 |
+| 1.60 | 62 | 62 | 59 | -10 | 19 | 19 | -1944 | -1591 |
 
-By window (best line, slip 1.2, first-order): L1M cut 66 / d mean -2818; L3M cut 62 / d mean 914; L6M cut 62 / d mean -374; HOLD cut 15 / d mean -2632; PRE cut -24 / d mean -854; X' cut 1 / d mean -430. The held-out live week (11-01..05) sits inside L1M, a trending week: P7 carried about $159k of Targets that week, so any rule that exits winners early pays for itself only in the choppy weeks of the history; the single-week replay (REDO-R13: autopilot/R13_TRAIL_LIVE_REPLAY_BOOKS.md) and the 43-month first-order table are different regimes and are both shown, not averaged.
+By window (best line, slip 1.2, first-order): L1M cut 61 / d mean 4675; L3M cut 65 / d mean 6251; L6M cut 65 / d mean -1172; HOLD cut -6 / d mean -4724; PRE cut 22 / d mean -1172; X' cut 25 / d mean -29. The held-out live week (11-01..05) sits inside L1M, a trending week: P7 carried about $159k of Targets that week, so any rule that exits winners early pays for itself only in the choppy weeks of the history; the single-week replay (REDO-R13: autopilot/R13_TRAIL_LIVE_REPLAY_BOOKS.md) and the 43-month first-order table are different regimes and are both shown, not averaged.
 
 By entry session (the same line applied to one session only; stack effect): 
 
 | session | trades | fires | cut L6M | cut PRE | d mean L6M | d mean PRE |
 |---|---|---|---|---|---|---|
-| asia | 1768 | 460 | 32 | -17 | -485 | -193 |
-| london | 1208 | 357 | 8 | -1 | -647 | -417 |
-| nyam | 961 | 177 | 10 | -6 | 264 | 343 |
+| asia | 1768 | 1445 | 22 | 15 | -1733 | -778 |
+| london | 1208 | 999 | 21 | 9 | 30 | -239 |
+| nyam | 961 | 773 | 18 | -4 | 1272 | -234 |
 
 ## M7 (3423 trades with a path; no-rule = LPB_BASE reference row: cut 0 by definition)
 
@@ -270,8 +270,8 @@ First-order top-20 by the recents key (mean equal-mean cut on L6M/L3M/L1M), at m
 |---|---|---|---|---|---|---|---|---|---|
 | M7_PC01 | `profit M7 * pct>=0.2 pulled_mult>=3 secs_fav<=10 take win=5 persist=3 wall_ticks=8` | 3304 | 32/32/11 | 13/-4/-24 | -486 / -709 | - / - / - | -/-/-/-/-/- | - | nan |
 | M7_03 | `profit M7 * pct>=0.2 pulled_mult>=3 tighten 5 win=5 persist=3 wall_ticks=8` | 3312 | 32/32/12 | 12/-5/-25 | -520 / -760 | 0.97 / 1.00 / 37 | 27/27/4/-/-/- | -1318 | OK-PRIOR |
-| M7_02 | `profit M7 * pct>=0.2 pulled_mult>=3 take win=5 persist=3 wall_ticks=8` | 3320 | 32/32/11 | 13/-2/-24 | -521 / -694 | 0.71 / 1.00 / 39 | 26/26/3/10/-20/- | -781 | OK-PRIOR |
-| M7_01 | `profit M7 * pct>=0.2 sweep_against>=3 take win=8 persist=2 wall_ticks=8` | 3349 | 33/33/10 | 17/-2/-24 | -636 / -674 | 0.66 / 1.00 / 41 | 25/25/2/14/-20/- | -1583 | OK-PRIOR |
+| M7_02 | `profit M7 * pct>=0.2 pulled_mult>=3 take win=5 persist=3 wall_ticks=8` | 3320 | 32/32/11 | 13/-2/-24 | -521 / -694 | 0.71 / 1.00 / 39 | 26/26/3/10/-20/-12 | -781 | OK-PRIOR |
+| M7_01 | `profit M7 * pct>=0.2 sweep_against>=3 take win=8 persist=2 wall_ticks=8` | 3349 | 33/33/10 | 17/-2/-24 | -636 / -674 | 0.66 / 1.00 / 41 | 25/25/2/14/-20/-8 | -1583 | OK-PRIOR |
 | M7_PC02 | `profit M7 * pct>=0.2 pulled_mult>=3 secs_fav<=5 take win=5 persist=3 wall_ticks=8` | 3292 | 31/31/11 | 13/-3/-26 | -480 / -670 | - / - / - | -/-/-/-/-/- | - | nan |
 | M7_PC05 | `profit M7 * pct>=0.2 pulled_mult>=10 secs_fav<=5 take win=5 persist=1 wall_ticks=8` | 3064 | 30/30/13 | 20/-4/-12 | -454 / -755 | - / - / - | -/-/-/-/-/- | - | nan |
 | M7_04 | `profit M7 * pct>=0.2 sweep_against>=4 take win=8 persist=2 wall_ticks=8` | 3323 | 32/32/11 | 17/-1/-23 | -630 / -662 | 0.42 / 1.00 / 41 | 25/25/3/-/-/- | -799 | OK-PRIOR |
@@ -327,8 +327,8 @@ First-order top-20 by the recents key (mean equal-mean cut on L6M/L3M/L1M), at m
 
 | # | line | fires | FO cut L6M/L3M/L1M | FO cut HOLD/PRE/X' | FO d mean L6M / PRE | placebo p / family p / WF2w % | EXACT cut L6M/L3M/L1M/HOLD/PRE/X' | EXACT d mean L6M | rule 2a (FO) |
 |---|---|---|---|---|---|---|---|---|---|
-| U7_01 | `profit U7 * pct>=0.3 pulled_against_mult>=20 ahead_rel_slow>=1.2 take win=5 persist=3` | 252 | 27/27/25 | -0/4/-10 | 1087 / -260 | 0.27 / 0.99 / 14 | 17/17/25/-1/-/- | 585 | OK-PRIOR |
-| U7_02 | `profit U7 * pct>=0.3 pulled_against_mult>=20 tighten 20 win=5 persist=5` | 285 | 26/26/28 | -12/-0/-2 | 723 / -601 | 0.54 / 1.00 / 10 | 16/16/28/-12/-/- | 389 | OK-PRIOR |
+| U7_01 | `profit U7 * pct>=0.3 pulled_against_mult>=20 ahead_rel_slow>=1.2 take win=5 persist=3` | 252 | 27/27/25 | -0/4/-10 | 1087 / -260 | 0.27 / 0.99 / 14 | 17/17/25/-1/3/-14 | 585 | OK-PRIOR |
+| U7_02 | `profit U7 * pct>=0.3 pulled_against_mult>=20 tighten 20 win=5 persist=5` | 285 | 26/26/28 | -12/-0/-2 | 723 / -601 | 0.54 / 1.00 / 10 | 16/16/28/-12/-0/-1 | 389 | OK-PRIOR |
 | U7_03 | `profit U7 * pct>=0.3 pulled_against_mult>=20 step 5 win=5 persist=5` | 354 | 29/29/29 | -10/-1/-0 | 46 / -461 | 0.67 / 1.00 / 9 | 16/16/29/-/-/- | -374 | OK-PRIOR |
 | U7_04 | `profit U7 * pct>=0.3 pulled_against_mult>=20 take win=5 persist=5` | 375 | 29/29/27 | -10/-1/-0 | 40 / -455 | 0.62 / 1.00 / 10 | 16/16/28/-/-/- | -435 | OK-PRIOR |
 | U7_05 | `profit U7 * pct>=0.3 pulled_against_mult>=20 tighten 8 win=5 persist=5` | 353 | 29/29/27 | -9/-1/-0 | 51 / -484 | 0.52 / 1.00 / 9 | 17/17/27/-/-/- | -369 | OK-PRIOR |
@@ -336,17 +336,17 @@ First-order top-20 by the recents key (mean equal-mean cut on L6M/L3M/L1M), at m
 | U7_07 | `profit U7 * pct>=0.4 delta_mult>=20 step 5 win=15 persist=5` | 399 | 28/28/10 | -7/5/6 | 1608 / -564 | 0.32 / 1.00 / 25 | -/-/-/-/-/- | - | OK-PRIOR |
 | U7_08 | `profit U7 * pct>=0.3 delta_mult>=30 take win=15 persist=1` | 376 | 23/23/17 | -9/1/2 | 1663 / -2 | 0.54 / 1.00 / 22 | -/-/-/-/-/- | - | OK-PRIOR |
 | U7_09 | `profit U7 * pct>=0.3 delta_mult>=30 tighten 8 win=15 persist=1` | 369 | 25/25/16 | -9/2/1 | 1653 / -14 | 0.55 / 1.00 / 22 | -/-/-/-/-/- | - | OK-PRIOR |
-| U7_S01 | `profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5` | 257 | 25/25/15 | -0/4/-0 | 1617 / -689 | - / - / - | 9/9/15/-1/-/- | 1074 | nan |
+| U7_S01 | `profit U7 * pct>=0.4 delta_mult>=20 tighten 30 win=15 persist=5` | 257 | 25/25/15 | -0/4/-0 | 1617 / -689 | - / - / - | 9/9/15/-1/4/1 | 1074 | nan |
 | U7_10 | `profit U7 * pct>=0.2 pulled_against_mult>=30 imb5<=-0.3 take win=8 persist=1` | 425 | 26/26/25 | -5/1/-3 | 326 / -202 | 0.56 / 1.00 / 16 | -/-/-/-/-/- | - | OK-PRIOR |
 | U7_S02 | `profit U7 * pct>=0.4 delta_mult>=30 step 5 win=15 persist=1` | 311 | 24/24/16 | -5/2/0 | 1195 / -65 | - / - / - | -/-/-/-/-/- | - | nan |
 | U7_PC06 | `profit U7 * pct>=0.5 pulled_mult>=10 secs_fav<=2 take win=15 persist=10 wall_ticks=8` | 331 | 29/29/6 | -4/8/5 | 1324 / 294 | - / - / - | -/-/-/-/-/- | - | nan |
 | U7_PC04 | `profit U7 * pct>=0.5 pulled_mult>=5 secs_fav<=2 take win=10 persist=10 wall_ticks=8` | 342 | 29/29/6 | -3/12/3 | 1301 / 108 | - / - / - | 21/21/6/-/-/- | 754 | nan |
 | U7_11 | `profit U7 * pct>=0.3 pulled_against_mult>=20 ahead_rel>=1.2 take win=5 persist=3` | 251 | 25/25/24 | -2/4/-7 | 341 / -253 | 0.30 / 1.00 / 13 | -/-/-/-/-/- | - | OK-PRIOR |
 | U7_S03 | `profit U7 * pct>=0.5 pulled_against_mult>=50 tighten 30 win=15 persist=1` | 172 | 21/21/10 | -1/1/-4 | 1973 / -104 | - / - / - | -/-/-/-/-/- | - | nan |
-| U7_PC01 | `profit U7 * pct>=0.5 pulled_mult>=3 secs_fav<=2 take win=8 persist=10 wall_ticks=8` | 404 | 29/29/6 | -4/11/7 | 1101 / 366 | - / - / - | 33/33/6/-7/-/- | 958 | nan |
+| U7_PC01 | `profit U7 * pct>=0.5 pulled_mult>=3 secs_fav<=2 take win=8 persist=10 wall_ticks=8` | 404 | 29/29/6 | -4/11/7 | 1101 / 366 | - / - / - | 33/33/6/-7/11/7 | 958 | nan |
 | U7_S04 | `profit U7 * pct>=0.5 pulled_against_mult>=50 step 20 win=15 persist=1` | 169 | 21/21/10 | -5/1/-4 | 1875 / -39 | - / - / - | -/-/-/-/-/- | - | nan |
 | U7_PC05 | `profit U7 * pct>=0.5 pulled_mult>=5 secs_fav<=2 take win=15 persist=10 wall_ticks=8` | 515 | 29/29/6 | -4/10/8 | 996 / 260 | - / - / - | 33/33/6/-/-/- | 845 | nan |
-| U7_PC02 | `profit U7 * pct>=0.5 pulled_mult>=3 secs_fav<=2 take win=10 persist=10 wall_ticks=8` | 487 | 29/29/6 | -4/10/3 | 996 / 463 | - / - / - | 33/33/6/-7/-/- | 845 | nan |
+| U7_PC02 | `profit U7 * pct>=0.5 pulled_mult>=3 secs_fav<=2 take win=10 persist=10 wall_ticks=8` | 487 | 29/29/6 | -4/10/3 | 996 / 463 | - / - / - | 33/33/6/-7/10/1 | 845 | nan |
 | U7_PC03 | `profit U7 * pct>=0.5 pulled_mult>=3 secs_fav<=2 take win=15 persist=10 wall_ticks=8` | 565 | 29/29/6 | -4/10/3 | 996 / 259 | - / - / - | 33/33/6/-/-/- | 845 | nan |
 | U7_12 | `profit U7 * pct>=0.2 pulled_mult>=5 secs_fav<=0 take win=5 persist=3` | 427 | 29/29/26 | -4/9/9 | -999 / -555 | 0.11 / 0.87 / 18 | -/-/-/-/-/- | - | OK-PRIOR |
 | U7_13 | `profit U7 * pct>=0.2 pulled_against_mult>=30 imb5<=-0.3 tighten 16 win=8 persist=1` | 370 | 25/25/19 | -6/1/-3 | 364 / -139 | 0.52 / 1.00 / 18 | -/-/-/-/-/- | - | OK-PRIOR |
@@ -399,8 +399,8 @@ First-order top-20 by the recents key (mean equal-mean cut on L6M/L3M/L1M), at m
 
 | # | line | fires | FO cut L6M/L3M/L1M | FO cut HOLD/PRE/X' | FO d mean L6M / PRE | placebo p / family p / WF2w % | EXACT cut L6M/L3M/L1M/HOLD/PRE/X' | EXACT d mean L6M | rule 2a (FO) |
 |---|---|---|---|---|---|---|---|---|---|
-| H7_01 | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5` | 463 | 10/10/0 | 3/2/17 | 597 / -394 | 0.04 / 0.38 / 34 | 5/5/0/3/-0/- | 367 | OK-PRIOR |
-| H7_02 | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 tighten 16 persist=5` | 396 | 9/9/0 | 3/2/16 | 516 / -355 | 0.04 / 0.55 / 33 | 4/4/0/3/-0/- | 286 | OK-PRIOR |
+| H7_01 | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 take persist=5` | 463 | 10/10/0 | 3/2/17 | 597 / -394 | 0.04 / 0.38 / 34 | 5/5/0/3/-0/20 | 367 | OK-PRIOR |
+| H7_02 | `profit H7 * pct>=0.4 dd>=20 or ice_against>=3 tighten 16 persist=5` | 396 | 9/9/0 | 3/2/16 | 516 / -355 | 0.04 / 0.55 / 33 | 4/4/0/3/-0/18 | 286 | OK-PRIOR |
 | H7_03 | `profit H7 * pct>=0.3 pulled_mult>=20 secs_fav<=0 take win=10 persist=2` | 138 | 9/9/-0 | -3/-3/0 | 228 / -295 | 0.47 / 1.00 / 3 | 11/11/0/-/-/- | -262 | OK-PRIOR |
 | H7_04 | `profit H7 * pct>=0.2 ice_against>=3 or pulled_mult>=30 take win=5 persist=3` | 516 | 7/7/4 | -3/2/11 | 245 / -578 | 0.26 / 1.00 / 23 | 7/7/4/-/-/- | 319 | OK-PRIOR |
 | H7_05 | `profit H7 * pct>=0.5 dd>=16 tighten 20 persist=10` | 219 | 7/7/0 | -1/1/14 | 442 / -324 | 0.14 / 0.85 / 11 | 2/2/0/-/-/- | 189 | OK-PRIOR |
@@ -410,7 +410,7 @@ First-order top-20 by the recents key (mean equal-mean cut on L6M/L3M/L1M), at m
 | H7_09 | `profit H7 * pct>=0.5 dd>=16 or sweep_against>=8 take win=3 persist=5` | 366 | 8/8/-2 | -2/-3/9 | 363 / -336 | 0.14 / 0.94 / 11 | 5/5/-0/-/-/- | 118 | OK-PRIOR |
 | H7_10 | `profit H7 * pct>=0.4 sweep_against>=8 step 5 win=5 persist=10` | 200 | 9/9/-2 | -2/-5/6 | 232 / -126 | 0.75 / 1.00 / 1 | 8/8/-1/-/-/- | 17 | OK-PRIOR |
 | H7_11 | `profit H7 * pct>=0.5 ice_against>=1 tighten 8 persist=3` | 585 | 8/8/-1 | 2/-9/6 | 284 / -620 | 0.40 / 1.00 / 32 | 6/6/1/-/-/- | 39 | OK-PRIOR |
-| H7_S01 | `profit H7 * pct>=0.5 dd>=16 or sweep_against>=8 tighten 16 win=3 persist=5` | 318 | 6/6/2 | -1/-3/10 | 266 / -393 | - / - / - | 3/3/2/-1/-2/- | 115 | nan |
+| H7_S01 | `profit H7 * pct>=0.5 dd>=16 or sweep_against>=8 tighten 16 win=3 persist=5` | 318 | 6/6/2 | -1/-3/10 | 266 / -393 | - / - / - | 3/3/2/-1/-2/11 | 115 | nan |
 | H7_S02 | `profit H7 * pct>=0.5 dd>=16 tighten 12 persist=10` | 238 | 6/6/0 | -1/1/15 | 414 / -266 | - / - / - | -/-/-/-/-/- | - | nan |
 | H7_S03 | `profit H7 * pct>=0.5 dd>=16 tighten 5 persist=10` | 238 | 6/6/0 | -1/1/15 | 414 / -266 | - / - / - | -/-/-/-/-/- | - | nan |
 | H7_S04 | `profit H7 * pct>=0.2 ice_against>=3 or pulled_mult>=30 tighten 16 win=5 persist=3` | 458 | 6/6/3 | -3/2/13 | 179 / -362 | - / - / - | -/-/-/-/-/- | - | nan |
@@ -485,7 +485,7 @@ First-order top-20 by the recents key (mean equal-mean cut on L6M/L3M/L1M), at m
 | A7_PC08 | `profit A7 * pct>=0.3 pulled_mult>=5 secs_fav<=2 take win=8 persist=10 wall_ticks=8` | 316 | 12/12/-3 | 2/1/-1 | -10 / -153 | - / - / - | -/-/-/-/-/- | - | nan |
 | A7_PC16 | `profit A7 * pct>=0.2 pulled_mult>=10 secs_fav<=10 take win=3 persist=2 wall_ticks=8` | 748 | 9/9/6 | 6/3/-3 | -188 / -215 | - / - / - | -/-/-/-/-/- | - | nan |
 | A7_PC19 | `profit A7 * pct>=0.2 pulled_mult>=10 secs_fav<=10 take win=8 persist=10 wall_ticks=8` | 636 | 9/9/4 | 4/1/-3 | -192 / -303 | - / - / - | -/-/-/-/-/- | - | nan |
-| A7_02 | `profit A7 * pct>=0.3 pulled_against_mult>=30 or pulled_mult>=20 take win=10 persist=3 wall_ticks=8` | 811 | 10/10/2 | 2/2/-4 | -221 / -122 | 0.08 / 0.73 / 43 | 8/8/-1/2/-9/- | -878 | OK-PRIOR |
+| A7_02 | `profit A7 * pct>=0.3 pulled_against_mult>=30 or pulled_mult>=20 take win=10 persist=3 wall_ticks=8` | 811 | 10/10/2 | 2/2/-4 | -221 / -122 | 0.08 / 0.73 / 43 | 8/8/-1/2/-9/-2 | -878 | OK-PRIOR |
 | A7_14 | `profit A7 * pct>=0.3 delta_mult>=2 take win=5 persist=1 wall_ticks=8` | 893 | 9/9/2 | 3/1/-5 | -97 / -376 | 0.02 / 0.73 / 44 | 7/7/2/-/-/- | 820 | OK-PRIOR |
 | A7_20 | `profit A7 * pct>=0.3 sweep_against>=6 pulled_mult>=10 take win=3 persist=1 wall_ticks=8` | 832 | 10/10/2 | 2/2/-5 | -206 / -184 | 0.05 / 0.75 / 43 | 5/5/19/-/-/- | -529 | OK-PRIOR |
 | A7_04 | `profit A7 * pct>=0.3 pulled_mult>=30 sweep_against>=6 take win=15 persist=1 wall_ticks=8` | 760 | 10/10/2 | 4/2/-0 | -237 / -128 | 0.14 / 0.91 / 35 | 5/5/18/-/-/- | -624 | OK-PRIOR |
@@ -506,22 +506,22 @@ Placebo (random exit at the same pct, same count) and family null over the profi
 
 Family null over the WHOLE profit set of A7 (SZ-IJK, stage 1+2 cells with >= 20 fires, B=100, slip 1.2, bucketed placebo = approximation): 356 of 6894 cells have family p < .05 (5.2%; around 5% is what the null alone gives); cells with own p < .05: 427 (expected by chance 345); the best single lines reach the B=100 floor (p about 0.01), use for ranking only.
 
-Slip sensitivity of the best line `profit A7 * pct>=0.3 delta_mult>=2 tighten 5 win=2 persist=2 wall_ticks=8` (first-order, stack cut % / d mean $/wk):
+Slip sensitivity of the best line `profit A7 * pct>=0.3 pulled_against_mult>=50 pulled_mult>=30 take win=15 persist=1 wall_ticks=8` (first-order, stack cut % / d mean $/wk):
 
 | slip pts | cut L6M | cut L3M | cut L1M | cut HOLD | cut PRE | cut X' | d mean L6M | d mean PRE |
 |---|---|---|---|---|---|---|---|---|
-| 0.57 | 10 | 10 | 5 | 2 | 2 | -3 | -722 | -299 |
-| 0.80 | 10 | 10 | 5 | 2 | 2 | -3 | -766 | -316 |
-| 1.20 | 10 | 10 | 4 | 2 | 2 | -4 | -841 | -346 |
-| 1.60 | 10 | 10 | 4 | 2 | 2 | -4 | -363 | -375 |
+| 0.57 | 11 | 11 | -5 | 3 | -2 | -0 | -233 | -171 |
+| 0.80 | 10 | 10 | -5 | 3 | -2 | -0 | -257 | -173 |
+| 1.20 | 10 | 10 | -5 | 3 | -2 | -0 | -299 | -178 |
+| 1.60 | 10 | 10 | -5 | 3 | -2 | -0 | -340 | -182 |
 
-By window (best line, slip 1.2, first-order): L1M cut 4 / d mean 140; L3M cut 10 / d mean 120; L6M cut 10 / d mean -841; HOLD cut 2 / d mean -621; PRE cut 2 / d mean -346; X' cut -4 / d mean 4. The held-out live week (11-01..05) sits inside L1M, a trending week: P7 carried about $159k of Targets that week, so any rule that exits winners early pays for itself only in the choppy weeks of the history; the single-week replay (REDO-R13: autopilot/R13_TRAIL_LIVE_REPLAY_BOOKS.md) and the 43-month first-order table are different regimes and are both shown, not averaged.
+By window (best line, slip 1.2, first-order): L1M cut -5 / d mean 246; L3M cut 10 / d mean -323; L6M cut 10 / d mean -299; HOLD cut 3 / d mean -297; PRE cut -2 / d mean -178; X' cut -0 / d mean 0. The held-out live week (11-01..05) sits inside L1M, a trending week: P7 carried about $159k of Targets that week, so any rule that exits winners early pays for itself only in the choppy weeks of the history; the single-week replay (REDO-R13: autopilot/R13_TRAIL_LIVE_REPLAY_BOOKS.md) and the 43-month first-order table are different regimes and are both shown, not averaged.
 
 By entry session (the same line applied to one session only; stack effect): 
 
 | session | trades | fires | cut L6M | cut PRE | d mean L6M | d mean PRE |
 |---|---|---|---|---|---|---|
-| asia | 956 | 872 | 10 | 2 | -841 | -346 |
+| asia | 956 | 253 | 10 | -2 | -299 | -178 |
 
 ## O7 (341 trades with a path; no-rule = LPB_BASE reference row: cut 0 by definition)
 
@@ -529,13 +529,13 @@ First-order top-20 by the recents key (mean equal-mean cut on L6M/L3M/L1M), at m
 
 | # | line | fires | FO cut L6M/L3M/L1M | FO cut HOLD/PRE/X' | FO d mean L6M / PRE | placebo p / family p / WF2w % | EXACT cut L6M/L3M/L1M/HOLD/PRE/X' | EXACT d mean L6M | rule 2a (FO) |
 |---|---|---|---|---|---|---|---|---|---|
-| O7_01 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` | 255 | 5/5/2 | 1/-1/3 | 218 / -459 | 0.98 / 1.00 / 19 | 5/5/2/1/-1/- | 30 | OK-PRIOR |
+| O7_01 | `profit O7 * pct>=0.3 delta_mult>=2 take win=10 persist=10 wall_ticks=8` | 255 | 5/5/2 | 1/-1/3 | 218 / -459 | 0.98 / 1.00 / 19 | 5/5/2/1/-1/3 | 30 | OK-PRIOR |
 | O7_PC02 | `profit O7 * pct>=0.2 pulled_mult>=30 secs_fav<=5 take win=8 persist=2 wall_ticks=8` | 52 | 5/5/0 | 3/-0/0 | 375 / -52 | - / - / - | -/-/-/-/-/- | - | nan |
 | O7_16 | `profit O7 * pct>=0.3 delta_mult>=2 tighten 5 win=10 persist=10 wall_ticks=8` | 254 | 5/5/2 | 2/-1/3 | 213 / -455 | 1.00 / 1.00 / 19 | -/-/-/-/-/- | - | OK-PRIOR |
 | O7_18 | `profit O7 * pct>=0.3 delta_mult>=2 step 5 win=10 persist=10 wall_ticks=8` | 253 | 5/5/2 | 2/-1/3 | 196 / -451 | 1.00 / 1.00 / 19 | -/-/-/-/-/- | - | OK-PRIOR |
 | O7_PC19 | `profit O7 * pct>=0.2 pulled_mult>=30 secs_fav<=5 take win=10 persist=2 wall_ticks=8` | 97 | 4/4/2 | 3/-2/0 | 196 / 6 | - / - / - | -/-/-/-/-/- | - | nan |
 | O7_08 | `profit O7 * pct>=0.2 dd>=12 step 10 win=0 persist=10 wall_ticks=8` | 242 | 4/4/2 | 2/-1/4 | 148 / -411 | 1.00 / 1.00 / 15 | -/-/2/-/-/- | - | OK-PRIOR |
-| O7_02 | `profit O7 * pct>=0.2 delta_mult>=5 take win=10 persist=10 wall_ticks=8` | 273 | 5/5/2 | 1/-1/5 | 35 / -592 | 1.00 / 1.00 / 13 | 5/5/2/1/-1/- | 48 | OK-PRIOR |
+| O7_02 | `profit O7 * pct>=0.2 delta_mult>=5 take win=10 persist=10 wall_ticks=8` | 273 | 5/5/2 | 1/-1/5 | 35 / -592 | 1.00 / 1.00 / 13 | 5/5/2/1/-1/5 | 48 | OK-PRIOR |
 | O7_19 | `profit O7 * pct>=0.2 delta_mult>=2 take win=8 persist=10 wall_ticks=8` | 278 | 5/5/2 | 3/-1/5 | 10 / -608 | 1.00 / 1.00 / 9 | -/-/-/-/-/- | - | OK-PRIOR |
 | O7_PC11 | `profit O7 * pct>=0.3 pulled_mult>=10 secs_fav<=10 take win=3 persist=3 wall_ticks=8` | 216 | 4/4/2 | 1/0/2 | 81 / -272 | - / - / - | -/-/-/-/-/- | - | nan |
 | O7_PC01 | `profit O7 * pct>=0.3 pulled_mult>=10 secs_fav<=5 take win=5 persist=5 wall_ticks=8` | 155 | 4/4/2 | 1/-1/-1 | 38 / -243 | - / - / - | -/-/-/-/-/- | - | nan |
