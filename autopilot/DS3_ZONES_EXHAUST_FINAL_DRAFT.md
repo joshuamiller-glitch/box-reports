@@ -1,6 +1,6 @@
-# DS3_ZONES_EXHAUST_FINAL_DRAFT - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 13:21Z)
+# DS3_ZONES_EXHAUST_FINAL_DRAFT - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-10 14:21Z)
 
-**Labels: ROLL-FIXED (ROLLFIX1 base S1BRF-COMB, 21,163 trades; first-order tables use M tables lifted with Z.lift_M, 59 new rows m = 1); PRE-PROOF (entries not live-matched); post-hoc; Shadow only; NO PASS CLAIMS; FIRST-ORDER SCREEN unless a row says EXACT.** Standing rules: (1) the zone layer stays ON, "no zones / skip all / off" are reference rows only; (2) recents first: L6M/L3M/L1M, then the bi-weekly re-pick walk-forward (trailing 26 weeks -> next 2 weeks, purged 7 d), PRE/X' only as a tolerant check; (2a) PRE deepening allowed = min(25, L6M cut + 10)% only when the bi-weekly WF beats live in >= 60% of refit periods, else 15%, PRE mean floor -$1k/wk; worse = RECENT-ONLY (still reported). Engine caveats at the end.
+**Labels: ROLL-FIXED (ROLLFIX1 base S1BRF-COMB, 21,163 trades; first-order tables use M tables lifted with Z.lift_M, 59 new rows m = 1); PRE-PROOF (entries not live-matched); post-hoc; Shadow only; NO PASS CLAIMS; FIRST-ORDER SCREEN unless a row says EXACT.** Standing rules: (1) the zone layer stays ON, "no zones / skip all / off" are reference rows only; (2) recents first: L6M/L3M/L1M, then the bi-weekly re-pick walk-forward (trailing 26 weeks -> next 2 weeks, purged 7 d), PRE/X' only as a tolerant check; (2a) PRE deepening allowed = min(25, L6M cut + 10)% only when the bi-weekly WF beats live in >= 60% of refit periods, else 15%, PRE mean floor = 25% of the live PRE mean (user decision 2026-11-10 13:45Z; d mean PRE >= -0.25 x live PRE mean, i.e. -$3.5k/wk; the old fixed -$1k label is shown beside); worse = RECENT-ONLY (still reported). Engine caveats at the end.
 
 ## PLAIN VERDICT
 
@@ -38,51 +38,61 @@ First-order vs exact for the same cells: see the cell-details table right below.
 | ZS_C0 | STRUCT | sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55 | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 45 | 50 | 15.0 | 17.1 | 44.5 | none |
 | ZS_D0 | STRUCT | bbup_5 | v0 hw0 pt15 AA | quarter | london | level-specific | 13.6 | 36 | 38 | 20.3 | 38.7 | 33.4 | none |
 
+**Rule 2a on the exact rows** (PRE maxDD deepening <= 15% [tolerance rises to min(25, L6M cut + 10) only with a >= 60% bi-weekly WF], PRE mean floor = -25% of live PRE mean = -3602 $/wk; old fixed floor -$1k beside):
+
+| set | exact PRE cut % | exact d mean PRE $/wk | rule 2a (new floor) | old fixed -$1k label |
+|---|---|---|---|---|
+| REF_ZOFF | 19.2 | 240 | does OK prior | does OK prior |
+| ZNC_A0 | -5.4 | -730 | does OK prior | does OK prior |
+| ZNC_B0 | 30.6 | -1345 | does OK prior | RECENT-ONLY |
+| ZS_C0 | 17.1 | -949 | does OK prior | does OK prior |
+| ZS_D0 | 38.7 | -898 | does OK prior | does OK prior |
+
 ## 3. The zone layer per book x session (SETTING = live layer unless an exact-confirmed cell beats it)
 
-For each scope the best first-order cell (ranked by min(equal-mean cut L6M, L3M)) among all owners' down-only cells with >= 20 changed trades, scored on the ROLL-FIXED base; WF = bi-weekly re-pick (pool = scope top 40 + live; pick lowest trailing-26-week maxDD with trailing mean >= live - $1k/wk); beat% = share of non-live picks whose 2-week period had maxDD <= live and pnl >= live - $1k/wk; PRE tolerance per rule 2a; scope effect = gain over the same action applied to the whole scope (gain <= 0 -> SCOPE-EFFECT). SETTING column: LIVE RETAINED unless the exact table has the cell complete on L6M and PRE with cut > 0.
+For each scope the best first-order cell (ranked by min(equal-mean cut L6M, L3M)) among all owners' down-only cells with >= 20 changed trades, scored on the ROLL-FIXED base; WF = bi-weekly re-pick (pool = scope top 40 + live; pick lowest trailing-26-week maxDD with trailing mean >= live - $1k/wk); beat% = share of non-live picks whose 2-week period had maxDD <= live and pnl >= live - $1k/wk; PRE tolerance per rule 2a (mean floor -25% of live PRE mean); scope effect = gain over the same action applied to the whole scope (gain <= 0 -> SCOPE-EFFECT). SETTING column: LIVE RETAINED unless the exact table has the cell complete on L6M and PRE with cut > 0.
 
 | scope | n cells | best cell (owner / level / geometry / action) | cut % L6M/L3M/L1M | equal-mean L6M | HOLD/PRE/X' cut | dMean L6M $/wk | touched % | gain over whole-scope action (pts) | level-specific? | placebo p L6M (B200) | WF: n picks non-live / beat% / OOS cut% / dMean | PRE tol (allowed) | label | SETTING |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ALL | 1786 | STRUCT / sw5_2 / v7 hw5 atr1.5 AP / quarter | 58/58/58 | 60 | 2/34/37 | 1105 | 25.8 | 74.3 | SCOPE-EFFECT | 0.00 | 64 / 44 / 27 / -2929 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or mean < -$1k) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| KB | 297 | BOOK / maxsz_w300 / BH-absent:B5 / skip | 20/20/20 | 15 | -4/12/-2 | -1155 | 20.9 | 21.9 | SCOPE-EFFECT | 0.00 | 72 / 36 / 1 / -923 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or mean < -$1k) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| PE | 604 | STRUCT / sw1_5 / v4 hw0 atr1.5 AP / skip | 69/69/92 | 71 | 10/53/42 | 1528 | 19.1 | 115.6 | SCOPE-EFFECT | 0.01 | 63 / 38 / 31 / -4186 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or mean < -$1k) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| SM | 236 | STRUCT / rn100 / v0 hw10 atr1.5 BP / skip | 10/10/10 | 9 | -11/8/3 | -308 | 2.4 | 37.2 | SCOPE-EFFECT | 0.07 | 71 / 51 / 8 / -889 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| HM | 19 | BOOK / wall_k3_p0 / AH:A0.5|s-1|tch0|any / skip | 0/0/0 | 0 | 0/0/-1 | 66 | 0.2 | 26.7 | SCOPE-EFFECT | 0.20 | 43 / 51 / -4 / -140 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| MV | 184 | BOOK / swp_w900_t6 / AH:A0.5|s-1|any|any / skip | 21/21/21 | 27 | 12/10/7 | 2237 | 13.1 | 12.4 | SCOPE-EFFECT | 0.00 | 72 / 53 / 13 / -23 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| ALL | 1786 | STRUCT / sw5_2 / v7 hw5 atr1.5 AP / quarter | 58/58/58 | 60 | 2/34/37 | 1105 | 25.8 | 74.3 | SCOPE-EFFECT | 0.00 | 64 / 44 / 27 / -2929 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or PRE mean below -25% of live) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| KB | 297 | BOOK / maxsz_w300 / BH-absent:B5 / skip | 20/20/20 | 15 | -4/12/-2 | -1155 | 20.9 | 21.9 | SCOPE-EFFECT | 0.00 | 72 / 36 / 1 / -923 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| PE | 604 | STRUCT / sw1_5 / v4 hw0 atr1.5 AP / skip | 69/69/92 | 71 | 10/53/42 | 1528 | 19.1 | 115.6 | SCOPE-EFFECT | 0.01 | 63 / 38 / 31 / -4186 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or PRE mean below -25% of live) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| SM | 236 | STRUCT / rn100 / v0 hw10 atr1.5 BP / skip | 10/10/10 | 9 | -11/8/3 | -308 | 2.4 | 37.2 | SCOPE-EFFECT | 0.07 | 71 / 51 / 8 / -889 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| HM | 19 | BOOK / wall_k3_p0 / AH:A0.5|s-1|tch0|any / skip | 0/0/0 | 0 | 0/0/-1 | 66 | 0.2 | 26.7 | SCOPE-EFFECT | 0.20 | 43 / 51 / -4 / -140 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| MV | 184 | BOOK / swp_w900_t6 / AH:A0.5|s-1|any|any / skip | 21/21/21 | 27 | 12/10/7 | 2237 | 13.1 | 12.4 | SCOPE-EFFECT | 0.00 | 72 / 53 / 13 / -23 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | PB | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | OD | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| asia | 1291 | STRUCT / sw5_3 / v5 hw10 pt90 BA / skip | 44/44/50 | 55 | 0/1/1 | 5427 | 7.7 | 1188.4 | SCOPE-EFFECT | 0.00 | 62 / 53 / 24 / -454 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or mean < -$1k) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| london | 1071 | CORE / ALL / ahead 60pts hw2 fresh=t0 age<=5d / skip | 56/72/78 | 59 | -56/54/-24 | 1877 | 23.1 | 33.7 | SCOPE-EFFECT | 0.00 | 43 / 42 / -8 / -2319 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE + ADD CANDIDATE ZS_C0,ZS_D0 (exact L6M and PRE cut > 0; X-prime/HOLD pending or listed above) |
+| asia | 1291 | STRUCT / sw5_3 / v5 hw10 pt90 BA / skip | 44/44/50 | 55 | 0/1/1 | 5427 | 7.7 | 1188.4 | SCOPE-EFFECT | 0.00 | 62 / 53 / 24 / -454 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| london | 1071 | CORE / ALL / ahead 60pts hw2 fresh=t0 age<=5d / skip | 56/72/78 | 59 | -56/54/-24 | 1877 | 23.1 | 33.7 | SCOPE-EFFECT | 0.00 | 43 / 42 / -8 / -2319 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE + ADD CANDIDATE ZS_C0,ZS_D0 (exact L6M and PRE cut > 0; X-prime/HOLD pending or listed above) |
 | pre | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| nyam | 87 | CORE / vg_u2 / ahead 90pts hw5 / skip | 14/14/20 | 27 | -1/5/1 | 4253 | 9.6 | 21.6 | SCOPE-EFFECT | 0.07 | 72 / 46 / 4 / -843 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| nyam | 87 | CORE / vg_u2 / ahead 90pts hw5 / skip | 14/14/20 | 27 | -1/5/1 | 4253 | 9.6 | 21.6 | SCOPE-EFFECT | 0.07 | 72 / 46 / 4 / -843 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | nypm | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| KB|asia | 96 | BOOK / maxsz_w300 / BH-absent:B5 / skip | 11/11/11 | 11 | -11/3/1 | -200 | 6.1 | 25.6 | SCOPE-EFFECT | 0.00 | 70 / 61 / 2 / -78 | ok | LEAD / PRE ok (tol 21%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| KB|london | 203 | BOOK / maxsz_w300 / BH-absent:B5 / skip | 8/8/8 | 9 | 8/6/3 | 160 | 4.8 | 6.4 | SCOPE-EFFECT | 0.02 | 71 / 49 / 7 / -250 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| KB|asia | 96 | BOOK / maxsz_w300 / BH-absent:B5 / skip | 11/11/11 | 11 | -11/3/1 | -200 | 6.1 | 25.6 | SCOPE-EFFECT | 0.00 | 70 / 61 / 2 / -78 | ok | LEAD / PRE ok (tol 21%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| KB|london | 203 | BOOK / maxsz_w300 / BH-absent:B5 / skip | 8/8/8 | 9 | 8/6/3 | 160 | 4.8 | 6.4 | SCOPE-EFFECT | 0.02 | 71 / 49 / 7 / -250 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | KB|pre | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| KB|nyam | 11 | BOOK / ice_w600_n4 / AH:A0.5|s-1|any|any / skip | 1/1/3 | 1 | -3/3/-4 | 134 | 3.4 | 3.9 | SCOPE-EFFECT | 0.11 | 54 / 61 / 1 / -85 | ok | LEAD / PRE ok (tol 11%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| KB|nypm | 244 | STRUCT / confB10 / v0 hw0 np16 NP / skip | 6/6/6 | 8 | 0/0/14 | 499 | 2.3 | 8.2 | SCOPE-EFFECT | 0.00 | 68 / 54 / 2 / -140 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| PE|asia | 597 | STRUCT / sw5_5 / v7 hw10 pt90 BA / skip | 35/35/60 | 47 | 12/12/12 | 5493 | 3.4 | 254.9 | SCOPE-EFFECT | 0.00 | 72 / 42 / -4 / -826 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or mean < -$1k) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| PE|london | 398 | STRUCT / ema50_5 / v0 hw0 pt30 BA / skip | 34/41/51 | 37 | -5/39/36 | 1058 | 5.4 | 11.8 | SCOPE-EFFECT | 0.02 | 60 / 47 / 15 / -718 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| KB|nyam | 11 | BOOK / ice_w600_n4 / AH:A0.5|s-1|any|any / skip | 1/1/3 | 1 | -3/3/-4 | 134 | 3.4 | 3.9 | SCOPE-EFFECT | 0.11 | 54 / 61 / 1 / -85 | ok | LEAD / PRE ok (tol 11%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| KB|nypm | 244 | STRUCT / confB10 / v0 hw0 np16 NP / skip | 6/6/6 | 8 | 0/0/14 | 499 | 2.3 | 8.2 | SCOPE-EFFECT | 0.00 | 68 / 54 / 2 / -140 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| PE|asia | 597 | STRUCT / sw5_5 / v7 hw10 pt90 BA / skip | 35/35/60 | 47 | 12/12/12 | 5493 | 3.4 | 254.9 | SCOPE-EFFECT | 0.00 | 72 / 42 / -4 / -826 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| PE|london | 398 | STRUCT / ema50_5 / v0 hw0 pt30 BA / skip | 34/41/51 | 37 | -5/39/36 | 1058 | 5.4 | 11.8 | SCOPE-EFFECT | 0.02 | 60 / 47 / 15 / -718 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | PE|pre | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| PE|nyam | 444 | CORE / vg_u2 / ahead 90pts hw5 / skip | 11/11/19 | 23 | 0/6/8 | 3757 | 2.1 | 5.7 | SCOPE-EFFECT | 0.17 | 68 / 47 / 16 / -551 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| PE|nyam | 444 | CORE / vg_u2 / ahead 90pts hw5 / skip | 11/11/19 | 23 | 0/6/8 | 3757 | 2.1 | 5.7 | SCOPE-EFFECT | 0.17 | 68 / 47 / 16 / -551 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | PE|nypm | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| SM|asia | 13 | STRUCT / tenkan_60 / v0 hw10 pt40 AP / skip | 6/6/5 | 7 | 8/2/2 | 376 | 0.9 | 40.1 | SCOPE-EFFECT | 0.03 | 71 / 52 / 0 / -549 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| SM|london | 323 | BOOK / ice_w600_n1 / AH:D5|s-1|any|any / skip | 17/19/25 | 16 | 3/10/8 | -559 | 2.9 | 1.6 | SCOPE-EFFECT | 0.03 | 68 / 41 / 4 / -449 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| SM|asia | 13 | STRUCT / tenkan_60 / v0 hw10 pt40 AP / skip | 6/6/5 | 7 | 8/2/2 | 376 | 0.9 | 40.1 | SCOPE-EFFECT | 0.03 | 71 / 52 / 0 / -549 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| SM|london | 323 | BOOK / ice_w600_n1 / AH:D5|s-1|any|any / skip | 17/19/25 | 16 | 3/10/8 | -559 | 2.9 | 1.6 | SCOPE-EFFECT | 0.03 | 68 / 41 / 4 / -449 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | SM|pre | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | SM|nyam | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | SM|nypm | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| HM|asia | 14 | STRUCT / ote15_any / v0 hw0 atr0.25 BP / skip | 3/3/3 | 4 | 0/0/3 | 307 | 0.3 | 22.3 | SCOPE-EFFECT | 0.01 | 55 / 84 / 1 / -65 | ok | LEAD / PRE ok (tol 13%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| HM|asia | 14 | STRUCT / ote15_any / v0 hw0 atr0.25 BP / skip | 3/3/3 | 4 | 0/0/3 | 307 | 0.3 | 22.3 | SCOPE-EFFECT | 0.01 | 55 / 84 / 1 / -65 | ok | LEAD / PRE ok (tol 13%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | HM|london | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | HM|pre | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | HM|nyam | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | HM|nypm | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | MV|asia | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| MV|london | 608 | BOOK / swp_w900_t6 / AH:D5|s-1|any|any / skip | 13/13/13 | 18 | 7/8/3 | 1555 | 7.0 | 5.1 | SCOPE-EFFECT | 0.08 | 72 / 54 / 14 / 220 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| MV|london | 608 | BOOK / swp_w900_t6 / AH:D5|s-1|any|any / skip | 13/13/13 | 18 | 7/8/3 | 1555 | 7.0 | 5.1 | SCOPE-EFFECT | 0.08 | 72 / 54 / 14 / 220 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | MV|pre | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| MV|nyam | 25 | BOOK / maxsz_w900 / AH:D90|s-1|any|any / skip | 2/2/2 | 3 | 4/1/1 | 273 | 2.9 | 3.0 | SCOPE-EFFECT | 0.07 | 72 / 57 / 2 / -107 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| MV|nyam | 25 | BOOK / maxsz_w900 / AH:D90|s-1|any|any / skip | 2/2/2 | 3 | 4/1/1 | 273 | 2.9 | 3.0 | SCOPE-EFFECT | 0.07 | 72 / 57 / 2 / -107 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | MV|nypm | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
-| PB|asia | 12 | BOOK / dpiv_w900 / AH:A0.5|s-1|any|any / skip | 0/0/8 | 1 | 3/0/1 | 172 | 0.9 | 2.9 | SCOPE-EFFECT | 0.23 | 58 / 55 / -1 / -459 | ok | LEAD / PRE ok (tol 15%) / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| PB|asia | 12 | BOOK / dpiv_w900 / AH:A0.5|s-1|any|any / skip | 0/0/8 | 1 | 3/0/1 | 172 | 0.9 | 2.9 | SCOPE-EFFECT | 0.23 | 58 / 55 / -1 / -459 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | PB|london | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | PB|pre | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | PB|nyam | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
@@ -226,4 +236,4 @@ Procedure: trailing 26 weeks of data to 2026-11-05, pool = scope top 40 cells + 
 - Hypothesis counts: CORE 347,553 cells; STRUCT 9,263,348 evaluated; BOOK 32,155; TRIG 1,334,592. Family p uses the conservative independent max-stat; with these counts nothing can reach p <= .10 without a very large effect.
 - Not built: delay-until-through, re-target, structure-stop, 70/30 add and cooldown-after-lost-level actions (exact engine only); per-line marginals of the published eight lines (need the engine with one line left out).
 
-Generated by code/th_zn/zn_final.py (2026-11-10 13:21Z).
+Generated by code/th_zn/zn_final.py (2026-11-10 14:21Z).

@@ -315,3 +315,16 @@ Trailing 26 weeks, drawdown first: pick **R10_newer_K7_NET** (live retained: Fal
 | R10_U7>K7_FLIP     | 74081.5 |  174693   | 31065.6 | 25678.1 | False  | PRIOR-UNKNOWN |
 | R10_newer_U7_SKIPS | 75070.8 |  142692   | 31342.6 | 24390   | False  | PRIOR-UNKNOWN |
 | R10_newer_U7_SKIP  | 75070.8 |  135978   | 32112.7 | 23782.6 | False  | PRIOR-UNKNOWN |
+
+## EXACT rows (appended)
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R10_sess_london_SKIP 24, R10_newer_K7_NET 6, R10_U7_K7_FLIP 6, R10_ALL_FLIP 23
+| set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % | bi-weekly WF beat % / cut % (exact, own block) | label (rule 2a) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| R10_sess_london_SKIP | 24 | -8.7 | 1125.8 | 4.8 | -3.9 | -8.7 | -8.9 | 6.3 | -1361.6 | n/a | 32 / -0.4 | NEW 2a(25%): OK-PRIOR (PRE d mean -1362 vs floor -3549, live PRE 14197/wk) | OLD(-$1k): RECENT-ONLY |
+| R10_newer_K7_NET | 6 | 5.6 | -804.5 | 7.3 | 2.5 | 5.6 | 9.6 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
+| R10_U7_K7_FLIP | 6 | 5.3 | 37.1 | 7.7 | 5.5 | 5.3 | 5.2 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
+| R10_ALL_FLIP | 23 | -31.1 | -4771.4 | -49.3 | -63.2 | -31.1 | 78.5 | -25.8 | -4055.3 | n/a | 9 / -0.0 | NEW 2a(25%): RECENT-ONLY (PRE d mean -4055 vs floor -3433, live PRE 13730/wk) | OLD(-$1k): RECENT-ONLY |
+Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
+
+## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
+Take-both (live) stays. (Under the new 25% PRE floor R10_sess_london_SKIP is OK-PRIOR, old floor RECENT-ONLY, but its L6M exact cut is negative and WF 32%.) Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 14:00 UTC)

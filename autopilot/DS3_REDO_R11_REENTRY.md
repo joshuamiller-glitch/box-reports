@@ -1,6 +1,6 @@
 # DS3_REDO_R11_REENTRY - re-entry after a win / after a target on the state base (T-STACK-REDO R11)  [FIRST-ORDER SCREEN; PRE-PROOF until entry match >= .85; no PASS claims]
 **CAVEAT (stop fills / stop exits):** the engine fills a native stop 1.9 pt better than the stop level; live native stops were 1.28 pt worse, join 2.45 pt worse (old stack). Conflict / re-entry deltas that depend on a stopped trade inherit this optimism; netting exits use mid -/+ 0.80 pt market. Exact rows use the ROLL-FIXED engine; first-order rows use ROLL-EXCL weights of the old base list.
-Generated 2026-11-10 13:58 UTC (elapsed 47 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
+Generated 2026-11-10 14:00 UTC (elapsed 50 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL). Code code/th_stack_r9/r11_score.py. Registry /mnt/l2/l2vast/_th_joint/layers/reentry/topK.json; M tables /mnt/l2/l2vast/_th_sz/M_R11.npz.
 
 ## 0. Definition
 - FLAGGED trade j = its signal comes within N min (5/10/15/30/60/120) after a Target exit of the SAME side, of the same book ("own") or of any book ("any"). Policy FULL (live = reference) / HALF / SKIP on flagged trades. These are lot-multiplier tables keyed on the signal second: exact in table mode (queue prefix R11_), first-order here is a screen (mean overstated for up-size only; these are down-only).
@@ -131,16 +131,16 @@ Share of all trades flagged (own / any): N=5 4.4% / 8.2%, N=10 7.2% / 13.3%, N=1
 ## 6. Top 10 overall: bi-weekly WF (cell vs live), prior label (rule 2a), family p
 | cell | key | L6M cut % | dmean L6M | PRE cut / dmean | WF2w beat % | WF2w cut % | label | p fam |
 |---|---|---|---|---|---|---|---|---|
-| R11_any_N30_ALL_SKIP | 80.6 | 49.7 | 1739 | 32.5 / -3257 | 35 | 19.3 | OK-PRIOR | 0.99 |
-| R11_own_N120_ALL_SKIP | 64.0 | 58.7 | -3602 | 44.7 / -5347 | 65 | 39.5 | RECENT-ONLY | 0.88 |
-| R11_any_N60_ALL_SKIP | 58.1 | 39.6 | -4467 | 41.0 / -4451 | 53 | 29.1 | RECENT-ONLY | 0.90 |
-| R11_own_N60_ALL_SKIP | 55.6 | 44.0 | -3465 | 45.1 / -2576 | 62 | 27.6 | OK-PRIOR | 0.87 |
-| R11_any_N120_P7_SKIP | 53.3 | 46.8 | -5367 | 38.6 / -3304 | 69 | 29.1 | OK-PRIOR | 0.98 |
-| R11_any_N30_P7_SKIP | 53.1 | 38.6 | -3962 | 30.3 / -606 | 16 | 29.1 | OK-PRIOR | 1.00 |
-| R11_any_N120_ALL_SKIP | 50.8 | 44.3 | -7895 | 39.8 / -6298 | 62 | 38.2 | RECENT-ONLY | 0.92 |
-| R11_own_N120_P7_SKIP | 46.3 | 38.1 | -3688 | 39.4 / -4014 | 66 | 31.2 | RECENT-ONLY | 0.83 |
-| R11_own_N30_ALL_SKIP | 45.1 | 28.9 | -1888 | 33.0 / -1795 | 32 | 29.1 | OK-PRIOR | 0.92 |
-| R11_any_N30_sess_london_SKIP | 44.8 | 28.6 | 1690 | 36.2 / 54 | 36 | 29.1 | OK-PRIOR | 1.00 |
+| R11_any_N30_ALL_SKIP | 80.6 | 49.7 | 1739 | 32.5 / -3257 | 35 | 19.3 | OK-PRIOR (old -$1k: RECENT-ONLY) | 0.99 |
+| R11_own_N120_ALL_SKIP | 64.0 | 58.7 | -3602 | 44.7 / -5347 | 65 | 39.5 | RECENT-ONLY (old -$1k: RECENT-ONLY) | 0.88 |
+| R11_any_N60_ALL_SKIP | 58.1 | 39.6 | -4467 | 41.0 / -4451 | 53 | 29.1 | RECENT-ONLY (old -$1k: RECENT-ONLY) | 0.90 |
+| R11_own_N60_ALL_SKIP | 55.6 | 44.0 | -3465 | 45.1 / -2576 | 62 | 27.6 | OK-PRIOR (old -$1k: RECENT-ONLY) | 0.87 |
+| R11_any_N120_P7_SKIP | 53.3 | 46.8 | -5367 | 38.6 / -3304 | 69 | 29.1 | OK-PRIOR (old -$1k: RECENT-ONLY) | 0.98 |
+| R11_any_N30_P7_SKIP | 53.1 | 38.6 | -3962 | 30.3 / -606 | 16 | 29.1 | OK-PRIOR (old -$1k: OK-PRIOR) | 1.00 |
+| R11_any_N120_ALL_SKIP | 50.8 | 44.3 | -7895 | 39.8 / -6298 | 62 | 38.2 | RECENT-ONLY (old -$1k: RECENT-ONLY) | 0.92 |
+| R11_own_N120_P7_SKIP | 46.3 | 38.1 | -3688 | 39.4 / -4014 | 66 | 31.2 | RECENT-ONLY (old -$1k: RECENT-ONLY) | 0.83 |
+| R11_own_N30_ALL_SKIP | 45.1 | 28.9 | -1888 | 33.0 / -1795 | 32 | 29.1 | OK-PRIOR (old -$1k: RECENT-ONLY) | 0.92 |
+| R11_any_N30_sess_london_SKIP | 44.8 | 28.6 | 1690 | 36.2 / 54 | 36 | 29.1 | OK-PRIOR (old -$1k: OK-PRIOR) | 1.00 |
 
 Procedure WF over the whole R11 grid: OOS cut 28.9%, d mean -4432 $/wk, beat live in 73% of 74 periods, 74 switches.
 Held-out frozen live week: first-order read pending (187 trades; targets 80, flagged follow-ups too few for a verdict). Old-vs-new: R11 was never scored before; no published cell to compare.
@@ -162,10 +162,10 @@ Trailing 26 weeks, drawdown first: pick **R11_own_N120_ALL_SKIP** (live retained
 Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R11_any_N30_ALL_SKIP 23, R11_own_N120_ALL_SKIP 23, R11_any_N60_ALL_SKIP 6
 | set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % | bi-weekly WF beat % / cut % (exact, own block) | label (rule 2a) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R11_any_N30_ALL_SKIP | 23 | 19.0 | 1481.3 | 2.2 | 24.0 | 23.9 | 23.8 | 18.5 | -1557.7 | n/a | 36 / 18.5 | NEW 2a(25%): OK-PRIOR (PRE d mean -1558 vs floor -3175, live PRE 12701/wk) | OLD(-$1k): OK-PRIOR |
-| R11_own_N120_ALL_SKIP | 23 | 0.3 | 862.4 | -5.8 | 4.0 | 0.3 | 0.2 | 29.6 | -1138.6 | n/a | 59 / 29.6 | NEW 2a(25%): OK-PRIOR (PRE d mean -1139 vs floor -3175, live PRE 12701/wk) | OLD(-$1k): OK-PRIOR |
+| R11_any_N30_ALL_SKIP | 23 | 19.0 | 1481.3 | 2.2 | 24.0 | 23.9 | 23.8 | 18.5 | -1557.7 | n/a | 36 / 18.5 | NEW 2a(25%): OK-PRIOR (PRE d mean -1558 vs floor -3175, live PRE 12701/wk) | OLD(-$1k): RECENT-ONLY |
+| R11_own_N120_ALL_SKIP | 23 | 0.3 | 862.4 | -5.8 | 4.0 | 0.3 | 0.2 | 29.6 | -1138.6 | n/a | 59 / 29.6 | NEW 2a(25%): OK-PRIOR (PRE d mean -1139 vs floor -3175, live PRE 12701/wk) | OLD(-$1k): RECENT-ONLY |
 | R11_any_N60_ALL_SKIP | 6 | -6.4 | -4575.6 | -79.2 | -33.8 | -6.4 | -6.5 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
 Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
 
 ## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
-FULL re-entry (live) stays. Exact L6M: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts maxDD 19.0% at +$1,481/wk (first-order screen said 50%); own-book N120 and any-book N60 do not hold. The first-order PRE mean of the N30 cell is about -$3.3k/wk, so expect RECENT-ONLY under rule 2a unless the exact PRE row says otherwise; not a panel change until PRE/X' and the WF are in. (draft generated 2026-11-10 13:58 UTC)
+FULL re-entry (live) stays. Exact: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts L6M maxDD 19.0% at +$1,481/wk and PRE maxDD 18.5% (PRE d mean -$1,558/wk): OK-PRIOR under the new 25% floor (OLD -$1k floor: RECENT-ONLY). Its bi-weekly WF beats live in only 36% of refit periods, so it is a LEAD (recents + prior ok), not a CANDIDATE; X' and the remaining months are still pending. Own-book N120 and any-book N60 do not hold. Not a panel change. (draft generated 2026-11-10 14:00 UTC)
