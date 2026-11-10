@@ -1,6 +1,6 @@
 # DS3_REDO_R7_BRACKETS - stop / target / ATR / time exit per book x entry session on the state base (REDO-R7)
 
-Version 2026-11-10 00:33Z. **PRE-PROOF** (entry match < .85). **FIRST-ORDER SCREEN ONLY** for every row below; exact engine runs for the top-5 policies are queued (tier 2, sets R7_P1..R7_P5, L6M then PRE; hooks module code/th_r7/r7_hooks.py; hook regression R7_HOOKREF/R7_TEST pending). No PASS claims. Shadow only.
+Version 2026-11-10 03:34Z. **PRE-PROOF** (entry match < .85). **FIRST-ORDER SCREEN ONLY** for every row below; exact engine runs for the top-5 policies are queued (tier 2, sets R7_P1..R7_P5, L6M then PRE; hooks module code/th_r7/r7_hooks.py; hook regression R7_HOOKREF/R7_TEST pending). No PASS claims. Shadow only.
 
 ## 0. Plain verdict
 No bracket cell survives the whole bar (family-max p <= .10 + bi-weekly WF >= 50 % beat + tolerant PRE + placebo). Every per-group lead has a family p of .33-.86 over the 1,440-cell grid and a per-cell bi-weekly WF that beats live in only 3-34 % of refit periods (the procedure that picks the lowest trailing-26-week maxDD cell across the whole grid beats live in 40-60 % of periods and its OOS cut is negative or ~0 in 14 of 15 groups). **Live brackets stay (K7/M7/U7/P7/H7/A7 60/60, O7 40/90)**; the leads below are candidates for the joint stage and exact runs, nothing more.
@@ -258,7 +258,7 @@ Sets R7_P1 (BEST_KEY) R7_P2 (BEST_ARM_PTS) R7_P3 (BEST_ARM_PCT) R7_P4 (BEST_EQRI
 | bracket U7 london | 60/60 | atr1_k1|R1.00|tx_none|arm_pct | no (WF beat 18.9 %) | no | policy line `bracket U7 london ...` |
 | state-cut arm vs stop | points held fixed | points | yes (screen) | no | state-cut arm lines (points) |
 
-## 9. EXACT engine results (auto-refreshed 2026-11-10 00:34Z) - R7 joint bracket policies (hook regression R7_HOOKREF identical on 202610)
+## 9. EXACT engine results (auto-refreshed 2026-11-10 03:34Z) - R7 joint bracket policies (hook regression R7_HOOKREF identical on 202610)
 Set | months done | cut/dM per complete window vs exact Q1-A (ROLL-EXCL, all weeks for maxDD) | bi-weekly WF on the exact block
 - R7_P1: 0 months done (queued)
 - R7_P2: 0 months done (queued)
