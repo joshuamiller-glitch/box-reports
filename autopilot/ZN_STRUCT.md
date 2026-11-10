@@ -1,5 +1,5 @@
 # ZN_STRUCT - T-ZONES-EXHAUST families C (swing/market structure), D (MA/bands), E (round numbers/grid)
-Updated 2026-11-10 08:01Z. PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER SCREEN ONLY unless the exact table below says otherwise. **ROLL-EXCL applied** (33 roll-artifact base trades weighted 0 via sz_core Base.rollw; every number rescored incl. X-prime and HOLD). No PASS claims.
+Updated 2026-11-10 08:31Z. PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER SCREEN ONLY unless the exact table below says otherwise. **ROLL-EXCL applied** (33 roll-artifact base trades weighted 0 via sz_core Base.rollw; every number rescored incl. X-prime and HOLD). No PASS claims.
 
 **Price source:** ZN-CORE roll-continuous 1-min bars from the 1-s state arrays (/mnt/l2/l2vast/_th_zn/bars.npz, cont = raw - cum, 14 quarterly rolls); all levels on the continuous axis, distances to the last closed 1-min close at the signal second; round numbers / open-grid use the live price (cont + cum/4). bars1m_NQ.npz (back-adjusted) is NOT used. Entry proxy vs trade-list entry_px: median 0.8 pt, 99th pct 25 pts (fills/slippage and roll seconds).
 
@@ -165,13 +165,13 @@ For every book x session not listed, no level-specific cell cleared the screen: 
 | ZS_C0 | 6e93e2da912d |  | L2M | 14.9 | 44.5 | 23.4 | -1967 | [EXACT] |
 | ZS_C0 | 6e93e2da912d |  | L3M | 15.0 | 44.6 | 23.4 | -1936 | [EXACT] |
 | ZS_C0 | 6e93e2da912d |  | L6M | 15.0 | 44.6 | 23.4 | 2344 | [EXACT] |
-| ZS_C0 | 6e93e2da912d |  | PRE | 17.1 | 54.8 | 25.4 | -924 | [EXACT] |
+| ZS_C0 | 6e93e2da912d |  | PRE | 17.1 | 54.8 | 25.4 | -949 | [EXACT] |
 | ZS_C0 | 6e93e2da912d |  | X' | 44.5 | 33.9 | 50.1 | 1643 | [EXACT] |
 | ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | L1M | 29.2 | 40.1 | 26.7 | -5069 | [EXACT] |
 | ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | L2M | 29.2 | 40.1 | 26.7 | -4717 | [EXACT] |
 | ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | L3M | 20.3 | 39.9 | 17.5 | 2955 | [EXACT] |
 | ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | L6M | 20.3 | 36.4 | 17.5 | -838 | [EXACT] |
-| ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | PRE | 38.7 | 44.2 | 36.5 | -873 | [EXACT] |
+| ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | PRE | 38.7 | 44.2 | 36.5 | -898 | [EXACT] |
 | ZS_D0 | b0c41cc34961 | bbup_5 v0 hw0 pt15 AA quarter london | X' | 33.4 | 41.0 | 31.0 | 2635 | [EXACT] |
 
 ## Top-5 per family for exact (level-specific, p_own <= .10; QUEUED with SZ-CORE as sets ZS_C0-4 / ZS_D0-4 / ZS_E0-4: L6M months for all 15, PRE, X-prime and HOLD for the top-2 per family; M table /mnt/l2/l2vast/_th_zn/M_ZN_STRUCT.npz; registry file /mnt/l2/l2vast/_th_zn/topK_STRUCT.json

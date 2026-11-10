@@ -1,4 +1,4 @@
-# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 06:58Z first version / refresh
+# DS3_REDO_R5_CUTWAIT - T-STACK-REDO R5 (CUTWAIT / NTZ / OTE / O7) on the state base, 2026-11-10 08:57Z first version / refresh
 
 ## 0. Summary block (setting | live value | best on the state base | holds OOS? | change recommended | panel field)
 
@@ -239,23 +239,23 @@ Exact rows (hooks, table windows complete only; cut = maxDD cut vs the exact S1b
 | set | months | par | cut % L6M/HOLD/PRE/X' | equal-mean cut L6M/PRE/X' | d mean L6M $/wk | w20 cut L6M | first-order screen (cut L6M / d mean L6M, same cell) | status |
 |---|---|---|---|---|---|---|---|---|
 | R5_BO_1 | 23 | {"bo": {"trig": "cut", "N": 120, "same": false, "trig_books": ["K7", "P7", "M7", "U7", "A7", "H7"], "block_boo | -26/-/40/- | -74/16/- | -6417 | -49 | 27 / 3811 | [EXACT partial] |
-| R5_BO_2 | 5 | {"bo": {"trig": "cutstop", "N": 120, "same": false, "trig_books": ["K7", "P7", "M7", "U7", "A7", "H7"], "block | -/-/-/- | -/-/- | - | - | 29 / 2516 | [EXACT partial] |
-| R5_BO_3 | 5 | {"bo": {"trig": "cutstop", "N": 30, "same": true, "trig_books": ["P7"], "block_books": ["P7"], "own": true}} | -/-/-/- | -/-/- | - | - | 25 / 387 | [EXACT partial] |
+| R5_BO_2 | 15 | {"bo": {"trig": "cutstop", "N": 120, "same": false, "trig_books": ["K7", "P7", "M7", "U7", "A7", "H7"], "block | -3/-/-/- | -31/-/- | -4784 | -66 | 29 / 2516 | [EXACT partial] |
+| R5_BO_3 | 15 | {"bo": {"trig": "cutstop", "N": 30, "same": true, "trig_books": ["P7"], "block_books": ["P7"], "own": true}} | 8/-/-/- | 17/-/- | 3005 | 72 | 25 / 387 | [EXACT partial] |
 | R5_BO_LIVE | 6 | {"bo": {"trig": "cut", "N": 30, "same": true, "trig_books": ["U7"], "block_books": ["U7"], "own": true}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
 | R5_NTZ_1 | 23 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 7/-/-6/- | -21/-37/- | -5268 | -36 | 20 / 576 | [EXACT partial] |
-| R5_NTZ_2 | 5 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | -/-/-/- | -/-/- | - | - | 20 / -6 | [EXACT partial] |
-| R5_NTZ_3 | 5 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | -/-/-/- | -/-/- | - | - | 17 / -313 | [EXACT partial] |
+| R5_NTZ_2 | 15 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 10/-/-/- | -18/-/- | -5375 | -36 | 20 / -6 | [EXACT partial] |
+| R5_NTZ_3 | 15 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 10/-/-/- | 0/-/- | -2081 | -1 | 17 / -313 | [EXACT partial] |
 | R5_NTZ_LIVE | 6 | {"ntz": {"groups": [[["PD_mid", "RTH_camH3", "Kijun_1h", "CRT_mid_4h", "KC_up_4h", "OTE62_15m", "OTE705_15m",  | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
 | R5_O7_1 | 23 | {"o7": {"rm": 0.35, "trig": "imm", "wend": 942, "stop": 40, "tgt": 90, "texit": 1600, "lots": 1}} | -1/-/3/- | -1/3/- | 23 | -2 | 1 / 208 | [EXACT partial] |
-| R5_O7_2 | 5 | {"o7": {"rm": 0.5, "trig": "imm", "wend": 942, "stop": 40, "tgt": 90, "texit": 1600, "lots": 1}} | -/-/-/- | -/-/- | - | - | 0 / 223 | [EXACT partial] |
-| R5_O7_3 | 5 | {"o7": {"rm": 0.5, "trig": "pb1", "wend": 942, "stop": 40, "tgt": 90, "texit": 1600, "lots": 1}} | -/-/-/- | -/-/- | - | - | 0 / 226 | [EXACT partial] |
+| R5_O7_2 | 15 | {"o7": {"rm": 0.5, "trig": "imm", "wend": 942, "stop": 40, "tgt": 90, "texit": 1600, "lots": 1}} | 1/-/-/- | 0/-/- | -157 | -4 | 0 / 223 | [EXACT partial] |
+| R5_O7_3 | 15 | {"o7": {"rm": 0.5, "trig": "pb1", "wend": 942, "stop": 40, "tgt": 90, "texit": 1600, "lots": 1}} | 1/-/-/- | 0/-/- | -75 | -2 | 0 / 226 | [EXACT partial] |
 | R5_O7_LIVE | 6 | {"o7": {"rm": 0.5, "trig": "pb1", "wend": 945, "stop": 40, "tgt": 90, "texit": 1600, "lots": 1}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
 | R5_OTE_1 | 23 | {"ote": {"line": "OTE_650", "D": 10, "action": "WT", "maxmin": 15, "f": [0.65]}} | 4/-/6/- | 0/2/- | -1142 | -7 | 3 / 688 | [EXACT partial] |
-| R5_OTE_2 | 5 | {"ote": {"line": "OTE_680", "D": 50, "action": "B73", "maxmin": 60, "f": [0.68]}} | -/-/-/- | -/-/- | - | - | 3 / 279 | [EXACT partial] |
-| R5_OTE_3 | 5 | {"ote": {"line": "OTE_720", "D": 20, "action": "WT", "maxmin": 120, "f": [0.72]}} | -/-/-/- | -/-/- | - | - | 1 / 456 | [EXACT partial] |
+| R5_OTE_2 | 15 | {"ote": {"line": "OTE_680", "D": 50, "action": "B73", "maxmin": 60, "f": [0.68]}} | -28/-/-/- | -46/-/- | -3334 | -26 | 3 / 279 | [EXACT partial] |
+| R5_OTE_3 | 15 | {"ote": {"line": "OTE_720", "D": 20, "action": "WT", "maxmin": 120, "f": [0.72]}} | -1/-/-/- | -14/-/- | -2986 | -34 | 1 / 456 | [EXACT partial] |
 | R5_OTE_LIVE | 6 | {"ote": {"line": "OTE62_15m", "D": 30, "action": "B73", "f": []}} | 0/-/-/- | 0/-/- | 0 | 0 | - | [EXACT partial] |
 | R5_TEST | 1 | {} | -/-/-/- | -/-/- | - | - | - | [EXACT partial] |
 
-Months done per set: R5_BO_1 23, R5_BO_2 5, R5_BO_3 5, R5_BO_LIVE 6, R5_NTZ_1 23, R5_NTZ_2 5, R5_NTZ_3 5, R5_NTZ_LIVE 6, R5_O7_1 23, R5_O7_2 5, R5_O7_3 5, R5_O7_LIVE 6, R5_OTE_1 23, R5_OTE_2 5, R5_OTE_3 5, R5_OTE_LIVE 6, R5_TEST 1. Identity test R5_TEST (empty hooks par) on 202610: 823 trades, net 47,330.50, all columns identical to base_b/S1-COMB (PASSED).
+Months done per set: R5_BO_1 23, R5_BO_2 15, R5_BO_3 15, R5_BO_LIVE 6, R5_NTZ_1 23, R5_NTZ_2 15, R5_NTZ_3 15, R5_NTZ_LIVE 6, R5_O7_1 23, R5_O7_2 15, R5_O7_3 15, R5_O7_LIVE 6, R5_OTE_1 23, R5_OTE_2 15, R5_OTE_3 15, R5_OTE_LIVE 6, R5_TEST 1. Identity test R5_TEST (empty hooks par) on 202610: 823 trades, net 47,330.50, all columns identical to base_b/S1-COMB (PASSED).
 
 Hook semantics and the first-order-vs-exact lesson (SZ_BASE_PROOF): first-order overstates anything that adds lots or changes exits; only the drawdown RANKING is usable first-order; all retarget / OTE / O7 rows are screens.
