@@ -1,9 +1,13 @@
 # DS3_REDO_R7_BRACKETS - stop / target / ATR / time exit per book x entry session on the state base (REDO-R7)
 
-Version 2026-11-10 09:34Z. **PRE-PROOF** (entry match < .85). **FIRST-ORDER SCREEN ONLY** for every row below; exact engine runs for the top-5 policies are queued (tier 2, sets R7_P1..R7_P5, L6M then PRE; hooks module code/th_r7/r7_hooks.py; hook regression R7_HOOKREF/R7_TEST pending). No PASS claims. Shadow only.
+**FINAL DRAFT 2026-11-10 10:56Z** - exact L6M + PRE rows (section 9) are in for every set; where exact and first-order disagree the exact row governs. Rules 2/2a labels and the bi-weekly WF are beside every cell. Live settings stay.
+
+
+
+Version 2026-11-10 10:54Z. **PRE-PROOF** (entry match < .85). Sections 1-8 are the FIRST-ORDER SCREEN; the EXACT engine rows for the five joint policies (L6M + PRE, sets R7_P1..R7_P5, hooks module code/th_r7/r7_hooks.py, hook regression R7_HOOKREF identical) are in section 9 and GOVERN where they disagree (first-order ranks did not survive the engine). No PASS claims. Shadow only.
 
 ## 0. Plain verdict
-No bracket cell survives the whole bar (family-max p <= .10 + bi-weekly WF >= 50 % beat + tolerant PRE + placebo). Every per-group lead has a family p of .33-.86 over the 1,440-cell grid and a per-cell bi-weekly WF that beats live in only 3-34 % of refit periods (the procedure that picks the lowest trailing-26-week maxDD cell across the whole grid beats live in 40-60 % of periods and its OOS cut is negative or ~0 in 14 of 15 groups). **Live brackets stay (K7/M7/U7/P7/H7/A7 60/60, O7 40/90)**; the leads below are candidates for the joint stage and exact runs, nothing more.
+No bracket cell survives the whole bar (family-max p <= .10 + bi-weekly WF >= 50 % beat + tolerant PRE + placebo). Every per-group lead has a family p of .33-.86 over the 1,440-cell grid and a per-cell bi-weekly WF that beats live in only 3-34 % of refit periods (the procedure that picks the lowest trailing-26-week maxDD cell across the whole grid beats live in 40-60 % of periods and its OOS cut is negative or ~0 in 14 of 15 groups). **Live brackets stay (K7/M7/U7/P7/H7/A7 60/60, O7 40/90)**. Exact (section 9): none of the five joint policies passes recents + prior + WF; R7_P3 (percent arm) has L6M/L3M/L1M cuts 33.9/48.2/48.1 % at equal mean but PRE -39.6 % and WF beat 18 % (RECENT-ONLY, fails WF); R7_P2 loses half the weekly mean.
 
 ## 1. Method and fidelity
 - Base S1B-COMB, 21,135 trades (X3-X5 have no trades in the base list; sessions with lots 0 (pre, close) have no trades: 15 book x session groups). Each trade is re-walked on the 1-s state arrays (th_exh build_universe conventions: stop from the SIGNAL price (A7/O7 from the fill), target from the fill average, target first on a touching second, state cut S1-COMB per (book, entry session) incl. V1/V2 lot-scaled arms, time exit, flat 16:55 / O7 16:00). Stop-exit slippage is calibrated per book to the engine stop exits ({"A7": -0.99, "H7": -1.74, "K7": 0.15, "M7": 0.25, "O7": -1.7, "P7": -0.04, "U7": -0.72}).
@@ -174,7 +178,7 @@ Median key over the grid: arm in POINTS -12.5, arm as PERCENT of stop -13.6.
 Median key over the grid: arm in POINTS 3.7, arm as PERCENT of stop 4.5.
 
 ## 3. Percent arm or point arm?
-Grid-median key is higher with the arm held in POINTS in 12 of 15 groups; best-cell comparison: BEST_ARM_PTS 17.5 eq cut L6M vs BEST_ARM_PCT -2.4 (joint policies, section 4). **Recommendation: hold the POINT arm fixed** (the live state-cut arm is in points: unchanged when the stop moves); a percent arm shrinks the cut with tighter stops and widens it with wider ones and does not help in the screen. Exact: R7_P2 (points) vs R7_P3 (percent) are queued to confirm.
+Grid-median key is higher with the arm held in POINTS in 12 of 15 groups; best-cell comparison: BEST_ARM_PTS 17.5 eq cut L6M vs BEST_ARM_PCT -2.4 (joint policies, section 4). First-order said hold the POINT arm; the exact P2 vs P3 comparison is mixed (percent arm better on L6M, worse on PRE, both fail WF), so the arm convention stays as live (points) - no change recommended.
 
 ## 4. Joint bracket policies (one cell per group, composed on the stack)
 All windows are first-order stack numbers vs the live stack; every policy FAILS the recents/WF bar in the screen (see label).
@@ -232,10 +236,10 @@ Trailing 26 weeks to the data end, drawdown first on the STACK (maxDD, worst-20,
 | U7 asia | atr5_k4|R0.50|tx_60m|arm_pts | 79907.3 -> 73810.9 | 24124.4 -> 23681.7 | OK-PRIOR (7.3 / -518.3) |
 | U7 london | stop30|R2.25|tx_60m|arm_pts | 79907.3 -> 67992.9 | 24124.4 -> 23277.7 | OK-PRIOR (9.0 / -719.8) |
 
-These are what a pure trailing-DD refit would pick; the walk-forward says this procedure does not beat live out of sample (section 2 headers), so the recommendation for 2026-11-22 is: keep the live brackets unless the exact runs of R7_P2 confirm.
+These are what a pure trailing-DD refit would pick; the walk-forward says this procedure does not beat live out of sample (section 2 headers), so the recommendation for 2026-11-22 is: keep the live brackets (the exact runs of the joint policies did not confirm any change).
 
 ## 7. Exact-engine status
-Sets R7_P1 (BEST_KEY) R7_P2 (BEST_ARM_PTS) R7_P3 (BEST_ARM_PCT) R7_P4 (BEST_EQRISK) R7_P5 (BEST_OKPRIOR) queued in /mnt/l2/l2vast/_th_sz/exact_queue_8_r7.txt (L6M 202605-202610, PRE 202402-202506); the live reference is the S1b-COMB base itself (hook regression R7_HOOKREF must equal it). Results are appended here in the next refresh; until then every row is [FIRST-ORDER SCREEN ONLY].
+Done for L6M + PRE (23 months each) for R7_P1..P5 and R12 cells, see section 9. X' / HOLD months not run. Engine = hooks on the S1b tick engine with ROLL-EXCL scoring (not ROLL-FIXED).
 
 ## 8. Summary block (setting | live value | best on the state base | holds OOS? | change recommended | panel field)
 
@@ -258,12 +262,25 @@ Sets R7_P1 (BEST_KEY) R7_P2 (BEST_ARM_PTS) R7_P3 (BEST_ARM_PCT) R7_P4 (BEST_EQRI
 | bracket U7 london | 60/60 | atr1_k1|R1.00|tx_none|arm_pct | no (WF beat 18.9 %) | no | policy line `bracket U7 london ...` |
 | state-cut arm vs stop | points held fixed | points | yes (screen) | no | state-cut arm lines (points) |
 
-## 9. EXACT engine results (auto-refreshed 2026-11-10 09:35Z) - R7 joint bracket policies (hook regression R7_HOOKREF identical on 202610)
-Set | months done | cut/dM per complete window vs exact Q1-A (ROLL-EXCL, all weeks for maxDD) | bi-weekly WF on the exact block
-- R7_P1: 19 months; L6M cut -110.3% dM -12065; WF beat 7% cut -32.2% (202402-202502) [EXACT partial]
-- R7_P2: 18 months; L6M cut 15.7% dM -12262; WF beat 42% cut 5.2% (202402-202501) [EXACT partial]
-- R7_P3: 18 months; L6M cut 33.9% dM 346; WF beat 8% cut -21.2% (202402-202501) [EXACT partial]
-- R7_P4: 18 months; L6M cut -254.1% dM -15021; WF beat 0% cut 0.0% (202402-202501) [EXACT partial]
-- R7_P5: 19 months; L6M cut -75.7% dM -14426; WF beat 0% cut 0.0% (202402-202502) [EXACT partial]
-- R7_TEST: 1 months; no complete window yet; WF n/a [EXACT partial]
-- R7_HOOKREF: 1 months; no complete window yet; WF n/a [EXACT partial]
+## 9. EXACT engine results (auto-refreshed 2026-11-10 10:56Z) - R7 joint bracket policies (hook regression R7_HOOKREF identical on 202610; R7_TEST confirmed the hooks act)
+Engine column: ROLLFIX1 = every contract-roll month of the set ran on the roll-patched engine (RollRep) and is scored against base_b_rollfix = ROLL-FIXED; ROLLEXCL = old unpatched runs scored with the 33 roll-alive trades excluded (superseded, shown until the rerun lands). L6M = 202605-202610, PRE = 202402-202506; X' = 202304-202401 and HOLD = 202511-202604 only for R7_P3 and R12_OPEN930 (the leads). cuts = maxDD cut % vs exact Q1-A, all weeks; eq = at equal L6M mean; dM = $/wk mean vs live; WF = bi-weekly re-pick on the exact block (beat % of periods / OOS cut %); prior = rule 2a label; no placebo on exact rows, so the highest label is LEAD.
+
+| set | engine | months | L6M cut / eq / dM | L3M cut | L1M cut | PRE cut / dM | X' cut / dM | HOLD cut / dM | WF beat % / cut % | prior | label |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| R7_P1 | ROLLFIX1 | 23 | -110.3 / -357.7 / -12065 | -26.1 | 65.6 | -38.4 / -11089 | nan / nan | nan / nan | 14 / -0.0 | RECENT-ONLY | no |
+| R7_P2 | ROLLEXCL | 15 | nan / nan / nan | nan | 73.8 | nan / nan | nan / nan | nan / nan | nan / nan | PRIOR-UNKNOWN | no |
+| R7_P3 | ROLLEXCL | 15 | nan / nan / nan | nan | 48.1 | nan / nan | nan / nan | nan / nan | nan / nan | PRIOR-UNKNOWN | no |
+| R7_P4 | ROLLFIX1 | 23 | -254.1 / -977.4 / -15021 | -113.8 | 89.9 | -451.6 / -23360 | nan / nan | nan / nan | 0 / 0.0 | RECENT-ONLY | no |
+| R7_P5 | ROLLFIX1 | 23 | -75.7 / -359.0 / -14426 | 28.2 | 28.1 | -17.9 / -8371 | nan / nan | nan / nan | 18 / 31.2 | RECENT-ONLY | no |
+
+**Live-stays line:** no exact row passes recents + eq-mean + prior + WF; the live setting stays (brackets 60/60, O7 40/90; flatten 16:55; blocks and session clock as live).
+
+
+### Exact vs first-order (L6M eq cut % / dM $/wk; PRE cut %) - the screen did not predict the engine
+| set | policy | first-order L6M eq cut / dM / PRE cut | exact L6M eq cut / dM / PRE cut |
+|---|---|---|---|
+| R7_P1 | BEST_KEY | -39.0 / -7318 / -62.1 | -357.7 / -12065 / -38.4 |
+| R7_P4 | BEST_EQRISK | -157.3 / -3293 / -75.4 | -977.4 / -15021 / -451.6 |
+| R7_P5 | BEST_OKPRIOR | -27.9 / -5438 / -5.8 | -359.0 / -14426 / -17.9 |
+
+Reading: re-entries, locks and the stack cut interact with every exit change (SZ_BASE_PROOF: first-order is blind to exits), so first-order brackets ranks are not reliable: the points-arm policy R7_P2 looked best (+17.5 eq cut) and loses ~half the weekly mean in the engine, while the percent-arm policy R7_P3 (cells chosen with the arm as a percent of the stop) shows an exact L6M/L3M/L1M cut of 33.9 / 48.2 / 48.1 % at equal-to-higher mean (dM +346 $/wk) but PRE -39.6 % (dM -6,241) and a bi-weekly WF beating live in 18 % of periods: RECENT-ONLY, FAILS the walk-forward. Verdict unchanged: **live brackets stay**; R7_P3 is the one lead to carry into the joint stage (as a labelled RECENT-ONLY layer candidate), the percent arm is NOT recommended on this evidence (reverses the first-order advice for the arm convention; the exact test of pct vs points is P3 vs P2, mixed: P3 better on L6M, worse on PRE).

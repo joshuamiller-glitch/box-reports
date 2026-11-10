@@ -1,11 +1,11 @@
 > ROLL-EXCL: the 33 base trades alive across a contract roll carry weight 0 in every first-order number below (COMB, NOCUT, UNIF; OLD-BASE comparison rows are not roll-excluded).
 > STANDING RULE (user 17:20Z): every D7 layer stays ON; this page recommends SETTINGS only (P7 session lots, slots, gates), never dropping a layer; live setting is always the reference row and stays if nothing beats it OOS.
 > VOID: every earlier EXACT table-mode row (sz_exact keyed on arm time, fixed to the signal second) is void and not shown; exact sets are re-queued with the fixed driver. ROLL FIX: NQ roll jumps (12 quarterly, 2 were flagged) are now adjusted in the FGH bars; affected features were gap, on_ratio, TWAP deviation/slope, dip, EMA slope, ATR/ADX on roll nights; zone-line features inherit the raw replica frame and were not re-derived.
-> ALL NUMBERS BELOW ARE FIRST-ORDER SCREEN ONLY (pnl per planned lot x lots) unless marked EXACT. User addendum 1: first-order is not a verdict. EXACT runs (SZ-CORE queue, memory-bound): FGH_P744 0 months done; FGH_P644 0 months done; FGH_P444 0 months done; FGH_GREEDY 0 months done; FGH_BESTH 0 months done; FGH_BESTG 0 months done; FGH_DOW2 0 months done; FGH_TREND 0 months done; FGH_L2K2 0 months done.
+> ALL NUMBERS BELOW ARE FIRST-ORDER SCREEN ONLY (pnl per planned lot x lots) unless marked EXACT. User addendum 1: first-order is not a verdict. EXACT runs (SZ-CORE queue, memory-bound): FGH_P744 0 months done; FGH_P644 23 months done; FGH_P444 23 months done; FGH_GREEDY 33 months done; FGH_BESTH 0 months done; FGH_BESTG 0 months done; FGH_DOW2 0 months done; FGH_TREND 0 months done; FGH_L2K2 0 months done.
 
 TESTING-DEFECT CHECK (addendum 1c) across my three live-chain bases (COMB, NOCUT, UNIF): of 6788 common cells, L6M maxDD identical to the dollar: 0; PRE: 0. No defect found among my own scores; the first-order scorer cannot see exit/re-entry/lock changes, so the verdict needs EXACT runs.
 
-# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-10 04:13Z
+# SZ_FGH - families F (time/session), G (signal quality), H (regime) + K slice (P7 lot table), refreshed 2026-11-10 10:54Z
 
 Label: PRE-PROOF, post-hoc, Shadow only, FIRST-ORDER on S1b-COMB (pnl per lot x lots; mean unreliable, drawdown ranking usable), no PASS claims, entry match < .85. Prereg SZ_FGH_PREREG.md (sha in DECISIONS.md). 6786 cells x 3 bases (COMB live, NOCUT, UNIF controls). Ledger /mnt/l2/l2vast/_th_sz/ledger_FGH*.parquet; lots ratios of top cells M_FGH.npz.
 
@@ -15,12 +15,20 @@ Calendar: FOMC/CPI/NFP dates entered from public schedules (memory); CHECKED aga
 
 
 <!--FGHFINAL-->
-## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 04:13Z)
+## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 10:54Z)
 | set | exact maxDD cut % (d mean $/wk) by window | exact worst-20 cut % (+ = better) |
 |--|--|--|
-| P7 7,4,0,4,0,0 (Q_P7_744, 39 months) | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |
-| P7 5,4,0,4,0,0 (Q_P7_544, 33 months) | L1M 2.4 (+630) / L3M 2.5 (-3672) / L6M 2.5 (-4392) / PRE 7.1 (-2858) / X' 55.1 (+795) | L6M -37 / PRE 19 |
-| K cap 3 (Q_KCAP3, reference to compare, not mine) | L1M 29.8 (-4656) / L3M 29.8 (+307) / L6M 26.9 (+2833) / HOLD 15.3 (+1379) / PRE 15.8 (+15) / X' 41.3 (+2029) | L6M 69 / HOLD 25 / PRE 17 |
+| P7 7,4,0,4,0,0 (Q_P7_744), 39 months | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |
+| P7 6,4,0,4,0,0 (FGH_P644), 23 months | L1M 51.0 (+13573) / L3M 33.9 (+567) / L6M 33.9 (-4043) / PRE 41.8 (-1713) | L6M -5 / PRE 33 |
+| P7 5,4,0,4,0,0 (Q_P7_544), 39 months | L1M 2.4 (+630) / L3M 2.5 (-3672) / L6M 2.5 (-4392) / HOLD 18.6 (-5361) / PRE 7.1 (-2858) / X' 55.1 (+795) | L6M -37 / HOLD 15 / PRE 19 |
+| P7 4,4,0,4,0,0 (FGH_P444), 23 months | L1M 51.1 (+13583) / L3M -19.2 (-7306) / L6M -19.2 (-8758) / PRE 20.0 (-3849) | L6M -78 / PRE 30 |
+| stack greedy lot table, down (FGH_GREEDY), 33 months | L1M 62.7 (+23154) / L3M 22.5 (-3992) / L6M 22.5 (-4826) / PRE 55.8 (-3899) / X' 72.0 (+4780) | L6M -58 / PRE 42 |
+| H ATR >= 1.6 P7 x0 (FGH_BESTH) | pending in the exact queue (no complete month yet) | - |
+| B02 K7P7H7 L20 thr 1.0 all-day x0 (FGH_B02A) | pending in the exact queue (no complete month yet) | - |
+| B02 all books L20 thr 1.0 all-day x0 (FGH_B02B) | pending in the exact queue (no complete month yet) | - |
+| K cap 3 (Q_KCAP3, reference to compare, not mine), 39 months | L1M 29.8 (-4656) / L3M 29.8 (+307) / L6M 26.9 (+2833) / HOLD 15.3 (+1379) / PRE 15.8 (+15) / X' 41.3 (+2029) | L6M 69 / HOLD 25 / PRE 17 |
+
+Exact reading: P7 7,4,0,4 is the only table that cuts L6M and PRE without costing L6M mean (+489). 6,4,0,4 cuts more but gives up -$4.0k/wk (equal-mean cut 22.2 vs 23.9) and its L6M worst-20 is worse; 4,4,0,4 DEEPENS L6M maxDD (-19%) although the first-order screen said +28%; the stack-greedy table is +22.5 at -$4.8k/wk, equal-mean cut ~1: not a candidate. First-order screens are not verdicts.
 
 First-order screen of the same P7 7/4/4 (sz_core, ROLL-EXCL): cut L6M 29.4 / HOLD 18.5 / PRE 32.1 / X' 27.4, d mean L6M +372 / PRE -446. Exact: L6M 22.5 / HOLD 10.0 / PRE 14.8 / X' 18.8, d mean L6M +489 / PRE -1021. The first-order screen overstates PRE (about +17 points) and X'; L6M agrees within 6.9 points; only exact numbers are verdicts.
 

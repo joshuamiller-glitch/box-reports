@@ -1,4 +1,4 @@
-# DS3_REDO_R2_STACKRULES - A06 slots and B02 quiet-overnight on the state base (S1b-COMB), first version 2026-11-10 04:13Z
+# DS3_REDO_R2_STACKRULES - A06 slots and B02 quiet-overnight on the state base (S1b-COMB), first version 2026-11-10 10:54Z
 
 > FIRST-ORDER SCREEN ONLY (pnl per lot x lots; exact runs pending in the SZ-CORE queue), ROLL-EXCL (33 trades alive across a roll carry weight 0), PRE-PROOF, post-hoc, Shadow only. STANDING RULE: every layer stays ON; this page proposes settings only; the live setting is the reference row and stays unless a setting beats it out of sample. Numbers = sz_core.Z.score (all-week maxDD/w20/Ulcer, carry week dropped from means only). Rolls in the NQ bars fixed. Old-vs-new base: pending (old-base R2 cells were never published; OLD-BASE rerun of these grids not yet done).
 
@@ -7,19 +7,27 @@
 |--|--|--|--|--|--|
 | A06 slots (x0.5 half-hours) | K7 0330,0400,0430,0500,0530,1430,1900,1930,2030,2100; P7 0330,0500,0830; U7 0200,0830; H7 0400,0530,0830,1030,1230,1300,1400,1830 | per-book greedy over 48 slots x {0,.5,1}: see below; stack greedy sets 74 slots (mostly x0) | NO: walk-forward of the picking procedure 27% raw, -22% at equal mean, mean -6634$/wk | NO: live slots stay | SlotList per book (x0.5 only in v1.5; x0 slots need v1.6) |
 | B02 (quiet overnight, K7/P7/H7 x0.5, 10:30-18:00, lookback 20 d, ratio < .85) | L20 / .85 / x0.5 / 1030-1800 | best by SEL: K7P7H7 L20 thr 1.20 allday x0.0 (size-down of 7888 trades, d mean -2644$/wk) | picking-procedure WF (all down-only B02 cells): 23% raw, 21% eq-mean, mean -449$/wk; restricted to the live form (K7P7H7, 10:30-18:00): 3% raw, -2% eq, -780$/wk | candidate only, EXACT queued (FGH_B02A K7P7H7 L20 thr 1.0 all-day x0; FGH_B02B all books): live B02 retained until exact | B02 lookback / threshold / action fields |
-| StackCut Asia | pct / sessions live (v1.5 StackCutPct, StackAsiaOnly) | NOT screened here: engine exit rule, needs exact (SZ-CDE E family owns it) | pending | pending | StackCutPct, StackAsiaOnly |
-| HM5 vs 1/3/15-min for H7 | HM5 | NOT screened: bar-type engine change, exact only | pending | pending | H7 BarMinutes |
+| StackCut Asia | 50%, Asia-only, first same-side stop | EXACT (SZ-CDE, DS3_REDO_R2b_STACKCUT.md): best candidate = cut other books on EITHER side after an Asia stop: L6M cut +4.3, d mean +1055, equal-mean +7.7, PRE +0.7 / +284, but worst-20 L6M -8.3 / PRE -11.0 (worse); pct 25/75/100, all-sessions, second-stop variants all deepen L6M maxDD; OFF is -4.5 (reference row only) | no bi-weekly WF available | NO: live retained | StackCutPct, StackAsiaOnly |
+| HM5 vs 1/3/15-min for H7 | HM5 | not run (bar-type engine change; no exact set exists) | n/a | NO: live retained, untested | H7 BarMinutes |
 
 
 
 
 <!--FGHFINAL-->
-## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 04:13Z)
+## EXACT vs FIRST-ORDER (ROLLFIX1 engine, exact rows read with sz_exact.py score; written 2026-11-10 10:54Z)
 | set | exact maxDD cut % (d mean $/wk) by window | exact worst-20 cut % (+ = better) |
 |--|--|--|
-| P7 7,4,0,4,0,0 (Q_P7_744, 39 months) | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |
-| P7 5,4,0,4,0,0 (Q_P7_544, 33 months) | L1M 2.4 (+630) / L3M 2.5 (-3672) / L6M 2.5 (-4392) / PRE 7.1 (-2858) / X' 55.1 (+795) | L6M -37 / PRE 19 |
-| K cap 3 (Q_KCAP3, reference to compare, not mine) | L1M 29.8 (-4656) / L3M 29.8 (+307) / L6M 26.9 (+2833) / HOLD 15.3 (+1379) / PRE 15.8 (+15) / X' 41.3 (+2029) | L6M 69 / HOLD 25 / PRE 17 |
+| P7 7,4,0,4,0,0 (Q_P7_744), 39 months | L1M 22.5 (-3419) / L3M 22.5 (-939) / L6M 22.5 (+489) / HOLD 10.0 (-436) / PRE 14.8 (-1021) / X' 18.8 (+613) | L6M 28 / HOLD 18 / PRE 16 |
+| P7 6,4,0,4,0,0 (FGH_P644), 23 months | L1M 51.0 (+13573) / L3M 33.9 (+567) / L6M 33.9 (-4043) / PRE 41.8 (-1713) | L6M -5 / PRE 33 |
+| P7 5,4,0,4,0,0 (Q_P7_544), 39 months | L1M 2.4 (+630) / L3M 2.5 (-3672) / L6M 2.5 (-4392) / HOLD 18.6 (-5361) / PRE 7.1 (-2858) / X' 55.1 (+795) | L6M -37 / HOLD 15 / PRE 19 |
+| P7 4,4,0,4,0,0 (FGH_P444), 23 months | L1M 51.1 (+13583) / L3M -19.2 (-7306) / L6M -19.2 (-8758) / PRE 20.0 (-3849) | L6M -78 / PRE 30 |
+| stack greedy lot table, down (FGH_GREEDY), 33 months | L1M 62.7 (+23154) / L3M 22.5 (-3992) / L6M 22.5 (-4826) / PRE 55.8 (-3899) / X' 72.0 (+4780) | L6M -58 / PRE 42 |
+| H ATR >= 1.6 P7 x0 (FGH_BESTH) | pending in the exact queue (no complete month yet) | - |
+| B02 K7P7H7 L20 thr 1.0 all-day x0 (FGH_B02A) | pending in the exact queue (no complete month yet) | - |
+| B02 all books L20 thr 1.0 all-day x0 (FGH_B02B) | pending in the exact queue (no complete month yet) | - |
+| K cap 3 (Q_KCAP3, reference to compare, not mine), 39 months | L1M 29.8 (-4656) / L3M 29.8 (+307) / L6M 26.9 (+2833) / HOLD 15.3 (+1379) / PRE 15.8 (+15) / X' 41.3 (+2029) | L6M 69 / HOLD 25 / PRE 17 |
+
+Exact reading: P7 7,4,0,4 is the only table that cuts L6M and PRE without costing L6M mean (+489). 6,4,0,4 cuts more but gives up -$4.0k/wk (equal-mean cut 22.2 vs 23.9) and its L6M worst-20 is worse; 4,4,0,4 DEEPENS L6M maxDD (-19%) although the first-order screen said +28%; the stack-greedy table is +22.5 at -$4.8k/wk, equal-mean cut ~1: not a candidate. First-order screens are not verdicts.
 
 First-order screen of the same P7 7/4/4 (sz_core, ROLL-EXCL): cut L6M 29.4 / HOLD 18.5 / PRE 32.1 / X' 27.4, d mean L6M +372 / PRE -446. Exact: L6M 22.5 / HOLD 10.0 / PRE 14.8 / X' 18.8, d mean L6M +489 / PRE -1021. The first-order screen overstates PRE (about +17 points) and X'; L6M agrees within 6.9 points; only exact numbers are verdicts.
 

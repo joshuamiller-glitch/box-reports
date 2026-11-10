@@ -1,4 +1,4 @@
-# DS3_REDO_R6_SHADOW - T-STACK-REDO R6: shadow lines (signal-state rules, X1-X5, flip-level) re-scored on the state base S1b-COMB (REDO-R6, 2026-11-10 08:36Z)
+# DS3_REDO_R6_SHADOW - T-STACK-REDO R6: shadow lines (signal-state rules, X1-X5, flip-level) re-scored on the state base S1b-COMB (REDO-R6, 2026-11-10 10:36Z)
 **Label: PRE-PROOF (entries not live-matched, S1b base), post-hoc, Shadow only, NOTHING promoted, no PASS claims. FIRST-ORDER SCREEN for sections A and C (sz_core, ROLL-EXCL, all weeks for maxDD, carrying week dropped from means); EXACT runs of the TOP-5 per family are queued with SZ-CORE (prefix R6_, tier 2, file exact_queue_6_r6.txt, 39 months x 10 sets); status [FIRST-ORDER SCREEN ONLY] until they land. Section B uses its own trade simulation (tape fills), not the engine.**
 Prereg: DS3_REDO_R6_PREREG.md (sha 0ad953ad...) and DS3_REDO_R6_PREREG_BC.md (sha f5e35563...; X grid was run once ~18:25Z before its sha line, disclosed there; the sha line is stamped 18:28Z). Code code/th_sz_r6/. Standing rule: every layer stays ON; "off" rows are references only.
 ## 0. Summary block

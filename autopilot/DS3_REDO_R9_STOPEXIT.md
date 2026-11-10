@@ -1,5 +1,6 @@
 # DS3_REDO_R9_STOPEXIT - stop-exit and cut-exit mechanics on the state base (T-STACK-REDO R9)  [FIRST-ORDER SCREEN, tape microsim; PRE-PROOF until entry match >= .85; no PASS claims]
-Generated 2026-11-10 07:30 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
+**CAVEAT (stop fills / stop exits, every R9-R11 page):** the engine fills a native stop 1.9 pt BETTER than the stop level (zero-latency walk of the pre-print book); live native stops were 1.28 pt WORSE and join stops 2.45 pt worse (old stack, 8 / 21 stops). Every dollar here that depends on a stop fill is on the optimistic engine basis unless marked live-calibrated; the live stop-exit mode per book is an open input (section 0b). Exact rows use the ROLL-FIXED engine; first-order rows use the ROLL-EXCL weights of the old base list.
+Generated 2026-11-10 10:54 UTC (elapsed 8 s). Base S1b-COMB 21,135 trades (43 months, ROLL-EXCL weights), data end 2026-11-05, windows as of 2026-11-09. Code: code/th_stack_r9 (r9_tape.py microsim, r9_run.py driver, r9_score.py, fo_lib.py).
 Registry: /mnt/l2/l2vast/_th_joint/layers/stopexit/topK.json. Cell ledger: /mnt/l2/l2vast/_th_stack/r9/cells_r9.parquet.
 
 ## 0. What was measured, how, and the limits
@@ -152,10 +153,7 @@ Mean $ per cut (matched = all cuts) of join vs market, by session (ALL books): a
 Cut-exit join fill share: CJ1_i0 0.10, CJ2_i0 0.10, CJ3_i0 0.10 (fallback = market after the wait; the price path after a cut signal runs against the position, so a join that waits pays the drift).
 
 ## 6b. EXACT engine rows (SZ queue, hooks exit_hooks.py; identity test REF_R9_ID on 202610: 823 trades, net 45,346.92, all columns identical to base_b/S1-COMB: PASSED)
-Exact L6M (202605-202610) vs the as-run base (engine assignment K7 M7 U7 P7 join, H7 A7 O7 native), ENGINE fill basis (native fills optimistic, see section 1):
-| set | setting | months | L6M maxDD cut % | L6M d mean $/wk | w20 cut % | eq-mean cut % | L3M cut % | L1M cut % |
-|---|---|---|---|---|---|---|---|---|
-Reading: moving M7/U7/P7 (and A7/O7 as listed) to Native on the engine basis gains because the engine fills a native stop 1.9 pt BETTER than the level (live: 1.28 pt worse). The gain is a fill-basis artefact until the native fill is re-based: at +1.28 pt the same exact change is worth about the first-order live-calibrated row NATLIVE (section 4a), i.e. a few hundred $/wk, inside noise.
+Exact rows for the stop-mode reference sets and the R9 grid sets are in the section EXACT rows (appended) at the end of this page.
 
 ## 7. Family null, procedure walk-forward, old-vs-new
 - Family max-stat over all 400 R9 cells (own-draw p beside it): best-key cell R9S_ALL_NAT p_own L6M 0.18 / PRE 0.49, p_family 1.00.
@@ -188,11 +186,17 @@ Trailing 26 weeks to the data end, drawdown first: pick = **R9S_ALL_NAT** (live 
 | R9S_P7_NATLIVE     | 79438.1 |    127499 | 34241.9 | 24074.5 | False  | PRIOR-UNKNOWN |
 
 ## EXACT rows (appended)
-Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: R9_J5_i1_c10 6, R9_J10_i1_c10 6, R9_J10_i0_c10 6, R9_STRAT0_c10 6
-| set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % |
-|---|---|---|---|---|---|---|---|---|---|---|
-| R9_J5_i1_c10 | 6 | 4.8 | 297.0 | 7.5 | 5.8 | 4.8 | 4.7 | n/a | n/a | n/a |
-| R9_J10_i1_c10 | 6 | -9.2 | -1959.3 | -37.0 | -19.7 | -9.2 | -5.1 | n/a | n/a | n/a |
-| R9_J10_i0_c10 | 6 | -9.1 | -1644.4 | -32.6 | -17.8 | -9.1 | -4.8 | n/a | n/a | n/a |
-| R9_STRAT0_c10 | 6 | 4.1 | 190.3 | 6.2 | 4.8 | 4.1 | 4.0 | n/a | n/a | n/a |
+Exact engine, SZ queue (hooks netting_hooks.py / exit_hooks.py or M_R11 table mode), cuts vs the exact S1b-COMB list (all weeks, ROLL-EXCL); a window is reported only when all its months are done. Months done per set: REF_R9_STOP_CODE 6, REF_R9_STOP_G0 6, REF_R9_STOP_NAT 6, R9_J5_i1_c10 6, R9_J10_i1_c10 6, R9_J10_i0_c10 6, R9_STRAT0_c10 6
+| set | months | L6M cut % | L6M d mean $/wk | L6M w20 cut % | L6M eq-mean cut % | L3M cut % | L1M cut % | PRE cut % | PRE d mean | X' cut % | bi-weekly WF beat % / cut % (exact, own block) | label (rule 2a) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF_R9_STOP_CODE | 6 | -0.0 | -129.0 | -1.0 | -0.6 | -0.0 | 1.1 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
+| REF_R9_STOP_G0 | 6 | 5.3 | 966.6 | 14.5 | 8.6 | 5.3 | 5.2 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
+| REF_R9_STOP_NAT | 6 | 6.7 | 1289.5 | 19.2 | 11.0 | 6.7 | 6.6 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
+| R9_J5_i1_c10 | 6 | 4.8 | 297.0 | 7.5 | 5.8 | 4.8 | 4.7 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
+| R9_J10_i1_c10 | 6 | -9.2 | -1959.3 | -37.0 | -19.7 | -9.2 | -5.1 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
+| R9_J10_i0_c10 | 6 | -9.1 | -1644.4 | -32.6 | -17.8 | -9.1 | -4.8 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
+| R9_STRAT0_c10 | 6 | 4.1 | 190.3 | 6.2 | 4.8 | 4.1 | 4.0 | n/a | n/a | n/a | n/a (block < 8 months) | PRIOR-UNKNOWN (PRE pending) |
 Label: [EXACT partial] until L6M, PRE and X' are all present; first-order rows above stay SCREEN ONLY.
+
+## FINAL-DRAFT VERDICT (auto-updated with the exact rows above)
+The live stop setting stays unless a PRE/X'-complete exact row beats it with the bi-weekly WF. L6M exact: join 5 s one tick inside, catastrophe 10 (R9_J5_i1_c10) cuts maxDD 4.8% at +$297/wk, STRAT0 (strategy-worked market, c10) 4.1%; waits of 10 s HURT (-9%). The native / mode rows (REF_R9_STOP_G0, _NAT: +5.3% / +6.7%, +$967 / +$1,290/wk) are fill-basis artefacts of the optimistic engine native fill (section 1) and are not a recommendation; the installed panel stop-mode per book is the open input. Nothing here is proposed for the panel. (draft generated 2026-11-10 10:55 UTC)

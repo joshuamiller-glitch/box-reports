@@ -1,10 +1,10 @@
-# DS3_FIND_DRESSED (FD-CORE, 2026-11-10 10:15Z). Post-hoc, Shadow only, no PASS claim, nothing live.
+# DS3_FIND_DRESSED (FD-CORE, 2026-11-10 10:56Z). Post-hoc, Shadow only, no PASS claim, nothing live.
 User order: judge every candidate book WITH the stack on it, not naked. Seat test on the S1b-COMB stack drawdown (API: FD_API.md). MV is the weakest live book on L6M stack-Calmar contribution (removing it alone cuts L6M maxDD 14% at equal mean, so replace seats are credited only beyond that drop-only row).
 
 ## INSTRUMENTS COVERED (user request 21:10Z; counts from candidates.parquet, owner ledgers and liq/ nol2/ directories at page time)
 | instrument | candidates in inventory | naked lists exported | dressed | data end (candidate lists) | L2 / depth on box (quotes: FD_NOL2.md section 5, nothing bought) | stack used | why not dressed / note |
 |--|--|--|--|--|--|--|--|
-| NQ | 329 | 233 | 231 (FD-LIQ liq/) | 2026-10-26 (state to 11-05) | yes (full MBP-10 on disk) | FULL STACK | candidates with no stop distance / no price path not dressed; registry rows without lists |
+| NQ | 441 | 345 | 231 (FD-LIQ liq/) | 2026-10-26 (state to 11-05) | yes (full MBP-10 on disk) | FULL STACK | candidates with no stop distance / no price path not dressed; registry rows without lists |
 | ES | 1010 | 1008 | 1006 (FD-LIQ liq/) | 2026-10-26 (state to 11-05) | yes (MBP-10 from 2023-08) | FULL STACK | as NQ |
 | RTY | 684 | 681 | 649 (FD-LIQ liq/) | 2026-10-26 (state to 11-05) | yes (MBP-10 from 2023-08) | FULL STACK | as NQ |
 | YM | 681 | 678 | 642 in the NO-L2 pool (inv0); finalists 46 | 2026-10-16 | no; MBP-10 quote $527 hist 2023-04..2026-10 / $152 12 mo / $2.25 per wk | NO-L2 STACK | 2,819 dressed = every NO-L2 list with prices and >= 60 trades since 2023-04; the rest lack a price path or have < 60 trades |
@@ -25,13 +25,23 @@ User order: judge every candidate book WITH the stack on it, not naked. Seat tes
 Not dressed anywhere: pair books (two legs, no single stop distance), DAILY hold books (no stop, lots fixed), about 184 rows with no price path in the NO-L2 pool, registry rows without an exported trade list (DISCOVER / FADE / Q5-Q14 page rows, WHAT_IS_DEAD families, live-book siblings: siblings need the exact replica engine, sets FD_KBM15 FD_KBN20 FD_SMM35 FD_SMM25 FD_SMN10 are in SZ-CORE tier 2). Data ends: 1-min bar lists end 2026-10-16 (YM ZB 6E 6J, GC CL ZN), NQ-family lists 2026-10-26/30, 1-s state arrays to 2026-11-05; the 11-02..05 live week is therefore in no candidate list except BTC.
 Plan to add a missing instrument: (a) ZN/ZB/6J/NKD: already in the pool, no finalist, nothing to add; (b) MES/MNQ/M2K/MYM micro and other products (FDAX, ZF, SI, NG, HG): not on disk, quote via Databento metadata.get_cost first (budget left about $672 of $8,000 per FD_NOL2.md), then T-INSTR-2 style 1-min lists with the instr2 evaluator, then dress with the NO-L2 stack; (c) L2 for YM/GC/CL: the 12-month MBP-10 history of the three costs $433 (full 2023-04..2026-10 $1,309 does not fit the budget), forward $7.89/week.
 
+## LIVE-BOOK SIBLINGS, EXACT replica engine (FD_ID identity passed on 202610: 823 trades, all columns equal). Months 202605-202610, state cut ON, ROLL-EXCL; the sibling run REPLACES the whole live stack in those months (re-entries, locks, stack rules interact). L6M only; PRE/X' not run.
+| sibling | what changes | L6M mean $/wk vs live | L6M maxDD vs live | maxDD cut at equal lots | at equal mean | worst-20 vs live | verdict |
+|--|--|--|--|--|--|--|--|
+| FD_KBM15 | KB Keltner mult 1.5 (live 1.0) | 26598 vs 27925 (-1327) | 77584 vs 79907 | +2.9% | -1.9% | 140284 vs 165224 | live cell stays (lower mean, no equal-mean maxDD gain) |
+| FD_KBN20 | KB Keltner EMA 20 (live 14) | 21260 vs 22321 (-1061) | 90936 vs 79907 | -13.8% | -19.5% | 129708 vs 165224 | live cell stays (lower mean, no equal-mean maxDD gain) |
+| FD_SMM35 | SM supertrend mult 3.5 (live 3.0) | 20200 vs 22372 (-2172) | 104523 vs 79907 | -30.8% | -44.9% | 100146 vs 165224 | live cell stays (lower mean, no equal-mean maxDD gain) |
+| FD_SMM25 | SM supertrend mult 2.5 | 20499 vs 21877 (-1378) | 81863 vs 79907 | -2.4% | -9.3% | 115960 vs 165224 | live cell stays (lower mean, no equal-mean maxDD gain) |
+| FD_SMN10 | SM supertrend ATR 10 (live 7) | 24273 vs 25363 (-1091) | 92958 vs 79907 | -16.3% | -21.6% | 116910 vs 165224 | live cell stays (lower mean, no equal-mean maxDD gain) |
+Worst-20 on a 26-week window is almost the whole window (sum of the 20 lowest weeks, positive), so it is not informative here. The other 30 siblings (timeframe k2/k5/k15 variants, PB, HM, PE) are first-order only in the DS3 vectorised engine, labelled "sibling, not exact"; no exact run exists for them.
+
 ## REFERENCE ROW (not a recommendation): drop-only MV
 Weakest live book by L6M stack-Calmar contribution = MV (-3.21; the stack Calmar rises when it is removed). Removing it and adding nothing: maxDD cut vs live stack L6M +13.7% / HOLD +17.0% / PRE +15.3% / X' -22.6%; at equal stack mean (global lot scale) L6M +14.5% / PRE +16.1%; mean change L6M +257 $/wk. Every "replace weakest" row below is credited only for the increment over this row (inc_*).
 Does any dressed candidate beat "replace MV" beyond the drop-only credit (inc eq-mean cut > 0 on L6M and PRE)? 1002 of 1519 dressed rows
 ROLL-EXCL: naked NQ/ES/RTY (+ES/RTY pairs) lists were checked against the 14 contract-roll seconds of the replica engine; 116 trades in 43 of 1,916 lists were alive across a roll and carry rollx=1 (weight 0 in every daily series). instr2 lists run on back-adjusted bars so the artifact is small; ES/RTY use the NQ roll seconds (same quarterly cycle, exact ES/RTY roll days not separately checked). Other instruments: back-adjusted series, no stitched prints.
 
 ## 0. Status of the dressing
-Inventory: 6742 exported naked lists (LIQ 2930, NOL2 3812) + 133 registry rows without an exported list (FD_INVENTORY.md). Scored ledger rows by stage: {('LIQ', 'dressed'): 1288, ('LIQ', 'dressed_noL2'): 54, ('LIQ', 'naked'): 698, ('NOL2', 'dressed'): 231, ('NOL2', 'naked'): 233}. The ranked table below shows DRESSED rows first; where an owner has not delivered a dressed row yet the NAKED screen rows are shown and labelled NAKED ONLY.
+Inventory: 6854 exported naked lists (LIQ 3042, NOL2 3812) + 133 registry rows without an exported list (FD_INVENTORY.md). Scored ledger rows by stage: {('LIQ', 'dressed'): 1288, ('LIQ', 'dressed_noL2'): 54, ('LIQ', 'naked'): 810, ('NOL2', 'dressed'): 231, ('NOL2', 'naked'): 233}. The ranked table below shows DRESSED rows first; where an owner has not delivered a dressed row yet the NAKED screen rows are shown and labelled NAKED ONLY.
 
 ## 1. Ranked table (dressed rows). STANDING RULE 2: ranked by recents first (min of equal-mean add-seat maxDD cut on L6M and L3M); the bi-weekly re-pick WF (trailing 26 weeks -> next 2, purged) is the primary OOS column; PRE/X' is a tolerant check only (RECENT-ONLY = reported, never killed). Dressed numbers are in-sample search maxima.
 | instrument | session | book | naked L6M / PRE mean | naked L6M / PRE maxDD | dressed L6M / PRE mean | dressed L6M / PRE maxDD | layers that carry it | stack eq-mean cut L6M/PRE: add | replace-weakest (MV, vs drop-only) | replace-correlated (vs drop-only) | corr | placebo p (add) | family p | WF | live weeks | L2? | label | recents eq-cut L3M / L1M (add) | PRE check (STANDING RULE 2) |
@@ -161,7 +171,7 @@ Mean over the 596 candidates with both variants: L6M own mean +119 -> +133 $/wk,
 | FD-NOL2 | GC.donchian.67cdc99d | nol2_ba09566f | {"SIZ": "ER10(1-min bars) < 0.35 -> lots x0.5", "THL": "TH-loss(price path): arm at adverse >= 0.5R; cut when >= 2 of 4 votes (momentum 0.4R/0.15D, stall .4D, efficiency<.3, depth 0.6R)", "THP": "near-target take at 0.9 of target distance", "ZON": "zones VW: NOT within 0.5R of support behind entry -> lots x0.5", "LCK": "lock/cooldown: 0 min after a loser, max 2 losers/day, weekly stop at -99.0R",  | +3.1 | +3.1 | pending (bw_* not in ledger) | OK-PRIOR-UNKNOWN-WF (PRE maxDD -1% deeper vs allowed 15.0%, PRE mean vs live +45 $/wk; PRE mean +13781) |
 | FD-NOL2 | GC.T2FGC.7cbd7d38 | nol2_5e6510f2 | {"SIZ": "ER80(1-min bars) > 0.35 -> lots x0.0", "THL": "TH-loss(price path): arm at adverse >= 0.3R; cut when >= 3 of 4 votes (momentum 0.4R/0.15D, stall .4D, efficiency<.3, depth 0.6R)", "THP": "near-target take at 0.9 of target distance", "ZON": "zones RN: NOT within 1.5R of support behind entry -> lots x0.5", "LCK": "lock/cooldown: 0 min after a loser, max 99 losers/day, weekly stop at -4.0R",  | +2.8 | +2.8 | pending (bw_* not in ledger) | OK-PRIOR-UNKNOWN-WF (PRE maxDD -0% deeper vs allowed 15.0%, PRE mean vs live +241 $/wk; PRE mean +14188) |
 
-## 2. NAKED screen (FD-CORE, all 6742 exported lists, first-order, no placebo/family null): top 40 by add-seat equal-mean maxDD cut on min(L6M, PRE)
+## 2. NAKED screen (FD-CORE, all 6854 exported lists, first-order, no placebo/family null): top 40 by add-seat equal-mean maxDD cut on min(L6M, PRE)
 LABEL NAKED ONLY: a number here is the bare list at equal $1,200 risk added to the stack; it is the baseline the dressed rows must beat. Row = seat add; replace columns are INCREMENTAL over the drop-only row.
 
 | instrument | session | family | id | naked L6M / PRE mean | naked L6M / PRE maxDD | add: eq-mean cut L6M / PRE | replace-weakest inc L6M / PRE | corr to stack | random-entry placebo p L6M / PRE (finalists, 50 worlds, days+side re-simulated; conflates edge with timing) | status | owner |
@@ -207,7 +217,7 @@ LABEL NAKED ONLY: a number here is the bare list at equal $1,200 risk added to t
 | RTY | nyam | F_K_b3_ema34_atr20_m0.5 | RTY.F_K_b3_ema34_atr20_m0.5.e1b8e86e | +828 / -267 | +1995 / +22704 | +2.6 / +2.7 | +2.9 / +2.6 | -0.10 | - | killed | LIQ |
 | ES | pre | F_K | ES.F_K.2618be56 | +1672 / +55 | +4667 / +21170 | +3.6 / +2.5 | +3.2 / +2.2 | -0.03 | - | killed | LIQ |
 
-Counts: add-seat cut > 0 on both L6M and PRE at equal mean: 511 of 6742 lists (NOT a verdict: no placebo, no family null, no WF; with 6742 lists the max-stat alone would produce about this many).
+Counts: add-seat cut > 0 on both L6M and PRE at equal mean: 562 of 6854 lists (NOT a verdict: no placebo, no family null, no WF; with 6854 lists the max-stat alone would produce about this many).
 
 ## 3. Plain sentences
 Written per dressed candidate once the owners deliver (template: "<instr> <session> <family>: naked X/wk; dressed with <layers> Y/wk, maxDD -Z%; added to the stack it lowers stack maxDD A% (L6M) / B% (PRE) at equal mean; holds / fails OOS because ...; with depth it would also get a state cut: quote $...").
