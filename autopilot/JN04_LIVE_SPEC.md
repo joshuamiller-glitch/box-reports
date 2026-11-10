@@ -232,9 +232,22 @@ Months complete for the live-panel rows: L6M (6 months) done, HOLD queued ahead 
 
 Rule 2a label (old base): RECENT-ONLY (old fixed floor: RECENT-ONLY); PRE d mean -3620 vs the floor in section 6 of DS3_JOINT.md; bi-weekly WF over the contiguous block 2023-04..2026-10: 76% of periods beaten.
 
-### E2. LIVE PANEL BASE (P7 day cap 8,400 R1_3 + installed 7/4/4 table + P7 cut 40/5x/w5/p3, all ON) - JN04 = this base + the four layers; reference = this base without the layers (SZ-CORE LPB_BASE)
+### E2. LIVE PANEL BASE (P7 fixed day cap 8,400 loss / 42,000 profit + installed 7/4/4 table + P7 cut 40/5x/w5/p3, all ON) - JN04 = this base + the four layers; reference = this base without the layers (SZ-CORE LPB_BASE)
 
-Running (LPB_JN04 via the r5_hooks panel hooks, 43 months, 4 workers; regression LPB_EMPTY vs SZ-CORE LPB_BASE on 202606). Numbers appear here when the windows are complete.
+Months present: JN04-on-panel 43 of 43, reference 43 of 43; windows are reported only when every month of the window exists in both.
+
+| window | cut | eq-mean cut | d mean $/wk | worst-20 cell / ref | maxDD cell / ref |
+|---|---|---|---|---|---|
+| L1M | +77.5 | +80.4 | -3774 | 30k / 1k | 11515 / 51253 |
+| L3M | +6.3 | +18.4 | -4373 | 143k / 155k | 72382 / 77224 |
+| L6M | +6.3 | +18.4 | +3191 | 207k / 102k | 72382 / 77224 |
+| HOLD | +8.2 | +20.1 | +1141 | -277k / -377k | 72382 / 78842 |
+| PRE | +36.5 | +44.8 | -861 | -352k / -529k | 63120 / 99479 |
+| X' | +57.1 | +62.7 | +2352 | -186k / -321k | 52561 / 122553 |
+
+Rule 2a (25% PRE floor) label on the live panel base: OK-PRIOR [old fixed-floor: OK-PRIOR; floor -3490 computed on the ROLLFIX1 S1b live; allowance 16.269925748667145%, WF 81%].
+
+Reading: on the live panel base JN04 passes every gate - recents L6M +6.3 / L3M +6.3 / L1M +77.5, HOLD cut +8.2 with d mean +1141, PRE cut +36.5 with d mean -861 (inside the floor), X' cut +57.1 with d mean +2352, contiguous bi-weekly WF 81% of periods beaten. The recents gain is much smaller than on the old base (L6M +6.3% vs +43.4%) because the live panel base already contains the installed 7/4/4 table, the 8,400 day cap and the 40/5x/w5/p3 cut. CAVEAT: the four layers were applied as the same per-signal multiplier table built on the old base (LOT / STACK / SIGQ states computed from S1b-COMB trades), not recomputed on the live panel base; a rule-mode run on the panel base would replace this approximation.
 
 ## F. Cross-checks and open items
 

@@ -1,4 +1,4 @@
-# DS3_REDO_SUMMARY - T-STACK-REDO rounds R1-R13 in one page (written 2026-11-10 15:10Z by SZ-CORE; refreshed hourly)
+# DS3_REDO_SUMMARY - T-STACK-REDO rounds R1-R13 in one page (written 2026-11-10 16:10Z by SZ-CORE; refreshed hourly)
 
 **PRE-PROOF; post-hoc; Shadow only; no PASS claims.** Base = S1b-COMB (live D7 v1.5 with the seven state-cut lines), engine ROLLFIX1 where a row says ROLL-FIXED; entries not live-matched (match < .85). STANDING RULES: (1) every layer stays ON, off/no-rule rows are references, the live setting is retained where nothing beats it; (2)/(2a) recents first (L1M/L3M/L6M), bi-weekly re-pick WF is the primary OOS test, PRE/X' tolerant with the allowance min(25, L6M cut + 10)% when the WF beats live in >= 60% of periods else 15%, and the PRE mean floor = 25% of the live PRE mean (live PRE mean $13,961/wk, floor -$3,490/wk; user decision 2026-11-10 13:45Z); (3) exact engine runs decide, first-order is a screen only. The stop fill model is optimistic: ABSOLUTE means are optimistic everywhere; drawdown ranking is the usable output.
 
@@ -6,20 +6,20 @@
 
 | round | topic | page | last written | status |
 |--|--|--|--|--|
-| R1 | Locks (day caps, give-back, week floor, P7MaxDailyLoss) | DS3_REDO_R1_LOCKS.md | 11-10 13:59Z | FINAL DRAFT on disk - FINAL DRAFT 2026-11-10 13:59Z: exact ROLL-FIXED row |
-| R2 | A06 slots, B02 quiet-overnight, StackCut, HM5 bars | DS3_REDO_R2_STACKRULES.md | 11-10 14:31Z | NOT YET FINAL (first version / screen) |
+| R1 | Locks (day caps, give-back, week floor, P7MaxDailyLoss) | DS3_REDO_R1_LOCKS.md | 11-10 15:13Z | FINAL DRAFT on disk - FINAL DRAFT 2026-11-10 15:13Z: exact ROLL-FIXED row |
+| R2 | A06 slots, B02 quiet-overnight, StackCut, HM5 bars | DS3_REDO_R2_STACKRULES.md | 11-10 15:19Z | FINAL DRAFT on disk - FINAL (rebuilt 2026-11-10 15:18Z) |
 | R2b | StackCut variants (exact) | DS3_REDO_R2b_STACKCUT.md | 11-10 13:57Z | NOT YET FINAL (first version / screen) |
-| R3 | Session lot tables per book | DS3_REDO_R3_LOTTABLES.md | 11-10 14:31Z | NOT YET FINAL (first version / screen) |
-| R4 | Entry mechanics (split, dip gate, confirmation, PB3B) | DS3_REDO_R4_ENTRY.md | 11-10 03:52Z | NOT YET FINAL (first version / screen) |
+| R3 | Session lot tables per book | DS3_REDO_R3_LOTTABLES.md | 11-10 15:19Z | FINAL DRAFT on disk - FINAL (rebuilt 2026-11-10 15:18Z) |
+| R4 | Entry mechanics (split, dip gate, confirmation, PB3B) | DS3_REDO_R4_ENTRY.md | 11-10 15:10Z | FINAL DRAFT on disk - FINAL - entry mechanics re-scored o |
 | R5 | Cut-wait / post-cut blackout, NTZ, OTE, O7 | DS3_REDO_R5_CUTWAIT.md | 11-10 14:22Z | FINAL DRAFT on disk - FINAL |
-| R6 | Shadow lines (signal-state, X1-X5, flip-level) | DS3_REDO_R6_SHADOW.md | 11-10 14:36Z | NOT YET FINAL (first version / screen) |
+| R6 | Shadow lines (signal-state, X1-X5, flip-level) | DS3_REDO_R6_SHADOW.md | 11-10 15:59Z | NOT YET FINAL (first version / screen) |
 | R7 | Stop / target / ATR / time exit per book x session | DS3_REDO_R7_BRACKETS.md | 11-10 15:00Z | FINAL DRAFT on disk - FINAL DRAFT 2026-11-10 15:00Z** - exact L6M + PRE r |
-| R8 | Live books own signal parameters | DS3_REDO_R8_SIGNALS.md | 11-10 15:10Z | FINAL DRAFT on disk - FINAL. PRE label per rule 2a as pat |
-| R9 | Stop-exit and cut-exit mechanics (stop fill model) | DS3_REDO_R9_STOPEXIT.md | 11-10 14:00Z | NOT YET FINAL (first version / screen) |
-| R10 | Direction conflict / netting | DS3_REDO_R10_NETTING.md | 11-10 14:00Z | NOT YET FINAL (first version / screen) |
-| R11 | Re-entry after a win / target | DS3_REDO_R11_REENTRY.md | 11-10 14:00Z | NOT YET FINAL (first version / screen) |
+| R8 | Live books own signal parameters | DS3_REDO_R8_SIGNALS.md | 11-10 16:01Z | FINAL DRAFT on disk - FINAL. PRE label per rule 2a as pat |
+| R9 | Stop-exit and cut-exit mechanics (stop fill model) | DS3_REDO_R9_STOPEXIT.md | 11-10 15:12Z | NOT YET FINAL (first version / screen) - FINAL (draft status 2026-11-10 15:1 |
+| R10 | Direction conflict / netting | DS3_REDO_R10_NETTING.md | 11-10 15:12Z | NOT YET FINAL (first version / screen) - FINAL (draft status 2026-11-10 15:1 |
+| R11 | Re-entry after a win / target | DS3_REDO_R11_REENTRY.md | 11-10 15:12Z | NOT YET FINAL (first version / screen) - FINAL (draft status 2026-11-10 15:1 |
 | R12 | Session boundaries, blocks, flatten, dow / roll / event days | DS3_REDO_R12_SESSIONS.md | 11-10 15:00Z | FINAL DRAFT on disk - FINAL DRAFT 2026-11-10 15:00Z** - exact L6M + PRE r |
-| R13 | Fidelity loop and fill model; installed-panel fidelity (JN04 layers) | DS3_REDO_R13_FIDELITY.md | 11-09 21:21Z | NOT YET FINAL (first version / screen) - FINAL due 2026-11-10 15:00Z) |
+| R13 | Fidelity loop and fill model; installed-panel fidelity (JN04 layers) | DS3_REDO_R13_FIDELITY.md | 11-10 15:11Z | FINAL DRAFT on disk - FINAL version 2026-11-10 15:11Z) |
 
 ## One table per round (setting | live value | best exact | holds OOS (recents, HOLD, PRE under the 25% floor, X', WF %) | change recommended? | panel field / v1.6 need). Extracted verbatim from each round page; the page is the source of record.
 
@@ -27,7 +27,7 @@
 
 | setting | live value | best on the state base (first-order screen, equal mean) | holds OOS (dim WF eq cut) | change recommended | panel field |
 |--|--|--|--|--|--|
-| Day profit / loss caps | +5R / -2R per book | win4_loss1(arm2,keep.5,floor12) P7 (cut +33.7/+19.1/+20.9, d mean +2211) | -10.0 | candidate for exact; live stays until exact confirms | P7MaxDailyLoss (DS7.cs: DayPnl <= -MaxDayLoss * max(1, SizeMult), realized day P&L); R1_3 line: P7MaxDailyLoss 16,800 -> 8,400 |
+| Day profit / loss caps | +5R / -2R per book | win4_loss1(arm2,keep.5,floor12) P7 (cut +33.7/+19.1/+20.9, d mean +2211) | -10.0 | KEEP the installed P7MaxDailyLoss 8,400 (it is the R1_3 value; better than the DS7.cs default 16,800 on L6M/PRE/X-prime/HOLD, exact) | P7MaxDailyLoss (fixed dollars; DS7.cs CheckLimits: DayPnl <= -MaxDayLoss * max(1, SizeMult)); R1_3 = the installed 8,400 (default 16,800): keep |
 | Give-back arm / keep | arm 2R keep 50% | arm1_keep0.7(win5,loss2,floor12) P7 (cut +12.4/+34.1/+5.6, d mean +1823) | +20.5 | candidate for exact; live stays until exact confirms | GiveBackArmR / GiveBackKeepPct |
 | Week floor | 12R per book | floor6(win5,loss2,arm2/.5) ALL (cut -4.5/+8.2/+5.5, d mean -521) | -2.5 | no (live stays) | ComboWeekFloorR |
 | R basis | base lots | R_on_sized_lots P7 (cut +46.7/+44.6/+26.0, d mean +4488) | -5.2 | candidate for exact; live stays until exact confirms | v1.6 (R on sized lots not a field) |
@@ -92,16 +92,16 @@ Worked examples (today's P7 -20,985 day halt and the K7 give-back halts): those 
 
 | setting | live value | best on the state base | holds OOS? | change recommended | panel field |
 |--|--|--|--|--|--|
-| split | 70/30 | SP50: L6M cut -0.7% / dmean 4092; HOLD cut 18.4% / dmean 3048; PRE cut 6.5% / dmean 560; WF beat 33% | PRE OK-PRIOR, WF 33% | no - live stays (no cell beats the noise floor with support) | L2SplitPct |
-| resting offset (min dip) | 3 pts | DIP4: L6M cut -6.6% / dmean 2845; HOLD cut -2.9% / dmean -26; PRE cut 9.4% / dmean 813; WF beat 0% | PRE OK-PRIOR, WF 0% | no - live stays (no cell beats the noise floor with support) | L2GateMinDipPts |
+| split | 70/30 | SP50: L6M cut -0.7% / dmean 4092; HOLD cut 18.4% / dmean 3048; PRE cut 6.5% / dmean 533; WF beat 33% | PRE OK-PRIOR [old fixed-floor: OK-PRIOR; floor 3490], WF 33% | no - live stays (no cell beats the noise floor with support) | L2SplitPct |
+| resting offset (min dip) | 3 pts | DIP4: L6M cut -6.6% / dmean 2845; HOLD cut -2.9% / dmean -26; PRE cut 9.4% / dmean 787; WF beat 0% | PRE OK-PRIOR [old fixed-floor: OK-PRIOR; floor 3490], WF 0% | no - live stays (no cell beats the noise floor with support) | L2GateMinDipPts |
 | confirmations required | 1 of 8 | REQ2: L6M cut -3.9% / dmean 1535; HOLD cut n/a% / dmean n/a; PRE cut n/a% / dmean n/a; WF beat n/a% | PRE not run (outside reduced scope) | no - live stays (no cell beats the noise floor with support) | L2GateRequired |
 | which confirmation (alone) | all 8, 1 needed | ONLY_absorption: L6M cut -4.3% / dmean 2965; HOLD cut n/a% / dmean n/a; PRE cut n/a% / dmean n/a; WF beat n/a% | PRE not run (outside reduced scope) | no - live stays (no cell beats the noise floor with support) | code (GATE list); no panel field |
 | stages | 1 | STG2: L6M cut -5.6% / dmean -1751; HOLD cut n/a% / dmean n/a; PRE cut n/a% / dmean n/a; WF beat n/a% | PRE not run (outside reduced scope) | no - live stays (no cell beats the noise floor with support) | L2GateStages / L2GateStageStepPts |
 | max minutes | 0 (never) | MAXM15: L6M cut -4.4% / dmean -259; HOLD cut n/a% / dmean n/a; PRE cut n/a% / dmean n/a; WF beat n/a% | PRE not run (outside reduced scope) | no - live stays (no cell beats the noise floor with support) | L2GateMaxMinutes |
-| slice size / cadence | 1 lot / 2 s | SLALL: L6M cut -0.0% / dmean 2735; HOLD cut 12.2% / dmean 1955; PRE cut 13.9% / dmean 812; WF beat 33% | PRE OK-PRIOR, WF 33% | no - live stays (no cell beats the noise floor with support) | code constant (no panel field) |
+| slice size / cadence | 1 lot / 2 s | SLALL: L6M cut -0.0% / dmean 2735; HOLD cut 12.2% / dmean 1955; PRE cut 13.9% / dmean 787; WF beat 33% | PRE OK-PRIOR [old fixed-floor: OK-PRIOR; floor 3490], WF 33% | no - live stays (no cell beats the noise floor with support) | code constant (no panel field) |
 | true resting limit | not used (market add) | (not scored: outside the reduced exact scope; first-order cannot see fills) | - | no | new order type, code change |
 | add cancelled on exit | cancelled | (not scored: outside the reduced exact scope; first-order cannot see fills) | - | no | code (L2Disarm) |
-| P7 PB3B confirm (pattern / tf / sessions / dip / minutes) | three-bar, 45 s, nyam+nypm, dip 0, 0 min | CF_EN_45: L6M cut 13.5% / dmean 1643; HOLD cut 30.6% / dmean 2069; PRE cut 6.2% / dmean 1117; WF beat 67% | PRE OK-PRIOR, WF 67% | no - live stays (best cell clears the floor on L6M/PRE/WF but see verdict: neighbours or noise do not support it; Shadow only) | ConfirmPatternA, ConfirmTfSecsA, ConfirmSessionsA, ConfirmMinDip, ConfirmMaxMinutes |
+| P7 PB3B confirm (pattern / tf / sessions / dip / minutes) | three-bar, 45 s, nyam+nypm, dip 0, 0 min | CF_EN_45: L6M cut 13.5% / dmean 1643; HOLD cut 30.6% / dmean 2069; PRE cut 6.2% / dmean 1096; WF beat 67% | PRE OK-PRIOR [old fixed-floor: OK-PRIOR; floor 3490], WF 67% | no - live stays (best cell clears the floor on L6M/PRE/WF but see verdict: neighbours or noise do not support it; Shadow only) | ConfirmPatternA, ConfirmTfSecsA, ConfirmSessionsA, ConfirmMinDip, ConfirmMaxMinutes |
 
 ### R5 - Cut-wait / post-cut blackout, NTZ, OTE, O7 (DS3_REDO_R5_CUTWAIT.md)
 
@@ -163,15 +163,15 @@ STATUS: post-hoc, Shadow only, no PASS claims, PRE-PROOF (entry match < .85), RO
 
 ### R9 - Stop-exit and cut-exit mechanics (stop fill model) (DS3_REDO_R9_STOPEXIT.md)
 
-The live stop setting stays unless a PRE/X'-complete exact row beats it with the bi-weekly WF. L6M exact: join 5 s one tick inside, catastrophe 10 (R9_J5_i1_c10) cuts maxDD 4.8% at +$297/wk, STRAT0 (strategy-worked market, c10) 4.1%; waits of 10 s HURT (-9%). The native / mode rows (REF_R9_STOP_G0, _NAT: +5.3% / +6.7%, +$967 / +$1,290/wk) are fill-basis artefacts of the optimistic engine native fill (section 1) and are not a recommendation; the installed panel stop-mode per book is the open input. Nothing here is proposed for the panel. (draft generated 2026-11-10 14:00 UTC)
+The live stop setting stays unless a PRE/X'-complete exact row beats it with the bi-weekly WF. L6M exact: join 5 s one tick inside, catastrophe 10 (R9_J5_i1_c10) cuts maxDD 4.8% at +$297/wk, STRAT0 (strategy-worked market, c10) 4.1%; waits of 10 s HURT (-9%). The native / mode rows (REF_R9_STOP_G0, _NAT: +5.3% / +6.7%, +$967 / +$1,290/wk) are fill-basis artefacts of the optimistic engine native fill (section 1) and are not a recommendation; the installed panel stop-mode per book is the open input. Nothing here is proposed for the panel. (draft generated 2026-11-10 15:12 UTC)
 
 ### R10 - Direction conflict / netting (DS3_REDO_R10_NETTING.md)
 
-Take-both (live) stays. (Under the new 25% PRE floor R10_sess_london_SKIP is OK-PRIOR, old floor RECENT-ONLY, but its L6M exact cut is negative and WF 32%.) Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 14:00 UTC)
+Take-both (live) stays. (Under the new 25% PRE floor R10_sess_london_SKIP is OK-PRIOR, old floor RECENT-ONLY, but its L6M exact cut is negative and WF 32%.) Exact L6M: SKIP of the newer London signal FAILS (-8.7% maxDD cut, first-order said +4.9%); the opposite-flip exit on all books (R10_ALL_FLIP) is far worse (-31%); NET on newer K7 cuts 5.6% but costs $805/wk; FLIP U7>K7 5.3% at +$37/wk on few events. No policy is promoted; PRE/X' exact rows decide any LEAD. (draft generated 2026-11-10 15:12 UTC)
 
 ### R11 - Re-entry after a win / target (DS3_REDO_R11_REENTRY.md)
 
-FULL re-entry (live) stays. Exact: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts L6M maxDD 19.0% at +$1,481/wk and PRE maxDD 18.5% (PRE d mean -$1,558/wk): OK-PRIOR under the new 25% floor (OLD -$1k floor: RECENT-ONLY). Its bi-weekly WF beats live in only 36% of refit periods, so it is a LEAD (recents + prior ok), not a CANDIDATE; X' and the remaining months are still pending. Own-book N120 and any-book N60 do not hold. Not a panel change. (draft generated 2026-11-10 14:00 UTC)
+FULL re-entry (live) stays. Exact: SKIP of a same-side signal within 30 min of ANY book's Target (R11_any_N30_ALL_SKIP) cuts L6M maxDD 19.0% at +$1,481/wk and PRE maxDD 18.5% (PRE d mean -$1,558/wk): OK-PRIOR under the new 25% floor (OLD -$1k floor: RECENT-ONLY). Its bi-weekly WF beats live in only 36% of refit periods, so it is a LEAD (recents + prior ok), not a CANDIDATE; X' and the remaining months are still pending. Own-book N120 and any-book N60 do not hold. Not a panel change. (draft generated 2026-11-10 15:12 UTC)
 
 ### R12 - Session boundaries, blocks, flatten, dow / roll / event days (DS3_REDO_R12_SESSIONS.md)
 
@@ -197,6 +197,12 @@ FULL re-entry (live) stays. Exact: SKIP of a same-side signal within 30 min of A
 | (b) Fill drift, stops | **live sample = 2 Stop exits** (K7 -83.00, M7 -80.75 from the entry average: both during the Tue 02:55-08:20 stall at the native 80 catastrophe level, i.e. +3.0 and +0.75 beyond 80) + 3 BookLock market exits. The 2.45-pt figure cannot be re-calibrated from the frozen week (n=2, both in the stall); join exits (`_StopJoin`, `_StopJoinFallback`) n=0 live vs 12 in the engine. Monday's file is the first chance (need >= 20 stops). |
 | (c) Monday acceptance | code/th_r13/monday_acceptance.py written and regression-tested on the frozen week (U_main .719, identical to runs/u_comb); hist-week path smoke-tested (2 days, 1.9 GB peak, 19 s); stops cleanly with TAPE_MISSING.txt when the week's tape is absent (it is, for 11-06..11-13). Panel as installed: R13_INSTALLED_PANEL.md. |
 | Needs from the user | brackets as installed, policy file text, P7 lot string, join/native stop modes, bug-exit list, DS7.cs v1.5, the week's live CSV + NQ mbp-10 tape (R13_INSTALLED_PANEL.md s3; MORNING_FLAGS.md). |
+
+| ROLLFIX1 base | Entry match and fill tables re-run on the current state base ROLLFIX1 (S1BRF-COMB, base_b_rollfix, SZ_BASE_PROOF s10): ROLLFIX1 flattens positions only at the 14 contract-roll seconds (last roll 2026-09-15, none inside 11-01..11-05); 202610 base_b_rollfix trades are identical to base_b (823 trades, net 47,330.50), so every number of the frozen week is unchanged by ROLLFIX1 (fresh run R13_BLIND_FINAL = u_comb byte for byte). |
+| Rule 2a (25% of live PRE mean) | live PRE mean $13,961/wk (Z.live_pre_mean ROLLFIX1), floor -$3,490/wk (Z.prior_info). Only label in R13's scope: the P7 cut 40/5x/w5/p3 (exact PRE maxDD +25.2% deeper, d mean -$1,056/wk, L6M cut +16.9%): mean floor now PASSES (-1,056 > -3,490), maxDD allowance 15% at WF 42-54% (< 60%) and 25% even at WF 70% (25.2 > 25): **RECENT-ONLY** unchanged (old -$1k label also RECENT-ONLY). Fidelity tables themselves carry no rule-2a labels. |
+| Stop-fill caveat | every stop figure here is n = 2 (K7 Stop, M7 Stop; both in the Tue stall at the native 80 level) plus 3 BookLock; join fills n = 0. The 2.45-pt basis and the engine's native/join stop model are NOT validated by this week: treat every stop-fill-dependent result (R7, R9, R12, P7 7-lot stops) as using an uncalibrated basis until Monday's file has >= 20 stops. |
+| Bug exits | the 10 v1.5 state cuts of 11-08/09 (1 H7 + 9 M7) are outside the frozen week (0 in it); monday_acceptance.py excludes them (panel.bug_*: H7/M7 cut exits, 11-08 18:00..11-09 09:00 ET window, assumed until the list arrives), from exit match, P&L by cause and fill tables, and flags same-book followers. |
+| Monday acceptance status | installed panel in panel_installed.json = SZ-CORE LPB_BASE (P7 lots 7,4,0,4,0,0; P7 day cap 42,000 / 8,400; P7 cut 40/5x/w5/p3 from 11-09 20:30Z, v2 45/5x/w5/p10 before; other books S1b-COMB cells incl. H7 nyam override; brackets live 60/60, O7 40/90: **bracket retargets still not given, ask open in MORNING_FLAGS**). Script regression-tested twice on the frozen week; the new-week path runs but stops with TAPE_MISSING: hist day files end 2026-10-30, 1-s state days end 2026-11-05, so the week of 11-08 cannot be engine-run here. The unfrozen data/live DS7 file has a newer sync (mtime 11-09 22:05Z); per the R13 read rule only its 11-02..11-05 rows were used (reconciled, identical to the frozen file) and nothing later was read: running the acceptance on it is one command once the tape exists. |
 
 ## Installed-panel fidelity status
 

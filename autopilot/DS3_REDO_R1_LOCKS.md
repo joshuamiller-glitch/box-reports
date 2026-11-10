@@ -1,6 +1,6 @@
-# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-10 15:12Z)
+# DS3_REDO_R1_LOCKS - T-STACK-REDO R1: locks on the state base (first version 2026-11-10 16:18Z)
 
-> **FINAL DRAFT 2026-11-10 15:13Z: exact ROLL-FIXED rows (ROLLFIX1 engine, patched live reference), WF% beside every label, REFIT 2026-11-22 over all exact cells. Sections: R1 locks (grid, summary block, P7 -1R decision pack), R1b StackCut, L cooldowns, G candidates, joint lines for R1_3.**
+> **R1 FINAL 2026-11-10 16:19Z: exact ROLL-FIXED rows (ROLLFIX1 engine, patched live reference), WF% beside every label, REFIT 2026-11-22 over all exact cells. Sections: R1 locks (grid, summary block, P7 -1R decision pack), R1b StackCut, L cooldowns, G candidates, joint lines for R1_3.**
 
 > **Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. FIRST-ORDER SCREEN ONLY unless a row is in the exact table below. ROLL-EXCL: the 31 roll-artifact base trades are excluded from every number. STANDING RULE: every lock stays ON; "off" rows are reference rows only; the deliverable is the best SETTING (drawdown first at equal mean, holds OOS); if nothing beats the live setting the live setting stays.**
 
@@ -186,7 +186,10 @@ Pick: **R1;pb_rbasis;R_on_sized_lots;P7** (live retained: False; train end 2026-
 | R1/pb_daycaps/win4_loss1(arm2,keep.5,floor12)/P7 | CDE_R1_3 | 59357 / +492 / +25.7% [ROLL-FIXED] | 116454 / +1108 / +17.0% [ROLL-FIXED] | 129643 / -1076 / +5.7% [ROLL-FIXED] | 92001 / +242 / +7.5% [ROLL-FIXED] |
 | R1/pb_daycaps/win8_loss1(arm2,keep.5,floor12)/P7 | CDE_R1_4 | 59357 / +66 / +25.7% [ROLL-FIXED] | 116454 / +917 / +17.0% [ROLL-FIXED] | 129643 / -1076 / +5.7% [ROLL-FIXED] | 92001 / -8 / +7.5% [ROLL-FIXED] |
 | R1/pb_giveback/arm1_keep0.7(win5,loss2,floor12)/P7 | CDE_R1_5 | 77439 / -5048 / +3.1% [ROLL-FIXED] | 99383 / +81 / +29.2% [ROLL-FIXED] | 68550 / +1608 / +50.2% [ROLL-FIXED] | 86135 / -5555 / +13.4% [ROLL-FIXED] |
-| R1_FD installed fixed-dollar P7 cap (win 42,000 / loss 8,400) | CDE_R1_FD | not run yet | not run yet | not run yet | not run yet |
+| R1_FD installed fixed-dollar P7 cap (win 42,000 / loss 8,400) | CDE_R1_FD | 59357 / +47 / +25.7% [ROLL-FIXED] | 116454 / +917 / +17.0% [ROLL-FIXED] | 129643 / -1076 / +5.7% [ROLL-FIXED] | 92001 / -17 / +7.5% [ROLL-FIXED] |
+
+
+**R1_FD (the installed fixed-dollar P7 cap, win $42,000 / loss $8,400) exact, ROLL-FIXED:** maxDD cut vs the DS7.cs-default reference L6M +25.7% / PRE +17.0% / X-prime +5.7% / HOLD +7.5%, d mean +47 / +917 / -1076 / -17 $/wk: the same cuts as R1_3 (the win cap 4R vs 5R makes no difference to maxDD). R1_3 evidence therefore holds for the installed fixed-dollar cap; keep P7MaxDailyLoss 8,400.
 
 
 NOLOCK reference: the live locks are doing real work; any setting that removes them is a reference row, never a candidate.

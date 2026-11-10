@@ -1,4 +1,4 @@
-# JN04_SPEC_ATR_SKIP - P7 ATR >= 1.6x median skip, exact live definition for D7 v1.6 (SZ-FGH, 2026-11-10 15:53Z)
+# JN04_SPEC_ATR_SKIP - P7 ATR >= 1.6x median skip, exact live definition for D7 v1.6 (SZ-FGH, 2026-11-10 16:02Z)
 
 > Label: EXACT engine rows (ROLLFIX1 patched S1b engine) where stated; PRE-PROOF; post-hoc; Shadow only; no PASS claim. The rule was selected as the best of 854 first-order H cells (family p ~1, own-draw placebo p .02), so it is a LEAD+, not a CANDIDATE. Layers stay ON: this is an ADDITIONAL P7 entry gate, nothing is dropped.
 
@@ -32,7 +32,7 @@ Independent re-implementation of the text above from the raw 1-min NQ bars (code
 L6M cut +26.0 (d mean +1903), L3M +26.8 (+1817), PRE +35.6 (-262), X' see the EXACT block of SZ_FGH.md, worst-20 L6M +30. Rule 2a (floor = 25% of the live PRE mean): OK-PRIOR (old -$1k label also OK-PRIOR). Bi-weekly exact WF vs live: 36% of periods beat live (block 202402-202506).
 
 ### 4b. On the LIVE PANEL base (LPB_BASE: P7 day cap 8,400, 7/4/4 table, P7 cut 40/5x/w5/p3 ON) - EXACT, reference = LPB_BASE
-Months present for both ATRSKIP_P7 and LPB_BASE: 36 (202307..202610). Windows reported only when complete.
+Months present for both ATRSKIP_P7 and LPB_BASE: 39 (202307..202610). Windows reported only when complete.
 
 | window | maxDD LPB (live panel) | maxDD with ATR skip | cut % | d mean $/wk | equal-mean cut % | worst-20 cut % (+ better) |
 |--|--|--|--|--|--|--|
