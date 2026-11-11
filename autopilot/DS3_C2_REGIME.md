@@ -1,6 +1,6 @@
-# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 02:24Z)
+# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 03:24Z)
 
-> **TESTING DEFECT FOUND AND FIXED (SZ-CDE own, 2026-11-11 00:4xZ): the first rule-mode leave-one-out (JN04LPB_C2_RM_*) was launched with the rbjobs launcher, which does not apply the rule-mode hooks (jnrule LOT/SIGQ/REG, cde STACK); minus LOT / SIGQ / REG / STACK came out IDENTICAL to the dollar in all windows, the identical-to-the-dollar test. All 154 cell-months are void (runs_rf_void_cde) and the sets are re-run with jbjobs (JointRep); section B2 fills as the re-run lands.**
+> **TESTING DEFECT FOUND AND FIXED (SZ-CDE own, 2026-11-11 00:4xZ): the first rule-mode leave-one-out (JN04LPB_C2_RM_*) was launched with the rbjobs launcher, which does not apply the rule-mode hooks (jnrule LOT/SIGQ/REG, cde STACK); minus LOT / SIGQ / REG / STACK came out IDENTICAL to the dollar in all windows, the identical-to-the-dollar test. All 154 cell-months are void (runs_rf_void_cde) and the sets are re-run with jbjobs (JointRep); section B2 fills as the re-run lands. SECOND DEFECT (2026-11-11 03:3xZ): the jbjobs re-run, with 7 rule-mode sets per month in ONE batch, still gave identical minus-LOT / SIGQ / REG rows: later sets in a rule-mode batch inherit the first set's jnrule behaviour (proved by mlog multiplier counts and a solo re-run); all batch results are void and the leave-one-out is re-run one set per job.**
 
 > **CONVENTIONS (agreed with SZ-IJK 21:4xZ): d mean = weekly mean difference cell minus reference with the carrying week (largest |cell - reference| weekly delta) dropped, the sz_core / Z.score_daily convention; the all-weeks d mean is in brackets because a single week can move the carry-dropped number by several $k/wk (GAP has 17 weeks). maxDD / cuts on all weeks. Windows are calendar-month based here (GAP 202507-202510, H2-2024 202407-202412, HOLD 202511-202610, L6M 202605-202610), sz_core windows start on 2026-05-12 / 2025-11-10 (so L6M / HOLD d means differ from SZ-IJK by a week at the edge). Label: PRE-PROOF; post-hoc; Shadow only; no PASS claims. Exact engine ROLLFIX1 rows; mean $/wk = carrying week dropped (largest |cell - NEVER-CUT| week), the all-weeks mean is shown beside it because GAP has only 17 weeks. Leave-one-out rows are DIAGNOSTIC reference rows (standing rule: every layer stays ON). Prereg: autopilot/SZ_C2_PREREG.md (+ Addendum 1).**
 
@@ -33,13 +33,13 @@
 | layer left out | GAP 2025-07..10: mean (all-weeks mean) / maxDD / d mean / cut | H2-2024: mean / maxDD / d mean / cut | HOLD: mean / maxDD / d mean / cut | L6M: mean / maxDD / d mean / cut |
 |--|--|--|--|--|
 | JN04RM (all four layers, rule mode) | 16667 (all 13566) / 39147 / -160 (all-weeks -1761) / +38.4 | 17374 (all 15143) / 42854 / -1540 (all-weeks -2502) / +47.7 | 13213 (all 12627) / 72757 / -3658 (all-weeks -2908) / +7.7 | 20689 (all 19195) / 41699 / -1701 (all-weeks -249) / +46.0 |
-| minus LOT | 18519 (all 14957) / 45597 / -1447 (all-weeks -370) / +28.2 | 16987 (all 14822) / 59462 / -2046 (all-weeks -2823) / +27.5 | months missing | months missing |
-| minus SIGQ | 18519 (all 14957) / 45597 / -1447 (all-weeks -370) / +28.2 | 16987 (all 14822) / 59462 / -2046 (all-weeks -2823) / +27.5 | months missing | months missing |
-| minus REG | 18519 (all 14957) / 45597 / -1447 (all-weeks -370) / +28.2 | 16987 (all 14822) / 59462 / -2046 (all-weeks -2823) / +27.5 | months missing | months missing |
-| minus STACK | 19711 (all 16055) / 46099 / -255 (all-weeks +728) / +27.4 | 18821 (all 16456) / 54544 / -418 (all-weeks -1189) / +33.5 | months missing | months missing |
-| minus table 7,4,0,4,0,0 | 15100 (all 14442) / 57213 / +239 (all-weeks -885) / +10.0 | 18370 (all 15898) / 58521 / -953 (all-weeks -1747) / +28.6 | months missing | months missing |
-| minus day cap (P7 loss cap 16,800) | 14595 (all 14434) / 49001 / +310 (all-weeks -893) / +22.9 | 17322 (all 15153) / 56242 / -1702 (all-weeks -2492) / +31.4 | months missing | months missing |
-| minus P7 cut 40/5x/w5/p3 | 18631 (all 15421) / 45624 / -1335 (all-weeks +94) / +28.2 | 17792 (all 15027) / 56866 / -3940 (all-weeks -2618) / +30.6 | months missing | months missing |
+| minus LOT | months missing | months missing | months missing | months missing |
+| minus SIGQ | months missing | months missing | months missing | months missing |
+| minus REG | months missing | months missing | months missing | months missing |
+| minus STACK | months missing | months missing | months missing | months missing |
+| minus table 7,4,0,4,0,0 | months missing | months missing | months missing | months missing |
+| minus day cap (P7 loss cap 16,800) | months missing | months missing | months missing | months missing |
+| minus P7 cut 40/5x/w5/p3 | months missing | months missing | months missing | months missing |
 
 ## C. Where does the LOT gate cost money? (S1b exact runs JN04 vs JD01, P7 signals, split by the regime flags; flags are causal at the signal second)
 
@@ -80,7 +80,7 @@
 ## E. Exact regime stacks on the live-panel base (43 months)
 
 
-SZ-CDE C2 processes (IJK driver state_sizer_ijk rbjobs masters, 1 worker each (3 workers, about 10 GB per exact worker), memory gate 62 GB): c2_a=1252421, c2_b=1252423, c2_rsa=1167576 (not running)
+SZ-CDE C2 processes (IJK driver state_sizer_ijk rbjobs masters, 1 worker each (3 workers, about 10 GB per exact worker), memory gate 62 GB): c2_a=1362513, c2_b=1362514, c2_rsa=1167576 (not running)
 
 | set | candidate | months | L1M / L3M / L6M cut vs LPB_BASE | L6M d mean | (b) eq-mean L6M cut | HOLD cut / d mean | PRE cut / d mean | X' cut / d mean | GAP cut / d mean | H2-2024 cut / d mean | WF vs live: beats % / OOS cut / d mean | WF vs JN04RM: beats % | Rule 2a label |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
