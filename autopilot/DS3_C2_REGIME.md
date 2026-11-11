@@ -1,4 +1,4 @@
-# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 06:53Z)
+# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 07:25Z)
 
 > **TESTING DEFECT FOUND AND FIXED (SZ-CDE own, 2026-11-11 00:4xZ): the first rule-mode leave-one-out (JN04LPB_C2_RM_*) was launched with the rbjobs launcher, which does not apply the rule-mode hooks (jnrule LOT/SIGQ/REG, cde STACK); minus LOT / SIGQ / REG / STACK came out IDENTICAL to the dollar in all windows, the identical-to-the-dollar test. All 154 cell-months are void (runs_rf_void_cde) and the sets are re-run with jbjobs (JointRep); section B2 fills as the re-run lands. SECOND DEFECT (2026-11-11 03:3xZ): the jbjobs re-run, with 7 rule-mode sets per month in ONE batch, still gave identical minus-LOT / SIGQ / REG rows: later sets in a rule-mode batch inherit the first set's jnrule behaviour (proved by mlog multiplier counts and a solo re-run); all batch results are void and the leave-one-out is re-run one set per job.**
 
@@ -99,6 +99,6 @@ SZ-CDE C2 processes (IJK driver state_sizer_ijk rbjobs masters, 1 worker each (3
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | LPB_JN04 | LPB_JN04 (all four layers, always on, table mode) | 43 | +77.5 / +6.3 / +6.3 | +3324 | +26.2 | +8.2 / +1164 | +36.5 / -875 | +57.1 / +2352 | +14.0 / -1235 | +55.3 / -1849 | 81% / +27.2% / -1302 | n/a | OK-PRIOR (allow 16%, WF 81%) [old -1k rule: OK-PRIOR] |
 | JN04RM | JN04RM (rule mode, the JN04 reference) | 43 | +47.2 / +46.0 / +46.0 | -1701 | +48.1 | +7.7 / -3658 | +32.9 / -1840 | +47.7 / -357 | +38.4 / -160 | +47.7 / -1540 | 90% / +26.9% / -2991 | 0% (cut +0.0%, d mean +0) | OK-PRIOR (allow 25%, WF 90%) [old -1k rule: RECENT-ONLY] |
-| JN04LPB_C2_RS_FER | LOT off when F_ER (trend day, ER>=0.30) | 22 | na / na / na | na | na | months missing | months missing | months missing | months missing | months missing | n/a (months 22 of 43) | n/a | incomplete |
-| JN04LPB_C2_RS_NFER2 | LOT off when NOT F_ER2 (6.5 h ER<0.25) | 22 | na / na / na | na | na | months missing | months missing | months missing | months missing | months missing | n/a (months 22 of 43) | n/a | incomplete |
-| JN04LPB_C2_RS_NFPRIOR | LOT off when NOT F_PRIOR (prior day trend<0.6) | 22 | na / na / na | na | na | months missing | months missing | months missing | months missing | months missing | n/a (months 22 of 43) | n/a | incomplete |
+| JN04LPB_C2_RS_FER | LOT off when F_ER (trend day, ER>=0.30) | 32 | na / na / na | na | na | months missing | months missing | months missing | +11.2 / -1206 | +42.3 / -2033 | n/a (months 32 of 43) | n/a | incomplete |
+| JN04LPB_C2_RS_NFER2 | LOT off when NOT F_ER2 (6.5 h ER<0.25) | 32 | na / na / na | na | na | months missing | months missing | months missing | +17.5 / -785 | +21.4 / -2914 | n/a (months 32 of 43) | n/a | incomplete |
+| JN04LPB_C2_RS_NFPRIOR | LOT off when NOT F_PRIOR (prior day trend<0.6) | 31 | na / na / na | na | na | months missing | months missing | months missing | +14.8 / -914 | +19.4 / -3909 | n/a (months 31 of 43) | n/a | incomplete |
