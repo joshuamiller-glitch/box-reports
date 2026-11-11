@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-11 03:39Z)
+# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-11 04:40Z)
 
 **Labels: ROLL-FIXED (ROLLFIX1 base S1BRF-COMB, 21,163 trades; first-order tables use M tables lifted with Z.lift_M, 59 new rows m = 1); PRE-PROOF (entries not live-matched); post-hoc; Shadow only; NO PASS CLAIMS; FIRST-ORDER SCREEN unless a row says EXACT.** Standing rules: (1) the zone layer stays ON, "no zones / skip all / off" are reference rows only; (2) recents first: L6M/L3M/L1M, then the bi-weekly re-pick walk-forward (trailing 26 weeks -> next 2 weeks, purged 7 d), PRE/X' only as a tolerant check; (2a) PRE deepening allowed = min(25, L6M cut + 10)% only when the bi-weekly WF beats live in >= 60% of refit periods, else 15%, PRE mean floor = 25% of the live PRE mean (user decision 2026-11-10 13:45Z; d mean PRE >= -0.25 x live PRE mean, i.e. -$3.5k/wk; the old fixed -$1k label is shown beside); worse = RECENT-ONLY (still reported). Engine caveats at the end.
 
@@ -27,10 +27,20 @@ Reading: removing the layer (exact) deepens L6M and X' drawdown and shallows PRE
 | ZNC_B0 | 39.0 | ROLLEXCL,ROLLFIX1,old | -6.9 | 2.7 | -266.0 | -6.8 | 2.8 | -388.4 | -6.8 | 2.8 | 2414.1 | 14.2 | 22.0 | 2868.7 | 30.6 | 36.8 | -1344.9 | 23.7 | 30.6 | 1922.1 |
 | ZNC_B1 | 6.0 | ROLLFIX1 | 0.6 | 6.1 | 162.1 | 0.7 | 6.2 | -1096.4 | -0.6 | 5.0 | 1423.7 |  |  |  |  |  |  |  |  |  |
 | ZS_C0 | 39.0 | ROLLEXCL,ROLLFIX1 | 14.9 | 23.4 | 3962.3 | 15.0 | 23.4 | -1936.3 | 15.0 | 23.4 | 2344.4 | 16.7 | 25.0 | 725.4 | 17.1 | 25.4 | -948.7 | 44.5 | 50.1 | 1642.7 |
-| ZS_C1 | 20.0 | ROLLFIX1 |  |  |  |  |  |  |  |  |  |  |  |  | 22.6 | 1.3 | -103.3 |  |  |  |
+| ZS_C1 | 32.0 | ROLLFIX1 | -0.9 | 8.9 | -241.4 | -0.8 | 9.0 | 1746.3 | -0.8 | 9.0 | 2615.4 |  |  |  | 22.6 | 30.1 | -103.3 |  |  |  |
+| ZS_C2 | 6.0 | ROLLFIX1 | 31.6 | -13.3 | -9768.3 | -0.4 | -66.4 | -4799.5 | -59.3 | -163.9 | -9180.1 |  |  |  |  |  |  |  |  |  |
+| ZS_C3 | 6.0 | ROLLFIX1 | -1.2 | 0.3 | 1312.5 | -1.1 | 0.4 | -91.6 | -1.1 | 0.4 | 366.7 |  |  |  |  |  |  |  |  |  |
+| ZS_C4 | 6.0 | ROLLFIX1 | 52.9 | 53.2 | 6357.8 | -31.1 | -30.2 | -146.6 | -31.1 | -30.2 | 156.3 |  |  |  |  |  |  |  |  |  |
 | ZS_D0 | 39.0 | ROLLEXCL,ROLLFIX1 | 29.2 | 26.7 | -5069.2 | 20.3 | 17.5 | 2954.9 | 20.3 | 17.5 | -837.9 | -12.6 | -16.6 | -504.9 | 38.7 | 36.5 | -898.5 | 33.4 | 31.0 | 2634.6 |
-| ZS_D1 | 17.0 | ROLLFIX1 |  |  |  |  |  |  |  |  |  |  |  |  | 14.7 |  | -4371.7 |  |  |  |
-| ZS_E0 | 17.0 | ROLLFIX1 |  |  |  |  |  |  |  |  |  |  |  |  | 42.5 |  | -1288.1 |  |  |  |
+| ZS_D1 | 29.0 | ROLLFIX1 | 80.0 | 79.0 | 3991.1 | 32.6 | 29.3 | 5932.1 | 27.7 | 24.2 | -1130.6 |  |  |  | 14.7 | 10.6 | -4371.7 |  |  |  |
+| ZS_D2 | 6.0 | ROLLFIX1 | 33.1 | 32.7 | -5252.4 | 15.8 | 15.3 | 2706.1 | 15.8 | 15.3 | -130.4 |  |  |  |  |  |  |  |  |  |
+| ZS_D3 | 6.0 | ROLLFIX1 | 31.1 | 29.2 | 8283.5 | 17.0 | 14.6 | 2128.1 | 17.0 | 14.6 | -682.5 |  |  |  |  |  |  |  |  |  |
+| ZS_D4 | 6.0 | ROLLFIX1 | 85.9 | 83.0 | 24698.4 | 38.4 | 25.5 | 1833.1 | 17.9 | 0.7 | -3872.8 |  |  |  |  |  |  |  |  |  |
+| ZS_E0 | 28.0 | ROLLFIX1 | 28.3 | 23.7 | -5858.8 | 23.2 | 18.2 | 2743.4 | 23.2 | 18.2 | -1476.6 |  |  |  | 42.5 | 38.8 | -1288.1 |  |  |  |
+| ZS_E1 | 28.0 | ROLLFIX1 | 34.5 | 39.6 | 1059.9 | 21.4 | 27.4 | 3890.6 | 21.4 | 27.4 | 2029.3 |  |  |  | 42.8 | 47.2 | -1538.6 |  |  |  |
+| ZS_E2 | 6.0 | ROLLFIX1 | 43.1 | 50.4 | 710.3 | 43.1 | 50.4 | 6337.2 | 36.4 | 44.5 | 3582.9 |  |  |  |  |  |  |  |  |  |
+| ZS_E3 | 6.0 | ROLLFIX1 | 29.0 | 33.3 | -427.2 | 29.0 | 33.4 | 3311.3 | 29.0 | 33.4 | 1609.2 |  |  |  |  |  |  |  |  |  |
+| ZS_E4 | 6.0 | ROLLFIX1 | 32.0 | 29.9 | -1610.1 | 32.1 | 30.0 | -40.6 | 32.1 | 30.0 | -789.3 |  |  |  |  |  |  |  |  |  |
 
 First-order vs exact for the same cells: see the cell-details table right below.
 
@@ -43,10 +53,20 @@ First-order vs exact for the same cells: see the cell-details table right below.
 | ZNC_B0 | CORE | ALL | ahead 0.25atr hw5 fresh=t1 age<=1d | skip | london | SCOPE-EFFECT/unproven | 19.7 | 34 | 45 | -6.8 | 30.6 | 23.7 | none |
 | ZNC_B1 | CORE | ALL | ahead 0.5atr fresh=t1 age<=1d | skip | london | SCOPE-EFFECT/unproven | 15.0 | 28 | 40 | -0.6 |  |  | none |
 | ZS_C0 | STRUCT | sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55 | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 45 | 50 | 15.0 | 17.1 | 44.5 | none |
-| ZS_C1 | STRUCT | sw5_3 v23 hw2 pt20 APs skip london: maxDD cut L6M/PRE/X' 34/ | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 34 | 44 |  | 22.6 |  | none |
+| ZS_C1 | STRUCT | sw5_3 v23 hw2 pt20 APs skip london: maxDD cut L6M/PRE/X' 34/ | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 34 | 44 | -0.8 | 22.6 |  | none |
+| ZS_C2 | STRUCT | fvg5 | v18 hw10 pt90 BP | skip | PE | level-specific | 76.7 | 55 | 32 | -59.3 |  |  | none |
+| ZS_C3 | STRUCT | pd1h_38 | v0 hw0 atr1 BP | skip | PE|london | level-specific | 6.0 | 26 | 31 | -1.1 |  |  | none |
+| ZS_C4 | STRUCT | ote5_any | v0 hw5 pt60 BA | skip | PE | level-specific | 75.1 | 36 | 31 | -31.1 |  |  | none |
 | ZS_D0 | STRUCT | bbup_5 | v0 hw0 pt15 AA | quarter | london | level-specific | 13.6 | 36 | 38 | 20.3 | 38.7 | 33.4 | none |
-| ZS_D1 | STRUCT | kcany_15 | v0 hw0 pt40 BA | quarter | ALL | level-specific | 51.3 | 40 | 38 |  | 14.7 |  | none |
-| ZS_E0 | STRUCT | grid0.5 | v0 hw2 pt5 BA | quarter | london | level-specific | 6.0 | 36 | 31 |  | 42.5 |  | none |
+| ZS_D1 | STRUCT | kcany_15 | v0 hw0 pt40 BA | quarter | ALL | level-specific | 51.3 | 40 | 38 | 27.7 | 14.7 |  | none |
+| ZS_D2 | STRUCT | kc2.5up_5 | v0 hw0 pt15 AA | quarter | london | level-specific | 11.6 | 35 | 36 | 15.8 |  |  | none |
+| ZS_D3 | STRUCT | kc1.5up_5 | v0 hw2 pt20 BA | quarter | london | level-specific | 11.4 | 36 | 36 | 17.0 |  |  | none |
+| ZS_D4 | STRUCT | u7st10 | v0 hw10 pt90 BA | quarter | ALL | level-specific | 50.4 | 45 | 37 | 17.9 |  |  | none |
+| ZS_E0 | STRUCT | grid0.5 | v0 hw2 pt5 BA | quarter | london | level-specific | 6.0 | 36 | 31 | 23.2 | 42.5 |  | none |
+| ZS_E1 | STRUCT | grid1 | v0 hw10 atr1 AA | quarter | london | level-specific | 10.9 | 32 | 36 | 21.4 | 42.8 |  | none |
+| ZS_E2 | STRUCT | rn50 | v0 hw0 atr0.5 AA | quarter | london | level-specific | 15.8 | 35 | 41 | 36.4 |  |  | none |
+| ZS_E3 | STRUCT | grid1 | v0 hw0 pt30 AA | half | london | level-specific | 1.8 | 29 | 28 | 29.0 |  |  | none |
+| ZS_E4 | STRUCT | grid0.5 | v0 hw0 atr1 AA | half | london | level-specific | 4.9 | 31 | 31 | 32.1 |  |  | none |
 
 **Rule 2a on the exact rows** (PRE maxDD deepening <= 15% [tolerance rises to min(25, L6M cut + 10) only with a >= 60% bi-weekly WF], PRE mean floor = -25% of live PRE mean = -3490 $/wk; old fixed floor -$1k beside):
 
@@ -60,6 +80,7 @@ First-order vs exact for the same cells: see the cell-details table right below.
 | ZS_D0 | 38.7 | -898 | 46 | 15 | 3490 | OK-PRIOR (old fixed -$1k: OK-PRIOR) |
 | ZS_D1 | 14.7 | -4372 | 39 | 15 | 3490 | RECENT-ONLY (old fixed -$1k: RECENT-ONLY) |
 | ZS_E0 | 42.5 | -1288 | 46 | 15 | 3490 | OK-PRIOR (old fixed -$1k: RECENT-ONLY) |
+| ZS_E1 | 42.8 | -1539 | 42 | 15 | 3490 | OK-PRIOR (old fixed -$1k: RECENT-ONLY) |
 
 **ZS_D0 lead (single-cell bi-weekly re-pick WF vs live, first-order daily series; pick = cell if its trailing-26-week maxDD is lower and trailing mean >= live - 25% of live PRE mean):** 48 of 72 refit periods pick the cell; of those the cell period beats live (maxDD <= live and pnl >= live - floor) in 46%; OOS maxDD cut vs live 23.7%, OOS d mean -277 $/wk. EXACT cut L1M/L3M/L6M/HOLD/PRE/X' = 29.2/20.3/20.3/-12.6/38.7/33.4 (section 2). Label: ADD CANDIDATE only where recents hold (L1M/L3M/L6M positive) - HOLD and X' decide whether it is more than a recents-only lead; never a replacement; PRE rule 2a label in the table above.
 
@@ -69,7 +90,7 @@ For each scope the best first-order cell (ranked by min(equal-mean cut L6M, L3M)
 
 | scope | n cells | best cell (owner / level / geometry / action) | cut % L6M/L3M/L1M | equal-mean L6M | HOLD/PRE/X' cut | dMean L6M $/wk | touched % | gain over whole-scope action (pts) | level-specific? | placebo p L6M (B200) | WF: n picks non-live / beat% / OOS cut% / dMean | PRE tol (allowed) | label | SETTING |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ALL | 1786 | STRUCT / sw5_2 / v7 hw5 atr1.5 AP / quarter | 58/58/58 | 60 | 2/34/37 | 1105 | 25.8 | 74.3 | SCOPE-EFFECT | 0.00 | 72 / 50 / 45 / -2127 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or PRE mean below -25% of live) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
+| ALL | 1786 | STRUCT / sw5_2 / v7 hw5 atr1.5 AP / quarter | 58/58/58 | 60 | 2/34/37 | 1105 | 25.8 | 74.3 | SCOPE-EFFECT | 0.00 | 72 / 50 / 45 / -2127 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or PRE mean below -25% of live) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE + ADD CANDIDATE ZS_D1 (exact L6M and PRE cut > 0; X-prime/HOLD pending or listed above) |
 | KB | 297 | BOOK / maxsz_w300 / BH-absent:B5 / skip | 20/20/20 | 15 | -4/12/-2 | -1155 | 20.9 | 21.9 | SCOPE-EFFECT | 0.00 | 72 / 56 / 1 / -817 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | PE | 604 | STRUCT / sw1_5 / v4 hw0 atr1.5 AP / skip | 69/69/92 | 71 | 10/53/42 | 1528 | 19.1 | 115.6 | SCOPE-EFFECT | 0.01 | 72 / 44 / 42 / -4797 | fails | LEAD / RECENT-ONLY (PRE deeper than 15% or PRE mean below -25% of live) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | SM | 236 | STRUCT / rn100 / v0 hw10 atr1.5 BP / skip | 10/10/10 | 9 | -11/8/3 | -308 | 2.4 | 37.2 | SCOPE-EFFECT | 0.07 | 72 / 54 / 5 / -1496 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
@@ -78,7 +99,7 @@ For each scope the best first-order cell (ranked by min(equal-mean cut L6M, L3M)
 | PB | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | OD | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | asia | 1291 | STRUCT / sw5_3 / v5 hw10 pt90 BA / skip | 44/44/50 | 55 | 0/1/1 | 5427 | 7.7 | 1188.4 | SCOPE-EFFECT | 0.00 | 71 / 62 / 24 / -1500 | ok | LEAD / PRE ok (tol 25%) [old fixed -$1k floor: RECENT-ONLY] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
-| london | 1071 | CORE / ALL / ahead 60pts hw2 fresh=t0 age<=5d / skip | 56/72/78 | 59 | -56/54/-24 | 1877 | 23.1 | 33.7 | SCOPE-EFFECT | 0.00 | 63 / 44 / -10 / -2630 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE + ADD CANDIDATE ZS_C0,ZS_D0 (exact L6M and PRE cut > 0; X-prime/HOLD pending or listed above) |
+| london | 1071 | CORE / ALL / ahead 60pts hw2 fresh=t0 age<=5d / skip | 56/72/78 | 59 | -56/54/-24 | 1877 | 23.1 | 33.7 | SCOPE-EFFECT | 0.00 | 63 / 44 / -10 / -2630 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE + ADD CANDIDATE ZS_C0,ZS_D0,ZS_E0,ZS_E1 (exact L6M and PRE cut > 0; X-prime/HOLD pending or listed above) |
 | pre | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
 | nyam | 87 | CORE / vg_u2 / ahead 90pts hw5 / skip | 14/14/20 | 27 | -1/5/1 | 4253 | 9.6 | 21.6 | SCOPE-EFFECT | 0.07 | 72 / 53 / 4 / -676 | ok | LEAD / PRE ok (tol 15%) [old fixed -$1k floor: ok] / FIRST-ORDER ONLY | LIVE RETAINED (exact pending) |
 | nypm | 0 | no eligible cell | | | | | | | | | | | none | LIVE RETAINED |
@@ -281,7 +302,7 @@ Hooks: code/th_zn_act/zone_hooks.py (mixin on the live engine with the live zone
 | RTH_camH3 | 5 | 4049 | 26 | 20 | 20 | 0 |
 | Kijun_1h | 5 | 4044 | 24 | 15 | 15 | 0 |
 | CRT_mid_4h | 5 | 4038 | 54 | 50 | 50 | 0 |
-| KC_up_4h | 5 | 3904 | 13 | 11 | 11 | 0 |
+| KC_up_4h | 5 | 3905 | 13 | 11 | 11 | 0 |
 | OTE62_15m | 5 | 4182 | 109 | 87 | 87 | 138 |
 | OTE705_15m | 5 | 4038 | 73 | 62 | 62 | 0 |
 | OTE79_15m | 5 | 4034 | 81 | 72 | 72 | 0 |
@@ -299,4 +320,4 @@ Placebo / family null for these exact cells: only 16 exact cells exist, so the f
 - Hypothesis counts: CORE 347,553 cells; STRUCT 9,263,348 evaluated; BOOK 32,155; TRIG 1,334,592. Family p uses the conservative independent max-stat; with these counts nothing can reach p <= .10 without a very large effect.
 - Not built: delay-until-through, re-target, structure-stop, 70/30 add and cooldown-after-lost-level actions (exact engine only); per-line marginals of the published eight lines (need the engine with one line left out).
 
-Generated by code/th_zn/zn_final.py (2026-11-11 03:39Z).
+Generated by code/th_zn/zn_final.py (2026-11-11 04:40Z).
