@@ -1,5 +1,5 @@
 # DS3_NEAR_TARGET - near-target take, profit side, all books (user order 17:25Z)
-Generated 2026-11-11 08:11Z. 184 cells scored (family PHI_NT, U2, live-week gated, null_ver 2). PRE-PROOF. First-order screen; exact (ExhCut) results in the Stage 2 section.
+Generated 2026-11-11 09:12Z. 184 cells scored (family PHI_NT, U2, live-week gated, null_ver 2). PRE-PROOF. First-order screen; exact (ExhCut) results in the Stage 2 section.
 
 Cells: (1) NT_take: market take (decision at k, execute k+1 at mid -+0.80 pt) once the favourable extreme (print high/low, or mid) is within k ticks of the target (k 1-10) and the extreme is >= s seconds old (s 0-30); policy line `profit <book> * pct>=P secs_ext>=s take`, P = 1 - k*0.25/target (target 60 pt; O7 90). (2) NT_retarget: nominal limit at target -+ k ticks (k 1-8). (3) NT_queue_wall / NT_queue_book: within kt ticks of the target and the target-level wall (>= X x MedLevel) or the ahead_rel / tot_rel book ratio >= thr: market take. The stop-side mirror is not in the grid. Equal lots, no trade removed; reference row = never-cut hold-to-bracket (60/60), not a candidate.
 

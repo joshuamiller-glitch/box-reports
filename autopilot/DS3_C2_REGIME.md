@@ -1,4 +1,4 @@
-# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 08:34Z)
+# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 09:25Z)
 
 > **TESTING DEFECT FOUND AND FIXED (SZ-CDE own, 2026-11-11 00:4xZ): the first rule-mode leave-one-out (JN04LPB_C2_RM_*) was launched with the rbjobs launcher, which does not apply the rule-mode hooks (jnrule LOT/SIGQ/REG, cde STACK); minus LOT / SIGQ / REG / STACK came out IDENTICAL to the dollar in all windows, the identical-to-the-dollar test. All 154 cell-months are void (runs_rf_void_cde) and the sets are re-run with jbjobs (JointRep); section B2 fills as the re-run lands. SECOND DEFECT (2026-11-11 03:3xZ): the jbjobs re-run, with 7 rule-mode sets per month in ONE batch, still gave identical minus-LOT / SIGQ / REG rows: later sets in a rule-mode batch inherit the first set's jnrule behaviour (proved by mlog multiplier counts and a solo re-run); all batch results are void and the leave-one-out is re-run one set per job.**
 
