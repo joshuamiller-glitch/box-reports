@@ -36,3 +36,35 @@ es_delta_mult, es_pulled_mult, es_confirm (ES move since entry signed with trade
 ES/RTY per-second book features (sweep, wall ahead, absorption) are not rebuilt; per-second ES/RTY mids/pull exist to 2026-11-06 (th_fd state) and were used for B/C; the raw MBP-10 rebuild for 2026-11-06..10 was not started (RAM gate). Frozen-week and 11-09..11 live-cut replay of uses B-E not done (needs live data not on the box). Worst-10-session replay and the exact stage wait for a finalist. Files: code/th_cross/*, outputs in /mnt/l2/l2vast/_th_cross/ (min1.npz, *_cells.parquet, *_null.json, README_features_for_W-N2.txt shared with W-N2).
 
 Loop: nohup pid 2220344 (code/th_cross/cx_loop.sh), heartbeat log /mnt/l2/l2vast/_th_cross/loop.log, runs to 2026-11-12 21:05Z, appends a tick at 03/07/11/15/19Z and FINAL at 21Z.
+
+## ES/RTY per-second book features (state-day fields, L6M 2026-05-12..10-30; chain-independent, run 2026-11-11T22:05Z)
+    D ENTRY skip, ES/RTY per-second book features, P7 | null q95 $/wk 4258 | cells 336 | stable cells 0
+        es_absorb30 ge 1408.8 n 204 d/wk 2688 h1 1352 h2 4025 removed worst5/best5 wks 12896 -5129
+        es_pulled_opp5 ge 1.18 n 305 d/wk 2457 h1 4654 h2 260 removed worst5/best5 wks 3010 -5185
+        rty_imb5 le -0.27 n 103 d/wk 2158 h1 1457 h2 2860 removed worst5/best5 wks 6397 -456
+        es_move30t ge 6.5 n 106 d/wk 2045 h1 3162 h2 928 removed worst5/best5 wks 4052 -4118
+    D ENTRY skip, ES/RTY per-second book features, ALL | null q95 $/wk 3051 | cells 336 | stable cells 1
+        es_absorb30 ge 1364.3 n 1323 d/wk 5756 h1 1506 h2 10005 removed worst5/best5 wks 19323 -4295
+        rty_pulled_opp30 ge 22.34 n 882 d/wk 2594 h1 2242 h2 2946 removed worst5/best5 wks 6966 -7592
+        es_pulled_opp30 ge 10.57 n 882 d/wk 2410 h1 1765 h2 3055 removed worst5/best5 wks 10223 -8058
+        es_pulled_opp5 ge 1.77 n 882 d/wk 2381 h1 1742 h2 3020 removed worst5/best5 wks 6540 -4340
+    A LOSS-CUT gate (hold where true), ES/RTY book at the cut second, P7 | null q95 $/wk 3079 | cells 336 | stable cells 0
+        es_pulled_own5 le 1.3 n 154 d/wk 2155 h1 1970 h2 2341 removed worst5/best5 wks -2272 6547
+        es_ret5 ge 0.0 n 56 d/wk 1804 h1 1750 h2 1858 removed worst5/best5 wks -1336 2678
+        es_pulled_own5 le 1.05 n 103 d/wk 1759 h1 1239 h2 2279 removed worst5/best5 wks -3494 3606
+        rty_ret60 le -7.0 n 265 d/wk 1654 h1 797 h2 2510 removed worst5/best5 wks -1129 4885
+    A LOSS-CUT gate (hold where true), ES/RTY book at the cut second, ALL | null q95 $/wk 3473 | cells 336 | stable cells 0
+        es_imb5 le 0.0 n 553 d/wk 2889 h1 2722 h2 3056 removed worst5/best5 wks -7510 15845
+        es_imb5 le -0.08 n 181 d/wk 2674 h1 3098 h2 2249 removed worst5/best5 wks -1315 9551
+        es_pulled_own5 le 1.38 n 362 d/wk 2400 h1 3034 h2 1766 removed worst5/best5 wks -5574 12870
+        rty_pulled_opp30 ge 15.13 n 543 d/wk 1505 h1 2263 h2 747 removed worst5/best5 wks -509 3205
+    C NEAR-ZONE take at 80% on ES/RTY book turn, all books | null q95 $/wk 3611 | cells 336 | stable cells 0
+        es_ret60 ge 2.0 n 1825 d/wk 3534 h1 3618 h2 3450 removed worst5/best5 wks 14434 -6994
+        es_imb5 le 0.04 n 1704 d/wk 2901 h1 3381 h2 2421 removed worst5/best5 wks 12153 -8046
+        es_pulled_own5 ge 0.45 n 1488 d/wk 2878 h1 1583 h2 4172 removed worst5/best5 wks 8485 -2979
+        es_imb5 le -0.14 n 640 d/wk 2843 h1 3120 h2 2566 removed worst5/best5 wks 9303 -690    Single 'stable' L6M cell (D ENTRY skip, all books): ES events per tick of 30-s progress >= 1364 (a quiet, absorbing tape): L6M +5,740/wk, HOLD +3,710, PRE -3,056, X' -1,779 -> recents-only, not carried. Proxies only (sweep = a 1-s trade range >= 3 ticks; wall = opposing top-5 depth in MedLevels; absorption = events per tick of progress); true level-by-level sweep/wall/absorption need the raw MBP-10 rebuild (not started, RAM gate). Code: code/th_cross/cx_efeat.py, cx_escreen.py, cx_absorb_check.py.
+    Chain replaced: heartbeat loop pid 2220347 stopped; cx_chain.sh now ingests -> features -> screens -> appends this page.
+
+## Megacap/ETF/1-s data chain (written 2026-11-11 ~22:07Z, W-CX)
+The lead bought the L6M package ($98.0, SPEND.json item T_CROSS_L6M); download in progress (first file 1.3 GB at 22:06Z). The chain pid 2227738 (code/th_cross/cx_chain.sh, log /mnt/l2/l2vast/_th_cross/chain.log) waits for the 'T-CROSS L6M package downloaded' line in MORNING.md, ingests each file to 1-s parquet (cx_ingest.py), builds megacap/ETF/YM/ZN/NKD/6J features (cx_mfeat.py; v1.8 names mega_ret5, mega_resid5, mega_hi_with, mega_lo_against, mega_conc5, mega_disp5, mega_lead_roll, mega_delta5, qqq_nq_basis5, smh_nq_basis5, ym_ret30s, zn_ret60s, nkd_ret300s, j6_ret300s), runs uses A-F first-order with the placebo family null and the half-split stability bar (cx_mscreen.py) and appends an AUTO SECTION here; page ticks at 03/07/11/15/19Z and FINAL 21Z.
+Pipeline tested on the first week of the partial trades file (NVDA MSFT AAPL AMZN META GOOGL AVGO TSLA QQQ SMH all present on XNAS.ITCH, so SMH and QQQ trade there; side B confirmed as the buy aggressor, corr 0.50 with same-minute return). Early lead/lag read (one week, will be redone on L6M): at 1-s returns the cap-weighted megacap index lags NQ (corr 0.14 when NQ leads by 1 s, -0.01 when the stocks lead) and ES does not lead NQ either; so stocks confirm and do not lead at 1 s. Live feed needed if a megacap layer is ever adopted: 1-s trades for the eight stocks plus QQQ/SMH in the D7 feed (not present today). Group G (add to near-zone/early-cut GBDT) will be re-run on the new features after the screens.

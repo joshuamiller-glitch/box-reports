@@ -1,0 +1,416 @@
+# DS3_NEAR_ZONE_2 - T-NEAR-ZONE worker W-N2: families k l r s t u v and the near-zone JOINT stage (page written Wed Nov 11 22:22:27 UTC 2026)
+
+STATUS: Shadow only, first-order on the LPB_BASE stored 1-s paths (43 months; L6M = 2026-05-12..10-30, 24 weeks), post-hoc, no PASS claims. Exact engine rows for the live-replayable joint finalists are queued (section 7); nothing on this page is exact yet unless section 7 says so. Prereg: NEAR_ZONE_2_PREREG.md (sha in DECISIONS.md, logged before any k/l/r/s/t/u/v cell was scored). W-N's page with families a-g and h-q is DS3_NEAR_ZONE.md; this page uses its kernel, its fill models and its definitions unchanged.
+
+Definitions (same as W-N): d = new P&L minus live-rule P&L per trade; net = removed (give-backs, fired non-fills that had reached 80% of target) minus clipped (fired trades that filled the target under live rules) plus other saves (fired non-fills outside the 80% zone); give-back event = MFE >= 80% and closed below 50% of target; round-trip = closed <= breakeven; strict trader test = no trade that reached 90% closes below 50% and none that reached 80% closes at or below breakeven. Key = min(net L6M, net 43 months) per week; for the learned exit the second number is the out-of-sample 2024+ weekly net. Market exit = next-second mid minus 1.2 pt (the profit-side take slip is unmeasured; 0.57 / 1.6 not re-run here); resting stop-limit floors and passive limits are optimistic upper bounds. P7 is shown first at 12/7/7 lots (P7x) and also at the installed 7/4/4.
+
+## 1. Headline (plain sentences)
+
+- **P7 at 12/7/7 lots** (live-replayable joint set B-best: s: same-side book took target (<=600 s) arm=0.7 take + u: spread>=3 ticks arm=0.8 persist=3): per week on L6M it removed 22427 give-back dollars and clipped 23539 dollars of fills (18.0 fills a week), net +4679 a week on L6M and +1552 a week over 43 months; give-back events fall from 2.05 to 0.04 a week and round-trips from 2.05 to 0.04; the strict trader test does not pass (1 trade(s) that reached 90% still close below 50%, 1 that reached 80% close at or below breakeven, against 24 and 50 under live rules). Stack drawdown cut 25.9% on L6M.
+- **P7 at 7/4/4 (installed)** (live-replayable joint set B-best: g: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 + s: same-side target exit <=300 s ago arm=0.7 take + t: clock m_sessch<=40min arm=0.9 take): per week on L6M it removed 12126 give-back dollars and clipped 18358 dollars of fills (17.1 fills a week), net +2820 a week on L6M and +916 a week over 43 months; give-back events fall from 2.05 to 0.04 a week and round-trips from 2.05 to 0.00; the strict trader test does not pass (1 trade(s) that reached 90% still close below 50%, 0 that reached 80% close at or below breakeven, against 24 and 50 under live rules). Stack drawdown cut 55.2% on L6M.
+- **K7** (live-replayable joint set B-best: a: ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.7 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take): per week on L6M it removed 6513 give-back dollars and clipped 7850 dollars of fills (18.5 fills a week), net -188 a week on L6M and -778 a week over 43 months; give-back events fall from 3.19 to 0.08 a week and round-trips from 3.19 to 0.00; the strict trader test does not pass (1 trade(s) that reached 90% still close below 50%, 0 that reached 80% close at or below breakeven, against 36 and 78 under live rules). Stack drawdown cut 4.5% on L6M.
+- **M7** (live-replayable joint set B-best: v: learned arm=0.8 p*<0.55 persist=5 + g: ladder m1=0.7 f1=0.4 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.9 X=10 N=10 + bank arm=0.9 F=0.33 lim lt=2 | floor 0.6): per week on L6M it removed 3798 give-back dollars and clipped 3681 dollars of fills (9.2 fills a week), net +117 a week on L6M and -220 a week over 43 months; give-back events fall from 1.92 to 0.00 a week and round-trips from 1.92 to 0.00; the strict trader test PASSES. Stack drawdown cut 6.7% on L6M.
+- **U7** (live-replayable joint set B-best: a: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.7 mode=1 + g: ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.7 X=8 N=3 + zone arm=.8 N=480 take): per week on L6M it removed 3325 give-back dollars and clipped 4608 dollars of fills (4.5 fills a week), net +709 a week on L6M and +109 a week over 43 months; give-back events fall from 0.65 to 0.00 a week and round-trips from 0.65 to 0.00; the strict trader test PASSES. Stack drawdown cut 15.7% on L6M.
+- **H7** (live-replayable joint set B-best: b: rev arm=0.8 X=4 N=5): per week on L6M it removed 1444 give-back dollars and clipped 1293 dollars of fills (2.5 fills a week), net +152 a week on L6M and +130 a week over 43 months; give-back events fall from 0.53 to 0.00 a week and round-trips from 0.53 to 0.00; the strict trader test PASSES. Stack drawdown cut 1.4% on L6M.
+- **A7** (live-replayable joint set B-best: a: ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take + r: es_dd300<=-2 bps arm=0.8 persist=3): per week on L6M it removed 1115 give-back dollars and clipped 1857 dollars of fills (5.7 fills a week), net -221 a week on L6M and -162 a week over 43 months; give-back events fall from 0.65 to 0.00 a week and round-trips from 0.65 to 0.00; the strict trader test PASSES. Stack drawdown cut -2.1% on L6M.
+- **O7** (live-replayable joint set B-best: s: opposite-side signal in 120 s arm=0.7 floor.6 + c: flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2): per week on L6M it removed 137 give-back dollars and clipped 155 dollars of fills (0.3 fills a week), net -17 a week on L6M and -22 a week over 43 months; give-back events fall from 0.12 to 0.00 a week and round-trips from 0.04 to 0.00; the strict trader test PASSES. Stack drawdown cut 0.6% on L6M.
+
+What the families say. (1) The tape does not predict a reversal near the target better than the position of the price itself. The learned exit (section 4) gets out-of-sample AUC 0.77-0.78 for "target fills before price retraces to 50%", and about 0.77 of that is carried by where the trade is (distance to the target, MFE, drawdown from the high, seconds since the high, seconds in the zone); adding any feature group moves it by no more than 0.003 AUC in either direction (book/flow -0.0005 and +0.0015, ES/RTY +0.0009 and +0.0006, clock +0.0008 and -0.0014, other books +0.0016 and -0.0034; two test blocks, 2026Q2 and October 2026). So every near-zone rule that scores well here is, in effect, a floor or an early take chosen by location; the microstructure, cross-market and clock families add timing at best and are mostly the same exit one or two seconds earlier. (2) The one family that behaves like new information is s: a profit-taking cluster (another book on the same side has just filled its target) and, on the small books, an opposite-side signal. It carries the largest forward-placebo gap, but it is also the rule that clips the most fills; it is listed with its clipped dollars in every row, never alone. (3) Every rule that makes the strict trader test pass on P7 does so by exiting at 70% (arm 0.7) or by a floor at 65% on touch, and pays by clipping about 17 fills a week on L6M, which is what the tables below price.
+
+## 2. Joint stage over all families a-v (the deliverable)
+
+Method. Registry per book = top 3 cells of each of W-N's families a b c d e f g (g = W-N's merged combinations) and h i j o p q (p, q market-exit floors; h touched-not-filled; i queue step-in; j move-target; o level target; their exit rows were added by a patched copy of nz_kern2, nz_kern2x.py, so exits can be ordered in time), plus my k l r s t u uH(HOLD veto) and v (learned): 63 rules per book. W-N's m (staggered limits) and n (runner) are partial-lot structures and are NOT in the composition (no single exit time); they stay W-N's rows. A set = at most 3 rules; the earliest exit wins; at most one scale rule (bank) per set. Objective J = min(net L6M, net out-of-sample 2024+) per week minus 100 dollars per week for each strict-test violation on L6M (mode A: all 63 rules; mode B: only rules the exact hook and the frozen live week can run, i.e. without h-q; mode C: B with no strict penalty = the best-net view). Search = greedy add then swap coordinate descent (3 passes) plus 1,000 random 2-3 rule combinations per mode; the "minimal" set is the smallest set with J >= 90% of the best J. First-order budget: every candidate set costs about 10-20 ms (vectorised earliest-exit combination plus metrics), so the full search is a few minutes per book. Exact budget (honest): one set-month is about 4 minutes of engine time and a set needs 6 months for L6M, 12 for L6M+HOLD and 29 for all windows, so the exact stage can only cover the 16 sets in section 7, one set per job, ordered L6M, then HOLD, then PRE; it is gated by MemAvail >= 62 GB and nothing runs until the engine queue has room.
+
+### P7 at 12/7/7 lots
+
+| set | rules | net $/wk L6M / 43 m | removed / clipped $/wk | clipped fills/wk | give-backs/wk before -> after | round-trips/wk before -> after | strict L6M 90/80 (live rules) | 5 best weeks delta $ | stack maxDD cut % L6M / HOLD / PRE / X' | live week (delta $; strict 90/80; live rules) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A-best | j: move-target to wall-1: arm=0.8 wall_ahead[8]>=3 persist=1 + s: same-side target exit <=300 s ago arm=0.7 take + uH: HOLD veto F_imb5_0>=0.33 persist=1 ladder (0.6, 0.75, 0.9) | 5457 / 1798 | 22085 / 21926 | 17.5 | 2.05 -> 0.25 | 2.05 -> 0.04 | 5 / 1 (24 / 50) | -30739 | 27.7 / 7.7 / 20.4 / 11.3 | not replayable first-order (needs print/queue extracts) |
+| A-descent | g: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 + o: level target all m=0.8: target = level - 2 ticks + s: same-side target exit <=300 s ago arm=0.7 take | 5110 / 1667 | 20952 / 31468 | 17.2 | 2.05 -> 0.04 | 2.05 -> 0.00 | 1 / 0 (24 / 50) | -40494 | 50.5 / 29.2 / 30.9 / 41.6 | not replayable first-order (needs print/queue extracts) |
+| B-best | s: same-side book took target (<=600 s) arm=0.7 take + u: spread>=3 ticks arm=0.8 persist=3 | 4679 / 1552 | 22427 / 23539 | 18.0 | 2.05 -> 0.04 | 2.05 -> 0.04 | 1 / 1 (24 / 50) | -33217 | 25.9 / 6.0 / 22.3 / 26.2 | -10854; 2 / 0 (1 / 3) |
+| B-descent | g: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 + s: same-side target exit <=300 s ago arm=0.7 take + t: clock m_sessch<=40min arm=0.9 take | 4875 / 1560 | 20942 / 31694 | 17.1 | 2.05 -> 0.04 | 2.05 -> 0.00 | 1 / 0 (24 / 50) | -42611 | 50.2 / 29.1 / 30.8 / 41.2 | -40692; 0 / 0 (1 / 3) |
+| C-best | s: same-side book took target (<=600 s) arm=0.7 take + s: same-side book took target (<=600 s) arm=0.8 take | 6113 / 1408 | 11922 / 11600 | 8.1 | 2.05 -> 1.06 | 2.05 -> 1.06 | 11 / 26 (24 / 50) | 17975 | 19.7 / 16.9 / 10.9 / -11.6 | -24943; 1 / 3 (1 / 3) |
+| C-descent | s: same-side book took target (<=600 s) arm=0.7 take | 6113 / 1408 | 11922 / 11600 | 8.1 | 2.05 -> 1.06 | 2.05 -> 1.06 | 11 / 26 (24 / 50) | 17975 | 19.7 / 16.9 / 10.9 / -11.6 | -24943; 1 / 3 (1 / 3) |
+
+### P7 at 7/4/4 (installed)
+
+| set | rules | net $/wk L6M / 43 m | removed / clipped $/wk | clipped fills/wk | give-backs/wk before -> after | round-trips/wk before -> after | strict L6M 90/80 (live rules) | 5 best weeks delta $ | stack maxDD cut % L6M / HOLD / PRE / X' | live week (delta $; strict 90/80; live rules) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A-best | g: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 + s: same-side target exit <=300 s ago arm=0.7 take + o: level target all m=0.8: target = level - 2 ticks | 2953 / 978 | 12131 / 18231 | 17.2 | 2.05 -> 0.04 | 2.05 -> 0.00 | 1 / 0 (24 / 50) | -23258 | 55.4 / 18.6 / 21.2 / 36.8 | not replayable first-order (needs print/queue extracts) |
+| B-best | g: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 + s: same-side target exit <=300 s ago arm=0.7 take + t: clock m_sessch<=40min arm=0.9 take | 2820 / 916 | 12126 / 18358 | 17.1 | 2.05 -> 0.04 | 2.05 -> 0.00 | 1 / 0 (24 / 50) | -24443 | 55.2 / 19.0 / 21.0 / 36.6 | -23737; 0 / 0 (1 / 3) |
+| B-minimal | s: same-side target exit <=300 s ago arm=0.7 take + g: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + rev arm=0.8 X=8 N=3 + zone arm=.8 N=240 floor 0.8 | 2989 / 886 | 12153 / 18216 | 16.8 | 2.05 -> 0.04 | 2.05 -> 0.00 | 1 / 0 (24 / 50) | -23977 | 55.4 / 18.4 / 20.6 / 37.1 | -22812; 0 / 0 (1 / 3) |
+| C-best | s: same-side book took target (<=600 s) arm=0.7 take + s: same-side book took target (<=600 s) arm=0.8 take | 3563 / 827 | 6919 / 6711 | 8.1 | 2.05 -> 1.06 | 2.05 -> 1.06 | 11 / 26 (24 / 50) | 10642 | 30.4 / 4.7 / 2.0 / -8.2 | -14550; 1 / 3 (1 / 3) |
+| C-descent | s: same-side book took target (<=600 s) arm=0.7 take | 3563 / 827 | 6919 / 6711 | 8.1 | 2.05 -> 1.06 | 2.05 -> 1.06 | 11 / 26 (24 / 50) | 10642 | 30.4 / 4.7 / 2.0 / -8.2 | -14550; 1 / 3 (1 / 3) |
+
+### K7
+
+| set | rules | net $/wk L6M / 43 m | removed / clipped $/wk | clipped fills/wk | give-backs/wk before -> after | round-trips/wk before -> after | strict L6M 90/80 (live rules) | 5 best weeks delta $ | stack maxDD cut % L6M / HOLD / PRE / X' | live week (delta $; strict 90/80; live rules) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A-best | a: ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + o: level target all m=0.8: target = level - 2 ticks + j: move-target to wall-1: arm=0.8 wall_ahead[20]>=3 persist=1 | 59 / -658 | 6737 / 6839 | 23.9 | 3.19 -> 0.00 | 3.19 -> 0.00 | 0 / 0 (36 / 78) | -7174 | 7.1 / 5.0 / 5.1 / 5.5 | not replayable first-order (needs print/queue extracts) |
+| B-best | a: ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.7 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take | -188 / -778 | 6513 / 7850 | 18.5 | 3.19 -> 0.08 | 3.19 -> 0.00 | 1 / 0 (36 / 78) | -12009 | 4.5 / 4.8 / 5.0 / 2.5 | +1542; 0 / 0 (2 / 5) |
+| C-best | t: clock m_rel<=3min arm=0.9 take | 294 / -16 | 438 / 143 | 0.2 | 3.19 -> 3.23 | 3.19 -> 2.99 | 37 / 73 (36 / 78) | 4015 | 0.0 / 0.0 / -0.0 / -2.5 | +0; 2 / 5 (2 / 5) |
+
+### M7
+
+| set | rules | net $/wk L6M / 43 m | removed / clipped $/wk | clipped fills/wk | give-backs/wk before -> after | round-trips/wk before -> after | strict L6M 90/80 (live rules) | 5 best weeks delta $ | stack maxDD cut % L6M / HOLD / PRE / X' | live week (delta $; strict 90/80; live rules) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A-best | a: ladder m1=0.8 f1=0.65 | .9 f2=0.8 | .95 f3=0.9 mode=1 + q: arrival: fast<=150s mid slow>600s floors 0.8/0.8/0.6 + s: same-side target exit <=180 s ago arm=0.7 floor.6 | 297 / -183 | 3770 / 4039 | 10.5 | 1.92 -> 0.00 | 1.92 -> 0.00 | 0 / 0 (23 / 47) | -7712 | 4.8 / 1.3 / -5.8 / -17.1 | not replayable first-order (needs print/queue extracts) |
+| B-best | v: learned arm=0.8 p*<0.55 persist=5 + g: ladder m1=0.7 f1=0.4 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.9 X=10 N=10 + bank arm=0.9 F=0.33 lim lt=2 | floor 0.6 | 117 / -220 | 3798 / 3681 | 9.2 | 1.92 -> 0.00 | 1.92 -> 0.00 | 0 / 0 (23 / 47) | -10207 | 6.7 / 0.9 / -5.9 / -5.4 | +609; 0 / 0 (2 / 2) |
+| B-descent | a: ladder m1=0.8 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + t: clock m_sessch<=5min arm=0.8 take + s: same-side target exit <=180 s ago arm=0.7 floor.6 | 441 / -135 | 3682 / 3807 | 8.5 | 1.92 -> 0.08 | 1.92 -> 0.00 | 2 / 0 (23 / 47) | -7714 | 5.4 / 1.3 / -5.5 / -16.6 | +857; 0 / 0 (2 / 2) |
+| C-best | g: ladder m1=0.7 f1=0.4 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.9 X=10 N=10 + bank arm=0.9 F=0.33 mkt lt=1 | floor 0.6 | 569 / 116 | 2000 / 1431 | 4.6 | 1.92 -> 0.98 | 1.92 -> 0.98 | 0 / 24 (23 / 47) | -1248 | 6.1 / 1.5 / -7.1 / -5.4 | +2373; 0 / 0 (2 / 2) |
+
+### U7
+
+| set | rules | net $/wk L6M / 43 m | removed / clipped $/wk | clipped fills/wk | give-backs/wk before -> after | round-trips/wk before -> after | strict L6M 90/80 (live rules) | 5 best weeks delta $ | stack maxDD cut % L6M / HOLD / PRE / X' | live week (delta $; strict 90/80; live rules) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A-best | s: same-side book took target (<=600 s) arm=0.7 take + j: move-target to wall-1: arm=0.8 wall_ahead[20]>=3 persist=1 | 1029 / 120 | 3491 / 3390 | 5.3 | 0.65 -> 0.00 | 0.65 -> 0.00 | 0 / 0 (4 / 16) | -9014 | 18.2 / -0.5 / 15.6 / 0.4 | not replayable first-order (needs print/queue extracts) |
+| B-best | a: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.7 mode=1 + g: ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.7 X=8 N=3 + zone arm=.8 N=480 take | 709 / 109 | 3325 / 4608 | 4.5 | 0.65 -> 0.00 | 0.65 -> 0.00 | 0 / 0 (4 / 16) | -16250 | 15.7 / -7.1 / 16.0 / 0.6 | +0; 0 / 0 (0 / 0) |
+| B-descent | g: ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.7 X=8 N=3 + zone arm=.8 N=480 take | 698 / 108 | 3325 / 4620 | 4.5 | 0.65 -> 0.00 | 0.65 -> 0.00 | 0 / 0 (4 / 16) | -16250 | 15.7 / -7.1 / 16.0 / 0.6 | +0; 0 / 0 (0 / 0) |
+| C-best | s: same-side book took target (<=600 s) arm=0.7 take + s: same-side target exit <=300 s ago arm=0.8 take | 1189 / 144 | 2834 / 2574 | 3.7 | 0.65 -> 0.12 | 0.65 -> 0.12 | 1 / 3 (4 / 16) | -11512 | 10.7 / -4.5 / 0.2 / -1.8 | -333; 0 / 0 (0 / 0) |
+| C-descent | s: same-side book took target (<=600 s) arm=0.7 take | 1189 / 144 | 2834 / 2574 | 3.7 | 0.65 -> 0.12 | 0.65 -> 0.12 | 1 / 3 (4 / 16) | -11512 | 10.7 / -4.5 / 0.2 / -1.8 | -333; 0 / 0 (0 / 0) |
+
+### H7
+
+| set | rules | net $/wk L6M / 43 m | removed / clipped $/wk | clipped fills/wk | give-backs/wk before -> after | round-trips/wk before -> after | strict L6M 90/80 (live rules) | 5 best weeks delta $ | stack maxDD cut % L6M / HOLD / PRE / X' | live week (delta $; strict 90/80; live rules) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A-best | b: rev arm=0.8 X=4 N=5 + h: touched-not-filled: printed >= T-4 tick(s), hit inside after 0 s, slip 0.25 + o: level target round m=0.8: target = level - 2 ticks | 190 / 146 | 1455 / 1266 | 3.0 | 0.53 -> 0.00 | 0.53 -> 0.00 | 0 / 0 (4 / 13) | -14511 | 1.5 / 3.5 / -4.3 / 13.9 | not replayable first-order (needs print/queue extracts) |
+| B-best | b: rev arm=0.8 X=4 N=5 | 152 / 130 | 1444 / 1293 | 2.5 | 0.53 -> 0.00 | 0.53 -> 0.00 | 0 / 0 (4 / 13) | -15006 | 1.4 / 3.4 / -3.0 / 11.2 | -303; 0 / 0 (0 / 0) |
+| C-best | s: same-side book took target (<=600 s) arm=0.8 take | 467 / 0 | 1072 / 605 | 1.5 | 0.53 -> 0.16 | 0.53 -> 0.16 | 0 / 4 (4 / 13) | -7829 | 1.1 / 0.0 / -5.0 / 1.7 | +0; 0 / 0 (0 / 0) |
+
+### A7
+
+| set | rules | net $/wk L6M / 43 m | removed / clipped $/wk | clipped fills/wk | give-backs/wk before -> after | round-trips/wk before -> after | strict L6M 90/80 (live rules) | 5 best weeks delta $ | stack maxDD cut % L6M / HOLD / PRE / X' | live week (delta $; strict 90/80; live rules) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A-best | a: ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take + j: move-target to wall-1: arm=0.8 wall_ahead[12]>=3 persist=1 | -195 / -140 | 1130 / 1846 | 6.5 | 0.65 -> 0.00 | 0.65 -> 0.00 | 0 / 0 (4 / 16) | -6277 | -1.5 / -0.8 / -1.2 / -2.1 | not replayable first-order (needs print/queue extracts) |
+| B-best | a: ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take + r: es_dd300<=-2 bps arm=0.8 persist=3 | -221 / -162 | 1115 / 1857 | 5.7 | 0.65 -> 0.00 | 0.65 -> 0.00 | 0 / 0 (4 / 16) | -7018 | -2.1 / -1.0 / -1.6 / -2.2 | +1274; 0 / 0 (1 / 2) |
+| C-best | s: same-side book took target (<=600 s) arm=0.7 take + t: clock m_sessch<=20min arm=0.9 take | 1 / -9 | 718 / 1239 | 4.4 | 0.65 -> 0.25 | 0.65 -> 0.25 | 0 / 6 (4 / 16) | -2379 | 0.7 / 0.3 / -0.4 / -1.9 | -159; 1 / 1 (1 / 2) |
+| C-descent | t: clock m_sessch<=20min arm=0.9 take + s: same-side book took target (<=600 s) arm=0.7 take | 1 / -9 | 718 / 1239 | 4.4 | 0.65 -> 0.25 | 0.65 -> 0.25 | 0 / 6 (4 / 16) | -2379 | 0.7 / 0.3 / -0.4 / -1.9 | -159; 1 / 1 (1 / 2) |
+
+### O7
+
+| set | rules | net $/wk L6M / 43 m | removed / clipped $/wk | clipped fills/wk | give-backs/wk before -> after | round-trips/wk before -> after | strict L6M 90/80 (live rules) | 5 best weeks delta $ | stack maxDD cut % L6M / HOLD / PRE / X' | live week (delta $; strict 90/80; live rules) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A-best | c: flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2 + s: opposite-side signal in 120 s arm=0.7 take + o: level target pd m=0.8: target = level - 2 ticks | -17 / -8 | 137 / 155 | 0.3 | 0.12 -> 0.00 | 0.04 -> 0.00 | 0 / 0 (2 / 1) | -146 | 0.6 / 0.1 / -0.0 / -0.4 | not replayable first-order (needs print/queue extracts) |
+| B-best | s: opposite-side signal in 120 s arm=0.7 floor.6 + c: flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2 | -17 / -22 | 137 / 155 | 0.3 | 0.12 -> 0.00 | 0.04 -> 0.00 | 0 / 0 (2 / 1) | -146 | 0.6 / 0.1 / -0.0 / -0.4 | +0; 0 / 0 (0 / 0) |
+| B-descent | c: flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2 + s: opposite-side signal in 120 s arm=0.7 take | -17 / -22 | 137 / 155 | 0.3 | 0.12 -> 0.00 | 0.04 -> 0.00 | 0 / 0 (2 / 1) | -146 | 0.6 / 0.1 / -0.0 / -0.4 | +0; 0 / 0 (0 / 0) |
+| C-best | s: opposite-side signal in 120 s arm=0.7 take + s: opposite-side signal in 120 s arm=0.7 floor.6 | 0 / 4 | 0 / -0 | 0.0 | 0.12 -> 0.12 | 0.04 -> 0.04 | 2 / 1 (2 / 1) | 0 | 0.0 / 0.1 / 0.0 / -0.4 | +0; 0 / 0 (0 / 0) |
+| C-descent | s: opposite-side signal in 120 s arm=0.7 take | 0 / 4 | 0 / -0 | 0.0 | 0.12 -> 0.12 | 0.04 -> 0.04 | 2 / 1 (2 / 1) | 0 | 0.0 / 0.1 / 0.0 / -0.4 | +0; 0 / 0 (0 / 0) |
+
+
+How to read a row: "rules" are in the order of the registry; "removed / clipped" are $ per week on L6M; "give-backs/wk before -> after" counts events (MFE >= 80% closing below 50%); "strict L6M 90/80" is the number of trades that still fail the trader test (in brackets the live-rule counts); "5 best weeks delta" is the change in $ over the five best L6M weeks of the book, which is the trend-week check of the standing principle; stack maxDD cut is from the first-order stack replay (W-N's FO.score), larger is better. Live week = the frozen week 11-02..05 replayed from the stored 1-s paths, first-order.
+
+Standing-principle scorecard status. Items b (give-backs, round-trips) and e (fills clipped, net) are in the table above, first-order. Items a (full stops) and c/d (same-side re-entry streaks, no-new-evidence entries) are untouched by exit-side rules in this frame: a rule that exits earlier can only change a stop into a smaller loss. The exact scorecard (code/th_works_q/behavior_scorecard.py <SET>) is run on each exact set as soon as its months are done; exits are named NearTarget so the tool counts them as clip-type exits.
+
+## 3. Family tables (first-order, best cell per family by key; strict-pass cell when one exists)
+
+| book | family | rule (best by key) | net $/wk L6M / 43 m | removed / clipped $/wk (L6M) | clipped fills/wk | strict L6M (90%->below 50% / 80%-><=0) vs live-rule counts | p_plc / p_fam |
+|---|---|---|---|---|---|---|---|
+| P7 at 12/7/7 lots | k | absorb aggw30>=19 & d_prog30<=3 arm=0.9 persist=1 take | 3952 / 724 | 7994 / 4042 | 2.8 | 17 / 31 vs 24 / 50 | 0.67 / 0.75 |
+| P7 at 12/7/7 lots | l | decay d_vr10<=0.1 arm=0.9 persist=3 dd>=0 | 4493 / 991 | 11516 / 7023 | 11.1 | 1 / 27 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 12/7/7 lots | r | es_dd300<=-1 bps & NQ at high(secs_fav<=10) arm=0.7 persist=1 | 1551 / 1194 | 13193 / 19881 | 11.7 | 13 / 17 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 12/7/7 lots | s | same-side book took target (<=600 s) arm=0.7 take | 6113 / 1408 | 11922 / 11600 | 8.1 | 11 / 26 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 12/7/7 lots | t | clock m_rel<=30min arm=0.9 floor.6 | 693 / 545 | 1243 / 550 | 0.1 | 25 / 47 vs 24 / 50 | 0.17 / 0.50 |
+| P7 at 12/7/7 lots | u | spread>=4 ticks arm=0.9 persist=1 | 5714 / 2084 | 11499 / 5785 | 14.4 | 3 / 27 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 12/7/7 lots | u strict-pass | spread>=3 ticks arm=0.7 persist=1 | 3253 / 1166 | 21426 / 34171 | 18.7 | 0 / 0 vs 24 / 50 | 0.00 / 0.42 |
+| P7 at 12/7/7 lots | uH | HOLD veto F_behind_rel_f>=1.2 persist=1 ladder (0.5, 0.7, 0.85) | 1702 / 418 | 19026 / 17325 | 7.5 | 81 / 2 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 12/7/7 lots | v (OOS 2024+) | learned arm=0.8 p*<0.75 persist=1 | 2583 / 1000 (OOS) | 22920 / 20337 | 18.1 | 2 / 1 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 7/4/4 (installed) | k | absorb aggw30>=19 & d_prog30<=3 arm=0.9 persist=1 take | 2299 / 421 | 4638 / 2339 | 2.8 | 17 / 31 vs 24 / 50 | 0.67 / 0.75 |
+| P7 at 7/4/4 (installed) | l | decay d_vr10<=0.1 arm=0.9 persist=3 dd>=0 | 2624 / 583 | 6681 / 4057 | 11.1 | 1 / 27 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 7/4/4 (installed) | r | es_dd300<=-1 bps & NQ at high(secs_fav<=10) arm=0.7 persist=1 | 887 / 706 | 7618 / 11492 | 11.7 | 13 / 17 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 7/4/4 (installed) | s | same-side book took target (<=600 s) arm=0.7 take | 3563 / 827 | 6919 / 6711 | 8.1 | 11 / 26 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 7/4/4 (installed) | t | clock m_rel<=30min arm=0.9 floor.6 | 402 / 315 | 716 / 314 | 0.1 | 25 / 47 vs 24 / 50 | 0.17 / 0.50 |
+| P7 at 7/4/4 (installed) | u | spread>=4 ticks arm=0.9 persist=1 | 3339 / 1217 | 6673 / 3334 | 14.4 | 3 / 27 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 7/4/4 (installed) | u strict-pass | spread>=3 ticks arm=0.7 persist=1 | 1882 / 686 | 12406 / 19792 | 18.7 | 0 / 0 vs 24 / 50 | 0.00 / 0.42 |
+| P7 at 7/4/4 (installed) | uH | HOLD veto F_behind_rel_f>=1.2 persist=1 ladder (0.5, 0.7, 0.85) | 989 / 248 | 11021 / 10032 | 7.5 | 81 / 2 vs 24 / 50 | 0.00 / 0.00 |
+| P7 at 7/4/4 (installed) | v (OOS 2024+) | learned arm=0.8 p*<0.75 persist=1 | 1509 / 589 (OOS) | 13274 / 11765 | 18.1 | 2 / 1 vs 24 / 50 | 0.00 / 0.00 |
+| K7 | k | absorb aggw30>=19 & d_prog30<=3 arm=0.9 persist=3 floor.6 | 849 / -65 | 1734 / 885 | 1.2 | 38 / 60 vs 36 / 78 | 0.83 / 1.00 |
+| K7 | l | intensity prate<=0.3 arm=0.9 persist=10 dd>=3 | 137 / -210 | 1462 / 1326 | 3.5 | 35 / 60 vs 36 / 78 | 0.08 / 0.08 |
+| K7 | r | es_dd300<=-3 bps & NQ at high(secs_fav<=10) arm=0.9 persist=5 | 68 / -23 | 166 / 98 | 0.2 | 34 / 76 vs 36 / 78 | 0.75 / 0.83 |
+| K7 | s | opposite-side signal in 120 s arm=0.7 take | 630 / 438 | 428 / 69 | 0.0 | 37 / 76 vs 36 / 78 | 0.00 / 0.00 |
+| K7 | t | clock m_flat<=60min arm=0.9 floor.6 | 8 / 11 | 39 / 31 | 0.0 | 36 / 77 vs 36 / 78 | 0.92 / 0.92 |
+| K7 | u | microprice against<=-1 tick arm=0.7 persist=5 | 748 / -25 | 2141 / 2573 | 4.3 | 68 / 52 vs 36 / 78 | 0.33 / 0.42 |
+| K7 | u strict-pass | spread>=3 ticks arm=0.8 persist=1 | -920 / -1109 | 7029 / 7949 | 28.0 | 0 / 0 vs 36 / 78 | 1.00 / 1.00 |
+| K7 | uH | HOLD veto F_behind_rel_f>=1.5 persist=1 ladder (0.4, 0.6, 0.8) | -366 / -684 | 5556 / 5922 | 9.0 | 97 / 1 vs 36 / 78 | 1.00 / 1.00 |
+| K7 | v (OOS 2024+) | learned arm=0.9 p*<0.2 persist=5 | 392 / -326 (OOS) | 2541 / 2149 | 3.4 | 27 / 44 vs 36 / 78 | 0.92 / 0.92 |
+| M7 | k | absorb aggw10>=3.7 & d_prog10<=2 arm=0.9 persist=1 floor.6 | 412 / 68 | 1634 / 1223 | 2.1 | 8 / 25 vs 23 / 47 | 0.75 / 0.83 |
+| M7 | l | vr30<=.25 & prate<=0.5 arm=0.9 persist=10 dd>=0 | 77 / -5 | 1046 / 969 | 2.1 | 21 / 35 vs 23 / 47 | 0.42 / 0.58 |
+| M7 | r | es_dd300<=-5 bps arm=0.9 persist=1 | 513 / 86 | 1513 / 1000 | 1.5 | 30 / 25 vs 23 / 47 | 0.00 / 0.50 |
+| M7 | r strict-pass | rty_pown5>=2x arm=0.8 persist=3 | -168 / -394 | 3885 / 4053 | 12.6 | 0 / 0 vs 23 / 47 | 0.92 / 1.00 |
+| M7 | s | opposite-side signal in 120 s arm=0.7 take | 340 / 237 | 377 / 163 | 0.1 | 26 / 45 vs 23 / 47 | 0.33 / 0.33 |
+| M7 | t | clock m_sessch<=5min arm=0.9 floor.6 | 109 / 46 | 231 / 123 | 0.2 | 22 / 43 vs 23 / 47 | 0.75 / 0.75 |
+| M7 | u | own depth behind thin behind_rel<=0.7 arm=0.9 persist=5 | 518 / 92 | 1445 / 927 | 2.2 | 20 / 29 vs 23 / 47 | 0.00 / 0.00 |
+| M7 | u strict-pass | imbalance flip imb5<=-0.1 arm=0.7 persist=1 | 413 / -343 | 3773 / 5873 | 14.1 | 0 / 0 vs 23 / 47 | 0.00 / 1.00 |
+| M7 | uH | HOLD veto F_imb5_0>=0.2 persist=1 ladder (0.4, 0.6, 0.8) | 136 / -200 | 3188 / 3053 | 4.5 | 50 / 0 vs 23 / 47 | 0.58 / 1.00 |
+| M7 | v (OOS 2024+) | learned arm=0.9 p*<0.2 persist=5 | 316 / 61 (OOS) | 1438 / 1121 | 1.8 | 16 / 27 vs 23 / 47 | 0.42 / 0.42 |
+| U7 | k | absorb aggw30>=19 & d_prog30<=0 arm=0.8 persist=3 take | 227 / -40 | 1637 / 1410 | 1.1 | 8 / 8 vs 4 / 16 | 1.00 / 1.00 |
+| U7 | l | intensity prate<=0.3 arm=0.7 persist=10 dd>=0 | 356 / 40 | 1832 / 2756 | 2.2 | 18 / 6 vs 4 / 16 | 0.33 / 0.83 |
+| U7 | l strict-pass | decay d_vr10<=0.5 arm=0.8 persist=3 dd>=0 | 38 / -368 | 3508 / 3470 | 4.6 | 0 / 0 vs 4 / 16 | 0.25 / 1.00 |
+| U7 | r | es_dd300<=-1 bps & NQ at high(secs_fav<=10) arm=0.7 persist=3 | 1476 / 294 | 2744 / 2337 | 2.8 | 1 / 4 vs 4 / 16 | 0.00 / 0.00 |
+| U7 | r strict-pass | rty_dd300<=-1 bps & NQ at high(secs_fav<=10) arm=0.7 persist=1 | 601 / -66 | 3421 / 4710 | 5.2 | 0 / 0 vs 4 / 16 | 0.50 / 1.00 |
+| U7 | s | same-side target exit <=180 s ago arm=0.8 take | 735 / 189 | 1938 / 1203 | 2.7 | 2 / 7 vs 4 / 16 | 0.25 / 0.25 |
+| U7 | t | clock m_rel<=10min arm=0.9 floor.6 | -34 / -126 | 48 / 82 | 0.0 | 4 / 16 vs 4 / 16 | 0.00 / 0.33 |
+| U7 | u | microprice against<=-1 tick arm=0.7 persist=3 | 849 / 296 | 2276 / 2803 | 2.5 | 15 / 7 vs 4 / 16 | 0.67 / 0.67 |
+| U7 | u strict-pass | spread>=4 ticks arm=0.7 persist=1 | 186 / -32 | 3465 / 5311 | 5.6 | 0 / 0 vs 4 / 16 | 0.50 / 1.00 |
+| U7 | uH | HOLD veto F_imb5_0>=0.2 persist=1 ladder (0.6, 0.75, 0.9) | 532 / -486 | 3175 / 2643 | 2.8 | 0 / 0 vs 4 / 16 | 0.58 / 0.75 |
+| U7 | uH strict-pass | HOLD veto F_imb5_0>=0.2 persist=1 ladder (0.6, 0.75, 0.9) | 532 / -486 | 3175 / 2643 | 2.8 | 0 / 0 vs 4 / 16 | 0.58 / 0.75 |
+| U7 | v (OOS 2024+) | learned arm=0.7 p*<0.2 persist=5 | 1227 / -4 (OOS) | 3093 / 3724 | 2.6 | 8 / 0 vs 4 / 16 | 0.75 / 1.00 |
+| H7 | k | absorb aggw10>=3.7 & d_prog10<=0 arm=0.8 persist=1 take | 149 / 74 | 1413 / 1264 | 2.5 | 3 / 0 vs 4 / 13 | 0.42 / 0.50 |
+| H7 | l | decay d_vr10<=0.1 arm=0.8 persist=5 dd>=3 | 73 / 52 | 1435 / 1361 | 2.8 | 1 / 0 vs 4 / 13 | 0.08 / 0.17 |
+| H7 | l strict-pass | push-decay prog30_chg<=-8 arm=0.7 persist=10 dd>=0 | -117 / -113 | 1352 / 1866 | 3.1 | 0 / 0 vs 4 / 13 | 0.25 / 1.00 |
+| H7 | r | es_pown5>=4x arm=0.9 persist=5 | 94 / 108 | 216 / 122 | 0.2 | 4 / 10 vs 4 / 13 | 0.00 / 0.00 |
+| H7 | r strict-pass | rty_dd300<=-1 bps arm=0.8 persist=1 | 205 / 41 | 1467 / 1262 | 3.1 | 0 / 0 vs 4 / 13 | 0.25 / 1.00 |
+| H7 | s | opposite-side signal in 120 s arm=0.7 take | 72 / 154 | 176 / 141 | 0.1 | 6 / 14 vs 4 / 13 | 0.33 / 0.67 |
+| H7 | t | clock m_rel<=3min arm=0.7 take | 73 / 90 | 73 / -0 | 0.0 | 3 / 12 vs 4 / 13 | 0.17 / 0.33 |
+| H7 | u | spread>=4 ticks arm=0.8 persist=1 | 110 / 88 | 1460 / 1350 | 3.1 | 2 / 0 vs 4 / 13 | 0.50 / 0.50 |
+| H7 | u strict-pass | spread>=3 ticks arm=0.8 persist=5 | 96 / 58 | 1459 / 1363 | 3.2 | 0 / 0 vs 4 / 13 | 0.00 / 0.75 |
+| H7 | uH | HOLD veto F_imb5_0>=0.2 persist=3 ladder (0.4, 0.6, 0.8) | -108 / 10 | 1077 / 1185 | 1.4 | 16 / 0 vs 4 / 13 | 0.42 / 0.75 |
+| H7 | v (OOS 2024+) | learned arm=0.9 p*<0.35 persist=5 | 19 / 49 (OOS) | 372 / 353 | 0.5 | 1 / 9 vs 4 / 13 | 0.58 / 0.67 |
+| A7 | k | absorb aggw30>=19 & d_prog30<=0 arm=0.8 persist=3 floor.6 | 63 / 6 | 550 / 488 | 0.8 | 8 / 9 vs 4 / 16 | 0.00 / 0.00 |
+| A7 | l | intensity prate<=0.3 arm=0.8 persist=10 dd>=3 | -106 / -163 | 777 / 882 | 2.2 | 10 / 3 vs 4 / 16 | 0.25 / 0.25 |
+| A7 | l strict-pass | push-decay prog30_chg<=-16 arm=0.8 persist=3 dd>=0 | -375 / -218 | 1138 / 1513 | 5.5 | 0 / 0 vs 4 / 16 | 0.00 / 1.00 |
+| A7 | r | es_dd300<=-3 bps & NQ at high(secs_fav<=10) arm=0.7 persist=3 | 91 / 16 | 73 / 57 | 0.1 | 5 / 15 vs 4 / 16 | 0.00 / 0.00 |
+| A7 | r strict-pass | rty_dd300<=-1 bps arm=0.8 persist=5 | -432 / -205 | 1141 / 1574 | 5.6 | 0 / 0 vs 4 / 16 | 0.17 / 1.00 |
+| A7 | s | opposite-side signal in 120 s arm=0.8 floor.6 | 91 / 111 | 130 / 40 | 0.0 | 5 / 16 vs 4 / 16 | 0.00 / 0.00 |
+| A7 | t | clock m_flat<=60min arm=0.7 floor.6 | 0 / 2 | 0 / -0 | 0.0 | 4 / 16 vs 4 / 16 | 0.33 / 0.42 |
+| A7 | u | own depth behind thin behind_rel<=0.5 arm=0.8 persist=5 | -8 / -89 | 436 / 445 | 1.0 | 10 / 9 vs 4 / 16 | 0.25 / 0.25 |
+| A7 | u strict-pass | imbalance flip imb5<=-0.1 arm=0.7 persist=1 | -469 / -227 | 1129 / 2470 | 6.7 | 0 / 0 vs 4 / 16 | 0.00 / 1.00 |
+| A7 | uH | HOLD veto ownwall8>=6 persist=1 ladder (0.4, 0.6, 0.8) | -391 / -209 | 887 / 1278 | 2.5 | 21 / 0 vs 4 / 16 | 1.00 / 1.00 |
+| A7 | v (OOS 2024+) | learned arm=0.8 p*<0.2 persist=5 | -356 / -239 (OOS) | 982 / 1337 | 2.4 | 5 / 0 vs 4 / 16 | 0.33 / 0.67 |
+| O7 | k | absorb aggw30>=8 & d_prog30<=6 arm=0.9 persist=1 floor.6 | 13 / 22 | 13 / -0 | 0.0 | 1 / 1 vs 2 / 1 | 0.25 / 0.42 |
+| O7 | k strict-pass | absorb aggw30>=19 & d_prog30<=0 arm=0.8 persist=1 take | -21 / -39 | 122 / 143 | 0.3 | 0 / 0 vs 2 / 1 | 0.25 / 1.00 |
+| O7 | l | intensity prate<=0.3 arm=0.9 persist=10 dd>=3 | 0 / 0 | 0 / -0 | 0.0 | 2 / 1 vs 2 / 1 | 1.00 / 1.00 |
+| O7 | l strict-pass | decay d_vr60<=0.5 arm=0.8 persist=10 dd>=0 | -33 / -62 | 117 / 149 | 0.3 | 0 / 0 vs 2 / 1 | 0.75 / 1.00 |
+| O7 | r | es_stalled>=120s & NQ at high(secs_fav<=10) arm=0.7 persist=1 | 81 / 38 | 28 / 94 | 0.3 | 1 / 1 vs 2 / 1 | 0.08 / 0.08 |
+| O7 | r strict-pass | es_pown5>=4x arm=0.8 persist=3 | -39 / -42 | 97 / 136 | 0.3 | 0 / 0 vs 2 / 1 | 0.42 / 1.00 |
+| O7 | s | opposite-side signal in 120 s arm=0.7 take | 0 / 4 | 0 / -0 | 0.0 | 2 / 1 vs 2 / 1 | 0.25 / 1.00 |
+| O7 | t | clock m_rel<=10min arm=0.9 floor.6 | 7 / 16 | 7 / -0 | 0.0 | 1 / 1 vs 2 / 1 | 0.75 / 1.00 |
+| O7 | t strict-pass | clock m_rel<=30min arm=0.8 take | -78 / -39 | 142 / 220 | 0.6 | 0 / 0 vs 2 / 1 | 1.00 / 1.00 |
+| O7 | u | microprice against<=-1 tick arm=0.7 persist=3 | 71 / 27 | 71 / -0 | 0.0 | 2 / 0 vs 2 / 1 | 0.17 / 0.17 |
+| O7 | u strict-pass | spread>=4 ticks arm=0.7 persist=1 | 49 / -55 | 114 / 263 | 0.6 | 0 / 0 vs 2 / 1 | 0.00 / 1.00 |
+| O7 | uH | HOLD veto ownwall8>=3 persist=1 ladder (0.5, 0.7, 0.85) | -97 / -55 | 105 / 202 | 0.2 | 4 / 0 vs 2 / 1 | 0.58 / 0.92 |
+| O7 | uH strict-pass | HOLD veto F_imb5_0>=0.2 persist=1 ladder (0.6, 0.75, 0.9) | -114 / -65 | 109 / 223 | 0.3 | 0 / 0 vs 2 / 1 | 0.75 / 1.00 |
+| O7 | v (OOS 2024+) | learned arm=0.9 p*<0.2 persist=3 | -4 / 17 (OOS) | 24 / 28 | 0.0 | 0 / 1 vs 2 / 1 | 0.50 / 0.50 |
+
+Reading note. p_plc / p_fam are forward-only time-shift placebos (every fire exits a random 10-300 s later, 12 reps; the smallest possible p is 0.08, read 0.00 as <= 0.08). A p_fam of 0.00 means no cell of the family under shifted exits reached this cell's key. For the v rows the placebo is the same shift applied to the walk-forward P series. Families k (absorption) and t (clock) are weak (p_fam 0.25-0.75 on most books): not distinguishable from a random exit delay. Families l, r, u, s clear the placebo on P7 but, as section 1 shows, they are floors by location.
+
+## 4. Family v: learned exit
+
+Per second in the zone (MFE >= 70% of target, price still above 50%): P(target fills before price retraces to 50%). 64 features = every per-second feature of W-N's flow set + my book/flow (aggressor volume, print intensity, spread, microprice, imbalance, own wall), ES/RTY 1-s state, clock, other-book events + the trade's own path (pct, drawdown, seconds since high, velocity ratios). Model: 12-leaf monotone histogram GBDT (monotone constraints on 29 features), purged walk-forward by quarter from 2024Q1 (train on every month before the block start minus one month), 3 seeds (different row subsets), 15.3 M zone seconds. Out-of-sample AUC over all blocks 0.756; last blocks 0.774 (2026Q2) and 0.779 (October 2026).
+
+Ablation (2026Q2 block / October 2026 block, AUC): location only 0.7713 / 0.7783; + clock 0.7721 / 0.7769; + price-path velocity 0.7715 / 0.7794; + book/flow 0.7708 / 0.7798; + ES/RTY 0.7722 / 0.7789; + other books 0.7729 / 0.7749; everything 0.7744 / 0.7790. Top features by out-of-sample permutation importance (AUC drop, last walk-forward block): d_dist_tgt 0.2608; m_flat 0.0029; d_secs_zone 0.0027; d_mfe_pts 0.0017; d_pct 0.0010; d_secs_fav 0.0006; m_rel 0.0004; d_dd 0.0002.
+
+Plain 2-3 condition rewrite. Because the model is location, the plain rewrite is the floor ladder (W-N's family a) plus one tape condition; the best 2-condition rewrites scored through the kernel (grid2_vplain: top permutation features, 5 quantile thresholds, arm .8/.9, persist 3) do not beat the learned cells and mostly reduce to "take at 90% after 3 s". There is no short rule from the tape here that the ladder does not already contain; this is a result, not a gap: the near-zone reversal is not forecastable from the tape in this feature set.
+
+## 5. Trader test lists (20 largest give-backs, L6M and frozen live week, live rules vs finalist) - mode B best set per book
+
+#### P7 at 12/7/7 lots - set B-best (s: same-side book took target (<=600 s) arm=0.7 take + u: spread>=3 ticks arm=0.8 persist=3)
+
+L6M, 20 largest give-backs under live rules and under the finalist:
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+| 08-26 03:03Z | P7 | 12 | 93 | -85 | 79 |
+| 09-10 05:07Z | P7 | 12 | 96 | -72 | 85 |
+| 07-28 05:40Z | P7 | 12 | 94 | -71 | 67 |
+| 10-20 05:16Z | P7 | 12 | 86 | -72 | 73 |
+| 07-02 22:07Z | P7 | 12 | 80 | -74 | 78 |
+| 09-11 02:43Z | P7 | 12 | 89 | -50 | 68 |
+| 06-29 01:23Z | P7 | 12 | 95 | -32 | 85 |
+| 06-01 00:38Z | P7 | 12 | 91 | -29 | 77 |
+| 06-19 05:03Z | P7 | 12 | 92 | -27 | 86 |
+| 05-22 10:05Z | P7 | 7 | 84 | -100 | 81 |
+| 06-25 10:42Z | P7 | 7 | 92 | -89 | 85 |
+| 07-24 03:10Z | P7 | 12 | 99 | -3 | 76 |
+| 07-13 23:23Z | P7 | 7 | 95 | -77 | 78 |
+| 08-13 14:24Z | P7 | 7 | 96 | -71 | 81 |
+| 07-02 15:16Z | P7 | 7 | 88 | -78 | 86 |
+| 07-23 15:25Z | P7 | 7 | 97 | -66 | 68 |
+| 08-07 01:39Z | P7 | 7 | 93 | -72 | 79 |
+| 09-08 10:18Z | P7 | 7 | 90 | -71 | 76 |
+| 06-04 00:40Z | P7 | 7 | 86 | -77 | 72 |
+| 07-28 02:14Z | P7 | 7 | 95 | -67 | 78 |
+
+Frozen live week (46 trades with a path): it removed give-backs worth $50981 and clipped 27 fills worth $61835
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+| 11-03 23:13Z | P7 | 12 | 84 | -77 | 76 |
+| 11-04 05:53Z | P7 | 12 | 81 | -48 | 75 |
+| 11-02 23:47Z | P7 | 7 | 91 | -50 | 87 |
+
+#### P7 at 7/4/4 (installed) - set B-best (g: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 + s: same-side target exit <=300 s ago arm=0.7 take + t: clock m_sessch<=40min arm=0.9 take)
+
+L6M, 20 largest give-backs under live rules and under the finalist:
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+| 08-26 03:03Z | P7 | 7 | 93 | -85 | 73 |
+| 09-10 05:07Z | P7 | 7 | 96 | -72 | 65 |
+| 07-28 05:40Z | P7 | 7 | 94 | -71 | 65 |
+| 10-20 05:16Z | P7 | 7 | 86 | -72 | 73 |
+| 07-02 22:07Z | P7 | 7 | 80 | -74 | 65 |
+| 09-11 02:43Z | P7 | 7 | 89 | -50 | 68 |
+| 06-29 01:23Z | P7 | 7 | 95 | -32 | 65 |
+| 06-01 00:38Z | P7 | 7 | 91 | -29 | 77 |
+| 06-19 05:03Z | P7 | 7 | 92 | -27 | 65 |
+| 05-22 10:05Z | P7 | 4 | 84 | -100 | 65 |
+| 06-25 10:42Z | P7 | 4 | 92 | -89 | 65 |
+| 07-24 03:10Z | P7 | 7 | 99 | -3 | 65 |
+| 07-13 23:23Z | P7 | 4 | 95 | -77 | 65 |
+| 08-13 14:24Z | P7 | 4 | 96 | -71 | 90 |
+| 07-02 15:16Z | P7 | 4 | 88 | -78 | 86 |
+| 08-07 01:39Z | P7 | 4 | 93 | -72 | 70 |
+| 06-04 00:40Z | P7 | 4 | 86 | -77 | 65 |
+| 07-28 02:14Z | P7 | 4 | 95 | -67 | 57 |
+| 07-23 15:25Z | P7 | 4 | 97 | -66 | 65 |
+| 10-19 03:21Z | P7 | 4 | 94 | -69 | 65 |
+
+Frozen live week (46 trades with a path): it removed give-backs worth $24963 and clipped 26 fills worth $48700
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+| 11-03 23:13Z | P7 | 7 | 84 | -77 | 46 |
+| 11-04 05:53Z | P7 | 7 | 81 | -48 | 65 |
+| 11-02 23:47Z | P7 | 4 | 91 | -50 | 59 |
+
+#### K7 - set B-best (a: ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.7 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take)
+
+L6M, 20 largest give-backs under live rules and under the finalist:
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+| 09-18 06:51Z | K7 | 2 | 98 | -101 | 83 |
+| 06-04 11:36Z | K7 | 2 | 95 | -98 | 70 |
+| 10-21 16:42Z | K7 | 2 | 95 | -96 | 70 |
+| 07-27 06:03Z | K7 | 2 | 94 | -97 | 92 |
+| 07-07 16:45Z | K7 | 2 | 91 | -96 | 70 |
+| 07-31 05:09Z | K7 | 2 | 87 | -98 | 70 |
+| 08-26 03:21Z | K7 | 2 | 88 | -96 | 65 |
+| 08-05 22:24Z | K7 | 2 | 80 | -103 | 57 |
+| 07-17 10:30Z | K7 | 2 | 86 | -83 | 73 |
+| 10-08 18:18Z | K7 | 2 | 97 | -71 | 70 |
+| 07-14 05:45Z | K7 | 2 | 92 | -66 | 67 |
+| 07-07 06:57Z | K7 | 2 | 89 | -69 | 87 |
+| 06-22 06:54Z | K7 | 2 | 90 | -66 | 65 |
+| 10-27 12:18Z | K7 | 2 | 90 | -59 | 70 |
+| 05-15 17:54Z | K7 | 2 | 81 | -65 | 65 |
+| 07-13 04:24Z | K7 | 2 | 85 | -39 | 65 |
+| 06-23 03:33Z | K7 | 2 | 80 | -32 | 75 |
+| 05-18 18:39Z | K7 | 1 | 84 | -123 | 65 |
+| 06-11 04:21Z | K7 | 1 | 86 | -115 | 75 |
+| 05-15 12:27Z | K7 | 1 | 90 | -106 | 72 |
+
+Frozen live week (52 trades with a path): it removed give-backs worth $8899 and clipped 17 fills worth $7357
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+| 11-03 23:06Z | K7 | 2 | 88 | -74 | 50 |
+| 11-05 08:12Z | K7 | 1 | 98 | -58 | 71 |
+| 11-03 15:57Z | K7 | 1 | 82 | -54 | 63 |
+| 11-04 19:33Z | K7 | 1 | 83 | -50 | 65 |
+| 11-05 02:18Z | K7 | 1 | 84 | -48 | 67 |
+| 11-02 01:09Z | K7 | 1 | 95 | 45 | 65 |
+
+#### M7 - set B-best (v: learned arm=0.8 p*<0.55 persist=5 + g: ladder m1=0.7 f1=0.4 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.9 X=10 N=10 + bank arm=0.9 F=0.33 lim lt=2 | floor 0.6)
+
+L6M, 20 largest give-backs under live rules and under the finalist:
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+| 05-22 10:05Z | M7 | 2 | 85 | -100 | 74 |
+| 07-22 06:46Z | M7 | 2 | 98 | -76 | 80 |
+| 09-18 06:56Z | M7 | 2 | 98 | -73 | 80 |
+| 06-04 11:36Z | M7 | 2 | 95 | -65 | 68 |
+| 06-02 07:33Z | M7 | 2 | 93 | -67 | 74 |
+| 06-23 06:58Z | M7 | 2 | 98 | -58 | 61 |
+| 09-08 09:57Z | M7 | 2 | 88 | -65 | 72 |
+| 07-30 07:29Z | M7 | 2 | 96 | -54 | 80 |
+| 07-08 06:14Z | M7 | 2 | 86 | -53 | 71 |
+| 10-28 14:35Z | M7 | 1 | 82 | -129 | 66 |
+| 10-26 08:40Z | M7 | 1 | 92 | -101 | 68 |
+| 05-20 15:16Z | M7 | 1 | 90 | -94 | 50 |
+| 10-21 06:05Z | M7 | 1 | 80 | -100 | 73 |
+| 09-15 08:30Z | M7 | 1 | 81 | -94 | 71 |
+| 07-06 14:13Z | M7 | 1 | 86 | -83 | 72 |
+| 09-30 07:16Z | M7 | 1 | 97 | -72 | 69 |
+| 10-21 10:02Z | M7 | 1 | 92 | -72 | 80 |
+| 10-05 08:43Z | M7 | 1 | 85 | -78 | 76 |
+| 07-14 15:08Z | M7 | 1 | 96 | -67 | 80 |
+| 06-04 06:10Z | M7 | 1 | 82 | -79 | 77 |
+
+Frozen live week (23 trades with a path): it removed give-backs worth $3320 and clipped 6 fills worth $2711
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+| 11-05 10:08Z | M7 | 1 | 98 | -62 | 80 |
+| 11-02 15:22Z | M7 | 1 | 95 | -59 | 80 |
+| 11-02 11:58Z | M7 | 1 | 87 | 70 | 66 |
+
+#### U7 - set B-best (a: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.7 mode=1 + g: ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.7 X=8 N=3 + zone arm=.8 N=480 take)
+
+L6M, 20 largest give-backs under live rules and under the finalist:
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+| 09-02 09:00Z | U7 | 4 | 83 | -99 | 65 |
+| 05-27 23:40Z | U7 | 4 | 86 | -95 | 65 |
+| 06-08 05:40Z | U7 | 4 | 81 | -99 | 65 |
+| 10-15 23:30Z | U7 | 4 | 94 | -61 | 65 |
+| 08-04 00:40Z | U7 | 4 | 85 | -59 | 65 |
+| 05-14 09:30Z | U7 | 4 | 85 | -57 | 65 |
+| 05-19 07:10Z | U7 | 4 | 82 | -61 | 65 |
+| 07-31 06:40Z | U7 | 2 | 97 | -106 | 65 |
+| 07-30 01:30Z | U7 | 2 | 100 | -98 | 65 |
+| 09-10 01:00Z | U7 | 2 | 82 | -110 | 57 |
+| 10-19 08:00Z | U7 | 2 | 92 | -100 | 65 |
+| 07-28 08:30Z | U7 | 2 | 84 | -101 | 65 |
+| 10-26 10:50Z | U7 | 2 | 85 | -100 | 65 |
+| 10-20 02:00Z | U7 | 2 | 83 | -92 | 65 |
+| 08-23 23:30Z | U7 | 2 | 85 | -79 | 65 |
+| 08-14 00:50Z | U7 | 2 | 82 | -56 | 65 |
+
+Frozen live week (5 trades with a path): it removed give-backs worth $0 and clipped 0 fills worth $0
+
+| time | book | lots | MFE % | closed at % live rules | closed at % finalist |
+|---|---|---|---|---|---|
+
+
+## 6. v1.8 actions and grammar the winners need (names of missing fields)
+
+- Floor ladder on MFE: `profit <book> * mfe_pct>=0.7 floor 0.65` / `mfe_pct>=0.9 floor 0.70` / `mfe_pct>=0.95 floor 0.90` with action stop-limit at the floor (mode=1; v1.7 has pct but no persistent MFE-armed floor ladder and no resting stop-limit action). Fill model for the resting floor is an upper bound until measured.
+- Cross-book event field: `peer_tgt_age` (seconds since another book's same-side Target exit; also `peer_tgt_n600`) for the family-s rule `pct>=0.7 peer_tgt_age<=300 take`; and `opp_sig_age` for the opposite-side-signal rule on the small books. Both are available in the engine (the hook logs Target exits and entries).
+- Clock fields: `mins_to_sessch` (02:00, 09:30, 12:00, 18:00 ET) and `mins_to_flat` (16:55 ET) for `pct>=0.9 mins_to_sessch<=40 take`. Scheduled release days (FOMC, CPI) are NOT in the data: the family-t release slots here are the fixed 08:30 / 10:00 / 14:00 ET weekday times, which is a limit.
+- Book fields used by the u rules: `spread_ticks`, `behind_rel` (own-side depth8 / slot norm), `imb5`. HOLD veto (`uH`): a `hold_if` clause on the floor (support behind: own wall >= k x MedLevel or imbalance with the trade) - needed only if a HOLD rule survives the exact stage; first-order it loses to the plain ladder on every book.
+- From W-N (not mine): move-target, staggered limits, touched-not-filled, runner need engine order hooks; they are first-order only.
+
+## 7. Exact stage (status; one set per job through the SZ-CORE queue, file exact_queue_6g_nz2.txt, hook code/th_nz2/nz2_hooks.py)
+
+Hook: private, same mechanics as W-N's nz_hooks (decision at the close of second j on the 1-s state tape, exit event at the next second, market slip 1.2 or the nz_kern limit model), but it runs a SET of rules from the kernel (a-g incl. flow with real F, my k l r s t u uH and the walk-forward learned exit) with earliest-exit wins, and computes the day features for ES/RTY (fd_series), clock and the other-book events (it logs Target exits and entries inside the engine). Parity test of the feature path and kernel against the first-order cache on 36 P7 trades (August 2026): identical fire sets for 7 of 7 test cells (absorption, decay, ES drawdown, peer target, clock, spread, HOLD veto).
+
+| set | book | rules | months done / planned |
+|---|---|---|---|
+| N2_P7x_B1 | P7 | s: same-side book took target (<=600 s) arm=0.7 take + u: spread>=3 ticks arm=0.8 persist=3 | 0 / 29 |
+| N2_P7x_C2 | P7 | s: same-side book took target (<=600 s) arm=0.7 take + s: same-side book took target (<=600 s) arm=0.8 take | 0 / 29 |
+| N2_P7_B1 | P7 | g: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 + s: same-side target exit <=300 s ago arm=0.7 take + t: clock m_sessch<=40min arm=0.9 take | 0 / 29 |
+| N2_P7_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + g: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + rev arm=0.8 X=8 N=3 + zone arm=.8 N=240 floor 0.8 | 0 / 29 |
+| N2_P7_C3 | P7 | s: same-side book took target (<=600 s) arm=0.7 take + s: same-side book took target (<=600 s) arm=0.8 take | 0 / 29 |
+| N2_K7_B1 | K7 | a: ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.7 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 |
+| N2_K7_C2 | K7 | t: clock m_rel<=3min arm=0.9 take | 0 / 29 |
+| N2_M7_B1 | M7 | v: learned arm=0.8 p*<0.55 persist=5 + g: ladder m1=0.7 f1=0.4 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.9 X=10 N=10 + bank arm=0.9 F=0.33 lim lt=2 | floor 0.6 | 0 / 29 |
+| N2_M7_C2 | M7 | g: ladder m1=0.7 f1=0.4 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.9 X=10 N=10 + bank arm=0.9 F=0.33 mkt lt=1 | floor 0.6 | 0 / 29 |
+| N2_U7_B1 | U7 | a: ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.7 mode=1 + g: ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.7 X=8 N=3 + zone arm=.8 N=480 take | 0 / 29 |
+| N2_U7_B2 | U7 | g: ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.7 X=8 N=3 + zone arm=.8 N=480 take | 0 / 29 |
+| N2_U7_C3 | U7 | s: same-side book took target (<=600 s) arm=0.7 take + s: same-side target exit <=300 s ago arm=0.8 take | 0 / 29 |
+| N2_H7_B1 | H7 | b: rev arm=0.8 X=4 N=5 | 0 / 29 |
+| N2_A7_B1 | A7 | a: ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take + r: es_dd300<=-2 bps arm=0.8 persist=3 | 0 / 29 |
+| N2_O7_B1 | O7 | s: opposite-side signal in 120 s arm=0.7 floor.6 + c: flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2 | 0 / 29 |
+| N2_P7x_V1 | P7 | learned arm=0.8 p*<0.75 persist=1 | 0 / 12 |
+
+## 8. Processes (keep running to 12:00Z)
+
+2235125 python3 -u nz2_null.py P7x P7 K7 M7 U7 H7 A7 O7
+2250144 /bin/bash ./page_loop2.sh
+2250145 python3 -u nz2_exact.py chain
+2250150 python3 -u nz2_page.py
+
+Caveats stated once. First-order; engine market exits are about 0.4 pt cheaper than the 1.2 pt used here; "other books" and the opposite-signal rule use the base stack's own trade list (the exact hook uses the engine's own events); ES/RTY features are 1-s mid and 5-s cancel flow, not a full book; h-q cannot be replayed on the frozen live week (no print/queue extracts for it), so mode A sets show "not replayable" for the live week; the learned exit uses the walk-forward fold models for each trade's quarter (none before 2024Q1) and the all-data model for the live week.

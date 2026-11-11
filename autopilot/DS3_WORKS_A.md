@@ -1,10 +1,10 @@
 # DS3_WORKS_A - T-WORKS part A: generalised risk dials (W-A)
-Refreshed 2026-11-11 20:27Z. Shadow only, no PASS claims, label PRE-PROOF (post-hoc). Prereg: autopilot/WORKS_A_PREREG.md (sha in DECISIONS.md, plus an addendum for the composites and cap sets). Code: outputs/code/th_works_a. Data: /mnt/l2/l2vast/_th_works_a.
+Refreshed 2026-11-11 22:21Z. Shadow only, no PASS claims, label PRE-PROOF (post-hoc). Prereg: autopilot/WORKS_A_PREREG.md (sha in DECISIONS.md, plus an addendum for the composites and cap sets). Code: outputs/code/th_works_a. Data: /mnt/l2/l2vast/_th_works_a.
 
 ## 0. Status and method
 Exact sets with the L6M window complete: 11; with HOLD complete: 1. First-order screens (all on the exact LPB_BASE trade list, 20,808 trades, and again on the exact JN04RM trade list, 21,783 trades; the dial state is always the LPB_BASE shadow base-lot P&L, which is what the live state sees): A1 17756 cells, A2 1176 cells, A3 3960 cells per base. Exact runs go one set per job through the harness code/th_works_a/wa_run.py (WorksMixin generalises the JN04 rule-mode layers; it reproduces LPB_EMPTY and JN04RM trade by trade on 202610 and 202608, see DECISIONS.md). Every exact set below is JN04RM plus the named change, so each row answers whether the dial adds to the live-form JN04 stack. A cut is the stack maxDD cut in per cent; d mean is the weekly mean difference in dollars with the carrying week dropped.
 
-WA jobs running at refresh (process count incl. forked child): wa_run.py x2. Since 20:3xZ (lead priority change for the P7 FIX) the queue is trimmed to WA_C1 (finalist, extending to PRE / X-prime / GAP for the bi-weekly WF); WA_A1_03, WA_A3_ALL6T and WA_A3_L5T were stopped and the rest of the queue is paused (queue_full_paused.txt); new sets start only at MemAvail >= 62 GB.
+WA jobs running at refresh (process count incl. forked child): none. Since 20:3xZ (lead priority change for the P7 FIX) the queue is trimmed to WA_C1 (finalist, extending to PRE / X-prime / GAP for the bi-weekly WF); WA_A1_03, WA_A3_ALL6T and WA_A3_L5T were stopped and the rest of the queue is paused (queue_full_paused.txt); new sets start only at MemAvail >= 62 GB.
 
 ## 1. Exact results (windows complete only; vs JN04RM = the same set measured against the JN04RM exact series)
 | set | change on top of JN04RM | L6M vs LPB_BASE cut / d mean | L6M vs JN04RM cut / d mean / eq-mean cut | HOLD vs LPB_BASE cut / d mean | HOLD vs JN04RM cut / d mean / eq-mean cut |
@@ -108,8 +108,8 @@ A finalist must at least halve a, b and c on L6M against the live stack without 
 |--|--|--|--|--|--|--|--|
 | LPB_BASE | L6M | 24.5 (-40052) | 9.1 (-14009) | +6 / +12 (-51344) | +37.3 (-363) | n/a | reference |
 | LPB_BASE | HOLD | 23.0 (-37923) | 8.0 (-12167) | +6 / +12 (-43521) | +30.0 (+732) | n/a | reference |
-| JN04RM | L6M | 25.4 (-38130) | 9.9 (-11306) | +7 / +13 (-42885) | +43.3 (+1885) | -254 | no (a x1.03, b x1.09) |
-| JN04RM | HOLD | 23.6 (-35520) | 8.6 (-9743) | +6 / +13 (-37009) | +34.2 (+1140) | -2854 | no (a x1.03, b x1.08) |
+| JN04RM | L6M | 25.4 (-38130) | 9.9 (-11306) | +7 / +13 (-42885) | +43.3 (+1885) | n/a | no (a x1.03, b x1.09) |
+| JN04RM | HOLD | 23.6 (-35520) | 8.6 (-9743) | +6 / +13 (-37009) | +34.2 (+1140) | n/a | no (a x1.03, b x1.08) |
 | WA_A1_01 | L6M | 20.8 (-31655) | 9.0 (-10439) | +6 / +13 (-35110) | +37.1 (+727) | -1054 | no (a x0.85, b x1.00) |
 | WA_A1_04 | L6M | 24.8 (-37444) | 9.1 (-10634) | +6 / +11 (-38578) | +39.6 (+2144) | +1674 | no (a x1.01, b x1.00) |
 | WA_A1_07 | L6M | 25.6 (-35371) | 10.1 (-10077) | +7 / +13 (-40899) | +44.5 (+2014) | -2544 | no (a x1.04, b x1.11) |
@@ -123,4 +123,11 @@ A finalist must at least halve a, b and c on L6M against the live stack without 
 | WA_C1 | HOLD | 18.9 (-29150) | 7.4 (-8382) | +5 / +11 (-28293) | +26.7 (+747) | -2800 | no (a x0.83, b x0.92) |
 | WA_C2 | L6M | 20.5 (-28710) | 8.4 (-8580) | +6 / +11 (-29932) | +34.6 (+996) | -898 | no (a x0.83, b x0.93) |
 Metric names not found in the scorecard file print n/a; the full plain-word lines are in /mnt/l2/l2vast/_th_works/q/sc/sc_<SET>.txt. Trend-week test (frozen live week and the five best L6M weeks replayed) is not done yet for these finalists.
+
+## 9. WA_C1 on all 43 months (exact, live panel base, the only finalist run to full length)
+WA_C1 is JN04RM plus three extra dials: K7 off while its 15-day Calmar is below 0.5; M7 off while its drawdown from the 7-day window peak is at or above $6,296 (base lots); P7 halved while its 7-day P&L is below -$3,626. Against LPB_BASE the stack maxDD cut is L1M +48.8, L3M +64.1, L6M +61.7, HOLD +44.5, PRE +42.6, X-prime +55.9 (d mean -6,488 / -2,556 / -1,029 / -3,530 / -4,062 / -73 $/wk). Against JN04RM the cut is L1M +2.9, L3M +33.5, L6M +29.0, HOLD +39.8, PRE +14.4, X-prime +15.7 with d mean -1,786 / +933 / +1,302 / -318 / -1,978 / +273 $/wk; equal-mean cuts vs JN04RM L6M +34.0, HOLD +44.1, PRE +20.4, X-prime +21.7. Bi-weekly WF vs LPB_BASE: beats in 89.9% of periods (OOS cut +42.6%, d mean -4,387); WF with JN04RM as the reference: beats in 40.5% of 79 periods (OOS cut +16.7%, d mean -690), so the picks improve on JN04RM in recents and HOLD but are not a majority win in the walk-forward. Rule 2a label: RECENT-ONLY. These three gates were chosen from the first-order screen on windows that include L6M and HOLD, so this is post-hoc; it is a LEAD, not a PASS.
+best five L6M weeks by LPB_BASE P&L (ISO week: LPB_BASE / JN04RM / WA_C1 $): 202638: 88836 / 72104 / 60296; 202623: 73836 / 68072 / 51442; 202625: 59099 / 59990 / 59990; 202639: 57178 / 52634 / 35068; 202633: 52499 / 36328 / 30881. Of 25 L6M weeks WA_C1 is negative in 5, JN04RM in 6, LPB_BASE in 6; WA_C1 is positive in 5 of the five best LPB weeks.
+
+## 10. Hand-off to W-J (JN05 dial candidates)
+WA_C1 and WA_C2 (definitions in section 1, exact, set json in /mnt/l2/l2vast/_th_sz/ijk/exact/sets, layer configs in /mnt/l2/l2vast/_th_works_a/cfg) are offered as JN05 dial candidates, to be judged only as part of a JN05 that also fixes the three standing-principle defects with the exit and entry rules of W-C, W-N and W-X: on their own they cut drawdown but remove only about 18% of full stops and give-backs (section 8). Plateau of the WA_C1 thresholds: rows WA_PL_* in section 1 (L6M exact; read them against WA_C1 +29.0 cut / +1,302 d mean vs JN04RM). Scorecards: section 8 and /mnt/l2/l2vast/_th_works/q/sc/sc_WA_C1.txt, sc_WA_C2.txt.
 
