@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-11 04:40Z)
+# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-11 05:40Z)
 
 **Labels: ROLL-FIXED (ROLLFIX1 base S1BRF-COMB, 21,163 trades; first-order tables use M tables lifted with Z.lift_M, 59 new rows m = 1); PRE-PROOF (entries not live-matched); post-hoc; Shadow only; NO PASS CLAIMS; FIRST-ORDER SCREEN unless a row says EXACT.** Standing rules: (1) the zone layer stays ON, "no zones / skip all / off" are reference rows only; (2) recents first: L6M/L3M/L1M, then the bi-weekly re-pick walk-forward (trailing 26 weeks -> next 2 weeks, purged 7 d), PRE/X' only as a tolerant check; (2a) PRE deepening allowed = min(25, L6M cut + 10)% only when the bi-weekly WF beats live in >= 60% of refit periods, else 15%, PRE mean floor = 25% of the live PRE mean (user decision 2026-11-10 13:45Z; d mean PRE >= -0.25 x live PRE mean, i.e. -$3.5k/wk; the old fixed -$1k label is shown beside); worse = RECENT-ONLY (still reported). Engine caveats at the end.
 
@@ -27,17 +27,17 @@ Reading: removing the layer (exact) deepens L6M and X' drawdown and shallows PRE
 | ZNC_B0 | 39.0 | ROLLEXCL,ROLLFIX1,old | -6.9 | 2.7 | -266.0 | -6.8 | 2.8 | -388.4 | -6.8 | 2.8 | 2414.1 | 14.2 | 22.0 | 2868.7 | 30.6 | 36.8 | -1344.9 | 23.7 | 30.6 | 1922.1 |
 | ZNC_B1 | 6.0 | ROLLFIX1 | 0.6 | 6.1 | 162.1 | 0.7 | 6.2 | -1096.4 | -0.6 | 5.0 | 1423.7 |  |  |  |  |  |  |  |  |  |
 | ZS_C0 | 39.0 | ROLLEXCL,ROLLFIX1 | 14.9 | 23.4 | 3962.3 | 15.0 | 23.4 | -1936.3 | 15.0 | 23.4 | 2344.4 | 16.7 | 25.0 | 725.4 | 17.1 | 25.4 | -948.7 | 44.5 | 50.1 | 1642.7 |
-| ZS_C1 | 32.0 | ROLLFIX1 | -0.9 | 8.9 | -241.4 | -0.8 | 9.0 | 1746.3 | -0.8 | 9.0 | 2615.4 |  |  |  | 22.6 | 30.1 | -103.3 |  |  |  |
+| ZS_C1 | 33.0 | ROLLFIX1 | -0.9 | 8.9 | -241.4 | -0.8 | 9.0 | 1746.3 | -0.8 | 9.0 | 2615.4 |  |  |  | 22.6 | 30.1 | -103.3 | 16.4 | 24.5 | -436.7 |
 | ZS_C2 | 6.0 | ROLLFIX1 | 31.6 | -13.3 | -9768.3 | -0.4 | -66.4 | -4799.5 | -59.3 | -163.9 | -9180.1 |  |  |  |  |  |  |  |  |  |
 | ZS_C3 | 6.0 | ROLLFIX1 | -1.2 | 0.3 | 1312.5 | -1.1 | 0.4 | -91.6 | -1.1 | 0.4 | 366.7 |  |  |  |  |  |  |  |  |  |
 | ZS_C4 | 6.0 | ROLLFIX1 | 52.9 | 53.2 | 6357.8 | -31.1 | -30.2 | -146.6 | -31.1 | -30.2 | 156.3 |  |  |  |  |  |  |  |  |  |
 | ZS_D0 | 39.0 | ROLLEXCL,ROLLFIX1 | 29.2 | 26.7 | -5069.2 | 20.3 | 17.5 | 2954.9 | 20.3 | 17.5 | -837.9 | -12.6 | -16.6 | -504.9 | 38.7 | 36.5 | -898.5 | 33.4 | 31.0 | 2634.6 |
-| ZS_D1 | 29.0 | ROLLFIX1 | 80.0 | 79.0 | 3991.1 | 32.6 | 29.3 | 5932.1 | 27.7 | 24.2 | -1130.6 |  |  |  | 14.7 | 10.6 | -4371.7 |  |  |  |
+| ZS_D1 | 33.0 | ROLLFIX1 | 80.0 | 79.0 | 3991.1 | 32.6 | 29.3 | 5932.1 | 27.7 | 24.2 | -1130.6 |  |  |  | 14.7 | 10.6 | -4371.7 | 58.3 | 56.3 | -93.4 |
 | ZS_D2 | 6.0 | ROLLFIX1 | 33.1 | 32.7 | -5252.4 | 15.8 | 15.3 | 2706.1 | 15.8 | 15.3 | -130.4 |  |  |  |  |  |  |  |  |  |
 | ZS_D3 | 6.0 | ROLLFIX1 | 31.1 | 29.2 | 8283.5 | 17.0 | 14.6 | 2128.1 | 17.0 | 14.6 | -682.5 |  |  |  |  |  |  |  |  |  |
 | ZS_D4 | 6.0 | ROLLFIX1 | 85.9 | 83.0 | 24698.4 | 38.4 | 25.5 | 1833.1 | 17.9 | 0.7 | -3872.8 |  |  |  |  |  |  |  |  |  |
-| ZS_E0 | 28.0 | ROLLFIX1 | 28.3 | 23.7 | -5858.8 | 23.2 | 18.2 | 2743.4 | 23.2 | 18.2 | -1476.6 |  |  |  | 42.5 | 38.8 | -1288.1 |  |  |  |
-| ZS_E1 | 28.0 | ROLLFIX1 | 34.5 | 39.6 | 1059.9 | 21.4 | 27.4 | 3890.6 | 21.4 | 27.4 | 2029.3 |  |  |  | 42.8 | 47.2 | -1538.6 |  |  |  |
+| ZS_E0 | 33.0 | ROLLFIX1 | 28.3 | 23.7 | -5858.8 | 23.2 | 18.2 | 2743.4 | 23.2 | 18.2 | -1476.6 |  |  |  | 42.5 | 38.8 | -1288.1 | 30.8 | 26.3 | 1001.3 |
+| ZS_E1 | 33.0 | ROLLFIX1 | 34.5 | 39.6 | 1059.9 | 21.4 | 27.4 | 3890.6 | 21.4 | 27.4 | 2029.3 |  |  |  | 42.8 | 47.2 | -1538.6 | 24.0 | 29.8 | 956.4 |
 | ZS_E2 | 6.0 | ROLLFIX1 | 43.1 | 50.4 | 710.3 | 43.1 | 50.4 | 6337.2 | 36.4 | 44.5 | 3582.9 |  |  |  |  |  |  |  |  |  |
 | ZS_E3 | 6.0 | ROLLFIX1 | 29.0 | 33.3 | -427.2 | 29.0 | 33.4 | 3311.3 | 29.0 | 33.4 | 1609.2 |  |  |  |  |  |  |  |  |  |
 | ZS_E4 | 6.0 | ROLLFIX1 | 32.0 | 29.9 | -1610.1 | 32.1 | 30.0 | -40.6 | 32.1 | 30.0 | -789.3 |  |  |  |  |  |  |  |  |  |
@@ -53,17 +53,17 @@ First-order vs exact for the same cells: see the cell-details table right below.
 | ZNC_B0 | CORE | ALL | ahead 0.25atr hw5 fresh=t1 age<=1d | skip | london | SCOPE-EFFECT/unproven | 19.7 | 34 | 45 | -6.8 | 30.6 | 23.7 | none |
 | ZNC_B1 | CORE | ALL | ahead 0.5atr fresh=t1 age<=1d | skip | london | SCOPE-EFFECT/unproven | 15.0 | 28 | 40 | -0.6 |  |  | none |
 | ZS_C0 | STRUCT | sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55 | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 45 | 50 | 15.0 | 17.1 | 44.5 | none |
-| ZS_C1 | STRUCT | sw5_3 v23 hw2 pt20 APs skip london: maxDD cut L6M/PRE/X' 34/ | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 34 | 44 | -0.8 | 22.6 |  | none |
+| ZS_C1 | STRUCT | sw5_3 v23 hw2 pt20 APs skip london: maxDD cut L6M/PRE/X' 34/ | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 34 | 44 | -0.8 | 22.6 | 16.4 | none |
 | ZS_C2 | STRUCT | fvg5 | v18 hw10 pt90 BP | skip | PE | level-specific | 76.7 | 55 | 32 | -59.3 |  |  | none |
 | ZS_C3 | STRUCT | pd1h_38 | v0 hw0 atr1 BP | skip | PE|london | level-specific | 6.0 | 26 | 31 | -1.1 |  |  | none |
 | ZS_C4 | STRUCT | ote5_any | v0 hw5 pt60 BA | skip | PE | level-specific | 75.1 | 36 | 31 | -31.1 |  |  | none |
 | ZS_D0 | STRUCT | bbup_5 | v0 hw0 pt15 AA | quarter | london | level-specific | 13.6 | 36 | 38 | 20.3 | 38.7 | 33.4 | none |
-| ZS_D1 | STRUCT | kcany_15 | v0 hw0 pt40 BA | quarter | ALL | level-specific | 51.3 | 40 | 38 | 27.7 | 14.7 |  | none |
+| ZS_D1 | STRUCT | kcany_15 | v0 hw0 pt40 BA | quarter | ALL | level-specific | 51.3 | 40 | 38 | 27.7 | 14.7 | 58.3 | none |
 | ZS_D2 | STRUCT | kc2.5up_5 | v0 hw0 pt15 AA | quarter | london | level-specific | 11.6 | 35 | 36 | 15.8 |  |  | none |
 | ZS_D3 | STRUCT | kc1.5up_5 | v0 hw2 pt20 BA | quarter | london | level-specific | 11.4 | 36 | 36 | 17.0 |  |  | none |
 | ZS_D4 | STRUCT | u7st10 | v0 hw10 pt90 BA | quarter | ALL | level-specific | 50.4 | 45 | 37 | 17.9 |  |  | none |
-| ZS_E0 | STRUCT | grid0.5 | v0 hw2 pt5 BA | quarter | london | level-specific | 6.0 | 36 | 31 | 23.2 | 42.5 |  | none |
-| ZS_E1 | STRUCT | grid1 | v0 hw10 atr1 AA | quarter | london | level-specific | 10.9 | 32 | 36 | 21.4 | 42.8 |  | none |
+| ZS_E0 | STRUCT | grid0.5 | v0 hw2 pt5 BA | quarter | london | level-specific | 6.0 | 36 | 31 | 23.2 | 42.5 | 30.8 | none |
+| ZS_E1 | STRUCT | grid1 | v0 hw10 atr1 AA | quarter | london | level-specific | 10.9 | 32 | 36 | 21.4 | 42.8 | 24.0 | none |
 | ZS_E2 | STRUCT | rn50 | v0 hw0 atr0.5 AA | quarter | london | level-specific | 15.8 | 35 | 41 | 36.4 |  |  | none |
 | ZS_E3 | STRUCT | grid1 | v0 hw0 pt30 AA | half | london | level-specific | 1.8 | 29 | 28 | 29.0 |  |  | none |
 | ZS_E4 | STRUCT | grid0.5 | v0 hw0 atr1 AA | half | london | level-specific | 4.9 | 31 | 31 | 32.1 |  |  | none |
@@ -285,12 +285,12 @@ Hooks: code/th_zn_act/zone_hooks.py (mixin on the live engine with the live zone
 
 | line left out | months | cut L1M/L3M/L6M | HOLD/PRE/X' | d mean $/wk L6M/PRE | trades vs base |
 |---|---|---|---|---|---|
-| PD_mid | 6 | 0/0/0 | // | 4/ | 4861 vs 21163 |
-| RTH_camH3 | 6 | -3/-4/-4 | // | 283/ | 4868 vs 21163 |
-| Kijun_1h | 6 | -3/-3/-3 | // | 136/ | 4859 vs 21163 |
-| CRT_mid_4h | 6 | 0/0/0 | // | 296/ | 4857 vs 21163 |
-| KC_up_4h | 6 | 0/0/0 | // | -53/ | 4864 vs 21163 |
-| OTE62_15m | 6 | 0/0/0 | // | -948/ | 4861 vs 21163 |
+| PD_mid | 7 | 0/0/0 | // | 4/ | 5296 vs 21163 |
+| RTH_camH3 | 7 | -3/-4/-4 | // | 283/ | 5303 vs 21163 |
+| Kijun_1h | 7 | -3/-3/-3 | // | 136/ | 5292 vs 21163 |
+| CRT_mid_4h | 7 | 0/0/0 | // | 296/ | 5292 vs 21163 |
+| KC_up_4h | 7 | 0/0/0 | // | -53/ | 5300 vs 21163 |
+| OTE62_15m | 7 | 0/0/0 | // | -948/ | 5296 vs 21163 |
 | OTE705_15m | 6 | -5/-7/-7 | // | -69/ | 4852 vs 21163 |
 | OTE79_15m | 6 | 0/0/0 | // | 679/ | 4853 vs 21163 |
 
@@ -298,12 +298,12 @@ Hooks: code/th_zn_act/zone_hooks.py (mixin on the live engine with the live zone
 
 | line left out | runs (months) | NTZ checks | checks where the line was eligible (<= 20 ahead, untouched) | ... and it was the ONLY eligible line | zone-HALF decisions changed | OTE-62 B73 paths suppressed |
 |---|---|---|---|---|---|---|
-| PD_mid | 5 | 4042 | 20 | 12 | 12 | 0 |
-| RTH_camH3 | 5 | 4049 | 26 | 20 | 20 | 0 |
-| Kijun_1h | 5 | 4044 | 24 | 15 | 15 | 0 |
-| CRT_mid_4h | 5 | 4038 | 54 | 50 | 50 | 0 |
-| KC_up_4h | 5 | 3905 | 13 | 11 | 11 | 0 |
-| OTE62_15m | 5 | 4182 | 109 | 87 | 87 | 138 |
+| PD_mid | 6 | 4457 | 27 | 15 | 15 | 0 |
+| RTH_camH3 | 6 | 4464 | 38 | 32 | 32 | 0 |
+| Kijun_1h | 6 | 4458 | 36 | 23 | 23 | 0 |
+| CRT_mid_4h | 6 | 4453 | 61 | 56 | 56 | 0 |
+| KC_up_4h | 6 | 4252 | 21 | 19 | 19 | 0 |
+| OTE62_15m | 6 | 4617 | 121 | 93 | 93 | 158 |
 | OTE705_15m | 5 | 4038 | 73 | 62 | 62 | 0 |
 | OTE79_15m | 5 | 4034 | 81 | 72 | 72 | 0 |
 
@@ -320,4 +320,4 @@ Placebo / family null for these exact cells: only 16 exact cells exist, so the f
 - Hypothesis counts: CORE 347,553 cells; STRUCT 9,263,348 evaluated; BOOK 32,155; TRIG 1,334,592. Family p uses the conservative independent max-stat; with these counts nothing can reach p <= .10 without a very large effect.
 - Not built: delay-until-through, re-target, structure-stop, 70/30 add and cooldown-after-lost-level actions (exact engine only); per-line marginals of the published eight lines (need the engine with one line left out).
 
-Generated by code/th_zn/zn_final.py (2026-11-11 04:40Z).
+Generated by code/th_zn/zn_final.py (2026-11-11 05:40Z).
