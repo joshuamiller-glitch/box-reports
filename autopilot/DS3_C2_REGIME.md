@@ -1,4 +1,4 @@
-# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 03:24Z)
+# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 04:24Z)
 
 > **TESTING DEFECT FOUND AND FIXED (SZ-CDE own, 2026-11-11 00:4xZ): the first rule-mode leave-one-out (JN04LPB_C2_RM_*) was launched with the rbjobs launcher, which does not apply the rule-mode hooks (jnrule LOT/SIGQ/REG, cde STACK); minus LOT / SIGQ / REG / STACK came out IDENTICAL to the dollar in all windows, the identical-to-the-dollar test. All 154 cell-months are void (runs_rf_void_cde) and the sets are re-run with jbjobs (JointRep); section B2 fills as the re-run lands. SECOND DEFECT (2026-11-11 03:3xZ): the jbjobs re-run, with 7 rule-mode sets per month in ONE batch, still gave identical minus-LOT / SIGQ / REG rows: later sets in a rule-mode batch inherit the first set's jnrule behaviour (proved by mlog multiplier counts and a solo re-run); all batch results are void and the leave-one-out is re-run one set per job.**
 
@@ -33,13 +33,13 @@
 | layer left out | GAP 2025-07..10: mean (all-weeks mean) / maxDD / d mean / cut | H2-2024: mean / maxDD / d mean / cut | HOLD: mean / maxDD / d mean / cut | L6M: mean / maxDD / d mean / cut |
 |--|--|--|--|--|
 | JN04RM (all four layers, rule mode) | 16667 (all 13566) / 39147 / -160 (all-weeks -1761) / +38.4 | 17374 (all 15143) / 42854 / -1540 (all-weeks -2502) / +47.7 | 13213 (all 12627) / 72757 / -3658 (all-weeks -2908) / +7.7 | 20689 (all 19195) / 41699 / -1701 (all-weeks -249) / +46.0 |
-| minus LOT | months missing | months missing | months missing | months missing |
-| minus SIGQ | months missing | months missing | months missing | months missing |
-| minus REG | months missing | months missing | months missing | months missing |
-| minus STACK | months missing | months missing | months missing | months missing |
-| minus table 7,4,0,4,0,0 | months missing | months missing | months missing | months missing |
-| minus day cap (P7 loss cap 16,800) | months missing | months missing | months missing | months missing |
-| minus P7 cut 40/5x/w5/p3 | months missing | months missing | months missing | months missing |
+| minus LOT | 18519 (all 14957) / 45597 / -1447 (all-weeks -370) / +28.2 | months missing | months missing | months missing |
+| minus SIGQ | 16132 (all 13057) / 39219 / -699 (all-weeks -2270) / +38.3 | months missing | months missing | months missing |
+| minus REG | 18271 (all 14655) / 46819 / -2166 (all-weeks -672) / +26.3 | months missing | months missing | months missing |
+| minus STACK | 11506 (all 14033) / 43081 / +336 (all-weeks -1294) / +32.2 | months missing | months missing | months missing |
+| minus table 7,4,0,4,0,0 | 10399 (all 13298) / 53044 / -771 (all-weeks -2029) / +16.5 | months missing | months missing | months missing |
+| minus day cap (P7 loss cap 16,800) | 16787 (all 13679) / 39147 / -111 (all-weeks -1648) / +38.4 | months missing | months missing | months missing |
+| minus P7 cut 40/5x/w5/p3 | 17634 (all 14611) / 36790 / +903 (all-weeks -716) / +42.1 | months missing | months missing | months missing |
 
 ## C. Where does the LOT gate cost money? (S1b exact runs JN04 vs JD01, P7 signals, split by the regime flags; flags are causal at the signal second)
 
