@@ -1,4 +1,4 @@
-# DS3_NEAR_ZONE_2 - T-NEAR-ZONE worker W-N2: families k l r s t u v and the near-zone JOINT stage (page written Wed Nov 11 22:51:22 UTC 2026)
+# DS3_NEAR_ZONE_2 - T-NEAR-ZONE worker W-N2: families k l r s t u v and the near-zone JOINT stage (page written Wed Nov 11 23:28:19 UTC 2026)
 
 STATUS: Shadow only, first-order on the LPB_BASE stored 1-s paths (43 months; L6M = 2026-05-12..10-30, 24 weeks), post-hoc, no PASS claims. Exact engine rows for the live-replayable joint finalists are queued (section 7); nothing on this page is exact yet unless section 7 says so. Prereg: NEAR_ZONE_2_PREREG.md (sha in DECISIONS.md, logged before any k/l/r/s/t/u/v cell was scored). W-N's page with families a-g and h-q is DS3_NEAR_ZONE.md; this page uses its kernel, its fill models and its definitions unchanged.
 
@@ -268,6 +268,44 @@ Ablation (2026Q2 block / October 2026 block, AUC): location only 0.7713 / 0.7783
 
 Plain 2-3 condition rewrite. Because the model is location, the plain rewrite is the floor ladder (W-N's family a) plus one tape condition; the best 2-condition rewrites scored through the kernel (grid2_vplain: top permutation features, 5 quantile thresholds, arm .8/.9, persist 3) do not beat the learned cells and mostly reduce to "take at 90% after 3 s". There is no short rule from the tape here that the ladder does not already contain; this is a result, not a gap: the near-zone reversal is not forecastable from the tape in this feature set.
 
+## 4b. HOLD-OR-TAKE table (T-BUILD-ON item 5; extends family v)
+
+Table: for every zone second (MFE >= 70% of target, price above 50%) the cell = (pct of target bin .7/.8/.9/.95, seconds since the favourable extreme bin 5/30/120, drawdown from it 2/5/10 pt, seconds in the zone 60/300/1200). EV(hold) of a cell = mean terminal value of the base trade from all rows in the cell (target fill = full target, otherwise the terminal mid minus 1.2 pt); value now = price minus 1.2 pt market slip (state slip until measured). Rule: exit at the first second where EV(hold) < value now (cell needs 300 rows). The table is refit every 2 weeks on the trailing 26 weeks (trades before the block) and applied to the next block, so every number is walk-forward from 2024-04; per book, and per book x session (sessions with enough rows).
+
+| book | rule | net $/wk L6M | net $/wk 2024-04+ (walk-forward) | removed / clipped $/wk L6M | strict L6M 90/80 (live rules) |
+|---|---|---|---|---|---|
+| P7 at 12/7/7 lots | hold-or-take table book refit bi-weekly 26wk | 1956 | 556 | 21861 / 31900 | 14 / 0 (24 / 50) |
+| P7 at 7/4/4 (installed) | hold-or-take table book refit bi-weekly 26wk | 1140 | 333 | 12657 / 18480 | 14 / 0 (24 / 50) |
+| P7 at 12/7/7 lots | hold-or-take table book x session refit bi-weekly 26wk | 2314 | 846 | 21124 / 31215 | 6 / 2 (24 / 50) |
+| P7 at 7/4/4 (installed) | hold-or-take table book x session refit bi-weekly 26wk | 1344 | 500 | 12232 / 18088 | 6 / 2 (24 / 50) |
+| K7 | hold-or-take table book refit bi-weekly 26wk | -774 | -1351 | 6541 / 10779 | 0 / 2 (36 / 78) |
+| K7 | hold-or-take table book x session refit bi-weekly 26wk | -518 | -1401 | 6337 / 10514 | 7 / 3 (36 / 78) |
+| M7 | hold-or-take table book refit bi-weekly 26wk | 229 | -401 | 3715 / 5769 | 6 / 1 (23 / 47) |
+| M7 | hold-or-take table book x session refit bi-weekly 26wk | 276 | -375 | 3562 / 5773 | 6 / 3 (23 / 47) |
+| U7 | hold-or-take table book refit bi-weekly 26wk | -32 | -107 | 3424 / 5146 | 3 / 0 (4 / 16) |
+| U7 | hold-or-take table book x session refit bi-weekly 26wk | 120 | -139 | 3110 / 4740 | 0 / 1 (4 / 16) |
+| H7 | hold-or-take table book refit bi-weekly 26wk | -278 | -136 | 1370 / 1869 | 0 / 1 (4 / 13) |
+| H7 | hold-or-take table book x session refit bi-weekly 26wk | -369 | -140 | 941 / 1530 | 2 / 5 (4 / 13) |
+| A7 | hold-or-take table book refit bi-weekly 26wk | -506 | -256 | 1137 / 1910 | 0 / 0 (4 / 16) |
+| A7 | hold-or-take table book x session refit bi-weekly 26wk | -506 | -256 | 1137 / 1910 | 0 / 0 (4 / 16) |
+| O7 | hold-or-take table book refit bi-weekly 26wk | -284 | -153 | 10 / 294 | 1 / 1 (2 / 1) |
+| O7 | hold-or-take table book x session refit bi-weekly 26wk | -284 | -153 | 10 / 294 | 1 / 1 (2 / 1) |
+
+Plain 2-3 condition rewrite (best of 140 cells per book, fixed over the whole sample, so in-sample): 
+
+| book | rule | net $/wk L6M / 43 m | strict 90/80 |
+|---|---|---|---|
+| P7 at 12/7/7 lots | plain: pct>=0.9 AND drawdown from high >= 2 pt AND secs since high >= 0 -> take | 4471 / 1145 | 1 / 27 |
+| P7 at 7/4/4 (installed) | plain: pct>=0.9 AND drawdown from high >= 2 pt AND secs since high >= 0 -> take | 2613 / 674 | 1 / 27 |
+| K7 | plain: pct>=0.95 AND drawdown from high >= 8 pt AND secs since high >= 60 -> take | 152 / -233 | 25 / 64 |
+| M7 | plain: pct>=0.9 AND drawdown from high >= 12 pt AND secs since high >= 0 -> take | 390 / 27 | 1 / 24 |
+| U7 | plain: pct>=0.7 AND drawdown from high >= 8 pt AND secs since high >= 60 -> take | 822 / -78 | 16 / 0 |
+| H7 | plain: pct>=0.8 AND drawdown from high >= 8 pt AND secs since high >= 0 -> take | 116 / 108 | 0 / 0 |
+| A7 | plain: pct>=0.95 AND drawdown from high >= 3 pt AND secs since high >= 0 -> take | -144 / -61 | 2 / 14 |
+| O7 | plain: pct>=0.95 AND drawdown from high >= 8 pt AND secs since high >= 0 -> take | -11 / -9 | 2 / 1 |
+
+Reading. The table is the learned exit again, so it inherits the finding of section 4: it is a location rule. Walk-forward it is positive only on P7 (book x session version, +2,314 L6M / +846 a week since 2024-04 at 12/7/7), marginal elsewhere and negative on K7, U7, H7, A7, O7; on P7 it clips about 1,600 fills for about 21 thousand dollars a week removed and 31 thousand clipped (L6M), and it still leaves 6 trades that reached 90% closing below 50%. Against the references from W-N on the same L6M window: best ladder P7x +4,235 (strict 3 / 0), best staggered P7x +8,320 (strict 4 / 25, first-order, optimistic limit fills), U7 ladder +746 (strict 0 / 0) against table -32 / +120. So no table beats the best ladder or the staggered rungs; the plain rewrite is "pct >= 90% and drawdown from the high >= 2 pt -> take" for P7 (L6M +4,471 at 12/7/7, 1 / 27 strict violations), which is the same family as W-N's ladder. v1.8 fields: `dd_from_high_pts`, `secs_since_high` (both exist in the stand-in grammar), and a table-lookup action only if a table is ever preferred over the ladder (not recommended). Exact for finalists is not queued: the table does not beat the ladder, so it is not a finalist behind the P7 governor sets.
+
 ## 5. Trader test lists (20 largest give-backs, L6M and frozen live week, live rules vs finalist) - mode B best set per book
 
 #### P7 at 12/7/7 lots - set B-best (u: spread>=3 ticks arm=0.8 persist=3 + s: same-side target exit <=300 s ago arm=0.7 take + s: same-side book took target (<=600 s) arm=0.7 take)
@@ -457,11 +495,11 @@ Hook: private, same mechanics as W-N's nz_hooks (decision at the close of second
 | set | book | rules | months done / planned | EXACT stack Delta $/wk vs reference L6M / HOLD (months used) | EXACT book Delta $/wk L6M | EXACT stack maxDD cut % L6M / HOLD | NearTarget exits n / $ (L6M) |
 |---|---|---|---|---|---|---|---|
 | NEAR_N2_P7x_B1 | P7 | u: spread>=3 ticks arm=0.8 persist=3 + s: same-side target exit <=300 s ago arm=0.7 take + s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 | - | - | - | - |
-| NEAR_N2_P7x_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 0 / 29 | - | - | - | - |
-| NEAR_N2_P7x_D3 | P7 | s: same-side book took target (<=600 s) arm=0.8 take + u: spread>=3 ticks arm=0.8 persist=3 | 0 / 29 | - | - | - | - |
-| NEAR_N2_P7x_C4 | P7 | s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 | - | - | - | - |
+| NEAR_N2_P7x_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 1 / 29 | -2200 (1/6) / - | -2200 | 2.5 / - | 61 / 311708 |
+| NEAR_N2_P7x_D3 | P7 | s: same-side book took target (<=600 s) arm=0.8 take + u: spread>=3 ticks arm=0.8 persist=3 | 1 / 29 | -2637 (1/6) / - | -2637 | -0.1 / - | 56 / 284244 |
+| NEAR_N2_P7x_C4 | P7 | s: same-side book took target (<=600 s) arm=0.7 take | 1 / 29 | +2208 (1/6) / - | +2208 | 1.6 / - | 27 / 145692 |
 | NEAR_N2_P7_B1 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.9 mode=1 + t: clock m_sessch<=40min arm=0.9 take | 0 / 29 | - | - | - | - |
-| NEAR_N2_P7_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 0 / 29 | - | - | - | - |
+| NEAR_N2_P7_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 1 / 29 | -512 (1/6) / - | -512 | 9.4 / - | 90 / 261654 |
 | NEAR_N2_P7_D3 | P7 | u: spread>=3 ticks arm=0.8 persist=1 + t: clock m_sessch<=40min arm=0.9 floor.6 | 0 / 29 | - | - | - | - |
 | NEAR_N2_P7_C4 | P7 | s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 | - | - | - | - |
 | NEAR_N2_K7_B1 | K7 | a: ladder m1=0.8 f1=0.65 / .9 f2=0.7 / .95 f3=0.7 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 | - | - | - | - |
@@ -471,7 +509,7 @@ Hook: private, same mechanics as W-N's nz_hooks (decision at the close of second
 | NEAR_N2_M7_D2 | M7 | t: clock m_sessch<=5min arm=0.8 take + a: ladder m1=0.8 f1=0.65 / .9 f2=0.8 / .95 f3=0.8 mode=1 | 0 / 29 | - | - | - | - |
 | NEAR_N2_M7_C3 | M7 | t: clock m_sessch<=5min arm=0.9 floor.6 | 0 / 29 | - | - | - | - |
 | NEAR_N2_U7_B1 | U7 | a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.7 mode=1 + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.8 mode=1 + k: absorb aggw10>=3.7 & d_prog10<=4 arm=0.8 persist=1 floor.6 | 0 / 29 | - | - | - | - |
-| NEAR_N2_U7_B2 | U7 | a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.8 mode=1 | 0 / 29 | - | - | - | - |
+| NEAR_N2_U7_B2 | U7 | a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.8 mode=1 | 1 / 29 | +2038 (1/6) / - | +2038 | 3.1 / - | 19 / 44241 |
 | NEAR_N2_U7_D3 | U7 | e: stall arm=0.8 N=3 ticks=2 work=20s + uH: HOLD veto micro>=0.6 persist=1 ladder (0.6, 0.75, 0.9) + e: stall arm=0.8 N=3 ticks=1 work=20s | 0 / 29 | - | - | - | - |
 | NEAR_N2_U7_C4 | U7 | s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 | - | - | - | - |
 | NEAR_N2_H7_B1 | H7 | b: rev arm=0.8 X=4 N=5 | 0 / 29 | - | - | - | - |
@@ -480,13 +518,24 @@ Hook: private, same mechanics as W-N's nz_hooks (decision at the close of second
 | NEAR_N2_P7x_S5 | P7 | asia:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; asia:r: es_dd300<=-1 bps arm=0.8 persist=1 ; asia:s: same-side book took target (<=600 s) arm=0.7 take ; london:a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.8 mode=1 ; london:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; london:r: rty_pown5>=2x arm=0.8 persist=1 ; nyam:u: spread>=3 ticks arm=0.8 persist=3 ; nyam:t: clock m_sessch<=40min arm=0.8 floor.6 | 0 / 12 | - | - | - | - |
 | NEAR_N2_P7_S5 | P7 | asia:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; asia:r: es_dd300<=-1 bps arm=0.8 persist=1 ; asia:s: same-side book took target (<=600 s) arm=0.7 take ; london:a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.9 mode=1 ; london:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; london:r: es_dd300<=-1 bps arm=0.8 persist=1 ; nyam:f: zone arm=.8 N=30 floor 0.65 ; nyam:t: clock m_sessch<=40min arm=0.8 floor.6 | 0 / 12 | - | - | - | - |
 | NEAR_N2_P7x_V1 | P7 | learned arm=0.8 p*<0.75 persist=1 | 0 / 12 | - | - | - | - |
-| PTR_P7_NZX00 | P7 | reference P7 12/7/7 (W-N identity set) | 1 / 12 | - | - | - | - |
+| PTR_P7_NZX00 | P7 | reference P7 12/7/7 (W-N identity set) | 6 / 12 | - | - | - | - |
+
+Exact versus first-order, set by set and month (book P7 for the P7 sets, trade by trade on the entry timestamp). Matched trades are the same entries in both runs: there the hook reproduces the first-order outcome of the rule to within a few dollars per trade (median difference about $15). The gap in the totals is the entry stream: an early exit frees the book, which then re-enters (trades only in the new run) while some entries of the reference never happen (trades only in the reference); the first-order frame cannot see that, so the exact column decides.
+
+| set | month | exact book Delta $ vs reference | first-order Delta $ (same trades) | matched trades: exact / first-order Delta $ | trades only in the new run (n / $) | trades only in the reference (n / $) | NearTarget exits |
+|---|---|---|---|---|---|---|---|
+| NEAR_N2_P7_B2 | 202610 | -2251 | 10958 | -12692 / -3067 (123 matched) | 68 / 14506 | 41 / 4065 | 90 |
+| NEAR_N2_P7x_B2 | 202610 | -9681 | 18838 | -26998 / -6278 (93 matched) | 45 / 4008 | 16 / -13310 | 61 |
+| NEAR_N2_P7x_C4 | 202610 | 9715 | 7951 | -3373 / -1286 (104 matched) | 14 / 8080 | 5 / -5008 | 27 |
+| NEAR_N2_P7x_D3 | 202610 | -11604 | 22691 | -12132 / -2011 (90 matched) | 33 / -7257 | 19 / -7785 | 56 |
+| NEAR_N2_U7_B2 | 202610 | 8967 | 9529 | 8967 / 9529 (41 matched) | 0 / 0 | 0 / 0 | 19 |
 
 ## 8. Processes (keep running to 12:00Z)
 
-2250144 /bin/bash ./page_loop2.sh
 2278207 python3 -u nz2_exact.py chain
-2284318 /bin/bash -c source <claude-dir> 2>/dev/
-2284320 python3 nz2_page.py
+2319176 /bin/bash ./cx_chain2.sh
+2321892 python3 -u nz2_feed.py
+2324199 /bin/bash -c source <claude-dir> 2>/dev/
+2324201 python3 nz2_page.py
 
 Caveats stated once. First-order; engine market exits are about 0.4 pt cheaper than the 1.2 pt used here; "other books" and the opposite-signal rule use the base stack's own trade list (the exact hook uses the engine's own events); ES/RTY features are 1-s mid and 5-s cancel flow, not a full book; h-q cannot be replayed on the frozen live week (no print/queue extracts for it), so mode A sets show "not replayable" for the live week; the learned exit uses the walk-forward fold models for each trade's quarter (none before 2024Q1) and the all-data model for the live week.

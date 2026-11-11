@@ -1,9 +1,9 @@
 # DS3_SCREENS - what a discretionary desk watches, as features for NQ (T-SCREENS, W-S)
-Page written 2026-11-11T22:55Z (date -u). Shadow only; no PASS claims. Method: every feature is scored first-order on the exact LPB_BASE trade list (20,807 trades) in the uses A (loss cut confirm), B (early cut), C (near-zone take), D (entry skip/half), E (P7 re-entry gate); regime flag F and learned G below. Four windows L6M / HOLD / PRE / X-prime, thresholds from events before 2025-11-11 only, family null by permuting each feature within month among its finite values (availability pattern kept), 60 permutations for the best-cell null, 20 for the entrant counts.
-Spend: T-SCREENS $290.40, T-CROSS $98.00, total $388.40 of $1,000. Loop: nohup page/exact loop pid 2271061 (see below). Exact stage: SCR_S6_DAYN22 1 of 43 months done, 0 errors; SCR_S7_INVA_NYAM 0 of 43 months done, 0 errors.
+Page written 2026-11-11T23:13Z (date -u). Shadow only; no PASS claims. Method: every feature is scored first-order on the exact LPB_BASE trade list (20,807 trades) in the uses A (loss cut confirm), B (early cut), C (near-zone take), D (entry skip/half), E (P7 re-entry gate); regime flag F and learned G below. Four windows L6M / HOLD / PRE / X-prime, thresholds from events before 2025-11-11 only, family null by permuting each feature within month among its finite values (availability pattern kept), 60 permutations for the best-cell null, 20 for the entrant counts.
+Spend: T-SCREENS $290.40, T-CROSS $98.00, total $388.40 of $1,000. Loop: nohup page/exact loop pid 2309711 (see below); exact runner pid 2307893. Exact stage: JN05W_S6_C22 0 of 43 months done, 0 errors; JN05W_S6_N22 0 of 43 months done, 0 errors; JN05W_S6_C18 0 of 43 months done, 0 errors; JN05W_S6_C14 0 of 43 months done, 0 errors; JN05W_S6_L10 0 of 43 months done, 0 errors.
 
 ## How many would pass by chance
-Across all scored families 3950 cells beat the live rule in every window; the same pipeline on permuted features gives 3740 on average. A family is only credited where it exceeds its own placebo.
+Across all scored families 4120 cells beat the live rule in every window; the same pipeline on permuted features gives 3910 on average. A family is only credited where it exceeds its own placebo.
 
 ## Per family
 ### S1 VIX family (daily, prior close)
@@ -33,7 +33,15 @@ Live feed it would need in NT8 (v1.8): live index feed ^VIX ^VIX9D ^VVIX (1-min)
 
 ### S1 Dealer gamma from EOD open interest (NDX + NDXP)
 Data: Databento OPRA.PILLAR statistics NDX.OPT + NDXP.OPT 2023-04-01..2026-11-10: $251.37 (of which $27.82 was the definition files, not needed because the OSI symbol carries strike/expiry); intraday OPRA quote only: cbbo-1s QQQ $23.52/day, NDX $3.96/day, NDXP $12.36/day (not planned). Proxy/limits: PROXY: flat sigma = 1.25 x VIX (no IV bought); NDX spot from NQ with a fair-basis estimate; dealers long calls / short puts convention.
-Status: not scored yet (waiting for data or run).
+Scored: 12 features, 9430 cells (uses x books x sessions x thresholds x direction); thresholds are quantiles of the pre-2025-11-11 events only, so HOLD and L6M are forward of the thresholds.
+- entry skip (half = the same cells at half effect): 14 cells beat the live rule in every window (chance with permuted features 18.4, p95 25), best-cell family p = 0.50; first-order stack entrants 0 (chance 2.1).
+- loss-cut confirm (cut OFF when the cell is true): 68 cells beat the live rule in every window (chance with permuted features 69.9, p95 80), best-cell family p = 0.10; first-order stack entrants 1 (chance 0.8).
+- early cut at -15 pts: 9 cells beat the live rule in every window (chance with permuted features 7.4, p95 12), best-cell family p = 0.02; first-order stack entrants 0 (chance 0.5).
+- early cut at -25 pts: 22 cells beat the live rule in every window (chance with permuted features 11.9, p95 18), best-cell family p = 0.17; first-order stack entrants 0 (chance 0.6).
+- near-zone take at 80% of target: 32 cells beat the live rule in every window (chance with permuted features 37.6, p95 48), best-cell family p = 0.98; first-order stack entrants 1 (chance 0.6).
+- P7 Asia-type re-entry gate (P7 entries within 120 min of a same-side P7 loser): 25 cells beat the live rule in every window (chance with permuted features 24.8, p95 32), best-cell family p = 0.17; first-order stack entrants 0 (chance 0.5).
+Best first-order stack cell (nominal): C book U7 all sessions: s1g_callwall_dist <= -708.3 (acted on 52 L6M events). Stack maxDD cut / change in mean $ per week: L6M 8.4% / +306; HOLD 2.1% / +532; PRE 10.6% / +32; X' -0.7% / +152. In the worst-20 weeks it changes P&L by +2913 $/wk and in the 20 best (trend) weeks by -724 $/wk.
+Does NOT enter the joint set: the number of cells that help the stack is not above what permuted features give, or the family p is above 0.05. Treat the best cell as noise-level.
 Live feed it would need in NT8 (v1.8): one daily file written before the open from the OPRA open-interest statistic (published about 05:30 ET): gex_net_bn, gex_z60, zero_gamma_nq, call_wall_nq, put_wall_nq, top0dte_nq, share0dte; read by DS7 as a level table (like the zone table).
 
 ### S2 Internals proxy: breadth of the 4 index futures (NQ ES RTY YM)
@@ -148,8 +156,29 @@ Live feed it would need in NT8 (v1.8): NT8 tick handler: large-lot net 30/120 s,
 ## F - regime flag for T-WORKS B1
 Weekly mean of each unsigned/signed screen feature vs the 20 best (trend) and 20 worst weeks of the stack: 163 features, 2 separate them by AUC >= 0.75 or <= 0.25, a permutation of the week labels gives 1.0 on average (p95 4). Top: s3_fesx_s5 AUC 0.25; s2_brd15 AUC 0.25; s2_brd30 AUC 0.26; s3_fdax_s5 AUC 0.26. Side-signed features average out over a week and are weak flags by construction; the VIX family and the calendar are unsigned and are the honest candidates. The S6 desk features are excluded (they are built from the same week P&L).
 
+## Candidates sent to the exact engine (queue exact_queue_Z_screens.txt, SZ-CORE, behind P7 FIX / T-CROSS / near-zone / early-cut)
+S6 desk state: skip every new entry once N stack trades have already closed in the label day (N = 22, 18, 14; sets SCR_S6_DAYN22/18/14). First-order: positive mean and a maxDD cut in all four windows for N = 14, 18 and 22 (a plateau) and negative from N = 26 up, so it is a day-count cap, not a fitted point; one exact month already run (2026-10): 769 -> 503 trades, +$12.2k -> +$32.2k. S7 tape: skip NY-AM entries while price sits inside the prior RTH 70% value area (SCR_S7_INVA_NYAM). Neither is counted as entering the joint set until its exact four windows, bi-weekly blocks and scorecard are in (below).
+Why these two and not the others: they are the only first-order cells whose mean is positive in all four windows with a maxDD cut on L6M and HOLD, on a plateau; every other family is at or under its own placebo count.
+
 ## Notes
 Scorecard a-e, bi-weekly WF and exact results are appended below per candidate as they complete.
+
+#### Exact sets (one set per job, TP engine, engine = base + screen gate hook th_screens/scr_hooks.py; bases LPB_BASE and JN04RM)
+- JN05W_S6_C22 vs LPB_BASE: 0 of 43 months done.
+- JN05W_S6_C22_RM vs JN04RM: 0 of 43 months done.
+- JN05W_S6_N22 vs LPB_BASE: 0 of 43 months done.
+- JN05W_S6_N22_RM vs JN04RM: 0 of 43 months done.
+- JN05W_S6_C18 vs LPB_BASE: 0 of 43 months done.
+- JN05W_S6_C18_RM vs JN04RM: 0 of 43 months done.
+- JN05W_S6_N18 vs LPB_BASE: 0 of 43 months done.
+- JN05W_S6_N18_RM vs JN04RM: 0 of 43 months done.
+- JN05W_S6_C14 vs LPB_BASE: 0 of 43 months done.
+- JN05W_S6_C14_RM vs JN04RM: 0 of 43 months done.
+- JN05W_S6_N14 vs LPB_BASE: 0 of 43 months done.
+- JN05W_S6_N14_RM vs JN04RM: 0 of 43 months done.
+- JN05W_S6_L10 vs LPB_BASE: 0 of 43 months done.
+- JN05W_S6_L10_RM vs JN04RM: 0 of 43 months done.
+
 
 #### Extras for s1_ best cell (D ALL 3 s1_vvix 104.5)
 Bi-weekly walk-forward (re-pick on the trailing 52 weeks, apply to the next 2 weeks, 26 blocks 2025-11-11..2026-10-30): the picks were made in 26 blocks and gained in 12, lost in 10; total +13026 $, +251 $ per week versus the live rule. Placebo (features permuted) gives +562 $/wk on average (range -398 to +1222).
@@ -230,6 +259,31 @@ Behavioural scorecard a-e, first-order (cached LPB_BASE path features; exact set
 - HOLD per week (stack): a full stops 23.0 -> 16.3 ($-37923 -> $-27616); b give-backs 8.0 -> 5.6 ($-12167 -> $-9284), round-trips 7.8 -> 5.4; c same-side loss runs max 12 -> 12, p95 6 -> 5, $ on 3rd+ -43521 -> -31427; d no-new-evidence re-entries 30.0 -> 16.5 ($732 -> $1620); e recoveries cut 12.2 -> 7.5 ($41657 -> $29471), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $15351 -> $16473.
 - PRE per week (stack): a full stops 16.9 -> 14.7 ($-28859 -> $-25778); b give-backs 5.2 -> 4.3 ($-7549 -> $-6546), round-trips 4.8 -> 4.0; c same-side loss runs max 11 -> 7, p95 4 -> 4, $ on 3rd+ -22384 -> -19760; d no-new-evidence re-entries 12.7 -> 9.4 ($-160 -> $278); e recoveries cut 6.7 -> 5.3 ($22256 -> $18532), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $11882 -> $13027.
 - X' per week (stack): a full stops 17.5 -> 17.2 ($-28195 -> $-27865); b give-backs 3.6 -> 3.5 ($-4902 -> $-4908), round-trips 3.0 -> 3.0; c same-side loss runs max 7 -> 7, p95 4 -> 4, $ on 3rd+ -12302 -> -12274; d no-new-evidence re-entries 2.7 -> 2.6 ($569 -> $627); e recoveries cut 2.5 -> 2.5 ($9968 -> $9968), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $1342 -> $1432.
+
+
+#### S6 cap family, first-order detail (LPB_BASE trade list; exact sets JN05W_S6_* run one set per job on LPB_BASE and JN04RM, see exact block)
+- stack closes >= 22 AND day P&L <= -2 R: removes 1275 entries over 3.5 years. Stack maxDD cut / mean change per week: L6M 28% / +3575; HOLD 10% / +2340; PRE 6% / +705; X' 0% / +0. Months (43): 24 better, 6 worse, 13 unchanged; 2-week blocks: 75 of 93 not worse over all history, 19 of 25 in HOLD. Removed trades change P&L by +4725 $/wk in the 20 worst weeks and -585 $/wk in the 20 best (trend) weeks. Frozen live week replay (first-order, live trade list, 180 trades, +$102830): it would have skipped 2 trades worth +4066 $ (4% of the week).
+  months lost: 202408 -2196, 202411 -927, 202505 -12736, 202509 -1943, 202601 -9733, 202607 -21294.
+  scorecard a-e L6M per week (stack): a full stops 24.5 -> 20.8 ($-40052 -> $-34136); b give-backs 9.1 -> 7.8 ($-14009 -> $-12246), round-trips 9.0 -> 7.7; c same-side loss runs max 12 -> 12, p95 6 -> 6, $ on 3rd+ -51344 -> -47244; d no-new-evidence re-entries 37.3 -> 31.0 ($-363 -> $-643); e recoveries cut 13.7 -> 12.0 ($46863 -> $42899), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $19784 -> $22612.
+  scorecard a-e HOLD per week (stack): a full stops 23.0 -> 20.3 ($-37923 -> $-33790); b give-backs 8.0 -> 7.2 ($-12167 -> $-11159), round-trips 7.8 -> 7.0; c same-side loss runs max 12 -> 12, p95 6 -> 6, $ on 3rd+ -43521 -> -40198; d no-new-evidence re-entries 30.0 -> 25.3 ($732 -> $865); e recoveries cut 12.2 -> 10.7 ($41657 -> $37778), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $15351 -> $17688.
+  scorecard a-e PRE per week (stack): a full stops 16.9 -> 16.0 ($-28859 -> $-27636); b give-backs 5.2 -> 4.8 ($-7549 -> $-7191), round-trips 4.8 -> 4.4; c same-side loss runs max 11 -> 7, p95 4 -> 4, $ on 3rd+ -22384 -> -21187; d no-new-evidence re-entries 12.7 -> 11.1 ($-160 -> $272); e recoveries cut 6.7 -> 6.1 ($22256 -> $20810), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $11882 -> $12705.
+  scorecard a-e X' per week (stack): a full stops 17.5 -> 17.5 ($-28195 -> $-28195); b give-backs 3.6 -> 3.6 ($-4902 -> $-4902), round-trips 3.0 -> 3.0; c same-side loss runs max 7 -> 7, p95 4 -> 4, $ on 3rd+ -12302 -> -12302; d no-new-evidence re-entries 2.7 -> 2.7 ($569 -> $569); e recoveries cut 2.5 -> 2.5 ($9968 -> $9968), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $1342 -> $1342.
+- stack closes >= 18 AND day P&L <= -2 R: removes 1891 entries over 3.5 years. Stack maxDD cut / mean change per week: L6M 36% / +2442; HOLD 16% / +1545; PRE 7% / +809; X' -0% / -81. Months (43): 23 better, 13 worse, 7 unchanged; 2-week blocks: 62 of 93 not worse over all history, 14 of 25 in HOLD. Removed trades change P&L by +6973 $/wk in the 20 worst weeks and -1802 $/wk in the 20 best (trend) weeks. Frozen live week replay (first-order, live trade list, 180 trades, +$102830): it would have skipped 2 trades worth +4066 $ (4% of the week).
+  months lost: 202306 -1101, 202308 -7286, 202401 -1856, 202408 -1129, 202410 -3116, 202411 -6443, 202505 -17382, 202508 -7737, 202509 -1928, 202510 -6311, 202511 -1750, 202601 -18545, 202607 -17382.
+  scorecard a-e L6M per week (stack): a full stops 24.5 -> 19.7 ($-40052 -> $-32471); b give-backs 9.1 -> 7.4 ($-14009 -> $-11599), round-trips 9.0 -> 7.3; c same-side loss runs max 12 -> 12, p95 6 -> 6, $ on 3rd+ -51344 -> -45310; d no-new-evidence re-entries 37.3 -> 28.9 ($-363 -> $-625); e recoveries cut 13.7 -> 11.5 ($46863 -> $41573), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $19784 -> $21967.
+  scorecard a-e HOLD per week (stack): a full stops 23.0 -> 19.5 ($-37923 -> $-32512); b give-backs 8.0 -> 6.8 ($-12167 -> $-10713), round-trips 7.8 -> 6.7; c same-side loss runs max 12 -> 12, p95 6 -> 5, $ on 3rd+ -43521 -> -38752; d no-new-evidence re-entries 30.0 -> 23.6 ($732 -> $688); e recoveries cut 12.2 -> 10.3 ($41657 -> $36764), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $15351 -> $17314.
+  scorecard a-e PRE per week (stack): a full stops 16.9 -> 15.5 ($-28859 -> $-26869); b give-backs 5.2 -> 4.7 ($-7549 -> $-6976), round-trips 4.8 -> 4.3; c same-side loss runs max 11 -> 7, p95 4 -> 4, $ on 3rd+ -22384 -> -20566; d no-new-evidence re-entries 12.7 -> 10.3 ($-160 -> $24); e recoveries cut 6.7 -> 5.8 ($22256 -> $19762), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $11882 -> $12837.
+  scorecard a-e X' per week (stack): a full stops 17.5 -> 17.4 ($-28195 -> $-28055); b give-backs 3.6 -> 3.5 ($-4902 -> $-4833), round-trips 3.0 -> 3.0; c same-side loss runs max 7 -> 7, p95 4 -> 4, $ on 3rd+ -12302 -> -12302; d no-new-evidence re-entries 2.7 -> 2.7 ($569 -> $560); e recoveries cut 2.5 -> 2.5 ($9968 -> $9899), fills clipped 0.0 -> 0.0 ($0 -> $0); P&L $1342 -> $1165.
+- stack closes >= 14 AND day P&L <= -2 R: removes 2725 entries over 3.5 years. Stack maxDD cut / mean change per week: L6M 55% / +3454; HOLD 11% / +1486; PRE 20% / +984; X' 10% / +523. Months (43): 22 better, 20 worse, 1 unchanged; 2-week blocks: 59 of 93 not worse over all history, 13 of 25 in HOLD. Removed trades change P&L by +10201 $/wk in the 20 worst weeks and -1623 $/wk in the 20 best (trend) weeks. Frozen live week replay (first-order, live trade list, 180 trades, +$102830): it would have skipped 7 trades worth +10074 $ (10% of the week).
+  months lost: 202308 -10421, 202309 -864, 202310 -1727, 202312 -1623, 202405 -2415, 202407 -1160, 202410 -8042, 202411 -13259, 202503 -18053, 202505 -25077, 202506 -8353, 202508 -12682, 202509 -2775, 202510 -17037, 202511 -12413, 202601 -11588, 202603 -5095, 202606 -1461, 202607 -9430, 202608 -30432.
+- stack LOSING closes >= 10: removes 5518 entries over 3.5 years. Stack maxDD cut / mean change per week: L6M 63% / +3381; HOLD 18% / +649; PRE 36% / +1807; X' 11% / +500. Months (43): 24 better, 18 worse, 1 unchanged; 2-week blocks: 52 of 93 not worse over all history, 13 of 25 in HOLD. Removed trades change P&L by +13081 $/wk in the 20 worst weeks and -7544 $/wk in the 20 best (trend) weeks. Frozen live week replay (first-order, live trade list, 180 trades, +$102830): it would have skipped 105 trades worth +60515 $ (59% of the week).
+  months lost: 202306 -2948, 202308 -11215, 202310 -48, 202311 -1054, 202405 -3614, 202411 -16718, 202503 -21993, 202505 -5502, 202506 -7544, 202508 -11781, 202509 -813, 202510 -12404, 202511 -66030, 202601 -20458, 202604 -14057, 202606 -36327, 202607 -35530, 202608 -47767.
+- stack closes >= 22: removes 3879 entries over 3.5 years. Stack maxDD cut / mean change per week: L6M 29% / +1493; HOLD 17% / +1007; PRE 21% / +813; X' 2% / +209. Months (43): 22 better, 13 worse, 8 unchanged; 2-week blocks: 68 of 93 not worse over all history, 14 of 25 in HOLD. Removed trades change P&L by +5692 $/wk in the 20 worst weeks and -5137 $/wk in the 20 best (trend) weeks. Frozen live week replay (first-order, live trade list, 180 trades, +$102830): it would have skipped 87 trades worth +44268 $ (43% of the week).
+  months lost: 202307 -69, 202308 -2052, 202404 -10772, 202407 -3904, 202409 -1967, 202411 -5374, 202412 -4750, 202506 -6277, 202510 -2342, 202511 -33016, 202601 -12050, 202606 -9134, 202607 -53642.
+- stack closes >= 18: removes 5494 entries over 3.5 years. Stack maxDD cut / mean change per week: L6M 38% / +2549; HOLD 30% / +2050; PRE 23% / +146; X' 3% / +377. Months (43): 22 better, 17 worse, 4 unchanged; 2-week blocks: 61 of 93 not worse over all history, 15 of 25 in HOLD. Removed trades change P&L by +10143 $/wk in the 20 worst weeks and -7876 $/wk in the 20 best (trend) weeks. Frozen live week replay (first-order, live trade list, 180 trades, +$102830): it would have skipped 105 trades worth +41689 $ (41% of the week).
+  months lost: 202304 -1258, 202306 -675, 202307 -2861, 202308 -14133, 202404 -16484, 202406 -3857, 202407 -3416, 202412 -23834, 202505 -46348, 202506 -1310, 202508 -3464, 202510 -701, 202511 -33839, 202601 -8287, 202606 -10814, 202607 -18555, 202609 -535.
+- stack closes >= 14: removes 7703 entries over 3.5 years. Stack maxDD cut / mean change per week: L6M 39% / +782; HOLD 20% / +745; PRE 55% / +153; X' 5% / +477. Months (43): 18 better, 25 worse, 0 unchanged; 2-week blocks: 53 of 93 not worse over all history, 16 of 25 in HOLD. Removed trades change P&L by +15945 $/wk in the 20 worst weeks and -11052 $/wk in the 20 best (trend) weeks. Frozen live week replay (first-order, live trade list, 180 trades, +$102830): it would have skipped 121 trades worth +61276 $ (60% of the week).
+  months lost: 202307 -4911, 202308 -23297, 202310 -4761, 202311 -3, 202312 -1095, 202403 -2945, 202404 -23372, 202405 -6524, 202406 -3009, 202407 -6421, 202411 -19985, 202412 -9923, 202503 -10241, 202505 -55900, 202506 -6221, 202508 -16239, 202509 -4670, 202511 -40033, 202601 -11971, 202603 -12365, 202604 -13073, 202606 -32069, 202607 -46746, 202608 -41446, 202609 -18813.
 
 
 #### Extras for s7 best cell (D ALL 3 s7_in_va 1)

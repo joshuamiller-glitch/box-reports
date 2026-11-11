@@ -58,45 +58,49 @@ CANDIDATE = down-only AND cut_L6M > 0 AND cut_PRE > 0 AND cut_X' > 0 (one of the
 - Labels (page): CANDIDATE = recents (L6M cut > 0, L3M cut > -3) + OK-PRIOR + worst-20 not worse + placebo p <= .10 + bi-weekly WF (>= 50% of periods beaten and cut > 0, else monthly WF) ; 'LEAD+' = recents + placebo ok; 'LEAD' = recents; RECENT-ONLY rows keep both numbers in the label (PRE cut / d mean).
 
 <!--Q12-->
-## 12. Exact queue status (2026-11-10 17:01 UTC, after the hard trim; written by code/th_sz/queue_status.py)
+## 12. Exact queue status (2026-11-11 23:06 UTC, after the hard trim; written by code/th_sz/queue_status.py)
 
 Hard trim in force: strict order (tier, window L6M > PRE > X' > HOLD, month-major) across all sets; X'/HOLD months of a set are dropped until the set has finished L6M + PRE; R1_3/R1_4 X'/HOLD are run by SZ-CDE itself; *_LIVE sets are skipped (live = base) except exact_keep_live.txt; identity tests (_ID/_TEST/_HOOKREF) first; J-stack and REF_ sets are tier 1; top-1 list (exact_top1.txt, rebuilt from the layer registries every 30 min) = tier 1.5. Workers: 3 when MemAvailable >= 55 GB and load < 24, else 2 when >= 45 GB (hard stop at load > 32).
 
 | tier | done | pending |
 |--|--|--|
-| 0 | 220 | 362 |
+| 0 | 902 | 0 |
 | 1 | 373 | 0 |
 | 1.5 | 368 | 0 |
-| 2 | 1257 | 28 |
-| 3 | 33 | 158 |
-| 4 | 148 | 294 |
+| 2 | 1286 | 24 |
+| 3 | 231 | 0 |
+| 3.2 | 3442 | 4746 |
+| 4 | 753 | 45 |
 
 | prefix | done | pending |
 |--|--|--|
-| LPB_ | 56 | 428 |
-| ZS_ | 78 | 146 |
-| AB_ | 77 | 81 |
-| R6_ | 320 | 54 |
-| Q_ | 117 | 46 |
-| VT_ | 159 | 36 |
-| X_ | 110 | 23 |
-| ZNC_ | 78 | 12 |
-| R9_ | 72 | 6 |
-| R11_ | 67 | 5 |
-| FD_ | 163 | 3 |
-| R10_ | 76 | 2 |
+| PTR_ | 3592 | 4746 |
+| SCR_ | 1 | 45 |
+| NEAR_ | 1 | 24 |
+| R6_ | 374 | 0 |
 | R8_ | 46 | 0 |
 | ATRSKIP_ | 43 | 0 |
 | FGH_ | 180 | 0 |
 | R5_ | 317 | 0 |
+| ZNC_ | 90 | 0 |
+| ZS_ | 288 | 0 |
+| LPB_ | 858 | 0 |
 | R12_ | 131 | 0 |
 | R7_ | 133 | 0 |
 | RB_ | 64 | 0 |
+| X_ | 143 | 0 |
+| FD_ | 166 | 0 |
 | REF_ | 112 | 0 |
+| Q_ | 195 | 0 |
+| AB_ | 198 | 0 |
+| VT_ | 195 | 0 |
+| R10_ | 78 | 0 |
+| R11_ | 72 | 0 |
+| R9_ | 78 | 0 |
 
-Measured throughput (last 3 h): 147.0 cell-months/h overall (441 finished); mean 122 s per cell inside a batch process => about 29.6 cell-months/h per worker, 59.2 with 2 workers, 88.8 with 3.
+Measured throughput (last 3 h): 120.0 cell-months/h overall (360 finished); mean 137 s per cell inside a batch process => about 26.4 cell-months/h per worker, 52.7 with 2 workers, 79.1 with 3.
 
-ETA (pending / throughput; 2 workers | 3 workers): tier 0: 6.1 h | 4.1 h; tier 0-1: 6.1 h | 4.1 h; + top-1 list (1.5): 6.1 h | 4.1 h; + tier 2 (L6M then PRE only within the trim): 6.6 h | 4.4 h.
+ETA (pending / throughput; 2 workers | 3 workers): tier 0: 0.0 h | 0.0 h; tier 0-1: 0.0 h | 0.0 h; + top-1 list (1.5): 0.0 h | 0.0 h; + tier 2 (L6M then PRE only within the trim): 0.5 h | 0.3 h.
 <!--/Q12-->
 - **w20cut sign (fixed 2026-11-09 22:45Z):** `w20cut_<w>` = 100*(w20_cell - w20_live)/|w20_live| where w20 = SUM of the 20 worst weekly P&Ls; + = improvement (larger, less negative). Earlier core numbers had the opposite sign (KCAP3 / 7-4-4 "-70.6% / -46% worse" were actually improvements). See autopilot/SZ_P7_W20_NOTE.md.
 - **RollRep defect fixed (2026-11-10, found by SZ-CDE):** the roll events of all 14 rolls were scheduled every month, so a pending event past the chunk end closed positions that the base lists leave open at the data end ('RollFlat' exits in the wrong month). Scan of all ROLLFIX1 runs + base_b_rollfix: 67 rows, 34 sets, ONE month (202411: P7 + K7 entered 2024-11-29, closed at the 2024-12-18 23:59:59 roll event, +$1,861 net per set); base_b_rollfix lists clean. Fixed: RollRep ignores roll events outside the month's data; strip_artifact.py (rerun every 15 min) removes such rows (originals kept as trades_artifact.parquet). Reference rows and P7 cells were NOT affected (their 202411 months ran before the patch flag): before/after identical on every window.

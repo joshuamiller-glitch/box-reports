@@ -50,3 +50,6 @@ W-C: A, D1-D4, D6, D7 (+ page DS3_WORKS_C.md). W-B: B, D5 (DS3_WORKS_B.md). W-E 
 3. The same replay on the 5 best trend sessions (incl. the frozen live week): the finalist must still take the re-entries that followed NEW EVIDENCE — show how many winners it kept.
 4. A finalist that improves drawdown but fails test 1 on more than 2 of the 20 worst sessions is NOT the P7 fix, whatever its score. State PASS/FAIL per finalist in plain words.
 (Lead: W-C builds the session-replay tool acceptance_p7.py under code/th_works_c/; W-Q applies it to every joint finalist and the minimal set; every family agent runs it on its own best cell before promotion to the joint.)
+
+## PRIORITY (user, 2026-11-11 23:20Z)
+Throughput is fixed (TP engine), so run the P7 FIX governor sets WG_A4, WG_E1, WG_E1A, WG_E2Q, WG_E4-E7 on exact NOW, ahead of T-CROSS/T-SCREENS extras: L6M first, then HOLD, PRE, X'; first rows in DS3_WORKS_C.md by 03:00Z with the acceptance test and scorecard. Then: staggered targets (m), move-target (j) and touched-not-filled (h) for P7 need engine order hooks — build them and run exact; state the queue/fill model used. JN05W = WA_C1 + WB_X_FR_F4 + the best governor: compose and run as soon as one governor row exists. T-CROSS ES/RTY is null: stop spending cores there except the megacap chain.
