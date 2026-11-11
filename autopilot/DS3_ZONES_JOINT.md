@@ -1,4 +1,4 @@
-# DS3_ZONES_JOINT - the ZONE layer in the joint stage and the eight-line leave-one-out (T-NEXT B1 + B3; 2026-11-10 23:36Z)
+# DS3_ZONES_JOINT - the ZONE layer in the joint stage and the eight-line leave-one-out (T-NEXT B1 + B3; 2026-11-11 00:37Z)
 
 **ROLL-FIXED (ROLLFIX1), PRE-PROOF, post-hoc, Shadow only, NO PASS CLAIMS. Standing rules 1/2/2a: the zone layer stays ON; recents first; bi-weekly WF; PRE tolerance per Z.prior_info.** Exact-queue pause 17:15Z-21:30Z (user order T-TRAIL-L2 v2).
 
@@ -44,7 +44,7 @@
 | ZNA_SOPEN40 | zone_set | EXACT partial: 6 of 43 months | 6 | HALF cell sopen40 (y = 40*E/20000) |
 | ZS_C0 | zone_set | EXACT partial: 39 of 43 months | 39 | ZN-STRUCT swing level skip (London), sw5_5 v23 hw2 pt5 BA |
 | ZS_D0 | zone_set | EXACT partial: 39 of 43 months | 39 | ZN-STRUCT bbup_5 quarter London |
-| ZS_E0 | zone_set | EXACT partial: 3 of 43 months | 3 | ZN-STRUCT family E top |
+| ZS_E0 | zone_set | EXACT partial: 10 of 43 months | 10 | ZN-STRUCT family E top |
 | ZNC_A0 | zone_set | EXACT partial: 39 of 43 months | 39 | ZN-CORE family A ldnl skip London |
 | ZNC_B0 | zone_set | EXACT partial: 39 of 43 months | 39 | ZN-CORE family B skip London |
 | ZNB_F00 | zone_set | QUEUED | 0 | ZN-BOOK ice_w600_n1 quarter PE |
