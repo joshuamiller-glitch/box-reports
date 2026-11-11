@@ -1,8 +1,8 @@
-# DS3_WORKS_C - T-WORKS Part C (P7 anatomy), W-C, page2026-11-11 15:13Z (C1 anatomy; C2-C4 running)
+# DS3_WORKS_C - T-WORKS Part C (P7 anatomy), W-C, page2026-11-11 17:34Z (C1 anatomy, C3/C4 L6M exact rows, C2 queued)
 Label: PRE-PROOF, post-hoc, descriptive, Shadow only, no PASS claim. Prereg autopilot/WORKS_C_PREREG.md (sha in DECISIONS.md 13:35Z). Source: the exact LPB_BASE trade list (live panel base: P7 day cap 8,400, 7/4/4, P7 cut 40/5x/w5/p3, no JN04 dials), 4,958 P7 trades 2023-04..2026-10, plus the 53 P7 trades of the frozen live week 11-01..05 (data/live_frozen reconstructed file; live fees proxied at $4.84 per contract). Features are causal at the signal second (NQ 1-min bars, ER(20) on 5-min, atr_rel = 5-min ATR over its 20-day norm, LOT state = P7 shadow Calmar over the last 10 label days from the same list). Code code/th_works/c1_build.py, c1_cells.py, c1_excess.py, c1_page.py; table /mnt/l2/l2vast/_th_works/c/c1_cells.csv.
 
 ## C1 in plain sentences
-1. P7 earns $897k over the 3.5 years in this base, $237k in L6M, and $0k in the live week (28 targets, 24 cuts, 1 BookLock). Its 20 worst weeks lose $552k together. Winners are targets at a flat 60 points (mean about +$4,000 per trade in L6M) and losers are StateCuts at a mean of about -$3,000 per trade; P7 wins only about 45 percent of its trades, so the week is decided by the cut rate.
+1. P7 earns $897k over the 3.5 years in this base, $237k in L6M, and $85k in the live week (28 targets, 24 cuts, 1 BookLock). Its 20 worst weeks lose $552k together. Winners are targets at a flat 60 points (mean about +$4,000 per trade in L6M) and losers are StateCuts at a mean of about -$3,000 per trade; P7 wins only about 45 percent of its trades, so the week is decided by the cut rate.
 2. A worst-20 week is not a busy week (26.5 P7 trades in both the worst and the other weeks). It is a week where 62 percent of trades end as StateCuts against 50 percent in other weeks, i.e. the same entries, but the trend continues through the cut instead of reverting to target.
 3. Where the worst weeks sit (excess loss = worst-week net minus what the same cell earns per trade in other weeks): Asia is the largest carrier (284 trades in worst weeks, mean -$1,475 against +$580 in other weeks, 76 percent of the worst-20 loss; Asia is also where 80 percent of the 3.5-year profit comes from). By lots, 7-lot trades (all Asia in the live table) lose -$3,557 per trade in worst weeks against +$1,037 otherwise: 98 trades carry -$349k of the -$552k. 4-lot trades are flat over the whole history (-$3 per trade outside worst weeks) and lose -$1,240 in worst weeks.
 4. Trend state matters, a result that matches the live week: signals taken WITH a session move of more than 1 ATR (the trend is already running in the trade direction, 3,270 trades) carry 66 percent of the worst-20 loss, and entries after a P7 loss, within 30 minutes of the last P7 exit, and with K7/U7/M7 already open on the same side are all over-represented. These are one regime seen from several sides: a trending Asia session where P7 keeps re-entering the same direction, gets cut, and re-enters. In L6M the worst 5 weeks (202644, 202631, 202636, 202635, 202621) show the same shape: with-trend, short side (87 percent of the L6M worst-5 loss is on the short side), inside 30 minutes of the last exit (96 percent), third-or-later trade of the session (72 percent).
@@ -178,6 +178,17 @@ Caveats: cells overlap heavily (Asia, 7 lots, cold and with-trend are mostly the
 Running now (exact, JN04RM base, one set per job via jbjobs, 1 worker): C3 blackout sets WC3_S60, S15, S120, B30, B60, then C2 sets WC2_A5, A4, A6, L5, STKA (7/4/4 Asia lots 5/4/6, London 5, STACK on Asia+London). Next: first-order flag-conditional blackout screen from this table; rest-of-session hook; C4 spec.
 
 
+## Status sentences (page1, 18:00Z; updated by hand each page)
+1. The C1 anatomy is complete and is the first section below; the P7 table (every cell, all 3.5 years / L6M / live week / share of the worst-20-week loss) is in it.
+2. C3 (re-entry blackout) first-order screen, exact LPB_BASE trade list: a same-side blackout of 15 to 60 minutes after a P7 StateCut or stop is positive at the P7 level in L6M, HOLD and PRE only when the blocked signal is in a hot tape (atr_rel >= 1.3: 30 min same side gives +$1,990/wk L6M, +$995 HOLD, +$592 PRE, -$4 X'); in a calm tape (atr_rel < 1.3) longer blackouts (60 min and above) and "rest of session" lose money (rest-of-session in calm: -$5,009/wk L6M, -$3,753 HOLD). Both-sides blackout is worse than same side in X'. That is the regime split the directive asked for, but it is a first-order screen.
+3. The exact runs on the DRESSED base (JN04RM, dials on) say the dials already take most of that: the live 30-minute same-side blackout (WC3_S30) is -5.2 % maxDD cut and -$473/wk in L6M and -5.9 % / -$441 in HOLD against JN04RM, i.e. it does not help once LOT/REG/SIGQ/STACK are on; 120 minutes is worse (-12.0 % L6M); both sides 30 minutes is worse still (-25.5 % L6M, -$1,677/wk). The only positive L6M row so far is the hot-only 60-minute same-side blackout (WC3_H60S: +4.1 %, +$1,380/wk), which is inside the engine noise floor (about 8 % / $1,200 per week) and has not been run on HOLD, PRE, X' yet. Read: on the dressed stack the blackout is not an earner; it is a LEAD at best until H60S passes the other windows.
+4. C4: composing the engine's entry-confirmation key with the JN04 rule dials is exact (WC4_REG reproduced JN04RM trade for trade on 202607-202610). Confirm-only-in-hot-tape variants: live sessions (WC4_HOT_LIVE) -1.8 % / -$152 L6M, all sessions (WC4_HOT_ALL) -17.7 % / -$968: neither helps; calm-only and the 30-s / 60-s timeframe variants are still running.
+5. C2 first-order (stack level, vs LPB_BASE): moving the Asia lots down loses mean in L6M, HOLD and PRE at every size tried (A=3..6 of 7: d L6M -$3.8k to -$0.7k/wk) and only cuts maxDD in X' and PRE; raising Asia (8/7, 9/7) adds mean (+$0.7k to +$1.7k/wk L6M) and costs maxDD (-4.6 %). The exact Asia sets (WC2_A4/A5/A6, 7/5/4, STACK on Asia) are queued behind the C3/C4 L6M rows.
+6. Not done yet: HOLD/PRE/X' for the survivors, bi-weekly WF, the exact flag-conditional runs for the Asia sets, and the 11-09..11 live week replay (that week is not on the box; the week 11-01..05 only contributes the 53 frozen P7 trades above). The compute is memory-bound: only 3 to 4 W-C workers fit under the 62 GB launch gate while the other programs run, about 10 minutes per set-month.
+
+
+
+
 # C2 / C3 / C4 - exact runs (JN04RM = dials ON on the live panel; one set per job; every row is a candidate or reference as labelled; Shadow only)
 Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/week, both over the window; noise floor for entry/blackout-type changes is about 8 percent maxDD and about 1,200 $/wk (R4 noise probes). Windows appear only when every month is exact-run.
 
@@ -186,24 +197,28 @@ Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/w
 |---|---|---|---|---|---|---|---|---|---|---|
 | WC3_S15 | 6 | JN04RM | 14.7 / +541 | -1.9 / +180 | n/a | n/a | n/a | 145/138 | n/a | PRE not yet run |
 | WC3_S15 | 6 | LPB | 55.0 / -5800 | 45.0 / -1616 | n/a | n/a | n/a | 145/102 | n/a |  |
-| WC3_S30 | 4 | JN04RM | -5.6 / -61 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
-| WC3_S30 | 4 | LPB | 44.3 / -6947 | n/a | n/a | n/a | n/a |  | n/a |  |
+| WC3_S30 | 14 | JN04RM | -5.6 / -61 | -5.2 / -473 | -5.9 / -441 | n/a | n/a | 139/138 | n/a | PRE not yet run |
+| WC3_S30 | 14 | LPB | 44.3 / -6947 | 43.2 / -2396 | 2.3 / -2921 | n/a | n/a | 139/102 | n/a |  |
 | WC3_S60 | 6 | JN04RM | 27.1 / -1235 | 12.6 / -450 | n/a | n/a | n/a | 164/138 | n/a | PRE not yet run |
 | WC3_S60 | 6 | LPB | 61.5 / -1242 | 52.8 / -1257 | n/a | n/a | n/a | 164/102 | n/a |  |
-| WC3_S120 | 2 | JN04RM | 67.3 / +2065 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
-| WC3_S120 | 2 | LPB | 82.8 / -4764 | n/a | n/a | n/a | n/a |  | n/a |  |
-| WC3_B30 | 0 | not started | | | | | | | | |
-| WC3_B60 | 0 | not started | | | | | | | | |
+| WC3_S120 | 6 | JN04RM | 67.3 / +2065 | -12.0 / -1000 | n/a | n/a | n/a | 123/138 | n/a | PRE not yet run |
+| WC3_S120 | 6 | LPB | 82.8 / -4764 | 39.5 / -3672 | n/a | n/a | n/a | 123/102 | n/a |  |
+| WC3_B30 | 6 | JN04RM | -25.8 / -826 | -25.5 / -1677 | n/a | n/a | n/a | 127/138 | n/a | PRE not yet run |
+| WC3_B30 | 6 | LPB | 33.6 / -7712 | 32.2 / -10 | n/a | n/a | n/a | 127/102 | n/a |  |
+| WC3_B60 | 1 | JN04RM | 28.5 / -964 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
+| WC3_B60 | 1 | LPB | 62.3 / +910 | n/a | n/a | n/a | n/a |  | n/a |  |
 | WC3_H15S | 0 | not started | | | | | | | | |
 | WC3_H30S | 6 | JN04RM | 16.1 / +322 | -3.7 / +106 | n/a | n/a | n/a | 146/138 | n/a | PRE not yet run |
 | WC3_H30S | 6 | LPB | 55.7 / -6497 | 44.0 / -1993 | n/a | n/a | n/a | 146/102 | n/a |  |
-| WC3_H60S | 0 | not started | | | | | | | | |
-| WC3_H30B | 2 | JN04RM | 19.1 / +388 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
-| WC3_H30B | 2 | LPB | 57.3 / -6497 | n/a | n/a | n/a | n/a |  | n/a |  |
+| WC3_H60S | 6 | JN04RM | 27.2 / +377 | 4.1 / +1380 | n/a | n/a | n/a | 162/138 | n/a | PRE not yet run |
+| WC3_H60S | 6 | LPB | 61.6 / -4662 | 48.2 / -999 | n/a | n/a | n/a | 162/102 | n/a |  |
+| WC3_H30B | 6 | JN04RM | 19.1 / +388 | -3.7 / +96 | n/a | n/a | n/a | 145/138 | n/a | PRE not yet run |
+| WC3_H30B | 6 | LPB | 57.3 / -6497 | 44.0 / -2035 | n/a | n/a | n/a | 145/102 | n/a |  |
 | WC3_H30S_t11 | 0 | not started | | | | | | | | |
 | WC3_H30S_t15 | 0 | not started | | | | | | | | |
 | WC3_RS | 0 | not started | | | | | | | | |
-| WC3_RH | 0 | not started | | | | | | | | |
+| WC3_RH | 1 | JN04RM | 35.7 / +528 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
+| WC3_RH | 1 | LPB | 66.1 / -5735 | n/a | n/a | n/a | n/a |  | n/a |  |
 
 ### C2 P7 Asia table and STACK on Asia, JN04RM base (reference 7/4/4)
 | set | months | vs | L1M cut % / d$ | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | L6M worst-20 cell/ref $k | bi-weekly WF beat % | rule-2a label |
@@ -220,10 +235,12 @@ Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/w
 | WC4_NONE | 0 | not started | | | | | | | | |
 | WC4_T30 | 0 | not started | | | | | | | | |
 | WC4_T60 | 0 | not started | | | | | | | | |
-| WC4_HOT_LIVE | 2 | JN04RM | 0.0 / +0 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
-| WC4_HOT_LIVE | 2 | LPB | 47.2 / -6886 | n/a | n/a | n/a | n/a |  | n/a |  |
-| WC4_HOT_ALL | 0 | not started | | | | | | | | |
-| WC4_CALM_LIVE | 0 | not started | | | | | | | | |
+| WC4_HOT_LIVE | 6 | JN04RM | 0.0 / +0 | -1.8 / -152 | n/a | n/a | n/a | 135/138 | n/a | PRE not yet run |
+| WC4_HOT_LIVE | 6 | LPB | 47.2 / -6886 | 45.0 / -1641 | n/a | n/a | n/a | 135/102 | n/a |  |
+| WC4_HOT_ALL | 6 | JN04RM | 14.5 / -199 | -17.7 / -968 | n/a | n/a | n/a | 107/138 | n/a | PRE not yet run |
+| WC4_HOT_ALL | 6 | LPB | 54.8 / -4943 | 36.4 / -3020 | n/a | n/a | n/a | 107/102 | n/a |  |
+| WC4_CALM_LIVE | 1 | JN04RM | 0.7 / +24 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
+| WC4_CALM_LIVE | 1 | LPB | 47.6 / -6501 | n/a | n/a | n/a | n/a |  | n/a |  |
 | WC4_CALM_ALL | 0 | not started | | | | | | | | |
 | WC4_HOT_ALL_T30 | 0 | not started | | | | | | | | |
 
