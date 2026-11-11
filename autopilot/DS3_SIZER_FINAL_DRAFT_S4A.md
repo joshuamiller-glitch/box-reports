@@ -1,4 +1,4 @@
-# DS3_SIZER FINAL DRAFT (S4a integrator, 2026-11-10 23:11Z); for the lead; numbers in section 2 regenerate every 25 min. Post-hoc, Shadow only; the user decides.
+# DS3_SIZER FINAL DRAFT (S4a integrator, 2026-11-10 23:37Z); for the lead; numbers in section 2 regenerate every 25 min. Post-hoc, Shadow only; the user decides.
 
 ## 1. Answer
 The live sizer stays as Q1-A (ER(20) on 5-min < 0.30 -> x0.5, else x1.0; live since 2026-11-02 19:30Z). Across S1, S1B, S1 hysteresis, S2, S2V (+hybrid/mean), S3, Q2-Q6, stack and the ER-at-the-add cells restated against Q1-A on the live-lot-order base (ts2) (S3X lock rows and S4b add cells not yet restated) no cell beats Q1-A on L6M AND PRE with the carrying week dropped, passes no-harm and the PA9 band, and is placebo-clean. sizer_policy proposal: live Q1-A ladder, no change (draft: autopilot/sizer_policy_DRAFT.txt).
