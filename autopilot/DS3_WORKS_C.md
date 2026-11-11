@@ -3,8 +3,14 @@
 ## Acceptance test on the live references (acceptance_p7.py, code/th_works_c; usage in its first lines and in autopilot/P7_CONTEXT_DEFS.md)
 | set | fails of the 20 worst sessions | all P7: max run / p95 / mean | sessions with run>=3 | $ lost on 3rd+ same-side losers | 3rd+ attempts without new evidence (n / $) | Asia: max / $ on 3rd+ | verdict |
 |---|---|---|---|---|---|---|---|
-| LPB_BASE | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
-| JN04RM | 4/20 | 6 / 2.0 / 0.94 | 78 | -99088 | 162 / +7640 | 6 / -45408 | FAIL |
+| LPB_BASE (all 43 months) | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| JN04RM (all 43 months) | 4/20 | 6 / 2.0 / 0.94 | 78 | -99088 | 162 / +7640 | 6 / -45408 | FAIL |
+| WG_E1 (6 months 202605..202610) | 2/15 | 4 / 2.0 / 1.26 | 13 | -18653 | 0 / +0 | 4 / -13938 | PASS |
+|   JN04RM, same months | 4/15 | 5 / 3.0 / 1.29 | 21 | -31246 | 57 / +12761 | 4 / -16729 | FAIL |
+| WG_E2Q (1 months 202610..202610) | 0/2 | 4 / 3.0 / 1.40 | 6 | -6682 | 12 / -1887 | 4 / -5888 | PASS |
+|   JN04RM, same months | 0/2 | 4 / 3.0 / 1.34 | 5 | -8304 | 11 / -2305 | 4 / -7510 | PASS |
+| WG_E5 (6 months 202605..202610) | 0/15 | 4 / 2.0 / 1.29 | 16 | -17819 | 0 / +0 | 4 / -12193 | PASS |
+|   JN04RM, same months | 4/15 | 5 / 3.0 / 1.29 | 21 | -31246 | 57 / +12761 | 4 / -16729 | FAIL |
 
 ## First-order sequential screen on the exact LPB_BASE P7 list (stack level, P7 outcomes scaled/removed, no follow-on; saved $ positive = losers removed; the frozen week is the 53 live P7 trades)
 
@@ -133,11 +139,11 @@
 | set | months | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | L6M worst-20 cell/ref $k | WF beat % | rule-2a label |
 |---|---|---|---|---|---|---|---|---|
 | WG_A4 | 0 | not started | | | | | | |
-| WG_E1 | 0 | not started | | | | | | |
+| WG_E1 | 6 | 0.0 / +20 | n/a | n/a | n/a | 140/138 | n/a | |
 | WG_E1A | 0 | not started | | | | | | |
-| WG_E2Q | 0 | not started | | | | | | |
+| WG_E2Q | 1 | n/a | n/a | n/a | n/a |  | n/a | |
 | WG_E4 | 0 | not started | | | | | | |
-| WG_E5 | 0 | not started | | | | | | |
+| WG_E5 | 6 | -3.0 / -471 | n/a | n/a | n/a | 119/138 | n/a | |
 | WG_E6 | 0 | not started | | | | | | |
 | WG_E7 | 0 | not started | | | | | | |
 
@@ -325,6 +331,8 @@ Running now (exact, JN04RM base, one set per job via jbjobs, 1 worker): C3 black
 ## Status sentences (P7 FIX first page; updated by hand each page)
 0. P7 FIX, first read (20:00Z). The acceptance tool exists (acceptance_p7.py) and both live references FAIL it: LPB_BASE fails 3 of the 20 worst sessions and JN04RM fails 4 of 20 (the dials do not fix the repeated same-side entries: JN04RM still has 78 sessions with a run of 3 or more same-side losers and $99k lost on the 3rd-and-later losers; LPB_BASE 48 sessions and $136k). The first-order screen says the cleanest governor is the evidence rule itself: skip a 3rd same-side attempt that has no new session extreme and no opposite-side signal since the last failure (E1 all sessions: 101 trades removed over 3.5 years, saves $10.7k in the worst-20 weeks and $3.1k in the other weeks, so it removes losers in both and costs no mean: +$237/wk L6M, +$283 HOLD, -$122 PRE, maxDD cut 0 percent L6M, -15 percent HOLD, +9 percent PRE; first-order only, so not yet a result). It takes the scorecard item "3rd-and-later no-evidence losers" to zero by construction and removes 4 live-week trades that made +$15k (the frozen week stays strongly positive). Timer and chase rules (lgap < 90 min same side with chase_k > 0.75) show larger L6M mean (+$2.4k/wk) but cost the live week -$21k and HOLD. The exact sets WG_E1, E4, E5, E6, E2Q, E7, A4, E1A (JN04RM base, hook c_gov.py) are queued, L6M first; memory-gated, so results arrive after this page. D1/D3/D4/D6 screens (trend-alive clock, pullback number, extension, vote) in their tables below remove too many winners at every threshold tried (they are monotone mean-for-drawdown trades, not clean filters) and D5, D7, E-Q belong to the other agents.
 
+00. EXACT L6M (22:50Z, JN04RM base, 6 months each): the new-evidence rule WG_E1 (skip a 3rd same-side attempt without new evidence) is NEUTRAL in L6M: maxDD cut 0.0 percent, +$20/wk, 13 sessions with a run of 3+ against 21 for JN04RM on the same months and $18.7k lost on 3rd+ losers against $31.2k; acceptance 2 fails of 15 covered worst sessions (JN04RM 4 of 15) = PASS by the tool, with zero 3rd+ attempts left without evidence (JN04RM: 57, +$12.8k). WG_E5 (2nd attempt half, 3rd without evidence skip): maxDD cut -3.0 percent, -$471/wk, 0 fails of 15 = PASS, but it halves winners too (best-session nets fall from +$23k to +$11k per Asia session). Neither has HOLD, PRE, X' or WF yet, so no label; read: the evidence gate is a free fix for scorecard item c (consecutive same-side losers: max 5 to 4 on the same months, 3rd+ losers -$31k to -$19k) and does not move drawdown; the loss-count/timer governors that move drawdown cost the frozen week. The scorecard items a, b, e (W-Q tool) are not on this pageyet. Memory: the exact queue is gated; 2 workers, about 12 min per cell-month before the throughput cache.
+
 
 
 
@@ -336,8 +344,8 @@ Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/w
 |---|---|---|---|---|---|---|---|---|---|---|
 | WC3_S15 | 6 | JN04RM | 14.7 / +541 | -1.9 / +180 | n/a | n/a | n/a | 145/138 | n/a | PRE not yet run |
 | WC3_S15 | 6 | LPB | 55.0 / -5800 | 45.0 / -1616 | n/a | n/a | n/a | 145/102 | n/a |  |
-| WC3_S30 | 26 | JN04RM | -5.6 / -61 | -5.2 / -473 | -5.9 / -441 | n/a | n/a | 139/138 | n/a | PRE not yet run |
-| WC3_S30 | 26 | LPB | 44.3 / -6947 | 43.2 / -2396 | 2.3 / -2921 | n/a | n/a | 139/102 | n/a |  |
+| WC3_S30 | 27 | JN04RM | -5.6 / -61 | -5.2 / -473 | -5.9 / -441 | n/a | n/a | 139/138 | n/a | PRE not yet run |
+| WC3_S30 | 27 | LPB | 44.3 / -6947 | 43.2 / -2396 | 2.3 / -2921 | n/a | n/a | 139/102 | n/a |  |
 | WC3_S60 | 6 | JN04RM | 27.1 / -1235 | 12.6 / -450 | n/a | n/a | n/a | 164/138 | n/a | PRE not yet run |
 | WC3_S60 | 6 | LPB | 61.5 / -1242 | 52.8 / -1257 | n/a | n/a | n/a | 164/102 | n/a |  |
 | WC3_S120 | 6 | JN04RM | 67.3 / +2065 | -12.0 / -1000 | n/a | n/a | n/a | 123/138 | n/a | PRE not yet run |
@@ -363,7 +371,8 @@ Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/w
 ### C2 P7 Asia table and STACK on Asia, JN04RM base (reference 7/4/4)
 | set | months | vs | L1M cut % / d$ | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | L6M worst-20 cell/ref $k | bi-weekly WF beat % | rule-2a label |
 |---|---|---|---|---|---|---|---|---|---|---|
-| WC2_A4 | 0 | not started | | | | | | | | |
+| WC2_A4 | 1 | JN04RM | 5.8 / +523 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
+| WC2_A4 | 1 | LPB | 50.3 / -11064 | n/a | n/a | n/a | n/a |  | n/a |  |
 | WC2_A5 | 6 | JN04RM | 19.1 / -1082 | -7.6 / -1609 | n/a | n/a | n/a | 122/138 | n/a | PRE not yet run |
 | WC2_A5 | 6 | LPB | 57.3 / -7968 | 41.9 / -3921 | n/a | n/a | n/a | 122/102 | n/a |  |
 | WC2_A6 | 0 | not started | | | | | | | | |

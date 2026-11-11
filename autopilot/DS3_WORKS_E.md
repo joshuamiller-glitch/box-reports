@@ -1,4 +1,4 @@
-# DS3_WORKS_E - T-WORKS / P7 FIX, W-E (families E multi-timeframe trend health, F participation, G pullback anatomy, H leg anatomy), page 2026-11-11 19:34Z
+# DS3_WORKS_E - T-WORKS / P7 FIX, W-E (families E multi-timeframe trend health, F participation, G pullback anatomy, H leg anatomy), page 2026-11-11 22:43Z
 Label: PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_E_PREREG.md (sha in DECISIONS.md 19:19Z, logged before any cell was scored). Code code/th_works_e/ (e0_flow, e1_table, e2_screen, e3_full, e_hooks, e_sets, e_chain, e_score, e_page).
 
 ## What exists
@@ -68,13 +68,50 @@ Negative removed net = the rule removes losses (good); positive = removes profit
 (One live week against twenty bad weeks is one observation; this table says what differed, not what is predictive.)
 
 ## Exact promotion status
-No exact window is complete yet (a window is scored only when all its months are DONE).
+| set | ref | window | exact cut % | d mean/week | eq cut % |
+|---|---|---|---|---|---|
+| WEJ_E1A | JN04RM | L1M | 42.8 | 3859 | 47.6 |
+| WEJ_E1A | JN04RM | L3M | 16.1 | 2096 | 23.2 |
+| WEJ_E1A | JN04RM | L6M | 16.1 | 1615 | 23.2 |
+| WEJ_E1A | LPB | L1M | 69.8 | -11941 | 68.2 |
+| WEJ_E1A | LPB | L3M | 54.7 | -2334 | 52.3 |
+| WEJ_E1A | LPB | L6M | 54.7 | -1087 | 52.3 |
+| WEL_E1A | JN04RM | L1M | -36.2 | -307 | -34.9 |
+| WEL_E1A | JN04RM | L3M | -35.8 | 1596 | -34.5 |
+| WEL_E1A | JN04RM | L6M | -35.8 | 166 | -34.5 |
+| WEL_E1A | LPB | L1M | 28.1 | 6854 | 23.4 |
+| WEL_E1A | LPB | L3M | 26.7 | 2906 | 21.9 |
+| WEL_E1A | LPB | L6M | 26.7 | -1151 | 21.9 |
+| WEJ_E2A | JN04RM | L1M | 27.5 | 1066 | -63.6 |
+| WEJ_E2A | LPB | L1M | 61.7 | -5820 | 13.6 |
+| WEL_E2A | JN04RM | L1M | -54.5 | -3921 | -232.2 |
+| WEL_E2A | LPB | L1M | 18.4 | 3241 | -75.6 |
+| WEJ_H1A | JN04RM | L1M | -3.5 | -314 | nan |
+| WEJ_H1A | LPB | L1M | 45.4 | -12066 | nan |
 
-Exact sets: 23 registered cells (H2L duplicates G1L) x 2 references = 46 sets (WEJ_* on JN04RM, WEL_* on LPB_EMPTY), one set per job through state_sizer_ijk jbjobs with the e_hooks signal-second lookup applied in trend_size before the JN04 dials. Months DONE so far: 0. Chain scheduler (restart-safe, launches when MemAvailable >= 62 GB, at most 3 W-E jobs, runs until 2026-11-12 12:00Z): pids 2073082 2084978; W-E jobs running now 4; log /mnt/l2/l2vast/_th_works/e/logs/chain.log. A set continues past L6M only if its exact L6M cut is positive (e_gate.csv).
+Exact sets: 23 registered cells (H2L duplicates G1L) x 2 references = 46 sets (WEJ_* on JN04RM, WEL_* on LPB_EMPTY), one set per job through state_sizer_ijk jbjobs with the e_hooks signal-second lookup applied in trend_size before the JN04 dials. Months DONE so far: 19. Chain scheduler (restart-safe, launches when MemAvailable >= 62 GB, at most 3 W-E jobs, runs until 2026-11-12 12:00Z): pids 2274304 2274470; W-E jobs running now 4; log /mnt/l2/l2vast/_th_works/e/logs/chain.log. A set continues past L6M only if its exact L6M cut is positive (e_gate.csv).
 
 ## Behavioural scorecard (standing principle 2026-11-11 19:45Z)
 A cell counts only if full stops, give-backs and same-side repeats each fall by at least half in L6M without skipping trend-week winners. On first-order numbers H1L fails the trend-week test (it removes $83k of the frozen live week) and most other registered cells act on live-week trades; the registered E-H cells carry no stop, give-back or repeat logic of their own (they are entry filters), so the scorecard is expected to show little change in full stops and give-backs. W-Q tool code/th_works_q/behavior_scorecard.py is run per promoted set once its L6M is complete; output below.
-Scorecard tool or exact L6M results not available yet.
+### WEJ_E1A
+```
+WEJ_E1A L6M (stack, per week): full stops 25.4/wk $-38085; give-backs 10.0/wk (9.8 round-trips) realised $-11406, forgone vs target $28215; same-side losing runs max 13, p95 6, $-42040 lost on 3rd-and-later; no-new-evidence re-entries 42.6/wk $2165; recoveries cut 14.9/wk $38698, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $9077/wk, losers avoided $10648/wk, net +634 $/wk; pnl $20418/wk.
+WEJ_E1A HOLD: months missing (6 of 12), window not scored
+WEJ_E1A PRE: months missing (17 of 17), window not scored
+WEJ_E1A X': months missing (10 of 10), window not scored
+
+```
+### WEL_E1A
+```
+WEL_E1A L6M (stack, per week): full stops 24.5/wk $-40052; give-backs 9.2/wk (9.1 round-trips) realised $-14152, forgone vs target $35325; same-side losing runs max 12, p95 6, $-51441 lost on 3rd-and-later; no-new-evidence re-entries 37.8/wk $396; recoveries cut 13.8/wk $47391, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $6099/wk, losers avoided $6833/wk, net +1193 $/wk; pnl $20976/wk.
+WEL_E1A HOLD: months missing (6 of 12), window not scored
+WEL_E1A PRE: months missing (17 of 17), window not scored
+WEL_E1A X': months missing (10 of 10), window not scored
+
+```
+
+## Throughput
+W-E adopted the W-T shared-memory month cache (TP_ENGINE=1 via tp_launch, launch gate lowered from 62 to 25 GB, tp_admit request WORKS_JN05, at most 3 workers). Identity check on my own driver: WEJ_H1A 202610 under TP_ENGINE=1 vs the recorded run, 845 vs 845 trades, trade-for-trade IDENTICAL. Before adoption W-E finished 1 cell-month in the first hour (the gate at 62 GB never opened). Box-wide rate now: window 3.0 h: 501 cell-months finished = 167.0 /h total; mean engine secs per cell 131 {'PTR': 198, 'WB': 188, 'ZJ': 28, 'WM': 17, 'WA': 17, 'WI': 14, 'WG': 12, 'WEL': 9, 'WEJ': 8, 'EC': 7, 'WC': 3}
 
 ## Not done yet
 Asymmetric-bracket cells (60/45, 60/90 by flag) and the late-entry swing stop (D7) are exact-only and are queued after the skip/half stage; the flag separation by persistence across weeks, and the "trend weeks" comparison beyond the live week, wait for more exact output. DS3_WORKS_E.md is regenerated by code/th_works_e/e_page.py every 4 hours from 23:00Z until the final at 2026-11-12 12:00Z.
