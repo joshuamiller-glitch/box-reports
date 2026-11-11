@@ -1,3 +1,147 @@
+# P7 FIX - session governors and entry-quality tests (W-C; orders 19:05, 19:15, 19:30, 19:45Z); Shadow only, no PASS claim
+
+## Acceptance test on the live references (acceptance_p7.py, code/th_works_c; usage in its first lines and in autopilot/P7_CONTEXT_DEFS.md)
+| set | fails of the 20 worst sessions | all P7: max run / p95 / mean | sessions with run>=3 | $ lost on 3rd+ same-side losers | 3rd+ attempts without new evidence (n / $) | Asia: max / $ on 3rd+ | verdict |
+|---|---|---|---|---|---|---|---|
+| LPB_BASE | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| JN04RM | 4/20 | 6 / 2.0 / 0.94 | 78 | -99088 | 162 / +7640 | 6 / -45408 | FAIL |
+
+## First-order sequential screen on the exact LPB_BASE P7 list (stack level, P7 outcomes scaled/removed, no follow-on; saved $ positive = losers removed; the frozen week is the 53 live P7 trades)
+
+### Evidence governors (E1-E10): "no new evidence" = no new session extreme in the trade direction beyond the extreme at the last same-side failure and no opposite-side P7 entry since
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| E6 all 2nd attempt half, 3rd always skip | 143 / 419 | -3 / +2081 | -14 / +829 | 15 / -35 | 2 / -64 | +50242 / -1780 | -35737 (12) | 0 / +0 |
+| E6 asia 2nd attempt half, 3rd always skip | 63 / 202 | -4 / +1548 | -5 / +678 | 13 / -233 | -1 / -39 | +41315 / -19198 | -31504 (11) | 29 / -50856 |
+| E7 all noevid & lgap<30 skip | 380 / 0 | 0 / +1224 | -12 / -233 | 11 / +456 | -4 / +226 | +42317 / +16658 | -600 (7) | 10 / -27909 |
+| E7 all noevid & lgap<60 skip | 538 / 0 | -2 / +1156 | -23 / +244 | 15 / +56 | -1 / +96 | +42133 / -27143 | -7503 (10) | 4 / -11362 |
+| E2 all noevid(after same-side loss) q | 0 / 465 | -9 / +1110 | -11 / -9 | 18 / +147 | 2 / +133 | +42994 / +6077 | -9687 (0) | 53 / -51927 |
+| E7 all noevid & lgap<120 skip | 605 / 0 | -10 / +1074 | -29 / +465 | 14 / +61 | -3 / -29 | +67591 / -30186 | -14669 (12) | 0 / +0 |
+| E5 all 2nd attempt half, 3rd noevid skip | 101 / 442 | -1 / +864 | -14 / +650 | 13 / +77 | 2 / -64 | +41765 / +15897 | -26019 (4) | 0 / +0 |
+| E2 all noevid(after same-side loss) half | 0 / 465 | -4 / +848 | -8 / +80 | 14 / +202 | 2 / +106 | +30395 / +14229 | -5901 (0) | 53 / -72503 |
+| E8 asia noevid skip + lgap<120 same skip after 2nd | 55 / 0 | 0 / +836 | -5 / +588 | 13 / -120 | 0 / +0 | +19306 / +10887 | -26398 (9) | 29 / -50856 |
+| E9 all short-only noevid skip | 337 / 0 | -2 / +834 | -6 / -532 | 14 / -175 | -1 / -168 | +40601 / -57695 | -20082 (10) | 25 / -59845 |
+| E2 all noevid(after same-side loss) skip | 627 / 0 | -15 / +654 | -28 / -489 | 14 / +80 | -3 / -29 | +63989 / -37143 | -23035 (13) | 0 / +0 |
+| E4 all noevid half + 3rd skip | 101 / 395 | -4 / +623 | -17 / +477 | 12 / +69 | 2 / -36 | +38303 / +9700 | -17683 (4) | 0 / +0 |
+| E8 all noevid skip + lgap<120 same skip after 2nd | 128 / 0 | -0 / +520 | -15 / +253 | 12 / -120 | 0 / +20 | +15947 / -4274 | -28788 (10) | 0 / +0 |
+| E8 asia noevid skip + lgap<60 same skip after 2nd | 49 / 0 | 0 / +297 | -5 / +323 | 13 / -39 | 0 / +0 | +18035 / +7009 | -18305 (6) | 29 / -50856 |
+| E8 asia noevid skip + lgap<30 same skip after 2nd | 48 / 0 | 0 / +262 | -5 / +306 | 13 / -39 | 0 / +0 | +18035 / +8520 | -31935 (6) | 29 / -50856 |
+| E5 asia 2nd attempt half, 3rd noevid skip | 46 / 212 | -4 / +256 | -5 / +12 | 13 / -97 | -1 / -39 | +32595 / -5602 | -22980 (4) | 29 / -50856 |
+| E7 asia noevid & lgap<120 skip | 241 / 0 | -12 / +252 | -11 / -426 | 14 / -106 | -4 / -103 | +47569 / -34431 | -13367 (8) | 29 / -50856 |
+| E7 asia noevid & lgap<60 skip | 207 / 0 | -6 / +240 | -8 / -285 | 11 / -191 | 0 / +8 | +24791 / -59066 | -8591 (7) | 32 / -60474 |
+| E1 all loss_same>=2 & noevid skip | 101 / 0 | 0 / +237 | -15 / +283 | 9 / -122 | 0 / +20 | +10668 / +3126 | -15198 (4) | 0 / +0 |
+| E10 all noevid & chase>1 skip | 381 / 0 | 9 / +236 | -20 / -721 | 14 / -120 | -1 / -33 | +38163 / -42468 | -4974 (6) | 16 / -42622 |
+
+### A1 loss-count step-down / off
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| A1 asia loss>=2 same skip | 63 / 0 | 0 / +1192 | -5 / +828 | 13 / -201 | 0 / +0 | +26208 / +1794 | -32310 (11) | 29 / -50856 |
+| A1 all loss>=1 same q | 0 / 497 | -4 / +1096 | -7 / +145 | 18 / +91 | 2 / +105 | +42676 / +8060 | -16505 (0) | 53 / -51927 |
+| A1 all loss>=2 same skip | 143 / 0 | -0 / +1000 | -15 / +583 | 12 / -179 | 0 / +20 | +22850 / -6978 | -34700 (12) | 0 / +0 |
+| A1 all loss>=1 same half | 0 / 497 | -1 / +922 | -5 / +516 | 14 / +181 | 2 / +78 | +31257 / +16942 | -10649 (0) | 53 / -72503 |
+| A1 all loss>=1 same skip | 859 / 0 | -14 / +299 | -29 / -1627 | 24 / +37 | -1 / +56 | +93939 / -158821 | -38768 (25) | 0 / +0 |
+| A1 all loss>=3 same skip | 17 / 0 | 0 / +203 | 0 / +110 | 8 / +24 | 0 / +0 | +12230 / +11782 | -4776 (1) | 44 / -102140 |
+
+### A2 trade-count and $ loss caps per session
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| A2 all sessloss>=12600 skip | 65 / 0 | 0 / +495 | 0 / +5 | 15 / +241 | 0 / +0 | +26355 / -19299 | -19158 (9) | 47 / -104818 |
+| A2 asia sessloss>=12600 skip | 63 / 0 | 0 / +463 | 0 / -11 | 11 / +193 | 0 / +0 | +22840 / -20101 | -19158 (9) | 47 / -104818 |
+| A2 asia trades>=6 skip | 90 / 0 | 0 / +179 | 0 / +378 | 18 / -4 | 0 / +0 | +33126 / +41 | -7118 (9) | 45 / -98522 |
+| A2 all trades>=6 skip | 130 / 0 | 0 / +84 | -6 / +316 | 18 / +6 | 0 / +0 | +43676 / -736 | -5223 (10) | 44 / -96179 |
+| A2 all trades>=5 skip | 236 / 0 | -9 / -1648 | -14 / -1128 | 18 / +225 | 0 / +0 | +106332 / -67472 | -17437 (13) | 39 / -85278 |
+| A2 asia trades>=2 skip | 753 / 0 | -29 / -1824 | -26 / -3963 | 27 / +287 | 4 / -11 | +170292 / -356891 | -51845 (23) | 29 / -50856 |
+
+### A3 step-down lots
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| A3 all step 0.5 | 0 / 1224 | 5 / +1165 | 5 / -242 | 25 / +652 | 3 / +98 | +118331 / -70443 | -22323 (0) | 53 / -51100 |
+| A3 all step 0.7 | 0 / 1224 | 7 / +440 | 0 / -590 | 26 / +586 | 2 / +82 | +84732 / -62538 | -19105 (0) | 53 / -65372 |
+| A3 asia step 0.5 | 0 / 690 | -4 / -821 | -2 / -1318 | 17 / +233 | -4 / -291 | +83332 / -110979 | -19331 (0) | 53 / -76049 |
+| A3 asia step 0.7 | 0 / 690 | -0 / -1022 | 2 / -1182 | 19 / +201 | -2 / -221 | +55678 / -84979 | -15816 (0) | 53 / -88591 |
+
+### A4 re-entry gap after a loss (30/60/90/120/rest of session, same vs both, chasing flag)
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| A4 all lossgap<120 both | 1528 / 0 | 13 / +3438 | -1 / -1152 | 16 / +570 | -16 / -215 | +183787 / -233914 | -34886 (23) | 1 / -5880 |
+| A4 all lossgap<90 same | 681 / 0 | 10 / +2598 | -10 / +205 | 19 / +20 | 2 / +91 | +56581 / -21556 | -30947 (17) | 3 / -9891 |
+| A4 all lossgap<60 both | 1196 / 0 | 20 / +2541 | -16 / +864 | 6 / +804 | -14 / -324 | +110566 / -42756 | -10247 (16) | 8 / -28425 |
+| A4 all lossgap<90 same chase>0.75 | 477 / 0 | 20 / +2357 | -7 / +101 | 19 / -291 | 3 / -52 | +31606 / -25105 | -21253 (11) | 18 / -49194 |
+| A4 all lossgap<60 same chase>2.00 | 292 / 0 | 8 / +2171 | -24 / +367 | 21 / +134 | 1 / -174 | +38617 / +2839 | +5240 (6) | 27 / -65388 |
+| A4 all lossgap<120 same chase>1.00 | 504 / 0 | 20 / +1920 | -12 / -151 | 18 / -438 | 1 / +33 | +48036 / -65680 | -6213 (12) | 16 / -42622 |
+
+### A5 chasing filter
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| A5 asia chase>0.75 & gap<30 skip | 528 / 0 | 9 / +317 | -15 / -2186 | 10 / -123 | -9 / -448 | +139472 / -342940 | -41043 (9) | 43 / -93175 |
+| A5 asia chase>1.00 & gap<30 skip | 521 / 0 | 5 / +235 | -19 / -2190 | 10 / -172 | -10 / -529 | +137946 / -360641 | -41043 (9) | 44 / -96449 |
+| A5 asia chase>2.00 & n>=3 half | 0 / 430 | -6 / +6 | -4 / -730 | 18 / -136 | 2 / +31 | +46433 / -86309 | -10146 (0) | 53 / -112170 |
+| A5 all chase>1.00 & n>=3 half | 0 / 813 | 1 / -18 | 1 / -833 | 27 / +108 | 4 / +60 | +69252 / -81947 | -8204 (0) | 53 / -93448 |
+| A5 all chase>2.00 & gap<30 skip | 950 / 0 | 29 / -30 | -7 / -2391 | 21 / -839 | 0 / -864 | +177646 / -459527 | -34474 (12) | 30 / -72838 |
+| A5 asia chase>1.00 & n>=3 half | 0 / 484 | -6 / -30 | -4 / -838 | 20 / -66 | 2 / +90 | +48206 / -95458 | -10146 (0) | 53 / -112170 |
+
+### A6 short side
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| A6 asia short loss>=2 same skip | 35 / 0 | 0 / +437 | -5 / +355 | 10 / +8 | 0 / +0 | +17034 / +1392 | -32310 (11) | 39 / -84479 |
+| A6 all short loss>=1 same half | 0 / 267 | 3 / +415 | -1 / -75 | 5 / +113 | 3 / -100 | +13093 / -2916 | -6786 (0) | 53 / -99183 |
+| A6 all short loss>=2 same skip | 80 / 0 | -0 / +211 | -5 / +373 | 5 / -21 | 0 / +0 | +14686 / -3408 | -32310 (11) | 25 / -59845 |
+| A6 asia short loss>=1 same half | 0 / 141 | -1 / -228 | 0 / -378 | 6 / -1 | 1 / +0 | +6079 / -17718 | -5341 (0) | 53 / -109282 |
+
+### D1 trend-alive clock
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| D1 all since_ext>15 & loss>=1 half | 0 / 1085 | 5 / +632 | -9 / -1123 | 23 / +458 | 9 / -67 | +74189 / -76252 | -11933 (0) | 53 / -72503 |
+| D1 asia since_ext>60 skip | 549 / 0 | 5 / +396 | 4 / -1553 | 8 / -304 | -20 / -957 | +96522 / -230713 | -39465 (12) | 35 / -65355 |
+| D1 all since_ext>15 & loss>=1 skip | 1348 / 0 | 8 / +229 | -20 / -3295 | 16 / +523 | 0 / -697 | +158901 / -276876 | -29484 (24) | 0 / +0 |
+| D1 all since_ext>60 & loss>=1 half | 0 / 671 | 10 / +12 | -6 / -479 | 22 / +537 | 5 / -157 | +53337 / -23298 | -14521 (0) | 53 / -87132 |
+| D1 all since_ext>30 & loss>=1 half | 0 / 914 | 4 / -112 | -6 / -1090 | 22 / +449 | 7 / -55 | +67331 / -58881 | -13948 (0) | 53 / -76077 |
+| D1 asia since_ext>30 half | 0 / 900 | 8 / -261 | 2 / -928 | 2 / -41 | 13 / -261 | +74739 / -162455 | -17130 (0) | 53 / -94631 |
+
+### D3 pullback number
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| D3 asia pb>=3 skip | 365 / 0 | -17 / +625 | -15 / -758 | 20 / -292 | 0 / +0 | +78465 / -147183 | -41423 (15) | 29 / -50856 |
+| D3 all pb>=3 half | 0 / 584 | -3 / +604 | -7 / -446 | 15 / -170 | 1 / +90 | +39589 / -63685 | -16517 (0) | 53 / -72503 |
+| D3 all pb>=3 skip | 681 / 0 | -9 / +579 | -19 / -1573 | 24 / -612 | -0 / +174 | +83898 / -195865 | -39931 (22) | 0 / +0 |
+| D3 asia pb>=3 half | 0 / 352 | -7 / +369 | -4 / -226 | 14 / -100 | 0 / +0 | +33605 / -55705 | -18459 (0) | 53 / -92884 |
+| D3 all pb>=4 half | 0 / 256 | 0 / +178 | -15 / -689 | 12 / +20 | 0 / +0 | +36242 / -53429 | -6018 (0) | 53 / -102011 |
+| D3 all pb>=4 skip | 294 / 0 | -1 / -4 | -35 / -1762 | 21 / -211 | 0 / +0 | +83345 / -157665 | -14150 (13) | 30 / -68004 |
+
+### D4 extension from value
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| D4 all dev>3.0 half | 0 / 1543 | 4 / +655 | 6 / +45 | 19 / -287 | -5 / -44 | +138891 / -169919 | -13098 (0) | 53 / -108801 |
+| D4 all dev>3.0 & loss>=1 half | 0 / 590 | 2 / +255 | 1 / -81 | 15 / +407 | -4 / -38 | +85339 / -62381 | -8697 (0) | 53 / -108801 |
+| D4 all dev>1.0 & loss>=1 half | 0 / 1090 | 6 / +105 | -3 / -1529 | 27 / +355 | -2 / +46 | +101218 / -152054 | -16451 (0) | 53 / -95734 |
+| D4 all dev>2.0 & loss>=1 half | 0 / 832 | 5 / +93 | -7 / -778 | 18 / +27 | -3 / +1 | +100387 / -111007 | -15946 (0) | 53 / -103846 |
+| D4 asia dev>2.0 half | 0 / 759 | -8 / -155 | -6 / -1396 | 16 / -414 | -8 / -289 | +107499 / -244476 | -15061 (0) | 53 / -119101 |
+| D4 all dev>3.0 & loss>=1 skip | 685 / 0 | -1 / -171 | 1 / -705 | 25 / +517 | -16 / -306 | +184127 / -205778 | -21904 (16) | 34 / -84753 |
+
+### D6 cross-book vote
+| governor | removed / halved | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | saved $ in worst-20 weeks / other weeks (all 3.5y) | frozen live week d$ (n removed) | losing 3rd+ no-evidence entries left (n / $) |
+|---|---|---|---|---|---|---|---|---|
+| D6 asia vote<1 half | 0 / 1207 | -16 / -1047 | -14 / -1536 | 6 / -435 | 33 / +1097 | +111744 / -219564 | -5727 (0) | 53 / -96109 |
+| D6 all vote<3 half | 0 / 4064 | 22 / -1990 | 15 / -2794 | 31 / -500 | 39 / +1288 | +259201 / -497991 | -36345 (0) | 53 / -72503 |
+| D6 all vote<1 half | 0 / 2199 | -8 / -2007 | -6 / -1863 | 13 / -459 | 38 / +1756 | +150314 / -264682 | -10773 (0) | 53 / -83000 |
+| D6 all vote<2 half | 0 / 3711 | 23 / -2064 | 13 / -2646 | 21 / -578 | 37 / +1388 | +228955 / -467487 | -32836 (0) | 53 / -72503 |
+| D6 asia vote<2 half | 0 / 1975 | -2 / -2197 | -0 / -2791 | 10 / -1001 | 29 / +786 | +164897 / -420201 | -29155 (0) | 53 / -92884 |
+| D6 asia vote<3 half | 0 / 2182 | -9 / -2651 | -7 / -2932 | 14 / -982 | 29 / +681 | +188104 / -459238 | -31515 (0) | 53 / -92884 |
+
+## Exact runs on the dressed base (JN04RM; one set per job; hook c_gov.py)
+
+| set | months | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | L6M worst-20 cell/ref $k | WF beat % | rule-2a label |
+|---|---|---|---|---|---|---|---|---|
+| WG_A4 | 0 | not started | | | | | | |
+| WG_E1 | 0 | not started | | | | | | |
+| WG_E1A | 0 | not started | | | | | | |
+| WG_E2Q | 0 | not started | | | | | | |
+| WG_E4 | 0 | not started | | | | | | |
+| WG_E5 | 0 | not started | | | | | | |
+| WG_E6 | 0 | not started | | | | | | |
+| WG_E7 | 0 | not started | | | | | | |
+
+
 # DS3_WORKS_C - T-WORKS Part C (P7 anatomy), W-C, page2026-11-11 17:34Z (C1 anatomy, C3/C4 L6M exact rows, C2 queued)
 Label: PRE-PROOF, post-hoc, descriptive, Shadow only, no PASS claim. Prereg autopilot/WORKS_C_PREREG.md (sha in DECISIONS.md 13:35Z). Source: the exact LPB_BASE trade list (live panel base: P7 day cap 8,400, 7/4/4, P7 cut 40/5x/w5/p3, no JN04 dials), 4,958 P7 trades 2023-04..2026-10, plus the 53 P7 trades of the frozen live week 11-01..05 (data/live_frozen reconstructed file; live fees proxied at $4.84 per contract). Features are causal at the signal second (NQ 1-min bars, ER(20) on 5-min, atr_rel = 5-min ATR over its 20-day norm, LOT state = P7 shadow Calmar over the last 10 label days from the same list). Code code/th_works/c1_build.py, c1_cells.py, c1_excess.py, c1_page.py; table /mnt/l2/l2vast/_th_works/c/c1_cells.csv.
 
@@ -178,13 +322,8 @@ Caveats: cells overlap heavily (Asia, 7 lots, cold and with-trend are mostly the
 Running now (exact, JN04RM base, one set per job via jbjobs, 1 worker): C3 blackout sets WC3_S60, S15, S120, B30, B60, then C2 sets WC2_A5, A4, A6, L5, STKA (7/4/4 Asia lots 5/4/6, London 5, STACK on Asia+London). Next: first-order flag-conditional blackout screen from this table; rest-of-session hook; C4 spec.
 
 
-## Status sentences (page1, 18:00Z; updated by hand each page)
-1. The C1 anatomy is complete and is the first section below; the P7 table (every cell, all 3.5 years / L6M / live week / share of the worst-20-week loss) is in it.
-2. C3 (re-entry blackout) first-order screen, exact LPB_BASE trade list: a same-side blackout of 15 to 60 minutes after a P7 StateCut or stop is positive at the P7 level in L6M, HOLD and PRE only when the blocked signal is in a hot tape (atr_rel >= 1.3: 30 min same side gives +$1,990/wk L6M, +$995 HOLD, +$592 PRE, -$4 X'); in a calm tape (atr_rel < 1.3) longer blackouts (60 min and above) and "rest of session" lose money (rest-of-session in calm: -$5,009/wk L6M, -$3,753 HOLD). Both-sides blackout is worse than same side in X'. That is the regime split the directive asked for, but it is a first-order screen.
-3. The exact runs on the DRESSED base (JN04RM, dials on) say the dials already take most of that: the live 30-minute same-side blackout (WC3_S30) is -5.2 % maxDD cut and -$473/wk in L6M and -5.9 % / -$441 in HOLD against JN04RM, i.e. it does not help once LOT/REG/SIGQ/STACK are on; 120 minutes is worse (-12.0 % L6M); both sides 30 minutes is worse still (-25.5 % L6M, -$1,677/wk). The only positive L6M row so far is the hot-only 60-minute same-side blackout (WC3_H60S: +4.1 %, +$1,380/wk), which is inside the engine noise floor (about 8 % / $1,200 per week) and has not been run on HOLD, PRE, X' yet. Read: on the dressed stack the blackout is not an earner; it is a LEAD at best until H60S passes the other windows.
-4. C4: composing the engine's entry-confirmation key with the JN04 rule dials is exact (WC4_REG reproduced JN04RM trade for trade on 202607-202610). Confirm-only-in-hot-tape variants: live sessions (WC4_HOT_LIVE) -1.8 % / -$152 L6M, all sessions (WC4_HOT_ALL) -17.7 % / -$968: neither helps; calm-only and the 30-s / 60-s timeframe variants are still running.
-5. C2 first-order (stack level, vs LPB_BASE): moving the Asia lots down loses mean in L6M, HOLD and PRE at every size tried (A=3..6 of 7: d L6M -$3.8k to -$0.7k/wk) and only cuts maxDD in X' and PRE; raising Asia (8/7, 9/7) adds mean (+$0.7k to +$1.7k/wk L6M) and costs maxDD (-4.6 %). The exact Asia sets (WC2_A4/A5/A6, 7/5/4, STACK on Asia) are queued behind the C3/C4 L6M rows.
-6. Not done yet: HOLD/PRE/X' for the survivors, bi-weekly WF, the exact flag-conditional runs for the Asia sets, and the 11-09..11 live week replay (that week is not on the box; the week 11-01..05 only contributes the 53 frozen P7 trades above). The compute is memory-bound: only 3 to 4 W-C workers fit under the 62 GB launch gate while the other programs run, about 10 minutes per set-month.
+## Status sentences (P7 FIX first page; updated by hand each page)
+0. P7 FIX, first read (20:00Z). The acceptance tool exists (acceptance_p7.py) and both live references FAIL it: LPB_BASE fails 3 of the 20 worst sessions and JN04RM fails 4 of 20 (the dials do not fix the repeated same-side entries: JN04RM still has 78 sessions with a run of 3 or more same-side losers and $99k lost on the 3rd-and-later losers; LPB_BASE 48 sessions and $136k). The first-order screen says the cleanest governor is the evidence rule itself: skip a 3rd same-side attempt that has no new session extreme and no opposite-side signal since the last failure (E1 all sessions: 101 trades removed over 3.5 years, saves $10.7k in the worst-20 weeks and $3.1k in the other weeks, so it removes losers in both and costs no mean: +$237/wk L6M, +$283 HOLD, -$122 PRE, maxDD cut 0 percent L6M, -15 percent HOLD, +9 percent PRE; first-order only, so not yet a result). It takes the scorecard item "3rd-and-later no-evidence losers" to zero by construction and removes 4 live-week trades that made +$15k (the frozen week stays strongly positive). Timer and chase rules (lgap < 90 min same side with chase_k > 0.75) show larger L6M mean (+$2.4k/wk) but cost the live week -$21k and HOLD. The exact sets WG_E1, E4, E5, E6, E2Q, E7, A4, E1A (JN04RM base, hook c_gov.py) are queued, L6M first; memory-gated, so results arrive after this page. D1/D3/D4/D6 screens (trend-alive clock, pullback number, extension, vote) in their tables below remove too many winners at every threshold tried (they are monotone mean-for-drawdown trades, not clean filters) and D5, D7, E-Q belong to the other agents.
 
 
 
@@ -197,16 +336,16 @@ Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/w
 |---|---|---|---|---|---|---|---|---|---|---|
 | WC3_S15 | 6 | JN04RM | 14.7 / +541 | -1.9 / +180 | n/a | n/a | n/a | 145/138 | n/a | PRE not yet run |
 | WC3_S15 | 6 | LPB | 55.0 / -5800 | 45.0 / -1616 | n/a | n/a | n/a | 145/102 | n/a |  |
-| WC3_S30 | 14 | JN04RM | -5.6 / -61 | -5.2 / -473 | -5.9 / -441 | n/a | n/a | 139/138 | n/a | PRE not yet run |
-| WC3_S30 | 14 | LPB | 44.3 / -6947 | 43.2 / -2396 | 2.3 / -2921 | n/a | n/a | 139/102 | n/a |  |
+| WC3_S30 | 26 | JN04RM | -5.6 / -61 | -5.2 / -473 | -5.9 / -441 | n/a | n/a | 139/138 | n/a | PRE not yet run |
+| WC3_S30 | 26 | LPB | 44.3 / -6947 | 43.2 / -2396 | 2.3 / -2921 | n/a | n/a | 139/102 | n/a |  |
 | WC3_S60 | 6 | JN04RM | 27.1 / -1235 | 12.6 / -450 | n/a | n/a | n/a | 164/138 | n/a | PRE not yet run |
 | WC3_S60 | 6 | LPB | 61.5 / -1242 | 52.8 / -1257 | n/a | n/a | n/a | 164/102 | n/a |  |
 | WC3_S120 | 6 | JN04RM | 67.3 / +2065 | -12.0 / -1000 | n/a | n/a | n/a | 123/138 | n/a | PRE not yet run |
 | WC3_S120 | 6 | LPB | 82.8 / -4764 | 39.5 / -3672 | n/a | n/a | n/a | 123/102 | n/a |  |
 | WC3_B30 | 6 | JN04RM | -25.8 / -826 | -25.5 / -1677 | n/a | n/a | n/a | 127/138 | n/a | PRE not yet run |
 | WC3_B30 | 6 | LPB | 33.6 / -7712 | 32.2 / -10 | n/a | n/a | n/a | 127/102 | n/a |  |
-| WC3_B60 | 1 | JN04RM | 28.5 / -964 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
-| WC3_B60 | 1 | LPB | 62.3 / +910 | n/a | n/a | n/a | n/a |  | n/a |  |
+| WC3_B60 | 6 | JN04RM | 28.5 / -964 | 5.5 / -2068 | n/a | n/a | n/a | 150/138 | n/a | PRE not yet run |
+| WC3_B60 | 6 | LPB | 62.3 / +910 | 49.0 / -15 | n/a | n/a | n/a | 150/102 | n/a |  |
 | WC3_H15S | 0 | not started | | | | | | | | |
 | WC3_H30S | 6 | JN04RM | 16.1 / +322 | -3.7 / +106 | n/a | n/a | n/a | 146/138 | n/a | PRE not yet run |
 | WC3_H30S | 6 | LPB | 55.7 / -6497 | 44.0 / -1993 | n/a | n/a | n/a | 146/102 | n/a |  |
@@ -216,15 +355,17 @@ Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/w
 | WC3_H30B | 6 | LPB | 57.3 / -6497 | 44.0 / -2035 | n/a | n/a | n/a | 145/102 | n/a |  |
 | WC3_H30S_t11 | 0 | not started | | | | | | | | |
 | WC3_H30S_t15 | 0 | not started | | | | | | | | |
-| WC3_RS | 0 | not started | | | | | | | | |
-| WC3_RH | 1 | JN04RM | 35.7 / +528 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
-| WC3_RH | 1 | LPB | 66.1 / -5735 | n/a | n/a | n/a | n/a |  | n/a |  |
+| WC3_RS | 6 | JN04RM | 35.7 / -827 | -57.2 / -5186 | n/a | n/a | n/a | 20/138 | n/a | PRE not yet run |
+| WC3_RS | 6 | LPB | 66.1 / -7713 | 15.1 / -8585 | n/a | n/a | n/a | 20/102 | n/a |  |
+| WC3_RH | 6 | JN04RM | 35.7 / +528 | -1.6 / +731 | n/a | n/a | n/a | 128/138 | n/a | PRE not yet run |
+| WC3_RH | 6 | LPB | 66.1 / -5735 | 45.1 / -2535 | n/a | n/a | n/a | 128/102 | n/a |  |
 
 ### C2 P7 Asia table and STACK on Asia, JN04RM base (reference 7/4/4)
 | set | months | vs | L1M cut % / d$ | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | L6M worst-20 cell/ref $k | bi-weekly WF beat % | rule-2a label |
 |---|---|---|---|---|---|---|---|---|---|---|
 | WC2_A4 | 0 | not started | | | | | | | | |
-| WC2_A5 | 0 | not started | | | | | | | | |
+| WC2_A5 | 6 | JN04RM | 19.1 / -1082 | -7.6 / -1609 | n/a | n/a | n/a | 122/138 | n/a | PRE not yet run |
+| WC2_A5 | 6 | LPB | 57.3 / -7968 | 41.9 / -3921 | n/a | n/a | n/a | 122/102 | n/a |  |
 | WC2_A6 | 0 | not started | | | | | | | | |
 | WC2_L5 | 0 | not started | | | | | | | | |
 | WC2_STKA | 0 | not started | | | | | | | | |
@@ -233,14 +374,15 @@ Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/w
 | set | months | vs | L1M cut % / d$ | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | L6M worst-20 cell/ref $k | bi-weekly WF beat % | rule-2a label |
 |---|---|---|---|---|---|---|---|---|---|---|
 | WC4_NONE | 0 | not started | | | | | | | | |
-| WC4_T30 | 0 | not started | | | | | | | | |
+| WC4_T30 | 4 | JN04RM | 0.4 / +38 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
+| WC4_T30 | 4 | LPB | 47.4 / -7716 | n/a | n/a | n/a | n/a |  | n/a |  |
 | WC4_T60 | 0 | not started | | | | | | | | |
 | WC4_HOT_LIVE | 6 | JN04RM | 0.0 / +0 | -1.8 / -152 | n/a | n/a | n/a | 135/138 | n/a | PRE not yet run |
 | WC4_HOT_LIVE | 6 | LPB | 47.2 / -6886 | 45.0 / -1641 | n/a | n/a | n/a | 135/102 | n/a |  |
 | WC4_HOT_ALL | 6 | JN04RM | 14.5 / -199 | -17.7 / -968 | n/a | n/a | n/a | 107/138 | n/a | PRE not yet run |
 | WC4_HOT_ALL | 6 | LPB | 54.8 / -4943 | 36.4 / -3020 | n/a | n/a | n/a | 107/102 | n/a |  |
-| WC4_CALM_LIVE | 1 | JN04RM | 0.7 / +24 | n/a | n/a | n/a | n/a |  | n/a | PRE not yet run |
-| WC4_CALM_LIVE | 1 | LPB | 47.6 / -6501 | n/a | n/a | n/a | n/a |  | n/a |  |
+| WC4_CALM_LIVE | 6 | JN04RM | 0.7 / +24 | -11.7 / -1268 | n/a | n/a | n/a | 126/138 | n/a | PRE not yet run |
+| WC4_CALM_LIVE | 6 | LPB | 47.6 / -6501 | 39.7 / -2361 | n/a | n/a | n/a | 126/102 | n/a |  |
 | WC4_CALM_ALL | 0 | not started | | | | | | | | |
 | WC4_HOT_ALL_T30 | 0 | not started | | | | | | | | |
 
