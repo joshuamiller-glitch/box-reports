@@ -1,4 +1,4 @@
-# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-11 00:37Z)
+# DS3_ZONES_EXHAUST_FINAL - the zone layer per book x session on the state base (T-ZONES-EXHAUST; 2026-11-11 01:38Z)
 
 **Labels: ROLL-FIXED (ROLLFIX1 base S1BRF-COMB, 21,163 trades; first-order tables use M tables lifted with Z.lift_M, 59 new rows m = 1); PRE-PROOF (entries not live-matched); post-hoc; Shadow only; NO PASS CLAIMS; FIRST-ORDER SCREEN unless a row says EXACT.** Standing rules: (1) the zone layer stays ON, "no zones / skip all / off" are reference rows only; (2) recents first: L6M/L3M/L1M, then the bi-weekly re-pick walk-forward (trailing 26 weeks -> next 2 weeks, purged 7 d), PRE/X' only as a tolerant check; (2a) PRE deepening allowed = min(25, L6M cut + 10)% only when the bi-weekly WF beats live in >= 60% of refit periods, else 15%, PRE mean floor = 25% of the live PRE mean (user decision 2026-11-10 13:45Z; d mean PRE >= -0.25 x live PRE mean, i.e. -$3.5k/wk; the old fixed -$1k label is shown beside); worse = RECENT-ONLY (still reported). Engine caveats at the end.
 
@@ -27,10 +27,10 @@ Reading: removing the layer (exact) deepens L6M and X' drawdown and shallows PRE
 | ZNC_B0 | 39.0 | ROLLEXCL,ROLLFIX1,old | -6.9 | 2.7 | -266.0 | -6.8 | 2.8 | -388.4 | -6.8 | 2.8 | 2414.1 | 14.2 | 22.0 | 2868.7 | 30.6 | 36.8 | -1344.9 | 23.7 | 30.6 | 1922.1 |
 | ZNC_B1 | 6.0 | ROLLFIX1 | 0.6 | 6.1 | 162.1 | 0.7 | 6.2 | -1096.4 | -0.6 | 5.0 | 1423.7 |  |  |  |  |  |  |  |  |  |
 | ZS_C0 | 39.0 | ROLLEXCL,ROLLFIX1 | 14.9 | 23.4 | 3962.3 | 15.0 | 23.4 | -1936.3 | 15.0 | 23.4 | 2344.4 | 16.7 | 25.0 | 725.4 | 17.1 | 25.4 | -948.7 | 44.5 | 50.1 | 1642.7 |
-| ZS_C1 | 14.0 | ROLLFIX1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| ZS_C1 | 20.0 | ROLLFIX1 |  |  |  |  |  |  |  |  |  |  |  |  | 22.6 | 1.3 | -103.3 |  |  |  |
 | ZS_D0 | 39.0 | ROLLEXCL,ROLLFIX1 | 29.2 | 26.7 | -5069.2 | 20.3 | 17.5 | 2954.9 | 20.3 | 17.5 | -837.9 | -12.6 | -16.6 | -504.9 | 38.7 | 36.5 | -898.5 | 33.4 | 31.0 | 2634.6 |
-| ZS_D1 | 11.0 | ROLLFIX1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| ZS_E0 | 11.0 | ROLLFIX1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| ZS_D1 | 17.0 | ROLLFIX1 |  |  |  |  |  |  |  |  |  |  |  |  | 14.7 |  | -4371.7 |  |  |  |
+| ZS_E0 | 17.0 | ROLLFIX1 |  |  |  |  |  |  |  |  |  |  |  |  | 42.5 |  | -1288.1 |  |  |  |
 
 First-order vs exact for the same cells: see the cell-details table right below.
 
@@ -43,10 +43,10 @@ First-order vs exact for the same cells: see the cell-details table right below.
 | ZNC_B0 | CORE | ALL | ahead 0.25atr hw5 fresh=t1 age<=1d | skip | london | SCOPE-EFFECT/unproven | 19.7 | 34 | 45 | -6.8 | 30.6 | 23.7 | none |
 | ZNC_B1 | CORE | ALL | ahead 0.5atr fresh=t1 age<=1d | skip | london | SCOPE-EFFECT/unproven | 15.0 | 28 | 40 | -0.6 |  |  | none |
 | ZS_C0 | STRUCT | sw5_5 v23 hw2 pt5 BA skip london: maxDD cut L6M/PRE/X' 45/55 | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 45 | 50 | 15.0 | 17.1 | 44.5 | none |
-| ZS_C1 | STRUCT | sw5_3 v23 hw2 pt20 APs skip london: maxDD cut L6M/PRE/X' 34/ | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 34 | 44 |  |  |  | none |
+| ZS_C1 | STRUCT | sw5_3 v23 hw2 pt20 APs skip london: maxDD cut L6M/PRE/X' 34/ | (see ZN_STRUCT.md) | skip/half per evidence | london | SCOPE-EFFECT/unproven |  | 34 | 44 |  | 22.6 |  | none |
 | ZS_D0 | STRUCT | bbup_5 | v0 hw0 pt15 AA | quarter | london | level-specific | 13.6 | 36 | 38 | 20.3 | 38.7 | 33.4 | none |
-| ZS_D1 | STRUCT | kcany_15 | v0 hw0 pt40 BA | quarter | ALL | level-specific | 51.3 | 40 | 38 |  |  |  | none |
-| ZS_E0 | STRUCT | grid0.5 | v0 hw2 pt5 BA | quarter | london | level-specific | 6.0 | 36 | 31 |  |  |  | none |
+| ZS_D1 | STRUCT | kcany_15 | v0 hw0 pt40 BA | quarter | ALL | level-specific | 51.3 | 40 | 38 |  | 14.7 |  | none |
+| ZS_E0 | STRUCT | grid0.5 | v0 hw2 pt5 BA | quarter | london | level-specific | 6.0 | 36 | 31 |  | 42.5 |  | none |
 
 **Rule 2a on the exact rows** (PRE maxDD deepening <= 15% [tolerance rises to min(25, L6M cut + 10) only with a >= 60% bi-weekly WF], PRE mean floor = -25% of live PRE mean = -3490 $/wk; old fixed floor -$1k beside):
 
@@ -56,7 +56,10 @@ First-order vs exact for the same cells: see the cell-details table right below.
 | ZNC_A0 | -5.4 | -730 | 44 | 15 | 3490 | OK-PRIOR (old fixed -$1k: OK-PRIOR) |
 | ZNC_B0 | 30.6 | -1345 | 40 | 15 | 3490 | OK-PRIOR (old fixed -$1k: RECENT-ONLY) |
 | ZS_C0 | 17.1 | -949 |  | 15 | 3490 | OK-PRIOR-UNKNOWN-WF (old fixed -$1k: OK-PRIOR-UNKNOWN-WF) |
+| ZS_C1 | 22.6 | -103 |  | 15 | 3490 | OK-PRIOR-UNKNOWN-WF (old fixed -$1k: OK-PRIOR-UNKNOWN-WF) |
 | ZS_D0 | 38.7 | -898 | 46 | 15 | 3490 | OK-PRIOR (old fixed -$1k: OK-PRIOR) |
+| ZS_D1 | 14.7 | -4372 | 39 | 15 | 3490 | RECENT-ONLY (old fixed -$1k: RECENT-ONLY) |
+| ZS_E0 | 42.5 | -1288 | 46 | 15 | 3490 | OK-PRIOR (old fixed -$1k: RECENT-ONLY) |
 
 **ZS_D0 lead (single-cell bi-weekly re-pick WF vs live, first-order daily series; pick = cell if its trailing-26-week maxDD is lower and trailing mean >= live - 25% of live PRE mean):** 48 of 72 refit periods pick the cell; of those the cell period beats live (maxDD <= live and pnl >= live - floor) in 46%; OOS maxDD cut vs live 23.7%, OOS d mean -277 $/wk. EXACT cut L1M/L3M/L6M/HOLD/PRE/X' = 29.2/20.3/20.3/-12.6/38.7/33.4 (section 2). Label: ADD CANDIDATE only where recents hold (L1M/L3M/L6M positive) - HOLD and X' decide whether it is more than a recents-only lead; never a replacement; PRE rule 2a label in the table above.
 
@@ -278,7 +281,7 @@ Hooks: code/th_zn_act/zone_hooks.py (mixin on the live engine with the live zone
 | RTH_camH3 | 5 | 4049 | 26 | 20 | 20 | 0 |
 | Kijun_1h | 5 | 4044 | 24 | 15 | 15 | 0 |
 | CRT_mid_4h | 5 | 4038 | 54 | 50 | 50 | 0 |
-| KC_up_4h | 5 | 4045 | 12 | 11 | 11 | 0 |
+| KC_up_4h | 5 | 4046 | 16 | 14 | 14 | 0 |
 | OTE62_15m | 5 | 4182 | 109 | 87 | 87 | 138 |
 | OTE705_15m | 5 | 4038 | 73 | 62 | 62 | 0 |
 | OTE79_15m | 5 | 4034 | 81 | 72 | 72 | 0 |
@@ -296,4 +299,4 @@ Placebo / family null for these exact cells: only 16 exact cells exist, so the f
 - Hypothesis counts: CORE 347,553 cells; STRUCT 9,263,348 evaluated; BOOK 32,155; TRIG 1,334,592. Family p uses the conservative independent max-stat; with these counts nothing can reach p <= .10 without a very large effect.
 - Not built: delay-until-through, re-target, structure-stop, 70/30 add and cooldown-after-lost-level actions (exact engine only); per-line marginals of the published eight lines (need the engine with one line left out).
 
-Generated by code/th_zn/zn_final.py (2026-11-11 00:37Z).
+Generated by code/th_zn/zn_final.py (2026-11-11 01:38Z).
