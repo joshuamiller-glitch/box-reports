@@ -1,4 +1,4 @@
-# DS3_ZONES_JOINT - the ZONE layer in the joint stage and the eight-line leave-one-out (T-NEXT B1 + B3; 2026-11-11 05:40Z)
+# DS3_ZONES_JOINT - the ZONE layer in the joint stage and the eight-line leave-one-out (T-NEXT B1 + B3; 2026-11-11 06:40Z)
 
 **ROLL-FIXED (ROLLFIX1), PRE-PROOF, post-hoc, Shadow only, NO PASS CLAIMS. Standing rules 1/2/2a: the zone layer stays ON; recents first; bi-weekly WF; PRE tolerance per Z.prior_info.** Exact-queue pause 17:15Z-21:30Z (user order T-TRAIL-L2 v2).
 
@@ -6,14 +6,14 @@
 
 | line left out | months | decisions changed (hook) | L1M/L3M/L6M cut | HOLD cut | PRE cut | X' cut | d mean $/wk L6M/PRE | verdict |
 |---|---|---|---|---|---|---|---|---|
-| PD_mid | 7 | 15 of 4457 checks | 0/0/0 |  |  |  | 4/ | pending (windows incomplete) |
-| RTH_camH3 | 7 | 32 of 4464 checks | -3/-4/-4 |  |  |  | 283/ | pending (windows incomplete) |
-| Kijun_1h | 7 | 23 of 4458 checks | -3/-3/-3 |  |  |  | 136/ | pending (windows incomplete) |
-| CRT_mid_4h | 7 | 56 of 4453 checks | 0/0/0 |  |  |  | 296/ | pending (windows incomplete) |
-| KC_up_4h | 7 | 19 of 4252 checks | 0/0/0 |  |  |  | -53/ | pending (windows incomplete) |
-| OTE62_15m | 7 | 251 of 4617 checks | 0/0/0 |  |  |  | -948/ | pending (windows incomplete) |
-| OTE705_15m | 6 | 62 of 4038 checks | -5/-7/-7 |  |  |  | -69/ | pending (windows incomplete) |
-| OTE79_15m | 6 | 72 of 4034 checks | 0/0/0 |  |  |  | 679/ | pending (windows incomplete) |
+| PD_mid | 9 | 17 of 5803 checks | 0/0/0 |  |  |  | 4/ | pending (windows incomplete) |
+| RTH_camH3 | 9 | 38 of 5811 checks | -3/-4/-4 |  |  |  | 283/ | pending (windows incomplete) |
+| Kijun_1h | 9 | 32 of 5805 checks | -3/-3/-3 |  |  |  | 136/ | pending (windows incomplete) |
+| CRT_mid_4h | 9 | 74 of 5801 checks | 0/0/0 |  |  |  | 296/ | pending (windows incomplete) |
+| KC_up_4h | 9 | 30 of 5591 checks | 0/0/0 |  |  |  | -53/ | pending (windows incomplete) |
+| OTE62_15m | 9 | 328 of 6019 checks | 0/0/0 |  |  |  | -948/ | pending (windows incomplete) |
+| OTE705_15m | 9 | 81 of 5801 checks | -5/-7/-7 |  |  |  | -69/ | pending (windows incomplete) |
+| OTE79_15m | 9 | 106 of 5778 checks | 0/0/0 |  |  |  | 679/ | pending (windows incomplete) |
 
 **Proposed line set (panel string, v1.6 field NtzLines; v1.5 has the eight lines as PoiSet families):** `NtzLines=`; lines that HURT on the exact windows: none so far. This is advisory: every line stays in the live layer until an exact joint row with the placebo and walk-forward gates beats the full eight-line layer (standing rule: the layer stays ON; no PASS claims).
 
@@ -36,12 +36,12 @@
 | id | kind | exact status | months present | what |
 |---|---|---|---|---|
 | LIVE_ZONE | state_rule | EXACT, 43 months | 43 | live zone layer = PoiSet HALF D20 (PD_mid RTH_camH3 Kijun_1h CRT_mid_4h KC_up_4h OTE62/705 |
-| ZNA_OPEN20 | zone_set | EXACT partial: 6 of 43 months | 6 | HALF cell open20 (no untouched PoiSet line within 20 pts either side -> halve) |
-| ZNA_OPEN40 | zone_set | EXACT partial: 6 of 43 months | 6 | HALF cell open40 |
-| ZNA_OPEN60 | zone_set | EXACT partial: 6 of 43 months | 6 | HALF cell open60 |
-| ZNA_OPENA40 | zone_set | EXACT partial: 6 of 43 months | 6 | HALF cell openA40 (ahead only) |
-| ZNA_OPENA60 | zone_set | EXACT partial: 6 of 43 months | 6 | HALF cell openA60 |
-| ZNA_SOPEN40 | zone_set | EXACT partial: 6 of 43 months | 6 | HALF cell sopen40 (y = 40*E/20000) |
+| ZNA_OPEN20 | zone_set | EXACT partial: 9 of 43 months | 9 | HALF cell open20 (no untouched PoiSet line within 20 pts either side -> halve) |
+| ZNA_OPEN40 | zone_set | EXACT partial: 9 of 43 months | 9 | HALF cell open40 |
+| ZNA_OPEN60 | zone_set | EXACT partial: 8 of 43 months | 8 | HALF cell open60 |
+| ZNA_OPENA40 | zone_set | EXACT partial: 8 of 43 months | 8 | HALF cell openA40 (ahead only) |
+| ZNA_OPENA60 | zone_set | EXACT partial: 8 of 43 months | 8 | HALF cell openA60 |
+| ZNA_SOPEN40 | zone_set | EXACT partial: 8 of 43 months | 8 | HALF cell sopen40 (y = 40*E/20000) |
 | ZS_C0 | zone_set | EXACT partial: 39 of 43 months | 39 | ZN-STRUCT swing level skip (London), sw5_5 v23 hw2 pt5 BA |
 | ZS_D0 | zone_set | EXACT partial: 39 of 43 months | 39 | ZN-STRUCT bbup_5 quarter London |
 | ZS_E0 | zone_set | EXACT partial: 33 of 43 months | 33 | ZN-STRUCT family E top |
@@ -56,14 +56,14 @@
 | ZNA_STOP_A | zone_set | EXACT partial: 3 of 43 months | 3 | structure stop behind level, equal $ risk (A) |
 | ZNA_B73_A | zone_set | EXACT partial: 3 of 43 months | 3 | generalised B73 at level (A) |
 | ZNA_COOL_A | zone_set | EXACT partial: 3 of 43 months | 3 | cooldown 15 min after lost level (A) |
-| ZNA_L_PD_mid | zone_set | EXACT partial: 7 of 43 months | 7 | live layer with line PD_mid left out (leave-one-out) |
-| ZNA_L_RTH_camH3 | zone_set | EXACT partial: 7 of 43 months | 7 | live layer with line RTH_camH3 left out (leave-one-out) |
-| ZNA_L_Kijun_1h | zone_set | EXACT partial: 7 of 43 months | 7 | live layer with line Kijun_1h left out (leave-one-out) |
-| ZNA_L_CRT_mid_4h | zone_set | EXACT partial: 7 of 43 months | 7 | live layer with line CRT_mid_4h left out (leave-one-out) |
-| ZNA_L_KC_up_4h | zone_set | EXACT partial: 7 of 43 months | 7 | live layer with line KC_up_4h left out (leave-one-out) |
-| ZNA_L_OTE62_15m | zone_set | EXACT partial: 6 of 43 months | 6 | live layer with line OTE62_15m left out (leave-one-out) |
-| ZNA_L_OTE705_15m | zone_set | EXACT partial: 6 of 43 months | 6 | live layer with line OTE705_15m left out (leave-one-out) |
-| ZNA_L_OTE79_15m | zone_set | EXACT partial: 6 of 43 months | 6 | live layer with line OTE79_15m left out (leave-one-out) |
+| ZNA_L_PD_mid | zone_set | EXACT partial: 9 of 43 months | 9 | live layer with line PD_mid left out (leave-one-out) |
+| ZNA_L_RTH_camH3 | zone_set | EXACT partial: 9 of 43 months | 9 | live layer with line RTH_camH3 left out (leave-one-out) |
+| ZNA_L_Kijun_1h | zone_set | EXACT partial: 9 of 43 months | 9 | live layer with line Kijun_1h left out (leave-one-out) |
+| ZNA_L_CRT_mid_4h | zone_set | EXACT partial: 9 of 43 months | 9 | live layer with line CRT_mid_4h left out (leave-one-out) |
+| ZNA_L_KC_up_4h | zone_set | EXACT partial: 9 of 43 months | 9 | live layer with line KC_up_4h left out (leave-one-out) |
+| ZNA_L_OTE62_15m | zone_set | EXACT partial: 9 of 43 months | 9 | live layer with line OTE62_15m left out (leave-one-out) |
+| ZNA_L_OTE705_15m | zone_set | EXACT partial: 9 of 43 months | 9 | live layer with line OTE705_15m left out (leave-one-out) |
+| ZNA_L_OTE79_15m | zone_set | EXACT partial: 9 of 43 months | 9 | live layer with line OTE79_15m left out (leave-one-out) |
 
 ## B1. Joint stage with ZONE varying
 

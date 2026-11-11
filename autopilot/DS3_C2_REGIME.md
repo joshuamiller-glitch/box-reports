@@ -1,4 +1,4 @@
-# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 06:25Z)
+# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 06:53Z)
 
 > **TESTING DEFECT FOUND AND FIXED (SZ-CDE own, 2026-11-11 00:4xZ): the first rule-mode leave-one-out (JN04LPB_C2_RM_*) was launched with the rbjobs launcher, which does not apply the rule-mode hooks (jnrule LOT/SIGQ/REG, cde STACK); minus LOT / SIGQ / REG / STACK came out IDENTICAL to the dollar in all windows, the identical-to-the-dollar test. All 154 cell-months are void (runs_rf_void_cde) and the sets are re-run with jbjobs (JointRep); section B2 fills as the re-run lands. SECOND DEFECT (2026-11-11 03:3xZ): the jbjobs re-run, with 7 rule-mode sets per month in ONE batch, still gave identical minus-LOT / SIGQ / REG rows: later sets in a rule-mode batch inherit the first set's jnrule behaviour (proved by mlog multiplier counts and a solo re-run); all batch results are void and the leave-one-out is re-run one set per job.**
 
@@ -33,13 +33,26 @@
 | layer left out | GAP 2025-07..10: mean (all-weeks mean) / maxDD / d mean / cut | H2-2024: mean / maxDD / d mean / cut | HOLD: mean / maxDD / d mean / cut | L6M: mean / maxDD / d mean / cut |
 |--|--|--|--|--|
 | JN04RM (all four layers, rule mode) | 16667 (all 13566) / 39147 / -160 (all-weeks -1761) / +38.4 | 17374 (all 15143) / 42854 / -1540 (all-weeks -2502) / +47.7 | 13213 (all 12627) / 72757 / -3658 (all-weeks -2908) / +7.7 | 20689 (all 19195) / 41699 / -1701 (all-weeks -249) / +46.0 |
-| minus LOT | 18519 (all 14957) / 45597 / -1447 (all-weeks -370) / +28.2 | 16987 (all 14822) / 59462 / -2046 (all-weeks -2823) / +27.5 | months missing | months missing |
-| minus SIGQ | 16132 (all 13057) / 39219 / -699 (all-weeks -2270) / +38.3 | 17487 (all 15112) / 47621 / -1840 (all-weeks -2534) / +41.9 | months missing | months missing |
-| minus REG | 18271 (all 14655) / 46819 / -2166 (all-weeks -672) / +26.3 | 18987 (all 16578) / 46053 / +20 (all-weeks -1067) / +43.8 | months missing | months missing |
-| minus STACK | 11506 (all 14033) / 43081 / +336 (all-weeks -1294) / +32.2 | 18305 (all 16057) / 42390 / -2684 (all-weeks -1588) / +48.3 | months missing | months missing |
-| minus table 7,4,0,4,0,0 | 10399 (all 13298) / 53044 / -771 (all-weeks -2029) / +16.5 | 17946 (all 15596) / 45520 / -965 (all-weeks -2050) / +44.5 | months missing | months missing |
-| minus day cap (P7 loss cap 16,800) | 16787 (all 13679) / 39147 / -111 (all-weeks -1648) / +38.4 | 17250 (all 15024) / 42854 / -1665 (all-weeks -2621) / +47.7 | months missing | months missing |
-| minus P7 cut 40/5x/w5/p3 | 17634 (all 14611) / 36790 / +903 (all-weeks -716) / +42.1 | 17059 (all 14642) / 48198 / -2076 (all-weeks -3003) / +41.2 | months missing | months missing |
+| minus LOT | 18519 (all 14957) / 45597 / -1447 (all-weeks -370) / +28.2 | 16987 (all 14822) / 59462 / -2046 (all-weeks -2823) / +27.5 | 15521 (all 15410) / 94681 / -761 (all-weeks -125) / -20.1 | 23188 (all 22655) / 60603 / +2231 (all-weeks +3210) / +21.5 |
+| minus SIGQ | 16132 (all 13057) / 39219 / -699 (all-weeks -2270) / +38.3 | 17487 (all 15112) / 47621 / -1840 (all-weeks -2534) / +41.9 | 11376 (all 12428) / 76223 / -2601 (all-weeks -3107) / +3.3 | 16308 (all 18257) / 42691 / -246 (all-weeks -1188) / +44.7 |
+| minus REG | 18271 (all 14655) / 46819 / -2166 (all-weeks -672) / +26.3 | 18987 (all 16578) / 46053 / +20 (all-weeks -1067) / +43.8 | 13139 (all 12968) / 70373 / -3681 (all-weeks -2567) / +10.7 | 19962 (all 19341) / 51586 / -2321 (all-weeks -104) / +33.2 |
+| minus STACK | 11506 (all 14033) / 43081 / +336 (all-weeks -1294) / +32.2 | 18305 (all 16057) / 42390 / -2684 (all-weeks -1588) / +48.3 | 13474 (all 12812) / 71587 / -3397 (all-weeks -2723) / +9.2 | 20769 (all 19128) / 51246 / -1621 (all-weeks -316) / +33.6 |
+| minus table 7,4,0,4,0,0 | 10399 (all 13298) / 53044 / -771 (all-weeks -2029) / +16.5 | 17946 (all 15596) / 45520 / -965 (all-weeks -2050) / +44.5 | 14004 (all 13263) / 65426 / -2867 (all-weeks -2272) / +17.0 | 20979 (all 19189) / 51225 / -1412 (all-weeks -256) / +33.7 |
+| minus day cap (P7 loss cap 16,800) | 16787 (all 13679) / 39147 / -111 (all-weeks -1648) / +38.4 | 17250 (all 15024) / 42854 / -1665 (all-weeks -2621) / +47.7 | 13911 (all 13311) / 72757 / -2960 (all-weeks -2224) / +7.7 | 21721 (all 20186) / 42604 / -669 (all-weeks +741) / +44.8 |
+| minus P7 cut 40/5x/w5/p3 | 17634 (all 14611) / 36790 / +903 (all-weeks -716) / +42.1 | 17059 (all 14642) / 48198 / -2076 (all-weeks -3003) / +41.2 | 12514 (all 11437) / 76284 / -3491 (all-weeks -4098) / +3.2 | 21085 (all 18545) / 45378 / +498 (all-weeks -899) / +41.2 |
+
+## F. Reading of the rule-mode leave-one-out (change when the layer is left OUT, relative to JN04RM; cuts in percentage points, d mean in $/wk all-weeks)
+
+| layer left out | GAP all-weeks d mean change | GAP cut change | H2-2024 cut change | HOLD cut change | L6M cut change | reading |
+|--|--|--|--|--|--|--|
+| LOT (P7 Calmar gate) | +1391 | -10.2 | -20.3 | -27.8 | -24.5 | removing it improves the GAP all-weeks mean by 1391 $/wk and changes the L6M / HOLD cut by -24.5 / -27.8 points: the layer buys recents protection at a GAP mean cost |
+| SIGQ (dA gate) | -509 | -0.1 | -5.8 | -4.4 | -1.3 | removing it changes the GAP mean by -509 $/wk, L6M cut by -1.3, HOLD cut by -4.4 points |
+| REG (P7 ATR gate) | +1088 | -12.1 | -3.9 | +3.0 | -12.8 | removing it improves the GAP all-weeks mean by 1088 $/wk and changes the L6M / HOLD cut by -12.8 / 3.0 points: the layer buys recents protection at a GAP mean cost |
+| STACK (London cap 6) | +467 | -6.2 | +0.6 | +1.5 | -12.4 | removing it improves the GAP all-weeks mean by 467 $/wk and changes the L6M / HOLD cut by -12.4 / 1.5 points: the layer buys recents protection at a GAP mean cost |
+| 7/4/4 table | -268 | -21.9 | -3.3 | +9.3 | -12.3 | removing it changes the GAP mean by -268 $/wk, L6M cut by -12.3, HOLD cut by 9.3 points |
+| day cap 8,400 | +113 | +0.0 | -0.0 | +0.0 | -1.2 | removing it changes the GAP mean by 113 $/wk and the L6M / HOLD cut by -1.2 / 0.0 points: little effect |
+| P7 cut 40/5x/w5/p3 | +1044 | +3.7 | -6.5 | -4.5 | -4.8 | removing it improves the GAP all-weeks mean by 1044 $/wk and changes the L6M / HOLD cut by -4.8 / -4.5 points: the layer buys recents protection at a GAP mean cost |
+
 
 ## C. Where does the LOT gate cost money? (S1b exact runs JN04 vs JD01, P7 signals, split by the regime flags; flags are causal at the signal second)
 
@@ -80,7 +93,7 @@
 ## E. Exact regime stacks on the live-panel base (43 months)
 
 
-SZ-CDE C2 processes (IJK driver state_sizer_ijk rbjobs masters, 1 worker each (3 workers, about 10 GB per exact worker), memory gate 62 GB): c2_a=1362513, c2_b=1362514, c2_rsa=1167576 (not running)
+SZ-CDE C2 processes (IJK driver state_sizer_ijk rbjobs masters, 1 worker each (3 workers, about 10 GB per exact worker), memory gate 62 GB): c2_a=1362513 (not running), c2_b=1362514 (not running), c2_rsa=1167576 (not running), c2_rsb=1529462
 
 | set | candidate | months | L1M / L3M / L6M cut vs LPB_BASE | L6M d mean | (b) eq-mean L6M cut | HOLD cut / d mean | PRE cut / d mean | X' cut / d mean | GAP cut / d mean | H2-2024 cut / d mean | WF vs live: beats % / OOS cut / d mean | WF vs JN04RM: beats % | Rule 2a label |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
