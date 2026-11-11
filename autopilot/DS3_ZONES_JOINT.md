@@ -1,4 +1,4 @@
-# DS3_ZONES_JOINT - the ZONE layer in the joint stage and the eight-line leave-one-out (T-NEXT B1 + B3; 2026-11-11 07:41Z)
+# DS3_ZONES_JOINT - the ZONE layer in the joint stage and the eight-line leave-one-out (T-NEXT B1 + B3; 2026-11-11 08:00Z)
 
 **ROLL-FIXED (ROLLFIX1), PRE-PROOF, post-hoc, Shadow only, NO PASS CLAIMS. Standing rules 1/2/2a: the zone layer stays ON; recents first; bi-weekly WF; PRE tolerance per Z.prior_info.** Exact-queue pause 17:15Z-21:30Z (user order T-TRAIL-L2 v2).
 
@@ -12,8 +12,8 @@
 | CRT_mid_4h | 12 | 91 of 6450 checks | 0/0/0 |  |  |  | 296/ | pending (windows incomplete) |
 | KC_up_4h | 12 | 39 of 6259 checks | 0/0/0 |  |  |  | -53/ | pending (windows incomplete) |
 | OTE62_15m | 12 | 400 of 6728 checks | 0/0/0 |  |  |  | -948/ | pending (windows incomplete) |
-| OTE705_15m | 11 | 82 of 5953 checks | -5/-7/-7 |  |  |  | -69/ | pending (windows incomplete) |
-| OTE79_15m | 11 | 124 of 5944 checks | 0/0/0 |  |  |  | 679/ | pending (windows incomplete) |
+| OTE705_15m | 12 | 89 of 6461 checks | -5/-7/-7 |  |  |  | -69/ | pending (windows incomplete) |
+| OTE79_15m | 12 | 136 of 6449 checks | 0/0/0 |  |  |  | 679/ | pending (windows incomplete) |
 
 **Proposed line set (panel string, v1.6 field NtzLines; v1.5 has the eight lines as PoiSet families):** `NtzLines=`; lines that HURT on the exact windows: none so far. This is advisory: every line stays in the live layer until an exact joint row with the placebo and walk-forward gates beats the full eight-line layer (standing rule: the layer stays ON; no PASS claims).
 
