@@ -1,4 +1,4 @@
-# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 00:41Z)
+# DS3_C2_REGIME - T-NEXT C2: the 2025 trend-regime loss of JN04 / JP07 (SZ-CDE, 2026-11-11 01:24Z)
 
 > **TESTING DEFECT FOUND AND FIXED (SZ-CDE own, 2026-11-11 00:4xZ): the first rule-mode leave-one-out (JN04LPB_C2_RM_*) was launched with the rbjobs launcher, which does not apply the rule-mode hooks (jnrule LOT/SIGQ/REG, cde STACK); minus LOT / SIGQ / REG / STACK came out IDENTICAL to the dollar in all windows, the identical-to-the-dollar test. All 154 cell-months are void (runs_rf_void_cde) and the sets are re-run with jbjobs (JointRep); section B2 fills as the re-run lands.**
 
@@ -33,13 +33,13 @@
 | layer left out | GAP 2025-07..10: mean (all-weeks mean) / maxDD / d mean / cut | H2-2024: mean / maxDD / d mean / cut | HOLD: mean / maxDD / d mean / cut | L6M: mean / maxDD / d mean / cut |
 |--|--|--|--|--|
 | JN04RM (all four layers, rule mode) | 16667 (all 13566) / 39147 / -160 (all-weeks -1761) / +38.4 | 17374 (all 15143) / 42854 / -1540 (all-weeks -2502) / +47.7 | 13213 (all 12627) / 72757 / -3658 (all-weeks -2908) / +7.7 | 20689 (all 19195) / 41699 / -1701 (all-weeks -249) / +46.0 |
-| minus LOT | months missing | months missing | months missing | months missing |
-| minus SIGQ | months missing | months missing | months missing | months missing |
-| minus REG | months missing | months missing | months missing | months missing |
-| minus STACK | months missing | months missing | months missing | months missing |
-| minus table 7,4,0,4,0,0 | months missing | months missing | months missing | months missing |
-| minus day cap (P7 loss cap 16,800) | months missing | months missing | months missing | months missing |
-| minus P7 cut 40/5x/w5/p3 | months missing | months missing | months missing | months missing |
+| minus LOT | 18519 (all 14957) / 45597 / -1447 (all-weeks -370) / +28.2 | months missing | months missing | months missing |
+| minus SIGQ | 18519 (all 14957) / 45597 / -1447 (all-weeks -370) / +28.2 | months missing | months missing | months missing |
+| minus REG | 18519 (all 14957) / 45597 / -1447 (all-weeks -370) / +28.2 | months missing | months missing | months missing |
+| minus STACK | 19711 (all 16055) / 46099 / -255 (all-weeks +728) / +27.4 | months missing | months missing | months missing |
+| minus table 7,4,0,4,0,0 | 15100 (all 14442) / 57213 / +239 (all-weeks -885) / +10.0 | months missing | months missing | months missing |
+| minus day cap (P7 loss cap 16,800) | 14595 (all 14434) / 49001 / +310 (all-weeks -893) / +22.9 | months missing | months missing | months missing |
+| minus P7 cut 40/5x/w5/p3 | 18631 (all 15421) / 45624 / -1335 (all-weeks +94) / +28.2 | months missing | months missing | months missing |
 
 ## C. Where does the LOT gate cost money? (S1b exact runs JN04 vs JD01, P7 signals, split by the regime flags; flags are causal at the signal second)
 
@@ -80,12 +80,12 @@
 ## E. Exact regime stacks on the live-panel base (43 months)
 
 
-SZ-CDE C2 processes (IJK driver state_sizer_ijk rbjobs masters, 1 worker each (3 workers, about 10 GB per exact worker), memory gate 62 GB): c2_a=1252421, c2_b=1252423, c2_rsa=1167576
+SZ-CDE C2 processes (IJK driver state_sizer_ijk rbjobs masters, 1 worker each (3 workers, about 10 GB per exact worker), memory gate 62 GB): c2_a=1252421, c2_b=1252423, c2_rsa=1167576 (not running)
 
 | set | candidate | months | L1M / L3M / L6M cut vs LPB_BASE | L6M d mean | (b) eq-mean L6M cut | HOLD cut / d mean | PRE cut / d mean | X' cut / d mean | GAP cut / d mean | H2-2024 cut / d mean | WF vs live: beats % / OOS cut / d mean | WF vs JN04RM: beats % | Rule 2a label |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | LPB_JN04 | LPB_JN04 (all four layers, always on, table mode) | 43 | +77.5 / +6.3 / +6.3 | +3324 | +26.2 | +8.2 / +1164 | +36.5 / -875 | +57.1 / +2352 | +14.0 / -1235 | +55.3 / -1849 | 81% / +27.2% / -1302 | n/a | OK-PRIOR (allow 16%, WF 81%) [old -1k rule: OK-PRIOR] |
 | JN04RM | JN04RM (rule mode, the JN04 reference) | 43 | +47.2 / +46.0 / +46.0 | -1701 | +48.1 | +7.7 / -3658 | +32.9 / -1840 | +47.7 / -357 | +38.4 / -160 | +47.7 / -1540 | 90% / +26.9% / -2991 | 0% (cut +0.0%, d mean +0) | OK-PRIOR (allow 25%, WF 90%) [old -1k rule: RECENT-ONLY] |
-| JN04LPB_C2_RS_FER | LOT off when F_ER (trend day, ER>=0.30) | 16 | na / na / na | na | na | months missing | months missing | months missing | months missing | months missing | n/a (months 16 of 43) | n/a | incomplete |
-| JN04LPB_C2_RS_NFER2 | LOT off when NOT F_ER2 (6.5 h ER<0.25) | 16 | na / na / na | na | na | months missing | months missing | months missing | months missing | months missing | n/a (months 16 of 43) | n/a | incomplete |
-| JN04LPB_C2_RS_NFPRIOR | LOT off when NOT F_PRIOR (prior day trend<0.6) | 15 | na / na / na | na | na | months missing | months missing | months missing | months missing | months missing | n/a (months 15 of 43) | n/a | incomplete |
+| JN04LPB_C2_RS_FER | LOT off when F_ER (trend day, ER>=0.30) | 22 | na / na / na | na | na | months missing | months missing | months missing | months missing | months missing | n/a (months 22 of 43) | n/a | incomplete |
+| JN04LPB_C2_RS_NFER2 | LOT off when NOT F_ER2 (6.5 h ER<0.25) | 22 | na / na / na | na | na | months missing | months missing | months missing | months missing | months missing | n/a (months 22 of 43) | n/a | incomplete |
+| JN04LPB_C2_RS_NFPRIOR | LOT off when NOT F_PRIOR (prior day trend<0.6) | 22 | na / na / na | na | na | months missing | months missing | months missing | months missing | months missing | n/a (months 22 of 43) | n/a | incomplete |
