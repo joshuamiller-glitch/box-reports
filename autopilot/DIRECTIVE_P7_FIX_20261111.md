@@ -1,0 +1,52 @@
+# ORDER (user, 2026-11-11 19:05Z) — P7 FIX, priority inside T-WORKS (W-B + W-C)
+Exact, one set per job, live panel base and JN04RM, four windows + bi-weekly WF + the frozen live week; first results 23:00Z, FINAL with DS3_WORKS 11-12 15:00Z.
+A. P7 ASIA SESSION GOVERNOR (entry side — where the worst-20 weeks live):
+ 1. per-session P7 loss count: after N (1,2,3) P7 losing exits (stop or cut) in the Asia session -> P7 Asia x0.5 / x0.25 / OFF for the rest of the session; same-side only vs both sides; reset at the session change.
+ 2. per-session P7 trade count cap (2-6 trades per Asia session) and a per-session $ loss cap (0.5R, 1R, 1.5R of the 7-lot R) separate from the day cap.
+ 3. step-down lots inside the session: 1st P7 trade full, each re-entry after a loss x0.5 of the previous (floor 1), restored after a target.
+ 4. re-entry gap after a P7 losing exit: 30 (live) / 60 / 90 / 120 min / rest of session, same side; and the gap only when the entry is WITH a session move > k ATR (k 0.75-2) in the trade direction ("chasing" flag).
+ 5. chasing filter alone: skip / half a P7 signal when the session move in the trade direction is already > k ATR AND it is the 3rd+ P7 trade of the session or inside 30 min of the last P7 exit.
+ 6. P7 Asia lots 7 / 5 / 4 with each governor; short side separately (87% of the L6M worst-5 loss is short Asia).
+ Report per cell: P&L of the trades removed in worst-20 weeks vs in other weeks (the governor must remove the re-entry losers without removing the trend-week winners: last week 29 of 53 P7 trades were inside 30 min of the previous exit and made +$52.9k — show what each governor does to that week).
+B. CONTEXT-DEPENDENT P7 CUT (the cut chosen by the ENTRY context, fixed at entry):
+ fresh trade (1st/2nd of the session, not chasing) -> no cut / v2 (45/5x/p10); re-entry or chasing trade -> fast cut grid (arm 25-40 x MULT 5-20 x persist 1-5); and the reverse as control. Also the cut chosen by lots on (>=5 lots fast, <5 slow) and by side. Exact vs NONE, v2 and 40/5x/p3. A cut standing rule applies: every P7 trade carries a loss line; "none" = v2 as the floor.
+C. Deliver: the best governor + the best context cut as (1) what is expressible in v1.7 today (PostExitBlackoutMins, P7 session string, day cap), (2) v1.8 fields named exactly (session loss counter, re-entry gap by context, step-down, chasing flag = session move / ATR at the signal, entry-context tag on the trade for the policy file's third column), with 5 worked rows each.
+
+## ADDENDUM (user, 2026-11-11 19:15Z) — entry-quality tests, same bar, same deliverables
+All causal at the P7 signal second, each as skip / half / asymmetric-bracket, P7 Asia first then all sessions, K7/M7 after:
+D1 trend-alive clock: minutes since the session's last new extreme in the trade direction (thresholds 5-60 min).
+D2 re-arm on evidence: after a P7 losing exit, same-side P7 signals blocked until price makes a new session extreme beyond the failed trade's favourable extreme (vs the 30/60/120-min timers).
+D3 pullback number: count of same-direction P7 signals (taken or not) since the leg began (leg = since the last opposite-direction P7 signal or session start); act on the 3rd/4th/5th+.
+D4 extension from value: (entry - session VWAP) x side in VWAP sigma and in ATR; distance beyond the 1-h Kijun; thresholds 1-3.
+D5 book exhaustion on the last push (state base): absorption at the leg extreme (prints >= k x MedLevel into a level that held >= N s), ice refills on the far side, delta divergence (new price extreme with a smaller cumulative-delta extreme), pulled_against on the push.
+D6 cross-book vote: U7 Supertrend side, K7 Keltner side, H7 HMA-VWAP side at the signal; require agreement of 1/2/3.
+D7 late-entry trade form: for D1/D3/D4-flagged entries, stop behind the pullback swing (5/15-min fractal) with equal-$ lots, target 30-45 instead of 58; vs skip/half.
+For every cell: trades removed in the worst-20 weeks vs the trend weeks (incl. the frozen live week), exact four windows, WF; the best combination with the loss-count governor goes into JN05.
+
+## ADDENDUM 2 (user, 2026-11-11 19:20Z) — more entry-quality families + a mandatory JOINT stage over ALL of them
+Same bar (exact, one set per job, live panel base and JN04RM, four windows, bi-weekly WF, frozen live week, "removed in worst-20 weeks vs removed in trend weeks" for every cell). All features causal at the P7 signal second. P7 Asia first, then all P7 sessions, then K7/M7/U7.
+E. MULTI-TIMEFRAME TREND HEALTH: 15/30/60-min swing structure intact in the trade direction (last higher-low/lower-high not broken); slope and R^2 of a linear fit of the last 30/60/120 min; 1-h and 4-h EMA slope; session-VWAP slope and its change over the last 30 min; variance ratio / lag-1 autocorrelation of 1-min returns over the last 60-120 min.
+F. PARTICIPATION: volume on pushes vs pullbacks of the current leg (healthy = pushes heavier); relative volume vs the half-hour slot median; cumulative delta of the leg agreeing with price; share of large prints with the trend.
+G. PULLBACK ANATOMY: depth as % of the leg (shallow <25, normal 38-62, deep >62); pullback duration / push duration; pullback volume / push volume; did the pullback break the prior swing; pullback velocity.
+H. LEG ANATOMY: leg length in ATR, leg age in minutes, number of pushes, push-over-push decay (each push shorter/slower/on less delta), time between successive extremes lengthening.
+I. ROOM TO TARGET: distance from entry to the nearest major level ahead (prior-day H/L, overnight H/L, weekly H/L, 00/50 round numbers, naked POC, prior-session VWAP) vs the 58-pt target: room < 1.0/1.5/2.0 x target.
+J. CROSS-MARKET: ES and RTY also at a session extreme within N min (breadth 1/2/3 of 3); NQ-ES relative strength with the trade; ES state-base absorption at its extreme; ZN/6E/6J moving with a risk-on/off read (owned bars).
+K. CONTEXT: hour of the Asia session (19-21 ET vs 22-01 ET dead hours vs 01-02); Asia continuing the RTH day's direction vs fresh; day of week; eve of CPI/FOMC/NFP; first Asia session after a >2 ATR RTH day.
+L. P7 SIGNAL INTERNALS: distance and slope of P7's own EMA at the signal, PB3B pattern depth, 45-s confirm quality (three-bar range, dip size at confirm, seconds from signal to confirm), L2 confirmations present at the add.
+M. ADAPTIVE RESPONSE (instead of block): after a P7 loss the next same-side entry is a PROBE (1 lot; full size restored only after a probe wins); stricter confirm after a loss (90-s confirm, 2-3 L2 confirmations required); both vs the plain blackout.
+N. SIDE-LEVEL STACK GOVERNOR: when all books together have lost X (1-3 R of the stack) on ONE side in the session, that side is blocked/halved for every book until the session ends or a new session extreme prints on that side.
+O. THE FLIP: after two failed same-side P7 entries, score the next OPPOSITE-side P7 signal (full/1.5x/normal) — is the reversal signal after two failures better than the average P7 signal?
+P. NO-FOLLOW-THROUGH EXIT for re-entries and late entries: exit if MFE < X pts (5-15) after N minutes (2-10), or if the trade has not made a new favourable extreme for N minutes while under +Y; scored only on flagged entries and on all.
+Q. LEARNED RANKER over every feature in the P7 FIX order + addenda (<=12-leaf monotone GBDT and a <=6-leaf tree, purged walk-forward, 3 seeds, family null): P(target before stop) per P7 signal -> skip bottom decile/quintile, half the next; report top features by gain so the rule can be re-expressed as 2-3 plain conditions.
+
+JOINT STAGE (mandatory; a per-family winner is NOT a result): register top-3 cells of every family A1-A6, B, D1-D7, E-Q; then (1) full factorial of the top-1s of the six strongest families, (2) coordinate descent from the live stack and from 10 random stacks over all families, (3) 2,000 random joint stacks over the full grids, all EXACT; interaction table (which pairs duplicate each other — e.g. D1 vs D2 vs H push decay); then the MINIMAL rule set that keeps >=90% of the best joint stack's L6M and HOLD drawdown cut with the fewest rules (target 2-3 rules a human can read). Deliver that minimal set as the P7 fix: plain sentences, exact numbers, what it does to the worst-20 weeks and to the frozen trend week, v1.8 field list, 5 worked rows. Then repeat the minimal set on K7/M7/U7 unchanged. First joint page 2026-11-12 03:00Z, FINAL with DS3_WORKS 15:00Z.
+
+## Lead split (19:25Z)
+W-C: A, D1-D4, D6, D7 (+ page DS3_WORKS_C.md). W-B: B, D5 (DS3_WORKS_B.md). W-E (new): feature-table owner for E,F,G,H (+ shared P7 signal feature table /mnt/l2/l2vast/_th_works/p7_signal_features.parquet, one row per P7 signal taken or not; others add columns keyed by signal epoch) -> DS3_WORKS_E.md. W-I (new): I,J,K,L -> DS3_WORKS_I.md. W-M (new): M,N,O,P (engine mechanics: probe/confirm, side governor, flip, no-follow-through exit) -> DS3_WORKS_M.md. W-Q (new): Q ranker + the JOINT STAGE + minimal rule set -> DS3_WORKS_Q.md (first 03:00Z). W-J merges into DS3_WORKS.md and composes JN05.
+
+## ACCEPTANCE TEST (user, 2026-11-11 19:30Z) — "competent discretionary trader" test, reported for every finalist beside the numbers
+1. Replay the 10 worst P7 sessions of L6M and the 10 worst of the 3.5 years, entry by entry: print the sequence (time, side, lots, entry context, result) under the live rules and under the finalist. A finalist PASSES a session only if it never takes a 3rd consecutive same-side losing entry without NEW EVIDENCE (a new session extreme in the trade direction since the last failure, or an opposite-side signal in between), and its size on the 2nd attempt is not larger than on the 1st.
+2. Report "consecutive same-side losing entries per session": distribution (max, 95th pct, mean) live vs finalist, P7 Asia and all P7; and $ lost on the 3rd-and-later consecutive same-side losers, live vs finalist.
+3. The same replay on the 5 best trend sessions (incl. the frozen live week): the finalist must still take the re-entries that followed NEW EVIDENCE — show how many winners it kept.
+4. A finalist that improves drawdown but fails test 1 on more than 2 of the 20 worst sessions is NOT the P7 fix, whatever its score. State PASS/FAIL per finalist in plain words.
+(Lead: W-C builds the session-replay tool acceptance_p7.py under code/th_works_c/; W-Q applies it to every joint finalist and the minimal set; every family agent runs it on its own best cell before promotion to the joint.)

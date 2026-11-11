@@ -1,4 +1,4 @@
-# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-11T18:00:10Z; Shadow only, no PASS claims)
+# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-11T19:14:15Z; Shadow only, no PASS claims)
 
 Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. Section D is W-J: the reference rows (JN04RM vs LPB_BASE), the JN05 composition and the REFIT 2026-11-22 preview. Every number is exact-engine, live panel base (P7 day cap 8,400 + table 7,4,0,4,0,0 + P7 cut 40/5x/w5/p3), reference LPB_BASE, ROLLFIX1.
 
@@ -37,7 +37,7 @@ Plan once winners land. Candidate layers per family: dial layers from DS3_WORKS_
 Not yet available: JN05W composition, live-week replay, REFIT 2026-11-22 preview with JN05W. For reference the existing first-order REFIT dry run (DS3_JOINT_2.md C3) does not select the four JN04 layers on the 26-week training window.
 
 
-## A. Generalise the dials (W-A)
+## A. Generalise the dials (A)
 
 Source DS3_WORKS_A.md (mtime 2026-11-11T17:59:11Z UTC), included verbatim, read only:
 
@@ -140,7 +140,7 @@ Leave-one-out in rule mode on the live panel base (SZ-CDE, DS3_C2_REGIME.md sect
 
 
 
-## B. Regime-conditional exits (W-B)
+## B. Regime-conditional exits (B)
 
 Source DS3_WORKS_B.md (mtime 2026-11-11T17:34:29Z UTC), included verbatim, read only:
 
@@ -210,7 +210,7 @@ Cuts by book and kind (hold minus live, dollars): see section 0 item 4. P7 lines
 
 
 
-## C. P7 anatomy (W-C)
+## C. P7 anatomy (C)
 
 Source DS3_WORKS_C.md (mtime 2026-11-11T17:34:49Z UTC), included verbatim, read only:
 
@@ -681,3 +681,23 @@ Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/w
 | Asia x9/7 on asia not-with-trend | -3.7 | +459 | -7.9 | +351 | 7.5 | +357 | -17.6 | -505 |
 | Asia x9/7 on asia first | -4.8 | +924 | -3.4 | +452 | 14.0 | +671 | -23.1 | -513 |
 | Asia x9/7 on asia later | 0.2 | +1494 | -13.7 | +1882 | -26.6 | +277 | 4.2 | +127 |
+
+
+## E. P7 fix (W-E) (E)
+
+(DS3_WORKS_E.md has not landed yet at 2026-11-11T19:14:15Z)
+
+
+## I. (W-I) (I)
+
+(DS3_WORKS_I.md has not landed yet at 2026-11-11T19:14:15Z)
+
+
+## M. (W-M) (M)
+
+(DS3_WORKS_M.md has not landed yet at 2026-11-11T19:14:15Z)
+
+
+## Q. Ranker, joint stage, minimal rule set (W-Q) (Q)
+
+(DS3_WORKS_Q.md has not landed yet at 2026-11-11T19:14:15Z)
