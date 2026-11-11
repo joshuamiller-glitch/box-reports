@@ -1,4 +1,4 @@
-# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Wed Nov 11 08:37:01 PM UTC 2026)
+# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Wed Nov 11 09:20:08 PM UTC 2026)
 
 STATUS: Shadow only, post-hoc, no PASS claims (PASS/FAIL below is the trader acceptance test of the order, nothing more). Evidence table: DS3_NEAR_ZONE_TABLE.md (published 19:33Z, before any rule). Prereg NEAR_ZONE_PREREG.md (sha in DECISIONS.md). FIRST-ORDER scores on the LPB_BASE stored 1-s paths (43 months; L6M = 2026-05-12..10-30), slip 1.2 market, fees 4.84/lot, base = live panel rules as in LPB_BASE; exact rows in section 6. P7 is run at 12/7/7 lots (P7x, the users lots) and on the installed 7/4/4 table. Objective: give-back $ removed minus fills clipped $ per week; key = min(L6M, 43 months) net $/wk. Standing trader principle (19:45Z) applied: scorecard items a, b, e below, c and d (re-entry streaks) are untouched by exit-side rules in this first-order frame and are W-Qs tool to confirm.
 
@@ -6,16 +6,52 @@ STATUS: Shadow only, post-hoc, no PASS claims (PASS/FAIL below is the trader acc
 
 **Placebo / family null.** forward-only time-shift placebo (every cell fires as before but exits a random 10-300 s later, 12 reps); p_plc = share of reps with key >= the cell, p_fam = share of reps where the best cell of the same family reaches it (family g = top-150 combos only, p_fam optimistic there). With 12 reps the smallest p is 0.08: read p <= 0.10 as the floor.
 
+## Summary (plain sentences; FIRST-ORDER, exact pending)
+
+| book | strict trader-PASS rule (v1.7 line or v1.8 description) | net $/wk L6M (all fires) | removed / clipped $/wk L6M (zone) ; removed-clipped ; other saves | clipped fills/wk | trend weeks (5 best L6M) delta $ | live week delta $ (week total) | p_plc / p_fam | verdict |
+|---|---|---|---|---|---|---|---|---|
+| P7 at 12/7/7 lots | flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0 | 3,165 | 21,417 / 34,269 ; -12,852 ; 16,017 | 18.7 | -66,777 | -29,838 (103,596) | 0.00 / 1.00 | keeps all 5 best weeks positive; passes only by taking early (arm 0.7) - it clips fills |
+| P7 at 7/4/4 lots (installed) | flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0 | 1,831 | 12,401 / 19,848 ; -7,447 ; 9,278 | 18.7 | -34,383 | -17,199 (103,596) | 0.00 / 1.00 | keeps all 5 best weeks positive; passes only by taking early (arm 0.7) - it clips fills |
+| K7 | flow delta_mult>=2 arm=0.8 persist=1 dd>=0 | -776 | 6,916 / 7,692 ; -776 ; 0 | 25.0 | -12,612 | 2,172 (103,596) | 1.00 / 1.00 | keeps all 5 best weeks positive; passes only by taking early (arm 0.7) - it clips fills |
+| M7 | flow pulled_mult>=5 arm=0.7 persist=3 dd>=0 | 513 | 3,745 / 5,736 ; -1,991 ; 2,504 | 13.8 | -2,949 | -3,616 (103,596) | 0.17 / 1.00 | keeps all 5 best weeks positive; passes only by taking early (arm 0.7) - it clips fills |
+| U7 | flow pulled_mult>=5 arm=0.7 persist=5 dd>=0 | 152 | 3,489 / 5,334 ; -1,845 ; 1,997 | 5.6 | -25,433 | -785 (103,596) | 0.00 / 1.00 | keeps all 5 best weeks positive; passes only by a narrow rule |
+| H7 | rev arm=0.8 X=4 N=5 | 152 | 1,444 / 1,293 ; 152 ; 0 | 2.5 | -4,704 | -303 (103,596) | 0.17 / 0.42 | keeps all 5 best weeks positive; passes only by a narrow rule |
+| A7 | flow delta_mult>=2 arm=0.8 persist=3 dd>=0 | -446 | 1,140 / 1,585 ; -446 ; -0 | 5.7 | -6,590 | 2,597 (103,596) | 0.33 / 1.00 | keeps all 5 best weeks positive; passes only by a narrow rule |
+| O7 | flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2 | -17 | 137 / 155 ; -17 ; 0 | 0.3 | -1,078 | 0 (103,596) | 0.00 / 1.00 | keeps all 5 best weeks positive; passes only by a narrow rule |
+
+Reading: no rule family removes the give-backs without clipping fills. The strict trader test (nothing that reached 90% closes below 50%, nothing that reached 80% closes at or below breakeven) is only met by rules that fire early and often (arm 0.7); on P7 that removes about 50 L6M give-backs and clips about 450 fills, positive net in L6M only because of other saves (removed minus clipped is negative), and negative net in the oldest window, and for P7, K7, M7, A7 and O7 the family-null p is about 1 (a randomly delayed copy of the same rule family does as well), so those strict-pass finalists are NOT evidence of an edge, they are the price list; only the U7 and H7 combinations separate from the delay placebo (p_fam 0 and 0.4) and they are small books. The honest per-book answer is the first-order frontier in section tables: where net is positive and the stack cut is large (P7 ladders and flow rules), the cost shows in the five best trend weeks.
+
+## Exact status and processes
+
+Exact sets built (private nz_hooks for floor/ladder/rev/bank/work/zone; ptr_hooks grammar lines for flow and plain takes; fill models as above, exact market slip 1.2): 29 sets, 0 of 660 set-months DONE. Chain (pid 2173067, log /mnt/l2/l2vast/_nz/exact_chain.log) appends jobs to /mnt/l2/l2vast/_th_sz/exact_queue_6f_nz.txt only when MemAvail >= 62 GB (now 49 GB), L6M first, then HOLD, PRE, one set per job. Identity gate PTR_NZ_ID:202610 first. Manifest /mnt/l2/l2vast/_nz/exact_manifest.json. Page refresh loop pid 2179089 (every 4 h to 2026-11-12 12:00Z).
+
+**Definitions (all $ per WEEK of the window unless a sentence says "over the window"; L6M = 24 weeks).** Per trade, d = new P&L under the rule minus the trade P&L under live rules (same lots, fees, slip 1.2 on the rule exit). *net (all fires)* = sum of d over every trade the rule exits = the realised P&L change of the rule. *removed (zone)* = sum of d over fired trades that reached 80% of target and did NOT fill under live rules (the give-back saving; counted only inside the 80% zone). *clipped* = sum of (base - new) over fired trades that DID fill under live rules (fills the rule exited early, cost positive number). *other saves* = d over fired non-fill trades that never reached 80% (e.g. trades armed at 0.7 that later stopped out). Identity: net = removed - clipped + other saves. So removed - clipped can be negative while net is positive because of other saves, and the strict-pass early-take rules (arm 0.7) live on those other saves. In the plain sentences, "removed N give-backs worth $X and clipped M fills worth $Y" are totals OVER THE 24-WEEK WINDOW (zone non-fills / base fills), the per-week figures are those divided by 24.
+
+**Is removed - clipped positive on L6M for any rule?** Yes for many rules in the grid (zone-only give-back saving minus clipped fills): see the removed-clipped column; counts of cells with removed-clipped > 0 on L6M (of 1,231 per book): P7x 541, P7 549, K7 359, M7 648, U7 369, H7 430, A7 32, O7 57; with also positive 43-month net: P7x 456, P7 459, K7 5, M7 179, U7 22, H7 334, A7 5, O7 32. But NO strict trader-pass finalist has removed - clipped > 0 on L6M (P7 12/7/7 pass rule: +21,417 removed vs 34,269 clipped = -12,852/wk; its +3,165/wk net comes from other saves of about +16k/wk). Rules with removed-clipped > 0 are the ones that fail the trader test.
+
 ## P7 at 12/7/7 lots
 
-| row | rule | key $/wk | net L6M | removed L6M | clipped L6M | clipped fills/wk | GB/wk L6M before>after | RT/wk before>after | stack cut L6M/HOLD/PRE/X' % | p_plc | p_fam |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| REF stand-in | stand-in pct>=0.95 secs_fav>=5 take | 679 | 2,757 | 4,003 | 1,246 | 8.3 | 2.0 > 1.7 | 2.0 > 1.7 | 11.2/11.2/5.3/-2.1 | - | - |
-| best_all | flow pulled_against_mult>=20 arm=0.8 persist=1 dd>=0 | 1,986 | 2,669 | 20,675 | 18,006 | 13.1 | 2.0 > 1.1 | 2.0 > 0.2 | 11.2/-9.0/21.8/6.7 | 0.00 | 0.00 |
-| fam_a | ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 | 1,609 | 4,235 | 20,545 | 31,637 | 15.3 | 2.0 > 0.1 | 2.0 > 0.0 | 51.9/22.7/32.8/42.7 | 0.00 | 0.00 |
-| fam_b | rev arm=0.7 X=8 N=3 | 1,146 | 5,224 | 13,641 | 16,618 | 5.1 | 2.0 > 3.6 | 2.0 > 0.9 | 42.6/7.2/20.5/29.7 | 0.00 | 0.00 |
-| fam_e | stall arm=0.9 N=3 ticks=0 work=20s | 1,213 | 4,362 | 11,637 | 7,275 | 13.8 | 2.0 > 1.2 | 2.0 > 1.1 | 20.0/2.9/16.2/20.0 | 1.00 | 1.00 |
-| fam_g | ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 | 1,638 | 4,542 | 20,661 | 31,446 | 15.4 | 2.0 > 0.1 | 2.0 > 0.0 | 51.9/22.7/33.2/43.1 | 0.00 | 0.00 |
+| row | rule | key $/wk | net L6M (all fires) | removed (zone) L6M | clipped L6M | removed-clipped | other saves | clipped fills/wk | GB/wk L6M before>after | RT/wk before>after | stack cut L6M/HOLD/PRE/X' % | p_plc | p_fam |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF stand-in | stand-in pct>=0.95 secs_fav>=5 take | 679 | 2,757 | 4,003 | 1,246 | 2,757 | 0 | 8.3 | 2.0 > 1.7 | 2.0 > 1.7 | 11.2/11.2/5.3/-2.1 | - | - |
+| best_all | flow pulled_against_mult>=20 arm=0.8 persist=1 dd>=0 | 1,986 | 2,669 | 20,675 | 18,006 | 2,669 | 0 | 13.1 | 2.0 > 1.1 | 2.0 > 0.2 | 11.2/-9.0/21.8/6.7 | 0.00 | 0.00 |
+| best_pass | flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0 | 592 | 3,165 | 21,417 | 34,269 | -12,852 | 16,017 | 18.7 | 2.0 > 0.0 | 2.0 > 0.0 | 44.4/30.0/27.6/36.9 | 0.00 | 1.00 |
+| fam_a | ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 | 1,609 | 4,235 | 20,545 | 31,637 | -11,092 | 15,327 | 15.3 | 2.0 > 0.1 | 2.0 > 0.0 | 51.9/22.7/32.8/42.7 | 0.00 | 0.00 |
+| fam_b | rev arm=0.7 X=8 N=3 | 1,146 | 5,224 | 13,641 | 16,618 | -2,977 | 8,201 | 5.1 | 2.0 > 3.6 | 2.0 > 0.9 | 42.6/7.2/20.5/29.7 | 0.00 | 0.00 |
+| fam_e | stall arm=0.9 N=3 ticks=0 work=20s | 1,213 | 4,362 | 11,637 | 7,275 | 4,362 | -0 | 13.8 | 2.0 > 1.2 | 2.0 > 1.1 | 20.0/2.9/16.2/20.0 | 1.00 | 1.00 |
+| fam_g | ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 | 1,638 | 4,542 | 20,661 | 31,446 | -10,785 | 15,327 | 15.4 | 2.0 > 0.1 | 2.0 > 0.0 | 51.9/22.7/33.2/43.1 | 0.00 | 0.00 |
+
+**best_pass_market = flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0** (family c, v1.7: profit P7 * pct>=0.7 pulled_against_mult>=5 take win=5 persist=1   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 24); reached 80% closing at or below breakeven: 0 (live rules 50) -> PASS. Frozen live week: 0 / 0 (live rules 1 / 3) -> PASS. In plain words L6M: it removed 50 give-backs worth $523,186 and clipped 457 fills worth $837,138 (all in the 24-week window; per week 21,417 removed, 34,269 clipped). Live week: removed 3 worth $47,686, clipped 27 fills worth $77,524.
+- Scorecard (per week; before > after): L6M: full stops 0.6 > 0.5 ($-2,207 > $-1,292), give-backs 2.0 > 0.0 ($-10,194 > $0), round trips 2.0 > 0.0, fills clipped 18.7 ($34,269), net 3,165; HOLD: full stops 0.4 > 0.3 ($-1,543 > $-907), give-backs 2.0 > 0.0 ($-9,503 > $17), round trips 2.0 > 0.0, fills clipped 16.8 ($31,525), net 1,937; PRE: full stops 0.4 > 0.3 ($-1,438 > $-1,143), give-backs 1.5 > 0.0 ($-6,451 > $51), round trips 1.4 > 0.0, fills clipped 10.6 ($19,705), net 849; X': full stops 0.4 > 0.3 ($-1,393 > $-929), give-backs 0.8 > 0.0 ($-3,695 > $9), round trips 0.7 > 0.0, fills clipped 6.9 ($13,702), net -557
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 132,671 (-29,935), wk 202623: 96,586 (33,993), wk 202625: 87,393 (-12,277), wk 202624: 79,831 (-21,272), wk 202639: 77,688 (-37,287). Live week: this books Delta -29,838 on a live total of 103,596 -> week stays positive.
+
+**best_pass = flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0** (family c, v1.7: profit P7 * pct>=0.7 pulled_against_mult>=5 take win=5 persist=1   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 24); reached 80% closing at or below breakeven: 0 (live rules 50) -> PASS. Frozen live week: 0 / 0 (live rules 1 / 3) -> PASS. In plain words L6M: it removed 50 give-backs worth $523,186 and clipped 457 fills worth $837,138 (all in the 24-week window; per week 21,417 removed, 34,269 clipped). Live week: removed 3 worth $47,686, clipped 27 fills worth $77,524.
+- Scorecard (per week; before > after): L6M: full stops 0.6 > 0.5 ($-2,207 > $-1,292), give-backs 2.0 > 0.0 ($-10,194 > $0), round trips 2.0 > 0.0, fills clipped 18.7 ($34,269), net 3,165; HOLD: full stops 0.4 > 0.3 ($-1,543 > $-907), give-backs 2.0 > 0.0 ($-9,503 > $17), round trips 2.0 > 0.0, fills clipped 16.8 ($31,525), net 1,937; PRE: full stops 0.4 > 0.3 ($-1,438 > $-1,143), give-backs 1.5 > 0.0 ($-6,451 > $51), round trips 1.4 > 0.0, fills clipped 10.6 ($19,705), net 849; X': full stops 0.4 > 0.3 ($-1,393 > $-929), give-backs 0.8 > 0.0 ($-3,695 > $9), round trips 0.7 > 0.0, fills clipped 6.9 ($13,702), net -557
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 132,671 (-29,935), wk 202623: 96,586 (33,993), wk 202625: 87,393 (-12,277), wk 202624: 79,831 (-21,272), wk 202639: 77,688 (-37,287). Live week: this books Delta -29,838 on a live total of 103,596 -> week stays positive.
 
 **best_market = flow pulled_against_mult>=20 arm=0.8 persist=1 dd>=0** (family c, v1.7: profit P7 * pct>=0.8 pulled_against_mult>=20 take win=5 persist=1   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
 
@@ -29,37 +65,472 @@ STATUS: Shadow only, post-hoc, no PASS claims (PASS/FAIL below is the trader acc
 - Scorecard (per week; before > after): L6M: full stops 0.6 > 0.5 ($-2,207 > $-1,558), give-backs 2.0 > 1.1 ($-10,194 > $2,122), round trips 2.0 > 0.2, fills clipped 13.1 ($18,006), net 2,669; HOLD: full stops 0.4 > 0.3 ($-1,543 > $-1,035), give-backs 2.0 > 1.2 ($-9,503 > $2,385), round trips 2.0 > 0.2, fills clipped 11.6 ($16,732), net 1,787; PRE: full stops 0.4 > 0.4 ($-1,438 > $-1,204), give-backs 1.5 > 1.2 ($-6,451 > $2,007), round trips 1.4 > 0.2, fills clipped 5.6 ($8,742), net 3,237; X': full stops 0.4 > 0.4 ($-1,393 > $-1,393), give-backs 0.8 > 1.0 ($-3,695 > $1,001), round trips 0.7 > 0.2, fills clipped 1.7 ($3,929), net 697
 - Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 132,671 (-21,789), wk 202623: 96,586 (16,036), wk 202625: 87,393 (-5,680), wk 202624: 79,831 (-4,525), wk 202639: 77,688 (-18,125). Live week: this books Delta -32,760 on a live total of 103,596 -> week stays positive.
 
+## P7 at 7/4/4 lots (installed)
+
+| row | rule | key $/wk | net L6M (all fires) | removed (zone) L6M | clipped L6M | removed-clipped | other saves | clipped fills/wk | GB/wk L6M before>after | RT/wk before>after | stack cut L6M/HOLD/PRE/X' % | p_plc | p_fam |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF stand-in | stand-in pct>=0.95 secs_fav>=5 take | 400 | 1,605 | 2,312 | 707 | 1,605 | 0 | 8.3 | 2.0 > 1.7 | 2.0 > 1.7 | 10.6/3.6/6.2/-0.0 | - | - |
+| best_all | flow pulled_against_mult>=20 arm=0.8 persist=1 dd>=0 | 1,159 | 1,567 | 11,979 | 10,412 | 1,567 | 0 | 13.1 | 2.0 > 1.1 | 2.0 > 0.2 | 10.7/-15.8/11.7/5.7 | 0.00 | 0.00 |
+| best_pass | flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0 | 358 | 1,831 | 12,401 | 19,848 | -7,447 | 9,278 | 18.7 | 2.0 > 0.0 | 2.0 > 0.0 | 50.4/15.2/18.0/34.8 | 0.00 | 1.00 |
+| fam_a | ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 | 943 | 2,447 | 11,897 | 18,328 | -6,431 | 8,879 | 15.3 | 2.0 > 0.1 | 2.0 > 0.0 | 51.1/13.1/21.9/37.7 | 0.00 | 0.00 |
+| fam_b | rev arm=0.7 X=8 N=3 | 667 | 3,013 | 7,892 | 9,625 | -1,734 | 4,747 | 5.1 | 2.0 > 3.6 | 2.0 > 0.9 | 49.0/9.1/16.7/26.3 | 0.00 | 0.00 |
+| fam_e | stall arm=0.9 N=3 ticks=0 work=20s | 715 | 2,551 | 6,751 | 4,200 | 2,551 | 0 | 13.8 | 2.0 > 1.2 | 2.0 > 1.1 | 22.3/-6.4/8.8/17.7 | 1.00 | 1.00 |
+| fam_g | ladder m1=0.7 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 + zone arm=.8 N=240 floor 0.8 | 959 | 2,628 | 11,964 | 18,215 | -6,251 | 8,879 | 15.4 | 2.0 > 0.1 | 2.0 > 0.0 | 52.6/13.2/21.9/38.0 | 0.00 | 0.00 |
+
+**best_pass_market = flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0** (family c, v1.7: profit P7 * pct>=0.7 pulled_against_mult>=5 take win=5 persist=1   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 24); reached 80% closing at or below breakeven: 0 (live rules 50) -> PASS. Frozen live week: 0 / 0 (live rules 1 / 3) -> PASS. In plain words L6M: it removed 50 give-backs worth $302,940 and clipped 457 fills worth $484,859 (all in the 24-week window; per week 12,401 removed, 19,848 clipped). Live week: removed 3 worth $27,817, clipped 27 fills worth $45,016.
+- Scorecard (per week; before > after): L6M: full stops 0.6 > 0.5 ($-1,261 > $-738), give-backs 2.0 > 0.0 ($-5,899 > $0), round trips 2.0 > 0.0, fills clipped 18.7 ($19,848), net 1,831; HOLD: full stops 0.4 > 0.3 ($-882 > $-518), give-backs 2.0 > 0.0 ($-5,496 > $10), round trips 2.0 > 0.0, fills clipped 16.8 ($18,244), net 1,134; PRE: full stops 0.4 > 0.3 ($-828 > $-658), give-backs 1.5 > 0.0 ($-3,728 > $30), round trips 1.4 > 0.0, fills clipped 10.6 ($11,385), net 504; X': full stops 0.4 > 0.3 ($-805 > $-535), give-backs 0.8 > 0.0 ($-2,141 > $5), round trips 0.7 > 0.0, fills clipped 6.9 ($7,904), net -293
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-17,288), wk 202623: 73,836 (19,886), wk 202625: 59,099 (-7,077), wk 202639: 57,178 (-21,582), wk 202633: 52,499 (-8,322). Live week: this books Delta -17,199 on a live total of 103,596 -> week stays positive.
+
+**best_pass = flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0** (family c, v1.7: profit P7 * pct>=0.7 pulled_against_mult>=5 take win=5 persist=1   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 24); reached 80% closing at or below breakeven: 0 (live rules 50) -> PASS. Frozen live week: 0 / 0 (live rules 1 / 3) -> PASS. In plain words L6M: it removed 50 give-backs worth $302,940 and clipped 457 fills worth $484,859 (all in the 24-week window; per week 12,401 removed, 19,848 clipped). Live week: removed 3 worth $27,817, clipped 27 fills worth $45,016.
+- Scorecard (per week; before > after): L6M: full stops 0.6 > 0.5 ($-1,261 > $-738), give-backs 2.0 > 0.0 ($-5,899 > $0), round trips 2.0 > 0.0, fills clipped 18.7 ($19,848), net 1,831; HOLD: full stops 0.4 > 0.3 ($-882 > $-518), give-backs 2.0 > 0.0 ($-5,496 > $10), round trips 2.0 > 0.0, fills clipped 16.8 ($18,244), net 1,134; PRE: full stops 0.4 > 0.3 ($-828 > $-658), give-backs 1.5 > 0.0 ($-3,728 > $30), round trips 1.4 > 0.0, fills clipped 10.6 ($11,385), net 504; X': full stops 0.4 > 0.3 ($-805 > $-535), give-backs 0.8 > 0.0 ($-2,141 > $5), round trips 0.7 > 0.0, fills clipped 6.9 ($7,904), net -293
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-17,288), wk 202623: 73,836 (19,886), wk 202625: 59,099 (-7,077), wk 202639: 57,178 (-21,582), wk 202633: 52,499 (-8,322). Live week: this books Delta -17,199 on a live total of 103,596 -> week stays positive.
+
+**best_market = flow pulled_against_mult>=20 arm=0.8 persist=1 dd>=0** (family c, v1.7: profit P7 * pct>=0.8 pulled_against_mult>=20 take win=5 persist=1   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 22 (live rules 24); reached 80% closing at or below breakeven: 5 (live rules 50) -> FAIL. Frozen live week: 4 / 1 (live rules 1 / 3) -> FAIL. In plain words L6M: it removed 49 give-backs worth $292,637 and clipped 321 fills worth $254,354 (all in the 24-week window; per week 11,979 removed, 10,412 clipped). Live week: removed 3 worth $19,319, clipped 19 fills worth $38,305.
+- Scorecard (per week; before > after): L6M: full stops 0.6 > 0.5 ($-1,261 > $-890), give-backs 2.0 > 1.1 ($-5,899 > $1,231), round trips 2.0 > 0.2, fills clipped 13.1 ($10,412), net 1,567; HOLD: full stops 0.4 > 0.3 ($-882 > $-591), give-backs 2.0 > 1.2 ($-5,496 > $1,382), round trips 2.0 > 0.2, fills clipped 11.6 ($9,672), net 1,049; PRE: full stops 0.4 > 0.4 ($-828 > $-693), give-backs 1.5 > 1.2 ($-3,728 > $1,160), round trips 1.4 > 0.2, fills clipped 5.6 ($5,042), net 1,882; X': full stops 0.4 > 0.4 ($-805 > $-805), give-backs 0.8 > 1.0 ($-2,141 > $579), round trips 0.7 > 0.2, fills clipped 1.7 ($2,265), net 415
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-12,644), wk 202623: 73,836 (9,417), wk 202625: 59,099 (-3,302), wk 202639: 57,178 (-10,462), wk 202633: 52,499 (2,446). Live week: this books Delta -18,986 on a live total of 103,596 -> week stays positive.
+
+**best_all = flow pulled_against_mult>=20 arm=0.8 persist=1 dd>=0** (family c, v1.7: profit P7 * pct>=0.8 pulled_against_mult>=20 take win=5 persist=1   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 22 (live rules 24); reached 80% closing at or below breakeven: 5 (live rules 50) -> FAIL. Frozen live week: 4 / 1 (live rules 1 / 3) -> FAIL. In plain words L6M: it removed 49 give-backs worth $292,637 and clipped 321 fills worth $254,354 (all in the 24-week window; per week 11,979 removed, 10,412 clipped). Live week: removed 3 worth $19,319, clipped 19 fills worth $38,305.
+- Scorecard (per week; before > after): L6M: full stops 0.6 > 0.5 ($-1,261 > $-890), give-backs 2.0 > 1.1 ($-5,899 > $1,231), round trips 2.0 > 0.2, fills clipped 13.1 ($10,412), net 1,567; HOLD: full stops 0.4 > 0.3 ($-882 > $-591), give-backs 2.0 > 1.2 ($-5,496 > $1,382), round trips 2.0 > 0.2, fills clipped 11.6 ($9,672), net 1,049; PRE: full stops 0.4 > 0.4 ($-828 > $-693), give-backs 1.5 > 1.2 ($-3,728 > $1,160), round trips 1.4 > 0.2, fills clipped 5.6 ($5,042), net 1,882; X': full stops 0.4 > 0.4 ($-805 > $-805), give-backs 0.8 > 1.0 ($-2,141 > $579), round trips 0.7 > 0.2, fills clipped 1.7 ($2,265), net 415
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-12,644), wk 202623: 73,836 (9,417), wk 202625: 59,099 (-3,302), wk 202639: 57,178 (-10,462), wk 202633: 52,499 (2,446). Live week: this books Delta -18,986 on a live total of 103,596 -> week stays positive.
+
+## K7
+
+| row | rule | key $/wk | net L6M (all fires) | removed (zone) L6M | clipped L6M | removed-clipped | other saves | clipped fills/wk | GB/wk L6M before>after | RT/wk before>after | stack cut L6M/HOLD/PRE/X' % | p_plc | p_fam |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF stand-in | stand-in pct>=0.95 secs_fav>=5 take | -410 | -66 | 1,312 | 1,378 | -66 | 0 | 10.4 | 3.2 > 2.6 | 3.2 > 2.6 | -6.0/-3.8/-3.5/-2.8 | - | - |
+| best_all | flow pulled_against_mult>=50 arm=0.9 persist=5 dd>=6 | 5 | 30 | 103 | 73 | 30 | 0 | 0.1 | 3.2 > 3.3 | 3.2 > 3.2 | 0.0/0.0/0.0/0.0 | 1.00 | 1.00 |
+| best_pass | flow delta_mult>=2 arm=0.8 persist=1 dd>=0 | -1,113 | -776 | 6,916 | 7,692 | -776 | 0 | 25.0 | 3.2 > 0.0 | 3.2 > 0.0 | 2.3/4.3/-1.0/0.2 | 1.00 | 1.00 |
+
+**best_pass_market = flow delta_mult>=2 arm=0.8 persist=1 dd>=0** (family c, v1.7: profit K7 * pct>=0.8 delta_mult>=2 take win=5 persist=1   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 36); reached 80% closing at or below breakeven: 0 (live rules 78) -> PASS. Frozen live week: 0 / 0 (live rules 2 / 5) -> PASS. In plain words L6M: it removed 80 give-backs worth $168,945 and clipped 610 fills worth $187,912 (all in the 24-week window; per week 6,916 removed, 7,692 clipped). Live week: removed 6 worth $9,299, clipped 22 fills worth $7,126.
+- Scorecard (per week; before > after): L6M: full stops 7.5 > 6.6 ($-10,783 > $-9,273), give-backs 3.2 > 0.0 ($-3,334 > $0), round trips 3.2 > 0.0, fills clipped 25.0 ($7,692), net -776; HOLD: full stops 6.8 > 5.9 ($-9,662 > $-8,392), give-backs 2.6 > 0.1 ($-2,681 > $28), round trips 2.6 > 0.0, fills clipped 21.8 ($6,840), net -1,280; PRE: full stops 5.1 > 4.4 ($-7,114 > $-6,205), give-backs 1.6 > 0.0 ($-1,409 > $18), round trips 1.5 > 0.0, fills clipped 14.5 ($4,446), net -1,282; X': full stops 4.5 > 4.0 ($-6,341 > $-5,578), give-backs 1.0 > 0.0 ($-918 > $18), round trips 0.8 > 0.0, fills clipped 8.9 ($2,663), net -600
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (4,312), wk 202623: 73,836 (-3,916), wk 202625: 59,099 (-1,626), wk 202639: 57,178 (-7,414), wk 202633: 52,499 (-3,968). Live week: this books Delta 2,172 on a live total of 103,596 -> week stays positive.
+
+**best_pass = flow delta_mult>=2 arm=0.8 persist=1 dd>=0** (family c, v1.7: profit K7 * pct>=0.8 delta_mult>=2 take win=5 persist=1   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 36); reached 80% closing at or below breakeven: 0 (live rules 78) -> PASS. Frozen live week: 0 / 0 (live rules 2 / 5) -> PASS. In plain words L6M: it removed 80 give-backs worth $168,945 and clipped 610 fills worth $187,912 (all in the 24-week window; per week 6,916 removed, 7,692 clipped). Live week: removed 6 worth $9,299, clipped 22 fills worth $7,126.
+- Scorecard (per week; before > after): L6M: full stops 7.5 > 6.6 ($-10,783 > $-9,273), give-backs 3.2 > 0.0 ($-3,334 > $0), round trips 3.2 > 0.0, fills clipped 25.0 ($7,692), net -776; HOLD: full stops 6.8 > 5.9 ($-9,662 > $-8,392), give-backs 2.6 > 0.1 ($-2,681 > $28), round trips 2.6 > 0.0, fills clipped 21.8 ($6,840), net -1,280; PRE: full stops 5.1 > 4.4 ($-7,114 > $-6,205), give-backs 1.6 > 0.0 ($-1,409 > $18), round trips 1.5 > 0.0, fills clipped 14.5 ($4,446), net -1,282; X': full stops 4.5 > 4.0 ($-6,341 > $-5,578), give-backs 1.0 > 0.0 ($-918 > $18), round trips 0.8 > 0.0, fills clipped 8.9 ($2,663), net -600
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (4,312), wk 202623: 73,836 (-3,916), wk 202625: 59,099 (-1,626), wk 202639: 57,178 (-7,414), wk 202633: 52,499 (-3,968). Live week: this books Delta 2,172 on a live total of 103,596 -> week stays positive.
+
+**best_market = flow pulled_against_mult>=50 arm=0.9 persist=5 dd>=6** (family c, v1.7: profit K7 * pct>=0.9 pulled_against_mult>=50 dd>=6 take win=5 persist=5   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 38 (live rules 36); reached 80% closing at or below breakeven: 77 (live rules 78) -> FAIL. Frozen live week: 2 / 5 (live rules 2 / 5) -> FAIL. In plain words L6M: it removed 1 give-backs worth $2,515 and clipped 2 fills worth $1,793 (all in the 24-week window; per week 103 removed, 73 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 7.5 > 7.5 ($-10,783 > $-10,688), give-backs 3.2 > 3.3 ($-3,334 > $-3,206), round trips 3.2 > 3.2, fills clipped 0.1 ($73), net 30; HOLD: full stops 6.8 > 6.7 ($-9,662 > $-9,616), give-backs 2.6 > 2.7 ($-2,681 > $-2,619), round trips 2.6 > 2.6, fills clipped 0.0 ($35), net 14; PRE: full stops 5.1 > 5.1 ($-7,114 > $-7,114), give-backs 1.6 > 1.6 ($-1,409 > $-1,397), round trips 1.5 > 1.5, fills clipped 0.0 ($16), net 7; X': full stops 4.5 > 4.5 ($-6,341 > $-6,341), give-backs 1.0 > 1.0 ($-918 > $-918), round trips 0.8 > 0.8, fills clipped 0.0 ($-0), net 0
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (0), wk 202623: 73,836 (0), wk 202625: 59,099 (0), wk 202639: 57,178 (0), wk 202633: 52,499 (0). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+**best_all = flow pulled_against_mult>=50 arm=0.9 persist=5 dd>=6** (family c, v1.7: profit K7 * pct>=0.9 pulled_against_mult>=50 dd>=6 take win=5 persist=5   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 38 (live rules 36); reached 80% closing at or below breakeven: 77 (live rules 78) -> FAIL. Frozen live week: 2 / 5 (live rules 2 / 5) -> FAIL. In plain words L6M: it removed 1 give-backs worth $2,515 and clipped 2 fills worth $1,793 (all in the 24-week window; per week 103 removed, 73 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 7.5 > 7.5 ($-10,783 > $-10,688), give-backs 3.2 > 3.3 ($-3,334 > $-3,206), round trips 3.2 > 3.2, fills clipped 0.1 ($73), net 30; HOLD: full stops 6.8 > 6.7 ($-9,662 > $-9,616), give-backs 2.6 > 2.7 ($-2,681 > $-2,619), round trips 2.6 > 2.6, fills clipped 0.0 ($35), net 14; PRE: full stops 5.1 > 5.1 ($-7,114 > $-7,114), give-backs 1.6 > 1.6 ($-1,409 > $-1,397), round trips 1.5 > 1.5, fills clipped 0.0 ($16), net 7; X': full stops 4.5 > 4.5 ($-6,341 > $-6,341), give-backs 1.0 > 1.0 ($-918 > $-918), round trips 0.8 > 0.8, fills clipped 0.0 ($-0), net 0
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (0), wk 202623: 73,836 (0), wk 202625: 59,099 (0), wk 202639: 57,178 (0), wk 202633: 52,499 (0). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+## M7
+
+| row | rule | key $/wk | net L6M (all fires) | removed (zone) L6M | clipped L6M | removed-clipped | other saves | clipped fills/wk | GB/wk L6M before>after | RT/wk before>after | stack cut L6M/HOLD/PRE/X' % | p_plc | p_fam |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF stand-in | stand-in pct>=0.95 secs_fav>=5 take | -134 | 354 | 1,050 | 695 | 354 | 0 | 4.5 | 1.9 > 1.5 | 1.9 > 1.5 | -1.1/0.1/-2.3/-4.5 | - | - |
+| best_all | ladder m1=0.7 f1=0.4 | .9 f2=0.7 | .95 f3=0.7 mode=1 + bank arm=0.9 F=0.33 lim lt=1 | floor 0.6 | 137 | 570 | 1,845 | 1,275 | 570 | 0 | 2.9 | 1.9 > 1.1 | 1.9 > 1.0 | 5.2/2.5/-5.1/-4.4 | 0.00 | 0.00 |
+| best_market | flow pulled_against_mult>=20 arm=0.9 persist=5 dd>=2 | 93 | 606 | 1,390 | 784 | 606 | -0 | 1.4 | 1.9 > 2.0 | 1.9 > 1.2 | 4.2/1.7/-2.2/-2.5 | 0.58 | 0.75 |
+| best_pass | flow pulled_mult>=5 arm=0.7 persist=3 dd>=0 | -371 | 513 | 3,745 | 5,736 | -1,991 | 2,504 | 13.8 | 1.9 > 0.0 | 1.9 > 0.0 | 10.5/2.2/-11.7/-12.9 | 0.17 | 1.00 |
+| fam_a | ladder m1=0.7 f1=0.4 | .9 f2=0.7 | .95 f3=0.7 mode=1 | 23 | 795 | 3,186 | 4,372 | -1,186 | 1,981 | 6.0 | 1.9 > 5.2 | 1.9 > 0.0 | 9.9/7.8/-6.0/-2.6 | 0.00 | 0.00 |
+| fam_b | rev arm=0.9 X=8 N=30 | 51 | 419 | 1,993 | 1,574 | 419 | -0 | 4.5 | 1.9 > 1.1 | 1.9 > 1.0 | 5.2/1.5/-6.9/-6.1 | 0.25 | 0.67 |
+| fam_d | bank arm=0.9 F=0.33 mkt lt=1 | floor 0.6 | 68 | 379 | 1,668 | 1,289 | 379 | 0 | 2.2 | 1.9 > 1.2 | 1.9 > 1.0 | 3.6/3.0/-6.8/-5.2 | 0.42 | 0.83 |
+
+**best_pass_market = flow pulled_mult>=5 arm=0.7 persist=3 dd>=0** (family c, v1.7: profit M7 * pct>=0.7 pulled_mult>=5 take win=5 persist=3   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 23); reached 80% closing at or below breakeven: 0 (live rules 47) -> PASS. Frozen live week: 0 / 0 (live rules 2 / 2) -> PASS. In plain words L6M: it removed 47 give-backs worth $91,482 and clipped 337 fills worth $140,130 (all in the 24-week window; per week 3,745 removed, 5,736 clipped). Live week: removed 3 worth $2,912, clipped 13 fills worth $6,528.
+- Scorecard (per week; before > after): L6M: full stops 1.2 > 0.9 ($-1,555 > $-1,035), give-backs 1.9 > 0.0 ($-1,841 > $0), round trips 1.9 > 0.0, fills clipped 13.8 ($5,736), net 513; HOLD: full stops 1.1 > 0.8 ($-1,469 > $-964), give-backs 1.7 > 0.0 ($-1,667 > $34), round trips 1.7 > 0.0, fills clipped 12.6 ($5,391), net 505; PRE: full stops 1.4 > 1.0 ($-1,923 > $-1,470), give-backs 1.0 > 0.1 ($-928 > $42), round trips 1.0 > 0.0, fills clipped 8.9 ($3,879), net -843; X': full stops 1.8 > 1.3 ($-2,506 > $-1,759), give-backs 0.8 > 0.0 ($-757 > $9), round trips 0.7 > 0.0, fills clipped 6.2 ($2,747), net -114
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-2,385), wk 202623: 73,836 (3,952), wk 202625: 59,099 (-866), wk 202639: 57,178 (-2,311), wk 202633: 52,499 (-1,340). Live week: this books Delta -3,616 on a live total of 103,596 -> week stays positive.
+
+**best_pass = flow pulled_mult>=5 arm=0.7 persist=3 dd>=0** (family c, v1.7: profit M7 * pct>=0.7 pulled_mult>=5 take win=5 persist=3   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 23); reached 80% closing at or below breakeven: 0 (live rules 47) -> PASS. Frozen live week: 0 / 0 (live rules 2 / 2) -> PASS. In plain words L6M: it removed 47 give-backs worth $91,482 and clipped 337 fills worth $140,130 (all in the 24-week window; per week 3,745 removed, 5,736 clipped). Live week: removed 3 worth $2,912, clipped 13 fills worth $6,528.
+- Scorecard (per week; before > after): L6M: full stops 1.2 > 0.9 ($-1,555 > $-1,035), give-backs 1.9 > 0.0 ($-1,841 > $0), round trips 1.9 > 0.0, fills clipped 13.8 ($5,736), net 513; HOLD: full stops 1.1 > 0.8 ($-1,469 > $-964), give-backs 1.7 > 0.0 ($-1,667 > $34), round trips 1.7 > 0.0, fills clipped 12.6 ($5,391), net 505; PRE: full stops 1.4 > 1.0 ($-1,923 > $-1,470), give-backs 1.0 > 0.1 ($-928 > $42), round trips 1.0 > 0.0, fills clipped 8.9 ($3,879), net -843; X': full stops 1.8 > 1.3 ($-2,506 > $-1,759), give-backs 0.8 > 0.0 ($-757 > $9), round trips 0.7 > 0.0, fills clipped 6.2 ($2,747), net -114
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-2,385), wk 202623: 73,836 (3,952), wk 202625: 59,099 (-866), wk 202639: 57,178 (-2,311), wk 202633: 52,499 (-1,340). Live week: this books Delta -3,616 on a live total of 103,596 -> week stays positive.
+
+**best_market = flow pulled_against_mult>=20 arm=0.9 persist=5 dd>=2** (family c, v1.7: profit M7 * pct>=0.9 pulled_against_mult>=20 dd>=2 take win=5 persist=5   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 25 (live rules 23); reached 80% closing at or below breakeven: 29 (live rules 47) -> FAIL. Frozen live week: 2 / 0 (live rules 2 / 2) -> FAIL. In plain words L6M: it removed 21 give-backs worth $33,958 and clipped 35 fills worth $19,151 (all in the 24-week window; per week 1,390 removed, 784 clipped). Live week: removed 2 worth $2,375, clipped 2 fills worth $1,155.
+- Scorecard (per week; before > after): L6M: full stops 1.2 > 1.2 ($-1,555 > $-1,555), give-backs 1.9 > 2.0 ($-1,841 > $-630), round trips 1.9 > 1.2, fills clipped 1.4 ($784), net 606; HOLD: full stops 1.1 > 1.1 ($-1,469 > $-1,420), give-backs 1.7 > 1.9 ($-1,667 > $-602), round trips 1.7 > 1.1, fills clipped 1.3 ($757), net 434; PRE: full stops 1.4 > 1.4 ($-1,923 > $-1,905), give-backs 1.0 > 1.2 ($-928 > $-530), round trips 1.0 > 0.8, fills clipped 0.7 ($452), net -92; X': full stops 1.8 > 1.7 ($-2,506 > $-2,424), give-backs 0.8 > 0.9 ($-757 > $-547), round trips 0.7 > 0.6, fills clipped 0.2 ($133), net 39
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (1,439), wk 202623: 73,836 (4,643), wk 202625: 59,099 (643), wk 202639: 57,178 (-743), wk 202633: 52,499 (-463). Live week: this books Delta 1,219 on a live total of 103,596 -> week stays positive.
+
+**best_all = ladder m1=0.7 f1=0.4 | .9 f2=0.7 | .95 f3=0.7 mode=1 + bank arm=0.9 F=0.33 lim lt=1 | floor 0.6** (family g, v1.7: not expressible; v1.8 fields: `mfe_pct` arm (running max favourable excursion as a fraction of target, not the current pct) + floor ladder action `floor m1:f1,m2:f2,m3:f3 [stoplimit]`; combination of the above fields (OR of lines; first to fire exits))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 2 (live rules 23); reached 80% closing at or below breakeven: 24 (live rules 47) -> FAIL. Frozen live week: 0 / 0 (live rules 2 / 2) -> PASS. In plain words L6M: it removed 23 give-backs worth $45,077 and clipped 72 fills worth $31,156 (all in the 24-week window; per week 1,845 removed, 1,275 clipped). Live week: removed 2 worth $3,128, clipped 2 fills worth $836.
+- Scorecard (per week; before > after): L6M: full stops 1.2 > 1.2 ($-1,555 > $-1,506), give-backs 1.9 > 1.1 ($-1,841 > $-874), round trips 1.9 > 1.0, fills clipped 2.9 ($1,275), net 570; HOLD: full stops 1.1 > 1.0 ($-1,469 > $-1,350), give-backs 1.7 > 0.9 ($-1,667 > $-750), round trips 1.7 > 0.8, fills clipped 2.7 ($1,202), net 540; PRE: full stops 1.4 > 1.3 ($-1,923 > $-1,858), give-backs 1.0 > 0.6 ($-928 > $-507), round trips 1.0 > 0.6, fills clipped 2.0 ($923), net -99; X': full stops 1.8 > 1.7 ($-2,506 > $-2,315), give-backs 0.8 > 0.5 ($-757 > $-343), round trips 0.7 > 0.4, fills clipped 1.2 ($520), net 222
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (1,571), wk 202623: 73,836 (4,768), wk 202625: 59,099 (-474), wk 202639: 57,178 (-839), wk 202633: 52,499 (-737). Live week: this books Delta 2,291 on a live total of 103,596 -> week stays positive.
+
+## U7
+
+| row | rule | key $/wk | net L6M (all fires) | removed (zone) L6M | clipped L6M | removed-clipped | other saves | clipped fills/wk | GB/wk L6M before>after | RT/wk before>after | stack cut L6M/HOLD/PRE/X' % | p_plc | p_fam |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF stand-in | stand-in pct>=0.95 secs_fav>=5 take | -362 | -314 | 372 | 686 | -314 | 0 | 2.3 | 0.7 > 0.6 | 0.7 > 0.6 | -3.7/-1.6/-1.5/3.2 | - | - |
+| best_all | flow pulled_against_mult>=20 arm=0.7 persist=5 dd>=6 | 158 | 1,583 | 2,561 | 2,129 | 432 | 1,151 | 1.4 | 0.7 > 1.1 | 0.7 > 0.1 | 15.0/-3.8/2.7/-8.3 | 0.92 | 0.92 |
+| best_pass | ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.7 X=8 N=3 + zone arm=.8 N=480 floor 0.5 | 110 | 748 | 3,325 | 4,569 | -1,244 | 1,992 | 4.4 | 0.7 > 0.0 | 0.7 > 0.0 | 15.5/-7.1/16.0/0.5 | 0.00 | 0.00 |
+| best_pass_market | flow pulled_mult>=5 arm=0.7 persist=5 dd>=0 | -63 | 152 | 3,489 | 5,334 | -1,845 | 1,997 | 5.6 | 0.7 > 0.0 | 0.7 > 0.0 | 15.4/-2.6/16.3/-2.0 | 0.00 | 1.00 |
+| fam_a | ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 | 98 | 746 | 3,317 | 4,563 | -1,245 | 1,992 | 4.4 | 0.7 > 0.0 | 0.7 > 0.0 | 15.5/-7.1/15.8/0.4 | 0.00 | 0.00 |
+| fam_b | rev arm=0.7 X=15 N=3 | 73 | 294 | 854 | 640 | 214 | 79 | 0.2 | 0.7 > 0.8 | 0.7 > 0.6 | -5.2/-3.7/-0.5/3.3 | 0.25 | 0.75 |
+| fam_g | ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.7 X=8 N=3 | 110 | 748 | 3,325 | 4,569 | -1,244 | 1,992 | 4.4 | 0.7 > 0.0 | 0.7 > 0.0 | 15.5/-7.1/16.0/0.5 | 0.00 | 0.00 |
+
+**best_pass_market = flow pulled_mult>=5 arm=0.7 persist=5 dd>=0** (family c, v1.7: profit U7 * pct>=0.7 pulled_mult>=5 take win=5 persist=5   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 4); reached 80% closing at or below breakeven: 0 (live rules 16) -> PASS. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 16 give-backs worth $85,231 and clipped 137 fills worth $130,297 (all in the 24-week window; per week 3,489 removed, 5,334 clipped). Live week: removed 0 worth $0, clipped 2 fills worth $785.
+- Scorecard (per week; before > after): L6M: full stops 2.5 > 1.8 ($-7,644 > $-5,434), give-backs 0.7 > 0.0 ($-1,881 > $0), round trips 0.7 > 0.0, fills clipped 5.6 ($5,334), net 152; HOLD: full stops 2.5 > 1.7 ($-7,473 > $-5,293), give-backs 0.6 > 0.0 ($-1,619 > $35), round trips 0.6 > 0.0, fills clipped 4.8 ($4,542), net 230; PRE: full stops 1.6 > 1.1 ($-5,194 > $-3,543), give-backs 0.3 > 0.0 ($-912 > $22), round trips 0.3 > 0.0, fills clipped 3.4 ($3,107), net 27; X': full stops 1.2 > 0.9 ($-3,971 > $-2,841), give-backs 0.2 > 0.0 ($-274 > $54), round trips 0.1 > 0.0, fills clipped 2.4 ($2,229), net -119
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-6,601), wk 202623: 73,836 (-7,568), wk 202625: 59,099 (-5,743), wk 202639: 57,178 (-3,642), wk 202633: 52,499 (-1,880). Live week: this books Delta -785 on a live total of 103,596 -> week stays positive.
+
+**best_pass = ladder m1=0.7 f1=0.65 | .9 f2=0.8 | .95 f3=0.8 mode=1 + rev arm=0.7 X=8 N=3 + zone arm=.8 N=480 floor 0.5** (family g, v1.7: not expressible; v1.8 fields: `mfe_pct` arm (running max favourable excursion as a fraction of target, not the current pct) + floor ladder action `floor m1:f1,m2:f2,m3:f3 [stoplimit]`; combination of the above fields (OR of lines; first to fire exits))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 4); reached 80% closing at or below breakeven: 0 (live rules 16) -> PASS. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 16 give-backs worth $81,236 and clipped 108 fills worth $111,624 (all in the 24-week window; per week 3,325 removed, 4,569 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 2.5 > 1.8 ($-7,644 > $-5,434), give-backs 0.7 > 0.0 ($-1,881 > $0), round trips 0.7 > 0.0, fills clipped 4.4 ($4,569), net 748; HOLD: full stops 2.5 > 1.7 ($-7,473 > $-5,293), give-backs 0.6 > 0.1 ($-1,619 > $71), round trips 0.6 > 0.0, fills clipped 3.9 ($4,129), net 485; PRE: full stops 1.6 > 1.1 ($-5,194 > $-3,543), give-backs 0.3 > 0.0 ($-912 > $14), round trips 0.3 > 0.0, fills clipped 2.9 ($2,842), net 230; X': full stops 1.2 > 0.9 ($-3,971 > $-2,841), give-backs 0.2 > 0.0 ($-274 > $24), round trips 0.1 > 0.0, fills clipped 2.2 ($2,181), net -66
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-4,360), wk 202623: 73,836 (-7,216), wk 202625: 59,099 (-2,991), wk 202639: 57,178 (-3,907), wk 202633: 52,499 (-452). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+**best_market = flow pulled_against_mult>=20 arm=0.7 persist=5 dd>=6** (family c, v1.7: profit U7 * pct>=0.7 pulled_against_mult>=20 dd>=6 take win=5 persist=5   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 17 (live rules 4); reached 80% closing at or below breakeven: 3 (live rules 16) -> FAIL. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 16 give-backs worth $62,556 and clipped 33 fills worth $52,014 (all in the 24-week window; per week 2,561 removed, 2,129 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 2.5 > 1.8 ($-7,644 > $-5,434), give-backs 0.7 > 1.1 ($-1,881 > $793), round trips 0.7 > 0.1, fills clipped 1.4 ($2,129), net 1,583; HOLD: full stops 2.5 > 1.8 ($-7,473 > $-5,412), give-backs 0.6 > 1.0 ($-1,619 > $690), round trips 0.6 > 0.1, fills clipped 1.2 ($1,996), net 1,064; PRE: full stops 1.6 > 1.3 ($-5,194 > $-4,139), give-backs 0.3 > 0.7 ($-912 > $220), round trips 0.3 > 0.2, fills clipped 0.9 ($1,548), net -95; X': full stops 1.2 > 1.1 ($-3,971 > $-3,464), give-backs 0.2 > 0.4 ($-274 > $16), round trips 0.1 > 0.1, fills clipped 0.4 ($655), net -343
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (0), wk 202623: 73,836 (-1,381), wk 202625: 59,099 (0), wk 202639: 57,178 (0), wk 202633: 52,499 (1,532). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+**best_all = flow pulled_against_mult>=20 arm=0.7 persist=5 dd>=6** (family c, v1.7: profit U7 * pct>=0.7 pulled_against_mult>=20 dd>=6 take win=5 persist=5   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 17 (live rules 4); reached 80% closing at or below breakeven: 3 (live rules 16) -> FAIL. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 16 give-backs worth $62,556 and clipped 33 fills worth $52,014 (all in the 24-week window; per week 2,561 removed, 2,129 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 2.5 > 1.8 ($-7,644 > $-5,434), give-backs 0.7 > 1.1 ($-1,881 > $793), round trips 0.7 > 0.1, fills clipped 1.4 ($2,129), net 1,583; HOLD: full stops 2.5 > 1.8 ($-7,473 > $-5,412), give-backs 0.6 > 1.0 ($-1,619 > $690), round trips 0.6 > 0.1, fills clipped 1.2 ($1,996), net 1,064; PRE: full stops 1.6 > 1.3 ($-5,194 > $-4,139), give-backs 0.3 > 0.7 ($-912 > $220), round trips 0.3 > 0.2, fills clipped 0.9 ($1,548), net -95; X': full stops 1.2 > 1.1 ($-3,971 > $-3,464), give-backs 0.2 > 0.4 ($-274 > $16), round trips 0.1 > 0.1, fills clipped 0.4 ($655), net -343
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (0), wk 202623: 73,836 (-1,381), wk 202625: 59,099 (0), wk 202639: 57,178 (0), wk 202633: 52,499 (1,532). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+## H7
+
+| row | rule | key $/wk | net L6M (all fires) | removed (zone) L6M | clipped L6M | removed-clipped | other saves | clipped fills/wk | GB/wk L6M before>after | RT/wk before>after | stack cut L6M/HOLD/PRE/X' % | p_plc | p_fam |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF stand-in | stand-in pct>=0.95 secs_fav>=5 take | -134 | 42 | 89 | 47 | 42 | 0 | 1.4 | 0.5 > 0.5 | 0.5 > 0.5 | 2.0/-0.3/-0.8/-2.3 | - | - |
+| best_all | flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=4 | 162 | 169 | 1,081 | 912 | 169 | -0 | 1.4 | 0.5 > 0.7 | 0.5 > 0.0 | 2.7/2.5/-2.3/9.3 | 0.42 | 0.42 |
+| best_pass | ladder m1=0.8 f1=0.4 | .9 f2=0.5 | .95 f3=0.7 mode=1 + rev arm=0.8 X=4 N=5 + zone arm=.8 N=240 floor 0.5 | 131 | 152 | 1,444 | 1,293 | 152 | -0 | 2.5 | 0.5 > 0.0 | 0.5 > 0.0 | 1.4/3.4/-3.0/12.3 | 0.17 | 0.42 |
+| best_pass_market | rev arm=0.8 X=4 N=5 | 130 | 152 | 1,444 | 1,293 | 152 | -0 | 2.5 | 0.5 > 0.0 | 0.5 > 0.0 | 1.4/3.4/-3.0/11.2 | 0.17 | 0.42 |
+| fam_a | ladder m1=0.8 f1=0.4 | .9 f2=0.6 | .95 f3=0.7 mode=1 | 24 | 24 | 1,092 | 1,068 | 24 | -0 | 1.2 | 0.5 > 1.0 | 0.5 > 0.0 | 2.4/3.3/-0.6/13.7 | 0.08 | 0.67 |
+| fam_e | stall arm=0.8 N=3 ticks=2 work=20s | 52 | 110 | 1,475 | 1,364 | 110 | 0 | 3.4 | 0.5 > 0.0 | 0.5 > 0.0 | -0.6/1.5/-3.7/13.5 | 1.00 | 1.00 |
+
+**best_pass_market = rev arm=0.8 X=4 N=5** (family b, v1.7: not expressible; v1.8 fields: `retrace>=X within N` feature (max of last N s minus current, pts) armed at `mfe_pct>=m`)
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 4); reached 80% closing at or below breakeven: 0 (live rules 13) -> PASS. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 13 give-backs worth $35,284 and clipped 62 fills worth $31,583 (all in the 24-week window; per week 1,444 removed, 1,293 clipped). Live week: removed 0 worth $0, clipped 1 fills worth $303.
+- Scorecard (per week; before > after): L6M: full stops 0.8 > 0.6 ($-1,215 > $-1,022), give-backs 0.5 > 0.0 ($-603 > $0), round trips 0.5 > 0.0, fills clipped 2.5 ($1,293), net 152; HOLD: full stops 1.0 > 0.8 ($-1,707 > $-1,478), give-backs 0.4 > 0.0 ($-502 > $11), round trips 0.4 > 0.0, fills clipped 1.9 ($903), net 194; PRE: full stops 0.8 > 0.7 ($-1,731 > $-1,499), give-backs 0.3 > 0.1 ($-416 > $106), round trips 0.3 > 0.0, fills clipped 1.6 ($901), net -100; X': full stops 1.2 > 1.0 ($-2,658 > $-2,084), give-backs 0.4 > 0.3 ($-717 > $184), round trips 0.4 > 0.0, fills clipped 1.2 ($700), net 560
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (1,959), wk 202623: 73,836 (-4,309), wk 202625: 59,099 (-1,631), wk 202639: 57,178 (0), wk 202633: 52,499 (-723). Live week: this books Delta -303 on a live total of 103,596 -> week stays positive.
+
+**best_pass = ladder m1=0.8 f1=0.4 | .9 f2=0.5 | .95 f3=0.7 mode=1 + rev arm=0.8 X=4 N=5 + zone arm=.8 N=240 floor 0.5** (family g, v1.7: not expressible; v1.8 fields: `mfe_pct` arm (running max favourable excursion as a fraction of target, not the current pct) + floor ladder action `floor m1:f1,m2:f2,m3:f3 [stoplimit]`; combination of the above fields (OR of lines; first to fire exits))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 4); reached 80% closing at or below breakeven: 0 (live rules 13) -> PASS. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 13 give-backs worth $35,284 and clipped 62 fills worth $31,583 (all in the 24-week window; per week 1,444 removed, 1,293 clipped). Live week: removed 0 worth $0, clipped 1 fills worth $303.
+- Scorecard (per week; before > after): L6M: full stops 0.8 > 0.6 ($-1,215 > $-1,022), give-backs 0.5 > 0.0 ($-603 > $0), round trips 0.5 > 0.0, fills clipped 2.5 ($1,293), net 152; HOLD: full stops 1.0 > 0.8 ($-1,707 > $-1,478), give-backs 0.4 > 0.0 ($-502 > $12), round trips 0.4 > 0.0, fills clipped 2.0 ($917), net 180; PRE: full stops 0.8 > 0.7 ($-1,731 > $-1,499), give-backs 0.3 > 0.2 ($-416 > $203), round trips 0.3 > 0.0, fills clipped 1.7 ($949), net -127; X': full stops 1.2 > 1.0 ($-2,658 > $-2,084), give-backs 0.4 > 0.3 ($-717 > $341), round trips 0.4 > 0.0, fills clipped 1.2 ($722), net 611
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (1,959), wk 202623: 73,836 (-4,309), wk 202625: 59,099 (-1,631), wk 202639: 57,178 (0), wk 202633: 52,499 (-723). Live week: this books Delta -303 on a live total of 103,596 -> week stays positive.
+
+**best_market = flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=4** (family c, v1.7: profit H7 * pct>=0.8 pulled_against_mult>=20 dd>=4 take win=5 persist=3   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 12 (live rules 4); reached 80% closing at or below breakeven: 0 (live rules 13) -> FAIL. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 13 give-backs worth $26,414 and clipped 35 fills worth $22,286 (all in the 24-week window; per week 1,081 removed, 912 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 0.8 > 0.6 ($-1,215 > $-1,022), give-backs 0.5 > 0.7 ($-603 > $411), round trips 0.5 > 0.0, fills clipped 1.4 ($912), net 169; HOLD: full stops 1.0 > 0.8 ($-1,707 > $-1,478), give-backs 0.4 > 0.5 ($-502 > $249), round trips 0.4 > 0.0, fills clipped 1.1 ($661), net 179; PRE: full stops 0.8 > 0.7 ($-1,731 > $-1,520), give-backs 0.3 > 0.4 ($-416 > $89), round trips 0.3 > 0.1, fills clipped 0.7 ($540), net -15; X': full stops 1.2 > 1.1 ($-2,658 > $-2,269), give-backs 0.4 > 0.3 ($-717 > $-81), round trips 0.4 > 0.2, fills clipped 0.2 ($163), net 621
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (1,954), wk 202623: 73,836 (-1,825), wk 202625: 59,099 (-263), wk 202639: 57,178 (0), wk 202633: 52,499 (-690). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+**best_all = flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=4** (family c, v1.7: profit H7 * pct>=0.8 pulled_against_mult>=20 dd>=4 take win=5 persist=3   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 12 (live rules 4); reached 80% closing at or below breakeven: 0 (live rules 13) -> FAIL. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 13 give-backs worth $26,414 and clipped 35 fills worth $22,286 (all in the 24-week window; per week 1,081 removed, 912 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 0.8 > 0.6 ($-1,215 > $-1,022), give-backs 0.5 > 0.7 ($-603 > $411), round trips 0.5 > 0.0, fills clipped 1.4 ($912), net 169; HOLD: full stops 1.0 > 0.8 ($-1,707 > $-1,478), give-backs 0.4 > 0.5 ($-502 > $249), round trips 0.4 > 0.0, fills clipped 1.1 ($661), net 179; PRE: full stops 0.8 > 0.7 ($-1,731 > $-1,520), give-backs 0.3 > 0.4 ($-416 > $89), round trips 0.3 > 0.1, fills clipped 0.7 ($540), net -15; X': full stops 1.2 > 1.1 ($-2,658 > $-2,269), give-backs 0.4 > 0.3 ($-717 > $-81), round trips 0.4 > 0.2, fills clipped 0.2 ($163), net 621
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (1,954), wk 202623: 73,836 (-1,825), wk 202625: 59,099 (-263), wk 202639: 57,178 (0), wk 202633: 52,499 (-690). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+## A7
+
+| row | rule | key $/wk | net L6M (all fires) | removed (zone) L6M | clipped L6M | removed-clipped | other saves | clipped fills/wk | GB/wk L6M before>after | RT/wk before>after | stack cut L6M/HOLD/PRE/X' % | p_plc | p_fam |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF stand-in | stand-in pct>=0.95 secs_fav>=5 take | -166 | -166 | 155 | 321 | -166 | -0 | 2.8 | 0.7 > 0.6 | 0.7 > 0.6 | 0.9/-0.2/-0.6/-1.4 | - | - |
+| best_all | flow wall_ahead_mult>=12 arm=0.8 persist=5 dd>=4 | 21 | 117 | 386 | 269 | 117 | -0 | 0.5 | 0.7 > 0.7 | 0.7 > 0.5 | 0.3/-0.5/-1.2/-0.2 | 0.42 | 0.42 |
+| best_pass | ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1 | -347 | -347 | 1,069 | 1,416 | -347 | 0 | 4.1 | 0.7 > 0.0 | 0.7 > 0.0 | -3.1/-1.0/-1.2/-2.3 | 0.00 | 1.00 |
+| best_pass_market | flow delta_mult>=2 arm=0.8 persist=3 dd>=0 | -446 | -446 | 1,140 | 1,585 | -446 | -0 | 5.7 | 0.7 > 0.0 | 0.7 > 0.0 | -3.2/-1.1/-1.6/-1.8 | 0.33 | 1.00 |
+
+**best_pass_market = flow delta_mult>=2 arm=0.8 persist=3 dd>=0** (family c, v1.7: profit A7 * pct>=0.8 delta_mult>=2 take win=5 persist=3   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 4); reached 80% closing at or below breakeven: 0 (live rules 16) -> PASS. Frozen live week: 0 / 0 (live rules 1 / 2) -> PASS. In plain words L6M: it removed 16 give-backs worth $27,842 and clipped 140 fills worth $38,727 (all in the 24-week window; per week 1,140 removed, 1,585 clipped). Live week: removed 3 worth $3,150, clipped 2 fills worth $553.
+- Scorecard (per week; before > after): L6M: full stops 2.0 > 1.8 ($-2,418 > $-2,176), give-backs 0.7 > 0.0 ($-567 > $0), round trips 0.7 > 0.0, fills clipped 5.7 ($1,585), net -446; HOLD: full stops 1.6 > 1.5 ($-1,899 > $-1,711), give-backs 0.5 > 0.0 ($-429 > $0), round trips 0.5 > 0.0, fills clipped 4.6 ($1,290), net -401; PRE: full stops 0.7 > 0.6 ($-861 > $-732), give-backs 0.2 > 0.0 ($-216 > $0), round trips 0.2 > 0.0, fills clipped 2.4 ($660), net -253; X': full stops 0.8 > 0.6 ($-900 > $-763), give-backs 0.2 > 0.0 ($-182 > $0), round trips 0.2 > 0.0, fills clipped 1.5 ($401), net -28
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-1,438), wk 202623: 73,836 (-2,071), wk 202625: 59,099 (-2,749), wk 202639: 57,178 (934), wk 202633: 52,499 (-1,266). Live week: this books Delta 2,597 on a live total of 103,596 -> week stays positive.
+
+**best_pass = ladder m1=0.8 f1=0.65 | .9 f2=0.7 | .95 f3=0.9 mode=1** (family a, v1.7: not expressible; v1.8 fields: `mfe_pct` arm (running max favourable excursion as a fraction of target, not the current pct) + floor ladder action `floor m1:f1,m2:f2,m3:f3 [stoplimit]`)
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 4); reached 80% closing at or below breakeven: 0 (live rules 16) -> PASS. Frozen live week: 0 / 0 (live rules 1 / 2) -> PASS. In plain words L6M: it removed 16 give-backs worth $26,123 and clipped 100 fills worth $34,598 (all in the 24-week window; per week 1,069 removed, 1,416 clipped). Live week: removed 3 worth $2,839, clipped 4 fills worth $1,056.
+- Scorecard (per week; before > after): L6M: full stops 2.0 > 1.8 ($-2,418 > $-2,176), give-backs 0.7 > 0.0 ($-567 > $23), round trips 0.7 > 0.0, fills clipped 4.1 ($1,416), net -347; HOLD: full stops 1.6 > 1.5 ($-1,899 > $-1,711), give-backs 0.5 > 0.0 ($-429 > $11), round trips 0.5 > 0.0, fills clipped 3.3 ($1,181), net -350; PRE: full stops 0.7 > 0.6 ($-861 > $-732), give-backs 0.2 > 0.0 ($-216 > $0), round trips 0.2 > 0.0, fills clipped 1.6 ($572), net -179; X': full stops 0.8 > 0.6 ($-900 > $-763), give-backs 0.2 > 0.0 ($-182 > $0), round trips 0.2 > 0.0, fills clipped 1.0 ($365), net -21
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-1,877), wk 202623: 73,836 (-1,218), wk 202625: 59,099 (-2,692), wk 202639: 57,178 (414), wk 202633: 52,499 (-986). Live week: this books Delta 1,783 on a live total of 103,596 -> week stays positive.
+
+**best_market = flow wall_ahead_mult>=12 arm=0.8 persist=5 dd>=4** (family c, v1.7: profit A7 * pct>=0.8 wall_ahead_mult>=12 dd>=4 take win=8 persist=5 wall_ticks=8   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 7 (live rules 4); reached 80% closing at or below breakeven: 11 (live rules 16) -> FAIL. Frozen live week: 1 / 2 (live rules 1 / 2) -> FAIL. In plain words L6M: it removed 8 give-backs worth $9,433 and clipped 12 fills worth $6,579 (all in the 24-week window; per week 386 removed, 269 clipped). Live week: removed 1 worth $280, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 2.0 > 2.0 ($-2,418 > $-2,323), give-backs 0.7 > 0.7 ($-567 > $-184), round trips 0.7 > 0.5, fills clipped 0.5 ($269), net 117; HOLD: full stops 1.6 > 1.6 ($-1,899 > $-1,829), give-backs 0.5 > 0.6 ($-429 > $-127), round trips 0.5 > 0.3, fills clipped 0.4 ($248), net 63; PRE: full stops 0.7 > 0.7 ($-861 > $-764), give-backs 0.2 > 0.3 ($-216 > $-31), round trips 0.2 > 0.1, fills clipped 0.4 ($197), net -45; X': full stops 0.8 > 0.6 ($-900 > $-763), give-backs 0.2 > 0.3 ($-182 > $50), round trips 0.2 > 0.0, fills clipped 0.4 ($218), net 39
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-648), wk 202623: 73,836 (-1,065), wk 202625: 59,099 (0), wk 202639: 57,178 (495), wk 202633: 52,499 (-575). Live week: this books Delta 280 on a live total of 103,596 -> week stays positive.
+
+**best_all = flow wall_ahead_mult>=12 arm=0.8 persist=5 dd>=4** (family c, v1.7: profit A7 * pct>=0.8 wall_ahead_mult>=12 dd>=4 take win=8 persist=5 wall_ticks=8   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 7 (live rules 4); reached 80% closing at or below breakeven: 11 (live rules 16) -> FAIL. Frozen live week: 1 / 2 (live rules 1 / 2) -> FAIL. In plain words L6M: it removed 8 give-backs worth $9,433 and clipped 12 fills worth $6,579 (all in the 24-week window; per week 386 removed, 269 clipped). Live week: removed 1 worth $280, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 2.0 > 2.0 ($-2,418 > $-2,323), give-backs 0.7 > 0.7 ($-567 > $-184), round trips 0.7 > 0.5, fills clipped 0.5 ($269), net 117; HOLD: full stops 1.6 > 1.6 ($-1,899 > $-1,829), give-backs 0.5 > 0.6 ($-429 > $-127), round trips 0.5 > 0.3, fills clipped 0.4 ($248), net 63; PRE: full stops 0.7 > 0.7 ($-861 > $-764), give-backs 0.2 > 0.3 ($-216 > $-31), round trips 0.2 > 0.1, fills clipped 0.4 ($197), net -45; X': full stops 0.8 > 0.6 ($-900 > $-763), give-backs 0.2 > 0.3 ($-182 > $50), round trips 0.2 > 0.0, fills clipped 0.4 ($218), net 39
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (-648), wk 202623: 73,836 (-1,065), wk 202625: 59,099 (0), wk 202639: 57,178 (495), wk 202633: 52,499 (-575). Live week: this books Delta 280 on a live total of 103,596 -> week stays positive.
+
+## O7
+
+| row | rule | key $/wk | net L6M (all fires) | removed (zone) L6M | clipped L6M | removed-clipped | other saves | clipped fills/wk | GB/wk L6M before>after | RT/wk before>after | stack cut L6M/HOLD/PRE/X' % | p_plc | p_fam |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| REF stand-in | stand-in pct>=0.95 secs_fav>=5 take | -18 | -18 | 0 | 18 | -18 | 0 | 0.1 | 0.1 > 0.1 | 0.0 > 0.0 | 0.0/0.0/0.0/-0.6 | - | - |
+| best_all | flow pulled_mult>=30 arm=0.7 persist=5 dd>=0 | 16 | 62 | 72 | 50 | 22 | 40 | 0.0 | 0.1 > 0.1 | 0.0 > 0.0 | 0.0/1.1/0.0/0.0 | 0.58 | 0.67 |
+| best_pass | flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2 | -25 | -17 | 137 | 155 | -17 | 0 | 0.3 | 0.1 > 0.0 | 0.0 > 0.0 | 0.6/0.0/-0.0/0.0 | 0.00 | 1.00 |
+| fam_b | rev arm=0.9 X=15 N=5 | 12 | 21 | 21 | -0 | 21 | 0 | 0.0 | 0.1 > 0.1 | 0.0 > 0.0 | 0.0/0.0/0.0/0.0 | 0.08 | 0.42 |
+| fam_g | rev arm=0.9 X=15 N=5 + bank arm=0.9 F=0.33 lim lt=1 | floor 0.4 | 12 | 21 | 21 | -0 | 21 | 0 | 0.0 | 0.1 > 0.1 | 0.0 > 0.0 | 0.0/0.0/0.0/0.0 | 0.08 | 0.08 |
+
+**best_pass_market = flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2** (family c, v1.7: profit O7 * pct>=0.8 pulled_against_mult>=20 dd>=2 take win=5 persist=3   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 2); reached 80% closing at or below breakeven: 0 (live rules 1) -> PASS. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 3 give-backs worth $3,352 and clipped 8 fills worth $3,779 (all in the 24-week window; per week 137 removed, 155 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 0.3 > 0.3 ($-233 > $-202), give-backs 0.1 > 0.0 ($34 > $0), round trips 0.0 > 0.0, fills clipped 0.3 ($155), net -17; HOLD: full stops 0.3 > 0.3 ($-218 > $-203), give-backs 0.2 > 0.1 ($133 > $50), round trips 0.0 > 0.0, fills clipped 0.3 ($137), net 24; PRE: full stops 0.3 > 0.3 ($-220 > $-199), give-backs 0.2 > 0.1 ($46 > $41), round trips 0.1 > 0.0, fills clipped 0.4 ($194), net -54; X': full stops 0.7 > 0.7 ($-543 > $-543), give-backs 0.2 > 0.1 ($39 > $21), round trips 0.0 > 0.0, fills clipped 0.0 ($28), net -12
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (0), wk 202623: 73,836 (0), wk 202625: 59,099 (0), wk 202639: 57,178 (-1,078), wk 202633: 52,499 (0). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+**best_pass = flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2** (family c, v1.7: profit O7 * pct>=0.8 pulled_against_mult>=20 dd>=2 take win=5 persist=3   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 0 (live rules 2); reached 80% closing at or below breakeven: 0 (live rules 1) -> PASS. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 3 give-backs worth $3,352 and clipped 8 fills worth $3,779 (all in the 24-week window; per week 137 removed, 155 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 0.3 > 0.3 ($-233 > $-202), give-backs 0.1 > 0.0 ($34 > $0), round trips 0.0 > 0.0, fills clipped 0.3 ($155), net -17; HOLD: full stops 0.3 > 0.3 ($-218 > $-203), give-backs 0.2 > 0.1 ($133 > $50), round trips 0.0 > 0.0, fills clipped 0.3 ($137), net 24; PRE: full stops 0.3 > 0.3 ($-220 > $-199), give-backs 0.2 > 0.1 ($46 > $41), round trips 0.1 > 0.0, fills clipped 0.4 ($194), net -54; X': full stops 0.7 > 0.7 ($-543 > $-543), give-backs 0.2 > 0.1 ($39 > $21), round trips 0.0 > 0.0, fills clipped 0.0 ($28), net -12
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (0), wk 202623: 73,836 (0), wk 202625: 59,099 (0), wk 202639: 57,178 (-1,078), wk 202633: 52,499 (0). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+**best_market = flow pulled_mult>=30 arm=0.7 persist=5 dd>=0** (family c, v1.7: profit O7 * pct>=0.7 pulled_mult>=30 take win=5 persist=5   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 3 (live rules 2); reached 80% closing at or below breakeven: 0 (live rules 1) -> FAIL. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 1 give-backs worth $1,755 and clipped 1 fills worth $1,215 (all in the 24-week window; per week 72 removed, 50 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 0.3 > 0.3 ($-233 > $-202), give-backs 0.1 > 0.1 ($34 > $90), round trips 0.0 > 0.0, fills clipped 0.0 ($50), net 62; HOLD: full stops 0.3 > 0.3 ($-218 > $-188), give-backs 0.2 > 0.2 ($133 > $144), round trips 0.0 > 0.0, fills clipped 0.0 ($41), net 75; PRE: full stops 0.3 > 0.3 ($-220 > $-210), give-backs 0.2 > 0.2 ($46 > $51), round trips 0.1 > 0.1, fills clipped 0.0 ($24), net -5; X': full stops 0.7 > 0.7 ($-543 > $-543), give-backs 0.2 > 0.2 ($39 > $39), round trips 0.0 > 0.0, fills clipped 0.0 ($-0), net 0
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (0), wk 202623: 73,836 (0), wk 202625: 59,099 (0), wk 202639: 57,178 (0), wk 202633: 52,499 (0). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
+**best_all = flow pulled_mult>=30 arm=0.7 persist=5 dd>=0** (family c, v1.7: profit O7 * pct>=0.7 pulled_mult>=30 take win=5 persist=5   [v1.7 grammar as is]; v1.8 fields: none (v1.7 expresses it))
+
+- Trader test L6M: trades that reached 90% closing below 50%: 3 (live rules 2); reached 80% closing at or below breakeven: 0 (live rules 1) -> FAIL. Frozen live week: 0 / 0 (live rules 0 / 0) -> PASS. In plain words L6M: it removed 1 give-backs worth $1,755 and clipped 1 fills worth $1,215 (all in the 24-week window; per week 72 removed, 50 clipped). Live week: removed 0 worth $0, clipped 0 fills worth $0.
+- Scorecard (per week; before > after): L6M: full stops 0.3 > 0.3 ($-233 > $-202), give-backs 0.1 > 0.1 ($34 > $90), round trips 0.0 > 0.0, fills clipped 0.0 ($50), net 62; HOLD: full stops 0.3 > 0.3 ($-218 > $-188), give-backs 0.2 > 0.2 ($133 > $144), round trips 0.0 > 0.0, fills clipped 0.0 ($41), net 75; PRE: full stops 0.3 > 0.3 ($-220 > $-210), give-backs 0.2 > 0.2 ($46 > $51), round trips 0.1 > 0.1, fills clipped 0.0 ($24), net -5; X': full stops 0.7 > 0.7 ($-543 > $-543), give-backs 0.2 > 0.2 ($39 > $39), round trips 0.0 > 0.0, fills clipped 0.0 ($-0), net 0
+- Trend weeks (five best L6M stack weeks, base $ > this book rule delta $): wk 202638: 88,836 (0), wk 202623: 73,836 (0), wk 202625: 59,099 (0), wk 202639: 57,178 (0), wk 202633: 52,499 (0). Live week: this books Delta 0 on a live total of 103,596 -> week stays positive.
+
 ## 20 largest give-backs replayed (L6M and frozen live week), best_market finalist per book
 
-### P7x L6M (flow pulled_against_mult>=20 arm=0.8 persist=1 dd>=0): live rules vs finalist
+### P7x L6M (flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0): live rules vs finalist
 
 | entry | book | lots | MFE % | live closed % | finalist closed % | note |
 |---|---|---|---|---|---|---|
-| 08-26 03:03Z | P7 | 12 | 93% | -85% | 67% | rule exit |
-| 09-10 05:07Z | P7 | 12 | 96% | -72% | 62% | rule exit |
-| 07-28 05:40Z | P7 | 12 | 94% | -71% | 77% | rule exit |
-| 10-20 05:16Z | P7 | 12 | 86% | -72% | 70% | rule exit |
-| 07-02 22:07Z | P7 | 12 | 80% | -74% | 67% | rule exit |
-| 09-11 02:43Z | P7 | 12 | 89% | -50% | 58% | rule exit |
-| 06-29 01:23Z | P7 | 12 | 95% | -32% | 83% | rule exit |
-| 06-01 00:38Z | P7 | 12 | 91% | -29% | 81% | rule exit |
-| 06-19 05:03Z | P7 | 12 | 92% | -27% | 39% | rule exit |
-| 05-22 10:05Z | P7 | 7 | 84% | -100% | 49% | rule exit |
-| 06-25 10:42Z | P7 | 7 | 92% | -89% | 82% | rule exit |
-| 07-24 03:10Z | P7 | 12 | 99% | -3% | 84% | rule exit |
-| 07-13 23:23Z | P7 | 6 | 95% | -77% | 62% | rule exit |
-| 08-13 14:24Z | P7 | 7 | 96% | -71% | 87% | rule exit |
+| 08-26 03:03Z | P7 | 12 | 93% | -85% | 68% | rule exit |
+| 09-10 05:07Z | P7 | 12 | 96% | -72% | 68% | rule exit |
+| 07-28 05:40Z | P7 | 12 | 94% | -71% | 67% | rule exit |
+| 10-20 05:16Z | P7 | 12 | 86% | -72% | 73% | rule exit |
+| 07-02 22:07Z | P7 | 12 | 80% | -74% | 73% | rule exit |
+| 09-11 02:43Z | P7 | 12 | 89% | -50% | 68% | rule exit |
+| 06-29 01:23Z | P7 | 12 | 95% | -32% | 67% | rule exit |
+| 06-01 00:38Z | P7 | 12 | 91% | -29% | 69% | rule exit |
+| 06-19 05:03Z | P7 | 12 | 92% | -27% | 66% | rule exit |
+| 05-22 10:05Z | P7 | 7 | 84% | -100% | 70% | rule exit |
+| 06-25 10:42Z | P7 | 7 | 92% | -89% | 72% | rule exit |
+| 07-24 03:10Z | P7 | 12 | 99% | -3% | 68% | rule exit |
+| 07-13 23:23Z | P7 | 6 | 95% | -77% | 67% | rule exit |
+| 08-13 14:24Z | P7 | 7 | 96% | -71% | 66% | rule exit |
 | 07-02 15:16Z | P7 | 7 | 88% | -78% | 86% | rule exit |
-| 07-23 15:25Z | P7 | 7 | 97% | -66% | 42% | rule exit |
-| 08-07 01:39Z | P7 | 6 | 93% | -72% | 87% | rule exit |
-| 09-08 10:18Z | P7 | 7 | 90% | -71% | 59% | rule exit |
-| 06-04 00:40Z | P7 | 6 | 86% | -77% | 47% | rule exit |
-| 07-28 02:14Z | P7 | 6 | 95% | -67% | 86% | rule exit |
+| 07-23 15:25Z | P7 | 7 | 97% | -66% | 68% | rule exit |
+| 08-07 01:39Z | P7 | 6 | 93% | -72% | 78% | rule exit |
+| 09-08 10:18Z | P7 | 7 | 90% | -71% | 86% | rule exit |
+| 06-04 00:40Z | P7 | 6 | 86% | -77% | 72% | rule exit |
+| 07-28 02:14Z | P7 | 6 | 95% | -67% | 64% | rule exit |
 
-### P7x live week (flow pulled_against_mult>=20 arm=0.8 persist=1 dd>=0): live rules vs finalist
+### P7x live week (flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0): live rules vs finalist
 
 | entry | book | lots | MFE % | live closed % | finalist closed % | note |
 |---|---|---|---|---|---|---|
-| 11-03 23:13Z | P7 | 12 | 84% | -77% | -45% | rule exit |
-| 11-04 05:53Z | P7 | 12 | 81% | -48% | 76% | rule exit |
-| 11-02 23:47Z | P7 | 6 | 91% | -50% | 80% | rule exit |
+| 11-03 23:13Z | P7 | 12 | 84% | -77% | 72% | rule exit |
+| 11-04 05:53Z | P7 | 12 | 81% | -48% | 62% | rule exit |
+| 11-02 23:47Z | P7 | 6 | 91% | -50% | 77% | rule exit |
+
+### P7 L6M (flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 08-26 03:03Z | P7 | 7 | 93% | -85% | 68% | rule exit |
+| 09-10 05:07Z | P7 | 7 | 96% | -72% | 68% | rule exit |
+| 07-28 05:40Z | P7 | 7 | 94% | -71% | 67% | rule exit |
+| 10-20 05:16Z | P7 | 7 | 86% | -72% | 73% | rule exit |
+| 07-02 22:07Z | P7 | 7 | 80% | -74% | 73% | rule exit |
+| 09-11 02:43Z | P7 | 7 | 89% | -50% | 68% | rule exit |
+| 06-29 01:23Z | P7 | 7 | 95% | -32% | 67% | rule exit |
+| 06-01 00:38Z | P7 | 7 | 91% | -29% | 69% | rule exit |
+| 06-19 05:03Z | P7 | 7 | 92% | -27% | 66% | rule exit |
+| 05-22 10:05Z | P7 | 4 | 84% | -100% | 70% | rule exit |
+| 06-25 10:42Z | P7 | 4 | 92% | -89% | 72% | rule exit |
+| 07-24 03:10Z | P7 | 7 | 99% | -3% | 68% | rule exit |
+| 07-13 23:23Z | P7 | 4 | 95% | -77% | 67% | rule exit |
+| 08-13 14:24Z | P7 | 4 | 96% | -71% | 66% | rule exit |
+| 07-02 15:16Z | P7 | 4 | 88% | -78% | 86% | rule exit |
+| 08-07 01:39Z | P7 | 4 | 93% | -72% | 78% | rule exit |
+| 06-04 00:40Z | P7 | 4 | 86% | -77% | 72% | rule exit |
+| 07-28 02:14Z | P7 | 4 | 95% | -67% | 64% | rule exit |
+| 07-23 15:25Z | P7 | 4 | 97% | -66% | 68% | rule exit |
+| 10-19 03:21Z | P7 | 4 | 94% | -69% | 67% | rule exit |
+
+### P7 live week (flow pulled_against_mult>=5 arm=0.7 persist=1 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 11-03 23:13Z | P7 | 7 | 84% | -77% | 72% | rule exit |
+| 11-04 05:53Z | P7 | 7 | 81% | -48% | 62% | rule exit |
+| 11-02 23:47Z | P7 | 4 | 91% | -50% | 77% | rule exit |
+
+### K7 L6M (flow delta_mult>=2 arm=0.8 persist=1 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 09-18 06:51Z | K7 | 2 | 98% | -101% | 85% | rule exit |
+| 06-04 11:36Z | K7 | 2 | 95% | -98% | 83% | rule exit |
+| 10-21 16:42Z | K7 | 2 | 95% | -96% | 78% | rule exit |
+| 07-27 06:03Z | K7 | 2 | 94% | -97% | 84% | rule exit |
+| 07-07 16:45Z | K7 | 2 | 91% | -96% | 73% | rule exit |
+| 07-31 05:09Z | K7 | 2 | 87% | -98% | 77% | rule exit |
+| 08-26 03:21Z | K7 | 2 | 88% | -96% | 70% | rule exit |
+| 08-05 22:24Z | K7 | 2 | 80% | -103% | 73% | rule exit |
+| 07-17 10:30Z | K7 | 2 | 86% | -83% | 72% | rule exit |
+| 10-08 18:18Z | K7 | 2 | 97% | -71% | 95% | rule exit |
+| 07-14 05:45Z | K7 | 2 | 92% | -66% | 83% | rule exit |
+| 07-07 06:57Z | K7 | 2 | 89% | -69% | 85% | rule exit |
+| 06-22 06:54Z | K7 | 2 | 90% | -66% | 77% | rule exit |
+| 10-27 12:18Z | K7 | 2 | 90% | -59% | 82% | rule exit |
+| 05-15 17:54Z | K7 | 2 | 81% | -65% | 69% | rule exit |
+| 07-13 04:24Z | K7 | 2 | 85% | -39% | 83% | rule exit |
+| 06-23 03:33Z | K7 | 2 | 80% | -32% | 75% | rule exit |
+| 05-18 18:39Z | K7 | 1 | 84% | -123% | 75% | rule exit |
+| 06-11 04:21Z | K7 | 1 | 86% | -115% | 83% | rule exit |
+| 05-15 12:27Z | K7 | 1 | 90% | -106% | 82% | rule exit |
+
+### K7 live week (flow delta_mult>=2 arm=0.8 persist=1 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 11-03 23:06Z | K7 | 2 | 88% | -74% | 51% | rule exit |
+| 11-05 08:12Z | K7 | 1 | 98% | -58% | 75% | rule exit |
+| 11-03 15:57Z | K7 | 1 | 82% | -54% | 61% | rule exit |
+| 11-04 19:33Z | K7 | 1 | 83% | -50% | 74% | rule exit |
+| 11-05 02:18Z | K7 | 1 | 84% | -48% | 70% | rule exit |
+| 11-02 01:09Z | K7 | 1 | 95% | 45% | 81% | rule exit |
+
+### M7 L6M (flow pulled_mult>=5 arm=0.7 persist=3 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 05-22 10:05Z | M7 | 2 | 85% | -100% | 69% | rule exit |
+| 07-22 06:46Z | M7 | 2 | 98% | -76% | 82% | rule exit |
+| 09-18 06:56Z | M7 | 2 | 98% | -73% | 74% | rule exit |
+| 06-04 11:36Z | M7 | 2 | 95% | -65% | 67% | rule exit |
+| 06-02 07:33Z | M7 | 2 | 93% | -67% | 66% | rule exit |
+| 06-23 06:58Z | M7 | 2 | 98% | -58% | 63% | rule exit |
+| 09-08 09:57Z | M7 | 2 | 88% | -65% | 68% | rule exit |
+| 07-30 07:29Z | M7 | 2 | 96% | -54% | 71% | rule exit |
+| 07-08 06:14Z | M7 | 2 | 86% | -53% | 70% | rule exit |
+| 10-28 14:35Z | M7 | 1 | 82% | -129% | 74% | rule exit |
+| 10-26 08:40Z | M7 | 1 | 92% | -101% | 64% | rule exit |
+| 05-20 15:16Z | M7 | 1 | 90% | -94% | 50% | rule exit |
+| 10-21 06:05Z | M7 | 1 | 80% | -100% | 71% | rule exit |
+| 09-15 08:30Z | M7 | 1 | 81% | -94% | 69% | rule exit |
+| 07-06 14:13Z | M7 | 1 | 86% | -83% | 79% | rule exit |
+| 09-30 07:16Z | M7 | 1 | 97% | -72% | 65% | rule exit |
+| 10-21 10:02Z | M7 | 1 | 92% | -72% | 63% | rule exit |
+| 10-05 08:43Z | M7 | 1 | 85% | -78% | 68% | rule exit |
+| 07-14 15:08Z | M7 | 1 | 96% | -67% | 64% | rule exit |
+| 06-04 06:10Z | M7 | 1 | 82% | -79% | 77% | rule exit |
+
+### M7 live week (flow pulled_mult>=5 arm=0.7 persist=3 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 11-05 10:08Z | M7 | 1 | 98% | -62% | 63% | rule exit |
+| 11-02 15:22Z | M7 | 1 | 95% | -59% | 63% | rule exit |
+| 11-02 11:58Z | M7 | 1 | 87% | 70% | 65% | rule exit |
+
+### U7 L6M (flow pulled_mult>=5 arm=0.7 persist=5 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 09-02 09:00Z | U7 | 4 | 83% | -99% | 77% | rule exit |
+| 05-27 23:40Z | U7 | 4 | 86% | -95% | 76% | rule exit |
+| 06-08 05:40Z | U7 | 4 | 81% | -99% | 67% | rule exit |
+| 10-15 23:30Z | U7 | 4 | 94% | -61% | 77% | rule exit |
+| 08-04 00:40Z | U7 | 4 | 85% | -59% | 72% | rule exit |
+| 05-14 09:30Z | U7 | 4 | 85% | -57% | 67% | rule exit |
+| 05-19 07:10Z | U7 | 4 | 82% | -61% | 68% | rule exit |
+| 07-31 06:40Z | U7 | 2 | 97% | -106% | 83% | rule exit |
+| 07-30 01:30Z | U7 | 2 | 100% | -98% | 71% | rule exit |
+| 09-10 01:00Z | U7 | 2 | 82% | -110% | 74% | rule exit |
+| 10-19 08:00Z | U7 | 2 | 92% | -100% | 77% | rule exit |
+| 07-28 08:30Z | U7 | 2 | 84% | -101% | 65% | rule exit |
+| 10-26 10:50Z | U7 | 2 | 85% | -100% | 61% | rule exit |
+| 10-20 02:00Z | U7 | 2 | 83% | -92% | 74% | rule exit |
+| 08-23 23:30Z | U7 | 2 | 85% | -79% | 71% | rule exit |
+| 08-14 00:50Z | U7 | 2 | 82% | -56% | 63% | rule exit |
+
+### U7 live week (flow pulled_mult>=5 arm=0.7 persist=5 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+
+### H7 L6M (rev arm=0.8 X=4 N=5): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 10-11 23:25Z | H7 | 4 | 84% | -44% | 72% | rule exit |
+| 07-22 22:05Z | H7 | 4 | 84% | -21% | 79% | rule exit |
+| 06-12 00:25Z | H7 | 2 | 94% | -59% | 82% | rule exit |
+| 06-22 04:10Z | H7 | 2 | 92% | -50% | 68% | rule exit |
+| 08-07 03:45Z | H7 | 2 | 84% | -52% | 73% | rule exit |
+| 07-28 02:30Z | H7 | 2 | 90% | -38% | 79% | rule exit |
+| 06-24 14:20Z | H7 | 1 | 89% | -106% | 76% | rule exit |
+| 10-08 14:25Z | H7 | 1 | 86% | -101% | 73% | rule exit |
+| 09-04 14:45Z | H7 | 1 | 88% | -98% | 79% | rule exit |
+| 08-28 00:20Z | H7 | 1 | 98% | -86% | 64% | rule exit |
+| 09-29 15:25Z | H7 | 1 | 92% | -87% | 78% | rule exit |
+| 06-25 23:20Z | H7 | 1 | 85% | -54% | 72% | rule exit |
+| 05-19 14:20Z | H7 | 1 | 80% | -28% | 68% | rule exit |
+
+### H7 live week (rev arm=0.8 X=4 N=5): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+
+### A7 L6M (flow delta_mult>=2 arm=0.8 persist=3 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 06-23 03:24Z | A7 | 1 | 86% | -98% | 75% | rule exit |
+| 07-02 01:17Z | A7 | 1 | 85% | -99% | 79% | rule exit |
+| 07-28 22:54Z | A7 | 1 | 82% | -100% | 54% | rule exit |
+| 10-14 02:00Z | A7 | 1 | 85% | -97% | 76% | rule exit |
+| 05-27 23:41Z | A7 | 1 | 81% | -97% | 53% | rule exit |
+| 06-24 05:12Z | A7 | 1 | 96% | -81% | 89% | rule exit |
+| 06-24 02:51Z | A7 | 1 | 91% | -83% | 78% | rule exit |
+| 09-22 00:05Z | A7 | 1 | 85% | -79% | 80% | rule exit |
+| 10-20 02:17Z | A7 | 1 | 86% | -77% | 75% | rule exit |
+| 08-07 01:48Z | A7 | 1 | 89% | -60% | 77% | rule exit |
+| 08-26 02:51Z | A7 | 1 | 95% | -52% | 83% | rule exit |
+| 06-11 22:21Z | A7 | 1 | 89% | -57% | 60% | rule exit |
+| 05-14 03:31Z | A7 | 1 | 84% | -62% | 71% | rule exit |
+| 10-13 02:01Z | A7 | 1 | 83% | -59% | 76% | rule exit |
+| 05-13 23:14Z | A7 | 1 | 87% | -37% | 69% | rule exit |
+| 05-21 23:16Z | A7 | 1 | 94% | -10% | 75% | rule exit |
+
+### A7 live week (flow delta_mult>=2 arm=0.8 persist=3 dd>=0): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 11-04 03:02Z | A7 | 1 | 84% | -53% | 69% | rule exit |
+| 11-02 03:13Z | A7 | 1 | 82% | -33% | 75% | rule exit |
+| 11-02 01:12Z | A7 | 1 | 91% | 42% | 75% | rule exit |
+
+### O7 L6M (flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
+| 07-13 13:45Z | O7 | 1 | 87% | -42% | 71% | rule exit |
+| 05-27 13:43Z | O7 | 1 | 93% | 42% | 87% | rule exit |
+| 08-26 13:42Z | O7 | 1 | 93% | 48% | 76% | rule exit |
+
+### O7 live week (flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2): live rules vs finalist
+
+| entry | book | lots | MFE % | live closed % | finalist closed % | note |
+|---|---|---|---|---|---|---|
