@@ -1,6 +1,11 @@
-# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-11T19:14:15Z; Shadow only, no PASS claims)
+# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-11T19:34:23Z; Shadow only, no PASS claims)
 
 Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. Section D is W-J: the reference rows (JN04RM vs LPB_BASE), the JN05 composition and the REFIT 2026-11-22 preview. Every number is exact-engine, live panel base (P7 day cap 8,400 + table 7,4,0,4,0,0 + P7 cut 40/5x/w5/p3), reference LPB_BASE, ROLLFIX1.
+
+## 0. Behavioural scorecard (W-Q behavior_scorecard.py: LPB_BASE, JN04RM, JN05W per book and stack and window, plain words; JN05 is judged by acceptability first)
+
+(no section matching 'scorecard' in DS3_WORKS_Q.md yet)
+
 
 ## D0. Reference rows (exact, rule mode, 43 months)
 
@@ -685,19 +690,270 @@ Cut = maxDD cut vs the reference (positive = shallower), d$ = change in mean $/w
 
 ## E. P7 fix (W-E) (E)
 
-(DS3_WORKS_E.md has not landed yet at 2026-11-11T19:14:15Z)
+Source DS3_WORKS_E.md (mtime 2026-11-11T19:26:18Z UTC), included verbatim, read only:
+
+# DS3_WORKS_E - T-WORKS / P7 FIX, W-E (families E multi-timeframe trend health, F participation, G pullback anatomy, H leg anatomy), page 2026-11-11 19:26Z
+Label: PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_E_PREREG.md (sha in DECISIONS.md 19:19Z, logged before any cell was scored). Code code/th_works_e/ (e0_flow, e1_table, e2_screen, e3_full, e_hooks, e_sets, e_chain, e_score, e_page).
+
+## What exists
+1. The shared P7 signal feature table is /mnt/l2/l2vast/_th_works/p7_signal_features.parquet: 6212 P7 signals 2023-04-03..2026-11-05, key utc_epoch_s, taken flag, session, side, base lots (live table 7/4/4), entry price, trade net if taken, shadow base-lot net, the week flags (worst-20 weeks of the 3.5-year P7 net, L6M worst-5, live week) and 64 causal feature columns of families E, F, G, H. Taken = 5011 (LPB_BASE trades plus the 53 frozen live-week trades). Untaken = 1201. CAVEAT: the untaken rows are S1B-COMB P7 signals that LPB_BASE does not contain; they include engine-divergence differences (different re-entry paths between the two engine runs), not only blocks by the day cap, the blackout or the lock, so taken=0 does not always mean the live panel refused the signal.
+2. All features are computed from the 1-min bars (NQ, roll-adjusted) that closed at or before the signal second, plus 1-min flow bars (volume, aggressor delta, prints of 10 or more contracts) built from the state-base tick arrays. Legs and pullbacks come from a causal zigzag at 1.0 ATR(5-min) (pushes inside a leg at 0.4 ATR). Features at every P7-session minute boundary and both sides (1.9 million rows) are in /mnt/l2/l2vast/_th_works/e/full_*.parquet so the exact engine can look up the feature at any re-entry second; a signal that falls a few seconds after the bar boundary uses the last closed bar, identical to the shared table (checked: 6,211 of 6,212 rows match to 1e-6).
+
+## First-order screen (P7 only, equal-mean drawdown cut, skip and half, P7 Asia then all sessions)
+Each family has 312 cells per scope (feature x tail x percentile x action). Objective = mean of the equal-mean maxDD cut in L6M and HOLD on weekly P7 P&L; a cell must keep a positive mean in both windows. Family null = 300 within-month-and-session permutations of the feature rows with fixed thresholds, max objective over the family; forward-only placebo = the feature of the signal k positions earlier, k = 1..40, max over k.
+
+| scope | family | best observed objective | null median / 95th / 99th (permutation) | forward-lag placebo 95th | verdict |
+|---|---|---|---|---|---|
+| ASIA | E | 28.3 | 34.1 / 49.0 / 53.9 | 46.4 | inside the null |
+| ASIA | F | 20.3 | 28.3 / 44.6 / 51.2 | 42.5 | inside the null |
+| ASIA | G | 30.8 | 26.3 / 41.7 / 46.1 | 40.9 | inside the null |
+| ASIA | H | 36.1 | 27.5 / 42.1 / 47.4 | 44.7 | inside the null |
+| ALL | E | 34.4 | 37.6 / 52.1 / 62.3 | 49.8 | inside the null |
+| ALL | F | 28.8 | 31.0 / 47.9 / 55.0 | 49.9 | inside the null |
+| ALL | G | 32.8 | 29.4 / 46.8 / 57.9 | 42.1 | inside the null |
+| ALL | H | 36.7 | 31.6 / 49.8 / 57.2 | 46.6 | inside the null |
+
+Plain reading: in every family and both scopes the best cell is at or below the 95th percentile of what random feature assignments give as their best cell (the median of the null maximum is 26-38, the best observed is 20-37). First-order, none of the E, F, G, H features is distinguishable from noise as a skip/half rule on P7. The cells below are therefore registered and sent to exact only because the order requires it, not because they passed a null.
+
+## Registered top-3 per family and scope (first-order; cut = P7 weekly maxDD cut %, d = mean change per week $)
+| id | rule (P7 signal second) | action | obj | cut L6M | cut HOLD | acted | total P&L effect 3.5y $ | removed net in worst-20 weeks (n) | removed net other weeks (n) | live week acted n / removed net |
+|---|---|---|---|---|---|---|---|---|---|---|
+| E1A | e_ac1_120 >= 0.133 (ASIA) | skip | 28.3 | 24.7 | 23.3 | 225 | 80529 | -101372 (47) | 20844 (178) | 4 / 7818 |
+| E2A | e_sw15_dist <= -0.0915 (ASIA) | skip | 19.4 | 15.7 | 15.7 | 224 | 23284 | -57058 (28) | 33774 (196) | 2 / 3351 |
+| E3A | e_sw60_dist >= 9.23 (ASIA) | skip | 18.9 | 22.9 | 21.0 | 447 | -100549 | -103717 (58) | 204266 (389) | 6 / -3116 |
+| F1A | f_leg_vpm_rel >= 1.78 (ASIA) | skip | 20.3 | 20.8 | 20.8 | 225 | -38926 | -74419 (37) | 113346 (188) | 0 / 0 |
+| F2A | f_leg_delta_share <= -0.0114 (ASIA) | skip | 15.4 | 13.1 | 13.1 | 225 | -70837 | -38828 (29) | 109665 (196) | 1 / -2424 |
+| F3A | f_leg_vpm_rel >= 1.78 (ASIA) | half | 14.1 | 13.4 | 13.4 | 225 | -14174 | -32516 (37) | 46690 (188) | 0 / 0 |
+| G1A | g_push_min <= 3 (ASIA) | skip | 30.8 | 24.5 | 24.5 | 228 | -26305 | -20928 (28) | 47233 (200) | 0 / 0 |
+| G2A | g_pb_vel_over_push_vel <= 0.188 (ASIA) | skip | 19.5 | 19.6 | 12.7 | 449 | -68265 | -109486 (73) | 177751 (376) | 7 / 26676 |
+| G3A | g_push_min <= 5 (ASIA) | half | 17.5 | 18.6 | 18.6 | 488 | -34174 | -25908 (64) | 60082 (424) | 4 / 3132 |
+| H1A | h_leg_age <= 3 (ASIA) | skip | 36.1 | 32.3 | 32.3 | 246 | -56394 | -28825 (33) | 85219 (213) | 2 / 16722 |
+| H2A | h_leg_slope_atr_min >= 0.449 (ASIA) | skip | 34.0 | 22.6 | 22.6 | 225 | 33719 | -43357 (27) | 9637 (198) | 0 / 0 |
+| H3A | h_leg_atr <= 1.43 (ASIA) | skip | 31.9 | 40.9 | 40.9 | 674 | -193636 | -92570 (82) | 286206 (592) | 13 / 10245 |
+| E1L | e_vwap_sl60 >= 1.16 (ALL) | skip | 34.4 | 38.3 | 38.3 | 1487 | -182128 | -252322 (156) | 434450 (1331) | 7 / 147 |
+| E2L | e_vr5_60 <= 0.736 (ALL) | half | 33.4 | 36.1 | 36.1 | 1487 | -83802 | -106729 (160) | 190530 (1327) | 16 / -2450 |
+| E3L | e_ac1_120 >= 0.128 (ALL) | skip | 31.7 | 23.4 | 21.6 | 496 | 116065 | -126819 (67) | 10754 (429) | 5 / 7704 |
+| F1L | f_lastpush_delta_share <= 0.0442 (ALL) | skip | 28.8 | 35.5 | 34.9 | 1487 | -170933 | -206689 (168) | 377622 (1319) | 16 / 16311 |
+| F2L | f_lastpush_delta_share <= 0.0442 (ALL) | half | 22.2 | 22.7 | 22.7 | 1487 | -8577 | -101863 (168) | 110440 (1319) | 16 / 6550 |
+| F3L | f_leg_delta_agree <= 0 (ALL) | skip | 22.2 | 23.4 | 23.4 | 629 | -140519 | -69999 (62) | 210519 (567) | 7 / -4766 |
+| G1L | g_push_min <= 4 (ALL) | skip | 32.8 | 35.9 | 33.5 | 1012 | -144554 | -80650 (103) | 225204 (909) | 7 / 12160 |
+| G2L | g_push_min <= 4 (ALL) | half | 22.6 | 20.5 | 20.5 | 1012 | -18374 | -35450 (103) | 53824 (909) | 7 / 4288 |
+| G3L | g_pb_vel_over_push_vel <= 0.206 (ALL) | skip | 22.1 | 22.0 | 22.0 | 992 | -21184 | -169506 (123) | 190690 (869) | 9 / 22097 |
+| H1L | h_leg_pts >= 59 (ALL) | skip | 36.7 | 52.7 | 7.5 | 1490 | -25251 | -166435 (185) | 191686 (1305) | 38 / 83230 |
+| H2L | h_leg_push_min <= 4 (ALL) | skip | 32.8 | 35.9 | 33.5 | 1012 | -144554 | -80650 (103) | 225204 (909) | 7 / 12160 |
+| H3L | h_leg_pts >= 59 (ALL) | half | 31.4 | 21.9 | 21.9 | 1490 | 36316 | -79032 (185) | 42715 (1305) | 38 / 36281 |
+
+Negative removed net = the rule removes losses (good); positive = removes profit. Total P&L effect = minus the sum removed over the 3.5 years (positive = the rule added P&L before any lot reallocation). The sign of the effect is mixed across cells and none survives its family null; the large-leg cell H1L (leg >= 59 pts, skip) cuts L6M drawdown by 53% but removes $83k of the frozen live week (the trend week).
+
+## Which flag separates the frozen trend week from the worst weeks (taken P7, mean of the signed feature)
+| feature | live week mean | worst-20 weeks mean | other weeks mean | live minus worst, in SD |
+|---|---|---|---|---|
+| h_leg_pts | 105.717 | 60.337 | 51.855 | 0.99 |
+| g_pb_vol_share | 0.233 | 0.314 | 0.306 | -0.45 |
+| g_aligned | 0.811 | 0.595 | 0.632 | 0.45 |
+| g_pb_vel_over_push_vel | 1.183 | 0.741 | 0.838 | 0.44 |
+| e_sw60_run | 0.792 | 1.321 | 1.014 | -0.38 |
+| g_pb_depth_atr | 0.818 | 1.056 | 1.035 | -0.35 |
+| e_sw15_run | 1.642 | 1.197 | 1.248 | 0.30 |
+| e_sw60_dist | 1.003 | 3.397 | 3.385 | -0.29 |
+| g_depth_max | 0.420 | 0.501 | 0.508 | -0.28 |
+| h_leg_slope_atr_min | 0.190 | 0.246 | 0.248 | -0.27 |
+
+(One live week against twenty bad weeks is one observation; this table says what differed, not what is predictive.)
+
+## Exact promotion status
+No exact window is complete yet (a window is scored only when all its months are DONE).
+
+Exact sets: 23 registered cells (H2L duplicates G1L) x 2 references = 46 sets (WEJ_* on JN04RM, WEL_* on LPB_EMPTY), one set per job through state_sizer_ijk jbjobs with the e_hooks signal-second lookup applied in trend_size before the JN04 dials. Months DONE so far: 0. Chain scheduler (restart-safe, launches when MemAvailable >= 62 GB, at most 3 W-E jobs, runs until 2026-11-12 12:00Z): pids 2073082 2074136; W-E jobs running now 0; log /mnt/l2/l2vast/_th_works/e/logs/chain.log. A set continues past L6M only if its exact L6M cut is positive (e_gate.csv).
+
+## Not done yet
+Asymmetric-bracket cells (60/45, 60/90 by flag) and the late-entry swing stop (D7) are exact-only and are queued after the skip/half stage; the flag separation by persistence across weeks, and the "trend weeks" comparison beyond the live week, wait for more exact output. DS3_WORKS_E.md is regenerated by code/th_works_e/e_page.py every 4 hours from 23:00Z until the final at 2026-11-12 12:00Z.
+
 
 
 ## I. (W-I) (I)
 
-(DS3_WORKS_I.md has not landed yet at 2026-11-11T19:14:15Z)
+Source DS3_WORKS_I.md (mtime 2026-11-11T19:30:56Z UTC), included verbatim, read only:
+
+# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-11 19:30Z
+Label PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_I_PREREG.md (sha in DECISIONS.md; the first first-order screen ran before the sha line, disclosed there). Code code/th_works_i/, tables /mnt/l2/l2vast/_th_works/i/, feature table /mnt/l2/l2vast/_th_works/p7_feat_I.parquet (key sig_ts, 5,011 P7 taken trades x 128 columns; W-E signal-level table not used, so signals that were not taken are not in these tests).
+
+## What exists
+1. One feature function (i_feat.build) serves both the first-order table and the exact engine (identity checked: the table and the function output are identical in all 128 columns). Bars: NQ/ES/RTY 1-min with volume to 2026-11-10, ZN/6E/6J owned core bars, calendar events verified against the 08:30 / 14:00 ET range spike (unverified dates: FOMC 2026-03-18, NFP 2025-04-04, 2025-11-16, 2026-02-06; CPI identity cannot be told apart from PPI/retail days by the spike alone, the listed CPI dates all spike).
+2. First-order screen: 1,176 flags x skip/half = 2,352 cells on the LPB_BASE trade list (whole-stack daily P&L, live rows excluded), each with removed-$ in the 20 worst P7 weeks vs the 20 best (trend) weeks and the flagged trades of the frozen live week. Not built: ES print absorption (needs ES trades), tick-level 45-s confirm quality beyond signal-to-entry seconds and the 1-s dip.
+3. Exact hook: i_mixin.IGateMixin (skip / half / target retarget at the signal second inside the JN04RM / LPB engine), set builder i_mkset.py, manager i_mgr.py (launch gate 62 GB, hard guard 40 GB), scorer i_score.py.
+
+## Family null (is the best cell of a family better than the best cell of random flags?)
+The feature rows were permuted among P7 trades inside the same calendar month, the whole grid re-scored, and the best minimum equal-mean cut over L6M, HOLD, PRE and X-prime (cells flagging 5-45 percent of trades) recorded; 139 draws.
+
+| family | observed best | null median | null p90 | family p |
+|--|--|--|--|--|
+| I | 16.3 | 7.9 | 15.1 | 0.086 |
+| J | 27.3 | 21.5 | 29.8 | 0.164 |
+| K | 21.3 | 12.6 | 22.3 | 0.129 |
+| L | 14.4 | 18.2 | 25.8 | 0.721 |
+
+Plain reading: no family beats its null at 5 percent. J (cross-market) is closest on cell count; I, K are about 0.1; L is at the null. Everything below is therefore a lead, not a finding.
+
+## Registered cells (top-3 per family by the prereg rule, plus asymmetry picks)
+Columns: cut and eq_cut are stack maxDD cut percent (first-order, vs LPB_BASE, equal-mean for eq); rem w20 / rem b20 = P&L $ of the removed part in the 20 worst / 20 best P7 weeks (negative = losers removed); live = flagged trades in the frozen live week and the $ removed there (positive = winners removed).
+
+| fam | kind | cell | scope | act | n_flag | cut_L6M | cut_HOLD | cut_PRE | cut_X' | dmean_L6M | placebo_p | rem_w20 | rem_b20 | live_n | live_rem |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| I | prereg_top3 | room_on_x<2.0 | all | skip | 1766 | 27.6 | 13.0 | 12.2 | 29.9 | 776.6 | 0.0 | -232901.7 | 281945.8 | 11 | 20662.8 |
+| I | prereg_top3 | room_on_x<1.5 | all | skip | 1431 | 20.6 | 7.2 | 0.3 | 23.6 | 1074.2 | 0.1 | -188232.2 | 238580.1 | 9 | 18761.6 |
+| I | prereg_top3 | room_on_x<1.5 | asia | half | 505 | 0.5 | 2.5 | -0.4 | 10.9 | 623.5 | 0.1 | -62023.8 | 76271.3 | 3 | 6552.3 |
+| J | prereg_top3 | breadth_ext15==3 | all | skip | 1602 | 22.5 | 24.1 | 25.1 | 39.7 | 1081.1 | 0.0 | -190031.7 | 283510.9 | 11 | 30227.7 |
+| J | prereg_top3 | x_es_pull_opp5>=1.225(q70) | all | skip | 1245 | 3.5 | 5.4 | -1.0 | 0.9 | 4691.2 | 0.1 | -90678.8 | 165414.9 | 0 | 0.0 |
+| J | prereg_top3 | es_r60m>=21.82(q70) | all | skip | 1147 | 20.1 | 21.7 | 12.5 | 20.2 | 1657.7 | 0.0 | -143057.5 | 151408.8 | 13 | 12470.2 |
+| K | prereg_top3 | dow==2 | asia | skip | 408 | 35.5 | 8.0 | 4.7 | 13.2 | 3584.8 | 0.0 | -76942.0 | 88268.5 | 14 | 10053.3 |
+| K | prereg_top3 | dow==2 | all | skip | 895 | 40.4 | 1.1 | 12.4 | 13.9 | 3069.8 | 0.0 | -89549.4 | 141877.1 | 19 | 8571.2 |
+| K | prereg_top3 | dow>1 | asia | skip | 1307 | 33.1 | 10.3 | -0.1 | 33.2 | 2900.3 | 0.0 | -276281.1 | 340685.0 | 21 | 27343.7 |
+| L | prereg_top3 | push_beyond_ref<=-1(q30) | all | half | 1682 | 14.1 | 15.9 | 14.3 | 11.8 | 527.0 | 0.0 | -73951.5 | 98885.3 | 24 | 20206.2 |
+| L | prereg_top3 | pb_depth>=13.75(q70) | all | half | 1875 | 4.0 | 6.0 | 2.2 | 11.1 | 2109.7 | 0.1 | -56351.0 | 60354.7 | 38 | 20686.8 |
+| L | prereg_top3 | pb_depth>=18(q80) | all | skip | 1275 | 28.5 | -11.4 | 8.3 | 9.6 | 4657.0 | 0.0 | -91302.4 | 85225.2 | 32 | 29690.0 |
+| J | asymmetry_pick | rs_es15>=4.377(q80) | all | half | 1090 | 12.3 | 12.2 | 10.0 | 14.8 | 1804.4 | nan | -60988.7 | -4937.7 | 21 | 15820.3 |
+| J | asymmetry_pick | rs_es30>=9.397(q80) | all | half | 998 | 19.9 | 9.4 | 21.0 | 6.5 | 592.0 | nan | -53167.4 | -1761.4 | 18 | 13599.6 |
+| J | asymmetry_pick | nq_r60m>=32.91(q70) | all | skip | 1199 | 46.5 | 37.4 | 20.7 | 10.4 | 1242.3 | nan | -154496.0 | 153429.7 | 19 | 4934.1 |
+
+## Bi-weekly walk-forward (first-order)
+| kind | fam | cell | wf2w_cut | wf2w_mean | wf2w_beat_pct |
+|--|--|--|--|--|--|
+| family_repick | I | all 68 cells | -8.3 | -2495.7 | 59.5 |
+| family_repick | J | all 954 cells | -3.2 | -2402.3 | 60.8 |
+| family_repick | K | all 206 cells | -7.9 | -2768.6 | 51.9 |
+| family_repick | L | all 488 cells | 11.4 | -1266.0 | 68.4 |
+| cell_vs_live | I | I|room_on_x<2.0|all|skip | 12.2 | -2150.4 | 41.8 |
+| cell_vs_live | I | I|room_on_x<1.5|all|skip | 0.3 | -1696.8 | 30.4 |
+| cell_vs_live | I | I|room_on_x<1.5|asia|half | -0.4 | -337.9 | 34.2 |
+| cell_vs_live | J | J|breadth_ext15==3|all|skip | 25.1 | -127.2 | 64.6 |
+| cell_vs_live | J | J|breadth_ext15>2|all|skip | 25.1 | -127.2 | 64.6 |
+| cell_vs_live | J | J|x_es_pull_opp5>=1.225(q70)|all|skip | -1.0 | 445.7 | 39.2 |
+| cell_vs_live | J | J|es_r60m>=21.82(q70)|all|skip | 2.9 | 18.2 | 51.9 |
+| cell_vs_live | J | J|rs_es15>=4.377(q80)|all|half | 10.0 | 565.8 | 48.1 |
+| cell_vs_live | J | J|rty_ext15==1|all|skip | 20.7 | -1052.6 | 63.3 |
+| cell_vs_live | J | J|rty_ext15>0|all|skip | 20.7 | -1052.6 | 63.3 |
+| cell_vs_live | J | J|rs_es15>=4.377(q80)|all|skip | 25.1 | 876.9 | 46.8 |
+| cell_vs_live | K | K|dow==2|asia|skip | -0.3 | 312.3 | 39.2 |
+| cell_vs_live | K | K|dow==2|all|skip | -3.3 | -615.8 | 48.1 |
+| cell_vs_live | K | K|dow>1|asia|skip | -0.1 | -1254.5 | 40.5 |
+| cell_vs_live | K | K|dow>1|asia|half | 4.5 | -739.8 | 62.0 |
+| cell_vs_live | K | K|dow==2|asia|half | 3.9 | 37.8 | 48.1 |
+| cell_vs_live | K | K|dow==3|all|skip | 14.2 | -108.8 | 54.4 |
+| cell_vs_live | K | K|dow==2|all|half | 8.9 | -64.9 | 57.0 |
+| cell_vs_live | K | K|dow==3|asia|skip | -2.5 | -894.7 | 26.6 |
+| cell_vs_live | L | L|push_beyond_ref<=-1(q30)|all|half | 14.3 | 82.2 | 73.4 |
+| cell_vs_live | L | L|pb_depth>=13.75(q70)|all|half | -6.5 | 363.2 | 70.9 |
+| cell_vs_live | L | L|pb_depth>=18(q80)|all|skip | -14.1 | 203.5 | 55.7 |
+| cell_vs_live | L | L|ema_slope15>=1.3(q80)|all|skip | -0.4 | -528.3 | 57.0 |
+| cell_vs_live | L | L|dip3>=20.75(q80)|all|half | -4.6 | 380.0 | 54.4 |
+| cell_vs_live | L | L|l2conf<=1|asia|half | 14.1 | -63.7 | 51.9 |
+| cell_vs_live | L | L|pb_depth>=13.75(q70)|all|skip | -15.5 | -747.4 | 53.2 |
+| cell_vs_live | L | L|ema_slope15>=1.3(q80)|all|half | 28.2 | 193.4 | 65.8 |
+
+The family re-pick rows are the honest out-of-sample of the whole screen: only L shows a drawdown cut and it costs mean; the others are negative.
+
+## Asymmetric bracket (flagged entries get target 30/35/45 instead of 60, first-order from the PTR paths; only the target side is representable)
+| cell | tgt | n_flag | n_hit | cut_L6M | cut_HOLD | cut_PRE | cut_X' | dmean_L6M | chg_w20 | chg_b20 |
+|--|--|--|--|--|--|--|--|--|--|--|
+| I|room_on_x<2.0|all | 30.0 | 1766 | 1060 | -6.0 | -4.8 | 14.0 | 10.1 | -948.5 | 99731.7 | -143534.0 |
+| I|room_on_x<2.0|all | 35.0 | 1766 | 993 | -3.7 | -1.7 | 12.4 | 3.7 | -1199.2 | 98673.2 | -111047.0 |
+| I|room_on_x<2.0|all | 45.0 | 1766 | 877 | 7.9 | -4.3 | 2.6 | -0.3 | -1341.8 | 46673.2 | -60972.5 |
+| J|breadth_ext15==3|all | 30.0 | 1602 | 943 | 3.9 | 5.9 | 13.5 | 5.4 | 75.5 | 68954.2 | -79936.5 |
+| J|breadth_ext15==3|all | 35.0 | 1602 | 877 | 2.6 | 4.6 | 18.9 | 9.1 | -369.1 | 42752.7 | -50883.0 |
+| J|breadth_ext15==3|all | 45.0 | 1602 | 781 | 17.7 | 17.9 | 5.5 | 2.6 | -304.7 | 29479.7 | -17524.5 |
+| J|es_r60m>=21.82(q70)|all | 30.0 | 1147 | 653 | 3.8 | 5.7 | 7.1 | -0.1 | 1161.7 | 61170.2 | -56213.0 |
+| J|es_r60m>=21.82(q70)|all | 35.0 | 1147 | 623 | 4.0 | 6.0 | 11.9 | 0.5 | 1937.8 | 56669.7 | -47780.0 |
+| J|es_r60m>=21.82(q70)|all | 45.0 | 1147 | 543 | 4.5 | 6.5 | 18.4 | -2.1 | 539.7 | 39691.7 | -33925.0 |
+| J|rs_es15>=4.377(q80)|all | 30.0 | 1090 | 637 | -0.4 | 1.6 | 0.0 | 24.4 | 495.5 | 42236.0 | 6908.5 |
+| J|rs_es15>=4.377(q80)|all | 35.0 | 1090 | 606 | 1.0 | 3.0 | 8.4 | 26.3 | 257.0 | 38303.0 | 24323.5 |
+| J|rs_es15>=4.377(q80)|all | 45.0 | 1090 | 516 | 6.0 | 0.3 | -10.6 | -0.6 | 506.7 | 7740.0 | 37582.0 |
+| K|dow==2|asia | 30.0 | 408 | 244 | 24.1 | 15.3 | 5.1 | 12.1 | 1027.4 | 22861.0 | -56825.0 |
+| K|dow==2|asia | 35.0 | 408 | 224 | 27.5 | 18.5 | 2.9 | 10.4 | 1085.7 | 20156.5 | -39525.0 |
+| K|dow==2|asia | 45.0 | 408 | 193 | 30.5 | 24.9 | 9.5 | 16.3 | 257.1 | 36951.5 | -6917.0 |
+| L|push_beyond_ref<=-1(q30)|all | 30.0 | 1682 | 1017 | 36.4 | 16.4 | 12.7 | 29.6 | 972.9 | 84315.0 | -109085.0 |
+| L|push_beyond_ref<=-1(q30)|all | 35.0 | 1682 | 953 | 40.7 | 22.8 | 15.8 | 19.3 | 963.9 | 89365.0 | -75674.0 |
+| L|push_beyond_ref<=-1(q30)|all | 45.0 | 1682 | 836 | 28.8 | 18.1 | 9.3 | 14.8 | 1815.0 | 63708.0 | -33010.5 |
+| L|ema_slope15>=1.3(q80)|all | 30.0 | 1257 | 737 | 15.0 | 11.3 | 24.4 | 5.2 | -562.7 | 92699.2 | -20066.5 |
+| L|ema_slope15>=1.3(q80)|all | 35.0 | 1257 | 695 | 12.8 | 14.6 | 26.3 | 5.3 | 758.2 | 80441.7 | -4730.0 |
+| L|ema_slope15>=1.3(q80)|all | 45.0 | 1257 | 614 | 8.5 | 10.4 | 24.1 | 5.2 | 656.6 | 48607.2 | 13658.5 |
+
+## Exact (one set per job, JN04RM base, vs JN04RM and LPB references)
+No exact set has finished yet (launch gate 62 GB MemAvail not met since 19:20Z; 15 sets queued in /mnt/l2/l2vast/_th_works_i/queue.txt).
+
 
 
 ## M. (W-M) (M)
 
-(DS3_WORKS_M.md has not landed yet at 2026-11-11T19:14:15Z)
+(DS3_WORKS_M.md has not landed yet at 2026-11-11T19:34:23Z)
 
 
 ## Q. Ranker, joint stage, minimal rule set (W-Q) (Q)
 
-(DS3_WORKS_Q.md has not landed yet at 2026-11-11T19:14:15Z)
+Source DS3_WORKS_Q.md (mtime 2026-11-11T19:30:08Z UTC), included verbatim, read only:
+
+# DS3_WORKS_Q - W-Q (family Q ranker + JOINT STAGE), page 0, 2026-11-11 19:20Z (date -u). Shadow only, post-hoc, no PASS claim.
+Prereg autopilot/WORKS_Q_PREREG.md (sha256 bc9d2cde..., DECISIONS.md 19:14Z). Code outputs/code/th_works_q/q_rank.py and q_registry.py; outputs /mnt/l2/l2vast/_th_works/q/.
+
+## Status in plain sentences
+1. The ranker harness is built and ran once on the features that exist today (22 causal columns of the C1 table: ER, ATR, atr_rel, ADX, session move, TWAP slope/dev, P7 order/gap/last pnl, K/U/M same/opp side, calmar10, lots, session, side). It is a purged expanding walk-forward, refit every 2 label-weeks from 2024-04-01, label = the P7 trade ended in Target, a 12-leaf monotone LightGBM (3 seeds) and a 6-leaf tree (3 seeds), and a 20-shuffle family null (labels shuffled within month, same pipeline). Out-of-fold AUC is 0.534-0.538 for the GBDT and 0.509 for the tree.
+2. Result today (first-order, trade level, equal-lot removal, NOT exact): skipping the bottom decile changes P7 by +$739 per week in L6M (null mean -$1,320, null 95th percentile +$732), +$197 in HOLD (null 95th +$648), +$431 in PRE (null 95th +$444); skipping the bottom quintile and halving the next gives +$470 L6M, -$349 HOLD, -$78 PRE. The 6-leaf tree is negative in every window (-$1.6k to -$4.9k per week). So on the current features the ranker is at the family-null edge, not above it: no lead. The null mean is negative because skipping random trades from a positive-mean book costs money, so the honest comparison is the null 95th percentile.
+3. Top features by gain (GBDT mean over seeds): lots, p7_gap_min (minutes since the last P7 exit), atr_rel, p7_last_pnl, twap_dev, atr5, adx5, session move. Nothing yet is expressible as 2-3 plain conditions beyond what C1 already said (lots, re-entry gap, vol state). The X' window (2023-04..2024-01) has no out-of-fold scores because the first fold is 2024-04: X' is empty for Q by construction until a shorter warm-up is tried.
+4. Not done: the E/F/G/H/I/J/K/L/M/N/O/P feature tables have not landed (shared table p7_signal_features.parquet and p7_feat_*.parquet are absent; the _th_works/e and /i directories exist but are empty at 19:17Z). q_rank.py joins them automatically on sig_ts / utc_epoch_s when they appear, and the ranker must be re-run then, including untaken signals if W-E supplies them (today it ranks taken trades only, so it cannot see signals the live blackout or caps already skipped).
+5. Joint registry: /mnt/l2/l2vast/_th_works/q/joint_registry.tsv, rebuilt by `python3 -I code/th_works_q/q_registry.py` (read-only on others' files). It holds 18 exact rows today (W-A A1 3, A2 5, A-composites 2, W-C C3/C4 6, others 2) with windows done, L6M/HOLD/PRE maxDD cut and mean; top3 flag per family and reference. W-B rows are in its DS3 page and drive logs, not yet in a score csv, so they are not in the registry: to be added when W-B publishes one.
+6. The joint stage has NOT started. Budget stated honestly: exact throughput is about 35-40 cell-months per worker per hour with a shared cap, and MemAvail was 34 GB at 19:17Z (below the 40 GB guard), so no exact worker was launched by W-Q. 2,000 exact stacks x even one window (6 months) = 12,000 cell-months = about 300 worker-hours, impossible. Plan once families land: (1) full factorial of the six top-1s = 64 stacks, pre-screened first-order, the top 8 exact on L6M then HOLD, PRE, X'; (2) coordinate descent from LPB/JN04RM and from 10 random stacks, exact only for the final 5 stacks; (3) 2,000 random stacks first-order only (labelled first-order, never a result) to pick 6-10 stacks for exact L6M; (4) interaction table from first-order pair-drops, confirmed exact for the top pairs; (5) the minimal 2-3 rule set exact on L6M + HOLD, then repeated unchanged on K7/M7/U7. Dial pairs already suspected duplicate from W-A/W-B: SIGQ vs day cap, LOT vs 7/4/4.
+7. Known inputs for the joint (from the other pages, exact, JN04RM base): W-C 30-min blackout -5.2 % L6M (not an earner on the dressed stack), hot-only 60-min same-side blackout +4.1 % (inside noise); W-B never-cut P7 +19.1 / +10.4 / +27.4 % L6M/PRE/X', -19.1 % HOLD on LPB_BASE; W-A A2_18 first-order L6M overstated vs exact (-24.4 %). These are registry candidates, not joint results.
+
+## Next
+Page 03:00Z will carry: ranker re-run on the landed feature tables with untaken signals, registry with top-3 per family, factorial pre-screen, first exact joint rows, and the budget actually spent.
+
+## Auto section (chain, rebuilt 2026-11-11T19:30:08Z)
+Inputs seen: 37 watched files; feature tables landed: ['p7_feat_I.parquet', 'p7_feat_I_v2.parquet', 'p7_signal_features.parquet']. Cycle log: no change in feature tables, ranker not re-run.
+Registry rows by family: {'A-comp': 2, 'A1': 3, 'A2': 5, 'C3': 4, 'C4': 2, 'other': 2}. launch gate MemAvail 52 GB (need 62): CLOSED; no joint set is defined yet (needs the families top-3 specs), so nothing launched.
+Ranker (first-order, GBDT mean over 3 seeds vs null 95th percentile, dollars per week):
+action  win    gbdt  null95
+   dec HOLD  6527.0  3526.0
+   dec  L1M  4457.0  4843.0
+   dec  L3M  4649.0  5014.0
+   dec  L6M  5687.0  4350.0
+   dec  PRE  6079.0  3269.0
+   dec   X'     0.0     0.0
+  quin HOLD 22226.0  7645.0
+  quin  L1M 25847.0 10883.0
+  quin  L3M 21528.0  9788.0
+  quin  L6M 22451.0  8132.0
+  quin  PRE 16756.0  6193.0
+  quin   X'     0.0     0.0
+First-order P7-only rule interaction on the six rules R1 gap<30 min skip, R2 atr_rel>=1.3 half, R3 chasing 3rd+ skip, R4 LOT cold half, R5 Asia 7-lot short half, R6 same-side stack>=5 half (trade-level, week-level P7 drawdown, NOT stack, NOT exact; top 6 of the 64-cell factorial by L6M drawdown cut; k = rule count; removed_w20 / removed_other = pnl removed in the worst-20 weeks vs other weeks):
+      rules  k  ddcut_L6M  dmean_L6M  ddcut_HOLD  dmean_HOLD  ddcut_PRE  dmean_PRE  ddcut_X'  dmean_X'  removed_w20  removed_other
+   R1+R2+R5  3       60.2    -3366.3        26.5     -6136.0       46.3    -1458.4      -7.8    -947.2    -331787.2       881706.7
+   R2+R4+R5  3       58.8    -2874.6        57.8     -4544.6       33.4    -2023.6      54.8      70.2    -322498.0       756219.8
+      R1+R5  2       53.5    -2957.4        -5.5     -5715.8       32.7     -999.2     -40.1   -1389.9    -275708.8       772993.8
+R1+R2+R4+R5  4       52.8    -5885.2         0.7     -7986.3       67.7    -2120.6      36.1    -637.2    -422370.3      1101324.4
+R2+R3+R4+R5  4       51.5    -5999.0        51.5     -6927.5       46.7    -2397.5      54.5      86.5    -369540.7       951206.9
+R1+R2+R5+R6  4       49.9    -3775.1        24.9     -6286.8       47.7    -1673.4      -6.3    -953.6    -331459.5       908276.6
+ACCEPTANCE (user test: a finalist that fails test 1 on more than 2 of the 20 worst sessions is NOT the P7 fix; joint ranked by passes acceptance first, then L6M/HOLD cut). LPB_BASE P7 baseline (test 2, consecutive same-side losing entries per session; a win or an opposite-side trade resets): all sessions max 6, 95th 2, mean 0.89, $ lost on 3rd-and-later: -136326; Asia max 6, 95th 2, mean 0.90, -80482. Sessions with a run of 3 or more: 48 of 2213.
+Finalist results: no finalist yet (finalists.txt empty or W-C acceptance_p7.py absent)
+Pairs (jaccard = overlap of flagged trades; L6M columns = P7 drawdown cut percent, pair vs each alone; additive pairs with small jaccard do not duplicate, big jaccard with pair < sum duplicates):
+                 a                  b  n_a  n_b  jaccard  L6M_pair  L6M_i  L6M_j
+     R1_gap30_skip      R2_hot13_half 2350 2390     0.28     47.16  39.44  20.67
+     R1_gap30_skip      R3_chase_skip 2350  931     0.26     11.96  39.44   2.09
+     R1_gap30_skip       R4_cold_half 2350 3000     0.36     28.93  39.44  22.60
+     R1_gap30_skip R5_asia7short_half 2350  404     0.08     53.55  39.44  25.79
+     R1_gap30_skip     R6_stack5_half 2350  356     0.10     22.36  39.44  -0.00
+     R2_hot13_half      R3_chase_skip 2390  931     0.17     24.72  20.67   2.09
+     R2_hot13_half       R4_cold_half 2390 3000     0.35     49.35  20.67  22.60
+     R2_hot13_half R5_asia7short_half 2390  404     0.06     39.71  20.67  25.79
+     R2_hot13_half     R6_stack5_half 2390  356     0.02     23.38  20.67  -0.00
+     R3_chase_skip       R4_cold_half  931 3000     0.16     18.53   2.09  22.60
+     R3_chase_skip R5_asia7short_half  931  404     0.11     27.30   2.09  25.79
+     R3_chase_skip     R6_stack5_half  931  356     0.06      5.42   2.09  -0.00
+      R4_cold_half R5_asia7short_half 3000  404     0.08     36.41  22.60  25.79
+      R4_cold_half     R6_stack5_half 3000  356     0.07      6.13  22.60  -0.00
+R5_asia7short_half     R6_stack5_half  404  356     0.07     25.79  25.79  -0.00
+
+
+
+## Z. Worst 10 sessions replayed entry by entry, before and after (acceptance replays, W-Q)
+
+(no section matching 'worst 10|acceptance|replay' in DS3_WORKS_Q.md yet)
