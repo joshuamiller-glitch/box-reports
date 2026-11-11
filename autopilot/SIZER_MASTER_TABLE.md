@@ -1,4 +1,4 @@
-# SIZER MASTER TABLE vs Q1-A (S4a integrator v2, 2026-11-11 15:18Z)
+# SIZER MASTER TABLE vs Q1-A (S4a integrator v2, 2026-11-11 15:43Z)
 
 Reference = Q1-A (ER(20)5m < .30 x0.5 else x1.0, live since 2026-11-02 19:30Z), bases: 'ts2' rows are on BASE-4's run_v13t_ts2 (live lot order session -> slot/B02 -> ER Q1-A -> zone); 'ts (old order)' rows come from other agents' runs not yet re-run on ts2 (their Q1-A reference is on the same old base). Cuts are fractions of weekly maxDD vs Q1-A (positive = smaller drawdown); dmean in $/wk vs Q1-A; drop = carrying weeks dropped; PA9 genuine where shown (blank = source did not provide). Rows from other agents are taken from their own Q1-A runs (stated in the src column of the csv); their equal-risk, placebo ranks and exposure are in their pages. Strict mean rule here: dmean >= 0 on L6M and PRE (other pages use a one-MDE tolerance). Rank key S = (cut L6M + cut PRE)/2 within program; 'asis' rows contain the x1.5 side and so add risk to Q1-A; 'down' rows are the cell with its x1.5 side removed (what it adds to Q1-A as a size-down rule). Old x1.5-ladder tables: SIZER_MASTER_TABLE_OLDREF.md. Post-hoc, Shadow only.
 
