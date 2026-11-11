@@ -1,4 +1,4 @@
-# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Wed Nov 11 09:20:08 PM UTC 2026)
+# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Wed Nov 11 09:49:48 PM UTC 2026)
 
 STATUS: Shadow only, post-hoc, no PASS claims (PASS/FAIL below is the trader acceptance test of the order, nothing more). Evidence table: DS3_NEAR_ZONE_TABLE.md (published 19:33Z, before any rule). Prereg NEAR_ZONE_PREREG.md (sha in DECISIONS.md). FIRST-ORDER scores on the LPB_BASE stored 1-s paths (43 months; L6M = 2026-05-12..10-30), slip 1.2 market, fees 4.84/lot, base = live panel rules as in LPB_BASE; exact rows in section 6. P7 is run at 12/7/7 lots (P7x, the users lots) and on the installed 7/4/4 table. Objective: give-back $ removed minus fills clipped $ per week; key = min(L6M, 43 months) net $/wk. Standing trader principle (19:45Z) applied: scorecard items a, b, e below, c and d (re-entry streaks) are untouched by exit-side rules in this first-order frame and are W-Qs tool to confirm.
 
@@ -23,7 +23,189 @@ Reading: no rule family removes the give-backs without clipping fills. The stric
 
 ## Exact status and processes
 
-Exact sets built (private nz_hooks for floor/ladder/rev/bank/work/zone; ptr_hooks grammar lines for flow and plain takes; fill models as above, exact market slip 1.2): 29 sets, 0 of 660 set-months DONE. Chain (pid 2173067, log /mnt/l2/l2vast/_nz/exact_chain.log) appends jobs to /mnt/l2/l2vast/_th_sz/exact_queue_6f_nz.txt only when MemAvail >= 62 GB (now 49 GB), L6M first, then HOLD, PRE, one set per job. Identity gate PTR_NZ_ID:202610 first. Manifest /mnt/l2/l2vast/_nz/exact_manifest.json. Page refresh loop pid 2179089 (every 4 h to 2026-11-12 12:00Z).
+Exact sets built (private nz_hooks for floor/ladder/rev/bank/work/zone; ptr_hooks grammar lines for flow and plain takes; fill models as above, exact market slip 1.2): 29 sets, 0 of 660 set-months DONE. Chain (pid 2173067, log /mnt/l2/l2vast/_nz/exact_chain.log) appends jobs to /mnt/l2/l2vast/_th_sz/exact_queue_6f_nz.txt only when MemAvail >= 62 GB (now 39 GB), L6M first, then HOLD, PRE, one set per job. Identity gate PTR_NZ_ID:202610 first. Manifest /mnt/l2/l2vast/_nz/exact_manifest.json. Page refresh loop pid 2179089 (every 4 h to 2026-11-12 12:00Z).
+
+## Families h-q (user addendum 21:45Z), first-order, same objective and definitions
+
+Definitions as in the block above: net = removed - clipped + other saves (per week; L6M 24 weeks, 43 months). Extra inputs for these families come from the 1-s state tape: per-second printed high/low (H/LO), resting size at the target level / MedLevel (QM, NaN when the level is beyond the top 10), the 30 min after a Target fill (runner), ATR14 of 1-min mid ranges, levels PDH/PDL/PWH/PWL/ONH/ONL from the real mids, 00/50 levels. Passive limits fill at price minus 0.25 only when a later second printed one tick THROUGH the price (queue-conservative; no partial fills). VWAP+-2 sigma and naked POC levels are NOT scored (no VWAP/profile series on the box). Not done for h-q: the live-week replay and the forward placebo (the live paths carry no print extremes; a time-shifted passive limit has no defined placebo) - read these rows as screens; exact needs engine order-level hooks (v1.8 actions below). Family i is scored from the resting size at the target level when it is inside the top 10 (about 70% of seconds).
+
+### h. Touched-not-filled: how often, and what those trades did next (live-rule trades whose price printed the target level or within j ticks and that did not fill)
+
+| book | window | level | trades touched-not-filled | per week | of trades that reached it | closed <= breakeven | $ per week (what they did) | mean $/lot | live exits |
+|---|---|---|---|---|---|---|---|---|---|
+| A7 | L6M | printed >= target | 0 | 0.00 | 1 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| A7 | L6M | printed >= T-1 tick | 1 | 0.04 | 23 | 1 | -26 | -627 | {'StateCut': 1.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| A7 | L6M | printed >= T-2 ticks | 1 | 0.04 | 40 | 1 | -26 | -627 | {'StateCut': 1.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| A7 | 43m | printed >= target | 0 | 0.00 | 2 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| A7 | 43m | printed >= T-1 tick | 2 | 0.01 | 106 | 2 | -10 | -904 | {'StateCut': 1.0, 'Stop': 1.0, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| A7 | 43m | printed >= T-2 ticks | 3 | 0.02 | 176 | 3 | -12 | -720 | {'StateCut': 1.0, 'Stop': 1.0, 'StackCut': 1.0, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| H7 | L6M | printed >= target | 0 | 0.00 | 1 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| H7 | L6M | printed >= T-1 tick | 0 | 0.00 | 8 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| H7 | L6M | printed >= T-2 ticks | 1 | 0.04 | 17 | 1 | -42 | -1036 | {'StateCut': None, 'Stop': None, 'StackCut': 1.0, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| H7 | 43m | printed >= target | 0 | 0.00 | 7 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| H7 | 43m | printed >= T-1 tick | 2 | 0.01 | 89 | 2 | -13 | -918 | {'StateCut': 1.0, 'Stop': 1.0, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| H7 | 43m | printed >= T-2 ticks | 4 | 0.02 | 155 | 4 | -23 | -890 | {'StateCut': 1.0, 'Stop': 1.0, 'StackCut': 2.0, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| K7 | L6M | printed >= target | 0 | 0.00 | 4 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| K7 | L6M | printed >= T-1 tick | 2 | 0.08 | 79 | 2 | -84 | -665 | {'StateCut': 1.0, 'Stop': None, 'StackCut': None, 'BookLock': 1.0, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| K7 | L6M | printed >= T-2 ticks | 3 | 0.12 | 148 | 3 | -109 | -649 | {'StateCut': 2.0, 'Stop': None, 'StackCut': None, 'BookLock': 1.0, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| K7 | 43m | printed >= target | 0 | 0.00 | 20 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| K7 | 43m | printed >= T-1 tick | 10 | 0.05 | 410 | 9 | -48 | -705 | {'StateCut': None, 'Stop': None, 'StackCut': 1.0, 'BookLock': None, 'TimeBlock': 3.0, 'StopJoinFallback': None, 'StopJoin': 4.0} |
+| K7 | 43m | printed >= T-2 ticks | 20 | 0.11 | 750 | 15 | -65 | -508 | {'StateCut': None, 'Stop': None, 'StackCut': 2.0, 'BookLock': None, 'TimeBlock': 6.0, 'StopJoinFallback': None, 'StopJoin': 6.0} |
+| M7 | L6M | printed >= target | 2 | 0.08 | 8 | 2 | -111 | -677 | {'StateCut': 2.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| M7 | L6M | printed >= T-1 tick | 4 | 0.16 | 39 | 4 | -213 | -733 | {'StateCut': 4.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| M7 | L6M | printed >= T-2 ticks | 5 | 0.20 | 65 | 5 | -246 | -746 | {'StateCut': 5.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| M7 | 43m | printed >= target | 2 | 0.01 | 17 | 2 | -15 | -677 | {'StateCut': 2.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| M7 | 43m | printed >= T-1 tick | 6 | 0.03 | 245 | 6 | -37 | -763 | {'StateCut': 6.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| M7 | 43m | printed >= T-2 ticks | 12 | 0.06 | 428 | 12 | -75 | -819 | {'StateCut': 10.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': 2.0} |
+| O7 | L6M | printed >= target | 0 | 0.00 | 0 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| O7 | L6M | printed >= T-1 tick | 0 | 0.00 | 1 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| O7 | L6M | printed >= T-2 ticks | 0 | 0.00 | 1 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| O7 | 43m | printed >= target | 0 | 0.00 | 0 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| O7 | 43m | printed >= T-1 tick | 0 | 0.00 | 16 | 0 | 0 | 0 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| O7 | 43m | printed >= T-2 ticks | 1 | 0.01 | 29 | 0 | 5 | 874 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': 1.0, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| P7 | L6M | printed >= target | 2 | 0.08 | 49 | 2 | -83 | -449 | {'StateCut': 1.0, 'Stop': None, 'StackCut': None, 'BookLock': 1.0, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| P7 | L6M | printed >= T-1 tick | 2 | 0.08 | 91 | 2 | -83 | -449 | {'StateCut': 1.0, 'Stop': None, 'StackCut': None, 'BookLock': 1.0, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| P7 | L6M | printed >= T-2 ticks | 3 | 0.12 | 134 | 3 | -223 | -584 | {'StateCut': 2.0, 'Stop': None, 'StackCut': None, 'BookLock': 1.0, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| P7 | 43m | printed >= target | 11 | 0.06 | 182 | 11 | -139 | -826 | {'StateCut': 10.0, 'Stop': None, 'StackCut': None, 'BookLock': 1.0, 'TimeBlock': None, 'StopJoinFallback': None, 'StopJoin': None} |
+| P7 | 43m | printed >= T-1 tick | 14 | 0.08 | 407 | 14 | -188 | -806 | {'StateCut': 11.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': 1.0} |
+| P7 | 43m | printed >= T-2 ticks | 21 | 0.11 | 654 | 20 | -284 | -773 | {'StateCut': 17.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': 1.0, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| U7 | L6M | printed >= target | 1 | 0.04 | 7 | 1 | -96 | -1176 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| U7 | L6M | printed >= T-1 tick | 1 | 0.04 | 19 | 1 | -96 | -1176 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| U7 | L6M | printed >= T-2 ticks | 1 | 0.04 | 28 | 1 | -96 | -1176 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| U7 | 43m | printed >= target | 1 | 0.01 | 42 | 1 | -13 | -1176 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| U7 | 43m | printed >= T-1 tick | 1 | 0.01 | 115 | 1 | -13 | -1176 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| U7 | 43m | printed >= T-2 ticks | 1 | 0.01 | 181 | 1 | -13 | -1176 | {'StateCut': None, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| ALLBOOKS | L6M | printed >= target | 5 | 0.20 | 70 | 5 | -290 | -686 | {'StateCut': 3.0, 'Stop': None, 'StackCut': None, 'BookLock': 1.0, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| ALLBOOKS | L6M | printed >= T-1 tick | 10 | 0.41 | 260 | 10 | -502 | -697 | {'StateCut': 7.0, 'Stop': None, 'StackCut': None, 'BookLock': 2.0, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| ALLBOOKS | L6M | printed >= T-2 ticks | 14 | 0.57 | 433 | 14 | -742 | -733 | {'StateCut': 10.0, 'Stop': None, 'StackCut': None, 'BookLock': 2.0, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| ALLBOOKS | 43m | printed >= target | 14 | 0.08 | 270 | 14 | -167 | -830 | {'StateCut': 12.0, 'Stop': None, 'StackCut': None, 'BookLock': 1.0, 'TimeBlock': None, 'StopJoinFallback': 1.0, 'StopJoin': None} |
+| ALLBOOKS | 43m | printed >= T-1 tick | 35 | 0.19 | 1388 | 34 | -309 | -792 | {'StateCut': 20.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': 3.0, 'StopJoinFallback': None, 'StopJoin': 5.0} |
+| ALLBOOKS | 43m | printed >= T-2 ticks | 62 | 0.33 | 2373 | 55 | -466 | -681 | {'StateCut': 31.0, 'Stop': None, 'StackCut': None, 'BookLock': None, 'TimeBlock': 7.0, 'StopJoinFallback': None, 'StopJoin': 9.0} |
+
+Reading: a target that printed (or printed within 1 tick) and did not fill is rare in the stored lists (all books about 0.4 per week at T-1 tick in L6M) but every one of them then closed at or below breakeven (live exits are loss cuts / stops / book locks), about -$700 per lot per case. The live M7 one-tick miss is a real pattern but a small one; the h rules below price how much of it a 0-5 s inside exit recovers and what they cost on trades that would have filled.
+
+### P7 12/7/7
+
+| fam | rule | key | net L6M | removed (zone) | clipped | other | clipped fills/wk | GB/wk before>after | RT/wk before>after | strict test v90/v80 (live rules b90/b80) | stack cut L6M/HOLD/PRE/X' % |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| h  | touched-not-filled: printed >= T-4 tick(s), hit inside after 0 s, slip 0.25 | 1530 | 5290 | 4357 | -933 | 0 | 7.3 | 2.0 > 1.7 | 2.0 > 1.6 | 17/40 (24/50) | 16.5/16.2/9.3/-0.7 |
+| i  | queue step-in: arm=0.8 queue>=1x Med -> limit T-2 tick | 1061 | 1780 | 602 | -1177 | 0 | 1.6 | 2.0 > 2.0 | 2.0 > 2.0 | 23/49 (24/50) | 7.2/7.2/-0.3/6.7 |
+| m  | staggered 1/3 at 0.8, 1/3 at 0.9, 1/3 at 100% floors off/0.9 | 3684 | 8320 | 16345 | 9130 | 1104 | 15.4 | 2.0 > 1.0 | 2.0 > 1.0 | 4/25 (24/50) | 21.5/13.0/26.8/30.7 |
+| n  | runner 0.50 of lots, trail pts 25, floor 1 T | 1122 | 3333 | 0 | -3333 | 0 | 19.2 | 2.0 > 2.0 | 2.0 > 2.0 | 24/50 (24/50) | 1.8/1.8/11.1/-4.2 |
+| o  | level target all m=0.7: target = level - 2 ticks | 871 | 2993 | 10025 | 7844 | 812 | 7.9 | 2.0 > 1.2 | 2.0 > 1.2 | 14/29 (24/50) | 31.2/7.8/14.7/-4.3 |
+| p  | noise floor arm=0.9: ext - 0.75 x ATR14(1m) | 494 | 3123 | 10655 | 7532 | -0 | 6.1 | 2.0 > 1.1 | 2.0 > 1.1 | 2/27 (24/50) | 20.1/4.8/8.6/24.9 |
+| q  | arrival: fast<=150s mid slow>600s floors 0.8/0.8/0.8 | 445 | 1010 | 22295 | 21285 | 0 | 15.9 | 2.0 > 0.1 | 2.0 > 0.0 | 3/1 (24/50) | 11.3/3.3/22.3/13.0 |
+| j  | move-target to wall-1: arm=0.8 wall_ahead[20]>=3 persist=1 | 2001 | 5365 | 12468 | 7103 | 0 | 14.7 | 2.0 > 1.2 | 2.0 > 1.0 | 10/24 (24/50) | 32.9/17.1/3.6/6.8 |
+
+### P7 7/4/4
+
+| fam | rule | key | net L6M | removed (zone) | clipped | other | clipped fills/wk | GB/wk before>after | RT/wk before>after | strict test v90/v80 (live rules b90/b80) | stack cut L6M/HOLD/PRE/X' % |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| h  | touched-not-filled: printed >= T-4 tick(s), hit inside after 0 s, slip 0.25 | 893 | 3069 | 2512 | -557 | 0 | 7.3 | 2.0 > 1.7 | 2.0 > 1.6 | 17/40 (24/50) | 14.9/4.1/10.1/1.4 |
+| i  | queue step-in: arm=0.8 queue>=1x Med -> limit T-2 tick | 617 | 1040 | 351 | -688 | 0 | 1.6 | 2.0 > 2.0 | 2.0 > 2.0 | 23/49 (24/50) | 5.9/4.9/2.6/5.6 |
+| m  | staggered 1/3 at 0.8, 1/3 at 0.9, 1/3 at 100% floors off/0.9 | 1721 | 4973 | 8395 | 4002 | 580 | 11.6 | 2.0 > 1.3 | 2.0 > 1.2 | 9/30 (24/50) | 18.9/-4.6/17.4/24.1 |
+| n  | runner 0.50 of lots, trail pts 25, floor 1 T | 1225 | 2555 | 0 | -2555 | 0 | 16.0 | 2.0 > 2.0 | 2.0 > 2.0 | 24/50 (24/50) | 4.5/5.3/16.4/4.3 |
+| o  | level target all m=0.7: target = level - 2 ticks | 510 | 1745 | 5810 | 4538 | 473 | 7.9 | 2.0 > 1.2 | 2.0 > 1.2 | 14/29 (24/50) | 28.5/-2.5/14.3/2.3 |
+| p  | noise floor arm=0.9: ext - 0.75 x ATR14(1m) | 289 | 1817 | 6182 | 4365 | 0 | 6.1 | 2.0 > 1.1 | 2.0 > 1.1 | 2/27 (24/50) | 25.6/-4.9/3.9/21.9 |
+| q  | arrival: fast<=150s mid slow>600s floors 0.8/0.8/0.8 | 269 | 591 | 12913 | 12321 | 0 | 15.9 | 2.0 > 0.1 | 2.0 > 0.0 | 3/1 (24/50) | 8.2/-6.1/16.3/11.6 |
+| j  | move-target to wall-1: arm=0.8 wall_ahead[20]>=3 persist=1 | 1171 | 3134 | 7227 | 4093 | 0 | 14.7 | 2.0 > 1.2 | 2.0 > 1.0 | 10/24 (24/50) | 33.2/4.9/1.4/6.0 |
+
+### K7
+
+| fam | rule | key | net L6M | removed (zone) | clipped | other | clipped fills/wk | GB/wk before>after | RT/wk before>after | strict test v90/v80 (live rules b90/b80) | stack cut L6M/HOLD/PRE/X' % |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| h  | touched-not-filled: printed >= T-1 tick(s), hit inside after 0 s, slip 0.25 | -8 | 40 | 219 | 179 | -0 | 2.5 | 3.2 > 3.1 | 3.2 > 3.1 | 34/76 (36/78) | -0.4/-0.2/-0.8/-0.5 |
+| i  | queue step-in: arm=0.8 queue>=3x Med -> limit T-2 tick | 0 | 0 | 0 | -0 | 0 | 0.0 | 3.2 > 3.2 | 3.2 > 3.2 | 36/78 (36/78) | 0.0/-0.0/-0.0/0.0 |
+| m  | staggered 1/2 at 0.95 + 1/2 at 100% floor-after 0.6 | 89 | 686 | 955 | 269 | 0 | 3.0 | 3.2 > 2.9 | 3.2 > 2.9 | 30/72 (36/78) | -0.5/1.5/-0.6/2.5 |
+| n  | runner 0.33 of lots, trail pts 8, floor 1 T | -64 | -64 | 0 | 64 | 0 | 4.9 | 3.2 > 3.2 | 3.2 > 3.2 | 36/78 (36/78) | -0.5/0.0/-0.3/0.1 |
+| o  | level target round m=0.9: target = level - 2 ticks | -4 | 15 | 231 | 216 | -0 | 1.9 | 3.2 > 3.1 | 3.2 > 3.1 | 35/76 (36/78) | -0.7/-0.2/1.6/-0.4 |
+| p  | noise floor arm=0.9: ext - 3 x ATR14(1m) | -226 | 236 | 1864 | 1627 | 0 | 2.2 | 3.2 > 4.2 | 3.2 > 2.3 | 60/56 (36/78) | -1.1/1.0/-3.3/3.0 |
+| q  | arrival: fast<=180s mid slow>300s floors 0.4/0.6/0.4 | -639 | -146 | 5036 | 5182 | 0 | 5.9 | 3.2 > 8.7 | 3.2 > 0.0 | 172/1 (36/78) | 8.5/0.3/10.2/6.6 |
+| j  | move-target to wall-1: arm=0.9 wall_ahead[4]>=12 persist=3 | -10 | 245 | 707 | 463 | -0 | 0.9 | 3.2 > 3.3 | 3.2 > 3.0 | 39/73 (36/78) | -0.3/0.9/-1.1/-3.4 |
+
+### M7
+
+| fam | rule | key | net L6M | removed (zone) | clipped | other | clipped fills/wk | GB/wk before>after | RT/wk before>after | strict test v90/v80 (live rules b90/b80) | stack cut L6M/HOLD/PRE/X' % |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| h  | touched-not-filled: printed >= T-2 tick(s), hit inside after 0 s, slip 0.25 | 64 | 469 | 611 | 142 | 0 | 2.0 | 1.9 > 1.7 | 1.9 > 1.7 | 19/42 (23/47) | -0.3/1.8/-0.5/-0.9 |
+| i  | queue step-in: arm=0.8 queue>=1x Med -> limit T-2 tick | 45 | 285 | 304 | 19 | 0 | 0.9 | 1.9 > 1.8 | 1.9 > 1.8 | 21/45 (23/47) | -0.0/2.0/-0.1/-0.2 |
+| m  | staggered 1/2 at 0.95 + 1/2 at 100% floor-after 0.7 | 89 | 700 | 847 | 147 | 0 | 1.5 | 1.9 > 1.7 | 1.9 > 1.7 | 18/41 (23/47) | 4.5/0.0/-1.1/-1.0 |
+| n  | runner 0.33 of lots, trail pts 8, floor 1 T | -102 | -102 | 0 | 102 | 0 | 2.3 | 1.9 > 1.9 | 1.9 > 1.9 | 23/47 (23/47) | -0.3/-0.3/-0.5/-0.4 |
+| o  | level target round m=0.9: target = level - 2 ticks | 12 | 225 | 287 | 62 | 0 | 0.7 | 1.9 > 1.8 | 1.9 > 1.8 | 20/44 (23/47) | 2.1/-0.5/-0.4/1.0 |
+| p  | noise floor arm=0.9: ext - 3 x ATR14(1m) | 40 | 361 | 1202 | 841 | 0 | 1.0 | 1.9 > 2.4 | 1.9 > 1.2 | 34/30 (23/47) | 3.3/-0.4/-2.4/-6.0 |
+| q  | arrival: fast<=180s mid slow>300s floors 0.8/0.6/0.4 | -148 | 269 | 3014 | 2745 | 0 | 3.7 | 1.9 > 3.9 | 1.9 > 0.0 | 76/0 (23/47) | 6.8/1.7/-5.5/-7.7 |
+| j  | move-target to wall-1: arm=0.9 wall_ahead[20]>=6 persist=3 | 109 | 450 | 810 | 360 | 0 | 1.4 | 1.9 > 1.8 | 1.9 > 1.6 | 20/38 (23/47) | -0.1/-1.1/-4.5/-2.1 |
+
+### U7
+
+| fam | rule | key | net L6M | removed (zone) | clipped | other | clipped fills/wk | GB/wk before>after | RT/wk before>after | strict test v90/v80 (live rules b90/b80) | stack cut L6M/HOLD/PRE/X' % |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| h  | touched-not-filled: printed >= T-0 tick(s), hit inside after 0 s, slip 0.25 | 14 | 171 | 191 | 20 | 0 | 0.1 | 0.7 > 0.6 | 0.7 > 0.6 | 3/15 (4/16) | -0.3/-0.4/0.0/0.0 |
+| i  | queue step-in: arm=0.8 queue>=30x Med -> limit T-1 tick | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.7 > 0.7 | 0.7 > 0.7 | 4/16 (4/16) | 0.0/0.0/0.0/0.0 |
+| m  | staggered 1/2 at 0.75 + 1/2 at 100% floor-after off | 148 | 453 | 1779 | 1918 | 593 | 4.8 | 0.7 > 0.7 | 0.7 > 0.5 | 6/11 (4/16) | 8.7/-0.6/7.0/2.4 |
+| m (pass) | staggered 1/2 at 0.75 + 1/2 at 100% floor-after 0.8 | 144 | 591 | 3547 | 4119 | 1163 | 4.8 | 0.7 > 0.0 | 0.7 > 0.0 | 0/0 (4/16) | 16.7/-1.5/13.6/1.1 |
+| n  | runner 0.50 of lots, trail xATR 5, floor 1 T | 84 | 174 | 0 | -174 | 0 | 4.9 | 0.7 > 0.7 | 0.7 > 0.7 | 4/16 (4/16) | -0.1/2.0/1.8/0.9 |
+| o  | level target all m=0.9: target = level - 2 ticks | 4 | 60 | 200 | 140 | 0 | 0.4 | 0.7 > 0.6 | 0.7 > 0.6 | 3/15 (4/16) | -0.4/-0.3/-0.1/2.4 |
+| p  | noise floor arm=0.7: ext - 1 x ATR14(1m) | 2 | 809 | 3168 | 4091 | 1731 | 3.2 | 0.7 > 0.6 | 0.7 > 0.0 | 13/0 (4/16) | 13.2/-11.0/18.7/-2.6 |
+| q  | arrival: fast<=150s mid slow>600s floors 0.8/0.6/0.8 | -278 | 417 | 3479 | 3063 | 0 | 4.1 | 0.7 > 0.0 | 0.7 > 0.0 | 1/0 (4/16) | 10.0/0.6/14.5/-3.2 |
+| q (pass) | arrival: fast<=150s mid slow>600s floors 0.8/0.8/0.8 | -285 | 354 | 3593 | 3239 | 0 | 4.6 | 0.7 > 0.0 | 0.7 > 0.0 | 0/0 (4/16) | 7.0/0.6/13.1/-3.2 |
+| j  | move-target to wall-1: arm=0.8 wall_ahead[20]>=25 persist=3 | 172 | 263 | 236 | -27 | -0 | 0.1 | 0.7 > 0.7 | 0.7 > 0.6 | 4/15 (4/16) | 0.0/-0.4/5.9/-0.1 |
+
+### H7
+
+| fam | rule | key | net L6M | removed (zone) | clipped | other | clipped fills/wk | GB/wk before>after | RT/wk before>after | strict test v90/v80 (live rules b90/b80) | stack cut L6M/HOLD/PRE/X' % |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| h  | touched-not-filled: printed >= T-4 tick(s), hit inside after 0 s, slip 0.25 | 55 | 189 | 89 | -100 | -0 | 1.1 | 0.5 > 0.5 | 0.5 > 0.5 | 3/12 (4/13) | 2.6/-0.1/-0.3/-0.7 |
+| i  | queue step-in: arm=0.8 queue>=30x Med -> limit T-2 tick | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.5 > 0.5 | 0.5 > 0.5 | 4/13 (4/13) | 0.0/0.0/0.0/0.0 |
+| m  | staggered 1/2 at 0.9 + 1/2 at 100% floor-after 0.8 | 122 | 359 | 601 | 242 | 0 | 1.6 | 0.5 > 0.4 | 0.5 > 0.4 | 2/9 (4/13) | -1.6/-0.5/-1.4/3.0 |
+| n  | runner 0.50 of lots, trail xATR 1, floor 1 T | 44 | 94 | 0 | -94 | 0 | 1.9 | 0.5 > 0.5 | 0.5 > 0.5 | 4/13 (4/13) | -0.1/-0.1/-0.1/-0.8 |
+| o  | level target on m=0.8: target = level - 2 ticks | 44 | 81 | 89 | 8 | 0 | 0.1 | 0.5 > 0.5 | 0.5 > 0.5 | 4/12 (4/13) | 2.7/0.0/0.0/-0.1 |
+| p  | noise floor arm=0.9: ext - 3 x ATR14(1m) | 49 | 202 | 242 | 40 | 0 | 0.1 | 0.5 > 0.6 | 0.5 > 0.5 | 5/11 (4/13) | 1.8/0.0/-0.8/0.6 |
+| q  | arrival: fast<=120s mid slow>900s floors 0.8/0.8/0.6 | 98 | 106 | 1347 | 1241 | 0 | 2.0 | 0.5 > 0.1 | 0.5 > 0.0 | 3/0 (4/13) | 0.1/2.2/-1.0/11.9 |
+| q (pass) | arrival: fast<=150s mid slow>600s floors 0.8/0.8/0.8 | 56 | 188 | 1479 | 1290 | 0 | 3.0 | 0.5 > 0.0 | 0.5 > 0.0 | 0/0 (4/13) | -0.1/1.9/-5.0/13.2 |
+| j  | move-target to wall-1: arm=0.9 wall_ahead[12]>=12 persist=1 | 60 | 68 | 193 | 126 | 0 | 0.4 | 0.5 > 0.5 | 0.5 > 0.5 | 4/11 (4/13) | 2.7/0.0/0.0/0.0 |
+
+### A7
+
+| fam | rule | key | net L6M | removed (zone) | clipped | other | clipped fills/wk | GB/wk before>after | RT/wk before>after | strict test v90/v80 (live rules b90/b80) | stack cut L6M/HOLD/PRE/X' % |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| h  | touched-not-filled: printed >= T-0 tick(s), hit inside after 1 s, slip 0.25 | 0 | 2 | 0 | -2 | 0 | 0.0 | 0.7 > 0.7 | 0.7 > 0.7 | 4/16 (4/16) | 0.0/0.0/0.0/0.0 |
+| i  | queue step-in: arm=0.8 queue>=1x Med -> limit T-1 tick | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.7 > 0.7 | 0.7 > 0.7 | 4/16 (4/16) | 0.0/0.0/0.0/0.0 |
+| m  | staggered 1/2 at 0.75 + 1/2 at 100% floor-after off | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.7 > 0.7 | 0.7 > 0.7 | 4/16 (4/16) | 0.0/0.0/0.0/0.0 |
+| n  | runner 0.33 of lots, trail pts 8, floor 0.9 T | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.7 > 0.7 | 0.7 > 0.7 | 4/16 (4/16) | 0.0/0.0/0.0/0.0 |
+| o  | level target on m=0.9: target = level - 2 ticks | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.7 > 0.7 | 0.7 > 0.7 | 4/16 (4/16) | 0.0/0.0/0.0/0.0 |
+| p  | noise floor arm=0.8: ext - 3 x ATR14(1m) | -145 | -145 | 735 | 880 | 0 | 1.3 | 0.7 > 1.4 | 0.7 > 0.1 | 23/3 (4/16) | -2.8/-0.7/0.5/-3.0 |
+| p (pass) | noise floor arm=0.8: ext - 0.75 x ATR14(1m) | -539 | -539 | 1076 | 1615 | -0 | 4.7 | 0.7 > 0.0 | 0.7 > 0.0 | 0/0 (4/16) | -3.3/-1.2/-1.3/-1.9 |
+| q  | arrival: fast<=150s mid slow>600s floors 0.4/0.8/0.4 | -176 | -176 | 860 | 1036 | 0 | 1.7 | 0.7 > 1.8 | 0.7 > 0.0 | 33/0 (4/16) | -2.5/-1.1/-0.7/-2.7 |
+| q (pass) | arrival: fast<=180s mid slow>300s floors 0.6/0.4/0.8 | -417 | -417 | 1156 | 1573 | 0 | 5.6 | 0.7 > 0.0 | 0.7 > 0.0 | 0/0 (4/16) | -3.2/-1.1/-1.3/-1.9 |
+| j  | move-target to wall-1: arm=0.8 wall_ahead[4]>=25 persist=3 | 37 | 71 | 126 | 54 | 0 | 0.2 | 0.7 > 0.6 | 0.7 > 0.6 | 4/15 (4/16) | -0.5/0.0/0.0/0.0 |
+
+### O7
+
+| fam | rule | key | net L6M | removed (zone) | clipped | other | clipped fills/wk | GB/wk before>after | RT/wk before>after | strict test v90/v80 (live rules b90/b80) | stack cut L6M/HOLD/PRE/X' % |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| h  | touched-not-filled: printed >= T-0 tick(s), hit inside after 0 s, slip 0.25 | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.1 > 0.1 | 0.0 > 0.0 | 2/1 (2/1) | 0.0/0.0/0.0/0.0 |
+| i  | queue step-in: arm=0.8 queue>=1x Med -> limit T-1 tick | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.1 > 0.1 | 0.0 > 0.0 | 2/1 (2/1) | 0.0/0.0/0.0/0.0 |
+| m  | staggered 1/2 at 0.75 + 1/2 at 100% floor-after off | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.1 > 0.1 | 0.0 > 0.0 | 2/1 (2/1) | 0.0/0.0/0.0/0.0 |
+| n  | runner 0.33 of lots, trail pts 8, floor 0.9 T | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.1 > 0.1 | 0.0 > 0.0 | 2/1 (2/1) | 0.0/0.0/0.0/0.0 |
+| o  | level target pw m=0.7: target = level - 2 ticks | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.1 > 0.1 | 0.0 > 0.0 | 2/1 (2/1) | 0.0/0.0/0.0/0.0 |
+| p  | noise floor arm=0.9: ext - 1.5 x ATR14(1m) | 0 | 0 | 0 | -0 | 0 | 0.0 | 0.1 > 0.1 | 0.0 > 0.0 | 2/1 (2/1) | 0.0/0.0/0.0/0.0 |
+| p (pass) | noise floor arm=0.8: ext - 0.75 x ATR14(1m) | -58 | -58 | 91 | 149 | 0 | 0.2 | 0.1 > 0.0 | 0.0 > 0.0 | 0/0 (2/1) | 0.4/0.0/-0.0/-1.1 |
+| q  | arrival: fast<=180s mid slow>300s floors 0.4/0.6/0.6 | -52 | -52 | 78 | 130 | 0 | 0.2 | 0.1 > 0.0 | 0.0 > 0.0 | 1/0 (2/1) | 0.2/0.0/-0.0/-0.6 |
+| q (pass) | arrival: fast<=180s mid slow>300s floors 0.8/0.6/0.6 | -86 | -86 | 99 | 185 | 0 | 0.3 | 0.1 > 0.0 | 0.0 > 0.0 | 0/0 (2/1) | 0.2/0.0/-0.0/-0.6 |
+| j  | move-target to wall-1: arm=0.9 wall_ahead[12]>=6 persist=1 | 21 | 21 | 50 | 29 | -0 | 0.2 | 0.1 > 0.0 | 0.0 > 0.0 | 0/1 (2/1) | 0.8/0.0/-0.1/-0.1 |
+| j (pass) | move-target to wall-1: arm=0.8 wall_ahead[12]>=3 persist=1 | -68 | -18 | 161 | 179 | 0 | 0.7 | 0.1 > 0.0 | 0.0 > 0.0 | 0/0 (2/1) | 0.9/0.0/-0.3/-1.9 |
+
+### v1.8 actions and fields named by h-q
+
+- h (touched-not-filled): `touched_not_filled j_ticks N_s inside_slip` action (hit the inside after the target level printed and our limit is unfilled); feature `target_printed`
+- i (queue/fill step-in): feature `queue_ahead_mult` (resting size at the target level / MedLevel) + action `move-target T-s_ticks`
+- j (front-run the wall): action `move-target wall-1_tick` (limit, no market) + feature `wall_px` (price of the largest level ahead) - first-order proxy: wall assumed at the far edge of wall_ticks
+- m (staggered passive targets): action `staggered limits a1:w1,a2:w2,... [refloor f1,f2]` (several resting limits for the lots; each fill re-floors the remainder)
+- n (runner): action `runner frac trail X|xATR k floor f` (take 1-frac at the target, trail the rest from the target with a floor at f x target)
+- o (level in the last 20%): feature `level_in_zone` (PDH/PDL/PWH/PWL/ONH/ONL/00-50 between m x T and T) + action `move-target level-2_ticks` at entry
+- p (noise-scaled floor): feature `atr1m14` (ATR(14) of 1-min bars) + action `floor ext-k*atr` armed at `mfe_pct>=m`
+- q (arrival type): feature `secs_to_zone` (seconds from entry to first mfe_pct>=m) + class floors fast/mid/slow
 
 **Definitions (all $ per WEEK of the window unless a sentence says "over the window"; L6M = 24 weeks).** Per trade, d = new P&L under the rule minus the trade P&L under live rules (same lots, fees, slip 1.2 on the rule exit). *net (all fires)* = sum of d over every trade the rule exits = the realised P&L change of the rule. *removed (zone)* = sum of d over fired trades that reached 80% of target and did NOT fill under live rules (the give-back saving; counted only inside the 80% zone). *clipped* = sum of (base - new) over fired trades that DID fill under live rules (fills the rule exited early, cost positive number). *other saves* = d over fired non-fill trades that never reached 80% (e.g. trades armed at 0.7 that later stopped out). Identity: net = removed - clipped + other saves. So removed - clipped can be negative while net is positive because of other saves, and the strict-pass early-take rules (arm 0.7) live on those other saves. In the plain sentences, "removed N give-backs worth $X and clipped M fills worth $Y" are totals OVER THE 24-WEEK WINDOW (zone non-fills / base fills), the per-week figures are those divided by 24.
 

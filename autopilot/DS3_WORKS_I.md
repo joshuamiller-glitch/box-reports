@@ -1,4 +1,4 @@
-# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-11 19:30Z
+# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-11 21:59Z
 Label PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_I_PREREG.md (sha in DECISIONS.md; the first first-order screen ran before the sha line, disclosed there). Code code/th_works_i/, tables /mnt/l2/l2vast/_th_works/i/, feature table /mnt/l2/l2vast/_th_works/p7_feat_I.parquet (key sig_ts, 5,011 P7 taken trades x 128 columns; W-E signal-level table not used, so signals that were not taken are not in these tests).
 
 ## What exists
@@ -7,14 +7,14 @@ Label PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_I_
 3. Exact hook: i_mixin.IGateMixin (skip / half / target retarget at the signal second inside the JN04RM / LPB engine), set builder i_mkset.py, manager i_mgr.py (launch gate 62 GB, hard guard 40 GB), scorer i_score.py.
 
 ## Family null (is the best cell of a family better than the best cell of random flags?)
-The feature rows were permuted among P7 trades inside the same calendar month, the whole grid re-scored, and the best minimum equal-mean cut over L6M, HOLD, PRE and X-prime (cells flagging 5-45 percent of trades) recorded; 139 draws.
+The feature rows were permuted among P7 trades inside the same calendar month, the whole grid re-scored, and the best minimum equal-mean cut over L6M, HOLD, PRE and X-prime (cells flagging 5-45 percent of trades) recorded; 300 draws.
 
 | family | observed best | null median | null p90 | family p |
 |--|--|--|--|--|
-| I | 16.3 | 7.9 | 15.1 | 0.086 |
-| J | 27.3 | 21.5 | 29.8 | 0.164 |
-| K | 21.3 | 12.6 | 22.3 | 0.129 |
-| L | 14.4 | 18.2 | 25.8 | 0.721 |
+| I | 16.3 | 7.9 | 16.6 | 0.110 |
+| J | 27.3 | 20.6 | 28.8 | 0.136 |
+| K | 21.3 | 13.3 | 22.6 | 0.140 |
+| L | 14.4 | 18.2 | 25.1 | 0.751 |
 
 Plain reading: no family beats its null at 5 percent. J (cross-market) is closest on cell count; I, K are about 0.1; L is at the null. Everything below is therefore a lead, not a finding.
 
@@ -102,4 +102,17 @@ The family re-pick rows are the honest out-of-sample of the whole screen: only L
 | L|ema_slope15>=1.3(q80)|all | 45.0 | 1257 | 614 | 8.5 | 10.4 | 24.1 | 5.2 | 656.6 | 48607.2 | 13658.5 |
 
 ## Exact (one set per job, JN04RM base, vs JN04RM and LPB references)
-No exact set has finished yet (launch gate 62 GB MemAvail not met since 19:20Z; 15 sets queued in /mnt/l2/l2vast/_th_works_i/queue.txt).
+
+vs JN04RM
+| cell | window | cut | eq_cut | dmean | dd | dd_ref | d_worst5 | d_best5 |
+|--|--|--|--|--|--|--|--|--|
+| WI_J_BR3S | L1M | 26.7 | 29.9 | -3564.8 | 19835.4 | 27055.7 | -414.4 | -414.4 |
+| WI_J_BR3S | L3M | 28.1 | 31.2 | -811.4 | 29993.2 | 41699.4 | 29596.9 | -17763.8 |
+| WI_J_BR3S | L6M | 14.4 | 18.1 | 782.7 | 35674.8 | 41699.4 | 33013.6 | -57351.5 |
+
+vs LPB
+| cell | window | cut | eq_cut | dmean | dd | dd_ref | d_worst5 | d_best5 |
+|--|--|--|--|--|--|--|--|--|
+| WI_J_BR3S | L1M | 61.3 | 63.7 | -6004.0 | 19835.4 | 51252.7 | 13516.8 | 13516.8 |
+| WI_J_BR3S | L3M | 61.2 | 63.6 | 4396.7 | 29993.2 | 77224.2 | 83169.8 | -66665.4 |
+| WI_J_BR3S | L6M | 53.8 | 56.6 | 1043.4 | 35674.8 | 77224.2 | 87471.4 | -81571.0 |
