@@ -1,4 +1,4 @@
-# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-12T14:00:16Z; Shadow only, no PASS claims)
+# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-12T15:00:07Z; Shadow only, no PASS claims)
 
 Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. Section D is W-J: the reference rows (JN04RM vs LPB_BASE), the JN05 composition and the REFIT 2026-11-22 preview. Every number is exact-engine, live panel base (P7 day cap 8,400 + table 7,4,0,4,0,0 + P7 cut 40/5x/w5/p3), reference LPB_BASE, ROLLFIX1.
 
@@ -74,10 +74,10 @@ Registered dial candidates (W-A relay, 2026-11-11): WA_C1 = JN04RM + K7 off whil
 
 ## A. Generalise the dials (A)
 
-Source DS3_WORKS_A.md (mtime 2026-11-12T10:25:05Z UTC), included verbatim, read only:
+Source DS3_WORKS_A.md (mtime 2026-11-12T14:25:56Z UTC), included verbatim, read only:
 
 # DS3_WORKS_A - T-WORKS part A: generalised risk dials (W-A)
-Refreshed 2026-11-12 10:24Z. Shadow only, no PASS claims, label PRE-PROOF (post-hoc). Prereg: autopilot/WORKS_A_PREREG.md (sha in DECISIONS.md, plus an addendum for the composites and cap sets). Code: outputs/code/th_works_a. Data: /mnt/l2/l2vast/_th_works_a.
+Refreshed 2026-11-12 14:25Z. Shadow only, no PASS claims, label PRE-PROOF (post-hoc). Prereg: autopilot/WORKS_A_PREREG.md (sha in DECISIONS.md, plus an addendum for the composites and cap sets). Code: outputs/code/th_works_a. Data: /mnt/l2/l2vast/_th_works_a.
 
 ## 0. Status and method
 Exact sets with the L6M window complete: 32; with HOLD complete: 1. First-order screens (all on the exact LPB_BASE trade list, 20,808 trades, and again on the exact JN04RM trade list, 21,783 trades; the dial state is always the LPB_BASE shadow base-lot P&L, which is what the live state sees): A1 17756 cells, A2 1176 cells, A3 3960 cells per base. Exact runs go one set per job through the harness code/th_works_a/wa_run.py (WorksMixin generalises the JN04 rule-mode layers; it reproduces LPB_EMPTY and JN04RM trade by trade on 202610 and 202608, see DECISIONS.md). Every exact set below is JN04RM plus the named change, so each row answers whether the dial adds to the live-form JN04 stack. A cut is the stack maxDD cut in per cent; d mean is the weekly mean difference in dollars with the carrying week dropped.
