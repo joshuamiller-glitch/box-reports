@@ -1,4 +1,4 @@
-# DS3_WORKS_E - T-WORKS / P7 FIX, W-E (families E multi-timeframe trend health, F participation, G pullback anatomy, H leg anatomy), page 2026-11-12 03:03Z
+# DS3_WORKS_E - T-WORKS / P7 FIX, W-E (families E multi-timeframe trend health, F participation, G pullback anatomy, H leg anatomy), page 2026-11-12 07:04Z
 Label: PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_E_PREREG.md (sha in DECISIONS.md 19:19Z, logged before any cell was scored). Code code/th_works_e/ (e0_flow, e1_table, e2_screen, e3_full, e_hooks, e_sets, e_chain, e_score, e_page).
 
 ## What exists
@@ -124,14 +124,58 @@ Negative removed net = the rule removes losses (good); positive = removes profit
 | WEJ_F2A | LPB | L1M | 44.1 | -8403 | 38.5 |
 | WEJ_F2A | LPB | L3M | 50.4 | -2728 | 45.4 |
 | WEJ_F2A | LPB | L6M | 44.3 | -1979 | 38.6 |
-| WEL_F2A | JN04RM | L1M | -89.1 | 7472 | -94.1 |
-| WEL_F2A | JN04RM | L3M | -50.4 | 3775 | -54.5 |
-| WEL_F2A | LPB | L1M | 0.2 | 87 | 11.9 |
-| WEL_F2A | LPB | L3M | 18.8 | 388 | 28.3 |
+| WEL_F2A | JN04RM | L1M | -89.1 | 7472 | -64.9 |
+| WEL_F2A | JN04RM | L3M | -50.4 | 3775 | -31.2 |
+| WEL_F2A | JN04RM | L6M | -50.4 | 2920 | -31.2 |
+| WEL_F2A | LPB | L1M | 0.2 | 87 | 3.6 |
+| WEL_F2A | LPB | L3M | 18.8 | 388 | 21.5 |
+| WEL_F2A | LPB | L6M | 18.8 | 718 | 21.5 |
+| WEJ_F3A | JN04RM | L1M | -0.3 | -30 | -0.3 |
+| WEJ_F3A | JN04RM | L3M | 13.2 | -361 | 13.2 |
+| WEJ_F3A | JN04RM | L6M | 9.3 | 4 | 9.4 |
+| WEJ_F3A | LPB | L1M | 47.0 | -8311 | 42.1 |
+| WEJ_F3A | LPB | L3M | 53.1 | -2168 | 48.7 |
+| WEJ_F3A | LPB | L6M | 51.0 | -1833 | 46.5 |
+| WEL_F3A | JN04RM | L1M | -47.7 | 10313 | -29.8 |
+| WEL_F3A | JN04RM | L3M | -77.0 | 3708 | -55.5 |
+| WEL_F3A | JN04RM | L6M | -77.0 | 2403 | -55.5 |
+| WEL_F3A | LPB | L1M | 22.0 | 3427 | 29.7 |
+| WEL_F3A | LPB | L3M | 4.4 | 1506 | 13.9 |
+| WEL_F3A | LPB | L6M | 4.4 | 1808 | 13.9 |
+| WEJ_G1A | JN04RM | L1M | -9.1 | -825 | -18.8 |
+| WEJ_G1A | JN04RM | L3M | 29.2 | -1130 | 22.9 |
+| WEJ_G1A | JN04RM | L6M | 8.7 | -1613 | 0.6 |
+| WEJ_G1A | LPB | L1M | 42.4 | -9272 | 34.2 |
+| WEJ_G1A | LPB | L3M | 61.8 | -2154 | 56.3 |
+| WEJ_G1A | LPB | L6M | 50.7 | -2681 | 43.7 |
+| WEL_G1A | JN04RM | L1M | -51.2 | 6962 | -29.3 |
+| WEL_G1A | JN04RM | L3M | -39.7 | 3913 | -19.5 |
+| WEL_G1A | JN04RM | L6M | -39.7 | 3367 | -19.5 |
+| WEL_G1A | LPB | L1M | 20.2 | 77 | 22.8 |
+| WEL_G1A | LPB | L3M | 24.5 | 1390 | 27.0 |
+| WEL_G1A | LPB | L6M | 24.5 | 626 | 27.0 |
+| WEJ_G2A | JN04RM | L1M | 21.4 | 1928 | 16.7 |
+| WEJ_G2A | JN04RM | L3M | 11.2 | -519 | 5.9 |
+| WEJ_G2A | JN04RM | L6M | -5.2 | -1120 | -11.5 |
+| WEJ_G2A | LPB | L1M | 58.5 | -4831 | 53.6 |
+| WEJ_G2A | LPB | L3M | 52.1 | -1742 | 46.4 |
+| WEJ_G2A | LPB | L6M | 43.2 | -2283 | 36.5 |
+| WEL_G2A | JN04RM | L1M | -57.4 | 8760 | -53.2 |
+| WEL_G2A | JN04RM | L3M | -80.5 | -2254 | -75.6 |
+| WEL_G2A | JN04RM | L6M | -80.5 | 492 | -75.6 |
+| WEL_G2A | LPB | L1M | 16.9 | 1875 | 18.1 |
+| WEL_G2A | LPB | L3M | 2.6 | -712 | 3.9 |
+| WEL_G2A | LPB | L6M | 2.6 | 277 | 3.9 |
+| WEJ_G3A | JN04RM | L1M | 12.4 | 1117 | -97.7 |
+| WEJ_G3A | JN04RM | L3M | 16.8 | 172 | -87.7 |
+| WEJ_G3A | LPB | L1M | 53.8 | -9337 | -4.5 |
+| WEJ_G3A | LPB | L3M | 55.1 | -2922 | -1.5 |
+| WEL_G3A | JN04RM | L1M | -47.5 | 9030 | -239.6 |
+| WEL_G3A | LPB | L1M | 22.1 | 2144 | -79.5 |
 | WEJ_H1A | JN04RM | L1M | -3.5 | -314 | nan |
 | WEJ_H1A | LPB | L1M | 45.4 | -12066 | nan |
 
-Exact sets: 23 registered cells (H2L duplicates G1L) x 2 references = 46 sets (WEJ_* on JN04RM, WEL_* on LPB_EMPTY), one set per job through state_sizer_ijk jbjobs with the e_hooks signal-second lookup applied in trend_size before the JN04 dials. Months DONE so far: 60. Chain scheduler (restart-safe, launches when MemAvailable >= 62 GB, at most 3 W-E jobs, runs until 2026-11-12 12:00Z): pids 2274304 2516208; W-E jobs running now 4; log /mnt/l2/l2vast/_th_works/e/logs/chain.log. A set continues past L6M only if its exact L6M cut is positive (e_gate.csv).
+Exact sets: 23 registered cells (H2L duplicates G1L) x 2 references = 46 sets (WEJ_* on JN04RM, WEL_* on LPB_EMPTY), one set per job through state_sizer_ijk jbjobs with the e_hooks signal-second lookup applied in trend_size before the JN04 dials. Months DONE so far: 102. Chain scheduler (restart-safe, launches when MemAvailable >= 62 GB, at most 3 W-E jobs, runs until 2026-11-12 12:00Z): pids 2274304 2723034; W-E jobs running now 4; log /mnt/l2/l2vast/_th_works/e/logs/chain.log. A set continues past L6M only if its exact L6M cut is positive (e_gate.csv).
 
 ## Behavioural scorecard (standing principle 2026-11-11 19:45Z)
 A cell counts only if full stops, give-backs and same-side repeats each fall by at least half in L6M without skipping trend-week winners. On first-order numbers H1L fails the trend-week test (it removes $83k of the frozen live week) and most other registered cells act on live-week trades; the registered E-H cells carry no stop, give-back or repeat logic of their own (they are entry filters), so the scorecard is expected to show little change in full stops and give-backs. W-Q tool code/th_works_q/behavior_scorecard.py is run per promoted set once its L6M is complete; output below.
@@ -207,9 +251,65 @@ WEJ_F2A PRE: months missing (17 of 17), window not scored
 WEJ_F2A X': months missing (10 of 10), window not scored
 
 ```
+### WEL_F2A
+```
+WEL_F2A L6M (stack, per week): full stops 24.5/wk $-39856; give-backs 9.1/wk (9.0 round-trips) realised $-13911, forgone vs target $35181; same-side losing runs max 12, p95 6, $-51490 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $745; recoveries cut 13.8/wk $47098, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $4945/wk, losers avoided $4975/wk, net +1313 $/wk; pnl $21097/wk.
+WEL_F2A HOLD: months missing (6 of 12), window not scored
+WEL_F2A PRE: months missing (17 of 17), window not scored
+WEL_F2A X': months missing (10 of 10), window not scored
+
+```
+### WEJ_F3A
+```
+WEJ_F3A L6M (stack, per week): full stops 25.4/wk $-38131; give-backs 9.9/wk (9.8 round-trips) realised $-11165, forgone vs target $27755; same-side losing runs max 13, p95 7, $-42550 lost on 3rd-and-later; no-new-evidence re-entries 43.4/wk $1789; recoveries cut 15.2/wk $38754, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $3856/wk, losers avoided $4296/wk, net -461 $/wk; pnl $19323/wk.
+WEJ_F3A HOLD: months missing (6 of 12), window not scored
+WEJ_F3A PRE: months missing (17 of 17), window not scored
+WEJ_F3A X': months missing (10 of 10), window not scored
+
+```
+### WEL_F3A
+```
+WEL_F3A L6M (stack, per week): full stops 24.5/wk $-40004; give-backs 9.0/wk (8.9 round-trips) realised $-13692, forgone vs target $34446; same-side losing runs max 12, p95 6, $-50955 lost on 3rd-and-later; no-new-evidence re-entries 37.5/wk $116; recoveries cut 13.8/wk $46094, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $1171/wk, losers avoided $1391/wk, net +1076 $/wk; pnl $20860/wk.
+WEL_F3A HOLD: months missing (6 of 12), window not scored
+WEL_F3A PRE: months missing (17 of 17), window not scored
+WEL_F3A X': months missing (10 of 10), window not scored
+
+```
+### WEJ_G1A
+```
+WEJ_G1A L6M (stack, per week): full stops 25.5/wk $-38456; give-backs 9.8/wk (9.7 round-trips) realised $-11102, forgone vs target $27594; same-side losing runs max 13, p95 6, $-42449 lost on 3rd-and-later; no-new-evidence re-entries 42.8/wk $2079; recoveries cut 14.9/wk $39002, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $11044/wk, losers avoided $12428/wk, net -1317 $/wk; pnl $18467/wk.
+WEJ_G1A HOLD: months missing (6 of 12), window not scored
+WEJ_G1A PRE: months missing (17 of 17), window not scored
+WEJ_G1A X': months missing (10 of 10), window not scored
+
+```
+### WEL_G1A
+```
+WEL_G1A L6M (stack, per week): full stops 24.5/wk $-40221; give-backs 9.1/wk (9.0 round-trips) realised $-13909, forgone vs target $35345; same-side losing runs max 12, p95 6, $-50905 lost on 3rd-and-later; no-new-evidence re-entries 37.2/wk $1601; recoveries cut 13.6/wk $44334, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $9861/wk, losers avoided $10984/wk, net +2186 $/wk; pnl $21970/wk.
+WEL_G1A HOLD: months missing (6 of 12), window not scored
+WEL_G1A PRE: months missing (17 of 17), window not scored
+WEL_G1A X': months missing (10 of 10), window not scored
+
+```
+### WEJ_G2A
+```
+WEJ_G2A L6M (stack, per week): full stops 25.4/wk $-38096; give-backs 10.0/wk (9.9 round-trips) realised $-11618, forgone vs target $29135; same-side losing runs max 13, p95 6, $-42427 lost on 3rd-and-later; no-new-evidence re-entries 42.4/wk $2231; recoveries cut 14.9/wk $39440, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $14509/wk, losers avoided $14301/wk, net -804 $/wk; pnl $18980/wk.
+WEJ_G2A HOLD: months missing (6 of 12), window not scored
+WEJ_G2A PRE: months missing (17 of 17), window not scored
+WEJ_G2A X': months missing (10 of 10), window not scored
+
+```
+### WEL_G2A
+```
+WEL_G2A L6M (stack, per week): full stops 24.6/wk $-40265; give-backs 9.1/wk (9.0 round-trips) realised $-14108, forgone vs target $35302; same-side losing runs max 9, p95 6, $-51957 lost on 3rd-and-later; no-new-evidence re-entries 37.7/wk $1194; recoveries cut 13.7/wk $46971, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $11482/wk, losers avoided $12574/wk, net +1430 $/wk; pnl $21214/wk.
+WEL_G2A HOLD: months missing (6 of 12), window not scored
+WEL_G2A PRE: months missing (17 of 17), window not scored
+WEL_G2A X': months missing (10 of 10), window not scored
+
+```
 
 ## Throughput
-W-E adopted the W-T shared-memory month cache (TP_ENGINE=1 via tp_launch, launch gate lowered from 62 to 25 GB, tp_admit request WORKS_JN05, at most 3 workers). Identity check on my own driver: WEJ_H1A 202610 under TP_ENGINE=1 vs the recorded run, 845 vs 845 trades, trade-for-trade IDENTICAL. Before adoption W-E finished 1 cell-month in the first hour (the gate at 62 GB never opened). Box-wide rate now: window 3.0 h: 752 cell-months finished = 250.7 /h total; mean engine secs per cell 96 {'PTR': 106, 'BO': 99, 'WG': 83, 'WL': 71, 'EC': 57, 'ZJ': 56, 'WA': 52, 'WB': 50, 'WI': 44, 'WM': 35, 'JN': 35, 'NEAR': 24, 'WEJ': 17, 'WEL': 17, 'WIL': 6}
+W-E adopted the W-T shared-memory month cache (TP_ENGINE=1 via tp_launch, launch gate lowered from 62 to 25 GB, tp_admit request WORKS_JN05, at most 3 workers). Identity check on my own driver: WEJ_H1A 202610 under TP_ENGINE=1 vs the recorded run, 845 vs 845 trades, trade-for-trade IDENTICAL. Before adoption W-E finished 1 cell-month in the first hour (the gate at 62 GB never opened). Box-wide rate now: window 3.0 h: 897 cell-months finished = 299.0 /h total; mean engine secs per cell 108 {'PTR': 228, 'BO': 126, 'NEAR': 92, 'JN': 87, 'EC': 66, 'WL': 56, 'WG': 56, 'ZJ': 49, 'WI': 43, 'WA': 36, 'WM': 29, 'WEL': 15, 'WEJ': 14}
 
 ## Not done yet
 Asymmetric-bracket cells (60/45, 60/90 by flag) and the late-entry swing stop (D7) are exact-only and are queued after the skip/half stage; the flag separation by persistence across weeks, and the "trend weeks" comparison beyond the live week, wait for more exact output. DS3_WORKS_E.md is regenerated by code/th_works_e/e_page.py every 4 hours from 23:00Z until the final at 2026-11-12 12:00Z.
