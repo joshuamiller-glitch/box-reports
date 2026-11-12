@@ -1,6 +1,6 @@
 # DS3_GAPS_G3 — PRESS THE TREND DAY (GAPS item G3) — W-G3
 
-Generated 2026-11-12 21:53Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (11/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (8/43). Months done per G3 set: 36 sets, 171 month-runs.
+Generated 2026-11-12 22:18Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (12/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (10/43). Months done per G3 set: 44 sets, 201 month-runs.
 
 **Caveat on every row:** the engine state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md); the N / NJ rows (state cut off) are the live-realistic world. Cells judged first on the trend-week clause (best 5 AND best 20 weeks) and drawdown.
 
@@ -16,12 +16,14 @@ Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL
 |--|--|--|--|--|--|--|--|--|
 | G3_R2_ct_L | JN05W2 | L1M | 2425 | 5386 | 222.1 | 222.1 | 0 of 2 | 4 |
 | G3_R2_lf70_L | JN05W2 | L1M | 2425 | 8788 | 362.4 | 362.4 | 0 of 2 | 4 |
+| G3_R3_ct_L | JN05W2 | L1M | 2425 | 5386 | 222.1 | 222.1 | 0 of 2 | 4 |
 | G3_R3_sz15_L | JN05W2 | L1M | 2425 | 29845 | 1230.6 | 1230.6 | 0 of 2 | 4 |
 | G3_R3_tg90_L | JN05W2 | L1M | 2425 | 33576 | 1384.5 | 1384.5 | 0 of 2 | 4 |
 | G3_S2_ct_L | JN05W2 | L1M | 2425 | 17733 | 731.2 | 731.2 | 0 of 2 | 4 |
 | G3_S2_lf70_L | JN05W2 | L1M | 2425 | 11606 | 478.6 | 478.6 | 0 of 2 | 4 |
 | G3_S2_tg90_L | JN05W2 | L1M | 2425 | 3159 | 130.2 | 130.2 | 0 of 2 | 4 |
 | G3_S3_all_L | JN05W2 | L1M | 2425 | 40069 | 1652.2 | 1652.2 | 0 of 2 | 4 |
+| G3_S3_ct_L | JN05W2 | L1M | 2425 | 11897 | 490.5 | 490.5 | 0 of 2 | 4 |
 | G3_S3_lf70_L | JN05W2 | L1M | 2425 | 11606 | 478.6 | 478.6 | 0 of 2 | 4 |
 | G3_S3_lf75_L | JN05W2 | L1M | 2425 | 5241 | 216.1 | 216.1 | 0 of 2 | 4 |
 | G3_S3_sz125_L | JN05W2 | L1M | 2425 | 5962 | 245.8 | 245.8 | 0 of 2 | 4 |
@@ -31,14 +33,17 @@ Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL
 | G3_S5_ct_L | JN05W2 | L1M | 2425 | 39899 | 1645.2 | 1645.2 | 0 of 2 | 4 |
 | G3_S5_lf70_L | JN05W2 | L1M | 2425 | 13218 | 545.0 | 545.0 | 0 of 2 | 4 |
 | G3_S5_sz15_L | JN05W2 | L1M | 2425 | 31769 | 1310.0 | 1310.0 | 0 of 2 | 4 |
+| G3_S5_tg90_L | JN05W2 | L1M | 2425 | 20483 | 844.6 | 844.6 | 0 of 2 | 4 |
 | G3_R2_ct_L | JN05W2 | L3M | 209474 | 215227 | 102.7 | 99.5 | 0 of 9 | 13 |
 | G3_R2_lf70_L | JN05W2 | L3M | 209474 | 210238 | 100.4 | 103.0 | 0 of 9 | 13 |
+| G3_R3_ct_L | JN05W2 | L3M | 209474 | 214746 | 102.5 | 101.9 | 0 of 9 | 13 |
 | G3_R3_sz15_L | JN05W2 | L3M | 209474 | 213707 | 102.0 | 103.4 | 0 of 9 | 13 |
 | G3_R3_tg90_L | JN05W2 | L3M | 209474 | 228544 | 109.1 | 116.2 | 0 of 9 | 13 |
 | G3_S2_ct_L | JN05W2 | L3M | 209474 | 231830 | 110.7 | 119.2 | 0 of 9 | 13 |
 | G3_S2_lf70_L | JN05W2 | L3M | 209474 | 204838 | 97.8 | 102.2 | 0 of 9 | 13 |
 | G3_S2_tg90_L | JN05W2 | L3M | 209474 | 131341 | 62.7 | 59.6 | 0 of 9 | 13 |
 | G3_S3_all_L | JN05W2 | L3M | 209474 | 194417 | 92.8 | 89.5 | 1 of 9 | 13 |
+| G3_S3_ct_L | JN05W2 | L3M | 209474 | 211689 | 101.1 | 109.3 | 0 of 9 | 13 |
 | G3_S3_lf70_L | JN05W2 | L3M | 209474 | 204838 | 97.8 | 102.2 | 0 of 9 | 13 |
 | G3_S3_lf75_L | JN05W2 | L3M | 209474 | 202941 | 96.9 | 101.1 | 0 of 9 | 13 |
 | G3_S3_sz125_L | JN05W2 | L3M | 209474 | 228873 | 109.3 | 106.2 | 0 of 9 | 13 |
@@ -48,14 +53,17 @@ Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL
 | G3_S5_ct_L | JN05W2 | L3M | 209474 | 238607 | 113.9 | 124.3 | 0 of 9 | 13 |
 | G3_S5_lf70_L | JN05W2 | L3M | 209474 | 204838 | 97.8 | 102.7 | 0 of 9 | 13 |
 | G3_S5_sz15_L | JN05W2 | L3M | 209474 | 262393 | 125.3 | 119.1 | 0 of 9 | 13 |
+| G3_S5_tg90_L | JN05W2 | L3M | 209474 | 165282 | 78.9 | 84.7 | 0 of 9 | 13 |
 | G3_R2_ct_L | JN05W2 | L6M | 337218 | 330527 | 98.0 | 102.4 | 0 of 19 | 26 |
 | G3_R2_lf70_L | JN05W2 | L6M | 337218 | 342681 | 101.6 | 101.2 | 0 of 19 | 26 |
+| G3_R3_ct_L | JN05W2 | L6M | 337218 | 335015 | 99.3 | 101.0 | 0 of 19 | 26 |
 | G3_R3_sz15_L | JN05W2 | L6M | 337218 | 327787 | 97.2 | 102.7 | 0 of 19 | 26 |
 | G3_R3_tg90_L | JN05W2 | L6M | 337218 | 331321 | 98.3 | 99.0 | 0 of 19 | 26 |
 | G3_S2_ct_L | JN05W2 | L6M | 337218 | 327688 | 97.2 | 102.0 | 0 of 19 | 26 |
 | G3_S2_lf70_L | JN05W2 | L6M | 337218 | 319929 | 94.9 | 97.4 | 0 of 19 | 26 |
 | G3_S2_tg90_L | JN05W2 | L6M | 337218 | 291394 | 86.4 | 79.4 | 1 of 19 | 26 |
 | G3_S3_all_L | JN05W2 | L6M | 337218 | 271902 | 80.6 | 87.6 | 1 of 19 | 26 |
+| G3_S3_ct_L | JN05W2 | L6M | 337218 | 320749 | 95.1 | 101.8 | 0 of 19 | 26 |
 | G3_S3_lf70_L | JN05W2 | L6M | 337218 | 319929 | 94.9 | 97.4 | 0 of 19 | 26 |
 | G3_S3_lf75_L | JN05W2 | L6M | 337218 | 324783 | 96.3 | 97.9 | 0 of 19 | 26 |
 | G3_S3_sz125_L | JN05W2 | L6M | 337218 | 313412 | 92.9 | 98.6 | 0 of 19 | 26 |
@@ -65,73 +73,85 @@ Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL
 | G3_S5_ct_L | JN05W2 | L6M | 337218 | 329136 | 97.6 | 103.2 | 0 of 19 | 26 |
 | G3_S5_lf70_L | JN05W2 | L6M | 337218 | 319929 | 94.9 | 97.3 | 0 of 19 | 26 |
 | G3_S5_sz15_L | JN05W2 | L6M | 337218 | 310336 | 92.0 | 96.3 | 0 of 19 | 26 |
+| G3_S5_tg90_L | JN05W2 | L6M | 337218 | 268206 | 79.5 | 82.8 | 1 of 19 | 26 |
 
 ## 1. Windows (maxDD cut %, equal-mean cut %, d mean $/wk all weeks, carry week NOT dropped)
 
 | cell | window | DD cut % | eq-mean cut % | d mean/wk | mean/wk | base mean/wk | months |
 |--|--|--|--|--|--|--|--|
-| G3_R2_ct_L | L1M | 0.0 | -2.6 | 740 | 1346 | 606 | 7 |
-| G3_R2_ct_L | L3M | -2.2 | -4.8 | -80 | 15935 | 16015 | 7 |
-| G3_R2_ct_L | L6M | -2.2 | -4.8 | -43 | 25094 | 25137 | 7 |
-| G3_R2_lf70_L | L1M | -2.2 | 0.8 | 1591 | 2197 | 606 | 6 |
-| G3_R2_lf70_L | L3M | -2.2 | 0.8 | 483 | 16498 | 16015 | 6 |
-| G3_R2_lf70_L | L6M | -2.2 | 0.8 | 393 | 25530 | 25137 | 6 |
+| G3_R2_ct_L | L1M | 0.0 | -2.6 | 740 | 1346 | 606 | 8 |
+| G3_R2_ct_L | L3M | -2.2 | -4.8 | -80 | 15935 | 16015 | 8 |
+| G3_R2_ct_L | L6M | -2.2 | -4.8 | -43 | 25094 | 25137 | 8 |
+| G3_R2_lf70_L | L1M | -2.2 | 0.8 | 1591 | 2197 | 606 | 8 |
+| G3_R2_lf70_L | L3M | -2.2 | 0.8 | 483 | 16498 | 16015 | 8 |
+| G3_R2_lf70_L | L6M | -2.2 | 0.8 | 393 | 25530 | 25137 | 8 |
+| G3_R3_ct_L | L1M | 0.0 | -1.5 | 740 | 1346 | 606 | 6 |
+| G3_R3_ct_L | L3M | 0.0 | -1.5 | 306 | 16321 | 16015 | 6 |
+| G3_R3_ct_L | L6M | 0.0 | -1.5 | 23 | 25160 | 25137 | 6 |
 | G3_R3_sz15_L | L1M | -20.1 | -20.3 | 6855 | 7461 | 606 | 6 |
 | G3_R3_sz15_L | L3M | -20.1 | -20.3 | 544 | 16559 | 16015 | 6 |
 | G3_R3_sz15_L | L6M | -20.1 | -20.3 | 1010 | 26147 | 25137 | 6 |
-| G3_R3_tg90_L | L1M | 0.8 | -3.5 | 7788 | 8394 | 606 | 7 |
-| G3_R3_tg90_L | L3M | -15.3 | -20.4 | 2597 | 18612 | 16015 | 7 |
-| G3_R3_tg90_L | L6M | -15.3 | -20.4 | -352 | 24784 | 25137 | 7 |
+| G3_R3_tg90_L | L1M | 0.8 | -3.5 | 7788 | 8394 | 606 | 9 |
+| G3_R3_tg90_L | L3M | -15.3 | -20.4 | 2597 | 18612 | 16015 | 9 |
+| G3_R3_tg90_L | L6M | -15.3 | -20.4 | -352 | 24784 | 25137 | 9 |
 | G3_S2_ct_L | L1M | -30.0 | -24.4 | 3827 | 4433 | 606 | 6 |
 | G3_S2_ct_L | L3M | -30.0 | -24.4 | 3078 | 19093 | 16015 | 6 |
 | G3_S2_ct_L | L6M | -30.0 | -24.4 | 65 | 25202 | 25137 | 6 |
-| G3_S2_lf70_L | L1M | -2.2 | -3.4 | 2295 | 2902 | 606 | 7 |
-| G3_S2_lf70_L | L3M | -2.2 | -3.4 | 346 | 16361 | 16015 | 7 |
-| G3_S2_lf70_L | L6M | -2.2 | -3.4 | -685 | 24452 | 25137 | 7 |
+| G3_S2_lf70_L | L1M | -2.2 | -3.4 | 2295 | 2902 | 606 | 8 |
+| G3_S2_lf70_L | L3M | -2.2 | -3.4 | 346 | 16361 | 16015 | 8 |
+| G3_S2_lf70_L | L6M | -2.2 | -3.4 | -685 | 24452 | 25137 | 8 |
 | G3_S2_tg90_L | L1M | -0.9 | -29.3 | 183 | 790 | 606 | 6 |
 | G3_S2_tg90_L | L3M | -5.2 | -34.8 | -6476 | 9539 | 16015 | 6 |
 | G3_S2_tg90_L | L6M | -5.2 | -34.8 | -6682 | 18455 | 25137 | 6 |
-| G3_S3_all_L | L1M | -1.0 | -14.9 | 9411 | 10017 | 606 | 6 |
-| G3_S3_all_L | L3M | -73.4 | -97.3 | -1688 | 14327 | 16015 | 6 |
-| G3_S3_all_L | L6M | -73.4 | -97.3 | -4287 | 20850 | 25137 | 6 |
-| G3_S3_lf70_L | L1M | -2.2 | -3.3 | 2295 | 2902 | 606 | 6 |
-| G3_S3_lf70_L | L3M | -2.2 | -3.3 | 346 | 16361 | 16015 | 6 |
-| G3_S3_lf70_L | L6M | -2.2 | -3.3 | -657 | 24480 | 25137 | 6 |
-| G3_S3_lf75_L | L1M | -1.0 | -0.9 | 704 | 1310 | 606 | 7 |
-| G3_S3_lf75_L | L3M | -1.0 | -0.9 | 174 | 16189 | 16015 | 7 |
-| G3_S3_lf75_L | L6M | -1.0 | -0.9 | -402 | 24735 | 25137 | 7 |
-| G3_S3_sz125_L | L1M | -8.1 | -8.8 | 884 | 1490 | 606 | 7 |
-| G3_S3_sz125_L | L3M | -8.1 | -8.8 | 987 | 17003 | 16015 | 7 |
-| G3_S3_sz125_L | L6M | -8.1 | -8.8 | -725 | 24412 | 25137 | 7 |
+| G3_S3_all_L | L1M | -1.0 | -14.9 | 9411 | 10017 | 606 | 7 |
+| G3_S3_all_L | L3M | -73.4 | -97.3 | -1688 | 14327 | 16015 | 7 |
+| G3_S3_all_L | L6M | -73.4 | -97.3 | -4287 | 20850 | 25137 | 7 |
+| G3_S3_ct_L | L1M | -43.9 | -54.0 | 2368 | 2974 | 606 | 6 |
+| G3_S3_ct_L | L3M | -43.9 | -54.0 | 1489 | 17504 | 16015 | 6 |
+| G3_S3_ct_L | L6M | -43.9 | -54.0 | -467 | 24670 | 25137 | 6 |
+| G3_S3_lf70_L | L1M | -2.2 | -3.3 | 2295 | 2902 | 606 | 7 |
+| G3_S3_lf70_L | L3M | -2.2 | -3.3 | 346 | 16361 | 16015 | 7 |
+| G3_S3_lf70_L | L6M | -2.2 | -3.3 | -657 | 24480 | 25137 | 7 |
+| G3_S3_lf75_L | L1M | -1.0 | -0.9 | 704 | 1310 | 606 | 8 |
+| G3_S3_lf75_L | L3M | -1.0 | -0.9 | 174 | 16189 | 16015 | 8 |
+| G3_S3_lf75_L | L6M | -1.0 | -0.9 | -402 | 24735 | 25137 | 8 |
+| G3_S3_sz125_L | L1M | -8.1 | -8.8 | 884 | 1490 | 606 | 9 |
+| G3_S3_sz125_L | L3M | -8.1 | -8.8 | 987 | 17003 | 16015 | 9 |
+| G3_S3_sz125_L | L6M | -8.1 | -8.8 | -725 | 24412 | 25137 | 9 |
 | G3_S3_sz15_L | L1M | -14.9 | -23.2 | 7354 | 7961 | 606 | 6 |
 | G3_S3_sz15_L | L3M | -18.1 | -26.6 | 1940 | 17955 | 16015 | 6 |
 | G3_S3_sz15_L | L6M | -18.1 | -26.6 | -2262 | 22875 | 25137 | 6 |
 | G3_S3_tg90_L | L1M | 31.1 | 16.3 | 6769 | 7375 | 606 | 6 |
 | G3_S3_tg90_L | L3M | 9.1 | -10.4 | -4684 | 11331 | 16015 | 6 |
 | G3_S3_tg90_L | L6M | 9.1 | -10.4 | -5678 | 19459 | 25137 | 6 |
-| G3_S5_all_L | L1M | -22.6 | -66.1 | 3423 | 4029 | 606 | 6 |
-| G3_S5_all_L | L3M | -64.0 | -122.2 | -2207 | 13808 | 16015 | 6 |
-| G3_S5_all_L | L6M | -64.0 | -122.2 | -7990 | 17147 | 25137 | 6 |
+| G3_S5_all_L | L1M | -22.6 | -66.1 | 3423 | 4029 | 606 | 7 |
+| G3_S5_all_L | L3M | -64.0 | -122.2 | -2207 | 13808 | 16015 | 7 |
+| G3_S5_all_L | L6M | -64.0 | -122.2 | -7990 | 17147 | 25137 | 7 |
 | G3_S5_ct_L | L1M | -7.2 | -9.5 | 9368 | 9975 | 606 | 6 |
 | G3_S5_ct_L | L3M | -7.2 | -9.5 | 3899 | 19914 | 16015 | 6 |
 | G3_S5_ct_L | L6M | -7.2 | -9.5 | 516 | 25653 | 25137 | 6 |
 | G3_S5_lf70_L | L1M | 2.3 | 1.2 | 2698 | 3305 | 606 | 6 |
 | G3_S5_lf70_L | L3M | 2.3 | 1.2 | 426 | 16441 | 16015 | 6 |
 | G3_S5_lf70_L | L6M | 2.3 | 1.2 | -664 | 24473 | 25137 | 6 |
-| G3_S5_sz15_L | L1M | -12.7 | -20.9 | 7336 | 7942 | 606 | 6 |
-| G3_S5_sz15_L | L3M | -12.7 | -20.9 | 3056 | 19071 | 16015 | 6 |
-| G3_S5_sz15_L | L6M | -12.7 | -20.9 | -2575 | 22562 | 25137 | 6 |
+| G3_S5_sz15_L | L1M | -12.7 | -20.9 | 7336 | 7942 | 606 | 7 |
+| G3_S5_sz15_L | L3M | -12.7 | -20.9 | 3056 | 19071 | 16015 | 7 |
+| G3_S5_sz15_L | L6M | -12.7 | -20.9 | -2575 | 22562 | 25137 | 7 |
+| G3_S5_tg90_L | L1M | 8.7 | -8.0 | 4514 | 5121 | 606 | 6 |
+| G3_S5_tg90_L | L3M | 8.7 | -8.0 | -2455 | 13560 | 16015 | 6 |
+| G3_S5_tg90_L | L6M | 8.7 | -8.0 | -4894 | 20243 | 25137 | 6 |
 
 ## 3. acceptance_p7 and behavioural scorecard (cells with >= 6 months; partial sets count only covered sessions)
 
 - G3_R2_ct_L: ACCEPT G3_R2_ct_L PASS fails=2/20
 - G3_R2_lf70_L: ACCEPT G3_R2_lf70_L PASS fails=1/20
+- G3_R3_ct_L: ACCEPT G3_R3_ct_L PASS fails=1/20
 - G3_R3_sz15_L: ACCEPT G3_R3_sz15_L PASS fails=1/20
 - G3_R3_tg90_L: ACCEPT G3_R3_tg90_L PASS fails=1/20
 - G3_S2_ct_L: ACCEPT G3_S2_ct_L PASS fails=1/20
 - G3_S2_lf70_L: ACCEPT G3_S2_lf70_L PASS fails=1/20
 - G3_S2_tg90_L: ACCEPT G3_S2_tg90_L PASS fails=1/20
 - G3_S3_all_L: ACCEPT G3_S3_all_L PASS fails=1/20
+- G3_S3_ct_L: ACCEPT G3_S3_ct_L PASS fails=1/20
 - G3_S3_lf70_L: ACCEPT G3_S3_lf70_L PASS fails=1/20
 - G3_S3_lf75_L: ACCEPT G3_S3_lf75_L PASS fails=1/20
 - G3_S3_sz125_L: ACCEPT G3_S3_sz125_L PASS fails=1/20
@@ -141,6 +161,7 @@ Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL
 - G3_S5_ct_L: ACCEPT G3_S5_ct_L PASS fails=1/20
 - G3_S5_lf70_L: ACCEPT G3_S5_lf70_L PASS fails=1/20
 - G3_S5_sz15_L: ACCEPT G3_S5_sz15_L PASS fails=1/20
+- G3_S5_tg90_L: ACCEPT G3_S5_tg90_L PASS fails=1/20
 
 ## 4. Descriptive first-order screen on JN05W2's own L6M trades (history UNMODIFIED; 4,169 trades, 26 weeks; only a prior, exact is the verdict)
 

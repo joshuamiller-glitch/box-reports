@@ -1,4 +1,4 @@
-# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-11-11 17:16 ET)
+# FORWARD_REGISTER (RESEARCH V2 sec 5; rewritten after every live-file arrival; generated 2026-11-12 17:16 ET)
 
 Weeks start Sunday 18:00 ET. W43 (10-19..10-23) informational, never counted; official = W44+. Live file: `<repo>/data/live/StratTrades_DualStrat2_<acct>.csv` (80 grouped trades, last exit 2026-10-26 10:44 ET). Verdicts: PROMOTE >= 6 weeks, z >= -1, sign right; RETIRE >= 8 weeks, z < -2; BEHIND z < -1; z = (realised - expected*n)/(expected SD*sqrt(n)).
 
@@ -430,7 +430,7 @@ Identification: exitName ends 'LossExit' (loss-side TH cut; ProfitExit = profit-
 | 2026-W44 | 48 | 48 | 0 | +2.02 | +558 | [-701, +1,320] | +26,775 | 130,071 | 0.82 | 12 / +28,620 | - |
 | **cumulative (10-13 on)** | 98 | 98 | 0 | +3.84 | +729 | [-829, +2,143] | +71,414 | 74,741/wk | 0.83 | | |
 
-Cumulative ST loss-cut: n=98 cuts in 14 replayed trading days; mean d +3.84 pts/trade (95% CI [-9.87, +15.70]) = +729 $/trade (CI [-829, +2,143]); +25,505 $/5-day week (total +71,414); cut better in 74% of trades; SD of d 51.8 pts. **Detectable effect (80% power, 5% two-sided, = 2.8 x bootstrap SE): 18.1 pts/trade = $2,134/trade = $74,741/wk.** A null here means 'could not have seen less than that'; with a handful of cuts per week the weekly MDE is far larger still.
+Cumulative ST loss-cut: n=98 cuts in 23 replayed trading days; mean d +3.84 pts/trade (95% CI [-9.87, +15.70]) = +729 $/trade (CI [-829, +2,143]); +25,505 $/5-day week (total +71,414); cut better in 74% of trades; SD of d 51.8 pts. **Detectable effect (80% power, 5% two-sided, = 2.8 x bootstrap SE): 18.1 pts/trade = $2,134/trade = $74,741/wk.** A null here means 'could not have seen less than that'; with a handful of cuts per week the weekly MDE is far larger still.
 
 | class (informational except ST loss) | n | mean d pts | mean d $ | 95% CI $/trade | $/5-day wk | MDE80 $/trade |
 |---|---|---|---|---|---|---|
