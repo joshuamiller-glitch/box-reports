@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F2 — desk-state family (item 2) and winning-day protection (item 5) — W-F2
 
-Generated 2026-11-12 22:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
+Generated 2026-11-12 22:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
 
 ## 0. Trend-week clause (first): sum of the base's 5 best weeks kept, and base winning weeks turned losing (per window)
 
@@ -94,10 +94,10 @@ Generated 2026-11-12 22:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_ST_half_2_J | L1M | 12.5 | 6.3 | 58 | 2689 | 2631 | 16 |
 | NF_D_ST_half_2_J | L3M | -5.7 | -13.2 | -697 | 14244 | 14942 | 16 |
 | NF_D_ST_half_2_J | L6M | 2.5 | -4.5 | -2733 | 18132 | 20865 | 16 |
-| NF_D_ST_half_2_L | HOLD | 18.1 | 6.9 | -1798 | 15691 | 17489 | 13 |
-| NF_D_ST_half_2_L | L1M | 29.8 | 20.2 | 1028 | 1635 | 606 | 13 |
-| NF_D_ST_half_2_L | L3M | -2.2 | -16.2 | -1561 | 14454 | 16015 | 13 |
-| NF_D_ST_half_2_L | L6M | -2.2 | -16.2 | -3688 | 21449 | 25137 | 13 |
+| NF_D_ST_half_2_L | HOLD | 18.1 | 6.9 | -1798 | 15691 | 17489 | 16 |
+| NF_D_ST_half_2_L | L1M | 29.8 | 20.2 | 1028 | 1635 | 606 | 16 |
+| NF_D_ST_half_2_L | L3M | -2.2 | -16.2 | -1561 | 14454 | 16015 | 16 |
+| NF_D_ST_half_2_L | L6M | -2.2 | -16.2 | -3688 | 21449 | 25137 | 16 |
 | NF_D_ST_half_3_J | HOLD | -19.8 | -26.4 | -947 | 13459 | 14405 | 16 |
 | NF_D_ST_half_3_J | L1M | 3.5 | -1.8 | -356 | 2275 | 2631 | 16 |
 | NF_D_ST_half_3_J | L3M | -50.8 | -59.2 | -1380 | 13562 | 14942 | 16 |
