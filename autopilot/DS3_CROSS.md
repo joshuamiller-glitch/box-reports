@@ -223,3 +223,37 @@ The lead bought NKD bbo-1s 2023-04-01..2026-05-01 ($45.52); download in progress
     F weekly flag mega_disp5 AUC 0.453 p 0.798 n weeks 25
     F weekly flag mega_hi_with AUC 0.656 p 0.328 n weeks 25
     F weekly flag mega_conc5 AUC 0.75 p 0.105 n weeks 25
+## NKD IMBALANCE HISTORY TEST (auto, 2026-11-12T00:08:08Z, chain2 pid 2319176)
+    zone trades 9818 with NKD imbalance available 7604
+    CELL nkd_imb<=0 take-at-80%, all books
+        L6M: n zone 2126 cell n 0 cell gain +0/wk | mean/trade cell +0 vs rest +nan | fill cell nan rest nan | take-all +796/wk
+        HOLD: n zone 3803 cell n 1010 cell gain +1,089/wk | mean/trade cell +56 vs rest -91 | fill cell 0.887 rest 0.906 | take-all +256/wk
+        PRE: n zone 3690 cell n 2241 cell gain -811/wk | mean/trade cell -27 vs rest -30 | fill cell 0.895 rest 0.900 | take-all -1,421/wk
+        X': n zone 1415 cell n 875 cell gain -817/wk | mean/trade cell -41 vs rest -20 | fill cell 0.877 rest 0.893 | take-all -1,068/wk
+      P7
+        L6M: n zone 508 cell n 0 cell gain +0/wk | mean/trade cell +0 vs rest +nan | fill cell nan rest nan | take-all +1,804/wk
+        HOLD: n zone 945 cell n 267 cell gain +1,199/wk | mean/trade cell +234 vs rest -128 | fill cell 0.865 rest 0.905 | take-all +1,540/wk
+        PRE: n zone 895 cell n 535 cell gain +289/wk | mean/trade cell +40 vs rest +205 | fill cell 0.880 rest 0.869 | take-all +1,252/wk
+        X': n zone 337 cell n 222 cell gain -519/wk | mean/trade cell -101 vs rest +44 | fill cell 0.892 rest 0.878 | take-all -403/wk
+      U7
+        L6M: n zone 152 cell n 0 cell gain +0/wk | mean/trade cell +0 vs rest +nan | fill cell nan rest nan | take-all +328/wk
+        HOLD: n zone 273 cell n 68 cell gain +411/wk | mean/trade cell +315 vs rest -273 | fill cell 0.868 rest 0.936 | take-all +268/wk
+        PRE: n zone 283 cell n 180 cell gain +156/wk | mean/trade cell +64 vs rest -294 | fill cell 0.900 rest 0.942 | take-all -253/wk
+        X': n zone 115 cell n 71 cell gain -562/wk | mean/trade cell -344 vs rest -31 | fill cell 0.930 rest 0.909 | take-all -593/wk
+      P7+U7
+        L6M: n zone 660 cell n 0 cell gain +0/wk | mean/trade cell +0 vs rest +nan | fill cell nan rest nan | take-all +2,132/wk
+        HOLD: n zone 1218 cell n 335 cell gain +1,609/wk | mean/trade cell +250 vs rest -163 | fill cell 0.866 rest 0.913 | take-all +1,807/wk
+        PRE: n zone 1178 cell n 715 cell gain +445/wk | mean/trade cell +46 vs rest +94 | fill cell 0.885 rest 0.885 | take-all +999/wk
+        X': n zone 452 cell n 293 cell gain -1,080/wk | mean/trade cell -160 vs rest +23 | fill cell 0.901 rest 0.887 | take-all -996/wk
+      K7+M7 (control books)
+        L6M: n zone 1181 cell n 0 cell gain +0/wk | mean/trade cell +0 vs rest +nan | fill cell nan rest nan | take-all -1,001/wk
+        HOLD: n zone 2125 cell n 568 cell gain -432/wk | mean/trade cell -40 vs rest -72 | fill cell 0.893 rest 0.906 | take-all -1,340/wk
+        PRE: n zone 2087 cell n 1267 cell gain -1,082/wk | mean/trade cell -63 vs rest -84 | fill cell 0.897 rest 0.903 | take-all -1,999/wk
+        X': n zone 760 cell n 472 cell gain +3/wk | mean/trade cell +0 vs rest -86 | fill cell 0.867 rest 0.899 | take-all -565/wk
+    placebo HOLD P7+U7: actual +1,609/wk, permuted-within-book-month mean +819 q95 +1,634 q99 +1,980
+    placebo PRE P7+U7: actual +445/wk, permuted-within-book-month mean +665 q95 +1,531 q99 +2,011
+    placebo X' P7+U7: actual -1,080/wk, permuted-within-book-month mean -752 q95 +127 q99 +297
+    bi-weekly WF over the NKD imbalance family (30 cells, pick by trailing 52 weeks, OOS from 2024-07, NKD history starts 2023-04): 61 refits fired, OOS total 47212 = $/wk 387 | most picked {"('P7', -0.17, 'ge')": 15, "('P7U7', 0.08, 'le')": 10, "('P7', -0.08, 'ge')": 9}
+    TRADER TEST P7+U7 L6M: give-back events 0.0/wk, round-trips 0.0/wk; with the rule 0 give-backs converted to a take (+$0) and 0 round-trips removed, but 0 fills clipped (-$-0); net $+0 over 26 weeks; give-backs/wk after 0.0
+    TRADER TEST P7+U7 HOLD: give-back events 1.2/wk, round-trips 1.2/wk; with the rule 44 give-backs converted to a take (+$253,817) and 44 round-trips removed, but 290 fills clipped (-$169,991); net $+83,913 over 52 weeks; give-backs/wk after 0.3
+    TRADER TEST P7+U7 PRE: give-back events 1.8/wk, round-trips 1.7/wk; with the rule 81 give-backs converted to a take (+$441,817) and 76 round-trips removed, but 633 fills clipped (-$408,925); net $+32,858 over 74 weeks; give-backs/wk after 0.7
