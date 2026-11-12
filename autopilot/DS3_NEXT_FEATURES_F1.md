@@ -1,0 +1,23 @@
+# DS3_NEXT_FEATURES_F1 — T-NEXT-FEATURES items 1 (stack-level evidence) and 6 (after a halt/lock), W-F1
+
+Generated 2026-11-12 18:21 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
+
+Hook code/th_nextf/nf_hooks.py (outermost of the hooklist). **sev**: N same-side losing closed trades by ANY book in the ET six-session, no new session extreme in the trade direction beyond the extreme at the last failure exit (completed 1-min bars) -> skip (S) or half (H) for every book on that side; suffix N = scorecard convention (opposite-side trades do not end the run). **ah**: previous 18:00-ET day ended day-halted by the loss cap (L), give-back lock (K) or either (E) -> first signal dropped (S) or first sized entry halved (H).
+
+Baseline stack same-side losing run (behavioural scorecard c convention): JN05W2 L6M max 13 / p95 6, HOLD max 13 / p95 6; target max <= 6.
+
+## 0. Trend-week clause first (L6M weekly check, 5 best JN05W2 weeks kept, JN05W2 winning weeks turned losing) and L6M/HOLD summary
+
+| set | months | 5 best wks kept | winning wks turned losing | L6M cut % | L6M d mean/wk (all wks) | L6M run max/p95 (ref 13/6) | HOLD cut % | HOLD d mean/wk | HOLD run max/p95 | WF cut / beat |
+|--|--|--|--|--|--|--|--|--|--|--|
+| NF_AHH_E | 1 | (running) |||||||||
+| NF_D_OB_best_m2_J | 0 | (running) |||||||||
+| NF_D_OB_best_m2_L | 0 | (running) |||||||||
+| NF_D_PL_day_half_m1p5_J | 0 | (running) |||||||||
+| NF_D_PL_day_half_m1p5_L | 0 | (running) |||||||||
+| NF_D_PL_day_half_m2_J | 0 | (running) |||||||||
+| NF_SEV3S | 1 | (running) |||||||||
+
+cut % = maxDD of the stack vs JN05W2 (positive = shallower); d mean = all-weeks mean difference ($/wk); a window appears only when all its months are present. PRE / X' / GAP follow for cells with L6M cut >= 5% and d mean >= -$1,000/wk (prereg).
+
+Identity: NF_ID99 (hook on, rule never fires) is trade-for-trade identical to JN05W2 on 202610 (598 trades, net $25,943.82).
