@@ -1,6 +1,6 @@
 # DS3_SCREENS - what a discretionary desk watches, as features for NQ (T-SCREENS, W-S)
-Page written 2026-11-12T09:04Z (date -u). Shadow only; no PASS claims. Method: every feature is scored first-order on the exact LPB_BASE trade list (20,807 trades) in the uses A (loss cut confirm), B (early cut), C (near-zone take), D (entry skip/half), E (P7 re-entry gate); regime flag F and learned G below. Four windows L6M / HOLD / PRE / X-prime, thresholds from events before 2025-11-11 only, family null by permuting each feature within month among its finite values (availability pattern kept), 60 permutations for the best-cell null, 20 for the entrant counts.
-Spend: T-SCREENS $290.40, T-CROSS $143.52, total $433.92 of $1,000. Loop: nohup page/exact loop pid 2309711 (see below); exact runner pid 2316541. Exact stage: JN05W_S6_C22 15 of 43 months done, 0 errors; JN05W_S6_N22 0 of 43 months done, 0 errors; JN05W_S6_C18 0 of 43 months done, 0 errors; JN05W_S6_C14 15 of 43 months done, 0 errors; JN05W_S6_L10 0 of 43 months done, 0 errors.
+Page written 2026-11-12T13:06Z (date -u). Shadow only; no PASS claims. Method: every feature is scored first-order on the exact LPB_BASE trade list (20,807 trades) in the uses A (loss cut confirm), B (early cut), C (near-zone take), D (entry skip/half), E (P7 re-entry gate); regime flag F and learned G below. Four windows L6M / HOLD / PRE / X-prime, thresholds from events before 2025-11-11 only, family null by permuting each feature within month among its finite values (availability pattern kept), 60 permutations for the best-cell null, 20 for the entrant counts.
+Spend: T-SCREENS $290.40, T-CROSS $143.52, total $433.92 of $1,000. Loop: nohup page/exact loop pid 2309711 (see below); exact runner pid 3052893. Exact stage: JN05W_S6_C22 24 of 43 months done, 0 errors; JN05W_S6_N22 0 of 43 months done, 0 errors; JN05W_S6_C18 0 of 43 months done, 0 errors; JN05W_S6_C14 23 of 43 months done, 0 errors; JN05W_S6_L10 0 of 43 months done, 0 errors.
 
 ## How many would pass by chance
 Across all scored families 4120 cells beat the live rule in every window; the same pipeline on permuted features gives 3910 on average. A family is only credited where it exceeds its own placebo.
@@ -164,16 +164,16 @@ Why these two and not the others: they are the only first-order cells whose mean
 Scorecard a-e, bi-weekly WF and exact results are appended below per candidate as they complete.
 
 #### Exact sets (one set per job, TP engine, engine = base + screen gate hook th_screens/scr_hooks.py; bases LPB_BASE and JN04RM)
-- JN05W_S6_C22 vs LPB_BASE: 15 of 43 months done.
-  months better/worse/equal vs the base (of 15 done): 11 / 4 / 0; sum +103195 $.
+- JN05W_S6_C22 vs LPB_BASE: 24 of 43 months done.
+  months better/worse/equal vs the base (of 24 done): 17 / 6 / 1; sum +155768 $.
   window L6M: stack maxDD 51253 -> 36697 (cut 28.4%), mean per week +3371 $ (18898 -> 22270), trades 4651 -> 4004; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 7 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
   window HOLD: stack maxDD 78842 -> 70281 (cut 10.9%), mean per week +2359 $ (16775 -> 19134), trades 8303 -> 7346; weeks: set minus base in the base 20 worst weeks +4097 $/wk, in its 20 best +196 $/wk.
   HOLD contiguous 2-week blocks: set beat or equalled the base in 15 of 20.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
-- JN05W_S6_C22_RM vs JN04RM: 15 of 43 months done.
-  months better/worse/equal vs the base (of 15 done): 12 / 3 / 0; sum +94074 $.
+- JN05W_S6_C22_RM vs JN04RM: 23 of 43 months done.
+  months better/worse/equal vs the base (of 23 done): 19 / 4 / 0; sum +141356 $.
   window L6M: stack maxDD 39092 -> 39221 (cut -0.3%), mean per week +1831 $ (19528 -> 21359), trades 5078 -> 4238; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 6 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
@@ -186,16 +186,16 @@ Scorecard a-e, bi-weekly WF and exact results are appended below per candidate a
 - JN05W_S6_C18_RM vs JN04RM: 0 of 43 months done.
 - JN05W_S6_N18 vs LPB_BASE: 0 of 43 months done.
 - JN05W_S6_N18_RM vs JN04RM: 0 of 43 months done.
-- JN05W_S6_C14 vs LPB_BASE: 15 of 43 months done.
-  months better/worse/equal vs the base (of 15 done): 6 / 9 / 0; sum -12585 $.
+- JN05W_S6_C14 vs LPB_BASE: 23 of 43 months done.
+  months better/worse/equal vs the base (of 23 done): 11 / 12 / 0; sum +19468 $.
   window L6M: stack maxDD 51253 -> 25105 (cut 51.0%), mean per week +2389 $ (18898 -> 21287), trades 4651 -> 3384; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 5 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
   window HOLD: stack maxDD 78842 -> 69365 (cut 12.0%), mean per week +434 $ (16775 -> 17209), trades 8303 -> 6381; weeks: set minus base in the base 20 worst weeks +5250 $/wk, in its 20 best -3583 $/wk.
   HOLD contiguous 2-week blocks: set beat or equalled the base in 11 of 20.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
-- JN05W_S6_C14_RM vs JN04RM: 14 of 43 months done.
-  months better/worse/equal vs the base (of 14 done): 8 / 6 / 0; sum +30179 $.
+- JN05W_S6_C14_RM vs JN04RM: 23 of 43 months done.
+  months better/worse/equal vs the base (of 23 done): 12 / 11 / 0; sum -9234 $.
   window L6M: stack maxDD 39092 -> 21304 (cut 45.5%), mean per week +5219 $ (19528 -> 24747), trades 5078 -> 3763; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 6 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")

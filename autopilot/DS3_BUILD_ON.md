@@ -1,6 +1,6 @@
-# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-12 11:07Z
+# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-12 13:02Z
 
-Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 234 of 1273 done (one set per job, one month per job), 3 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
+Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 267 of 1273 done (one set per job, one month per job), 2 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
 
 
 ## 1. What this page is, and the definitions used
@@ -36,10 +36,15 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 
 | set | what it does | window | months | mean $/wk | stack dd cut % | eq-mean dd cut % | d mean $/wk | full stops/wk (ref) | $ per failure (ref) | recoveries lost $/wk | stops saved $/wk | skipped $/wk | worst-20 d $/wk | best-20 d $/wk | partial exits/wk |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| BO_K7_1C_m0p50_T30_S60 | K7: rechase entries get lots x0.50, target 30, stop 60 (fresh full) | L1M | 6 | -13288 | 9.8 | nan | 2891 | 31.9 (28.4) | -1594 (-1667) | -20569 | 9365 | -1127 | 5013 | -12448 | 0.0 |
+| BO_K7_1L_G30_k1p00_m0p50 | K7: RECHASE entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 1.00 ATR) | L1M | 6 | -14152 | 12.4 | nan | 2028 | 31.9 (28.4) | -1602 (-1667) | -3769 | 1236 | 0 | 6341 | -9704 | 0.0 |
+| BO_K7_1Lrev_G15_k2p00_m0p50 | K7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 2.00 ATR) | L1M | 6 | 17912 | -3.4 | -0.8 | 374 | 28.4 (28.4) | -1654 (-1667) | -837 | 392 | 0 | -1728 | 0 | 0.0 |
+| BO_K7_1S_G30_k1p50_S45 | K7: RECHASE entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 1.50 ATR) | L1M | 6 | -14022 | 7.2 | nan | 2158 | 18.6 (28.4) | -1840 (-1667) | -7450 | 2988 | -1200 | 3671 | -9635 | 0.0 |
 | BO_K7_1Srev_G60_k0p75_S45 | K7: FRESH entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 0.75 ATR) | L1M | 6 | -15770 | 1.0 | nan | 410 | 27.6 (28.4) | -1664 (-1667) | 0 | 457 | -395 | 490 | 2075 | 0.0 |
+| BO_K7_1T_G60_k1p50_T30 | K7: RECHASE entries get target 30 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 1.50 ATR) | L1M | 2 | -11256 | 7.9 | nan | 4924 | 29.8 (28.4) | -1704 (-1667) | -18322 | 9713 | -1140 | 4052 | -22570 | 0.0 |
 | BO_K7_6TL_N10_t0p40_half_rech | K7: at 10 min, if the open loss is still worse than 40% of the target: half the lots out (rechase only) | L1M | 6 | -387 | 0.4 | 3.1 | 63 | 28.7 (28.4) | -1663 (-1667) | -1228 | 638 | 0 | 190 | 0 | 3.1 |
 | BO_K7_7C_W300_skip | K7: another book filled a same-side target in the last 300 s: skip the signal | L1M | 6 | 16525 | 9.4 | 7.0 | -1013 | 30.1 (28.4) | -1642 (-1667) | 0 | 261 | 329 | 5844 | 685 | 0.0 |
-| BO_K7_7N_n3_half | K7: 3 or more same-side target fills by other books in the last 30 min: half the lots | L1M | 2 | -16180 | 0.0 | 0.0 | 0 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | 0 | 0 | 0 | 0.0 |
+| BO_K7_7N_n3_half | K7: 3 or more same-side target fills by other books in the last 30 min: half the lots | L1M | 6 | -16180 | 0.0 | 0.0 | 0 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_K7x3_REF | K7 at 3x lots, no rule (comparator for the K7x3 rows) | L1M | 6 | 23230 | 32.6 | 44.8 | 5692 | 20.3 (28.4) | -2116 (-1667) | -825 | 630 | -1597 | 16690 | 9094 | 0.0 |
 | BO_K7x3_RUNG_T30_f0p33_fl0_through1 | K7 at 3x lots: 0.33 of the lots rest at 30 pts, floor entry+0 after the fill, remainder keeps the 60-pt target; fill model through1 | L1M | 6 | 23230 | 32.6 | 44.8 | 5692 | 20.3 (28.4) | -2116 (-1667) | -825 | 630 | -1597 | 16690 | 9094 | 0.0 |
 | BO_K7x3_RUNG_T30_f0p33_fl0_touch | K7 at 3x lots: 0.33 of the lots rest at 30 pts, floor entry+0 after the fill, remainder keeps the 60-pt target; fill model touch | L1M | 6 | 23230 | 32.6 | 44.8 | 5692 | 20.3 (28.4) | -2116 (-1667) | -825 | 630 | -1597 | 16690 | 9094 | 0.0 |
@@ -75,9 +80,14 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_NZF_all | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on all entries | L1M | 6 | -13285 | 0.7 | nan | 2895 | 28.4 (28.4) | -1667 (-1667) | -7333 | 0 | 778 | 384 | 15945 | 0.0 |
 | BO_P7_NZF_fresh | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on FRESH only (reverse control) entries | L1M | 6 | -450 | 0.0 | 8.1 | 0 | 28.4 (28.4) | -1667 (-1667) | -67 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L1M | 6 | -13819 | 0.7 | nan | 2361 | 28.4 (28.4) | -1667 (-1667) | -7265 | 0 | 778 | 384 | 15945 | 0.0 |
+| BO_K7_1C_m0p50_T30_S60 | K7: rechase entries get lots x0.50, target 30, stop 60 (fresh full) | L3M | 6 | 10612 | 21.3 | 29.8 | 1646 | 25.4 (23.4) | -1531 (-1662) | -17575 | 10067 | -609 | 8455 | -3946 | 0.0 |
+| BO_K7_1L_G30_k1p00_m0p50 | K7: RECHASE entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 1.00 ATR) | L3M | 6 | 8161 | 0.1 | -11.8 | -805 | 25.4 (23.4) | -1534 (-1662) | -5237 | 2809 | 117 | 6134 | -4036 | 0.0 |
+| BO_K7_1Lrev_G15_k2p00_m0p50 | K7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 2.00 ATR) | L3M | 6 | 8464 | 4.3 | 4.8 | 276 | 23.5 (23.4) | -1621 (-1662) | -1007 | 873 | 250 | -1077 | -2129 | 0.0 |
+| BO_K7_1S_G30_k1p50_S45 | K7: RECHASE entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 1.50 ATR) | L3M | 6 | 10773 | -0.5 | -8.0 | -1201 | 13.0 (23.4) | -1831 (-1662) | -6684 | 3367 | 146 | 4232 | -6936 | 0.0 |
 | BO_K7_1Srev_G60_k0p75_S45 | K7: FRESH entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 0.75 ATR) | L3M | 6 | 8480 | -0.8 | 1.7 | 292 | 22.5 (23.4) | -1663 (-1662) | -361 | 521 | -239 | 395 | -369 | 0.0 |
 | BO_K7_6TL_N10_t0p40_half_rech | K7: at 10 min, if the open loss is still worse than 40% of the target: half the lots out (rechase only) | L3M | 6 | 11377 | 3.1 | 6.2 | 254 | 22.4 (23.4) | -1683 (-1662) | -961 | 575 | -246 | 1263 | 153 | 3.2 |
 | BO_K7_7C_W300_skip | K7: another book filled a same-side target in the last 300 s: skip the signal | L3M | 6 | 17465 | 3.1 | 3.4 | 241 | 24.1 (23.4) | -1653 (-1662) | 0 | 65 | -793 | 2334 | 173 | 0.0 |
+| BO_K7_7N_n3_half | K7: 3 or more same-side target fills by other books in the last 30 min: half the lots | L3M | 6 | 11123 | 0.0 | 0.0 | 0 | 23.4 (23.4) | -1662 (-1662) | 0 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_K7x3_REF | K7 at 3x lots, no rule (comparator for the K7x3 rows) | L3M | 6 | 19968 | 0.2 | 7.6 | 2743 | 15.8 (23.4) | -2259 (-1662) | -467 | 485 | 523 | 11886 | 5433 | 0.0 |
 | BO_K7x3_RUNG_T30_f0p33_fl0_through1 | K7 at 3x lots: 0.33 of the lots rest at 30 pts, floor entry+0 after the fill, remainder keeps the 60-pt target; fill model through1 | L3M | 6 | 19968 | 0.2 | 7.6 | 2743 | 15.8 (23.4) | -2259 (-1662) | -467 | 485 | 523 | 11886 | 5433 | 0.0 |
 | BO_K7x3_RUNG_T30_f0p33_fl0_touch | K7 at 3x lots: 0.33 of the lots rest at 30 pts, floor entry+0 after the fill, remainder keeps the 60-pt target; fill model touch | L3M | 6 | 19968 | 0.2 | 7.6 | 2743 | 15.8 (23.4) | -2259 (-1662) | -467 | 485 | 523 | 11886 | 5433 | 0.0 |
@@ -113,9 +123,14 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_NZF_all | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on all entries | L3M | 6 | 14387 | 29.4 | 24.5 | -538 | 23.4 (23.4) | -1661 (-1662) | -10086 | 186 | 2321 | -4235 | 914 | 0.0 |
 | BO_P7_NZF_fresh | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on FRESH only (reverse control) entries | L3M | 6 | 14661 | 8.3 | 7.0 | -265 | 23.4 (23.4) | -1662 (-1662) | -1327 | 0 | -268 | -22 | -567 | 0.0 |
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L3M | 6 | 12710 | 11.5 | 2.4 | -958 | 23.4 (23.4) | -1661 (-1662) | -8852 | 186 | 2401 | -2893 | 1689 | 0.0 |
+| BO_K7_1C_m0p50_T30_S60 | K7: rechase entries get lots x0.50, target 30, stop 60 (fresh full) | L6M | 6 | 18099 | 21.3 | 18.2 | -709 | 26.6 (24.5) | -1496 (-1632) | -19334 | 9192 | 831 | 7504 | -4141 | 0.0 |
+| BO_K7_1L_G30_k1p00_m0p50 | K7: RECHASE entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 1.00 ATR) | L6M | 6 | 16598 | 0.1 | -5.5 | -933 | 25.9 (24.5) | -1512 (-1632) | -5732 | 2950 | 300 | 4625 | -2920 | 0.0 |
+| BO_K7_1Lrev_G15_k2p00_m0p50 | K7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 2.00 ATR) | L6M | 6 | 17171 | 4.3 | 4.3 | 13 | 24.7 (24.5) | -1608 (-1632) | -1241 | 588 | 36 | -563 | -1451 | 0.0 |
+| BO_K7_1S_G30_k1p50_S45 | K7: RECHASE entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 1.50 ATR) | L6M | 6 | 20191 | -0.5 | 4.7 | 1034 | 12.8 (24.5) | -1798 (-1632) | -4960 | 4070 | 269 | 2131 | -724 | 0.0 |
 | BO_K7_1Srev_G60_k0p75_S45 | K7: FRESH entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 0.75 ATR) | L6M | 6 | 17863 | -0.8 | -1.1 | -63 | 24.0 (24.5) | -1634 (-1632) | -653 | 446 | -69 | 823 | -147 | 0.0 |
 | BO_K7_6TL_N10_t0p40_half_rech | K7: at 10 min, if the open loss is still worse than 40% of the target: half the lots out (rechase only) | L6M | 6 | 17881 | 3.1 | 6.0 | 527 | 23.6 (24.5) | -1647 (-1632) | -1188 | 827 | -26 | 3731 | 1398 | 4.3 |
 | BO_K7_7C_W300_skip | K7: another book filled a same-side target in the last 300 s: skip the signal | L6M | 6 | 19621 | 3.1 | 5.8 | 536 | 24.7 (24.5) | -1635 (-1632) | -123 | 34 | -200 | 1556 | -791 | 0.0 |
+| BO_K7_7N_n3_half | K7: 3 or more same-side target fills by other books in the last 30 min: half the lots | L6M | 6 | 17959 | 0.0 | 0.2 | 33 | 24.5 (24.5) | -1630 (-1632) | -98 | 48 | 0 | 0 | 122 | 0.0 |
 | BO_K7x3_REF | K7 at 3x lots, no rule (comparator for the K7x3 rows) | L6M | 6 | 19877 | 0.2 | 1.2 | 216 | 16.3 (24.5) | -2290 (-1632) | -980 | 352 | 1105 | 3404 | 2478 | 0.0 |
 | BO_K7x3_RUNG_T30_f0p33_fl0_through1 | K7 at 3x lots: 0.33 of the lots rest at 30 pts, floor entry+0 after the fill, remainder keeps the 60-pt target; fill model through1 | L6M | 6 | 19865 | 0.2 | 1.2 | 204 | 16.3 (24.5) | -2290 (-1632) | -980 | 352 | 1127 | 3404 | 2478 | 0.0 |
 | BO_K7x3_RUNG_T30_f0p33_fl0_touch | K7 at 3x lots: 0.33 of the lots rest at 30 pts, floor entry+0 after the fill, remainder keeps the 60-pt target; fill model touch | L6M | 6 | 19865 | 0.2 | 1.2 | 204 | 16.3 (24.5) | -2290 (-1632) | -980 | 352 | 1127 | 3404 | 2478 | 0.0 |
@@ -155,199 +170,495 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 ## 4. Worked rows (the five trades where each exact set differs most from the live twin, L6M months done so far)
 
 
+**BO_K7_1C_m0p50_T30_S60**
+
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-20 00:50 | P7 | short | 4 > 4 | n/a | Target > Target | 970 > 4795 |
+| 08-05 22:24 | K7 | long | 2 > 1 | rech (1 / 199 / 2.17) | StopJoinFallback > Target | -2482 > 599 |
+| 07-02 16:03 | K7 | short | 2 > 1 | rech (1 / 8 / 0.55) | Target > StateCut | 2398 > -650 |
+| 09-17 22:18 | K7 | short | 2 > 1 | rech (1 / 153 / 2.02) | StopJoinFallback > Target | -2442 > 599 |
+| 09-14 11:06 | K7 | long | 2 > 1 | rech (5 / 30 / -3.28) | StopJoin > Target | -2427 > 599 |
+
+
+**BO_K7_1L_G30_k1p00_m0p50**
+
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-27 05:18 | K7 | short | 2 > 1 | rech (6 / 1 / 2.27) | Target > StateCut | 2398 > -1170 |
+| 08-31 22:51 | K7 | short | 2 > 1 | rech (1 / -1 / 2.04) | StopJoin > Target | -2177 > 1199 |
+| 07-22 12:09 | K7 | short | 2 > 1 | rech (8 / 26 / 5.03) | Target > StateCut | 2393 > -672 |
+| 08-07 06:30 | K7 | long | 2 > 1 | rech (1 / 0 / 2.64) | Target > StateCut | 2398 > -655 |
+| 07-02 16:03 | K7 | short | 2 > 1 | rech (1 / 8 / 0.55) | Target > StateCut | 2398 > -650 |
+
+
+**BO_K7_1Lrev_G15_k2p00_m0p50**
+
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-22 06:54 | K7 | long | 2 > 2 | fresh (2 / 29 / 4.18) | BookLock > Target | -1592 > 2403 |
+| 07-22 22:30 | K7 | short | 2 > 1 | rech (1 / 155 / 0.50) | Target > StackCut | 2398 > -1036 |
+| 09-24 17:27 | K7 | short | 2 > 1 | rech (2 / 61 / -3.26) | Target > StateCut | 2393 > -720 |
+| 06-29 17:27 | K7 | long | none > 2 | fresh (3 / 15 / 3.31) | none > Target | 0 > 2403 |
+| 06-29 16:00 | K7 | long | none > 2 | fresh (1 / 1 / nan) | none > Target | 0 > 2398 |
+
+
+**BO_K7_1S_G30_k1p50_S45**
+
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 07-02 15:56 | P7 | short | 4 > 4 | n/a | BookLock > Target | -2145 > 4790 |
+| 07-13 02:08 | P7 | short | none > 7 | n/a | none > StateCut | 0 > -5963 |
+| 06-04 02:25 | P7 | short | none > 7 | n/a | none > StateCut | 0 > -5073 |
+| 06-07 23:34 | P7 | long | none > 4 | n/a | none > Target | 0 > 4795 |
+| 06-08 04:30 | P7 | short | none > 4 | n/a | none > Target | 0 > 4795 |
+
+
 **BO_K7_1Srev_G60_k0p75_S45**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 09-24 17:27 | K7 | short | 2 > 2 | rech (2 / 61 / -3.26) | Target > StopJoinFallback | 2393 > -1732 |
+| 07-08 22:12 | P7 | long | 4 > 4 | n/a | Target > Target | 4800 > 1135 |
+| 07-17 16:45 | K7 | long | none > 2 | fresh (2 / 21 / 0.49) | none > Target | 0 > 2403 |
+| 05-13 09:21 | K7 | short | 1 > 1 | fresh (3 / 10 / -4.12) | Target > StopJoin | 1199 > -1186 |
+| 06-03 18:27 | K7 | long | none > 2 | fresh (4 / 1 / 2.01) | none > StopJoin | 0 > -2317 |
+
+
+**BO_K7_1T_G60_k1p50_T30**
+
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-20 00:50 | P7 | short | 4 > 4 | n/a | Target > Target | 970 > 4795 |
+| 08-05 22:24 | K7 | long | 2 > 2 | rech (1 / 860 / 2.17) | StopJoinFallback > Target | -2482 > 1203 |
+| 09-17 22:18 | K7 | short | 2 > 2 | rech (1 / 153 / 2.02) | StopJoinFallback > Target | -2442 > 1193 |
+| 09-14 11:06 | K7 | long | 2 > 2 | rech (5 / 30 / -3.28) | StopJoin > Target | -2427 > 1203 |
+| 09-18 06:51 | K7 | long | 2 > 2 | rech (2 / 40 / 3.80) | StopJoinFallback > Target | -2422 > 1203 |
+
+
+**BO_K7_1Trev_G15_k1p00_T30**
+
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 10-27 12:18 | K7 | long | 2 > 2 | fresh (6 / 93 / 6.48) | BookLock > Target | -1427 > 2403 |
+| 10-08 22:09 | K7 | long | 2 > 2 | rech (1 / 201 / 0.51) | StopJoin > Target | -2342 > 1198 |
+| 09-03 03:51 | K7 | long | none > 2 | fresh (3 / 36 / 3.59) | none > StopJoinFallback | 0 > -2442 |
+| 09-24 00:00 | K7 | short | none > 1 | fresh (2 / 10 / 1.68) | none > Target | 0 > 2398 |
+| 10-30 11:42 | K7 | short | none > 2 | fresh (5 / 1 / 7.51) | none > Target | 0 > 2393 |
 
 
 **BO_K7_6TL_N10_t0p40_half_rech**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-22 06:54 | K7 | long | 2 > 2 | rech (2 / 29 / 4.18) | BookLock > Target | -1592 > 2403 |
+| 07-16 02:50 | P7 | long | 4 > 4 | n/a | Target > Target | 2165 > 4795 |
+| 05-22 10:42 | K7 | short | none > 2 | rech (5 / 9 / 3.65) | none > Stop | 0 > -2407 |
+| 07-17 16:45 | K7 | long | none > 2 | rech (2 / 21 / 0.49) | none > Target | 0 > 2403 |
+| 05-22 12:15 | K7 | long | none > 2 | rech (6 / 27 / 0.61) | none > Target | 0 > 2398 |
 
 
 **BO_K7_7C_W300_skip**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-22 06:54 | K7 | long | 2 > 2 | rech (2 / 29 / 4.18) | BookLock > Target | -1592 > 2403 |
+| 07-13 04:24 | K7 | short | 2 > 2 | rech (6 / 20 / 10.64) | BookLock > Target | -937 > 2398 |
+| 08-11 16:48 | K7 | short | 2 > 2 | rech (1 / 2 / 1.29) | Target > BookLock | 2393 > -632 |
+| 07-17 05:57 | K7 | short | none > 2 | rech (9 / 13 / 14.29) | none > StopJoinFallback | 0 > -2542 |
+| 08-19 18:09 | K7 | short | none > 2 | rech (5 / 1 / 3.55) | none > StopJoinFallback | 0 > -2432 |
 
 
 **BO_K7_7N_n3_half**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-19 03:45 | K7 | short | 2 > 1 | rech (3 / 30 / 10.76) | Target > Target | 2398 > 1199 |
+| 07-10 06:39 | K7 | short | 2 > 1 | rech (1 / 20 / 2.48) | Target > Target | 2398 > 1199 |
+| 08-11 00:03 | K7 | short | 2 > 1 | rech (2 / 5 / 6.19) | StopJoinFallback > StopJoinFallback | -2377 > -1196 |
+| 07-14 12:12 | K7 | short | none > 1 | rech (7 / 4 / 0.25) | none > StateCut | 0 > -777 |
+| 07-14 05:45 | K7 | long | 2 > 1 | rech (9 / 67 / 4.83) | StateCut > StateCut | -1604 > -865 |
 
 
 **BO_K7x3_REF**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 05-18 22:16 | P7 | long | 7 > 7 | n/a | Target > Target | 8402 > 992 |
+| 10-14 01:30 | K7 | long | 2 > 4 | rech (2 / 20 / 1.58) | StateCut > Target | -1324 > 3596 |
+| 05-06 04:15 | K7 | long | none > 4 | rech (3 / 37 / 5.99) | none > Target | 0 > 4795 |
+| 05-19 04:15 | P7 | short | none > 4 | n/a | none > Target | 0 > 4790 |
+| 07-15 22:36 | K7 | short | 1 > 3 | fresh (1 / 1313 / 0.63) | StateCut > Target | -795 > 3596 |
 
 
 **BO_K7x3_RUNG_T30_f0p33_fl0_through1**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 05-18 22:16 | P7 | long | 7 > 7 | n/a | Target > Target | 8402 > 992 |
+| 10-14 01:30 | K7 | long | 2 > 4 | rech (2 / 20 / 1.58) | StateCut > Target | -1324 > 3596 |
+| 05-06 04:15 | K7 | long | none > 4 | rech (3 / 37 / 5.99) | none > Target | 0 > 4795 |
+| 05-19 04:15 | P7 | short | none > 4 | n/a | none > Target | 0 > 4790 |
+| 07-15 22:36 | K7 | short | 1 > 3 | fresh (1 / 1313 / 0.63) | StateCut > Target | -795 > 3596 |
 
 
 **BO_K7x3_RUNG_T30_f0p33_fl0_touch**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 05-18 22:16 | P7 | long | 7 > 7 | n/a | Target > Target | 8402 > 992 |
+| 10-14 01:30 | K7 | long | 2 > 4 | rech (2 / 20 / 1.58) | StateCut > Target | -1324 > 3596 |
+| 05-06 04:15 | K7 | long | none > 4 | rech (3 / 37 / 5.99) | none > Target | 0 > 4795 |
+| 05-19 04:15 | P7 | short | none > 4 | n/a | none > Target | 0 > 4790 |
+| 07-15 22:36 | K7 | short | 1 > 3 | fresh (1 / 1313 / 0.63) | StateCut > Target | -795 > 3596 |
 
 
 **BO_K7x3_RUNG_T30_f0p5_fl2_through1**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-17 07:12 | K7 | short | 2 > 4 | rech (2 / 0 / -1.00) | StateCut > Target | -1984 > 4230 |
+| 09-13 22:59 | P7 | short | 7 > 7 | n/a | Target > Target | 8397 > 3162 |
+| 05-06 16:12 | K7 | long | none > 4 | fresh (1 / 53 / 0.95) | none > StopJoinFallback | 0 > -5010 |
+| 09-07 22:48 | K7 | short | none > 4 | rech (1 / 9 / 4.60) | none > StopJoinFallback | 0 > -5010 |
+| 05-28 00:00 | K7 | short | none > 4 | rech (3 / 9 / 6.04) | none > StopJoinFallback | 0 > -4995 |
 
 
 **BO_K7x3_RUNG_T30_f0p5_fl2_touch**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-17 07:12 | K7 | short | 2 > 4 | rech (2 / 0 / -1.00) | StateCut > Target | -1984 > 4230 |
+| 09-13 22:59 | P7 | short | 7 > 7 | n/a | Target > Target | 8397 > 3162 |
+| 05-06 16:12 | K7 | long | none > 4 | fresh (1 / 53 / 0.95) | none > StopJoinFallback | 0 > -5010 |
+| 09-07 22:48 | K7 | short | none > 4 | rech (1 / 9 / 4.60) | none > StopJoinFallback | 0 > -5010 |
+| 05-28 00:00 | K7 | short | none > 4 | rech (3 / 9 / 6.04) | none > StopJoinFallback | 0 > -4995 |
 
 
 **BO_P7_1C_m0p50_T45_S60**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-26 03:03 | P7 | long | 7 > 4 | rech (4 / 39 / -3.56) | StateCut > Target | -7138 > 3605 |
+| 07-28 05:40 | P7 | short | 7 > 4 | rech (9 / 17 / 10.80) | StateCut > Target | -6005 > 3595 |
+| 08-26 23:39 | P7 | long | 7 > 4 | rech (1 / 475 / 4.52) | StateCut > Target | -5755 > 3600 |
+| 09-10 05:07 | P7 | long | 7 > 3 | rech (3 / 17 / -0.56) | StateCut > Target | -6059 > 2696 |
+| 08-25 00:09 | P7 | short | 7 > 3 | rech (2 / 3 / 4.77) | StateCut > Target | -5815 > 2701 |
 
 
 **BO_P7_1L_G15_k1p00_m0p50**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-26 03:03 | P7 | long | 7 > 4 | rech (4 / 39 / -3.56) | StateCut > Target | -7138 > 4805 |
+| 07-02 15:16 | P7 | short | 4 > 2 | rech (2 / 10 / 4.12) | StateCut > Target | -3749 > 2393 |
+| 05-05 14:33 | P7 | long | 4 > 2 | rech (2 / 10 / 4.19) | StateCut > Target | -3519 > 2403 |
+| 08-13 14:24 | P7 | long | 4 > 2 | rech (1 / 78 / 7.81) | StateCut > Target | -3434 > 2398 |
+| 07-17 08:30 | P7 | short | 4 > 2 | rech (3 / 14 / 3.82) | StateCut > Target | -3414 > 2398 |
 
 
 **BO_P7_1Lrev_G60_k1p50_m0p33**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 05-31 23:53 | P7 | long | none > 7 | fresh (2 / 1 / 3.55) | none > Target | 0 > 8402 |
+| 05-13 01:20 | P7 | long | none > 7 | fresh (4 / 19 / 1.36) | none > Target | 0 > 8397 |
+| 05-13 04:38 | P7 | long | none > 7 | fresh (6 / 8 / 9.08) | none > Target | 0 > 8397 |
+| 07-03 02:40 | P7 | long | none > 7 | fresh (4 / 14 / 5.23) | none > Target | 0 > 8382 |
+| 05-13 02:01 | P7 | long | none > 7 | fresh (5 / 11 / 3.73) | none > Target | 0 > 8377 |
 
 
 **BO_P7_1S_G15_k0p75_S45**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 10-28 22:07 | P7 | short | 4 > 4 | rech (1 / 696 / 1.56) | Target > StopJoinFallback | 4790 > -2480 |
+| 07-13 02:08 | P7 | short | none > 7 | rech (4 / 15 / 5.66) | none > StateCut | 0 > -5963 |
+| 06-11 00:28 | P7 | long | 4 > 4 | rech (5 / 14 / 0.58) | Target > StopJoin | 3591 > -2334 |
+| 05-14 01:30 | P7 | long | none > 7 | rech (4 / 11 / 6.99) | none > StopJoinFallback | 0 > -5813 |
+| 06-11 00:43 | P7 | long | none > 4 | rech (6 / 7 / 0.07) | none > Target | 0 > 4805 |
 
 
 **BO_P7_1Srev_G60_k1p50_S45**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 05-07 02:03 | K7 | long | none > 2 | n/a | none > Target | 0 > 2403 |
+| 05-07 07:09 | K7 | long | none > 1 | n/a | none > StopJoinFallback | 0 > -1201 |
+| 05-07 12:12 | K7 | long | none > 1 | n/a | none > Target | 0 > 1199 |
+| 05-07 11:06 | K7 | long | none > 1 | n/a | none > StateCut | 0 > -655 |
+| 05-22 10:05 | P7 | short | 4 > 4 | fresh (4 / 90 / 1.94) | StopJoin > StopJoin | -4820 > -4220 |
 
 
 **BO_P7_1T_G30_k2p00_T45**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-26 03:03 | P7 | long | 7 > 7 | rech (4 / 39 / -3.56) | StateCut > Target | -7138 > 6292 |
+| 08-26 23:39 | P7 | long | 7 > 7 | rech (1 / 475 / 4.52) | StateCut > Target | -5755 > 6292 |
+| 09-10 05:07 | P7 | long | 7 > 5 | rech (3 / 17 / -0.56) | StateCut > Target | -6059 > 4494 |
+| 09-30 02:19 | P7 | short | 7 > 7 | rech (4 / 10 / 2.00) | StateCut > Target | -4244 > 6292 |
+| 08-25 00:09 | P7 | short | 7 > 5 | rech (2 / 3 / 4.77) | StateCut > Target | -5815 > 4489 |
 
 
 **BO_P7_1Trev_G15_k2p00_T45**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 07-02 22:07 | P7 | long | 7 > 7 | rech (1 / 368 / 0.64) | StateCut > Target | -6283 > 6307 |
+| 06-03 22:48 | P7 | short | 7 > 5 | rech (2 / 31 / 1.40) | StateCut > Target | -4979 > 4499 |
+| 09-08 00:46 | P7 | long | none > 7 | fresh (3 / 13 / 1.32) | none > Target | 0 > 8407 |
+| 05-31 23:04 | P7 | long | none > 7 | fresh (2 / 19 / 2.68) | none > Target | 0 > 8392 |
+| 08-24 23:43 | P7 | short | none > 7 | fresh (2 / 0 / 4.43) | none > Target | 0 > 8392 |
 
 
 **BO_P7_3SS_f0p50_a0p60_r0_rech**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 10-14 05:22 | P7 | short | none > 7 | rech (5 / 13 / -0.36) | none > Target | 0 > 8377 |
+| 10-05 05:15 | P7 | short | 7 > 7 | rech (5 / 42 / 0.12) | Target > Target | 8407 > 477 |
+| 06-17 02:22 | P7 | long | 7 > 7 | rech (4 / 8 / 27.81) | Target > Target | 8382 > 512 |
+| 09-14 22:17 | P7 | short | 7 > 7 | rech (1 / 405 / 2.46) | Target > Target | 8387 > 537 |
+| 06-18 23:01 | P7 | short | 7 > 7 | rech (1 / 1122 / 3.20) | Target > Target | 8407 > 857 |
 
 
 **BO_P7_4PA_f0p50_p0p10_fresh_s1**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 05-18 22:16 | P7 | long | 7 > 7 | fresh (1 / 1072 / 0.72) | Target > StateCut | 8402 > -6355 |
+| 08-26 03:03 | P7 | long | 7 > 5 | rech (4 / 40 / -3.56) | StateCut > Target | -7138 > 6004 |
+| 10-05 05:15 | P7 | short | 7 > 4 | rech (4 / 42 / 0.12) | Target > StateCut | 8407 > -3199 |
+| 07-07 06:54 | P7 | long | 4 > 4 | fresh (1 / 82 / -0.19) | Target > StateCut | 4800 > -3409 |
+| 07-27 00:28 | P7 | short | 4 > 4 | fresh (2 / 39 / -2.90) | Target > StateCut | 4795 > -3289 |
 
 
 **BO_P7_4PC_f0p50_N30_X10_fresh_s1**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-26 03:03 | P7 | long | 7 > 5 | rech (4 / 40 / -3.56) | StateCut > Target | -7138 > 6004 |
+| 10-05 05:15 | P7 | short | 7 > 4 | rech (4 / 42 / 0.12) | Target > StateCut | 8407 > -3199 |
+| 07-07 06:54 | P7 | long | 4 > 4 | fresh (1 / 82 / -0.19) | Target > StateCut | 4800 > -3294 |
+| 06-09 23:03 | P7 | long | 3 > 4 | fresh (1 / 436 / -0.52) | Target > StateCut | 3596 > -3289 |
+| 06-10 14:09 | P7 | long | 4 > 2 | rech (1 / 136 / 2.17) | Target > StateCut | 4790 > -1714 |
 
 
 **BO_P7_6TL_N40_t0p25_flat_all**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 05-13 23:24 | P7 | long | 7 > 7 | rech (2 / 19 / 4.61) | Target > BoTimeL | 8392 > -3718 |
+| 06-18 23:01 | P7 | short | 7 > 7 | rech (1 / 1122 / 3.20) | Target > BoTimeL | 8407 > -3388 |
+| 07-30 22:45 | P7 | long | 4 > 4 | rech (2 / 17 / 2.22) | Target > BoTimeL | 4800 > -2760 |
+| 10-28 01:47 | P7 | long | 4 > 4 | rech (3 / 5 / 3.30) | Target > BoTimeL | 4805 > -2675 |
+| 10-07 11:28 | P7 | short | 4 > 4 | rech (5 / 7 / 10.35) | Target > BoTimeL | 4785 > -2215 |
 
 
 **BO_P7_6TL_N5_t0p40_flat_all**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-19 23:09 | P7 | long | none > 7 | rech (3 / 2 / 4.63) | none > StateCut | 0 > -7545 |
+| 05-08 02:34 | P7 | long | 4 > 4 | rech (4 / 12 / 11.20) | Target > BoTimeL | 4800 > -2530 |
+| 10-28 22:07 | P7 | short | 4 > 4 | rech (1 / 696 / 1.56) | Target > BoTimeL | 4790 > -2190 |
+| 10-27 05:41 | P7 | short | none > 7 | rech (8 / 13 / 6.31) | none > StateCut | 0 > -5760 |
+| 10-20 02:06 | P7 | long | 4 > 4 | rech (3 / 56 / -1.31) | Target > BoTimeL | 3601 > -1986 |
 
 
 **BO_P7_6TL_N5_t0p40_flat_rech**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-19 23:09 | P7 | long | none > 7 | rech (3 / 2 / 4.63) | none > StateCut | 0 > -7545 |
+| 05-08 02:34 | P7 | long | 4 > 4 | rech (4 / 12 / 11.20) | Target > BoTimeL | 4800 > -2530 |
+| 10-28 22:07 | P7 | short | 4 > 4 | rech (1 / 696 / 1.56) | Target > BoTimeL | 4790 > -2190 |
+| 10-27 05:41 | P7 | short | none > 7 | rech (8 / 13 / 6.31) | none > StateCut | 0 > -5760 |
+| 10-20 02:06 | P7 | long | 4 > 4 | rech (3 / 56 / -1.31) | Target > BoTimeL | 3601 > -1986 |
 
 
 **BO_P7_6TP_N5_p0p40_half_rech**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-26 02:33 | P7 | short | none > 7 | rech (9 / 9 / 8.13) | none > Target | 0 > 8407 |
+| 07-30 03:31 | P7 | short | none > 7 | rech (9 / 19 / -7.56) | none > StateCut | 0 > -6173 |
+| 05-13 04:38 | P7 | long | none > 7 | rech (6 / 8 / 9.08) | none > Target | 0 > 5947 |
+| 07-03 02:40 | P7 | long | none > 7 | rech (4 / 14 / 5.23) | none > Target | 0 > 5494 |
+| 07-13 05:01 | P7 | short | none > 7 | rech (7 / 25 / 14.59) | none > StateCut | 0 > -5320 |
 
 
 **BO_P7_7C_W180_skip**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-19 23:06 | P7 | long | none > 7 | rech (2 / 4 / 4.23) | none > StateCut | 0 > -6103 |
+| 07-22 23:19 | P7 | short | none > 7 | rech (2 / 15 / 1.83) | none > StateCut | 0 > -5830 |
+| 07-09 06:09 | P7 | long | none > 4 | fresh (1 / 74 / -0.39) | none > Target | 0 > 4805 |
+| 10-07 10:57 | P7 | short | none > 4 | rech (4 / 14 / 8.58) | none > Target | 0 > 4800 |
+| 06-09 03:54 | P7 | long | none > 4 | rech (5 / 24 / 5.30) | none > Target | 0 > 4795 |
 
 
 **BO_P7_7C_W300_half**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 07-06 04:52 | P7 | long | none > 4 | rech (9 / 33 / -3.47) | none > StateCut | 0 > -3489 |
+| 07-22 23:05 | P7 | short | 7 > 4 | rech (2 / 1 / 2.10) | StateCut > StateCut | -6250 > -3499 |
+| 07-06 01:58 | P7 | short | 7 > 4 | rech (5 / 7 / 3.97) | StateCut > StateCut | -5813 > -3219 |
+| 09-28 01:16 | P7 | short | 4 > 2 | rech (3 / 0 / 3.09) | Target > Target | 4795 > 2393 |
+| 10-07 10:53 | P7 | short | 3 > 1 | rech (4 / 10 / 9.07) | Target > Target | 3601 > 1199 |
 
 
 **BO_P7_7C_W600_skip**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-23 05:52 | P7 | short | none > 7 | rech (7 / 25 / 16.40) | none > Target | 0 > 8387 |
+| 09-28 01:45 | P7 | short | none > 7 | rech (3 / 29 / 3.70) | none > Target | 0 > 8382 |
+| 10-13 00:32 | P7 | short | none > 7 | rech (2 / 25 / 4.36) | none > Target | 0 > 8377 |
+| 07-02 15:56 | P7 | short | 4 > 4 | rech (2 / 47 / 4.46) | BookLock > Target | -2145 > 4790 |
+| 09-22 00:22 | P7 | long | none > 7 | rech (2 / 13 / 7.17) | none > StateCut | 0 > -6095 |
 
 
 **BO_P7_7N_n2_T45**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-03 23:12 | P7 | short | 7 > 7 | rech (3 / 15 / 1.11) | StateCut > Target | -3806 > 6292 |
+| 06-01 00:38 | P7 | long | 7 > 7 | rech (3 / 17 / 6.07) | BookLock > Target | -2448 > 6277 |
+| 06-23 02:37 | P7 | short | none > 7 | rech (4 / 28 / 6.53) | none > Target | 0 > 8402 |
+| 09-28 12:27 | P7 | long | 4 > 4 | rech (5 / 21 / 2.09) | StateCut > Target | -3534 > 3600 |
+| 07-17 08:30 | P7 | short | 4 > 4 | rech (3 / 14 / 3.82) | StateCut > Target | -3414 > 3600 |
 
 
 **BO_P7_7N_n4_half**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 07-23 07:25 | P7 | short | 4 > 2 | rech (2 / 18 / 2.03) | Target > Target | 4785 > 2398 |
+| 08-25 15:00 | P7 | short | 1 > 1 | rech (2 / 0 / 1.88) | StateCut > StateCut | -1699 > -850 |
+| 08-21 07:33 | P7 | long | 2 > 1 | rech (1 / 29 / 4.31) | StateCut > StateCut | -1689 > -870 |
 
 
 **BO_P7_7N_n4_skip**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-25 15:13 | P7 | short | none > 1 | rech (2 / 20 / 2.14) | none > StateCut | 0 > -1679 |
+| 07-23 07:31 | P7 | short | none > 1 | rech (2 / 24 / 2.73) | none > Target | 0 > 1199 |
+| 08-21 07:49 | P7 | long | none > 1 | rech (1 / 45 / 3.63) | none > StateCut | 0 > -880 |
 
 
 **BO_P7_8T_T40**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-26 03:03 | P7 | long | 7 > 7 | rech (4 / 39 / -3.56) | StateCut > Target | -7138 > 5592 |
+| 10-29 02:22 | P7 | short | 7 > 7 | rech (6 / 21 / 6.77) | StateCut > Target | -6495 > 5587 |
+| 07-02 22:07 | P7 | long | 7 > 7 | fresh (1 / 365 / 0.64) | StateCut > Target | -6283 > 5607 |
+| 10-08 22:09 | P7 | long | 7 > 7 | fresh (1 / 1236 / 0.51) | StateCut > Target | -6170 > 5597 |
+| 07-02 01:30 | P7 | long | 7 > 7 | rech (5 / 66 / 3.07) | StateCut > Target | -6153 > 5597 |
 
 
 **BO_P7_8T_T55**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-26 03:03 | P7 | long | 7 > 7 | rech (4 / 39 / -3.56) | StateCut > Target | -7138 > 7692 |
+| 07-28 05:40 | P7 | short | 7 > 7 | rech (8 / 17 / 10.80) | StateCut > Target | -6005 > 7687 |
+| 09-10 05:07 | P7 | long | 7 > 5 | rech (3 / 17 / -0.56) | StateCut > Target | -6059 > 5494 |
+| 06-01 00:38 | P7 | long | 7 > 7 | rech (3 / 11 / 6.07) | BookLock > Target | -2448 > 7677 |
+| 06-25 10:42 | P7 | short | 4 > 4 | rech (4 / 26 / -3.20) | StateCut > Target | -4314 > 4390 |
 
 
 **BO_P7_8Tq_T40**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-26 03:03 | P7 | long | 7 > 7 | rech (4 / 39 / -3.56) | StateCut > Target | -7138 > 5592 |
+| 10-29 02:22 | P7 | short | 7 > 7 | rech (6 / 21 / 6.77) | StateCut > Target | -6495 > 5587 |
+| 07-02 22:07 | P7 | long | 7 > 7 | fresh (1 / 365 / 0.64) | StateCut > Target | -6283 > 5607 |
+| 10-08 22:09 | P7 | long | 7 > 7 | fresh (1 / 1236 / 0.51) | StateCut > Target | -6170 > 5597 |
+| 07-02 01:30 | P7 | long | 7 > 7 | rech (5 / 66 / 3.07) | StateCut > Target | -6153 > 5597 |
 
 
 **BO_P7_BL_f0_r120**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-26 02:33 | P7 | short | none > 7 | rech (6 / 9 / 8.13) | none > Target | 0 > 8407 |
+| 10-22 02:58 | P7 | short | none > 7 | rech (4 / 5 / 10.81) | none > Target | 0 > 8402 |
+| 05-13 01:20 | P7 | long | none > 7 | rech (3 / 61 / 1.36) | none > Target | 0 > 8397 |
+| 05-13 04:38 | P7 | long | none > 7 | rech (5 / 8 / 9.08) | none > Target | 0 > 8397 |
+| 07-17 05:25 | P7 | short | none > 7 | rech (5 / 122 / 13.38) | none > Target | 0 > 8397 |
 
 
 **BO_P7_BL_f30_r120**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-26 02:33 | P7 | short | none > 7 | rech (6 / 9 / 8.13) | none > Target | 0 > 8407 |
+| 10-22 02:58 | P7 | short | none > 7 | rech (4 / 5 / 10.81) | none > Target | 0 > 8402 |
+| 05-13 01:20 | P7 | long | none > 7 | rech (3 / 61 / 1.36) | none > Target | 0 > 8397 |
+| 05-13 04:38 | P7 | long | none > 7 | rech (5 / 8 / 9.08) | none > Target | 0 > 8397 |
+| 07-17 05:25 | P7 | short | none > 7 | rech (5 / 122 / 13.38) | none > Target | 0 > 8397 |
 
 
 **BO_P7_BL_f30_r60**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 05-13 01:20 | P7 | long | none > 7 | rech (3 / 61 / 1.36) | none > Target | 0 > 8397 |
+| 05-13 04:38 | P7 | long | none > 7 | rech (5 / 8 / 9.08) | none > Target | 0 > 8397 |
+| 05-19 03:52 | P7 | short | none > 7 | rech (6 / 66 / 3.84) | none > Target | 0 > 8397 |
+| 06-14 23:42 | P7 | long | none > 7 | rech (2 / 68 / 3.98) | none > Target | 0 > 8397 |
+| 10-22 02:32 | P7 | short | none > 7 | rech (4 / 17 / 9.93) | none > Target | 0 > 8382 |
 
 
 **BO_P7_BL_f30_r90**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 06-26 02:33 | P7 | short | none > 7 | rech (7 / 9 / 8.13) | none > Target | 0 > 8407 |
+| 05-13 01:20 | P7 | long | none > 7 | rech (3 / 61 / 1.36) | none > Target | 0 > 8397 |
+| 05-13 04:38 | P7 | long | none > 7 | rech (5 / 8 / 9.08) | none > Target | 0 > 8397 |
+| 09-28 01:45 | P7 | short | none > 7 | rech (2 / 103 / 3.70) | none > Target | 0 > 8382 |
+| 10-22 02:32 | P7 | short | none > 7 | rech (4 / 14 / 9.93) | none > Target | 0 > 8382 |
 
 
 **BO_P7_NZF_all**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-26 03:03 | P7 | long | 7 > 7 | rech (4 / 39 / -3.56) | StateCut > BoFloor | -7138 > 5732 |
+| 07-28 05:40 | P7 | short | 7 > 7 | rech (8 / 17 / 10.80) | StateCut > BoFloor | -6005 > 5727 |
+| 09-10 05:07 | P7 | long | 7 > 5 | rech (3 / 17 / -0.56) | StateCut > BoFloor | -6059 > 4082 |
+| 07-02 22:07 | P7 | long | 7 > 7 | fresh (1 / 1113 / 0.64) | StateCut > BoFloor | -6283 > 3314 |
+| 08-25 05:41 | P7 | long | none > 7 | rech (5 / 3 / 4.15) | none > Target | 0 > 8407 |
 
 
 **BO_P7_NZF_fresh**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 07-02 22:07 | P7 | long | 7 > 7 | fresh (1 / 368 / 0.64) | StateCut > BoFloor | -6283 > 3314 |
+| 09-08 00:46 | P7 | long | none > 7 | rech (3 / 7 / 1.32) | none > Target | 0 > 8407 |
+| 08-24 23:54 | P7 | short | none > 7 | rech (2 / 3 / 3.89) | none > Target | 0 > 8402 |
+| 07-03 02:40 | P7 | long | none > 7 | rech (4 / 14 / 5.23) | none > Target | 0 > 8382 |
+| 05-12 00:20 | P7 | short | none > 7 | rech (2 / 14 / 0.36) | none > Target | 0 > 7183 |
 
 
 **BO_P7_NZF_rech**
 
-worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 08-26 03:03 | P7 | long | 7 > 7 | rech (4 / 39 / -3.56) | StateCut > BoFloor | -7138 > 5732 |
+| 07-28 05:40 | P7 | short | 7 > 7 | rech (8 / 17 / 10.80) | StateCut > BoFloor | -6005 > 5727 |
+| 09-10 05:07 | P7 | long | 7 > 5 | rech (3 / 17 / -0.56) | StateCut > BoFloor | -6059 > 4082 |
+| 08-25 05:41 | P7 | long | none > 7 | rech (5 / 3 / 4.15) | none > Target | 0 > 8407 |
+| 10-22 04:49 | P7 | short | none > 7 | rech (7 / 11 / 17.16) | none > Target | 0 > 8407 |
 
 
 ## 4b. Behaviour scorecard (a-e) and the competent-trader acceptance test, exact finalists
@@ -355,9 +666,14 @@ worked rows unavailable: ModuleNotFoundError("No module named 'sz_core'")
 The scorecard line is the stack for L6M with the set against LPB_BASE (a: full stops, b: give-backs and round-trips, c: same-side losing runs, d: entries with no new evidence, e: what it cost). The acceptance line counts how many of the 20 worst P7 sessions still take a third consecutive same-side losing entry without new evidence (PASS only if no more than 2 of 20 fail).
 
 - LPB_BASE (the live stack, reference): (stack, per week): full stops 24.5/wk $-40052; give-backs 9.1/wk (9.0 round-trips) realised $-14009, forgone vs target $35376; same-side losing runs max 12, p95 6, $-51344 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $-363; recoveries cut 13.7/wk $46863, clipped fills 0.0/wk $0; pnl $19784/wk. ACCEPT LPB_BASE FAIL fails=3/20.
+- BO_K7_1C_m0p50_T30_S60: (stack, per week): full stops 26.6/wk $-39750; give-backs 6.1/wk (6.0 round-trips) realised $-10892, forgone vs target $27992; same-side losing runs max 12, p95 5, $-38492 lost on 3rd-and-later; no-new-evidence re-entries 42.0/wk $-305; recoveries cut 14.2/wk $47258, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $4196/wk, losers avoided $3365/wk, net -161 $/wk; pnl $19623/wk. ACCEPT BO_K7_1C_m0p50_T30_S60 FAIL fails=3/20
+- BO_K7_1L_G30_k1p00_m0p50: (stack, per week): full stops 25.9/wk $-39203; give-backs 9.2/wk (9.1 round-trips) realised $-13574, forgone vs target $34384; same-side losing runs max 12, p95 6, $-51409 lost on 3rd-and-later; no-new-evidence re-entries 39.6/wk $-124; recoveries cut 14.6/wk $47839, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $1561/wk, losers avoided $1261/wk, net -1422 $/wk; pnl $18362/wk. ACCEPT BO_K7_1L_G30_k1p00_m0p50 FAIL fails=3/20
+- BO_K7_1Lrev_G15_k2p00_m0p50: (stack, per week): full stops 24.7/wk $-39660; give-backs 9.1/wk (9.0 round-trips) realised $-13862, forgone vs target $35150; same-side losing runs max 12, p95 6, $-51214 lost on 3rd-and-later; no-new-evidence re-entries 37.5/wk $-445; recoveries cut 13.6/wk $46586, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $673/wk, losers avoided $636/wk, net -299 $/wk; pnl $19485/wk. ACCEPT BO_K7_1Lrev_G15_k2p00_m0p50 FAIL fails=3/20
+- BO_K7_1S_G30_k1p50_S45: (stack, per week): full stops 12.8/wk $-23047; give-backs 9.3/wk (9.0 round-trips) realised $-12912, forgone vs target $34503; same-side losing runs max 12, p95 6, $-52691 lost on 3rd-and-later; no-new-evidence re-entries 40.3/wk $784; recoveries cut 12.8/wk $45072, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $5175/wk, losers avoided $4906/wk, net +1773 $/wk; pnl $21556/wk. ACCEPT BO_K7_1S_G30_k1p50_S45 FAIL fails=3/20
 - BO_K7_1Srev_G60_k0p75_S45: (stack, per week): full stops 24.0/wk $-39243; give-backs 9.0/wk (8.9 round-trips) realised $-13875, forgone vs target $35094; same-side losing runs max 12, p95 6, $-51125 lost on 3rd-and-later; no-new-evidence re-entries 37.5/wk $-683; recoveries cut 13.8/wk $47015, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $1088/wk, losers avoided $1157/wk, net -294 $/wk; pnl $19490/wk. ACCEPT BO_K7_1Srev_G60_k0p75_S45 FAIL fails=3/20
 - BO_K7_6TL_N10_t0p40_half_rech: (stack, per week): full stops 23.6/wk $-38873; give-backs 9.2/wk (9.1 round-trips) realised $-13924, forgone vs target $35066; same-side losing runs max 12, p95 6, $-52020 lost on 3rd-and-later; no-new-evidence re-entries 38.7/wk $-210; recoveries cut 13.6/wk $46531, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $1317/wk, losers avoided $1343/wk, net +889 $/wk; pnl $20673/wk. ACCEPT BO_K7_6TL_N10_t0p40_half_rech FAIL fails=3/20
 - BO_K7_7C_W300_skip: (stack, per week): full stops 24.7/wk $-40321; give-backs 8.9/wk (8.8 round-trips) realised $-13894, forgone vs target $35036; same-side losing runs max 12, p95 6, $-50379 lost on 3rd-and-later; no-new-evidence re-entries 36.8/wk $-648; recoveries cut 13.6/wk $46543, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $3776/wk, losers avoided $3976/wk, net +174 $/wk; pnl $19958/wk. ACCEPT BO_K7_7C_W300_skip FAIL fails=3/20
+- BO_K7_7N_n3_half: (stack, per week): full stops 24.5/wk $-40004; give-backs 9.1/wk (9.0 round-trips) realised $-13978, forgone vs target $35297; same-side losing runs max 12, p95 6, $-51353 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $-403; recoveries cut 13.7/wk $46793, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $-0/wk, net -16 $/wk; pnl $19768/wk. ACCEPT BO_K7_7N_n3_half FAIL fails=3/20
 - BO_K7x3_REF: (stack, per week): full stops 16.3/wk $-37273; give-backs 7.1/wk (6.9 round-trips) realised $-12394, forgone vs target $32162; same-side losing runs max 11, p95 5, $-40804 lost on 3rd-and-later; no-new-evidence re-entries 24.5/wk $192; recoveries cut 10.2/wk $42857, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $28035/wk, losers avoided $26930/wk, net +1330 $/wk; pnl $21114/wk. ACCEPT BO_K7x3_REF FAIL fails=3/20
 - BO_K7x3_RUNG_T30_f0p33_fl0_through1: (stack, per week): full stops 16.3/wk $-37273; give-backs 7.1/wk (6.9 round-trips) realised $-12394, forgone vs target $32162; same-side losing runs max 11, p95 5, $-40668 lost on 3rd-and-later; no-new-evidence re-entries 24.5/wk $192; recoveries cut 10.2/wk $42857, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $28035/wk, losers avoided $26908/wk, net +1317 $/wk; pnl $21101/wk. ACCEPT BO_K7x3_RUNG_T30_f0p33_fl0_through1 FAIL fails=3/20
 - BO_K7x3_RUNG_T30_f0p33_fl0_touch: (stack, per week): full stops 16.3/wk $-37273; give-backs 7.1/wk (6.9 round-trips) realised $-12394, forgone vs target $32162; same-side losing runs max 11, p95 5, $-40668 lost on 3rd-and-later; no-new-evidence re-entries 24.5/wk $192; recoveries cut 10.2/wk $42857, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $28035/wk, losers avoided $26908/wk, net +1317 $/wk; pnl $21101/wk. ACCEPT BO_K7x3_RUNG_T30_f0p33_fl0_touch FAIL fails=3/20

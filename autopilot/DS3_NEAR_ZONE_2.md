@@ -1,10 +1,41 @@
-# DS3_NEAR_ZONE_2 - T-NEAR-ZONE worker W-N2: families k l r s t u v and the near-zone JOINT stage (page written Thu Nov 12 12:00:27 UTC 2026)
+# DS3_NEAR_ZONE_2 - T-NEAR-ZONE worker W-N2: families k l r s t u v and the near-zone JOINT stage (page written Thu Nov 12 13:03:20 UTC 2026)
 
 STATUS: Shadow only, first-order on the LPB_BASE stored 1-s paths (43 months; L6M = 2026-05-12..10-30, 24 weeks), post-hoc, no PASS claims. Exact engine rows for the live-replayable joint finalists are queued (section 7); nothing on this page is exact yet unless section 7 says so. Prereg: NEAR_ZONE_2_PREREG.md (sha in DECISIONS.md, logged before any k/l/r/s/t/u/v cell was scored). W-N's page with families a-g and h-q is DS3_NEAR_ZONE.md; this page uses its kernel, its fill models and its definitions unchanged.
 
 Definitions (same as W-N): d = new P&L minus live-rule P&L per trade; net = removed (give-backs, fired non-fills that had reached 80% of target) minus clipped (fired trades that filled the target under live rules) plus other saves (fired non-fills outside the 80% zone); give-back event = MFE >= 80% and closed below 50% of target; round-trip = closed <= breakeven; strict trader test = no trade that reached 90% closes below 50% and none that reached 80% closes at or below breakeven. Key = min(net L6M, net 43 months) per week; for the learned exit the second number is the out-of-sample 2024+ weekly net. Market exit = next-second mid minus 1.2 pt (the profit-side take slip is unmeasured; 0.57 / 1.6 not re-run here); resting stop-limit floors and passive limits are optimistic upper bounds. P7 is shown first at 12/7/7 lots (P7x) and also at the installed 7/4/4.
 
-## 1. Headline (plain sentences)
+## 0. EXACT VERDICT (supersedes section 1, which is first-order and overstated)
+
+Exact L6M (6 of 6 months, engine with the live panel base) is the verdict. First-order overstated every P7 12/7/7 joint set: B1 (spread + two s rules) +4,679 first-order became -2,537 a week exact, B2 -1,236, D3 -6,046, the learned-exit set V1 -7,478; only the single s rule (C4, same-side book took a target within 600 s, arm 0.7 take) stays positive at 12/7/7, +2,950 a week exact against +6,113 first-order. The reason is the entry stream: early exits free the book, which re-enters, and the first-order frame cannot see that. Small books: K7 B1/D2 +1.2k exact (first-order -188 / -70: sign flipped, one window, not trusted), U7 C4 +1,038, others within +-700. Exact rows: all sets above for L6M; HOLD, PRE and X' months for the P7 12/7/7 sets B1, B2, D3, S5, V1 are queued (feeder pid in section 8) and are NOT exact until the table in section 7 shows 12 / 29 months. Not exact: all h-q families (no engine order hooks), W-N's staggered / move-target / touched-not-filled rows (W-N's page owns them), every first-order table on this page.
+
+Scorecard note: the stack reference (LPB_BASE) has 9.1 give-backs and 9.0 round-trips a week across all seven books; a P7-only rule can remove at most the P7 share (about 2 a week), so 7.0-7.2 a week left is the other six books plus the entries the rule changed. NearTarget exits are counted as clip-type by the tool; give-backs removed are visible as the drop from 9.1.
+
+- NEAR_N2_P7x_B1 (P7): EXACT L6M stack -2537 $/wk vs reference, rule book -2537 $/wk, stack maxDD cut 20.8%, 417 NearTarget exits; give-backs 7.2/wk, round-trips 7.0/wk (stack, scorecard);
+- NEAR_N2_P7x_B2 (P7): EXACT L6M stack -1236 $/wk vs reference, rule book -1236 $/wk, stack maxDD cut 3.3%, 437 NearTarget exits; give-backs 7.0/wk, round-trips 7.0/wk (stack, scorecard);
+- NEAR_N2_P7x_D3 (P7): EXACT L6M stack -6046 $/wk vs reference, rule book -6046 $/wk, stack maxDD cut 0.1%, 386 NearTarget exits; give-backs 7.2/wk, round-trips 7.0/wk (stack, scorecard);
+- NEAR_N2_P7x_C4 (P7): EXACT L6M stack +2950 $/wk vs reference, rule book +2950 $/wk, stack maxDD cut 14.2%, 176 NearTarget exits; give-backs 7.7/wk, round-trips 7.6/wk (stack, scorecard);
+- NEAR_N2_P7_B1 (P7): EXACT L6M stack -627 $/wk vs reference, rule book -627 $/wk, stack maxDD cut 38.5%, 676 NearTarget exits; give-backs 7.1/wk, round-trips 7.0/wk (stack, scorecard);
+- NEAR_N2_P7_B2 (P7): EXACT L6M stack -692 $/wk vs reference, rule book -692 $/wk, stack maxDD cut 37.6%, 679 NearTarget exits;
+- NEAR_N2_P7_D3 (P7): EXACT L6M stack -1779 $/wk vs reference, rule book -1779 $/wk, stack maxDD cut 24.6%, 613 NearTarget exits; give-backs 7.2/wk, round-trips 7.0/wk (stack, scorecard);
+- NEAR_N2_P7_C4 (P7): EXACT L6M stack +666 $/wk vs reference, rule book +666 $/wk, stack maxDD cut 26.0%, 260 NearTarget exits; give-backs 8.4/wk, round-trips 8.3/wk (stack, scorecard);
+- NEAR_N2_K7_B1 (K7): EXACT L6M stack +1159 $/wk vs reference, rule book +602 $/wk, stack maxDD cut 11.7%, 636 NearTarget exits; give-backs 5.9/wk, round-trips 5.8/wk (stack, scorecard);
+- NEAR_N2_K7_D2 (K7): EXACT L6M stack +1212 $/wk vs reference, rule book +654 $/wk, stack maxDD cut 12.6%, 458 NearTarget exits; give-backs 6.0/wk, round-trips 5.8/wk (stack, scorecard);
+- NEAR_N2_K7_C3 (K7): EXACT L6M stack +30 $/wk vs reference, rule book +30 $/wk, stack maxDD cut -0.0%, 12 NearTarget exits; give-backs 9.1/wk, round-trips 8.8/wk (stack, scorecard);
+- NEAR_N2_M7_B1 (M7): EXACT L6M stack -234 $/wk vs reference, rule book -234 $/wk, stack maxDD cut -1.4%, 306 NearTarget exits; give-backs 7.2/wk, round-trips 7.1/wk (stack, scorecard);
+- NEAR_N2_M7_D2 (M7): EXACT L6M stack -266 $/wk vs reference, rule book -266 $/wk, stack maxDD cut -0.0%, 282 NearTarget exits; give-backs 7.2/wk, round-trips 7.1/wk (stack, scorecard);
+- NEAR_N2_M7_C3 (M7): EXACT L6M stack +113 $/wk vs reference, rule book +113 $/wk, stack maxDD cut 1.3%, 9 NearTarget exits; give-backs 9.0/wk, round-trips 8.8/wk (stack, scorecard);
+- NEAR_N2_U7_B1 (U7): EXACT L6M stack +166 $/wk vs reference, rule book +166 $/wk, stack maxDD cut 7.5%, 143 NearTarget exits; give-backs 8.4/wk, round-trips 8.3/wk (stack, scorecard);
+- NEAR_N2_U7_B2 (U7): EXACT L6M stack +156 $/wk vs reference, rule book +156 $/wk, stack maxDD cut 7.5%, 143 NearTarget exits; give-backs 8.4/wk, round-trips 8.3/wk (stack, scorecard);
+- NEAR_N2_U7_D3 (U7): EXACT L6M stack -653 $/wk vs reference, rule book -653 $/wk, stack maxDD cut -7.8%, 145 NearTarget exits; give-backs 8.5/wk, round-trips 8.4/wk (stack, scorecard);
+- NEAR_N2_U7_C4 (U7): EXACT L6M stack +1038 $/wk vs reference, rule book +1038 $/wk, stack maxDD cut 9.7%, 113 NearTarget exits; give-backs 8.6/wk, round-trips 8.5/wk (stack, scorecard);
+- NEAR_N2_H7_B1 (H7): EXACT L6M stack -78 $/wk vs reference, rule book -100 $/wk, stack maxDD cut -1.1%, 80 NearTarget exits; give-backs 8.6/wk, round-trips 8.5/wk (stack, scorecard);
+- NEAR_N2_A7_B1 (A7): EXACT L6M stack +703 $/wk vs reference, rule book +237 $/wk, stack maxDD cut 0.5%, 191 NearTarget exits; give-backs 8.4/wk, round-trips 8.3/wk (stack, scorecard);
+- NEAR_N2_O7_B1 (O7): EXACT L6M stack -15 $/wk vs reference, rule book -15 $/wk, stack maxDD cut 0.5%, 11 NearTarget exits; give-backs 9.0/wk, round-trips 9.0/wk (stack, scorecard);
+- NEAR_N2_P7x_S5 (P7): EXACT L6M stack -1804 $/wk vs reference, rule book -1804 $/wk, stack maxDD cut 17.4%, 437 NearTarget exits; give-backs 7.2/wk, round-trips 7.0/wk (stack, scorecard);
+- NEAR_N2_P7_S5 (P7): EXACT L6M stack +1311 $/wk vs reference, rule book +1311 $/wk, stack maxDD cut 33.8%, 625 NearTarget exits; give-backs 7.3/wk, round-trips 7.0/wk (stack, scorecard);
+- NEAR_N2_P7x_V1 (P7): EXACT L6M stack -7478 $/wk vs reference, rule book -7478 $/wk, stack maxDD cut -10.5%, 389 NearTarget exits; give-backs 7.2/wk, round-trips 7.1/wk (stack, scorecard);
+
+## 1. Headline (plain sentences) - FIRST-ORDER, see section 0
 
 - **P7 at 12/7/7 lots** (live-replayable joint set B-best: u: spread>=3 ticks arm=0.8 persist=3 + s: same-side target exit <=300 s ago arm=0.7 take + s: same-side book took target (<=600 s) arm=0.7 take): per week on L6M it removed 22427 give-back dollars and clipped 23539 dollars of fills (18.0 fills a week), net +4679 a week on L6M and +1552 a week over 43 months; give-back events fall from 2.05 to 0.04 a week and round-trips from 2.05 to 0.04; the strict trader test does not pass (1 trade(s) that reached 90% still close below 50%, 1 that reached 80% close at or below breakeven, against 24 and 50 under live rules). Stack drawdown cut 25.9% on L6M.
 - **P7 at 7/4/4 (installed)** (live-replayable joint set B-best: s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.9 mode=1 + t: clock m_sessch<=40min arm=0.9 take): per week on L6M it removed 12098 give-back dollars and clipped 18489 dollars of fills (17.0 fills a week), net +2661 a week on L6M and +893 a week over 43 months; give-back events fall from 2.05 to 0.04 a week and round-trips from 2.05 to 0.00; the strict trader test does not pass (1 trade(s) that reached 90% still close below 50%, 0 that reached 80% close at or below breakeven, against 24 and 50 under live rules). Stack drawdown cut 55.1% on L6M.
@@ -494,9 +525,9 @@ Hook: private, same mechanics as W-N's nz_hooks (decision at the close of second
 
 | set | book | rules | months done / planned | EXACT stack Delta $/wk vs reference L6M / HOLD (months used) | EXACT book Delta $/wk L6M | EXACT stack maxDD cut % L6M / HOLD | NearTarget exits n / $ (L6M) |
 |---|---|---|---|---|---|---|---|
-| NEAR_N2_P7x_B1 | P7 | u: spread>=3 ticks arm=0.8 persist=3 + s: same-side target exit <=300 s ago arm=0.7 take + s: same-side book took target (<=600 s) arm=0.7 take | 6 / 29 | -2537 (6/6) / - | -2537 | 20.8 / - | 417 / 2146357 |
-| NEAR_N2_P7x_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 6 / 29 | -1236 (6/6) / - | -1236 | 3.3 / - | 437 / 2044369 |
-| NEAR_N2_P7x_D3 | P7 | s: same-side book took target (<=600 s) arm=0.8 take + u: spread>=3 ticks arm=0.8 persist=3 | 6 / 29 | -6046 (6/6) / - | -6046 | 0.1 / - | 386 / 2042318 |
+| NEAR_N2_P7x_B1 | P7 | u: spread>=3 ticks arm=0.8 persist=3 + s: same-side target exit <=300 s ago arm=0.7 take + s: same-side book took target (<=600 s) arm=0.7 take | 6 / 39 | -2537 (6/6) / - | -2537 | 20.8 / - | 417 / 2146357 |
+| NEAR_N2_P7x_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 6 / 39 | -1236 (6/6) / - | -1236 | 3.3 / - | 437 / 2044369 |
+| NEAR_N2_P7x_D3 | P7 | s: same-side book took target (<=600 s) arm=0.8 take + u: spread>=3 ticks arm=0.8 persist=3 | 6 / 39 | -6046 (6/6) / - | -6046 | 0.1 / - | 386 / 2042318 |
 | NEAR_N2_P7x_C4 | P7 | s: same-side book took target (<=600 s) arm=0.7 take | 6 / 29 | +2950 (6/6) / - | +2950 | 14.2 / - | 176 / 984153 |
 | NEAR_N2_P7_B1 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.9 mode=1 + t: clock m_sessch<=40min arm=0.9 take | 6 / 29 | -627 (6/6) / - | -627 | 38.5 / - | 676 / 1838177 |
 | NEAR_N2_P7_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 6 / 29 | -692 (6/6) / - | -692 | 37.6 / - | 679 / 1848252 |
@@ -654,7 +685,7 @@ Exact versus first-order, set by set and month (book P7 for the P7 sets, trade b
 ## 8. Processes (keep running to 12:00Z)
 
 2324965 python3 -u nz2_exact.py chain
-2325013 python3 -u nz2_feed.py
-2991010 python3 -u nz2_page.py
+3052907 python3 -u nz2_feed.py
+3054870 python3 nz2_page.py
 
 Caveats stated once. First-order; engine market exits are about 0.4 pt cheaper than the 1.2 pt used here; "other books" and the opposite-signal rule use the base stack's own trade list (the exact hook uses the engine's own events); ES/RTY features are 1-s mid and 5-s cancel flow, not a full book; h-q cannot be replayed on the frozen live week (no print/queue extracts for it), so mode A sets show "not replayable" for the live week; the learned exit uses the walk-forward fold models for each trade's quarter (none before 2024Q1) and the all-data model for the live week.
