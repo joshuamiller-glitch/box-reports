@@ -1,4 +1,4 @@
-# DS3_SURVIVORS_I - J_BR3S (breadth_ext15==3 skip) on the LIVE PANEL BASE, exact all windows + GAP + WF + scorecard + acceptance (W-I, 2026-11-12 15:11Z; Shadow only, no PASS)
+# DS3_SURVIVORS_I - J_BR3S (breadth_ext15==3 skip) on the LIVE PANEL BASE, exact all windows + GAP + WF + scorecard + acceptance (W-I, 2026-11-12 16:12Z; Shadow only, no PASS)
 Set WIL_J_BR3S (parts _A.._D + the first L6M run, merged as runs_rf/WIL_J_BR3S_ALL; 43 months, one set per job, TP_ENGINE). Definition as scored: skip a P7 signal when NQ, ES and RTY each hold their six-session running high (long) / low (short) from a bar that ended within 15 min (first bar and ties counted); P7 only. Reference LPB_BASE (LPB_EMPTY + the stored reference months). Spec: autopilot/V19_SPEC_BR3S.md.
 
 ## 1. Trend-week clause (first): 5 best weeks and winning weeks turned losing, per window (vs LPB_BASE)
@@ -35,6 +35,10 @@ WIL_J_BR3S_ALL: FAIL, 3 of 20 sessions failed (PASS needs <= 2); LPB_BASE itself
 | L3M | 32.0 | 40.1 | +1044 | 265726 | 186410 | -79316 | 1 of 8 | +35977 |
 | L6M | 32.0 | 40.1 | +2142 | 331449 | 238931 | -92519 | 3 of 19 | +50292 |
 | HOLD | 17.7 | 27.5 | +1787 | 376655 | 275153 | -101502 | 3 of 37 | +69504 |
+| PRE | 17.2 | 27.0 | -1115 | 390682 | 260668 | -130014 | 5 of 48 | +74710 |
+| X' | 4.4 | 15.8 | -578 | 182652 | 134623 | -48028 | 3 of 24 | +12939 |
+| GAP | -18.1 | -4.1 | -1180 | 248293 | 224854 | -23439 | 2 of 14 | +27989 |
+| WF2W (bi-weekly re-pick vs live) | 14.0 | % refits beaten 41.8 | -1045 | | | | | |
 
 P7-only strict (V19P):
 | window | maxDD cut % | eq cut % | mean $/wk | 5 best ref weeks $ | same 5 weeks cell $ | delta $ | winning weeks turned losing | worst-5 delta $ |
