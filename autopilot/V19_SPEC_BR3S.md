@@ -30,5 +30,13 @@ Agreement on the 3,000 latest P7 signals (breadth under each reading): scored 3 
 5. 2025-03-07 00:06Z long, Asia (start 2025-03-06 23:00Z, bar 65): scored 0/0/0 = 0, V19 0 -> both trade (actual -$3,289).
 The frozen live week rows are in DS3_WORKS_I.md (5 real rows with the scored definition).
 
-## V19 exact results (live panel base, vs LPB_BASE; L6M, HOLD)
-To be filled by the exact runs WIL_BR3S_V19 (all books) and WIL_BR3S_V19P (P7 only); see the end of this file when written.
+## V19 exact results (live panel base, exact S1b engine, ONE SET PER JOB, vs LPB_BASE; maxDD cut percent, mean change $/week, trend-week clause)
+| variant | window | cut % | eq cut % | dmean $/wk | sum of 5 best ref weeks -> cell (delta) | winning weeks turned losing |
+|--|--|--|--|--|--|--|
+| as scored: P7 only, running max incl. first bar and ties (WIL_J_BR3S) | L6M | 20.0 | 24.7 | +1,287 | (see DS3_SURVIVORS_I.md, from the full 43-month run) | |
+| V19P: P7 only, strict exceed, first bar excluded | L6M | 12.6 | 13.9 | +287 | 331,449 -> 292,281 (-39,169) | 1 of 19 |
+| V19P | HOLD | 14.4 | 15.7 | +18 | 376,655 -> 342,760 (-33,895) | 1 of 37 |
+| V19: ALL books, strict exceed, first bar excluded (the user's reading) | L6M | 32.0 | 40.1 | +2,142 | 331,449 -> 238,931 (-92,519) | 3 of 19 |
+| V19 | HOLD | 17.7 | 27.5 | +1,788 | 376,655 -> 275,153 (-101,502) | 3 of 37 |
+| V19 | L1M | 17.5 | 27.3 | +2,092 | | 1 of 2 |
+Reading: the two code differences are not equivalent. Making the extreme strict and excluding the first bar (V19P vs as scored) weakens the P7-only gate (L6M cut 20.0 -> 12.6, mean +1,287 -> +287), because the first-bar / tie flags in the first 15 minutes of a session were part of what was removing losers. Extending the same gate to ALL books (the user's reading) is the strong variant: L6M cut 32.0 percent at +2,142 per week and HOLD 17.7 at +1,788, but it removes 28 percent of the best-5-week P&L (-92.5k of 331k L6M, -101.5k of 377k HOLD) and turns 3 winning L6M weeks losing: it fails the trend-week clause as stated unless the five best weeks may lose that much. What to change in D7 v1.9: if the user's reading is what is coded, the evidence for it is V19 (all books), not WI_J_BR3S; the validated numbers for BR3S as scored apply only to the P7-only gate with first bar and ties counted. PRE and X-prime for V19 were not run.
