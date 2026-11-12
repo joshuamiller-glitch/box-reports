@@ -1,4 +1,4 @@
-# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Thu Nov 12 05:22:20 AM UTC 2026)
+# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Thu Nov 12 09:24:13 AM UTC 2026)
 
 STATUS: Shadow only, post-hoc, no PASS claims (PASS/FAIL below is the trader acceptance test of the order, nothing more). Evidence table: DS3_NEAR_ZONE_TABLE.md (published 19:33Z, before any rule). Prereg NEAR_ZONE_PREREG.md (sha in DECISIONS.md). FIRST-ORDER scores on the LPB_BASE stored 1-s paths (43 months; L6M = 2026-05-12..10-30), slip 1.2 market, fees 4.84/lot, base = live panel rules as in LPB_BASE; exact rows in section 6. P7 is run at 12/7/7 lots (P7x, the users lots) and on the installed 7/4/4 table. Objective: give-back $ removed minus fills clipped $ per week; key = min(L6M, 43 months) net $/wk. Standing trader principle (19:45Z) applied: scorecard items a, b, e below, c and d (re-entry streaks) are untouched by exit-side rules in this first-order frame and are W-Qs tool to confirm.
 
@@ -23,7 +23,7 @@ Reading: no rule family removes the give-backs without clipping fills. The stric
 
 ## Exact status and processes
 
-Exact sets built (private nz_hooks for floor/ladder/rev/bank/work/zone; ptr_hooks grammar lines for flow and plain takes; fill models as above, exact market slip 1.2): 23 sets, 117 of 859 set-months DONE. Identity gate PASSED 22:41Z: PTR_NZ_ID (nz_hooks, no cells) vs LPB_BASE 202610, 769 trades, bit-equal on book/lots/entry/exit/net_fee for ref engine, TP engine and the stored LPB_BASE run (code/th_nz/nz_idtest.py; TP wall 96 s vs old path 159 s, private memory 0.4 GB vs ~10.8 GB per worker per W-T). Chain (pid 2335696, log /mnt/l2/l2vast/_nz/exact_chain.log) now launches workers itself as `TP_ENGINE=1 python3 -I code/th_tp/tp_launch.py sz_exact.py batch SET:ym`, one set per job, max 3 workers, admission via `tp_admit.py request NEARZONE --gate 25` (PRIORITY.txt NEARZONE regex extended with PTR_[A-Z0-9]+_NZ), L6M first then HOLD, PRE. Throughput: see `tp_admit.py rate` (cell-months/hour; before TP this chain had 0 because of the 62 GB gate). Manifest /mnt/l2/l2vast/_nz/exact_manifest.json. Page refresh loop pid 2179089 (every 4 h to 2026-11-12 12:00Z).
+Exact sets built (private nz_hooks for floor/ladder/rev/bank/work/zone; ptr_hooks grammar lines for flow and plain takes; fill models as above, exact market slip 1.2): 23 sets, 191 of 859 set-months DONE. Identity gate PASSED 22:41Z: PTR_NZ_ID (nz_hooks, no cells) vs LPB_BASE 202610, 769 trades, bit-equal on book/lots/entry/exit/net_fee for ref engine, TP engine and the stored LPB_BASE run (code/th_nz/nz_idtest.py; TP wall 96 s vs old path 159 s, private memory 0.4 GB vs ~10.8 GB per worker per W-T). Chain (pid 2335696, log /mnt/l2/l2vast/_nz/exact_chain.log) now launches workers itself as `TP_ENGINE=1 python3 -I code/th_tp/tp_launch.py sz_exact.py batch SET:ym`, one set per job, max 3 workers, admission via `tp_admit.py request NEARZONE --gate 25` (PRIORITY.txt NEARZONE regex extended with PTR_[A-Z0-9]+_NZ), L6M first then HOLD, PRE. Throughput: see `tp_admit.py rate` (cell-months/hour; before TP this chain had 0 because of the 62 GB gate). Manifest /mnt/l2/l2vast/_nz/exact_manifest.json. Page refresh loop pid 2179089 (every 4 h to 2026-11-12 12:00Z).
 
 ## Families h-q (user addendum 21:45Z), first-order, same objective and definitions
 
@@ -397,6 +397,24 @@ Per week; key = min(net L6M, net 43 m); net = removed - clipped + other (definit
     PTR_P7_NZXE3 HOLD: months missing (6 of 12), window not scored
     PTR_P7_NZXE3 PRE: months missing (17 of 17), window not scored
     PTR_P7_NZXE3 X': months missing (10 of 10), window not scored
+
+**PTR_U7_NZU1** (stag-U1): 
+    PTR_U7_NZU1 L6M (stack, per week): full stops 24.4/wk $-39476; give-backs 9.1/wk (8.8 round-trips) realised $-12783, forgone vs target $34295; same-side losing runs max 12, p95 6, $-50830 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $-420; recoveries cut 13.7/wk $46732, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $-0/wk, net -197 $/wk; pnl $19587/wk.
+    PTR_U7_NZU1 HOLD: months missing (6 of 12), window not scored
+    PTR_U7_NZU1 PRE: months missing (17 of 17), window not scored
+    PTR_U7_NZU1 X': months missing (10 of 10), window not scored
+
+**PTR_H7_NZH1S** (stag-H1S): 
+    PTR_H7_NZH1S L6M (stack, per week): full stops 24.5/wk $-40052; give-backs 9.0/wk (8.9 round-trips) realised $-13870, forgone vs target $34999; same-side losing runs max 12, p95 6, $-51111 lost on 3rd-and-later; no-new-evidence re-entries 37.2/wk $-325; recoveries cut 13.7/wk $46863, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $-0/wk, net +5 $/wk; pnl $19789/wk.
+    PTR_H7_NZH1S HOLD: months missing (6 of 12), window not scored
+    PTR_H7_NZH1S PRE: months missing (17 of 17), window not scored
+    PTR_H7_NZH1S X': months missing (10 of 10), window not scored
+
+**PTR_K7_NZK1** (stag-K1): 
+    PTR_K7_NZK1 L6M (stack, per week): full stops 24.5/wk $-40052; give-backs 9.1/wk (9.0 round-trips) realised $-14009, forgone vs target $35376; same-side losing runs max 12, p95 6, $-51344 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $-363; recoveries cut 13.7/wk $46863, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $-0/wk, net +0 $/wk; pnl $19784/wk.
+    PTR_K7_NZK1 HOLD: months missing (6 of 12), window not scored
+    PTR_K7_NZK1 PRE: months missing (17 of 17), window not scored
+    PTR_K7_NZK1 X': months missing (10 of 10), window not scored
 
 **Definitions (all $ per WEEK of the window unless a sentence says "over the window"; L6M = 24 weeks).** Per trade, d = new P&L under the rule minus the trade P&L under live rules (same lots, fees, slip 1.2 on the rule exit). *net (all fires)* = sum of d over every trade the rule exits = the realised P&L change of the rule. *removed (zone)* = sum of d over fired trades that reached 80% of target and did NOT fill under live rules (the give-back saving; counted only inside the 80% zone). *clipped* = sum of (base - new) over fired trades that DID fill under live rules (fills the rule exited early, cost positive number). *other saves* = d over fired non-fill trades that never reached 80% (e.g. trades armed at 0.7 that later stopped out). Identity: net = removed - clipped + other saves. So removed - clipped can be negative while net is positive because of other saves, and the strict-pass early-take rules (arm 0.7) live on those other saves. In the plain sentences, "removed N give-backs worth $X and clipped M fills worth $Y" are totals OVER THE 24-WEEK WINDOW (zone non-fills / base fills), the per-week figures are those divided by 24.
 
