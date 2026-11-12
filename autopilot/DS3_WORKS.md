@@ -1,4 +1,4 @@
-# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-11T23:50:00Z; Shadow only, no PASS claims)
+# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-12T01:13:02Z; Shadow only, no PASS claims)
 
 Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. Section D is W-J: the reference rows (JN04RM vs LPB_BASE), the JN05 composition and the REFIT 2026-11-22 preview. Every number is exact-engine, live panel base (P7 day cap 8,400 + table 7,4,0,4,0,0 + P7 cut 40/5x/w5/p3), reference LPB_BASE, ROLLFIX1.
 
@@ -10,12 +10,15 @@ Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. S
 | JN04RM | ACCEPTANCE P7 JN04RM  2026-11-11 19:55Z   (months 43: 202304..202610; reference LPB_BASE months 43) | /mnt/l2/l2vast/_th_works/q/sc/sc_JN04RM.txt |
 | WA_C1 | (not run) | /mnt/l2/l2vast/_th_works/q/sc/sc_WA_C1.txt |
 | WG_E1 | ACCEPTANCE P7 WG_E1  2026-11-11 22:41Z   (months 5: 202606..202610; reference LPB_BASE months 43) | (not run) |
-| JN05W_E1 | (not run) | (not run) |
+| JN05W_E1 | ACCEPTANCE P7 JN05W_E1  2026-11-12 00:59Z   (months 6: 202605..202610; reference LPB_BASE months 43) | /mnt/l2/l2vast/_th_works/q/sc/sc_JN05W_E1.txt |
 | JN05W_E1A | (not run) | (not run) |
 
 ## 000. JN05W scorecard (plain words, W-Q behavior_scorecard.py)
 
-(scorecard for JN05W_E1 not run)
+JN05W_E1 L6M (stack, per week): full stops 21.5/wk $-33850; give-backs 8.6/wk (8.5 round-trips) realised $-8975, forgone vs target $23652; same-side losing runs max 14, p95 6, $-31548 lost on 3rd-and-later; no-new-evidence re-entries 34.9/wk $-608; recoveries cut 16.2/wk $42198, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $33908/wk, losers avoided $34100/wk, net -2313 $/wk; pnl $17471/wk.
+JN05W_E1 HOLD: months missing (6 of 12), window not scored
+JN05W_E1 PRE: months missing (17 of 17), window not scored
+JN05W_E1 X': months missing (10 of 10), window not scored
 
 
 ## 0. Behavioural scorecard (W-Q behavior_scorecard.py: LPB_BASE, JN04RM, JN05W per book and stack and window, plain words; JN05 is judged by acceptability first)
@@ -34,14 +37,14 @@ LIVE LIVEWK (stack, per week): full stops 3.0/wk $-4385; give-backs 14.0/wk (12.
 
 ## D0. Reference rows (exact, rule mode, 43 months)
 
-| cell | window | mean $/wk | mean_ref (LPB_BASE) | maxDD | maxDD_ref | cut % | d mean | WF beat % | label |
-|--|--|--|--|--|--|--|--|--|--|
-| JN04RM | L1M | 10653 | 17539 | 27056 | 51253 | +47.2 | -6886 | 90 |  |
-| JN04RM | L3M | 15022 | 17224 | 41699 | 77224 | +46.0 | -2202 | 90 |  |
-| JN04RM | L6M | 19862 | 21495 | 41699 | 77224 | +46.0 | -1633 | 90 | OK-PRIOR (allow 25.0%, WF 90%) |
-| JN04RM | HOLD | 12954 | 16540 | 72757 | 78842 | +7.7 | -3586 | 90 |  |
-| JN04RM | PRE | 8714 | 10548 | 66714 | 99479 | +32.9 | -1834 | 90 |  |
-| JN04RM | X' | 2195 | 2553 | 64077 | 122553 | +47.7 | -357 | 90 |  |
+| cell | window | mean $/wk all-weeks | LPB_BASE all-weeks | d mean all-weeks | mean (carry week dropped) | mean_ref (carry dropped) | maxDD | maxDD_ref | cut % | d mean | WF beat % | label |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JN04RM | L1M | 3824 | 341 | +3483 | 10653 | 17539 | 27056 | 51253 | +47.2 | -6886 | 90 |  |
+| JN04RM | L3M | 12585 | 11957 | +628 | 15022 | 17224 | 41699 | 77224 | +46.0 | -2202 | 90 |  |
+| JN04RM | L6M | 18457 | 18697 | -240 | 19862 | 21495 | 41699 | 77224 | +46.0 | -1633 | 90 | OK-PRIOR (allow 25.0%, WF 90%) |
+| JN04RM | HOLD | 12384 | 15236 | -2852 | 12954 | 16540 | 72757 | 78842 | +7.7 | -3586 | 90 |  |
+| JN04RM | PRE | 9247 | 11685 | -2438 | 8714 | 10548 | 66714 | 99479 | +32.9 | -1834 | 90 |  |
+| JN04RM | X' | 1537 | 1334 | +203 | 2195 | 2553 | 64077 | 122553 | +47.7 | -357 | 90 |  |
 
 LPB_BASE is the reference itself (cut 0, d mean 0 by construction).
 
@@ -1112,9 +1115,9 @@ Asymmetric-bracket cells (60/45, 60/90 by flag) and the late-entry swing stop (D
 
 ## I. (W-I) (I)
 
-Source DS3_WORKS_I.md (mtime 2026-11-11T23:12:58Z UTC), included verbatim, read only:
+Source DS3_WORKS_I.md (mtime 2026-11-12T01:03:43Z UTC), included verbatim, read only:
 
-# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-11 23:12Z
+# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 01:03Z
 Label PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_I_PREREG.md (sha in DECISIONS.md; the first first-order screen ran before the sha line, disclosed there). Code code/th_works_i/, tables /mnt/l2/l2vast/_th_works/i/, feature table /mnt/l2/l2vast/_th_works/p7_feat_I.parquet (key sig_ts, 5,011 P7 taken trades x 128 columns; W-E signal-level table not used, so signals that were not taken are not in these tests).
 
 ## What exists
@@ -1228,6 +1231,18 @@ vs JN04RM
 | WI_J_RS15H | L1M | 4.4 | 1.5 | 398.3 | 25860.9 | 27055.7 | -8967.6 | -8967.6 |
 | WI_J_RS15H | L3M | -13.5 | -17.0 | -142.2 | 47325.8 | 41699.4 | 995.9 | -6839.6 |
 | WI_J_RS15H | L6M | -13.5 | -17.0 | -518.8 | 47325.8 | 41699.4 | 9437.5 | -14404.1 |
+| WI_J_NQ60S | L1M | 15.2 | 13.8 | -762.5 | 22937.5 | 27055.7 | 4668.6 | 4668.6 |
+| WI_J_NQ60S | L3M | 8.0 | 6.4 | 969.0 | 38376.9 | 41699.4 | 11382.0 | -1301.6 |
+| WI_J_NQ60S | L6M | 8.0 | 6.4 | -288.0 | 38376.9 | 41699.4 | 21433.4 | -57892.7 |
+| WI_I_ON2S | L1M | 12.4 | 5.1 | 1114.7 | 23711.7 | 27055.7 | -4186.2 | -4186.2 |
+| WI_I_ON2S | L3M | 9.5 | 2.0 | -1526.0 | 37742.4 | 41699.4 | 7301.0 | -43953.3 |
+| WI_I_ON2S | L6M | 9.5 | 2.0 | -1458.7 | 37742.4 | 41699.4 | 25695.5 | -61850.9 |
+| WI_J_ES60S | L1M | -6.1 | -6.3 | 119.6 | 28692.8 | 27055.7 | -3185.1 | -3185.1 |
+| WI_J_ES60S | L3M | 0.0 | -0.3 | -213.5 | 41694.9 | 41699.4 | -1632.6 | 3410.2 |
+| WI_J_ES60S | L6M | 0.0 | -0.3 | -47.5 | 41694.9 | 41699.4 | 7220.0 | -34804.8 |
+| WI_K_W2AS | L1M | -1.1 | -3.2 | -95.4 | 27342.1 | 27055.7 | -4255.9 | -4255.9 |
+| WI_K_W2AS | L3M | 8.0 | 6.1 | -447.0 | 38344.3 | 41699.4 | 6498.6 | 717.1 |
+| WI_K_W2AS | L6M | 8.0 | 6.1 | -430.7 | 38344.3 | 41699.4 | 18250.5 | 1471.6 |
 
 vs LPB
 | cell | window | cut | eq_cut | dmean | dd | dd_ref | d_worst5 | d_best5 |
@@ -1238,14 +1253,30 @@ vs LPB
 | WI_J_RS15H | L1M | 49.5 | 42.7 | -10029.2 | 25860.9 | 51252.7 | 4963.7 | 4963.7 |
 | WI_J_RS15H | L3M | 38.7 | 30.4 | -3229.6 | 47325.8 | 77224.2 | 71571.3 | -55741.2 |
 | WI_J_RS15H | L6M | 38.7 | 30.4 | -2576.8 | 47325.8 | 77224.2 | 80897.7 | -46417.0 |
+| WI_J_NQ60S | L1M | 55.2 | 47.6 | -4383.7 | 22937.5 | 51252.7 | 18599.8 | 18599.8 |
+| WI_J_NQ60S | L3M | 50.3 | 41.8 | -1589.0 | 38376.9 | 77224.2 | 75561.9 | -50203.2 |
+| WI_J_NQ60S | L6M | 50.3 | 41.8 | -3149.4 | 38376.9 | 77224.2 | 86498.1 | -66613.5 |
+| WI_I_ON2S | L1M | 53.7 | 48.5 | -10628.9 | 23711.7 | 51252.7 | 9745.0 | 9745.0 |
+| WI_I_ON2S | L3M | 51.1 | 45.6 | -2253.1 | 37742.4 | 77224.2 | 91523.7 | -92854.8 |
+| WI_I_ON2S | L6M | 51.1 | 45.6 | -2174.3 | 37742.4 | 77224.2 | 110803.1 | -95845.2 |
+| WI_J_ES60S | L1M | 44.0 | 36.0 | -6766.1 | 28692.8 | 51252.7 | 10746.2 | 10746.2 |
+| WI_J_ES60S | L3M | 46.0 | 38.3 | -1811.6 | 41694.9 | 77224.2 | 69149.4 | -45491.3 |
+| WI_J_ES60S | L6M | 46.0 | 38.3 | -2695.8 | 41694.9 | 77224.2 | 78886.9 | -46554.7 |
+| WI_K_W2AS | L1M | 46.7 | 42.2 | -8806.1 | 27342.1 | 51252.7 | 9675.3 | 9675.3 |
+| WI_K_W2AS | L3M | 50.3 | 46.2 | -2083.6 | 38344.3 | 77224.2 | 79180.0 | -48184.5 |
+| WI_K_W2AS | L6M | 50.3 | 46.2 | -1653.8 | 38344.3 | 77224.2 | 91816.8 | -43340.5 |
 
 ## Behaviour-targeted use (standing principle 19:45Z): flag acts only on a same-side P7 re-entry after a P7 loser (within 120 min, same session list)
 There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$216 for all other P7 trades). Skipping all of them cuts the L6M stack drawdown by only -2.0 percent (HOLD -14.2, PRE 13.7, X-prime -1.8) and removes $48k of best-20-week winners against $65k of worst-20-week losers; half-size: L6M -0.8, HOLD -4.6. Best flag-conditioned re-entry cells (minimum equal-mean cut over four windows) are all below 9 percent and flag fewer than 300 trades: no robust cell.
 
 ## Behavioural scorecard (W-Q tool, exact trades, L6M, whole stack, per week)
 - JN04RM L6M (stack, per week): full stops 25.4/wk $-38130; give-backs 9.9/wk (9.8 round-trips) realised $-11306, forgone vs target $28091; same-side losing runs max 13, p95 7, $-42885 lost on 3rd-and-later; no-new-evidence re-entries 43.3/wk $1885; recoveries cut 15.2/wk $39718, clipped fills 0.0/wk $0; pnl $19530/wk.
+- WI_I_ON2S L6M (stack, per week): full stops 25.2/wk $-37942; give-backs 9.5/wk (9.4 round-trips) realised $-10702, forgone vs target $26691; same-side losing runs max 13, p95 6, $-37527 lost on 3rd-and-later; no-new-evidence re-entries 39.8/wk $1571; recoveries cut 14.7/wk $37637, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $16129/wk, losers avoided $13422/wk, net -264 $/wk; pnl $19266/wk.
 - WI_J_BR3S L6M (stack, per week): full stops 25.4/wk $-38252; give-backs 9.8/wk (9.7 round-trips) realised $-11326, forgone vs target $27992; same-side losing runs max 13, p95 7, $-40619 lost on 3rd-and-later; no-new-evidence re-entries 41.2/wk $1521; recoveries cut 14.9/wk $37941, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $17749/wk, losers avoided $17043/wk, net -65 $/wk; pnl $19465/wk.
+- WI_J_ES60S L6M (stack, per week): full stops 25.3/wk $-38028; give-backs 9.4/wk (9.2 round-trips) realised $-10669, forgone vs target $26478; same-side losing runs max 13, p95 7, $-41534 lost on 3rd-and-later; no-new-evidence re-entries 41.5/wk $1546; recoveries cut 14.8/wk $38563, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $8392/wk, losers avoided $7033/wk, net -1226 $/wk; pnl $18305/wk.
+- WI_J_NQ60S L6M (stack, per week): full stops 25.3/wk $-37976; give-backs 9.5/wk (9.4 round-trips) realised $-10704, forgone vs target $26709; same-side losing runs max 13, p95 6, $-39788 lost on 3rd-and-later; no-new-evidence re-entries 40.2/wk $2380; recoveries cut 14.6/wk $37653, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $13575/wk, losers avoided $12103/wk, net -1658 $/wk; pnl $17872/wk.
 - WI_J_RS15H L6M (stack, per week): full stops 25.4/wk $-38034; give-backs 9.9/wk (9.8 round-trips) realised $-10915, forgone vs target $27124; same-side losing runs max 13, p95 7, $-42321 lost on 3rd-and-later; no-new-evidence re-entries 44.0/wk $1533; recoveries cut 15.5/wk $38697, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $342/wk, losers avoided $539/wk, net -941 $/wk; pnl $18589/wk.
+- WI_K_W2AS L6M (stack, per week): full stops 25.4/wk $-38081; give-backs 9.9/wk (9.8 round-trips) realised $-10968, forgone vs target $27363; same-side losing runs max 13, p95 6, $-41119 lost on 3rd-and-later; no-new-evidence re-entries 42.2/wk $2243; recoveries cut 14.9/wk $37388, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $5402/wk, losers avoided $5430/wk, net +40 $/wk; pnl $19570/wk.
 
 Plain reading: an entry gate leaves the three defects (full stops, give-backs, same-side losing runs) where they were, because it only removes entries and the entries it removes are not the ones that form the runs; by the standing principle families I-L are therefore NOT acceptable as exits or re-entry fixes on their own. Their use is as evidence tests inside the re-entry rule (W-M probe / confirm).
 
@@ -1355,7 +1386,7 @@ Flip statistics (mean P&L per lot of the flip signal versus all P7 signals and v
 
 ## Q. Ranker, joint stage, minimal rule set (W-Q) (Q)
 
-Source DS3_WORKS_Q.md (mtime 2026-11-11T23:30:04Z UTC), included verbatim, read only:
+Source DS3_WORKS_Q.md (mtime 2026-11-12T01:00:11Z UTC), included verbatim, read only:
 
 # DS3_WORKS_Q - W-Q (family Q ranker + JOINT STAGE), page 0, 2026-11-11 19:20Z (date -u). Shadow only, post-hoc, no PASS claim.
 Prereg autopilot/WORKS_Q_PREREG.md (sha256 bc9d2cde..., DECISIONS.md 19:14Z). Code outputs/code/th_works_q/q_rank.py and q_registry.py; outputs /mnt/l2/l2vast/_th_works/q/.
@@ -1372,9 +1403,9 @@ Prereg autopilot/WORKS_Q_PREREG.md (sha256 bc9d2cde..., DECISIONS.md 19:14Z). Co
 ## Next
 Page 03:00Z will carry: ranker re-run on the landed feature tables with untaken signals, registry with top-3 per family, factorial pre-screen, first exact joint rows, and the budget actually spent.
 
-## Auto section (chain, rebuilt 2026-11-11T23:30:04Z)
+## Auto section (chain, rebuilt 2026-11-12T01:00:11Z)
 Inputs seen: 42 watched files; feature tables landed: ['p7_feat_I.parquet', 'p7_feat_I_v2.parquet', 'p7_signal_features.parquet']. Cycle log: no change in feature tables, ranker not re-run.
-Registry rows by family: {'A-comp': 2, 'A1': 5, 'A2': 5, 'A3': 2, 'C3': 4, 'C4': 2, 'other': 2}. launch gate MemAvail 68 GB (need 62): OPEN; no joint set is defined yet (needs the families top-3 specs), so nothing launched.
+Registry rows by family: {'A-comp': 2, 'A1': 5, 'A2': 5, 'A3': 2, 'G': 2, 'other': 2}. launch gate MemAvail 103 GB (need 62): OPEN; no joint set is defined yet (needs the families top-3 specs), so nothing launched.
 Ranker (first-order, GBDT mean over 3 seeds vs null 95th percentile, dollars per week):
 action  win    gbdt  null95
    dec HOLD  6527.0  3526.0
@@ -1442,6 +1473,86 @@ Session 20260618 (sess 0) LPB_BASE net $-11837: 23:42 short 7L StateCut -6615; 0
 Session 20260603 (sess 0) LPB_BASE net $-11538: 22:12 long 7L StateCut -5710; 23:35 short 7L StateCut -5828
 Session 20260520 (sess 0) LPB_BASE net $-11477: 22:26 short 4L StateCut -3454; 01:00 long 1L StateCut -1506; 01:51 long 4L StateCut -3164; 03:00 short 4L StateCut -3354
 
+
+
+## Y. Weekly check and frozen-week re-simulation (W-J)
+
+# Weekly check, L6M (ISO weeks with trading days in 2026-05..10; weeks at the month edges are partial; exact engine; Shadow only)
+
+| week | LPB_BASE | JN04RM | JN05W_E1 |
+|--|--|--|--|
+| 202638 (best of LPB_BASE) | 88836 | 72104 | 47801 |
+| 202623 (best of LPB_BASE) | 73836 | 68072 | 43954 |
+| 202625 (best of LPB_BASE) | 59099 | 59990 | 31727 |
+| 202639 (best of LPB_BASE) | 57178 | 52634 | 34487 |
+| 202633 (best of LPB_BASE) | 52499 | 36328 | 15600 |
+| 202644 (worst of LPB_BASE) | -51253 | -16664 | -8233 |
+| 202636 (worst of LPB_BASE) | -44984 | -25704 | -12123 |
+| 202621 (worst of LPB_BASE) | -39976 | -39092 | -6379 |
+| 202635 (worst of LPB_BASE) | -23667 | -15995 | -10230 |
+| 202637 (worst of LPB_BASE) | -8573 | 679 | 9439 |
+
+JN04RM: LPB_BASE winning weeks 20 of 27; of those, JN04RM turn losing: 1; weeks where JN04RM beats LPB_BASE: 13 of 27; sum over the 5 best LPB_BASE weeks 289128 vs 331449
+
+JN05W_E1: LPB_BASE winning weeks 20 of 27; of those, JN05W_E1 turn losing: 2; weeks where JN05W_E1 beats LPB_BASE: 9 of 27; sum over the 5 best LPB_BASE weeks 173569 vs 331449
+
+# Frozen week 11-02..05 exact re-simulation (month 202611; state days 20261102-05)
+
+NOT POSSIBLE on this box: the exact engine needs the hist day files (_hist_replica/days) built from raw mbp-10, and the latest raw NQ file is 2026-10-31 (GLBX-20261031); only the 1-s state arrays for 11-02..05 exist. FW_LPB 202611 failed with: no day files in range. Needed: raw mbp-10 for 2026-11-02..05 into /mnt/l2/l2vast/raw/NQ/ext/ then the hist_pipe day build. Sets FW_LPB, FW_JN04RM, JN05W_E1_FW, JN05W_E1A_FW and jnr_cfg_nov.json (Nov dA threshold) are ready and run with chain_jn05.sh SET 202611. Until then the trend-week cost evidence is the L6M weekly table above (the 5 best LPB_BASE weeks).
+
+## Z0. Worst 10 L6M P7 sessions, entry by entry (W-J)
+
+# Worst 10 L6M P7 sessions of LPB_BASE, replayed entry by entry (W-J; session key = label day + ET session index; exact engine; Shadow only)
+
+## session 202607280 (LPB_BASE P7 net -14274)
+- LPB_BASE: total -14274 over 8 trades: 22:38 4L short StateCut -3007; 00:11 4L short Target 4800; 01:06 5L short Target 5984; 01:23 7L short StateCut -5705; 02:14 4L short StateCut -3254; 03:54 4L long StateCut -3694; 04:43 4L long StateCut -3394; 05:40 7L short StateCut -6005
+- JN04RM: total -6508 over 8 trades: 22:38 2L short StateCut -1433; 00:11 2L short Target 2398; 01:06 3L short Target 3601; 01:23 4L short StateCut -3464; 02:14 2L short StateCut -1684; 03:54 2L long StateCut -1719; 04:43 1L long StateCut -877; 05:40 4L short StateCut -3329
+- JN05W_E1: total -3623 over 9 trades: 22:38 2L short StateCut -1049; 00:11 2L short Target 2398; 01:06 3L short Target 3601; 01:23 4L short StateCut -2224; 02:14 2L short StateCut -1194; 02:41 2L short StateCut -1274; 03:54 2L long StateCut -1129; 04:43 1L long StateCut -592; 05:40 4L short StateCut -2159
+
+## session 202605273 (LPB_BASE P7 net -13000)
+- LPB_BASE: total -13000 over 5 trades: 14:11 4L short StateCut -3374; 14:33 3L short StateCut -2449; 15:00 4L short StateCut -3654; 15:20 2L short StateCut -1759; 15:39 2L short StateCut -1764
+- JN04RM: total -6130 over 5 trades: 14:11 2L short StateCut -1759; 14:33 1L short StateCut -880; 15:00 2L short StateCut -1649; 15:20 1L short StateCut -992; 15:39 1L short StateCut -850
+- JN05W_E1: total -1744 over 2 trades: 14:11 2L short StateCut -1069; 14:33 1L short StateCut -675
+
+## session 202609100 (LPB_BASE P7 net -12681)
+- LPB_BASE: total -12681 over 3 trades: 23:01 4L short StateCut -3274; 01:07 4L short StateCut -3349; 05:07 7L long StateCut -6059
+- JN04RM: total -6750 over 3 trades: 23:01 2L short StateCut -1659; 01:07 2L short StateCut -1659; 05:07 4L long StateCut -3432
+- JN05W_E1: total -53 over 3 trades: 23:01 1L short StateCut -725; 01:07 1L short StateCut -527; 04:47 1L long Target 1199
+
+## session 202608260 (LPB_BASE P7 net -12662)
+- LPB_BASE: total -12662 over 4 trades: 22:09 7L long StateCut -5810; 00:04 7L short Target 6004; 01:09 7L short StateCut -5718; 03:03 7L long StateCut -7138
+- JN04RM: total -12662 over 4 trades: 22:09 7L long StateCut -5810; 00:04 7L short Target 6004; 01:09 7L short StateCut -5718; 03:03 7L long StateCut -7138
+- JN05W_E1: total -9542 over 3 trades: 22:09 7L long StateCut -7263; 00:04 7L short Target 6004; 01:09 7L short StopJoinFallback -8283
+
+## session 202605060 (LPB_BASE P7 net -12366)
+- LPB_BASE: total -12366 over 2 trades: 23:48 7L long StateCut -6223; 00:48 7L short StateCut -6143
+- JN04RM: total 3079 over 3 trades: 23:48 4L long StateCut -3594; 00:48 2L short StateCut -1729; 04:22 7L long Target 8402
+- JN05W_E1: total 3595 over 3 trades: 23:48 4L long StateCut -2894; 00:48 2L short StateCut -1913; 04:22 7L long Target 8402
+
+## session 202610010 (LPB_BASE P7 net -12188)
+- LPB_BASE: total -12188 over 2 trades: 23:08 7L short StateCut -6615; 00:01 7L long StateCut -5573
+- JN04RM: total -9974 over 2 trades: 23:08 7L short StateCut -6615; 00:01 4L long StateCut -3359
+- JN05W_E1: total -8498 over 1 trades: 23:08 7L short StopJoin -8498
+
+## session 202605151 (LPB_BASE P7 net -11920)
+- LPB_BASE: total -11920 over 8 trades: 06:07 4L short StateCut -3344; 06:21 4L short StateCut -3714; 06:56 1L long Target 1199; 07:28 2L long StateCut -1699; 09:12 1L short Target 1199; 09:42 4L short StateCut -3294; 10:40 2L short StateCut -1464; 11:01 2L long BookLock -802
+- JN04RM: total -2664 over 10 trades: 06:07 1L short StateCut -837; 06:21 1L short StateCut -957; 06:56 1L long Target 1199; 07:28 1L long StateCut -847; 09:12 1L short Target 1199; 09:42 1L short StateCut -942; 10:40 1L short StateCut -970; 11:01 1L long StateCut -857; 11:52 1L long StateCut -850; 12:25 1L short Target 1199
+- JN05W_E1: total -624 over 10 trades: 06:07 1L short StateCut -525; 06:21 1L short StateCut -542; 06:56 1L long Target 1199; 07:28 1L long StateCut -885; 09:12 1L short Target 1199; 09:42 1L short StateCut -585; 10:40 1L short StateCut -617; 11:01 1L long StateCut -527; 11:52 1L long StateCut -540; 12:25 1L short Target 1199
+
+## session 202610080 (LPB_BASE P7 net -11851)
+- LPB_BASE: total -11851 over 2 trades: 22:21 7L long StateCut -5873; 00:56 7L short StateCut -5978
+- JN04RM: total -11851 over 2 trades: 22:21 7L long StateCut -5873; 00:56 7L short StateCut -5978
+- JN05W_E1: total -12082 over 2 trades: 22:21 7L long StateCut -6979; 00:56 7L short StateCut -5103
+
+## session 202606180 (LPB_BASE P7 net -11837)
+- LPB_BASE: total -11837 over 2 trades: 23:42 7L short StateCut -6615; 00:31 7L long StateCut -5221
+- JN04RM: total -2812 over 3 trades: 23:42 4L short StateCut -3759; 00:31 2L long StateCut -1456; 05:27 2L long Target 2403
+- JN05W_E1: total -6402 over 3 trades: 23:42 4L short StateCut -4309; 00:31 2L long StateCut -964; 01:04 2L long StateCut -1129
+
+## session 202606030 (LPB_BASE P7 net -11538)
+- LPB_BASE: total -11538 over 2 trades: 22:12 7L long StateCut -5710; 23:35 7L short StateCut -5828
+- JN04RM: total -5057 over 4 trades: 22:12 4L long StateCut -3259; 23:35 4L short StateCut -3349; 01:36 1L long StateCut -847; 02:11 2L long Target 2398
+- JN05W_E1: total -4796 over 4 trades: 22:12 4L long StateCut -4049; 23:35 4L short StateCut -2239; 01:36 1L long StackCut -906; 02:11 2L long Target 2398
 
 
 ## Z. Worst 10 sessions replayed entry by entry, before and after (acceptance replays, W-Q)
