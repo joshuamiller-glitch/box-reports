@@ -1,7 +1,4 @@
-# DS3_WORKS_I summary (read first)
-Result in plain sentences. (1) Behavioural scorecard: every I, J, K, L cell tested exact is an entry gate; none moves full stops (25.4 per week L6M, unchanged), give-backs (9.9 per week) or the same-side losing run (max 13, p95 7) by anything near half; so by the standing principle none of them is acceptable as the P7 fix on its own. (2) Best exact lead: J breadth_ext15==3 skip, i.e. skip a P7 signal when NQ, ES and RTY have all made a new session extreme in the trade direction within the last 15 minutes (everything is already extended); on JN04RM it cuts the stack maxDD 14.4 percent L6M, 19.0 HOLD, 5.2 PRE, not run X-prime with mean change 782.7, 441.6, -452.3 per week; it removes $33 k of the five worst L6M weeks losses and $57 k of the five best weeks winners. (3) First-order family nulls: no family beats random flags at 5 percent (I p 0.10, J 0.16, K 0.13, L 0.7), and first-order optimism is large (J rs_es15 half: +12 first-order, -13.5 exact). (4) Weekday Wednesday skip looks strong on L6M (exact cut 27.3) and fails HOLD (-5.4): calendar lump, not a rule. (5) Direct use for the near-zone and re-entry work: room-to-target family I found only room to the prior overnight H/L has any signal (cut L6M 9.5 exact, mean -$1.5k per week: it removes winners), and the J extension flags are the useful evidence tests for W-M probe / confirm and for the "new evidence" requirement after a same-side failure.
-
-# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 07:52Z
+# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 08:11Z
 Label PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_I_PREREG.md (sha in DECISIONS.md; the first first-order screen ran before the sha line, disclosed there). Code code/th_works_i/, tables /mnt/l2/l2vast/_th_works/i/, feature table /mnt/l2/l2vast/_th_works/p7_feat_I.parquet (key sig_ts, 5,011 P7 taken trades x 128 columns; W-E signal-level table not used, so signals that were not taken are not in these tests).
 
 ## What exists
@@ -142,11 +139,6 @@ vs JN04RM
 | WI_I_ON15S | L1M | 10.3 | 7.0 | -2871.2 | 24263.6 | 27055.7 | -2122.3 | -2122.3 |
 | WI_I_ON15S | L3M | -12.4 | -16.6 | -660.5 | 46873.7 | 41699.4 | -2382.2 | -40967.2 |
 | WI_I_ON15S | L6M | -12.4 | -16.6 | -585.7 | 46873.7 | 41699.4 | 16505.6 | -48766.7 |
-| WI_J_BR3S | L1M | 26.7 | 29.9 | -3564.8 | 19835.4 | 27055.7 | -414.4 | -414.4 |
-| WI_J_BR3S | L3M | 28.1 | 31.2 | -811.4 | 29993.2 | 41699.4 | 29596.9 | -17763.8 |
-| WI_J_BR3S | L6M | 14.4 | 18.1 | 782.7 | 35674.8 | 41699.4 | 33013.6 | -57351.5 |
-| WI_J_BR3S | HOLD | 19.0 | 22.5 | 441.6 | 58943.3 | 72757.5 | 5774.6 | -44697.2 |
-| WI_J_BR3S | PRE | 5.2 | 9.3 | -452.3 | 63274.5 | 66713.5 | 12000.0 | -26099.3 |
 | WI_J_RS30T35 | L1M | 60.2 | 60.0 | 1094.9 | 10775.2 | 27055.7 | 11703.3 | 11703.3 |
 | WI_J_RS30T35 | L3M | 8.5 | 8.1 | 1031.0 | 38158.6 | 41699.4 | 21333.7 | 7413.0 |
 | WI_J_RS30T35 | L6M | 8.5 | 8.1 | -83.4 | 38158.6 | 41699.4 | 31162.1 | -4886.5 |
@@ -158,6 +150,12 @@ vs JN04RM
 | WI_K_W2S | L3M | 35.0 | 37.9 | 1579.3 | 27090.1 | 41699.4 | 25296.7 | -3913.0 |
 | WI_K_W2S | L6M | 27.3 | 30.5 | 766.5 | 30321.6 | 41699.4 | 34066.6 | -3965.6 |
 | WI_K_W2S | HOLD | -5.4 | -0.8 | -41.3 | 76692.8 | 72757.5 | 20557.6 | -14435.0 |
+| WI_J_BR3S | L1M | 26.7 | 29.9 | -3564.8 | 19835.4 | 27055.7 | -414.4 | -414.4 |
+| WI_J_BR3S | L3M | 28.1 | 31.2 | -811.4 | 29993.2 | 41699.4 | 29596.9 | -17763.8 |
+| WI_J_BR3S | L6M | 14.4 | 18.1 | 782.7 | 35674.8 | 41699.4 | 33013.6 | -57351.5 |
+| WI_J_BR3S | HOLD | 19.0 | 22.5 | 441.6 | 58943.3 | 72757.5 | 5774.6 | -44697.2 |
+| WI_J_BR3S | PRE | 5.2 | 9.3 | -452.3 | 63274.5 | 66713.5 | 12000.0 | -26099.3 |
+| WI_J_BR3S | X' | 4.3 | 8.5 | 69.4 | 61307.4 | 64076.6 | 15525.5 | -345.4 |
 | WI_L_PUSHH | L1M | 4.7 | 3.0 | 423.3 | 25785.9 | 27055.7 | -2344.1 | -2344.1 |
 | WI_L_PUSHH | L3M | 15.9 | 14.4 | -215.0 | 35087.7 | 41699.4 | 12501.2 | -22280.8 |
 | WI_L_PUSHH | L6M | 15.9 | 14.4 | -296.1 | 35087.7 | 41699.4 | 18416.1 | -21772.9 |
@@ -198,11 +196,6 @@ vs LPB
 | WI_I_ON15S | L1M | 52.7 | 43.9 | -9757.0 | 24263.6 | 51252.7 | 11808.9 | 11808.9 |
 | WI_I_ON15S | L3M | 39.3 | 28.1 | -5207.0 | 46873.7 | 77224.2 | 74588.7 | -89868.8 |
 | WI_I_ON15S | L6M | 39.3 | 28.1 | -3344.1 | 46873.7 | 77224.2 | 94361.3 | -83398.6 |
-| WI_J_BR3S | L1M | 61.3 | 63.7 | -6004.0 | 19835.4 | 51252.7 | 13516.8 | 13516.8 |
-| WI_J_BR3S | L3M | 61.2 | 63.6 | 4396.7 | 29993.2 | 77224.2 | 83169.8 | -66665.4 |
-| WI_J_BR3S | L6M | 53.8 | 56.6 | 1043.4 | 35674.8 | 77224.2 | 87471.4 | -81571.0 |
-| WI_J_BR3S | HOLD | 25.2 | 29.8 | -2144.8 | 58943.3 | 78842.0 | 96023.4 | -102406.2 |
-| WI_J_BR3S | PRE | 36.4 | 40.3 | -1961.6 | 63274.5 | 99479.4 | 104974.3 | -166595.6 |
 | WI_J_RS30T35 | L1M | 79.0 | 77.3 | -5605.3 | 10775.2 | 51252.7 | 25634.5 | 25634.5 |
 | WI_J_RS30T35 | L3M | 50.6 | 46.6 | -908.3 | 38158.6 | 77224.2 | 82343.0 | -41488.6 |
 | WI_J_RS30T35 | L6M | 50.6 | 46.6 | -1590.3 | 38158.6 | 77224.2 | 93056.2 | -43899.2 |
@@ -214,6 +207,12 @@ vs LPB
 | WI_K_W2S | L3M | 64.9 | 61.6 | -2210.0 | 27090.1 | 77224.2 | 96672.7 | -52814.6 |
 | WI_K_W2S | L6M | 60.7 | 57.0 | -1846.0 | 30321.6 | 77224.2 | 106327.5 | -55401.4 |
 | WI_K_W2S | HOLD | 2.7 | -6.4 | -4107.6 | 76692.8 | 78842.0 | 113676.1 | -88542.8 |
+| WI_J_BR3S | L1M | 61.3 | 63.7 | -6004.0 | 19835.4 | 51252.7 | 13516.8 | 13516.8 |
+| WI_J_BR3S | L3M | 61.2 | 63.6 | 4396.7 | 29993.2 | 77224.2 | 83169.8 | -66665.4 |
+| WI_J_BR3S | L6M | 53.8 | 56.6 | 1043.4 | 35674.8 | 77224.2 | 87471.4 | -81571.0 |
+| WI_J_BR3S | HOLD | 25.2 | 29.8 | -2144.8 | 58943.3 | 78842.0 | 96023.4 | -102406.2 |
+| WI_J_BR3S | PRE | 36.4 | 40.3 | -1961.6 | 63274.5 | 99479.4 | 104974.3 | -166595.6 |
+| WI_J_BR3S | X' | 50.0 | 53.1 | -641.8 | 61307.4 | 122552.7 | 82071.3 | -54645.7 |
 | WI_L_PUSHH | L1M | 49.7 | 43.4 | -7528.7 | 25785.9 | 51252.7 | 11587.1 | 11587.1 |
 | WI_L_PUSHH | L3M | 54.6 | 48.9 | -3386.0 | 35087.7 | 77224.2 | 84244.1 | -71182.4 |
 | WI_L_PUSHH | L6M | 54.6 | 48.9 | -2394.2 | 35087.7 | 77224.2 | 91043.9 | -49731.0 |
@@ -241,91 +240,3 @@ There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$
 - WI_L_SL13T35 L6M (stack, per week): full stops 25.4/wk $-38129; give-backs 8.9/wk (8.8 round-trips) realised $-10063, forgone vs target $24777; same-side losing runs max 13, p95 7, $-42080 lost on 3rd-and-later; no-new-evidence re-entries 43.3/wk $1104; recoveries cut 15.0/wk $39004, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $4078/wk, losers avoided $2538/wk, net -622 $/wk; pnl $18908/wk.
 
 Plain reading: an entry gate leaves the three defects (full stops, give-backs, same-side losing runs) where they were, because it only removes entries and the entries it removes are not the ones that form the runs; by the standing principle families I-L are therefore NOT acceptable as exits or re-entry fixes on their own. Their use is as evidence tests inside the re-entry rule (W-M probe / confirm).
-
-## Finalist block: J breadth_ext15==3 skip (WI_J_BR3S)
-- Windows on JN04RM base (exact): L1M cut 26.7 eq 29.9 dmean -3564.8; L3M cut 28.1 eq 31.2 dmean -811.4; L6M cut 14.4 eq 18.1 dmean 782.7; HOLD cut 19.0 eq 22.5 dmean 441.6; PRE cut 5.2 eq 9.3 dmean -452.3; X' cut not run eq not run dmean not run. Same set run on LPB base: see the LPB table (WIL_J_BR3S, L6M only if finished).
-- Frozen live week 11-01..05 (first-order replay of the live P7 trades with the same flag): 11 of 53 P7 trades flagged, their live P&L +$30.2k removed, +$54.6k kept: the week stays winning but gives up $30k of trend winners (cost of the gate in a trend week).
-- What it is in v1.7 terms: not expressible (needs ES and RTY 1-min bars inside DS7). v1.8 fields: `ExtBreadthN` (int minutes, 15), `ExtBreadthSkipAt` (int, 3), per signal: for each of NQ, ES, RTY the minute index of the session high (long) or low (short) built from 1-min bars of the current session (session = 18:00 ET Asia, 02:00 London, 09:30 NY AM boundaries as in the P7 session string), breadth = number of the three whose extreme time is within N minutes of the signal; if breadth == ExtBreadthSkipAt the P7 signal is skipped (or lots x0.5); policy-file third column tag `ext3` on the trade for the log.
-- Five worked rows (frozen live week P7 signals, real values; breadth = number of NQ/ES/RTY at a new session extreme in the trade direction within 15 min):
-  - 11-02 01:45Z long/short long 4 lots: NQ 1 ES 0 RTY 1 breadth 2 -> trade; actual Target $4791
-  - 11-04 05:53Z long/short long 7 lots: NQ 0 ES 0 RTY 0 breadth 0 -> trade; actual PolicyCut $-4064
-  - 11-04 10:02Z long/short long 1 lots: NQ 1 ES 1 RTY 1 breadth 3 -> SKIP; actual Target $1195
-  - 11-05 15:39Z long/short short 5 lots: NQ 1 ES 1 RTY 1 breadth 3 -> SKIP; actual Target $5976
-  - 11-05 08:33Z long/short long 2 lots: NQ 1 ES 1 RTY 0 breadth 2 -> trade; actual ThL2Cut $-1305
-
-## Worst 10 sessions replayed (HOLD months, JN04RM vs WI_J_BR3S)
-# worst-10 stack sessions (HOLD months, ref JN04RM) replayed for WI_J_BR3S
-
-## session 202604200 (label day 20260420, session asia): ref $-21605, after $-21605
-- P7 short 4 lots entry 04-19 22:30Z exit StateCut $-3609 -> kept
-- P7 short 7 lots entry 04-19 23:14Z exit StateCut $-4107 -> kept
-- P7 long 4 lots entry 04-20 01:21Z exit StateCut $-3614 -> kept
-- P7 total ref $-11329 after $-11329; other books ref $-10276 after $-10276
-
-## session 202605200 (label day 20260520, session asia): ref $-20364, after $-20389
-- P7 short 2 lots entry 05-19 22:26Z exit StateCut $-1749 -> SKIPPED
-- P7 long 1 lots entry 05-20 01:00Z exit StateCut $-1506 -> kept
-- P7 long 2 lots entry 05-20 01:51Z exit StateCut $-1784 -> kept
-- P7 short 2 lots entry 05-20 03:00Z exit StateCut $-1634 -> kept
-- P7 short 2 lots entry 05-20 04:34Z exit StateCut $-1904 -> kept
-- P7 total ref $-8578 after $-8603; other books ref $-11786 after $-11786
-
-## session 202511060 (label day 20251106, session asia): ref $-20017, after $-7219
-- P7 short 4 lots entry 11-05 23:13Z exit StateCut $-3304 -> SKIPPED
-- P7 long 4 lots entry 11-05 23:54Z exit StateCut $-3319 -> SKIPPED
-- P7 short 1 lots entry 11-06 00:48Z exit Target $1199 -> kept
-- P7 short 4 lots entry 11-06 01:35Z exit StateCut $-2477 -> SKIPPED
-- P7 long 7 lots entry 11-06 03:38Z exit StateCut $-5795 -> kept
-- P7 total ref $-13695 after $-897; other books ref $-6321 after $-6321
-
-## session 202603250 (label day 20260325, session asia): ref $-19015, after $-18840
-- P7 long 1 lots entry 03-24 22:59Z exit Target $1199 -> kept
-- P7 long 1 lots entry 03-25 00:55Z exit StateCut $-987 -> SKIPPED
-- P7 short 4 lots entry 03-25 02:21Z exit StateCut $-2787 -> kept
-- P7 long 4 lots entry 03-25 04:58Z exit StateCut $-3324 -> kept
-- P7 total ref $-5899 after $-5724; other books ref $-13116 after $-13116
-
-## session 202608241 (label day 20260824, session london): ref $-17840, after $-15603
-- P7 short 1 lots entry 08-24 06:19Z exit StateCut $-1604 -> SKIPPED
-- P7 short 2 lots entry 08-24 08:02Z exit StopJoin $-2322 -> SKIPPED
-- P7 long 1 lots entry 08-24 09:04Z exit StateCut $-857 -> kept
-- P7 short 2 lots entry 08-24 11:12Z exit StateCut $-1724 -> kept
-- P7 long 2 lots entry 08-24 11:48Z exit StateCut $-1724 -> kept
-- P7 total ref $-8233 after $-5995; other books ref $-9608 after $-9608
-
-## session 202512100 (label day 20251210, session asia): ref $-17409, after $-18855
-- P7 short 2 lots entry 12-09 23:12Z exit StateCut $-1321 -> SKIPPED
-- P7 total ref $-1321 after $-2767; other books ref $-16088 after $-16088
-
-## session 202512230 (label day 20251223, session asia): ref $-16962, after $-16962
-- P7 long 4 lots entry 12-22 23:48Z exit StateCut $-3262 -> kept
-- P7 short 7 lots entry 12-23 06:23Z exit StateCut $-6003 -> kept
-- P7 total ref $-9264 after $-9264; other books ref $-7698 after $-7698
-
-## session 202610080 (label day 20261008, session asia): ref $-16898, after $-14582
-- P7 long 7 lots entry 10-07 22:21Z exit StateCut $-5873 -> SKIPPED
-- P7 short 7 lots entry 10-08 00:56Z exit StateCut $-5978 -> SKIPPED
-- P7 total ref $-11851 after $-9534; other books ref $-5048 after $-5048
-
-## session 202606241 (label day 20260624, session london): ref $-16668, after $-16668
-- P7 long 1 lots entry 06-24 06:35Z exit StateCut $-862 -> kept
-- P7 long 1 lots entry 06-24 07:24Z exit StateCut $-855 -> kept
-- P7 long 1 lots entry 06-24 07:47Z exit StateCut $-817 -> kept
-- P7 long 1 lots entry 06-24 08:05Z exit StateCut $-860 -> kept
-- P7 long 1 lots entry 06-24 10:16Z exit StateCut $-840 -> kept
-- P7 short 2 lots entry 06-24 11:27Z exit StateCut $-1594 -> kept
-- P7 long 1 lots entry 06-24 12:03Z exit StateCut $-865 -> kept
-- P7 total ref $-6692 after $-6692; other books ref $-9976 after $-9976
-
-## session 202605180 (label day 20260518, session asia): ref $-16165, after $-16215
-- P7 long 2 lots entry 05-17 22:19Z exit StateCut $-1684 -> SKIPPED
-- P7 long 2 lots entry 05-17 22:39Z exit StateCut $-1674 -> kept
-- P7 short 2 lots entry 05-17 23:37Z exit Target $2393 -> kept
-- P7 short 4 lots entry 05-17 23:57Z exit StateCut $-2969 -> kept
-- P7 short 4 lots entry 05-18 00:02Z exit Target $2398 -> kept
-- P7 short 4 lots entry 05-18 00:34Z exit StateCut $-3364 -> kept
-- P7 short 4 lots entry 05-18 01:16Z exit StateCut $-3329 -> kept
-- P7 short 2 lots entry 05-18 02:49Z exit StateCut $-1659 -> kept
-- P7 total ref $-9889 after $-9939; other books ref $-6276 after $-6276
-
-Ten sessions together: ref $-182943, after $-166937.
