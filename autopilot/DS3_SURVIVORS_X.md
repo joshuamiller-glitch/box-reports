@@ -1,30 +1,42 @@
 # DS3_SURVIVORS_X - flat-stop survivors (EC_FLAT{40,45,50}{K,U,A,M} on LPB_BASE; JN04RM_FLAT{40,45,50}K on the JN04RM base), exact, Shadow only, no PASS claim
-Updated 2026-11-12 16:53Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 24/43, EC_FLAT40K 4/43, EC_FLAT50K 4/43, EC_FLAT45U 4/43, EC_FLAT40U 0/43, EC_FLAT50U 0/43, EC_FLAT45A 4/43, EC_FLAT40A 0/43, EC_FLAT50A 0/43, EC_FLAT45M 4/43, EC_FLAT40M 0/43, EC_FLAT50M 0/43, JN04RM_FLAT45K 6/43, JN04RM_FLAT40K 6/43, JN04RM_FLAT50K 5/43
+Updated 2026-11-12 17:25Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 24/43, EC_FLAT40K 7/43, EC_FLAT50K 6/43, EC_FLAT45U 6/43, EC_FLAT40U 0/43, EC_FLAT50U 0/43, EC_FLAT45A 6/43, EC_FLAT40A 0/43, EC_FLAT50A 0/43, EC_FLAT45M 6/43, EC_FLAT40M 0/43, EC_FLAT50M 0/43, JN04RM_FLAT45K 10/43, JN04RM_FLAT40K 10/43, JN04RM_FLAT50K 9/43
 Fill model: flat-stop market exit at next-1-s mid -/+ 0.80 pt (live loss-cut is 1.19-1.20 adverse => savings overstated ~0.4 pt). Windows PRE/X/GAP/WF need all 43 months; sets missing months are labelled.
 
 ## 1. Trend-week clause (L6M weekly check, exact)
 # Weekly check, L6M (ISO weeks with trading days in 2026-05..10; weeks at the month edges are partial; exact engine; Shadow only)
 
-| week | LPB_BASE | JN04RM | EC_FLAT45K | JN04RM_FLAT45K | JN04RM_FLAT40K |
-|--|--|--|--|--|--|
-| 202638 (best of LPB_BASE) | 88836 | 72104 | 84896 | 69691 | 69619 |
-| 202623 (best of LPB_BASE) | 73836 | 68072 | 71789 | 59775 | 59375 |
-| 202625 (best of LPB_BASE) | 59099 | 59990 | 58199 | 59515 | 61822 |
-| 202639 (best of LPB_BASE) | 57178 | 52634 | 43511 | 40468 | 41816 |
-| 202633 (best of LPB_BASE) | 52499 | 36328 | 60366 | 40954 | 44916 |
-| 202644 (worst of LPB_BASE) | -51253 | -16664 | -48569 | -17116 | -16051 |
-| 202636 (worst of LPB_BASE) | -44984 | -25704 | -41425 | -21809 | -22520 |
-| 202621 (worst of LPB_BASE) | -39976 | -39092 | -33209 | -34871 | -35168 |
-| 202635 (worst of LPB_BASE) | -23667 | -15995 | -23846 | -15523 | -15220 |
-| 202637 (worst of LPB_BASE) | -8573 | 679 | -13749 | -1797 | -410 |
+| week | LPB_BASE | JN04RM | EC_FLAT45K | EC_FLAT40K | EC_FLAT50K | EC_FLAT45U | EC_FLAT45A | EC_FLAT45M | JN04RM_FLAT45K | JN04RM_FLAT40K | JN04RM_FLAT50K |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| 202638 (best of LPB_BASE) | 88836 | 72104 | 84896 | 78991 | 91066 | 90022 | 92338 | 89140 | 69691 | 69619 | 73422 |
+| 202623 (best of LPB_BASE) | 73836 | 68072 | 71789 | 74374 | 68748 | 75544 | 73827 | 73258 | 59775 | 59375 | 56962 |
+| 202625 (best of LPB_BASE) | 59099 | 59990 | 58199 | 60023 | 58643 | 61529 | 39940 | 59936 | 59515 | 61822 | 59522 |
+| 202639 (best of LPB_BASE) | 57178 | 52634 | 43511 | 46640 | 52887 | 58233 | 57563 | 58179 | 40468 | 41816 | 47257 |
+| 202633 (best of LPB_BASE) | 52499 | 36328 | 60366 | 62371 | 57785 | 45345 | 50735 | 52469 | 40954 | 44916 | 38617 |
+| 202644 (worst of LPB_BASE) | -51253 | -16664 | -48569 | -45889 | -53032 | -47279 | -42353 | -49556 | -17116 | -16051 | -15353 |
+| 202636 (worst of LPB_BASE) | -44984 | -25704 | -41425 | -42588 | -37758 | -35184 | -43861 | -45194 | -21809 | -22520 | -19341 |
+| 202621 (worst of LPB_BASE) | -39976 | -39092 | -33209 | -36988 | -34899 | -41688 | -35158 | -40616 | -34871 | -35168 | -33595 |
+| 202635 (worst of LPB_BASE) | -23667 | -15995 | -23846 | -26989 | -27638 | -28756 | -25552 | -24041 | -15523 | -15220 | -17310 |
+| 202637 (worst of LPB_BASE) | -8573 | 679 | -13749 | -13645 | -11350 | -23118 | -12234 | -10290 | -1797 | -410 | -4673 |
 
 JN04RM: LPB_BASE winning weeks 20 of 27; of those, JN04RM turn losing: 1; weeks where JN04RM beats LPB_BASE: 13 of 27; sum over the 5 best LPB_BASE weeks 289128 vs 331449
 
 EC_FLAT45K: LPB_BASE winning weeks 20 of 27; of those, EC_FLAT45K turn losing: 0; weeks where EC_FLAT45K beats LPB_BASE: 14 of 27; sum over the 5 best LPB_BASE weeks 318762 vs 331449
 
+EC_FLAT40K: LPB_BASE winning weeks 20 of 27; of those, EC_FLAT40K turn losing: 0; weeks where EC_FLAT40K beats LPB_BASE: 15 of 27; sum over the 5 best LPB_BASE weeks 322399 vs 331449
+
+EC_FLAT50K: LPB_BASE winning weeks 20 of 27; of those, EC_FLAT50K turn losing: 0; weeks where EC_FLAT50K beats LPB_BASE: 14 of 27; sum over the 5 best LPB_BASE weeks 329129 vs 331449
+
+EC_FLAT45U: LPB_BASE winning weeks 20 of 27; of those, EC_FLAT45U turn losing: 0; weeks where EC_FLAT45U beats LPB_BASE: 14 of 27; sum over the 5 best LPB_BASE weeks 330674 vs 331449
+
+EC_FLAT45A: LPB_BASE winning weeks 20 of 27; of those, EC_FLAT45A turn losing: 0; weeks where EC_FLAT45A beats LPB_BASE: 15 of 27; sum over the 5 best LPB_BASE weeks 314403 vs 331449
+
+EC_FLAT45M: LPB_BASE winning weeks 20 of 27; of those, EC_FLAT45M turn losing: 0; weeks where EC_FLAT45M beats LPB_BASE: 14 of 27; sum over the 5 best LPB_BASE weeks 332983 vs 331449
+
 JN04RM_FLAT45K: LPB_BASE winning weeks 20 of 27; of those, JN04RM_FLAT45K turn losing: 1; weeks where JN04RM_FLAT45K beats LPB_BASE: 14 of 27; sum over the 5 best LPB_BASE weeks 270403 vs 331449
 
 JN04RM_FLAT40K: LPB_BASE winning weeks 20 of 27; of those, JN04RM_FLAT40K turn losing: 2; weeks where JN04RM_FLAT40K beats LPB_BASE: 15 of 27; sum over the 5 best LPB_BASE weeks 277548 vs 331449
+
+JN04RM_FLAT50K: LPB_BASE winning weeks 20 of 27; of those, JN04RM_FLAT50K turn losing: 1; weeks where JN04RM_FLAT50K beats LPB_BASE: 13 of 27; sum over the 5 best LPB_BASE weeks 275781 vs 331449
 
 
 
@@ -62,7 +74,172 @@ EC_FLAT45K PRE: months missing (5 of 17), window not scored
 EC_FLAT45K X': months missing (10 of 10), window not scored
 
 
-## JN04RM_FLAT45K (6/43 months)
+## EC_FLAT40K (7/43 months)
+### windows / WF / rule 2a
+```
+EC_FLAT40K
+         cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
+0  EC_FLAT40K    L1M     840.1         340.7      499.3 -12694.4  45888.8  51252.7  10.5  3485.5     9.8    3360.2    1363.0   -14.4  -16179.8       7
+1  EC_FLAT40K    L3M   10831.2       11956.7    -1125.5  10541.5  83221.3  77224.2  -7.8 -2101.0    -8.6  140805.3  155436.8     6.6   12642.6       7
+2  EC_FLAT40K    L6M   19006.9       18696.8      310.0  17706.4  83221.3  77224.2  -7.8  -131.6    -8.6  116427.1  102383.9    11.1   17838.0       7
+
+```
+### acceptance_p7
+```
+ best L6M P7 sessions of the reference) and the frozen live week: re-entry winners after NEW EVIDENCE
+-- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +28883 (5 trades, 0 such winners $+0)
+-- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +23369 (8 trades, 0 such winners $+0)
+-- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +23252 (7 trades, 0 such winners $+0)
+-- best session 20261022 asia: reference net +22466 (6 trades, 0 evidence-backed re-entry winners $+0); set net +22466 (6 trades, 0 such winners $+0)
+-- best session 20260605 asia: reference net +22396 (9 trades, 0 evidence-backed re-entry winners $+0); set net +22396 (9 trades, 0 such winners $+0)
+-- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+8402); all re-entry winners (any evidence) reference 13, set 13
+-- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
+
+SUMMARY EC_FLAT40K: fails 3 of 15 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 15 of 20
+ACCEPT EC_FLAT40K FAIL fails=3/20
+
+```
+### behavioural scorecard
+EC_FLAT40K L6M (stack, per week): full stops 12.5/wk $-22984; give-backs 9.2/wk (9.0 round-trips) realised $-13425, forgone vs target $34566; same-side losing runs max 12, p95 6, $-53612 lost on 3rd-and-later; no-new-evidence re-entries 42.0/wk $668; recoveries cut 12.3/wk $44028, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $7428/wk, losers avoided $6646/wk, net +328 $/wk; pnl $20112/wk.
+EC_FLAT40K HOLD: months missing (5 of 12), window not scored
+EC_FLAT40K PRE: months missing (17 of 17), window not scored
+EC_FLAT40K X': months missing (10 of 10), window not scored
+
+
+## EC_FLAT50K (6/43 months)
+### windows / WF / rule 2a
+```
+EC_FLAT50K
+         cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref  cut  dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
+0  EC_FLAT50K    L1M     922.0         340.7      581.2   -437.6  53031.7  51252.7 -3.5   12.5    -1.0    3687.8    1363.0    -0.4    -450.1       6
+1  EC_FLAT50K    L3M   12173.7       11956.7      217.0  16334.7  76745.6  77224.2  0.6 -367.0     3.0  158258.1  155436.8    11.1   16701.7       6
+2  EC_FLAT50K    L6M   19500.9       18696.8      804.1  20144.5  76745.6  77224.2  0.6  483.3     3.0  126175.8  102383.9    13.6   19661.1       6
+
+```
+### acceptance_p7
+```
+ best L6M P7 sessions of the reference) and the frozen live week: re-entry winners after NEW EVIDENCE
+-- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +28883 (5 trades, 0 such winners $+0)
+-- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +23369 (8 trades, 0 such winners $+0)
+-- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +23252 (7 trades, 0 such winners $+0)
+-- best session 20261022 asia: reference net +22466 (6 trades, 0 evidence-backed re-entry winners $+0); set net +22466 (6 trades, 0 such winners $+0)
+-- best session 20260605 asia: reference net +22396 (9 trades, 0 evidence-backed re-entry winners $+0); set net +22396 (9 trades, 0 such winners $+0)
+-- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+8402); all re-entry winners (any evidence) reference 13, set 13
+-- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
+
+SUMMARY EC_FLAT50K: fails 3 of 15 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 15 of 20
+ACCEPT EC_FLAT50K FAIL fails=3/20
+
+```
+### behavioural scorecard
+EC_FLAT50K L6M (stack, per week): full stops 14.8/wk $-25798; give-backs 9.2/wk (9.1 round-trips) realised $-13862, forgone vs target $35101; same-side losing runs max 12, p95 6, $-52287 lost on 3rd-and-later; no-new-evidence re-entries 38.8/wk $636; recoveries cut 13.4/wk $46233, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $2882/wk, losers avoided $3282/wk, net +851 $/wk; pnl $20635/wk.
+EC_FLAT50K HOLD: months missing (6 of 12), window not scored
+EC_FLAT50K PRE: months missing (17 of 17), window not scored
+EC_FLAT50K X': months missing (10 of 10), window not scored
+
+
+## EC_FLAT45U (6/43 months)
+### windows / WF / rule 2a
+```
+EC_FLAT45U
+         cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
+0  EC_FLAT45U    L1M    2981.9         340.7     2641.1 -14100.2  47278.7  51252.7   7.8  2079.7     7.0   11927.5    1363.0   -15.5  -16179.8       6
+1  EC_FLAT45U    L3M   11463.2       11956.7     -493.5  14345.0  87057.2  77224.2 -12.7   677.4   -13.7  149021.5  155436.8     8.6   13667.5       6
+2  EC_FLAT45U    L6M   17977.2       18696.8     -719.6  19621.0  87057.2  77224.2 -12.7  -166.6   -13.7   78742.5  102383.9    11.7   19787.7       6
+
+```
+### acceptance_p7
+```
+ best L6M P7 sessions of the reference) and the frozen live week: re-entry winners after NEW EVIDENCE
+-- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +28883 (5 trades, 0 such winners $+0)
+-- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +23369 (8 trades, 0 such winners $+0)
+-- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +23252 (7 trades, 0 such winners $+0)
+-- best session 20261022 asia: reference net +22466 (6 trades, 0 evidence-backed re-entry winners $+0); set net +22466 (6 trades, 0 such winners $+0)
+-- best session 20260605 asia: reference net +22396 (9 trades, 0 evidence-backed re-entry winners $+0); set net +22396 (9 trades, 0 such winners $+0)
+-- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+8402); all re-entry winners (any evidence) reference 13, set 13
+-- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
+
+SUMMARY EC_FLAT45U: fails 3 of 15 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 15 of 20
+ACCEPT EC_FLAT45U FAIL fails=3/20
+
+```
+### behavioural scorecard
+EC_FLAT45U L6M (stack, per week): full stops 21.4/wk $-29899; give-backs 9.1/wk (9.0 round-trips) realised $-13940, forgone vs target $35415; same-side losing runs max 12, p95 6, $-51327 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $-547; recoveries cut 13.6/wk $46652, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $244/wk, losers avoided $456/wk, net -761 $/wk; pnl $19022/wk.
+EC_FLAT45U HOLD: months missing (6 of 12), window not scored
+EC_FLAT45U PRE: months missing (17 of 17), window not scored
+EC_FLAT45U X': months missing (10 of 10), window not scored
+
+
+## EC_FLAT45A (6/43 months)
+### windows / WF / rule 2a
+```
+EC_FLAT45A
+         cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
+0  EC_FLAT45A    L1M    9401.5         340.7     9060.8 -13119.9  42352.9  51252.7  17.4  3059.9    13.7   37606.0    1363.0   -16.1  -16179.8       6
+1  EC_FLAT45A    L3M   14474.4       11956.7     2517.7   9266.8  81646.7  77224.2  -5.7   472.2   -10.4  188166.7  155436.8     5.9    8794.5       6
+2  EC_FLAT45A    L6M   19034.5       18696.8      337.6  16717.2  81646.7  77224.2  -5.7  -731.4   -10.4   96233.8  102383.9    10.6   17448.6       6
+
+```
+### acceptance_p7
+```
+ best L6M P7 sessions of the reference) and the frozen live week: re-entry winners after NEW EVIDENCE
+-- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +27616 (5 trades, 0 such winners $+0)
+-- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +23369 (8 trades, 0 such winners $+0)
+-- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +23252 (7 trades, 0 such winners $+0)
+-- best session 20261022 asia: reference net +22466 (6 trades, 0 evidence-backed re-entry winners $+0); set net +22466 (6 trades, 0 such winners $+0)
+-- best session 20260605 asia: reference net +22396 (9 trades, 0 evidence-backed re-entry winners $+0); set net +22396 (9 trades, 0 such winners $+0)
+-- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+8402); all re-entry winners (any evidence) reference 13, set 12
+-- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
+
+SUMMARY EC_FLAT45A: fails 3 of 15 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 15 of 20
+ACCEPT EC_FLAT45A FAIL fails=3/20
+
+```
+### behavioural scorecard
+EC_FLAT45A L6M (stack, per week): full stops 20.8/wk $-36120; give-backs 9.0/wk (8.9 round-trips) realised $-14037, forgone vs target $35198; same-side losing runs max 12, p95 6, $-51067 lost on 3rd-and-later; no-new-evidence re-entries 37.2/wk $199; recoveries cut 13.5/wk $46419, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $2488/wk, losers avoided $1171/wk, net +357 $/wk; pnl $20141/wk.
+EC_FLAT45A HOLD: months missing (6 of 12), window not scored
+EC_FLAT45A PRE: months missing (17 of 17), window not scored
+EC_FLAT45A X': months missing (10 of 10), window not scored
+
+
+## EC_FLAT45M (6/43 months)
+### windows / WF / rule 2a
+```
+EC_FLAT45M
+         cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref  cut  dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
+0  EC_FLAT45M    L1M    1129.7         340.7      789.0  18024.9  49555.7  51252.7  3.3  486.3     2.9    4519.0    1363.0    18.9   17538.5       6
+1  EC_FLAT45M    L3M   12109.7       11956.7      153.0  13976.4  79524.9  77224.2 -3.0  308.9    -3.4  157426.0  155436.8     9.1   13667.5       6
+2  EC_FLAT45M    L6M   18466.6       18696.8     -230.3  17279.9  79524.9  77224.2 -3.0  -73.4    -3.4   96840.4  102383.9    11.3   17353.3       6
+
+```
+### acceptance_p7
+```
+ best L6M P7 sessions of the reference) and the frozen live week: re-entry winners after NEW EVIDENCE
+-- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +28883 (5 trades, 0 such winners $+0)
+-- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +23369 (8 trades, 0 such winners $+0)
+-- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +23252 (7 trades, 0 such winners $+0)
+-- best session 20261022 asia: reference net +22466 (6 trades, 0 evidence-backed re-entry winners $+0); set net +22466 (6 trades, 0 such winners $+0)
+-- best session 20260605 asia: reference net +22396 (9 trades, 0 evidence-backed re-entry winners $+0); set net +22396 (9 trades, 0 such winners $+0)
+-- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+8402); all re-entry winners (any evidence) reference 13, set 13
+-- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
+
+SUMMARY EC_FLAT45M: fails 3 of 15 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 15 of 20
+ACCEPT EC_FLAT45M FAIL fails=3/20
+
+```
+### behavioural scorecard
+EC_FLAT45M L6M (stack, per week): full stops 22.9/wk $-37793; give-backs 9.1/wk (9.0 round-trips) realised $-14032, forgone vs target $35497; same-side losing runs max 12, p95 6, $-51247 lost on 3rd-and-later; no-new-evidence re-entries 37.4/wk $-320; recoveries cut 13.3/wk $45975, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $244/wk, losers avoided $58/wk, net -244 $/wk; pnl $19540/wk.
+EC_FLAT45M HOLD: months missing (6 of 12), window not scored
+EC_FLAT45M PRE: months missing (17 of 17), window not scored
+EC_FLAT45M X': months missing (10 of 10), window not scored
+
+
+## JN04RM_FLAT45K (10/43 months)
 ### windows / WF / rule 2a
 ```
 JN04RM_FLAT45K
@@ -95,7 +272,7 @@ JN04RM_FLAT45K PRE: months missing (17 of 17), window not scored
 JN04RM_FLAT45K X': months missing (10 of 10), window not scored
 
 
-## JN04RM_FLAT40K (6/43 months)
+## JN04RM_FLAT40K (10/43 months)
 ### windows / WF / rule 2a
 ```
 JN04RM_FLAT40K
@@ -126,4 +303,37 @@ JN04RM_FLAT40K L6M (stack, per week): full stops 12.7/wk $-20930; give-backs 10.
 JN04RM_FLAT40K HOLD: months missing (6 of 12), window not scored
 JN04RM_FLAT40K PRE: months missing (17 of 17), window not scored
 JN04RM_FLAT40K X': months missing (10 of 10), window not scored
+
+
+## JN04RM_FLAT50K (9/43 months)
+### windows / WF / rule 2a
+```
+JN04RM_FLAT50K
+             cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
+0  JN04RM_FLAT50K    L1M    4143.6         340.7     3802.8  10642.3  27513.3  51252.7  46.3 -6896.2    39.9   16574.2    1363.0    20.1   17538.5       7
+1  JN04RM_FLAT50K    L3M   12061.3       11956.7      104.6  14345.8  41324.0  77224.2  46.5 -2878.4    40.1  156796.4  155436.8    18.1   17224.1       7
+2  JN04RM_FLAT50K    L6M   17869.6       18696.8     -827.2  19198.5  41324.0  77224.2  46.5 -2296.3    40.1  131515.6  102383.9    24.2   21494.8       7
+
+```
+### acceptance_p7
+```
+6M P7 sessions of the reference) and the frozen live week: re-entry winners after NEW EVIDENCE
+-- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +22883 (5 trades, 0 such winners $+0)
+-- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +11869 (8 trades, 0 such winners $+0)
+-- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +12634 (9 trades, 0 such winners $+0)
+-- best session 20261022 asia: reference net +22466 (6 trades, 0 evidence-backed re-entry winners $+0); set net +9563 (6 trades, 0 such winners $+0)
+-- best session 20260605 asia: reference net +22396 (9 trades, 0 evidence-backed re-entry winners $+0); set net +12231 (9 trades, 0 such winners $+0)
+-- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+4790); all re-entry winners (any evidence) reference 13, set 14
+-- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
+
+SUMMARY JN04RM_FLAT50K: fails 4 of 15 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 15 of 20
+ACCEPT JN04RM_FLAT50K FAIL fails=4/20
+
+```
+### behavioural scorecard
+JN04RM_FLAT50K L6M (stack, per week): full stops 15.1/wk $-24034; give-backs 10.1/wk (9.9 round-trips) realised $-11415, forgone vs target $28364; same-side losing runs max 13, p95 6, $-43953 lost on 3rd-and-later; no-new-evidence re-entries 44.7/wk $2244; recoveries cut 14.8/wk $38795, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $3236/wk, losers avoided $2851/wk, net -622 $/wk; pnl $18909/wk.
+JN04RM_FLAT50K HOLD: months missing (5 of 12), window not scored
+JN04RM_FLAT50K PRE: months missing (17 of 17), window not scored
+JN04RM_FLAT50K X': months missing (10 of 10), window not scored
 
