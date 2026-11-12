@@ -1,12 +1,14 @@
 # DS3_NEXT_FEATURES_F3 - T-NEXT-FEATURES items 3 (hold-or-take by location) and 4 (flat cut by context). W-F3. Shadow only, no PASS claim.
-Updated 2026-11-12 18:26Z. Directive autopilot/DIRECTIVE_T_NEXT_FEATURES_20261112.md; prereg autopilot/NEXTF3_PREREG.md (sha in DECISIONS.md). BASE = JN05W2 (LPB panel + F3 + E1 + C22 + BR3S + FLAT45K, exact 43 months, W-J). Item-4 sets keep FLAT45K on K7 unless the cell says replace. Exact sets run one per job (jn05_run2.py, TP engine, tag NEXTF); months done: NC_U7_T10_15F 0/43, NC_U7_T20_15F 0/43, NC_U7_T20_15A 0/43, NC_K7_T20_20RC 0/43, NC_K7_F55_45 0/43, NC_A7_T10_10F 0/43, NC_M7_T10_10A 0/43, NH_P7_A9_N20 0/43, NH_P7_B9_X10N30 0/43, NH_U7_B7_X20N60 0/43, NH_M7_C9_F2 0/43, NH_M7_B9_X10N60 0/43
+Updated 2026-11-12 18:45Z. Directive autopilot/DIRECTIVE_T_NEXT_FEATURES_20261112.md; prereg autopilot/NEXTF3_PREREG.md (sha in DECISIONS.md). BASE = JN05W2 (LPB panel + F3 + E1 + C22 + BR3S + FLAT45K, exact 43 months, W-J). Item-4 sets keep FLAT45K on K7 unless the cell says replace. Exact sets run one per job (jn05_run2.py, TP engine, tag NEXTF); months done: NC_U7_T10_15F 1/43, NC_U7_T20_15F 1/43, NC_U7_T20_15A 1/43, NC_K7_T20_20RC 1/43, NC_K7_F55_45 1/43, NC_A7_T10_10F 1/43, NC_M7_T10_10A 0/43, NC_K7_T30_10RC 0/43, NH_P7_A9_N20 0/43, NH_P7_B9_X10N30 0/43, NH_U7_B7_X20N60 0/43, NH_M7_C9_F2 0/43, NH_M7_B9_X10N60 0/43, NH_P7_B7_X10N60 0/43, NH_U7_B7_X30N120 0/43
 
 Reading rule: exact is the verdict; first-order (FO sections) only chose the cells. Mean columns: mean_all (all weeks) vs ref; dmean carry-dropped is not used here. R-vs-dollar note: both items are location rules (points / fractions of target / minutes), independent of lot size, so they transfer unchanged to the user's x1.75 lots; only the dollar P&L scales.
 
 ## 0. Identity checks (hook with no rules == JN05W2 on 202610)
 ```
-(not yet)
-(not yet)
+IDENTITY NC_ID trades 598 598 net 25943.82 25943.82 IDENTICAL
+
+IDENTITY NH_ID trades 598 598 net 25943.82 25943.82 IDENTICAL
+
 ```
 
 ## 1. Trend-week clause FIRST (L6M, exact; sum of the 5 best LPB_BASE weeks, winning weeks turned losing)
@@ -67,54 +69,52 @@ Grid per book: flat level {35,40,45,50,55} separately for FRESH and RECHASE tags
 
 Cells (223 per book): A stall (arm {.6,.7,.8,.9} x secs since high {10..160}), B reversal (arm x drawdown from high X pts {6..30} over last N s {30,60,120}), C ladder floor (m,f), plus A+B, A+C, B+C combos (<= 3 plain conditions). clip = Target fills taken early ($/wk lost).
 
-### K7: bi-weekly WF re-pick OOS total $-39240 over 161 weeks (positive weeks 27%); most picked: off x22, B+C rev(0.7,15pt,30s)+floor(0.5,0.2) x8, B rev arm=0.8 X=20pt N=60s x8
+### K7: bi-weekly WF re-pick OOS total $-70904 over 161 weeks (positive weeks 17%); most picked: off x39, B rev arm=0.8 X=30pt N=30s x18, B rev arm=0.9 X=15pt N=30s x3
 
 | cell | fires | clipped fills | net/wk L6M | HOLD | PRE | X' | GAP | DD cut L6M | HOLD | clip $/wk L6M |
 |--|--|--|--|--|--|--|--|--|--|--|
 | (no cell positive on L6M, HOLD and 3.5-year total) |||||||||||
 
-### U7: bi-weekly WF re-pick OOS total $-73885 over 161 weeks (positive weeks 26%); most picked: off x6, B rev arm=0.6 X=6pt N=60s x6, B rev arm=0.8 X=30pt N=30s x5
+### U7: bi-weekly WF re-pick OOS total $-104664 over 161 weeks (positive weeks 26%); most picked: B rev arm=0.6 X=30pt N=120s x9, B rev arm=0.7 X=30pt N=30s x6, off x6
 
 | cell | fires | clipped fills | net/wk L6M | HOLD | PRE | X' | GAP | DD cut L6M | HOLD | clip $/wk L6M |
 |--|--|--|--|--|--|--|--|--|--|--|
-| B rev arm=0.7 X=30pt N=120s | 146 | 68 | 953 | 631 | 145 | -68 | -1132 | 0.5 | -0.4 | 1733 |
-| B rev arm=0.7 X=20pt N=60s | 227 | 132 | 618 | 439 | 117 | 95 | -1342 | 6.3 | -2.5 | 2704 |
-| B rev arm=0.8 X=30pt N=120s | 94 | 47 | 474 | 383 | 179 | -178 | -993 | -7.4 | -5.2 | 1290 |
-| B rev arm=0.7 X=20pt N=120s | 299 | 191 | 1250 | 784 | -150 | -66 | -995 | 12.9 | -3.7 | 2933 |
+| B rev arm=0.7 X=30pt N=120s | 140 | 65 | 899 | 604 | 115 | -67 | -1091 | 5.2 | -0.5 | 1567 |
+| B rev arm=0.7 X=20pt N=60s | 216 | 126 | 539 | 498 | 71 | 88 | -1300 | 5.2 | -3.1 | 2554 |
+| B rev arm=0.7 X=20pt N=120s | 290 | 184 | 1152 | 835 | -184 | -73 | -953 | 6.7 | -4.6 | 2794 |
+| B rev arm=0.8 X=30pt N=120s | 89 | 45 | 267 | 282 | 149 | -168 | -993 | 0.0 | 2.3 | 1254 |
 
-### A7: bi-weekly WF re-pick OOS total $-45348 over 161 weeks (positive weeks 13%); most picked: B rev arm=0.6 X=30pt N=120s x9, B rev arm=0.8 X=30pt N=60s x8, off x7
+### A7: bi-weekly WF re-pick OOS total $-35993 over 161 weeks (positive weeks 14%); most picked: B rev arm=0.8 X=30pt N=60s x10, B rev arm=0.6 X=30pt N=30s x9, B rev arm=0.6 X=30pt N=120s x7
 
 | cell | fires | clipped fills | net/wk L6M | HOLD | PRE | X' | GAP | DD cut L6M | HOLD | clip $/wk L6M |
 |--|--|--|--|--|--|--|--|--|--|--|
 | (no cell positive on L6M, HOLD and 3.5-year total) |||||||||||
 
-### M7: bi-weekly WF re-pick OOS total $-27545 over 161 weeks (positive weeks 34%); most picked: off x9, C floor m=0.9 f=0.5 x7, B rev arm=0.7 X=15pt N=120s x4
+### M7: bi-weekly WF re-pick OOS total $-56563 over 161 weeks (positive weeks 35%); most picked: off x7, C floor m=0.9 f=0.5 x6, B rev arm=0.7 X=15pt N=30s x5
 
 | cell | fires | clipped fills | net/wk L6M | HOLD | PRE | X' | GAP | DD cut L6M | HOLD | clip $/wk L6M |
 |--|--|--|--|--|--|--|--|--|--|--|
-| C floor m=0.9 f=0.2 | 177 | 79 | 360 | 209 | -35 | 238 | 14 | 3.4 | 1.2 | 775 |
-| C floor m=0.9 f=0.7 | 461 | 360 | 467 | 439 | -160 | 180 | -159 | 5.0 | 2.4 | 1340 |
-| C floor m=0.9 f=0.6 | 351 | 251 | 377 | 346 | -108 | 155 | -112 | 3.6 | 3.0 | 1281 |
-| C floor m=0.9 f=0.5 | 284 | 186 | 339 | 285 | -76 | 221 | -269 | 4.0 | 2.5 | 1215 |
-| B rev arm=0.9 X=15pt N=60s | 335 | 238 | 302 | 328 | -138 | 134 | 51 | 5.1 | 2.7 | 1323 |
+| C floor m=0.9 f=0.2 | 154 | 70 | 248 | 43 | -30 | 178 | 14 | 2.3 | 0.1 | 532 |
+| C floor m=0.9 f=0.5 | 244 | 160 | 209 | 116 | -33 | 153 | -235 | 3.2 | 1.1 | 854 |
+| C floor m=0.9 f=0.6 | 302 | 217 | 283 | 192 | -65 | 83 | -165 | 3.6 | 1.5 | 863 |
+| B+C rev(0.9,20pt,120s)+floor(0.9,0.5) | 281 | 197 | 208 | 143 | -67 | 121 | -190 | 3.2 | 1.5 | 905 |
+| C floor m=0.9 f=0.7 | 403 | 318 | 310 | 250 | -130 | 106 | -213 | 2.8 | 1.8 | 947 |
 
-### P7: bi-weekly WF re-pick OOS total $-221135 over 161 weeks (positive weeks 33%); most picked: B rev arm=0.6 X=30pt N=60s x6, A stall arm=0.7 N=160s x6, B rev arm=0.9 X=30pt N=30s x5
-
-| cell | fires | clipped fills | net/wk L6M | HOLD | PRE | X' | GAP | DD cut L6M | HOLD | clip $/wk L6M |
-|--|--|--|--|--|--|--|--|--|--|--|
-| A stall arm=0.9 N=10s | 1508 | 1390 | 2793 | 1236 | 281 | -69 | -568 | 26.0 | -2.1 | 3853 |
-| B rev arm=0.9 X=10pt N=30s | 545 | 428 | 1652 | 589 | 479 | 258 | -31 | 26.6 | -5.4 | 3984 |
-| A+B stall(0.9,20s)+rev(0.9,10pt,60s) | 1355 | 1237 | 2206 | 871 | 225 | -77 | -813 | 24.7 | -6.4 | 4310 |
-| A+C stall(0.9,20s)+floor(0.9,0.2) | 1349 | 1231 | 2168 | 877 | 174 | -66 | -789 | 24.8 | -5.1 | 4260 |
-| A stall arm=0.9 N=20s | 1349 | 1231 | 2168 | 877 | 174 | -66 | -789 | 24.8 | -5.1 | 4260 |
-
-### H7: bi-weekly WF re-pick OOS total $-19789 over 161 weeks (positive weeks 23%); most picked: B rev arm=0.9 X=15pt N=120s x7, B rev arm=0.9 X=20pt N=120s x6, B rev arm=0.6 X=15pt N=60s x6
+### P7: bi-weekly WF re-pick OOS total $-124351 over 161 weeks (positive weeks 35%); most picked: B rev arm=0.9 X=10pt N=60s x9, B rev arm=0.8 X=10pt N=60s x7, B rev arm=0.9 X=20pt N=30s x5
 
 | cell | fires | clipped fills | net/wk L6M | HOLD | PRE | X' | GAP | DD cut L6M | HOLD | clip $/wk L6M |
 |--|--|--|--|--|--|--|--|--|--|--|
-| B+C rev(0.9,20pt,120s)+floor(0.8,0.2) | 144 | 80 | 103 | 153 | -65 | 499 | 6 | 0.7 | 2.7 | 754 |
-| C floor m=0.8 f=0.7 | 337 | 272 | 93 | 51 | -138 | 642 | 123 | 1.2 | 3.2 | 1282 |
-| B rev arm=0.8 X=6pt N=30s | 382 | 317 | 172 | 157 | -153 | 422 | 193 | 1.9 | 3.9 | 1276 |
-| C floor m=0.8 f=0.2 | 126 | 62 | 24 | 52 | -127 | 492 | 24 | 0.7 | 2.7 | 747 |
-| B rev arm=0.8 X=6pt N=60s | 409 | 344 | 179 | 101 | -199 | 545 | 101 | 1.9 | 4.0 | 1257 |
+| B rev arm=0.7 X=10pt N=60s | 1509 | 1123 | 2375 | 789 | 172 | 131 | -1662 | 3.6 | -4.1 | 15931 |
+| B rev arm=0.9 X=30pt N=30s | 28 | 7 | 205 | 206 | 124 | 0 | 5 | 0.0 | 0.0 | 77 |
+| B rev arm=0.9 X=30pt N=60s | 59 | 25 | 360 | 176 | 113 | -308 | 73 | 0.0 | -2.5 | 439 |
+
+### H7: bi-weekly WF re-pick OOS total $-28382 over 161 weeks (positive weeks 21%); most picked: B rev arm=0.6 X=20pt N=120s x7, C floor m=0.9 f=0.5 x7, B rev arm=0.6 X=15pt N=60s x6
+
+| cell | fires | clipped fills | net/wk L6M | HOLD | PRE | X' | GAP | DD cut L6M | HOLD | clip $/wk L6M |
+|--|--|--|--|--|--|--|--|--|--|--|
+| B+C rev(0.9,20pt,120s)+floor(0.8,0.2) | 134 | 73 | 214 | 183 | -139 | 534 | 6 | 0.0 | 4.4 | 617 |
+| C floor m=0.8 f=0.7 | 312 | 250 | 218 | 83 | -194 | 677 | 145 | -4.6 | 5.1 | 1101 |
+| B+C rev(0.9,10pt,60s)+floor(0.8,0.2) | 189 | 128 | 90 | 107 | -147 | 540 | 75 | -1.8 | 3.4 | 789 |
+| B+C rev(0.8,30pt,30s)+floor(0.8,0.2) | 119 | 58 | 76 | 70 | -122 | 527 | 24 | 0.0 | 4.4 | 668 |
+| C floor m=0.8 f=0.2 | 118 | 57 | 137 | 99 | -144 | 527 | 24 | 0.0 | 4.4 | 607 |
 

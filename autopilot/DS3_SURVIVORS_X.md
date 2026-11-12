@@ -1,5 +1,5 @@
 # DS3_SURVIVORS_X - flat-stop survivors (EC_FLAT{40,45,50}{K,U,A,M} on LPB_BASE; JN04RM_FLAT{40,45,50}K on the JN04RM base), exact, Shadow only, no PASS claim
-Updated 2026-11-12 18:29Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 25/43, EC_FLAT40K 13/43, EC_FLAT50K 13/43, EC_FLAT45U 12/43, EC_FLAT40U 0/43, EC_FLAT50U 0/43, EC_FLAT45A 12/43, EC_FLAT40A 0/43, EC_FLAT50A 0/43, EC_FLAT45M 12/43, EC_FLAT40M 0/43, EC_FLAT50M 0/43, JN04RM_FLAT45K 21/43, JN04RM_FLAT40K 21/43, JN04RM_FLAT50K 20/43
+Updated 2026-11-12 18:59Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 27/43, EC_FLAT40K 14/43, EC_FLAT50K 14/43, EC_FLAT45U 12/43, EC_FLAT40U 0/43, EC_FLAT50U 0/43, EC_FLAT45A 12/43, EC_FLAT40A 0/43, EC_FLAT50A 0/43, EC_FLAT45M 12/43, EC_FLAT40M 0/43, EC_FLAT50M 0/43, JN04RM_FLAT45K 22/43, JN04RM_FLAT40K 22/43, JN04RM_FLAT50K 22/43
 Fill model: flat-stop market exit at next-1-s mid -/+ 0.80 pt (live loss-cut is 1.19-1.20 adverse => savings overstated ~0.4 pt). Windows PRE/X/GAP/WF need all 43 months; sets missing months are labelled.
 
 ## 1. Trend-week clause (L6M weekly check, exact)
@@ -40,7 +40,7 @@ JN04RM_FLAT50K: LPB_BASE winning weeks 20 of 27; of those, JN04RM_FLAT50K turn l
 
 
 
-## EC_FLAT45K (25/43 months)
+## EC_FLAT45K (27/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT45K
@@ -74,7 +74,7 @@ EC_FLAT45K PRE: months missing (5 of 17), window not scored
 EC_FLAT45K X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT40K (13/43 months)
+## EC_FLAT40K (14/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40K
@@ -108,7 +108,7 @@ EC_FLAT40K PRE: months missing (17 of 17), window not scored
 EC_FLAT40K X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT50K (13/43 months)
+## EC_FLAT50K (14/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50K
@@ -244,7 +244,7 @@ EC_FLAT45M PRE: months missing (17 of 17), window not scored
 EC_FLAT45M X': months missing (10 of 10), window not scored
 
 
-## JN04RM_FLAT45K (21/43 months)
+## JN04RM_FLAT45K (22/43 months)
 ### windows / WF / rule 2a
 ```
 JN04RM_FLAT45K
@@ -278,7 +278,7 @@ JN04RM_FLAT45K PRE: months missing (17 of 17), window not scored
 JN04RM_FLAT45K X': months missing (4 of 10), window not scored
 
 
-## JN04RM_FLAT40K (21/43 months)
+## JN04RM_FLAT40K (22/43 months)
 ### windows / WF / rule 2a
 ```
 JN04RM_FLAT40K
@@ -312,7 +312,7 @@ JN04RM_FLAT40K PRE: months missing (17 of 17), window not scored
 JN04RM_FLAT40K X': months missing (4 of 10), window not scored
 
 
-## JN04RM_FLAT50K (20/43 months)
+## JN04RM_FLAT50K (22/43 months)
 ### windows / WF / rule 2a
 ```
 JN04RM_FLAT50K
