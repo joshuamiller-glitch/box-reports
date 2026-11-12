@@ -1,4 +1,4 @@
-# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-12T07:59:48Z; Shadow only, no PASS claims)
+# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-12T10:00:02Z; Shadow only, no PASS claims)
 
 Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. Section D is W-J: the reference rows (JN04RM vs LPB_BASE), the JN05 composition and the REFIT 2026-11-22 preview. Every number is exact-engine, live panel base (P7 day cap 8,400 + table 7,4,0,4,0,0 + P7 cut 40/5x/w5/p3), reference LPB_BASE, ROLLFIX1.
 
@@ -252,8 +252,79 @@ WA_C1 and WA_C2 (definitions in section 1, exact, set json in /mnt/l2/l2vast/_th
 
 ## B. Regime-conditional exits (B)
 
-Source DS3_WORKS_B.md (mtime 2026-11-12T03:48:58Z UTC), included verbatim, read only:
+Source DS3_WORKS_B.md (mtime 2026-11-12T08:29:01Z UTC), included verbatim, read only:
 
+# DS3_WORKS_B - T-WORKS part B (W-B) FINAL, 2026-11-12T08:28Z (date -u). Pages 3, 2, 1 are kept below. Shadow only, no PASS claims, PRE-PROOF.
+
+## A. Scorecard first (standing principle; W-Q tool; L6M stack per week; LPB_BASE = live panel base, JN04RM = JN04 reference)
+LPB_BASE L6M: full stops 24.5/wk (-$40.1k), give-backs 9.1/wk, same-side losing runs max 12 / p95 6 ($-51.3k on the 3rd and later), no-new-evidence re-entries 37.3/wk. Finalists of part B, same measures: context cut WB_X_FR_F3 24.9/wk, 9.4/wk, 12 / 7, 42.9/wk; context cut F4 25.7/wk, 9.4/wk, 13 / 7, 44.2/wk; Asia sweep skip WB_D5_SW 24.6/wk, 9.1/wk, 12 / 6, 37.8/wk; cut-only-after-a-trend-day WB_B2_FPRI 32.4/wk (-$75.4k), 8.8/wk, 12 / 6, 35.7/wk; never cut WB_C_NONE 36.4/wk (-$94.8k), 8.7/wk, 11 / 6, 34.3/wk. On JN04RM: JN04RM 25.4/wk, 9.9/wk, 13 / 7, 43.3/wk; JN04RM_WBF3 25.7/wk, 10.3/wk, 13 / 7, 47.9/wk. PRE and the frozen week behave the same (F3 PRE full stops 17.4/wk vs LPB 16.9). NO part-B rule halves full stops, give-backs or same-side runs: the standing principle says none of them is a result. What they do is change the cost of a failure: F3 on LPB L6M skips $8.1k/wk of winners and avoids $6.6k/wk of losers (net +$335/wk), D5_SW skips $8.7k and avoids $9.2k (net +$3.2k/wk), F3 on JN04RM nets -$2.3k/wk. The loss-cut line cannot fix defects 1-3; the entry side (W-A/W-C governors) has to.
+
+## B. Plain sentences, final
+1. Flag (B1): nothing from LOT/REG/ER(20)/stack Calmar/family H separates last week (trend) from choppy weeks well. LOT was cold on every P7 signal of the live trend week (10-day Calmar below 1 all four days even with +$21k to +$31k shadow days, because the ten days before were losses), REG hot (atr_rel >= 1.3) was 60 percent of live P7 signals vs 46 percent median (percentile 0.76), ER(20) at the signal sat at the median (0.38 percentile), family H F_ER was the sharpest (0.94 percentile). REG and ER(20) flip every 2 signals; LOT, stack Calmar, F_ER, F_PRIOR persist (13-24 signals; F_PRIOR 91 percent same state next signal). Per-trade regret of the cut (first-order, week-block bootstrap): REG hot >= 1.5 / 1.8 and ER20 >= 0.30 with LOT warm are the flags where cutting costs more, F_ER goes the other way.
+2. Conditional cut by a flag (B2): not a result. Exact: never cutting (NONE) cut +19.1/+10.4/+27.4 L6M/PRE/X' and -19.1 HOLD; cut off when atr_rel >= 1.5 worse (-11.1 L6M); cut off with stack Calmar5 >= 1: 0.0/-1.3/+33.8 and HOLD +2.1, means +2,159/+44/+798/-845, WF 0.0 / +596; cut on only after a trend day (F_PRIOR): +30.7/+9.9/+7.6/-6.0 (L6M/HOLD/PRE/X'), means +4,119/+1,103/+364/-682, WF +17.6 percent / +1,389, but full stops 32.4/wk and the family max-stat of 86 day-level mixtures says the best mixture is no better than random (p 0.69). Frozen week: 24 P7 cuts = 17 saves (-$29.9k) + 7 recoveries (+$69.1k); the flags keep 4-9 saves in every state that holds the recoveries.
+3. Context cut (P7 FIX B) is the one real, robust finding of part B: choose the cut by entry context fixed at entry; fresh trade -> V2 (45/5x/w5/p10), re-entry/chasing -> fast. WB_X_FR_F3 (fast 30/10x/w5/p2): L6M +30.6 / +2,129, HOLD +1.8 / -866, PRE +28.4 / +335, X' +24.3 / +191, WF 0.0 / -461, beats 43 percent; reverse control -20.1 / -1,939 (L6M); by lots (>=5 lots fast, <5 V2, WB_X_LOTS): VOID - its L6M numbers equal the uniform-V2 set to the dollar (+15.4 / +1,483), i.e. the hook read the lot count as below 5 for every trade (defect in my lots lookup, not fixed); the by-lots question is open; by side (short fast) +22.0 / +3,216, HOLD -21.5. On the JN04RM base F3 is +9.0 / +1.0 / +2.3 / +45.9 (L6M/HOLD/PRE/X') with means -974 / -931 / -275 / +836: a drawdown line of little size there. 202510 is not in the JN04RM runs (WF vs JN04RM not computed). Scorecard fails (section A). Rule 2a: all four windows pass the DD floors on LPB; on JN04RM means are negative in the three recent windows.
+4. Profit side (B3): conditional protection (`profit P7 * pct>=0.5 pulled_against_mult>=10 take win=5 persist=5`, ON only when stack Calmar10 < 1; WB_B3_P3) +23.2/+24.8/-9.9/+13.2 (L6M/HOLD/PRE/X') at means -710/-598/-1,370/-51, WF -14.6 percent: fails PRE and WF, clips 11.9 fills/wk. Other conditional lines (P2, P4, K7/M7/U7) screens only, not promoted. 28 of 28 live-target clipping problem: P7 lines clip 8-10 of 28 live targets in either ER20 state.
+5. Near-target (B4): the live stand-in (K7/P7/M7 take within 3 pts and 5 s stall) is worse than nothing in L6M (-9.1 / -1,253). Scored replacement: retarget 8 ticks only when atr_rel < 1.3, 60 otherwise (WB_B4_R8C): +26.1/+8.1/-10.6/+5.2 (L6M/HOLD/PRE/X') means +51/+460/+227/-50, WF -10.6 (12 percent beats): RECENTS-ONLY (rule 2a), PRE fails. Brackets (B5), P7, L6M only: stop 45 / target 60 +5.5 / +1,556; target 45 when atr_rel < 1.5 +42.9 / -2,026; target 90 when atr_rel >= 1.5 -6.0 / -590.
+6. D5 (addendum): at the signal second no book-state feature (absorption/ice/delta/pulled_against push) removes more worst-20-week losers than best-20-week winners; the one selective cell, Asia sweep_against max(60 s) >= 16 ticks skip (226 trades, WB_D5_SW): +2.8/-0.1/+20.1/+6.2 (L6M/HOLD/PRE/X') means +1,758/+1,120/+256/+2, WF 0.0 / +67; on JN04RM +3.1/-1.9/+11.9/+4.7 with means +619/+662/+58/+1. Small, one cell of a 1,034-cell family, no placebo run: candidate only.
+7. Deliverables. (1) What is expressible in v1.7 today: only the unconditional parts (P7 cut cell per session, PolicyCut loss lines matched by book/session/regime string, the day-level regime string); a cut chosen per entry context and any per-signal flag is NOT. (2) Field: `regime` (third policy column, DayRegime = daily vol_lo/vol_mid/vol_hi set at 10:30 ET and never reset) can carry only DAY-level flags if the code assigns it at the roll: F_PRIOR (prior-day trend ratio) would fit if DayRegime were set at 18:00 ET to trend_prev / chop_prev (it replaces the vol label unless a second field is added). Per-signal flags (REG, ER(20), LOT, stack, entry context) need a new per-book string `EntryRegime` written at the signal second and matched by the same third column token (`r.Regime == b.EntryRegime`), plus the context counters: P7 session trade counter (n_sess), minutes since last P7 exit, session move / ATR5 at the signal (chasing flag; same definitions as W-C in P7_CONTEXT_DEFS.md), tag values fresh / rechase; the loss-cut rows then read one per tag (fresh: 45/5x/w5/p10, rechase: 30/10x/w5/p2). Worked rows (live week 11-02, Asia, P7 trade list): 1st trade (n_sess 1, no prior exit, session move 1.56 ATR, chasing) = rechase, Target +4,800; 2nd (gap 8 min, 2.80 ATR) = rechase, Target +11,998; 3rd (19 min, 5.51) = rechase, Target +4,805; 4th (1 min, 11.73) = rechase, ThL2Cut -1,407; 5th (30 min, -10.31, against the move) = rechase (n_sess 5), Target +4,795; London 2nd trade (gap 42 min, -0.14 ATR) = fresh, Target +3,601. (3) P7 table: see section C and the exact rows below. (4) JN05 joint with W-J: candidates from part B in priority order: context cut F3 (V2 fresh / 30-10x-p2 rechase), Asia sweep skip D5_SW; both fail the scorecard, so they enter the joint only as cost reducers behind the entry-side governors. (5) REFIT 2026-11-22 preview: F3 and D5_SW would be refit as the cut cell pair and the sweep threshold; the L6M-heavy F4 (+34.8) is the aggressive variant and needs HOLD (-11.7) tolerated.
+8. Missing: the 11-09..11 live week (no trade log, no shadow P&L, no state days after 11-05); exact K7/M7 context cuts; WF vs JN04RM (202510 not run); worst-10 session replay on JN04RM.
+
+## C. Exact rows (LPB_BASE reference, 43 months)
+| set | months | cut_L1M | dmean_L1M | eq_cut_L1M | cut_L3M | dmean_L3M | eq_cut_L3M | cut_L6M | dmean_L6M | eq_cut_L6M | cut_HOLD | dmean_HOLD | eq_cut_HOLD | cut_PRE | dmean_PRE | eq_cut_PRE | cut_X' | dmean_X' | eq_cut_X' |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| WB_X_FR_F3 | 43 | 10.3 | 853.8 | 20.9 | 30.6 | 1838.6 | 38.8 | 30.6 | 2129.0 | 38.8 | 1.8 | -865.7 | 13.4 | 28.4 | 335.3 | 36.8 | 24.3 | 190.7 | 33.2 |
+| WB_X_FR_F4 | 43 | 27.1 | 2824.3 | 43.0 | 34.8 | 2781.6 | 49.0 | 34.8 | 4435.1 | 49.0 | -11.7 | 310.3 | 12.7 | 22.0 | 1207.1 | 39.0 | 36.3 | -189.8 | 50.2 |
+| WB_X_SIDE | 43 | 13.7 | 1438.8 | 27.2 | 22.0 | 4239.5 | 34.2 | 22.0 | 3216.4 | 34.2 | -21.5 | 1224.9 | -2.5 | 19.2 | 311.3 | 31.9 | 18.2 | 1533.3 | 31.0 |
+| WB_D5_SW | 43 | -8.1 | -418.7 | 1.0 | 2.8 | -62.3 | 11.0 | 2.8 | 1757.5 | 11.0 | -0.1 | 1119.6 | 8.3 | 20.1 | 255.8 | 26.8 | 6.2 | 1.6 | 14.1 |
+| WB_B2_FPRI | 43 | 9.4 | 705.4 | 25.8 | 30.7 | 7365.2 | 43.2 | 30.7 | 4119.1 | 43.2 | 9.9 | 1103.2 | 26.2 | 7.6 | 363.7 | 24.3 | -6.0 | -681.5 | 13.1 |
+| WB_B4_R8C | 43 | -5.8 | -1049.6 | -5.5 | 26.1 | 789.8 | 26.3 | 26.1 | 51.3 | 26.3 | 8.1 | 460.1 | 8.4 | -10.6 | 227.2 | -10.3 | 5.2 | -50.2 | 5.4 |
+
+JN04RM-reference rows (42 months, 202510 missing; cut vs JN04RM): JN04RM_WBF3 cut L1M -1.6, L3M +9.0, L6M +9.0, HOLD +1.0, PRE +2.3, X' +45.9; dmean -142 / -1,910 / -974 / -931 / -275 / +836. JN04RM_WBSW cut +18.9 / +8.6 / +3.1 / -1.9 / +11.9 / +4.7; dmean +453 / +353 / +619 / +662 / +58 / +1.
+
+## D. Worst-10 P7 sessions replayed entry by entry (L6M, ranked by LPB_BASE P7 session P&L): LPB_BASE vs WB_X_FR_F3 vs WB_D5_SW
+### session start 07-27 22:00 UTC, session 0, LPB P7 session P&L -14274
+- LPB_BASE: total -14274 over 8 trades: -22:38 4L StateCut -3007; -00:11 4L Target 4800; -01:06 5L Target 5984; -01:23 7L StateCut -5705; -02:14 4L StateCut -3254; +03:54 4L StateCut -3694; +04:43 4L StateCut -3394; -05:40 7L StateCut -6005
+- WB_X_FR_F3: total -11315 over 9 trades: -22:38 4L StateCut -2722; -00:11 4L Target 4800; -01:06 5L Target 5984; -01:23 7L StateCut -5093; -02:14 4L StateCut -2624; -02:27 4L StateCut -2449; +03:54 4L StateCut -2624; +04:43 4L StateCut -2474; -05:40 7L StateCut -4115
+- WB_D5_SW: total -10669 over 5 trades: -22:38 4L StateCut -3007; -00:32 4L StateCut -3504; -00:51 4L Target 4800; -01:23 7L StateCut -5705; -02:14 4L StateCut -3254
+### session start 05-27 13:30 UTC, session 3, LPB P7 session P&L -13000
+- LPB_BASE: total -13000 over 5 trades: -14:11 4L StateCut -3374; -14:33 3L StateCut -2449; -15:00 4L StateCut -3654; -15:20 2L StateCut -1759; -15:39 2L StateCut -1764
+- WB_X_FR_F3: total -10525 over 5 trades: -14:11 4L StateCut -3184; -14:33 3L StateCut -1909; -15:00 4L StateCut -2904; -15:20 2L StateCut -1199; -15:39 2L StateCut -1329
+- WB_D5_SW: total -13000 over 5 trades: -14:11 4L StateCut -3374; -14:33 3L StateCut -2449; -15:00 4L StateCut -3654; -15:20 2L StateCut -1759; -15:39 2L StateCut -1764
+### session start 09-09 22:00 UTC, session 0, LPB P7 session P&L -12681
+- LPB_BASE: total -12681 over 3 trades: -23:01 4L StateCut -3274; -01:07 4L StateCut -3349; +05:07 7L StateCut -6059
+- WB_X_FR_F3: total -4394 over 3 trades: -23:01 4L StateCut -2924; -01:07 4L StateCut -2669; +04:47 1L Target 1199
+- WB_D5_SW: total -12681 over 3 trades: -23:01 4L StateCut -3274; -01:07 4L StateCut -3349; +05:07 7L StateCut -6059
+### session start 08-25 22:00 UTC, session 0, LPB P7 session P&L -12662
+- LPB_BASE: total -12662 over 4 trades: +22:09 7L StateCut -5810; -00:04 7L Target 6004; -01:09 7L StateCut -5718; +03:03 7L StateCut -7138
+- WB_X_FR_F3: total -10334 over 4 trades: +22:09 7L StateCut -7263; -00:04 7L Target 6004; -01:09 7L StateCut -4370; +03:03 7L StateCut -4705
+- WB_D5_SW: total -10255 over 4 trades: +22:58 4L StateCut -3404; -00:04 7L Target 6004; -01:09 7L StateCut -5718; +03:03 7L StateCut -7138
+### session start 05-05 22:00 UTC, session 0, LPB P7 session P&L -12366
+- LPB_BASE: total -12366 over 2 trades: +23:48 7L StateCut -6223; -00:48 7L StateCut -6143
+- WB_X_FR_F3: total -11754 over 2 trades: +23:48 7L StateCut -4998; -00:48 7L StateCut -6756
+- WB_D5_SW: total -12366 over 2 trades: +23:48 7L StateCut -6223; -00:48 7L StateCut -6143
+### session start 09-30 22:00 UTC, session 0, LPB P7 session P&L -12188
+- LPB_BASE: total -12188 over 2 trades: -23:08 7L StateCut -6615; +00:01 7L StateCut -5573
+- WB_X_FR_F3: total -8498 over 1 trades: -23:08 7L StopJoin -8498
+- WB_D5_SW: total -12188 over 2 trades: -23:08 7L StateCut -6615; +00:01 7L StateCut -5573
+### session start 05-15 06:00 UTC, session 1, LPB P7 session P&L -11920
+- LPB_BASE: total -11920 over 8 trades: -06:07 4L StateCut -3344; -06:21 4L StateCut -3714; +06:56 1L Target 1199; +07:28 2L StateCut -1699; -09:12 1L Target 1199; -09:42 4L StateCut -3294; -10:40 2L StateCut -1464; +11:01 2L BookLock -802
+- WB_X_FR_F3: total -10528 over 10 trades: -06:07 4L StateCut -2724; -06:21 4L StateCut -2764; +06:56 1L Target 1199; +07:28 2L StateCut -1289; -09:12 1L Target 1199; -09:42 4L StateCut -2314; -10:05 2L StateCut -1269; -10:40 2L StateCut -1039; +11:01 2L StateCut -1279; +11:52 2L BookLock -247
+- WB_D5_SW: total -11920 over 8 trades: -06:07 4L StateCut -3344; -06:21 4L StateCut -3714; +06:56 1L Target 1199; +07:28 2L StateCut -1699; -09:12 1L Target 1199; -09:42 4L StateCut -3294; -10:40 2L StateCut -1464; +11:01 2L BookLock -802
+### session start 10-07 22:00 UTC, session 0, LPB P7 session P&L -11851
+- LPB_BASE: total -11851 over 2 trades: +22:21 7L StateCut -5873; -00:56 7L StateCut -5978
+- WB_X_FR_F3: total -8963 over 2 trades: +22:21 7L StateCut -4665; -00:56 7L StateCut -4298
+- WB_D5_SW: total -11851 over 2 trades: +22:21 7L StateCut -5873; -00:56 7L StateCut -5978
+### session start 06-17 22:00 UTC, session 0, LPB P7 session P&L -11837
+- LPB_BASE: total -11837 over 2 trades: -23:42 7L StateCut -6615; +00:31 7L StateCut -5221
+- WB_X_FR_F3: total -12053 over 2 trades: -23:42 7L StateCut -7578; +00:31 7L StateCut -4475
+- WB_D5_SW: total -10253 over 2 trades: -23:42 7L StateCut -6615; +00:35 7L StateCut -3638
+### session start 06-02 22:00 UTC, session 0, LPB P7 session P&L -11538
+- LPB_BASE: total -11538 over 2 trades: +22:12 7L StateCut -5710; -23:35 7L StateCut -5828
+- WB_X_FR_F3: total -12343 over 2 trades: +22:12 7L StateCut -7163; -23:35 7L StateCut -5180
+- WB_D5_SW: total -11538 over 2 trades: +22:12 7L StateCut -5710; -23:35 7L StateCut -5828
+
+
+---- PAGE 3 ----
 # DS3_WORKS_B - T-WORKS part B (W-B) incl. P7 FIX B and D5. PAGE 3, 2026-11-12T03:48Z (date -u). Pages 2 and 1 are kept below.
 
 STATUS: Shadow only, post-hoc, no PASS claims, PRE-PROOF. Exact, one set per job, 43 months, reference LPB_BASE (live panel base). cut = stack maxDD cut % (negative = deeper), dmean = $/week, eq = equal-mean cut. Preregs WORKS_B_PREREG.md, WORKS_B_P7FIX_PREREG.md; tags P7_CONTEXT_DEFS.md.
@@ -332,7 +403,7 @@ STATUS: Shadow only, post-hoc, no PASS claims, PRE-PROOF. Exact, one set per job
 STATUS: Shadow only, post-hoc, no PASS claims, PRE-PROOF. Preregs WORKS_B_PREREG.md (sha 2167fd1caa1fdef7) and WORKS_B_P7FIX_PREREG.md (sha 39e1955d48481866); context tags P7_CONTEXT_DEFS.md (shared with W-C). All rows exact, one set per job, LPB_BASE reference, cut = stack maxDD cut % (negative = deeper), dmean = $/week, eq = equal-mean cut. Hook identity to the dollar: WB_X_ID (context cut hook), WB_D5_ID (entry-skip hook), WB_ID, WB_BR_ID.
 
 ## 0. Plain sentences (page 2)
-1. Context-dependent P7 cut (P7 FIX B): choosing the cut by ENTRY context works and the reverse is a clear loser. Fresh trade (1st/2nd P7 trade of the session, not chasing, 30 minutes or more after the last P7 exit) gets the slow V2 line (45/5x/w5/p10); a re-entry or chasing trade gets a fast line. With the fast line 25/20x/w5/p1 (WB_X_FR_F4, 43 months): L6M cut +34.8 percent / +4,435 $/wk, HOLD -11.7 / +310, PRE +22.0 / +1,207, X' +36.3 / -190; equal-mean +49.0 / +12.7 / +39.0 / +50.2; bi-weekly WF vs LPB_BASE +20.75 percent OOS cut, mean -241 $/wk, beats 24 percent of 74 periods. L6M-only rows (6 months, other windows not yet run): fast 30/10x/w5/p2 +30.6 / +2,129 (WB_X_FR_F3), 30/5x/w5/p5 +31.5 / +194, 35/5x/w5/p3 +34.4 / -33, 40/5x/w5/p3 +21.0 / +1,811; the REVERSE control (fresh fast, re-entry V2) is -20.1 / -1,939; by side (short 40/5x/p3, long V2) +22.0 / +3,216; V2 uniform +15.4 / +1,483; by lots (>=5 lots fast): 4 of 6 months. Rule 2a label for FR_F4: HOLD drawdown is 11.7 percent deeper (floor -5), so it is RECENTS-ONLY, not a standing change; V2 is the floor so every P7 trade still carries a loss line.
+1. Context-dependent P7 cut (P7 FIX B): choosing the cut by ENTRY context works and the reverse is a clear loser. Fresh trade (1st/2nd P7 trade of the session, not chasing, 30 minutes or more after the last P7 exit) gets the slow V2 line (45/5x/w5/p10); a re-entry or chasing trade gets a fast line. With the fast line 25/20x/w5/p1 (WB_X_FR_F4, 43 months): L6M cut +34.8 percent / +4,435 $/wk, HOLD -11.7 / +310, PRE +22.0 / +1,207, X' +36.3 / -190; equal-mean +49.0 / +12.7 / +39.0 / +50.2; bi-weekly WF vs LPB_BASE +20.75 percent OOS cut, mean -241 $/wk, beats 24 percent of 74 periods. L6M-only rows (6 months, other windows not yet run): fast 30/10x/w5/p2 +30.6 / +2,129 (WB_X_FR_F3), 30/5x/w5/p5 +31.5 / +194, 35/5x/w5/p3 +34.4 / -33, 40/5x/w5/p3 +21.0 / +1,811; the REVERSE control (fresh fast, re-entry V2) is -20.1 / -1,939; by side (short 40/5x/p3, long V2) +22.0 / +3,216; V2 uniform +15.4 / +1,483; by lots: VOID (see final section). Rule 2a label for FR_F4: HOLD drawdown is 11.7 percent deeper (floor -5), so it is RECENTS-ONLY, not a standing change; V2 is the floor so every P7 trade still carries a loss line.
 2. Behavioural scorecard (standing principle 19:45Z, W-Q tool, L6M stack per week; LPB_BASE: full stops 24.5/wk -$40.1k, give-backs 9.1/wk, same-side losing runs max 12 / p95 6, no-new-evidence re-entries 37.3/wk): FR_F4 does NOT pass: full stops 25.7/wk (-$44.7k), give-backs 9.4/wk, runs max 13 / p95 7, no-new-evidence 44.2/wk; its gain is smaller losses per cut ("winners skipped 9.4k, losers avoided 8.8k, net +2.6k per week vs LPB_BASE"), not fewer failures. The same is true of never cutting (full stops 36.4/wk, -$94.8k) and of the cut-only-after-a-trend-day rule WB_B2_FPRI (32.4/wk, -$75.4k, runs max 12). A finalist must halve (a), (b), (c); no flag or context cut in part B does, so the repeat-after-failure defect has to be fixed by the entry-side governors (W-C/W-A), not by the cut line. The only thing the cut contributes is cost per failure.
 3. P7 cut conditional on the prior day (WB_B2_FPRI = cut ON only when the prior day trended, F_PRIOR; 43 months): L6M +30.7 / +4,119, HOLD +9.9 / +1,103, PRE +7.6 / +364, X' -6.0 / -682 (eq +13.1); WF +17.6 percent OOS cut, +1,389 $/wk, beats 28 percent. The best exact conditional cut by the drawdown-first rule (L6M, HOLD, PRE all positive) but it triples full stops (32.4/wk, scorecard fail), and the day-level family max-stat test (86 flag x direction day mixtures of the cut-on / cut-off exact runs) puts the best mean cut at 17.3 vs a null 95th percentile of 24.1 (p 0.69): the cut-on/off split is as good as random mixing. WB_B2_STK5 (cut off while the stack Calmar5 >= 1): L6M 0.0 / +2,159, HOLD +2.1 / -845, PRE -1.3 / +44, X' +33.8 / +798, WF 0.0 / +596; never cutting (WB_C_NONE): +19.1/+10.4/+27.4 (L6M/PRE/X') and -19.1 HOLD, WF +9.95 / +350.
 4. Frozen live week and the context tags: 48 of the 53 live P7 trades are "re-entry or chasing" (only 5 fresh, +10.3k), so the context cut is the fast line on nearly the whole trend week: of the 24 live P7 cuts, 22 are on re-entry/chasing trades (16 saves -$27.9k and 6 recoveries +$61.9k if held), 2 on fresh trades (1 save -$1.9k, 1 recovery +$7.2k). The fast line therefore does NOT spare the recoveries of last week; the week-turn test (no trend week turned losing) cannot be shown for a cut rule, because the live week's recoveries are re-entry trades. The 11-09..11 live week is not on the box.
@@ -1485,12 +1556,12 @@ Asymmetric-bracket cells (60/45, 60/90 by flag) and the late-entry swing stop (D
 
 ## I. (W-I) (I)
 
-Source DS3_WORKS_I.md (mtime 2026-11-12T07:52:42Z UTC), included verbatim, read only:
+Source DS3_WORKS_I.md (mtime 2026-11-12T08:57:43Z UTC), included verbatim, read only:
 
 # DS3_WORKS_I summary (read first)
-Result in plain sentences. (1) Behavioural scorecard: every I, J, K, L cell tested exact is an entry gate; none moves full stops (25.4 per week L6M, unchanged), give-backs (9.9 per week) or the same-side losing run (max 13, p95 7) by anything near half; so by the standing principle none of them is acceptable as the P7 fix on its own. (2) Best exact lead: J breadth_ext15==3 skip, i.e. skip a P7 signal when NQ, ES and RTY have all made a new session extreme in the trade direction within the last 15 minutes (everything is already extended); on JN04RM it cuts the stack maxDD 14.4 percent L6M, 19.0 HOLD, 5.2 PRE, not run X-prime with mean change 782.7, 441.6, -452.3 per week; it removes $33 k of the five worst L6M weeks losses and $57 k of the five best weeks winners. (3) First-order family nulls: no family beats random flags at 5 percent (I p 0.10, J 0.16, K 0.13, L 0.7), and first-order optimism is large (J rs_es15 half: +12 first-order, -13.5 exact). (4) Weekday Wednesday skip looks strong on L6M (exact cut 27.3) and fails HOLD (-5.4): calendar lump, not a rule. (5) Direct use for the near-zone and re-entry work: room-to-target family I found only room to the prior overnight H/L has any signal (cut L6M 9.5 exact, mean -$1.5k per week: it removes winners), and the J extension flags are the useful evidence tests for W-M probe / confirm and for the "new evidence" requirement after a same-side failure.
+Result in plain sentences. (1) Behavioural scorecard: every I, J, K, L cell tested exact is an entry gate; none moves full stops (25.4 per week L6M, unchanged), give-backs (9.9 per week) or the same-side losing run (max 13, p95 7) by anything near half; so by the standing principle none of them is acceptable as the P7 fix on its own. (2) Best exact lead: J breadth_ext15==3 skip, i.e. skip a P7 signal when NQ, ES and RTY have all made a new session extreme in the trade direction within the last 15 minutes (everything is already extended); on JN04RM it cuts the stack maxDD 14.4 percent L6M, 19.0 HOLD, 5.2 PRE, 4.3 X-prime with mean change 782.7, 441.6, -452.3 per week; it removes $33 k of the five worst L6M weeks losses and $57 k of the five best weeks winners. (3) First-order family nulls: no family beats random flags at 5 percent (I p 0.10, J 0.16, K 0.13, L 0.7), and first-order optimism is large (J rs_es15 half: +12 first-order, -13.5 exact). (4) Weekday Wednesday skip looks strong on L6M (exact cut 27.3) and fails HOLD (-5.4): calendar lump, not a rule. (5) Direct use for the near-zone and re-entry work: room-to-target family I found only room to the prior overnight H/L has any signal (cut L6M 9.5 exact, mean -$1.5k per week: it removes winners), and the J extension flags are the useful evidence tests for W-M probe / confirm and for the "new evidence" requirement after a same-side failure.
 
-# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 07:52Z
+# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 08:57Z
 Label PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_I_PREREG.md (sha in DECISIONS.md; the first first-order screen ran before the sha line, disclosed there). Code code/th_works_i/, tables /mnt/l2/l2vast/_th_works/i/, feature table /mnt/l2/l2vast/_th_works/p7_feat_I.parquet (key sig_ts, 5,011 P7 taken trades x 128 columns; W-E signal-level table not used, so signals that were not taken are not in these tests).
 
 ## What exists
@@ -1631,11 +1702,6 @@ vs JN04RM
 | WI_I_ON15S | L1M | 10.3 | 7.0 | -2871.2 | 24263.6 | 27055.7 | -2122.3 | -2122.3 |
 | WI_I_ON15S | L3M | -12.4 | -16.6 | -660.5 | 46873.7 | 41699.4 | -2382.2 | -40967.2 |
 | WI_I_ON15S | L6M | -12.4 | -16.6 | -585.7 | 46873.7 | 41699.4 | 16505.6 | -48766.7 |
-| WI_J_BR3S | L1M | 26.7 | 29.9 | -3564.8 | 19835.4 | 27055.7 | -414.4 | -414.4 |
-| WI_J_BR3S | L3M | 28.1 | 31.2 | -811.4 | 29993.2 | 41699.4 | 29596.9 | -17763.8 |
-| WI_J_BR3S | L6M | 14.4 | 18.1 | 782.7 | 35674.8 | 41699.4 | 33013.6 | -57351.5 |
-| WI_J_BR3S | HOLD | 19.0 | 22.5 | 441.6 | 58943.3 | 72757.5 | 5774.6 | -44697.2 |
-| WI_J_BR3S | PRE | 5.2 | 9.3 | -452.3 | 63274.5 | 66713.5 | 12000.0 | -26099.3 |
 | WI_J_RS30T35 | L1M | 60.2 | 60.0 | 1094.9 | 10775.2 | 27055.7 | 11703.3 | 11703.3 |
 | WI_J_RS30T35 | L3M | 8.5 | 8.1 | 1031.0 | 38158.6 | 41699.4 | 21333.7 | 7413.0 |
 | WI_J_RS30T35 | L6M | 8.5 | 8.1 | -83.4 | 38158.6 | 41699.4 | 31162.1 | -4886.5 |
@@ -1647,9 +1713,20 @@ vs JN04RM
 | WI_K_W2S | L3M | 35.0 | 37.9 | 1579.3 | 27090.1 | 41699.4 | 25296.7 | -3913.0 |
 | WI_K_W2S | L6M | 27.3 | 30.5 | 766.5 | 30321.6 | 41699.4 | 34066.6 | -3965.6 |
 | WI_K_W2S | HOLD | -5.4 | -0.8 | -41.3 | 76692.8 | 72757.5 | 20557.6 | -14435.0 |
+| WI_J_BR3S | L1M | 26.7 | 29.9 | -3564.8 | 19835.4 | 27055.7 | -414.4 | -414.4 |
+| WI_J_BR3S | L3M | 28.1 | 31.2 | -811.4 | 29993.2 | 41699.4 | 29596.9 | -17763.8 |
+| WI_J_BR3S | L6M | 14.4 | 18.1 | 782.7 | 35674.8 | 41699.4 | 33013.6 | -57351.5 |
+| WI_J_BR3S | HOLD | 19.0 | 22.5 | 441.6 | 58943.3 | 72757.5 | 5774.6 | -44697.2 |
+| WI_J_BR3S | PRE | 5.2 | 9.3 | -452.3 | 63274.5 | 66713.5 | 12000.0 | -26099.3 |
+| WI_J_BR3S | X' | 4.3 | 8.5 | 69.4 | 61307.4 | 64076.6 | 15525.5 | -345.4 |
+| WI_J_BR3S | WF2W | 0.0 | 50.6 | -257.7 | nan | nan | nan | nan |
+| WI_J_RS30H | L1M | 15.9 | 12.0 | -50.0 | 22762.2 | 27055.7 | 3316.3 | 3316.3 |
+| WI_J_RS30H | L3M | 13.6 | 9.6 | 108.5 | 36044.5 | 41699.4 | 13070.7 | -24516.5 |
+| WI_J_RS30H | L6M | 13.6 | 9.6 | -755.3 | 36044.5 | 41699.4 | 20365.3 | -36859.2 |
 | WI_L_PUSHH | L1M | 4.7 | 3.0 | 423.3 | 25785.9 | 27055.7 | -2344.1 | -2344.1 |
 | WI_L_PUSHH | L3M | 15.9 | 14.4 | -215.0 | 35087.7 | 41699.4 | 12501.2 | -22280.8 |
 | WI_L_PUSHH | L6M | 15.9 | 14.4 | -296.1 | 35087.7 | 41699.4 | 18416.1 | -21772.9 |
+| WI_L_PUSHH | HOLD | 20.2 | 18.8 | -342.1 | 58036.4 | 72757.5 | 22567.1 | -18037.8 |
 
 vs LPB
 | cell | window | cut | eq_cut | dmean | dd | dd_ref | d_worst5 | d_best5 |
@@ -1687,11 +1764,6 @@ vs LPB
 | WI_I_ON15S | L1M | 52.7 | 43.9 | -9757.0 | 24263.6 | 51252.7 | 11808.9 | 11808.9 |
 | WI_I_ON15S | L3M | 39.3 | 28.1 | -5207.0 | 46873.7 | 77224.2 | 74588.7 | -89868.8 |
 | WI_I_ON15S | L6M | 39.3 | 28.1 | -3344.1 | 46873.7 | 77224.2 | 94361.3 | -83398.6 |
-| WI_J_BR3S | L1M | 61.3 | 63.7 | -6004.0 | 19835.4 | 51252.7 | 13516.8 | 13516.8 |
-| WI_J_BR3S | L3M | 61.2 | 63.6 | 4396.7 | 29993.2 | 77224.2 | 83169.8 | -66665.4 |
-| WI_J_BR3S | L6M | 53.8 | 56.6 | 1043.4 | 35674.8 | 77224.2 | 87471.4 | -81571.0 |
-| WI_J_BR3S | HOLD | 25.2 | 29.8 | -2144.8 | 58943.3 | 78842.0 | 96023.4 | -102406.2 |
-| WI_J_BR3S | PRE | 36.4 | 40.3 | -1961.6 | 63274.5 | 99479.4 | 104974.3 | -166595.6 |
 | WI_J_RS30T35 | L1M | 79.0 | 77.3 | -5605.3 | 10775.2 | 51252.7 | 25634.5 | 25634.5 |
 | WI_J_RS30T35 | L3M | 50.6 | 46.6 | -908.3 | 38158.6 | 77224.2 | 82343.0 | -41488.6 |
 | WI_J_RS30T35 | L6M | 50.6 | 46.6 | -1590.3 | 38158.6 | 77224.2 | 93056.2 | -43899.2 |
@@ -1703,9 +1775,20 @@ vs LPB
 | WI_K_W2S | L3M | 64.9 | 61.6 | -2210.0 | 27090.1 | 77224.2 | 96672.7 | -52814.6 |
 | WI_K_W2S | L6M | 60.7 | 57.0 | -1846.0 | 30321.6 | 77224.2 | 106327.5 | -55401.4 |
 | WI_K_W2S | HOLD | 2.7 | -6.4 | -4107.6 | 76692.8 | 78842.0 | 113676.1 | -88542.8 |
+| WI_J_BR3S | L1M | 61.3 | 63.7 | -6004.0 | 19835.4 | 51252.7 | 13516.8 | 13516.8 |
+| WI_J_BR3S | L3M | 61.2 | 63.6 | 4396.7 | 29993.2 | 77224.2 | 83169.8 | -66665.4 |
+| WI_J_BR3S | L6M | 53.8 | 56.6 | 1043.4 | 35674.8 | 77224.2 | 87471.4 | -81571.0 |
+| WI_J_BR3S | HOLD | 25.2 | 29.8 | -2144.8 | 58943.3 | 78842.0 | 96023.4 | -102406.2 |
+| WI_J_BR3S | PRE | 36.4 | 40.3 | -1961.6 | 63274.5 | 99479.4 | 104974.3 | -166595.6 |
+| WI_J_BR3S | X' | 50.0 | 53.1 | -641.8 | 61307.4 | 122552.7 | 82071.3 | -54645.7 |
+| WI_J_BR3S | WF2W | 36.4 | 86.1 | -3018.3 | nan | nan | nan | nan |
+| WI_J_RS30H | L1M | 55.6 | 48.0 | -6056.0 | 22762.2 | 51252.7 | 17247.6 | 17247.6 |
+| WI_J_RS30H | L3M | 53.3 | 45.3 | -3679.1 | 36044.5 | 77224.2 | 79613.0 | -73418.1 |
+| WI_J_RS30H | L6M | 53.3 | 45.3 | -3149.5 | 36044.5 | 77224.2 | 87792.4 | -70769.5 |
 | WI_L_PUSHH | L1M | 49.7 | 43.4 | -7528.7 | 25785.9 | 51252.7 | 11587.1 | 11587.1 |
 | WI_L_PUSHH | L3M | 54.6 | 48.9 | -3386.0 | 35087.7 | 77224.2 | 84244.1 | -71182.4 |
 | WI_L_PUSHH | L6M | 54.6 | 48.9 | -2394.2 | 35087.7 | 77224.2 | 91043.9 | -49731.0 |
+| WI_L_PUSHH | HOLD | 26.4 | 17.2 | -4156.3 | 58036.4 | 78842.0 | 109098.8 | -61452.5 |
 
 ## Behaviour-targeted use (standing principle 19:45Z): flag acts only on a same-side P7 re-entry after a P7 loser (within 120 min, same session list)
 There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$216 for all other P7 trades). Skipping all of them cuts the L6M stack drawdown by only -2.0 percent (HOLD -14.2, PRE 13.7, X-prime -1.8) and removes $48k of best-20-week winners against $65k of worst-20-week losers; half-size: L6M -0.8, HOLD -4.6. Best flag-conditioned re-entry cells (minimum equal-mean cut over four windows) are all below 9 percent and flag fewer than 300 trades: no robust cell.
@@ -1719,6 +1802,7 @@ There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$
 - WI_J_ES60S L6M (stack, per week): full stops 25.3/wk $-38028; give-backs 9.4/wk (9.2 round-trips) realised $-10669, forgone vs target $26478; same-side losing runs max 13, p95 7, $-41534 lost on 3rd-and-later; no-new-evidence re-entries 41.5/wk $1546; recoveries cut 14.8/wk $38563, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $8392/wk, losers avoided $7033/wk, net -1226 $/wk; pnl $18305/wk.
 - WI_J_NQ60S L6M (stack, per week): full stops 25.3/wk $-37976; give-backs 9.5/wk (9.4 round-trips) realised $-10704, forgone vs target $26709; same-side losing runs max 13, p95 6, $-39788 lost on 3rd-and-later; no-new-evidence re-entries 40.2/wk $2380; recoveries cut 14.6/wk $37653, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $13575/wk, losers avoided $12103/wk, net -1658 $/wk; pnl $17872/wk.
 - WI_J_RS15H L6M (stack, per week): full stops 25.4/wk $-38034; give-backs 9.9/wk (9.8 round-trips) realised $-10915, forgone vs target $27124; same-side losing runs max 13, p95 7, $-42321 lost on 3rd-and-later; no-new-evidence re-entries 44.0/wk $1533; recoveries cut 15.5/wk $38697, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $342/wk, losers avoided $539/wk, net -941 $/wk; pnl $18589/wk.
+- WI_J_RS30H L6M (stack, per week): full stops 25.5/wk $-38276; give-backs 9.9/wk (9.8 round-trips) realised $-11002, forgone vs target $27348; same-side losing runs max 13, p95 7, $-42920 lost on 3rd-and-later; no-new-evidence re-entries 44.1/wk $1686; recoveries cut 15.3/wk $37636, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $208/wk, losers avoided $295/wk, net -1509 $/wk; pnl $18021/wk.
 - WI_J_RS30T35 L6M (stack, per week): full stops 25.5/wk $-38189; give-backs 9.2/wk (9.1 round-trips) realised $-10401, forgone vs target $25868; same-side losing runs max 13, p95 6, $-40963 lost on 3rd-and-later; no-new-evidence re-entries 43.5/wk $2955; recoveries cut 14.9/wk $39205, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $2441/wk, losers avoided $1922/wk, net +363 $/wk; pnl $19893/wk.
 - WI_K_DOW1AS L6M (stack, per week): full stops 25.4/wk $-37932; give-backs 9.6/wk (9.5 round-trips) realised $-10431, forgone vs target $25863; same-side losing runs max 13, p95 6, $-35717 lost on 3rd-and-later; no-new-evidence re-entries 40.0/wk $1543; recoveries cut 14.2/wk $34685, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $21275/wk, losers avoided $18005/wk, net -2901 $/wk; pnl $16629/wk.
 - WI_K_W2AS L6M (stack, per week): full stops 25.4/wk $-38081; give-backs 9.9/wk (9.8 round-trips) realised $-10968, forgone vs target $27363; same-side losing runs max 13, p95 6, $-41119 lost on 3rd-and-later; no-new-evidence re-entries 42.2/wk $2243; recoveries cut 14.9/wk $37388, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $5402/wk, losers avoided $5430/wk, net +40 $/wk; pnl $19570/wk.
@@ -1732,15 +1816,15 @@ There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$
 Plain reading: an entry gate leaves the three defects (full stops, give-backs, same-side losing runs) where they were, because it only removes entries and the entries it removes are not the ones that form the runs; by the standing principle families I-L are therefore NOT acceptable as exits or re-entry fixes on their own. Their use is as evidence tests inside the re-entry rule (W-M probe / confirm).
 
 ## Finalist block: J breadth_ext15==3 skip (WI_J_BR3S)
-- Windows on JN04RM base (exact): L1M cut 26.7 eq 29.9 dmean -3564.8; L3M cut 28.1 eq 31.2 dmean -811.4; L6M cut 14.4 eq 18.1 dmean 782.7; HOLD cut 19.0 eq 22.5 dmean 441.6; PRE cut 5.2 eq 9.3 dmean -452.3; X' cut not run eq not run dmean not run. Same set run on LPB base: see the LPB table (WIL_J_BR3S, L6M only if finished).
+- Windows on JN04RM base (exact): L1M cut 26.7 eq 29.9 dmean -3564.8; L3M cut 28.1 eq 31.2 dmean -811.4; L6M cut 14.4 eq 18.1 dmean 782.7; HOLD cut 19.0 eq 22.5 dmean 441.6; PRE cut 5.2 eq 9.3 dmean -452.3; X' cut 4.3 eq 8.5 dmean 69.4; WF2W cut 0.0 eq 50.6 dmean -257.7 (WF2W: cut = bi-weekly re-pick cut vs JN04RM, eq column = percent of refit periods beaten; vs the LPB reference the same set is cut 36.4 WF, 86.1 percent beaten). Same set run on LPB base: see the LPB table (WIL_J_BR3S, L6M only if finished).
 - Frozen live week 11-01..05 (first-order replay of the live P7 trades with the same flag): 11 of 53 P7 trades flagged, their live P&L +$30.2k removed, +$54.6k kept: the week stays winning but gives up $30k of trend winners (cost of the gate in a trend week).
 - What it is in v1.7 terms: not expressible (needs ES and RTY 1-min bars inside DS7). v1.8 fields: `ExtBreadthN` (int minutes, 15), `ExtBreadthSkipAt` (int, 3), per signal: for each of NQ, ES, RTY the minute index of the session high (long) or low (short) built from 1-min bars of the current session (session = 18:00 ET Asia, 02:00 London, 09:30 NY AM boundaries as in the P7 session string), breadth = number of the three whose extreme time is within N minutes of the signal; if breadth == ExtBreadthSkipAt the P7 signal is skipped (or lots x0.5); policy-file third column tag `ext3` on the trade for the log.
 - Five worked rows (frozen live week P7 signals, real values; breadth = number of NQ/ES/RTY at a new session extreme in the trade direction within 15 min):
-  - 11-02 01:45Z long/short long 4 lots: NQ 1 ES 0 RTY 1 breadth 2 -> trade; actual Target $4791
-  - 11-04 05:53Z long/short long 7 lots: NQ 0 ES 0 RTY 0 breadth 0 -> trade; actual PolicyCut $-4064
-  - 11-04 10:02Z long/short long 1 lots: NQ 1 ES 1 RTY 1 breadth 3 -> SKIP; actual Target $1195
-  - 11-05 15:39Z long/short short 5 lots: NQ 1 ES 1 RTY 1 breadth 3 -> SKIP; actual Target $5976
-  - 11-05 08:33Z long/short long 2 lots: NQ 1 ES 1 RTY 0 breadth 2 -> trade; actual ThL2Cut $-1305
+  - 11-02 01:45Z long 4 lots: NQ 1 ES 0 RTY 1 breadth 2 -> trade; actual Target $4791
+  - 11-04 05:53Z long 7 lots: NQ 0 ES 0 RTY 0 breadth 0 -> trade; actual PolicyCut $-4064
+  - 11-04 10:02Z long 1 lots: NQ 1 ES 1 RTY 1 breadth 3 -> SKIP; actual Target $1195
+  - 11-05 15:39Z short 5 lots: NQ 1 ES 1 RTY 1 breadth 3 -> SKIP; actual Target $5976
+  - 11-05 08:33Z long 2 lots: NQ 1 ES 1 RTY 0 breadth 2 -> trade; actual ThL2Cut $-1305
 
 ## Worst 10 sessions replayed (HOLD months, JN04RM vs WI_J_BR3S)
 # worst-10 stack sessions (HOLD months, ref JN04RM) replayed for WI_J_BR3S
@@ -1925,7 +2009,7 @@ Flip statistics (mean P&L per lot of the flip signal versus all P7 signals and v
 
 ## Q. Ranker, joint stage, minimal rule set (W-Q) (Q)
 
-Source DS3_WORKS_Q.md (mtime 2026-11-12T07:30:42Z UTC), included verbatim, read only:
+Source DS3_WORKS_Q.md (mtime 2026-11-12T09:30:52Z UTC), included verbatim, read only:
 
 # DS3_WORKS_Q - W-Q (family Q ranker + JOINT STAGE), page 0, 2026-11-11 19:20Z (date -u). Shadow only, post-hoc, no PASS claim.
 Prereg autopilot/WORKS_Q_PREREG.md (sha256 bc9d2cde..., DECISIONS.md 19:14Z). Code outputs/code/th_works_q/q_rank.py and q_registry.py; outputs /mnt/l2/l2vast/_th_works/q/.
@@ -1942,9 +2026,9 @@ Prereg autopilot/WORKS_Q_PREREG.md (sha256 bc9d2cde..., DECISIONS.md 19:14Z). Co
 ## Next
 Page 03:00Z will carry: ranker re-run on the landed feature tables with untaken signals, registry with top-3 per family, factorial pre-screen, first exact joint rows, and the budget actually spent.
 
-## Auto section (chain, rebuilt 2026-11-12T07:30:42Z)
+## Auto section (chain, rebuilt 2026-11-12T09:30:52Z)
 Inputs seen: 42 watched files; feature tables landed: ['p7_feat_I.parquet', 'p7_feat_I_v2.parquet', 'p7_signal_features.parquet']. Cycle log: no change in feature tables, ranker not re-run.
-Registry rows by family: {'A-comp': 2, 'A1': 5, 'A2': 5, 'A3': 6, 'A4': 9, 'G': 2, 'other': 9}. launch gate MemAvail 119 GB (need 62): OPEN; no joint set is defined yet (needs the families top-3 specs), so nothing launched.
+Registry rows by family: {'A-comp': 2, 'A1': 5, 'A2': 5, 'A3': 6, 'A4': 9, 'G': 2, 'other': 9}. launch gate MemAvail 111 GB (need 62): OPEN; no joint set is defined yet (needs the families top-3 specs), so nothing launched.
 Ranker (first-order, GBDT mean over 3 seeds vs null 95th percentile, dollars per week):
 action  win    gbdt  null95
    dec HOLD  6527.0  3526.0
