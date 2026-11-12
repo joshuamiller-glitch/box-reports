@@ -1,9 +1,94 @@
 # DS3_NEXT_FEATURES_F2 — desk-state family (item 2) and winning-day protection (item 5) — W-F2
 
-Generated 2026-11-12 18:40Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
+Generated 2026-11-12 19:20Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
 
-No exact cell has a complete window yet (a window is scored when all its months exist for the cell AND its base).
+## 0. Trend-week clause (first): sum of the base's 5 best weeks kept, and base winning weeks turned losing (per window)
 
+| cell | base | window | 5 best weeks: base $ | cell $ | kept % | winning weeks turned losing | weeks |
+|--|--|--|--|--|--|--|--|
+| NF_D_PL_day_half_m1p5_L | JN05W2 | HOLD | 340478 | 324236 | 95.2 | 3 of 37 | 52 |
+| NF_D_PL_day_half_m2_J | JN05W2J | HOLD | 262552 | 260027 | 99.0 | 1 of 38 | 52 |
+| NF_D_ST_half_2_L | JN05W2 | HOLD | 340478 | 304366 | 89.4 | 0 of 37 | 52 |
+| NF_D_OB_best_m2_J | JN05W2J | L1M | 10523 | 20456 | 194.4 | 0 of 1 | 4 |
+| NF_D_OB_best_m2_L | JN05W2 | L1M | 2425 | 27271 | 1124.5 | 0 of 2 | 4 |
+| NF_D_PL_day_half_m1p5_J | JN05W2J | L1M | 10523 | -6709 | -63.8 | 0 of 1 | 4 |
+| NF_D_PL_day_half_m1p5_L | JN05W2 | L1M | 2425 | 5317 | 219.2 | 0 of 2 | 4 |
+| NF_D_PL_day_half_m2_J | JN05W2J | L1M | 10523 | -4348 | -41.3 | 0 of 1 | 4 |
+| NF_D_PL_day_half_m2_L | JN05W2 | L1M | 2425 | 11301 | 466.0 | 0 of 2 | 4 |
+| NF_D_ST_half_2_J | JN05W2J | L1M | 10523 | 10756 | 102.2 | 0 of 1 | 4 |
+| NF_D_ST_half_2_L | JN05W2 | L1M | 2425 | 6538 | 269.6 | 0 of 2 | 4 |
+| NF_D_ST_half_3_J | JN05W2J | L1M | 10523 | 9099 | 86.5 | 0 of 1 | 4 |
+| NF_D_ST_half_4_J | JN05W2J | L1M | 10523 | 10058 | 95.6 | 0 of 1 | 4 |
+| NF_D_WD_fresh_3_J | JN05W2J | L1M | 10523 | -962 | -9.1 | 0 of 1 | 4 |
+| NF_D_WD_half_3_L | JN05W2 | L1M | 2425 | 1520 | 62.7 | 0 of 2 | 4 |
+| NF_D_OB_best_m2_J | JN05W2J | L3M | 189873 | 186333 | 98.1 | 0 of 8 | 13 |
+| NF_D_OB_best_m2_L | JN05W2 | L3M | 209474 | 194782 | 93.0 | 0 of 9 | 13 |
+| NF_D_PL_day_half_m1p5_J | JN05W2J | L3M | 189873 | 172743 | 91.0 | 0 of 8 | 13 |
+| NF_D_PL_day_half_m1p5_L | JN05W2 | L3M | 209474 | 214945 | 102.6 | 0 of 9 | 13 |
+| NF_D_PL_day_half_m2_J | JN05W2J | L3M | 189873 | 170334 | 89.7 | 0 of 8 | 13 |
+| NF_D_PL_day_half_m2_L | JN05W2 | L3M | 209474 | 217139 | 103.7 | 0 of 9 | 13 |
+| NF_D_ST_half_2_J | JN05W2J | L3M | 189873 | 185386 | 97.6 | 0 of 8 | 13 |
+| NF_D_ST_half_2_L | JN05W2 | L3M | 209474 | 191925 | 91.6 | 0 of 9 | 13 |
+| NF_D_ST_half_3_J | JN05W2J | L3M | 189873 | 185862 | 97.9 | 0 of 8 | 13 |
+| NF_D_ST_half_4_J | JN05W2J | L3M | 189873 | 187574 | 98.8 | 0 of 8 | 13 |
+| NF_D_WD_fresh_3_J | JN05W2J | L3M | 189873 | 131320 | 69.2 | 0 of 8 | 13 |
+| NF_D_WD_half_3_L | JN05W2 | L3M | 209474 | 179913 | 85.9 | 0 of 9 | 13 |
+| NF_D_OB_best_m2_J | JN05W2J | L6M | 250435 | 244825 | 97.8 | 2 of 20 | 26 |
+| NF_D_OB_best_m2_L | JN05W2 | L6M | 337218 | 308062 | 91.4 | 2 of 19 | 26 |
+| NF_D_PL_day_half_m1p5_J | JN05W2J | L6M | 250435 | 249277 | 99.5 | 0 of 20 | 26 |
+| NF_D_PL_day_half_m1p5_L | JN05W2 | L6M | 337218 | 311062 | 92.2 | 1 of 19 | 26 |
+| NF_D_PL_day_half_m2_J | JN05W2J | L6M | 250435 | 248462 | 99.2 | 0 of 20 | 26 |
+| NF_D_PL_day_half_m2_L | JN05W2 | L6M | 337218 | 311114 | 92.3 | 0 of 19 | 26 |
+| NF_D_ST_half_2_J | JN05W2J | L6M | 250435 | 225373 | 90.0 | 1 of 20 | 26 |
+| NF_D_ST_half_2_L | JN05W2 | L6M | 337218 | 286968 | 85.1 | 0 of 19 | 26 |
+| NF_D_ST_half_3_J | JN05W2J | L6M | 250435 | 250390 | 100.0 | 0 of 20 | 26 |
+| NF_D_ST_half_4_J | JN05W2J | L6M | 250435 | 249793 | 99.7 | 0 of 20 | 26 |
+| NF_D_WD_fresh_3_J | JN05W2J | L6M | 250435 | 126707 | 50.6 | 1 of 20 | 26 |
+| NF_D_WD_half_3_L | JN05W2 | L6M | 337218 | 313459 | 93.0 | 0 of 19 | 26 |
+
+## 1. Windows (maxDD cut %, equal-mean cut %, d mean $/wk all weeks, carry week NOT dropped)
+
+| cell | window | DD cut % | eq-mean cut % | d mean/wk | mean/wk | base mean/wk | months |
+|--|--|--|--|--|--|--|--|
+| NF_D_OB_best_m2_J | L1M | 15.1 | 5.0 | 2483 | 5114 | 2631 | 6 |
+| NF_D_OB_best_m2_J | L3M | -74.3 | -95.1 | -1189 | 13752 | 14942 | 6 |
+| NF_D_OB_best_m2_J | L6M | -29.9 | -45.4 | -3076 | 17789 | 20865 | 6 |
+| NF_D_OB_best_m2_L | L1M | 51.7 | 42.9 | 6211 | 6818 | 606 | 10 |
+| NF_D_OB_best_m2_L | L3M | -59.4 | -88.5 | -2485 | 13531 | 16015 | 10 |
+| NF_D_OB_best_m2_L | L6M | -59.4 | -88.5 | -5847 | 19290 | 25137 | 10 |
+| NF_D_PL_day_half_m1p5_J | L1M | 13.0 | 6.1 | -4308 | -1677 | 2631 | 6 |
+| NF_D_PL_day_half_m1p5_J | L3M | 10.1 | 2.9 | -2036 | 12905 | 14942 | 6 |
+| NF_D_PL_day_half_m1p5_J | L6M | 0.3 | -7.7 | -2217 | 18648 | 20865 | 6 |
+| NF_D_PL_day_half_m1p5_L | HOLD | 33.9 | 29.8 | -2062 | 15427 | 17489 | 14 |
+| NF_D_PL_day_half_m1p5_L | L1M | 33.6 | 29.4 | 723 | 1329 | 606 | 14 |
+| NF_D_PL_day_half_m1p5_L | L3M | 4.3 | -1.7 | 14 | 16030 | 16015 | 14 |
+| NF_D_PL_day_half_m1p5_L | L6M | 4.3 | -1.7 | -2652 | 22485 | 25137 | 14 |
+| NF_D_PL_day_half_m2_J | HOLD | 15.1 | 8.6 | -914 | 13491 | 14405 | 12 |
+| NF_D_PL_day_half_m2_J | L1M | 20.0 | 13.9 | -3718 | -1087 | 2631 | 12 |
+| NF_D_PL_day_half_m2_J | L3M | 20.0 | 13.9 | -1805 | 13136 | 14942 | 12 |
+| NF_D_PL_day_half_m2_J | L6M | -1.2 | -8.9 | -2164 | 18701 | 20865 | 12 |
+| NF_D_PL_day_half_m2_L | L1M | 36.9 | 35.0 | 2219 | 2825 | 606 | 6 |
+| NF_D_PL_day_half_m2_L | L3M | 4.3 | 1.3 | 106 | 16121 | 16015 | 6 |
+| NF_D_PL_day_half_m2_L | L6M | 4.3 | 1.3 | -1542 | 23595 | 25137 | 6 |
+| NF_D_ST_half_2_J | L1M | 12.5 | 6.3 | 58 | 2689 | 2631 | 6 |
+| NF_D_ST_half_2_J | L3M | -5.7 | -13.2 | -697 | 14244 | 14942 | 6 |
+| NF_D_ST_half_2_J | L6M | 2.5 | -4.5 | -2733 | 18132 | 20865 | 6 |
+| NF_D_ST_half_2_L | HOLD | 18.1 | 6.9 | -1798 | 15691 | 17489 | 12 |
+| NF_D_ST_half_2_L | L1M | 29.8 | 20.2 | 1028 | 1635 | 606 | 12 |
+| NF_D_ST_half_2_L | L3M | -2.2 | -16.2 | -1561 | 14454 | 16015 | 12 |
+| NF_D_ST_half_2_L | L6M | -2.2 | -16.2 | -3688 | 21449 | 25137 | 12 |
+| NF_D_ST_half_3_J | L1M | 3.5 | -1.8 | -356 | 2275 | 2631 | 7 |
+| NF_D_ST_half_3_J | L3M | -50.8 | -59.2 | -1380 | 13562 | 14942 | 7 |
+| NF_D_ST_half_3_J | L6M | -12.4 | -18.6 | -1430 | 19435 | 20865 | 7 |
+| NF_D_ST_half_4_J | L1M | 3.5 | 1.3 | -116 | 2514 | 2631 | 6 |
+| NF_D_ST_half_4_J | L3M | -15.2 | -17.8 | -827 | 14114 | 14942 | 6 |
+| NF_D_ST_half_4_J | L6M | 0.0 | -2.3 | -759 | 20106 | 20865 | 6 |
+| NF_D_WD_fresh_3_J | L1M | 6.3 | -35.9 | -2871 | -241 | 2631 | 9 |
+| NF_D_WD_fresh_3_J | L3M | 6.3 | -35.9 | -2048 | 12893 | 14942 | 9 |
+| NF_D_WD_fresh_3_J | L6M | 30.2 | -1.3 | -7371 | 13494 | 20865 | 9 |
+| NF_D_WD_half_3_L | L1M | 23.2 | 20.1 | -226 | 380 | 606 | 6 |
+| NF_D_WD_half_3_L | L3M | 12.8 | 9.3 | -2596 | 13419 | 16015 | 6 |
+| NF_D_WD_half_3_L | L6M | 12.8 | 9.3 | -1544 | 23593 | 25137 | 6 |
 
 ## 3. acceptance_p7 and behavioural scorecard (cells with all 43 months)
 

@@ -1,4 +1,4 @@
-# DS3_SURVIVORS_S6 - S6 desk-state cap, "stop trying when behind" (W-S), page 2026-11-12 18:31Z; Shadow only, no PASS claim; recents first, PRE/X' tolerant per rule 2a
+# DS3_SURVIVORS_S6 - S6 desk-state cap, "stop trying when behind" (W-S), page 2026-11-12 19:06Z; Shadow only, no PASS claim; recents first, PRE/X' tolerant per rule 2a
 
 Rule: skip every NEW entry of every book once the stack has closed >= N trades in the label day (17:00 ET roll) AND the stack day P&L is <= -2 R. Hook code/th_screens/scr_hooks.py (feature conj), one set per job, TP engine. Cells JN05W_S6_C22 / C18 / C14 on the live panel base (reference LPB_BASE) and JN05W_S6_C22_RM / C18_RM / C14_RM on JN04RM. The first-order screen (3.5 years, LPB trade list) is in DS3_SCREENS.md. Months present are stated per cell; a window is scored only when all its months are present.
 
@@ -26,7 +26,7 @@ TREND-WEEK CLAUSE (L6M, ): the reference's 5 best weeks sum to $+299107 and the 
 TREND-WEEK CLAUSE (HOLD, ): the reference's 5 best weeks sum to $+323722 and the cell's same weeks to $+326680; winning weeks turned losing: 2 of 36; $ given up inside winning weeks: -73477; sum of the 20 worst weeks cell -217029 vs ref -281405.
 TREND-WEEK CLAUSE (all 3.5 years): pending, 41 of 43 months present.
 
-## JN05W_S6_C22V19 (V19 reading: trades OPENED since the roll >= 22 AND realised day P&L <= -2 R) vs LPB_BASE (live panel base) - 41 of 43 months present
+## JN05W_S6_C22V19 (V19 reading: trades OPENED since the roll >= 22 AND realised day P&L <= -2 R) vs LPB_BASE (live panel base) - 42 of 43 months present
 | window | maxDD cut % | d mean $/wk | cell maxDD $ | ref maxDD $ | worst-20 cell / ref $k |
 |---|---|---|---|---|---|
 | L1M | 45.0 | -2598 | 28201 | 51253 | 17 / 1 |
@@ -36,7 +36,7 @@ TREND-WEEK CLAUSE (all 3.5 years): pending, 41 of 43 months present.
 | PRE | 14.2 | +348 | 85371 | 99479 | -511 / -529 |
 TREND-WEEK CLAUSE (L6M, ): the reference's 5 best weeks sum to $+331449 and the cell's same weeks to $+347166; winning weeks turned losing: 2 of 19; $ given up inside winning weeks: -94825; sum of the 20 worst weeks cell +180747 vs ref +154669.
 TREND-WEEK CLAUSE (HOLD, ): the reference's 5 best weeks sum to $+376655 and the cell's same weeks to $+389080; winning weeks turned losing: 2 of 37; $ given up inside winning weeks: -116636; sum of the 20 worst weeks cell -299350 vs ref -370271.
-TREND-WEEK CLAUSE (all 3.5 years): pending, 41 of 43 months present.
+TREND-WEEK CLAUSE (all 3.5 years): pending, 42 of 43 months present.
 
 ## JN05W_S6_C22V19_RM (V19 reading: trades OPENED since the roll >= 22 AND realised day P&L <= -2 R) vs JN04RM (dials on) - 41 of 43 months present
 | window | maxDD cut % | d mean $/wk | cell maxDD $ | ref maxDD $ | worst-20 cell / ref $k |
@@ -62,7 +62,7 @@ TREND-WEEK CLAUSE (L6M, ): the reference's 5 best weeks sum to $+331449 and the 
 TREND-WEEK CLAUSE (HOLD, ): the reference's 5 best weeks sum to $+376655 and the cell's same weeks to $+384330; winning weeks turned losing: 3 of 37; $ given up inside winning weeks: -158721; sum of the 20 worst weeks cell -305271 vs ref -370271.
 TREND-WEEK CLAUSE (all 3.5 years): pending, 41 of 43 months present.
 
-## JN05W_S6_C18_RM (stack closes today >= 18 AND stack day P&L <= -2 R) vs JN04RM (dials on) - 40 of 43 months present
+## JN05W_S6_C18_RM (stack closes today >= 18 AND stack day P&L <= -2 R) vs JN04RM (dials on) - 41 of 43 months present
 | window | maxDD cut % | d mean $/wk | cell maxDD $ | ref maxDD $ | worst-20 cell / ref $k |
 |---|---|---|---|---|---|
 | L1M | 65.0 | +5862 | 9469 | 27056 | 21 / 15 |
@@ -72,9 +72,9 @@ TREND-WEEK CLAUSE (all 3.5 years): pending, 41 of 43 months present.
 | PRE | 45.4 | -31 | 36447 | 66714 | -292 / -328 |
 TREND-WEEK CLAUSE (L6M, ): the reference's 5 best weeks sum to $+299107 and the cell's same weeks to $+317388; winning weeks turned losing: 1 of 19; $ given up inside winning weeks: -54762; sum of the 20 worst weeks cell +201806 vs ref +180775.
 TREND-WEEK CLAUSE (HOLD, ): the reference's 5 best weeks sum to $+323722 and the cell's same weeks to $+323147; winning weeks turned losing: 3 of 36; $ given up inside winning weeks: -93133; sum of the 20 worst weeks cell -209057 vs ref -281405.
-TREND-WEEK CLAUSE (all 3.5 years): pending, 40 of 43 months present.
+TREND-WEEK CLAUSE (all 3.5 years): pending, 41 of 43 months present.
 
-## JN05W_S6_C14 (stack closes today >= 14 AND stack day P&L <= -2 R) vs LPB_BASE (live panel base) - 40 of 43 months present
+## JN05W_S6_C14 (stack closes today >= 14 AND stack day P&L <= -2 R) vs LPB_BASE (live panel base) - 41 of 43 months present
 | window | maxDD cut % | d mean $/wk | cell maxDD $ | ref maxDD $ | worst-20 cell / ref $k |
 |---|---|---|---|---|---|
 | L1M | 51.0 | -838 | 25105 | 51253 | 25 / 1 |
@@ -84,9 +84,9 @@ TREND-WEEK CLAUSE (all 3.5 years): pending, 40 of 43 months present.
 | PRE | 18.4 | +196 | 81184 | 99479 | -480 / -529 |
 TREND-WEEK CLAUSE (L6M, ): the reference's 5 best weeks sum to $+331449 and the cell's same weeks to $+338108; winning weeks turned losing: 2 of 19; $ given up inside winning weeks: -132998; sum of the 20 worst weeks cell +139761 vs ref +154669.
 TREND-WEEK CLAUSE (HOLD, ): the reference's 5 best weeks sum to $+376655 and the cell's same weeks to $+383084; winning weeks turned losing: 3 of 37; $ given up inside winning weeks: -202061; sum of the 20 worst weeks cell -312029 vs ref -370271.
-TREND-WEEK CLAUSE (all 3.5 years): pending, 40 of 43 months present.
+TREND-WEEK CLAUSE (all 3.5 years): pending, 41 of 43 months present.
 
-## JN05W_S6_C14_RM (stack closes today >= 14 AND stack day P&L <= -2 R) vs JN04RM (dials on) - 40 of 43 months present
+## JN05W_S6_C14_RM (stack closes today >= 14 AND stack day P&L <= -2 R) vs JN04RM (dials on) - 41 of 43 months present
 | window | maxDD cut % | d mean $/wk | cell maxDD $ | ref maxDD $ | worst-20 cell / ref $k |
 |---|---|---|---|---|---|
 | L1M | 85.2 | +993 | 4012 | 27056 | 35 / 15 |
@@ -96,12 +96,12 @@ TREND-WEEK CLAUSE (all 3.5 years): pending, 40 of 43 months present.
 | PRE | -0.5 | -745 | 67056 | 66714 | -308 / -328 |
 TREND-WEEK CLAUSE (L6M, ): the reference's 5 best weeks sum to $+299107 and the cell's same weeks to $+315865; winning weeks turned losing: 2 of 19; $ given up inside winning weeks: -87063; sum of the 20 worst weeks cell +190281 vs ref +180775.
 TREND-WEEK CLAUSE (HOLD, ): the reference's 5 best weeks sum to $+323722 and the cell's same weeks to $+318013; winning weeks turned losing: 6 of 36; $ given up inside winning weeks: -149906; sum of the 20 worst weeks cell -237420 vs ref -281405.
-TREND-WEEK CLAUSE (all 3.5 years): pending, 40 of 43 months present.
+TREND-WEEK CLAUSE (all 3.5 years): pending, 41 of 43 months present.
 
 ## Acceptance test (acceptance_p7.py; judged on the months present, stated by the tool)
 ### JN05W_S6_C22
 ```
-ACCEPTANCE P7 JN05W_S6_C22  2026-11-12 18:32Z   (months 41: 202306..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C22  2026-11-12 19:07Z   (months 41: 202306..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2119 | 6 | 2.0 | 0.90 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -120,7 +120,7 @@ ACCEPT JN05W_S6_C22 FAIL fails=3/20
 ```
 ### JN05W_S6_C22_RM
 ```
-ACCEPTANCE P7 JN05W_S6_C22_RM  2026-11-12 18:32Z   (months 41: 202306..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C22_RM  2026-11-12 19:07Z   (months 41: 202306..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2119 | 6 | 2.0 | 0.90 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -139,13 +139,13 @@ ACCEPT JN05W_S6_C22_RM FAIL fails=4/20
 ```
 ### JN05W_S6_C22V19
 ```
-ACCEPTANCE P7 JN05W_S6_C22V19  2026-11-12 18:32Z   (months 41: 202306..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C22V19  2026-11-12 19:07Z   (months 42: 202305..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| all P7 | LPB_BASE (live ref) | 2119 | 6 | 2.0 | 0.90 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
-| all P7 | JN05W_S6_C22V19 | 2074 | 6 | 2.0 | 0.89 | 42 | 51 | -125984 | 79 / -13022 | 47 | 98 |
-| Asia | LPB_BASE (live ref) | 878 | 6 | 2.0 | 0.92 | 21 | 26 | -80482 | 37 / -10876 | 24 | 33 |
-| Asia | JN05W_S6_C22V19 | 878 | 6 | 2.0 | 0.91 | 20 | 25 | -78772 | 36 / -9166 | 23 | 33 |
+| all P7 | LPB_BASE (live ref) | 2167 | 6 | 2.0 | 0.90 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
+| all P7 | JN05W_S6_C22V19 | 2122 | 6 | 2.0 | 0.88 | 42 | 51 | -125984 | 79 / -13022 | 47 | 98 |
+| Asia | LPB_BASE (live ref) | 900 | 6 | 2.0 | 0.91 | 21 | 26 | -80482 | 37 / -10876 | 24 | 33 |
+| Asia | JN05W_S6_C22V19 | 900 | 6 | 2.0 | 0.91 | 20 | 25 | -78772 | 36 / -9166 | 23 | 33 |
 -- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +28883 (5 trades, 0 such winners $+0)
 -- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +23369 (8 trades, 0 such winners $+0)
 -- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +23252 (7 trades, 0 such winners $+0)
@@ -158,7 +158,7 @@ ACCEPT JN05W_S6_C22V19 FAIL fails=3/20
 ```
 ### JN05W_S6_C22V19_RM
 ```
-ACCEPTANCE P7 JN05W_S6_C22V19_RM  2026-11-12 18:32Z   (months 41: 202306..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C22V19_RM  2026-11-12 19:07Z   (months 41: 202306..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2119 | 6 | 2.0 | 0.90 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -177,7 +177,7 @@ ACCEPT JN05W_S6_C22V19_RM FAIL fails=4/20
 ```
 ### JN05W_S6_C18
 ```
-ACCEPTANCE P7 JN05W_S6_C18  2026-11-12 18:33Z   (months 41: 202306..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C18  2026-11-12 19:07Z   (months 41: 202306..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2119 | 6 | 2.0 | 0.90 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -196,7 +196,7 @@ ACCEPT JN05W_S6_C18 FAIL fails=3/20
 ```
 ### JN05W_S6_C18_RM
 ```
-ACCEPTANCE P7 JN05W_S6_C18_RM  2026-11-12 18:33Z   (months 41: 202306..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C18_RM  2026-11-12 19:08Z   (months 41: 202306..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2119 | 6 | 2.0 | 0.90 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -215,13 +215,13 @@ ACCEPT JN05W_S6_C18_RM FAIL fails=4/20
 ```
 ### JN05W_S6_C14
 ```
-ACCEPTANCE P7 JN05W_S6_C14  2026-11-12 18:33Z   (months 40: 202307..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C14  2026-11-12 19:08Z   (months 41: 202306..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| all P7 | LPB_BASE (live ref) | 2065 | 6 | 2.0 | 0.91 | 48 | 57 | -136326 | 90 / -11382 | 53 | 108 |
-| all P7 | JN05W_S6_C14 | 1944 | 6 | 2.0 | 0.88 | 38 | 46 | -112639 | 72 / -7411 | 43 | 83 |
-| Asia | LPB_BASE (live ref) | 857 | 6 | 2.0 | 0.92 | 21 | 26 | -80482 | 37 / -10876 | 24 | 33 |
-| Asia | JN05W_S6_C14 | 857 | 6 | 2.0 | 0.91 | 18 | 23 | -69783 | 34 / -177 | 21 | 33 |
+| all P7 | LPB_BASE (live ref) | 2119 | 6 | 2.0 | 0.90 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
+| all P7 | JN05W_S6_C14 | 1998 | 6 | 2.0 | 0.87 | 38 | 46 | -112639 | 72 / -7411 | 43 | 84 |
+| Asia | LPB_BASE (live ref) | 878 | 6 | 2.0 | 0.92 | 21 | 26 | -80482 | 37 / -10876 | 24 | 33 |
+| Asia | JN05W_S6_C14 | 878 | 6 | 2.0 | 0.91 | 18 | 23 | -69783 | 34 / -177 | 21 | 33 |
 -- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +28883 (5 trades, 0 such winners $+0)
 -- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +23369 (8 trades, 0 such winners $+0)
 -- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +23252 (7 trades, 0 such winners $+0)
@@ -234,13 +234,13 @@ ACCEPT JN05W_S6_C14 FAIL fails=3/20
 ```
 ### JN05W_S6_C14_RM
 ```
-ACCEPTANCE P7 JN05W_S6_C14_RM  2026-11-12 18:33Z   (months 40: 202307..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C14_RM  2026-11-12 19:08Z   (months 41: 202306..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| all P7 | LPB_BASE (live ref) | 2065 | 6 | 2.0 | 0.91 | 48 | 57 | -136326 | 90 / -11382 | 53 | 108 |
-| all P7 | JN05W_S6_C14_RM | 2127 | 6 | 2.0 | 0.90 | 57 | 69 | -74389 | 115 / +5959 | 66 | 49 |
-| Asia | LPB_BASE (live ref) | 857 | 6 | 2.0 | 0.92 | 21 | 26 | -80482 | 37 / -10876 | 24 | 33 |
-| Asia | JN05W_S6_C14_RM | 856 | 6 | 2.0 | 0.94 | 23 | 29 | -38808 | 54 / +13058 | 27 | 41 |
+| all P7 | LPB_BASE (live ref) | 2119 | 6 | 2.0 | 0.90 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
+| all P7 | JN05W_S6_C14_RM | 2186 | 6 | 2.0 | 0.90 | 57 | 69 | -74389 | 115 / +5959 | 66 | 49 |
+| Asia | LPB_BASE (live ref) | 878 | 6 | 2.0 | 0.92 | 21 | 26 | -80482 | 37 / -10876 | 24 | 33 |
+| Asia | JN05W_S6_C14_RM | 877 | 6 | 2.0 | 0.93 | 23 | 29 | -38808 | 54 / +13058 | 27 | 41 |
 -- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +22883 (5 trades, 0 such winners $+0)
 -- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +11869 (8 trades, 0 such winners $+0)
 -- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +12634 (9 trades, 0 such winners $+0)
@@ -273,7 +273,7 @@ JN05W_S6_C22_RM X': months missing (2 of 10), window not scored
 JN05W_S6_C22V19 L6M (stack, per week): full stops 20.0/wk $-32883; give-backs 7.6/wk (7.5 round-trips) realised $-11973, forgone vs target $30862; same-side losing runs max 12, p95 6, $-45975 lost on 3rd-and-later; no-new-evidence re-entries 29.9/wk $-866; recoveries cut 11.4/wk $41187, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $16807/wk, losers avoided $18781/wk, net +1974 $/wk; pnl $21758/wk.
 JN05W_S6_C22V19 HOLD (stack, per week): full stops 19.7/wk $-32832; give-backs 7.0/wk (6.9 round-trips) realised $-11002, forgone vs target $28043; same-side losing runs max 12, p95 6, $-39163 lost on 3rd-and-later; no-new-evidence re-entries 24.2/wk $620; recoveries cut 10.3/wk $36681, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $12160/wk, losers avoided $14078/wk, net +1881 $/wk; pnl $17233/wk.
 JN05W_S6_C22V19 PRE (stack, per week): full stops 16.0/wk $-27558; give-backs 4.8/wk (4.4 round-trips) realised $-7239, forgone vs target $18553; same-side losing runs max 7, p95 4, $-21042 lost on 3rd-and-later; no-new-evidence re-entries 10.9/wk $320; recoveries cut 6.0/wk $20569, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $4080/wk, losers avoided $4791/wk, net +679 $/wk; pnl $12562/wk.
-JN05W_S6_C22V19 X': months missing (2 of 10), window not scored
+JN05W_S6_C22V19 X': months missing (1 of 10), window not scored
 
 ```
 ### JN05W_S6_C22V19_RM (ref JN04RM)
@@ -281,7 +281,7 @@ JN05W_S6_C22V19 X': months missing (2 of 10), window not scored
 JN05W_S6_C22V19_RM L6M (stack, per week): full stops 20.3/wk $-30880; give-backs 8.0/wk (7.9 round-trips) realised $-9302, forgone vs target $23501; same-side losing runs max 11, p95 6, $-36074 lost on 3rd-and-later; no-new-evidence re-entries 33.1/wk $1104; recoveries cut 12.1/wk $33024, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $19585/wk, losers avoided $21158/wk, net +1714 $/wk; pnl $21244/wk.
 JN05W_S6_C22V19_RM HOLD (stack, per week): full stops 19.9/wk $-30369; give-backs 7.4/wk (7.2 round-trips) realised $-8551, forgone vs target $21551; same-side losing runs max 11, p95 6, $-31637 lost on 3rd-and-later; no-new-evidence re-entries 26.1/wk $822; recoveries cut 10.6/wk $28710, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $14350/wk, losers avoided $15944/wk, net +1649 $/wk; pnl $14146/wk.
 JN05W_S6_C22V19_RM PRE (stack, per week): full stops 15.9/wk $-25141; give-backs 5.0/wk (4.6 round-trips) realised $-5258, forgone vs target $13603; same-side losing runs max 9, p95 4, $-16311 lost on 3rd-and-later; no-new-evidence re-entries 12.1/wk $323; recoveries cut 6.6/wk $15693, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $4193/wk, losers avoided $4630/wk, net +438 $/wk; pnl $9847/wk.
-JN05W_S6_C22V19_RM X': months missing (2 of 10), window not scored
+JN05W_S6_C22V19_RM X': months missing (1 of 10), window not scored
 
 ```
 ### JN05W_S6_C18 (ref LPB_BASE)
@@ -305,7 +305,7 @@ JN05W_S6_C18_RM X': months missing (2 of 10), window not scored
 JN05W_S6_C14 L6M (stack, per week): full stops 17.1/wk $-28045; give-backs 6.3/wk (6.2 round-trips) realised $-10133, forgone vs target $26265; same-side losing runs max 11, p95 6, $-40699 lost on 3rd-and-later; no-new-evidence re-entries 24.4/wk $-810; recoveries cut 9.3/wk $35278, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $35742/wk, losers avoided $35936/wk, net +318 $/wk; pnl $20102/wk.
 JN05W_S6_C14 HOLD (stack, per week): full stops 17.4/wk $-29219; give-backs 6.1/wk (5.9 round-trips) realised $-9734, forgone vs target $24949; same-side losing runs max 11, p95 5, $-35470 lost on 3rd-and-later; no-new-evidence re-entries 20.1/wk $775; recoveries cut 8.8/wk $32803, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $25890/wk, losers avoided $26468/wk, net +644 $/wk; pnl $15996/wk.
 JN05W_S6_C14 PRE (stack, per week): full stops 14.4/wk $-25261; give-backs 4.4/wk (4.1 round-trips) realised $-6730, forgone vs target $17139; same-side losing runs max 7, p95 4, $-19180 lost on 3rd-and-later; no-new-evidence re-entries 9.0/wk $279; recoveries cut 5.1/wk $18029, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $10198/wk, losers avoided $11099/wk, net +856 $/wk; pnl $12738/wk.
-JN05W_S6_C14 X': months missing (3 of 10), window not scored
+JN05W_S6_C14 X': months missing (2 of 10), window not scored
 
 ```
 ### JN05W_S6_C14_RM (ref JN04RM)
@@ -313,6 +313,6 @@ JN05W_S6_C14 X': months missing (3 of 10), window not scored
 JN05W_S6_C14_RM L6M (stack, per week): full stops 18.4/wk $-28144; give-backs 7.0/wk (7.0 round-trips) realised $-8327, forgone vs target $21063; same-side losing runs max 10, p95 6, $-31641 lost on 3rd-and-later; no-new-evidence re-entries 28.7/wk $2299; recoveries cut 10.7/wk $29589, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $29896/wk, losers avoided $31014/wk, net +1069 $/wk; pnl $20599/wk.
 JN05W_S6_C14_RM HOLD (stack, per week): full stops 18.2/wk $-27844; give-backs 6.6/wk (6.4 round-trips) realised $-7693, forgone vs target $19595; same-side losing runs max 10, p95 6, $-28303 lost on 3rd-and-later; no-new-evidence re-entries 22.8/wk $1640; recoveries cut 9.5/wk $26193, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $22894/wk, losers avoided $24232/wk, net +1310 $/wk; pnl $13808/wk.
 JN05W_S6_C14_RM PRE (stack, per week): full stops 14.8/wk $-23649; give-backs 4.6/wk (4.2 round-trips) realised $-4903, forgone vs target $12703; same-side losing runs max 9, p95 4, $-15009 lost on 3rd-and-later; no-new-evidence re-entries 10.1/wk $200; recoveries cut 5.6/wk $13810, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $9513/wk, losers avoided $9240/wk, net -317 $/wk; pnl $9092/wk.
-JN05W_S6_C14_RM X': months missing (3 of 10), window not scored
+JN05W_S6_C14_RM X': months missing (2 of 10), window not scored
 
 ```
