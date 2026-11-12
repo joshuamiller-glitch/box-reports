@@ -1,4 +1,4 @@
-# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-12T01:13:02Z; Shadow only, no PASS claims)
+# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-12T01:59:24Z; Shadow only, no PASS claims)
 
 Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. Section D is W-J: the reference rows (JN04RM vs LPB_BASE), the JN05 composition and the REFIT 2026-11-22 preview. Every number is exact-engine, live panel base (P7 day cap 8,400 + table 7,4,0,4,0,0 + P7 cut 40/5x/w5/p3), reference LPB_BASE, ROLLFIX1.
 
@@ -10,13 +10,13 @@ Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. S
 | JN04RM | ACCEPTANCE P7 JN04RM  2026-11-11 19:55Z   (months 43: 202304..202610; reference LPB_BASE months 43) | /mnt/l2/l2vast/_th_works/q/sc/sc_JN04RM.txt |
 | WA_C1 | (not run) | /mnt/l2/l2vast/_th_works/q/sc/sc_WA_C1.txt |
 | WG_E1 | ACCEPTANCE P7 WG_E1  2026-11-11 22:41Z   (months 5: 202606..202610; reference LPB_BASE months 43) | (not run) |
-| JN05W_E1 | ACCEPTANCE P7 JN05W_E1  2026-11-12 00:59Z   (months 6: 202605..202610; reference LPB_BASE months 43) | /mnt/l2/l2vast/_th_works/q/sc/sc_JN05W_E1.txt |
+| JN05W_E1 | ACCEPTANCE P7 JN05W_E1  2026-11-12 01:59Z   (months 12: 202511..202610; reference LPB_BASE months 43) | /mnt/l2/l2vast/_th_works/q/sc/sc_JN05W_E1.txt |
 | JN05W_E1A | (not run) | (not run) |
 
 ## 000. JN05W scorecard (plain words, W-Q behavior_scorecard.py)
 
 JN05W_E1 L6M (stack, per week): full stops 21.5/wk $-33850; give-backs 8.6/wk (8.5 round-trips) realised $-8975, forgone vs target $23652; same-side losing runs max 14, p95 6, $-31548 lost on 3rd-and-later; no-new-evidence re-entries 34.9/wk $-608; recoveries cut 16.2/wk $42198, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $33908/wk, losers avoided $34100/wk, net -2313 $/wk; pnl $17471/wk.
-JN05W_E1 HOLD: months missing (6 of 12), window not scored
+JN05W_E1 HOLD (stack, per week): full stops 20.1/wk $-32026; give-backs 7.4/wk (7.1 round-trips) realised $-7673, forgone vs target $20244; same-side losing runs max 14, p95 6, $-28717 lost on 3rd-and-later; no-new-evidence re-entries 27.7/wk $443; recoveries cut 13.8/wk $34707, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $30570/wk, losers avoided $30216/wk, net -3721 $/wk; pnl $11630/wk.
 JN05W_E1 PRE: months missing (17 of 17), window not scored
 JN05W_E1 X': months missing (10 of 10), window not scored
 
@@ -1386,7 +1386,7 @@ Flip statistics (mean P&L per lot of the flip signal versus all P7 signals and v
 
 ## Q. Ranker, joint stage, minimal rule set (W-Q) (Q)
 
-Source DS3_WORKS_Q.md (mtime 2026-11-12T01:00:11Z UTC), included verbatim, read only:
+Source DS3_WORKS_Q.md (mtime 2026-11-12T01:30:13Z UTC), included verbatim, read only:
 
 # DS3_WORKS_Q - W-Q (family Q ranker + JOINT STAGE), page 0, 2026-11-11 19:20Z (date -u). Shadow only, post-hoc, no PASS claim.
 Prereg autopilot/WORKS_Q_PREREG.md (sha256 bc9d2cde..., DECISIONS.md 19:14Z). Code outputs/code/th_works_q/q_rank.py and q_registry.py; outputs /mnt/l2/l2vast/_th_works/q/.
@@ -1403,9 +1403,9 @@ Prereg autopilot/WORKS_Q_PREREG.md (sha256 bc9d2cde..., DECISIONS.md 19:14Z). Co
 ## Next
 Page 03:00Z will carry: ranker re-run on the landed feature tables with untaken signals, registry with top-3 per family, factorial pre-screen, first exact joint rows, and the budget actually spent.
 
-## Auto section (chain, rebuilt 2026-11-12T01:00:11Z)
+## Auto section (chain, rebuilt 2026-11-12T01:30:13Z)
 Inputs seen: 42 watched files; feature tables landed: ['p7_feat_I.parquet', 'p7_feat_I_v2.parquet', 'p7_signal_features.parquet']. Cycle log: no change in feature tables, ranker not re-run.
-Registry rows by family: {'A-comp': 2, 'A1': 5, 'A2': 5, 'A3': 2, 'G': 2, 'other': 2}. launch gate MemAvail 103 GB (need 62): OPEN; no joint set is defined yet (needs the families top-3 specs), so nothing launched.
+Registry rows by family: {'A-comp': 2, 'A1': 5, 'A2': 5, 'A3': 2, 'G': 2, 'other': 2}. launch gate MemAvail 100 GB (need 62): OPEN; no joint set is defined yet (needs the families top-3 specs), so nothing launched.
 Ranker (first-order, GBDT mean over 3 seeds vs null 95th percentile, dollars per week):
 action  win    gbdt  null95
    dec HOLD  6527.0  3526.0
