@@ -1,4 +1,4 @@
-# DS3_EARLY_CUT - T-EARLY-CUT page 1 (W-X) - Wed Nov 11 07:50:27 PM UTC 2026
+# DS3_EARLY_CUT - T-EARLY-CUT page 1 (W-X) - Wed Nov 11 11:50:33 PM UTC 2026
 
 Shadow only; first-order (stored 1-s mid paths, LPB_BASE trades, exact promotion running, none finished). Table of record: DS3_EARLY_CUT_TABLE.md (+CSV). Prereg: EARLY_CUT_PREREG.md (sha in DECISIONS.md). Acceptance lists: DS3_EARLY_CUT_ACCEPT.md. Code: code/th_ec.
 
@@ -172,7 +172,9 @@ Per-book deliverable status (policy grammar + v1.8 fields): see section 7. Becau
 
 Sets EC_ID, EC_G45/G40/G50/G55 (P7 stop x tgt 60), EC_S40 (P7 scratch), EC_RL (P7 recovery lock), EC_K55, EC_UKC / EC_UKCS (U7 Keltner-mid break / structure stop eq$ lots), EC_P3S (P7 3-min fractal structure stop eq$), EC_NFT_M7, EC_FLAT45 (P7), EC_FLAT45K (K7) written; 560 one-set-per-job lines queued by month in /mnt/l2/l2vast/_early_cut/ec_jobs.txt; nohup chain pid 2098554 / driver 2098556 (autopilot/DS3_EARLY_CUT_PIDS.txt) launches only when MemAvail >= 62 GB (MemAvail was ~29 GB at the last check, so the identity test EC_ID vs LPB_BASE 202610 has NOT run yet; the hook is untested on the engine). Fill model: market cuts at mid(row+1) -/+ 0.80 (engine continuity; live is 1.19-1.20 so cut savings overstate by ~0.4 pt = ~$8 per lot per cut), structure-stop exits at level -1.4 pt (live native central), geometry uses the engine bracket (native stop fills ~1.9 pt better than level, live is 1.4 adverse: geometry gains overstate by ~3 pt per stop). Exact rows: present.
 
-(exact_rows.csv unreadable: No columns to parse from file)
+| set | win | months | wks | mean | dd | cut | dmean | w20cut | fs_wk | fs_usd_wk | fs_ref_wk | fs_usd_ref_wk | fires_wk | recov_lost_n_wk | recov_lost_usd_wk | stops_saved_n_wk | stops_saved_usd_wk | other_cut_usd_wk | net_usd_wk | ntr | ntr_ref |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| EC_ID | L1M | 1 | 2.9 | -16179.8 | 51252.7 | 0.0 | 0.0 | 0.0 | 28.4 | -47271.9 | 28.4 | -47271.9 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 568 | 568 |
 
 ## 7. Deliver per book (v1.7 grammar + v1.8 fields) - proposals only
 

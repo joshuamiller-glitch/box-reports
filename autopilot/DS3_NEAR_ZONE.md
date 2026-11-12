@@ -1,4 +1,4 @@
-# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Wed Nov 11 10:52:31 PM UTC 2026)
+# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Wed Nov 11 11:42:01 PM UTC 2026)
 
 STATUS: Shadow only, post-hoc, no PASS claims (PASS/FAIL below is the trader acceptance test of the order, nothing more). Evidence table: DS3_NEAR_ZONE_TABLE.md (published 19:33Z, before any rule). Prereg NEAR_ZONE_PREREG.md (sha in DECISIONS.md). FIRST-ORDER scores on the LPB_BASE stored 1-s paths (43 months; L6M = 2026-05-12..10-30), slip 1.2 market, fees 4.84/lot, base = live panel rules as in LPB_BASE; exact rows in section 6. P7 is run at 12/7/7 lots (P7x, the users lots) and on the installed 7/4/4 table. Objective: give-back $ removed minus fills clipped $ per week; key = min(L6M, 43 months) net $/wk. Standing trader principle (19:45Z) applied: scorecard items a, b, e below, c and d (re-entry streaks) are untouched by exit-side rules in this first-order frame and are W-Qs tool to confirm.
 
@@ -23,7 +23,7 @@ Reading: no rule family removes the give-backs without clipping fills. The stric
 
 ## Exact status and processes
 
-Exact sets built (private nz_hooks for floor/ladder/rev/bank/work/zone; ptr_hooks grammar lines for flow and plain takes; fill models as above, exact market slip 1.2): 29 sets, 3 of 660 set-months DONE. Identity gate PASSED 22:41Z: PTR_NZ_ID (nz_hooks, no cells) vs LPB_BASE 202610, 769 trades, bit-equal on book/lots/entry/exit/net_fee for ref engine, TP engine and the stored LPB_BASE run (code/th_nz/nz_idtest.py; TP wall 96 s vs old path 159 s, private memory 0.4 GB vs ~10.8 GB per worker per W-T). Chain (pid 2278244, log /mnt/l2/l2vast/_nz/exact_chain.log) now launches workers itself as `TP_ENGINE=1 python3 -I code/th_tp/tp_launch.py sz_exact.py batch SET:ym`, one set per job, max 3 workers, admission via `tp_admit.py request NEARZONE --gate 25` (PRIORITY.txt NEARZONE regex extended with PTR_[A-Z0-9]+_NZ), L6M first then HOLD, PRE. Throughput: see `tp_admit.py rate` (cell-months/hour; before TP this chain had 0 because of the 62 GB gate). Manifest /mnt/l2/l2vast/_nz/exact_manifest.json. Page refresh loop pid 2179089 (every 4 h to 2026-11-12 12:00Z).
+Exact sets built (private nz_hooks for floor/ladder/rev/bank/work/zone; ptr_hooks grammar lines for flow and plain takes; fill models as above, exact market slip 1.2): 23 sets, 9 of 859 set-months DONE. Identity gate PASSED 22:41Z: PTR_NZ_ID (nz_hooks, no cells) vs LPB_BASE 202610, 769 trades, bit-equal on book/lots/entry/exit/net_fee for ref engine, TP engine and the stored LPB_BASE run (code/th_nz/nz_idtest.py; TP wall 96 s vs old path 159 s, private memory 0.4 GB vs ~10.8 GB per worker per W-T). Chain (pid 2335696, log /mnt/l2/l2vast/_nz/exact_chain.log) now launches workers itself as `TP_ENGINE=1 python3 -I code/th_tp/tp_launch.py sz_exact.py batch SET:ym`, one set per job, max 3 workers, admission via `tp_admit.py request NEARZONE --gate 25` (PRIORITY.txt NEARZONE regex extended with PTR_[A-Z0-9]+_NZ), L6M first then HOLD, PRE. Throughput: see `tp_admit.py rate` (cell-months/hour; before TP this chain had 0 because of the 62 GB gate). Manifest /mnt/l2/l2vast/_nz/exact_manifest.json. Page refresh loop pid 2179089 (every 4 h to 2026-11-12 12:00Z).
 
 ## Families h-q (user addendum 21:45Z), first-order, same objective and definitions
 
@@ -207,6 +207,89 @@ Reading: a target that printed (or printed within 1 tick) and did not fill is ra
 - p (noise-scaled floor): feature `atr1m14` (ATR(14) of 1-min bars) + action `floor ext-k*atr` armed at `mfe_pct>=m`
 - q (arrival type): feature `secs_to_zone` (seconds from entry to first mfe_pct>=m) + class floors fast/mid/slow
 
+## Engine order hooks: staggered targets (m, extended), move-target (j), touched-not-filled (h) - EXACT (user priority 23:20Z; T-BUILD-ON item 2)\n
+**Hooks (code/th_nz/nz_hooks.py, private tree, engine untouched).** Extra resting limits live inside the engine alongside the live target order and are matched on every print by the engine itself (match_resting override): staggered rungs (a1 x T for w1 of the lots, a2 x T for w2, the rest keeps the normal 100% target), move-target (a limit at wall - 1 tick for all remaining lots, wall = largest against-side level within wt ticks and >= k x MedLevel, read from the live book at that second; fires once), touched-not-filled (the target level, or within j ticks, has printed and the target is still unfilled N s later -> engine market exit `NZTNF` through the book), re-floor after rung fills (`NZFloor`, engine exit request, stop options entry / entry+2 / none and a remainder floor), tag gate (fresh = n_sess <= 2 and gap >= 30 min, else rechase; chase_k is NOT used, so rechase here = 3rd+ or inside 30 min only) and session gate. Exit names NZStag1/2, NZMove, NZTNF, NZFloor. Partial fills use the engine exec_exit, so lots, locks, caps, stack cuts and re-entries re-simulate.\n
+**Queue / fill model.** Primary (as ordered): an extra passive limit fills at its limit price only when a later print trades THROUGH it by one tick (queue-conservative, no rebate, full order size at the limit). Optimistic bound: touch-fill (a print at the level fills). Engine-native (reported as a calibrated third): the same cumulative-aggressor-volume rule the engine uses for the live target (TARGET_MODE=cumvol: filled when the aggressor volume at or through the level reaches the order size). Touched-not-filled and floors are engine market exits with the engine walk through the book (slip comes from the book, plus the engine latency LAT_FILL). Calibration: the cumvol rule was measured on the 85 live Target exits (84 fit) in the engine build notes (replica/sim.py); I did not re-measure it. One-tick-through is stricter than cumvol for small rungs and looser for the full size, so both are run on the best cell. The live M7 one-tick miss (target printed, unfilled) is exactly the case the through-1-tick rule produces and the touch rule hides: in the stored lists a printed-not-filled target is rare (about 0.4 per week across books at T-1 tick in L6M) and every one of them closed at or below breakeven (table h above). Frozen-week targets: the engine reproduces the live week targets under cumvol per the same notes; no new calibration was possible for staggered rungs because the live system never rested partial targets.\n
+### Staggered targets extended: first-order, rungs 2/3 x positions 60-95% x stop after rung 1 (none / entry / entry+2 / floor) x remainder floor (best cell per scope; through-1-tick PRIMARY, touch OPTIMISTIC)\n
+Per week; key = min(net L6M, net 43 m); net = removed - clipped + other (definitions above). Tags: fresh / rechase from n_sess and gap only (no chase_k).\n
+| book | scope | fill | best cell | key | net L6M | removed | clipped | other | trades |
+|---|---|---|---|---|---|---|---|---|---|
+| P7x | all | through1 | 3 rungs 1/3 at 0.7, 1/3 at 0.9, 1/3 at 100%, after rung1 stop none, remainder floor 0.9 | 3742 | 8574 | 15878 | 13244 | 5941 | 3937 |
+| P7x | all | touch | 3 rungs 1/3 at 0.85, 1/3 at 0.9, 1/3 at 100%, after rung1 stop none, remainder floor 0.9 | 3893 | 9538 | 15826 | 7104 | 815 | 3937 |
+| P7x | fresh | through1 | 3 rungs 1/3 at 0.85, 1/3 at 0.9, 1/3 at 100%, after rung1 stop entry+2, remainder floor off | 1033 | 1033 | 2511 | 1478 | 0 | 1789 |
+| P7x | fresh | touch | 3 rungs 1/3 at 0.85, 1/3 at 0.9, 1/3 at 100%, after rung1 stop entry+2, remainder floor off | 1083 | 1083 | 2523 | 1440 | -0 | 1789 |
+| P7x | rechase | through1 | 3 rungs 1/3 at 0.7, 1/3 at 0.75, 1/3 at 100%, after rung1 stop entry+2, remainder floor 0.9 | 2879 | 8714 | 16196 | 18760 | 11278 | 2148 |
+| P7x | rechase | touch | 3 rungs 1/3 at 0.7, 1/3 at 0.75, 1/3 at 100%, after rung1 stop entry+2, remainder floor 0.9 | 2710 | 8440 | 16171 | 19017 | 11286 | 2148 |
+| P7x | sess_asia | through1 | 3 rungs 1/3 at 0.8, 1/3 at 0.9, 1/3 at 100%, after rung1 stop none, remainder floor 0.9 | 2778 | 6633 | 11005 | 5412 | 1040 | 1768 |
+| P7x | sess_asia | touch | 3 rungs 1/3 at 0.8, 1/3 at 0.9, 1/3 at 100%, after rung1 stop entry+2, remainder floor 0.9 | 2969 | 5423 | 12875 | 8896 | 1445 | 1768 |
+| P7x | sess_london | through1 | 3 rungs 1/3 at 0.7, 1/3 at 0.85, 1/3 at 100%, after rung1 stop none, remainder floor 0.9 | 448 | 1265 | 4285 | 4569 | 1548 | 1208 |
+| P7x | sess_london | touch | 3 rungs 1/3 at 0.7, 1/3 at 0.85, 1/3 at 100%, after rung1 stop none, remainder floor 0.9 | 452 | 1234 | 4283 | 4596 | 1548 | 1208 |
+| P7x | sess_nyam | through1 | 3 rungs 1/3 at 0.6, 1/3 at 0.7, 1/3 at 100%, after rung1 stop entry, remainder floor 0.5 | 1096 | 1111 | 1905 | 1866 | 1072 | 961 |
+| P7x | sess_nyam | touch | 3 rungs 1/3 at 0.6, 1/3 at 0.7, 1/3 at 100%, after rung1 stop entry, remainder floor 0.5 | 1075 | 1111 | 1905 | 1866 | 1072 | 961 |
+| P7x | sess_nypm | through1 | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| P7x | sess_nypm | touch | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| P7 | all | through1 | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop floor 0.7 | 1881 | 3475 | 11674 | 18535 | 10336 | 3937 |
+| P7 | all | touch | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop floor 0.7 | 1842 | 3306 | 11680 | 18707 | 10332 | 3937 |
+| P7 | fresh | through1 | 3 rungs 1/3 at 0.85, 1/3 at 0.9, 1/3 at 100%, after rung1 stop entry, remainder floor off | 425 | 425 | 1097 | 672 | 0 | 1789 |
+| P7 | fresh | touch | 3 rungs 1/3 at 0.85, 1/3 at 0.9, 1/3 at 100%, after rung1 stop entry, remainder floor off | 444 | 444 | 1097 | 652 | 0 | 1789 |
+| P7 | rechase | through1 | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop floor 0.7 | 1562 | 4216 | 9165 | 12779 | 7830 | 2148 |
+| P7 | rechase | touch | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop floor 0.7 | 1493 | 4093 | 9171 | 12904 | 7827 | 2148 |
+| P7 | sess_asia | through1 | 3 rungs 1/3 at 0.8, 1/3 at 0.9, 1/3 at 100%, after rung1 stop none, remainder floor 0.9 | 1543 | 3918 | 6286 | 2949 | 580 | 1768 |
+| P7 | sess_asia | touch | 3 rungs 1/3 at 0.8, 1/3 at 0.85, 1/3 at 100%, after rung1 stop entry+2, remainder floor 0.9 | 1646 | 2921 | 8141 | 6032 | 812 | 1768 |
+| P7 | sess_london | through1 | 2 rungs 1/2 at 0.9, 1/2 at 100%, after rung1 stop entry | 193 | 193 | 1092 | 899 | 0 | 1208 |
+| P7 | sess_london | touch | 2 rungs 1/2 at 0.85, 1/2 at 100%, after rung1 stop none | 199 | 313 | 1208 | 895 | -0 | 1208 |
+| P7 | sess_nyam | through1 | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop floor 0.5 | 570 | 693 | 1104 | 916 | 505 | 961 |
+| P7 | sess_nyam | touch | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop floor 0.5 | 568 | 693 | 1104 | 916 | 505 | 961 |
+| P7 | sess_nypm | through1 | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| P7 | sess_nypm | touch | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| U7 | all | through1 | 3 rungs 1/3 at 0.75, 1/3 at 0.85, 1/3 at 100%, after rung1 stop entry, remainder floor off | 171 | 334 | 1185 | 1214 | 363 | 1118 |
+| U7 | all | touch | 3 rungs 1/3 at 0.75, 1/3 at 0.85, 1/3 at 100%, after rung1 stop entry, remainder floor off | 180 | 325 | 1176 | 1214 | 363 | 1118 |
+| U7 | fresh | through1 | 3 rungs 1/3 at 0.75, 1/3 at 0.85, 1/3 at 100%, after rung1 stop entry, remainder floor off | 170 | 493 | 1185 | 1054 | 363 | 1016 |
+| U7 | fresh | touch | 3 rungs 1/3 at 0.75, 1/3 at 0.85, 1/3 at 100%, after rung1 stop entry, remainder floor off | 180 | 484 | 1176 | 1054 | 363 | 1016 |
+| U7 | rechase | through1 | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop entry | 207 | 250 | 412 | 555 | 393 | 102 |
+| U7 | rechase | touch | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop entry | 207 | 250 | 412 | 555 | 393 | 102 |
+| U7 | sess_asia | through1 | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop floor 0.7 | 112 | 618 | 1916 | 2907 | 1609 | 567 |
+| U7 | sess_asia | touch | 2 rungs 1/2 at 0.7, 1/2 at 100%, after rung1 stop none | 103 | 352 | 966 | 1428 | 814 | 567 |
+| U7 | sess_london | through1 | 3 rungs 1/3 at 0.8, 1/3 at 0.9, 1/3 at 100%, after rung1 stop entry, remainder floor off | 206 | 288 | 519 | 231 | 0 | 551 |
+| U7 | sess_london | touch | 3 rungs 1/3 at 0.8, 1/3 at 0.9, 1/3 at 100%, after rung1 stop entry, remainder floor off | 228 | 288 | 519 | 231 | 0 | 551 |
+| U7 | sess_nyam | through1 | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| U7 | sess_nyam | touch | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| U7 | sess_nypm | through1 | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| U7 | sess_nypm | touch | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| H7 | all | through1 | 3 rungs 1/3 at 0.6, 1/3 at 0.8, 1/3 at 100%, after rung1 stop none, remainder floor 0.7 | 152 | 244 | 413 | 261 | 93 | 881 |
+| H7 | all | touch | 3 rungs 1/3 at 0.6, 1/3 at 0.7, 1/3 at 100%, after rung1 stop none, remainder floor 0.7 | 169 | 180 | 399 | 452 | 233 | 881 |
+| H7 | fresh | through1 | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop floor 0.7 | 258 | 259 | 777 | 1581 | 1062 | 827 |
+| H7 | fresh | touch | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop floor 0.7 | 258 | 323 | 764 | 1589 | 1148 | 827 |
+| H7 | rechase | through1 | 3 rungs 1/3 at 0.9, 1/3 at 0.95, 1/3 at 100%, after rung1 stop entry+2, remainder floor 0.9 | -16 | -16 | 0 | 16 | 0 | 54 |
+| H7 | rechase | touch | 3 rungs 1/3 at 0.9, 1/3 at 0.95, 1/3 at 100%, after rung1 stop entry+2, remainder floor 0.9 | -16 | -16 | 0 | 16 | 0 | 54 |
+| H7 | sess_asia | through1 | 3 rungs 1/3 at 0.6, 1/3 at 0.8, 1/3 at 100%, after rung1 stop none, remainder floor 0.7 | 152 | 244 | 413 | 261 | 93 | 554 |
+| H7 | sess_asia | touch | 3 rungs 1/3 at 0.6, 1/3 at 0.7, 1/3 at 100%, after rung1 stop none, remainder floor 0.7 | 169 | 180 | 399 | 452 | 233 | 554 |
+| H7 | sess_london | through1 | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| H7 | sess_london | touch | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| H7 | sess_nyam | through1 | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 327 |
+| H7 | sess_nyam | touch | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 327 |
+| H7 | sess_nypm | through1 | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| H7 | sess_nypm | touch | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 0 |
+| K7 | all | through1 | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.7 | 86 | 697 | 986 | 289 | 0 | 5627 |
+| K7 | all | touch | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.7 | 95 | 652 | 986 | 334 | 0 | 5627 |
+| K7 | fresh | through1 | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.5 | 12 | 79 | 165 | 85 | 0 | 2186 |
+| K7 | fresh | touch | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.5 | 25 | 74 | 165 | 91 | 0 | 2186 |
+| K7 | rechase | through1 | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.7 | 83 | 632 | 812 | 180 | 0 | 3441 |
+| K7 | rechase | touch | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.7 | 76 | 593 | 812 | 219 | 0 | 3441 |
+| K7 | sess_asia | through1 | 3 rungs 1/3 at 0.9, 1/3 at 0.95, 1/3 at 100%, after rung1 stop entry+2, remainder floor 0.9 | 0 | 0 | 0 | -0 | 0 | 1893 |
+| K7 | sess_asia | touch | 3 rungs 1/3 at 0.9, 1/3 at 0.95, 1/3 at 100%, after rung1 stop entry+2, remainder floor 0.9 | 0 | 0 | 0 | -0 | 0 | 1893 |
+| K7 | sess_london | through1 | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.7 | 91 | 513 | 664 | 151 | 0 | 1378 |
+| K7 | sess_london | touch | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.7 | 83 | 495 | 664 | 168 | 0 | 1378 |
+| K7 | sess_nyam | through1 | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 1301 |
+| K7 | sess_nyam | touch | 2 rungs 1/2 at 0.6, 1/2 at 100%, after rung1 stop none | 0 | 0 | 0 | -0 | 0 | 1301 |
+| K7 | sess_nypm | through1 | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.7 | 52 | 270 | 322 | 52 | 0 | 1055 |
+| K7 | sess_nypm | touch | 2 rungs 1/2 at 0.95, 1/2 at 100%, after rung1 stop floor 0.7 | 80 | 267 | 322 | 55 | 0 | 1055 |
+
+### Exact results (stack = all books, daily; vs reference: P7 at 12/7/7 -> PTR_P7_NZX00, all other sets -> LPB_BASE)\n
+| set | book | cell | months L6M/HOLD/PRE/Xprime | window | stack maxDD cut % | d mean $/wk | rule exits (n, $) |
+|---|---|---|---|---|---|---|---|
+
+### Near-zone scorecard and trader test on the exact sets (W-Q behavior_scorecard.py, mid-path MFE; windows with missing months are skipped and said so)\n
 **Definitions (all $ per WEEK of the window unless a sentence says "over the window"; L6M = 24 weeks).** Per trade, d = new P&L under the rule minus the trade P&L under live rules (same lots, fees, slip 1.2 on the rule exit). *net (all fires)* = sum of d over every trade the rule exits = the realised P&L change of the rule. *removed (zone)* = sum of d over fired trades that reached 80% of target and did NOT fill under live rules (the give-back saving; counted only inside the 80% zone). *clipped* = sum of (base - new) over fired trades that DID fill under live rules (fills the rule exited early, cost positive number). *other saves* = d over fired non-fill trades that never reached 80% (e.g. trades armed at 0.7 that later stopped out). Identity: net = removed - clipped + other saves. So removed - clipped can be negative while net is positive because of other saves, and the strict-pass early-take rules (arm 0.7) live on those other saves. In the plain sentences, "removed N give-backs worth $X and clipped M fills worth $Y" are totals OVER THE 24-WEEK WINDOW (zone non-fills / base fills), the per-week figures are those divided by 24.
 
 **Is removed - clipped positive on L6M for any rule?** Yes for many rules in the grid (zone-only give-back saving minus clipped fills): see the removed-clipped column; counts of cells with removed-clipped > 0 on L6M (of 1,231 per book): P7x 541, P7 549, K7 359, M7 648, U7 369, H7 430, A7 32, O7 57; with also positive 43-month net: P7x 456, P7 459, K7 5, M7 179, U7 22, H7 334, A7 5, O7 32. But NO strict trader-pass finalist has removed - clipped > 0 on L6M (P7 12/7/7 pass rule: +21,417 removed vs 34,269 clipped = -12,852/wk; its +3,165/wk net comes from other saves of about +16k/wk). Rules with removed-clipped > 0 are the ones that fail the trader test.

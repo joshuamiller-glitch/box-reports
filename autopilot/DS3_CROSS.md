@@ -149,3 +149,77 @@ Group G (learned) not re-run: L6M has 6 months, too short for the purged walk-fo
 
 ## NKD imbalance lead: history test queued (2026-11-11 ~23:30Z, W-CX)
 The lead bought NKD bbo-1s 2023-04-01..2026-05-01 ($45.52); download in progress. Chain2 (pid 2319172, code/th_cross/cx_chain2.sh, log /mnt/l2/l2vast/_th_cross/chain2.log) waits for the 'NKD bbo-1s history downloaded' MORNING line, ingests to /mnt/l2/l2vast/_th_cross/sec_hist/, runs cx_nkd_hist.py (HOLD/PRE/X' for the cell nkd_imb<=0, placebo within book-month, bi-weekly WF over a 30-cell NKD imbalance family, P7/U7 trader test with give-backs/round-trips removed against fills clipped) and appends the result to this page. Dry run on L6M-only data: the cell on P7+U7 gives +5,251/wk L6M and +2,425/wk HOLD (placebo q99 +1,822); control books K7+M7 -1,291 L6M; PRE/X' pending the history. Family max-stat for the 336-cell family (L6M): null q95 3,859 vs cell 4,191, so it passes the family null only marginally; the correction will be restated with 300 draws after the history lands. Handoff to W-N (a9b173ac3b1592ed9) and v1.8 field nkd_imb only if PRE/HOLD/X' and the WF hold.
+
+## AUTO SECTION 2026-11-11T23:33Z: megacap/ETF + 1-s YM/ZN/NKD/6J screens on the bought L6M package (chain pid 2227738; raw log /mnt/l2/l2vast/_th_cross/mscreen_log.txt; $/wk first order, L6M window only)
+    stocks present ['NVDA', 'MSFT', 'AAPL', 'AMZN', 'META', 'GOOGL', 'AVGO', 'TSLA'] ETFs ['QQQ', 'SMH'] bbo ['NKD', '6J', 'YM', 'ZN']
+    LEAD/LAG 5-s returns RTH, corr(mega[t], NQ[t+L]) L in s: {-20: 0.0067, -15: 0.002, -10: 0.0016, -5: 0.0382, 0: 0.7697, 5: -0.0092, 10: 0.0007, 15: 0.0041, 20: 0.0032}
+      same for ES -> NQ (reference): {-20: 0.0074, -15: 0.0058, -10: 0.0002, -5: -0.0039, 0: 0.8998, 5: -0.0064, 10: 0.0017, 15: 0.0046, 20: 0.0072}
+      NQ->mega (negative L = mega leads): {-20: 0.0036, -15: 0.0037, -10: 0.0006, -5: -0.009, 0: 0.7697, 5: 0.0379, 10: 0.0014, 15: 0.0025, 20: 0.0063}
+      1-s returns: mega->NQ {-3: 0.0055, -2: 0.0216, -1: 0.1544, 0: 0.6776, 1: 0.001, 2: -0.0026, 3: -0.0018}  ES->NQ {-3: 0.0024, -2: -0.0005, -1: 0.0102, 0: 0.8668, 1: 0.0067, 2: -0.0011, 3: -0.0012}
+    aggressor sign check NVDA corr(signed delta in minute t, same-minute return; positive = side B is the buy aggressor) 0.3786
+    D ENTRY skip, megacap/ETF features (stock hours 04:00-20:00 ET), P7 | null q95 $/wk 2657 | cells 238 | stable cells (both halves>0 and above null) 0
+        mega_ret1 ge 2.93 n 160 d/wk 2122 h1 2632 h2 1612 removed worst5/best5 wks 6649 -5443
+        smh_ret5 ge 2.21 n 215 d/wk 2099 h1 2861 h2 1337 removed worst5/best5 wks 2035 1426
+        mega_ret1 ge 4.17 n 107 d/wk 1930 h1 2210 h2 1649 removed worst5/best5 wks 4667 -3614
+        qqq_ret5 ge 11.86 n 48 d/wk 1406 h1 1616 h2 1197 removed worst5/best5 wks 685 -2268
+    D ENTRY skip, 1-s YM/ZN/NKD/6J features, P7 | null q95 $/wk 2513 | cells 252 | stable cells (both halves>0 and above null) 1
+        ym_ret300s le -3.22 n 102 d/wk 2814 h1 5168 h2 459 removed worst5/best5 wks 4277 6044
+        j6_ret300s le -1.58 n 186 d/wk 1490 h1 380 h2 2601 removed worst5/best5 wks 7181 -4597
+        ym_ret10s le -0.67 n 102 d/wk 1379 h1 2148 h2 611 removed worst5/best5 wks 4266 -5297
+        zn_ret900s le -2.88 n 98 d/wk 1346 h1 1407 h2 1286 removed worst5/best5 wks -821 2107
+    D ENTRY skip, megacap/ETF features (stock hours 04:00-20:00 ET), ALL | null q95 $/wk 4218 | cells 238 | stable cells (both halves>0 and above null) 0
+        smh_ret5 ge 3.94 n 1480 d/wk 2655 h1 3509 h2 1801 removed worst5/best5 wks 7786 2970
+        smh_nq_basis5 ge -0.5 n 1480 d/wk 2632 h1 5658 h2 -395 removed worst5/best5 wks 9933 3115
+        smh_ret5 ge -6.88 n 1903 d/wk 2500 h1 2240 h2 2759 removed worst5/best5 wks 11364 -7869
+        smh_nq_basis5 le 21.87 n 1903 d/wk 2413 h1 2700 h2 2126 removed worst5/best5 wks 13686 -4104
+    D ENTRY skip, 1-s YM/ZN/NKD/6J features, ALL | null q95 $/wk 2467 | cells 252 | stable cells (both halves>0 and above null) 1
+        ym_ret10s le -0.38 n 879 d/wk 2681 h1 2866 h2 2497 removed worst5/best5 wks 9209 -9541
+        ym_ret10s le -0.68 n 440 d/wk 2167 h1 2652 h2 1681 removed worst5/best5 wks 6694 -3208
+        zn_ret900s le -2.88 n 428 d/wk 2147 h1 2181 h2 2114 removed worst5/best5 wks -306 887
+        ym_ret300s le -2.62 n 440 d/wk 1863 h1 4456 h2 -730 removed worst5/best5 wks 3560 7194
+    A LOSS-CUT gate (hold where condition true), megacap/ETF at the cut second, P7 | null q95 $/wk 2502 | cells 238 | stable cells (both halves>0 and above null) 0
+        smh_delta5 ge -0.36 n 173 d/wk 1927 h1 3408 h2 445 removed worst5/best5 wks -1225 4110
+        smh_delta5 ge -0.61 n 197 d/wk 1762 h1 3379 h2 146 removed worst5/best5 wks 3 2780
+        smh_delta5 ge -0.12 n 124 d/wk 1688 h1 3921 h2 -545 removed worst5/best5 wks -1176 3896
+        mega_ret15 ge -2.44 n 74 d/wk 1535 h1 2729 h2 342 removed worst5/best5 wks 1181 1542
+    A LOSS-CUT gate, 1-s YM/ZN/NKD/6J, P7 | null q95 $/wk 3443 | cells 252 | stable cells (both halves>0 and above null) 0
+        ym_ret10s le -1.14 n 103 d/wk 2598 h1 1951 h2 3244 removed worst5/best5 wks 2998 396
+        zn_ret900s le -1.44 n 151 d/wk 2531 h1 1586 h2 3476 removed worst5/best5 wks 7684 -1740
+        zn_ret900s le -2.84 n 101 d/wk 1759 h1 2674 h2 844 removed worst5/best5 wks 8103 -3962
+        zn_ret300s le -2.87 n 50 d/wk 1476 h1 848 h2 2104 removed worst5/best5 wks 2043 -95
+    A LOSS-CUT gate (hold where condition true), megacap/ETF at the cut second, ALL | null q95 $/wk 2598 | cells 238 | stable cells (both halves>0 and above null) 0
+        mega_delta5 le -0.05 n 519 d/wk 2167 h1 1566 h2 2768 removed worst5/best5 wks -2664 4444
+        mega_delta5 le 0.01 n 726 d/wk 2129 h1 4061 h2 197 removed worst5/best5 wks -4825 7966
+        smh_delta5 ge -0.28 n 726 d/wk 1894 h1 5456 h2 -1668 removed worst5/best5 wks -6541 10422
+        smh_delta5 ge -0.45 n 830 d/wk 1804 h1 4240 h2 -633 removed worst5/best5 wks -5000 9031
+    A LOSS-CUT gate, 1-s YM/ZN/NKD/6J, ALL | null q95 $/wk 3453 | cells 252 | stable cells (both halves>0 and above null) 0
+        zn_ret30s le -0.72 n 359 d/wk 2469 h1 1813 h2 3124 removed worst5/best5 wks -1449 -1189
+        zn_ret10s le -1.42 n 180 d/wk 2274 h1 1930 h2 2618 removed worst5/best5 wks 59 -8
+        zn_ret900s le -1.45 n 535 d/wk 2211 h1 3265 h2 1158 removed worst5/best5 wks 5282 3326
+        ym_ret900s le -7.76 n 361 d/wk 1900 h1 4274 h2 -473 removed worst5/best5 wks -277 1710
+    C NEAR-ZONE take at 80% when megacap/ETF stall, all books | null q95 $/wk 2014 | cells 238 | stable cells (both halves>0 and above null) 0
+        smh_delta5 le 0.11 n 573 d/wk 1554 h1 705 h2 2403 removed worst5/best5 wks 11092 -2142
+        mega_delta5 ge 0.14 n 344 d/wk 1502 h1 2283 h2 721 removed worst5/best5 wks 4980 1
+        smh_delta5 le -0.13 n 229 d/wk 1386 h1 220 h2 2551 removed worst5/best5 wks 4633 -606
+        mega_delta5 ge 0.2 n 229 d/wk 1356 h1 2416 h2 296 removed worst5/best5 wks 5494 665
+    C NEAR-ZONE take at 80%, 1-s YM/ZN/NKD/6J, all books | null q95 $/wk 3686 | cells 252 | stable cells (both halves>0 and above null) 1
+        j6_ret300s ge 0.0 n 1260 d/wk 3940 h1 4990 h2 2889 removed worst5/best5 wks 9786 -6139
+        j6_ret300s ge -0.79 n 1380 d/wk 3232 h1 3977 h2 2488 removed worst5/best5 wks 8824 -9031
+        j6_ret900s le 1.63 n 1363 d/wk 2843 h1 3603 h2 2083 removed worst5/best5 wks 12196 -4827
+        zn_ret300s ge -0.0 n 1634 d/wk 2573 h1 1445 h2 3701 removed worst5/best5 wks 13321 -6928
+    B baseline NQ-only cut at 60s when adverse>=8 pts: $/wk -3136 n 692
+    B EARLY CUT at 60s (cut when adverse>=8 pts AND condition), all books | null q95 $/wk 903 | cells 490 | stable cells (both halves>0 and above null) 0
+        mega_lo_against ge 2.0 n 60 d/wk 900 h1 1601 h2 198 removed worst5/best5 wks 1713 2990
+        mega_lo_against ge 1.0 n 153 d/wk 856 h1 1930 h2 -219 removed worst5/best5 wks 1189 2598
+        mega_lo_against ge 1.0 n 153 d/wk 856 h1 1930 h2 -219 removed worst5/best5 wks 1189 2598
+        mega_conc5 le 0.24 n 88 d/wk 554 h1 565 h2 544 removed worst5/best5 wks 554 2949
+    B baseline NQ-only cut at 120s when adverse>=8 pts: $/wk -6327 n 896
+    B EARLY CUT at 120s (cut when adverse>=8 pts AND condition), all books | null q95 $/wk 943 | cells 490 | stable cells (both halves>0 and above null) 1
+        mega_disp5 le 4.36 n 50 d/wk 1062 h1 1105 h2 1020 removed worst5/best5 wks 189 1221
+        mega_disp5 le 5.61 n 99 d/wk 801 h1 546 h2 1056 removed worst5/best5 wks -1562 1840
+        j6_imb ge 0.28 n 50 d/wk 731 h1 358 h2 1105 removed worst5/best5 wks 806 339
+        ym_ret10s le -0.77 n 105 d/wk 717 h1 1437 h2 -2 removed worst5/best5 wks 522 1253
+    F weekly flag mega_resid5 AUC 0.281 p 0.161 n weeks 25
+    F weekly flag mega_disp5 AUC 0.453 p 0.798 n weeks 25
+    F weekly flag mega_hi_with AUC 0.656 p 0.328 n weeks 25
+    F weekly flag mega_conc5 AUC 0.75 p 0.105 n weeks 25
