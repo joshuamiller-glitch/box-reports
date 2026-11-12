@@ -5,12 +5,40 @@
 |---|---|---|---|---|---|---|---|
 | LPB_BASE (all 43 months) | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
 | JN04RM (all 43 months) | 4/20 | 6 / 2.0 / 0.94 | 78 | -99088 | 162 / +7640 | 6 / -45408 | FAIL |
-| WG_E1 (6 months 202605..202610) | 2/15 | 4 / 2.0 / 1.26 | 13 | -18653 | 0 / +0 | 4 / -13938 | PASS |
-|   JN04RM, same months | 4/15 | 5 / 3.0 / 1.29 | 21 | -31246 | 57 / +12761 | 4 / -16729 | FAIL |
-| WG_E2Q (1 months 202610..202610) | 0/2 | 4 / 3.0 / 1.40 | 6 | -6682 | 12 / -1887 | 4 / -5888 | PASS |
-|   JN04RM, same months | 0/2 | 4 / 3.0 / 1.34 | 5 | -8304 | 11 / -2305 | 4 / -7510 | PASS |
-| WG_E5 (6 months 202605..202610) | 0/15 | 4 / 2.0 / 1.29 | 16 | -17819 | 0 / +0 | 4 / -12193 | PASS |
-|   JN04RM, same months | 4/15 | 5 / 3.0 / 1.29 | 21 | -31246 | 57 / +12761 | 4 / -16729 | FAIL |
+| WG_A4 (9 months 202602..202610) | 3/16 | 5 / 2.0 / 1.12 | 16 | -25128 | 29 / -4157 | 4 / -17134 | FAIL |
+|   JN04RM, same months | 4/16 | 5 / 3.0 / 1.26 | 31 | -41321 | 75 / +14670 | 4 / -20713 | FAIL |
+| WG_E1 (27 months 202304..202610) | 2/17 | 4 / 2.0 / 0.99 | 25 | -36984 | 0 / +0 | 4 / -25183 | PASS |
+|   JN04RM, same months | 4/17 | 6 / 2.0 / 1.02 | 63 | -84844 | 133 / +299 | 6 / -42769 | FAIL |
+| WG_E1A (12 months 202511..202610) | 4/16 | 5 / 3.0 / 1.21 | 38 | -51898 | 51 / -159 | 4 / -21517 | FAIL |
+|   JN04RM, same months | 4/16 | 5 / 3.0 / 1.21 | 39 | -52653 | 89 / +10241 | 4 / -25666 | FAIL |
+| WG_E1L (6 months 202605..202610) | 1/15 | 4 / 2.0 / 1.22 | 8 | -33873 | 0 / +0 | 4 / -33873 | PASS |
+|   LPB_BASE, same months | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| WG_E2Q (12 months 202511..202610) | 2/16 | 5 / 3.0 / 1.23 | 44 | -48913 | 98 / +8522 | 4 / -20129 | PASS |
+|   JN04RM, same months | 4/16 | 5 / 3.0 / 1.21 | 39 | -52653 | 89 / +10241 | 4 / -25666 | FAIL |
+| WG_E4 (12 months 202511..202610) | 0/16 | 4 / 2.0 / 1.19 | 21 | -34260 | 0 / +0 | 4 / -25986 | PASS |
+|   JN04RM, same months | 4/16 | 5 / 3.0 / 1.21 | 39 | -52653 | 89 / +10241 | 4 / -25666 | FAIL |
+| WG_E5 (12 months 202511..202610) | 0/16 | 4 / 2.0 / 1.19 | 21 | -23724 | 0 / +0 | 4 / -16337 | PASS |
+|   JN04RM, same months | 4/16 | 5 / 3.0 / 1.21 | 39 | -52653 | 89 / +10241 | 4 / -25666 | FAIL |
+| WG_E6 (8 months 202603..202610) | 0/16 | 2 / 2.0 / 1.22 | 0 | +0 | 0 / +0 | 2 / +0 | PASS |
+|   JN04RM, same months | 4/16 | 5 / 3.0 / 1.27 | 28 | -38987 | 70 / +14606 | 4 / -19373 | FAIL |
+| WG_E7 (12 months 202511..202610) | 4/16 | 5 / 2.0 / 1.14 | 23 | -36073 | 44 / +10157 | 5 / -21588 | FAIL |
+|   JN04RM, same months | 4/16 | 5 / 3.0 / 1.21 | 39 | -52653 | 89 / +10241 | 4 / -25666 | FAIL |
+| WL_A4 (6 months 202605..202610) | 2/15 | 3 / 2.0 / 1.13 | 8 | -28270 | 11 / -2594 | 3 / -25859 | PASS |
+|   LPB_BASE, same months | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| WL_E1 (12 months 202511..202610) | 1/16 | 4 / 2.0 / 1.13 | 12 | -44762 | 0 / +0 | 4 / -39774 | PASS |
+|   LPB_BASE, same months | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| WL_E1A (6 months 202605..202610) | 3/15 | 5 / 2.0 / 1.25 | 13 | -47429 | 12 / -1562 | 4 / -33873 | FAIL |
+|   LPB_BASE, same months | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| WL_E2Q (12 months 202511..202610) | 2/16 | 5 / 3.0 / 1.20 | 34 | -41595 | 71 / +7546 | 4 / -18442 | PASS |
+|   LPB_BASE, same months | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| WL_E4 (12 months 202511..202610) | 1/16 | 4 / 2.0 / 1.13 | 14 | -49355 | 0 / +0 | 4 / -44367 | PASS |
+|   LPB_BASE, same months | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| WL_E5 (6 months 202605..202610) | 1/15 | 4 / 2.0 / 1.23 | 9 | -23111 | 0 / +0 | 4 / -23111 | PASS |
+|   LPB_BASE, same months | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| WL_E6 (6 months 202605..202610) | 1/15 | 2 / 2.0 / 1.21 | 0 | +0 | 0 / +0 | 2 / +0 | PASS |
+|   LPB_BASE, same months | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
+| WL_E7 (12 months 202511..202610) | 3/16 | 4 / 2.0 / 1.10 | 17 | -40710 | 25 / +21560 | 4 / -30895 | FAIL |
+|   LPB_BASE, same months | 3/20 | 6 / 2.0 / 0.89 | 48 | -136326 | 90 / -11382 | 6 / -80482 | FAIL |
 
 ## First-order sequential screen on the exact LPB_BASE P7 list (stack level, P7 outcomes scaled/removed, no follow-on; saved $ positive = losers removed; the frozen week is the 53 live P7 trades)
 
@@ -134,18 +162,49 @@
 | D6 asia vote<2 half | 0 / 1975 | -2 / -2197 | -0 / -2791 | 10 / -1001 | 29 / +786 | +164897 / -420201 | -29155 (0) | 53 / -92884 |
 | D6 asia vote<3 half | 0 / 2182 | -9 / -2651 | -7 / -2932 | 14 / -982 | 29 / +681 | +188104 / -459238 | -31515 (0) | 53 / -92884 |
 
-## Exact runs on the dressed base (JN04RM; one set per job; hook c_gov.py)
+## Exact runs (WG_* on the dressed base JN04RM; WL_* and WG_E1L on the live panel base LPB, compared with LPB_BASE; one set per job; hook c_gov.py)
 
 | set | months | L6M cut % / d$ | HOLD cut % / d$ | PRE cut % / d$ | X' cut % / d$ | L6M worst-20 cell/ref $k | WF beat % | rule-2a label |
 |---|---|---|---|---|---|---|---|---|
-| WG_A4 | 0 | not started | | | | | | |
-| WG_E1 | 6 | 0.0 / +20 | n/a | n/a | n/a | 140/138 | n/a | |
-| WG_E1A | 0 | not started | | | | | | |
-| WG_E2Q | 1 | n/a | n/a | n/a | n/a |  | n/a | |
-| WG_E4 | 0 | not started | | | | | | |
-| WG_E5 | 6 | -3.0 / -471 | n/a | n/a | n/a | 119/138 | n/a | |
-| WG_E6 | 0 | not started | | | | | | |
-| WG_E7 | 0 | not started | | | | | | |
+| WG_A4 | 10 | -10.4 / +9 | n/a | n/a | n/a | 124/138 | n/a | |
+| WG_E1 | 28 | 0.0 / +20 | -4.6 / +59 | n/a | 0.0 / +19 | 140/138 | n/a | |
+| WG_E1A | 12 | 0.0 / -84 | -5.9 / -18 | n/a | n/a | 139/138 | n/a | |
+| WG_E1K | 0 | not started | | | | | | |
+| WG_E1L | 6 | 0.0 / -416 | n/a | n/a | n/a | 81/102 | n/a | |
+| WG_E1M | 0 | not started | | | | | | |
+| WG_E2Q | 12 | -8.6 / -343 | -0.5 / -576 | n/a | n/a | 122/138 | n/a | |
+| WG_E4 | 12 | -5.7 / -669 | -1.8 / -307 | n/a | n/a | 116/138 | n/a | |
+| WG_E5 | 12 | -3.0 / -471 | -0.6 / -202 | n/a | n/a | 119/138 | n/a | |
+| WG_E6 | 8 | -5.6 / -601 | n/a | n/a | n/a | 117/138 | n/a | |
+| WG_E7 | 13 | -5.2 / -340 | -6.5 / -519 | n/a | n/a | 142/138 | n/a | |
+| WL_A4 | 6 | 11.9 / +423 | n/a | n/a | n/a | 120/102 | n/a | |
+| WL_E1 | 12 | 0.0 / -416 | -14.5 / -143 | n/a | n/a | 81/102 | n/a | |
+| WL_E1A | 7 | -0.0 / -829 | n/a | n/a | n/a | 76/102 | n/a | |
+| WL_E2Q | 12 | -5.2 / +748 | -8.8 / -570 | n/a | n/a | 92/102 | n/a | |
+| WL_E4 | 12 | -2.1 / -631 | -19.8 / -750 | n/a | n/a | 75/102 | n/a | |
+| WL_E5 | 6 | 1.1 / +128 | n/a | n/a | n/a | 87/102 | n/a | |
+| WL_E6 | 6 | -0.5 / +552 | n/a | n/a | n/a | 94/102 | n/a | |
+| WL_E7 | 12 | 0.8 / +376 | -1.5 / -429 | n/a | n/a | 110/102 | n/a | |
+
+## Behavioural scorecard (items a-e)
+
+### Behavioural scorecard JN04RM (W-Q tool, ref JN04RM)
+```
+JN04RM L6M (stack, per week): full stops 25.4/wk $-38130; give-backs 9.9/wk (9.8 round-trips) realised $-11306, forgone vs target $28091; same-side losing runs max 13, p95 7, $-42885 lost on 3rd-and-later; no-new-evidence re-entries 43.3/wk $1885; recoveries cut 15.2/wk $39718, clipped fills 0.0/wk $0; pnl $19530/wk.
+JN04RM HOLD (stack, per week): full stops 23.6/wk $-35520; give-backs 8.6/wk (8.4 round-trips) realised $-9743, forgone vs target $24378; same-side losing runs max 13, p95 6, $-37009 lost on 3rd-and-later; no-new-evidence re-entries 34.2/wk $1140; recoveries cut 13.1/wk $34017, clipped fills 0.0/wk $0; pnl $12497/wk.
+JN04RM PRE (stack, per week): full stops 16.8/wk $-26445; give-backs 5.4/wk (5.0 round-trips) realised $-5634, forgone vs target $14565; same-side losing runs max 11, p95 5, $-17863 lost on 3rd-and-later; no-new-evidence re-entries 14.4/wk $-45; recoveries cut 7.2/wk $17046, clipped fills 0.0/wk $0; pnl $9409/wk.
+JN04RM X' (stack, per week): full stops 17.7/wk $-27189; give-backs 3.5/wk (3.0 round-trips) realised $-3615, forgone vs target $9772; same-side losing runs max 7, p95 4, $-9998 lost on 3rd-and-later; no-new-evidence re-entries 3.1/wk $562; recoveries cut 2.5/wk $6540, clipped fills 0.0/wk $0; pnl $1547/wk.
+
+```
+
+### Behavioural scorecard WG_E1 (W-Q tool, ref JN04RM)
+```
+WG_E1 L6M (stack, per week): full stops 25.4/wk $-38079; give-backs 9.9/wk (9.8 round-trips) realised $-11307, forgone vs target $28092; same-side losing runs max 13, p95 6, $-42134 lost on 3rd-and-later; no-new-evidence re-entries 40.8/wk $1434; recoveries cut 14.8/wk $38876, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $2489/wk, losers avoided $1938/wk, net -174 $/wk; pnl $19356/wk.
+WG_E1 HOLD (stack, per week): full stops 23.6/wk $-35496; give-backs 8.6/wk (8.4 round-trips) realised $-9734, forgone vs target $24323; same-side losing runs max 13, p95 6, $-36640 lost on 3rd-and-later; no-new-evidence re-entries 32.5/wk $1083; recoveries cut 12.9/wk $33401, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $1707/wk, losers avoided $1536/wk, net +246 $/wk; pnl $12743/wk.
+WG_E1 PRE: months missing (12 of 17), window not scored
+WG_E1 X' (stack, per week): full stops 17.7/wk $-27189; give-backs 3.5/wk (2.9 round-trips) realised $-3595, forgone vs target $9725; same-side losing runs max 7, p95 4, $-9959 lost on 3rd-and-later; no-new-evidence re-entries 3.0/wk $601; recoveries cut 2.5/wk $6540, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $0/wk, losers avoided $38/wk, net +38 $/wk; pnl $1585/wk.
+
+```
 
 
 # DS3_WORKS_C - T-WORKS Part C (P7 anatomy), W-C, page2026-11-11 17:34Z (C1 anatomy, C3/C4 L6M exact rows, C2 queued)
@@ -327,6 +386,12 @@ half
 Caveats: cells overlap heavily (Asia, 7 lots, cold and with-trend are mostly the same trades), so the excess ranking says where the loss sits, not which flag is causal; LOT cold uses the LPB shadow Calmar (no JN04 gating), and in the live week the Calmar history is the LPB list to 10-30 plus the 11-02..05 live trades (11-01..2 gap); live week trades have no layer features beyond what the signal second gives (no NTZ/zone state).
 Running now (exact, JN04RM base, one set per job via jbjobs, 1 worker): C3 blackout sets WC3_S60, S15, S120, B30, B60, then C2 sets WC2_A5, A4, A6, L5, STKA (7/4/4 Asia lots 5/4/6, London 5, STACK on Asia+London). Next: first-order flag-conditional blackout screen from this table; rest-of-session hook; C4 spec.
 
+
+## 02:50Z update (P7 FIX, exact, 8 lanes on the TP engine)
+A. Dressed base (JN04RM), L6M / HOLD / X' maxDD cut and d$/wk: WG_E1 (evidence rule, all sessions) 0.0 / -4.6 / 0.0 percent and +$20 / +$59 / +$19 per week; WG_E1A (Asia only) 0.0 / -5.9, -$84 / -$18; WG_E5 -3.0 / -0.6, -$471 / -$202; WG_E4 -5.7 / -1.8, -$669 / -$307; WG_E2Q -8.6 / -0.5, -$343 / -$576; WG_E6 -5.6 (L6M), -$601; WG_E7 (no evidence and within 30 min of a loss) -5.2 / -6.5, -$340 / -$519; WG_A4 (same-side re-entry within 90 min of a loss while chasing) -10.4 (L6M), +$9. Every governor is inside the engine noise floor (about 8 percent, $1.2k/wk) and none improves L6M drawdown; WG_E1 is the only one that costs nothing in mean on three windows.
+B. Live panel base (LPB_BASE reference), WL_ sets: WL_E1 L6M 0.0 percent / -$416 per week, HOLD -14.5 / -$143; WL_A4 L6M +11.9 percent / +$423 (HOLD pending). So the evidence rule does not cut drawdown on the live base either, and it is not a drawdown fix.
+C. Acceptance (session replay, fails over covered worst sessions): PASS for WG_E1, WL_E1, WL_E4, WL_E5, WL_E6, WG_E1L, WL_A4, WL_E2Q; FAIL for WL_E1A (Asia-only leaves the other sessions with 3rd-attempt losers) and WL_E7 (timer without evidence leaves 25 no-evidence re-entries, +$21.6k). The evidence rule is the only one that takes "3rd+ attempts without new evidence" to zero while keeping the mean.
+D. Not yet: PRE and bi-weekly WF for all sets (chains continue: PRE then GAP then X'), WG_E1K / WG_E1M (K7 and M7 versions, queued behind), the rule-2a label. WG_E1 is offered to JN05 only as a defect-3 fix at zero cost, not as a drawdown earner; its WF and PRE rows are due before any label.
 
 ## Status sentences (P7 FIX first page; updated by hand each page)
 0. P7 FIX, first read (20:00Z). The acceptance tool exists (acceptance_p7.py) and both live references FAIL it: LPB_BASE fails 3 of the 20 worst sessions and JN04RM fails 4 of 20 (the dials do not fix the repeated same-side entries: JN04RM still has 78 sessions with a run of 3 or more same-side losers and $99k lost on the 3rd-and-later losers; LPB_BASE 48 sessions and $136k). The first-order screen says the cleanest governor is the evidence rule itself: skip a 3rd same-side attempt that has no new session extreme and no opposite-side signal since the last failure (E1 all sessions: 101 trades removed over 3.5 years, saves $10.7k in the worst-20 weeks and $3.1k in the other weeks, so it removes losers in both and costs no mean: +$237/wk L6M, +$283 HOLD, -$122 PRE, maxDD cut 0 percent L6M, -15 percent HOLD, +9 percent PRE; first-order only, so not yet a result). It takes the scorecard item "3rd-and-later no-evidence losers" to zero by construction and removes 4 live-week trades that made +$15k (the frozen week stays strongly positive). Timer and chase rules (lgap < 90 min same side with chase_k > 0.75) show larger L6M mean (+$2.4k/wk) but cost the live week -$21k and HOLD. The exact sets WG_E1, E4, E5, E6, E2Q, E7, A4, E1A (JN04RM base, hook c_gov.py) are queued, L6M first; memory-gated, so results arrive after this page. D1/D3/D4/D6 screens (trend-alive clock, pullback number, extension, vote) in their tables below remove too many winners at every threshold tried (they are monotone mean-for-drawdown trades, not clean filters) and D5, D7, E-Q belong to the other agents.
