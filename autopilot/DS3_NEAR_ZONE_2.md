@@ -1,4 +1,4 @@
-# DS3_NEAR_ZONE_2 - T-NEAR-ZONE worker W-N2: families k l r s t u v and the near-zone JOINT stage (page written Wed Nov 11 23:28:19 UTC 2026)
+# DS3_NEAR_ZONE_2 - T-NEAR-ZONE worker W-N2: families k l r s t u v and the near-zone JOINT stage (page written Thu Nov 12 02:00:37 UTC 2026)
 
 STATUS: Shadow only, first-order on the LPB_BASE stored 1-s paths (43 months; L6M = 2026-05-12..10-30, 24 weeks), post-hoc, no PASS claims. Exact engine rows for the live-replayable joint finalists are queued (section 7); nothing on this page is exact yet unless section 7 says so. Prereg: NEAR_ZONE_2_PREREG.md (sha in DECISIONS.md, logged before any k/l/r/s/t/u/v cell was scored). W-N's page with families a-g and h-q is DS3_NEAR_ZONE.md; this page uses its kernel, its fill models and its definitions unchanged.
 
@@ -494,13 +494,13 @@ Hook: private, same mechanics as W-N's nz_hooks (decision at the close of second
 
 | set | book | rules | months done / planned | EXACT stack Delta $/wk vs reference L6M / HOLD (months used) | EXACT book Delta $/wk L6M | EXACT stack maxDD cut % L6M / HOLD | NearTarget exits n / $ (L6M) |
 |---|---|---|---|---|---|---|---|
-| NEAR_N2_P7x_B1 | P7 | u: spread>=3 ticks arm=0.8 persist=3 + s: same-side target exit <=300 s ago arm=0.7 take + s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 | - | - | - | - |
-| NEAR_N2_P7x_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 1 / 29 | -2200 (1/6) / - | -2200 | 2.5 / - | 61 / 311708 |
-| NEAR_N2_P7x_D3 | P7 | s: same-side book took target (<=600 s) arm=0.8 take + u: spread>=3 ticks arm=0.8 persist=3 | 1 / 29 | -2637 (1/6) / - | -2637 | -0.1 / - | 56 / 284244 |
-| NEAR_N2_P7x_C4 | P7 | s: same-side book took target (<=600 s) arm=0.7 take | 1 / 29 | +2208 (1/6) / - | +2208 | 1.6 / - | 27 / 145692 |
-| NEAR_N2_P7_B1 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.9 mode=1 + t: clock m_sessch<=40min arm=0.9 take | 0 / 29 | - | - | - | - |
-| NEAR_N2_P7_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 1 / 29 | -512 (1/6) / - | -512 | 9.4 / - | 90 / 261654 |
-| NEAR_N2_P7_D3 | P7 | u: spread>=3 ticks arm=0.8 persist=1 + t: clock m_sessch<=40min arm=0.9 floor.6 | 0 / 29 | - | - | - | - |
+| NEAR_N2_P7x_B1 | P7 | u: spread>=3 ticks arm=0.8 persist=3 + s: same-side target exit <=300 s ago arm=0.7 take + s: same-side book took target (<=600 s) arm=0.7 take | 5 / 29 | -3435 (5/6) / - | -3435 | 20.8 / - | 351 / 1789289 |
+| NEAR_N2_P7x_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 6 / 29 | -1236 (6/6) / - | -1236 | 3.3 / - | 437 / 2044369 |
+| NEAR_N2_P7x_D3 | P7 | s: same-side book took target (<=600 s) arm=0.8 take + u: spread>=3 ticks arm=0.8 persist=3 | 6 / 29 | -6046 (6/6) / - | -6046 | 0.1 / - | 386 / 2042318 |
+| NEAR_N2_P7x_C4 | P7 | s: same-side book took target (<=600 s) arm=0.7 take | 6 / 29 | +2950 (6/6) / - | +2950 | 14.2 / - | 176 / 984153 |
+| NEAR_N2_P7_B1 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.9 mode=1 + t: clock m_sessch<=40min arm=0.9 take | 5 / 29 | -557 (5/6) / - | -557 | 38.5 / - | 565 / 1549179 |
+| NEAR_N2_P7_B2 | P7 | s: same-side target exit <=300 s ago arm=0.7 take + a: ladder m1=0.7 f1=0.65 / .9 f2=0.8 / .95 f3=0.9 mode=1 | 6 / 29 | -692 (6/6) / - | -692 | 37.6 / - | 679 / 1848252 |
+| NEAR_N2_P7_D3 | P7 | u: spread>=3 ticks arm=0.8 persist=1 + t: clock m_sessch<=40min arm=0.9 floor.6 | 5 / 29 | -880 (5/6) / - | -880 | 24.6 / - | 527 / 1653767 |
 | NEAR_N2_P7_C4 | P7 | s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 | - | - | - | - |
 | NEAR_N2_K7_B1 | K7 | a: ladder m1=0.8 f1=0.65 / .9 f2=0.7 / .95 f3=0.7 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 | - | - | - | - |
 | NEAR_N2_K7_D2 | K7 | d: bank arm=0.8 F=0.33 mkt lt=1 / floor 0.6 + a: ladder m1=0.8 f1=0.65 / .9 f2=0.7 / .95 f3=0.7 mode=1 | 0 / 29 | - | - | - | - |
@@ -515,7 +515,7 @@ Hook: private, same mechanics as W-N's nz_hooks (decision at the close of second
 | NEAR_N2_H7_B1 | H7 | b: rev arm=0.8 X=4 N=5 | 0 / 29 | - | - | - | - |
 | NEAR_N2_A7_B1 | A7 | r: es_dd300<=-2 bps arm=0.8 persist=3 + a: ladder m1=0.8 f1=0.65 / .9 f2=0.7 / .95 f3=0.9 mode=1 + s: same-side book took target (<=600 s) arm=0.7 take | 0 / 29 | - | - | - | - |
 | NEAR_N2_O7_B1 | O7 | c: flow pulled_against_mult>=20 arm=0.8 persist=3 dd>=2 + s: opposite-side signal in 120 s arm=0.7 take | 0 / 29 | - | - | - | - |
-| NEAR_N2_P7x_S5 | P7 | asia:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; asia:r: es_dd300<=-1 bps arm=0.8 persist=1 ; asia:s: same-side book took target (<=600 s) arm=0.7 take ; london:a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.8 mode=1 ; london:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; london:r: rty_pown5>=2x arm=0.8 persist=1 ; nyam:u: spread>=3 ticks arm=0.8 persist=3 ; nyam:t: clock m_sessch<=40min arm=0.8 floor.6 | 0 / 12 | - | - | - | - |
+| NEAR_N2_P7x_S5 | P7 | asia:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; asia:r: es_dd300<=-1 bps arm=0.8 persist=1 ; asia:s: same-side book took target (<=600 s) arm=0.7 take ; london:a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.8 mode=1 ; london:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; london:r: rty_pown5>=2x arm=0.8 persist=1 ; nyam:u: spread>=3 ticks arm=0.8 persist=3 ; nyam:t: clock m_sessch<=40min arm=0.8 floor.6 | 3 / 12 | +5153 (3/6) / - | +5153 | 17.4 / - | 221 / 1087603 |
 | NEAR_N2_P7_S5 | P7 | asia:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; asia:r: es_dd300<=-1 bps arm=0.8 persist=1 ; asia:s: same-side book took target (<=600 s) arm=0.7 take ; london:a: ladder m1=0.7 f1=0.65 / .9 f2=0.7 / .95 f3=0.9 mode=1 ; london:c: flow pulled_against_mult>=5 arm=0.8 persist=1 dd>=0 ; london:r: es_dd300<=-1 bps arm=0.8 persist=1 ; nyam:f: zone arm=.8 N=30 floor 0.65 ; nyam:t: clock m_sessch<=40min arm=0.8 floor.6 | 0 / 12 | - | - | - | - |
 | NEAR_N2_P7x_V1 | P7 | learned arm=0.8 p*<0.75 persist=1 | 0 / 12 | - | - | - | - |
 | PTR_P7_NZX00 | P7 | reference P7 12/7/7 (W-N identity set) | 6 / 12 | - | - | - | - |
@@ -524,18 +524,51 @@ Exact versus first-order, set by set and month (book P7 for the P7 sets, trade b
 
 | set | month | exact book Delta $ vs reference | first-order Delta $ (same trades) | matched trades: exact / first-order Delta $ | trades only in the new run (n / $) | trades only in the reference (n / $) | NearTarget exits |
 |---|---|---|---|---|---|---|---|
+| NEAR_N2_P7_B1 | 202606 | -15190 | 688 | -31320 / -3492 (178 matched) | 62 / 46963 | 25 / 30833 | 116 |
+| NEAR_N2_P7_B1 | 202607 | 9233 | 15671 | 11591 / 23397 (208 matched) | 68 / 22326 | 6 / 24685 | 134 |
+| NEAR_N2_P7_B1 | 202608 | -9395 | 3306 | -5205 / -3587 (149 matched) | 72 / -9923 | 21 / -5733 | 101 |
+| NEAR_N2_P7_B1 | 202609 | 5165 | 33119 | 16179 / 26573 (150 matched) | 93 / 3191 | 20 / 14205 | 125 |
+| NEAR_N2_P7_B1 | 202610 | -2058 | 10440 | -11477 / -1834 (123 matched) | 68 / 13484 | 41 / 4065 | 89 |
+| NEAR_N2_P7_B2 | 202605 | -2353 | -11802 | -33467 / -20883 (116 matched) | 105 / 36104 | 23 / 4990 | 110 |
+| NEAR_N2_P7_B2 | 202606 | -17308 | 2224 | -29809 / -1955 (178 matched) | 62 / 43334 | 25 / 30833 | 117 |
+| NEAR_N2_P7_B2 | 202607 | 9232 | 15378 | 9635 / 23103 (208 matched) | 66 / 24281 | 6 / 24685 | 135 |
+| NEAR_N2_P7_B2 | 202608 | -9578 | 2396 | -6115 / -4497 (149 matched) | 72 / -9196 | 21 / -5733 | 101 |
+| NEAR_N2_P7_B2 | 202609 | 4121 | 30785 | 15030 / 25599 (150 matched) | 93 / 3296 | 20 / 14205 | 126 |
 | NEAR_N2_P7_B2 | 202610 | -2251 | 10958 | -12692 / -3067 (123 matched) | 68 / 14506 | 41 / 4065 | 90 |
+| NEAR_N2_P7_D3 | 202606 | -32696 | 7085 | -24380 / 1465 (182 matched) | 38 / 20641 | 21 / 28957 | 111 |
+| NEAR_N2_P7_D3 | 202607 | 25536 | 37892 | 32242 / 46964 (198 matched) | 52 / 23256 | 16 / 29961 | 125 |
+| NEAR_N2_P7_D3 | 202608 | 20115 | 6428 | -116 / 3666 (148 matched) | 52 / 15400 | 22 / -4832 | 97 |
+| NEAR_N2_P7_D3 | 202609 | -15550 | -3181 | -10519 / -483 (152 matched) | 51 / 17483 | 18 / 22514 | 106 |
+| NEAR_N2_P7_D3 | 202610 | -16757 | 13347 | -24575 / -5415 (139 matched) | 53 / 5817 | 25 / -2001 | 88 |
+| NEAR_N2_P7x_B1 | 202606 | -77082 | 4890 | -55139 / -7727 (116 matched) | 35 / 41855 | 13 / 63799 | 81 |
+| NEAR_N2_P7x_B1 | 202607 | -61073 | 42707 | -9103 / 39741 (107 matched) | 41 / 11582 | 20 / 63552 | 58 |
+| NEAR_N2_P7x_B1 | 202608 | 78748 | 41627 | 8246 / 26135 (109 matched) | 61 / 61653 | 41 / -8849 | 88 |
+| NEAR_N2_P7x_B1 | 202609 | -25799 | 45689 | -27415 / 3801 (87 matched) | 45 / 6842 | 16 / 5226 | 64 |
+| NEAR_N2_P7x_B1 | 202610 | 9638 | 17848 | -10567 / 2673 (91 matched) | 36 / 7454 | 18 / -12751 | 60 |
+| NEAR_N2_P7x_B2 | 202605 | 32037 | -20165 | -24998 / -60001 (76 matched) | 56 / 35360 | 18 / -21675 | 69 |
+| NEAR_N2_P7x_B2 | 202606 | -32958 | 3524 | -66742 / -20583 (109 matched) | 49 / 77337 | 20 / 43553 | 85 |
+| NEAR_N2_P7x_B2 | 202607 | -28823 | 27033 | 4061 / 18379 (99 matched) | 55 / 19396 | 28 / 52280 | 70 |
+| NEAR_N2_P7x_B2 | 202608 | 37634 | 3826 | -14302 / -11384 (120 matched) | 65 / 15902 | 30 / -36034 | 87 |
+| NEAR_N2_P7x_B2 | 202609 | -30599 | 53224 | -257 / 10832 (82 matched) | 59 / -18308 | 21 / 12034 | 65 |
 | NEAR_N2_P7x_B2 | 202610 | -9681 | 18838 | -26998 / -6278 (93 matched) | 45 / 4008 | 16 / -13310 | 61 |
+| NEAR_N2_P7x_C4 | 202605 | 9848 | -31486 | 8571 / -26085 (91 matched) | 14 / -10592 | 3 / -11868 | 23 |
+| NEAR_N2_P7x_C4 | 202606 | -8453 | 9991 | -32348 / -12074 (123 matched) | 17 / 21651 | 6 / -2244 | 31 |
+| NEAR_N2_P7x_C4 | 202607 | -14774 | 27280 | 8569 / 13666 (119 matched) | 27 / -21640 | 8 / 1702 | 30 |
+| NEAR_N2_P7x_C4 | 202608 | 73374 | 40882 | 33980 / 32854 (125 matched) | 33 / 30266 | 25 / -9128 | 35 |
+| NEAR_N2_P7x_C4 | 202609 | 7571 | 84607 | 14338 / 28852 (96 matched) | 23 / -19381 | 7 / -12614 | 30 |
 | NEAR_N2_P7x_C4 | 202610 | 9715 | 7951 | -3373 / -1286 (104 matched) | 14 / 8080 | 5 / -5008 | 27 |
+| NEAR_N2_P7x_D3 | 202605 | 26300 | -47757 | -22782 / -42189 (80 matched) | 52 / 37310 | 14 / -11772 | 64 |
+| NEAR_N2_P7x_D3 | 202606 | -108400 | 714 | -73983 / -21755 (113 matched) | 32 / 37769 | 16 / 72186 | 71 |
+| NEAR_N2_P7x_D3 | 202607 | -57361 | 59516 | -2978 / 48929 (103 matched) | 39 / 7541 | 24 / 61924 | 57 |
+| NEAR_N2_P7x_D3 | 202608 | 33440 | 10611 | -12947 / 1741 (108 matched) | 49 / 27506 | 42 / -18880 | 78 |
+| NEAR_N2_P7x_D3 | 202609 | -40788 | 631 | -54050 / -18517 (88 matched) | 40 / 13699 | 15 / 436 | 60 |
 | NEAR_N2_P7x_D3 | 202610 | -11604 | 22691 | -12132 / -2011 (90 matched) | 33 / -7257 | 19 / -7785 | 56 |
 | NEAR_N2_U7_B2 | 202610 | 8967 | 9529 | 8967 / 9529 (41 matched) | 0 / 0 | 0 / 0 | 19 |
 
 ## 8. Processes (keep running to 12:00Z)
 
-2278207 python3 -u nz2_exact.py chain
-2319176 /bin/bash ./cx_chain2.sh
-2321892 python3 -u nz2_feed.py
-2324199 /bin/bash -c source <claude-dir> 2>/dev/
-2324201 python3 nz2_page.py
+2324965 python3 -u nz2_exact.py chain
+2325013 python3 -u nz2_feed.py
+2459754 python3 -u nz2_page.py
 
 Caveats stated once. First-order; engine market exits are about 0.4 pt cheaper than the 1.2 pt used here; "other books" and the opposite-signal rule use the base stack's own trade list (the exact hook uses the engine's own events); ES/RTY features are 1-s mid and 5-s cancel flow, not a full book; h-q cannot be replayed on the frozen live week (no print/queue extracts for it), so mode A sets show "not replayable" for the live week; the learned exit uses the walk-forward fold models for each trade's quarter (none before 2024Q1) and the all-data model for the live week.
