@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F2 — desk-state family (item 2) and winning-day protection (item 5) — W-F2
 
-Generated 2026-11-12 21:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
+Generated 2026-11-12 21:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
 
 ## 0. Trend-week clause (first): sum of the base's 5 best weeks kept, and base winning weeks turned losing (per window)
 
@@ -84,18 +84,18 @@ Generated 2026-11-12 21:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_PL_day_half_m2_L | L1M | 36.9 | 35.0 | 2219 | 2825 | 606 | 16 |
 | NF_D_PL_day_half_m2_L | L3M | 4.3 | 1.3 | 106 | 16121 | 16015 | 16 |
 | NF_D_PL_day_half_m2_L | L6M | 4.3 | 1.3 | -1542 | 23595 | 25137 | 16 |
-| NF_D_ST_half_2_J | HOLD | 7.1 | 0.5 | -1319 | 13086 | 14405 | 12 |
-| NF_D_ST_half_2_J | L1M | 12.5 | 6.3 | 58 | 2689 | 2631 | 12 |
-| NF_D_ST_half_2_J | L3M | -5.7 | -13.2 | -697 | 14244 | 14942 | 12 |
-| NF_D_ST_half_2_J | L6M | 2.5 | -4.5 | -2733 | 18132 | 20865 | 12 |
+| NF_D_ST_half_2_J | HOLD | 7.1 | 0.5 | -1319 | 13086 | 14405 | 14 |
+| NF_D_ST_half_2_J | L1M | 12.5 | 6.3 | 58 | 2689 | 2631 | 14 |
+| NF_D_ST_half_2_J | L3M | -5.7 | -13.2 | -697 | 14244 | 14942 | 14 |
+| NF_D_ST_half_2_J | L6M | 2.5 | -4.5 | -2733 | 18132 | 20865 | 14 |
 | NF_D_ST_half_2_L | HOLD | 18.1 | 6.9 | -1798 | 15691 | 17489 | 12 |
 | NF_D_ST_half_2_L | L1M | 29.8 | 20.2 | 1028 | 1635 | 606 | 12 |
 | NF_D_ST_half_2_L | L3M | -2.2 | -16.2 | -1561 | 14454 | 16015 | 12 |
 | NF_D_ST_half_2_L | L6M | -2.2 | -16.2 | -3688 | 21449 | 25137 | 12 |
-| NF_D_ST_half_3_J | HOLD | -19.8 | -26.4 | -947 | 13459 | 14405 | 12 |
-| NF_D_ST_half_3_J | L1M | 3.5 | -1.8 | -356 | 2275 | 2631 | 12 |
-| NF_D_ST_half_3_J | L3M | -50.8 | -59.2 | -1380 | 13562 | 14942 | 12 |
-| NF_D_ST_half_3_J | L6M | -12.4 | -18.6 | -1430 | 19435 | 20865 | 12 |
+| NF_D_ST_half_3_J | HOLD | -19.8 | -26.4 | -947 | 13459 | 14405 | 15 |
+| NF_D_ST_half_3_J | L1M | 3.5 | -1.8 | -356 | 2275 | 2631 | 15 |
+| NF_D_ST_half_3_J | L3M | -50.8 | -59.2 | -1380 | 13562 | 14942 | 15 |
+| NF_D_ST_half_3_J | L6M | -12.4 | -18.6 | -1430 | 19435 | 20865 | 15 |
 | NF_D_ST_half_4_J | L1M | 3.5 | 1.3 | -116 | 2514 | 2631 | 6 |
 | NF_D_ST_half_4_J | L3M | -15.2 | -17.8 | -827 | 14114 | 14942 | 6 |
 | NF_D_ST_half_4_J | L6M | 0.0 | -2.3 | -759 | 20106 | 20865 | 6 |
@@ -107,10 +107,10 @@ Generated 2026-11-12 21:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_WD_fresh_3_L | L1M | 33.3 | -15.9 | -2342 | -1735 | 606 | 16 |
 | NF_D_WD_fresh_3_L | L3M | 33.3 | -15.9 | -3648 | 12367 | 16015 | 16 |
 | NF_D_WD_fresh_3_L | L6M | 33.3 | -15.9 | -11252 | 13885 | 25137 | 16 |
-| NF_D_WD_half_3_L | HOLD | 11.6 | 8.0 | -565 | 16924 | 17489 | 12 |
-| NF_D_WD_half_3_L | L1M | 23.2 | 20.1 | -226 | 380 | 606 | 12 |
-| NF_D_WD_half_3_L | L3M | 12.8 | 9.3 | -2596 | 13419 | 16015 | 12 |
-| NF_D_WD_half_3_L | L6M | 12.8 | 9.3 | -1544 | 23593 | 25137 | 12 |
+| NF_D_WD_half_3_L | HOLD | 11.6 | 8.0 | -565 | 16924 | 17489 | 16 |
+| NF_D_WD_half_3_L | L1M | 23.2 | 20.1 | -226 | 380 | 606 | 16 |
+| NF_D_WD_half_3_L | L3M | 12.8 | 9.3 | -2596 | 13419 | 16015 | 16 |
+| NF_D_WD_half_3_L | L6M | 12.8 | 9.3 | -1544 | 23593 | 25137 | 16 |
 
 ## 3. acceptance_p7 and behavioural scorecard (cells with all 43 months)
 

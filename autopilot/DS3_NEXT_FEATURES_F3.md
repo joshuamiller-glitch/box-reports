@@ -1,5 +1,5 @@
 # DS3_NEXT_FEATURES_F3 - T-NEXT-FEATURES items 3 (hold-or-take by location) and 4 (flat cut by context). W-F3. Shadow only, no PASS claim.
-Updated 2026-11-12 21:27Z. Directive autopilot/DIRECTIVE_T_NEXT_FEATURES_20261112.md; prereg autopilot/NEXTF3_PREREG.md (sha in DECISIONS.md). BASE = JN05W2 (LPB panel + F3 + E1 + C22 + BR3S + FLAT45K, exact 43 months, W-J). Item-4 sets keep FLAT45K on K7 unless the cell says replace. Exact sets run one per job (jn05_run2.py, TP engine, tag NEXTF); months done: NC_U7_T10_15F 12/43, NC_U7_T20_15F 12/43, NC_U7_T20_15A 12/43, NC_K7_T20_20RC 12/43, NC_K7_F55_45 12/43, NC_A7_T10_10F 12/43, NC_M7_T10_10A 12/43, NC_K7_T30_10RC 8/43, NH_P7_A9_N20 12/43, NH_P7_B9_X10N30 12/43, NH_U7_B7_X20N60 12/43, NH_M7_C9_F2 12/43, NH_M7_B9_X10N60 12/43, NH_P7_B7_X10N60 8/43, NH_U7_B7_X30N120 7/43
+Updated 2026-11-12 21:59Z. Directive autopilot/DIRECTIVE_T_NEXT_FEATURES_20261112.md; prereg autopilot/NEXTF3_PREREG.md (sha in DECISIONS.md). BASE = JN05W2 (LPB panel + F3 + E1 + C22 + BR3S + FLAT45K, exact 43 months, W-J). Item-4 sets keep FLAT45K on K7 unless the cell says replace. Exact sets run one per job (jn05_run2.py, TP engine, tag NEXTF); months done: NC_U7_T10_15F 31/43, NC_U7_T20_15F 12/43, NC_U7_T20_15A 12/43, NC_K7_T20_20RC 12/43, NC_K7_F55_45 12/43, NC_A7_T10_10F 12/43, NC_M7_T10_10A 12/43, NC_K7_T30_10RC 12/43, NH_P7_A9_N20 12/43, NH_P7_B9_X10N30 12/43, NH_U7_B7_X20N60 12/43, NH_M7_C9_F2 12/43, NH_M7_B9_X10N60 12/43, NH_P7_B7_X10N60 12/43, NH_U7_B7_X30N120 12/43
 
 Reading rule: exact is the verdict; first-order (FO sections) only chose the cells. Mean columns: mean_all (all weeks) vs ref; dmean carry-dropped is not used here. R-vs-dollar note: both items are location rules (points / fractions of target / minutes), independent of lot size, so they transfer unchanged to the user's x1.75 lots; only the dollar P&L scales.
 
@@ -32,25 +32,25 @@ IDENTITY NH_ID trades 598 598 net 25943.82 25943.82 IDENTICAL
 | NH_U7_B7_X30N120 | 255545 | 2 | 0 | 10 |
 
 
-## 2.NC_U7_T10_15F (12/43 months)
+## 2.NC_U7_T10_15F (31/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NC_U7_T10_15F
             cell     ref window  mean_all  ref_all  dmean_all       dd   dd_ref   cut  eq_cut  w20cut  months
-0  NC_U7_T10_15F  JN05W2    L1M    3190.3    606.3     2584.0  31571.5  36370.5  13.2    16.6   426.2      12
-1  NC_U7_T10_15F  JN05W2    L3M   17258.8  16015.2     1243.6  32116.9  36370.5  11.7    15.2     7.8      12
-2  NC_U7_T10_15F  JN05W2    L6M   25709.5  25136.9      572.6  32116.9  36370.5  11.7    15.2     7.7      12
-3  NC_U7_T10_15F  JN05W2   HOLD   18288.4  17489.3      799.1  61073.1  63185.1   3.3     7.1     8.6      12
+0  NC_U7_T10_15F  JN05W2    L1M    3190.3    606.3     2584.0  31571.5  36370.5  13.2    16.6   426.2      30
+1  NC_U7_T10_15F  JN05W2    L3M   17258.8  16015.2     1243.6  32116.9  36370.5  11.7    15.2     7.8      30
+2  NC_U7_T10_15F  JN05W2    L6M   25709.5  25136.9      572.6  32116.9  36370.5  11.7    15.2     7.7      30
+3  NC_U7_T10_15F  JN05W2   HOLD   18288.4  17489.3      799.1  61073.1  63185.1   3.3     7.1     8.6      30
 
 ```
 ### windows vs LPB_BASE (score_w)
 ```
 NC_U7_T10_15F
             cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut    dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
-0  NC_U7_T10_15F    L1M    3190.3         340.7     2849.5  -5737.3  31571.5  51252.7  38.4  10442.5    51.8   12761.0    1363.0    -9.4  -16179.8      12
-1  NC_U7_T10_15F    L3M   17258.8       11956.7     5302.1  17430.8  32116.9  77224.2  58.4   2505.5    67.5  224363.9  155436.8    28.2   14925.3      12
-2  NC_U7_T10_15F    L6M   25709.5       18696.8     7012.7  23852.2  32116.9  77224.2  58.4   5191.8    67.5  283907.1  102383.9    38.6   18660.5      12
-3  NC_U7_T10_15F   HOLD   18288.4       15236.3     3052.0  17232.5  61073.1  78842.0  22.5   2081.8    39.4 -239322.9 -377467.2    14.7   15150.7      12
+0  NC_U7_T10_15F    L1M    3190.3         340.7     2849.5  -5737.3  31571.5  51252.7  38.4  10442.5    51.8   12761.0    1363.0    -9.4  -16179.8      30
+1  NC_U7_T10_15F    L3M   17258.8       11956.7     5302.1  17430.8  32116.9  77224.2  58.4   2505.5    67.5  224363.9  155436.8    28.2   14925.3      30
+2  NC_U7_T10_15F    L6M   25709.5       18696.8     7012.7  23852.2  32116.9  77224.2  58.4   5191.8    67.5  283907.1  102383.9    38.6   18660.5      30
+3  NC_U7_T10_15F   HOLD   18288.4       15236.3     3052.0  17232.5  61073.1  78842.0  22.5   2081.8    39.4 -239322.9 -377467.2    14.7   15150.7      30
 
 ```
 ### acceptance_p7
@@ -64,15 +64,15 @@ NC_U7_T10_15F
 -- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 4 ($+20390); all re-entry winners (any evidence) reference 13, set 14
 -- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
 
-SUMMARY NC_U7_T10_15F: fails 1 of 16 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->1', '0->0']
-covered sessions 16 of 20
+SUMMARY NC_U7_T10_15F: fails 1 of 19 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->1', '0->0']
+covered sessions 19 of 20
 ACCEPT NC_U7_T10_15F PASS fails=1/20
 
 ```
 ### behavioural scorecard (ref JN05W2)
 NC_U7_T10_15F L6M (stack, per week): full stops 10.6/wk $-19315; give-backs 7.6/wk (7.4 round-trips) realised $-10489, forgone vs target $28044; same-side losing runs max 13, p95 6, $-44516 lost on 3rd-and-later; no-new-evidence re-entries 32.9/wk $1001; recoveries cut 12.2/wk $47901, clipped fills 0.0/wk $0; vs JN05W2: winners skipped $0/wk, losers avoided $127/wk, net +606 $/wk; pnl $27204/wk.
 NC_U7_T10_15F HOLD (stack, per week): full stops 10.2/wk $-19356; give-backs 6.8/wk (6.7 round-trips) realised $-9378, forgone vs target $25472; same-side losing runs max 13, p95 6, $-37234 lost on 3rd-and-later; no-new-evidence re-entries 26.2/wk $1800; recoveries cut 11.1/wk $43961, clipped fills 0.0/wk $0; vs JN05W2: winners skipped $24/wk, losers avoided $162/wk, net +822 $/wk; pnl $18863/wk.
-NC_U7_T10_15F PRE: months missing (17 of 17), window not scored
+NC_U7_T10_15F PRE: months missing (3 of 17), window not scored
 NC_U7_T10_15F X': months missing (10 of 10), window not scored
 
 
@@ -340,23 +340,25 @@ NC_M7_T10_10A PRE: months missing (17 of 17), window not scored
 NC_M7_T10_10A X': months missing (10 of 10), window not scored
 
 
-## 2.NC_K7_T30_10RC (8/43 months)
+## 2.NC_K7_T30_10RC (12/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NC_K7_T30_10RC
              cell     ref window  mean_all  ref_all  dmean_all       dd   dd_ref  cut  eq_cut  w20cut  months
-0  NC_K7_T30_10RC  JN05W2    L1M     630.8    606.3       24.5  36265.5  36370.5  0.3    -0.8     4.0       8
-1  NC_K7_T30_10RC  JN05W2    L3M   16250.5  16015.2      235.3  36265.5  36370.5  0.3    -0.8     1.5       8
-2  NC_K7_T30_10RC  JN05W2    L6M   23973.2  25136.9    -1163.7  36265.5  36370.5  0.3    -0.8    -9.7       8
+0  NC_K7_T30_10RC  JN05W2    L1M     630.8    606.3       24.5  36265.5  36370.5  0.3    -0.8     4.0      12
+1  NC_K7_T30_10RC  JN05W2    L3M   16250.5  16015.2      235.3  36265.5  36370.5  0.3    -0.8     1.5      12
+2  NC_K7_T30_10RC  JN05W2    L6M   23973.2  25136.9    -1163.7  36265.5  36370.5  0.3    -0.8    -9.7      12
+3  NC_K7_T30_10RC  JN05W2   HOLD   17054.8  17489.3     -434.6  61325.1  63185.1  2.9     1.9    -6.5      12
 
 ```
 ### windows vs LPB_BASE (score_w)
 ```
 NC_K7_T30_10RC
              cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
-0  NC_K7_T30_10RC    L1M     630.8         340.7      290.0  -7157.3  36265.5  51252.7  29.2  9022.5    40.2    2523.0    1363.0   -10.3  -16179.8       8
-1  NC_K7_T30_10RC    L3M   16250.5       11956.7     4293.8  16375.0  36265.5  77224.2  53.0  1449.7    60.3  211256.7  155436.8    23.5   14925.3       8
-2  NC_K7_T30_10RC    L6M   23973.2       18696.8     5276.4  22076.2  36265.5  77224.2  53.0  3415.7    60.3  237956.3  102383.9    31.7   18660.5       8
+0  NC_K7_T30_10RC    L1M     630.8         340.7      290.0  -7157.3  36265.5  51252.7  29.2  9022.5    40.2    2523.0    1363.0   -10.3  -16179.8      12
+1  NC_K7_T30_10RC    L3M   16250.5       11956.7     4293.8  16375.0  36265.5  77224.2  53.0  1449.7    60.3  211256.7  155436.8    23.5   14925.3      12
+2  NC_K7_T30_10RC    L6M   23973.2       18696.8     5276.4  22076.2  36265.5  77224.2  53.0  3415.7    60.3  237956.3  102383.9    31.7   18660.5      12
+3  NC_K7_T30_10RC   HOLD   17054.8       15236.3     1818.4  15989.2  61325.1  78842.0  22.2   838.5    34.3 -278633.2 -377467.2    13.6   15150.7      12
 
 ```
 ### acceptance_p7
@@ -377,7 +379,7 @@ ACCEPT NC_K7_T30_10RC PASS fails=1/20
 ```
 ### behavioural scorecard (ref JN05W2)
 NC_K7_T30_10RC L6M (stack, per week): full stops 11.2/wk $-21420; give-backs 7.5/wk (7.4 round-trips) realised $-10478, forgone vs target $27983; same-side losing runs max 13, p95 6, $-44688 lost on 3rd-and-later; no-new-evidence re-entries 32.6/wk $966; recoveries cut 12.0/wk $47275, clipped fills 0.0/wk $0; vs JN05W2: winners skipped $2327/wk, losers avoided $733/wk, net -1231 $/wk; pnl $25367/wk.
-NC_K7_T30_10RC HOLD: months missing (4 of 12), window not scored
+NC_K7_T30_10RC HOLD (stack, per week): full stops 10.8/wk $-21168; give-backs 6.9/wk (6.7 round-trips) realised $-9369, forgone vs target $25522; same-side losing runs max 13, p95 6, $-37543 lost on 3rd-and-later; no-new-evidence re-entries 26.1/wk $1733; recoveries cut 10.9/wk $43578, clipped fills 0.0/wk $0; vs JN05W2: winners skipped $1273/wk, losers avoided $574/wk, net -447 $/wk; pnl $17595/wk.
 NC_K7_T30_10RC PRE: months missing (17 of 17), window not scored
 NC_K7_T30_10RC X': months missing (10 of 10), window not scored
 
@@ -602,23 +604,25 @@ NH_M7_B9_X10N60 PRE: months missing (17 of 17), window not scored
 NH_M7_B9_X10N60 X': months missing (10 of 10), window not scored
 
 
-## 2.NH_P7_B7_X10N60 (8/43 months)
+## 2.NH_P7_B7_X10N60 (12/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NH_P7_B7_X10N60
               cell     ref window  mean_all  ref_all  dmean_all       dd   dd_ref  cut  eq_cut  w20cut  months
-0  NH_P7_B7_X10N60  JN05W2    L1M    1029.7    606.3      423.4  36055.6  36370.5  0.9   -15.0    69.8       8
-1  NH_P7_B7_X10N60  JN05W2    L3M   15824.7  16015.2     -190.5  36055.6  36370.5  0.9   -15.0    -1.2       8
-2  NH_P7_B7_X10N60  JN05W2    L6M   22618.7  25136.9    -2518.2  36055.6  36370.5  0.9   -15.0    -5.2       8
+0  NH_P7_B7_X10N60  JN05W2    L1M    1029.7    606.3      423.4  36055.6  36370.5  0.9   -15.0    69.8      12
+1  NH_P7_B7_X10N60  JN05W2    L3M   15824.7  16015.2     -190.5  36055.6  36370.5  0.9   -15.0    -1.2      12
+2  NH_P7_B7_X10N60  JN05W2    L6M   22618.7  25136.9    -2518.2  36055.6  36370.5  0.9   -15.0    -5.2      12
+3  NH_P7_B7_X10N60  JN05W2   HOLD   15293.5  17489.3    -2195.9  64253.2  63185.1 -1.7   -18.0     0.7      12
 
 ```
 ### windows vs LPB_BASE (score_w)
 ```
 NH_P7_B7_X10N60
               cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut    dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
-0  NH_P7_B7_X10N60    L1M    1029.7         340.7      689.0  -3833.2  36055.6  51252.7  29.7  12346.6    35.3    4118.9    1363.0    -5.5  -16179.8       8
-1  NH_P7_B7_X10N60    L3M   15824.7       11956.7     3868.0  14297.6  36055.6  77224.2  53.3   -627.7    57.0  205720.6  155436.8    20.6   14925.3       8
-2  NH_P7_B7_X10N60    L6M   22618.7       18696.8     3921.8  22157.5  36055.6  77224.2  53.3   1766.1    57.0  250011.3  102383.9    32.0   20391.4       8
+0  NH_P7_B7_X10N60    L1M    1029.7         340.7      689.0  -3833.2  36055.6  51252.7  29.7  12346.6    35.3    4118.9    1363.0    -5.5  -16179.8      12
+1  NH_P7_B7_X10N60    L3M   15824.7       11956.7     3868.0  14297.6  36055.6  77224.2  53.3   -627.7    57.0  205720.6  155436.8    20.6   14925.3      12
+2  NH_P7_B7_X10N60    L6M   22618.7       18696.8     3921.8  22157.5  36055.6  77224.2  53.3   1766.1    57.0  250011.3  102383.9    32.0   20391.4      12
+3  NH_P7_B7_X10N60   HOLD   15293.5       15236.3       57.1  14923.7  64253.2  78842.0  18.5  -1075.4    25.0 -259974.8 -377467.2    12.1   15999.2      12
 
 ```
 ### acceptance_p7
@@ -639,28 +643,30 @@ ACCEPT NH_P7_B7_X10N60 PASS fails=0/20
 ```
 ### behavioural scorecard (ref JN05W2)
 NH_P7_B7_X10N60 L6M (stack, per week): full stops 11.0/wk $-20737; give-backs 6.2/wk (5.9 round-trips) realised $-6441, forgone vs target $17587; same-side losing runs max 13, p95 6, $-42783 lost on 3rd-and-later; no-new-evidence re-entries 34.1/wk $473; recoveries cut 12.6/wk $49490, clipped fills 0.0/wk $0; vs JN05W2: winners skipped $7255/wk, losers avoided $5344/wk, net -2665 $/wk; pnl $23934/wk.
-NH_P7_B7_X10N60 HOLD: months missing (4 of 12), window not scored
+NH_P7_B7_X10N60 HOLD (stack, per week): full stops 10.7/wk $-20845; give-backs 5.8/wk (5.2 round-trips) realised $-5321, forgone vs target $16157; same-side losing runs max 13, p95 6, $-35963 lost on 3rd-and-later; no-new-evidence re-entries 27.1/wk $1470; recoveries cut 11.3/wk $45356, clipped fills 0.0/wk $0; vs JN05W2: winners skipped $5754/wk, losers avoided $4932/wk, net -2241 $/wk; pnl $15800/wk.
 NH_P7_B7_X10N60 PRE: months missing (17 of 17), window not scored
 NH_P7_B7_X10N60 X': months missing (10 of 10), window not scored
 
 
-## 2.NH_U7_B7_X30N120 (7/43 months)
+## 2.NH_U7_B7_X30N120 (12/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NH_U7_B7_X30N120
                cell     ref window  mean_all  ref_all  dmean_all       dd   dd_ref  cut  eq_cut  w20cut  months
-0  NH_U7_B7_X30N120  JN05W2    L1M    5204.3    606.3     4598.0  34476.5  36370.5  5.2     6.6   758.4       7
-1  NH_U7_B7_X30N120  JN05W2    L3M   16730.4  16015.2      715.2  36449.9  36370.5 -0.2     1.3     4.5       7
-2  NH_U7_B7_X30N120  JN05W2    L6M   26173.8  25136.9     1036.9  36449.9  36370.5 -0.2     1.3    10.7       7
+0  NH_U7_B7_X30N120  JN05W2    L1M    5204.3    606.3     4598.0  34476.5  36370.5  5.2     6.6   758.4      12
+1  NH_U7_B7_X30N120  JN05W2    L3M   16730.4  16015.2      715.2  36449.9  36370.5 -0.2     1.3     4.5      12
+2  NH_U7_B7_X30N120  JN05W2    L6M   26173.8  25136.9     1036.9  36449.9  36370.5 -0.2     1.3    10.7      12
+3  NH_U7_B7_X30N120  JN05W2   HOLD   18160.4  17489.3      671.1  63212.1  63185.1 -0.0     1.5     3.0      12
 
 ```
 ### windows vs LPB_BASE (score_w)
 ```
 NH_U7_B7_X30N120
                cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
-0  NH_U7_B7_X30N120    L1M    5204.3         340.7     4863.6  18431.2  34476.5  51252.7  32.7   892.7    48.4   20817.2    1363.0    27.8   17538.5       7
-1  NH_U7_B7_X30N120    L3M   16730.4       11956.7     4773.7  16840.9  36449.9  77224.2  52.8  1915.6    63.8  217495.4  155436.8    24.0   14925.3       7
-2  NH_U7_B7_X30N120    L6M   26173.8       18696.8     7476.9  24346.9  36449.9  77224.2  52.8  5686.4    63.8  291948.9  102383.9    34.7   18660.5       7
+0  NH_U7_B7_X30N120    L1M    5204.3         340.7     4863.6  18431.2  34476.5  51252.7  32.7   892.7    48.4   20817.2    1363.0    27.8   17538.5      12
+1  NH_U7_B7_X30N120    L3M   16730.4       11956.7     4773.7  16840.9  36449.9  77224.2  52.8  1915.6    63.8  217495.4  155436.8    24.0   14925.3      12
+2  NH_U7_B7_X30N120    L6M   26173.8       18696.8     7476.9  24346.9  36449.9  77224.2  52.8  5686.4    63.8  291948.9  102383.9    34.7   18660.5      12
+3  NH_U7_B7_X30N120   HOLD   18160.4       15236.3     2924.0  17107.7  63212.1  78842.0  19.8  1957.1    38.5 -253834.7 -377467.2    14.1   15150.7      12
 
 ```
 ### acceptance_p7
@@ -674,14 +680,14 @@ ssions of the reference) and the frozen live week: re-entry winners after NEW EV
 -- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 4 ($+20390); all re-entry winners (any evidence) reference 13, set 14
 -- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
 
-SUMMARY NH_U7_B7_X30N120: fails 1 of 15 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->1', '0->0']
-covered sessions 15 of 20
+SUMMARY NH_U7_B7_X30N120: fails 1 of 16 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->1', '0->0']
+covered sessions 16 of 20
 ACCEPT NH_U7_B7_X30N120 PASS fails=1/20
 
 ```
 ### behavioural scorecard (ref JN05W2)
 NH_U7_B7_X30N120 L6M (stack, per week): full stops 10.9/wk $-19942; give-backs 8.0/wk (7.2 round-trips) realised $-9097, forgone vs target $27652; same-side losing runs max 13, p95 6, $-44403 lost on 3rd-and-later; no-new-evidence re-entries 32.9/wk $1275; recoveries cut 12.2/wk $47811, clipped fills 0.0/wk $0; vs JN05W2: winners skipped $147/wk, losers avoided $-0/wk, net +1097 $/wk; pnl $27696/wk.
-NH_U7_B7_X30N120 HOLD: months missing (5 of 12), window not scored
+NH_U7_B7_X30N120 HOLD (stack, per week): full stops 10.4/wk $-19895; give-backs 7.2/wk (6.5 round-trips) realised $-8105, forgone vs target $25242; same-side losing runs max 13, p95 6, $-37242 lost on 3rd-and-later; no-new-evidence re-entries 26.3/wk $1870; recoveries cut 11.1/wk $44077, clipped fills 0.0/wk $0; vs JN05W2: winners skipped $166/wk, losers avoided $91/wk, net +690 $/wk; pnl $18732/wk.
 NH_U7_B7_X30N120 PRE: months missing (17 of 17), window not scored
 NH_U7_B7_X30N120 X': months missing (10 of 10), window not scored
 

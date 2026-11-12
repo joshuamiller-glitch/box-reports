@@ -1,5 +1,5 @@
 # DS3_SURVIVORS_X - flat-stop survivors (EC_FLAT{40,45,50}{K,U,A,M} on LPB_BASE; JN04RM_FLAT{40,45,50}K on the JN04RM base), exact, Shadow only, no PASS claim
-Updated 2026-11-12 21:17Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 28/43, EC_FLAT40K 20/43, EC_FLAT50K 20/43, EC_FLAT45U 12/43, EC_FLAT40U 0/43, EC_FLAT50U 0/43, EC_FLAT45A 12/43, EC_FLAT40A 0/43, EC_FLAT50A 0/43, EC_FLAT45M 12/43, EC_FLAT40M 0/43, EC_FLAT50M 0/43, JN04RM_FLAT45K 27/43, JN04RM_FLAT40K 26/43, JN04RM_FLAT50K 26/43
+Updated 2026-11-12 21:47Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 28/43, EC_FLAT40K 21/43, EC_FLAT50K 21/43, EC_FLAT45U 12/43, EC_FLAT40U 0/43, EC_FLAT50U 0/43, EC_FLAT45A 12/43, EC_FLAT40A 0/43, EC_FLAT50A 0/43, EC_FLAT45M 12/43, EC_FLAT40M 0/43, EC_FLAT50M 0/43, JN04RM_FLAT45K 27/43, JN04RM_FLAT40K 27/43, JN04RM_FLAT50K 26/43
 Fill model: flat-stop market exit at next-1-s mid -/+ 0.80 pt (live loss-cut is 1.19-1.20 adverse => savings overstated ~0.4 pt). Windows PRE/X/GAP/WF need all 43 months; sets missing months are labelled.
 
 ## 1. Trend-week clause (L6M weekly check, exact)
@@ -74,7 +74,7 @@ EC_FLAT45K PRE: months missing (5 of 17), window not scored
 EC_FLAT45K X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT40K (20/43 months)
+## EC_FLAT40K (21/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40K
@@ -108,7 +108,7 @@ EC_FLAT40K PRE: months missing (15 of 17), window not scored
 EC_FLAT40K X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT50K (20/43 months)
+## EC_FLAT50K (21/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50K
@@ -279,7 +279,7 @@ JN04RM_FLAT45K PRE: months missing (15 of 17), window not scored
 JN04RM_FLAT45K X' (stack, per week): full stops 10.1/wk $-17063; give-backs 3.7/wk (3.1 round-trips) realised $-3602, forgone vs target $9978; same-side losing runs max 8, p95 4, $-10315 lost on 3rd-and-later; no-new-evidence re-entries 3.8/wk $668; recoveries cut 2.4/wk $6258, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $2001/wk, losers avoided $2183/wk, net +809 $/wk; pnl $2356/wk.
 
 
-## JN04RM_FLAT40K (26/43 months)
+## JN04RM_FLAT40K (27/43 months)
 ### windows / WF / rule 2a
 ```
 JN04RM_FLAT40K
