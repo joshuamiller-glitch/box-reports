@@ -17,3 +17,21 @@ Bi-weekly WF (30 cells, trailing 52 weeks, OOS from 2024-07, 61 refits): total +
 Trader test P7+U7 (first-order): L6M 52 give-backs converted (+$340k), 344 fills clipped (-$203k), net +$137k/26 wk; HOLD net +$210k; GAP net -$60k (17 wk); PRE net +$33k (74 wk).
 
 Reading: the lead is real inside 2025-11..2026-10 (placebo and family p 0.000 on L6M and HOLD) and reverses sign in GAP (2025-07..10, significantly worse than placebo) and is null/negative before. It is a RECENT-ONLY pattern that fails PRE/X'/GAP on the standing tolerance rule; the 2023-24 and mid-2025 history do not support it. Family correction: 1 cell of 336 (screen) / best of 30 (history): survives only on the two recent windows.
+
+
+## 2. Exact engine (TP, one set per job, hook code/th_cross/nkd_hooks.py; refreshed 2026-11-12 13:30Z)
+Identity: NKD_ID (hook, no rule) = LPB_BASE on 202610, 769 trades, net_fee 12,236.22 identical trade for trade.
+Months done: NKD_P7U7_LE0 0/43, NKD_P7_LE0 0/43
+
+| set | window | months | stack maxDD ref -> set | DD cut % | d mean $/wk | rule exits n | rule exits $ |
+|---|---|---|---|---|---|---|---|
+
+(d mean $/wk is the all-weeks mean difference over the same months; RECENT-ONLY unless GAP, PRE and X' hold.)
+
+### Trend-week clause (L6M, ISO weeks, stack net)
+NKD_P7U7_LE0: L6M incomplete (0/6 months) - clause not yet scored
+NKD_P7_LE0: L6M incomplete (0/6 months) - clause not yet scored
+
+### Scorecard and acceptance (only on sets with complete L6M)
+NKD_P7U7_LE0: L6M incomplete - scorecard/acceptance not run
+NKD_P7_LE0: L6M incomplete - scorecard/acceptance not run

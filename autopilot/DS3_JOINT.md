@@ -1,4 +1,4 @@
-# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-12 09:55Z)
+# DS3_JOINT - everything with everything (T-JOINT), version 1 (2026-11-12 13:57Z)
 
 **ROLL-EXCL (33 contract-roll artifact trades excluded). FIRST-ORDER SCREEN ONLY. PRE-PROOF, post-hoc, shadow only, no PASS claims. Every layer stays ON in every stack: option 0 of each layer is the live setting (multiplier 1).** The layer pools are stand-ins built by SZ-IJK from the owners' multiplier files (M_*.npz, the lot-level layers only) until the owners write /mnt/l2/l2vast/_th_joint/layers/<layer>/topK.json. Cut / profit-rule / lock / entry layers are NOT multiplier-composable and are not in this version.
 
