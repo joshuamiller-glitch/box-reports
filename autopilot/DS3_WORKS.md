@@ -1,4 +1,4 @@
-# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-12T06:00:09Z; Shadow only, no PASS claims)
+# DS3_WORKS - T-WORKS expand-what-works (aggregate page; built by W-J; 2026-11-12T06:30:53Z; Shadow only, no PASS claims)
 
 Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. Section D is W-J: the reference rows (JN04RM vs LPB_BASE), the JN05 composition and the REFIT 2026-11-22 preview. Every number is exact-engine, live panel base (P7 day cap 8,400 + table 7,4,0,4,0,0 + P7 cut 40/5x/w5/p3), reference LPB_BASE, ROLLFIX1.
 
@@ -10,15 +10,15 @@ Sections A, B, C are the workers' own pages (DS3_WORKS_A/B/C.md) merged below. S
 | JN04RM | ACCEPTANCE P7 JN04RM  2026-11-11 19:55Z   (months 43: 202304..202610; reference LPB_BASE months 43) | /mnt/l2/l2vast/_th_works/q/sc/sc_JN04RM.txt |
 | WA_C1 | (not run) | /mnt/l2/l2vast/_th_works/q/sc/sc_WA_C1.txt |
 | WG_E1 | ACCEPTANCE P7 WG_E1  2026-11-11 22:41Z   (months 5: 202606..202610; reference LPB_BASE months 43) | /mnt/l2/l2vast/_th_works/q/sc/sc_WG_E1.txt |
-| JN05W_E1 | ACCEPTANCE P7 JN05W_E1  2026-11-12 05:12Z   (months 30: 202405..202610; reference LPB_BASE months 43) | /mnt/l2/l2vast/_th_works/q/sc/sc_JN05W_E1.txt |
+| JN05W_E1 | ACCEPTANCE P7 JN05W_E1  2026-11-12 06:30Z   (months 36: 202311..202610; reference LPB_BASE months 43) | /mnt/l2/l2vast/_th_works/q/sc/sc_JN05W_E1.txt |
 | JN05W_E1A | (not run) | (not run) |
 
 ## 000. JN05W scorecard (plain words, W-Q behavior_scorecard.py)
 
 JN05W_E1 L6M (stack, per week): full stops 21.5/wk $-33850; give-backs 8.6/wk (8.5 round-trips) realised $-8975, forgone vs target $23652; same-side losing runs max 14, p95 6, $-31548 lost on 3rd-and-later; no-new-evidence re-entries 34.9/wk $-608; recoveries cut 16.2/wk $42198, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $33908/wk, losers avoided $34100/wk, net -2313 $/wk; pnl $17471/wk.
 JN05W_E1 HOLD (stack, per week): full stops 20.1/wk $-32026; give-backs 7.4/wk (7.1 round-trips) realised $-7673, forgone vs target $20244; same-side losing runs max 14, p95 6, $-28717 lost on 3rd-and-later; no-new-evidence re-entries 27.7/wk $443; recoveries cut 13.8/wk $34707, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $30570/wk, losers avoided $30216/wk, net -3721 $/wk; pnl $11630/wk.
-JN05W_E1 PRE: months missing (3 of 17), window not scored
-JN05W_E1 X': months missing (10 of 10), window not scored
+JN05W_E1 PRE (stack, per week): full stops 15.6/wk $-25475; give-backs 4.8/wk (4.4 round-trips) realised $-4562, forgone vs target $12239; same-side losing runs max 10, p95 4, $-13386 lost on 3rd-and-later; no-new-evidence re-entries 12.3/wk $805; recoveries cut 7.7/wk $17042, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $21366/wk, losers avoided $19629/wk, net -3867 $/wk; pnl $8015/wk.
+JN05W_E1 X': months missing (7 of 10), window not scored
 
 
 ## 0. Behavioural scorecard (W-Q behavior_scorecard.py: LPB_BASE, JN04RM, JN05W per book and stack and window, plain words; JN05 is judged by acceptability first)
@@ -74,15 +74,15 @@ Registered dial candidates (W-A relay, 2026-11-11): WA_C1 = JN04RM + K7 off whil
 
 ## A. Generalise the dials (A)
 
-Source DS3_WORKS_A.md (mtime 2026-11-12T02:22:33Z UTC), included verbatim, read only:
+Source DS3_WORKS_A.md (mtime 2026-11-12T06:24:07Z UTC), included verbatim, read only:
 
 # DS3_WORKS_A - T-WORKS part A: generalised risk dials (W-A)
-Refreshed 2026-11-12 02:21Z. Shadow only, no PASS claims, label PRE-PROOF (post-hoc). Prereg: autopilot/WORKS_A_PREREG.md (sha in DECISIONS.md, plus an addendum for the composites and cap sets). Code: outputs/code/th_works_a. Data: /mnt/l2/l2vast/_th_works_a.
+Refreshed 2026-11-12 06:22Z. Shadow only, no PASS claims, label PRE-PROOF (post-hoc). Prereg: autopilot/WORKS_A_PREREG.md (sha in DECISIONS.md, plus an addendum for the composites and cap sets). Code: outputs/code/th_works_a. Data: /mnt/l2/l2vast/_th_works_a.
 
 ## 0. Status and method
-Exact sets with the L6M window complete: 17; with HOLD complete: 1. First-order screens (all on the exact LPB_BASE trade list, 20,808 trades, and again on the exact JN04RM trade list, 21,783 trades; the dial state is always the LPB_BASE shadow base-lot P&L, which is what the live state sees): A1 17756 cells, A2 1176 cells, A3 3960 cells per base. Exact runs go one set per job through the harness code/th_works_a/wa_run.py (WorksMixin generalises the JN04 rule-mode layers; it reproduces LPB_EMPTY and JN04RM trade by trade on 202610 and 202608, see DECISIONS.md). Every exact set below is JN04RM plus the named change, so each row answers whether the dial adds to the live-form JN04 stack. A cut is the stack maxDD cut in per cent; d mean is the weekly mean difference in dollars with the carrying week dropped.
+Exact sets with the L6M window complete: 30; with HOLD complete: 1. First-order screens (all on the exact LPB_BASE trade list, 20,808 trades, and again on the exact JN04RM trade list, 21,783 trades; the dial state is always the LPB_BASE shadow base-lot P&L, which is what the live state sees): A1 17756 cells, A2 1176 cells, A3 3960 cells per base. Exact runs go one set per job through the harness code/th_works_a/wa_run.py (WorksMixin generalises the JN04 rule-mode layers; it reproduces LPB_EMPTY and JN04RM trade by trade on 202610 and 202608, see DECISIONS.md). Every exact set below is JN04RM plus the named change, so each row answers whether the dial adds to the live-form JN04 stack. A cut is the stack maxDD cut in per cent; d mean is the weekly mean difference in dollars with the carrying week dropped.
 
-WA jobs running at refresh (process count incl. forked child): code/th_tp/tp_launch.py x3. Since 20:3xZ (lead priority change for the P7 FIX) the queue is trimmed to WA_C1 (finalist, extending to PRE / X-prime / GAP for the bi-weekly WF); WA_A1_03, WA_A3_ALL6T and WA_A3_L5T were stopped and the rest of the queue is paused (queue_full_paused.txt); new sets start only at MemAvail >= 62 GB.
+WA jobs running at refresh (process count incl. forked child): code/th_tp/tp_launch.py x2. Since 20:3xZ (lead priority change for the P7 FIX) the queue is trimmed to WA_C1 (finalist, extending to PRE / X-prime / GAP for the bi-weekly WF); WA_A1_03, WA_A3_ALL6T and WA_A3_L5T were stopped and the rest of the queue is paused (queue_full_paused.txt); new sets start only at MemAvail >= 62 GB.
 
 ## 1. Exact results (windows complete only; vs JN04RM = the same set measured against the JN04RM exact series)
 | set | change on top of JN04RM | L6M vs LPB_BASE cut / d mean | L6M vs JN04RM cut / d mean / eq-mean cut | HOLD vs LPB_BASE cut / d mean | HOLD vs JN04RM cut / d mean / eq-mean cut |
@@ -96,6 +96,19 @@ WA jobs running at refresh (process count incl. forked child): code/th_tp/tp_lau
 | WA_A2_20 | exP7 hi thr=1.1,m=0.0 | +44.9 / -346 | -2.1 / -1093 / -8.7 | not yet | not yet |
 | WA_A2_21 | B:M7 hi thr=1.1,m=0.0 | +51.6 / -511 | +10.4 / +806 / +14.4 | not yet | not yet |
 | WA_A2_22 | B:P7 hi thr=1.2,m=0.0 | +49.2 / -2694 | +5.9 / +1320 / +12.6 | not yet | not yet |
+| WA_A3_ALL6T | same-side cap 6 truncate in every session | +42.6 / -3993 | -6.2 / -1321 / -15.3 | not yet | not yet |
+| WA_A3_L5T | London same-side cap 5 truncate (JN04 has 6) | +48.7 / -2339 | +5.0 / -199 / +3.8 | not yet | not yet |
+| WA_A3_L6REG13 | London same-side cap 6 only when atr_rel >= 1.3 | +33.6 / -1639 | -22.9 / -341 / -25.3 | not yet | not yet |
+| WA_A3_TOT10 | London total-lots cap 10 truncate (replaces the same-side cap) | +41.1 / -1205 | -9.1 / +46 / -8.8 | not yet | not yet |
+| WA_A4_MINCOMB | JN04RM with min() of the multipliers instead of the product | +44.6 / -1770 | -2.6 / +86 / -2.1 | not yet | not yet |
+| WA_A4_NOSQ_NODC | JN04RM minus SIGQ minus P7 day cap (8,400 -> 16,800) | +43.5 / +2215 | -4.5 / +684 / -0.7 | not yet | not yet |
+| WA_A4_NOSQ_NODC_MIN | same, min() combine | +45.8 / +667 | -0.4 / +2897 / +12.4 | not yet | not yet |
+| WA_A4_NO_LOT_REG | JN04RM minus LOT minus REG | +5.2 / +404 | -75.6 / +1721 / -59.7 | not yet | not yet |
+| WA_A4_NO_LOT_STACK | minus LOT minus STACK | +1.7 / +2420 | -82.0 / +2643 / -58.5 | not yet | not yet |
+| WA_A4_NO_LOT_TABLE | minus LOT minus 7/4/4 table | +6.2 / +535 | -73.8 / +1107 / -63.6 | not yet | not yet |
+| WA_A4_NO_REG_STACK | minus REG minus STACK | +25.5 / -2202 | -37.9 / -885 / -45.3 | not yet | not yet |
+| WA_A4_NO_REG_TABLE | minus REG minus 7/4/4 table | +19.4 / -1808 | -49.3 / -491 / -53.6 | not yet | not yet |
+| WA_A4_NO_TABLE_STACK | minus 7/4/4 table minus STACK | +14.6 / +1090 | -58.1 / +1011 / -50.4 | not yet | not yet |
 | WA_C1 | JN04RM + K7 gate (Calmar 15 d < 0.5 skip) + M7 gate (drawdown-from-peak 7 d >= 6,296 skip) + P7 gate (sum 7 d < -3,626 x0.5) | +61.7 / -1029 | +29.0 / +1302 / +34.0 | +44.5 / -3530 | +39.8 / -318 / +44.1 |
 | WA_C2 | WA_C1 + stack gate (stack Calmar 7 d < 0.5 x0.5, first-winning-day re-arm) | +63.1 / +732 | +31.6 / +751 / +34.6 | not yet | not yet |
 | WA_PL_K03 | WA_C1 with K7 Calmar threshold 0.3 (plateau) | +61.7 / -1229 | +29.0 / +1064 / +33.3 | not yet | not yet |
@@ -171,15 +184,15 @@ On the LPB_BASE list the live-form London same-side 6 truncate gives L6M cut +24
 Leave-one-out in rule mode on the live panel base (SZ-CDE, DS3_C2_REGIME.md section F; cut points lost on removal, L6M / HOLD): LOT 24.5 / 27.8, REG 12.8 / -3.0, STACK 12.4 / -1.5, 7/4/4 table 12.3 / -9.3, P7 cut 4.8 / 4.5, SIGQ 1.3 / 4.4, day cap 1.2 / 0.0. The pair-removal sets below fill the interaction table (a pair loses more than the sum when the two dials overlap).
 | removed together | L6M cut vs LPB_BASE (JN04RM = +46.0) | HOLD cut vs LPB_BASE (JN04RM = +7.7) |
 |--|--|--|
-| JN04RM minus SIGQ minus P7 day cap (8,400 -> 16,800) | n/a / n/a | n/a / n/a |
-| same, min() combine | n/a / n/a | n/a / n/a |
-| JN04RM with min() of the multipliers instead of the product | n/a / n/a | n/a / n/a |
-| JN04RM minus LOT minus REG | n/a / n/a | n/a / n/a |
-| minus LOT minus 7/4/4 table | n/a / n/a | n/a / n/a |
-| minus LOT minus STACK | n/a / n/a | n/a / n/a |
-| minus REG minus 7/4/4 table | n/a / n/a | n/a / n/a |
-| minus REG minus STACK | n/a / n/a | n/a / n/a |
-| minus 7/4/4 table minus STACK | n/a / n/a | n/a / n/a |
+| JN04RM minus SIGQ minus P7 day cap (8,400 -> 16,800) | +43.5 / +2215 | n/a / n/a |
+| same, min() combine | +45.8 / +667 | n/a / n/a |
+| JN04RM with min() of the multipliers instead of the product | +44.6 / -1770 | n/a / n/a |
+| JN04RM minus LOT minus REG | +5.2 / +404 | n/a / n/a |
+| minus LOT minus 7/4/4 table | +6.2 / +535 | n/a / n/a |
+| minus LOT minus STACK | +1.7 / +2420 | n/a / n/a |
+| minus REG minus 7/4/4 table | +19.4 / -1808 | n/a / n/a |
+| minus REG minus STACK | +25.5 / -2202 | n/a / n/a |
+| minus 7/4/4 table minus STACK | +14.6 / +1090 | n/a / n/a |
 
 ## 7. v1.8 fields needed (names proposed; the JN04 layers keep their v1.6 names: P7PerfGate*, Ss5* SIGQ, Ss6* REG)
 - Performance gate slot N (N = 1..8): PgNMode (Off, Shadow, Live), PgNBooks (target books), PgNSessions (empty = all), PgNStateBooks (the books whose shadow base-lot P&L is the state: one book, a list, or STACK), PgNStat (Calmar, Sum, WinRate, ProfitFactor, DrawdownFromPeak, ConsecLoss), PgNDays (label days, signal day excluded), PgNThreshold, PgNDirection (Below or AtOrAbove), PgNMult (0.75, 0.5, 0.25, 0), PgNRearm (Stateless or FirstWinDay). Needs the shadow base-lot P&L of every book stored beside the executed P&L (new strategy-internal field, same as the LOT note in JN04_LIVE_SPEC section C1).
@@ -192,8 +205,8 @@ A finalist must at least halve a, b and c on L6M against the live stack without 
 |--|--|--|--|--|--|--|--|
 | LPB_BASE | L6M | 24.5 (-40052) | 9.1 (-14009) | +6 / +12 (-51344) | +37.3 (-363) | n/a | reference |
 | LPB_BASE | HOLD | 23.0 (-37923) | 8.0 (-12167) | +6 / +12 (-43521) | +30.0 (+732) | n/a | reference |
-| JN04RM | L6M | 25.4 (-38130) | 9.9 (-11306) | +7 / +13 (-42885) | +43.3 (+1885) | -254 | no (a x1.03, b x1.09) |
-| JN04RM | HOLD | 23.6 (-35520) | 8.6 (-9743) | +6 / +13 (-37009) | +34.2 (+1140) | -2854 | no (a x1.03, b x1.08) |
+| JN04RM | L6M | 25.4 (-38130) | 9.9 (-11306) | +7 / +13 (-42885) | +43.3 (+1885) | n/a | no (a x1.03, b x1.09) |
+| JN04RM | HOLD | 23.6 (-35520) | 8.6 (-9743) | +6 / +13 (-37009) | +34.2 (+1140) | n/a | no (a x1.03, b x1.08) |
 | WA_A1_01 | L6M | 20.8 (-31655) | 9.0 (-10439) | +6 / +13 (-35110) | +37.1 (+727) | -1054 | no (a x0.85, b x1.00) |
 | WA_A1_04 | L6M | 24.8 (-37444) | 9.1 (-10634) | +6 / +11 (-38578) | +39.6 (+2144) | +1674 | no (a x1.01, b x1.00) |
 | WA_A1_07 | L6M | 25.6 (-35371) | 10.1 (-10077) | +7 / +13 (-40899) | +44.5 (+2014) | -2544 | no (a x1.04, b x1.11) |
@@ -203,6 +216,19 @@ A finalist must at least halve a, b and c on L6M against the live stack without 
 | WA_A2_20 | L6M | 17.2 (-24926) | 6.5 (-7808) | +6 / +9 (-27348) | +26.1 (+1217) | -2181 | no (a x0.70, b x0.72) |
 | WA_A2_21 | L6M | 24.4 (-36906) | 8.9 (-10301) | +6 / +11 (-36955) | +36.3 (+1891) | +979 | no (a x1.00, b x0.98) |
 | WA_A2_22 | L6M | 25.0 (-37592) | 8.7 (-10063) | +6 / +11 (-35557) | +36.4 (+1839) | -679 | no (a x1.02, b x0.96) |
+| WA_A3_ALL6T | L6M | 24.7 (-36351) | 9.8 (-10958) | +6 / +13 (-40515) | +43.0 (+1714) | -2556 | no (a x1.01, b x1.08) |
+| WA_A3_L5T | L6M | 25.5 (-38104) | 9.7 (-11112) | +7 / +13 (-42464) | +43.4 (+1663) | -764 | no (a x1.04, b x1.07) |
+| WA_A3_L6REG13 | L6M | 25.5 (-38533) | 9.8 (-11435) | +7 / +13 (-43507) | +43.5 (+2183) | -406 | no (a x1.04, b x1.08) |
+| WA_A3_TOT10 | L6M | 25.4 (-38335) | 9.8 (-11381) | +7 / +13 (-43318) | +43.3 (+2203) | +36 | no (a x1.03, b x1.08) |
+| WA_A4_MINCOMB | L6M | 25.4 (-38324) | 9.7 (-11547) | +6 / +12 (-44756) | +42.2 (+1343) | -755 | no (a x1.03, b x1.07) |
+| WA_A4_NOSQ_NODC | L6M | 24.8 (-39411) | 10.0 (-12872) | +6 / +13 (-47744) | +43.5 (+1277) | +1285 | no (a x1.01, b x1.10) |
+| WA_A4_NOSQ_NODC_MIN | L6M | 24.8 (-39500) | 10.0 (-13220) | +6 / +13 (-49203) | +43.4 (+1181) | +1723 | no (a x1.01, b x1.10) |
+| WA_A4_NO_LOT_REG | L6M | 25.5 (-39083) | 9.4 (-12747) | +6 / +13 (-48687) | +40.2 (+1704) | +2573 | no (a x1.04, b x1.04) |
+| WA_A4_NO_LOT_STACK | L6M | 25.4 (-38662) | 9.7 (-12735) | +6 / +13 (-46533) | +41.3 (+2789) | +3568 | no (a x1.03, b x1.07) |
+| WA_A4_NO_LOT_TABLE | L6M | 25.0 (-38629) | 9.6 (-13644) | +6 / +12 (-49000) | +40.7 (+3376) | +1815 | no (a x1.02, b x1.06) |
+| WA_A4_NO_REG_STACK | L6M | 25.5 (-38820) | 9.6 (-11749) | +6 / +13 (-45751) | +42.4 (+1431) | -79 | no (a x1.04, b x1.06) |
+| WA_A4_NO_REG_TABLE | L6M | 25.2 (-38884) | 9.6 (-12640) | +6 / +11 (-48924) | +41.4 (+1431) | +96 | no (a x1.03, b x1.05) |
+| WA_A4_NO_TABLE_STACK | L6M | 25.4 (-38956) | 9.9 (-12713) | +7 / +12 (-46982) | +42.9 (+2485) | +125 | no (a x1.03, b x1.09) |
 | WA_C1 | L6M | 20.1 (-30920) | 8.3 (-9376) | +6 / +11 (-30793) | +34.0 (+838) | +356 | no (a x0.82, b x0.91) |
 | WA_C1 | HOLD | 18.9 (-29150) | 7.4 (-8382) | +5 / +11 (-28293) | +26.7 (+747) | -2800 | no (a x0.83, b x0.92) |
 | WA_C2 | L6M | 20.5 (-28710) | 8.4 (-8580) | +6 / +11 (-29932) | +34.6 (+996) | -898 | no (a x0.83, b x0.93) |
@@ -1359,9 +1385,9 @@ Asymmetric-bracket cells (60/45, 60/90 by flag) and the late-entry swing stop (D
 
 ## I. (W-I) (I)
 
-Source DS3_WORKS_I.md (mtime 2026-11-12T03:00:37Z UTC), included verbatim, read only:
+Source DS3_WORKS_I.md (mtime 2026-11-12T06:00:56Z UTC), included verbatim, read only:
 
-# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 03:00Z
+# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 06:00Z
 Label PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_I_PREREG.md (sha in DECISIONS.md; the first first-order screen ran before the sha line, disclosed there). Code code/th_works_i/, tables /mnt/l2/l2vast/_th_works/i/, feature table /mnt/l2/l2vast/_th_works/p7_feat_I.parquet (key sig_ts, 5,011 P7 taken trades x 128 columns; W-E signal-level table not used, so signals that were not taken are not in these tests).
 
 ## What exists
@@ -1493,13 +1519,26 @@ vs JN04RM
 | WI_L_SL13S | L1M | 51.1 | 53.8 | 1337.1 | 13236.2 | 27055.7 | 13480.3 | 13480.3 |
 | WI_L_SL13S | L3M | -8.1 | -2.2 | 687.9 | 45087.2 | 41699.4 | 15172.9 | 6062.0 |
 | WI_L_SL13S | L6M | -8.1 | -2.2 | 1061.9 | 45087.2 | 41699.4 | 13101.0 | -9716.9 |
+| WI_J_BR3T45 | L1M | 17.0 | 12.3 | 401.0 | 22462.1 | 27055.7 | 3700.1 | 3700.1 |
+| WI_J_BR3T45 | L3M | 12.7 | 7.8 | 428.3 | 36418.2 | 41699.4 | 13297.8 | -1804.3 |
+| WI_J_BR3T45 | L6M | 3.3 | -2.1 | -1010.2 | 40309.0 | 41699.4 | 12080.4 | -14483.7 |
 | WI_J_BR3S | L1M | 26.7 | 29.9 | -3564.8 | 19835.4 | 27055.7 | -414.4 | -414.4 |
 | WI_J_BR3S | L3M | 28.1 | 31.2 | -811.4 | 29993.2 | 41699.4 | 29596.9 | -17763.8 |
 | WI_J_BR3S | L6M | 14.4 | 18.1 | 782.7 | 35674.8 | 41699.4 | 33013.6 | -57351.5 |
 | WI_J_BR3S | HOLD | 19.0 | 22.5 | 441.6 | 58943.3 | 72757.5 | 5774.6 | -44697.2 |
-| WI_J_BR3T45 | L1M | 17.0 | 12.3 | 401.0 | 22462.1 | 27055.7 | 3700.1 | 3700.1 |
-| WI_J_BR3T45 | L3M | 12.7 | 7.8 | 428.3 | 36418.2 | 41699.4 | 13297.8 | -1804.3 |
-| WI_J_BR3T45 | L6M | 3.3 | -2.1 | -1010.2 | 40309.0 | 41699.4 | 12080.4 | -14483.7 |
+| WI_J_BR3S | PRE | 5.2 | 9.3 | -452.3 | 63274.5 | 66713.5 | 12000.0 | -26099.3 |
+| WI_J_RS30T35 | L1M | 60.2 | 60.0 | 1094.9 | 10775.2 | 27055.7 | 11703.3 | 11703.3 |
+| WI_J_RS30T35 | L3M | 8.5 | 8.1 | 1031.0 | 38158.6 | 41699.4 | 21333.7 | 7413.0 |
+| WI_J_RS30T35 | L6M | 8.5 | 8.1 | -83.4 | 38158.6 | 41699.4 | 31162.1 | -4886.5 |
+| WI_K_W2AT45 | L1M | -0.7 | -1.9 | 323.1 | 27254.1 | 27055.7 | -230.7 | -230.7 |
+| WI_K_W2AT45 | L3M | 10.1 | 9.1 | -37.7 | 37471.9 | 41699.4 | 6724.7 | 11805.6 |
+| WI_K_W2AT45 | L6M | 10.1 | 9.1 | -203.1 | 37471.9 | 41699.4 | 13914.0 | -7040.1 |
+| WI_K_W2S | L1M | 32.8 | 35.7 | -1510.9 | 18189.9 | 27055.7 | 2356.9 | 2356.9 |
+| WI_K_W2S | L3M | 35.0 | 37.9 | 1579.3 | 27090.1 | 41699.4 | 25296.7 | -3913.0 |
+| WI_K_W2S | L6M | 27.3 | 30.5 | 766.5 | 30321.6 | 41699.4 | 34066.6 | -3965.6 |
+| WI_L_SL13T35 | L1M | 41.1 | 36.0 | 40.7 | 15944.4 | 27055.7 | 9072.2 | 9072.2 |
+| WI_L_SL13T35 | L3M | -36.0 | -47.6 | -1376.9 | 56717.1 | 41699.4 | -1697.7 | 16818.1 |
+| WI_L_SL13T35 | L6M | -36.0 | -47.6 | -1406.6 | 56717.1 | 41699.4 | 6956.8 | -8163.5 |
 
 vs LPB
 | cell | window | cut | eq_cut | dmean | dd | dd_ref | d_worst5 | d_best5 |
@@ -1528,13 +1567,26 @@ vs LPB
 | WI_L_SL13S | L1M | 74.2 | 72.2 | -3842.5 | 13236.2 | 51252.7 | 27411.6 | 27411.6 |
 | WI_L_SL13S | L3M | 41.6 | 37.2 | -1087.4 | 45087.2 | 77224.2 | 74220.8 | -42839.6 |
 | WI_L_SL13S | L6M | 41.6 | 37.2 | -1523.3 | 45087.2 | 77224.2 | 73033.7 | -37514.0 |
+| WI_J_BR3T45 | L1M | 56.2 | 51.1 | -6484.8 | 22462.1 | 51252.7 | 17631.3 | 17631.3 |
+| WI_J_BR3T45 | L3M | 52.8 | 47.4 | -920.2 | 36418.2 | 77224.2 | 77891.7 | -50705.9 |
+| WI_J_BR3T45 | L6M | 47.8 | 41.7 | -2233.5 | 40309.0 | 77224.2 | 77559.1 | -54900.7 |
 | WI_J_BR3S | L1M | 61.3 | 63.7 | -6004.0 | 19835.4 | 51252.7 | 13516.8 | 13516.8 |
 | WI_J_BR3S | L3M | 61.2 | 63.6 | 4396.7 | 29993.2 | 77224.2 | 83169.8 | -66665.4 |
 | WI_J_BR3S | L6M | 53.8 | 56.6 | 1043.4 | 35674.8 | 77224.2 | 87471.4 | -81571.0 |
 | WI_J_BR3S | HOLD | 25.2 | 29.8 | -2144.8 | 58943.3 | 78842.0 | 96023.4 | -102406.2 |
-| WI_J_BR3T45 | L1M | 56.2 | 51.1 | -6484.8 | 22462.1 | 51252.7 | 17631.3 | 17631.3 |
-| WI_J_BR3T45 | L3M | 52.8 | 47.4 | -920.2 | 36418.2 | 77224.2 | 77891.7 | -50705.9 |
-| WI_J_BR3T45 | L6M | 47.8 | 41.7 | -2233.5 | 40309.0 | 77224.2 | 77559.1 | -54900.7 |
+| WI_J_BR3S | PRE | 36.4 | 40.3 | -1961.6 | 63274.5 | 99479.4 | 104974.3 | -166595.6 |
+| WI_J_RS30T35 | L1M | 79.0 | 77.3 | -5605.3 | 10775.2 | 51252.7 | 25634.5 | 25634.5 |
+| WI_J_RS30T35 | L3M | 50.6 | 46.6 | -908.3 | 38158.6 | 77224.2 | 82343.0 | -41488.6 |
+| WI_J_RS30T35 | L6M | 50.6 | 46.6 | -1590.3 | 38158.6 | 77224.2 | 93056.2 | -43899.2 |
+| WI_K_W2AT45 | L1M | 46.8 | 43.3 | -6562.7 | 27254.1 | 51252.7 | 13700.5 | 13700.5 |
+| WI_K_W2AT45 | L3M | 51.5 | 48.3 | -1203.1 | 37471.9 | 77224.2 | 74249.8 | -37096.0 |
+| WI_K_W2AT45 | L6M | 51.5 | 48.3 | -1338.6 | 37471.9 | 77224.2 | 82324.0 | -47862.1 |
+| WI_K_W2S | L1M | 64.5 | 61.2 | -8396.7 | 18189.9 | 51252.7 | 16288.1 | 16288.1 |
+| WI_K_W2S | L3M | 64.9 | 61.6 | -2210.0 | 27090.1 | 77224.2 | 96672.7 | -52814.6 |
+| WI_K_W2S | L6M | 60.7 | 57.0 | -1846.0 | 30321.6 | 77224.2 | 106327.5 | -55401.4 |
+| WI_L_SL13T35 | L1M | 68.9 | 65.1 | -4582.1 | 15944.4 | 51252.7 | 23003.4 | 23003.4 |
+| WI_L_SL13T35 | L3M | 26.6 | 17.6 | -2102.2 | 56717.1 | 77224.2 | 61243.7 | -32083.5 |
+| WI_L_SL13T35 | L6M | 26.6 | 17.6 | -2330.9 | 56717.1 | 77224.2 | 70783.0 | -39984.9 |
 
 ## Behaviour-targeted use (standing principle 19:45Z): flag acts only on a same-side P7 re-entry after a P7 loser (within 120 min, same session list)
 There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$216 for all other P7 trades). Skipping all of them cuts the L6M stack drawdown by only -2.0 percent (HOLD -14.2, PRE 13.7, X-prime -1.8) and removes $48k of best-20-week winners against $65k of worst-20-week losers; half-size: L6M -0.8, HOLD -4.6. Best flag-conditioned re-entry cells (minimum equal-mean cut over four windows) are all below 9 percent and flag fewer than 300 trades: no robust cell.
@@ -1547,10 +1599,14 @@ There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$
 - WI_J_ES60S L6M (stack, per week): full stops 25.3/wk $-38028; give-backs 9.4/wk (9.2 round-trips) realised $-10669, forgone vs target $26478; same-side losing runs max 13, p95 7, $-41534 lost on 3rd-and-later; no-new-evidence re-entries 41.5/wk $1546; recoveries cut 14.8/wk $38563, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $8392/wk, losers avoided $7033/wk, net -1226 $/wk; pnl $18305/wk.
 - WI_J_NQ60S L6M (stack, per week): full stops 25.3/wk $-37976; give-backs 9.5/wk (9.4 round-trips) realised $-10704, forgone vs target $26709; same-side losing runs max 13, p95 6, $-39788 lost on 3rd-and-later; no-new-evidence re-entries 40.2/wk $2380; recoveries cut 14.6/wk $37653, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $13575/wk, losers avoided $12103/wk, net -1658 $/wk; pnl $17872/wk.
 - WI_J_RS15H L6M (stack, per week): full stops 25.4/wk $-38034; give-backs 9.9/wk (9.8 round-trips) realised $-10915, forgone vs target $27124; same-side losing runs max 13, p95 7, $-42321 lost on 3rd-and-later; no-new-evidence re-entries 44.0/wk $1533; recoveries cut 15.5/wk $38697, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $342/wk, losers avoided $539/wk, net -941 $/wk; pnl $18589/wk.
+- WI_J_RS30T35 L6M (stack, per week): full stops 25.5/wk $-38189; give-backs 9.2/wk (9.1 round-trips) realised $-10401, forgone vs target $25868; same-side losing runs max 13, p95 6, $-40963 lost on 3rd-and-later; no-new-evidence re-entries 43.5/wk $2955; recoveries cut 14.9/wk $39205, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $2441/wk, losers avoided $1922/wk, net +363 $/wk; pnl $19893/wk.
 - WI_K_W2AS L6M (stack, per week): full stops 25.4/wk $-38081; give-backs 9.9/wk (9.8 round-trips) realised $-10968, forgone vs target $27363; same-side losing runs max 13, p95 6, $-41119 lost on 3rd-and-later; no-new-evidence re-entries 42.2/wk $2243; recoveries cut 14.9/wk $37388, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $5402/wk, losers avoided $5430/wk, net +40 $/wk; pnl $19570/wk.
+- WI_K_W2AT45 L6M (stack, per week): full stops 25.4/wk $-38181; give-backs 9.8/wk (9.6 round-trips) realised $-10892, forgone vs target $27140; same-side losing runs max 13, p95 7, $-42691 lost on 3rd-and-later; no-new-evidence re-entries 43.8/wk $2743; recoveries cut 15.3/wk $39223, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $1220/wk, losers avoided $737/wk, net +251 $/wk; pnl $19781/wk.
+- WI_K_W2S L6M (stack, per week): full stops 25.2/wk $-37882; give-backs 9.6/wk (9.5 round-trips) realised $-10649, forgone vs target $26653; same-side losing runs max 11, p95 6, $-38739 lost on 3rd-and-later; no-new-evidence re-entries 40.2/wk $2632; recoveries cut 14.3/wk $35693, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $9109/wk, losers avoided $8854/wk, net +64 $/wk; pnl $19594/wk.
 - WI_L_PB13H L6M (stack, per week): full stops 25.4/wk $-38019; give-backs 9.9/wk (9.8 round-trips) realised $-10640, forgone vs target $26459; same-side losing runs max 13, p95 6, $-42157 lost on 3rd-and-later; no-new-evidence re-entries 44.4/wk $1951; recoveries cut 15.5/wk $36873, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $391/wk, losers avoided $787/wk, net -1130 $/wk; pnl $18400/wk.
 - WI_L_PUSHH L6M (stack, per week): full stops 25.5/wk $-38238; give-backs 10.0/wk (9.9 round-trips) realised $-10608, forgone vs target $26098; same-side losing runs max 13, p95 7, $-42784 lost on 3rd-and-later; no-new-evidence re-entries 44.4/wk $2049; recoveries cut 15.5/wk $37935, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $439/wk, losers avoided $976/wk, net -791 $/wk; pnl $18739/wk.
 - WI_L_SL13S L6M (stack, per week): full stops 25.4/wk $-38216; give-backs 9.1/wk (9.0 round-trips) realised $-10347, forgone vs target $25489; same-side losing runs max 13, p95 6, $-40201 lost on 3rd-and-later; no-new-evidence re-entries 39.8/wk $2445; recoveries cut 14.2/wk $35279, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $19867/wk, losers avoided $18845/wk, net +289 $/wk; pnl $19819/wk.
+- WI_L_SL13T35 L6M (stack, per week): full stops 25.4/wk $-38129; give-backs 8.9/wk (8.8 round-trips) realised $-10063, forgone vs target $24777; same-side losing runs max 13, p95 7, $-42080 lost on 3rd-and-later; no-new-evidence re-entries 43.3/wk $1104; recoveries cut 15.0/wk $39004, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $4078/wk, losers avoided $2538/wk, net -622 $/wk; pnl $18908/wk.
 
 Plain reading: an entry gate leaves the three defects (full stops, give-backs, same-side losing runs) where they were, because it only removes entries and the entries it removes are not the ones that form the runs; by the standing principle families I-L are therefore NOT acceptable as exits or re-entry fixes on their own. Their use is as evidence tests inside the re-entry rule (W-M probe / confirm).
 
@@ -1660,7 +1716,7 @@ Flip statistics (mean P&L per lot of the flip signal versus all P7 signals and v
 
 ## Q. Ranker, joint stage, minimal rule set (W-Q) (Q)
 
-Source DS3_WORKS_Q.md (mtime 2026-11-12T05:30:32Z UTC), included verbatim, read only:
+Source DS3_WORKS_Q.md (mtime 2026-11-12T06:30:37Z UTC), included verbatim, read only:
 
 # DS3_WORKS_Q - W-Q (family Q ranker + JOINT STAGE), page 0, 2026-11-11 19:20Z (date -u). Shadow only, post-hoc, no PASS claim.
 Prereg autopilot/WORKS_Q_PREREG.md (sha256 bc9d2cde..., DECISIONS.md 19:14Z). Code outputs/code/th_works_q/q_rank.py and q_registry.py; outputs /mnt/l2/l2vast/_th_works/q/.
@@ -1677,9 +1733,9 @@ Prereg autopilot/WORKS_Q_PREREG.md (sha256 bc9d2cde..., DECISIONS.md 19:14Z). Co
 ## Next
 Page 03:00Z will carry: ranker re-run on the landed feature tables with untaken signals, registry with top-3 per family, factorial pre-screen, first exact joint rows, and the budget actually spent.
 
-## Auto section (chain, rebuilt 2026-11-12T05:30:32Z)
+## Auto section (chain, rebuilt 2026-11-12T06:30:37Z)
 Inputs seen: 42 watched files; feature tables landed: ['p7_feat_I.parquet', 'p7_feat_I_v2.parquet', 'p7_signal_features.parquet']. Cycle log: no change in feature tables, ranker not re-run.
-Registry rows by family: {'A-comp': 2, 'A1': 5, 'A2': 5, 'A3': 2, 'A4': 3, 'G': 2, 'other': 9}. launch gate MemAvail 106 GB (need 62): OPEN; no joint set is defined yet (needs the families top-3 specs), so nothing launched.
+Registry rows by family: {'A-comp': 2, 'A1': 5, 'A2': 5, 'A3': 6, 'A4': 9, 'G': 2, 'other': 9}. launch gate MemAvail 102 GB (need 62): OPEN; no joint set is defined yet (needs the families top-3 specs), so nothing launched.
 Ranker (first-order, GBDT mean over 3 seeds vs null 95th percentile, dollars per week):
 action  win    gbdt  null95
    dec HOLD  6527.0  3526.0
