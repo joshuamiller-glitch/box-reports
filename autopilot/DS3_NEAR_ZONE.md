@@ -1,4 +1,4 @@
-# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Thu Nov 12 01:20:57 AM UTC 2026)
+# DS3_NEAR_ZONE - T-NEAR-ZONE: "dont be a dick for a tick" (page written Thu Nov 12 05:22:20 AM UTC 2026)
 
 STATUS: Shadow only, post-hoc, no PASS claims (PASS/FAIL below is the trader acceptance test of the order, nothing more). Evidence table: DS3_NEAR_ZONE_TABLE.md (published 19:33Z, before any rule). Prereg NEAR_ZONE_PREREG.md (sha in DECISIONS.md). FIRST-ORDER scores on the LPB_BASE stored 1-s paths (43 months; L6M = 2026-05-12..10-30), slip 1.2 market, fees 4.84/lot, base = live panel rules as in LPB_BASE; exact rows in section 6. P7 is run at 12/7/7 lots (P7x, the users lots) and on the installed 7/4/4 table. Objective: give-back $ removed minus fills clipped $ per week; key = min(L6M, 43 months) net $/wk. Standing trader principle (19:45Z) applied: scorecard items a, b, e below, c and d (re-entry streaks) are untouched by exit-side rules in this first-order frame and are W-Qs tool to confirm.
 
@@ -23,7 +23,7 @@ Reading: no rule family removes the give-backs without clipping fills. The stric
 
 ## Exact status and processes
 
-Exact sets built (private nz_hooks for floor/ladder/rev/bank/work/zone; ptr_hooks grammar lines for flow and plain takes; fill models as above, exact market slip 1.2): 23 sets, 39 of 859 set-months DONE. Identity gate PASSED 22:41Z: PTR_NZ_ID (nz_hooks, no cells) vs LPB_BASE 202610, 769 trades, bit-equal on book/lots/entry/exit/net_fee for ref engine, TP engine and the stored LPB_BASE run (code/th_nz/nz_idtest.py; TP wall 96 s vs old path 159 s, private memory 0.4 GB vs ~10.8 GB per worker per W-T). Chain (pid 2335696, log /mnt/l2/l2vast/_nz/exact_chain.log) now launches workers itself as `TP_ENGINE=1 python3 -I code/th_tp/tp_launch.py sz_exact.py batch SET:ym`, one set per job, max 3 workers, admission via `tp_admit.py request NEARZONE --gate 25` (PRIORITY.txt NEARZONE regex extended with PTR_[A-Z0-9]+_NZ), L6M first then HOLD, PRE. Throughput: see `tp_admit.py rate` (cell-months/hour; before TP this chain had 0 because of the 62 GB gate). Manifest /mnt/l2/l2vast/_nz/exact_manifest.json. Page refresh loop pid 2179089 (every 4 h to 2026-11-12 12:00Z).
+Exact sets built (private nz_hooks for floor/ladder/rev/bank/work/zone; ptr_hooks grammar lines for flow and plain takes; fill models as above, exact market slip 1.2): 23 sets, 117 of 859 set-months DONE. Identity gate PASSED 22:41Z: PTR_NZ_ID (nz_hooks, no cells) vs LPB_BASE 202610, 769 trades, bit-equal on book/lots/entry/exit/net_fee for ref engine, TP engine and the stored LPB_BASE run (code/th_nz/nz_idtest.py; TP wall 96 s vs old path 159 s, private memory 0.4 GB vs ~10.8 GB per worker per W-T). Chain (pid 2335696, log /mnt/l2/l2vast/_nz/exact_chain.log) now launches workers itself as `TP_ENGINE=1 python3 -I code/th_tp/tp_launch.py sz_exact.py batch SET:ym`, one set per job, max 3 workers, admission via `tp_admit.py request NEARZONE --gate 25` (PRIORITY.txt NEARZONE regex extended with PTR_[A-Z0-9]+_NZ), L6M first then HOLD, PRE. Throughput: see `tp_admit.py rate` (cell-months/hour; before TP this chain had 0 because of the 62 GB gate). Manifest /mnt/l2/l2vast/_nz/exact_manifest.json. Page refresh loop pid 2179089 (every 4 h to 2026-11-12 12:00Z).
 
 ## Families h-q (user addendum 21:45Z), first-order, same objective and definitions
 
@@ -319,6 +319,84 @@ Per week; key = min(net L6M, net 43 m); net = removed - clipped + other (definit
     PTR_P7_NZH1 HOLD: months missing (6 of 12), window not scored
     PTR_P7_NZH1 PRE: months missing (17 of 17), window not scored
     PTR_P7_NZH1 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZH2** (hq-H2): 
+    PTR_P7_NZH2 L6M (stack, per week): full stops 24.5/wk $-40006; give-backs 8.9/wk (8.7 round-trips) realised $-13107, forgone vs target $33401; same-side losing runs max 12, p95 6, $-51180 lost on 3rd-and-later; no-new-evidence re-entries 37.4/wk $-383; recoveries cut 13.6/wk $46749, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $780/wk, losers avoided $888/wk, net -165 $/wk; pnl $19619/wk.
+    PTR_P7_NZH2 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZH2 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZH2 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZXM1** (hq-M1): 
+    PTR_P7_NZXM1 L6M (stack, per week): full stops 24.3/wk $-39780; give-backs 7.7/wk (7.4 round-trips) realised $-9146, forgone vs target $25304; same-side losing runs max 11, p95 6, $-50776 lost on 3rd-and-later; no-new-evidence re-entries 34.2/wk $1440; recoveries cut 12.7/wk $51094, clipped fills 0.0/wk $0; vs PTR_P7_NZX00: winners skipped $8246/wk, losers avoided $4929/wk, net -1638 $/wk; pnl $22283/wk.
+    PTR_P7_NZXM1 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZXM1 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZXM1 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZXM2** (hq-M2): 
+    PTR_P7_NZXM2 L6M (stack, per week): full stops 24.3/wk $-39252; give-backs 7.1/wk (7.0 round-trips) realised $-8082, forgone vs target $20357; same-side losing runs max 11, p95 6, $-49605 lost on 3rd-and-later; no-new-evidence re-entries 34.2/wk $642; recoveries cut 12.9/wk $54399, clipped fills 0.0/wk $0; vs PTR_P7_NZX00: winners skipped $14641/wk, losers avoided $11575/wk, net -5925 $/wk; pnl $17995/wk.
+    PTR_P7_NZXM2 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZXM2 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZXM2 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZXJ1** (hq-J1): 
+    PTR_P7_NZXJ1 L6M (stack, per week): full stops 24.3/wk $-39226; give-backs 7.9/wk (7.5 round-trips) realised $-8461, forgone vs target $25530; same-side losing runs max 11, p95 6, $-50243 lost on 3rd-and-later; no-new-evidence re-entries 34.6/wk $1440; recoveries cut 12.9/wk $52596, clipped fills 0.0/wk $0; vs PTR_P7_NZX00: winners skipped $13027/wk, losers avoided $10188/wk, net -5885 $/wk; pnl $18035/wk.
+    PTR_P7_NZXJ1 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZXJ1 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZXJ1 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZXJ2** (hq-J2): 
+    PTR_P7_NZXJ2 L6M (stack, per week): full stops 24.2/wk $-39093; give-backs 7.9/wk (7.5 round-trips) realised $-8594, forgone vs target $25370; same-side losing runs max 11, p95 6, $-49590 lost on 3rd-and-later; no-new-evidence re-entries 34.3/wk $1766; recoveries cut 12.8/wk $51857, clipped fills 0.0/wk $0; vs PTR_P7_NZX00: winners skipped $12978/wk, losers avoided $10251/wk, net -5658 $/wk; pnl $18262/wk.
+    PTR_P7_NZXJ2 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZXJ2 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZXJ2 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZXH1** (hq-H1): 
+    PTR_P7_NZXH1 L6M (stack, per week): full stops 24.2/wk $-39195; give-backs 8.1/wk (7.9 round-trips) realised $-12103, forgone vs target $32083; same-side losing runs max 11, p95 6, $-50415 lost on 3rd-and-later; no-new-evidence re-entries 33.4/wk $-837; recoveries cut 12.6/wk $49084, clipped fills 0.0/wk $0; vs PTR_P7_NZX00: winners skipped $244/wk, losers avoided $768/wk, net -331 $/wk; pnl $23589/wk.
+    PTR_P7_NZXH1 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZXH1 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZXH1 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZXH2** (hq-H2): 
+    PTR_P7_NZXH2 L6M (stack, per week): full stops 24.3/wk $-39692; give-backs 8.1/wk (7.9 round-trips) realised $-11589, forgone vs target $32019; same-side losing runs max 11, p95 6, $-51273 lost on 3rd-and-later; no-new-evidence re-entries 33.7/wk $-85; recoveries cut 12.7/wk $49731, clipped fills 0.0/wk $0; vs PTR_P7_NZX00: winners skipped $2440/wk, losers avoided $1592/wk, net -298 $/wk; pnl $23622/wk.
+    PTR_P7_NZXH2 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZXH2 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZXH2 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZE1** (stag-E1): 
+    PTR_P7_NZE1 L6M (stack, per week): full stops 24.5/wk $-39773; give-backs 8.7/wk (8.4 round-trips) realised $-10229, forgone vs target $27749; same-side losing runs max 12, p95 6, $-52300 lost on 3rd-and-later; no-new-evidence re-entries 38.6/wk $1745; recoveries cut 13.9/wk $47998, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $5024/wk, losers avoided $3376/wk, net +1057 $/wk; pnl $20841/wk.
+    PTR_P7_NZE1 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZE1 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZE1 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZE2** (stag-E2): 
+    PTR_P7_NZE2 L6M (stack, per week): full stops 24.5/wk $-39773; give-backs 8.7/wk (8.4 round-trips) realised $-10229, forgone vs target $27749; same-side losing runs max 12, p95 6, $-52297 lost on 3rd-and-later; no-new-evidence re-entries 38.6/wk $1722; recoveries cut 13.9/wk $47998, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $5024/wk, losers avoided $3376/wk, net +1111 $/wk; pnl $20895/wk.
+    PTR_P7_NZE2 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZE2 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZE2 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZE3** (stag-E3): 
+    PTR_P7_NZE3 L6M (stack, per week): full stops 24.6/wk $-40159; give-backs 8.1/wk (8.0 round-trips) realised $-10197, forgone vs target $24896; same-side losing runs max 12, p95 6, $-51014 lost on 3rd-and-later; no-new-evidence re-entries 38.7/wk $2003; recoveries cut 14.0/wk $49828, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $4879/wk, losers avoided $4590/wk, net +1343 $/wk; pnl $21127/wk.
+    PTR_P7_NZE3 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZE3 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZE3 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZXE1** (stag-E1): 
+    PTR_P7_NZXE1 L6M (stack, per week): full stops 24.3/wk $-39780; give-backs 7.7/wk (7.4 round-trips) realised $-9034, forgone vs target $25193; same-side losing runs max 11, p95 6, $-52063 lost on 3rd-and-later; no-new-evidence re-entries 34.7/wk $15; recoveries cut 12.9/wk $52868, clipped fills 0.0/wk $0; vs PTR_P7_NZX00: winners skipped $8051/wk, losers avoided $4514/wk, net -3467 $/wk; pnl $20453/wk.
+    PTR_P7_NZXE1 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZXE1 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZXE1 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZXE2** (stag-E2): 
+    PTR_P7_NZXE2 L6M (stack, per week): full stops 24.3/wk $-39592; give-backs 7.7/wk (7.4 round-trips) realised $-9034, forgone vs target $25193; same-side losing runs max 11, p95 6, $-51905 lost on 3rd-and-later; no-new-evidence re-entries 34.7/wk $152; recoveries cut 12.9/wk $51969, clipped fills 0.0/wk $0; vs PTR_P7_NZX00: winners skipped $8051/wk, losers avoided $4644/wk, net -3606 $/wk; pnl $20314/wk.
+    PTR_P7_NZXE2 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZXE2 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZXE2 X': months missing (10 of 10), window not scored
+
+**PTR_P7_NZXE3** (stag-E3): 
+    PTR_P7_NZXE3 L6M (stack, per week): full stops 24.3/wk $-39501; give-backs 7.3/wk (7.2 round-trips) realised $-9016, forgone vs target $22388; same-side losing runs max 11, p95 6, $-49509 lost on 3rd-and-later; no-new-evidence re-entries 34.5/wk $1096; recoveries cut 12.9/wk $52918, clipped fills 0.0/wk $0; vs PTR_P7_NZX00: winners skipped $7955/wk, losers avoided $7192/wk, net +358 $/wk; pnl $24278/wk.
+    PTR_P7_NZXE3 HOLD: months missing (6 of 12), window not scored
+    PTR_P7_NZXE3 PRE: months missing (17 of 17), window not scored
+    PTR_P7_NZXE3 X': months missing (10 of 10), window not scored
 
 **Definitions (all $ per WEEK of the window unless a sentence says "over the window"; L6M = 24 weeks).** Per trade, d = new P&L under the rule minus the trade P&L under live rules (same lots, fees, slip 1.2 on the rule exit). *net (all fires)* = sum of d over every trade the rule exits = the realised P&L change of the rule. *removed (zone)* = sum of d over fired trades that reached 80% of target and did NOT fill under live rules (the give-back saving; counted only inside the 80% zone). *clipped* = sum of (base - new) over fired trades that DID fill under live rules (fills the rule exited early, cost positive number). *other saves* = d over fired non-fill trades that never reached 80% (e.g. trades armed at 0.7 that later stopped out). Identity: net = removed - clipped + other saves. So removed - clipped can be negative while net is positive because of other saves, and the strict-pass early-take rules (arm 0.7) live on those other saves. In the plain sentences, "removed N give-backs worth $X and clipped M fills worth $Y" are totals OVER THE 24-WEEK WINDOW (zone non-fills / base fills), the per-week figures are those divided by 24.
 
