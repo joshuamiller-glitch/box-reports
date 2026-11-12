@@ -1,12 +1,14 @@
 # DS3_GAPS_G3 — PRESS THE TREND DAY (GAPS item G3) — W-G3
 
-Generated 2026-11-12 19:26Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (6/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (5/43). Months done per G3 set: 0 sets, 0 month-runs.
+Generated 2026-11-12 19:46Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (6/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (5/43). Months done per G3 set: 20 sets, 18 month-runs.
 
 **Caveat on every row:** the engine state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md); the N / NJ rows (state cut off) are the live-realistic world. Cells judged first on the trend-week clause (best 5 AND best 20 weeks) and drawdown.
 
 ## Identity gate
 
-G3_ID99_L (press trigger never true) on 202610 must equal JN05W2 (598 trades, net 25,943.82): NOT DONE YET - every G3 number is unverified until this passes (void if it fails).
+G3_ID99_L (press trigger never true) on 202610 must equal JN05W2 (598 trades, net 25,943.82): DONE - see check below
+
+Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL**
 
 ## 0. Trend-week clause
 

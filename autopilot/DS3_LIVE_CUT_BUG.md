@@ -112,3 +112,65 @@ Notes: (i) the engine's per-book cells are fitted/selected lines of the state si
 3. Items 3 (JN05W2_NOCUT / JN05W2J_NOCUT, the `loss P7 * pct<=-0.70 win=1 persist=1 cut` stand-in on all windows) are for the exact-engine agents (W-J / W-C), not for this replay agent.
 
 Files: code/th_p7fid/{arrival.py, v14port.py, run_v14.py, m7_events.py, watch_ds7.sh}; data /mnt/l2/l2vast/_p7fid/{v14_p7.pkl, v14_tables.md}; companion autopilot/DS3_P7_CUT_FIDELITY.md.
+
+
+## 6. FEED HYPOTHESES (user note 19:35Z: live chart feed = CQG/Continuum via NinjaTrader 8, not raw CME, not Rithmic) - added 2026-11-12 ~20:30Z
+Harness: code/th_p7fid/feed.py transforms the DEPTH stream of the raw mbp-10 records before the arrival-order replay; prints keep true time. (a) **conflation** to 100/250/500 ms (and 1/2/5 s): last book state per window, events between windows collapsed, delivered at the window end; (b) **delay** 50/100/250/500 ms (and 1/3 s) of every depth event against the prints; (c) **top-5 only** (the replay is already top-10 only: mbp-10 has no deeper levels; NT8 positions 10-19 are absent in all runs). The v1.4-literal pulled/MedLevel code (NOT the v1.9a code) runs on each; two rules on it: the v1.4 live line (30 pts, 30x, newMae) and the v1.5+ line values (40 pts, 5x, newMae, 3 consecutive evaluations). Array-vs-book mismatches 0 in every setting.
+
+### 6.1 P7 night, per setting: first fire of the 40/5x/p3 line / first fire of the old 30-pt 30x line / median pulled_mult over the evaluations at -40 or worse (count with mult>=5 of count)
+| setting | trade 1 SHORT 00:11Z (live stop 00:17:15) | trade 2 SHORT 00:58Z (live stop 01:28:24) | trade 3 LONG 02:31Z (live stop 02:45:21) |
+|---|---|---|---|
+| baseline | 00:16:37 @-47 / 00:16:32 @-32 / med mult 26.1 (27 of 27 >=5) | 01:27:30 @-42 / 01:26:15 @-39 / med mult 19.3 (40 of 41 >=5) | 02:43:23 @-45 / 02:43:16 @-34 / med mult 20.9 (25 of 29 >=5) |
+| conf100 | 00:16:37 @-47 / 00:16:32 @-32 / med mult 28.6 (27 of 27 >=5) | 01:27:30 @-42 / 01:26:15 @-39 / med mult 18.0 (40 of 41 >=5) | 02:43:23 @-45 / 02:43:12 @-33 / med mult 20.6 (23 of 29 >=5) |
+| conf250 | 00:16:37 @-47 / 00:16:32 @-32 / med mult 26.5 (27 of 27 >=5) | 01:27:30 @-42 / 01:26:15 @-39 / med mult 17.4 (41 of 41 >=5) | 02:43:23 @-45 / 02:43:13 @-32 / med mult 22.6 (22 of 29 >=5) |
+| conf500 | 00:16:37 @-47 / 00:16:32 @-32 / med mult 24.4 (25 of 27 >=5) | 01:27:30 @-42 / 01:26:15 @-39 / med mult 15.1 (41 of 41 >=5) | 02:43:23 @-45 / 02:43:13 @-32 / med mult 20.3 (21 of 29 >=5) |
+| delay50 | 00:16:37 @-47 / 00:16:32 @-32 / med mult 29.0 (27 of 27 >=5) | 01:27:30 @-42 / 01:25:52 @-31 / med mult 18.3 (41 of 41 >=5) | 02:43:23 @-45 / 02:43:12 @-33 / med mult 21.1 (24 of 29 >=5) |
+| delay100 | 00:16:37 @-47 / 00:16:32 @-32 / med mult 25.0 (27 of 27 >=5) | 01:27:30 @-42 / 01:25:52 @-31 / med mult 19.8 (40 of 41 >=5) | 02:43:23 @-45 / 02:43:12 @-33 / med mult 22.3 (21 of 29 >=5) |
+| delay250 | 00:16:37 @-47 / 00:16:32 @-32 / med mult 27.2 (27 of 27 >=5) | 01:27:30 @-42 / 01:25:52 @-31 / med mult 17.6 (41 of 41 >=5) | 02:43:23 @-45 / 02:43:12 @-33 / med mult 21.7 (21 of 29 >=5) |
+| delay500 | 00:16:37 @-47 / 00:16:32 @-32 / med mult 28.2 (26 of 27 >=5) | 01:27:30 @-42 / 01:25:52 @-31 / med mult 19.5 (41 of 41 >=5) | 02:43:23 @-45 / 02:43:12 @-33 / med mult 21.6 (21 of 29 >=5) |
+| top5 | 00:16:37 @-47 / 00:16:34 @-40 / med mult 17.4 (26 of 27 >=5) | 01:27:30 @-42 / 01:26:19 @-40 / med mult 15.1 (40 of 41 >=5) | 02:43:23 @-45 / 02:43:18 @-39 / med mult 12.1 (20 of 29 >=5) |
+| conf250+top5 | 00:16:37 @-47 / 00:16:33 @-34 / med mult 17.3 (27 of 27 >=5) | 01:27:30 @-42 / 01:26:19 @-40 / med mult 14.1 (41 of 41 >=5) | 02:43:23 @-45 / 02:43:16 @-34 / med mult 13.0 (20 of 29 >=5) |
+Extreme settings (same format, single evaluation per row; 'new' = 40/5x/p3, 'old' = 30 pts 30x):
+```
+T1 conf1000             new 00:16:37 @-47 | old 00:16:32 @-32 | med mult 18.4 (24/27>=5) | med 1.79
+T1 conf2000             new 00:16:37 @-47 | old 00:16:34 @-40 | med mult 16.9 (24/27>=5) | med 1.77
+T1 conf5000             new 00:16:37 @-47 | old SILENT | med mult 11.4 (25/27>=5) | med 1.83
+T1 delay1000            new 00:16:37 @-47 | old 00:16:32 @-32 | med mult 26.4 (26/27>=5) | med 1.80
+T1 delay3000            new 00:16:37 @-47 | old 00:16:34 @-40 | med mult 30.6 (27/27>=5) | med 1.81
+T1 conf1000+delay1000   new 00:16:37 @-47 | old 00:16:33 @-34 | med mult 21.4 (26/27>=5) | med 1.77
+T2 conf1000             new 01:27:30 @-42 | old 01:26:18 @-41 | med mult 13.4 (38/41>=5) | med 2.23
+T2 conf2000             new 01:27:30 @-42 | old SILENT | med mult 10.2 (35/41>=5) | med 2.22
+T2 conf5000             new 01:27:33 @-44 | old SILENT | med mult 6.4 (24/41>=5) | med 2.58
+T2 delay1000            new 01:27:30 @-42 | old 01:18:17 @-32 | med mult 18.3 (41/41>=5) | med 2.19
+T2 delay3000            new 01:27:30 @-42 | old 01:18:17 @-32 | med mult 17.8 (41/41>=5) | med 2.31
+T2 conf1000+delay1000   new 01:27:30 @-42 | old 01:26:17 @-40 | med mult 12.4 (36/41>=5) | med 2.19
+T3 conf1000             new 02:43:23 @-45 | old 02:43:13 @-32 | med mult 19.0 (21/29>=5) | med 1.99
+T3 conf2000             new 02:43:23 @-45 | old 02:43:16 @-34 | med mult 10.3 (20/29>=5) | med 1.97
+T3 conf5000             new 02:43:23 @-45 | old SILENT | med mult 7.6 (17/29>=5) | med 1.96
+T3 delay1000            new 02:43:23 @-45 | old 02:43:13 @-32 | med mult 22.6 (22/29>=5) | med 2.01
+T3 delay3000            new 02:43:23 @-45 | old 02:43:15 @-33 | med mult 18.7 (25/29>=5) | med 1.97
+T3 conf1000+delay1000   new 02:43:23 @-45 | old 02:43:15 @-33 | med mult 16.5 (22/29>=5) | med 1.95
+```
+**Result: no tested feed behaviour makes the P7 cut silent.**
+1. The 40-pt / 5x / persist-3 line fires at the same second in every setting up to 5 s conflation and 3 s delay (trade 2 at 5 s conflation fires 3 s later, 01:27:33). Top-5 only changes nothing for it either. Its margin is large: median pulled_mult 26/19/21 at baseline, still 11/6/8 at 5 s conflation (one setting, T2 and T3 medians then sit at the threshold of 5).
+2. Conflation shrinks pulled (hidden cancel-and-re-add inside a window), MedLevel does not move (1.97 -> 1.85 at 100-500 ms, 1.77-1.83 at 1-5 s; delay: 1.81-1.97): median pulled_mult baseline 26.1 / 19.3 / 20.9 -> 500 ms conflation 24.4 / 15.1 / 20.3 (-7 / -22 / -3 %) -> 1 s 18.4 / 13.4 / 19.0 -> 2 s 16.9 / 10.2 / 10.3 -> 5 s 11.4 / 6.4 / 7.6 (-56 / -67 / -64 %). Top-5 only: 17.4 / 15.1 / 12.1 (-33 / -22 / -42 %). Delay does not change pulled (median within +-15 %), only fire timing of the old 30 pt line (it fires earlier on trade 2: 01:25:52 at -31).
+3. The OLD v1.4 line (30 pts, 30x) is much more fragile: it goes SILENT on trades 1-3 at 5 s conflation, on trade 2 at 2 s, and fires at -40 instead of -32 under 2 s conflation (trade 1). So a feed that conflates depth by 2-5 s would silence the old 30x line but not the 5x line.
+4. For the 5x line to go silent through the feed alone, pulled must shrink by more than 3-4x (section 4 margin of DS3_P7_CUT_FIDELITY: MedLevel x3-4 inflation) - the strongest tested distortion (5 s conflation) gives 1.6-3.3x on the median and the line still fires. Conflation therefore cannot explain the silent P7 cut by itself.
+5. **Implied orders**: not testable. Databento mbp-10 carries no outright-vs-implied flag per level (CME MDP3 publishes the combined implied book into the levels), so a drop/keep proxy cannot be built from this data; and the sign of the effect is ambiguous (implied adds size to levels = larger MedLevel and extra phantom cancels). Needs the CQG depth log of the night, not raw CME.
+6. **M7 late cuts**: needs the 08:00-14:00Z batch (not landed; licence lag). code/th_p7fid/m7_feed.py (called by the watcher after m7_events.py) will, for each side hypothesis (entry price = price at the cut -/+ the cut's unreal; entry time = last touch of that price before the cut, a lower bound), print the engine M7 cell (30 pts, 10x, 2 s, persist 2) first decision and the v1.4-literal M7 cell under each feed setting next to the live cut time (11:30:45Z at -40, 12:21:31Z at -53.6) -> lateness of live vs engine per setting, in /mnt/l2/l2vast/_p7fid/m7_feed.txt, MORNING line appended when done. Read: a setting that reproduces BOTH a silent P7 and late M7 cuts would be the feed signature; one that reproduces only the late M7 cuts supports "feed adds delay, something else silences P7".
+
+### 6.2 Pulled definition robust to a CQG-like feed? (asked: net-of-conflation estimate, longer window, trade-based depletion)
+- Nothing in 6.1 shows the present definition failing under the tested feed distortions at 5x, so there is no evidence-based case to change it now. What the numbers do say: (i) the 5x/3 s line is robust to conflation up to about 5 s and delay up to 3 s on these three trades; (ii) the 30x line is not; (iii) a longer pulled window (10 s, 15 s) would raise pulled under conflation (hidden cancels accumulate over more windows) - the engine window sensitivity (DS3_P7_CUT_FIDELITY section 4) shows 10 s and 15 s fire too.
+- **Trade-based depletion** (feed-independent: prints are not conflated): sum of against-aggressor volume over 5 s / MedLevel at -40 or worse: median 8.2 / 6.3 / 4.5 for the three trades, max 38 / 41 / 50. The night distribution of the same quantity: p50 2.0, p90 8.5, p95 12.7, p99 28 (sells) / 28.9 (buys). So in these three windows it is less extreme than pulled (pulled median 19-26x at the same seconds), and a 5x threshold on it is exceeded in well over 10 % of all seconds of the night (p90 = 8.5; the exact share above 5x was not computed): a possible fallback input, not a substitute without calibration.
+
+```
+tr_side values [-1  0  1]
+sell-aggressor volume 5 s (against longs) night percentiles 50/90/95/99 of vol5/MedLevel: [ 2.   8.5 12.7 27.7]
+buy-aggressor volume 5 s (against shorts) night percentiles 50/90/95/99 of vol5/MedLevel: [ 2.   8.6 12.8 28.9]
+SHORT 19:11 CT (00:11Z) seconds u<=-40: 41 against-aggressor vol5/MedLevel min/median/max 0.5/8.2/37.7  pct of night above median of window: 10.7%
+SHORT 19:58 CT (00:58Z) seconds u<=-40: 60 against-aggressor vol5/MedLevel min/median/max 1.0/6.3/40.6  pct of night above median of window: 16.0%
+LONG 21:31 CT (02:31Z) seconds u<=-40: 43 against-aggressor vol5/MedLevel min/median/max 0.0/4.5/50.0  pct of night above median of window: 23.6%
+```
+
+- **Net-of-conflation cancel estimate**: cannot recover re-adds hidden inside a window by construction; the net own-side size change over the window is a lower bound of cancels and is conflation-invariant for windows >= the conflation interval. Not built: no feed setting here motivates it.
+- **Re-score on the engine P7 stack: not done** and not justified: the premise (a feed setting reproduces the live behaviour) is not met. The flat equivalent is already available: the engine's P7 StateCut is a near-universal -42 pt exit (median -42.3 pts, 20.8 per week L6M, see DS3_P7_CUT_FIDELITY section 6), so W-X2's FLAT42P7 hook (a9ef5653c149e0ac9) is the right stand-in for any "cut = fixed -42 stop" live reading; any pulled-definition change that makes the live cut behave like the engine leaves the engine results valid, and any that leaves it inert makes the NOCUT / FLAT42P7 reading the live reality.
