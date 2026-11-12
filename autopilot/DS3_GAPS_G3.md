@@ -1,6 +1,6 @@
 # DS3_GAPS_G3 — PRESS THE TREND DAY (GAPS item G3) — W-G3
 
-Generated 2026-11-12 20:46Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (8/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (5/43). Months done per G3 set: 32 sets, 88 month-runs.
+Generated 2026-11-12 21:29Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (10/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (6/43). Months done per G3 set: 35 sets, 138 month-runs.
 
 **Caveat on every row:** the engine state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md); the N / NJ rows (state cut off) are the live-realistic world. Cells judged first on the trend-week clause (best 5 AND best 20 weeks) and drawdown.
 
@@ -10,13 +10,74 @@ G3_ID99_L (press trigger never true) on 202610 must equal JN05W2 (598 trades, ne
 
 Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL**
 
-## 0. Trend-week clause
+## 0. Trend-week clause (first): base's best 5 and best 20 weeks kept, winning weeks turned losing, per window
 
-No exact cell has a complete window yet (a window is scored when all its months exist for the cell AND its base).
+| cell | base | window | top-5 base $ | top-5 cell $ | kept % | top-20 kept % | winning weeks turned losing | weeks |
+|--|--|--|--|--|--|--|--|--|
+| G3_R2_ct_L | JN05W2 | L1M | 2425 | 5386 | 222.1 | 222.1 | 0 of 2 | 4 |
+| G3_R2_lf70_L | JN05W2 | L1M | 2425 | 8788 | 362.4 | 362.4 | 0 of 2 | 4 |
+| G3_R3_tg90_L | JN05W2 | L1M | 2425 | 33576 | 1384.5 | 1384.5 | 0 of 2 | 4 |
+| G3_S2_lf70_L | JN05W2 | L1M | 2425 | 11606 | 478.6 | 478.6 | 0 of 2 | 4 |
+| G3_S3_lf75_L | JN05W2 | L1M | 2425 | 5241 | 216.1 | 216.1 | 0 of 2 | 4 |
+| G3_S3_sz125_L | JN05W2 | L1M | 2425 | 5962 | 245.8 | 245.8 | 0 of 2 | 4 |
+| G3_S3_tg90_L | JN05W2 | L1M | 2425 | 29500 | 1216.4 | 1216.4 | 0 of 2 | 4 |
+| G3_S5_sz15_L | JN05W2 | L1M | 2425 | 31769 | 1310.0 | 1310.0 | 0 of 2 | 4 |
+| G3_R2_ct_L | JN05W2 | L3M | 209474 | 215227 | 102.7 | 99.5 | 0 of 9 | 13 |
+| G3_R2_lf70_L | JN05W2 | L3M | 209474 | 210238 | 100.4 | 103.0 | 0 of 9 | 13 |
+| G3_R3_tg90_L | JN05W2 | L3M | 209474 | 228544 | 109.1 | 116.2 | 0 of 9 | 13 |
+| G3_S2_lf70_L | JN05W2 | L3M | 209474 | 204838 | 97.8 | 102.2 | 0 of 9 | 13 |
+| G3_S3_lf75_L | JN05W2 | L3M | 209474 | 202941 | 96.9 | 101.1 | 0 of 9 | 13 |
+| G3_S3_sz125_L | JN05W2 | L3M | 209474 | 228873 | 109.3 | 106.2 | 0 of 9 | 13 |
+| G3_S3_tg90_L | JN05W2 | L3M | 209474 | 141185 | 67.4 | 70.8 | 0 of 9 | 13 |
+| G3_S5_sz15_L | JN05W2 | L3M | 209474 | 262393 | 125.3 | 119.1 | 0 of 9 | 13 |
+| G3_R2_ct_L | JN05W2 | L6M | 337218 | 330527 | 98.0 | 102.4 | 0 of 19 | 26 |
+| G3_R2_lf70_L | JN05W2 | L6M | 337218 | 342681 | 101.6 | 101.2 | 0 of 19 | 26 |
+| G3_R3_tg90_L | JN05W2 | L6M | 337218 | 331321 | 98.3 | 99.0 | 0 of 19 | 26 |
+| G3_S2_lf70_L | JN05W2 | L6M | 337218 | 319929 | 94.9 | 97.4 | 0 of 19 | 26 |
+| G3_S3_lf75_L | JN05W2 | L6M | 337218 | 324783 | 96.3 | 97.9 | 0 of 19 | 26 |
+| G3_S3_sz125_L | JN05W2 | L6M | 337218 | 313412 | 92.9 | 98.6 | 0 of 19 | 26 |
+| G3_S3_tg90_L | JN05W2 | L6M | 337218 | 282152 | 83.7 | 79.7 | 1 of 19 | 26 |
+| G3_S5_sz15_L | JN05W2 | L6M | 337218 | 310336 | 92.0 | 96.3 | 0 of 19 | 26 |
 
+## 1. Windows (maxDD cut %, equal-mean cut %, d mean $/wk all weeks, carry week NOT dropped)
+
+| cell | window | DD cut % | eq-mean cut % | d mean/wk | mean/wk | base mean/wk | months |
+|--|--|--|--|--|--|--|--|
+| G3_R2_ct_L | L1M | 0.0 | -2.6 | 740 | 1346 | 606 | 7 |
+| G3_R2_ct_L | L3M | -2.2 | -4.8 | -80 | 15935 | 16015 | 7 |
+| G3_R2_ct_L | L6M | -2.2 | -4.8 | -43 | 25094 | 25137 | 7 |
+| G3_R2_lf70_L | L1M | -2.2 | 0.8 | 1591 | 2197 | 606 | 6 |
+| G3_R2_lf70_L | L3M | -2.2 | 0.8 | 483 | 16498 | 16015 | 6 |
+| G3_R2_lf70_L | L6M | -2.2 | 0.8 | 393 | 25530 | 25137 | 6 |
+| G3_R3_tg90_L | L1M | 0.8 | -3.5 | 7788 | 8394 | 606 | 6 |
+| G3_R3_tg90_L | L3M | -15.3 | -20.4 | 2597 | 18612 | 16015 | 6 |
+| G3_R3_tg90_L | L6M | -15.3 | -20.4 | -352 | 24784 | 25137 | 6 |
+| G3_S2_lf70_L | L1M | -2.2 | -3.4 | 2295 | 2902 | 606 | 6 |
+| G3_S2_lf70_L | L3M | -2.2 | -3.4 | 346 | 16361 | 16015 | 6 |
+| G3_S2_lf70_L | L6M | -2.2 | -3.4 | -685 | 24452 | 25137 | 6 |
+| G3_S3_lf75_L | L1M | -1.0 | -0.9 | 704 | 1310 | 606 | 6 |
+| G3_S3_lf75_L | L3M | -1.0 | -0.9 | 174 | 16189 | 16015 | 6 |
+| G3_S3_lf75_L | L6M | -1.0 | -0.9 | -402 | 24735 | 25137 | 6 |
+| G3_S3_sz125_L | L1M | -8.1 | -8.8 | 884 | 1490 | 606 | 6 |
+| G3_S3_sz125_L | L3M | -8.1 | -8.8 | 987 | 17003 | 16015 | 6 |
+| G3_S3_sz125_L | L6M | -8.1 | -8.8 | -725 | 24412 | 25137 | 6 |
+| G3_S3_tg90_L | L1M | 31.1 | 16.3 | 6769 | 7375 | 606 | 6 |
+| G3_S3_tg90_L | L3M | 9.1 | -10.4 | -4684 | 11331 | 16015 | 6 |
+| G3_S3_tg90_L | L6M | 9.1 | -10.4 | -5678 | 19459 | 25137 | 6 |
+| G3_S5_sz15_L | L1M | -12.7 | -20.9 | 7336 | 7942 | 606 | 6 |
+| G3_S5_sz15_L | L3M | -12.7 | -20.9 | 3056 | 19071 | 16015 | 6 |
+| G3_S5_sz15_L | L6M | -12.7 | -20.9 | -2575 | 22562 | 25137 | 6 |
 
 ## 3. acceptance_p7 and behavioural scorecard (cells with >= 6 months; partial sets count only covered sessions)
 
+- G3_R2_ct_L: ACCEPT G3_R2_ct_L PASS fails=2/20
+- G3_R2_lf70_L: ACCEPT G3_R2_lf70_L PASS fails=1/20
+- G3_R3_tg90_L: ACCEPT G3_R3_tg90_L PASS fails=1/20
+- G3_S2_lf70_L: ACCEPT G3_S2_lf70_L PASS fails=1/20
+- G3_S3_lf75_L: ACCEPT G3_S3_lf75_L PASS fails=1/20
+- G3_S3_sz125_L: ACCEPT G3_S3_sz125_L PASS fails=1/20
+- G3_S3_tg90_L: ACCEPT G3_S3_tg90_L PASS fails=1/20
+- G3_S5_sz15_L: ACCEPT G3_S5_sz15_L PASS fails=1/20
 
 ## 4. Descriptive first-order screen on JN05W2's own L6M trades (history UNMODIFIED; 4,169 trades, 26 weeks; only a prior, exact is the verdict)
 

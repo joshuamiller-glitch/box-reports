@@ -1,6 +1,6 @@
 # DS3_SCREENS - what a discretionary desk watches, as features for NQ (T-SCREENS, W-S)
-Page written 2026-11-12T17:08Z (date -u). Shadow only; no PASS claims. Method: every feature is scored first-order on the exact LPB_BASE trade list (20,807 trades) in the uses A (loss cut confirm), B (early cut), C (near-zone take), D (entry skip/half), E (P7 re-entry gate); regime flag F and learned G below. Four windows L6M / HOLD / PRE / X-prime, thresholds from events before 2025-11-11 only, family null by permuting each feature within month among its finite values (availability pattern kept), 60 permutations for the best-cell null, 20 for the entrant counts.
-Spend: T-SCREENS $290.40, T-CROSS $143.52, total $433.92 of $1,000. Loop: nohup page/exact loop pid 2309711 (see below); exact runner pid 3065008. Exact stage: JN05W_S6_C22 24 of 43 months done, 0 errors; JN05W_S6_N22 0 of 43 months done, 0 errors; JN05W_S6_C18 23 of 43 months done, 0 errors; JN05W_S6_C14 23 of 43 months done, 0 errors; JN05W_S6_L10 0 of 43 months done, 0 errors.
+Page written 2026-11-12T21:10Z (date -u). Shadow only; no PASS claims. Method: every feature is scored first-order on the exact LPB_BASE trade list (20,807 trades) in the uses A (loss cut confirm), B (early cut), C (near-zone take), D (entry skip/half), E (P7 re-entry gate); regime flag F and learned G below. Four windows L6M / HOLD / PRE / X-prime, thresholds from events before 2025-11-11 only, family null by permuting each feature within month among its finite values (availability pattern kept), 60 permutations for the best-cell null, 20 for the entrant counts.
+Spend: T-SCREENS $290.40, T-CROSS $143.52, total $433.92 of $1,000. Loop: nohup page/exact loop pid 2309711 (see below); exact runner pid 3065008. Exact stage: JN05W_S6_C22 43 of 43 months done, 0 errors; JN05W_S6_N22 0 of 43 months done, 0 errors; JN05W_S6_C18 43 of 43 months done, 0 errors; JN05W_S6_C14 43 of 43 months done, 0 errors; JN05W_S6_L10 0 of 43 months done, 0 errors.
 
 ## How many would pass by chance
 Across all scored families 4120 cells beat the live rule in every window; the same pipeline on permuted features gives 3910 on average. A family is only credited where it exceeds its own placebo.
@@ -164,58 +164,82 @@ Why these two and not the others: they are the only first-order cells whose mean
 Scorecard a-e, bi-weekly WF and exact results are appended below per candidate as they complete.
 
 #### Exact sets (one set per job, TP engine, engine = base + screen gate hook th_screens/scr_hooks.py; bases LPB_BASE and JN04RM)
-- JN05W_S6_C22 vs LPB_BASE: 24 of 43 months done.
-  months better/worse/equal vs the base (of 24 done): 17 / 6 / 1; sum +155768 $.
+- JN05W_S6_C22 vs LPB_BASE: 43 of 43 months done.
+  months better/worse/equal vs the base (of 43 done): 23 / 7 / 13; sum +163314 $.
   window L6M: stack maxDD 51253 -> 36697 (cut 28.4%), mean per week +3371 $ (18898 -> 22270), trades 4651 -> 4004; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 7 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
   window HOLD: stack maxDD 78842 -> 70281 (cut 10.9%), mean per week +2359 $ (16775 -> 19134), trades 8303 -> 7346; weeks: set minus base in the base 20 worst weeks +4097 $/wk, in its 20 best +196 $/wk.
   HOLD contiguous 2-week blocks: set beat or equalled the base in 15 of 20.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
-- JN05W_S6_C22_RM vs JN04RM: 24 of 43 months done.
-  months better/worse/equal vs the base (of 24 done): 19 / 5 / 0; sum +129035 $.
+  window PRE: stack maxDD 99479 -> 85153 (cut 14.4%), mean per week +697 $ (13304 -> 14001), trades 7801 -> 7294; weeks: set minus base in the base 20 worst weeks +1002 $/wk, in its 20 best -187 $/wk.
+  PRE contiguous 2-week blocks: set beat or equalled the base in 25 of 35.
+  window X': stack maxDD 73615 -> 73615 (cut 0.0%), mean per week +0 $ (3567 -> 3567), trades 3029 -> 3029; weeks: set minus base in the base 20 worst weeks +0 $/wk, in its 20 best +0 $/wk.
+  X' contiguous 2-week blocks: set beat or equalled the base in 11 of 11.
+- JN05W_S6_C22_RM vs JN04RM: 43 of 43 months done.
+  months better/worse/equal vs the base (of 43 done): 22 / 10 / 11; sum +120989 $.
   window L6M: stack maxDD 39092 -> 39221 (cut -0.3%), mean per week +1831 $ (19528 -> 21359), trades 5078 -> 4238; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 6 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
   window HOLD: stack maxDD 72757 -> 54311 (cut 25.4%), mean per week +1364 $ (12732 -> 14095), trades 8896 -> 7610; weeks: set minus base in the base 20 worst weeks +2715 $/wk, in its 20 best +580 $/wk.
   HOLD contiguous 2-week blocks: set beat or equalled the base in 13 of 20.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
+  window PRE: stack maxDD 66714 -> 45095 (cut 32.4%), mean per week +291 $ (10301 -> 10592), trades 8121 -> 7531; weeks: set minus base in the base 20 worst weeks +875 $/wk, in its 20 best -603 $/wk.
+  PRE contiguous 2-week blocks: set beat or equalled the base in 21 of 35.
+  window X': stack maxDD 57041 -> 57041 (cut 0.0%), mean per week +0 $ (1873 -> 1873), trades 3056 -> 3056; weeks: set minus base in the base 20 worst weeks +0 $/wk, in its 20 best +0 $/wk.
+  X' contiguous 2-week blocks: set beat or equalled the base in 11 of 11.
 - JN05W_S6_N22 vs LPB_BASE: 0 of 43 months done.
 - JN05W_S6_N22_RM vs JN04RM: 0 of 43 months done.
-- JN05W_S6_C18 vs LPB_BASE: 22 of 43 months done.
-  months better/worse/equal vs the base (of 22 done): 12 / 10 / 0; sum +73936 $.
+- JN05W_S6_C18 vs LPB_BASE: 43 of 43 months done.
+  months better/worse/equal vs the base (of 43 done): 20 / 16 / 7; sum +87698 $.
   window L6M: stack maxDD 51253 -> 32588 (cut 36.4%), mean per week +1657 $ (18898 -> 20555), trades 4651 -> 3738; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 5 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
   window HOLD: stack maxDD 78842 -> 65763 (cut 16.6%), mean per week +623 $ (16775 -> 17398), trades 8303 -> 6922; weeks: set minus base in the base 20 worst weeks +2603 $/wk, in its 20 best -1809 $/wk.
   HOLD contiguous 2-week blocks: set beat or equalled the base in 12 of 20.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
-- JN05W_S6_C18_RM vs JN04RM: 22 of 43 months done.
-  months better/worse/equal vs the base (of 22 done): 13 / 9 / 0; sum +91300 $.
+  window PRE: stack maxDD 99479 -> 79203 (cut 20.4%), mean per week +765 $ (13304 -> 14069), trades 7801 -> 7000; weeks: set minus base in the base 20 worst weeks +1205 $/wk, in its 20 best +71 $/wk.
+  PRE contiguous 2-week blocks: set beat or equalled the base in 21 of 35.
+  window X': stack maxDD 73615 -> 73622 (cut -0.0%), mean per week -81 $ (3567 -> 3486), trades 3029 -> 3003; weeks: set minus base in the base 20 worst weeks -93 $/wk, in its 20 best -93 $/wk.
+  X' contiguous 2-week blocks: set beat or equalled the base in 9 of 11.
+- JN05W_S6_C18_RM vs JN04RM: 43 of 43 months done.
+  months better/worse/equal vs the base (of 43 done): 20 / 18 / 5; sum +88162 $.
   window L6M: stack maxDD 39092 -> 29873 (cut 23.6%), mean per week +2072 $ (19528 -> 21600), trades 5078 -> 4020; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 5 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
   window HOLD: stack maxDD 72757 -> 46484 (cut 36.1%), mean per week +1291 $ (12732 -> 14023), trades 8896 -> 7213; weeks: set minus base in the base 20 worst weeks +3878 $/wk, in its 20 best -488 $/wk.
   HOLD contiguous 2-week blocks: set beat or equalled the base in 12 of 20.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
+  window PRE: stack maxDD 66714 -> 36447 (cut 45.4%), mean per week +352 $ (10301 -> 10653), trades 8121 -> 7276; weeks: set minus base in the base 20 worst weeks +1876 $/wk, in its 20 best -1127 $/wk.
+  PRE contiguous 2-week blocks: set beat or equalled the base in 21 of 35.
+  window X': stack maxDD 57041 -> 58309 (cut -2.2%), mean per week -136 $ (1873 -> 1737), trades 3056 -> 3044; weeks: set minus base in the base 20 worst weeks -156 $/wk, in its 20 best -156 $/wk.
+  X' contiguous 2-week blocks: set beat or equalled the base in 9 of 11.
 - JN05W_S6_N18 vs LPB_BASE: 0 of 43 months done.
 - JN05W_S6_N18_RM vs JN04RM: 0 of 43 months done.
-- JN05W_S6_C14 vs LPB_BASE: 23 of 43 months done.
-  months better/worse/equal vs the base (of 23 done): 11 / 12 / 0; sum +19468 $.
+- JN05W_S6_C14 vs LPB_BASE: 43 of 43 months done.
+  months better/worse/equal vs the base (of 43 done): 22 / 20 / 1; sum +58512 $.
   window L6M: stack maxDD 51253 -> 25105 (cut 51.0%), mean per week +2389 $ (18898 -> 21287), trades 4651 -> 3384; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 5 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
   window HOLD: stack maxDD 78842 -> 69365 (cut 12.0%), mean per week +434 $ (16775 -> 17209), trades 8303 -> 6381; weeks: set minus base in the base 20 worst weeks +5250 $/wk, in its 20 best -3583 $/wk.
   HOLD contiguous 2-week blocks: set beat or equalled the base in 11 of 20.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
-- JN05W_S6_C14_RM vs JN04RM: 23 of 43 months done.
-  months better/worse/equal vs the base (of 23 done): 12 / 11 / 0; sum -9234 $.
+  window PRE: stack maxDD 99479 -> 81184 (cut 18.4%), mean per week +813 $ (13304 -> 14117), trades 7801 -> 6585; weeks: set minus base in the base 20 worst weeks +2163 $/wk, in its 20 best +1069 $/wk.
+  PRE contiguous 2-week blocks: set beat or equalled the base in 17 of 35.
+  window X': stack maxDD 73615 -> 66545 (cut 9.6%), mean per week +523 $ (3567 -> 4090), trades 3029 -> 2934; weeks: set minus base in the base 20 worst weeks +602 $/wk, in its 20 best +430 $/wk.
+  X' contiguous 2-week blocks: set beat or equalled the base in 10 of 11.
+- JN05W_S6_C14_RM vs JN04RM: 43 of 43 months done.
+  months better/worse/equal vs the base (of 43 done): 19 / 22 / 2; sum -22943 $.
   window L6M: stack maxDD 39092 -> 21304 (cut 45.5%), mean per week +5219 $ (19528 -> 24747), trades 5078 -> 3763; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
   L6M contiguous 2-week blocks: set beat or equalled the base in 6 of 8.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
   window HOLD: stack maxDD 72757 -> 67178 (cut 7.7%), mean per week +1866 $ (12732 -> 14598), trades 8896 -> 6794; weeks: set minus base in the base 20 worst weeks +4217 $/wk, in its 20 best -151 $/wk.
   HOLD contiguous 2-week blocks: set beat or equalled the base in 13 of 20.
   scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
+  window PRE: stack maxDD 66714 -> 45677 (cut 31.5%), mean per week -231 $ (10301 -> 10069), trades 8121 -> 6845; weeks: set minus base in the base 20 worst weeks +2529 $/wk, in its 20 best -2404 $/wk.
+  PRE contiguous 2-week blocks: set beat or equalled the base in 17 of 35.
+  window X': stack maxDD 57041 -> 50888 (cut 10.8%), mean per week +207 $ (1873 -> 2079), trades 3056 -> 2976; weeks: set minus base in the base 20 worst weeks +312 $/wk, in its 20 best +6 $/wk.
+  X' contiguous 2-week blocks: set beat or equalled the base in 9 of 11.
 - JN05W_S6_N14 vs LPB_BASE: 0 of 43 months done.
 - JN05W_S6_N14_RM vs JN04RM: 0 of 43 months done.
 - JN05W_S6_L10 vs LPB_BASE: 0 of 43 months done.
