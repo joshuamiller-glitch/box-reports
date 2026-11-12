@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F2 — desk-state family (item 2) and winning-day protection (item 5) — W-F2
 
-Generated 2026-11-12 20:20Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
+Generated 2026-11-12 20:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
 
 ## 0. Trend-week clause (first): sum of the base's 5 best weeks kept, and base winning weeks turned losing (per window)
 
@@ -15,6 +15,7 @@ Generated 2026-11-12 20:20Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_ST_half_2_L | JN05W2 | HOLD | 340478 | 304366 | 89.4 | 0 of 37 | 52 |
 | NF_D_ST_half_3_J | JN05W2J | HOLD | 262552 | 258905 | 98.6 | 1 of 38 | 52 |
 | NF_D_WD_fresh_3_J | JN05W2J | HOLD | 262552 | 113499 | 43.2 | 5 of 38 | 52 |
+| NF_D_WD_fresh_3_L | JN05W2 | HOLD | 340478 | 195598 | 57.4 | 5 of 37 | 52 |
 | NF_D_OB_best_m2_J | JN05W2J | L1M | 10523 | 20456 | 194.4 | 0 of 1 | 4 |
 | NF_D_OB_best_m2_L | JN05W2 | L1M | 2425 | 27271 | 1124.5 | 0 of 2 | 4 |
 | NF_D_PL_day_half_m1p5_J | JN05W2J | L1M | 10523 | -6709 | -63.8 | 0 of 1 | 4 |
@@ -66,10 +67,10 @@ Generated 2026-11-12 20:20Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_OB_best_m2_L | L1M | 51.7 | 42.9 | 6211 | 6818 | 606 | 12 |
 | NF_D_OB_best_m2_L | L3M | -59.4 | -88.5 | -2485 | 13531 | 16015 | 12 |
 | NF_D_OB_best_m2_L | L6M | -59.4 | -88.5 | -5847 | 19290 | 25137 | 12 |
-| NF_D_PL_day_half_m1p5_J | HOLD | 19.7 | 13.2 | -949 | 13456 | 14405 | 12 |
-| NF_D_PL_day_half_m1p5_J | L1M | 13.0 | 6.1 | -4308 | -1677 | 2631 | 12 |
-| NF_D_PL_day_half_m1p5_J | L3M | 10.1 | 2.9 | -2036 | 12905 | 14942 | 12 |
-| NF_D_PL_day_half_m1p5_J | L6M | 0.3 | -7.7 | -2217 | 18648 | 20865 | 12 |
+| NF_D_PL_day_half_m1p5_J | HOLD | 19.7 | 13.2 | -949 | 13456 | 14405 | 13 |
+| NF_D_PL_day_half_m1p5_J | L1M | 13.0 | 6.1 | -4308 | -1677 | 2631 | 13 |
+| NF_D_PL_day_half_m1p5_J | L3M | 10.1 | 2.9 | -2036 | 12905 | 14942 | 13 |
+| NF_D_PL_day_half_m1p5_J | L6M | 0.3 | -7.7 | -2217 | 18648 | 20865 | 13 |
 | NF_D_PL_day_half_m1p5_L | HOLD | 33.9 | 29.8 | -2062 | 15427 | 17489 | 16 |
 | NF_D_PL_day_half_m1p5_L | L1M | 33.6 | 29.4 | 723 | 1329 | 606 | 16 |
 | NF_D_PL_day_half_m1p5_L | L3M | 4.3 | -1.7 | 14 | 16030 | 16015 | 16 |
@@ -97,13 +98,14 @@ Generated 2026-11-12 20:20Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_ST_half_4_J | L1M | 3.5 | 1.3 | -116 | 2514 | 2631 | 6 |
 | NF_D_ST_half_4_J | L3M | -15.2 | -17.8 | -827 | 14114 | 14942 | 6 |
 | NF_D_ST_half_4_J | L6M | 0.0 | -2.3 | -759 | 20106 | 20865 | 6 |
-| NF_D_WD_fresh_3_J | HOLD | 8.2 | -33.1 | -5244 | 9161 | 14405 | 12 |
-| NF_D_WD_fresh_3_J | L1M | 6.3 | -35.9 | -2871 | -241 | 2631 | 12 |
-| NF_D_WD_fresh_3_J | L3M | 6.3 | -35.9 | -2048 | 12893 | 14942 | 12 |
-| NF_D_WD_fresh_3_J | L6M | 30.2 | -1.3 | -7371 | 13494 | 20865 | 12 |
-| NF_D_WD_fresh_3_L | L1M | 33.3 | -15.9 | -2342 | -1735 | 606 | 11 |
-| NF_D_WD_fresh_3_L | L3M | 33.3 | -15.9 | -3648 | 12367 | 16015 | 11 |
-| NF_D_WD_fresh_3_L | L6M | 33.3 | -15.9 | -11252 | 13885 | 25137 | 11 |
+| NF_D_WD_fresh_3_J | HOLD | 8.2 | -33.1 | -5244 | 9161 | 14405 | 14 |
+| NF_D_WD_fresh_3_J | L1M | 6.3 | -35.9 | -2871 | -241 | 2631 | 14 |
+| NF_D_WD_fresh_3_J | L3M | 6.3 | -35.9 | -2048 | 12893 | 14942 | 14 |
+| NF_D_WD_fresh_3_J | L6M | 30.2 | -1.3 | -7371 | 13494 | 20865 | 14 |
+| NF_D_WD_fresh_3_L | HOLD | 5.2 | -64.7 | -7215 | 10274 | 17489 | 12 |
+| NF_D_WD_fresh_3_L | L1M | 33.3 | -15.9 | -2342 | -1735 | 606 | 12 |
+| NF_D_WD_fresh_3_L | L3M | 33.3 | -15.9 | -3648 | 12367 | 16015 | 12 |
+| NF_D_WD_fresh_3_L | L6M | 33.3 | -15.9 | -11252 | 13885 | 25137 | 12 |
 | NF_D_WD_half_3_L | L1M | 23.2 | 20.1 | -226 | 380 | 606 | 6 |
 | NF_D_WD_half_3_L | L3M | 12.8 | 9.3 | -2596 | 13419 | 16015 | 6 |
 | NF_D_WD_half_3_L | L6M | 12.8 | 9.3 | -1544 | 23593 | 25137 | 6 |

@@ -1,5 +1,5 @@
 # DS3_NEXT_FEATURES_F3 - T-NEXT-FEATURES items 3 (hold-or-take by location) and 4 (flat cut by context). W-F3. Shadow only, no PASS claim.
-Updated 2026-11-12 20:20Z. Directive autopilot/DIRECTIVE_T_NEXT_FEATURES_20261112.md; prereg autopilot/NEXTF3_PREREG.md (sha in DECISIONS.md). BASE = JN05W2 (LPB panel + F3 + E1 + C22 + BR3S + FLAT45K, exact 43 months, W-J). Item-4 sets keep FLAT45K on K7 unless the cell says replace. Exact sets run one per job (jn05_run2.py, TP engine, tag NEXTF); months done: NC_U7_T10_15F 9/43, NC_U7_T20_15F 9/43, NC_U7_T20_15A 9/43, NC_K7_T20_20RC 9/43, NC_K7_F55_45 9/43, NC_A7_T10_10F 8/43, NC_M7_T10_10A 8/43, NC_K7_T30_10RC 0/43, NH_P7_A9_N20 8/43, NH_P7_B9_X10N30 8/43, NH_U7_B7_X20N60 8/43, NH_M7_C9_F2 8/43, NH_M7_B9_X10N60 8/43, NH_P7_B7_X10N60 0/43, NH_U7_B7_X30N120 0/43
+Updated 2026-11-12 20:50Z. Directive autopilot/DIRECTIVE_T_NEXT_FEATURES_20261112.md; prereg autopilot/NEXTF3_PREREG.md (sha in DECISIONS.md). BASE = JN05W2 (LPB panel + F3 + E1 + C22 + BR3S + FLAT45K, exact 43 months, W-J). Item-4 sets keep FLAT45K on K7 unless the cell says replace. Exact sets run one per job (jn05_run2.py, TP engine, tag NEXTF); months done: NC_U7_T10_15F 11/43, NC_U7_T20_15F 11/43, NC_U7_T20_15A 11/43, NC_K7_T20_20RC 11/43, NC_K7_F55_45 11/43, NC_A7_T10_10F 11/43, NC_M7_T10_10A 11/43, NC_K7_T30_10RC 0/43, NH_P7_A9_N20 11/43, NH_P7_B9_X10N30 11/43, NH_U7_B7_X20N60 11/43, NH_M7_C9_F2 10/43, NH_M7_B9_X10N60 10/43, NH_P7_B7_X10N60 0/43, NH_U7_B7_X30N120 0/43
 
 Reading rule: exact is the verdict; first-order (FO sections) only chose the cells. Mean columns: mean_all (all weeks) vs ref; dmean carry-dropped is not used here. R-vs-dollar note: both items are location rules (points / fractions of target / minutes), independent of lot size, so they transfer unchanged to the user's x1.75 lots; only the dollar P&L scales.
 
@@ -29,7 +29,7 @@ IDENTITY NH_ID trades 598 598 net 25943.82 25943.82 IDENTICAL
 | NH_M7_B9_X10N60 | 257215 | 1 | 0 | 14 |
 
 
-## 2.NC_U7_T10_15F (9/43 months)
+## 2.NC_U7_T10_15F (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NC_U7_T10_15F
@@ -71,7 +71,7 @@ NC_U7_T10_15F PRE: months missing (17 of 17), window not scored
 NC_U7_T10_15F X': months missing (10 of 10), window not scored
 
 
-## 2.NC_U7_T20_15F (9/43 months)
+## 2.NC_U7_T20_15F (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NC_U7_T20_15F
@@ -113,7 +113,7 @@ NC_U7_T20_15F PRE: months missing (17 of 17), window not scored
 NC_U7_T20_15F X': months missing (10 of 10), window not scored
 
 
-## 2.NC_U7_T20_15A (9/43 months)
+## 2.NC_U7_T20_15A (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NC_U7_T20_15A
@@ -155,7 +155,7 @@ NC_U7_T20_15A PRE: months missing (17 of 17), window not scored
 NC_U7_T20_15A X': months missing (10 of 10), window not scored
 
 
-## 2.NC_K7_T20_20RC (9/43 months)
+## 2.NC_K7_T20_20RC (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NC_K7_T20_20RC
@@ -197,7 +197,7 @@ NC_K7_T20_20RC PRE: months missing (17 of 17), window not scored
 NC_K7_T20_20RC X': months missing (10 of 10), window not scored
 
 
-## 2.NC_K7_F55_45 (9/43 months)
+## 2.NC_K7_F55_45 (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NC_K7_F55_45
@@ -239,7 +239,7 @@ NC_K7_F55_45 PRE: months missing (17 of 17), window not scored
 NC_K7_F55_45 X': months missing (10 of 10), window not scored
 
 
-## 2.NC_A7_T10_10F (8/43 months)
+## 2.NC_A7_T10_10F (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NC_A7_T10_10F
@@ -281,7 +281,7 @@ NC_A7_T10_10F PRE: months missing (17 of 17), window not scored
 NC_A7_T10_10F X': months missing (10 of 10), window not scored
 
 
-## 2.NC_M7_T10_10A (8/43 months)
+## 2.NC_M7_T10_10A (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NC_M7_T10_10A
@@ -323,7 +323,7 @@ NC_M7_T10_10A PRE: months missing (17 of 17), window not scored
 NC_M7_T10_10A X': months missing (10 of 10), window not scored
 
 
-## 2.NH_P7_A9_N20 (8/43 months)
+## 2.NH_P7_A9_N20 (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NH_P7_A9_N20
@@ -365,7 +365,7 @@ NH_P7_A9_N20 PRE: months missing (17 of 17), window not scored
 NH_P7_A9_N20 X': months missing (10 of 10), window not scored
 
 
-## 2.NH_P7_B9_X10N30 (8/43 months)
+## 2.NH_P7_B9_X10N30 (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NH_P7_B9_X10N30
@@ -407,7 +407,7 @@ NH_P7_B9_X10N30 PRE: months missing (17 of 17), window not scored
 NH_P7_B9_X10N30 X': months missing (10 of 10), window not scored
 
 
-## 2.NH_U7_B7_X20N60 (8/43 months)
+## 2.NH_U7_B7_X20N60 (11/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NH_U7_B7_X20N60
@@ -449,7 +449,7 @@ NH_U7_B7_X20N60 PRE: months missing (17 of 17), window not scored
 NH_U7_B7_X20N60 X': months missing (10 of 10), window not scored
 
 
-## 2.NH_M7_C9_F2 (8/43 months)
+## 2.NH_M7_C9_F2 (10/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NH_M7_C9_F2
@@ -491,7 +491,7 @@ NH_M7_C9_F2 PRE: months missing (17 of 17), window not scored
 NH_M7_C9_F2 X': months missing (10 of 10), window not scored
 
 
-## 2.NH_M7_B9_X10N60 (8/43 months)
+## 2.NH_M7_B9_X10N60 (10/43 months)
 ### windows vs JN05W2 (nf_score)
 ```
 NH_M7_B9_X10N60

@@ -1,6 +1,6 @@
 # DS3_SMART_A3 — T-SMART item A3: structure stops with equal-$ lots (W-SM3)
 
-Generated 2026-11-12 20:08Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
+Generated 2026-11-12 20:38Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
 
 **CAVEAT (every table):** the engine state cut fires in the engine but did NOT fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). Rows marked **S0 = state cut OFF = the live-realistic case** are read first and compared with SMA3_REF_S0 (JN05W2 with every state cut switched off, K7 flat45 kept); **S1** rows keep the state cut and compare with JN05W2.
 
@@ -12,12 +12,15 @@ Dead-cell lookup (loss|struct_stop_eq|<book>|<feat>, 32 specs): 0 hits; first-or
 
 | set | months | reference | 5 best wks kept | winning wks turned losing | L6M cut % | L6M d mean/wk (all wks) | HOLD cut % | HOLD d mean/wk | PRE cut % | X' cut % | GAP cut % | WF cut / beat |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
+| SMA3_FR154_ALL_S0 | 1 | SMA3_REF_S0 | (running) ||||||||||
 | SMA3_FR154_K_S1 | 4 | JN05W2 | (running) ||||||||||
 | SMA3_FR156_K_S0 | 2 | SMA3_REF_S0 | (running) ||||||||||
-| SMA3_KC2_U_S0 | 3 | SMA3_REF_S0 | (running) ||||||||||
+| SMA3_KC2_ALL_S0 | 1 | SMA3_REF_S0 | (running) ||||||||||
+| SMA3_KC2_U_S0 | 4 | SMA3_REF_S0 | (running) ||||||||||
 | SMA3_KC2_U_S1 | 3 | JN05W2 | (running) ||||||||||
-| SMA3_KC4_U_S0 | 2 | SMA3_REF_S0 | (running) ||||||||||
+| SMA3_KC4_U_S0 | 3 | SMA3_REF_S0 | (running) ||||||||||
 | SMA3_KU_S0 | 3 | SMA3_REF_S0 | (running) ||||||||||
+| SMA3_KU_S1 | 1 | JN05W2 | (running) ||||||||||
 | SMA3_REF_S0 | 2 |  | (reference) ||||||||||
 
 cut % = stack maxDD vs the reference (positive = shallower); d mean = all-weeks mean difference ($/wk, carry week kept); WF = bi-weekly re-pick walk-forward (only with all 43 months).
