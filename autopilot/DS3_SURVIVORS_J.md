@@ -1,4 +1,4 @@
-# DS3_SURVIVORS_J - JN05W2 (W-J; 2026-11-12T15:25:53Z; Shadow only, no PASS claims)
+# DS3_SURVIVORS_J - JN05W2 (W-J; 2026-11-12T15:56:40Z; Shadow only, no PASS claims)
 
 JN05W2 = live panel base (installed panel + P7 cut, NO JN04 layers, NO WA_C1) + F3 (WB_X_FR_F3 context cut) + E1 (WG_E1 governor) + C22 (S6 stack count and day P&L <= -2R) + BR3S (breadth_ext15 == 3 skip, P7) + FLAT45K (K7 flat -45). Hook order inner to outer: W-B context cut, W-X flat, W-S stack gate, W-C governor; BR3S through the entry-gate mixin. Reference LPB_BASE (exact, 43 months). JN05W2J = the same five on the JN04RM base (extra). Leave-one-out = one set per layer left out.
 
@@ -6,13 +6,13 @@ JN05W2 = live panel base (installed panel + P7 cut, NO JN04 layers, NO WA_C1) + 
 
 | set | months DONE of 43 |
 |--|--|
-| JN05W2 | 41 |
-| JN05W2_nF3 | 40 |
-| JN05W2_nE1 | 41 |
-| JN05W2_nC22 | 40 |
-| JN05W2_nBR3S | 42 |
-| JN05W2_nFLAT | 41 |
-| JN05W2J | 41 |
+| JN05W2 | 43 |
+| JN05W2_nF3 | 43 |
+| JN05W2_nE1 | 43 |
+| JN05W2_nC22 | 43 |
+| JN05W2_nBR3S | 43 |
+| JN05W2_nFLAT | 43 |
+| JN05W2J | 43 |
 
 ## 1. Identity check (before anything)
 
@@ -20,54 +20,156 @@ JN05W2_ID (the same hook stack with every layer null) is identical trade by trad
 
 ## 2. Trend-week clause (first): weekly P&L, L6M, vs LPB_BASE
 
-(not built yet)
+# Weekly check, L6M (ISO weeks with trading days in 2026-05..10; weeks at the month edges are partial; exact engine; Shadow only)
 
+| week | LPB_BASE | JN04RM | JN05W2 | JN05W2_nF3 | JN05W2_nE1 | JN05W2_nC22 | JN05W2_nBR3S | JN05W2_nFLAT | JN05W2J |
+|--|--|--|--|--|--|--|--|--|--|
+| 202638 (best of LPB_BASE) | 88836 | 72104 | 58311 | 48462 | 56397 | 61353 | 41334 | 65293 | 58011 |
+| 202623 (best of LPB_BASE) | 73836 | 68072 | 52723 | 54578 | 50759 | 44642 | 61777 | 48394 | 41676 |
+| 202625 (best of LPB_BASE) | 59099 | 59990 | 37787 | 47175 | 42925 | 36492 | 31806 | 44579 | 40510 |
+| 202639 (best of LPB_BASE) | 57178 | 52634 | 51123 | 50967 | 49241 | 51123 | 47321 | 64789 | 39815 |
+| 202633 (best of LPB_BASE) | 52499 | 36328 | 55600 | 55699 | 54176 | 55600 | 40395 | 47733 | 37387 |
+| 202644 (worst of LPB_BASE) | -51253 | -16664 | -36371 | -42856 | -24205 | -41464 | -19086 | -36147 | -14035 |
+| 202636 (worst of LPB_BASE) | -44984 | -25704 | -26026 | -28172 | -26026 | -42352 | -14530 | -41893 | -12417 |
+| 202621 (worst of LPB_BASE) | -39976 | -39092 | -25313 | -45928 | -24194 | -31507 | -29457 | -25880 | -23965 |
+| 202635 (worst of LPB_BASE) | -23667 | -15995 | 14756 | 17448 | 13437 | 6693 | -9821 | 13927 | 9907 |
+| 202637 (worst of LPB_BASE) | -8573 | 679 | -4508 | -19297 | -4508 | -4672 | -1502 | 3786 | -970 |
+
+JN04RM: LPB_BASE winning weeks 20 of 27; of those, JN04RM turn losing: 1; weeks where JN04RM beats LPB_BASE: 13 of 27; sum over the 5 best LPB_BASE weeks 289128 vs 331449
+
+JN05W2: LPB_BASE winning weeks 20 of 27; of those, JN05W2 turn losing: 2; weeks where JN05W2 beats LPB_BASE: 16 of 27; sum over the 5 best LPB_BASE weeks 255545 vs 331449
+
+JN05W2_nF3: LPB_BASE winning weeks 20 of 27; of those, JN05W2_nF3 turn losing: 3; weeks where JN05W2_nF3 beats LPB_BASE: 16 of 27; sum over the 5 best LPB_BASE weeks 256881 vs 331449
+
+JN05W2_nE1: LPB_BASE winning weeks 20 of 27; of those, JN05W2_nE1 turn losing: 1; weeks where JN05W2_nE1 beats LPB_BASE: 16 of 27; sum over the 5 best LPB_BASE weeks 253498 vs 331449
+
+JN05W2_nC22: LPB_BASE winning weeks 20 of 27; of those, JN05W2_nC22 turn losing: 2; weeks where JN05W2_nC22 beats LPB_BASE: 15 of 27; sum over the 5 best LPB_BASE weeks 249210 vs 331449
+
+JN05W2_nBR3S: LPB_BASE winning weeks 20 of 27; of those, JN05W2_nBR3S turn losing: 0; weeks where JN05W2_nBR3S beats LPB_BASE: 15 of 27; sum over the 5 best LPB_BASE weeks 222632 vs 331449
+
+JN05W2_nFLAT: LPB_BASE winning weeks 20 of 27; of those, JN05W2_nFLAT turn losing: 1; weeks where JN05W2_nFLAT beats LPB_BASE: 15 of 27; sum over the 5 best LPB_BASE weeks 270789 vs 331449
+
+JN05W2J: LPB_BASE winning weeks 20 of 27; of those, JN05W2J turn losing: 1; weeks where JN05W2J beats LPB_BASE: 15 of 27; sum over the 5 best LPB_BASE weeks 217399 vs 331449
+
+# Frozen week 11-02..05 exact re-simulation (month 202611; state days 20261102-05)
+
+NOT POSSIBLE on this box: the exact engine needs the hist day files (_hist_replica/days) built from raw mbp-10, and the latest raw NQ file is 2026-10-31 (GLBX-20261031); only the 1-s state arrays for 11-02..05 exist. FW_LPB 202611 failed with: no day files in range. Needed: raw mbp-10 for 2026-11-02..05 into /mnt/l2/l2vast/raw/NQ/ext/ then the hist_pipe day build. Sets FW_LPB, FW_JN04RM, JN05W_E1_FW, JN05W_E1A_FW and jnr_cfg_nov.json (Nov dA threshold) are ready and run with chain_jn05.sh SET 202611. Until then the trend-week cost evidence is the L6M weekly table above (the 5 best LPB_BASE weeks).
 ## 3. Windows (exact; each row vs LPB_BASE; mean columns all-weeks and carry-dropped; only windows with all months present are shown)
 
 | cell | window | mean $/wk all-weeks | LPB_BASE all-weeks | d mean all-weeks | mean (carry week dropped) | mean_ref (carry dropped) | maxDD | maxDD_ref | cut % | d mean | WF beat % | label |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|
-| JN05W2 | L1M | 606 | 341 | +266 | -7190 | -16180 | 36371 | 51253 | +29.0 | +8990 | n/a |  |
-| JN05W2 | L3M | 16015 | 11957 | +4059 | 16120 | 14925 | 36371 | 77224 | +52.9 | +1195 | n/a |  |
-| JN05W2 | L6M | 25137 | 18697 | +6440 | 23269 | 18660 | 36371 | 77224 | +52.9 | +4608 | n/a | n/a |
-| JN05W2 | HOLD | 17489 | 15236 | +2253 | 16424 | 15151 | 63185 | 78842 | +19.9 | +1273 | n/a |  |
-| JN05W2 | X' | 3585 | 1334 | +2251 | 4172 | 2553 | 55326 | 122553 | +54.9 | +1620 | n/a |  |
-| JN05W2_nF3 | L1M | -1519 | 341 | -1859 | -7314 | -16180 | 42856 | 51253 | +16.4 | +8866 | n/a |  |
-| JN05W2_nF3 | L3M | 15963 | 11957 | +4006 | 15839 | 14925 | 47469 | 77224 | +38.5 | +914 | n/a |  |
-| JN05W2_nF3 | L6M | 21216 | 18697 | +2519 | 19536 | 18660 | 47469 | 77224 | +38.5 | +876 | n/a | n/a |
-| JN05W2_nF3 | HOLD | 18237 | 15236 | +3000 | 17355 | 15151 | 56965 | 78842 | +27.7 | +2204 | n/a |  |
-| JN05W2_nF3 | X' | 2205 | 1334 | +872 | 2969 | 2553 | 86520 | 122553 | +29.4 | +416 | n/a |  |
-| JN05W2_nE1 | L1M | 3254 | 341 | +2913 | 12406 | 17539 | 24205 | 51253 | +52.8 | -5132 | n/a |  |
-| JN05W2_nE1 | L3M | 16476 | 11957 | +4520 | 16730 | 14925 | 30533 | 77224 | +60.5 | +1804 | n/a |  |
-| JN05W2_nE1 | L6M | 24904 | 18697 | +6207 | 23012 | 18660 | 30533 | 77224 | +60.5 | +4352 | n/a | n/a |
-| JN05W2_nE1 | HOLD | 17521 | 15236 | +2285 | 16449 | 15151 | 61283 | 78842 | +22.3 | +1299 | n/a |  |
-| JN05W2_nE1 | X' | 3475 | 1334 | +2141 | 4059 | 2553 | 55326 | 122553 | +54.9 | +1507 | n/a |  |
-| JN05W2_nC22 | L1M | 3170 | 341 | +2829 | 18048 | 17539 | 42163 | 51253 | +17.7 | +509 | n/a |  |
-| JN05W2_nC22 | L3M | 11972 | 11957 | +15 | 12412 | 14925 | 47024 | 77224 | +39.1 | -2513 | n/a |  |
-| JN05W2_nC22 | L6M | 22171 | 18697 | +3474 | 20034 | 17838 | 47024 | 77224 | +39.1 | +2196 | n/a | n/a |
-| JN05W2_nC22 | HOLD | 15730 | 15236 | +494 | 16256 | 14869 | 63870 | 78842 | +19.0 | +1387 | n/a |  |
-| JN05W2_nC22 | X' | 3523 | 1334 | +2189 | 4108 | 2553 | 55326 | 122553 | +54.9 | +1556 | n/a |  |
-| JN05W2_nBR3S | L1M | 8071 | 341 | +7730 | 17123 | 17539 | 19086 | 51253 | +62.8 | -416 | n/a |  |
-| JN05W2_nBR3S | L3M | 14325 | 11957 | +2369 | 12075 | 5550 | 25852 | 77224 | +66.5 | +6525 | n/a |  |
-| JN05W2_nBR3S | L6M | 21240 | 18697 | +2543 | 19280 | 18660 | 29457 | 77224 | +61.9 | +619 | n/a | n/a |
-| JN05W2_nBR3S | HOLD | 15832 | 15236 | +595 | 14764 | 15151 | 73126 | 78842 | +7.2 | -386 | n/a |  |
-| JN05W2_nBR3S | X' | 1607 | 1334 | +273 | 2075 | 1387 | 88124 | 122553 | +28.1 | +688 | n/a |  |
-| JN05W2_nFLAT | L1M | 157 | 341 | -183 | -6990 | -16180 | 36147 | 51253 | +29.5 | +9190 | n/a |  |
-| JN05W2_nFLAT | L3M | 15858 | 11957 | +3901 | 16018 | 14925 | 41893 | 77224 | +45.8 | +1093 | n/a |  |
-| JN05W2_nFLAT | L6M | 23665 | 18697 | +4968 | 22029 | 18660 | 41893 | 77224 | +45.8 | +3369 | n/a | n/a |
-| JN05W2_nFLAT | HOLD | 16662 | 15236 | +1426 | 15723 | 15151 | 64649 | 78842 | +18.0 | +573 | n/a |  |
-| JN05W2_nFLAT | X' | 3027 | 1334 | +1693 | 3129 | 1886 | 51696 | 122553 | +57.8 | +1243 | n/a |  |
-| JN05W2J | L1M | 2631 | 341 | +2290 | 8186 | 17539 | 17862 | 51253 | +65.1 | -9352 | n/a |  |
-| JN05W2J | L3M | 14942 | 11957 | +2985 | 17356 | 17224 | 17862 | 77224 | +76.9 | +132 | n/a |  |
-| JN05W2J | L6M | 20865 | 18697 | +2168 | 22261 | 21495 | 23965 | 77224 | +69.0 | +766 | n/a | n/a |
-| JN05W2J | HOLD | 14405 | 15236 | -831 | 14628 | 14684 | 43622 | 78842 | +44.7 | -56 | n/a |  |
-| JN05W2J | X' | 3798 | 1334 | +2464 | 4055 | 2553 | 39577 | 122553 | +67.7 | +1502 | n/a |  |
+| JN05W2 | L1M | 606 | 341 | +266 | -7190 | -16180 | 36371 | 51253 | +29.0 | +8990 | 44 |  |
+| JN05W2 | L3M | 16015 | 11957 | +4059 | 16120 | 14925 | 36371 | 77224 | +52.9 | +1195 | 44 |  |
+| JN05W2 | L6M | 25137 | 18697 | +6440 | 23269 | 18660 | 36371 | 77224 | +52.9 | +4608 | 44 | OK-PRIOR (allow 15.0%, WF 44%) |
+| JN05W2 | HOLD | 17489 | 15236 | +2253 | 16424 | 15151 | 63185 | 78842 | +19.9 | +1273 | 44 |  |
+| JN05W2 | PRE | 10168 | 11685 | -1518 | 10423 | 12592 | 76186 | 99479 | +23.4 | -2169 | 44 |  |
+| JN05W2 | X' | 3585 | 1334 | +2251 | 4172 | 2553 | 55326 | 122553 | +54.9 | +1620 | 44 |  |
+| JN05W2_nF3 | L1M | -1519 | 341 | -1859 | -7314 | -16180 | 42856 | 51253 | +16.4 | +8866 | 39 |  |
+| JN05W2_nF3 | L3M | 15963 | 11957 | +4006 | 15839 | 14925 | 47469 | 77224 | +38.5 | +914 | 39 |  |
+| JN05W2_nF3 | L6M | 21216 | 18697 | +2519 | 19536 | 18660 | 47469 | 77224 | +38.5 | +876 | 39 | OK-PRIOR (allow 15.0%, WF 39%) |
+| JN05W2_nF3 | HOLD | 18237 | 15236 | +3000 | 17355 | 15151 | 56965 | 78842 | +27.7 | +2204 | 39 |  |
+| JN05W2_nF3 | PRE | 11578 | 11685 | -107 | 11873 | 12592 | 85185 | 99479 | +14.4 | -719 | 39 |  |
+| JN05W2_nF3 | X' | 2205 | 1334 | +872 | 2969 | 2553 | 86520 | 122553 | +29.4 | +416 | 39 |  |
+| JN05W2_nE1 | L1M | 3254 | 341 | +2913 | 12406 | 17539 | 24205 | 51253 | +52.8 | -5132 | 37 |  |
+| JN05W2_nE1 | L3M | 16476 | 11957 | +4520 | 16730 | 14925 | 30533 | 77224 | +60.5 | +1804 | 37 |  |
+| JN05W2_nE1 | L6M | 24904 | 18697 | +6207 | 23012 | 18660 | 30533 | 77224 | +60.5 | +4352 | 37 | OK-PRIOR (allow 15.0%, WF 37%) |
+| JN05W2_nE1 | HOLD | 17521 | 15236 | +2285 | 16449 | 15151 | 61283 | 78842 | +22.3 | +1299 | 37 |  |
+| JN05W2_nE1 | PRE | 10762 | 11685 | -924 | 10312 | 11867 | 71392 | 99479 | +28.2 | -1555 | 37 |  |
+| JN05W2_nE1 | X' | 3475 | 1334 | +2141 | 4059 | 2553 | 55326 | 122553 | +54.9 | +1507 | 37 |  |
+| JN05W2_nC22 | L1M | 3170 | 341 | +2829 | 18048 | 17539 | 42163 | 51253 | +17.7 | +509 | 42 |  |
+| JN05W2_nC22 | L3M | 11972 | 11957 | +15 | 12412 | 14925 | 47024 | 77224 | +39.1 | -2513 | 42 |  |
+| JN05W2_nC22 | L6M | 22171 | 18697 | +3474 | 20034 | 17838 | 47024 | 77224 | +39.1 | +2196 | 42 | OK-PRIOR (allow 15.0%, WF 42%) |
+| JN05W2_nC22 | HOLD | 15730 | 15236 | +494 | 16256 | 14869 | 63870 | 78842 | +19.0 | +1387 | 42 |  |
+| JN05W2_nC22 | PRE | 10013 | 11685 | -1673 | 10192 | 12592 | 91066 | 99479 | +8.5 | -2401 | 42 |  |
+| JN05W2_nC22 | X' | 3523 | 1334 | +2189 | 4108 | 2553 | 55326 | 122553 | +54.9 | +1556 | 42 |  |
+| JN05W2_nBR3S | L1M | 8071 | 341 | +7730 | 17123 | 17539 | 19086 | 51253 | +62.8 | -416 | 46 |  |
+| JN05W2_nBR3S | L3M | 14325 | 11957 | +2369 | 12075 | 5550 | 25852 | 77224 | +66.5 | +6525 | 46 |  |
+| JN05W2_nBR3S | L6M | 21240 | 18697 | +2543 | 19280 | 18660 | 29457 | 77224 | +61.9 | +619 | 46 | OK-PRIOR (allow 15.0%, WF 46%) |
+| JN05W2_nBR3S | HOLD | 15832 | 15236 | +595 | 14764 | 15151 | 73126 | 78842 | +7.2 | -386 | 46 |  |
+| JN05W2_nBR3S | PRE | 10834 | 11685 | -851 | 11078 | 12592 | 80282 | 99479 | +19.3 | -1515 | 46 |  |
+| JN05W2_nBR3S | X' | 1607 | 1334 | +273 | 2075 | 1387 | 88124 | 122553 | +28.1 | +688 | 46 |  |
+| JN05W2_nFLAT | L1M | 157 | 341 | -183 | -6990 | -16180 | 36147 | 51253 | +29.5 | +9190 | 57 |  |
+| JN05W2_nFLAT | L3M | 15858 | 11957 | +3901 | 16018 | 14925 | 41893 | 77224 | +45.8 | +1093 | 57 |  |
+| JN05W2_nFLAT | L6M | 23665 | 18697 | +4968 | 22029 | 18660 | 41893 | 77224 | +45.8 | +3369 | 57 | OK-PRIOR (allow 15.0%, WF 57%) |
+| JN05W2_nFLAT | HOLD | 16662 | 15236 | +1426 | 15723 | 15151 | 64649 | 78842 | +18.0 | +573 | 57 |  |
+| JN05W2_nFLAT | PRE | 11810 | 11685 | +124 | 11345 | 11867 | 68600 | 99479 | +31.0 | -522 | 57 |  |
+| JN05W2_nFLAT | X' | 3027 | 1334 | +1693 | 3129 | 1886 | 51696 | 122553 | +57.8 | +1243 | 57 |  |
+| JN05W2J | L1M | 2631 | 341 | +2290 | 8186 | 17539 | 17862 | 51253 | +65.1 | -9352 | 85 |  |
+| JN05W2J | L3M | 14942 | 11957 | +2985 | 17356 | 17224 | 17862 | 77224 | +76.9 | +132 | 85 |  |
+| JN05W2J | L6M | 20865 | 18697 | +2168 | 22261 | 21495 | 23965 | 77224 | +69.0 | +766 | 85 | RECENT-ONLY (allow 25.0%, WF 85%) |
+| JN05W2J | HOLD | 14405 | 15236 | -831 | 14628 | 14684 | 43622 | 78842 | +44.7 | -56 | 85 |  |
+| JN05W2J | PRE | 7254 | 11685 | -4431 | 6903 | 10548 | 56843 | 99479 | +42.9 | -3646 | 85 |  |
+| JN05W2J | X' | 3798 | 1334 | +2464 | 4055 | 2553 | 39577 | 122553 | +67.7 | +1502 | 85 |  |
 
 ## 4. Acceptance
 
 | set | acceptance (W-C acceptance_p7) |
 |--|--|
+| JN05W2 | ACCEPT JN05W2 PASS fails=1/20 |
+| JN05W2_nF3 | ACCEPT JN05W2_nF3 PASS fails=1/20 |
+| JN05W2_nE1 | ACCEPT JN05W2_nE1 FAIL fails=4/20 |
+| JN05W2_nC22 | ACCEPT JN05W2_nC22 PASS fails=1/20 |
+| JN05W2_nBR3S | ACCEPT JN05W2_nBR3S PASS fails=1/20 |
+| JN05W2_nFLAT | ACCEPT JN05W2_nFLAT PASS fails=1/20 |
+| JN05W2J | ACCEPT JN05W2J PASS fails=1/20 |
 
 ## 5. Behavioural scorecards (W-Q behavior_scorecard.py plain words)
+
+### JN05W2
+
+JN05W2 L6M (stack, per week): full stops 11.2/wk $-21420; give-backs 7.6/wk (7.4 round-trips) realised $-10552, forgone vs target $28155; same-side losing runs max 13, p95 6, $-44947 lost on 3rd-and-later; no-new-evidence re-entries 32.8/wk $1128; recoveries cut 12.2/wk $47891, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $47960/wk, losers avoided $49493/wk, net +6814 $/wk; pnl $26598/wk.
+JN05W2 HOLD (stack, per week): full stops 10.8/wk $-21191; give-backs 6.9/wk (6.7 round-trips) realised $-9418, forgone vs target $25560; same-side losing runs max 13, p95 6, $-37736 lost on 3rd-and-later; no-new-evidence re-entries 26.2/wk $1799; recoveries cut 11.1/wk $44000, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $44726/wk, losers avoided $44438/wk, net +2690 $/wk; pnl $18042/wk.
+JN05W2 PRE (stack, per week): full stops 9.2/wk $-20035; give-backs 4.8/wk (4.5 round-trips) realised $-6621, forgone vs target $17626; same-side losing runs max 9, p95 4, $-21187 lost on 3rd-and-later; no-new-evidence re-entries 12.9/wk $988; recoveries cut 6.8/wk $24679, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $24853/wk, losers avoided $24363/wk, net -1537 $/wk; pnl $10345/wk.
+JN05W2 X' (stack, per week): full stops 11.1/wk $-22687; give-backs 3.6/wk (3.1 round-trips) realised $-4638, forgone vs target $12342; same-side losing runs max 8, p95 4, $-12073 lost on 3rd-and-later; no-new-evidence re-entries 3.6/wk $392; recoveries cut 2.5/wk $8955, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $12045/wk, losers avoided $12639/wk, net +2266 $/wk; pnl $3609/wk.
+
+
+### JN05W2_nF3
+
+JN05W2_nF3 L6M (stack, per week): full stops 10.7/wk $-19808; give-backs 7.5/wk (7.4 round-trips) realised $-11396, forgone vs target $28950; same-side losing runs max 12, p95 6, $-45844 lost on 3rd-and-later; no-new-evidence re-entries 31.1/wk $181; recoveries cut 10.8/wk $40700, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $46483/wk, losers avoided $46486/wk, net +2666 $/wk; pnl $22450/wk.
+JN05W2_nF3 HOLD (stack, per week): full stops 10.4/wk $-19709; give-backs 6.9/wk (6.8 round-trips) realised $-10443, forgone vs target $26762; same-side losing runs max 12, p95 6, $-39230 lost on 3rd-and-later; no-new-evidence re-entries 25.1/wk $1386; recoveries cut 9.6/wk $35126, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $41875/wk, losers avoided $40992/wk, net +3464 $/wk; pnl $18816/wk.
+JN05W2_nF3 PRE (stack, per week): full stops 8.6/wk $-17370; give-backs 4.8/wk (4.5 round-trips) realised $-7104, forgone vs target $18227; same-side losing runs max 9, p95 4, $-21424 lost on 3rd-and-later; no-new-evidence re-entries 11.8/wk $1053; recoveries cut 5.6/wk $19495, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $22477/wk, losers avoided $21964/wk, net -102 $/wk; pnl $11780/wk.
+JN05W2_nF3 X' (stack, per week): full stops 10.1/wk $-18183; give-backs 3.5/wk (3.0 round-trips) realised $-4489, forgone vs target $11962; same-side losing runs max 8, p95 4, $-12535 lost on 3rd-and-later; no-new-evidence re-entries 3.3/wk $583; recoveries cut 2.5/wk $10067, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $10152/wk, losers avoided $11046/wk, net +878 $/wk; pnl $2220/wk.
+
+
+### JN05W2_nE1
+
+JN05W2_nE1 L6M (stack, per week): full stops 11.2/wk $-20894; give-backs 7.7/wk (7.6 round-trips) realised $-10821, forgone vs target $29093; same-side losing runs max 12, p95 7, $-47794 lost on 3rd-and-later; no-new-evidence re-entries 35.4/wk $60; recoveries cut 12.5/wk $50709, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $46716/wk, losers avoided $48561/wk, net +6568 $/wk; pnl $26352/wk.
+JN05W2_nE1 HOLD (stack, per week): full stops 10.7/wk $-20831; give-backs 6.9/wk (6.8 round-trips) realised $-9596, forgone vs target $26133; same-side losing runs max 12, p95 6, $-39319 lost on 3rd-and-later; no-new-evidence re-entries 27.8/wk $1300; recoveries cut 11.2/wk $45698, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $43719/wk, losers avoided $43878/wk, net +2723 $/wk; pnl $18075/wk.
+JN05W2_nE1 PRE (stack, per week): full stops 9.2/wk $-19997; give-backs 4.9/wk (4.5 round-trips) realised $-6656, forgone vs target $17726; same-side losing runs max 8, p95 4, $-21483 lost on 3rd-and-later; no-new-evidence re-entries 13.4/wk $1492; recoveries cut 6.8/wk $24825, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $24576/wk, losers avoided $24219/wk, net -933 $/wk; pnl $10949/wk.
+JN05W2_nE1 X' (stack, per week): full stops 11.1/wk $-22687; give-backs 3.6/wk (3.1 round-trips) realised $-4653, forgone vs target $12384; same-side losing runs max 8, p95 4, $-12198 lost on 3rd-and-later; no-new-evidence re-entries 3.7/wk $301; recoveries cut 2.5/wk $8955, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $12045/wk, losers avoided $12545/wk, net +2155 $/wk; pnl $3497/wk.
+
+
+### JN05W2_nC22
+
+JN05W2_nC22 L6M (stack, per week): full stops 13.3/wk $-25004; give-backs 9.4/wk (9.2 round-trips) realised $-12622, forgone vs target $33049; same-side losing runs max 13, p95 6, $-51513 lost on 3rd-and-later; no-new-evidence re-entries 41.3/wk $659; recoveries cut 14.6/wk $53939, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $35177/wk, losers avoided $33606/wk, net +3676 $/wk; pnl $23460/wk.
+JN05W2_nC22 HOLD (stack, per week): full stops 12.3/wk $-23798; give-backs 8.0/wk (7.8 round-trips) realised $-10687, forgone vs target $28722; same-side losing runs max 13, p95 6, $-42820 lost on 3rd-and-later; no-new-evidence re-entries 33.2/wk $1766; recoveries cut 13.2/wk $49340, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $34030/wk, losers avoided $32139/wk, net +808 $/wk; pnl $16159/wk.
+JN05W2_nC22 PRE (stack, per week): full stops 9.6/wk $-20521; give-backs 5.3/wk (4.9 round-trips) realised $-7057, forgone vs target $18755; same-side losing runs max 11, p95 4, $-22712 lost on 3rd-and-later; no-new-evidence re-entries 14.8/wk $784; recoveries cut 7.4/wk $26325, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $21154/wk, losers avoided $20588/wk, net -1695 $/wk; pnl $10187/wk.
+JN05W2_nC22 X' (stack, per week): full stops 11.1/wk $-22687; give-backs 3.6/wk (3.1 round-trips) realised $-4638, forgone vs target $12342; same-side losing runs max 8, p95 4, $-12073 lost on 3rd-and-later; no-new-evidence re-entries 3.7/wk $350; recoveries cut 2.5/wk $8955, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $12045/wk, losers avoided $12609/wk, net +2203 $/wk; pnl $3546/wk.
+
+
+### JN05W2_nBR3S
+
+JN05W2_nBR3S L6M (stack, per week): full stops 10.9/wk $-21089; give-backs 7.6/wk (7.5 round-trips) realised $-11164, forgone vs target $30108; same-side losing runs max 12, p95 6, $-46937 lost on 3rd-and-later; no-new-evidence re-entries 33.2/wk $738; recoveries cut 12.5/wk $52105, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $32019/wk, losers avoided $31500/wk, net +2691 $/wk; pnl $22475/wk.
+JN05W2_nBR3S HOLD (stack, per week): full stops 10.8/wk $-21439; give-backs 6.8/wk (6.7 round-trips) realised $-9843, forgone vs target $26604; same-side losing runs max 12, p95 6, $-39223 lost on 3rd-and-later; no-new-evidence re-entries 27.4/wk $1052; recoveries cut 11.5/wk $46988, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $25685/wk, losers avoided $26965/wk, net +706 $/wk; pnl $16057/wk.
+JN05W2_nBR3S PRE (stack, per week): full stops 9.0/wk $-19516; give-backs 4.8/wk (4.4 round-trips) realised $-6454, forgone vs target $17471; same-side losing runs max 9, p95 5, $-21401 lost on 3rd-and-later; no-new-evidence re-entries 13.1/wk $930; recoveries cut 6.8/wk $25335, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $13708/wk, losers avoided $13919/wk, net -859 $/wk; pnl $11023/wk.
+JN05W2_nBR3S X' (stack, per week): full stops 11.0/wk $-23060; give-backs 3.8/wk (3.3 round-trips) realised $-5062, forgone vs target $13465; same-side losing runs max 8, p95 4, $-12027 lost on 3rd-and-later; no-new-evidence re-entries 3.7/wk $366; recoveries cut 2.7/wk $9717, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $7269/wk, losers avoided $5714/wk, net +275 $/wk; pnl $1617/wk.
+
+
+### JN05W2_nFLAT
+
+JN05W2_nFLAT L6M (stack, per week): full stops 21.2/wk $-35397; give-backs 7.6/wk (7.5 round-trips) realised $-10723, forgone vs target $28330; same-side losing runs max 13, p95 6, $-43786 lost on 3rd-and-later; no-new-evidence re-entries 30.6/wk $-85; recoveries cut 13.2/wk $50001, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $44248/wk, losers avoided $46024/wk, net +5257 $/wk; pnl $25041/wk.
+JN05W2_nFLAT HOLD (stack, per week): full stops 20.4/wk $-34798; give-backs 6.9/wk (6.7 round-trips) realised $-9538, forgone vs target $25795; same-side losing runs max 13, p95 6, $-37431 lost on 3rd-and-later; no-new-evidence re-entries 24.4/wk $944; recoveries cut 11.9/wk $46031, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $40452/wk, losers avoided $40681/wk, net +1651 $/wk; pnl $17003/wk.
+JN05W2_nFLAT PRE (stack, per week): full stops 16.6/wk $-30169; give-backs 4.8/wk (4.4 round-trips) realised $-6613, forgone vs target $17552; same-side losing runs max 8, p95 4, $-20166 lost on 3rd-and-later; no-new-evidence re-entries 11.5/wk $1135; recoveries cut 7.3/wk $25978, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $21487/wk, losers avoided $21576/wk, net +133 $/wk; pnl $12016/wk.
+JN05W2_nFLAT X' (stack, per week): full stops 18.4/wk $-32504; give-backs 3.4/wk (2.9 round-trips) realised $-4650, forgone vs target $12217; same-side losing runs max 7, p95 4, $-11708 lost on 3rd-and-later; no-new-evidence re-entries 3.0/wk $249; recoveries cut 2.6/wk $9188, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $9878/wk, losers avoided $10340/wk, net +1704 $/wk; pnl $3046/wk.
+
+
+### JN05W2J
+
+JN05W2J L6M (stack, per week): full stops 11.0/wk $-18853; give-backs 8.3/wk (8.1 round-trips) realised $-9133, forgone vs target $24130; same-side losing runs max 14, p95 6, $-35308 lost on 3rd-and-later; no-new-evidence re-entries 34.8/wk $1053; recoveries cut 13.1/wk $35622, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $48428/wk, losers avoided $50379/wk, net +2294 $/wk; pnl $22078/wk.
+JN05W2J HOLD (stack, per week): full stops 10.7/wk $-18562; give-backs 7.4/wk (7.2 round-trips) realised $-7882, forgone vs target $20833; same-side losing runs max 14, p95 6, $-30154 lost on 3rd-and-later; no-new-evidence re-entries 27.9/wk $1460; recoveries cut 12.0/wk $32472, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $45073/wk, losers avoided $45289/wk, net -669 $/wk; pnl $14682/wk.
+JN05W2J PRE (stack, per week): full stops 9.3/wk $-17063; give-backs 4.8/wk (4.4 round-trips) realised $-4833, forgone vs target $12905; same-side losing runs max 9, p95 5, $-15987 lost on 3rd-and-later; no-new-evidence re-entries 13.8/wk $895; recoveries cut 7.5/wk $17555, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $26376/wk, losers avoided $25140/wk, net -4502 $/wk; pnl $7381/wk.
+JN05W2J X' (stack, per week): full stops 11.0/wk $-19738; give-backs 3.4/wk (2.9 round-trips) realised $-3342, forgone vs target $9417; same-side losing runs max 8, p95 4, $-9509 lost on 3rd-and-later; no-new-evidence re-entries 3.8/wk $329; recoveries cut 2.6/wk $5802, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $13759/wk, losers avoided $14543/wk, net +2480 $/wk; pnl $3823/wk.
+
 
 ## 6. Live weeks (11-02..05 and 11-06..11)
 
