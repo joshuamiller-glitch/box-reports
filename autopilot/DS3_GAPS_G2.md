@@ -1,24 +1,26 @@
 # DS3_GAPS_G2 - GAPS order G2 (book level: M7, P7 Asia by slot, cost-after-edge by book x session) - W-G2
 
-Written 2026-11-12 19:57Z. Shadow only. No PASS claims. Prereg GAPS_G2_PREREG.md (sha 9668b1102c521a14 in DECISIONS.md). **Caveat on every row: the engine state cut fires in the engine but did NOT fire live on 11-11 (DS3_P7_CUT_FIDELITY.md); "cut OFF" rows are the live-realistic world.** All numbers are after live costs (fee $4.84/contract RT + live-excess slip: entry +0.23 pt, market cut +0.40, stop +0.44, target 0, +1.36 pt at 08:30-08:44 ET) from the exact trade lists; stack effects in section A are first-order (trade-list subtraction, no path change) until the exact rows in section E land. Windows: L6M 202605-202610, HOLD 202511-202604, PRE 202402-202506, X' 202304-202401. User lots (K7 4, M7 4, U7 7, P7 12/7/7, H7 7, A7 2, caps x1.75): all rules here are count/slot/session rules and transfer unchanged; $ figures scale with lots (x1.75 on the panel).
+Written 2026-11-12 20:27Z. Shadow only. No PASS claims. Prereg GAPS_G2_PREREG.md (sha 9668b1102c521a14 in DECISIONS.md). **Caveat on every row: the engine state cut fires in the engine but did NOT fire live on 11-11 (DS3_P7_CUT_FIDELITY.md); "cut OFF" rows are the live-realistic world.** All numbers are after live costs (fee $4.84/contract RT + live-excess slip: entry +0.23 pt, market cut +0.40, stop +0.44, target 0, +1.36 pt at 08:30-08:44 ET) from the exact trade lists; stack effects in section A are first-order (trade-list subtraction, no path change) until the exact rows in section E land. Windows: L6M 202605-202610, HOLD 202511-202604, PRE 202402-202506, X' 202304-202401. User lots (K7 4, M7 4, U7 7, P7 12/7/7, H7 7, A7 2, caps x1.75): all rules here are count/slot/session rules and transfer unchanged; $ figures scale with lots (x1.75 on the panel).
 
 ## 0. Exact status (months done of 43; stage 1 = L6M+HOLD = 12 months)
 
 | set         |   months |
 |:------------|---------:|
 | G2J_ID      |        1 |
-| G2J_M7_HALF |        0 |
-| G2J_M7_LON  |        1 |
-| G2J_M7_OFF  |        1 |
-| G2J_P7A_BW  |        1 |
-| G2J_P7A_BWD |        2 |
+| G2J_M7_HALF |        1 |
+| G2J_M7_LON  |        2 |
+| G2J_M7_OFF  |        2 |
+| G2J_P7A_BW  |        2 |
+| G2J_P7A_BWD |        5 |
+| G2J_P7A_PRE |        2 |
 | G2_ID       |        1 |
-| G2_M7_HALF  |        1 |
-| G2_M7_LON   |        3 |
-| G2_M7_NYAM  |        1 |
-| G2_M7_OFF   |        2 |
-| G2_P7A_BW   |        3 |
-| G2_P7A_PRE  |        1 |
+| G2_M7_HALF  |        5 |
+| G2_M7_LON   |        5 |
+| G2_M7_NYAM  |        4 |
+| G2_M7_OFF   |        5 |
+| G2_P7A_BW   |        5 |
+| G2_P7A_BWD  |        3 |
+| G2_P7A_PRE  |        2 |
 
 
 ## C. Cost-after-edge by book x session ($/wk after fees+live-excess slip; trade lists)
@@ -334,17 +336,17 @@ Identity checks: PASS G2_ID: 598 trades net 25943.82 vs JN05W2 598 trades net 25
 
 | set         | base    |   months | note            |
 |:------------|:--------|---------:|:----------------|
-| G2_M7_OFF   | JN05W2  |        2 | stage 1 running |
-| G2_M7_NYAM  | JN05W2  |        1 | stage 1 running |
-| G2_M7_LON   | JN05W2  |        3 | stage 1 running |
-| G2_M7_HALF  | JN05W2  |        1 | stage 1 running |
-| G2_P7A_PRE  | JN05W2  |        1 | stage 1 running |
-| G2_P7A_BW   | JN05W2  |        3 | stage 1 running |
-| G2_P7A_BWD  | JN05W2  |        0 | stage 1 running |
-| G2J_M7_OFF  | JN05W2J |        1 | stage 1 running |
+| G2_M7_OFF   | JN05W2  |        5 | stage 1 running |
+| G2_M7_NYAM  | JN05W2  |        4 | stage 1 running |
+| G2_M7_LON   | JN05W2  |        5 | stage 1 running |
+| G2_M7_HALF  | JN05W2  |        5 | stage 1 running |
+| G2_P7A_PRE  | JN05W2  |        2 | stage 1 running |
+| G2_P7A_BW   | JN05W2  |        5 | stage 1 running |
+| G2_P7A_BWD  | JN05W2  |        3 | stage 1 running |
+| G2J_M7_OFF  | JN05W2J |        2 | stage 1 running |
 | G2J_M7_NYAM | JN05W2J |        0 | stage 1 running |
-| G2J_M7_LON  | JN05W2J |        1 | stage 1 running |
-| G2J_M7_HALF | JN05W2J |        0 | stage 1 running |
-| G2J_P7A_PRE | JN05W2J |        0 | stage 1 running |
-| G2J_P7A_BW  | JN05W2J |        1 | stage 1 running |
-| G2J_P7A_BWD | JN05W2J |        2 | stage 1 running |
+| G2J_M7_LON  | JN05W2J |        2 | stage 1 running |
+| G2J_M7_HALF | JN05W2J |        1 | stage 1 running |
+| G2J_P7A_PRE | JN05W2J |        2 | stage 1 running |
+| G2J_P7A_BW  | JN05W2J |        2 | stage 1 running |
+| G2J_P7A_BWD | JN05W2J |        5 | stage 1 running |
