@@ -1,4 +1,4 @@
-# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 03:00Z
+# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 06:00Z
 Label PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_I_PREREG.md (sha in DECISIONS.md; the first first-order screen ran before the sha line, disclosed there). Code code/th_works_i/, tables /mnt/l2/l2vast/_th_works/i/, feature table /mnt/l2/l2vast/_th_works/p7_feat_I.parquet (key sig_ts, 5,011 P7 taken trades x 128 columns; W-E signal-level table not used, so signals that were not taken are not in these tests).
 
 ## What exists
@@ -130,13 +130,26 @@ vs JN04RM
 | WI_L_SL13S | L1M | 51.1 | 53.8 | 1337.1 | 13236.2 | 27055.7 | 13480.3 | 13480.3 |
 | WI_L_SL13S | L3M | -8.1 | -2.2 | 687.9 | 45087.2 | 41699.4 | 15172.9 | 6062.0 |
 | WI_L_SL13S | L6M | -8.1 | -2.2 | 1061.9 | 45087.2 | 41699.4 | 13101.0 | -9716.9 |
+| WI_J_BR3T45 | L1M | 17.0 | 12.3 | 401.0 | 22462.1 | 27055.7 | 3700.1 | 3700.1 |
+| WI_J_BR3T45 | L3M | 12.7 | 7.8 | 428.3 | 36418.2 | 41699.4 | 13297.8 | -1804.3 |
+| WI_J_BR3T45 | L6M | 3.3 | -2.1 | -1010.2 | 40309.0 | 41699.4 | 12080.4 | -14483.7 |
 | WI_J_BR3S | L1M | 26.7 | 29.9 | -3564.8 | 19835.4 | 27055.7 | -414.4 | -414.4 |
 | WI_J_BR3S | L3M | 28.1 | 31.2 | -811.4 | 29993.2 | 41699.4 | 29596.9 | -17763.8 |
 | WI_J_BR3S | L6M | 14.4 | 18.1 | 782.7 | 35674.8 | 41699.4 | 33013.6 | -57351.5 |
 | WI_J_BR3S | HOLD | 19.0 | 22.5 | 441.6 | 58943.3 | 72757.5 | 5774.6 | -44697.2 |
-| WI_J_BR3T45 | L1M | 17.0 | 12.3 | 401.0 | 22462.1 | 27055.7 | 3700.1 | 3700.1 |
-| WI_J_BR3T45 | L3M | 12.7 | 7.8 | 428.3 | 36418.2 | 41699.4 | 13297.8 | -1804.3 |
-| WI_J_BR3T45 | L6M | 3.3 | -2.1 | -1010.2 | 40309.0 | 41699.4 | 12080.4 | -14483.7 |
+| WI_J_BR3S | PRE | 5.2 | 9.3 | -452.3 | 63274.5 | 66713.5 | 12000.0 | -26099.3 |
+| WI_J_RS30T35 | L1M | 60.2 | 60.0 | 1094.9 | 10775.2 | 27055.7 | 11703.3 | 11703.3 |
+| WI_J_RS30T35 | L3M | 8.5 | 8.1 | 1031.0 | 38158.6 | 41699.4 | 21333.7 | 7413.0 |
+| WI_J_RS30T35 | L6M | 8.5 | 8.1 | -83.4 | 38158.6 | 41699.4 | 31162.1 | -4886.5 |
+| WI_K_W2AT45 | L1M | -0.7 | -1.9 | 323.1 | 27254.1 | 27055.7 | -230.7 | -230.7 |
+| WI_K_W2AT45 | L3M | 10.1 | 9.1 | -37.7 | 37471.9 | 41699.4 | 6724.7 | 11805.6 |
+| WI_K_W2AT45 | L6M | 10.1 | 9.1 | -203.1 | 37471.9 | 41699.4 | 13914.0 | -7040.1 |
+| WI_K_W2S | L1M | 32.8 | 35.7 | -1510.9 | 18189.9 | 27055.7 | 2356.9 | 2356.9 |
+| WI_K_W2S | L3M | 35.0 | 37.9 | 1579.3 | 27090.1 | 41699.4 | 25296.7 | -3913.0 |
+| WI_K_W2S | L6M | 27.3 | 30.5 | 766.5 | 30321.6 | 41699.4 | 34066.6 | -3965.6 |
+| WI_L_SL13T35 | L1M | 41.1 | 36.0 | 40.7 | 15944.4 | 27055.7 | 9072.2 | 9072.2 |
+| WI_L_SL13T35 | L3M | -36.0 | -47.6 | -1376.9 | 56717.1 | 41699.4 | -1697.7 | 16818.1 |
+| WI_L_SL13T35 | L6M | -36.0 | -47.6 | -1406.6 | 56717.1 | 41699.4 | 6956.8 | -8163.5 |
 
 vs LPB
 | cell | window | cut | eq_cut | dmean | dd | dd_ref | d_worst5 | d_best5 |
@@ -165,13 +178,26 @@ vs LPB
 | WI_L_SL13S | L1M | 74.2 | 72.2 | -3842.5 | 13236.2 | 51252.7 | 27411.6 | 27411.6 |
 | WI_L_SL13S | L3M | 41.6 | 37.2 | -1087.4 | 45087.2 | 77224.2 | 74220.8 | -42839.6 |
 | WI_L_SL13S | L6M | 41.6 | 37.2 | -1523.3 | 45087.2 | 77224.2 | 73033.7 | -37514.0 |
+| WI_J_BR3T45 | L1M | 56.2 | 51.1 | -6484.8 | 22462.1 | 51252.7 | 17631.3 | 17631.3 |
+| WI_J_BR3T45 | L3M | 52.8 | 47.4 | -920.2 | 36418.2 | 77224.2 | 77891.7 | -50705.9 |
+| WI_J_BR3T45 | L6M | 47.8 | 41.7 | -2233.5 | 40309.0 | 77224.2 | 77559.1 | -54900.7 |
 | WI_J_BR3S | L1M | 61.3 | 63.7 | -6004.0 | 19835.4 | 51252.7 | 13516.8 | 13516.8 |
 | WI_J_BR3S | L3M | 61.2 | 63.6 | 4396.7 | 29993.2 | 77224.2 | 83169.8 | -66665.4 |
 | WI_J_BR3S | L6M | 53.8 | 56.6 | 1043.4 | 35674.8 | 77224.2 | 87471.4 | -81571.0 |
 | WI_J_BR3S | HOLD | 25.2 | 29.8 | -2144.8 | 58943.3 | 78842.0 | 96023.4 | -102406.2 |
-| WI_J_BR3T45 | L1M | 56.2 | 51.1 | -6484.8 | 22462.1 | 51252.7 | 17631.3 | 17631.3 |
-| WI_J_BR3T45 | L3M | 52.8 | 47.4 | -920.2 | 36418.2 | 77224.2 | 77891.7 | -50705.9 |
-| WI_J_BR3T45 | L6M | 47.8 | 41.7 | -2233.5 | 40309.0 | 77224.2 | 77559.1 | -54900.7 |
+| WI_J_BR3S | PRE | 36.4 | 40.3 | -1961.6 | 63274.5 | 99479.4 | 104974.3 | -166595.6 |
+| WI_J_RS30T35 | L1M | 79.0 | 77.3 | -5605.3 | 10775.2 | 51252.7 | 25634.5 | 25634.5 |
+| WI_J_RS30T35 | L3M | 50.6 | 46.6 | -908.3 | 38158.6 | 77224.2 | 82343.0 | -41488.6 |
+| WI_J_RS30T35 | L6M | 50.6 | 46.6 | -1590.3 | 38158.6 | 77224.2 | 93056.2 | -43899.2 |
+| WI_K_W2AT45 | L1M | 46.8 | 43.3 | -6562.7 | 27254.1 | 51252.7 | 13700.5 | 13700.5 |
+| WI_K_W2AT45 | L3M | 51.5 | 48.3 | -1203.1 | 37471.9 | 77224.2 | 74249.8 | -37096.0 |
+| WI_K_W2AT45 | L6M | 51.5 | 48.3 | -1338.6 | 37471.9 | 77224.2 | 82324.0 | -47862.1 |
+| WI_K_W2S | L1M | 64.5 | 61.2 | -8396.7 | 18189.9 | 51252.7 | 16288.1 | 16288.1 |
+| WI_K_W2S | L3M | 64.9 | 61.6 | -2210.0 | 27090.1 | 77224.2 | 96672.7 | -52814.6 |
+| WI_K_W2S | L6M | 60.7 | 57.0 | -1846.0 | 30321.6 | 77224.2 | 106327.5 | -55401.4 |
+| WI_L_SL13T35 | L1M | 68.9 | 65.1 | -4582.1 | 15944.4 | 51252.7 | 23003.4 | 23003.4 |
+| WI_L_SL13T35 | L3M | 26.6 | 17.6 | -2102.2 | 56717.1 | 77224.2 | 61243.7 | -32083.5 |
+| WI_L_SL13T35 | L6M | 26.6 | 17.6 | -2330.9 | 56717.1 | 77224.2 | 70783.0 | -39984.9 |
 
 ## Behaviour-targeted use (standing principle 19:45Z): flag acts only on a same-side P7 re-entry after a P7 loser (within 120 min, same session list)
 There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$216 for all other P7 trades). Skipping all of them cuts the L6M stack drawdown by only -2.0 percent (HOLD -14.2, PRE 13.7, X-prime -1.8) and removes $48k of best-20-week winners against $65k of worst-20-week losers; half-size: L6M -0.8, HOLD -4.6. Best flag-conditioned re-entry cells (minimum equal-mean cut over four windows) are all below 9 percent and flag fewer than 300 trades: no robust cell.
@@ -184,9 +210,13 @@ There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$
 - WI_J_ES60S L6M (stack, per week): full stops 25.3/wk $-38028; give-backs 9.4/wk (9.2 round-trips) realised $-10669, forgone vs target $26478; same-side losing runs max 13, p95 7, $-41534 lost on 3rd-and-later; no-new-evidence re-entries 41.5/wk $1546; recoveries cut 14.8/wk $38563, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $8392/wk, losers avoided $7033/wk, net -1226 $/wk; pnl $18305/wk.
 - WI_J_NQ60S L6M (stack, per week): full stops 25.3/wk $-37976; give-backs 9.5/wk (9.4 round-trips) realised $-10704, forgone vs target $26709; same-side losing runs max 13, p95 6, $-39788 lost on 3rd-and-later; no-new-evidence re-entries 40.2/wk $2380; recoveries cut 14.6/wk $37653, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $13575/wk, losers avoided $12103/wk, net -1658 $/wk; pnl $17872/wk.
 - WI_J_RS15H L6M (stack, per week): full stops 25.4/wk $-38034; give-backs 9.9/wk (9.8 round-trips) realised $-10915, forgone vs target $27124; same-side losing runs max 13, p95 7, $-42321 lost on 3rd-and-later; no-new-evidence re-entries 44.0/wk $1533; recoveries cut 15.5/wk $38697, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $342/wk, losers avoided $539/wk, net -941 $/wk; pnl $18589/wk.
+- WI_J_RS30T35 L6M (stack, per week): full stops 25.5/wk $-38189; give-backs 9.2/wk (9.1 round-trips) realised $-10401, forgone vs target $25868; same-side losing runs max 13, p95 6, $-40963 lost on 3rd-and-later; no-new-evidence re-entries 43.5/wk $2955; recoveries cut 14.9/wk $39205, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $2441/wk, losers avoided $1922/wk, net +363 $/wk; pnl $19893/wk.
 - WI_K_W2AS L6M (stack, per week): full stops 25.4/wk $-38081; give-backs 9.9/wk (9.8 round-trips) realised $-10968, forgone vs target $27363; same-side losing runs max 13, p95 6, $-41119 lost on 3rd-and-later; no-new-evidence re-entries 42.2/wk $2243; recoveries cut 14.9/wk $37388, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $5402/wk, losers avoided $5430/wk, net +40 $/wk; pnl $19570/wk.
+- WI_K_W2AT45 L6M (stack, per week): full stops 25.4/wk $-38181; give-backs 9.8/wk (9.6 round-trips) realised $-10892, forgone vs target $27140; same-side losing runs max 13, p95 7, $-42691 lost on 3rd-and-later; no-new-evidence re-entries 43.8/wk $2743; recoveries cut 15.3/wk $39223, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $1220/wk, losers avoided $737/wk, net +251 $/wk; pnl $19781/wk.
+- WI_K_W2S L6M (stack, per week): full stops 25.2/wk $-37882; give-backs 9.6/wk (9.5 round-trips) realised $-10649, forgone vs target $26653; same-side losing runs max 11, p95 6, $-38739 lost on 3rd-and-later; no-new-evidence re-entries 40.2/wk $2632; recoveries cut 14.3/wk $35693, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $9109/wk, losers avoided $8854/wk, net +64 $/wk; pnl $19594/wk.
 - WI_L_PB13H L6M (stack, per week): full stops 25.4/wk $-38019; give-backs 9.9/wk (9.8 round-trips) realised $-10640, forgone vs target $26459; same-side losing runs max 13, p95 6, $-42157 lost on 3rd-and-later; no-new-evidence re-entries 44.4/wk $1951; recoveries cut 15.5/wk $36873, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $391/wk, losers avoided $787/wk, net -1130 $/wk; pnl $18400/wk.
 - WI_L_PUSHH L6M (stack, per week): full stops 25.5/wk $-38238; give-backs 10.0/wk (9.9 round-trips) realised $-10608, forgone vs target $26098; same-side losing runs max 13, p95 7, $-42784 lost on 3rd-and-later; no-new-evidence re-entries 44.4/wk $2049; recoveries cut 15.5/wk $37935, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $439/wk, losers avoided $976/wk, net -791 $/wk; pnl $18739/wk.
 - WI_L_SL13S L6M (stack, per week): full stops 25.4/wk $-38216; give-backs 9.1/wk (9.0 round-trips) realised $-10347, forgone vs target $25489; same-side losing runs max 13, p95 6, $-40201 lost on 3rd-and-later; no-new-evidence re-entries 39.8/wk $2445; recoveries cut 14.2/wk $35279, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $19867/wk, losers avoided $18845/wk, net +289 $/wk; pnl $19819/wk.
+- WI_L_SL13T35 L6M (stack, per week): full stops 25.4/wk $-38129; give-backs 8.9/wk (8.8 round-trips) realised $-10063, forgone vs target $24777; same-side losing runs max 13, p95 7, $-42080 lost on 3rd-and-later; no-new-evidence re-entries 43.3/wk $1104; recoveries cut 15.0/wk $39004, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $4078/wk, losers avoided $2538/wk, net -622 $/wk; pnl $18908/wk.
 
 Plain reading: an entry gate leaves the three defects (full stops, give-backs, same-side losing runs) where they were, because it only removes entries and the entries it removes are not the ones that form the runs; by the standing principle families I-L are therefore NOT acceptable as exits or re-entry fixes on their own. Their use is as evidence tests inside the re-entry rule (W-M probe / confirm).
