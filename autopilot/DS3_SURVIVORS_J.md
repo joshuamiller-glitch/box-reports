@@ -1,4 +1,4 @@
-# DS3_SURVIVORS_J - JN05W2 (W-J; 2026-11-12T13:58:09Z; Shadow only, no PASS claims)
+# DS3_SURVIVORS_J - JN05W2 (W-J; 2026-11-12T14:28:42Z; Shadow only, no PASS claims)
 
 JN05W2 = live panel base (installed panel + P7 cut, NO JN04 layers, NO WA_C1) + F3 (WB_X_FR_F3 context cut) + E1 (WG_E1 governor) + C22 (S6 stack count and day P&L <= -2R) + BR3S (breadth_ext15 == 3 skip, P7) + FLAT45K (K7 flat -45). Hook order inner to outer: W-B context cut, W-X flat, W-S stack gate, W-C governor; BR3S through the entry-gate mixin. Reference LPB_BASE (exact, 43 months). JN05W2J = the same five on the JN04RM base (extra). Leave-one-out = one set per layer left out.
 
@@ -6,13 +6,13 @@ JN05W2 = live panel base (installed panel + P7 cut, NO JN04 layers, NO WA_C1) + 
 
 | set | months DONE of 43 |
 |--|--|
-| JN05W2 | 10 |
-| JN05W2_nF3 | 10 |
-| JN05W2_nE1 | 9 |
-| JN05W2_nC22 | 5 |
-| JN05W2_nBR3S | 10 |
-| JN05W2_nFLAT | 10 |
-| JN05W2J | 9 |
+| JN05W2 | 20 |
+| JN05W2_nF3 | 20 |
+| JN05W2_nE1 | 19 |
+| JN05W2_nC22 | 15 |
+| JN05W2_nBR3S | 20 |
+| JN05W2_nFLAT | 19 |
+| JN05W2J | 18 |
 
 ## 1. Identity check (before anything)
 
@@ -27,11 +27,19 @@ JN05W2_ID (the same hook stack with every layer null) is identical trade by trad
 | cell | window | mean $/wk all-weeks | LPB_BASE all-weeks | d mean all-weeks | mean (carry week dropped) | mean_ref (carry dropped) | maxDD | maxDD_ref | cut % | d mean | WF beat % | label |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|
 | JN05W2 | L1M | 606 | 341 | +266 | -7190 | -16180 | 36371 | 51253 | +29.0 | +8990 | n/a |  |
+| JN05W2 | L3M | 16015 | 11957 | +4059 | 16120 | 14925 | 36371 | 77224 | +52.9 | +1195 | n/a |  |
 | JN05W2_nF3 | L1M | -1519 | 341 | -1859 | -7314 | -16180 | 42856 | 51253 | +16.4 | +8866 | n/a |  |
+| JN05W2_nF3 | L3M | 15963 | 11957 | +4006 | 15839 | 14925 | 47469 | 77224 | +38.5 | +914 | n/a |  |
 | JN05W2_nE1 | L1M | 3254 | 341 | +2913 | 12406 | 17539 | 24205 | 51253 | +52.8 | -5132 | n/a |  |
+| JN05W2_nE1 | L3M | 16476 | 11957 | +4520 | 16730 | 14925 | 30533 | 77224 | +60.5 | +1804 | n/a |  |
+| JN05W2_nC22 | L1M | 3170 | 341 | +2829 | 18048 | 17539 | 42163 | 51253 | +17.7 | +509 | n/a |  |
+| JN05W2_nC22 | L3M | 11972 | 11957 | +15 | 12412 | 14925 | 47024 | 77224 | +39.1 | -2513 | n/a |  |
 | JN05W2_nBR3S | L1M | 8071 | 341 | +7730 | 17123 | 17539 | 19086 | 51253 | +62.8 | -416 | n/a |  |
+| JN05W2_nBR3S | L3M | 14325 | 11957 | +2369 | 12075 | 5550 | 25852 | 77224 | +66.5 | +6525 | n/a |  |
 | JN05W2_nFLAT | L1M | 157 | 341 | -183 | -6990 | -16180 | 36147 | 51253 | +29.5 | +9190 | n/a |  |
+| JN05W2_nFLAT | L3M | 15858 | 11957 | +3901 | 16018 | 14925 | 41893 | 77224 | +45.8 | +1093 | n/a |  |
 | JN05W2J | L1M | 2631 | 341 | +2290 | 8186 | 17539 | 17862 | 51253 | +65.1 | -9352 | n/a |  |
+| JN05W2J | L3M | 14942 | 11957 | +2985 | 17356 | 17224 | 17862 | 77224 | +76.9 | +132 | n/a |  |
 
 ## 4. Acceptance
 
