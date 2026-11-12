@@ -1,4 +1,4 @@
-# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 10:23Z
+# DS3_WORKS_I - T-WORKS / P7 FIX, worker W-I (families I room to target, J cross-market, K context, L P7 signal internals), page 2026-11-12 11:48Z
 Label PRE-PROOF, post-hoc, Shadow only, no PASS claim. Prereg autopilot/WORKS_I_PREREG.md (sha in DECISIONS.md; the first first-order screen ran before the sha line, disclosed there). Code code/th_works_i/, tables /mnt/l2/l2vast/_th_works/i/, feature table /mnt/l2/l2vast/_th_works/p7_feat_I.parquet (key sig_ts, 5,011 P7 taken trades x 128 columns; W-E signal-level table not used, so signals that were not taken are not in these tests).
 
 ## What exists
@@ -112,21 +112,12 @@ vs JN04RM
 | WI_J_ES60S | L1M | -6.1 | -6.3 | 119.6 | 28692.8 | 27055.7 | -3185.1 | -3185.1 |
 | WI_J_ES60S | L3M | 0.0 | -0.3 | -213.5 | 41694.9 | 41699.4 | -1632.6 | 3410.2 |
 | WI_J_ES60S | L6M | 0.0 | -0.3 | -47.5 | 41694.9 | 41699.4 | 7220.0 | -34804.8 |
-| WI_K_W2AS | L1M | -1.1 | -3.2 | -95.4 | 27342.1 | 27055.7 | -4255.9 | -4255.9 |
-| WI_K_W2AS | L3M | 8.0 | 6.1 | -447.0 | 38344.3 | 41699.4 | 6498.6 | 717.1 |
-| WI_K_W2AS | L6M | 8.0 | 6.1 | -430.7 | 38344.3 | 41699.4 | 18250.5 | 1471.6 |
-| WI_L_PB13H | L1M | 2.0 | -0.1 | 181.3 | 26511.7 | 27055.7 | -6564.8 | -6564.8 |
-| WI_L_PB13H | L3M | 7.4 | 5.4 | -72.0 | 38613.6 | 41699.4 | 3629.8 | -13748.2 |
-| WI_L_PB13H | L6M | 7.4 | 5.4 | -370.8 | 38613.6 | 41699.4 | 19538.6 | -37748.5 |
 | WI_L_SL13S | L1M | 51.1 | 53.8 | 1337.1 | 13236.2 | 27055.7 | 13480.3 | 13480.3 |
 | WI_L_SL13S | L3M | -8.1 | -2.2 | 687.9 | 45087.2 | 41699.4 | 15172.9 | 6062.0 |
 | WI_L_SL13S | L6M | -8.1 | -2.2 | 1061.9 | 45087.2 | 41699.4 | 13101.0 | -9716.9 |
 | WI_J_BR3T45 | L1M | 17.0 | 12.3 | 401.0 | 22462.1 | 27055.7 | 3700.1 | 3700.1 |
 | WI_J_BR3T45 | L3M | 12.7 | 7.8 | 428.3 | 36418.2 | 41699.4 | 13297.8 | -1804.3 |
 | WI_J_BR3T45 | L6M | 3.3 | -2.1 | -1010.2 | 40309.0 | 41699.4 | 12080.4 | -14483.7 |
-| WI_K_W2AT45 | L1M | -0.7 | -1.9 | 323.1 | 27254.1 | 27055.7 | -230.7 | -230.7 |
-| WI_K_W2AT45 | L3M | 10.1 | 9.1 | -37.7 | 37471.9 | 41699.4 | 6724.7 | 11805.6 |
-| WI_K_W2AT45 | L6M | 10.1 | 9.1 | -203.1 | 37471.9 | 41699.4 | 13914.0 | -7040.1 |
 | WI_L_SL13T35 | L1M | 41.1 | 36.0 | 40.7 | 15944.4 | 27055.7 | 9072.2 | 9072.2 |
 | WI_L_SL13T35 | L3M | -36.0 | -47.6 | -1376.9 | 56717.1 | 41699.4 | -1697.7 | 16818.1 |
 | WI_L_SL13T35 | L6M | -36.0 | -47.6 | -1406.6 | 56717.1 | 41699.4 | 6956.8 | -8163.5 |
@@ -158,24 +149,39 @@ vs JN04RM
 | WI_L_PUSHH | L3M | 15.9 | 14.4 | -215.0 | 35087.7 | 41699.4 | 12501.2 | -22280.8 |
 | WI_L_PUSHH | L6M | 15.9 | 14.4 | -296.1 | 35087.7 | 41699.4 | 18416.1 | -21772.9 |
 | WI_L_PUSHH | HOLD | 20.2 | 18.8 | -342.1 | 58036.4 | 72757.5 | 22567.1 | -18037.8 |
-| WI_G_BR3S | L1M | 37.7 | 33.7 | -3343.3 | 16856.9 | 27055.7 | 238.9 | 238.9 |
-| WI_G_BR3S | L3M | 28.1 | 23.4 | -987.7 | 29993.2 | 41699.4 | 32575.3 | -22858.3 |
-| WI_G_BR3S | L6M | 13.5 | 8.0 | -1202.3 | 36051.4 | 41699.4 | 35615.5 | -67149.8 |
-| WI_I_ON2S | L1M | 12.4 | 5.1 | 1114.7 | 23711.7 | 27055.7 | -4186.2 | -4186.2 |
-| WI_I_ON2S | L3M | 9.5 | 2.0 | -1526.0 | 37742.4 | 41699.4 | 7301.0 | -43953.3 |
-| WI_I_ON2S | L6M | 9.5 | 2.0 | -1458.7 | 37742.4 | 41699.4 | 25695.5 | -61850.9 |
-| WI_J_NQ60S | L1M | 15.2 | 13.8 | -762.5 | 22937.5 | 27055.7 | 4668.6 | 4668.6 |
-| WI_J_NQ60S | L3M | 8.0 | 6.4 | 969.0 | 38376.9 | 41699.4 | 11382.0 | -1301.6 |
-| WI_J_NQ60S | L6M | 8.0 | 6.4 | -288.0 | 38376.9 | 41699.4 | 21433.4 | -57892.7 |
 | WI_L_PB18S | L1M | 26.2 | 31.1 | -2824.7 | 19979.6 | 27055.7 | -361.0 | -361.0 |
 | WI_L_PB18S | L3M | 11.4 | 17.3 | 445.6 | 36964.7 | 41699.4 | 16723.1 | -1314.5 |
 | WI_L_PB18S | L6M | 11.4 | 17.3 | 1245.3 | 36964.7 | 41699.4 | 24513.1 | -39871.6 |
 | WI_L_SL19H | L1M | 32.8 | 33.2 | -191.1 | 18190.7 | 27055.7 | 4825.3 | 4825.3 |
 | WI_L_SL19H | L3M | -3.7 | -3.1 | 919.2 | 43224.7 | 41699.4 | 11334.0 | -1416.8 |
 | WI_L_SL19H | L6M | -3.7 | -3.1 | 109.3 | 43224.7 | 41699.4 | 13461.4 | -14078.5 |
+| WI_G_BR3S | L1M | 37.7 | 33.7 | -3343.3 | 16856.9 | 27055.7 | 238.9 | 238.9 |
+| WI_G_BR3S | L3M | 28.1 | 23.4 | -987.7 | 29993.2 | 41699.4 | 32575.3 | -22858.3 |
+| WI_G_BR3S | L6M | 13.5 | 8.0 | -1202.3 | 36051.4 | 41699.4 | 35615.5 | -67149.8 |
+| WI_G_BR3S | HOLD | 13.1 | 7.5 | -454.3 | 63203.0 | 72757.5 | 1955.4 | -55526.5 |
+| WI_I_ON2S | L1M | 12.4 | 5.1 | 1114.7 | 23711.7 | 27055.7 | -4186.2 | -4186.2 |
+| WI_I_ON2S | L3M | 9.5 | 2.0 | -1526.0 | 37742.4 | 41699.4 | 7301.0 | -43953.3 |
+| WI_I_ON2S | L6M | 9.5 | 2.0 | -1458.7 | 37742.4 | 41699.4 | 25695.5 | -61850.9 |
+| WI_I_ON2S | HOLD | 5.2 | -2.7 | -817.8 | 68965.0 | 72757.5 | -234.0 | -52530.8 |
+| WI_J_NQ60S | L1M | 15.2 | 13.8 | -762.5 | 22937.5 | 27055.7 | 4668.6 | 4668.6 |
+| WI_J_NQ60S | L3M | 8.0 | 6.4 | 969.0 | 38376.9 | 41699.4 | 11382.0 | -1301.6 |
+| WI_J_NQ60S | L6M | 8.0 | 6.4 | -288.0 | 38376.9 | 41699.4 | 21433.4 | -57892.7 |
+| WI_J_NQ60S | HOLD | 6.1 | 4.5 | 505.7 | 68351.0 | 72757.5 | 13699.1 | -33750.7 |
+| WI_K_W2AS | L1M | -1.1 | -3.2 | -95.4 | 27342.1 | 27055.7 | -4255.9 | -4255.9 |
+| WI_K_W2AS | L3M | 8.0 | 6.1 | -447.0 | 38344.3 | 41699.4 | 6498.6 | 717.1 |
+| WI_K_W2AS | L6M | 8.0 | 6.1 | -430.7 | 38344.3 | 41699.4 | 18250.5 | 1471.6 |
+| WI_K_W2AS | HOLD | -4.9 | -7.1 | -573.7 | 76301.0 | 72757.5 | 18293.2 | 598.3 |
+| WI_K_W2AT45 | L1M | -0.7 | -1.9 | 323.1 | 27254.1 | 27055.7 | -230.7 | -230.7 |
+| WI_K_W2AT45 | L3M | 10.1 | 9.1 | -37.7 | 37471.9 | 41699.4 | 6724.7 | 11805.6 |
+| WI_K_W2AT45 | L6M | 10.1 | 9.1 | -203.1 | 37471.9 | 41699.4 | 13914.0 | -7040.1 |
+| WI_L_PB13H | L1M | 2.0 | -0.1 | 181.3 | 26511.7 | 27055.7 | -6564.8 | -6564.8 |
+| WI_L_PB13H | L3M | 7.4 | 5.4 | -72.0 | 38613.6 | 41699.4 | 3629.8 | -13748.2 |
+| WI_L_PB13H | L6M | 7.4 | 5.4 | -370.8 | 38613.6 | 41699.4 | 19538.6 | -37748.5 |
+| WI_L_PB13H | HOLD | 7.7 | 5.7 | 221.4 | 67177.1 | 72757.5 | 20784.9 | -21626.7 |
 | WI_N_BR3S | L1M | 36.2 | 35.0 | 3260.4 | 17274.5 | 27055.7 | -1585.9 | -1585.9 |
 | WI_N_BR3S | L3M | 58.6 | 57.8 | 12.6 | 17274.5 | 41699.4 | 35565.0 | -73428.4 |
 | WI_N_BR3S | L6M | 58.6 | 57.8 | -287.0 | 17274.5 | 41699.4 | 72070.9 | -125597.8 |
+| WI_N_BR3S | HOLD | 34.4 | 33.3 | -875.3 | 47706.1 | 72757.5 | 80020.3 | -128640.7 |
 
 vs LPB
 | cell | window | cut | eq_cut | dmean | dd | dd_ref | d_worst5 | d_best5 |
@@ -186,21 +192,12 @@ vs LPB
 | WI_J_ES60S | L1M | 44.0 | 36.0 | -6766.1 | 28692.8 | 51252.7 | 10746.2 | 10746.2 |
 | WI_J_ES60S | L3M | 46.0 | 38.3 | -1811.6 | 41694.9 | 77224.2 | 69149.4 | -45491.3 |
 | WI_J_ES60S | L6M | 46.0 | 38.3 | -2695.8 | 41694.9 | 77224.2 | 78886.9 | -46554.7 |
-| WI_K_W2AS | L1M | 46.7 | 42.2 | -8806.1 | 27342.1 | 51252.7 | 9675.3 | 9675.3 |
-| WI_K_W2AS | L3M | 50.3 | 46.2 | -2083.6 | 38344.3 | 77224.2 | 79180.0 | -48184.5 |
-| WI_K_W2AS | L6M | 50.3 | 46.2 | -1653.8 | 38344.3 | 77224.2 | 91816.8 | -43340.5 |
-| WI_L_PB13H | L1M | 48.3 | 41.2 | -7762.6 | 26511.7 | 51252.7 | 7366.4 | 7366.4 |
-| WI_L_PB13H | L3M | 50.0 | 43.2 | -2538.4 | 38613.6 | 77224.2 | 70056.5 | -62649.8 |
-| WI_L_PB13H | L6M | 50.0 | 43.2 | -2586.2 | 38613.6 | 77224.2 | 86850.1 | -65544.4 |
 | WI_L_SL13S | L1M | 74.2 | 72.2 | -3842.5 | 13236.2 | 51252.7 | 27411.6 | 27411.6 |
 | WI_L_SL13S | L3M | 41.6 | 37.2 | -1087.4 | 45087.2 | 77224.2 | 74220.8 | -42839.6 |
 | WI_L_SL13S | L6M | 41.6 | 37.2 | -1523.3 | 45087.2 | 77224.2 | 73033.7 | -37514.0 |
 | WI_J_BR3T45 | L1M | 56.2 | 51.1 | -6484.8 | 22462.1 | 51252.7 | 17631.3 | 17631.3 |
 | WI_J_BR3T45 | L3M | 52.8 | 47.4 | -920.2 | 36418.2 | 77224.2 | 77891.7 | -50705.9 |
 | WI_J_BR3T45 | L6M | 47.8 | 41.7 | -2233.5 | 40309.0 | 77224.2 | 77559.1 | -54900.7 |
-| WI_K_W2AT45 | L1M | 46.8 | 43.3 | -6562.7 | 27254.1 | 51252.7 | 13700.5 | 13700.5 |
-| WI_K_W2AT45 | L3M | 51.5 | 48.3 | -1203.1 | 37471.9 | 77224.2 | 74249.8 | -37096.0 |
-| WI_K_W2AT45 | L6M | 51.5 | 48.3 | -1338.6 | 37471.9 | 77224.2 | 82324.0 | -47862.1 |
 | WI_L_SL13T35 | L1M | 68.9 | 65.1 | -4582.1 | 15944.4 | 51252.7 | 23003.4 | 23003.4 |
 | WI_L_SL13T35 | L3M | 26.6 | 17.6 | -2102.2 | 56717.1 | 77224.2 | 61243.7 | -32083.5 |
 | WI_L_SL13T35 | L6M | 26.6 | 17.6 | -2330.9 | 56717.1 | 77224.2 | 70783.0 | -39984.9 |
@@ -232,30 +229,45 @@ vs LPB
 | WI_L_PUSHH | L3M | 54.6 | 48.9 | -3386.0 | 35087.7 | 77224.2 | 84244.1 | -71182.4 |
 | WI_L_PUSHH | L6M | 54.6 | 48.9 | -2394.2 | 35087.7 | 77224.2 | 91043.9 | -49731.0 |
 | WI_L_PUSHH | HOLD | 26.4 | 17.2 | -4156.3 | 58036.4 | 78842.0 | 109098.8 | -61452.5 |
-| WI_G_BR3S | L1M | 67.1 | 68.7 | -6782.8 | 16856.9 | 51252.7 | 14170.2 | 14170.2 |
-| WI_G_BR3S | L3M | 61.2 | 63.1 | 4420.2 | 29993.2 | 77224.2 | 86159.4 | -71759.8 |
-| WI_G_BR3S | L6M | 53.3 | 55.6 | 817.4 | 36051.4 | 77224.2 | 90084.3 | -92400.3 |
-| WI_I_ON2S | L1M | 53.7 | 48.5 | -10628.9 | 23711.7 | 51252.7 | 9745.0 | 9745.0 |
-| WI_I_ON2S | L3M | 51.1 | 45.6 | -2253.1 | 37742.4 | 77224.2 | 91523.7 | -92854.8 |
-| WI_I_ON2S | L6M | 51.1 | 45.6 | -2174.3 | 37742.4 | 77224.2 | 110803.1 | -95845.2 |
-| WI_J_NQ60S | L1M | 55.2 | 47.6 | -4383.7 | 22937.5 | 51252.7 | 18599.8 | 18599.8 |
-| WI_J_NQ60S | L3M | 50.3 | 41.8 | -1589.0 | 38376.9 | 77224.2 | 75561.9 | -50203.2 |
-| WI_J_NQ60S | L6M | 50.3 | 41.8 | -3149.4 | 38376.9 | 77224.2 | 86498.1 | -66613.5 |
 | WI_L_PB18S | L1M | 61.0 | 58.4 | -6660.4 | 19979.6 | 51252.7 | 13570.2 | 13570.2 |
 | WI_L_PB18S | L3M | 52.1 | 49.0 | -205.4 | 36964.7 | 77224.2 | 75388.6 | -50216.1 |
 | WI_L_PB18S | L6M | 52.1 | 49.0 | -1330.0 | 36964.7 | 77224.2 | 84063.5 | -67373.7 |
 | WI_L_SL19H | L1M | 64.5 | 60.4 | -7076.9 | 18190.7 | 51252.7 | 18756.6 | 18756.6 |
 | WI_L_SL19H | L3M | 44.0 | 37.5 | -2329.6 | 43224.7 | 77224.2 | 78255.4 | -50318.4 |
 | WI_L_SL19H | L6M | 44.0 | 37.5 | -2232.5 | 43224.7 | 77224.2 | 81267.6 | -41370.0 |
+| WI_G_BR3S | L1M | 67.1 | 68.7 | -6782.8 | 16856.9 | 51252.7 | 14170.2 | 14170.2 |
+| WI_G_BR3S | L3M | 61.2 | 63.1 | 4420.2 | 29993.2 | 77224.2 | 86159.4 | -71759.8 |
+| WI_G_BR3S | L6M | 53.3 | 55.6 | 817.4 | 36051.4 | 77224.2 | 90084.3 | -92400.3 |
+| WI_G_BR3S | HOLD | 19.8 | 23.8 | -2201.9 | 63203.0 | 78842.0 | 95193.8 | -113050.6 |
+| WI_I_ON2S | L1M | 53.7 | 48.5 | -10628.9 | 23711.7 | 51252.7 | 9745.0 | 9745.0 |
+| WI_I_ON2S | L3M | 51.1 | 45.6 | -2253.1 | 37742.4 | 77224.2 | 91523.7 | -92854.8 |
+| WI_I_ON2S | L6M | 51.1 | 45.6 | -2174.3 | 37742.4 | 77224.2 | 110803.1 | -95845.2 |
+| WI_I_ON2S | HOLD | 12.5 | 2.7 | -3954.3 | 68965.0 | 78842.0 | 106844.5 | -119290.6 |
+| WI_J_NQ60S | L1M | 55.2 | 47.6 | -4383.7 | 22937.5 | 51252.7 | 18599.8 | 18599.8 |
+| WI_J_NQ60S | L3M | 50.3 | 41.8 | -1589.0 | 38376.9 | 77224.2 | 75561.9 | -50203.2 |
+| WI_J_NQ60S | L6M | 50.3 | 41.8 | -3149.4 | 38376.9 | 77224.2 | 86498.1 | -66613.5 |
+| WI_J_NQ60S | HOLD | 13.3 | -1.6 | -3682.7 | 68351.0 | 78842.0 | 92824.2 | -95224.0 |
+| WI_K_W2AS | L1M | 46.7 | 42.2 | -8806.1 | 27342.1 | 51252.7 | 9675.3 | 9675.3 |
+| WI_K_W2AS | L3M | 50.3 | 46.2 | -2083.6 | 38344.3 | 77224.2 | 79180.0 | -48184.5 |
+| WI_K_W2AS | L6M | 50.3 | 46.2 | -1653.8 | 38344.3 | 77224.2 | 91816.8 | -43340.5 |
+| WI_K_W2AS | HOLD | 3.2 | -4.8 | -3951.4 | 76301.0 | 78842.0 | 107497.4 | -74772.4 |
+| WI_K_W2AT45 | L1M | 46.8 | 43.3 | -6562.7 | 27254.1 | 51252.7 | 13700.5 | 13700.5 |
+| WI_K_W2AT45 | L3M | 51.5 | 48.3 | -1203.1 | 37471.9 | 77224.2 | 74249.8 | -37096.0 |
+| WI_K_W2AT45 | L6M | 51.5 | 48.3 | -1338.6 | 37471.9 | 77224.2 | 82324.0 | -47862.1 |
+| WI_L_PB13H | L1M | 48.3 | 41.2 | -7762.6 | 26511.7 | 51252.7 | 7366.4 | 7366.4 |
+| WI_L_PB13H | L3M | 50.0 | 43.2 | -2538.4 | 38613.6 | 77224.2 | 70056.5 | -62649.8 |
+| WI_L_PB13H | L6M | 50.0 | 43.2 | -2586.2 | 38613.6 | 77224.2 | 86850.1 | -65544.4 |
+| WI_L_PB13H | HOLD | 14.8 | 3.1 | -3650.2 | 67177.1 | 78842.0 | 101377.3 | -78723.9 |
 | WI_N_BR3S | L1M | 66.3 | 66.4 | -8424.7 | 17274.5 | 51252.7 | 12345.3 | 12345.3 |
 | WI_N_BR3S | L3M | 77.6 | 77.7 | 2087.5 | 17274.5 | 77224.2 | 109668.7 | -122330.0 |
 | WI_N_BR3S | L6M | 77.6 | 77.7 | 68.4 | 17274.5 | 77224.2 | 147059.4 | -167919.2 |
+| WI_N_BR3S | HOLD | 39.5 | 39.8 | -3486.8 | 47706.1 | 78842.0 | 151518.0 | -171076.8 |
 
 ## Behaviour-targeted use (standing principle 19:45Z): flag acts only on a same-side P7 re-entry after a P7 loser (within 120 min, same session list)
 There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$216 for all other P7 trades). Skipping all of them cuts the L6M stack drawdown by only -2.0 percent (HOLD -14.2, PRE 13.7, X-prime -1.8) and removes $48k of best-20-week winners against $65k of worst-20-week losers; half-size: L6M -0.8, HOLD -4.6. Best flag-conditioned re-entry cells (minimum equal-mean cut over four windows) are all below 9 percent and flag fewer than 300 trades: no robust cell.
 
 ## Behavioural scorecard (W-Q tool, exact trades, L6M, whole stack, per week)
-- JN04RM L6M (stack, per week): full stops 25.4/wk $-38130; give-backs 9.9/wk (9.8 round-trips) realised $-11306, forgone vs target $28091; same-side losing runs max 13, p95 7, $-42885 lost on 3rd-and-later; no-new-evidence re-entries 43.3/wk $1885; recoveries cut 15.2/wk $39718, clipped fills 0.0/wk $0; pnl $19530/wk.
+- JN04RM L6M (stack, per week): full stops 25.4/wk $-38130; give-backs 9.9/wk (9.8 round-trips) realised $-11306, forgone vs target $28091; same-side losing runs max 13, p95 7, $-42885 lost on 3rd-and-later; no-new-evidence re-entries 43.3/wk $1885; recoveries cut 15.2/wk $39718, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $4296/wk, losers avoided $4285/wk, net -254 $/wk; pnl $19530/wk.
 - WI_G_BR3S L6M (stack, per week): full stops 25.4/wk $-38297; give-backs 9.8/wk (9.7 round-trips) realised $-11293, forgone vs target $27911; same-side losing runs max 13, p95 6, $-39955 lost on 3rd-and-later; no-new-evidence re-entries 39.2/wk $1185; recoveries cut 14.7/wk $37599, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $19408/wk, losers avoided $18264/wk, net -393 $/wk; pnl $19137/wk.
 - WI_I_ON15S L6M (stack, per week): full stops 25.2/wk $-37911; give-backs 9.6/wk (9.5 round-trips) realised $-10923, forgone vs target $27074; same-side losing runs max 13, p95 6, $-39365 lost on 3rd-and-later; no-new-evidence re-entries 40.4/wk $1166; recoveries cut 14.9/wk $38252, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $13267/wk, losers avoided $9756/wk, net -1477 $/wk; pnl $18053/wk.
 - WI_I_ON2S L6M (stack, per week): full stops 25.2/wk $-37942; give-backs 9.5/wk (9.4 round-trips) realised $-10702, forgone vs target $26691; same-side losing runs max 13, p95 6, $-37527 lost on 3rd-and-later; no-new-evidence re-entries 39.8/wk $1571; recoveries cut 14.7/wk $37637, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $16129/wk, losers avoided $13422/wk, net -264 $/wk; pnl $19266/wk.
@@ -279,3 +291,11 @@ There are 651 such re-entries in 4,958 P7 trades (mean -$54 per trade against +$
 - WI_N_BR3S L6M (stack, per week): full stops 21.6/wk $-34323; give-backs 8.3/wk (8.3 round-trips) realised $-9141, forgone vs target $23997; same-side losing runs max 14, p95 6, $-29442 lost on 3rd-and-later; no-new-evidence re-entries 32.2/wk $-997; recoveries cut 14.7/wk $37905, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $44763/wk, losers avoided $44405/wk, net -1811 $/wk; pnl $17719/wk.
 
 Plain reading: an entry gate leaves the three defects (full stops, give-backs, same-side losing runs) where they were, because it only removes entries and the entries it removes are not the ones that form the runs; by the standing principle families I-L are therefore NOT acceptable as exits or re-entry fixes on their own. Their use is as evidence tests inside the re-entry rule (W-M probe / confirm).
+
+## Follow-up (lead request 2026-11-12): HOLD for L6M-positive sets, BR3S stacked on WG_E1 and JN05W_E1, BR3S on the LPB base, overlap with no-new-evidence re-entries
+1. HOLD (JN04RM base, maxDD cut percent / mean change per week) for the L6M-positive sets: J_NQ60S 6.1 / +506; J_BR3S 19.0 / +442; L_PUSHH 20.2 / -342; L_PB13H 7.7 / +221; I_ON2S 5.2 / -818; K_W2AS -4.9 / -574 (fails); K_W2S -5.4 / -41 (fails); J_RS30T35 -0.5 / +90 (flat). Still running or queued when this was written: PRE and X-prime only for BR3S (done: PRE 5.2, X-prime 4.3); no other set has PRE/X-prime because none but BR3S and PUSHH is positive on both L6M and HOLD, and PUSHH costs mean (-342 per week).
+2. Stacked on top of the new-evidence rule (exact, one set per job, reference = the base itself; the set json is the base set plus the gate, so any base dial in the mixin is the same as the base set): on WG_E1 (WI_G_BR3S) L6M cut 13.5 percent, mean 616.1 per week, worst-5-week delta 30587.0, best-5-week delta -62617.4; HOLD cut 17.0, mean 109.2. On JN05W_E1 (WI_N_BR3S) L6M cut 32.9 percent (maxDD 17.3k vs 25.7k), mean 828.5 per week, worst-5 9572.9, best-5 -38564.0; HOLD cut 26.5, mean -318.5 per week. So the gate is additive on top of both: on JN05W_E1 it takes the L6M drawdown down by a third at roughly equal mean (+829 L6M, -319 HOLD).
+3. Cost e (scorecard tool, L6M, per week, vs the base set): on JN05W_E1 the gate skips $15.9k of winners and avoids $14.9k of losers per week, net +$248 per week; on WG_E1 it skips $18.4k of winners and avoids $17.0k of losers, net -$219 per week. The worst-5-week gain is large (+$9.6k on JN05W_E1) and the best-5-week loss larger (-$38.6k): it gives up trend-week winners and the net is about zero in dollars while the drawdown falls. Frozen live week, first-order replay: $30.2k of winners removed, week stays +$54.6k.
+4. Behavioural scorecard on the stacked sets (L6M): JN05W_E1 full stops 21.5 per week, give-backs 8.6, same-side run max 14 / p95 6, no-new-evidence re-entries 34.9 per week; with the gate 21.6, 8.3, 14 / 6, 32.2. WG_E1 25.4, 9.9, 13 / 6, 40.8; with the gate 25.4, 9.8, 13 / 6, 39.2. The gate does not change the defects (a, b, c) and trims d by 8 percent: it is a drawdown dial, not a behaviour fix.
+5. BR3S on the LPB base (WIL_J_BR3S, no JN dials), L6M: maxDD cut 20.0 percent vs LPB, mean 1286.7 per week, worst-5 delta 2186.2, best-5 delta -34997.7. Against JN04RM it deepens the drawdown (-48.2), as expected, because it lacks the JN dials.
+6. Overlap with the no-new-evidence same-side re-entries (exact JN04RM P7 trades, /mnt/l2/l2vast/_th_works_i/overlap.md): L6M 380 breadth-3 entries and 343 no-new-evidence entries share only 5 trades (1 percent either way, those 5 lost $4.2k); HOLD 723 vs 547 share 8. The two rules therefore act on different entries (extended first entries vs re-entries after a failure that never made a new extreme), which is why they stack. Note that both sets are net winners overall in these windows (breadth-3 entries +$18.0k L6M, no-new-evidence entries +$28.1k L6M): skipping either removes more winners than losers in dollars, and the benefit is only in the drawdown path.
