@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F1 — T-NEXT-FEATURES items 1 (stack-level evidence) and 6 (after a halt/lock), W-F1
 
-Generated 2026-11-13 19:40 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
+Generated 2026-11-13 20:11 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
 
 Hook code/th_nextf/nf_hooks.py (outermost of the hooklist). **sev**: N same-side losing closed trades by ANY book in the ET six-session, no new session extreme in the trade direction beyond the extreme at the last failure exit (completed 1-min bars) -> skip (S) or half (H) for every book on that side; suffix N = scorecard convention (opposite-side trades do not end the run). **ah**: previous 18:00-ET day ended day-halted by the loss cap (L), give-back lock (K) or either (E) -> first signal dropped (S) or first sized entry halved (H).
 
@@ -24,7 +24,7 @@ Baseline stack same-side losing run (behavioural scorecard c convention): JN05W2
 | NF_D_PL_day_half_m2_L | 16 | 94% ($297k of $316k) | 0 of 20 | 4.3 | -1542 | 14/6 | 26.8 | -1422 | 14/6 | - |
 | NF_D_ST_half_2_J | 16 | 65% ($207k of $316k) | 2 of 20 | 35.7 | -7005 | 14/6 | 35.9 | -4403 | 14/6 | - |
 | NF_D_ST_half_2_L | 16 | 86% ($271k of $316k) | 0 of 20 | -2.2 | -3688 | 13/6 | 18.1 | -1798 | 13/6 | - |
-| NF_D_ST_half_3_J | 16 | 74% ($234k of $316k) | 1 of 20 | 25.9 | -5702 | 14/6 | 17.3 | -4031 | 14/6 | - |
+| NF_D_ST_half_3_J | 16 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202512/trades.parquet') |||||||||
 | NF_D_ST_half_3_L | 16 | 100% ($315k of $316k) | 0 of 20 | -37.0 | -1582 | 13/6 | 1.2 | -910 | 13/6 | - |
 | NF_D_ST_half_4_J | 16 | 74% ($233k of $316k) | 1 of 20 | 34.1 | -5031 | 14/6 | 13.3 | -3766 | 14/6 | - |
 | NF_D_ST_half_4_L | 16 | 100% ($318k of $316k) | 0 of 20 | -5.1 | -698 | 13/6 | -0.9 | -358 | 13/6 | - |
