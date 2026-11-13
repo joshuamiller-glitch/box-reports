@@ -1,7 +1,7 @@
-# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 15:46Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 16:16Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
 
 ## 0. Status
-Jobs done 602 of 602 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 33152. Null draws (shifted-time, whole event table moved by random weeks): 1.
+Jobs done 602 of 602 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 33152. Null draws (shifted-time, whole event table moved by random weeks): 3.
 Instruments run: ES, NQ. RTY/YM wait for IWM/DIA UW pulls (W-UB3). X' has NO UW data (history starts 2024-10-01): X' is not scored. PRE is clipped to the UW start (PREUW). Windows from 2026-11-12.
 
 ## 1. Where the signal sits (gated = mean L6M>0 and L3M>0 and HOLD>0 and n_L6M>=20)
@@ -25,12 +25,12 @@ Instruments run: ES, NQ. RTY/YM wait for IWM/DIA UW pulls (W-UB3). X' has NO UW 
 | F7 | NQ | True | 444 | 421 | 41.4 | 5764 |
 
 Null = the same event tables moved by a random circular whole-week shift inside their own date span (weekday/time of day kept, same windows), same job subset (every 4th job), full 1,470-cell grid, all 5 sessions x 2 directions. Columns: groups scored / groups with any gated cell (share) / max recents $/wk over all cells / best gated L6M Calmar. Observed is restricted to the same job subset.
-| family | observed (same jobs) | null draw 1 |
-|--|--|--|
-| F1 | 5172 / 2222 (43%) / 3716 / 62.2 | n/a |
-| F2 | 1124 / 343 (31%) / 3712 / 69.9 | n/a |
-| F6 | 40 / 29 (72%) / 1395 / 34.4 | 60 / 23 (38%) / 933 / 41.6 |
-| F7 | 24 / 22 (92%) / 5713 / 28.5 | 24 / 22 (92%) / 2721 / 47.6 |
+| family | observed (same jobs) | null draw 1 | null draw 2 | null draw 3 |
+|--|--|--|--|--|
+| F1 | 1490 / 549 (37%) / 2836 / 56.5 | 1778 / 970 (55%) / 2797 / 80.3 | 1760 / 963 (55%) / 2951 / 67.5 | 1756 / 981 (56%) / 3093 / 69.0 |
+| F2 | 318 / 68 (21%) / 2060 / 32.6 | 322 / 170 (53%) / 2813 / 47.5 | 318 / 163 (51%) / 3308 / 50.7 | 328 / 159 (48%) / 2421 / 39.2 |
+| F6 | 304 / 218 (72%) / 1403 / 40.4 | 432 / 181 (42%) / 1746 / 49.6 | 436 / 189 (43%) / 1643 / 58.6 | 422 / 190 (45%) / 1401 / 56.4 |
+| F7 | 340 / 317 (93%) / 5713 / 38.9 | 464 / 320 (69%) / 5911 / 59.5 | 460 / 309 (67%) / 3463 / 59.1 | 460 / 308 (67%) / 5252 / 45.5 |
 
 ## 2. Best book per session (gated; ranked by L6M Calmar = mean*52/maxDD). Window values are $/wk at the cell lots (R=$1,200 per trade at the stop, cap 10 lots), fees and measured slippage in.
 | session | dir | family | instrument (matched) | trigger | cell | n L6M | L1M | L3M | L6M | HOLD | PREUW | maxDD L6M | worst wk L6M | full stops/wk L6M | pos wk L6M | WF OOS $/wk | placebo shuffle p | verdict |
@@ -91,4 +91,9 @@ F6 10:00 ET reading for 2026-10-14: row avail 10:00:00 ET (<= 10:00:00), value -
 F7 prior-close reading of 2026-10-14: row avail 16:00:00 ET (start 15:59); event 18:05 ET same date (Friday -> Sunday 18:05) + lag; London 02:00 ET next business day; pre-market 06:35 ET uses rows avail <= 06:35
 
 ## 5. Plain reading
-(written after the first complete read)
+PLAIN READING (first read, B2 data, 602 jobs x 5 sessions x 2 directions x 1,470 cells on NQ and ES, ~33k scored groups). STRENGTH: WEAK. Best book per session is named in section 2, each with a bi-weekly WF positive in OOS $/wk, but:
+- Selection of many: every group is the best of 1,470 cells. The shifted-time null (3 draws, same event tables moved by random whole weeks inside their own span) reaches the same best recents $/wk and the same best gated L6M Calmar as the observed tables in F1 and F2 (e.g. F1 max recents 2,836 observed vs 2,797 / 2,951 / 3,093 null; F2 2,060 vs 2,813 / 3,308 / 2,421), and the share of groups that pass the tolerant gate is LOWER than in the null for F1 (37% vs 55-56%) and F2 (21% vs 48-53%). So families 1 (exposure flips/extremes/deltas) and 2 (levels as trade locations) show NO evidence above chance on this read.
+- F6 (morning set) and F7 (prior close / pre-market) pass the gate more often than the null (F6 72% vs 42-45%, F7 93% vs 67-69%) but their best recents $/wk is inside the null range (F7 5,713 vs 3,463-5,911): a structural overnight/morning drift of the sample (NQ rose strongly in 2026) is the likely cause, not the UW reading; their value must be tested against a no-UW baseline of the same entry clock (next step).
+- Every session winner has L6M n of 20-47 trades (thin), at least one of L1M/PREUW is weak or negative in most, placebo (shuffled-day) p is 0.05-0.29 for the finalists: none is below 0.05 after selection. WF OOS picks are positive but small relative to the in-sample numbers and have deep maxDD (3-20k).
+- Correlation of the finalists' weekly $ with every live book is -0.16..+0.18 (near zero), and several would trim the stack worst week, but those are first-order numbers on candidates that are not distinguishable from chance. They are listed as the nothing-yet-stronger-than-chance best per session, not as survivors. NO PASS claim.
+- Not yet done: RTY/YM (IWM/DIA pulls with W-UB3), cross pairs and relative-value books, pairs of the top-K, exact-engine joint (TL3_UW_ sets), forward register of 0DTE walls, no-UW baseline for F6/F7 entry clocks.
