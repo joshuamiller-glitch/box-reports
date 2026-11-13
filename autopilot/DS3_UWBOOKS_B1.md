@@ -1,4 +1,4 @@
-# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 21:57Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 22:05Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
 
 ## 0. Status
 Jobs done 4279 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 195897. Null draws (shifted-time, whole event table moved by random weeks): 18.
@@ -283,3 +283,8 @@ PLAIN READING (21:30Z). Scope: NQ ES RTY YM (triggers SPX SPY QQQ NDX IWM DIA, m
 - Metals/oil: same picture (F1/F6/F7/F2/FE on GC SI CL, FE vs FEB lift none). UW pulls for the six ETFs are still arriving (about 250 of 510 days) so HOLD is partly covered; PREUW is empty for them.
 - Simulator audit: independent second-by-second loop reproduces the harness on 198 of 198 checks. Seam checks, roll/glitch guard (event dropped if the 1-s path jumps > 80 NQ pts x scale, or 3 ATR5 for GC/SI/CL) and the VOID first screen are documented in MORNING.
 - Not done: exact-engine joint (needs an add-a-book hook; awaiting the lead), WF/placebo for pairs, longer UW history for ETFs, forward register of 0DTE walls.
+- EXACT-ENGINE JOINT (TP engine, JN05W2 base, all layers ON, hook uw_inject.py; identity: book registered with no events in the month reproduces JN05W2 202610 = 598 trades, net 25,943.82; one set per finalist, months 202410-202610 = L6M/HOLD/PREUW; stack mean ~$23k/wk, maxDD ~$36k in L6M so effects are 1-4% of the stack). Engine fills, $4.84 RT, live locks/give-back/caps and the live SCR entry gate apply to the injected book.
+  * INJ_PRE (pre short SPX v_oi lo_d): stack mean +418 / +174 / +167 / +331 $/wk in L3M / L6M / HOLD / PREUW; stack maxDD -523 / -523 / 0 / +394; worst week 36.4k -> 35.8k in L6M; the book alone earns +159 $/wk in L6M (11 trades) against +1,073 in the standalone harness: 9 of 27 events were skipped by the live SCR gate and 5 of 13 entered trades were cut by BookLock (give-back lock) at +10-30 pts, i.e. the live stack rules remove most of the standalone profit. Mean positive in all four windows, DD cut in the recent two, slightly worse in PREUW: a small weak lead, not a survivor.
+  * INJ_ASIA: +69 L6M, -108 L3M, PREUW -69 with maxDD +1,464 worse: no. INJ_NYAM: +573 L6M but maxDD +1,187 worse in HOLD, PREUW 0: no.
+  * INJ_NDXB (W-UB2 NDX burst fade, labelled FAILED-NULL reference): +856 L6M with DD -554, +851 HOLD with DD -1,488, but PREUW -211 with DD +3,822 worse: strongest recent numbers, fails its family null and the PREUW window.
+  * About half of each UW book's trades open while no other live book is open (idle share 0.2-0.6).
