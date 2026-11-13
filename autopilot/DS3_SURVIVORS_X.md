@@ -1,5 +1,5 @@
 # DS3_SURVIVORS_X - flat-stop survivors (EC_FLAT{40,45,50}{K,U,A,M} on LPB_BASE; JN04RM_FLAT{40,45,50}K on the JN04RM base), exact, Shadow only, no PASS claim
-Updated 2026-11-13 12:19Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 43/43, EC_FLAT40K 43/43, EC_FLAT50K 43/43, EC_FLAT45U 12/43, EC_FLAT40U 6/43, EC_FLAT50U 6/43, EC_FLAT45A 12/43, EC_FLAT40A 6/43, EC_FLAT50A 6/43, EC_FLAT45M 12/43, EC_FLAT40M 6/43, EC_FLAT50M 6/43, JN04RM_FLAT45K 43/43, JN04RM_FLAT40K 43/43, JN04RM_FLAT50K 43/43
+Updated 2026-11-13 12:49Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 43/43, EC_FLAT40K 43/43, EC_FLAT50K 43/43, EC_FLAT45U 12/43, EC_FLAT40U 9/43, EC_FLAT50U 8/43, EC_FLAT45A 12/43, EC_FLAT40A 8/43, EC_FLAT50A 8/43, EC_FLAT45M 12/43, EC_FLAT40M 8/43, EC_FLAT50M 8/43, JN04RM_FLAT45K 43/43, JN04RM_FLAT40K 43/43, JN04RM_FLAT50K 43/43
 Fill model: flat-stop market exit at next-1-s mid -/+ 0.80 pt (live loss-cut is 1.19-1.20 adverse => savings overstated ~0.4 pt). Windows PRE/X/GAP/WF need all 43 months; sets missing months are labelled.
 
 ## 1. Trend-week clause (L6M weekly check, exact)
@@ -194,7 +194,7 @@ EC_FLAT45U PRE: months missing (17 of 17), window not scored
 EC_FLAT45U X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT40U (6/43 months)
+## EC_FLAT40U (9/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40U
@@ -227,7 +227,7 @@ EC_FLAT40U PRE: months missing (17 of 17), window not scored
 EC_FLAT40U X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT50U (6/43 months)
+## EC_FLAT50U (8/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50U
@@ -294,7 +294,7 @@ EC_FLAT45A PRE: months missing (17 of 17), window not scored
 EC_FLAT45A X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT40A (6/43 months)
+## EC_FLAT40A (8/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40A
@@ -327,7 +327,7 @@ EC_FLAT40A PRE: months missing (17 of 17), window not scored
 EC_FLAT40A X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT50A (6/43 months)
+## EC_FLAT50A (8/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50A
@@ -394,7 +394,7 @@ EC_FLAT45M PRE: months missing (17 of 17), window not scored
 EC_FLAT45M X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT40M (6/43 months)
+## EC_FLAT40M (8/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40M
@@ -427,17 +427,38 @@ EC_FLAT40M PRE: months missing (17 of 17), window not scored
 EC_FLAT40M X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT50M (6/43 months)
+## EC_FLAT50M (8/43 months)
 ### windows / WF / rule 2a
 ```
-(not yet)
+EC_FLAT50M
+         cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref  cut  dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
+0  EC_FLAT50M    L1M     708.1         340.7      367.4  17761.9  50453.2  51252.7  1.6  223.3     1.8    2832.5    1363.0    18.3   17538.5       7
+1  EC_FLAT50M    L3M   11993.9       11956.7       37.3  13821.0  78364.9  77224.2 -1.5  153.5    -1.2  155921.1  155436.8     9.2   13667.5       7
+2  EC_FLAT50M    L6M   18600.7       18696.8      -96.2  19222.9  78364.9  77224.2 -1.5   46.2    -1.2   98485.4  102383.9    12.8   19176.7       7
+
 ```
 ### acceptance_p7
 ```
-(not yet)
+ best L6M P7 sessions of the reference) and the frozen live week: re-entry winners after NEW EVIDENCE
+-- best session 20260619 asia: reference net +28883 (5 trades, 0 evidence-backed re-entry winners $+0); set net +28883 (5 trades, 0 such winners $+0)
+-- best session 20260515 asia: reference net +23369 (8 trades, 0 evidence-backed re-entry winners $+0); set net +23369 (8 trades, 0 such winners $+0)
+-- best session 20260707 asia: reference net +23252 (7 trades, 0 evidence-backed re-entry winners $+0); set net +23252 (7 trades, 0 such winners $+0)
+-- best session 20261022 asia: reference net +22466 (6 trades, 0 evidence-backed re-entry winners $+0); set net +22466 (6 trades, 0 such winners $+0)
+-- best session 20260605 asia: reference net +22396 (9 trades, 0 evidence-backed re-entry winners $+0); set net +22396 (9 trades, 0 such winners $+0)
+-- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+8402); all re-entry winners (any evidence) reference 13, set 13
+-- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
+
+SUMMARY EC_FLAT50M: fails 3 of 15 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 15 of 20
+ACCEPT EC_FLAT50M FAIL fails=3/20
+
 ```
 ### behavioural scorecard
-(not yet)
+EC_FLAT50M L6M (stack, per week): full stops 23.3/wk $-38336; give-backs 9.1/wk (9.0 round-trips) realised $-13970, forgone vs target $35337; same-side losing runs max 12, p95 6, $-51287 lost on 3rd-and-later; no-new-evidence re-entries 37.4/wk $-353; recoveries cut 13.6/wk $46592, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $30/wk, net -102 $/wk; pnl $19682/wk.
+EC_FLAT50M HOLD: months missing (5 of 12), window not scored
+EC_FLAT50M PRE: months missing (17 of 17), window not scored
+EC_FLAT50M X': months missing (10 of 10), window not scored
+
 
 ## JN04RM_FLAT45K (43/43 months)
 ### windows / WF / rule 2a
