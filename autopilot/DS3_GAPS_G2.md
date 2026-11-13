@@ -1,27 +1,27 @@
 # DS3_GAPS_G2 - GAPS order G2 (book level: M7, P7 Asia by slot, cost-after-edge by book x session) - W-G2
 
-Written 2026-11-13 10:39Z. Shadow only. No PASS claims. Prereg GAPS_G2_PREREG.md (sha 9668b1102c521a14 in DECISIONS.md). **Caveat on every row: the engine state cut fires in the engine but did NOT fire live on 11-11 (DS3_P7_CUT_FIDELITY.md); "cut OFF" rows are the live-realistic world.** All numbers are after live costs (fee $4.84/contract RT + live-excess slip: entry +0.23 pt, market cut +0.40, stop +0.44, target 0, +1.36 pt at 08:30-08:44 ET) from the exact trade lists; stack effects in section A are first-order (trade-list subtraction, no path change) until the exact rows in section E land. Windows: L6M 202605-202610, HOLD 202511-202604, PRE 202402-202506, X' 202304-202401. User lots (K7 4, M7 4, U7 7, P7 12/7/7, H7 7, A7 2, caps x1.75): all rules here are count/slot/session rules and transfer unchanged; $ figures scale with lots (x1.75 on the panel).
+Written 2026-11-13 11:13Z. Shadow only. No PASS claims. Prereg GAPS_G2_PREREG.md (sha 9668b1102c521a14 in DECISIONS.md). **Caveat on every row: the engine state cut fires in the engine but did NOT fire live on 11-11 (DS3_P7_CUT_FIDELITY.md); "cut OFF" rows are the live-realistic world.** All numbers are after live costs (fee $4.84/contract RT + live-excess slip: entry +0.23 pt, market cut +0.40, stop +0.44, target 0, +1.36 pt at 08:30-08:44 ET) from the exact trade lists; stack effects in section A are first-order (trade-list subtraction, no path change) until the exact rows in section E land. Windows: L6M 202605-202610, HOLD 202511-202604, PRE 202402-202506, X' 202304-202401. User lots (K7 4, M7 4, U7 7, P7 12/7/7, H7 7, A7 2, caps x1.75): all rules here are count/slot/session rules and transfer unchanged; $ figures scale with lots (x1.75 on the panel).
 
 ## 0. Exact status (months done of 43; stage 1 = L6M+HOLD = 12 months)
 
 | set         |   months |
 |:------------|---------:|
 | G2J_ID      |        1 |
-| G2J_M7_HALF |       42 |
-| G2J_M7_LON  |       41 |
-| G2J_M7_NYAM |       37 |
-| G2J_M7_OFF  |       41 |
+| G2J_M7_HALF |       43 |
+| G2J_M7_LON  |       43 |
+| G2J_M7_NYAM |       40 |
+| G2J_M7_OFF  |       43 |
 | G2J_P7A_BW  |       12 |
 | G2J_P7A_BWD |       12 |
-| G2J_P7A_PRE |       40 |
+| G2J_P7A_PRE |       41 |
 | G2N_ID      |        1 |
 | G2N_M7_HALF |        5 |
-| G2N_M7_LON  |        3 |
-| G2N_M7_NYAM |        4 |
-| G2N_M7_OFF  |        6 |
-| G2N_P7A_BW  |        5 |
-| G2N_P7A_BWD |        2 |
-| G2N_P7A_PRE |        7 |
+| G2N_M7_LON  |        7 |
+| G2N_M7_NYAM |        7 |
+| G2N_M7_OFF  |        7 |
+| G2N_P7A_BW  |        7 |
+| G2N_P7A_BWD |        3 |
+| G2N_P7A_PRE |       10 |
 | G2_ID       |        1 |
 | G2_M7_HALF  |       12 |
 | G2_M7_LON   |       12 |
@@ -29,7 +29,7 @@ Written 2026-11-13 10:39Z. Shadow only. No PASS claims. Prereg GAPS_G2_PREREG.md
 | G2_M7_OFF   |       12 |
 | G2_P7A_BW   |       12 |
 | G2_P7A_BWD  |       12 |
-| G2_P7A_PRE  |       34 |
+| G2_P7A_PRE  |       36 |
 
 
 ## C. Cost-after-edge by book x session ($/wk after fees+live-excess slip; trade lists)
@@ -343,26 +343,26 @@ Slots that pay on L6M, HOLD and PRE: 00:00, 00:30, 01:30, 18:00, 19:00, 21:00, 2
 
 Identity checks: PASS G2_ID: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 | PASS G2J_ID: 658 trades net 23596.16 vs JN05W2J 658 trades net 23596.16 | PASS G2N_ID: 574 trades net 15110.42 vs JN05W2_NOCUT 574 trades net 15110.42
 
-| set         | base         |   months | identity   | L6M cut%/dmean_all   | HOLD cut%/dmean_all   | trend 5best (ref->cell), winning wks turned losing   | run max/p95 (ref)   | promote           | acceptance_p7                      | PRE cut%/dmean_all   | note            |
-|:------------|:-------------|---------:|:-----------|:---------------------|:----------------------|:-----------------------------------------------------|:--------------------|:------------------|:-----------------------------------|:---------------------|:----------------|
-| G2_M7_OFF   | JN05W2       |       12 | PASS       | -8.7 / -587          | 28.0 / -21            | 316k -> 312k, 0 of 20                                | 13/5.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_M7_OFF PASS fails=1/20   | nan                  | nan             |
-| G2_M7_NYAM  | JN05W2       |       12 | PASS       | -8.0 / -1178         | 25.7 / -315           | 316k -> 316k, 1 of 20                                | 13/5.1 (13/6.0)     | no (stage 1 only) | ACCEPT G2_M7_NYAM PASS fails=1/20  | nan                  | nan             |
-| G2_M7_LON   | JN05W2       |       12 | PASS       | -4.9 / -676          | 2.1 / -114            | 316k -> 311k, 0 of 20                                | 13/6.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_M7_LON PASS fails=1/20   | nan                  | nan             |
-| G2_M7_HALF  | JN05W2       |       12 | PASS       | 1.7 / -178           | 14.2 / +314           | 316k -> 322k, 0 of 20                                | 13/6.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_M7_HALF PASS fails=1/20  | nan                  | nan             |
-| G2_P7A_PRE  | JN05W2       |       34 | PASS       | 32.2 / +2636         | 13.9 / +956           | 316k -> 241k, 0 of 20                                | 12/6.0 (13/6.0)     | YES               | ACCEPT G2_P7A_PRE FAIL fails=3/20  | -14.6 / -361         | nan             |
-| G2_P7A_BW   | JN05W2       |       12 | PASS       | 16.1 / +602          | -29.6 / -2770         | 316k -> 308k, 2 of 20                                | 13/6.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_P7A_BW PASS fails=1/20   | nan                  | nan             |
-| G2_P7A_BWD  | JN05W2       |       12 | PASS       | 22.2 / -1874         | -21.8 / -2331         | 316k -> 243k, 3 of 20                                | 13/6.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_P7A_BWD PASS fails=1/20  | nan                  | nan             |
-| G2J_M7_OFF  | JN05W2J      |       41 | PASS       | 20.7 / -345          | 27.2 / -186           | 244k -> 236k, 0 of 21                                | 14/5.0 (14/6.0)     | YES               | ACCEPT G2J_M7_OFF PASS fails=1/20  | 8.9 / +20            | nan             |
-| G2J_M7_NYAM | JN05W2J      |       37 | PASS       | 15.2 / -257          | 17.4 / -260           | 244k -> 238k, 0 of 21                                | 14/6.0 (14/6.0)     | YES               | ACCEPT G2J_M7_NYAM PASS fails=1/20 | 13.4 / +641          | nan             |
-| G2J_M7_LON  | JN05W2J      |       41 | PASS       | 5.5 / -528           | 6.7 / -494            | 244k -> 241k, 0 of 21                                | 14/6.0 (14/6.0)     | YES               | ACCEPT G2J_M7_LON PASS fails=1/20  | -3.6 / -648          | nan             |
-| G2J_M7_HALF | JN05W2J      |       42 | PASS       | 5.1 / +490           | 12.6 / +347           | 244k -> 248k, 0 of 21                                | 14/6.0 (14/6.0)     | YES               | ACCEPT G2J_M7_HALF PASS fails=1/20 | -2.3 / +230          | nan             |
-| G2J_P7A_PRE | JN05W2J      |       40 | PASS       | 60.4 / -1294         | -18.1 / -476          | 244k -> 187k, 0 of 21                                | 11/6.0 (14/6.0)     | YES               | ACCEPT G2J_P7A_PRE FAIL fails=3/20 | -13.1 / -1488        | nan             |
-| G2J_P7A_BW  | JN05W2J      |       12 | PASS       | 14.2 / +246          | -49.8 / -2007         | 244k -> 222k, 2 of 21                                | 10/6.0 (14/6.0)     | no (stage 1 only) | ACCEPT G2J_P7A_BW PASS fails=1/20  | nan                  | nan             |
-| G2J_P7A_BWD | JN05W2J      |       12 | PASS       | -12.7 / -4494        | -29.3 / -4200         | 244k -> 197k, 1 of 21                                | 10/6.0 (14/6.0)     | no (stage 1 only) | ACCEPT G2J_P7A_BWD PASS fails=2/20 | nan                  | nan             |
-| G2N_M7_OFF  | JN05W2_NOCUT |        6 | PASS       | -9.2 / +62           | nan                   | 309k -> 274k, 0 of 19                                | 10/4.0 (10/5.0)     | nan               | ACCEPT G2N_M7_OFF PASS fails=1/20  | nan                  | nan             |
-| G2N_M7_NYAM | JN05W2_NOCUT |        4 | nan        | nan                  | nan                   | nan                                                  | nan                 | nan               | nan                                | nan                  | stage 1 running |
-| G2N_M7_LON  | JN05W2_NOCUT |        3 | nan        | nan                  | nan                   | nan                                                  | nan                 | nan               | nan                                | nan                  | stage 1 running |
-| G2N_M7_HALF | JN05W2_NOCUT |        5 | nan        | nan                  | nan                   | nan                                                  | nan                 | nan               | nan                                | nan                  | stage 1 running |
-| G2N_P7A_PRE | JN05W2_NOCUT |        7 | PASS       | -12.4 / -3388        | nan                   | 309k -> 266k, 1 of 19                                | 9/5.0 (10/5.0)      | nan               | ACCEPT G2N_P7A_PRE PASS fails=0/20 | nan                  | nan             |
-| G2N_P7A_BW  | JN05W2_NOCUT |        5 | nan        | nan                  | nan                   | nan                                                  | nan                 | nan               | nan                                | nan                  | stage 1 running |
-| G2N_P7A_BWD | JN05W2_NOCUT |        2 | nan        | nan                  | nan                   | nan                                                  | nan                 | nan               | nan                                | nan                  | stage 1 running |
+| set         | base         |   months | identity   | L6M cut%/dmean_all   | HOLD cut%/dmean_all   | trend 5best (ref->cell), winning wks turned losing   | run max/p95 (ref)   | promote           | acceptance_p7                      | PRE cut%/dmean_all   | X' cut%/dmean_all   | WF beat%/cut/mean   | note            |
+|:------------|:-------------|---------:|:-----------|:---------------------|:----------------------|:-----------------------------------------------------|:--------------------|:------------------|:-----------------------------------|:---------------------|:--------------------|:--------------------|:----------------|
+| G2_M7_OFF   | JN05W2       |       12 | PASS       | -8.7 / -587          | 28.0 / -21            | 316k -> 312k, 0 of 20                                | 13/5.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_M7_OFF PASS fails=1/20   | nan                  | nan                 | nan                 | nan             |
+| G2_M7_NYAM  | JN05W2       |       12 | PASS       | -8.0 / -1178         | 25.7 / -315           | 316k -> 316k, 1 of 20                                | 13/5.1 (13/6.0)     | no (stage 1 only) | ACCEPT G2_M7_NYAM PASS fails=1/20  | nan                  | nan                 | nan                 | nan             |
+| G2_M7_LON   | JN05W2       |       12 | PASS       | -4.9 / -676          | 2.1 / -114            | 316k -> 311k, 0 of 20                                | 13/6.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_M7_LON PASS fails=1/20   | nan                  | nan                 | nan                 | nan             |
+| G2_M7_HALF  | JN05W2       |       12 | PASS       | 1.7 / -178           | 14.2 / +314           | 316k -> 322k, 0 of 20                                | 13/6.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_M7_HALF PASS fails=1/20  | nan                  | nan                 | nan                 | nan             |
+| G2_P7A_PRE  | JN05W2       |       36 | PASS       | 32.2 / +2636         | 13.9 / +956           | 316k -> 241k, 0 of 20                                | 12/6.0 (13/6.0)     | YES               | ACCEPT G2_P7A_PRE FAIL fails=3/20  | -14.6 / -361         | nan                 | nan                 | nan             |
+| G2_P7A_BW   | JN05W2       |       12 | PASS       | 16.1 / +602          | -29.6 / -2770         | 316k -> 308k, 2 of 20                                | 13/6.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_P7A_BW PASS fails=1/20   | nan                  | nan                 | nan                 | nan             |
+| G2_P7A_BWD  | JN05W2       |       12 | PASS       | 22.2 / -1874         | -21.8 / -2331         | 316k -> 243k, 3 of 20                                | 13/6.0 (13/6.0)     | no (stage 1 only) | ACCEPT G2_P7A_BWD PASS fails=1/20  | nan                  | nan                 | nan                 | nan             |
+| G2J_M7_OFF  | JN05W2J      |       43 | PASS       | 20.7 / -345          | 27.2 / -186           | 244k -> 236k, 0 of 21                                | 14/5.0 (14/6.0)     | YES               | ACCEPT G2J_M7_OFF PASS fails=1/20  | 8.9 / +20            | -41.4 / +233        | 63 / 8.9 / -0       | nan             |
+| G2J_M7_NYAM | JN05W2J      |       40 | PASS       | 15.2 / -257          | 17.4 / -260           | 244k -> 238k, 0 of 21                                | 14/6.0 (14/6.0)     | YES               | ACCEPT G2J_M7_NYAM PASS fails=1/20 | 13.4 / +641          | nan                 | nan                 | nan             |
+| G2J_M7_LON  | JN05W2J      |       43 | PASS       | 5.5 / -528           | 6.7 / -494            | 244k -> 241k, 0 of 21                                | 14/6.0 (14/6.0)     | YES               | ACCEPT G2J_M7_LON PASS fails=1/20  | -3.6 / -648          | 2.0 / +309          | 44 / -3.6 / -223    | nan             |
+| G2J_M7_HALF | JN05W2J      |       43 | PASS       | 5.1 / +490           | 12.6 / +347           | 244k -> 248k, 0 of 21                                | 14/6.0 (14/6.0)     | YES               | ACCEPT G2J_M7_HALF PASS fails=1/20 | -2.3 / +230          | -12.4 / +107        | 49 / -2.3 / +170    | nan             |
+| G2J_P7A_PRE | JN05W2J      |       41 | PASS       | 60.4 / -1294         | -18.1 / -476          | 244k -> 187k, 0 of 21                                | 11/6.0 (14/6.0)     | YES               | ACCEPT G2J_P7A_PRE FAIL fails=3/20 | -13.1 / -1488        | nan                 | nan                 | nan             |
+| G2J_P7A_BW  | JN05W2J      |       12 | PASS       | 14.2 / +246          | -49.8 / -2007         | 244k -> 222k, 2 of 21                                | 10/6.0 (14/6.0)     | no (stage 1 only) | ACCEPT G2J_P7A_BW PASS fails=1/20  | nan                  | nan                 | nan                 | nan             |
+| G2J_P7A_BWD | JN05W2J      |       12 | PASS       | -12.7 / -4494        | -29.3 / -4200         | 244k -> 197k, 1 of 21                                | 10/6.0 (14/6.0)     | no (stage 1 only) | ACCEPT G2J_P7A_BWD PASS fails=2/20 | nan                  | nan                 | nan                 | nan             |
+| G2N_M7_OFF  | JN05W2_NOCUT |        7 | PASS       | -9.2 / +62           | nan                   | 309k -> 274k, 0 of 19                                | 10/4.0 (10/5.0)     | nan               | ACCEPT G2N_M7_OFF PASS fails=1/20  | nan                  | nan                 | nan                 | nan             |
+| G2N_M7_NYAM | JN05W2_NOCUT |        7 | PASS       | -10.1 / -364         | nan                   | 309k -> 291k, 0 of 19                                | 10/5.0 (10/5.0)     | nan               | ACCEPT G2N_M7_NYAM PASS fails=1/20 | nan                  | nan                 | nan                 | nan             |
+| G2N_M7_LON  | JN05W2_NOCUT |        7 | PASS       | 3.2 / -64            | nan                   | 309k -> 296k, 0 of 19                                | 10/5.0 (10/5.0)     | nan               | ACCEPT G2N_M7_LON PASS fails=1/20  | nan                  | nan                 | nan                 | nan             |
+| G2N_M7_HALF | JN05W2_NOCUT |        5 | nan        | nan                  | nan                   | nan                                                  | nan                 | nan               | nan                                | nan                  | nan                 | nan                 | stage 1 running |
+| G2N_P7A_PRE | JN05W2_NOCUT |       10 | PASS       | -12.4 / -3388        | nan                   | 309k -> 266k, 1 of 19                                | 9/5.0 (10/5.0)      | nan               | ACCEPT G2N_P7A_PRE PASS fails=0/20 | nan                  | nan                 | nan                 | nan             |
+| G2N_P7A_BW  | JN05W2_NOCUT |        7 | PASS       | 11.6 / +9044         | nan                   | 309k -> 318k, 1 of 19                                | 11/5.0 (10/5.0)     | nan               | ACCEPT G2N_P7A_BW PASS fails=0/20  | nan                  | nan                 | nan                 | nan             |
+| G2N_P7A_BWD | JN05W2_NOCUT |        3 | nan        | nan                  | nan                   | nan                                                  | nan                 | nan               | nan                                | nan                  | nan                 | nan                 | stage 1 running |
