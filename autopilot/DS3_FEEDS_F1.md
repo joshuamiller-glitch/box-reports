@@ -1,6 +1,6 @@
 # DS3_FEEDS_F1 - crypto overnight gauge (F1) and prediction markets (F2)
 
-Written 2026-11-12 23:59Z by W-FD1 (T-FEEDS). Shadow only, free sources only, no PASS claims. First-order screens on the LPB_BASE trade list (20,807 trades 2023-04..2026-10, engine lots); exact runs only for finalists (none yet).
+Written 2026-11-13 00:29Z by W-FD1 (T-FEEDS). Shadow only, free sources only, no PASS claims. First-order screens on the LPB_BASE trade list (20,807 trades 2023-04..2026-10, engine lots); exact runs only for finalists (none yet).
 
 ## 0. Data owned
 - Binance spot BTCUSDT and ETHUSDT 1-s klines 2023-04..2026-11-11 (free, data.binance.vision): /mnt/l2/l2vast/feeds/crypto/ (+ 1-min arrays BTCUSDT_1m.npz, ETHUSDT_1m.npz, built by code/th_feeds/f1_agg.py).
