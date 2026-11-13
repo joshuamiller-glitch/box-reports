@@ -1,27 +1,27 @@
 # DS3_SMART_A2 — T-SMART items A2 (stack as one position), A4 (hedge instead of exit), A5 (stop-and-reverse, opposite-book conflict), W-SM2
 
-Generated 2026-11-13 08:43 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months). Shadow only, no PASS claim.
+Generated 2026-11-13 09:14 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months). Shadow only, no PASS claim.
 **CAVEAT (every page):** the engine state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). Rules below are scored with the engine cuts as in JN05W2; the full-stop-only variants are added when that base exists. Prereg autopilot/SMART_A2_PREREG.md (sha 597c41f51e81ba3c). Hook code/th_sm2/sm2_hooks.py. R = $1,200 fixed; at the user lots (x1.75) fixed-dollar thresholds x1.75, count rules unchanged. Hedge fee 12.0 $/NQ-equivalent RT assumed (MNQ, unverified), bound 4.84.
 
 ## 0. Trend-week clause first (L6M weekly check, 5 best JN05W2 weeks kept, JN05W2 winning weeks turned losing) and L6M/HOLD summary
 
 | set | months | 5 best wks kept | winning wks turned losing | L6M cut % | L6M d mean/wk (all wks) | L6M run max/p95 (ref 13/6) | HOLD cut % | HOLD d mean/wk | HOLD run max/p95 | WF cut / beat |
 |--|--|--|--|--|--|--|--|--|--|--|
-| SM_A1E_C10L | 11 | 76% ($239k of $316k) | 1 of 20 | -41.9 | -5318 | 15/7 | - | - | -/- | - |
+| SM_A1E_C10L | 12 | 76% ($239k of $316k) | 1 of 20 | -41.9 | -5318 | 15/7 | -39.8 | -4226 | 15/6 | - |
 | SM_A1E_L0L | 12 | 100% ($318k of $316k) | 0 of 20 | -1.4 | -13 | 11/6 | -15.2 | 1010 | 11/6 | - |
-| SM_A1E_XL | 41 | 100% ($315k of $316k) | 0 of 20 | 0.0 | 508 | 15/6 | -4.8 | 468 | 15/6 | - |
+| SM_A1E_XL | 43 | 100% ($315k of $316k) | 0 of 20 | 0.0 | 508 | 15/6 | -4.8 | 468 | 15/6 | -1.3 / 9% |
 | SM_A1N_C10L | 12 | 44% ($139k of $316k) | 5 of 20 | -86.2 | -13319 | 9/6 | -44.4 | -8222 | 10/5 | - |
-| SM_A1N_L0L | 38 | 71% ($224k of $316k) | 2 of 20 | -72.2 | -6798 | 10/5 | -26.4 | -2859 | 10/5 | - |
+| SM_A1N_L0L | 39 | 71% ($224k of $316k) | 2 of 20 | -72.2 | -6798 | 10/5 | -26.4 | -2859 | 10/5 | - |
 | SM_A1N_XL | 12 | 68% ($216k of $316k) | 2 of 20 | -84.9 | -8032 | 10/5 | -57.6 | -3510 | 10/5 | - |
 | SM_A1_ID | 1 | (running) |||||||||
-| SM_A1_NC0 | 35 | 70% ($223k of $316k) | 2 of 20 | -51.3 | -6993 | 10/5 | -56.9 | -3370 | 10/5 | - |
+| SM_A1_NC0 | 36 | 70% ($223k of $316k) | 2 of 20 | -51.3 | -6993 | 10/5 | -56.9 | -3370 | 10/5 | - |
 | SM_A1_T | 1 | (running) |||||||||
 | SM_A6_freshNP7 | 12 | 81% ($257k of $316k) | 0 of 20 | 15.8 | -4947 | 10/5 | 15.1 | -2246 | 10/5 | - |
 | SM_A6_halfALL | 12 | 99% ($313k of $316k) | 0 of 20 | -5.2 | -1117 | 14/6 | -0.4 | -1188 | 14/6 | - |
-| SM_A6_halfNP7 | 16 | 107% ($337k of $316k) | 0 of 20 | 11.8 | 383 | 13/6 | - | - | -/- | - |
+| SM_A6_halfNP7 | 24 | 107% ($337k of $316k) | 0 of 20 | 11.8 | 383 | 13/6 | - | - | -/- | - |
 | SM_A6_skipM7 | 12 | 100% ($316k of $316k) | 0 of 20 | -4.0 | -407 | 13/6 | 15.1 | 550 | 13/5 | - |
 | SM_A6_skipNP7 | 12 | 88% ($278k of $316k) | 2 of 20 | -5.1 | -4620 | 9/5 | 15.8 | -1958 | 9/5 | - |
-| SM_A7_P7a | 10 | 88% ($278k of $316k) | 1 of 20 | 19.7 | -4317 | 14/6 | - | - | -/- | - |
+| SM_A7_P7a | 12 | 88% ($278k of $316k) | 1 of 20 | 19.7 | -4317 | 14/6 | 5.1 | -2111 | 14/6 | - |
 
 cut % = maxDD of the stack vs JN05W2 (positive = shallower); d mean = all-weeks mean difference ($/wk); a window appears only when all its months are present. PRE / X' / GAP follow for cells with L6M cut >= 5% and d mean >= -$1,000/wk (prereg).
 
@@ -87,7 +87,7 @@ covered sessions 20 of 20
 ACCEPT JN05W2_NOCUT PASS fails=1/20
 ```
 
-**JN05W2J_NOCUT**: 31 of 43 months DONE.
+**JN05W2J_NOCUT**: 33 of 43 months DONE.
 
 Trend-week clause (L6M, vs cut-on reference): 5 best weeks kept $204k of $244k (83%); winning weeks turned losing 3 of 21.
 
