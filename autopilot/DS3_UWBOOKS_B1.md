@@ -1,4 +1,4 @@
-# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 21:17Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 21:57Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
 
 ## 0. Status
 Jobs done 4279 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 195897. Null draws (shifted-time, whole event table moved by random weeks): 18.
@@ -232,6 +232,38 @@ Best pair rows per session (in-sample on the same 2 years; WF/placebo not run on
 | london | long | YM | SPY:c_dir|lon0200+SPX:c_oi|lon0200 F7/chg_dn+F7/med_hi | Emkt_S30_Tnone_XSE | 30 | 4532 | 3534 | 2188 | 1178 | 147 | 2864 |
 | london | long | YM | SPY:c_dir|lon0200+SPX:c_oi|lon0200 F7/neg+F7/med_hi | Emkt_S30_Tnone_XSE | 30 | 4532 | 3534 | 2188 | 1178 | 147 | 2864 |
 | asia | long | ES | QQQ:c_dir|asia1805+QQQ:c_oi|asia1805 F7/med_hi+F7/med_lo | Emkt_S45_Tnone_XSE | 26 | 1187 | 1729 | 1499 | 430 | -275 | 2693 |
+
+Pair finalists (WF bi-weekly over the 1,470 cells, shuffled-day placebo B=100 on the pair events, 2x-slippage stress):
+| session | dir | inst | pair | cell | n events | L6M | HOLD | PREUW | stress L6M / HOLD | WF mean | WF periods positive | placebo q95 | placebo p |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| nyam | short | RTY | SPX:v_oi+QQQ:v_oi F1/d15_dn+F1/d5_up | Ep3_S45_Tnone_XSE | 1983 | 3109 | 1489 | -77 | 2956 / 1346 | -75 | 0.43 | 2362 | 0.01 |
+| nyam | short | RTY | SPX:v_oi+NDX:v_dir F1/d15_dn+F1/lo_d | Emkt_S30_Ta2_X60 | 1329 | 2279 | 1605 | 173 | 2233 / 1551 | 375 | 0.63 | 1596 | 0.02 |
+| nypm | short | NQ | SPY:v_vol+QQQ:v_vol F1/d15_up+F1/d5_up | Emkt_S90_T45_XSE | 4586 | 1117 | 862 | 357 | 1092 / 844 | 356 | 0.67 | 1960 | 0.74 |
+| nypm | short | NQ | SPX:c_dir+SPY:v_dir F1/zx_dn+F1/d5_dn | Emkt_Sa2_Tnone_XSE | 1096 | 1176 | 730 | 241 | 1138 / 702 | 80 | 0.39 | 1267 | 0.13 |
+| asia | long | ES | QQQ:c_dir|asia1805+QQQ:c_oi|asia1805 F7/med_hi+F7/med_lo | Emkt_S30_Tnone_XSE | 119 | 1631 | 524 | -111 | 1494 / 421 | 93 | 0.26 | 1459 | 0.03 |
+| london | long | YM | SPY:c_dir|lon0200+SPX:c_oi|lon0200 F7/chg_dn+F7/med_hi | Emkt_S30_Tnone_XSE | 114 | 2189 | 1179 | 147 | 1892 / 1007 | -55 | 0.38 | 2089 | 0.04 |
+| london | long | YM | SPY:c_dir|lon0200+SPX:c_oi|lon0200 F7/neg+F7/med_hi | Emkt_S30_Tnone_XSE | 114 | 2189 | 1179 | 147 | 1892 / 1007 | -55 | 0.38 | 2089 | 0.04 |
+| asia | long | ES | QQQ:g_dir|asia1805+QQQ:c_dir|asia1805 F7/med_hi+F7/med_hi | Emkt_Sa1_Tnone_XSE | 145 | 2285 | 1213 | 595 | 1773 / 789 | 175 | 0.27 | 1530 | 0.02 |
+
+## 8. EXACT-ENGINE JOINT (TP engine, JN05W2 base all layers ON, UW book injected via code/th_uwbooks/uw_inject.py; engine fills, $4.84 RT; reference = JN05W2 on the same months)
+| set | window | months | weeks | stack mean $/wk ref -> inj (d) | stack maxDD ref -> inj (d) | worst week ref -> inj (d) | UW1 alone $/wk (n trades) | other books d mean | UW1 idle share | corr UW1 vs KB/PE/SM/HM/MV/PB/OD or live tags |
+|--|--|--|--|--|--|--|--|--|--|--|
+| TL3_UW_INJ_ASIA | L3M | 202410-202610 | 11 | 16819 -> 16711 (-108) | 36371 -> 36371 (0) | -36371 -> -36371 (0) | -108 (5) | 0 | 0.60 | A7 -0.10 H7 0.24 K7 0.35 M7 0.13 O7 -0.04 P7 -0.06 U7 0.13 |
+| TL3_UW_INJ_ASIA | L6M | 202410-202610 | 25 | 23241 -> 23310 (69) | 36371 -> 36371 (0) | -36371 -> -36371 (0) | 3 (16) | 66 | 0.44 | A7 0.44 H7 0.19 K7 0.09 M7 -0.14 O7 -0.03 P7 -0.02 U7 0.06 |
+| TL3_UW_INJ_ASIA | HOLD | 202410-202610 | 51 | 17640 -> 17693 (54) | 63185 -> 62701 (-484) | -55145 -> -55145 (0) | -61 (33) | 115 | 0.52 | A7 0.15 H7 0.11 K7 0.21 M7 -0.09 O7 -0.22 P7 -0.00 U7 -0.15 |
+| TL3_UW_INJ_ASIA | PREUW | 202410-202610 | 40 | 11570 -> 11501 (-69) | 76186 -> 77650 (1464) | -52547 -> -52547 (0) | -3 (28) | -66 | 0.61 | A7 0.07 H7 0.03 K7 -0.09 M7 -0.21 O7 0.20 P7 -0.23 U7 0.08 |
+| TL3_UW_INJ_NDXB | L3M | 202410-202610 | 11 | 16819 -> 17518 (699) | 36371 -> 35817 (-554) | -36371 -> -35817 (554) | 699 (29) | 0 | 0.38 | A7 -0.54 H7 0.40 K7 -0.47 M7 -0.49 O7 -0.16 P7 0.19 U7 -0.13 |
+| TL3_UW_INJ_NDXB | L6M | 202410-202610 | 25 | 23241 -> 24097 (856) | 36371 -> 35817 (-554) | -36371 -> -35817 (554) | 856 (64) | 0 | 0.45 | A7 -0.05 H7 -0.01 K7 0.06 M7 -0.33 O7 -0.37 P7 0.48 U7 0.02 |
+| TL3_UW_INJ_NDXB | HOLD | 202410-202610 | 51 | 17640 -> 18491 (851) | 63185 -> 61697 (-1488) | -55145 -> -55145 (0) | 851 (129) | 0 | 0.43 | A7 -0.08 H7 0.04 K7 0.09 M7 -0.08 O7 -0.37 P7 0.23 U7 0.03 |
+| TL3_UW_INJ_NDXB | PREUW | 202410-202610 | 40 | 11570 -> 11359 (-211) | 76186 -> 80008 (3822) | -52547 -> -53443 (-896) | -207 (124) | -4 | 0.33 | A7 0.03 H7 -0.01 K7 0.17 M7 0.16 O7 -0.19 P7 -0.07 U7 0.33 |
+| TL3_UW_INJ_NYAM | L3M | 202410-202610 | 11 | 16819 -> 16907 (88) | 36371 -> 36371 (-0) | -36371 -> -36371 (0) | 88 (5) | 0 | 0.60 | A7 -0.71 H7 0.17 K7 0.35 M7 -0.63 O7 -0.56 P7 -0.18 U7 0.18 |
+| TL3_UW_INJ_NYAM | L6M | 202410-202610 | 25 | 23241 -> 23814 (573) | 36371 -> 36371 (0) | -36371 -> -36371 (0) | 537 (17) | 36 | 0.59 | A7 -0.09 H7 0.07 K7 0.17 M7 -0.16 O7 -0.23 P7 0.35 U7 0.29 |
+| TL3_UW_INJ_NYAM | HOLD | 202410-202610 | 51 | 17640 -> 17890 (250) | 63185 -> 64372 (1187) | -55145 -> -55648 (-503) | 204 (33) | 46 | 0.55 | A7 0.01 H7 0.17 K7 0.16 M7 -0.05 O7 -0.32 P7 0.25 U7 0.19 |
+| TL3_UW_INJ_NYAM | PREUW | 202410-202610 | 40 | 11570 -> 11562 (-7) | 76186 -> 76186 (0) | -52547 -> -52547 (0) | -53 (8) | 46 | 0.50 | A7 0.02 H7 0.11 K7 -0.17 M7 -0.11 O7 -0.14 P7 0.21 U7 0.08 |
+| TL3_UW_INJ_PRE | L3M | 202410-202610 | 11 | 16819 -> 17238 (418) | 36371 -> 35848 (-523) | -36371 -> -35848 (523) | 385 (8) | 34 | 0.50 | A7 -0.35 H7 0.02 K7 -0.17 M7 -0.38 O7 -0.28 P7 -0.11 U7 -0.13 |
+| TL3_UW_INJ_PRE | L6M | 202410-202610 | 25 | 23241 -> 23414 (174) | 36371 -> 35848 (-523) | -36371 -> -35848 (523) | 159 (11) | 15 | 0.45 | A7 -0.34 H7 -0.26 K7 -0.29 M7 -0.32 O7 -0.06 P7 -0.09 U7 -0.30 |
+| TL3_UW_INJ_PRE | HOLD | 202410-202610 | 51 | 17640 -> 17807 (167) | 63185 -> 63185 (0) | -55145 -> -52563 (2582) | -42 (30) | 209 | 0.40 | A7 -0.31 H7 0.07 K7 0.03 M7 0.01 O7 -0.14 P7 -0.08 U7 -0.21 |
+| TL3_UW_INJ_PRE | PREUW | 202410-202610 | 40 | 11570 -> 11901 (331) | 76186 -> 76580 (394) | -52547 -> -50920 (1628) | 388 (47) | -57 | 0.19 | A7 -0.20 H7 -0.18 K7 0.11 M7 0.24 O7 0.07 P7 -0.07 U7 0.01 |
 
 ## 4. Data honesty (lags; no-look-ahead proof, sample day per family)
 LAG (spot_1m QQQ 2026-10-14): row time - start_time: min 0 s, median 58 s, max 59 s (snapshot taken inside the minute); avail used = start+60 s (>= snapshot time by construction) + EXTRA_LAG 60 s
