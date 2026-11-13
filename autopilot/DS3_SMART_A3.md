@@ -1,6 +1,6 @@
 # DS3_SMART_A3 — T-SMART item A3: structure stops with equal-$ lots (W-SM3)
 
-Generated 2026-11-13 01:38Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
+Generated 2026-11-13 02:08Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
 
 **CAVEAT (every table):** the engine state cut fires in the engine but did NOT fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). Rows marked **S0 = state cut OFF = the live-realistic case** are read first and compared with SMA3_REF_S0 (JN05W2 with every state cut switched off, K7 flat45 kept); **S1** rows keep the state cut and compare with JN05W2.
 
@@ -16,12 +16,12 @@ Dead-cell lookup (loss|struct_stop_eq|<book>|<feat>, 32 specs): 0 hits; first-or
 | SMA3_FR154_K_S0 | 5 | SMA3_REF_S0 | (running) ||||||||||
 | SMA3_FR154_K_S1 | 5 | JN05W2 | (running) ||||||||||
 | SMA3_FR156_K_S0 | 4 | SMA3_REF_S0 | (running) ||||||||||
-| SMA3_KC2_ALL_S0 | 4 | SMA3_REF_S0 | (running) ||||||||||
+| SMA3_KC2_ALL_S0 | 5 | SMA3_REF_S0 | (running) ||||||||||
 | SMA3_KC2_U_S0 | 6 | SMA3_REF_S0 | 104% ($314k of $302k) | 0 of 19 | -14.3 | 1081 | - | - | - | - | - | - |
 | SMA3_KC2_U_S1 | 6 | JN05W2 | 109% ($346k of $316k) | 1 of 20 | 1.1 | 712 | - | - | - | - | - | - |
 | SMA3_KC4_U_S0 | 6 | SMA3_REF_S0 | 103% ($312k of $302k) | 0 of 19 | -6.4 | 379 | - | - | - | - | - | - |
-| SMA3_KU_S0 | 5 | SMA3_REF_S0 | (running) ||||||||||
-| SMA3_KU_S1 | 4 | JN05W2 | (running) ||||||||||
+| SMA3_KU_S0 | 6 | SMA3_REF_S0 | 103% ($310k of $302k) | 0 of 19 | -12.1 | 871 | - | - | - | - | - | - |
+| SMA3_KU_S1 | 5 | JN05W2 | (running) ||||||||||
 | SMA3_REF_S0 | 6 |  | (reference) ||||||||||
 
 cut % = stack maxDD vs the reference (positive = shallower); d mean = all-weeks mean difference ($/wk, carry week kept); WF = bi-weekly re-pick walk-forward (only with all 43 months).
@@ -70,6 +70,17 @@ cut % = stack maxDD vs the reference (positive = shallower); d mean = all-weeks 
 | U7 | 279 / 273 | 3.36 / 2.74 | +733 | 1.38 / 4.21 | 4.56 | 0.11 |
 | H7 | 176 / 175 | 1.85 / 1.86 | +7 | 1.88 / 1.84 | 0.00 | 1.07 |
 | M7 | 623 / 622 | 1.21 / 1.21 | +187 | 11.88 / 11.95 | 0.00 | 0.00 |
+| A7 | 345 / 346 | 1.00 / 1.00 | -159 | 4.94 / 4.75 | 0.00 | 0.00 |
+
+**SMA3_KU_S0** vs SMA3_REF_S0
+
+| book | trades cell / ref | mean lots cell / ref | d net $/wk | full stops/wk cell / ref | structure exits/wk | StateCut/wk |
+|---|---|---|---|---|---|---|
+| K7 | 1502 / 1509 | 1.19 / 1.15 | -43 | 0.46 / 0.50 | 28.01 | 0.00 |
+| P7 | 792 / 807 | 3.67 / 3.64 | -519 | 13.79 / 13.98 | 0.00 | 0.00 |
+| U7 | 278 / 273 | 3.50 / 2.74 | +1320 | 1.23 / 4.21 | 4.71 | 0.11 |
+| H7 | 175 / 175 | 1.86 / 1.86 | -39 | 1.88 / 1.84 | 0.00 | 1.07 |
+| M7 | 618 / 622 | 1.21 / 1.21 | +282 | 11.76 / 11.95 | 0.00 | 0.00 |
 | A7 | 345 / 346 | 1.00 / 1.00 | -159 | 4.94 / 4.75 | 0.00 | 0.00 |
 
 ## 2. acceptance_p7 (L6M only, fail on > 2 of 20) for complete L6M cells with L6M cut >= 5%

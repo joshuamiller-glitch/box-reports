@@ -1,0 +1,5 @@
+# PREREG T-TOOLS T2 part 2 (MenthorQ-style levels A native vs B mapped), written 2026-11-13 ~02:16Z
+Honest disclosure: a pilot of t2b_screen.py on JN05W2 (L6M-only data, NPERM=10, features N{d,h,m}) ran BEFORE this file; its output was not used to choose anything. The full 10 screens (JN05W2, LPB_BASE x Ah, Ad, Am, Blv, Buw) were launched at 02:15Z, i.e. about one minute before this file; code was frozen (sha below) before launch and not edited after.
+Scoring code sha256 (first 16 hex of cat p2_snap p3_run p4_feat t2b_screen t2b_wall): ddd4b69cdeef429d
+Cells: feature x thr {q10,q20,q30,q50,q70,q80,q90 of HOLD-window values, +0 if both signs} x dir {ge,le}, per use E (entry skip/press), K (cut hold), Q (clipped profit hold) x book x session {asia,london,rth,late(ALL)}.
+Select: recents=(L6M+HOLD)/2 $/wk; LEAD needs recents > family-null q95 (within-month permutation, 30 draws), L3M>0, both L6M halves>0; placebo = same features k days earlier (policy d,h only; m has none); trend-week clause numbers reported; no PASS claim. Wall uses W (target in front of wall) and S (stop behind wall): t2b_wall.py, same rule.

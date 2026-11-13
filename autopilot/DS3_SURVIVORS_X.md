@@ -1,5 +1,5 @@
 # DS3_SURVIVORS_X - flat-stop survivors (EC_FLAT{40,45,50}{K,U,A,M} on LPB_BASE; JN04RM_FLAT{40,45,50}K on the JN04RM base), exact, Shadow only, no PASS claim
-Updated 2026-11-13 01:50Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 29/43, EC_FLAT40K 25/43, EC_FLAT50K 24/43, EC_FLAT45U 12/43, EC_FLAT40U 0/43, EC_FLAT50U 0/43, EC_FLAT45A 12/43, EC_FLAT40A 0/43, EC_FLAT50A 0/43, EC_FLAT45M 12/43, EC_FLAT40M 0/43, EC_FLAT50M 0/43, JN04RM_FLAT45K 30/43, JN04RM_FLAT40K 30/43, JN04RM_FLAT50K 29/43
+Updated 2026-11-13 02:21Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 29/43, EC_FLAT40K 25/43, EC_FLAT50K 24/43, EC_FLAT45U 12/43, EC_FLAT40U 0/43, EC_FLAT50U 0/43, EC_FLAT45A 12/43, EC_FLAT40A 0/43, EC_FLAT50A 0/43, EC_FLAT45M 12/43, EC_FLAT40M 0/43, EC_FLAT50M 0/43, JN04RM_FLAT45K 30/43, JN04RM_FLAT40K 30/43, JN04RM_FLAT50K 30/43
 Fill model: flat-stop market exit at next-1-s mid -/+ 0.80 pt (live loss-cut is 1.19-1.20 adverse => savings overstated ~0.4 pt). Windows PRE/X/GAP/WF need all 43 months; sets missing months are labelled.
 
 ## 1. Trend-week clause (L6M weekly check, exact)
@@ -314,16 +314,16 @@ JN04RM_FLAT40K PRE: months missing (9 of 17), window not scored
 JN04RM_FLAT40K X' (stack, per week): full stops 10.1/wk $-17007; give-backs 3.8/wk (3.3 round-trips) realised $-3534, forgone vs target $10074; same-side losing runs max 8, p95 4, $-10580 lost on 3rd-and-later; no-new-evidence re-entries 4.3/wk $556; recoveries cut 2.3/wk $6125, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $2224/wk, losers avoided $2287/wk, net +682 $/wk; pnl $2229/wk.
 
 
-## JN04RM_FLAT50K (29/43 months)
+## JN04RM_FLAT50K (30/43 months)
 ### windows / WF / rule 2a
 ```
 JN04RM_FLAT50K
              cell window  mean_all  mean_ref_all  dmean_all     mean       dd    dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
-0  JN04RM_FLAT50K    L1M    4143.6         340.7     3802.8  10642.3  27513.3   51252.7  46.3 -6896.2    39.9   16574.2    1363.0    20.1   17538.5      24
-1  JN04RM_FLAT50K    L3M   12061.3       11956.7      104.6  14345.8  41324.0   77224.2  46.5 -2878.4    40.1  156796.4  155436.8    18.1   17224.1      24
-2  JN04RM_FLAT50K    L6M   17869.6       18696.8     -827.2  19198.5  41324.0   77224.2  46.5 -2296.3    40.1  131515.6  102383.9    24.2   21494.8      24
-3  JN04RM_FLAT50K   HOLD   12476.7       15236.3    -2759.6  13022.4  76827.5   78842.0   2.6 -3517.7    -9.1 -273687.4 -377467.2     8.8   16540.1      24
-4  JN04RM_FLAT50K     X'    1830.3        1333.6      496.7   2362.6  59334.0  122552.7  51.6  -190.0    45.8 -202998.7 -321242.1     2.1    2552.6      24
+0  JN04RM_FLAT50K    L1M    4143.6         340.7     3802.8  10642.3  27513.3   51252.7  46.3 -6896.2    39.9   16574.2    1363.0    20.1   17538.5      30
+1  JN04RM_FLAT50K    L3M   12061.3       11956.7      104.6  14345.8  41324.0   77224.2  46.5 -2878.4    40.1  156796.4  155436.8    18.1   17224.1      30
+2  JN04RM_FLAT50K    L6M   17869.6       18696.8     -827.2  19198.5  41324.0   77224.2  46.5 -2296.3    40.1  131515.6  102383.9    24.2   21494.8      30
+3  JN04RM_FLAT50K   HOLD   12476.7       15236.3    -2759.6  13022.4  76827.5   78842.0   2.6 -3517.7    -9.1 -273687.4 -377467.2     8.8   16540.1      30
+4  JN04RM_FLAT50K     X'    1830.3        1333.6      496.7   2362.6  59334.0  122552.7  51.6  -190.0    45.8 -202998.7 -321242.1     2.1    2552.6      30
 
 ```
 ### acceptance_p7
@@ -337,14 +337,14 @@ JN04RM_FLAT50K
 -- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+4790); all re-entry winners (any evidence) reference 13, set 14
 -- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
 
-SUMMARY JN04RM_FLAT50K: fails 4 of 16 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
-covered sessions 16 of 20
+SUMMARY JN04RM_FLAT50K: fails 4 of 18 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 18 of 20
 ACCEPT JN04RM_FLAT50K FAIL fails=4/20
 
 ```
 ### behavioural scorecard
 JN04RM_FLAT50K L6M (stack, per week): full stops 15.1/wk $-24034; give-backs 10.1/wk (9.9 round-trips) realised $-11415, forgone vs target $28364; same-side losing runs max 13, p95 6, $-43953 lost on 3rd-and-later; no-new-evidence re-entries 44.7/wk $2244; recoveries cut 14.8/wk $38795, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $3236/wk, losers avoided $2851/wk, net -622 $/wk; pnl $18909/wk.
 JN04RM_FLAT50K HOLD (stack, per week): full stops 14.1/wk $-22559; give-backs 8.7/wk (8.4 round-trips) realised $-9800, forgone vs target $24516; same-side losing runs max 13, p95 6, $-37246 lost on 3rd-and-later; no-new-evidence re-entries 35.6/wk $1377; recoveries cut 12.7/wk $33012, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $2758/wk, losers avoided $2873/wk, net +88 $/wk; pnl $12585/wk.
-JN04RM_FLAT50K PRE: months missing (15 of 17), window not scored
+JN04RM_FLAT50K PRE: months missing (9 of 17), window not scored
 JN04RM_FLAT50K X' (stack, per week): full stops 10.7/wk $-17827; give-backs 3.5/wk (3.0 round-trips) realised $-3581, forgone vs target $9766; same-side losing runs max 7, p95 4, $-10042 lost on 3rd-and-later; no-new-evidence re-entries 3.4/wk $741; recoveries cut 2.4/wk $6347, clipped fills 0.0/wk $0; vs JN04RM: winners skipped $1562/wk, losers avoided $1658/wk, net +295 $/wk; pnl $1842/wk.
 
