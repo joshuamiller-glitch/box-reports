@@ -1,5 +1,5 @@
 # DS3_SURVIVORS_X - flat-stop survivors (EC_FLAT{40,45,50}{K,U,A,M} on LPB_BASE; JN04RM_FLAT{40,45,50}K on the JN04RM base), exact, Shadow only, no PASS claim
-Updated 2026-11-13 17:57Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 43/43, EC_FLAT40K 43/43, EC_FLAT50K 43/43, EC_FLAT45U 28/43, EC_FLAT40U 12/43, EC_FLAT50U 12/43, EC_FLAT45A 28/43, EC_FLAT40A 12/43, EC_FLAT50A 12/43, EC_FLAT45M 28/43, EC_FLAT40M 12/43, EC_FLAT50M 12/43, JN04RM_FLAT45K 43/43, JN04RM_FLAT40K 43/43, JN04RM_FLAT50K 43/43
+Updated 2026-11-13 18:27Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 43/43, EC_FLAT40K 43/43, EC_FLAT50K 43/43, EC_FLAT45U 35/43, EC_FLAT40U 12/43, EC_FLAT50U 12/43, EC_FLAT45A 34/43, EC_FLAT40A 12/43, EC_FLAT50A 12/43, EC_FLAT45M 34/43, EC_FLAT40M 12/43, EC_FLAT50M 12/43, JN04RM_FLAT45K 43/43, JN04RM_FLAT40K 43/43, JN04RM_FLAT50K 43/43
 Fill model: flat-stop market exit at next-1-s mid -/+ 0.80 pt (live loss-cut is 1.19-1.20 adverse => savings overstated ~0.4 pt). Windows PRE/X/GAP/WF need all 43 months; sets missing months are labelled.
 
 ## 1. Trend-week clause (L6M weekly check, exact)
@@ -160,7 +160,7 @@ EC_FLAT50K PRE (stack, per week): full stops 10.2/wk $-19501; give-backs 5.3/wk 
 EC_FLAT50K X' (stack, per week): full stops 10.6/wk $-18834; give-backs 3.5/wk (3.0 round-trips) realised $-4884, forgone vs target $12784; same-side losing runs max 7, p95 4, $-12506 lost on 3rd-and-later; no-new-evidence re-entries 3.1/wk $694; recoveries cut 2.5/wk $9857, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $1591/wk, losers avoided $1706/wk, net -4 $/wk; pnl $1339/wk.
 
 
-## EC_FLAT45U (28/43 months)
+## EC_FLAT45U (35/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT45U
@@ -262,7 +262,7 @@ EC_FLAT50U PRE: months missing (17 of 17), window not scored
 EC_FLAT50U X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT45A (28/43 months)
+## EC_FLAT45A (34/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT45A
@@ -364,7 +364,7 @@ EC_FLAT50A PRE: months missing (17 of 17), window not scored
 EC_FLAT50A X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT45M (28/43 months)
+## EC_FLAT45M (34/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT45M
