@@ -208,3 +208,86 @@ TL2_KALL 202610  n 823->818  net 45347 -> 40116  delta -5231
 09:13:15 launch ('TL2_LONFL73', 202605, 'LPB') pid 229689
 09:15:20 end ('TL2_LONFL73', 202605, 'LPB') rc=0 125s
 09:15:35 ALL DONE
+#### Exact sets (one set per job, TP engine, engine = base + screen gate hook th_screens/scr_hooks.py; bases LPB_BASE and JN04RM)
+- TL2_EMF03 vs LPB_BASE: 6 of 43 months done.
+  months better/worse/equal vs the base (of 6 done): 5 / 1 / 0; sum +181919 $.
+  window L6M: stack maxDD 51253 -> 49504 (cut 3.4%), mean per week +6179 $ (18898 -> 25077), trades 4651 -> 4566; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
+  L6M contiguous 2-week blocks: set beat or equalled the base in 6 of 8.
+  scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
+- TL2_EMF07 vs LPB_BASE: 6 of 43 months done.
+  months better/worse/equal vs the base (of 6 done): 4 / 2 / 0; sum +60600 $.
+  window L6M: stack maxDD 51253 -> 45900 (cut 10.4%), mean per week +2152 $ (18898 -> 21051), trades 4651 -> 4611; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
+  L6M contiguous 2-week blocks: set beat or equalled the base in 6 of 8.
+  scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
+- TL2_LONFL73 vs LPB_BASE: 6 of 43 months done.
+  months better/worse/equal vs the base (of 6 done): 4 / 2 / 0; sum +118572 $.
+  window L6M: stack maxDD 51253 -> 51510 (cut -0.5%), mean per week +3740 $ (18898 -> 22638), trades 4651 -> 4151; weeks: set minus base in the base 20 worst weeks +nan $/wk, in its 20 best +nan $/wk.
+  L6M contiguous 2-week blocks: set beat or equalled the base in 5 of 8.
+  scorecard failed: ModuleNotFoundError("No module named 'scr_card'")
+- TL2_EMF03_RM vs JN04RM: 1 of 43 months done.
+  months better/worse/equal vs the base (of 1 done): 1 / 0 / 0; sum +37198 $.
+- TL2_EMF07_RM vs JN04RM: 1 of 43 months done.
+  months better/worse/equal vs the base (of 1 done): 1 / 0 / 0; sum +29180 $.
+- TL2_LONFL73_RM vs JN04RM: 0 of 43 months done.
+
+## AUTO: first-order screens
+## cells scored per group and LEAD count (LEAD = recents > within-month family-null q95, L3M>0, both L6M halves > 0)
+              scopes  LEAD  best_margin  med_margin
+set      grp                                       
+JN05W2   Ad      328     8        271.0      -339.0
+         Ah      328     4        102.0      -387.0
+         Am      328    14        830.0      -379.0
+         Am2     328    14        830.0      -379.0
+         Blv     328     6        150.0      -291.0
+         Buw     208     4        310.0      -186.0
+LPB_BASE Ad      336    34        747.0      -349.0
+         Ah      336    37        711.0      -321.0
+         Am      336    28        602.0      -291.0
+         Am2     336    28        602.0      -291.0
+         Blv     336     7        325.0      -302.0
+         Buw     232     0         -5.0      -266.0
+
+## A vs B per scope (best margin = recents minus null q95, $/wk first-order), count of scopes where group best margin > 0 (cells that beat the family null)
+Ah vs Blv: scopes 83, Ah>0 in 9, Blv>0 in 7, Ah better in 38
+Am vs Blv: scopes 83, Am>0 in 13, Blv>0 in 7, Am better in 32
+Ad vs Blv: scopes 83, Ad>0 in 14, Blv>0 in 7, Ad better in 38
+Ah vs Buw: scopes 55, Ah>0 in 9, Buw>0 in 4, Ah better in 28
+Ah vs Ad: scopes 83, Ah>0 in 9, Ad>0 in 14, Ah better in 38
+Am vs Ah: scopes 83, Am>0 in 13, Ah>0 in 9, Am better in 44
+
+## LEAD cells (all groups), sorted by recents
+     set grp use   act book  scope           feat dir     th  n_L6M     L1M    L3M    L6M   HOLD     MID   PREUW  recents  null_q95  plc_rank  tw_best5  tw_worst5  win_turned_losing
+LPB_BASE  Ad   E  skip   P7   asia     Nd_em_room  ge  522.3    102  5022.9 4763.3 4286.9 3010.6   334.4   879.7   3648.8    2981.0       1.0    -408.4    36686.5                0.0
+LPB_BASE  Ad   E  skip  ALL   asia     Nd_em_frac  le   -0.3    285  4455.8 4816.2 3426.8 2915.1   294.8 -1597.6   3170.9    2663.5       1.0      19.6    23185.5                1.0
+LPB_BASE  Ad   E press  ALL london  Nd_vol_wfront  ge   34.8    887  4890.3 3910.9 3697.6 2517.2  4340.9   636.6   3107.4    2491.8       1.0   19037.1     4592.1                0.0
+LPB_BASE Am2   E press  ALL london    Nm_vol_netg  le    0.0    841  3153.6 3039.8 3303.7 2729.3  4011.5  -660.6   3016.5    2414.7       1.0   20876.5   -11105.0                1.0
+LPB_BASE  Am   E press  ALL london    Nm_vol_netg  le    0.0    841  3153.6 3039.8 3303.7 2729.3  4011.5  -660.6   3016.5    2414.7       1.0   20876.5   -11105.0                1.0
+LPB_BASE  Am   E press  ALL london    Nm_vol_netg  le    0.1    979  2766.3 3356.2 3108.3 2896.1  5119.4  -187.6   3002.2    2414.7       1.0   24763.8   -16052.6                1.0
+LPB_BASE Am2   E press  ALL london    Nm_vol_netg  le    0.1    979  2766.3 3356.2 3108.3 2896.1  5119.4  -187.6   3002.2    2414.7       1.0   24763.8   -16052.6                1.0
+LPB_BASE  Ah   K  hold  ALL london Nh_vol_wbehind  ge  198.6    252   136.7 3182.2 2541.8 3360.2  2537.0   261.9   2951.0    2630.7       1.0   28566.2    -7573.5                0.0
+LPB_BASE Am2   E press  ALL london    Nm_vol_netg  le    0.2   1137  2815.9 3868.2 3217.3 2680.1  4391.7  -195.4   2948.7    2414.7       1.0   35617.2    -9206.8                2.0
+LPB_BASE  Am   E press  ALL london    Nm_vol_netg  le    0.2   1137  2815.9 3868.2 3217.3 2680.1  4391.7  -195.4   2948.7    2414.7       1.0   35617.2    -9206.8                2.0
+LPB_BASE  Ad   E press  ALL london  Nd_vol_wfront  ge   71.0    783  3291.3 3200.1 3077.6 2610.9  5205.3   899.5   2844.2    2491.8       1.0   23392.5    -2726.6                1.0
+LPB_BASE  Ad   E press  ALL london    Nd_vol_netg  le    0.0    855  3800.1 3155.1 3283.7 2392.9  3301.8  -486.0   2838.3    2491.8       1.0   23405.1     -193.1                0.0
+LPB_BASE  Ad   E press  ALL london    Nd_vol_netg  le    0.1   1168  1790.0 3865.4 3023.7 2624.1  4702.2   -87.3   2823.9    2491.8       1.0   30107.4    -6178.8                2.0
+LPB_BASE  Ah   E press  ALL london    Nh_vol_netg  le    0.1   1142  2623.2 3777.1 2995.8 2572.2  4714.8  -112.2   2784.0    2434.3       1.0   34820.0    -9352.6                2.0
+LPB_BASE  Ah   E press  ALL london    Nh_vol_netg  le    0.0    842  2917.8 2872.6 2993.9 2542.0  3640.6  -404.3   2767.9    2434.3       1.0   21463.1   -12000.4                1.0
+LPB_BASE Blv   E press  ALL london   NB_NDX_oi_mg  ge -913.0   1381  -612.1 3237.9 2771.0 2738.1  5669.6   429.1   2754.6    2479.8       1.0   54220.2   -23318.4                3.0
+LPB_BASE  Ad   E press  ALL london      Nd_iv_atm  le    0.2   1047  2783.6 3348.7 2853.1 2597.9  4651.1  -212.9   2725.5    2491.8       1.0   24627.4    -6617.9                2.0
+LPB_BASE  Ah   E press  ALL london  Nh_vol_wfront  ge   57.9    942  5294.2 4049.5 3012.9 2418.9  3618.4    53.1   2715.9    2434.3       1.0   21346.2    -6500.2                1.0
+LPB_BASE  Am   E press  ALL london  Nm_vol_wfront  ge   57.9   1071  5518.6 4687.7 2772.7 2652.2  4213.3  -565.2   2712.4    2414.7       1.0   25318.2   -13090.2                1.0
+LPB_BASE Am2   E press  ALL london  Nm_vol_wfront  ge   57.9   1071  5518.6 4687.7 2772.7 2652.2  4213.3  -565.2   2712.4    2414.7       1.0   25318.2   -13090.2                1.0
+LPB_BASE Am2   E press  ALL london  Nm_vol_wfront  ge   87.7    921  5311.0 4819.6 2901.3 2486.8  3652.4  -434.4   2694.1    2414.7       1.0   20204.0    -5724.3                1.0
+LPB_BASE  Am   E press  ALL london  Nm_vol_wfront  ge   87.7    921  5311.0 4819.6 2901.3 2486.8  3652.4  -434.4   2694.1    2414.7       1.0   20204.0    -5724.3                1.0
+LPB_BASE  Ah   E press  ALL london  Nh_vol_wfront  ge   27.5   1051  4592.1 3762.5 3008.8 2294.6  3778.3   323.4   2651.7    2434.3       1.0   21134.6      687.4                1.0
+LPB_BASE Am2   E press  ALL london Nm_vol_abehind  le  130.2    675  1563.3 2664.6 2822.2 2455.5  3083.8   102.5   2638.8    2414.7       1.0   32032.4   -16251.4                0.0
+LPB_BASE  Am   E press  ALL london Nm_vol_abehind  le  130.2    675  1563.3 2664.6 2822.2 2455.5  3083.8   102.5   2638.8    2414.7       1.0   32032.4   -16251.4                0.0
+  JN05W2  Am   E  skip  ALL london    Nm_vol_fl_u  ge   72.9    576  -935.3 2578.4 3695.1 1565.1 -5592.8 -1067.0   2630.1    1799.9       1.0   12913.0    30733.0                1.0
+  JN05W2 Am2   E  skip  ALL london    Nm_vol_fl_u  ge   72.9    576  -935.3 2578.4 3695.1 1565.1 -5592.8 -1067.0   2630.1    1799.9       1.0   12913.0    30733.0                1.0
+LPB_BASE  Ad   E press  ALL london      Nd_iv_atm  le    0.2    934  2783.6 3348.7 2790.0 2433.2  4066.7  -243.3   2611.6    2491.8       1.0   21868.8    -6617.9                2.0
+LPB_BASE  Ah   E press  ALL london    Nh_vol_netg  le    0.1    978  2360.6 3001.6 2530.0 2680.8  5142.9  -546.9   2605.4    2434.3       1.0   25123.7   -17300.8                2.0
+LPB_BASE Blv   E press  ALL london   NB_SPX_oi_cw  ge -487.3   1026 -2280.5 3974.9 2853.0 2351.1  3585.5  -317.3   2602.1    2479.8       1.0   49646.3    -5382.9                2.0
+LPB_BASE  Ad   E press  ALL london  Nd_vol_afront  ge   20.5    972  4435.2 3360.6 2893.0 2307.5  4771.4   253.6   2600.3    2491.8       1.0   17310.9    -2270.7                1.0
+LPB_BASE  Am   E press  ALL london    Nm_vol_net0  le    0.1   1020  2498.3 3664.9 2728.1 2460.1  4043.7  -249.6   2594.1    2414.7       1.0   24778.4   -15065.3                2.0
+LPB_BASE Am2   E press  ALL london    Nm_vol_net0  le    0.1   1020  2498.3 3664.9 2728.1 2460.1  4043.7  -249.6   2594.1    2414.7       1.0   24778.4   -15065.3                2.0
+LPB_BASE  Am   E press  ALL london     Nm_oi_net0  le    0.1   1026  3476.7 3584.8 2758.8 2425.0  4045.5  -314.4   2591.9    2414.7       1.0   23383.0    -3210.8                2.0
