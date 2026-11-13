@@ -1,5 +1,5 @@
 # DS3_SURVIVORS_X - flat-stop survivors (EC_FLAT{40,45,50}{K,U,A,M} on LPB_BASE; JN04RM_FLAT{40,45,50}K on the JN04RM base), exact, Shadow only, no PASS claim
-Updated 2026-11-13 18:57Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 43/43, EC_FLAT40K 43/43, EC_FLAT50K 43/43, EC_FLAT45U 42/43, EC_FLAT40U 12/43, EC_FLAT50U 12/43, EC_FLAT45A 41/43, EC_FLAT40A 12/43, EC_FLAT50A 12/43, EC_FLAT45M 41/43, EC_FLAT40M 12/43, EC_FLAT50M 12/43, JN04RM_FLAT45K 43/43, JN04RM_FLAT40K 43/43, JN04RM_FLAT50K 43/43
+Updated 2026-11-13 19:29Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 43/43, EC_FLAT40K 43/43, EC_FLAT50K 43/43, EC_FLAT45U 43/43, EC_FLAT40U 15/43, EC_FLAT50U 15/43, EC_FLAT45A 43/43, EC_FLAT40A 15/43, EC_FLAT50A 15/43, EC_FLAT45M 43/43, EC_FLAT40M 14/43, EC_FLAT50M 14/43, JN04RM_FLAT45K 43/43, JN04RM_FLAT40K 43/43, JN04RM_FLAT50K 43/43
 Fill model: flat-stop market exit at next-1-s mid -/+ 0.80 pt (live loss-cut is 1.19-1.20 adverse => savings overstated ~0.4 pt). Windows PRE/X/GAP/WF need all 43 months; sets missing months are labelled.
 
 ## 1. Trend-week clause (L6M weekly check, exact)
@@ -160,15 +160,17 @@ EC_FLAT50K PRE (stack, per week): full stops 10.2/wk $-19501; give-backs 5.3/wk 
 EC_FLAT50K X' (stack, per week): full stops 10.6/wk $-18834; give-backs 3.5/wk (3.0 round-trips) realised $-4884, forgone vs target $12784; same-side losing runs max 7, p95 4, $-12506 lost on 3rd-and-later; no-new-evidence re-entries 3.1/wk $694; recoveries cut 2.5/wk $9857, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $1591/wk, losers avoided $1706/wk, net -4 $/wk; pnl $1339/wk.
 
 
-## EC_FLAT45U (42/43 months)
+## EC_FLAT45U (43/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT45U
-         cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
-0  EC_FLAT45U    L1M    2981.9         340.7     2641.1 -14100.2  47278.7  51252.7   7.8  2079.7     7.0   11927.5    1363.0   -15.5  -16179.8      24
-1  EC_FLAT45U    L3M   11463.2       11956.7     -493.5  14345.0  87057.2  77224.2 -12.7   677.4   -13.7  149021.5  155436.8     8.6   13667.5      24
-2  EC_FLAT45U    L6M   17977.2       18696.8     -719.6  19621.0  87057.2  77224.2 -12.7  -166.6   -13.7   78742.5  102383.9    11.7   19787.7      24
-3  EC_FLAT45U   HOLD   15321.2       15236.3       84.8  14850.4  87057.2  78842.0 -10.4   451.2   -11.4 -387657.6 -377467.2     8.9   14399.3      24
+         cell window  mean_all  mean_ref_all  dmean_all     mean        dd    dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  wf2w_beat_pct  wf2w_cut  wf2w_mean  months
+0  EC_FLAT45U    L1M    2981.9         340.7     2641.1 -14100.2   47278.7   51252.7   7.8  2079.7     7.0   11927.5    1363.0   -15.5  -16179.8            3.8     -10.7     -258.7      43
+1  EC_FLAT45U    L3M   11463.2       11956.7     -493.5  14345.0   87057.2   77224.2 -12.7   677.4   -13.7  149021.5  155436.8     8.6   13667.5            3.8     -10.7     -258.7      43
+2  EC_FLAT45U    L6M   17977.2       18696.8     -719.6  19621.0   87057.2   77224.2 -12.7  -166.6   -13.7   78742.5  102383.9    11.7   19787.7            3.8     -10.7     -258.7      43
+3  EC_FLAT45U   HOLD   15321.2       15236.3       84.8  14850.4   87057.2   78842.0 -10.4   451.2   -11.4 -387657.6 -377467.2     8.9   14399.3            3.8     -10.7     -258.7      43
+4  EC_FLAT45U    PRE   10820.5       11685.4     -864.9   9913.8  103634.1   99479.4  -4.2  -634.6    -5.1 -540515.7 -529227.7     5.0   10548.4            3.8     -10.7     -258.7      43
+5  EC_FLAT45U     X'    1554.8        1333.6      221.2   2946.2  121956.0  122552.7   0.5   393.6    -0.4 -330038.4 -321242.1     1.3    2552.6            3.8     -10.7     -258.7      43
 
 ```
 ### acceptance_p7
@@ -182,19 +184,19 @@ EC_FLAT45U
 -- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+8402); all re-entry winners (any evidence) reference 13, set 13
 -- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
 
-SUMMARY EC_FLAT45U: fails 3 of 16 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
-covered sessions 16 of 20
+SUMMARY EC_FLAT45U: fails 3 of 20 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 20 of 20
 ACCEPT EC_FLAT45U FAIL fails=3/20
 
 ```
 ### behavioural scorecard
 EC_FLAT45U L6M (stack, per week): full stops 21.4/wk $-29899; give-backs 9.1/wk (9.0 round-trips) realised $-13940, forgone vs target $35415; same-side losing runs max 12, p95 6, $-51327 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $-547; recoveries cut 13.6/wk $46652, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $244/wk, losers avoided $456/wk, net -761 $/wk; pnl $19022/wk.
 EC_FLAT45U HOLD (stack, per week): full stops 20.0/wk $-28211; give-backs 8.0/wk (7.8 round-trips) realised $-12002, forgone vs target $30516; same-side losing runs max 12, p95 6, $-43496 lost on 3rd-and-later; no-new-evidence re-entries 30.1/wk $608; recoveries cut 12.2/wk $41577, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $308/wk, losers avoided $489/wk, net +87 $/wk; pnl $15439/wk.
-EC_FLAT45U PRE: months missing (17 of 17), window not scored
-EC_FLAT45U X': months missing (2 of 10), window not scored
+EC_FLAT45U PRE (stack, per week): full stops 14.7/wk $-21261; give-backs 5.2/wk (4.8 round-trips) realised $-7491, forgone vs target $19398; same-side losing runs max 11, p95 4, $-22496 lost on 3rd-and-later; no-new-evidence re-entries 12.6/wk $-233; recoveries cut 6.6/wk $22097, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $471/wk, losers avoided $327/wk, net -873 $/wk; pnl $11009/wk.
+EC_FLAT45U X' (stack, per week): full stops 15.8/wk $-22765; give-backs 3.6/wk (3.1 round-trips) realised $-5129, forgone vs target $13002; same-side losing runs max 7, p95 4, $-12264 lost on 3rd-and-later; no-new-evidence re-entries 2.8/wk $786; recoveries cut 2.5/wk $9968, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $19/wk, net +223 $/wk; pnl $1565/wk.
 
 
-## EC_FLAT40U (12/43 months)
+## EC_FLAT40U (15/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40U
@@ -228,7 +230,7 @@ EC_FLAT40U PRE: months missing (17 of 17), window not scored
 EC_FLAT40U X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT50U (12/43 months)
+## EC_FLAT50U (15/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50U
@@ -262,15 +264,17 @@ EC_FLAT50U PRE: months missing (17 of 17), window not scored
 EC_FLAT50U X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT45A (41/43 months)
+## EC_FLAT45A (43/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT45A
-         cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
-0  EC_FLAT45A    L1M    9401.5         340.7     9060.8 -13119.9  42352.9  51252.7  17.4  3059.9    13.7   37606.0    1363.0   -16.1  -16179.8      24
-1  EC_FLAT45A    L3M   14474.4       11956.7     2517.7   9266.8  81646.7  77224.2  -5.7   472.2   -10.4  188166.7  155436.8     5.9    8794.5      24
-2  EC_FLAT45A    L6M   19034.5       18696.8      337.6  16717.2  81646.7  77224.2  -5.7  -731.4   -10.4   96233.8  102383.9    10.6   17448.6      24
-3  EC_FLAT45A   HOLD   15173.8       15236.3      -62.6  13962.2  81646.7  78842.0  -3.6  -594.4    -8.1 -357741.6 -377467.2     8.9   14556.6      24
+         cell window  mean_all  mean_ref_all  dmean_all     mean        dd    dd_ref   cut   dmean  eq_cut       w20   w20_ref  calmar  mean_ref  wf2w_beat_pct  wf2w_cut  wf2w_mean  months
+0  EC_FLAT45A    L1M    9401.5         340.7     9060.8 -13119.9   42352.9   51252.7  17.4  3059.9    13.7   37606.0    1363.0   -16.1  -16179.8           19.0      -3.7      -25.0      43
+1  EC_FLAT45A    L3M   14474.4       11956.7     2517.7   9266.8   81646.7   77224.2  -5.7   472.2   -10.4  188166.7  155436.8     5.9    8794.5           19.0      -3.7      -25.0      43
+2  EC_FLAT45A    L6M   19034.5       18696.8      337.6  16717.2   81646.7   77224.2  -5.7  -731.4   -10.4   96233.8  102383.9    10.6   17448.6           19.0      -3.7      -25.0      43
+3  EC_FLAT45A   HOLD   15173.8       15236.3      -62.6  13962.2   81646.7   78842.0  -3.6  -594.4    -8.1 -357741.6 -377467.2     8.9   14556.6           19.0      -3.7      -25.0      43
+4  EC_FLAT45A    PRE   11533.6       11685.4     -151.8  11893.9  100285.4   99479.4  -0.8  -312.8    -5.2 -507733.4 -529227.7     6.2   12206.7           19.0      -3.7      -25.0      43
+5  EC_FLAT45A     X'    1671.0        1333.6      337.4   2469.5  117978.4  122552.7   3.7   -83.2    -0.5 -304427.5 -321242.1     1.1    2552.6           19.0      -3.7      -25.0      43
 
 ```
 ### acceptance_p7
@@ -284,19 +288,19 @@ EC_FLAT45A
 -- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+8402); all re-entry winners (any evidence) reference 13, set 12
 -- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
 
-SUMMARY EC_FLAT45A: fails 3 of 16 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
-covered sessions 16 of 20
+SUMMARY EC_FLAT45A: fails 3 of 20 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 20 of 20
 ACCEPT EC_FLAT45A FAIL fails=3/20
 
 ```
 ### behavioural scorecard
 EC_FLAT45A L6M (stack, per week): full stops 20.8/wk $-36120; give-backs 9.0/wk (8.9 round-trips) realised $-14037, forgone vs target $35198; same-side losing runs max 12, p95 6, $-51067 lost on 3rd-and-later; no-new-evidence re-entries 37.2/wk $199; recoveries cut 13.5/wk $46419, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $2488/wk, losers avoided $1171/wk, net +357 $/wk; pnl $20141/wk.
 EC_FLAT45A HOLD (stack, per week): full stops 20.0/wk $-34956; give-backs 7.9/wk (7.7 round-trips) realised $-12281, forgone vs target $30706; same-side losing runs max 12, p95 6, $-43257 lost on 3rd-and-later; no-new-evidence re-entries 29.8/wk $1093; recoveries cut 12.1/wk $41257, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $2252/wk, losers avoided $1372/wk, net -64 $/wk; pnl $15287/wk.
-EC_FLAT45A PRE: months missing (17 of 17), window not scored
-EC_FLAT45A X': months missing (2 of 10), window not scored
+EC_FLAT45A PRE (stack, per week): full stops 15.8/wk $-28133; give-backs 5.2/wk (4.8 round-trips) realised $-7763, forgone vs target $19632; same-side losing runs max 11, p95 4, $-22371 lost on 3rd-and-later; no-new-evidence re-entries 12.6/wk $-180; recoveries cut 6.6/wk $22120, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $455/wk, losers avoided $608/wk, net -147 $/wk; pnl $11735/wk.
+EC_FLAT45A X' (stack, per week): full stops 16.4/wk $-27145; give-backs 3.6/wk (3.0 round-trips) realised $-5024, forgone vs target $12925; same-side losing runs max 7, p95 4, $-12476 lost on 3rd-and-later; no-new-evidence re-entries 2.7/wk $540; recoveries cut 2.5/wk $9877, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $274/wk, losers avoided $249/wk, net +340 $/wk; pnl $1682/wk.
 
 
-## EC_FLAT40A (12/43 months)
+## EC_FLAT40A (15/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40A
@@ -330,7 +334,7 @@ EC_FLAT40A PRE: months missing (17 of 17), window not scored
 EC_FLAT40A X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT50A (12/43 months)
+## EC_FLAT50A (15/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50A
@@ -364,15 +368,17 @@ EC_FLAT50A PRE: months missing (17 of 17), window not scored
 EC_FLAT50A X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT45M (41/43 months)
+## EC_FLAT45M (43/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT45M
-         cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref  cut  dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
-0  EC_FLAT45M    L1M    1129.7         340.7      789.0  18024.9  49555.7  51252.7  3.3  486.3     2.9    4519.0    1363.0    18.9   17538.5      24
-1  EC_FLAT45M    L3M   12109.7       11956.7      153.0  13976.4  79524.9  77224.2 -3.0  308.9    -3.4  157426.0  155436.8     9.1   13667.5      24
-2  EC_FLAT45M    L6M   18466.6       18696.8     -230.3  17279.9  79524.9  77224.2 -3.0  -73.4    -3.4   96840.4  102383.9    11.3   17353.3      24
-3  EC_FLAT45M   HOLD   14906.0       15236.3     -330.3  14254.5  79524.9  78842.0 -0.9 -255.4    -1.3 -380890.5 -377467.2     9.3   14509.9      24
+         cell window  mean_all  mean_ref_all  dmean_all     mean        dd    dd_ref  cut  dmean  eq_cut       w20   w20_ref  calmar  mean_ref  wf2w_beat_pct  wf2w_cut  wf2w_mean  months
+0  EC_FLAT45M    L1M    1129.7         340.7      789.0  18024.9   49555.7   51252.7  3.3  486.3     2.9    4519.0    1363.0    18.9   17538.5           21.5      -2.1     -124.1      43
+1  EC_FLAT45M    L3M   12109.7       11956.7      153.0  13976.4   79524.9   77224.2 -3.0  308.9    -3.4  157426.0  155436.8     9.1   13667.5           21.5      -2.1     -124.1      43
+2  EC_FLAT45M    L6M   18466.6       18696.8     -230.3  17279.9   79524.9   77224.2 -3.0  -73.4    -3.4   96840.4  102383.9    11.3   17353.3           21.5      -2.1     -124.1      43
+3  EC_FLAT45M   HOLD   14906.0       15236.3     -330.3  14254.5   79524.9   78842.0 -0.9 -255.4    -1.3 -380890.5 -377467.2     9.3   14509.9           21.5      -2.1     -124.1      43
+4  EC_FLAT45M    PRE   11883.9       11685.4      198.4  12051.8  101575.7   99479.4 -2.1  140.6    -2.5 -522900.7 -529227.7     6.2   11911.2           21.5      -2.1     -124.1      43
+5  EC_FLAT45M     X'    1129.8        1333.6     -203.8   1919.6  131977.8  122552.7 -7.7  -48.9    -8.1 -333815.2 -321242.1     0.8    1968.6           21.5      -2.1     -124.1      43
 
 ```
 ### acceptance_p7
@@ -386,19 +392,19 @@ EC_FLAT45M
 -- the 30 best L6M P7 sessions (reference ranking): evidence-backed re-entry winners kept: reference 1 ($+8402), set 1 ($+8402); all re-entry winners (any evidence) reference 13, set 13
 -- frozen live week 11-01..05 (53 live P7 trades, not re-simulated by any set): max run 3, p95 2.5, mean 1.40, 3rd+ losers 1 ($-2719), losing 3rd+ no-evidence 1; re-entry winners after a same-side loser 10 ($+47812), of which with new evidence 4 ($+15522)
 
-SUMMARY EC_FLAT45M: fails 3 of 16 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
-covered sessions 16 of 20
+SUMMARY EC_FLAT45M: fails 3 of 20 sessions (rule: PASS needs <= 2); winners kept on the 5 best sessions ['0->0', '0->0', '0->0', '0->0', '0->0']
+covered sessions 20 of 20
 ACCEPT EC_FLAT45M FAIL fails=3/20
 
 ```
 ### behavioural scorecard
 EC_FLAT45M L6M (stack, per week): full stops 22.9/wk $-37793; give-backs 9.1/wk (9.0 round-trips) realised $-14032, forgone vs target $35497; same-side losing runs max 12, p95 6, $-51247 lost on 3rd-and-later; no-new-evidence re-entries 37.4/wk $-320; recoveries cut 13.3/wk $45975, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $244/wk, losers avoided $58/wk, net -244 $/wk; pnl $19540/wk.
 EC_FLAT45M HOLD (stack, per week): full stops 21.5/wk $-35980; give-backs 8.1/wk (7.9 round-trips) realised $-12222, forgone vs target $30890; same-side losing runs max 12, p95 6, $-43670 lost on 3rd-and-later; no-new-evidence re-entries 30.2/wk $730; recoveries cut 12.0/wk $41170, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $237/wk, losers avoided $67/wk, net -342 $/wk; pnl $15010/wk.
-EC_FLAT45M PRE: months missing (17 of 17), window not scored
-EC_FLAT45M X': months missing (2 of 10), window not scored
+EC_FLAT45M PRE (stack, per week): full stops 15.0/wk $-26265; give-backs 5.1/wk (4.7 round-trips) realised $-7442, forgone vs target $19157; same-side losing runs max 11, p95 4, $-22414 lost on 3rd-and-later; no-new-evidence re-entries 12.9/wk $-185; recoveries cut 6.4/wk $21408, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $407/wk, losers avoided $378/wk, net +209 $/wk; pnl $12091/wk.
+EC_FLAT45M X' (stack, per week): full stops 14.5/wk $-23978; give-backs 3.6/wk (3.1 round-trips) realised $-4917, forgone vs target $12899; same-side losing runs max 7, p95 4, $-12585 lost on 3rd-and-later; no-new-evidence re-entries 3.1/wk $576; recoveries cut 2.1/wk $9054, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $658/wk, losers avoided $528/wk, net -205 $/wk; pnl $1137/wk.
 
 
-## EC_FLAT40M (12/43 months)
+## EC_FLAT40M (14/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40M
@@ -432,7 +438,7 @@ EC_FLAT40M PRE: months missing (17 of 17), window not scored
 EC_FLAT40M X': months missing (10 of 10), window not scored
 
 
-## EC_FLAT50M (12/43 months)
+## EC_FLAT50M (14/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50M
