@@ -1,4 +1,4 @@
-# DS3_TOOLS_T1_P3 — T1 MBO standing program (W-TL1b). Page 3, rebuilt 2026-11-13T03:18Z by code/th_tools/t1_p3_driver.sh every 4 h. Research only, Shadow, no PASS claim.
+# DS3_TOOLS_T1_P3 — T1 MBO standing program (W-TL1b). Page 3, rebuilt 2026-11-13T05:11Z by code/th_tools/t1_p3_driver.sh every 4 h. Research only, Shadow, no PASS claim.
 
 ## 0. Status plain sentence
 H5 (iceberg pattern), H6 (queue / passive fill with the real touch and print-through), H7 (learned 5-60 s signed move, distilled to plain conditions, timing only) and H8 (two-event combos) are tested on L3M (78 days, JN05W2 trade list, NOCUT base repeated). See the tables: a flag/condition is called only if it clears placebo + day-block t + repeat across bases; otherwise NULL. Nothing is recommended for live. Data fact the reader needs: NQ.v.0 books in 2026 are THIN: median spread at the signal second 4 ticks (1 point), median queue at the touch 1 lot (orders at touch 1) — verified by an independent dict replay of the raw records (kernel = replay at 9/9 checked seconds). So 'queue position' is mostly a spread question, not a queue question.
@@ -299,6 +299,15 @@ Family: 16 cells, |t|>=2: 3 (chance ~0.7).
 
 queue at own touch (lots) percentiles 10/50/90/99: [0.0, 1.0, 2.0, 5.0] ; orders at touch: [0.0, 1.0, 2.0, 4.0] ; share of signals with queue ahead <= 2 lots: 90%. With one order typically ahead, queue position is binary (that order cancels or trades), so a per-order cancel-ahead model is first-order only for the 2% of signals with >=5 lots ahead.
 
+
+# FROZEN HOLDOUT: aged-wall rule on L3M_PRE (/mnt/l2/l2vast/_tools/t1/l3m_pre_v2 .. ; n=2120 trades, 79 days, flagged 45 on 28 days)
+
+- net_r: flagged minus unflagged +276.209, day-block t +2.04, halves ['+287.996', '+264.811'], permutation p 0.072
+- tgt_r: flagged minus unflagged +0.130, day-block t +1.99, halves ['+0.126', '+0.140'], permutation p 0.096
+- raw net $/lot flagged +368 vs rest +82; target rate flagged 0.58 vs rest 0.44; flagged trades/week 2.8
+
+PRE-REGISTERED CRITERION (d_net>0 AND t>=2 AND d_target>0 AND both halves positive, n>=15): MET.
+VERDICT IN PLAIN WORDS: the lead replicated out of sample.
 
 ## Live path and cost quote for the aged-wall lead (quote only; nothing subscribed; prices from databento.com/pricing and its blog, fetched 2026-11-13, need confirmation with Databento sales)
 The feature needs, per second at the signal, the age and distance of the largest resting order per side = order-ID (MBO / L3) state, kept by a Python sidecar and written to a file/socket D7 reads (feature names: opp_wall_dist, opp_wall_age_s, opp_wall_size; update 1 Hz, state maintained event by event). NT8 OnMarketDepth is price-level, so it cannot supply order age.
