@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F1 — T-NEXT-FEATURES items 1 (stack-level evidence) and 6 (after a halt/lock), W-F1
 
-Generated 2026-11-13 16:34 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
+Generated 2026-11-13 17:05 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
 
 Hook code/th_nextf/nf_hooks.py (outermost of the hooklist). **sev**: N same-side losing closed trades by ANY book in the ET six-session, no new session extreme in the trade direction beyond the extreme at the last failure exit (completed 1-min bars) -> skip (S) or half (H) for every book on that side; suffix N = scorecard convention (opposite-side trades do not end the run). **ah**: previous 18:00-ET day ended day-halted by the loss cap (L), give-back lock (K) or either (E) -> first signal dropped (S) or first sized entry halved (H).
 

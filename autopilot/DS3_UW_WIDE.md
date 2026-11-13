@@ -1,12 +1,12 @@
-# DS3_UW_WIDE - Unusual Whales WIDE program (W-UW2). Rebuilt 2026-11-13T15:06:17Z by code/th_uw/uw_page.py (every 3 h). Research only, shadow, NO PASS claim.
+# DS3_UW_WIDE - Unusual Whales WIDE program (W-UW2). Rebuilt 2026-11-13T17:15:35Z by code/th_uw/uw_page.py (every 3 h). Research only, shadow, NO PASS claim.
 Rule: best candidate per use is always named with its honest strength; "null q95" = max over all cells of the group when the feature matrix is permuted within month (30-40 draws), so recents below it is chance-level. Windows: L1M L3M L6M HOLD PREUW (PRE clipped to the 2024-10-01 UW start); X' has NO UW data (history starts 2024-10); first-order $/wk, history unmodified, fees in net_fee. Screens are in-sample on thresholds (HOLD quantiles). Gain sign: E skip = -pnl of flagged entries, press = +0.5x pnl (size x1.5), K/Q hold = hold outcome minus actual at the cut/clip.
 
 ## 1. Status (what finished / running / died)
 - screen (first read, features A regime, B levels, C Tide, D charm/vanna; RTH) and screen2 (WIDE: 1/5/15/60-min deltas, 10:00/10:30 regime, pre-market/prior-close LAST priors, Tide extremes/divergence; scopes rth/late/asia/london): FINISHED for JN05W2, JN05W2J, LPB_BASE (screen2 finished ~02:00Z 11-13; nobody read it until 14:15Z: lead watcher bug).
-- pull IV (volatility stats SPX/NDX/QQQ/SPY): 2446 files under /mnt/l2/l2vast/uw (pull finished; features from them NOT yet screened)
+- pull IV (volatility stats SPX/NDX/QQQ/SPY): 3218 files under /mnt/l2/l2vast/uw (pull finished; features from them NOT yet screened)
 - pull dark pool price levels (QQQ SPY + 8 NQ weights, 260 d): 2600 files under /mnt/l2/l2vast/uw (pull finished; features from them NOT yet screened)
 - identity gate: TL3_UW_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL; TL3J_UW_ID 202610: 658 trades net 23596.16 vs JN05W2J 658 net 23596.16 -> IDENTICAL
-- exact sets (TP engine, one set per job, tag UW): TL3J_UW_ID: 1 months; TL3J_UW_KLDN_HOLD: 4 months; TL3J_UW_NDXCA_SK: 0 months; TL3J_UW_SPXVDIR_PR: 6 months; TL3_UW_ID: 1 months; TL3_UW_KLDN_HOLD: 3 months; TL3_UW_NDXCA_SK: 0 months; TL3_UW_NDXCA_SKP7: 4 months; TL3_UW_QQQGD15_PR: 6 months; TL3_UW_QQQGD15_SK: 6 months; TL3_UW_TDNV_PR: 6 months
+- exact sets (TP engine, one set per job, tag UW): TL3J_UW_ID: 1 months; TL3J_UW_KLDN_HOLD: 6 months; TL3J_UW_NDXCA_SK: 6 months; TL3J_UW_SPXVDIR_PR: 10 months; TL3_UW_ID: 1 months; TL3_UW_KLDN_HOLD: 6 months; TL3_UW_NDXCA_SK: 6 months; TL3_UW_NDXCA_SKP7: 6 months; TL3_UW_QQQGD15_PR: 10 months; TL3_UW_QQQGD15_SK: 10 months; TL3_UW_TDNV_PR: 10 months
 - died/blocked: nothing died. Overnight the four first sets waited in TOOLS (box load ~40, cap 25); admitted 03:03Z-~11:00Z, L6M finished; HOLD months started 14:25Z after the UW priority tag. 0DTE walls: history is end-of-day only (not causal); expected-move inputs pulled but not yet screened.
 
 ## 2. Best candidate per use per base (screen2, ranked by recents = (L6M+HOLD)/2 $/wk; top 3 per use/action; LEAD = recents > null q95, L3M>0, both L6M halves > 0)
@@ -211,34 +211,74 @@ Tickers: SPX/SPY/QQQ/NDX appear inside feature names (A_<TK>_*, D_<TK>_*, W_<TK>
 
 ## 5. Exact stage (TP engine; score_nf vs JN05W2 / JN05W2J; windows present only)
 
+TL3J_UW_KLDN_HOLD vs JN05W2J
+                cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3J_UW_KLDN_HOLD    L1M  0.0         0.0      -82.8  17861.9  17861.9    2548.0     14.0      6.5         14.0          6.5         57             57       6   244437.1    249036.0                0         21
+1  TL3J_UW_KLDN_HOLD    L3M  0.0       173.9      799.8  17861.9  17861.9   15741.4     14.0      6.0         14.0          6.0        168            172       6   244437.1    249036.0                0         21
+2  TL3J_UW_KLDN_HOLD    L6M -4.4       454.9      757.0  25013.7  23965.2   21621.9     14.0      6.0         14.0          6.0        349            363       6   244437.1    249036.0                0         21
+trend {'best5_ref': 244437.14000000796, 'best5_cell': 249035.96000000698, 'win_turn_losing': 0, 'win_weeks': 21}
+
+
+TL3J_UW_NDXCA_SK vs JN05W2J
+               cell window   cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3J_UW_NDXCA_SK    L1M  46.4      2437.5     5107.1   9577.1  17861.9    7737.9      9.0      6.8         14.0          6.5         60             57       6   244437.1    257775.2                1         21
+1  TL3J_UW_NDXCA_SK    L3M -10.0       554.2     1787.9  19648.8  17861.9   16729.5     10.0      6.0         14.0          6.0        165            172       6   244437.1    257775.2                1         21
+2  TL3J_UW_NDXCA_SK    L6M   0.0       961.0     -245.5  23965.2  23965.2   20619.4     10.0      6.0         14.0          6.0        352            363       6   244437.1    257775.2                1         21
+trend {'best5_ref': 244437.14000000796, 'best5_cell': 257775.22000000748, 'win_turn_losing': 1, 'win_weeks': 21}
+
+
 TL3J_UW_SPXVDIR_PR vs JN05W2J
                  cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
-0  TL3J_UW_SPXVDIR_PR    L1M  5.2       307.9     1657.4  16938.1  17861.9    4288.2     14.0      6.6         14.0          6.5         56             57       6   244437.1    252234.4                0         21
-1  TL3J_UW_SPXVDIR_PR    L3M  1.2      -476.7      406.3  17642.5  17861.9   15348.0     14.0      6.0         14.0          6.0        169            172       6   244437.1    252234.4                0         21
-2  TL3J_UW_SPXVDIR_PR    L6M -1.5        87.5      507.4  24331.9  23965.2   21372.2     14.0      6.0         14.0          6.0        359            363       6   244437.1    252234.4                0         21
+0  TL3J_UW_SPXVDIR_PR    L1M  5.2       307.9     1657.4  16938.1  17861.9    4288.2     14.0      6.6         14.0          6.5         56             57      10   244437.1    252234.4                0         21
+1  TL3J_UW_SPXVDIR_PR    L3M  1.2      -476.7      406.3  17642.5  17861.9   15348.0     14.0      6.0         14.0          6.0        169            172      10   244437.1    252234.4                0         21
+2  TL3J_UW_SPXVDIR_PR    L6M -1.5        87.5      507.4  24331.9  23965.2   21372.2     14.0      6.0         14.0          6.0        359            363      10   244437.1    252234.4                0         21
 trend {'best5_ref': 244437.14000000796, 'best5_cell': 252234.36000000814, 'win_turn_losing': 0, 'win_weeks': 21}
+
+
+TL3_UW_KLDN_HOLD vs JN05W2
+               cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UW_KLDN_HOLD    L1M  0.0         0.0      334.5  36370.5  36370.5     940.8     13.0      6.0         13.0          6.0         49             50       6   316288.0    307222.0                0         20
+1  TL3_UW_KLDN_HOLD    L3M  0.0       867.6     -187.4  36370.5  36370.5   15827.8     13.0      6.0         13.0          6.0        155            161       6   316288.0    307222.0                0         20
+2  TL3_UW_KLDN_HOLD    L6M  0.0       248.9     -591.1  36370.5  36370.5   24545.8     13.0      6.0         13.0          6.0        335            350       6   316288.0    307222.0                0         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 307222.00000000803, 'win_turn_losing': 0, 'win_weeks': 20}
+
+
+TL3_UW_NDXCA_SK vs JN05W2
+              cell window   cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UW_NDXCA_SK    L1M  77.3      6081.7    11594.0   8239.7  36370.5   12200.3      9.0      6.0         13.0          6.0         56             50       6   316288.0    338212.9                1         20
+1  TL3_UW_NDXCA_SK    L3M   0.2       940.8     3032.4  36288.2  36370.5   19047.6     10.0      6.0         13.0          6.0        162            161       6   316288.0    338212.9                1         20
+2  TL3_UW_NDXCA_SK    L6M   0.2      2127.4      567.9  36288.2  36370.5   25704.8     10.0      6.0         13.0          6.0        347            350       6   316288.0    338212.9                1         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 338212.940000009, 'win_turn_losing': 1, 'win_weeks': 20}
+
+
+TL3_UW_NDXCA_SKP7 vs JN05W2
+                cell window   cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UW_NDXCA_SKP7    L1M  76.3      2490.0     8809.0   8604.3  36370.5    9415.3      9.0      6.0         13.0          6.0         53             50       6   316288.0    325056.1                1         20
+1  TL3_UW_NDXCA_SKP7    L3M  24.5       821.6     2894.3  27447.9  36370.5   18909.5     10.0      6.0         13.0          6.0        162            161       6   316288.0    325056.1                1         20
+2  TL3_UW_NDXCA_SKP7    L6M  24.5       -83.1      988.0  27447.9  36370.5   26124.9     10.0      6.0         13.0          6.0        346            350       6   316288.0    325056.1                1         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 325056.1000000095, 'win_turn_losing': 1, 'win_weeks': 20}
 
 
 TL3_UW_QQQGD15_PR vs JN05W2
                 cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
-0  TL3_UW_QQQGD15_PR    L1M  2.1       380.4     -218.6  35614.7  36370.5     387.7     13.0      6.0         13.0          6.0         49             50       6   316288.0    332843.1                0         20
-1  TL3_UW_QQQGD15_PR    L3M  2.1      1006.0     1810.2  35614.7  36370.5   17825.4     13.0      6.0         13.0          6.0        160            161       6   316288.0    332843.1                0         20
-2  TL3_UW_QQQGD15_PR    L6M  2.1      1258.4     1656.3  35614.7  36370.5   26793.2     13.0      6.0         13.0          6.0        345            350       6   316288.0    332843.1                0         20
+0  TL3_UW_QQQGD15_PR    L1M  2.1       380.4     -218.6  35614.7  36370.5     387.7     13.0      6.0         13.0          6.0         49             50      10   316288.0    332843.1                0         20
+1  TL3_UW_QQQGD15_PR    L3M  2.1      1006.0     1810.2  35614.7  36370.5   17825.4     13.0      6.0         13.0          6.0        160            161      10   316288.0    332843.1                0         20
+2  TL3_UW_QQQGD15_PR    L6M  2.1      1258.4     1656.3  35614.7  36370.5   26793.2     13.0      6.0         13.0          6.0        345            350      10   316288.0    332843.1                0         20
 trend {'best5_ref': 316287.98000000964, 'best5_cell': 332843.14000000956, 'win_turn_losing': 0, 'win_weeks': 20}
 
 
 TL3_UW_QQQGD15_SK vs JN05W2
                 cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
-0  TL3_UW_QQQGD15_SK    L1M  0.0       288.8     -147.1  36370.5  36370.5     459.2     13.0      6.0         13.0          6.0         48             50       6   316288.0    307013.2                0         20
-1  TL3_UW_QQQGD15_SK    L3M  0.0       821.2      155.3  36370.5  36370.5   16170.5     13.0      6.0         13.0          6.0        151            161       6   316288.0    307013.2                0         20
-2  TL3_UW_QQQGD15_SK    L6M  0.0       219.6     -144.8  36370.5  36370.5   24992.1     13.0      6.0         13.0          6.0        335            350       6   316288.0    307013.2                0         20
+0  TL3_UW_QQQGD15_SK    L1M  0.0       288.8     -147.1  36370.5  36370.5     459.2     13.0      6.0         13.0          6.0         48             50      10   316288.0    307013.2                0         20
+1  TL3_UW_QQQGD15_SK    L3M  0.0       821.2      155.3  36370.5  36370.5   16170.5     13.0      6.0         13.0          6.0        151            161      10   316288.0    307013.2                0         20
+2  TL3_UW_QQQGD15_SK    L6M  0.0       219.6     -144.8  36370.5  36370.5   24992.1     13.0      6.0         13.0          6.0        335            350      10   316288.0    307013.2                0         20
 trend {'best5_ref': 316287.98000000964, 'best5_cell': 307013.2400000095, 'win_turn_losing': 0, 'win_weeks': 20}
 
 
 TL3_UW_TDNV_PR vs JN05W2
              cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
-0  TL3_UW_TDNV_PR    L1M  2.1      -706.4    -1484.8  35614.7  36370.5    -878.5     13.0      6.0         13.0          6.0         49             50       6   316288.0    319960.2                0         20
-1  TL3_UW_TDNV_PR    L3M  2.1       -74.3      531.1  35614.7  36370.5   16546.3     13.0      6.0         13.0          6.0        160            161       6   316288.0    319960.2                0         20
-2  TL3_UW_TDNV_PR    L6M  2.1      -150.5      200.1  35614.7  36370.5   25337.0     13.0      6.0         13.0          6.0        347            350       6   316288.0    319960.2                0         20
+0  TL3_UW_TDNV_PR    L1M  2.1      -706.4    -1484.8  35614.7  36370.5    -878.5     13.0      6.0         13.0          6.0         49             50      10   316288.0    319960.2                0         20
+1  TL3_UW_TDNV_PR    L3M  2.1       -74.3      531.1  35614.7  36370.5   16546.3     13.0      6.0         13.0          6.0        160            161      10   316288.0    319960.2                0         20
+2  TL3_UW_TDNV_PR    L6M  2.1      -150.5      200.1  35614.7  36370.5   25337.0     13.0      6.0         13.0          6.0        347            350      10   316288.0    319960.2                0         20
 trend {'best5_ref': 316287.98000000964, 'best5_cell': 319960.1600000097, 'win_turn_losing': 0, 'win_weeks': 20}
 

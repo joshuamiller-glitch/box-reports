@@ -1,7 +1,7 @@
-# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 16:55Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 17:13Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
 
 ## 0. Status
-Jobs done 1970 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 72690. Null draws (shifted-time, whole event table moved by random weeks): 3.
+Jobs done 1973 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 72713. Null draws (shifted-time, whole event table moved by random weeks): 6.
 Instruments run: ES, NQ, RTY, YM. RTY/YM wait for IWM/DIA UW pulls (W-UB3). X' has NO UW data (history starts 2024-10-01): X' is not scored. PRE is clipped to the UW start (PREUW). Windows from 2026-11-12.
 
 ## 1. Where the signal sits (gated = mean L6M>0 and L3M>0 and HOLD>0 and n_L6M>=20)
@@ -35,8 +35,8 @@ Instruments run: ES, NQ, RTY, YM. RTY/YM wait for IWM/DIA UW pulls (W-UB3). X' h
 | F7 | NQ | True | 444 | 421 | 41.4 | 5764 |
 | F7 | RTY | False | 908 | 782 | 43.9 | 1439 |
 | F7 | YM | False | 908 | 812 | 42.8 | 2680 |
-| F7B | ES | False | 4 | 4 | 9.6 | 2673 |
-| F7B | NQ | False | 2 | 2 | 12.1 | 5275 |
+| F7B | ES | False | 6 | 6 | 9.6 | 2673 |
+| F7B | NQ | False | 6 | 6 | 12.1 | 5275 |
 | F7B | RTY | False | 6 | 6 | 14.2 | 908 |
 | F7B | YM | False | 6 | 5 | 14.6 | 2141 |
 | PAIR | ES | False | 460 | 116 | 60.6 | 1968 |
@@ -47,15 +47,15 @@ Instruments run: ES, NQ, RTY, YM. RTY/YM wait for IWM/DIA UW pulls (W-UB3). X' h
 | PAIR | YM | False | 252 | 45 | 52.8 | 2682 |
 
 Null = the same event tables moved by a random circular whole-week shift inside their own date span (weekday/time of day kept, same windows), same job subset (every 4th job), full 1,470-cell grid, all 5 sessions x 2 directions. Columns: groups scored / groups with any gated cell (share) / max recents $/wk over all cells / best gated L6M Calmar. Observed is restricted to the same job subset.
-| family | observed (same jobs) | null draw 1 | null draw 2 | null draw 3 |
-|--|--|--|--|--|
-| F1 | 1490 / 549 (37%) / 2836 / 56.5 | 1778 / 970 (55%) / 2797 / 80.3 | 1760 / 963 (55%) / 2951 / 67.5 | 1756 / 981 (56%) / 3093 / 69.0 |
-| F2 | 318 / 68 (21%) / 2060 / 32.6 | 322 / 170 (53%) / 2813 / 47.5 | 318 / 163 (51%) / 3308 / 50.7 | 328 / 159 (48%) / 2421 / 39.2 |
-| F6 | 304 / 218 (72%) / 1403 / 40.4 | 432 / 181 (42%) / 1746 / 49.6 | 436 / 189 (43%) / 1643 / 58.6 | 422 / 190 (45%) / 1401 / 56.4 |
-| F6B | 64 / 63 (98%) / 1622 / 31.8 | n/a | n/a | n/a |
-| F7 | 340 / 317 (93%) / 5713 / 38.9 | 464 / 320 (69%) / 5911 / 59.5 | 460 / 309 (67%) / 3463 / 59.1 | 460 / 308 (67%) / 5252 / 45.5 |
-| F7B | 18 / 17 (94%) / 5275 / 14.6 | n/a | n/a | n/a |
-| PAIR | 1896 / 450 (24%) / 3345 / 90.1 | n/a | n/a | n/a |
+| family | observed (same jobs) | null draw 1 | null draw 2 | null draw 3 | null draw 4 | null draw 5 | null draw 6 |
+|--|--|--|--|--|--|--|--|
+| F1 | 1490 / 549 (37%) / 2836 / 56.5 | 1778 / 970 (55%) / 2797 / 80.3 | 1760 / 963 (55%) / 2951 / 67.5 | 1756 / 981 (56%) / 3093 / 69.0 | n/a | n/a | n/a |
+| F2 | 318 / 68 (21%) / 2060 / 32.6 | 322 / 170 (53%) / 2813 / 47.5 | 318 / 163 (51%) / 3308 / 50.7 | 328 / 159 (48%) / 2421 / 39.2 | n/a | n/a | n/a |
+| F6 | 304 / 218 (72%) / 1403 / 40.4 | 432 / 181 (42%) / 1746 / 49.6 | 436 / 189 (43%) / 1643 / 58.6 | 422 / 190 (45%) / 1401 / 56.4 | n/a | n/a | n/a |
+| F6B | 64 / 63 (98%) / 1622 / 31.8 | n/a | n/a | n/a | n/a | n/a | n/a |
+| F7 | 340 / 317 (93%) / 5713 / 38.9 | 464 / 320 (69%) / 5911 / 59.5 | 460 / 309 (67%) / 3463 / 59.1 | 460 / 308 (67%) / 5252 / 45.5 | n/a | n/a | n/a |
+| F7B | 24 / 23 (96%) / 5275 / 14.6 | n/a | n/a | n/a | n/a | n/a | n/a |
+| PAIR | 1894 / 450 (24%) / 3345 / 90.1 | n/a | n/a | n/a | 2042 / 709 (35%) / 3138 / 71.6 | 2008 / 711 (35%) / 2718 / 81.6 | 2024 / 713 (35%) / 2613 / 123.9 |
 
 ## 2. Best book per session (gated; ranked by L6M Calmar = mean*52/maxDD). Window values are $/wk at the cell lots (R=$1,200 per trade at the stop, cap 10 lots), fees and measured slippage in.
 | session | dir | family | instrument (matched) | trigger | cell | n L6M | L1M | L3M | L6M | HOLD | PREUW | maxDD L6M | worst wk L6M | full stops/wk L6M | pos wk L6M | WF OOS $/wk | placebo shuffle p | verdict |
@@ -73,9 +73,9 @@ Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (N
 | instrument | clock family | no-UW baseline: groups / gated (share) / max recents / best Calmar | UW-conditioned: groups / gated (share) / max recents / best Calmar |
 |--|--|--|--|
 | NQ | F6 | 16 / 16 (100%) / 1271 / 22.9 | 708 / 492 (69%) / 1597 / 39.9 |
-| NQ | F7 | 2 / 2 (100%) / 5275 / 12.1 | 908 / 852 (94%) / 5970 / 47.5 |
+| NQ | F7 | 6 / 6 (100%) / 5275 / 12.1 | 908 / 852 (94%) / 5970 / 47.5 |
 | ES | F6 | 16 / 16 (100%) / 1445 / 24.7 | 706 / 465 (66%) / 1583 / 40.4 |
-| ES | F7 | 4 / 4 (100%) / 2673 / 9.6 | 908 / 807 (89%) / 3220 / 49.2 |
+| ES | F7 | 6 / 6 (100%) / 2673 / 9.6 | 908 / 807 (89%) / 3220 / 49.2 |
 | RTY | F6 | 16 / 15 (94%) / 1622 / 27.7 | 712 / 526 (74%) / 1919 / 56.3 |
 | RTY | F7 | 6 / 6 (100%) / 908 / 14.2 | 908 / 782 (86%) / 1439 / 43.9 |
 | YM | F6 | 16 / 16 (100%) / 1173 / 31.8 | 712 / 523 (73%) / 1353 / 46.2 |
@@ -84,10 +84,10 @@ Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (N
 ## 7. Pairs of the top-20 singles per instrument (AND within 15 min, event = later one; no pair uses a table twice). Null = table B of each pair moved by a circular whole-week shift (A kept), same pairs.
 | instrument | observed pairs: groups / gated (share) / max recents / best Calmar | null draw 1 | null draw 2 | null draw 3 |
 |--|--|--|--|--|
-| NQ | 680 / 122 (18%) / 1819 / 48.4 | n/a | n/a | n/a |
-| ES | 508 / 122 (24%) / 1968 / 60.6 | n/a | n/a | n/a |
-| RTY | 456 / 161 (35%) / 3345 / 90.1 | n/a | n/a | n/a |
-| YM | 252 / 45 (18%) / 2682 / 52.8 | n/a | n/a | n/a |
+| NQ | 680 / 122 (18%) / 1819 / 48.4 | 748 / 261 (35%) / 2312 / 71.6 | 730 / 259 (35%) / 2185 / 73.6 | 740 / 261 (35%) / 2238 / 123.9 |
+| ES | 508 / 122 (24%) / 1968 / 60.6 | 504 / 173 (34%) / 2583 / 66.5 | 498 / 178 (36%) / 2338 / 81.6 | 498 / 171 (34%) / 2397 / 72.2 |
+| RTY | 456 / 161 (35%) / 3345 / 90.1 | 506 / 229 (45%) / 3138 / 63.7 | 500 / 220 (44%) / 2718 / 61.3 | 502 / 227 (45%) / 2613 / 73.2 |
+| YM | 252 / 45 (18%) / 2682 / 52.8 | 284 / 46 (16%) / 1493 / 32.8 | 280 / 54 (19%) / 2528 / 48.8 | 284 / 54 (19%) / 1730 / 43.7 |
 
 Best pair rows per session (in-sample on the same 2 years; WF/placebo not run on pairs):
 | session | dir | instrument | pair | cell | n L6M | L1M | L3M | L6M | HOLD | PREUW | maxDD L6M |
