@@ -1,50 +1,67 @@
-# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 19:47Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 21:17Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
 
 ## 0. Status
-Jobs done 2592 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 104671. Null draws (shifted-time, whole event table moved by random weeks): 12.
+Jobs done 4279 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 195897. Null draws (shifted-time, whole event table moved by random weeks): 18.
 Instruments run: CL, ES, GC, NQ, RTY, SI, YM. RTY/YM wait for IWM/DIA UW pulls (W-UB3). X' has NO UW data (history starts 2024-10-01): X' is not scored. PRE is clipped to the UW start (PREUW). Windows from 2026-11-12.
 
 ## 1. Where the signal sits (gated = mean L6M>0 and L3M>0 and HOLD>0 and n_L6M>=20)
 | family | instrument | matched | groups scored | groups with any gated cell | best gated L6M Calmar (dd floor $1,200) | max recents $/wk over cells ((L6M+HOLD)/2) |
 |--|--|--|--|--|--|--|
-| F1 | ES | False | 2686 | 1145 | 47.0 | 2740 |
+| F1 | CL | True | 2766 | 1330 | 51.2 | 2771 |
+| F1 | ES | False | 6760 | 2929 | 61.5 | 3097 |
 | F1 | ES | True | 1328 | 541 | 42.2 | 3253 |
-| F1 | NQ | False | 2756 | 1269 | 71.2 | 3716 |
+| F1 | GC | True | 1490 | 663 | 62.4 | 2494 |
+| F1 | NQ | False | 6830 | 3176 | 71.2 | 3716 |
 | F1 | NQ | True | 1258 | 564 | 62.2 | 3112 |
 | F1 | RTY | False | 3270 | 1397 | 74.2 | 3939 |
 | F1 | RTY | True | 744 | 274 | 66.6 | 2285 |
+| F1 | SI | True | 642 | 277 | 48.6 | 2421 |
 | F1 | YM | False | 3330 | 1439 | 51.4 | 3109 |
 | F1 | YM | True | 684 | 343 | 42.9 | 2601 |
-| F2 | ES | False | 296 | 35 | 27.9 | 2060 |
+| F2 | CL | True | 1044 | 214 | 70.6 | 1725 |
+| F2 | ES | False | 850 | 108 | 27.9 | 2060 |
 | F2 | ES | True | 280 | 119 | 26.1 | 2331 |
-| F2 | NQ | False | 280 | 74 | 69.9 | 2093 |
+| F2 | GC | True | 534 | 113 | 43.3 | 2510 |
+| F2 | NQ | False | 856 | 165 | 69.9 | 2093 |
 | F2 | NQ | True | 268 | 115 | 37.7 | 3712 |
-| F2 | RTY | False | 584 | 156 | 31.2 | 1874 |
-| F2 | YM | False | 582 | 92 | 26.0 | 1625 |
-| F6 | ES | False | 724 | 536 | 40.4 | 1585 |
+| F2 | RTY | False | 874 | 209 | 31.2 | 1874 |
+| F2 | RTY | True | 278 | 80 | 38.6 | 1431 |
+| F2 | SI | True | 274 | 80 | 26.7 | 2333 |
+| F2 | YM | False | 854 | 123 | 31.6 | 1649 |
+| F2 | YM | True | 286 | 87 | 43.6 | 1514 |
+| F6 | CL | True | 1084 | 671 | 46.7 | 2014 |
+| F6 | ES | False | 1832 | 1387 | 52.1 | 1747 |
 | F6 | ES | True | 356 | 227 | 29.9 | 1559 |
-| F6 | NQ | False | 734 | 577 | 39.9 | 1674 |
+| F6 | GC | True | 374 | 279 | 29.1 | 915 |
+| F6 | NQ | False | 1842 | 1505 | 82.9 | 1852 |
 | F6 | NQ | True | 348 | 235 | 32.7 | 1597 |
 | F6 | RTY | False | 904 | 677 | 56.3 | 1919 |
 | F6 | RTY | True | 180 | 121 | 66.3 | 1676 |
+| F6 | SI | True | 172 | 128 | 38.6 | 1155 |
 | F6 | YM | False | 892 | 659 | 53.5 | 1353 |
 | F6 | YM | True | 192 | 140 | 37.3 | 1802 |
 | F6B | ES | False | 16 | 16 | 24.7 | 1445 |
 | F6B | NQ | False | 16 | 16 | 22.9 | 1271 |
 | F6B | RTY | False | 16 | 15 | 27.7 | 1622 |
 | F6B | YM | False | 16 | 16 | 31.8 | 1173 |
-| F7 | ES | False | 920 | 804 | 49.2 | 3268 |
+| F7 | CL | True | 686 | 654 | 47.1 | 1940 |
+| F7 | ES | False | 2298 | 2052 | 58.2 | 3268 |
 | F7 | ES | True | 464 | 403 | 30.4 | 2901 |
-| F7 | NQ | False | 940 | 866 | 47.5 | 6005 |
+| F7 | GC | True | 464 | 442 | 53.9 | 2665 |
+| F7 | NQ | False | 2318 | 2194 | 51.1 | 6195 |
 | F7 | NQ | True | 444 | 421 | 41.4 | 5764 |
 | F7 | RTY | False | 1146 | 985 | 43.9 | 1439 |
 | F7 | RTY | True | 238 | 201 | 29.3 | 1406 |
+| F7 | SI | True | 236 | 214 | 34.1 | 2756 |
 | F7 | YM | False | 1146 | 1020 | 42.8 | 2931 |
 | F7 | YM | True | 238 | 208 | 38.7 | 2747 |
 | F7B | ES | False | 6 | 6 | 9.6 | 2673 |
 | F7B | NQ | False | 6 | 6 | 12.1 | 5275 |
 | F7B | RTY | False | 6 | 6 | 14.2 | 908 |
 | F7B | YM | False | 6 | 5 | 14.6 | 2141 |
+| FE | CL | True | 252 | 147 | 22.1 | 1344 |
+| FE | GC | True | 168 | 132 | 39.2 | 1213 |
+| FE | SI | True | 36 | 35 | 52.4 | 1514 |
 | FEB | CL | False | 42 | 32 | 20.2 | 1376 |
 | FEB | GC | False | 24 | 21 | 40.2 | 1576 |
 | FEB | SI | False | 18 | 17 | 29.3 | 1993 |
@@ -55,26 +72,28 @@ Instruments run: CL, ES, GC, NQ, RTY, SI, YM. RTY/YM wait for IWM/DIA UW pulls (
 | PAIR | RTY | False | 456 | 161 | 90.1 | 3345 |
 | PAIR | YM | False | 252 | 45 | 52.8 | 2682 |
 
-Null = the same event tables moved by a random circular whole-week shift inside their own date span (weekday/time of day kept, same windows), same job subset (every 4th job), full 1,470-cell grid, all 5 sessions x 2 directions. Columns: groups scored / groups with any gated cell (share) / max recents $/wk over all cells / best gated L6M Calmar. Observed is restricted to the same job subset.
-| family | observed (same jobs) | null draw 1 | null draw 2 | null draw 3 | null draw 4 | null draw 5 | null draw 6 | null draw 7 | null draw 8 | null draw 9 | null draw 10 | null draw 11 | null draw 12 |
-|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| F1 | 4242 / 1759 (41%) / 2836 / 56.5 | 1778 / 970 (55%) / 2797 / 80.3 | 1760 / 963 (55%) / 2951 / 67.5 | 1756 / 981 (56%) / 3093 / 69.0 | 1536 / 993 (65%) / 2621 / 53.7 | 1552 / 981 (63%) / 2624 / 46.1 | 1552 / 989 (64%) / 3011 / 53.3 | n/a | n/a | n/a | 1732 / 1111 (64%) / 3077 / 79.3 | 1714 / 1148 (67%) / 2976 / 44.8 | 1724 / 1132 (66%) / 3197 / 61.8 |
-| F2 | 528 / 94 (18%) / 2060 / 32.6 | 322 / 170 (53%) / 2813 / 47.5 | 318 / 163 (51%) / 3308 / 50.7 | 328 / 159 (48%) / 2421 / 39.2 | 220 / 102 (46%) / 2428 / 36.6 | 220 / 105 (48%) / 2287 / 25.4 | 214 / 102 (48%) / 2359 / 37.6 | n/a | n/a | n/a | n/a | n/a | n/a |
-| F6 | 1072 / 809 (75%) / 1676 / 50.7 | 432 / 181 (42%) / 1746 / 49.6 | 436 / 189 (43%) / 1643 / 58.6 | 422 / 190 (45%) / 1401 / 56.4 | 536 / 255 (48%) / 1854 / 41.6 | 524 / 253 (48%) / 1980 / 42.7 | 538 / 242 (45%) / 1706 / 46.3 | n/a | n/a | n/a | 552 / 218 (39%) / 2170 / 81.0 | 540 / 239 (44%) / 1861 / 54.6 | 544 / 237 (44%) / 1702 / 32.6 |
-| F6B | 64 / 63 (98%) / 1622 / 31.8 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| F7 | 1362 / 1212 (89%) / 5713 / 38.9 | 464 / 320 (69%) / 5911 / 59.5 | 460 / 309 (67%) / 3463 / 59.1 | 460 / 308 (67%) / 5252 / 45.5 | 754 / 493 (65%) / 2743 / 45.5 | 756 / 491 (65%) / 2636 / 49.0 | 752 / 491 (65%) / 3231 / 48.7 | n/a | n/a | n/a | 672 / 418 (62%) / 4320 / 44.1 | 666 / 418 (63%) / 4231 / 44.9 | 678 / 407 (60%) / 4595 / 44.6 |
-| F7B | 2 / 2 (100%) / 839 / 9.6 | n/a | n/a | n/a | 2 / 2 (100%) / 1335 / 10.5 | 2 / 2 (100%) / 883 / 7.9 | 2 / 2 (100%) / 611 / 6.3 | n/a | n/a | n/a | n/a | n/a | n/a |
-| FEB | 84 / 70 (83%) / 1993 / 40.2 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| PAIR | 1894 / 450 (24%) / 3345 / 90.1 | n/a | n/a | n/a | n/a | n/a | n/a | 2042 / 709 (35%) / 3138 / 71.6 | 2008 / 711 (35%) / 2718 / 81.6 | 2024 / 713 (35%) / 2613 / 123.9 | n/a | n/a | n/a |
+Null draws pool the same event tables for all instruments (NQ/ES, RTY/YM, IWM/DIA, metals/oil, cross tickers) = the same event tables moved by a random circular whole-week shift inside their own date span (weekday/time of day kept, same windows), same job subset (every 4th job), full 1,470-cell grid, all 5 sessions x 2 directions. Columns: groups scored / groups with any gated cell (share) / max recents $/wk over all cells / best gated L6M Calmar. Observed is restricted to the same job subset.
+| family | observed (same jobs) | null draw 1 | null draw 2 | null draw 3 |
+|--|--|--|--|--|
+| F1 | 7142 / 3062 (43%) / 2836 / 62.5 | 8362 / 5195 (62%) / 3077 / 80.3 | 8348 / 5206 (62%) / 3223 / 67.5 | 8352 / 5223 (63%) / 3197 / 69.0 |
+| F2 | 1396 / 293 (21%) / 2060 / 33.8 | 1410 / 725 (51%) / 3633 / 61.7 | 1410 / 702 (50%) / 3964 / 56.1 | 1410 / 716 (51%) / 3380 / 63.5 |
+| F6 | 1994 / 1518 (76%) / 1826 / 50.7 | 2862 / 1268 (44%) / 2547 / 81.0 | 2828 / 1298 (46%) / 2810 / 58.6 | 2844 / 1259 (44%) / 1914 / 56.4 |
+| F6B | 64 / 63 (98%) / 1622 / 31.8 | n/a | n/a | n/a |
+| F7 | 2280 / 2075 (91%) / 6195 / 58.2 | 3174 / 2061 (65%) / 5911 / 63.2 | 3194 / 2056 (64%) / 5314 / 59.1 | 3192 / 2039 (64%) / 5252 / 48.7 |
+| F7B | 2 / 2 (100%) / 839 / 9.6 | 2 / 2 (100%) / 1335 / 10.5 | 2 / 2 (100%) / 883 / 7.9 | 2 / 2 (100%) / 611 / 6.3 |
+| FE | 142 / 112 (79%) / 1378 / 52.4 | 276 / 92 (33%) / 1359 / 26.5 | 272 / 88 (32%) / 1940 / 32.4 | 270 / 85 (31%) / 1581 / 38.4 |
+| FEB | 54 / 41 (76%) / 1445 / 35.5 | 106 / 43 (41%) / 2181 / 45.5 | 104 / 47 (45%) / 1222 / 36.1 | 104 / 49 (47%) / 1472 / 33.8 |
+| PAIR | 1894 / 450 (24%) / 3345 / 90.1 | 2042 / 709 (35%) / 3138 / 71.6 | 2008 / 711 (35%) / 2718 / 81.6 | 2024 / 713 (35%) / 2613 / 123.9 |
 
 ## 2. Best book per session (gated; ranked by L6M Calmar = mean*52/maxDD). Window values are $/wk at the cell lots (R=$1,200 per trade at the stop, cap 10 lots), fees and measured slippage in.
 | session | dir | family | instrument (matched) | trigger | cell | n L6M | L1M | L3M | L6M | HOLD | PREUW | maxDD L6M | worst wk L6M | full stops/wk L6M | pos wk L6M | WF OOS $/wk | placebo shuffle p | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | asia | long | F2 | NQ (cross) | SPX oi|flip touch_up | Eb3_Sa1_Tnone_X120 | 20 | 124 | 1571 | 1637 | 659 | -204 | 1218 | -1218 | 0.30 | 0.79 | 172 | 0.15 | thin n=20; placebo p>0.1; null: see section 1 |
-| london | long | F1 | YM (cross) | SPY v_oi lo_d | Emkt_Sa1_Tnone_X120 | 27 | 3968 | 2116 | 1249 | 642 | -254 | 1362 | -1188 | 0.44 | 0.80 | 49 | 0.03 | thin n=27; null: see section 1 |
-| pre | short | F1 | NQ (cross) | SPX v_oi lo_d | Emkt_S30_T90_X60 | 24 | 4364 | 1983 | 1073 | 352 | 53 | 1275 | -1275 | 0.22 | 0.64 | 250 | 0.01 | thin n=24; null: see section 1 |
-| nyam | short | F1 | RTY (cross) | SPX v_oi d15_dn | Eb3_Sa1_T90_XSE | 44 | 2012 | 1377 | 1771 | 693 | 106 | 1241 | -1241 | 0.56 | 0.73 | 416 | 0.05 | no flag yet; null: see section 1 |
+| london | long | FE | SI (matched) | SLV g_oi|lbma_silver hi_dn | Ep5_Sa2_T30_XSE | 39 | 1180 | 1431 | 1209 | 566 | n/a | 1137 | -1137 | 0.19 | 0.87 | pending | pending | thin n=39; null: see section 1 |
+| pre | short | F1 | NQ (cross) | SPX v_oi lo_d | Emkt_S30_T90_XSE | 24 | 4364 | 1983 | 1073 | 352 | 53 | 1275 | -1275 | 0.22 | 0.64 | 250 | 0.01 | thin n=24; null: see section 1 |
+| nyam | short | F6 | NQ (cross) | GLD g_oi|0930|0830|med lo_up | Ep5_S30_Tnone_X15 | 29 | 1110 | 698 | 1957 | 931 | n/a | 1227 | -1227 | 0.56 | 0.73 | pending | pending | thin n=29; null: see section 1 |
 | nypm | short | F1 | NQ (cross) | DIA g_dir d5_up | Ep10_Sa2_Tnone_XSE | 38 | 1570 | 1163 | 2014 | 1113 | -226 | 1470 | -1470 | 0.19 | 0.73 | 353 | 0.10 | thin n=38; null: see section 1 |
+| pit | long | F2 | CL (matched) | XOP oi|magnet touch_dn | Emkt_S45_Tnone_X120 | 23 | 856 | 2410 | 1757 | 802 | n/a | 1295 | -1295 | 0.30 | 0.93 | pending | pending | thin n=23; null: see section 1 |
 
 Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (NQ-point lists scaled by the instrument ATR ratio, a1/a2 = 1x/2x ATR14 of 5-min bars; XSE = session end, flat). Trigger names: see UWBOOKS_B1_PREREG.md.
 
@@ -129,24 +148,70 @@ Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (N
 ## 6. No-UW baseline of the F6/F7 entry clocks (same harness/grid/gate; F7B = every business day at the clock, F6B = price move only) vs the UW-conditioned tables
 | instrument | clock family | no-UW baseline: groups / gated (share) / max recents / best Calmar | UW-conditioned: groups / gated (share) / max recents / best Calmar |
 |--|--|--|--|
-| NQ | F6 | 16 / 16 (100%) / 1271 / 22.9 | 1082 / 812 (75%) / 1674 / 39.9 |
-| NQ | F7 | 6 / 6 (100%) / 5275 / 12.1 | 1384 / 1287 (93%) / 6005 / 47.5 |
-| ES | F6 | 16 / 16 (100%) / 1445 / 24.7 | 1080 / 763 (71%) / 1585 / 40.4 |
-| ES | F7 | 6 / 6 (100%) / 2673 / 9.6 | 1384 / 1207 (87%) / 3268 / 49.2 |
+| NQ | F6 | 16 / 16 (100%) / 1271 / 22.9 | 2190 / 1740 (79%) / 1852 / 82.9 |
+| NQ | F7 | 6 / 6 (100%) / 5275 / 12.1 | 2762 / 2615 (95%) / 6195 / 51.1 |
+| ES | F6 | 16 / 16 (100%) / 1445 / 24.7 | 2188 / 1614 (74%) / 1747 / 52.1 |
+| ES | F7 | 6 / 6 (100%) / 2673 / 9.6 | 2762 / 2455 (89%) / 3268 / 58.2 |
 | RTY | F6 | 16 / 15 (94%) / 1622 / 27.7 | 1084 / 798 (74%) / 1919 / 66.3 |
 | RTY | F7 | 6 / 6 (100%) / 908 / 14.2 | 1384 / 1186 (86%) / 1439 / 43.9 |
 | YM | F6 | 16 / 16 (100%) / 1173 / 31.8 | 1084 / 799 (74%) / 1802 / 53.5 |
 | YM | F7 | 6 / 5 (83%) / 2141 / 14.6 | 1384 / 1228 (89%) / 2931 / 42.8 |
 
+## 6a. Best gated book per instrument x session (in-sample, same 2 years, before WF/placebo; instrument = the product traded, trigger ticker beside it)
+| instrument | session | dir | family | trigger | cell | n L6M | L1M | L3M | L6M | HOLD | PREUW | maxDD L6M | Calmar |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| CL | asia | short | F7 | USO c_oi|asia1805 chg_dn | Eb1_Sa2_T90_XSE | 26 | 216 | 1820 | 1264 | 351 | n/a | 1396 | 47.1 |
+| CL | london | short | F7 | XOP c_dir|lon0200 chg_up | Eb5_S60_T90_XSE | 26 | 1212 | 1202 | 1075 | 548 | n/a | 1280 | 43.7 |
+| CL | nyam | long | F1 | USO g_oi lo_d | Eb5_S45_Tnone_X60 | 25 | 1369 | 1422 | 1381 | 1079 | n/a | 1403 | 51.2 |
+| CL | nypm | long | F1 | XLE v_oi d60_dn | Eb5_Sa1_T90_XSE | 27 | 353 | 1761 | 1258 | 675 | n/a | 1296 | 50.5 |
+| CL | pit | long | F2 | XOP oi|magnet touch_dn | Emkt_S45_Tnone_X120 | 23 | 856 | 2410 | 1757 | 802 | n/a | 1295 | 70.6 |
+| CL | pre | short | FE | USO c_oi|data0830 lo_up | Eb1_S45_Tnone_X15 | 22 | 1880 | 879 | 529 | 183 | n/a | 1318 | 20.9 |
+| ES | asia | long | F7 | XOP c_oi|asia1805 med_hi | Eb5_S30_Tnone_XSE | 24 | 2761 | 1707 | 1365 | 584 | n/a | 1219 | 58.2 |
+| ES | london | long | F1 | QQQ g_oi d1_up | Ep10_Sa2_Tnone_X120 | 28 | 141 | 1663 | 1130 | 472 | -155 | 1279 | 45.9 |
+| ES | nyam | long | F6 | XLE g_oi|0930|0830|med lo_up | Emkt_S60_Tnone_XSE | 21 | 3079 | 1581 | 1256 | 678 | n/a | 1253 | 52.1 |
+| ES | nypm | short | F1 | XLE c_oi hi_d | Emkt_Sa1_Tnone_X120 | 24 | 4204 | 2246 | 1632 | 916 | n/a | 1380 | 61.5 |
+| ES | pre | long | F1 | GDX g_oi lo_d | Eb1_Sa1_T90_X15 | 20 | 1289 | 1038 | 704 | 326 | n/a | 819 | 30.5 |
+| GC | asia | short | F7 | GLD v_oi|asia1805 med_lo | Ep5_S30_Tnone_XSE | 36 | 3008 | 1425 | 2432 | 547 | n/a | 2345 | 53.9 |
+| GC | london | long | F2 | GLD vol|flip touch_dn | Ep10_S30_Ta2_X30 | 30 | 1068 | 1318 | 999 | 323 | n/a | 1172 | 43.3 |
+| GC | nyam | short | F1 | GDX c_dir zx_up | Eb3_S30_T60_X120 | 43 | 1570 | 2251 | 1492 | 650 | n/a | 1243 | 62.4 |
+| GC | nypm | short | F1 | GLD v_vol hi_d | Eb1_Sa1_Ta1_XSE | 69 | 1898 | 1587 | 1556 | 958 | n/a | 1543 | 52.5 |
+| GC | pre | long | F2 | GLD vol|magnet touch_dn | Emkt_S30_Tnone_X30 | 20 | -225 | 1215 | 940 | 372 | n/a | 1726 | 28.3 |
+| NQ | asia | long | F2 | SPX oi|flip touch_up | Eb3_Sa1_Tnone_X120 | 20 | 124 | 1571 | 1637 | 659 | -204 | 1218 | 69.9 |
+| NQ | london | long | F7 | SLV v_oi|lon0200 med_hi | Ep5_S30_T90_XSE | 26 | n/a | 996 | 1138 | 362 | n/a | 1319 | 44.9 |
+| NQ | nyam | short | F6 | GLD g_oi|0930|0830|med lo_up | Ep5_S30_Tnone_X15 | 29 | 1110 | 698 | 1957 | 931 | n/a | 1227 | 82.9 |
+| NQ | nypm | short | F1 | DIA g_dir d5_up | Ep10_Sa2_Tnone_XSE | 38 | 1570 | 1163 | 2014 | 1113 | -226 | 1470 | 71.2 |
+| NQ | pre | short | F1 | SPX v_oi lo_d | Emkt_S30_T90_XSE | 24 | 4364 | 1983 | 1073 | 352 | 53 | 1275 | 43.8 |
+| RTY | asia | short | F7 | SPY c_oi|asia1805 med_hi | Emkt_S30_Ta2_XSE | 69 | 1279 | 1023 | 1124 | 421 | -241 | 1332 | 43.9 |
+| RTY | london | long | F1 | DIA v_oi d5_up | Ep10_S30_Tnone_XSE | 30 | 2686 | 1540 | 1102 | 643 | -156 | 1330 | 43.1 |
+| RTY | nyam | short | F1 | SPX v_oi d15_dn | Eb3_Sa1_T90_XSE | 44 | 2012 | 1377 | 1771 | 693 | 106 | 1241 | 74.2 |
+| RTY | nypm | short | F1 | IWM v_dir d60_up | Emkt_S45_Tnone_XSE | 22 | 773 | 459 | 1081 | 448 | -0 | 1287 | 43.7 |
+| RTY | pre | short | F1 | SPY g_oi hi_d | Emkt_Sa1_Tnone_XSE | 38 | 3406 | 1938 | 1245 | 294 | 241 | 2797 | 23.1 |
+| SI | asia | long | F7 | SLV v_oi|asia1805 med_hi | Ep5_S90_T60_XSE | 20 | n/a | 1011 | 761 | 299 | n/a | 865 | 33.0 |
+| SI | london | long | FE | SLV g_oi|lbma_silver hi_dn | Ep5_Sa2_T30_XSE | 39 | 1180 | 1431 | 1209 | 566 | n/a | 1137 | 52.4 |
+| SI | nyam | short | F6 | SLV g_dir|1000|0930|med lo_up | Ep10_Sa2_Tnone_XSE | 22 | -390 | 1872 | 1450 | 791 | n/a | 1952 | 38.6 |
+| SI | nypm | short | F1 | SLV v_oi d60_up | Emkt_Sa1_T30_X60 | 50 | 2398 | 1691 | 1122 | 570 | n/a | 579 | 48.6 |
+| SI | pre | short | F6 | SLV g_oi|0830|0200|sign hi_up | Eb1_S90_Tnone_X30 | 21 | 842 | 639 | 670 | 132 | n/a | 730 | 29.0 |
+| YM | asia | long | F7 | NDX g_vol|asia1805 med_hi | Eb5_S45_Tnone_XSE | 28 | 1182 | 1375 | 960 | 545 | 535 | 1185 | 41.6 |
+| YM | london | long | F1 | SPY v_oi lo_d | Emkt_Sa1_Tnone_X120 | 27 | 3968 | 2116 | 1249 | 642 | -254 | 1362 | 47.7 |
+| YM | nyam | short | F6 | IWM g_oi|1000|0930|med lo_dn | Emkt_S30_Ta2_XSE | 34 | 423 | 1293 | 1239 | 718 | -195 | 1204 | 53.5 |
+| YM | nypm | short | F1 | NDX c_dir d5_dn | Emkt_S30_Tnone_XSE | 24 | 1829 | 712 | 1262 | 1060 | -88 | 1477 | 44.4 |
+| YM | pre | short | F6 | SPY g_oi|0830|0200|med lo_up | Eb1_Sa1_T45_X30 | 20 | 648 | 977 | 868 | 378 | 158 | 1266 | 35.6 |
+
 ## 6b. Which instrument carries each trigger ticker best (all single-trigger families; gated share of groups / best gated L6M Calmar with $1,200 dd floor; * = matched instrument)
 | trigger ticker | NQ | ES | RTY | YM | GC | SI | CL |
 |--|--|--|--|--|--|--|--|
-| DIA | 68% / 71.2 | 63% / 47.0 | 61% / 51.8 | *62% / 42.9 | - | - | - |
-| IWM | 58% / 48.4 | 53% / 45.1 | *51% / 66.6 | 55% / 53.5 | - | - | - |
+| DIA | 57% / 71.2 | 53% / 47.0 | 52% / 51.8 | *56% / 43.6 | - | - | - |
+| GDX | 65% / 56.5 | 60% / 53.1 | - | - | *51% / 62.4 | - | - |
+| GLD | 62% / 82.9 | 57% / 42.4 | - | - | *56% / 53.9 | - | - |
+| IWM | 49% / 48.4 | 46% / 45.1 | *47% / 66.6 | 47% / 53.5 | - | - | - |
 | NDX | *55% / 60.9 | 47% / 45.7 | 49% / 58.3 | 48% / 45.7 | - | - | - |
 | QQQ | *60% / 62.2 | 55% / 49.2 | 57% / 56.3 | 58% / 41.9 | - | - | - |
+| SLV | 65% / 58.9 | 59% / 39.0 | - | - | - | *54% / 52.4 | - |
 | SPX | 56% / 69.9 | *54% / 35.7 | 53% / 74.2 | 54% / 42.8 | - | - | - |
 | SPY | 56% / 56.5 | *52% / 42.2 | 52% / 43.9 | 56% / 51.4 | - | - | - |
+| USO | 65% / 70.9 | 63% / 49.6 | - | - | - | - | *57% / 51.2 |
+| XLE | 65% / 65.9 | 62% / 61.5 | - | - | - | - | *52% / 50.5 |
+| XOP | 59% / 50.2 | 55% / 58.2 | - | - | - | - | *46% / 70.6 |
 
 ## 7. Pairs of the top-20 singles per instrument (AND within 15 min, event = later one; no pair uses a table twice). Null = table B of each pair moved by a circular whole-week shift (A kept), same pairs.
 | instrument | observed pairs: groups / gated (share) / max recents / best Calmar | null draw 1 | null draw 2 | null draw 3 |
@@ -178,11 +243,11 @@ F6 10:00 ET reading for 2026-10-14: row avail 10:00:00 ET (<= 10:00:00), value -
 F7 prior-close reading of 2026-10-14: row avail 16:00:00 ET (start 15:59); event 18:05 ET same date (Friday -> Sunday 18:05) + lag; London 02:00 ET next business day; pre-market 06:35 ET uses rows avail <= 06:35
 
 ## 5. Plain reading
-PLAIN READING (updated 17:20Z; B2 NQ+ES, B3 RTY+YM, B4 pairs, B5 no-UW baselines). STRENGTH: WEAK everywhere; no book is distinguishable from chance after selection.
-- Singles (families 1,2,6,7): per-session best books are listed in section 2 (thin n 20-47, placebo p 0.05-0.29). The shifted-time null reaches the same best recents and Calmar in F1 and F2 on NQ/ES, and the gated share is lower than null (F1 37% vs 55%, F2 21% vs 50%). RTY and YM crosses (SPX/SPY/QQQ/NDX triggers) look the same (gated share F1 41-44%, F2 16-27%, no null run there yet).
-- F6/F7 clocks: the NO-UW baseline (same clock, no UW condition) passes the gate in 83-100% of its groups on every instrument, MORE than the UW-conditioned tables (66-94%). The apparent excess over the shifted null is the clock/market drift of the 2024-26 sample (overnight and morning legs of a rising market), not the UW reading. UW conditioning does not add a measurable lift here.
-- Pairs (AND within 15 min of the top-20 singles per instrument, 741 pairs): observed gated share 18-35% vs null 16-45%, max recents and best Calmar inside the null range on all four instruments (RTY best Calmar 90 vs 61-73 null is the only excess, one group). No pair is a survivor.
-- Not done yet: IWM/DIA matched runs (B6 running; IWM history starts 2024-12-23), IWM/DIA level files for F2, metals/oil (GC/SI/CL with GLD/GDX/SLV/USO/XLE/XOP, after the six tickers are pulled), exact-engine joint (needs an add-a-book hook; question in MORNING), WF/placebo B=100 for the final list by the 18:45Z cycle.
-- Simulator audit: an independent naive second-by-second loop (entry modes market / +3 min confirm / 5-pt pullback, stops, targets, time exits, 08:30 slippage) reproduced the vectorised harness on 198 of 198 random event x cell checks (1-s resolution region, exit < 2 h).
-- Update 17:55Z: IWM/DIA run (B6, 608 jobs on NQ/ES/RTY/YM) shows the same picture; matched instruments (section 6b) do not carry their trigger better than the crosses (gated share 51-62% matched vs 47-68% cross). Metals/oil: FEB clock baselines run; UW-conditioned FE/F1/F6/F7 wait for the GLD/GDX/SLV/USO/XLE/XOP spot_1m pulls (about 20 of ~500 days each at 17:48Z).
-- Placebo (shuffled-day events, B=100, group best-cell recents vs the same statistic on shuffled days): finalists reach p 0.01-0.05 for pre short SPX v_oi lo_d (NQ, 0.01), london long SPY v_oi lo_d (YM, 0.03) and QQQ g_oi d1_up (ES, 0.03), asia short QQQ g_dir med_hi (ES, 0.04), nyam short SPX v_oi d15_dn (RTY, 0.05); others 0.10-0.98. With ~40k scored groups, ~2,000 groups would show p<=0.05 by chance, and the family-level shifted-time null is not beaten: these are named as best-per-session candidates, not survivors. 2x-slippage stress cuts L6M by only 1-12% (entries are market/limit at tick-scale slips on large-ATR stops), so costs are not what limits them.
+PLAIN READING (21:30Z). Scope: NQ ES RTY YM (triggers SPX SPY QQQ NDX IWM DIA, matched and cross), GC SI CL (triggers GLD GDX SLV USO XLE XOP, own scheduled-event clocks, CL pit session), cross use of the metals/oil tickers on NQ/ES, families 1 2 6 7 + event clocks (FE) + no-UW baselines + 741 pairs. About 50k scored groups x 1,470 grid cells. STRENGTH: WEAK; nothing separates from chance after selection.
+- Family 1 (exposure flips/extremes/deltas) and family 2 (levels as trade locations): the share of groups passing the tolerant gate is BELOW the shifted-time null (F1 43% vs 62-63%, F2 21% vs 50-51%) and the best recents $/wk and best Calmar sit inside the null range (F1 max recents 2,836 vs 3,077-3,223; F2 2,060 vs 3,380-3,964). No evidence of an exposure or level effect on any instrument, matched or cross (section 6b: the matched instrument does not carry its trigger better).
+- Families 6, 7 and FE (morning set, prior-close / pre-market, scheduled-event clocks) pass the gate far more often than the null (F6 76% vs 44-46%, F7 91% vs 64-65%, FE 79% vs 31-33%), but so do the NO-UW baselines of the same clocks (F6B 98%, F7B 100%, FEB 76% vs 41-47% null) and the baseline best Calmar/recents are of the same size: the excess is the drift of the clock/time-of-day legs in this 2-year sample (rising market), not the UW reading. UW conditioning adds no measurable lift over its clock.
+- Pairs (741, AND within 15 min): gated share 24% vs 35% null; max recents 3,345 vs 2,613-3,138; RTY best Calmar 90 vs 62-124 null. No survivor.
+- Per-session best books (section 2, with spec) are thin (n 20-47 trades in L6M), have WF OOS $/wk small relative to in-sample, and placebo p 0.01-0.17 at group level; with ~50k groups ~2,500 would show p<=0.05 by chance. 2x-slippage stress changes L6M by 1-12%.
+- Metals/oil: same picture (F1/F6/F7/F2/FE on GC SI CL, FE vs FEB lift none). UW pulls for the six ETFs are still arriving (about 250 of 510 days) so HOLD is partly covered; PREUW is empty for them.
+- Simulator audit: independent second-by-second loop reproduces the harness on 198 of 198 checks. Seam checks, roll/glitch guard (event dropped if the 1-s path jumps > 80 NQ pts x scale, or 3 ATR5 for GC/SI/CL) and the VOID first screen are documented in MORNING.
+- Not done: exact-engine joint (needs an add-a-book hook; awaiting the lead), WF/placebo for pairs, longer UW history for ETFs, forward register of 0DTE walls.

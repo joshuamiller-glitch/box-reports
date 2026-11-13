@@ -1,5 +1,5 @@
 # DS3_SURVIVORS_X - flat-stop survivors (EC_FLAT{40,45,50}{K,U,A,M} on LPB_BASE; JN04RM_FLAT{40,45,50}K on the JN04RM base), exact, Shadow only, no PASS claim
-Updated 2026-11-13 20:46Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 43/43, EC_FLAT40K 43/43, EC_FLAT50K 43/43, EC_FLAT45U 43/43, EC_FLAT40U 23/43, EC_FLAT50U 23/43, EC_FLAT45A 43/43, EC_FLAT40A 23/43, EC_FLAT50A 23/43, EC_FLAT45M 43/43, EC_FLAT40M 23/43, EC_FLAT50M 23/43, JN04RM_FLAT45K 43/43, JN04RM_FLAT40K 43/43, JN04RM_FLAT50K 43/43
+Updated 2026-11-13 21:17Z. Prereg autopilot/SURVIVORS_X_PREREG.md. Months done per set: EC_FLAT45K 43/43, EC_FLAT40K 43/43, EC_FLAT50K 43/43, EC_FLAT45U 43/43, EC_FLAT40U 27/43, EC_FLAT50U 27/43, EC_FLAT45A 43/43, EC_FLAT40A 27/43, EC_FLAT50A 26/43, EC_FLAT45M 43/43, EC_FLAT40M 26/43, EC_FLAT50M 26/43, JN04RM_FLAT45K 43/43, JN04RM_FLAT40K 43/43, JN04RM_FLAT50K 43/43
 Fill model: flat-stop market exit at next-1-s mid -/+ 0.80 pt (live loss-cut is 1.19-1.20 adverse => savings overstated ~0.4 pt). Windows PRE/X/GAP/WF need all 43 months; sets missing months are labelled.
 
 ## 1. Trend-week clause (L6M weekly check, exact)
@@ -196,7 +196,7 @@ EC_FLAT45U PRE (stack, per week): full stops 14.7/wk $-21261; give-backs 5.2/wk 
 EC_FLAT45U X' (stack, per week): full stops 15.8/wk $-22765; give-backs 3.6/wk (3.1 round-trips) realised $-5129, forgone vs target $13002; same-side losing runs max 7, p95 4, $-12264 lost on 3rd-and-later; no-new-evidence re-entries 2.8/wk $786; recoveries cut 2.5/wk $9968, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $19/wk, net +223 $/wk; pnl $1565/wk.
 
 
-## EC_FLAT40U (23/43 months)
+## EC_FLAT40U (27/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40U
@@ -230,7 +230,7 @@ EC_FLAT40U PRE: months missing (17 of 17), window not scored
 EC_FLAT40U X': months missing (8 of 10), window not scored
 
 
-## EC_FLAT50U (23/43 months)
+## EC_FLAT50U (27/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50U
@@ -300,7 +300,7 @@ EC_FLAT45A PRE (stack, per week): full stops 15.8/wk $-28133; give-backs 5.2/wk 
 EC_FLAT45A X' (stack, per week): full stops 16.4/wk $-27145; give-backs 3.6/wk (3.0 round-trips) realised $-5024, forgone vs target $12925; same-side losing runs max 7, p95 4, $-12476 lost on 3rd-and-later; no-new-evidence re-entries 2.7/wk $540; recoveries cut 2.5/wk $9877, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $274/wk, losers avoided $249/wk, net +340 $/wk; pnl $1682/wk.
 
 
-## EC_FLAT40A (23/43 months)
+## EC_FLAT40A (27/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40A
@@ -334,7 +334,7 @@ EC_FLAT40A PRE: months missing (17 of 17), window not scored
 EC_FLAT40A X': months missing (8 of 10), window not scored
 
 
-## EC_FLAT50A (23/43 months)
+## EC_FLAT50A (26/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50A
@@ -404,7 +404,7 @@ EC_FLAT45M PRE (stack, per week): full stops 15.0/wk $-26265; give-backs 5.1/wk 
 EC_FLAT45M X' (stack, per week): full stops 14.5/wk $-23978; give-backs 3.6/wk (3.1 round-trips) realised $-4917, forgone vs target $12899; same-side losing runs max 7, p95 4, $-12585 lost on 3rd-and-later; no-new-evidence re-entries 3.1/wk $576; recoveries cut 2.1/wk $9054, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $658/wk, losers avoided $528/wk, net -205 $/wk; pnl $1137/wk.
 
 
-## EC_FLAT40M (23/43 months)
+## EC_FLAT40M (26/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT40M
@@ -438,15 +438,15 @@ EC_FLAT40M PRE: months missing (17 of 17), window not scored
 EC_FLAT40M X': months missing (8 of 10), window not scored
 
 
-## EC_FLAT50M (23/43 months)
+## EC_FLAT50M (26/43 months)
 ### windows / WF / rule 2a
 ```
 EC_FLAT50M
          cell window  mean_all  mean_ref_all  dmean_all     mean       dd   dd_ref  cut  dmean  eq_cut       w20   w20_ref  calmar  mean_ref  months
-0  EC_FLAT50M    L1M     708.1         340.7      367.4  17761.9  50453.2  51252.7  1.6  223.3     1.8    2832.5    1363.0    18.3   17538.5      12
-1  EC_FLAT50M    L3M   11993.9       11956.7       37.3  13821.0  78364.9  77224.2 -1.5  153.5    -1.2  155921.1  155436.8     9.2   13667.5      12
-2  EC_FLAT50M    L6M   18600.7       18696.8      -96.2  19222.9  78364.9  77224.2 -1.5   46.2    -1.2   98485.4  102383.9    12.8   19176.7      12
-3  EC_FLAT50M   HOLD   15206.5       15236.3      -29.8  15445.0  78662.5  78842.0  0.2   41.2     0.5 -382173.9 -377467.2    10.2   15403.7      12
+0  EC_FLAT50M    L1M     708.1         340.7      367.4  17761.9  50453.2  51252.7  1.6  223.3     1.8    2832.5    1363.0    18.3   17538.5      24
+1  EC_FLAT50M    L3M   11993.9       11956.7       37.3  13821.0  78364.9  77224.2 -1.5  153.5    -1.2  155921.1  155436.8     9.2   13667.5      24
+2  EC_FLAT50M    L6M   18600.7       18696.8      -96.2  19222.9  78364.9  77224.2 -1.5   46.2    -1.2   98485.4  102383.9    12.8   19176.7      24
+3  EC_FLAT50M   HOLD   15206.5       15236.3      -29.8  15445.0  78662.5  78842.0  0.2   41.2     0.5 -382173.9 -377467.2    10.2   15403.7      24
 
 ```
 ### acceptance_p7
@@ -469,7 +469,7 @@ ACCEPT EC_FLAT50M FAIL fails=3/20
 EC_FLAT50M L6M (stack, per week): full stops 23.3/wk $-38336; give-backs 9.1/wk (9.0 round-trips) realised $-13970, forgone vs target $35337; same-side losing runs max 12, p95 6, $-51287 lost on 3rd-and-later; no-new-evidence re-entries 37.4/wk $-353; recoveries cut 13.6/wk $46592, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $30/wk, net -102 $/wk; pnl $19682/wk.
 EC_FLAT50M HOLD (stack, per week): full stops 21.9/wk $-36418; give-backs 8.0/wk (7.8 round-trips) realised $-12134, forgone vs target $30684; same-side losing runs max 12, p95 6, $-43502 lost on 3rd-and-later; no-new-evidence re-entries 30.0/wk $697; recoveries cut 12.1/wk $41437, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $47/wk, losers avoided $31/wk, net -33 $/wk; pnl $15319/wk.
 EC_FLAT50M PRE: months missing (17 of 17), window not scored
-EC_FLAT50M X': months missing (10 of 10), window not scored
+EC_FLAT50M X': months missing (2 of 10), window not scored
 
 
 ## JN04RM_FLAT45K (43/43 months)
