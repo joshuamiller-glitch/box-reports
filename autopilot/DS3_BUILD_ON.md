@@ -1,6 +1,6 @@
-# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-13 11:27Z
+# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-13 15:50Z
 
-Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 93 of 1004 done (one set per job, one month per job), 1 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
+Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 131 of 1004 done (one set per job, one month per job), 1 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
 
 
 ## 1. What this page is, and the definitions used
@@ -44,13 +44,16 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_1Trev_G15_k2p00_T45 | P7: FRESH entries get target 45 pts (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 2.00 ATR) | HOLD | 12 | 14542 | 0.6 | -3.5 | -852 | 23.0 (23.0) | -1653 (-1651) | -3998 | 93 | 207 | 4586 | 207 | 0.0 |
 | BO_P7_4PC_f0p50_N30_X10_fresh_s1 | P7: probe 0.50 of the lots, add the rest after 30 s with no adverse move beyond 10 pts (rechase never adds) | HOLD | 12 | 11040 | 23.9 | 19.5 | -4111 | 23.1 (23.0) | -1636 (-1651) | -25253 | 355 | 80 | 6962 | -12565 | 0.0 |
 | BO_P7_6TL_N5_t0p40_flat_all | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (all trades) | HOLD | 12 | 15742 | 1.1 | 3.3 | 627 | 22.9 (23.0) | -1652 (-1651) | -712 | 63 | -196 | 763 | 1165 | 1.5 |
-| BO_P7_6TL_N5_t0p40_flat_rech | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (rechase only) | HOLD | 12 | 15910 | 1.1 | 3.1 | 795 | 23.0 (23.0) | -1652 (-1651) | -536 | 63 | -83 | 686 | 1132 | 1.4 |
+| BO_P7_6TL_N5_t0p40_flat_rech | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (rechase only) | HOLD | 32 | 15910 | 1.1 | 3.1 | 795 | 23.0 (23.0) | -1652 (-1651) | -536 | 63 | -83 | 686 | 1132 | 1.4 |
 | BO_P7_7C_W600_skip | P7: another book filled a same-side target in the last 600 s: skip the signal | HOLD | 12 | 14085 | 2.1 | 7.8 | -425 | 22.9 (23.0) | -1649 (-1651) | -47 | 0 | -51 | -1863 | -3152 | 0.0 |
 | BO_P7_7N_n4_half | P7: 4 or more same-side target fills by other books in the last 30 min: half the lots | HOLD | 12 | 15391 | 0.0 | 0.3 | 33 | 23.0 (23.0) | -1651 (-1651) | -47 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_P7_7N_n4_skip | P7: 4 or more same-side target fills by other books in the last 30 min: skip the signal | HOLD | 12 | 15375 | 0.0 | 0.2 | 16 | 23.0 (23.0) | -1651 (-1651) | 0 | 0 | 28 | 0 | 0 | 0.0 |
 | BO_P7_8T_T55 | P7: single target 55 pts, stop 60 | HOLD | 12 | 16906 | 19.0 | 21.3 | 1554 | 22.9 (23.0) | -1649 (-1651) | -5543 | 223 | 1018 | 330 | -1694 | 0.0 |
+| BO_P7_BL_f0_r120 | P7 post-loss same-side blackout: 0 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | HOLD | 12 | 15200 | -9.9 | -2.7 | -155 | 22.9 (23.0) | -1649 (-1651) | 0 | 0 | 1814 | 1807 | 773 | 0.0 |
+| BO_P7_BL_f30_r120 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | HOLD | 12 | 15658 | 6.5 | 16.8 | -281 | 22.9 (23.0) | -1649 (-1651) | 0 | 0 | 1725 | 1611 | 292 | 0.0 |
 | BO_P7_BL_f30_r60 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 60 min after a losing RECHASE entry (extra to the live blackout) | HOLD | 12 | 15828 | -5.6 | 2.8 | 473 | 22.9 (23.0) | -1649 (-1651) | -57 | 0 | 1451 | 2166 | -1617 | 0.0 |
 | BO_P7_BL_f30_r90 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 90 min after a losing RECHASE entry (extra to the live blackout) | HOLD | 12 | 14913 | 4.4 | 8.1 | 404 | 22.9 (23.0) | -1647 (-1651) | 0 | 0 | 2396 | -221 | -3406 | 0.0 |
+| BO_P7_NZF_all | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on all entries | HOLD | 12 | 14775 | 0.9 | -0.7 | -15 | 22.9 (23.0) | -1650 (-1651) | -10334 | 352 | 766 | -1179 | -4847 | 0.0 |
 | BO_K7_1C_m0p50_T30_S60 | K7: rechase entries get lots x0.50, target 30, stop 60 (fresh full) | L1M | 6 | -13288 | 9.8 | nan | 2891 | 31.9 (28.4) | -1594 (-1667) | -20569 | 9365 | -1127 | 5013 | -12448 | 0.0 |
 | BO_K7_1L_G30_k1p00_m0p50 | K7: RECHASE entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 1.00 ATR) | L1M | 6 | -14152 | 12.4 | nan | 2028 | 31.9 (28.4) | -1602 (-1667) | -3769 | 1236 | 0 | 6341 | -9704 | 0.0 |
 | BO_K7_1Lrev_G15_k2p00_m0p50 | K7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 2.00 ATR) | L1M | 6 | 17912 | -3.4 | -0.8 | 374 | 28.4 (28.4) | -1654 (-1667) | -837 | 392 | 0 | -1728 | 0 | 0.0 |
@@ -79,7 +82,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_4PC_f0p50_N30_X10_fresh_s1 | P7: probe 0.50 of the lots, add the rest after 30 s with no adverse move beyond 10 pts (rechase never adds) | L1M | 12 | 15684 | 26.9 | 7.6 | -1855 | 28.4 (28.4) | -1629 (-1667) | -25024 | 0 | -4291 | 13784 | -6777 | 0.0 |
 | BO_P7_6TL_N40_t0p25_flat_all | P7: at 40 min, if the open loss is still worse than 25% of the target: flat (all trades) | L1M | 6 | -14558 | 4.1 | nan | 1622 | 28.4 (28.4) | -1667 (-1667) | -3221 | 0 | -5514 | 2086 | -5522 | 3.9 |
 | BO_P7_6TL_N5_t0p40_flat_all | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (all trades) | L1M | 12 | -744 | -1.7 | -25.1 | -294 | 28.4 (28.4) | -1638 (-1667) | -5023 | 742 | -2229 | -883 | 0 | 2.8 |
-| BO_P7_6TL_N5_t0p40_flat_rech | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (rechase only) | L1M | 12 | -744 | -1.7 | -32.7 | -294 | 28.4 (28.4) | -1638 (-1667) | -4399 | 742 | -2229 | -883 | 0 | 2.5 |
+| BO_P7_6TL_N5_t0p40_flat_rech | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (rechase only) | L1M | 32 | -744 | -1.7 | -32.7 | -294 | 28.4 (28.4) | -1638 (-1667) | -4399 | 742 | -2229 | -883 | 0 | 2.5 |
 | BO_P7_6TP_N5_p0p40_half_rech | P7: at 5 min, if the open profit is below 40% of the target: half the lots out (rechase only) | L1M | 6 | 1072 | 2.0 | 12.4 | 1522 | 28.0 (28.4) | -1632 (-1667) | -24704 | 371 | -307 | 6405 | -1840 | 9.1 |
 | BO_P7_7C_W180_skip | P7: another book filled a same-side target in the last 180 s: skip the signal | L1M | 6 | -16180 | 0.0 | 0.0 | 0 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_P7_7C_W300_half | P7: another book filled a same-side target in the last 300 s: half the lots | L1M | 6 | -450 | 0.0 | 82.5 | 0 | 28.4 (28.4) | -1639 (-1667) | 0 | 808 | 0 | 0 | 0 | 0.0 |
@@ -90,11 +93,11 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_8T_T40 | P7: single target 40 pts, stop 60 | L1M | 6 | -8839 | -0.9 | nan | -8389 | 28.0 (28.4) | -1632 (-1667) | -20020 | 0 | 5719 | -438 | -24728 | 0.0 |
 | BO_P7_8T_T55 | P7: single target 55 pts, stop 60 | L1M | 12 | -3242 | -4.7 | -363.5 | -2792 | 28.4 (28.4) | -1667 (-1667) | -7782 | 0 | 1144 | -2406 | -5972 | 0.0 |
 | BO_P7_8Tq_T40 | P7: single target 40 pts, stop 60 (queue-conservative: fills only on trade-through by 1 tick) | L1M | 6 | -8839 | -0.9 | nan | -8389 | 28.0 (28.4) | -1632 (-1667) | -20020 | 0 | 5719 | -438 | -24728 | 0.0 |
-| BO_P7_BL_f0_r120 | P7 post-loss same-side blackout: 0 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L1M | 6 | 20710 | 28.5 | 32.2 | 3171 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | -5234 | 14625 | 2611 | 0.0 |
-| BO_P7_BL_f30_r120 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L1M | 6 | 19426 | 28.5 | 28.1 | 1887 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | -5952 | 14625 | 595 | 0.0 |
+| BO_P7_BL_f0_r120 | P7 post-loss same-side blackout: 0 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L1M | 12 | 20710 | 28.5 | 32.2 | 3171 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | -5234 | 14625 | 2611 | 0.0 |
+| BO_P7_BL_f30_r120 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L1M | 12 | 19426 | 28.5 | 28.1 | 1887 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | -5952 | 14625 | 595 | 0.0 |
 | BO_P7_BL_f30_r60 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 60 min after a losing RECHASE entry (extra to the live blackout) | L1M | 12 | 2308 | 20.9 | 52.1 | 2758 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | -2170 | 10729 | -2454 | 0.0 |
 | BO_P7_BL_f30_r90 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 90 min after a losing RECHASE entry (extra to the live blackout) | L1M | 12 | 825 | -0.5 | 97.7 | 1275 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | -1788 | -269 | 4093 | 0.0 |
-| BO_P7_NZF_all | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on all entries | L1M | 6 | -13285 | 0.7 | nan | 2895 | 28.4 (28.4) | -1667 (-1667) | -7333 | 0 | 778 | 384 | 15945 | 0.0 |
+| BO_P7_NZF_all | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on all entries | L1M | 12 | -13285 | 0.7 | nan | 2895 | 28.4 (28.4) | -1667 (-1667) | -7333 | 0 | 778 | 384 | 15945 | 0.0 |
 | BO_P7_NZF_fresh | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on FRESH only (reverse control) entries | L1M | 6 | -450 | 0.0 | 8.1 | 0 | 28.4 (28.4) | -1667 (-1667) | -67 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L1M | 6 | -13819 | 0.7 | nan | 2361 | 28.4 (28.4) | -1667 (-1667) | -7265 | 0 | 778 | 384 | 15945 | 0.0 |
 | BO_K7_1C_m0p50_T30_S60 | K7: rechase entries get lots x0.50, target 30, stop 60 (fresh full) | L3M | 6 | 10612 | 21.3 | 29.8 | 1646 | 25.4 (23.4) | -1531 (-1662) | -17575 | 10067 | -609 | 8455 | -3946 | 0.0 |
@@ -124,7 +127,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_4PC_f0p50_N30_X10_fresh_s1 | P7: probe 0.50 of the lots, add the rest after 30 s with no adverse move beyond 10 pts (rechase never adds) | L3M | 12 | 12107 | 46.1 | 29.6 | -2819 | 23.4 (23.4) | -1637 (-1662) | -25667 | 322 | -2677 | 11481 | -9183 | 0.0 |
 | BO_P7_6TL_N40_t0p25_flat_all | P7: at 40 min, if the open loss is still worse than 25% of the target: flat (all trades) | L3M | 6 | 14604 | -5.3 | -8.9 | -321 | 23.5 (23.4) | -1672 (-1662) | -1881 | 0 | -2483 | 3045 | -1360 | 3.0 |
 | BO_P7_6TL_N5_t0p40_flat_all | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (all trades) | L3M | 12 | 13481 | 2.8 | 7.3 | 838 | 23.4 (23.4) | -1651 (-1662) | -1256 | 280 | -347 | 138 | 1294 | 2.0 |
-| BO_P7_6TL_N5_t0p40_flat_rech | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (rechase only) | L3M | 12 | 13430 | 2.8 | 7.0 | 787 | 23.4 (23.4) | -1651 (-1662) | -1100 | 280 | -347 | 138 | 1294 | 1.9 |
+| BO_P7_6TL_N5_t0p40_flat_rech | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (rechase only) | L3M | 32 | 13430 | 2.8 | 7.0 | 787 | 23.4 (23.4) | -1651 (-1662) | -1100 | 280 | -347 | 138 | 1294 | 1.9 |
 | BO_P7_6TP_N5_p0p40_half_rech | P7: at 5 min, if the open profit is below 40% of the target: half the lots out (rechase only) | L3M | 6 | 4068 | 29.1 | 3.5 | -1482 | 23.1 (23.4) | -1645 (-1662) | -23640 | 520 | -168 | 12218 | -12019 | 7.1 |
 | BO_P7_7C_W180_skip | P7: another book filled a same-side target in the last 180 s: skip the signal | L3M | 6 | 13360 | -1.3 | 2.7 | 717 | 23.4 (23.4) | -1662 (-1662) | 0 | 0 | 111 | 0 | 1225 | 0.0 |
 | BO_P7_7C_W300_half | P7: another book filled a same-side target in the last 300 s: half the lots | L3M | 6 | 12138 | -1.6 | -0.6 | 164 | 23.4 (23.4) | -1653 (-1662) | -630 | 202 | 0 | 0 | 599 | 0.0 |
@@ -135,11 +138,11 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_8T_T40 | P7: single target 40 pts, stop 60 | L3M | 6 | 11641 | 33.1 | 11.6 | -1086 | 23.4 (23.4) | -1654 (-1662) | -20230 | 169 | 2142 | 3307 | -11631 | 0.0 |
 | BO_P7_8T_T55 | P7: single target 55 pts, stop 60 | L3M | 12 | 13738 | 17.3 | 22.2 | 71 | 23.4 (23.4) | -1674 (-1662) | -6014 | 195 | 1743 | -5174 | -1940 | 0.0 |
 | BO_P7_8Tq_T40 | P7: single target 40 pts, stop 60 (queue-conservative: fills only on trade-through by 1 tick) | L3M | 6 | 11641 | 33.1 | 11.6 | -1086 | 23.4 (23.4) | -1654 (-1662) | -20230 | 169 | 2142 | 3307 | -11631 | 0.0 |
-| BO_P7_BL_f0_r120 | P7 post-loss same-side blackout: 0 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L3M | 6 | 13306 | 30.9 | 44.7 | 4341 | 23.3 (23.4) | -1657 (-1662) | 0 | 0 | -1 | 9415 | 280 | 0.0 |
-| BO_P7_BL_f30_r120 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L3M | 6 | 12709 | 30.9 | 42.3 | 3744 | 23.3 (23.4) | -1657 (-1662) | 0 | 0 | -467 | 9415 | -24 | 0.0 |
+| BO_P7_BL_f0_r120 | P7 post-loss same-side blackout: 0 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L3M | 12 | 13306 | 30.9 | 44.7 | 4341 | 23.3 (23.4) | -1657 (-1662) | 0 | 0 | -1 | 9415 | 280 | 0.0 |
+| BO_P7_BL_f30_r120 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L3M | 12 | 12709 | 30.9 | 42.3 | 3744 | 23.3 (23.4) | -1657 (-1662) | 0 | 0 | -467 | 9415 | -24 | 0.0 |
 | BO_P7_BL_f30_r60 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 60 min after a losing RECHASE entry (extra to the live blackout) | L3M | 12 | 12826 | 9.8 | 12.8 | 99 | 23.4 (23.4) | -1660 (-1662) | 0 | 0 | 1349 | 6619 | -2121 | 0.0 |
 | BO_P7_BL_f30_r90 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 90 min after a losing RECHASE entry (extra to the live blackout) | L3M | 12 | 13728 | 14.3 | 23.8 | 1754 | 23.3 (23.4) | -1657 (-1662) | 0 | 0 | 1720 | 1571 | -131 | 0.0 |
-| BO_P7_NZF_all | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on all entries | L3M | 6 | 14387 | 29.4 | 24.5 | -538 | 23.4 (23.4) | -1661 (-1662) | -10086 | 186 | 2321 | -4235 | 914 | 0.0 |
+| BO_P7_NZF_all | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on all entries | L3M | 12 | 14387 | 29.4 | 24.5 | -538 | 23.4 (23.4) | -1661 (-1662) | -10086 | 186 | 2321 | -4235 | 914 | 0.0 |
 | BO_P7_NZF_fresh | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on FRESH only (reverse control) entries | L3M | 6 | 14661 | 8.3 | 7.0 | -265 | 23.4 (23.4) | -1662 (-1662) | -1327 | 0 | -268 | -22 | -567 | 0.0 |
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L3M | 6 | 12710 | 11.5 | 2.4 | -958 | 23.4 (23.4) | -1661 (-1662) | -8852 | 186 | 2401 | -2893 | 1689 | 0.0 |
 | BO_K7_1C_m0p50_T30_S60 | K7: rechase entries get lots x0.50, target 30, stop 60 (fresh full) | L6M | 6 | 18099 | 21.3 | 18.2 | -709 | 26.6 (24.5) | -1496 (-1632) | -19334 | 9192 | 831 | 7504 | -4141 | 0.0 |
@@ -169,7 +172,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_4PC_f0p50_N30_X10_fresh_s1 | P7: probe 0.50 of the lots, add the rest after 30 s with no adverse move beyond 10 pts (rechase never adds) | L6M | 12 | 17639 | 46.1 | 43.0 | -1022 | 24.7 (24.5) | -1608 (-1632) | -27379 | 477 | -445 | 9363 | -11864 | 0.0 |
 | BO_P7_6TL_N40_t0p25_flat_all | P7: at 40 min, if the open loss is still worse than 25% of the target: flat (all trades) | L6M | 6 | 18391 | -5.3 | -12.6 | -1270 | 24.6 (24.5) | -1637 (-1632) | -3015 | 0 | -1254 | 2930 | -1532 | 2.6 |
 | BO_P7_6TL_N5_t0p40_flat_all | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (all trades) | L6M | 12 | 17743 | 2.8 | 4.9 | 390 | 24.5 (24.5) | -1627 (-1632) | -880 | 130 | -191 | 92 | 1510 | 1.7 |
-| BO_P7_6TL_N5_t0p40_flat_rech | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (rechase only) | L6M | 12 | 17719 | 2.8 | 4.8 | 366 | 24.5 (24.5) | -1627 (-1632) | -807 | 130 | -191 | 92 | 1464 | 1.6 |
+| BO_P7_6TL_N5_t0p40_flat_rech | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (rechase only) | L6M | 32 | 17719 | 2.8 | 4.8 | 366 | 24.5 (24.5) | -1627 (-1632) | -807 | 130 | -191 | 92 | 1464 | 1.6 |
 | BO_P7_6TP_N5_p0p40_half_rech | P7: at 5 min, if the open profit is below 40% of the target: half the lots out (rechase only) | L6M | 6 | 13795 | 29.1 | 18.3 | -2097 | 24.3 (24.5) | -1616 (-1632) | -24642 | 426 | 428 | 8989 | -15792 | 7.0 |
 | BO_P7_7C_W180_skip | P7: another book filled a same-side target in the last 180 s: skip the signal | L6M | 6 | 17830 | -1.3 | 1.4 | 477 | 24.5 (24.5) | -1632 (-1632) | 0 | 0 | 258 | 0 | -329 | 0.0 |
 | BO_P7_7C_W300_half | P7: another book filled a same-side target in the last 300 s: half the lots | L6M | 6 | 17466 | -1.6 | -0.9 | 113 | 24.5 (24.5) | -1628 (-1632) | -634 | 94 | -69 | 0 | -274 | 0.0 |
@@ -180,13 +183,14 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_8T_T40 | P7: single target 40 pts, stop 60 | L6M | 6 | 15866 | 33.1 | 19.2 | -3291 | 24.4 (24.5) | -1624 (-1632) | -22465 | 565 | 3205 | 937 | -16634 | 0.0 |
 | BO_P7_8T_T55 | P7: single target 55 pts, stop 60 | L6M | 12 | 20258 | 17.3 | 19.7 | 597 | 24.5 (24.5) | -1634 (-1632) | -6301 | 91 | 1956 | -8915 | -1602 | 0.0 |
 | BO_P7_8Tq_T40 | P7: single target 40 pts, stop 60 (queue-conservative: fills only on trade-through by 1 tick) | L6M | 6 | 15866 | 33.1 | 19.2 | -3291 | 24.4 (24.5) | -1624 (-1632) | -22465 | 565 | 3205 | 937 | -16634 | 0.0 |
-| BO_P7_BL_f0_r120 | P7 post-loss same-side blackout: 0 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L6M | 6 | 19097 | 30.9 | 35.4 | 1259 | 24.5 (24.5) | -1630 (-1632) | 0 | 0 | 841 | 6258 | 1112 | 0.0 |
-| BO_P7_BL_f30_r120 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L6M | 6 | 19713 | 30.9 | 38.5 | 2182 | 24.5 (24.5) | -1630 (-1632) | 0 | 0 | 769 | 6411 | 425 | 0.0 |
+| BO_P7_BL_f0_r120 | P7 post-loss same-side blackout: 0 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L6M | 12 | 19097 | 30.9 | 35.4 | 1259 | 24.5 (24.5) | -1630 (-1632) | 0 | 0 | 841 | 6258 | 1112 | 0.0 |
+| BO_P7_BL_f30_r120 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 120 min after a losing RECHASE entry (extra to the live blackout) | L6M | 12 | 19713 | 30.9 | 38.5 | 2182 | 24.5 (24.5) | -1630 (-1632) | 0 | 0 | 769 | 6411 | 425 | 0.0 |
 | BO_P7_BL_f30_r60 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 60 min after a losing RECHASE entry (extra to the live blackout) | L6M | 12 | 19379 | 9.8 | 16.9 | 1541 | 24.5 (24.5) | -1628 (-1632) | -118 | 0 | 523 | 7705 | -1955 | 0.0 |
 | BO_P7_BL_f30_r90 | P7 post-loss same-side blackout: 30 min after a losing FRESH entry, 90 min after a losing RECHASE entry (extra to the live blackout) | L6M | 12 | 18052 | 14.3 | 17.7 | 699 | 24.5 (24.5) | -1627 (-1632) | 0 | 0 | 2342 | 584 | -5291 | 0.0 |
-| BO_P7_NZF_all | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on all entries | L6M | 6 | 17646 | 29.4 | 28.3 | -280 | 24.5 (24.5) | -1628 (-1632) | -10736 | 373 | 2433 | -3604 | -4602 | 0.0 |
+| BO_P7_NZF_all | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on all entries | L6M | 12 | 17646 | 29.4 | 28.3 | -280 | 24.5 (24.5) | -1628 (-1632) | -10736 | 373 | 2433 | -3604 | -4602 | 0.0 |
 | BO_P7_NZF_fresh | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on FRESH only (reverse control) entries | L6M | 6 | 18250 | 8.3 | 3.7 | -907 | 24.5 (24.5) | -1632 (-1632) | -1615 | 0 | 617 | -2838 | 1 | 0.0 |
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L6M | 6 | 18236 | 11.5 | 3.9 | -1551 | 24.5 (24.5) | -1628 (-1632) | -9382 | 373 | 1165 | -643 | -4698 | 0.0 |
+| BO_P7_6TL_N5_t0p40_flat_rech | P7: at 5 min, if the open loss is still worse than 40% of the target: flat (rechase only) | PRE | 32 | 12057 | 4.1 | nan | -68 | 16.9 (16.9) | -1704 (-1710) | -269 | 59 | -44 | 431 | -1310 | 0.6 |
 
 ## 4. Worked rows (the five trades where each exact set differs most from the live twin, L6M months done so far)
 
@@ -504,10 +508,10 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
 |--|--|--|--|--|--|--|
 | 08-19 23:09 | P7 | long | none > 7 | rech (3 / 2 / 4.63) | none > StateCut | 0 > -7545 |
+| 07-02 14:40 | P7 | long | 4 > 4 | rech (2 / 25 / 3.25) | Target > BoTimeL | 4800 > -2700 |
 | 05-08 02:34 | P7 | long | 4 > 4 | rech (4 / 12 / 11.20) | Target > BoTimeL | 4800 > -2530 |
 | 10-28 22:07 | P7 | short | 4 > 4 | rech (1 / 696 / 1.56) | Target > BoTimeL | 4790 > -2190 |
 | 03-12 14:32 | P7 | short | none > 4 | rech (1 / 68 / 3.35) | none > StateCut | 0 > -6264 |
-| 10-27 05:41 | P7 | short | none > 7 | rech (8 / 13 / 6.31) | none > StateCut | 0 > -5760 |
 
 
 **BO_P7_6TP_N5_p0p40_half_rech**
@@ -622,20 +626,20 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 |--|--|--|--|--|--|--|
 | 06-26 02:33 | P7 | short | none > 7 | rech (6 / 9 / 8.13) | none > Target | 0 > 8407 |
 | 10-22 02:58 | P7 | short | none > 7 | rech (4 / 5 / 10.81) | none > Target | 0 > 8402 |
+| 01-20 05:11 | P7 | short | none > 7 | rech (2 / 18 / 0.31) | none > Target | 0 > 8397 |
 | 05-13 01:20 | P7 | long | none > 7 | rech (3 / 61 / 1.36) | none > Target | 0 > 8397 |
 | 05-13 04:38 | P7 | long | none > 7 | rech (5 / 8 / 9.08) | none > Target | 0 > 8397 |
-| 07-17 05:25 | P7 | short | none > 7 | rech (5 / 122 / 13.38) | none > Target | 0 > 8397 |
 
 
 **BO_P7_BL_f30_r120**
 
 | time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
 |--|--|--|--|--|--|--|
+| 03-19 04:26 | P7 | short | none > 7 | rech (3 / 137 / -1.59) | none > Target | 0 > 8407 |
 | 06-26 02:33 | P7 | short | none > 7 | rech (6 / 9 / 8.13) | none > Target | 0 > 8407 |
 | 10-22 02:58 | P7 | short | none > 7 | rech (4 / 5 / 10.81) | none > Target | 0 > 8402 |
+| 01-20 05:11 | P7 | short | none > 7 | rech (2 / 18 / 0.31) | none > Target | 0 > 8397 |
 | 05-13 01:20 | P7 | long | none > 7 | rech (3 / 61 / 1.36) | none > Target | 0 > 8397 |
-| 05-13 04:38 | P7 | long | none > 7 | rech (5 / 8 / 9.08) | none > Target | 0 > 8397 |
-| 07-17 05:25 | P7 | short | none > 7 | rech (5 / 122 / 13.38) | none > Target | 0 > 8397 |
 
 
 **BO_P7_BL_f30_r60**
@@ -664,11 +668,11 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 
 | time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
 |--|--|--|--|--|--|--|
+| 12-05 02:35 | P7 | long | 7 > 7 | rech (2 / 14 / 6.49) | StateCut > BoFloor | -6003 > 6884 |
 | 08-26 03:03 | P7 | long | 7 > 7 | rech (4 / 39 / -3.56) | StateCut > BoFloor | -7138 > 5732 |
 | 07-28 05:40 | P7 | short | 7 > 7 | rech (8 / 17 / 10.80) | StateCut > BoFloor | -6005 > 5727 |
+| 01-28 06:05 | P7 | long | 7 > 7 | rech (3 / 5 / 19.55) | BookLock > BoFloor | -4933 > 5439 |
 | 09-10 05:07 | P7 | long | 7 > 5 | rech (3 / 17 / -0.56) | StateCut > BoFloor | -6059 > 4082 |
-| 07-02 22:07 | P7 | long | 7 > 7 | fresh (1 / 1113 / 0.64) | StateCut > BoFloor | -6283 > 3314 |
-| 08-25 05:41 | P7 | long | none > 7 | rech (5 / 3 / 4.15) | none > Target | 0 > 8407 |
 
 
 **BO_P7_NZF_fresh**
