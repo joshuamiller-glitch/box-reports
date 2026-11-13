@@ -1,6 +1,6 @@
 # DS3_SMART_A3 — T-SMART item A3: structure stops with equal-$ lots (W-SM3)
 
-Generated 2026-11-13 02:38Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
+Generated 2026-11-13 03:08Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
 
 **CAVEAT (every table):** the engine state cut fires in the engine but did NOT fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). Rows marked **S0 = state cut OFF = the live-realistic case** are read first and compared with SMA3_REF_S0 (JN05W2 with every state cut switched off, K7 flat45 kept); **S1** rows keep the state cut and compare with JN05W2.
 
@@ -16,7 +16,7 @@ Dead-cell lookup (loss|struct_stop_eq|<book>|<feat>, 32 specs): 0 hits; first-or
 | SMA3_FR154_K_S0 | 5 | SMA3_REF_S0 | (running) ||||||||||
 | SMA3_FR154_K_S1 | 5 | JN05W2 | (running) ||||||||||
 | SMA3_FR156_K_S0 | 5 | SMA3_REF_S0 | (running) ||||||||||
-| SMA3_KC2_ALL_S0 | 5 | SMA3_REF_S0 | (running) ||||||||||
+| SMA3_KC2_ALL_S0 | 6 | SMA3_REF_S0 | 91% ($276k of $302k) | 7 of 19 | -85.0 | -3976 | - | - | - | - | - | - |
 | SMA3_KC2_U_S0 | 6 | SMA3_REF_S0 | 104% ($314k of $302k) | 0 of 19 | -14.3 | 1081 | - | - | - | - | - | - |
 | SMA3_KC2_U_S1 | 6 | JN05W2 | 109% ($346k of $316k) | 1 of 20 | 1.1 | 712 | - | - | - | - | - | - |
 | SMA3_KC4_U_S0 | 6 | SMA3_REF_S0 | 103% ($312k of $302k) | 0 of 19 | -6.4 | 379 | - | - | - | - | - | - |
@@ -38,6 +38,17 @@ cut % = stack maxDD vs the reference (positive = shallower); d mean = all-weeks 
 | H7 | 174 / 175 | 2.03 / 1.86 | -228 | 1.53 / 1.84 | 0.61 | 0.84 |
 | M7 | 634 / 622 | 1.22 / 1.21 | +522 | 11.30 / 11.95 | 0.69 | 0.00 |
 | A7 | 347 / 346 | 1.00 / 1.00 | -47 | 4.75 / 4.75 | 0.08 | 0.00 |
+
+**SMA3_KC2_ALL_S0** vs SMA3_REF_S0
+
+| book | trades cell / ref | mean lots cell / ref | d net $/wk | full stops/wk cell / ref | structure exits/wk | StateCut/wk |
+|---|---|---|---|---|---|---|
+| K7 | 1634 / 1509 | 1.66 / 1.15 | -4227 | 0.04 / 0.50 | 45.33 | 0.00 |
+| P7 | 971 / 807 | 5.83 / 3.64 | +808 | 3.41 / 13.98 | 21.49 | 0.00 |
+| U7 | 263 / 273 | 3.52 / 2.74 | +1222 | 1.34 / 4.21 | 4.25 | 0.11 |
+| H7 | 183 / 175 | 2.95 / 1.86 | -474 | 0.61 / 1.84 | 3.60 | 0.42 |
+| M7 | 636 / 622 | 1.62 / 1.21 | -16 | 3.22 / 11.95 | 13.26 | 0.00 |
+| A7 | 383 / 346 | 1.00 / 1.00 | -489 | 2.84 / 4.75 | 5.86 | 0.00 |
 
 **SMA3_KC2_U_S0** vs SMA3_REF_S0
 

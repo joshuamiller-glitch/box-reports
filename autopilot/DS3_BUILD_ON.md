@@ -1,6 +1,6 @@
-# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-12 23:23Z
+# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-13 03:25Z
 
-Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 78 of 1004 done (one set per job, one month per job), 0 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
+Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 79 of 1004 done (one set per job, one month per job), 0 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
 
 
 ## 1. What this page is, and the definitions used
@@ -80,7 +80,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_6TP_N5_p0p40_half_rech | P7: at 5 min, if the open profit is below 40% of the target: half the lots out (rechase only) | L1M | 6 | 1072 | 2.0 | 12.4 | 1522 | 28.0 (28.4) | -1632 (-1667) | -24704 | 371 | -307 | 6405 | -1840 | 9.1 |
 | BO_P7_7C_W180_skip | P7: another book filled a same-side target in the last 180 s: skip the signal | L1M | 6 | -16180 | 0.0 | 0.0 | 0 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_P7_7C_W300_half | P7: another book filled a same-side target in the last 300 s: half the lots | L1M | 6 | -450 | 0.0 | 82.5 | 0 | 28.4 (28.4) | -1639 (-1667) | 0 | 808 | 0 | 0 | 0 | 0.0 |
-| BO_P7_7C_W600_skip | P7: another book filled a same-side target in the last 600 s: skip the signal | L1M | 9 | -814 | -8.1 | nan | -364 | 28.4 (28.4) | -1638 (-1667) | 0 | 0 | -7322 | -3307 | 2216 | 0.0 |
+| BO_P7_7C_W600_skip | P7: another book filled a same-side target in the last 600 s: skip the signal | L1M | 10 | -814 | -8.1 | nan | -364 | 28.4 (28.4) | -1638 (-1667) | 0 | 0 | -7322 | -3307 | 2216 | 0.0 |
 | BO_P7_7N_n2_T45 | P7: 2 or more same-side target fills by other books in the last 30 min: target 45 | L1M | 6 | 1394 | 6.8 | 37.3 | 1844 | 28.4 (28.4) | -1667 (-1667) | -945 | 0 | -1909 | 3477 | 2055 | 0.0 |
 | BO_P7_7N_n4_half | P7: 4 or more same-side target fills by other books in the last 30 min: half the lots | L1M | 12 | -16180 | 0.0 | 0.0 | 0 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_P7_7N_n4_skip | P7: 4 or more same-side target fills by other books in the last 30 min: skip the signal | L1M | 12 | -16180 | 0.0 | 0.0 | 0 | 28.4 (28.4) | -1667 (-1667) | 0 | 0 | 0 | 0 | 0 | 0.0 |
@@ -125,7 +125,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_6TP_N5_p0p40_half_rech | P7: at 5 min, if the open profit is below 40% of the target: half the lots out (rechase only) | L3M | 6 | 4068 | 29.1 | 3.5 | -1482 | 23.1 (23.4) | -1645 (-1662) | -23640 | 520 | -168 | 12218 | -12019 | 7.1 |
 | BO_P7_7C_W180_skip | P7: another book filled a same-side target in the last 180 s: skip the signal | L3M | 6 | 13360 | -1.3 | 2.7 | 717 | 23.4 (23.4) | -1662 (-1662) | 0 | 0 | 111 | 0 | 1225 | 0.0 |
 | BO_P7_7C_W300_half | P7: another book filled a same-side target in the last 300 s: half the lots | L3M | 6 | 12138 | -1.6 | -0.6 | 164 | 23.4 (23.4) | -1653 (-1662) | -630 | 202 | 0 | 0 | 599 | 0.0 |
-| BO_P7_7C_W600_skip | P7: another book filled a same-side target in the last 600 s: skip the signal | L3M | 9 | 11939 | 8.8 | 5.7 | -703 | 23.4 (23.4) | -1653 (-1662) | 0 | 0 | -3647 | 418 | 1138 | 0.0 |
+| BO_P7_7C_W600_skip | P7: another book filled a same-side target in the last 600 s: skip the signal | L3M | 10 | 11939 | 8.8 | 5.7 | -703 | 23.4 (23.4) | -1653 (-1662) | 0 | 0 | -3647 | 418 | 1138 | 0.0 |
 | BO_P7_7N_n2_T45 | P7: 2 or more same-side target fills by other books in the last 30 min: target 45 | L3M | 6 | 9162 | -5.8 | -6.0 | 196 | 23.4 (23.4) | -1662 (-1662) | -1129 | 0 | 279 | 1738 | -556 | 0.0 |
 | BO_P7_7N_n4_half | P7: 4 or more same-side target fills by other books in the last 30 min: half the lots | L3M | 12 | 14994 | 1.1 | 1.4 | 68 | 23.4 (23.4) | -1662 (-1662) | 0 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_P7_7N_n4_skip | P7: 4 or more same-side target fills by other books in the last 30 min: skip the signal | L3M | 12 | 12644 | 0.0 | 0.0 | 2 | 23.4 (23.4) | -1662 (-1662) | 0 | 0 | -297 | 0 | 0 | 0.0 |
@@ -170,7 +170,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_6TP_N5_p0p40_half_rech | P7: at 5 min, if the open profit is below 40% of the target: half the lots out (rechase only) | L6M | 6 | 13795 | 29.1 | 18.3 | -2097 | 24.3 (24.5) | -1616 (-1632) | -24642 | 426 | 428 | 8989 | -15792 | 7.0 |
 | BO_P7_7C_W180_skip | P7: another book filled a same-side target in the last 180 s: skip the signal | L6M | 6 | 17830 | -1.3 | 1.4 | 477 | 24.5 (24.5) | -1632 (-1632) | 0 | 0 | 258 | 0 | -329 | 0.0 |
 | BO_P7_7C_W300_half | P7: another book filled a same-side target in the last 300 s: half the lots | L6M | 6 | 17466 | -1.6 | -0.9 | 113 | 24.5 (24.5) | -1628 (-1632) | -634 | 94 | -69 | 0 | -274 | 0.0 |
-| BO_P7_7C_W600_skip | P7: another book filled a same-side target in the last 600 s: skip the signal | L6M | 9 | 18421 | 8.8 | 14.1 | 1068 | 24.5 (24.5) | -1628 (-1632) | 0 | 0 | -769 | 279 | -2759 | 0.0 |
+| BO_P7_7C_W600_skip | P7: another book filled a same-side target in the last 600 s: skip the signal | L6M | 10 | 18421 | 8.8 | 14.1 | 1068 | 24.5 (24.5) | -1628 (-1632) | 0 | 0 | -769 | 279 | -2759 | 0.0 |
 | BO_P7_7N_n2_T45 | P7: 2 or more same-side target fills by other books in the last 30 min: target 45 | L6M | 6 | 19733 | -5.8 | -0.1 | 1073 | 24.5 (24.5) | -1632 (-1632) | -1860 | 0 | 734 | 1159 | -296 | 0.0 |
 | BO_P7_7N_n4_half | P7: 4 or more same-side target fills by other books in the last 30 min: half the lots | L6M | 12 | 19152 | 1.1 | 1.4 | 67 | 24.5 (24.5) | -1632 (-1632) | -97 | 0 | 0 | 0 | 0 | 0.0 |
 | BO_P7_7N_n4_skip | P7: 4 or more same-side target fills by other books in the last 30 min: skip the signal | L6M | 12 | 19118 | 0.0 | 0.2 | 33 | 24.5 (24.5) | -1632 (-1632) | 0 | 0 | 57 | 0 | 0 | 0.0 |
