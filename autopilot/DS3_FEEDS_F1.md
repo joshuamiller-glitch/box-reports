@@ -1,6 +1,6 @@
 # DS3_FEEDS_F1 - crypto overnight gauge (F1) and prediction markets (F2)
 
-Written 2026-11-12 23:29Z by W-FD1 (T-FEEDS). Shadow only, free sources only, no PASS claims. First-order screens on the LPB_BASE trade list (20,807 trades 2023-04..2026-10, engine lots); exact runs only for finalists (none yet).
+Written 2026-11-12 23:59Z by W-FD1 (T-FEEDS). Shadow only, free sources only, no PASS claims. First-order screens on the LPB_BASE trade list (20,807 trades 2023-04..2026-10, engine lots); exact runs only for finalists (none yet).
 
 ## 0. Data owned
 - Binance spot BTCUSDT and ETHUSDT 1-s klines 2023-04..2026-11-11 (free, data.binance.vision): /mnt/l2/l2vast/feeds/crypto/ (+ 1-min arrays BTCUSDT_1m.npz, ETHUSDT_1m.npz, built by code/th_feeds/f1_agg.py).
@@ -73,8 +73,261 @@ Reading: see section 3.
 | ETHUSDT | pre | L6M | 0.463 | -0.003 (-0.9) | -0.009 (-1.3) | -0.012 (-1.9) | -0.012 (0.3) |
 | ETHUSDT | pre | PRE | 0.359 | 0.008 (0.5) | 0.012 (-0.7) | -0.004 (1.4) | 0.016 (1.1) |
 
-## 4. F2 prediction markets
-Kalshi crawl in progress (code/th_feeds/dl_kalshi.py; chain f2_chain.sh runs events -> eval when it finishes). Polymarket price history for Fed / CPI / jobs events: see /mnt/l2/l2vast/feeds/polymarket/.
+## 4. F2 prediction markets (Kalshi implied distributions at T-1h and T-3h)
+
+```
+{
+ "CPI": {
+  "events": 181,
+  "with_odds": 181,
+  "first": "2023-04-12",
+  "last": "2026-08-12",
+  "sd_h1": {
+   "n": 163,
+   "rho": -0.09951476882448752,
+   "p": 0.2035
+  },
+  "ent_h1": {
+   "n": 181,
+   "rho": -0.13955399741006294,
+   "p": 0.063
+  },
+  "conf_h1": {
+   "n": 181,
+   "rho": 0.20224488856630526,
+   "p": 0.007
+  },
+  "sd_h3": {
+   "n": 163,
+   "rho": -0.10895475162980159,
+   "p": 0.164
+  },
+  "ent_h3": {
+   "n": 181,
+   "rho": -0.13365469831945329,
+   "p": 0.0725
+  },
+  "dent_h3_h1": {
+   "n": 181,
+   "rho": 0.07826661034225672
+  },
+  "blanket_standaside": {
+   "GAP": {
+    "events": 16,
+    "skip_all_gain": -7192.920000000001,
+    "per_event": -449.55750000000006,
+    "trades": 6
+   },
+   "HOLD": {
+    "events": 33,
+    "skip_all_gain": 4039.7999999998838,
+    "per_event": 122.4181818181783,
+    "trades": 6
+   },
+   "L6M": {
+    "events": 24,
+    "skip_all_gain": -14415.840000000002,
+    "per_event": -600.6600000000001,
+    "trades": 6
+   },
+   "PRE": {
+    "events": 72,
+    "skip_all_gain": 5462.479999999998,
+    "per_event": 75.86777777777775,
+    "trades": 16
+   },
+   "XP": {
+    "events": 36,
+    "skip_all_gain": 4644.719999999999,
+    "per_event": 129.01999999999998,
+    "trades": 4
+   }
+  },
+  "skip_hi_ent_h1": {
+   "n_events": 181,
+   "n_skipped": 61,
+   "gain_total": 1627.8599999999115,
+   "per_skipped_event": 26.686229508195268,
+   "null_p95": 5642.632999999915,
+   "p": 0.2035
+  },
+  "skip_hi_sd_h1": {
+   "n_events": 163,
+   "n_skipped": 55,
+   "gain_total": 2765.0599999999986,
+   "per_skipped_event": 50.27381818181816,
+   "null_p95": 7547.858999999912,
+   "p": 0.254
+  }
+ },
+ "FOMC": {
+  "events": 54,
+  "with_odds": 54,
+  "first": "2023-05-03",
+  "last": "2026-07-29",
+  "sd_h1": {
+   "n": 26,
+   "rho": 0.05995216502060254,
+   "p": 0.776
+  },
+  "ent_h1": {
+   "n": 54,
+   "rho": 0.11725484660012665,
+   "p": 0.4
+  },
+  "conf_h1": {
+   "n": 54,
+   "rho": -0.14025504281008105,
+   "p": 0.295
+  },
+  "sd_h3": {
+   "n": 26,
+   "rho": 0.08323357808085323,
+   "p": 0.689
+  },
+  "ent_h3": {
+   "n": 54,
+   "rho": 0.12528920995254877,
+   "p": 0.362
+  },
+  "dent_h3_h1": {
+   "n": 54,
+   "rho": -0.1741789400696994
+  },
+  "blanket_standaside": {
+   "GAP": {
+    "events": 6,
+    "skip_all_gain": -2397.6400000000003,
+    "per_event": -399.60666666666674,
+    "trades": 2
+   },
+   "HOLD": {
+    "events": 8,
+    "skip_all_gain": 4508.119999999927,
+    "per_event": 563.5149999999909,
+    "trades": 9
+   },
+   "L6M": {
+    "events": 4,
+    "skip_all_gain": -2416.160000000016,
+    "per_event": -604.040000000004,
+    "trades": 9
+   },
+   "PRE": {
+    "events": 24,
+    "skip_all_gain": -3377.3200000000325,
+    "per_event": -140.72166666666803,
+    "trades": 24
+   },
+   "XP": {
+    "events": 12,
+    "skip_all_gain": -160.5600000000013,
+    "per_event": -13.38000000000011,
+    "trades": 4
+   }
+  },
+  "skip_hi_ent_h1": {
+   "n_events": 54,
+   "n_skipped": 18,
+   "gain_total": 1226.8599999999951,
+   "per_skipped_event": 68.15888888888861,
+   "null_p95": 6865.266999999894,
+   "p": 0.311
+  },
+  "skip_hi_sd_h1": {
+   "n_events": 26,
+   "n_skipped": 9,
+   "gain_total": 3643.259999999999,
+   "per_skipped_event": 404.80666666666656,
+   "null_p95": 4600.040999999984,
+   "p": 0.0895
+  }
+ },
+ "NFP": {
+  "events": 85,
+  "with_odds": 85,
+  "first": "2023-04-07",
+  "last": "2026-09-04",
+  "sd_h1": {
+   "n": 83,
+   "rho": -0.005721034130747361,
+   "p": 0.95
+  },
+  "ent_h1": {
+   "n": 85,
+   "rho": -0.10489845626481395,
+   "p": 0.333
+  },
+  "conf_h1": {
+   "n": 85,
+   "rho": 0.18150892494035692,
+   "p": 0.0995
+  },
+  "sd_h3": {
+   "n": 83,
+   "rho": 0.05565673937838991,
+   "p": 0.603
+  },
+  "ent_h3": {
+   "n": 85,
+   "rho": -0.05745812208896313,
+   "p": 0.5925
+  },
+  "dent_h3_h1": {
+   "n": 85,
+   "rho": 0.005157521229998531
+  },
+  "blanket_standaside": {
+   "GAP": {
+    "events": 8,
+    "skip_all_gain": -0.0,
+    "per_event": -0.0,
+    "trades": 0
+   },
+   "HOLD": {
+    "events": 12,
+    "skip_all_gain": -4179.200000000059,
+    "per_event": -348.2666666666716,
+    "trades": 8
+   },
+   "L6M": {
+    "events": 11,
+    "skip_all_gain": -4795.280000000001,
+    "per_event": -435.9345454545455,
+    "trades": 4
+   },
+   "PRE": {
+    "events": 36,
+    "skip_all_gain": 8896.439999999971,
+    "per_event": 247.12333333333254,
+    "trades": 6
+   },
+   "XP": {
+    "events": 18,
+    "skip_all_gain": -0.0,
+    "per_event": -0.0,
+    "trades": 0
+   }
+  },
+  "skip_hi_ent_h1": {
+   "n_events": 85,
+   "n_skipped": 29,
+   "gain_total": -3150.9200000000296,
+   "per_skipped_event": -108.65241379310447,
+   "null_p95": 4761.259999999957,
+   "p": 0.8555
+  },
+  "skip_hi_sd_h1": {
+   "n_events": 83,
+   "n_skipped": 28,
+   "gain_total": -2189.74000000003,
+   "per_skipped_event": -78.20500000000106,
+   "null_p95": 4712.939999999985,
+   "p": 0.7535
+  }
+ }
+}
+```
 
 ## 3. Verdicts so far
 **F1 (crypto): NULL as a layer; weak, regime-dependent leads only. No exact run warranted yet.**

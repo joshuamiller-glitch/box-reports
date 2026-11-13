@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F2 — desk-state family (item 2) and winning-day protection (item 5) — W-F2
 
-Generated 2026-11-12 23:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
+Generated 2026-11-12 23:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
 
 ## 0. Trend-week clause (first): sum of the base's 5 best weeks kept, and base winning weeks turned losing (per window)
 
@@ -82,10 +82,10 @@ Generated 2026-11-12 23:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_PL_day_half_m1p5_L | L1M | 33.6 | 29.4 | 723 | 1329 | 606 | 16 |
 | NF_D_PL_day_half_m1p5_L | L3M | 4.3 | -1.7 | 14 | 16030 | 16015 | 16 |
 | NF_D_PL_day_half_m1p5_L | L6M | 4.3 | -1.7 | -2652 | 22485 | 25137 | 16 |
-| NF_D_PL_day_half_m2_J | HOLD | 15.1 | 8.6 | -914 | 13491 | 14405 | 12 |
-| NF_D_PL_day_half_m2_J | L1M | 20.0 | 13.9 | -3718 | -1087 | 2631 | 12 |
-| NF_D_PL_day_half_m2_J | L3M | 20.0 | 13.9 | -1805 | 13136 | 14942 | 12 |
-| NF_D_PL_day_half_m2_J | L6M | -1.2 | -8.9 | -2164 | 18701 | 20865 | 12 |
+| NF_D_PL_day_half_m2_J | HOLD | 15.1 | 8.6 | -914 | 13491 | 14405 | 16 |
+| NF_D_PL_day_half_m2_J | L1M | 20.0 | 13.9 | -3718 | -1087 | 2631 | 16 |
+| NF_D_PL_day_half_m2_J | L3M | 20.0 | 13.9 | -1805 | 13136 | 14942 | 16 |
+| NF_D_PL_day_half_m2_J | L6M | -1.2 | -8.9 | -2164 | 18701 | 20865 | 16 |
 | NF_D_PL_day_half_m2_L | HOLD | 26.8 | 24.6 | -1422 | 16067 | 17489 | 16 |
 | NF_D_PL_day_half_m2_L | L1M | 36.9 | 35.0 | 2219 | 2825 | 606 | 16 |
 | NF_D_PL_day_half_m2_L | L3M | 4.3 | 1.3 | 106 | 16121 | 16015 | 16 |
