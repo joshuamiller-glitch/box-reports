@@ -1,6 +1,6 @@
 # DS3_SMART_C — T-SMART items B4 (MNQ granularity), C1 (dead slots), C2 (risk budget reallocation), C3 (add to winners), C4 (trade count), W-SM5
 
-Generated 2026-11-13 00:39Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S + FLAT45K) and JN05W2J (same five on JN04RM), exact 43 months. Exact engine, one set per job, shared-memory cache, admission tag SMARTC. Shadow only, no PASS claim. Prereg autopilot/SMART_C_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-13 01:09Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S + FLAT45K) and JN05W2J (same five on JN04RM), exact 43 months. Exact engine, one set per job, shared-memory cache, admission tag SMARTC. Shadow only, no PASS claim. Prereg autopilot/SMART_C_PREREG.md (sha in DECISIONS.md).
 
 **CAVEAT on every number here: the engine P7 state cut fires in the engine but did not fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md); the bases and these cells inherit the engine cut.**
 
@@ -11,25 +11,30 @@ Generated 2026-11-13 00:39Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S
 | set | months | ref | 5 best wks kept | winning wks turned losing | L6M cut % | L6M d mean/wk (all wks) | HOLD cut % | HOLD d mean/wk | PRE cut / d mean | X' cut / d mean | WF cut / beat |
 |--|--|--|--|--|--|--|--|--|--|--|--|
 | SC_C1_half | 2 | JN05W2 | (running) |||||||||
-| SC_C1_q | 5 | JN05W2 | (running) |||||||||
+| SC_C1_q | 6 | JN05W2 | 89% ($280k of $316k) | 2 of 20 | 9.7 | -3898 | - | - | - / - | - / - | - |
 | SC_C1_zero | 5 | JN05W2 | (running) |||||||||
-| SC_C1s_lh_x0 | 2 | JN05W2 | (running) |||||||||
+| SC_C1s_lh_x0 | 3 | JN05W2 | (running) |||||||||
 | SC_C1s_lunch_x0 | 1 | JN05W2 | (running) |||||||||
 | SC_C2_calmar | 4 | JN05W2 | (running) |||||||||
 | SC_C2_exp | 4 | JN05W2 | (running) |||||||||
-| SC_C3_ALL_v40_f33 | 2 | JN05W2 | (running) |||||||||
-| SC_C3_P7_v25_f33 | 2 | JN05W2 | (running) |||||||||
+| SC_C3_ALL_v40_f33 | 3 | JN05W2 | (running) |||||||||
+| SC_C3_P7_v25_f33 | 3 | JN05W2 | (running) |||||||||
 | SC_C3_P7_v25_f50 | 2 | JN05W2 | (running) |||||||||
 | SC_C3_P7_v40_f33 | 1 | JN05W2 | (running) |||||||||
 | SC_C3_P7_v40_f33_nobe | 3 | JN05W2 | (running) |||||||||
-| SC_C3_P7_v40_f50 | 4 | JN05W2 | (running) |||||||||
-| SC_C3_P7_v60_f33 | 4 | JN05W2 | (running) |||||||||
-| SC_C3_P7_v60_f50 | 3 | JN05W2 | (running) |||||||||
+| SC_C3_P7_v40_f50 | 5 | JN05W2 | (running) |||||||||
+| SC_C3_P7_v60_f33 | 6 | JN05W2 | 85% ($269k of $316k) | 4 of 20 | 8.5 | -2034 | - | - | - / - | - / - | - |
+| SC_C3_P7_v60_f50 | 4 | JN05W2 | (running) |||||||||
 | SC_C4_max2 | 3 | JN05W2 | (running) |||||||||
 | SC_C4_max3 | 1 | JN05W2 | (running) |||||||||
-| SC_C4_max4 | 3 | JN05W2 | (running) |||||||||
+| SC_C4_max4 | 4 | JN05W2 | (running) |||||||||
 
 cut % = maxDD of the stack vs the base set (positive = shallower); d mean = all-weeks mean difference ($/wk) vs the base on the same months; the same-side run columns of score_sc (run_max / run_p95) are in the per-set files /mnt/l2/l2vast/_th_smart_c/score_<SET>.csv.
+
+## 1. Acceptance (trader test) and behavioural scorecard a-e per set with L6M complete
+
+- **SC_C1_q** acceptance_p7: `ACCEPTANCE P7 SC_C1_q  2026-11-13 01:10Z   (months 6: 202605..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C1_q.txt
+- **SC_C3_P7_v60_f33** acceptance_p7: `ACCEPTANCE P7 SC_C3_P7_v60_f33  2026-11-13 01:10Z   (months 6: 202605..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C3_P7_v60_f33.txt
 
 ## 2. First-order screens on the exact reference trades (screen only: lots are not re-rounded, paths do not change; EXACT overstates/understates; the exact rows above are the verdict)
 

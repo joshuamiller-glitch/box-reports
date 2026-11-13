@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F2 — desk-state family (item 2) and winning-day protection (item 5) — W-F2
 
-Generated 2026-11-13 00:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
+Generated 2026-11-13 01:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
 
 ## 0. Trend-week clause (first): sum of the base's 5 best weeks kept, and base winning weeks turned losing (per window)
 
@@ -14,6 +14,7 @@ Generated 2026-11-13 00:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_ST_half_2_J | JN05W2J | HOLD | 262552 | 242038 | 92.2 | 1 of 38 | 52 |
 | NF_D_ST_half_2_L | JN05W2 | HOLD | 340478 | 304366 | 89.4 | 0 of 37 | 52 |
 | NF_D_ST_half_3_J | JN05W2J | HOLD | 262552 | 258905 | 98.6 | 1 of 38 | 52 |
+| NF_D_ST_half_4_J | JN05W2J | HOLD | 262552 | 258309 | 98.4 | 0 of 38 | 52 |
 | NF_D_WD_fresh_3_J | JN05W2J | HOLD | 262552 | 113499 | 43.2 | 5 of 38 | 52 |
 | NF_D_WD_fresh_3_L | JN05W2 | HOLD | 340478 | 195598 | 57.4 | 5 of 37 | 52 |
 | NF_D_WD_half_3_L | JN05W2 | HOLD | 340478 | 318280 | 93.5 | 1 of 37 | 52 |
@@ -28,6 +29,7 @@ Generated 2026-11-13 00:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_ST_half_3_J | JN05W2J | L1M | 10523 | 9099 | 86.5 | 0 of 1 | 4 |
 | NF_D_ST_half_3_L | JN05W2 | L1M | 2425 | 935 | 38.5 | 0 of 2 | 4 |
 | NF_D_ST_half_4_J | JN05W2J | L1M | 10523 | 10058 | 95.6 | 0 of 1 | 4 |
+| NF_D_ST_half_4_L | JN05W2 | L1M | 2425 | 3404 | 140.4 | 0 of 2 | 4 |
 | NF_D_WD_fresh_3_J | JN05W2J | L1M | 10523 | -962 | -9.1 | 0 of 1 | 4 |
 | NF_D_WD_fresh_3_L | JN05W2 | L1M | 2425 | -6942 | -286.2 | 1 of 2 | 4 |
 | NF_D_WD_half_3_J | JN05W2J | L1M | 10523 | 8597 | 81.7 | 0 of 1 | 4 |
@@ -43,6 +45,7 @@ Generated 2026-11-13 00:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_ST_half_3_J | JN05W2J | L3M | 189873 | 185862 | 97.9 | 0 of 8 | 13 |
 | NF_D_ST_half_3_L | JN05W2 | L3M | 209474 | 204758 | 97.7 | 0 of 9 | 13 |
 | NF_D_ST_half_4_J | JN05W2J | L3M | 189873 | 187574 | 98.8 | 0 of 8 | 13 |
+| NF_D_ST_half_4_L | JN05W2 | L3M | 209474 | 208947 | 99.7 | 0 of 9 | 13 |
 | NF_D_WD_fresh_3_J | JN05W2J | L3M | 189873 | 131320 | 69.2 | 0 of 8 | 13 |
 | NF_D_WD_fresh_3_L | JN05W2 | L3M | 209474 | 155829 | 74.4 | 1 of 9 | 13 |
 | NF_D_WD_half_3_J | JN05W2J | L3M | 189873 | 166037 | 87.4 | 0 of 8 | 13 |
@@ -58,6 +61,7 @@ Generated 2026-11-13 00:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_ST_half_3_J | JN05W2J | L6M | 250435 | 250390 | 100.0 | 0 of 20 | 26 |
 | NF_D_ST_half_3_L | JN05W2 | L6M | 337218 | 331171 | 98.2 | 0 of 19 | 26 |
 | NF_D_ST_half_4_J | JN05W2J | L6M | 250435 | 249793 | 99.7 | 0 of 20 | 26 |
+| NF_D_ST_half_4_L | JN05W2 | L6M | 337218 | 337958 | 100.2 | 0 of 19 | 26 |
 | NF_D_WD_fresh_3_J | JN05W2J | L6M | 250435 | 126707 | 50.6 | 1 of 20 | 26 |
 | NF_D_WD_fresh_3_L | JN05W2 | L6M | 337218 | 219071 | 65.0 | 1 of 19 | 26 |
 | NF_D_WD_half_3_J | JN05W2J | L6M | 250435 | 227345 | 90.8 | 0 of 20 | 26 |
@@ -67,9 +71,9 @@ Generated 2026-11-13 00:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 
 | cell | window | DD cut % | eq-mean cut % | d mean/wk | mean/wk | base mean/wk | months |
 |--|--|--|--|--|--|--|--|
-| NF_D_OB_best_m2_J | L1M | 15.1 | 5.0 | 2483 | 5114 | 2631 | 6 |
-| NF_D_OB_best_m2_J | L3M | -74.3 | -95.1 | -1189 | 13752 | 14942 | 6 |
-| NF_D_OB_best_m2_J | L6M | -29.9 | -45.4 | -3076 | 17789 | 20865 | 6 |
+| NF_D_OB_best_m2_J | L1M | 15.1 | 5.0 | 2483 | 5114 | 2631 | 7 |
+| NF_D_OB_best_m2_J | L3M | -74.3 | -95.1 | -1189 | 13752 | 14942 | 7 |
+| NF_D_OB_best_m2_J | L6M | -29.9 | -45.4 | -3076 | 17789 | 20865 | 7 |
 | NF_D_OB_best_m2_L | HOLD | -52.3 | -80.1 | -5116 | 12373 | 17489 | 16 |
 | NF_D_OB_best_m2_L | L1M | 51.7 | 42.9 | 6211 | 6818 | 606 | 16 |
 | NF_D_OB_best_m2_L | L3M | -59.4 | -88.5 | -2485 | 13531 | 16015 | 16 |
@@ -105,9 +109,13 @@ Generated 2026-11-13 00:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_ST_half_3_L | L1M | 8.7 | 4.4 | -373 | 234 | 606 | 6 |
 | NF_D_ST_half_3_L | L3M | -37.0 | -43.3 | -1847 | 14168 | 16015 | 6 |
 | NF_D_ST_half_3_L | L6M | -37.0 | -43.3 | -1582 | 23555 | 25137 | 6 |
-| NF_D_ST_half_4_J | L1M | 3.5 | 1.3 | -116 | 2514 | 2631 | 8 |
-| NF_D_ST_half_4_J | L3M | -15.2 | -17.8 | -827 | 14114 | 14942 | 8 |
-| NF_D_ST_half_4_J | L6M | 0.0 | -2.3 | -759 | 20106 | 20865 | 8 |
+| NF_D_ST_half_4_J | HOLD | -25.5 | -28.4 | -682 | 13723 | 14405 | 12 |
+| NF_D_ST_half_4_J | L1M | 3.5 | 1.3 | -116 | 2514 | 2631 | 12 |
+| NF_D_ST_half_4_J | L3M | -15.2 | -17.8 | -827 | 14114 | 14942 | 12 |
+| NF_D_ST_half_4_J | L6M | 0.0 | -2.3 | -759 | 20106 | 20865 | 12 |
+| NF_D_ST_half_4_L | L1M | 0.0 | -1.6 | 245 | 851 | 606 | 6 |
+| NF_D_ST_half_4_L | L3M | -5.1 | -6.8 | -760 | 15255 | 16015 | 6 |
+| NF_D_ST_half_4_L | L6M | -5.1 | -6.8 | -698 | 24439 | 25137 | 6 |
 | NF_D_WD_fresh_3_J | HOLD | 8.2 | -33.1 | -5244 | 9161 | 14405 | 16 |
 | NF_D_WD_fresh_3_J | L1M | 6.3 | -35.9 | -2871 | -241 | 2631 | 16 |
 | NF_D_WD_fresh_3_J | L3M | 6.3 | -35.9 | -2048 | 12893 | 14942 | 16 |
