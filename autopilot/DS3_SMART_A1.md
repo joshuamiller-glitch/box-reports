@@ -1,6 +1,6 @@
 # DS3_SMART_A1 — T-SMART A1 (cut, then get back in), A6 (first trade sets the session), A7 (never green) — W-SM1
 
-Generated 2026-11-13 09:15 UTC. Exact engine (JN05W2 stack: live panel base + F3 + E1 + C22 + BR3S + FLAT45K), one set per job, shared-memory engine, hook code/th_smart1/sm1_hooks.py (outermost hooklist entry, no engine file touched). Shadow only, no PASS claim. Prereg autopilot/SMART_A1_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-13 09:46 UTC. Exact engine (JN05W2 stack: live panel base + F3 + E1 + C22 + BR3S + FLAT45K), one set per job, shared-memory engine, hook code/th_smart1/sm1_hooks.py (outermost hooklist entry, no engine file touched). Shadow only, no PASS claim. Prereg autopilot/SMART_A1_PREREG.md (sha in DECISIONS.md).
 
 **CAVEAT on every number here:** the engine P7/K7 state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). A1 depends on cuts firing, so it is reported in two worlds: **E world** = engine state cut on (reference = JN05W2, "the cut alone"; re-entry after StateCut/EarlyCut) and **N world** = every state-cut arm off and the F3 context cut removed, FLAT45K kept = flat/full-stop only (reference = SM_A1_NC0; re-entry after Stop/StopJoin/EarlyCut). SM_A1_NC1 = N world with FLAT45K also off = never cutting.
 
@@ -14,14 +14,14 @@ Thresholds: A1 trigger levels/ A7 pts are in points (lot independent); A6 is cou
 | SM_A1E_L0L | JN05W2 | 12 | 100% ($318k of $316k) | 0 of 20 | -1.4 | -13 | -15.2 | 1010 | - |
 | SM_A1E_XL | JN05W2 | 43 | 100% ($315k of $316k) | 0 of 20 | 0.0 | 508 | -4.8 | 468 | -1.3 / 9% |
 | SM_A1N_C10L | SM_A1_NC0 | 12 | 60% ($181k of $302k) | 5 of 19 | -23.1 | -6326 | 8.0 | -4853 | - |
-| SM_A1N_L0L | SM_A1_NC0 | 40 | 98% ($296k of $302k) | 0 of 19 | -13.8 | 195 | 19.4 | 511 | - |
+| SM_A1N_L0L | SM_A1_NC0 | 41 | 98% ($296k of $302k) | 0 of 19 | -13.8 | 195 | 19.4 | 511 | - |
 | SM_A1N_XL | SM_A1_NC0 | 12 | 97% ($293k of $302k) | 0 of 19 | -22.2 | -1040 | -0.5 | -140 | - |
 | SM_A1_ID | JN05W2 | 1 | (running) ||||||
-| SM_A1_NC0 | JN05W2 | 36 | 70% ($223k of $316k) | 2 of 20 | -51.3 | -6993 | -56.9 | -3370 | - |
+| SM_A1_NC0 | JN05W2 | 38 | 70% ($223k of $316k) | 2 of 20 | -51.3 | -6993 | -56.9 | -3370 | - |
 | SM_A1_T | JN05W2 | 1 | (running) ||||||
 | SM_A6_freshNP7 | JN05W2 | 12 | 81% ($257k of $316k) | 0 of 20 | 15.8 | -4947 | 15.1 | -2246 | - |
 | SM_A6_halfALL | JN05W2 | 12 | 99% ($313k of $316k) | 0 of 20 | -5.2 | -1117 | -0.4 | -1188 | - |
-| SM_A6_halfNP7 | JN05W2 | 25 | 107% ($337k of $316k) | 0 of 20 | 11.8 | 383 | - | - | - |
+| SM_A6_halfNP7 | JN05W2 | 29 | 107% ($337k of $316k) | 0 of 20 | 11.8 | 383 | - | - | - |
 | SM_A6_skipM7 | JN05W2 | 12 | 100% ($316k of $316k) | 0 of 20 | -4.0 | -407 | 15.1 | 550 | - |
 | SM_A6_skipNP7 | JN05W2 | 12 | 88% ($278k of $316k) | 2 of 20 | -5.1 | -4620 | 15.8 | -1958 | - |
 | SM_A7_P7a | JN05W2 | 12 | 88% ($278k of $316k) | 1 of 20 | 19.7 | -4317 | 5.1 | -2111 | - |
