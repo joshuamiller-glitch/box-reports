@@ -1,7 +1,7 @@
-# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 17:59Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 19:47Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
 
 ## 0. Status
-Jobs done 2592 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 104671. Null draws (shifted-time, whole event table moved by random weeks): 10.
+Jobs done 2592 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 104671. Null draws (shifted-time, whole event table moved by random weeks): 12.
 Instruments run: CL, ES, GC, NQ, RTY, SI, YM. RTY/YM wait for IWM/DIA UW pulls (W-UB3). X' has NO UW data (history starts 2024-10-01): X' is not scored. PRE is clipped to the UW start (PREUW). Windows from 2026-11-12.
 
 ## 1. Where the signal sits (gated = mean L6M>0 and L3M>0 and HOLD>0 and n_L6M>=20)
@@ -56,47 +56,46 @@ Instruments run: CL, ES, GC, NQ, RTY, SI, YM. RTY/YM wait for IWM/DIA UW pulls (
 | PAIR | YM | False | 252 | 45 | 52.8 | 2682 |
 
 Null = the same event tables moved by a random circular whole-week shift inside their own date span (weekday/time of day kept, same windows), same job subset (every 4th job), full 1,470-cell grid, all 5 sessions x 2 directions. Columns: groups scored / groups with any gated cell (share) / max recents $/wk over all cells / best gated L6M Calmar. Observed is restricted to the same job subset.
-| family | observed (same jobs) | null draw 1 | null draw 2 | null draw 3 | null draw 4 | null draw 5 | null draw 6 | null draw 7 | null draw 8 | null draw 9 | null draw 10 |
-|--|--|--|--|--|--|--|--|--|--|--|--|
-| F1 | 4242 / 1759 (41%) / 2836 / 56.5 | 1778 / 970 (55%) / 2797 / 80.3 | 1760 / 963 (55%) / 2951 / 67.5 | 1756 / 981 (56%) / 3093 / 69.0 | 1536 / 993 (65%) / 2621 / 53.7 | 1552 / 981 (63%) / 2624 / 46.1 | n/a | n/a | n/a | 1732 / 1111 (64%) / 3077 / 79.3 | n/a |
-| F2 | 528 / 94 (18%) / 2060 / 32.6 | 322 / 170 (53%) / 2813 / 47.5 | 318 / 163 (51%) / 3308 / 50.7 | 328 / 159 (48%) / 2421 / 39.2 | 220 / 102 (46%) / 2428 / 36.6 | 220 / 105 (48%) / 2287 / 25.4 | n/a | n/a | n/a | n/a | n/a |
-| F6 | 1072 / 809 (75%) / 1676 / 50.7 | 432 / 181 (42%) / 1746 / 49.6 | 436 / 189 (43%) / 1643 / 58.6 | 422 / 190 (45%) / 1401 / 56.4 | 536 / 255 (48%) / 1854 / 41.6 | 524 / 253 (48%) / 1980 / 42.7 | n/a | n/a | n/a | 552 / 218 (39%) / 2170 / 81.0 | 90 / 44 (49%) / 1307 / 26.7 |
-| F6B | 64 / 63 (98%) / 1622 / 31.8 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| F7 | 1362 / 1212 (89%) / 5713 / 38.9 | 464 / 320 (69%) / 5911 / 59.5 | 460 / 309 (67%) / 3463 / 59.1 | 460 / 308 (67%) / 5252 / 45.5 | 754 / 493 (65%) / 2743 / 45.5 | 756 / 491 (65%) / 2636 / 49.0 | n/a | n/a | n/a | 672 / 418 (62%) / 4320 / 44.1 | 150 / 81 (54%) / 2323 / 44.9 |
-| F7B | 2 / 2 (100%) / 839 / 9.6 | n/a | n/a | n/a | 2 / 2 (100%) / 1335 / 10.5 | 2 / 2 (100%) / 883 / 7.9 | n/a | n/a | n/a | n/a | n/a |
-| FEB | 84 / 70 (83%) / 1993 / 40.2 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| PAIR | 1894 / 450 (24%) / 3345 / 90.1 | n/a | n/a | n/a | n/a | n/a | 2042 / 709 (35%) / 3138 / 71.6 | 2008 / 711 (35%) / 2718 / 81.6 | 2024 / 713 (35%) / 2613 / 123.9 | n/a | n/a |
+| family | observed (same jobs) | null draw 1 | null draw 2 | null draw 3 | null draw 4 | null draw 5 | null draw 6 | null draw 7 | null draw 8 | null draw 9 | null draw 10 | null draw 11 | null draw 12 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| F1 | 4242 / 1759 (41%) / 2836 / 56.5 | 1778 / 970 (55%) / 2797 / 80.3 | 1760 / 963 (55%) / 2951 / 67.5 | 1756 / 981 (56%) / 3093 / 69.0 | 1536 / 993 (65%) / 2621 / 53.7 | 1552 / 981 (63%) / 2624 / 46.1 | 1552 / 989 (64%) / 3011 / 53.3 | n/a | n/a | n/a | 1732 / 1111 (64%) / 3077 / 79.3 | 1714 / 1148 (67%) / 2976 / 44.8 | 1724 / 1132 (66%) / 3197 / 61.8 |
+| F2 | 528 / 94 (18%) / 2060 / 32.6 | 322 / 170 (53%) / 2813 / 47.5 | 318 / 163 (51%) / 3308 / 50.7 | 328 / 159 (48%) / 2421 / 39.2 | 220 / 102 (46%) / 2428 / 36.6 | 220 / 105 (48%) / 2287 / 25.4 | 214 / 102 (48%) / 2359 / 37.6 | n/a | n/a | n/a | n/a | n/a | n/a |
+| F6 | 1072 / 809 (75%) / 1676 / 50.7 | 432 / 181 (42%) / 1746 / 49.6 | 436 / 189 (43%) / 1643 / 58.6 | 422 / 190 (45%) / 1401 / 56.4 | 536 / 255 (48%) / 1854 / 41.6 | 524 / 253 (48%) / 1980 / 42.7 | 538 / 242 (45%) / 1706 / 46.3 | n/a | n/a | n/a | 552 / 218 (39%) / 2170 / 81.0 | 540 / 239 (44%) / 1861 / 54.6 | 544 / 237 (44%) / 1702 / 32.6 |
+| F6B | 64 / 63 (98%) / 1622 / 31.8 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| F7 | 1362 / 1212 (89%) / 5713 / 38.9 | 464 / 320 (69%) / 5911 / 59.5 | 460 / 309 (67%) / 3463 / 59.1 | 460 / 308 (67%) / 5252 / 45.5 | 754 / 493 (65%) / 2743 / 45.5 | 756 / 491 (65%) / 2636 / 49.0 | 752 / 491 (65%) / 3231 / 48.7 | n/a | n/a | n/a | 672 / 418 (62%) / 4320 / 44.1 | 666 / 418 (63%) / 4231 / 44.9 | 678 / 407 (60%) / 4595 / 44.6 |
+| F7B | 2 / 2 (100%) / 839 / 9.6 | n/a | n/a | n/a | 2 / 2 (100%) / 1335 / 10.5 | 2 / 2 (100%) / 883 / 7.9 | 2 / 2 (100%) / 611 / 6.3 | n/a | n/a | n/a | n/a | n/a | n/a |
+| FEB | 84 / 70 (83%) / 1993 / 40.2 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| PAIR | 1894 / 450 (24%) / 3345 / 90.1 | n/a | n/a | n/a | n/a | n/a | n/a | 2042 / 709 (35%) / 3138 / 71.6 | 2008 / 711 (35%) / 2718 / 81.6 | 2024 / 713 (35%) / 2613 / 123.9 | n/a | n/a | n/a |
 
 ## 2. Best book per session (gated; ranked by L6M Calmar = mean*52/maxDD). Window values are $/wk at the cell lots (R=$1,200 per trade at the stop, cap 10 lots), fees and measured slippage in.
 | session | dir | family | instrument (matched) | trigger | cell | n L6M | L1M | L3M | L6M | HOLD | PREUW | maxDD L6M | worst wk L6M | full stops/wk L6M | pos wk L6M | WF OOS $/wk | placebo shuffle p | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| asia | long | F2 | NQ (cross) | SPX oi|flip touch_up | Eb3_Sa1_Tnone_X120 | 20 | 124 | 1571 | 1637 | 659 | -204 | 1218 | -1218 | 0.30 | 0.79 | 172 | 0.19 | thin n=20; placebo p>0.1; null: see section 1 |
-| london | long | F1 | YM (cross) | SPY v_oi lo_d | Emkt_Sa1_Tnone_X120 | 27 | 3968 | 2116 | 1249 | 642 | -254 | 1362 | -1188 | 0.44 | 0.80 | pending | pending | thin n=27; null: see section 1 |
-| pre | short | F1 | NQ (cross) | SPX v_oi lo_d | Emkt_S30_T90_X120 | 24 | 4364 | 1983 | 1073 | 352 | 53 | 1275 | -1275 | 0.22 | 0.64 | 250 | 0.05 | thin n=24; null: see section 1 |
-| nyam | short | F1 | RTY (cross) | SPX v_oi d15_dn | Eb3_Sa1_T90_X120 | 44 | 2012 | 1377 | 1771 | 693 | 106 | 1241 | -1241 | 0.56 | 0.73 | pending | pending | no flag yet; null: see section 1 |
-| nypm | short | F1 | NQ (cross) | DIA g_dir d5_up | Ep10_Sa2_Tnone_XSE | 38 | 1570 | 1163 | 2014 | 1113 | -226 | 1470 | -1470 | 0.19 | 0.73 | pending | pending | thin n=38; null: see section 1 |
-| pit | long | FEB | CL (cross) | NONE ny_open dn | Emkt_S45_Tnone_XSE | 38 | -208 | 1707 | 1507 | 1130 | -666 | 3885 | -2590 | 0.96 | 0.47 | pending | pending | L1M negative; thin n=38; null: see section 1 |
+| asia | long | F2 | NQ (cross) | SPX oi|flip touch_up | Eb3_Sa1_Tnone_X120 | 20 | 124 | 1571 | 1637 | 659 | -204 | 1218 | -1218 | 0.30 | 0.79 | 172 | 0.15 | thin n=20; placebo p>0.1; null: see section 1 |
+| london | long | F1 | YM (cross) | SPY v_oi lo_d | Emkt_Sa1_Tnone_X120 | 27 | 3968 | 2116 | 1249 | 642 | -254 | 1362 | -1188 | 0.44 | 0.80 | 49 | 0.03 | thin n=27; null: see section 1 |
+| pre | short | F1 | NQ (cross) | SPX v_oi lo_d | Emkt_S30_T90_X60 | 24 | 4364 | 1983 | 1073 | 352 | 53 | 1275 | -1275 | 0.22 | 0.64 | 250 | 0.01 | thin n=24; null: see section 1 |
+| nyam | short | F1 | RTY (cross) | SPX v_oi d15_dn | Eb3_Sa1_T90_XSE | 44 | 2012 | 1377 | 1771 | 693 | 106 | 1241 | -1241 | 0.56 | 0.73 | 416 | 0.05 | no flag yet; null: see section 1 |
+| nypm | short | F1 | NQ (cross) | DIA g_dir d5_up | Ep10_Sa2_Tnone_XSE | 38 | 1570 | 1163 | 2014 | 1113 | -226 | 1470 | -1470 | 0.19 | 0.73 | 353 | 0.10 | thin n=38; null: see section 1 |
 
 Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (NQ-point lists scaled by the instrument ATR ratio, a1/a2 = 1x/2x ATR14 of 5-min bars; XSE = session end, flat). Trigger names: see UWBOOKS_B1_PREREG.md.
 
 ## 3. Finalist detail (top 3 per session, re-simulated; WF = bi-weekly re-pick over all 1,470 cells of the group, trail 26 wk; placebo = shuffled-day events, B=20: p = share of draws whose best-cell recents >= the group best-cell recents)
 | session | dir | inst | trigger | cell | spec entry | stop | target | time exit | L6M | HOLD | stress L6M / HOLD (2x slip, label only) | WF mean $/wk | WF maxDD | WF worst | WF periods positive | placebo q95 | placebo p (B=100) |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| asia | 1 | NQ | F2 SPX oi|flip touch_up | Eb3_Sa1_Tnone_X120 | enter at +3 min if price moved in direction | 1 x ATR5 | none | 120 min | 1637 | 659 | n/a / n/a | 172 | 11501 | -1814 | 0.44 | 2185 | 0.19 |
-| asia | 1 | NQ | F2 SPX oi|flip touch_up | Eb3_Sa1_T90_X120 | enter at +3 min if price moved in direction | 1 x ATR5 | 90 NQ-pts x 1.00 = 90.0 NQ pts | 120 min | 1512 | 656 | n/a / n/a | 172 | 11501 | -1814 | 0.44 | 2185 | 0.19 |
-| asia | -1 | ES | F7 QQQ g_dir|asia1805 med_hi | Eb3_S45_Tnone_XSE | enter at +3 min if price moved in direction | 45 NQ-pts x 0.19 = 8.6 ES pts | none | session end | 1273 | 669 | n/a / n/a | -219 | 20867 | -3467 | 0.29 | 1910 | 0.10 |
-| london | 1 | ES | F1 QQQ g_oi d1_up | Ep10_Sa2_Tnone_XSE | limit pullback 10 NQ-pts | 2 x ATR5 | none | session end | 1130 | 472 | n/a / n/a | 196 | 3541 | -1489 | 0.42 | 702 | 0.05 |
-| london | 1 | ES | F1 QQQ g_oi d1_up | Ep10_Sa2_Tnone_X120 | limit pullback 10 NQ-pts | 2 x ATR5 | none | 120 min | 1130 | 472 | n/a / n/a | 196 | 3541 | -1489 | 0.42 | 702 | 0.05 |
-| london | 1 | ES | F1 QQQ g_oi d1_up | Ep10_Sa2_T90_XSE | limit pullback 10 NQ-pts | 2 x ATR5 | 90 NQ-pts x 0.19 = 17.3 ES pts | session end | 1088 | 540 | n/a / n/a | 196 | 3541 | -1489 | 0.42 | 702 | 0.05 |
-| nyam | -1 | NQ | F1 QQQ v_dir d15_up | Eb3_S30_Tnone_X120 | enter at +3 min if price moved in direction | 30 NQ-pts x 1.00 = 30.0 NQ pts | none | 120 min | 3022 | 1297 | n/a / n/a | 701 | 5011 | -2427 | 0.55 | 2008 | 0.10 |
-| nyam | -1 | NQ | F1 QQQ v_dir d15_up | Eb3_S30_Tnone_XSE | enter at +3 min if price moved in direction | 30 NQ-pts x 1.00 = 30.0 NQ pts | none | session end | 3017 | 1295 | n/a / n/a | 701 | 5011 | -2427 | 0.55 | 2008 | 0.10 |
-| nyam | 1 | NQ | F1 QQQ c_oi hi_d | Ep10_S30_Tnone_X60 | limit pullback 10 NQ-pts | 30 NQ-pts x 1.00 = 30.0 NQ pts | none | 60 min | 1704 | 868 | n/a / n/a | 67 | 7523 | -5056 | 0.35 | 2404 | 0.24 |
-| nypm | -1 | NQ | F1 NDX c_dir d1_dn | Ep10_S60_Tnone_XSE | limit pullback 10 NQ-pts | 60 NQ-pts x 1.00 = 60.0 NQ pts | none | session end | 1473 | 974 | n/a / n/a | 524 | 2738 | -1976 | 0.63 | 2105 | 0.29 |
-| nypm | -1 | NQ | F1 SPY v_vol d15_up | Ep10_Sa2_T60_XSE | limit pullback 10 NQ-pts | 2 x ATR5 | 60 NQ-pts x 1.00 = 60.0 NQ pts | session end | 1304 | 720 | n/a / n/a | 241 | 5917 | -2455 | 0.60 | 2455 | 0.90 |
-| nypm | -1 | NQ | F1 NDX c_dir d1_dn | Ep10_S45_Tnone_XSE | limit pullback 10 NQ-pts | 45 NQ-pts x 1.00 = 45.0 NQ pts | none | session end | 1240 | 862 | n/a / n/a | 524 | 2738 | -1976 | 0.63 | 2105 | 0.29 |
-| pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_X60 | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | 60 min | 1073 | 352 | n/a / n/a | 250 | 3773 | -1417 | 0.35 | 425 | 0.05 |
-| pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_XSE | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | session end | 1073 | 352 | n/a / n/a | 250 | 3773 | -1417 | 0.35 | 425 | 0.05 |
-| pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_X120 | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | 120 min | 1073 | 352 | n/a / n/a | 250 | 3773 | -1417 | 0.35 | 425 | 0.05 |
+| asia | 1 | NQ | F2 SPX oi|flip touch_up | Eb3_Sa1_Tnone_X120 | enter at +3 min if price moved in direction | 1 x ATR5 | none | 120 min | 1637 | 659 | 1617 / 637 | 172 | 11501 | -1814 | 0.44 | 1589 | 0.15 |
+| asia | 1 | NQ | F2 SPX oi|flip touch_up | Eb3_Sa1_T90_X120 | enter at +3 min if price moved in direction | 1 x ATR5 | 90 NQ-pts x 1.00 = 90.0 NQ pts | 120 min | 1512 | 656 | 1497 / 637 | 172 | 11501 | -1814 | 0.44 | 1589 | 0.15 |
+| asia | -1 | ES | F7 QQQ g_dir|asia1805 med_hi | Eb3_S45_Tnone_XSE | enter at +3 min if price moved in direction | 45 NQ-pts x 0.19 = 8.6 ES pts | none | session end | 1274 | 670 | 1220 / 580 | -232 | 20903 | -3467 | 0.32 | 2376 | 0.04 |
+| london | 1 | YM | F1 SPY v_oi lo_d | Emkt_Sa1_Tnone_X120 | market at t0+1s | 1 x ATR5 | none | 120 min | 1249 | 642 | 1086 / 488 | 49 | 5343 | -2666 | 0.22 | 813 | 0.03 |
+| london | 1 | YM | F1 SPY v_oi lo_d | Emkt_Sa1_Tnone_XSE | market at t0+1s | 1 x ATR5 | none | session end | 1249 | 642 | 1086 / 488 | 49 | 5343 | -2666 | 0.22 | 813 | 0.03 |
+| london | 1 | ES | F1 QQQ g_oi d1_up | Ep10_Sa2_Tnone_XSE | limit pullback 10 NQ-pts | 2 x ATR5 | none | session end | 1130 | 472 | 1034 / 415 | 195 | 3541 | -1488 | 0.42 | 702 | 0.03 |
+| nyam | -1 | RTY | F1 SPX v_oi d15_dn | Eb3_Sa1_T90_XSE | enter at +3 min if price moved in direction | 1 x ATR5 | 90 NQ-pts x 0.10 = 9.4 RTY pts | session end | 1767 | 690 | 1745 / 575 | 416 | 18668 | -6649 | 0.57 | 2477 | 0.05 |
+| nyam | -1 | RTY | F1 SPX v_oi d15_dn | Eb3_Sa1_T90_X120 | enter at +3 min if price moved in direction | 1 x ATR5 | 90 NQ-pts x 0.10 = 9.4 RTY pts | 120 min | 1767 | 690 | 1745 / 575 | 416 | 18668 | -6649 | 0.57 | 2477 | 0.05 |
+| nyam | -1 | RTY | F1 IWM v_oi hi_d | Eb5_S30_T60_XSE | enter at +5 min if price moved in direction | 30 NQ-pts x 0.10 = 3.1 RTY pts | 60 NQ-pts x 0.10 = 6.3 RTY pts | session end | 1703 | 1015 | 1672 / 970 | 183 | 16483 | -3872 | 0.58 | 2639 | 0.17 |
+| nypm | -1 | NQ | F1 DIA g_dir d5_up | Ep10_Sa2_Tnone_XSE | limit pullback 10 NQ-pts | 2 x ATR5 | none | session end | 2014 | 1113 | 2000 / 1099 | 353 | 8533 | -3641 | 0.55 | 1724 | 0.10 |
+| nypm | -1 | NQ | F1 NDX c_dir d1_dn | Ep10_S60_Tnone_XSE | limit pullback 10 NQ-pts | 60 NQ-pts x 1.00 = 60.0 NQ pts | none | session end | 1473 | 974 | 1460 / 962 | 524 | 2738 | -1976 | 0.63 | 2049 | 0.33 |
+| nypm | -1 | NQ | F1 DIA g_dir d15_up | Ep5_Sa2_Tnone_XSE | limit pullback 5 NQ-pts | 2 x ATR5 | none | session end | 1334 | 415 | 1321 / 403 | -44 | 7376 | -2455 | 0.36 | 1662 | 0.98 |
+| pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_X60 | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | 60 min | 1073 | 352 | 961 / 286 | 250 | 3773 | -1417 | 0.35 | 458 | 0.01 |
+| pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_XSE | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | session end | 1073 | 352 | 961 / 286 | 250 | 3773 | -1417 | 0.35 | 458 | 0.01 |
+| pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_X120 | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | 120 min | 1073 | 352 | 961 / 286 | 250 | 3773 | -1417 | 0.35 | 458 | 0.01 |
 
 ## 3b. First-order joint (finalist weekly $ added to the live stack S1B-COMB weekly, own lots; exact-engine joint via TP sets TL3_UW_* follows)
 | finalist id | corr KB/PE/SM/HM/MV/PB/OD | corr stack | stack maxDD L6M -> with | stack worst wk L6M -> with | cand mean L6M | weeks trading |
@@ -104,6 +103,8 @@ Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (N
 | F1_ES_QQQ_g_oi_d1_up_london_1_Ep10_Sa2_T90_XSE | 0.08/0.07/0.04/-0.10/-0.16/0.06/0.01 | 0.04 | 79907 -> 79727 | -62941 -> -64220 | 1130 | 42 |
 | F1_ES_QQQ_g_oi_d1_up_london_1_Ep10_Sa2_Tnone_X120 | 0.07/0.14/0.10/-0.09/-0.06/0.09/0.02 | 0.12 | 79907 -> 79727 | -62941 -> -64220 | 1173 | 42 |
 | F1_ES_QQQ_g_oi_d1_up_london_1_Ep10_Sa2_Tnone_XSE | 0.07/0.14/0.10/-0.09/-0.06/0.09/0.02 | 0.12 | 79907 -> 79727 | -62941 -> -64220 | 1173 | 42 |
+| F1_NQ_DIA_g_dir_d15_up_nypm_-1_Ep5_Sa2_Tnone_XSE | 0.01/0.12/-0.02/0.14/0.03/0.04/-0.08 | 0.11 | 79907 -> 79940 | -62941 -> -63988 | 1385 | 84 |
+| F1_NQ_DIA_g_dir_d5_up_nypm_-1_Ep10_Sa2_Tnone_XSE | 0.07/0.21/0.15/0.10/0.04/0.11/-0.10 | 0.22 | 79907 -> 81378 | -62941 -> -61260 | 2091 | 86 |
 | F1_NQ_NDX_c_dir_d1_dn_nypm_-1_Ep10_S45_Tnone_XSE | 0.03/0.11/0.14/0.05/-0.11/0.10/-0.15 | 0.10 | 79907 -> 79194 | -62941 -> -63855 | 1196 | 61 |
 | F1_NQ_NDX_c_dir_d1_dn_nypm_-1_Ep10_S60_Tnone_XSE | 0.02/0.10/0.13/0.05/-0.14/0.09/-0.15 | 0.08 | 79907 -> 79194 | -62941 -> -59795 | 1426 | 61 |
 | F1_NQ_QQQ_c_oi_hi_d_nyam_1_Ep10_S30_Tnone_X60 | 0.04/-0.03/-0.00/0.02/-0.02/-0.09/-0.08 | -0.02 | 79907 -> 74395 | -62941 -> -62941 | 1395 | 31 |
@@ -113,9 +114,17 @@ Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (N
 | F1_NQ_SPX_v_oi_lo_d_pre_-1_Emkt_S30_T90_X60 | 0.13/0.08/-0.02/-0.02/0.11/-0.10/-0.08 | 0.08 | 79907 -> 79907 | -62941 -> -59351 | 1117 | 73 |
 | F1_NQ_SPX_v_oi_lo_d_pre_-1_Emkt_S30_T90_XSE | 0.13/0.08/-0.02/-0.02/0.11/-0.10/-0.08 | 0.08 | 79907 -> 79907 | -62941 -> -59351 | 1117 | 73 |
 | F1_NQ_SPY_v_vol_d15_up_nypm_-1_Ep10_Sa2_T60_XSE | 0.03/0.02/0.11/0.10/-0.02/0.01/-0.05 | 0.05 | 79907 -> 76926 | -62941 -> -60551 | 1229 | 97 |
+| F1_RTY_IWM_v_oi_hi_d_nyam_-1_Eb5_S30_T60_XSE | 0.01/0.15/0.07/0.09/-0.13/0.14/0.03 | 0.13 | 79907 -> 78774 | -62941 -> -58014 | 1710 | 97 |
+| F1_RTY_SPX_v_oi_d15_dn_nyam_-1_Eb3_Sa1_T90_X120 | 0.12/0.06/-0.03/0.04/0.06/0.02/0.11 | 0.08 | 79907 -> 78606 | -62941 -> -57369 | 1688 | 102 |
+| F1_RTY_SPX_v_oi_d15_dn_nyam_-1_Eb3_Sa1_T90_XSE | 0.12/0.06/-0.03/0.04/0.07/0.02/0.11 | 0.08 | 79907 -> 78606 | -62941 -> -57369 | 1688 | 102 |
+| F1_YM_SPY_v_oi_lo_d_london_1_Emkt_Sa1_Tnone_X120 | 0.05/-0.06/0.07/0.03/-0.11/-0.07/-0.17 | -0.04 | 79907 -> 79907 | -62941 -> -55540 | 1260 | 63 |
+| F1_YM_SPY_v_oi_lo_d_london_1_Emkt_Sa1_Tnone_XSE | 0.05/-0.06/0.07/0.03/-0.11/-0.07/-0.17 | -0.04 | 79907 -> 79907 | -62941 -> -55540 | 1260 | 63 |
 | F2_NQ_SPX_oi-flip_touch_up_asia_1_Eb3_Sa1_T90_X120 | -0.05/-0.01/0.01/0.11/0.06/0.06/-0.01 | 0.01 | 79907 -> 79907 | -62941 -> -58836 | 1444 | 52 |
 | F2_NQ_SPX_oi-flip_touch_up_asia_1_Eb3_Sa1_Tnone_X120 | -0.04/0.05/0.04/0.11/0.08/0.05/0.01 | 0.07 | 79907 -> 79907 | -62941 -> -59148 | 1574 | 52 |
-| F7_ES_QQQ_g_dir-asia1805_med_hi_asia_-1_Eb3_S45_Tnone_XSE | -0.01/0.17/0.11/0.11/0.10/0.09/0.01 | 0.18 | 79907 -> 79907 | -62941 -> -64287 | 1374 | 74 |
+| F7_ES_QQQ_g_dir-asia1805_med_hi_asia_-1_Eb3_S45_Tnone_XSE | -0.01/0.17/0.11/0.11/0.10/0.09/0.01 | 0.18 | 79907 -> 79907 | -62941 -> -64286 | 1375 | 74 |
+| FEB_CL_NONE_cl_pit_open_all_pit_1_Emkt_S90_Tnone_XSE | n/a/n/a/n/a/n/a/n/a/n/a/n/a | n/a | 79907 -> 79907 | -62941 -> -62941 | 0 | 0 |
+| FEB_CL_NONE_ny_open_dn_pit_1_Emkt_S45_Tnone_XSE | n/a/n/a/n/a/n/a/n/a/n/a/n/a | n/a | 79907 -> 79907 | -62941 -> -62941 | 0 | 0 |
+| FEB_CL_NONE_ny_open_dn_pit_1_Emkt_Sa2_Tnone_XSE | n/a/n/a/n/a/n/a/n/a/n/a/n/a | n/a | 79907 -> 79907 | -62941 -> -62941 | 0 | 0 |
 
 ## 6. No-UW baseline of the F6/F7 entry clocks (same harness/grid/gate; F7B = every business day at the clock, F6B = price move only) vs the UW-conditioned tables
 | instrument | clock family | no-UW baseline: groups / gated (share) / max recents / best Calmar | UW-conditioned: groups / gated (share) / max recents / best Calmar |
@@ -176,3 +185,4 @@ PLAIN READING (updated 17:20Z; B2 NQ+ES, B3 RTY+YM, B4 pairs, B5 no-UW baselines
 - Not done yet: IWM/DIA matched runs (B6 running; IWM history starts 2024-12-23), IWM/DIA level files for F2, metals/oil (GC/SI/CL with GLD/GDX/SLV/USO/XLE/XOP, after the six tickers are pulled), exact-engine joint (needs an add-a-book hook; question in MORNING), WF/placebo B=100 for the final list by the 18:45Z cycle.
 - Simulator audit: an independent naive second-by-second loop (entry modes market / +3 min confirm / 5-pt pullback, stops, targets, time exits, 08:30 slippage) reproduced the vectorised harness on 198 of 198 random event x cell checks (1-s resolution region, exit < 2 h).
 - Update 17:55Z: IWM/DIA run (B6, 608 jobs on NQ/ES/RTY/YM) shows the same picture; matched instruments (section 6b) do not carry their trigger better than the crosses (gated share 51-62% matched vs 47-68% cross). Metals/oil: FEB clock baselines run; UW-conditioned FE/F1/F6/F7 wait for the GLD/GDX/SLV/USO/XLE/XOP spot_1m pulls (about 20 of ~500 days each at 17:48Z).
+- Placebo (shuffled-day events, B=100, group best-cell recents vs the same statistic on shuffled days): finalists reach p 0.01-0.05 for pre short SPX v_oi lo_d (NQ, 0.01), london long SPY v_oi lo_d (YM, 0.03) and QQQ g_oi d1_up (ES, 0.03), asia short QQQ g_dir med_hi (ES, 0.04), nyam short SPX v_oi d15_dn (RTY, 0.05); others 0.10-0.98. With ~40k scored groups, ~2,000 groups would show p<=0.05 by chance, and the family-level shifted-time null is not beaten: these are named as best-per-session candidates, not survivors. 2x-slippage stress cuts L6M by only 1-12% (entries are market/limit at tick-scale slips on large-ATR stops), so costs are not what limits them.

@@ -1,4 +1,4 @@
-# DS3_UWBOOKS_B2 - W-UB2: Tide, flow bursts, dark-pool/IV books (+pairs, joint). Built 2026-11-13 16:39Z by code/th_uwb2/uwb2_page.py. Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B2 - W-UB2: Tide, flow bursts, dark-pool/IV books (+pairs, joint). Built 2026-11-13 19:39Z by code/th_uwb2/uwb2_page.py. Research, shadow, NO PASS claim.
 Prereg: autopilot/UWB2_PREREG.md (sha line in DECISIONS.md 14:30Z). Harness: code/th_uwbooks/harness.py (W-UB1) unchanged. Events: code/th_uwb2/uwb2_events.py. Screens: /mnt/l2/l2vast/_uwb2/B2/res_*.csv. Units: $ per week at 1 lot-set (lots = clip(round(1200/(stop pts x $/pt)),1,10)), fees in, measured NQ basis, ES/RTY 1 tick/side (UNMEASURED).
 
 ## 0. Plain verdict (read first)
@@ -67,7 +67,15 @@ Reading: the best unconditional cell in each session already earns hundreds to t
 ## 4. Family null (shifted-time, B draws; statistic = best gated cell recents (L6M+HOLD)/2 with n_L6M>=20, L3M>0, per session)
 | null file | draws | asia | london | pre | nyam | nypm |
 |---|---|---|---|---|---|---|
-| null_F4_NQ_shift_NDX | 4 | - | - | - | obs 2233 vs q95 3393 p=1.00 | obs 2226 vs q95 2897 p=1.00 |
+| null_F3_ES_shift | 8 | - | - | - | obs 2768 vs q95 3018 p=0.56 | obs 1059 vs q95 1611 p=1.00 |
+| null_F3_NQ_shift | 8 | - | - | - | obs 3465 vs q95 4087 p=0.22 | obs 2240 vs q95 2675 p=0.67 |
+| null_F4_ES_shift_SPX | 8 | - | - | - | obs 2090 vs q95 3319 p=1.00 | obs 1305 vs q95 1767 p=1.00 |
+| null_F4_NQ_shift_NDX | 8 | - | - | - | obs 2233 vs q95 3717 p=1.00 | obs 2226 vs q95 3203 p=0.89 |
+| null_F4_NQ_shift_QQQ | 8 | - | - | - | obs 2629 vs q95 3321 p=0.56 | obs 2211 vs q95 2677 p=0.44 |
+| null_F5dp_ES_shift | 8 | obs 1740 vs q95 2423 p=0.56 | obs 1203 vs q95 2218 p=1.00 | obs 429 vs q95 668 p=0.78 | obs 1627 vs q95 2250 p=0.67 | obs 761 vs q95 1364 p=1.00 |
+| null_F5dp_NQ_shift | 8 | obs 2716 vs q95 4443 p=0.89 | obs 1418 vs q95 2486 p=1.00 | obs 528 vs q95 1305 p=1.00 | obs 2053 vs q95 3246 p=0.78 | obs 1278 vs q95 2456 p=1.00 |
+| null_F5iv_ES_shift | 8 | obs 3249 vs q95 3009 p=0.11 | obs 1521 vs q95 1665 p=0.22 | - | obs 2332 vs q95 1790 p=0.11 | - |
+| null_F5iv_NQ_shift | 8 | obs 6349 vs q95 5621 p=0.11 | obs 1501 vs q95 2806 p=1.00 | - | obs 2534 vs q95 1886 p=0.11 | - |
 
 ## 5. Best book per session (ranked by consistency across L3M/L6M/HOLD over max DD; DD first), with full evidence
 
@@ -106,5 +114,5 @@ Reading: the best unconditional cell in each session already earns hundreds to t
 Cell code: E = entry (mkt: market at decision+1 s; b1/b3/b5: after N min only if price moved with the trigger; p3/p5/p10: limit pullback, 15 min), S = stop (points x instrument ATR scale, or aN = N x ATR14 5-min), T = target (none = no target), X = time exit minutes or SE = session end (flat by session end). Lots equal-$-risk R=$1,200.
 
 ## 6. Screen coverage
-rows in screens (top cells per table x session x direction): inst    ES    NQ   RTY / fam                    / F0      46    47    41 / F3    1049  1063  1066 / F4    2987  3033  2972 / F4Z   1352  1382  1364 / F5dp   509   541   525 / F5iv  1161  1199  1183
-Full-tape days aggregated so far: 24 (newest first from 2026-11-12). F4T (tape DTE/aggression bursts) screen waits for >= 30 days.
+rows in screens (top cells per table x session x direction): inst    ES    NQ   RTY / fam                    / F0      46    47    41 / F3    1049  1063  1066 / F4    2987  3033  2972 / F4T   6847  6961  6897 / F4Z   1352  1382  1364 / F5dp   509   541   525 / F5iv  1161  1199  1183
+Full-tape days aggregated so far: 121 (newest first from 2026-11-12). F4T (tape DTE/aggression bursts) screen waits for >= 30 days.
