@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F1 — T-NEXT-FEATURES items 1 (stack-level evidence) and 6 (after a halt/lock), W-F1
 
-Generated 2026-11-13 05:08 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
+Generated 2026-11-13 05:39 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
 
 Hook code/th_nextf/nf_hooks.py (outermost of the hooklist). **sev**: N same-side losing closed trades by ANY book in the ET six-session, no new session extreme in the trade direction beyond the extreme at the last failure exit (completed 1-min bars) -> skip (S) or half (H) for every book on that side; suffix N = scorecard convention (opposite-side trades do not end the run). **ah**: previous 18:00-ET day ended day-halted by the loss cap (L), give-back lock (K) or either (E) -> first signal dropped (S) or first sized entry halved (H).
 
@@ -32,7 +32,7 @@ Baseline stack same-side losing run (behavioural scorecard c convention): JN05W2
 | NF_D_WD_fresh_3_L | 16 | 63% ($198k of $316k) | 2 of 20 | 33.3 | -11252 | 13/5 | 5.2 | -7215 | 13/5 | - |
 | NF_D_WD_half_3_J | 12 | 68% ($214k of $316k) | 1 of 20 | 42.3 | -5995 | 14/6 | 34.3 | -4271 | 14/6 | - |
 | NF_D_WD_half_3_L | 16 | 92% ($293k of $316k) | 0 of 20 | 12.8 | -1544 | 13/6 | 11.6 | -565 | 13/6 | - |
-| NF_D_WD_half_5_J | 12 | 70% ($222k of $316k) | 1 of 20 | 38.8 | -5215 | 14/6 | 38.6 | -3418 | 14/6 | - |
+| NF_D_WD_half_5_J | 13 | 70% ($222k of $316k) | 1 of 20 | 38.8 | -5215 | 14/6 | 38.6 | -3418 | 14/6 | - |
 | NF_D_WD_half_5_L | 16 | 89% ($282k of $316k) | 0 of 20 | 19.2 | -1973 | 13/6 | -6.6 | -550 | 13/6 | - |
 | NF_SEV2H | 12 | 96% ($304k of $316k) | 0 of 20 | -2.3 | -463 | 14/6 | 2.5 | -254 | 14/6 | - |
 | NF_SEV2HN | 12 | 90% ($286k of $316k) | 0 of 20 | -51.7 | -2096 | 14/6 | -9.6 | -1605 | 14/6 | - |
@@ -40,7 +40,7 @@ Baseline stack same-side losing run (behavioural scorecard c convention): JN05W2
 | NF_SEV2SN | 12 | 70% ($221k of $316k) | 2 of 20 | -172.1 | -5974 | 10/5 | -56.6 | -5027 | 10/5 | - |
 | NF_SEV3H | 12 | 100% ($315k of $316k) | 0 of 20 | -3.3 | 328 | 14/6 | 0.0 | -114 | 14/6 | - |
 | NF_SEV3HN | 12 | 100% ($315k of $316k) | 0 of 20 | -14.2 | -3 | 14/6 | -10.3 | -461 | 14/6 | - |
-| NF_SEV3S | 11 | 98% ($310k of $316k) | 0 of 20 | -10.1 | -328 | 11/6 | - | - | -/- | - |
+| NF_SEV3S | 12 | 98% ($310k of $316k) | 0 of 20 | -10.1 | -328 | 11/6 | 0.7 | -687 | 11/6 | - |
 | NF_SEV3SN | 12 | 87% ($274k of $316k) | 1 of 20 | -85.4 | -3265 | 10/5 | -22.8 | -3349 | 10/5 | - |
 | NF_SEV4H | 12 | 99% ($313k of $316k) | 0 of 20 | 0.0 | -221 | 13/6 | 0.0 | -177 | 13/6 | - |
 | NF_SEV4HN | 12 | 97% ($307k of $316k) | 0 of 20 | -8.5 | -247 | 14/6 | -22.3 | -443 | 14/6 | - |
