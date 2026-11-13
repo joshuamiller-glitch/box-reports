@@ -1,6 +1,6 @@
 # DS3_SMART_A2 — T-SMART items A2 (stack as one position), A4 (hedge instead of exit), A5 (stop-and-reverse, opposite-book conflict), W-SM2
 
-Generated 2026-11-13 10:16 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months). Shadow only, no PASS claim.
+Generated 2026-11-13 10:47 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months). Shadow only, no PASS claim.
 **CAVEAT (every page):** the engine state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). Rules below are scored with the engine cuts as in JN05W2; the full-stop-only variants are added when that base exists. Prereg autopilot/SMART_A2_PREREG.md (sha 597c41f51e81ba3c). Hook code/th_sm2/sm2_hooks.py. R = $1,200 fixed; at the user lots (x1.75) fixed-dollar thresholds x1.75, count rules unchanged. Hedge fee 12.0 $/NQ-equivalent RT assumed (MNQ, unverified), bound 4.84.
 
 ## 0. Trend-week clause first (L6M weekly check, 5 best JN05W2 weeks kept, JN05W2 winning weeks turned losing) and L6M/HOLD summary
@@ -18,7 +18,7 @@ Generated 2026-11-13 10:16 UTC. Exact engine, one set per job, reference = JN05W
 | SM_A1_T | 1 | (running) |||||||||
 | SM_A6_freshNP7 | 12 | 81% ($257k of $316k) | 0 of 20 | 15.8 | -4947 | 10/5 | 15.1 | -2246 | 10/5 | - |
 | SM_A6_halfALL | 12 | 99% ($313k of $316k) | 0 of 20 | -5.2 | -1117 | 14/6 | -0.4 | -1188 | 14/6 | - |
-| SM_A6_halfNP7 | 33 | 107% ($337k of $316k) | 0 of 20 | 11.8 | 383 | 13/6 | 11.6 | 724 | 13/6 | - |
+| SM_A6_halfNP7 | 39 | 107% ($337k of $316k) | 0 of 20 | 11.8 | 383 | 13/6 | 11.6 | 724 | 13/6 | - |
 | SM_A6_skipM7 | 12 | 100% ($316k of $316k) | 0 of 20 | -4.0 | -407 | 13/6 | 15.1 | 550 | 13/5 | - |
 | SM_A6_skipNP7 | 12 | 88% ($278k of $316k) | 2 of 20 | -5.1 | -4620 | 9/5 | 15.8 | -1958 | 9/5 | - |
 | SM_A7_P7a | 12 | 88% ($278k of $316k) | 1 of 20 | 19.7 | -4317 | 14/6 | 5.1 | -2111 | 14/6 | - |
@@ -87,7 +87,7 @@ covered sessions 20 of 20
 ACCEPT JN05W2_NOCUT PASS fails=1/20
 ```
 
-**JN05W2J_NOCUT**: 38 of 43 months DONE.
+**JN05W2J_NOCUT**: 42 of 43 months DONE.
 
 Trend-week clause (L6M, vs cut-on reference): 5 best weeks kept $204k of $244k (83%); winning weeks turned losing 3 of 21.
 
@@ -97,3 +97,4 @@ Trend-week clause (L6M, vs cut-on reference): 5 best weeks kept $204k of $244k (
 | L3M | 28277 | 17862 | -58.3 | -4597 | 10/5 |
 | L6M | 36550 | 23965 | -52.5 | -4077 | 10/5 |
 | HOLD | 83574 | 43622 | -91.6 | -3222 | 10/5 |
+| X' | 42819 | 39577 | -8.2 | -14 | 6/4 |
