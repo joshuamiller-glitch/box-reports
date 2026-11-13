@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F2 — desk-state family (item 2) and winning-day protection (item 5) — W-F2
 
-Generated 2026-11-13 00:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
+Generated 2026-11-13 00:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
 
 ## 0. Trend-week clause (first): sum of the base's 5 best weeks kept, and base winning weeks turned losing (per window)
 
@@ -105,9 +105,9 @@ Generated 2026-11-13 00:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_ST_half_3_L | L1M | 8.7 | 4.4 | -373 | 234 | 606 | 6 |
 | NF_D_ST_half_3_L | L3M | -37.0 | -43.3 | -1847 | 14168 | 16015 | 6 |
 | NF_D_ST_half_3_L | L6M | -37.0 | -43.3 | -1582 | 23555 | 25137 | 6 |
-| NF_D_ST_half_4_J | L1M | 3.5 | 1.3 | -116 | 2514 | 2631 | 6 |
-| NF_D_ST_half_4_J | L3M | -15.2 | -17.8 | -827 | 14114 | 14942 | 6 |
-| NF_D_ST_half_4_J | L6M | 0.0 | -2.3 | -759 | 20106 | 20865 | 6 |
+| NF_D_ST_half_4_J | L1M | 3.5 | 1.3 | -116 | 2514 | 2631 | 8 |
+| NF_D_ST_half_4_J | L3M | -15.2 | -17.8 | -827 | 14114 | 14942 | 8 |
+| NF_D_ST_half_4_J | L6M | 0.0 | -2.3 | -759 | 20106 | 20865 | 8 |
 | NF_D_WD_fresh_3_J | HOLD | 8.2 | -33.1 | -5244 | 9161 | 14405 | 16 |
 | NF_D_WD_fresh_3_J | L1M | 6.3 | -35.9 | -2871 | -241 | 2631 | 16 |
 | NF_D_WD_fresh_3_J | L3M | 6.3 | -35.9 | -2048 | 12893 | 14942 | 16 |
