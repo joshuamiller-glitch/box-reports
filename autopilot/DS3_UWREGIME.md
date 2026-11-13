@@ -1,4 +1,4 @@
-# DS3_UWREGIME - Unusual Whales as a range / day-type forecaster (W-UR1). Rebuilt 2026-11-13T17:25:09Z by code/th_uwregime/ur_loop.sh (every 3 h). Research only, NO trading in this page, NO PASS claim.
+# DS3_UWREGIME - Unusual Whales as a range / day-type forecaster (W-UR1). Rebuilt 2026-11-13T17:43:39Z by code/th_uwregime/ur_loop.sh (every 3 h). Research only, NO trading in this page, NO PASS claim.
 Prereg: autopilot/UWREGIME_PREREG.md (sha in DECISIONS.md, logged before scoring). Question: does UW forecast, out of sample, the session range / realized vol, trend-vs-chop, pinning and time of high/low, and by how much OVER a no-UW benchmark.
 
 ## 0. Method in six lines
@@ -7,146 +7,167 @@ Prereg: autopilot/UWREGIME_PREREG.md (sha in DECISIONS.md, logged before scoring
 - Readings: R0 prior close (UW rows up to the prior close + prior-day EOD level files), R1 08:30, R2 09:30, R3 10:00 ET; a UW minute row is used only at start+180 s; EOD files (gex levels, spot-strike, vol stats, dp levels, IV term) only from the previous trading day; futures move since the prior close maps UW spot to the reading time. Targets: session ln range, ln realized vol (range class); efficiency ratio, close extremity, mean crossings (day-type class); time of first / last extreme (timing).
 - Nulls: shifted-time null = UW inputs from k trading days earlier, k in 8..60, 20 draws, same refit; "null q95" per row, "fam q95" = q95 over draws of the MAX gain across all groups AND readings for that session-target (so picking the best group/reading is already charged). 90% CI = 5-day block bootstrap of the daily squared-error difference.
 - Verdict: YES = gain > 0 and CI low > 0 and gain > family null q95; weak = gain > 0 and > per-row null q95 only (not corrected for picking among groups/readings); no = otherwise.
-- NDX spot glitches: UW NDX spot is rounded and often frozen for hours; each minute row is checked against the NQ-implied price (0.4% tolerance, 0.6% for ES/RTY/YM) and dropped if off. Glitch days (>25% of rows dropped): {'DIA': 2, 'IWM': 5, 'NDX': 67, 'QQQ': 3, 'SPX': 3, 'SPY': 3}. Days with no UW file: {'DIA': 19, 'IWM': 19, 'NDX': 21, 'QQQ': 21, 'SPX': 21, 'SPY': 21}. Futures: continuous series with >1.2%/min roll jumps removed (15 on NQ).
+- NDX spot glitches: UW NDX spot is rounded and often frozen for hours; each minute row is checked against the NQ-implied price (0.4% tolerance, 0.6% for ES/RTY/YM) and dropped if off. Glitch days (>25% of rows dropped): {'DIA': 2, 'IWM': 5, 'NDX': 67, 'QQQ': 3, 'SPX': 3, 'SPY': 3}. Days with no UW file: {'DIA': 21, 'IWM': 21, 'NDX': 21, 'QQQ': 21, 'SPX': 21, 'SPY': 21}. Futures: continuous series with >1.2%/min roll jumps removed (15 on NQ).
 
-## 1. Headline (3598 scored rows = reading x session x target x input group)
-- YES rows: 123; weak rows: 487. Inputs with at least one YES (range class): ALL4:flip, ALL4:gamma, DIA:iv_level, DIA:iv_minus_rv, DIA:iv_term, IWM:absflip_wall, IWM:flip, IWM:iv_level, IWM:iv_minus_rv, IWM:iv_term, NDX:iv_level, QQQ:absflip_wall, QQQ:flip, QQQ:gamma, QQQ:iv_level, QQQ:net_premium, QQQ:vanna, QQQ:walls, SPX:absflip_wall, SPX:charm, SPX:flip, SPX:gamma, SPX:iv_level, SPX:iv_minus_rv, SPX:walls, SPY:flip, SPY:gamma, SPY:iv_level, SPY:iv_minus_rv, SPY:walls, cal:dow, tide.
-- Inputs with at least one YES (day-type class): DIA:iv_term, IWM:iv_term.
-- Inputs with at least one YES (timing class): SPX:vanna, cal:dow, cal:opex_day.
+## 1. Headline (7518 scored rows = reading x session x target x input group)
+- vs ATR benchmark: YES rows 175, weak rows 948. vs the STRICT benchmark (ATR + IV level/rank + day-of-week; the VIX-alone stand-in): YES rows 0. Inputs with at least one YES (range class, vs ATR): ALL4:flip, ALL4:gamma, DIA:flip, DIA:iv_level, DIA:iv_minus_rv, DIA:iv_term, IWM:absflip_wall, IWM:flip, IWM:iv_level, IWM:iv_minus_rv, IWM:iv_term, IWM:walls, NDX:flip, NDX:iv_level, NDX:iv_minus_rv, NDX:iv_term, QQQ:absflip_wall, QQQ:flip, QQQ:gamma, QQQ:impmove_vs_actual, QQQ:iv_level, QQQ:iv_minus_rv, QQQ:iv_term, QQQ:net_premium, QQQ:vanna, QQQ:walls, SPX:absflip_wall, SPX:charm, SPX:flip, SPX:gamma, SPX:iv_level, SPX:iv_minus_rv, SPX:walls, SPY:flip, SPY:gamma, SPY:iv_level, SPY:iv_minus_rv, SPY:iv_term, SPY:walls, cal:dow, tide.
+- Of those, YES also vs the strict benchmark (range class): none.
+- YES vs strict benchmark (day-type class): none; (timing class): none.
+- Inputs with at least one YES (day-type class): DIA:gamma_chg, DIA:iv_term, IWM:iv_term.
+- Inputs with at least one YES (timing class): IWM:iv_term, NDX:absflip_wall, NDX:flip, SPX:vanna, cal:dow, cal:opex_day.
 
 ## 2. Per session: every input, range yes/no and day type yes/no, gain over the no-UW benchmark (pp of R2)
 Columns: best reading R# for the range class (ln range / ln RV) and for the day-type class (ER / close extremity / crossings); gain full OOS / L6M / L3M in pp; CI = 90% bootstrap on the full-OOS gain; nq95 = per-row shifted null q95; fq95 = family null q95 (max over groups and readings). Bench R2 = benchmark R2 for that target (how much the no-UW model already explains). Sorted by range gain. Only the top 14 groups per session by best of (range, day-type) gain are listed; the full table is in /mnt/l2/l2vast/_uwregime/forecast_all.csv.
 
 ### asia
-| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | timing |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| SPY:flip | YES | R0 | lnrng | +8.18 | +14.56 | +15.83 | [+4.62,+12.53] | +0.03 | +2.75 | 24 | no | R0 | cext | -0.43 | +0.46 | -1.53 | [-1.40,+1.03] | -0.67 | +1.48 | -1 | no |
-| QQQ:iv_level | YES | R0 | lnrng | +8.04 | +14.58 | +21.81 | [+2.99,+12.86] | -0.52 | +2.75 | 24 | no | R0 | cross | -0.72 | -5.32 | -1.23 | [-3.00,+1.36] | -0.13 | +2.07 | -7 | no |
-| ALL4:flip | YES | R0 | lnrng | +7.67 | +11.78 | +12.43 | [+2.58,+11.51] | -0.35 | +2.75 | 24 | no | R0 | cross | -0.29 | +1.27 | +2.22 | [-3.77,+2.80] | -0.07 | +2.07 | -7 | no |
-| SPY:iv_level | YES | R0 | lnrng | +7.29 | +11.10 | +22.41 | [+2.40,+11.51] | -0.36 | +2.75 | 24 | weak | R0 | cross | +0.70 | -0.19 | +0.41 | [-1.10,+2.48] | -0.34 | +2.07 | -7 | no |
-| SPX:iv_level | YES | R0 | lnrng | +6.22 | +8.42 | +17.73 | [+2.26,+11.58] | -0.60 | +2.75 | 24 | weak | R0 | cross | +0.23 | +0.24 | +1.02 | [-0.82,+1.36] | -0.22 | +2.07 | -7 | no |
-| tide | YES | R0 | lnrv | +6.02 | +7.95 | +10.04 | [+3.79,+8.62] | +0.40 | +2.01 | 56 | no | R0 | er | +0.22 | +0.09 | -1.45 | [-1.10,+1.41] | +0.42 | +1.74 | -6 | no |
-| SPX:gamma | YES | R0 | lnrv | +5.76 | +6.06 | +9.20 | [+3.03,+9.08] | -0.29 | +2.01 | 56 | no | R0 | er | -1.89 | -0.71 | -2.18 | [-3.29,-0.34] | -0.47 | +1.74 | -6 | no |
-| NDX:iv_level | YES | R0 | lnrv | +5.59 | +3.22 | +12.68 | [+2.54,+8.53] | -0.32 | +2.01 | 56 | no | R0 | er | -0.33 | -0.97 | -0.82 | [-1.66,+1.05] | +0.72 | +1.74 | -6 | no |
-| SPY:gamma | YES | R0 | lnrv | +5.28 | +6.21 | +10.73 | [+2.51,+8.26] | -0.60 | +2.01 | 56 | no | R0 | er | -0.84 | -1.06 | -1.05 | [-3.05,+1.44] | +0.02 | +1.74 | -6 | no |
-| QQQ:gamma | YES | R0 | lnrv | +5.02 | +7.89 | +10.07 | [+2.41,+8.29] | -0.32 | +2.01 | 56 | no | R0 | er | -1.80 | +0.18 | -1.13 | [-3.63,-0.08] | +0.80 | +1.74 | -6 | no |
-| ALL4:gamma | YES | R0 | lnrv | +5.00 | +7.93 | +10.70 | [+2.06,+8.63] | -0.54 | +2.01 | 56 | no | R0 | cross | -0.76 | -1.87 | +1.01 | [-2.52,+1.18] | -0.45 | +2.07 | -7 | no |
-| IWM:iv_term | YES | R0 | lnrng | +4.32 | -0.78 | +6.58 | [+0.30,+7.38] | -0.33 | +2.75 | 24 | YES | R0 | cross | +4.87 | +6.30 | +4.52 | [+0.22,+9.08] | +1.74 | +2.07 | -7 | weak |
-| SPX:flip | YES | R0 | lnrng | +4.80 | +7.37 | +16.01 | [+1.60,+8.49] | +1.55 | +2.75 | 24 | no | R0 | cross | +0.05 | -1.40 | -2.99 | [-1.98,+1.84] | +0.17 | +2.07 | -7 | weak |
-| IWM:flip | YES | R0 | lnrv | +4.71 | +3.28 | +4.34 | [+2.48,+6.39] | -0.34 | +2.01 | 56 | no | R0 | er | -0.52 | -1.16 | -5.54 | [-2.61,+1.35] | -0.37 | +1.74 | -6 | no |
+| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | timing |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| SPY:flip | YES | R0 | lnrng | +8.18 | +14.56 | +15.83 | [+4.62,+12.53] | +0.03 | +2.75 | 24 | +nan n/a | no | R0 | cext | -0.43 | +0.46 | -1.53 | [-1.64,+0.97] | -0.67 | +1.79 | -1 | +nan n/a | no |
+| QQQ:iv_level | YES | R0 | lnrng | +8.04 | +14.58 | +21.81 | [+2.99,+12.86] | -0.52 | +2.75 | 24 | +nan n/a | no | R0 | cross | -0.72 | -5.32 | -1.23 | [-3.10,+1.66] | -0.13 | +2.07 | -7 | +nan n/a | no |
+| ALL4:flip | YES | R0 | lnrng | +7.67 | +11.78 | +12.43 | [+2.58,+11.51] | -0.35 | +2.75 | 24 | +nan n/a | no | R0 | cross | -0.29 | +1.27 | +2.22 | [-3.35,+2.23] | -0.07 | +2.07 | -7 | +nan n/a | no |
+| SPY:iv_level | YES | R0 | lnrng | +7.29 | +11.10 | +22.41 | [+2.40,+11.51] | -0.36 | +2.75 | 24 | +nan n/a | weak | R0 | cross | +0.70 | -0.19 | +0.41 | [-1.30,+2.93] | -0.34 | +2.07 | -7 | +nan n/a | no |
+| DIA:iv_level | YES | R0 | lnrng | +7.08 | +6.46 | +17.24 | [+1.36,+10.91] | -0.68 | +2.75 | 24 | +nan n/a | no | R0 | er | -0.49 | -0.81 | -1.90 | [-1.51,+0.47] | -0.70 | +1.74 | -6 | +nan n/a | weak |
+| DIA:iv_term | YES | R0 | lnrng | +6.62 | -3.95 | +13.12 | [-0.49,+11.00] | -0.39 | +2.75 | 24 | +nan n/a | weak | R0 | cross | +1.65 | +4.52 | +5.10 | [-2.35,+5.52] | -0.17 | +2.07 | -7 | +nan n/a | weak |
+| IWM:iv_term | YES | R0 | lnrng | +6.55 | -0.57 | +6.47 | [+2.15,+9.48] | +0.30 | +2.75 | 24 | +nan n/a | weak | R0 | cross | +3.78 | +7.11 | +5.91 | [-0.12,+7.68] | +0.89 | +2.07 | -7 | +nan n/a | weak |
+| IWM:iv_level | YES | R0 | lnrng | +6.45 | +6.35 | +14.89 | [-0.67,+9.90] | -0.13 | +2.75 | 24 | +nan n/a | no | R0 | er | -0.98 | -2.18 | -3.75 | [-2.81,+0.58] | -0.33 | +1.74 | -6 | +nan n/a | weak |
+| QQQ:iv_term | YES | R0 | lnrng | +6.39 | +14.40 | +20.13 | [+2.87,+10.49] | +0.24 | +2.75 | 24 | +nan n/a | no | R0 | cext | -1.78 | -0.92 | -1.88 | [-3.77,+0.03] | -2.16 | +1.79 | -1 | +nan n/a | no |
+| SPX:iv_level | YES | R0 | lnrng | +6.22 | +8.42 | +17.73 | [+2.26,+11.58] | -0.60 | +2.75 | 24 | +nan n/a | weak | R0 | cross | +0.23 | +0.24 | +1.02 | [-0.85,+1.36] | -0.22 | +2.07 | -7 | +nan n/a | no |
+| tide | YES | R0 | lnrv | +6.02 | +7.95 | +10.04 | [+3.89,+8.46] | +0.40 | +2.01 | 56 | +nan n/a | no | R0 | er | +0.22 | +0.09 | -1.45 | [-1.32,+1.66] | +0.42 | +1.74 | -6 | +nan n/a | no |
+| SPX:gamma | YES | R0 | lnrv | +5.76 | +6.06 | +9.20 | [+3.12,+9.11] | -0.29 | +2.01 | 56 | +nan n/a | no | R0 | er | -1.89 | -0.71 | -2.18 | [-3.67,+0.08] | -0.47 | +1.74 | -6 | +nan n/a | no |
+| NDX:iv_level | YES | R0 | lnrv | +5.59 | +3.22 | +12.68 | [+2.53,+8.60] | -0.32 | +2.01 | 56 | +nan n/a | no | R0 | er | -0.33 | -0.97 | -0.82 | [-1.68,+1.15] | +0.72 | +1.74 | -6 | +nan n/a | no |
+| IWM:flip | YES | R0 | lnrng | +5.36 | +5.00 | +9.40 | [+2.77,+8.31] | +0.05 | +2.75 | 24 | +nan n/a | no | R0 | er | -0.41 | -1.16 | -4.82 | [-1.76,+1.14] | -0.01 | +1.74 | -6 | +nan n/a | no |
 
 ### london
-| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | timing |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ALL4:flip | YES | R0 | lnrv | +7.78 | +0.22 | -0.70 | [+4.35,+11.12] | -0.17 | +0.93 | 51 | weak | R0 | er | +1.43 | +4.17 | +5.05 | [-0.40,+3.28] | -0.87 | +1.07 | -4 | weak |
-| IWM:flip | YES | R0 | lnrng | +6.74 | +5.57 | +1.41 | [+1.67,+10.90] | +0.78 | +2.38 | 19 | weak | R0 | cext | +0.16 | -0.04 | -1.16 | [-3.04,+3.11] | -0.65 | +1.77 | -2 | no |
-| SPY:flip | YES | R0 | lnrng | +6.33 | +9.39 | +2.49 | [+1.70,+13.93] | -0.99 | +2.38 | 19 | weak | R0 | er | +0.73 | +4.81 | +4.24 | [-1.30,+2.54] | -0.60 | +1.07 | -4 | no |
-| SPX:iv_level | YES | R0 | lnrv | +5.77 | -4.29 | +1.53 | [+2.44,+8.63] | -0.39 | +0.93 | 51 | no | R0 | cross | -0.58 | -1.30 | -0.12 | [-2.25,+1.17] | -0.44 | +1.34 | -2 | no |
-| SPY:iv_level | YES | R0 | lnrng | +5.68 | +15.82 | +18.70 | [+1.13,+13.75] | -0.49 | +2.38 | 19 | no | R0 | er | -1.05 | -0.57 | -2.49 | [-2.13,+0.02] | -1.33 | +1.07 | -4 | no |
-| SPY:gamma | YES | R0 | lnrv | +5.31 | -1.34 | +3.61 | [+2.40,+8.97] | -0.19 | +0.93 | 51 | no | R0 | cross | -1.99 | -0.77 | -2.03 | [-3.93,-0.40] | -0.64 | +1.34 | -2 | no |
-| QQQ:iv_level | YES | R0 | lnrv | +5.20 | -1.59 | +2.69 | [+1.34,+8.12] | -0.46 | +0.93 | 51 | no | R0 | cross | -1.44 | -5.29 | -6.06 | [-3.51,+0.75] | -1.09 | +1.34 | -2 | no |
-| SPX:gamma | YES | R0 | lnrv | +5.18 | +0.45 | +6.52 | [+2.54,+8.22] | -0.46 | +0.93 | 51 | weak | R0 | er | +0.87 | +1.20 | +1.11 | [-2.97,+4.47] | -0.17 | +1.07 | -4 | no |
-| tide | YES | R0 | lnrv | +5.10 | -3.00 | -1.22 | [+2.20,+7.79] | +0.68 | +0.93 | 51 | weak | R0 | er | +0.21 | +1.65 | +2.23 | [-0.76,+1.06] | -0.20 | +1.07 | -4 | no |
-| DIA:iv_term | YES | R0 | lnrv | +4.96 | -8.04 | -3.54 | [+0.91,+8.97] | -0.39 | +0.93 | 51 | no | R0 | cross | -1.02 | -1.13 | -3.57 | [-3.76,+1.49] | -1.08 | +1.34 | -2 | no |
-| SPX:flip | YES | R0 | lnrng | +4.86 | +11.21 | +17.04 | [+1.05,+10.37] | +0.36 | +2.38 | 19 | weak | R0 | er | +0.35 | +2.69 | +0.07 | [-1.20,+1.67] | -0.34 | +1.07 | -4 | no |
-| DIA:iv_level | YES | R0 | lnrv | +4.64 | -2.50 | +6.49 | [+1.52,+7.89] | +0.46 | +0.93 | 51 | no | R0 | cross | -0.95 | -1.93 | -0.19 | [-2.70,+0.77] | -1.29 | +1.34 | -2 | no |
-| QQQ:gamma | YES | R0 | lnrv | +4.13 | -0.63 | +2.58 | [+1.89,+6.59] | -0.24 | +0.93 | 51 | no | R0 | er | -0.94 | -1.12 | -2.10 | [-2.91,+1.15] | -0.34 | +1.07 | -4 | no |
-| NDX:iv_level | YES | R0 | lnrv | +3.84 | -7.39 | -0.53 | [+0.07,+7.54] | -0.39 | +0.93 | 51 | no | R0 | cross | -1.04 | -4.44 | -4.44 | [-2.60,+0.89] | -0.75 | +1.34 | -2 | no |
+| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | timing |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ALL4:flip | YES | R0 | lnrv | +7.78 | +0.22 | -0.70 | [+4.13,+11.15] | -0.17 | +0.93 | 51 | +nan n/a | weak | R0 | er | +1.43 | +4.17 | +5.05 | [-0.42,+3.23] | -0.87 | +1.08 | -4 | +nan n/a | weak |
+| DIA:iv_term | YES | R0 | lnrng | +7.34 | +8.46 | +8.03 | [+3.83,+11.00] | -0.10 | +1.61 | 19 | +nan n/a | no | R0 | cross | -0.19 | -0.83 | -4.70 | [-2.22,+1.48] | +0.14 | +1.36 | -2 | +nan n/a | no |
+| IWM:flip | YES | R0 | lnrng | +6.70 | +6.95 | +3.75 | [+2.94,+11.42] | +0.01 | +1.61 | 19 | +nan n/a | weak | R0 | er | +0.93 | +2.94 | +1.45 | [-0.78,+2.85] | -0.39 | +1.08 | -4 | +nan n/a | weak |
+| DIA:iv_level | YES | R0 | lnrng | +6.52 | +12.42 | +16.97 | [+2.00,+11.59] | -0.36 | +1.61 | 19 | +nan n/a | no | R0 | cross | -1.09 | -1.42 | -0.79 | [-2.48,+0.22] | -0.91 | +1.36 | -2 | +nan n/a | no |
+| SPY:flip | YES | R0 | lnrng | +6.33 | +9.39 | +2.49 | [+2.24,+13.26] | -0.99 | +1.61 | 19 | +nan n/a | weak | R0 | er | +0.73 | +4.81 | +4.24 | [-1.62,+2.69] | -0.60 | +1.08 | -4 | +nan n/a | no |
+| SPX:iv_level | YES | R0 | lnrv | +5.77 | -4.29 | +1.53 | [+2.73,+8.72] | -0.39 | +0.93 | 51 | +nan n/a | no | R0 | cross | -0.58 | -1.30 | -0.12 | [-2.48,+0.97] | -0.44 | +1.36 | -2 | +nan n/a | no |
+| SPY:iv_level | YES | R0 | lnrng | +5.68 | +15.82 | +18.70 | [+1.27,+13.34] | -0.49 | +1.61 | 19 | +nan n/a | no | R0 | er | -1.05 | -0.57 | -2.49 | [-2.70,+0.03] | -1.33 | +1.08 | -4 | +nan n/a | no |
+| IWM:iv_level | YES | R0 | lnrv | +5.51 | -5.60 | +1.03 | [+1.01,+9.62] | -0.19 | +0.93 | 51 | +nan n/a | no | R0 | cross | -0.85 | -1.62 | -0.86 | [-1.77,+0.08] | -1.06 | +1.36 | -2 | +nan n/a | no |
+| SPY:gamma | YES | R0 | lnrv | +5.31 | -1.34 | +3.61 | [+2.16,+8.44] | -0.19 | +0.93 | 51 | +nan n/a | no | R0 | cross | -1.99 | -0.77 | -2.03 | [-3.83,-0.32] | -0.64 | +1.36 | -2 | +nan n/a | no |
+| QQQ:iv_level | YES | R0 | lnrv | +5.20 | -1.59 | +2.69 | [+1.77,+8.37] | -0.46 | +0.93 | 51 | +nan n/a | no | R0 | cross | -1.44 | -5.29 | -6.06 | [-3.52,+0.54] | -1.09 | +1.36 | -2 | +nan n/a | no |
+| SPX:gamma | YES | R0 | lnrv | +5.18 | +0.45 | +6.52 | [+2.34,+8.09] | -0.46 | +0.93 | 51 | +nan n/a | weak | R0 | er | +0.87 | +1.20 | +1.11 | [-2.49,+4.44] | -0.17 | +1.08 | -4 | +nan n/a | no |
+| tide | YES | R0 | lnrv | +5.10 | -3.00 | -1.22 | [+2.33,+8.13] | +0.68 | +0.93 | 51 | +nan n/a | weak | R0 | er | +0.21 | +1.65 | +2.23 | [-0.74,+0.99] | -0.20 | +1.08 | -4 | +nan n/a | no |
+| SPX:flip | YES | R0 | lnrng | +4.86 | +11.21 | +17.04 | [+0.91,+10.27] | +0.36 | +1.61 | 19 | +nan n/a | weak | R0 | er | +0.35 | +2.69 | +0.07 | [-1.19,+1.84] | -0.34 | +1.08 | -4 | +nan n/a | no |
+| QQQ:gamma | YES | R0 | lnrv | +4.13 | -0.63 | +2.58 | [+2.05,+6.62] | -0.24 | +0.93 | 51 | +nan n/a | no | R0 | er | -0.94 | -1.12 | -2.10 | [-2.84,+0.93] | -0.34 | +1.08 | -4 | +nan n/a | no |
 
 ### pre
-| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | timing |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| IWM:iv_term | YES | R0 | lnrng | +15.80 | +13.83 | +18.42 | [+6.22,+22.06] | +0.78 | +2.93 | 18 | no | R0 | er | -0.55 | -1.14 | -1.70 | [-1.66,+0.80] | +0.42 | +1.06 | -1 | weak |
-| DIA:iv_term | YES | R0 | lnrv | +11.26 | +2.93 | +15.17 | [+5.88,+16.38] | -0.74 | +2.83 | 31 | no | R0 | er | -0.93 | -1.76 | -1.60 | [-2.60,+0.85] | -0.70 | +1.06 | -1 | no |
-| ALL4:flip | YES | R0 | lnrv | +8.43 | +7.25 | +17.09 | [+4.72,+11.90] | -0.56 | +2.83 | 31 | no | R0 | cext | -1.69 | -3.70 | -4.28 | [-3.85,+0.07] | -0.94 | +1.55 | -3 | no |
-| SPX:iv_level | YES | R0 | lnrv | +7.38 | +4.05 | +13.70 | [+4.01,+11.31] | -0.55 | +2.83 | 31 | no | R0 | cext | -0.60 | -0.11 | -0.18 | [-2.02,+0.76] | -1.07 | +1.55 | -3 | no |
-| DIA:iv_level | YES | R0 | lnrv | +7.11 | +3.91 | +13.83 | [+3.20,+11.03] | -0.91 | +2.83 | 31 | no | R0 | er | -0.27 | -0.46 | -0.59 | [-1.97,+1.68] | -1.23 | +1.06 | -1 | no |
-| SPY:iv_level | YES | R0 | lnrng | +6.87 | +3.31 | +0.65 | [+2.62,+12.20] | -0.23 | +2.93 | 18 | no | R0 | cext | -0.56 | +0.07 | +0.62 | [-2.12,+0.72] | -1.08 | +1.55 | -3 | no |
-| IWM:iv_level | YES | R0 | lnrv | +6.77 | +4.03 | +10.47 | [+2.52,+11.36] | -0.93 | +2.83 | 31 | no | R0 | er | -0.43 | -0.35 | -0.32 | [-2.40,+1.64] | -0.93 | +1.06 | -1 | no |
-| SPY:flip | YES | R0 | lnrv | +6.16 | +7.61 | +15.47 | [+2.45,+9.89] | -0.80 | +2.83 | 31 | no | R0 | er | -1.10 | -0.28 | +0.18 | [-2.29,+0.10] | -0.78 | +1.06 | -1 | no |
-| QQQ:iv_level | YES | R0 | lnrv | +5.26 | +0.34 | +12.05 | [+0.72,+9.11] | -0.62 | +2.83 | 31 | no | R0 | er | -0.25 | +0.36 | +0.24 | [-2.17,+2.03] | -0.94 | +1.06 | -1 | no |
-| IWM:flip | YES | R0 | lnrv | +5.01 | +4.55 | +13.54 | [+2.03,+8.15] | -0.95 | +2.83 | 31 | no | R0 | cext | -0.71 | -0.62 | -0.83 | [-2.38,+0.80] | -1.06 | +1.55 | -3 | no |
-| SPX:gamma | YES | R0 | lnrv | +4.54 | +3.14 | +14.48 | [+0.61,+8.73] | -0.93 | +2.83 | 31 | no | R0 | er | -1.06 | +1.10 | +2.22 | [-3.34,+0.85] | -1.03 | +1.06 | -1 | no |
-| NDX:iv_level | YES | R0 | lnrv | +4.35 | -2.21 | +10.18 | [+0.92,+7.56] | -0.55 | +2.83 | 31 | no | R0 | cext | -0.18 | +1.00 | +1.91 | [-1.62,+1.10] | -0.85 | +1.55 | -3 | no |
-| SPX:flip | YES | R0 | lnrv | +4.19 | +3.32 | +13.08 | [+1.47,+7.22] | -0.66 | +2.83 | 31 | no | R0 | cross | -0.13 | -1.92 | -2.69 | [-1.82,+1.69] | -0.30 | +1.31 | -3 | weak |
-| SPY:gamma | YES | R0 | lnrv | +3.72 | +4.98 | +14.00 | [+0.46,+8.01] | -1.08 | +2.83 | 31 | no | R0 | cext | -0.61 | -1.66 | +2.02 | [-2.92,+1.87] | -1.07 | +1.55 | -3 | no |
+| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | timing |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| IWM:iv_term | YES | R0 | lnrng | +16.54 | +14.33 | +18.10 | [+9.56,+23.08] | +0.89 | +4.45 | 18 | +nan n/a | weak | R0 | cross | +0.10 | -0.88 | -2.98 | [-1.26,+1.46] | -0.31 | +1.54 | -3 | +nan n/a | YES |
+| DIA:iv_term | YES | R0 | lnrv | +12.78 | +3.92 | +15.81 | [+7.31,+17.48] | +1.55 | +4.18 | 31 | +nan n/a | no | R1 | er | -1.16 | -2.78 | -1.49 | [-3.52,+1.14] | -0.13 | +1.42 | -3 | +nan n/a | no |
+| ALL4:flip | YES | R0 | lnrv | +8.43 | +7.25 | +17.09 | [+4.97,+11.57] | -0.56 | +4.18 | 31 | +nan n/a | no | R1 | cext | -1.44 | -3.47 | -1.17 | [-3.67,+0.76] | -1.32 | +1.98 | -4 | +nan n/a | no |
+| SPX:iv_level | YES | R0 | lnrv | +7.38 | +4.05 | +13.70 | [+4.01,+10.18] | -0.55 | +4.18 | 31 | +nan n/a | no | R0 | cext | -0.60 | -0.11 | -0.18 | [-1.89,+0.77] | -1.07 | +1.98 | -3 | +nan n/a | no |
+| DIA:iv_level | YES | R0 | lnrng | +7.22 | +4.29 | +4.03 | [+1.59,+12.85] | -0.33 | +4.45 | 18 | +nan n/a | no | R0 | er | -0.48 | -0.40 | -0.46 | [-1.71,+0.81] | -0.61 | +1.42 | -1 | +nan n/a | no |
+| SPY:iv_level | YES | R0 | lnrng | +6.87 | +3.31 | +0.65 | [+2.62,+12.20] | -0.23 | +4.45 | 18 | +nan n/a | no | R0 | cext | -0.56 | +0.07 | +0.62 | [-2.08,+0.84] | -1.08 | +1.98 | -3 | +nan n/a | no |
+| IWM:iv_level | YES | R0 | lnrv | +6.75 | +3.00 | +10.59 | [+1.91,+12.05] | -0.85 | +4.18 | 31 | +nan n/a | no | R0 | er | -0.32 | -0.20 | -0.16 | [-2.11,+2.02] | -0.54 | +1.42 | -1 | +nan n/a | no |
+| SPY:flip | YES | R0 | lnrv | +6.16 | +7.61 | +15.47 | [+2.50,+10.59] | -0.80 | +4.18 | 31 | +nan n/a | no | R1 | cext | -0.25 | +0.12 | -0.54 | [-2.35,+1.36] | -0.91 | +1.98 | -4 | +nan n/a | no |
+| IWM:flip | YES | R0 | lnrv | +6.04 | +4.38 | +13.68 | [+2.92,+8.74] | -0.55 | +4.18 | 31 | +nan n/a | no | R1 | er | -0.98 | -0.53 | -0.27 | [-1.78,-0.24] | -0.64 | +1.42 | -3 | +nan n/a | no |
+| QQQ:iv_level | YES | R0 | lnrv | +5.26 | +0.34 | +12.05 | [+1.32,+8.63] | -0.62 | +4.18 | 31 | +nan n/a | no | R1 | cext | -0.08 | +2.40 | +1.21 | [-2.25,+1.95] | -1.08 | +1.98 | -4 | +nan n/a | no |
+| SPY:iv_term | YES | R0 | lnrv | +5.06 | +8.88 | +14.47 | [+1.04,+9.49] | -0.74 | +4.18 | 31 | +nan n/a | no | R0 | er | -2.79 | -2.77 | -4.92 | [-6.35,+0.21] | -1.34 | +1.42 | -1 | +nan n/a | weak |
+| QQQ:iv_term | YES | R0 | lnrv | +4.75 | +10.88 | +15.62 | [+1.48,+9.18] | -1.73 | +4.18 | 31 | +nan n/a | no | R0 | er | -3.31 | -3.58 | -5.05 | [-6.82,+0.07] | -0.65 | +1.42 | -1 | +nan n/a | no |
+| SPX:gamma | YES | R0 | lnrv | +4.54 | +3.14 | +14.48 | [+0.97,+9.02] | -0.93 | +4.18 | 31 | +nan n/a | no | R0 | er | -1.06 | +1.10 | +2.22 | [-3.10,+0.70] | -1.03 | +1.42 | -1 | +nan n/a | no |
+| cal:dow | YES | R1 | lnrng | +4.51 | +2.99 | +4.50 | [-0.81,+8.06] | +4.45 | +4.45 | 18 | +nan n/a | no | R0 | cross | -1.36 | -3.48 | -2.92 | [-3.19,+0.16] | -1.48 | +1.54 | -3 | +nan n/a | weak |
 
 ### nyam
-| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | timing |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| IWM:iv_term | YES | R0 | lnrv | +9.82 | +8.37 | +4.79 | [+5.62,+15.30] | +1.97 | +2.30 | 39 | no | R0 | cross | -1.00 | -1.18 | -0.65 | [-2.54,+0.35] | -0.93 | +1.75 | -1 | no |
-| DIA:iv_term | YES | R0 | lnrv | +9.65 | +5.27 | +8.44 | [+3.91,+15.92] | +0.01 | +2.30 | 39 | no | R0 | er | -1.51 | -0.85 | +0.98 | [-2.98,-0.25] | -0.19 | +1.04 | -3 | no |
-| SPY:flip | YES | R0 | lnrv | +4.56 | -1.94 | -6.21 | [+1.46,+7.47] | -0.50 | +2.30 | 39 | no | R0 | cross | -0.20 | -0.03 | -1.01 | [-1.67,+0.89] | -0.54 | +1.75 | -1 | no |
-| ALL4:flip | YES | R0 | lnrv | +4.50 | -3.11 | -14.48 | [+0.97,+7.80] | -0.81 | +2.30 | 39 | no | R0 | cross | -0.12 | -0.48 | -0.91 | [-1.43,+1.06] | -0.56 | +1.75 | -1 | no |
-| QQQ:iv_level | YES | R0 | lnrv | +4.41 | +1.65 | -6.41 | [+0.12,+7.82] | -0.27 | +2.30 | 39 | no | R0 | cext | -0.23 | -5.33 | +0.99 | [-2.81,+1.91] | -0.54 | +1.32 | -2 | no |
-| SPX:iv_level | weak | R0 | lnrv | +4.14 | -2.15 | -4.05 | [-0.49,+7.43] | -0.25 | +2.30 | 39 | weak | R0 | cext | +1.06 | -3.02 | -0.94 | [-1.01,+3.71] | -0.36 | +1.32 | -2 | weak |
-| SPY:gamma | YES | R0 | lnrv | +3.81 | -2.28 | -8.47 | [+1.06,+7.14] | -0.41 | +2.30 | 39 | no | R0 | cext | -1.14 | -0.45 | +2.19 | [-3.34,+1.02] | -0.10 | +1.32 | -2 | no |
-| SPY:iv_level | weak | R0 | lnrv | +3.72 | -1.12 | -2.77 | [-0.44,+7.44] | -0.21 | +2.30 | 39 | weak | R0 | cext | +0.72 | -1.81 | +0.11 | [-1.12,+2.51] | -0.72 | +1.32 | -2 | weak |
-| SPX:gamma | YES | R0 | lnrv | +3.66 | +0.84 | -4.47 | [+1.46,+6.42] | -0.44 | +2.30 | 39 | no | R0 | cext | -1.54 | -0.28 | +2.53 | [-3.54,+0.13] | -0.23 | +1.32 | -2 | no |
-| ALL4:gamma | YES | R0 | lnrv | +3.27 | -0.30 | -9.37 | [+0.64,+6.30] | -0.83 | +2.30 | 39 | no | R0 | cross | -0.80 | +0.62 | -0.34 | [-3.51,+1.68] | -0.88 | +1.75 | -1 | no |
-| DIA:iv_level | weak | R0 | lnrv | +3.16 | -2.74 | -1.33 | [-1.15,+6.82] | -0.70 | +2.30 | 39 | no | R0 | er | -0.48 | -0.45 | +1.12 | [-2.48,+1.34] | -0.36 | +1.04 | -3 | no |
-| SPX:charm | YES | R0 | lnrv | +3.04 | +3.73 | +3.91 | [+0.78,+5.27] | -0.26 | +2.30 | 39 | no | R0 | cext | -1.22 | -1.01 | -1.43 | [-2.09,-0.28] | -0.33 | +1.32 | -2 | no |
-| IWM:iv_level | weak | R0 | lnrv | +3.02 | -2.41 | -2.31 | [-2.21,+7.38] | -1.27 | +2.30 | 39 | weak | R0 | er | +0.23 | -0.34 | +0.11 | [-1.87,+2.41] | -0.93 | +1.04 | -3 | no |
-| QQQ:gamma | YES | R0 | lnrv | +2.89 | +4.01 | +0.00 | [+0.08,+5.65] | +0.23 | +2.30 | 39 | no | R0 | cext | -0.68 | -2.85 | -0.36 | [-2.91,+1.51] | +0.21 | +1.32 | -2 | no |
+| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | timing |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| DIA:iv_term | YES | R0 | lnrv | +10.29 | +5.95 | +8.70 | [+5.15,+15.81] | +2.69 | +3.43 | 39 | +nan n/a | no | R2 | er | -0.45 | +0.40 | +0.41 | [-2.04,+1.64] | -0.89 | +1.35 | -6 | +nan n/a | no |
+| IWM:iv_term | YES | R0 | lnrv | +9.33 | +8.74 | +5.56 | [+5.02,+14.37] | +2.15 | +3.43 | 39 | +nan n/a | no | R0 | cross | -0.61 | -0.89 | -0.41 | [-1.74,+0.45] | -0.48 | +1.88 | -1 | +nan n/a | no |
+| SPX:charm | YES | R1 | lnrv | +8.46 | +11.86 | -1.19 | [+3.33,+14.40] | +0.54 | +3.43 | 54 | +nan n/a | no | R1 | cext | -0.62 | -1.75 | -0.50 | [-2.32,+1.21] | +0.15 | +1.79 | -4 | +nan n/a | no |
+| SPY:iv_term | YES | R0 | lnrv | +7.64 | +12.82 | +6.25 | [+2.51,+12.79] | -0.00 | +3.43 | 39 | +nan n/a | no | R2 | cext | -1.95 | -1.93 | -2.46 | [-5.58,+1.20] | -2.43 | +1.79 | -5 | +nan n/a | no |
+| QQQ:vanna | YES | R2 | lnrv | +6.73 | +7.70 | +0.71 | [+2.61,+10.82] | +0.67 | +3.43 | 57 | +nan n/a | no | R1 | cross | -0.65 | +1.28 | +1.57 | [-2.13,+0.71] | -1.15 | +1.88 | -2 | +nan n/a | no |
+| QQQ:iv_term | weak | R0 | lnrv | +5.46 | +15.75 | +7.45 | [-2.05,+11.31] | -0.15 | +3.43 | 39 | +nan n/a | no | R1 | cext | -2.65 | -1.84 | -1.77 | [-6.04,+0.90] | -2.67 | +1.79 | -4 | +nan n/a | no |
+| SPY:flip | YES | R0 | lnrv | +4.56 | -1.94 | -6.21 | [+1.69,+7.49] | -0.50 | +3.43 | 39 | +nan n/a | no | R0 | cross | -0.20 | -0.03 | -1.01 | [-1.59,+0.86] | -0.54 | +1.88 | -1 | +nan n/a | weak |
+| ALL4:flip | YES | R0 | lnrv | +4.50 | -3.11 | -14.48 | [+1.10,+7.69] | -0.81 | +3.43 | 39 | +nan n/a | weak | R2 | cross | +0.93 | +1.14 | +1.40 | [-0.93,+2.99] | -0.55 | +1.88 | -2 | +nan n/a | no |
+| QQQ:iv_level | YES | R0 | lnrv | +4.41 | +1.65 | -6.41 | [+0.44,+8.17] | -0.27 | +3.43 | 39 | +nan n/a | no | R2 | cross | +0.26 | +2.91 | +1.58 | [-1.03,+1.51] | +0.72 | +1.88 | -2 | +nan n/a | no |
+| SPX:iv_level | YES | R0 | lnrv | +4.14 | -2.15 | -4.05 | [+1.02,+7.79] | -0.25 | +3.43 | 39 | +nan n/a | weak | R0 | cext | +1.06 | -3.02 | -0.94 | [-0.85,+3.40] | -0.36 | +1.79 | -2 | +nan n/a | weak |
+| SPY:gamma | YES | R0 | lnrv | +3.81 | -2.28 | -8.47 | [+0.86,+7.09] | -0.41 | +3.43 | 39 | +nan n/a | no | R0 | cext | -1.14 | -0.45 | +2.19 | [-3.52,+1.03] | -0.10 | +1.79 | -2 | +nan n/a | no |
+| SPY:iv_level | YES | R0 | lnrv | +3.72 | -1.12 | -2.77 | [+0.27,+7.51] | -0.21 | +3.43 | 39 | +nan n/a | weak | R0 | cext | +0.72 | -1.81 | +0.11 | [-1.37,+2.56] | -0.72 | +1.79 | -2 | +nan n/a | weak |
+| SPX:gamma | YES | R0 | lnrv | +3.66 | +0.84 | -4.47 | [+1.68,+6.55] | -0.44 | +3.43 | 39 | +nan n/a | no | R1 | cross | -1.47 | +0.35 | +1.00 | [-3.63,+0.33] | -1.40 | +1.88 | -2 | +nan n/a | no |
+| ALL4:gamma | weak | R0 | lnrv | +3.27 | -0.30 | -9.37 | [+0.89,+6.45] | -0.83 | +3.43 | 39 | +nan n/a | no | R0 | cross | -0.80 | +0.62 | -0.34 | [-3.58,+1.75] | -0.88 | +1.88 | -1 | +nan n/a | no |
 
 ### nypm
-| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | timing |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| IWM:iv_term | YES | R3 | lnrv | +5.15 | +8.10 | +12.86 | [+3.06,+7.40] | +0.95 | +4.05 | 47 | YES | R3 | cross | +2.34 | +4.05 | +1.46 | [+0.75,+3.95] | -0.35 | +1.83 | -3 | weak |
-| QQQ:flip | YES | R3 | lnrv | +4.73 | +12.44 | +15.91 | [+1.85,+8.31] | -0.36 | +4.05 | 47 | no | R3 | er | -0.47 | -3.21 | -0.71 | [-2.10,+0.94] | +0.06 | +2.10 | -4 | weak |
-| DIA:iv_term | YES | R0 | lnrv | +4.60 | -0.18 | +5.81 | [+1.98,+7.46] | +0.34 | +4.05 | 41 | YES | R3 | cross | +2.42 | +8.71 | +7.06 | [+0.71,+4.27] | -0.35 | +1.83 | -3 | weak |
-| SPY:flip | YES | R3 | lnrv | +4.57 | +7.85 | +10.97 | [+2.30,+7.03] | -0.11 | +4.05 | 47 | no | R3 | er | -1.11 | -0.91 | -0.73 | [-2.38,+0.25] | -0.41 | +2.10 | -4 | no |
-| QQQ:walls | YES | R3 | lnrv | +4.25 | +7.90 | +8.26 | [+1.64,+7.13] | -0.60 | +4.05 | 47 | no | R0 | cross | -1.60 | -1.44 | -3.40 | [-3.26,-0.01] | -1.70 | +1.83 | -3 | no |
-| SPX:flip | YES | R3 | lnrv | +4.06 | +5.22 | +8.60 | [+1.64,+6.84] | +0.10 | +4.05 | 47 | weak | R0 | cext | +0.44 | +0.83 | +2.48 | [-1.00,+2.12] | +0.87 | +2.36 | -1 | weak |
-| ALL4:flip | weak | R3 | lnrv | +4.04 | +7.29 | +11.74 | [+1.23,+7.01] | +0.04 | +4.05 | 47 | no | R0 | cross | -0.38 | -2.77 | -0.02 | [-3.25,+1.92] | +0.00 | +1.83 | -3 | no |
-| cal:dow | weak | R3 | lnrv | +4.00 | +3.39 | +5.44 | [+1.61,+6.62] | +4.05 | +4.05 | 47 | no | R0 | cext | -0.86 | +1.43 | -0.93 | [-2.86,+1.04] | -0.87 | +2.36 | -1 | weak |
-| SPX:gamma | weak | R3 | lnrv | +3.83 | +7.13 | +11.45 | [+1.70,+6.18] | +0.13 | +4.05 | 47 | weak | R0 | cross | +0.63 | +4.76 | +4.16 | [-1.48,+2.66] | -0.68 | +1.83 | -3 | no |
-| SPX:walls | weak | R3 | lnrv | +3.68 | +2.68 | +7.76 | [+1.14,+6.38] | -0.31 | +4.05 | 47 | weak | R3 | er | +0.08 | +3.78 | +5.35 | [-2.20,+2.69] | -0.44 | +2.10 | -4 | no |
-| NDX:flip | weak | R3 | lnrv | +3.60 | +9.97 | +14.44 | [+1.02,+6.29] | -0.20 | +4.05 | 47 | no | R0 | cross | -1.08 | -2.02 | -3.00 | [-2.60,+0.28] | -0.52 | +1.83 | -3 | no |
-| QQQ:impmove_vs_actual | weak | R3 | lnrv | +3.42 | +4.95 | +1.95 | [-0.01,+7.21] | -0.24 | +4.05 | 47 | no | R3 | er | -0.10 | -0.24 | -0.72 | [-0.60,+0.48] | +0.85 | +2.10 | -4 | no |
-| QQQ:gamma | weak | R3 | lnrv | +3.26 | +10.39 | +19.44 | [+0.68,+6.19] | +0.72 | +4.05 | 47 | no | R3 | cross | -0.72 | +0.90 | -2.46 | [-3.87,+1.67] | +0.29 | +1.83 | -3 | no |
-| tide | weak | R3 | lnrv | +2.92 | +9.95 | +15.46 | [+1.36,+4.69] | -0.21 | +4.05 | 47 | no | R0 | cext | -0.50 | -0.36 | -0.31 | [-1.05,+0.04] | -0.30 | +2.36 | -1 | no |
+| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | timing |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| IWM:iv_term | YES | R1 | lnrv | +6.07 | +9.51 | +14.91 | [+3.70,+8.54] | +1.85 | +4.40 | 45 | +nan n/a | YES | R3 | cross | +2.45 | +4.20 | +1.53 | [+0.67,+3.98] | +0.02 | +1.86 | -3 | +nan n/a | no |
+| DIA:iv_term | YES | R0 | lnrv | +5.44 | +0.75 | +5.85 | [+2.91,+8.30] | +1.64 | +4.40 | 41 | +nan n/a | YES | R3 | cross | +1.98 | +7.36 | +6.23 | [+0.47,+3.48] | +0.29 | +1.86 | -3 | +nan n/a | weak |
+| QQQ:flip | YES | R3 | lnrv | +4.73 | +12.44 | +15.91 | [+2.03,+8.09] | -0.36 | +4.40 | 47 | +nan n/a | no | R3 | er | -0.47 | -3.21 | -0.71 | [-2.06,+0.88] | +0.06 | +2.10 | -4 | +nan n/a | weak |
+| SPY:flip | YES | R3 | lnrv | +4.57 | +7.85 | +10.97 | [+2.46,+7.10] | -0.11 | +4.40 | 47 | +nan n/a | no | R2 | cext | -1.07 | +0.03 | +0.92 | [-2.78,+0.46] | -0.55 | +2.63 | -4 | +nan n/a | no |
+| cal:dow | weak | R1 | lnrv | +4.34 | +2.86 | +4.45 | [+1.94,+7.21] | +4.40 | +4.40 | 45 | +nan n/a | no | R2 | cext | -0.62 | +1.19 | -1.46 | [-2.48,+1.47] | -0.64 | +2.63 | -4 | +nan n/a | weak |
+| QQQ:walls | weak | R3 | lnrv | +4.25 | +7.90 | +8.26 | [+1.78,+7.15] | -0.60 | +4.40 | 47 | +nan n/a | no | R0 | cross | -1.60 | -1.44 | -3.40 | [-2.98,+0.02] | -1.70 | +1.86 | -3 | +nan n/a | no |
+| SPX:flip | weak | R3 | lnrv | +4.06 | +5.22 | +8.60 | [+1.44,+6.67] | +0.10 | +4.40 | 47 | +nan n/a | weak | R0 | cext | +0.44 | +0.83 | +2.48 | [-0.94,+1.89] | +0.87 | +2.63 | -1 | +nan n/a | weak |
+| ALL4:flip | weak | R3 | lnrv | +4.04 | +7.29 | +11.74 | [+1.23,+7.05] | +0.04 | +4.40 | 47 | +nan n/a | no | R0 | cross | -0.38 | -2.77 | -0.02 | [-2.93,+1.90] | +0.00 | +1.86 | -3 | +nan n/a | no |
+| SPX:gamma | weak | R3 | lnrv | +3.83 | +7.13 | +11.45 | [+1.54,+6.71] | +0.13 | +4.40 | 47 | +nan n/a | weak | R0 | cross | +0.63 | +4.76 | +4.16 | [-1.49,+3.06] | -0.68 | +1.86 | -3 | +nan n/a | no |
+| IWM:flip | weak | R2 | lnrv | +3.82 | -0.74 | +1.06 | [+1.54,+5.99] | +0.26 | +4.40 | 46 | +nan n/a | no | R3 | cross | -0.77 | -0.22 | -1.04 | [-2.19,+0.85] | -0.26 | +1.86 | -3 | +nan n/a | no |
+| SPX:walls | weak | R3 | lnrv | +3.68 | +2.68 | +7.76 | [+1.02,+6.77] | -0.31 | +4.40 | 47 | +nan n/a | weak | R2 | cext | +0.35 | -1.73 | -1.24 | [-1.89,+3.65] | -0.02 | +2.63 | -4 | +nan n/a | no |
+| NDX:flip | weak | R3 | lnrv | +3.60 | +9.97 | +14.44 | [+1.18,+6.40] | -0.20 | +4.40 | 47 | +nan n/a | no | R0 | cross | -1.08 | -2.02 | -3.00 | [-2.54,+0.42] | -0.52 | +1.86 | -3 | +nan n/a | no |
+| QQQ:impmove_vs_actual | weak | R3 | lnrv | +3.42 | +4.95 | +1.95 | [-0.25,+6.50] | -0.24 | +4.40 | 47 | +nan n/a | weak | R2 | cext | +0.53 | +0.30 | +1.10 | [-1.06,+1.98] | -0.27 | +2.63 | -4 | +nan n/a | no |
+| QQQ:gamma | weak | R3 | lnrv | +3.26 | +10.39 | +19.44 | [+0.50,+5.95] | +0.72 | +4.40 | 47 | +nan n/a | no | R1 | cross | -0.23 | +1.92 | -3.89 | [-3.24,+2.33] | +0.51 | +1.86 | -4 | +nan n/a | no |
 
 ### NY AM after 10:00 (10:00-12:00 ET, only from the 10:00 reading)
-| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | timing |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| IWM:iv_term | YES | R3 | lnrv | +5.96 | +9.81 | +13.14 | [+3.78,+8.64] | +3.04 | +3.23 | 60 | weak | R3 | er | +0.39 | -0.38 | +0.37 | [-1.90,+2.39] | -0.36 | +2.54 | -6 | no |
-| DIA:iv_term | YES | R3 | lnrv | +4.65 | +6.68 | +8.45 | [+2.26,+7.06] | +1.66 | +3.23 | 60 | no | R3 | cross | -0.06 | +2.35 | +0.10 | [-1.61,+1.72] | -0.63 | +2.76 | -8 | no |
-| SPX:charm | YES | R3 | lnrv | +4.14 | +3.40 | -3.77 | [+1.22,+8.09] | +0.08 | +3.23 | 60 | no | R3 | cext | -1.94 | -2.27 | +0.55 | [-3.85,-0.23] | -0.89 | +2.94 | -4 | weak |
-| QQQ:vanna | YES | R3 | lnrv | +3.81 | +4.19 | -8.30 | [+0.32,+7.36] | +0.59 | +3.23 | 60 | no | R3 | er | -0.62 | -1.46 | +0.45 | [-3.17,+1.85] | -0.14 | +2.54 | -6 | no |
-| SPX:gamma | YES | R3 | lnrv | +3.43 | +3.06 | +0.84 | [+0.23,+7.00] | +0.02 | +3.23 | 60 | no | R3 | cext | -1.54 | +2.29 | +2.68 | [-3.54,+0.08] | -1.26 | +2.94 | -4 | no |
-| QQQ:zdte_share | weak | R3 | lnrv | +3.01 | +6.07 | +14.48 | [+1.29,+4.39] | +0.98 | +3.23 | 60 | no | R3 | cross | -0.89 | -1.50 | -4.63 | [-2.74,+0.99] | -0.18 | +2.76 | -8 | no |
-| NDX:gamma | weak | R3 | lnrv | +2.69 | +11.13 | +16.66 | [-0.30,+6.08] | +0.34 | +3.23 | 60 | no | R3 | er | -1.44 | -5.97 | -6.95 | [-3.76,+1.79] | -0.61 | +2.54 | -6 | no |
-| SPY:zdte_share | weak | R3 | lnrv | +2.68 | +6.17 | +12.93 | [+1.23,+4.16] | +1.09 | +3.23 | 60 | no | R3 | cross | -0.18 | +0.65 | -3.71 | [-1.98,+1.37] | -0.34 | +2.76 | -8 | no |
-| cal:dow | no | R3 | lnrv | +2.57 | +1.54 | +6.24 | [+0.92,+4.03] | +3.23 | +3.23 | 60 | no | R3 | er | -0.01 | -0.16 | +0.72 | [-2.71,+2.39] | +0.30 | +2.54 | -6 | no |
-| NDX:flip | weak | R3 | lnrv | +2.29 | +2.73 | +9.28 | [+0.59,+4.16] | -0.04 | +3.23 | 60 | no | R3 | cext | +0.08 | +2.32 | +2.44 | [-1.69,+1.83] | +2.94 | +2.94 | -4 | no |
-| IWM:iv_level | weak | R3 | lnrng | +2.21 | +1.13 | +1.42 | [-4.19,+6.21] | +5.47 | +5.47 | 34 | no | R3 | cross | -1.47 | -1.61 | -2.69 | [-3.15,+0.35] | +0.99 | +2.76 | -8 | no |
-| QQQ:gamma | weak | R3 | lnrv | +2.18 | +7.27 | +14.51 | [-1.95,+6.63] | +0.29 | +3.23 | 60 | no | R3 | cext | -0.66 | +0.17 | +2.61 | [-2.67,+1.15] | -1.08 | +2.94 | -4 | no |
-| QQQ:flip | weak | R3 | lnrv | +1.89 | +2.86 | +3.71 | [-0.08,+3.50] | +0.49 | +3.23 | 60 | no | R3 | er | -0.14 | +0.01 | -0.18 | [-1.52,+1.25] | -0.33 | +2.54 | -6 | no |
-| ALL4:flip | weak | R3 | lnrv | +1.87 | +1.41 | +2.46 | [-0.06,+3.89] | +0.06 | +3.23 | 60 | weak | R3 | er | +0.75 | +1.95 | +3.01 | [-2.19,+3.62] | +0.05 | +2.54 | -6 | no |
+| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | timing |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| IWM:iv_term | YES | R3 | lnrv | +5.49 | +9.45 | +12.61 | [+3.36,+7.28] | +2.87 | +3.24 | 60 | +nan n/a | no | R3 | er | +0.28 | -0.54 | -0.04 | [-1.72,+2.14] | +0.98 | +2.54 | -6 | +nan n/a | no |
+| DIA:iv_term | YES | R3 | lnrv | +4.40 | +6.42 | +7.77 | [+2.69,+6.14] | +2.46 | +3.24 | 60 | +nan n/a | no | R3 | cross | -0.05 | +1.94 | -0.43 | [-1.20,+1.08] | -0.22 | +2.37 | -8 | +nan n/a | no |
+| SPX:charm | YES | R3 | lnrv | +4.14 | +3.40 | -3.77 | [+1.17,+7.69] | +0.08 | +3.24 | 60 | +nan n/a | no | R3 | cext | -1.94 | -2.27 | +0.55 | [-4.17,-0.35] | -0.89 | +2.94 | -4 | +nan n/a | weak |
+| QQQ:vanna | YES | R3 | lnrv | +3.81 | +4.19 | -8.30 | [+0.80,+7.29] | +0.59 | +3.24 | 60 | +nan n/a | no | R3 | er | -0.62 | -1.46 | +0.45 | [-3.23,+2.39] | -0.14 | +2.54 | -6 | +nan n/a | no |
+| SPX:gamma | YES | R3 | lnrv | +3.43 | +3.06 | +0.84 | [+0.71,+7.28] | +0.02 | +3.24 | 60 | +nan n/a | no | R3 | cext | -1.54 | +2.29 | +2.68 | [-3.53,+0.35] | -1.26 | +2.94 | -4 | +nan n/a | no |
+| QQQ:zdte_share | weak | R3 | lnrv | +3.01 | +6.07 | +14.48 | [+1.56,+4.57] | +0.98 | +3.24 | 60 | +nan n/a | no | R3 | cross | -0.89 | -1.50 | -4.63 | [-2.54,+0.77] | -0.18 | +2.37 | -8 | +nan n/a | no |
+| NDX:gamma | weak | R3 | lnrv | +2.69 | +11.13 | +16.66 | [-0.06,+5.64] | +0.34 | +3.24 | 60 | +nan n/a | no | R3 | er | -1.44 | -5.97 | -6.95 | [-4.11,+1.47] | -0.61 | +2.54 | -6 | +nan n/a | no |
+| SPY:zdte_share | weak | R3 | lnrv | +2.68 | +6.17 | +12.93 | [+1.03,+3.99] | +1.09 | +3.24 | 60 | +nan n/a | no | R3 | cross | -0.18 | +0.65 | -3.71 | [-1.82,+1.36] | -0.34 | +2.37 | -8 | +nan n/a | no |
+| SPY:iv_term | weak | R3 | lnrv | +2.60 | +8.26 | +7.00 | [-2.60,+6.65] | +0.22 | +3.24 | 60 | +nan n/a | no | R3 | er | -2.26 | -1.65 | -0.95 | [-6.18,+0.48] | -0.91 | +2.54 | -6 | +nan n/a | no |
+| cal:dow | no | R3 | lnrv | +2.57 | +1.54 | +6.24 | [+1.05,+4.02] | +3.23 | +3.24 | 60 | +nan n/a | no | R3 | er | -0.01 | -0.16 | +0.72 | [-2.54,+2.30] | +0.30 | +2.54 | -6 | +nan n/a | no |
+| NDX:flip | weak | R3 | lnrv | +2.29 | +2.73 | +9.28 | [+0.84,+3.96] | -0.04 | +3.24 | 60 | +nan n/a | no | R3 | cext | +0.08 | +2.32 | +2.44 | [-1.66,+1.53] | +2.94 | +2.94 | -4 | +nan n/a | no |
+| QQQ:gamma | weak | R3 | lnrv | +2.18 | +7.27 | +14.51 | [-2.27,+6.28] | +0.29 | +3.24 | 60 | +nan n/a | no | R3 | cext | -0.66 | +0.17 | +2.61 | [-2.40,+1.19] | -1.08 | +2.94 | -4 | +nan n/a | no |
+| QQQ:flip | weak | R3 | lnrv | +1.89 | +2.86 | +3.71 | [+0.30,+3.71] | +0.49 | +3.24 | 60 | +nan n/a | no | R3 | er | -0.14 | +0.01 | -0.18 | [-1.59,+1.23] | -0.33 | +2.54 | -6 | +nan n/a | no |
+| ALL4:flip | weak | R3 | lnrv | +1.87 | +1.41 | +2.46 | [+0.17,+3.81] | +0.06 | +3.24 | 60 | +nan n/a | weak | R3 | er | +0.75 | +1.95 | +3.01 | [-1.53,+4.03] | +0.05 | +2.54 | -6 | +nan n/a | no |
 
-## 3. Compact answer: input family x session, best ticker (YES / weak / no) for RANGE and for DAY TYPE
-| input family | asia | london | pre | nyam | nypm | nyam2 |
-|---|---|---|---|---|---|---|
-| absflip_wall | R:YES +3.9 (SPX) / T:weak +1.2 | R:YES +2.4 (QQQ) / T:weak +1.5 | R:YES +3.2 (IWM) / T:weak +0.3 | R:weak +1.1 (DIA) / T:weak +0.1 | R:weak +0.9 (QQQ) / T:weak +0.5 | R:weak +1.7 (IWM) / T:weak +0.5 |
-| charm | R:weak +0.5 (SPX) / T:weak +0.0 | R:weak +2.1 (SPY) / T:weak +0.3 | R:weak +1.9 (SPX) / T:no -0.1 | R:YES +3.0 (SPX) / T:weak +0.1 | R:weak +0.6 (QQQ) / T:weak +0.1 | R:YES +4.1 (SPX) / T:no -0.1 |
-| dow | R:no +1.8 (cal) / T:no +1.7 | R:no -0.0 (cal) / T:no +0.8 | R:YES +3.0 (cal) / T:no -1.4 | R:YES +2.4 (cal) / T:no -1.4 | R:weak +4.0 (cal) / T:no -0.9 | R:no +2.6 (cal) / T:no -0.0 |
-| flip | R:YES +8.2 (SPY) / T:weak +0.4 | R:YES +7.8 (ALL4) / T:weak +1.4 | R:YES +8.4 (ALL4) / T:no -0.1 | R:YES +4.6 (SPY) / T:weak +0.8 | R:YES +4.7 (QQQ) / T:weak +0.4 | R:weak +2.3 (NDX) / T:weak +1.2 |
-| gamma | R:YES +5.8 (SPX) / T:weak +0.4 | R:YES +5.3 (SPY) / T:weak +0.9 | R:YES +4.5 (SPX) / T:no -0.5 | R:YES +3.8 (SPY) / T:no -0.6 | R:weak +3.8 (SPX) / T:weak +1.8 | R:YES +3.4 (SPX) / T:no -0.7 |
-| gamma_chg | - | - | - | - | R:weak +1.9 (SPX) / T:weak +0.5 | R:weak +0.4 (NDX) / T:weak +0.3 |
-| impmove_vs_actual | - | - | - | - | R:weak +3.4 (QQQ) / T:no -0.1 | R:weak +0.7 (IWM) / T:weak +0.5 |
-| iv_level | R:YES +8.0 (QQQ) / T:weak +0.7 | R:YES +5.8 (SPX) / T:no -0.6 | R:YES +7.4 (SPX) / T:no -0.2 | R:YES +4.4 (QQQ) / T:weak +1.1 | R:weak +2.9 (SPX) / T:weak +1.4 | R:weak +2.2 (IWM) / T:no -0.2 |
-| iv_minus_rv | R:weak +3.1 (SPX) / T:no +0.6 | R:YES +2.9 (SPX) / T:no -0.2 | R:weak +2.8 (SPX) / T:no -0.3 | R:weak +1.7 (SPX) / T:no -0.5 | R:weak +0.2 (SPX) / T:no +0.4 | R:no -0.3 (SPX) / T:no -0.6 |
-| iv_term | R:YES +4.3 (IWM) / T:YES +4.9 | R:YES +5.0 (DIA) / T:weak +0.2 | R:YES +15.8 (IWM) / T:no -0.5 | R:YES +9.8 (IWM) / T:no -0.2 | R:YES +5.1 (IWM) / T:YES +2.4 | R:YES +6.0 (IWM) / T:weak +0.4 |
-| month_end | R:no -0.2 (cal) / T:no -0.2 | R:weak +0.4 (cal) / T:no -0.3 | R:no -0.3 (cal) / T:no -0.2 | R:no -0.3 (cal) / T:no -0.5 | R:no -0.0 (cal) / T:weak +0.0 | R:no -0.1 (cal) / T:weak +0.3 |
-| net_premium | R:YES +2.5 (QQQ) / T:weak +0.1 | R:YES +2.0 (SPX) / T:weak +0.8 | R:weak +1.8 (SPX) / T:weak +0.3 | R:weak +0.0 (NDX) / T:weak +0.3 | R:no -0.0 (QQQ) / T:weak +0.2 | R:weak +1.3 (QQQ) / T:weak +0.9 |
-| opex_day | R:no -0.0 (cal) / T:no +0.1 | R:no -0.2 (cal) / T:no -0.5 | R:weak +0.3 (cal) / T:no -0.0 | R:no -0.2 (cal) / T:weak +0.1 | R:no -0.1 (cal) / T:no -0.3 | R:no -0.1 (cal) / T:no -0.2 |
-| opex_week | R:no -0.3 (cal) / T:no -0.1 | R:no -0.4 (cal) / T:no -0.4 | R:no +0.0 (cal) / T:weak +1.0 | R:no -0.3 (cal) / T:no +0.0 | R:no -0.1 (cal) / T:no +0.0 | R:no -0.0 (cal) / T:weak +0.6 |
-| quarter_end | R:no -0.1 (cal) / T:no -0.5 | R:no -0.1 (cal) / T:no -0.1 | R:no -0.1 (cal) / T:no -0.0 | R:no -0.2 (cal) / T:weak +0.4 | R:no -0.1 (cal) / T:weak +0.3 | R:no -0.3 (cal) / T:weak +1.1 |
-| tide | R:YES +6.0 (mkt) / T:no +0.2 | R:YES +5.1 (mkt) / T:weak +0.2 | R:weak +2.3 (mkt) / T:weak +0.5 | R:weak +0.5 (mkt) / T:no -0.5 | R:weak +2.9 (mkt) / T:no -0.5 | R:no -0.5 (mkt) / T:no -0.7 |
-| vanna | R:weak +1.5 (NDX) / T:weak +0.5 | R:weak +1.9 (QQQ) / T:weak +0.2 | R:weak +0.6 (NDX) / T:weak +0.1 | R:weak +1.6 (SPY) / T:no -1.0 | R:weak +0.7 (DIA) / T:weak +1.4 | R:YES +3.8 (QQQ) / T:no -0.1 |
-| walls | R:YES +3.9 (QQQ) / T:weak +2.3 | R:YES +3.8 (SPY) / T:no -0.7 | R:weak +2.3 (SPX) / T:no -0.9 | R:weak +1.4 (QQQ) / T:no -1.6 | R:YES +4.3 (QQQ) / T:weak +0.7 | R:weak +1.6 (QQQ) / T:weak +0.7 |
-| zdte_share | R:weak +0.0 (SPX) / T:weak +1.4 | R:weak +0.6 (SPY) / T:weak +0.0 | R:weak +0.4 (QQQ) / T:weak +1.7 | R:weak +0.4 (QQQ) / T:weak +0.1 | R:weak +1.8 (QQQ) / T:weak +0.5 | R:weak +3.0 (QQQ) / T:no -0.2 |
+### last 90 min (14:30-16:00 ET), readings R0 and R3
+| input | range | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | day type | rd | metric | gain full | L6M | L3M | CI90 | nq95 | fq95 | bench R2 | vs ATR+IV+DOW (gain, verdict) | timing |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| QQQ:flip | YES | R3 | lnrv | +6.28 | +12.94 | +14.16 | [+3.96,+9.49] | -0.45 | +2.31 | 45 | +nan n/a | no | R3 | cross | -0.95 | -0.44 | -2.94 | [-2.14,+0.38] | -0.10 | +1.39 | -2 | +nan n/a | no |
+| QQQ:walls | YES | R3 | lnrng | +6.06 | +2.48 | -3.86 | [+1.56,+10.07] | -1.07 | +2.23 | 29 | +nan n/a | no | R0 | cross | -0.54 | -0.21 | -0.86 | [-1.80,+1.00] | -2.25 | +1.39 | -1 | +nan n/a | weak |
+| DIA:iv_term | YES | R0 | lnrng | +5.82 | +8.59 | +5.52 | [+1.21,+8.90] | +0.67 | +2.23 | 27 | +nan n/a | no | R3 | er | -0.18 | -0.58 | -2.86 | [-1.29,+0.71] | +0.48 | +1.65 | -3 | +nan n/a | no |
+| SPX:flip | YES | R3 | lnrv | +5.31 | +6.22 | +8.37 | [+3.02,+7.75] | -0.23 | +2.31 | 45 | +nan n/a | weak | R0 | er | +0.56 | +0.59 | +0.36 | [-0.78,+1.77] | +0.00 | +1.65 | -3 | +nan n/a | no |
+| SPY:flip | YES | R3 | lnrv | +5.30 | +8.46 | +10.72 | [+3.23,+8.22] | -0.19 | +2.31 | 45 | +nan n/a | no | R3 | er | -0.64 | +0.54 | -0.23 | [-1.60,+0.29] | -0.43 | +1.65 | -3 | +nan n/a | no |
+| ALL4:flip | YES | R3 | lnrv | +5.25 | +7.80 | +11.61 | [+2.68,+7.96] | -0.24 | +2.31 | 45 | +nan n/a | no | R3 | cross | -1.03 | -1.56 | -2.89 | [-2.20,+0.21] | -0.07 | +1.39 | -2 | +nan n/a | weak |
+| IWM:iv_term | YES | R0 | lnrng | +5.18 | +10.65 | +6.76 | [+2.15,+8.79] | -0.11 | +2.23 | 27 | +nan n/a | no | R3 | er | -0.13 | -0.88 | -1.94 | [-1.72,+1.16] | +0.73 | +1.65 | -3 | +nan n/a | no |
+| NDX:flip | YES | R3 | lnrv | +4.54 | +10.18 | +11.44 | [+2.37,+7.15] | -0.25 | +2.31 | 45 | +nan n/a | no | R3 | er | -1.01 | -0.38 | -2.64 | [-2.36,+0.15] | -0.24 | +1.65 | -3 | +nan n/a | YES |
+| SPX:walls | YES | R3 | lnrv | +4.49 | +6.42 | +11.03 | [+2.05,+7.27] | -0.37 | +2.31 | 45 | +nan n/a | no | R3 | cext | -1.29 | +0.10 | +2.68 | [-3.50,+0.60] | -1.26 | +1.93 | -7 | +nan n/a | no |
+| QQQ:impmove_vs_actual | YES | R3 | lnrv | +4.29 | +6.98 | +3.64 | [+1.23,+7.57] | -0.32 | +2.31 | 45 | +nan n/a | no | R3 | er | -0.26 | +0.63 | +0.56 | [-1.26,+0.68] | -0.35 | +1.65 | -3 | +nan n/a | no |
+| IWM:flip | YES | R0 | lnrng | +4.24 | -1.00 | -5.86 | [+1.00,+7.98] | -0.62 | +2.23 | 27 | +nan n/a | no | R0 | er | -0.60 | -0.46 | -0.60 | [-1.37,+0.26] | -0.64 | +1.65 | -3 | +nan n/a | no |
+| SPX:gamma | YES | R3 | lnrv | +3.53 | +7.15 | +11.64 | [+1.25,+5.76] | +0.04 | +2.31 | 45 | +nan n/a | no | R0 | cext | -0.80 | -0.95 | +0.80 | [-3.03,+1.45] | -0.83 | +1.93 | -4 | +nan n/a | no |
+| SPY:walls | YES | R3 | lnrv | +3.41 | +6.95 | +9.36 | [+1.21,+6.22] | -0.84 | +2.31 | 45 | +nan n/a | no | R0 | cext | -0.36 | +0.32 | +1.68 | [-2.34,+2.33] | -0.67 | +1.93 | -4 | +nan n/a | no |
+| NDX:impmove_vs_actual | weak | R3 | lnrv | +3.34 | +4.02 | -2.02 | [-1.02,+7.03] | -0.16 | +2.31 | 45 | +nan n/a | no | R3 | er | -0.53 | +0.96 | +0.42 | [-2.05,+0.63] | -0.30 | +1.65 | -3 | +nan n/a | no |
+
+## 3. Compact answer: input family x session, best ticker. R = range, T = day type; verdict vs ATR / vs strict (ATR+IV+DOW); gain pp vs ATR / vs strict
+| input family | asia | london | pre | nyam | nypm | nyam2 | late |
+|---|---|---|---|---|---|---|---|
+| absflip_wall | R:YES/n/a +3.9/+nan (SPX) ; T:weak/n/a +1.2/+nan | R:YES/n/a +2.4/+nan (QQQ) ; T:weak/n/a +1.5/+nan | R:weak/n/a +3.9/+nan (IWM) ; T:weak/n/a +0.3/+nan | R:weak/n/a +1.4/+nan (DIA) ; T:weak/n/a +0.7/+nan | R:weak/n/a +0.9/+nan (QQQ) ; T:weak/n/a +0.5/+nan | R:no/n/a +0.6/+nan (IWM) ; T:weak/n/a +0.8/+nan | R:weak/n/a +1.9/+nan (QQQ) ; T:weak/n/a +0.7/+nan |
+| charm | R:weak/n/a +0.5/+nan (SPX) ; T:weak/n/a +0.3/+nan | R:weak/n/a +2.1/+nan (SPY) ; T:weak/n/a +0.3/+nan | R:weak/n/a +1.9/+nan (SPX) ; T:weak/n/a +1.1/+nan | R:YES/n/a +8.5/+nan (SPX) ; T:weak/n/a +0.7/+nan | R:weak/n/a +1.1/+nan (QQQ) ; T:weak/n/a +0.4/+nan | R:YES/n/a +4.1/+nan (SPX) ; T:no/n/a -0.1/+nan | R:weak/n/a +0.6/+nan (DIA) ; T:no/n/a -0.2/+nan |
+| dow | R:no/n/a +1.8/+nan (cal) ; T:no/n/a +1.7/+nan | R:no/n/a -0.0/+nan (cal) ; T:no/n/a +0.8/+nan | R:YES/n/a +4.5/+nan (cal) ; T:no/n/a -1.4/+nan | R:weak/n/a +3.2/+nan (cal) ; T:no/n/a -0.7/+nan | R:weak/n/a +4.3/+nan (cal) ; T:no/n/a -0.6/+nan | R:no/n/a +2.6/+nan (cal) ; T:no/n/a -0.0/+nan | R:no/n/a +2.0/+nan (cal) ; T:no/n/a -0.2/+nan |
+| dp_levels | R:no/n/a -0.2/+nan (SPY) ; T:no/n/a -3.2/+nan | R:no/n/a -1.0/+nan (SPY) ; T:no/n/a -0.4/+nan | R:no/n/a -0.6/+nan (SPY) ; T:weak/n/a +0.2/+nan | R:no/n/a -1.9/+nan (QQQ) ; T:no/n/a -1.0/+nan | R:no/n/a -2.0/+nan (SPY) ; T:no/n/a -2.6/+nan | R:no/n/a -2.2/+nan (SPY) ; T:no/n/a -3.0/+nan | R:no/n/a -1.5/+nan (SPY) ; T:no/n/a -2.8/+nan |
+| flip | R:YES/n/a +8.2/+nan (SPY) ; T:weak/n/a +0.4/+nan | R:YES/n/a +7.8/+nan (ALL4) ; T:weak/n/a +1.5/+nan | R:YES/n/a +8.4/+nan (ALL4) ; T:weak/n/a +0.0/+nan | R:YES/n/a +4.6/+nan (SPY) ; T:weak/n/a +0.9/+nan | R:YES/n/a +4.7/+nan (QQQ) ; T:weak/n/a +0.4/+nan | R:weak/n/a +2.3/+nan (NDX) ; T:weak/n/a +1.2/+nan | R:YES/n/a +6.3/+nan (QQQ) ; T:weak/n/a +0.6/+nan |
+| gamma | R:YES/n/a +5.8/+nan (SPX) ; T:weak/n/a +0.4/+nan | R:YES/n/a +5.3/+nan (SPY) ; T:weak/n/a +0.9/+nan | R:YES/n/a +4.5/+nan (SPX) ; T:no/n/a -0.5/+nan | R:YES/n/a +3.8/+nan (SPY) ; T:no/n/a -0.2/+nan | R:weak/n/a +3.8/+nan (SPX) ; T:weak/n/a +2.3/+nan | R:YES/n/a +3.4/+nan (SPX) ; T:no/n/a -0.7/+nan | R:YES/n/a +3.5/+nan (SPX) ; T:weak/n/a +1.7/+nan |
+| gamma_chg | - | - | - | - | R:weak/n/a +1.9/+nan (SPX) ; T:weak/n/a +0.5/+nan | R:weak/n/a +0.4/+nan (NDX) ; T:weak/n/a +0.3/+nan | R:weak/n/a +1.6/+nan (SPX) ; T:YES/n/a +1.9/+nan |
+| impmove_vs_actual | - | - | R:weak/n/a +1.4/+nan (QQQ) ; T:weak/n/a +0.7/+nan | R:weak/n/a +1.9/+nan (QQQ) ; T:weak/n/a +1.1/+nan | R:weak/n/a +3.4/+nan (QQQ) ; T:weak/n/a +0.5/+nan | R:no/n/a +0.5/+nan (QQQ) ; T:weak/n/a +0.5/+nan | R:YES/n/a +4.3/+nan (QQQ) ; T:weak/n/a +0.8/+nan |
+| iv_level | R:YES/n/a +8.0/+nan (QQQ) ; T:weak/n/a +0.7/+nan | R:YES/n/a +6.5/+nan (DIA) ; T:no/n/a -0.6/+nan | R:YES/n/a +7.4/+nan (SPX) ; T:weak/n/a +0.1/+nan | R:YES/n/a +4.4/+nan (QQQ) ; T:weak/n/a +1.1/+nan | R:weak/n/a +2.9/+nan (SPX) ; T:weak/n/a +1.2/+nan | R:no/n/a +0.5/+nan (QQQ) ; T:no/n/a -0.2/+nan | R:weak/n/a +2.3/+nan (SPX) ; T:weak/n/a +0.2/+nan |
+| iv_minus_rv | R:weak/n/a +3.1/+nan (SPX) ; T:weak/n/a +0.6/+nan | R:YES/n/a +2.9/+nan (SPX) ; T:weak/n/a +0.1/+nan | R:weak/n/a +3.1/+nan (IWM) ; T:no/n/a -0.2/+nan | R:weak/n/a +1.7/+nan (SPX) ; T:no/n/a -0.3/+nan | R:weak/n/a +0.4/+nan (DIA) ; T:weak/n/a +0.7/+nan | R:no/n/a -0.3/+nan (IWM) ; T:weak/n/a +0.2/+nan | R:no/n/a -0.0/+nan (SPX) ; T:no/n/a +0.1/+nan |
+| iv_term | R:YES/n/a +6.6/+nan (DIA) ; T:weak/n/a +3.8/+nan | R:YES/n/a +7.3/+nan (DIA) ; T:weak/n/a +0.8/+nan | R:YES/n/a +16.5/+nan (IWM) ; T:weak/n/a +0.1/+nan | R:YES/n/a +10.3/+nan (DIA) ; T:no/n/a -0.4/+nan | R:YES/n/a +6.1/+nan (IWM) ; T:YES/n/a +2.4/+nan | R:YES/n/a +5.5/+nan (IWM) ; T:no/n/a +0.3/+nan | R:YES/n/a +5.8/+nan (DIA) ; T:no/n/a -0.1/+nan |
+| month_end | R:no/n/a -0.2/+nan (cal) ; T:no/n/a -0.2/+nan | R:weak/n/a +0.4/+nan (cal) ; T:no/n/a -0.3/+nan | R:no/n/a -0.3/+nan (cal) ; T:no/n/a -0.2/+nan | R:no/n/a -0.0/+nan (cal) ; T:no/n/a -0.5/+nan | R:no/n/a +0.0/+nan (cal) ; T:weak/n/a +0.0/+nan | R:no/n/a -0.1/+nan (cal) ; T:weak/n/a +0.3/+nan | R:no/n/a +0.2/+nan (cal) ; T:no/n/a -0.2/+nan |
+| net_premium | R:YES/n/a +2.5/+nan (QQQ) ; T:weak/n/a +0.1/+nan | R:YES/n/a +2.0/+nan (SPX) ; T:weak/n/a +0.8/+nan | R:weak/n/a +1.8/+nan (SPX) ; T:weak/n/a +0.3/+nan | R:weak/n/a +0.7/+nan (QQQ) ; T:weak/n/a +0.8/+nan | R:no/n/a -0.0/+nan (QQQ) ; T:weak/n/a +0.2/+nan | R:weak/n/a +1.3/+nan (QQQ) ; T:weak/n/a +0.9/+nan | R:weak/n/a +0.7/+nan (SPX) ; T:weak/n/a +1.0/+nan |
+| opex_day | R:no/n/a -0.0/+nan (cal) ; T:no/n/a +0.1/+nan | R:no/n/a -0.2/+nan (cal) ; T:no/n/a -0.5/+nan | R:weak/n/a +0.5/+nan (cal) ; T:no/n/a -0.0/+nan | R:no/n/a -0.1/+nan (cal) ; T:weak/n/a +0.1/+nan | R:no/n/a -0.1/+nan (cal) ; T:no/n/a -0.3/+nan | R:no/n/a -0.1/+nan (cal) ; T:no/n/a -0.2/+nan | R:no/n/a +0.1/+nan (cal) ; T:no/n/a -0.3/+nan |
+| opex_week | R:no/n/a -0.3/+nan (cal) ; T:no/n/a -0.1/+nan | R:no/n/a -0.4/+nan (cal) ; T:no/n/a -0.4/+nan | R:no/n/a +0.3/+nan (cal) ; T:weak/n/a +1.2/+nan | R:weak/n/a +0.2/+nan (cal) ; T:no/n/a +0.1/+nan | R:no/n/a -0.1/+nan (cal) ; T:no/n/a +0.0/+nan | R:no/n/a -0.0/+nan (cal) ; T:weak/n/a +0.6/+nan | R:no/n/a -0.1/+nan (cal) ; T:no/n/a +0.5/+nan |
+| quarter_end | R:no/n/a -0.1/+nan (cal) ; T:no/n/a -0.5/+nan | R:no/n/a -0.1/+nan (cal) ; T:no/n/a -0.1/+nan | R:no/n/a -0.1/+nan (cal) ; T:no/n/a -0.0/+nan | R:no/n/a -0.2/+nan (cal) ; T:weak/n/a +0.4/+nan | R:no/n/a -0.1/+nan (cal) ; T:weak/n/a +0.3/+nan | R:no/n/a -0.3/+nan (cal) ; T:weak/n/a +1.1/+nan | R:no/n/a -0.1/+nan (cal) ; T:no/n/a -0.1/+nan |
+| tide | R:YES/n/a +6.0/+nan (mkt) ; T:no/n/a +0.2/+nan | R:YES/n/a +5.1/+nan (mkt) ; T:weak/n/a +0.2/+nan | R:weak/n/a +2.3/+nan (mkt) ; T:weak/n/a +0.9/+nan | R:weak/n/a +0.5/+nan (mkt) ; T:no/n/a -0.1/+nan | R:weak/n/a +2.9/+nan (mkt) ; T:no/n/a -0.4/+nan | R:no/n/a -0.5/+nan (mkt) ; T:no/n/a -0.7/+nan | R:weak/n/a +2.2/+nan (mkt) ; T:no/n/a +0.1/+nan |
+| vanna | R:weak/n/a +1.5/+nan (NDX) ; T:weak/n/a +0.5/+nan | R:YES/n/a +1.9/+nan (QQQ) ; T:weak/n/a +0.2/+nan | R:weak/n/a +0.6/+nan (NDX) ; T:weak/n/a +0.1/+nan | R:YES/n/a +6.7/+nan (QQQ) ; T:no/n/a -0.1/+nan | R:weak/n/a +2.1/+nan (DIA) ; T:weak/n/a +1.4/+nan | R:YES/n/a +3.8/+nan (QQQ) ; T:no/n/a -0.1/+nan | R:no/n/a +1.0/+nan (DIA) ; T:no/n/a -0.7/+nan |
+| walls | R:YES/n/a +3.9/+nan (QQQ) ; T:weak/n/a +2.3/+nan | R:YES/n/a +3.8/+nan (SPY) ; T:no/n/a -0.7/+nan | R:weak/n/a +2.3/+nan (SPX) ; T:no/n/a -0.5/+nan | R:weak/n/a +1.4/+nan (QQQ) ; T:no/n/a -0.2/+nan | R:weak/n/a +4.3/+nan (QQQ) ; T:weak/n/a +0.7/+nan | R:weak/n/a +1.6/+nan (QQQ) ; T:weak/n/a +0.7/+nan | R:YES/n/a +6.1/+nan (QQQ) ; T:no/n/a -0.4/+nan |
+| zdte_share | R:weak/n/a +0.0/+nan (SPX) ; T:weak/n/a +1.4/+nan | R:weak/n/a +0.6/+nan (SPY) ; T:weak/n/a +0.0/+nan | R:weak/n/a +1.2/+nan (QQQ) ; T:weak/n/a +1.7/+nan | R:weak/n/a +1.8/+nan (SPY) ; T:weak/n/a +0.1/+nan | R:weak/n/a +1.8/+nan (QQQ) ; T:weak/n/a +0.5/+nan | R:weak/n/a +3.0/+nan (QQQ) ; T:no/n/a -0.2/+nan | R:weak/n/a +1.8/+nan (QQQ) ; T:weak/n/a +0.1/+nan |
 
 ## 4. Pinning to the largest gamma strike into the close (14:30 -> 16:00 ET)
 q = ln((|P16:00 - K| + d) / (|P14:30 - K| + d)), d = 3 bps; q < 0 = pulled toward K. Placebo = the mirror strike (2 x prior close - K, same distance, no gamma information). "pin gain" = q(real K) - q(mirror) (negative = the real strike pins more than a mirror); CI90 block bootstrap; K: mag = gamma magnet (oi / vol), gk = largest gross gamma strike from spot-strike (oi / vol), call / put wall, flip. Prior-day EOD levels mapped to futures by the prior-close ratio.
@@ -192,3 +213,61 @@ Cells with the CI entirely below 0 (real strike pins more than its mirror): 4 of
 
 ## 6. Status
 - Page 1 (forecast test) is this page. Page 2 (use on D7 dials with the exact engine) starts only for inputs with YES or weak range/day-type rows; nothing is run on the engine yet.
+
+## 7. PAGE 2: use on D7 dials (JN05W2 base, all layers ON; FIRST ORDER on the exact-engine trade table; exact-engine confirmation below when run)
+Dial cells = (day-regime tag state) x (book) x (session scope) x action: size x0.5 / x1.5 / skip (pnl scaled on matched trades, fees not rescaled) or hold-at-cut (hold_pnl instead of the cut exit pnl on StateCut/EarlyCut/StackCut/BookLock trades). Regime tags come from the forecast inputs of sections 2-3 at the reading of the signal clock (R0 before 08:30 and after 18:00, R1 08:30, R2 09:30, R3 10:00): gamma sign (SPX QQQ NDX SPY, vote), above/below flip, nearness to flip, IV z (NDX SPX), Tide z, IV-RV, call/put room, and the walk-forward predicted RTH range from the UW model (rngU) and its excess over the ATR benchmark (rngU_ex) (first prediction after 120 days, 2025-03 on).
+Gate (tolerant): L6M>0, HOLD>0, excess over the same action on the whole book x scope >0 in L6M and HOLD (removes the plain scale-up-a-profitable-book effect), L3M>=0, worst week not worse in HOLD and L6M, max DD not worse in HOLD and L6M, n>=20 in L6M. Rank = drawdown first (HOLD+L6M worst-week gain + max-DD reduction, $k) then mean. Family null = best gated drawdown score when tags are permuted within month (30 draws), q95 = 51.1 $k; placebo = same with tags from k days earlier (20 draws): max 51.4, median 41.9.
+Gated cells: 515 of 15201; above the family-null q95: 0; above the placebo max: 0.
+
+### size x1.5 (press) / x0.5 (half) / skip, best gated cell per book
+| regime state | book | scope | action | n L6M | L1M $/wk | L3M | L6M | HOLD | PREUW | excess over whole-book action L6M / HOLD | worst week chg HOLD / L6M | max DD cut HOLD / L6M | full stops/wk removed | dd score $k | vs family null |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| tide >0 | K7 | london | 0.0 | 195 | +2318 | +951 | +769 | +401 | -649 | +966 / +700 | +2477 / +4992 | +14016 / +4992 | 0.11 | +26.5 | within null |
+| tide >q50 | K7 | london | 0.0 | 215 | +1986 | +797 | +741 | +328 | -515 | +957 / +655 | +2477 / +4992 | +13268 / +4992 | 0.11 | +25.7 | within null |
+| ivSPX >0 | P7 | asia | 0.0 | 171 | +950 | +436 | +250 | +293 | -1440 | +3792 / +4196 | +17009 / +10345 | +6732 / +11124 | 0.04 | +45.2 | within null |
+| ivSPX >0 | P7 | asia | 0.5 | 171 | +475 | +218 | +125 | +147 | -720 | +1896 / +2098 | +8505 / +9757 | +3366 / +11025 | 0.00 | +32.7 | within null |
+| abvflipQQQ >q50 | U7 | london | 0.0 | 59 | +1041 | +447 | +143 | +240 | -309 | +902 / +697 | +2327 / +7197 | +15113 / +7197 | 0.99 | +31.8 | within null |
+| tide >q66 | U7 | london | 0.0 | 44 | +1746 | +352 | +569 | +160 | -262 | +1136 / +538 | +0 / +7197 | +10173 / +7197 | 0.76 | +24.6 | within null |
+| nearflipSPX <q66 | M7 | all | 0.0 | 486 | +718 | +143 | +448 | +380 | -1106 | +477 / +349 | +8465 / +1919 | +16868 / +1488 | 0.76 | +28.7 | within null |
+| nearflipSPX <q66 | M7 | london | 0.0 | 324 | +1371 | +791 | +772 | +817 | -425 | +554 / +618 | +8465 / +1309 | +15890 / +878 | 0.53 | +26.5 | within null |
+| abvflipSPX >q50 | H7 | all | 1.5 | 98 | +1565 | +664 | +1022 | +484 | +123 | +461 / +302 | +0 / +3599 | +3302 / +3599 | 0.00 | +10.5 | within null |
+| abvflipSPX >0 | H7 | all | 1.5 | 100 | +1565 | +664 | +1038 | +486 | +253 | +465 / +295 | +0 / +3599 | +3302 / +3599 | 0.00 | +10.5 | within null |
+| ivrv <q50 | A7 | all | 1.5 | 158 | +276 | +79 | +203 | +322 | +461 | +30 / +142 | +0 / +964 | +1137 / +964 | 0.00 | +3.1 | within null |
+| ivrv <q50 | A7 | asia | 1.5 | 158 | +276 | +79 | +203 | +322 | +461 | +30 / +142 | +0 / +964 | +1137 / +964 | 0.00 | +3.1 | within null |
+| ivNDX <=0 | O7 | nyam | 1.5 | 31 | -217 | +314 | +294 | +315 | +183 | +157 / +151 | +899 / +0 | +1799 / +0 | 0.00 | +2.7 | within null |
+| ivNDX <=0 | O7 | all | 1.5 | 31 | -217 | +314 | +294 | +315 | +183 | +157 / +151 | +899 / +0 | +1799 / +0 | 0.00 | +2.7 | within null |
+| tide >q66 | ALL | london | 0.0 | 448 | +4011 | +2393 | +1898 | +528 | -2039 | +2551 / +1343 | +0 / +10710 | +3756 / +12318 | 1.26 | +26.8 | within null |
+| tide >q66 | ALL | london | 0.5 | 448 | +2006 | +1196 | +949 | +264 | -1019 | +1276 / +672 | +0 / +6159 | +12854 / +6159 | 0.00 | +25.2 | within null |
+
+### hold at cut (cut/lock by day type), best gated cells
+| regime state | book | scope | action | n L6M | L1M $/wk | L3M | L6M | HOLD | PREUW | excess over whole-book action L6M / HOLD | worst week chg HOLD / L6M | max DD cut HOLD / L6M | full stops/wk removed | dd score $k | vs family null |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| nearflipQQQ >q50 | K7 | all | H | 385 | +2066 | +290 | +543 | +793 | +1024 | +447 / +569 | +506 / +4882 | +1275 / +4882 | 0.00 | +11.5 | within null |
+| nearflipNDX >q50 | K7 | all | H | 461 | +759 | +323 | +377 | +279 | +319 | +262 / +68 | +2545 / +1500 | +2018 / +1500 | 0.00 | +7.6 | within null |
+| abvflipSPY <q33 | P7 | london | H | 59 | -376 | +1519 | +228 | +391 | +519 | +611 / +359 | +2219 / +0 | +9319 / +0 | 0.00 | +11.5 | within null |
+| abvflipSPX <=0 | P7 | london | H | 86 | -2721 | +1656 | +207 | +523 | +1160 | +766 / +469 | +165 / +0 | +10855 / +0 | 0.00 | +11.0 | within null |
+| tide <q66 | M7 | london | H | 186 | -1741 | +75 | +252 | +1150 | +685 | +159 / +684 | +13479 / +2969 | +5262 / +6135 | 0.00 | +27.8 | within null |
+| abvflipSPX <q50 | M7 | london | H | 130 | -1522 | +61 | +116 | +673 | +449 | +51 / +286 | +10862 / +0 | +9284 / +3167 | 0.00 | +23.3 | within null |
+| gSPX <q33 | ALL | london | H | 190 | -321 | +2145 | +281 | +1349 | +646 | +735 / +1132 | +10982 / +7860 | +5983 / +8855 | 0.00 | +33.7 | within null |
+| nearflipQQQ >q66 | ALL | london | H | 218 | -901 | +1314 | +12 | +1680 | +2175 | +533 / +1446 | +347 / +7860 | +15739 / +5010 | 0.00 | +29.0 | within null |
+
+Best gated cell overall, every action, top 12 by drawdown score:
+| regime state | book | scope | action | n L6M | L1M $/wk | L3M | L6M | HOLD | PREUW | excess over whole-book action L6M / HOLD | worst week chg HOLD / L6M | max DD cut HOLD / L6M | full stops/wk removed | dd score $k | vs family null |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ivSPX >0 | P7 | asia | 0.0 | 171 | +950 | +436 | +250 | +293 | -1440 | +3792 / +4196 | +17009 / +10345 | +6732 / +11124 | 0.04 | +45.2 | within null |
+| gSPX <q33 | ALL | london | H | 190 | -321 | +2145 | +281 | +1349 | +646 | +735 / +1132 | +10982 / +7860 | +5983 / +8855 | 0.00 | +33.7 | within null |
+| ivSPX >0 | P7 | asia | 0.5 | 171 | +475 | +218 | +125 | +147 | -720 | +1896 / +2098 | +8505 / +9757 | +3366 / +11025 | 0.00 | +32.7 | within null |
+| abvflipQQQ >q50 | U7 | london | 0.0 | 59 | +1041 | +447 | +143 | +240 | -309 | +902 / +697 | +2327 / +7197 | +15113 / +7197 | 0.99 | +31.8 | within null |
+| nearflipQQQ >q66 | ALL | london | H | 218 | -901 | +1314 | +12 | +1680 | +2175 | +533 / +1446 | +347 / +7860 | +15739 / +5010 | 0.00 | +29.0 | within null |
+| nearflipSPX <q66 | M7 | all | 0.0 | 486 | +718 | +143 | +448 | +380 | -1106 | +477 / +349 | +8465 / +1919 | +16868 / +1488 | 0.76 | +28.7 | within null |
+| tide <q66 | M7 | london | H | 186 | -1741 | +75 | +252 | +1150 | +685 | +159 / +684 | +13479 / +2969 | +5262 / +6135 | 0.00 | +27.8 | within null |
+| tide >q66 | ALL | london | 0.0 | 448 | +4011 | +2393 | +1898 | +528 | -2039 | +2551 / +1343 | +0 / +10710 | +3756 / +12318 | 1.26 | +26.8 | within null |
+| nearflipSPX <q66 | M7 | london | 0.0 | 324 | +1371 | +791 | +772 | +817 | -425 | +554 / +618 | +8465 / +1309 | +15890 / +878 | 0.53 | +26.5 | within null |
+| tide >0 | K7 | london | 0.0 | 195 | +2318 | +951 | +769 | +401 | -649 | +966 / +700 | +2477 / +4992 | +14016 / +4992 | 0.11 | +26.5 | within null |
+| tide >q50 | K7 | london | 0.0 | 215 | +1986 | +797 | +741 | +328 | -515 | +957 / +655 | +2477 / +4992 | +13268 / +4992 | 0.11 | +25.7 | within null |
+| tide >q33 | K7 | london | 0.0 | 288 | +33 | +10 | +423 | +172 | -266 | +713 / +589 | +2477 / +4992 | +13096 / +4992 | 0.15 | +25.6 | within null |
+
+Widths by forecast range, day-done / stack caps by forecast range and the last-90-minute fade need re-simulation (exact engine) or a new book: the last-90 fade has NO footing (section 4: no pinning above a mirror-strike placebo); widths and caps: see section 8 when exact sets finish.
+
+## 8. Exact-engine sets (tag UR)
+None launched yet.
