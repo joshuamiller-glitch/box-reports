@@ -1,4 +1,4 @@
-# DS3_TOOLS_T2_P3 - refreshed 07:12Z (driver code/th_t2b/t2b_driver.sh; page 2 = DS3_TOOLS_T2_P2.md; no PASS claims)
+# DS3_TOOLS_T2_P3 - refreshed 07:59Z (driver code/th_t2b/t2b_driver.sh; page 2 = DS3_TOOLS_T2_P2.md; no PASS claims)
 
 ## Narrative (W-TL2b, written 03:40Z; auto sections below are regenerated every 4 h by code/th_t2b/t2b_driver.sh)
 New since page 2 (DS3_TOOLS_T2_P2.md):
@@ -10,6 +10,8 @@ New since page 2 (DS3_TOOLS_T2_P2.md):
 
 ## AUTO: level-relative exact sets TL2_* vs RB_COMB (t2b_zscore.py)
 set | month | n base->set | net base -> set | delta $
+TL2_RETA 202409  n 545->554  net 18546 -> -2173  delta -20719
+TL2_RETA 202410  n 438->456  net 49830 -> 34515  delta -15315
 TL2_RETA 202411  n 456->474  net 49039 -> 58649  delta +9610
 TL2_RETA 202412  n 387->401  net 200513 -> 187571  delta -12943
 TL2_RETA 202501  n 534->547  net 135269 -> 134663  delta -605
@@ -32,7 +34,10 @@ TL2_RETA 202609  n 681->700  net 179048 -> 200000  delta +20951
 TL2_RETA 202610  n 823->830  net 45347 -> 8951  delta -36396
   L6M: months 6 of 6, delta +4540 $ (+174 $/wk), set better in 3 of 6 months
   HOLD: months 12 of 12, delta -20477 $ (-393 $/wk), set better in 5 of 12 months
-  trade-sequence maxDD base 179221 -> set 178858 over the 20 months done
+  PRE: months 10 of 10, delta -11427 $ (-263 $/wk), set better in 5 of 10 months
+  trade-sequence maxDD base 179221 -> set 178858 over the 22 months done
+TL2_STOPA 202409  n 545->551  net 18546 -> 32670  delta +14124
+TL2_STOPA 202410  n 438->445  net 49830 -> 52448  delta +2618
 TL2_STOPA 202411  n 456->469  net 49039 -> 49203  delta +164
 TL2_STOPA 202412  n 387->394  net 200513 -> 200227  delta -286
 TL2_STOPA 202501  n 534->536  net 135269 -> 119145  delta -16124
@@ -55,7 +60,10 @@ TL2_STOPA 202609  n 681->690  net 179048 -> 165389  delta -13660
 TL2_STOPA 202610  n 823->823  net 45347 -> 43510  delta -1837
   L6M: months 6 of 6, delta -46191 $ (-1772 $/wk), set better in 0 of 6 months
   HOLD: months 12 of 12, delta -100177 $ (-1921 $/wk), set better in 2 of 12 months
-  trade-sequence maxDD base 179221 -> set 156545 over the 20 months done
+  PRE: months 10 of 10, delta -6672 $ (-154 $/wk), set better in 5 of 10 months
+  trade-sequence maxDD base 179221 -> set 156545 over the 22 months done
+TL2_RETV 202409  n 545->556  net 18546 -> 17038  delta -1508
+TL2_RETV 202410  n 438->467  net 49830 -> 32026  delta -17804
 TL2_RETV 202411  n 456->486  net 49039 -> 61765  delta +12727
 TL2_RETV 202412  n 387->415  net 200513 -> 202387  delta +1873
 TL2_RETV 202501  n 534->549  net 135269 -> 138128  delta +2859
@@ -78,7 +86,10 @@ TL2_RETV 202609  n 681->698  net 179048 -> 161854  delta -17194
 TL2_RETV 202610  n 823->833  net 45347 -> 57994  delta +12647
   L6M: months 6 of 6, delta -54070 $ (-2074 $/wk), set better in 2 of 6 months
   HOLD: months 12 of 12, delta -117035 $ (-2245 $/wk), set better in 3 of 12 months
-  trade-sequence maxDD base 179221 -> set 171977 over the 20 months done
+  PRE: months 10 of 10, delta -6852 $ (-158 $/wk), set better in 6 of 10 months
+  trade-sequence maxDD base 179221 -> set 171977 over the 22 months done
+TL2_RETB 202409  n 545->545  net 18546 -> 18546  delta +0
+TL2_RETB 202410  n 438->442  net 49830 -> 50709  delta +878
 TL2_RETB 202411  n 456->467  net 49039 -> 56506  delta +7467
 TL2_RETB 202412  n 387->403  net 200513 -> 187459  delta -13055
 TL2_RETB 202501  n 534->544  net 135269 -> 98170  delta -37099
@@ -101,7 +112,10 @@ TL2_RETB 202609  n 681->702  net 179048 -> 162324  delta -16725
 TL2_RETB 202610  n 823->840  net 45347 -> 19316  delta -26031
   L6M: months 6 of 6, delta -13407 $ (-514 $/wk), set better in 2 of 6 months
   HOLD: months 12 of 12, delta -74216 $ (-1423 $/wk), set better in 3 of 12 months
-  trade-sequence maxDD base 179221 -> set 178174 over the 20 months done
+  PRE: months 10 of 10, delta -109994 $ (-2532 $/wk), set better in 4 of 10 months
+  trade-sequence maxDD base 179221 -> set 178174 over the 22 months done
+TL2_STOPB 202409  n 545->545  net 18546 -> 18546  delta +0
+TL2_STOPB 202410  n 438->449  net 49830 -> 48888  delta -942
 TL2_STOPB 202411  n 456->470  net 49039 -> 80614  delta +31575
 TL2_STOPB 202412  n 387->396  net 200513 -> 213904  delta +13391
 TL2_STOPB 202501  n 534->542  net 135269 -> 140225  delta +4956
@@ -124,22 +138,43 @@ TL2_STOPB 202609  n 681->691  net 179048 -> 184297  delta +5248
 TL2_STOPB 202610  n 823->794  net 45347 -> 58638  delta +13291
   L6M: months 6 of 6, delta -13136 $ (-504 $/wk), set better in 4 of 6 months
   HOLD: months 12 of 12, delta -19633 $ (-377 $/wk), set better in 7 of 12 months
-  trade-sequence maxDD base 179221 -> set 157098 over the 20 months done
+  PRE: months 10 of 10, delta +56058 $ (+1290 $/wk), set better in 6 of 10 months
+  trade-sequence maxDD base 179221 -> set 157098 over the 22 months done
 
 ## AUTO: K-hold gate sets TL2_K* vs TL2_ZID (t2b_kexact.py; KID = identity)
 set | month | n base->set | net base -> set | delta $
+TL2_KID 202605  n 672->672  net 35852 -> 35852  delta +0
+TL2_KID 202606  n 954->954  net 259213 -> 259213  delta +0
+TL2_KID 202607  n 1058->1058  net 109408 -> 109408  delta +0
+TL2_KID 202608  n 673->673  net 15104 -> 15104  delta +0
+TL2_KID 202609  n 681->681  net 179048 -> 179048  delta +0
 TL2_KID 202610  n 823->823  net 45347 -> 45347  delta +0
-  L6M: months 1 of 6, delta +0 $ (+0 $/wk), set better in 0 of 1 months
-  trade-sequence maxDD base 124920 -> set 124920 over the 1 months done
+  L6M: months 6 of 6, delta +0 $ (+0 $/wk), set better in 0 of 6 months
+  trade-sequence maxDD base 124920 -> set 124920 over the 6 months done
+TL2_K1 202605  n 672->667  net 35852 -> 20497  delta -15355
+TL2_K1 202606  n 954->950  net 259213 -> 256340  delta -2873
+TL2_K1 202607  n 1058->1050  net 109408 -> 118824  delta +9416
+TL2_K1 202608  n 673->665  net 15104 -> 7908  delta -7197
+TL2_K1 202609  n 681->677  net 179048 -> 217479  delta +38431
 TL2_K1 202610  n 823->818  net 45347 -> 41283  delta -4064
-  L6M: months 1 of 6, delta -4064 $ (-935 $/wk), set better in 0 of 1 months
-  trade-sequence maxDD base 124920 -> set 132557 over the 1 months done
+  L6M: months 6 of 6, delta +18358 $ (+704 $/wk), set better in 2 of 6 months
+  trade-sequence maxDD base 124920 -> set 132557 over the 6 months done
+TL2_K2 202605  n 672->667  net 35852 -> 22910  delta -12942
+TL2_K2 202606  n 954->954  net 259213 -> 260927  delta +1714
+TL2_K2 202607  n 1058->1050  net 109408 -> 117033  delta +7625
+TL2_K2 202608  n 673->668  net 15104 -> 17027  delta +1923
+TL2_K2 202609  n 681->678  net 179048 -> 211732  delta +32684
 TL2_K2 202610  n 823->820  net 45347 -> 48891  delta +3544
-  L6M: months 1 of 6, delta +3544 $ (+816 $/wk), set better in 1 of 1 months
-  trade-sequence maxDD base 124920 -> set 125563 over the 1 months done
+  L6M: months 6 of 6, delta +34548 $ (+1325 $/wk), set better in 5 of 6 months
+  trade-sequence maxDD base 124920 -> set 125563 over the 6 months done
+TL2_K3 202605  n 672->665  net 35852 -> 46781  delta +10929
+TL2_K3 202606  n 954->949  net 259213 -> 248386  delta -10827
+TL2_K3 202607  n 1058->1050  net 109408 -> 110260  delta +851
+TL2_K3 202608  n 673->669  net 15104 -> 6857  delta -8248
+TL2_K3 202609  n 681->678  net 179048 -> 220862  delta +41814
 TL2_K3 202610  n 823->817  net 45347 -> 42475  delta -2872
-  L6M: months 1 of 6, delta -2872 $ (-661 $/wk), set better in 0 of 1 months
-  trade-sequence maxDD base 124920 -> set 131852 over the 1 months done
+  L6M: months 6 of 6, delta +31648 $ (+1214 $/wk), set better in 3 of 6 months
+  trade-sequence maxDD base 124920 -> set 131852 over the 6 months done
 
 ## AUTO: TOOLS exact runner (EMF03/EMF07/LONFL73)
 06:21:14 end ('TL2_LONFL73', 202610, 'LPB') rc=0 202s
