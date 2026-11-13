@@ -1,4 +1,4 @@
-# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 22:05Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-13 23:06Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
 
 ## 0. Status
 Jobs done 4279 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 195897. Null draws (shifted-time, whole event table moved by random weeks): 18.
@@ -89,11 +89,11 @@ Null draws pool the same event tables for all instruments (NQ/ES, RTY/YM, IWM/DI
 | session | dir | family | instrument (matched) | trigger | cell | n L6M | L1M | L3M | L6M | HOLD | PREUW | maxDD L6M | worst wk L6M | full stops/wk L6M | pos wk L6M | WF OOS $/wk | placebo shuffle p | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | asia | long | F2 | NQ (cross) | SPX oi|flip touch_up | Eb3_Sa1_Tnone_X120 | 20 | 124 | 1571 | 1637 | 659 | -204 | 1218 | -1218 | 0.30 | 0.79 | 172 | 0.15 | thin n=20; placebo p>0.1; null: see section 1 |
-| london | long | FE | SI (matched) | SLV g_oi|lbma_silver hi_dn | Ep5_Sa2_T30_XSE | 39 | 1180 | 1431 | 1209 | 566 | n/a | 1137 | -1137 | 0.19 | 0.87 | pending | pending | thin n=39; null: see section 1 |
+| london | long | FE | SI (matched) | SLV g_oi|lbma_silver hi_dn | Ep5_Sa2_T30_XSE | 39 | 1180 | 1431 | 1209 | 566 | n/a | 1137 | -1137 | 0.19 | 0.87 | 280 | 0.01 | thin n=39; null: see section 1 |
 | pre | short | F1 | NQ (cross) | SPX v_oi lo_d | Emkt_S30_T90_XSE | 24 | 4364 | 1983 | 1073 | 352 | 53 | 1275 | -1275 | 0.22 | 0.64 | 250 | 0.01 | thin n=24; null: see section 1 |
-| nyam | short | F6 | NQ (cross) | GLD g_oi|0930|0830|med lo_up | Ep5_S30_Tnone_X15 | 29 | 1110 | 698 | 1957 | 931 | n/a | 1227 | -1227 | 0.56 | 0.73 | pending | pending | thin n=29; null: see section 1 |
+| nyam | short | F6 | NQ (cross) | GLD g_oi|0930|0830|med lo_up | Ep5_S30_Tnone_X15 | 29 | 1110 | 698 | 1957 | 931 | n/a | 1227 | -1227 | 0.56 | 0.73 | 156 | 0.12 | thin n=29; placebo p>0.1; null: see section 1 |
 | nypm | short | F1 | NQ (cross) | DIA g_dir d5_up | Ep10_Sa2_Tnone_XSE | 38 | 1570 | 1163 | 2014 | 1113 | -226 | 1470 | -1470 | 0.19 | 0.73 | 353 | 0.10 | thin n=38; null: see section 1 |
-| pit | long | F2 | CL (matched) | XOP oi|magnet touch_dn | Emkt_S45_Tnone_X120 | 23 | 856 | 2410 | 1757 | 802 | n/a | 1295 | -1295 | 0.30 | 0.93 | pending | pending | thin n=23; null: see section 1 |
+| pit | long | F2 | CL (matched) | XOP oi|magnet touch_dn | Emkt_S45_Tnone_X120 | 23 | 856 | 2410 | 1757 | 802 | n/a | 1295 | -1295 | 0.30 | 0.93 | n/a | 0.01 | thin n=23; null: see section 1 |
 
 Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (NQ-point lists scaled by the instrument ATR ratio, a1/a2 = 1x/2x ATR14 of 5-min bars; XSE = session end, flat). Trigger names: see UWBOOKS_B1_PREREG.md.
 
@@ -102,26 +102,63 @@ Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (N
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | asia | 1 | NQ | F2 SPX oi|flip touch_up | Eb3_Sa1_Tnone_X120 | enter at +3 min if price moved in direction | 1 x ATR5 | none | 120 min | 1637 | 659 | 1617 / 637 | 172 | 11501 | -1814 | 0.44 | 1589 | 0.15 |
 | asia | 1 | NQ | F2 SPX oi|flip touch_up | Eb3_Sa1_T90_X120 | enter at +3 min if price moved in direction | 1 x ATR5 | 90 NQ-pts x 1.00 = 90.0 NQ pts | 120 min | 1512 | 656 | 1497 / 637 | 172 | 11501 | -1814 | 0.44 | 1589 | 0.15 |
-| asia | -1 | ES | F7 QQQ g_dir|asia1805 med_hi | Eb3_S45_Tnone_XSE | enter at +3 min if price moved in direction | 45 NQ-pts x 0.19 = 8.6 ES pts | none | session end | 1274 | 670 | 1220 / 580 | -232 | 20903 | -3467 | 0.32 | 2376 | 0.04 |
-| london | 1 | YM | F1 SPY v_oi lo_d | Emkt_Sa1_Tnone_X120 | market at t0+1s | 1 x ATR5 | none | 120 min | 1249 | 642 | 1086 / 488 | 49 | 5343 | -2666 | 0.22 | 813 | 0.03 |
+| asia | 1 | ES | F7 XOP c_oi|asia1805 med_hi | Eb5_S30_Tnone_XSE | enter at +5 min if price moved in direction | 30 NQ-pts x 0.19 = 5.7 ES pts | none | session end | 1365 | 639 | 1303 / 485 | 221 | 7453 | -2413 | 0.46 | 1305 | 0.09 |
+| asia | -1 | GC | F7 GLD v_oi|asia1805 med_lo | Ep5_S30_Tnone_XSE | limit pullback 5 NQ-pts | 30 NQ-pts x 0.19 = 5.7 GC pts | none | session end | 2432 | 345 | 2394 / 306 | 75 | 7790 | -3752 | 0.35 | 2585 | 0.42 |
+| asia | -1 | CL | F7 USO c_oi|asia1805 chg_dn | Eb1_Sa2_T90_XSE | enter at +1 min if price moved in direction | 2 x ATR5 | 90 NQ-pts x 0.01 = 0.6 CL pts | session end | 1264 | 311 | 1242 / 205 | 31 | 4643 | -2585 | 0.52 | 1705 | 0.29 |
+| asia | -1 | RTY | F7 SPY c_oi|asia1805 med_hi | Emkt_S30_Ta2_XSE | market at t0+1s | 30 NQ-pts x 0.10 = 3.1 RTY pts | 2 x ATR5 | session end | 1125 | 423 | 774 / 91 | -212 | 23301 | -3867 | 0.40 | 826 | 0.13 |
+| asia | 1 | YM | F7 NDX g_vol|asia1805 med_hi | Eb5_S45_Tnone_XSE | enter at +5 min if price moved in direction | 45 NQ-pts x 1.27 = 57.2 YM pts | none | session end | 960 | 546 | 799 / 445 | -69 | 8142 | -2145 | 0.43 | 1009 | 0.04 |
+| asia | 1 | SI | F7 SLV v_oi|asia1805 med_hi | Ep5_S90_T60_XSE | limit pullback 5 NQ-pts | 90 NQ-pts x 0.01 = 0.5 SI pts | 60 NQ-pts x 0.01 = 0.3 SI pts | session end | 761 | 299 | 603 / 172 | 292 | 7181 | -3085 | 0.25 | 2107 | 0.25 |
+| london | 1 | SI | FE SLV g_oi|lbma_silver hi_dn | Ep5_Sa2_T30_X120 | limit pullback 5 NQ-pts | 2 x ATR5 | 30 NQ-pts x 0.01 = 0.2 SI pts | 120 min | 1209 | 556 | 1079 / 484 | 280 | 12896 | -4068 | 0.45 | 1023 | 0.01 |
+| london | 1 | SI | FE SLV g_oi|lbma_silver hi_dn | Ep5_Sa2_T30_XSE | limit pullback 5 NQ-pts | 2 x ATR5 | 30 NQ-pts x 0.01 = 0.2 SI pts | session end | 1209 | 556 | 1079 / 484 | 280 | 12896 | -4068 | 0.45 | 1023 | 0.01 |
 | london | 1 | YM | F1 SPY v_oi lo_d | Emkt_Sa1_Tnone_XSE | market at t0+1s | 1 x ATR5 | none | session end | 1249 | 642 | 1086 / 488 | 49 | 5343 | -2666 | 0.22 | 813 | 0.03 |
-| london | 1 | ES | F1 QQQ g_oi d1_up | Ep10_Sa2_Tnone_XSE | limit pullback 10 NQ-pts | 2 x ATR5 | none | session end | 1130 | 472 | 1034 / 415 | 195 | 3541 | -1488 | 0.42 | 702 | 0.03 |
+| london | 1 | ES | F1 QQQ g_oi d1_up | Ep10_Sa2_Tnone_X120 | limit pullback 10 NQ-pts | 2 x ATR5 | none | 120 min | 1130 | 472 | 1034 / 415 | 195 | 3541 | -1488 | 0.42 | 702 | 0.03 |
+| london | 1 | NQ | F7 SLV v_oi|lon0200 med_hi | Ep5_S30_T90_XSE | limit pullback 5 NQ-pts | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | session end | 1138 | 382 | 771 / 184 | 259 | 3867 | -2528 | 0.39 | 1115 | 0.14 |
+| london | -1 | CL | F7 XOP c_dir|lon0200 chg_up | Eb5_S60_T90_XSE | enter at +5 min if price moved in direction | 60 NQ-pts x 0.01 = 0.4 CL pts | 90 NQ-pts x 0.01 = 0.6 CL pts | session end | 1075 | 548 | 952 / 478 | 132 | 8320 | -2621 | 0.48 | 1338 | 0.05 |
+| london | 1 | GC | F2 GLD vol|flip touch_dn | Ep10_S30_Ta2_X30 | limit pullback 10 NQ-pts | 30 NQ-pts x 0.19 = 5.7 GC pts | 2 x ATR5 | 30 min | 999 | 323 | 976 / 303 | 88 | 8181 | -3456 | 0.48 | 1388 | 0.10 |
+| london | 1 | RTY | F1 DIA v_oi d5_up | Ep10_S30_Tnone_X120 | limit pullback 10 NQ-pts | 30 NQ-pts x 0.10 = 3.1 RTY pts | none | 120 min | 1102 | 643 | 1030 / 598 | 76 | 7273 | -2351 | 0.24 | 985 | 0.13 |
+| nyam | -1 | NQ | F6 GLD g_oi|0930|0830|med lo_up | Ep5_S30_Tnone_X15 | limit pullback 5 NQ-pts | 30 NQ-pts x 1.00 = 30.0 NQ pts | none | 15 min | 1957 | 931 | 1937 / 915 | 156 | 7145 | -5349 | 0.42 | 1667 | 0.12 |
+| nyam | -1 | NQ | F6 GLD g_oi|0930|0830|med lo_up | Ep3_S30_Tnone_X15 | limit pullback 3 NQ-pts | 30 NQ-pts x 1.00 = 30.0 NQ pts | none | 15 min | 1774 | 827 | 1755 / 811 | 156 | 7145 | -5349 | 0.42 | 1667 | 0.12 |
 | nyam | -1 | RTY | F1 SPX v_oi d15_dn | Eb3_Sa1_T90_XSE | enter at +3 min if price moved in direction | 1 x ATR5 | 90 NQ-pts x 0.10 = 9.4 RTY pts | session end | 1767 | 690 | 1745 / 575 | 416 | 18668 | -6649 | 0.57 | 2477 | 0.05 |
-| nyam | -1 | RTY | F1 SPX v_oi d15_dn | Eb3_Sa1_T90_X120 | enter at +3 min if price moved in direction | 1 x ATR5 | 90 NQ-pts x 0.10 = 9.4 RTY pts | 120 min | 1767 | 690 | 1745 / 575 | 416 | 18668 | -6649 | 0.57 | 2477 | 0.05 |
-| nyam | -1 | RTY | F1 IWM v_oi hi_d | Eb5_S30_T60_XSE | enter at +5 min if price moved in direction | 30 NQ-pts x 0.10 = 3.1 RTY pts | 60 NQ-pts x 0.10 = 6.3 RTY pts | session end | 1703 | 1015 | 1672 / 970 | 183 | 16483 | -3872 | 0.58 | 2639 | 0.17 |
+| nyam | -1 | GC | F1 GDX c_dir zx_up | Eb3_S30_T60_X60 | enter at +3 min if price moved in direction | 30 NQ-pts x 0.19 = 5.7 GC pts | 60 NQ-pts x 0.19 = 11.4 GC pts | 60 min | 1492 | 702 | 1478 / 680 | 277 | 18374 | -5184 | 0.50 | 1629 | 0.30 |
+| nyam | -1 | YM | F6 IWM g_oi|1000|0930|med lo_dn | Emkt_S30_Ta2_XSE | market at t0+1s | 30 NQ-pts x 1.27 = 38.2 YM pts | 2 x ATR5 | session end | 1239 | 718 | 1219 / 695 | -30 | 10630 | -3726 | 0.33 | 1053 | 0.11 |
+| nyam | 1 | ES | F6 XLE g_oi|0930|0830|med lo_up | Emkt_S60_Tnone_XSE | market at t0+1s | 60 NQ-pts x 0.19 = 11.5 ES pts | none | session end | 1256 | 656 | 1226 / 575 | -51 | 12505 | -2679 | 0.30 | 1332 | 0.05 |
+| nyam | 1 | CL | F1 USO g_oi lo_d | Eb5_S45_Tnone_X60 | enter at +5 min if price moved in direction | 45 NQ-pts x 0.01 = 0.3 CL pts | none | 60 min | 1381 | 1073 | 1319 / 1018 | 587 | 3976 | -3976 | 0.48 | 1317 | 0.01 |
+| nyam | -1 | SI | F6 SLV g_dir|1000|0930|med lo_up | Ep10_Sa2_Tnone_XSE | limit pullback 10 NQ-pts | 2 x ATR5 | none | session end | 1450 | 750 | 1413 / 713 | -31 | 16289 | -4780 | 0.27 | 1059 | 0.06 |
 | nypm | -1 | NQ | F1 DIA g_dir d5_up | Ep10_Sa2_Tnone_XSE | limit pullback 10 NQ-pts | 2 x ATR5 | none | session end | 2014 | 1113 | 2000 / 1099 | 353 | 8533 | -3641 | 0.55 | 1724 | 0.10 |
-| nypm | -1 | NQ | F1 NDX c_dir d1_dn | Ep10_S60_Tnone_XSE | limit pullback 10 NQ-pts | 60 NQ-pts x 1.00 = 60.0 NQ pts | none | session end | 1473 | 974 | 1460 / 962 | 524 | 2738 | -1976 | 0.63 | 2049 | 0.33 |
-| nypm | -1 | NQ | F1 DIA g_dir d15_up | Ep5_Sa2_Tnone_XSE | limit pullback 5 NQ-pts | 2 x ATR5 | none | session end | 1334 | 415 | 1321 / 403 | -44 | 7376 | -2455 | 0.36 | 1662 | 0.98 |
+| nypm | -1 | NQ | F1 XLE c_dir d1_dn | Ep5_S30_Tnone_XSE | limit pullback 5 NQ-pts | 30 NQ-pts x 1.00 = 30.0 NQ pts | none | session end | 2679 | 1507 | 2659 / 1490 | 336 | 1527 | -1527 | 0.65 | 1457 | 0.01 |
+| nypm | -1 | NQ | F1 XLE c_dir d1_dn | Ep3_S30_Tnone_X120 | limit pullback 3 NQ-pts | 30 NQ-pts x 1.00 = 30.0 NQ pts | none | 120 min | 2399 | 1497 | 2378 / 1479 | 336 | 1527 | -1527 | 0.65 | 1457 | 0.01 |
+| nypm | -1 | ES | F1 XLE c_oi hi_d | Emkt_Sa1_Tnone_X120 | market at t0+1s | 1 x ATR5 | none | 120 min | 1632 | 1015 | 1562 / 962 | 368 | 2690 | -2690 | 0.41 | 1277 | 0.05 |
+| nypm | -1 | GC | F1 GLD v_vol hi_d | Eb1_Sa1_Ta1_XSE | enter at +1 min if price moved in direction | 1 x ATR5 | 1 x ATR5 | session end | 1556 | 958 | 1306 / 821 | 501 | 13233 | -3337 | 0.67 | 1854 | 0.66 |
+| nypm | 1 | CL | F1 XLE v_oi d60_dn | Eb5_Sa1_T90_XSE | enter at +5 min if price moved in direction | 1 x ATR5 | 90 NQ-pts x 0.01 = 0.6 CL pts | session end | 1258 | 724 | 990 / 558 | 268 | 4489 | -3510 | 0.50 | 1023 | 0.11 |
+| nypm | -1 | SI | F1 SLV v_oi d60_up | Emkt_Sa1_T30_X60 | market at t0+1s | 1 x ATR5 | 30 NQ-pts x 0.01 = 0.2 SI pts | 60 min | 1122 | 570 | 936 / 457 | 147 | 15149 | -8735 | 0.56 | 1121 | 0.10 |
+| nypm | -1 | YM | F1 NDX c_dir d5_dn | Emkt_S30_Tnone_XSE | market at t0+1s | 30 NQ-pts x 1.27 = 38.2 YM pts | none | session end | 1262 | 1061 | 1191 / 1009 | 53 | 2725 | -1374 | 0.27 | 1154 | 0.06 |
+| nypm | -1 | RTY | F1 IWM v_dir d60_up | Emkt_S45_Tnone_XSE | market at t0+1s | 45 NQ-pts x 0.10 = 4.7 RTY pts | none | session end | 1081 | 448 | 866 / 324 | 32 | 8819 | -3990 | 0.27 | 1422 | 0.97 |
+| pit | 1 | CL | F2 XOP oi|magnet touch_dn | Emkt_S45_Tnone_X120 | market at t0+1s | 45 NQ-pts x 0.01 = 0.3 CL pts | none | 120 min | n/a | n/a | n/a / n/a | n/a | n/a | n/a | n/a | n/a | 0.01 |
+| pit | 1 | CL | F2 XOP oi|magnet touch_dn | Emkt_S60_Tnone_XSE | market at t0+1s | 60 NQ-pts x 0.01 = 0.4 CL pts | none | session end | n/a | n/a | n/a / n/a | n/a | n/a | n/a | n/a | n/a | 0.01 |
+| pit | 1 | CL | F1 XOP v_vol d5_up | Eb1_S45_T60_XSE | enter at +1 min if price moved in direction | 45 NQ-pts x 0.01 = 0.3 CL pts | 60 NQ-pts x 0.01 = 0.4 CL pts | session end | n/a | n/a | n/a / n/a | n/a | n/a | n/a | n/a | n/a | 0.01 |
 | pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_X60 | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | 60 min | 1073 | 352 | 961 / 286 | 250 | 3773 | -1417 | 0.35 | 458 | 0.01 |
-| pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_XSE | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | session end | 1073 | 352 | 961 / 286 | 250 | 3773 | -1417 | 0.35 | 458 | 0.01 |
 | pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_X120 | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | 120 min | 1073 | 352 | 961 / 286 | 250 | 3773 | -1417 | 0.35 | 458 | 0.01 |
+| pre | -1 | NQ | F1 SPX v_oi lo_d | Emkt_S30_T90_XSE | market at t0+1s | 30 NQ-pts x 1.00 = 30.0 NQ pts | 90 NQ-pts x 1.00 = 90.0 NQ pts | session end | 1073 | 352 | 961 / 286 | 250 | 3773 | -1417 | 0.35 | 458 | 0.01 |
+| pre | -1 | YM | F6 SPY g_oi|0830|0200|med lo_up | Eb1_Sa1_T45_X30 | enter at +1 min if price moved in direction | 1 x ATR5 | 45 NQ-pts x 1.27 = 57.2 YM pts | 30 min | 867 | 377 | 853 / 360 | 48 | 9801 | -1753 | 0.34 | 580 | 0.04 |
+| pre | 1 | ES | F1 GDX g_oi lo_d | Eb1_Sa1_Tnone_X15 | enter at +1 min if price moved in direction | 1 x ATR5 | none | 15 min | 704 | 326 | 618 / 273 | 10 | 4333 | -2438 | 0.47 | 386 | 0.02 |
+| pre | -1 | SI | F6 SLV g_oi|0830|0200|sign hi_up | Eb1_S90_Tnone_X30 | enter at +1 min if price moved in direction | 90 NQ-pts x 0.01 = 0.5 SI pts | none | 30 min | 670 | 97 | 632 / 59 | -73 | 16272 | -6888 | 0.34 | 834 | 0.26 |
+| pre | 1 | GC | F2 GLD vol|magnet touch_dn | Emkt_S30_Tnone_X30 | market at t0+1s | 30 NQ-pts x 0.19 = 5.7 GC pts | none | 30 min | 940 | 372 | 537 / 157 | 161 | 5426 | -3681 | 0.35 | 436 | 0.02 |
+| pre | -1 | RTY | F1 SPY g_oi hi_d | Emkt_Sa1_Tnone_X120 | market at t0+1s | 1 x ATR5 | none | 120 min | 1245 | 294 | 942 / 113 | 48 | 6259 | -2545 | 0.35 | 638 | 0.04 |
+| pre | -1 | CL | FE USO c_oi|data0830 lo_up | Eb1_S45_Tnone_X15 | enter at +1 min if price moved in direction | 45 NQ-pts x 0.01 = 0.3 CL pts | none | 15 min | 529 | 194 | 471 / 146 | 63 | 5215 | -2651 | 0.42 | 997 | 0.06 |
 
 ## 3b. First-order joint (finalist weekly $ added to the live stack S1B-COMB weekly, own lots; exact-engine joint via TP sets TL3_UW_* follows)
 | finalist id | corr KB/PE/SM/HM/MV/PB/OD | corr stack | stack maxDD L6M -> with | stack worst wk L6M -> with | cand mean L6M | weeks trading |
 |--|--|--|--|--|--|--|
+| F1_CL_USO_g_oi_lo_d_nyam_1_Eb5_S45_Tnone_X60 | -0.14/-0.10/0.06/-0.08/-0.10/-0.13/0.05 | -0.12 | 79907 -> 79907 | -62941 -> -55865 | 1339 | 46 |
+| F1_CL_XLE_v_oi_d60_dn_nypm_1_Eb5_Sa1_T90_XSE | -0.14/0.06/0.11/0.03/-0.02/0.03/0.06 | 0.04 | 79907 -> 77634 | -62941 -> -62827 | 1252 | 39 |
+| F1_CL_XOP_v_vol_d5_up_pit_1_Eb1_S45_T60_XSE | n/a/n/a/n/a/n/a/n/a/n/a/n/a | n/a | 79907 -> 79907 | -62941 -> -62941 | 0 | 0 |
+| F1_ES_GDX_g_oi_lo_d_pre_1_Eb1_Sa1_Tnone_X15 | 0.03/0.01/-0.03/0.08/-0.01/-0.13/-0.18 | -0.00 | 79907 -> 78961 | -62941 -> -62941 | 681 | 21 |
 | F1_ES_QQQ_g_oi_d1_up_london_1_Ep10_Sa2_T90_XSE | 0.08/0.07/0.04/-0.10/-0.16/0.06/0.01 | 0.04 | 79907 -> 79727 | -62941 -> -64220 | 1130 | 42 |
 | F1_ES_QQQ_g_oi_d1_up_london_1_Ep10_Sa2_Tnone_X120 | 0.07/0.14/0.10/-0.09/-0.06/0.09/0.02 | 0.12 | 79907 -> 79727 | -62941 -> -64220 | 1173 | 42 |
 | F1_ES_QQQ_g_oi_d1_up_london_1_Ep10_Sa2_Tnone_XSE | 0.07/0.14/0.10/-0.09/-0.06/0.09/0.02 | 0.12 | 79907 -> 79727 | -62941 -> -64220 | 1173 | 42 |
+| F1_ES_XLE_c_oi_hi_d_nypm_-1_Emkt_Sa1_Tnone_X120 | -0.08/0.00/-0.10/0.04/-0.08/0.03/-0.11 | -0.05 | 79907 -> 79907 | -62941 -> -64054 | 1747 | 32 |
+| F1_GC_GDX_c_dir_zx_up_nyam_-1_Eb3_S30_T60_X60 | 0.02/0.05/0.03/0.08/0.03/-0.07/-0.06 | 0.06 | 79907 -> 78807 | -62941 -> -60668 | 1374 | 73 |
+| F1_GC_GLD_v_vol_hi_d_nypm_-1_Eb1_Sa1_Ta1_XSE | 0.11/0.11/-0.01/-0.01/-0.03/0.07/-0.06 | 0.10 | 79907 -> 76177 | -62941 -> -64381 | 1622 | 75 |
 | F1_NQ_DIA_g_dir_d15_up_nypm_-1_Ep5_Sa2_Tnone_XSE | 0.01/0.12/-0.02/0.14/0.03/0.04/-0.08 | 0.11 | 79907 -> 79940 | -62941 -> -63988 | 1385 | 84 |
 | F1_NQ_DIA_g_dir_d5_up_nypm_-1_Ep10_Sa2_Tnone_XSE | 0.07/0.21/0.15/0.10/0.04/0.11/-0.10 | 0.22 | 79907 -> 81378 | -62941 -> -61260 | 2091 | 86 |
 | F1_NQ_NDX_c_dir_d1_dn_nypm_-1_Ep10_S45_Tnone_XSE | 0.03/0.11/0.14/0.05/-0.11/0.10/-0.15 | 0.10 | 79907 -> 79194 | -62941 -> -63855 | 1196 | 61 |
@@ -133,17 +170,46 @@ Spec decoding: cell Ex_Sy_Tz_Xw = entry mode x, stop y, target z, time exit w (N
 | F1_NQ_SPX_v_oi_lo_d_pre_-1_Emkt_S30_T90_X60 | 0.13/0.08/-0.02/-0.02/0.11/-0.10/-0.08 | 0.08 | 79907 -> 79907 | -62941 -> -59351 | 1117 | 73 |
 | F1_NQ_SPX_v_oi_lo_d_pre_-1_Emkt_S30_T90_XSE | 0.13/0.08/-0.02/-0.02/0.11/-0.10/-0.08 | 0.08 | 79907 -> 79907 | -62941 -> -59351 | 1117 | 73 |
 | F1_NQ_SPY_v_vol_d15_up_nypm_-1_Ep10_Sa2_T60_XSE | 0.03/0.02/0.11/0.10/-0.02/0.01/-0.05 | 0.05 | 79907 -> 76926 | -62941 -> -60551 | 1229 | 97 |
+| F1_NQ_XLE_c_dir_d1_dn_nypm_-1_Ep3_S30_Tnone_X120 | -0.03/-0.01/0.02/-0.02/-0.02/-0.00/-0.15 | -0.02 | 79907 -> 80196 | -62941 -> -62941 | 2491 | 58 |
+| F1_NQ_XLE_c_dir_d1_dn_nypm_-1_Ep5_S30_Tnone_XSE | 0.06/0.02/0.11/0.04/0.07/0.07/-0.13 | 0.07 | 79907 -> 80036 | -62941 -> -62941 | 2783 | 55 |
+| F1_RTY_DIA_v_oi_d5_up_london_1_Ep10_S30_Tnone_X120 | 0.06/0.04/0.06/0.09/0.01/-0.04/-0.03 | 0.07 | 79907 -> 79923 | -62941 -> -62941 | 1196 | 35 |
+| F1_RTY_IWM_v_dir_d60_up_nypm_-1_Emkt_S45_Tnone_XSE | 0.01/0.03/0.05/0.02/-0.06/0.19/-0.09 | 0.04 | 79907 -> 79294 | -62941 -> -62941 | 1122 | 56 |
 | F1_RTY_IWM_v_oi_hi_d_nyam_-1_Eb5_S30_T60_XSE | 0.01/0.15/0.07/0.09/-0.13/0.14/0.03 | 0.13 | 79907 -> 78774 | -62941 -> -58014 | 1710 | 97 |
 | F1_RTY_SPX_v_oi_d15_dn_nyam_-1_Eb3_Sa1_T90_X120 | 0.12/0.06/-0.03/0.04/0.06/0.02/0.11 | 0.08 | 79907 -> 78606 | -62941 -> -57369 | 1688 | 102 |
 | F1_RTY_SPX_v_oi_d15_dn_nyam_-1_Eb3_Sa1_T90_XSE | 0.12/0.06/-0.03/0.04/0.07/0.02/0.11 | 0.08 | 79907 -> 78606 | -62941 -> -57369 | 1688 | 102 |
+| F1_RTY_SPY_g_oi_hi_d_pre_-1_Emkt_Sa1_Tnone_X120 | 0.15/0.06/-0.00/0.08/0.04/-0.04/0.04 | 0.09 | 79907 -> 79514 | -62941 -> -64123 | 1195 | 76 |
+| F1_SI_SLV_v_oi_d60_up_nypm_-1_Emkt_Sa1_T30_X60 | 0.01/0.15/-0.03/0.02/0.02/0.03/-0.10 | 0.11 | 79907 -> 77179 | -62941 -> -62941 | 1153 | 58 |
+| F1_YM_NDX_c_dir_d5_dn_nypm_-1_Emkt_S30_Tnone_XSE | 0.05/0.09/-0.01/-0.06/-0.04/0.09/-0.05 | 0.07 | 79907 -> 79996 | -62941 -> -64145 | 1247 | 31 |
 | F1_YM_SPY_v_oi_lo_d_london_1_Emkt_Sa1_Tnone_X120 | 0.05/-0.06/0.07/0.03/-0.11/-0.07/-0.17 | -0.04 | 79907 -> 79907 | -62941 -> -55540 | 1260 | 63 |
 | F1_YM_SPY_v_oi_lo_d_london_1_Emkt_Sa1_Tnone_XSE | 0.05/-0.06/0.07/0.03/-0.11/-0.07/-0.17 | -0.04 | 79907 -> 79907 | -62941 -> -55540 | 1260 | 63 |
+| F2_CL_XOP_oi-magnet_touch_dn_pit_1_Emkt_S45_Tnone_X120 | n/a/n/a/n/a/n/a/n/a/n/a/n/a | n/a | 79907 -> 79907 | -62941 -> -62941 | 0 | 0 |
+| F2_CL_XOP_oi-magnet_touch_dn_pit_1_Emkt_S60_Tnone_XSE | n/a/n/a/n/a/n/a/n/a/n/a/n/a | n/a | 79907 -> 79907 | -62941 -> -62941 | 0 | 0 |
+| F2_GC_GLD_vol-flip_touch_dn_london_1_Ep10_S30_Ta2_X30 | 0.04/-0.01/-0.05/0.03/-0.05/0.02/0.07 | -0.01 | 79907 -> 77560 | -62941 -> -63943 | 1054 | 53 |
+| F2_GC_GLD_vol-magnet_touch_dn_pre_1_Emkt_S30_Tnone_X30 | 0.02/-0.01/0.06/0.00/-0.09/0.01/-0.09 | -0.01 | 79907 -> 79776 | -62941 -> -62941 | 931 | 42 |
 | F2_NQ_SPX_oi-flip_touch_up_asia_1_Eb3_Sa1_T90_X120 | -0.05/-0.01/0.01/0.11/0.06/0.06/-0.01 | 0.01 | 79907 -> 79907 | -62941 -> -58836 | 1444 | 52 |
 | F2_NQ_SPX_oi-flip_touch_up_asia_1_Eb3_Sa1_Tnone_X120 | -0.04/0.05/0.04/0.11/0.08/0.05/0.01 | 0.07 | 79907 -> 79907 | -62941 -> -59148 | 1574 | 52 |
+| F6_ES_XLE_g_oi-0930-0830-med_lo_up_nyam_1_Emkt_S60_Tnone_XSE | 0.12/0.02/0.01/0.05/0.06/-0.06/0.13 | 0.06 | 79907 -> 79907 | -62941 -> -64125 | 925 | 37 |
+| F6_NQ_GLD_g_oi-0930-0830-med_lo_up_nyam_-1_Ep3_S30_Tnone_X15 | -0.07/0.18/0.01/0.14/-0.15/0.14/-0.00 | 0.12 | 79907 -> 81135 | -62941 -> -57811 | 1795 | 37 |
+| F6_NQ_GLD_g_oi-0930-0830-med_lo_up_nyam_-1_Ep5_S30_Tnone_X15 | -0.08/0.19/0.01/0.15/-0.14/0.14/-0.00 | 0.13 | 79907 -> 81135 | -62941 -> -57731 | 1985 | 37 |
+| F6_SI_SLV_g_dir-1000-0930-med_lo_up_nyam_-1_Ep10_Sa2_Tnone_XSE | 0.08/-0.02/0.04/0.03/-0.13/0.00/0.09 | 0.00 | 79907 -> 81773 | -62941 -> -63845 | 1506 | 52 |
+| F6_SI_SLV_g_oi-0830-0200-sign_hi_up_pre_-1_Eb1_S90_Tnone_X30 | 0.09/0.05/-0.07/0.06/-0.02/-0.09/-0.16 | 0.03 | 79907 -> 79821 | -62941 -> -61721 | 692 | 52 |
+| F6_YM_IWM_g_oi-1000-0930-med_lo_dn_nyam_-1_Emkt_S30_Ta2_XSE | -0.01/-0.08/0.04/0.03/-0.03/-0.06/0.01 | -0.05 | 79907 -> 79821 | -62941 -> -59722 | 1194 | 62 |
+| F6_YM_SPY_g_oi-0830-0200-med_lo_up_pre_-1_Eb1_Sa1_T45_X30 | -0.11/-0.10/-0.04/0.13/-0.18/-0.00/0.01 | -0.12 | 79907 -> 75319 | -62941 -> -62941 | 901 | 41 |
+| F7_CL_USO_c_oi-asia1805_chg_dn_asia_-1_Eb1_Sa2_T90_XSE | -0.06/0.02/0.09/0.01/-0.06/0.11/-0.02 | 0.02 | 79907 -> 81217 | -62941 -> -62941 | 1228 | 60 |
+| F7_CL_XOP_c_dir-lon0200_chg_up_london_-1_Eb5_S60_T90_XSE | -0.05/-0.07/-0.03/0.05/-0.04/-0.04/-0.03 | -0.07 | 79907 -> 78072 | -62941 -> -61106 | 1187 | 55 |
 | F7_ES_QQQ_g_dir-asia1805_med_hi_asia_-1_Eb3_S45_Tnone_XSE | -0.01/0.17/0.11/0.11/0.10/0.09/0.01 | 0.18 | 79907 -> 79907 | -62941 -> -64286 | 1375 | 74 |
+| F7_ES_XOP_c_oi-asia1805_med_hi_asia_1_Eb5_S30_Tnone_XSE | 0.11/0.11/-0.01/0.06/0.06/0.17/0.05 | 0.13 | 79907 -> 79907 | -62941 -> -64160 | 1198 | 40 |
+| F7_GC_GLD_v_oi-asia1805_med_lo_asia_-1_Ep5_S30_Tnone_XSE | 0.03/0.02/-0.01/0.18/-0.08/0.14/-0.07 | 0.03 | 79907 -> 79907 | -62941 -> -60746 | 2390 | 52 |
+| F7_NQ_SLV_v_oi-lon0200_med_hi_london_1_Ep5_S30_T90_XSE | -0.19/-0.12/-0.00/-0.07/-0.16/0.02/0.06 | -0.16 | 79907 -> 79821 | -62941 -> -54570 | 1087 | 41 |
+| F7_RTY_SPY_c_oi-asia1805_med_hi_asia_-1_Emkt_S30_Ta2_XSE | 0.03/-0.03/0.05/-0.03/0.11/-0.10/-0.08 | -0.01 | 79907 -> 78124 | -62941 -> -57799 | 1252 | 102 |
+| F7_SI_SLV_v_oi-asia1805_med_hi_asia_1_Ep5_S90_T60_XSE | -0.09/0.10/-0.11/0.05/0.01/0.06/-0.05 | 0.04 | 79907 -> 79821 | -62941 -> -57982 | 1045 | 32 |
+| F7_YM_NDX_g_vol-asia1805_med_hi_asia_1_Eb5_S45_Tnone_XSE | 0.01/0.12/0.00/0.13/0.16/0.20/0.03 | 0.15 | 79907 -> 77765 | -62941 -> -64125 | 802 | 80 |
 | FEB_CL_NONE_cl_pit_open_all_pit_1_Emkt_S90_Tnone_XSE | n/a/n/a/n/a/n/a/n/a/n/a/n/a | n/a | 79907 -> 79907 | -62941 -> -62941 | 0 | 0 |
 | FEB_CL_NONE_ny_open_dn_pit_1_Emkt_S45_Tnone_XSE | n/a/n/a/n/a/n/a/n/a/n/a/n/a | n/a | 79907 -> 79907 | -62941 -> -62941 | 0 | 0 |
 | FEB_CL_NONE_ny_open_dn_pit_1_Emkt_Sa2_Tnone_XSE | n/a/n/a/n/a/n/a/n/a/n/a/n/a | n/a | 79907 -> 79907 | -62941 -> -62941 | 0 | 0 |
+| FE_CL_USO_c_oi-data0830_lo_up_pre_-1_Eb1_S45_Tnone_X15 | -0.04/0.00/0.03/0.03/0.04/0.01/-0.02 | 0.01 | 79907 -> 79821 | -62941 -> -62617 | 493 | 42 |
+| FE_SI_SLV_g_oi-lbma_silver_hi_dn_london_1_Ep5_Sa2_T30_X120 | -0.04/0.08/0.04/0.07/0.09/-0.02/-0.12 | 0.07 | 79907 -> 78129 | -62941 -> -62117 | 1292 | 58 |
+| FE_SI_SLV_g_oi-lbma_silver_hi_dn_london_1_Ep5_Sa2_T30_XSE | -0.04/0.08/0.04/0.07/0.09/-0.02/-0.12 | 0.07 | 79907 -> 78129 | -62941 -> -62117 | 1292 | 58 |
 
 ## 6. No-UW baseline of the F6/F7 entry clocks (same harness/grid/gate; F7B = every business day at the clock, F6B = price move only) vs the UW-conditioned tables
 | instrument | clock family | no-UW baseline: groups / gated (share) / max recents / best Calmar | UW-conditioned: groups / gated (share) / max recents / best Calmar |

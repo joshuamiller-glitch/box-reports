@@ -1,12 +1,12 @@
-# DS3_UW_WIDE - Unusual Whales WIDE program (W-UW2). Rebuilt 2026-11-13T20:15:48Z by code/th_uw/uw_page.py (every 3 h). Research only, shadow, NO PASS claim.
+# DS3_UW_WIDE - Unusual Whales WIDE program (W-UW2). Rebuilt 2026-11-13T23:16:08Z by code/th_uw/uw_page.py (every 3 h). Research only, shadow, NO PASS claim.
 Rule: best candidate per use is always named with its honest strength; "null q95" = max over all cells of the group when the feature matrix is permuted within month (30-40 draws), so recents below it is chance-level. Windows: L1M L3M L6M HOLD PREUW (PRE clipped to the 2024-10-01 UW start); X' has NO UW data (history starts 2024-10); first-order $/wk, history unmodified, fees in net_fee. Screens are in-sample on thresholds (HOLD quantiles). Gain sign: E skip = -pnl of flagged entries, press = +0.5x pnl (size x1.5), K/Q hold = hold outcome minus actual at the cut/clip.
 
 ## 1. Status (what finished / running / died)
 - screen (first read, features A regime, B levels, C Tide, D charm/vanna; RTH) and screen2 (WIDE: 1/5/15/60-min deltas, 10:00/10:30 regime, pre-market/prior-close LAST priors, Tide extremes/divergence; scopes rth/late/asia/london): FINISHED for JN05W2, JN05W2J, LPB_BASE (screen2 finished ~02:00Z 11-13; nobody read it until 14:15Z: lead watcher bug).
-- pull IV (volatility stats SPX/NDX/QQQ/SPY): 4692 files under /mnt/l2/l2vast/uw (pull finished; features from them NOT yet screened)
+- pull IV (volatility stats SPX/NDX/QQQ/SPY): 6234 files under /mnt/l2/l2vast/uw (pull finished; features from them NOT yet screened)
 - pull dark pool price levels (QQQ SPY + 8 NQ weights, 260 d): 2600 files under /mnt/l2/l2vast/uw (pull finished; features from them NOT yet screened)
 - identity gate: TL3_UW_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL; TL3J_UW_ID 202610: 658 trades net 23596.16 vs JN05W2J 658 net 23596.16 -> IDENTICAL
-- exact sets (TP engine, one set per job, tag UW): TL3J_UW_ID: 1 months; TL3J_UW_KLDN_HOLD: 6 months; TL3J_UW_NDXCA_SK: 6 months; TL3J_UW_SPXVDIR_PR: 12 months; TL3_UW_ID: 1 months; TL3_UW_KLDN_HOLD: 6 months; TL3_UW_NDXCA_SK: 6 months; TL3_UW_NDXCA_SKP7: 6 months; TL3_UW_QQQGD15_PR: 12 months; TL3_UW_QQQGD15_SK: 12 months; TL3_UW_TDNV_PR: 12 months
+- exact sets (TP engine, one set per job, tag UW): TL3J_UW_ID: 1 months; TL3J_UW_KLDN_HOLD: 6 months; TL3J_UW_NDXCA_SK: 6 months; TL3J_UW_SPXVDIR_PR: 12 months; TL3_UW_ID: 1 months; TL3_UW_INJID: 1 months; TL3_UW_INJ_ASIA: 21 months; TL3_UW_INJ_NDXB: 21 months; TL3_UW_INJ_NYAM: 21 months; TL3_UW_INJ_PRE: 21 months; TL3_UW_INJ_PRE2: 6 months; TL3_UW_KLDN_HOLD: 6 months; TL3_UW_NDXCA_SK: 6 months; TL3_UW_NDXCA_SKP7: 6 months; TL3_UW_QQQGD15_PR: 12 months; TL3_UW_QQQGD15_SK: 12 months; TL3_UW_TDNV_PR: 12 months
 - died/blocked: nothing died. Overnight the four first sets waited in TOOLS (box load ~40, cap 25); admitted 03:03Z-~11:00Z, L6M finished; HOLD months started 14:25Z after the UW priority tag. 0DTE walls: history is end-of-day only (not causal); expected-move inputs pulled but not yet screened.
 
 ## 2. Best candidate per use per base (screen2, ranked by recents = (L6M+HOLD)/2 $/wk; top 3 per use/action; LEAD = recents > null q95, L3M>0, both L6M halves > 0)
@@ -235,6 +235,50 @@ TL3J_UW_SPXVDIR_PR vs JN05W2J
 2  TL3J_UW_SPXVDIR_PR    L6M  -1.5        87.5      507.4  24331.9  23965.2   21372.2     14.0      6.0         14.0          6.0        359            363      12   244437.1    252234.4                0         21
 3  TL3J_UW_SPXVDIR_PR   HOLD -16.2       592.9      362.3  50677.1  43622.0   14767.6     14.0      6.0         14.0          6.0        648            656      12   244437.1    252234.4                0         21
 trend {'best5_ref': 244437.14000000796, 'best5_cell': 252234.36000000814, 'win_turn_losing': 0, 'win_weeks': 21}
+
+
+TL3_UW_INJ_ASIA vs JN05W2
+              cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UW_INJ_ASIA    L1M  0.0         0.0        0.0  36370.5  36370.5     606.3     13.0      6.0         13.0          6.0         50             50      21   316288.0    317781.2                0         20
+1  TL3_UW_INJ_ASIA    L3M  0.0        -7.8      -91.3  36370.5  36370.5   15923.9     13.0      6.0         13.0          6.0        162            161      21   316288.0    317781.2                0         20
+2  TL3_UW_INJ_ASIA    L6M  0.0         2.3       84.8  36370.5  36370.5   25221.7     13.0      6.0         13.0          6.0        351            350      21   316288.0    317781.2                0         20
+3  TL3_UW_INJ_ASIA   HOLD  0.8        97.7       52.5  62701.3  63185.1   17541.8     13.0      6.0         13.0          6.0        633            631      21   316288.0    317781.2                0         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 317781.1800000097, 'win_turn_losing': 0, 'win_weeks': 20}
+
+
+TL3_UW_INJ_NDXB vs JN05W2
+              cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UW_INJ_NDXB    L1M  1.5       723.8      977.0  35816.7  36370.5    1583.3     13.0      6.0         13.0          6.0         50             50      21   316288.0    320345.6                0         20
+1  TL3_UW_INJ_NDXB    L3M  1.5       404.9      550.4  35816.7  36370.5   16565.6     13.0      6.0         13.0          6.0        161            161      21   316288.0    320345.6                0         20
+2  TL3_UW_INJ_NDXB    L6M  1.5       645.5      803.8  35816.7  36370.5   25940.7     13.0      6.0         13.0          6.0        351            350      21   316288.0    320345.6                0         20
+3  TL3_UW_INJ_NDXB   HOLD  2.4       768.0      844.8  61697.5  63185.1   18334.1     13.0      6.0         13.0          6.0        633            631      21   316288.0    320345.6                0         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 320345.56000000966, 'win_turn_losing': 0, 'win_weeks': 20}
+
+
+TL3_UW_INJ_NYAM vs JN05W2
+              cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UW_INJ_NYAM    L1M  0.0       199.2      537.6  36370.5  36370.5    1143.9     13.0      6.0         13.0          6.0         50             50      21   316288.0    321988.5                0         20
+1  TL3_UW_INJ_NYAM    L3M  0.0        80.7      269.9  36370.5  36370.5   16285.1     13.0      6.0         13.0          6.0        161            161      21   316288.0    321988.5                0         20
+2  TL3_UW_INJ_NYAM    L6M  0.0       378.3      550.8  36370.5  36370.5   25687.7     13.0      6.0         13.0          6.0        350            350      21   316288.0    321988.5                0         20
+3  TL3_UW_INJ_NYAM   HOLD -1.9       150.7      241.3  64372.5  63185.1   17730.7     13.0      6.0         13.0          6.0        632            631      21   316288.0    321988.5                0         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 321988.5400000097, 'win_turn_losing': 0, 'win_weeks': 20}
+
+
+TL3_UW_INJ_PRE vs JN05W2
+             cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UW_INJ_PRE    L1M  1.4       416.0      562.0  35847.9  36370.5    1168.3     13.0      6.0         13.0          6.0         50             50      21   316288.0    315085.6                0         20
+1  TL3_UW_INJ_PRE    L3M  1.4       183.0      354.0  35847.9  36370.5   16369.2     13.0      6.0         13.0          6.0        161            161      21   316288.0    315085.6                0         20
+2  TL3_UW_INJ_PRE    L6M  1.4        29.3      120.7  35847.9  36370.5   25257.6     13.0      6.0         13.0          6.0        350            350      21   316288.0    315085.6                0         20
+3  TL3_UW_INJ_PRE   HOLD  0.0       116.5      163.9  63185.1  63185.1   17653.2     13.0      6.0         13.0          6.0        630            631      21   316288.0    315085.6                0         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 315085.62000000966, 'win_turn_losing': 0, 'win_weeks': 20}
+
+
+TL3_UW_INJ_PRE2 vs JN05W2
+              cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UW_INJ_PRE2    L1M  1.4       416.0      562.0  35847.9  36370.5    1168.3     13.0      6.0         13.0          6.0         50             50       6   316288.0    315085.6                0         20
+1  TL3_UW_INJ_PRE2    L3M  1.4       183.0      354.0  35847.9  36370.5   16369.2     13.0      6.0         13.0          6.0        161            161       6   316288.0    315085.6                0         20
+2  TL3_UW_INJ_PRE2    L6M  1.4        29.3      120.7  35847.9  36370.5   25257.6     13.0      6.0         13.0          6.0        350            350       6   316288.0    315085.6                0         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 315085.62000000966, 'win_turn_losing': 0, 'win_weeks': 20}
 
 
 TL3_UW_KLDN_HOLD vs JN05W2
