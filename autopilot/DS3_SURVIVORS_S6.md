@@ -1,4 +1,4 @@
-# DS3_SURVIVORS_S6 - S6 desk-state cap, "stop trying when behind" (W-S), page 2026-11-13 06:44Z; Shadow only, no PASS claim; recents first, PRE/X' tolerant per rule 2a
+# DS3_SURVIVORS_S6 - S6 desk-state cap, "stop trying when behind" (W-S), page 2026-11-13 07:17Z; Shadow only, no PASS claim; recents first, PRE/X' tolerant per rule 2a
 
 Rule: skip every NEW entry of every book once the stack has closed >= N trades in the label day (17:00 ET roll) AND the stack day P&L is <= -2 R. Hook code/th_screens/scr_hooks.py (feature conj), one set per job, TP engine. Cells JN05W_S6_C22 / C18 / C14 on the live panel base (reference LPB_BASE) and JN05W_S6_C22_RM / C18_RM / C14_RM on JN04RM. The first-order screen (3.5 years, LPB trade list) is in DS3_SCREENS.md. Months present are stated per cell; a window is scored only when all its months are present.
 
@@ -141,7 +141,7 @@ TREND-WEEK CLAUSE (all 3.5 years, ): the reference's 5 best weeks sum to $+34708
 ## Acceptance test (acceptance_p7.py; judged on the months present, stated by the tool)
 ### JN05W_S6_C22
 ```
-ACCEPTANCE P7 JN05W_S6_C22  2026-11-13 06:44Z   (months 43: 202304..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C22  2026-11-13 07:17Z   (months 43: 202304..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2213 | 6 | 2.0 | 0.89 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -160,7 +160,7 @@ ACCEPT JN05W_S6_C22 FAIL fails=3/20
 ```
 ### JN05W_S6_C22_RM
 ```
-ACCEPTANCE P7 JN05W_S6_C22_RM  2026-11-13 06:44Z   (months 43: 202304..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C22_RM  2026-11-13 07:17Z   (months 43: 202304..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2213 | 6 | 2.0 | 0.89 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -179,7 +179,7 @@ ACCEPT JN05W_S6_C22_RM FAIL fails=4/20
 ```
 ### JN05W_S6_C22V19
 ```
-ACCEPTANCE P7 JN05W_S6_C22V19  2026-11-13 06:45Z   (months 43: 202304..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C22V19  2026-11-13 07:18Z   (months 43: 202304..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2213 | 6 | 2.0 | 0.89 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -198,7 +198,7 @@ ACCEPT JN05W_S6_C22V19 FAIL fails=3/20
 ```
 ### JN05W_S6_C22V19_RM
 ```
-ACCEPTANCE P7 JN05W_S6_C22V19_RM  2026-11-13 06:45Z   (months 43: 202304..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C22V19_RM  2026-11-13 07:18Z   (months 43: 202304..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2213 | 6 | 2.0 | 0.89 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -217,7 +217,7 @@ ACCEPT JN05W_S6_C22V19_RM FAIL fails=4/20
 ```
 ### JN05W_S6_C18
 ```
-ACCEPTANCE P7 JN05W_S6_C18  2026-11-13 06:45Z   (months 43: 202304..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C18  2026-11-13 07:18Z   (months 43: 202304..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2213 | 6 | 2.0 | 0.89 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -236,7 +236,7 @@ ACCEPT JN05W_S6_C18 FAIL fails=3/20
 ```
 ### JN05W_S6_C18_RM
 ```
-ACCEPTANCE P7 JN05W_S6_C18_RM  2026-11-13 06:45Z   (months 43: 202304..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C18_RM  2026-11-13 07:19Z   (months 43: 202304..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2213 | 6 | 2.0 | 0.89 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -255,7 +255,7 @@ ACCEPT JN05W_S6_C18_RM FAIL fails=4/20
 ```
 ### JN05W_S6_C14
 ```
-ACCEPTANCE P7 JN05W_S6_C14  2026-11-13 06:46Z   (months 43: 202304..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C14  2026-11-13 07:19Z   (months 43: 202304..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2213 | 6 | 2.0 | 0.89 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
@@ -274,7 +274,7 @@ ACCEPT JN05W_S6_C14 FAIL fails=3/20
 ```
 ### JN05W_S6_C14_RM
 ```
-ACCEPTANCE P7 JN05W_S6_C14_RM  2026-11-13 06:46Z   (months 43: 202304..202610; reference LPB_BASE months 43)
+ACCEPTANCE P7 JN05W_S6_C14_RM  2026-11-13 07:19Z   (months 43: 202304..202610; reference LPB_BASE months 43)
 | scope | who | sessions | max run | p95 | mean | sessions with run>=3 | n 3rd+ losers | $ lost on 3rd+ losers | entries 3rd+ attempt without new evidence (n / $) | losing 3rd+ no-evidence violations | bigger 2nd attempts |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all P7 | LPB_BASE (live ref) | 2213 | 6 | 2.0 | 0.89 | 48 | 57 | -136326 | 90 / -11382 | 53 | 110 |
