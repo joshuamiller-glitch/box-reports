@@ -1,6 +1,6 @@
 # DS3_SMART_A1 — T-SMART A1 (cut, then get back in), A6 (first trade sets the session), A7 (never green) — W-SM1
 
-Generated 2026-11-13 05:43 UTC. Exact engine (JN05W2 stack: live panel base + F3 + E1 + C22 + BR3S + FLAT45K), one set per job, shared-memory engine, hook code/th_smart1/sm1_hooks.py (outermost hooklist entry, no engine file touched). Shadow only, no PASS claim. Prereg autopilot/SMART_A1_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-13 06:13 UTC. Exact engine (JN05W2 stack: live panel base + F3 + E1 + C22 + BR3S + FLAT45K), one set per job, shared-memory engine, hook code/th_smart1/sm1_hooks.py (outermost hooklist entry, no engine file touched). Shadow only, no PASS claim. Prereg autopilot/SMART_A1_PREREG.md (sha in DECISIONS.md).
 
 **CAVEAT on every number here:** the engine P7/K7 state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). A1 depends on cuts firing, so it is reported in two worlds: **E world** = engine state cut on (reference = JN05W2, "the cut alone"; re-entry after StateCut/EarlyCut) and **N world** = every state-cut arm off and the F3 context cut removed, FLAT45K kept = flat/full-stop only (reference = SM_A1_NC0; re-entry after Stop/StopJoin/EarlyCut). SM_A1_NC1 = N world with FLAT45K also off = never cutting.
 
@@ -11,20 +11,20 @@ Thresholds: A1 trigger levels/ A7 pts are in points (lot independent); A6 is cou
 | set | ref | months | 5 best ref wks kept | winning wks turned losing | L6M cut % | L6M d mean/wk (all wks) | HOLD cut % | HOLD d mean/wk | WF cut / beat |
 |--|--|--|--|--|--|--|--|--|--|
 | SM_A1E_C10L | JN05W2 | 7 | 76% ($239k of $316k) | 1 of 20 | -41.9 | -5318 | - | - | - |
-| SM_A1E_L0L | JN05W2 | 7 | 100% ($318k of $316k) | 0 of 20 | -1.4 | -13 | - | - | - |
-| SM_A1E_XL | JN05W2 | 27 | 100% ($315k of $316k) | 0 of 20 | 0.0 | 508 | - | - | - |
+| SM_A1E_L0L | JN05W2 | 8 | 100% ($318k of $316k) | 0 of 20 | -1.4 | -13 | - | - | - |
+| SM_A1E_XL | JN05W2 | 32 | 100% ($315k of $316k) | 0 of 20 | 0.0 | 508 | -4.8 | 468 | - |
 | SM_A1N_C10L | SM_A1_NC0 | 7 | 60% ($181k of $302k) | 5 of 19 | -23.1 | -6326 | - | - | - |
-| SM_A1N_L0L | SM_A1_NC0 | 30 | 98% ($296k of $302k) | 0 of 19 | -13.8 | 195 | - | - | - |
-| SM_A1N_XL | SM_A1_NC0 | 8 | 97% ($293k of $302k) | 0 of 19 | -22.2 | -1040 | - | - | - |
+| SM_A1N_L0L | SM_A1_NC0 | 33 | 98% ($296k of $302k) | 0 of 19 | -13.8 | 195 | 19.4 | 511 | - |
+| SM_A1N_XL | SM_A1_NC0 | 9 | 97% ($293k of $302k) | 0 of 19 | -22.2 | -1040 | - | - | - |
 | SM_A1_ID | JN05W2 | 1 | (running) ||||||
-| SM_A1_NC0 | JN05W2 | 25 | 70% ($223k of $316k) | 2 of 20 | -51.3 | -6993 | - | - | - |
+| SM_A1_NC0 | JN05W2 | 28 | 70% ($223k of $316k) | 2 of 20 | -51.3 | -6993 | -56.9 | -3370 | - |
 | SM_A1_T | JN05W2 | 1 | (running) ||||||
 | SM_A6_freshNP7 | JN05W2 | 5 | (running) ||||||
-| SM_A6_halfALL | JN05W2 | 11 | 99% ($313k of $316k) | 0 of 20 | -5.2 | -1117 | - | - | - |
+| SM_A6_halfALL | JN05W2 | 12 | 99% ($313k of $316k) | 0 of 20 | -5.2 | -1117 | -0.4 | -1188 | - |
 | SM_A6_halfNP7 | JN05W2 | 4 | (running) ||||||
-| SM_A6_skipM7 | JN05W2 | 8 | 100% ($316k of $316k) | 0 of 20 | -4.0 | -407 | - | - | - |
-| SM_A6_skipNP7 | JN05W2 | 10 | 88% ($278k of $316k) | 2 of 20 | -5.1 | -4620 | - | - | - |
-| SM_A7_P7a | JN05W2 | 5 | (running) ||||||
+| SM_A6_skipM7 | JN05W2 | 10 | 100% ($316k of $316k) | 0 of 20 | -4.0 | -407 | - | - | - |
+| SM_A6_skipNP7 | JN05W2 | 11 | 88% ($278k of $316k) | 2 of 20 | -5.1 | -4620 | - | - | - |
+| SM_A7_P7a | JN05W2 | 6 | 88% ($278k of $316k) | 1 of 20 | 19.7 | -4317 | - | - | - |
 
 cut % = stack maxDD vs the reference (positive = shallower); d mean = all-weeks mean difference $/wk. Identity: SM_A1_ID (hook on, rules never fire) must equal JN05W2 trade for trade (see section 5).
 
