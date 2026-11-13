@@ -1,6 +1,6 @@
 # DS3_GAPS_G3 — PRESS THE TREND DAY (GAPS item G3) — W-G3
 
-Generated 2026-11-13 13:51Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (43/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (43/43). Months done per G3 set: 59 sets, 1347 month-runs.
+Generated 2026-11-13 14:12Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (43/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (43/43). Months done per G3 set: 59 sets, 1348 month-runs.
 
 **Caveat on every row:** the engine state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md); the N / NJ rows (state cut off) are the live-realistic world. Cells judged first on the trend-week clause (best 5 AND best 20 weeks) and drawdown.
 
@@ -225,6 +225,7 @@ Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL
 | G3_R3_all_L | JN05W2 | X' | 189332 | 193564 | 102.2 | 95.2 | 4 of 25 | 44 |
 | G3_R3_lf70_L | JN05W2 | X' | 189332 | 189722 | 100.2 | 100.7 | 0 of 25 | 44 |
 | G3_R3_sz15_L | JN05W2 | X' | 189332 | 202041 | 106.7 | 96.1 | 3 of 25 | 44 |
+| G3_R3_tg90_L | JN05W2 | X' | 189332 | 176590 | 93.3 | 100.7 | 0 of 25 | 44 |
 | G3_S2_all_L | JN05W2 | X' | 189332 | 185955 | 98.2 | 92.4 | 6 of 25 | 44 |
 | G3_S2_ct_L | JN05W2 | X' | 189332 | 211806 | 111.9 | 105.5 | 0 of 25 | 44 |
 | G3_S2_lf70_L | JN05W2 | X' | 189332 | 190117 | 100.4 | 100.6 | 0 of 25 | 44 |
@@ -317,11 +318,12 @@ Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL
 | G3_R3_sz15_L | X' | -1.3 | -1.4 | -847 | 2738 | 3585 | 43 |
 | G3_R3_sz15_N | L1M | -43.1 | 28.0 | 5233 | 3112 | -2121 | 6 |
 | G3_R3_sz15_N | L3M | -77.9 | 10.5 | 2880 | 17339 | 14459 | 6 |
-| G3_R3_tg90_L | HOLD | -0.8 | -5.2 | 872 | 18362 | 17489 | 41 |
-| G3_R3_tg90_L | L1M | 0.8 | -3.5 | 7788 | 8394 | 606 | 41 |
-| G3_R3_tg90_L | L3M | -15.3 | -20.4 | 2597 | 18612 | 16015 | 41 |
-| G3_R3_tg90_L | L6M | -15.3 | -20.4 | -352 | 24784 | 25137 | 41 |
-| G3_R3_tg90_L | PRE | -30.4 | -36.2 | -229 | 9939 | 10168 | 41 |
+| G3_R3_tg90_L | HOLD | -0.8 | -5.2 | 872 | 18362 | 17489 | 43 |
+| G3_R3_tg90_L | L1M | 0.8 | -3.5 | 7788 | 8394 | 606 | 43 |
+| G3_R3_tg90_L | L3M | -15.3 | -20.4 | 2597 | 18612 | 16015 | 43 |
+| G3_R3_tg90_L | L6M | -15.3 | -20.4 | -352 | 24784 | 25137 | 43 |
+| G3_R3_tg90_L | PRE | -30.4 | -36.2 | -229 | 9939 | 10168 | 43 |
+| G3_R3_tg90_L | X' | 15.8 | 12.1 | -30 | 3555 | 3585 | 43 |
 | G3_R3_tg90_N | L1M | 58.7 | 76.6 | 12976 | 10855 | -2121 | 6 |
 | G3_R3_tg90_N | L3M | -90.3 | -7.9 | 1462 | 15921 | 14459 | 6 |
 | G3_S2_all_L | HOLD | -100.5 | -118.4 | -567 | 16923 | 17489 | 43 |
@@ -490,6 +492,7 @@ Result: 598 trades net 25943.82 vs JN05W2 598 trades net 25943.82 -> **IDENTICAL
 | G3_R3_all_L | -10.8 | 421 | 5 | RECENT-ONLY (allow 15.0%, WF 5%) |
 | G3_R3_lf70_L | 1.3 | 49 | 29 | OK-PRIOR (allow 15.0%, WF 29%) |
 | G3_R3_sz15_L | -5.5 | 338 | 10 | OK-PRIOR (allow 15.0%, WF 10%) |
+| G3_R3_tg90_L | 0.0 | 287 | 14 | RECENT-ONLY (allow 15.0%, WF 14%) |
 | G3_S2_all_L | -23.9 | -551 | 15 | OK-PRIOR (allow 15.0%, WF 15%) |
 | G3_S2_ct_L | -0.2 | 279 | 34 | OK-PRIOR (allow 15.0%, WF 34%) |
 | G3_S2_lf70_L | 2.1 | -73 | 29 | OK-PRIOR (allow 15.0%, WF 29%) |

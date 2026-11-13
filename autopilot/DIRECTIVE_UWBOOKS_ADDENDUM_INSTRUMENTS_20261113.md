@@ -1,0 +1,7 @@
+ADDENDUM (user) to T-UWBOOKS — INSTRUMENTS. The books are not NQ-only. Score every trigger family on NQ, ES, RTY and YM (and MNQ/MES/M2K/MYM as the small-size version of each), each as its own book, session by session, same rules.
+- Match the trigger to the instrument first: SPX/SPY exposure, walls and flow -> ES; QQQ/NDX and megacap flow -> NQ; IWM exposure, walls and flow -> RTY (pull IWM from UW; it is on the current plan, no new spend); DIA if available -> YM. Then also test cross pairs (e.g. SPX trigger traded on NQ, QQQ trigger on RTY) and report which instrument carries each trigger best.
+- Relative-value books are in scope: when two indexes' readings disagree (e.g. QQQ gamma negative, SPX positive; Tide up in QQQ, down in IWM), test long one / short the other, sized by dollar volatility, intraday only.
+- Costs: each instrument on its own measured fees, tick value and slippage. Where we have no measured slip for ES/RTY/YM, use 1 tick per side as the base and 2 ticks as the stress label, and say so.
+- Stops, targets and pullback distances scale by each instrument's ATR against NQ's; do not reuse NQ point values.
+- Joint stage unchanged: every survivor is added to the live NQ stack, reporting weekly correlation with each live book and the change in stack DD and worst weeks. A book on ES/RTY/YM that is uncorrelated with the NQ stack is worth more than another NQ book with the same mean.
+- Data: use the ES/RTY/YM history already bought. If a needed series is missing, the existing T-CROSS authority covers it; quote anything beyond that, do not buy.
