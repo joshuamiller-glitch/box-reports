@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F2 — desk-state family (item 2) and winning-day protection (item 5) — W-F2
 
-Generated 2026-11-13 02:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
+Generated 2026-11-13 02:41Z. Shadow only, no PASS claim. Base sets: **L = JN05W2** (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, no WA_C1) and **J = JN05W2J** (the same five on JN04RM), both 43 / 43 months. Every cell below is the base plus ONE nf2 rule layer (outermost), reference = its own base on the same months. Prereg autopilot/NEXTF2_PREREG.md (sha line in DECISIONS.md). Exact engine, one set per job, TP engine; first-order screen only chose the cells (it overstates entry-stream rules).
 
 ## 0. Trend-week clause (first): sum of the base's 5 best weeks kept, and base winning weeks turned losing (per window)
 
@@ -20,6 +20,7 @@ Generated 2026-11-13 02:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_WD_fresh_3_J | JN05W2J | HOLD | 262552 | 113499 | 43.2 | 5 of 38 | 52 |
 | NF_D_WD_fresh_3_L | JN05W2 | HOLD | 340478 | 195598 | 57.4 | 5 of 37 | 52 |
 | NF_D_WD_half_3_L | JN05W2 | HOLD | 340478 | 318280 | 93.5 | 1 of 37 | 52 |
+| NF_D_WD_half_5_L | JN05W2 | HOLD | 340478 | 308667 | 90.7 | 0 of 37 | 52 |
 | NF_D_OB_best_m2_J | JN05W2J | L1M | 10523 | 20456 | 194.4 | 0 of 1 | 4 |
 | NF_D_OB_best_m2_L | JN05W2 | L1M | 2425 | 27271 | 1124.5 | 0 of 2 | 4 |
 | NF_D_PL_day_half_m1p5_J | JN05W2J | L1M | 10523 | -6709 | -63.8 | 0 of 1 | 4 |
@@ -138,9 +139,10 @@ Generated 2026-11-13 02:21Z. Shadow only, no PASS claim. Base sets: **L = JN05W2
 | NF_D_WD_half_3_L | L1M | 23.2 | 20.1 | -226 | 380 | 606 | 16 |
 | NF_D_WD_half_3_L | L3M | 12.8 | 9.3 | -2596 | 13419 | 16015 | 16 |
 | NF_D_WD_half_3_L | L6M | 12.8 | 9.3 | -1544 | 23593 | 25137 | 16 |
-| NF_D_WD_half_5_L | L1M | 19.2 | 14.1 | -1088 | -482 | 606 | 8 |
-| NF_D_WD_half_5_L | L3M | 19.2 | 14.1 | -2317 | 13698 | 16015 | 8 |
-| NF_D_WD_half_5_L | L6M | 19.2 | 14.1 | -1973 | 23164 | 25137 | 8 |
+| NF_D_WD_half_5_L | HOLD | -6.6 | -13.4 | -550 | 16940 | 17489 | 12 |
+| NF_D_WD_half_5_L | L1M | 19.2 | 14.1 | -1088 | -482 | 606 | 12 |
+| NF_D_WD_half_5_L | L3M | 19.2 | 14.1 | -2317 | 13698 | 16015 | 12 |
+| NF_D_WD_half_5_L | L6M | 19.2 | 14.1 | -1973 | 23164 | 25137 | 12 |
 
 ## 3. acceptance_p7 and behavioural scorecard (cells with all 43 months)
 
