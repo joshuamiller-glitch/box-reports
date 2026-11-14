@@ -1,4 +1,4 @@
-# DS3_EVENTCAL - macro event calendar + VIX for the no-UW benchmark (W-CAL). Rebuilt 2026-11-14T00:42Z by code/th_cal/cal_loop.sh (every 3 h). Research only, NO PASS claim.
+# DS3_EVENTCAL - macro event calendar + VIX for the no-UW benchmark (W-CAL). Rebuilt 2026-11-14T03:34Z by code/th_cal/cal_loop.sh (every 3 h). Research only, NO PASS claim.
 
 **Verdict: Calendar and VIX do not erase the UW range forecast: most of it survives. Of 42 watched session/input pairs (iv_term, flip, gamma, charm, vanna, tide x 7 sessions) 16 keep a YES over ATR+IV+DOW+events+VIX positive in L6M, L3M and H1 (asia/iv_term, asia/flip, asia/tide, london/iv_term, london/flip, pre/iv_term, nyam/iv_term, nyam/vanna, nyam2/iv_term, nyam2/flip, nypm/flip, nypm/gamma, nypm/tide, late/flip, late/gamma, late/tide); 4 keep a YES but not in all windows (london/tide, nyam/charm, nyam2/gamma, nyam2/vanna); 4 are relabelled "calendar proxy" (pre/flip, nyam2/charm, nypm/iv_term, late/iv_term); 17 are weak only; calendar and VIX add real gain by themselves only in pre and nypm (event flags). Range-class YES rows 98 (vs IV) -> 88 (vs CAL). No PASS.**
 
@@ -52,7 +52,7 @@
 
 ## 2b. VIX and VIX futures
 - Free daily history exists: Cboe public csv cdn.cboe.com/api/global/us_indices/daily_prices/{VIX,VIX3M,VIX9D,VVIX}_History.csv (VVIX close only) and VX futures settles from cdn.cboe.com/data/us/futures/market_statistics/historical_data/VX/VX_<expiry>.csv (117 contract files). Built into /mnt/l2/l2vast/_calendar/vix_daily.parquet (569 rows 2024-09-02..2026-11-13; vix_ / vix3m_ / vix9d_ OHLC, vvix_CLOSE, vx1, vx2, vx_slope, vx1_basis, vix_term, vix9d_term). Use the PRIOR trading day close only.
-- Last VIX close 18.70 on 2026-11-12; VX monthly contract per label is the file with the most rows (weekly files hold few rows); the dte columns are indicative only.
+- Last VIX close 19.30 on 2026-11-13; VX monthly contract per label is the file with the most rows (weekly files hold few rows); the dte columns are indicative only.
 
 ## 3. Forecast re-run: gain over ATR + IV + DOW (IV) vs over ATR + IV + DOW + event flags + VIX set (CAL)
 - Rows: 8302 (read x session x target x group). Same panel, same ridge walk-forward (min 120 d, refit every 10 trading days), same shifted-time null draws (20) and family null as W-UR1. Gains in percentage points of variance explained. IV = strict W-UR1 benchmark; CAL = IV + event flags (target session and day) + VIX set (prior close).

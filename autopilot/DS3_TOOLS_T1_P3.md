@@ -1,4 +1,4 @@
-# DS3_TOOLS_T1_P3 — T1 MBO standing program (W-TL1b). Page 3, rebuilt 2026-11-13T23:32Z by code/th_tools/t1_p3_driver.sh every 4 h. Research only, Shadow, no PASS claim.
+# DS3_TOOLS_T1_P3 — T1 MBO standing program (W-TL1b). Page 3, rebuilt 2026-11-14T03:36Z by code/th_tools/t1_p3_driver.sh every 4 h. Research only, Shadow, no PASS claim.
 
 ## 0. Status plain sentence
 H5 (iceberg pattern), H6 (queue / passive fill with the real touch and print-through), H7 (learned 5-60 s signed move, distilled to plain conditions, timing only) and H8 (two-event combos) are tested on L3M (78 days, JN05W2 trade list, NOCUT base repeated). See the tables: a flag/condition is called only if it clears placebo + day-block t + repeat across bases; otherwise NULL. Nothing is recommended for live. Data fact the reader needs: NQ.v.0 books in 2026 are THIN: median spread at the signal second 4 ticks (1 point), median queue at the touch 1 lot (orders at touch 1) — verified by an independent dict replay of the raw records (kernel = replay at 9/9 checked seconds). So 'queue position' is mostly a spread question, not a queue question.

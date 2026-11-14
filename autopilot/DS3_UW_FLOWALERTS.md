@@ -1,8 +1,8 @@
 # DS3_UW_FLOWALERTS - UW flow alerts as entry triggers and filters (W-FA)
 
-**VERDICT: weak, no PASS - first-order streams (20+ groups, intraday and carry, NQ and ES): 292057 sign-gate passes vs 276802 in the shifted-event placebos (ratio 1.06), best real cell does not beat the best placebo cell in most sessions; exact engine (JN05W2 all layers ON): 5 of 11 candidate sets pass the tolerant DD-first gate in L6M and the older window; 0 beat every exact placebo (and the family-null best-of rules for filters); 4 are null-level after placebos; 2 still running. Direction information in alerts is not separable from activity/regime and the every-day clock drift; any "weak lead" above needs the forward register (starts Mon 2026-11-16) before it means anything.**
+**VERDICT: weak, no PASS - first-order streams (20+ groups, intraday and carry, NQ and ES): 292057 sign-gate passes vs 276802 in the shifted-event placebos (ratio 1.06), best real cell does not beat the best placebo cell in most sessions; exact engine (JN05W2 all layers ON): 6 of 11 candidate sets pass the tolerant DD-first gate in L6M and the older window; 0 beat every exact placebo (and the family-null best-of rules for filters); 6 are null-level after placebos; 0 still running. Direction information in alerts is not separable from activity/regime and the every-day clock drift; any "weak lead" above needs the forward register (starts Mon 2026-11-16) before it means anything.**
 
-Updated 2026-11-14T03:10Z by fa_cycle.sh (loop, every 3 h). Research/shadow only. No PASS claims. Prereg: autopilot/FLOWALERTS_PREREG.md (sha in DECISIONS.md).
+Updated 2026-11-14T03:39Z by fa_cycle.sh (loop, every 3 h). Research/shadow only. No PASS claims. Prereg: autopilot/FLOWALERTS_PREREG.md (sha in DECISIONS.md).
 
 ## 1. How deep is the alert history (honest)
 
@@ -47,14 +47,14 @@ Windows: L6M = 2026-05..10; OLDER = 2025-11..2026-04. Plain strength is judged a
 | nyam | BOOK | SPX prem>=250k any openP anyside dte=1-5 put burst1 fade (Eb1_S30_Tnone_X30) | 392.0 | 0.0 | 29.0 | 0.0 | null-level (strict): sign gate passed but at least one placebo does as well | TL3_UW_FA1 |
 | asia | BOOK | IWM prem>=50k any any aggr dte=1-5 put carry q0.75 follow (Eb3_S30_Tnone_XSE) | -18.0 | -903.0 | 165.0 | 4377.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FA2 |
 | london | BOOK | GOOGL prem>=50k any any anyside dte=6+ both carry q0.75 follow (Emkt_Sa2_T45_X60) | 394.0 | -2557.0 | 652.0 | -2165.0 | null-level (strict): sign gate passed but at least one placebo does as well | TL3_UW_FA3 |
-| pre | BOOK | QQQ prem>=50k any openP aggr dte=6+ both carry q0.50 fade (Eb1_Sa2_Ta2_X60) | 363.0 | -1009.0 | 161.0 | -2061.0 | sign gate passed (strict); exact placebos still running | TL3_UW_FA4 |
+| pre | BOOK | QQQ prem>=50k any openP aggr dte=6+ both carry q0.50 fade (Eb1_Sa2_Ta2_X60) | 363.0 | -1009.0 | 161.0 | -2061.0 | null-level (strict): sign gate passed but at least one placebo does as well | TL3_UW_FA4 |
 | asia | BOOK | QQQ prem>=1000k nonsweep any aggr dte=any put carry q0.50 fade (Emkt_S90_Ta1_XSE) | 36.0 | -2031.0 | -690.0 | 3455.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FA5 |
 | nypm | BOOK | MEGA7 prem>=50k any openP aggr dte=1-5 call burst3 follow (Emkt_S45_Tnone_X120) | 205.0 | -1034.0 | -97.0 | -468.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FA6 |
 | all | FILTER | TSLA/AGG/1440 skipOpp thr 1.73e+07 skip | 3380.0 | -10448.0 | 1147.0 | 729.0 | null-level (tolerant only (older DD slightly worse)): sign gate passed but at least one placebo does as well | TL3_UW_FF1 |
 | asia | FILTER | MSFT/D15/1440 skipAl thr 4.25e+05 skip | -1812.0 | -3168.0 | -305.0 | -15545.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FF2 |
 | london | FILTER | SPY/D15/1440 skipOpp thr 1.5e+06 skip | -548.0 | 961.0 | -801.0 | 10842.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FF3 |
 | all | FILTER | AAPL/SWP/1440 skipAct thr 4.03e+06 skip | 199.0 | -9076.0 | 115.0 | 0.0 | null-level (strict): sign gate passed but at least one placebo does as well | TL3_UW_FF4 |
-| all | FILTER | TSLA/AGG/1440 skipOpp thr 1.73e+07 half | 674.0 | -2491.0 | nan | nan | pending (months running) | TL3_UW_FF5 |
+| all | FILTER | TSLA/AGG/1440 skipOpp thr 1.73e+07 half | 674.0 | -2491.0 | 641.0 | 0.0 | null-level (strict): sign gate passed but at least one placebo does as well | TL3_UW_FF5 |
 
 ## 3. First-order trigger screen (alerts, all groups), session by session
 Event = first qualifying alert (or n-th within 10 min) per label day x session x direction, entry at the open of the first 1-min bar >= created_at+120 s, exit at the close of minute +h (1/5/15/60 min; carry streams also SE = session end) truncated at session end. Net $ per contract per event after measured NQ cost (0.23 pt entry + 0.23 pt exit + $4.84; ES 1 tick/side assumed). Windows: L3M L6M OLDER(before L6M start) HOLD PREUW; window ends at the last 1-min price day (2026-11-10). LEAD gate = net>0 and excess over the every-minute clock drift >0 in L3M, L6M and OLDER with n_L6M>=15, n_OLDER>=15, n_L3M>=5. "gates" below counts cells passing that SIGN gate; the same screen on events shifted 11/23/37 weekdays gives the placebo columns (mean of 3 draws for count, max of 3 for best S; S = min of the three window nets). A family is only interesting if gates and best S clearly beat the placebo columns.
@@ -335,6 +335,7 @@ Harness $/wk (standalone book, equal-$ risk lots) - the live gates cut standalon
 | TL3_UW_FA4P23 | nan | OLDER | 26 | 11209.4 | 11600.2 | 390.9 | 63185.1 | 63185.1 | -55145.4 | -53388.1 | 10.3 | 10.4 | 1.0 | 0 | 233.1 | 19.0 |
 | TL3_UW_FA4P37 | nan | L3M | 11 | 16819.4 | 16915.4 | 95.9 | 36370.5 | 35361.7 | -36370.5 | -35361.7 | 11.3 | 11.4 | 1.0 | 0 | 95.9 | 4.0 |
 | TL3_UW_FA4P37 | nan | L6M | 25 | 23240.9 | 23400.3 | 159.5 | 36370.5 | 35361.7 | -36370.5 | -35361.7 | 10.5 | 10.7 | 1.0 | 0 | 132.6 | 15.0 |
+| TL3_UW_FA4P37 | nan | OLDER | 26 | 11209.4 | 11413.4 | 204.0 | 63185.1 | 61981.3 | -55145.4 | -53388.1 | 10.3 | 10.4 | 1.0 | 0 | 143.5 | 13.0 |
 | TL3_UW_FF1P11 | nan | L3M | 11 | 16819.4 | 13843.7 | -2975.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.1 | 0.8 | 1 | nan | nan |
 | TL3_UW_FF1P11 | nan | L6M | 25 | 23240.9 | 21456.5 | -1784.3 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.2 | 1.0 | 1 | nan | nan |
 | TL3_UW_FF1P11 | nan | OLDER | 26 | 11209.4 | 11258.4 | 49.0 | 63185.1 | 63185.1 | -55145.4 | -55145.4 | 10.3 | 9.8 | 1.0 | 1 | nan | nan |
@@ -382,6 +383,7 @@ Harness $/wk (standalone book, equal-$ risk lots) - the live gates cut standalon
 | TL3_UW_FN37 | nan | OLDER | 26 | 11209.4 | 15723.5 | 4514.1 | 63185.1 | 55145.4 | -55145.4 | -55145.4 | 10.3 | 9.9 | 1.1 | 2 | nan | nan |
 | TL3_UW_FF5 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'half', 'seg': 'all'} | L3M | 11 | 16819.4 | 17522.9 | 703.4 | 36370.5 | 33879.1 | -36370.5 | -33879.1 | 11.3 | 11.4 | 1.0 | 0 | nan | nan |
 | TL3_UW_FF5 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'half', 'seg': 'all'} | L6M | 25 | 23240.9 | 23914.7 | 673.9 | 36370.5 | 33879.1 | -36370.5 | -33879.1 | 10.5 | 10.6 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF5 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'half', 'seg': 'all'} | OLDER | 26 | 11209.4 | 11849.9 | 640.5 | 63185.1 | 63185.1 | -55145.4 | -55210.1 | 10.3 | 10.3 | 1.0 | 0 | nan | nan |
 
 ### 4c. Exact placebo: same book/filter with events (features) shifted 11 / 23 / 37 weekdays, run through the same exact engine (delta vs JN05W2 on the same months, $/wk and max DD $)
 
@@ -390,7 +392,7 @@ Harness $/wk (standalone book, equal-$ risk lots) - the live gates cut standalon
 | TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | +118 / -0 | -108 / +0 ; +135 / -2528 ; -222 / +0 | +392 / +0 | +218 / +0 ; -65 / -2528 ; -140 / +0 | +29 / +0 | -52 / +0 ; +27 / +0 ; +407 / +0 | +235 / +0 | no |
 | TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | -140 / -903 | +740 / -903 ; +130 / -903 ; +42 / +0 | -18 / -903 | -132 / -903 ; -27 / -903 ; -69 / +0 | +165 / +4377 | -320 / +6943 ; -37 / +0 ; +623 / -623 | -246 / +3608 | no |
 | TL3_UW_FA3 | BOOK NQ_london_GOOGL_follow_3 Emkt_Sa2_T45_X60 | +830 / -2557 | +174 / -5169 ; -57 / -899 ; +160 / +0 | +394 / -2557 | +347 / -5169 ; +199 / -899 ; +132 / +0 | +652 / -2165 | +49 / +0 ; -77 / +0 ; +164 / +0 | -83 / -625 | no |
-| TL3_UW_FA4 | BOOK NQ_pre_QQQ_fade_4 Eb1_Sa2_Ta2_X60 | +439 / -1009 | +275 / -2884 ; -88 / +0 ; +96 / -1009 | +363 / -1009 | +66 / -2884 ; -114 / +0 ; +159 / -1009 | +161 / -2061 | -160 / +106 ; +391 / +0 | -85 / +2887 | no |
+| TL3_UW_FA4 | BOOK NQ_pre_QQQ_fade_4 Eb1_Sa2_Ta2_X60 | +439 / -1009 | +275 / -2884 ; -88 / +0 ; +96 / -1009 | +363 / -1009 | +66 / -2884 ; -114 / +0 ; +159 / -1009 | +161 / -2061 | -160 / +106 ; +391 / +0 ; +204 / -1204 | -85 / +2887 | no |
 | TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | +3614 / -10448 | -2976 / +0 ; -1916 / -0 ; +870 / +5533 | +3380 / -10448 | -1784 / +0 ; -425 / +0 ; -2147 / +5533 | +1147 / +729 | +49 / +0 ; -41 / +0 ; -80 / +10480 | nan | no |
 | TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | +343 / -6545 | -14605 / +53503 ; -7751 / +13916 ; -7222 / +14039 | -1812 / -3168 | -11139 / +53503 ; -9559 / +20750 ; -11101 / +14039 | -305 / -15545 | -6891 / +12828 ; -2822 / -8492 ; -1708 / +57564 | nan | no |
 | TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | +449 / +961 | +1752 / -2888 ; -1930 / +5846 ; -2205 / +3516 | -548 / +961 | -1267 / +9508 ; -2049 / +5846 ; -1446 / +3516 | -801 / +10842 | -53 / +10609 ; -1896 / -11280 ; -15 / +26451 | nan | no |
