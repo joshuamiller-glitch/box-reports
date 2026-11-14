@@ -1,6 +1,6 @@
-# DS3_UW_MEGAFLOW - W-MF, megacap option flow (net premium, bursts, tape) leading NQ. Built 2026-11-14 02:53Z by code/th_uwmf/mf_page.py. Research only, shadow, NO PASS claim.
+# DS3_UW_MEGAFLOW - W-MF, megacap option flow (net premium, bursts, tape) leading NQ. Built 2026-11-14 05:55Z by code/th_uwmf/mf_page.py. Research only, shadow, NO PASS claim.
 ## 0. Plain verdict (read first)
-PAGE STATUS: first page, engine runs of the finalists are still arriving (section 5 fills in; this page rebuilds every 3 h). Exact-engine sets scored so far: 16 sets (TL3_UW_INJ_MFB1, TL3_UW_INJ_MFB2, TL3_UW_INJ_MFB3, TL3_UW_INJ_MFB4, TL3_UW_INJ_MFB6, TL3_UW_INJ_MFB7, TL3_UW_INJ_MFC_ASIA, TL3_UW_INJ_MFC_LDN, TL3_UW_INJ_MFC_PRE, TL3_UW_MF_ASIA_SK, TL3_UW_MF_LDN_M7, ).
+PAGE STATUS: first page, engine runs of the finalists are still arriving (section 5 fills in; this page rebuilds every 3 h). Exact-engine sets scored so far: 34 sets (TL3_UW_INJ_MFB1, TL3_UW_INJ_MFB1_P11, TL3_UW_INJ_MFB1_P23, TL3_UW_INJ_MFB1_P37, TL3_UW_INJ_MFB2, TL3_UW_INJ_MFB2_P11, TL3_UW_INJ_MFB2_P23, TL3_UW_INJ_MFB2_P37, TL3_UW_INJ_MFB3, TL3_UW_INJ_MFB4, TL3_UW).
 VERDICT (first page): megacap option flow does NOT lead NQ in a usable way: net premium and flow bursts follow the price move (contemporaneous IC 0.3-0.5) and the forward partial IC after removing price is ~0.01-0.03 with no cell beyond chance in both windows; the one thing above its nulls is a prior-day megacap net-premium CARRY filter on the live night books (skip night trades when the prior day's megacap flow was against the trade, first-order p~0.02 vs 41 shifted-flow draws) - exact-engine result below decides its strength. Weak lead at best; no PASS. No exact-engine set yet holds in both the recent and the older window with a smaller drawdown and no loss of mean.
 ## 1. Data, clocks, what each session can use
 - Megacap net premium: /mnt/l2/l2vast/uw/net_prem_ticks (and nprem for QQQ/NDX/SPY/SPX) per ticker NVDA AAPL MSFT AMZN META GOOGL TSLA, 553 UTC days 2024-10-01..2026-11-12, 1-min rows (net call premium, net put premium, ask/bid volumes). Option flow exists only while the options trade: about 09:30-16:00 ET (NYAM and NYPM), a thin PRE sliver (~950 minutes of 7 names in total), and essentially NOTHING in Asia and London (0 minutes in Asia, ~900 in London over 2 years). So for Asia / London / PRE the only honest use of megacap flow is CARRY (the prior completed RTH day's flow, known after 16:03 ET), and that is what is tested for those sessions.
@@ -27,21 +27,21 @@ Reading: megacap flow is strongly co-moving with the price move it sits in (IC 0
 **NYAM**: 1120 (series,target,w,h) cells with both windows; cells with same sign in L6M and OLDER and min(|z|)>2: 0 (chance ~13), >3: 0.
 | series | tgt | w | h | ic_partial_L3M | ic_partial_L6M | ic_partial_OLDER | z_L6M | z_OLDER | n_L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| QQQ|vol | ES | 1 | 1 | 0.0096 | 0.0196 | 0.0106 | 2.3543 | 1.9408 | 18396.0 |
-| QQQ|prem | ES | 1 | 1 | 0.0225 | 0.0201 | 0.0106 | 2.4253 | 1.925 | 18396.0 |
-| MEGAraw|tp_d0_bullb | ES | 15 | 15 | 0.1073 | 0.0458 | 0.0393 | 1.809 | 1.8608 | 10260.0 |
-| MEGAraw|tp_d0_bullb | ES | 5 | 15 | 0.0615 | 0.0361 | 0.0397 | 1.7182 | 2.6637 | 10936.0 |
-| QQQ|tp_all_bull | ES | 1 | 1 | 0.022 | 0.0198 | 0.0089 | 2.3802 | 1.6153 | 18396.0 |
-| MEGAraw|tp_d0_bullb | NQ | 5 | 15 | 0.0328 | 0.0345 | 0.038 | 1.5735 | 2.5701 | 10936.0 |
+| QQQ|vol | ES | 1 | 1 | 0.0096 | 0.0196 | 0.0106 | 2.3543 | 1.9376 | 18396.0 |
+| QQQ|prem | ES | 1 | 1 | 0.0225 | 0.0201 | 0.0106 | 2.4253 | 1.9219 | 18396.0 |
+| MEGAraw|tp_d0_bullb | ES | 15 | 15 | 0.1073 | 0.0458 | 0.0379 | 1.809 | 1.7706 | 10260.0 |
+| MEGAraw|tp_d0_bullb | ES | 5 | 15 | 0.0615 | 0.0361 | 0.0407 | 1.7182 | 2.714 | 10936.0 |
+| QQQ|tp_all_bull | ES | 1 | 1 | 0.022 | 0.0198 | 0.0094 | 2.3802 | 1.7124 | 18396.0 |
+| MEGAraw|tp_d0_bullb | NQ | 5 | 15 | 0.0328 | 0.0345 | 0.0419 | 1.5735 | 2.8154 | 10936.0 |
 **NYPM**: 1120 (series,target,w,h) cells with both windows; cells with same sign in L6M and OLDER and min(|z|)>2: 0 (chance ~13), >3: 0.
 | series | tgt | w | h | ic_partial_L3M | ic_partial_L6M | ic_partial_OLDER | z_L6M | z_OLDER | n_L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| MEGAeq|prem | ES | 1 | 5 | -0.0176 | -0.0176 | -0.0067 | -1.8496 | -1.3912 | 30240.0 |
-| QQQ|vol | ES | 15 | 15 | -0.0313 | -0.032 | -0.0181 | -1.3819 | -1.3486 | 30240.0 |
-| MEGAeq|prem | ES | 5 | 1 | -0.0129 | -0.0135 | -0.0054 | -1.5881 | -1.3145 | 30240.0 |
-| MEGAcap|prem | NQ | 15 | 15 | -0.0076 | -0.0468 | -0.0175 | -1.8713 | -1.2104 | 30240.0 |
-| QQQ|vol | ES | 5 | 1 | -0.0095 | -0.0117 | -0.0049 | -1.3739 | -1.1773 | 30240.0 |
-| MEGAcap|vol | NQ | 1 | 5 | -0.0106 | -0.0132 | -0.0057 | -1.4353 | -1.1594 | 30240.0 |
+| MEGAeq|prem | ES | 1 | 5 | -0.0176 | -0.0176 | -0.0067 | -1.8496 | -1.3837 | 30240.0 |
+| MEGAeq|prem | ES | 5 | 1 | -0.0129 | -0.0135 | -0.0054 | -1.5881 | -1.3107 | 30240.0 |
+| QQQ|vol | ES | 15 | 15 | -0.0313 | -0.032 | -0.0181 | -1.3819 | -1.2903 | 30240.0 |
+| QQQ|vol | ES | 5 | 1 | -0.0095 | -0.0117 | -0.0049 | -1.3739 | -1.1739 | 30240.0 |
+| MEGAcap|prem | NQ | 15 | 15 | -0.0076 | -0.0468 | -0.0175 | -1.8713 | -1.1699 | 30240.0 |
+| MEGAcap|vol | NQ | 1 | 5 | -0.0106 | -0.0132 | -0.0057 | -1.4353 | -1.1507 | 30240.0 |
 **PRE**: 0 (series,target,w,h) cells with both windows; cells with same sign in L6M and OLDER and min(|z|)>2: 0 (chance ~0), >3: 0.
 (none)
 Reading: forward partial IC is of order 0.01-0.03 for 1-15 min horizons, the same sign in both windows only for a handful of cells and none clears z>3; the count of cells with min(|z|)>2 is near what chance gives. The control (QQQ net premium 1-min flow vs next-minute ES/NQ) is the strongest and still tiny (IC 0.02). Tape: big (>=$100k) 0DTE bullish megacap premium has a positive 5-15 min forward IC on NQ/ES (NYAM, L6M +0.03, older +0.06..0.07, z 1-4.6) and big longer-dated premium the opposite sign (about -0.03/-0.06): the one pattern with the same sign in both windows - tape coverage is only ~6 months of dense days, treat as LEAD (weak), unproven.
@@ -159,56 +159,147 @@ scope rth, top gated rules:
 | MEGAeq|vol|5 | M7 | ge | 4.0 | press | 98 | 339 | 11.06 | 112.15 | 114.42 | -599.41 | -599.41 | -4501.23 | 920.43 | 0.02 |
 
 ## 5. EXACT ENGINE (JN05W2 base, all layers ON, TP engine via UW admission queue; reference = JN05W2 on the same months)
-Identity: TL3_UW_MFID (hook registered, rule threshold unreachable) reproduces JN05W2 202610 = 598 trades, net 25943.82 (checked by mf_score.py at each rebuild: see set window  complete  weeks  ref_mean  d_mean   ref_dd    d_dd  d_worst  d_stops_wk  best5_kept  win2lose  uw1_mean  uw1_n).
+Identity: TL3_UW_MFID (hook registered, rule threshold unreachable) reproduces JN05W2 202610 = 598 trades, net 25943.82 (checked by mf_score.py at each rebuild: see set window  complete  weeks  ref_mean  d_mean   ref_dd     d_dd  d_worst  d_stops_wk  best5_kept  win2lose  uw1_mean  uw1_n).
 Per set and window: stack mean $/wk (reference), change of mean, reference max DD and change (negative = better), change of worst week, change of full stops/wk, share of the reference best-5 weeks kept, winning weeks turned losing; for injected books uw1_mean/n = the new book alone inside the engine. Windows not complete (months still running) are marked.
 | set | window | complete | weeks | ref_mean | d_mean | ref_dd | d_dd | ref_worst | d_worst | d_stops_wk | best5_kept | win2lose | uw1_mean | uw1_n |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | TL3_UW_INJ_MFB1 | HOLD | False | 51 | 17639.8 | 188.7 | 63185.1 | 2567.4 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | 172.7 | 64 |
 | TL3_UW_INJ_MFB1 | L3M | False | 11 | 16819.4 | 435.1 | 36370.5 | -1900.7 | -36370.5 | 1900.7 | 0.1 | 1.0 | 0 | 320.4 | 13 |
 | TL3_UW_INJ_MFB1 | L6M | False | 25 | 23240.9 | 744.0 | 36370.5 | -1900.7 | -36370.5 | 1900.7 | 0.2 | 1.0 | 0 | 722.3 | 37 |
+| TL3_UW_INJ_MFB1 | PREUW | False | 22 | 7937.6 | 0.0 | 76186.1 | 0.0 | -52547.4 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_INJ_MFB1_P11 | HOLD | False | 51 | 17639.8 | -720.4 | 63185.1 | 997.8 | -55145.4 | 1563.5 | 0.4 | 1.0 | 0 | -281.0 | 76 |
+| TL3_UW_INJ_MFB1_P11 | L3M | False | 11 | 16819.4 | -1172.7 | 36370.5 | 2082.7 | -36370.5 | -2082.7 | 0.5 | 1.0 | 0 | -616.0 | 21 |
+| TL3_UW_INJ_MFB1_P11 | L6M | False | 25 | 23240.9 | -1361.5 | 36370.5 | 2082.7 | -36370.5 | -2082.7 | 0.4 | 1.0 | 0 | -446.2 | 46 |
+| TL3_UW_INJ_MFB1_P23 | HOLD | False | 51 | 17639.8 | -661.8 | 63185.1 | 1411.6 | -55145.4 | 0.0 | 0.1 | 1.0 | 0 | -386.2 | 65 |
+| TL3_UW_INJ_MFB1_P23 | L3M | False | 11 | 16819.4 | -495.6 | 36370.5 | 101.5 | -36370.5 | -101.5 | 0.0 | 1.0 | 0 | -545.1 | 15 |
+| TL3_UW_INJ_MFB1_P23 | L6M | False | 25 | 23240.9 | -879.8 | 36370.5 | 101.5 | -36370.5 | -101.5 | 0.0 | 1.0 | 0 | -160.7 | 36 |
+| TL3_UW_INJ_MFB1_P37 | HOLD | False | 51 | 17639.8 | -860.8 | 63185.1 | -2646.2 | -55145.4 | 0.0 | 0.1 | 1.0 | 0 | -596.2 | 63 |
+| TL3_UW_INJ_MFB1_P37 | L3M | False | 11 | 16819.4 | -558.0 | 36370.5 | 101.5 | -36370.5 | -101.5 | 0.0 | 1.0 | 0 | -602.0 | 16 |
+| TL3_UW_INJ_MFB1_P37 | L6M | False | 25 | 23240.9 | -1084.1 | 36370.5 | 101.5 | -36370.5 | -101.5 | 0.0 | 1.0 | 0 | -362.6 | 37 |
 | TL3_UW_INJ_MFB2 | HOLD | False | 51 | 17639.8 | 600.0 | 63185.1 | 121.2 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 299.8 | 75 |
 | TL3_UW_INJ_MFB2 | L3M | False | 11 | 16819.4 | 641.7 | 36370.5 | -345.7 | -36370.5 | 345.7 | 0.5 | 1.0 | 0 | 521.5 | 17 |
 | TL3_UW_INJ_MFB2 | L6M | False | 25 | 23240.9 | 770.5 | 36370.5 | -345.7 | -36370.5 | 345.7 | 0.5 | 1.0 | 0 | 547.8 | 36 |
+| TL3_UW_INJ_MFB2 | PREUW | False | 18 | 13456.2 | -87.1 | 37983.8 | 3602.4 | -29255.3 | -1181.2 | 0.4 | 1.0 | 0 | -20.0 | 34 |
+| TL3_UW_INJ_MFB2_P11 | HOLD | False | 51 | 17639.8 | 289.5 | 63185.1 | 1286.2 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | 164.4 | 38 |
+| TL3_UW_INJ_MFB2_P11 | L3M | False | 11 | 16819.4 | 463.3 | 36370.5 | -1073.8 | -36370.5 | 1073.8 | 0.1 | 1.0 | 0 | 463.3 | 6 |
+| TL3_UW_INJ_MFB2_P11 | L6M | False | 25 | 23240.9 | 350.7 | 36370.5 | -1073.8 | -36370.5 | 1073.8 | 0.2 | 1.0 | 0 | 315.0 | 16 |
+| TL3_UW_INJ_MFB2_P23 | HOLD | False | 51 | 17639.8 | -144.3 | 63185.1 | -893.8 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | -140.7 | 50 |
+| TL3_UW_INJ_MFB2_P23 | L3M | False | 11 | 16819.4 | 230.7 | 36370.5 | -0.0 | -36370.5 | 0.0 | 0.1 | 1.0 | 0 | 146.4 | 7 |
+| TL3_UW_INJ_MFB2_P23 | L6M | False | 25 | 23240.9 | 41.6 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.1 | 1.0 | 0 | 33.2 | 16 |
+| TL3_UW_INJ_MFB2_P37 | HOLD | False | 51 | 17639.8 | -21.6 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | -31.4 | 50 |
+| TL3_UW_INJ_MFB2_P37 | L3M | False | 11 | 16819.4 | 155.0 | 36370.5 | -0.0 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | 244.7 | 11 |
+| TL3_UW_INJ_MFB2_P37 | L6M | False | 25 | 23240.9 | -38.4 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.3 | 1.0 | 0 | -105.7 | 27 |
 | TL3_UW_INJ_MFB3 | HOLD | False | 51 | 17639.8 | 687.9 | 63185.1 | -898.8 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | 643.6 | 58 |
 | TL3_UW_INJ_MFB3 | L3M | False | 11 | 16819.4 | 633.2 | 36370.5 | -0.0 | -36370.5 | 0.0 | 0.0 | 1.0 | 0 | 689.3 | 11 |
 | TL3_UW_INJ_MFB3 | L6M | False | 25 | 23240.9 | 795.3 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.0 | 1.0 | 0 | 911.7 | 23 |
+| TL3_UW_INJ_MFB3 | PREUW | False | 18 | 13456.2 | 364.7 | 37983.8 | -2890.5 | -29255.3 | 1798.8 | 0.3 | 1.0 | 0 | 396.3 | 23 |
 | TL3_UW_INJ_MFB4 | HOLD | False | 51 | 17639.8 | 481.7 | 63185.1 | -2235.3 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 492.2 | 85 |
 | TL3_UW_INJ_MFB4 | L3M | False | 11 | 16819.4 | 768.0 | 36370.5 | -0.0 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | 768.0 | 18 |
 | TL3_UW_INJ_MFB4 | L6M | False | 25 | 23240.9 | 679.9 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.4 | 1.0 | 0 | 679.9 | 43 |
+| TL3_UW_INJ_MFB4 | PREUW | False | 18 | 13456.2 | -366.7 | 37983.8 | 849.7 | -29255.3 | -1167.4 | 0.9 | 1.0 | 0 | -401.4 | 41 |
 | TL3_UW_INJ_MFB6 | HOLD | False | 51 | 17639.8 | 490.2 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | 490.2 | 60 |
 | TL3_UW_INJ_MFB6 | L3M | False | 11 | 16819.4 | 65.3 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.5 | 1.0 | 0 | 65.3 | 13 |
 | TL3_UW_INJ_MFB6 | L6M | False | 25 | 23240.9 | 349.9 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.3 | 1.0 | 0 | 349.9 | 26 |
+| TL3_UW_INJ_MFB6 | PREUW | False | 14 | 14458.8 | -206.1 | 37983.8 | 3196.8 | -29255.3 | 0.0 | 0.6 | 1.0 | 0 | -264.0 | 21 |
 | TL3_UW_INJ_MFB7 | HOLD | False | 51 | 17639.8 | 152.9 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 140.4 | 49 |
 | TL3_UW_INJ_MFB7 | L3M | False | 11 | 16819.4 | -121.7 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.4 | 1.0 | 0 | -121.7 | 8 |
 | TL3_UW_INJ_MFB7 | L6M | False | 25 | 23240.9 | 224.0 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.4 | 1.0 | 0 | 224.0 | 20 |
+| TL3_UW_INJ_MFB7 | PREUW | False | 14 | 14458.8 | -562.5 | 37983.8 | 3015.8 | -29255.3 | -1422.4 | 0.8 | 1.0 | 0 | -743.9 | 18 |
+| TL3_UW_INJ_MFB7_P11 | HOLD | False | 51 | 17639.8 | 39.3 | 63185.1 | -1433.8 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | 39.3 | 29 |
+| TL3_UW_INJ_MFB7_P11 | L3M | False | 11 | 16819.4 | 294.0 | 36370.5 | -1447.6 | -36370.5 | 1447.6 | 0.3 | 1.0 | 0 | 294.0 | 9 |
+| TL3_UW_INJ_MFB7_P11 | L6M | False | 25 | 23240.9 | -5.0 | 36370.5 | -1447.6 | -36370.5 | 1447.6 | 0.2 | 1.0 | 0 | -5.0 | 16 |
+| TL3_UW_INJ_MFB7_P23 | HOLD | False | 51 | 17639.8 | -158.7 | 63185.1 | 791.2 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | -135.2 | 29 |
+| TL3_UW_INJ_MFB7_P23 | L3M | False | 11 | 16819.4 | -79.4 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | -79.4 | 3 |
+| TL3_UW_INJ_MFB7_P23 | L6M | False | 25 | 23240.9 | -223.1 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | -223.1 | 8 |
+| TL3_UW_INJ_MFB7_P37 | HOLD | False | 51 | 17639.8 | -194.3 | 63185.1 | 194.7 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | -170.8 | 29 |
+| TL3_UW_INJ_MFB7_P37 | L3M | False | 11 | 16819.4 | 54.6 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | 54.6 | 6 |
+| TL3_UW_INJ_MFB7_P37 | L6M | False | 25 | 23240.9 | -81.1 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | -81.1 | 11 |
 | TL3_UW_INJ_MFC_ASIA | HOLD | False | 51 | 17639.8 | 307.2 | 63185.1 | -1410.5 | -55145.4 | 2546.4 | 0.3 | 1.0 | 0 | 353.0 | 60 |
 | TL3_UW_INJ_MFC_ASIA | L3M | False | 11 | 16819.4 | 508.4 | 36370.5 | -6589.8 | -36370.5 | 7967.9 | 0.3 | 1.0 | 0 | 860.7 | 15 |
 | TL3_UW_INJ_MFC_ASIA | L6M | False | 25 | 23240.9 | 734.3 | 36370.5 | -6589.8 | -36370.5 | 7967.9 | 0.2 | 1.0 | 0 | 922.3 | 31 |
+| TL3_UW_INJ_MFC_ASIA | PREUW | False | 14 | 14458.8 | -973.7 | 37983.8 | -3597.6 | -29255.3 | 0.0 | 0.2 | 1.0 | 0 | 125.4 | 16 |
+| TL3_UW_INJ_MFC_ASIA_P11 | HOLD | False | 51 | 17639.8 | -580.8 | 63185.1 | 3832.8 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | -159.2 | 49 |
+| TL3_UW_INJ_MFC_ASIA_P11 | L3M | False | 11 | 16819.4 | -933.1 | 36370.5 | 1583.6 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | -382.9 | 10 |
+| TL3_UW_INJ_MFC_ASIA_P11 | L6M | False | 25 | 23240.9 | -1045.3 | 36370.5 | 1583.6 | -36370.5 | 0.0 | 0.1 | 1.0 | 0 | -134.1 | 23 |
+| TL3_UW_INJ_MFC_ASIA_P23 | HOLD | False | 51 | 17639.8 | -105.1 | 63185.1 | -1893.2 | -55145.4 | 0.0 | 0.1 | 1.0 | 0 | -74.7 | 56 |
+| TL3_UW_INJ_MFC_ASIA_P23 | L3M | False | 11 | 16819.4 | 716.7 | 36370.5 | -7635.9 | -36370.5 | 7866.4 | 0.3 | 1.0 | 0 | 71.8 | 17 |
+| TL3_UW_INJ_MFC_ASIA_P23 | L6M | False | 25 | 23240.9 | -0.5 | 36370.5 | -7635.9 | -36370.5 | 7866.4 | 0.2 | 1.0 | 0 | 126.7 | 31 |
 | TL3_UW_INJ_MFC_LDN | HOLD | False | 51 | 17639.8 | 355.7 | 63185.1 | -1020.0 | -55145.4 | -411.3 | 0.3 | 1.0 | 0 | 346.1 | 68 |
 | TL3_UW_INJ_MFC_LDN | L3M | False | 11 | 16819.4 | 393.3 | 36370.5 | 2262.4 | -36370.5 | -2262.4 | 0.5 | 1.0 | 0 | 589.2 | 20 |
 | TL3_UW_INJ_MFC_LDN | L6M | False | 25 | 23240.9 | 489.6 | 36370.5 | 2262.4 | -36370.5 | -2262.4 | 0.3 | 1.0 | 0 | 556.3 | 36 |
+| TL3_UW_INJ_MFC_LDN | PREUW | False | 14 | 14458.8 | -334.8 | 37983.8 | -1198.8 | -29255.3 | 1198.8 | 0.4 | 1.0 | 0 | -234.6 | 17 |
+| TL3_UW_INJ_MFC_LDN_P11 | HOLD | False | 51 | 17639.8 | -432.1 | 63185.1 | 905.5 | -55145.4 | 0.0 | 0.1 | 1.0 | 0 | -153.0 | 44 |
+| TL3_UW_INJ_MFC_LDN_P11 | L3M | False | 11 | 16819.4 | -348.2 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.3 | 1.0 | 0 | -381.8 | 13 |
+| TL3_UW_INJ_MFC_LDN_P11 | L6M | False | 25 | 23240.9 | -751.9 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.1 | 1.0 | 0 | -138.1 | 24 |
+| TL3_UW_INJ_MFC_LDN_P23 | HOLD | False | 51 | 17639.8 | -208.4 | 63185.1 | 1811.2 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | -64.1 | 58 |
+| TL3_UW_INJ_MFC_LDN_P23 | L3M | False | 11 | 16819.4 | 409.5 | 36370.5 | -4367.9 | -36370.5 | 4367.9 | 0.3 | 1.0 | 0 | 53.3 | 20 |
+| TL3_UW_INJ_MFC_LDN_P23 | L6M | False | 25 | 23240.9 | -263.9 | 36370.5 | -4367.9 | -36370.5 | 4367.9 | 0.2 | 1.0 | 0 | 30.6 | 34 |
 | TL3_UW_INJ_MFC_PRE | HOLD | False | 51 | 17639.8 | 239.0 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 92.8 | 50 |
 | TL3_UW_INJ_MFC_PRE | L3M | False | 11 | 16819.4 | 1073.4 | 36370.5 | -617.6 | -36370.5 | 617.6 | 0.0 | 1.0 | 0 | 955.4 | 9 |
 | TL3_UW_INJ_MFC_PRE | L6M | False | 25 | 23240.9 | 713.7 | 36370.5 | -617.6 | -36370.5 | 617.6 | 0.2 | 1.0 | 0 | 661.8 | 20 |
-| TL3_UW_MF_ASIA_SK | HOLD | False | 31 | 20530.9 | 531.1 | 63185.1 | -9699.9 | -55145.4 | 1660.3 | -0.4 | 0.8 | 1 | 0.0 | 0 |
+| TL3_UW_INJ_MFC_PRE | PREUW | False | 14 | 14458.8 | -115.8 | 37983.8 | 0.0 | -29255.3 | 0.0 | 0.6 | 1.0 | 0 | -141.0 | 18 |
+| TL3_UW_INJ_MFC_PRE_P11 | HOLD | False | 51 | 17639.8 | -645.6 | 63185.1 | -2355.0 | -55145.4 | 0.0 | 0.1 | 1.0 | 0 | -634.3 | 41 |
+| TL3_UW_INJ_MFC_PRE_P11 | L3M | False | 11 | 16819.4 | -344.7 | 36370.5 | 540.0 | -36370.5 | -540.0 | 0.3 | 1.0 | 0 | -394.2 | 11 |
+| TL3_UW_INJ_MFC_PRE_P11 | L6M | False | 25 | 23240.9 | -917.7 | 36370.5 | 540.0 | -36370.5 | -540.0 | 0.2 | 1.0 | 0 | -577.5 | 20 |
+| TL3_UW_INJ_MFC_PRE_P23 | HOLD | False | 51 | 17639.8 | -392.6 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | -357.7 | 40 |
+| TL3_UW_INJ_MFC_PRE_P23 | L3M | False | 11 | 16819.4 | -120.4 | 36370.5 | 1157.7 | -36370.5 | -1157.7 | 0.0 | 1.0 | 0 | -169.9 | 10 |
+| TL3_UW_INJ_MFC_PRE_P23 | L6M | False | 25 | 23240.9 | -485.7 | 36370.5 | 1157.7 | -36370.5 | -1157.7 | 0.2 | 1.0 | 0 | -500.1 | 18 |
+| TL3_UW_MF_ASIA_SK | HOLD | False | 38 | 17056.0 | 811.6 | 63185.1 | -9699.9 | -55145.4 | 1660.3 | -0.3 | 0.8 | 1 | 0.0 | 0 |
 | TL3_UW_MF_ASIA_SK | L6M | False | 12 | 27459.9 | 780.9 | 25312.6 | 3596.2 | -25312.6 | -3596.2 | -0.4 | 0.9 | 0 | 0.0 | 0 |
-| TL3_UW_MF_LDN_M7 | HOLD | False | 39 | 19649.6 | 710.8 | 63185.1 | -8444.2 | -55145.4 | 1542.3 | 0.1 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_ASIA_SK | PREUW | False | 10 | 16219.7 | 7373.3 | 19003.3 | -10139.3 | -19003.3 | 10139.3 | -0.5 | 1.2 | 0 | 0.0 | 0 |
+| TL3_UW_MF_LDN_M7 | HOLD | False | 51 | 17639.8 | 593.1 | 63185.1 | -8444.2 | -55145.4 | 1542.3 | 0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_LDN_M7 | L3M | False | 11 | 16819.4 | 249.4 | 36370.5 | -637.2 | -36370.5 | 637.2 | 0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_LDN_M7 | L6M | False | 25 | 23240.9 | 677.5 | 36370.5 | -637.2 | -36370.5 | 637.2 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_LDN_M7 | PREUW | False | 14 | 14458.8 | 657.1 | 37983.8 | -1158.6 | -29255.3 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_HALF | HOLD | False | 38 | 17056.0 | 861.6 | 63185.1 | -3402.3 | -55145.4 | 7062.0 | -0.1 | 1.0 | 1 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_HALF | L6M | False | 12 | 27459.9 | 1150.7 | 25312.6 | 1343.7 | -25312.6 | -1343.7 | -0.1 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_HALF | PREUW | False | 14 | 14458.8 | 156.6 | 37983.8 | 4683.7 | -29255.3 | -5228.6 | -0.1 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK | HOLD | False | 38 | 17056.0 | -267.2 | 63185.1 | -5444.4 | -55145.4 | 6459.2 | -0.2 | 0.8 | 2 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK | L6M | False | 12 | 27459.9 | -1267.2 | 25312.6 | -1696.2 | -25312.6 | 1696.2 | -0.2 | 0.8 | 0 | 0.0 | 0 |
-| TL3_UW_MF_NIGHT_SK15 | HOLD | False | 35 | 18144.6 | -1188.0 | 63185.1 | -3236.8 | -55145.4 | 0.0 | -0.1 | 0.9 | 2 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK | PREUW | False | 14 | 14458.8 | 5677.2 | 37983.8 | 11476.5 | -29255.3 | -17247.4 | -0.7 | 1.1 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK15 | HOLD | False | 38 | 17056.0 | -1094.2 | 63185.1 | -3236.8 | -55145.4 | 0.0 | -0.1 | 0.9 | 2 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK15 | L6M | False | 12 | 27459.9 | -2233.9 | 25312.6 | -1696.2 | -25312.6 | 1696.2 | 0.2 | 0.9 | 0 | 0.0 | 0 |
-| TL3_UW_MF_NYAM_K7 | HOLD | False | 35 | 18144.6 | -135.5 | 63185.1 | 761.6 | -55145.4 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK15 | PREUW | False | 14 | 14458.8 | 3214.8 | 37983.8 | -507.1 | -29255.3 | 0.0 | -0.1 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK_P11 | HOLD | False | 51 | 17639.8 | -1648.1 | 63185.1 | -1531.0 | -55145.4 | 0.0 | -0.5 | 0.9 | 2 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK_P11 | L3M | False | 11 | 16819.4 | -3750.8 | 36370.5 | 1824.8 | -36370.5 | 1989.7 | -0.5 | 0.8 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK_P11 | L6M | False | 25 | 23240.9 | -4631.5 | 36370.5 | 1824.8 | -36370.5 | 1989.7 | -0.6 | 0.8 | 1 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK_P23 | HOLD | False | 51 | 17639.8 | -1918.3 | 63185.1 | 3625.3 | -55145.4 | 0.0 | -0.3 | 0.8 | 1 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK_P23 | L3M | False | 11 | 16819.4 | -4300.3 | 36370.5 | -5837.1 | -36370.5 | 10344.6 | -0.2 | 0.8 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK_P23 | L6M | False | 25 | 23240.9 | -399.6 | 36370.5 | -5837.1 | -36370.5 | 10344.6 | -0.2 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK_P37 | HOLD | False | 51 | 17639.8 | 1221.4 | 63185.1 | 0.0 | -55145.4 | 0.0 | -0.4 | 0.9 | 2 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK_P37 | L3M | False | 11 | 16819.4 | 2461.6 | 36370.5 | 4400.6 | -36370.5 | 10344.6 | -0.6 | 1.1 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK_P37 | L6M | False | 25 | 23240.9 | -835.1 | 36370.5 | 4400.6 | -36370.5 | 10344.6 | -0.4 | 0.9 | 1 | 0.0 | 0 |
+| TL3_UW_MF_NYAM_K7 | HOLD | False | 38 | 17056.0 | -126.6 | 63185.1 | 761.6 | -55145.4 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_NYAM_K7 | L6M | False | 12 | 27459.9 | -274.6 | 25312.6 | 0.0 | -25312.6 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
-| TL3_UW_MF_U7_SK | HOLD | False | 35 | 18144.6 | -382.0 | 63185.1 | 6563.5 | -55145.4 | -9484.8 | 0.1 | 1.0 | 1 | 0.0 | 0 |
+| TL3_UW_MF_NYAM_K7 | PREUW | False | 14 | 14458.8 | 252.9 | 37983.8 | -1154.7 | -29255.3 | 889.7 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_U7_SK | HOLD | False | 38 | 17056.0 | -326.0 | 63185.1 | 6563.5 | -55145.4 | -9484.8 | 0.1 | 1.0 | 1 | 0.0 | 0 |
 | TL3_UW_MF_U7_SK | L6M | False | 12 | 27459.9 | -177.5 | 25312.6 | 2523.7 | -25312.6 | -2523.7 | 0.1 | 0.9 | 0 | 0.0 | 0 |
+| TL3_UW_MF_U7_SK | PREUW | False | 10 | 16219.7 | 2271.4 | 19003.3 | -4462.2 | -19003.3 | 4462.2 | -0.1 | 1.1 | 0 | 0.0 | 0 |
 
 **Placebo beside every number** (same book, events or flow shifted 11 / 23 / 37 days, same months):
 
-(none)
+| set | window | real_d_mean | plc_d_mean | real_d_dd | plc_d_dd | n_plc |
+|---|---|---|---|---|---|---|
+| TL3_UW_INJ_MFB1 | L6M | 744.0 | -1362,-880,-1084 | -1901.0 | 2083,102,102 | 3 |
+| TL3_UW_INJ_MFB1 | HOLD | 189.0 | -720,-662,-861 | 2567.0 | 998,1412,-2646 | 3 |
+| TL3_UW_INJ_MFB1 | L3M | 435.0 | -1173,-496,-558 | -1901.0 | 2083,102,102 | 3 |
+| TL3_UW_INJ_MFB2 | L6M | 771.0 | 351,42,-38 | -346.0 | -1074,0,0 | 3 |
+| TL3_UW_INJ_MFB2 | HOLD | 600.0 | 290,-144,-22 | 121.0 | 1286,-894,0 | 3 |
+| TL3_UW_INJ_MFB2 | L3M | 642.0 | 463,231,155 | -346.0 | -1074,-0,-0 | 3 |
+| TL3_UW_INJ_MFB7 | L6M | 224.0 | -5,-223,-81 | 0.0 | -1448,0,0 | 3 |
+| TL3_UW_INJ_MFB7 | HOLD | 153.0 | 39,-159,-194 | 0.0 | -1434,791,195 | 3 |
+| TL3_UW_INJ_MFB7 | L3M | -122.0 | 294,-79,55 | 0.0 | -1448,0,0 | 3 |
+| TL3_UW_INJ_MFC_ASIA | L6M | 734.0 | -1045,-1 | -6590.0 | 1584,-7636 | 2 |
+| TL3_UW_INJ_MFC_ASIA | HOLD | 307.0 | -581,-105 | -1410.0 | 3833,-1893 | 2 |
+| TL3_UW_INJ_MFC_ASIA | L3M | 508.0 | -933,717 | -6590.0 | 1584,-7636 | 2 |
+| TL3_UW_INJ_MFC_LDN | L6M | 490.0 | -752,-264 | 2262.0 | 0,-4368 | 2 |
+| TL3_UW_INJ_MFC_LDN | HOLD | 356.0 | -432,-208 | -1020.0 | 905,1811 | 2 |
+| TL3_UW_INJ_MFC_LDN | L3M | 393.0 | -348,410 | 2262.0 | 0,-4368 | 2 |
+| TL3_UW_INJ_MFC_PRE | L6M | 714.0 | -918,-486 | -618.0 | 540,1158 | 2 |
+| TL3_UW_INJ_MFC_PRE | HOLD | 239.0 | -646,-393 | 0.0 | -2355,0 | 2 |
+| TL3_UW_INJ_MFC_PRE | L3M | 1073.0 | -345,-120 | -618.0 | 540,1158 | 2 |
+| TL3_UW_MF_NIGHT_SK | L6M | -1267.0 | -4632,-400,-835 | -1696.0 | 1825,-5837,4401 | 3 |
+| TL3_UW_MF_NIGHT_SK | HOLD | -267.0 | -1648,-1918,1221 | -5444.0 | -1531,3625,0 | 3 |
 
 ## 6. What is and is not established
 - Lead-lag: see section 2. Plain statement: megacap net premium and flow bursts follow price; their lead over NQ at 1/5/15 min after controlling for price is at most about 0.02-0.03 IC in a handful of cells and not beyond chance across the family. Not a standalone signal.
