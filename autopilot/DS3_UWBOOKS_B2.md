@@ -1,4 +1,4 @@
-# DS3_UWBOOKS_B2 - W-UB2: Tide, flow bursts, dark-pool/IV books (+pairs, joint). Built 2026-11-14 10:40Z by code/th_uwb2/uwb2_page.py. Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B2 - W-UB2: Tide, flow bursts, dark-pool/IV books (+pairs, joint). Built 2026-11-14 13:40Z by code/th_uwb2/uwb2_page.py. Research, shadow, NO PASS claim.
 Prereg: autopilot/UWB2_PREREG.md (sha line in DECISIONS.md 14:30Z). Harness: code/th_uwbooks/harness.py (W-UB1) unchanged. Events: code/th_uwb2/uwb2_events.py. Screens: /mnt/l2/l2vast/_uwb2/B2/res_*.csv. Units: $ per week at 1 lot-set (lots = clip(round(1200/(stop pts x $/pt)),1,10)), fees in, measured NQ basis, ES/RTY 1 tick/side (UNMEASURED).
 
 ## 0. Plain verdict (read first)
