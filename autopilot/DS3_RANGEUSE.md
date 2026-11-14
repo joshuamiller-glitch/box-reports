@@ -1172,7 +1172,7 @@ Event day = W-CAL ev_day (any scheduled release/auction/chair/earnings; ~39% of 
 | D4III1 | c | high-impact days | -647 $/wk, DD +26.9%, ww -580, stops 1.03(1.26), b5 86%, w2l 1 | -313 $/wk, DD +18.6%, ww +2785, stops 1.23(1.42), b5 94%, w2l 1 |
 | D4III1 | c | non-high days | -2573 $/wk, DD -11.8%, ww -3048, stops 9.13(9.74), b5 83%, w2l 1 | -1005 $/wk, DD +0.2%, ww +5088, stops 8.48(9.24), b5 85%, w2l 3 |
 ## Dial 9: whole bracket at constant R
-**VERDICT (plain, not a PASS): 17 of 90 cells scored through L3M, 0 through L6M, 0 through HOLD; 0 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo.**
+**VERDICT (plain, not a PASS): 17 of 120 cells scored through L3M, 0 through L6M, 0 through HOLD; 0 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo.**
 
 Identity: TL3_D9_ID 202610 (hook active at W=60): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. Prereg autopilot/DIAL9_PREREG.md (sha line in DECISIONS.md). Order: ADDENDUM_CHOP_DIAL9_20261114.md. Code code/th_dial9 (d9_hooks.py reuses th_rangeuse forecasts fc.parquet a/b/c). Engine dollars are BASE lots (live x1.75).
 Definition: W = clip(book stop x Wtab/60, 30, 100); target = W x the book own target/stop ratio; lots = base x min(cap, stop/W) rounded half-up (min 1); cap 1.5 or 2 on increases. Maps T1 40/60/100, T2 45/60/80 (tercile of the expanding past predictions), C continuous (range ratio exp(pred-fref) x 60, clip 30..100). Version S = stop+target only (BookLock held at base dollars); version A = also state-cut arm and ctxcut arms, K7 flat cut, TH-L2 LOSS_MIN and TIGHT_TRAIL, MINDIP add dip, BookLock R from actual lots (all x W/stop). Not scalable: the hard-coded 30-pt profit-side tighten threshold inside sim.py. Halves B both, N narrow-only (W<=stop), W wide-only (W>=stop). Cap 15 = x1.5, 20 = x2 (wide-only has no increase). Fees and measured slippage are charged by the engine at the real lot count.
@@ -1256,9 +1256,9 @@ Cross: version x half (L3M scope all, median DD cut % / median d mean $/wk)
 ### Placebos (forecast shifted 11 / 23 / 37 trading days) beside the finalists, scope all, L6M (a real lead must beat all three)
 | finalist | real L6M | pl11 | pl23 | pl37 |
 |---|---|---|---|---|
-| S_c_T1_B_15 | n/a | pending | pending | pending |
+| S_c_T1_B_15 | n/a | pending | pending | -10289 $/wk, DD -69.4%, ww +3061, stops 11.11(10.99), b5 62%, w2l 3 |
 | A_a_C_B_15 | n/a | pending | pending | pending |
-| A_b_C_B_15 | n/a | pending | pending | pending |
+| A_b_C_B_15 | n/a | -296 $/wk, DD -0.1%, ww -32, stops 11.07(10.99), b5 100%, w2l 0 | pending | pending |
 
 ### Walk-forward every 2 weeks (pick on data before the block, apply to the next 2 weeks; scope all; needs L6M cells)
 fewer than 3 cells with L6M.
