@@ -1,4 +1,4 @@
-# DS3_EVENTCAL - macro event calendar + VIX for the no-UW benchmark (W-CAL). Rebuilt 2026-11-14T09:34Z by code/th_cal/cal_loop.sh (every 3 h). Research only, NO PASS claim.
+# DS3_EVENTCAL - macro event calendar + VIX for the no-UW benchmark (W-CAL). Rebuilt 2026-11-14T12:37Z by code/th_cal/cal_loop.sh (every 3 h). Research only, NO PASS claim.
 
 **Verdict: Calendar and VIX do not erase the UW range forecast: most of it survives. Of 42 watched session/input pairs (iv_term, flip, gamma, charm, vanna, tide x 7 sessions) 16 keep a YES over ATR+IV+DOW+events+VIX positive in L6M, L3M and H1 (asia/iv_term, asia/flip, asia/tide, london/iv_term, london/flip, pre/iv_term, nyam/iv_term, nyam/vanna, nyam2/iv_term, nyam2/flip, nypm/flip, nypm/gamma, nypm/tide, late/flip, late/gamma, late/tide); 4 keep a YES but not in all windows (london/tide, nyam/charm, nyam2/gamma, nyam2/vanna); 4 are relabelled "calendar proxy" (pre/flip, nyam2/charm, nypm/iv_term, late/iv_term); 17 are weak only; calendar and VIX add real gain by themselves only in pre and nypm (event flags). Range-class YES rows 98 (vs IV) -> 88 (vs CAL). No PASS.**
 
