@@ -1,4 +1,4 @@
-# DS3_SURVIVORS_J - JN05W2 (W-J; 2026-11-14T11:27:36Z; Shadow only, no PASS claims)
+# DS3_SURVIVORS_J - JN05W2 (W-J; 2026-11-14T11:58:12Z; Shadow only, no PASS claims)
 
 JN05W2 = live panel base (installed panel + P7 cut, NO JN04 layers, NO WA_C1) + F3 (WB_X_FR_F3 context cut) + E1 (WG_E1 governor) + C22 (S6 stack count and day P&L <= -2R) + BR3S (breadth_ext15 == 3 skip, P7) + FLAT45K (K7 flat -45). Hook order inner to outer: W-B context cut, W-X flat, W-S stack gate, W-C governor; BR3S through the entry-gate mixin. Reference LPB_BASE (exact, 43 months). JN05W2J = the same five on the JN04RM base (extra). Leave-one-out = one set per layer left out.
 
