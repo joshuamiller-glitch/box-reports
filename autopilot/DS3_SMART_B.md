@@ -160,7 +160,7 @@ Whole round trip per contract (fee + excess): target 9.4; cut 17.4; stop 18.2; 0
 | P7 | nyam | 11:30 | 32 | 62.0 | -6682.5 | 938.9 | -7621.4 |
 
 
-## B5 / B3 / B2 EXACT RESULTS (generated 2026-11-14 15:52Z UTC)
+## B5 / B3 / B2 EXACT RESULTS (generated 2026-11-14 16:24Z UTC)
 
 Hook code/th_smart_b/sb_hooks.py (outermost hooklist entry on JN05W2 = SB_*, JN05W2J = SBJ_*); prereg SMART_B_PREREG.md. Each cell is scored vs its base on the same months. **Caveat: the engine state cut fires in the engine but did not fire live on 11-11 (DS3_P7_CUT_FIDELITY.md).** Passive limits fill on a print through the level by 1 tick (touch variants are the optimistic bound). cut % = stack maxDD vs base (positive = shallower); d mean = all-weeks mean difference ($/wk); "d mean live-excess adj" adds the change in live-excess slip cost (B1 parameters) to the L6M all-weeks d mean (limit fills avoid market-exit excess; engine slip is inside gross). A window appears only when all its months are present.
 

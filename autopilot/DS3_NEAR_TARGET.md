@@ -1,168 +1,534 @@
-# DS3_NEAR_TARGET - near-target take, profit side, all books (user order 17:25Z)
-Generated 2026-11-14 15:33Z. 184 cells scored (family PHI_NT, U2, live-week gated, null_ver 2). PRE-PROOF. First-order screen; exact (ExhCut) results in the Stage 2 section.
+# DS3_NEAR_TARGET - PRIORITY 7: nearly-made targets and lock ladders (page generated 2026-11-14 16:23 UTC)
 
-Cells: (1) NT_take: market take (decision at k, execute k+1 at mid -+0.80 pt) once the favourable extreme (print high/low, or mid) is within k ticks of the target (k 1-10) and the extreme is >= s seconds old (s 0-30); policy line `profit <book> * pct>=P secs_ext>=s take`, P = 1 - k*0.25/target (target 60 pt; O7 90). (2) NT_retarget: nominal limit at target -+ k ticks (k 1-8). (3) NT_queue_wall / NT_queue_book: within kt ticks of the target and the target-level wall (>= X x MedLevel) or the ahead_rel / tot_rel book ratio >= thr: market take. The stop-side mirror is not in the grid. Equal lots, no trade removed; reference row = never-cut hold-to-bracket (60/60), not a candidate.
+**VERDICT: (verdict pending)**
 
-Execution cost: every take that would have filled anyway at the target pays (target - exit price) + 0.80 pt slippage; the net-gain table below shows whether the rescued misses pay for that.
+Status: Shadow only, post hoc, no PASS claims. Prereg autopilot/NT_PREREG.md (sha in DECISIONS.md). Base = exact JN05W2 trades (43 months 2023-04..2026-10), favourable excursion from stored 1-s mids, T = 60 pts (O7 90). Windows by exit day: L1M 20261001-, L3M 20260801-, L6M 20260512-, HOLD 20251111-20260511, GAP 20250701-20251110, PRE 20240201-20250630, X' 20230401-20240131. Recent max DD is one week (2026-W44, -36.4k stack); every DD cut is shown with and without that week where exact data exist. Identity: TL3_NT_ID (hook loaded, ladder never armed) on 202610 = 598 trades, net 25,943.82 = JN05W2.
 
-## Frozen live week: targets missed by <= k ticks
-186 frozen live trades; the 60-pt (O7 90) target price was touched on the path before the live exit for 9; never touched for 177. Missed by 0 < m <= k ticks (live pnl = what the trade actually earned at its live exit): 
-- k=1: 11 trades (P7 5, K7 5, M7 1), live pnl of those 43165 USD, a fill exactly at the target would add 2251 USD over what they earned
-- k=2: 25 trades (K7 12, P7 7, M7 3, A7 2, U7 1), live pnl of those 68820 USD, a fill exactly at the target would add 2890 USD over what they earned
-- k=3: 32 trades (K7 18, P7 7, M7 4, A7 2, U7 1), live pnl of those 78420 USD, a fill exactly at the target would add 2851 USD over what they earned
-- k=5: 42 trades (K7 22, P7 11, M7 6, A7 2, U7 1), live pnl of those 110815 USD, a fill exactly at the target would add 3920 USD over what they earned
-- k=8: 54 trades (K7 26, P7 15, M7 7, A7 3, X5 1, H7 1, U7 1), live pnl of those 135235 USD, a fill exactly at the target would add 6989 USD over what they earned
-- k=10: 58 trades (K7 26, P7 15, M7 8, A7 6, X5 1, H7 1, U7 1), live pnl of those 136285 USD, a fill exactly at the target would add 10720 USD over what they earned
-Note: most of the missed trades already earned at or above target pnl at their live exit, so the live miss gain is small; the live M7 example of today (long 27933.75, target 27993.75, high 27993.50, missed by 1 tick) is outside the frozen file and is quoted from the user only.
 
-### K7 - pooled sessions, drawdown-first top 5
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD PRE with / without | nfire | placebo p | live week | label |
-|---|---|---|---|---|---|---|---|---|
-| NT_retarget | k=4 | +870 / +872 / +496 / +415 / +212 / -8 / +147 / -28 | 15455 / 20902 | 23127 / 26707 | 1718 | 0.154 | -375 | CANDIDATE-DD |
-| NT_take | k=7 s=30 trigger=mid | -455 / +155 / -29 / +92 / -24 / -323 / -86 / -142 | 15919 / 20902 | 23463 / 26707 | 437 | 0.231 | +1476 | CANDIDATE-DD |
-| NT_retarget | k=5 | +632 / +1001 / +538 / +644 / +318 / -111 / +102 / +34 | 15935 / 20902 | 23727 / 26707 | 1957 | 0.108 | -495 | CANDIDATE-DD |
-| NT_take | k=8 s=30 trigger=mid | -639 / +236 / +16 / +18 / -52 / -154 / -162 / -95 | 16020 / 20902 | 24054 / 26707 | 534 | 0.169 | +504 | CANDIDATE-DD |
-| NT_take | k=7 s=20 trigger=mid | -527 / +116 / -69 / +68 / -49 / -344 / -93 / -147 | 16039 / 20902 | 23623 / 26707 | 514 | 0.385 | +1354 | CANDIDATE-DD |
-Net gain per take (best cell, first order, all fired trades of the book): 1718 fired; 1688 would have filled at the target anyway (cost -38720 USD total, -22.9 per take); 30 rescued misses (gain vs their hold-to-bracket exit 71959 USD).
 
-### P7 - pooled sessions, drawdown-first top 5
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD PRE with / without | nfire | placebo p | live week | label |
-|---|---|---|---|---|---|---|---|---|
-| NT_retarget | k=8 | +2611 / -2261 / +535 / +1658 / +2001 / -1154 / -358 / -498 | 77449 / 133887 | 111128 / 109442 | 1857 | 0.031 | -3572 | CANDIDATE-DD |
-| NT_retarget | k=7 | +3152 / -1728 / +1002 / +623 / +1576 / -1005 / -193 / -322 | 103032 / 133887 | 107618 / 109442 | 1751 | 0.077 | -2977 | CANDIDATE-DD |
-| NT_retarget | k=5 | +4486 / -548 / +2034 / +1341 / +1066 / -1139 / -45 / -397 | 107577 / 133887 | 104313 / 109442 | 1483 | 0.077 | -1892 | CANDIDATE-DD |
-| NT_retarget | k=6 | +3879 / -1103 / +1516 / +789 / +1144 / -1481 / -39 / -336 | 109867 / 133887 | 105618 / 109442 | 1627 | 0.200 | -2457 | CANDIDATE-DD |
-| NT_queue_book | feat=tot_rel_slow kt=5 thr=3.0 | -149 / -75 / +686 / +90 / +35 / -584 / -148 / -162 | 111908 / 133887 | 109442 / 109442 | 46 | 0.031 | +0 | CANDIDATE-DD |
-Net gain per take (best cell, first order, all fired trades of the book): 1857 fired; 1812 would have filled at the target anyway (cost -326120 USD total, -180.0 per take); 45 rescued misses (gain vs their hold-to-bracket exit 456629 USD).
+## 1. Anatomy: trades that reached 60/70/80/90% of target and did not fill it
 
-### M7 - pooled sessions, drawdown-first top 5
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD PRE with / without | nfire | placebo p | live week | label |
-|---|---|---|---|---|---|---|---|---|
-| NT_retarget | k=2 | -70 / -54 / -50 / +145 / +188 / -57 / -36 / -32 | 37775 / 44425 | 51471 / 50321 | 633 | 0.169 | +1930 | CANDIDATE-DD |
-| NT_retarget | k=3 | +474 / +496 / +297 / +471 / +323 / -108 / +21 / -61 | 38495 / 44425 | 47811 / 50321 | 864 | 0.262 | +1920 | CANDIDATE-DD |
-| NT_take | k=2 s=5 trigger=print | -284 / -135 / -97 / +32 / +16 / -323 / -122 / -89 | 39001 / 44425 | 54601 / 50321 | 243 | 0.046 | +1844 | no |
-| NT_retarget | k=4 | +409 / +444 / +246 / +408 / +261 / -175 / +44 / -98 | 39265 / 44425 | 49026 / 50321 | 1039 | 0.262 | +1910 | CANDIDATE-DD |
-| NT_queue_book | feat=tot_rel_fast kt=2 thr=1.5 | +0 / -22 / -26 / +41 / -40 / -249 / -51 / -101 | 39468 / 44425 | 51771 / 50321 | 147 | 0.062 | +334 | CANDIDATE-DD |
-Net gain per take (best cell, first order, all fired trades of the book): 633 fired; 627 would have filled at the target anyway (cost -7340 USD total, -11.7 per take); 6 rescued misses (gain vs their hold-to-bracket exit 19260 USD).
+Definitions. reach = max second-mid favourable excursion >= x * T. loss close = closed (non-Target) at a negative P&L. half close = closed below half the peak. Given back $/wk = sum over those trades of max(0, 0.5 x peak pts - exit pts) x 20 x lots (the dollars between a half-peak close and what happened). Net $/wk is the actual net of the non-Target trades that had reached the level.
 
-### U7 - pooled sessions, drawdown-first top 5
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD PRE with / without | nfire | placebo p | live week | label |
-|---|---|---|---|---|---|---|---|---|
-| NT_queue_book | feat=ahead_rel_slow kt=5 thr=3.0 | +0 / +0 / +0 / +13 / -30 / -14 / -17 / -3 | 21561 / 21561 | 42226 / 42226 | 26 | 1.000 | +0 | no |
-| NT_queue_book | feat=ahead_rel_fast kt=5 thr=3.0 | +0 / +0 / +0 / +34 / -2 / +0 / -47 / -3 | 21561 / 21561 | 43913 / 42226 | 27 | 1.000 | +0 | no |
-Net gain per take (best cell, first order, all fired trades of the book): 26 fired; 24 would have filled at the target anyway (cost -8375 USD total, -349.0 per take); 2 rescued misses (gain vs their hold-to-bracket exit 1393 USD).
+### L6M (all sessions, per book; book ALL = stack)
 
-### A7 - pooled sessions, drawdown-first top 5
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD PRE with / without | nfire | placebo p | live week | label |
-|---|---|---|---|---|---|---|---|---|
-| NT_queue_wall | feat=wall_med kt=1 thr=10 | +0 / +0 / +0 / +0 / -3 / +0 / -6 / -3 | 12461 / 12461 | 6089 / 6089 | 22 | 0.862 | +0 | no |
-Net gain per take (best cell, first order, all fired trades of the book): 22 fired; 22 would have filled at the target anyway (cost -1044 USD total, -47.5 per take); 0 rescued misses (gain vs their hold-to-bracket exit 0 USD).
+| book | reach | n_reach | n_tgt | n_not_filled | loss_closes/wk | half_closes/wk | net $/wk of those | given back $/wk | of which full stops |
+|--|--|--|--|--|--|--|--|--|--|
+| A7 | 0.600 | 211 | 167 | 44 | 1.760 | 1.760 | -1790.1 | 2586.6 | 27 |
+| A7 | 0.700 | 195 | 167 | 28 | 1.120 | 1.120 | -1133.3 | 1683.5 | 17 |
+| A7 | 0.800 | 182 | 166 | 16 | 0.640 | 0.640 | -602.1 | 936.5 | 7 |
+| A7 | 0.900 | 158 | 154 | 4 | 0.160 | 0.160 | -136.1 | 226.1 | 0 |
+| H7 | 0.600 | 100 | 79 | 21 | 0.840 | 0.840 | -1080.4 | 1893.9 | 5 |
+| H7 | 0.700 | 93 | 78 | 15 | 0.600 | 0.600 | -709.1 | 1314.5 | 3 |
+| H7 | 0.800 | 90 | 78 | 12 | 0.480 | 0.480 | -568.4 | 1028.1 | 3 |
+| H7 | 0.900 | 77 | 73 | 4 | 0.160 | 0.160 | -200.6 | 334.9 | 1 |
+| K7 | 0.600 | 836 | 653 | 183 | 7.120 | 7.200 | -6815.4 | 10858.4 | 4 |
+| K7 | 0.700 | 766 | 651 | 115 | 4.480 | 4.520 | -4293.4 | 7090.0 | 3 |
+| K7 | 0.800 | 714 | 646 | 68 | 2.640 | 2.680 | -2405.3 | 4135.7 | 0 |
+| K7 | 0.900 | 631 | 601 | 30 | 1.160 | 1.200 | -940.1 | 1729.6 | 0 |
+| M7 | 0.600 | 349 | 273 | 76 | 3.040 | 3.040 | -3008.3 | 4765.0 | 4 |
+| M7 | 0.700 | 320 | 270 | 50 | 2.000 | 2.000 | -1988.0 | 3234.8 | 3 |
+| M7 | 0.800 | 295 | 264 | 31 | 1.240 | 1.240 | -1138.2 | 1943.0 | 2 |
+| M7 | 0.900 | 258 | 241 | 17 | 0.680 | 0.680 | -627.2 | 1105.5 | 0 |
+| O7 | 0.600 | 18 | 12 | 6 | 0.160 | 0.200 | -25.8 | 196.4 | 2 |
+| O7 | 0.700 | 16 | 12 | 4 | 0.080 | 0.120 | 21.4 | 103.5 | 2 |
+| O7 | 0.800 | 15 | 12 | 3 | 0.040 | 0.080 | 33.7 | 65.8 | 1 |
+| O7 | 0.900 | 14 | 12 | 2 | 0.000 | 0.040 | 64.3 | 3.850 | 0 |
+| P7 | 0.600 | 533 | 419 | 114 | 4.560 | 4.560 | -11114.1 | 19043.6 | 5 |
+| P7 | 0.700 | 505 | 418 | 87 | 3.480 | 3.480 | -8996.1 | 15777.3 | 3 |
+| P7 | 0.800 | 460 | 416 | 44 | 1.760 | 1.760 | -4019.8 | 7339.6 | 1 |
+| P7 | 0.900 | 410 | 391 | 19 | 0.760 | 0.760 | -1656.5 | 3169.6 | 1 |
+| U7 | 0.600 | 163 | 132 | 31 | 1.240 | 1.240 | -3322.8 | 4919.9 | 19 |
+| U7 | 0.700 | 155 | 131 | 24 | 0.960 | 0.960 | -2782.7 | 4149.0 | 16 |
+| U7 | 0.800 | 143 | 129 | 14 | 0.560 | 0.560 | -1671.9 | 2541.3 | 9 |
+| U7 | 0.900 | 121 | 117 | 4 | 0.160 | 0.160 | -410.2 | 638.3 | 3 |
+| ALL | 0.600 | 2210 | 1735 | 475 | 18.7 | 18.8 | -27157.0 | 44263.9 | 66 |
+| ALL | 0.700 | 2050 | 1727 | 323 | 12.7 | 12.8 | -19881.3 | 33352.5 | 47 |
+| ALL | 0.800 | 1899 | 1711 | 188 | 7.360 | 7.440 | -10372.1 | 17990.0 | 23 |
+| ALL | 0.900 | 1669 | 1589 | 80 | 3.080 | 3.160 | -3906.4 | 7207.9 | 5 |
 
-### H7 - pooled sessions, drawdown-first top 5
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD PRE with / without | nfire | placebo p | live week | label |
-|---|---|---|---|---|---|---|---|---|
-| NT_take | k=3 s=30 trigger=print | -56 / -28 / -44 / +16 / -25 / -28 / -48 / -31 | 13974 / 15477 | 20829 / 20667 | 69 | 0.108 | +0 | CANDIDATE-DD |
-| NT_take | k=4 s=30 trigger=print | -56 / -28 / -56 / +1 / -61 / -74 / -74 / -63 | 13974 / 15477 | 20829 / 20667 | 100 | 0.092 | +0 | CANDIDATE-DD |
-| NT_take | k=1 s=30 trigger=print | +0 / +0 / +0 / +0 / -11 / -8 / -10 / -3 | 15477 / 15477 | 20829 / 20667 | 27 | 1.000 | +0 | no |
-Net gain per take (best cell, first order, all fired trades of the book): 69 fired; 64 would have filled at the target anyway (cost -14396 USD total, -224.9 per take); 5 rescued misses (gain vs their hold-to-bracket exit 12947 USD).
+### L3M (all sessions, per book; book ALL = stack)
 
-### O7 - pooled sessions, drawdown-first top 5
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD PRE with / without | nfire | placebo p | live week | label |
-|---|---|---|---|---|---|---|---|---|
-| NT_take | k=9 s=5 trigger=mid | +0 / +0 / +0 / +0 / -10 / -6 / -17 / -28 | 7469 / 7469 | 5102 / 5102 | 42 | 1.000 | +0 | no |
-| NT_take | k=10 s=10 trigger=mid | +0 / +0 / +0 / +0 / -7 / +0 / -19 / -22 | 7469 / 7469 | 5102 / 5102 | 37 | 1.000 | +0 | no |
-| NT_take | k=5 s=5 trigger=print | +0 / +0 / +0 / +0 / -15 / -24 / -15 / -19 | 7469 / 7469 | 5102 / 5102 | 44 | 1.000 | +0 | no |
-| NT_take | k=5 s=30 trigger=print | +0 / +0 / +0 / +0 / -12 / -34 / -8 / -12 | 7469 / 7469 | 5102 / 5102 | 20 | 1.000 | +0 | no |
-| NT_take | k=8 s=10 trigger=mid | +0 / +0 / +0 / +0 / -4 / +0 / -14 / -22 | 7469 / 7469 | 5102 / 5102 | 30 | 1.000 | +0 | no |
-Net gain per take (best cell, first order, all fired trades of the book): 42 fired; 42 would have filled at the target anyway (cost -3954 USD total, -94.2 per take); 0 rescued misses (gain vs their hold-to-bracket exit 0 USD).
+| book | reach | n_reach | n_tgt | n_not_filled | loss_closes/wk | half_closes/wk | net $/wk of those | given back $/wk | of which full stops |
+|--|--|--|--|--|--|--|--|--|--|
+| A7 | 0.600 | 94 | 73 | 21 | 1.615 | 1.615 | -1676.4 | 2381.7 | 14 |
+| A7 | 0.700 | 83 | 73 | 10 | 0.769 | 0.769 | -793.6 | 1173.2 | 7 |
+| A7 | 0.800 | 79 | 73 | 6 | 0.462 | 0.462 | -434.0 | 674.4 | 3 |
+| A7 | 0.900 | 71 | 70 | 1 | 0.077 | 0.077 | -48.2 | 92.0 | 0 |
+| H7 | 0.600 | 47 | 36 | 11 | 0.846 | 0.846 | -1114.1 | 1814.1 | 3 |
+| H7 | 0.700 | 42 | 35 | 7 | 0.538 | 0.538 | -701.6 | 1172.7 | 3 |
+| H7 | 0.800 | 41 | 35 | 6 | 0.462 | 0.462 | -604.7 | 1003.5 | 3 |
+| H7 | 0.900 | 35 | 33 | 2 | 0.154 | 0.154 | -160.1 | 247.2 | 1 |
+| K7 | 0.600 | 379 | 289 | 90 | 6.692 | 6.769 | -6268.8 | 10005.2 | 3 |
+| K7 | 0.700 | 342 | 287 | 55 | 4.000 | 4.077 | -3722.1 | 6232.1 | 2 |
+| K7 | 0.800 | 312 | 284 | 28 | 2.000 | 2.077 | -1641.6 | 2963.0 | 0 |
+| K7 | 0.900 | 279 | 267 | 12 | 0.846 | 0.923 | -616.5 | 1223.8 | 0 |
+| M7 | 0.600 | 169 | 136 | 33 | 2.538 | 2.538 | -2301.3 | 3700.7 | 2 |
+| M7 | 0.700 | 160 | 134 | 26 | 2.000 | 2.000 | -1837.0 | 3002.4 | 2 |
+| M7 | 0.800 | 150 | 132 | 18 | 1.385 | 1.385 | -1193.6 | 2025.1 | 2 |
+| M7 | 0.900 | 132 | 121 | 11 | 0.846 | 0.846 | -659.3 | 1179.9 | 0 |
+| O7 | 0.600 | 9 | 6 | 3 | 0.154 | 0.154 | -2.272 | 164.2 | 1 |
+| O7 | 0.700 | 8 | 6 | 2 | 0.077 | 0.077 | 42.9 | 72.5 | 1 |
+| O7 | 0.800 | 7 | 6 | 1 | 0.000 | 0.000 | 66.4 | 0.000 | 0 |
+| O7 | 0.900 | 7 | 6 | 1 | 0.000 | 0.000 | 66.4 | 0.000 | 0 |
+| P7 | 0.600 | 251 | 191 | 60 | 4.615 | 4.615 | -11335.0 | 19350.1 | 3 |
+| P7 | 0.700 | 236 | 190 | 46 | 3.538 | 3.538 | -9510.8 | 16487.8 | 3 |
+| P7 | 0.800 | 213 | 189 | 24 | 1.846 | 1.846 | -4457.5 | 8063.4 | 1 |
+| P7 | 0.900 | 190 | 179 | 11 | 0.846 | 0.846 | -1829.3 | 3435.8 | 1 |
+| U7 | 0.600 | 76 | 61 | 15 | 1.154 | 1.154 | -3040.4 | 4507.1 | 10 |
+| U7 | 0.700 | 72 | 60 | 12 | 0.923 | 0.923 | -2587.1 | 3868.9 | 8 |
+| U7 | 0.800 | 68 | 60 | 8 | 0.615 | 0.615 | -1677.4 | 2552.1 | 5 |
+| U7 | 0.900 | 56 | 54 | 2 | 0.154 | 0.154 | -410.7 | 668.2 | 1 |
+| ALL | 0.600 | 1025 | 792 | 233 | 17.6 | 17.7 | -25738.2 | 41923.2 | 36 |
+| ALL | 0.700 | 943 | 785 | 158 | 11.8 | 11.9 | -19109.1 | 32009.7 | 26 |
+| ALL | 0.800 | 870 | 779 | 91 | 6.769 | 6.846 | -9942.4 | 17281.5 | 14 |
+| ALL | 0.900 | 770 | 730 | 40 | 2.923 | 3.000 | -3657.7 | 6846.8 | 3 |
 
-### ALL - pooled sessions, drawdown-first top 5
-| technique | params | delta mean vs never-cut L1M/L2M/L3M/L6M/HOLD/MID/PRE/X' | maxDD L6M with / without | maxDD PRE with / without | nfire | placebo p | live week | label |
-|---|---|---|---|---|---|---|---|---|
-| NT_retarget | k=5 | +5069 / +1862 / +3341 / +2517 / +1807 / -640 / +215 / -426 | 109631 / 121381 | 133965 / 152455 | 5901 | 0.169 | -588 | CANDIDATE-DD |
-| NT_retarget | k=6 | +4055 / +943 / +2480 / +1657 / +1711 / -881 / +130 / -227 | 111081 / 121381 | 135360 / 152455 | 6443 | 0.262 | +1643 | CANDIDATE-DD |
-| NT_retarget | k=7 | +2885 / -36 / +1619 / +1275 / +1897 / -707 / +84 / -353 | 112731 / 121381 | 124625 / 152455 | 6903 | 0.292 | +843 | CANDIDATE-DD |
-| NT_retarget | k=8 | +1980 / -928 / +800 / +2204 / +2165 / -972 / -182 / -610 | 114131 / 121381 | 126165 / 152455 | 7294 | 0.385 | -62 | CANDIDATE-DD |
-| NT_queue_book | feat=tot_rel_fast kt=1 thr=3.0 | -28 / +0 / -9 / +58 / -6 / -35 / -31 / -156 | 121381 / 121381 | 153084 / 152455 | 34 | 1.000 | +0 | no |
+### HOLD (all sessions, per book; book ALL = stack)
 
-## ROLL-EXCL check (the 33 roll-second-bracket trades removed from rule and never-cut reference; key (book, signal second) = /mnt/l2/l2vast/_th_exh/hi/roll_bracket_trades.csv; SZ_BASE_PROOF section 9)
-Re-scored cells (family *_RX). Columns: maxDD with / without and mean delta vs never-cut, before -> after exclusion. L6M is unchanged within noise; X' and HOLD move because the roll trades sit in those windows. Stage 2 (engine) numbers still carry the artifact in the engine base (reference and rule alike); not re-run.
+| book | reach | n_reach | n_tgt | n_not_filled | loss_closes/wk | half_closes/wk | net $/wk of those | given back $/wk | of which full stops |
+|--|--|--|--|--|--|--|--|--|--|
+| A7 | 0.600 | 125 | 103 | 22 | 0.815 | 0.815 | -757.3 | 1146.2 | 11 |
+| A7 | 0.700 | 120 | 102 | 18 | 0.667 | 0.667 | -621.6 | 953.6 | 10 |
+| A7 | 0.800 | 109 | 99 | 10 | 0.370 | 0.370 | -336.3 | 535.1 | 5 |
+| A7 | 0.900 | 101 | 96 | 5 | 0.185 | 0.185 | -152.9 | 257.6 | 2 |
+| H7 | 0.600 | 68 | 53 | 15 | 0.556 | 0.556 | -1048.6 | 1599.5 | 9 |
+| H7 | 0.700 | 63 | 53 | 10 | 0.370 | 0.370 | -667.4 | 1013.8 | 6 |
+| H7 | 0.800 | 59 | 53 | 6 | 0.222 | 0.222 | -395.7 | 612.9 | 4 |
+| H7 | 0.900 | 54 | 50 | 4 | 0.148 | 0.148 | -228.2 | 372.2 | 2 |
+| K7 | 0.600 | 616 | 492 | 124 | 4.519 | 4.519 | -4219.6 | 6658.9 | 1 |
+| K7 | 0.700 | 584 | 492 | 92 | 3.333 | 3.333 | -3030.5 | 4935.8 | 1 |
+| K7 | 0.800 | 539 | 485 | 54 | 1.926 | 1.926 | -1682.1 | 2878.0 | 1 |
+| K7 | 0.900 | 480 | 457 | 23 | 0.815 | 0.815 | -655.6 | 1157.2 | 1 |
+| M7 | 0.600 | 346 | 264 | 82 | 3.000 | 3.000 | -2715.2 | 4479.8 | 7 |
+| M7 | 0.700 | 330 | 264 | 66 | 2.407 | 2.407 | -2241.3 | 3744.0 | 6 |
+| M7 | 0.800 | 298 | 261 | 37 | 1.333 | 1.333 | -1300.2 | 2236.5 | 4 |
+| M7 | 0.900 | 266 | 247 | 19 | 0.704 | 0.704 | -668.7 | 1166.7 | 2 |
+| O7 | 0.600 | 31 | 21 | 10 | 0.148 | 0.296 | 77.1 | 209.7 | 2 |
+| O7 | 0.700 | 30 | 21 | 9 | 0.111 | 0.259 | 101.3 | 164.1 | 2 |
+| O7 | 0.800 | 28 | 21 | 7 | 0.037 | 0.185 | 156.2 | 61.3 | 0 |
+| O7 | 0.900 | 28 | 21 | 7 | 0.037 | 0.185 | 156.2 | 61.3 | 0 |
+| P7 | 0.600 | 410 | 320 | 90 | 3.296 | 3.296 | -7127.9 | 12714.6 | 3 |
+| P7 | 0.700 | 382 | 318 | 64 | 2.333 | 2.333 | -5241.2 | 9622.4 | 2 |
+| P7 | 0.800 | 355 | 315 | 40 | 1.444 | 1.444 | -3025.0 | 5975.2 | 1 |
+| P7 | 0.900 | 311 | 294 | 17 | 0.630 | 0.630 | -1223.0 | 2466.5 | 0 |
+| U7 | 0.600 | 129 | 105 | 24 | 0.889 | 0.889 | -2596.5 | 3758.9 | 20 |
+| U7 | 0.700 | 125 | 105 | 20 | 0.741 | 0.741 | -2246.7 | 3264.0 | 18 |
+| U7 | 0.800 | 114 | 102 | 12 | 0.444 | 0.444 | -1330.8 | 1969.1 | 11 |
+| U7 | 0.900 | 97 | 93 | 4 | 0.148 | 0.148 | -530.6 | 814.5 | 4 |
+| ALL | 0.600 | 1725 | 1358 | 367 | 13.2 | 13.4 | -18388.0 | 30567.7 | 53 |
+| ALL | 0.700 | 1634 | 1355 | 279 | 9.963 | 10.1 | -13947.5 | 23697.8 | 45 |
+| ALL | 0.800 | 1502 | 1336 | 166 | 5.778 | 5.926 | -7913.9 | 14268.2 | 26 |
+| ALL | 0.900 | 1337 | 1258 | 79 | 2.667 | 2.815 | -3302.7 | 6296.0 | 11 |
 
-| book | technique | params | L6M maxDD before / after | HOLD maxDD before / after | PRE maxDD before / after | X' maxDD before / after | X' mean delta before / after | L6M mean delta before / after |
-|---|---|---|---|---|---|---|---|---|
-| A7 | NT_take | k=3 s=30 trigger=mid | 12702/12461 -> 12702/12461 | 14224/14181 -> 14224/14181 | 6089/6089 -> 6089/6089 | 14205/13855 -> 14205/13855 | -9 -> -9 | -17 -> -17 |
-| H7 | NT_take | k=1 s=30 trigger=print | 15477/15477 -> 15477/15477 | 57978/57397 -> 57978/57397 | 20829/20667 -> 20829/20667 | 34879/34807 -> 34879/34807 | -3 -> -3 | +0 -> +0 |
-| P7 | NT_retarget | k=6 | 109867/133887 -> 109867/133887 | 113600/144370 -> 109867/139466 | 105618/109442 -> 96959/109442 | 136792/135949 -> 140318/141816 | -336 -> -336 | +789 -> +789 |
-| K7 | NT_take | k=7 s=20 trigger=mid | 16039/20902 -> 16039/20007 | 44384/42831 -> 43124/41571 | 23623/26707 -> 22449/25532 | 46453/44364 -> 46453/44364 | -147 -> -147 | +68 -> +68 |
-| O7 | NT_take | k=5 s=30 trigger=print | 7469/7469 -> 7469/7469 | 7469/7469 -> 7469/7469 | 5102/5102 -> 5102/5102 | 14326/14262 -> 14326/14262 | -12 -> -12 | +0 -> +0 |
-| U7 | NT_queue_book | feat=ahead_rel_fast kt=5 thr=3.0 | 21561/21561 -> 21561/21561 | 21561/21561 -> 21561/21561 | 43913/42226 -> 43913/42226 | 24317/24437 -> 26707/26827 | -3 -> -3 | +34 -> +34 |
-| M7 | NT_take | k=2 s=5 trigger=print | 39001/44425 -> 39001/44425 | 39001/44425 -> 39001/44425 | 54601/50321 -> 54601/50321 | 24591/23241 -> 24591/23241 | -89 -> -89 | +32 -> +32 |
-| H7 | NT_take | k=3 s=30 trigger=print | 13974/15477 -> 13974/15477 | 55136/57397 -> 55136/57397 | 20829/20667 -> 20829/20667 | 35864/34807 -> 35864/34807 | -31 -> -31 | +16 -> +16 |
-| O7 | NT_take | k=5 s=5 trigger=print | 7469/7469 -> 7469/7469 | 7469/7469 -> 7469/7469 | 5102/5102 -> 5102/5102 | 14536/14262 -> 14536/14262 | -19 -> -19 | +0 -> +0 |
-| H7 | NT_take | k=4 s=30 trigger=print | 13974/15477 -> 13974/15477 | 56711/57397 -> 56711/57397 | 20829/20667 -> 20829/20667 | 36525/34807 -> 36525/34807 | -63 -> -63 | +1 -> +1 |
-| O7 | NT_take | k=8 s=10 trigger=mid | 7469/7469 -> 7469/7469 | 7469/7469 -> 7469/7469 | 5102/5102 -> 5102/5102 | 14720/14262 -> 14720/14262 | -22 -> -22 | +0 -> +0 |
-| P7 | NT_retarget | k=8 | 77449/133887 -> 77449/133887 | 106265/144370 -> 101361/139466 | 111128/109442 -> 102469/109442 | 127957/135949 -> 131484/141816 | -498 -> -498 | +1658 -> +1658 |
-| A7 | NT_retarget | k=8 | 12661/12461 -> 12661/12461 | 13232/14181 -> 13232/14181 | 6089/6089 -> 6089/6089 | 12000/13855 -> 12000/13855 | -53 -> -53 | -11 -> -11 |
-| M7 | NT_retarget | k=3 | 38495/44425 -> 38495/44425 | 38495/44425 -> 38495/44425 | 47811/50321 -> 47811/50321 | 24081/23241 -> 24081/23241 | -61 -> -61 | +471 -> +471 |
-| U7 | NT_take | k=2 s=10 trigger=mid | 21561/21561 -> 21561/21561 | 21561/21561 -> 21561/21561 | 42308/42226 -> 42308/42226 | 24828/24437 -> 27218/26827 | -7 -> -7 | -12 -> -12 |
-| O7 | NT_take | k=10 s=10 trigger=mid | 7469/7469 -> 7469/7469 | 7469/7469 -> 7469/7469 | 5102/5102 -> 5102/5102 | 14707/14262 -> 14707/14262 | -22 -> -22 | +0 -> +0 |
-| K7 | NT_take | k=7 s=30 trigger=mid | 15919/20902 -> 15919/20007 | 44146/42831 -> 42886/41571 | 23463/26707 -> 22288/25532 | 46532/44364 -> 46532/44364 | -142 -> -142 | +92 -> +92 |
-| A7 | NT_take | k=2 s=0 trigger=mid | 12461/12461 -> 12461/12461 | 14295/14181 -> 14295/14181 | 6089/6089 -> 6089/6089 | 14011/13855 -> 14011/13855 | -7 -> -7 | -7 -> -7 |
-| U7 | NT_retarget | k=1 | 21561/21561 -> 21561/21561 | 21561/21561 -> 21561/21561 | 42271/42226 -> 42271/42226 | 24517/24437 -> 26907/26827 | -7 -> -7 | -11 -> -11 |
-| A7 | NT_retarget | k=1 | 12476/12461 -> 12476/12461 | 14221/14181 -> 14221/14181 | 6089/6089 -> 6089/6089 | 13885/13855 -> 13885/13855 | -2 -> -2 | -7 -> -7 |
-| P7 | NT_retarget | k=7 | 103032/133887 -> 103032/133887 | 106405/144370 -> 103032/139466 | 107618/109442 -> 98959/109442 | 124227/135949 -> 127753/141816 | -322 -> -322 | +623 -> +623 |
-| K7 | NT_retarget | k=5 | 15935/20902 -> 15935/20007 | 42411/42831 -> 41151/41571 | 23727/26707 -> 22552/25532 | 45389/44364 -> 45389/44364 | +34 -> +34 | +644 -> +644 |
-| P7 | NT_retarget | k=5 | 107577/133887 -> 107577/133887 | 125987/144370 -> 121083/139466 | 104313/109442 -> 95654/109442 | 142382/135949 -> 145908/141816 | -397 -> -397 | +1341 -> +1341 |
-| M7 | NT_queue_book | feat=tot_rel_fast kt=2 thr=1.5 | 39468/44425 -> 39468/44425 | 39468/44425 -> 39468/44425 | 51771/50321 -> 51771/50321 | 23708/23241 -> 23708/23241 | -101 -> -101 | +41 -> +41 |
-| O7 | NT_take | k=9 s=5 trigger=mid | 7469/7469 -> 7469/7469 | 7469/7469 -> 7469/7469 | 5102/5102 -> 5102/5102 | 14894/14262 -> 14894/14262 | -28 -> -28 | +0 -> +0 |
-| H7 | NT_take | k=3 s=10 trigger=mid | 15477/15477 -> 15477/15477 | 58193/57397 -> 58193/57397 | 20706/20667 -> 20706/20667 | 35138/34807 -> 35138/34807 | -9 -> -9 | -2 -> -2 |
-| U7 | NT_queue_book | feat=ahead_rel_slow kt=5 thr=3.0 | 21561/21561 -> 21561/21561 | 21561/21561 -> 21561/21561 | 42226/42226 -> 42226/42226 | 24312/24437 -> 26702/26827 | -3 -> -3 | +13 -> +13 |
-| U7 | NT_take | k=2 s=2 trigger=mid | 21561/21561 -> 21561/21561 | 21561/21561 -> 21561/21561 | 42293/42226 -> 42293/42226 | 24798/24437 -> 27188/26827 | -3 -> -3 | -10 -> -10 |
-| A7 | NT_take | k=2 s=2 trigger=mid | 12461/12461 -> 12461/12461 | 14214/14181 -> 14214/14181 | 6089/6089 -> 6089/6089 | 14047/13855 -> 14047/13855 | -6 -> -6 | -4 -> -4 |
-| H7 | NT_take | k=2 s=2 trigger=mid | 15477/15477 -> 15477/15477 | 57693/57397 -> 57693/57397 | 20667/20667 -> 20667/20667 | 35123/34807 -> 35123/34807 | -7 -> -7 | -3 -> -3 |
-| K7 | NT_take | k=8 s=30 trigger=mid | 16020/20902 -> 16020/20007 | 40464/42831 -> 39204/41571 | 24054/26707 -> 22879/25532 | 45130/44364 -> 45130/44364 | -95 -> -95 | +18 -> +18 |
-| P7 | NT_queue_book | feat=tot_rel_slow kt=5 thr=3.0 | 111908/133887 -> 111908/133887 | 152750/144370 -> 147846/139466 | 109442/109442 -> 109442/109442 | 142292/135949 -> 147445/141816 | -162 -> -162 | +90 -> +90 |
-| K7 | NT_retarget | k=4 | 15455/20902 -> 15455/20007 | 41841/42831 -> 40581/41571 | 23127/26707 -> 21952/25532 | 45104/44364 -> 45104/44364 | -28 -> -28 | +415 -> +415 |
-| M7 | NT_retarget | k=4 | 39265/44425 -> 39265/44425 | 39265/44425 -> 39265/44425 | 49026/50321 -> 49026/50321 | 24641/23241 -> 24641/23241 | -98 -> -98 | +408 -> +408 |
-| M7 | NT_retarget | k=2 | 37775/44425 -> 37775/44425 | 37775/44425 -> 37775/44425 | 51471/50321 -> 51471/50321 | 23671/23241 -> 23671/23241 | -32 -> -32 | +145 -> +145 |
+### GAP (all sessions, per book; book ALL = stack)
 
-## Per-session best cell (drawdown-first, L6M mean >= never-cut, nfire >= 20)
-- K7 session 1: NT_retarget k=7  L6M maxDD 11452 / 14952, L6M mean +181, PRE mean -5, nfire 538
-- K7 session 3: NT_retarget k=5  L6M maxDD 19275 / 23185, L6M mean +43, PRE mean -27, nfire 453
-- K7 session 4: NT_queue_wall feat=wall_med kt=5 thr=10  L6M maxDD 6369 / 6369, L6M mean +0, PRE mean -23, nfire 35
-- P7 session 0: NT_retarget k=8  L6M maxDD 92850 / 116210, L6M mean +919, PRE mean -271, nfire 849
-- P7 session 3: NT_take k=9 s=5 trigger=print  L6M maxDD 55529 / 86629, L6M mean +564, PRE mean -500, nfire 288
-- M7 session 1: NT_retarget k=1  L6M maxDD 31193 / 38178, L6M mean +86, PRE mean -7, nfire 232
-- M7 session 3: NT_queue_book feat=ahead_rel_fast kt=3 thr=3.0  L6M maxDD 11379 / 11667, L6M mean +11, PRE mean -1, nfire 20
-- U7 session 0: NT_queue_wall feat=wall_med kt=2 thr=10  L6M maxDD 10073 / 9906, L6M mean +0, PRE mean -14, nfire 21
-- U7 session 1: NT_take k=2 s=30 trigger=print  L6M maxDD 32749 / 32749, L6M mean +0, PRE mean -29, nfire 24
-- A7 session 0: NT_queue_wall feat=wall_med kt=1 thr=10  L6M maxDD 12461 / 12461, L6M mean +0, PRE mean -6, nfire 22
-- H7 session 0: NT_queue_wall feat=wall_med kt=3 thr=10  L6M maxDD 14606 / 14606, L6M mean +0, PRE mean -13, nfire 25
-- H7 session 3: NT_take k=3 s=0 trigger=mid  L6M maxDD 3762 / 3762, L6M mean +0, PRE mean -5, nfire 26
-- O7 session 3: NT_take k=9 s=5 trigger=mid  L6M maxDD 7469 / 7469, L6M mean +0, PRE mean -17, nfire 42
+| book | reach | n_reach | n_tgt | n_not_filled | loss_closes/wk | half_closes/wk | net $/wk of those | given back $/wk | of which full stops |
+|--|--|--|--|--|--|--|--|--|--|
+| A7 | 0.600 | 66 | 55 | 11 | 0.550 | 0.550 | -561.4 | 836.9 | 7 |
+| A7 | 0.700 | 66 | 55 | 11 | 0.550 | 0.550 | -561.4 | 836.9 | 7 |
+| A7 | 0.800 | 61 | 54 | 7 | 0.350 | 0.350 | -339.9 | 523.4 | 5 |
+| A7 | 0.900 | 53 | 52 | 1 | 0.050 | 0.050 | -17.6 | 46.6 | 1 |
+| H7 | 0.600 | 65 | 50 | 15 | 0.700 | 0.750 | -945.2 | 1482.3 | 7 |
+| H7 | 0.700 | 60 | 49 | 11 | 0.500 | 0.550 | -629.6 | 994.8 | 6 |
+| H7 | 0.800 | 56 | 49 | 7 | 0.350 | 0.350 | -406.5 | 638.2 | 5 |
+| H7 | 0.900 | 50 | 48 | 2 | 0.100 | 0.100 | -81.9 | 138.5 | 1 |
+| K7 | 0.600 | 362 | 271 | 91 | 3.550 | 4.200 | -2617.4 | 5056.0 | 1 |
+| K7 | 0.700 | 330 | 267 | 63 | 2.400 | 2.900 | -1690.1 | 3487.8 | 0 |
+| K7 | 0.800 | 300 | 264 | 36 | 1.350 | 1.700 | -878.0 | 1976.6 | 0 |
+| K7 | 0.900 | 269 | 250 | 19 | 0.600 | 0.850 | -306.9 | 926.2 | 0 |
+| M7 | 0.600 | 205 | 155 | 50 | 2.300 | 2.400 | -2114.6 | 3420.1 | 9 |
+| M7 | 0.700 | 182 | 155 | 27 | 1.200 | 1.250 | -975.8 | 1747.2 | 4 |
+| M7 | 0.800 | 167 | 153 | 14 | 0.650 | 0.650 | -473.3 | 871.9 | 2 |
+| M7 | 0.900 | 150 | 144 | 6 | 0.300 | 0.300 | -241.4 | 421.2 | 1 |
+| O7 | 0.600 | 26 | 16 | 10 | 0.300 | 0.400 | -64.9 | 412.3 | 5 |
+| O7 | 0.700 | 21 | 16 | 5 | 0.100 | 0.200 | 43.5 | 149.8 | 2 |
+| O7 | 0.800 | 19 | 16 | 3 | 0.000 | 0.100 | 120.6 | 6.125 | 0 |
+| O7 | 0.900 | 19 | 16 | 3 | 0.000 | 0.100 | 120.6 | 6.125 | 0 |
+| P7 | 0.600 | 224 | 176 | 48 | 2.300 | 2.300 | -5181.8 | 9034.6 | 3 |
+| P7 | 0.700 | 208 | 175 | 33 | 1.550 | 1.550 | -3621.4 | 6687.4 | 1 |
+| P7 | 0.800 | 197 | 175 | 22 | 1.050 | 1.050 | -2286.6 | 4411.9 | 1 |
+| P7 | 0.900 | 176 | 167 | 9 | 0.450 | 0.450 | -1013.3 | 1891.2 | 1 |
+| U7 | 0.600 | 79 | 66 | 13 | 0.650 | 0.650 | -1710.7 | 2372.3 | 10 |
+| U7 | 0.700 | 72 | 66 | 6 | 0.300 | 0.300 | -966.8 | 1396.0 | 5 |
+| U7 | 0.800 | 68 | 65 | 3 | 0.150 | 0.150 | -422.5 | 628.1 | 2 |
+| U7 | 0.900 | 63 | 63 | 0 | 0.000 | 0.000 | 0.000 | 0.000 | 0 |
+| ALL | 0.600 | 1027 | 789 | 238 | 10.3 | 11.2 | -13196.1 | 22614.4 | 42 |
+| ALL | 0.700 | 939 | 783 | 156 | 6.600 | 7.300 | -8401.8 | 15300.0 | 25 |
+| ALL | 0.800 | 868 | 776 | 92 | 3.900 | 4.350 | -4686.3 | 9056.3 | 15 |
+| ALL | 0.900 | 780 | 740 | 40 | 1.500 | 1.850 | -1540.4 | 3429.9 | 4 |
 
-## Plain sentences per book (profit, near-target)
-K7 profit (near-target): NT_retarget (k=4); L6M maxDD 20902 -> 15455, L6M mean +415 USD/wk, PRE maxDD 26707 -> 23127, PRE mean +147, placebo p 0.154, live week -375 USD (15 fired); CANDIDATE-DD.
+### PRE (all sessions, per book; book ALL = stack)
 
-P7 profit (near-target): NT_retarget (k=8); L6M maxDD 133887 -> 77449, L6M mean +1658 USD/wk, PRE maxDD 109442 -> 111128, PRE mean -358, placebo p 0.031, live week -3572 USD (19 fired); CANDIDATE-DD.
+| book | reach | n_reach | n_tgt | n_not_filled | loss_closes/wk | half_closes/wk | net $/wk of those | given back $/wk | of which full stops |
+|--|--|--|--|--|--|--|--|--|--|
+| A7 | 0.600 | 239 | 198 | 41 | 0.547 | 0.547 | -584.6 | 832.5 | 28 |
+| A7 | 0.700 | 224 | 197 | 27 | 0.360 | 0.360 | -388.1 | 565.0 | 18 |
+| A7 | 0.800 | 210 | 194 | 16 | 0.213 | 0.213 | -237.0 | 347.9 | 11 |
+| A7 | 0.900 | 172 | 169 | 3 | 0.040 | 0.040 | -42.3 | 65.1 | 2 |
+| H7 | 0.600 | 248 | 196 | 52 | 0.653 | 0.667 | -1063.1 | 1637.5 | 23 |
+| H7 | 0.700 | 228 | 193 | 35 | 0.440 | 0.453 | -633.8 | 1029.9 | 14 |
+| H7 | 0.800 | 209 | 190 | 19 | 0.240 | 0.253 | -415.2 | 656.5 | 9 |
+| H7 | 0.900 | 179 | 171 | 8 | 0.093 | 0.107 | -174.8 | 287.4 | 2 |
+| K7 | 0.600 | 1424 | 1091 | 333 | 4.067 | 4.213 | -3530.6 | 6038.9 | 3 |
+| K7 | 0.700 | 1313 | 1082 | 231 | 2.720 | 2.867 | -2272.3 | 4183.7 | 3 |
+| K7 | 0.800 | 1190 | 1065 | 125 | 1.413 | 1.520 | -1057.2 | 2249.6 | 2 |
+| K7 | 0.900 | 1033 | 987 | 46 | 0.480 | 0.520 | -348.6 | 922.8 | 1 |
+| M7 | 0.600 | 834 | 651 | 183 | 2.333 | 2.400 | -2237.8 | 3518.9 | 38 |
+| M7 | 0.700 | 762 | 648 | 114 | 1.440 | 1.480 | -1366.6 | 2242.5 | 25 |
+| M7 | 0.800 | 708 | 637 | 71 | 0.893 | 0.920 | -816.3 | 1391.5 | 10 |
+| M7 | 0.900 | 627 | 595 | 32 | 0.400 | 0.427 | -368.3 | 636.5 | 3 |
+| O7 | 0.600 | 83 | 65 | 18 | 0.133 | 0.227 | -8.923 | 188.4 | 2 |
+| O7 | 0.700 | 79 | 65 | 14 | 0.080 | 0.173 | 24.8 | 123.5 | 2 |
+| O7 | 0.800 | 78 | 65 | 13 | 0.067 | 0.160 | 34.8 | 104.6 | 2 |
+| O7 | 0.900 | 69 | 63 | 6 | 0.000 | 0.080 | 64.6 | 2.917 | 0 |
+| P7 | 0.600 | 897 | 699 | 198 | 2.560 | 2.627 | -5876.8 | 10592.9 | 11 |
+| P7 | 0.700 | 839 | 693 | 146 | 1.867 | 1.933 | -4454.1 | 8359.5 | 7 |
+| P7 | 0.800 | 789 | 687 | 102 | 1.280 | 1.347 | -3022.7 | 6039.5 | 5 |
+| P7 | 0.900 | 700 | 651 | 49 | 0.600 | 0.653 | -1327.9 | 3071.7 | 2 |
+| U7 | 0.600 | 325 | 261 | 64 | 0.827 | 0.840 | -2354.0 | 3391.5 | 49 |
+| U7 | 0.700 | 301 | 259 | 42 | 0.547 | 0.560 | -1688.0 | 2462.8 | 35 |
+| U7 | 0.800 | 279 | 256 | 23 | 0.293 | 0.307 | -836.0 | 1262.1 | 18 |
+| U7 | 0.900 | 247 | 239 | 8 | 0.107 | 0.107 | -288.3 | 435.3 | 5 |
+| ALL | 0.600 | 4050 | 3161 | 889 | 11.1 | 11.5 | -15655.9 | 26200.6 | 154 |
+| ALL | 0.700 | 3746 | 3137 | 609 | 7.453 | 7.827 | -10778.1 | 18966.8 | 104 |
+| ALL | 0.800 | 3463 | 3094 | 369 | 4.400 | 4.720 | -6349.8 | 12051.6 | 57 |
+| ALL | 0.900 | 3027 | 2875 | 152 | 1.720 | 1.933 | -2485.7 | 5421.7 | 15 |
 
-M7 profit (near-target): NT_retarget (k=2); L6M maxDD 44425 -> 37775, L6M mean +145 USD/wk, PRE maxDD 50321 -> 51471, PRE mean -36, placebo p 0.169, live week +1930 USD (2 fired); CANDIDATE-DD.
+### X' (all sessions, per book; book ALL = stack)
 
-U7 profit (near-target): NT_queue_book (feat=ahead_rel_slow kt=5 thr=3.0); L6M maxDD 21561 -> 21561, L6M mean +13 USD/wk, PRE maxDD 42226 -> 42226, PRE mean -17, placebo p 1.000, live week +0 USD (0 fired); no.
+| book | reach | n_reach | n_tgt | n_not_filled | loss_closes/wk | half_closes/wk | net $/wk of those | given back $/wk | of which full stops |
+|--|--|--|--|--|--|--|--|--|--|
+| A7 | 0.600 | 88 | 72 | 16 | 0.341 | 0.364 | -358.5 | 532.2 | 12 |
+| A7 | 0.700 | 83 | 71 | 12 | 0.250 | 0.273 | -252.0 | 390.7 | 8 |
+| A7 | 0.800 | 78 | 69 | 9 | 0.182 | 0.205 | -183.5 | 292.3 | 6 |
+| A7 | 0.900 | 72 | 69 | 3 | 0.045 | 0.068 | -51.4 | 89.6 | 2 |
+| H7 | 0.600 | 140 | 108 | 32 | 0.636 | 0.682 | -1304.0 | 2005.1 | 21 |
+| H7 | 0.700 | 133 | 108 | 25 | 0.500 | 0.523 | -1026.9 | 1615.7 | 16 |
+| H7 | 0.800 | 125 | 107 | 18 | 0.364 | 0.364 | -705.6 | 1154.3 | 12 |
+| H7 | 0.900 | 108 | 104 | 4 | 0.068 | 0.068 | -135.7 | 243.7 | 2 |
+| K7 | 0.600 | 593 | 436 | 157 | 2.864 | 3.159 | -2272.3 | 4342.4 | 2 |
+| K7 | 0.700 | 547 | 434 | 113 | 2.023 | 2.227 | -1540.4 | 3135.6 | 2 |
+| K7 | 0.800 | 494 | 432 | 62 | 1.000 | 1.114 | -594.6 | 1563.4 | 1 |
+| K7 | 0.900 | 444 | 421 | 23 | 0.364 | 0.409 | -216.1 | 626.8 | 1 |
+| M7 | 0.600 | 370 | 278 | 92 | 1.909 | 2.023 | -2055.1 | 3203.2 | 32 |
+| M7 | 0.700 | 338 | 277 | 61 | 1.250 | 1.341 | -1320.2 | 2139.7 | 21 |
+| M7 | 0.800 | 310 | 274 | 36 | 0.727 | 0.773 | -703.7 | 1219.8 | 11 |
+| M7 | 0.900 | 281 | 267 | 14 | 0.295 | 0.295 | -327.5 | 570.7 | 5 |
+| O7 | 0.600 | 45 | 26 | 19 | 0.250 | 0.364 | -56.7 | 368.8 | 10 |
+| O7 | 0.700 | 40 | 26 | 14 | 0.182 | 0.295 | -41.5 | 278.6 | 7 |
+| O7 | 0.800 | 34 | 26 | 8 | 0.045 | 0.159 | 59.2 | 88.4 | 2 |
+| O7 | 0.900 | 30 | 26 | 4 | 0.000 | 0.068 | 76.0 | 2.784 | 0 |
+| P7 | 0.600 | 374 | 283 | 91 | 1.864 | 2.023 | -4078.4 | 6872.1 | 7 |
+| P7 | 0.700 | 345 | 282 | 63 | 1.295 | 1.386 | -2951.9 | 5104.2 | 3 |
+| P7 | 0.800 | 313 | 281 | 32 | 0.614 | 0.682 | -1708.5 | 3108.4 | 1 |
+| P7 | 0.900 | 287 | 271 | 16 | 0.318 | 0.341 | -797.8 | 1581.7 | 0 |
+| U7 | 0.600 | 138 | 112 | 26 | 0.523 | 0.591 | -1423.5 | 2148.8 | 18 |
+| U7 | 0.700 | 132 | 112 | 20 | 0.386 | 0.455 | -1130.0 | 1763.2 | 14 |
+| U7 | 0.800 | 117 | 108 | 9 | 0.136 | 0.205 | -270.8 | 577.7 | 4 |
+| U7 | 0.900 | 111 | 106 | 5 | 0.068 | 0.114 | -126.2 | 328.8 | 2 |
+| ALL | 0.600 | 1748 | 1315 | 433 | 8.386 | 9.205 | -11548.5 | 19472.5 | 102 |
+| ALL | 0.700 | 1618 | 1310 | 308 | 5.886 | 6.500 | -8263.0 | 14427.7 | 71 |
+| ALL | 0.800 | 1471 | 1297 | 174 | 3.068 | 3.500 | -4107.5 | 8004.4 | 37 |
+| ALL | 0.900 | 1333 | 1264 | 69 | 1.159 | 1.364 | -1578.7 | 3444.1 | 12 |
 
-A7 profit (near-target): NT_queue_wall (feat=wall_med kt=1 thr=10); L6M maxDD 12461 -> 12461, L6M mean +0 USD/wk, PRE maxDD 6089 -> 6089, PRE mean -6, placebo p 0.862, live week +0 USD (0 fired); no.
+### L6M, reached 80%, by book and session
 
-H7 profit (near-target): NT_take (k=3 s=30 trigger=print); L6M maxDD 15477 -> 13974, L6M mean +16 USD/wk, PRE maxDD 20667 -> 20829, PRE mean -48, placebo p 0.108, live week +0 USD (0 fired); CANDIDATE-DD.
+| book | sess | n_reach | n_tgt | n_not_filled | loss_closes/wk | net $/wk of those | given back $/wk |
+|--|--|--|--|--|--|--|--|
+| A7 | asia | 182 | 166 | 16 | 0.640 | -602.1 | 936.5 |
+| H7 | asia | 70 | 62 | 8 | 0.320 | -417.1 | 794.0 |
+| H7 | nyam | 20 | 16 | 4 | 0.160 | -151.3 | 234.1 |
+| K7 | asia | 376 | 338 | 38 | 1.520 | -1285.2 | 2214.5 |
+| K7 | london | 179 | 165 | 14 | 0.560 | -643.5 | 1050.9 |
+| K7 | nyam | 80 | 72 | 8 | 0.320 | -219.0 | 391.8 |
+| K7 | nypm | 79 | 71 | 8 | 0.240 | -257.6 | 478.5 |
+| M7 | london | 205 | 181 | 24 | 0.960 | -935.9 | 1584.6 |
+| M7 | nyam | 90 | 83 | 7 | 0.280 | -202.3 | 358.4 |
+| O7 | nyam | 15 | 12 | 3 | 0.040 | 33.7 | 65.8 |
+| P7 | asia | 270 | 245 | 25 | 1.000 | -2974.4 | 5411.8 |
+| P7 | london | 138 | 125 | 13 | 0.520 | -706.6 | 1301.8 |
+| P7 | nyam | 52 | 46 | 6 | 0.240 | -338.8 | 625.9 |
+| U7 | asia | 86 | 77 | 9 | 0.360 | -1053.5 | 1592.8 |
+| U7 | london | 57 | 52 | 5 | 0.200 | -618.5 | 948.5 |
 
-O7 profit (near-target): NT_take (k=9 s=5 trigger=mid); L6M maxDD 7469 -> 7469, L6M mean +0 USD/wk, PRE maxDD 5102 -> 5102, PRE mean -17, placebo p 1.000, live week +0 USD (0 fired); no.
+### PRE, reached 80%, by book and session
 
-ALL profit (near-target): NT_retarget (k=5); L6M maxDD 121381 -> 109631, L6M mean +2517 USD/wk, PRE maxDD 152455 -> 133965, PRE mean +215, placebo p 0.169, live week -588 USD (37 fired); CANDIDATE-DD.
+| book | sess | n_reach | n_tgt | n_not_filled | loss_closes/wk | net $/wk of those | given back $/wk |
+|--|--|--|--|--|--|--|--|
+| A7 | asia | 210 | 194 | 16 | 0.213 | -237.0 | 347.9 |
+| H7 | asia | 141 | 126 | 15 | 0.200 | -379.7 | 591.8 |
+| H7 | nyam | 68 | 64 | 4 | 0.040 | -35.5 | 64.7 |
+| K7 | asia | 406 | 365 | 41 | 0.520 | -439.4 | 790.5 |
+| K7 | london | 288 | 263 | 25 | 0.333 | -346.1 | 551.4 |
+| K7 | nyam | 285 | 260 | 25 | 0.280 | -171.0 | 504.6 |
+| K7 | nypm | 211 | 177 | 34 | 0.280 | -100.7 | 403.1 |
+| M7 | london | 421 | 379 | 42 | 0.560 | -566.1 | 926.4 |
+| M7 | nyam | 287 | 258 | 29 | 0.333 | -250.3 | 465.1 |
+| O7 | nyam | 78 | 65 | 13 | 0.067 | 34.8 | 104.6 |
+| P7 | asia | 363 | 320 | 43 | 0.547 | -1859.8 | 3345.4 |
+| P7 | london | 255 | 218 | 37 | 0.493 | -916.5 | 1546.8 |
+| P7 | nyam | 171 | 149 | 22 | 0.240 | -246.4 | 1147.3 |
+| U7 | asia | 139 | 130 | 9 | 0.120 | -346.6 | 505.5 |
+| U7 | london | 140 | 126 | 14 | 0.173 | -489.4 | 756.6 |
 
-## Policy lines (D7 grammar, best cell per book; fields the grammar lacks marked)
-- profit K7 * retarget -4 ticks
-- profit P7 * retarget -8 ticks
-- profit M7 * retarget -2 ticks
-- profit U7 * within 5 ticks of target and ahead_rel_slow>=3.0 take at market   # needs: wall/ahead gate on take
-- profit A7 * within 1 ticks of target and wall_med>=10 take at market   # needs: wall/ahead gate on take
-- profit H7 * pct>=0.9875 secs_ext>=30 take   (k=3 ticks, print trigger)
-- profit O7 * pct>=0.9750 secs_ext>=5 take   (k=9 ticks, mid trigger)
+## 2. First-order ladder screen (unmodified exact JN05W2 paths; re-entry flow NOT modelled, so only a screen)
+
+Grid: trigger {.5,.6,.7,.8,.9} x lock {0..0.8, lock<trigger} x persist {1,3,10,30} s; resting-stop fill at min(lock level, second mid) - 0.44 pt. d$/wk vs the live exit; DD cut = stack max DD of closed-trade daily P&L (L3M and L6M DD are the same week, 2026-W44). A cell "holds in both" if d$/wk > 0 in L6M and HOLD, >= -100 in GAP/PRE/X', DD cut >= 0 in L6M and >= -2 in HOLD/PRE.
+
+### 2a. Best "holds in both" cell per book and session (by sum of d$/wk over the five windows)
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| H7 | all | 0.900 | 0.300 | 30 | 55.3 | 106.3 | 23.6 | -86.6 | -47.3 | 48.9 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| H7 | nyam | 0.800 | 0.300 | 10 | 80.8 | 155.5 | 15.6 | 167.1 | -24.7 | -18.8 | 0.000 | 1.680 | 0.000 | 0.040 | -34.3 |
+| K7 | asia | 0.900 | 0.500 | 30 | 36.0 | 167.0 | 31.5 | 7.280 | -57.3 | -14.9 | 0.000 | 0.000 | 0.000 | 0.120 | -75.3 |
+| K7 | london | 0.900 | 0.300 | 10 | 36.1 | -70.8 | 74.4 | 16.5 | -27.5 | -98.2 | 0.000 | -0.922 | -1.878 | 0.240 | -205.8 |
+| K7 | nyam | 0.600 | 0.100 | 10 | 322.3 | 690.8 | 201.5 | 493.5 | -90.9 | 8.134 | 0.000 | 2.498 | -1.299 | 0.240 | -272.2 |
+| M7 | all | 0.900 | 0.200 | 3 | 363.5 | 151.1 | 142.4 | 116.7 | -49.2 | 189.5 | 0.000 | 0.000 | 2.547 | 0.240 | -234.5 |
+| M7 | london | 0.900 | 0.500 | 3 | 285.7 | 96.5 | 109.3 | -77.4 | -47.6 | 217.4 | 0.000 | -0.694 | 3.333 | 0.560 | -375.0 |
+| M7 | nyam | 0.900 | 0.300 | 1 | 175.2 | 172.2 | 292.7 | 28.5 | 38.5 | 25.7 | 0.000 | 0.479 | -0.000 | 0.080 | -69.7 |
+| O7 | all | 0.900 | 0.600 | 1 | 14.8 | 7.977 | 113.8 | 35.6 | -2.272 | 20.3 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| O7 | nyam | 0.900 | 0.600 | 1 | 14.8 | 7.977 | 113.8 | 35.6 | -2.272 | 20.3 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| P7 | all | 0.900 | 0.800 | 10 | 556.5 | 893.8 | 266.1 | 39.7 | 482.1 | 67.2 | 0.000 | 3.390 | 5.880 | 2.280 | -1643.7 |
+| P7 | london | 0.900 | 0.700 | 10 | 98.7 | 105.6 | 114.0 | 303.4 | 180.2 | 117.6 | 0.000 | -0.401 | 4.853 | 0.240 | -198.1 |
+| P7 | nyam | 0.900 | 0.500 | 10 | 316.9 | 703.9 | 329.9 | -92.4 | 134.3 | 39.1 | 0.000 | 0.000 | 0.000 | 0.080 | -75.0 |
+
+### 2b. P7 all sessions: top 3 by worst-window DD cut (L6M/HOLD/PRE), then top 3 by L6M d$/wk
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| P7 | all | 0.900 | 0.800 | 3 | 565.5 | 1849.0 | 102.6 | 85.1 | 452.1 | 20.4 | 0.373 | 1.758 | 9.153 | 4.360 | -3274.4 |
+| P7 | all | 0.900 | 0.700 | 10 | 604.4 | 823.6 | -42.1 | 148.0 | 368.6 | 45.4 | 0.000 | 4.307 | 2.982 | 1.520 | -1438.3 |
+| P7 | all | 0.900 | 0.800 | 10 | 556.5 | 893.8 | 266.1 | 39.7 | 482.1 | 67.2 | 0.000 | 3.390 | 5.880 | 2.280 | -1643.7 |
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| P7 | all | 0.700 | 0.400 | 1 | 3421.9 | 5410.1 | -1017.5 | -1689.4 | -450.4 | 154.3 | 11.6 | -17.3 | 6.873 | 5.240 | -11853.2 |
+| P7 | all | 0.700 | 0.400 | 3 | 3096.7 | 5359.6 | -810.9 | -1512.7 | -196.6 | 132.9 | 11.6 | -14.9 | 6.873 | 4.800 | -11029.5 |
+| P7 | all | 0.600 | 0.400 | 10 | 3017.4 | 4888.6 | -3388.5 | -1423.0 | -1162.1 | -960.8 | 5.949 | -29.4 | -12.4 | 6.240 | -14363.3 |
+
+### 2b. K7 all sessions: top 3 by worst-window DD cut (L6M/HOLD/PRE), then top 3 by L6M d$/wk
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| K7 | all | 0.500 | 0.400 | 1 | -1456.3 | -767.2 | -2706.3 | -1046.5 | -618.3 | 156.2 | 10.8 | 2.766 | 1.587 | 18.3 | -15817.7 |
+| K7 | all | 0.600 | 0.100 | 10 | -119.5 | 799.9 | -1208.4 | -151.5 | -370.4 | -69.0 | 10.4 | 2.503 | 0.727 | 4.880 | -6324.8 |
+| K7 | all | 0.600 | 0.100 | 30 | -574.4 | 153.0 | -938.6 | -432.5 | -264.5 | -7.652 | 7.648 | 0.672 | 0.747 | 3.960 | -5214.2 |
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| K7 | all | 0.600 | 0.000 | 3 | 715.3 | 1826.8 | -1624.8 | -322.7 | -315.8 | 14.8 | 13.5 | -2.097 | -0.304 | 3.720 | -5341.3 |
+| K7 | all | 0.600 | 0.000 | 1 | 594.2 | 1774.1 | -1525.1 | -262.5 | -487.6 | -84.4 | 13.5 | -2.759 | -1.636 | 4.200 | -6029.1 |
+| K7 | all | 0.500 | 0.000 | 30 | 484.6 | 1524.0 | -1952.5 | -364.6 | -529.0 | 37.8 | 12.0 | -4.719 | -2.969 | 4.080 | -5920.6 |
+
+### 2b. M7 all sessions: top 3 by worst-window DD cut (L6M/HOLD/PRE), then top 3 by L6M d$/wk
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| M7 | all | 0.800 | 0.600 | 10 | 352.6 | 2.408 | 42.9 | -456.1 | -185.2 | 255.8 | 2.522 | 2.684 | 4.054 | 2.080 | -1242.1 |
+| M7 | all | 0.800 | 0.500 | 3 | -121.3 | -332.2 | -134.7 | -619.1 | -150.0 | 223.0 | 2.321 | 4.934 | 3.527 | 2.520 | -1872.9 |
+| M7 | all | 0.800 | 0.500 | 10 | 188.0 | -178.4 | -65.9 | -597.6 | -51.0 | 243.2 | 2.321 | 2.729 | 4.220 | 1.680 | -1280.2 |
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| M7 | all | 0.900 | 0.700 | 1 | 423.4 | 335.0 | 429.2 | -151.7 | -81.9 | 157.1 | 2.041 | 2.946 | 0.065 | 2.000 | -885.2 |
+| M7 | all | 0.900 | 0.400 | 3 | 412.8 | 140.3 | 128.2 | -12.5 | -53.7 | 194.1 | 0.000 | -0.835 | 3.019 | 0.440 | -325.6 |
+| M7 | all | 0.900 | 0.100 | 1 | 395.2 | 227.6 | 77.1 | 43.7 | 20.2 | 163.7 | 1.402 | 1.839 | 2.292 | 0.280 | -315.0 |
+
+### 2b. U7 all sessions: top 3 by worst-window DD cut (L6M/HOLD/PRE), then top 3 by L6M d$/wk
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| U7 | all | 0.700 | 0.300 | 1 | 1411.7 | 1991.6 | 687.1 | -1930.5 | -156.8 | -325.0 | 0.999 | 10.7 | 2.927 | 1.080 | -2298.1 |
+| U7 | all | 0.700 | 0.300 | 3 | 1116.9 | 1991.6 | 674.7 | -1930.5 | -179.1 | -278.0 | 0.999 | 10.7 | 2.927 | 0.960 | -2104.0 |
+| U7 | all | 0.700 | 0.400 | 3 | 1221.1 | 2044.8 | 461.0 | -1507.2 | -357.2 | -256.8 | 1.908 | 12.0 | 0.445 | 1.160 | -2289.5 |
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| U7 | all | 0.700 | 0.400 | 1 | 1506.5 | 1988.8 | 520.5 | -1726.4 | -283.9 | -273.3 | 1.908 | 12.0 | 0.445 | 1.360 | -2522.7 |
+| U7 | all | 0.700 | 0.300 | 1 | 1411.7 | 1991.6 | 687.1 | -1930.5 | -156.8 | -325.0 | 0.999 | 10.7 | 2.927 | 1.080 | -2298.1 |
+| U7 | all | 0.600 | 0.400 | 30 | 1276.5 | 1842.9 | 578.7 | -1871.2 | -268.8 | -633.0 | -3.730 | 10.5 | 4.164 | 1.200 | -2503.3 |
+
+### 2b. H7 all sessions: top 3 by worst-window DD cut (L6M/HOLD/PRE), then top 3 by L6M d$/wk
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| H7 | all | 0.900 | 0.500 | 30 | 14.0 | 124.4 | 41.2 | -61.6 | -39.5 | 4.652 | 0.000 | 0.000 | 0.000 | 0.040 | -50.7 |
+| H7 | all | 0.900 | 0.400 | 30 | 1.384 | 114.8 | 31.0 | -73.6 | -40.1 | -13.0 | 0.000 | 0.000 | 0.000 | 0.040 | -58.3 |
+| H7 | all | 0.900 | 0.300 | 10 | 227.6 | 106.3 | -72.9 | -226.5 | -2.275 | -1.852 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| H7 | all | 0.800 | 0.700 | 3 | 506.7 | 986.8 | -132.7 | -58.7 | -110.7 | 752.6 | -2.910 | -1.124 | -1.999 | 1.320 | -720.9 |
+| H7 | all | 0.800 | 0.600 | 3 | 363.3 | 791.8 | -86.6 | -77.2 | -146.6 | 647.0 | 0.000 | 0.987 | -2.671 | 0.960 | -779.4 |
+| H7 | all | 0.700 | 0.000 | 30 | 353.7 | 287.8 | -61.2 | -227.1 | -198.8 | 348.3 | 0.000 | 1.286 | -0.000 | 0.120 | -107.8 |
+
+### 2b. A7 all sessions: top 3 by worst-window DD cut (L6M/HOLD/PRE), then top 3 by L6M d$/wk
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| A7 | all | 0.900 | 0.800 | 30 | -138.5 | -140.1 | 50.8 | -23.4 | -21.5 | -63.5 | 0.000 | 0.000 | 0.000 | 0.520 | -138.5 |
+| A7 | all | 0.900 | 0.500 | 10 | -143.8 | -61.9 | 29.8 | -44.8 | -53.3 | -60.1 | 0.000 | 0.000 | 0.000 | 0.400 | -254.7 |
+| A7 | all | 0.900 | 0.600 | 30 | -170.4 | -175.6 | 34.3 | -22.5 | -16.3 | -67.7 | 0.000 | 0.000 | 0.000 | 0.320 | -170.4 |
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| A7 | all | 0.800 | 0.000 | 1 | 189.8 | 49.9 | -177.0 | 128.9 | -79.0 | -98.6 | -2.357 | -3.300 | -0.062 | 0.320 | -392.6 |
+| A7 | all | 0.800 | 0.000 | 10 | 145.5 | 49.9 | -156.8 | 169.3 | -60.8 | -97.0 | -2.357 | -4.578 | -0.052 | 0.280 | -343.0 |
+| A7 | all | 0.700 | 0.000 | 30 | 129.6 | 24.3 | -16.1 | 105.4 | -60.1 | -192.4 | -0.240 | -1.960 | 0.760 | 0.480 | -586.6 |
+
+### 2b. O7 all sessions: top 3 by worst-window DD cut (L6M/HOLD/PRE), then top 3 by L6M d$/wk
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| O7 | all | 0.500 | 0.000 | 3 | -64.3 | -75.6 | -82.5 | -95.1 | -79.1 | -81.0 | 0.000 | 0.778 | 0.000 | 0.080 | -148.3 |
+| O7 | all | 0.500 | 0.000 | 10 | -64.3 | -75.6 | -82.5 | -95.1 | -21.6 | -91.3 | 0.000 | 0.778 | 0.000 | 0.080 | -148.3 |
+| O7 | all | 0.500 | 0.000 | 30 | -99.5 | -100.9 | -132.1 | -95.1 | -28.1 | -107.2 | 0.000 | 0.778 | 0.000 | 0.080 | -150.9 |
+
+| book | sess | trig | lock | pers | dmean_L6M | dmean_L3M | dmean_HOLD | dmean_GAP | dmean_PRE | dmean_X' | ddcut_L6M | ddcut_HOLD | ddcut_PRE | clip_n_wk_L6M | clip_usd_wk_L6M |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| O7 | all | 0.800 | 0.000 | 3 | 28.8 | 0.000 | -116.4 | 0.000 | 22.5 | -49.9 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| O7 | all | 0.700 | 0.000 | 30 | 28.8 | 0.000 | -116.4 | -90.9 | 4.203 | -52.3 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| O7 | all | 0.800 | 0.000 | 1 | 28.8 | 0.000 | -116.4 | -90.9 | 14.4 | -49.9 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+
+## 3. Placebos (same ladder on the mid path 11/23/37 days earlier at the same clock time, generic bracket baseline +T / -45; d$/wk)
+
+| cfg | win | real | pl11 | pl23 | pl37 | pl_best |
+|--|--|--|--|--|--|--|
+| P7_90_80_10 | L1M | 673.4 | -205.6 | -310.6 | -360.8 | -205.6 |
+| P7_90_80_10 | L3M | 893.8 | -49.8 | -220.6 | 67.3 | 67.3 |
+| P7_90_80_10 | L6M | 556.5 | 156.1 | -218.4 | 498.4 | 498.4 |
+| P7_90_80_10 | HOLD | 266.1 | -536.8 | -398.0 | 69.5 | 69.5 |
+| P7_90_80_10 | GAP | 39.7 | -15.4 | -226.1 | -275.0 | -15.4 |
+| P7_90_80_10 | PRE | 482.1 | -313.1 | 68.3 | 94.3 | 94.3 |
+| P7_90_80_10 | X' | 67.2 | -179.6 | -136.0 | 81.5 | 81.5 |
+| P7_70_50_1 | L1M | 6746.2 | -1832.4 | -2556.5 | -437.7 | -437.7 |
+| P7_70_50_1 | L3M | 5077.4 | -691.7 | -2138.0 | 408.5 | 408.5 |
+| P7_70_50_1 | L6M | 2753.8 | 1308.3 | -1132.6 | 1126.1 | 1308.3 |
+| P7_70_50_1 | HOLD | -1183.3 | nan | -653.1 | 601.0 | 601.0 |
+| P7_70_50_1 | GAP | -1136.5 | -613.6 | -700.3 | -819.7 | -613.6 |
+| P7_70_50_1 | PRE | -123.3 | -141.1 | -295.7 | 321.3 | 321.3 |
+| P7_70_50_1 | X' | 143.2 | -549.4 | -337.3 | -378.4 | -337.3 |
+| M7_90_20_3 | L1M | 159.1 | 0.000 | 296.0 | 442.5 | 442.5 |
+| M7_90_20_3 | L3M | 151.1 | -175.0 | 68.0 | -173.8 | 68.0 |
+| M7_90_20_3 | L6M | 363.5 | -91.0 | 24.8 | -142.0 | 24.8 |
+| M7_90_20_3 | HOLD | 142.4 | -73.8 | -66.9 | -10.7 | -10.7 |
+| M7_90_20_3 | GAP | 116.7 | 20.7 | -71.2 | -16.6 | 20.7 |
+| M7_90_20_3 | PRE | -49.2 | -27.1 | 33.6 | 26.2 | 33.6 |
+| M7_90_20_3 | X' | 189.5 | 32.6 | 112.1 | 15.0 | 112.1 |
+| K7_90_50_30 | L1M | 59.4 | -127.8 | 0.000 | 336.2 | 336.2 |
+| K7_90_50_30 | L3M | 204.2 | 17.1 | -95.4 | 100.1 | 100.1 |
+| K7_90_50_30 | L6M | -21.3 | 15.6 | -49.6 | 41.9 | 41.9 |
+| K7_90_50_30 | HOLD | -129.3 | -40.3 | 113.0 | -18.8 | 113.0 |
+| K7_90_50_30 | GAP | -57.1 | -35.1 | -58.1 | -55.4 | -35.1 |
+| K7_90_50_30 | PRE | -73.2 | -10.1 | -23.0 | 20.5 | 20.5 |
+| K7_90_50_30 | X' | -47.4 | 101.8 | 18.6 | -28.4 | 101.8 |
+| U7_70_40_3 | L1M | 2414.2 | 1106.4 | 0.000 | -591.0 | 1106.4 |
+| U7_70_40_3 | L3M | 2044.8 | 238.1 | -310.0 | -388.9 | 238.1 |
+| U7_70_40_3 | L6M | 1221.1 | 36.3 | -76.2 | -137.1 | 36.3 |
+| U7_70_40_3 | HOLD | 461.0 | nan | 5.963 | -241.1 | 5.963 |
+| U7_70_40_3 | GAP | -1507.2 | 671.6 | -477.7 | -418.1 | 671.6 |
+| U7_70_40_3 | PRE | -357.2 | -62.2 | 190.4 | -137.7 | 190.4 |
+| U7_70_40_3 | X' | -256.8 | -273.0 | -67.8 | 213.4 | 213.4 |
+| H7_80_30_10 | L1M | 528.5 | 0.000 | 0.000 | -339.5 | 0.000 |
+| H7_80_30_10 | L3M | 396.9 | -133.3 | 181.7 | -130.6 | 181.7 |
+| H7_80_30_10 | L6M | 235.6 | -69.3 | 25.8 | -91.2 | 25.8 |
+| H7_80_30_10 | HOLD | 70.1 | -65.9 | 14.5 | 36.8 | 36.8 |
+| H7_80_30_10 | GAP | 96.5 | -173.9 | 116.0 | -168.0 | 116.0 |
+| H7_80_30_10 | PRE | -148.0 | 95.8 | 33.9 | -64.9 | 95.8 |
+| H7_80_30_10 | X' | 426.3 | -18.1 | -28.5 | 59.4 | 59.4 |
+| O7_90_60_1 | L1M | 0.000 | -165.3 | 0.000 | 0.000 | 0.000 |
+| O7_90_60_1 | L3M | 7.977 | -63.6 | 0.000 | 0.000 | 0.000 |
+| O7_90_60_1 | L6M | 14.8 | -33.1 | 0.000 | 0.000 | 0.000 |
+| O7_90_60_1 | HOLD | 113.8 | 0.000 | -27.5 | 0.000 | 0.000 |
+| O7_90_60_1 | GAP | 35.6 | 0.000 | 0.000 | 80.7 | 80.7 |
+| O7_90_60_1 | PRE | -2.272 | -3.635 | 3.315 | 27.8 | 27.8 |
+| O7_90_60_1 | X' | 20.3 | 25.8 | 0.000 | 0.000 | 25.8 |
+| ALL_90_80_10 | L1M | -60.1 | -510.3 | -576.4 | 423.3 | 423.3 |
+| ALL_90_80_10 | L3M | 91.5 | -349.6 | -73.2 | 66.1 | 66.1 |
+| ALL_90_80_10 | L6M | 695.1 | -108.7 | -168.7 | 209.6 | 209.6 |
+| ALL_90_80_10 | HOLD | -129.8 | -922.3 | -71.7 | -203.4 | -71.7 |
+| ALL_90_80_10 | GAP | -989.0 | 329.2 | -51.8 | -642.3 | 329.2 |
+| ALL_90_80_10 | PRE | -451.5 | 64.6 | 86.3 | 188.4 | 188.4 |
+| ALL_90_80_10 | X' | -432.2 | -444.6 | 122.0 | 568.4 | 568.4 |
+
+## 4. Walk-forward (first order): re-pick every 2 weeks, trailing 26 weeks, per book; plus the fixed .9/.8 ladder
+
+| book | win | wf_dmean_wk | wf_ddcut | fixed90_80_dmean_wk | fixed_ddcut |
+|--|--|--|--|--|--|
+| P7 | L1M | 3671.7 | 0.000 | 673.4 | 0.000 |
+| P7 | L3M | 3665.4 | 0.000 | 893.8 | 0.000 |
+| P7 | L6M | 1248.8 | 0.000 | 556.5 | 0.000 |
+| P7 | HOLD | -1641.1 | -8.218 | 266.1 | -3.439 |
+| P7 | GAP | -1085.9 | 11.1 | 39.7 | -1.327 |
+| P7 | PRE | -519.1 | 25.6 | 482.1 | 17.3 |
+| P7 | X' | -13.8 | -22.3 | -17.0 | -9.314 |
+| K7 | L1M | -383.4 | 0.000 | -154.3 | 0.000 |
+| K7 | L3M | -213.0 | -7.353 | -218.8 | -11.7 |
+| K7 | L6M | -53.9 | 16.1 | -8.452 | 19.9 |
+| K7 | HOLD | 40.6 | 8.359 | -142.8 | -3.508 |
+| K7 | GAP | -878.0 | 13.0 | -23.7 | 0.614 |
+| K7 | PRE | -615.1 | -6.607 | -264.8 | -3.343 |
+| K7 | X' | 0.907 | 71.7 | -11.8 | 0.000 |
+| M7 | L1M | -1098.2 | -12.3 | 9.380 | -1.030 |
+| M7 | L3M | -1298.0 | 6.107 | 126.2 | 2.284 |
+| M7 | L6M | -481.5 | -33.9 | 271.8 | 3.073 |
+| M7 | HOLD | 133.3 | 9.852 | 205.4 | 2.457 |
+| M7 | GAP | -621.2 | -28.0 | -167.5 | -9.358 |
+| M7 | PRE | -386.2 | -13.9 | -109.3 | 4.374 |
+| M7 | X' | 30.1 | 57.6 | -5.768 | 0.000 |
+| U7 | L1M | -2747.1 | -47.8 | -308.6 | -0.000 |
+| U7 | L3M | -879.2 | 17.2 | -656.4 | 0.000 |
+| U7 | L6M | -73.5 | 16.8 | -164.8 | -4.236 |
+| U7 | HOLD | -820.3 | 0.000 | -362.1 | -8.163 |
+| U7 | GAP | -1728.8 | 45.9 | -573.3 | 7.035 |
+| U7 | PRE | -670.4 | 23.7 | -402.5 | 2.890 |
+| U7 | X' | 0.000 | 0.000 | -12.0 | -0.000 |
+| H7 | L1M | -329.5 | 25.8 | 97.7 | 0.000 |
+| H7 | L3M | 523.3 | 32.0 | 131.3 | -5.315 |
+| H7 | L6M | -237.6 | 21.5 | 253.0 | 0.000 |
+| H7 | HOLD | 254.0 | -12.9 | -154.3 | -6.249 |
+| H7 | GAP | 89.9 | 6.156 | -131.6 | -4.497 |
+| H7 | PRE | -306.9 | 20.5 | -33.4 | 0.000 |
+| H7 | X' | -14.0 | 0.000 | 0.000 | 0.000 |
+| A7 | L1M | -243.9 | 0.119 | -377.8 | -19.3 |
+| A7 | L3M | -225.3 | 0.119 | -184.6 | -19.3 |
+| A7 | L6M | -427.1 | 0.119 | -212.9 | -19.3 |
+| A7 | HOLD | -290.5 | -25.5 | 31.7 | 19.1 |
+| A7 | GAP | -58.0 | -13.2 | -101.3 | -12.0 |
+| A7 | PRE | -296.6 | -3.350 | -87.2 | -3.215 |
+| A7 | X' | -19.3 | 0.000 | -5.882 | 0.000 |
+| O7 | L1M | 0.000 | 0.000 | 0.000 | 0.000 |
+| O7 | L3M | -139.3 | -31.2 | 0.000 | 0.000 |
+| O7 | L6M | -88.2 | 0.000 | 0.000 | 0.000 |
+| O7 | HOLD | -32.8 | 0.000 | 26.2 | 0.000 |
+| O7 | GAP | -364.7 | 18.5 | -31.4 | 0.000 |
+| O7 | PRE | -73.6 | 0.000 | -36.2 | 0.000 |
+| O7 | X' | 0.000 | 0.000 | 0.000 | 0.000 |
+
+## 5. EXACT engine (the verdict): each set = JN05W2 + the ladder, all live rules in force, re-entries flow
+
+months = months complete/needed for the window. dmean = $/wk vs JN05W2 same months. ddcut = stack max-DD cut %, ddcut_x44 = same without week 2026-W44 days. best5_kept = the 5 best base weeks' P&L kept in the set (%). turned_loss = base winning weeks that are losing weeks in the set. clip = ladder exits whose base trade was a Target (targets that would have filled), per week and dollars given up vs the base trade.
+
+### L6M
+
+(none)
+
+### HOLD
+
+(none)
+
+### GAP
+
+(none)
+
+### PRE
+
+(none)
+
+### X'
+
+(none)
+
+

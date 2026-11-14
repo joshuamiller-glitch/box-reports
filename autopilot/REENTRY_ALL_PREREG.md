@@ -1,0 +1,14 @@
+# REENTRY_ALL_PREREG (W-RA, priority 6, frozen 2026-11-14)
+Base: JN05W2 exact engine (all layers ON), TP_ENGINE=1, measured fills, FEES $4.84 RT. Hook module code/th_reentry/ra_hooks.py (outermost), identity proof TL3_RA_ID 202610 = 598 trades net 25943.82 required before any cell is scored.
+Books K7 M7 U7 H7 A7 O7 (P7 Asia = W-PR). Sessions by engine index 0 asia 1 london 2 pre 3 nyam 4 nypm 5 close. Session instance = (book, Globex day label, session index).
+Rechase = signal on the same side as the most recent CLOSED trade of the instance, which was a loser. Entry number = order of entry in the instance. Fresh = first entry.
+Cells (rule on all six books, all sessions; per book x session attribution from the same run): BLKi BLKii BLKiii30 BLKiii60 BLKiii120 BLKiv BLKv HALF(0.5) CAP2 CAP3 CAP4 LCAP10 LCAP15 LCAP20 (loss in R: net session P&L of the instance <= -X, R = lots x stop_pts x 20 per trade).
+Evidence definitions: (i) new session extreme in the trade direction after the loser closed; (ii) last 1-min close back through the loser's entry price; (iii) N=30/60/120 min since the loser closed; (iv) opposite-side signal of the same book since the loser closed; (v) confirmed 5-min swing low/high after the adverse extreme since the loser's entry.
+Stages: S0 L3M (202608-10) all cells; S1 L6M tail for a cell family only if some (cell, scope) passes the tolerant gate in L3M; S2 HOLD; S3 PRE/GAP/X'. Scope = book x session, plus book, plus all.
+Metrics (drawdown first): max DD of cum daily P&L, worst week, full stops/wk (exit name Stop*), best-5 weeks kept (cell $ in the reference's 5 best weeks / ref $), winning weeks turned losing, then mean $/wk. Also with 2026-W44 removed.
+Tolerant gate: maxDD not worse by >2%, worst week not worse by >2% of ref, mean not lower by >3% of ref mean (scope) or 25 $/wk (all), in every present window, and a drawdown cut >0 in at least one window; a lead must hold in BOTH recent (L3M/L6M) and older (HOLD, PRE/X'/GAP) windows.
+Placebos (exact engine, 3 seeds): same candidate set (entries with >=1 closed trade in the instance, and for BLK the same-side-loser last trade), blocked at random with the real rule's per-book block probability (hash of seed, book, signal second). Run for every lead.
+Walk-forward: every 2 weeks choose per (book, session) the variant with the best trailing 26-week drawdown-first score (from the scoped trades of the all-books runs), apply it to the next 2 weeks; compared with the base and the best fixed variant.
+Best per book/session: the combined cell RA_BEST (each book-session its best variant) is run on the exact engine and judged against base and placebos.
+2026-11-13 night: K7/M7 London entries from data/live/StratTrades_DS7_<acct>.csv; each rule applied by hand to the live sequence, plus the equivalent exact-engine replay of 11-13 if the L2 data exist.
+No PASS claims. No spend. Nothing on the execution server changes.
