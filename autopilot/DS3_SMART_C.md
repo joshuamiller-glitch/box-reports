@@ -1,6 +1,6 @@
 # DS3_SMART_C — T-SMART items B4 (MNQ granularity), C1 (dead slots), C2 (risk budget reallocation), C3 (add to winners), C4 (trade count), W-SM5
 
-Generated 2026-11-14 20:52Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S + FLAT45K) and JN05W2J (same five on JN04RM), exact 43 months. Exact engine, one set per job, shared-memory cache, admission tag SMARTC. Shadow only, no PASS claim. Prereg autopilot/SMART_C_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-14 21:23Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S + FLAT45K) and JN05W2J (same five on JN04RM), exact 43 months. Exact engine, one set per job, shared-memory cache, admission tag SMARTC. Shadow only, no PASS claim. Prereg autopilot/SMART_C_PREREG.md (sha in DECISIONS.md).
 
 **CAVEAT on every number here: the engine P7 state cut fires in the engine but did not fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md); the bases and these cells inherit the engine cut.**
 
@@ -18,7 +18,7 @@ Generated 2026-11-14 20:52Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S
 | SC_C2_calmar | 12 | JN05W2 | 106% ($337k of $316k) | 1 of 20 | -38.9 | -948 | 6.2 | 184 | - / - | - / - | - |
 | SC_C2_exp | 12 | JN05W2 | 107% ($339k of $316k) | 0 of 20 | -37.7 | -1522 | -17.2 | -118 | - / - | - / - | - |
 | SC_C3_ALL_v40_f33 | 12 | JN05W2 | 82% ($260k of $316k) | 5 of 20 | -85.6 | -11382 | -106.9 | -9360 | - / - | - / - | - |
-| SC_C3_P7_v25_f33 | 12 | JN05W2 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202607/trades.parquet') |||||||||
+| SC_C3_P7_v25_f33 | 12 | JN05W2 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202411/trades.parquet') |||||||||
 | SC_C3_P7_v25_f50 | 12 | JN05W2 | 66% ($209k of $316k) | 6 of 20 | -63.1 | -13852 | -3.7 | -10381 | - / - | - / - | - |
 | SC_C3_P7_v40_f33 | 1 | JN05W2 | (running) |||||||||
 | SC_C3_P7_v40_f33_nobe | 12 | JN05W2 | 97% ($306k of $316k) | 1 of 20 | 13.8 | 1424 | -96.8 | -565 | - / - | - / - | - |
