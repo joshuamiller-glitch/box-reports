@@ -1171,3 +1171,73 @@ Event day = W-CAL ev_day (any scheduled release/auction/chair/earnings; ~39% of 
 | D4III1 | c | non-event days | -2082 $/wk, DD +15.4%, ww -6168, stops 6.47(6.89), b5 92%, w2l 1 | -677 $/wk, DD +6.1%, ww +1866, stops 5.98(6.50), b5 93%, w2l 2 |
 | D4III1 | c | high-impact days | -647 $/wk, DD +26.9%, ww -580, stops 1.03(1.26), b5 86%, w2l 1 | -313 $/wk, DD +18.6%, ww +2785, stops 1.23(1.42), b5 94%, w2l 1 |
 | D4III1 | c | non-high days | -2573 $/wk, DD -11.8%, ww -3048, stops 9.13(9.74), b5 83%, w2l 1 | -1005 $/wk, DD +0.2%, ww +5088, stops 8.48(9.24), b5 85%, w2l 3 |
+## Dial 9: whole bracket at constant R
+**VERDICT (plain, not a PASS): 3 of 90 cells scored through L3M, 0 through L6M, 0 through HOLD; 0 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo.**
+
+Identity: TL3_D9_ID 202610 (hook active at W=60): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. Prereg autopilot/DIAL9_PREREG.md (sha line in DECISIONS.md). Order: ADDENDUM_CHOP_DIAL9_20261114.md. Code code/th_dial9 (d9_hooks.py reuses th_rangeuse forecasts fc.parquet a/b/c). Engine dollars are BASE lots (live x1.75).
+Definition: W = clip(book stop x Wtab/60, 30, 100); target = W x the book own target/stop ratio; lots = base x min(cap, stop/W) rounded half-up (min 1); cap 1.5 or 2 on increases. Maps T1 40/60/100, T2 45/60/80 (tercile of the expanding past predictions), C continuous (range ratio exp(pred-fref) x 60, clip 30..100). Version S = stop+target only (BookLock held at base dollars); version A = also state-cut arm and ctxcut arms, K7 flat cut, TH-L2 LOSS_MIN and TIGHT_TRAIL, MINDIP add dip, BookLock R from actual lots (all x W/stop). Not scalable: the hard-coded 30-pt profit-side tighten threshold inside sim.py. Halves B both, N narrow-only (W<=stop), W wide-only (W>=stop). Cap 15 = x1.5, 20 = x2 (wide-only has no increase). Fees and measured slippage are charged by the engine at the real lot count.
+Windows: L3M, L6M first, then HOLD/PRE for cells that pass; X' and GAP windows are not defined in the shared scorer (ru_score has L3M/L6M/HOLD/PREUW only): reported as not scored, HOLD+PRE are the older windows.
+
+### Which half and which scaling carries it (median over cells, scope all; delta vs JN05W2; DD cut + = smaller drawdown)
+| group | cells L3M | median DD cut L3M % | median d mean L3M $/wk | median d worst week L3M | median d full stops/wk | L6M median DD cut % / d mean / cells |
+|---|---|---|---|---|---|---|
+| version S | 2 | -5.5 | -2059 | -3035 | +4.18 | n/a |
+| version A | 1 | -47.7 | -3957 | -22180 | -0.15 | n/a |
+| both halves | 3 | -11.5 | -3788 | -6260 | -0.08 | n/a |
+| cap 1.5 (both/narrow) | 3 | -11.5 | -3788 | -6260 | -0.08 | n/a |
+| fc a | 1 | -47.7 | -3957 | -22180 | -0.15 | n/a |
+| fc b | 2 | -5.5 | -2059 | -3035 | +4.18 | n/a |
+| map T1 | 1 | -11.5 | -3788 | -6260 | +8.45 | n/a |
+| map T2 | 1 | -47.7 | -3957 | -22180 | -0.15 | n/a |
+| map C | 1 | +0.4 | -331 | +190 | -0.08 | n/a |
+
+Cross: version x half (L3M scope all, median DD cut % / median d mean $/wk)
+| | both | narrow-only | wide-only |
+|---|---|---|---|
+| version S | -5.5 / -2059 (n=2) | n/a | n/a |
+| version A | -47.7 / -3957 (n=1) | n/a | n/a |
+
+### Per cell, scope all (sorted by L3M drawdown cut; L6M and HOLD when present)
+| cell | L3M | L6M | HOLD | PRE |
+|---|---|---|---|---|
+| S_b_C_B_15 | -331 $/wk, DD +0.4%, ww +190, stops 10.27(10.35), b5 99%, w2l 0 | n/a | n/a | n/a |
+| S_b_T1_B_15 | -3788 $/wk, DD -11.5%, ww -6260, stops 18.79(10.35), b5 84%, w2l 1 | n/a | n/a | n/a |
+| A_a_T2_B_15 | -3957 $/wk, DD -47.7%, ww -22180, stops 10.20(10.35), b5 98%, w2l 1 | n/a | n/a | n/a |
+
+### Per session (asia london nyam nypm): best 3 cells per session by L3M drawdown cut that stay inside the tolerant gate on mean (L3M), with L6M/HOLD
+**asia**
+| cell | L3M | L6M | HOLD |
+|---|---|---|---|
+| none passes the gate in L3M | | | |
+
+**london**
+| cell | L3M | L6M | HOLD |
+|---|---|---|---|
+| S_b_C_B_15 | +67 $/wk, DD -0.2%, ww +0, stops 2.74(2.74), b5 103%, w2l 0 | n/a | n/a |
+
+**nyam**
+| cell | L3M | L6M | HOLD |
+|---|---|---|---|
+| S_b_T1_B_15 | +495 $/wk, DD +43.1%, ww +2175, stops 2.43(1.29), b5 82%, w2l 1 | n/a | n/a |
+
+**nypm**
+| cell | L3M | L6M | HOLD |
+|---|---|---|---|
+| S_b_T1_B_15 | +118 $/wk, DD +31.5%, ww +460, stops 0.91(0.08), b5 108%, w2l 0 | n/a | n/a |
+| S_b_C_B_15 | -12 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 99%, w2l 0 | n/a | n/a |
+
+### Leads (tolerant gate in every scored window incl. L3M and L6M, DD cut > 0 in some window)
+| cell | scope | L6M DD cut % | L6M d mean | windows | W44 removed L3M / L6M |
+|---|---|---|---|---|---|
+| none | | | | | |
+
+### Placebos (forecast shifted 11 / 23 / 37 trading days) beside the finalists, scope all, L6M (a real lead must beat all three)
+| finalist | real L6M | pl11 | pl23 | pl37 |
+|---|---|---|---|---|
+| no finalist yet | | | | |
+
+### Walk-forward every 2 weeks (pick on data before the block, apply to the next 2 weeks; scope all; needs L6M cells)
+fewer than 3 cells with L6M.
+
+### Reading
+Drawdown first; a result needs the gate in recent AND older windows and has to beat the 11/23/37-day placebos. Cells in the tables above that cut drawdown only through L3M, or only with full stops up, are not leads. No PASS claim.

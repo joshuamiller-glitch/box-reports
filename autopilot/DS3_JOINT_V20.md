@@ -1,8 +1,8 @@
 # DS3_JOINT_V20 - joint of the shelved candidates on JN05W2 (PRIORITY 4) - W-JV
 
-VERDICT (3 of 5 windows complete for the leader): best joint set so far is JV_AB: worst-window max-DD cut 15.6 % vs JN05W2, mean 991 $/wk avg; passes the tolerant gate in every complete window. Recent max DD is the single week 2026-W44, so read section 2 and section 5 before believing any recent cut; no PASS claim.
+VERDICT (1 of 5 windows complete for the leader): best joint set so far is JV_ABCD: worst-window max-DD cut 34.1 % vs JN05W2, mean 4453 $/wk avg; passes the tolerant gate in every complete window. Recent max DD is the single week 2026-W44, so read section 2 and section 5 before believing any recent cut; no PASS claim.
 
-Generated 2026-11-14 18:50 UTC (epoch 1794682242). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse; $4.84 RT). Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-14 19:13 UTC (epoch 1794683607). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse; $4.84 RT). Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
 
 Candidates: **A** = SM_A6_halfNP7 (first trade of a book-session lost -> later signals of that book-session at half lots, books K7 M7 U7 H7 A7; P7 untouched). **B** = U7 time stop on fresh entries (at 15:00 after the first fill, if open P&L < -10 pts: market exit, fresh context only). **C** = U7 Keltner-mid structure stop (stop at 5-min EMA20 mid - 2 pts, filled 1.4 pt adverse, lots x 60/stop distance clamped 25..60). Full specs in section 6.
 
@@ -21,6 +21,13 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | JV_AC | 4 | 31705 | 36371 | 12.8 | -31705 | 4666 | 11.0 (13.2) | - | 0 (2) | 2468 | 1861 |
 | JV_BC | 4 | 32311 | 36371 | 11.2 | -32311 | 4059 | 10.5 (13.2) | - | 0 (2) | 4757 | 4150 |
 | JV_ABC | 4 | 28031 | 36371 | 22.9 | -28031 | 8340 | 10.8 (13.2) | - | 0 (2) | 3627 | 3021 |
+| JV_D | 4 | 29452 | 36371 | 19.0 | -29452 | 6919 | 12.5 (13.2) | - | 0 (2) | 6969 | 6362 |
+| JV_AD | 4 | 27745 | 36371 | 23.7 | -27745 | 8625 | 13.0 (13.2) | - | 0 (2) | 5852 | 5245 |
+| JV_BD | 4 | 24653 | 36371 | 32.2 | -24653 | 11718 | 11.2 (13.2) | - | 0 (2) | 9035 | 8428 |
+| JV_CD | 4 | 29351 | 36371 | 19.3 | -29351 | 7019 | 10.5 (13.2) | - | 0 (2) | 8869 | 8262 |
+| JV_ABD | 4 | 22946 | 36371 | 36.9 | -22946 | 13424 | 11.8 (13.2) | - | 0 (2) | 8165 | 7559 |
+| JV_BCD | 4 | 25677 | 36371 | 29.4 | -25677 | 10693 | 10.2 (13.2) | - | 0 (2) | 10389 | 9782 |
+| JV_ABCD | 4 | 23971 | 36371 | 34.1 | -23971 | 12400 | 10.8 (13.2) | - | 0 (2) | 10731 | 10125 |
 
 ### L3M
 
@@ -33,6 +40,13 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | JV_AC | 13 | 31705 | 36371 | 12.8 | -31705 | 4666 | 8.3 (10.5) | 105% | 0 (9) | 17218 | 1203 |
 | JV_BC | 13 | 32311 | 36371 | 11.2 | -32311 | 4059 | 7.6 (10.5) | 112% | 0 (9) | 18754 | 2739 |
 | JV_ABC | 13 | 28031 | 36371 | 22.9 | -28031 | 8340 | 7.9 (10.5) | 108% | 0 (9) | 18016 | 2001 |
+| JV_D | 13 | 31318 | 36371 | 13.9 | -31318 | 5052 | 9.6 (10.5) | 97% | 0 (9) | 18740 | 2725 |
+| JV_AD | 13 | 27745 | 36371 | 23.7 | -27745 | 8625 | 9.8 (10.5) | 94% | 0 (9) | 18183 | 2168 |
+| JV_BD | 13 | 32902 | 36371 | 9.5 | -32902 | 3469 | 9.0 (10.5) | 99% | 0 (9) | 19457 | 3442 |
+| JV_CD | 13 | 29351 | 36371 | 19.3 | -29351 | 7019 | 7.5 (10.5) | 103% | 0 (9) | 20380 | 4365 |
+| JV_ABD | 13 | 27032 | 36371 | 25.7 | -27032 | 9338 | 9.2 (10.5) | 97% | 0 (9) | 19113 | 3098 |
+| JV_BCD | 13 | 27135 | 36371 | 25.4 | -27135 | 9236 | 7.3 (10.5) | 104% | 0 (9) | 20915 | 4899 |
+| JV_ABCD | 13 | 23971 | 36371 | 34.1 | -23971 | 12400 | 7.7 (10.5) | 107% | 0 (9) | 20468 | 4453 |
 
 ### L6M
 
@@ -65,6 +79,7 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | JV_A | 75 | 81965 | 76186 | -7.6 | -51421 | 1126 | 9.2 (9.3) | 97% | 0 (48) | 10126 | -42 |
 | JV_B | 75 | 76961 | 76186 | -1.0 | -52547 | 0 | 9.0 (9.3) | 101% | 0 (48) | 10078 | -90 |
 | JV_C | 75 | 93191 | 76186 | -22.3 | -56666 | -4119 | 6.8 (9.3) | 100% | 2 (48) | 7415 | -2753 |
+| JV_AB | 75 | 82739 | 76186 | -8.6 | -51421 | 1126 | 8.9 (9.3) | 98% | 1 (48) | 10095 | -73 |
 
 ### X'
 
@@ -101,6 +116,13 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | JV_BC | L6M | 33163 | 30533 | -8.6 | 1104 | 8.8 |
 | JV_ABC | L3M | 17808 | 30533 | 41.7 | 1473 | 22.9 |
 | JV_ABC | L6M | 33171 | 30533 | -8.6 | 1197 | 8.8 |
+| JV_D | L3M | 31318 | 30533 | -2.6 | 2376 | 13.9 |
+| JV_AD | L3M | 27235 | 30533 | 10.8 | 1630 | 23.7 |
+| JV_BD | L3M | 32902 | 30533 | -7.8 | 2752 | 9.5 |
+| JV_CD | L3M | 27135 | 30533 | 11.1 | 4144 | 19.3 |
+| JV_ABD | L3M | 27032 | 30533 | 11.5 | 2237 | 25.7 |
+| JV_BCD | L3M | 27135 | 30533 | 11.1 | 4416 | 25.4 |
+| JV_ABCD | L3M | 22897 | 30533 | 25.0 | 3791 | 34.1 |
 
 ## 3. Trend-week clause (L6M, program convention: 5 best LPB_BASE weeks) and bi-weekly walk-forward vs JN05W2 (43 months)
 
@@ -113,6 +135,13 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | JV_AC | 258347 / 255545 / 331449 | 2 of 19 | 12 | - | - | - |
 | JV_BC | 265480 / 255545 / 331449 | 2 of 19 | 14 | - | - | - |
 | JV_ABC | 266763 / 255545 / 331449 | 2 of 19 | 14 | - | - | - |
+| JV_D | 169463 / 255545 / 331449 | 0 of 19 | 11 | - | - | - |
+| JV_AD | 166134 / 255545 / 331449 | 0 of 19 | 9 | - | - | - |
+| JV_BD | 167138 / 255545 / 331449 | 0 of 19 | 11 | - | - | - |
+| JV_CD | 165322 / 255545 / 331449 | 1 of 19 | 9 | - | - | - |
+| JV_ABD | 163809 / 255545 / 331449 | 0 of 19 | 9 | - | - | - |
+| JV_BCD | 167012 / 255545 / 331449 | 1 of 19 | 9 | - | - | - |
+| JV_ABCD | 167113 / 255545 / 331449 | 1 of 19 | 10 | - | - | - |
 
 ## 4. Interaction table (joint vs sum of the singles, L6M and HOLD; d = cell - JN05W2; synergy = joint - sum of singles; DD synergy in cut-% points)
 
@@ -144,13 +173,20 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 
 | rank | set | passes gate | worst-window DD cut % | mean d $/wk (avg of windows) | complete windows |
 |--|--|--|--|--|--|
-| 1 | JV_AB | yes | 15.6 | 991 | 3 |
-| 2 | JV_B | yes | -1.0 | 555 | 5 |
-| 3 | JV_A | no | -7.6 | 123 | 5 |
-| 4 | JV_BC | no | -13.9 | 1551 | 3 |
-| 5 | JV_ABC | no | -18.3 | 1463 | 3 |
-| 6 | JV_AC | no | -20.4 | 974 | 3 |
-| 7 | JV_C | no | -68.2 | -679 | 5 |
+| 1 | JV_ABCD | yes | 34.1 | 4453 | 1 |
+| 2 | JV_ABD | yes | 25.7 | 3098 | 1 |
+| 3 | JV_BCD | yes | 25.4 | 4899 | 1 |
+| 4 | JV_AD | yes | 23.7 | 2168 | 1 |
+| 5 | JV_CD | yes | 19.3 | 4365 | 1 |
+| 6 | JV_D | yes | 13.9 | 2725 | 1 |
+| 7 | JV_BD | yes | 9.5 | 3442 | 1 |
+| 8 | JV_B | yes | -1.0 | 555 | 5 |
+| 9 | JV_A | no | -7.6 | 123 | 5 |
+| 10 | JV_AB | no | -8.6 | 725 | 4 |
+| 11 | JV_BC | no | -13.9 | 1551 | 3 |
+| 12 | JV_ABC | no | -18.3 | 1463 | 3 |
+| 13 | JV_AC | no | -20.4 | 974 | 3 |
+| 14 | JV_C | no | -68.2 | -679 | 5 |
 
 ## 7. FULL SPEC of each rule exactly as scored (for the v2.0 build)
 

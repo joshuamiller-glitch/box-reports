@@ -1,8 +1,8 @@
-# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-14 16:26Z
+# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-14 19:26Z
 
 VERDICT (plain): First-order only so far (exact cells queued, none finished): the full stops sit in A7 (4.0/wk) and U7 (3.4/wk) and are indistinguishable from winners in the first minute but separate at 5-10 minutes; the one time stop with no mean loss in every window and a clear gap to its random-time placebo is U7 in London (below -10 at 5 min, full stops 1.6 to 1.1/wk, +$165..598/wk, but old windows have few U7 trades), plus small M7 no-progress and P7 NY AM rules; for A7 every rule that removes its full stops costs $130-400/wk, so there is no free setting. No PASS claim.
 
-Base JN05W2 exact (43 months), L6M full stops = 11.0/wk (A7 4.0, U7 3.4, M7 1.3, H7 0.8, P7 0.5, K7 0.5 after its flat -45, O7 0.6). Full stop = exit Stop/StopJoin/StopJoinFallback. First-order rows use stored 1-s mid paths of the same trades (rule replaces the actual exit by a market exit at mid -0.8 pt when it fires before the actual exit; state-cut dynamics after that ignored); exact rows use the engine (hooks th_pm, identity TL3_PM_ID/ECID on 202610: TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | ).
+Base JN05W2 exact (43 months), L6M full stops = 11.0/wk (A7 4.0, U7 3.4, M7 1.3, H7 0.8, P7 0.5, K7 0.5 after its flat -45, O7 0.6). Full stop = exit Stop/StopJoin/StopJoinFallback. First-order rows use stored 1-s mid paths of the same trades (rule replaces the actual exit by a market exit at mid -0.8 pt when it fires before the actual exit; state-cut dynamics after that ignored); exact rows use the engine (hooks th_pm, identity TL3_PM_ID/ECID on 202610: TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | ).
 
 ## 1. Anatomy: first 1/3/5/10 minutes, stopped vs target-reaching (JN05W2 trades, only trades still open at T; mae/cur in pts from entry; uw = share of seconds under water; nofav = share of the window elapsed since the last new favourable extreme; p_stop_if_cur<-10 = share of trades below -10 at T that end as full stops vs base rate)
 | book | sess | T | n_stop | n_tgt | mae_stop | mae_tgt | cur_stop | cur_tgt | uw_stop | uw_tgt | nofav_stop | nofav_tgt | p_stop_if_cur_lt_neg10 | base_p_stop |
@@ -96,4 +96,9 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | ts_m10_x10 | U7|all | 35 | 68 | 3.4 | 2.1 | 100.8 | 390.8 | 123.1 | -1,054.8 | 139.4 | -437.4 | -680.9 |
 
 ## 3. Exact engine results (vs JN05W2, scope all; dmean $/wk, dd% = max-DD change (+ = smaller DD), stops/wk base>cell). Months present only; stage logic L3M -> L6M -> HOLD -> PREUW on promotion.
-no exact cell has a complete window yet
+| cell | L3M dmean | L3M dd% | L3M stops/wk | L6M dmean | L6M dd% | L6M stops/wk | L6M ww d$ | L6M best5 | L6M w2l | HOLD dmean | HOLD dd% | HOLD stops/wk | L6M dd% noW44 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| G5H | -1188 | 14 | 10.3>10.0 | -195 | 14 | 11.0>10.7 | 1,805 | 1 | 0 | -842 | 11 | 10.7>10.5 | -3 |
+| G5HC | -438 | 2 | 10.3>10.3 | -803 | 2 | 11.0>11.0 | -1,519 | 1 | 0 | - | - | - | -18 |
+| G5S | -9579 | -3 | 10.3>7.2 | -9,561 | -3 | 11.0>7.7 | -3,048 | 1 | 3 | - | - | - | -24 |
+| G5SC | -4757 | -39 | 10.3>10.4 | - | - | - | - | - | - | - | - | - | - |

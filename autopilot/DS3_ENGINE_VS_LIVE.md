@@ -1,6 +1,6 @@
 # DS3_ENGINE_VS_LIVE - PRIORITY 13 engine vs live (W-EV)
 
-VERDICT (2026-11-14 18:53Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
+VERDICT (2026-11-14 19:04Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP_LC): ALL 0.675, W45 0.742, W46 0.567. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
 
 Shadow only, no PASS claims, nothing adopted into the shared engine. Prereg autopilot/EV_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_engfix/ (evmatch.py, ev_analyze.py, ev_report.py, ev_run.py, ev_drive.py, ev_panel.py, ev_jnprep.py, build_page.py, page_gen.py); runs and logs /mnt/l2/l2vast/_engvslive/. Admission tag EV (TL3_EV_*).
 
@@ -26,6 +26,26 @@ Shadow only, no PASS claims, nothing adopted into the shared engine. Prereg auto
 | TL3_EV_JN05W2_S | ALL      | 355     | 277    | 220 | 57  | 135 | 0.534 | 5840   | 31210  |
 | TL3_EV_JN05W2_S | W45      | 232     | 183    | 154 | 29  | 78  | 0.590 | -1122  | 14585  |
 | TL3_EV_JN05W2_S | W46      | 123     | 94     | 66  | 28  | 57  | 0.437 | 6962   | 16625  |
+
+### 2b. Same, with the panel timeline of the live strategy put in the engine (ev_panel.py: P7 sessions 7,7,0,7 -> 7,4,0,4 on 11-09 12:00Z, P7 cut v2 45/5x/w5/p10 -> 40/5x/w5/p3 on 11-09 20:30Z, all day caps at the live v1.9a coded values (K7 8,400, M7 8,400, U7 16,800, P7 14,700, H7 16,800, A7 4,200; user correction 11-14) instead of the engine box values (4,800 / 4,800 / 9,600 / P7 8,400 / 9,600 / 2,400), M7 asia/nypm and H7 london cells open 11-10 17:00Z..11-11 11:00Z as live traded them; JN04L adds ATR-SKIP and the P7 post-stop blackout from 11-10 09:00Z)
+
+| run                 | window   | nLive   | nEng   | A   | B   | C   | U     | usdB   | usdC   |
+|:--------------------|:---------|:--------|:-------|:----|:----|:----|:------|:-------|:-------|
+| TL3_EV_LC_LPB_EMPTY | ALL      | 355     | 376    | 278 | 98  | 77  | 0.614 | 12414  | 63285  |
+| TL3_EV_LC_LPB_EMPTY | W45      | 232     | 250    | 192 | 58  | 40  | 0.662 | 14998  | 49180  |
+| TL3_EV_LC_LPB_EMPTY | W46      | 123     | 126    | 86  | 40  | 37  | 0.528 | -2584  | 14105  |
+| TL3_EV_LC_JN04RM    | ALL      | 355     | 392    | 292 | 100 | 63  | 0.642 | -392   | 25115  |
+| TL3_EV_LC_JN04RM    | W45      | 232     | 266    | 206 | 60  | 26  | 0.705 | 2192   | 11010  |
+| TL3_EV_LC_JN04RM    | W46      | 123     | 126    | 86  | 40  | 37  | 0.528 | -2584  | 14105  |
+| TL3_EV_LC_JN05W2    | ALL      | 355     | 305    | 234 | 71  | 121 | 0.549 | 15469  | 40580  |
+| TL3_EV_LC_JN05W2    | W45      | 232     | 211    | 168 | 43  | 64  | 0.611 | 6194   | 18020  |
+| TL3_EV_LC_JN05W2    | W46      | 123     | 94     | 66  | 28  | 57  | 0.437 | 9275   | 22560  |
+| TL3_EV_LPBP_LC      | ALL      | 355     | 367    | 291 | 76  | 64  | 0.675 | 14131  | 18915  |
+| TL3_EV_LPBP_LC      | W45      | 232     | 233    | 198 | 35  | 34  | 0.742 | 12764  | 17940  |
+| TL3_EV_LPBP_LC      | W46      | 123     | 134    | 93  | 41  | 30  | 0.567 | 1366   | 975    |
+| TL3_EV_JN04L_LC     | ALL      | 355     | 410    | 300 | 110 | 55  | 0.645 | 22558  | 17235  |
+| TL3_EV_JN04L_LC     | W45      | 232     | 260    | 203 | 57  | 29  | 0.702 | 380    | 3705   |
+| TL3_EV_JN04L_LC     | W46      | 123     | 150    | 97  | 53  | 26  | 0.551 | 22177  | 13530  |
 
 ### 2c. Conditional on live exits (live-drive diagnostic C2: book states and realised P&L driven by the live exits; engine entry logic only)
 

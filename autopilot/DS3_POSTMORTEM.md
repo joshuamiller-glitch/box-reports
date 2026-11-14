@@ -1,4 +1,4 @@
-# DS3_POSTMORTEM - P5 worst-week / worst-day post-mortem (W-PM), built 2026-11-14 16:26Z
+# DS3_POSTMORTEM - P5 worst-week / worst-day post-mortem (W-PM), built 2026-11-14 19:26Z
 
 VERDICT (plain): The worst weeks are many small state cuts (StateCut 753 trades, -$1.18M of the -$2.1M loss in the 20 worst weeks) in low-efficiency (chop) sessions, not full stops or re-entries: no entry-time rule I could write from D7's own behaviour (after-down-day gates, full-stop counts, same-side re-entry, entry number, trailing chop proxies) beats its random-removal placebo in both recent and older windows; the only patterns with lift are consequences of the day already being down (down>=$5k lift 3.6 on worst days, but those entries are net +$602k over history) and the live W46 silence of the cut (45 full stops vs 5 the week before). Exact-engine day-down and stop-count gates are queued; nothing passes.
 
