@@ -1,6 +1,6 @@
 # DS3_TICK: NYSE TICK as day-type, filter and trigger tool (W-TK1 sections 1-6; W-TK2 section 7)
 
-Verdict (2026-11-14 08:21Z): PART 1 (forecast): 0 of 502 feature-family x target x session cells pass the lead rule; TICK does not forecast NQ direction, continuation, trend/chop or remaining range beyond the price-only benchmark in any slice (best gains are about 1% of variance and inside the family null). PART 2 first order: 6768 cells, 194 pass the recent gate, 9 pass recent+older; best recent+older drawdown score 14.6 vs family-null q95 37.6 (best-of-family on TICK shifted 8-60 days), so no first-order cell is separable from the best-of-family noise; exact-engine status: 39 exact candidates; tier-1 (L6M) complete 39; recent-gate survivors 21; advanced 10; jobs outstanding 934 (section 4).
+Verdict (2026-11-14 11:21Z): PART 1 (forecast): 0 of 502 feature-family x target x session cells pass the lead rule; TICK does not forecast NQ direction, continuation, trend/chop or remaining range beyond the price-only benchmark in any slice (best gains are about 1% of variance and inside the family null). PART 2 first order: 6768 cells, 194 pass the recent gate, 9 pass recent+older; best recent+older drawdown score 14.6 vs family-null q95 37.6 (best-of-family on TICK shifted 8-60 days), so no first-order cell is separable from the best-of-family noise; exact-engine status: 39 exact candidates; tier-1 (L6M) complete 39; recent-gate survivors 21; advanced 10; jobs outstanding 635 (section 4).
 
 Plain strength rule: a result is a LEAD only if it holds in the recent (L6M and HOLD) AND older (PRE and X') windows and beats the family null; no PASS claims; nothing here changes the execution server or any live chart. Page rebuilt every 3 h by tk_loop.sh.
 
@@ -214,7 +214,7 @@ Counts: cells 6768; recent gate 194; recent+older 9. Family null (shifted TICK):
 
 Identity gate (hook module at identity before any candidate): TL3_TK_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_TK_ID2 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
-Candidates 39; jobs outstanding 934; tier-1 L6M complete 39; recent-gate survivors 21; advanced to older+placebo+delay 10.
+Candidates 39; jobs outstanding 635; tier-1 L6M complete 39; recent-gate survivors 21; advanced to older+placebo+delay 10.
 
 Deltas are cell minus JN05W2 on the same months (exact engine, net of fees $4.84 RT, measured fills); maxDD cut % > 0 = smaller drawdown; ww = worst week; b5 = sum of the reference best-5 weeks (ref vs cell); wtl = reference winning weeks turned losing; stp = full stops per week.
 
@@ -230,9 +230,13 @@ Deltas are cell minus JN05W2 on the same months (exact engine, net of fees $4.84
 | TL3_TK_C04 | C|clast30|<=q33|half|ALL|london | L3M | -285 | 6.4 | 48905/52233 | -33042/-36371 | 233441/241079 | 0 | 10.42/10.35 | 1907 |
 | TL3_TK_C04 | C|clast30|<=q33|half|ALL|london | L6M | -45 | 6.4 | 48905/52233 | -33042/-36371 | 311002/316288 | 0 | 10.99/10.99 | 4212 |
 | TL3_TK_C04 | C|clast30|<=q33|half|ALL|london | HOLD | -12 | 18.2 | 75328/92044 | -52133/-55145 | 335697/340478 | 1 | 10.64/10.66 | 7543 |
+| TL3_TK_C04 | C|clast30|<=q33|half|ALL|london | PRE | -163 | 11.6 | 81556/92243 | -44558/-52547 | 305735/311185 | 1 | 9.43/9.43 | 7559 |
+| TL3_TK_C04 | C|clast30|<=q33|half|ALL|london | XP | -83 | -2.9 | 78337/76154 | -21132/-21663 | 185653/189332 | 1 | 10.80/10.82 | 3155 |
 | TL3_TK_C05 | C|cp30|<=q20|half|ALL|night | L3M | 547 | 19.9 | 41819/52233 | -26026/-36371 | 227127/241079 | 0 | 10.04/10.35 | 1921 |
 | TL3_TK_C05 | C|cp30|<=q20|half|ALL|night | L6M | 1039 | 19.9 | 41819/52233 | -26026/-36371 | 308039/316288 | 0 | 10.73/10.99 | 4250 |
 | TL3_TK_C05 | C|cp30|<=q20|half|ALL|night | HOLD | 740 | 8.5 | 84255/92044 | -46121/-55145 | 323276/340478 | 1 | 10.47/10.66 | 7623 |
+| TL3_TK_C05 | C|cp30|<=q20|half|ALL|night | PRE | -377 | -8.3 | 99936/92243 | -45011/-52547 | 283045/311185 | 2 | 9.39/9.43 | 7643 |
+| TL3_TK_C05 | C|cp30|<=q20|half|ALL|night | XP | 164 | 14.7 | 64940/76154 | -22693/-21663 | 173796/189332 | 3 | 10.75/10.82 | 3161 |
 | TL3_TK_C06 | C|clast30|<=q20|half|ALL|night | L3M | 1559 | 20.3 | 41642/52233 | -25779/-36371 | 245686/241079 | 0 | 10.04/10.35 | 1911 |
 | TL3_TK_C06 | C|clast30|<=q20|half|ALL|night | L6M | 1594 | 20.3 | 41642/52233 | -25779/-36371 | 313417/316288 | 0 | 10.77/10.99 | 4227 |
 | TL3_TK_C06 | C|clast30|<=q20|half|ALL|night | HOLD | 1283 | 14.7 | 78469/92044 | -44188/-55145 | 343956/340478 | 1 | 10.51/10.66 | 7560 |
@@ -275,6 +279,8 @@ Deltas are cell minus JN05W2 on the same months (exact engine, net of fees $4.84
 | TL3_TK_C20 | C|cday|>=q90|press|P7|asia | L3M | 1000 | 0.0 | 52233/52233 | -36371/-36371 | 246643/241079 | 0 | 10.27/10.35 | 1860 |
 | TL3_TK_C20 | C|cday|>=q90|press|P7|asia | L6M | 559 | 0.0 | 52233/52233 | -36371/-36371 | 322292/316288 | 0 | 10.99/10.99 | 4152 |
 | TL3_TK_C20 | C|cday|>=q90|press|P7|asia | HOLD | 730 | 12.8 | 80276/92044 | -65746/-55145 | 346482/340478 | 0 | 10.64/10.66 | 7420 |
+| TL3_TK_C20 | C|cday|>=q90|press|P7|asia | PRE | 239 | 0.0 | 92243/92243 | -52547/-52547 | 306616/311185 | 1 | 9.41/9.43 | 7486 |
+| TL3_TK_C20 | C|cday|>=q90|press|P7|asia | XP | 284 | 5.2 | 72162/76154 | -20807/-21663 | 197342/189332 | 2 | 10.80/10.82 | 3133 |
 | TL3_TK_C21 | C|cday|>=q67|press|H7|night | L3M | -364 | 2.3 | 51034/52233 | -35172/-36371 | 241082/241079 | 0 | 10.35/10.35 | 1881 |
 | TL3_TK_C21 | C|cday|>=q67|press|H7|night | L6M | -179 | 2.3 | 51034/52233 | -35172/-36371 | 317380/316288 | 0 | 10.99/10.99 | 4178 |
 | TL3_TK_C22 | C|cday|>=q67|press|H7|asia | L3M | -364 | 2.3 | 51034/52233 | -35172/-36371 | 241082/241079 | 0 | 10.35/10.35 | 1881 |
@@ -330,6 +336,43 @@ Deltas are cell minus JN05W2 on the same months (exact engine, net of fees $4.84
 | TL3_TK_C06 | P11 | HOLD | -1315 | 5.1 | -55210/-55145 |
 | TL3_TK_C06 | P23 | L6M | -1435 | 16.7 | -25313/-36371 |
 | TL3_TK_C06 | P23 | HOLD | -888 | -19.0 | -52541/-55145 |
+| TL3_TK_C06 | P37 | L6M | -2554 | 1.3 | -35678/-36371 |
+| TL3_TK_C06 | P37 | HOLD | -1442 | 8.5 | -42804/-55145 |
+| TL3_TK_C06 | D1 | L6M | 1594 | 20.3 | -25779/-36371 |
+| TL3_TK_C06 | D1 | HOLD | 1283 | 14.7 | -44188/-55145 |
+| TL3_TK_C06 | D5 | L6M | 1594 | 20.3 | -25779/-36371 |
+| TL3_TK_C06 | D5 | HOLD | 1283 | 14.7 | -44188/-55145 |
+| TL3_TK_C06 | D15 | L6M | 1594 | 20.3 | -25779/-36371 |
+| TL3_TK_C06 | D15 | HOLD | 1283 | 14.7 | -44188/-55145 |
+| TL3_TK_C20 | P11 | L6M | 1232 | -6.4 | -39701/-36371 |
+| TL3_TK_C20 | P11 | HOLD | 678 | -1.2 | -55145/-55145 |
+| TL3_TK_C20 | P23 | L6M | 440 | -6.4 | -39701/-36371 |
+| TL3_TK_C20 | P23 | HOLD | 328 | -8.0 | -53928/-55145 |
+| TL3_TK_C20 | P37 | L6M | -398 | -2.9 | -37883/-36371 |
+| TL3_TK_C20 | P37 | HOLD | 256 | -8.0 | -51923/-55145 |
+| TL3_TK_C20 | D1 | L6M | 559 | 0.0 | -36371/-36371 |
+| TL3_TK_C20 | D1 | HOLD | 730 | 12.8 | -65746/-55145 |
+| TL3_TK_C20 | D5 | L6M | 559 | 0.0 | -36371/-36371 |
+| TL3_TK_C20 | D5 | HOLD | 730 | 12.8 | -65746/-55145 |
+| TL3_TK_C20 | D15 | L6M | 559 | 0.0 | -36371/-36371 |
+| TL3_TK_C20 | D15 | HOLD | 730 | 12.8 | -65746/-55145 |
+| TL3_TK_C04 | P11 | L6M | -1178 | 0.0 | -36371/-36371 |
+| TL3_TK_C04 | P11 | HOLD | -786 | 12.3 | -57261/-55145 |
+| TL3_TK_C04 | P23 | L6M | -713 | 6.4 | -33042/-36371 |
+| TL3_TK_C04 | P23 | HOLD | -288 | 13.7 | -63698/-55145 |
+| TL3_TK_C04 | P37 | L6M | -1016 | 0.3 | -36189/-36371 |
+| TL3_TK_C04 | P37 | HOLD | -632 | 16.4 | -51457/-55145 |
+| TL3_TK_C04 | D1 | L6M | -45 | 6.4 | -33042/-36371 |
+| TL3_TK_C04 | D1 | HOLD | -12 | 18.2 | -52133/-55145 |
+| TL3_TK_C04 | D5 | L6M | -45 | 6.4 | -33042/-36371 |
+| TL3_TK_C04 | D5 | HOLD | -12 | 18.2 | -52133/-55145 |
+| TL3_TK_C04 | D15 | L6M | -45 | 6.4 | -33042/-36371 |
+| TL3_TK_C04 | D15 | HOLD | -12 | 18.2 | -52133/-55145 |
+| TL3_TK_C05 | P11 | L6M | -3670 | -13.8 | -42621/-36371 |
+| TL3_TK_C05 | P11 | HOLD | -1470 | -0.3 | -54030/-55145 |
+| TL3_TK_C05 | P23 | L6M | -1475 | 25.8 | -21911/-36371 |
+| TL3_TK_C05 | P23 | HOLD | -616 | -12.6 | -43184/-55145 |
+| TL3_TK_C05 | P37 | L6M | -1919 | 4.6 | -33993/-36371 |
 
 
 ## 5. Status
@@ -343,9 +386,11 @@ See 3.D (first order) and section 4 (exact).
 
 ## 7. PART 3 new books (W-TK2): see autopilot/DS3_TICK_BOOKS.md
 
-# DS3_TICK_BOOKS - new TICK books on NQ (W-TK2), research only, NO PASS claim. Built 2026-11-14 05:20 UTC
+# DS3_TICK_BOOKS - new TICK books on NQ (W-TK2), research only, NO PASS claim. Built 2026-11-14 10:04 UTC
 
 **VERDICT (plain):** Standalone NQ screen (5 books x 6 session units, 1,470-cell entry/stop/target/time grid, measured fills, real TICK vs TICK shifted 11/23/37 trading days): 9013 cells pass the both-window gate (L3M,L6M,HOLD,PRE,X' all > 0, enough trades) AND beat the same cell on the shifted-TICK placebos in recent and older windows; but these come from a 1.8M-cell search and only 2 of 22 book/unit families have a best cell above the best placebo-family cell, so the standalone evidence is WEAK (selection-dominated), and the literal directive book B1 at +/-1000 is too rare (<=20 trades/6 months) to pass any gate. 8 of 8 finalists have exact-engine L6M injected stack numbers so far; see section 4. Best injected L6M delta mean +865 $/wk (TL3_TKB_F3_real), max DD change -695.
+
+**READING (W-TK2, 2026-11-14, exact engine, JN05W2 base, all layers ON; written by hand from section 4):** No TICK book is a lead by the user's rule. Best one is F2 = B2 follow persistent TICK (L30 mean >= +/-100, share>0 >= 0.6, onset trigger, no regime filter), NQ 10:00-12:00, confirm entry at +3 min, 1x ATR stop, 30-pt target, 30-min time stop, both sides: injected delta mean +994 (L3M), +581 (L6M), +454 (HOLD, 46% covered), +125 (PRE), +39 (X') $/wk vs exact placebos (TICK shifted 11/23/37 days) L6M -563..-38, HOLD -271..-11, PRE +16 (pl23), X' -410 (pl23): above placebo in all five windows, but the older-window gains are about 1% of the stack and max DD is NOT improved (PRE +3,018, X' -6,696, recent unchanged: the single -36.4k week dominates). Delayed TICK: F2 holds at 1 min (+368 L6M) and 5 min (+84) and fails at 15 min (-446), so a real-time feed is needed (a delay of 5 min or less is borderline). Second: F6 = B1 fade TICK high/low >= +/-600 in 14:30-15:00, market entry, 1x ATR stop, no target, 15-min stop: +365 (L3M), +501 (L6M), +260 (HOLD), -30 (PRE), +89 (X') vs placebos -127..+119: recent-only. The literal directive thresholds +/-1000 produce <=20 trades per 6 months and no gated cell. B4 first-hour trend-day (TICK confirm or not) has no gated cell. F1 (B2 ER-gated), F3 (B3 divergence), F7 (B3 follow) have recent gains but exact placebos give the same or more (B3 TICK conditions are barely selective): not TICK effects. Strength: weak. The drawdown ask (max DD, worst week, best-5 kept, winning weeks turned losing) is answered "no change" for every finalist; gains are mean-only and small. F2/F6 exact placebo exists for PRE/X' only as pl23 (one draw). ES: standalone only.
 
 Data: TICK 2023-04-03..2026-11-13, 911 sessions, 354,080 RTH bars; parse identical to W-TK1 tick_clean.parquet (max abs diff 0). Usable at bar end + 5 s. NQ 1-min price from the 1-s path. ES standalone only (hook NQ-only).
 
@@ -415,36 +460,96 @@ CLOCK baseline (every-day entry, best gated cell per unit; the TICK books must b
 
 | set | window | coverage | weeks | ref_mean | inj_mean | d_mean | ref_dd | inj_dd | ref_worst | inj_worst | ref_stops_wk | inj_stops_wk | best5_kept | win_turned_losing | tkb_mean | tkb_n |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TL3_TKB_F1_pl11 | L3M | 0.8 | 11 | 16819.4 | 17439.8 | 620.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.5 | 1.0 | 0 | 620.4 | 5 |
+| TL3_TKB_F1_pl11 | L6M | 0.9 | 25 | 23240.9 | 23892.1 | 651.3 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | 651.3 | 11 |
+| TL3_TKB_F1_pl11 | HOLD | 0.5 | 27 | 24470.4 | 24907.2 | 436.8 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.9 | 1.0 | 0 | 436.8 | 14 |
 | TL3_TKB_F1_pl23 | L3M | 0.8 | 11 | 16819.4 | 16958.9 | 139.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 139.4 | 1 |
 | TL3_TKB_F1_pl23 | L6M | 0.9 | 25 | 23240.9 | 23740.8 | 499.9 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.5 | 1.0 | 0 | 497.3 | 7 |
 | TL3_TKB_F1_pl23 | HOLD | 0.5 | 27 | 24470.4 | 24874.6 | 404.1 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.7 | 1.0 | 0 | 401.7 | 8 |
+| TL3_TKB_F1_pl37 | L3M | 0.8 | 11 | 16819.4 | 17304.5 | 485.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 485.0 | 4 |
+| TL3_TKB_F1_pl37 | L6M | 0.9 | 25 | 23240.9 | 23787.3 | 546.5 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | 543.8 | 12 |
+| TL3_TKB_F1_pl37 | HOLD | 0.5 | 27 | 24470.4 | 24950.7 | 480.3 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.9 | 1.0 | 0 | 477.8 | 16 |
 | TL3_TKB_F1_real | L3M | 0.8 | 11 | 16819.4 | 17083.4 | 264.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.5 | 1.0 | 0 | 264.0 | 5 |
 | TL3_TKB_F1_real | L6M | 0.9 | 25 | 23240.9 | 23883.5 | 642.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.7 | 1.0 | 0 | 642.6 | 13 |
 | TL3_TKB_F1_real | HOLD | 0.9 | 51 | 17639.8 | 17774.2 | 134.4 | 63185.1 | 64791.3 | -55145.4 | -55476.9 | 10.6 | 10.9 | 1.0 | 0 | 86.0 | 36 |
+| TL3_TKB_F2_dly1 | L3M | 0.8 | 11 | 16819.4 | 17730.9 | 911.5 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.5 | 1.0 | 0 | 911.5 | 20 |
+| TL3_TKB_F2_dly1 | L6M | 0.9 | 25 | 23240.9 | 23609.0 | 368.2 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.8 | 1.0 | 0 | 368.2 | 32 |
+| TL3_TKB_F2_dly1 | HOLD | 0.5 | 27 | 24470.4 | 24769.1 | 298.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 11.0 | 1.0 | 0 | 298.7 | 36 |
+| TL3_TKB_F2_dly15 | L3M | 0.8 | 11 | 16819.4 | 15992.2 | -827.2 | 36370.5 | 39224.9 | -36370.5 | -36370.5 | 11.3 | 11.8 | 1.0 | 0 | -345.9 | 14 |
+| TL3_TKB_F2_dly15 | L6M | 0.9 | 25 | 23240.9 | 22795.0 | -445.9 | 36370.5 | 39224.9 | -36370.5 | -36370.5 | 10.5 | 10.9 | 1.0 | 0 | -234.1 | 29 |
+| TL3_TKB_F2_dly15 | HOLD | 0.5 | 27 | 24470.4 | 23988.5 | -481.9 | 36370.5 | 39224.9 | -36370.5 | -36370.5 | 10.7 | 11.1 | 1.0 | 0 | -285.9 | 33 |
+| TL3_TKB_F2_dly5 | L3M | 0.8 | 11 | 16819.4 | 16783.7 | -35.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 12.0 | 1.0 | 0 | -35.7 | 19 |
+| TL3_TKB_F2_dly5 | L6M | 0.9 | 25 | 23240.9 | 23325.0 | 84.1 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 11.0 | 1.0 | 0 | 84.1 | 37 |
+| TL3_TKB_F2_dly5 | HOLD | 0.5 | 27 | 24470.4 | 24570.5 | 100.1 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 11.2 | 1.0 | 0 | 100.1 | 38 |
+| TL3_TKB_F2_pl11 | L3M | 0.8 | 11 | 16819.4 | 16875.0 | 55.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.5 | 1.0 | 0 | 55.6 | 14 |
+| TL3_TKB_F2_pl11 | L6M | 0.9 | 25 | 23240.9 | 23202.9 | -38.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.8 | 1.0 | 0 | 26.4 | 30 |
+| TL3_TKB_F2_pl11 | HOLD | 0.5 | 27 | 24470.4 | 24459.8 | -10.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 11.0 | 1.0 | 0 | 14.6 | 32 |
 | TL3_TKB_F2_pl23 | L3M | 0.8 | 11 | 16819.4 | 15852.0 | -967.4 | 36370.5 | 38136.4 | -36370.5 | -36370.5 | 11.3 | 12.0 | 1.0 | 0 | -486.1 | 13 |
 | TL3_TKB_F2_pl23 | L6M | 0.9 | 25 | 23240.9 | 22678.2 | -562.7 | 36370.5 | 38136.4 | -36370.5 | -36370.5 | 10.5 | 11.1 | 1.0 | 0 | -350.9 | 26 |
-| TL3_TKB_F2_pl23 | HOLD | 0.5 | 27 | 24470.4 | 24003.2 | -467.3 | 36370.5 | 38136.4 | -36370.5 | -36370.5 | 10.7 | 11.3 | 1.0 | 0 | -305.5 | 29 |
+| TL3_TKB_F2_pl23 | HOLD | 0.5 | 51 | 12954.9 | 12707.6 | -247.4 | 36370.5 | 38136.4 | -36370.5 | -36370.5 | 5.7 | 6.0 | 1.0 | 0 | -161.7 | 29 |
+| TL3_TKB_F2_pl23 | PRE | 1.0 | 75 | 10167.9 | 10183.6 | 15.7 | 76186.1 | 79020.9 | -52547.4 | -50643.3 | 9.3 | 10.0 | 1.0 | 0 | 70.7 | 165 |
+| TL3_TKB_F2_pl23 | X' | 1.0 | 44 | 3585.1 | 3174.9 | -410.2 | 55325.6 | 53689.9 | -21663.5 | -25431.8 | 10.8 | 11.9 | 1.0 | 0 | -387.7 | 103 |
+| TL3_TKB_F2_pl37 | L3M | 0.8 | 11 | 16819.4 | 16547.7 | -271.8 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.8 | 1.0 | 0 | -305.5 | 11 |
+| TL3_TKB_F2_pl37 | L6M | 0.9 | 25 | 23240.9 | 22979.3 | -261.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 11.0 | 1.0 | 0 | -312.1 | 24 |
+| TL3_TKB_F2_pl37 | HOLD | 0.5 | 27 | 24470.4 | 24199.5 | -271.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 11.3 | 1.0 | 0 | -352.1 | 29 |
 | TL3_TKB_F2_real | L3M | 0.8 | 11 | 16819.4 | 17813.8 | 994.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 994.4 | 14 |
 | TL3_TKB_F2_real | L6M | 0.9 | 25 | 23240.9 | 23822.0 | 581.1 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | 581.1 | 26 |
 | TL3_TKB_F2_real | HOLD | 0.9 | 51 | 17639.8 | 18093.4 | 453.6 | 63185.1 | 63185.1 | -55145.4 | -55145.4 | 10.6 | 10.9 | 1.0 | 0 | 375.3 | 67 |
+| TL3_TKB_F2_real | PRE | 1.0 | 75 | 10167.9 | 10292.4 | 124.6 | 76186.1 | 79204.1 | -52547.4 | -53845.9 | 9.3 | 9.9 | 1.0 | 0 | 210.3 | 151 |
+| TL3_TKB_F2_real | X' | 1.0 | 44 | 3585.1 | 3624.1 | 39.0 | 55325.6 | 48629.9 | -21663.5 | -22042.3 | 10.8 | 11.8 | 1.0 | 1 | 12.8 | 116 |
+| TL3_TKB_F3_pl11 | L3M | 0.8 | 11 | 16819.4 | 17097.2 | 277.7 | 36370.5 | 36184.8 | -36370.5 | -36184.8 | 11.3 | 12.2 | 1.0 | 0 | 747.9 | 20 |
+| TL3_TKB_F3_pl11 | L6M | 0.9 | 25 | 23240.9 | 23750.8 | 510.0 | 36370.5 | 36184.8 | -36370.5 | -36184.8 | 10.5 | 11.6 | 1.0 | 0 | 701.9 | 49 |
+| TL3_TKB_F3_pl11 | HOLD | 0.5 | 27 | 24470.4 | 24988.6 | 518.1 | 36370.5 | 36184.8 | -36370.5 | -36184.8 | 10.7 | 11.8 | 1.0 | 0 | 695.8 | 53 |
 | TL3_TKB_F3_pl23 | L3M | 0.8 | 11 | 16819.4 | 16315.2 | -504.3 | 36370.5 | 36731.4 | -36370.5 | -36370.5 | 11.3 | 12.3 | 1.0 | 0 | 86.0 | 20 |
 | TL3_TKB_F3_pl23 | L6M | 0.9 | 25 | 23240.9 | 23111.0 | -129.8 | 36370.5 | 36731.4 | -36370.5 | -36370.5 | 10.5 | 11.6 | 1.0 | 0 | -120.6 | 46 |
 | TL3_TKB_F3_pl23 | HOLD | 0.5 | 27 | 24470.4 | 24108.8 | -361.6 | 36370.5 | 36731.4 | -36370.5 | -36370.5 | 10.7 | 12.0 | 1.0 | 0 | -353.1 | 53 |
+| TL3_TKB_F3_pl37 | L3M | 0.8 | 11 | 16819.4 | 18597.9 | 1778.5 | 36370.5 | 30351.0 | -36370.5 | -30351.0 | 11.3 | 12.1 | 1.0 | 0 | 1658.3 | 20 |
+| TL3_TKB_F3_pl37 | L6M | 0.9 | 25 | 23240.9 | 25535.4 | 2294.6 | 36370.5 | 30351.0 | -36370.5 | -30351.0 | 10.5 | 11.3 | 1.1 | 0 | 1991.2 | 46 |
+| TL3_TKB_F3_pl37 | HOLD | 0.5 | 27 | 24470.4 | 26631.8 | 2161.4 | 36370.5 | 30351.0 | -36370.5 | -30351.0 | 10.7 | 11.5 | 1.1 | 0 | 1880.5 | 51 |
 | TL3_TKB_F3_real | L3M | 0.8 | 11 | 16819.4 | 16870.2 | 50.7 | 36370.5 | 35675.2 | -36370.5 | -30876.5 | 11.3 | 12.2 | 1.0 | 0 | 641.0 | 20 |
 | TL3_TKB_F3_real | L6M | 0.9 | 25 | 23240.9 | 24105.7 | 864.8 | 36370.5 | 35675.2 | -36370.5 | -30876.5 | 10.5 | 11.3 | 1.0 | 0 | 1017.8 | 39 |
 | TL3_TKB_F3_real | HOLD | 0.9 | 51 | 17639.8 | 18079.8 | 440.0 | 63185.1 | 63185.1 | -55145.4 | -55741.9 | 10.6 | 11.7 | 1.0 | 0 | 494.0 | 95 |
+| TL3_TKB_F3_real | PRE | 1.0 | 75 | 10167.9 | 10019.0 | -148.9 | 76186.1 | 82524.3 | -52547.4 | -52547.4 | 9.3 | 10.5 | 1.0 | 0 | -83.3 | 157 |
 | TL3_TKB_F4_real | L3M | 0.8 | 11 | 16819.4 | 16938.2 | 118.8 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 118.8 | 3 |
 | TL3_TKB_F4_real | L6M | 0.9 | 25 | 23240.9 | 23525.4 | 284.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.5 | 1.0 | 0 | 284.6 | 9 |
 | TL3_TKB_F4_real | HOLD | 0.5 | 27 | 24470.4 | 24733.9 | 263.5 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.7 | 1.0 | 0 | 263.5 | 9 |
 | TL3_TKB_F5_real | L3M | 0.8 | 11 | 16819.4 | 16789.5 | -29.9 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.6 | 1.0 | 0 | -29.9 | 14 |
 | TL3_TKB_F5_real | L6M | 0.9 | 25 | 23240.9 | 23103.6 | -137.3 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.9 | 1.0 | 0 | -137.3 | 25 |
 | TL3_TKB_F5_real | HOLD | 0.5 | 27 | 24470.4 | 24471.0 | 0.5 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 11.0 | 1.0 | 0 | 0.5 | 28 |
+| TL3_TKB_F6_dly1 | L3M | 0.8 | 11 | 16819.4 | 16854.6 | 35.2 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.4 | 1.0 | 0 | 35.2 | 4 |
+| TL3_TKB_F6_dly1 | L6M | 0.9 | 25 | 23240.9 | 23323.9 | 83.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.7 | 1.0 | 0 | 83.0 | 11 |
+| TL3_TKB_F6_dly1 | HOLD | 0.5 | 27 | 24470.4 | 24567.3 | 96.9 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.9 | 1.0 | 0 | 96.9 | 12 |
+| TL3_TKB_F6_dly15 | L3M | 0.8 | 11 | 16819.4 | 16716.7 | -102.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | -102.7 | 3 |
+| TL3_TKB_F6_dly15 | L6M | 0.9 | 25 | 23240.9 | 23288.0 | 47.1 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.5 | 1.0 | 0 | 47.1 | 7 |
+| TL3_TKB_F6_dly15 | HOLD | 0.5 | 27 | 24470.4 | 24514.1 | 43.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.7 | 1.0 | 0 | 43.6 | 7 |
+| TL3_TKB_F6_dly5 | L3M | 0.8 | 11 | 16819.4 | 16871.0 | 51.5 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.4 | 1.0 | 0 | 51.5 | 4 |
+| TL3_TKB_F6_dly5 | L6M | 0.9 | 25 | 23240.9 | 23493.6 | 252.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | 252.7 | 9 |
+| TL3_TKB_F6_dly5 | HOLD | 0.5 | 27 | 24470.4 | 24704.4 | 234.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.8 | 1.0 | 0 | 234.0 | 9 |
+| TL3_TKB_F6_pl11 | L3M | 0.8 | 11 | 16819.4 | 16864.6 | 45.1 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 45.1 | 2 |
+| TL3_TKB_F6_pl11 | L6M | 0.9 | 25 | 23240.9 | 23216.0 | -24.9 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | -24.9 | 8 |
+| TL3_TKB_F6_pl11 | HOLD | 0.5 | 27 | 24470.4 | 24467.8 | -2.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.7 | 1.0 | 0 | -2.6 | 9 |
+| TL3_TKB_F6_pl23 | L3M | 0.8 | 11 | 16819.4 | 16776.6 | -42.9 | 36370.5 | 37284.1 | -36370.5 | -37284.1 | 11.3 | 11.4 | 1.0 | 0 | -42.9 | 5 |
+| TL3_TKB_F6_pl23 | L6M | 0.9 | 25 | 23240.9 | 23301.5 | 60.7 | 36370.5 | 37284.1 | -36370.5 | -37284.1 | 10.5 | 10.6 | 1.0 | 0 | 60.7 | 10 |
+| TL3_TKB_F6_pl23 | HOLD | 0.5 | 51 | 12954.9 | 12968.9 | 13.9 | 36370.5 | 37284.1 | -36370.5 | -37284.1 | 5.7 | 5.7 | 1.0 | 0 | 13.9 | 13 |
+| TL3_TKB_F6_pl23 | PRE | 1.0 | 75 | 10167.9 | 9838.1 | -329.8 | 76186.1 | 78952.9 | -52547.4 | -53854.5 | 9.3 | 9.9 | 1.0 | 0 | -329.8 | 149 |
+| TL3_TKB_F6_pl23 | X' | 1.0 | 44 | 3585.1 | 3418.7 | -166.4 | 55325.6 | 55048.5 | -21663.5 | -21157.0 | 10.8 | 11.6 | 1.0 | 1 | -171.2 | 124 |
+| TL3_TKB_F6_pl37 | L3M | 0.8 | 11 | 16819.4 | 16946.3 | 126.9 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.4 | 1.0 | 0 | 126.9 | 3 |
+| TL3_TKB_F6_pl37 | L6M | 0.9 | 25 | 23240.9 | 23226.2 | -14.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | -14.6 | 9 |
+| TL3_TKB_F6_pl37 | HOLD | 0.5 | 27 | 24470.4 | 24589.8 | 119.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.9 | 1.0 | 0 | 119.4 | 15 |
 | TL3_TKB_F6_real | L3M | 0.8 | 11 | 16819.4 | 17184.0 | 364.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 364.6 | 4 |
 | TL3_TKB_F6_real | L6M | 0.9 | 25 | 23240.9 | 23742.0 | 501.2 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | 501.2 | 10 |
 | TL3_TKB_F6_real | HOLD | 0.9 | 51 | 17639.8 | 17899.5 | 259.7 | 63185.1 | 60986.0 | -55145.4 | -55145.4 | 10.6 | 10.8 | 1.0 | 0 | 259.7 | 31 |
+| TL3_TKB_F6_real | PRE | 1.0 | 75 | 10167.9 | 10137.7 | -30.2 | 76186.1 | 78132.3 | -52547.4 | -52547.4 | 9.3 | 9.8 | 1.0 | 0 | -14.2 | 137 |
+| TL3_TKB_F6_real | X' | 1.0 | 44 | 3585.1 | 3674.4 | 89.3 | 55325.6 | 53121.3 | -21663.5 | -21759.4 | 10.8 | 11.6 | 1.0 | 0 | 89.3 | 140 |
+| TL3_TKB_F7_pl11 | L3M | 0.8 | 11 | 16819.4 | 17068.5 | 249.1 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 11.3 | 11.5 | 1.0 | 0 | 249.1 | 17 |
+| TL3_TKB_F7_pl11 | L6M | 0.9 | 25 | 23240.9 | 23689.4 | 448.5 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.5 | 10.8 | 1.0 | 0 | 448.5 | 40 |
+| TL3_TKB_F7_pl11 | HOLD | 0.5 | 27 | 24470.4 | 24820.5 | 350.0 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.7 | 11.0 | 1.0 | 0 | 350.0 | 46 |
 | TL3_TKB_F7_pl23 | L3M | 0.8 | 11 | 16819.4 | 17068.5 | 249.1 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 11.3 | 11.5 | 1.0 | 0 | 249.1 | 17 |
-| TL3_TKB_F7_pl23 | L6M | 0.4 | 13 | 19346.4 | 19695.4 | 349.0 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.5 | 10.7 | 1.0 | 0 | 349.0 | 20 |
-| TL3_TKB_F7_pl23 | HOLD | 0.2 | 13 | 19346.4 | 19695.4 | 349.0 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.5 | 10.7 | 1.0 | 0 | 349.0 | 20 |
+| TL3_TKB_F7_pl23 | L6M | 0.9 | 25 | 23240.9 | 23689.4 | 448.5 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.5 | 10.8 | 1.0 | 0 | 448.5 | 40 |
+| TL3_TKB_F7_pl23 | HOLD | 0.5 | 27 | 24470.4 | 24820.5 | 350.0 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.7 | 11.0 | 1.0 | 0 | 350.0 | 46 |
+| TL3_TKB_F7_pl37 | L3M | 0.8 | 11 | 16819.4 | 17068.5 | 249.1 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 11.3 | 11.5 | 1.0 | 0 | 249.1 | 17 |
+| TL3_TKB_F7_pl37 | L6M | 0.9 | 25 | 23240.9 | 23737.0 | 496.2 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.5 | 10.7 | 1.0 | 0 | 496.2 | 39 |
+| TL3_TKB_F7_pl37 | HOLD | 0.5 | 27 | 24470.4 | 24864.6 | 394.1 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.7 | 11.0 | 1.0 | 0 | 394.1 | 45 |
 | TL3_TKB_F7_real | L3M | 0.8 | 11 | 16819.4 | 17177.7 | 358.3 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 11.3 | 11.5 | 1.0 | 0 | 358.3 | 16 |
 | TL3_TKB_F7_real | L6M | 0.9 | 25 | 23240.9 | 23784.1 | 543.2 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.5 | 10.7 | 1.0 | 0 | 543.2 | 38 |
 | TL3_TKB_F7_real | HOLD | 0.9 | 51 | 17639.8 | 17703.2 | 63.4 | 63185.1 | 63787.5 | -55145.4 | -55145.4 | 10.6 | 11.0 | 1.0 | 0 | 115.3 | 84 |
@@ -455,62 +560,72 @@ CLOCK baseline (every-day entry, best gated cell per unit; the TICK books must b
 
 ### Injected delta mean $/wk: real vs exact placebos (TICK shifted 11/23/37 trading days through the same engine)
 
-| name | window | pl23 | real |
-|---|---|---|---|
-| F1 | HOLD | 404.0 | 134.0 |
-| F1 | L3M | 139.0 | 264.0 |
-| F1 | L6M | 500.0 | 643.0 |
-| F2 | HOLD | -467.0 | 454.0 |
-| F2 | L3M | -967.0 | 994.0 |
-| F2 | L6M | -563.0 | 581.0 |
-| F3 | HOLD | -362.0 | 440.0 |
-| F3 | L3M | -504.0 | 51.0 |
-| F3 | L6M | -130.0 | 865.0 |
-| F4 | HOLD |  | 263.0 |
-| F4 | L3M |  | 119.0 |
-| F4 | L6M |  | 285.0 |
-| F5 | HOLD |  | 1.0 |
-| F5 | L3M |  | -30.0 |
-| F5 | L6M |  | -137.0 |
-| F6 | HOLD |  | 260.0 |
-| F6 | L3M |  | 365.0 |
-| F6 | L6M |  | 501.0 |
-| F7 | HOLD | 349.0 | 63.0 |
-| F7 | L3M | 249.0 | 358.0 |
-| F7 | L6M | 349.0 | 543.0 |
-| F8 | HOLD |  | -169.0 |
-| F8 | L3M |  | 64.0 |
-| F8 | L6M |  | -144.0 |
+| name | window | dly1 | dly15 | dly5 | pl11 | pl23 | pl37 | real |
+|---|---|---|---|---|---|---|---|---|
+| F1 | HOLD |  |  |  | 437.0 | 404.0 | 480.0 | 134.0 |
+| F1 | L3M |  |  |  | 620.0 | 139.0 | 485.0 | 264.0 |
+| F1 | L6M |  |  |  | 651.0 | 500.0 | 546.0 | 643.0 |
+| F2 | HOLD | 299.0 | -482.0 | 100.0 | -11.0 | -247.0 | -271.0 | 454.0 |
+| F2 | L3M | 911.0 | -827.0 | -36.0 | 56.0 | -967.0 | -272.0 | 994.0 |
+| F2 | L6M | 368.0 | -446.0 | 84.0 | -38.0 | -563.0 | -262.0 | 581.0 |
+| F2 | PRE |  |  |  |  | 16.0 |  | 125.0 |
+| F2 | X' |  |  |  |  | -410.0 |  | 39.0 |
+| F3 | HOLD |  |  |  | 518.0 | -362.0 | 2161.0 | 440.0 |
+| F3 | L3M |  |  |  | 278.0 | -504.0 | 1778.0 | 51.0 |
+| F3 | L6M |  |  |  | 510.0 | -130.0 | 2295.0 | 865.0 |
+| F3 | PRE |  |  |  |  |  |  | -149.0 |
+| F4 | HOLD |  |  |  |  |  |  | 263.0 |
+| F4 | L3M |  |  |  |  |  |  | 119.0 |
+| F4 | L6M |  |  |  |  |  |  | 285.0 |
+| F5 | HOLD |  |  |  |  |  |  | 1.0 |
+| F5 | L3M |  |  |  |  |  |  | -30.0 |
+| F5 | L6M |  |  |  |  |  |  | -137.0 |
+| F6 | HOLD | 97.0 | 44.0 | 234.0 | -3.0 | 14.0 | 119.0 | 260.0 |
+| F6 | L3M | 35.0 | -103.0 | 52.0 | 45.0 | -43.0 | 127.0 | 365.0 |
+| F6 | L6M | 83.0 | 47.0 | 253.0 | -25.0 | 61.0 | -15.0 | 501.0 |
+| F6 | PRE |  |  |  |  | -330.0 |  | -30.0 |
+| F6 | X' |  |  |  |  | -166.0 |  | 89.0 |
+| F7 | HOLD |  |  |  | 350.0 | 350.0 | 394.0 | 63.0 |
+| F7 | L3M |  |  |  | 249.0 | 249.0 | 249.0 | 358.0 |
+| F7 | L6M |  |  |  | 449.0 | 449.0 | 496.0 | 543.0 |
+| F8 | HOLD |  |  |  |  |  |  | -169.0 |
+| F8 | L3M |  |  |  |  |  |  | 64.0 |
+| F8 | L6M |  |  |  |  |  |  | -144.0 |
 
 
 ### Injected max-DD change $ (inj - ref): real vs placebos
 
-| name | window | pl23 | real |
-|---|---|---|---|
-| F1 | HOLD | 0.0 | 1606.0 |
-| F1 | L3M | 0.0 | 0.0 |
-| F1 | L6M | 0.0 | 0.0 |
-| F2 | HOLD | 1766.0 | 0.0 |
-| F2 | L3M | 1766.0 | -0.0 |
-| F2 | L6M | 1766.0 | 0.0 |
-| F3 | HOLD | 361.0 | 0.0 |
-| F3 | L3M | 361.0 | -695.0 |
-| F3 | L6M | 361.0 | -695.0 |
-| F4 | HOLD |  | 0.0 |
-| F4 | L3M |  | 0.0 |
-| F4 | L6M |  | 0.0 |
-| F5 | HOLD |  | 0.0 |
-| F5 | L3M |  | 0.0 |
-| F5 | L6M |  | 0.0 |
-| F6 | HOLD |  | -2199.0 |
-| F6 | L3M |  | 0.0 |
-| F6 | L6M |  | 0.0 |
-| F7 | HOLD | 1191.0 | 602.0 |
-| F7 | L3M | 1191.0 | 1191.0 |
-| F7 | L6M | 1191.0 | 1191.0 |
-| F8 | HOLD |  | 0.0 |
-| F8 | L3M |  | -0.0 |
-| F8 | L6M |  | 0.0 |
+| name | window | dly1 | dly15 | dly5 | pl11 | pl23 | pl37 | real |
+|---|---|---|---|---|---|---|---|---|
+| F1 | HOLD |  |  |  | 0.0 | 0.0 | 0.0 | 1606.0 |
+| F1 | L3M |  |  |  | 0.0 | 0.0 | 0.0 | 0.0 |
+| F1 | L6M |  |  |  | 0.0 | 0.0 | 0.0 | 0.0 |
+| F2 | HOLD | 0.0 | 2854.0 | 0.0 | 0.0 | 1766.0 | 0.0 | 0.0 |
+| F2 | L3M | 0.0 | 2854.0 | 0.0 | -0.0 | 1766.0 | -0.0 | -0.0 |
+| F2 | L6M | 0.0 | 2854.0 | 0.0 | 0.0 | 1766.0 | 0.0 | 0.0 |
+| F2 | PRE |  |  |  |  | 2835.0 |  | 3018.0 |
+| F2 | X' |  |  |  |  | -1636.0 |  | -6696.0 |
+| F3 | HOLD |  |  |  | -186.0 | 361.0 | -6020.0 | 0.0 |
+| F3 | L3M |  |  |  | -186.0 | 361.0 | -6019.0 | -695.0 |
+| F3 | L6M |  |  |  | -186.0 | 361.0 | -6020.0 | -695.0 |
+| F3 | PRE |  |  |  |  |  |  | 6338.0 |
+| F4 | HOLD |  |  |  |  |  |  | 0.0 |
+| F4 | L3M |  |  |  |  |  |  | 0.0 |
+| F4 | L6M |  |  |  |  |  |  | 0.0 |
+| F5 | HOLD |  |  |  |  |  |  | 0.0 |
+| F5 | L3M |  |  |  |  |  |  | 0.0 |
+| F5 | L6M |  |  |  |  |  |  | 0.0 |
+| F6 | HOLD | 0.0 | 0.0 | 0.0 | 0.0 | 914.0 | 0.0 | -2199.0 |
+| F6 | L3M | 0.0 | 0.0 | 0.0 | 0.0 | 914.0 | -0.0 | 0.0 |
+| F6 | L6M | 0.0 | 0.0 | 0.0 | 0.0 | 914.0 | 0.0 | 0.0 |
+| F6 | PRE |  |  |  |  | 2767.0 |  | 1946.0 |
+| F6 | X' |  |  |  |  | -277.0 |  | -2204.0 |
+| F7 | HOLD |  |  |  | 1191.0 | 1191.0 | 1191.0 | 602.0 |
+| F7 | L3M |  |  |  | 1191.0 | 1191.0 | 1191.0 | 1191.0 |
+| F7 | L6M |  |  |  | 1191.0 | 1191.0 | 1191.0 | 1191.0 |
+| F8 | HOLD |  |  |  |  |  |  | 0.0 |
+| F8 | L3M |  |  |  |  |  |  | -0.0 |
+| F8 | L6M |  |  |  |  |  |  | 0.0 |
 
 
 Identity check: IDENTITY 202610 598 25943.82 vs 598 25943.82 IDENTICAL
@@ -543,6 +658,34 @@ Identity check: IDENTITY 202610 598 25943.82 vs 598 25943.82 IDENTICAL
 | B4 | S3 | no gated cell |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | B4 | nyam | recent-only | B4_N30_er30_none_pf40 | Emkt_S90_Ta1_X60 | 0.0 | 24.0 | 336.0 | 144.0 | 54.0 | 20.0 | -99.0 | 1455.0 | -879.0 | 0.0 | 99.0 | 334.0 | False | True |
 | B4 | nypm | no gated cell |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+
+
+## 7. Extra evidence for F2/F6 (lead order 2026-11-14)
+
+### 7a. Bi-weekly walk-forward (trail 26 weeks, re-pick every 2 weeks over the whole 1,470-cell grid, flat if trailing mean <= 0) and best-of null, standalone harness, both sides
+
+| book | mode | wf_mean | wf_dd | wf_worst | wf_picks | wf_pct_pos | bestof_recents | bestof_older |
+|---|---|---|---|---|---|---|---|---|
+| F2 | real | -312.0 | 68512.0 | -5028.0 | 82 | 0.0 | 1130.0 | 439.0 |
+| F2 | pl11 | -38.0 | 30638.0 | -4372.0 | 81 | 1.0 | 424.0 | 107.0 |
+| F2 | pl23 | 199.0 | 21844.0 | -4765.0 | 80 | 0.0 | 608.0 | 317.0 |
+| F2 | pl37 | -229.0 | 45297.0 | -7380.0 | 78 | 0.0 | 159.0 | 445.0 |
+| F6 | real | -71.0 | 24493.0 | -3918.0 | 82 | 0.0 | 495.0 | 324.0 |
+| F6 | pl11 | -55.0 | 10574.0 | -1909.0 | 81 | 0.0 | 79.0 | 92.0 |
+| F6 | pl23 | -14.0 | 11090.0 | -2906.0 | 79 | 0.0 | 174.0 | 121.0 |
+| F6 | pl37 | 12.0 | 10713.0 | -2554.0 | 78 | 0.0 | 198.0 | 101.0 |
+
+wf_* = OOS weekly $ of the walk-forward chain; bestof_* = max over all 1,470 cells of (L6M+HOLD)/2 and (PRE+X')/2 for that var/unit: real vs shifted TICK is the family null for the cell choice.
+
+
+### 7b. Concentration of the injected gain and stack without the worst reference week (all months present for the set)
+
+| book | months | weeks | tkb_total | best5wk_share | best4mo_share | weeks_pos | weeks_neg | worst_ref_week | worst_ref | delta_mean_all | delta_mean_ex_worst | dd_ref_ex | dd_inj_ex | pl23_delta_all | pl23_delta_ex | pl23_dd_chg_ex | dd_chg_ex_real |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| F2 | 39 | 170 | 35678.88 | 0.56 | 0.74 | 86 | 62 | 202606 | -55145.44 | 202.32 | 203.51 | 76186.06 | 79204.08 | -173.46 | -174.48 | 2834.82 | 3018.02 |
+| F6 | 39 | 170 | 16695.24 | 1.3 | 1.19 | 72 | 55 | 202606 | -55145.44 | 91.16 | 91.69 | 76186.06 | 78132.3 | -184.39 | -185.48 | 2766.86 | 1946.24 |
+
+ES injection: NOT possible. uw_inject only registers an NQ book inside the NQ-only JN05W2 engine; generalising to ES needs an ES price path and book walk in the engine, which is a separate engine change with its own identity proof and was not attempted. ES is standalone harness only (section 5).
 
 
 ## 6. Caveats
