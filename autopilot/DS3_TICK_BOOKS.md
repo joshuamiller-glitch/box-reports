@@ -1,6 +1,6 @@
-# DS3_TICK_BOOKS - new TICK books on NQ (W-TK2), research only, NO PASS claim. Built 2026-11-14 02:20 UTC
+# DS3_TICK_BOOKS - new TICK books on NQ (W-TK2), research only, NO PASS claim. Built 2026-11-14 04:10 UTC
 
-**VERDICT (plain):** Standalone NQ screen (5 books x 6 session units, 1,470-cell entry/stop/target/time grid, measured fills, real TICK vs TICK shifted 11/23/37 trading days): 9013 cells pass the both-window gate (L3M,L6M,HOLD,PRE,X' all > 0, enough trades) AND beat the same cell on the shifted-TICK placebos in recent and older windows; but these come from a 1.8M-cell search and only 2 of 22 book/unit families have a best cell above the best placebo-family cell, so the standalone evidence is WEAK (selection-dominated), and the literal directive book B1 at +/-1000 is too rare (<=20 trades/6 months) to pass any gate. Exact-engine injected stack numbers: not yet available (runs queued under admission tag TKB behind UW/UR/RU; box at worker cap).
+**VERDICT (plain):** Standalone NQ screen (5 books x 6 session units, 1,470-cell entry/stop/target/time grid, measured fills, real TICK vs TICK shifted 11/23/37 trading days): 9013 cells pass the both-window gate (L3M,L6M,HOLD,PRE,X' all > 0, enough trades) AND beat the same cell on the shifted-TICK placebos in recent and older windows; but these come from a 1.8M-cell search and only 2 of 22 book/unit families have a best cell above the best placebo-family cell, so the standalone evidence is WEAK (selection-dominated), and the literal directive book B1 at +/-1000 is too rare (<=20 trades/6 months) to pass any gate. 8 of 8 finalists have exact-engine L6M injected stack numbers so far; see section 4. Best injected L6M delta mean +865 $/wk (TL3_TKB_F3_real), max DD change -695.
 
 Data: TICK 2023-04-03..2026-11-13, 911 sessions, 354,080 RTH bars; parse identical to W-TK1 tick_clean.parquet (max abs diff 0). Usable at bar end + 5 s. NQ 1-min price from the 1-s path. ES standalone only (hook NQ-only).
 
@@ -68,7 +68,92 @@ CLOCK baseline (every-day entry, best gated cell per unit; the TICK books must b
 
 ## 4. INJECTED STACK numbers (exact engine, JN05W2 base, all layers ON, hook uw_inject, tag TKB). Identity: TL3_TKB_ID must give 598 / 25943.82 for 202610.
 
-No injected run finished yet.
+| set | window | coverage | weeks | ref_mean | inj_mean | d_mean | ref_dd | inj_dd | ref_worst | inj_worst | ref_stops_wk | inj_stops_wk | best5_kept | win_turned_losing | tkb_mean | tkb_n |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TL3_TKB_F1_real | L3M | 0.8 | 11 | 16819.4 | 17083.4 | 264.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.5 | 1.0 | 0 | 264.0 | 5 |
+| TL3_TKB_F1_real | L6M | 0.9 | 25 | 23240.9 | 23883.5 | 642.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.7 | 1.0 | 0 | 642.6 | 13 |
+| TL3_TKB_F1_real | HOLD | 0.5 | 27 | 24470.4 | 24987.9 | 517.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 11.0 | 1.0 | 0 | 517.4 | 16 |
+| TL3_TKB_F2_real | L3M | 0.8 | 11 | 16819.4 | 17813.8 | 994.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 994.4 | 14 |
+| TL3_TKB_F2_real | L6M | 0.9 | 25 | 23240.9 | 23822.0 | 581.1 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | 581.1 | 26 |
+| TL3_TKB_F2_real | HOLD | 0.5 | 27 | 24470.4 | 24985.4 | 515.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.8 | 1.0 | 0 | 515.0 | 29 |
+| TL3_TKB_F3_real | L3M | 0.8 | 11 | 16819.4 | 16870.2 | 50.7 | 36370.5 | 35675.2 | -36370.5 | -30876.5 | 11.3 | 12.2 | 1.0 | 0 | 641.0 | 20 |
+| TL3_TKB_F3_real | L6M | 0.9 | 25 | 23240.9 | 24105.7 | 864.8 | 36370.5 | 35675.2 | -36370.5 | -30876.5 | 10.5 | 11.3 | 1.0 | 0 | 1017.8 | 39 |
+| TL3_TKB_F3_real | HOLD | 0.5 | 27 | 24470.4 | 25179.6 | 709.2 | 36370.5 | 35675.2 | -36370.5 | -30876.5 | 10.7 | 11.6 | 1.0 | 0 | 850.8 | 46 |
+| TL3_TKB_F4_real | L3M | 0.8 | 11 | 16819.4 | 16938.2 | 118.8 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 118.8 | 3 |
+| TL3_TKB_F4_real | L6M | 0.9 | 25 | 23240.9 | 23525.4 | 284.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.5 | 1.0 | 0 | 284.6 | 9 |
+| TL3_TKB_F4_real | HOLD | 0.5 | 27 | 24470.4 | 24733.9 | 263.5 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.7 | 1.0 | 0 | 263.5 | 9 |
+| TL3_TKB_F5_real | L3M | 0.8 | 11 | 16819.4 | 16789.5 | -29.9 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.6 | 1.0 | 0 | -29.9 | 14 |
+| TL3_TKB_F5_real | L6M | 0.9 | 25 | 23240.9 | 23103.6 | -137.3 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.9 | 1.0 | 0 | -137.3 | 25 |
+| TL3_TKB_F5_real | HOLD | 0.5 | 27 | 24470.4 | 24471.0 | 0.5 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 11.0 | 1.0 | 0 | 0.5 | 28 |
+| TL3_TKB_F6_real | L3M | 0.8 | 11 | 16819.4 | 17184.0 | 364.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 364.6 | 4 |
+| TL3_TKB_F6_real | L6M | 0.9 | 25 | 23240.9 | 23742.0 | 501.2 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | 501.2 | 10 |
+| TL3_TKB_F6_real | HOLD | 0.5 | 27 | 24470.4 | 24891.2 | 420.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.7 | 10.8 | 1.0 | 0 | 420.7 | 11 |
+| TL3_TKB_F7_real | L3M | 0.8 | 11 | 16819.4 | 17177.7 | 358.3 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 11.3 | 11.5 | 1.0 | 0 | 358.3 | 16 |
+| TL3_TKB_F7_real | L6M | 0.9 | 25 | 23240.9 | 23784.1 | 543.2 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.5 | 10.7 | 1.0 | 0 | 543.2 | 38 |
+| TL3_TKB_F7_real | HOLD | 0.5 | 27 | 24470.4 | 24908.1 | 437.7 | 36370.5 | 37561.7 | -36370.5 | -37561.7 | 10.7 | 11.0 | 1.0 | 0 | 437.7 | 44 |
+| TL3_TKB_F8_real | L3M | 0.8 | 11 | 16819.4 | 16883.1 | 63.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.4 | 1.0 | 0 | -20.6 | 6 |
+| TL3_TKB_F8_real | L6M | 0.6 | 18 | 20776.7 | 20740.1 | -36.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.3 | 10.4 | 1.0 | 0 | -88.2 | 10 |
+| TL3_TKB_F8_real | HOLD | 0.3 | 18 | 20776.7 | 20740.1 | -36.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.3 | 10.4 | 1.0 | 0 | -88.2 | 10 |
+
+
+### Injected delta mean $/wk: real vs exact placebos (TICK shifted 11/23/37 trading days through the same engine)
+
+| name | window | real |
+|---|---|---|
+| F1 | HOLD | 517.0 |
+| F1 | L3M | 264.0 |
+| F1 | L6M | 643.0 |
+| F2 | HOLD | 515.0 |
+| F2 | L3M | 994.0 |
+| F2 | L6M | 581.0 |
+| F3 | HOLD | 709.0 |
+| F3 | L3M | 51.0 |
+| F3 | L6M | 865.0 |
+| F4 | HOLD | 263.0 |
+| F4 | L3M | 119.0 |
+| F4 | L6M | 285.0 |
+| F5 | HOLD | 1.0 |
+| F5 | L3M | -30.0 |
+| F5 | L6M | -137.0 |
+| F6 | HOLD | 421.0 |
+| F6 | L3M | 365.0 |
+| F6 | L6M | 501.0 |
+| F7 | HOLD | 438.0 |
+| F7 | L3M | 358.0 |
+| F7 | L6M | 543.0 |
+| F8 | HOLD | -37.0 |
+| F8 | L3M | 64.0 |
+| F8 | L6M | -37.0 |
+
+
+### Injected max-DD change $ (inj - ref): real vs placebos
+
+| name | window | real |
+|---|---|---|
+| F1 | HOLD | 0.0 |
+| F1 | L3M | 0.0 |
+| F1 | L6M | 0.0 |
+| F2 | HOLD | 0.0 |
+| F2 | L3M | -0.0 |
+| F2 | L6M | 0.0 |
+| F3 | HOLD | -695.0 |
+| F3 | L3M | -695.0 |
+| F3 | L6M | -695.0 |
+| F4 | HOLD | 0.0 |
+| F4 | L3M | 0.0 |
+| F4 | L6M | 0.0 |
+| F5 | HOLD | 0.0 |
+| F5 | L3M | 0.0 |
+| F5 | L6M | 0.0 |
+| F6 | HOLD | 0.0 |
+| F6 | L3M | 0.0 |
+| F6 | L6M | 0.0 |
+| F7 | HOLD | 1191.0 |
+| F7 | L3M | 1191.0 |
+| F7 | L6M | 1191.0 |
+| F8 | HOLD | 0.0 |
+| F8 | L3M | -0.0 |
+| F8 | L6M | 0.0 |
 
 
 Identity check: 
