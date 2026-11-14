@@ -26,3 +26,6 @@ Two actions added to the P9 grid because the order is 'capital intact until a tr
 
 ## ADDENDUM E (gate definition, written after seeing that several L3M cells leave the one-week L3M max DD unchanged)
 The tolerant gate stays as in the prereg; the 'at least one window with a drawdown cut' clause is read as: a drawdown cut larger than 0.5% in some window OR a mean gain larger than 3% of the reference mean in some window (equal-drawdown mean gain), because recent max DD is one week (W44) that call-based rules cannot touch. Leads are labelled by which clause they pass. Promotion to later windows uses the same gate on the windows already scored (all weeks or W44 removed).
+
+## ADDENDUM F (standing rule T-DEEPEN PART 0): expansion of parents C2_c1 and C5_c1
+Battery TL3_TD_XC2_* / XC5_*: each book alone (K7 P7 M7 U7 H7 A7), each session alone (asia london nyam nypm), size 1.25 / 2.0, give-back keep 0.2 / 0.4 / 0.5, mirror variants (no counter-trend block; block only; uncalled lots x0.75 while pressing), wider target x1.5 on top. Run S0,S1 first, later windows by promotion; placebos and W44-removed via the page. Joint with survivors goes to W-JV.
