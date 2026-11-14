@@ -1,9 +1,9 @@
 # DS3_P7_ASIA_REENTRY - P7 Asia same-side re-entry after a loser (W-PR, PRIORITY 3 of BACK TO D7)
 **VERDICT: FIRST PAGE (measurement, exact tests running): over 43 months P7 Asia's 2nd+ same-side entry after a loser (304 trades) is NET POSITIVE (+115.5k, 43% win, wins +594k vs losses -478k) so a blanket "never re-enter" would cost money; but in the last 13 weeks it LOST (-967 $/wk, 53 trades) and 15.7k of the -36.4k 2026-W44 week is exactly this; the exact-engine block/half/cap tests below decide whether any evidence-based version helps in BOTH recent and older windows.**
 
-Page stamp 2026-11-14T16:12Z (epoch 1794672737). Label: PRE-PROOF, post-hoc, Shadow only, no PASS claims. Prereg autopilot/P7_ASIA_REENTRY_PREREG.md (sha in DECISIONS.md before any exact cell). Code code/th_p7re/ (pr_load, pr_meas2, pr_fo, pr_hooks, pr_cells, pr_driver, pr_score, pr_page). Base: JN05W2 exact engine, all layers ON (which already contains the c_gov governor: skip a P7 signal after >= 2 same-side losers in the session unless a new session extreme was made). Fills as measured (+0.23 entry / +0.44 stop / +1.36 at 08:30 pts, $4.84 RT). Recent max DD is ONE week (2026-W44, 10-26..11-01, stack -36.4k); read drawdown against the -W44 rows and the placebos.
+Page stamp 2026-11-14T16:53Z (epoch 1794675214). Label: PRE-PROOF, post-hoc, Shadow only, no PASS claims. Prereg autopilot/P7_ASIA_REENTRY_PREREG.md (sha in DECISIONS.md before any exact cell). Code code/th_p7re/ (pr_load, pr_meas2, pr_fo, pr_hooks, pr_cells, pr_driver, pr_score, pr_page). Base: JN05W2 exact engine, all layers ON (which already contains the c_gov governor: skip a P7 signal after >= 2 same-side losers in the session unless a new session extreme was made). Fills as measured (+0.23 entry / +0.44 stop / +1.36 at 08:30 pts, $4.84 RT). Recent max DD is ONE week (2026-W44, 10-26..11-01, stack -36.4k); read drawdown against the -W44 rows and the placebos.
 
-Hook identity proof: identity proof not yet complete
+Hook identity proof: TL3_PR_ID 202610 (hook module loaded, empty par): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
 ## 1. Measurement (JN05W2 exact trade table, 43 months, 19,798 trades; P7 Asia = 2,161 trades, +915.9k)
 ### M1. P7 Asia P&L by entry class (JN05W2 exact, $ per week; same_after_loser = previous P7 Asia trade in the session lost on the SAME side)
@@ -246,18 +246,76 @@ Hook identity proof: identity proof not yet complete
 | SN | +0.0% / +211 | +0.0% / +106 | +0.0% / +179 | -4.8% / -422 | -30.8% / -664 | +0.0% / +370 |
 
 ## 3. Exact engine (JN05W2 + pr_hooks, all layers ON); rows appear when every month of a window is run
-(no exact cell has a complete window yet)
+| cell | win | d$/wk | mean | maxDD | DD cut % | worst wk | d worst wk | stops/wk | best5 kept | win->lose | n/n_ref |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| BLK_EXT | L3M | -4339 | 14797 | -59372 | -13.7 | -44244 | -7874 | 10.7 | 0.98 | 2 | 1846/1875 |
+| BLK_EXT | L3M-W44 | -4698 | 19009 | -59372 | -36.8 | -44244 | -18218 | 10.6 | 0.98 | 2 | 1713/1747 |
+| BLK_ENT | L3M | +727 | 19863 | -48910 | +6.4 | -31208 | +5163 | 10.3 | 1.02 | 0 | 1889/1875 |
+| BLK_ENT | L3M-W44 | +0 | 23708 | -48910 | -12.7 | -31208 | -5182 | 10.2 | 1.02 | 0 | 1751/1747 |
+| BLK_OPP | L3M | -2503 | 16634 | -57159 | -9.4 | -40730 | -4360 | 10.6 | 0.83 | 0 | 1846/1875 |
+| BLK_OPP | L3M-W44 | -4312 | 19396 | -57159 | -31.7 | -40730 | -14704 | 10.5 | 0.83 | 0 | 1714/1747 |
+| BLK_M60 | L3M | +1366 | 20502 | -52438 | -0.4 | -35783 | +587 | 10.3 | 1.00 | 0 | 1888/1875 |
+| BLK_M60 | L3M-W44 | +100 | 23807 | -52438 | -20.8 | -35783 | -9757 | 10.2 | 1.00 | 0 | 1752/1747 |
 
+## 2b. First-order placebos for the block rules (20 random-same-count blocks with the same eligibility, and the evidence test run on the price path 11/23/37 days earlier)
+real = the rule; pl = random same-count blocks (median / 90th pct of the DD cut %, share of placebos at least as good as real); sh = DD cut % when the evidence is read off the path 11 / 23 / 37 days earlier. Time-only rules (M30/M60/M120) and OPP have no path, so sh = real.
+
+| rule | win | blocked/eligible | real DD cut % | pl med / p90 | share pl >= real | real d$ | pl d$ med | real d worst wk | pl d worst wk med | sh11 / sh23 / sh37 DD cut % |
+|---|---|---|---|---|---|---|---|---|---|---|
+| BLK_EXT | L3M | 50/80 | +5.7 | +10.1 / +12.1 | 0.55 | -11 | -162 | +2245 | +5842 | +16.9 / +12.1 / +7.7 |
+| BLK_EXT | L6M | 143/229 | +5.7 | +10.1 / +12.1 | 0.55 | -1864 | -2203 | +2245 | +4611 | +4.5 / +12.1 / +7.7 |
+| BLK_EXT | HOLD | 226/362 | -14.9 | -5.0 / +2.8 | 0.80 | -2106 | -2319 | -4005 | +1923 | -13.1 / +2.7 / -2.5 |
+| BLK_EXT | PRE | 93/120 | +7.2 | +7.9 / +12.6 | 0.60 | -1296 | -1435 | +0 | +0 | +8.3 / +1.7 / +1.7 |
+| BLK_EXT | X' | 26/32 | -11.2 | -11.2 / -0.7 | 1.00 | -225 | -169 | -2247 | -2247 | -0.7 / -11.2 / -0.7 |
+| BLK_ENT | L3M | 33/80 | +12.1 | +5.7 / +12.1 | 0.15 | +1217 | -749 | +8173 | +5554 | +14.9 / +12.1 / +7.7 |
+| BLK_ENT | L6M | 112/229 | +12.1 | +6.2 / +12.1 | 0.25 | -949 | -1935 | +1894 | +2696 | +11.9 / +12.1 / +7.7 |
+| BLK_ENT | HOLD | 192/362 | -5.1 | -4.8 / +2.8 | 0.50 | -1438 | -2110 | +2408 | +4713 | -11.1 / +5.6 / -7.3 |
+| BLK_ENT | PRE | 64/120 | +3.5 | +3.2 / +10.5 | 0.50 | -1609 | -1270 | +0 | +0 | +8.3 / -2.2 / +1.7 |
+| BLK_ENT | X' | 15/32 | +0.0 | -0.7 / +0.0 | 0.20 | -1 | -84 | -2247 | +0 | -0.7 / -11.2 / -11.2 |
+| BLK_M30 | L3M | 25/80 | +16.9 | +6.7 / +10.2 | 0.05 | +1628 | +535 | +12813 | +5554 | +16.9 / +16.9 / +16.9 |
+| BLK_M30 | L6M | 68/229 | +16.9 | +6.7 / +10.2 | 0.00 | +1312 | -647 | +11896 | +5554 | +16.9 / +16.9 / +16.9 |
+| BLK_M30 | HOLD | 104/362 | -3.5 | -10.3 / +6.9 | 0.40 | +543 | -947 | +3065 | +3270 | -3.5 / -3.5 / -3.5 |
+| BLK_M30 | PRE | 43/120 | +7.2 | +2.0 / +10.5 | 0.35 | -697 | -860 | +0 | +0 | +7.2 / +7.2 / +7.2 |
+| BLK_M30 | X' | 8/32 | -5.2 | -0.7 / +0.0 | 1.00 | -80 | -55 | +976 | +0 | -5.2 / -5.2 / -5.2 |
+| BLK_M60 | L3M | 41/80 | +8.2 | +6.7 / +12.1 | 0.45 | -136 | -987 | +5842 | +5554 | +8.2 / +8.2 / +8.2 |
+| BLK_M60 | L6M | 107/229 | +8.2 | +6.2 / +12.1 | 0.35 | -155 | -1940 | -891 | +2792 | +8.2 / +8.2 / +8.2 |
+| BLK_M60 | HOLD | 171/362 | -11.0 | -6.7 / +3.3 | 0.55 | -828 | -1789 | +5734 | +4853 | -11.0 / -11.0 / -11.0 |
+| BLK_M60 | PRE | 60/120 | +7.2 | +2.0 / +10.5 | 0.35 | -850 | -1112 | +0 | +0 | +7.2 / +7.2 / +7.2 |
+| BLK_M60 | X' | 16/32 | -11.2 | -0.7 / +0.0 | 1.00 | -129 | -91 | -2247 | +0 | -11.2 / -11.2 / -11.2 |
+| BLK_M120 | L3M | 52/80 | +10.1 | +10.0 / +12.1 | 0.35 | +1831 | +165 | +5842 | +5842 | +10.1 / +10.1 / +10.1 |
+| BLK_M120 | L6M | 142/229 | +10.1 | +10.1 / +12.1 | 0.40 | -1104 | -2203 | +130 | +5175 | +10.1 / +10.1 / +10.1 |
+| BLK_M120 | HOLD | 228/362 | -6.3 | -5.0 / +2.8 | 0.55 | -1688 | -2346 | -2043 | +1923 | -6.3 / -6.3 / -6.3 |
+| BLK_M120 | PRE | 74/120 | +7.2 | +6.2 / +12.6 | 0.50 | -1064 | -1369 | +0 | +0 | +7.2 / +7.2 / +7.2 |
+| BLK_M120 | X' | 20/32 | -11.2 | -5.2 / -0.7 | 1.00 | -149 | -144 | -2247 | -2247 | -11.2 / -11.2 / -11.2 |
+| BLK_OPP | L3M | 65/80 | +10.1 | +0.9 / +12.1 | 0.15 | +349 | +1140 | +5842 | +2245 | +10.1 / +10.1 / +10.1 |
+| BLK_OPP | L6M | 176/229 | +10.1 | +0.9 / +12.1 | 0.20 | -2297 | -3370 | +2774 | +2245 | +10.1 / +10.1 / +10.1 |
+| BLK_OPP | HOLD | 273/362 | -9.8 | -8.7 / -2.4 | 0.75 | -1723 | -2828 | +8343 | +2825 | -9.8 / -9.8 / -9.8 |
+| BLK_OPP | PRE | 93/120 | +10.0 | +7.9 / +12.6 | 0.30 | -1794 | -1435 | +0 | +0 | +10.0 / +10.0 / +10.0 |
+| BLK_OPP | X' | 25/32 | -11.2 | -11.2 / -0.7 | 1.00 | -187 | -176 | -2247 | -2247 | -11.2 / -11.2 / -11.2 |
+| BLK_HL | L3M | 36/80 | +16.5 | +6.2 / +12.1 | 0.00 | +631 | -932 | +4680 | +5554 | +8.0 / +16.9 / +16.9 |
+| BLK_HL | L6M | 123/229 | +16.5 | +6.7 / +12.1 | 0.00 | -1304 | -2252 | +4680 | +4173 | +8.0 / +16.9 / +16.9 |
+| BLK_HL | HOLD | 185/362 | -18.7 | -4.8 / +2.8 | 0.80 | -1478 | -1855 | -7157 | +4853 | -8.3 / -2.3 / -2.3 |
+| BLK_HL | PRE | 66/120 | +2.9 | +3.2 / +10.5 | 0.50 | -1706 | -1214 | +0 | +0 | +4.8 / +1.7 / +1.7 |
+| BLK_HL | X' | 16/32 | +0.0 | -0.7 / +0.0 | 0.15 | -136 | -91 | -4800 | +0 | -0.7 / -11.2 / -11.2 |
+
+## 2c. Biweekly walk-forward (first order): every 2 weeks pick the rule with the shallowest trailing-26-week maxDD whose trailing mean is within 3% of REF, apply to the next 2 weeks
+
+| start | WF maxDD | REF maxDD | WF $/day | REF $/day | picks |
+|---|---|---|---|---|---|
+| 2024-01-01 | -92243 | -92243 | 2661 | 2741 | {'REF': 27, 'CAP2': 19, 'BLK_M30': 12, 'BLK_M60': 8, 'CAP3': 7, 'BLK_HL': 1} |
+| 2025-07-01 | -89683 | -92044 | 3373 | 3396 | {'CAP2': 12, 'REF': 8, 'CAP3': 7, 'BLK_M60': 7, 'BLK_HL': 1} |
+| 2026-05-01 | -52233 | -52233 | 4987 | 5044 | {'BLK_M60': 7, 'REF': 5, 'BLK_HL': 2} |
+| 2026-08-01 | -41109 | -52233 | 4162 | 3869 | {'BLK_HL': 3, 'REF': 2, 'BLK_M60': 1, 'BLK_M30': 1} |
 
 
 ## 4. Commentary (trader view, costs on trend nights, hand-off)
 Measurement reading (first page, before the exact cells):
 - The premise "P7 Asia keeps re-entering the failed side and loses" is true only in the most recent window. Over 43 months the same-side-after-loser class has mean +380 per trade (median -1,888, i.e. a few big winners carry it), is positive in PRE (+1,643 $/wk), HOLD (+992), L6M (+492), X' (+141) and negative in L3M (-967) and GAP (-1,210, 5 trades). The class that makes the most money after a loser is the OPPOSITE side (+4,521 $/wk L3M, 4,306 L6M, 3,551 HOLD) - D7 reversing is fine; D7 repeating is mixed.
-- 295 of the 304 priors were StateCut exits (small controlled losses), not full stops. A StateCut loser is not a "failed idea" in the discretionary sense (the cut is a risk rule, price often resumes), which is why re-entry has paid historically. After a full stop the same-side count is only 8 (net +9.3k) - too few to judge.
+- 295 of the 304 priors were StateCut exits (small controlled losses), not full stops. A StateCut loser is not a "failed idea" in the discretionary sense (the cut is a risk rule, price often resumes), which is why re-entry has paid historically. After a full stop the same-side count is only 6 (net +9.3k) - too few to judge.
 - The existing governor (skip after 2 same-side losers with no new extreme) already removes the 3rd+ same-side attempts; same-side losers-before=3 gives only +2k and =4 one trade -2.8k.
 - Where it hurts: W44 (-15.7k), 2026-03-23 week (-10.5k), 2026-02-02 week (-5.7k), 2025-07-07 (-4.7k); in 5 stack-worst weeks it carries -18.7k of -274k over 43 months (7%), -27.5k of -43.1k in L3M (64%), -20.3k of -93.5k in L6M (22%), +9.2k in PRE (it HELPS) and +2.2k in X'. So the recent worst weeks are different from the older ones: that is the "must hold in both windows" test the rule has to pass.
 - What a block costs on trend nights: the 12 best same-side sessions are in section M7; a block would remove them (Asia trend nights re-entered after a cut are where the class earns).
 
 
 ## 5. Status
-driver: 1794672719 epoch chains 1 ident None outstanding 0; cells with complete windows: {}
+driver: 1794675198 epoch chains 9 ident TL3_PR_ID 202610 (hook module loaded, empty par): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL outstanding 59; cells with complete windows: {"TL3_PR_BLK_EXT": ["L3M", "L3M-W44"], "TL3_PR_BLK_ENT": ["L3M", "L3M-W44"], "TL3_PR_BLK_OPP": ["L3M", "L3M-W44"], "TL3_PR_BLK_M60": ["L3M", "L3M-W44"]}

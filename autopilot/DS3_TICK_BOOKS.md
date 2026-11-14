@@ -1,8 +1,8 @@
-# DS3_TICK_BOOKS - new TICK books on NQ (W-TK2), research only, NO PASS claim. Built 2026-11-14 16:06 UTC
+# DS3_TICK_BOOKS - new TICK books on NQ (W-TK2), research only, NO PASS claim. Built 2026-11-14 16:46 UTC
 
 **VERDICT (plain):** Standalone NQ screen (5 books x 6 session units, 1,470-cell entry/stop/target/time grid, measured fills, real TICK vs TICK shifted 11/23/37 trading days): 9013 cells pass the both-window gate (L3M,L6M,HOLD,PRE,X' all > 0, enough trades) AND beat the same cell on the shifted-TICK placebos in recent and older windows; but these come from a 1.8M-cell search and only 2 of 22 book/unit families have a best cell above the best placebo-family cell, so the standalone evidence is WEAK (selection-dominated), and the literal directive book B1 at +/-1000 is too rare (<=20 trades/6 months) to pass any gate. 8 of 8 finalists have exact-engine L6M injected stack numbers so far; see section 4. Best injected L6M delta mean +865 $/wk (TL3_TKB_F3_real), max DD change -695.
 
-**READING (W-TK2, 2026-11-14, exact engine, JN05W2 base, all layers ON; written by hand from section 4):** No TICK book is a lead by the user's rule. Best one is F2 = B2 follow persistent TICK (L30 mean >= +/-100, share>0 >= 0.6, onset trigger, no regime filter), NQ 10:00-12:00, confirm entry at +3 min, 1x ATR stop, 30-pt target, 30-min time stop, both sides: injected delta mean +994 (L3M), +581 (L6M), +454 (HOLD, 46% covered), +125 (PRE), +39 (X') $/wk vs exact placebos (TICK shifted 11/23/37 days) L6M -563..-38, HOLD -271..-11, PRE +16 (pl23), X' -410 (pl23): above placebo in all five windows, but the older-window gains are about 1% of the stack and max DD is NOT improved (PRE +3,018, X' -6,696, recent unchanged: the single -36.4k week dominates). Delayed TICK: F2 holds at 1 min (+368 L6M) and 5 min (+84) and fails at 15 min (-446), so a real-time feed is needed (a delay of 5 min or less is borderline). Second: F6 = B1 fade TICK high/low >= +/-600 in 14:30-15:00, market entry, 1x ATR stop, no target, 15-min stop: +365 (L3M), +501 (L6M), +260 (HOLD), -30 (PRE), +89 (X') vs placebos -127..+119: recent-only. The literal directive thresholds +/-1000 produce <=20 trades per 6 months and no gated cell. B4 first-hour trend-day (TICK confirm or not) has no gated cell. F1 (B2 ER-gated), F3 (B3 divergence), F7 (B3 follow) have recent gains but exact placebos give the same or more (B3 TICK conditions are barely selective): not TICK effects. Strength: weak. The drawdown ask (max DD, worst week, best-5 kept, winning weeks turned losing) is answered "no change" for every finalist; gains are mean-only and small. F2/F6 exact placebo exists for PRE/X' only as pl23 (one draw). ES: standalone only.
+**READING (W-TK2, updated 2026-11-14 after lead order; exact engine, JN05W2 base, all layers ON, 3 exact placebo draws per window for F2 and F6):** No TICK book is a lead by the user's rule; strength weak. Best is F2 = B2 follow persistent TICK (30-min mean >= +/-100, share>0 >= 0.6, onset trigger), NQ 10:00-12:00, confirm entry +3 min, 1x ATR stop, 30-pt target, 30-min time stop, both sides. Injected delta mean $/wk vs the three exact placebos (shifts 11/23/37): L3M +994 vs -967..+56; L6M +581 vs -563..-38; HOLD +454 vs -43..+80; PRE +125 vs -427..+16; X' +39 vs -410..+211 (BELOW two of three placebos). So F2 is above all three placebos in L3M, L6M, HOLD and PRE but NOT in X'. The gain is small outside the recent window (about 1% of the stack in PRE/X') and concentrated: best 5 weeks = 56% and best 4 months = 74% of the book's total profit; removing the -55.1k stack week (2026-06) changes nothing (+203 vs +202 $/wk), so the gain is independent of that week. Max DD is not improved (PRE +3,018, X' -6,696, recent unchanged; placebo DD changes range -1,289..+2,835 in PRE, -1,985..+142 in X', i.e. DD moves are within placebo noise). Delayed TICK (exact): L6M +368 (1 min) / +84 (5) / -446 (15); HOLD +345 / +345 / +33; PRE +383 / -55 / -155; X' -76 / +368 / (15 min incomplete): positive in recents at 1-5 min, not stable in older windows, fails at 15 min in L6M. Bi-weekly walk-forward over the whole grid (standalone harness) is NEGATIVE for the real F2 var (OOS mean -312 $/wk, DD 68.5k) and no better than shifted TICK (-229..+199): the cell choice does not survive walk-forward; best-of-grid on real TICK (recents 1,130, older 439) exceeds the shifted-TICK best-of (159-608; 107-445) only partly. F6 (B1 fade TICK extreme >= +/-600, 14:30-15:00): L3M +365, L6M +501, HOLD +260 vs placebos -79..+77, PRE -30 (placebos -330..-117, i.e. above them but negative), X' +89 (above -621..-166); 10 trades per 6 months, profit concentration > 100% of total (losing months exist); weak. The literal +/-1000 fade threshold has no gated cell; B4 none; F1, F3, F7 not TICK effects (placebo equal or higher). ES: standalone only, injection not possible (the hook adds an NQ book inside the NQ-only engine; an ES version is an engine change that was not attempted).
 
 Data: TICK 2023-04-03..2026-11-13, 911 sessions, 354,080 RTH bars; parse identical to W-TK1 tick_clean.parquet (max abs diff 0). Usable at bar end + 5 s. NQ 1-min price from the 1-s path. ES standalone only (hook NQ-only).
 
@@ -93,6 +93,7 @@ CLOCK baseline (every-day entry, best gated cell per unit; the TICK books must b
 | TL3_TKB_F2_dly15 | L6M | 0.9 | 25 | 23240.9 | 22795.0 | -445.9 | 36370.5 | 39224.9 | -36370.5 | -36370.5 | 10.5 | 10.9 | 1.0 | 0 | -234.1 | 29 |
 | TL3_TKB_F2_dly15 | HOLD | 0.9 | 51 | 17639.8 | 17673.2 | 33.4 | 63185.1 | 63185.1 | -55145.4 | -55145.4 | 10.6 | 11.0 | 1.0 | 0 | -20.4 | 65 |
 | TL3_TKB_F2_dly15 | PRE | 1.0 | 75 | 10167.9 | 10012.6 | -155.2 | 76186.1 | 79081.7 | -52547.4 | -54307.1 | 9.3 | 10.3 | 1.0 | 0 | -97.8 | 187 |
+| TL3_TKB_F2_dly15 | X' | 0.2 | 10 | 12420.7 | 12009.4 | -411.3 | 11071.0 | 10952.8 | -11071.0 | -10952.8 | 8.5 | 9.7 | 1.0 | 0 | -411.3 | 30 |
 | TL3_TKB_F2_dly5 | L3M | 0.8 | 11 | 16819.4 | 16783.7 | -35.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 12.0 | 1.0 | 0 | -35.7 | 19 |
 | TL3_TKB_F2_dly5 | L6M | 0.9 | 25 | 23240.9 | 23325.0 | 84.1 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 11.0 | 1.0 | 0 | 84.1 | 37 |
 | TL3_TKB_F2_dly5 | HOLD | 0.9 | 51 | 17639.8 | 17984.5 | 344.7 | 63185.1 | 63432.5 | -55145.4 | -55145.4 | 10.6 | 11.0 | 1.0 | 0 | 309.5 | 77 |
@@ -145,7 +146,7 @@ CLOCK baseline (every-day entry, best gated cell per unit; the TICK books must b
 | TL3_TKB_F6_dly15 | L3M | 0.8 | 11 | 16819.4 | 16716.7 | -102.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | -102.7 | 3 |
 | TL3_TKB_F6_dly15 | L6M | 0.9 | 25 | 23240.9 | 23288.0 | 47.1 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.5 | 1.0 | 0 | 47.1 | 7 |
 | TL3_TKB_F6_dly15 | HOLD | 0.9 | 51 | 17639.8 | 17724.4 | 84.6 | 63185.1 | 62273.4 | -55145.4 | -55145.4 | 10.6 | 10.7 | 1.0 | 0 | 84.6 | 30 |
-| TL3_TKB_F6_dly15 | PRE | 0.6 | 49 | 11405.4 | 11599.8 | 194.4 | 76186.1 | 74337.6 | -52547.4 | -53832.1 | 9.1 | 9.6 | 1.0 | 0 | 218.9 | 82 |
+| TL3_TKB_F6_dly15 | PRE | 1.0 | 75 | 10167.9 | 10061.2 | -106.7 | 76186.1 | 74337.6 | -52547.4 | -53832.1 | 9.3 | 9.9 | 1.0 | 0 | -90.7 | 140 |
 | TL3_TKB_F6_dly5 | L3M | 0.8 | 11 | 16819.4 | 16871.0 | 51.5 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.4 | 1.0 | 0 | 51.5 | 4 |
 | TL3_TKB_F6_dly5 | L6M | 0.9 | 25 | 23240.9 | 23493.6 | 252.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | 252.7 | 9 |
 | TL3_TKB_F6_dly5 | HOLD | 0.9 | 51 | 17639.8 | 17738.0 | 98.2 | 63185.1 | 59819.8 | -55145.4 | -55145.4 | 10.6 | 10.8 | 1.0 | 0 | 98.2 | 26 |
@@ -199,7 +200,7 @@ CLOCK baseline (every-day entry, best gated cell per unit; the TICK books must b
 | F2 | L3M | 911.0 | -827.0 | -36.0 | 56.0 | -967.0 | -272.0 | 994.0 |
 | F2 | L6M | 368.0 | -446.0 | 84.0 | -38.0 | -563.0 | -262.0 | 581.0 |
 | F2 | PRE | 383.0 | -155.0 | -55.0 | -60.0 | 16.0 | -427.0 | 125.0 |
-| F2 | X' | -76.0 |  | 368.0 | 107.0 | -410.0 | 211.0 | 39.0 |
+| F2 | X' | -76.0 | -411.0 | 368.0 | 107.0 | -410.0 | 211.0 | 39.0 |
 | F3 | HOLD |  |  |  | 518.0 | -362.0 | 2161.0 | 440.0 |
 | F3 | L3M |  |  |  | 278.0 | -504.0 | 1778.0 | 51.0 |
 | F3 | L6M |  |  |  | 510.0 | -130.0 | 2295.0 | 865.0 |
@@ -213,7 +214,7 @@ CLOCK baseline (every-day entry, best gated cell per unit; the TICK books must b
 | F6 | HOLD | 56.0 | 85.0 | 98.0 | 77.0 | -79.0 | 76.0 | 260.0 |
 | F6 | L3M | 35.0 | -103.0 | 52.0 | 45.0 | -43.0 | 127.0 | 365.0 |
 | F6 | L6M | 83.0 | 47.0 | 253.0 | -25.0 | 61.0 | -15.0 | 501.0 |
-| F6 | PRE | -1.0 | 194.0 | -122.0 | -278.0 | -330.0 | -117.0 | -30.0 |
+| F6 | PRE | -1.0 | -107.0 | -122.0 | -278.0 | -330.0 | -117.0 | -30.0 |
 | F6 | X' | -76.0 |  | -101.0 | -424.0 | -166.0 | -621.0 | 89.0 |
 | F7 | HOLD |  |  |  | 350.0 | 350.0 | 394.0 | 63.0 |
 | F7 | L3M |  |  |  | 249.0 | 249.0 | 249.0 | 358.0 |
@@ -234,7 +235,7 @@ CLOCK baseline (every-day entry, best gated cell per unit; the TICK books must b
 | F2 | L3M | 0.0 | 2854.0 | 0.0 | -0.0 | 1766.0 | -0.0 | -0.0 |
 | F2 | L6M | 0.0 | 2854.0 | 0.0 | 0.0 | 1766.0 | 0.0 | 0.0 |
 | F2 | PRE | 7548.0 | 2896.0 | 4050.0 | 1179.0 | 2835.0 | -1289.0 | 3018.0 |
-| F2 | X' | -11124.0 |  | -7712.0 | -1985.0 | -1636.0 | 142.0 | -6696.0 |
+| F2 | X' | -11124.0 | -118.0 | -7712.0 | -1985.0 | -1636.0 | 142.0 | -6696.0 |
 | F3 | HOLD |  |  |  | -186.0 | 361.0 | -6020.0 | 0.0 |
 | F3 | L3M |  |  |  | -186.0 | 361.0 | -6019.0 | -695.0 |
 | F3 | L6M |  |  |  | -186.0 | 361.0 | -6020.0 | -695.0 |
