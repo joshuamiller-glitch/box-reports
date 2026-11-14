@@ -1,6 +1,6 @@
 # DS3_TICK: NYSE TICK as day-type, filter and trigger tool (W-TK1 sections 1-6; W-TK2 section 7)
 
-Verdict (2026-11-14 17:21Z): PART 1 (forecast): 0 of 502 feature-family x target x session cells pass the lead rule; TICK does not forecast NQ direction, continuation, trend/chop or remaining range beyond the price-only benchmark in any slice (best gains are about 1% of variance and inside the family null). PART 2 first order: 6768 cells, 194 pass the recent gate, 9 pass recent+older; best recent+older drawdown score 14.6 vs family-null q95 37.6 (best-of-family on TICK shifted 8-60 days), so no first-order cell is separable from the best-of-family noise; exact-engine status: 39 exact candidates; tier-1 (L6M) complete 39; recent-gate survivors 21; advanced 10; jobs outstanding 27 (section 4).
+Verdict (2026-11-14 20:21Z): PART 1 (forecast): 0 of 502 feature-family x target x session cells pass the lead rule; TICK does not forecast NQ direction, continuation, trend/chop or remaining range beyond the price-only benchmark in any slice (best gains are about 1% of variance and inside the family null). PART 2 first order: 6768 cells, 194 pass the recent gate, 9 pass recent+older; best recent+older drawdown score 14.6 vs family-null q95 37.6 (best-of-family on TICK shifted 8-60 days), so no first-order cell is separable from the best-of-family noise; exact-engine status: 39 exact candidates; tier-1 (L6M) complete 39; recent-gate survivors 21; advanced 10; jobs outstanding 27 (section 4).
 
 Plain strength rule: a result is a LEAD only if it holds in the recent (L6M and HOLD) AND older (PRE and X') windows and beats the family null; no PASS claims; nothing here changes the execution server or any live chart. Page rebuilt every 3 h by tk_loop.sh.
 
@@ -471,7 +471,7 @@ See 3.D (first order) and section 4 (exact).
 
 ## 7. PART 3 new books (W-TK2): see autopilot/DS3_TICK_BOOKS.md
 
-# DS3_TICK_BOOKS - new TICK books on NQ (W-TK2), research only, NO PASS claim. Built 2026-11-14 16:46 UTC
+# DS3_TICK_BOOKS - new TICK books on NQ (W-TK2), research only, NO PASS claim. Built 2026-11-14 19:07 UTC
 
 **VERDICT (plain):** Standalone NQ screen (5 books x 6 session units, 1,470-cell entry/stop/target/time grid, measured fills, real TICK vs TICK shifted 11/23/37 trading days): 9013 cells pass the both-window gate (L3M,L6M,HOLD,PRE,X' all > 0, enough trades) AND beat the same cell on the shifted-TICK placebos in recent and older windows; but these come from a 1.8M-cell search and only 2 of 22 book/unit families have a best cell above the best placebo-family cell, so the standalone evidence is WEAK (selection-dominated), and the literal directive book B1 at +/-1000 is too rare (<=20 trades/6 months) to pass any gate. 8 of 8 finalists have exact-engine L6M injected stack numbers so far; see section 4. Best injected L6M delta mean +865 $/wk (TL3_TKB_F3_real), max DD change -695.
 

@@ -1,6 +1,6 @@
-# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-14 19:40Z
+# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-14 20:04Z
 
-**VERDICT (running): 7 cells scored so far; no PASS claimed. See section 2 (oracle ceiling, NON-CAUSAL), section 3 (causal calls), section 5 (placebos).**
+**VERDICT (running): 10 cells scored so far; no PASS claimed. See section 2 (oracle ceiling, NON-CAUSAL), section 3 (causal calls), section 5 (placebos).**
 
 ## 0. Method
 Hook code/th_chop2/chop_hooks.py (outermost, additive; identity: TL3_CH_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL). Actions: A1 stand-down (rest of call) | A2 half size | A3b target x0.67 | A3f chop mode (tgt x.67 + session-mean + 60 min time stop + no same-side re-entry after a loss) | A4 favour K7, others x0.5 | A5 book loss cap x0.5 + stack day-done (n>=8 or <= -6000) | T5/T67/T8 target only (x0.5/.67/.8) | A6x no flip-back ablation. Call versions: O = ORACLE (W-CH1 label_sessions, hindsight, ceiling only), P = previous session was chop, Y = same session yesterday chop, M/R/C/Rg/Y/A + h = W-CH1 causal calls at h minutes, DP/DS = W-CH1 D7-dollar calls, R<var><q> = lowest range-forecast bucket (one-sided), RH = HIGH-forecast tail (separate arm). Months before a call file starts are inert (=reference).
@@ -24,6 +24,7 @@ Columns: dd/ww in $ per week series (engine base lots, live = x1.75); dd_cut % v
 | TL3_CH_O_A2  |      13 | 14500.8 |  -1514.4 | 36370.5 |  36370.5 |        0 |       24.5 |    -1640.6 | -36370.5 | -36370.5 |       1 |     1 |      53.1 |          52.5 |  144.8 |      144.2 |
 | TL3_CH_O_A3b |      13 | 20001.3 |   3986.1 | 36370.5 |  36370.5 |        0 |      100   |     4318.3 | -36370.5 | -36370.5 |       1 |     0 |      52.2 |          52.5 |  152.8 |      144.2 |
 | TL3_CH_O_A3m |      13 | 16715.5 |    700.3 | 36370.5 |  36370.5 |        0 |       37.9 |      758.6 | -36370.5 | -36370.5 |       1 |     0 |      53.3 |          52.5 |  146.2 |      144.2 |
+| TL3_CH_O_A5  |      13 | 19255.8 |   3240.6 | 36370.5 |  36370.5 |        0 |       25.2 |     3510.7 | -36370.5 | -36370.5 |       1 |     0 |      39.1 |          52.5 |  115.5 |      144.2 |
 
 ### L6M
 (no cell has this window yet)
@@ -42,12 +43,20 @@ Columns: dd/ww in $ per week series (engine base lots, live = x1.75); dd_cut % v
 
 ## 3. Causal / stand-in calls
 ### L1M
-| cell        |   weeks |   mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   d_mean44 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
-|:------------|--------:|-------:|---------:|--------:|---------:|---------:|-----------:|-----------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
-| TL3_CH_P_A1 |       4 | 5823.1 |   5216.8 | 36370.5 |  36370.5 |        0 |        nan |     6955.8 | -36370.5 | -36370.5 |     9.6 |     0 |        52 |            56 |  138.5 |      149.5 |
+| cell           |   weeks |   mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   d_mean44 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
+|:---------------|--------:|-------:|---------:|--------:|---------:|---------:|-----------:|-----------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
+| TL3_CH_P_A1    |       4 | 5823.1 |   5216.8 | 36370.5 |  36370.5 |        0 |        nan |     6955.8 | -36370.5 | -36370.5 |     9.6 |     0 |      52   |            56 |  138.5 |      149.5 |
+| TL3_CH_Rg30_A5 |       4 | -633.7 |  -1240   | 36370.5 |  36370.5 |        0 |        nan |    -1653.3 | -36370.5 | -36370.5 |    -1   |     0 |      49.8 |            56 |  128.5 |      149.5 |
+| TL3_CH_R0_A4   |       4 |  606.3 |      0   | 36370.5 |  36370.5 |        0 |        nan |        0   | -36370.5 | -36370.5 |     1   |     0 |      56   |            56 |  149.5 |      149.5 |
+| TL3_CH_C0_A4   |       4 | 1156.4 |    550.1 | 36370.5 |  36370.5 |        0 |        nan |      733.5 | -36370.5 | -36370.5 |     1.9 |     0 |      56.5 |            56 |  149.8 |      149.5 |
 
 ### L3M
-(no cell has this window yet)
+| cell           |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   d_mean44 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
+|:---------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-----------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
+| TL3_CH_P_A1    |      13 |  8625.9 |  -7389.3 | 36370.5 |  36370.5 |        0 |        2.1 |    -8005.1 | -36370.5 | -36370.5 |     0.7 |     2 |      39.9 |          52.5 |  106.8 |      144.2 |
+| TL3_CH_Rg30_A5 |      13 | 11059   |  -4956.2 | 36370.5 |  36370.5 |        0 |       -3.7 |    -5369.3 | -36370.5 | -36370.5 |     0.7 |     1 |      41.2 |          52.5 |  114.3 |      144.2 |
+| TL3_CH_R0_A4   |      13 | 14826.4 |  -1188.8 | 36370.5 |  36370.5 |        0 |       24.9 |    -1287.9 | -36370.5 | -36370.5 |     0.9 |     0 |      52.9 |          52.5 |  145.3 |      144.2 |
+| TL3_CH_C0_A4   |      13 | 16931   |    915.8 | 36370.5 |  36370.5 |        0 |       50.9 |      992.1 | -36370.5 | -36370.5 |     1   |     0 |      52.8 |          52.5 |  144.5 |      144.2 |
 
 ### L6M
 (no cell has this window yet)

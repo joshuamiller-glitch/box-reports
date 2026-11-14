@@ -2,7 +2,7 @@
 
 VERDICT (2026-11-14 17:10Z, FIRST-ORDER stage; exact stage running, nothing here is a PASS): (1) The rolling 14-day refit of the lot-level layers (SIZER LOT SIGQ REG STACK COOL ZONE A06 B02) does NOT beat the frozen JN04 setting and is worse than random layer settings in the recent windows (L6M max DD 82% deeper, mean -$15.7k/wk, 79 refits, 9 procedure variants all negative or noise): keep those layers frozen. (2) Rolling refit over the exit/entry rule layers (existing exact one-rule cells on JN05W2, session-group slots) gives L3M/L6M max-DD cut +60%/+49% and +$6.1k/+$3.3k per week, but placebos (random options, stale fits) give about the same and PRE is -14%: the value is in the rules, not in the rolling selection; as an exact joint it is untested. (3) Exact one-layer variants on the JN04-live base (K7 flat, C22, E1, F3, P7 cap/table, ATR skip, post-stop blackout) are queued (tag RF); candidate v2.10 and the code-change list follow when they land.
 
-Generated 2026-11-14 17:10 UTC (epoch 1794676237). Exact engine for every verdict dollar; first-order composition only to rank (always labelled). Shadow only, no PASS claims. Prereg autopilot/REFIT1122_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_refit1122/; bulk /mnt/l2/l2vast/_refit1122/.
+Generated 2026-11-14 20:10 UTC (epoch 1794687035). Exact engine for every verdict dollar; first-order composition only to rank (always labelled). Shadow only, no PASS claims. Prereg autopilot/REFIT1122_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_refit1122/; bulk /mnt/l2/l2vast/_refit1122/.
 
 ## 0. Plan (first publish, 2026-11-14 ~17:00Z)
 1. Stage 1 - candidate sets per layer from existing results (DS3_JOINT top-K / pools, registered topK, the 43-month exact cells on the JN05W2 base and the survivor cells from priorities 2-11 as they reach 43 months).
@@ -456,4 +456,65 @@ Cells = max-DD cut % vs the frozen base / d mean $/wk on the same OOS days (+ = 
 **K7 flat cut d (live 45)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| K7F40 | 1 |  |  |  |  |  |  |  |
+| K7F40 | 3 | +15% / +515 / -0.2 / 1.00 / 0 / -13% |  |  |  |  |  |  |
+| K7F50 | 3 | +15% / +1149 / +0.3 / 1.08 / 0 / -14% |  |  |  |  |  |  |
+
+**C22 closes n (live 22)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| C22N18 | 3 | -46% / -132 / -0.4 / 1.05 / 0 / -95% |  |  |  |  |  |  |
+| C22N26 | 3 | -42% / -1432 / +0.5 / 1.02 / 0 / -33% |  |  |  |  |  |  |
+
+**C22 day P&L R (live -2)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| C22R15 | 3 | +11% / +538 / -0.1 / 1.03 / 0 / -5% |  |  |  |  |  |  |
+| C22R25 | 3 | +0% / -28 / +0.0 / 1.01 / 0 / -14% |  |  |  |  |  |  |
+
+**WL_E1 loss_same_ge (live 2)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| E1G1 | 3 | -35% / -2878 / +0.0 / 0.83 / 0 / -81% |  |  |  |  |  |  |
+| E1G3 | 3 | -6% / -318 / -0.2 / 0.98 / 0 / +4% |  |  |  |  |  |  |
+
+**F3 fresh cut arm (live 45)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| F3F40 | 3 | -27% / -966 / -0.2 / 0.97 / 0 / -69% |  |  |  |  |  |  |
+| F3F50 | 3 | -15% / -219 / +0.4 / 0.99 / 0 / -16% |  |  |  |  |  |  |
+
+**F3 rechase cut arm (live 30)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| F3R25 | 3 | +18% / -3784 / -0.1 / 0.73 / 0 / -10% |  |  |  |  |  |  |
+| F3R35 | 2 |  |  |  |  |  |  |  |
+
+**P7 day loss cap (live 8400)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| DC6000 | 1 |  |  |  |  |  |  |  |
+
+**P7 session table (live 7,4,0,4,0,0)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| T5404 | 3 | +22% / -1584 / +0.0 / 0.87 / 0 / +1% |  |  |  |  |  |  |
+| T7304 | 3 | +0% / +89 / +0.0 / 1.01 / 0 / +0% |  |  |  |  |  |  |
+| T7403 | 3 | +0% / +55 / +0.0 / 1.00 / 0 / +0% |  |  |  |  |  |  |
+
+**ATR skip P7 (live none in the engine reference)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| ATR14 | 3 | -16% / -615 / -0.1 / 0.96 / 0 / +7% |  |  |  |  |  |  |
+| ATR16 | 1 |  |  |  |  |  |  |  |
+| ATR18 | 1 |  |  |  |  |  |  |  |
+
+**post-stop blackout P7 same side (live none in the engine reference)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| BO15 | 1 |  |  |  |  |  |  |  |
+
+## 9. Candidate v2.10 (PROVISIONAL, 2026-11-14 20:15Z; exact evidence is L3M only for the one-layer variants, so nothing below is a lead yet)
+- Frozen layers (no change): the JN04 lot layers LOT / SIGQ / REG / STACK, F3 context cut, WL_E1, C22, BR3S, K7 flat 45, P7 cap 14,700 live (engine 8,400 base lots, x1.75) and the P7 table 7,4,0,4,0,0. Reason: the rolling refit of the lot-level layers lost to the frozen setting and to random settings (section 3); the policy file therefore does not depend on any first-order lot layer.
+- Open leads waiting for L6M/HOLD (L3M exact, W44 inside): K7 flat 40 or 50 (+15% DD cut, +$515/+$1,149 per wk), P7 table 5,4,0,4,0,0 (+22%, -$1,584 per wk), C22 pnl_r -1.5 (+11%, +$538). Rejected on L3M: C22 n 18/26, E1 ge 1, F3 fresh 40/50, F3 rechase 25 (mean -$3.8k).
+- Policy-file lines that exist today (D7 syntax): `loss K7 * pct<=-0.75 cut` (flat 45 of a 60-pt stop; a flat 40 would be pct<=-0.667, 50 pct<=-0.833). Everything else (C22, E1, F3, BR3S, table, cap) is a panel/code field, not a policy line.
+- Code-change list for v2.0 is the JV/LR/PR/RA specs as scored on their own pages; this page adds none until a composite lands.
