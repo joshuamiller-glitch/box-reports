@@ -1,8 +1,8 @@
-# DS3_RANGEUSE - T-RANGEUSE: the walk-forward range forecast on D7 dials (W-RU). Rebuilt 2026-11-14T13:59Z by code/th_rangeuse/ru_loop.sh (every 3 h). Research only, NO PASS claim.
+# DS3_RANGEUSE - T-RANGEUSE: the walk-forward range forecast on D7 dials (W-RU). Rebuilt 2026-11-14T17:00Z by code/th_rangeuse/ru_loop.sh (every 3 h). Research only, NO PASS claim.
 **VERDICT (plain): 74 cells scored through L6M; 6 (cell,scope) pass the tolerant gate with a drawdown cut in recent AND older windows (leads, before placebo/null); placebo/null/gain-of-(b,(c) over (a) below. No PASS claim.**
 
 Prereg: autopilot/RANGEUSE_PREREG.md (sha in DECISIONS.md, logged before scoring). Order: DIRECTIVE_UW_3PART_20261113.md PART 2. Base JN05W2 exact engine, all layers ON. Identity: TL3_RU_ID 202610 (hook path active at neutral multipliers): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
-Months scored (cells with all months of the window / 98 cells): L3M 98, L6M 74, HOLD 50, PREUW 38. Driver: 61 jobs wanted, 8 chains running, 1794664792.
+Months scored (cells with all months of the window / 98 cells): L3M 98, L6M 74, HOLD 50, PREUW 38. Driver: 0 jobs wanted, 0 chains running, 1794675589.
 
 ## 0. Method (short)
 - Forecast = walk-forward ridge (expanding, min 120 days, refit every 10 trading days) of the session ln range at the reading used by the trade (asia/london R0 prior close; nyam R2 09:30 before 10:00 else R3 10:00; nypm R3). (a) ATR benchmark only, (b) ATR + IV term (NDX/QQQ/SPX), (c) full UW (b + SPX/QQQ flip, SPX/ALL4 gamma, NDX/SPX IV level, tide). Forecast points = predicted ln range x last close; ratio = prediction / expanding median of the past predictions; terciles from the expanding past. First forecasts exist from ~2025-03, so PREUW (2024-10..2025-06) is mostly unscored by the rule (rule inactive without a forecast = same as JN05W2).
@@ -1058,8 +1058,8 @@ Note: (c) uses many UW columns and is NOT better than (b) out of sample in most 
 ## 5. Placebo (forecast shifted 11/23/37 trading days) and family null (forecast permuted within month, seeds 1-3) beside the finalists
 | finalist | scope | real L6M | pl11 | pl23 | pl37 | perm1 | perm2 | perm3 |
 |---|---|---|---|---|---|---|---|---|
-| D5R13A_x | all | -739 $/wk, DD +14.4%, ww +10121, stops 10.92(10.99), b5 96%, w2l 0 | -739 $/wk, DD +14.4%, ww +10121, stops 10.92(10.99), b5 96%, w2l 0 | n/a | n/a | n/a | n/a | n/a |
-| D7T_a | all | +731 $/wk, DD +7.2%, ww +3778, stops 10.84(10.99), b5 101%, w2l 0 | n/a | n/a | n/a | n/a | n/a | n/a |
+| D5R13A_x | all | -739 $/wk, DD +14.4%, ww +10121, stops 10.92(10.99), b5 96%, w2l 0 | -739 $/wk, DD +14.4%, ww +10121, stops 10.92(10.99), b5 96%, w2l 0 | -739 $/wk, DD +14.4%, ww +10121, stops 10.92(10.99), b5 96%, w2l 0 | -739 $/wk, DD +14.4%, ww +10121, stops 10.92(10.99), b5 96%, w2l 0 | -739 $/wk, DD +14.4%, ww +10121, stops 10.92(10.99), b5 96%, w2l 0 | -739 $/wk, DD +14.4%, ww +10121, stops 10.92(10.99), b5 96%, w2l 0 | -739 $/wk, DD +14.4%, ww +10121, stops 10.92(10.99), b5 96%, w2l 0 |
+| D7T_a | all | +731 $/wk, DD +7.2%, ww +3778, stops 10.84(10.99), b5 101%, w2l 0 | -231 $/wk, DD -4.5%, ww -2339, stops 11.15(10.99), b5 100%, w2l 0 | +1240 $/wk, DD +0.0%, ww +0, stops 11.15(10.99), b5 101%, w2l 0 | +374 $/wk, DD -8.5%, ww -4423, stops 11.11(10.99), b5 99%, w2l 0 | +1221 $/wk, DD -4.6%, ww -2398, stops 11.07(10.99), b5 99%, w2l 0 | +1614 $/wk, DD +7.2%, ww +3778, stops 11.18(10.99), b5 101%, w2l 0 | +697 $/wk, DD -4.5%, ww -2339, stops 11.15(10.99), b5 101%, w2l 0 |
 
 ## 6. What could not be hooked
 - Dial 6 Keltner band multiple (K7 entry band, default 1.0 x ATR on 3-min bars) and chase_k limit (threshold 1.0 of the P7 ctxcut fresh/rechase cell choice) ARE hooked in ru_hooks.py (flag path: kb.bar patched per bar with the multiplier from the forecast ratio; ctxcut thr scaled per entry); identity proof TL3_RU_ID2 202610 = 598 trades / 25943.82 with both at neutral. Families D6KT/D6KC (Keltner), D6HT/D6HC (chase_k). Pullback trigger depth inside the signal engine (PbEngine) is still not hooked.
