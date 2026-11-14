@@ -1,4 +1,4 @@
-# DS3_UW_WIDE - Unusual Whales WIDE program (W-UW2). Rebuilt 2026-11-14T11:30:10Z by code/th_uw/uw_page.py (every 3 h). Research only, shadow, NO PASS claim.
+# DS3_UW_WIDE - Unusual Whales WIDE program (W-UW2). Rebuilt 2026-11-14T14:33:25Z by code/th_uw/uw_page.py (every 3 h). Research only, shadow, NO PASS claim.
 Rule: best candidate per use is always named with its honest strength; "null q95" = max over all cells of the group when the feature matrix is permuted within month (30-40 draws), so recents below it is chance-level. Windows: L1M L3M L6M HOLD PREUW (PRE clipped to the 2024-10-01 UW start); X' has NO UW data (history starts 2024-10); first-order $/wk, history unmodified, fees in net_fee. Screens are in-sample on thresholds (HOLD quantiles). Gain sign: E skip = -pnl of flagged entries, press = +0.5x pnl (size x1.5), K/Q hold = hold outcome minus actual at the cut/clip.
 
 ## 1. Status (what finished / running / died)
