@@ -2,7 +2,7 @@
 
 **VERDICT: weak, no PASS - first-order streams (20+ groups, intraday and carry, NQ and ES): 292057 sign-gate passes vs 276802 in the shifted-event placebos (ratio 1.06), best real cell does not beat the best placebo cell in most sessions; exact engine (JN05W2 all layers ON): 6 of 11 candidate sets pass the tolerant DD-first gate in L6M and the older window; 0 beat every exact placebo (and the family-null best-of rules for filters); 6 are null-level after placebos; 0 still running. Direction information in alerts is not separable from activity/regime and the every-day clock drift; any "weak lead" above needs the forward register (starts Mon 2026-11-16) before it means anything.**
 
-Updated 2026-11-14T12:40Z by fa_cycle.sh (loop, every 3 h). Research/shadow only. No PASS claims. Prereg: autopilot/FLOWALERTS_PREREG.md (sha in DECISIONS.md).
+Updated 2026-11-14T15:40Z by fa_cycle.sh (loop, every 3 h). Research/shadow only. No PASS claims. Prereg: autopilot/FLOWALERTS_PREREG.md (sha in DECISIONS.md).
 
 ## 1. How deep is the alert history (honest)
 

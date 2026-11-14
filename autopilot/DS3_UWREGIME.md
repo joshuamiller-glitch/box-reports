@@ -1,4 +1,4 @@
-# DS3_UWREGIME - Unusual Whales as a range / day-type forecaster (W-UR1). Rebuilt 2026-11-14T12:43:58Z by code/th_uwregime/ur_loop.sh (every 3 h). Research only, NO trading in this page, NO PASS claim.
+# DS3_UWREGIME - Unusual Whales as a range / day-type forecaster (W-UR1). Rebuilt 2026-11-14T15:44:54Z by code/th_uwregime/ur_loop.sh (every 3 h). Research only, NO trading in this page, NO PASS claim.
 Prereg: autopilot/UWREGIME_PREREG.md (sha in DECISIONS.md, logged before scoring). Question: does UW forecast, out of sample, the session range / realized vol, trend-vs-chop, pinning and time of high/low, and by how much OVER a no-UW benchmark.
 
 ## 0. Method in six lines
@@ -354,12 +354,12 @@ Reading: cut % > 0 = max drawdown smaller than JN05W2 in the window; d mean = ce
 | set (dial) | L3M cut % | L3M d mean | L6M cut % | L6M d mean | HOLD cut % | HOLD d mean | placebo sets L6M cut % / d mean (tags shifted 11, 23, 37 days) |
 |---|---|---|---|---|---|---|---|
 | TL3_UR_P7ASIA_IVHI_SK | -26.3 | +269 | -26.3 | -464 | +27.3 | +238 | n/a |
-| TL3_UR_LDN_GLO_HOLD | +17.3 | +591 | +17.3 | -297 | -34.5 | +238 | +0.0 / -2581; -1.3 / -2223 |
+| TL3_UR_LDN_GLO_HOLD | +17.3 | +591 | +17.3 | -297 | -34.5 | +238 | +0.0 / -2581; -1.3 / -2223; -1.5 / -1046 |
 | TL3_UR_GAMMA_BOOKS | -11.5 | +2028 | -11.5 | +223 | -64.9 | +247 | -4.7 / +2347; -5.8 / +1020; +10.8 / +1720 |
 | TL3_UR_K7LDN_TIDEPOS_SK | +4.8 | +339 | +4.8 | -384 | -10.0 | -102 | n/a |
 | TL3_UR_NEARFLIPQ_HOLD | +19.6 | +928 | +19.6 | -1106 | -11.9 | +1090 | -10.3 / -859; +0.0 / -1875; -14.6 / -2744 |
 | TL3_UR_M7LDN_TIDELO_HOLD | -3.7 | +512 | -3.7 | +179 | +20.0 | +862 | n/a |
-| TL3_UR_ALL_LDN_TIDEHI_SK | +23.5 | +2174 | +9.0 | +829 | -58.4 | -524 | -17.9 / -599; -34.0 / -1019 |
+| TL3_UR_ALL_LDN_TIDEHI_SK | +23.5 | +2174 | +9.0 | +829 | -58.4 | -524 | -17.9 / -599; +0.0 / -1488; -34.0 / -1019 |
 | TL3_UR_WID_RNG | -21.8 | -1239 | -21.8 | +750 | -33.7 | +2761 | n/a |
 | TL3_UR_CAPS_RNG | -12.6 | -2178 | -12.6 | -39 | +35.2 | +896 | n/a |
 
@@ -407,6 +407,9 @@ Compact (from score_nf.py; cut % > 0 = maxDD smaller than JN05W2; d mean = cell 
 | TL3_UR_PL23_GAMMA_BOOKS | L1M | 14.6 | 8223.3 | 4618.9 | 31044.0 | 36370.5 | 1 |  |
 | TL3_UR_PL23_GAMMA_BOOKS | L3M | -5.8 | 4893.4 | 3511.5 | 38489.0 | 36370.5 | 1 |  |
 | TL3_UR_PL23_GAMMA_BOOKS | L6M | -5.8 | 1020.4 | 2267.2 | 38489.0 | 36370.5 | 1 |  |
+| TL3_UR_PL37_LDN_GLO_HOLD | L1M | 0.0 | -716.8 | 624.7 | 36370.5 | 36370.5 | 1 |  |
+| TL3_UR_PL37_LDN_GLO_HOLD | L3M | 0.0 | -39.2 | -627.6 | 36370.5 | 36370.5 | 1 |  |
+| TL3_UR_PL37_LDN_GLO_HOLD | L6M | -1.5 | -1046.3 | -624.4 | 36907.2 | 36370.5 | 1 |  |
 | TL3_UR_PL37_GAMMA_BOOKS | L1M | 28.5 | 9256.1 | 3657.9 | 26009.8 | 36370.5 | 1 |  |
 | TL3_UR_PL37_GAMMA_BOOKS | L3M | 28.5 | 4286.8 | 2473.1 | 26009.8 | 36370.5 | 1 |  |
 | TL3_UR_PL37_GAMMA_BOOKS | L6M | 10.8 | 1719.6 | 3521.7 | 32444.2 | 36370.5 | 1 |  |
@@ -416,6 +419,9 @@ Compact (from score_nf.py; cut % > 0 = maxDD smaller than JN05W2; d mean = cell 
 | TL3_UR_PL11_NEARFLIPQ_HOLD | L1M | -3.8 | 430.5 | -459.3 | 37748.5 | 36370.5 | 0 |  |
 | TL3_UR_PL11_NEARFLIPQ_HOLD | L3M | -10.3 | -1248.7 | -179.1 | 40108.9 | 36370.5 | 0 |  |
 | TL3_UR_PL11_NEARFLIPQ_HOLD | L6M | -10.3 | -859.0 | -330.0 | 40108.9 | 36370.5 | 0 |  |
+| TL3_UR_PL23_ALL_LDN_TIDEHI_SK | L1M | 0.0 | -1134.7 | 0.0 | 36370.5 | 36370.5 | 2 |  |
+| TL3_UR_PL23_ALL_LDN_TIDEHI_SK | L3M | 0.0 | -1539.9 | 128.2 | 36370.5 | 36370.5 | 2 |  |
+| TL3_UR_PL23_ALL_LDN_TIDEHI_SK | L6M | 0.0 | -1488.4 | -420.6 | 36370.5 | 36370.5 | 2 |  |
 | TL3_UR_PL23_NEARFLIPQ_HOLD | L1M | 0.0 | -1246.1 | 0.0 | 36370.5 | 36370.5 | 1 |  |
 | TL3_UR_PL23_NEARFLIPQ_HOLD | L3M | 0.0 | 155.8 | -545.5 | 36370.5 | 36370.5 | 1 |  |
 | TL3_UR_PL23_NEARFLIPQ_HOLD | L6M | 0.0 | -1874.9 | -867.0 | 36370.5 | 36370.5 | 1 |  |
@@ -556,6 +562,12 @@ trend {'best5_ref': 316287.98000000964, 'best5_cell': 304148.1200000108, 'win_tu
 
 ### TL3_UR_PL37_LDN_GLO_HOLD: months done 6 (202605,202606,202607,202608,202609,202610)
 ```
+TL3_UR_PL37_LDN_GLO_HOLD vs JN05W2
+                       cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UR_PL37_LDN_GLO_HOLD    L1M  0.0       624.7     -716.8  36370.5  36370.5    -110.5     13.0      6.0         13.0          6.0         49             50       6   316288.0    311748.8                1         20
+1  TL3_UR_PL37_LDN_GLO_HOLD    L3M  0.0      -627.6      -39.2  36370.5  36370.5   15976.0     13.0      6.0         13.0          6.0        155            161       6   316288.0    311748.8                1         20
+2  TL3_UR_PL37_LDN_GLO_HOLD    L6M -1.5      -624.4    -1046.3  36907.2  36370.5   24090.6     13.0      6.0         13.0          6.0        339            350       6   316288.0    311748.8                1         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 311748.84000000847, 'win_turn_losing': 1, 'win_weeks': 20}
 ```
 
 ### TL3_UR_PL37_GAMMA_BOOKS: months done 6 (202605,202606,202607,202608,202609,202610)
@@ -590,6 +602,12 @@ trend {'best5_ref': 316287.98000000964, 'best5_cell': 314066.6200000087, 'win_tu
 
 ### TL3_UR_PL23_ALL_LDN_TIDEHI_SK: months done 6 (202605,202606,202607,202608,202609,202610)
 ```
+TL3_UR_PL23_ALL_LDN_TIDEHI_SK vs JN05W2
+                            cell window  cut  dmean_drop  dmean_all       dd   dd_ref  mean_all  run_max  run_p95  run_max_ref  run_p95_ref  sess_run3  sess_run3_ref  months  best5_ref  best5_cell  win_turn_losing  win_weeks
+0  TL3_UR_PL23_ALL_LDN_TIDEHI_SK    L1M  0.0         0.0    -1134.7  36370.5  36370.5    -528.4     13.0      6.0         13.0          6.0         49             50       6   316288.0    307529.9                2         20
+1  TL3_UR_PL23_ALL_LDN_TIDEHI_SK    L3M  0.0       128.2    -1539.9  36370.5  36370.5   14475.3     13.0      5.8         13.0          6.0        149            161       6   316288.0    307529.9                2         20
+2  TL3_UR_PL23_ALL_LDN_TIDEHI_SK    L6M  0.0      -420.6    -1488.4  36370.5  36370.5   23648.5     13.0      6.0         13.0          6.0        316            350       6   316288.0    307529.9                2         20
+trend {'best5_ref': 316287.98000000964, 'best5_cell': 307529.9400000088, 'win_turn_losing': 2, 'win_weeks': 20}
 ```
 
 ### TL3_UR_PL23_NEARFLIPQ_HOLD: months done 6 (202605,202606,202607,202608,202609,202610)
