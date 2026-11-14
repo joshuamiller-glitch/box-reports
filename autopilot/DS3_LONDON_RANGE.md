@@ -1,5 +1,5 @@
-# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-14T19:16Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
-**VERDICT (plain): 259 cell-months done; 4 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 2 windows; LS1/all beats-all-3-placebos in 2 of 2 windows; LS1/london beats-all-3-placebos in 0 of 2 windows; LS125/london beats-all-3-placebos in 2 of 2 windows. No PASS claim.**
+# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-14T21:41Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
+**VERDICT (plain): 288 cell-months done; 4 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 2 windows; LS1/all beats-all-3-placebos in 2 of 2 windows; LS1/london beats-all-3-placebos in 0 of 2 windows; LS125/london beats-all-3-placebos in 2 of 2 windows. No PASS claim.**
 
 Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scoring). Base JN05W2 exact engine, all layers ON, measured fills, shared TP cache. Identity (hook path active at k=1e9-neutral and empty rule): TL3_LR_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LR_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -193,6 +193,30 @@ Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scor
 | M7 | +579 $/wk, DD +27.1%, ww +3275, stops 1.07(1.14), b5 96%, w2l 0 | +638 $/wk, DD +27.7%, ww +3275, stops 1.14(1.26), b5 90%, w2l 2 | n/a | n/a | n/a |
 | A7 | +0 $/wk, DD +0.0%, ww +0, stops 4.03(4.03), b5 100%, w2l 0 | +0 $/wk, DD +0.0%, ww +0, stops 3.96(3.96), b5 100%, w2l 0 | n/a | n/a | n/a |
 | O7 | -97 $/wk, DD +0.0%, ww +0, stops 0.30(0.30), b5 86%, w2l 0 | -103 $/wk, DD -28.0%, ww -646, stops 0.65(0.57), b5 100%, w2l 0 | n/a | n/a | n/a |
+
+**exact per-book gated LS1_U7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
+
+| cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
+|---|---|---|---|---|---|---|---|
+| LS1_U7 | +1053 $/wk, DD +4.7%, ww +3863, stops 9.97(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | n/a | n/a |
+
+**exact per-book gated LS1_M7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
+
+| cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
+|---|---|---|---|---|---|---|---|
+| LS1_M7 | +1454 $/wk, DD +0.2%, ww +1485, stops 9.97(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | n/a | n/a |
+
+**exact per-book gated LS1_A7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
+
+| cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
+|---|---|---|---|---|---|---|---|
+| LS1_A7 | +0 $/wk, DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | n/a | n/a |
+
+**exact per-book gated LS125_U7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
+
+| cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
+|---|---|---|---|---|---|---|---|
+| LS125_U7 | +1542 $/wk, DD +4.7%, ww +3094, stops 9.97(10.35), b5 101%, w2l 0 | n/a | n/a | n/a | n/a | n/a | n/a |
 
 ## 4. D5SK13F_a, D3C_a, D3C_c London only
 
