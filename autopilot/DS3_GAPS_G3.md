@@ -1,6 +1,6 @@
 # DS3_GAPS_G3 — PRESS THE TREND DAY (GAPS item G3) — W-G3
 
-Generated 2026-11-14 19:14Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (43/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (43/43). Months done per G3 set: 59 sets, 1348 month-runs.
+Generated 2026-11-14 19:54Z. Shadow only, no PASS claim. Prereg autopilot/GAPS_G3_PREREG.md (sha line in DECISIONS.md). Hook code/th_g3/g3_hooks.py (outermost layer; rules in the prereg). Exact engine, one set per job, TP engine, tag GAPS. Each cell = base + ONE press rule, reference = its own base on the same months. Bases: **L = JN05W2** (43/43 months), **N = JN05W2_NOCUT** (43/43), J = JN05W2J (43/43), NJ = JN05W2J_NOCUT (43/43). Months done per G3 set: 59 sets, 1348 month-runs.
 
 **Caveat on every row:** the engine state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md); the N / NJ rows (state cut off) are the live-realistic world. Cells judged first on the trend-week clause (best 5 AND best 20 weeks) and drawdown.
 

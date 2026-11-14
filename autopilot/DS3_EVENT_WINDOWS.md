@@ -1,8 +1,8 @@
 # DS3_EVENT_WINDOWS - P10 event windows per book (W-TD)
 
-**VERDICT (plain): P10 first page: window tables on the base trades are in (section 1); 3 of 61 engine cells have L3M so far. No PASS claim.**
+**VERDICT (plain): P10 first page: window tables on the base trades are in (section 1); 5 of 61 engine cells have L3M so far. No PASS claim.**
 
-Rebuilt 2026-11-14T19:01Z (epoch 1794682860) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
+Rebuilt 2026-11-14T19:59Z (epoch 1794686399) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
 
 Identity: TL3_TD_ID 202610 (hook path active, neutral): 598 trades net_fee 25943.82 vs JN05W2 598 / 25943.82 -> IDENTICAL (trade lists equal row by row).
 Base JN05W2 exact engine, all layers ON; score = MEASURED net (gross - $4.84/ct RT - excess slip entry +0.23 / cut +0.40 / stop +0.44 / target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET); Globex label day; windows L3M (08-01..10-31) L6M (05-01..) HOLD (2025-11-01..) GAP (2025-07..10) PRE (2024-10..2025-06) X' (2023-04..2024-09). Max DD of the recent windows is one week (2026-W44): every row shows the DD cut with and without that week. Calendar /mnt/l2/l2vast/_calendar/events.csv: 562 events from 2024-10-01 (CPI, NFP, PCE, PPI, GDP, RETAIL, ISM, FOMC and minutes, chair speeches, Treasury auction closes, megacap after-close earnings). X' (2023-04..2024-09) has NO calendar: event rules are identity there and no X' number is given. Existing engine guards: entries blocked 09:00-10:00 ET and 15:00-18:05 ET, lot table 0 in the 08:30-09:30 'pre' session for all books, so entries around the 08:30 prints can only come before 08:30 and the effect of the 08:30 events is mostly on open positions.
@@ -226,11 +226,10 @@ Same columns as the trend-day page (see DS3_TREND_DAYS.md section 3). Months wit
 | cell | win | dMean | DDcut | DDcut_noW44 | dWorstWk | stops_wk | best5 | w2l | wf2w | gate |
 |---|---|---|---|---|---|---|---|---|---|---|
 | EV_CPI_B15_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
-| EV_CPI_B15_0 | XP | 0 | 0.0 | 0.0 | 0 | 10.29(10.29) | 100 | 0 | 100 | n |
 | EV_NFP_B15_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 86 | n |
-| EV_NFP_B15_0 | XP | 0 | 0.0 | 0.0 | 0 | 10.29(10.29) | 100 | 0 | 100 | n |
 | EV_NFP_F15 | L3M | 86 | 0.0 | 6.8 | 0 | 10.31(10.46) | 100 | 0 | 86 | Y |
-| EV_NFP_F15 | XP | 0 | 0.0 | 0.0 | 0 | 10.29(10.29) | 100 | 0 | 100 | n |
+| EV_PCE_F15 | L3M | 158 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_FOMC_F15 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 
 ## 3. Best action per event type (by L6M drawdown cut among cells with a gate pass in L3M and L6M; otherwise best partial)
 
@@ -245,11 +244,8 @@ Same columns as the trend-day page (see DS3_TREND_DAYS.md section 3). Months wit
 | cell | win | dMean | DDcut | DDcut_noW44 | dWorstWk | stops_wk | best5 | w2l | wf2w | gate |
 |---|---|---|---|---|---|---|---|---|---|---|
 | EV_CPI_B15_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
-| EV_CPI_B15_0 | XP | 0 | 0.0 | 0.0 | 0 | 10.29(10.29) | 100 | 0 | 100 | n |
 | EV_NFP_B15_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 86 | n |
-| EV_NFP_B15_0 | XP | 0 | 0.0 | 0.0 | 0 | 10.29(10.29) | 100 | 0 | 100 | n |
 | EV_NFP_F15 | L3M | 86 | 0.0 | 6.8 | 0 | 10.31(10.46) | 100 | 0 | 86 | Y |
-| EV_NFP_F15 | XP | 0 | 0.0 | 0.0 | 0 | 10.29(10.29) | 100 | 0 | 100 | n |
 
 ## 6. Would a competent discretionary trader do it?
 - Flat before CPI/NFP/FOMC: a common desk rule, but D7 trades that are open across the prints are net positive in the sample (section 1b); it must show a drawdown gain at equal mean to be worth the lost trend capture.

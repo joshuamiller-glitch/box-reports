@@ -1,8 +1,8 @@
 # DS3_TREND_DAYS - P9 trend days from D7's own trades (W-TD)
 
-**VERDICT (plain): P9 first page: the anatomy (section 1) and base-world call statistics (section 2) are in; 14 of 55 engine cells have L3M so far, none has L6M yet. No PASS claim.**
+**VERDICT (plain): 14 trend-day cells scored, none yet passes the tolerant gate in L3M, L6M and the older windows together; best by L6M drawdown is C5_c1 (DD cut 0.0%, d mean 1794 $/wk, gate Y). No PASS claim.**
 
-Rebuilt 2026-11-14T19:00Z (epoch 1794682858) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
+Rebuilt 2026-11-14T19:59Z (epoch 1794686394) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
 
 Identity: TL3_TD_ID 202610 (hook path active, neutral): 598 trades net_fee 25943.82 vs JN05W2 598 / 25943.82 -> IDENTICAL (trade lists equal row by row).
 Base JN05W2 exact engine, all layers ON; score = MEASURED net (gross - $4.84/ct RT - excess slip entry +0.23 / cut +0.40 / stop +0.44 / target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET); Globex label day; windows L3M (08-01..10-31) L6M (05-01..) HOLD (2025-11-01..) GAP (2025-07..10) PRE (2024-10..2025-06) X' (2023-04..2024-09). Max DD of the recent windows is one week (2026-W44): every row shows the DD cut with and without that week. Calendar not needed here: all 43 months scored (X' included).
@@ -107,8 +107,9 @@ Columns: dMean = cell minus JN05W2 $/wk; DDcut = max-DD cut in % (positive = sma
 | C1_lift | L3M | -14 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
 | C2_tg | L3M | 386 | 0.0 | 0.0 | 0 | 10.62(10.46) | 96 | 0 | 71 | n |
 | C5_sz2 | L3M | 480 | 0.0 | -12.2 | 0 | 10.38(10.46) | 103 | 0 | 57 | Y |
-| C1_c1 | L3M | 2210 | -0.0 | 0.0 | 0 | 10.38(10.46) | 105 | 0 | 86 | Y |
 | C5_c1 | L3M | 1688 | -0.0 | -11.1 | 0 | 10.38(10.46) | 105 | 0 | 71 | Y |
+| C5_c1 | L6M | 1794 | 0.0 | -11.1 | 0 | 10.95(11.03) | 103 | 0 | 79 | Y |
+| C1_c1 | L3M | 2210 | -0.0 | 0.0 | 0 | 10.38(10.46) | 105 | 0 | 86 | Y |
 | C2_ct | L3M | 290 | -1.7 | -2.5 | -941 | 10.62(10.46) | 101 | 0 | 71 | n |
 | C2_sz2 | L3M | 1984 | -5.9 | -24.0 | 0 | 10.31(10.46) | 113 | 0 | 86 | n |
 
@@ -128,8 +129,9 @@ Per cell and window: days with at least one called minute (cell's own dump); rig
 | C1_lift | L3M | 27 | 24 | 3 | -176 | -3167 | 2990 | -3167 | 0 |
 | C2_tg | L3M | 58 | 50 | 8 | 5019 | 1070 | 20794 | -15775 | 0 |
 | C5_sz2 | L3M | 15 | 15 | 0 | 6246 | 0 | 8075 | -1828 | 0 |
-| C1_c1 | L3M | 27 | 24 | 3 | 28731 | -3971 | 33776 | -5045 | 0 |
 | C5_c1 | L3M | 15 | 15 | 0 | 21950 | 0 | 24404 | -2454 | 0 |
+| C5_c1 | L6M | 33 | 32 | 1 | 47012 | -1191 | 47297 | -285 | 0 |
+| C1_c1 | L3M | 27 | 24 | 3 | 28731 | -3971 | 33776 | -5045 | 0 |
 | C2_ct | L3M | 58 | 50 | 8 | 3768 | -345 | 7306 | -3538 | 0 |
 | C2_sz2 | L3M | 58 | 50 | 8 | 25787 | 433 | 30559 | -4772 | 0 |
 
@@ -151,7 +153,7 @@ Per cell and window: days with at least one called minute (cell's own dump); rig
 
 ## 7. Best setting with evidence and plain strength
 
-- Engine cells still running; nothing scored beyond L3M.
+- No cell passes in every window scored yet. Best by L6M drawdown: **C5_c1** L3M: DD cut -0.0%, dMean 1688, gate Y, L6M: DD cut 0.0%, dMean 1794, gate Y. Strength: not a lead.
 
 ## 8. Hand-off
 Best rules are sent to W-JV (a5266a6235f1c7bbb) as they land (SendMessage); the exact spec of every cell is td_cells.py (call: H=90 min, r=1.0, n1=2, dist=0.15, frozen from the X calibration, prereg addendum A; actions as in the prereg).
