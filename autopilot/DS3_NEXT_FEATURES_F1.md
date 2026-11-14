@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F1 — T-NEXT-FEATURES items 1 (stack-level evidence) and 6 (after a halt/lock), W-F1
 
-Generated 2026-11-14 14:48 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
+Generated 2026-11-14 15:19 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
 
 Hook code/th_nextf/nf_hooks.py (outermost of the hooklist). **sev**: N same-side losing closed trades by ANY book in the ET six-session, no new session extreme in the trade direction beyond the extreme at the last failure exit (completed 1-min bars) -> skip (S) or half (H) for every book on that side; suffix N = scorecard convention (opposite-side trades do not end the run). **ah**: previous 18:00-ET day ended day-halted by the loss cap (L), give-back lock (K) or either (E) -> first signal dropped (S) or first sized entry halved (H).
 
@@ -40,7 +40,7 @@ Baseline stack same-side losing run (behavioural scorecard c convention): JN05W2
 | NF_SEV2SN | 12 | 70% ($221k of $316k) | 2 of 20 | -172.1 | -5974 | 10/5 | -56.6 | -5027 | 10/5 | - |
 | NF_SEV3H | 12 | 100% ($315k of $316k) | 0 of 20 | -3.3 | 328 | 14/6 | 0.0 | -114 | 14/6 | - |
 | NF_SEV3HN | 12 | 100% ($315k of $316k) | 0 of 20 | -14.2 | -3 | 14/6 | -10.3 | -461 | 14/6 | - |
-| NF_SEV3S | 12 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202507/trades.parquet') |||||||||
+| NF_SEV3S | 12 | 98% ($310k of $316k) | 0 of 20 | -10.1 | -328 | 11/6 | 0.7 | -687 | 11/6 | - |
 | NF_SEV3SN | 12 | 87% ($274k of $316k) | 1 of 20 | -85.4 | -3265 | 10/5 | -22.8 | -3349 | 10/5 | - |
 | NF_SEV4H | 12 | 99% ($313k of $316k) | 0 of 20 | 0.0 | -221 | 13/6 | 0.0 | -177 | 13/6 | - |
 | NF_SEV4HN | 12 | 97% ($307k of $316k) | 0 of 20 | -8.5 | -247 | 14/6 | -22.3 | -443 | 14/6 | - |
