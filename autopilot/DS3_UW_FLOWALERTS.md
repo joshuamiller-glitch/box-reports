@@ -2,7 +2,7 @@
 
 **VERDICT: weak/null-level so far, no PASS - first-order streams: 253944 sign-gate passes vs 242939 in the shifted-event placebos (ratio 1.05); exact-engine runs still queued (shared admission). Flow-alert triggers and filters are NOT a lead unless the table in section 4b/5 shows a set that beats its placebo in BOTH windows.**
 
-Updated 2026-11-14T01:05Z by fa_cycle.sh (loop, every 3 h). Research/shadow only. No PASS claims. Prereg: autopilot/FLOWALERTS_PREREG.md (sha in DECISIONS.md).
+Updated 2026-11-14T01:56Z by fa_cycle.sh (loop, every 3 h). Research/shadow only. No PASS claims. Prereg: autopilot/FLOWALERTS_PREREG.md (sha in DECISIONS.md).
 
 ## 1. How deep is the alert history (honest)
 
@@ -44,43 +44,43 @@ Windows: L6M = 2026-05..10; OLDER = 2025-11..2026-04. Plain strength is judged a
 
 | session | kind | what | L6M_dMean | L6M_dDD | OLDER_dMean | OLDER_dDD | strength | set |
 |---|---|---|---|---|---|---|---|---|
-| nyam | BOOK | SPX prem>=250k any openP anyside dte=1-5 put burst1 fade (Eb1_S30_Tnone_X30) | 392.0 | 0.0 | nan | nan | pending (months running) | TL3_UW_FA1 |
-| asia | BOOK | IWM prem>=50k any any aggr dte=1-5 put carry q0.75 follow (Eb3_S30_Tnone_XSE) | -18.0 | -903.0 | nan | nan | pending (months running) | TL3_UW_FA2 |
-| london | BOOK | GOOGL prem>=50k any any anyside dte=6+ both carry q0.75 follow (Emkt_Sa2_T45_X60) | 394.0 | -2557.0 | nan | nan | pending (months running) | TL3_UW_FA3 |
-| pre | BOOK | QQQ prem>=50k any openP aggr dte=6+ both carry q0.50 fade (Eb1_Sa2_Ta2_X60) | 363.0 | -1009.0 | nan | nan | pending (months running) | TL3_UW_FA4 |
-| asia | BOOK | QQQ prem>=1000k nonsweep any aggr dte=any put carry q0.50 fade (Emkt_S90_Ta1_XSE) | 36.0 | -2031.0 | nan | nan | pending (months running) | TL3_UW_FA5 |
+| nyam | BOOK | SPX prem>=250k any openP anyside dte=1-5 put burst1 fade (Eb1_S30_Tnone_X30) | 392.0 | 0.0 | 29.0 | 0.0 | sign gate passed (strict); exact placebos still running | TL3_UW_FA1 |
+| asia | BOOK | IWM prem>=50k any any aggr dte=1-5 put carry q0.75 follow (Eb3_S30_Tnone_XSE) | -18.0 | -903.0 | 165.0 | 4377.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FA2 |
+| london | BOOK | GOOGL prem>=50k any any anyside dte=6+ both carry q0.75 follow (Emkt_Sa2_T45_X60) | 394.0 | -2557.0 | 652.0 | -2165.0 | sign gate passed (strict); exact placebos still running | TL3_UW_FA3 |
+| pre | BOOK | QQQ prem>=50k any openP aggr dte=6+ both carry q0.50 fade (Eb1_Sa2_Ta2_X60) | 363.0 | -1009.0 | 161.0 | -2061.0 | sign gate passed (strict); exact placebos still running | TL3_UW_FA4 |
+| asia | BOOK | QQQ prem>=1000k nonsweep any aggr dte=any put carry q0.50 fade (Emkt_S90_Ta1_XSE) | 36.0 | -2031.0 | -690.0 | 3455.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FA5 |
 | nypm | BOOK | MEGA7 prem>=50k any openP aggr dte=1-5 call burst3 follow (Emkt_S45_Tnone_X120) | 205.0 | -1034.0 | nan | nan | pending (months running) | TL3_UW_FA6 |
-| all | FILTER | TSLA/AGG/1440 skipOpp thr 1.73e+07 skip | nan | nan | nan | nan | pending (months running) | TL3_UW_FF1 |
-| asia | FILTER | MSFT/D15/1440 skipAl thr 4.25e+05 skip | nan | nan | nan | nan | pending (months running) | TL3_UW_FF2 |
-| london | FILTER | SPY/D15/1440 skipOpp thr 1.5e+06 skip | nan | nan | nan | nan | pending (months running) | TL3_UW_FF3 |
-| all | FILTER | AAPL/SWP/1440 skipAct thr 4.03e+06 skip | nan | nan | nan | nan | pending (months running) | TL3_UW_FF4 |
+| all | FILTER | TSLA/AGG/1440 skipOpp thr 1.73e+07 skip | 3380.0 | -10448.0 | 1147.0 | 729.0 | sign gate passed (tolerant only (older DD slightly worse)); exact placebos still running | TL3_UW_FF1 |
+| asia | FILTER | MSFT/D15/1440 skipAl thr 4.25e+05 skip | -1812.0 | -3168.0 | nan | nan | pending (months running) | TL3_UW_FF2 |
+| london | FILTER | SPY/D15/1440 skipOpp thr 1.5e+06 skip | -548.0 | 961.0 | nan | nan | pending (months running) | TL3_UW_FF3 |
+| all | FILTER | AAPL/SWP/1440 skipAct thr 4.03e+06 skip | 199.0 | -9076.0 | 115.0 | 0.0 | sign gate passed (strict); exact placebos still running | TL3_UW_FF4 |
 
 ## 3. First-order trigger screen (alerts, all groups), session by session
 Event = first qualifying alert (or n-th within 10 min) per label day x session x direction, entry at the open of the first 1-min bar >= created_at+120 s, exit at the close of minute +h (1/5/15/60 min; carry streams also SE = session end) truncated at session end. Net $ per contract per event after measured NQ cost (0.23 pt entry + 0.23 pt exit + $4.84; ES 1 tick/side assumed). Windows: L3M L6M OLDER(before L6M start) HOLD PREUW; window ends at the last 1-min price day (2026-11-10). LEAD gate = net>0 and excess over the every-minute clock drift >0 in L3M, L6M and OLDER with n_L6M>=15, n_OLDER>=15, n_L3M>=5. "gates" below counts cells passing that SIGN gate; the same screen on events shifted 11/23/37 weekdays gives the placebo columns (mean of 3 draws for count, max of 3 for best S; S = min of the three window nets). A family is only interesting if gates and best S clearly beat the placebo columns.
 
-### 3a. Alert streams (groups QQQ SPY IWM SPX MEGA7 NVDA AAPL MSFT AMZN META GOOGL TSLA)
+### 3a. Alert streams (groups QQQ SPY IWM SPX MEGA7 NVDA AAPL MSFT AMZN META GOOGL TSLA plus metals/oil ETFs METALS=GLD+GDX+SLV, OIL=USO+XLE+XOP, GLD, USO; alerts present from 2024-10-01)
 | sess | mode | inst | cells | gates | pl_gates | gate_ratio | bestS | pl_bestS | bestS_minus_placebo_max |
 |---|---|---|---|---|---|---|---|---|---|
-| asia | fade | ES | 112365 | 8075 | 5994.3 | 1.3 | 491.7 | 616.9 | -125.2 |
-| asia | fade | NQ | 112365 | 14425 | 10861.0 | 1.3 | 818.3 | 1059.0 | -240.7 |
-| asia | follow | ES | 112365 | 5304 | 7332.7 | 0.7 | 509.0 | 485.8 | 23.3 |
-| asia | follow | NQ | 112365 | 9630 | 12172.3 | 0.8 | 780.1 | 1132.4 | -352.3 |
-| london | fade | ES | 112365 | 3207 | 4749.7 | 0.7 | 532.7 | 533.9 | -1.2 |
-| london | fade | NQ | 112365 | 8423 | 9487.0 | 0.9 | 1004.0 | 1048.6 | -44.7 |
-| london | follow | ES | 112365 | 5541 | 3365.0 | 1.6 | 591.0 | 607.1 | -16.1 |
-| london | follow | NQ | 112365 | 9704 | 8854.7 | 1.1 | 1065.7 | 1081.7 | -16.0 |
-| pre | fade | ES | 112365 | 5407 | 4975.7 | 1.1 | 237.7 | 330.5 | -92.8 |
-| pre | fade | NQ | 112365 | 10781 | 9428.0 | 1.1 | 415.2 | 621.8 | -206.7 |
-| pre | follow | ES | 112365 | 5967 | 7502.0 | 0.8 | 308.9 | 290.6 | 18.3 |
-| pre | follow | NQ | 112365 | 8970 | 12766.0 | 0.7 | 601.0 | 537.0 | 64.0 |
-| nyam | fade | ES | 262209 | 15232 | 9150.7 | 1.7 | 797.8 | 657.7 | 140.1 |
-| nyam | fade | NQ | 262209 | 24279 | 21829.7 | 1.1 | 1547.8 | 1631.0 | -83.2 |
-| nyam | follow | ES | 262209 | 9773 | 12355.3 | 0.8 | 855.5 | 736.0 | 119.5 |
-| nyam | follow | NQ | 262209 | 22475 | 21580.3 | 1.0 | 1325.3 | 1565.1 | -239.8 |
-| nypm | fade | ES | 149844 | 2514 | 2200.0 | 1.1 | 351.4 | 308.5 | 42.9 |
-| nypm | fade | NQ | 149844 | 8109 | 6714.0 | 1.2 | 645.7 | 648.1 | -2.4 |
-| nypm | follow | ES | 149844 | 2278 | 2081.7 | 1.1 | 316.3 | 363.9 | -47.6 |
-| nypm | follow | NQ | 149844 | 7626 | 6802.0 | 1.1 | 554.1 | 547.3 | 6.8 |
+| asia | fade | ES | 138990 | 8658 | 7155.0 | 1.2 | 491.7 | 616.9 | -125.2 |
+| asia | fade | NQ | 138990 | 15523 | 13244.3 | 1.2 | 818.3 | 1059.0 | -240.7 |
+| asia | follow | ES | 138990 | 7423 | 8337.7 | 0.9 | 532.7 | 485.8 | 46.9 |
+| asia | follow | NQ | 138990 | 13558 | 14100.3 | 1.0 | 1047.1 | 1132.4 | -85.3 |
+| london | fade | ES | 138990 | 4241 | 5564.0 | 0.8 | 532.7 | 560.7 | -28.0 |
+| london | fade | NQ | 138990 | 10832 | 11190.7 | 1.0 | 1004.0 | 1198.9 | -194.9 |
+| london | follow | ES | 138990 | 6205 | 4213.7 | 1.5 | 591.0 | 669.0 | -78.0 |
+| london | follow | NQ | 138990 | 10736 | 10554.0 | 1.0 | 1269.0 | 1081.7 | 187.3 |
+| pre | fade | ES | 138990 | 7040 | 6316.3 | 1.1 | 237.7 | 330.5 | -92.8 |
+| pre | fade | NQ | 138990 | 13681 | 11694.3 | 1.2 | 501.0 | 621.8 | -120.9 |
+| pre | follow | ES | 138990 | 6478 | 8422.3 | 0.8 | 308.9 | 290.6 | 18.3 |
+| pre | follow | NQ | 138990 | 9923 | 14467.3 | 0.7 | 601.0 | 537.0 | 64.0 |
+| nyam | fade | ES | 327426 | 16477 | 11167.3 | 1.5 | 797.8 | 657.7 | 140.1 |
+| nyam | fade | NQ | 327426 | 27711 | 26127.3 | 1.1 | 1547.8 | 1631.0 | -83.2 |
+| nyam | follow | ES | 327426 | 13714 | 14550.0 | 0.9 | 855.5 | 736.0 | 119.5 |
+| nyam | follow | NQ | 327426 | 29133 | 25722.7 | 1.1 | 1325.3 | 1565.1 | -239.8 |
+| nypm | fade | ES | 188436 | 3121 | 2623.3 | 1.2 | 351.4 | 308.5 | 42.9 |
+| nypm | fade | NQ | 188436 | 10199 | 8001.7 | 1.3 | 645.7 | 648.1 | -2.4 |
+| nypm | follow | ES | 188436 | 2598 | 2462.3 | 1.1 | 316.3 | 363.9 | -47.6 |
+| nypm | follow | NQ | 188436 | 8582 | 8149.7 | 1.1 | 554.1 | 628.9 | -74.8 |
 
 ### 3b. Tape-derived proxies (groups T_*; tape since 2025-07-21)
 | sess | mode | inst | cells | gates | pl_gates | gate_ratio | bestS | pl_bestS | bestS_minus_placebo_max |
@@ -111,37 +111,47 @@ Event = first qualifying alert (or n-th within 10 min) per label day x session x
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | asia | QQQ | fade | 60 | both | QQQ prem>=1000k nonsweep any aggr dte=any put carry q0.50 | 519.3 | 589.2 | 318.4 | 30.0 | 61.0 | 102.0 | 3.4 | 2.3 | 2.3 | 602.9 |
 | asia | IWM | follow | SE | both | IWM prem>=50k any any aggr dte=1-5 put carry q0.75 | 1815.0 | 1376.8 | 551.8 | 16.0 | 28.0 | 78.0 | 2.2 | 2.3 | 2.2 | 1393.7 |
-| asia | AAPL | fade | 5 | both | AAPL prem>=1000k nonsweep openP anyside dte=6+ call carry q0.50 | 284.6 | 242.8 | 586.9 | 19.0 | 28.0 | 22.0 | 2.7 | 2.1 | 2.1 | 256.9 |
-| london | T_NDX | follow | SE | bull | T_NDX prem>=50k nonsweep any anyside dte=any put carry q0.50 | 1449.5 | 1014.7 | 848.0 | 17.0 | 35.0 | 36.0 | 2.6 | 2.8 | 2.6 | 972.9 |
-| london | T_NDX | follow | SE | bull | T_NDX prem>=50k any any aggr dte=any put carry q0.50 | 1449.5 | 1014.7 | 848.0 | 17.0 | 35.0 | 36.0 | 2.6 | 2.8 | 2.6 | 972.9 |
-| london | T_NDX | follow | SE | bull | T_NDX prem>=50k any any anyside dte=any put carry q0.50 | 1449.5 | 1014.7 | 848.0 | 17.0 | 35.0 | 36.0 | 2.6 | 2.8 | 2.6 | 972.9 |
+| asia | GLD | follow | 5 | both | GLD prem>=250k any any anyside dte=6+ both carry q0.75 | 524.6 | 312.8 | 181.3 | 18.0 | 30.0 | 98.0 | 2.3 | 2.2 | 2.2 | 326.8 |
+| asia | OIL | follow | 60 | both | OIL prem>=250k any openP aggr dte=any call carry q0.50 | 335.7 | 398.9 | 420.4 | 18.0 | 36.0 | 59.0 | 2.1 | 2.5 | 2.1 | 417.4 |
+| london | T_NDX | follow | SE | bull | T_NDX prem>=50k nonsweep any aggr dte=any put carry q0.50 | 1449.5 | 1014.7 | 848.0 | 17.0 | 35.0 | 36.0 | 2.6 | 2.8 | 2.6 | 972.9 |
+| london | GOOGL | follow | 60 | both | GOOGL prem>=50k any any anyside dte=6+ both carry q0.75 | 584.1 | 426.6 | 149.7 | 24.0 | 36.0 | 119.0 | 3.1 | 2.4 | 2.4 | 439.2 |
+| london | GLD | fade | 60 | bear | GLD prem>=250k sweep any aggr dte=any call carry q0.50 | 613.2 | 592.3 | 197.1 | 11.0 | 22.0 | 69.0 | 2.6 | 2.4 | 2.4 | 579.1 |
+| london | T_NDX | follow | SE | bull | T_NDX prem>=50k any any anyside dte=6+ put carry q0.50 | 1381.9 | 972.0 | 712.6 | 16.0 | 33.0 | 40.0 | 2.3 | 2.4 | 2.3 | 930.2 |
 | nyam | SPX | fade | 15 | bear | SPX prem>=250k any openP anyside dte=1-5 put burst1 | 926.3 | 745.2 | 524.1 | 15.0 | 31.0 | 50.0 | 2.8 | 3.0 | 2.7 | 745.6 |
 | nyam | QQQ | follow | 60 | bull | QQQ prem>=50k sweep openP anyside dte=any put burst1 | 800.1 | 691.1 | 318.1 | 61.0 | 115.0 | 314.0 | 2.8 | 2.9 | 2.7 | 593.4 |
+| nyam | OIL | follow | 15 | bull | OIL prem>=250k any any anyside dte=6+ put carry q0.50 | 2568.0 | 1571.0 | 437.9 | 10.0 | 20.0 | 43.0 | 2.8 | 2.6 | 2.6 | 1571.4 |
 | nyam | T_SPX | fade | SE | bear | T_SPX prem>=250k nonsweep any aggr dte=0 put carry q0.75 | 3046.0 | 1867.6 | 1124.5 | 8.0 | 21.0 | 35.0 | 3.4 | 2.6 | 2.6 | 1683.2 |
 | nypm | MEGA7 | follow | 60 | bear | MEGA7 prem>=50k any openP aggr dte=1-5 call burst3 | 1148.1 | 624.6 | 508.0 | 19.0 | 34.0 | 20.0 | 2.4 | 2.2 | 2.2 | 551.2 |
 | nypm | IWM | fade | 60 | bull | IWM prem>=50k nonsweep any aggr dte=6+ call burst2 | 636.6 | 526.7 | 257.4 | 31.0 | 46.0 | 109.0 | 2.3 | 2.2 | 2.1 | 453.3 |
-| nypm | SPY | follow | 15 | both | SPY prem>=250k any openP anyside dte=any call burst2 | 183.3 | 192.7 | 123.8 | 61.0 | 131.0 | 181.0 | 2.7 | 2.0 | 2.0 | 206.9 |
+| nypm | OIL | fade | 15 | bull | OIL prem>=50k nonsweep any aggr dte=6+ put burst1 | 177.1 | 154.6 | 136.3 | 45.0 | 84.0 | 174.0 | 2.2 | 2.1 | 2.1 | 140.9 |
+| nypm | OIL | fade | 5 | bull | OIL prem>=50k any any anyside dte=6+ put burst2 | 271.8 | 205.2 | 94.1 | 23.0 | 46.0 | 101.0 | 3.5 | 2.1 | 2.1 | 211.7 |
 | pre | QQQ | fade | 15 | bull | QQQ prem>=50k any openP aggr dte=6+ both carry q0.50 | 523.6 | 325.8 | 164.5 | 17.0 | 30.0 | 93.0 | 2.6 | 2.7 | 2.6 | 328.8 |
 | pre | QQQ | fade | 60 | bull | QQQ prem>=50k sweep openP anyside dte=6+ call carry q0.50 | 753.3 | 496.7 | 327.8 | 17.0 | 35.0 | 72.0 | 2.2 | 2.5 | 2.2 | 471.5 |
 | pre | QQQ | fade | SE | bull | QQQ prem>=50k sweep openP anyside dte=6+ call carry q0.50 | 753.3 | 496.7 | 327.8 | 17.0 | 35.0 | 72.0 | 2.2 | 2.5 | 2.2 | 471.5 |
+| pre | QQQ | fade | 1 | both | QQQ prem>=50k sweep openP aggr dte=any both carry q0.50 | 269.3 | 158.2 | 76.7 | 39.0 | 68.0 | 195.0 | 2.4 | 2.1 | 2.1 | 172.3 |
 
 ### 3c. Best per session, ES (ranked by the weakest window t-stat; n>=20 L6M/OLDER, >=8 L3M)
 | session | g | mode | h | pool | stream | net_L3M | net_L6M | net_OLDER | n_L3M | n_L6M | n_OLDER | t_L6M | t_OLDER | St | exc_L6M |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | asia | TSLA | follow | 60 | both | TSLA prem>=250k any any aggr dte=any both carry q0.75 | 228.2 | 183.1 | 147.2 | 14.0 | 31.0 | 104.0 | 2.1 | 2.0 | 2.0 | 212.5 |
+| asia | USO | follow | SE | bull | USO prem>=50k nonsweep openP aggr dte=any call carry q0.50 | 602.2 | 532.7 | 545.9 | 16.0 | 27.0 | 35.0 | 2.5 | 2.0 | 1.9 | 564.9 |
 | asia | IWM | follow | SE | both | IWM prem>=50k any openP aggr dte=any put carry q0.50 | 479.4 | 310.6 | 165.4 | 31.0 | 60.0 | 186.0 | 1.8 | 1.9 | 1.8 | 339.8 |
-| asia | T_NDX | follow | 5 | both | T_NDX prem>=1000k nonsweep any aggr dte=0 put carry q0.50 | 276.4 | 213.7 | 138.1 | 12.0 | 29.0 | 23.0 | 2.4 | 2.0 | 1.8 | 243.5 |
+| asia | T_NDX | follow | 5 | both | T_NDX prem>=1000k any any aggr dte=0 put carry q0.50 | 276.4 | 213.7 | 138.1 | 12.0 | 29.0 | 23.0 | 2.4 | 2.0 | 1.8 | 243.5 |
 | london | T_IWM | fade | SE | bear | T_IWM prem>=50k nonsweep any aggr dte=1-5 both carry q0.50 | 706.9 | 698.3 | 360.2 | 16.0 | 28.0 | 44.0 | 3.7 | 2.6 | 2.4 | 648.1 |
-| london | T_IWM | fade | SE | bear | T_IWM prem>=50k nonsweep any anyside dte=1-5 both carry q0.50 | 706.9 | 698.3 | 360.2 | 16.0 | 28.0 | 44.0 | 3.7 | 2.6 | 2.4 | 648.1 |
-| london | T_IWM | fade | SE | bear | T_IWM prem>=50k any any anyside dte=1-5 both carry q0.50 | 706.9 | 698.3 | 360.2 | 16.0 | 28.0 | 44.0 | 3.7 | 2.6 | 2.4 | 648.1 |
-| nyam | T_SPX | fade | SE | bear | T_SPX prem>=50k any any anyside dte=0 put carry q0.75 | 1641.4 | 895.6 | 632.7 | 10.0 | 26.0 | 40.0 | 3.2 | 2.6 | 2.6 | 891.9 |
-| nyam | T_SPX | fade | SE | bear | T_SPX prem>=50k nonsweep any aggr dte=0 put carry q0.75 | 1641.4 | 895.6 | 632.7 | 10.0 | 26.0 | 40.0 | 3.2 | 2.6 | 2.6 | 891.9 |
-| nyam | T_SPX | fade | SE | bear | T_SPX prem>=50k nonsweep any anyside dte=0 put carry q0.75 | 1641.4 | 895.6 | 632.7 | 10.0 | 26.0 | 40.0 | 3.2 | 2.6 | 2.6 | 891.9 |
+| london | T_NDX | follow | SE | bull | T_NDX prem>=50k any any anyside dte=any put carry q0.50 | 435.6 | 352.1 | 393.4 | 17.0 | 36.0 | 36.0 | 2.3 | 2.5 | 2.3 | 301.9 |
+| london | MEGA7 | follow | SE | bull | MEGA7 prem>=50k any any aggr dte=any put carry q0.50 | 588.5 | 543.1 | 365.3 | 15.0 | 37.0 | 95.0 | 3.6 | 2.5 | 2.2 | 492.9 |
+| london | T_NDX | follow | SE | bull | T_NDX prem>=50k any any aggr dte=6+ put carry q0.50 | 468.6 | 380.8 | 319.9 | 16.0 | 34.0 | 40.0 | 2.4 | 2.1 | 2.1 | 330.6 |
+| nyam | T_SPX | fade | SE | bear | T_SPX prem>=50k any any aggr dte=0 put carry q0.75 | 1641.4 | 895.6 | 632.7 | 10.0 | 26.0 | 40.0 | 3.2 | 2.6 | 2.6 | 891.9 |
+| nyam | T_SPX | fade | SE | bear | T_SPX prem>=50k any any aggr dte=0 both carry q0.50 | 1350.6 | 807.2 | 523.0 | 16.0 | 27.0 | 49.0 | 2.8 | 2.5 | 2.5 | 803.4 |
+| nyam | USO | follow | 60 | both | USO prem>=250k any any anyside dte=6+ both carry q0.75 | 677.7 | 739.8 | 504.1 | 15.0 | 21.0 | 28.0 | 2.8 | 2.6 | 2.4 | 770.3 |
+| nyam | OIL | follow | SE | bull | OIL prem>=250k nonsweep openP anyside dte=6+ both carry q0.50 | 1486.5 | 821.9 | 511.3 | 13.0 | 22.0 | 34.0 | 2.3 | 2.3 | 2.3 | 818.1 |
 | nypm | AAPL | fade | 60 | both | AAPL prem>=50k sweep any aggr dte=1-5 call burst1 | 221.8 | 176.1 | 168.6 | 46.0 | 76.0 | 124.0 | 2.3 | 2.1 | 2.1 | 197.6 |
 | nypm | IWM | fade | 60 | bull | IWM prem>=50k nonsweep any aggr dte=6+ call burst2 | 280.6 | 219.6 | 134.0 | 31.0 | 46.0 | 109.0 | 2.2 | 2.0 | 2.0 | 220.8 |
 | nypm | MEGA7 | fade | 60 | both | MEGA7 prem>=1000k nonsweep openP anyside dte=any both burst3 | 622.9 | 368.0 | 156.2 | 9.0 | 23.0 | 43.0 | 2.7 | 1.9 | 1.9 | 389.1 |
-| pre | AAPL | follow | 60 | bear | AAPL prem>=250k any any aggr dte=1-5 call carry q0.50 | 528.9 | 313.7 | 177.8 | 10.0 | 27.0 | 49.0 | 2.3 | 1.9 | 1.9 | 317.1 |
+| nypm | MEGA7 | fade | 60 | both | MEGA7 prem>=1000k nonsweep openP aggr dte=any both burst3 | 538.9 | 295.8 | 152.5 | 8.0 | 20.0 | 41.0 | 2.0 | 1.8 | 1.8 | 314.1 |
 | pre | AAPL | follow | SE | bear | AAPL prem>=250k any any aggr dte=1-5 call carry q0.50 | 528.9 | 313.7 | 177.8 | 10.0 | 27.0 | 49.0 | 2.3 | 1.9 | 1.9 | 317.1 |
+| pre | AAPL | follow | 60 | bear | AAPL prem>=250k any any aggr dte=1-5 call carry q0.50 | 528.9 | 313.7 | 177.8 | 10.0 | 27.0 | 49.0 | 2.3 | 1.9 | 1.9 | 317.1 |
+| pre | SPY | fade | SE | bull | SPY prem>=50k nonsweep openP aggr dte=0 call carry q0.50 | 290.8 | 190.2 | 116.2 | 20.0 | 40.0 | 88.0 | 1.8 | 2.0 | 1.8 | 193.6 |
 | pre | SPY | fade | 60 | bull | SPY prem>=50k nonsweep openP aggr dte=0 call carry q0.50 | 290.8 | 190.2 | 116.2 | 20.0 | 40.0 | 88.0 | 1.8 | 2.0 | 1.8 | 193.6 |
 
 
@@ -150,68 +160,68 @@ A feature value only matters if the ratio is clearly above 1 AND the net differe
 
 | feature | value | mode | asia | london | pre | nyam | nypm |
 |---|---|---|---|---|---|---|---|
-| premium floor | 1000000.0 | follow | 0.81 ; +10 | 0.98 ; +45 | 0.53 ; -44 | 0.90 ; -37 | 1.39 ; -18 |
-| premium floor | 250000.0 | follow | 0.78 ; +12 | 1.09 ; +39 | 0.69 ; -0 | 1.03 ; -8 | 1.08 ; +20 |
-| premium floor | 50000.0 | follow | 0.79 ; +2 | 1.14 ; +33 | 0.78 ; +10 | 1.10 ; -15 | 1.09 ; +10 |
-| premium floor | 1000000.0 | fade | 1.66 ; -10 | 0.89 ; -45 | 1.38 ; +44 | 1.15 ; +37 | 1.24 ; +18 |
-| premium floor | 250000.0 | fade | 1.24 ; -12 | 0.89 ; -39 | 1.13 ; +0 | 1.14 ; +8 | 1.10 ; -20 |
-| premium floor | 50000.0 | fade | 1.29 ; -2 | 0.89 ; -33 | 1.07 ; -10 | 1.08 ; +15 | 1.27 ; -10 |
+| premium floor | 1000000.0 | follow | 0.87 ; +15 | 0.97 ; +26 | 0.58 ; -57 | 0.92 ; -24 | 1.30 ; +30 |
+| premium floor | 250000.0 | follow | 0.98 ; +24 | 1.02 ; +24 | 0.66 ; -18 | 1.13 ; +5 | 1.05 ; +21 |
+| premium floor | 50000.0 | follow | 0.97 ; +3 | 1.03 ; +23 | 0.75 ; -3 | 1.19 ; -5 | 1.01 ; +8 |
+| premium floor | 1000000.0 | fade | 1.53 ; -15 | 0.88 ; -26 | 1.33 ; +57 | 1.05 ; +24 | 1.24 ; -30 |
+| premium floor | 250000.0 | fade | 1.11 ; -24 | 0.98 ; -24 | 1.19 ; +18 | 1.08 ; -5 | 1.14 ; -21 |
+| premium floor | 50000.0 | fade | 1.11 ; -3 | 0.99 ; -23 | 1.11 ; +3 | 1.05 ; +5 | 1.37 ; -8 |
 
 | feature | value | mode | asia | london | pre | nyam | nypm |
 |---|---|---|---|---|---|---|---|
-| sweep vs non-sweep (block-like) | any | follow | 0.74 ; -2 | 1.08 ; +40 | 0.70 ; -9 | 1.03 ; -37 | 1.16 ; +10 |
-| sweep vs non-sweep (block-like) | nonsweep | follow | 0.84 ; -11 | 1.09 ; +24 | 0.72 ; +4 | 1.04 ; -46 | 1.12 ; +16 |
-| sweep vs non-sweep (block-like) | sweep | follow | 0.80 ; +43 | 1.13 ; +51 | 0.69 ; -10 | 1.07 ; +47 | 1.05 ; -7 |
-| sweep vs non-sweep (block-like) | any | fade | 1.37 ; +2 | 0.82 ; -40 | 1.15 ; +9 | 1.13 ; +37 | 1.25 ; -10 |
-| sweep vs non-sweep (block-like) | nonsweep | fade | 1.34 ; +11 | 0.88 ; -24 | 0.99 ; -4 | 1.10 ; +46 | 1.27 ; -16 |
-| sweep vs non-sweep (block-like) | sweep | fade | 1.24 ; -43 | 1.01 ; -51 | 1.37 ; +10 | 1.10 ; -47 | 1.04 ; +7 |
+| sweep vs non-sweep (block-like) | any | follow | 0.94 ; +7 | 1.00 ; +29 | 0.69 ; -25 | 1.11 ; -18 | 1.06 ; +22 |
+| sweep vs non-sweep (block-like) | nonsweep | follow | 1.03 ; -1 | 1.05 ; +12 | 0.69 ; -16 | 1.13 ; -27 | 1.10 ; +23 |
+| sweep vs non-sweep (block-like) | sweep | follow | 0.90 ; +37 | 1.00 ; +33 | 0.68 ; -13 | 1.17 ; +43 | 0.95 ; -1 |
+| sweep vs non-sweep (block-like) | any | fade | 1.19 ; -7 | 0.91 ; -29 | 1.19 ; +25 | 1.08 ; +18 | 1.31 ; -22 |
+| sweep vs non-sweep (block-like) | nonsweep | fade | 1.18 ; +1 | 0.92 ; -12 | 1.10 ; +16 | 1.06 ; +27 | 1.34 ; -23 |
+| sweep vs non-sweep (block-like) | sweep | fade | 1.13 ; -37 | 1.15 ; -33 | 1.25 ; +13 | 1.03 ; -43 | 1.11 ; +1 |
 
 | feature | value | mode | asia | london | pre | nyam | nypm |
 |---|---|---|---|---|---|---|---|
-| opening proxy (all_opening or size>=25% of OI) | any | follow | 0.82 ; +0 | 1.20 ; +37 | 0.67 ; -20 | 0.98 ; -36 | 1.06 ; +13 |
-| opening proxy (all_opening or size>=25% of OI) | openP | follow | 0.75 ; +15 | 0.97 ; +38 | 0.74 ; +13 | 1.14 ; +4 | 1.21 ; +1 |
-| opening proxy (all_opening or size>=25% of OI) | any | fade | 1.41 ; -0 | 0.95 ; -37 | 1.24 ; +20 | 1.08 ; +36 | 1.28 ; -13 |
-| opening proxy (all_opening or size>=25% of OI) | openP | fade | 1.22 ; -15 | 0.81 ; -38 | 1.02 ; -13 | 1.15 ; -4 | 1.11 ; -1 |
+| opening proxy (all_opening or size>=25% of OI) | any | follow | 1.05 ; +14 | 1.10 ; +25 | 0.65 ; -31 | 1.07 ; -17 | 1.00 ; +22 |
+| opening proxy (all_opening or size>=25% of OI) | openP | follow | 0.86 ; +12 | 0.92 ; +23 | 0.73 ; -4 | 1.22 ; +10 | 1.12 ; +9 |
+| opening proxy (all_opening or size>=25% of OI) | any | fade | 1.22 ; -14 | 1.03 ; -25 | 1.27 ; +31 | 1.04 ; +17 | 1.35 ; -22 |
+| opening proxy (all_opening or size>=25% of OI) | openP | fade | 1.11 ; -12 | 0.89 ; -23 | 1.05 ; +4 | 1.09 ; -10 | 1.17 ; -9 |
 
 | feature | value | mode | asia | london | pre | nyam | nypm |
 |---|---|---|---|---|---|---|---|
-| ask/bid-side share | aggr | follow | 0.80 ; +4 | 1.09 ; +35 | 0.68 ; -7 | 1.02 ; -19 | 1.09 ; +10 |
-| ask/bid-side share | any | follow | 0.78 ; +11 | 1.11 ; +41 | 0.72 ; -3 | 1.06 ; -15 | 1.15 ; +4 |
-| ask/bid-side share | aggr | fade | 1.35 ; -4 | 0.91 ; -35 | 1.12 ; +7 | 1.11 ; +19 | 1.19 ; -10 |
-| ask/bid-side share | any | fade | 1.30 ; -11 | 0.86 ; -41 | 1.16 ; +3 | 1.11 ; +15 | 1.22 ; -4 |
+| ask/bid-side share | aggr | follow | 0.98 ; +10 | 1.01 ; +24 | 0.67 ; -20 | 1.11 ; -7 | 1.01 ; +16 |
+| ask/bid-side share | any | follow | 0.95 ; +15 | 1.03 ; +24 | 0.70 ; -17 | 1.15 ; -2 | 1.09 ; +16 |
+| ask/bid-side share | aggr | fade | 1.19 ; -10 | 0.99 ; -24 | 1.15 ; +20 | 1.06 ; +7 | 1.28 ; -16 |
+| ask/bid-side share | any | fade | 1.15 ; -15 | 0.95 ; -24 | 1.19 ; +17 | 1.06 ; +2 | 1.27 ; -16 |
 
 | feature | value | mode | asia | london | pre | nyam | nypm |
 |---|---|---|---|---|---|---|---|
-| DTE bucket | 0 | follow | 0.87 ; -23 | 1.22 ; +5 | 1.23 ; +67 | 1.05 ; -82 | 0.80 ; +26 |
-| DTE bucket | 1-5 | follow | 0.77 ; +25 | 0.83 ; +57 | 0.97 ; +63 | 1.06 ; -21 | 1.05 ; +26 |
-| DTE bucket | 6+ | follow | 0.82 ; +6 | 1.28 ; +29 | 0.56 ; -58 | 1.08 ; +7 | 1.29 ; -5 |
-| DTE bucket | any | follow | 0.76 ; +9 | 1.09 ; +47 | 0.64 ; -30 | 0.99 ; -3 | 1.19 ; -6 |
-| DTE bucket | 0 | fade | 1.72 ; +23 | 1.15 ; -5 | 0.87 ; -67 | 1.20 ; +82 | 1.15 ; -26 |
-| DTE bucket | 1-5 | fade | 1.02 ; -25 | 1.20 ; -57 | 1.00 ; -63 | 1.34 ; +21 | 1.22 ; -26 |
-| DTE bucket | 6+ | fade | 1.44 ; -6 | 0.74 ; -29 | 1.31 ; +58 | 1.01 ; -7 | 1.22 ; +5 |
-| DTE bucket | any | fade | 1.33 ; -9 | 0.85 ; -47 | 1.18 ; +30 | 1.05 ; +3 | 1.22 ; +6 |
+| DTE bucket | 0 | follow | 0.86 ; -47 | 1.20 ; -1 | 1.29 ; +73 | 1.06 ; -64 | 0.82 ; +44 |
+| DTE bucket | 1-5 | follow | 0.76 ; +13 | 0.85 ; +49 | 0.92 ; +39 | 1.05 ; -26 | 1.07 ; +32 |
+| DTE bucket | 6+ | follow | 1.08 ; +27 | 1.14 ; +11 | 0.55 ; -62 | 1.21 ; +22 | 1.13 ; +3 |
+| DTE bucket | any | follow | 0.98 ; +19 | 0.98 ; +29 | 0.64 ; -46 | 1.12 ; +12 | 1.06 ; +2 |
+| DTE bucket | 0 | fade | 1.77 ; +47 | 1.22 ; +1 | 0.88 ; -73 | 1.22 ; +64 | 1.12 ; -44 |
+| DTE bucket | 1-5 | fade | 0.99 ; -13 | 1.23 ; -49 | 1.06 ; -39 | 1.27 ; +26 | 1.16 ; -32 |
+| DTE bucket | 6+ | fade | 1.20 ; -27 | 0.84 ; -11 | 1.29 ; +62 | 0.96 ; -22 | 1.36 ; -3 |
+| DTE bucket | any | fade | 1.14 ; -19 | 0.95 ; -29 | 1.20 ; +46 | 1.00 ; -12 | 1.31 ; -2 |
 
 | feature | value | mode | asia | london | pre | nyam | nypm |
 |---|---|---|---|---|---|---|---|
-| call vs put | both | follow | 0.67 ; -12 | 1.00 ; +39 | 0.67 ; -13 | 1.01 ; -25 | 1.07 ; +2 |
-| call vs put | call | follow | 0.65 ; -48 | 1.05 ; +3 | 0.68 ; -9 | 1.01 ; -7 | 1.04 ; -4 |
-| call vs put | put | follow | 1.18 ; +88 | 1.30 ; +72 | 0.79 ; +10 | 1.12 ; -18 | 1.27 ; +26 |
-| call vs put | both | fade | 1.45 ; +12 | 0.90 ; -39 | 1.18 ; +13 | 1.07 ; +25 | 1.22 ; -2 |
-| call vs put | call | fade | 1.84 ; +48 | 0.99 ; -3 | 1.11 ; +9 | 1.18 ; +7 | 1.24 ; +4 |
-| call vs put | put | fade | 0.86 ; -88 | 0.79 ; -72 | 1.13 ; -10 | 1.10 ; +18 | 1.16 ; -26 |
+| call vs put | both | follow | 0.84 ; -10 | 0.93 ; +23 | 0.65 ; -24 | 1.13 ; -13 | 1.01 ; +14 |
+| call vs put | call | follow | 0.87 ; -20 | 1.05 ; -3 | 0.67 ; -12 | 1.11 ; +2 | 0.96 ; +8 |
+| call vs put | put | follow | 1.29 ; +76 | 1.10 ; +54 | 0.76 ; -19 | 1.16 ; -1 | 1.20 ; +29 |
+| call vs put | both | fade | 1.26 ; +10 | 1.00 ; -23 | 1.24 ; +24 | 1.02 ; +13 | 1.31 ; -14 |
+| call vs put | call | fade | 1.53 ; +20 | 1.00 ; +3 | 1.15 ; +12 | 1.08 ; -2 | 1.29 ; -8 |
+| call vs put | put | fade | 0.81 ; -76 | 0.89 ; -54 | 1.10 ; +19 | 1.09 ; +1 | 1.21 ; -29 |
 
 | feature | value | mode | asia | london | pre | nyam | nypm |
 |---|---|---|---|---|---|---|---|
-| burst n within 10 min (1 = first alert) | 0.5 | follow | 0.83 ; +9 | 1.10 ; +31 | 0.72 ; -4 | 0.93 ; -34 | - |
-| burst n within 10 min (1 = first alert) | 0.75 | follow | 0.73 ; +6 | 1.09 ; +44 | 0.68 ; -5 | 0.94 ; -13 | - |
-| burst n within 10 min (1 = first alert) | 1 | follow | - | - | - | 1.05 ; -31 | 1.03 ; -0 |
-| burst n within 10 min (1 = first alert) | 2 | follow | - | - | - | 1.19 ; -0 | 1.29 ; +17 |
-| burst n within 10 min (1 = first alert) | 3 | follow | - | - | - | 1.38 ; -0 | 1.13 ; +6 |
-| burst n within 10 min (1 = first alert) | 0.5 | fade | 1.30 ; -9 | 0.86 ; -31 | 1.12 ; +4 | 1.11 ; +34 | - |
-| burst n within 10 min (1 = first alert) | 0.75 | fade | 1.37 ; -6 | 0.93 ; -44 | 1.17 ; +5 | 1.00 ; +13 | - |
-| burst n within 10 min (1 = first alert) | 1 | fade | - | - | - | 1.20 ; +31 | 1.18 ; +0 |
-| burst n within 10 min (1 = first alert) | 2 | fade | - | - | - | 1.09 ; +0 | 1.13 ; -17 |
-| burst n within 10 min (1 = first alert) | 3 | fade | - | - | - | 1.17 ; +0 | 1.41 ; -6 |
+| burst n within 10 min (1 = first alert) | 0.5 | follow | 1.00 ; +15 | 1.03 ; +22 | 0.72 ; -12 | 1.11 ; -17 | - |
+| burst n within 10 min (1 = first alert) | 0.75 | follow | 0.91 ; +11 | 1.00 ; +26 | 0.64 ; -26 | 1.05 ; +12 | - |
+| burst n within 10 min (1 = first alert) | 1 | follow | - | - | - | 1.10 ; -4 | 0.99 ; +14 |
+| burst n within 10 min (1 = first alert) | 2 | follow | - | - | - | 1.21 ; -5 | 1.16 ; +20 |
+| burst n within 10 min (1 = first alert) | 3 | follow | - | - | - | 1.35 ; -12 | 1.06 ; +13 |
+| burst n within 10 min (1 = first alert) | 0.5 | fade | 1.15 ; -15 | 0.97 ; -22 | 1.14 ; +12 | 1.00 ; +17 | - |
+| burst n within 10 min (1 = first alert) | 0.75 | fade | 1.21 ; -11 | 0.96 ; -26 | 1.21 ; +26 | 0.93 ; -12 | - |
+| burst n within 10 min (1 = first alert) | 1 | fade | - | - | - | 1.19 ; +4 | 1.22 ; -14 |
+| burst n within 10 min (1 = first alert) | 2 | fade | - | - | - | 1.09 ; +5 | 1.28 ; -20 |
+| burst n within 10 min (1 = first alert) | 3 | fade | - | - | - | 1.20 ; +12 | 1.43 ; -13 |
 
 
 ## 4. Trade level: harness screen (NOT the reported number) -> exact-engine injection (REPORTED)
@@ -253,33 +263,59 @@ Harness $/wk (standalone book, equal-$ risk lots) - the live gates cut standalon
 ### 4b. Exact engine (JN05W2 base, all layers ON), windows L3M (2026-08..10), L6M (2026-05..10), OLDER = months 2025-11..2026-04 (the HOLD year minus L6M), PREUW = 2024-10..2025-06; a row appears only when ALL months of the window are done; stack vs reference on the same months: $/wk, max DD, worst week, full stops/wk, best-5 weeks kept, winning weeks turned losing
 | set | desc | window | weeks | ref_mean | inj_mean | d_mean | ref_dd | inj_dd | ref_worst | inj_worst | ref_stops | inj_stops | best5_kept | w2l | uw1_mean | uw1_n |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TL3_UW_FF1P11 | nan | L3M | 11 | 16819.4 | 13843.7 | -2975.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.1 | 0.8 | 1 | nan | nan |
+| TL3_UW_FF1P11 | nan | L6M | 25 | 23240.9 | 21456.5 | -1784.3 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.2 | 1.0 | 1 | nan | nan |
+| TL3_UW_FF1P23 | nan | L3M | 11 | 16819.4 | 14903.0 | -1916.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.1 | 0.9 | 0 | nan | nan |
+| TL3_UW_FF1P37 | nan | L3M | 11 | 16819.4 | 17689.1 | 869.7 | 36370.5 | 41903.2 | -36370.5 | -31350.5 | 11.3 | 11.1 | 1.1 | 0 | nan | nan |
+| TL3_UW_FF1P37 | nan | L6M | 25 | 23240.9 | 21093.6 | -2147.3 | 36370.5 | 41903.2 | -36370.5 | -31350.5 | 10.5 | 10.1 | 0.8 | 0 | nan | nan |
+| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | L3M | 11 | 16819.4 | 20433.8 | 3614.4 | 36370.5 | 25922.6 | -36370.5 | -25922.6 | 11.3 | 10.9 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | L6M | 25 | 23240.9 | 26621.3 | 3380.5 | 36370.5 | 25922.6 | -36370.5 | -25922.6 | 10.5 | 10.5 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | OLDER | 26 | 11209.4 | 12356.7 | 1147.3 | 63185.1 | 63913.9 | -55145.4 | -63913.9 | 10.3 | 10.0 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | L3M | 11 | 16819.4 | 17162.9 | 343.5 | 36370.5 | 29825.7 | -36370.5 | -15870.2 | 11.3 | 9.9 | 0.9 | 2 | nan | nan |
+| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | L6M | 25 | 23240.9 | 21428.4 | -1812.5 | 36370.5 | 33202.2 | -36370.5 | -33202.2 | 10.5 | 9.5 | 0.8 | 2 | nan | nan |
+| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | L3M | 11 | 16819.4 | 17268.5 | 449.0 | 36370.5 | 37331.9 | -36370.5 | -37331.9 | 11.3 | 11.3 | 1.1 | 1 | nan | nan |
+| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | L6M | 25 | 23240.9 | 22693.1 | -547.7 | 36370.5 | 37331.9 | -36370.5 | -37331.9 | 10.5 | 10.2 | 1.0 | 1 | nan | nan |
+| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | L3M | 11 | 16819.4 | 15987.5 | -832.0 | 36370.5 | 27294.8 | -36370.5 | -22801.4 | 11.3 | 10.3 | 0.9 | 0 | nan | nan |
+| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | L6M | 25 | 23240.9 | 23439.7 | 198.8 | 36370.5 | 27294.8 | -36370.5 | -25312.6 | 10.5 | 9.9 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | OLDER | 26 | 11209.4 | 11324.5 | 115.1 | 63185.1 | 63185.1 | -55145.4 | -51923.0 | 10.3 | 9.2 | 0.9 | 1 | nan | nan |
 | TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | L3M | 11 | 16819.4 | 16937.3 | 117.8 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.4 | 1.0 | 0 | 84.2 | 6.0 |
 | TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | L6M | 25 | 23240.9 | 23633.3 | 392.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.7 | 1.0 | 0 | 417.4 | 13.0 |
+| TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | OLDER | 26 | 11209.4 | 11238.5 | 29.1 | 63185.1 | 63185.1 | -55145.4 | -55145.4 | 10.3 | 10.3 | 1.0 | 0 | 49.6 | 4.0 |
 | TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | L3M | 11 | 16819.4 | 16679.2 | -140.2 | 36370.5 | 35467.9 | -36370.5 | -35467.9 | 11.3 | 11.8 | 1.0 | 0 | -65.2 | 10.0 |
 | TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | L6M | 25 | 23240.9 | 23222.7 | -18.2 | 36370.5 | 35467.9 | -36370.5 | -35467.9 | 10.5 | 10.8 | 1.0 | 0 | 14.8 | 14.0 |
+| TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | OLDER | 26 | 11209.4 | 11374.5 | 165.1 | 63185.1 | 67561.6 | -55145.4 | -55145.4 | 10.3 | 10.5 | 1.0 | 0 | 93.7 | 11.0 |
 | TL3_UW_FA3 | BOOK NQ_london_GOOGL_follow_3 Emkt_Sa2_T45_X60 | L3M | 11 | 16819.4 | 17649.1 | 829.7 | 36370.5 | 33813.4 | -36370.5 | -33813.4 | 11.3 | 11.4 | 1.0 | 0 | 938.7 | 17.0 |
 | TL3_UW_FA3 | BOOK NQ_london_GOOGL_follow_3 Emkt_Sa2_T45_X60 | L6M | 25 | 23240.9 | 23634.7 | 393.8 | 36370.5 | 33813.4 | -36370.5 | -33813.4 | 10.5 | 10.7 | 1.0 | 0 | 537.6 | 26.0 |
+| TL3_UW_FA3 | BOOK NQ_london_GOOGL_follow_3 Emkt_Sa2_T45_X60 | OLDER | 26 | 11209.4 | 11861.5 | 652.1 | 63185.1 | 61019.9 | -55145.4 | -54841.6 | 10.3 | 10.5 | 1.0 | 0 | 448.8 | 36.0 |
 | TL3_UW_FA4 | BOOK NQ_pre_QQQ_fade_4 Eb1_Sa2_Ta2_X60 | L3M | 11 | 16819.4 | 17258.6 | 439.1 | 36370.5 | 35361.7 | -36370.5 | -35361.7 | 11.3 | 11.4 | 1.0 | 0 | 439.1 | 7.0 |
 | TL3_UW_FA4 | BOOK NQ_pre_QQQ_fade_4 Eb1_Sa2_Ta2_X60 | L6M | 25 | 23240.9 | 23603.8 | 362.9 | 36370.5 | 35361.7 | -36370.5 | -35361.7 | 10.5 | 10.6 | 1.0 | 0 | 362.9 | 13.0 |
+| TL3_UW_FA4 | BOOK NQ_pre_QQQ_fade_4 Eb1_Sa2_Ta2_X60 | OLDER | 26 | 11209.4 | 11370.2 | 160.8 | 63185.1 | 61123.6 | -55145.4 | -55145.4 | 10.3 | 10.5 | 1.0 | 0 | 110.6 | 19.0 |
 | TL3_UW_FA5 | BOOK NQ_asia_QQQ_fade_0 Emkt_S90_Ta1_XSE | L3M | 11 | 16819.4 | 16125.5 | -694.0 | 36370.5 | 34339.6 | -36370.5 | -34284.4 | 11.3 | 11.6 | 1.0 | 0 | -227.1 | 24.0 |
 | TL3_UW_FA5 | BOOK NQ_asia_QQQ_fade_0 Emkt_S90_Ta1_XSE | L6M | 25 | 23240.9 | 23276.6 | 35.7 | 36370.5 | 34339.6 | -36370.5 | -34284.4 | 10.5 | 10.8 | 1.0 | 0 | 112.0 | 55.0 |
+| TL3_UW_FA5 | BOOK NQ_asia_QQQ_fade_0 Emkt_S90_Ta1_XSE | OLDER | 26 | 11209.4 | 10518.9 | -690.5 | 63185.1 | 66640.1 | -55145.4 | -55378.0 | 10.3 | 10.6 | 0.9 | 0 | -806.3 | 42.0 |
 | TL3_UW_FA6 | BOOK NQ_nypm_MEGA7_follow_8 Emkt_S45_Tnone_X120 | L3M | 11 | 16819.4 | 16964.0 | 144.6 | 36370.5 | 35336.7 | -36370.5 | -35336.7 | 11.3 | 11.6 | 1.0 | 0 | 144.6 | 8.0 |
 | TL3_UW_FA6 | BOOK NQ_nypm_MEGA7_follow_8 Emkt_S45_Tnone_X120 | L6M | 25 | 23240.9 | 23445.7 | 204.8 | 36370.5 | 35336.7 | -36370.5 | -35336.7 | 10.5 | 10.8 | 1.0 | 0 | 204.8 | 17.0 |
-| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | L3M | 11 | 16819.4 | 20433.8 | 3614.4 | 36370.5 | 25922.6 | -36370.5 | -25922.6 | 11.3 | 10.9 | 1.0 | 0 | nan | nan |
-| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | L3M | 11 | 16819.4 | 17162.9 | 343.5 | 36370.5 | 29825.7 | -36370.5 | -15870.2 | 11.3 | 9.9 | 0.9 | 2 | nan | nan |
 
 ### 4c. Exact placebo: same book/filter with events (features) shifted 11 / 23 / 37 weekdays, run through the same exact engine (delta vs JN05W2 on the same months, $/wk and max DD $)
 
-| set | desc | L3M_real dMean/dDD | L6M_real dMean/dDD | beats all 3 placebos in L6M and OLDER (DD and mean) |
-|---|---|---|---|---|
-| TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | +118 / -0 | +392 / +0 | pending |
-| TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | -140 / -903 | -18 / -903 | pending |
-| TL3_UW_FA3 | BOOK NQ_london_GOOGL_follow_3 Emkt_Sa2_T45_X60 | +830 / -2557 | +394 / -2557 | pending |
-| TL3_UW_FA4 | BOOK NQ_pre_QQQ_fade_4 Eb1_Sa2_Ta2_X60 | +439 / -1009 | +363 / -1009 | pending |
-| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | +3614 / -10448 | nan | pending |
-| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | +343 / -6545 | nan | pending |
-| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | nan | nan | pending |
-| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | nan | nan | pending |
+| set | desc | L3M_real dMean/dDD | L6M_real dMean/dDD | OLDER_real dMean/dDD | beats all 3 placebos in L6M and OLDER (DD and mean) | L3M_placebo dMean/dDD | L6M_placebo dMean/dDD |
+|---|---|---|---|---|---|---|---|
+| TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | +118 / -0 | +392 / +0 | +29 / +0 | pending | nan | nan |
+| TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | -140 / -903 | -18 / -903 | +165 / +4377 | pending | nan | nan |
+| TL3_UW_FA3 | BOOK NQ_london_GOOGL_follow_3 Emkt_Sa2_T45_X60 | +830 / -2557 | +394 / -2557 | +652 / -2165 | pending | nan | nan |
+| TL3_UW_FA4 | BOOK NQ_pre_QQQ_fade_4 Eb1_Sa2_Ta2_X60 | +439 / -1009 | +363 / -1009 | +161 / -2061 | pending | nan | nan |
+| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | +3614 / -10448 | +3380 / -10448 | +1147 / +729 | no | -2976 / +0 ; -1916 / -0 ; +870 / +5533 | -1784 / +0 ; -2147 / +5533 |
+| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | +343 / -6545 | -1812 / -3168 | nan | pending | nan | nan |
+| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | +449 / +961 | -548 / +961 | nan | pending | nan | nan |
+| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | -832 / -9076 | +199 / -9076 | +115 / +0 | pending | nan | nan |
+
+### 4d. FAMILY NULL in the exact engine for the filter search: the best rule picked by the same procedure from the 24k-rule family evaluated with features shifted 11/23/37 weekdays (so selection bias is included), run through the exact engine. The real best filter (TL3_UW_FF1) must clearly beat these.
+
+| set | shift | rule picked as best of the shifted family | L3M dMean/dDD | L6M dMean/dDD | OLDER dMean/dDD |
+|---|---|---|---|---|---|
+| TL3_UW_FN11 | 11 | NVDA/PUT/1440 skipAl thr 0 skip london (score 0.27, removes 1752) | pending | pending | pending |
+| TL3_UW_FN23 | 23 | AMZN/D15/1440 skipOpp thr 0 skip london (score 0.15, removes 1648) | pending | pending | pending |
+| TL3_UW_FN37 | 37 | AMZN/SWP/1440 skipOpp thr 1.42e+06 skip asia (score 0.34, removes 554) | pending | pending | pending |
 
 
 ## 5. Filters on the live books (JN05W2 trades, first-order trade removal; exact-engine skip/size hook runs follow)

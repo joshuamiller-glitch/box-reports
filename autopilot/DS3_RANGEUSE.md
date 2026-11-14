@@ -1,8 +1,8 @@
-# DS3_RANGEUSE - T-RANGEUSE: the walk-forward range forecast on D7 dials (W-RU). Rebuilt 2026-11-14T01:11Z by code/th_rangeuse/ru_loop.sh (every 3 h). Research only, NO PASS claim.
-**VERDICT (plain): No result yet: 37 of 98 cells have the full L3M (3 months) scored in the exact engine, none has L6M yet; ranking needs L3M+L6M, placebo and permuted null. Running: ru_driver (8 chains, tag RU) and ru_loop (3-hourly rebuild).**
+# DS3_RANGEUSE - T-RANGEUSE: the walk-forward range forecast on D7 dials (W-RU). Rebuilt 2026-11-14T01:58Z by code/th_rangeuse/ru_loop.sh (every 3 h). Research only, NO PASS claim.
+**VERDICT (plain): No result yet: 44 of 98 cells have the full L3M (3 months) scored in the exact engine, none has L6M yet; ranking needs L3M+L6M, placebo and permuted null. Running: ru_driver (8 chains, tag RU) and ru_loop (3-hourly rebuild).**
 
 Prereg: autopilot/RANGEUSE_PREREG.md (sha in DECISIONS.md, logged before scoring). Order: DIRECTIVE_UW_3PART_20261113.md PART 2. Base JN05W2 exact engine, all layers ON. Identity: TL3_RU_ID 202610 (hook path active at neutral multipliers): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
-Months scored (cells with all months of the window / 98 cells): L3M 37, L6M 0, HOLD 0, PREUW 0. Driver: 226 jobs wanted, 8 chains running, 1794618689.
+Months scored (cells with all months of the window / 98 cells): L3M 44, L6M 0, HOLD 0, PREUW 0. Driver: 221 jobs wanted, 8 chains running, 1794621454.
 
 ## 0. Method (short)
 - Forecast = walk-forward ridge (expanding, min 120 days, refit every 10 trading days) of the session ln range at the reading used by the trade (asia/london R0 prior close; nyam R2 09:30 before 10:00 else R3 10:00; nypm R3). (a) ATR benchmark only, (b) ATR + IV term (NDX/QQQ/SPX), (c) full UW (b + SPX/QQQ flip, SPX/ALL4 gamma, NDX/SPX IV level, tide). Forecast points = predicted ln range x last close; ratio = prediction / expanding median of the past predictions; terciles from the expanding past. First forecasts exist from ~2025-03, so PREUW (2024-10..2025-06) is mostly unscored by the rule (rule inactive without a forecast = same as JN05W2).
@@ -367,19 +367,29 @@ Note: (c) uses many UW columns and is NOT better than (b) out of sample in most 
 |---|---|---|---|---|---|
 | all | a | -2612 $/wk, DD -16.0%, ww -5553, stops 9.97(10.35), b5 78%, w2l 0 | n/a | n/a | n/a |
 | all | b | -5257 $/wk, DD +9.9%, ww +5619, stops 9.59(10.35), b5 65%, w2l 1 | n/a | n/a | n/a |
+| all | c | -2076 $/wk, DD +30.7%, ww +7445, stops 9.66(10.35), b5 85%, w2l 1 | n/a | n/a | n/a |
 | all | **b-a** | -2645 $/wk, DD +25.9 pts, ww +11172 | n/a | n/a | n/a |
+| all | **c-a** | +535 $/wk, DD +46.6 pts, ww +12998 | n/a | n/a | n/a |
 | asia | a | -512 $/wk, DD -11.5%, ww -5570, stops 6.32(6.24), b5 100%, w2l 1 | n/a | n/a | n/a |
 | asia | b | -1319 $/wk, DD +8.0%, ww -2121, stops 6.09(6.24), b5 104%, w2l 1 | n/a | n/a | n/a |
+| asia | c | +2288 $/wk, DD +24.3%, ww -8025, stops 5.86(6.24), b5 111%, w2l 1 | n/a | n/a | n/a |
 | asia | **b-a** | -807 $/wk, DD +19.5 pts, ww +3449 | n/a | n/a | n/a |
+| asia | **c-a** | +2800 $/wk, DD +35.8 pts, ww -2455 | n/a | n/a | n/a |
 | london | a | -2337 $/wk, DD -24.8%, ww -10688, stops 2.43(2.74), b5 78%, w2l 0 | n/a | n/a | n/a |
 | london | b | -2998 $/wk, DD +32.5%, ww -6174, stops 2.21(2.74), b5 54%, w2l 1 | n/a | n/a | n/a |
+| london | c | -4751 $/wk, DD -10.1%, ww -5106, stops 2.59(2.74), b5 69%, w2l 2 | n/a | n/a | n/a |
 | london | **b-a** | -661 $/wk, DD +57.3 pts, ww +4514 | n/a | n/a | n/a |
+| london | **c-a** | -2415 $/wk, DD +14.7 pts, ww +5582 | n/a | n/a | n/a |
 | nyam | a | +661 $/wk, DD -9.6%, ww +826, stops 1.14(1.29), b5 117%, w2l 3 | n/a | n/a | n/a |
 | nyam | b | +10 $/wk, DD +23.6%, ww -1872, stops 1.22(1.29), b5 91%, w2l 1 | n/a | n/a | n/a |
+| nyam | c | +594 $/wk, DD +33.2%, ww +173, stops 1.14(1.29), b5 73%, w2l 1 | n/a | n/a | n/a |
 | nyam | **b-a** | -651 $/wk, DD +33.2 pts, ww -2698 | n/a | n/a | n/a |
+| nyam | **c-a** | -67 $/wk, DD +42.8 pts, ww -653 | n/a | n/a | n/a |
 | nypm | a | -424 $/wk, DD -19.9%, ww +232, stops 0.08(0.08), b5 99%, w2l 2 | n/a | n/a | n/a |
 | nypm | b | -950 $/wk, DD -49.7%, ww -248, stops 0.08(0.08), b5 38%, w2l 3 | n/a | n/a | n/a |
+| nypm | c | -207 $/wk, DD +17.2%, ww +2284, stops 0.08(0.08), b5 61%, w2l 2 | n/a | n/a | n/a |
 | nypm | **b-a** | -526 $/wk, DD -29.7 pts, ww -480 | n/a | n/a | n/a |
+| nypm | **c-a** | +217 $/wk, DD +37.2 pts, ww +2052 | n/a | n/a | n/a |
 
 **D4III075** (scope all unless noted; no-rule reference = 0 / 0 / 0)
 
@@ -387,19 +397,79 @@ Note: (c) uses many UW columns and is NOT better than (b) out of sample in most 
 |---|---|---|---|---|---|
 | all | a | -618 $/wk, DD +2.2%, ww -1335, stops 9.97(10.35), b5 84%, w2l 0 | n/a | n/a | n/a |
 | all | b | -5177 $/wk, DD +13.4%, ww +4469, stops 9.89(10.35), b5 72%, w2l 1 | n/a | n/a | n/a |
+| all | c | -1736 $/wk, DD +14.4%, ww +6168, stops 10.35(10.35), b5 96%, w2l 1 | n/a | n/a | n/a |
 | all | **b-a** | -4559 $/wk, DD +11.2 pts, ww +5804 | n/a | n/a | n/a |
+| all | **c-a** | -1118 $/wk, DD +12.2 pts, ww +7504 | n/a | n/a | n/a |
 | asia | a | -1238 $/wk, DD +4.1%, ww +289, stops 6.24(6.24), b5 92%, w2l 0 | n/a | n/a | n/a |
 | asia | b | -385 $/wk, DD +0.4%, ww -821, stops 6.01(6.24), b5 102%, w2l 0 | n/a | n/a | n/a |
+| asia | c | -537 $/wk, DD +6.6%, ww -5288, stops 6.16(6.24), b5 98%, w2l 0 | n/a | n/a | n/a |
 | asia | **b-a** | +853 $/wk, DD -3.7 pts, ww -1110 | n/a | n/a | n/a |
+| asia | **c-a** | +701 $/wk, DD +2.4 pts, ww -5577 | n/a | n/a | n/a |
 | london | a | +1033 $/wk, DD -1.6%, ww -2586, stops 2.36(2.74), b5 98%, w2l 0 | n/a | n/a | n/a |
 | london | b | -2910 $/wk, DD +8.9%, ww -845, stops 2.51(2.74), b5 63%, w2l 1 | n/a | n/a | n/a |
+| london | c | -109 $/wk, DD +15.4%, ww +4321, stops 2.66(2.74), b5 90%, w2l 0 | n/a | n/a | n/a |
 | london | **b-a** | -3943 $/wk, DD +10.5 pts, ww +1741 | n/a | n/a | n/a |
+| london | **c-a** | -1142 $/wk, DD +17.0 pts, ww +6907 | n/a | n/a | n/a |
 | nyam | a | +342 $/wk, DD +1.2%, ww -2762, stops 1.29(1.29), b5 95%, w2l 2 | n/a | n/a | n/a |
 | nyam | b | -912 $/wk, DD -20.2%, ww -4661, stops 1.29(1.29), b5 54%, w2l 3 | n/a | n/a | n/a |
+| nyam | c | -131 $/wk, DD -13.4%, ww -3051, stops 1.45(1.29), b5 62%, w2l 1 | n/a | n/a | n/a |
 | nyam | **b-a** | -1255 $/wk, DD -21.4 pts, ww -1899 | n/a | n/a | n/a |
+| nyam | **c-a** | -474 $/wk, DD -14.6 pts, ww -289 | n/a | n/a | n/a |
 | nypm | a | -756 $/wk, DD -43.3%, ww +316, stops 0.08(0.08), b5 74%, w2l 2 | n/a | n/a | n/a |
 | nypm | b | -970 $/wk, DD -33.8%, ww +1, stops 0.08(0.08), b5 48%, w2l 1 | n/a | n/a | n/a |
+| nypm | c | -959 $/wk, DD -67.3%, ww -1198, stops 0.08(0.08), b5 42%, w2l 2 | n/a | n/a | n/a |
 | nypm | **b-a** | -214 $/wk, DD +9.5 pts, ww -315 | n/a | n/a | n/a |
+| nypm | **c-a** | -203 $/wk, DD -24.0 pts, ww -1514 | n/a | n/a | n/a |
+
+**D4I1** (scope all unless noted; no-rule reference = 0 / 0 / 0)
+
+| scope | fc | L3M | L6M | HOLD | PREUW |
+|---|---|---|---|---|---|
+| all | a | -3374 $/wk, DD +30.3%, ww +12801, stops 7.68(10.35), b5 77%, w2l 2 | n/a | n/a | n/a |
+| all | b | -9442 $/wk, DD -6.6%, ww +7549, stops 7.46(10.35), b5 67%, w2l 3 | n/a | n/a | n/a |
+| all | c | -4492 $/wk, DD +36.2%, ww +16680, stops 7.68(10.35), b5 77%, w2l 3 | n/a | n/a | n/a |
+| all | **b-a** | -6068 $/wk, DD -36.9 pts, ww -5252 | n/a | n/a | n/a |
+| all | **c-a** | -1118 $/wk, DD +5.9 pts, ww +3879 | n/a | n/a | n/a |
+| asia | a | -8204 $/wk, DD +33.2%, ww +434, stops 4.18(6.24), b5 48%, w2l 2 | n/a | n/a | n/a |
+| asia | b | -5372 $/wk, DD +36.7%, ww +8193, stops 4.26(6.24), b5 64%, w2l 0 | n/a | n/a | n/a |
+| asia | c | -3594 $/wk, DD +39.8%, ww -4497, stops 4.49(6.24), b5 55%, w2l 0 | n/a | n/a | n/a |
+| asia | **b-a** | +2831 $/wk, DD +3.6 pts, ww +7759 | n/a | n/a | n/a |
+| asia | **c-a** | +4610 $/wk, DD +6.6 pts, ww -4931 | n/a | n/a | n/a |
+| london | a | +4852 $/wk, DD +20.3%, ww +2731, stops 1.60(2.74), b5 118%, w2l 1 | n/a | n/a | n/a |
+| london | b | -2945 $/wk, DD +30.7%, ww +3850, stops 1.52(2.74), b5 64%, w2l 3 | n/a | n/a | n/a |
+| london | c | -1951 $/wk, DD +11.6%, ww +7446, stops 1.83(2.74), b5 69%, w2l 2 | n/a | n/a | n/a |
+| london | **b-a** | -7797 $/wk, DD +10.4 pts, ww +1119 | n/a | n/a | n/a |
+| london | **c-a** | -6803 $/wk, DD -8.7 pts, ww +4715 | n/a | n/a | n/a |
+| nyam | a | +474 $/wk, DD +9.9%, ww -1768, stops 1.75(1.29), b5 85%, w2l 2 | n/a | n/a | n/a |
+| nyam | b | -115 $/wk, DD -6.8%, ww -4730, stops 1.52(1.29), b5 71%, w2l 2 | n/a | n/a | n/a |
+| nyam | c | +2073 $/wk, DD +44.4%, ww +1358, stops 1.29(1.29), b5 83%, w2l 2 | n/a | n/a | n/a |
+| nyam | **b-a** | -589 $/wk, DD -16.7 pts, ww -2962 | n/a | n/a | n/a |
+| nyam | **c-a** | +1599 $/wk, DD +34.5 pts, ww +3126 | n/a | n/a | n/a |
+| nypm | a | -496 $/wk, DD -47.1%, ww -653, stops 0.15(0.08), b5 86%, w2l 4 | n/a | n/a | n/a |
+| nypm | b | -1010 $/wk, DD -155.0%, ww -3994, stops 0.15(0.08), b5 61%, w2l 4 | n/a | n/a | n/a |
+| nypm | c | -1019 $/wk, DD -76.8%, ww -244, stops 0.08(0.08), b5 34%, w2l 3 | n/a | n/a | n/a |
+| nypm | **b-a** | -514 $/wk, DD -107.9 pts, ww -3341 | n/a | n/a | n/a |
+| nypm | **c-a** | -523 $/wk, DD -29.7 pts, ww +408 | n/a | n/a | n/a |
+
+**D4II1** (scope all unless noted; no-rule reference = 0 / 0 / 0)
+
+| scope | fc | L3M | L6M | HOLD | PREUW |
+|---|---|---|---|---|---|
+| all | a | -3937 $/wk, DD -16.1%, ww -6232, stops 10.27(10.35), b5 77%, w2l 0 | n/a | n/a | n/a |
+| all | b | -2053 $/wk, DD +12.0%, ww +6618, stops 10.20(10.35), b5 77%, w2l 1 | n/a | n/a | n/a |
+| all | **b-a** | +1884 $/wk, DD +28.2 pts, ww +12850 | n/a | n/a | n/a |
+| asia | a | -1857 $/wk, DD -9.9%, ww -4797, stops 6.47(6.24), b5 103%, w2l 0 | n/a | n/a | n/a |
+| asia | b | +1780 $/wk, DD +8.2%, ww -1241, stops 6.39(6.24), b5 106%, w2l 0 | n/a | n/a | n/a |
+| asia | **b-a** | +3637 $/wk, DD +18.1 pts, ww +3556 | n/a | n/a | n/a |
+| london | a | -2334 $/wk, DD -9.5%, ww -6221, stops 2.59(2.74), b5 73%, w2l 0 | n/a | n/a | n/a |
+| london | b | -2317 $/wk, DD +35.8%, ww -6158, stops 2.28(2.74), b5 64%, w2l 1 | n/a | n/a | n/a |
+| london | **b-a** | +17 $/wk, DD +45.2 pts, ww +63 | n/a | n/a | n/a |
+| nyam | a | +525 $/wk, DD +11.3%, ww -1454, stops 1.14(1.29), b5 115%, w2l 2 | n/a | n/a | n/a |
+| nyam | b | -514 $/wk, DD -13.6%, ww +130, stops 1.45(1.29), b5 96%, w2l 2 | n/a | n/a | n/a |
+| nyam | **b-a** | -1039 $/wk, DD -24.9 pts, ww +1584 | n/a | n/a | n/a |
+| nypm | a | -271 $/wk, DD -13.5%, ww +526, stops 0.08(0.08), b5 92%, w2l 1 | n/a | n/a | n/a |
+| nypm | b | -1003 $/wk, DD -42.2%, ww +97, stops 0.08(0.08), b5 24%, w2l 4 | n/a | n/a | n/a |
+| nypm | **b-a** | -732 $/wk, DD -28.7 pts, ww -429 | n/a | n/a | n/a |
 
 ### Dial 5 replace atr_rel in live layers (REG half-size, skip) by the forecast ratio (A-cells = live atr_rel reference)
 
