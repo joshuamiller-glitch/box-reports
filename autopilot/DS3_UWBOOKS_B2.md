@@ -1,4 +1,4 @@
-# DS3_UWBOOKS_B2 - W-UB2: Tide, flow bursts, dark-pool/IV books (+pairs, joint). Built 2026-11-14 01:40Z by code/th_uwb2/uwb2_page.py. Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B2 - W-UB2: Tide, flow bursts, dark-pool/IV books (+pairs, joint). Built 2026-11-14 04:40Z by code/th_uwb2/uwb2_page.py. Research, shadow, NO PASS claim.
 Prereg: autopilot/UWB2_PREREG.md (sha line in DECISIONS.md 14:30Z). Harness: code/th_uwbooks/harness.py (W-UB1) unchanged. Events: code/th_uwb2/uwb2_events.py. Screens: /mnt/l2/l2vast/_uwb2/B2/res_*.csv. Units: $ per week at 1 lot-set (lots = clip(round(1200/(stop pts x $/pt)),1,10)), fees in, measured NQ basis, ES/RTY 1 tick/side (UNMEASURED).
 
 ## 0. Plain verdict (read first)
@@ -115,4 +115,4 @@ Cell code: E = entry (mkt: market at decision+1 s; b1/b3/b5: after N min only if
 
 ## 6. Screen coverage
 rows in screens (top cells per table x session x direction): inst    ES    NQ   RTY / fam                    / F0      46    47    41 / F3    1049  1063  1066 / F4    2987  3033  2972 / F4T   6847  6961  6897 / F4Z   1352  1382  1364 / F5dp   509   541   525 / F5iv  1161  1199  1183
-Full-tape days aggregated so far: 430 (newest first from 2026-11-12). F4T (tape DTE/aggression bursts) screen waits for >= 30 days.
+Full-tape days aggregated so far: 532 (newest first from 2026-11-12). F4T (tape DTE/aggression bursts) screen waits for >= 30 days.

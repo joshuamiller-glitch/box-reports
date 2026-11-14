@@ -1,6 +1,6 @@
 # DS3_SMART_A3 — T-SMART item A3: structure stops with equal-$ lots (W-SM3)
 
-Generated 2026-11-14 04:17Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
+Generated 2026-11-14 04:47Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
 
 **CAVEAT (every table):** the engine state cut fires in the engine but did NOT fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). Rows marked **S0 = state cut OFF = the live-realistic case** are read first and compared with SMA3_REF_S0 (JN05W2 with every state cut switched off, K7 flat45 kept); **S1** rows keep the state cut and compare with JN05W2.
 
@@ -18,7 +18,7 @@ Dead-cell lookup (loss|struct_stop_eq|<book>|<feat>, 32 specs): 0 hits; first-or
 | SMA3_FR156_K_S0 | 6 | SMA3_REF_S0 | 100% ($303k of $302k) | 0 of 19 | 2.2 | -84 | - | - | - | - | - | - |
 | SMA3_KC2_ALL_S0 | 6 | SMA3_REF_S0 | 91% ($276k of $302k) | 7 of 19 | -85.0 | -3976 | - | - | - | - | - | - |
 | SMA3_KC2_U_S0 | 6 | SMA3_REF_S0 | 104% ($314k of $302k) | 0 of 19 | -14.3 | 1081 | - | - | - | - | - | - |
-| SMA3_KC2_U_S1 | 6 | JN05W2 | 109% ($346k of $316k) | 1 of 20 | 1.1 | 712 | - | - | - | - | - | - |
+| SMA3_KC2_U_S1 | 6 | JN05W2 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202510/trades.parquet') ||||||||||
 | SMA3_KC4_U_S0 | 6 | SMA3_REF_S0 | 103% ($312k of $302k) | 0 of 19 | -6.4 | 379 | - | - | - | - | - | - |
 | SMA3_KU_S0 | 6 | SMA3_REF_S0 | 103% ($310k of $302k) | 0 of 19 | -12.1 | 871 | - | - | - | - | - | - |
 | SMA3_KU_S1 | 6 | JN05W2 | 109% ($346k of $316k) | 1 of 20 | -1.5 | 706 | - | - | - | - | - | - |
@@ -93,17 +93,6 @@ cut % = stack maxDD vs the reference (positive = shallower); d mean = all-weeks 
 | H7 | 176 / 175 | 1.85 / 1.86 | +7 | 1.88 / 1.84 | 0.00 | 1.07 |
 | M7 | 621 / 622 | 1.21 / 1.21 | +231 | 11.84 / 11.95 | 0.00 | 0.00 |
 | A7 | 345 / 346 | 1.00 / 1.00 | -159 | 4.94 / 4.75 | 0.00 | 0.00 |
-
-**SMA3_KC2_U_S1** vs JN05W2
-
-| book | trades cell / ref | mean lots cell / ref | d net $/wk | full stops/wk cell / ref | structure exits/wk | StateCut/wk |
-|---|---|---|---|---|---|---|
-| K7 | 1540 / 1553 | 1.14 / 1.14 | -263 | 0.46 / 0.46 | 18.74 | 12.26 |
-| P7 | 1036 / 1037 | 3.50 / 3.50 | -48 | 0.50 / 0.50 | 0.00 | 22.07 |
-| U7 | 278 / 271 | 3.49 / 2.73 | +1153 | 0.96 / 3.45 | 4.44 | 0.96 |
-| H7 | 176 / 176 | 1.86 / 1.86 | +0 | 0.84 / 0.84 | 0.00 | 2.64 |
-| M7 | 728 / 733 | 1.19 / 1.19 | -180 | 1.30 / 1.26 | 0.00 | 15.44 |
-| A7 | 353 / 353 | 1.00 / 1.00 | -17 | 4.18 / 3.98 | 0.00 | 2.18 |
 
 **SMA3_KC4_U_S0** vs SMA3_REF_S0
 
