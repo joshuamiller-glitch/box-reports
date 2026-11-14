@@ -1,4 +1,4 @@
-# DS3_UW_MEGAFLOW - W-MF, megacap option flow (net premium, bursts, tape) leading NQ. Built 2026-11-14 05:55Z by code/th_uwmf/mf_page.py. Research only, shadow, NO PASS claim.
+# DS3_UW_MEGAFLOW - W-MF, megacap option flow (net premium, bursts, tape) leading NQ. Built 2026-11-14 08:56Z by code/th_uwmf/mf_page.py. Research only, shadow, NO PASS claim.
 ## 0. Plain verdict (read first)
 PAGE STATUS: first page, engine runs of the finalists are still arriving (section 5 fills in; this page rebuilds every 3 h). Exact-engine sets scored so far: 34 sets (TL3_UW_INJ_MFB1, TL3_UW_INJ_MFB1_P11, TL3_UW_INJ_MFB1_P23, TL3_UW_INJ_MFB1_P37, TL3_UW_INJ_MFB2, TL3_UW_INJ_MFB2_P11, TL3_UW_INJ_MFB2_P23, TL3_UW_INJ_MFB2_P37, TL3_UW_INJ_MFB3, TL3_UW_INJ_MFB4, TL3_UW).
 VERDICT (first page): megacap option flow does NOT lead NQ in a usable way: net premium and flow bursts follow the price move (contemporaneous IC 0.3-0.5) and the forward partial IC after removing price is ~0.01-0.03 with no cell beyond chance in both windows; the one thing above its nulls is a prior-day megacap net-premium CARRY filter on the live night books (skip night trades when the prior day's megacap flow was against the trade, first-order p~0.02 vs 41 shifted-flow draws) - exact-engine result below decides its strength. Weak lead at best; no PASS. No exact-engine set yet holds in both the recent and the older window with a smaller drawdown and no loss of mean.
@@ -159,14 +159,14 @@ scope rth, top gated rules:
 | MEGAeq|vol|5 | M7 | ge | 4.0 | press | 98 | 339 | 11.06 | 112.15 | 114.42 | -599.41 | -599.41 | -4501.23 | 920.43 | 0.02 |
 
 ## 5. EXACT ENGINE (JN05W2 base, all layers ON, TP engine via UW admission queue; reference = JN05W2 on the same months)
-Identity: TL3_UW_MFID (hook registered, rule threshold unreachable) reproduces JN05W2 202610 = 598 trades, net 25943.82 (checked by mf_score.py at each rebuild: see set window  complete  weeks  ref_mean  d_mean   ref_dd     d_dd  d_worst  d_stops_wk  best5_kept  win2lose  uw1_mean  uw1_n).
+Identity: TL3_UW_MFID (hook registered, rule threshold unreachable) reproduces JN05W2 202610 = 598 trades, net 25943.82 (checked by mf_score.py at each rebuild: see set window  complete  weeks  ref_mean  d_mean   ref_dd    d_dd  d_worst  d_stops_wk  best5_kept  win2lose  uw1_mean  uw1_n).
 Per set and window: stack mean $/wk (reference), change of mean, reference max DD and change (negative = better), change of worst week, change of full stops/wk, share of the reference best-5 weeks kept, winning weeks turned losing; for injected books uw1_mean/n = the new book alone inside the engine. Windows not complete (months still running) are marked.
 | set | window | complete | weeks | ref_mean | d_mean | ref_dd | d_dd | ref_worst | d_worst | d_stops_wk | best5_kept | win2lose | uw1_mean | uw1_n |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | TL3_UW_INJ_MFB1 | HOLD | False | 51 | 17639.8 | 188.7 | 63185.1 | 2567.4 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | 172.7 | 64 |
 | TL3_UW_INJ_MFB1 | L3M | False | 11 | 16819.4 | 435.1 | 36370.5 | -1900.7 | -36370.5 | 1900.7 | 0.1 | 1.0 | 0 | 320.4 | 13 |
 | TL3_UW_INJ_MFB1 | L6M | False | 25 | 23240.9 | 744.0 | 36370.5 | -1900.7 | -36370.5 | 1900.7 | 0.2 | 1.0 | 0 | 722.3 | 37 |
-| TL3_UW_INJ_MFB1 | PREUW | False | 22 | 7937.6 | 0.0 | 76186.1 | 0.0 | -52547.4 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_INJ_MFB1 | PREUW | True | 40 | 11569.7 | 0.0 | 76186.1 | 0.0 | -52547.4 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_INJ_MFB1_P11 | HOLD | False | 51 | 17639.8 | -720.4 | 63185.1 | 997.8 | -55145.4 | 1563.5 | 0.4 | 1.0 | 0 | -281.0 | 76 |
 | TL3_UW_INJ_MFB1_P11 | L3M | False | 11 | 16819.4 | -1172.7 | 36370.5 | 2082.7 | -36370.5 | -2082.7 | 0.5 | 1.0 | 0 | -616.0 | 21 |
 | TL3_UW_INJ_MFB1_P11 | L6M | False | 25 | 23240.9 | -1361.5 | 36370.5 | 2082.7 | -36370.5 | -2082.7 | 0.4 | 1.0 | 0 | -446.2 | 46 |
@@ -179,7 +179,7 @@ Per set and window: stack mean $/wk (reference), change of mean, reference max D
 | TL3_UW_INJ_MFB2 | HOLD | False | 51 | 17639.8 | 600.0 | 63185.1 | 121.2 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 299.8 | 75 |
 | TL3_UW_INJ_MFB2 | L3M | False | 11 | 16819.4 | 641.7 | 36370.5 | -345.7 | -36370.5 | 345.7 | 0.5 | 1.0 | 0 | 521.5 | 17 |
 | TL3_UW_INJ_MFB2 | L6M | False | 25 | 23240.9 | 770.5 | 36370.5 | -345.7 | -36370.5 | 345.7 | 0.5 | 1.0 | 0 | 547.8 | 36 |
-| TL3_UW_INJ_MFB2 | PREUW | False | 18 | 13456.2 | -87.1 | 37983.8 | 3602.4 | -29255.3 | -1181.2 | 0.4 | 1.0 | 0 | -20.0 | 34 |
+| TL3_UW_INJ_MFB2 | PREUW | True | 40 | 11569.7 | 325.1 | 76186.1 | -1535.3 | -52547.4 | -1203.5 | 0.4 | 1.0 | 0 | 357.9 | 74 |
 | TL3_UW_INJ_MFB2_P11 | HOLD | False | 51 | 17639.8 | 289.5 | 63185.1 | 1286.2 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | 164.4 | 38 |
 | TL3_UW_INJ_MFB2_P11 | L3M | False | 11 | 16819.4 | 463.3 | 36370.5 | -1073.8 | -36370.5 | 1073.8 | 0.1 | 1.0 | 0 | 463.3 | 6 |
 | TL3_UW_INJ_MFB2_P11 | L6M | False | 25 | 23240.9 | 350.7 | 36370.5 | -1073.8 | -36370.5 | 1073.8 | 0.2 | 1.0 | 0 | 315.0 | 16 |
@@ -192,19 +192,19 @@ Per set and window: stack mean $/wk (reference), change of mean, reference max D
 | TL3_UW_INJ_MFB3 | HOLD | False | 51 | 17639.8 | 687.9 | 63185.1 | -898.8 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | 643.6 | 58 |
 | TL3_UW_INJ_MFB3 | L3M | False | 11 | 16819.4 | 633.2 | 36370.5 | -0.0 | -36370.5 | 0.0 | 0.0 | 1.0 | 0 | 689.3 | 11 |
 | TL3_UW_INJ_MFB3 | L6M | False | 25 | 23240.9 | 795.3 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.0 | 1.0 | 0 | 911.7 | 23 |
-| TL3_UW_INJ_MFB3 | PREUW | False | 18 | 13456.2 | 364.7 | 37983.8 | -2890.5 | -29255.3 | 1798.8 | 0.3 | 1.0 | 0 | 396.3 | 23 |
+| TL3_UW_INJ_MFB3 | PREUW | True | 40 | 11569.7 | 49.1 | 76186.1 | -4229.3 | -52547.4 | -202.4 | 0.4 | 1.0 | 0 | 34.4 | 60 |
 | TL3_UW_INJ_MFB4 | HOLD | False | 51 | 17639.8 | 481.7 | 63185.1 | -2235.3 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 492.2 | 85 |
 | TL3_UW_INJ_MFB4 | L3M | False | 11 | 16819.4 | 768.0 | 36370.5 | -0.0 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | 768.0 | 18 |
 | TL3_UW_INJ_MFB4 | L6M | False | 25 | 23240.9 | 679.9 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.4 | 1.0 | 0 | 679.9 | 43 |
-| TL3_UW_INJ_MFB4 | PREUW | False | 18 | 13456.2 | -366.7 | 37983.8 | 849.7 | -29255.3 | -1167.4 | 0.9 | 1.0 | 0 | -401.4 | 41 |
+| TL3_UW_INJ_MFB4 | PREUW | True | 40 | 11569.7 | -428.2 | 76186.1 | 150.1 | -52547.4 | 451.7 | 0.8 | 1.0 | 0 | -383.9 | 82 |
 | TL3_UW_INJ_MFB6 | HOLD | False | 51 | 17639.8 | 490.2 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | 490.2 | 60 |
 | TL3_UW_INJ_MFB6 | L3M | False | 11 | 16819.4 | 65.3 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.5 | 1.0 | 0 | 65.3 | 13 |
 | TL3_UW_INJ_MFB6 | L6M | False | 25 | 23240.9 | 349.9 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.3 | 1.0 | 0 | 349.9 | 26 |
-| TL3_UW_INJ_MFB6 | PREUW | False | 14 | 14458.8 | -206.1 | 37983.8 | 3196.8 | -29255.3 | 0.0 | 0.6 | 1.0 | 0 | -264.0 | 21 |
+| TL3_UW_INJ_MFB6 | PREUW | True | 40 | 11569.7 | 12.1 | 76186.1 | 4488.3 | -52547.4 | -71.2 | 0.5 | 1.0 | 0 | -8.2 | 52 |
 | TL3_UW_INJ_MFB7 | HOLD | False | 51 | 17639.8 | 152.9 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 140.4 | 49 |
 | TL3_UW_INJ_MFB7 | L3M | False | 11 | 16819.4 | -121.7 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.4 | 1.0 | 0 | -121.7 | 8 |
 | TL3_UW_INJ_MFB7 | L6M | False | 25 | 23240.9 | 224.0 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.4 | 1.0 | 0 | 224.0 | 20 |
-| TL3_UW_INJ_MFB7 | PREUW | False | 14 | 14458.8 | -562.5 | 37983.8 | 3015.8 | -29255.3 | -1422.4 | 0.8 | 1.0 | 0 | -743.9 | 18 |
+| TL3_UW_INJ_MFB7 | PREUW | True | 40 | 11569.7 | -173.4 | 76186.1 | 2478.3 | -52547.4 | -26.2 | 0.6 | 1.0 | 0 | -200.0 | 44 |
 | TL3_UW_INJ_MFB7_P11 | HOLD | False | 51 | 17639.8 | 39.3 | 63185.1 | -1433.8 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | 39.3 | 29 |
 | TL3_UW_INJ_MFB7_P11 | L3M | False | 11 | 16819.4 | 294.0 | 36370.5 | -1447.6 | -36370.5 | 1447.6 | 0.3 | 1.0 | 0 | 294.0 | 9 |
 | TL3_UW_INJ_MFB7_P11 | L6M | False | 25 | 23240.9 | -5.0 | 36370.5 | -1447.6 | -36370.5 | 1447.6 | 0.2 | 1.0 | 0 | -5.0 | 16 |
@@ -217,7 +217,7 @@ Per set and window: stack mean $/wk (reference), change of mean, reference max D
 | TL3_UW_INJ_MFC_ASIA | HOLD | False | 51 | 17639.8 | 307.2 | 63185.1 | -1410.5 | -55145.4 | 2546.4 | 0.3 | 1.0 | 0 | 353.0 | 60 |
 | TL3_UW_INJ_MFC_ASIA | L3M | False | 11 | 16819.4 | 508.4 | 36370.5 | -6589.8 | -36370.5 | 7967.9 | 0.3 | 1.0 | 0 | 860.7 | 15 |
 | TL3_UW_INJ_MFC_ASIA | L6M | False | 25 | 23240.9 | 734.3 | 36370.5 | -6589.8 | -36370.5 | 7967.9 | 0.2 | 1.0 | 0 | 922.3 | 31 |
-| TL3_UW_INJ_MFC_ASIA | PREUW | False | 14 | 14458.8 | -973.7 | 37983.8 | -3597.6 | -29255.3 | 0.0 | 0.2 | 1.0 | 0 | 125.4 | 16 |
+| TL3_UW_INJ_MFC_ASIA | PREUW | True | 40 | 11569.7 | -414.9 | 76186.1 | -2605.6 | -52547.4 | 1408.8 | 0.1 | 1.0 | 0 | 66.3 | 41 |
 | TL3_UW_INJ_MFC_ASIA_P11 | HOLD | False | 51 | 17639.8 | -580.8 | 63185.1 | 3832.8 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | -159.2 | 49 |
 | TL3_UW_INJ_MFC_ASIA_P11 | L3M | False | 11 | 16819.4 | -933.1 | 36370.5 | 1583.6 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | -382.9 | 10 |
 | TL3_UW_INJ_MFC_ASIA_P11 | L6M | False | 25 | 23240.9 | -1045.3 | 36370.5 | 1583.6 | -36370.5 | 0.0 | 0.1 | 1.0 | 0 | -134.1 | 23 |
@@ -227,7 +227,7 @@ Per set and window: stack mean $/wk (reference), change of mean, reference max D
 | TL3_UW_INJ_MFC_LDN | HOLD | False | 51 | 17639.8 | 355.7 | 63185.1 | -1020.0 | -55145.4 | -411.3 | 0.3 | 1.0 | 0 | 346.1 | 68 |
 | TL3_UW_INJ_MFC_LDN | L3M | False | 11 | 16819.4 | 393.3 | 36370.5 | 2262.4 | -36370.5 | -2262.4 | 0.5 | 1.0 | 0 | 589.2 | 20 |
 | TL3_UW_INJ_MFC_LDN | L6M | False | 25 | 23240.9 | 489.6 | 36370.5 | 2262.4 | -36370.5 | -2262.4 | 0.3 | 1.0 | 0 | 556.3 | 36 |
-| TL3_UW_INJ_MFC_LDN | PREUW | False | 14 | 14458.8 | -334.8 | 37983.8 | -1198.8 | -29255.3 | 1198.8 | 0.4 | 1.0 | 0 | -234.6 | 17 |
+| TL3_UW_INJ_MFC_LDN | PREUW | True | 40 | 11569.7 | 32.7 | 76186.1 | -908.4 | -52547.4 | 603.8 | 0.2 | 1.0 | 0 | 132.1 | 39 |
 | TL3_UW_INJ_MFC_LDN_P11 | HOLD | False | 51 | 17639.8 | -432.1 | 63185.1 | 905.5 | -55145.4 | 0.0 | 0.1 | 1.0 | 0 | -153.0 | 44 |
 | TL3_UW_INJ_MFC_LDN_P11 | L3M | False | 11 | 16819.4 | -348.2 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.3 | 1.0 | 0 | -381.8 | 13 |
 | TL3_UW_INJ_MFC_LDN_P11 | L6M | False | 25 | 23240.9 | -751.9 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.1 | 1.0 | 0 | -138.1 | 24 |
@@ -237,7 +237,7 @@ Per set and window: stack mean $/wk (reference), change of mean, reference max D
 | TL3_UW_INJ_MFC_PRE | HOLD | False | 51 | 17639.8 | 239.0 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 92.8 | 50 |
 | TL3_UW_INJ_MFC_PRE | L3M | False | 11 | 16819.4 | 1073.4 | 36370.5 | -617.6 | -36370.5 | 617.6 | 0.0 | 1.0 | 0 | 955.4 | 9 |
 | TL3_UW_INJ_MFC_PRE | L6M | False | 25 | 23240.9 | 713.7 | 36370.5 | -617.6 | -36370.5 | 617.6 | 0.2 | 1.0 | 0 | 661.8 | 20 |
-| TL3_UW_INJ_MFC_PRE | PREUW | False | 14 | 14458.8 | -115.8 | 37983.8 | 0.0 | -29255.3 | 0.0 | 0.6 | 1.0 | 0 | -141.0 | 18 |
+| TL3_UW_INJ_MFC_PRE | PREUW | True | 40 | 11569.7 | 81.2 | 76186.1 | -45.2 | -52547.4 | 0.0 | 0.3 | 1.0 | 0 | 102.3 | 38 |
 | TL3_UW_INJ_MFC_PRE_P11 | HOLD | False | 51 | 17639.8 | -645.6 | 63185.1 | -2355.0 | -55145.4 | 0.0 | 0.1 | 1.0 | 0 | -634.3 | 41 |
 | TL3_UW_INJ_MFC_PRE_P11 | L3M | False | 11 | 16819.4 | -344.7 | 36370.5 | 540.0 | -36370.5 | -540.0 | 0.3 | 1.0 | 0 | -394.2 | 11 |
 | TL3_UW_INJ_MFC_PRE_P11 | L6M | False | 25 | 23240.9 | -917.7 | 36370.5 | 540.0 | -36370.5 | -540.0 | 0.2 | 1.0 | 0 | -577.5 | 20 |
@@ -246,20 +246,20 @@ Per set and window: stack mean $/wk (reference), change of mean, reference max D
 | TL3_UW_INJ_MFC_PRE_P23 | L6M | False | 25 | 23240.9 | -485.7 | 36370.5 | 1157.7 | -36370.5 | -1157.7 | 0.2 | 1.0 | 0 | -500.1 | 18 |
 | TL3_UW_MF_ASIA_SK | HOLD | False | 38 | 17056.0 | 811.6 | 63185.1 | -9699.9 | -55145.4 | 1660.3 | -0.3 | 0.8 | 1 | 0.0 | 0 |
 | TL3_UW_MF_ASIA_SK | L6M | False | 12 | 27459.9 | 780.9 | 25312.6 | 3596.2 | -25312.6 | -3596.2 | -0.4 | 0.9 | 0 | 0.0 | 0 |
-| TL3_UW_MF_ASIA_SK | PREUW | False | 10 | 16219.7 | 7373.3 | 19003.3 | -10139.3 | -19003.3 | 10139.3 | -0.5 | 1.2 | 0 | 0.0 | 0 |
+| TL3_UW_MF_ASIA_SK | PREUW | True | 40 | 11569.7 | 1118.4 | 76186.1 | 9045.9 | -52547.4 | 0.0 | -0.4 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_LDN_M7 | HOLD | False | 51 | 17639.8 | 593.1 | 63185.1 | -8444.2 | -55145.4 | 1542.3 | 0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_LDN_M7 | L3M | False | 11 | 16819.4 | 249.4 | 36370.5 | -637.2 | -36370.5 | 637.2 | 0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_LDN_M7 | L6M | False | 25 | 23240.9 | 677.5 | 36370.5 | -637.2 | -36370.5 | 637.2 | 0.0 | 1.0 | 0 | 0.0 | 0 |
-| TL3_UW_MF_LDN_M7 | PREUW | False | 14 | 14458.8 | 657.1 | 37983.8 | -1158.6 | -29255.3 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_LDN_M7 | PREUW | True | 40 | 11569.7 | 20.3 | 76186.1 | 1029.9 | -52547.4 | 0.0 | 0.1 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_HALF | HOLD | False | 38 | 17056.0 | 861.6 | 63185.1 | -3402.3 | -55145.4 | 7062.0 | -0.1 | 1.0 | 1 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_HALF | L6M | False | 12 | 27459.9 | 1150.7 | 25312.6 | 1343.7 | -25312.6 | -1343.7 | -0.1 | 1.0 | 0 | 0.0 | 0 |
-| TL3_UW_MF_NIGHT_HALF | PREUW | False | 14 | 14458.8 | 156.6 | 37983.8 | 4683.7 | -29255.3 | -5228.6 | -0.1 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_HALF | PREUW | True | 40 | 11569.7 | -143.7 | 76186.1 | -825.2 | -52547.4 | 0.0 | -0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK | HOLD | False | 38 | 17056.0 | -267.2 | 63185.1 | -5444.4 | -55145.4 | 6459.2 | -0.2 | 0.8 | 2 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK | L6M | False | 12 | 27459.9 | -1267.2 | 25312.6 | -1696.2 | -25312.6 | 1696.2 | -0.2 | 0.8 | 0 | 0.0 | 0 |
-| TL3_UW_MF_NIGHT_SK | PREUW | False | 14 | 14458.8 | 5677.2 | 37983.8 | 11476.5 | -29255.3 | -17247.4 | -0.7 | 1.1 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK | PREUW | True | 40 | 11569.7 | 1714.4 | 76186.1 | 5863.9 | -52547.4 | 0.0 | -0.4 | 1.0 | 2 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK15 | HOLD | False | 38 | 17056.0 | -1094.2 | 63185.1 | -3236.8 | -55145.4 | 0.0 | -0.1 | 0.9 | 2 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK15 | L6M | False | 12 | 27459.9 | -2233.9 | 25312.6 | -1696.2 | -25312.6 | 1696.2 | 0.2 | 0.9 | 0 | 0.0 | 0 |
-| TL3_UW_MF_NIGHT_SK15 | PREUW | False | 14 | 14458.8 | 3214.8 | 37983.8 | -507.1 | -29255.3 | 0.0 | -0.1 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK15 | PREUW | True | 40 | 11569.7 | 2090.6 | 76186.1 | -2371.7 | -52547.4 | 0.0 | -0.2 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK_P11 | HOLD | False | 51 | 17639.8 | -1648.1 | 63185.1 | -1531.0 | -55145.4 | 0.0 | -0.5 | 0.9 | 2 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK_P11 | L3M | False | 11 | 16819.4 | -3750.8 | 36370.5 | 1824.8 | -36370.5 | 1989.7 | -0.5 | 0.8 | 0 | 0.0 | 0 |
 | TL3_UW_MF_NIGHT_SK_P11 | L6M | False | 25 | 23240.9 | -4631.5 | 36370.5 | 1824.8 | -36370.5 | 1989.7 | -0.6 | 0.8 | 1 | 0.0 | 0 |
@@ -271,10 +271,10 @@ Per set and window: stack mean $/wk (reference), change of mean, reference max D
 | TL3_UW_MF_NIGHT_SK_P37 | L6M | False | 25 | 23240.9 | -835.1 | 36370.5 | 4400.6 | -36370.5 | 10344.6 | -0.4 | 0.9 | 1 | 0.0 | 0 |
 | TL3_UW_MF_NYAM_K7 | HOLD | False | 38 | 17056.0 | -126.6 | 63185.1 | 761.6 | -55145.4 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_NYAM_K7 | L6M | False | 12 | 27459.9 | -274.6 | 25312.6 | 0.0 | -25312.6 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
-| TL3_UW_MF_NYAM_K7 | PREUW | False | 14 | 14458.8 | 252.9 | 37983.8 | -1154.7 | -29255.3 | 889.7 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NYAM_K7 | PREUW | True | 40 | 11569.7 | 639.4 | 76186.1 | -1526.2 | -52547.4 | 3319.8 | 0.0 | 1.0 | 0 | 0.0 | 0 |
 | TL3_UW_MF_U7_SK | HOLD | False | 38 | 17056.0 | -326.0 | 63185.1 | 6563.5 | -55145.4 | -9484.8 | 0.1 | 1.0 | 1 | 0.0 | 0 |
 | TL3_UW_MF_U7_SK | L6M | False | 12 | 27459.9 | -177.5 | 25312.6 | 2523.7 | -25312.6 | -2523.7 | 0.1 | 0.9 | 0 | 0.0 | 0 |
-| TL3_UW_MF_U7_SK | PREUW | False | 10 | 16219.7 | 2271.4 | 19003.3 | -4462.2 | -19003.3 | 4462.2 | -0.1 | 1.1 | 0 | 0.0 | 0 |
+| TL3_UW_MF_U7_SK | PREUW | True | 40 | 11569.7 | 556.9 | 76186.1 | 325.5 | -52547.4 | 0.0 | -0.0 | 1.0 | 0 | 0.0 | 0 |
 
 **Placebo beside every number** (same book, events or flow shifted 11 / 23 / 37 days, same months):
 
