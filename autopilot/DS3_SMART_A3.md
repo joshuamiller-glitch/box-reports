@@ -1,6 +1,6 @@
 # DS3_SMART_A3 — T-SMART item A3: structure stops with equal-$ lots (W-SM3)
 
-Generated 2026-11-14 05:47Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
+Generated 2026-11-14 06:17Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
 
 **CAVEAT (every table):** the engine state cut fires in the engine but did NOT fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). Rows marked **S0 = state cut OFF = the live-realistic case** are read first and compared with SMA3_REF_S0 (JN05W2 with every state cut switched off, K7 flat45 kept); **S1** rows keep the state cut and compare with JN05W2.
 
