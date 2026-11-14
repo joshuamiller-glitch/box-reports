@@ -1,0 +1,7 @@
+ADDENDUM (user) to T-CHOP / T-RANGEUSE — WHOLE BRACKET SCALED AT CONSTANT R. Dial 2 scaled the stop and moved lots inversely but left the target at 58; it failed (-7.0k L3M, full stops up). Test the symmetric version on the exact engine, JN05W2 base, all layers ON:
+- Bracket width W = base x forecast ratio, applied to BOTH stop and target (target stays 1R of the stop, or the book's own target/stop ratio), clipped to 30..100 points; lots = base lots x (60 / W), rounded, so the dollar loss at the stop is constant. Cap the lot increase at x1.5 and x2 (two variants) so a small-range call can never more than double size.
+- Forecasts (a) ATR only, (b) ATR + IV term, (c) full UW; ratio from terciles (40 / 60 / 100 and 45 / 60 / 80) and continuous.
+- Scale EVERYTHING that is in points with W: flat cuts, state-cut arm, lock levels, pullback/add distances. A 40-point bracket with a -45 flat cut is nonsense. Report one version with only stop+target scaled and one with all point levels scaled, to see which matters.
+- Per book and per session; never a pooled verdict only. Costs at the real lot count (fees and measured slippage scale with lots).
+- Also the one-direction versions: narrow-only (never wider than 60) and wide-only (never narrower than 60), to see which half carries the result.
+- Same windows, gate, drawdown-first scoring, placebos (forecast shifted 11 / 23 / 37 days) and W44-removed check as the parent order. Report in DS3_RANGEUSE.md under a new section "Dial 9: whole bracket at constant R", first page within 4 hours.

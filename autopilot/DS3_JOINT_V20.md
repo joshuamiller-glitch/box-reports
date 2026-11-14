@@ -2,7 +2,7 @@
 
 VERDICT (3 of 5 windows complete for the leader): best joint set so far is JV_AB: worst-window max-DD cut 15.6 % vs JN05W2, mean 991 $/wk avg; passes the tolerant gate in every complete window. Recent max DD is the single week 2026-W44, so read section 2 and section 5 before believing any recent cut; no PASS claim.
 
-Generated 2026-11-14 17:16 UTC (epoch 1794676580). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse; $4.84 RT). Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-14 18:50 UTC (epoch 1794682242). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse; $4.84 RT). Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
 
 Candidates: **A** = SM_A6_halfNP7 (first trade of a book-session lost -> later signals of that book-session at half lots, books K7 M7 U7 H7 A7; P7 untouched). **B** = U7 time stop on fresh entries (at 15:00 after the first fill, if open P&L < -10 pts: market exit, fresh context only). **C** = U7 Keltner-mid structure stop (stop at 5-min EMA20 mid - 2 pts, filled 1.4 pt adverse, lots x 60/stop distance clamped 25..60). Full specs in section 6.
 
@@ -56,6 +56,7 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | JV_AB | 52 | 53321 | 63185 | 15.6 | -53321 | 1825 | 10.0 (10.7) | 102% | 0 (37) | 18881 | 1391 |
 | JV_AC | 52 | 76099 | 63185 | -20.4 | -57490 | -2345 | 8.4 (10.7) | 98% | 1 (37) | 18093 | 604 |
 | JV_BC | 52 | 71971 | 63185 | -13.9 | -56582 | -1437 | 8.1 (10.7) | 95% | 2 (37) | 18186 | 697 |
+| JV_ABC | 52 | 74738 | 63185 | -18.3 | -56878 | -1732 | 8.2 (10.7) | 97% | 1 (37) | 18406 | 917 |
 
 ### PRE
 
@@ -63,6 +64,7 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 |--|--|--|--|--|--|--|--|--|--|--|--|
 | JV_A | 75 | 81965 | 76186 | -7.6 | -51421 | 1126 | 9.2 (9.3) | 97% | 0 (48) | 10126 | -42 |
 | JV_B | 75 | 76961 | 76186 | -1.0 | -52547 | 0 | 9.0 (9.3) | 101% | 0 (48) | 10078 | -90 |
+| JV_C | 75 | 93191 | 76186 | -22.3 | -56666 | -4119 | 6.8 (9.3) | 100% | 2 (48) | 7415 | -2753 |
 
 ### X'
 
@@ -70,6 +72,7 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 |--|--|--|--|--|--|--|--|--|--|--|--|
 | JV_A | 44 | 50995 | 55326 | 7.8 | -21733 | -70 | 10.8 (10.8) | 99% | 0 (25) | 3828 | 243 |
 | JV_B | 44 | 45376 | 55326 | 18.0 | -21663 | 0 | 10.6 (10.8) | 98% | 0 (25) | 3834 | 249 |
+| JV_C | 44 | 93035 | 55326 | -68.2 | -28687 | -7024 | 8.8 (10.8) | 74% | 2 (25) | 339 | -3246 |
 
 ### GAP
 
@@ -77,6 +80,8 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 |--|--|--|--|--|--|--|--|--|--|--|--|
 | JV_A | 18 | 67381 | 68947 | 2.3 | -67381 | 1566 | 9.6 (9.7) | 94% | 1 (13) | 11461 | -915 |
 | JV_B | 18 | 68947 | 68947 | 0.0 | -68947 | 0 | 9.6 (9.7) | 101% | 0 (13) | 12381 | 5 |
+| JV_C | 18 | 85805 | 68947 | -24.5 | -74665 | -5719 | 7.7 (9.7) | 83% | 1 (13) | 7653 | -4724 |
+| JV_AB | 18 | 67381 | 68947 | 2.3 | -67381 | 1566 | 9.5 (9.7) | 95% | 0 (13) | 11548 | -829 |
 
 ## 2. The recent max drawdown is one week (2026-W44): L6M / L3M with W44 removed from both cell and JN05W2
 
@@ -103,7 +108,7 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 |--|--|--|--|--|--|--|
 | JV_A | 253399 / 255545 / 331449 | 0 of 19 | 9 | 41.8 | 0.8 | 88.5 |
 | JV_B | 261019 / 255545 / 331449 | 0 of 19 | 15 | 16.5 | 0.0 | 24.5 |
-| JV_C | 257064 / 255545 / 331449 | 3 of 19 | 14 | - | - | - |
+| JV_C | 257064 / 255545 / 331449 | 3 of 19 | 14 | 3.8 | 0.0 | -353.5 |
 | JV_AB | 258872 / 255545 / 331449 | 0 of 19 | 13 | - | - | - |
 | JV_AC | 258347 / 255545 / 331449 | 2 of 19 | 12 | - | - | - |
 | JV_BC | 265480 / 255545 / 331449 | 2 of 19 | 14 | - | - | - |
@@ -120,23 +125,32 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | JV_BC | L6M | 8.8 | 12.8 | -3.9 | 1217 | 1284 | -67 |
 | JV_BC | HOLD | -13.9 | -13.0 | -0.9 | 697 | 944 | -247 |
 | JV_ABC | L6M | 8.8 | 24.5 | -15.7 | 1472 | 1668 | -196 |
+| JV_ABC | HOLD | -18.3 | -1.5 | -16.8 | 917 | 1667 | -750 |
 
 ## 5. Exact placebos (A: first-trade-lost read from 11 / 23 / 37 days earlier; B and C: same trigger, exit at a random later second 1..60 min if still open; PLk_ABC = all three placebos together)
 
 | real set | window | real cut % | real d mean | placebo cut % (11/23/37 or seeds 1/2/3) | placebo d mean | real beats all 3 placebos on cut? |
 |--|--|--|--|--|--|--|
+| JV_A | L3M | 11.8 | -691 | 7.0 / 21.8 / 11.2 | -253 / -1637 / -926 | no |
+| JV_A | L6M | 11.8 | 383 | 7.0 / 21.8 / 11.2 | -1112 / -914 / -526 | no |
+| JV_B | L3M | 11.7 | 1244 | 10.5 / 11.8 / 11.7 | 297 / 514 / 487 | no |
+| JV_B | L6M | 11.7 | 573 | 10.5 / 11.8 / 11.7 | 390 / 548 / 238 | no |
+| JV_C | L3M | 1.1 | 1746 | -9.1 / -6.6 / -17.4 | -577 / 1085 / -620 | yes |
+| JV_C | L6M | 1.1 | 712 | -9.1 / -6.6 / -17.4 | 1428 / 1717 / 1027 | yes |
+| JV_ABC | L3M | 22.9 | 2001 | 6.3 / 33.2 / -12.0 | -777 / 773 / -976 | no |
+| JV_ABC | L6M | 8.8 | 1472 | 6.3 / 26.0 / -12.0 | 663 / 1146 / 645 | no |
 
 ## 6. Ranking (tolerant gate in every complete window of L3M L6M HOLD PRE X': DD cut > -2 %, mean not lower than -3 %; then by the WORST-window DD cut)
 
 | rank | set | passes gate | worst-window DD cut % | mean d $/wk (avg of windows) | complete windows |
 |--|--|--|--|--|--|
 | 1 | JV_AB | yes | 15.6 | 991 | 3 |
-| 2 | JV_ABC | yes | 8.8 | 1736 | 2 |
-| 3 | JV_B | yes | -1.0 | 555 | 5 |
-| 4 | JV_A | no | -7.6 | 123 | 5 |
-| 5 | JV_BC | no | -13.9 | 1551 | 3 |
-| 6 | JV_C | no | -16.4 | 867 | 3 |
-| 7 | JV_AC | no | -20.4 | 974 | 3 |
+| 2 | JV_B | yes | -1.0 | 555 | 5 |
+| 3 | JV_A | no | -7.6 | 123 | 5 |
+| 4 | JV_BC | no | -13.9 | 1551 | 3 |
+| 5 | JV_ABC | no | -18.3 | 1463 | 3 |
+| 6 | JV_AC | no | -20.4 | 974 | 3 |
+| 7 | JV_C | no | -68.2 | -679 | 5 |
 
 ## 7. FULL SPEC of each rule exactly as scored (for the v2.0 build)
 
@@ -146,4 +160,4 @@ Order of evaluation inside the engine (outermost last): wb_hooks (F3 context cut
 
 **B = U7 time stop on fresh entries.** Book U7 only. Context 'fresh' = chase_k <= 1.0 (side x (close - session first close)/ATR5 at the signal), at most the 2nd U7 entry of the session since the session start (n <= 2) and >= 30 min since the last U7 exit (P7_CONTEXT_DEFS, wb_ctx.Ctx). Rule: exactly 15.0 minutes (900 one-second rows) after the first fill row, if the open P&L at that second (mid, side x (mid - entry_px)) is < -10.0 points, exit the full position at market at the next row: mid - side*0.80 pts slip (engine); exit name EarlyCut. One check only (not a rolling condition); a trade that is at -10 or better at minute 15 is never touched by B. Interaction: B closes the trade, so for A it is a loser (a later U7 signal in the session gets half lots), and the post-cut blackout rules of the engine for EarlyCut exits apply as in the reference.
 
-**C = U7 Keltner-mid structure stop (stop + equal-$ lots).** Book U7 only, all contexts. Level = Keltner mid = EMA20 of 5-min closes (struct_a3 kc) at the last completed bar before the signal minus 60 s; stop level = kc - 2.0 pts on the loss side (long: kc - 2; short: kc + 2); S = |entry - level| (stop distance, pts) must satisfy 0.5 <= distance-to-level < 60 else the rule is off for that trade (native 60-pt stop only), S clamped to 25..60. Dynamic level: the Keltner mid is re-read each second from the 5-min series (lagging the bar by 60 s) and the exit fires when side x (mid - entry) <= side x (kc_now - entry) - 2.0 (the stop follows the mid). Fill: modelled stop fill = min(stop level, current u) - 1.4 pts adverse (live native central), exit name EarlyCut. Lots: after the live sizers lots x 60/S (S clamped 25..60, so up to x2.4; round to nearest, min 1), so the $ risk at the structure stop equals the live 60-pt risk. Day caps/locks then apply to those lots. Interaction with B: B's check at minute 15 and C's stop run on the same trades; whichever fires first ends the trade. C changes the lots, which A then halves on a lost-first session.
+**C = U7 Keltner-mid structure stop (stop + equal-$ lots).** Book U7 only, all contexts. Level = Keltner mid = EMA20 of 5-min closes (struct_a3 kc), read at the last completed bar at least 60 s old. At the first fill, u0 = side x (kc - entry); the rule is armed only if -60 <= u0 <= -0.5 (mid on the loss side of the entry by 0.5..60 pts) and S = |u0| + 2.0 <= 60; S is then clamped to 25..60 (for lot scaling). The stop is dynamic: each second the level is re-read (same 60-s lag) and the trade exits when side x (mid - entry) <= side x (kc_now - entry) - 2.0 (long: mid <= kc - 2; short: mid >= kc + 2), i.e. the stop trails the mid in both directions. Fill: price = entry + side x (min(stop level in points, current u) - 1.4), i.e. 1.4 pts adverse of the level or the current price whichever is worse (live native central), exit name EarlyCut. Lots: after the live sizers lots x 60/S (S as above, so up to x2.4; round to nearest, min 1; computed from the signal-time level and the last 1-min close as entry proxy), so the $ risk at the structure stop equals the live 60-pt risk. Day caps/locks then apply to those lots. Interaction with B: B's check at minute 15 and C's stop run on the same trades; whichever fires first ends the trade. C changes the lots, which A then halves on a lost-first session.

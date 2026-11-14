@@ -1,0 +1,11 @@
+ANSWER (user) to W-LB2 — LIVE FACTS FOR THE CUT BUG, from the NT8 Output log of 2026-11-11 / 11-12 (times ET).
+VERSION that evening: DS7 v1.7a (startup prints the "D7 v1.6 JN04" line and NO "v1.9 SURVIVORS" line). v1.9 first loaded 11-12 08:15:31 with policy v2.9 (26 rules, 16 on the state engine).
+POLICY in force 11-11 evening: loaded 18:01:00, "24 rules (14 on the v1.5 state engine), THP_POLICY v2.7 | fit=2026-11-10 23:00Z (state cut; P7 40/5x/w5/p3; ...)". JN04 line: STACK same-side cap 6 lots.
+P7 that evening, all 6 lots, all full stops, NO TH-STATE line of any kind for P7:
+ 1) short: entry complete 4 @ 28187.63 19:11:06, 6 @ avg 28188.42 19:11:28; stop 28248.75; "SHADOW lot-scaled cut: 6 lots -> would arm at -29 pts (live arm -30)" 19:14:18; STOP touched 19:17:15; closed StopJoin 28247, -$7,030.
+ 2) short: 4 @ 28209.50 19:58:28, 6 @ avg 28211.04 19:58:43, "bracket re-synced to 6" 19:58:44; stop 28268.25; shadow arm line 20:01:03; STOP touched 20:28:22; closed 28268, -$6,835.
+ 3) long: 4 @ 28342.19 21:31:08, 6 @ avg 28337.50 21:38:05, "bracket re-synced to 6" 21:38:06; stop 28281.75; shadow arm line 21:39:07; STOP touched 21:45:21; closed 28284, -$6,420.
+Pattern: every silent P7 trade was a SPLIT entry (4 lots, then 2 added, average and bracket re-based). Trade 3 added its 2 lots 7 minutes after the first 4. Check whether the add resets or corrupts the state the cut needs: entry price / average used for pct, the arm level, the persist counter, the per-trade pulled baseline, ExitPending or L2-armed flags that make ManagePolicyState skip the book, and the "live arm -30" vs policy "40" mismatch printed by the shadow line.
+M7 the next morning DID cut: 06:30:45 at -40 (pulled 11.7x, arm 30, rule M7 * pct<=-0.50 pulled_mult>=10 win=2 persist=2); 07:21:31 at -53.56 (pulled 15.4x, arm 29). And 11-13 03:13:36 at -46 (12.5x, arm 38).
+Since v2.9 + the flat line "loss P7 * pct<=-0.70 win=1 persist=1 cut": P7 flat cut fired 11-12 22:55:13 at -42.96 (arm 41) on a 6-lot split entry. So the state engine does run on split P7 trades; the pulled-based P7 line is what stays silent.
+Do: replay those three P7 trades through the port with the v2.7 P7 line and the split-add sequence exactly as above, and report second by second pct, pulled multiple, window and persist counters. Say which condition is the one that never comes true.
