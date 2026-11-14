@@ -1,6 +1,6 @@
-# DS3_UW_MEGAFLOW - W-MF, megacap option flow (net premium, bursts, tape) leading NQ. Built 2026-11-13 23:51Z by code/th_uwmf/mf_page.py. Research only, shadow, NO PASS claim.
+# DS3_UW_MEGAFLOW - W-MF, megacap option flow (net premium, bursts, tape) leading NQ. Built 2026-11-14 02:53Z by code/th_uwmf/mf_page.py. Research only, shadow, NO PASS claim.
 ## 0. Plain verdict (read first)
-PAGE STATUS: first page, engine runs of the finalists are still arriving (section 5 fills in; this page rebuilds every 3 h).
+PAGE STATUS: first page, engine runs of the finalists are still arriving (section 5 fills in; this page rebuilds every 3 h). Exact-engine sets scored so far: 16 sets (TL3_UW_INJ_MFB1, TL3_UW_INJ_MFB2, TL3_UW_INJ_MFB3, TL3_UW_INJ_MFB4, TL3_UW_INJ_MFB6, TL3_UW_INJ_MFB7, TL3_UW_INJ_MFC_ASIA, TL3_UW_INJ_MFC_LDN, TL3_UW_INJ_MFC_PRE, TL3_UW_MF_ASIA_SK, TL3_UW_MF_LDN_M7, ).
 VERDICT (first page): megacap option flow does NOT lead NQ in a usable way: net premium and flow bursts follow the price move (contemporaneous IC 0.3-0.5) and the forward partial IC after removing price is ~0.01-0.03 with no cell beyond chance in both windows; the one thing above its nulls is a prior-day megacap net-premium CARRY filter on the live night books (skip night trades when the prior day's megacap flow was against the trade, first-order p~0.02 vs 41 shifted-flow draws) - exact-engine result below decides its strength. Weak lead at best; no PASS. No exact-engine set yet holds in both the recent and the older window with a smaller drawdown and no loss of mean.
 ## 1. Data, clocks, what each session can use
 - Megacap net premium: /mnt/l2/l2vast/uw/net_prem_ticks (and nprem for QQQ/NDX/SPY/SPX) per ticker NVDA AAPL MSFT AMZN META GOOGL TSLA, 553 UTC days 2024-10-01..2026-11-12, 1-min rows (net call premium, net put premium, ask/bid volumes). Option flow exists only while the options trade: about 09:30-16:00 ET (NYAM and NYPM), a thin PRE sliver (~950 minutes of 7 names in total), and essentially NOTHING in Asia and London (0 minutes in Asia, ~900 in London over 2 years). So for Asia / London / PRE the only honest use of megacap flow is CARRY (the prior completed RTH day's flow, known after 16:03 ET), and that is what is tested for those sessions.
@@ -24,24 +24,24 @@ Method: for flow window w (1/5/15/60 min of summed z-flow, usable at start+180 s
 | NDX|vol | 0.409 | 0.417 |  |
 Reading: megacap flow is strongly co-moving with the price move it sits in (IC 0.3-0.5 for the aggregates; the control QQQ/NDX is the same or stronger). This is the W-UB2 finding (flow follows price) reproduced and extended to the megacaps. Net premium follows price; it is not an independent signal until the price part is removed.
 ### 2b. After removing contemporaneous / previous / gap price, does it LEAD? (partial IC, forward return)
-**NYAM**: 1120 (series,target,w,h) cells with both windows; cells with same sign in L6M and OLDER and min(|z|)>2: 2 (chance ~13), >3: 0.
+**NYAM**: 1120 (series,target,w,h) cells with both windows; cells with same sign in L6M and OLDER and min(|z|)>2: 0 (chance ~13), >3: 0.
 | series | tgt | w | h | ic_partial_L3M | ic_partial_L6M | ic_partial_OLDER | z_L6M | z_OLDER | n_L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| QQQ|tp_all_bull | ES | 1 | 1 | 0.022 | 0.0198 | 0.0117 | 2.3802 | 2.0658 | 18396.0 |
-| QQQ|tp_all_bull | NQ | 1 | 1 | 0.0218 | 0.0242 | 0.0125 | 2.6017 | 2.0409 | 18396.0 |
-| QQQ|vol | ES | 1 | 1 | 0.0096 | 0.0196 | 0.0106 | 2.3543 | 1.8743 | 18396.0 |
-| QQQ|prem | ES | 1 | 1 | 0.0225 | 0.0201 | 0.0106 | 2.4253 | 1.8591 | 18396.0 |
-| MEGAraw|tp_dL_bullb | ES | 15 | 15 | -0.0629 | -0.0462 | -0.0629 | -1.8236 | -2.9921 | 16773.0 |
-| MEGAraw|tp_d0_bullb | ES | 15 | 15 | 0.1073 | 0.0458 | 0.0537 | 1.809 | 2.5513 | 10260.0 |
+| QQQ|vol | ES | 1 | 1 | 0.0096 | 0.0196 | 0.0106 | 2.3543 | 1.9408 | 18396.0 |
+| QQQ|prem | ES | 1 | 1 | 0.0225 | 0.0201 | 0.0106 | 2.4253 | 1.925 | 18396.0 |
+| MEGAraw|tp_d0_bullb | ES | 15 | 15 | 0.1073 | 0.0458 | 0.0393 | 1.809 | 1.8608 | 10260.0 |
+| MEGAraw|tp_d0_bullb | ES | 5 | 15 | 0.0615 | 0.0361 | 0.0397 | 1.7182 | 2.6637 | 10936.0 |
+| QQQ|tp_all_bull | ES | 1 | 1 | 0.022 | 0.0198 | 0.0089 | 2.3802 | 1.6153 | 18396.0 |
+| MEGAraw|tp_d0_bullb | NQ | 5 | 15 | 0.0328 | 0.0345 | 0.038 | 1.5735 | 2.5701 | 10936.0 |
 **NYPM**: 1120 (series,target,w,h) cells with both windows; cells with same sign in L6M and OLDER and min(|z|)>2: 0 (chance ~13), >3: 0.
 | series | tgt | w | h | ic_partial_L3M | ic_partial_L6M | ic_partial_OLDER | z_L6M | z_OLDER | n_L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| MEGAeq|prem | ES | 1 | 5 | -0.0176 | -0.0176 | -0.0067 | -1.8496 | -1.3394 | 30240.0 |
-| MEGAeq|prem | ES | 5 | 1 | -0.0129 | -0.0135 | -0.0054 | -1.5881 | -1.2314 | 30240.0 |
-| QQQ|vol | ES | 15 | 15 | -0.0313 | -0.032 | -0.0181 | -1.3819 | -1.1801 | 30240.0 |
-| MEGAeq|prem | NQ | 5 | 15 | 0.0013 | -0.0231 | -0.0124 | -1.1475 | -1.1505 | 30240.0 |
-| MEGAcap|prem | NQ | 15 | 5 | -0.0016 | -0.0214 | -0.0109 | -1.1682 | -1.1238 | 30240.0 |
-| MEGAcap|prem | NQ | 5 | 15 | 0.0026 | -0.0223 | -0.0133 | -1.1116 | -1.2266 | 30240.0 |
+| MEGAeq|prem | ES | 1 | 5 | -0.0176 | -0.0176 | -0.0067 | -1.8496 | -1.3912 | 30240.0 |
+| QQQ|vol | ES | 15 | 15 | -0.0313 | -0.032 | -0.0181 | -1.3819 | -1.3486 | 30240.0 |
+| MEGAeq|prem | ES | 5 | 1 | -0.0129 | -0.0135 | -0.0054 | -1.5881 | -1.3145 | 30240.0 |
+| MEGAcap|prem | NQ | 15 | 15 | -0.0076 | -0.0468 | -0.0175 | -1.8713 | -1.2104 | 30240.0 |
+| QQQ|vol | ES | 5 | 1 | -0.0095 | -0.0117 | -0.0049 | -1.3739 | -1.1773 | 30240.0 |
+| MEGAcap|vol | NQ | 1 | 5 | -0.0106 | -0.0132 | -0.0057 | -1.4353 | -1.1594 | 30240.0 |
 **PRE**: 0 (series,target,w,h) cells with both windows; cells with same sign in L6M and OLDER and min(|z|)>2: 0 (chance ~0), >3: 0.
 (none)
 Reading: forward partial IC is of order 0.01-0.03 for 1-15 min horizons, the same sign in both windows only for a handful of cells and none clears z>3; the count of cells with min(|z|)>2 is near what chance gives. The control (QQQ net premium 1-min flow vs next-minute ES/NQ) is the strongest and still tiny (IC 0.02). Tape: big (>=$100k) 0DTE bullish megacap premium has a positive 5-15 min forward IC on NQ/ES (NYAM, L6M +0.03, older +0.06..0.07, z 1-4.6) and big longer-dated premium the opposite sign (about -0.03/-0.06): the one pattern with the same sign in both windows - tape coverage is only ~6 months of dense days, treat as LEAD (weak), unproven.
@@ -52,8 +52,8 @@ Bursts: window w in {1,5,15} min of summed flow above the trailing-20-day q95 / 
 
 | session | best_real_rec | null_shift_recs | n_null | null_max | above_null | clock_every_day_best | cells_gated |
 |---|---|---|---|---|---|---|---|
-| nyam | 3447.0 | 3134,2334,2496,2382,3020,2709 | 6 | 3134.0 | 6 | 2178.0 | 2422 |
-| nypm | 2575.0 | 2491,1569,1938,1429,1878,2518 | 6 | 2518.0 | 6 | 1550.0 | 1673 |
+| nyam | 3447.0 | 3134,2334,2496,2382,3020,4476 | 6 | 4476.0 | 5 | 2178.0 | 2422 |
+| nypm | 2575.0 | 2491,1569,1938,1429,1878,2904 | 6 | 2904.0 | 5 | 1550.0 | 1673 |
 best gated cells NYAM:
 
 | kind | dir | follow | cell | n_L6M | mean_L1M | mean_L3M | mean_L6M | mean_HOLD | mean_PREUW | dd_L6M | worst_L6M | stops_wk_L6M | pos_L6M |
@@ -159,7 +159,56 @@ scope rth, top gated rules:
 | MEGAeq|vol|5 | M7 | ge | 4.0 | press | 98 | 339 | 11.06 | 112.15 | 114.42 | -599.41 | -599.41 | -4501.23 | 920.43 | 0.02 |
 
 ## 5. EXACT ENGINE (JN05W2 base, all layers ON, TP engine via UW admission queue; reference = JN05W2 on the same months)
-Identity: TL3_UW_MFID (hook registered, rule threshold unreachable) reproduces JN05W2 202610 = 598 trades, net 25943.82 (checked by mf_score.py at each rebuild: see ).
+Identity: TL3_UW_MFID (hook registered, rule threshold unreachable) reproduces JN05W2 202610 = 598 trades, net 25943.82 (checked by mf_score.py at each rebuild: see set window  complete  weeks  ref_mean  d_mean   ref_dd    d_dd  d_worst  d_stops_wk  best5_kept  win2lose  uw1_mean  uw1_n).
+Per set and window: stack mean $/wk (reference), change of mean, reference max DD and change (negative = better), change of worst week, change of full stops/wk, share of the reference best-5 weeks kept, winning weeks turned losing; for injected books uw1_mean/n = the new book alone inside the engine. Windows not complete (months still running) are marked.
+| set | window | complete | weeks | ref_mean | d_mean | ref_dd | d_dd | ref_worst | d_worst | d_stops_wk | best5_kept | win2lose | uw1_mean | uw1_n |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TL3_UW_INJ_MFB1 | HOLD | False | 51 | 17639.8 | 188.7 | 63185.1 | 2567.4 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | 172.7 | 64 |
+| TL3_UW_INJ_MFB1 | L3M | False | 11 | 16819.4 | 435.1 | 36370.5 | -1900.7 | -36370.5 | 1900.7 | 0.1 | 1.0 | 0 | 320.4 | 13 |
+| TL3_UW_INJ_MFB1 | L6M | False | 25 | 23240.9 | 744.0 | 36370.5 | -1900.7 | -36370.5 | 1900.7 | 0.2 | 1.0 | 0 | 722.3 | 37 |
+| TL3_UW_INJ_MFB2 | HOLD | False | 51 | 17639.8 | 600.0 | 63185.1 | 121.2 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 299.8 | 75 |
+| TL3_UW_INJ_MFB2 | L3M | False | 11 | 16819.4 | 641.7 | 36370.5 | -345.7 | -36370.5 | 345.7 | 0.5 | 1.0 | 0 | 521.5 | 17 |
+| TL3_UW_INJ_MFB2 | L6M | False | 25 | 23240.9 | 770.5 | 36370.5 | -345.7 | -36370.5 | 345.7 | 0.5 | 1.0 | 0 | 547.8 | 36 |
+| TL3_UW_INJ_MFB3 | HOLD | False | 51 | 17639.8 | 687.9 | 63185.1 | -898.8 | -55145.4 | 0.0 | 0.2 | 1.0 | 0 | 643.6 | 58 |
+| TL3_UW_INJ_MFB3 | L3M | False | 11 | 16819.4 | 633.2 | 36370.5 | -0.0 | -36370.5 | 0.0 | 0.0 | 1.0 | 0 | 689.3 | 11 |
+| TL3_UW_INJ_MFB3 | L6M | False | 25 | 23240.9 | 795.3 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.0 | 1.0 | 0 | 911.7 | 23 |
+| TL3_UW_INJ_MFB4 | HOLD | False | 51 | 17639.8 | 481.7 | 63185.1 | -2235.3 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 492.2 | 85 |
+| TL3_UW_INJ_MFB4 | L3M | False | 11 | 16819.4 | 768.0 | 36370.5 | -0.0 | -36370.5 | 0.0 | 0.2 | 1.0 | 0 | 768.0 | 18 |
+| TL3_UW_INJ_MFB4 | L6M | False | 25 | 23240.9 | 679.9 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.4 | 1.0 | 0 | 679.9 | 43 |
+| TL3_UW_INJ_MFB6 | HOLD | False | 51 | 17639.8 | 490.2 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.3 | 1.0 | 0 | 490.2 | 60 |
+| TL3_UW_INJ_MFB6 | L3M | False | 11 | 16819.4 | 65.3 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.5 | 1.0 | 0 | 65.3 | 13 |
+| TL3_UW_INJ_MFB6 | L6M | False | 25 | 23240.9 | 349.9 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.3 | 1.0 | 0 | 349.9 | 26 |
+| TL3_UW_INJ_MFB7 | HOLD | False | 51 | 17639.8 | 152.9 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 140.4 | 49 |
+| TL3_UW_INJ_MFB7 | L3M | False | 11 | 16819.4 | -121.7 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.4 | 1.0 | 0 | -121.7 | 8 |
+| TL3_UW_INJ_MFB7 | L6M | False | 25 | 23240.9 | 224.0 | 36370.5 | 0.0 | -36370.5 | 0.0 | 0.4 | 1.0 | 0 | 224.0 | 20 |
+| TL3_UW_INJ_MFC_ASIA | HOLD | False | 51 | 17639.8 | 307.2 | 63185.1 | -1410.5 | -55145.4 | 2546.4 | 0.3 | 1.0 | 0 | 353.0 | 60 |
+| TL3_UW_INJ_MFC_ASIA | L3M | False | 11 | 16819.4 | 508.4 | 36370.5 | -6589.8 | -36370.5 | 7967.9 | 0.3 | 1.0 | 0 | 860.7 | 15 |
+| TL3_UW_INJ_MFC_ASIA | L6M | False | 25 | 23240.9 | 734.3 | 36370.5 | -6589.8 | -36370.5 | 7967.9 | 0.2 | 1.0 | 0 | 922.3 | 31 |
+| TL3_UW_INJ_MFC_LDN | HOLD | False | 51 | 17639.8 | 355.7 | 63185.1 | -1020.0 | -55145.4 | -411.3 | 0.3 | 1.0 | 0 | 346.1 | 68 |
+| TL3_UW_INJ_MFC_LDN | L3M | False | 11 | 16819.4 | 393.3 | 36370.5 | 2262.4 | -36370.5 | -2262.4 | 0.5 | 1.0 | 0 | 589.2 | 20 |
+| TL3_UW_INJ_MFC_LDN | L6M | False | 25 | 23240.9 | 489.6 | 36370.5 | 2262.4 | -36370.5 | -2262.4 | 0.3 | 1.0 | 0 | 556.3 | 36 |
+| TL3_UW_INJ_MFC_PRE | HOLD | False | 51 | 17639.8 | 239.0 | 63185.1 | 0.0 | -55145.4 | 0.0 | 0.4 | 1.0 | 0 | 92.8 | 50 |
+| TL3_UW_INJ_MFC_PRE | L3M | False | 11 | 16819.4 | 1073.4 | 36370.5 | -617.6 | -36370.5 | 617.6 | 0.0 | 1.0 | 0 | 955.4 | 9 |
+| TL3_UW_INJ_MFC_PRE | L6M | False | 25 | 23240.9 | 713.7 | 36370.5 | -617.6 | -36370.5 | 617.6 | 0.2 | 1.0 | 0 | 661.8 | 20 |
+| TL3_UW_MF_ASIA_SK | HOLD | False | 31 | 20530.9 | 531.1 | 63185.1 | -9699.9 | -55145.4 | 1660.3 | -0.4 | 0.8 | 1 | 0.0 | 0 |
+| TL3_UW_MF_ASIA_SK | L6M | False | 12 | 27459.9 | 780.9 | 25312.6 | 3596.2 | -25312.6 | -3596.2 | -0.4 | 0.9 | 0 | 0.0 | 0 |
+| TL3_UW_MF_LDN_M7 | HOLD | False | 39 | 19649.6 | 710.8 | 63185.1 | -8444.2 | -55145.4 | 1542.3 | 0.1 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_LDN_M7 | L3M | False | 11 | 16819.4 | 249.4 | 36370.5 | -637.2 | -36370.5 | 637.2 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_LDN_M7 | L6M | False | 25 | 23240.9 | 677.5 | 36370.5 | -637.2 | -36370.5 | 637.2 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_HALF | HOLD | False | 38 | 17056.0 | 861.6 | 63185.1 | -3402.3 | -55145.4 | 7062.0 | -0.1 | 1.0 | 1 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_HALF | L6M | False | 12 | 27459.9 | 1150.7 | 25312.6 | 1343.7 | -25312.6 | -1343.7 | -0.1 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK | HOLD | False | 38 | 17056.0 | -267.2 | 63185.1 | -5444.4 | -55145.4 | 6459.2 | -0.2 | 0.8 | 2 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK | L6M | False | 12 | 27459.9 | -1267.2 | 25312.6 | -1696.2 | -25312.6 | 1696.2 | -0.2 | 0.8 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK15 | HOLD | False | 35 | 18144.6 | -1188.0 | 63185.1 | -3236.8 | -55145.4 | 0.0 | -0.1 | 0.9 | 2 | 0.0 | 0 |
+| TL3_UW_MF_NIGHT_SK15 | L6M | False | 12 | 27459.9 | -2233.9 | 25312.6 | -1696.2 | -25312.6 | 1696.2 | 0.2 | 0.9 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NYAM_K7 | HOLD | False | 35 | 18144.6 | -135.5 | 63185.1 | 761.6 | -55145.4 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_NYAM_K7 | L6M | False | 12 | 27459.9 | -274.6 | 25312.6 | 0.0 | -25312.6 | 0.0 | 0.0 | 1.0 | 0 | 0.0 | 0 |
+| TL3_UW_MF_U7_SK | HOLD | False | 35 | 18144.6 | -382.0 | 63185.1 | 6563.5 | -55145.4 | -9484.8 | 0.1 | 1.0 | 1 | 0.0 | 0 |
+| TL3_UW_MF_U7_SK | L6M | False | 12 | 27459.9 | -177.5 | 25312.6 | 2523.7 | -25312.6 | -2523.7 | 0.1 | 0.9 | 0 | 0.0 | 0 |
+
+**Placebo beside every number** (same book, events or flow shifted 11 / 23 / 37 days, same months):
+
+(none)
 
 ## 6. What is and is not established
 - Lead-lag: see section 2. Plain statement: megacap net premium and flow bursts follow price; their lead over NQ at 1/5/15 min after controlling for price is at most about 0.02-0.03 IC in a handful of cells and not beyond chance across the family. Not a standalone signal.

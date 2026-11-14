@@ -1,6 +1,6 @@
 # DS3_TICK: NYSE TICK as day-type, filter and trigger tool (W-TK1 sections 1-6; W-TK2 section 7)
 
-Verdict (2026-11-14 02:21Z): PART 1 (forecast): 0 of 502 feature-family x target x session cells pass the lead rule; TICK does not forecast NQ direction, continuation, trend/chop or remaining range beyond the price-only benchmark in any slice (best gains are about 1% of variance and inside the family null). PART 2 first order: 6768 cells, 194 pass the recent gate, 9 pass recent+older; best recent+older drawdown score 14.6 vs family-null q95 37.6 (best-of-family on TICK shifted 8-60 days), so no first-order cell is separable from the best-of-family noise; exact-engine confirmation: see section 5.
+Verdict (2026-11-14 02:56Z): PART 1 (forecast): 0 of 502 feature-family x target x session cells pass the lead rule; TICK does not forecast NQ direction, continuation, trend/chop or remaining range beyond the price-only benchmark in any slice (best gains are about 1% of variance and inside the family null). PART 2 first order: 6768 cells, 194 pass the recent gate, 9 pass recent+older; best recent+older drawdown score 14.6 vs family-null q95 37.6 (best-of-family on TICK shifted 8-60 days), so no first-order cell is separable from the best-of-family noise; exact-engine status: 39 exact candidates; tier-1 (L6M) complete 0; recent-gate survivors 0; advanced 0; jobs outstanding 234 (section 4).
 
 Plain strength rule: a result is a LEAD only if it holds in the recent (L6M and HOLD) AND older (PRE and X') windows and beats the family null; no PASS claims; nothing here changes the execution server or any live chart. Page rebuilt every 3 h by tk_loop.sh.
 
@@ -212,7 +212,20 @@ Counts: cells 6768; recent gate 194; recent+older 9. Family null (shifted TICK):
 
 ## 4. PART 2 exact-engine confirmation (separate hook module tk_hooks.py, identity first)
 
-Not started.
+Identity gate (hook module at identity before any candidate): TL3_TK_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_TK_ID2 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
+
+Candidates 39; jobs outstanding 234; tier-1 L6M complete 0; recent-gate survivors 0; advanced to older+placebo+delay 0.
+
+Deltas are cell minus JN05W2 on the same months (exact engine, net of fees $4.84 RT, measured fills); maxDD cut % > 0 = smaller drawdown; ww = worst week; b5 = sum of the reference best-5 weeks (ref vs cell); wtl = reference winning weeks turned losing; stp = full stops per week.
+
+| cell | what | window | d mean $/wk | maxDD cut % | maxDD cell/ref | worst wk cell/ref | b5 cell/ref | wtl | stops/wk cell/ref | n cell |
+|---|---|---|---|---|---|---|---|---|---|---|
+
+### Placebos (TICK shifted 11/23/37 trading days) and delays (1/5/15 min) of advanced cells, L6M and HOLD windows
+
+| cell | variant | window | d mean | maxDD cut % | ww cell/ref |
+|---|---|---|---|---|---|
+
 
 ## 5. Status
 

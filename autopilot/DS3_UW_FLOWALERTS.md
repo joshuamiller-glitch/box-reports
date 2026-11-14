@@ -1,8 +1,8 @@
 # DS3_UW_FLOWALERTS - UW flow alerts as entry triggers and filters (W-FA)
 
-**VERDICT: weak/null-level so far, no PASS - first-order streams: 253944 sign-gate passes vs 242939 in the shifted-event placebos (ratio 1.05); exact-engine runs still queued (shared admission). Flow-alert triggers and filters are NOT a lead unless the table in section 4b/5 shows a set that beats its placebo in BOTH windows.**
+**VERDICT: weak/null-level so far, no PASS - first-order streams: 292057 sign-gate passes vs 276802 in the shifted-event placebos (ratio 1.06); exact engine: 5 of 22 finished sets improve both max DD and mean in L6M and in the older window; best TL3_UW_FF1: L6M +3380 $/wk, maxDD -10448; older +1147 $/wk, maxDD +729. Flow-alert triggers and filters are NOT a lead unless the table in section 4b/5 shows a set that beats its placebo in BOTH windows.**
 
-Updated 2026-11-14T01:56Z by fa_cycle.sh (loop, every 3 h). Research/shadow only. No PASS claims. Prereg: autopilot/FLOWALERTS_PREREG.md (sha in DECISIONS.md).
+Updated 2026-11-14T02:37Z by fa_cycle.sh (loop, every 3 h). Research/shadow only. No PASS claims. Prereg: autopilot/FLOWALERTS_PREREG.md (sha in DECISIONS.md).
 
 ## 1. How deep is the alert history (honest)
 
@@ -49,11 +49,12 @@ Windows: L6M = 2026-05..10; OLDER = 2025-11..2026-04. Plain strength is judged a
 | london | BOOK | GOOGL prem>=50k any any anyside dte=6+ both carry q0.75 follow (Emkt_Sa2_T45_X60) | 394.0 | -2557.0 | 652.0 | -2165.0 | sign gate passed (strict); exact placebos still running | TL3_UW_FA3 |
 | pre | BOOK | QQQ prem>=50k any openP aggr dte=6+ both carry q0.50 fade (Eb1_Sa2_Ta2_X60) | 363.0 | -1009.0 | 161.0 | -2061.0 | sign gate passed (strict); exact placebos still running | TL3_UW_FA4 |
 | asia | BOOK | QQQ prem>=1000k nonsweep any aggr dte=any put carry q0.50 fade (Emkt_S90_Ta1_XSE) | 36.0 | -2031.0 | -690.0 | 3455.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FA5 |
-| nypm | BOOK | MEGA7 prem>=50k any openP aggr dte=1-5 call burst3 follow (Emkt_S45_Tnone_X120) | 205.0 | -1034.0 | nan | nan | pending (months running) | TL3_UW_FA6 |
+| nypm | BOOK | MEGA7 prem>=50k any openP aggr dte=1-5 call burst3 follow (Emkt_S45_Tnone_X120) | 205.0 | -1034.0 | -97.0 | -468.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FA6 |
 | all | FILTER | TSLA/AGG/1440 skipOpp thr 1.73e+07 skip | 3380.0 | -10448.0 | 1147.0 | 729.0 | sign gate passed (tolerant only (older DD slightly worse)); exact placebos still running | TL3_UW_FF1 |
-| asia | FILTER | MSFT/D15/1440 skipAl thr 4.25e+05 skip | -1812.0 | -3168.0 | nan | nan | pending (months running) | TL3_UW_FF2 |
+| asia | FILTER | MSFT/D15/1440 skipAl thr 4.25e+05 skip | -1812.0 | -3168.0 | -305.0 | -15545.0 | NO: fails the tolerant DD-first gate (maxDD no worse than +2% and mean up) in L6M and/or older window | TL3_UW_FF2 |
 | london | FILTER | SPY/D15/1440 skipOpp thr 1.5e+06 skip | -548.0 | 961.0 | nan | nan | pending (months running) | TL3_UW_FF3 |
 | all | FILTER | AAPL/SWP/1440 skipAct thr 4.03e+06 skip | 199.0 | -9076.0 | 115.0 | 0.0 | sign gate passed (strict); exact placebos still running | TL3_UW_FF4 |
+| all | FILTER | TSLA/AGG/1440 skipOpp thr 1.73e+07 half | nan | nan | nan | nan | pending (months running) | TL3_UW_FF5 |
 
 ## 3. First-order trigger screen (alerts, all groups), session by session
 Event = first qualifying alert (or n-th within 10 min) per label day x session x direction, entry at the open of the first 1-min bar >= created_at+120 s, exit at the close of minute +h (1/5/15/60 min; carry streams also SE = session end) truncated at session end. Net $ per contract per event after measured NQ cost (0.23 pt entry + 0.23 pt exit + $4.84; ES 1 tick/side assumed). Windows: L3M L6M OLDER(before L6M start) HOLD PREUW; window ends at the last 1-min price day (2026-11-10). LEAD gate = net>0 and excess over the every-minute clock drift >0 in L3M, L6M and OLDER with n_L6M>=15, n_OLDER>=15, n_L3M>=5. "gates" below counts cells passing that SIGN gate; the same screen on events shifted 11/23/37 weekdays gives the placebo columns (mean of 3 draws for count, max of 3 for best S; S = min of the three window nets). A family is only interesting if gates and best S clearly beat the placebo columns.
@@ -263,24 +264,10 @@ Harness $/wk (standalone book, equal-$ risk lots) - the live gates cut standalon
 ### 4b. Exact engine (JN05W2 base, all layers ON), windows L3M (2026-08..10), L6M (2026-05..10), OLDER = months 2025-11..2026-04 (the HOLD year minus L6M), PREUW = 2024-10..2025-06; a row appears only when ALL months of the window are done; stack vs reference on the same months: $/wk, max DD, worst week, full stops/wk, best-5 weeks kept, winning weeks turned losing
 | set | desc | window | weeks | ref_mean | inj_mean | d_mean | ref_dd | inj_dd | ref_worst | inj_worst | ref_stops | inj_stops | best5_kept | w2l | uw1_mean | uw1_n |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| TL3_UW_FF1P11 | nan | L3M | 11 | 16819.4 | 13843.7 | -2975.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.1 | 0.8 | 1 | nan | nan |
-| TL3_UW_FF1P11 | nan | L6M | 25 | 23240.9 | 21456.5 | -1784.3 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.2 | 1.0 | 1 | nan | nan |
-| TL3_UW_FF1P23 | nan | L3M | 11 | 16819.4 | 14903.0 | -1916.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.1 | 0.9 | 0 | nan | nan |
-| TL3_UW_FF1P37 | nan | L3M | 11 | 16819.4 | 17689.1 | 869.7 | 36370.5 | 41903.2 | -36370.5 | -31350.5 | 11.3 | 11.1 | 1.1 | 0 | nan | nan |
-| TL3_UW_FF1P37 | nan | L6M | 25 | 23240.9 | 21093.6 | -2147.3 | 36370.5 | 41903.2 | -36370.5 | -31350.5 | 10.5 | 10.1 | 0.8 | 0 | nan | nan |
-| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | L3M | 11 | 16819.4 | 20433.8 | 3614.4 | 36370.5 | 25922.6 | -36370.5 | -25922.6 | 11.3 | 10.9 | 1.0 | 0 | nan | nan |
-| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | L6M | 25 | 23240.9 | 26621.3 | 3380.5 | 36370.5 | 25922.6 | -36370.5 | -25922.6 | 10.5 | 10.5 | 1.0 | 0 | nan | nan |
-| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | OLDER | 26 | 11209.4 | 12356.7 | 1147.3 | 63185.1 | 63913.9 | -55145.4 | -63913.9 | 10.3 | 10.0 | 1.0 | 0 | nan | nan |
-| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | L3M | 11 | 16819.4 | 17162.9 | 343.5 | 36370.5 | 29825.7 | -36370.5 | -15870.2 | 11.3 | 9.9 | 0.9 | 2 | nan | nan |
-| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | L6M | 25 | 23240.9 | 21428.4 | -1812.5 | 36370.5 | 33202.2 | -36370.5 | -33202.2 | 10.5 | 9.5 | 0.8 | 2 | nan | nan |
-| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | L3M | 11 | 16819.4 | 17268.5 | 449.0 | 36370.5 | 37331.9 | -36370.5 | -37331.9 | 11.3 | 11.3 | 1.1 | 1 | nan | nan |
-| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | L6M | 25 | 23240.9 | 22693.1 | -547.7 | 36370.5 | 37331.9 | -36370.5 | -37331.9 | 10.5 | 10.2 | 1.0 | 1 | nan | nan |
-| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | L3M | 11 | 16819.4 | 15987.5 | -832.0 | 36370.5 | 27294.8 | -36370.5 | -22801.4 | 11.3 | 10.3 | 0.9 | 0 | nan | nan |
-| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | L6M | 25 | 23240.9 | 23439.7 | 198.8 | 36370.5 | 27294.8 | -36370.5 | -25312.6 | 10.5 | 9.9 | 1.0 | 0 | nan | nan |
-| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | OLDER | 26 | 11209.4 | 11324.5 | 115.1 | 63185.1 | 63185.1 | -55145.4 | -51923.0 | 10.3 | 9.2 | 0.9 | 1 | nan | nan |
 | TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | L3M | 11 | 16819.4 | 16937.3 | 117.8 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.4 | 1.0 | 0 | 84.2 | 6.0 |
 | TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | L6M | 25 | 23240.9 | 23633.3 | 392.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.7 | 1.0 | 0 | 417.4 | 13.0 |
 | TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | OLDER | 26 | 11209.4 | 11238.5 | 29.1 | 63185.1 | 63185.1 | -55145.4 | -55145.4 | 10.3 | 10.3 | 1.0 | 0 | 49.6 | 4.0 |
+| TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | PREUW | 40 | 11569.7 | 11804.7 | 235.0 | 76186.1 | 76186.1 | -52547.4 | -52547.4 | 9.1 | 9.1 | 1.0 | 0 | 212.4 | 6.0 |
 | TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | L3M | 11 | 16819.4 | 16679.2 | -140.2 | 36370.5 | 35467.9 | -36370.5 | -35467.9 | 11.3 | 11.8 | 1.0 | 0 | -65.2 | 10.0 |
 | TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | L6M | 25 | 23240.9 | 23222.7 | -18.2 | 36370.5 | 35467.9 | -36370.5 | -35467.9 | 10.5 | 10.8 | 1.0 | 0 | 14.8 | 14.0 |
 | TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | OLDER | 26 | 11209.4 | 11374.5 | 165.1 | 63185.1 | 67561.6 | -55145.4 | -55145.4 | 10.3 | 10.5 | 1.0 | 0 | 93.7 | 11.0 |
@@ -295,27 +282,105 @@ Harness $/wk (standalone book, equal-$ risk lots) - the live gates cut standalon
 | TL3_UW_FA5 | BOOK NQ_asia_QQQ_fade_0 Emkt_S90_Ta1_XSE | OLDER | 26 | 11209.4 | 10518.9 | -690.5 | 63185.1 | 66640.1 | -55145.4 | -55378.0 | 10.3 | 10.6 | 0.9 | 0 | -806.3 | 42.0 |
 | TL3_UW_FA6 | BOOK NQ_nypm_MEGA7_follow_8 Emkt_S45_Tnone_X120 | L3M | 11 | 16819.4 | 16964.0 | 144.6 | 36370.5 | 35336.7 | -36370.5 | -35336.7 | 11.3 | 11.6 | 1.0 | 0 | 144.6 | 8.0 |
 | TL3_UW_FA6 | BOOK NQ_nypm_MEGA7_follow_8 Emkt_S45_Tnone_X120 | L6M | 25 | 23240.9 | 23445.7 | 204.8 | 36370.5 | 35336.7 | -36370.5 | -35336.7 | 10.5 | 10.8 | 1.0 | 0 | 204.8 | 17.0 |
+| TL3_UW_FA6 | BOOK NQ_nypm_MEGA7_follow_8 Emkt_S45_Tnone_X120 | OLDER | 26 | 11209.4 | 11112.5 | -96.9 | 63185.1 | 62717.5 | -55145.4 | -55145.4 | 10.3 | 10.5 | 1.0 | 0 | -96.9 | 7.0 |
+| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | L3M | 11 | 16819.4 | 20433.8 | 3614.4 | 36370.5 | 25922.6 | -36370.5 | -25922.6 | 11.3 | 10.9 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | L6M | 25 | 23240.9 | 26621.3 | 3380.5 | 36370.5 | 25922.6 | -36370.5 | -25922.6 | 10.5 | 10.5 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | OLDER | 26 | 11209.4 | 12356.7 | 1147.3 | 63185.1 | 63913.9 | -55145.4 | -63913.9 | 10.3 | 10.0 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | L3M | 11 | 16819.4 | 17162.9 | 343.5 | 36370.5 | 29825.7 | -36370.5 | -15870.2 | 11.3 | 9.9 | 0.9 | 2 | nan | nan |
+| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | L6M | 25 | 23240.9 | 21428.4 | -1812.5 | 36370.5 | 33202.2 | -36370.5 | -33202.2 | 10.5 | 9.5 | 0.8 | 2 | nan | nan |
+| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | OLDER | 26 | 11209.4 | 10904.6 | -304.8 | 63185.1 | 47639.8 | -55145.4 | -46481.5 | 10.3 | 9.7 | 1.0 | 2 | nan | nan |
+| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | L3M | 11 | 16819.4 | 17268.5 | 449.0 | 36370.5 | 37331.9 | -36370.5 | -37331.9 | 11.3 | 11.3 | 1.1 | 1 | nan | nan |
+| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | L6M | 25 | 23240.9 | 22693.1 | -547.7 | 36370.5 | 37331.9 | -36370.5 | -37331.9 | 10.5 | 10.2 | 1.0 | 1 | nan | nan |
+| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | L3M | 11 | 16819.4 | 15987.5 | -832.0 | 36370.5 | 27294.8 | -36370.5 | -22801.4 | 11.3 | 10.3 | 0.9 | 0 | nan | nan |
+| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | L6M | 25 | 23240.9 | 23439.7 | 198.8 | 36370.5 | 27294.8 | -36370.5 | -25312.6 | 10.5 | 9.9 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | OLDER | 26 | 11209.4 | 11324.5 | 115.1 | 63185.1 | 63185.1 | -55145.4 | -51923.0 | 10.3 | 9.2 | 0.9 | 1 | nan | nan |
+| TL3_UW_FA1P11 | nan | L3M | 11 | 16819.4 | 16711.0 | -108.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.4 | 1.0 | 0 | -108.4 | 1.0 |
+| TL3_UW_FA1P11 | nan | L6M | 25 | 23240.9 | 23458.5 | 217.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | 217.6 | 8.0 |
+| TL3_UW_FA1P11 | nan | OLDER | 26 | 11209.4 | 11157.3 | -52.1 | 63185.1 | 63185.1 | -55145.4 | -55145.4 | 10.3 | 10.4 | 1.0 | 0 | -52.1 | 6.0 |
+| TL3_UW_FA1P23 | nan | L3M | 11 | 16819.4 | 16954.2 | 134.8 | 36370.5 | 33842.9 | -36370.5 | -33842.9 | 11.3 | 11.4 | 1.0 | 0 | 134.8 | 3.0 |
+| TL3_UW_FA1P23 | nan | L6M | 25 | 23240.9 | 23175.4 | -65.5 | 36370.5 | 33842.9 | -36370.5 | -33842.9 | 10.5 | 10.7 | 1.0 | 0 | -65.5 | 9.0 |
+| TL3_UW_FA1P37 | nan | L3M | 11 | 16819.4 | 16597.9 | -221.5 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.6 | 1.0 | 0 | -221.5 | 7.0 |
+| TL3_UW_FA1P37 | nan | L6M | 25 | 23240.9 | 23100.5 | -140.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.7 | 1.0 | 0 | -140.4 | 8.0 |
+| TL3_UW_FA2P11 | nan | L3M | 11 | 16819.4 | 17559.2 | 739.8 | 36370.5 | 35467.9 | -36370.5 | -35467.9 | 11.3 | 11.6 | 1.0 | 0 | 271.6 | 9.0 |
+| TL3_UW_FA2P11 | nan | L6M | 25 | 23240.9 | 23108.4 | -132.4 | 36370.5 | 35467.9 | -36370.5 | -35467.9 | 10.5 | 11.0 | 1.0 | 0 | -66.2 | 17.0 |
+| TL3_UW_FA2P11 | nan | OLDER | 26 | 11209.4 | 10889.4 | -319.9 | 63185.1 | 70128.0 | -55145.4 | -56347.8 | 10.3 | 10.7 | 1.0 | 0 | -108.4 | 15.0 |
+| TL3_UW_FA2P23 | nan | L3M | 11 | 16819.4 | 16949.4 | 130.0 | 36370.5 | 35467.9 | -36370.5 | -35467.9 | 11.3 | 11.4 | 1.0 | 0 | -52.2 | 4.0 |
+| TL3_UW_FA2P23 | nan | L6M | 25 | 23240.9 | 23214.0 | -26.8 | 36370.5 | 35467.9 | -36370.5 | -35467.9 | 10.5 | 10.7 | 1.0 | 0 | -107.0 | 7.0 |
+| TL3_UW_FA2P23 | nan | OLDER | 26 | 11209.4 | 11172.1 | -37.3 | 63185.1 | 63185.1 | -55145.4 | -55145.4 | 10.3 | 10.4 | 0.9 | 0 | 280.3 | 15.0 |
+| TL3_UW_FA2P37 | nan | L3M | 11 | 16819.4 | 16861.8 | 42.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 42.4 | 2.0 |
+| TL3_UW_FA2P37 | nan | L6M | 25 | 23240.9 | 23172.2 | -68.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.6 | 1.0 | 0 | -20.7 | 6.0 |
+| TL3_UW_FA3P11 | nan | L3M | 11 | 16819.4 | 16993.4 | 174.0 | 36370.5 | 31201.1 | -36370.5 | -29260.5 | 11.3 | 12.1 | 1.0 | 0 | -754.3 | 16.0 |
+| TL3_UW_FA3P11 | nan | L6M | 25 | 23240.9 | 23587.5 | 346.6 | 36370.5 | 31201.1 | -36370.5 | -29260.5 | 10.5 | 11.0 | 1.0 | 0 | -215.6 | 28.0 |
+| TL3_UW_FA3P23 | nan | L3M | 11 | 16819.4 | 16762.8 | -56.7 | 36370.5 | 35471.7 | -36370.5 | -35471.7 | 11.3 | 11.6 | 1.0 | 0 | 225.0 | 9.0 |
+| TL3_UW_FA3P23 | nan | L6M | 25 | 23240.9 | 23440.1 | 199.2 | 36370.5 | 35471.7 | -36370.5 | -35471.7 | 10.5 | 10.8 | 1.0 | 0 | 287.4 | 23.0 |
+| TL3_UW_FA3P23 | nan | OLDER | 26 | 11209.4 | 11132.8 | -76.6 | 63185.1 | 63185.1 | -55145.4 | -55145.4 | 10.3 | 10.6 | 1.0 | 0 | -18.1 | 26.0 |
+| TL3_UW_FA3P37 | nan | L3M | 11 | 16819.4 | 16979.5 | 160.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | 160.0 | 3.0 |
+| TL3_UW_FA3P37 | nan | L6M | 25 | 23240.9 | 23372.5 | 131.6 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.8 | 1.0 | 0 | -126.2 | 24.0 |
+| TL3_UW_FA4P11 | nan | L3M | 11 | 16819.4 | 17094.3 | 274.9 | 36370.5 | 33486.0 | -36370.5 | -33486.0 | 11.3 | 11.4 | 1.0 | 0 | 154.7 | 6.0 |
+| TL3_UW_FA4P11 | nan | L6M | 25 | 23240.9 | 23307.3 | 66.5 | 36370.5 | 33486.0 | -36370.5 | -33486.0 | 10.5 | 10.8 | 1.0 | 0 | -22.1 | 13.0 |
+| TL3_UW_FA4P11 | nan | OLDER | 26 | 11209.4 | 11049.9 | -159.5 | 63185.1 | 63291.3 | -55145.4 | -55145.4 | 10.3 | 10.6 | 1.0 | 0 | -204.3 | 14.0 |
+| TL3_UW_FA4P23 | nan | L3M | 11 | 16819.4 | 16731.0 | -88.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.3 | 1.0 | 0 | -88.4 | 2.0 |
+| TL3_UW_FA4P23 | nan | L6M | 25 | 23240.9 | 23126.9 | -114.0 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.7 | 1.0 | 0 | -114.0 | 11.0 |
+| TL3_UW_FA4P23 | nan | OLDER | 26 | 11209.4 | 11600.2 | 390.9 | 63185.1 | 63185.1 | -55145.4 | -53388.1 | 10.3 | 10.4 | 1.0 | 0 | 233.1 | 19.0 |
+| TL3_UW_FA4P37 | nan | L3M | 11 | 16819.4 | 16915.4 | 95.9 | 36370.5 | 35361.7 | -36370.5 | -35361.7 | 11.3 | 11.4 | 1.0 | 0 | 95.9 | 4.0 |
+| TL3_UW_FF1P11 | nan | L3M | 11 | 16819.4 | 13843.7 | -2975.7 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.1 | 0.8 | 1 | nan | nan |
+| TL3_UW_FF1P11 | nan | L6M | 25 | 23240.9 | 21456.5 | -1784.3 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.2 | 1.0 | 1 | nan | nan |
+| TL3_UW_FF1P11 | nan | OLDER | 26 | 11209.4 | 11258.4 | 49.0 | 63185.1 | 63185.1 | -55145.4 | -55145.4 | 10.3 | 9.8 | 1.0 | 1 | nan | nan |
+| TL3_UW_FF1P23 | nan | L3M | 11 | 16819.4 | 14903.0 | -1916.4 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 11.3 | 11.1 | 0.9 | 0 | nan | nan |
+| TL3_UW_FF1P23 | nan | L6M | 25 | 23240.9 | 22815.7 | -425.2 | 36370.5 | 36370.5 | -36370.5 | -36370.5 | 10.5 | 10.4 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF1P37 | nan | L3M | 11 | 16819.4 | 17689.1 | 869.7 | 36370.5 | 41903.2 | -36370.5 | -31350.5 | 11.3 | 11.1 | 1.1 | 0 | nan | nan |
+| TL3_UW_FF1P37 | nan | L6M | 25 | 23240.9 | 21093.6 | -2147.3 | 36370.5 | 41903.2 | -36370.5 | -31350.5 | 10.5 | 10.1 | 0.8 | 0 | nan | nan |
+| TL3_UW_FF2P11 | nan | L3M | 11 | 16819.4 | 2214.5 | -14605.0 | 36370.5 | 89873.4 | -36370.5 | -60641.2 | 11.3 | 9.4 | 0.8 | 2 | nan | nan |
+| TL3_UW_FF2P11 | nan | L6M | 25 | 23240.9 | 12101.7 | -11139.1 | 36370.5 | 89873.4 | -36370.5 | -60641.2 | 10.5 | 8.9 | 0.9 | 4 | nan | nan |
+| TL3_UW_FF2P11 | nan | OLDER | 26 | 11209.4 | 4318.4 | -6891.0 | 63185.1 | 76013.0 | -55145.4 | -59584.5 | 10.3 | 9.5 | 0.4 | 2 | nan | nan |
+| TL3_UW_FF2P23 | nan | L3M | 11 | 16819.4 | 9068.0 | -7751.4 | 36370.5 | 50286.4 | -36370.5 | -48418.8 | 11.3 | 10.7 | 0.6 | 0 | nan | nan |
+| TL3_UW_FF2P23 | nan | L6M | 25 | 23240.9 | 13682.3 | -9558.6 | 36370.5 | 57120.4 | -36370.5 | -49206.6 | 10.5 | 9.3 | 0.7 | 2 | nan | nan |
+| TL3_UW_FF2P23 | nan | OLDER | 26 | 11209.4 | 8387.1 | -2822.3 | 63185.1 | 54692.9 | -55145.4 | -33105.5 | 10.3 | 9.7 | 0.6 | 3 | nan | nan |
+| TL3_UW_FF2P37 | nan | L3M | 11 | 16819.4 | 9597.0 | -7222.4 | 36370.5 | 50409.0 | -36370.5 | -42312.3 | 11.3 | 10.6 | 0.8 | 1 | nan | nan |
+| TL3_UW_FF2P37 | nan | L6M | 25 | 23240.9 | 12140.0 | -11100.8 | 36370.5 | 50409.0 | -36370.5 | -42312.3 | 10.5 | 9.4 | 0.7 | 5 | nan | nan |
+| TL3_UW_FF2P37 | nan | OLDER | 26 | 11209.4 | 9501.3 | -1708.1 | 63185.1 | 120749.1 | -55145.4 | -47239.9 | 10.3 | 9.3 | 0.8 | 4 | nan | nan |
+| TL3_UW_FF3P11 | nan | L3M | 11 | 16819.4 | 18571.3 | 1751.8 | 36370.5 | 33482.1 | -36370.5 | -33482.1 | 11.3 | 10.8 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF3P11 | nan | L6M | 25 | 23240.9 | 21974.1 | -1266.8 | 36370.5 | 45878.0 | -36370.5 | -33482.1 | 10.5 | 10.3 | 0.9 | 1 | nan | nan |
+| TL3_UW_FF3P23 | nan | L3M | 11 | 16819.4 | 14889.6 | -1929.8 | 36370.5 | 42216.6 | -36370.5 | -42216.6 | 11.3 | 10.7 | 0.9 | 0 | nan | nan |
+| TL3_UW_FF3P23 | nan | L6M | 25 | 23240.9 | 21192.3 | -2048.6 | 36370.5 | 42216.6 | -36370.5 | -42216.6 | 10.5 | 10.1 | 1.0 | 1 | nan | nan |
+| TL3_UW_FF3P37 | nan | L3M | 11 | 16819.4 | 14614.6 | -2204.8 | 36370.5 | 39886.5 | -36370.5 | -39886.5 | 11.3 | 11.0 | 0.9 | 0 | nan | nan |
+| TL3_UW_FF3P37 | nan | L6M | 25 | 23240.9 | 21794.9 | -1445.9 | 36370.5 | 39886.5 | -36370.5 | -39886.5 | 10.5 | 10.0 | 0.9 | 0 | nan | nan |
+| TL3_UW_FF3P37 | nan | OLDER | 26 | 11209.4 | 11193.9 | -15.5 | 63185.1 | 89636.5 | -55145.4 | -73812.7 | 10.3 | 10.2 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF4P11 | nan | L3M | 11 | 16819.4 | 12533.9 | -4285.6 | 36370.5 | 28539.8 | -36370.5 | -26697.7 | 11.3 | 10.8 | 0.7 | 0 | nan | nan |
+| TL3_UW_FF4P11 | nan | L6M | 25 | 23240.9 | 20781.6 | -2459.3 | 36370.5 | 28539.8 | -36370.5 | -26697.7 | 10.5 | 10.2 | 1.0 | 0 | nan | nan |
+| TL3_UW_FF4P11 | nan | OLDER | 26 | 11209.4 | 11342.1 | 132.7 | 63185.1 | 55436.0 | -55145.4 | -55145.4 | 10.3 | 9.5 | 1.0 | 1 | nan | nan |
+| TL3_UW_FF4P23 | nan | L3M | 11 | 16819.4 | 16186.9 | -632.5 | 36370.5 | 43887.3 | -36370.5 | -36370.5 | 11.3 | 9.6 | 1.1 | 1 | nan | nan |
+| TL3_UW_FF4P23 | nan | L6M | 25 | 23240.9 | 21690.6 | -1550.2 | 36370.5 | 43887.3 | -36370.5 | -36370.5 | 10.5 | 9.5 | 1.0 | 1 | nan | nan |
+| TL3_UW_FF4P37 | nan | L3M | 11 | 16819.4 | 14467.9 | -2351.6 | 36370.5 | 45360.4 | -36370.5 | -45360.4 | 11.3 | 10.4 | 0.9 | 0 | nan | nan |
+| TL3_UW_FF4P37 | nan | L6M | 25 | 23240.9 | 19459.7 | -3781.2 | 36370.5 | 45360.4 | -36370.5 | -45360.4 | 10.5 | 9.7 | 0.9 | 0 | nan | nan |
+| TL3_UW_FF4P37 | nan | OLDER | 26 | 11209.4 | 10648.0 | -561.4 | 63185.1 | 72832.7 | -55145.4 | -50153.8 | 10.3 | 9.4 | 1.0 | 2 | nan | nan |
+| TL3_UW_FN11 | nan | L3M | 11 | 16819.4 | 14973.4 | -1846.1 | 36370.5 | 33482.1 | -36370.5 | -33482.1 | 11.3 | 10.9 | 0.9 | 0 | nan | nan |
+| TL3_UW_FN11 | nan | L6M | 25 | 23240.9 | 20979.9 | -2261.0 | 36370.5 | 33482.1 | -36370.5 | -33482.1 | 10.5 | 10.0 | 0.8 | 0 | nan | nan |
+| TL3_UW_FN23 | nan | L3M | 11 | 16819.4 | 10230.4 | -6589.1 | 36370.5 | 40855.0 | -36370.5 | -30472.4 | 11.3 | 10.9 | 0.6 | 1 | nan | nan |
+| TL3_UW_FN23 | nan | L6M | 25 | 23240.9 | 21370.1 | -1870.8 | 36370.5 | 40855.0 | -36370.5 | -30472.4 | 10.5 | 9.9 | 0.9 | 1 | nan | nan |
+| TL3_UW_FN37 | nan | L3M | 11 | 16819.4 | 17558.8 | 739.4 | 36370.5 | 23462.3 | -36370.5 | -23462.3 | 11.3 | 10.4 | 0.9 | 0 | nan | nan |
+| TL3_UW_FN37 | nan | L6M | 25 | 23240.9 | 21460.6 | -1780.3 | 36370.5 | 23462.3 | -36370.5 | -23462.3 | 10.5 | 10.1 | 1.0 | 1 | nan | nan |
 
 ### 4c. Exact placebo: same book/filter with events (features) shifted 11 / 23 / 37 weekdays, run through the same exact engine (delta vs JN05W2 on the same months, $/wk and max DD $)
 
-| set | desc | L3M_real dMean/dDD | L6M_real dMean/dDD | OLDER_real dMean/dDD | beats all 3 placebos in L6M and OLDER (DD and mean) | L3M_placebo dMean/dDD | L6M_placebo dMean/dDD |
-|---|---|---|---|---|---|---|---|
-| TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | +118 / -0 | +392 / +0 | +29 / +0 | pending | nan | nan |
-| TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | -140 / -903 | -18 / -903 | +165 / +4377 | pending | nan | nan |
-| TL3_UW_FA3 | BOOK NQ_london_GOOGL_follow_3 Emkt_Sa2_T45_X60 | +830 / -2557 | +394 / -2557 | +652 / -2165 | pending | nan | nan |
-| TL3_UW_FA4 | BOOK NQ_pre_QQQ_fade_4 Eb1_Sa2_Ta2_X60 | +439 / -1009 | +363 / -1009 | +161 / -2061 | pending | nan | nan |
-| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | +3614 / -10448 | +3380 / -10448 | +1147 / +729 | no | -2976 / +0 ; -1916 / -0 ; +870 / +5533 | -1784 / +0 ; -2147 / +5533 |
-| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | +343 / -6545 | -1812 / -3168 | nan | pending | nan | nan |
-| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | +449 / +961 | -548 / +961 | nan | pending | nan | nan |
-| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | -832 / -9076 | +199 / -9076 | +115 / +0 | pending | nan | nan |
+| set | desc | L3M_real dMean/dDD | L3M_placebo dMean/dDD | L6M_real dMean/dDD | L6M_placebo dMean/dDD | OLDER_real dMean/dDD | OLDER_placebo dMean/dDD | PREUW_real dMean/dDD | beats all 3 placebos in L6M and OLDER (DD and mean) |
+|---|---|---|---|---|---|---|---|---|---|
+| TL3_UW_FA1 | BOOK NQ_nyam_SPX_fade_6 Eb1_S30_Tnone_X30 | +118 / -0 | -108 / +0 ; +135 / -2528 ; -222 / +0 | +392 / +0 | +218 / +0 ; -65 / -2528 ; -140 / +0 | +29 / +0 | -52 / +0 | +235 / +0 | no |
+| TL3_UW_FA2 | BOOK NQ_asia_IWM_follow_1 Eb3_S30_Tnone_XSE | -140 / -903 | +740 / -903 ; +130 / -903 ; +42 / +0 | -18 / -903 | -132 / -903 ; -27 / -903 ; -69 / +0 | +165 / +4377 | -320 / +6943 ; -37 / +0 | nan | no |
+| TL3_UW_FA3 | BOOK NQ_london_GOOGL_follow_3 Emkt_Sa2_T45_X60 | +830 / -2557 | +174 / -5169 ; -57 / -899 ; +160 / +0 | +394 / -2557 | +347 / -5169 ; +199 / -899 ; +132 / +0 | +652 / -2165 | -77 / +0 | nan | no |
+| TL3_UW_FA4 | BOOK NQ_pre_QQQ_fade_4 Eb1_Sa2_Ta2_X60 | +439 / -1009 | +275 / -2884 ; -88 / +0 ; +96 / -1009 | +363 / -1009 | +66 / -2884 ; -114 / +0 | +161 / -2061 | -160 / +106 ; +391 / +0 | nan | no |
+| TL3_UW_FF1 | FILTER {'feat': 'TSLA/AGG/1440', 'rule': 'skipOpp', 'thr': 17258967.3, 'act': 'skip', 'seg': 'all'} | +3614 / -10448 | -2976 / +0 ; -1916 / -0 ; +870 / +5533 | +3380 / -10448 | -1784 / +0 ; -425 / +0 ; -2147 / +5533 | +1147 / +729 | +49 / +0 | nan | no |
+| TL3_UW_FF2 | FILTER {'feat': 'MSFT/D15/1440', 'rule': 'skipAl', 'thr': 425092.0, 'act': 'skip', 'seg': 'asia'} | +343 / -6545 | -14605 / +53503 ; -7751 / +13916 ; -7222 / +14039 | -1812 / -3168 | -11139 / +53503 ; -9559 / +20750 ; -11101 / +14039 | -305 / -15545 | -6891 / +12828 ; -2822 / -8492 ; -1708 / +57564 | nan | no |
+| TL3_UW_FF3 | FILTER {'feat': 'SPY/D15/1440', 'rule': 'skipOpp', 'thr': 1504430.0, 'act': 'skip', 'seg': 'london'} | +449 / +961 | +1752 / -2888 ; -1930 / +5846 ; -2205 / +3516 | -548 / +961 | -1267 / +9508 ; -2049 / +5846 ; -1446 / +3516 | nan | nan | nan | no |
+| TL3_UW_FF4 | FILTER {'feat': 'AAPL/SWP/1440', 'rule': 'skipAct', 'thr': 4034864.5, 'act': 'skip', 'seg': 'all'} | -832 / -9076 | -4286 / -7831 ; -633 / +7517 ; -2352 / +8990 | +199 / -9076 | -2459 / -7831 ; -1550 / +7517 ; -3781 / +8990 | +115 / +0 | +133 / -7749 ; -561 / +9648 | nan | no |
 
 ### 4d. FAMILY NULL in the exact engine for the filter search: the best rule picked by the same procedure from the 24k-rule family evaluated with features shifted 11/23/37 weekdays (so selection bias is included), run through the exact engine. The real best filter (TL3_UW_FF1) must clearly beat these.
 
 | set | shift | rule picked as best of the shifted family | L3M dMean/dDD | L6M dMean/dDD | OLDER dMean/dDD |
 |---|---|---|---|---|---|
-| TL3_UW_FN11 | 11 | NVDA/PUT/1440 skipAl thr 0 skip london (score 0.27, removes 1752) | pending | pending | pending |
-| TL3_UW_FN23 | 23 | AMZN/D15/1440 skipOpp thr 0 skip london (score 0.15, removes 1648) | pending | pending | pending |
-| TL3_UW_FN37 | 37 | AMZN/SWP/1440 skipOpp thr 1.42e+06 skip asia (score 0.34, removes 554) | pending | pending | pending |
+| TL3_UW_FN11 | 11 | NVDA/PUT/1440 skipAl thr 0 skip london (score 0.27, removes 1752) | -1846 / -2888 | -2261 / -2888 | pending |
+| TL3_UW_FN23 | 23 | AMZN/D15/1440 skipOpp thr 0 skip london (score 0.15, removes 1648) | -6589 / +4484 | -1871 / +4484 | pending |
+| TL3_UW_FN37 | 37 | AMZN/SWP/1440 skipOpp thr 1.42e+06 skip asia (score 0.34, removes 554) | +739 / -12908 | -1780 / -12908 | pending |
 
 
 ## 5. Filters on the live books (JN05W2 trades, first-order trade removal; exact-engine skip/size hook runs follow)
