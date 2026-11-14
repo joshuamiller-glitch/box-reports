@@ -1,6 +1,6 @@
 # DS3_SMART_C — T-SMART items B4 (MNQ granularity), C1 (dead slots), C2 (risk budget reallocation), C3 (add to winners), C4 (trade count), W-SM5
 
-Generated 2026-11-14 17:18Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S + FLAT45K) and JN05W2J (same five on JN04RM), exact 43 months. Exact engine, one set per job, shared-memory cache, admission tag SMARTC. Shadow only, no PASS claim. Prereg autopilot/SMART_C_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-14 17:49Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S + FLAT45K) and JN05W2J (same five on JN04RM), exact 43 months. Exact engine, one set per job, shared-memory cache, admission tag SMARTC. Shadow only, no PASS claim. Prereg autopilot/SMART_C_PREREG.md (sha in DECISIONS.md).
 
 **CAVEAT on every number here: the engine P7 state cut fires in the engine but did not fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md); the bases and these cells inherit the engine cut.**
 
@@ -11,7 +11,7 @@ Generated 2026-11-14 17:18Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S
 | set | months | ref | 5 best wks kept | winning wks turned losing | L6M cut % | L6M d mean/wk (all wks) | HOLD cut % | HOLD d mean/wk | PRE cut / d mean | X' cut / d mean | WF cut / beat |
 |--|--|--|--|--|--|--|--|--|--|--|--|
 | SC_C1_half | 12 | JN05W2 | 93% ($295k of $316k) | 0 of 20 | 9.7 | -2341 | 10.8 | -1997 | - / - | - / - | - |
-| SC_C1_q | 12 | JN05W2 | 89% ($280k of $316k) | 2 of 20 | 9.7 | -3898 | 3.6 | -2307 | - / - | - / - | - |
+| SC_C1_q | 12 | JN05W2 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202607/trades.parquet') |||||||||
 | SC_C1_zero | 12 | JN05W2 | 81% ($257k of $316k) | 3 of 20 | -3.3 | -6470 | -36.5 | -6380 | - / - | - / - | - |
 | SC_C1s_lh_x0 | 12 | JN05W2 | 100% ($316k of $316k) | 0 of 20 | 0.0 | -246 | -1.9 | -170 | - / - | - / - | - |
 | SC_C1s_lunch_x0 | 12 | JN05W2 | 98% ($311k of $316k) | 0 of 20 | 0.0 | -1036 | -2.5 | 67 | - / - | - / - | - |
@@ -34,7 +34,6 @@ cut % = maxDD of the stack vs the base set (positive = shallower); d mean = all-
 ## 1. Acceptance (trader test) and behavioural scorecard a-e per set with L6M complete
 
 - **SC_C1_half** acceptance_p7: `ACCEPTANCE P7 SC_C1_half  2026-11-13 07:16Z   (months 7: 202604..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C1_half.txt
-- **SC_C1_q** acceptance_p7: `ACCEPTANCE P7 SC_C1_q  2026-11-13 01:10Z   (months 6: 202605..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C1_q.txt
 - **SC_C1_zero** acceptance_p7: `ACCEPTANCE P7 SC_C1_zero  2026-11-13 03:41Z   (months 6: 202605..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C1_zero.txt
 - **SC_C1s_lh_x0** acceptance_p7: `ACCEPTANCE P7 SC_C1s_lh_x0  2026-11-13 05:44Z   (months 7: 202604..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C1s_lh_x0.txt
 - **SC_C1s_lunch_x0** acceptance_p7: `ACCEPTANCE P7 SC_C1s_lunch_x0  2026-11-13 05:14Z   (months 6: 202605..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C1s_lunch_x0.txt

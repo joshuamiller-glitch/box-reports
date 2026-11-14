@@ -1,6 +1,6 @@
 # DS3_SMART_A1 — T-SMART A1 (cut, then get back in), A6 (first trade sets the session), A7 (never green) — W-SM1
 
-Generated 2026-11-14 17:18 UTC. Exact engine (JN05W2 stack: live panel base + F3 + E1 + C22 + BR3S + FLAT45K), one set per job, shared-memory engine, hook code/th_smart1/sm1_hooks.py (outermost hooklist entry, no engine file touched). Shadow only, no PASS claim. Prereg autopilot/SMART_A1_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-14 17:48 UTC. Exact engine (JN05W2 stack: live panel base + F3 + E1 + C22 + BR3S + FLAT45K), one set per job, shared-memory engine, hook code/th_smart1/sm1_hooks.py (outermost hooklist entry, no engine file touched). Shadow only, no PASS claim. Prereg autopilot/SMART_A1_PREREG.md (sha in DECISIONS.md).
 
 **CAVEAT on every number here:** the engine P7/K7 state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). A1 depends on cuts firing, so it is reported in two worlds: **E world** = engine state cut on (reference = JN05W2, "the cut alone"; re-entry after StateCut/EarlyCut) and **N world** = every state-cut arm off and the F3 context cut removed, FLAT45K kept = flat/full-stop only (reference = SM_A1_NC0; re-entry after Stop/StopJoin/EarlyCut). SM_A1_NC1 = N world with FLAT45K also off = never cutting.
 
@@ -17,9 +17,9 @@ Thresholds: A1 trigger levels/ A7 pts are in points (lot independent); A6 is cou
 | SM_A1N_L0L | SM_A1_NC0 | 43 | 98% ($296k of $302k) | 0 of 19 | -13.8 | 195 | 19.4 | 511 | 0.0 / 19% |
 | SM_A1N_XL | SM_A1_NC0 | 12 | 97% ($293k of $302k) | 0 of 19 | -22.2 | -1040 | -0.5 | -140 | - |
 | SM_A1_ID | JN05W2 | 1 | (running) ||||||
-| SM_A1_NC0 | JN05W2 | 43 | 70% ($223k of $316k) | 2 of 20 | -51.3 | -6993 | -56.9 | -3370 | -30.1 / 15% |
+| SM_A1_NC0 | JN05W2 | 43 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202501/trades.parquet') ||||||
 | SM_A1_T | JN05W2 | 1 | (running) ||||||
-| SM_A6_freshNP7 | JN05W2 | 12 | 81% ($257k of $316k) | 0 of 20 | 15.8 | -4947 | 15.1 | -2246 | - |
+| SM_A6_freshNP7 | JN05W2 | 12 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202607/trades.parquet') ||||||
 | SM_A6_halfALL | JN05W2 | 12 | 99% ($313k of $316k) | 0 of 20 | -5.2 | -1117 | -0.4 | -1188 | - |
 | SM_A6_halfNP7 | JN05W2 | 43 | 107% ($337k of $316k) | 0 of 20 | 11.8 | 383 | 11.6 | 724 | 0.8 / 42% |
 | SM_A6_skipM7 | JN05W2 | 12 | 100% ($316k of $316k) | 0 of 20 | -4.0 | -407 | 15.1 | 550 | - |

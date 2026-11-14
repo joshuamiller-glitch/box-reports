@@ -1,6 +1,6 @@
 # DS3_ENGINE_VS_LIVE - PRIORITY 13 engine vs live (W-EV)
 
-VERDICT (2026-11-14 17:14Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP): ALL 0.645, W45 0.690, W46 0.584. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
+VERDICT (2026-11-14 17:45Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP): ALL 0.645, W45 0.690, W46 0.584. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
 
 Shadow only, no PASS claims, nothing adopted into the shared engine. Prereg autopilot/EV_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_engfix/ (evmatch.py, ev_analyze.py, ev_report.py, ev_run.py, ev_drive.py, ev_panel.py, ev_jnprep.py, build_page.py, page_gen.py); runs and logs /mnt/l2/l2vast/_engvslive/. Admission tag EV (TL3_EV_*).
 
@@ -275,6 +275,19 @@ Mismatch causes (side B = engine took / live flat, C = live took / engine flat; 
 | C      | ENGINE loss cap: live book had ALSO crossed it (live kept entering)     | 34  | -4230 |
 | C      | ENGINE no signal                                                        | 4   | -735  |
 | C      | ENGINE session lots 0                                                   | 8   | 12395 |
+
+### 4d. Live-drive with panel timeline, run TL3_EV_LPBP_D (ALL)
+
+| side   | cause                                                                   | n   | usd   |
+|:-------|:------------------------------------------------------------------------|:----|:------|
+| B      | LIVE JN04 P7 post-stop blackout                                         | 1   | -5    |
+| B      | LIVE O7 not trading (no live O7 entry since 11-06)                      | 2   | 1078  |
+| B      | LIVE book lock fired earlier that day (BookLock exit)                   | 4   | -1335 |
+| B      | LIVE flat, no live entry (gate/signal unknown)                          | 9   | -4940 |
+| B      | LIVE reconnect/stall window                                             | 4   | 11988 |
+| C      | ENGINE give-back lock: engine P&L path only (live book had not crossed) | 9   | 8860  |
+| C      | ENGINE loss cap: live book had ALSO crossed it (live kept entering)     | 8   | 2185  |
+| C      | ENGINE no signal                                                        | 3   | 0     |
 
 ## 5. DS7.cs v1.9a against the engine, rule by rule (live evidence from the 11-01..11-13 live file)
 | rule | DS7.cs | engine | live evidence | status |
