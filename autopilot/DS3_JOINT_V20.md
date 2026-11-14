@@ -2,7 +2,7 @@
 
 VERDICT (5 of 5 windows complete for the leader): best joint set so far is JV_B: worst-window max-DD cut -1.0 % vs JN05W2, mean 555 $/wk avg; passes the tolerant gate in every complete window. Recent max DD is the single week 2026-W44, so read section 2 and section 5 before believing any recent cut. Strength: weak - see 6b (C rejected, A recent-only, D pending older windows); no PASS claim.
 
-Generated 2026-11-14 21:41 UTC (epoch 1794692471). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse; $4.84 RT). Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-14 22:23 UTC (epoch 1794694995). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse). LOT/FEE BASIS: base lots (user lots are x1.75, so multiply every $ by 1.75); the engine charges $1.18 per contract round trip inside net_fee (what every table sums); the column d mean @4.84 reprices the change in mean at $4.84 RT per contract using the change in contracts traded (d mean - 3.66 x change in lots/wk), no rerun. Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
 
 Candidates: **A** = SM_A6_halfNP7 (first trade of a book-session lost -> later signals of that book-session at half lots, books K7 M7 U7 H7 A7; P7 untouched). **B** = U7 time stop on fresh entries (at 15:00 after the first fill, if open P&L < -10 pts: market exit, fresh context only). **C** = U7 Keltner-mid structure stop (stop at 5-min EMA20 mid - 2 pts, filled 1.4 pt adverse, lots x 60/stop distance clamped 25..60). Full specs in section 6.
 
@@ -12,99 +12,100 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 
 ### L1M
 
-| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk |
-|--|--|--|--|--|--|--|--|--|--|--|--|
-| JV_A | 4 | 32090 | 36371 | 11.8 | -32090 | 4280 | 13.8 (13.2) | - | 0 (2) | -1561 | -2168 |
-| JV_B | 4 | 31572 | 36371 | 13.2 | -31572 | 4799 | 12.0 (13.2) | - | 0 (2) | 3190 | 2584 |
-| JV_C | 4 | 35985 | 36371 | 1.1 | -35985 | 385 | 11.0 (13.2) | - | 0 (2) | 2962 | 2356 |
-| JV_AB | 4 | 27291 | 36371 | 25.0 | -27291 | 9079 | 12.2 (13.2) | - | 0 (2) | 849 | 242 |
-| JV_AC | 4 | 31705 | 36371 | 12.8 | -31705 | 4666 | 11.0 (13.2) | - | 0 (2) | 2468 | 1861 |
-| JV_BC | 4 | 32311 | 36371 | 11.2 | -32311 | 4059 | 10.5 (13.2) | - | 0 (2) | 4757 | 4150 |
-| JV_ABC | 4 | 28031 | 36371 | 22.9 | -28031 | 8340 | 10.8 (13.2) | - | 0 (2) | 3627 | 3021 |
-| JV_D | 4 | 29452 | 36371 | 19.0 | -29452 | 6919 | 12.5 (13.2) | - | 0 (2) | 6969 | 6362 |
-| JV_AD | 4 | 27745 | 36371 | 23.7 | -27745 | 8625 | 13.0 (13.2) | - | 0 (2) | 5852 | 5245 |
-| JV_BD | 4 | 24653 | 36371 | 32.2 | -24653 | 11718 | 11.2 (13.2) | - | 0 (2) | 9035 | 8428 |
-| JV_CD | 4 | 29351 | 36371 | 19.3 | -29351 | 7019 | 10.5 (13.2) | - | 0 (2) | 8869 | 8262 |
-| JV_ABD | 4 | 22946 | 36371 | 36.9 | -22946 | 13424 | 11.8 (13.2) | - | 0 (2) | 8165 | 7559 |
-| JV_BCD | 4 | 25677 | 36371 | 29.4 | -25677 | 10693 | 10.2 (13.2) | - | 0 (2) | 10389 | 9782 |
-| JV_ABCD | 4 | 23971 | 36371 | 34.1 | -23971 | 12400 | 10.8 (13.2) | - | 0 (2) | 10731 | 10125 |
+| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk | d mean @4.84 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JV_A | 4 | 32090 | 36371 | 11.8 | -32090 | 4280 | 13.8 (13.2) | - | 0 (2) | -1561 | -2168 | -2148 |
+| JV_B | 4 | 31572 | 36371 | 13.2 | -31572 | 4799 | 12.0 (13.2) | - | 0 (2) | 3190 | 2584 | 2583 |
+| JV_C | 4 | 35985 | 36371 | 1.1 | -35985 | 385 | 11.0 (13.2) | - | 0 (2) | 2962 | 2356 | 2327 |
+| JV_AB | 4 | 27291 | 36371 | 25.0 | -27291 | 9079 | 12.2 (13.2) | - | 0 (2) | 849 | 242 | 261 |
+| JV_AC | 4 | 31705 | 36371 | 12.8 | -31705 | 4666 | 11.0 (13.2) | - | 0 (2) | 2468 | 1861 | 1859 |
+| JV_BC | 4 | 32311 | 36371 | 11.2 | -32311 | 4059 | 10.5 (13.2) | - | 0 (2) | 4757 | 4150 | 4127 |
+| JV_ABC | 4 | 28031 | 36371 | 22.9 | -28031 | 8340 | 10.8 (13.2) | - | 0 (2) | 3627 | 3021 | 3018 |
+| JV_D | 4 | 29452 | 36371 | 19.0 | -29452 | 6919 | 12.5 (13.2) | - | 0 (2) | 6969 | 6362 | 6386 |
+| JV_AD | 4 | 27745 | 36371 | 23.7 | -27745 | 8625 | 13.0 (13.2) | - | 0 (2) | 5852 | 5245 | 5292 |
+| JV_BD | 4 | 24653 | 36371 | 32.2 | -24653 | 11718 | 11.2 (13.2) | - | 0 (2) | 9035 | 8428 | 8451 |
+| JV_CD | 4 | 29351 | 36371 | 19.3 | -29351 | 7019 | 10.5 (13.2) | - | 0 (2) | 8869 | 8262 | 8266 |
+| JV_ABD | 4 | 22946 | 36371 | 36.9 | -22946 | 13424 | 11.8 (13.2) | - | 0 (2) | 8165 | 7559 | 7605 |
+| JV_BCD | 4 | 25677 | 36371 | 29.4 | -25677 | 10693 | 10.2 (13.2) | - | 0 (2) | 10389 | 9782 | 9788 |
+| JV_ABCD | 4 | 23971 | 36371 | 34.1 | -23971 | 12400 | 10.8 (13.2) | - | 0 (2) | 10731 | 10125 | 10155 |
 
 ### L3M
 
-| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk |
-|--|--|--|--|--|--|--|--|--|--|--|--|
-| JV_A | 13 | 32090 | 36371 | 11.8 | -32090 | 4280 | 10.6 (10.5) | 94% | 0 (9) | 15324 | -691 |
-| JV_B | 13 | 32117 | 36371 | 11.7 | -31572 | 4799 | 9.5 (10.5) | 106% | 0 (9) | 17259 | 1244 |
-| JV_C | 13 | 35985 | 36371 | 1.1 | -35985 | 385 | 8.1 (10.5) | 108% | 0 (9) | 17761 | 1746 |
-| JV_AB | 13 | 27291 | 36371 | 25.0 | -27291 | 9079 | 9.6 (10.5) | 99% | 0 (9) | 16651 | 636 |
-| JV_AC | 13 | 31705 | 36371 | 12.8 | -31705 | 4666 | 8.3 (10.5) | 105% | 0 (9) | 17218 | 1203 |
-| JV_BC | 13 | 32311 | 36371 | 11.2 | -32311 | 4059 | 7.6 (10.5) | 112% | 0 (9) | 18754 | 2739 |
-| JV_ABC | 13 | 28031 | 36371 | 22.9 | -28031 | 8340 | 7.9 (10.5) | 108% | 0 (9) | 18016 | 2001 |
-| JV_D | 13 | 31318 | 36371 | 13.9 | -31318 | 5052 | 9.6 (10.5) | 97% | 0 (9) | 18740 | 2725 |
-| JV_AD | 13 | 27745 | 36371 | 23.7 | -27745 | 8625 | 9.8 (10.5) | 94% | 0 (9) | 18183 | 2168 |
-| JV_BD | 13 | 32902 | 36371 | 9.5 | -32902 | 3469 | 9.0 (10.5) | 99% | 0 (9) | 19457 | 3442 |
-| JV_CD | 13 | 29351 | 36371 | 19.3 | -29351 | 7019 | 7.5 (10.5) | 103% | 0 (9) | 20380 | 4365 |
-| JV_ABD | 13 | 27032 | 36371 | 25.7 | -27032 | 9338 | 9.2 (10.5) | 97% | 0 (9) | 19113 | 3098 |
-| JV_BCD | 13 | 27135 | 36371 | 25.4 | -27135 | 9236 | 7.3 (10.5) | 104% | 0 (9) | 20915 | 4899 |
-| JV_ABCD | 13 | 23971 | 36371 | 34.1 | -23971 | 12400 | 7.7 (10.5) | 107% | 0 (9) | 20468 | 4453 |
+| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk | d mean @4.84 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JV_A | 13 | 32090 | 36371 | 11.8 | -32090 | 4280 | 10.6 (10.5) | 94% | 0 (9) | 15324 | -691 | -678 |
+| JV_B | 13 | 32117 | 36371 | 11.7 | -31572 | 4799 | 9.5 (10.5) | 106% | 0 (9) | 17259 | 1244 | 1243 |
+| JV_C | 13 | 35985 | 36371 | 1.1 | -35985 | 385 | 8.1 (10.5) | 108% | 0 (9) | 17761 | 1746 | 1710 |
+| JV_AB | 13 | 27291 | 36371 | 25.0 | -27291 | 9079 | 9.6 (10.5) | 99% | 0 (9) | 16651 | 636 | 651 |
+| JV_AC | 13 | 31705 | 36371 | 12.8 | -31705 | 4666 | 8.3 (10.5) | 105% | 0 (9) | 17218 | 1203 | 1192 |
+| JV_BC | 13 | 32311 | 36371 | 11.2 | -32311 | 4059 | 7.6 (10.5) | 112% | 0 (9) | 18754 | 2739 | 2705 |
+| JV_ABC | 13 | 28031 | 36371 | 22.9 | -28031 | 8340 | 7.9 (10.5) | 108% | 0 (9) | 18016 | 2001 | 1990 |
+| JV_D | 13 | 31318 | 36371 | 13.9 | -31318 | 5052 | 9.6 (10.5) | 97% | 0 (9) | 18740 | 2725 | 2797 |
+| JV_AD | 13 | 27745 | 36371 | 23.7 | -27745 | 8625 | 9.8 (10.5) | 94% | 0 (9) | 18183 | 2168 | 2254 |
+| JV_BD | 13 | 32902 | 36371 | 9.5 | -32902 | 3469 | 9.0 (10.5) | 99% | 0 (9) | 19457 | 3442 | 3513 |
+| JV_CD | 13 | 29351 | 36371 | 19.3 | -29351 | 7019 | 7.5 (10.5) | 103% | 0 (9) | 20380 | 4365 | 4404 |
+| JV_ABD | 13 | 27032 | 36371 | 25.7 | -27032 | 9338 | 9.2 (10.5) | 97% | 0 (9) | 19113 | 3098 | 3184 |
+| JV_BCD | 13 | 27135 | 36371 | 25.4 | -27135 | 9236 | 7.3 (10.5) | 104% | 0 (9) | 20915 | 4899 | 4939 |
+| JV_ABCD | 13 | 23971 | 36371 | 34.1 | -23971 | 12400 | 7.7 (10.5) | 107% | 0 (9) | 20468 | 4453 | 4514 |
 
 ### L6M
 
-| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk |
-|--|--|--|--|--|--|--|--|--|--|--|--|
-| JV_A | 26 | 32090 | 36371 | 11.8 | -32090 | 4280 | 11.1 (11.1) | 104% | 0 (19) | 25520 | 383 |
-| JV_B | 26 | 32117 | 36371 | 11.7 | -31572 | 4799 | 10.4 (11.1) | 97% | 0 (19) | 25710 | 573 |
-| JV_C | 26 | 35985 | 36371 | 1.1 | -35985 | 385 | 8.8 (11.1) | 107% | 1 (19) | 25849 | 712 |
-| JV_AB | 26 | 27641 | 36371 | 24.0 | -27641 | 8729 | 10.3 (11.1) | 101% | 0 (19) | 26083 | 946 |
-| JV_AC | 26 | 33171 | 36371 | 8.8 | -33171 | 3199 | 8.9 (11.1) | 109% | 1 (19) | 26253 | 1116 |
-| JV_BC | 26 | 33163 | 36371 | 8.8 | -33163 | 3207 | 8.5 (11.1) | 105% | 1 (19) | 26354 | 1217 |
-| JV_ABC | 26 | 33171 | 36371 | 8.8 | -33171 | 3199 | 8.6 (11.1) | 108% | 1 (19) | 26608 | 1472 |
-| JV_D | 26 | 31318 | 36371 | 13.9 | -31318 | 5052 | 10.5 (11.1) | 97% | 1 (19) | 27082 | 1945 |
-| JV_AD | 26 | 27745 | 36371 | 23.7 | -27745 | 8625 | 10.4 (11.1) | 100% | 0 (19) | 27523 | 2386 |
-| JV_BD | 26 | 32902 | 36371 | 9.5 | -32902 | 3469 | 9.9 (11.1) | 97% | 1 (19) | 27669 | 2532 |
-| JV_CD | 26 | 31306 | 36371 | 13.9 | -31306 | 5064 | 8.3 (11.1) | 103% | 1 (19) | 27744 | 2607 |
-| JV_ABD | 26 | 27032 | 36371 | 25.7 | -27032 | 9338 | 9.8 (11.1) | 99% | 0 (19) | 28165 | 3028 |
-| JV_BCD | 26 | 31306 | 36371 | 13.9 | -31306 | 5064 | 8.1 (11.1) | 103% | 1 (19) | 28298 | 3161 |
-| JV_ABCD | 26 | 28911 | 36371 | 20.5 | -28911 | 7459 | 8.3 (11.1) | 105% | 1 (19) | 28689 | 3552 |
+| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk | d mean @4.84 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JV_A | 26 | 32090 | 36371 | 11.8 | -32090 | 4280 | 11.1 (11.1) | 104% | 0 (19) | 25520 | 383 | 407 |
+| JV_B | 26 | 32117 | 36371 | 11.7 | -31572 | 4799 | 10.4 (11.1) | 97% | 0 (19) | 25710 | 573 | 571 |
+| JV_C | 26 | 35985 | 36371 | 1.1 | -35985 | 385 | 8.8 (11.1) | 107% | 1 (19) | 25849 | 712 | 683 |
+| JV_AB | 26 | 27641 | 36371 | 24.0 | -27641 | 8729 | 10.3 (11.1) | 101% | 0 (19) | 26083 | 946 | 969 |
+| JV_AC | 26 | 33171 | 36371 | 8.8 | -33171 | 3199 | 8.9 (11.1) | 109% | 1 (19) | 26253 | 1116 | 1115 |
+| JV_BC | 26 | 33163 | 36371 | 8.8 | -33163 | 3207 | 8.5 (11.1) | 105% | 1 (19) | 26354 | 1217 | 1188 |
+| JV_ABC | 26 | 33171 | 36371 | 8.8 | -33171 | 3199 | 8.6 (11.1) | 108% | 1 (19) | 26608 | 1472 | 1469 |
+| JV_D | 26 | 31318 | 36371 | 13.9 | -31318 | 5052 | 10.5 (11.1) | 97% | 1 (19) | 27082 | 1945 | 2024 |
+| JV_AD | 26 | 27745 | 36371 | 23.7 | -27745 | 8625 | 10.4 (11.1) | 100% | 0 (19) | 27523 | 2386 | 2484 |
+| JV_BD | 26 | 32902 | 36371 | 9.5 | -32902 | 3469 | 9.9 (11.1) | 97% | 1 (19) | 27669 | 2532 | 2611 |
+| JV_CD | 26 | 31306 | 36371 | 13.9 | -31306 | 5064 | 8.3 (11.1) | 103% | 1 (19) | 27744 | 2607 | 2658 |
+| JV_ABD | 26 | 27032 | 36371 | 25.7 | -27032 | 9338 | 9.8 (11.1) | 99% | 0 (19) | 28165 | 3028 | 3127 |
+| JV_BCD | 26 | 31306 | 36371 | 13.9 | -31306 | 5064 | 8.1 (11.1) | 103% | 1 (19) | 28298 | 3161 | 3213 |
+| JV_ABCD | 26 | 28911 | 36371 | 20.5 | -28911 | 7459 | 8.3 (11.1) | 105% | 1 (19) | 28689 | 3552 | 3626 |
 
 ### HOLD
 
-| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk |
-|--|--|--|--|--|--|--|--|--|--|--|--|
-| JV_A | 52 | 55870 | 63185 | 11.6 | -55870 | -725 | 10.7 (10.7) | 103% | 0 (37) | 18213 | 724 |
-| JV_B | 52 | 61073 | 63185 | 3.3 | -55145 | 0 | 10.1 (10.7) | 99% | 0 (37) | 18288 | 799 |
-| JV_C | 52 | 73536 | 63185 | -16.4 | -57536 | -2390 | 8.3 (10.7) | 97% | 2 (37) | 17634 | 145 |
-| JV_AB | 52 | 53321 | 63185 | 15.6 | -53321 | 1825 | 10.0 (10.7) | 102% | 0 (37) | 18881 | 1391 |
-| JV_AC | 52 | 76099 | 63185 | -20.4 | -57490 | -2345 | 8.4 (10.7) | 98% | 1 (37) | 18093 | 604 |
-| JV_BC | 52 | 71971 | 63185 | -13.9 | -56582 | -1437 | 8.1 (10.7) | 95% | 2 (37) | 18186 | 697 |
-| JV_ABC | 52 | 74738 | 63185 | -18.3 | -56878 | -1732 | 8.2 (10.7) | 97% | 1 (37) | 18406 | 917 |
-| JV_AD | 52 | 60376 | 63185 | 4.4 | -53250 | 1895 | 10.1 (10.7) | 97% | 2 (37) | 18785 | 1296 |
+| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk | d mean @4.84 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JV_A | 52 | 55870 | 63185 | 11.6 | -55870 | -725 | 10.7 (10.7) | 103% | 0 (37) | 18213 | 724 | 745 |
+| JV_B | 52 | 61073 | 63185 | 3.3 | -55145 | 0 | 10.1 (10.7) | 99% | 0 (37) | 18288 | 799 | 798 |
+| JV_C | 52 | 73536 | 63185 | -16.4 | -57536 | -2390 | 8.3 (10.7) | 97% | 2 (37) | 17634 | 145 | 101 |
+| JV_AB | 52 | 53321 | 63185 | 15.6 | -53321 | 1825 | 10.0 (10.7) | 102% | 0 (37) | 18881 | 1391 | 1411 |
+| JV_AC | 52 | 76099 | 63185 | -20.4 | -57490 | -2345 | 8.4 (10.7) | 98% | 1 (37) | 18093 | 604 | 586 |
+| JV_BC | 52 | 71971 | 63185 | -13.9 | -56582 | -1437 | 8.1 (10.7) | 95% | 2 (37) | 18186 | 697 | 653 |
+| JV_ABC | 52 | 74738 | 63185 | -18.3 | -56878 | -1732 | 8.2 (10.7) | 97% | 1 (37) | 18406 | 917 | 897 |
+| JV_D | 52 | 65520 | 63185 | -3.7 | -51715 | 3431 | 10.1 (10.7) | 95% | 3 (37) | 18097 | 608 | 687 |
+| JV_AD | 52 | 60376 | 63185 | 4.4 | -53250 | 1895 | 10.1 (10.7) | 97% | 2 (37) | 18785 | 1296 | 1394 |
 
 ### PRE
 
-| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk |
-|--|--|--|--|--|--|--|--|--|--|--|--|
-| JV_A | 75 | 81965 | 76186 | -7.6 | -51421 | 1126 | 9.2 (9.3) | 97% | 0 (48) | 10126 | -42 |
-| JV_B | 75 | 76961 | 76186 | -1.0 | -52547 | 0 | 9.0 (9.3) | 101% | 0 (48) | 10078 | -90 |
-| JV_C | 75 | 93191 | 76186 | -22.3 | -56666 | -4119 | 6.8 (9.3) | 100% | 2 (48) | 7415 | -2753 |
-| JV_AB | 75 | 82739 | 76186 | -8.6 | -51421 | 1126 | 8.9 (9.3) | 98% | 1 (48) | 10095 | -73 |
+| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk | d mean @4.84 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JV_A | 75 | 81965 | 76186 | -7.6 | -51421 | 1126 | 9.2 (9.3) | 97% | 0 (48) | 10126 | -42 | -31 |
+| JV_B | 75 | 76961 | 76186 | -1.0 | -52547 | 0 | 9.0 (9.3) | 101% | 0 (48) | 10078 | -90 | -90 |
+| JV_C | 75 | 93191 | 76186 | -22.3 | -56666 | -4119 | 6.8 (9.3) | 100% | 2 (48) | 7415 | -2753 | -2848 |
+| JV_AB | 75 | 82739 | 76186 | -8.6 | -51421 | 1126 | 8.9 (9.3) | 98% | 1 (48) | 10095 | -73 | -62 |
 
 ### X'
 
-| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk |
-|--|--|--|--|--|--|--|--|--|--|--|--|
-| JV_A | 44 | 50995 | 55326 | 7.8 | -21733 | -70 | 10.8 (10.8) | 99% | 0 (25) | 3828 | 243 |
-| JV_B | 44 | 45376 | 55326 | 18.0 | -21663 | 0 | 10.6 (10.8) | 98% | 0 (25) | 3834 | 249 |
-| JV_C | 44 | 93035 | 55326 | -68.2 | -28687 | -7024 | 8.8 (10.8) | 74% | 2 (25) | 339 | -3246 |
+| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk | d mean @4.84 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JV_A | 44 | 50995 | 55326 | 7.8 | -21733 | -70 | 10.8 (10.8) | 99% | 0 (25) | 3828 | 243 | 248 |
+| JV_B | 44 | 45376 | 55326 | 18.0 | -21663 | 0 | 10.6 (10.8) | 98% | 0 (25) | 3834 | 249 | 249 |
+| JV_C | 44 | 93035 | 55326 | -68.2 | -28687 | -7024 | 8.8 (10.8) | 74% | 2 (25) | 339 | -3246 | -3370 |
 
 ### GAP
 
-| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk |
-|--|--|--|--|--|--|--|--|--|--|--|--|
-| JV_A | 18 | 67381 | 68947 | 2.3 | -67381 | 1566 | 9.6 (9.7) | 94% | 1 (13) | 11461 | -915 |
-| JV_B | 18 | 68947 | 68947 | 0.0 | -68947 | 0 | 9.6 (9.7) | 101% | 0 (13) | 12381 | 5 |
-| JV_C | 18 | 85805 | 68947 | -24.5 | -74665 | -5719 | 7.7 (9.7) | 83% | 1 (13) | 7653 | -4724 |
-| JV_AB | 18 | 67381 | 68947 | 2.3 | -67381 | 1566 | 9.5 (9.7) | 95% | 0 (13) | 11548 | -829 |
+| set | weeks | maxDD | JN05W2 | cut % | worst wk | d worst wk | full stops/wk (ref) | 5 best wks kept | win->lose (of) | mean $/wk | d mean $/wk | d mean @4.84 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JV_A | 18 | 67381 | 68947 | 2.3 | -67381 | 1566 | 9.6 (9.7) | 94% | 1 (13) | 11461 | -915 | -903 |
+| JV_B | 18 | 68947 | 68947 | 0.0 | -68947 | 0 | 9.6 (9.7) | 101% | 0 (13) | 12381 | 5 | 5 |
+| JV_C | 18 | 85805 | 68947 | -24.5 | -74665 | -5719 | 7.7 (9.7) | 83% | 1 (13) | 7653 | -4724 | -4831 |
+| JV_AB | 18 | 67381 | 68947 | 2.3 | -67381 | 1566 | 9.5 (9.7) | 95% | 0 (13) | 11548 | -829 | -816 |
 
 ## 2. The recent max drawdown is one week (2026-W44): L6M / L3M with W44 removed from both cell and JN05W2
 
@@ -171,6 +172,7 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | JV_ABC | L6M | 8.8 | 24.5 | -15.7 | 1472 | 1668 | -196 |
 | JV_ABC | HOLD | -18.3 | -1.5 | -16.8 | 917 | 1667 | -750 |
 | JV_AD | L6M | 23.7 | 25.7 | -1.9 | 2386 | 2328 | 58 |
+| JV_AD | HOLD | 4.4 | 7.9 | -3.4 | 1296 | 1331 | -35 |
 | JV_BD | L6M | 9.5 | 25.6 | -16.0 | 2532 | 2517 | 15 |
 | JV_CD | L6M | 13.9 | 15.0 | -1.0 | 2607 | 2657 | -50 |
 | JV_ABD | L6M | 25.7 | 37.4 | -11.7 | 3028 | 2901 | 127 |
@@ -183,8 +185,10 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 |--|--|--|--|--|--|--|
 | JV_A | L3M | 11.8 | -691 | 7.0 / 21.8 / 11.2 | -253 / -1637 / -926 | no |
 | JV_A | L6M | 11.8 | 383 | 7.0 / 21.8 / 11.2 | -1112 / -914 / -526 | no |
+| JV_A | HOLD | 11.6 | 724 | 13.1 / -3.8 | -553 / 304 | partial (2 placebos) |
 | JV_B | L3M | 11.7 | 1244 | 10.5 / 11.8 / 11.7 | 297 / 514 / 487 | no |
 | JV_B | L6M | 11.7 | 573 | 10.5 / 11.8 / 11.7 | 390 / 548 / 238 | no |
+| JV_B | HOLD | 3.3 | 799 | 2.0 | 625 | partial (1 placebos) |
 | JV_C | L3M | 1.1 | 1746 | -9.1 / -6.6 / -17.4 | -577 / 1085 / -620 | yes |
 | JV_C | L6M | 1.1 | 712 | -9.1 / -6.6 / -17.4 | 1428 / 1717 / 1027 | yes |
 | JV_AB | L3M | 25.0 | 636 | 17.5 / 17.6 / 21.9 | -12 / -1161 / -790 | yes |
@@ -205,9 +209,9 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | 6 | JV_ABCD | yes | 20.5 | 4003 | 2 |
 | 7 | JV_CD | yes | 13.9 | 3486 | 2 |
 | 8 | JV_BCD | yes | 13.9 | 4030 | 2 |
-| 9 | JV_D | yes | 13.9 | 2335 | 2 |
-| 10 | JV_BD | yes | 9.5 | 2987 | 2 |
-| 11 | JV_AD | yes | 4.4 | 1950 | 3 |
+| 9 | JV_BD | yes | 9.5 | 2987 | 2 |
+| 10 | JV_AD | yes | 4.4 | 1950 | 3 |
+| 11 | JV_D | no | -3.7 | 1759 | 3 |
 | 12 | JV_BC | no | -13.9 | 1551 | 3 |
 | 13 | JV_ABC | no | -18.3 | 1463 | 3 |
 | 14 | JV_AC | no | -20.4 | 974 | 3 |
@@ -237,3 +241,13 @@ Order of evaluation inside the engine (outermost last): wb_hooks (F3 context cut
 **B = U7 time stop on fresh entries.** Book U7 only. Context 'fresh' = chase_k <= 1.0 (side x (close - session first close)/ATR5 at the signal), at most the 2nd U7 entry of the session since the session start (n <= 2) and >= 30 min since the last U7 exit (P7_CONTEXT_DEFS, wb_ctx.Ctx). Rule: exactly 15.0 minutes (900 one-second rows) after the first fill row, if the open P&L at that second (mid, side x (mid - entry_px)) is < -10.0 points, exit the full position at market at the next row: mid - side*0.80 pts slip (engine); exit name EarlyCut. One check only (not a rolling condition); a trade that is at -10 or better at minute 15 is never touched by B. Interaction: B closes the trade, so for A it is a loser (a later U7 signal in the session gets half lots), and the post-cut blackout rules of the engine for EarlyCut exits apply as in the reference.
 
 **C = U7 Keltner-mid structure stop (stop + equal-$ lots).** Book U7 only, all contexts. Level = Keltner mid = EMA20 of 5-min closes (struct_a3 kc), read at the last completed bar at least 60 s old. At the first fill, u0 = side x (kc - entry); the rule is armed only if -60 <= u0 <= -0.5 (mid on the loss side of the entry by 0.5..60 pts) and S = |u0| + 2.0 <= 60; S is then clamped to 25..60 (for lot scaling). The stop is dynamic: each second the level is re-read (same 60-s lag) and the trade exits when side x (mid - entry) <= side x (kc_now - entry) - 2.0 (long: mid <= kc - 2; short: mid >= kc + 2), i.e. the stop trails the mid in both directions. Fill: price = entry + side x (min(stop level in points, current u) - 1.4), i.e. 1.4 pts adverse of the level or the current price whichever is worse (live native central), exit name EarlyCut. Lots: after the live sizers lots x 60/S (S as above, so up to x2.4; round to nearest, min 1; computed from the signal-time level and the last 1-min close as entry proxy), so the $ risk at the structure stop equals the live 60-pt risk. Day caps/locks then apply to those lots. Interaction with B: B's check at minute 15 and C's stop run on the same trades; whichever fires first ends the trade. C changes the lots, which A then halves on a lost-first session.
+
+**Common switch for every rule (v2.0 build): `<Rule>Mode` = Off | Shadow | Live.** Off: rule code skipped. Shadow: the rule is evaluated every time it would act and the would-be action (skip, half size, exit, with the numbers that triggered it) is printed to the log and a CSV, but orders are not changed. Live: the action is taken. Default Shadow for every rule below until it has run live in Shadow for a full period; Live only by explicit decision.
+
+**D = London range-used-up SKIP (W-LR, k = 1; L = same with k = 1.25).** Hook lr_hooks, variant skip, London only (entry session 1, 02:00-08:30 ET), all seven live books. At a fresh entry signal: skip when stop_pts x target_r (the target distance, 60 pts for the live books) > k x (F - R), where R = London range so far (high - low since 02:00 ET) and F = the ATR-only walk-forward forecast of the day's ln range x last close (fc_lr.parquet; defined from 2023-07-21 on, rule inactive before that date). Other sessions untouched (Asia delta 0.0, identity proven by W-LR). Evaluated at the entry gate, before sizing; a skipped signal is not queued. Status PROVISIONAL (W-LR).
+
+**P = P7 Asia same-side block after a loser (W-PR BLK_M30).** Hook pr_hooks par {"blk":{"ev":"min","N":30}}. P7 only, Asia session (18:00-02:00 ET): after a P7 Asia trade closes with net P&L < 0, P7 signals on that same side are blocked for 30 minutes from the exit; the other side and every other book are untouched. Recent-window evidence only (W-PR).
+
+**R = M7 London trade cap (W-RA CAP3; W = CAP2).** Hook ra_hooks, rule capn N=3, books [M7], sess [1]. Instance = (M7, Globex day, London). Once N trades of the instance have closed, any new M7 London entry that day is blocked. Win or lose counts. **V = M7 London block same-side re-entry until an opposite-side signal (W-RA BLKiv).** Hook ra_hooks rule blk ev=iv, books [M7], sess [1]: a candidate entry that has the same side as the most recent closed trade of the instance, and that trade was a loser, is blocked unless an opposite-direction signal of the book has occurred since the loser closed (signals counted whether taken or not). R/W/V are mutually exclusive (same hook, same code path).
+
+**Order of evaluation of the entry-side rules (outermost evaluated first at a signal):** R/W/V block -> P block -> D/L skip -> A half-size flag -> c_gov / scr_hooks gates -> sizers (incl. C) -> day caps/locks. All blocks are before sizing, A changes only lots. Exit-side: K7 flat45, B, C inside sm_hooks.

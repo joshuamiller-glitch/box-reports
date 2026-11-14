@@ -1,13 +1,13 @@
 # DS3_EXPAND_A - family A: the session's own early result sets the size
 
-**VERDICT: Exact engine queue is waiting for admission (box load over the cap); the hook is built and a first-order screen of 33,227 cells picked the first 33 exact cells. No exact EA result yet.**
+**VERDICT: Exact runs started (6 cell-months), L6M not complete for any cell yet.**
 
-W-EA, T-EXPAND family A. Page built 2026-11-14 21:45 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
+**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-14 22:15 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
 
 ## 0. Identity and parent
 
-- empty-hook identity: TL3_EA_ID 202610: not run yet (waiting for admission)
-- parent SM_A6_halfNP7 replicated in the hook as TL3_EA_A6 (F1 loss, K7 M7 U7 H7 A7, x0.5, never reset): not run yet
+- empty-hook identity: TL3_EA_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
+- parent SM_A6_halfNP7 replicated in the hook as TL3_EA_A6 (F1 loss, K7 M7 U7 H7 A7, x0.5, never reset): 202610: hook 604 trades net 11304.78 vs parent 604 trades net 11304.78 -> IDENTICAL; 202609: hook 654 trades net 121534.40 vs parent 654 trades net 121534.40 -> IDENTICAL
 
 - Parent exact numbers (DS3_SMART_A2): 43 months, L6M DD cut 11.8%, d mean +383 $/wk, HOLD cut 11.6%, +724 $/wk.
 
@@ -54,9 +54,17 @@ Triggers: F1 book first trade; F2 first two; SF first trade of any book (stack-w
 | TL3_EA_CYB1_P7_ALL_H50_RN | 684 | 0.0 | 0.0 | -1195 | -5.1 | -5.4 | -804 | -3.6 | 18.3 | 0.0 / 0.0 / 0.0 |
 | TL3_EA_CYS1_ALL_S1_H75_RN | 1295 | 6.9 | 6.9 | -63 | 6.7 | -5.6 | -46 | 6.4 | -6.7 | 6.9 / 6.9 / 6.9 |
 
+## 3. EXACT results (vs JN05W2 on the same months)
+
+dd cut % = (maxDD ref - maxDD cell) / maxDD ref (positive = shallower). dd44 = with week 2026-W44 removed. best5 = share of the reference 5 best weeks kept. w2l = winning ref weeks turned losing.
+
+| cell | window | weeks | dd cut % | dd44 cut % | d mean $/wk (engine $1.18/ct) | d mean $/wk at FEES.md $4.84 RT | worst wk cell / ref | best5 kept | w2l | cuts/wk cell / ref | trades/wk cell / ref |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| TL3_EA_A6 | L1M | 4 | 11.8 | - | -2168 | -2148 | -32090 / -36371 | -2.58 | 0 | 56.00 / 56.00 | 151.0 / 149.5 |
+
 ## 4. Queue state
 
-- exact cell-months done: 0; pending lines: 82; cells in cells.txt: 35
+- exact cell-months done: 6; pending lines: 85; cells in cells.txt: 35
 - last promotions: none yet
 
 ## 5. Not yet done (in order)

@@ -1,4 +1,4 @@
-# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-14T20:27Z. Research only, NO PASS claim.
+# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-14T22:21Z. Research only, NO PASS claim.
 **VERDICT (plain, page 1 of the forecast part; engine dial re-runs below are still running): the options-market number from CME NQ options, put on top of our own realised-range model (HAR), beats UW (b) in london, nyam, nyam2, nypm, late, matches in none, loses in asia, pre (out-of-sample, R2 in L3M / L6M / older, same sample start as UW). The bigger fact: the HAR realised-range model ALONE already beats UW (b) in london, nyam, nyam2, nypm and (L3M/L6M) late; UW's range signal is mostly an IV-term proxy. CME options add real, placebo-clean gain over HAR in asia (+0.10 to +0.14 R2) and the last 90 minutes (+0.12 to +0.24), small in nypm (+0.03 to +0.07), and nothing in london / nyam. Asia is where UW (b) is still the best single model (its NDX/QQQ/SPX IV term beats our CME read of the same night), so UW is not yet fully replaceable for asia. Pre (08:30-09:30) is driven by the calendar flags (CPI/NFP/FOMC), not by CME or UW. UW (c) (full UW) is worse than (b) everywhere. Whether UW is still needed: for asia yes (UW b, or Cboe VIX-family inputs, which reach nearly the same R2 free); for london, nyam, nypm, late a HAR + CME (or HAR alone) forecast replaces it. Not a PASS claim; selection of the best model per session is by mean R2 over the three windows (hindsight among ~12 models, see caveats).**
 
 Prereg: autopilot/RANGE2_PREREG.md (sha 942f27a55458bebb, in DECISIONS.md before scoring). Order: DIRECTIVE_RANGE2_20261114.md. Code: code/th_range2. Bulk: /mnt/l2/l2vast/_range2. Causal forecast files for the dials: /mnt/l2/l2vast/_range2/fc_r2_v1.parquet (HAR + CME; var 'r'), fc_r2_har.parquet (HAR only), same schema as W-RU fc.parquet; sent to W-CH2, W-D9, W-LR.
@@ -333,7 +333,24 @@ _ES options: $0.00 pulls downloading; NQ-only in this page._
 - What neither adds that the CME build has: the Globex overnight read from the actual NQ/ES futures options. What the CME build lacks and they have: longer history (we have 3.6 years of NQ options; ORATS 2007+), event-stripped forward vol (we only have E1->E2 forward vol, which isolates the next session but is not stripped of events), and quote-based mids.
 - Recommendation: do not buy now; the gain from CME over HAR is concentrated in the last 90 minutes and asia, where the extra history would help the fit more than the vendor numbers. Re-quote if the dials below succeed.
 
-_Engine re-runs (dial 9, one-sided nearer target, London range-used-up on the R2 forecast): queued under tag R2; section appended when results land._
+## 7. Engine re-runs on the R2 forecast (exact engine, JN05W2 base, all layers ON, drawdown first)
+
+Identity: TL3_R2_ID 202610 (hook active at W=60): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
+
+Delta vs JN05W2 on the same months (positive DD = smaller drawdown). Windows need all months present: L3M = 2026-08..10, L6M = 2026-05..10, HOLD = 2025-11..2026-10. Gate = tolerant gate of W-RU (DD and worst week not worse by >2%, mean not lower by >3%), W44 = same with week 2026-W44 removed from both. Forecast: R2 = HAR + CME (fc_r2_v1), HAR = HAR only (ablation).
+
+Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18 per contract round trip with the engine fills, not FEES.md $4.84. Column FEES repeats the mean change repriced at $4.84 RT per contract on the change in contracts per week (page code only, no rerun).
+
+| cell | scope | L3M | L6M | HOLD | gate L3M | gate L6M | L6M without W44 | FEES $4.84: d mean $/wk L3M / L6M |
+|---|---|---|---|---|---|---|---|---|
+| TL3_R2_D9A_C_B | all | +370 $/wk, DD -0.4%, ww +225, stops 10.35(10.35), b5 102%, w2l 0 | n/a | n/a | False | None | n/a | +366 / n/a |
+| TL3_R2_D9A_C_B | asia | +136 $/wk, DD -8.4%, ww -3577, stops 6.24(6.24), b5 102%, w2l 0 | n/a | n/a | False | None | n/a | +134 / n/a |
+| TL3_R2_D9A_C_B | london | +592 $/wk, DD +0.7%, ww -5, stops 2.74(2.74), b5 99%, w2l 0 | n/a | n/a | True | None | n/a | +592 / n/a |
+| TL3_R2_D9A_C_B | nyam | +24 $/wk, DD -6.8%, ww -250, stops 1.29(1.29), b5 93%, w2l 0 | n/a | n/a | False | None | n/a | +22 / n/a |
+| TL3_R2_D9A_C_B | nypm | -382 $/wk, DD -27.3%, ww -286, stops 0.08(0.08), b5 100%, w2l 1 | n/a | n/a | False | None | n/a | -383 / n/a |
+
+Cells with results: 1. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
+
 
 ## 6. Caveats
 - Model choice per session is by hindsight over 12 models and three windows; the headline beats are large (late, nypm, nyam vs UW) or placebo-clean (CME in asia / late), but the small gaps (+-0.02) are noise. Windows L3M n=74 days is small: R2 differences below 0.1 there are not decisive.

@@ -1,8 +1,10 @@
-# DS3_LOT_TABLE - PRIORITY 11: session lot table and small books H7 / A7 / O7 (page generated 2026-11-14 19:23 UTC)
+# DS3_LOT_TABLE - PRIORITY 11: session lot table and small books H7 / A7 / O7 (page generated 2026-11-14 22:23 UTC)
 
 **VERDICT: INTERIM (first-order; exact lot strings queued): keep the live table. A free refit does not walk forward (L6M max DD x2.9 at equal mean); refitting only H7/A7/O7 is mild (L6M x1.08, HOLD 0.97, PRE 0.81, X' 0.63). Leads to confirm exactly: H7 asia 4->5 lots (equal-mean DD better in L6M/HOLD/GAP/PRE, worse X'), O7 1->2 lots (better HOLD/GAP/PRE, flat L6M), A7 stay at 1 (mixed), K7 nypm 2->3. M7 unchanged.**
 
 Status: Shadow only, post hoc, no PASS claims. Prereg autopilot/NT_PREREG.md. Live baseline = engine session lot tables: K7 2,2,0,1,2,0; U7 4,4,0,0,0,0; P7 7,4,0,4,0,0 (installed 7/4/4); H7 4,0,0,1,0,0; M7 0,2,0,1,0,0; A7 1,0,0,0,0,0; O7 1 lot (GATE0_ANSWERS_1106.md section 5 + panel p7_sess). Order asia, london, pre, nyam, nypm, close. Base trades = exact JN05W2.
+
+**LOT BASIS AND FEES.** JN05W2-family sets run at BASE (box) lots, i.e. live lots / 1.75, not live x1.75. Every dollar here is raw engine net_fee: $1.18 per contract round trip with the engine own fills, NOT the FEES.md $4.84 RT. Column dmean_fees484 = dmean repriced at $4.84 RT per contract (dmean minus 3.66 x change in contracts per week; contr_wk and contr_base_wk are contracts per week of the set and of JN05W2); no rerun. Lot changes move contracts, so for the lot table read the repriced column; dollar levels scale with live lot size (x1.75).
 
 
 ## 1. One cell at a time (first order, lot-share scaling; equal-mean: whole stack scaled by one factor so its mean in that window equals the live mean; ratio < 1 = lower max DD than the live table at equal mean)
@@ -236,9 +238,12 @@ Status: Shadow only, post hoc, no PASS claims. Prereg autopilot/NT_PREREG.md. Li
 
 ### L6M
 
-| set | win | months | mean | dmean | ddcut | ddcut_x44 | worst | worst_base | best5_kept | turned_loss | stops_wk | stops_base_wk |
-|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| TL3_NT_LT_H7_5011 | L6M | 6/6 | 26205.2 | 62.9 | 4.085 | -14.1 | -34079.6 | -36370.5 | 99.8 | 0.000 | 10.8 | 10.8 |
+| set | win | months | mean | dmean | ddcut | ddcut_x44 | worst | worst_base | best5_kept | turned_loss | dmean_fees484 | contr_wk | contr_base_wk | stops_wk | stops_base_wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| TL3_NT_LT_A7_2 | L6M | 6/6 | 26143.3 | 0.921 | -12.2 | -5.993 | -42055.4 | -36370.5 | 102.5 | 0.000 | -30.0 | 305.6 | 297.2 | 9.360 | 10.8 |
+| TL3_NT_LT_H7_5011 | L6M | 6/6 | 26205.2 | 62.9 | 4.085 | -14.1 | -34079.6 | -36370.5 | 99.8 | 0.000 | 43.8 | 302.4 | 297.2 | 10.8 | 10.8 |
+| TL3_NT_LT_JOINT1 | L6M | 6/6 | 26516.0 | 373.6 | -9.015 | -31.2 | -34482.8 | -36370.5 | 104.9 | 0.000 | 330.6 | 308.9 | 297.2 | 10.9 | 10.8 |
+| TL3_NT_LT_SMALL1 | L6M | 6/6 | 26197.3 | 54.9 | 2.609 | -11.8 | -34850.8 | -36370.5 | 100.5 | 0.000 | 29.9 | 304.0 | 297.2 | 10.8 | 10.8 |
 
 ### HOLD
 
