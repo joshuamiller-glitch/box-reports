@@ -1,4 +1,4 @@
-# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-14 07:50Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
+# DS3_UWBOOKS_B1 - Unusual Whales standalone books, families 1, 2, 6, 7 (W-UB1). Updated 2026-11-14 12:13Z by code/th_uwbooks/uwb_page.py (chained every 3 h). Research, shadow, NO PASS claim.
 
 ## 0. Status
 Jobs done 4279 of 1232 (job = family x instrument x ticker x series, all its event kinds, both directions, 5 sessions, 1,470 grid cells). Group rows stored: 195802. Null draws (shifted-time, whole event table moved by random weeks): 18.
