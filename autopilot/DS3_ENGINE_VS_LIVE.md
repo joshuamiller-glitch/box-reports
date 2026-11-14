@@ -1,6 +1,6 @@
 # DS3_ENGINE_VS_LIVE - PRIORITY 13 engine vs live (W-EV)
 
-VERDICT (2026-11-14 17:45Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP): ALL 0.645, W45 0.690, W46 0.584. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
+VERDICT (2026-11-14 18:15Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP): ALL 0.645, W45 0.690, W46 0.584. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
 
 Shadow only, no PASS claims, nothing adopted into the shared engine. Prereg autopilot/EV_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_engfix/ (evmatch.py, ev_analyze.py, ev_report.py, ev_run.py, ev_drive.py, ev_panel.py, ev_jnprep.py, build_page.py, page_gen.py); runs and logs /mnt/l2/l2vast/_engvslive/. Admission tag EV (TL3_EV_*).
 
@@ -329,10 +329,14 @@ Mismatch causes (side B = engine took / live flat, C = live took / engine flat; 
 ## 7. Which earlier results move by more than 10 % (stage 1: L6M 202605-202610 and HOLD 202511-202604; ref = stored month results, fix = engine copy)
 C16 = P7 day cap 16,800 instead of 8,400; L6 = ATR-SKIP (P7, atr_rel >= 1.6) + P7 post-stop/cut 30-min same-side blackout as in DS7.cs v1.9a Live.
 
-No complete window yet: sets TL3_EV_C16_* and TL3_EV_L6_* running under admission tag EV (month-major chains chA/chB/chC).
+| fix   | ref       | window   | months   | net_wk_ref   | net_wk_fix   | net_wk_chg%   | maxDD_ref   | maxDD_fix   | maxDD_chg%   | worst_wk_chg%   | stops_wk_ref   | stops_wk_fix   | stops_wk_chg%   | moves>10%   |
+|:------|:----------|:---------|:---------|:-------------|:-------------|:--------------|:------------|:------------|:-------------|:----------------|:---------------|:---------------|:----------------|:------------|
+| C16   | LPB_EMPTY | L6M      | 6        | 17431        | 23290        | 33.6          | 104473      | 90707       | -13.2        | -2.0            | 23.2           | 23.5           | 1.3             | True        |
 
 ### 8b. Identity-style regression, 3 reference months (LPB_EMPTY stored result of record vs engine copy)
 ```
 202608: patch OFF vs stored LPB_EMPTY: IDENTICAL (677 trades, net 70353.96 vs 70353.96)
    patch ON (P7 cap 16,800): trades 677 -> 700, net 70354 -> 57978; trades only in stored 0 (net 0), only in fixed 23 (net -12376); books of changed trades {'P7': np.int64(23)}
+202609: patch OFF vs stored LPB_EMPTY: IDENTICAL (678 trades, net 127125.82 vs 127125.82)
+   patch ON (P7 cap 16,800): trades 678 -> 714, net 127126 -> 138788; trades only in stored 0 (net 0), only in fixed 36 (net 11662); books of changed trades {'P7': np.int64(36)}
 ```

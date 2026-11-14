@@ -23,3 +23,6 @@ The debug run showed that the 'lift' action as drafted (give-back keep 0.7, copi
 
 ## ADDENDUM D (before any of these cells was scored)
 Two actions added to the P9 grid because the order is 'capital intact until a trend day is called, then press': pr1 = entries while NOT called at lots x0.75, with-trend entries once called at x1.5; pr2 = uncalled x0.5, with-trend called x2.0 (counter-trend entries keep x1 and are not blocked). Cells TL3_TD_C1_pr1, C2_pr1, C2_pr2 (and all other call definitions as later waves). Limitation stated: the causal call fires late (median 10:00-12:00 ET), so Asia and London entries are almost always uncalled; the capital-light leg therefore acts on the early sessions of every day.
+
+## ADDENDUM E (gate definition, written after seeing that several L3M cells leave the one-week L3M max DD unchanged)
+The tolerant gate stays as in the prereg; the 'at least one window with a drawdown cut' clause is read as: a drawdown cut larger than 0.5% in some window OR a mean gain larger than 3% of the reference mean in some window (equal-drawdown mean gain), because recent max DD is one week (W44) that call-based rules cannot touch. Leads are labelled by which clause they pass. Promotion to later windows uses the same gate on the windows already scored (all weeks or W44 removed).

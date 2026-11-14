@@ -1,7 +1,7 @@
 # DS3_P7_ASIA_REENTRY - P7 Asia same-side re-entry after a loser (W-PR, PRIORITY 3 of BACK TO D7)
-**VERDICT: FIRST PAGE (measurement, exact tests running): over 43 months P7 Asia's 2nd+ same-side entry after a loser (304 trades) is NET POSITIVE (+115.5k, 43% win, wins +594k vs losses -478k) so a blanket "never re-enter" would cost money; but in the last 13 weeks it LOST (-967 $/wk, 53 trades) and 15.7k of the -36.4k 2026-W44 week is exactly this; the exact-engine block/half/cap tests below decide whether any evidence-based version helps in BOTH recent and older windows.**
+**VERDICT: UPDATE 1 (exact L3M run for 13 of 15 cells, L6M/HOLD/PRE running for the 3 that pass the tolerant L3M gate): no rule is a lead yet - P7 Asia same-side re-entry after a loser is +115.5k over 43 months and only L3M (-967 $/wk) and GAP are negative; in the exact engine 30-min same-side cooldown after any P7 Asia loser (BLK_M30: L3M DD cut 16.9%, worst week +10.2k, +1,210 $/wk) is the best recent candidate but its DD gain is the one week W44 (ex-W44 DD cut 0.0, +385 $/wk), the others lose in L3M (evidence-based blocks EXT/OPP/M120 -2 to -4.3k $/wk) and the older windows are not yet in; no PASS.**
 
-Page stamp 2026-11-14T16:53Z (epoch 1794675214). Label: PRE-PROOF, post-hoc, Shadow only, no PASS claims. Prereg autopilot/P7_ASIA_REENTRY_PREREG.md (sha in DECISIONS.md before any exact cell). Code code/th_p7re/ (pr_load, pr_meas2, pr_fo, pr_hooks, pr_cells, pr_driver, pr_score, pr_page). Base: JN05W2 exact engine, all layers ON (which already contains the c_gov governor: skip a P7 signal after >= 2 same-side losers in the session unless a new session extreme was made). Fills as measured (+0.23 entry / +0.44 stop / +1.36 at 08:30 pts, $4.84 RT). Recent max DD is ONE week (2026-W44, 10-26..11-01, stack -36.4k); read drawdown against the -W44 rows and the placebos.
+Page stamp 2026-11-14T18:21Z (epoch 1794680519). Label: PRE-PROOF, post-hoc, Shadow only, no PASS claims. Prereg autopilot/P7_ASIA_REENTRY_PREREG.md (sha in DECISIONS.md before any exact cell). Code code/th_p7re/ (pr_load, pr_meas2, pr_fo, pr_hooks, pr_cells, pr_driver, pr_score, pr_page). Base: JN05W2 exact engine, all layers ON (which already contains the c_gov governor: skip a P7 signal after >= 2 same-side losers in the session unless a new session extreme was made). Fills as measured (+0.23 entry / +0.44 stop / +1.36 at 08:30 pts, $4.84 RT). Recent max DD is ONE week (2026-W44, 10-26..11-01, stack -36.4k); read drawdown against the -W44 rows and the placebos.
 
 Hook identity proof: TL3_PR_ID 202610 (hook module loaded, empty par): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -252,10 +252,34 @@ Hook identity proof: TL3_PR_ID 202610 (hook module loaded, empty par): 598 trade
 | BLK_EXT | L3M-W44 | -4698 | 19009 | -59372 | -36.8 | -44244 | -18218 | 10.6 | 0.98 | 2 | 1713/1747 |
 | BLK_ENT | L3M | +727 | 19863 | -48910 | +6.4 | -31208 | +5163 | 10.3 | 1.02 | 0 | 1889/1875 |
 | BLK_ENT | L3M-W44 | +0 | 23708 | -48910 | -12.7 | -31208 | -5182 | 10.2 | 1.02 | 0 | 1751/1747 |
+| BLK_ENT | L6M | -2023 | 23113 | -48910 | +6.4 | -34068 | +2302 | 11.0 | 0.88 | 0 | 4074/4169 |
+| BLK_ENT | L6M-W44 | -2481 | 25087 | -48910 | -12.7 | -34068 | -8042 | 11.0 | 0.88 | 0 | 3936/4041 |
 | BLK_OPP | L3M | -2503 | 16634 | -57159 | -9.4 | -40730 | -4360 | 10.6 | 0.83 | 0 | 1846/1875 |
 | BLK_OPP | L3M-W44 | -4312 | 19396 | -57159 | -31.7 | -40730 | -14704 | 10.5 | 0.83 | 0 | 1714/1747 |
+| BLK_HL | L3M | +925 | 20061 | -54446 | -4.2 | -37599 | -1229 | 10.3 | 0.96 | 0 | 1886/1875 |
+| BLK_HL | L3M-W44 | +1102 | 24810 | -43420 | -0.0 | -20938 | +5087 | 10.1 | 0.96 | 0 | 1750/1747 |
+| BLK_M30 | L3M | +1210 | 20346 | -43405 | +16.9 | -26176 | +10195 | 10.3 | 1.00 | 0 | 1882/1875 |
+| BLK_M30 | L3M-W44 | +385 | 24092 | -43405 | +0.0 | -26176 | -150 | 10.1 | 1.00 | 0 | 1747/1747 |
+| BLK_M30 | L6M | +1428 | 26563 | -43405 | +16.9 | -26176 | +10195 | 11.1 | 1.03 | 0 | 4201/4169 |
+| BLK_M30 | L6M-W44 | +1040 | 28608 | -43405 | -0.0 | -26176 | -150 | 11.1 | 1.03 | 0 | 4066/4041 |
 | BLK_M60 | L3M | +1366 | 20502 | -52438 | -0.4 | -35783 | +587 | 10.3 | 1.00 | 0 | 1888/1875 |
 | BLK_M60 | L3M-W44 | +100 | 23807 | -52438 | -20.8 | -35783 | -9757 | 10.2 | 1.00 | 0 | 1752/1747 |
+| BLK_M120 | L3M | -2069 | 17067 | -59688 | -14.3 | -42258 | -5887 | 10.7 | 0.99 | 1 | 1838/1875 |
+| BLK_M120 | L3M-W44 | -2804 | 20903 | -59688 | -37.5 | -42258 | -16232 | 10.6 | 0.99 | 1 | 1707/1747 |
+| HALF | L3M | +1356 | 20492 | -51773 | +0.9 | -35879 | +491 | 10.3 | 1.06 | 0 | 1895/1875 |
+| HALF | L3M-W44 | +1178 | 24886 | -50123 | -15.5 | -35879 | -9854 | 10.2 | 1.06 | 0 | 1765/1747 |
+| CAP2 | L3M | -2454 | 16682 | -59189 | -13.3 | -28041 | +8330 | 10.7 | 0.91 | 1 | 1834/1875 |
+| CAP2 | L3M-W44 | -4327 | 19380 | -59189 | -36.4 | -28041 | -2015 | 10.6 | 0.91 | 1 | 1701/1747 |
+| CAP3 | L3M | -3500 | 15636 | -41204 | +21.1 | -25719 | +10651 | 10.8 | 0.77 | 1 | 1845/1875 |
+| CAP3 | L3M-W44 | -5630 | 18077 | -41204 | +5.1 | -25719 | +307 | 10.5 | 0.77 | 1 | 1705/1747 |
+| CAP4 | L3M | -1545 | 17591 | -45697 | +12.5 | -27004 | +9367 | 10.4 | 0.97 | 1 | 1857/1875 |
+| CAP4 | L3M-W44 | -2671 | 21037 | -45697 | -5.3 | -27004 | -978 | 10.3 | 0.97 | 1 | 1723/1747 |
+| RCAP10 | L3M | +601 | 19738 | -53008 | -1.5 | -31794 | +4577 | 10.3 | 1.00 | 0 | 1885/1875 |
+| RCAP10 | L3M-W44 | -87 | 23620 | -53008 | -22.1 | -31794 | -5768 | 10.2 | 1.00 | 0 | 1753/1747 |
+| SN | L3M | +211 | 19347 | -52233 | +0.0 | -36371 | +0 | 10.3 | 1.00 | 0 | 1871/1875 |
+| SN | L3M-W44 | +229 | 23936 | -43405 | +0.0 | -23251 | +2775 | 10.2 | 1.00 | 0 | 1743/1747 |
+| ID2 | L3M | +0 | 19136 | -52233 | +0.0 | -36371 | +0 | 10.3 | 1.00 | 0 | 1875/1875 |
+| ID2 | L3M-W44 | +0 | 23707 | -43405 | +0.0 | -26026 | +0 | 10.2 | 1.00 | 0 | 1747/1747 |
 
 ## 2b. First-order placebos for the block rules (20 random-same-count blocks with the same eligibility, and the evidence test run on the price path 11/23/37 days earlier)
 real = the rule; pl = random same-count blocks (median / 90th pct of the DD cut %, share of placebos at least as good as real); sh = DD cut % when the evidence is read off the path 11 / 23 / 37 days earlier. Time-only rules (M30/M60/M120) and OPP have no path, so sh = real.
@@ -316,6 +340,12 @@ Measurement reading (first page, before the exact cells):
 - Where it hurts: W44 (-15.7k), 2026-03-23 week (-10.5k), 2026-02-02 week (-5.7k), 2025-07-07 (-4.7k); in 5 stack-worst weeks it carries -18.7k of -274k over 43 months (7%), -27.5k of -43.1k in L3M (64%), -20.3k of -93.5k in L6M (22%), +9.2k in PRE (it HELPS) and +2.2k in X'. So the recent worst weeks are different from the older ones: that is the "must hold in both windows" test the rule has to pass.
 - What a block costs on trend nights: the 12 best same-side sessions are in section M7; a block would remove them (Asia trend nights re-entered after a cut are where the class earns).
 
+Exact L3M reading (update 1):
+- Rules that block the same side until a new session extreme (EXT), an opposite signal (OPP), or 120 minutes (M120) are WORSE than the base in L3M in the exact engine (d$ -4.3k / -2.5k / -2.1k per week, DD cut -13.7 / -9.4 / -14.3%). That is the trader-view problem: on a trend night the first cut-out is followed by the same side again (e.g. the 20260928 night, SSSSSS, where the 2 same-side-after-loser entries made +12.0k), and a "wait for a new extreme" rule waits until the move has already happened.
+- BLK_M30 (30 min) and HALF (re-enter at half size) are the only ones with nothing lost in L3M (d$ +1.2k / +1.4k, best-5 weeks kept 1.00 / 1.06, no winning week turned losing); BLK_M30 cuts the worst week by 10.2k (W44), HALF changes DD +0.9% only. With W44 removed from both, BLK_M30 is neutral (DD cut 0.0, +385 $/wk) and HALF is -15.5% DD / +1.2k, i.e. the L3M drawdown benefit is the single week.
+- Session caps: CAP3 cuts L3M DD 21.1% (worst week +10.7k) but loses 3.5k $/wk and keeps only 0.77 of the five best weeks (trend nights); CAP4 +12.5% DD / -1.5k, CAP2 -13.3% DD / -2.5k. A cap is the opposite of what a discretionary trader does on a trend night.
+- Stop for the night after a full stop (SN): changes 4 trades in 13 weeks, +211 $/wk, no DD effect.
+
 
 ## 5. Status
-driver: 1794675198 epoch chains 9 ident TL3_PR_ID 202610 (hook module loaded, empty par): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL outstanding 59; cells with complete windows: {"TL3_PR_BLK_EXT": ["L3M", "L3M-W44"], "TL3_PR_BLK_ENT": ["L3M", "L3M-W44"], "TL3_PR_BLK_OPP": ["L3M", "L3M-W44"], "TL3_PR_BLK_M60": ["L3M", "L3M-W44"]}
+driver: 1794680481 epoch chains 10 ident TL3_PR_ID 202610 (hook module loaded, empty par): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL outstanding 102; cells with complete windows: {"TL3_PR_BLK_EXT": ["L3M", "L3M-W44"], "TL3_PR_BLK_ENT": ["L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_BLK_OPP": ["L3M", "L3M-W44"], "TL3_PR_BLK_HL": ["L3M", "L3M-W44"], "TL3_PR_BLK_M30": ["L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_BLK_M60": ["L3M", "L3M-W44"], "TL3_PR_BLK_M120": ["L3M", "L3M-W44"], "TL3_PR_HALF": ["L3M", "L3M-W44"], "TL3_PR_CAP2": ["L3M", "L3M-W44"], "TL3_PR_CAP3": ["L3M", "L3M-W44"], "TL3_PR_CAP4": ["L3M", "L3M-W44"], "TL3_PR_RCAP10": ["L3M", "L3M-W44"], "TL3_PR_SN": ["L3M", "L3M-W44"], "TL3_PR_ID2": ["L3M", "L3M-W44"]}
