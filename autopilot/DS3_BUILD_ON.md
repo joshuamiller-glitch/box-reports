@@ -1,6 +1,6 @@
-# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-15 04:33Z
+# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-15 08:35Z
 
-Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 787 of 1136 done (one set per job, one month per job), 0 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
+Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 798 of 1136 done (one set per job, one month per job), 0 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
 
 
 ## 1. What this page is, and the definitions used
@@ -125,9 +125,10 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L1M | 6 | -13819 | 0.7 | nan | 2361 | 28.4 (28.4) | -1667 (-1667) | -7265 | 0 | 778 | 384 | 15945 | 0.0 |
 | BO_U7_1C_m0p50_T45_S60 | U7: rechase entries get lots x0.50, target 45, stop 60 (fresh full) | L1M | 6 | 17078 | 13.7 | 86.5 | -461 | 27.6 (28.4) | -1533 (-1667) | -7449 | 5528 | 0 | 7008 | -1684 | 0.0 |
 | BO_U7_1L_G60_k1p00_m0p50 | U7: RECHASE entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 1.00 ATR) | L1M | 6 | 16305 | 8.6 | nan | -1233 | 28.4 (28.4) | -1518 (-1667) | -6294 | 4236 | 0 | 4395 | -2166 | 0.0 |
-| BO_U7_1Lrev_G15_k0p75_m0p50 | U7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L1M | 5 | 17971 | 3.8 | 3.5 | 433 | 27.6 (28.4) | -1545 (-1667) | -2935 | 4067 | 0 | 1935 | 1266 | 0.0 |
+| BO_U7_1Lrev_G15_k0p75_m0p50 | U7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L1M | 6 | 17971 | 3.8 | 3.5 | 433 | 27.6 (28.4) | -1545 (-1667) | -2935 | 4067 | 0 | 1935 | 1266 | 0.0 |
 | BO_U7_1S_G60_k2p00_S45 | U7: RECHASE entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 2.00 ATR) | L1M | 6 | 18468 | 5.9 | 9.9 | 929 | 26.2 (28.4) | -1538 (-1667) | 0 | 1932 | 0 | 3008 | 1697 | 0.0 |
 | BO_U7_1Srev_G15_k0p75_S45 | U7: FRESH entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L1M | 6 | -16488 | 3.5 | nan | -308 | 25.9 (28.4) | -1516 (-1667) | -1256 | 2348 | 0 | 2205 | 4432 | 0.0 |
+| BO_U7_1T_G30_k2p00_T30 | U7: RECHASE entries get target 30 pts (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 2.00 ATR) | L1M | 6 | 17113 | 11.2 | -2.4 | -426 | 27.6 (28.4) | -1649 (-1667) | -3570 | 2525 | 0 | 5762 | -1282 | 0.0 |
 | BO_U7_3SS_f0p33_a0p75_r0_rech | U7: 0.33 of the lots go out by market at 75% of the stop (rech entries only; remainder keeps the state cut) | L1M | 6 | -41 | 1.4 | 12.6 | 409 | 26.9 (28.4) | -1604 (-1667) | 0 | 675 | 0 | 707 | 520 | 0.0 |
 | BO_U7_6TL_N20_t0p40_flat_all | U7: at 20 min, if the open loss is still worse than 40% of the target: flat (all trades) | L1M | 6 | -15508 | 2.9 | nan | 672 | 26.9 (28.4) | -1563 (-1667) | 0 | 1489 | 0 | 1475 | 2240 | 1.8 |
 | BO_U7_7C_W180_skip | U7: another book filled a same-side target in the last 180 s: skip the signal | L1M | 6 | 34 | 7.5 | 19.7 | 484 | 28.0 (28.4) | -1628 (-1667) | 0 | 0 | -2195 | 3844 | -2393 | 0.0 |
@@ -202,9 +203,10 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L3M | 6 | 12710 | 11.5 | 2.4 | -958 | 23.4 (23.4) | -1661 (-1662) | -8852 | 186 | 2401 | -2893 | 1689 | 0.0 |
 | BO_U7_1C_m0p50_T45_S60 | U7: rechase entries get lots x0.50, target 45, stop 60 (fresh full) | L3M | 6 | 15731 | 19.3 | 12.4 | -970 | 22.8 (23.4) | -1516 (-1662) | -6765 | 4721 | 105 | 9212 | -2647 | 0.0 |
 | BO_U7_1L_G60_k1p00_m0p50 | U7: RECHASE entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 1.00 ATR) | L3M | 6 | 15853 | 16.4 | 9.7 | -849 | 23.1 (23.4) | -1522 (-1662) | -5243 | 3506 | -205 | 5867 | -2509 | 0.0 |
-| BO_U7_1Lrev_G15_k0p75_m0p50 | U7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L3M | 5 | 15014 | -12.6 | -13.1 | 88 | 23.1 (23.4) | -1580 (-1662) | -3053 | 2041 | -219 | -229 | -54 | 0.0 |
+| BO_U7_1Lrev_G15_k0p75_m0p50 | U7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L3M | 6 | 15014 | -12.6 | -13.1 | 88 | 23.1 (23.4) | -1580 (-1662) | -3053 | 2041 | -219 | -229 | -54 | 0.0 |
 | BO_U7_1S_G60_k2p00_S45 | U7: RECHASE entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 2.00 ATR) | L3M | 6 | 17349 | 9.8 | 10.6 | 648 | 21.3 (23.4) | -1560 (-1662) | 0 | 1606 | 210 | 4276 | 667 | 0.0 |
 | BO_U7_1Srev_G15_k0p75_S45 | U7: FRESH entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L3M | 6 | 9174 | 0.9 | 3.4 | 380 | 21.6 (23.4) | -1562 (-1662) | -314 | 1404 | 209 | 879 | 1834 | 0.0 |
+| BO_U7_1T_G30_k2p00_T30 | U7: RECHASE entries get target 30 pts (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 2.00 ATR) | L3M | 6 | 11860 | 24.6 | 25.6 | 737 | 22.8 (23.4) | -1622 (-1662) | -3780 | 3070 | 0 | 6958 | -146 | 0.0 |
 | BO_U7_3SS_f0p33_a0p75_r0_rech | U7: 0.33 of the lots go out by market at 75% of the stop (rech entries only; remainder keeps the state cut) | L3M | 6 | 11467 | 2.0 | 3.6 | 343 | 22.1 (23.4) | -1597 (-1662) | -375 | 634 | 0 | 966 | -286 | 0.0 |
 | BO_U7_6TL_N20_t0p40_flat_all | U7: at 20 min, if the open loss is still worse than 40% of the target: flat (all trades) | L3M | 6 | 17116 | 4.5 | 6.4 | 414 | 22.8 (23.4) | -1604 (-1662) | -123 | 621 | -271 | 2363 | 691 | 1.1 |
 | BO_U7_7C_W180_skip | U7: another book filled a same-side target in the last 180 s: skip the signal | L3M | 6 | 13590 | 3.1 | 6.2 | 863 | 23.2 (23.4) | -1644 (-1662) | 0 | 0 | -1328 | 1922 | 21 | 0.0 |
@@ -279,8 +281,10 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L6M | 6 | 18236 | 11.5 | 3.9 | -1551 | 24.5 (24.5) | -1628 (-1632) | -9382 | 373 | 1165 | -643 | -4698 | 0.0 |
 | BO_U7_1C_m0p50_T45_S60 | U7: rechase entries get lots x0.50, target 45, stop 60 (fresh full) | L6M | 6 | 17813 | 19.3 | 13.6 | -1272 | 24.1 (24.5) | -1497 (-1632) | -8786 | 4350 | 49 | 6065 | -6087 | 0.0 |
 | BO_U7_1L_G60_k1p00_m0p50 | U7: RECHASE entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 1.00 ATR) | L6M | 6 | 15233 | 16.4 | 9.5 | -1258 | 24.3 (24.5) | -1503 (-1632) | -6768 | 3276 | -197 | 3539 | -4874 | 0.0 |
+| BO_U7_1Lrev_G15_k0p75_m0p50 | U7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L6M | 6 | 17299 | -12.6 | -11.2 | 219 | 24.3 (24.5) | -1560 (-1632) | -2102 | 1832 | -102 | -133 | 1222 | 0.0 |
 | BO_U7_1S_G60_k2p00_S45 | U7: RECHASE entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 2.00 ATR) | L6M | 6 | 19849 | 9.8 | 13.3 | 764 | 22.5 (24.5) | -1529 (-1632) | -1084 | 1521 | 42 | 2387 | -573 | 0.0 |
 | BO_U7_1Srev_G15_k0p75_S45 | U7: FRESH entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L6M | 6 | 19064 | 0.9 | 2.3 | 257 | 23.1 (24.5) | -1546 (-1632) | -1178 | 1277 | 475 | 600 | 1809 | 0.0 |
+| BO_U7_1T_G30_k2p00_T30 | U7: RECHASE entries get target 30 pts (fresh = 1st-2nd trade of the book in the session, at least 30 min since its last exit, session move at most 2.00 ATR) | L6M | 6 | 18236 | 24.6 | 20.7 | -941 | 23.9 (24.5) | -1600 (-1632) | -5518 | 2362 | -101 | 4598 | -2982 | 0.0 |
 | BO_U7_3SS_f0p33_a0p75_r0_rech | U7: 0.33 of the lots go out by market at 75% of the stop (rech entries only; remainder keeps the state cut) | L6M | 6 | 17317 | 2.0 | 1.8 | -36 | 23.5 (24.5) | -1582 (-1632) | -693 | 611 | 0 | 230 | -307 | 0.0 |
 | BO_U7_6TL_N20_t0p40_flat_all | U7: at 20 min, if the open loss is still worse than 40% of the target: flat (all trades) | L6M | 6 | 17926 | 4.5 | 7.6 | 581 | 23.8 (24.5) | -1571 (-1632) | -1004 | 946 | -209 | 1547 | -479 | 1.4 |
 | BO_U7_7C_W180_skip | U7: another book filled a same-side target in the last 180 s: skip the signal | L6M | 6 | 19623 | 3.1 | 4.5 | 287 | 24.3 (24.5) | -1603 (-1632) | -175 | 0 | -628 | 122 | -522 | 0.0 |
@@ -1138,6 +1142,28 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | 10-20 02:06 | P7 | long | 4 > 4 | n/a | Target > Target | 3601 > 11 |
 
 
+**BO_U7_1T_G30_k2p00_T30**
+
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 09-02 09:00 | U7 | short | 4 > 4 | rech (2 / 53 / 3.40) | StopJoinFallback > Target | -4785 > 2385 |
+| 05-11 00:10 | U7 | long | 4 > 4 | rech (2 / 64 / 3.43) | StopJoinFallback > Target | -4725 > 2390 |
+| 05-27 23:40 | U7 | short | 4 > 4 | rech (1 / 924 / 4.63) | StopJoin > Target | -4600 > 2395 |
+| 08-25 00:10 | U7 | short | 4 > 3 | rech (1 / 697 / 5.55) | StopJoinFallback > Target | -4545 > 1796 |
+| 05-19 07:10 | U7 | long | 4 > 4 | rech (1 / 306 / 4.32) | StateCut > Target | -2924 > 2400 |
+
+
+**BO_U7_1Trev_G60_k0p75_T45**
+
+| time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
+|--|--|--|--|--|--|--|
+| 10-20 02:00 | U7 | long | 2 > 2 | rech (1 / 804 / -0.59) | StopJoinFallback > Target | -2227 > 1798 |
+| 07-08 12:10 | U7 | long | 4 > 4 | rech (1 / 383 / -3.86) | Target > Target | 4790 > 3590 |
+| 08-26 02:50 | U7 | long | 4 > 4 | rech (2 / 134 / -3.33) | Target > Target | 4795 > 3595 |
+| 08-27 00:40 | U7 | short | 4 > 4 | rech (1 / 818 / -0.68) | Target > Target | 4795 > 3595 |
+| 08-31 05:00 | U7 | long | 4 > 4 | rech (1 / 3808 / -6.39) | Target > Target | 4795 > 3595 |
+
+
 **BO_U7_3SS_f0p33_a0p75_r0_rech**
 
 | time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
@@ -1247,8 +1273,10 @@ The scorecard line is the stack for L6M with the set against LPB_BASE (a: full s
 - BO_P7_NZF_rech: (stack, per week): full stops 24.5/wk $-39875; give-backs 11.4/wk (7.3 round-trips) realised $-1971, forgone vs target $30831; same-side losing runs max 12, p95 6, $-50078 lost on 3rd-and-later; no-new-evidence re-entries 38.1/wk $429; recoveries cut 13.9/wk $49365, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $4448/wk, losers avoided $3283/wk, net -798 $/wk; pnl $18986/wk. ACCEPT BO_P7_NZF_rech FAIL fails=3/20
 - BO_U7_1C_m0p50_T45_S60: (stack, per week): full stops 24.1/wk $-36007; give-backs 8.5/wk (8.4 round-trips) realised $-12457, forgone vs target $31834; same-side losing runs max 12, p95 6, $-48408 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $-765; recoveries cut 13.7/wk $46506, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $49/wk, losers avoided $-0/wk, net -1899 $/wk; pnl $17885/wk. ACCEPT BO_U7_1C_m0p50_T45_S60 FAIL fails=3/20
 - BO_U7_1L_G60_k1p00_m0p50: (stack, per week): full stops 24.3/wk $-36516; give-backs 9.1/wk (9.0 round-trips) realised $-13159, forgone vs target $33512; same-side losing runs max 12, p95 6, $-50152 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $-704; recoveries cut 13.8/wk $46655, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $197/wk, net -1674 $/wk; pnl $18110/wk. ACCEPT BO_U7_1L_G60_k1p00_m0p50 FAIL fails=3/20
+- BO_U7_1Lrev_G15_k0p75_m0p50: (stack, per week): full stops 24.3/wk $-37963; give-backs 9.1/wk (9.0 round-trips) realised $-13828, forgone vs target $35097; same-side losing runs max 12, p95 6, $-50919 lost on 3rd-and-later; no-new-evidence re-entries 37.2/wk $-411; recoveries cut 13.7/wk $46863, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $102/wk, net +485 $/wk; pnl $20269/wk. ACCEPT BO_U7_1Lrev_G15_k0p75_m0p50 FAIL fails=3/20
 - BO_U7_1S_G60_k2p00_S45: (stack, per week): full stops 22.5/wk $-34469; give-backs 9.1/wk (9.0 round-trips) realised $-13547, forgone vs target $34726; same-side losing runs max 12, p95 6, $-51133 lost on 3rd-and-later; no-new-evidence re-entries 37.2/wk $-785; recoveries cut 13.6/wk $46530, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $390/wk, losers avoided $349/wk, net +320 $/wk; pnl $20104/wk. ACCEPT BO_U7_1S_G60_k2p00_S45 FAIL fails=3/20
 - BO_U7_1Srev_G15_k0p75_S45: (stack, per week): full stops 23.1/wk $-35685; give-backs 9.0/wk (9.0 round-trips) realised $-13856, forgone vs target $35125; same-side losing runs max 12, p95 6, $-50884 lost on 3rd-and-later; no-new-evidence re-entries 37.0/wk $-716; recoveries cut 13.6/wk $46534, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $1171/wk, losers avoided $695/wk, net -441 $/wk; pnl $19343/wk. ACCEPT BO_U7_1Srev_G15_k0p75_S45 FAIL fails=3/20
+- BO_U7_1T_G30_k2p00_T30: (stack, per week): full stops 23.9/wk $-38295; give-backs 8.5/wk (8.4 round-trips) realised $-12424, forgone vs target $31801; same-side losing runs max 12, p95 6, $-47936 lost on 3rd-and-later; no-new-evidence re-entries 37.2/wk $-826; recoveries cut 13.6/wk $46410, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $101/wk, net -565 $/wk; pnl $19219/wk. ACCEPT BO_U7_1T_G30_k2p00_T30 FAIL fails=3/20
 - BO_U7_3SS_f0p33_a0p75_r0_rech: (stack, per week): full stops 23.5/wk $-37212; give-backs 9.1/wk (9.0 round-trips) realised $-13910, forgone vs target $35277; same-side losing runs max 12, p95 6, $-51171 lost on 3rd-and-later; no-new-evidence re-entries 37.3/wk $-449; recoveries cut 13.7/wk $46873, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $0/wk, losers avoided $-0/wk, net -124 $/wk; pnl $19660/wk. ACCEPT BO_U7_3SS_f0p33_a0p75_r0_rech FAIL fails=3/20
 - BO_U7_6TL_N20_t0p40_flat_all: (stack, per week): full stops 23.8/wk $-37464; give-backs 9.1/wk (9.0 round-trips) realised $-14009, forgone vs target $35376; same-side losing runs max 12, p95 6, $-51076 lost on 3rd-and-later; no-new-evidence re-entries 37.2/wk $-475; recoveries cut 13.6/wk $46822, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $146/wk, losers avoided $355/wk, net +285 $/wk; pnl $20069/wk. ACCEPT BO_U7_6TL_N20_t0p40_flat_all FAIL fails=3/20
 - BO_U7_7C_W180_skip: (stack, per week): full stops 24.3/wk $-38894; give-backs 9.0/wk (9.0 round-trips) realised $-13814, forgone vs target $34986; same-side losing runs max 12, p95 6, $-50455 lost on 3rd-and-later; no-new-evidence re-entries 37.2/wk $-324; recoveries cut 13.6/wk $46815, clipped fills 0.0/wk $0; vs LPB_BASE: winners skipped $1602/wk, losers avoided $2230/wk, net +488 $/wk; pnl $20272/wk. ACCEPT BO_U7_7C_W180_skip FAIL fails=3/20
