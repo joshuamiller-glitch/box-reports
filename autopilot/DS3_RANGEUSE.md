@@ -1172,7 +1172,7 @@ Event day = W-CAL ev_day (any scheduled release/auction/chair/earnings; ~39% of 
 | D4III1 | c | high-impact days | -647 $/wk, DD +26.9%, ww -580, stops 1.03(1.26), b5 86%, w2l 1 | -313 $/wk, DD +18.6%, ww +2785, stops 1.23(1.42), b5 94%, w2l 1 |
 | D4III1 | c | non-high days | -2573 $/wk, DD -11.8%, ww -3048, stops 9.13(9.74), b5 83%, w2l 1 | -1005 $/wk, DD +0.2%, ww +5088, stops 8.48(9.24), b5 85%, w2l 3 |
 ## Dial 9: whole bracket at constant R
-**VERDICT (plain, not a PASS): 44 of 120 cells scored through L3M, 0 through L6M, 0 through HOLD; 0 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo.**
+**VERDICT (plain, not a PASS): 47 of 120 cells scored through L3M, 0 through L6M, 0 through HOLD; 0 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo.**
 
 Identity: TL3_D9_ID 202610 (hook active at W=60): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. Prereg autopilot/DIAL9_PREREG.md (sha line in DECISIONS.md). Order: ADDENDUM_CHOP_DIAL9_20261114.md. Code code/th_dial9 (d9_hooks.py reuses th_rangeuse forecasts fc.parquet a/b/c). Engine dollars are BASE lots (live x1.75).
 Definition: W = clip(book stop x Wtab/60, 30, 100); target = W x the book own target/stop ratio; lots = base x min(cap, stop/W) rounded half-up (min 1); cap 1.5 or 2 on increases. Maps T1 40/60/100, T2 45/60/80 (tercile of the expanding past predictions), C continuous (range ratio exp(pred-fref) x 60, clip 30..100). Version S = stop+target only (BookLock held at base dollars); version A = also state-cut arm and ctxcut arms, K7 flat cut, TH-L2 LOSS_MIN and TIGHT_TRAIL, MINDIP add dip, BookLock R from actual lots (all x W/stop). Not scalable: the hard-coded 30-pt profit-side tighten threshold inside sim.py. Halves B both, N narrow-only (W<=stop), W wide-only (W>=stop). Cap 15 = x1.5, 20 = x2 (wide-only has no increase). Fees and measured slippage are charged by the engine at the real lot count.
@@ -1182,25 +1182,25 @@ Windows: L3M, L6M first, then HOLD/PRE for cells that pass; GAP/MID = 2026-02-07
 ### Which half and which scaling carries it (median over cells, scope all; delta vs JN05W2; DD cut + = smaller drawdown)
 | group | cells L3M | median DD cut L3M % | median d mean L3M $/wk | median d worst week L3M | median d full stops/wk | L6M median DD cut % / d mean / cells |
 |---|---|---|---|---|---|---|
-| version S | 25 | -11.5 | -2406 | -4654 | +3.96 | n/a |
-| version A | 19 | -5.4 | -4301 | -5562 | +0.00 | n/a |
-| both halves | 41 | -9.7 | -3788 | -5416 | +0.08 | n/a |
-| narrow-only | 3 | -5.9 | +454 | -3070 | +7.76 | n/a |
-| cap 1.5 (both/narrow) | 26 | -7.8 | -2847 | -5035 | +0.27 | n/a |
-| cap 2 (both/narrow) | 18 | -8.5 | -3538 | -5457 | +0.11 | n/a |
+| version S | 26 | -11.1 | -2082 | -3862 | +3.96 | n/a |
+| version A | 21 | -5.4 | -5950 | -5416 | +0.00 | n/a |
+| both halves | 43 | -11.5 | -3788 | -5416 | +0.08 | n/a |
+| narrow-only | 4 | -3.0 | +179 | -1555 | +5.14 | n/a |
+| cap 1.5 (both/narrow) | 28 | -7.8 | -2847 | -3960 | +0.11 | n/a |
+| cap 2 (both/narrow) | 19 | -11.5 | -3788 | -5416 | +0.08 | n/a |
 | fc a | 12 | -20.1 | -188 | -8727 | +0.23 | n/a |
-| fc b | 13 | -5.4 | -3788 | -5550 | +0.46 | n/a |
-| fc c | 10 | -1.6 | -2406 | +230 | +0.08 | n/a |
-| fc r (R2 HAR+CME) | 9 | -62.0 | -9605 | -3267 | +0.00 | n/a |
-| map T1 | 14 | -11.5 | -3788 | -5905 | +6.39 | n/a |
+| fc b | 14 | -4.6 | -3788 | -5102 | +0.30 | n/a |
+| fc c | 11 | -1.6 | -2406 | +230 | +0.08 | n/a |
+| fc r (R2 HAR+CME) | 10 | -62.0 | -9605 | -3267 | -0.04 | n/a |
+| map T1 | 16 | -15.8 | -4045 | -5483 | +3.99 | n/a |
 | map T2 | 16 | -36.2 | -6363 | -11544 | +0.84 | n/a |
-| map C | 14 | +0.4 | +91 | +230 | +0.00 | n/a |
+| map C | 15 | +0.4 | -97 | +230 | +0.00 | n/a |
 
 Cross: version x half (L3M scope all, median DD cut % / median d mean $/wk)
 | | both | narrow-only | wide-only |
 |---|---|---|---|
-| version S | -12.9 / -2847 (n=22) | -5.9 / +454 (n=3) | n/a |
-| version A | -5.4 / -4301 (n=19) | n/a | n/a |
+| version S | -12.9 / -2847 (n=22) | -3.0 / +179 (n=4) | n/a |
+| version A | -5.4 / -5950 (n=21) | n/a | n/a |
 
 ### Per cell, scope all (sorted by L3M drawdown cut; L6M and HOLD when present)
 | cell | L3M | L6M | HOLD | MID(GAP) | PRE | d mean/wk at $4.84 RT L3M | at $4.84 L6M |
@@ -1218,6 +1218,7 @@ Cross: version x half (L3M scope all, median DD cut % / median d mean $/wk)
 | S_a_C_B_15 | -188 $/wk, DD +0.2%, ww +110, stops 10.35(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | -188 (lots -0/wk) | n/a |
 | S_a_C_B_20 | -188 $/wk, DD +0.2%, ww +110, stops 10.35(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | -188 (lots -0/wk) | n/a |
 | S_r_T2_N_15 | +454 $/wk, DD +0.0%, ww +0, stops 12.86(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | +428 (lots +7/wk) | n/a |
+| S_b_C_N_15 | -97 $/wk, DD -0.1%, ww -40, stops 10.35(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | -97 (lots +0/wk) | n/a |
 | A_r_C_B_15 | +370 $/wk, DD -0.4%, ww +225, stops 10.35(10.35), b5 102%, w2l 0 | n/a | n/a | n/a | n/a | +366 (lots +1/wk) | n/a |
 | S_c_C_B_15 | -353 $/wk, DD -1.6%, ww +230, stops 10.35(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | -354 (lots +0/wk) | n/a |
 | S_c_C_B_20 | -353 $/wk, DD -1.6%, ww +230, stops 10.35(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | -354 (lots +0/wk) | n/a |
@@ -1240,12 +1241,14 @@ Cross: version x half (L3M scope all, median DD cut % / median d mean $/wk)
 | A_a_T1_B_15 | -4301 $/wk, DD -25.1%, ww -17407, stops 10.73(10.35), b5 86%, w2l 1 | n/a | n/a | n/a | n/a | -4416 (lots +31/wk) | n/a |
 | S_r_T1_B_15 | -6331 $/wk, DD -37.7%, ww +10114, stops 11.95(10.35), b5 95%, w2l 3 | n/a | n/a | n/a | n/a | -6217 (lots -31/wk) | n/a |
 | A_c_T1_B_15 | -6477 $/wk, DD -46.3%, ww -5416, stops 10.27(10.35), b5 95%, w2l 2 | n/a | n/a | n/a | n/a | -6554 (lots +21/wk) | n/a |
+| A_c_T1_B_20 | -6477 $/wk, DD -46.3%, ww -5416, stops 10.27(10.35), b5 95%, w2l 2 | n/a | n/a | n/a | n/a | -6554 (lots +21/wk) | n/a |
 | A_a_T2_B_15 | -3957 $/wk, DD -47.7%, ww -22180, stops 10.20(10.35), b5 98%, w2l 1 | n/a | n/a | n/a | n/a | -4023 (lots +18/wk) | n/a |
 | A_a_T2_B_20 | -3957 $/wk, DD -47.7%, ww -22180, stops 10.20(10.35), b5 98%, w2l 1 | n/a | n/a | n/a | n/a | -4023 (lots +18/wk) | n/a |
 | S_a_T2_B_15 | -3288 $/wk, DD -54.7%, ww -24721, stops 14.30(10.35), b5 95%, w2l 1 | n/a | n/a | n/a | n/a | -3335 (lots +13/wk) | n/a |
 | S_a_T2_B_20 | -3288 $/wk, DD -54.7%, ww -24721, stops 14.30(10.35), b5 95%, w2l 1 | n/a | n/a | n/a | n/a | -3335 (lots +13/wk) | n/a |
 | S_r_T2_B_15 | -11461 $/wk, DD -62.0%, ww -13996, stops 11.18(10.35), b5 100%, w2l 3 | n/a | n/a | n/a | n/a | -11388 (lots -20/wk) | n/a |
 | S_r_T2_B_20 | -11461 $/wk, DD -62.0%, ww -13996, stops 11.18(10.35), b5 100%, w2l 3 | n/a | n/a | n/a | n/a | -11388 (lots -20/wk) | n/a |
+| A_r_T1_B_15 | -9605 $/wk, DD -78.1%, ww -3267, stops 8.90(10.35), b5 85%, w2l 3 | n/a | n/a | n/a | n/a | -9471 (lots -37/wk) | n/a |
 | A_r_T1_B_20 | -9605 $/wk, DD -78.1%, ww -3267, stops 8.90(10.35), b5 85%, w2l 3 | n/a | n/a | n/a | n/a | -9471 (lots -37/wk) | n/a |
 | A_r_T2_B_15 | -12271 $/wk, DD -109.2%, ww -12951, stops 9.97(10.35), b5 99%, w2l 1 | n/a | n/a | n/a | n/a | -12184 (lots -24/wk) | n/a |
 | A_r_T2_B_20 | -12271 $/wk, DD -109.2%, ww -12951, stops 9.97(10.35), b5 99%, w2l 1 | n/a | n/a | n/a | n/a | -12184 (lots -24/wk) | n/a |
@@ -1297,7 +1300,7 @@ fewer than 3 cells with L6M.
 ### Reading
 Drawdown first; a result needs the gate in recent AND older windows and has to beat the 11/23/37-day placebos. Cells in the tables above that cut drawdown only through L3M, or only with full stops up, are not leads. No PASS claim.
 ## Dial 10: trade-horizon bracket
-**VERDICT (plain, not a PASS): 5 of 35 registered cells scored through L3M, 0 through L6M, 0 through HOLD; 0 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo. Best L3M cell inside the mean gate: M1_50_g00_c1_d10_c20_tb_B (DD +0.0%, +0 $/wk).**
+**VERDICT (plain, not a PASS): 7 of 35 registered cells scored through L3M, 0 through L6M, 0 through HOLD; 0 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo. Best L3M cell inside the mean gate: M1_50_g00_c1_d10_c20_tb_B (DD +0.0%, +0 $/wk).**
 
 Identity: TL3_D10_M1_50_g00_c1_d10_c20_tb_B 202610 (hook active, g=0): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. Prereg autopilot/DIAL10_PREREG.md (sha line in DECISIONS.md 2026-11-14T22:33Z). Order: ADDENDUM_DIAL10_20261114.md. Code code/th_dial10 (d10_core.py features, d10_coef.py coefficient table, d10_hooks.py hook, d10_driver.py). Bulk /mnt/l2/l2vast/_dial10. Tag D10 (quota 3).
 **LOT BASIS**: engine dollars are BASE lots (live user lots x1.75, live caps = engine caps x1.75); the engine charges its raw $1.18/contract RT with the engine fills, FEES.md says $4.84 RT. Every $ column is raw $1.18 unless it says $4.84; the $4.84 columns reprice delta mean/wk as net - lots x 3.66 per trade for cell and JN05W2 alike (no rerun) and show the lot change per week.
@@ -1375,16 +1378,16 @@ Reading: cell = R2 / Spearman. Out-of-sample, no look-ahead (inputs closed bars 
 | group | cells L3M | median DD cut L3M % | median d mean L3M $/wk | median d worst week L3M | median d full stops/wk | L6M median DD cut % / d mean / cells |
 |---|---|---|---|---|---|---|
 | g=1.5 | 3 | -19.5 | -9251 | -7278 | +3.65 | n/a |
-| g=2.0 | 1 | -56.4 | -9929 | -4944 | +3.88 | n/a |
-| clip=1 | 4 | -36.2 | -7161 | -6111 | +3.58 | n/a |
-| clip=3 | 1 | -19.5 | -9251 | -4726 | +4.26 | n/a |
-| tag=50 | 4 | -18.1 | -6822 | -4835 | +3.77 | n/a |
-| tag=75 | 1 | -55.7 | -10644 | -18061 | +3.50 | n/a |
-| db=10 | 5 | -19.5 | -9251 | -4944 | +3.65 | n/a |
-| lots=c20 | 5 | -19.5 | -9251 | -4944 | +3.65 | n/a |
-| tr=b | 5 | -19.5 | -9251 | -4944 | +3.65 | n/a |
-| half=B | 5 | -19.5 | -9251 | -4944 | +3.65 | n/a |
-| fc=M1 | 5 | -19.5 | -9251 | -4944 | +3.65 | n/a |
+| g=2.0 | 3 | -40.1 | -9929 | -4920 | +3.88 | n/a |
+| clip=1 | 5 | -40.1 | -5693 | -4944 | +3.50 | n/a |
+| clip=3 | 2 | -21.0 | -11161 | -2069 | +5.25 | n/a |
+| tag=50 | 5 | -19.5 | -9251 | -4726 | +3.88 | n/a |
+| tag=75 | 2 | -47.9 | -8168 | -11490 | +3.35 | n/a |
+| db=10 | 7 | -22.4 | -9251 | -4920 | +3.65 | n/a |
+| lots=c20 | 7 | -22.4 | -9251 | -4920 | +3.65 | n/a |
+| tr=b | 7 | -22.4 | -9251 | -4920 | +3.65 | n/a |
+| half=B | 7 | -22.4 | -9251 | -4920 | +3.65 | n/a |
+| fc=M1 | 7 | -22.4 | -9251 | -4920 | +3.65 | n/a |
 
 ### Per cell, scope all (sorted by L3M drawdown cut; L6M, HOLD, GAP/MID and PRE when present)
 | cell | L3M | L6M | HOLD | MID(GAP) | PRE | d mean/wk at $4.84 L3M | at $4.84 L6M |
@@ -1392,6 +1395,8 @@ Reading: cell = R2 / Spearman. Out-of-sample, no look-ahead (inputs closed bars 
 | M1_50_g00_c1_d10_c20_tb_B | +0 $/wk, DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | +0 (lots +0/wk) | n/a |
 | M1_50_g15_c1_d10_c20_tb_B | -4393 $/wk, DD -16.7%, ww -7278, stops 14.00(10.35), b5 74%, w2l 3 | n/a | n/a | n/a | n/a | -4996 (lots +165/wk) | n/a |
 | M1_50_g15_c3_d10_c20_tb_B | -9251 $/wk, DD -19.5%, ww -4726, stops 14.61(10.35), b5 55%, w2l 3 | n/a | n/a | n/a | n/a | -9877 (lots +171/wk) | n/a |
+| M1_50_g20_c3_d10_c20_tb_B | -13071 $/wk, DD -22.4%, ww +588, stops 16.59(10.35), b5 34%, w2l 4 | n/a | n/a | n/a | n/a | -13840 (lots +210/wk) | n/a |
+| M1_75_g20_c1_d10_c20_tb_B | -5693 $/wk, DD -40.1%, ww -4920, stops 13.54(10.35), b5 72%, w2l 2 | n/a | n/a | n/a | n/a | -6280 (lots +160/wk) | n/a |
 | M1_75_g15_c1_d10_c20_tb_B | -10644 $/wk, DD -55.7%, ww -18061, stops 13.85(10.35), b5 58%, w2l 3 | n/a | n/a | n/a | n/a | -11127 (lots +132/wk) | n/a |
 | M1_50_g20_c1_d10_c20_tb_B | -9929 $/wk, DD -56.4%, ww -4944, stops 14.23(10.35), b5 48%, w2l 3 | n/a | n/a | n/a | n/a | -10609 (lots +186/wk) | n/a |
 
@@ -1401,8 +1406,9 @@ Reading: cell = R2 / Spearman. Out-of-sample, no look-ahead (inputs closed bars 
 | M1_50_g00_c1_d10_c20_tb | B | +0 $/wk, DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | n/a |
 | M1_50_g15_c1_d10_c20_tb | B | -4393 $/wk, DD -16.7%, ww -7278, stops 14.00(10.35), b5 74%, w2l 3 | n/a |
 | M1_50_g15_c3_d10_c20_tb | B | -9251 $/wk, DD -19.5%, ww -4726, stops 14.61(10.35), b5 55%, w2l 3 | n/a |
+| M1_50_g20_c3_d10_c20_tb | B | -13071 $/wk, DD -22.4%, ww +588, stops 16.59(10.35), b5 34%, w2l 4 | n/a |
+| M1_75_g20_c1_d10_c20_tb | B | -5693 $/wk, DD -40.1%, ww -4920, stops 13.54(10.35), b5 72%, w2l 2 | n/a |
 | M1_75_g15_c1_d10_c20_tb | B | -10644 $/wk, DD -55.7%, ww -18061, stops 13.85(10.35), b5 58%, w2l 3 | n/a |
-| M1_50_g20_c1_d10_c20_tb | B | -9929 $/wk, DD -56.4%, ww -4944, stops 14.23(10.35), b5 48%, w2l 3 | n/a |
 
 ### Per book and per session (item 2): effect of the best whole-system cell on each book x session, and the best setting per book x session
 Slice of the exact trade tables (books interact through day locks and caps, so single-book cells in the next table are the clean test). For every book x session the cell with the largest drawdown cut inside the tolerant mean gate in L3M (and in L6M when scored) is listed; "stays fixed" = no cell cuts drawdown inside the gate there.

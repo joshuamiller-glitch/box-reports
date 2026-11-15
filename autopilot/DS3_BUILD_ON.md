@@ -1,6 +1,6 @@
-# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-15 00:52Z
+# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-15 04:33Z
 
-Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 786 of 1136 done (one set per job, one month per job), 0 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
+Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 787 of 1136 done (one set per job, one month per job), 0 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
 
 
 ## 1. What this page is, and the definitions used
@@ -125,7 +125,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L1M | 6 | -13819 | 0.7 | nan | 2361 | 28.4 (28.4) | -1667 (-1667) | -7265 | 0 | 778 | 384 | 15945 | 0.0 |
 | BO_U7_1C_m0p50_T45_S60 | U7: rechase entries get lots x0.50, target 45, stop 60 (fresh full) | L1M | 6 | 17078 | 13.7 | 86.5 | -461 | 27.6 (28.4) | -1533 (-1667) | -7449 | 5528 | 0 | 7008 | -1684 | 0.0 |
 | BO_U7_1L_G60_k1p00_m0p50 | U7: RECHASE entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 1.00 ATR) | L1M | 6 | 16305 | 8.6 | nan | -1233 | 28.4 (28.4) | -1518 (-1667) | -6294 | 4236 | 0 | 4395 | -2166 | 0.0 |
-| BO_U7_1Lrev_G15_k0p75_m0p50 | U7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L1M | 4 | 17971 | 3.8 | 3.5 | 433 | 27.6 (28.4) | -1545 (-1667) | -2935 | 4067 | 0 | 1935 | 1266 | 0.0 |
+| BO_U7_1Lrev_G15_k0p75_m0p50 | U7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L1M | 5 | 17971 | 3.8 | 3.5 | 433 | 27.6 (28.4) | -1545 (-1667) | -2935 | 4067 | 0 | 1935 | 1266 | 0.0 |
 | BO_U7_1S_G60_k2p00_S45 | U7: RECHASE entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 2.00 ATR) | L1M | 6 | 18468 | 5.9 | 9.9 | 929 | 26.2 (28.4) | -1538 (-1667) | 0 | 1932 | 0 | 3008 | 1697 | 0.0 |
 | BO_U7_1Srev_G15_k0p75_S45 | U7: FRESH entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L1M | 6 | -16488 | 3.5 | nan | -308 | 25.9 (28.4) | -1516 (-1667) | -1256 | 2348 | 0 | 2205 | 4432 | 0.0 |
 | BO_U7_3SS_f0p33_a0p75_r0_rech | U7: 0.33 of the lots go out by market at 75% of the stop (rech entries only; remainder keeps the state cut) | L1M | 6 | -41 | 1.4 | 12.6 | 409 | 26.9 (28.4) | -1604 (-1667) | 0 | 675 | 0 | 707 | 520 | 0.0 |
@@ -202,7 +202,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_P7_NZF_rech | P7 near-zone ratchet floor (80%->50%, 90%->70%, 95%->85% of target, market exit) on RECHASE only entries | L3M | 6 | 12710 | 11.5 | 2.4 | -958 | 23.4 (23.4) | -1661 (-1662) | -8852 | 186 | 2401 | -2893 | 1689 | 0.0 |
 | BO_U7_1C_m0p50_T45_S60 | U7: rechase entries get lots x0.50, target 45, stop 60 (fresh full) | L3M | 6 | 15731 | 19.3 | 12.4 | -970 | 22.8 (23.4) | -1516 (-1662) | -6765 | 4721 | 105 | 9212 | -2647 | 0.0 |
 | BO_U7_1L_G60_k1p00_m0p50 | U7: RECHASE entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 1.00 ATR) | L3M | 6 | 15853 | 16.4 | 9.7 | -849 | 23.1 (23.4) | -1522 (-1662) | -5243 | 3506 | -205 | 5867 | -2509 | 0.0 |
-| BO_U7_1Lrev_G15_k0p75_m0p50 | U7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L3M | 4 | 15014 | -12.6 | -13.1 | 88 | 23.1 (23.4) | -1580 (-1662) | -3053 | 2041 | -219 | -229 | -54 | 0.0 |
+| BO_U7_1Lrev_G15_k0p75_m0p50 | U7: FRESH entries get lots x0.50 (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L3M | 5 | 15014 | -12.6 | -13.1 | 88 | 23.1 (23.4) | -1580 (-1662) | -3053 | 2041 | -219 | -229 | -54 | 0.0 |
 | BO_U7_1S_G60_k2p00_S45 | U7: RECHASE entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 2.00 ATR) | L3M | 6 | 17349 | 9.8 | 10.6 | 648 | 21.3 (23.4) | -1560 (-1662) | 0 | 1606 | 210 | 4276 | 667 | 0.0 |
 | BO_U7_1Srev_G15_k0p75_S45 | U7: FRESH entries get stop 45 pts (fresh = 1st-2nd trade of the book in the session, at least 15 min since its last exit, session move at most 0.75 ATR) | L3M | 6 | 9174 | 0.9 | 3.4 | 380 | 21.6 (23.4) | -1562 (-1662) | -314 | 1404 | 209 | 879 | 1834 | 0.0 |
 | BO_U7_3SS_f0p33_a0p75_r0_rech | U7: 0.33 of the lots go out by market at 75% of the stop (rech entries only; remainder keeps the state cut) | L3M | 6 | 11467 | 2.0 | 3.6 | 343 | 22.1 (23.4) | -1597 (-1662) | -375 | 634 | 0 | 966 | -286 | 0.0 |
@@ -1111,9 +1111,9 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 |--|--|--|--|--|--|--|
 | 08-26 02:50 | U7 | long | 4 > 2 | rech (2 / 134 / -3.33) | Target > StateCut | 4795 > -1349 |
 | 09-28 00:20 | U7 | long | 4 > 2 | rech (1 / 5107 / 0.52) | StopJoinFallback > StateCut | -4805 > -1204 |
+| 06-08 05:40 | U7 | short | 4 > 2 | rech (2 / 329 / -4.46) | StopJoin > StateCut | -4775 > -1204 |
 | 07-02 04:40 | U7 | short | 4 > 2 | rech (2 / 61 / 0.53) | StopJoin > StopJoin | -4990 > -2347 |
-| 10-15 05:00 | U7 | long | 4 > 2 | rech (1 / 1010 / -6.85) | StopJoinFallback > StopJoinFallback | -4955 > -2452 |
-| 09-15 10:30 | U7 | long | 4 > 2 | rech (1 / 1349 / -1.06) | Target > Target | 4800 > 2398 |
+| 06-18 04:40 | U7 | short | 4 > 2 | rech (2 / 20 / -7.96) | StopJoinFallback > StopJoinFallback | -5100 > -2462 |
 
 
 **BO_U7_1S_G60_k2p00_S45**

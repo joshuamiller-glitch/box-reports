@@ -1,13 +1,20 @@
 # DS3_CONFLUENCE_ITEMS.md - STEP 3: each condition alone (W-CF1)
-Verdict: map only (6016 conditions x book x session cells, taken JN05W2 trades, $ per trade at base lots net of $4.84 fees); nothing is dropped for being weak alone and nothing here is a result; every number is in-sample on the full history until step 5 controls are run by W-CF3.
+Verdict: map only (6021 conditions x book x session cells, taken JN05W2 trades, $ per trade at base lots net of $4.84 fees); nothing is dropped for being weak alone and nothing here is a result; every number is in-sample on the full history until step 5 controls are run by W-CF3.
 
 Columns: lift = mean $/trade(yes) - mean $/trade(no); z = Welch; years_pos/years_n = calendar years with the same sign (>=30 per side); L3M / L6M lift = same lift in the recent windows (L3M ld>=20260813, L6M ld>=20260512).
 
 ## Counts by source
 src
-M      5686
-T        14
-all     316
+M                           5686
+T                             14
+V                              5
+all                          316
+univ_cols_M                 5686
+univ_entry_table_ABCDEKL     273
+univ_entry_table_S            35
+univ_entry_table_T            14
+univ_entry_table_U             8
+univ_entry_table_V             5
 
 ## Most stable positive lifts per book cell (z>=3, same sign every year, positive in L6M); top 40 by z
 
@@ -58,46 +65,46 @@ all     316
 
 | cond | book | sess | n_yes | share | mean_yes | mean_no | lift | z | yrs | L3M lift | L6M lift |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| c_B_cl_ahead_cnt3_15 | P7 | 0 | 1150 | 0.53 | 877 | -129 | 1006 | 5.1 | 4/4 | -17 | 445 |
-| c_B_cl_ahead_kinds2_10 | A7 | 0 | 501 | 0.43 | 295 | -29 | 325 | 4.9 | 4/4 | 405 | 239 |
-| c_B_cl_ahead_kinds2_a2 | U7 | 0 | 432 | 0.63 | 851 | -434 | 1285 | 4.9 | 3/3 | 1049 | 1280 |
-| c_B_cl_ahead_kinds2_5 | A7 | 0 | 625 | 0.54 | 260 | -64 | 324 | 4.9 | 4/4 | 329 | 391 |
-| c_B_cl_ahead_kinds2_10 | U7 | 0 | 223 | 0.33 | 1253 | -48 | 1300 | 4.8 | 4/4 | -421 | 895 |
-| c_B_cl_ahead_cnt3_5 | P7 | 0 | 1549 | 0.72 | 700 | -337 | 1037 | 4.8 | 4/4 | 472 | 544 |
-| c_B_cl_ahead_cnt2_10 | U7 | 0 | 204 | 0.30 | 1307 | -20 | 1326 | 4.8 | 3/3 | -421 | 799 |
-| c_B_cl_ahead_kinds2_15 | P7 | 0 | 565 | 0.26 | 1221 | 118 | 1103 | 4.8 | 4/4 | 255 | 458 |
-| c_B_cl_ahead_cnt2_15 | P7 | 0 | 560 | 0.26 | 1221 | 122 | 1100 | 4.7 | 4/4 | 255 | 382 |
-| m_ichi_fast_tkkj_15m_nodiv | H7 | 0 | 569 | 0.81 | 408 | -660 | 1067 | 4.7 | 3/3 | 1030 | 1028 |
-| c_B_cl_ahead_kinds2_10 | P7 | 0 | 572 | 0.26 | 1167 | 133 | 1035 | 4.5 | 4/4 | -269 | 220 |
-| c_B_cl_ahead_cnt3_10 | P7 | 0 | 1251 | 0.58 | 790 | -120 | 910 | 4.5 | 4/4 | -178 | 454 |
-| c_B_cl_ahead_kinds2_15 | K7 | 0 | 780 | 0.30 | 262 | 8 | 254 | 4.5 | 4/4 | -42 | 104 |
-| c_B_cl_ahead_cnt2_10 | A7 | 0 | 489 | 0.42 | 282 | -14 | 297 | 4.4 | 4/4 | 405 | 213 |
-| c_B_cl_ahead_cnt3_5 | A7 | 0 | 963 | 0.83 | 177 | -215 | 391 | 4.4 | 4/4 | -98 | 236 |
-| c_B_cl_ahead_cnt2_15 | K7 | 0 | 770 | 0.30 | 258 | 11 | 247 | 4.4 | 4/4 | -42 | 80 |
-| c_B_cl_ahead_cnt2_10 | P7 | 0 | 556 | 0.26 | 1146 | 150 | 996 | 4.3 | 4/4 | -269 | 78 |
-| c_B_cl_ahead_cnt3_10 | U7 | 0 | 417 | 0.61 | 819 | -314 | 1133 | 4.3 | 4/4 | -705 | 733 |
-| m_boll20_walk_15m_fresh5 | K7 | 0 | 283 | 0.11 | 464 | 38 | 425 | 4.2 | 3/3 | 142 | 204 |
-| c_B_cl_ahead_kinds2_15 | A7 | 0 | 480 | 0.42 | 275 | -5 | 280 | 4.2 | 4/4 | 374 | 326 |
-| c_B_cl_ahead_kinds2_5 | P7 | 0 | 835 | 0.39 | 925 | 80 | 846 | 4.1 | 4/4 | -4 | 310 |
-| m_uo_15m_side | K7 | 0 | 1650 | 0.64 | 161 | -48 | 209 | 4.1 | 4/4 | 202 | 169 |
-| m_boll20_walk_15m_side | K7 | 0 | 320 | 0.12 | 432 | 36 | 396 | 4.1 | 3/3 | 167 | 196 |
-| m_keltner40_pos_5m_ewith | K7 | 0 | 576 | 0.22 | 310 | 20 | 290 | 4.0 | 4/4 | 336 | 189 |
-| c_B_cl_ahead_cnt2_15 | A7 | 0 | 471 | 0.41 | 268 | 4 | 264 | 3.9 | 4/4 | 374 | 300 |
-| m_keltner10_pos_15m_ewith | K7 | 0 | 457 | 0.18 | 348 | 28 | 320 | 3.9 | 3/3 | 116 | 152 |
-| m_demarker21_agree3of4 | P7 | 0 | 1343 | 0.62 | 698 | -72 | 771 | 3.9 | 4/4 | 1041 | 955 |
-| c_B_cl_ahead_cnt2_5 | A7 | 0 | 589 | 0.51 | 237 | -19 | 257 | 3.9 | 4/4 | 197 | 309 |
-| m_willr21_15m_ewith | K7 | 0 | 844 | 0.33 | 235 | 12 | 223 | 3.8 | 4/4 | 104 | 74 |
-| c_B_cl_ahead_cnt2_5 | U7 | 0 | 244 | 0.36 | 1029 | 14 | 1015 | 3.8 | 3/3 | -219 | 603 |
-| m_keltner20_pos_5m_ewith | K7 | 0 | 484 | 0.19 | 324 | 30 | 295 | 3.8 | 3/3 | 390 | 185 |
-| c_B_cl_ahead_kinds2_10 | K7 | 4 | 303 | 0.27 | 290 | -27 | 318 | 3.7 | 4/4 | 122 | 388 |
-| m_rsi7_agree3of4 | P7 | 0 | 1615 | 0.75 | 607 | -187 | 795 | 3.7 | 4/4 | 1431 | 687 |
-| c_B_cl_ahead_far | U7 | 0 | 345 | 0.50 | 855 | -111 | 967 | 3.7 | 4/4 | -515 | 406 |
-| m_linreg_slope50_5m_side | K7 | 0 | 1474 | 0.57 | 166 | -22 | 188 | 3.7 | 4/4 | 290 | 180 |
-| c_B_cl_ahead_cnt2_10 | K7 | 4 | 296 | 0.26 | 290 | -24 | 315 | 3.7 | 4/4 | 122 | 388 |
-| m_rsi7_15m_ewith | K7 | 0 | 566 | 0.22 | 293 | 27 | 266 | 3.6 | 4/4 | 211 | 227 |
-| m_di7_3m_side | P7 | 0 | 1589 | 0.74 | 616 | -177 | 793 | 3.6 | 4/4 | 838 | 753 |
-| m_psar_0.03_1d_fresh5 | U7 | 1 | 186 | 0.29 | 803 | -150 | 953 | 3.6 | 3/3 | 254 | 1276 |
-| c_B_cl_ahead_far | P7 | 0 | 1018 | 0.47 | 786 | 69 | 717 | 3.6 | 4/4 | 103 | 324 |
+| m_multicross_60m_ewith | A7 | 4 | 2244 | 0.56 | 0 | -0 | 0 | 10.1 | 4/4 | 1 | 0 |
+| m_ema_8_21_34_stack_60m_side | A7 | 4 | 2464 | 0.62 | 0 | -0 | 0 | 9.6 | 4/4 | 1 | 0 |
+| m_ema_stack_fast_60m_side | A7 | 4 | 2464 | 0.62 | 0 | -0 | 0 | 9.6 | 4/4 | 1 | 0 |
+| m_ema_stack_slow_agree3of4 | A7 | 4 | 2305 | 0.58 | 0 | -0 | 0 | 9.5 | 4/4 | 1 | 0 |
+| c_B_cl_ahead_kinds2_5 | M7 | 0 | 6152 | 0.36 | 0 | 0 | 0 | 9.5 | 4/4 | 0 | 0 |
+| m_ema_ribbon_15m_ewith | A7 | 4 | 2687 | 0.67 | 0 | -0 | 0 | 9.4 | 4/4 | 1 | 0 |
+| c_B_cl_ahead_cnt2_5 | M7 | 0 | 5671 | 0.33 | 0 | 0 | 0 | 9.2 | 4/4 | 0 | 0 |
+| m_rsi14_15m_ewith | M7 | 0 | 1478 | 0.09 | 0 | 0 | 0 | 9.0 | 4/4 | 0 | 0 |
+| m_multicross_60m_side | A7 | 4 | 2648 | 0.66 | 0 | -0 | 0 | 9.0 | 4/4 | 1 | 0 |
+| m_cci50_60m_ewith_z1 | A7 | 4 | 2148 | 0.54 | 0 | -0 | 0 | 8.9 | 4/4 | 1 | 0 |
+| m_ema_stack_slow_15m_side | A7 | 4 | 2367 | 0.59 | 0 | -0 | 0 | 8.9 | 4/4 | 1 | 0 |
+| m_boll10_walk_1d_rise | P7 | 4 | 1352 | 0.20 | 0 | -0 | 0 | 8.8 | 4/4 | 1 | 0 |
+| m_ao_60m_side | A7 | 4 | 2763 | 0.69 | 0 | -0 | 0 | 8.8 | 4/4 | 1 | 1 |
+| m_macd12_26_9_line_60m_side | A7 | 4 | 2881 | 0.72 | 0 | -0 | 0 | 8.8 | 4/4 | 1 | 0 |
+| m_trix30_15m_side | A7 | 4 | 2746 | 0.69 | 0 | -0 | 0 | 8.7 | 4/4 | 1 | 0 |
+| m_macd19_39_9_line_60m_side | A7 | 4 | 2615 | 0.66 | 0 | -0 | 0 | 8.5 | 4/4 | 1 | 0 |
+| c_S_pivot_R1S1_beyond | A7 | 4 | 2431 | 0.61 | 0 | -0 | 0 | 8.5 | 4/4 | 1 | 0 |
+| m_vwma_stack_fast_60m_side | A7 | 4 | 2272 | 0.57 | 0 | -0 | 0 | 8.4 | 4/4 | 1 | 0 |
+| m_sma_stack_fast_60m_side | A7 | 4 | 1779 | 0.45 | 0 | -0 | 0 | 8.2 | 4/4 | 1 | 0 |
+| m_boll10_walk_1d_rise | A7 | 4 | 946 | 0.24 | 0 | -0 | 0 | 8.2 | 4/4 | 1 | 1 |
+| m_ema_ribbon_60m_side | A7 | 4 | 2683 | 0.67 | 0 | -0 | 0 | 8.2 | 4/4 | 1 | 0 |
+| m_trend_osc_60m_side | A7 | 4 | 2899 | 0.73 | 0 | -0 | 0 | 8.1 | 4/4 | 1 | 1 |
+| c_B_cl_ahead_cnt2_10 | M7 | 0 | 4788 | 0.28 | 0 | 0 | 0 | 8.1 | 4/4 | 0 | 0 |
+| c_A_kc_out_60m | A7 | 4 | 2760 | 0.69 | 0 | -0 | 0 | 8.1 | 4/4 | 1 | 0 |
+| c_B_cl_ahead_kinds2_10 | M7 | 0 | 5015 | 0.29 | 0 | 0 | 0 | 8.0 | 4/4 | 0 | 0 |
+| m_keltner20_pos_15m_ewith | M7 | 0 | 2667 | 0.16 | 0 | 0 | 0 | 8.0 | 4/4 | 0 | 0 |
+| c_U_3 | A7 | 4 | 2774 | 0.70 | 0 | -0 | 0 | 7.9 | 4/4 | 1 | 0 |
+| m_keltner10_pos_60m_ewith | M7 | 0 | 3027 | 0.18 | 0 | 0 | 0 | 7.7 | 4/4 | 0 | 0 |
+| c_C_open_drive_with | A7 | 4 | 899 | 0.23 | 0 | -0 | 0 | 7.7 | 4/4 | 1 | 0 |
+| m_cmo21_60m_ewith | A7 | 4 | 827 | 0.21 | 0 | -0 | 0 | 7.7 | 4/4 | 1 | 0 |
+| m_fisher20_60m_side | A7 | 4 | 2691 | 0.67 | 0 | -0 | 0 | 7.6 | 4/4 | 1 | 0 |
+| m_trix8_60m_side | A7 | 4 | 2816 | 0.71 | 0 | -0 | 0 | 7.6 | 4/4 | 1 | 0 |
+| m_vwmacd_60m_side | A7 | 4 | 2914 | 0.73 | 0 | -0 | 0 | 7.5 | 4/4 | 1 | 1 |
+| c_S_cama_H3L3_beyond | A7 | 4 | 2895 | 0.73 | 0 | -0 | 0 | 7.5 | 4/4 | 1 | 0 |
+| c_C_open_drive_with | P7 | 4 | 1325 | 0.20 | 0 | -0 | 0 | 7.5 | 4/4 | 0 | 0 |
+| m_aroon25_60m_side | A7 | 4 | 2666 | 0.67 | 0 | -0 | 0 | 7.5 | 4/4 | 0 | 0 |
+| m_adline_15m_side | M7 | 0 | 11616 | 0.68 | 0 | -0 | 0 | 7.4 | 4/4 | 0 | 0 |
+| c_B_gap_dir_with | A7 | 4 | 2252 | 0.56 | 0 | -0 | 0 | 7.4 | 4/4 | 0 | 0 |
+| m_multicross_1d_rise | A7 | 1 | 427 | 0.08 | 0 | 0 | 0 | 7.4 | 4/4 | -0 | 0 |
+| m_ema_ribbon_1d_fresh5 | A7 | 1 | 399 | 0.08 | 0 | 0 | 0 | 7.3 | 4/4 | 0 | 0 |
 
 ## Worst (candidate vetoes): most negative stable lifts per book cell
 
@@ -133,3 +140,14 @@ all     316
 | m_ema34_px_3m_nodiv | A7 | 917 | -257 | -3.2 | 0/3 | -339 |
 | m_updown_vol20_1m_nodiv | U7 | 992 | -639 | -3.2 | 0/4 | -768 |
 | m_vwma50_px_3m_fresh5 | U7 | 212 | -694 | -3.1 | 0/4 | -292 |
+
+## SCREEN on the full universe (taken + skipped signals, in_pos=0 rows, 99,166 signals): outcome in R, taken rows real engine R, skipped rows HYPOTHETICAL R (book/session median bracket on 1m bars). A SCREEN only: skipped rows carry the engine skip selection and the hypothetical-outcome convention.
+
+Counts by block: 0; A     80; B     58; C     31; D     16; E     18; K     51; L     19; S     35; T     14; U      8; V      5; a    257; b    258; c    440; d    419; e    308; f    178; h    293; i    279; k    347; l    246; m    507; n      6; o     31; p    150; r    323; s    709; t    260; u     80; v    348; w    247
+
+Top per-book cells, z>=4, same sign in every year (lift in R per signal):
+
+| cond | book | n_yes | share | lift R | z | yrs | L6M lift |
+|---|---|---|---|---|---|---|---|
+
+## Other blocks (own pages): DS3_CONFLUENCE_ITEMS_CF2.md (F-J, Block 5), CF4 / CF5 / CF6 pages as listed in CONFLUENCE_DEFS.md.
