@@ -1,5 +1,5 @@
-# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-15T12:45Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
-**VERDICT (plain): 732 cell-months done; 17 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 3 windows; LS1/all beats-all-3-placebos in 2 of 3 windows; LS1/london beats-all-3-placebos in 0 of 3 windows; LS125/london beats-all-3-placebos in 3 of 3 windows; LS15/london beats-all-3-placebos in 0 of 0 windows; LS2/london beats-all-3-placebos in 0 of 0 windows; LH1/all beats-all-3-placebos in 0 of 0 windows; LH1/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
+# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-15T15:46Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
+**VERDICT (plain): 846 cell-months done; 17 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 3 windows; LS1/all beats-all-3-placebos in 2 of 3 windows; LS1/london beats-all-3-placebos in 0 of 3 windows; LS125/london beats-all-3-placebos in 3 of 3 windows; LS15/london beats-all-3-placebos in 0 of 0 windows; LS2/london beats-all-3-placebos in 0 of 0 windows; LH1/all beats-all-3-placebos in 0 of 0 windows; LH1/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
 
 Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scoring). Base JN05W2 exact engine, all layers ON, measured fills, shared TP cache. Identity (hook path active at k=1e9-neutral and empty rule): TL3_LR_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LR_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -30,30 +30,30 @@ Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scor
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
 | LS05 | -4109 $/wk (at $4.84 RT: -3965), DD -4.3%, ww +2290, stops 9.21(10.35), b5 69%, w2l 0 | -1178 $/wk (at $4.84 RT: -1028), DD -4.3%, ww +2290, stops 9.78(10.99), b5 91%, w2l 1 | -1456 $/wk (at $4.84 RT: -1307), DD -5.4%, ww -7707, stops 9.45(10.66), b5 97%, w2l 3 | -2759 $/wk (at $4.84 RT: -2621), DD +15.8%, ww +6568, stops 8.08(9.90), b5 68%, w2l 1 | n/a | n/a | n/a |
-| &nbsp;&nbsp;placebo | pl11/23/37 DD -3/-5/-4, mean -4570/-3831/-1928 | pl11/23/37 DD -3/-5/-4, mean -2878/-642/-901 | pl11/23/37 DD -20/-26/-65, mean -2158/-484/-2275 | placebo n/a | placebo n/a | placebo n/a | placebo n/a |
+| &nbsp;&nbsp;placebo | pl11/23/37 DD -3/-5/-4, mean -4570/-3831/-1928 | pl11/23/37 DD -3/-5/-4, mean -2878/-642/-901 | pl11/23/37 DD -20/-26/-65, mean -2158/-484/-2275 | pl11/23/37 DD +18/+14/+12, mean -2282/-1495/-1017 | placebo n/a | placebo n/a | placebo n/a |
 | LS075 | -475 $/wk (at $4.84 RT: -380), DD +5.0%, ww +6113, stops 9.51(10.35), b5 84%, w2l 0 | +248 $/wk (at $4.84 RT: +350), DD +5.0%, ww +6113, stops 10.23(10.99), b5 95%, w2l 1 | -539 $/wk (at $4.84 RT: -433), DD +4.4%, ww -4438, stops 9.95(10.66), b5 92%, w2l 2 | -2942 $/wk (at $4.84 RT: -2837), DD +18.4%, ww +8270, stops 8.71(9.90), b5 73%, w2l 1 | n/a | n/a | n/a |
-| &nbsp;&nbsp;placebo | pl11/23/37 DD +3/-12/+1, mean -3005/-2686/-1904 | pl11/23/37 DD +3/-12/+1, mean -2600/-167/-1133 | pl11/23/37 DD -4/-10/-26, mean -1271/+6/-1770 | placebo n/a | placebo n/a | placebo n/a | placebo n/a |
+| &nbsp;&nbsp;placebo | pl11/23/37 DD +3/-12/+1, mean -3005/-2686/-1904 | pl11/23/37 DD +3/-12/+1, mean -2600/-167/-1133 | pl11/23/37 DD -4/-10/-26, mean -1271/+6/-1770 | pl11/23/37 DD +12/+20/+31, mean -2584/-1521/-222 | placebo n/a | placebo n/a | placebo n/a |
 | LS1 | +2847 $/wk (at $4.84 RT: +2918), DD +4.7%, ww +5052, stops 9.51(10.35), b5 94%, w2l 0 | +1746 $/wk (at $4.84 RT: +1824), DD +4.7%, ww +5052, stops 10.35(10.99), b5 97%, w2l 1 | +466 $/wk (at $4.84 RT: +546), DD +13.6%, ww +3431, stops 10.11(10.66), b5 95%, w2l 3 | -2343 $/wk (at $4.84 RT: -2261), DD +20.3%, ww +5903, stops 9.05(9.90), b5 74%, w2l 1 | n/a | n/a | n/a |
-| &nbsp;&nbsp;placebo | pl11/23/37 DD -7/-19/-2, mean -5037/-2811/-482 | pl11/23/37 DD -7/-19/-2, mean -1947/-17/-21 | pl11/23/37 DD +4/+5/-6, mean -772/+527/-796 | placebo n/a | placebo n/a | placebo n/a | placebo n/a |
+| &nbsp;&nbsp;placebo | pl11/23/37 DD -7/-19/-2, mean -5037/-2811/-482 | pl11/23/37 DD -7/-19/-2, mean -1947/-17/-21 | pl11/23/37 DD +4/+5/-6, mean -772/+527/-796 | pl11/23/37 DD +25/+16/+30, mean -3056/+401/-596 | placebo n/a | placebo n/a | placebo n/a |
 | LS125 | +3978 $/wk (at $4.84 RT: +4036), DD +4.7%, ww +4283, stops 9.59(10.35), b5 100%, w2l 0 | +2375 $/wk (at $4.84 RT: +2444), DD +4.7%, ww +4283, stops 10.39(10.99), b5 100%, w2l 1 | +782 $/wk (at $4.84 RT: +850), DD +18.0%, ww -4704, stops 10.15(10.66), b5 98%, w2l 2 | -1839 $/wk (at $4.84 RT: -1773), DD +7.9%, ww +3024, stops 9.33(9.90), b5 80%, w2l 1 | n/a | n/a | n/a |
-| &nbsp;&nbsp;placebo | pl11/23/37 DD -10/-10/-2, mean -2776/-2396/+52 | pl11/23/37 DD -10/-10/-2, mean -657/+574/-3 | pl11/23/37 DD +7/+1/+1, mean -130/+495/-264 | placebo n/a | placebo n/a | placebo n/a | placebo n/a |
-| LS15 | +2748 $/wk (at $4.84 RT: +2804), DD +3.7%, ww +4283, stops 9.66(10.35), b5 99%, w2l 0 | +2047 $/wk (at $4.84 RT: +2110), DD +3.7%, ww +4283, stops 10.42(10.99), b5 101%, w2l 1 | +758 $/wk (at $4.84 RT: +820), DD +9.7%, ww -1619, stops 10.16(10.66), b5 98%, w2l 2 | n/a | n/a | n/a | n/a |
-| LS2 | +726 $/wk (at $4.84 RT: +772), DD -5.4%, ww +1551, stops 10.12(10.35), b5 94%, w2l 0 | +772 $/wk (at $4.84 RT: +825), DD -5.4%, ww +1551, stops 10.69(10.99), b5 102%, w2l 1 | +536 $/wk (at $4.84 RT: +590), DD +9.7%, ww -1619, stops 10.30(10.66), b5 98%, w2l 2 | n/a | n/a | n/a | n/a |
+| &nbsp;&nbsp;placebo | pl11/23/37 DD -10/-10/-2, mean -2776/-2396/+52 | pl11/23/37 DD -10/-10/-2, mean -657/+574/-3 | pl11/23/37 DD +7/+1/+1, mean -130/+495/-264 | pl11/23/37 DD +16/+14/+28, mean -2484/+1475/-1138 | placebo n/a | placebo n/a | placebo n/a |
+| LS15 | +2748 $/wk (at $4.84 RT: +2804), DD +3.7%, ww +4283, stops 9.66(10.35), b5 99%, w2l 0 | +2047 $/wk (at $4.84 RT: +2110), DD +3.7%, ww +4283, stops 10.42(10.99), b5 101%, w2l 1 | +758 $/wk (at $4.84 RT: +820), DD +9.7%, ww -1619, stops 10.16(10.66), b5 98%, w2l 2 | -783 $/wk (at $4.84 RT: -725), DD +17.9%, ww +10217, stops 9.56(9.90), b5 82%, w2l 1 | n/a | n/a | n/a |
+| LS2 | +726 $/wk (at $4.84 RT: +772), DD -5.4%, ww +1551, stops 10.12(10.35), b5 94%, w2l 0 | +772 $/wk (at $4.84 RT: +825), DD -5.4%, ww +1551, stops 10.69(10.99), b5 102%, w2l 1 | +536 $/wk (at $4.84 RT: +590), DD +9.7%, ww -1619, stops 10.30(10.66), b5 98%, w2l 2 | -590 $/wk (at $4.84 RT: -542), DD +18.5%, ww +10217, stops 9.50(9.90), b5 82%, w2l 1 | n/a | n/a | n/a |
 
 **(i) skip k grid** (scope london; delta vs JN05W2 on the same months; placebos in the line below each row)
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
 | LS05 | -2489 $/wk (at $4.84 RT: -2299), DD +36.8%, ww +15553, stops 0.91(2.74), b5 39%, w2l 4 | +218 $/wk (at $4.84 RT: +409), DD +36.8%, ww +15553, stops 1.07(2.89), b5 55%, w2l 5 | -441 $/wk (at $4.84 RT: -254), DD +36.8%, ww +15553, stops 0.88(2.61), b5 61%, w2l 11 | -2613 $/wk (at $4.84 RT: -2457), DD +64.1%, ww +12589, stops 0.11(2.16), b5 -3%, w2l 4 | n/a | n/a | n/a |
-| &nbsp;&nbsp;placebo | pl11/23/37 DD +52/+55/+71, mean -2693/-285/-925 | pl11/23/37 DD +36/+55/+35, mean -1686/+1056/-242 | pl11/23/37 DD +36/+55/+28, mean -979/+856/-1186 | placebo n/a | placebo n/a | placebo n/a | placebo n/a |
+| &nbsp;&nbsp;placebo | pl11/23/37 DD +52/+55/+71, mean -2693/-285/-925 | pl11/23/37 DD +36/+55/+35, mean -1686/+1056/-242 | pl11/23/37 DD +36/+55/+28, mean -979/+856/-1186 | pl11/23/37 DD +69/+79/+76, mean -2089/-1470/-917 | placebo n/a | placebo n/a | placebo n/a |
 | LS075 | -75 $/wk (at $4.84 RT: +50), DD +26.5%, ww +8176, stops 1.52(2.74), b5 63%, w2l 2 | +477 $/wk (at $4.84 RT: +606), DD +26.5%, ww +8176, stops 1.71(2.89), b5 74%, w2l 5 | -43 $/wk (at $4.84 RT: +91), DD +26.5%, ww +8176, stops 1.53(2.61), b5 80%, w2l 11 | -2781 $/wk (at $4.84 RT: -2658), DD +4.2%, ww +3303, stops 0.74(2.16), b5 16%, w2l 2 | n/a | n/a | n/a |
-| &nbsp;&nbsp;placebo | pl11/23/37 DD +42/+29/+37, mean -1454/-1086/-1314 | pl11/23/37 DD +4/+29/+37, mean -1690/+418/-868 | pl11/23/37 DD +4/+29/+37, mean -549/+292/-1055 | placebo n/a | placebo n/a | placebo n/a | placebo n/a |
+| &nbsp;&nbsp;placebo | pl11/23/37 DD +42/+29/+37, mean -1454/-1086/-1314 | pl11/23/37 DD +4/+29/+37, mean -1690/+418/-868 | pl11/23/37 DD +4/+29/+37, mean -549/+292/-1055 | pl11/23/37 DD +41/+28/+25, mean -2054/-1795/-218 | placebo n/a | placebo n/a | placebo n/a |
 | LS1 | +3622 $/wk (at $4.84 RT: +3723), DD +28.5%, ww +9375, stops 1.52(2.74), b5 106%, w2l 1 | +2124 $/wk (at $4.84 RT: +2225), DD +28.5%, ww +9375, stops 1.90(2.89), b5 91%, w2l 1 | +991 $/wk (at $4.84 RT: +1094), DD +28.5%, ww +9375, stops 1.76(2.61), b5 95%, w2l 5 | -1930 $/wk (at $4.84 RT: -1832), DD -8.0%, ww +569, stops 1.08(2.16), b5 38%, w2l 2 | n/a | n/a | n/a |
-| &nbsp;&nbsp;placebo | pl11/23/37 DD +26/+13/+30, mean -3747/-1659/-761 | pl11/23/37 DD +9/+13/+30, mean -1365/+848/-296 | pl11/23/37 DD +9/+13/+30, mean -446/+1210/-643 | placebo n/a | placebo n/a | placebo n/a | placebo n/a |
+| &nbsp;&nbsp;placebo | pl11/23/37 DD +26/+13/+30, mean -3747/-1659/-761 | pl11/23/37 DD +9/+13/+30, mean -1365/+848/-296 | pl11/23/37 DD +9/+13/+30, mean -446/+1210/-643 | pl11/23/37 DD +1/+30/+34, mean -2424/+149/-422 | placebo n/a | placebo n/a | placebo n/a |
 | LS125 | +4623 $/wk (at $4.84 RT: +4711), DD +35.3%, ww +14170, stops 1.60(2.74), b5 114%, w2l 1 | +2532 $/wk (at $4.84 RT: +2621), DD +35.3%, ww +14170, stops 1.94(2.89), b5 99%, w2l 1 | +1171 $/wk (at $4.84 RT: +1261), DD +35.3%, ww +10461, stops 1.84(2.61), b5 101%, w2l 4 | -1516 $/wk (at $4.84 RT: -1435), DD +23.2%, ww +1489, stops 1.37(2.16), b5 50%, w2l 3 | n/a | n/a | n/a |
-| &nbsp;&nbsp;placebo | pl11/23/37 DD +29/+5/+25, mean -1770/-1451/+12 | pl11/23/37 DD +17/+5/+25, mean -188/+1174/-159 | pl11/23/37 DD +17/+5/+25, mean +156/+1013/+7 | placebo n/a | placebo n/a | placebo n/a | placebo n/a |
-| LS15 | +3568 $/wk (at $4.84 RT: +3648), DD +35.3%, ww +13238, stops 1.75(2.74), b5 113%, w2l 1 | +2437 $/wk (at $4.84 RT: +2520), DD +35.3%, ww +13238, stops 2.02(2.89), b5 99%, w2l 1 | +1193 $/wk (at $4.84 RT: +1275), DD +35.3%, ww +8786, stops 1.90(2.61), b5 97%, w2l 3 | n/a | n/a | n/a | n/a |
-| LS2 | +1923 $/wk (at $4.84 RT: +1984), DD +34.5%, ww +9293, stops 2.28(2.74), b5 103%, w2l 0 | +1520 $/wk (at $4.84 RT: +1587), DD +34.5%, ww +9293, stops 2.32(2.89), b5 87%, w2l 0 | +1100 $/wk (at $4.84 RT: +1169), DD +34.5%, ww +8786, stops 2.05(2.61), b5 87%, w2l 1 | n/a | n/a | n/a | n/a |
+| &nbsp;&nbsp;placebo | pl11/23/37 DD +29/+5/+25, mean -1770/-1451/+12 | pl11/23/37 DD +17/+5/+25, mean -188/+1174/-159 | pl11/23/37 DD +17/+5/+25, mean +156/+1013/+7 | pl11/23/37 DD +4/+23/+2, mean -2403/+1406/-910 | placebo n/a | placebo n/a | placebo n/a |
+| LS15 | +3568 $/wk (at $4.84 RT: +3648), DD +35.3%, ww +13238, stops 1.75(2.74), b5 113%, w2l 1 | +2437 $/wk (at $4.84 RT: +2520), DD +35.3%, ww +13238, stops 2.02(2.89), b5 99%, w2l 1 | +1193 $/wk (at $4.84 RT: +1275), DD +35.3%, ww +8786, stops 1.90(2.61), b5 97%, w2l 3 | -807 $/wk (at $4.84 RT: -737), DD +14.9%, ww +572, stops 1.59(2.16), b5 62%, w2l 3 | n/a | n/a | n/a |
+| LS2 | +1923 $/wk (at $4.84 RT: +1984), DD +34.5%, ww +9293, stops 2.28(2.74), b5 103%, w2l 0 | +1520 $/wk (at $4.84 RT: +1587), DD +34.5%, ww +9293, stops 2.32(2.89), b5 87%, w2l 0 | +1100 $/wk (at $4.84 RT: +1169), DD +34.5%, ww +8786, stops 2.05(2.61), b5 87%, w2l 1 | -363 $/wk (at $4.84 RT: -304), DD +35.1%, ww +7509, stops 1.59(2.16), b5 64%, w2l 2 | n/a | n/a | n/a |
 
 **Max DD with the single week 2026-W44 removed from cell and reference** (scope all; ref DD vs cell DD, cut %, d mean x W44)
 
@@ -70,14 +70,14 @@ Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scor
 
 | cell | scope | lead? | windows present | gate passed | beats placebos (DD and mean) per window |
 |---|---|---|---|---|---|
-| LS05 | all | no | L3M,L6M,HOLD |  | L3M:N, L6M:N, HOLD:dd |
-| LS05 | london | no | L3M,L6M,HOLD | L6M | L3M:N, L6M:N, HOLD:N |
-| LS075 | all | no | L3M,L6M,HOLD | L3M,L6M | L3M:Y, L6M:Y, HOLD:dd |
-| LS075 | london | LEAD | L3M,L6M,HOLD | L3M,L6M,HOLD | L3M:mean, L6M:mean, HOLD:N |
-| LS1 | all | LEAD | L3M,L6M,HOLD | L3M,L6M,HOLD | L3M:Y, L6M:Y, HOLD:dd |
-| LS1 | london | LEAD | L3M,L6M,HOLD | L3M,L6M,HOLD | L3M:mean, L6M:mean, HOLD:N |
-| LS125 | all | no | L3M,L6M,HOLD | L3M,L6M | L3M:Y, L6M:Y, HOLD:Y |
-| LS125 | london | LEAD | L3M,L6M,HOLD | L3M,L6M,HOLD | L3M:Y, L6M:Y, HOLD:Y |
+| LS05 | all | no | L3M,L6M,HOLD |  | L3M:N, L6M:N, HOLD:dd, GAP:N |
+| LS05 | london | no | L3M,L6M,HOLD | L6M | L3M:N, L6M:N, HOLD:N, GAP:N |
+| LS075 | all | no | L3M,L6M,HOLD | L3M,L6M | L3M:Y, L6M:Y, HOLD:dd, GAP:N |
+| LS075 | london | LEAD | L3M,L6M,HOLD | L3M,L6M,HOLD | L3M:mean, L6M:mean, HOLD:N, GAP:N |
+| LS1 | all | LEAD | L3M,L6M,HOLD | L3M,L6M,HOLD | L3M:Y, L6M:Y, HOLD:dd, GAP:N |
+| LS1 | london | LEAD | L3M,L6M,HOLD | L3M,L6M,HOLD | L3M:mean, L6M:mean, HOLD:N, GAP:N |
+| LS125 | all | no | L3M,L6M,HOLD | L3M,L6M | L3M:Y, L6M:Y, HOLD:Y, GAP:N |
+| LS125 | london | LEAD | L3M,L6M,HOLD | L3M,L6M,HOLD | L3M:Y, L6M:Y, HOLD:Y, GAP:dd |
 | LS15 | all | no | L3M,L6M,HOLD | L3M,L6M |  |
 | LS15 | london | LEAD | L3M,L6M,HOLD | L3M,L6M,HOLD |  |
 | LS2 | all | no | L3M,L6M,HOLD |  |  |
@@ -200,31 +200,31 @@ Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scor
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| LS1_K7 | -613 $/wk (at $4.84 RT: -604), DD +2.6%, ww +1375, stops 10.35(10.35), b5 97%, w2l 0 | -785 $/wk (at $4.84 RT: -774), DD +2.6%, ww +1375, stops 10.99(10.99), b5 100%, w2l 0 | -427 $/wk (at $4.84 RT: -415), DD +9.6%, ww +657, stops 10.62(10.66), b5 100%, w2l 1 | n/a | n/a | n/a | n/a |
+| LS1_K7 | -613 $/wk (at $4.84 RT: -604), DD +2.6%, ww +1375, stops 10.35(10.35), b5 97%, w2l 0 | -785 $/wk (at $4.84 RT: -774), DD +2.6%, ww +1375, stops 10.99(10.99), b5 100%, w2l 0 | -427 $/wk (at $4.84 RT: -415), DD +9.6%, ww +657, stops 10.62(10.66), b5 100%, w2l 1 | -1370 $/wk (at $4.84 RT: -1356), DD +0.9%, ww +4056, stops 9.85(9.90), b5 94%, w2l 2 | n/a | n/a | n/a |
 
 **exact per-book gated LS1_P7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| LS1_P7 | +198 $/wk (at $4.84 RT: +232), DD +0.0%, ww +0, stops 10.35(10.35), b5 98%, w2l 0 | +371 $/wk (at $4.84 RT: +403), DD +0.0%, ww +0, stops 10.99(10.99), b5 98%, w2l 1 | -119 $/wk (at $4.84 RT: -89), DD +6.3%, ww -6481, stops 10.80(10.66), b5 98%, w2l 1 | n/a | n/a | n/a | n/a |
+| LS1_P7 | +198 $/wk (at $4.84 RT: +232), DD +0.0%, ww +0, stops 10.35(10.35), b5 98%, w2l 0 | +371 $/wk (at $4.84 RT: +403), DD +0.0%, ww +0, stops 10.99(10.99), b5 98%, w2l 1 | -119 $/wk (at $4.84 RT: -89), DD +6.3%, ww -6481, stops 10.80(10.66), b5 98%, w2l 1 | +5 $/wk (at $4.84 RT: +38), DD +12.6%, ww +4363, stops 9.85(9.90), b5 89%, w2l 0 | n/a | n/a | n/a |
 
 **exact per-book gated LS1_U7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| LS1_U7 | +1053 $/wk (at $4.84 RT: +1060), DD +4.7%, ww +3863, stops 9.97(10.35), b5 99%, w2l 0 | -303 $/wk (at $4.84 RT: -292), DD +4.7%, ww +2661, stops 10.69(10.99), b5 98%, w2l 0 | -602 $/wk (at $4.84 RT: -592), DD +13.1%, ww +3222, stops 10.32(10.66), b5 98%, w2l 0 | n/a | n/a | n/a | n/a |
+| LS1_U7 | +1053 $/wk (at $4.84 RT: +1060), DD +4.7%, ww +3863, stops 9.97(10.35), b5 99%, w2l 0 | -303 $/wk (at $4.84 RT: -292), DD +4.7%, ww +2661, stops 10.69(10.99), b5 98%, w2l 0 | -602 $/wk (at $4.84 RT: -592), DD +13.1%, ww +3222, stops 10.32(10.66), b5 98%, w2l 0 | -1408 $/wk (at $4.84 RT: -1394), DD -0.2%, ww -2398, stops 9.39(9.90), b5 95%, w2l 1 | n/a | n/a | n/a |
 
 **exact per-book gated LS1_H7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| LS1_H7 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.99(10.99), b5 100%, w2l 0 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.66(10.66), b5 100%, w2l 0 | n/a | n/a | n/a | n/a |
+| LS1_H7 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.99(10.99), b5 100%, w2l 0 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.66(10.66), b5 100%, w2l 0 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 9.90(9.90), b5 100%, w2l 0 | n/a | n/a | n/a |
 
 **exact per-book gated LS1_M7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| LS1_M7 | +1454 $/wk (at $4.84 RT: +1479), DD +0.2%, ww +1485, stops 9.97(10.35), b5 100%, w2l 0 | +644 $/wk (at $4.84 RT: +670), DD +0.2%, ww +1485, stops 10.73(10.99), b5 101%, w2l 0 | +502 $/wk (at $4.84 RT: +522), DD +4.6%, ww +264, stops 10.55(10.66), b5 99%, w2l 0 | n/a | n/a | n/a | n/a |
+| LS1_M7 | +1454 $/wk (at $4.84 RT: +1479), DD +0.2%, ww +1485, stops 9.97(10.35), b5 100%, w2l 0 | +644 $/wk (at $4.84 RT: +670), DD +0.2%, ww +1485, stops 10.73(10.99), b5 101%, w2l 0 | +502 $/wk (at $4.84 RT: +522), DD +4.6%, ww +264, stops 10.55(10.66), b5 99%, w2l 0 | +199 $/wk (at $4.84 RT: +221), DD +8.1%, ww -477, stops 9.62(9.90), b5 96%, w2l 0 | n/a | n/a | n/a |
 
 **exact per-book gated LS1_A7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
 
@@ -288,17 +288,17 @@ D5SK13F_a = skip when the forecast ratio pred/fref >= 1.3 (ATR-only forecast, fu
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| D5SK13F_a | -1657 $/wk (at $4.84 RT: -1613), DD -4.2%, ww -2212, stops 10.20(10.35), b5 101%, w2l 1 | +438 $/wk (at $4.84 RT: +520), DD -4.2%, ww -2212, stops 10.31(10.99), b5 97%, w2l 1 | -552 $/wk (at $4.84 RT: -467), DD -42.9%, ww -28699, stops 10.01(10.66), b5 98%, w2l 3 | n/a | n/a | n/a | n/a |
-| D3C_a | -3366 $/wk (at $4.84 RT: -3359), DD +8.6%, ww +4479, stops 12.55(10.35), b5 88%, w2l 1 | -3159 $/wk (at $4.84 RT: -3146), DD +8.6%, ww -1196, stops 14.04(10.99), b5 87%, w2l 1 | -1172 $/wk (at $4.84 RT: -1165), DD +5.7%, ww -508, stops 13.54(10.66), b5 90%, w2l 2 | n/a | n/a | n/a | n/a |
-| D3C_c | -231 $/wk (at $4.84 RT: -240), DD +7.3%, ww -376, stops 11.03(10.35), b5 94%, w2l 0 | -516 $/wk (at $4.84 RT: -512), DD +7.3%, ww -376, stops 12.71(10.99), b5 93%, w2l 0 | -105 $/wk (at $4.84 RT: -105), DD +8.8%, ww -6089, stops 12.73(10.66), b5 98%, w2l 1 | n/a | n/a | n/a | n/a |
+| D5SK13F_a | -1657 $/wk (at $4.84 RT: -1613), DD -4.2%, ww -2212, stops 10.20(10.35), b5 101%, w2l 1 | +438 $/wk (at $4.84 RT: +520), DD -4.2%, ww -2212, stops 10.31(10.99), b5 97%, w2l 1 | -552 $/wk (at $4.84 RT: -467), DD -42.9%, ww -28699, stops 10.01(10.66), b5 98%, w2l 3 | +184 $/wk (at $4.84 RT: +194), DD +0.0%, ww +0, stops 9.96(9.90), b5 100%, w2l 0 | n/a | n/a | n/a |
+| D3C_a | -3366 $/wk (at $4.84 RT: -3359), DD +8.6%, ww +4479, stops 12.55(10.35), b5 88%, w2l 1 | -3159 $/wk (at $4.84 RT: -3146), DD +8.6%, ww -1196, stops 14.04(10.99), b5 87%, w2l 1 | -1172 $/wk (at $4.84 RT: -1165), DD +5.7%, ww -508, stops 13.54(10.66), b5 90%, w2l 2 | -706 $/wk (at $4.84 RT: -713), DD +4.7%, ww +5981, stops 10.07(9.90), b5 88%, w2l 0 | n/a | n/a | n/a |
+| D3C_c | -231 $/wk (at $4.84 RT: -240), DD +7.3%, ww -376, stops 11.03(10.35), b5 94%, w2l 0 | -516 $/wk (at $4.84 RT: -512), DD +7.3%, ww -376, stops 12.71(10.99), b5 93%, w2l 0 | -105 $/wk (at $4.84 RT: -105), DD +8.8%, ww -6089, stops 12.73(10.66), b5 98%, w2l 1 | -2340 $/wk (at $4.84 RT: -2359), DD +3.2%, ww +4424, stops 9.85(9.90), b5 83%, w2l 0 | n/a | n/a | n/a |
 
 **D5SK13F_a / D3C_a / D3C_c** (scope london; delta vs JN05W2 on the same months; placebos in the line below each row)
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| D5SK13F_a | -599 $/wk (at $4.84 RT: -543), DD +9.8%, ww +0, stops 2.21(2.74), b5 75%, w2l 0 | +267 $/wk (at $4.84 RT: +366), DD +9.8%, ww +0, stops 1.83(2.89), b5 70%, w2l 1 | +53 $/wk (at $4.84 RT: +162), DD +9.8%, ww +0, stops 1.63(2.61), b5 52%, w2l 3 | n/a | n/a | n/a | n/a |
-| D3C_a | -798 $/wk (at $4.84 RT: -785), DD -10.0%, ww -2054, stops 4.79(2.74), b5 73%, w2l 0 | -1599 $/wk (at $4.84 RT: -1585), DD -10.0%, ww -2054, stops 5.90(2.89), b5 62%, w2l 0 | -473 $/wk (at $4.84 RT: -463), DD -10.0%, ww -2054, stops 5.45(2.61), b5 75%, w2l 1 | n/a | n/a | n/a | n/a |
-| D3C_c | +1480 $/wk (at $4.84 RT: +1481), DD -12.9%, ww +693, stops 3.20(2.74), b5 104%, w2l 0 | +549 $/wk (at $4.84 RT: +554), DD -12.9%, ww +693, stops 4.57(2.89), b5 102%, w2l 0 | +341 $/wk (at $4.84 RT: +344), DD -12.9%, ww +693, stops 4.58(2.61), b5 97%, w2l 2 | n/a | n/a | n/a | n/a |
+| D5SK13F_a | -599 $/wk (at $4.84 RT: -543), DD +9.8%, ww +0, stops 2.21(2.74), b5 75%, w2l 0 | +267 $/wk (at $4.84 RT: +366), DD +9.8%, ww +0, stops 1.83(2.89), b5 70%, w2l 1 | +53 $/wk (at $4.84 RT: +162), DD +9.8%, ww +0, stops 1.63(2.61), b5 52%, w2l 3 | +36 $/wk (at $4.84 RT: +50), DD +5.8%, ww -5422, stops 2.11(2.16), b5 102%, w2l 0 | n/a | n/a | n/a |
+| D3C_a | -798 $/wk (at $4.84 RT: -785), DD -10.0%, ww -2054, stops 4.79(2.74), b5 73%, w2l 0 | -1599 $/wk (at $4.84 RT: -1585), DD -10.0%, ww -2054, stops 5.90(2.89), b5 62%, w2l 0 | -473 $/wk (at $4.84 RT: -463), DD -10.0%, ww -2054, stops 5.45(2.61), b5 75%, w2l 1 | -494 $/wk (at $4.84 RT: -501), DD -0.6%, ww -1028, stops 2.22(2.16), b5 78%, w2l 0 | n/a | n/a | n/a |
+| D3C_c | +1480 $/wk (at $4.84 RT: +1481), DD -12.9%, ww +693, stops 3.20(2.74), b5 104%, w2l 0 | +549 $/wk (at $4.84 RT: +554), DD -12.9%, ww +693, stops 4.57(2.89), b5 102%, w2l 0 | +341 $/wk (at $4.84 RT: +344), DD -12.9%, ww +693, stops 4.58(2.61), b5 97%, w2l 2 | -1617 $/wk (at $4.84 RT: -1635), DD -35.1%, ww -2346, stops 2.11(2.16), b5 66%, w2l 1 | n/a | n/a | n/a |
 
 **Max DD with the single week 2026-W44 removed from cell and reference** (scope all; ref DD vs cell DD, cut %, d mean x W44)
 
@@ -314,19 +314,19 @@ D5SK13F_a = skip when the forecast ratio pred/fref >= 1.3 (ATR-only forecast, fu
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| NS05 | -485 $/wk (at $4.84 RT: -458), DD -2.3%, ww -1199, stops 9.97(10.35), b5 93%, w2l 0 | -1357 $/wk (at $4.84 RT: -1325), DD -2.3%, ww -1199, stops 10.61(10.99), b5 91%, w2l 0 | -577 $/wk (at $4.84 RT: -536), DD -1.6%, ww -1134, stops 9.80(10.66), b5 93%, w2l 1 | n/a | n/a | n/a | n/a |
-| NS075 | -57 $/wk (at $4.84 RT: -39), DD -2.3%, ww -1199, stops 10.20(10.35), b5 95%, w2l 0 | -857 $/wk (at $4.84 RT: -835), DD -2.3%, ww -1199, stops 10.84(10.99), b5 93%, w2l 0 | +111 $/wk (at $4.84 RT: +137), DD +0.9%, ww +0, stops 10.16(10.66), b5 94%, w2l 1 | n/a | n/a | n/a | n/a |
-| NS1 | -250 $/wk (at $4.84 RT: -233), DD -2.3%, ww -1199, stops 10.27(10.35), b5 95%, w2l 0 | -890 $/wk (at $4.84 RT: -872), DD -2.3%, ww -1199, stops 10.88(10.99), b5 94%, w2l 0 | +256 $/wk (at $4.84 RT: +276), DD -9.8%, ww +0, stops 10.41(10.66), b5 99%, w2l 0 | n/a | n/a | n/a | n/a |
-| NS125 | -18 $/wk (at $4.84 RT: -7), DD -2.3%, ww -1199, stops 10.27(10.35), b5 98%, w2l 0 | -866 $/wk (at $4.84 RT: -852), DD -2.3%, ww -1199, stops 10.88(10.99), b5 96%, w2l 0 | +107 $/wk (at $4.84 RT: +125), DD -7.2%, ww +0, stops 10.41(10.66), b5 99%, w2l 0 | n/a | n/a | n/a | n/a |
+| NS05 | -485 $/wk (at $4.84 RT: -458), DD -2.3%, ww -1199, stops 9.97(10.35), b5 93%, w2l 0 | -1357 $/wk (at $4.84 RT: -1325), DD -2.3%, ww -1199, stops 10.61(10.99), b5 91%, w2l 0 | -577 $/wk (at $4.84 RT: -536), DD -1.6%, ww -1134, stops 9.80(10.66), b5 93%, w2l 1 | -1907 $/wk (at $4.84 RT: -1820), DD +7.6%, ww +18443, stops 7.51(9.90), b5 103%, w2l 1 | n/a | n/a | n/a |
+| NS075 | -57 $/wk (at $4.84 RT: -39), DD -2.3%, ww -1199, stops 10.20(10.35), b5 95%, w2l 0 | -857 $/wk (at $4.84 RT: -835), DD -2.3%, ww -1199, stops 10.84(10.99), b5 93%, w2l 0 | +111 $/wk (at $4.84 RT: +137), DD +0.9%, ww +0, stops 10.16(10.66), b5 94%, w2l 1 | -776 $/wk (at $4.84 RT: -714), DD +11.6%, ww +15683, stops 8.31(9.90), b5 98%, w2l 0 | n/a | n/a | n/a |
+| NS1 | -250 $/wk (at $4.84 RT: -233), DD -2.3%, ww -1199, stops 10.27(10.35), b5 95%, w2l 0 | -890 $/wk (at $4.84 RT: -872), DD -2.3%, ww -1199, stops 10.88(10.99), b5 94%, w2l 0 | +256 $/wk (at $4.84 RT: +276), DD -9.8%, ww +0, stops 10.41(10.66), b5 99%, w2l 0 | -988 $/wk (at $4.84 RT: -946), DD +2.2%, ww +10886, stops 8.88(9.90), b5 98%, w2l 0 | n/a | n/a | n/a |
+| NS125 | -18 $/wk (at $4.84 RT: -7), DD -2.3%, ww -1199, stops 10.27(10.35), b5 98%, w2l 0 | -866 $/wk (at $4.84 RT: -852), DD -2.3%, ww -1199, stops 10.88(10.99), b5 96%, w2l 0 | +107 $/wk (at $4.84 RT: +125), DD -7.2%, ww +0, stops 10.41(10.66), b5 99%, w2l 0 | -615 $/wk (at $4.84 RT: -582), DD -1.5%, ww +6281, stops 9.28(9.90), b5 97%, w2l 0 | n/a | n/a | n/a |
 
 **NY AM** (scope nyam; delta vs JN05W2 on the same months; placebos in the line below each row)
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| NS05 | -469 $/wk (at $4.84 RT: -438), DD +34.5%, ww +2291, stops 0.84(1.29), b5 51%, w2l 3 | -1152 $/wk (at $4.84 RT: -1114), DD +20.4%, ww +4878, stops 1.26(1.67), b5 49%, w2l 6 | -126 $/wk (at $4.84 RT: -77), DD +58.4%, ww +4975, stops 1.23(2.15), b5 62%, w2l 8 | n/a | n/a | n/a | n/a |
-| NS075 | -123 $/wk (at $4.84 RT: -103), DD +39.7%, ww +755, stops 1.14(1.29), b5 67%, w2l 2 | -884 $/wk (at $4.84 RT: -858), DD +15.9%, ww +3342, stops 1.52(1.67), b5 61%, w2l 4 | +277 $/wk (at $4.84 RT: +309), DD +64.0%, ww +2745, stops 1.61(2.15), b5 75%, w2l 4 | n/a | n/a | n/a | n/a |
-| NS1 | -315 $/wk (at $4.84 RT: -297), DD +23.9%, ww +0, stops 1.22(1.29), b5 70%, w2l 2 | -951 $/wk (at $4.84 RT: -930), DD +18.2%, ww +2587, stops 1.56(1.67), b5 62%, w2l 4 | +327 $/wk (at $4.84 RT: +352), DD +51.6%, ww +1832, stops 1.86(2.15), b5 83%, w2l 3 | n/a | n/a | n/a | n/a |
-| NS125 | -151 $/wk (at $4.84 RT: -139), DD +12.7%, ww +0, stops 1.22(1.29), b5 79%, w2l 2 | -897 $/wk (at $4.84 RT: -880), DD +11.1%, ww +2587, stops 1.56(1.67), b5 66%, w2l 3 | +169 $/wk (at $4.84 RT: +190), DD +46.3%, ww +3031, stops 1.88(2.15), b5 81%, w2l 3 | n/a | n/a | n/a | n/a |
+| NS05 | -469 $/wk (at $4.84 RT: -438), DD +34.5%, ww +2291, stops 0.84(1.29), b5 51%, w2l 3 | -1152 $/wk (at $4.84 RT: -1114), DD +20.4%, ww +4878, stops 1.26(1.67), b5 49%, w2l 6 | -126 $/wk (at $4.84 RT: -77), DD +58.4%, ww +4975, stops 1.23(2.15), b5 62%, w2l 8 | -1526 $/wk (at $4.84 RT: -1426), DD +31.5%, ww +12946, stops 0.80(3.24), b5 -6%, w2l 7 | n/a | n/a | n/a |
+| NS075 | -123 $/wk (at $4.84 RT: -103), DD +39.7%, ww +755, stops 1.14(1.29), b5 67%, w2l 2 | -884 $/wk (at $4.84 RT: -858), DD +15.9%, ww +3342, stops 1.52(1.67), b5 61%, w2l 4 | +277 $/wk (at $4.84 RT: +309), DD +64.0%, ww +2745, stops 1.61(2.15), b5 75%, w2l 4 | -307 $/wk (at $4.84 RT: -238), DD +22.4%, ww +15343, stops 1.59(3.24), b5 46%, w2l 4 | n/a | n/a | n/a |
+| NS1 | -315 $/wk (at $4.84 RT: -297), DD +23.9%, ww +0, stops 1.22(1.29), b5 70%, w2l 2 | -951 $/wk (at $4.84 RT: -930), DD +18.2%, ww +2587, stops 1.56(1.67), b5 62%, w2l 4 | +327 $/wk (at $4.84 RT: +352), DD +51.6%, ww +1832, stops 1.86(2.15), b5 83%, w2l 3 | -886 $/wk (at $4.84 RT: -836), DD +6.4%, ww +12112, stops 2.16(3.24), b5 57%, w2l 4 | n/a | n/a | n/a |
+| NS125 | -151 $/wk (at $4.84 RT: -139), DD +12.7%, ww +0, stops 1.22(1.29), b5 79%, w2l 2 | -897 $/wk (at $4.84 RT: -880), DD +11.1%, ww +2587, stops 1.56(1.67), b5 66%, w2l 3 | +169 $/wk (at $4.84 RT: +190), DD +46.3%, ww +3031, stops 1.88(2.15), b5 81%, w2l 3 | -654 $/wk (at $4.84 RT: -616), DD -10.9%, ww +7507, stops 2.56(3.24), b5 90%, w2l 4 | n/a | n/a | n/a |
 
 ## 6. Winning JN05W2 weeks turned losing, and what the rule skipped in them
 
