@@ -1,8 +1,8 @@
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 124 of 558 cells have an exact L3M result so far; 38 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 128 of 585 cells have an exact L3M result so far; 40 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T16:04Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T16:34Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -107,10 +107,12 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | BR_P7_X5 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | BR_P7_H2 | 3 | 0.4 / -1321 / -1286 / -1222 / 187 / False / -6.5 / 0.97 / 0 | - / - / - / - | - / - | - / - |
 | BR_P7_V19 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_Sasi | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | BR_M7_H15_Snya | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | BR_M7_H15_Snyp | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | BR_M7_H15_xt5 | 3 | 0.0 / 264 / 266 / 274 / 0 / True / 3.3 / 1.01 / 0 | - / - / - / - | - / - | - / - |
 | BR_M7_H15_30 | 3 | 1.2 / 442 / 447 / 469 / 615 / True / 10.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_v19 | 3 | 1.2 / 136 / 138 / 146 / 615 / True / 4.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | BR_M7_H15_G2 | 3 | 1.2 / -145 / -140 / -125 / 615 / True / 7.3 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 | BR_M7_H15_K7 | 3 | 14.8 / -602 / -598 / -584 / 7753 / False / 2.5 / 0.98 / 0 | - / - / - / - | - / - | - / - |
 | BR_M7_H15_P7 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
@@ -140,7 +142,9 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | EV_EARN_Q120_S | 3 | 0.0 / -91 / -91 / -91 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_EARN_Q120_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P30_H_p15 | 3 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_p45 | 3 | 0.0 / 102 / 103 / 107 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P30_H_p90 | 3 | 0.0 / 236 / 237 / 244 / 0 / True / 2.6 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_sasi | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### RB  range used up AND breadth / event day (HAR+CME forecast; plain range rule is W-EC)
 
@@ -246,7 +250,7 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, RB_nyam_K100_EV, RB_nypm_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2, BR_M7_H15_xt5, BR_M7_H15_30, EV_T0830_P30_H_p15, EV_T0830_P30_H_p90
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, RB_nyam_K100_EV, RB_nypm_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2, BR_M7_H15_xt5, BR_M7_H15_30, BR_M7_H15_v19, EV_T0830_P30_H_p15, EV_T0830_P30_H_p45, EV_T0830_P30_H_p90
 
 Auto-expansions launched (expansion of <parent>):
 
@@ -754,6 +758,36 @@ Auto-expansions launched (expansion of <parent>):
 - - EV_T0830_P30_H_p90_kPCE: expansion of EV_T0830_P30_H_p90
 - - EV_T0830_P30_H_p90_kISM_MFG: expansion of EV_T0830_P30_H_p90
 - - EV_T0830_P30_H_p90_kFOMC: expansion of EV_T0830_P30_H_p90
+- - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
+- HIT BR_M7_H15_v19: L3M cut 1.2% d mean 136 (adj 146) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - BR_M7_H15_v19_Sasi: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_Slon: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_Snya: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_Snyp: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_xt5: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_30: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_v19: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_G2: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_K7: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_P7: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_U7: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_H7: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_A7: expansion of BR_M7_H15_v19
+- - BR_M7_H15_v19_O7: expansion of BR_M7_H15_v19
+- HIT EV_T0830_P30_H_p45: L3M cut 0.0% d mean 102 (adj 107) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - EV_T0830_P30_H_p45_p5: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_p15: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_p45: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_p90: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_sasi: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_slon: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_snya: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_snyp: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_oth: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_kCPI: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_kPCE: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_kISM_MFG: expansion of EV_T0830_P30_H_p45
+- - EV_T0830_P30_H_p45_kFOMC: expansion of EV_T0830_P30_H_p45
 - - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
 
 ## 4. Not run / limits

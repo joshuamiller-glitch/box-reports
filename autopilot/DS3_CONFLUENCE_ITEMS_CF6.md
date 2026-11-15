@@ -472,3 +472,68 @@ Key-count books (pre = 2013-2022, post = 2023-2026):
 **VERDICT STEP C: no ICT book earns money after costs and none beats its controls. Of 40 key-count CONT configurations 7 have a positive mean (best +60 $/trade on 351 trades, CI -58..+199, 33-34 FVG on 60-min, negative before 2023), 0 have a CI above zero; the neighbouring-count controls are as good or as bad (9-11: best +3, 5-6: best -4), random anchors reach +21. Exhaustion fades: 5-min negative (-8 to -27 $), 15-min around zero, 60-min positive but only 241-364 trades with CIs spanning zero, and the CONTROL count 10-11 on 60-min (+80..+123 $/trade, n 296) beats every key group - the signature of noise. So no engine runs were queued (quota kept for W-CF3's finalists). The 60-min 7-8 hump of Step A does not translate to a continuation-entry edge at FVG/OB retraces after costs (60-min OB 7-8: +6..+8 $/trade, CI -19..+33, -13 pre / +60 post).**
 
 Caveats: screen uses 1-min bars with stop-first when both levels sit in one minute (pessimistic), a flat 1.0 pt slippage, no live-stack rules (SCR, BookLock, NTZ), 1 lot, entries at the minute close after the touch (conservative vs a limit order); the continuation book's limit-entry version cannot be run through the hook. If a book is wanted in the engine anyway, events can be exported with ict_books.gen_cont / gen_exh (ts, side, stop, target) to the uw_inject event-file format.
+
+
+# BLOCK 17 - ANALOGS (W-CF6), 2026-11-15
+
+**VERDICT: weak but consistent signal in the LEARNED-metric analogs, nothing in the plain-Euclidean ones beyond noise. Taking the K=25 nearest past trades of the same book and session (closed before the signal second) under a learned diagonal metric, 'analog mean R above its causal cell median' vs below lifts actual R by +0.041 (t 3.2; L6M +0.069, L3M +0.062), the analog MFE by +0.050 (t 3.9) and lowers the analog-MAE group's R by -0.035 (t -2.7); K=50 gives +0.032 (t 2.5), K=100 +0.024 (t 1.9). Shuffled analogs (random prior trades of the cell) give -0.017 / +0.021 / +0.004 (|t| <= 1.7), the last-K trades give -0.03 to 0, the plain expanding cell mean gives +0.002. Rank correlation of analog mean R with the actual R is 0.015-0.028 (pooled over 15 cells): the effect is small (about 1/25 R between halves) and not usable as a stand-alone rule; it is a candidate input for the size ladder and the per-trade bracket. Taken signals only (19,798) until skipped-signal states exist for all conditions.**
+
+Method (code/th_confl_cf6/a_analogs.py, a_eval.py): state vector = 2,522 leaders of W-CF3's 0.85 clusters with size >= 2 and yes-share 10-90%, reduced by an outcome-free second clustering (|phi| >= 0.5) to representatives (count in the log), plus the entry table's raw v_ values (graded strengths) z-scored with statistics from trades closed before the block (blocks of 14 days). Distance: standardised Euclidean ('std') or a diagonal metric with weights proportional to |corr(feature, R)| on the closed fit rows ('lrn'). Candidates for a signal at second t: trades of the SAME book and session with sig_ts < t AND exit_ts <= t (still-open trades are excluded). Statistics of the K nearest: mean R, mean $ (engine), win rate, MFE and MAE in R units. Controls: shuffled analogs (K random candidates from the same cell), last-K trades, plain expanding mean, K = 25/50/100, week 2026-W44 removed, recent and older windows. Columns: /mnt/l2/l2vast/_confl/cols_cf6/cf6_analogs.parquet (a_K{25,50,100}_{std,lrn}_{meanR,meanUSD,wr,mfe,mae}, a_K*_shuf_meanR, a_K*_last_meanR, a_plain_meanR/wr/n; yes/no c_Q_a_* above the causal expanding cell median, >= 50 earlier values). Caveat: the second-stage clustering and cluster leaders use feature correlations of all rows (outcome-free, mild look-ahead on feature structure only), as W-CF3's own clustering does.
+
+### Lift in actual R (analog stat above minus below its causal cell median), stack
+
+| col               |    ALL |   ALL_noW44 |    L3M |    L6M |   2023 |   2024 |   2025 |   2026 |   t (ALL) |
+|:------------------|-------:|------------:|-------:|-------:|-------:|-------:|-------:|-------:|----------:|
+| a_K25_lrn_meanR   |  0.041 |       0.041 |  0.062 |  0.069 | -0.016 |  0.021 |  0.026 |  0.078 |       3.2 |
+| a_K50_lrn_meanR   |  0.032 |       0.032 |  0.06  |  0.036 | -0.006 |  0.017 |  0.019 |  0.061 |       2.5 |
+| a_K100_lrn_meanR  |  0.024 |       0.024 |  0.044 |  0.013 |  0.082 |  0.049 | -0.013 |  0.034 |       1.9 |
+| a_K25_lrn_mfe     |  0.05  |       0.049 |  0.087 |  0.059 |  0.038 |  0.037 |  0.041 |  0.069 |       3.9 |
+| a_K50_lrn_mae     | -0.057 |      -0.058 | -0.086 | -0.046 | -0.082 | -0.048 | -0.041 | -0.073 |      -4.4 |
+| a_K25_lrn_mae     | -0.035 |      -0.037 | -0.035 | -0.037 |  0.009 | -0.012 | -0.033 | -0.06  |      -2.7 |
+| a_K25_lrn_wr      |  0.038 |       0.039 |  0.056 |  0.057 |  0.031 |  0.015 |  0.025 |  0.068 |       2.9 |
+| a_K25_std_meanR   |  0.02  |       0.02  |  0.062 |  0.037 | -0.037 |  0.018 | -0.011 |  0.058 |       1.6 |
+| a_K50_std_meanR   |  0.024 |       0.024 |  0.108 |  0.056 | -0.069 |  0.059 | -0.006 |  0.04  |       1.9 |
+| a_K100_std_meanR  |  0.017 |       0.017 |  0.041 |  0     | -0.082 |  0.039 |  0.01  |  0.019 |       1.3 |
+| a_K25_shuf_meanR  | -0.017 |      -0.015 |  0.017 | -0.009 | -0.097 | -0.041 | -0.004 |  0.003 |      -1.3 |
+| a_K50_shuf_meanR  |  0.021 |       0.021 | -0.024 |  0.023 |  0.017 |  0.009 |  0.016 |  0.035 |       1.7 |
+| a_K100_shuf_meanR |  0.004 |       0.005 | -0.008 | -0.03  | -0.012 |  0.007 |  0.028 | -0.018 |       0.3 |
+| a_K25_last_meanR  | -0.032 |      -0.033 | -0.055 | -0.075 | -0.055 | -0.013 | -0.033 | -0.045 |      -2.5 |
+| a_K50_last_meanR  | -0.003 |      -0.003 | -0.084 | -0.042 | -0.015 |  0.025 | -0.016 | -0.013 |      -0.2 |
+
+Spearman (rank within cell) of analog mean R vs actual R, weighted over 15 cells:
+
+| col               |   spearman_wmean |     n |   cells |
+|:------------------|-----------------:|------:|--------:|
+| a_K25_std_meanR   |            0.015 | 18829 |      15 |
+| a_K25_shuf_meanR  |           -0.013 | 18829 |      15 |
+| a_K25_last_meanR  |           -0.019 | 18829 |      15 |
+| a_K50_std_meanR   |            0.017 | 18829 |      15 |
+| a_K50_shuf_meanR  |            0.001 | 18829 |      15 |
+| a_K50_last_meanR  |           -0.01  | 18829 |      15 |
+| a_K25_lrn_meanR   |            0.028 | 18829 |      15 |
+| a_K50_lrn_meanR   |            0.025 | 18829 |      15 |
+| a_K100_std_meanR  |            0.015 | 18298 |      15 |
+| a_K100_shuf_meanR |           -0.005 | 18298 |      15 |
+| a_K100_last_meanR |           -0.009 | 18298 |      15 |
+| a_K100_lrn_meanR  |            0.025 | 18298 |      15 |
+| a_plain_meanR     |           -0.025 | 18829 |      15 |
+
+Per cell, a_K25_lrn_meanR (ALL window):
+
+| cell   |   lift |      t |   n_hi |   n_lo |
+|:-------|-------:|-------:|-------:|-------:|
+| K7|0   |  0.123 |  3.613 |   1314 |   1165 |
+| K7|4   |  0.139 |  2.731 |    506 |    515 |
+| U7|0   |  0.136 |  1.695 |    321 |    249 |
+| P7|0   |  0.057 |  1.598 |   1152 |    891 |
+| H7|0   |  0.105 |  1.467 |    299 |    291 |
+| K7|1   |  0.056 |  1.357 |    895 |    773 |
+| A7|0   |  0.074 |  1.258 |    563 |    483 |
+| M7|1   |  0.008 |  0.246 |   1147 |   1221 |
+| O7|3   |  0.024 |  0.148 |    209 |    130 |
+| H7|3   |  0.004 |  0.03  |    114 |    123 |
+| P7|3   | -0.024 | -0.466 |    443 |    497 |
+| P7|1   | -0.02  | -0.48  |    721 |    703 |
+| K7|3   | -0.023 | -0.513 |    715 |    727 |
+| U7|1   | -0.09  | -1.082 |    299 |    236 |
+| M7|3   | -0.087 | -1.903 |    758 |    619 |

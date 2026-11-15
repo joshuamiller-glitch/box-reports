@@ -1,0 +1,16 @@
+# DS3_CONFLUENCE_LIVE_CLASS_CF2 (W-CF2): which of my condition columns D7 can compute itself today
+VERDICT (676 conditions of F,G,H,H2,I,J,B5; Blocks 14 and 15 added below): of 676 conditions, 137 can be computed by D7 from series it already has live (88 class A from NT8 trades/bars, 49 class A2 from NT8 L2 depth), 175 need extra live CME instrument series in NT8 (class B), 271 need an external or non-CME feed (class C: UW options/tide, megacap prices, VIX daily), and 93 need live L3 market-by-order (class D). Full per-column table: /mnt/l2/l2vast/_confl/cols_cf2/column_classification.csv; the 137 D7-alone conditions are listed in conditions_D7_alone.txt (same directory). W-CF3 computes what the best checklist loses if restricted to those 137.
+
+| class | meaning | conditions | families |
+|--|--|--|--|
+| A | D7's own live series: NT8 trades with aggressor side and best bid/ask, 1-minute/5/15 bars; needs a stored history of 20 sessions of per-minute volume for rvol items | 88 | F tape (52: rvol, delta, big prints, swing share, absorption, ice flags from DS7 L_ice), B5 states of NQ itself (36) |
+| A2 | D7's own live L2 depth (DS7 reads 10 levels in NT8): imbalance, thick/thin vs norm, walls, pulled/added, microprice, resilience, spread | 49 | G order book. Caveats: the known depth-pollution bug (ES/RTY levels appearing in the live NQ book) must be fixed first; the replica grid is 100 ms and the live feed is event time, so a parity run is needed |
+| B | extra live CME instruments subscribed in NT8 (no new vendor, new symbols/entitlements): ES, RTY, YM, ZN, ZB, 6E, NKD, 6J | 175 | I intermarket (54), Block 5 states on ES/RTY/YM and the correlations (121) |
+| C | external or non-CME data: UW gamma/OI/tide/IV term, CME NQ option snapshots, megacap/QQQ prices, daily VIX | 271 | J (148), I megacap and VIX (18), Block 5 MEGA, ALL_ aggregates, VIX correlation (105) |
+| D | live L3 MBO (order ids, ages, adds, refills): not entitled today; NT8 depth cannot provide it | 93 | H (55), H2 (38; also need the 20-session trailing store) |
+
+Tested substitutions: the L2 proxy of the L3 lead (depth added over 60 s, mbp-10) does not reproduce it (see DS3_CONFLUENCE_L3_LIVE_SPEC.md).
+For the build list, W-JV should treat class A/A2 items as "D7 computes alone", B as "new series, same exchange", C as "new feed", D as "live L3 feed".
+Forward-check files (box values for the most recent 10 trading days, for the Shadow comparison): /mnt/l2/l2vast/_confl/forward_check/<finalist>.csv, written by `python3 code/th_confl_cf2/forward_check.py <column>` for any finalist column W-CF3 names (first: c_H2_arrival_imb60_lo, 2,262 signals of 2026-10-19..10-30; the universe ends 2026-10-30, so later days exist only when new signal rows are logged).
+
+Blocks 14 and 15 (added 2026-11-15): B14 (38 + 23 raw): relative-value items vs ES/RTY are class B, everything on megacap/QQQ prices (breadth, rotation, correlation, QQQ premium) is class C (live stock prices). B15: ZN/ZB/6E intraday and the bond-vol proxy are class B; all other B15 items are daily or weekly free files (class C, one download per day/week, not a live feed). None of B14/B15 is class A. Table: /mnt/l2/l2vast/_confl/cols_cf2/column_classification.csv.

@@ -2,7 +2,7 @@
 
 VERDICT: build list v0. Only B (U7 fresh time stop) holds in recent and older windows and it is mean-specific only (its DD cut equals the delayed-exit placebo and turns negative with W44 removed): recommend Shadow. A helps recent windows but is worse in PRE (-7.6 pct DD): Off or Shadow-only. C rejected: Off. D/L, P, R/W/V are recent-window or provisional evidence from their owners: Shadow-only candidates until older windows and placebos land. No PASS claim.
 
-Generated 2026-11-15 08:32 UTC. Exact engine, JN05W2 all layers ON, base lots (user lots x1.75), engine fee $1.18/contract RT; every number is the single rule vs JN05W2. Joint results and interaction table: DS3_JOINT_V20.md. Each rule gets its own switch `<Rule>Mode` = Off | Shadow | Live (Shadow = evaluate and log the would-be action, orders unchanged). Recommendation text is mine, not a PASS. Exact specs as scored: DS3_JOINT_V20.md section 7.
+Generated 2026-11-15 16:36 UTC. Exact engine, JN05W2 all layers ON, base lots (user lots x1.75), engine fee $1.18/contract RT; every number is the single rule vs JN05W2. Joint results and interaction table: DS3_JOINT_V20.md. Each rule gets its own switch `<Rule>Mode` = Off | Shadow | Live (Shadow = evaluate and log the would-be action, orders unchanged). Recommendation text is mine, not a PASS. Exact specs as scored: DS3_JOINT_V20.md section 7.
 
 | rule | scope | windows scored | DD cut % WEEKLY L3M / L6M / HOLD / PRE / X' / GAP | DD cut % DAILY same windows | d mean $/wk (same windows) | d mean @4.84 L6M | DD cut % L6M with W44 removed | holds recent AND older? | placebo | recommendation |
 |--|--|--|--|--|--|--|--|--|--|--|
@@ -31,6 +31,35 @@ Note on drawdown basis: this page and DS3_JOINT_V20 use the program convention (
 - **T** running mean of 1-min closes since 18:00 ET, 20-day median range, today closed-trade ledger by side.
 - **W** as R.
 - **V** M7 signal log including skipped signals.
+
+## Confluence / bracket families (H5/H6 addendum) - structure placeholders, status IN TEST
+
+Rule for filling rows: a mechanism gets a row only from results that passed (1) its planted-edge check, (2) its per-cell cells, (3) its controls. Until its planted-edge check has passed, this page never says that nothing passes for that mechanism (H6): the status stays IN TEST. Each row will carry: exact spec as scored; what D7 computes itself; what needs a file or feed; Off / Shadow / Live recommendation; its row in the DS3_JOINT_V20 interaction table (letter in mk_jv2.py).
+
+### W-CF3 confluence mechanisms (W-CF3: gate / size / ladder / wait / stand-down)
+
+| mechanism | planted-edge check | per-cell cells | controls | exact spec as scored | D7 computes itself | needs file or feed | recommendation | joint letter |
+|--|--|--|--|--|--|--|--|--|
+| (none received yet) | - | - | - | - | - | - | IN TEST | - |
+
+### W-CF1 confluence conditions (W-CF1: conditions)
+
+| mechanism | planted-edge check | per-cell cells | controls | exact spec as scored | D7 computes itself | needs file or feed | recommendation | joint letter |
+|--|--|--|--|--|--|--|--|--|
+| (none received yet) | - | - | - | - | - | - | IN TEST | - |
+
+### W-D10 per-book bracket cells and the assembled stack (W-D10: per-book bracket cells + assembled stack)
+
+| mechanism | planted-edge check | per-cell cells | controls | exact spec as scored | D7 computes itself | needs file or feed | recommendation | joint letter |
+|--|--|--|--|--|--|--|--|--|
+| (none received yet) | - | - | - | - | - | - | IN TEST | - |
+
+### W-CF6 checklist books (W-CF6: checklist books)
+
+| mechanism | planted-edge check | per-cell cells | controls | exact spec as scored | D7 computes itself | needs file or feed | recommendation | joint letter |
+|--|--|--|--|--|--|--|--|--|
+| (none received yet) | - | - | - | - | - | - | IN TEST | - |
+
 
 ## Interaction and joint
 

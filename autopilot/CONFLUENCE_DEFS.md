@@ -1,4 +1,4 @@
-# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-15 04:42Z)
+# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-15 16:37Z)
 Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.py, ta_ind.py, ta_cond.py); this page is generated from the same registries; nothing here has been scored yet.
 
 ## Table and ids
@@ -568,6 +568,208 @@ Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.
 - c_V_qp_inside : QuantPivots APPROXIMATION: price inside the projected range
 - c_V_qp_room30 : QuantPivots APPROXIMATION: >= 30 pts of room to the projected edge ahead
 
+## defs_Z.json
+- c_Z_moon_oct0 : NONSENSE control (synodic phase octant 0 of 8 at sig_ts); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_moon_oct1 : NONSENSE control (synodic phase octant 1 of 8 at sig_ts); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_moon_oct2 : NONSENSE control (synodic phase octant 2 of 8 at sig_ts); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_moon_oct3 : NONSENSE control (synodic phase octant 3 of 8 at sig_ts); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_moon_oct4 : NONSENSE control (synodic phase octant 4 of 8 at sig_ts); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_moon_oct5 : NONSENSE control (synodic phase octant 5 of 8 at sig_ts); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_moon_oct6 : NONSENSE control (synodic phase octant 6 of 8 at sig_ts); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_moon_oct7 : NONSENSE control (synodic phase octant 7 of 8 at sig_ts); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_moon_wax : NONSENSE control (moon waxing (phase < 0.5)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_moon_fullish : NONSENSE control (phase within 0.1 of full); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_dom_odd : NONSENSE control (dom_odd); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_dom_even : NONSENSE control (dom_even); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_dom_le15 : NONSENSE control (dom_le15); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_dom_d012 : NONSENSE control (dom_d012); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_dom_d345 : NONSENSE control (dom_d345); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_dom_d6789 : NONSENSE control (dom_d6789); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_doy_odd : NONSENSE control (doy_odd); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_isow_odd : NONSENSE control (isow_odd); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_wom_1 : NONSENSE control (wom_1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_wd_odd : NONSENSE control (wd_odd); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_mon_odd : NONSENSE control (mon_odd); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_cal_mon_q1 : NONSENSE control (mon_q1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d0 : NONSENSE control (last digit of integer true price == 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d1 : NONSENSE control (last digit of integer true price == 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d2 : NONSENSE control (last digit of integer true price == 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d3 : NONSENSE control (last digit of integer true price == 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d4 : NONSENSE control (last digit of integer true price == 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d5 : NONSENSE control (last digit of integer true price == 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d6 : NONSENSE control (last digit of integer true price == 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d7 : NONSENSE control (last digit of integer true price == 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d8 : NONSENSE control (last digit of integer true price == 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxdig_d9 : NONSENSE control (last digit of integer true price == 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxfrac_lt50 : NONSENSE control (fractional part of true price < 0.50); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxmod10_lt5 : NONSENSE control (true price mod 10 < 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxmod100_lt50 : NONSENSE control (true price mod 100 < 50); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_pxmod25_lt12 : NONSENSE control (true price mod 25 < 12.5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b0 : NONSENSE control (bit 0 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b1 : NONSENSE control (bit 1 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b2 : NONSENSE control (bit 2 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b3 : NONSENSE control (bit 3 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b4 : NONSENSE control (bit 4 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b5 : NONSENSE control (bit 5 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b6 : NONSENSE control (bit 6 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b7 : NONSENSE control (bit 7 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b8 : NONSENSE control (bit 8 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b9 : NONSENSE control (bit 9 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b10 : NONSENSE control (bit 10 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b11 : NONSENSE control (bit 11 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b12 : NONSENSE control (bit 12 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b13 : NONSENSE control (bit 13 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b14 : NONSENSE control (bit 14 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hdate_b15 : NONSENSE control (bit 15 of sha256(seed|label day)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b0 : NONSENSE control (bit 0 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b1 : NONSENSE control (bit 1 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b2 : NONSENSE control (bit 2 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b3 : NONSENSE control (bit 3 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b4 : NONSENSE control (bit 4 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b5 : NONSENSE control (bit 5 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b6 : NONSENSE control (bit 6 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b7 : NONSENSE control (bit 7 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b8 : NONSENSE control (bit 8 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b9 : NONSENSE control (bit 9 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b10 : NONSENSE control (bit 10 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b11 : NONSENSE control (bit 11 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b12 : NONSENSE control (bit 12 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b13 : NONSENSE control (bit 13 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b14 : NONSENSE control (bit 14 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hts_b15 : NONSENSE control (bit 15 of sha256(seed|sig_ts)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hid_b0 : NONSENSE control (bit 0 of sha256(seed|sig_id)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hid_b1 : NONSENSE control (bit 1 of sha256(seed|sig_id)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hid_b2 : NONSENSE control (bit 2 of sha256(seed|sig_id)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hid_b3 : NONSENSE control (bit 3 of sha256(seed|sig_id)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hid_b4 : NONSENSE control (bit 4 of sha256(seed|sig_id)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hid_b5 : NONSENSE control (bit 5 of sha256(seed|sig_id)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hid_b6 : NONSENSE control (bit 6 of sha256(seed|sig_id)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_hid_b7 : NONSENSE control (bit 7 of sha256(seed|sig_id)); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_clock_minpar : NONSENSE control (minpar); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_clock_secpar : NONSENSE control (secpar); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_clock_tsmod3 : NONSENSE control (tsmod3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_clock_tsmod7 : NONSENSE control (tsmod7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_clock_hourpar : NONSENSE control (hourpar); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_clock_min_lt30 : NONSENSE control (min_lt30); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_clock_min5 : NONSENSE control (min5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_clock_min15lt7 : NONSENSE control (min15lt7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s0 : NONSENSE control (Markov coin, mean run 3 min, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s0 : NONSENSE control (Markov coin, mean run 8 min, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s0 : NONSENSE control (Markov coin, mean run 15 min, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s0 : NONSENSE control (Markov coin, mean run 30 min, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s0 : NONSENSE control (Markov coin, mean run 60 min, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s0 : NONSENSE control (Markov coin, mean run 120 min, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s0 : NONSENSE control (Markov coin, mean run 240 min, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s0 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s0 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s0 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s0 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 0); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s1 : NONSENSE control (Markov coin, mean run 3 min, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s1 : NONSENSE control (Markov coin, mean run 8 min, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s1 : NONSENSE control (Markov coin, mean run 15 min, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s1 : NONSENSE control (Markov coin, mean run 30 min, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s1 : NONSENSE control (Markov coin, mean run 60 min, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s1 : NONSENSE control (Markov coin, mean run 120 min, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s1 : NONSENSE control (Markov coin, mean run 240 min, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s1 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s1 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s1 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s1 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 1); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s2 : NONSENSE control (Markov coin, mean run 3 min, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s2 : NONSENSE control (Markov coin, mean run 8 min, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s2 : NONSENSE control (Markov coin, mean run 15 min, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s2 : NONSENSE control (Markov coin, mean run 30 min, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s2 : NONSENSE control (Markov coin, mean run 60 min, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s2 : NONSENSE control (Markov coin, mean run 120 min, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s2 : NONSENSE control (Markov coin, mean run 240 min, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s2 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s2 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s2 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s2 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 2); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s3 : NONSENSE control (Markov coin, mean run 3 min, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s3 : NONSENSE control (Markov coin, mean run 8 min, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s3 : NONSENSE control (Markov coin, mean run 15 min, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s3 : NONSENSE control (Markov coin, mean run 30 min, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s3 : NONSENSE control (Markov coin, mean run 60 min, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s3 : NONSENSE control (Markov coin, mean run 120 min, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s3 : NONSENSE control (Markov coin, mean run 240 min, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s3 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s3 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s3 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s3 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 3); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s4 : NONSENSE control (Markov coin, mean run 3 min, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s4 : NONSENSE control (Markov coin, mean run 8 min, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s4 : NONSENSE control (Markov coin, mean run 15 min, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s4 : NONSENSE control (Markov coin, mean run 30 min, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s4 : NONSENSE control (Markov coin, mean run 60 min, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s4 : NONSENSE control (Markov coin, mean run 120 min, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s4 : NONSENSE control (Markov coin, mean run 240 min, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s4 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s4 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s4 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s4 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 4); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s5 : NONSENSE control (Markov coin, mean run 3 min, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s5 : NONSENSE control (Markov coin, mean run 8 min, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s5 : NONSENSE control (Markov coin, mean run 15 min, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s5 : NONSENSE control (Markov coin, mean run 30 min, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s5 : NONSENSE control (Markov coin, mean run 60 min, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s5 : NONSENSE control (Markov coin, mean run 120 min, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s5 : NONSENSE control (Markov coin, mean run 240 min, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s5 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s5 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s5 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s5 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 5); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s6 : NONSENSE control (Markov coin, mean run 3 min, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s6 : NONSENSE control (Markov coin, mean run 8 min, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s6 : NONSENSE control (Markov coin, mean run 15 min, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s6 : NONSENSE control (Markov coin, mean run 30 min, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s6 : NONSENSE control (Markov coin, mean run 60 min, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s6 : NONSENSE control (Markov coin, mean run 120 min, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s6 : NONSENSE control (Markov coin, mean run 240 min, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s6 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s6 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s6 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s6 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 6); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s7 : NONSENSE control (Markov coin, mean run 3 min, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s7 : NONSENSE control (Markov coin, mean run 8 min, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s7 : NONSENSE control (Markov coin, mean run 15 min, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s7 : NONSENSE control (Markov coin, mean run 30 min, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s7 : NONSENSE control (Markov coin, mean run 60 min, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s7 : NONSENSE control (Markov coin, mean run 120 min, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s7 : NONSENSE control (Markov coin, mean run 240 min, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s7 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s7 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s7 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s7 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 7); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s8 : NONSENSE control (Markov coin, mean run 3 min, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s8 : NONSENSE control (Markov coin, mean run 8 min, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s8 : NONSENSE control (Markov coin, mean run 15 min, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s8 : NONSENSE control (Markov coin, mean run 30 min, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s8 : NONSENSE control (Markov coin, mean run 60 min, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s8 : NONSENSE control (Markov coin, mean run 120 min, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s8 : NONSENSE control (Markov coin, mean run 240 min, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s8 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s8 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s8 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s8 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 8); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s9 : NONSENSE control (Markov coin, mean run 3 min, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s9 : NONSENSE control (Markov coin, mean run 8 min, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s9 : NONSENSE control (Markov coin, mean run 15 min, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s9 : NONSENSE control (Markov coin, mean run 30 min, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s9 : NONSENSE control (Markov coin, mean run 60 min, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s9 : NONSENSE control (Markov coin, mean run 120 min, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L240_s9 : NONSENSE control (Markov coin, mean run 240 min, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L1_s9 : NONSENSE control (daily Markov coin, mean run 1 label days, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L2_s9 : NONSENSE control (daily Markov coin, mean run 2 label days, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L5_s9 : NONSENSE control (daily Markov coin, mean run 5 label days, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_dcoin_L10_s9 : NONSENSE control (daily Markov coin, mean run 10 label days, seed 9); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L3_s10 : NONSENSE control (Markov coin, mean run 3 min, seed 10); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L8_s10 : NONSENSE control (Markov coin, mean run 8 min, seed 10); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L15_s10 : NONSENSE control (Markov coin, mean run 15 min, seed 10); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L30_s10 : NONSENSE control (Markov coin, mean run 30 min, seed 10); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L60_s10 : NONSENSE control (Markov coin, mean run 60 min, seed 10); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+- c_Z_coin_L120_s10 : NONSENSE control (Markov coin, mean run 120 min, seed 10); signed: yes = A for long, NOT A for short; seed CF1-NONSENSE-v1
+
 
 # ===== Categories F G H I J + Block 5 (W-CF2) : merged verbatim from CONFLUENCE_DEFS_CF2.md =====
 # CONFLUENCE_DEFS_CF2 (W-CF2). Categories F, G, H, I, J and Block 5. Code: code/th_confl_cf2. Columns: /mnt/l2/l2vast/_confl/cols_cf2/{FG,I,J,H,B5}.parquet keyed by sig_id (= <book7>_<sig_ts>).
@@ -648,6 +850,10 @@ VERDICT: 5 column files (638 conditions, FG 101, I 72, J 148, H 55, B5 262) buil
 | B5     |              262 |       223 |         48353 |                   100   |
 
 Column names are listed by `python3 -c "import pandas as pd;print(list(pd.read_parquet('/mnt/l2/l2vast/_confl/cols_cf2/FG.parquet').columns))"`. J burst thresholds are frozen from the first full build (v_J_J_burst_q10_*/q05_* columns). H covers MBO days only (2026-05-01..2026-11-13 now). Known limits: YM has no tape or L2; intraday VIX is not on the box; 6J is L6M only; the megacap composite VWAP is an approximation.
+
+## H2 (drift-robust L3, added after the full NQ MBO history; /mnt/l2/l2vast/_confl/cols_cf2/H2.parquet, 39 columns c_H2_*, code derive_h.py)
+- H.parquet is now rebuilt on the full 2023-04..2026-11 MBO history for all 191,520 universe rows (per-second tables /mnt/l2/l2vast/_confl/cf2_mbo, 1,126 day files, compact).
+- Because L3 microstructure drifted (order sizes at the touch, cancel-to-trade, spoof-like frequency), H2 compares each raw value (v_H_ctr_mine/ahead 60/300, touch sizes, bmax mine/ahead, spoof counts mine/ahead 60/300, gmax with/against, arrival_imb60, aggr20 with/against 300) with the same raw value over the entries of the previous 20 trading days (all books, causal, >= 150 prior entries): `_hi` = above the 80th percentile, `_lo` = at or below the 20th. Plus `spoof_ahead_gt_mine{60,300}` and `spoof_mine_gt_ahead{60,300}` (relative, no threshold).
 
 
 # ===== Block 2 / Block 4 (W-CF4) : merged verbatim from CONFLUENCE_DEFS_CF4.md =====

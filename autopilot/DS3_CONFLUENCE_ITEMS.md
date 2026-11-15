@@ -151,3 +151,30 @@ Top per-book cells, z>=4, same sign in every year (lift in R per signal):
 |---|---|---|---|---|---|---|---|
 
 ## Other blocks (own pages): DS3_CONFLUENCE_ITEMS_CF2.md (F-J, Block 5), CF4 / CF5 / CF6 pages as listed in CONFLUENCE_DEFS.md.
+
+<!-- NONSENSE-BEGIN -->
+## Block 18: NONSENSE CONTROLS - each-alone pass rates, real vs nonsense (200 meaningless conditions, c_Z_*, definitions in CONFLUENCE_DEFS.md)
+
+Rows are condition x cell results with >=100 yes cases and 3-97% yes share. |z|>2 and |z|>3 are Welch z of the yes-vs-no lift; stable = |z|>2 AND same sign in every calendar year (>=3 years with >=30 per side) AND same sign in L6M. Nonsense should pass |z|>2 about 5%% by chance (cells overlap, so it can run higher); a real-condition pass rate close to the nonsense rate means that stage carries no information.
+
+| outcome basis | group | cell type | rows | conditions | share abs z>2 | share abs z>3 | share stable |
+|---|---|---|---|---|---|---|---|
+| taken trades, net $ (base lots, $4.84 fees) | REAL | ALL | 5519 | 5508 | 0.082 | 0.011 | 0.0496 |
+| taken trades, net $ (base lots, $4.84 fees) | REAL | book | 31146 | 5620 | 0.060 | 0.007 | 0.0301 |
+| taken trades, net $ (base lots, $4.84 fees) | REAL | sess | 21141 | 5610 | 0.065 | 0.006 | 0.0257 |
+| taken trades, net $ (base lots, $4.84 fees) | REAL | book_sess | 62210 | 5562 | 0.060 | 0.007 | 0.0212 |
+| taken trades, net $ (base lots, $4.84 fees) | NONSENSE | ALL | 200 | 200 | 0.055 | 0.000 | 0.0250 |
+| taken trades, net $ (base lots, $4.84 fees) | NONSENSE | book | 1398 | 200 | 0.051 | 0.003 | 0.0229 |
+| taken trades, net $ (base lots, $4.84 fees) | NONSENSE | sess | 800 | 200 | 0.052 | 0.003 | 0.0238 |
+| taken trades, net $ (base lots, $4.84 fees) | NONSENSE | book_sess | 2908 | 200 | 0.055 | 0.004 | 0.0206 |
+| universe, R (skipped rows HYPOTHETICAL: screen only) | REAL | ALL | 5464 | 5464 | 0.121 | 0.027 | 0.0480 |
+| universe, R (skipped rows HYPOTHETICAL: screen only) | REAL | book | 33726 | 5638 | 0.070 | 0.011 | 0.0248 |
+| universe, R (skipped rows HYPOTHETICAL: screen only) | REAL | sess | 32472 | 5616 | 0.113 | 0.015 | 0.0328 |
+| universe, R (skipped rows HYPOTHETICAL: screen only) | REAL | book_sess | 147909 | 5718 | 0.059 | 0.005 | 0.0185 |
+| universe, R (skipped rows HYPOTHETICAL: screen only) | NONSENSE | ALL | 200 | 200 | 0.035 | 0.000 | 0.0200 |
+| universe, R (skipped rows HYPOTHETICAL: screen only) | NONSENSE | book | 1400 | 200 | 0.041 | 0.006 | 0.0150 |
+| universe, R (skipped rows HYPOTHETICAL: screen only) | NONSENSE | sess | 1200 | 200 | 0.040 | 0.003 | 0.0192 |
+| universe, R (skipped rows HYPOTHETICAL: screen only) | NONSENSE | book_sess | 6418 | 200 | 0.044 | 0.005 | 0.0154 |
+
+Reading (plain): on taken trades the real conditions pass |z|>2 only slightly more often than meaningless ones (book x session cells 5.6% vs 4.3%, stable-sign 2.9% vs 2.5%), so the each-alone |z|>2 screen has almost no power on its own and a lift of that size is not evidence. On the full universe with the hypothetical outcome, NONSENSE passes |z|>2 in 33-36% of pooled/session cells (real 34-43%): the signals are heavily clustered (consecutive signals share one outcome path), so the Welch z is inflated and the bar must be raised (cluster-robust z / one vote per day-session) before this screen is used for selection. Both tables are SCREEN output, not results.
+<!-- NONSENSE-END -->

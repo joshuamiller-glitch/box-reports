@@ -356,6 +356,166 @@ Conditions (template): `side` state on trade side (x vs mid, or sign of the stat
 | series | formula status | family |
 |---|---|---|
 
+## B11 candlestick library: 3370 condition columns, 61 indicator series (x6 timeframes)
+
+| series | formula status | family |
+|---|---|---|
+| cdl_hammer | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): hammer +1 bullish -1 bearish | candle |
+| cdl_hanging_man | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): hanging_man +1 bullish -1 bearish | candle |
+| cdl_inv_hammer | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): inv_hammer +1 bullish -1 bearish | candle |
+| cdl_shooting_star | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): shooting_star +1 bullish -1 bearish | candle |
+| cdl_engulfing | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): engulfing +1 bullish -1 bearish | candle |
+| cdl_harami | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): harami +1 bullish -1 bearish | candle |
+| cdl_harami_cross | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): harami_cross +1 bullish -1 bearish | candle |
+| cdl_morning_star | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): morning_star +1 bullish -1 bearish | candle |
+| cdl_star_doji | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): star_doji +1 bullish -1 bearish | candle |
+| cdl_abandoned_baby | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): abandoned_baby +1 bullish -1 bearish | candle |
+| cdl_dark_cloud | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): dark_cloud +1 bullish -1 bearish | candle |
+| cdl_piercing | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): piercing +1 bullish -1 bearish | candle |
+| cdl_tweezer | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): tweezer +1 bullish -1 bearish | candle |
+| cdl_marubozu | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): marubozu +1 bullish -1 bearish | candle |
+| cdl_closing_marubozu | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): closing_marubozu +1 bullish -1 bearish | candle |
+| cdl_opening_marubozu | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): opening_marubozu +1 bullish -1 bearish | candle |
+| cdl_dragonfly | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): dragonfly +1 bullish -1 bearish | candle |
+| cdl_gravestone | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): gravestone +1 bullish -1 bearish | candle |
+| cdl_takuri | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): takuri +1 bullish -1 bearish | candle |
+| cdl_three_inside | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_inside +1 bullish -1 bearish | candle |
+| cdl_three_outside | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_outside +1 bullish -1 bearish | candle |
+| cdl_kicker | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): kicker +1 bullish -1 bearish | candle |
+| cdl_belt_hold | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): belt_hold +1 bullish -1 bearish | candle |
+| cdl_three_soldiers | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_soldiers +1 bullish -1 bearish | candle |
+| cdl_three_crows | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_crows +1 bullish -1 bearish | candle |
+| cdl_three_line_strike | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_line_strike +1 bullish -1 bearish | candle |
+| cdl_advance_block | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): advance_block +1 bullish -1 bearish | candle |
+| cdl_deliberation | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): deliberation +1 bullish -1 bearish | candle |
+| cdl_stick_sandwich | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): stick_sandwich +1 bullish -1 bearish | candle |
+| cdl_matching_low | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): matching_low +1 bullish -1 bearish | candle |
+| cdl_homing_pigeon | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): homing_pigeon +1 bullish -1 bearish | candle |
+| cdl_ladder_bottom | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): ladder_bottom +1 bullish -1 bearish | candle |
+| cdl_unique_three_river | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): unique_three_river +1 bullish -1 bearish | candle |
+| cdl_two_crows | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): two_crows +1 bullish -1 bearish | candle |
+| cdl_upside_gap_two_crows | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): upside_gap_two_crows +1 bullish -1 bearish | candle |
+| cdl_identical_crows | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): identical_crows +1 bullish -1 bearish | candle |
+| cdl_thrusting | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): thrusting +1 bullish -1 bearish | candle |
+| cdl_in_neck | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): in_neck +1 bullish -1 bearish | candle |
+| cdl_on_neck | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): on_neck +1 bullish -1 bearish | candle |
+| cdl_separating_lines | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): separating_lines +1 bullish -1 bearish | candle |
+| cdl_side_by_side | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): side_by_side +1 bullish -1 bearish | candle |
+| cdl_three_methods | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_methods +1 bullish -1 bearish | candle |
+| cdl_mat_hold | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): mat_hold +1 bullish -1 bearish | candle |
+| cdl_tasuki_gap | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): tasuki_gap +1 bullish -1 bearish | candle |
+| cdl_breakaway | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): breakaway +1 bullish -1 bearish | candle |
+| cdl_counterattack | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): counterattack +1 bullish -1 bearish | candle |
+| cdl_inside_break | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): inside_break +1 bullish -1 bearish | candle |
+| cdl_inside_break_close | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): inside_break_close +1 bullish -1 bearish | candle |
+| cdl_high_wave | APPROXIMATION (neutral pattern, unsigned): high_wave | candle |
+| cdl_spinning_top | APPROXIMATION (neutral pattern, unsigned): spinning_top | candle |
+| cdl_long_legged_doji | APPROXIMATION (neutral pattern, unsigned): long_legged_doji | candle |
+| cdl_doji | APPROXIMATION (neutral pattern, unsigned): doji | candle |
+| cdl_rickshaw | APPROXIMATION (neutral pattern, unsigned): rickshaw | candle |
+| cdl_long_line | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): long_line +1 bullish -1 bearish | candle |
+| cdl_short_line | APPROXIMATION (neutral pattern, unsigned): short_line | candle |
+| cdl_tri_star | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): tri_star +1 bullish -1 bearish | candle |
+| cdl_inside_bar | APPROXIMATION (neutral pattern, unsigned): inside_bar | candle |
+| cdl_outside_bar | APPROXIMATION (neutral pattern, unsigned): outside_bar | candle |
+| cdl_pin_bar | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): pin_bar +1 bullish -1 bearish | candle |
+| cdl_wide_range_trend | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): wide_range_trend +1 bullish -1 bearish | candle |
+| cdl_gap_up_down | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): gap_up_down +1 bullish -1 bearish | candle |
+
+Block 11 notes: Block 11: candlestick library (~60 patterns), APPROXIMATIONS of Nison / TA-Lib style rules with fixed thresholds (stated in CONFLUENCE_DEFS_CF4.md). All patterns use only bars <= the evaluated bar.
+Thresholds (relative to the bar's own range and ATR14): long body: body >= 0.6*range and body >= 0.8*ATR*0.5 ; doji: body <= 0.1*range ; small body: body <= 0.3*range ; marubozu: shadows <= 0.03*range each ; gap = open beyond previous close by >= 0.1*ATR (rare on 24h futures bars; gap-based patterns therefore have low counts on 1-5 min bars) ; trend context: prior-4-bar close change > 0.5 ATR (up/down).
+Conditions per pattern and timeframe (1m,3m,5m,15m,60m): side = pattern on the last completed bar in the trade direction; against = opposite; fresh1/fresh3/fresh5 = trade-direction pattern within the last 1/3/5 bars; against3/against5 = opposite within 3/5 bars; *_atlvl = the same only AT a level cluster (>= 2 distinct IRL/ERL range levels within 0.3 ATR15 of the signal price; own levels, because W-CF1 category B columns exist only for taken signals so far); c4_cdl_<tf>_nwith3 / nagainst3 = number of distinct non-neutral patterns with / against the trade in the last 3 bars, with_ge1/2/3, with_gt_against, with_atlvl. Neutral patterns (doji types, spinning top, inside/outside bar, short line) are unsigned: hi/rise only.
+
+## B12 bar-level volume at price (footprint): 197 condition columns, 1 indicator series (x6 timeframes)
+
+| series | formula status | family |
+|---|---|---|
+| footprint (all c4_fp_*) | EXACT from prints: per-bar volume at price (1-tick levels). POC = max-volume tick (first on ties), position = (POC-low)/(high-low) in thirds; stacked imbalance = >=3 consecutive ticks with ask[P] >= 3*bid[P-1] and ask>=10 (buy) or bid[P] >= 3*ask[P+1] and bid>=10 (sell); unfinished auction = both bid and ask volume traded at the bar high (or low) tick; delta at extreme = ask-bid volume in the top / bottom third of the bar range; close delta = delta of the final 20% of the bar volume; centroid = volume-weighted mean tick; absorption = volume >= 2x its 20-bar average with range <= 0.6x its 20-bar average; _lvl = also at a level cluster (>=2 distinct IRL/ERL range levels within 0.3 ATR15); mtf = timeframes (1/3/5/15/60) agreeing | footprint |
+
+## B10 geometry and chart patterns: 1188 condition columns, 75 indicator series (x6 timeframes)
+
+| series | formula status | family |
+|---|---|---|
+| tl_state | APPROXIMATION auto trendlines (pivot k=3): +1 above a valid up-line (2+ touches), -1 below a valid down-line; if both, they cancel | geom |
+| tl_break | close beyond the pivot trendline by 0.1 ATR (+1 up-break of a down-line, -1 down-break of an up-line) | geom |
+| tl_retest | retest of a just-broken trendline within 10 bars (within 0.15 ATR, close back beyond) | geom |
+| tl_touch3 | touch count of the stronger valid trendline (>=3 is "tested") | geom |
+| tl_dist_up | ATR distance of price above the up-line (support) | geom |
+| tl_slope_up | slope of the up-line in ATR per bar (signed: steeper up = with a long) | geom |
+| chan_pos | position inside the trendline channel (parallel through the farthest opposite pivot): +0.5 at the support line, -0.5 at the far line (long likes +) | geom |
+| tri_sym | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): tri_sym present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_sym_on | tri_sym present (unsigned) | geom |
+| tri_asc | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): tri_asc present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_asc_on | tri_asc present (unsigned) | geom |
+| tri_desc | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): tri_desc present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_desc_on | tri_desc present (unsigned) | geom |
+| wedge_rising | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): wedge_rising present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| wedge_rising_on | wedge_rising present (unsigned) | geom |
+| wedge_falling | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): wedge_falling present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| wedge_falling_on | wedge_falling present (unsigned) | geom |
+| rect | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): rect present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| rect_on | rect present (unsigned) | geom |
+| broaden | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): broaden present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| broaden_on | broaden present (unsigned) | geom |
+| pitchfork | APPROXIMATION Andrews pitchfork from the last three alternating pivots (k=3): ATR distance of price from the median line, ev = median-line cross | geom |
+| fib_cluster | APPROXIMATION Fibonacci confluence: number of the last 4 legs (pivots k=3) with a .382/.5/.618/.786/1.272/1.618 level within 0.25 ATR of price (>=2 = cluster) | geom |
+| fib_cluster_dir | price at a Fibonacci cluster (>=2 legs) with the sign of the last leg (pullback into a cluster after an up-leg = +1) | geom |
+| fib_ext_up | ATR distance to the nearest 1.272/1.618 extension level above price | geom |
+| fib_ext_dn | ATR distance to the nearest extension level below price | geom |
+| tl_stateS | APPROXIMATION auto trendlines (pivot k=5): +1 above a valid up-line (2+ touches), -1 below a valid down-line; if both, they cancel | geom |
+| tl_breakS | close beyond the pivot trendline by 0.1 ATR (+1 up-break of a down-line, -1 down-break of an up-line) | geom |
+| tl_retestS | retest of a just-broken trendline within 10 bars (within 0.15 ATR, close back beyond) | geom |
+| tl_touch3S | touch count of the stronger valid trendline (>=3 is "tested") | geom |
+| tl_dist_upS | ATR distance of price above the up-line (support) | geom |
+| tl_slope_upS | slope of the up-line in ATR per bar (signed: steeper up = with a long) | geom |
+| chan_posS | position inside the trendline channel (parallel through the farthest opposite pivot): +0.5 at the support line, -0.5 at the far line (long likes +) | geom |
+| tri_symS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): tri_sym present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_sym_onS | tri_sym present (unsigned) | geom |
+| tri_ascS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): tri_asc present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_asc_onS | tri_asc present (unsigned) | geom |
+| tri_descS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): tri_desc present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_desc_onS | tri_desc present (unsigned) | geom |
+| wedge_risingS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): wedge_rising present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| wedge_rising_onS | wedge_rising present (unsigned) | geom |
+| wedge_fallingS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): wedge_falling present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| wedge_falling_onS | wedge_falling present (unsigned) | geom |
+| rectS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): rect present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| rect_onS | rect present (unsigned) | geom |
+| broadenS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): broaden present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| broaden_onS | broaden present (unsigned) | geom |
+| pitchforkS | APPROXIMATION Andrews pitchfork from the last three alternating pivots (k=5): ATR distance of price from the median line, ev = median-line cross | geom |
+| fib_clusterS | APPROXIMATION Fibonacci confluence: number of the last 4 legs (pivots k=5) with a .382/.5/.618/.786/1.272/1.618 level within 0.25 ATR of price (>=2 = cluster) | geom |
+| fib_cluster_dirS | price at a Fibonacci cluster (>=2 legs) with the sign of the last leg (pullback into a cluster after an up-leg = +1) | geom |
+| fib_ext_upS | ATR distance to the nearest 1.272/1.618 extension level above price | geom |
+| fib_ext_dnS | ATR distance to the nearest extension level below price | geom |
+| harmonic | APPROXIMATION harmonic XABCD (pivots k=3) price inside the D zone (+-0.3 ATR): ABCD, Gartley (AB .618, D .786), Bat (AB .382-.5, D .886), Butterfly (AB .786, D 1.27), Crab (AB .382-.618, D 1.618) with ratio tolerance 5%; sign = bullish when the pattern completes at a low | geom |
+| harm_abcd | harmonic abcd tolerance 5% | geom |
+| harm_gartley | harmonic gartley tolerance 5% | geom |
+| harm_bat | harmonic bat tolerance 5% | geom |
+| harm_butterfly | harmonic butterfly tolerance 5% | geom |
+| harm_crab | harmonic crab tolerance 5% | geom |
+| lmw_hs | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): hs top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| lmw_broaden | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): broaden top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| lmw_tri | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): tri top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| lmw_rect | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): rect top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| lmw_double | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): double top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| harmonic_loose | APPROXIMATION harmonic XABCD (pivots k=3) price inside the D zone (+-0.3 ATR): ABCD, Gartley (AB .618, D .786), Bat (AB .382-.5, D .886), Butterfly (AB .786, D 1.27), Crab (AB .382-.618, D 1.618) with ratio tolerance 10%; sign = bullish when the pattern completes at a low | geom |
+| harm_abcd_loose | harmonic abcd tolerance 10% | geom |
+| harm_gartley_loose | harmonic gartley tolerance 10% | geom |
+| harm_bat_loose | harmonic bat tolerance 10% | geom |
+| harm_butterfly_loose | harmonic butterfly tolerance 10% | geom |
+| harm_crab_loose | harmonic crab tolerance 10% | geom |
+| flag | APPROXIMATION flag: pole >= 3 ATR within 10 bars, consolidation 5-25 bars with range <= 40% of the pole, ev = break in the pole direction | geom |
+| pennant | flag whose second half is < 60% of the first-half range (converging = pennant) | geom |
+| cup_handle | APPROXIMATION cup and handle: rim-bottom-rim (>=3 ATR deep, bottom in the middle third, right rim within 10% of depth) + handle <= 1/3 depth; ev = close above the right rim | geom |
+| pnf | PUBLIC point-and-figure (close-based, box=4 pts, 3-box reversal): column direction, ev = double-top / double-bottom breakout | geom |
+| threeline | PUBLIC three-line break on closes: colour of the last line, ev = reversal | geom |
+| kagi | APPROXIMATION Kagi on closes with reversal = 1 ATR(14) at the bar: thickness yang(+1)/yin(-1), ev = thickness change | geom |
+
+Block 10 notes: Block 10: geometry and chart patterns, MECHANICAL versions on completed bars (3/5/15/60-min). Pivots = fractal pivots of strength k, usable k bars after the pivot bar, kept ALTERNATING (a same-type pivot replaces the previous one only if more extreme, at the time it is confirmed).
+Published rule vs approximation is stated per spec in the formula field. Tolerance disagreement for harmonics and LMW patterns is reported by c4_geom_tol.py.
+Timeframes 3/5/15/60-min. Each pattern lists PUBLISHED RULE or APPROXIMATION in the formula column; tolerance disagreement table: autopilot/CF4_GEOM_TOL.md (harmonics 5 pct vs 10 pct ratio tolerance, pivot strength 3 vs 5 for trendlines / triangles / wedges / Fibonacci clusters).
+
 ## B4 alternate bars: ha1: 2311 condition columns (c4_<ind>_ha1_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
 
 ## B4 alternate bars: ha15: 2311 condition columns (c4_<ind>_ha15_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
@@ -380,6 +540,50 @@ Conditions (template): `side` state on trade side (x vs mid, or sign of the stat
 
 ## B4 alternate bars: vol500: 2311 condition columns (c4_<ind>_vol500_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
 
+## Block 10 tolerance disagreement (how often two tolerances disagree)
+
+| bars | item | A | B | active A | active B | both | A only | B only | disagree share of union |
+|---|---|---|---|---|---|---|---|---|---|
+| 3m | harmonic | tol 5pct | tol 10pct | 10831 | 13118 | 10831 | 0 | 2287 | 0.17 |
+| 3m | harm_gartley | tol 5pct | tol 10pct | 650 | 1364 | 650 | 0 | 714 | 0.52 |
+| 3m | harm_bat | 5pct | 10pct | 409 | 605 | 409 | 0 | 196 | 0.32 |
+| 3m | harm_butterfly | 5pct | 10pct | 465 | 954 | 465 | 0 | 489 | 0.51 |
+| 3m | harm_crab | 5pct | 10pct | 195 | 271 | 195 | 0 | 76 | 0.28 |
+| 3m | harm_abcd | 5pct | 10pct | 9112 | 9924 | 8882 | 230 | 1042 | 0.13 |
+| 3m | trendline state | pivot k=3 | pivot k=5 | 220651 | 211687 | 135565 | 85086 | 76122 | 0.54 |
+| 3m | sym triangle on | k=3 | k=5 | 17478 | 15526 | 6688 | 10790 | 8838 | 0.75 |
+| 3m | wedge rising on | k=3 | k=5 | 28484 | 26536 | 11054 | 17430 | 15482 | 0.75 |
+| 3m | fib cluster>=2 | k=3 | k=5 | 169835 | 136001 | 108390 | 61445 | 27611 | 0.45 |
+| 5m | harmonic | tol 5pct | tol 10pct | 6452 | 7781 | 6452 | 0 | 1329 | 0.17 |
+| 5m | harm_gartley | tol 5pct | tol 10pct | 369 | 789 | 369 | 0 | 420 | 0.53 |
+| 5m | harm_bat | 5pct | 10pct | 208 | 334 | 208 | 0 | 126 | 0.38 |
+| 5m | harm_butterfly | 5pct | 10pct | 258 | 566 | 258 | 0 | 308 | 0.54 |
+| 5m | harm_crab | 5pct | 10pct | 122 | 163 | 122 | 0 | 41 | 0.25 |
+| 5m | harm_abcd | 5pct | 10pct | 5495 | 5929 | 5325 | 170 | 604 | 0.13 |
+| 5m | trendline state | pivot k=3 | pivot k=5 | 132814 | 124465 | 80278 | 52536 | 44187 | 0.55 |
+| 5m | sym triangle on | k=3 | k=5 | 10434 | 9439 | 3841 | 6593 | 5598 | 0.76 |
+| 5m | wedge rising on | k=3 | k=5 | 17294 | 15407 | 6360 | 10934 | 9047 | 0.76 |
+| 5m | fib cluster>=2 | k=3 | k=5 | 101435 | 81122 | 65017 | 36418 | 16105 | 0.45 |
+| 15m | harmonic | tol 5pct | tol 10pct | 1774 | 2153 | 1774 | 0 | 379 | 0.18 |
+| 15m | harm_gartley | tol 5pct | tol 10pct | 116 | 239 | 116 | 0 | 123 | 0.51 |
+| 15m | harm_bat | 5pct | 10pct | 89 | 124 | 89 | 0 | 35 | 0.28 |
+| 15m | harm_butterfly | 5pct | 10pct | 69 | 170 | 69 | 0 | 101 | 0.59 |
+| 15m | harm_crab | 5pct | 10pct | 27 | 46 | 27 | 0 | 19 | 0.41 |
+| 15m | harm_abcd | 5pct | 10pct | 1473 | 1574 | 1427 | 46 | 147 | 0.12 |
+| 15m | trendline state | pivot k=3 | pivot k=5 | 42127 | 38906 | 24332 | 17795 | 14574 | 0.57 |
+| 15m | sym triangle on | k=3 | k=5 | 3559 | 2604 | 1206 | 2353 | 1398 | 0.76 |
+| 15m | wedge rising on | k=3 | k=5 | 4961 | 4173 | 1483 | 3478 | 2690 | 0.81 |
+| 15m | fib cluster>=2 | k=3 | k=5 | 33037 | 25547 | 20457 | 12580 | 5090 | 0.46 |
+| 60m | harmonic | tol 5pct | tol 10pct | 307 | 371 | 307 | 0 | 64 | 0.17 |
+| 60m | harm_gartley | tol 5pct | tol 10pct | 18 | 32 | 18 | 0 | 14 | 0.44 |
+| 60m | harm_bat | 5pct | 10pct | 25 | 30 | 25 | 0 | 5 | 0.17 |
+| 60m | harm_butterfly | 5pct | 10pct | 10 | 27 | 10 | 0 | 17 | 0.63 |
+| 60m | harm_crab | 5pct | 10pct | 17 | 23 | 17 | 0 | 6 | 0.26 |
+| 60m | harm_abcd | 5pct | 10pct | 237 | 259 | 229 | 8 | 30 | 0.14 |
+| 60m | trendline state | pivot k=3 | pivot k=5 | 9259 | 9956 | 5449 | 3810 | 4507 | 0.60 |
+| 60m | sym triangle on | k=3 | k=5 | 684 | 686 | 286 | 398 | 400 | 0.74 |
+| 60m | wedge rising on | k=3 | k=5 | 1216 | 1439 | 493 | 723 | 946 | 0.77 |
+| 60m | fib cluster>=2 | k=3 | k=5 | 7250 | 5595 | 4330 | 2920 | 1265 | 0.49 |
 ## IRL / ERL (Addendum 5) - PRE-REGISTERED DEFINITIONS IRL_ERL_V0 (frozen before any Step A aggregate was computed; not tuned afterwards)
 Code: code/th_confl_cf4/c4_irl_lib.py (ranges, scan, post-sweep metrics), c4_irl_events.py (events), c4_irl_score.py (tables). Events: /mnt/l2/l2vast/_confl/irl/ev_<variant>.parquet (ctrl=True rows are the random-level control).
 Bars: NQ 1m (/mnt/l2/l2vast/_th_sz/bars1m_NQ.npz), sweep bars 1/3/5/15 min built from them, epoch-aligned, a bar is visible only after its end. ET sessions: asia 18:00-02:00, london 02:00-09:30, ny 09:30-16:00 (16:00-18:00 'gap'). ATR unit everywhere = 5-min ATR(14, Wilder) at the confirming close.

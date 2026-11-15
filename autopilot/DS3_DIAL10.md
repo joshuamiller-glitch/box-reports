@@ -1,3 +1,258 @@
+## Target capped at the forecast
+**VERDICT (plain, not a PASS; offline replay + 0 of 22 global exact cap cells scored in L3M; per book x session exact cells still running, so no "nothing" verdict): the reachable move is only weakly forecastable from own bars (R2 on ln MFE 0.03-0.14, calibration of the quantiles is good), the 75th/90th-percentile caps almost never bind (0-8% of trades), the 50th/60th-percentile caps bind often and in the replay cost money in older data; capping at the remaining session range costs -3k to -13k/wk (it does cut drawdown 10-25% in the replay). No exact cap cell inside the L3M mean gate yet.**
+
+Planted-edge check (H1) for the capping mechanism: cells `tcoracle0.9` / `0.6` set the target to 0.9 / 0.6 x the REALISED maximum favourable move (look-ahead, only to prove the mechanism can show an edge through the exact engine); they must come out strongly positive. Status below in the exact table. Until they do, an exact cap verdict is not stated.
+
+Definition. Reachable move = maximum favourable excursion from the signal-second bar close over the book-session holding horizon H (H50/H75 = median / 75th percentile holding time of that book+session, causal), points. Model: walk-forward ridge (14-day blocks, expanding, min 90 days, per session) on ln((MFE+2)/price) from the Dial 10 own-bar inputs (last 15/30/60/120 min range and vol, same-clock normal, own session level, range used so far, elapsed fraction) plus the side-aware room in the session range so far; quantiles q = fitted + empirical training-residual quantile (50/60/75/90). Cap: target = min(book target 60 pts [58 after fills], q-quantile), stop, lots and every other level unchanged. Remaining-range cap: target = min(book target, k x (session range forecast - range printed so far)), forecast = own (price x exp(sf20), mean of the last 20 sessions) or T-RANGE2 HAR (fc_r2_har, available-epoch checked). Small caps (< 30 pts = 0.5 x stop): take / skip / half. EV target: argmax over T in [20, book target or 300] of T x P(MFE>=T) - stop x (1-P) with the lognormal forecast (ignores the stop-first ordering, so optimistic). Extension: if the forecast median MFE is >= m x book target, target = min(q50, 2 x book target). Lots/base basis: dollars are BASE lots (live x1.75 = multiply by 1.75); fee columns $4.84 beside raw $1.18 where shown.
+
+### Item 1: calibration of the forecast quantiles (share of trades whose realized MFE exceeded the forecast quantile; a q-quantile should be exceeded 1-q of the time = 0.50 / 0.40 / 0.25 / 0.10) and R2 of ln MFE, per session
+| H | session | window | n | >q50 | >q60 | >q75 | >q90 | R2 ln MFE | median q75 (pts) | share q75 < 60 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 50 | asia | older (<2026-05) | 5119 | 0.51 | 0.41 | 0.26 | 0.12 | 0.121 | 80 | 0.222 |
+| 50 | asia | L6M | 2006 | 0.49 | 0.38 | 0.23 | 0.08 | 0.058 | 111 | 0.047 |
+| 50 | asia | L3M | 875 | 0.46 | 0.34 | 0.20 | 0.07 | -0.014 | 90 | 0.098 |
+| 50 | london | older (<2026-05) | 4892 | 0.51 | 0.41 | 0.26 | 0.11 | 0.142 | 62 | 0.438 |
+| 50 | london | L6M | 1406 | 0.48 | 0.37 | 0.23 | 0.08 | 0.028 | 76 | 0.166 |
+| 50 | london | L3M | 673 | 0.48 | 0.37 | 0.24 | 0.07 | -0.008 | 68 | 0.247 |
+| 50 | nyam | older (<2026-05) | 4142 | 0.47 | 0.38 | 0.24 | 0.11 | 0.077 | 63 | 0.397 |
+| 50 | nyam | L6M | 600 | 0.51 | 0.40 | 0.24 | 0.09 | 0.097 | 83 | 0.157 |
+| 50 | nyam | L3M | 271 | 0.51 | 0.38 | 0.20 | 0.06 | 0.077 | 68 | 0.258 |
+| 50 | nypm | older (<2026-05) | 817 | 0.48 | 0.40 | 0.26 | 0.13 | 0.073 | 62 | 0.419 |
+| 50 | nypm | L6M | 150 | 0.59 | 0.50 | 0.33 | 0.13 | 0.221 | 71 | 0.307 |
+| 50 | nypm | L3M | 56 | 0.50 | 0.36 | 0.21 | 0.09 | 0.104 | 54 | 0.589 |
+| 50 | all | older (<2026-05) | 14970 | 0.50 | 0.40 | 0.26 | 0.12 | 0.123 | 68 | 0.352 |
+| 50 | all | L6M | 4162 | 0.49 | 0.38 | 0.23 | 0.08 | 0.080 | 91 | 0.113 |
+| 50 | all | L3M | 1875 | 0.47 | 0.36 | 0.21 | 0.07 | 0.014 | 76 | 0.189 |
+| 75 | asia | older (<2026-05) | 5119 | 0.52 | 0.41 | 0.26 | 0.12 | 0.134 | 122 | 0.032 |
+| 75 | asia | L6M | 2006 | 0.50 | 0.40 | 0.24 | 0.08 | 0.027 | 178 | 0.000 |
+| 75 | asia | L3M | 875 | 0.45 | 0.35 | 0.20 | 0.05 | -0.016 | 156 | 0.000 |
+| 75 | london | older (<2026-05) | 4891 | 0.51 | 0.42 | 0.27 | 0.11 | 0.157 | 101 | 0.100 |
+| 75 | london | L6M | 1406 | 0.49 | 0.37 | 0.21 | 0.08 | 0.069 | 118 | 0.001 |
+| 75 | london | L3M | 673 | 0.49 | 0.38 | 0.21 | 0.09 | 0.025 | 108 | 0.000 |
+| 75 | nyam | older (<2026-05) | 4142 | 0.48 | 0.38 | 0.23 | 0.10 | 0.065 | 91 | 0.081 |
+| 75 | nyam | L6M | 600 | 0.50 | 0.40 | 0.24 | 0.10 | 0.098 | 125 | 0.015 |
+| 75 | nyam | L3M | 271 | 0.44 | 0.34 | 0.19 | 0.05 | 0.051 | 103 | 0.015 |
+| 75 | nypm | older (<2026-05) | 812 | 0.49 | 0.37 | 0.26 | 0.11 | 0.043 | 87 | 0.095 |
+| 75 | nypm | L6M | 150 | 0.53 | 0.46 | 0.34 | 0.17 | 0.179 | 117 | 0.013 |
+| 75 | nypm | L3M | 56 | 0.41 | 0.30 | 0.21 | 0.07 | -0.076 | 93 | 0.036 |
+| 75 | all | older (<2026-05) | 14964 | 0.51 | 0.40 | 0.25 | 0.11 | 0.131 | 102 | 0.071 |
+| 75 | all | L6M | 4162 | 0.50 | 0.39 | 0.23 | 0.09 | 0.079 | 149 | 0.003 |
+| 75 | all | L3M | 1875 | 0.46 | 0.36 | 0.20 | 0.06 | 0.032 | 128 | 0.003 |
+
+### Items 3 and 4 (and 2): offline replay of the caps on the JN05W2 trade paths, all 43 months (estimate: 1-min paths, cap counted only before the exit bar, so cut/stop ordering is conservative; the exact cells below decide). d mean $/wk and DD cut % vs JN05W2 on the same trades, scope all, then per session for the cap with the most trades capped
+| cap | small-cap rule | scope | window | d mean $/wk (live x1.75) | DD cut % | d worst week | d stops/wk | share capped | share where cap hit |
+|---|---|---|---|---|---|---|---|---|---|
+| q50_H50 | take | all | L3M | +409 (+715) | -3.9 | -1411 | +0.00 | 0.82 | 0.45 |
+| q50_H50 | take | all | L6M | -96 (-169) | -3.9 | -1411 | +0.00 | 0.62 | 0.33 |
+| q50_H50 | take | all | OLDER | -1795 (-3141) | +12.0 | +13127 | +0.00 | 0.80 | 0.45 |
+| q50_H50 | skip | all | L3M | -1581 (-2767) | -5.0 | -1996 | +0.00 | 0.82 | 0.45 |
+| q50_H50 | skip | all | L6M | -1445 (-2528) | -5.0 | -1996 | +0.00 | 0.62 | 0.33 |
+| q50_H50 | skip | all | OLDER | -2271 (-3975) | +17.4 | +13127 | +0.00 | 0.80 | 0.45 |
+| q50_H50 | half | all | L3M | -586 (-1026) | -4.4 | -1704 | +0.00 | 0.82 | 0.45 |
+| q50_H50 | half | all | L6M | -771 (-1348) | -4.4 | -1704 | +0.00 | 0.62 | 0.33 |
+| q50_H50 | half | all | OLDER | -2033 (-3558) | +16.5 | +13127 | +0.00 | 0.80 | 0.45 |
+| q60_H50 | take | all | L3M | -1525 (-2668) | +4.5 | +2462 | +0.00 | 0.61 | 0.31 |
+| q60_H50 | take | all | L6M | -839 (-1469) | +4.5 | +2462 | +0.00 | 0.42 | 0.21 |
+| q60_H50 | take | all | OLDER | -1296 (-2267) | +12.7 | +15462 | +0.00 | 0.66 | 0.35 |
+| q60_H50 | skip | all | L3M | -3272 (-5726) | +4.5 | +2462 | +0.00 | 0.61 | 0.31 |
+| q60_H50 | skip | all | L6M | -1811 (-3170) | +4.5 | +2462 | +0.00 | 0.42 | 0.21 |
+| q60_H50 | skip | all | OLDER | -1648 (-2885) | +8.8 | +15462 | +0.00 | 0.66 | 0.35 |
+| q60_H50 | half | all | L3M | -2398 (-4197) | +4.5 | +2462 | +0.00 | 0.61 | 0.31 |
+| q60_H50 | half | all | L6M | -1325 (-2319) | +4.5 | +2462 | +0.00 | 0.42 | 0.21 |
+| q60_H50 | half | all | OLDER | -1472 (-2576) | +10.7 | +15462 | +0.00 | 0.66 | 0.35 |
+| q75_H50 | take | all | L3M | +414 (+725) | -0.4 | -214 | +0.00 | 0.21 | 0.11 |
+| q75_H50 | take | all | L6M | -44 (-77) | -0.4 | -214 | +0.00 | 0.13 | 0.06 |
+| q75_H50 | take | all | OLDER | -719 (-1258) | -1.1 | +13801 | +0.00 | 0.37 | 0.18 |
+| q90_H50 | take | all | L3M | +191 (+334) | +0.0 | +0 | +0.00 | 0.02 | 0.01 |
+| q90_H50 | take | all | L6M | +142 (+249) | +0.0 | +0 | +0.00 | 0.01 | 0.01 |
+| q90_H50 | take | all | OLDER | -169 (-296) | -1.8 | +1686 | +0.00 | 0.08 | 0.03 |
+| q50_H75 | take | all | L3M | +128 (+225) | -0.5 | -241 | +0.00 | 0.30 | 0.15 |
+| q50_H75 | take | all | L6M | +624 (+1092) | -0.5 | -241 | +0.00 | 0.20 | 0.10 |
+| q50_H75 | take | all | OLDER | -931 (-1628) | -13.1 | +11346 | +0.00 | 0.51 | 0.26 |
+| q50_H75 | skip | all | L3M | +178 (+312) | -0.5 | -241 | +0.00 | 0.30 | 0.15 |
+| q50_H75 | skip | all | L6M | +685 (+1198) | -0.5 | -241 | +0.00 | 0.20 | 0.10 |
+| q50_H75 | skip | all | OLDER | -1302 (-2279) | -4.6 | +14384 | +0.00 | 0.51 | 0.26 |
+| q50_H75 | half | all | L3M | +153 (+268) | -0.5 | -241 | +0.00 | 0.30 | 0.15 |
+| q50_H75 | half | all | L6M | +654 (+1145) | -0.5 | -241 | +0.00 | 0.20 | 0.10 |
+| q50_H75 | half | all | OLDER | -1116 (-1954) | -8.8 | +12865 | +0.00 | 0.51 | 0.26 |
+| q60_H75 | take | all | L3M | +830 (+1452) | -0.1 | -30 | +0.00 | 0.10 | 0.05 |
+| q60_H75 | take | all | L6M | +379 (+664) | -0.1 | -30 | +0.00 | 0.07 | 0.03 |
+| q60_H75 | take | all | OLDER | -478 (-836) | +4.1 | +8380 | +0.00 | 0.31 | 0.15 |
+| q60_H75 | skip | all | L3M | +958 (+1677) | -0.1 | -30 | +0.00 | 0.10 | 0.05 |
+| q60_H75 | skip | all | L6M | +421 (+737) | -0.1 | -30 | +0.00 | 0.07 | 0.03 |
+| q60_H75 | skip | all | OLDER | -402 (-703) | +4.1 | +8380 | +0.00 | 0.31 | 0.15 |
+| q60_H75 | half | all | L3M | +894 (+1564) | -0.1 | -30 | +0.00 | 0.10 | 0.05 |
+| q60_H75 | half | all | L6M | +400 (+700) | -0.1 | -30 | +0.00 | 0.07 | 0.03 |
+| q60_H75 | half | all | OLDER | -440 (-769) | +4.1 | +8380 | +0.00 | 0.31 | 0.15 |
+| q75_H75 | take | all | L3M | +236 (+413) | +0.0 | +0 | +0.00 | 0.01 | 0.00 |
+| q75_H75 | take | all | L6M | +105 (+185) | +0.0 | +0 | +0.00 | 0.00 | 0.00 |
+| q75_H75 | take | all | OLDER | -255 (-446) | -1.9 | +1485 | +0.00 | 0.08 | 0.04 |
+| q90_H75 | take | all | L3M | +0 (+0) | +0.0 | +0 | +0.00 | 0.00 | 0.00 |
+| q90_H75 | take | all | L6M | +0 (+0) | +0.0 | +0 | +0.00 | 0.00 | 0.00 |
+| q90_H75 | take | all | OLDER | +10 (+18) | -0.4 | +0 | +0.00 | 0.01 | 0.00 |
+| rem_own_k0.5 | take | all | L3M | -6674 (-11680) | +8.8 | -1861 | +0.00 | 0.67 | 0.44 |
+| rem_own_k0.5 | take | all | L6M | -13204 (-23108) | +8.7 | -1861 | +0.00 | 0.68 | 0.48 |
+| rem_own_k0.5 | take | all | OLDER | -7381 (-12916) | -40.2 | +20529 | +0.00 | 0.88 | 0.64 |
+| rem_own_k0.5 | skip | all | L3M | -5271 (-9225) | +21.7 | +2982 | +0.00 | 0.67 | 0.44 |
+| rem_own_k0.5 | skip | all | L6M | -10625 (-18594) | +21.7 | +2982 | +0.00 | 0.68 | 0.48 |
+| rem_own_k0.5 | skip | all | OLDER | -6272 (-10977) | +17.3 | +21712 | +0.00 | 0.88 | 0.64 |
+| rem_own_k0.5 | half | all | L3M | -5973 (-10452) | +16.3 | +560 | +0.00 | 0.67 | 0.44 |
+| rem_own_k0.5 | half | all | L6M | -11915 (-20851) | +16.3 | +560 | +0.00 | 0.68 | 0.48 |
+| rem_own_k0.5 | half | all | OLDER | -6827 (-11946) | +0.6 | +23150 | +0.00 | 0.88 | 0.64 |
+| rem_own_k0.75 | take | all | L3M | -7140 (-12494) | +9.6 | +3294 | +0.00 | 0.45 | 0.30 |
+| rem_own_k0.75 | take | all | L6M | -10636 (-18614) | +9.6 | +3294 | +0.00 | 0.50 | 0.36 |
+| rem_own_k0.75 | take | all | OLDER | -5846 (-10230) | -24.0 | +12208 | +0.00 | 0.73 | 0.53 |
+| rem_own_k0.75 | skip | all | L3M | -3661 (-6406) | +10.3 | +4045 | +0.00 | 0.45 | 0.30 |
+| rem_own_k0.75 | skip | all | L6M | -6650 (-11638) | +10.3 | +4045 | +0.00 | 0.50 | 0.36 |
+| rem_own_k0.75 | skip | all | OLDER | -3856 (-6749) | +16.1 | +19073 | +0.00 | 0.73 | 0.53 |
+| rem_own_k0.75 | half | all | L3M | -5400 (-9450) | +13.0 | +3670 | +0.00 | 0.45 | 0.30 |
+| rem_own_k0.75 | half | all | L6M | -8643 (-15126) | +13.0 | +3670 | +0.00 | 0.50 | 0.36 |
+| rem_own_k0.75 | half | all | OLDER | -4851 (-8489) | +13.0 | +20157 | +0.00 | 0.73 | 0.53 |
+| rem_own_k1.0 | take | all | L3M | -5516 (-9653) | +18.3 | +9104 | +0.00 | 0.36 | 0.25 |
+| rem_own_k1.0 | take | all | L6M | -8765 (-15339) | +18.3 | +9104 | +0.00 | 0.41 | 0.31 |
+| rem_own_k1.0 | take | all | OLDER | -5714 (-9999) | -58.2 | +11926 | +0.00 | 0.61 | 0.46 |
+| rem_own_k1.0 | skip | all | L3M | -3265 (-5714) | +15.0 | +8858 | +0.00 | 0.36 | 0.25 |
+| rem_own_k1.0 | skip | all | L6M | -5683 (-9944) | +15.0 | +8858 | +0.00 | 0.41 | 0.31 |
+| rem_own_k1.0 | skip | all | OLDER | -3872 (-6775) | -61.0 | +20250 | +0.00 | 0.61 | 0.46 |
+| rem_own_k1.0 | half | all | L3M | -4391 (-7683) | +18.5 | +8981 | +0.00 | 0.36 | 0.25 |
+| rem_own_k1.0 | half | all | L6M | -7224 (-12642) | +18.5 | +8981 | +0.00 | 0.41 | 0.31 |
+| rem_own_k1.0 | half | all | OLDER | -4793 (-8387) | -58.0 | +21393 | +0.00 | 0.61 | 0.46 |
+| rem_own_k1.25 | take | all | L3M | -3112 (-5446) | +24.4 | +13750 | +0.00 | 0.31 | 0.22 |
+| rem_own_k1.25 | take | all | L6M | -8275 (-14481) | +24.4 | +13750 | +0.00 | 0.36 | 0.28 |
+| rem_own_k1.25 | take | all | OLDER | -5400 (-9450) | -15.5 | +4336 | +0.00 | 0.54 | 0.41 |
+| rem_own_k1.25 | skip | all | L3M | -456 (-797) | +22.4 | +13720 | +0.00 | 0.31 | 0.22 |
+| rem_own_k1.25 | skip | all | L6M | -4232 (-7405) | +22.4 | +13720 | +0.00 | 0.36 | 0.28 |
+| rem_own_k1.25 | skip | all | OLDER | -3310 (-5792) | -36.4 | +22803 | +0.00 | 0.54 | 0.41 |
+| rem_own_k1.25 | half | all | L3M | -1784 (-3121) | +25.2 | +15286 | +0.00 | 0.31 | 0.22 |
+| rem_own_k1.25 | half | all | L6M | -6253 (-10943) | +25.2 | +15286 | +0.00 | 0.36 | 0.28 |
+| rem_own_k1.25 | half | all | OLDER | -4355 (-7621) | -18.3 | +15544 | +0.00 | 0.54 | 0.41 |
+
+Per session, q60 H75 take-anyway and remaining-range k=1.25 (own):
+| cap | session | window | d mean $/wk | DD cut % | d worst week | share capped |
+|---|---|---|---|---|---|---|
+| q60_H75 | asia | L3M | +221 | +0.0 | +0 | 0.02 |
+| q60_H75 | asia | L6M | +110 | +0.0 | +0 | 0.01 |
+| q60_H75 | asia | OLDER | -124 | -0.0 | +0 | 0.23 |
+| q60_H75 | london | L3M | +745 | +3.8 | +0 | 0.16 |
+| q60_H75 | london | L6M | +330 | +3.8 | +0 | 0.12 |
+| q60_H75 | london | OLDER | -294 | -2.1 | +0 | 0.35 |
+| q60_H75 | nyam | L3M | +61 | -7.2 | +0 | 0.15 |
+| q60_H75 | nyam | L6M | -14 | +0.0 | +0 | 0.10 |
+| q60_H75 | nyam | OLDER | -37 | -6.0 | +1403 | 0.37 |
+| q60_H75 | nypm | L3M | -197 | -0.0 | +0 | 0.41 |
+| q60_H75 | nypm | L6M | -47 | +0.0 | +0 | 0.20 |
+| q60_H75 | nypm | OLDER | -22 | -5.4 | +0 | 0.33 |
+| rem_own_k1.25 | asia | L3M | -4547 | +35.2 | +434 | 0.37 |
+| rem_own_k1.25 | asia | L6M | -6717 | +27.1 | +434 | 0.38 |
+| rem_own_k1.25 | asia | OLDER | -4532 | -27.4 | +10774 | 0.62 |
+| rem_own_k1.25 | london | L3M | +2278 | +46.3 | +12347 | 0.24 |
+| rem_own_k1.25 | london | L6M | +1196 | +46.3 | +12347 | 0.30 |
+| rem_own_k1.25 | london | OLDER | -510 | +12.9 | +3024 | 0.51 |
+| rem_own_k1.25 | nyam | L3M | -650 | +20.0 | +0 | 0.24 |
+| rem_own_k1.25 | nyam | L6M | -2127 | -8.9 | +1531 | 0.39 |
+| rem_own_k1.25 | nyam | OLDER | -53 | +10.3 | +7327 | 0.47 |
+| rem_own_k1.25 | nypm | L3M | -192 | +21.8 | +1203 | 0.45 |
+| rem_own_k1.25 | nypm | L6M | -627 | +21.8 | +1203 | 0.50 |
+| rem_own_k1.25 | nypm | OLDER | -304 | -2.4 | -831 | 0.50 |
+
+### Item 4 per book x session (all 43 months): trades whose 60-pt target lies beyond the forecast quantile, their fixed-target result, the capped replay, and how far trades run past the cap
+| book | session | cap | trades | share beyond | fixed-target hit rate | fixed avg $/trade | capped avg $/trade | avg points run past cap |
+|---|---|---|---|---|---|---|---|---|
+| A7 | asia | q50_H75 | 1156 | 0.25 | 0.50 | 60 | 87 | 10.4 |
+| A7 | asia | q60_H75 | 1156 | 0.13 | 0.47 | 4 | 26 | 8.8 |
+| A7 | asia | q75_H75 | 1156 | 0.03 | 0.48 | 19 | 6 | 11.1 |
+| A7 | asia | rem_own_k0.75 | 1156 | 0.74 | 0.52 | 126 | 22 | 32.9 |
+| H7 | asia | q50_H75 | 700 | 0.33 | 0.49 | 164 | 181 | 11.3 |
+| H7 | asia | q60_H75 | 700 | 0.18 | 0.56 | 447 | 414 | 10.7 |
+| H7 | asia | q75_H75 | 700 | 0.02 | 0.50 | -318 | -267 | 16.1 |
+| H7 | asia | rem_own_k0.75 | 700 | 0.71 | 0.48 | 208 | 55 | 27.8 |
+| H7 | nyam | q50_H75 | 348 | 0.49 | 0.46 | 84 | 25 | 8.9 |
+| H7 | nyam | q60_H75 | 348 | 0.25 | 0.47 | 96 | 46 | 7.4 |
+| H7 | nyam | q75_H75 | 348 | 0.06 | 0.33 | -113 | -12 | 4.7 |
+| H7 | nyam | rem_own_k0.75 | 348 | 0.66 | 0.47 | 62 | -35 | 23.3 |
+| K7 | asia | q50_H75 | 2596 | 0.32 | 0.44 | 102 | 74 | 9.7 |
+| K7 | asia | q60_H75 | 2596 | 0.19 | 0.44 | 111 | 90 | 7.6 |
+| K7 | asia | q75_H75 | 2596 | 0.04 | 0.40 | 26 | 1 | 6.1 |
+| K7 | asia | rem_own_k0.75 | 2596 | 0.68 | 0.44 | 88 | 0 | 27.2 |
+| K7 | london | q50_H75 | 1781 | 0.57 | 0.43 | 62 | 37 | 10.9 |
+| K7 | london | q60_H75 | 1781 | 0.33 | 0.44 | 60 | 35 | 9.4 |
+| K7 | london | q75_H75 | 1781 | 0.12 | 0.48 | 138 | 101 | 6.5 |
+| K7 | london | rem_own_k0.75 | 1781 | 0.69 | 0.43 | 45 | -12 | 27.4 |
+| K7 | nyam | q50_H75 | 1565 | 0.57 | 0.42 | 21 | 18 | 10.0 |
+| K7 | nyam | q60_H75 | 1565 | 0.32 | 0.40 | -4 | -17 | 9.0 |
+| K7 | nyam | q75_H75 | 1565 | 0.07 | 0.41 | 40 | 36 | 16.3 |
+| K7 | nyam | rem_own_k0.75 | 1565 | 0.70 | 0.39 | -21 | -38 | 26.0 |
+| K7 | nypm | q50_H75 | 1136 | 0.50 | 0.36 | 65 | 54 | 8.1 |
+| K7 | nypm | q60_H75 | 1136 | 0.31 | 0.34 | 62 | 48 | 5.6 |
+| K7 | nypm | q75_H75 | 1136 | 0.09 | 0.29 | 155 | 179 | 3.5 |
+| K7 | nypm | rem_own_k0.75 | 1136 | 0.71 | 0.37 | 72 | -30 | 23.7 |
+| M7 | london | q50_H75 | 2489 | 0.42 | 0.43 | 45 | 40 | 10.0 |
+| M7 | london | q60_H75 | 2489 | 0.24 | 0.43 | 32 | 26 | 8.2 |
+| M7 | london | q75_H75 | 2489 | 0.06 | 0.38 | -74 | -97 | 7.1 |
+| M7 | london | rem_own_k0.75 | 2489 | 0.59 | 0.39 | -40 | -29 | 22.9 |
+| M7 | nyam | q50_H75 | 1496 | 0.52 | 0.43 | 49 | 22 | 8.6 |
+| M7 | nyam | q60_H75 | 1496 | 0.27 | 0.44 | 76 | 57 | 7.2 |
+| M7 | nyam | q75_H75 | 1496 | 0.06 | 0.44 | 127 | 131 | 4.9 |
+| M7 | nyam | rem_own_k0.75 | 1496 | 0.69 | 0.42 | 30 | -36 | 27.3 |
+| O7 | nyam | q50_H75 | 452 | 0.58 | 0.32 | 205 | 91 | 20.5 |
+| O7 | nyam | q60_H75 | 452 | 0.37 | 0.31 | 156 | 118 | 16.9 |
+| O7 | nyam | q75_H75 | 452 | 0.08 | 0.20 | -192 | -145 | 9.5 |
+| O7 | nyam | rem_own_k0.75 | 452 | 0.31 | 0.30 | 120 | 82 | 20.6 |
+| P7 | asia | q50_H75 | 2161 | 0.29 | 0.46 | 391 | 341 | 10.2 |
+| P7 | asia | q60_H75 | 2161 | 0.16 | 0.48 | 487 | 484 | 9.3 |
+| P7 | asia | q75_H75 | 2161 | 0.02 | 0.55 | 1227 | 969 | 5.7 |
+| P7 | asia | rem_own_k0.75 | 2161 | 0.70 | 0.44 | 447 | 130 | 26.6 |
+| P7 | london | q50_H75 | 1537 | 0.62 | 0.38 | 74 | 27 | 10.0 |
+| P7 | london | q60_H75 | 1537 | 0.41 | 0.38 | 67 | 36 | 7.8 |
+| P7 | london | q75_H75 | 1537 | 0.15 | 0.41 | 124 | 59 | 5.3 |
+| P7 | london | rem_own_k0.75 | 1537 | 0.72 | 0.37 | -19 | -13 | 23.8 |
+| P7 | nyam | q50_H75 | 1050 | 0.72 | 0.38 | 38 | 150 | 13.2 |
+| P7 | nyam | q60_H75 | 1050 | 0.48 | 0.37 | -7 | 28 | 10.9 |
+| P7 | nyam | q75_H75 | 1050 | 0.15 | 0.33 | -88 | -96 | 13.3 |
+| P7 | nyam | rem_own_k0.75 | 1050 | 0.71 | 0.37 | -43 | 67 | 33.2 |
+| U7 | asia | q50_H75 | 686 | 0.28 | 0.54 | 412 | 320 | 10.4 |
+| U7 | asia | q60_H75 | 686 | 0.15 | 0.50 | 322 | 270 | 8.0 |
+| U7 | asia | q75_H75 | 686 | 0.03 | 0.47 | -260 | -383 | 6.8 |
+| U7 | asia | rem_own_k0.75 | 686 | 0.74 | 0.53 | 375 | 4 | 30.5 |
+| U7 | london | q50_H75 | 645 | 0.27 | 0.46 | -102 | -183 | 8.7 |
+| U7 | london | q60_H75 | 645 | 0.13 | 0.46 | -173 | -182 | 7.8 |
+| U7 | london | q75_H75 | 645 | 0.03 | 0.50 | -396 | -466 | 5.4 |
+| U7 | london | rem_own_k0.75 | 645 | 0.68 | 0.51 | 166 | 14 | 24.5 |
+
+### Exact cap cells (global: all books at once; L3M, L6M when promoted; delta vs JN05W2)
+| cell | L3M | L6M | HOLD | d mean/wk at $4.84 L3M |
+|---|---|---|---|---|
+| tcq50T75 | pending | | | |
+| tcq60T75 | pending | | | |
+| tcq75T75 | pending | | | |
+| tcq90T75 | pending | | | |
+| tcq60T50 | pending | | | |
+| tcq75T50 | pending | | | |
+| tcremown05T75 | pending | | | |
+| tcremown075T75 | pending | | | |
+| tcremown10T75 | pending | | | |
+| tcremown125T75 | pending | | | |
+| tcremhar05T75 | pending | | | |
+| tcremhar075T75 | pending | | | |
+| tcremhar10T75 | pending | | | |
+| tcremhar125T75 | pending | | | |
+| tcevbookT75 | pending | | | |
+| tcevnoneT75 | pending | | | |
+| tcext10T75 | pending | | | |
+| tcext15T75 | pending | | | |
+| tcq50T75skip | pending | | | |
+| tcq50T75half | pending | | | |
+| tcoracle0.9T75 | pending | | | |
+| tcoracle0.6T75 | pending | | | |
+
+### Per book x session exact cap cells (clean: one book in one session)
+| slice | cap | L3M | May-Jul |
+|---|---|---|---|
+
+### FOR THE LIVE BUILD (what D7 computes at the signal second)
+From its own 1-minute bars: last 15/30/60/120-minute range and realised vol, same-offset range over the previous 20 sessions (median), session ranges of the last 5/20 sessions, range so far, the entry position in the session range (favourable-side room), elapsed fraction of the session, ln of the book-session horizon; a small coefficient table per session (15 weights, mean, sd, intercept, four residual quantile offsets) refit every 14 days and shipped as a static file. Cap = min(60, price x exp(prediction + quantile offset) - 2); orders: the target limit is placed at the capped price. The remaining-range version needs the HAR session forecast (T-RANGE2 file) or D7 computes its own 20-session mean. No intraday feed from the box.
+
+
 ## Per book and session, clean, and the assembled stack
 **STATUS (plain, not a PASS; B1 in progress, no "nothing passes" verdict is allowed until it is done): single-book single-session cells scored in L3M for 0 of 14 slices; slice picks so far: {}.**
 
@@ -108,7 +363,7 @@ Reading of the W/ATR5 table: ATR5 = mean range of the last 14 five-minute bucket
 
 
 ## Dial 10: trade-horizon bracket
-**VERDICT (plain, not a PASS): 89 of 206 registered cells scored through L3M, 25 through L6M, 1 through HOLD; 0 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo; this is the GLOBAL one-setting-for-all-books family only, the per-book per-session test (B1) is in the section above and still running. Best L3M cell inside the mean gate: M1_75_g10_c1_d20_c20_tb_N (DD +6.1%, -288 $/wk).**
+**VERDICT (plain, not a PASS): 89 of 270 registered cells scored through L3M, 25 through L6M, 1 through HOLD; 0 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo; this is the GLOBAL one-setting-for-all-books family only, the per-book per-session test (B1) is in the section above and still running. Best L3M cell inside the mean gate: M1_75_g10_c1_d20_c20_tb_N (DD +6.1%, -288 $/wk).**
 
 Identity: TL3_D10_M1_50_g00_c1_d10_c20_tb_B 202610 (hook active, g=0): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. Prereg autopilot/DIAL10_PREREG.md (sha line in DECISIONS.md 2026-11-14T22:33Z). Order: ADDENDUM_DIAL10_20261114.md. Code code/th_dial10 (d10_core.py features, d10_coef.py coefficient table, d10_hooks.py hook, d10_driver.py). Bulk /mnt/l2/l2vast/_dial10. Tag D10 (quota 3).
 **LOT BASIS**: engine dollars are BASE lots (live user lots x1.75, live caps = engine caps x1.75); the engine charges its raw $1.18/contract RT with the engine fills, FEES.md says $4.84 RT. Every $ column is raw $1.18 unless it says $4.84; the $4.84 columns reprice delta mean/wk as net - lots x 3.66 per trade for cell and JN05W2 alike (no rerun) and show the lot change per week.

@@ -1,0 +1,11 @@
+ADDENDUM (user) to DIRECTIVE_FIX_TESTS_20261115 — THE SIZE LADDER. Research only. Save verbatim, log within 15 minutes. Runs inside the CONFLUENCE-FIX share, with A2 and F5.
+
+The way most confluence traders size: the more independent confirmations, the more size. Test it as a ladder, per book x session, on the exact engine with every signal gated.
+
+1. COUNT = number of independent redundancy clusters agreeing with the trade at the signal second (one vote per cluster), taken from the conditions that pass alone in that cell's training window. Also the version net of vetoes (agreeing clusters minus disagreeing clusters).
+2. THE STAIRCASE FIRST, no sizing: expectancy per trade and per R, win rate, favourable and adverse excursion, at each count 0, 1, 2, ... up to the highest count with at least 30 trades. Report whether it rises step by step (monotone), where it flattens, and where it turns down. Compare with the same staircase on a shuffled count.
+3. LADDERS, lots as a function of the count: (a) linear, x0.5 at the lowest rung to x2 at the highest; (b) convex, flat until the count passes the cell's median then rising to x2 / x3; (c) threshold, x0 below a minimum count, x1 in the middle, x2 above; (d) the "fractional Kelly" ladder: size proportional to the walk-forward expectancy-to-variance ratio measured at each rung, capped at x2. Each with total session risk held equal to today's, and separately with risk allowed to rise by up to 25%.
+4. TARGET LADDER beside it: target x0.75 at low counts to x1.25 at high counts; alone and with the lot ladder.
+5. CAPS stay live: STACK cap, per-book lot caps (x1.75 panel), day loss caps (P7 14,700), DAY-DONE. Report how often the top rung is cut back by a cap.
+6. CONTROLS: the same ladder driven by a shuffled count; the same total size-ups given to random trades of that book and session; count shifted 11 / 23 / 37 sessions. Recent AND older windows; drawdown first; W44-removed; walk-forward (rungs and directions fixed from data before each test window).
+7. REPORT, in DS3_CONFLUENCE.md section "Size ladder": the staircase chart per book x session, the best ladder per cell, the assembled stack with each cell on its own ladder, and how many trades per week land on each rung. First staircases within 6 hours.

@@ -1,5 +1,127 @@
 # DS3_CONFLUENCE - combinations, controls, frontier (W-CF3) - FIRST PAGE, PARTIAL
 
+
+<!--LADDER-->
+## Size ladder, step 1: the staircase (W-CF3; tables only, no engine; rungs fixed on data up to 2025-04-30, tested 2025-05..2026-10)
+
+VERDICT: out of sample the count of agreeing independent clusters does not climb: Spearman(count, R) is between -0.07 and +0.07 in every book-session cell, and the shuffled-count test is below 0.05 only in P7 Asia and P7 London (rho 0.055 / 0.056, p 0.033 each, one of 13 cells each such that about 0.6 would be expected by chance). The nonsense ladder built by the same selection (top conditions of the 200 meaningless Block 18 columns by training |z|) climbs about as much (rho -0.17 to +0.10, two cells with p < 0.03). No ladder is worth running on the engine on this evidence; the staircase should be re-read when more of the new blocks are folded in. No PASS claim.
+
+Method: each condition of the joined library (21,094) alone in the cell's training window; outcome R clipped at +-3; day-clustered z; "passes alone" bar = 99th percentile of |z| of the first 100 nonsense columns in the same cell and window; stable sign across training years (>= 30 yes and 30 no in a year); one vote per redundancy cluster (cluster_0.85 ids); count = clusters in their favourable state. Hold-out check: pass rate of the last 100 nonsense columns at that bar.
+
+| cell | train / test trades | bar |z| | real passers alone (rate) | nonsense hold-out pass rate | clusters voting | Spearman(count,R) test | shuffled-count p | nonsense ladder rho (p) |
+|--|--|--|--|--|--|--|--|--|
+| A7|0 | 439 / 717 | 2.54 | 869 (4.1 %) | 0.0 % | 783 | 0.044 | 0.103 | -0.039 (0.850) |
+| H7|0 | 360 / 340 | 2.19 | 1192 (5.7 %) | 3.0 % | 1048 | 0.069 | 0.113 | 0.078 (0.053) |
+| K7|0 | 1026 / 1570 | 2.47 | 664 (3.1 %) | 3.0 % | 526 | -0.006 | 0.577 | 0.019 (0.190) |
+| K7|1 | 768 / 1013 | 2.41 | 703 (3.3 %) | 4.0 % | 604 | 0.026 | 0.240 | 0.021 (0.230) |
+| K7|3 | 918 / 647 | 2.10 | 818 (3.9 %) | 1.0 % | 685 | -0.069 | 0.970 | -0.056 (0.887) |
+| K7|4 | 698 / 438 | 2.15 | 1143 (5.4 %) | 0.0 % | 965 | -0.022 | 0.783 | -0.038 (0.813) |
+| M7|1 | 1175 / 1314 | 2.24 | 577 (2.7 %) | 3.0 % | 486 | 0.014 | 0.217 | 0.011 (0.317) |
+| M7|3 | 874 / 622 | 2.29 | 697 (3.3 %) | 3.0 % | 581 | 0.017 | 0.367 | 0.089 (0.003) |
+| P7|0 | 907 / 1254 | 2.38 | 929 (4.4 %) | 2.0 % | 735 | 0.055 | 0.033 | 0.034 (0.083) |
+| P7|1 | 710 / 827 | 2.48 | 617 (2.9 %) | 2.0 % | 531 | 0.056 | 0.033 | 0.007 (0.360) |
+| P7|3 | 655 / 395 | 2.29 | 836 (4.0 %) | 2.0 % | 707 | -0.069 | 0.913 | 0.021 (0.410) |
+| U7|0 | 327 / 359 | 2.38 | 1575 (7.5 %) | 1.0 % | 1312 | -0.020 | 0.680 | 0.100 (0.020) |
+| U7|1 | 338 / 307 | 2.14 | 1387 (6.6 %) | 2.0 % | 1205 | -0.049 | 0.897 | -0.168 (1.000) |
+
+Calibration finding (Block 18): at the nonsense 99th-percentile bar, real conditions pass alone at 2.7-7.5 % per cell against 0-4 % for the hold-out nonsense, i.e. only about 1.5-3 times the nonsense rate, so most "passers" are still noise; with 600-1,500 passers per cell the count has hundreds of voting clusters and the staircase averages them into nothing. A higher bar (z above the nonsense maximum) and a short pre-specified list per cell are the next step; the per-rung R / $ / win rate / MFE / MAE tables are in /mnt/l2/l2vast/_confl/cf3/ladder_stairs.pkl (code ladder_stair.py).
+<!--/LADDER-->
+
+
+<!--FIX-->
+## Fixed test: every signal gated, kept trades sized (W-CF3; directive DIRECTIVE_FIX_TESTS_20261115 PART A)
+
+Gate = decision computed on the FULL signal universe (191,520 signals incl. the replacement signals that appear when a skip frees the book); the hook looks up every entry the engine evaluates; `found` = share of executed trades whose signal had a table decision. Engine: JN05W2, all layers ON, measured fills, engine fee 1.18 (the $4.84 column reprices at 3.66 per contract per trade), base lots (x1.75 live beside). Gate judged as a gate: expectancy per trade and per R, max DD in $ and R, worst week, profit factor, $/wk after sizing. Matched-count percentile = share of equal-count random subsets (within month) of the BASE trades of the cell that the gated cell beats on expectancy / has a WORSE drawdown than. R of a trade uses the signal bracket (stp_pts) from the universe.
+
+### A6 sanity check (planted +0.3 R on trades where c_A_trend_15m, c_D_sess_side and c_E_ret15_with are all true; table-level and engine)
+
+```
+L3M PLANT +0.0R gated: n 1304 exp $120 expR 0.056 DD $103361 DD_R 60.5 ww -47069 PF 1.16 | ungated base: n 1875 exp $134 expR 0.046 DD $52233 DD_R 20.8 ww -36371 PF 1.17 | matched-count pctl exp 0.426 dd 0.000 | trades with all three true in gated set 1.00, signals found in table 1.00
+L3M PLANT +0.3R gated: n 1304 exp $753 expR 0.356 DD $16150 DD_R 6.4 ww 15211 PF 2.91 | ungated base: n 1875 exp $444 expR 0.187 DD $15807 DD_R 9.0 ww 6734 PF 1.72 | matched-count pctl exp 1.000 dd 0.596 | trades with all three true in gated set 1.00, signals found in table 1.00
+L6M PLANT +0.0R gated: n 2863 exp $175 expR 0.070 DD $103361 DD_R 60.5 ww -47069 PF 1.24 | ungated base: n 4169 exp $158 expR 0.061 DD $52233 DD_R 20.8 ww -36371 PF 1.20 | matched-count pctl exp 0.813 dd 0.000 | trades with all three true in gated set 1.00, signals found in table 1.00
+L6M PLANT +0.3R gated: n 2863 exp $805 expR 0.370 DD $16150 DD_R 6.4 ww -2149 PF 3.06 | ungated base: n 4169 exp $471 expR 0.204 DD $21148 DD_R 9.0 ww 2279 PF 1.76 | matched-count pctl exp 1.000 dd 0.898 | trades with all three true in gated set 1.00, signals found in table 1.00
+```
+
+A6 READING (engine part): the +0.3 R plant is recovered on EXPECTANCY and NOT on drawdown.
+- Expectancy: gated planted $753 / 0.356 R per trade vs base planted $444 / 0.187 R in L3M (L6M $805 / 0.370 vs $471 / 0.204): the R gain of +0.169 (L3M) and +0.166 (L6M) equals the expected 0.30 x (1 - 0.45) = 0.165, and the matched-count percentile on expectancy is 1.000 in both windows. Unplanted (the same gate on real outcomes): 0.056 R vs 0.046 R, percentile 0.43 (L3M) / 0.81 (L6M): no real edge in these three conditions, correctly not flagged.
+- Drawdown: planted DD $16,150 vs $15,807 (L3M) and $16,150 vs $21,148 (L6M); matched-count DD percentile 0.596 and 0.898, below the 0.95 the order requires. So the pipeline DOES NOT pass its own drawdown control on a planted edge that doubles expectancy: the drawdown criterion has too little power at 3-6 month windows (and it is the stack, in which the same big losing days occur whichever trades are kept). Consequence: a drawdown-percentile bar of 0.95 on 3-6 month windows cannot be the pass/fail rule for a gate; judge by expectancy (per trade and per R) with the matched-count and shuffled controls, and report drawdown as a secondary number with the longer windows (HOLD / full) where power is higher.
+- The UNPLANTED engine gate is worse on drawdown than every random subset of the same size (DD $103,361 vs $52,233, DD_R 60.5 vs 20.8, percentile 0.000): keeping only 'all three true' signals concentrates the book on trend-aligned days and the engine run gives a much deeper drawdown than a random subset of the base trades. This is a path effect (which trades the stack can take after the skips) that the table-level screen cannot see; it is the reason every checklist needs its engine run.
+- What this proves: the hook, the full-universe table (found = 100 % of executed signals had a decision), the replacement handling and the scoring chain recover an edge that exists in outcomes. What it does not prove: that a real edge would survive the engine's path effects; the plant is added after the fact to the trade file.
+
+### A1/A2 P7 Asia and K7 Asia: OLD (taken-only table, replacements ungated) vs NEW (every signal gated), skip-only and skip + size
+
+**P7A_V0all5, Asia, window L3M**
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JN05W2 base | 243 | 408 | 0.078 | 39663 | 8.5 | -31051 | 1.24 | 7634 | 13360 | 7324 | 85 | - / - | 52233 | 19346 |
+| OLD skip-only (TL3_CF_U3) | 219 | 80 | 0.019 | 38887 | 8.0 | -26139 | 1.04 | 1345 | 2354 | 1067 | 76 | 0.002 / 0.322 | 78338 | 11570 |
+
+**P7A_SL2ge4, Asia, window L3M**
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JN05W2 base | 243 | 408 | 0.078 | 39663 | 8.5 | -31051 | 1.24 | 7634 | 13360 | 7324 | 85 | - / - | 52233 | 19346 |
+| OLD skip-only (TL3_CF_U6) | 217 | 229 | 0.040 | 39348 | 6.6 | -28522 | 1.13 | 3826 | 6696 | 3546 | 77 | 0.038 / 0.262 | 84575 | 13679 |
+
+**K7A_V0ge4, Asia, window L3M**
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JN05W2 base | 333 | 86 | 0.056 | 9732 | 8.1 | -4188 | 1.16 | 2195 | 3841 | 2084 | 30 | - / - | 52233 | 19346 |
+| OLD skip-only (TL3_CF_U1) | 261 | 119 | 0.086 | 16826 | 9.4 | -3101 | 1.22 | 2388 | 4179 | 2300 | 24 | 0.840 / 0.060 | 45259 | 18945 |
+
+**K7A_V0ge3, Asia, window L3M**
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JN05W2 base | 333 | 86 | 0.056 | 9732 | 8.1 | -4188 | 1.16 | 2195 | 3841 | 2084 | 30 | - / - | 52233 | 19346 |
+| OLD skip-only (TL3_CF_U2) | 280 | 128 | 0.086 | 10577 | 7.0 | -3379 | 1.25 | 2760 | 4830 | 2668 | 25 | 0.928 / 0.572 | 43297 | 19742 |
+
+**P7A_V0all5, Asia, window L6M**
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JN05W2 base | 575 | 545 | 0.118 | 39663 | 8.5 | -31051 | 1.33 | 11598 | 20297 | 11240 | 98 | - / - | 52233 | 24470 |
+| OLD skip-only (TL3_CF_U3) | 475 | 348 | 0.072 | 38887 | 8.0 | -26139 | 1.19 | 6129 | 10726 | 5832 | 81 | 0.018 / 0.462 | 78338 | 18429 |
+
+**P7A_SL2ge4, Asia, window L6M**
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JN05W2 base | 575 | 545 | 0.118 | 39663 | 8.5 | -31051 | 1.33 | 11598 | 20297 | 11240 | 98 | - / - | 52233 | 24470 |
+| OLD skip-only (TL3_CF_U6) | 496 | 384 | 0.077 | 42087 | 6.9 | -28522 | 1.21 | 7051 | 12340 | 6733 | 87 | 0.016 / 0.208 | 84575 | 18228 |
+
+**K7A_V0ge4, Asia, window L6M**
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JN05W2 base | 787 | 88 | 0.067 | 16767 | 9.7 | -8074 | 1.16 | 2567 | 4491 | 2442 | 34 | - / - | 52233 | 24470 |
+| OLD skip-only (TL3_CF_U1) | 590 | 139 | 0.105 | 17345 | 9.4 | -4447 | 1.27 | 3032 | 5306 | 2938 | 26 | 0.974 / 0.474 | 45259 | 24897 |
+
+**K7A_V0ge3, Asia, window L6M**
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| JN05W2 base | 787 | 88 | 0.067 | 16767 | 9.7 | -8074 | 1.16 | 2567 | 4491 | 2442 | 34 | - / - | 52233 | 24470 |
+| OLD skip-only (TL3_CF_U2) | 634 | 116 | 0.077 | 15054 | 7.0 | -5480 | 1.22 | 2712 | 4746 | 2612 | 27 | 0.892 / 0.654 | 43297 | 23919 |
+
+### A5 single conditions per session as size / target (exact engine, session = all books of the session; prereg autopilot/CONFLUENCE_SINGLE_PER_SESSION_PREREG.md sha 8e1e0a42645dc378)
+
+**window L3M** (reference: JN05W2 same session)
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| A2 go (S15) NQ 5-min ADX/DI with the trade (B5 NQ  | 875 | 216 | 0.053 | 43302 | 17.4 | -39416 | 1.23 | 14558 | 25476 | 13985 | 156 | 0.937 / 0.980 | 54453 | 16138 |
+
+**window L6M** (reference: JN05W2 same session)
+
+| set | cell trades | $/trade | R/trade | max DD $ | max DD R | worst wk $ | PF | $/wk | $/wk x1.75 | $/wk @4.84 | lots/wk | matched pctl exp / DD | stack DD $ | stack $/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| A2 go (S15) NQ 5-min ADX/DI with the trade (B5 NQ  | 2000 | 248 | 0.083 | 52537 | 20.4 | -39416 | 1.26 | 18342 | 32099 | 17705 | 174 | 0.060 / 0.023 | 54453 | 22412 |
+
+<!--/FIX-->
+
 VERDICT: SUPERSEDED BY THE FIXED TEST (top section when present). The tests below were built wrongly in two ways: (1) the exact-engine checklist gates (section 3b) applied only to signals JN05W2 took, so replacement signals passed ungated; (2) the stack-wide search and its stack-wide bar (section 4) are set aside. Nothing below is a verdict on confluence; A6 (planted-edge sanity check) comes first in the fixed test. Pre-registered USER_SET_V0 / SL lists remain table-level leads: P7 Asia, K7 Asia (see section 1). No PASS claim.
 
 Basis: exact-engine taken trades JN05W2, base lots, engine fee $1.18/contract (pnl) - the $4.84 column pnl484 is carried in the table; skipped signals are not in the table yet (taken only); all numbers are in-sample FULL HISTORY for the pre-registered list (nothing tuned, so no search bias; 45 book-session x rule cells were looked at, so about 0.1 passes by chance are expected at the 5 % level on both tests). Code code/th_confl_cf3; data /mnt/l2/l2vast/_confl/cf3/.
@@ -100,6 +222,7 @@ Skip rule applies to the signals in the entry table (taken JN05W2 signals); sign
 | stack >=4 gate | 4 | 35584 | 36371 | 2.2 | - | no | -35584 | 787 | -2044 | -337.2 | -2045 | -7.6, -7.9, 57.8 | -471, -7133, 176 | - |
 | K7 Asia >=4 + P7 Asia all5 | 4 | 22160 | 36371 | 39.1 | - | no | -22160 | 14211 | -1768 | -291.7 | -1780 | 50.3, 56.3, 16.6 | -2101, -2676, -5953 | - |
 | P7 Asia SL2 >=4 | 4 | 32520 | 36371 | 10.6 | - | no | -32520 | 3851 | -1824 | -300.9 | -1831 | 66.5, 34.8, 21.0 | 4565, -1818, -2455 | - |
+| L3 arrival imbalance low (stack gate) | 4 | 48077 | 36371 | -32.2 | - | no | -48077 | -11707 | -7240 | -1194.1 | -7146 | 12.8, -3.8, -26.4 | -7163, -6674, -8125 | - |
 
 ### L3M
 
@@ -111,6 +234,7 @@ Skip rule applies to the signals in the entry table (taken JN05W2 signals); sign
 | stack >=4 gate | 13 | 88768 | 36371 | -144.1 | -190.7 | no | -55749 | -19379 | -6508 | -40.6 | -6437 | -53.9, -106.8, -2.8 | -10024, -13344, -1780 | -32.4 / -10 |
 | K7 Asia >=4 + P7 Asia all5 | 13 | 63479 | 36371 | -74.5 | -107.9 | no | -40963 | -4593 | -6701 | -41.8 | -6652 | -57.3, -12.6, -71.9 | -6851, -6381, -9972 | - |
 | P7 Asia SL2 >=4 | 13 | 68124 | 36371 | -87.3 | -123.1 | no | -44624 | -8254 | -6273 | -39.2 | -6240 | -60.5, -38.7, -77.1 | -2239, -3387, -9401 | - |
+| L3 arrival imbalance low (stack gate) | 13 | 59805 | 36371 | -64.4 | -95.9 | no | -48077 | -11707 | -14345 | -89.6 | -14185 | -58.3, -89.1, -93.3 | -15198, -13801, -13201 | - |
 
 ### L6M
 
@@ -122,6 +246,7 @@ Skip rule applies to the signals in the entry table (taken JN05W2 signals); sign
 | stack >=4 gate | 26 | 88768 | 36371 | -144.1 | -190.7 | no | -55749 | -19379 | -7006 | -27.9 | -6895 | -53.9, -106.8, -13.4 | -6373, -11562, -8601 | -32.4 / -18 |
 | K7 Asia >=4 + P7 Asia all5 | 26 | 63479 | 36371 | -74.5 | -107.9 | no | -40963 | -4593 | -5601 | -22.3 | -5528 | -57.3, -17.5, -71.9 | -9020, -6166, -9638 | - |
 | P7 Asia SL2 >=4 | 26 | 68124 | 36371 | -87.3 | -123.1 | no | -44624 | -8254 | -5806 | -23.1 | -5764 | - | - | - |
+| L3 arrival imbalance low (stack gate) | 26 | 59805 | 36371 | -64.4 | -95.9 | no | -48077 | -11707 | -15162 | -60.3 | -14931 | - | - | - |
 
 ### HOLD
 
