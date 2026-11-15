@@ -123,6 +123,16 @@ Skip rule applies to the signals in the entry table (taken JN05W2 signals); sign
 | K7 Asia >=4 + P7 Asia all5 | 52 | 63479 | 63185 | -0.5 | -0.5 | no | -51949 | 3196 | -4625 | -26.4 | -4578 | -43.0, -19.7, -38.3 | -5415, -4158, -5395 | - |
 | P7 Asia SL2 >=4 | 52 | 77232 | 63185 | -22.2 | -22.2 | no | -46871 | 8274 | -3798 | -21.7 | -3767 | - | - | - |
 
+### X'
+
+| rule | weeks | engine maxDD | JN05W2 | engine DD cut % | DD cut % W44 removed | tolerant gate (DD cut > -2 %, mean >= -3 %) | worst wk | d worst wk | d mean $/wk | d mean % | d mean @4.84 | placebo DD cut % (3 draws) | placebo d mean | table-level DD cut % / d $/wk % |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| K7 Asia >=4 | 44 | 51268 | 55326 | 7.3 | - | no | -26516 | -4853 | -198 | -5.5 | -196 | - | - | 46.4 / -83 |
+| K7 Asia >=3 | 44 | 55895 | 55326 | -1.0 | - | yes | -26504 | -4840 | -79 | -2.2 | -78 | - | - | 42.4 / 86 |
+| P7 Asia all5 | 44 | 71918 | 55326 | -30.0 | - | no | -30158 | -8494 | 813 | 22.7 | 812 | - | - | 61.5 / -104 |
+| stack >=4 gate | 44 | 56512 | 55326 | -2.1 | - | no | -33434 | -11770 | -1394 | -38.9 | -1358 | - | - | 23.4 / -28 |
+| K7 Asia >=4 + P7 Asia all5 | 44 | 67328 | 55326 | -21.7 | - | no | -30989 | -9325 | 763 | 21.3 | 763 | - | - | - |
+
 ### GAP
 
 | rule | weeks | engine maxDD | JN05W2 | engine DD cut % | DD cut % W44 removed | tolerant gate (DD cut > -2 %, mean >= -3 %) | worst wk | d worst wk | d mean $/wk | d mean % | d mean @4.84 | placebo DD cut % (3 draws) | placebo d mean | table-level DD cut % / d $/wk % |
