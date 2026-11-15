@@ -1,4 +1,4 @@
-VERDICT (plain, 2026-11-15 03:07 UTC): family B is running; 9 of 239 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_P30D0 12.5% (mean -1613 $/wk). No PASS claim; the parents are reproduced.
+VERDICT (plain, 2026-11-15 03:37 UTC): family B is running; 10 of 239 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_P30D0 12.5% (mean -1613 $/wk). No PASS claim; the parents are reproduced.
 
 # DS3_EXPAND_B - an exit fitted to how each book fails (W-EB, T-EXPAND family B)
 
@@ -11,6 +11,7 @@ Identity: TL3_EB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | cell      | parent   |   month |   n_eb |   n_parent |   net_eb |   net_parent | verdict   |
 |:----------|:---------|--------:|-------:|-----------:|---------:|-------------:|:----------|
 | TL3_EB_PB | TL3_JV_B |  202605 |    632 |        632 |  72755   |      72755   | IDENTICAL |
+| TL3_EB_PB | TL3_JV_B |  202606 |    821 |        821 | 227636   |     227636   | IDENTICAL |
 | TL3_EB_PB | TL3_JV_B |  202608 |    640 |        640 | 114176   |     114176   | IDENTICAL |
 | TL3_EB_PB | TL3_JV_B |  202609 |    637 |        637 | 113894   |     113894   | IDENTICAL |
 | TL3_EB_PB | TL3_JV_B |  202610 |    600 |        600 |  36412.6 |      36412.6 | IDENTICAL |
@@ -34,6 +35,7 @@ Identity: TL3_EB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | TL3_EB_U7F_Sst1   | L3M   |      13 | 15245.1 |   -770.1 | 36370.5 |  36370.5 |      0   |        0   |          -770.1 | -36370.5 | -36370.5 |     1   |     0 |      9 |      52.2 | fail   |
 | TL3_EB_U7F_Svwap1 | L3M   |      13 | 15363.6 |   -651.6 | 36496.7 |  36370.5 |     -0.3 |       -1.2 |          -660   | -36496.7 | -36370.5 |     1   |     0 |      9 |      52.2 | fail   |
 | TL3_EB_U7F_Sfr51  | L3M   |      13 | 15436.1 |   -579.1 | 36943.2 |  36370.5 |     -1.6 |        7.8 |          -584.2 | -36943.2 | -36370.5 |     1   |     0 |      9 |      52.5 | fail   |
+| TL3_EB_U7F_Sebar1 | L3M   |      13 | 15153.1 |   -862.1 | 38744.4 |  36370.5 |     -6.5 |       -0.4 |          -873   | -35663.5 | -36370.5 |     1.1 |     2 |      9 |      52.2 | fail   |
 
 ## 3. Anatomy (full stops, cost in targets, saved stops) for cells scored on L3M/L6M
 
@@ -48,6 +50,7 @@ Identity: TL3_EB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | TL3_EB_U7F_Sst1   | L3M   |      13 | U7      |       10.46 |        -19607.1 |         3.31 |         -10021.9 |          4823.66 |        10.23 |         -18899.5 |          3.15 |          -9406.66 |           4093.41 |      0.46 |                0.15 |                693.18 |              0.31 |               228.97 |                  0    |                0    |                0 |      241079 |       239624 |
 | TL3_EB_U7F_Svwap1 | L3M   |      13 | U7      |       10.46 |        -19607.1 |         3.31 |         -10021.9 |          4823.66 |         9.54 |         -16416.6 |          2.46 |          -6923.82 |           4216.63 |      1.23 |                0.31 |               1553.89 |              0.85 |               592.44 |                  0.08 |               76.66 |                0 |      241079 |       248993 |
 | TL3_EB_U7F_Sfr51  | L3M   |      13 | U7      |       10.46 |        -19607.1 |         3.31 |         -10021.9 |          4823.66 |        10.23 |         -18902.9 |          3.15 |          -9410.12 |           4473.8  |      0.38 |                0.08 |                732.59 |              0.31 |               -87.81 |                  0    |                0    |                0 |      241079 |       246097 |
+| TL3_EB_U7F_Sebar1 | L3M   |      13 | U7      |       10.46 |        -19607.1 |         3.31 |         -10021.9 |          4823.66 |         9.54 |         -17108.4 |          2.38 |          -7523.98 |           4558.09 |      2    |                0.77 |               3193.36 |              1.08 |              2507.54 |                  0.15 |              123.54 |                0 |      241079 |       260974 |
 
 ## 4. Reference: W-PM exact A7/U7 cells (L3M first rows, from the lead 2026-11-14). W-EB does not duplicate them; TL3_EB_A7*_T10D20 is the clock-minute twin of E_A7_N10X20 (row convention) and is reported beside it.
 

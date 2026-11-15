@@ -1,5 +1,5 @@
-# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-15T00:42Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
-**VERDICT (plain): 367 cell-months done; 6 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 2 windows; LS1/all beats-all-3-placebos in 2 of 2 windows; LS1/london beats-all-3-placebos in 0 of 2 windows; LS125/london beats-all-3-placebos in 2 of 2 windows; LH125/all beats-all-3-placebos in 0 of 0 windows; LH125/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
+# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-15T03:43Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
+**VERDICT (plain): 437 cell-months done; 6 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 2 windows; LS1/all beats-all-3-placebos in 2 of 2 windows; LS1/london beats-all-3-placebos in 0 of 2 windows; LS125/london beats-all-3-placebos in 2 of 2 windows; LH125/all beats-all-3-placebos in 0 of 0 windows; LH125/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
 
 Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scoring). Base JN05W2 exact engine, all layers ON, measured fills, shared TP cache. Identity (hook path active at k=1e9-neutral and empty rule): TL3_LR_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LR_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -236,7 +236,7 @@ Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scor
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| LS1_O7 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | n/a | n/a |
+| LS1_O7 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | +0 $/wk (at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.99(10.99), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | n/a |
 
 **exact per-book gated LS125_K7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
 

@@ -1,4 +1,4 @@
-# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T03:29Z. Research only, NO PASS claim.
+# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T03:52Z. Research only, NO PASS claim.
 **VERDICT (plain, page 1 of the forecast part; engine dial re-runs below are still running): the options-market number from CME NQ options, put on top of our own realised-range model (HAR), beats UW (b) in london, nyam, nyam2, nypm, late, matches in none, loses in asia, pre (out-of-sample, R2 in L3M / L6M / older, same sample start as UW). The bigger fact: the HAR realised-range model ALONE already beats UW (b) in london, nyam, nyam2, nypm and (L3M/L6M) late; UW's range signal is mostly an IV-term proxy. CME options add real, placebo-clean gain over HAR in asia (+0.10 to +0.14 R2) and the last 90 minutes (+0.12 to +0.24), small in nypm (+0.03 to +0.07), and nothing in london / nyam. Asia is where UW (b) is still the best single model (its NDX/QQQ/SPX IV term beats our CME read of the same night), so UW is not yet fully replaceable for asia. ES options (pulled at $0.00) add on top of NQ options only in the last 90 minutes (R2 0.45/0.48/0.43 vs 0.34/0.43/0.40) and in nypm for L3M/L6M, nothing elsewhere. Pre (08:30-09:30) is driven by the calendar flags (CPI/NFP/FOMC), not by CME or UW. UW (c) (full UW) is worse than (b) everywhere. Whether UW is still needed: for asia yes (UW b, or Cboe VIX-family inputs, which reach nearly the same R2 free); for london, nyam, nypm, late a HAR + CME (or HAR alone) forecast replaces it. Not a PASS claim; selection of the best model per session is by mean R2 over the three windows (hindsight among ~12 models, see caveats).**
 
 Prereg: autopilot/RANGE2_PREREG.md (sha 942f27a55458bebb, in DECISIONS.md before scoring). Order: DIRECTIVE_RANGE2_20261114.md. Code: code/th_range2. Bulk: /mnt/l2/l2vast/_range2. Causal forecast files for the dials: /mnt/l2/l2vast/_range2/fc_r2_v1.parquet (HAR + CME; var 'r'), fc_r2_har.parquet (HAR only), same schema as W-RU fc.parquet; sent to W-CH2, W-D9, W-LR.
@@ -406,6 +406,17 @@ ES coverage: 99.9% of readings have a nearest and a next expiry IV (ES options t
 | UW_b | 0.005 | 0.056 | 0.380 | 0.52 | 0.51 | 0.50 | -0.219 | -0.258 | +0.449 |
 
 
+
+## 3d. Trade-horizon comparison (from W-D10, autopilot/DS3_DIAL10.md; their table, read 2026-11-15, not recomputed here)
+They forecast ln(high-low) over the next H minutes (H = causal median holding time of the book+session) at each JN05W2 signal second, walk-forward, R2 / Spearman, on the same trades. Median-horizon R2, window "since 2025-03" / L6M / L3M:
+| session | B0 UW (b) start-of-session | B2 this page's v1 (HAR+CME, session start) | M1 own 1-min bars at the signal second | M2 = M1 + v1 + calendar flags |
+|---|---|---|---|---|
+| asia | 0.32 / 0.26 / 0.12 | 0.36 / 0.33 / 0.16 | 0.49 / 0.46 / 0.27 | 0.49 / 0.46 / 0.28 |
+| london | 0.19 / 0.10 / 0.07 | 0.28 / 0.22 / 0.09 | 0.45 / 0.32 / 0.13 | 0.46 / 0.34 / 0.18 |
+| nyam | 0.16 / 0.23 / -0.08 | 0.24 / 0.28 / 0.04 | 0.50 / 0.61 / 0.42 | 0.51 / 0.61 / 0.44 |
+| nypm | 0.13 / 0.20 / -0.33 | 0.35 / 0.37 / -0.18 | 0.53 / 0.61 / 0.19 | 0.56 / 0.64 / 0.25 |
+**Plain reading:** (1) At the trade horizon a forecast built from our own bars at the signal second (M1, R2 0.45 to 0.53 since 2025-03) beats every session-start forecast, including the CME/HAR v1 (0.24 to 0.36) and UW (b) (0.13 to 0.32). The session-start forecast is stale by the time the signal fires; the intraday bars carry the news. (2) The session-start v1 still beats UW (b) at that horizon in all four sessions (+0.04 asia, +0.09 london, +0.08 nyam, +0.22 nypm since 2025-03), consistent with section 3. (3) Does CME add anything at the trade horizon? Almost nothing: M2 minus M1 is 0.00 (asia), +0.01 (london, nyam), +0.03 (nypm) since 2025-03 and +0.00 to +0.06 in L3M; and M2 also carries the calendar flags, so the CME share is at most that. CME options are a session-start input; once the bars at the signal second are used the extra option information is small. No placebo for M2 in their table, so even the small gains are unproven.
+
 ## 4. Reading the table (plain)
 - ATR alone is poor everywhere (R2 -0.2 to 0.15). The HAR benchmark is far stronger than ATR and is the right baseline; the UW pages' "gain over ATR" overstated what the options data add.
 - **asia**: CME (HAR+CME or +CMElite) adds +0.12 to +0.14 R2 over HAR in L3M and L6M, placebo ~0, but only about +0.02 in older data; UW (b) is better than HAR+CME in L3M and older; VIX-family prior close (HAR+CBOE) reaches 0.39 in L3M. CME LOSES to UW (b) overall in asia by the rule. The overnight CME reading is stale at 18:00 (median age about 2 h).
@@ -487,6 +498,11 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_OS10_5 | london | -197 $/wk, DD +0.0%, ww +0, stops 2.74(2.74), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -197 / n/a |
 | TL3_R2_OS10_5 | nyam | +152 $/wk, DD +6.8%, ww +658, stops 1.29(1.29), b5 98%, w2l 0 | n/a | n/a | True | None | n/a | +152 / n/a |
 | TL3_R2_OS10_5 | nypm | -320 $/wk, DD -16.2%, ww -398, stops 0.08(0.08), b5 92%, w2l 3 | n/a | n/a | False | None | n/a | -322 / n/a |
+| TL3_R2_OS10_67 | all | +233 $/wk, DD +0.0%, ww +0, stops 10.35(10.35), b5 99%, w2l 0 | n/a | n/a | False | None | n/a | +231 / n/a |
+| TL3_R2_OS10_67 | asia | +327 $/wk, DD +0.0%, ww +0, stops 6.24(6.24), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | +325 / n/a |
+| TL3_R2_OS10_67 | london | -140 $/wk, DD +0.0%, ww +0, stops 2.74(2.74), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -140 / n/a |
+| TL3_R2_OS10_67 | nyam | +206 $/wk, DD +6.8%, ww +658, stops 1.29(1.29), b5 98%, w2l 0 | n/a | n/a | True | None | n/a | +207 / n/a |
+| TL3_R2_OS10_67 | nypm | -160 $/wk, DD -0.0%, ww +1652, stops 0.08(0.08), b5 80%, w2l 3 | n/a | n/a | False | None | n/a | -161 / n/a |
 | TL3_R2_OS3_5 | all | -1153 $/wk, DD +0.0%, ww +0, stops 10.20(10.35), b5 91%, w2l 0 | n/a | n/a | False | None | n/a | -1182 / n/a |
 | TL3_R2_OS3_5 | asia | +45 $/wk, DD +0.0%, ww +0, stops 6.32(6.24), b5 100%, w2l 1 | n/a | n/a | False | None | n/a | +43 / n/a |
 | TL3_R2_OS3_5 | london | -553 $/wk, DD -0.4%, ww +4295, stops 2.74(2.74), b5 101%, w2l 1 | n/a | n/a | False | None | n/a | -567 / n/a |
@@ -513,7 +529,7 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_PL37_D9A_T1_N | nyam | +547 $/wk, DD +6.8%, ww +0, stops 1.22(1.29), b5 100%, w2l 0 | -246 $/wk, DD -8.7%, ww +0, stops 1.71(1.67), b5 99%, w2l 1 | n/a | True | False | -388 $/wk, DD -8.7%, ww +0, stops 1.67(1.64), b5 99%, w2l 1 | +546 / -249 |
 | TL3_R2_PL37_D9A_T1_N | nypm | +234 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 123%, w2l 0 | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | n/a | False | False | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | +233 / -228 |
 
-Cells with results: 16. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
+Cells with results: 17. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
 
 
 ## 6. Caveats

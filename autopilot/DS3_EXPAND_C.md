@@ -1,6 +1,6 @@
-# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T03:26Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
+# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T03:37Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
 
-**VERDICT (plain): 37 cell-months done over 8 cells; 4 cells pass the tolerant gate in L3M, 0 pass in every present window incl. older ones (leads, before placebo read). Leads: none yet. No PASS claim. Queue note: 14 chains wait in tp_admit (box load 60+, cap 28); EC share 2 workers.**
+**VERDICT (plain): 40 cell-months done over 9 cells; 5 cells pass the tolerant gate in L3M, 0 pass in every present window incl. older ones (leads, before placebo read). Leads: none yet. No PASS claim. Queue note: 14 chains wait in tp_admit (box load 60+, cap 28); EC share 2 workers.**
 
 Prereg autopilot/EXPAND_C_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine, all layers ON. Identity: TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -35,6 +35,7 @@ Row format: delta vs JN05W2 in the rule's own session scope: d mean, max-DD cut 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | lead |
 |---|---|---|---|---|---|---|---|
 | RU_nypm_hS1 | +345 $/wk (fee4.84 +347), DD +33%/+33, ww +0, st 0.08(0.08), b5 127%, w2l 0 |  |  |  |  |  |  |
+| RU_nypm_hS075 | +309 $/wk (fee4.84 +312), DD +33%/+33, ww +0, st 0.08(0.08), b5 118%, w2l 0 |  |  |  |  |  |  |
 
 **l90**
 
