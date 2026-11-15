@@ -1,4 +1,4 @@
-# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 21:29Z
+# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 21:52Z
 
 **VERDICT (running): 72 LA cells scored, 16 are ACTIVE (not no-ops), pass the tolerant gate and still cut drawdown with W44 removed in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
 
@@ -194,10 +194,11 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_C_N26   |      26 | 23447.5 |  -1689.4 | 52213.7 |  36370.5 |    -43.6 |       -0.2 |      0 |        0 |    -1123.3 |      -1721   | -52213.7 | -36370.5 |     1   |     0 |      59.7 |          57.1 |  166.8 |      160.3 |
 | TL3_LA_C_N30   |      26 | 23494.4 |  -1642.5 | 53874.9 |  36370.5 |    -48.1 |      -16.1 |      0 |        0 |    -1008   |      -1708.5 | -53874.9 | -36370.5 |     1   |     0 |      62.4 |          57.1 |  173.6 |      160.3 |
 
-### HOLD (1 cells)
+### HOLD (2 cells)
 | cell           |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |     ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:---------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|-------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_C_Rm3p0 |      52 | 17390.8 |    -98.5 | 63185.1 |  63185.1 |        0 |          0 |      1 |        0 |     -100.4 |       -107.2 | -51923 | -55145.4 |       1 |     0 |      50.5 |          49.8 |  145.2 |      143.3 |
+| TL3_LA_C_Rm2p5 |      52 | 17425.4 |    -63.9 | 63185.1 |  63185.1 |        0 |          0 |      1 |        0 |      -65.2 |        -69.5 | -54940 | -55145.4 |       1 |     0 |      50.2 |          49.8 |  144.5 |      143.3 |
 
 ### PRE (1 cells)
 | cell           |   weeks |   mean |   d_mean |    dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
@@ -532,9 +533,9 @@ Weekly delta series for W-RE: /mnt/l2/l2vast/_deepen_la/a/weekly_delta.csv (cell
 # SECTION W-LB (items 6-9)
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 138 of 599 cells have an exact L3M result so far; 41 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 139 of 599 cells have an exact L3M result so far; 41 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T19:05Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T21:35Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -687,6 +688,7 @@ Flag PATH EFFECT = a skip rule frees the book (replacement entries, post-stop bl
 | EV_T0830_P30_H_kISM_MFG | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_p5 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.00 | 0.0 / -91 / -91 / -91 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_p15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.91 | 0.0 / -128 / -127 / -120 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_S_sasi | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### RB  range used up AND breadth / event day (HAR+CME forecast; plain range rule is W-EC)
 

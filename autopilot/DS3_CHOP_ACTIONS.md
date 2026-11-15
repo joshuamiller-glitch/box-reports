@@ -1,4 +1,4 @@
-# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-15 21:28Z
+# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-15 21:52Z
 
 **VERDICT (running): 48 cells scored so far; no PASS claimed. See section 2 (oracle ceiling, NON-CAUSAL), section 3 (causal calls), section 5 (placebos).**
 
@@ -322,3 +322,4 @@ prog = programme tolerant gate for the window (DD cut > -2% and mean change > -3
 | TL3_CH_S90f33F_A5       |     30.38 |     2.85 |    622.66 |
 | TL3_CH_S90f40_A2        |     24.05 |    -7.38 |     13.71 |
 | TL3_CH_X_Raq10_T67_a_M7 |      3.8  |     0    |     15.57 |
+| TL3_CH_X_Raq10_T67_a_K7 |      3.8  |     0    |     50.97 |
