@@ -1,8 +1,8 @@
 # DS3_EXPAND_A - family A: the session's own early result sets the size
 
-**VERDICT: Exact results on 170 cell-months of 34 cells so far; best L6M drawdown cut TL3_EA_A6 11.8% (d mean -72 $/wk); nothing is a PASS, placebos and walk-forward still to come.**
+**VERDICT: Exact results on 182 cell-months of 34 cells so far; best L6M drawdown cut TL3_EA_A6 11.8% (d mean -72 $/wk); nothing is a PASS, placebos and walk-forward still to come.**
 
-**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-15 09:16 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
+**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-15 09:56 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
 
 ## 0. Identity and parent
 
@@ -60,6 +60,7 @@ dd cut % = (maxDD ref - maxDD cell) / maxDD ref (positive = shallower). dd44 = w
 
 | cell | window | weeks | dd cut % | dd44 cut % | d mean $/wk (engine $1.18/ct) | d mean $/wk at FEES.md $4.84 RT | worst wk cell / ref | best5 kept | w2l | cuts/wk cell / ref | trades/wk cell / ref |
 |--|--|--|--|--|--|--|--|--|--|--|--|
+| TL3_EA_A6 | GAP | 18 | 0.0 | - | 0 | 13 | -68947 / -68947 | 1.00 | 0 | 26.06 / 25.72 | 94.0 / 93.2 |
 | TL3_EA_A6 | HOLD | 52 | 0.0 | 0.0 | -36 | -14 | -55145 / -55145 | 1.00 | 0 | 50.44 / 49.75 | 144.9 / 143.3 |
 | TL3_EA_A6 | L1M | 4 | 11.8 | - | -2168 | -2148 | -32090 / -36371 | -2.58 | 0 | 56.00 / 56.00 | 151.0 / 149.5 |
 | TL3_EA_A6 | L3M | 13 | 11.8 | 27.9 | -143 | -130 | -32090 / -36371 | 0.96 | 0 | 53.77 / 52.46 | 147.0 / 144.2 |
@@ -118,6 +119,7 @@ dd cut % = (maxDD ref - maxDD cell) / maxDD ref (positive = shallower). dd44 = w
 | TL3_EA_N1_ALL_ALL_H67_RS | L3M | 13 | 0.0 | -4.1 | -107 | -50 | -36371 / -36371 | 1.01 | 0 | 52.15 / 52.46 | 144.8 / 144.2 |
 | TL3_EA_N1_ALL_S0_U125_RN_CXN | L1M | 4 | 0.0 | - | 0 | -64 | -36371 / -36371 | 1.00 | 0 | 53.75 / 56.00 | 146.2 / 149.5 |
 | TL3_EA_N1_ALL_S0_U125_RN_CXN | L3M | 13 | 0.0 | -3.6 | 308 | 268 | -36371 / -36371 | 1.03 | 0 | 50.46 / 52.46 | 140.8 / 144.2 |
+| TL3_EA_N1_ALL_S0_U125_RN_CXN | L6M | 26 | 0.0 | -3.6 | 194 | 153 | -36371 / -36371 | 1.00 | 0 | 54.31 / 57.08 | 152.4 / 160.3 |
 | TL3_EA_N1_K7_S01_H50_RN | L1M | 4 | 0.0 | - | 0 | 11 | -36371 / -36371 | 1.00 | 0 | 56.75 / 56.00 | 151.2 / 149.5 |
 | TL3_EA_N1_K7_S01_H50_RN | L3M | 13 | 0.0 | 0.0 | -154 | -145 | -36371 / -36371 | 1.00 | 0 | 53.08 / 52.46 | 145.7 / 144.2 |
 | TL3_EA_N1_P7_S0_H67_RN | L1M | 4 | 0.0 | - | 0 | 36 | -36371 / -36371 | 1.00 | 0 | 56.00 / 56.00 | 149.0 / 149.5 |
@@ -140,7 +142,7 @@ dd cut % = (maxDD ref - maxDD cell) / maxDD ref (positive = shallower). dd44 = w
 
 ## 4. Queue state
 
-- exact cell-months done: 170; pending lines: 25; cells in cells.txt: 35
+- exact cell-months done: 182; pending lines: 13; cells in cells.txt: 35
 - last promotions: 00:57Z TL3_EA_CYS1_NP_S1_U150_RN PROMOTE [1] ; 02:52Z TL3_EA_CYS1_NP_S1_U150_RN PROMOTE [2, 3] ; 03:37Z TL3_EA_F1_NP_ALL_U125_RF PROMOTE [1] ; 05:12Z TL3_EA_CYS1_NP_S1_U150_RN PROMOTE [4, 5] ; 05:32Z TL3_EA_A6 PROMOTE [2, 3] ; 08:12Z TL3_EA_N1_ALL_S0_U125_RN_CXN PROMOTE [1] ; 08:27Z TL3_EA_A6 PROMOTE [4, 5] ; 08:32Z TL3_EA_N0_ALL_ALL_U125_RN_CXN PROMOTE [1]
 
 ## 5. Not yet done (in order)
