@@ -1,4 +1,4 @@
-# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T02:20Z. Research only, NO PASS claim.
+# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T02:51Z. Research only, NO PASS claim.
 **VERDICT (plain, page 1 of the forecast part; engine dial re-runs below are still running): the options-market number from CME NQ options, put on top of our own realised-range model (HAR), beats UW (b) in london, nyam, nyam2, nypm, late, matches in none, loses in asia, pre (out-of-sample, R2 in L3M / L6M / older, same sample start as UW). The bigger fact: the HAR realised-range model ALONE already beats UW (b) in london, nyam, nyam2, nypm and (L3M/L6M) late; UW's range signal is mostly an IV-term proxy. CME options add real, placebo-clean gain over HAR in asia (+0.10 to +0.14 R2) and the last 90 minutes (+0.12 to +0.24), small in nypm (+0.03 to +0.07), and nothing in london / nyam. Asia is where UW (b) is still the best single model (its NDX/QQQ/SPX IV term beats our CME read of the same night), so UW is not yet fully replaceable for asia. Pre (08:30-09:30) is driven by the calendar flags (CPI/NFP/FOMC), not by CME or UW. UW (c) (full UW) is worse than (b) everywhere. Whether UW is still needed: for asia yes (UW b, or Cboe VIX-family inputs, which reach nearly the same R2 free); for london, nyam, nypm, late a HAR + CME (or HAR alone) forecast replaces it. Not a PASS claim; selection of the best model per session is by mean R2 over the three windows (hindsight among ~12 models, see caveats).**
 
 Prereg: autopilot/RANGE2_PREREG.md (sha 942f27a55458bebb, in DECISIONS.md before scoring). Order: DIRECTIVE_RANGE2_20261114.md. Code: code/th_range2. Bulk: /mnt/l2/l2vast/_range2. Causal forecast files for the dials: /mnt/l2/l2vast/_range2/fc_r2_v1.parquet (HAR + CME; var 'r'), fc_r2_har.parquet (HAR only), same schema as W-RU fc.parquet; sent to W-CH2, W-D9, W-LR.
@@ -388,6 +388,11 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_D9S_T1_N | london | -89 $/wk, DD +7.1%, ww +5997, stops 4.18(2.74), b5 106%, w2l 0 | n/a | n/a | True | None | n/a | -119 / n/a |
 | TL3_R2_D9S_T1_N | nyam | +624 $/wk, DD -12.8%, ww +345, stops 2.59(1.29), b5 101%, w2l 0 | n/a | n/a | False | None | n/a | +605 / n/a |
 | TL3_R2_D9S_T1_N | nypm | +146 $/wk, DD -22.6%, ww -1637, stops 1.83(0.08), b5 130%, w2l 1 | n/a | n/a | False | None | n/a | +128 / n/a |
+| TL3_R2_OS10_5 | all | +42 $/wk, DD +0.0%, ww +0, stops 10.35(10.35), b5 98%, w2l 0 | n/a | n/a | False | None | n/a | +38 / n/a |
+| TL3_R2_OS10_5 | asia | +407 $/wk, DD +0.0%, ww +0, stops 6.24(6.24), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | +405 / n/a |
+| TL3_R2_OS10_5 | london | -197 $/wk, DD +0.0%, ww +0, stops 2.74(2.74), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -197 / n/a |
+| TL3_R2_OS10_5 | nyam | +152 $/wk, DD +6.8%, ww +658, stops 1.29(1.29), b5 98%, w2l 0 | n/a | n/a | True | None | n/a | +152 / n/a |
+| TL3_R2_OS10_5 | nypm | -320 $/wk, DD -16.2%, ww -398, stops 0.08(0.08), b5 92%, w2l 3 | n/a | n/a | False | None | n/a | -322 / n/a |
 | TL3_R2_OS3_5 | all | -1153 $/wk, DD +0.0%, ww +0, stops 10.20(10.35), b5 91%, w2l 0 | n/a | n/a | False | None | n/a | -1182 / n/a |
 | TL3_R2_OS3_5 | asia | +45 $/wk, DD +0.0%, ww +0, stops 6.32(6.24), b5 100%, w2l 1 | n/a | n/a | False | None | n/a | +43 / n/a |
 | TL3_R2_OS3_5 | london | -553 $/wk, DD -0.4%, ww +4295, stops 2.74(2.74), b5 101%, w2l 1 | n/a | n/a | False | None | n/a | -567 / n/a |
@@ -403,8 +408,18 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_OS3_8 | london | -316 $/wk, DD -0.3%, ww +3016, stops 2.74(2.74), b5 102%, w2l 1 | n/a | n/a | False | None | n/a | -321 / n/a |
 | TL3_R2_OS3_8 | nyam | -319 $/wk, DD -11.2%, ww -1200, stops 1.14(1.29), b5 88%, w2l 1 | n/a | n/a | False | None | n/a | -323 / n/a |
 | TL3_R2_OS3_8 | nypm | -365 $/wk, DD -2.2%, ww +0, stops 0.08(0.08), b5 75%, w2l 3 | n/a | n/a | False | None | n/a | -368 / n/a |
+| TL3_R2_OS5_5 | all | -1233 $/wk, DD +0.0%, ww +0, stops 10.42(10.35), b5 93%, w2l 0 | n/a | n/a | False | None | n/a | -1249 / n/a |
+| TL3_R2_OS5_5 | asia | +45 $/wk, DD +0.0%, ww +0, stops 6.32(6.24), b5 100%, w2l 1 | n/a | n/a | False | None | n/a | +43 / n/a |
+| TL3_R2_OS5_5 | london | -837 $/wk, DD -10.7%, ww +0, stops 2.74(2.74), b5 99%, w2l 1 | n/a | n/a | False | None | n/a | -845 / n/a |
+| TL3_R2_OS5_5 | nyam | +46 $/wk, DD +0.4%, ww +1274, stops 1.29(1.29), b5 95%, w2l 0 | n/a | n/a | True | None | n/a | +44 / n/a |
+| TL3_R2_OS5_5 | nypm | -486 $/wk, DD -15.7%, ww +843, stops 0.08(0.08), b5 74%, w2l 4 | n/a | n/a | False | None | n/a | -491 / n/a |
+| TL3_R2_PL37_D9A_T1_N | all | +762 $/wk, DD +11.0%, ww +5729, stops 10.27(10.35), b5 102%, w2l 0 | -404 $/wk, DD +11.0%, ww +5729, stops 10.99(10.99), b5 101%, w2l 0 | n/a | True | True | -622 $/wk, DD +0.0%, ww +0, stops 10.54(10.54), b5 101%, w2l 0 | +744 / -417 |
+| TL3_R2_PL37_D9A_T1_N | asia | +0 $/wk, DD +0.0%, ww +0, stops 6.24(6.24), b5 100%, w2l 0 | +0 $/wk, DD +0.0%, ww +0, stops 6.35(6.35), b5 100%, w2l 0 | n/a | False | False | +0 $/wk, DD +0.0%, ww +0, stops 6.01(6.01), b5 100%, w2l 0 | +0 / +0 |
+| TL3_R2_PL37_D9A_T1_N | london | -18 $/wk, DD +0.0%, ww +0, stops 2.74(2.74), b5 98%, w2l 0 | +72 $/wk, DD +0.0%, ww +0, stops 2.85(2.89), b5 100%, w2l 0 | n/a | False | False | -5 $/wk, DD +0.0%, ww +0, stops 2.78(2.82), b5 100%, w2l 0 | -34 / +61 |
+| TL3_R2_PL37_D9A_T1_N | nyam | +547 $/wk, DD +6.8%, ww +0, stops 1.22(1.29), b5 100%, w2l 0 | -246 $/wk, DD -8.7%, ww +0, stops 1.71(1.67), b5 99%, w2l 1 | n/a | True | False | -388 $/wk, DD -8.7%, ww +0, stops 1.67(1.64), b5 99%, w2l 1 | +546 / -249 |
+| TL3_R2_PL37_D9A_T1_N | nypm | +234 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 123%, w2l 0 | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | n/a | False | False | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | +233 / -228 |
 
-Cells with results: 12. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
+Cells with results: 15. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
 
 
 ## 6. Caveats
