@@ -1,4 +1,4 @@
-# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T19:38Z. Research only, NO PASS claim.
+# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T23:14Z. Research only, NO PASS claim.
 **VERDICT (data ends 2026-10-30; plain; data end: forecasts scored to 2026-11-12 with CME option inputs to 2026-11-13 (pulled at $0.00 on 11-15; 11-13 afternoon bars missing), engine cells to 2026-10-30; DIALS: on the exact engine no dial using this forecast is a lead - dial 9 narrow-tercile passes L3M/L6M but loses in HOLD and placebos match it, one-sided nearer target and London range-used-up lose, details in section 7): the options-market number from CME NQ options, put on top of our own realised-range model (HAR), beats UW (b) in london, nyam, nyam2, nypm, late, matches in none, loses in asia, pre (out-of-sample, R2 in L3M / L6M / older, same sample start as UW). The bigger fact: the HAR realised-range model ALONE already beats UW (b) in london, nyam, nyam2, nypm and (L3M/L6M) late; UW's range signal is mostly an IV-term proxy. CME options add real, placebo-clean gain over HAR in asia (+0.10 to +0.14 R2) and the last 90 minutes (+0.12 to +0.24), small in nypm (+0.03 to +0.07), and nothing in london / nyam. Asia is where UW (b) is still the best single model (its NDX/QQQ/SPX IV term beats our CME read of the same night), so UW is not yet fully replaceable for asia. ES options (pulled at $0.00) add on top of NQ options only in the last 90 minutes (R2 0.45/0.48/0.43 vs 0.34/0.43/0.40) and in nypm for L3M/L6M, nothing elsewhere. Pre (08:30-09:30) is driven by the calendar flags (CPI/NFP/FOMC), not by CME or UW. UW (c) (full UW) is worse than (b) everywhere. Whether UW is still needed: for asia yes (UW b, or Cboe VIX-family inputs, which reach nearly the same R2 free); for london, nyam, nypm, late a HAR + CME (or HAR alone) forecast replaces it. Not a PASS claim; selection of the best model per session is by mean R2 over the three windows (hindsight among ~12 models, see caveats).**
 
 Prereg: autopilot/RANGE2_PREREG.md (sha 942f27a55458bebb, in DECISIONS.md before scoring). Order: DIRECTIVE_RANGE2_20261114.md. Code: code/th_range2. Bulk: /mnt/l2/l2vast/_range2. Causal forecast files for the dials: /mnt/l2/l2vast/_range2/fc_r2_v1.parquet (HAR + CME; var 'r'), fc_r2_har.parquet (HAR only), same schema as W-RU fc.parquet; sent to W-CH2, W-D9, W-LR.
@@ -570,6 +570,11 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_PL37_D9A_T1_N | nypm | +234 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 123%, w2l 0 | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | -86 $/wk, DD -1.6%, ww +1798, stops 0.06(0.04), b5 75%, w2l 0 | False | False | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | +233 / -228 |
 
 Cells with results: 27. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
+
+## 8. November 2026 (202611, provisional: extended store via ev_store_launch.py, reference TL3_RE_JN05W2/202611; one month, not a window)
+
+| cell | d net $ (month) | d maxDD $ (positive = smaller) | d worst week $ | trades (ref) | $4.84: d net $ |
+|---|---|---|---|---|---|
 
 
 ## 6. Caveats
