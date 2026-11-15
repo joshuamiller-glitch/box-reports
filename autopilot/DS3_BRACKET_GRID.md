@@ -62,6 +62,13 @@ maxDD change %, all 43 months (+ = smaller drawdown)
 
 **Plain statement (first pass): keep 58/60** (no fixed bracket in the grid beats it on mean and drawdown in L6M, older and full history together).
 
+Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs JN05W2 on the same slice):
+
+| T x S | L3M | May-Jul | L6M |
+|---|---|---|---|
+| 40x40 | +205 (live +359; $4.84 +189) DD +24.7% ww +2588 stops 6.62(4.03) | n/a | n/a |
+| 60x90 | -23 (live -40; $4.84 -18) DD -68.2% ww -4785 stops 1.45(4.03) | n/a | n/a |
+
 #### H7 asia
 Today (actual JN05W2 slice): ALL43 +807 $/wk (live +1412), maxDD -43602, OLDER +640 $/wk (live +1119), maxDD -43473, L6M +1832 $/wk (live +3206), maxDD -13817, L3M +914 $/wk (live +1600), maxDD -9048
 
@@ -119,6 +126,13 @@ maxDD change %, all 43 months (+ = smaller drawdown)
 
 **Plain statement (first pass): keep 58/60** (no fixed bracket in the grid beats it on mean and drawdown in L6M, older and full history together).
 
+Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs JN05W2 on the same slice):
+
+| T x S | L3M | May-Jul | L6M |
+|---|---|---|---|
+| 60x90 | -720 (live -1260; $4.84 -705) DD +4.5% ww -1633 stops 0.23(0.23) | n/a | n/a |
+| 85x60 | -336 (live -588; $4.84 -336) DD -59.3% ww -2623 stops 0.30(0.23) | n/a | n/a |
+
 #### H7 nyam
 Today (actual JN05W2 slice): ALL43 +79 $/wk (live +138), maxDD -21707, OLDER +62 $/wk (live +108), maxDD -21707, L6M +183 $/wk (live +320), maxDD -3898, L3M +123 $/wk (live +215), maxDD -3898
 
@@ -175,6 +189,15 @@ maxDD change %, all 43 months (+ = smaller drawdown)
 | 120 | -99 | -99 | -15 | -4 | -68 | -60 |
 
 **Plain statement (first pass): change to target 70 / stop 60** (replay: +39 $/wk full history, +137 L6M, +23 older, DD +4% full history); needs the exact cell to confirm.
+
+Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs JN05W2 on the same slice):
+
+| T x S | L3M | May-Jul | L6M |
+|---|---|---|---|
+| 40x40 | +23 (live +39; $4.84 +19) DD -16.0% ww +257 stops 0.38(0.38) | n/a | n/a |
+| 40x90 | +112 (live +196; $4.84 +112) DD +42.2% ww +312 stops 0.00(0.38) | n/a | n/a |
+| 60x90 | -9 (live -17; $4.84 -9) DD -40.4% ww +160 stops 0.15(0.38) | n/a | n/a |
+| 85x60 | -138 (live -242; $4.84 -138) DD -37.2% ww +0 stops 0.53(0.38) | n/a | n/a |
 
 #### K7 asia
 Today (actual JN05W2 slice): ALL43 +1234 $/wk (live +2159), maxDD -26763, OLDER +1005 $/wk (live +1758), maxDD -26763, L6M +2636 $/wk (live +4613), maxDD -16767, L3M +2171 $/wk (live +3799), maxDD -9732

@@ -2,6 +2,11 @@
 **One line: from the L3M and L6M cells done so far, the K7 state cut is the only loss layer where a different setting beats the live one in both windows (K7 arm +5 = 50: L3M +$2,354/wk, L6M +$344/wk at the $4.84 column, max DD -23.7% both windows, -9.1% with W44 removed); every other layer's live setting is not beaten yet, and the K7 gain is largely the one W44 week. FIRST PASS: only L3M+L6M, no older windows, no placebos, 13 and 26 weeks.**
 Basis: JN05W2 at base lots (live x1.75), dollars per week, engine fee $1.18 (d_mean_484 repriced at $4.84), reference = JN05W2 (598 trades / 25,943.82 on 202610). Windows L3M = 13 weeks (mean 16,015/wk), L6M = 26 weeks.
 
+### UPDATE 2026-11-15 ~20:00Z: K7 candidates under weekly-cluster test (L6M, 26 weeks; older windows queued, 37 more months each)
+**The K7 arm-50 / persist-5 / state-cut-off gain is NOT distinguishable from noise: weekly-cluster t = 0.26 / 0.34 / 0.22, sign-flip p = 0.81 / 0.75 / 0.85, and with W44 removed the mean change is negative for arm 50 (-$177/wk) and off (-$81/wk); only persist 5 stays +$100/wk. Rank of the three among the 14 K7 grid cells (the placebo null = other K7 settings): arm 50 is #2 on mean, #1 on W44-removed DD; that rank is what a grid search of 14 settings gives by chance. Treat as NOT a lead.**
+Which K7 setting the live port actually runs: the live K7 state line is persist 3 (pct <= -0.75 = 45 pts, pulled_mult >= 10, win 2, armlots v2) and it stayed SILENT live (open W-LB2 bug); the K7 flat -45 line (persist 1) fires. So live K7 protection behaves like the engine cell S_K7_NOCUT (flat -45 only), not like the engine base (state cut + flat). NOCUT vs engine base: +$1,319/wk L3M, +$308/wk L6M, but weekly t 0.22. Whichever the live bug turns out to be, the engine says the K7 state line adds nothing measurable beyond flat -45; fixing the live K7 persist is not where the value is.
+File: /mnt/l2/l2vast/_deepen_la/a/k7_test.csv (code/th_deepen_la/la_k7_test.py).
+
 ### Live setting in JN05W2 (exact, from sets/JN05W2.json)
 | layer | exact setting |
 |--|--|

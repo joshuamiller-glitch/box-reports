@@ -1,6 +1,6 @@
 # DS3_CONFLUENCE_ITEMS_CF4: STEP 3 each condition alone, Block 2 (and 4) of the indicator library
 
-**Verdict line: Block 2 conditions built so far = 39159 scored columns across 21 sub-blocks; every one is a MAP entry only (no PASS claim; matched-count and shuffled-outcome controls belong to W-CF3).**
+**Verdict line: Block 2 conditions built so far = 39317 scored columns across 21 sub-blocks; every one is a MAP entry only (no PASS claim; matched-count and shuffled-outcome controls belong to W-CF3).**
 
 ## IRL / ERL Step A (Addendum 5): measure-only, headline = 5-min bars, 2 pts, W=3, minor pivot 3
 
@@ -1473,553 +1473,529 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: ha1
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2165; |t|>2: 405 (chance expectation ~98 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha1.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2218; |t|>2: 333 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha1.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_obS_cnt_ha1_side | 37649 | 0.78 | 0.061 | -0.025 | 0.086 [0.067, 0.106] | 8.8 | 4/4 | 0.129 | 0.173 |
-| c4_sdF_cnt_ha1_side | 38346 | 0.79 | 0.060 | -0.027 | 0.088 [0.068, 0.108] | 8.7 | 3/4 | 0.123 | 0.162 |
-| c4_w1_ema_stack_slow_ha1_side | 34792 | 0.72 | 0.064 | -0.014 | 0.078 [0.060, 0.096] | 8.6 | 4/4 | 0.092 | 0.148 |
-| c4_w1_ema_stack_slow_ha1_hold3 | 34048 | 0.70 | 0.065 | -0.011 | 0.076 [0.058, 0.093] | 8.5 | 4/4 | 0.084 | 0.139 |
-| c4_obF_cnt_ha1_side | 38419 | 0.79 | 0.058 | -0.020 | 0.079 [0.059, 0.098] | 7.8 | 3/4 | 0.124 | 0.158 |
-| c4_ob_cnt_ha1_side | 38238 | 0.79 | 0.059 | -0.019 | 0.078 [0.058, 0.097] | 7.8 | 4/4 | 0.118 | 0.194 |
-| c4_w1_ema200_px_ha1_side | 44076 | 0.91 | 0.052 | -0.059 | 0.111 [0.083, 0.139] | 7.7 | 4/4 | 0.157 | 0.234 |
-| c4_w1_sma200_px_ha1_side | 43493 | 0.90 | 0.053 | -0.052 | 0.104 [0.078, 0.131] | 7.7 | 4/4 | 0.161 | 0.217 |
-| c4_lrcS_slope_ha1_side | 35417 | 0.73 | 0.061 | -0.009 | 0.070 [0.052, 0.089] | 7.6 | 3/4 | 0.101 | 0.166 |
-| c4_w1_vwma200_px_ha1_side | 43760 | 0.91 | 0.052 | -0.052 | 0.105 [0.077, 0.132] | 7.6 | 4/4 | 0.161 | 0.212 |
+| c4_sebS_ha1_eagainst | 1402 | 0.01 | 0.129 | 0.022 | 0.107 [0.053, 0.161] | 3.9 | 4/4 | 0.090 | 0.043 |
+| c4_kerF_dir_ha1_eagainst | 11729 | 0.06 | 0.052 | 0.021 | 0.031 [0.015, 0.046] | 3.8 | 4/4 | 0.037 | 0.082 |
+| c4_w1_stochrsi8_ha1_eagainst | 35072 | 0.18 | 0.040 | 0.019 | 0.021 [0.010, 0.033] | 3.7 | 4/4 | 0.035 | 0.040 |
+| c4_srsiF_ha1_eagainst | 35072 | 0.18 | 0.040 | 0.019 | 0.021 [0.010, 0.033] | 3.7 | 4/4 | 0.035 | 0.040 |
+| c4_fvgS_dsup_ha1_hi | 9093 | 0.80 | 0.072 | -0.067 | 0.138 [0.064, 0.213] | 3.6 | 4/4 | 0.210 | 0.100 |
+| c4_w1_ema200_px_ha1_side | 179163 | 0.94 | 0.027 | -0.031 | 0.058 [0.025, 0.090] | 3.5 | 4/4 | 0.142 | 0.202 |
+| c4_ichiF_thick_ha1_hi | 56514 | 0.30 | 0.038 | 0.016 | 0.022 [0.009, 0.034] | 3.4 | 4/4 | 0.064 | 0.059 |
+| c4_stPS_ha1_hold3 | 157711 | 0.82 | 0.029 | -0.005 | 0.034 [0.014, 0.054] | 3.3 | 4/4 | 0.039 | 0.116 |
+| c4_w1_sma200_px_ha1_side | 176906 | 0.92 | 0.027 | -0.023 | 0.050 [0.020, 0.080] | 3.2 | 4/4 | 0.146 | 0.192 |
+| c4_w1_ema_stack_slow_ha1_side | 142562 | 0.74 | 0.033 | -0.006 | 0.039 [0.015, 0.063] | 3.2 | 4/4 | 0.083 | 0.136 |
 
 **top negative lift = candidate veto (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_w1_ema_stack_slow_ha1_against | 6389 | 0.13 | -0.038 | 0.055 | -0.093 [-0.117, -0.069] | -7.7 | 1/4 | -0.132 | -0.215 |
-| c4_sdflip_near_ha1_against | 6932 | 0.14 | -0.018 | 0.052 | -0.070 [-0.093, -0.047] | -6.0 | 1/4 | -0.088 | -0.166 |
-| c4_sdflipS_near_ha1_against | 6062 | 0.13 | -0.022 | 0.052 | -0.074 [-0.098, -0.050] | -6.0 | 0/4 | -0.082 | -0.151 |
-| c4_sdflip_in_ha1_against | 9465 | 0.20 | -0.005 | 0.054 | -0.059 [-0.079, -0.039] | -5.7 | 1/4 | -0.075 | -0.136 |
-| c4_w1_sma_stack_slow_ha1_against | 5410 | 0.11 | -0.023 | 0.050 | -0.073 [-0.099, -0.048] | -5.7 | 1/4 | -0.088 | -0.139 |
-| c4_stPS_ha1_against | 7988 | 0.17 | -0.007 | 0.052 | -0.059 [-0.080, -0.037] | -5.4 | 0/4 | -0.044 | -0.120 |
-| c4_sdflipF_in_ha1_against | 13799 | 0.29 | 0.009 | 0.056 | -0.047 [-0.065, -0.029] | -5.2 | 1/4 | -0.049 | -0.089 |
-| c4_w1_vwma_stack_slow_ha1_against | 4944 | 0.10 | -0.017 | 0.049 | -0.066 [-0.092, -0.040] | -5.0 | 0/4 | -0.083 | -0.135 |
-| c4_w1_ichi_fast_cloud_ha1_rise | 6218 | 0.13 | -0.007 | 0.050 | -0.057 [-0.080, -0.033] | -4.7 | 1/4 | -0.092 | -0.115 |
-| c4_ichi_chikou_ha1_against | 4911 | 0.10 | -0.012 | 0.048 | -0.060 [-0.087, -0.034] | -4.5 | 0/4 | -0.103 | -0.140 |
+| c4_smie_ha1_rise | 143681 | 0.75 | 0.018 | 0.038 | -0.020 [-0.030, -0.010] | -3.9 | 0/4 | -0.030 | -0.046 |
+| c4_zlemaF_slope_ha1_side | 148712 | 0.78 | 0.018 | 0.039 | -0.021 [-0.031, -0.010] | -3.8 | 0/4 | -0.031 | -0.041 |
+| c4_wt_ha1_rise | 144425 | 0.75 | 0.018 | 0.038 | -0.020 [-0.030, -0.009] | -3.8 | 0/4 | -0.028 | -0.037 |
+| c4_w1_vortex7_ha1_side | 150207 | 0.78 | 0.019 | 0.038 | -0.020 [-0.031, -0.009] | -3.6 | 0/4 | -0.037 | -0.063 |
+| c4_nweF_ha1_side | 159273 | 0.83 | 0.019 | 0.040 | -0.021 [-0.033, -0.010] | -3.6 | 0/4 | -0.035 | -0.036 |
+| c4_elder_impulse_ha1_side | 129508 | 0.68 | 0.017 | 0.034 | -0.017 [-0.026, -0.008] | -3.6 | 0/4 | -0.025 | -0.034 |
+| c4_w1_trendcolor_ha1_side | 155819 | 0.81 | 0.019 | 0.039 | -0.020 [-0.031, -0.009] | -3.6 | 0/4 | -0.021 | -0.035 |
+| c4_elderF_impulse_ha1_side | 129838 | 0.68 | 0.017 | 0.034 | -0.017 [-0.027, -0.008] | -3.6 | 0/4 | -0.025 | -0.032 |
+| c4_w1_ha_run_ha1_side | 160556 | 0.84 | 0.019 | 0.041 | -0.022 [-0.034, -0.010] | -3.5 | 0/4 | -0.028 | -0.039 |
+| c4_w1_mfi21_ha1_rise | 133202 | 0.70 | 0.017 | 0.036 | -0.019 [-0.029, -0.008] | -3.5 | 0/4 | -0.029 | -0.039 |
 
-**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 874 of 11867 session-condition cells pass (chance-level expectation under independence ~147 at |t|>2.5 before the sign filters)**
+**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 297 of 12789 session-condition cells pass (chance-level expectation under independence ~158 at |t|>2.5 before the sign filters)**
 
 | session | cond | n_yes | lift R | shrunk | t | yrs+ | L6M lift |
 |---|---|---|---|---|---|---|---|
-| asia | c4_ichiF_score_ha1_eagainst | 641 | 0.228 | 0.150 | 6.3 | 4/4 | 0.239 |
-| asia | c4_pdS_ha1_eenter | 537 | 0.229 | 0.141 | 5.8 | 3/3 | 0.212 |
-| asia | c4_ote_wide_ha1_side | 870 | 0.175 | 0.128 | 5.7 | 4/4 | 0.201 |
-| asia | c4_w1_cci14_ha1_eagainst_z1 | 700 | 0.189 | 0.127 | 5.4 | 4/4 | 0.187 |
-| asia | c4_fvgS_dsup_ha1_hi | 1390 | 0.223 | 0.111 | 4.5 | 4/4 | 0.423 |
-| asia | c4_obF_near_ha1_hold3 | 1507 | 0.122 | 0.100 | 5.2 | 4/4 | 0.160 |
-| close | c4_obF_in_ha1_side | 138 | -0.541 | -0.184 | -7.8 | 0/3 | -0.587 |
-| close | c4_fvgF_near_ha1_against | 276 | -0.325 | -0.144 | -5.8 | 0/3 | -0.341 |
-| close | c4_w1_kama_stack_slow_ha1_side | 1343 | 0.220 | 0.144 | 6.0 | 3/3 | 0.320 |
-| close | c4_obF_near_ha1_hold3 | 285 | -0.316 | -0.140 | -5.6 | 0/3 | -0.398 |
-| close | c4_w1_kama_stack_slow_ha1_hold3 | 1286 | 0.209 | 0.137 | 5.8 | 3/3 | 0.313 |
-| close | c4_w1_kama_stack_fast_ha1_against | 227 | -0.332 | -0.133 | -5.4 | 0/3 | -0.351 |
-| london | c4_w1_vwma200_px_ha1_side | 13636 | 0.208 | 0.157 | 7.3 | 4/4 | 0.297 |
-| london | c4_w1_sma200_px_ha1_side | 13472 | 0.185 | 0.144 | 6.9 | 4/4 | 0.272 |
-| london | c4_w1_ema200_px_ha1_side | 13615 | 0.181 | 0.137 | 6.4 | 4/4 | 0.270 |
-| london | c4_w1_vwma200_px_ha1_divwith | 481 | -0.203 | -0.124 | -5.1 | 0/4 | -0.198 |
-| london | c4_w1_ema_stack_slow_ha1_against | 1698 | -0.143 | -0.118 | -6.2 | 0/4 | -0.198 |
-| london | c4_w1_sma200_px_ha1_divwith | 495 | -0.185 | -0.113 | -4.6 | 0/4 | -0.176 |
-| nyam | c4_smiS_ha1_divwith | 585 | 0.192 | 0.110 | 4.5 | 4/4 | 0.267 |
-| nyam | c4_kstF_ha1_divwith | 587 | 0.175 | 0.102 | 4.1 | 4/4 | 0.281 |
-| nyam | c4_w1_ao_ha1_side | 7133 | 0.138 | 0.101 | 4.5 | 4/4 | 0.231 |
-| nyam | c4_w1_ema50_px_ha1_side | 7873 | 0.223 | 0.094 | 3.8 | 4/4 | 0.260 |
-| nyam | c4_w1_sqz_hist_ha1_divwith | 697 | 0.150 | 0.093 | 3.8 | 4/4 | 0.180 |
-| nyam | c4_sqzm_mom_ha1_divwith | 697 | 0.150 | 0.093 | 3.8 | 4/4 | 0.180 |
-| nypm | c4_ote_wide_ha1_against | 672 | -0.172 | -0.109 | -4.5 | 0/4 | -0.207 |
-| nypm | c4_copp_ha1_side | 4098 | 0.148 | 0.102 | 4.4 | 4/4 | 0.156 |
-| nypm | c4_almaS_slope_ha1_rise | 3828 | -0.138 | -0.100 | -4.4 | 0/4 | -0.170 |
-| nypm | c4_brkS_in_ha1_against | 307 | 0.209 | 0.097 | 3.9 | 4/4 | 0.196 |
-| nypm | c4_w1_aroon14_ha1_side | 4135 | 0.139 | 0.094 | 4.0 | 4/4 | 0.151 |
-| nypm | c4_w1_hma100_px_ha1_rise | 3826 | -0.130 | -0.094 | -4.2 | 0/4 | -0.130 |
-| pre | c4_w1_ema_stack_slow_ha1_hold3 | 1052 | 0.393 | 0.178 | 7.2 | 3/3 | 0.320 |
-| pre | c4_lrcS_slope_ha1_side | 1090 | 0.395 | 0.174 | 7.0 | 3/3 | 0.407 |
-| pre | c4_sdF_cnt_ha1_side | 1183 | 0.401 | 0.161 | 6.6 | 3/3 | 0.391 |
-| pre | c4_w1_ema_stack_slow_ha1_side | 1085 | 0.361 | 0.159 | 6.4 | 3/3 | 0.308 |
-| pre | c4_qqeS_ha1_nodiv | 1244 | -0.390 | -0.148 | -6.1 | 0/3 | -0.475 |
-| pre | c4_w1_fisher5_ha1_nodiv | 1234 | -0.367 | -0.140 | -5.8 | 0/3 | -0.405 |
+| asia | c4_fvgS_near_ha1_against | 640 | -0.183 | -0.089 | -3.6 | 0/4 | -0.298 |
+| asia | c4_fvgS_dsup_ha1_hi | 5261 | 0.155 | 0.080 | 3.2 | 4/4 | 0.281 |
+| asia | c4_fvgS_in_ha1_against | 333 | -0.199 | -0.078 | -3.2 | 0/4 | -0.165 |
+| asia | c4_sebS_ha1_eagainst | 391 | 0.131 | 0.078 | 3.2 | 4/4 | 0.159 |
+| asia | c4_w1_donchian50_pos_ha1_ewith | 1549 | 0.090 | 0.074 | 3.8 | 4/4 | 0.068 |
+| asia | c4_w1_donchian50_pos_ha1_eenter | 1460 | 0.085 | 0.069 | 3.5 | 4/4 | 0.058 |
+| close | c4_fvgF_in_ha1_fresh5 | 459 | 0.164 | 0.081 | 3.2 | 4/4 | 0.344 |
+| close | c4_kerF_dir_ha1_eagainst | 921 | 0.107 | 0.076 | 3.3 | 4/4 | 0.128 |
+| close | c4_w1_cmo9_ha1_eagainst | 312 | 0.149 | 0.074 | 3.0 | 4/4 | 0.286 |
+| close | c4_pdS_ha1_fresh5 | 1116 | -0.111 | -0.071 | -2.9 | 0/4 | -0.095 |
+| close | c4_elder_bear_ha1_side | 10412 | -0.089 | -0.061 | -2.6 | 0/4 | -0.036 |
+| close | c4_w1_boll20_walk_ha1_divwith | 285 | 0.201 | 0.059 | 2.6 | 4/4 | 0.086 |
+| london | c4_nweF_ha1_fresh5 | 432 | 0.130 | 0.072 | 2.9 | 4/4 | 0.207 |
+| london | c4_w1_kama100_px_ha1_divwith | 1762 | -0.099 | -0.072 | -3.2 | 0/4 | -0.245 |
+| london | c4_w1_ema100_px_ha1_divwith | 1548 | -0.103 | -0.071 | -3.1 | 0/4 | -0.266 |
+| london | c4_w1_kama50_px_ha1_divwith | 2185 | -0.092 | -0.069 | -3.2 | 0/4 | -0.196 |
+| london | c4_w1_sma100_px_ha1_divwith | 1706 | -0.096 | -0.068 | -3.0 | 0/4 | -0.142 |
+| london | c4_w1_ema200_px_ha1_divwith | 1584 | -0.096 | -0.067 | -2.9 | 0/4 | -0.170 |
+| nyam | c4_sfpS_ha1_fresh5 | 1165 | -0.136 | -0.086 | -3.5 | 0/4 | -0.001 |
+| nyam | c4_smiS_ha1_eagainst | 285 | -0.179 | -0.080 | -3.2 | 0/4 | -0.419 |
+| nyam | c4_w1_ao_ha1_side | 21715 | 0.103 | 0.077 | 3.6 | 4/4 | 0.193 |
+| nyam | c4_alli_spread_ha1_side | 20575 | 0.094 | 0.075 | 3.8 | 4/4 | 0.148 |
+| nyam | c4_w1_pat_pin_ha1_side | 211 | 0.209 | 0.072 | 3.0 | 4/4 | 0.115 |
+| nyam | c4_seb_ha1_ewith | 5217 | -0.079 | -0.070 | -4.3 | 0/4 | -0.004 |
+| nypm | c4_sqzmF_on_ha1_rise | 817 | -0.096 | -0.068 | -3.0 | 0/4 | -0.141 |
+| nypm | c4_ob_dsup_ha1_hi | 4102 | 0.097 | 0.067 | 2.9 | 4/4 | 0.054 |
+| nypm | c4_w1_kama34_px_ha1_side | 23072 | -0.093 | -0.067 | -3.0 | 0/4 | -0.087 |
+| nypm | c4_chochS_ha1_side | 21365 | -0.075 | -0.057 | -2.6 | 0/4 | -0.113 |
+| nypm | c4_structS_ha1_side | 21365 | -0.075 | -0.057 | -2.6 | 0/4 | -0.113 |
+| nypm | c4_structS_ha1_against | 3551 | 0.075 | 0.057 | 2.6 | 4/4 | 0.113 |
+| pre | c4_w1_mfi21_ha1_side | 7939 | -0.129 | -0.076 | -3.1 | 0/4 | -0.116 |
+| pre | c4_elder_impulse_ha1_against | 699 | 0.126 | 0.071 | 2.8 | 4/4 | 0.123 |
+| pre | c4_sdS_in_ha1_fresh5 | 701 | 0.140 | 0.069 | 2.8 | 4/4 | 0.140 |
+| pre | c4_w1_kama100_px_ha1_side | 8848 | -0.204 | -0.068 | -2.9 | 0/4 | -0.343 |
+| pre | c4_ker_dir_ha1_side | 7446 | -0.093 | -0.068 | -3.1 | 0/4 | -0.007 |
+| pre | c4_w1_roc10_ha1_side | 7446 | -0.093 | -0.068 | -3.1 | 0/4 | -0.007 |
 
-**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (598 of 44576 cell-conditions pass; chance at t>2.5 alone ~276)**
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (327 of 60425 cell-conditions pass; chance at t>2.5 alone ~374)**
 
 | book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| P7 | pre | c4_sdF_cnt_ha1_side | 327 | 0.201 | -0.394 | 0.595 | 5.6 | 3/3 | 0.670 |
-| M7 | pre | c4_lrcS_slope_ha1_side | 340 | 0.191 | -0.371 | 0.563 | 5.4 | 3/3 | 0.567 |
-| P7 | pre | c4_sd_cnt_ha1_side | 326 | 0.199 | -0.380 | 0.579 | 5.4 | 3/3 | 0.701 |
-| P7 | close | c4_halftS_ha1_hold3 | 561 | 0.072 | -0.269 | 0.342 | 5.3 | 3/3 | 0.485 |
-| P7 | london | c4_w1_ema_stack_slow_ha1_side | 3267 | 0.091 | -0.076 | 0.167 | 5.3 | 4/4 | 0.168 |
-| M7 | pre | c4_w1_ema_stack_slow_ha1_hold3 | 336 | 0.190 | -0.347 | 0.537 | 5.2 | 3/3 | 0.525 |
-| P7 | london | c4_w1_ema_stack_slow_ha1_hold3 | 3238 | 0.090 | -0.068 | 0.159 | 5.1 | 4/4 | 0.157 |
-| K7 | asia | c4_w1_ema_stack_slow_ha1_side | 2449 | 0.106 | -0.020 | 0.125 | 5.0 | 4/4 | 0.159 |
-| M7 | pre | c4_w1_ema_stack_slow_ha1_side | 346 | 0.173 | -0.342 | 0.515 | 4.9 | 3/3 | 0.491 |
-| K7 | london | c4_elderS_bear_ha1_side | 3415 | 0.026 | -0.340 | 0.366 | 4.8 | 3/3 | 0.352 |
-| M7 | pre | c4_sdS_cnt_ha1_side | 348 | 0.170 | -0.341 | 0.510 | 4.8 | 3/3 | 0.760 |
-| P7 | close | c4_halftS_ha1_side | 599 | 0.049 | -0.266 | 0.315 | 4.7 | 3/3 | 0.426 |
-| K7 | asia | c4_w1_ema_stack_slow_ha1_hold3 | 2378 | 0.104 | -0.013 | 0.117 | 4.7 | 4/4 | 0.146 |
-| M7 | pre | c4_sdF_cnt_ha1_side | 373 | 0.145 | -0.389 | 0.533 | 4.5 | 3/3 | 0.602 |
-| P7 | pre | c4_ichi_thick_ha1_rise | 194 | 0.296 | -0.132 | 0.427 | 4.5 | 3/3 | 0.534 |
-| P7 | pre | c4_lrcS_slope_ha1_side | 329 | 0.176 | -0.320 | 0.495 | 4.5 | 3/3 | 0.685 |
-| M7 | pre | c4_sd_cnt_ha1_side | 364 | 0.151 | -0.358 | 0.510 | 4.5 | 3/3 | 0.656 |
-| P7 | pre | c4_w1_ema_stack_slow_ha1_hold3 | 305 | 0.192 | -0.263 | 0.455 | 4.4 | 3/3 | 0.441 |
-| A7 | nyam | c4_fvgS_cnt_ha1_side | 86 | 0.399 | -0.035 | 0.434 | 4.3 | 3/3 | 0.382 |
-| P7 | london | c4_w1_sma200_px_ha1_side | 3902 | 0.070 | -0.132 | 0.202 | 4.3 | 4/4 | 0.273 |
-| P7 | pre | c4_w1_ema_stack_slow_ha1_side | 310 | 0.186 | -0.265 | 0.451 | 4.3 | 3/3 | 0.467 |
-| P7 | close | c4_w1_kama_stack_slow_ha1_side | 453 | 0.076 | -0.181 | 0.256 | 4.2 | 3/3 | 0.305 |
-| P7 | pre | c4_w1_adx14_ha1_hi | 269 | 0.212 | -0.192 | 0.404 | 4.1 | 3/3 | 0.404 |
-| P7 | nyam | c4_w1_vwma34_px_ha1_side | 1908 | 0.017 | -0.259 | 0.277 | 4.1 | 3/4 | 0.371 |
-| P7 | london | c4_sd_cnt_ha1_side | 3307 | 0.081 | -0.049 | 0.130 | 4.1 | 4/4 | 0.137 |
-| K7 | asia | c4_sdF_cnt_ha1_side | 2957 | 0.085 | -0.022 | 0.107 | 4.1 | 4/4 | 0.193 |
-| K7 | asia | c4_obF_cnt_ha1_side | 2962 | 0.085 | -0.022 | 0.107 | 4.1 | 4/4 | 0.174 |
-| P7 | close | c4_w1_demarker7_ha1_rise | 650 | 0.025 | -0.267 | 0.292 | 4.1 | 3/3 | 0.284 |
-| P7 | close | c4_lrcS_slope_ha1_side | 663 | 0.020 | -0.270 | 0.290 | 4.1 | 3/3 | 0.162 |
-| P7 | london | c4_w1_vwma200_px_ha1_side | 3966 | 0.067 | -0.140 | 0.208 | 4.1 | 3/4 | 0.346 |
+| M7 | london | c4_w1_vwma200_px_ha1_side | 15340 | 0.030 | -0.495 | 0.525 | 7.4 | 4/4 | 0.613 |
+| K7 | asia | c4_w1_ema_stack_slow_ha1_side | 8070 | 0.074 | -0.015 | 0.089 | 4.9 | 4/4 | 0.143 |
+| K7 | asia | c4_w1_ema_stack_slow_ha1_hold3 | 7778 | 0.074 | -0.011 | 0.086 | 4.9 | 4/4 | 0.129 |
+| K7 | nyam | c4_sdF_dsup_ha1_hi | 263 | 0.271 | 0.008 | 0.263 | 4.7 | 4/4 | 0.104 |
+| K7 | asia | c4_turt55_ha1_hold3 | 7055 | 0.067 | 0.002 | 0.064 | 4.3 | 4/4 | 0.046 |
+| K7 | asia | c4_w1_sma200_px_ha1_side | 12342 | 0.048 | -0.034 | 0.082 | 4.1 | 4/4 | 0.142 |
+| K7 | asia | c4_obF_cnt_ha1_side | 9991 | 0.059 | -0.019 | 0.079 | 4.1 | 4/4 | 0.173 |
+| K7 | asia | c4_tsiS_ha1_ewith | 2167 | 0.098 | 0.021 | 0.077 | 4.0 | 4/4 | 0.097 |
+| K7 | asia | c4_sdF_cnt_ha1_side | 10045 | 0.059 | -0.020 | 0.079 | 4.0 | 4/4 | 0.175 |
+| K7 | asia | c4_w1_ema200_px_ha1_side | 12669 | 0.046 | -0.034 | 0.080 | 3.9 | 4/4 | 0.119 |
+| P7 | pre | c4_w1_aroon50_ha1_eagainst | 81 | 0.406 | 0.017 | 0.389 | 3.7 | 4/4 | 0.820 |
+| K7 | asia | c4_ob_cnt_ha1_side | 9903 | 0.057 | -0.013 | 0.069 | 3.7 | 4/4 | 0.167 |
+| M7 | london | c4_w1_willr21_ha1_eleave | 664 | 0.148 | 0.020 | 0.128 | 3.7 | 4/4 | 0.073 |
+| K7 | nyam | c4_sd_dsup_ha1_hi | 657 | 0.139 | -0.000 | 0.139 | 3.7 | 4/4 | 0.199 |
+| K7 | asia | c4_fvgS_dsup_ha1_rise | 843 | 0.105 | -0.065 | 0.170 | 3.6 | 4/4 | 0.041 |
+| A7 | london | c4_chochS_ha1_fresh5 | 275 | 0.206 | 0.032 | 0.174 | 3.6 | 4/4 | 0.250 |
+| P7 | nyam | c4_smiS_ha1_side | 5434 | 0.038 | -0.066 | 0.104 | 3.6 | 4/4 | 0.201 |
+| K7 | asia | c4_stPS_ha1_hold3 | 10059 | 0.050 | -0.003 | 0.053 | 3.6 | 3/4 | 0.057 |
+| K7 | asia | c4_obS_cnt_ha1_side | 9707 | 0.058 | -0.012 | 0.070 | 3.5 | 4/4 | 0.148 |
+| M7 | london | c4_w1_stoch8_ha1_eleave | 844 | 0.124 | 0.019 | 0.104 | 3.5 | 4/4 | 0.113 |
+| K7 | asia | c4_w1_sma_stack_slow_ha1_side | 6295 | 0.068 | 0.007 | 0.062 | 3.5 | 4/4 | 0.103 |
+| K7 | asia | c4_ichiF_thick_ha1_hi | 3949 | 0.067 | 0.020 | 0.047 | 3.5 | 3/4 | 0.155 |
+| H7 | close | c4_pd_ha1_eagainst | 234 | 0.100 | -0.257 | 0.357 | 3.5 | 4/4 | 0.366 |
+| K7 | asia | c4_stPS_ha1_side | 11514 | 0.046 | -0.009 | 0.055 | 3.5 | 3/4 | 0.081 |
+| P7 | london | c4_w1_sqz_hist_ha1_fresh5 | 2812 | 0.067 | 0.010 | 0.057 | 3.4 | 4/4 | 0.080 |
+| M7 | london | c4_smi_ha1_eagainst | 756 | 0.129 | 0.020 | 0.110 | 3.4 | 4/4 | 0.124 |
+| M7 | nyam | c4_srsiF_ha1_eagainst | 1201 | 0.107 | 0.012 | 0.094 | 3.4 | 4/4 | 0.039 |
+| M7 | nyam | c4_w1_stochrsi8_ha1_eagainst | 1201 | 0.107 | 0.012 | 0.094 | 3.4 | 4/4 | 0.039 |
+| K7 | asia | c4_fvg_dres_ha1_hi | 3106 | 0.072 | -0.006 | 0.078 | 3.4 | 4/4 | 0.066 |
+| M7 | close | c4_lrcS_slope_ha1_fresh5 | 93 | 0.295 | 0.007 | 0.288 | 3.4 | 4/4 | 0.223 |
 
 ## B4 alternate bars: ha15
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2238; |t|>2: 1230 (chance expectation ~101 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha15.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2267; |t|>2: 525 (chance expectation ~103 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha15.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_fvg_cnt_ha15_side | 18741 | 0.39 | 0.113 | -0.002 | 0.115 [0.099, 0.131] | 13.8 | 4/4 | 0.142 | 0.098 |
-| c4_smieS_ha15_side | 31530 | 0.65 | 0.080 | -0.028 | 0.107 [0.090, 0.124] | 12.5 | 4/4 | 0.122 | 0.112 |
-| c4_mcgS_px_ha15_side | 35426 | 0.73 | 0.072 | -0.040 | 0.112 [0.094, 0.130] | 12.1 | 4/4 | 0.120 | 0.174 |
-| c4_mcgS_slope_ha15_side | 35426 | 0.73 | 0.072 | -0.040 | 0.112 [0.094, 0.130] | 12.1 | 4/4 | 0.120 | 0.174 |
-| c4_qqeS_ha15_side | 30774 | 0.64 | 0.079 | -0.023 | 0.102 [0.085, 0.119] | 12.0 | 4/4 | 0.110 | 0.113 |
-| c4_elderS_bear_ha15_side | 34939 | 0.72 | 0.073 | -0.037 | 0.109 [0.091, 0.127] | 12.0 | 4/4 | 0.154 | 0.169 |
-| c4_w1_ema34_px_ha15_side | 35531 | 0.73 | 0.071 | -0.038 | 0.110 [0.092, 0.128] | 11.9 | 4/4 | 0.119 | 0.172 |
-| c4_w1_macd12_26_9_line_ha15_side | 31295 | 0.65 | 0.078 | -0.023 | 0.101 [0.084, 0.117] | 11.8 | 4/4 | 0.115 | 0.112 |
-| c4_wtS_ha15_side | 30823 | 0.64 | 0.078 | -0.021 | 0.100 [0.083, 0.116] | 11.7 | 4/4 | 0.117 | 0.108 |
-| c4_w1_keltner40_pos_ha15_side | 34794 | 0.72 | 0.072 | -0.034 | 0.106 [0.088, 0.124] | 11.6 | 4/4 | 0.106 | 0.141 |
+| c4_fvg_cnt_ha15_side | 66009 | 0.34 | 0.073 | -0.004 | 0.077 [0.046, 0.109] | 4.8 | 4/4 | 0.148 | 0.107 |
+| c4_qqeS_ha15_ewith | 22296 | 0.12 | 0.113 | 0.011 | 0.102 [0.057, 0.148] | 4.4 | 4/4 | 0.132 | 0.140 |
+| c4_qqeS_ha15_eenter | 4574 | 0.02 | 0.159 | 0.019 | 0.139 [0.075, 0.203] | 4.3 | 4/4 | 0.132 | 0.131 |
+| c4_mcmf_ha15_side | 115429 | 0.60 | 0.046 | -0.013 | 0.059 [0.029, 0.089] | 3.9 | 4/4 | 0.096 | 0.109 |
+| c4_w1_demarker14_ha15_side | 140673 | 0.73 | 0.036 | -0.014 | 0.050 [0.024, 0.075] | 3.9 | 4/4 | 0.139 | 0.189 |
+| c4_mc_comp2_ha15_side | 146361 | 0.77 | 0.034 | -0.014 | 0.047 [0.023, 0.072] | 3.8 | 4/4 | 0.078 | 0.127 |
+| c4_rfiltF_ha15_side | 155907 | 0.81 | 0.032 | -0.016 | 0.047 [0.022, 0.072] | 3.7 | 4/4 | 0.059 | 0.118 |
+| c4_krF_px_ha15_side | 154609 | 0.81 | 0.032 | -0.017 | 0.049 [0.023, 0.075] | 3.7 | 4/4 | 0.089 | 0.149 |
+| c4_fvgF_cnt_ha15_side | 84504 | 0.44 | 0.058 | -0.005 | 0.062 [0.029, 0.096] | 3.7 | 4/4 | 0.051 | 0.056 |
+| c4_w1_cmo14_ha15_side | 145210 | 0.76 | 0.034 | -0.013 | 0.047 [0.022, 0.072] | 3.7 | 4/4 | 0.122 | 0.196 |
 
 **top negative lift = candidate veto (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_ichi_chikou_ha15_against | 15895 | 0.33 | -0.024 | 0.075 | -0.099 [-0.116, -0.082] | -11.3 | 0/4 | -0.099 | -0.083 |
-| c4_w1_ema_stack_fast_ha15_against | 13292 | 0.27 | -0.030 | 0.070 | -0.100 [-0.118, -0.082] | -10.9 | 0/4 | -0.115 | -0.124 |
-| c4_w1_ema_8_21_34_stack_ha15_against | 13292 | 0.27 | -0.030 | 0.070 | -0.100 [-0.118, -0.082] | -10.9 | 0/4 | -0.115 | -0.124 |
-| c4_w1_ema_8_21_stack_ha15_against | 15282 | 0.32 | -0.023 | 0.072 | -0.095 [-0.112, -0.078] | -10.8 | 0/4 | -0.105 | -0.124 |
-| c4_rfilt_dir_ha15_against | 15059 | 0.31 | -0.022 | 0.071 | -0.093 [-0.110, -0.076] | -10.5 | 1/4 | -0.094 | -0.124 |
-| c4_alligator_ha15_against | 15412 | 0.32 | -0.019 | 0.071 | -0.091 [-0.108, -0.073] | -10.3 | 0/4 | -0.118 | -0.107 |
-| c4_stPF_ha15_against | 17730 | 0.37 | -0.013 | 0.074 | -0.087 [-0.104, -0.070] | -10.3 | 0/4 | -0.097 | -0.077 |
-| c4_ichiS_chikou_ha15_against | 16546 | 0.34 | -0.015 | 0.072 | -0.088 [-0.105, -0.071] | -10.2 | 0/4 | -0.081 | -0.075 |
-| c4_choch_ha15_against | 16431 | 0.34 | -0.015 | 0.072 | -0.087 [-0.104, -0.070] | -10.1 | 0/4 | -0.101 | -0.119 |
-| c4_struct_ha15_against | 16431 | 0.34 | -0.015 | 0.072 | -0.087 [-0.104, -0.070] | -10.1 | 0/4 | -0.101 | -0.119 |
+| c4_ichiF_chikou_ha15_against | 45307 | 0.24 | -0.013 | 0.034 | -0.047 [-0.073, -0.022] | -3.6 | 0/4 | -0.128 | -0.205 |
+| c4_kerF_dir_ha15_rise | 106979 | 0.56 | 0.011 | 0.038 | -0.027 [-0.041, -0.012] | -3.5 | 0/4 | -0.055 | -0.043 |
+| c4_w1_demarker14_ha15_eagainst | 14183 | 0.07 | -0.026 | 0.027 | -0.053 [-0.084, -0.022] | -3.4 | 0/4 | -0.140 | -0.158 |
+| c4_crsi_ha15_fresh5 | 152752 | 0.80 | 0.016 | 0.052 | -0.036 [-0.057, -0.014] | -3.3 | 1/4 | -0.032 | -0.016 |
+| c4_w1_rsi21_ha15_eagainst | 3846 | 0.02 | -0.065 | 0.025 | -0.090 [-0.144, -0.036] | -3.3 | 0/4 | -0.180 | -0.197 |
+| c4_sdS_near_ha15_hold3 | 19611 | 0.10 | -0.035 | 0.029 | -0.064 [-0.103, -0.025] | -3.2 | 0/4 | -0.133 | -0.094 |
+| c4_stPF_ha15_against | 70487 | 0.37 | -0.007 | 0.040 | -0.047 [-0.076, -0.019] | -3.2 | 0/4 | -0.093 | -0.081 |
+| c4_w1_kama100_px_ha15_rise | 134578 | 0.71 | 0.015 | 0.043 | -0.028 [-0.045, -0.011] | -3.2 | 0/4 | -0.050 | -0.080 |
+| c4_fractal_alli_ha15_against | 31758 | 0.17 | -0.016 | 0.030 | -0.046 [-0.074, -0.018] | -3.2 | 0/4 | -0.106 | -0.142 |
+| c4_w1_rsi14_ha15_eagainst | 4539 | 0.02 | -0.053 | 0.025 | -0.077 [-0.124, -0.030] | -3.2 | 0/4 | -0.173 | -0.197 |
 
-**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 1732 of 12444 session-condition cells pass (chance-level expectation under independence ~154 at |t|>2.5 before the sign filters)**
+**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 325 of 13214 session-condition cells pass (chance-level expectation under independence ~163 at |t|>2.5 before the sign filters)**
 
 | session | cond | n_yes | lift R | shrunk | t | yrs+ | L6M lift |
 |---|---|---|---|---|---|---|---|
-| asia | c4_w1_adline_ha15_side | 11044 | 0.180 | 0.167 | 12.7 | 4/4 | 0.188 |
-| asia | c4_w1_boll20_walk_ha15_divwith | 679 | 0.215 | 0.155 | 6.9 | 4/4 | 0.328 |
-| asia | c4_mcgS_px_ha15_side | 12036 | 0.158 | 0.145 | 10.6 | 4/4 | 0.201 |
-| asia | c4_mcgS_slope_ha15_side | 12036 | 0.158 | 0.145 | 10.6 | 4/4 | 0.201 |
-| asia | c4_w1_ema34_px_ha15_side | 12078 | 0.152 | 0.140 | 10.2 | 4/4 | 0.190 |
-| asia | c4_w1_keltner40_pos_ha15_side | 11747 | 0.150 | 0.139 | 10.3 | 4/4 | 0.194 |
-| close | c4_w1_aroon50_ha15_nodiv | 2124 | 0.423 | 0.212 | 8.5 | 3/3 | 0.460 |
-| close | c4_sfp_ha15_fresh5 | 192 | 0.503 | 0.208 | 8.4 | 3/3 | 0.494 |
-| close | c4_sfpS_ha15_fresh5 | 119 | 0.528 | 0.179 | 7.6 | 3/3 | 0.506 |
-| close | c4_obF_dsup_ha15_hi | 329 | -0.341 | -0.166 | -6.7 | 0/3 | -0.143 |
-| close | c4_srsi_ha15_eagainst | 371 | -0.325 | -0.165 | -6.6 | 0/3 | -0.394 |
-| close | c4_w1_stochrsi14_ha15_eagainst | 371 | -0.325 | -0.165 | -6.6 | 0/3 | -0.394 |
-| london | c4_wy_phase_ha15_against | 319 | 0.439 | 0.238 | 9.6 | 4/4 | 0.213 |
-| london | c4_qqe_ha15_eagainst | 633 | -0.228 | -0.148 | -6.2 | 0/4 | -0.292 |
-| london | c4_w1_linreg_chan50_ha15_divwith | 1845 | -0.177 | -0.148 | -8.0 | 0/4 | -0.230 |
-| london | c4_w1_psar_0.01_ha15_divwith | 2131 | -0.173 | -0.147 | -8.3 | 0/4 | -0.205 |
-| london | c4_w1_mfi21_ha15_eleave | 590 | -0.230 | -0.146 | -6.1 | 0/4 | -0.263 |
-| london | c4_w1_mfi14_ha15_eleave | 738 | -0.211 | -0.146 | -6.3 | 0/4 | -0.287 |
-| nyam | c4_w1_vortex21_ha15_nodiv | 6667 | 0.179 | 0.139 | 6.6 | 4/4 | 0.206 |
-| nyam | c4_fvg_dsup_ha15_hi | 1935 | 0.188 | 0.130 | 5.6 | 4/4 | 0.321 |
-| nyam | c4_w1_mom20_ha15_nodiv | 6761 | 0.168 | 0.129 | 6.1 | 4/4 | 0.152 |
-| nyam | c4_w1_roc20_ha15_nodiv | 6761 | 0.168 | 0.129 | 6.1 | 4/4 | 0.152 |
-| nyam | c4_almaS_px_ha15_nodiv | 6962 | 0.168 | 0.125 | 5.7 | 4/4 | 0.255 |
-| nyam | c4_w1_kama200_px_ha15_nodiv | 6953 | 0.175 | 0.124 | 5.4 | 4/4 | 0.090 |
-| nypm | c4_sqzmS_mom_ha15_nodiv | 4496 | 0.328 | 0.194 | 7.9 | 4/4 | 0.290 |
-| nypm | c4_w1_aroon25_ha15_side | 3469 | 0.229 | 0.175 | 8.2 | 4/4 | 0.261 |
-| nypm | c4_w1_macd19_39_9_line_ha15_nodiv | 4637 | 0.322 | 0.165 | 6.6 | 4/4 | 0.290 |
-| nypm | c4_srsiS_ha15_eenter | 738 | -0.252 | -0.162 | -6.8 | 0/4 | -0.430 |
-| nypm | c4_w1_stochrsi21_ha15_eenter | 738 | -0.252 | -0.162 | -6.8 | 0/4 | -0.430 |
-| nypm | c4_ichi_chikou_ha15_side | 3599 | 0.211 | 0.159 | 7.4 | 4/4 | 0.266 |
-| pre | c4_smieS_ha15_eagainst | 125 | -0.753 | -0.235 | -10.1 | 0/3 | -0.821 |
-| pre | c4_w1_cmo9_ha15_eleave | 220 | -0.609 | -0.225 | -9.3 | 0/3 | -0.748 |
-| pre | c4_halftF_ha15_against | 483 | -0.454 | -0.212 | -8.5 | 0/3 | -0.470 |
-| pre | c4_halftF_ha15_side | 1016 | 0.454 | 0.212 | 8.5 | 3/3 | 0.470 |
-| pre | c4_sslS_ha15_against | 433 | -0.462 | -0.210 | -8.4 | 0/3 | -0.483 |
-| pre | c4_sslS_ha15_side | 1066 | 0.462 | 0.210 | 8.4 | 3/3 | 0.483 |
+| asia | c4_w1_keltner10_pos_ha15_ewith | 5335 | 0.124 | 0.089 | 4.0 | 4/4 | 0.075 |
+| asia | c4_w1_keltner20_pos_ha15_ewith | 5612 | 0.133 | 0.088 | 3.7 | 4/4 | 0.084 |
+| asia | c4_qqeS_ha15_ewith | 6648 | 0.127 | 0.085 | 3.6 | 4/4 | 0.120 |
+| asia | c4_lrcF_ha15_ewith | 3343 | 0.144 | 0.084 | 3.4 | 4/4 | 0.168 |
+| asia | c4_mcgS_px_ha15_side | 44627 | 0.093 | 0.079 | 4.4 | 4/4 | 0.175 |
+| asia | c4_mcgS_slope_ha15_side | 44627 | 0.093 | 0.079 | 4.4 | 4/4 | 0.175 |
+| close | c4_w1_demarker7_ha15_eenter | 3168 | 0.143 | 0.097 | 4.1 | 4/4 | 0.215 |
+| close | c4_w1_donchian10_width_ha15_hi | 10413 | -0.133 | -0.078 | -3.1 | 0/4 | -0.070 |
+| close | c4_sqzmF_on_ha15_hi | 10080 | 0.126 | 0.077 | 3.2 | 4/4 | 0.058 |
+| close | c4_kerF_dir_ha15_eenter | 3780 | 0.098 | 0.071 | 3.2 | 4/4 | 0.047 |
+| close | c4_sdF_dres_ha15_hi | 935 | -0.205 | -0.069 | -2.9 | 0/4 | -0.400 |
+| close | c4_w1_linreg_chan50_ha15_fresh5 | 4175 | 0.105 | 0.069 | 2.9 | 4/4 | 0.165 |
+| london | c4_nwe_ha15_fresh5 | 361 | 0.373 | 0.079 | 3.9 | 4/4 | 0.181 |
+| london | c4_fvg_in_ha15_fresh5 | 433 | -0.348 | -0.074 | -3.6 | 0/4 | -0.072 |
+| london | c4_rfiltF_ha15_side | 47197 | 0.090 | 0.074 | 3.8 | 4/4 | 0.127 |
+| london | c4_zlema_px_ha15_nodiv | 44857 | -0.092 | -0.068 | -3.1 | 0/4 | -0.059 |
+| london | c4_nweS_ha15_eleave | 144 | 0.439 | 0.067 | 3.7 | 4/4 | 0.146 |
+| london | c4_chand_ha15_fresh1 | 1848 | -0.101 | -0.067 | -2.8 | 0/4 | -0.221 |
+| nyam | c4_fvg_cnt_ha15_side | 9218 | 0.154 | 0.106 | 4.6 | 4/4 | 0.191 |
+| nyam | c4_w1_pat_pin_ha15_fresh5 | 1730 | -0.160 | -0.079 | -3.2 | 0/4 | -0.039 |
+| nyam | c4_fvg_dsup_ha15_hi | 6325 | 0.133 | 0.073 | 2.9 | 4/4 | 0.139 |
+| nyam | c4_sdflipS_in_ha15_side | 1469 | -0.133 | -0.070 | -2.8 | 0/4 | -0.116 |
+| nyam | c4_brkF_near_ha15_hold3 | 2810 | -0.110 | -0.069 | -2.8 | 0/4 | -0.112 |
+| nyam | c4_w1_di21_ha15_nodiv | 21057 | 0.119 | 0.067 | 2.7 | 4/4 | 0.200 |
+| nypm | c4_fvg_cnt_ha15_side | 9829 | 0.160 | 0.094 | 3.8 | 4/4 | 0.425 |
+| nypm | c4_w1_aroon50_ha15_ewith | 5270 | 0.163 | 0.090 | 3.6 | 4/4 | 0.160 |
+| nypm | c4_w1_sma200_px_ha15_fresh5 | 2524 | -0.186 | -0.088 | -3.5 | 0/4 | -0.278 |
+| nypm | c4_w1_trix30_ha15_side | 14741 | 0.133 | 0.085 | 3.6 | 4/4 | 0.232 |
+| nypm | c4_lrc_slope_ha15_side | 14436 | 0.122 | 0.081 | 3.4 | 4/4 | 0.281 |
+| nypm | c4_sdflipF_in_ha15_against | 8100 | -0.116 | -0.079 | -3.4 | 0/4 | -0.102 |
+| pre | c4_sdS_cnt_ha15_rise | 1145 | -0.176 | -0.080 | -3.2 | 0/4 | -0.391 |
+| pre | c4_obS_cnt_ha15_rise | 989 | -0.181 | -0.071 | -2.9 | 0/4 | -0.173 |
+| pre | c4_smie_ha15_eenter | 1285 | -0.210 | -0.068 | -2.9 | 0/4 | -0.645 |
+| pre | c4_w1_demarker7_ha15_fresh5 | 3796 | -0.130 | -0.064 | -2.6 | 0/4 | -0.175 |
+| pre | c4_w1_cci20_ha15_ewith_z2 | 1157 | -0.189 | -0.062 | -2.7 | 0/4 | -0.624 |
+| pre | c4_chochS_ha15_fresh1 | 333 | -0.312 | -0.061 | -3.1 | 0/4 | -0.466 |
 
-**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (3205 of 50424 cell-conditions pass; chance at t>2.5 alone ~312)**
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (973 of 67828 cell-conditions pass; chance at t>2.5 alone ~420)**
 
 | book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| K7 | asia | c4_w1_adline_ha15_side | 2571 | 0.139 | -0.071 | 0.210 | 8.4 | 3/4 | 0.254 |
-| M7 | asia | c4_lrc_slope_ha15_fresh5 | 64 | 0.743 | 0.072 | 0.670 | 8.3 | 3/3 | 0.624 |
-| M7 | asia | c4_qqeS_ha15_side | 1999 | 0.171 | -0.088 | 0.260 | 7.7 | 3/3 | 0.234 |
-| M7 | asia | c4_smieS_ha15_side | 2046 | 0.167 | -0.092 | 0.259 | 7.6 | 3/3 | 0.248 |
-| M7 | asia | c4_w1_adline_ha15_side | 2139 | 0.160 | -0.103 | 0.263 | 7.5 | 3/3 | 0.172 |
-| P7 | asia | c4_w1_adline_ha15_side | 3716 | 0.128 | -0.053 | 0.181 | 7.3 | 4/4 | 0.162 |
-| A7 | nyam | c4_obF_dsup_ha15_hi | 120 | 0.430 | -0.232 | 0.662 | 7.2 | 3/3 | 0.609 |
-| M7 | asia | c4_w1_macd12_26_9_line_ha15_side | 2044 | 0.162 | -0.081 | 0.243 | 7.1 | 3/3 | 0.256 |
-| M7 | asia | c4_w1_ema34_px_ha15_side | 2296 | 0.147 | -0.121 | 0.268 | 7.1 | 3/3 | 0.242 |
-| M7 | asia | c4_w1_keltner40_pos_ha15_side | 2243 | 0.150 | -0.111 | 0.261 | 7.1 | 3/3 | 0.231 |
-| M7 | asia | c4_mcgS_slope_ha15_side | 2288 | 0.148 | -0.119 | 0.267 | 7.1 | 3/3 | 0.242 |
-| M7 | asia | c4_mcgS_px_ha15_side | 2288 | 0.148 | -0.119 | 0.267 | 7.1 | 3/3 | 0.242 |
-| P7 | pre | c4_sslS_ha15_side | 318 | 0.244 | -0.470 | 0.714 | 7.1 | 3/3 | 0.747 |
-| P7 | asia | c4_w1_rsi21_ha15_side | 3935 | 0.121 | -0.061 | 0.182 | 7.0 | 4/4 | 0.250 |
-| P7 | asia | c4_mcgS_px_ha15_side | 4032 | 0.119 | -0.067 | 0.186 | 7.0 | 4/4 | 0.230 |
-| P7 | asia | c4_mcgS_slope_ha15_side | 4032 | 0.119 | -0.067 | 0.186 | 7.0 | 4/4 | 0.230 |
-| P7 | asia | c4_rsima21_ha15_side | 3935 | 0.121 | -0.060 | 0.181 | 7.0 | 4/4 | 0.250 |
-| P7 | asia | c4_w1_keltner40_pos_ha15_side | 3942 | 0.120 | -0.060 | 0.181 | 7.0 | 4/4 | 0.244 |
-| P7 | pre | c4_rfiltS_ha15_side | 343 | 0.206 | -0.527 | 0.733 | 6.9 | 3/3 | 0.598 |
-| M7 | asia | c4_w1_rsi21_ha15_side | 2235 | 0.149 | -0.103 | 0.252 | 6.9 | 3/3 | 0.224 |
-| M7 | asia | c4_rsima21_ha15_side | 2235 | 0.149 | -0.103 | 0.252 | 6.9 | 3/3 | 0.224 |
-| M7 | asia | c4_tsi_ha15_side | 2033 | 0.160 | -0.074 | 0.234 | 6.9 | 3/3 | 0.251 |
-| M7 | asia | c4_rfilt_dir_ha15_side | 2092 | 0.157 | -0.082 | 0.240 | 6.9 | 3/3 | 0.256 |
-| A7 | nyam | c4_w1_demarker21_ha15_ewith | 230 | 0.350 | -0.180 | 0.530 | 6.8 | 3/3 | 0.583 |
-| M7 | asia | c4_elderS_bull_ha15_side | 2275 | 0.146 | -0.108 | 0.254 | 6.8 | 3/3 | 0.190 |
-| M7 | asia | c4_krS_px_ha15_side | 2228 | 0.148 | -0.099 | 0.247 | 6.8 | 3/3 | 0.227 |
-| P7 | asia | c4_krS_px_ha15_side | 3926 | 0.119 | -0.055 | 0.174 | 6.8 | 4/4 | 0.236 |
-| P7 | asia | c4_qqeS_ha15_side | 3580 | 0.127 | -0.037 | 0.164 | 6.7 | 4/4 | 0.231 |
-| P7 | london | c4_wy_phase_ha15_against | 94 | 0.551 | 0.040 | 0.511 | 6.7 | 4/4 | 0.652 |
-| M7 | pre | c4_hilo_ha15_side | 347 | 0.209 | -0.474 | 0.684 | 6.7 | 3/3 | 0.684 |
+| K7 | asia | c4_w1_mfi7_ha15_side | 8819 | 0.064 | -0.011 | 0.076 | 5.1 | 4/4 | 0.152 |
+| A7 | nyam | c4_fvg_cnt_ha15_side | 1580 | 0.193 | -0.099 | 0.292 | 5.0 | 4/4 | 0.381 |
+| P7 | nypm | c4_w1_supertrend_14_4_ha15_nodiv | 8046 | -0.010 | -0.558 | 0.548 | 4.9 | 4/4 | 0.558 |
+| K7 | asia | c4_w1_mfi14_ha15_side | 8368 | 0.074 | -0.018 | 0.091 | 4.9 | 4/4 | 0.218 |
+| K7 | asia | c4_chandF_ha15_side | 8543 | 0.073 | -0.020 | 0.093 | 4.8 | 4/4 | 0.140 |
+| P7 | london | c4_nweS_ha15_fresh5 | 95 | 0.561 | 0.012 | 0.549 | 4.8 | 4/4 | 0.391 |
+| A7 | nypm | c4_w1_trix30_ha15_side | 2735 | 0.079 | -0.189 | 0.268 | 4.7 | 4/4 | 0.455 |
+| K7 | asia | c4_krF_px_ha15_side | 9266 | 0.068 | -0.024 | 0.092 | 4.6 | 4/4 | 0.156 |
+| K7 | asia | c4_rfiltS_ha15_side | 8969 | 0.073 | -0.026 | 0.099 | 4.6 | 4/4 | 0.101 |
+| K7 | asia | c4_w1_vortex14_ha15_side | 8726 | 0.070 | -0.018 | 0.088 | 4.6 | 4/4 | 0.171 |
+| K7 | asia | c4_w1_di7_ha15_side | 9295 | 0.065 | -0.019 | 0.084 | 4.6 | 4/4 | 0.164 |
+| K7 | asia | c4_ichiF_score_ha15_side | 8548 | 0.069 | -0.015 | 0.084 | 4.6 | 4/4 | 0.167 |
+| K7 | asia | c4_krF_dir_ha15_side | 9422 | 0.065 | -0.021 | 0.086 | 4.6 | 4/4 | 0.167 |
+| K7 | asia | c4_w1_keltner10_pos_ha15_side | 9931 | 0.060 | -0.019 | 0.079 | 4.6 | 4/4 | 0.154 |
+| K7 | asia | c4_qqeF_ha15_side | 9017 | 0.067 | -0.018 | 0.085 | 4.5 | 4/4 | 0.165 |
+| K7 | asia | c4_mcg_slope_ha15_side | 9438 | 0.066 | -0.022 | 0.087 | 4.5 | 4/4 | 0.166 |
+| K7 | asia | c4_mcg_px_ha15_side | 9438 | 0.066 | -0.022 | 0.087 | 4.5 | 4/4 | 0.166 |
+| K7 | asia | c4_mcgS_px_ha15_side | 8755 | 0.075 | -0.025 | 0.099 | 4.5 | 4/4 | 0.207 |
+| K7 | asia | c4_mcgS_slope_ha15_side | 8755 | 0.075 | -0.025 | 0.099 | 4.5 | 4/4 | 0.207 |
+| K7 | asia | c4_smieF_ha15_side | 9224 | 0.064 | -0.016 | 0.080 | 4.5 | 4/4 | 0.142 |
+| K7 | asia | c4_w1_eom14_ha15_side | 8841 | 0.069 | -0.018 | 0.087 | 4.5 | 4/4 | 0.136 |
+| K7 | asia | c4_wtS_ha15_ewith_z1 | 678 | 0.212 | 0.024 | 0.188 | 4.5 | 4/4 | 0.161 |
+| K7 | asia | c4_w1_keltner20_pos_ha15_side | 9174 | 0.067 | -0.020 | 0.088 | 4.5 | 4/4 | 0.167 |
+| K7 | asia | c4_nweS_ha15_side | 8697 | 0.069 | -0.024 | 0.093 | 4.5 | 4/4 | 0.179 |
+| K7 | asia | c4_tsiF_ha15_side | 8534 | 0.070 | -0.016 | 0.086 | 4.5 | 4/4 | 0.158 |
+| K7 | asia | c4_w1_keltner10_pos_ha15_ewith | 727 | 0.204 | 0.024 | 0.181 | 4.4 | 4/4 | 0.173 |
+| K7 | asia | c4_w1_keltner20_pos_ha15_ewith | 817 | 0.210 | 0.022 | 0.188 | 4.4 | 4/4 | 0.197 |
+| K7 | asia | c4_elderS_bull_ha15_side | 8740 | 0.071 | -0.020 | 0.091 | 4.4 | 4/4 | 0.173 |
+| K7 | asia | c4_w1_rsi14_ha15_ewith | 1875 | 0.141 | 0.017 | 0.124 | 4.4 | 3/4 | 0.118 |
+| K7 | asia | c4_w1_ema34_px_ha15_side | 8744 | 0.074 | -0.024 | 0.098 | 4.4 | 4/4 | 0.202 |
 
 ## B4 alternate bars: ha3
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2186; |t|>2: 654 (chance expectation ~99 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha3.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2229; |t|>2: 0 (chance expectation ~101 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha3.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_fvg_cnt_ha3_side | 16016 | 0.33 | 0.109 | 0.009 | 0.100 [0.083, 0.117] | 11.6 | 3/4 | 0.140 | 0.175 |
-| c4_w1_sma200_px_ha3_side | 36972 | 0.76 | 0.068 | -0.041 | 0.109 [0.090, 0.128] | 11.3 | 4/4 | 0.115 | 0.168 |
-| c4_w1_ema200_px_ha3_side | 37631 | 0.78 | 0.066 | -0.040 | 0.106 [0.087, 0.125] | 10.8 | 4/4 | 0.132 | 0.173 |
-| c4_stPS_ha3_side | 35179 | 0.73 | 0.069 | -0.029 | 0.098 [0.080, 0.116] | 10.7 | 3/4 | 0.122 | 0.170 |
-| c4_w1_ema100_px_ha3_side | 41458 | 0.86 | 0.060 | -0.064 | 0.123 [0.101, 0.146] | 10.7 | 4/4 | 0.143 | 0.228 |
-| c4_stPS_ha3_hold3 | 34125 | 0.71 | 0.069 | -0.023 | 0.092 [0.074, 0.109] | 10.2 | 3/4 | 0.111 | 0.158 |
-| c4_w1_ema_stack_slow_ha3_side | 27263 | 0.56 | 0.078 | -0.004 | 0.082 [0.065, 0.098] | 9.9 | 4/4 | 0.076 | 0.088 |
-| c4_fvgF_cnt_ha3_side | 24084 | 0.50 | 0.083 | 0.002 | 0.081 [0.065, 0.097] | 9.9 | 3/4 | 0.100 | 0.115 |
-| c4_w1_vwma200_px_ha3_side | 37372 | 0.77 | 0.064 | -0.032 | 0.095 [0.077, 0.114] | 9.9 | 4/4 | 0.102 | 0.180 |
-| c4_w1_ema_stack_slow_ha3_hold3 | 26643 | 0.55 | 0.078 | -0.001 | 0.079 [0.063, 0.095] | 9.6 | 4/4 | 0.075 | 0.086 |
+| c4_wt_ha3_side | 165507 | 0.86 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_sig | 133743 | 0.70 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_rise | 135539 | 0.71 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_fresh5 | 83756 | 0.44 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_ewith_z1 | 25039 | 0.13 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_eleave_z1 | 961 | 0.01 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_eenter_z1 | 8499 | 0.04 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_ewith_z2 | 49097 | 0.26 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_eagainst_z2 | 296 | 0.00 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_eleave_z2 | 2120 | 0.01 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
 
 **top negative lift = candidate veto (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_stPS_ha3_against | 13173 | 0.27 | -0.029 | 0.069 | -0.098 [-0.116, -0.080] | -10.7 | 1/4 | -0.122 | -0.170 |
-| c4_w1_ema_stack_slow_ha3_against | 12990 | 0.27 | -0.029 | 0.069 | -0.098 [-0.116, -0.080] | -10.6 | 0/4 | -0.119 | -0.128 |
-| c4_w1_kama_stack_slow_ha3_against | 9877 | 0.20 | -0.031 | 0.061 | -0.092 [-0.111, -0.072] | -9.0 | 0/4 | -0.141 | -0.168 |
-| c4_w1_vwma_stack_slow_ha3_against | 11066 | 0.23 | -0.019 | 0.060 | -0.079 [-0.098, -0.060] | -8.1 | 1/4 | -0.114 | -0.132 |
-| c4_chandS_ha3_against | 7910 | 0.16 | -0.030 | 0.056 | -0.086 [-0.108, -0.065] | -7.9 | 0/4 | -0.095 | -0.169 |
-| c4_stP_ha3_against | 10136 | 0.21 | -0.018 | 0.058 | -0.076 [-0.096, -0.057] | -7.6 | 0/4 | -0.096 | -0.161 |
-| c4_turt20_ha3_against | 5241 | 0.11 | -0.045 | 0.053 | -0.098 [-0.124, -0.072] | -7.4 | 0/4 | -0.121 | -0.167 |
-| c4_w1_sma_stack_slow_ha3_against | 11346 | 0.23 | -0.011 | 0.059 | -0.069 [-0.088, -0.050] | -7.1 | 0/4 | -0.101 | -0.100 |
-| c4_w1_aroon25_ha3_nodiv | 41516 | 0.86 | 0.031 | 0.113 | -0.083 [-0.106, -0.060] | -7.1 | 0/4 | -0.129 | -0.141 |
-| c4_rfilt_dir_ha3_against | 8708 | 0.18 | -0.015 | 0.055 | -0.070 [-0.091, -0.050] | -6.7 | 0/4 | -0.071 | -0.121 |
+| c4_wt_ha3_side | 165507 | 0.86 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_sig | 133743 | 0.70 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_rise | 135539 | 0.71 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_fresh5 | 83756 | 0.44 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_ewith_z1 | 25039 | 0.13 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_eleave_z1 | 961 | 0.01 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_eenter_z1 | 8499 | 0.04 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_ewith_z2 | 49097 | 0.26 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_eagainst_z2 | 296 | 0.00 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha3_eleave_z2 | 2120 | 0.01 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
 
-**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 998 of 12018 session-condition cells pass (chance-level expectation under independence ~149 at |t|>2.5 before the sign filters)**
+**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 76 of 12864 session-condition cells pass (chance-level expectation under independence ~159 at |t|>2.5 before the sign filters)**
 
 | session | cond | n_yes | lift R | shrunk | t | yrs+ | L6M lift |
 |---|---|---|---|---|---|---|---|
-| asia | c4_fvgS_cnt_ha3_side | 2096 | 0.211 | 0.182 | 10.5 | 4/4 | 0.274 |
-| asia | c4_w1_ema200_px_ha3_side | 12478 | 0.155 | 0.142 | 10.1 | 4/4 | 0.200 |
-| asia | c4_fvgS_dsup_ha3_rise | 1111 | 0.227 | 0.133 | 5.4 | 4/4 | 0.251 |
-| asia | c4_w1_vwma200_px_ha3_divwith | 1036 | -0.168 | -0.130 | -6.2 | 0/4 | -0.278 |
-| asia | c4_w1_sma200_px_ha3_side | 12402 | 0.130 | 0.119 | 8.5 | 4/4 | 0.177 |
-| asia | c4_w1_ema100_px_ha3_side | 14002 | 0.132 | 0.117 | 7.2 | 4/4 | 0.150 |
-| close | c4_w1_uo_ha3_divwith | 358 | -0.395 | -0.202 | -8.1 | 0/3 | -0.311 |
-| close | c4_lrcF_slope_ha3_side | 1839 | 0.280 | 0.168 | 6.9 | 3/3 | 0.412 |
-| close | c4_w1_linreg_slope50_ha3_side | 1839 | 0.280 | 0.168 | 6.9 | 3/3 | 0.412 |
-| close | c4_ote_wideS_ha3_side | 194 | -0.405 | -0.153 | -6.3 | 0/3 | -0.400 |
-| close | c4_w1_pat_pin_ha3_fresh5 | 195 | 0.408 | 0.150 | 6.2 | 3/3 | 0.279 |
-| close | c4_w1_stochrsi8_ha3_divwith | 339 | -0.315 | -0.148 | -5.9 | 0/3 | -0.244 |
-| london | c4_chandS_ha3_against | 2101 | -0.165 | -0.141 | -7.9 | 0/4 | -0.196 |
-| london | c4_chandS_ha3_side | 12593 | 0.165 | 0.141 | 7.9 | 4/4 | 0.196 |
-| london | c4_w1_boll10_walk_ha3_divwith | 1348 | -0.177 | -0.140 | -6.9 | 0/4 | -0.183 |
-| london | c4_chandS_ha3_hold3 | 11960 | 0.159 | 0.140 | 8.5 | 4/4 | 0.187 |
-| london | c4_qqemod_hist_ha3_divwith | 1201 | -0.179 | -0.138 | -6.6 | 0/4 | -0.166 |
-| london | c4_krS_dir_ha3_side | 13397 | 0.162 | 0.128 | 6.3 | 4/4 | 0.242 |
-| nyam | c4_w1_mfi21_ha3_ewith | 694 | 0.185 | 0.107 | 4.4 | 4/4 | 0.160 |
-| nyam | c4_mcgF_slope_ha3_side | 7362 | 0.148 | 0.100 | 4.3 | 4/4 | 0.210 |
-| nyam | c4_mcgF_px_ha3_side | 7362 | 0.148 | 0.100 | 4.3 | 4/4 | 0.210 |
-| nyam | c4_w1_mfi14_ha3_ewith | 1210 | 0.132 | 0.094 | 4.1 | 4/4 | 0.116 |
-| nyam | c4_w1_ema8_px_ha3_side | 7320 | 0.133 | 0.092 | 4.0 | 4/4 | 0.205 |
-| nyam | c4_w1_mfi7_ha3_side | 6577 | 0.114 | 0.091 | 4.5 | 4/4 | 0.069 |
-| nypm | c4_ob_cnt_ha3_side | 3555 | 0.222 | 0.168 | 7.8 | 4/4 | 0.305 |
-| nypm | c4_stPS_ha3_against | 1278 | -0.197 | -0.147 | -6.7 | 0/4 | -0.242 |
-| nypm | c4_stPS_ha3_side | 3720 | 0.197 | 0.147 | 6.7 | 4/4 | 0.242 |
-| nypm | c4_stPS_ha3_hold3 | 3678 | 0.191 | 0.142 | 6.5 | 4/4 | 0.243 |
-| nypm | c4_obF_cnt_ha3_side | 3541 | 0.169 | 0.127 | 5.9 | 4/4 | 0.224 |
-| nypm | c4_obF_dsup_ha3_hi | 641 | -0.197 | -0.124 | -5.1 | 0/4 | -0.259 |
-| pre | c4_stPS_ha3_against | 408 | -0.442 | -0.196 | -7.9 | 0/3 | -0.359 |
-| pre | c4_stPS_ha3_side | 1091 | 0.442 | 0.196 | 7.9 | 3/3 | 0.359 |
-| pre | c4_stPS_ha3_hold3 | 1038 | 0.407 | 0.187 | 7.5 | 3/3 | 0.331 |
-| pre | c4_fvgF_cnt_ha3_side | 758 | 0.374 | 0.186 | 7.4 | 3/3 | 0.305 |
-| pre | c4_w1_ema100_px_ha3_side | 1310 | 0.539 | 0.178 | 7.6 | 3/3 | 0.513 |
-| pre | c4_w1_cmf10_ha3_nodiv | 1127 | -0.388 | -0.171 | -6.9 | 0/3 | -0.291 |
+| close | c4_w1_vwma100_px_ha3_divwith | 868 | 0.184 | 0.082 | 3.3 | 4/4 | 0.351 |
+| close | c4_w1_sma100_px_ha3_divwith | 726 | 0.193 | 0.074 | 3.0 | 4/4 | 0.333 |
+| close | c4_pdS_ha3_side | 1870 | -0.130 | -0.070 | -2.8 | 0/4 | -0.260 |
+| close | c4_chand_ha3_side | 11637 | 0.120 | 0.069 | 2.8 | 4/4 | 0.312 |
+| close | c4_chand_ha3_against | 2161 | -0.120 | -0.069 | -2.8 | 0/4 | -0.312 |
+| close | c4_w1_hma200_px_ha3_divwith | 657 | 0.160 | 0.068 | 2.7 | 4/4 | 0.098 |
+| nyam | c4_w1_mfi21_ha3_ewith | 2304 | 0.132 | 0.082 | 3.4 | 4/4 | 0.126 |
+| nyam | c4_w1_obv_ha3_side | 21890 | 0.109 | 0.079 | 3.5 | 4/4 | 0.073 |
+| nyam | c4_w1_aroon50_ha3_divwith | 2048 | 0.132 | 0.073 | 2.9 | 4/4 | 0.189 |
+| nyam | c4_w1_mfi14_ha3_ewith | 3957 | 0.091 | 0.068 | 3.1 | 4/4 | 0.115 |
+| nyam | c4_ote_wideF_ha3_side | 877 | -0.111 | -0.068 | -2.8 | 0/4 | -0.128 |
+| nyam | c4_w1_mfi21_ha3_eenter | 1172 | 0.112 | 0.065 | 2.6 | 4/4 | 0.145 |
+| nypm | c4_obF_cnt_ha3_fresh5 | 1081 | -0.130 | -0.072 | -2.9 | 0/4 | -0.197 |
+| nypm | c4_elder_bull_ha3_divwith | 1845 | 0.112 | 0.062 | 2.5 | 4/4 | 0.059 |
+| nypm | c4_elderF_bull_ha3_divwith | 2361 | 0.100 | 0.062 | 2.6 | 4/4 | 0.024 |
+| nypm | c4_w1_ichi_slow_lag_ha3_divwith | 708 | 0.166 | 0.062 | 2.6 | 4/4 | 0.175 |
+| nypm | c4_mcmf_ha3_rise | 16141 | -0.051 | -0.045 | -2.7 | 0/4 | -0.034 |
+| nypm | c4_w1_fisher5_ha3_fresh5 | 7774 | -0.049 | -0.043 | -2.6 | 0/4 | -0.042 |
+| pre | c4_ote_wide_ha3_side | 236 | 0.247 | 0.075 | 3.3 | 4/4 | 0.611 |
+| pre | c4_qqemod_ha3_against | 536 | 0.165 | 0.075 | 3.0 | 4/4 | 0.314 |
+| pre | c4_sqzm_bright_ha3_against | 463 | 0.182 | 0.074 | 3.0 | 4/4 | 0.353 |
+| pre | c4_rsima21_ha3_eenter | 650 | -0.154 | -0.073 | -2.9 | 0/4 | -0.158 |
+| pre | c4_w1_rsi21_ha3_eenter | 650 | -0.154 | -0.073 | -2.9 | 0/4 | -0.158 |
+| pre | c4_kstF_ha3_side | 7754 | -0.117 | -0.071 | -2.9 | 0/4 | -0.333 |
 
-**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (917 of 45500 cell-conditions pass; chance at t>2.5 alone ~282)**
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (533 of 62276 cell-conditions pass; chance at t>2.5 alone ~386)**
 
 | book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| M7 | asia | c4_fvg_cnt_ha3_side | 1138 | 0.256 | -0.019 | 0.275 | 8.6 | 3/3 | 0.301 |
-| M7 | asia | c4_fvgS_cnt_ha3_side | 368 | 0.406 | 0.042 | 0.364 | 7.9 | 3/3 | 0.316 |
-| P7 | asia | c4_fvg_cnt_ha3_side | 2056 | 0.177 | 0.008 | 0.170 | 7.3 | 4/4 | 0.278 |
-| P7 | pre | c4_stPS_ha3_side | 312 | 0.255 | -0.463 | 0.718 | 7.3 | 3/3 | 0.695 |
-| P7 | pre | c4_stPS_ha3_hold3 | 310 | 0.257 | -0.455 | 0.712 | 7.2 | 3/3 | 0.669 |
-| P7 | asia | c4_fvgS_cnt_ha3_side | 704 | 0.273 | 0.042 | 0.231 | 6.9 | 4/4 | 0.361 |
-| P7 | asia | c4_w1_ema200_px_ha3_side | 4021 | 0.116 | -0.060 | 0.176 | 6.7 | 4/4 | 0.234 |
-| M7 | asia | c4_w1_ema200_px_ha3_side | 2354 | 0.138 | -0.111 | 0.249 | 6.4 | 3/3 | 0.220 |
-| P7 | london | c4_chandS_ha3_hold3 | 3821 | 0.082 | -0.190 | 0.271 | 6.4 | 4/4 | 0.302 |
-| P7 | london | c4_chandS_ha3_side | 3876 | 0.080 | -0.207 | 0.286 | 6.4 | 4/4 | 0.316 |
-| P7 | pre | c4_w1_ema100_px_ha3_side | 355 | 0.182 | -0.532 | 0.714 | 6.4 | 3/3 | 0.810 |
-| P7 | nypm | c4_ob_cnt_ha3_side | 1010 | 0.121 | -0.250 | 0.371 | 6.3 | 3/3 | 0.457 |
-| P7 | close | c4_lrcF_slope_ha3_side | 634 | 0.062 | -0.354 | 0.416 | 6.2 | 3/3 | 0.541 |
-| P7 | close | c4_w1_linreg_slope50_ha3_side | 634 | 0.062 | -0.354 | 0.416 | 6.2 | 3/3 | 0.541 |
-| M7 | asia | c4_w1_vwma_stack_slow_ha3_side | 1363 | 0.192 | -0.003 | 0.195 | 6.1 | 3/3 | 0.190 |
-| M7 | asia | c4_w1_vwma_stack_slow_ha3_hold3 | 1312 | 0.195 | 0.001 | 0.195 | 6.1 | 3/3 | 0.180 |
-| M7 | asia | c4_w1_ema_stack_slow_ha3_hold3 | 1732 | 0.167 | -0.025 | 0.192 | 6.0 | 3/3 | 0.165 |
-| M7 | asia | c4_w1_ema_stack_slow_ha3_side | 1771 | 0.164 | -0.028 | 0.192 | 6.0 | 3/3 | 0.158 |
-| M7 | asia | c4_w1_sma200_px_ha3_side | 2364 | 0.131 | -0.089 | 0.220 | 5.7 | 3/3 | 0.183 |
-| K7 | asia | c4_w1_ema200_px_ha3_side | 2911 | 0.101 | -0.046 | 0.147 | 5.7 | 4/4 | 0.212 |
-| K7 | asia | c4_w1_sma200_px_ha3_side | 2865 | 0.101 | -0.043 | 0.144 | 5.6 | 3/4 | 0.207 |
-| A7 | london | c4_mcmf_ha3_nodiv | 1136 | 0.087 | -0.245 | 0.332 | 5.6 | 3/3 | 0.364 |
-| P7 | pre | c4_w1_sma200_px_ha3_side | 321 | 0.207 | -0.379 | 0.586 | 5.6 | 3/3 | 0.600 |
-| P7 | pre | c4_w1_sma_stack_slow_ha3_hold3 | 168 | 0.378 | -0.143 | 0.521 | 5.6 | 3/3 | 0.572 |
-| P7 | pre | c4_w1_ema200_px_ha3_side | 333 | 0.194 | -0.406 | 0.600 | 5.5 | 3/3 | 0.618 |
-| K7 | asia | c4_fvg_cnt_ha3_side | 1429 | 0.150 | 0.001 | 0.148 | 5.5 | 3/4 | 0.248 |
-| P7 | pre | c4_w1_trix30_ha3_side | 314 | 0.213 | -0.357 | 0.570 | 5.5 | 3/3 | 0.688 |
-| K7 | asia | c4_fvgS_cnt_ha3_side | 486 | 0.244 | 0.024 | 0.220 | 5.5 | 4/4 | 0.224 |
-| P7 | asia | c4_w1_ema_stack_slow_ha3_hold3 | 3060 | 0.126 | 0.001 | 0.125 | 5.4 | 4/4 | 0.140 |
-| P7 | asia | c4_w1_vwma_stack_slow_ha3_side | 2422 | 0.140 | 0.017 | 0.124 | 5.4 | 4/4 | 0.143 |
+| K7 | asia | c4_w1_ema21_hold_ha3_hold3 | 4474 | 0.088 | 0.009 | 0.079 | 5.5 | 4/4 | 0.087 |
+| K7 | asia | c4_w1_ema21_hold_ha3_side | 6210 | 0.073 | 0.004 | 0.069 | 5.4 | 4/4 | 0.070 |
+| K7 | asia | c4_qqeS_ha3_ewith | 732 | 0.199 | 0.024 | 0.175 | 4.9 | 4/4 | 0.203 |
+| K7 | asia | c4_smie_ha3_ewith | 5122 | 0.077 | 0.010 | 0.067 | 4.8 | 4/4 | 0.085 |
+| K7 | asia | c4_kerS_abs_ha3_hi | 4726 | 0.081 | 0.010 | 0.071 | 4.7 | 4/4 | 0.035 |
+| K7 | asia | c4_tsi_ha3_ewith | 4150 | 0.092 | 0.010 | 0.081 | 4.5 | 4/4 | 0.102 |
+| A7 | close | c4_stc_ha3_divwith | 72 | 0.495 | -0.051 | 0.546 | 4.5 | 3/4 | 0.763 |
+| K7 | asia | c4_ichi_cloud_ha3_hold3 | 7934 | 0.068 | -0.007 | 0.075 | 4.4 | 4/4 | 0.066 |
+| K7 | asia | c4_qqeS_ha3_side | 10867 | 0.055 | -0.024 | 0.079 | 4.3 | 4/4 | 0.128 |
+| K7 | asia | c4_w1_ema100_px_ha3_side | 10892 | 0.057 | -0.030 | 0.088 | 4.3 | 4/4 | 0.157 |
+| K7 | asia | c4_smieS_ha3_ewith | 2690 | 0.104 | 0.017 | 0.088 | 4.3 | 4/4 | 0.073 |
+| K7 | asia | c4_tsiS_ha3_ewith | 2582 | 0.111 | 0.016 | 0.095 | 4.3 | 4/4 | 0.040 |
+| K7 | asia | c4_chandS_ha3_hold3 | 8784 | 0.066 | -0.014 | 0.080 | 4.2 | 4/4 | 0.125 |
+| K7 | asia | c4_rfilt_dir_ha3_side | 9633 | 0.061 | -0.018 | 0.079 | 4.2 | 4/4 | 0.066 |
+| K7 | asia | c4_turt20_ha3_hold3 | 7221 | 0.069 | -0.001 | 0.070 | 4.2 | 3/4 | 0.105 |
+| K7 | asia | c4_w1_ema50_px_ha3_side | 13031 | 0.046 | -0.045 | 0.091 | 4.2 | 4/4 | 0.142 |
+| K7 | asia | c4_kerS_dir_ha3_ewith | 1184 | 0.130 | 0.024 | 0.106 | 4.2 | 4/4 | 0.150 |
+| P7 | pre | c4_w1_cmf20_ha3_fresh5 | 387 | 0.241 | -0.006 | 0.247 | 4.1 | 4/4 | 0.476 |
+| K7 | asia | c4_stP_ha3_side | 9054 | 0.064 | -0.014 | 0.079 | 4.1 | 4/4 | 0.162 |
+| K7 | asia | c4_qqe_ha3_ewith | 1530 | 0.126 | 0.022 | 0.104 | 4.1 | 4/4 | 0.088 |
+| K7 | asia | c4_w1_trix30_ha3_side | 8416 | 0.069 | -0.013 | 0.082 | 4.1 | 4/4 | 0.140 |
+| K7 | asia | c4_w1_ema200_px_ha3_side | 9448 | 0.067 | -0.025 | 0.093 | 4.1 | 4/4 | 0.199 |
+| K7 | asia | c4_chandS_ha3_side | 9315 | 0.063 | -0.015 | 0.078 | 4.1 | 4/4 | 0.110 |
+| K7 | asia | c4_w1_macd19_39_9_line_ha3_side | 9833 | 0.057 | -0.013 | 0.070 | 4.0 | 4/4 | 0.122 |
+| P7 | asia | c4_w1_ema100_px_ha3_side | 18968 | 0.051 | -0.046 | 0.097 | 4.0 | 4/4 | 0.143 |
+| K7 | asia | c4_kerF_dir_ha3_eagainst | 65 | 0.371 | 0.031 | 0.341 | 4.0 | 4/4 | 0.330 |
+| K7 | asia | c4_qqeF_ha3_ewith | 5147 | 0.066 | 0.015 | 0.051 | 4.0 | 3/4 | 0.023 |
+| K7 | asia | c4_tsiF_ha3_ewith | 8032 | 0.056 | 0.006 | 0.050 | 4.0 | 3/4 | 0.052 |
+| K7 | asia | c4_stP_ha3_hold3 | 8780 | 0.065 | -0.012 | 0.076 | 4.0 | 4/4 | 0.147 |
+| K7 | asia | c4_turt55_ha3_hold3 | 5400 | 0.081 | 0.006 | 0.075 | 4.0 | 4/4 | 0.140 |
 
 ## B4 alternate bars: ha5
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2216; |t|>2: 915 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha5.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2249; |t|>2: 404 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha5.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_stPS_ha5_hold3 | 30831 | 0.64 | 0.080 | -0.024 | 0.103 [0.087, 0.120] | 12.2 | 4/4 | 0.110 | 0.121 |
-| c4_stPS_ha5_side | 31811 | 0.66 | 0.077 | -0.025 | 0.103 [0.086, 0.120] | 12.0 | 4/4 | 0.110 | 0.124 |
-| c4_w1_ema100_px_ha5_side | 37812 | 0.78 | 0.067 | -0.048 | 0.116 [0.097, 0.135] | 11.8 | 4/4 | 0.137 | 0.194 |
-| c4_w1_sma100_px_ha5_side | 37293 | 0.77 | 0.067 | -0.041 | 0.108 [0.089, 0.127] | 11.2 | 4/4 | 0.120 | 0.175 |
-| c4_stP_ha5_side | 34731 | 0.72 | 0.069 | -0.025 | 0.094 [0.076, 0.112] | 10.3 | 4/4 | 0.114 | 0.174 |
-| c4_lrc_slope_ha5_side | 29496 | 0.61 | 0.076 | -0.010 | 0.085 [0.069, 0.102] | 10.2 | 4/4 | 0.090 | 0.078 |
-| c4_w1_kama200_px_ha5_side | 37813 | 0.78 | 0.063 | -0.034 | 0.096 [0.077, 0.116] | 9.8 | 4/4 | 0.085 | 0.105 |
-| c4_w1_supertrend_14_4_ha5_side | 33689 | 0.70 | 0.069 | -0.018 | 0.086 [0.069, 0.104] | 9.8 | 3/4 | 0.099 | 0.153 |
-| c4_stP_ha5_hold3 | 33108 | 0.68 | 0.069 | -0.015 | 0.084 [0.066, 0.101] | 9.5 | 4/4 | 0.111 | 0.162 |
-| c4_tsiS_ha5_side | 36071 | 0.75 | 0.065 | -0.024 | 0.089 [0.070, 0.107] | 9.5 | 4/4 | 0.113 | 0.178 |
+| c4_rfilt_dir_ha5_side | 152916 | 0.80 | 0.035 | -0.025 | 0.060 [0.034, 0.087] | 4.5 | 4/4 | -0.005 | 0.033 |
+| c4_w1_vwma50_px_ha5_side | 166972 | 0.87 | 0.030 | -0.025 | 0.054 [0.029, 0.079] | 4.3 | 4/4 | 0.104 | 0.164 |
+| c4_w1_ema50_px_ha5_side | 166946 | 0.87 | 0.030 | -0.027 | 0.057 [0.030, 0.084] | 4.2 | 4/4 | 0.113 | 0.167 |
+| c4_stPS_ha5_side | 126917 | 0.66 | 0.042 | -0.015 | 0.057 [0.030, 0.085] | 4.1 | 4/4 | 0.114 | 0.135 |
+| c4_stPS_ha5_hold3 | 123277 | 0.64 | 0.043 | -0.014 | 0.057 [0.030, 0.084] | 4.1 | 4/4 | 0.114 | 0.132 |
+| c4_rfilt_dir_ha5_hold3 | 142653 | 0.74 | 0.036 | -0.017 | 0.053 [0.027, 0.079] | 4.0 | 4/4 | -0.014 | 0.031 |
+| c4_w1_donchian50_pos_ha5_side | 164377 | 0.86 | 0.030 | -0.024 | 0.054 [0.027, 0.081] | 4.0 | 4/4 | 0.092 | 0.156 |
+| c4_w1_sma50_px_ha5_side | 166461 | 0.87 | 0.029 | -0.022 | 0.051 [0.026, 0.077] | 4.0 | 4/4 | 0.126 | 0.183 |
+| c4_w1_rsi21_ha5_side | 169287 | 0.88 | 0.029 | -0.024 | 0.053 [0.026, 0.080] | 3.9 | 4/4 | 0.116 | 0.163 |
+| c4_w1_mfi21_ha5_ewith | 17015 | 0.09 | 0.081 | 0.017 | 0.064 [0.032, 0.096] | 3.9 | 4/4 | 0.098 | 0.088 |
 
 **top negative lift = candidate veto (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_stPS_ha5_against | 16540 | 0.34 | -0.025 | 0.077 | -0.103 [-0.120, -0.086] | -12.0 | 0/4 | -0.110 | -0.124 |
-| c4_stP_ha5_against | 13621 | 0.28 | -0.025 | 0.069 | -0.094 [-0.112, -0.076] | -10.3 | 0/4 | -0.114 | -0.174 |
-| c4_chandS_ha5_against | 11135 | 0.23 | -0.028 | 0.063 | -0.091 [-0.110, -0.072] | -9.4 | 0/4 | -0.089 | -0.169 |
-| c4_rfiltS_dir_ha5_against | 11310 | 0.23 | -0.022 | 0.062 | -0.084 [-0.102, -0.065] | -8.7 | 1/4 | -0.058 | -0.133 |
-| c4_ichi_futcloud_ha5_against | 11928 | 0.25 | -0.020 | 0.063 | -0.083 [-0.101, -0.064] | -8.7 | 1/4 | -0.115 | -0.185 |
-| c4_w1_ema_stack_slow_ha5_against | 15467 | 0.32 | -0.009 | 0.067 | -0.076 [-0.093, -0.059] | -8.7 | 0/4 | -0.089 | -0.087 |
-| c4_turt55_ha5_against | 8211 | 0.17 | -0.035 | 0.058 | -0.093 [-0.115, -0.072] | -8.6 | 0/4 | -0.131 | -0.163 |
-| c4_ichiS_cloud_ha5_against | 8231 | 0.17 | -0.034 | 0.058 | -0.092 [-0.114, -0.071] | -8.5 | 1/4 | -0.142 | -0.179 |
-| c4_w1_sma_stack_slow_ha5_against | 14003 | 0.29 | -0.012 | 0.064 | -0.076 [-0.094, -0.058] | -8.4 | 0/4 | -0.105 | -0.117 |
-| c4_ichiS_chikou_ha5_against | 9620 | 0.20 | -0.020 | 0.058 | -0.078 [-0.098, -0.058] | -7.7 | 0/4 | -0.098 | -0.153 |
+| c4_rfilt_dir_ha5_against | 38602 | 0.20 | -0.025 | 0.035 | -0.060 [-0.087, -0.034] | -4.5 | 0/4 | 0.005 | -0.033 |
+| c4_stPS_ha5_against | 64597 | 0.34 | -0.015 | 0.042 | -0.057 [-0.085, -0.030] | -4.1 | 0/4 | -0.114 | -0.135 |
+| c4_ob_in_ha5_fresh1 | 1854 | 0.01 | -0.083 | 0.024 | -0.107 [-0.158, -0.056] | -4.1 | 0/4 | -0.275 | -0.268 |
+| c4_almaS_slope_ha5_rise | 126551 | 0.66 | 0.015 | 0.039 | -0.024 [-0.037, -0.011] | -3.5 | 0/4 | -0.031 | -0.044 |
+| c4_w1_mfi14_ha5_rise | 112670 | 0.59 | 0.015 | 0.034 | -0.020 [-0.031, -0.008] | -3.5 | 0/4 | -0.039 | -0.057 |
+| c4_tsiS_ha5_eenter | 7436 | 0.04 | -0.030 | 0.025 | -0.055 [-0.086, -0.024] | -3.4 | 0/4 | -0.114 | -0.155 |
+| c4_w1_di21_ha5_rise | 109268 | 0.57 | 0.015 | 0.033 | -0.018 [-0.029, -0.008] | -3.4 | 0/4 | -0.040 | -0.067 |
+| c4_wt_ha5_rise | 139119 | 0.73 | 0.016 | 0.041 | -0.026 [-0.040, -0.011] | -3.4 | 0/4 | -0.040 | -0.061 |
+| c4_ichi_score_ha5_eagainst | 9765 | 0.05 | -0.029 | 0.026 | -0.054 [-0.086, -0.023] | -3.4 | 0/4 | -0.096 | -0.116 |
+| c4_stc_ha5_side | 136913 | 0.72 | 0.014 | 0.046 | -0.032 [-0.051, -0.013] | -3.3 | 1/4 | -0.079 | -0.078 |
 
-**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 1271 of 12108 session-condition cells pass (chance-level expectation under independence ~150 at |t|>2.5 before the sign filters)**
+**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 374 of 13029 session-condition cells pass (chance-level expectation under independence ~161 at |t|>2.5 before the sign filters)**
 
 | session | cond | n_yes | lift R | shrunk | t | yrs+ | L6M lift |
 |---|---|---|---|---|---|---|---|
-| asia | c4_fvgS_cnt_ha5_side | 2026 | 0.196 | 0.169 | 9.8 | 4/4 | 0.292 |
-| asia | c4_w1_ema100_px_ha5_side | 12679 | 0.160 | 0.146 | 10.3 | 4/4 | 0.202 |
-| asia | c4_w1_stoch21_ha5_divwith | 1157 | -0.164 | -0.129 | -6.3 | 0/4 | -0.250 |
-| asia | c4_qqeS_ha5_ewith | 1627 | 0.149 | 0.123 | 6.5 | 4/4 | 0.253 |
-| asia | c4_sd_cnt_ha5_side | 9538 | 0.127 | 0.118 | 9.4 | 4/4 | 0.158 |
-| asia | c4_w1_sma100_px_ha5_side | 12588 | 0.124 | 0.113 | 8.0 | 4/4 | 0.162 |
-| close | c4_stc_ha5_divwith | 263 | 0.514 | 0.234 | 9.4 | 3/3 | 0.619 |
-| close | c4_tsi_ha5_divwith | 220 | 0.497 | 0.210 | 8.5 | 3/3 | 0.622 |
-| close | c4_stcS_ha5_divwith | 317 | 0.349 | 0.169 | 6.8 | 3/3 | 0.494 |
-| close | c4_rviS_ha5_divwith | 353 | 0.329 | 0.164 | 6.6 | 3/3 | 0.452 |
-| close | c4_obF_in_ha5_against | 496 | 0.287 | 0.161 | 6.5 | 3/3 | 0.460 |
-| close | c4_wtS_ha5_divwith | 181 | 0.432 | 0.160 | 6.6 | 3/3 | 0.608 |
-| london | c4_tsiS_ha5_eagainst | 698 | -0.226 | -0.154 | -6.6 | 0/4 | -0.305 |
-| london | c4_w1_boll40_pctb_ha5_side | 12858 | 0.157 | 0.131 | 7.1 | 4/4 | 0.189 |
-| london | c4_w1_vwma50_px_ha5_side | 12813 | 0.154 | 0.129 | 7.0 | 4/4 | 0.167 |
-| london | c4_stPS_ha5_hold3 | 9238 | 0.136 | 0.124 | 8.9 | 4/4 | 0.109 |
-| london | c4_krS_px_ha5_side | 12895 | 0.146 | 0.121 | 6.5 | 4/4 | 0.208 |
-| london | c4_stPS_ha5_against | 5201 | -0.132 | -0.121 | -8.6 | 0/4 | -0.115 |
-| nyam | c4_kerS_abs_ha5_hi_z1 | 592 | 0.209 | 0.129 | 5.3 | 4/4 | 0.161 |
-| nyam | c4_w1_vortex14_ha5_divwith | 963 | -0.172 | -0.124 | -5.6 | 0/4 | -0.135 |
-| nyam | c4_w1_mfi21_ha5_ewith | 938 | 0.178 | 0.120 | 5.1 | 4/4 | 0.097 |
-| nyam | c4_sdS_near_ha5_side | 551 | -0.172 | -0.103 | -4.2 | 0/4 | -0.305 |
-| nyam | c4_w1_aroon50_ha5_ewith | 1759 | 0.124 | 0.099 | 4.9 | 4/4 | 0.132 |
-| nyam | c4_w1_cmo14_ha5_divwith | 1009 | -0.125 | -0.091 | -4.1 | 0/4 | -0.076 |
-| nypm | c4_w1_vwma100_px_ha5_nodiv | 4625 | -0.311 | -0.169 | -6.8 | 0/4 | -0.392 |
-| nypm | c4_lrc_slope_ha5_side | 3383 | 0.176 | 0.135 | 6.4 | 4/4 | 0.291 |
-| nypm | c4_stPS_ha5_hold3 | 3392 | 0.172 | 0.131 | 6.2 | 4/4 | 0.194 |
-| nypm | c4_stPS_ha5_side | 3453 | 0.169 | 0.129 | 6.1 | 4/4 | 0.213 |
-| nypm | c4_stPS_ha5_against | 1545 | -0.169 | -0.129 | -6.1 | 0/4 | -0.213 |
-| nypm | c4_ob_in_ha5_fresh5 | 241 | -0.308 | -0.129 | -5.2 | 0/4 | -0.201 |
-| pre | c4_w1_supertrend_14_4_ha5_side | 1058 | 0.449 | 0.204 | 8.2 | 3/3 | 0.349 |
-| pre | c4_lrcF_slope_ha5_side | 1017 | 0.430 | 0.200 | 8.0 | 3/3 | 0.449 |
-| pre | c4_w1_linreg_slope50_ha5_side | 1017 | 0.430 | 0.200 | 8.0 | 3/3 | 0.449 |
-| pre | c4_halftS_ha5_hold3 | 1045 | 0.429 | 0.196 | 7.9 | 3/3 | 0.405 |
-| pre | c4_stP_ha5_against | 402 | -0.442 | -0.195 | -7.9 | 0/3 | -0.380 |
-| pre | c4_stP_ha5_side | 1097 | 0.442 | 0.195 | 7.9 | 3/3 | 0.380 |
+| asia | c4_w1_cmo21_ha5_eagainst | 405 | -0.177 | -0.107 | -4.4 | 0/4 | -0.079 |
+| asia | c4_qqeS_ha5_ewith | 5469 | 0.133 | 0.091 | 3.9 | 4/4 | 0.168 |
+| asia | c4_w1_mfi21_ha5_ewith | 5823 | 0.114 | 0.086 | 4.0 | 4/4 | 0.161 |
+| asia | c4_w1_stoch21_ha5_divwith | 4417 | -0.105 | -0.083 | -4.1 | 0/4 | -0.182 |
+| asia | c4_w1_ema100_px_ha5_side | 46739 | 0.096 | 0.080 | 4.4 | 4/4 | 0.181 |
+| asia | c4_w1_demarker21_ha5_eagainst | 1734 | -0.098 | -0.080 | -4.1 | 0/4 | -0.092 |
+| close | c4_kerF_dir_ha5_divwith | 1525 | 0.134 | 0.070 | 2.8 | 4/4 | 0.044 |
+| close | c4_nweF_ha5_ewith | 383 | 0.207 | 0.066 | 2.8 | 4/4 | 0.268 |
+| close | c4_obF_in_ha5_against | 2780 | 0.104 | 0.065 | 2.7 | 4/4 | 0.358 |
+| close | c4_obS_dres_ha5_hi | 2680 | -0.101 | -0.064 | -2.6 | 0/4 | -0.079 |
+| close | c4_hullS_ha5_fresh5 | 1755 | 0.100 | 0.063 | 2.6 | 4/4 | 0.115 |
+| close | c4_zlema_px_ha5_divwith | 1722 | 0.113 | 0.063 | 2.5 | 4/4 | 0.008 |
+| london | c4_smie_ha5_nodiv | 49721 | -0.113 | -0.083 | -3.8 | 0/4 | -0.065 |
+| london | c4_w1_eom14_ha5_divwith | 5735 | 0.103 | 0.078 | 3.6 | 4/4 | 0.188 |
+| london | c4_rfilt_dir_ha5_against | 11164 | -0.096 | -0.077 | -3.9 | 0/4 | -0.032 |
+| london | c4_rfilt_dir_ha5_side | 46134 | 0.096 | 0.077 | 3.9 | 4/4 | 0.032 |
+| london | c4_tsiF_ha5_nodiv | 49023 | -0.102 | -0.077 | -3.5 | 0/4 | -0.049 |
+| london | c4_smiS_ha5_nodiv | 48088 | -0.095 | -0.074 | -3.6 | 0/4 | -0.049 |
+| nyam | c4_w1_atr_pct250_ha5_hi | 23789 | 0.247 | 0.085 | 3.6 | 4/4 | 0.411 |
+| nyam | c4_w1_vortex14_ha5_divwith | 2831 | -0.141 | -0.083 | -3.4 | 0/4 | -0.144 |
+| nyam | c4_crsi_ha5_eagainst_z2 | 734 | -0.150 | -0.073 | -2.9 | 0/4 | -0.146 |
+| nyam | c4_w1_cmo14_ha5_divwith | 2916 | -0.125 | -0.072 | -2.9 | 0/4 | -0.095 |
+| nyam | c4_crsiF_ha5_eagainst | 246 | -0.254 | -0.071 | -3.2 | 0/4 | -0.271 |
+| nyam | c4_sdS_near_ha5_side | 1387 | -0.122 | -0.070 | -2.8 | 0/4 | -0.221 |
+| nypm | c4_obF_cnt_ha5_fresh5 | 944 | -0.170 | -0.075 | -3.0 | 0/4 | -0.306 |
+| nypm | c4_stAS_ha5_fresh5 | 1151 | -0.155 | -0.072 | -2.9 | 0/4 | -0.223 |
+| nypm | c4_w1_ema_stack_slow_ha5_hold3 | 14516 | 0.112 | 0.072 | 3.0 | 4/4 | 0.258 |
+| nypm | c4_w1_demarker14_ha5_eenter | 3791 | -0.090 | -0.071 | -3.5 | 0/4 | -0.063 |
+| nypm | c4_w1_ema100_px_ha5_fresh5 | 2884 | -0.103 | -0.069 | -2.9 | 0/4 | -0.265 |
+| nypm | c4_lrcS_slope_ha5_side | 15364 | 0.107 | 0.067 | 2.7 | 4/4 | 0.235 |
+| pre | c4_tsiS_ha5_eenter | 514 | -0.275 | -0.096 | -4.0 | 0/4 | -0.337 |
+| pre | c4_w1_kama200_px_ha5_divwith | 814 | -0.305 | -0.078 | -3.6 | 0/4 | -0.258 |
+| pre | c4_w1_ema200_px_ha5_divwith | 839 | -0.287 | -0.074 | -3.4 | 0/4 | -0.424 |
+| pre | c4_seb_ha5_ewith | 1582 | -0.122 | -0.073 | -3.0 | 0/4 | -0.159 |
+| pre | c4_w1_sma34_px_ha5_divwith | 923 | -0.258 | -0.072 | -3.2 | 0/4 | -0.257 |
+| pre | c4_w1_ema100_px_ha5_divwith | 854 | -0.281 | -0.071 | -3.3 | 0/4 | -0.251 |
 
-**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (1445 of 46176 cell-conditions pass; chance at t>2.5 alone ~286)**
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (749 of 63584 cell-conditions pass; chance at t>2.5 alone ~394)**
 
 | book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| M7 | asia | c4_fvg_cnt_ha5_side | 1096 | 0.261 | -0.015 | 0.276 | 8.5 | 3/3 | 0.321 |
-| M7 | asia | c4_fvgS_cnt_ha5_side | 352 | 0.408 | 0.044 | 0.364 | 8.1 | 3/3 | 0.384 |
-| M7 | asia | c4_sd_cnt_ha5_side | 1791 | 0.181 | -0.056 | 0.237 | 7.3 | 3/3 | 0.234 |
-| P7 | pre | c4_w1_supertrend_14_4_ha5_side | 299 | 0.270 | -0.423 | 0.693 | 7.1 | 3/3 | 0.627 |
-| P7 | close | c4_w1_aroon50_ha5_divwith | 88 | 0.507 | -0.108 | 0.615 | 7.1 | 3/3 | 0.682 |
-| P7 | asia | c4_fvg_cnt_ha5_side | 2017 | 0.174 | 0.011 | 0.163 | 7.0 | 3/4 | 0.212 |
-| M7 | asia | c4_obF_cnt_ha5_side | 1825 | 0.174 | -0.053 | 0.227 | 7.0 | 3/3 | 0.244 |
-| A7 | london | c4_w1_donchian50_width_ha5_hi | 903 | 0.147 | -0.202 | 0.349 | 7.0 | 3/3 | 0.366 |
-| M7 | asia | c4_w1_ema100_px_ha5_side | 2410 | 0.138 | -0.135 | 0.273 | 6.8 | 3/3 | 0.228 |
-| P7 | london | c4_fvg_dsup_ha5_hi | 951 | 0.227 | -0.128 | 0.355 | 6.8 | 4/4 | 0.404 |
-| P7 | pre | c4_stP_ha5_side | 315 | 0.237 | -0.430 | 0.667 | 6.6 | 3/3 | 0.722 |
-| P7 | pre | c4_lrcF_slope_ha5_side | 307 | 0.247 | -0.412 | 0.659 | 6.6 | 3/3 | 0.835 |
-| P7 | pre | c4_w1_linreg_slope50_ha5_side | 307 | 0.247 | -0.412 | 0.659 | 6.6 | 3/3 | 0.835 |
-| P7 | pre | c4_w1_macd19_39_9_line_ha5_side | 330 | 0.217 | -0.466 | 0.683 | 6.5 | 3/3 | 0.776 |
-| P7 | pre | c4_w1_ichi_std_cloud_ha5_side | 319 | 0.228 | -0.428 | 0.655 | 6.4 | 3/3 | 0.732 |
-| P7 | pre | c4_ichi_cloud_ha5_side | 319 | 0.228 | -0.428 | 0.655 | 6.4 | 3/3 | 0.732 |
-| P7 | pre | c4_tsiS_ha5_side | 329 | 0.215 | -0.451 | 0.666 | 6.4 | 3/3 | 0.776 |
-| P7 | asia | c4_w1_ema_stack_slow_ha5_hold3 | 2839 | 0.141 | -0.004 | 0.144 | 6.3 | 4/4 | 0.125 |
-| P7 | pre | c4_w1_ichi_slow_cloud_ha5_side | 308 | 0.239 | -0.396 | 0.635 | 6.3 | 3/3 | 0.628 |
-| P7 | pre | c4_ichiS_cloud_ha5_side | 308 | 0.239 | -0.396 | 0.635 | 6.3 | 3/3 | 0.628 |
-| M7 | asia | c4_w1_ema_stack_slow_ha5_hold3 | 1634 | 0.177 | -0.024 | 0.201 | 6.3 | 3/3 | 0.117 |
-| P7 | asia | c4_ob_cnt_ha5_side | 3173 | 0.131 | -0.013 | 0.144 | 6.2 | 4/4 | 0.186 |
-| K7 | asia | c4_w1_ema100_px_ha5_side | 2832 | 0.108 | -0.051 | 0.158 | 6.2 | 4/4 | 0.221 |
-| M7 | asia | c4_w1_ema_stack_slow_ha5_side | 1651 | 0.174 | -0.023 | 0.197 | 6.2 | 3/3 | 0.101 |
-| P7 | london | c4_chand_ha5_side | 3875 | 0.079 | -0.197 | 0.275 | 6.2 | 4/4 | 0.298 |
-| M7 | close | c4_stc_ha5_divwith | 72 | 0.541 | -0.056 | 0.597 | 6.1 | 3/3 | 0.658 |
-| P7 | pre | c4_w1_vwma100_px_ha5_side | 349 | 0.185 | -0.491 | 0.676 | 6.1 | 3/3 | 0.736 |
-| P7 | asia | c4_w1_ema100_px_ha5_side | 4140 | 0.110 | -0.054 | 0.164 | 6.0 | 4/4 | 0.206 |
-| P7 | asia | c4_obS_cnt_ha5_side | 3101 | 0.131 | -0.007 | 0.138 | 6.0 | 3/4 | 0.208 |
-| P7 | asia | c4_w1_ema_stack_slow_ha5_side | 2888 | 0.136 | -0.001 | 0.137 | 6.0 | 4/4 | 0.112 |
+| K7 | asia | c4_w1_keltner40_pos_ha5_ewith | 1102 | 0.185 | 0.020 | 0.165 | 4.8 | 4/4 | 0.118 |
+| K7 | asia | c4_w1_rsi14_ha5_side | 11642 | 0.051 | -0.029 | 0.081 | 4.7 | 4/4 | 0.144 |
+| K7 | asia | c4_rsima14_ha5_side | 11643 | 0.051 | -0.029 | 0.081 | 4.7 | 4/4 | 0.144 |
+| K7 | asia | c4_qqeS_ha5_ewith | 772 | 0.199 | 0.023 | 0.175 | 4.7 | 3/4 | 0.282 |
+| A7 | nypm | c4_w1_ema_stack_slow_ha5_hold3 | 2914 | 0.066 | -0.200 | 0.267 | 4.7 | 4/4 | 0.439 |
+| K7 | asia | c4_w1_demarker21_ha5_ewith | 3989 | 0.093 | 0.011 | 0.082 | 4.6 | 4/4 | 0.044 |
+| K7 | asia | c4_don55_pos_ha5_eenter | 421 | 0.198 | 0.028 | 0.170 | 4.6 | 4/4 | 0.115 |
+| K7 | asia | c4_tsiS_ha5_side | 8719 | 0.071 | -0.019 | 0.089 | 4.6 | 4/4 | 0.151 |
+| K7 | asia | c4_qqe_ha5_side | 10167 | 0.058 | -0.019 | 0.077 | 4.6 | 4/4 | 0.125 |
+| K7 | asia | c4_w1_vwmacd_ha5_side | 8955 | 0.067 | -0.017 | 0.084 | 4.5 | 4/4 | 0.149 |
+| A7 | close | c4_w1_demarker7_ha5_divwith | 125 | 0.395 | -0.062 | 0.457 | 4.5 | 4/4 | 0.336 |
+| K7 | asia | c4_qqeF_ha5_ewith | 4100 | 0.085 | 0.013 | 0.072 | 4.5 | 4/4 | 0.095 |
+| K7 | asia | c4_qqeS_ha5_side | 9324 | 0.065 | -0.019 | 0.084 | 4.5 | 4/4 | 0.139 |
+| K7 | asia | c4_smieS_ha5_side | 9456 | 0.063 | -0.018 | 0.081 | 4.5 | 4/4 | 0.131 |
+| K7 | asia | c4_w1_ema50_px_ha5_side | 10332 | 0.059 | -0.025 | 0.084 | 4.4 | 4/4 | 0.165 |
+| K7 | asia | c4_w1_cmo21_ha5_ewith | 1967 | 0.118 | 0.020 | 0.098 | 4.4 | 4/4 | 0.063 |
+| K7 | asia | c4_w1_rsi7_ha5_ewith | 4960 | 0.072 | 0.013 | 0.058 | 4.4 | 4/4 | 0.051 |
+| K7 | asia | c4_rsima7_ha5_ewith | 4960 | 0.072 | 0.013 | 0.058 | 4.4 | 4/4 | 0.051 |
+| A7 | close | c4_zlema_px_ha5_divwith | 176 | 0.323 | -0.069 | 0.392 | 4.4 | 4/4 | 0.596 |
+| K7 | asia | c4_w1_ema21_hold_ha5_side | 5392 | 0.078 | 0.007 | 0.071 | 4.4 | 4/4 | 0.069 |
+| K7 | asia | c4_kr_dir_ha5_side | 11380 | 0.051 | -0.023 | 0.074 | 4.4 | 4/4 | 0.125 |
+| K7 | asia | c4_don55_pos_ha5_ewith | 635 | 0.176 | 0.026 | 0.150 | 4.4 | 4/4 | 0.146 |
+| K7 | asia | c4_w1_ema100_px_ha5_side | 9206 | 0.070 | -0.026 | 0.096 | 4.4 | 4/4 | 0.195 |
+| K7 | asia | c4_w1_sma100_px_ha5_side | 9131 | 0.069 | -0.022 | 0.091 | 4.4 | 4/4 | 0.182 |
+| K7 | asia | c4_w1_macd19_39_9_line_ha5_side | 8757 | 0.069 | -0.017 | 0.086 | 4.4 | 4/4 | 0.152 |
+| K7 | asia | c4_w1_donchian50_pos_ha5_eenter | 386 | 0.194 | 0.028 | 0.166 | 4.3 | 4/4 | 0.172 |
+| K7 | asia | c4_w1_di21_ha5_side | 10353 | 0.057 | -0.020 | 0.077 | 4.3 | 4/4 | 0.133 |
+| K7 | asia | c4_qqe_ha5_ewith | 1663 | 0.132 | 0.020 | 0.112 | 4.3 | 4/4 | 0.065 |
+| K7 | asia | c4_wtS_ha5_side | 9400 | 0.060 | -0.013 | 0.073 | 4.3 | 4/4 | 0.115 |
+| K7 | asia | c4_w1_trix15_ha5_side | 8599 | 0.067 | -0.013 | 0.080 | 4.3 | 4/4 | 0.148 |
 
 ## B4 alternate bars: ha60
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2248; |t|>2: 1423 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha60.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2248; |t|>2: 0 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha60.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_rfiltS_dir_ha60_hold3 | 23768 | 0.49 | 0.093 | -0.007 | 0.099 [0.083, 0.115] | 12.2 | 4/4 | 0.044 | 0.025 |
-| c4_w1_eom14_ha60_side | 27095 | 0.56 | 0.086 | -0.014 | 0.100 [0.084, 0.116] | 12.1 | 4/4 | 0.133 | 0.111 |
-| c4_w1_demarker14_ha60_side | 27190 | 0.56 | 0.084 | -0.012 | 0.095 [0.079, 0.111] | 11.6 | 4/4 | 0.116 | 0.066 |
-| c4_w1_boll10_pctb_ha60_side | 30645 | 0.63 | 0.077 | -0.019 | 0.096 [0.080, 0.113] | 11.3 | 4/4 | 0.096 | 0.126 |
-| c4_smieF_ha60_side | 28863 | 0.60 | 0.080 | -0.013 | 0.093 [0.076, 0.109] | 11.1 | 4/4 | 0.098 | 0.115 |
-| c4_w1_fisher5_ha60_side | 27978 | 0.58 | 0.081 | -0.011 | 0.091 [0.075, 0.108] | 11.0 | 4/4 | 0.101 | 0.123 |
-| c4_krF_dir_ha60_side | 28006 | 0.61 | 0.074 | -0.020 | 0.094 [0.077, 0.111] | 10.9 | 4/4 | 0.117 | 0.131 |
-| c4_w1_keltner10_pos_ha60_side | 30690 | 0.63 | 0.075 | -0.015 | 0.091 [0.074, 0.107] | 10.7 | 4/4 | 0.096 | 0.116 |
-| c4_mcgF_px_ha60_side | 31229 | 0.65 | 0.074 | -0.016 | 0.091 [0.074, 0.108] | 10.7 | 4/4 | 0.102 | 0.111 |
-| c4_mcgF_slope_ha60_side | 31229 | 0.65 | 0.074 | -0.016 | 0.091 [0.074, 0.108] | 10.7 | 4/4 | 0.102 | 0.111 |
+| c4_wt_ha60_side | 26568 | 0.55 | nan | nan | nan [nan, nan] | nan | 1/4 | nan | nan |
+| c4_wt_ha60_sig | 29532 | 0.61 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_rise | 31180 | 0.64 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_fresh5 | 17255 | 0.36 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_ewith_z1 | 3831 | 0.08 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_eagainst_z1 | 2365 | 0.05 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_eleave_z1 | 1409 | 0.03 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_eenter_z1 | 1496 | 0.03 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_ewith_z2 | 7632 | 0.16 | nan | nan | nan [nan, nan] | nan | 1/4 | nan | nan |
+| c4_wt_ha60_eagainst_z2 | 5284 | 0.11 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
 
 **top negative lift = candidate veto (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_rfiltS_dir_ha60_against | 19419 | 0.40 | -0.009 | 0.077 | -0.086 [-0.102, -0.069] | -10.3 | 0/4 | -0.044 | -0.024 |
-| c4_nweF_ha60_eleave | 1978 | 0.05 | -0.165 | 0.049 | -0.214 [-0.255, -0.173] | -10.2 | 0/4 | -0.214 | -0.244 |
-| c4_qqemod_ha60_against | 13913 | 0.29 | -0.023 | 0.069 | -0.092 [-0.110, -0.074] | -10.2 | 0/4 | -0.144 | -0.134 |
-| c4_nweF_ha60_fresh5 | 2521 | 0.06 | -0.138 | 0.050 | -0.188 [-0.224, -0.152] | -10.2 | 1/4 | -0.229 | -0.240 |
-| c4_sslhyb_ha60_against | 15157 | 0.31 | -0.018 | 0.070 | -0.088 [-0.106, -0.071] | -10.0 | 1/4 | -0.123 | -0.097 |
-| c4_pdS_ha60_side | 20229 | 0.43 | -0.008 | 0.075 | -0.083 [-0.099, -0.066] | -9.9 | 0/4 | -0.089 | -0.117 |
-| c4_crsiF_ha60_eleave | 6492 | 0.14 | -0.063 | 0.054 | -0.117 [-0.141, -0.093] | -9.7 | 1/4 | -0.102 | -0.095 |
-| c4_sqzmS_mom_ha60_nodiv | 40373 | 0.85 | 0.025 | 0.132 | -0.107 [-0.129, -0.085] | -9.5 | 0/4 | -0.068 | -0.039 |
-| c4_kst_ha60_nodiv | 40157 | 0.85 | 0.023 | 0.130 | -0.107 [-0.130, -0.085] | -9.3 | 0/4 | -0.137 | -0.122 |
-| c4_hilo_ha60_against | 20312 | 0.42 | -0.002 | 0.075 | -0.077 [-0.093, -0.061] | -9.3 | 1/4 | -0.074 | -0.089 |
+| c4_wt_ha60_side | 26568 | 0.55 | nan | nan | nan [nan, nan] | nan | 1/4 | nan | nan |
+| c4_wt_ha60_sig | 29532 | 0.61 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_rise | 31180 | 0.64 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_fresh5 | 17255 | 0.36 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_ewith_z1 | 3831 | 0.08 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_eagainst_z1 | 2365 | 0.05 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_eleave_z1 | 1409 | 0.03 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_eenter_z1 | 1496 | 0.03 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
+| c4_wt_ha60_ewith_z2 | 7632 | 0.16 | nan | nan | nan [nan, nan] | nan | 1/4 | nan | nan |
+| c4_wt_ha60_eagainst_z2 | 5284 | 0.11 | nan | nan | nan [nan, nan] | nan | 0/4 | nan | nan |
 
-**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 1970 of 12506 session-condition cells pass (chance-level expectation under independence ~155 at |t|>2.5 before the sign filters)**
+**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 132 of 12506 session-condition cells pass (chance-level expectation under independence ~155 at |t|>2.5 before the sign filters)**
 
 | session | cond | n_yes | lift R | shrunk | t | yrs+ | L6M lift |
 |---|---|---|---|---|---|---|---|
-| asia | c4_fvg_cnt_ha60_fresh5 | 335 | 0.384 | 0.218 | 8.8 | 4/4 | 0.487 |
-| asia | c4_lrc_slope_ha60_fresh5 | 465 | 0.305 | 0.190 | 7.8 | 4/4 | 0.285 |
-| asia | c4_w1_keltner20_pos_ha60_eleave | 1191 | -0.234 | -0.187 | -9.3 | 0/4 | -0.320 |
-| asia | c4_qqeS_ha60_eenter | 859 | 0.253 | 0.185 | 8.3 | 4/4 | 0.200 |
-| asia | c4_fvgF_in_ha60_fresh5 | 475 | 0.283 | 0.175 | 7.2 | 4/4 | 0.365 |
-| asia | c4_ob_in_ha60_against | 1814 | 0.184 | 0.155 | 8.5 | 4/4 | 0.174 |
-| close | c4_fvgF_near_ha60_hold3 | 108 | 0.665 | 0.231 | 9.7 | 3/3 | 0.702 |
-| close | c4_w1_ema8_px_ha60_divwith | 388 | -0.414 | -0.225 | -9.0 | 0/3 | -0.336 |
-| close | c4_stc_ha60_eleave | 180 | -0.530 | -0.225 | -9.1 | 0/3 | -0.409 |
-| close | c4_t3_px_ha60_divwith | 449 | -0.402 | -0.223 | -9.0 | 0/3 | -0.360 |
-| close | c4_mcgF_px_ha60_divwith | 383 | -0.404 | -0.218 | -8.8 | 0/3 | -0.320 |
-| close | c4_krS_dir_ha60_rise | 1663 | 0.342 | 0.212 | 8.8 | 3/3 | 0.547 |
-| london | c4_w1_vwma21_px_ha60_nodiv | 13727 | 0.297 | 0.221 | 10.1 | 4/4 | 0.319 |
-| london | c4_w1_vwma100_px_ha60_nodiv | 12343 | 0.303 | 0.207 | 8.9 | 4/4 | 0.257 |
-| london | c4_stPS_ha60_fresh5 | 285 | 0.382 | 0.192 | 7.7 | 4/4 | 0.384 |
-| london | c4_copp_ha60_divwith | 1624 | 0.231 | 0.190 | 9.9 | 4/4 | 0.228 |
-| london | c4_w1_pat_pin_ha60_nodiv | 14432 | 0.405 | 0.189 | 7.6 | 3/3 | 0.283 |
-| london | c4_stc_ha60_divwith | 1220 | 0.240 | 0.188 | 9.2 | 4/4 | 0.303 |
-| nyam | c4_w1_donchian50_pos_ha60_ewith | 158 | 0.663 | 0.288 | 11.6 | 4/4 | 0.773 |
-| nyam | c4_don55_pos_ha60_ewith | 159 | 0.654 | 0.282 | 11.4 | 4/4 | 0.773 |
-| nyam | c4_ob_cnt_ha60_fresh5 | 293 | -0.278 | -0.146 | -5.8 | 0/4 | -0.549 |
-| nyam | c4_lrc_slope_ha60_fresh5 | 238 | -0.346 | -0.145 | -5.9 | 0/4 | -0.304 |
-| nyam | c4_w1_cci14_ha60_nodiv | 6922 | -0.185 | -0.138 | -6.3 | 0/4 | -0.260 |
-| nyam | c4_structS_ha60_fresh1 | 288 | 0.285 | 0.135 | 5.4 | 4/4 | 0.067 |
-| nypm | c4_w1_hma200_px_ha60_nodiv | 2900 | -0.411 | -0.254 | -10.4 | 0/4 | -0.339 |
-| nypm | c4_w1_ema21_hold_ha60_hold3 | 772 | 0.355 | 0.246 | 10.7 | 4/4 | 0.370 |
-| nypm | c4_kerS_abs_ha60_hi_z1 | 424 | 0.384 | 0.232 | 9.5 | 4/4 | 0.166 |
-| nypm | c4_w1_wave_long_hist_ha60_nodiv | 3873 | -0.320 | -0.223 | -9.7 | 0/4 | -0.227 |
-| nypm | c4_wtF_ha60_nodiv | 4319 | -0.337 | -0.222 | -9.4 | 0/4 | -0.181 |
-| nypm | c4_w1_di14_ha60_nodiv | 4427 | -0.343 | -0.219 | -9.1 | 0/4 | -0.107 |
-| pre | c4_lrc_slope_ha60_rise | 770 | 0.536 | 0.250 | 10.0 | 3/3 | 0.594 |
-| pre | c4_wtS_ha60_ewith_z1 | 123 | 0.635 | 0.204 | 8.7 | 3/3 | 0.738 |
-| pre | c4_smie_ha60_eagainst | 326 | -0.484 | -0.200 | -8.1 | 0/3 | -0.511 |
-| pre | c4_rfiltF_ha60_side | 933 | 0.414 | 0.200 | 8.0 | 3/3 | 0.263 |
-| pre | c4_rfilt_ha60_side | 951 | 0.417 | 0.200 | 8.0 | 3/3 | 0.245 |
-| pre | c4_rfiltS_ha60_side | 963 | 0.407 | 0.194 | 7.8 | 3/3 | 0.313 |
+| close | c4_fvgF_near_ha60_hold3 | 108 | 0.665 | 0.095 | 5.4 | 3/3 | 0.702 |
+| close | c4_ichiS_futcloud_ha60_fresh5 | 180 | 0.521 | 0.087 | 4.7 | 3/3 | 0.076 |
+| close | c4_krS_dir_ha60_rise | 1663 | 0.342 | 0.083 | 3.9 | 3/3 | 0.547 |
+| close | c4_sdS_near_ha60_against | 611 | -0.313 | -0.074 | -3.5 | 0/3 | -0.443 |
+| close | c4_stc_ha60_eleave | 180 | -0.530 | -0.073 | -4.2 | 0/3 | -0.409 |
+| close | c4_chand_ha60_side | 1381 | -0.263 | -0.069 | -3.1 | 0/3 | -0.416 |
+| nyam | c4_w1_donchian50_pos_ha60_ewith | 158 | 0.663 | 0.167 | 7.7 | 4/4 | 0.773 |
+| nyam | c4_don55_pos_ha60_ewith | 159 | 0.654 | 0.163 | 7.5 | 4/4 | 0.773 |
+| nyam | c4_w1_cci14_ha60_nodiv | 6922 | -0.185 | -0.093 | -3.7 | 0/4 | -0.260 |
+| nyam | c4_ob_cnt_ha60_fresh5 | 293 | -0.278 | -0.085 | -3.7 | 0/4 | -0.549 |
+| nyam | c4_lrc_slope_ha60_fresh5 | 238 | -0.346 | -0.084 | -3.9 | 0/4 | -0.304 |
+| nyam | c4_w1_vwmacd_ha60_divwith | 707 | -0.184 | -0.078 | -3.2 | 0/4 | -0.109 |
+| nypm | c4_kerS_dir_ha60_eleave | 169 | -0.433 | -0.116 | -5.2 | 0/3 | -0.537 |
+| nypm | c4_sebS_ha60_eagainst | 329 | -0.254 | -0.088 | -3.7 | 0/4 | -0.257 |
+| nypm | c4_wtF_ha60_nodiv | 4319 | -0.337 | -0.081 | -3.8 | 0/4 | -0.181 |
+| nypm | c4_w1_vwmacd_ha60_divwith | 554 | 0.267 | 0.079 | 3.5 | 4/4 | 0.159 |
+| nypm | c4_lrcF_ha60_eagainst | 443 | -0.272 | -0.078 | -3.5 | 0/4 | -0.314 |
+| nypm | c4_w1_sma34_px_ha60_nodiv | 4378 | -0.286 | -0.078 | -3.5 | 0/4 | -0.197 |
+| pre | c4_zlemaF_slope_ha60_fresh5 | 695 | 0.279 | 0.083 | 3.6 | 3/3 | 0.243 |
+| pre | c4_w1_hma200_px_ha60_side | 562 | 0.405 | 0.079 | 4.0 | 3/3 | 0.373 |
+| pre | c4_lrc_slope_ha60_rise | 770 | 0.536 | 0.076 | 4.4 | 3/3 | 0.594 |
+| pre | c4_t3F_slope_ha60_fresh5 | 648 | 0.292 | 0.074 | 3.4 | 3/3 | 0.161 |
+| pre | c4_utbotS_ha60_fresh5 | 102 | 0.497 | 0.072 | 4.1 | 3/3 | 0.512 |
+| pre | c4_qqeS_ha60_sig | 813 | 0.335 | 0.071 | 3.5 | 3/3 | 0.309 |
 
-**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (4068 of 51931 cell-conditions pass; chance at t>2.5 alone ~321)**
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (861 of 51931 cell-conditions pass; chance at t>2.5 alone ~321)**
 
 | book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| P7 | nypm | c4_w1_vwmacd_ha60_divwith | 132 | 0.652 | -0.041 | 0.693 | 10.4 | 3/3 | 0.560 |
-| P7 | asia | c4_w1_hma200_px_ha60_side | 1927 | 0.184 | -0.060 | 0.244 | 8.2 | 3/4 | 0.258 |
-| M7 | asia | c4_pdS_ha60_eagainst | 1282 | 0.235 | -0.020 | 0.254 | 8.0 | 3/3 | 0.226 |
-| M7 | asia | c4_krF_dir_ha60_side | 1822 | 0.181 | -0.077 | 0.257 | 7.6 | 3/3 | 0.231 |
-| M7 | asia | c4_w1_hma200_px_ha60_side | 1166 | 0.245 | -0.072 | 0.318 | 7.6 | 3/3 | 0.189 |
-| M7 | asia | c4_stcS_ha60_side | 1489 | 0.202 | -0.050 | 0.252 | 7.6 | 3/3 | 0.243 |
-| P7 | asia | c4_sebS_ha60_side | 3134 | 0.138 | -0.045 | 0.182 | 7.5 | 3/4 | 0.258 |
-| M7 | asia | c4_mcg_px_ha60_side | 1894 | 0.175 | -0.070 | 0.245 | 7.5 | 3/3 | 0.231 |
-| M7 | asia | c4_mcg_slope_ha60_side | 1894 | 0.175 | -0.070 | 0.245 | 7.5 | 3/3 | 0.231 |
-| P7 | asia | c4_sd_near_ha60_against | 1642 | 0.200 | 0.016 | 0.184 | 7.4 | 3/4 | 0.188 |
-| M7 | asia | c4_krF_px_ha60_side | 1824 | 0.178 | -0.072 | 0.250 | 7.4 | 3/3 | 0.214 |
-| P7 | asia | c4_qqemod_ha60_side | 2328 | 0.169 | -0.001 | 0.170 | 7.4 | 4/4 | 0.166 |
-| P7 | london | c4_w1_vwma34_px_ha60_nodiv | 4002 | 0.074 | -0.326 | 0.400 | 7.4 | 3/4 | 0.423 |
-| M7 | asia | c4_mcgF_px_ha60_side | 2041 | 0.165 | -0.086 | 0.251 | 7.4 | 3/3 | 0.228 |
-| M7 | asia | c4_mcgF_slope_ha60_side | 2041 | 0.165 | -0.086 | 0.251 | 7.4 | 3/3 | 0.228 |
-| M7 | asia | c4_w1_keltner10_pos_ha60_side | 1983 | 0.169 | -0.079 | 0.247 | 7.4 | 3/3 | 0.230 |
-| A7 | nyam | c4_kerF_dir_ha60_eenter | 199 | 0.405 | -0.166 | 0.571 | 7.3 | 3/3 | 0.496 |
-| A7 | nyam | c4_kerF_abs_ha60_hi_z1 | 380 | 0.232 | -0.352 | 0.584 | 7.3 | 3/3 | 0.670 |
-| P7 | london | c4_copp_ha60_divwith | 450 | 0.328 | 0.018 | 0.310 | 7.3 | 4/4 | 0.347 |
-| P7 | asia | c4_stA_ha60_side | 2956 | 0.147 | -0.019 | 0.166 | 7.2 | 4/4 | 0.185 |
-| M7 | asia | c4_sqzm_bright_ha60_hold3 | 911 | 0.258 | 0.011 | 0.246 | 7.2 | 3/3 | 0.173 |
-| P7 | asia | c4_w1_kama21_px_ha60_side | 3358 | 0.135 | -0.034 | 0.169 | 7.2 | 4/4 | 0.211 |
-| P7 | asia | c4_w1_supertrend_10_3_ha60_side | 2948 | 0.146 | -0.018 | 0.164 | 7.2 | 4/4 | 0.177 |
-| M7 | asia | c4_w1_ema8_px_ha60_side | 2043 | 0.163 | -0.081 | 0.244 | 7.2 | 3/3 | 0.216 |
-| P7 | asia | c4_w1_ichi_slow_lag_ha60_side | 2564 | 0.157 | -0.005 | 0.163 | 7.1 | 4/4 | 0.159 |
-| M7 | asia | c4_rsima7_ha60_side | 1945 | 0.168 | -0.069 | 0.237 | 7.1 | 3/3 | 0.211 |
-| M7 | asia | c4_w1_rsi7_ha60_side | 1945 | 0.168 | -0.069 | 0.237 | 7.1 | 3/3 | 0.211 |
-| M7 | asia | c4_stcS_ha60_ewith | 1412 | 0.202 | -0.035 | 0.237 | 7.1 | 3/3 | 0.205 |
-| M7 | asia | c4_smieF_ha60_side | 1851 | 0.174 | -0.058 | 0.232 | 7.1 | 3/3 | 0.196 |
-| P7 | asia | c4_alligator_ha60_fresh5 | 954 | 0.240 | 0.036 | 0.204 | 7.0 | 3/4 | 0.262 |
+| P7 | nypm | c4_w1_vwmacd_ha60_divwith | 132 | 0.652 | -0.041 | 0.693 | 8.1 | 3/3 | 0.560 |
+| P7 | close | c4_ichiS_futcloud_ha60_fresh5 | 63 | 0.515 | -0.089 | 0.604 | 5.3 | 3/3 | 0.255 |
+| K7 | london | c4_w1_vwma34_px_ha60_nodiv | 3258 | 0.037 | -0.334 | 0.371 | 4.9 | 4/4 | 0.390 |
+| M7 | london | c4_w1_vwma34_px_ha60_nodiv | 4142 | 0.037 | -0.315 | 0.353 | 4.8 | 3/4 | 0.474 |
+| P7 | asia | c4_fvg_cnt_ha60_fresh5 | 96 | 0.542 | 0.064 | 0.478 | 4.8 | 3/3 | 0.612 |
+| A7 | nyam | c4_kerF_dir_ha60_eenter | 199 | 0.405 | -0.166 | 0.571 | 4.7 | 3/3 | 0.496 |
+| A7 | nypm | c4_t3S_px_ha60_side | 527 | 0.116 | -0.486 | 0.601 | 4.7 | 3/3 | 0.529 |
+| P7 | asia | c4_sqzmF_mom_ha60_fresh1 | 136 | 0.420 | 0.063 | 0.356 | 4.7 | 3/4 | 0.608 |
+| A7 | nyam | c4_kerF_abs_ha60_hi_z1 | 380 | 0.232 | -0.352 | 0.584 | 4.6 | 3/3 | 0.670 |
+| P7 | pre | c4_qqeS_ha60_sig | 218 | 0.331 | -0.218 | 0.550 | 4.6 | 3/3 | 0.595 |
+| K7 | london | c4_smi_ha60_nodiv | 3174 | 0.041 | -0.229 | 0.270 | 4.6 | 4/4 | 0.340 |
+| M7 | london | c4_w1_vwma21_px_ha60_nodiv | 4197 | 0.037 | -0.261 | 0.298 | 4.6 | 3/4 | 0.414 |
+| K7 | nypm | c4_w1_ichi_fast_tkkj_ha60_rise | 548 | 0.184 | -0.030 | 0.214 | 4.5 | 4/4 | 0.196 |
+| K7 | nypm | c4_ichiF_tk_ha60_rise | 548 | 0.184 | -0.030 | 0.214 | 4.5 | 4/4 | 0.196 |
+| K7 | london | c4_w1_vortex7_ha60_nodiv | 3087 | 0.044 | -0.199 | 0.242 | 4.5 | 3/4 | 0.269 |
+| M7 | pre | c4_lrc_slope_ha60_rise | 221 | 0.278 | -0.325 | 0.603 | 4.4 | 3/3 | 0.650 |
+| P7 | asia | c4_stA_ha60_side | 2956 | 0.147 | -0.019 | 0.166 | 4.4 | 4/4 | 0.185 |
+| K7 | london | c4_w1_vwma21_px_ha60_nodiv | 3302 | 0.033 | -0.269 | 0.302 | 4.3 | 4/4 | 0.289 |
+| P7 | london | c4_copp_ha60_divwith | 450 | 0.328 | 0.018 | 0.310 | 4.3 | 4/4 | 0.347 |
+| P7 | asia | c4_w1_supertrend_10_3_ha60_side | 2948 | 0.146 | -0.018 | 0.164 | 4.3 | 4/4 | 0.177 |
+| K7 | close | c4_nweS_ha60_rise | 247 | 0.078 | -0.374 | 0.452 | 4.2 | 3/3 | 0.604 |
+| K7 | close | c4_w1_ema34_px_ha60_rise | 315 | 0.083 | -0.316 | 0.399 | 4.2 | 3/3 | 0.504 |
+| K7 | close | c4_crsi_ha60_eleave_z1 | 106 | 0.220 | -0.177 | 0.397 | 4.2 | 3/3 | 0.458 |
+| P7 | pre | c4_rfilt_ha60_side | 262 | 0.304 | -0.322 | 0.626 | 4.2 | 3/3 | 0.513 |
+| A7 | nypm | c4_rsima14_ha60_sig | 524 | 0.111 | -0.425 | 0.535 | 4.1 | 3/3 | 0.338 |
+| P7 | pre | c4_stc_ha60_ewith | 181 | 0.338 | -0.174 | 0.513 | 4.1 | 3/3 | 0.602 |
+| P7 | asia | c4_stA_ha60_hold3 | 2849 | 0.146 | -0.011 | 0.158 | 4.1 | 4/4 | 0.165 |
+| K7 | london | c4_w1_demarker7_ha60_nodiv | 3117 | 0.045 | -0.227 | 0.272 | 4.1 | 3/4 | 0.266 |
+| A7 | nyam | c4_w1_rsi2_ha60_eenter | 202 | 0.370 | -0.152 | 0.522 | 4.1 | 3/3 | 0.496 |
+| K7 | asia | c4_elderF_bull_ha60_side | 2387 | 0.111 | -0.022 | 0.133 | 4.1 | 4/4 | 0.114 |
 
 ## B4 alternate bars: range16
 

@@ -2,7 +2,7 @@
 
 **VERDICT: 46 of 258 re-entry cells x windows scored (382 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
 
-Built epoch 1794764982. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
+Built epoch 1794767163. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
 
 ## 1. Where the money is by entry number and fresh vs rechase (JN05W2, exact engine trades; $/wk by window)
 
@@ -367,40 +367,7 @@ Rule effect on the night (change = $ with rule minus actual; a blocked trade lea
 
 **Evidence evaluated with the 2026-11-13 bars (tail_20261114 pull, spliced into a separate copy /mnt/l2/l2vast/_reentry_all/min1_NQ_ext.npz; overlap bar identical):** only candidate for any block rule is M7 entry 6 at 08:28 (long, same side as the 07:12 full stop, 49 min later, entry 28440.63 below the loser entry 28451.19). (i) blocks it: session high before the loser exit 28469.75, after 28444.75, no new extreme. (ii) blocks it. (iii) 30 min allows, 60 and 120 block. (iv) blocks it if no opposite-side signal occurred (no opposite M7 entry in the log; signals themselves are not logged, so (iv) is an assumption). (v) ALLOWS it: a confirmed 5-min higher low formed after the low of 28356.75. So (i)(ii)(iii60/120)(iv) would have saved the -435; (iii30) and (v) would not. **Exact-engine replay of 11-13:** the shared TP month cache 202611 covers 11-02..11-11 only; W-EV (a1878b57f61f46389) was asked for a separate cache copy, the shared store is untouched. Not run yet.
 
-**Exact-engine replay of the same London window (W-EV separate store with 11-12/11-13 added, month 202611 run from 11-01; JN05W2 replay is the reference, NOT the live P&L; the replay itself differs from live: K7 5 trades, M7 4, mostly state cuts):**
-
-| cell | book | ref_n | n | ref_pnl | pnl | change |
-|---|---|---|---|---|---|---|
-| BLKi | K7 | 5 | 4 | 551 | -648 | -1199 |
-| BLKi | M7 | 4 | 2 | -2170 | -2069 | 101 |
-| BLKii | K7 | 5 | 4 | 551 | -648 | -1199 |
-| BLKii | M7 | 4 | 2 | -2170 | -2069 | 101 |
-| BLKiii120 | K7 | 5 | 3 | 551 | -6 | -557 |
-| BLKiii120 | M7 | 4 | 3 | -2170 | -860 | 1309 |
-| BLKiii30 | K7 | 5 | 5 | 551 | 1540 | 989 |
-| BLKiii30 | M7 | 4 | 4 | -2170 | -2170 | 0 |
-| BLKiii60 | K7 | 5 | 3 | 551 | -6 | -557 |
-| BLKiii60 | M7 | 4 | 3 | -2170 | -860 | 1309 |
-| BLKiv | K7 | 5 | 3 | 551 | -6 | -557 |
-| BLKiv | M7 | 4 | 3 | -2170 | -860 | 1309 |
-| BLKv | K7 | 5 | 4 | 551 | -648 | -1199 |
-| BLKv | M7 | 4 | 3 | -2170 | -860 | 1309 |
-| CAP2 | K7 | 5 | 2 | 551 | -1264 | -1815 |
-| CAP2 | M7 | 4 | 2 | -2170 | 449 | 2619 |
-| CAP3 | K7 | 5 | 2 | 551 | -1264 | -1815 |
-| CAP3 | M7 | 4 | 1 | -2170 | -750 | 1420 |
-| CAP4 | K7 | 5 | 2 | 551 | -1264 | -1815 |
-| CAP4 | M7 | 4 | 1 | -2170 | -750 | 1420 |
-| HALF | K7 | 5 | 5 | 551 | 551 | 0 |
-| HALF | M7 | 4 | 4 | -2170 | -1495 | 675 |
-| LCAP10 | K7 | 5 | 2 | 551 | -1264 | -1815 |
-| LCAP10 | M7 | 4 | 1 | -2170 | -750 | 1420 |
-| LCAP15 | K7 | 5 | 5 | 551 | 551 | 0 |
-| LCAP15 | M7 | 4 | 4 | -2170 | -2170 | 0 |
-| LCAP20 | K7 | 5 | 5 | 551 | 551 | 0 |
-| LCAP20 | M7 | 4 | 4 | -2170 | -2170 | 0 |
-
-Caveat: a month run, so a rule that fires earlier in November changes later days (lot state, day caps); changes here mix the rule on 11-13 with that path drift. REG/ATR-skip inactive on 11-12/13 in this store (W-EV caveat).
+**Exact-engine replay of 11-13: the first replay table is VOID** (W-EV: the first 11-12 day file had two partial files in the wrong order, the engine was blind 11-11 19:00 to 11-12 03:00 ET). Re-run on the rebuilt store (ev1113b) is queued under tag RA; table follows when it lands.
 
 Reading: on that night the block rules were nearly irrelevant (one candidate, -435); the count caps decided the night: CAP4 would have stopped M7 before the 07:12 full stop (+5,115) and K7 before the last cut (+1,025); CAP2 would have cost -3,695 (K7) and -2,040 (M7) by stopping the two with-trend winners; a 1.0R loss cap fires after the second M7 loser and costs -2,040 for the same reason. The night was a with-trend London run (K7 longs +2,360 twice), which is the case where caps hurt.
 

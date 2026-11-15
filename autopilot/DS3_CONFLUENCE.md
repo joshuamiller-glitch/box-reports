@@ -4,7 +4,7 @@
 <!--LADDER-->
 ## Size ladder, step 1: the staircase (W-CF3; tables only, no engine; rungs fixed on data up to 2025-04-30, tested 2025-05..2026-10)
 
-VERDICT: out of sample the count of agreeing independent clusters does not climb: Spearman(count, R) is between -0.07 and +0.07 in every book-session cell, and the shuffled-count test is below 0.05 only in P7 Asia and P7 London (rho 0.055 / 0.056, p 0.033 each, one of 13 cells each such that about 0.6 would be expected by chance). The nonsense ladder built by the same selection (top conditions of the 200 meaningless Block 18 columns by training |z|) climbs about as much (rho -0.17 to +0.10, two cells with p < 0.03). No ladder is worth running on the engine on this evidence; the staircase should be re-read when more of the new blocks are folded in. No PASS claim.
+VERDICT (data ends 2026-10-30): out of sample the count of agreeing independent clusters does not climb: Spearman(count, R) is between -0.07 and +0.07 in every book-session cell, and the shuffled-count test is below 0.05 only in P7 Asia and P7 London (rho 0.055 / 0.056, p 0.033 each, one of 13 cells each such that about 0.6 would be expected by chance). The nonsense ladder built by the same selection (top conditions of the 200 meaningless Block 18 columns by training |z|) climbs about as much (rho -0.17 to +0.10, two cells with p < 0.03). No ladder is worth running on the engine on this evidence; the staircase should be re-read when more of the new blocks are folded in. No PASS claim.
 
 Method: each condition of the joined library (21,094) alone in the cell's training window; outcome R clipped at +-3; day-clustered z; "passes alone" bar = 99th percentile of |z| of the first 100 nonsense columns in the same cell and window; stable sign across training years (>= 30 yes and 30 no in a year); one vote per redundancy cluster (cluster_0.85 ids); count = clusters in their favourable state. Hold-out check: pass rate of the last 100 nonsense columns at that bar.
 
@@ -73,6 +73,8 @@ A1 READING (FIRST PASS, P7 Asia USER_SET_V0 all-5 only; the other 12 sets are st
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | JN05W2 base | 243 | 408 | 0.078 | 39663 | 8.5 | -31051 | 1.24 | 7634 | 13360 | 7324 | 85 | - / - | 52233 | 19346 |
 | OLD skip-only (TL3_CF_U6) | 217 | 229 | 0.040 | 39348 | 6.6 | -28522 | 1.13 | 3826 | 6696 | 3546 | 77 | 0.038 / 0.262 | 84575 | 13679 |
+| NEW K | 106 | 324 | 0.055 | 32783 | 6.2 | -21193 | 1.18 | 2642 | 4623 | 2500 | 39 | 0.478 / 0.360 | 83867 | 12671 |
+| NEW S2 | 102 | 795 | 0.071 | 51422 | 5.0 | -38700 | 1.28 | 6237 | 10915 | 5998 | 65 | 0.920 / 0.048 | 107559 | 13662 |
 
 **K7A_V0ge4, Asia, window L3M**
 
@@ -80,6 +82,7 @@ A1 READING (FIRST PASS, P7 Asia USER_SET_V0 all-5 only; the other 12 sets are st
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | JN05W2 base | 333 | 86 | 0.056 | 9732 | 8.1 | -4188 | 1.16 | 2195 | 3841 | 2084 | 30 | - / - | 52233 | 19346 |
 | OLD skip-only (TL3_CF_U1) | 261 | 119 | 0.086 | 16826 | 9.4 | -3101 | 1.22 | 2388 | 4179 | 2300 | 24 | 0.840 / 0.060 | 45259 | 18945 |
+| NEW K | 211 | 155 | 0.127 | 10445 | 5.2 | -4376 | 1.29 | 2510 | 4392 | 2438 | 20 | 0.898 / 0.544 | 46424 | 18135 |
 
 **K7A_V0ge3, Asia, window L3M**
 
@@ -105,6 +108,7 @@ A1 READING (FIRST PASS, P7 Asia USER_SET_V0 all-5 only; the other 12 sets are st
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | JN05W2 base | 575 | 545 | 0.118 | 39663 | 8.5 | -31051 | 1.33 | 11598 | 20297 | 11240 | 98 | - / - | 52233 | 24470 |
 | OLD skip-only (TL3_CF_U6) | 496 | 384 | 0.077 | 42087 | 6.9 | -28522 | 1.21 | 7051 | 12340 | 6733 | 87 | 0.016 / 0.208 | 84575 | 18228 |
+| NEW K | 250 | 662 | 0.133 | 32783 | 6.2 | -21193 | 1.38 | 6130 | 10727 | 5965 | 45 | 0.764 / 0.574 | 83867 | 17663 |
 
 **K7A_V0ge4, Asia, window L6M**
 

@@ -1,5 +1,5 @@
 # DS3_CONFLUENCE_L3_QUOTES (W-CF2, 2026-11-14 ~00:10Z). Quotes only, nothing bought by this page.
-VERDICT: NQ MBO 2023-04..2026-04 is $1,095.50 in three yearly batches (inside the user's $2,500 L3-history authority; the lead's script already submitted 2025-05..2026-04 at $409.65); ES MBO for the same span is $844.71 (quote only, no authority yet); a live L3 feed is roughly $199/month (Databento Standard, no license fees listed) or CME depth entitlement $12-17/month non-pro per exchange via a Rithmic broker, to be confirmed.
+VERDICT (data ends 2026-11-14): NQ MBO 2023-04..2026-04 is $1,095.50 in three yearly batches (inside the user's $2,500 L3-history authority; the lead's script already submitted 2025-05..2026-04 at $409.65); ES MBO for the same span is $844.71 (quote only, no authority yet); a live L3 feed is roughly $199/month (Databento Standard, no license fees listed) or CME depth entitlement $12-17/month non-pro per exchange via a Rithmic broker, to be confirmed.
 
 Method: Databento metadata.get_cost / get_billable_size, dataset GLBX.MDP3, schema mbo, continuous front month (NQ.v.0, ES.v.0), key read from the environment inside `bash -ic`, never printed. Quotes at 2026-11-14.
 

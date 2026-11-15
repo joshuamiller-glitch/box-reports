@@ -1,5 +1,5 @@
 # CONFLUENCE_DEFS_CF2 (W-CF2). Categories F, G, H, I, J and Block 5. Code: code/th_confl_cf2. Columns: /mnt/l2/l2vast/_confl/cols_cf2/{FG,I,J,H,B5}.parquet keyed by sig_id (= <book7>_<sig_ts>).
-VERDICT: 5 column files (638 conditions, FG 101, I 72, J 148, H 55, B5 262) built for all 48,353 rows of signals_all.parquet (19,798 taken + 28,555 skipped, W-CF1's current rows; later rows are appended by `python3 code/th_confl_cf2/build_all.py <FG|I|J|H|B5>`, which only computes missing sig_ids); no PASS claims.
+VERDICT (data ends 2026-10-30): 5 column files (638 conditions, FG 101, I 72, J 148, H 55, B5 262) built for all 48,353 rows of signals_all.parquet (19,798 taken + 28,555 skipped, W-CF1's current rows; later rows are appended by `python3 code/th_confl_cf2/build_all.py <FG|I|J|H|B5>`, which only computes missing sig_ids); no PASS claims.
 
 ## Conventions (all families)
 - Signal second T = sig_ts. Everything uses data with timestamp < T (seconds <= T-1; 1-minute bars with bar end <= T; prior-day files for daily/level data). No repainting, no look-ahead.

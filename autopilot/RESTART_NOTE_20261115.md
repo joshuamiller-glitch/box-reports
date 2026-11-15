@@ -5,3 +5,5 @@ The Claude Code session that ran the agents ended (cause not visible from the bo
 3. Continue your queue, bases at live caps (P7 14,700), base-lot dollars with x1.75 beside headline rows, $4.84 column, FIRST PASS labelled, nonsense rate beside every stage, cluster-robust statistics, drawdown at a powered horizon.
 4. Hourly MORNING.md line as before; the lead also runs an automatic block (code/lead_watchdog/hourly_block.py). Add a 'closest to live' sentence to your own line.
 5. Memory: compute <= 2 threads per analysis script, nice 10; /mnt/l2 has ~270 GB free (93 pct used).
+
+ENDDATE RULE (added 18:21Z): read autopilot/ENDDATE_RULE.md; stamp every page verdict line with its data end date after each rebuild.

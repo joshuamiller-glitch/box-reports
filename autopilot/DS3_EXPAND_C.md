@@ -1,4 +1,4 @@
-# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T17:50Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
+# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T18:27Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
 
 **VERDICT (plain): 264 cell-months done over 37 cells; 28 cells pass the tolerant gate in L3M, 0 pass the STRICT gate in every present window; 0 pass the TOLERANT lead gate (recent clearly positive and beating placebos, older DD <= 10% deeper, mean >= -5%). Strict leads: none yet. Tolerant leads: none yet. FIRST PASS, no PASS claim.**
 
