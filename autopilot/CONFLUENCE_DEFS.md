@@ -1,0 +1,559 @@
+# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-14 23:58Z)
+Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.py, ta_ind.py, ta_cond.py); this page is generated from the same registries; nothing here has been scored yet.
+
+## Table and ids
+- Table: /mnt/l2/l2vast/_confl/entry_table/ (entry_table.parquet joined from entry_table_AEL.parquet, entry_table_U.parquet, cols_M.parquet; signal-universe file signals_all.parquet when complete). One row per entry signal, key sig_id = <book7>_<sig_ts>, sig_ts = engine signal second (epoch s UTC).
+- Universe: every try_entry call with a non-zero signal in the exact JN05W2 engine (43 months 2023-04..2026-10), logged by the inert hook code/th_deepen_ta/sig_hooks.py (identity proven: 202610 = 598 trades / 25,943.82 with the hook on). taken=1 rows are the engine's trades (exit/target/pnl real); taken=0 rows carry the engine's own skip reason (skip_reason: inTrade, SCR gate conj, dayHalt, timeBlocked, session lots 0, post-cut blackout, disabled ...) and a HYPOTHETICAL outcome (bracket of the book/session median target and stop walked on 1m bars, stop first in a tie, column outcome_type). Benched X-books (X3 X4 X5 ... 'disabled') are in a separate file (step 6).
+- Outcome columns: pnl (engine net at base lots, $1.18/contract fee), pnl484 (gross - $4.84 x lots), gross, lots_base (live lots = x1.75), R = side*(exit-entry)/stop_pts, mfe_pts / mae_pts (1m bars between entry and exit, vs the 1m close of the entry bar), mins_held, exit_name (Target / stop / cut names), tgt_pts, stp_pts.
+- Conventions: every condition is computed from information available at sig_ts: last COMPLETE 1m bar i (bar start <= sig_ts - 60); higher-timeframe bars only once complete (HTF bar end <= sig_ts); px = close of bar i; atr = 5-minute ATR14 (harness atr5, fallback 2.2 x mean 1m range). 'yes' = favourable to the trade (signed with side): int8 1 yes / 0 no / -1 unknown (level or history not available, e.g. RTH levels before 09:30 ET). Raw value beside it: v_* float32.
+- NQ prices in the 1m series are the continuous front-month bars (uwbooks/min1_NQ.npz). The engine's own prices are offset by a slowly drifting constant; every condition uses ONLY the bar series, never the engine price. Quarterly roll gaps are not adjusted: multi-day levels can be distorted for about a day per quarter.
+- LEAK RULE (category L and any state of D7): every outcome-dependent column uses trades CLOSED at the signal second only (exit_ts <= sig_ts). Trades open at sig_ts contribute only through 'other_same / other_opp_none / flat_stack' (positions, no results).
+- Sessions: 0 asia 18:00-01:59 ET, 1 london 02:00-08:29, 2 pre 08:30-09:29, 3 nyam 09:30-11:59, 4 nypm 12:00-14:59, 5 close 15:00-17:59. Label day (ld) = Globex day (18:00 ET starts the next ld).
+- Calendar: events from /mnt/l2/l2vast/_calendar/events.csv (2024-10..); 2023-04..2024-09 FOMC/CPI/NFP backfilled from the public schedule (approximate, flagged in code calendar()). Other releases before 2024-10 are missing.
+- Levels: L = ta_lib.Lib.levels(): PDH PDL PDC (prior RTH day), ONH ONL (Globex 18:00-09:30), pPOC pVAH pVAL (prior RTH 1-pt typical-price volume profile, 70% value area), oPOC oVAH oVAL (overnight), cPOC cVAH cVAL (20-day composite), nPOCup/dn (nearest naked POC of the last 20 days above/below), SPhi/SPlo (prior-day single-print tail edge, 30-min TPO count 1), session VWAP and +-1/+-2 sigma, OR5/15/30 H/L and IB (60 min) H/L (only after they complete), week open, month open, nearest 50-pt round numbers, nearest unfilled RTH gap edge. Cluster = single-linkage group of levels with neighbour spacing <= D (D = 5, 10, 15 pts, 0.1 ATR, 0.2 ATR); strength = level count and distinct KINDS (pd, on, prof, vwap, or, ib, open, round, gap). 'Ahead' = between entry and entry + side x target_pts; 'behind' = within stop_pts behind the entry.
+- USER_SET_V0 (registered 23:27Z before any result): see the c_U_* rows below and the header of code/th_confl/ta_user.py (exact definitions, unknown = no, no tuning). Interpretations that the user's text left open are fixed there and labelled; V1 will be registered separately if the user corrects any.
+- Category M: classic indicators on 1/3/5/15/60-min and daily bars; condition suffixes: side (midline), sig (signal line), rise (1 bar), ewith/eagainst/eleave (extreme zone in/against/left within 3 bars), nodiv/divwith (divergence at the last fractal swing k=2, same timeframe), hi (unsigned state above threshold), on / fired1 / fired10 (squeeze), agree3of4 (side true on >=3 of 3m 5m 15m 60m). Simpler-style items are labelled PUBLIC FORMULA or APPROXIMATION in the formula column.
+
+
+## defs_AEL.json
+- c_B_with_PDH : price on the trade side of PDH (long: above, short: below)
+- c_B_with_PDL : price on the trade side of PDL (long: above, short: below)
+- c_B_with_PDC : price on the trade side of PDC (long: above, short: below)
+- c_B_with_ONH : price on the trade side of ONH (long: above, short: below)
+- c_B_with_ONL : price on the trade side of ONL (long: above, short: below)
+- c_B_with_WOPEN : price on the trade side of WOPEN (long: above, short: below)
+- c_B_with_MOPEN : price on the trade side of MOPEN (long: above, short: below)
+- c_B_with_OR5H : price on the trade side of OR5H (long: above, short: below)
+- c_B_with_OR5L : price on the trade side of OR5L (long: above, short: below)
+- c_B_with_OR15H : price on the trade side of OR15H (long: above, short: below)
+- c_B_with_OR15L : price on the trade side of OR15L (long: above, short: below)
+- c_B_with_OR30H : price on the trade side of OR30H (long: above, short: below)
+- c_B_with_OR30L : price on the trade side of OR30L (long: above, short: below)
+- c_B_with_IBH : price on the trade side of IBH (long: above, short: below)
+- c_B_with_IBL : price on the trade side of IBL (long: above, short: below)
+- c_B_gap_dir_with : today RTH open gapped in the trade direction (needs RTH open: from 09:30 ET)
+- c_B_gap_big20 : today RTH gap >= 20 pts
+- c_B_gap_big50 : today RTH gap >= 50 pts
+- c_B_gap_open : today RTH gap still unfilled (prior RTH close not yet traded) and |gap| > 5
+- c_B_gap_fill_ahead : unfilled gap edge (prior close) lies AHEAD in the trade direction
+- c_B_ahead_ge10 : nearest reference level AHEAD is >= 10 pts away (clear path)
+- c_B_ahead_ge20 : nearest reference level AHEAD is >= 20 pts away (clear path)
+- c_B_ahead_ge40 : nearest reference level AHEAD is >= 40 pts away (clear path)
+- c_B_ahead_atr_ge0.5 : nearest reference level ahead >= 0.5 ATR(5m) away
+- c_B_ahead_atr_ge1 : nearest reference level ahead >= 1 ATR(5m) away
+- c_B_ahead_atr_ge2 : nearest reference level ahead >= 2 ATR(5m) away
+- c_B_behind_le10 : a reference level sits within 10 pts BEHIND the entry (support)
+- c_B_behind_le20 : a reference level sits within 20 pts BEHIND the entry (support)
+- c_B_behind_le40 : a reference level sits within 40 pts BEHIND the entry (support)
+- c_B_round100_clear20 : next round 100 ahead is more than 20 pts away
+- c_B_round100_ahead_le10 : round 100 within 10 pts ahead
+- c_B_round100_behind_le10 : round 100 within 10 pts behind (support)
+- c_B_cl_ahead_cnt3_5 : NO cluster of >=3 levels (D=5pt) AHEAD inside the target distance (clear path)
+- c_B_cl_ahead_cnt2_5 : NO cluster of >=2 levels (D=5pt) AHEAD inside the target distance
+- c_B_cl_ahead_kinds2_5 : NO cluster with >=2 distinct KINDS (D=5pt) AHEAD inside the target distance
+- c_B_cl_behind_cnt3_5 : cluster of >=3 levels (D=5pt) BEHIND the entry inside the stop distance (protected stop)
+- c_B_cl_behind_kinds2_5 : cluster with >=2 distinct kinds (D=5pt) BEHIND the entry inside the stop distance
+- c_B_cl_ahead_cnt3_10 : NO cluster of >=3 levels (D=10pt) AHEAD inside the target distance (clear path)
+- c_B_cl_ahead_cnt2_10 : NO cluster of >=2 levels (D=10pt) AHEAD inside the target distance
+- c_B_cl_ahead_kinds2_10 : NO cluster with >=2 distinct KINDS (D=10pt) AHEAD inside the target distance
+- c_B_cl_behind_cnt3_10 : cluster of >=3 levels (D=10pt) BEHIND the entry inside the stop distance (protected stop)
+- c_B_cl_behind_kinds2_10 : cluster with >=2 distinct kinds (D=10pt) BEHIND the entry inside the stop distance
+- c_B_cl_ahead_cnt3_15 : NO cluster of >=3 levels (D=15pt) AHEAD inside the target distance (clear path)
+- c_B_cl_ahead_cnt2_15 : NO cluster of >=2 levels (D=15pt) AHEAD inside the target distance
+- c_B_cl_ahead_kinds2_15 : NO cluster with >=2 distinct KINDS (D=15pt) AHEAD inside the target distance
+- c_B_cl_behind_cnt3_15 : cluster of >=3 levels (D=15pt) BEHIND the entry inside the stop distance (protected stop)
+- c_B_cl_behind_kinds2_15 : cluster with >=2 distinct kinds (D=15pt) BEHIND the entry inside the stop distance
+- c_B_cl_ahead_cnt3_a1 : NO cluster of >=3 levels (D=0.1atr) AHEAD inside the target distance (clear path)
+- c_B_cl_ahead_cnt2_a1 : NO cluster of >=2 levels (D=0.1atr) AHEAD inside the target distance
+- c_B_cl_ahead_kinds2_a1 : NO cluster with >=2 distinct KINDS (D=0.1atr) AHEAD inside the target distance
+- c_B_cl_behind_cnt3_a1 : cluster of >=3 levels (D=0.1atr) BEHIND the entry inside the stop distance (protected stop)
+- c_B_cl_behind_kinds2_a1 : cluster with >=2 distinct kinds (D=0.1atr) BEHIND the entry inside the stop distance
+- c_B_cl_ahead_cnt3_a2 : NO cluster of >=3 levels (D=0.2atr) AHEAD inside the target distance (clear path)
+- c_B_cl_ahead_cnt2_a2 : NO cluster of >=2 levels (D=0.2atr) AHEAD inside the target distance
+- c_B_cl_ahead_kinds2_a2 : NO cluster with >=2 distinct KINDS (D=0.2atr) AHEAD inside the target distance
+- c_B_cl_behind_cnt3_a2 : cluster of >=3 levels (D=0.2atr) BEHIND the entry inside the stop distance (protected stop)
+- c_B_cl_behind_kinds2_a2 : cluster with >=2 distinct kinds (D=0.2atr) BEHIND the entry inside the stop distance
+- c_B_cl_ahead_far : nearest >=2-level cluster (D=10pt) ahead is >= 30 pts away or absent
+- c_A_trend_1m : EMA20 vs EMA50 of 1m closes on the trade side (up-trend for long)
+- c_A_px_ema20_1m : last 1m close on the trade side of the 1m EMA20
+- c_A_px_ema50_1m : last 1m close on the trade side of the 1m EMA50
+- c_A_px_ema200_1m : last 1m close on the trade side of the 1m EMA200
+- c_A_emaorder_1m : EMA20/50/200 ordered with the trade on 1m
+- c_A_hhhl_1m : last two confirmed swing highs AND lows (fractal k=2) rising for long / falling for short on 1m
+- c_A_swingbreak_1m : price beyond the last confirmed 1m swing high (long) / low (short)
+- c_A_supertrend_1m : Supertrend(10,3) direction with the trade on 1m
+- c_A_kc_mid_1m : price on the trade side of the Keltner midline (EMA20) on 1m
+- c_A_kc_out_1m : price beyond the outer Keltner band (EMA20 +-1.5 ATR14) in the trade direction on 1m
+- c_A_adx_rising_1m : ADX14 above its value 3 bars ago and above 20 on 1m
+- c_A_di_1m : +DI vs -DI with the trade on 1m
+- c_A_trend_3m : EMA20 vs EMA50 of 3m closes on the trade side (up-trend for long)
+- c_A_px_ema20_3m : last 1m close on the trade side of the 3m EMA20
+- c_A_px_ema50_3m : last 1m close on the trade side of the 3m EMA50
+- c_A_px_ema200_3m : last 1m close on the trade side of the 3m EMA200
+- c_A_emaorder_3m : EMA20/50/200 ordered with the trade on 3m
+- c_A_hhhl_3m : last two confirmed swing highs AND lows (fractal k=2) rising for long / falling for short on 3m
+- c_A_swingbreak_3m : price beyond the last confirmed 3m swing high (long) / low (short)
+- c_A_supertrend_3m : Supertrend(10,3) direction with the trade on 3m
+- c_A_kc_mid_3m : price on the trade side of the Keltner midline (EMA20) on 3m
+- c_A_kc_out_3m : price beyond the outer Keltner band (EMA20 +-1.5 ATR14) in the trade direction on 3m
+- c_A_adx_rising_3m : ADX14 above its value 3 bars ago and above 20 on 3m
+- c_A_di_3m : +DI vs -DI with the trade on 3m
+- c_A_trend_5m : EMA20 vs EMA50 of 5m closes on the trade side (up-trend for long)
+- c_A_px_ema20_5m : last 1m close on the trade side of the 5m EMA20
+- c_A_px_ema50_5m : last 1m close on the trade side of the 5m EMA50
+- c_A_px_ema200_5m : last 1m close on the trade side of the 5m EMA200
+- c_A_emaorder_5m : EMA20/50/200 ordered with the trade on 5m
+- c_A_hhhl_5m : last two confirmed swing highs AND lows (fractal k=2) rising for long / falling for short on 5m
+- c_A_swingbreak_5m : price beyond the last confirmed 5m swing high (long) / low (short)
+- c_A_supertrend_5m : Supertrend(10,3) direction with the trade on 5m
+- c_A_kc_mid_5m : price on the trade side of the Keltner midline (EMA20) on 5m
+- c_A_kc_out_5m : price beyond the outer Keltner band (EMA20 +-1.5 ATR14) in the trade direction on 5m
+- c_A_adx_rising_5m : ADX14 above its value 3 bars ago and above 20 on 5m
+- c_A_di_5m : +DI vs -DI with the trade on 5m
+- c_A_pbdepth_le0.5_5m : pullback depth (20-bar 5m leg extreme to price) <= 0.5 x ATR14(5m)
+- c_A_pbdepth_le1_5m : pullback depth (20-bar 5m leg extreme to price) <= 1 x ATR14(5m)
+- c_A_pbdepth_le1.5_5m : pullback depth (20-bar 5m leg extreme to price) <= 1.5 x ATR14(5m)
+- c_A_firstpb_5m : first dip below(above) EMA9 since the last EMA20/50 flip on 5m, flip direction with the trade
+- c_A_laterpb_5m : second or later dip on 5m since the last EMA20/50 flip, direction with the trade
+- c_A_notext_le1_5m : NOT extended: signed distance of price beyond EMA20(5m) <= 1 ATR14(5m)
+- c_A_notext_le1.5_5m : NOT extended: signed distance of price beyond EMA20(5m) <= 1.5 ATR14(5m)
+- c_A_notext_le2_5m : NOT extended: signed distance of price beyond EMA20(5m) <= 2 ATR14(5m)
+- c_A_trend_15m : EMA20 vs EMA50 of 15m closes on the trade side (up-trend for long)
+- c_A_px_ema20_15m : last 1m close on the trade side of the 15m EMA20
+- c_A_px_ema50_15m : last 1m close on the trade side of the 15m EMA50
+- c_A_px_ema200_15m : last 1m close on the trade side of the 15m EMA200
+- c_A_emaorder_15m : EMA20/50/200 ordered with the trade on 15m
+- c_A_hhhl_15m : last two confirmed swing highs AND lows (fractal k=2) rising for long / falling for short on 15m
+- c_A_swingbreak_15m : price beyond the last confirmed 15m swing high (long) / low (short)
+- c_A_supertrend_15m : Supertrend(10,3) direction with the trade on 15m
+- c_A_kc_mid_15m : price on the trade side of the Keltner midline (EMA20) on 15m
+- c_A_kc_out_15m : price beyond the outer Keltner band (EMA20 +-1.5 ATR14) in the trade direction on 15m
+- c_A_adx_rising_15m : ADX14 above its value 3 bars ago and above 20 on 15m
+- c_A_di_15m : +DI vs -DI with the trade on 15m
+- c_A_pbdepth_le0.5_15m : pullback depth (20-bar 15m leg extreme to price) <= 0.5 x ATR14(15m)
+- c_A_pbdepth_le1_15m : pullback depth (20-bar 15m leg extreme to price) <= 1 x ATR14(15m)
+- c_A_pbdepth_le1.5_15m : pullback depth (20-bar 15m leg extreme to price) <= 1.5 x ATR14(15m)
+- c_A_firstpb_15m : first dip below(above) EMA9 since the last EMA20/50 flip on 15m, flip direction with the trade
+- c_A_laterpb_15m : second or later dip on 15m since the last EMA20/50 flip, direction with the trade
+- c_A_notext_le1_15m : NOT extended: signed distance of price beyond EMA20(15m) <= 1 ATR14(15m)
+- c_A_notext_le1.5_15m : NOT extended: signed distance of price beyond EMA20(15m) <= 1.5 ATR14(15m)
+- c_A_notext_le2_15m : NOT extended: signed distance of price beyond EMA20(15m) <= 2 ATR14(15m)
+- c_A_trend_60m : EMA20 vs EMA50 of 60m closes on the trade side (up-trend for long)
+- c_A_px_ema20_60m : last 1m close on the trade side of the 60m EMA20
+- c_A_px_ema50_60m : last 1m close on the trade side of the 60m EMA50
+- c_A_px_ema200_60m : last 1m close on the trade side of the 60m EMA200
+- c_A_emaorder_60m : EMA20/50/200 ordered with the trade on 60m
+- c_A_hhhl_60m : last two confirmed swing highs AND lows (fractal k=2) rising for long / falling for short on 60m
+- c_A_swingbreak_60m : price beyond the last confirmed 60m swing high (long) / low (short)
+- c_A_supertrend_60m : Supertrend(10,3) direction with the trade on 60m
+- c_A_kc_mid_60m : price on the trade side of the Keltner midline (EMA20) on 60m
+- c_A_kc_out_60m : price beyond the outer Keltner band (EMA20 +-1.5 ATR14) in the trade direction on 60m
+- c_A_adx_rising_60m : ADX14 above its value 3 bars ago and above 20 on 60m
+- c_A_di_60m : +DI vs -DI with the trade on 60m
+- c_A_trend_1d : daily RTH-close EMA20 vs EMA50 (as of the prior RTH day) with the trade
+- c_A_px_ema20_1d : price on the trade side of the daily EMA20 (prior RTH day)
+- c_A_px_ema50_1d : price on the trade side of the daily EMA50 (prior RTH day)
+- c_A_pd_candle_1d : prior RTH day closed up (long) / down (short)
+- c_C_open_inside_value : today RTH open inside the prior RTH value area
+- c_C_open_outside_with : RTH open outside prior value in the trade direction
+- c_C_px_ppoc_side : price on the trade side of the prior day POC
+- c_C_px_beyond_pva_with : price beyond the prior value area edge in the trade direction (above VAH long / below VAL short)
+- c_C_px_inside_pva : price inside the prior day value area
+- c_C_px_oPOC_side : price on the trade side of the overnight (Globex 18:00-09:30) POC; available from 09:30 ET
+- c_C_px_beyond_ova_with : price beyond the overnight value area edge in the trade direction
+- c_C_px_dpoc_side : price on the trade side of the DEVELOPING RTH POC
+- c_C_px_beyond_dva_with : price beyond the developing RTH value area in the trade direction
+- c_C_dpoc_migrating_with : developing POC moved >5 pts in the trade direction over the last 60 minutes
+- c_C_npoc_ahead_le30 : NO naked POC within 30 pts ahead (clear path)
+- c_C_npoc_ahead_le60 : NO naked POC within 60 pts ahead (clear path)
+- c_C_npoc_behind : a naked POC lies within 40 pts behind (magnet/support)
+- c_C_sp_ahead60 : NO prior-day single-print tail edge within 60 pts ahead
+- c_C_poor_behind : prior day has a poor (unfinished) low behind a long / poor high behind a short
+- c_C_poor_ahead : prior day poor high ahead of a long / poor low ahead of a short
+- c_C_open_drive_with : open type drive (first 30 min RTH, known from 10:00 ET) in the trade direction
+- c_C_open_testdrive_with : open type testdrive (first 30 min RTH, known from 10:00 ET) in the trade direction
+- c_C_open_rejrev_with : open type rejrev (first 30 min RTH, known from 10:00 ET) in the trade direction
+- c_C_open_auction_with : open type auction (first 30 min RTH, known from 10:00 ET) in the trade direction
+- c_C_open_auction : open type = auction (balanced first 30 min)
+- c_C_ib_broken_with : price beyond the initial balance (first 60 min RTH) in the trade direction (from 10:30 ET)
+- c_C_ib_ext1.5 : price extended >= 1.5x the IB range in the trade direction
+- c_C_ib_ext2 : price extended >= 2x the IB range in the trade direction
+- c_C_ib_inside : price inside the initial balance
+- c_C_px_c20poc_side : price on the trade side of the 20-day composite POC
+- c_C_px_beyond_c20va_with : price beyond the 20-day composite value area in the trade direction
+- c_C_px_c5poc_side : price on the trade side of the 5-day composite POC
+- c_C_bal_breakout : prior day was a balance day (range < 0.8x 10-day median) and price now beyond its range in the trade direction
+- c_C_look_above_fail_with : 'look below and fail' at prior-day low (long) / 'look above and fail' at prior-day high (short) within the last 60 min: trade AGREES with the failure
+- c_C_look_above_fail_against : failed excursion beyond a prior-day extreme within 60 min that points AGAINST the trade
+- c_D_sess_side : price on the trade side of the SESSION-anchored VWAP (anchor = session start: asia 18:00, london 02:00, pre 08:30, ny 09:30 ET)
+- c_D_vwap_g1800_side : price on the trade side of VWAP anchored at 1800 ET
+- c_D_vwap_rth0930_side : price on the trade side of VWAP anchored at th0930 ET
+- c_D_weekly_side : price on the trade side of the weekly VWAP (anchor Sun 18:00 ET)
+- c_D_monthly_side : price on the trade side of the monthly VWAP (anchor first bar of the label-day month)
+- c_D_beyond_1sig : price beyond 1 sigma of session VWAP in the trade direction (volume-weighted std)
+- c_D_beyond_2sig : price beyond 2 sigma of session VWAP in the trade direction (volume-weighted std)
+- c_D_beyond_3sig : price beyond 3 sigma of session VWAP in the trade direction (volume-weighted std)
+- c_D_inside_1sig : price within +-1 sigma of session VWAP
+- c_D_dist_le1atr : |price - session VWAP| <= 1 ATR(5m)
+- c_D_dist_le2atr : |price - session VWAP| <= 2 ATR(5m)
+- c_D_slope15_with : session VWAP slope over 15 min with the trade
+- c_D_slope60_with : session VWAP slope over 60 min with the trade
+- c_D_avwap_dlow_side : price on the trade side of VWAP anchored at the label-day LOW so far
+- c_D_avwap_dhigh_side : price on the trade side of VWAP anchored at the label-day HIGH so far
+- c_D_avwap_event_side : price on the trade side of VWAP anchored at the last scheduled release (within 24 h)
+- c_E_ret5_with : last 5-minute return with the trade
+- c_E_ret5_strong : last 5-minute return with the trade by more than 0.5 ATR(5m)
+- c_E_ret15_with : last 15-minute return with the trade
+- c_E_ret15_strong : last 15-minute return with the trade by more than 0.5 ATR(5m)
+- c_E_ret30_with : last 30-minute return with the trade
+- c_E_ret30_strong : last 30-minute return with the trade by more than 0.5 ATR(5m)
+- c_E_rv_ge0.8 : realized vol (30 min) >= 0.8 x its median at this clock time over the prior 20 days
+- c_E_rv_ge1.2 : realized vol (30 min) >= 1.2 x its median at this clock time over the prior 20 days
+- c_E_rv_ge1.5 : realized vol (30 min) >= 1.5 x its median at this clock time over the prior 20 days
+- c_E_rangeused_le0.5 : label-day range so far <= 0.5 x the 10-day median full-day range (room left)
+- c_E_rangeused_le0.8 : label-day range so far <= 0.8 x the 10-day median full-day range (room left)
+- c_E_rangeused_le1 : label-day range so far <= 1 x the 10-day median full-day range (room left)
+- c_E_bb_squeeze_5m : Bollinger(20) width on 5m at or below its 20th percentile (trailing 500 bars)
+- c_E_bb_expand_5m : Bollinger(20) width on 5m at or above its 80th percentile
+- c_E_er30_ge0.3_with : efficiency ratio (30 min, 5m bars) >= 0.3 and the net move is with the trade
+- c_E_er30_ge0.5_with : efficiency ratio (30 min, 5m bars) >= 0.5 and the net move is with the trade
+- c_E_er60_ge0.3_with : efficiency ratio (60 min, 5m bars) >= 0.3 and the net move is with the trade
+- c_E_er60_ge0.5_with : efficiency ratio (60 min, 5m bars) >= 0.5 and the net move is with the trade
+- c_K_no_release_next15 : NO scheduled major release (FOMC CPI NFP PPI PCE RETAIL GDP ISM) within the next 15 min
+- c_K_no_release_next30 : NO scheduled major release (FOMC CPI NFP PPI PCE RETAIL GDP ISM) within the next 30 min
+- c_K_no_release_next60 : NO scheduled major release (FOMC CPI NFP PPI PCE RETAIL GDP ISM) within the next 60 min
+- c_K_post_release_15 : a major scheduled release occurred in the last 15 min
+- c_K_post_release_30 : a major scheduled release occurred in the last 30 min
+- c_K_post_release_60 : a major scheduled release occurred in the last 60 min
+- c_K_event_day : label day has a major scheduled release
+- c_K_day_before_event : next calendar/business day has a major scheduled release
+- c_K_day_after_event : previous day had a major scheduled release
+- c_K_fomc_day : label day is an FOMC announcement day
+- c_K_fomc_next : day before an FOMC announcement
+- c_K_fomc_prev : day after an FOMC announcement
+- c_K_dow_mon : label day is mon
+- c_K_dow_tue : label day is tue
+- c_K_dow_wed : label day is wed
+- c_K_dow_thu : label day is thu
+- c_K_dow_fri : label day is fri
+- c_K_opex_week : label day lies in the monthly opex week (15th-21st calendar window containing the 3rd Friday)
+- c_K_opex_day : label day is the 3rd Friday
+- c_K_month_end2 : label day is one of the last 2 business days of the month
+- c_K_month_start3 : label day is one of the first 3 business days of the month
+- c_K_quarter_end_week : last week of a calendar quarter
+- c_K_first30 : signal in the first 30 minutes of its session
+- c_K_last30 : signal in the last 30 minutes of its session
+- c_K_third0 : signal in third 0 of its session (best/worst third is selected in step 3 from history, walk-forward)
+- c_K_third1 : signal in third 1 of its session (best/worst third is selected in step 3 from history, walk-forward)
+- c_K_third2 : signal in third 2 of its session (best/worst third is selected in step 3 from history, walk-forward)
+- c_K_hour_00 : signal in the ET clock hour 00
+- c_K_hour_01 : signal in the ET clock hour 01
+- c_K_hour_02 : signal in the ET clock hour 02
+- c_K_hour_03 : signal in the ET clock hour 03
+- c_K_hour_04 : signal in the ET clock hour 04
+- c_K_hour_05 : signal in the ET clock hour 05
+- c_K_hour_06 : signal in the ET clock hour 06
+- c_K_hour_07 : signal in the ET clock hour 07
+- c_K_hour_08 : signal in the ET clock hour 08
+- c_K_hour_09 : signal in the ET clock hour 09
+- c_K_hour_10 : signal in the ET clock hour 10
+- c_K_hour_11 : signal in the ET clock hour 11
+- c_K_hour_12 : signal in the ET clock hour 12
+- c_K_hour_13 : signal in the ET clock hour 13
+- c_K_hour_14 : signal in the ET clock hour 14
+- c_K_hour_15 : signal in the ET clock hour 15
+- c_K_hour_16 : signal in the ET clock hour 16
+- c_K_hour_17 : signal in the ET clock hour 17
+- c_K_hour_18 : signal in the ET clock hour 18
+- c_K_hour_19 : signal in the ET clock hour 19
+- c_K_hour_20 : signal in the ET clock hour 20
+- c_K_hour_21 : signal in the ET clock hour 21
+- c_K_hour_22 : signal in the ET clock hour 22
+- c_K_hour_23 : signal in the ET clock hour 23
+- c_L_first_entry : this is the book's first entry of the session
+- c_L_entry_le2 : this is the book's 1st or 2nd entry in the session
+- c_L_first_not_loser : the book's first trade of the session was not a (closed) loser
+- c_L_first_won : the book's first trade of the session closed a winner
+- c_L_sess_net_ge0 : stack closed net in this session >= 0 R ($1,200)
+- c_L_sess_net_ge0.5 : stack closed net in this session >= 0.5 R ($1,200)
+- c_L_sess_net_ge1 : stack closed net in this session >= 1 R ($1,200)
+- c_L_sess_net_gt_neg05 : stack closed net in this session > -0.5 R
+- c_L_day_net_ge0 : stack closed net on the label day >= 0
+- c_L_day_net_gt_neg1 : stack closed net on the label day > -1 R
+- c_L_no_ss_loser30 : no same-side loser closed in the last 30 min (any book)
+- c_L_no_ss_loser60 : no same-side loser closed in the last 60 min (any book)
+- c_L_other_same : another book is already in on the SAME side
+- c_L_other_opp_none : no book is in on the OPPOSITE side
+- c_L_flat_stack : no open position in the stack
+- c_L_last_tgt : the book's last closed trade hit its target
+- c_L_gap30 : at least 30 min since the book last exited (fresh vs quick re-entry)
+- c_L_ctx_fresh : entry context FRESH (not chasing, entry no <= 2, >= 30 min since the book last exited)
+- c_L_ctx_chasing : entry context CHASING (chase_k > 1)
+
+## Category M indicators (name | family | formula status)
+- m_adline_<tf>_<cond> : volume | public
+- m_adx14_<tf>_<cond> : trend | public
+- m_adx21_<tf>_<cond> : trend | public
+- m_adx7_<tf>_<cond> : trend | public
+- m_ao_<tf>_<cond> : osc | public
+- m_aroon14_<tf>_<cond> : trend | public
+- m_aroon25_<tf>_<cond> : trend | public
+- m_aroon50_<tf>_<cond> : trend | public
+- m_atr_pct100_<tf>_<cond> : vol | public
+- m_atr_pct250_<tf>_<cond> : vol | public
+- m_boll10_pctb_<tf>_<cond> : vol | public
+- m_boll10_walk_<tf>_<cond> : vol | approx: 3-bar sum of closes outside band
+- m_boll10_width_pct_<tf>_<cond> : vol | public
+- m_boll20_pctb_<tf>_<cond> : vol | public
+- m_boll20_walk_<tf>_<cond> : vol | approx: 3-bar sum of closes outside band
+- m_boll20_width_pct_<tf>_<cond> : vol | public
+- m_boll40_pctb_<tf>_<cond> : vol | public
+- m_boll40_walk_<tf>_<cond> : vol | approx: 3-bar sum of closes outside band
+- m_boll40_width_pct_<tf>_<cond> : vol | public
+- m_cci14_<tf>_<cond> : osc | public
+- m_cci14_zeroreject_<tf>_<cond> : osc | public CCI; reject pattern = approx
+- m_cci20_<tf>_<cond> : osc | public
+- m_cci20_zeroreject_<tf>_<cond> : osc | public CCI; reject pattern = approx
+- m_cci50_<tf>_<cond> : osc | public
+- m_cci50_zeroreject_<tf>_<cond> : osc | public CCI; reject pattern = approx
+- m_cmf10_<tf>_<cond> : volume | public
+- m_cmf20_<tf>_<cond> : volume | public
+- m_cmo14_<tf>_<cond> : osc | public
+- m_cmo21_<tf>_<cond> : osc | public
+- m_cmo9_<tf>_<cond> : osc | public
+- m_compound_setup_<tf>_<cond> : simpler | APPROXIMATION of Compound Breakout setup: count of squeeze-on, NR7, volume dry-up, tight EMAs, inside bar (0-5)
+- m_darvas_break_<tf>_<cond> : simpler | APPROXIMATION of Darvas box: 20-bar high/low unchanged for 3 bars = box; close beyond the box edge
+- m_demarker14_<tf>_<cond> : osc | public
+- m_demarker21_<tf>_<cond> : osc | public
+- m_demarker7_<tf>_<cond> : osc | public
+- m_di14_<tf>_<cond> : trend | public
+- m_di21_<tf>_<cond> : trend | public
+- m_di7_<tf>_<cond> : trend | public
+- m_divergent_bar_<tf>_<cond> : simpler | APPROXIMATION of Divergent Bars: new low closing in the top third (bull) / new high closing in the bottom third (bear)
+- m_donchian10_pos_<tf>_<cond> : trend | public
+- m_donchian10_width_<tf>_<cond> : vol | public
+- m_donchian20_pos_<tf>_<cond> : trend | public
+- m_donchian20_width_<tf>_<cond> : vol | public
+- m_donchian50_pos_<tf>_<cond> : trend | public
+- m_donchian50_width_<tf>_<cond> : vol | public
+- m_early_in_out_<tf>_<cond> : simpler | APPROXIMATION of Early In-N-Out: MACD(12,26,9) histogram slope turns with volume > 1.2x average
+- m_ema100_px_<tf>_<cond> : trend | public
+- m_ema200_px_<tf>_<cond> : trend | public
+- m_ema21_hold_<tf>_<cond> : simpler | approx: last 3 bars all on one side of the 21 EMA (no bar pierced it)
+- m_ema21_px_<tf>_<cond> : trend | public
+- m_ema34_px_<tf>_<cond> : trend | public
+- m_ema50_px_<tf>_<cond> : trend | public
+- m_ema8_px_<tf>_<cond> : trend | public
+- m_ema_8_21_34_stack_<tf>_<cond> : simpler | public (8/21/34 EMA ordering)
+- m_ema_8_21_stack_<tf>_<cond> : simpler | public (8 over 21; USER_SET_V0 #5)
+- m_ema_ribbon_<tf>_<cond> : simpler | PUBLIC-style EMA ribbon (8,13,21,34,55,89): +1 = fully stacked up
+- m_ema_stack_fast_<tf>_<cond> : trend | public
+- m_ema_stack_slow_<tf>_<cond> : trend | public
+- m_eom14_<tf>_<cond> : volume | approx: ease of movement
+- m_fisher10_<tf>_<cond> : osc | approx: smoothed Fisher
+- m_fisher20_<tf>_<cond> : osc | approx: smoothed Fisher
+- m_fisher5_<tf>_<cond> : osc | approx: smoothed Fisher
+- m_force13_<tf>_<cond> : volume | public
+- m_ha_run_<tf>_<cond> : pattern | public Heikin-Ashi colour run (signed length)
+- m_hilo_range_osc_<tf>_<cond> : simpler | APPROXIMATION: position of close in the 20-bar high-low range, -1..+1
+- m_hma100_px_<tf>_<cond> : trend | public
+- m_hma200_px_<tf>_<cond> : trend | public
+- m_hma21_px_<tf>_<cond> : trend | public
+- m_hma34_px_<tf>_<cond> : trend | public
+- m_hma50_px_<tf>_<cond> : trend | public
+- m_hma8_px_<tf>_<cond> : trend | public
+- m_hma_stack_fast_<tf>_<cond> : trend | public
+- m_hma_stack_slow_<tf>_<cond> : trend | public
+- m_holb_lohb_<tf>_<cond> : simpler | APPROXIMATION of HOLB/LOHB: close beyond the high of the lowest-bar (long) / low of the highest-bar (short) of the last 10 bars
+- m_hv_pct10_<tf>_<cond> : vol | public
+- m_hv_pct20_<tf>_<cond> : vol | public
+- m_hv_pct50_<tf>_<cond> : vol | public
+- m_ichi_fast_cloud_<tf>_<cond> : trend | public (cloud at t uses spans computed 13 bars earlier: causal)
+- m_ichi_fast_lag_<tf>_<cond> : trend | public: close vs price 13 bars ago (lagging line clear)
+- m_ichi_fast_tkkj_<tf>_<cond> : trend | public
+- m_ichi_slow_cloud_<tf>_<cond> : trend | public (cloud at t uses spans computed 30 bars earlier: causal)
+- m_ichi_slow_lag_<tf>_<cond> : trend | public: close vs price 30 bars ago (lagging line clear)
+- m_ichi_slow_tkkj_<tf>_<cond> : trend | public
+- m_ichi_std_cloud_<tf>_<cond> : trend | public (cloud at t uses spans computed 26 bars earlier: causal)
+- m_ichi_std_lag_<tf>_<cond> : trend | public: close vs price 26 bars ago (lagging line clear)
+- m_ichi_std_tkkj_<tf>_<cond> : trend | public
+- m_kama100_px_<tf>_<cond> : trend | public
+- m_kama200_px_<tf>_<cond> : trend | public
+- m_kama21_px_<tf>_<cond> : trend | public
+- m_kama34_px_<tf>_<cond> : trend | public
+- m_kama50_px_<tf>_<cond> : trend | public
+- m_kama8_px_<tf>_<cond> : trend | public
+- m_kama_stack_fast_<tf>_<cond> : trend | public
+- m_kama_stack_slow_<tf>_<cond> : trend | public
+- m_keltner10_pos_<tf>_<cond> : vol | public
+- m_keltner20_pos_<tf>_<cond> : vol | public
+- m_keltner40_pos_<tf>_<cond> : vol | public
+- m_launch_pad_tight_<tf>_<cond> : simpler | APPROXIMATION of Launch Pad: EMA 8/21/34 bunched within 0.3 ATR (unsigned state)
+- m_linreg_chan10_<tf>_<cond> : trend | public
+- m_linreg_chan20_<tf>_<cond> : trend | public
+- m_linreg_chan50_<tf>_<cond> : trend | public
+- m_linreg_slope10_<tf>_<cond> : trend | public
+- m_linreg_slope20_<tf>_<cond> : trend | public
+- m_linreg_slope50_<tf>_<cond> : trend | public
+- m_macd12_26_9_hist_<tf>_<cond> : osc | public
+- m_macd12_26_9_line_<tf>_<cond> : osc | public
+- m_macd19_39_9_hist_<tf>_<cond> : osc | public
+- m_macd19_39_9_line_<tf>_<cond> : osc | public
+- m_macd8_17_9_hist_<tf>_<cond> : osc | public
+- m_macd8_17_9_line_<tf>_<cond> : osc | public
+- m_mfi14_<tf>_<cond> : osc | public
+- m_mfi21_<tf>_<cond> : osc | public
+- m_mfi7_<tf>_<cond> : osc | public
+- m_mom10_<tf>_<cond> : osc | public
+- m_mom20_<tf>_<cond> : osc | public
+- m_mom5_<tf>_<cond> : osc | public
+- m_momo_thrust_<tf>_<cond> : simpler | APPROXIMATION of Monster Momo: 5-bar move > 1.5 ATR14 with volume > 1.5x its 20-bar mean
+- m_moxie_pop_<tf>_<cond> : simpler | APPROXIMATION of Moxie: 5-bar change beyond 2 sigma of its trailing 100-bar distribution (pop / drop)
+- m_multicross_<tf>_<cond> : simpler | APPROXIMATION of Multi Cross: sum of signs of EMA 5/13, 8/21, 13/34, 21/55 (+-4 = all agree)
+- m_narrow_range_nr4_<tf>_<cond> : pattern | prior bar was the narrowest of 4
+- m_obv_<tf>_<cond> : volume | public OBV vs its EMA20
+- m_pat_engulf_<tf>_<cond> : pattern | public
+- m_pat_inside_<tf>_<cond> : pattern | public
+- m_pat_outside_<tf>_<cond> : pattern | public
+- m_pat_pin_<tf>_<cond> : pattern | approx: long wick > 2x body, opposite wick < body
+- m_porsche_dot_<tf>_<cond> : simpler | APPROXIMATION of Porsche Dots: close crosses the EMA21 with ADX14 > 20
+- m_psar_0.01_<tf>_<cond> : trend | public
+- m_psar_0.02_<tf>_<cond> : trend | public
+- m_psar_0.03_<tf>_<cond> : trend | public
+- m_range_expansion_<tf>_<cond> : pattern | public
+- m_ready_aim_fire_<tf>_<cond> : simpler | APPROXIMATION of Ready-Aim-Fire: setup (squeeze on within 10 bars) + confirmation (histogram sign) + trigger (close beyond prior bar extreme) agreeing
+- m_rh_grab_<tf>_<cond> : simpler | APPROXIMATION of GRaB candles: whole bar beyond the 34 EMA wave
+- m_rh_propulsion_<tf>_<cond> : simpler | APPROXIMATION of Propulsion Dots: close leaves the 34 wave in the last 3 bars (fresh cross)
+- m_rh_wave34_<tf>_<cond> : simpler | PUBLIC idea (34 EMA of high / low wave); close above the high-EMA = +1, below the low-EMA = -1, inside = 0
+- m_roc10_<tf>_<cond> : osc | public
+- m_roc20_<tf>_<cond> : osc | public
+- m_roc5_<tf>_<cond> : osc | public
+- m_rsi14_<tf>_<cond> : osc | public
+- m_rsi2_<tf>_<cond> : osc | public
+- m_rsi21_<tf>_<cond> : osc | public
+- m_rsi7_<tf>_<cond> : osc | public
+- m_sma100_px_<tf>_<cond> : trend | public
+- m_sma200_px_<tf>_<cond> : trend | public
+- m_sma21_px_<tf>_<cond> : trend | public
+- m_sma34_px_<tf>_<cond> : trend | public
+- m_sma50_px_<tf>_<cond> : trend | public
+- m_sma8_px_<tf>_<cond> : trend | public
+- m_sma_stack_fast_<tf>_<cond> : trend | public
+- m_sma_stack_slow_<tf>_<cond> : trend | public
+- m_sqz_colour_<tf>_<cond> : simpler | PUBLIC four-colour histogram: >0 rising (2) / >0 falling (1) / <0 falling (-2) / <0 rising (-1); side = sign
+- m_sqz_fired_<tf>_<cond> : simpler | public: squeeze released this bar; direction from histogram sign
+- m_sqz_fresh5_<tf>_<cond> : simpler | PUBLIC squeeze release within the last 5 bars; sign = histogram direction at release
+- m_sqz_hist_<tf>_<cond> : simpler | public formula (TTM-style squeeze histogram: linreg of close minus avg(avg(HH,LL),SMA20), length 20)
+- m_sqz_on_<tf>_<cond> : simpler | public: BB(20,2) inside KC(20,1.5) [Keltner ATR = simple 20-bar ATR]
+- m_sqz_strength_<tf>_<cond> : simpler | approx: number of Keltner widths (1.0, 1.5, 2.0) that contain the Bollinger bands (0-3)
+- m_sqzpro_fire_any_<tf>_<cond> : simpler | APPROXIMATION: released from any of the three squeeze strengths, direction = histogram sign
+- m_sqzpro_fire_tight_<tf>_<cond> : simpler | APPROXIMATION of Squeeze Pro: released from the tightest (KC 1.0) squeeze, direction = histogram sign
+- m_stoch14_<tf>_<cond> : osc | public
+- m_stoch21_<tf>_<cond> : osc | public
+- m_stoch8_<tf>_<cond> : osc | public
+- m_stochrsi14_<tf>_<cond> : osc | public
+- m_stochrsi21_<tf>_<cond> : osc | public
+- m_stochrsi8_<tf>_<cond> : osc | public
+- m_supertrend_10_3_<tf>_<cond> : trend | public
+- m_supertrend_14_4_<tf>_<cond> : trend | public
+- m_supertrend_7_2_<tf>_<cond> : trend | public
+- m_tenx_bar_<tf>_<cond> : simpler | APPROXIMATION of 10X Bars: ADX14 > 20 and DI sign (trending up / trending down / no trend)
+- m_threebar_pivot_<tf>_<cond> : simpler | approx: three-bar reversal pivot (D7 cf_pattern_threebar form)
+- m_top_hat_<tf>_<cond> : simpler | APPROXIMATION of Top Hat: inside bar then close beyond the mother bar in the EMA8/21 trend direction
+- m_tr3ndy_flip_<tf>_<cond> : simpler | APPROXIMATION of Tr3ndy turn: Supertrend(10,2) flip this bar
+- m_trend_osc_<tf>_<cond> : simpler | APPROXIMATION of Trend Oscillator: (EMA8 - EMA34) / ATR14
+- m_trend_spark_<tf>_<cond> : simpler | APPROXIMATION of Trend Spark: close beyond the prior 3-bar extreme and on the right side of EMA8
+- m_trendcolor_<tf>_<cond> : simpler | approx: close vs average of SMA5(high) and SMA5(low)
+- m_trix15_<tf>_<cond> : osc | public
+- m_trix30_<tf>_<cond> : osc | public
+- m_trix8_<tf>_<cond> : osc | public
+- m_true_lows_<tf>_<cond> : simpler | APPROXIMATION of True Lows/Highs: 10-bar extreme bar that closes in the recovered half
+- m_tsc_strong_<tf>_<cond> : simpler | APPROXIMATION of Trend Strength Candles: ADX14 > 30 and DI sign
+- m_tsc_vstrong_<tf>_<cond> : simpler | APPROXIMATION: ADX14 > 40 and DI sign
+- m_turbo_vzo_<tf>_<cond> : simpler | PUBLIC formula of the Volume Zone Oscillator (14); Turbo variant thresholds are an APPROXIMATION
+- m_uo_<tf>_<cond> : osc | public
+- m_updown_vol20_<tf>_<cond> : volume | public
+- m_vol_avg_rel_<tf>_<cond> : simpler | PUBLIC: volume / its 20-bar average
+- m_volosc_<tf>_<cond> : volume | public
+- m_vortex14_<tf>_<cond> : trend | public
+- m_vortex21_<tf>_<cond> : trend | public
+- m_vortex7_<tf>_<cond> : trend | public
+- m_vwma100_px_<tf>_<cond> : trend | public
+- m_vwma200_px_<tf>_<cond> : trend | public
+- m_vwma21_px_<tf>_<cond> : trend | public
+- m_vwma34_px_<tf>_<cond> : trend | public
+- m_vwma50_px_<tf>_<cond> : trend | public
+- m_vwma8_px_<tf>_<cond> : trend | public
+- m_vwma_stack_fast_<tf>_<cond> : trend | public
+- m_vwma_stack_slow_<tf>_<cond> : trend | public
+- m_vwmacd_<tf>_<cond> : volume | public: volume-weighted MACD (EMA(price*vol)/EMA(vol) 12 minus 26)
+- m_wave_agree_<tf>_<cond> : simpler | approx: all three wave histograms same sign
+- m_wave_long_hist_<tf>_<cond> : simpler | approx: MACD(24,52,18) histogram
+- m_wave_mid_hist_<tf>_<cond> : simpler | approx: MACD(12,26,9) histogram
+- m_wave_short_hist_<tf>_<cond> : simpler | approx: MACD(5,13,5) histogram
+- m_willr14_<tf>_<cond> : osc | public
+- m_willr21_<tf>_<cond> : osc | public
+- m_willr7_<tf>_<cond> : osc | public
+
+## defs_S.json
+- c_S_multisqz_on_ge2 : Multi Squeeze: >= 2 of the 6 timeframes (1,3,5,15,30,60) in a squeeze at the signal (PUBLIC squeeze rule)
+- c_S_multisqz_on_ge3 : Multi Squeeze: >= 3 of the 6 timeframes (1,3,5,15,30,60) in a squeeze at the signal (PUBLIC squeeze rule)
+- c_S_multisqz_on_ge4 : Multi Squeeze: >= 4 of the 6 timeframes (1,3,5,15,30,60) in a squeeze at the signal (PUBLIC squeeze rule)
+- c_S_multisqz_fired_ge1 : Multi Squeeze fired: >= 1 timeframes fired a squeeze in the trade direction within the last 3 bars
+- c_S_multisqz_fired_ge2 : Multi Squeeze fired: >= 2 timeframes fired a squeeze in the trade direction within the last 3 bars
+- c_S_multisqz_fired_ge3 : Multi Squeeze fired: >= 3 timeframes fired a squeeze in the trade direction within the last 3 bars
+- c_S_triple_sqz : Triple Squeeze: 5m, 15m and 60m all in a squeeze (APPROXIMATION of the vendor definition)
+- c_S_sqz_rotation : Squeeze Rotation (APPROXIMATION): a squeeze fired with the trade on 1/3/5m while 15m or 60m is still in a squeeze
+- c_S_sqzstat_pos_5m : squeeze statistics (walk-forward): the last 20 RESOLVED fired squeezes on 5m moved on average >0 pts in their fired direction over the next 12 bars
+- c_S_sqzstat_pos_15m : squeeze statistics (walk-forward): the last 20 RESOLVED fired squeezes on 15m moved on average >0 pts in their fired direction over the next 12 bars
+- c_S_pivot_P_side : price on the trade side of the daily floor-trader pivot P (prior RTH day H,L,C) [PUBLIC]
+- c_S_pivot_R1S1_beyond : price beyond daily R1 (long) / S1 (short) [PUBLIC]
+- c_S_pivot_R2S2_beyond : price beyond daily R2 / S2
+- c_S_pivot_clear_10 : no daily pivot level within 10 pts ahead
+- c_S_pivot_clear_20 : no daily pivot level within 20 pts ahead
+- c_S_cama_H3L3_beyond : Camarilla H3 / L3 beyond in the trade direction [PUBLIC]
+- c_S_cama_inside_H3L3 : price inside Camarilla H3-L3 (range day expectation)
+- c_S_pd_fib50_side : price on the trade side of the prior day's 50% level
+- c_S_fib_pullback_38_62 : trade enters after a 38-62% retracement of the last 15m swing leg (leg = last confirmed swing high - low; uses direction of the trade) [APPROXIMATION]
+- c_S_measured_move_room : a measured move (last 15m swing leg length from here) reaches at least the target distance [APPROXIMATION]
+- c_S_vwapmax_ge4 : VWAP Max (APPROXIMATION): price on the trade side of >= 4 of 6 anchored VWAPs (session, weekly, monthly, day-low, day-high, last event)
+- c_S_vwapmax_ge5 : VWAP Max (APPROXIMATION): price on the trade side of >= 5 of 6 anchored VWAPs (session, weekly, monthly, day-low, day-high, last event)
+- c_S_dpmr_used_le0.6 : DPMR (APPROXIMATION): label-day range so far <= 0.6 x the median range-so-far at the same clock time over the prior 20 days
+- c_S_dpmr_used_le0.9 : DPMR (APPROXIMATION): label-day range so far <= 0.9 x the median range-so-far at the same clock time over the prior 20 days
+- c_S_dpmr_used_le1.2 : DPMR (APPROXIMATION): label-day range so far <= 1.2 x the median range-so-far at the same clock time over the prior 20 days
+- c_S_hpmr_used_le0.8 : HPMR (APPROXIMATION): last-60-min range <= 0.8 x the median at the same clock time (prior 20 days)
+- c_S_hpmr_used_le1.2 : HPMR (APPROXIMATION): last-60-min range <= 1.2 x the median at the same clock time (prior 20 days)
+- c_S_weekrange_used_le0.5 : weekly stats (APPROXIMATION): week range so far <= 0.5 x median full-week range of the prior 8 weeks
+- c_S_weekrange_used_le0.8 : weekly stats (APPROXIMATION): week range so far <= 0.8 x median full-week range of the prior 8 weeks
+- c_S_atrmove_le0.5 : ATR Move (APPROXIMATION): signed move from the prior RTH close in the trade direction <= 0.5 x 14-day mean RTH range (room left)
+- c_S_atrmove_le1 : ATR Move (APPROXIMATION): signed move from the prior RTH close in the trade direction <= 1 x 14-day mean RTH range (room left)
+- c_S_corr60_es_ge0.7 : Power Correlations: 60-minute rolling correlation of NQ and ES 1m returns >= 0.7
+- c_S_conf15_es : ES 15-minute change in the trade direction (confirmation)
+- c_S_corr60_rty_ge0.7 : Power Correlations: 60-minute rolling correlation of NQ and RTY 1m returns >= 0.7
+- c_S_conf15_rty : RTY 15-minute change in the trade direction (confirmation)
+
+## defs_T.json
+- c_T_tick_close_side : NYSE TICK last 1m close on the trade side of zero (RTH only)
+- c_T_tick_ma5_side : TICK 5-min mean on the trade side of zero
+- c_T_tick_ma15_side : TICK 15-min mean on the trade side of zero
+- c_T_tick_ma15_strong : TICK 15-min mean beyond 150 on the trade side
+- c_T_tick_rising : TICK 5-min mean higher (long) / lower (short) than 15 min ago
+- c_T_tick_ext_with_600 : TICK printed beyond 600 on the trade side within the last 15 min
+- c_T_tick_no_ext_against_600 : NO TICK extreme beyond 600 against the trade within the last 15 min
+- c_T_tick_ext_with_800 : TICK printed beyond 800 on the trade side within the last 15 min
+- c_T_tick_no_ext_against_800 : NO TICK extreme beyond 800 against the trade within the last 15 min
+- c_T_tick_ext_with_1000 : TICK printed beyond 1000 on the trade side within the last 15 min
+- c_T_tick_no_ext_against_1000 : NO TICK extreme beyond 1000 against the trade within the last 15 min
+- c_T_tick_cum_side : cumulative TICK (sum of 1m closes since the RTH open) on the trade side of zero
+- c_T_tick_cum_slope : cumulative TICK rising (long) / falling (short) over 15 min
+- c_T_tick_no_div : no TICK divergence against the trade: price made a new 30-min extreme in the trade direction while the TICK 30-min extreme did not confirm
+
+## defs_U.json
+- c_U_1 : USER_SET_V0 item 1: CCI14 5m and 15m same side of zero (unknown = no)
+- c_U_2 : USER_SET_V0 item 2: price on trade side of session open and of the last-crossed prior-session level (unknown = no)
+- c_U_3 : USER_SET_V0 item 3: prior-day POC side + outside/leaving prior VA + no HVN between entry and target (unknown = no)
+- c_U_4 : USER_SET_V0 item 4: squeeze fired with trade (5m or 15m, last 10 bars) or 5m histogram rising with trade (unknown = no)
+- c_U_5 : USER_SET_V0 item 5: 5m EMA8/EMA21 stacked with the trade (unknown = no)
+- c_U_all5 : USER_SET_V0 all 5
+- c_U_ge4 : USER_SET_V0 at least 4 of 5
+- c_U_ge3 : USER_SET_V0 at least 3 of 5
