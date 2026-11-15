@@ -1,0 +1,5 @@
+# DS3_DEEPEN_LOSS - T-DEEPEN loss side (W-LA). Status page, no results yet.
+**VERDICT: infrastructure built and queued, no exact result has landed; the identity run TL3_LA_ID (598 / 25,943.82 expected) is still waiting in tp_admit behind seven higher tags, so nothing is scored. No PASS claimed.**
+- Hook: code/th_deepen_la/la_hooks.py (outermost, additive: state-cut override per book/session/context tag/forecast-unit arm, session/tag/time-tight/ATR/forecast flat cuts). 331 sets TL3_LA_* (S state-cut grid incl. persist 1/2/3/5 per book, E WL_E1, C C22, F flat, FA forecast arm, X context tag) in /mnt/l2/l2vast/_deepen_la/a/cells.txt; driver code/th_deepen_la/la_driver.py (breadth-first, L3M then L6M); scorer la_score.py; page builder la_page.py.
+- LOT BASIS: JN05W2 base lots (live x1.75; P7 8,400 engine = 14,700 live); engine fee $1.18 vs FEES.md $4.84 (d_mean_484 column).
+- Not yet built: two-stage cut, book-reading second conditions (delta/sweep/wall/imbalance/thin depth/absorption), day-done mirror, auto-expansion generator.

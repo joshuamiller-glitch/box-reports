@@ -1,6 +1,6 @@
 # CONFLUENCE_DEFS_CF4 (W-CF4, Block 2 / Block 4). Auto-built by code/th_confl_cf4/c4_page.py
 
-Key: `sid` = <book>_<sig_ns> (JN05W2 trades.parquet; W-CF1 entry-table id to be mapped by sig_ns). Files: /mnt/l2/l2vast/_confl/cols_cf4/cf4_<sub>.parquet. int8 columns: 1 yes, 0 no, -1 unknown. Raw value of the indicator beside each: `v_<ind>_<tf>` (float32).
+Key: `sid` = sig_id of the W-CF1 entry table (<book7>_<sig_ts>), all 48,353 signals (taken and skipped) in /mnt/l2/l2vast/_confl/entry_table/signals_all.parquet. CAVEAT: the NQ 1m bar store bars1m_NQ.npz is an additively gap-spliced series (its offset to the traded price grows from ~360 pts in 2023-04 to ~3,700 pts in 2026-10; local structure and ranges are exact, absolute levels are not): indicators here use ratios/differences only, no round-number levels. Files: /mnt/l2/l2vast/_confl/cols_cf4/cf4_<sub>.parquet. int8 columns: 1 yes, 0 no, -1 unknown. Raw value of the indicator beside each: `v_<ind>_<tf>` (float32).
 Column name: c4_<indicator>_<tf>_<cond>, tf in 1m,3m,5m,15m,60m,1d. Bars: 1m from /mnt/l2/l2vast/_th_sz/bars1m_NQ.npz; HTF bars aligned to epoch (daily = Globex day, 18:00 ET); a bar is used only if its END <= signal second (completed bars only; no repainting anywhere).
 Conditions (template): `side` state on trade side (x vs mid, or sign of the state); `sig` x on trade side of its signal line; `rise` x moving with the trade vs 1 bar ago; `fresh5` fresh signal (cross of signal line / midline / explicit event) with the trade within the last 5 bars, `fresh1` on the last bar; `ewith`/`eagainst` in the extreme zone on / against the trade side (z1,z2 = two zone sets); `eleave` left the zone against the trade within 3 bars; `eenter` entered the with-trade extreme within 3 bars; `nodiv`/`divwith` no divergence against / divergence in favour at the last two fractal swings (k=2) of that TF; `mtf_n` (raw count 0-6), `mtf_ge4`, `mtf_all` = number of timeframes (1,3,5,15,60,1d) where `side` is yes. unsigned indicators: `hi`,`lo_z`,`hi_z`,`rise`. Fast/slow variants are suffixed F / S (standard published setting has no suffix).
 
@@ -335,10 +335,44 @@ Conditions (template): `side` state on trade side (x vs mid, or sign of the stat
 | avwap_pd_high | PUBLIC anchored VWAP from pd_high (typical price x volume, 1m) | volume |
 | avwap_pd_low | PUBLIC anchored VWAP from pd_low (typical price x volume, 1m) | volume |
 
+## B2-E causal ML-style: 222 condition columns, 11 indicator series (x6 timeframes)
+
+| series | formula status | family |
+|---|---|---|
+| kr_dir | APPROXIMATION of jdehorty Kernel Regression (Rational Quadratic, h=8, alpha=1) using ONLY past bars (64-bar one-sided window; repainting end-point form not used); direction = slope of yhat; ev = fast (h-2) kernel crossing the slow one | ml |
+| kr_px | price minus kernel estimate (h=8) | ml |
+| krF_dir | APPROXIMATION of jdehorty Kernel Regression (Rational Quadratic, h=4, alpha=1) using ONLY past bars (64-bar one-sided window; repainting end-point form not used); direction = slope of yhat; ev = fast (h-1) kernel crossing the slow one | ml |
+| krF_px | price minus kernel estimate (h=4) | ml |
+| krS_dir | APPROXIMATION of jdehorty Kernel Regression (Rational Quadratic, h=16, alpha=1) using ONLY past bars (64-bar one-sided window; repainting end-point form not used); direction = slope of yhat; ev = fast (h-4) kernel crossing the slow one | ml |
+| krS_px | price minus kernel estimate (h=16) | ml |
+| lorentzian(1m) | APPROXIMATION of jdehorty Lorentzian Classification: features RSI14, WT(10,11), CCI20, ADX20, RSI9 scaled to 0-1; label = sign of the close 4 bars ahead (only rows whose label is already known); 8 nearest rows by sum log(1+|dx|) among rows sampled every h bars within 1500 (<=5m) / 800 bars; prediction = sum of the 8 labels (-8..8); evaluated at the last completed bar | ml |
+| lorentzian(3m) | APPROXIMATION of jdehorty Lorentzian Classification: features RSI14, WT(10,11), CCI20, ADX20, RSI9 scaled to 0-1; label = sign of the close 4 bars ahead (only rows whose label is already known); 8 nearest rows by sum log(1+|dx|) among rows sampled every h bars within 1500 (<=5m) / 800 bars; prediction = sum of the 8 labels (-8..8); evaluated at the last completed bar | ml |
+| lorentzian(5m) | APPROXIMATION of jdehorty Lorentzian Classification: features RSI14, WT(10,11), CCI20, ADX20, RSI9 scaled to 0-1; label = sign of the close 4 bars ahead (only rows whose label is already known); 8 nearest rows by sum log(1+|dx|) among rows sampled every h bars within 1500 (<=5m) / 800 bars; prediction = sum of the 8 labels (-8..8); evaluated at the last completed bar | ml |
+| lorentzian(15m) | APPROXIMATION of jdehorty Lorentzian Classification: features RSI14, WT(10,11), CCI20, ADX20, RSI9 scaled to 0-1; label = sign of the close 4 bars ahead (only rows whose label is already known); 8 nearest rows by sum log(1+|dx|) among rows sampled every h bars within 1500 (<=5m) / 800 bars; prediction = sum of the 8 labels (-8..8); evaluated at the last completed bar | ml |
+| lorentzian(60m) | APPROXIMATION of jdehorty Lorentzian Classification: features RSI14, WT(10,11), CCI20, ADX20, RSI9 scaled to 0-1; label = sign of the close 4 bars ahead (only rows whose label is already known); 8 nearest rows by sum log(1+|dx|) among rows sampled every h bars within 1500 (<=5m) / 800 bars; prediction = sum of the 8 labels (-8..8); evaluated at the last completed bar | ml |
+
 ## B2-C2 IRL/ERL sweeps (Addendum 5 Step B): 334 condition columns, 0 indicator series (x6 timeframes)
 
 | series | formula status | family |
 |---|---|---|
+
+## B4 alternate bars: ha1: 2311 condition columns (c4_<ind>_ha1_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
+## B4 alternate bars: ha15: 2311 condition columns (c4_<ind>_ha15_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
+## B4 alternate bars: ha3: 2311 condition columns (c4_<ind>_ha3_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
+## B4 alternate bars: ha5: 2311 condition columns (c4_<ind>_ha5_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
+## B4 alternate bars: ha60: 2311 condition columns (c4_<ind>_ha60_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
+## B4 alternate bars: range16: 2311 condition columns (c4_<ind>_range16_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
+## B4 alternate bars: renko16: 2311 condition columns (c4_<ind>_renko16_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
+## B4 alternate bars: tick2000: 2311 condition columns (c4_<ind>_tick2000_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
+## B4 alternate bars: vol500: 2311 condition columns (c4_<ind>_vol500_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
 
 ## IRL / ERL (Addendum 5) - PRE-REGISTERED DEFINITIONS IRL_ERL_V0 (frozen before any Step A aggregate was computed; not tuned afterwards)
 Code: code/th_confl_cf4/c4_irl_lib.py (ranges, scan, post-sweep metrics), c4_irl_events.py (events), c4_irl_score.py (tables). Events: /mnt/l2/l2vast/_confl/irl/ev_<variant>.parquet (ctrl=True rows are the random-level control).
@@ -350,3 +384,13 @@ HEADLINE = sweep bars 5 min, thr 2 pts, W 3, minor pivot p 3. One-at-a-time sens
 MEASURES after the confirming close, horizons 15/30/60/120 min (1m bars): fav = max favourable excursion for the fade; net = fade return at the horizon close; mae = max adverse excursion for a fade entered at the close back inside; cont = 1 if any 1m close re-closes beyond the swept level (continuation); stop = 1 if adverse reaches the poke extreme +2 pts. All in points, divided by ATR in the tables.
 CONTROLS: (1) ext vs int matched on poke depth (terciles), time of day (ET hour) and volatility (ATR terciles), cell-weighted difference with week-block bootstrap CI; (2) random levels: each real level is replaced by a level at the SAME distance from the price at its birth on a random side (2 seeds), pushed through the identical sweep scan and tags.
 WORKED NQ EXAMPLES (headline). EXTERNAL: 2026-10-01 20:30 ET (Globex day 10-02, Asia) 5-min close back below the prior-day high: level 27151.25 (a_pd high; also external to b_ps and e15; internal to d_wk), poke high 27187.75 (36.5 pts beyond, 3 bars, 2 closes beyond), confirmed close 27112.25, fade short d=-1. INTERNAL: 2026-09-30 19:20 ET (Asia) a confirmed minor swing low at 27032.00 (inside prior-day and prior-session ranges, tags internal) poked to 27022.00 (10 pts) and closed back above; confirmed close 27039.75, fade long d=+1.
+
+## Dropped / rebuilt-causal list (W-CF4, no repainting)
+- Nadaraya-Watson envelope, LuxAlgo end-point (repainting) form: DROPPED. Rebuilt as a one-sided Gaussian kernel over past bars only (nwe, nweF, nweS); APPROXIMATION.
+- Kernel Regression (jdehorty) end-point/Nadaraya-Watson repaint behaviour: rebuilt with a one-sided Rational Quadratic kernel on past bars only (kr*).
+- ZigZag / ZigZag++ and any swing indicator drawn at the pivot bar: DROPPED as plotted; replaced by fractal pivots usable only k bars after the pivot (confirmed-pivot version everywhere: BOS/CHoCH, OB, SD, premium/discount, OTE, divergence).
+- Williams fractals: only the confirmed form (usable 2 bars late). Alligator forward-shifted lines: causal reading (value at t is the line computed `shift` bars earlier). Ichimoku: cloud at t = spans computed 26 bars earlier; chikou compared with price 26 bars earlier; future cloud colour is known at t.
+- Market Cipher B: proprietary, DROPPED as the original; APPROXIMATION composite (WaveTrend + money flow + RSI) built instead (mcwt, mcmf, mc_comp).
+- Lorentzian Classification (jdehorty): APPROXIMATION; labels are used only for rows whose forward return window is already complete at the signal bar.
+- Volume profile / anchored VWAP: use bars completed before the signal second only.
+- Not built in this pass: Elliott/harmonic patterns, Tr3ndy/proprietary Simpler tools (Block 1 owner W-CF1).

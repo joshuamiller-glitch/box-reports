@@ -1,4 +1,4 @@
-# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-14 23:58Z)
+# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-15 00:18Z)
 Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.py, ta_ind.py, ta_cond.py); this page is generated from the same registries; nothing here has been scored yet.
 
 ## Table and ids
@@ -10,12 +10,13 @@ Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.
 - LEAK RULE (category L and any state of D7): every outcome-dependent column uses trades CLOSED at the signal second only (exit_ts <= sig_ts). Trades open at sig_ts contribute only through 'other_same / other_opp_none / flat_stack' (positions, no results).
 - Sessions: 0 asia 18:00-01:59 ET, 1 london 02:00-08:29, 2 pre 08:30-09:29, 3 nyam 09:30-11:59, 4 nypm 12:00-14:59, 5 close 15:00-17:59. Label day (ld) = Globex day (18:00 ET starts the next ld).
 - Calendar: events from /mnt/l2/l2vast/_calendar/events.csv (2024-10..); 2023-04..2024-09 FOMC/CPI/NFP backfilled from the public schedule (approximate, flagged in code calendar()). Other releases before 2024-10 are missing.
+- PRICE OFFSET (fixed 2026-11-15): the 1m bar series is an additive gap-spliced series whose offset from the traded price grows from ~364 pts (2023-04) to ~3,730 pts (2026-10). Only ABSOLUTE-number conditions are affected: round 100/50 levels and 'distance to round number' (categories B and the round kind of the clusters) now use TRUE price = bar price + per-day offset (table /mnt/l2/l2vast/_confl/offset_table.parquet: ld, offset = median(engine entry_px - last complete 1m close) over that day's trades, filled across days) and are unknown (-1) on the 9 roll-splice days where the offset is ambiguous. Everything else (prior-day H/L/C, value areas, POCs, VWAP, opens, pivots, gaps, indicators) is differences/ratios inside the continuous series and needs no re-basing; gap-fill, naked POCs and weekly/monthly opens compare a level with the current price across rolls and are correct because the series is continuous. No condition was dropped.
 - Levels: L = ta_lib.Lib.levels(): PDH PDL PDC (prior RTH day), ONH ONL (Globex 18:00-09:30), pPOC pVAH pVAL (prior RTH 1-pt typical-price volume profile, 70% value area), oPOC oVAH oVAL (overnight), cPOC cVAH cVAL (20-day composite), nPOCup/dn (nearest naked POC of the last 20 days above/below), SPhi/SPlo (prior-day single-print tail edge, 30-min TPO count 1), session VWAP and +-1/+-2 sigma, OR5/15/30 H/L and IB (60 min) H/L (only after they complete), week open, month open, nearest 50-pt round numbers, nearest unfilled RTH gap edge. Cluster = single-linkage group of levels with neighbour spacing <= D (D = 5, 10, 15 pts, 0.1 ATR, 0.2 ATR); strength = level count and distinct KINDS (pd, on, prof, vwap, or, ib, open, round, gap). 'Ahead' = between entry and entry + side x target_pts; 'behind' = within stop_pts behind the entry.
 - USER_SET_V0 (registered 23:27Z before any result): see the c_U_* rows below and the header of code/th_confl/ta_user.py (exact definitions, unknown = no, no tuning). Interpretations that the user's text left open are fixed there and labelled; V1 will be registered separately if the user corrects any.
 - Category M: classic indicators on 1/3/5/15/60-min and daily bars; condition suffixes: side (midline), sig (signal line), rise (1 bar), ewith/eagainst/eleave (extreme zone in/against/left within 3 bars), nodiv/divwith (divergence at the last fractal swing k=2, same timeframe), hi (unsigned state above threshold), on / fired1 / fired10 (squeeze), agree3of4 (side true on >=3 of 3m 5m 15m 60m). Simpler-style items are labelled PUBLIC FORMULA or APPROXIMATION in the formula column.
 
 
-## defs_AEL.json
+## defs_ABCDEKL.json
 - c_B_with_PDH : price on the trade side of PDH (long: above, short: below)
 - c_B_with_PDL : price on the trade side of PDL (long: above, short: below)
 - c_B_with_PDC : price on the trade side of PDC (long: above, short: below)
@@ -45,9 +46,9 @@ Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.
 - c_B_behind_le10 : a reference level sits within 10 pts BEHIND the entry (support)
 - c_B_behind_le20 : a reference level sits within 20 pts BEHIND the entry (support)
 - c_B_behind_le40 : a reference level sits within 40 pts BEHIND the entry (support)
-- c_B_round100_clear20 : next round 100 ahead is more than 20 pts away
-- c_B_round100_ahead_le10 : round 100 within 10 pts ahead
-- c_B_round100_behind_le10 : round 100 within 10 pts behind (support)
+- c_B_round100_clear20 : next round 100 (on the TRUE traded price = bar price + per-day offset, /mnt/l2/l2vast/_confl/offset_table.parquet) ahead is more than 20 pts away; unknown on roll-splice days
+- c_B_round100_ahead_le10 : round 100 (true price) within 10 pts ahead
+- c_B_round100_behind_le10 : round 100 (true price) within 10 pts behind (support)
 - c_B_cl_ahead_cnt3_5 : NO cluster of >=3 levels (D=5pt) AHEAD inside the target distance (clear path)
 - c_B_cl_ahead_cnt2_5 : NO cluster of >=2 levels (D=5pt) AHEAD inside the target distance
 - c_B_cl_ahead_kinds2_5 : NO cluster with >=2 distinct KINDS (D=5pt) AHEAD inside the target distance
@@ -289,6 +290,8 @@ Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.
 - c_L_gap30 : at least 30 min since the book last exited (fresh vs quick re-entry)
 - c_L_ctx_fresh : entry context FRESH (not chasing, entry no <= 2, >= 30 min since the book last exited)
 - c_L_ctx_chasing : entry context CHASING (chase_k > 1)
+
+## defs_AEL.json
 
 ## Category M indicators (name | family | formula status)
 - m_adline_<tf>_<cond> : volume | public

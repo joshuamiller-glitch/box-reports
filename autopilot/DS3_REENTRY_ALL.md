@@ -1,8 +1,8 @@
 # DS3_REENTRY_ALL - re-entry discipline for K7 M7 U7 H7 A7 O7 (W-RA, priority 6)
 
-**VERDICT: 44 of 258 re-entry cells x windows scored (204 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
+**VERDICT: 46 of 258 re-entry cells x windows scored (207 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
 
-Built epoch 1794698559. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
+Built epoch 1794701690. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
 
 ## 1. Where the money is by entry number and fresh vs rechase (JN05W2, exact engine trades; $/wk by window)
 
@@ -153,7 +153,9 @@ d_mean = $/wk vs JN05W2; DD = max drawdown of cumulative daily P&L; dd_cut_pct p
 | LCAP15 | HOLD | 303.1 | 311.1 | -87681.4 | -92044.3 | 4.7 | -51081.4 | 4064.0 | 10.5 | 10.7 | 1.0 | 0 |
 | LCAP20 | HOLD | 318.2 | 320.0 | -92449.5 | -92044.3 | -0.4 | -54663.6 | 481.9 | 10.7 | 10.7 | 1.0 | 0 |
 | BLKi | PREUW | 155.8 | 166.7 | -94133.6 | -92242.5 | -2.1 | -50152.4 | 2395.0 | 9.2 | 9.3 | 1.0 | 0 |
+| BLKi | X' | 523.4 | 528.2 | -78283.5 | -80355.7 | 2.6 | -45714.1 | 204.2 | 10.2 | 10.3 | 1.0 | 1 |
 | BLKi | GAP | -1076.5 | -1071.8 | -76438.0 | -82062.6 | 6.9 | -69345.2 | -398.6 | 10.0 | 10.1 | 1.0 | 0 |
+| BLKii | GAP | -1150.3 | -1147.3 | -74688.5 | -82062.6 | 9.0 | -68794.5 | 152.0 | 10.0 | 10.1 | 0.9 | 1 |
 
 ### recent windows with 2026-W44 removed from both sides (stack level)
 
@@ -205,7 +207,7 @@ Gate: DD not worse by >2%, worst week not worse by >2%, mean not lower by >3% of
 | HALF | K7:nyam | HOLD,L3M,L6M | yes | 23.5 | 23.0 | 11.6 | 11.0 | 11.9 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 1.0 | 0 |
 | HALF | M7:london | HOLD,L3M,L6M | yes | 280.6 | 282.6 | 199.4 | 9.8 | 198.5 | 25.7 | 0.0 | 0.0 | 0.8 | 0.8 | 1.0 | 1 |
 | HALF | *:london | HOLD,L3M,L6M | yes | 414.6 | 416.7 | 206.4 | 9.4 | 205.4 | 1.3 | 0.0 | 0.0 | 2.7 | 2.7 | 1.0 | 1 |
-| BLKii | A7:asia | HOLD,L3M,L6M | yes | 27.4 | 27.8 | 14.0 | 8.7 | 13.8 | 0.0 | 0.0 | 0.0 | 3.9 | 4.0 | 1.0 | 1 |
+| BLKii | A7:asia | GAP,HOLD,L3M,L6M | yes | 27.4 | 27.8 | 14.0 | 8.7 | 13.8 | 0.0 | 0.0 | 0.0 | 3.9 | 4.0 | 1.0 | 1 |
 | LCAP20 | all | HOLD,L3M,L6M | yes | -234.8 | -227.5 | 320.0 | 7.7 | 318.2 | -0.4 | 0.0 | 0.0 | 11.1 | 11.0 | 1.0 | 0 |
 | LCAP20 | M7:london | HOLD,L3M,L6M | yes | 110.8 | 111.7 | 114.2 | 7.5 | 114.2 | 8.2 | 0.0 | 0.0 | 0.9 | 0.8 | 1.0 | 0 |
 | HALF | K7:london | HOLD,L3M,L6M | yes | 43.0 | 43.0 | 6.9 | 5.9 | 7.0 | 0.0 | 0.0 | 0.0 | 0.3 | 0.3 | 1.0 | 0 |

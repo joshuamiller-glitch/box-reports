@@ -1,6 +1,6 @@
-# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-14T23:46Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
+# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T00:26Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
 
-**VERDICT (plain): 2 cell-months done over 0 cells; 0 cells pass the tolerant gate in L3M, 0 pass in every present window incl. older ones (leads, before placebo read). Leads: none yet. No PASS claim.**
+**VERDICT (plain): 6 cell-months done over 0 cells; 0 cells pass the tolerant gate in L3M, 0 pass in every present window incl. older ones (leads, before placebo read). Leads: none yet. No PASS claim. Queue note: 14 chains wait in tp_admit (box load 60+, cap 28); EC share 2 workers.**
 
 Prereg autopilot/EXPAND_C_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine, all layers ON. Identity: TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 

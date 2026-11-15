@@ -1,5 +1,5 @@
 # CONFLUENCE_DEFS_CF2 (W-CF2). Categories F, G, H, I, J and Block 5. Code: code/th_confl_cf2. Columns: /mnt/l2/l2vast/_confl/cols_cf2/{FG,I,J,H,B5}.parquet keyed by sig_id (= <book7>_<sig_ts>).
-VERDICT: 5 column files built for all 19,798 taken JN05W2 signals (skipped-signal rows are added incrementally by `python3 code/th_confl_cf2/build_all.py <FG|I|J|H|B5>` when W-CF1 publishes them); counts of conditions per family are in the table at the end; no PASS claims.
+VERDICT: 5 column files (638 conditions, FG 101, I 72, J 148, H 55, B5 262) built for all 48,353 rows of signals_all.parquet (19,798 taken + 28,555 skipped, W-CF1's current rows; later rows are appended by `python3 code/th_confl_cf2/build_all.py <FG|I|J|H|B5>`, which only computes missing sig_ids); no PASS claims.
 
 ## Conventions (all families)
 - Signal second T = sig_ts. Everything uses data with timestamp < T (seconds <= T-1; 1-minute bars with bar end <= T; prior-day files for daily/level data). No repainting, no look-ahead.
@@ -64,3 +64,15 @@ VERDICT: 5 column files built for all 19,798 taken JN05W2 signals (skipped-signa
 - Agreement: `c_B5_ALL_<tf>_<state>_ge3of4 / _eq4of4` over ES, RTY, YM, MEGA.
 - Power correlations: B5_corr_NQ_{ES,RTY,YM}_{60,240} (correlation of 1-minute changes over the last 60/240 completed minutes), B5_corr_NQ_MEGA_{60,240} (2024-10+), B5_corr_mean3_60, B5_corr_NQ_VIX_d20 (20 completed days, daily NQ close change vs VIX close change; VIX from 2024-09). Conditions corr >= 0.8/0.9 (indices), >= 0.7 (mega), VIX corr <= -0.7.
 - W-CF1/W-CF4/W-CF5 indicator libraries (code/th_confl, th_confl_cf4, th_confl_cf5) can be pointed at ES/RTY/YM bars for further states; not run yet.
+
+## Files and counts
+
+| file   |   conditions c_* |   raw v_* |   signal rows |   % rows with any value |
+|:-------|-----------------:|----------:|--------------:|------------------------:|
+| FG     |              101 |        71 |         48353 |                   100   |
+| I      |               72 |        71 |         48353 |                   100   |
+| J      |              148 |       222 |         48353 |                    87.7 |
+| H      |               55 |        43 |         48353 |                    42.4 |
+| B5     |              262 |       223 |         48353 |                   100   |
+
+Column names are listed by `python3 -c "import pandas as pd;print(list(pd.read_parquet('/mnt/l2/l2vast/_confl/cols_cf2/FG.parquet').columns))"`. J burst thresholds are frozen from the first full build (v_J_J_burst_q10_*/q05_* columns). H covers MBO days only (2026-05-01..2026-11-13 now). Known limits: YM has no tape or L2; intraday VIX is not on the box; 6J is L6M only; the megacap composite VWAP is an approximation.
