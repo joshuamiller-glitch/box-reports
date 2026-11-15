@@ -1,8 +1,8 @@
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 52 of 269 cells have an exact L3M result so far; 13 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 57 of 279 cells have an exact L3M result so far; 15 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T08:32Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T09:02Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -144,12 +144,14 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | TG1_P7 | 3 | -0.2 / -230 / -230 / -230 / -95 / True / -0.5 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 | TG1_U7 | 3 | -0.1 / -69 / -69 / -69 / -50 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | TG1_H7 | 3 | -0.1 / -22 / -22 / -22 / -30 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG1_M7 | 3 | -0.1 / -61 / -61 / -61 / -35 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | TG1_A7 | 3 | -0.1 / 208 / 208 / 209 / -45 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | TG1_ALL | 3 | -0.7 / 368 / 369 / 377 / -360 / True / -1.3 / 1.02 / 0 | - / - / - / - | - / - | - / - |
 | TG2_K7 | 3 | 6.7 / 795 / 794 / 797 / 3518 / True / -0.6 / 1.03 / 0 | - / - / - / - | - / - | - / - |
 | TG2_P7 | 3 | -0.4 / -362 / -363 / -363 / -190 / True / -1.0 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 | TG2_U7 | 3 | -0.2 / -138 / -138 / -138 / -100 / True / -0.5 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | TG2_H7 | 3 | -0.1 / -36 / -36 / -38 / -60 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG2_M7 | 3 | -0.2 / -86 / -86 / -86 / -70 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | TG2_A7 | 3 | -0.2 / 94 / 93 / 94 / -90 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | TG2_ALL | 3 | 5.7 / 194 / 191 / 194 / 3008 / True / -2.5 / 1.01 / 0 | - / - / - / - | - / - | - / - |
 
@@ -165,7 +167,10 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | WK2_K7 | 3 | 0.2 / -23 / -28 / -41 / 54 / True / 2.6 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | WK2_P7 | 3 | -2.8 / -168 / -173 / -188 / -1158 / False / -0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | WK2_U7 | 3 | 0.1 / 77 / 77 / 76 / 32 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_H7 | 3 | 0.0 / 27 / 27 / 27 / 82 / True / 0.3 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | WK2_M7 | 3 | 0.1 / -59 / -59 / -61 / 22 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_A7 | 3 | 0.1 / 86 / 85 / 85 / -6 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_ALLCUTS | 3 | -2.2 / -75 / -82 / -101 / -943 / False / 1.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### SJ  join-then-market stop seconds
 
@@ -174,7 +179,7 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, WK2_U7
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, WK2_U7, WK2_H7, WK2_A7
 
 Auto-expansions launched (expansion of <parent>):
 
@@ -355,6 +360,19 @@ Auto-expansions launched (expansion of <parent>):
 - - TG2_ALL_slon: expansion of TG2_ALL
 - - TG2_ALL_snya: expansion of TG2_ALL
 - - TG2_ALL_snyp: expansion of TG2_ALL
+- - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
+- HIT WK2_H7: L3M cut 0.0% d mean 27 (adj 27) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - WK2_H7_w1: expansion of WK2_H7
+- - WK2_H7_w3: expansion of WK2_H7
+- - WK2_H7_w5: expansion of WK2_H7
+- - WK2_H7_touch: expansion of WK2_H7
+- - WK2_H7_fb12: expansion of WK2_H7
+- HIT WK2_A7: L3M cut 0.1% d mean 86 (adj 85) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - WK2_A7_w1: expansion of WK2_A7
+- - WK2_A7_w3: expansion of WK2_A7
+- - WK2_A7_w5: expansion of WK2_A7
+- - WK2_A7_touch: expansion of WK2_A7
+- - WK2_A7_fb12: expansion of WK2_A7
 - - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
 
 ## 4. Not run / limits
