@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 00:45Z 11-15 (t+467.8 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 01:15Z 11-15 (t+468.3 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 94% min 72% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
-Updated 2026-11-15T00:45:31Z. Box: CPU 94.6%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 96% min 83% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0, 'TO': 0.0}.
+Updated 2026-11-15T01:15:38Z. Box: CPU 96.8%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-15T00:37Z
+## TREND (TL) update 2026-11-15T01:08Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-15T00:33:02Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-15T01:03:02Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 23:15Z 11-14 (t+514.5 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 01:15Z 11-15 (t+516.5 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
-Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (changed since last edition).
+Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 93% min 72% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 96% min 83% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -2913,3 +2913,21 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - (wall 00:45Z) W-EA status: EA workers busy 3, pending exact cell-months 55, done EA cell-months 54; chains 28 chains running; identity vs JN05W2 598 net 25943.82 -> IDENTICAL; promote 00:07Z TL3_EA_SF_NP_S1_U150_R120_CXN PROMOTE [1] 
 - (wall 00:48Z) W-CF4 FINAL: Block 4 finished (run_all.log done): 12 alternate bar sets x 2,311 conditions = 27,732 conditions (range8/16, renko8/16, vol500/2000, tick2000, Heikin-Ashi 1/3/5/15/60); Block 2 9,659; CF4 library ~37,400 conditions; blocks 2 and 4 complete and scored, none passed any control; IRL/ERL books need exact-engine injection test only if W-CF3 sees a reason. W-CF3 must cluster across bar types (a condition on several bar types counts once). Library total now >60,000 columns (the joined 21,094 used CF4 Block 2 only; alt-bar sets still to be joined).
 - 2026-11-15T00:49Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 1 (1 jobs wanted), cell-months finished last hour 0, total done 0; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
+- 2026-11-15T01:02Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 47 (+driver: 295 jobs wanted), cell-months finished in the last hour 8; first page due 23:00Z
+- (wall 01:03Z) W-CH2 AUTO-EXPANSION of TL3_CH_K790f33_T67: 27 cells (a-i battery) queued at the front; auto-expansions so far 10
+- (wall 01:03Z) W-CH2 AUTO-EXPANSION of TL3_CH_Raq10_T67t: 27 cells (a-i battery) queued at the front; auto-expansions so far 11
+- (wall 01:04Z) HOURLY BLOCK: cores busy 15-min avg 99 pct, hour min 74 pct (load1 40.82); procs running/pending by tag: CF 13/396; CH 0/585; D9 1/47; D10 0/1; EA 2/48; EB 1/25; EC 0/60; LA 0/2; LB 0/22; PA 4/151; R2 0/14; JV 0/40; RF 1/13; PR 4/90; PM 1/12; NT 0/131; TD 3/41; RA 0/23; LR 3/30; siglog months logged 33 of 43; /mnt/l2 free 440 GB (NQ MBO 2025-05..2026-04 downloading); item1 cut bug: waiting on v1.9b printout/Monday NT8 log; item2 T-CONFLUENCE: joined library 21,094 + 26,446 alt-bar columns; stack-wide searched checklists NOT better than shuffled from 330 conditions up; small lists: P7 Asia improves under USER_SET_V0 all-5 and SL2 >=4 (table-level, in-sample), exact-engine sets TL3_CF_U1..U6 running; ICT: 60-min 7-8 hump +7.1 pp on 2013-22 but broad, no profitable book; IRL/ERL: external not better than internal; checklists passed step 5: none; auto-expansions this hour: see tag pages; most important new result: the shuffled-outcome bar shows searching 330+ conditions finds nothing a shuffle does not; blocked on user: Monday NT8 log (v1.9b).
+01:06Z W-LA: LA cell-months done 1, jobs outstanding 2, chains 1; auto-expansions launched: 0 (cumulative new sets)
+- (epoch 1794704773) W-RF status P12: load1 51 of 32 cores, exact workers (all tags) 38, RF exact workers 0, RF exact jobs outstanding 13, first-order WF procs 0; RF exact cell-months done 109; 1505 jobs wanted, 14 chains running, 1794704755
+- (wall 01:06Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 60, cell-months done 8, load 51.62 45.49 46.08
+- 2026-11-15T01:10Z W-TK2 DS3_TICK_BOOKS.md rebuilt (epoch 1794705016); next in 3 h
+- (wall 01:12Z) CONFL NQ MBO Y2025_05_2026_04 downloaded: /mnt/l2/l2vast/raw/NQ_mbo/Y2025_05_2026_04 (job GLBX-20261114-MYSUJQWW56)
+- (wall 01:12Z) DATA PURCHASE (lead; user spend authority 11-14 'T-CONFLUENCE L3 HISTORY' up to $2,500): Databento GLBX.MDP3 mbo NQ.v.0 2024-05-01..2025-05-01, quote $370.85, 221.2 GB billable; running CONFL_MBO total after this $780.50; batch charged at submit; out /mnt/l2/l2vast/raw/NQ_mbo/Y2024_05_2025_04/
+- (wall 01:13Z) W-PR status: PR chains running 90, jobs pending 90, cell-months done 0; cores busy (box-wide exact workers >50% cpu) 38; load 51.42
+- 2026-11-15T01:13Z W-PR DS3_P7_ASIA_REENTRY.md rebuilt (inputs changed): UPDATE 2: BEST SETTING SO FAR = BLK_M30 (after a P7 Asia loser, block that same side for 30 min; nothing else changes) - recent-window evidence only, weak: exact L3M/L6M d$ +1,210 / +1,428 per wk, DD ; next check in 3 h
+- (wall 01:15Z) W-RA status: priority 6 re-entry: 216 cell-months done, 23 jobs pending/running, ~0 RA workers, box load 44.07 46.99 46.65; 953 jobs wanted, 8 chains running, 1794705303
+- (wall 01:19Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 30 (pending file), cell-months done 378, load 45.38 44.77 45.62, epoch 1794705554
+- (wall 01:20Z) W-CH2 status: CH workers busy 0, pending exact cell-months 573, done CH cell-months 786; 16870 jobs wanted, 40 chains running; auto-expansions 11; identity -> IDENTICA
+- (wall 01:23Z epoch 1794705826) W-NT status: NT exact jobs running 4 (quota 6), pending 127 set-months, done 164 set-months; box load1 50 of 32; P7/P11 pages DS3_NEAR_TARGET.md / DS3_LOT_TABLE.md
+- (wall 01:23Z epoch 1794705826) W-NT pages rebuilt (inputs changed): autopilot/DS3_NEAR_TARGET.md, DS3_LOT_TABLE.md; next check in 3 h
+- (wall 01:27Z) W-PM status: load1 36.09, PM exact jobs pending 12, cells with output 13; 335 jobs wanted, 12 chains running, 1794705988; P5 page done, P8 grid np_m15_x10_y15 2898

@@ -1,4 +1,4 @@
-# DS3_LOT_TABLE - PRIORITY 11: session lot table and small books H7 / A7 / O7 (page generated 2026-11-14 22:23 UTC)
+# DS3_LOT_TABLE - PRIORITY 11: session lot table and small books H7 / A7 / O7 (page generated 2026-11-15 01:23 UTC)
 
 **VERDICT: INTERIM (first-order; exact lot strings queued): keep the live table. A free refit does not walk forward (L6M max DD x2.9 at equal mean); refitting only H7/A7/O7 is mild (L6M x1.08, HOLD 0.97, PRE 0.81, X' 0.63). Leads to confirm exactly: H7 asia 4->5 lots (equal-mean DD better in L6M/HOLD/GAP/PRE, worse X'), O7 1->2 lots (better HOLD/GAP/PRE, flat L6M), A7 stay at 1 (mixed), K7 nypm 2->3. M7 unchanged.**
 
@@ -242,12 +242,17 @@ Status: Shadow only, post hoc, no PASS claims. Prereg autopilot/NT_PREREG.md. Li
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | TL3_NT_LT_A7_2 | L6M | 6/6 | 26143.3 | 0.921 | -12.2 | -5.993 | -42055.4 | -36370.5 | 102.5 | 0.000 | -30.0 | 305.6 | 297.2 | 9.360 | 10.8 |
 | TL3_NT_LT_H7_5011 | L6M | 6/6 | 26205.2 | 62.9 | 4.085 | -14.1 | -34079.6 | -36370.5 | 99.8 | 0.000 | 43.8 | 302.4 | 297.2 | 10.8 | 10.8 |
+| TL3_NT_LT_H7_asiaonly | L6M | 6/6 | 25936.4 | -205.9 | 0.000 | 2.721 | -36370.5 | -36370.5 | 99.6 | 0.000 | -201.3 | 295.9 | 297.2 | 10.4 | 10.8 |
 | TL3_NT_LT_JOINT1 | L6M | 6/6 | 26516.0 | 373.6 | -9.015 | -31.2 | -34482.8 | -36370.5 | 104.9 | 0.000 | 330.6 | 308.9 | 297.2 | 10.9 | 10.8 |
+| TL3_NT_LT_K7_nypm3 | L6M | 6/6 | 26335.7 | 193.3 | 0.000 | -1.487 | -36370.5 | -36370.5 | 102.7 | 0.000 | 183.8 | 299.8 | 297.2 | 10.8 | 10.8 |
+| TL3_NT_LT_O7_2 | L6M | 6/6 | 26139.8 | -2.575 | -1.476 | 2.321 | -37141.7 | -36370.5 | 100.7 | 0.000 | -8.578 | 298.8 | 297.2 | 10.7 | 10.8 |
 | TL3_NT_LT_SMALL1 | L6M | 6/6 | 26197.3 | 54.9 | 2.609 | -11.8 | -34850.8 | -36370.5 | 100.5 | 0.000 | 29.9 | 304.0 | 297.2 | 10.8 | 10.8 |
 
 ### HOLD
 
-(none)
+| set | win | months | mean | dmean | ddcut | ddcut_x44 | worst | worst_base | best5_kept | turned_loss | dmean_fees484 | contr_wk | contr_base_wk | stops_wk | stops_base_wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| TL3_NT_LT_A7_2 | HOLD | 7/7 | 9960.7 | 374.3 | 6.989 | 6.989 | -58936.5 | -55145.4 | 105.8 | 0.000 | 354.3 | 231.0 | 225.5 | 9.778 | 10.1 |
 
 ### GAP
 
