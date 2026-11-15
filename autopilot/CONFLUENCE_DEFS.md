@@ -1,4 +1,4 @@
-# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-15 16:37Z)
+# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-15 17:10Z)
 Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.py, ta_ind.py, ta_cond.py); this page is generated from the same registries; nothing here has been scored yet.
 
 ## Table and ids
@@ -10,6 +10,7 @@ Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.
 - LEAK RULE (category L and any state of D7): every outcome-dependent column uses trades CLOSED at the signal second only (exit_ts <= sig_ts). Trades open at sig_ts contribute only through 'other_same / other_opp_none / flat_stack' (positions, no results).
 - Sessions: 0 asia 18:00-01:59 ET, 1 london 02:00-08:29, 2 pre 08:30-09:29, 3 nyam 09:30-11:59, 4 nypm 12:00-14:59, 5 close 15:00-17:59. Label day (ld) = Globex day (18:00 ET starts the next ld).
 - Calendar: events from /mnt/l2/l2vast/_calendar/events.csv (2024-10..); 2023-04..2024-09 FOMC/CPI/NFP backfilled from the public schedule (approximate, flagged in code calendar()). Other releases before 2024-10 are missing.
+- PASSES-ALONE RULE (set 2026-11-15 from the Block 18 nonsense controls): the plain Welch z is NOT used (clustered signals inflated it: nonsense passed |z|>2 in 33-36% of pooled cells). Test = zw, the cluster-robust week-level t (per calendar week the difference of mean outcome yes-minus-no over weeks with >=2 cases each side, t over weeks, >=8 weeks; code/th_confl/step3.py week_t). A condition passes alone in a cell type and outcome only if |zw| > the 99th percentile of |zw| of the 200 nonsense controls (c_Z_*) in that cell type and outcome, AND it keeps its sign in every calendar year with >=30 cases per side and in L6M. With zw the nonsense controls pass |z|>2 in 3.5-5.5% of cells (calibrated).
 - PRICE OFFSET (fixed 2026-11-15): the 1m bar series is an additive gap-spliced series whose offset from the traded price grows from ~364 pts (2023-04) to ~3,730 pts (2026-10). Only ABSOLUTE-number conditions are affected: round 100/50 levels and 'distance to round number' (categories B and the round kind of the clusters) now use TRUE price = bar price + per-day offset (table /mnt/l2/l2vast/_confl/offset_table.parquet: ld, offset = median(engine entry_px - last complete 1m close) over that day's trades, filled across days) and are unknown (-1) on the 9 roll-splice days where the offset is ambiguous. Everything else (prior-day H/L/C, value areas, POCs, VWAP, opens, pivots, gaps, indicators) is differences/ratios inside the continuous series and needs no re-basing; gap-fill, naked POCs and weekly/monthly opens compare a level with the current price across rolls and are correct because the series is continuous. No condition was dropped.
 - Levels: L = ta_lib.Lib.levels(): PDH PDL PDC (prior RTH day), ONH ONL (Globex 18:00-09:30), pPOC pVAH pVAL (prior RTH 1-pt typical-price volume profile, 70% value area), oPOC oVAH oVAL (overnight), cPOC cVAH cVAL (20-day composite), nPOCup/dn (nearest naked POC of the last 20 days above/below), SPhi/SPlo (prior-day single-print tail edge, 30-min TPO count 1), session VWAP and +-1/+-2 sigma, OR5/15/30 H/L and IB (60 min) H/L (only after they complete), week open, month open, nearest 50-pt round numbers, nearest unfilled RTH gap edge. Cluster = single-linkage group of levels with neighbour spacing <= D (D = 5, 10, 15 pts, 0.1 ATR, 0.2 ATR); strength = level count and distinct KINDS (pd, on, prof, vwap, or, ib, open, round, gap). 'Ahead' = between entry and entry + side x target_pts; 'behind' = within stop_pts behind the entry.
 - USER_SET_V0 (registered 23:27Z before any result): see the c_U_* rows below and the header of code/th_confl/ta_user.py (exact definitions, unknown = no, no tuning). Interpretations that the user's text left open are fixed there and labelled; V1 will be registered separately if the user corrects any.
@@ -292,6 +293,135 @@ Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.
 - c_L_ctx_chasing : entry context CHASING (chase_k > 1)
 
 ## defs_AEL.json
+
+## defs_D4.json
+- c_D4_ema21_px_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema21_px_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema21_px_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema21_px_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema21_px_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema8_px_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema8_px_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema8_px_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema8_px_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema8_px_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sma50_px_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sma50_px_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sma50_px_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sma50_px_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sma50_px_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_rsi14_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_rsi14_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_rsi14_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_rsi14_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_rsi14_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_macd12_26_9_hist_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_macd12_26_9_hist_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_macd12_26_9_hist_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_macd12_26_9_hist_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_macd12_26_9_hist_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_cci14_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_cci14_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_cci14_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_cci14_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_cci14_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_stoch14_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_stoch14_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_stoch14_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_stoch14_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_stoch14_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_supertrend_10_3_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_supertrend_10_3_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_supertrend_10_3_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_supertrend_10_3_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_supertrend_10_3_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_di14_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_di14_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_di14_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_di14_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_di14_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_linreg_slope20_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_linreg_slope20_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_linreg_slope20_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_linreg_slope20_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_linreg_slope20_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_donchian20_pos_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_donchian20_pos_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_donchian20_pos_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_donchian20_pos_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_donchian20_pos_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_psar_0.02_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_psar_0.02_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_psar_0.02_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_psar_0.02_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_psar_0.02_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ichi_std_cloud_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ichi_std_cloud_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ichi_std_cloud_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ichi_std_cloud_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ichi_std_cloud_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_trendcolor_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_trendcolor_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_trendcolor_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_trendcolor_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_trendcolor_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sqz_hist_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sqz_hist_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sqz_hist_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sqz_hist_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_sqz_hist_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_wave_mid_hist_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_wave_mid_hist_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_wave_mid_hist_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_wave_mid_hist_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_wave_mid_hist_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema_8_21_34_stack_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema_8_21_34_stack_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema_8_21_34_stack_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema_8_21_34_stack_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_ema_8_21_34_stack_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_kama21_px_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_kama21_px_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_kama21_px_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_kama21_px_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_kama21_px_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_hma21_px_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_hma21_px_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_hma21_px_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_hma21_px_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_hma21_px_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_vwma21_px_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_vwma21_px_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_vwma21_px_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_vwma21_px_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_vwma21_px_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_boll20_pctb_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_boll20_pctb_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_boll20_pctb_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_boll20_pctb_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_boll20_pctb_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_keltner20_pos_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_keltner20_pos_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_keltner20_pos_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_keltner20_pos_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_keltner20_pos_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_aroon25_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_aroon25_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_aroon25_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_aroon25_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_aroon25_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_tenx_bar_n4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_tenx_bar_n5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_tenx_bar_n6 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_tenx_bar_top : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_tenx_bar_veto : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_fam_mean_ge3 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_fam_mean_ge4 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_fam_mean_ge5 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_fam_topshare_ge50 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_fam_topshare_ge70 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_fam_conflict_le10 : D4 multi-timeframe alignment (see build_d4.py header)
+- c_D4_fam_conflict_le25 : D4 multi-timeframe alignment (see build_d4.py header)
 
 ## Category M indicators (name | family | formula status)
 - m_adline_<tf>_<cond> : volume | public
@@ -855,6 +985,29 @@ Column names are listed by `python3 -c "import pandas as pd;print(list(pd.read_p
 - H.parquet is now rebuilt on the full 2023-04..2026-11 MBO history for all 191,520 universe rows (per-second tables /mnt/l2/l2vast/_confl/cf2_mbo, 1,126 day files, compact).
 - Because L3 microstructure drifted (order sizes at the touch, cancel-to-trade, spoof-like frequency), H2 compares each raw value (v_H_ctr_mine/ahead 60/300, touch sizes, bmax mine/ahead, spoof counts mine/ahead 60/300, gmax with/against, arrival_imb60, aggr20 with/against 300) with the same raw value over the entries of the previous 20 trading days (all books, causal, >= 150 prior entries): `_hi` = above the 80th percentile, `_lo` = at or below the 20th. Plus `spoof_ahead_gt_mine{60,300}` and `spoof_mine_gt_ahead{60,300}` (relative, no threshold).
 
+## Block 14. Breadth, rotation and relative value (code cf2_b14.py; columns c_B14_* / v_B14_*, file B14.parquet). Registered BEFORE scoring.
+Causal rule: last COMPLETE 1-minute bar (bar start + 60 <= sig_ts). Breadth items are regular-hours only (09:30-16:00 ET) and exist from 2024-10 (UW 1-minute history); NaN otherwise. s-signed: "with" = in the trade's direction.
+- Members: AAPL AMZN GOOGL META MSFT NVDA TSLA (7 megacaps; Nasdaq-100 component bars are NOT bought, W-CH3 quote in DS3_DEEPEN_OUTSIDE.md) + QQQ SPY IWM DIA. Semis proxy = NVDA only (SMH/SOXX/AVGO are not in the 1-minute set; ETF quote below). Software proxy = MSFT (no IGV): software-vs-semis is an APPROXIMATION.
+- share_vwap_with_ge{4,5,6}of7: number of the 7 above their own RTH-anchored VWAP (buy) or below (sell) >= 4/5/6. VWAP = cumulative close*volume / volume on 1-minute closes (APPROXIMATION of VWAP). share_ma20_with: same vs the 20-bar mean of closes.
+- newhigh_minus_low_with_gt{0,2}: (# stocks whose close equals the session high so far - # at the session low), s-signed. hl_net_15bars_with_pos: cumulative of that over the last 15 bars > 0.
+- adl: advance-decline line = cumulative (# up - # down 1-minute returns) over the 7 stocks within the RTH day. adl_at_extreme_with_ge0.9: position of the line in its last-30-bar range >= 0.9 (with the trade). no_adl_divergence_from_NQ: NOT (NQ at >= 0.9 of its 30-min range in the trade direction while the A/D line < 0.6). mcclellan_osc_with_pos: EMA19 - EMA39 (in minutes) of the net advancers > 0, s-signed (a McClellan-style oscillator, APPROXIMATION on 7 names). adv_dec_15bars_with_pos: sum of net advancers over 15 bars, s-signed > 0.
+- Rotation (bp over W = 15, 60 min, s-signed, > 0): eq7_minus_QQQ (equal-weight megacaps minus cap-weighted QQQ: proxy for equal-weight vs cap-weight tech), NVDA_minus_QQQ (semis vs Nasdaq proxy), MSFT_minus_NVDA (software vs semis proxy), largest_minus_QQQ (the member with the largest PRIOR-day dollar volume).
+- dispersion_15_{high,low}_vs_recent: cross-sectional std of the 7 stocks' 15-min returns above 1.2x / below 0.8x the median of the previous 800 observed signal values. avg_corr60_ge{0.3,0.5}, le0.2: mean pairwise correlation of the 7 stocks' 1-minute returns over the last 60 bars.
+- Relative value (true prices from instr_1s, minute ends; all sessions): NQ_cheap_vs_ES_with_ge{0.5,1,1.5}: z of (log NQ - beta*log ES) vs its trailing 240-min mean/std (beta = trailing 240-min rolling regression slope of NQ on ES 1-minute changes, lagged one bar), signed so that cheap NQ is positive for a buy; NQ_rich_vs_ES_with is the opposite sign (NQ ahead of ES in the trade direction). NQ_cheap/rich_vs_QQQ_with_ge{0.5,1}: same on log(NQ/QQQ) over the last 120 RTH bars (2024-10+, RTH only); note "rich with the trade" mostly means NQ is leading QQQ in the trade direction. RTY_outperforming_ES_{60,240}_with: change of log(RTY/ES) over 60/240 min, s-signed > 0.
+
+## Block 15. Macro, sentiment and positioning as DAY context (code cf2_b15.py; columns c_B15_* / v_B15_*, file B15.parquet). Registered BEFORE scoring.
+Every series enters only after its publication time: Treasury par curve, VIX family (Cboe csv), SKEW, COR1M, Cboe put/call = same ET day 18:00 (usable from the next session); FRED HY/IG OAS = next day 09:00 ET (starts 2023-11-15: FRED keeps 3 years); FRED broad dollar = +8 days (STALE context only); CFTC COT = report date (Tuesday) + 3 days 15:30 ET; auction results = auction close + 2 min; earnings = SEC 8-K item 2.02 acceptance time; Fed speeches = scheduled start. All sources free without signup.
+- Rates (Treasury yield curve, prior day): yield10_fell_prior_day_with / yield2_fell_prior_day_with / yield10_fell_5d_with (s-signed: falling yield with a buy); curve_steepened_prior_day (+ ge3bp, flattened ge3bp); big_yield_day_ge8bp. Intraday on the CME 1-minute continuous futures (ZN 10-year note, ZB, 6E; z-units): ZN_up_since_open_with and since 09:30 (yield falling with a buy), ZBminusZN_since_open_with (long end outperforming, curve-flattening proxy), 6E_up_since_open_with and since 09:30 (euro up = dollar down with a buy). Dollar index itself (DXY) is paid; FRED broad dollar is 8 days stale: usd_fell_20d_with_STALE; 6E is the intraday dollar proxy (APPROXIMATION).
+- bondvol_proxy_ge1.25 / le0.8: ZN realized vol of 1-minute changes over the last 240 min over its trailing 20-day mean (APPROXIMATION of the MOVE index, which is paid).
+- Credit (FRED ICE BofA option-adjusted spreads, from 2023-11-15; HYG/LQD ETF bars are not on the box, quote below): hy_narrowed_prior_day_with, hy_narrowed_5d_with, hy_stress_pct_ge80 / hy_calm_pct_le20 (252-day percentile).
+- Volatility family: vix_fell_prior_day_with, vix9d_gt_vix, vix_backwardation_vs_3m (VIX > VIX3M), vix_contango_gt5pct (VIX/VIX3M < 0.95); 252-day percentile >= 80 / <= 20 of VIX, VVIX, SKEW, COR1M (CBOE implied correlation 1M).
+- Put/call (Cboe daily statistics): total, index, equity, ETP put/call 252-day percentile >= 80 / <= 20; pc_eq_rose_prior_day.
+- COT (CFTC TFF, NASDAQ MINI futures only): leveraged-money and asset-manager net position over open interest, 52-week percentile >= 80 / <= 20, rising over the last week.
+- Treasury auctions (TreasuryDirect, notes 2/3/5/7/10 and bonds 20/30): auction_day_{any,2y,3y,5y,7y,10y,20y,30y}; within30min_of_note_bond_auction; after the result: auction_result_strong_btc (bid-to-cover over the mean of the last 6 same-term auctions > 1.0), weak (<= 0.95), yield_up_vs_prev_ge2bp / down_le-2bp (high yield vs previous same-term auction; the true tail needs when-issued yields which are not free: APPROXIMATION).
+- Megacap earnings (SEC EDGAR 8-K item 2.02, acceptance time; any of 7, NVDA, big5 = AAPL AMZN GOOGL META MSFT): earn_*_day_after_report (session date is the first session after the filing: filed at/after 16:00 ET counts for the next session), earn_*_report_today (filing date, scheduled weeks ahead), earn_*_report_week (same ISO week).
+- Fed speakers (federalreserve.gov speeches/events scrape by W-CAL): fed_speaker_today, fed_chair_speaks_today, fed_speech_within_60min, fed_speech_started_last_90min.
+- NOT built (needs a paid or unavailable feed): economic surprise index (Citi/Bloomberg consensus: paid; no free consensus history), MOVE index itself (paid), DXY (paid), HYG/LQD bars (not on the box, quote below), SPX-wide/Nasdaq-100 breadth (components not bought).
+
 
 # ===== Block 2 / Block 4 (W-CF4) : merged verbatim from CONFLUENCE_DEFS_CF4.md =====
 # CONFLUENCE_DEFS_CF4 (W-CF4, Block 2 / Block 4). Auto-built by code/th_confl_cf4/c4_page.py
@@ -1215,6 +1368,166 @@ Conditions (template): `side` state on trade side (x vs mid, or sign of the stat
 | series | formula status | family |
 |---|---|---|
 
+## B11 candlestick library: 3370 condition columns, 61 indicator series (x6 timeframes)
+
+| series | formula status | family |
+|---|---|---|
+| cdl_hammer | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): hammer +1 bullish -1 bearish | candle |
+| cdl_hanging_man | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): hanging_man +1 bullish -1 bearish | candle |
+| cdl_inv_hammer | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): inv_hammer +1 bullish -1 bearish | candle |
+| cdl_shooting_star | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): shooting_star +1 bullish -1 bearish | candle |
+| cdl_engulfing | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): engulfing +1 bullish -1 bearish | candle |
+| cdl_harami | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): harami +1 bullish -1 bearish | candle |
+| cdl_harami_cross | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): harami_cross +1 bullish -1 bearish | candle |
+| cdl_morning_star | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): morning_star +1 bullish -1 bearish | candle |
+| cdl_star_doji | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): star_doji +1 bullish -1 bearish | candle |
+| cdl_abandoned_baby | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): abandoned_baby +1 bullish -1 bearish | candle |
+| cdl_dark_cloud | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): dark_cloud +1 bullish -1 bearish | candle |
+| cdl_piercing | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): piercing +1 bullish -1 bearish | candle |
+| cdl_tweezer | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): tweezer +1 bullish -1 bearish | candle |
+| cdl_marubozu | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): marubozu +1 bullish -1 bearish | candle |
+| cdl_closing_marubozu | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): closing_marubozu +1 bullish -1 bearish | candle |
+| cdl_opening_marubozu | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): opening_marubozu +1 bullish -1 bearish | candle |
+| cdl_dragonfly | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): dragonfly +1 bullish -1 bearish | candle |
+| cdl_gravestone | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): gravestone +1 bullish -1 bearish | candle |
+| cdl_takuri | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): takuri +1 bullish -1 bearish | candle |
+| cdl_three_inside | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_inside +1 bullish -1 bearish | candle |
+| cdl_three_outside | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_outside +1 bullish -1 bearish | candle |
+| cdl_kicker | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): kicker +1 bullish -1 bearish | candle |
+| cdl_belt_hold | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): belt_hold +1 bullish -1 bearish | candle |
+| cdl_three_soldiers | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_soldiers +1 bullish -1 bearish | candle |
+| cdl_three_crows | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_crows +1 bullish -1 bearish | candle |
+| cdl_three_line_strike | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_line_strike +1 bullish -1 bearish | candle |
+| cdl_advance_block | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): advance_block +1 bullish -1 bearish | candle |
+| cdl_deliberation | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): deliberation +1 bullish -1 bearish | candle |
+| cdl_stick_sandwich | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): stick_sandwich +1 bullish -1 bearish | candle |
+| cdl_matching_low | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): matching_low +1 bullish -1 bearish | candle |
+| cdl_homing_pigeon | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): homing_pigeon +1 bullish -1 bearish | candle |
+| cdl_ladder_bottom | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): ladder_bottom +1 bullish -1 bearish | candle |
+| cdl_unique_three_river | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): unique_three_river +1 bullish -1 bearish | candle |
+| cdl_two_crows | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): two_crows +1 bullish -1 bearish | candle |
+| cdl_upside_gap_two_crows | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): upside_gap_two_crows +1 bullish -1 bearish | candle |
+| cdl_identical_crows | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): identical_crows +1 bullish -1 bearish | candle |
+| cdl_thrusting | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): thrusting +1 bullish -1 bearish | candle |
+| cdl_in_neck | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): in_neck +1 bullish -1 bearish | candle |
+| cdl_on_neck | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): on_neck +1 bullish -1 bearish | candle |
+| cdl_separating_lines | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): separating_lines +1 bullish -1 bearish | candle |
+| cdl_side_by_side | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): side_by_side +1 bullish -1 bearish | candle |
+| cdl_three_methods | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): three_methods +1 bullish -1 bearish | candle |
+| cdl_mat_hold | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): mat_hold +1 bullish -1 bearish | candle |
+| cdl_tasuki_gap | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): tasuki_gap +1 bullish -1 bearish | candle |
+| cdl_breakaway | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): breakaway +1 bullish -1 bearish | candle |
+| cdl_counterattack | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): counterattack +1 bullish -1 bearish | candle |
+| cdl_inside_break | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): inside_break +1 bullish -1 bearish | candle |
+| cdl_inside_break_close | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): inside_break_close +1 bullish -1 bearish | candle |
+| cdl_high_wave | APPROXIMATION (neutral pattern, unsigned): high_wave | candle |
+| cdl_spinning_top | APPROXIMATION (neutral pattern, unsigned): spinning_top | candle |
+| cdl_long_legged_doji | APPROXIMATION (neutral pattern, unsigned): long_legged_doji | candle |
+| cdl_doji | APPROXIMATION (neutral pattern, unsigned): doji | candle |
+| cdl_rickshaw | APPROXIMATION (neutral pattern, unsigned): rickshaw | candle |
+| cdl_long_line | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): long_line +1 bullish -1 bearish | candle |
+| cdl_short_line | APPROXIMATION (neutral pattern, unsigned): short_line | candle |
+| cdl_tri_star | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): tri_star +1 bullish -1 bearish | candle |
+| cdl_inside_bar | APPROXIMATION (neutral pattern, unsigned): inside_bar | candle |
+| cdl_outside_bar | APPROXIMATION (neutral pattern, unsigned): outside_bar | candle |
+| cdl_pin_bar | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): pin_bar +1 bullish -1 bearish | candle |
+| cdl_wide_range_trend | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): wide_range_trend +1 bullish -1 bearish | candle |
+| cdl_gap_up_down | APPROXIMATION (Nison/TA-Lib style, thresholds in module doc): gap_up_down +1 bullish -1 bearish | candle |
+
+Block 11 notes: Block 11: candlestick library (~60 patterns), APPROXIMATIONS of Nison / TA-Lib style rules with fixed thresholds (stated in CONFLUENCE_DEFS_CF4.md). All patterns use only bars <= the evaluated bar.
+Thresholds (relative to the bar's own range and ATR14): long body: body >= 0.6*range and body >= 0.8*ATR*0.5 ; doji: body <= 0.1*range ; small body: body <= 0.3*range ; marubozu: shadows <= 0.03*range each ; gap = open beyond previous close by >= 0.1*ATR (rare on 24h futures bars; gap-based patterns therefore have low counts on 1-5 min bars) ; trend context: prior-4-bar close change > 0.5 ATR (up/down).
+Conditions per pattern and timeframe (1m,3m,5m,15m,60m): side = pattern on the last completed bar in the trade direction; against = opposite; fresh1/fresh3/fresh5 = trade-direction pattern within the last 1/3/5 bars; against3/against5 = opposite within 3/5 bars; *_atlvl = the same only AT a level cluster (>= 2 distinct IRL/ERL range levels within 0.3 ATR15 of the signal price; own levels, because W-CF1 category B columns exist only for taken signals so far); c4_cdl_<tf>_nwith3 / nagainst3 = number of distinct non-neutral patterns with / against the trade in the last 3 bars, with_ge1/2/3, with_gt_against, with_atlvl. Neutral patterns (doji types, spinning top, inside/outside bar, short line) are unsigned: hi/rise only.
+
+## B12 bar-level volume at price (footprint): 197 condition columns, 1 indicator series (x6 timeframes)
+
+| series | formula status | family |
+|---|---|---|
+| footprint (all c4_fp_*) | EXACT from prints: per-bar volume at price (1-tick levels). POC = max-volume tick (first on ties), position = (POC-low)/(high-low) in thirds; stacked imbalance = >=3 consecutive ticks with ask[P] >= 3*bid[P-1] and ask>=10 (buy) or bid[P] >= 3*ask[P+1] and bid>=10 (sell); unfinished auction = both bid and ask volume traded at the bar high (or low) tick; delta at extreme = ask-bid volume in the top / bottom third of the bar range; close delta = delta of the final 20% of the bar volume; centroid = volume-weighted mean tick; absorption = volume >= 2x its 20-bar average with range <= 0.6x its 20-bar average; _lvl = also at a level cluster (>=2 distinct IRL/ERL range levels within 0.3 ATR15); mtf = timeframes (1/3/5/15/60) agreeing | footprint |
+
+## B10 geometry and chart patterns: 1188 condition columns, 75 indicator series (x6 timeframes)
+
+| series | formula status | family |
+|---|---|---|
+| tl_state | APPROXIMATION auto trendlines (pivot k=3): +1 above a valid up-line (2+ touches), -1 below a valid down-line; if both, they cancel | geom |
+| tl_break | close beyond the pivot trendline by 0.1 ATR (+1 up-break of a down-line, -1 down-break of an up-line) | geom |
+| tl_retest | retest of a just-broken trendline within 10 bars (within 0.15 ATR, close back beyond) | geom |
+| tl_touch3 | touch count of the stronger valid trendline (>=3 is "tested") | geom |
+| tl_dist_up | ATR distance of price above the up-line (support) | geom |
+| tl_slope_up | slope of the up-line in ATR per bar (signed: steeper up = with a long) | geom |
+| chan_pos | position inside the trendline channel (parallel through the farthest opposite pivot): +0.5 at the support line, -0.5 at the far line (long likes +) | geom |
+| tri_sym | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): tri_sym present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_sym_on | tri_sym present (unsigned) | geom |
+| tri_asc | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): tri_asc present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_asc_on | tri_asc present (unsigned) | geom |
+| tri_desc | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): tri_desc present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_desc_on | tri_desc present (unsigned) | geom |
+| wedge_rising | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): wedge_rising present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| wedge_rising_on | wedge_rising present (unsigned) | geom |
+| wedge_falling | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): wedge_falling present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| wedge_falling_on | wedge_falling present (unsigned) | geom |
+| rect | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): rect present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| rect_on | rect present (unsigned) | geom |
+| broaden | APPROXIMATION geometric pattern from the two pivot trendlines (k=3): broaden present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| broaden_on | broaden present (unsigned) | geom |
+| pitchfork | APPROXIMATION Andrews pitchfork from the last three alternating pivots (k=3): ATR distance of price from the median line, ev = median-line cross | geom |
+| fib_cluster | APPROXIMATION Fibonacci confluence: number of the last 4 legs (pivots k=3) with a .382/.5/.618/.786/1.272/1.618 level within 0.25 ATR of price (>=2 = cluster) | geom |
+| fib_cluster_dir | price at a Fibonacci cluster (>=2 legs) with the sign of the last leg (pullback into a cluster after an up-leg = +1) | geom |
+| fib_ext_up | ATR distance to the nearest 1.272/1.618 extension level above price | geom |
+| fib_ext_dn | ATR distance to the nearest extension level below price | geom |
+| tl_stateS | APPROXIMATION auto trendlines (pivot k=5): +1 above a valid up-line (2+ touches), -1 below a valid down-line; if both, they cancel | geom |
+| tl_breakS | close beyond the pivot trendline by 0.1 ATR (+1 up-break of a down-line, -1 down-break of an up-line) | geom |
+| tl_retestS | retest of a just-broken trendline within 10 bars (within 0.15 ATR, close back beyond) | geom |
+| tl_touch3S | touch count of the stronger valid trendline (>=3 is "tested") | geom |
+| tl_dist_upS | ATR distance of price above the up-line (support) | geom |
+| tl_slope_upS | slope of the up-line in ATR per bar (signed: steeper up = with a long) | geom |
+| chan_posS | position inside the trendline channel (parallel through the farthest opposite pivot): +0.5 at the support line, -0.5 at the far line (long likes +) | geom |
+| tri_symS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): tri_sym present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_sym_onS | tri_sym present (unsigned) | geom |
+| tri_ascS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): tri_asc present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_asc_onS | tri_asc present (unsigned) | geom |
+| tri_descS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): tri_desc present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| tri_desc_onS | tri_desc present (unsigned) | geom |
+| wedge_risingS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): wedge_rising present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| wedge_rising_onS | wedge_rising present (unsigned) | geom |
+| wedge_fallingS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): wedge_falling present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| wedge_falling_onS | wedge_falling present (unsigned) | geom |
+| rectS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): rect present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| rect_onS | rect present (unsigned) | geom |
+| broadenS | APPROXIMATION geometric pattern from the two pivot trendlines (k=5): broaden present (flatness threshold 0.005 ATR/bar; ev uses the pattern state of the previous bar); +1/-1 = breakout of its upper/lower line | geom |
+| broaden_onS | broaden present (unsigned) | geom |
+| pitchforkS | APPROXIMATION Andrews pitchfork from the last three alternating pivots (k=5): ATR distance of price from the median line, ev = median-line cross | geom |
+| fib_clusterS | APPROXIMATION Fibonacci confluence: number of the last 4 legs (pivots k=5) with a .382/.5/.618/.786/1.272/1.618 level within 0.25 ATR of price (>=2 = cluster) | geom |
+| fib_cluster_dirS | price at a Fibonacci cluster (>=2 legs) with the sign of the last leg (pullback into a cluster after an up-leg = +1) | geom |
+| fib_ext_upS | ATR distance to the nearest 1.272/1.618 extension level above price | geom |
+| fib_ext_dnS | ATR distance to the nearest extension level below price | geom |
+| harmonic | APPROXIMATION harmonic XABCD (pivots k=3) price inside the D zone (+-0.3 ATR): ABCD, Gartley (AB .618, D .786), Bat (AB .382-.5, D .886), Butterfly (AB .786, D 1.27), Crab (AB .382-.618, D 1.618) with ratio tolerance 5%; sign = bullish when the pattern completes at a low | geom |
+| harm_abcd | harmonic abcd tolerance 5% | geom |
+| harm_gartley | harmonic gartley tolerance 5% | geom |
+| harm_bat | harmonic bat tolerance 5% | geom |
+| harm_butterfly | harmonic butterfly tolerance 5% | geom |
+| harm_crab | harmonic crab tolerance 5% | geom |
+| lmw_hs | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): hs top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| lmw_broaden | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): broaden top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| lmw_tri | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): tri top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| lmw_rect | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): rect top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| lmw_double | APPROXIMATION of Lo-Mamaysky-Wang 5-extrema rules (raw fractal pivots k=3 instead of kernel-smoothed extrema; the 1.5 pct / 0.75 pct price tolerances are replaced by ATR-scaled 0.6 ATR / 0.3 ATR because percent-of-price is meaningless intraday): double top/bottom; state = pattern present on the last 5 alternating pivots (+1 bottom/bullish, -1 top/bearish), ev = close through the neckline | geom |
+| harmonic_loose | APPROXIMATION harmonic XABCD (pivots k=3) price inside the D zone (+-0.3 ATR): ABCD, Gartley (AB .618, D .786), Bat (AB .382-.5, D .886), Butterfly (AB .786, D 1.27), Crab (AB .382-.618, D 1.618) with ratio tolerance 10%; sign = bullish when the pattern completes at a low | geom |
+| harm_abcd_loose | harmonic abcd tolerance 10% | geom |
+| harm_gartley_loose | harmonic gartley tolerance 10% | geom |
+| harm_bat_loose | harmonic bat tolerance 10% | geom |
+| harm_butterfly_loose | harmonic butterfly tolerance 10% | geom |
+| harm_crab_loose | harmonic crab tolerance 10% | geom |
+| flag | APPROXIMATION flag: pole >= 3 ATR within 10 bars, consolidation 5-25 bars with range <= 40% of the pole, ev = break in the pole direction | geom |
+| pennant | flag whose second half is < 60% of the first-half range (converging = pennant) | geom |
+| cup_handle | APPROXIMATION cup and handle: rim-bottom-rim (>=3 ATR deep, bottom in the middle third, right rim within 10% of depth) + handle <= 1/3 depth; ev = close above the right rim | geom |
+| pnf | PUBLIC point-and-figure (close-based, box=4 pts, 3-box reversal): column direction, ev = double-top / double-bottom breakout | geom |
+| threeline | PUBLIC three-line break on closes: colour of the last line, ev = reversal | geom |
+| kagi | APPROXIMATION Kagi on closes with reversal = 1 ATR(14) at the bar: thickness yang(+1)/yin(-1), ev = thickness change | geom |
+
+Block 10 notes: Block 10: geometry and chart patterns, MECHANICAL versions on completed bars (3/5/15/60-min). Pivots = fractal pivots of strength k, usable k bars after the pivot bar, kept ALTERNATING (a same-type pivot replaces the previous one only if more extreme, at the time it is confirmed).
+Published rule vs approximation is stated per spec in the formula field. Tolerance disagreement for harmonics and LMW patterns is reported by c4_geom_tol.py.
+Timeframes 3/5/15/60-min. Each pattern lists PUBLISHED RULE or APPROXIMATION in the formula column; tolerance disagreement table: autopilot/CF4_GEOM_TOL.md (harmonics 5 pct vs 10 pct ratio tolerance, pivot strength 3 vs 5 for trendlines / triangles / wedges / Fibonacci clusters).
+
 ## B4 alternate bars: ha1: 2311 condition columns (c4_<ind>_ha1_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
 
 ## B4 alternate bars: ha15: 2311 condition columns (c4_<ind>_ha15_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
@@ -1239,6 +1552,50 @@ Conditions (template): `side` state on trade side (x vs mid, or sign of the stat
 
 ## B4 alternate bars: vol500: 2311 condition columns (c4_<ind>_vol500_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
 
+## Block 10 tolerance disagreement (how often two tolerances disagree)
+
+| bars | item | A | B | active A | active B | both | A only | B only | disagree share of union |
+|---|---|---|---|---|---|---|---|---|---|
+| 3m | harmonic | tol 5pct | tol 10pct | 10831 | 13118 | 10831 | 0 | 2287 | 0.17 |
+| 3m | harm_gartley | tol 5pct | tol 10pct | 650 | 1364 | 650 | 0 | 714 | 0.52 |
+| 3m | harm_bat | 5pct | 10pct | 409 | 605 | 409 | 0 | 196 | 0.32 |
+| 3m | harm_butterfly | 5pct | 10pct | 465 | 954 | 465 | 0 | 489 | 0.51 |
+| 3m | harm_crab | 5pct | 10pct | 195 | 271 | 195 | 0 | 76 | 0.28 |
+| 3m | harm_abcd | 5pct | 10pct | 9112 | 9924 | 8882 | 230 | 1042 | 0.13 |
+| 3m | trendline state | pivot k=3 | pivot k=5 | 220651 | 211687 | 135565 | 85086 | 76122 | 0.54 |
+| 3m | sym triangle on | k=3 | k=5 | 17478 | 15526 | 6688 | 10790 | 8838 | 0.75 |
+| 3m | wedge rising on | k=3 | k=5 | 28484 | 26536 | 11054 | 17430 | 15482 | 0.75 |
+| 3m | fib cluster>=2 | k=3 | k=5 | 169835 | 136001 | 108390 | 61445 | 27611 | 0.45 |
+| 5m | harmonic | tol 5pct | tol 10pct | 6452 | 7781 | 6452 | 0 | 1329 | 0.17 |
+| 5m | harm_gartley | tol 5pct | tol 10pct | 369 | 789 | 369 | 0 | 420 | 0.53 |
+| 5m | harm_bat | 5pct | 10pct | 208 | 334 | 208 | 0 | 126 | 0.38 |
+| 5m | harm_butterfly | 5pct | 10pct | 258 | 566 | 258 | 0 | 308 | 0.54 |
+| 5m | harm_crab | 5pct | 10pct | 122 | 163 | 122 | 0 | 41 | 0.25 |
+| 5m | harm_abcd | 5pct | 10pct | 5495 | 5929 | 5325 | 170 | 604 | 0.13 |
+| 5m | trendline state | pivot k=3 | pivot k=5 | 132814 | 124465 | 80278 | 52536 | 44187 | 0.55 |
+| 5m | sym triangle on | k=3 | k=5 | 10434 | 9439 | 3841 | 6593 | 5598 | 0.76 |
+| 5m | wedge rising on | k=3 | k=5 | 17294 | 15407 | 6360 | 10934 | 9047 | 0.76 |
+| 5m | fib cluster>=2 | k=3 | k=5 | 101435 | 81122 | 65017 | 36418 | 16105 | 0.45 |
+| 15m | harmonic | tol 5pct | tol 10pct | 1774 | 2153 | 1774 | 0 | 379 | 0.18 |
+| 15m | harm_gartley | tol 5pct | tol 10pct | 116 | 239 | 116 | 0 | 123 | 0.51 |
+| 15m | harm_bat | 5pct | 10pct | 89 | 124 | 89 | 0 | 35 | 0.28 |
+| 15m | harm_butterfly | 5pct | 10pct | 69 | 170 | 69 | 0 | 101 | 0.59 |
+| 15m | harm_crab | 5pct | 10pct | 27 | 46 | 27 | 0 | 19 | 0.41 |
+| 15m | harm_abcd | 5pct | 10pct | 1473 | 1574 | 1427 | 46 | 147 | 0.12 |
+| 15m | trendline state | pivot k=3 | pivot k=5 | 42127 | 38906 | 24332 | 17795 | 14574 | 0.57 |
+| 15m | sym triangle on | k=3 | k=5 | 3559 | 2604 | 1206 | 2353 | 1398 | 0.76 |
+| 15m | wedge rising on | k=3 | k=5 | 4961 | 4173 | 1483 | 3478 | 2690 | 0.81 |
+| 15m | fib cluster>=2 | k=3 | k=5 | 33037 | 25547 | 20457 | 12580 | 5090 | 0.46 |
+| 60m | harmonic | tol 5pct | tol 10pct | 307 | 371 | 307 | 0 | 64 | 0.17 |
+| 60m | harm_gartley | tol 5pct | tol 10pct | 18 | 32 | 18 | 0 | 14 | 0.44 |
+| 60m | harm_bat | 5pct | 10pct | 25 | 30 | 25 | 0 | 5 | 0.17 |
+| 60m | harm_butterfly | 5pct | 10pct | 10 | 27 | 10 | 0 | 17 | 0.63 |
+| 60m | harm_crab | 5pct | 10pct | 17 | 23 | 17 | 0 | 6 | 0.26 |
+| 60m | harm_abcd | 5pct | 10pct | 237 | 259 | 229 | 8 | 30 | 0.14 |
+| 60m | trendline state | pivot k=3 | pivot k=5 | 9259 | 9956 | 5449 | 3810 | 4507 | 0.60 |
+| 60m | sym triangle on | k=3 | k=5 | 684 | 686 | 286 | 398 | 400 | 0.74 |
+| 60m | wedge rising on | k=3 | k=5 | 1216 | 1439 | 493 | 723 | 946 | 0.77 |
+| 60m | fib cluster>=2 | k=3 | k=5 | 7250 | 5595 | 4330 | 2920 | 1265 | 0.49 |
 ## IRL / ERL (Addendum 5) - PRE-REGISTERED DEFINITIONS IRL_ERL_V0 (frozen before any Step A aggregate was computed; not tuned afterwards)
 Code: code/th_confl_cf4/c4_irl_lib.py (ranges, scan, post-sweep metrics), c4_irl_events.py (events), c4_irl_score.py (tables). Events: /mnt/l2/l2vast/_confl/irl/ev_<variant>.parquet (ctrl=True rows are the random-level control).
 Bars: NQ 1m (/mnt/l2/l2vast/_th_sz/bars1m_NQ.npz), sweep bars 1/3/5/15 min built from them, epoch-aligned, a bar is visible only after its end. ET sessions: asia 18:00-02:00, london 02:00-09:30, ny 09:30-16:00 (16:00-18:00 'gap'). ATR unit everywhere = 5-min ATR(14, Wilder) at the confirming close.
@@ -1444,6 +1801,48 @@ Because 70% of signals are outside RTH, Crabel ORB / stretch / Williams volatili
 | sd_vix_contango / backward / vix9d_inverted | PUBLIC term structure slope: VIX3M/VIX-1 > 0.05 / < 0; VIX9D/VIX-1 < 0 |
 | sd_vix_fall1d_with / fall5d_with / vix_high / vix_low / vvix_vix_hi | VIX 1-day / 5-day change in the trade's favour (falling for longs, rising for shorts); VIX in top / bottom 20% of its 250-day range; VVIX/VIX above its 80th percentile of 250 days |
 | sd_disp{5,15,60}_hi / lo, sd_breadth{5,15,60}_ge5 / le2, sd_mean{5,15,60}_with | index dispersion: cross-sectional std of the last 5/15/60-min returns of AAPL, AMZN, GOOGL, META, MSFT, NVDA, TSLA vs 1.5x / 0.6x of its running median over earlier signals; breadth = names moving with the trade >= 5 / <= 2 of 7; equal-weight mean return with trade (2024-10 onward, earlier -1) |
+
+# ADDENDUM 6 BLOCKS (W-CF5): 7 time-of-day liquidity events, 8 opening prices and gaps
+Universe: signals_all.parquet (191,520 signals, taken + skipped), keyed sig_id. Files: cols_cf5/B7_tod.parquet (prefix n7_), cols_cf5/B8_open.parquet (prefix n8_). int8: 1 yes, 0 no, -1 unknown. Code: code/th_confl_cf5/cf5_blk78.py. All APPROX labels = my coding of the user's wording, no published rule exists for these. Causality: completed 1-min bars only (bar start + 60 <= sig_ts); price "p" = close of the last completed 1-min bar; an event/opening price is the open of that event's 1-min bar and the move-based conditions are unknown (-1) while that bar is still incomplete; checked by recomputing on history truncated at the signal second (6 random signals, 3,606 values, 0 mismatches; the cash-open-gap group n8_cg_ excluded from that check only because the day-table builder drops a partial day, its inputs are the open and prior close). ATR60 = ATR14 of completed 60-min bars, ATRd = ATR14 of completed RTH daily bars. Absolute prices are never used (only differences), so the offset table is not needed. DST: the event time of day is wall-clock ET arithmetic; on the two DST-change days a year an event earlier in the day than the switch is off by 1 h.
+
+## Block 7 (n7_), APPROX
+Events (ET): t0200, t0300, t0830, t0930, t1000, t1030, t1100, t1130, t1300, t1500, t1550, t1600, t1615, t1700, t1800 (daily); t1400fomc = 14:00 on FOMC decision days only (0 elsewhere; FOMC dates: public 2023-04..2024-09 list + events.csv from 2024-10). Windows (start, duration): w0950 (09:50, 20 min), w1050 (10:50, 20), w1450 (14:50, 20), w1000_1100 (10:00, 60), w1400_1500 (14:00, 60), macro_xx50 (every hour xx:50-xx:10), tophour (xx:00, 5 min), halfhour (xx:30, 5 min).
+For a point event E: pre15 = signal 1-15 minutes before E; post5 = 0-5 min after; post15 = 5-15 after; post30 = 15-30 after. For a window: pre15; in = inside the window; post15 / post30 = 0-15 / 15-30 min after the window ended.
+Suffixes: (none) = signal is in that phase; _with / _against = and the move made in the window with / against the trade (pre15: trailing 15-min move; post5/post15/post30 of a point event: move since the event open; in: move since window start; post of a window: whole-window move open to close); _big_with / _big_against = same with |move| > 0.75 ATR60.
+n7_grp_{rel,eur,nyo,fix,late}_<phase><suffix> = union (OR) over: rel = 08:30, 10:00, 14:00 FOMC; eur = 02:00, 03:00; nyo = 09:30, 10:30; fix = 11:00, 11:30; late = 15:00, 15:50, 16:00, 16:15.
+
+## Block 8 (n8_), APPROX
+Opening prices: mid (00:00 ET), o0830, o0930, o1800 (Globex reopen), week (first bar after a >= 36 h break), month, quarter (first bar of the ET calendar month / quarter). Latest occurrence <= signal (age limits 2 d for time-of-day opens, 10 d week, 40 d month, 100 d quarter else -1). For each open O: _side (price on trade side), _ext_with1/2 and _ext_against1/2 (distance x side beyond 1 / 2 ATR; ATR60 for the intraday opens, ATRd for week / month / quarter), _near (< 0.25 ATR), _cross_with30 / _cross_against30 (crossed O in / against trade direction within the last 30 bars), _retest_with (was >= 1 ATR beyond O in trade direction within 120 bars and is now 0-0.5 ATR from it). intraday_opens_ge3of4 / all4 and all_opens_ge5 / ge7 = how many of the opens are on the trade's side.
+Gaps: a gap = a break > 50 min between 1-min bars (day gap) or >= 36 h (week gap); zone = [min, max](previous close, reopen), kept if size >= 0.2 ATR60; filled when price later trades back to the previous close. gapD_* uses the last 5 day gaps, gapW_* the last 3 week gaps (levels): _cur_unfilled / _cur_up_with (latest gap went up and trade is long, or down and short) / _cur_big (> ATR), _unf_ahead_1atr / 3atr and _unf_behind_1atr / 3atr (nearest unfilled gap edge in / against the trade direction within 1 or 3 ATR60), _inside_unf (price inside an unfilled gap), _unf_ahead_ge1 / ge2 (count of unfilled gaps ahead), _mid_side_with (price beyond the nearest unfilled gap's midpoint in trade direction).
+Cash-open gap: ig_* = implied gap (price vs the last completed RTH close: with / against by > 1 or 0.5 ATRd, inside prior RTH range); cg_* (only for signals 09:30-18:00 ET, else -1) = actual 09:30 open vs prior RTH close: gap_with / gap_against, inside_range / outside_range of the prior RTH day, large (> 0.5 ATRd) / small (< 0.15), filled (price traded back to the prior close since 09:30), unfilled_with / unfilled_against (unfilled gap >= 0.15 ATRd in / against trade direction), filled_with_trade_dir (gap against the trade, now filled).
+Session handoff: macro sessions Asia 18:00-02:00, London 02:00-09:30, NY 09:30-16:00 ET. hoLA (London vs Asia), hoNL (NY vs London), hoAN (Asia vs the previous NY), valid >= 30 min into the second session and within the same Globex day: _ext (second session's move so far has the same sign as the first session's whole move), _rev (opposite), _cur_with / _prev_with (second / first move with the trade), _ext_cur_with, _rev_cur_with, _prev_big (first move > 2 ATR60).
+Overnight inventory: on_inv_with = (overnight VWAP of 18:00 to now, or to 09:30 once past it, minus the prior settle = last RTH close) x side > 0; _big_with / _big_against beyond 0.5 ATRd; px_vs_onvwap_with, px_onvwap_ext_with1 / ext_against1 (price vs the overnight VWAP by > 1 ATR60). Unknown 16:00-18:00 ET.
+
+## Block 9 (n9_, file B9_structure.parquet, code cf5_blk9.py), APPROX unless noted
+Week = Globex week (first bar after a break >= 36 h). Day of week from the Globex label day (Sunday evening = Monday). All ranges from completed 1-min bars (sparse-table range max/min). Causality check by truncated recompute: 6 random signals, 414 values, 0 mismatches.
+- Week extremes: wk_opp_ext_in / wk_my_ext_in = the week's high / low (the one opposite / on the side of the trade: for a long my = low) was set on an EARLIER day of this week (known from the bars); _odds50 = walk-forward probability >= 0.5 that this extreme is already in on this weekday (share of earlier completed weeks, >= 20 weeks, Laplace-smoothed, whose high / low fell on an earlier weekday than today); wk_opp_in_but_odds_low, wk_opp_notin_odds_high = actual vs odds disagree. Descriptive history: the week's high forms on Mon/Tue/Wed/Thu/Fri 19/14/17/15/34 %, the low 32/15/13/13/27 % (285 weeks).
+- wk_pos_top20 / bottom20 / mid: position in the week's range so far, oriented so top = in the trade's direction; wk_new_ext_with (price at a new week extreme in trade direction vs bars excluding the last 5); wk_used_lt50 / gt100 / gt150 (week range so far / mean of the previous 10 weeks' full range).
+- Monday range: mon_inside, mon_ext_with0 / 1 / 2 and mon_ext_against0 / 1 / 2 (price beyond Monday's high/low by 0, 1x, 2x Monday's range, in / against trade direction); valid Tue-Fri. Monday = first 23 h of the Globex week.
+- Month: mo_pos_top20 / bottom20, mo_used_gt100 / lt50 (month range so far / mean of the previous 6 months).
+- Session extensions: psess_* (immediately preceding D7 session's range), ysame_* (same D7 session on the previous day), fhour_* (first hour of the current D7 session, valid after 62 min), asia_* (Asia 18:00-02:00 range, valid after it ended): _inside, _break_with / _break_against (price beyond the high/low in / against the trade direction), _ext05_with / _ext1_with (beyond by 0.5x / 1x of that range in trade direction).
+- 90-minute quarters: six-hour sessions starting 20:00, 02:00, 08:00, 14:00 ET, quarters Q1..Q4 of 90 min. q_in1..q_in4 (current quarter). q1_consol (Q1 range < 0.8x mean Q1 range of the previous 14 days at the same clock, >= 5 valid), q1_range_gt_avg; q2_false_move (Q2 sweeps exactly one side of the Q1 range and closes back inside), q2_false_dir_with / against (the sweep direction with / against the trade); q3_complete_with, q3_claim_trend_opposite_sweep (Q3 net move opposite the Q2 sweep), q3_claim_trend_with; q_cur_move_with (net move of the current quarter so far); q3_live_after_false_with / against / q3_live_trend_with (inside Q3); q4_live_fade_of_q3, q4_live_fade_with, q4_live_cont_with (inside Q4: current move opposite / with Q3's). The claim as a statement about the market is tested directly in DS3_CONFLUENCE_B9_QUARTERS_CF5.md (3,603 sessions: Q1 is NOT the narrowest quarter more than chance (22 % vs 25 %); after a false move Q3 goes against the sweep 49.9 % (coin); Q4 net move opposite Q3 47.7 %, i.e. continuation is slightly MORE likely than the fade, z -2.7).
+- Accumulation / manipulation / distribution tag from the Q1 range of the six-hour session (APPROX): amd_acc (in Q1, or no side of the Q1 range swept and price inside it), amd_manip_dir_with / against (a side of the Q1 range was swept after Q1 and price has not yet left through the opposite side: with = the sweep was against the trade's direction, e.g. long after a sweep of the Q1 low), amd_dist_with / against (price beyond the Q1 range in / against the trade direction, with or without a prior sweep), amd_sweep_then_dist_with (swept the opposite side first, then left through the trade side).
+
+## Block 16 (n16_, file B16_calendar.parquet, code cf5_blk16.py), unsigned flags by the signal's Globex label day
+Trading days = weekday label days with >= 600 one-minute bars; half_day = 600..1299 bars (normal 1380). first_td_month / first3 / last_td_month / last3 / last5; quarter_end_day / week, first_td_quarter, collar_reset_day (APPROX: JPM hedged-equity collar resets on the last trading day of Mar/Jun/Sep/Dec) and collar_reset_pm1; year_end_week, january_first_week, tax_loss_window (last 7 trading days of December + first 3 of January); opex_day (third Friday of the month), quad_witch (third Friday of Mar/Jun/Sep/Dec), opex_week, quad_week, day_after_opex, day_after_quad; vix_expiry_day (Wednesday 30 days before the third Friday of the next month, previous trading day if closed), vix_expiry_week, day_after_vix_expiry; roll_day (Thursday 8 days before the quarterly expiry), roll_week, roll_day_pm1, expiry_week_quarterly; russell_recon_day / week (last Friday of June), ndx_recon_day / week (third Friday of December, APPROX for the effective date), ndx_special_rebal_2023_07_24, sp_rebal_day (quad witching); pre_holiday / post_holiday (market closed on a weekday next to it), long_weekend_pre, half_day, day_after_half, thanksgiving_week, christmas_week (Dec 21+); fomc_day / day_before / day_after / fomc_week / week_after_fomc / week_before_fomc (decision dates: public 2023-04..2024-09 list + events.csv); estimated_tax_week (week containing Jan 15, Apr 15, Jun 15, Sep 15), april_tax_week; flow_heavy_day (union of opex, quad witch, month end, Russell, NDX recon, roll day). Schedules are public rules coded by me; no feed was used.
+
+## Block 13 (n13_, file B13_micro.parquet, code cf5_blk13.py), APPROX
+From the per-second table cf2_sec (rows < sig_ts) and 1-min bars. Baselines exclude the window and use earlier data only.
+- Arrival intensity: arr{10,60,300}_hi / lo = prints per second over the last 10 / 60 / 300 s vs the 30 min before the window (> 2.0 / 1.5 / 1.3x, < 0.5 / 0.67 / 0.77x); arr_accel / arr_decel = last 30 s vs the 30 s before it (> 1.5x / < 0.67x); arr60_vs_300_hi; arrival_vs_clock_hi / lo = last 60 s rate vs the mean of the previous 20 Globex days in the same 5-min clock bucket (> 1.5x / < 0.67x).
+- Spread and depth regime vs the clock: spread_wide / tight = mean top-of-book spread of the last 10 s vs the previous 20 days' median in the same 5-min bucket (> 1.25x / < 0.9x); depth_thin / thick = top-5-level depth (bid + ask) vs same (< 0.7x / > 1.3x).
+- Volatility of volatility: vov{60,240}_hi / lo = coefficient of variation of |1-min return| over the last 60 / 240 bars vs its own trailing 5-day mean (> 1.25x / < 0.8x).
+- Realized skewness and kurtosis of 1-min returns over 15 / 60 min: skew{15,60}_with, skew_strong_with / against (|skew| > 0.5 in / against the trade direction), kurt{15,60}_hi (> 6).
+- Jumps (bipower): jshare{15,60}_hi / lo = max(0, 1 - BV/RV) > 0.3 / < 0.05 (BV = pi/2 x sum |r||r-1|); jump15_any / with / against, jump60_any = a 1-min return larger than 4 sigma (sigma^2 = BV60 per bar) within the last 15 / 60 bars, its sign with / against the trade.
+- Toxicity: vpin_hi / lo = VPIN (500-contract volume buckets, 50-bucket mean of |buy - sell| / bucket size, buy / sell by aggressor) vs 1.3x / 0.8x the median of the previous 20 days' day-median; vpin_dir_with / against = signed net imbalance over the same 50 buckets with / against the trade (> +-0.02); vpin_hi_dir_with / against.
+- Book resilience after sweeps: sweep = one second with >= 100 contracts on one aggressor side and > 4x the other; sweep120_any / with / against = a sweep ended between 6 and 120 s before the signal, direction with / against the trade; sweep_resilient / thin = consumed-side top-5 depth 5 s after the sweep vs just before (>= 0.9 / <= 0.5); sweep_thin_with, sweep_resilient_against.
+- Time since the last large trade: lt25 / lt50 _since_lt10 / lt60 / gt300 (last second containing a print of >= 25 / >= 50 contracts), lt25_last_with60 / against60 (net sign of the large prints in that second with / against the trade, if within 60 s).
+- Odd-lot share (proxy): avgprint{60,300}_le115 / ge16 = average print size over the window <= 1.15 contracts (mostly single-lot prints) / >= 1.6 (cf2_sec has no size histogram; true odd-lot share not available).
+- Not built: order-book resilience measured on cf2_mbo (L3), only months on the box; quote counts (not stored).
 
 
 # ===== Block 6 counting (W-CF6) : merged verbatim from CONFLUENCE_DEFS_CF6.md =====

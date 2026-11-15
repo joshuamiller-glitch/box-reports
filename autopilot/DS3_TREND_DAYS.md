@@ -1,8 +1,8 @@
 # DS3_TREND_DAYS - P9 trend days from D7's own trades (W-TD)
 
-**VERDICT (plain): 102 trend-day cells scored, none yet passes the tolerant gate in L3M, L6M and the older windows together; best by L6M drawdown is XC2_snypm (DD cut 8.4%, d mean 508 $/wk, gate Y). No PASS claim.**
+**VERDICT (plain): 103 trend-day cells scored; 3 pass the tolerant gate with a drawdown cut in L3M, L6M and every older window scored (leads, before placebo). Best C2_c1: L6M DD cut 6.7%, mean 583 $/wk; lead, placebos not yet run. No PASS claim.**
 
-Rebuilt 2026-11-15T14:26Z (epoch 1794752812) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
+Rebuilt 2026-11-15T17:27Z (epoch 1794763648) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
 
 Identity: TL3_TD_ID 202610 (hook path active, neutral): 598 trades net_fee 25943.82 vs JN05W2 598 / 25943.82 -> IDENTICAL (trade lists equal row by row).
 Base JN05W2 exact engine, all layers ON; score = MEASURED net (gross - $4.84/ct RT - excess slip entry +0.23 / cut +0.40 / stop +0.44 / target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET); Globex label day; windows L3M (08-01..10-31) L6M (05-01..) HOLD (2025-11-01..) GAP (2025-07..10) PRE (2024-10..2025-06) X' (2023-04..2024-09). Max DD of the recent windows is one week (2026-W44): every row shows the DD cut with and without that week. Calendar not needed here: all 43 months scored (X' included).
@@ -107,6 +107,7 @@ Columns: dMean = cell minus JN05W2 $/wk; DDcut = max-DD cut in % (positive = sma
 | C2_c2 | L3M | 1887 | 8.3 | -2.5 | 4655 | 10.62(10.46) | 101 | 0 | 86 | Y |
 | C2_c1 | L3M | 4026 | 6.7 | -6.3 | 3741 | 10.46(10.46) | 118 | 0 | 86 | Y |
 | C2_c1 | L6M | 583 | 6.7 | -6.3 | 3741 | 10.92(11.03) | 92 | 0 | 57 | Y |
+| C2_c1 | HOLD | 1546 | 2.1 | 2.1 | 1249 | 10.54(10.69) | 99 | 2 | 58 | Y |
 | XC2_bkK7 | L3M | 3016 | 6.7 | -4.5 | 3741 | 10.62(10.46) | 113 | 0 | 86 | Y |
 | XC2_bkK7 | L6M | -735 | 6.7 | -4.5 | 3741 | 11.03(11.03) | 90 | 1 | 43 | n |
 | XC2_z125 | L3M | 2072 | 6.7 | -4.5 | 3741 | 10.62(10.46) | 106 | 0 | 86 | Y |
@@ -123,6 +124,7 @@ Columns: dMean = cell minus JN05W2 $/wk; DDcut = max-DD cut in % (positive = sma
 | XC2_ctsz5 | L6M | 913 | 6.6 | -3.9 | 3721 | 10.92(11.03) | 98 | 0 | 57 | Y |
 | C2_lift | L3M | 292 | 6.6 | 0.0 | 3704 | 10.46(10.46) | 99 | 0 | 86 | Y |
 | C2_lift | L6M | 573 | 6.6 | 0.0 | 3704 | 11.07(11.03) | 100 | 0 | 79 | Y |
+| C2_lift | HOLD | 333 | 0.0 | 0.0 | -237 | 10.75(10.69) | 100 | 0 | 73 | n |
 | XC2_slon | L3M | 1769 | 6.6 | -4.3 | 3704 | 10.38(10.46) | 107 | 0 | 71 | Y |
 | XC2_slon | L6M | -359 | 6.6 | -4.3 | 3704 | 10.95(11.03) | 91 | 0 | 71 | Y |
 | XC2_snyam | L3M | 789 | 6.6 | -3.7 | 3704 | 10.46(10.46) | 104 | 0 | 57 | Y |
@@ -142,12 +144,14 @@ Columns: dMean = cell minus JN05W2 $/wk; DDcut = max-DD cut in % (positive = sma
 | C1_sz | L3M | 1466 | 0.0 | 0.0 | 0 | 10.38(10.46) | 104 | 0 | 71 | Y |
 | C1_sz2 | L3M | 554 | 0.0 | -14.6 | 0 | 10.38(10.46) | 104 | 0 | 57 | Y |
 | C1_sz2 | L6M | 831 | 0.0 | -14.6 | 0 | 10.88(11.03) | 104 | 0 | 64 | Y |
+| C1_sz2 | HOLD | 757 | 0.0 | 0.0 | 1511 | 10.58(10.69) | 98 | 0 | 62 | Y |
 | C1_tg | L3M | 534 | 0.0 | 0.0 | 0 | 10.46(10.46) | 101 | 0 | 86 | Y |
 | C1_tg | L6M | -471 | 0.0 | 0.0 | 0 | 11.03(11.03) | 98 | 0 | 64 | n |
 | C1_tg2tr | L3M | -572 | 0.0 | -14.7 | 0 | 10.46(10.46) | 102 | 0 | 43 | n |
 | C1_lift | L3M | -14 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
 | C1_c1 | L3M | 2210 | -0.0 | 0.0 | 0 | 10.38(10.46) | 105 | 0 | 86 | Y |
 | C1_c1 | L6M | 2059 | 0.0 | -0.0 | 0 | 10.92(11.03) | 103 | 0 | 86 | Y |
+| C1_c1 | HOLD | 1930 | 0.0 | 0.0 | 4261 | 10.56(10.69) | 101 | 1 | 62 | Y |
 | C1_c2 | L3M | 464 | 0.0 | 0.0 | 0 | 10.38(10.46) | 100 | 0 | 57 | n |
 | C2_tg | L3M | 386 | 0.0 | 0.0 | 0 | 10.62(10.46) | 96 | 0 | 71 | n |
 | C2_tg2tr | L3M | -1340 | 0.0 | -14.7 | 0 | 10.62(10.46) | 100 | 0 | 29 | n |
@@ -220,6 +224,7 @@ Per cell and window: days with at least one called minute (cell's own dump); rig
 | C2_c2 | L3M | 58 | 50 | 8 | 24534 | -1466 | 34114 | -9580 | 0 |
 | C2_c1 | L3M | 58 | 50 | 8 | 52344 | 89 | 58959 | -6614 | 0 |
 | C2_c1 | L6M | 122 | 103 | 19 | 15785 | -21130 | 55722 | -39937 | -510 |
+| C2_c1 | HOLD | 227 | 187 | 40 | 80882 | -2123 | 103607 | -22725 | -510 |
 | XC2_bkK7 | L3M | 58 | 50 | 8 | 39214 | -8 | 40392 | -1178 | 0 |
 | XC2_bkK7 | L6M | 122 | 103 | 19 | -18746 | -20492 | 8343 | -27089 | -510 |
 | XC2_z125 | L3M | 58 | 50 | 8 | 26937 | -483 | 29758 | -2821 | 0 |
@@ -237,6 +242,15 @@ Per cell and window: days with at least one called minute (cell's own dump); rig
 
 | cell | win | dMean | DDcut | DDcut_noW44 | dWorstWk | stops_wk | best5 | w2l | wf2w | gate |
 |---|---|---|---|---|---|---|---|---|---|---|
+| C1_sz2 | L3M | 554 | 0.0 | -14.6 | 0 | 10.38(10.46) | 104 | 0 | 57 | Y |
+| C1_sz2 | L6M | 831 | 0.0 | -14.6 | 0 | 10.88(11.03) | 104 | 0 | 64 | Y |
+| C1_sz2 | HOLD | 757 | 0.0 | 0.0 | 1511 | 10.58(10.69) | 98 | 0 | 62 | Y |
+| C1_c1 | L3M | 2210 | -0.0 | 0.0 | 0 | 10.38(10.46) | 105 | 0 | 86 | Y |
+| C1_c1 | L6M | 2059 | 0.0 | -0.0 | 0 | 10.92(11.03) | 103 | 0 | 86 | Y |
+| C1_c1 | HOLD | 1930 | 0.0 | 0.0 | 4261 | 10.56(10.69) | 101 | 1 | 62 | Y |
+| C2_c1 | L3M | 4026 | 6.7 | -6.3 | 3741 | 10.46(10.46) | 118 | 0 | 86 | Y |
+| C2_c1 | L6M | 583 | 6.7 | -6.3 | 3741 | 10.92(11.03) | 92 | 0 | 57 | Y |
+| C2_c1 | HOLD | 1546 | 2.1 | 2.1 | 1249 | 10.54(10.69) | 99 | 2 | 58 | Y |
 | C5_pr2 | L3M | -6269 | 33.4 | 22.0 | 19343 | 9.69(10.46) | 66 | 1 | 29 | n |
 | C1_pr2 | L3M | -5803 | 29.3 | 36.9 | 16908 | 9.69(10.46) | 66 | 1 | 29 | n |
 | C4_pr2 | L3M | -4806 | 26.6 | 14.1 | 16908 | 9.62(10.46) | 74 | 2 | 29 | n |
@@ -251,7 +265,9 @@ Per cell and window: days with at least one called minute (cell's own dump); rig
 
 ## 7. Best setting with evidence and plain strength
 
-- No cell passes in every window scored yet. Best by L6M drawdown: **XC2_snypm** L3M: DD cut 8.4%, dMean 1063, gate Y, L6M: DD cut 8.4%, dMean 508, gate Y. Strength: not a lead.
+- **C2_c1**: L3M: DD cut 6.7% (noW44 -6.3%), dMean 4026, L6M: DD cut 6.7% (noW44 -6.3%), dMean 583, HOLD: DD cut 2.1% (noW44 2.1%), dMean 1546; strength: lead, placebos not yet run.
+- **C1_sz2**: L3M: DD cut 0.0% (noW44 -14.6%), dMean 554, L6M: DD cut 0.0% (noW44 -14.6%), dMean 831, HOLD: DD cut 0.0% (noW44 0.0%), dMean 757; strength: lead, placebos not yet run.
+- **C1_c1**: L3M: DD cut -0.0% (noW44 0.0%), dMean 2210, L6M: DD cut 0.0% (noW44 -0.0%), dMean 2059, HOLD: DD cut 0.0% (noW44 0.0%), dMean 1930; strength: lead, placebos not yet run.
 
 ## 8. Hand-off
 Best rules are sent to W-JV (a5266a6235f1c7bbb) as they land (SendMessage); the exact spec of every cell is td_cells.py (call: H=90 min, r=1.0, n1=2, dist=0.15, frozen from the X calibration, prereg addendum A; actions as in the prereg).

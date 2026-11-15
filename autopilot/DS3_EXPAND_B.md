@@ -1,4 +1,4 @@
-VERDICT (plain, 2026-11-15 16:40 UTC): family B is running; 22 of 239 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_P30D0 12.5% (mean -1613 $/wk); L6M best DD change TL3_EB_U7F_T15D10 11.7% (mean +573 $/wk). No PASS claim; the parents are reproduced.
+VERDICT (plain, 2026-11-15 17:10 UTC): family B is running; 22 of 239 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_P30D0 12.5% (mean -1613 $/wk); L6M best DD change TL3_EB_U7F_T15D10 11.7% (mean +573 $/wk). No PASS claim; the parents are reproduced.
 
 # DS3_EXPAND_B - an exit fitted to how each book fails (W-EB, T-EXPAND family B)
 
@@ -119,8 +119,9 @@ Identity: TL3_EB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 
 | cell              | win   |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   d_mean_fee484 |       ww |   ww_ref |   best5 |   w2l |   nwin |   cuts_wk | gate   |
 |:------------------|:------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|----------------:|---------:|---------:|--------:|------:|-------:|----------:|:-------|
-| TL3_EB_U7F_T15D10 | PRE   |      75 | 10077.8 |      -90 | 76960.6 |  76186.1 |       -1 |        nan |           -90.4 | -52547.4 | -52547.4 |       1 |     0 |     48 |      31.8 | PASS   |
-| TL3_EB_PB         | PRE   |      75 | 10077.8 |      -90 | 76960.6 |  76186.1 |       -1 |        nan |           -90.4 | -52547.4 | -52547.4 |       1 |     0 |     48 |      31.8 | PASS   |
+| TL3_EB_U7F_T15D10 | PRE   |      75 | 10077.8 |    -90   | 76960.6 |  76186.1 |     -1   |        nan |           -90.4 | -52547.4 | -52547.4 |       1 |     0 |     48 |      31.8 | PASS   |
+| TL3_EB_PB         | PRE   |      75 | 10077.8 |    -90   | 76960.6 |  76186.1 |     -1   |        nan |           -90.4 | -52547.4 | -52547.4 |       1 |     0 |     48 |      31.8 | PASS   |
+| TL3_EB_U7F_T5D10  | PRE   |      75 | 10317.8 |    149.9 | 77073.1 |  76186.1 |     -1.2 |        nan |           149.3 | -52547.4 | -52547.4 |       1 |     0 |     48 |      31.8 | PASS   |
 
 ### X'
 

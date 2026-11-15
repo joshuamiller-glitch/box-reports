@@ -1,8 +1,8 @@
 # DS3_EVENT_WINDOWS - P10 event windows per book (W-TD)
 
-**VERDICT (plain): 19 event-window cells scored, none yet passes the tolerant gate in L3M, L6M and the older windows together; best by L6M drawdown is EV_NFP_F15 (DD cut 0.0%, dMean -323 $/wk). Window tables (section 1) show the events do not hurt D7 on average: trades open across NFP/CPI/FOMC are net positive. No PASS claim.**
+**VERDICT (plain): 61 event-window cells scored; 1 pass the tolerant gate with a drawdown cut in L3M, L6M and every older window scored (leads, before placebo). Best EV_NFP_F15: L6M DD cut 0.0%, dMean -323 $/wk; lead, placebos not yet run. No PASS claim.**
 
-Rebuilt 2026-11-15T14:27Z (epoch 1794752825) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
+Rebuilt 2026-11-15T17:27Z (epoch 1794763655) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
 
 Identity: TL3_TD_ID 202610 (hook path active, neutral): 598 trades net_fee 25943.82 vs JN05W2 598 / 25943.82 -> IDENTICAL (trade lists equal row by row).
 Base JN05W2 exact engine, all layers ON; score = MEASURED net (gross - $4.84/ct RT - excess slip entry +0.23 / cut +0.40 / stop +0.44 / target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET); Globex label day; windows L3M (08-01..10-31) L6M (05-01..) HOLD (2025-11-01..) GAP (2025-07..10) PRE (2024-10..2025-06) X' (2023-04..2024-09). Max DD of the recent windows is one week (2026-W44): every row shows the DD cut with and without that week. Calendar /mnt/l2/l2vast/_calendar/events.csv: 562 events from 2024-10-01 (CPI, NFP, PCE, PPI, GDP, RETAIL, ISM, FOMC and minutes, chair speeches, Treasury auction closes, megacap after-close earnings). X' (2023-04..2024-09) has NO calendar: event rules are identity there and no X' number is given. Existing engine guards: entries blocked 09:00-10:00 ET and 15:00-18:05 ET, lot table 0 in the 08:30-09:30 'pre' session for all books, so entries around the 08:30 prints can only come before 08:30 and the effect of the 08:30 events is mostly on open positions.
@@ -225,32 +225,75 @@ Same columns as the trend-day page (see DS3_TREND_DAYS.md section 3). Months wit
 
 | cell | win | dMean | DDcut | DDcut_noW44 | dWorstWk | stops_wk | best5 | w2l | wf2w | gate |
 |---|---|---|---|---|---|---|---|---|---|---|
+| EV_EARN_H0_150 | L3M | 371 | 12.8 | 0.0 | 7186 | 10.38(10.46) | 100 | 0 | 86 | Y |
+| EV_CPI_B30_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
 | EV_CPI_B15_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
+| EV_CPI_B5_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
+| EV_CPI_H30_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_CPI_H15_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_CPI_H5_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_CPI_F30 | L3M | -592 | 0.0 | 0.0 | 0 | 10.38(10.46) | 98 | 0 | 71 | n |
 | EV_CPI_F15 | L3M | -887 | 0.0 | 0.0 | 0 | 10.46(10.46) | 97 | 0 | 71 | n |
 | EV_CPI_F5 | L3M | -801 | 0.0 | 0.0 | 0 | 10.46(10.46) | 98 | 0 | 71 | n |
+| EV_NFP_B30_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 86 | n |
 | EV_NFP_B15_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 86 | n |
+| EV_NFP_B5_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_NFP_H30_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_NFP_H15_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_NFP_H5_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_NFP_F30 | L3M | 385 | 0.0 | 21.2 | 0 | 10.31(10.46) | 100 | 0 | 86 | Y |
 | EV_NFP_F15 | L3M | 86 | 0.0 | 6.8 | 0 | 10.31(10.46) | 100 | 0 | 86 | Y |
 | EV_NFP_F15 | L6M | -323 | 0.0 | 6.8 | 0 | 10.95(11.03) | 100 | 0 | 79 | Y |
+| EV_NFP_F15 | HOLD | -95 | 6.7 | 6.7 | 0 | 10.56(10.69) | 100 | 1 | 81 | Y |
+| EV_NFP_F5 | L3M | 169 | 0.0 | 9.9 | 0 | 10.31(10.46) | 100 | 0 | 86 | Y |
+| EV_PCE_B30_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_PCE_B15_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_PCE_B5_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_PCE_H30_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_PCE_H15_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_PCE_H5_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_PCE_F30 | L3M | 183 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_PCE_F15 | L3M | 158 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_PCE_F5 | L3M | 228 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_OTH830_B30_0 | L3M | 121 | 0.0 | 0.0 | 0 | 10.38(10.46) | 100 | 0 | 100 | n |
 | EV_OTH830_B15_0 | L3M | 62 | 0.0 | 0.0 | 0 | 10.38(10.46) | 100 | 0 | 100 | n |
+| EV_OTH830_B5_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_OTH830_H30_0 | L3M | 55 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_OTH830_H15_0 | L3M | 55 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_OTH830_H5_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_OTH830_F30 | L3M | 590 | 0.0 | 0.0 | 0 | 10.31(10.46) | 102 | 0 | 100 | Y |
 | EV_OTH830_F15 | L3M | 402 | 0.0 | 0.0 | 0 | 10.31(10.46) | 101 | 0 | 100 | n |
+| EV_OTH830_F5 | L3M | 666 | 0.0 | 0.0 | 0 | 10.31(10.46) | 101 | 0 | 100 | Y |
+| EV_FOMC_B30_30 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_FOMC_B15_15 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_FOMC_B5_5 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_FOMC_B15_60 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_FOMC_H30_30 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_FOMC_H15_15 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_FOMC_H30_60 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_FOMC_F30 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_FOMC_F15 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_FOMC_F5 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
+| EV_AUC_B5_5 | L3M | 14 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_AUC_B15_15 | L3M | -113 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 57 | n |
+| EV_AUC_B30_30 | L3M | -402 | 0.0 | 1.9 | 0 | 10.46(10.46) | 98 | 0 | 43 | Y |
 | EV_AUC_H15_15 | L3M | -91 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
+| EV_AUC_H30_30 | L3M | -84 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 86 | n |
+| EV_AUC_F15 | L3M | -506 | 0.0 | 6.2 | 0 | 10.38(10.46) | 96 | 0 | 43 | Y |
+| EV_ISM_B0_5 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_ISM_B0_15 | L3M | -192 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 86 | n |
+| EV_ISM_B0_30 | L3M | -1167 | 0.0 | -9.8 | 0 | 10.46(10.46) | 100 | 0 | 57 | n |
+| EV_ISM_B0_60 | L3M | -1466 | 0.0 | -11.4 | 0 | 10.46(10.46) | 99 | 0 | 57 | n |
+| EV_ISM_H0_15 | L3M | -183 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 86 | n |
+| EV_ISM_H0_30 | L3M | -183 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 86 | n |
+| EV_EARN_B0_90 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 | EV_EARN_B0_150 | L3M | -1588 | -18.5 | -3.8 | -10371 | 10.62(10.46) | 100 | 0 | 57 | n |
 
 ## 3. Best action per event type (by L6M drawdown cut among cells with a gate pass in L3M and L6M; otherwise best partial)
 
 | type | best | lead | L3M_DDcut | L6M_DDcut | L6M_dMean | HOLD_DDcut | HOLD_dMean | strength |
 |---|---|---|---|---|---|---|---|---|
-| NFP | NFP_F15 | n | 0.0 | 0.0 | -323 |  |  | weak (no lead) |
+| NFP | NFP_F15 | Y | 0.0 | 0.0 | -323 | 6.7 | -95 | lead, placebos not yet run |
 
 ## 4. Per-book slices of the best cells (same run, books interact through the shared engine)
 
@@ -263,14 +306,24 @@ Same columns as the trend-day page (see DS3_TREND_DAYS.md section 3). Months wit
 | NFP_F15 | H7 | L6M | 0 | 0.0 | 0 | 176 | 176 |
 | NFP_F15 | A7 | L6M | 0 | 0.0 | 0 | 353 | 353 |
 | NFP_F15 | O7 | L6M | 0 | 0.0 | 0 | 46 | 46 |
+| NFP_F15 | K7 | HOLD | 16 | 4.4 | 0 | 2752 | 2747 |
+| NFP_F15 | P7 | HOLD | -62 | -0.0 | 0 | 1837 | 1838 |
+| NFP_F15 | M7 | HOLD | -22 | -2.6 | 0 | 1408 | 1408 |
+| NFP_F15 | U7 | HOLD | -30 | -4.4 | 0 | 484 | 484 |
+| NFP_F15 | H7 | HOLD | 0 | 0.0 | 0 | 307 | 307 |
+| NFP_F15 | A7 | HOLD | 3 | 0.0 | 0 | 564 | 564 |
+| NFP_F15 | O7 | HOLD | 0 | 0.0 | 0 | 104 | 104 |
 
 ## 5. Placebos (events shifted 11 / 23 / 37 business days)
 
 | cell | win | dMean | DDcut | DDcut_noW44 | dWorstWk | stops_wk | best5 | w2l | wf2w | gate |
 |---|---|---|---|---|---|---|---|---|---|---|
+| EV_NFP_F15 | L3M | 86 | 0.0 | 6.8 | 0 | 10.31(10.46) | 100 | 0 | 86 | Y |
+| EV_NFP_F15 | L6M | -323 | 0.0 | 6.8 | 0 | 10.95(11.03) | 100 | 0 | 79 | Y |
+| EV_NFP_F15 | HOLD | -95 | 6.7 | 6.7 | 0 | 10.56(10.69) | 100 | 1 | 81 | Y |
+| EV_EARN_H0_150 | L3M | 371 | 12.8 | 0.0 | 7186 | 10.38(10.46) | 100 | 0 | 86 | Y |
+| EV_CPI_B30_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
 | EV_CPI_B15_0 | L3M | -92 | 0.0 | 0.0 | 0 | 10.46(10.46) | 99 | 0 | 86 | n |
-| EV_CPI_H15_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
-| EV_CPI_H5_0 | L3M | 0 | 0.0 | 0.0 | 0 | 10.46(10.46) | 100 | 0 | 100 | n |
 
 ## 6. Would a competent discretionary trader do it?
 - Flat before CPI/NFP/FOMC: a common desk rule, but D7 trades that are open across the prints are net positive in the sample (section 1b); it must show a drawdown gain at equal mean to be worth the lost trend capture.
