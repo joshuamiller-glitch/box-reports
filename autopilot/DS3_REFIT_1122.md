@@ -2,7 +2,7 @@
 
 VERDICT (2026-11-15, exact L6M + HOLD for 38 one-layer / shelved sets, FIRST PASS, no PASS): rolling refit of any layer (lot-level first-order, or exact one-layer cells on the JN04-live base) does NOT beat the frozen setting and is no better than random picks; keep the layers frozen. Of 30 exact variants only 2 hold in both L6M and HOLD (U7 fresh time stop; P7 ATR skip 1.6), both small; the P7 6,000-base loss cap (+23% at L3M) fails (L6M +10% / -$701, HOLD +0% / -$364, 3 winners turned losing). Composite picks (+46% / +53% L6M DD cut) sit inside the placebo band (+23..+36%). Candidate v2.10 = JN05W2J + U7/A7 fresh time stops + M7 limit entry (+ optional ATR skip 1.6); exact sets V210/V210B/V210C queued first, base lots.
 
-Generated 2026-11-15 17:48 UTC (epoch 1794764885). Exact engine for every verdict dollar; first-order composition only to rank (always labelled). Shadow only, no PASS claims. Prereg autopilot/REFIT1122_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_refit1122/; bulk /mnt/l2/l2vast/_refit1122/.
+Generated 2026-11-15 20:46 UTC (epoch 1794775606). Exact engine for every verdict dollar; first-order composition only to rank (always labelled). Shadow only, no PASS claims. Prereg autopilot/REFIT1122_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_refit1122/; bulk /mnt/l2/l2vast/_refit1122/.
 
 ## 0. Plan (first publish, 2026-11-14 ~17:00Z)
 1. Stage 1 - candidate sets per layer from existing results (DS3_JOINT top-K / pools, registered topK, the 43-month exact cells on the JN05W2 base and the survivor cells from priorities 2-11 as they reach 43 months).

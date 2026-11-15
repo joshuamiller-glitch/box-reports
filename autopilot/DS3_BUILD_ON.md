@@ -1,6 +1,6 @@
-# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-15 16:43Z
+# DS3_BUILD_ON - T-BUILD-ON (W-BO: items 1, 3, 4, 6, 7, 8) - last update 2026-11-15 20:34Z
 
-Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 807 of 1136 done (one set per job, one month per job), 0 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
+Page loop pid 2352035 (every 4 h from 2026-11-12 07:00Z), exact driver pid 2342528. Exact jobs: 809 of 1136 done (one set per job, one month per job), 0 BO_ workers running now. Identity of the hook path against LPB_BASE on 202610: PASSED (identical trade list).
 
 
 ## 1. What this page is, and the definitions used
@@ -132,6 +132,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_U7_1Trev_G60_k0p75_T45 | U7: FRESH entries get target 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 0.75 ATR) | L1M | 6 | -1650 | -2.3 | -106.4 | -1200 | 28.0 (28.4) | -1660 (-1667) | -1470 | 1409 | 0 | -1200 | -2400 | 0.0 |
 | BO_U7_3SS_f0p33_a0p40_r0_rech | U7: 0.33 of the lots go out by market at 40% of the stop (rech entries only; remainder keeps the state cut) | L1M | 6 | -15738 | 2.0 | nan | 442 | 25.9 (28.4) | -1484 (-1667) | -2426 | 1629 | 0 | 1037 | -1959 | 0.0 |
 | BO_U7_3SS_f0p33_a0p75_r0_rech | U7: 0.33 of the lots go out by market at 75% of the stop (rech entries only; remainder keeps the state cut) | L1M | 6 | -41 | 1.4 | 12.6 | 409 | 26.9 (28.4) | -1604 (-1667) | 0 | 675 | 0 | 707 | 520 | 0.0 |
+| BO_U7_4PA_f0p50_p0p25_fresh_s0 | U7: probe 0.50 of the lots, add the rest when the trade is 25% of the target in profit (rechase never adds; stop re-anchored at the average price) | L1M | 3 | -858 | -0.4 | nan | -408 | 28.0 (28.4) | -1483 (-1667) | -8918 | 5680 | 0 | -220 | -1005 | 0.0 |
 | BO_U7_6TL_N20_t0p40_flat_all | U7: at 20 min, if the open loss is still worse than 40% of the target: flat (all trades) | L1M | 6 | -15508 | 2.9 | nan | 672 | 26.9 (28.4) | -1563 (-1667) | 0 | 1489 | 0 | 1475 | 2240 | 1.8 |
 | BO_U7_7C_W180_skip | U7: another book filled a same-side target in the last 180 s: skip the signal | L1M | 6 | 34 | 7.5 | 19.7 | 484 | 28.0 (28.4) | -1628 (-1667) | 0 | 0 | -2195 | 3844 | -2393 | 0.0 |
 | BO_K7_1C_m0p50_T30_S60 | K7: rechase entries get lots x0.50, target 30, stop 60 (fresh full) | L3M | 6 | 10612 | 21.3 | 29.8 | 1646 | 25.4 (23.4) | -1531 (-1662) | -17575 | 10067 | -609 | 8455 | -3946 | 0.0 |
@@ -212,6 +213,7 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 | BO_U7_1Trev_G60_k0p75_T45 | U7: FRESH entries get target 45 pts (fresh = 1st-2nd trade of the book in the session, at least 60 min since its last exit, session move at most 0.75 ATR) | L3M | 6 | 11477 | -6.2 | -15.4 | -1250 | 23.4 (23.4) | -1660 (-1662) | -1365 | 352 | 0 | -1200 | -1650 | 0.0 |
 | BO_U7_3SS_f0p33_a0p40_r0_rech | U7: 0.33 of the lots go out by market at 40% of the stop (rech entries only; remainder keeps the state cut) | L3M | 6 | 16317 | 10.7 | 7.2 | -385 | 21.3 (23.4) | -1508 (-1662) | -1803 | 1534 | 0 | 3095 | -1827 | 0.0 |
 | BO_U7_3SS_f0p33_a0p75_r0_rech | U7: 0.33 of the lots go out by market at 75% of the stop (rech entries only; remainder keeps the state cut) | L3M | 6 | 11467 | 2.0 | 3.6 | 343 | 22.1 (23.4) | -1597 (-1662) | -375 | 634 | 0 | 966 | -286 | 0.0 |
+| BO_U7_4PA_f0p50_p0p25_fresh_s0 | U7: probe 0.50 of the lots, add the rest when the trade is 25% of the target in profit (rechase never adds; stop re-anchored at the average price) | L3M | 3 | 15375 | -2.4 | -14.0 | -1327 | 23.3 (23.4) | -1489 (-1662) | -6827 | 4857 | 0 | 3646 | -549 | 0.0 |
 | BO_U7_6TL_N20_t0p40_flat_all | U7: at 20 min, if the open loss is still worse than 40% of the target: flat (all trades) | L3M | 6 | 17116 | 4.5 | 6.4 | 414 | 22.8 (23.4) | -1604 (-1662) | -123 | 621 | -271 | 2363 | 691 | 1.1 |
 | BO_U7_7C_W180_skip | U7: another book filled a same-side target in the last 180 s: skip the signal | L3M | 6 | 13590 | 3.1 | 6.2 | 863 | 23.2 (23.4) | -1644 (-1662) | 0 | 0 | -1328 | 1922 | 21 | 0.0 |
 | BO_K7_1C_m0p50_T30_S60 | K7: rechase entries get lots x0.50, target 30, stop 60 (fresh full) | L6M | 6 | 18099 | 21.3 | 18.2 | -709 | 26.6 (24.5) | -1496 (-1632) | -19334 | 9192 | 831 | 7504 | -4141 | 0.0 |
@@ -1196,11 +1198,11 @@ Fill model of the exact runs: market exits (staggered stop, time stop) at the ne
 
 | time (UTC) | book | side | lots live > new | entry tag (n_sess / gap min / chase k) | exit live > new | pnl live > new |
 |--|--|--|--|--|--|--|
+| 08-28 05:10 | U7 | short | 4 > 4 | fresh (1 / 1019 / 0.76) | Target > StopJoin | 4790 > -4565 |
 | 10-29 05:10 | U7 | long | 4 > 4 | fresh (1 / 1107 / -2.91) | Target > StopJoin | 4790 > -3810 |
 | 10-20 04:30 | U7 | short | 4 > 2 | rech (2 / 23 / 4.19) | Target > StateCut | 4800 > -1269 |
-| 10-04 22:10 | U7 | long | 4 > 2 | rech (1 / 5223 / 3.25) | Target > Target | 4805 > 2398 |
-| 10-01 02:30 | U7 | long | 4 > 2 | rech (1 / -1 / 6.67) | Target > Target | 4800 > 2398 |
-| 10-11 22:10 | U7 | long | 4 > 2 | rech (1 / 3935 / 2.07) | Target > Target | 4795 > 2398 |
+| 09-28 00:20 | U7 | long | 4 > 2 | fresh (1 / 5107 / 0.52) | StopJoinFallback > StateCut | -4805 > -1244 |
+| 09-28 12:10 | U7 | long | 4 > 2 | rech (1 / 637 / 1.93) | Target > Target | 4805 > 2398 |
 
 
 **BO_U7_6TL_N20_t0p40_flat_all**

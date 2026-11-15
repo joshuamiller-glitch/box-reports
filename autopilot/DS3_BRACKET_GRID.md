@@ -279,8 +279,11 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 | 40x40 | +2200 (live +3850; $4.84 +2068) DD -27.4% ww -2748 stops 0.08(0.00) | n/a | n/a |
 | 40x60 | +1019 (live +1783; $4.84 +994) DD -23.2% ww -2510 stops 0.00(0.00) | n/a | n/a |
 | 40x90 | -1386 (live -2426; $4.84 -1372) DD -74.1% ww -8079 stops 0.08(0.00) | n/a | n/a |
+| 60x40 | +2577 (live +4510; $4.84 +2495) DD -42.7% ww -6350 stops 0.15(0.00) | n/a | n/a |
 | 60x90 | -1015 (live -1777; $4.84 -984) DD -79.0% ww -2751 stops 0.00(0.00) | n/a | n/a |
+| 85x40 | +2627 (live +4597; $4.84 +2598) DD -107.1% ww -13878 stops 0.00(0.00) | n/a | n/a |
 | 85x60 | +42 (live +74; $4.84 +62) DD -42.9% ww -5353 stops 0.00(0.00) | n/a | n/a |
+| 85x90 | -637 (live -1115; $4.84 -590) DD -7.8% ww -3407 stops 0.00(0.00) | n/a | n/a |
 
 #### K7 london
 Today (actual JN05W2 slice): ALL43 +338 $/wk (live +592), maxDD -27954, OLDER +323 $/wk (live +566), maxDD -27954, L6M +430 $/wk (live +753), maxDD -15736, L3M +724 $/wk (live +1267), maxDD -15736
@@ -344,6 +347,7 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
 | 40x40 | -636 (live -1113; $4.84 -714) DD -128.9% ww -1301 stops 0.53(0.30) | n/a | n/a |
+| 40x60 | +294 (live +514; $4.84 +275) DD +29.6% ww -309 stops 0.08(0.30) | n/a | n/a |
 
 #### K7 nyam
 Today (actual JN05W2 slice): ALL43 +84 $/wk (live +148), maxDD -40193, OLDER +67 $/wk (live +118), maxDD -40193, L6M +188 $/wk (live +330), maxDD -10858, L3M -148 $/wk (live -259), maxDD -10858

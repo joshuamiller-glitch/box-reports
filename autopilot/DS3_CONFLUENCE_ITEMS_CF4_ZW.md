@@ -1,7 +1,9 @@
 # DS3_CONFLUENCE_ITEMS_CF4_ZW - CF4 conditions (Block 2, IRL/ERL, Blocks 10-12, Block 4 alternate bars) each alone, weekly cluster-robust (zw) with the nonsense bar
 
-**Verdict (data ends 2026-11-11) line (2026-11-15 20:30Z, ): pass-alone rate per block vs nonsense (0.44%): osc 0.66% (1.5x); trend 0.62% (1.4x); smc 0.69% (1.6x); vol 0.58% (1.3x); ml 0.41% (0.9x); irl 0.54% (1.2x); candle 0.25% (0.6x); fp 0.58% (1.3x); geom 0.32% (0.7x); alt_ha1 0.52% (1.2x); alt_ha15 0.61% (1.4x); alt_ha3 0.58% (1.3x); alt_ha5 0.80% (1.8x); alt_ha60 0.89% (2.0x); alt_range16 0.64% (1.5x); alt_range8 0.91% (2.1x); alt_renko16 0.61% (1.4x); alt_renko8 0.58% (1.3x); alt_tick2000 0.78% (1.8x); alt_vol2000 0.57% (1.3x); alt_vol500 0.63% (1.4x). A block at or near 1x nonsense has no single-condition signal beyond the controls.**
+**Verdict (data ends 2026-11-11) line (2026-11-15 20:37Z, ): pass-alone rate per block vs nonsense (0.44%): osc 0.66% (1.5x); trend 0.62% (1.4x); smc 0.69% (1.6x); vol 0.58% (1.3x); ml 0.41% (0.9x); irl 0.54% (1.2x); candle 0.25% (0.6x); fp 0.58% (1.3x); geom 0.32% (0.7x); alt_ha1 0.52% (1.2x); alt_ha15 0.61% (1.4x); alt_ha3 0.58% (1.3x); alt_ha5 0.80% (1.8x); alt_ha60 0.89% (2.0x); alt_range16 0.64% (1.5x); alt_range8 0.91% (2.1x); alt_renko16 0.61% (1.4x); alt_renko8 0.58% (1.3x); alt_tick2000 0.78% (1.8x); alt_vol2000 0.57% (1.3x); alt_vol500 0.63% (1.4x); altagree 0.32% (0.7x); altagree_ctrl 0.56% (1.3x). A block at or near 1x nonsense has no single-condition signal beyond the controls.**
 POWER (planted-edge check, autopilot/CF4_PLANT.md): the same pipeline finds a planted condition with a binary lift of ~0.03-0.05 R per signal in the pooled cell, ~0.1-0.17 R in book / session cells and ~0.17-0.28 R in book x session cells; real passers have median |lift| well below the book x session floor, so absence of a clear pass means no detectable single-condition edge of that size, not no edge. Where the top passers pass and how many are near-duplicates: autopilot/CF4_ZW_TOP.md.
+
+MULTI-BAR-TYPE AGREEMENT (altagree): a condition true on >=3 (or >=6) of the 12 alternate-bar sets counts once; altagree_ctrl = the same construction with independently drawn random condition columns per set. The real agreement block passes at 0.32% of tests versus 0.56% for its control and 0.44% for the nonsense controls: bar-type agreement adds nothing.
 
 RULE (W-CF1, CONFLUENCE_DEFS.md): pass alone only if |zw| (weekly cluster-robust t, >= 8 weeks) exceeds the 99th percentile of |zw| of the 200 nonsense controls c_Z_* IN THE SAME CELL, AND the lift keeps its sign in every calendar year with >= 30 cases per side (>= 2 such years) AND in L6M (>= 15 yes cases). Outcome = R of universe signals with in_pos == 0 (taken + skipped hypothetical), cells ALL, book, session, book x session. Nonsense controls pass the SAME full rule in 0.44% of their tests (CF5 table nonsense_pass_rate.csv). Code: code/th_confl_cf4/cf4_zw.py (machinery of code/th_confl_cf5/cf5_zw.py). November 2026 rows are provisional until W-EV parity.
 
@@ -28,6 +30,8 @@ RULE (W-CF1, CONFLUENCE_DEFS.md): pass alone only if |zw| (weekly cluster-robust
 | alt_tick2000 | 2311 | 115550 | 898 | 0.78 | 1.8 | 30 |
 | alt_vol2000 | 2311 | 115550 | 657 | 0.57 | 1.3 | 24 |
 | alt_vol500 | 2311 | 115550 | 732 | 0.63 | 1.4 | 24 |
+| altagree | 4622 | 231100 | 751 | 0.32 | 0.7 | 13 |
+| altagree_ctrl | 4622 | 231100 | 1283 | 0.56 | 1.3 | 22 |
 
 ## osc
 
@@ -490,4 +494,48 @@ RULE (W-CF1, CONFLUENCE_DEFS.md): pass alone only if |zw| (weekly cluster-robust
 | sess |  | 0 | c4_w1_range_expansion_vol500_hi | 1768 | -0.018 | 0.087 | -0.105 | -4.0 | 2.8 | 189 | 0/4 | -0.112 |
 | book_sess | M7 | 5 | c4_tsi_vol500_sig | 2330 | -0.023 | 0.097 | -0.120 | -3.9 | 2.8 | 178 | 0/4 | -0.127 |
 | sess |  | 0 | c4_wtS_vol500_side | 8329 | 0.087 | 0.008 | 0.079 | 3.9 | 2.8 | 187 | 4/4 | 0.015 |
+
+## altagree
+
+4622 conditions, 231100 tests, passing alone: 751 tests (0.32%, 0.7x the nonsense rate), 600 distinct conditions (13% of the block).
+
+| cell | book | sess | condition | n yes | mean R yes | mean R no | lift R | zw | bar99 | weeks | years pos/n | lift L6M |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| book_sess | U7 | 3 | c4_agr_kvo_fresh5_ge6 | 100 | -0.102 | 0.110 | -0.211 | -7.3 | 2.9 | 11 | 0/2 | -0.112 |
+| book_sess | A7 | 1 | c4_agr_crsi_ewith_z1_ge6 | 106 | -0.329 | 0.048 | -0.377 | -6.7 | 2.9 | 27 | 0/2 | -0.364 |
+| book_sess | H7 | 4 | c4_agr_w1_psar_0.01_fresh5_ge3 | 198 | -0.120 | 0.065 | -0.184 | -5.6 | 2.9 | 22 | 0/4 | -0.443 |
+| sess |  | 0 | c4_agr_kstS_side_ge3 | 10562 | 0.073 | -0.195 | 0.268 | 5.4 | 2.8 | 37 | 4/4 | 0.230 |
+| sess |  | 1 | c4_agr_crsi_ewith_z1_ge6 | 141 | -0.228 | 0.027 | -0.255 | -5.4 | 2.5 | 42 | 0/3 | -0.268 |
+| sess |  | 0 | c4_agr_sd_near_hold3_ge3 | 743 | -0.047 | 0.078 | -0.125 | -5.1 | 2.8 | 146 | 0/4 | -0.020 |
+| sess |  | 0 | c4_agr_rfiltF_dir_hold3_ge3 | 10555 | 0.074 | -0.197 | 0.271 | 4.6 | 2.8 | 40 | 4/4 | 0.041 |
+| sess |  | 0 | c4_agr_w1_psar_0.03_divwith_ge6 | 103 | -0.156 | 0.071 | -0.228 | -4.4 | 2.8 | 23 | 0/2 | -0.365 |
+| sess |  | 0 | c4_agr_w1_trix30_side_ge3 | 10515 | 0.074 | -0.178 | 0.253 | 4.4 | 2.8 | 52 | 4/4 | 0.316 |
+| book_sess | M7 | 3 | c4_agr_w1_stochrsi8_eleave_ge3 | 1454 | -0.063 | 0.052 | -0.115 | -4.4 | 2.6 | 185 | 0/4 | -0.198 |
+| book_sess | M7 | 3 | c4_agr_srsiF_eleave_ge3 | 1454 | -0.063 | 0.052 | -0.115 | -4.4 | 2.6 | 185 | 0/4 | -0.198 |
+| sess |  | 0 | c4_agr_w1_supertrend_10_3_side_ge6 | 9974 | 0.078 | -0.046 | 0.124 | 4.4 | 2.8 | 152 | 4/4 | 0.144 |
+| sess |  | 0 | c4_agr_w1_kama100_px_side_ge6 | 9846 | 0.081 | -0.064 | 0.145 | 4.3 | 2.8 | 163 | 4/4 | 0.118 |
+| book_sess | U7 | 0 | c4_agr_wtS_fresh5_ge3 | 598 | 0.062 | 0.220 | -0.158 | -4.2 | 2.9 | 12 | 0/2 | -0.182 |
+| book_sess | K7 | 0 | c4_agr_lrcS_side_ge6 | 2966 | 0.056 | -0.089 | 0.145 | 4.2 | 2.3 | 73 | 4/4 | 0.273 |
+
+## altagree_ctrl
+
+4622 conditions, 231100 tests, passing alone: 1283 tests (0.56%, 1.3x the nonsense rate), 1006 distinct conditions (22% of the block).
+
+| cell | book | sess | condition | n yes | mean R yes | mean R no | lift R | zw | bar99 | weeks | years pos/n | lift L6M |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| book_sess | H7 | 1 | c4_agrctl_2216_ge6 | 104 | -0.208 | 0.086 | -0.294 | -6.6 | 2.9 | 19 | 0/3 | -0.628 |
+| book_sess | K7 | 5 | c4_agrctl_1287_ge3 | 1830 | -0.042 | 0.249 | -0.291 | -5.7 | 2.6 | 47 | 0/3 | -0.401 |
+| sess |  | 0 | c4_agrctl_1518_ge6 | 5783 | 0.112 | 0.019 | 0.093 | 4.9 | 2.8 | 189 | 4/4 | 0.072 |
+| book_sess | M7 | 5 | c4_agrctl_917_ge6 | 146 | 0.290 | 0.005 | 0.285 | 4.8 | 2.8 | 36 | 3/3 | 0.027 |
+| book_sess | H7 | 1 | c4_agrctl_1621_ge6 | 211 | -0.156 | 0.116 | -0.272 | -4.6 | 2.9 | 49 | 0/4 | -0.255 |
+| book_sess | P7 | 0 | c4_agrctl_2133_ge6 | 4021 | 0.090 | -0.043 | 0.132 | 4.5 | 3.1 | 129 | 4/4 | 0.121 |
+| ALL |  |  | c4_agrctl_238_ge6 | 1867 | -0.067 | 0.021 | -0.087 | -4.5 | 2.3 | 158 | 0/4 | -0.110 |
+| book_sess | A7 | 5 | c4_agrctl_272_ge3 | 1162 | -0.066 | 0.076 | -0.142 | -4.3 | 2.4 | 103 | 0/4 | -0.179 |
+| book_sess | P7 | 4 | c4_agrctl_127_ge3 | 6340 | 0.007 | -0.131 | 0.139 | 4.3 | 2.5 | 123 | 4/4 | 0.303 |
+| book_sess | H7 | 1 | c4_agrctl_969_ge6 | 235 | -0.121 | 0.114 | -0.235 | -4.3 | 2.9 | 54 | 0/4 | -0.269 |
+| sess |  | 5 | c4_agrctl_917_ge6 | 407 | 0.241 | -0.007 | 0.248 | 4.3 | 2.5 | 87 | 4/4 | 0.179 |
+| book_sess | P7 | 0 | c4_agrctl_1518_ge6 | 2561 | 0.114 | 0.018 | 0.096 | 4.3 | 3.1 | 181 | 4/4 | 0.089 |
+| book_sess | H7 | 1 | c4_agrctl_217_ge3 | 654 | -0.017 | 0.242 | -0.259 | -4.2 | 2.9 | 55 | 0/4 | -0.339 |
+| book_sess | A7 | 1 | c4_agrctl_1872_ge3 | 5411 | 0.037 | 0.229 | -0.193 | -4.1 | 2.9 | 24 | 0/2 | -0.317 |
+| book_sess | M7 | 5 | c4_agrctl_444_ge3 | 3060 | 0.004 | 0.112 | -0.108 | -4.1 | 2.8 | 110 | 0/4 | -0.022 |
 
