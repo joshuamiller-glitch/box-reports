@@ -1,8 +1,8 @@
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 97 of 468 cells have an exact L3M result so far; 32 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 104 of 486 cells have an exact L3M result so far; 33 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T13:03Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T13:33Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -136,10 +136,16 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
 |---|---|---|---|---|---|
 | RB_asia_K75_BR | 3 | 3.8 / -3171 / -3161 / -3148 / 3713 / False / 1.1 / 0.92 / 1 | - / - / - / - | - / - | - / - |
+| RB_asia_K100_BR | 3 | -1.1 / -990 / -974 / -942 / -571 / False / -5.3 / 1.00 / 1 | - / - / - / - | - / - | - / - |
 | RB_asia_K100_BRH | 3 | 6.6 / 270 / 280 / 299 / 3434 / True / -6.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
 | RB_asia_K100_EV | 3 | 16.3 / 1584 / 1596 / 1642 / 10024 / True / -0.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | RB_london_K75_BR | 3 | -3.2 / -2823 / -2804 / -2768 / -454 / False / -1.3 / 0.93 / 0 | - / - / - / - | - / - | - / - |
+| RB_london_K100_BR | 3 | -3.2 / -2699 / -2681 / -2646 / -454 / False / -9.0 / 0.94 / 0 | - / - / - / - | - / - | - / - |
+| RB_london_K125_BR | 3 | -2.2 / -2801 / -2788 / -2765 / -1646 / False / -20.0 / 0.94 / 0 | - / - / - / - | - / - | - / - |
 | RB_london_K100_BRH | 3 | 0.0 / -1383 / -1370 / -1339 / 0 / False / 5.4 / 0.96 / 0 | - / - / - / - | - / - | - / - |
+| RB_london_K100_EV | 3 | 0.0 / -67 / -63 / -54 / 0 / True / 5.2 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| RB_nyam_K125_BR | 3 | -2.3 / 222 / 228 / 245 / -1199 / False / 2.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| RB_nyam_K100_EV | 3 | 0.0 / 175 / 179 / 188 / 0 / True / 10.5 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 
 ### TG  target 1-2 ticks short
 
@@ -216,10 +222,11 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 |---|---|---|---|---|---|
 | SJ2 | 3 | 0.0 / 16 / 16 / 16 / 0 / True / 0.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | SJA2 | 3 | -0.2 / -200 / -201 / -204 / -125 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| SJA5 | 3 | -0.4 / -80 / -81 / -81 / -190 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, RB_nyam_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2
 
 Auto-expansions launched (expansion of <parent>):
 
@@ -627,6 +634,26 @@ Auto-expansions launched (expansion of <parent>):
 - - SJ2_d1: expansion of SJ2
 - - SJ2_d3: expansion of SJ2
 - - SJ2_d5: expansion of SJ2
+- - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
+- HIT RB_nyam_K100_EV: L3M cut 0.0% d mean 175 (adj 188) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - RB_nyam_K100_EV_k50: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_k60: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_k90: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_k110: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_k150: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_sasi: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_slon: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_snya: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_snyp: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_b3: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_bnone: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_oth: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_K7: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_P7: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_U7: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_H7: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_M7: expansion of RB_nyam_K100_EV
+- - RB_nyam_K100_EV_A7: expansion of RB_nyam_K100_EV
 - - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
 
 ## 4. Not run / limits
