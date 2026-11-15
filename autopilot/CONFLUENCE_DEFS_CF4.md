@@ -368,9 +368,15 @@ Conditions (template): `side` state on trade side (x vs mid, or sign of the stat
 
 ## B4 alternate bars: range16: 2311 condition columns (c4_<ind>_range16_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
 
+## B4 alternate bars: range8: 2311 condition columns (c4_<ind>_range8_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
 ## B4 alternate bars: renko16: 2311 condition columns (c4_<ind>_renko16_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
 
+## B4 alternate bars: renko8: 2311 condition columns (c4_<ind>_renko8_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
 ## B4 alternate bars: tick2000: 2311 condition columns (c4_<ind>_tick2000_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
+
+## B4 alternate bars: vol2000: 2311 condition columns (c4_<ind>_vol2000_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
 
 ## B4 alternate bars: vol500: 2311 condition columns (c4_<ind>_vol500_<cond>); same indicator definitions as Block 2 sub-blocks osc/trend/smc/vol(bar part: no tape delta/rvol)/ml(kernel) plus W-CF1 classic set (prefix w1_); bars from /mnt/l2/l2vast/_confl/altbars (APPROXIMATION: per-second tape path)
 

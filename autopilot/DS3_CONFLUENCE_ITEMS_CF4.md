@@ -1,6 +1,6 @@
 # DS3_CONFLUENCE_ITEMS_CF4: STEP 3 each condition alone, Block 2 (and 4) of the indicator library
 
-**Verdict line: Block 2 conditions built so far = 29037 scored columns across 15 sub-blocks; every one is a MAP entry only (no PASS claim; matched-count and shuffled-outcome controls belong to W-CF3).**
+**Verdict line: Block 2 conditions built so far = 35636 scored columns across 18 sub-blocks; every one is a MAP entry only (no PASS claim; matched-count and shuffled-outcome controls belong to W-CF3).**
 
 ## IRL / ERL Step A (Addendum 5): measure-only, headline = 5-min bars, 2 pts, W=3, minor pivot 3
 
@@ -1303,6 +1303,75 @@ Outcome = R (W-CF1 entry table signals_all: 19,798 taken signals with engine R, 
 | A7 | nypm | c4_w1_mom5_range16_rise | 349 | 0.158 | -0.113 | 0.271 | 3.5 | 3/3 | 0.282 |
 | M7 | london | c4_stAS_range16_side | 3657 | 0.040 | -0.077 | 0.117 | 3.5 | 4/4 | 0.087 |
 
+## B4 alternate bars: range8
+
+Outcome = R (W-CF1 entry table signals_all: 19,798 taken signals with engine R, 28,555 skipped signals with the hypothetical 1m-bar R, outcome_type hyp1m); lifts are in R per trade. A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2219; |t|>2: 485 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_range8.parquet`.
+
+**top 10 positive lift (ALL/ALL)**
+
+| cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
+|---|---|---|---|---|---|---|---|---|---|
+| c4_w1_wave_short_hist_range8_side | 27391 | 0.57 | 0.057 | 0.022 | 0.035 [0.019, 0.051] | 4.2 | 3/4 | 0.045 | 0.051 |
+| c4_kvo_range8_fresh5 | 16427 | 0.34 | 0.066 | 0.030 | 0.036 [0.019, 0.052] | 4.1 | 4/4 | 0.046 | 0.043 |
+| c4_w1_rsi2_range8_ewith | 11643 | 0.24 | 0.071 | 0.033 | 0.038 [0.019, 0.056] | 4.0 | 4/4 | 0.067 | 0.091 |
+| c4_seb_range8_side | 28775 | 0.60 | 0.055 | 0.023 | 0.032 [0.016, 0.049] | 3.9 | 3/4 | 0.037 | 0.042 |
+| c4_t3S_slope_range8_rise | 26563 | 0.55 | 0.057 | 0.025 | 0.032 [0.016, 0.048] | 3.8 | 3/4 | 0.039 | 0.048 |
+| c4_mcwt_range8_sig | 26981 | 0.56 | 0.056 | 0.025 | 0.032 [0.016, 0.048] | 3.8 | 3/4 | 0.039 | 0.055 |
+| c4_w1_linreg_chan20_range8_side | 26738 | 0.55 | 0.056 | 0.025 | 0.031 [0.015, 0.048] | 3.8 | 3/4 | 0.036 | 0.048 |
+| c4_hullF_px_range8_side | 27070 | 0.56 | 0.056 | 0.025 | 0.031 [0.015, 0.048] | 3.8 | 3/4 | 0.039 | 0.058 |
+| c4_w1_hma21_px_range8_side | 27070 | 0.56 | 0.056 | 0.025 | 0.031 [0.015, 0.048] | 3.8 | 3/4 | 0.039 | 0.058 |
+| c4_lrc_range8_eleave | 1408 | 0.03 | 0.133 | 0.040 | 0.094 [0.045, 0.142] | 3.8 | 4/4 | 0.071 | 0.080 |
+
+**top negative lift = candidate veto (ALL/ALL)**
+
+| cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
+|---|---|---|---|---|---|---|---|---|---|
+| c4_alligator_range8_hold3 | 28752 | 0.59 | 0.031 | 0.058 | -0.027 [-0.044, -0.011] | -3.3 | 0/4 | -0.024 | -0.026 |
+| c4_w1_kama_stack_slow_range8_hold3 | 27197 | 0.56 | 0.031 | 0.057 | -0.026 [-0.042, -0.009] | -3.1 | 1/4 | -0.028 | -0.003 |
+| c4_w1_ema_stack_fast_range8_hold3 | 33759 | 0.70 | 0.034 | 0.061 | -0.027 [-0.045, -0.010] | -3.0 | 0/4 | -0.017 | -0.009 |
+| c4_w1_ema_8_21_34_stack_range8_hold3 | 33759 | 0.70 | 0.034 | 0.061 | -0.027 [-0.045, -0.010] | -3.0 | 0/4 | -0.017 | -0.009 |
+| c4_alligator_range8_side | 32309 | 0.67 | 0.034 | 0.060 | -0.026 [-0.043, -0.009] | -3.0 | 0/4 | -0.027 | -0.025 |
+| c4_fvgS_in_range8_fresh5 | 30957 | 0.64 | 0.033 | 0.058 | -0.025 [-0.042, -0.008] | -3.0 | 0/4 | -0.019 | -0.028 |
+| c4_w1_kama_stack_slow_range8_side | 28068 | 0.58 | 0.032 | 0.056 | -0.024 [-0.040, -0.008] | -2.9 | 1/4 | -0.023 | 0.000 |
+| c4_stAS_range8_hold3 | 36046 | 0.75 | 0.035 | 0.063 | -0.027 [-0.046, -0.009] | -2.9 | 0/4 | -0.012 | -0.044 |
+| c4_stcF_range8_eagainst | 15809 | 0.33 | 0.026 | 0.050 | -0.025 [-0.042, -0.008] | -2.8 | 1/4 | -0.035 | -0.034 |
+| c4_stP_range8_hold3 | 37521 | 0.78 | 0.036 | 0.064 | -0.028 [-0.047, -0.008] | -2.8 | 0/4 | -0.026 | -0.021 |
+
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (428 of 49679 cell-conditions pass; chance at t>2.5 alone ~308)**
+
+| book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
+|---|---|---|---|---|---|---|---|---|---|
+| M7 | nyam | c4_w1_stoch21_range8_eenter | 319 | 0.245 | 0.003 | 0.242 | 4.6 | 4/4 | 0.193 |
+| M7 | london | c4_sdflipF_in_range8_against | 560 | 0.174 | -0.004 | 0.178 | 4.6 | 4/4 | 0.164 |
+| P7 | nypm | c4_w1_psar_0.03_range8_side | 859 | 0.110 | -0.118 | 0.228 | 4.3 | 3/3 | 0.307 |
+| P7 | nypm | c4_smiF_range8_ewith | 538 | 0.160 | -0.061 | 0.221 | 4.3 | 3/3 | 0.245 |
+| A7 | nyam | c4_smieS_range8_ewith | 75 | 0.409 | -0.027 | 0.436 | 4.0 | 3/3 | 0.510 |
+| P7 | nypm | c4_smi_range8_sig | 756 | 0.116 | -0.087 | 0.203 | 3.9 | 3/3 | 0.197 |
+| K7 | london | c4_w1_pat_engulf_range8_side | 119 | 0.314 | 0.002 | 0.311 | 3.9 | 3/4 | 0.458 |
+| P7 | nypm | c4_w1_stoch8_range8_ewith | 456 | 0.162 | -0.042 | 0.204 | 3.8 | 3/3 | 0.190 |
+| P7 | close | c4_alma_px_range8_fresh5 | 550 | 0.037 | -0.193 | 0.231 | 3.6 | 3/3 | 0.223 |
+| P7 | london | c4_sfpF_range8_fresh5 | 347 | 0.209 | 0.037 | 0.172 | 3.5 | 3/4 | 0.247 |
+| P7 | close | c4_zlemaF_slope_range8_fresh5 | 476 | 0.052 | -0.167 | 0.219 | 3.5 | 3/3 | 0.208 |
+| P7 | asia | c4_w1_pat_engulf_range8_nodiv | 5148 | 0.080 | -0.105 | 0.185 | 3.5 | 4/4 | 0.089 |
+| P7 | nypm | c4_hullS_range8_rise | 778 | 0.104 | -0.077 | 0.181 | 3.5 | 3/3 | 0.158 |
+| P7 | nypm | c4_hilo_range8_side | 935 | 0.087 | -0.107 | 0.194 | 3.5 | 3/3 | 0.239 |
+| P7 | nypm | c4_w1_fisher20_range8_rise | 709 | 0.111 | -0.066 | 0.178 | 3.5 | 3/3 | 0.197 |
+| M7 | pre | c4_w1_ema50_px_range8_fresh5 | 94 | 0.355 | -0.023 | 0.378 | 3.5 | 3/3 | 0.365 |
+| P7 | nypm | c4_w1_trix8_range8_rise | 703 | 0.112 | -0.065 | 0.177 | 3.4 | 3/3 | 0.146 |
+| P7 | close | c4_w1_ha_run_range8_fresh5 | 655 | 0.013 | -0.235 | 0.247 | 3.4 | 3/3 | 0.217 |
+| M7 | london | c4_ob_cnt_range8_side | 3923 | 0.035 | -0.098 | 0.133 | 3.4 | 4/4 | 0.100 |
+| P7 | close | c4_almaF_slope_range8_fresh5 | 503 | 0.043 | -0.170 | 0.213 | 3.4 | 3/3 | 0.207 |
+| P7 | nypm | c4_w1_stoch8_range8_side | 905 | 0.088 | -0.097 | 0.186 | 3.4 | 3/3 | 0.211 |
+| A7 | asia | c4_w1_linreg_chan20_range8_fresh5 | 1022 | 0.194 | 0.066 | 0.128 | 3.4 | 4/4 | 0.185 |
+| A7 | london | c4_ichiS_tk_range8_side | 1021 | 0.070 | -0.113 | 0.183 | 3.4 | 3/3 | 0.142 |
+| A7 | london | c4_w1_ichi_slow_tkkj_range8_side | 1021 | 0.070 | -0.113 | 0.183 | 3.4 | 3/3 | 0.142 |
+| P7 | nyam | c4_w1_boll40_walk_range8_rise | 72 | 0.329 | -0.019 | 0.348 | 3.4 | 4/4 | 0.307 |
+| A7 | close | c4_w1_uo_range8_rise | 178 | -0.039 | -0.373 | 0.334 | 3.4 | 3/3 | 0.304 |
+| P7 | close | c4_w1_rsi2_range8_fresh5 | 566 | 0.029 | -0.190 | 0.218 | 3.4 | 3/3 | 0.239 |
+| P7 | nypm | c4_stcF_range8_side | 728 | 0.107 | -0.066 | 0.173 | 3.4 | 3/3 | 0.162 |
+| P7 | close | c4_kvoF_range8_sig | 454 | 0.053 | -0.155 | 0.208 | 3.4 | 3/3 | 0.265 |
+| P7 | nypm | c4_w1_hma34_px_range8_side | 735 | 0.106 | -0.067 | 0.173 | 3.4 | 3/3 | 0.183 |
+
 ## B4 alternate bars: renko16
 
 Outcome = R (W-CF1 entry table signals_all: 19,798 taken signals with engine R, 28,555 skipped signals with the hypothetical 1m-bar R, outcome_type hyp1m); lifts are in R per trade. A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2126; |t|>2: 317 (chance expectation ~96 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_renko16.parquet`.
@@ -1372,6 +1441,75 @@ Outcome = R (W-CF1 entry table signals_all: 19,798 taken signals with engine R, 
 | K7 | asia | c4_w1_vwma200_px_renko16_side | 3626 | 0.074 | -0.056 | 0.131 | 4.4 | 4/4 | 0.187 |
 | K7 | asia | c4_obS_cnt_renko16_side | 2913 | 0.087 | -0.022 | 0.109 | 4.2 | 3/4 | 0.093 |
 
+## B4 alternate bars: renko8
+
+Outcome = R (W-CF1 entry table signals_all: 19,798 taken signals with engine R, 28,555 skipped signals with the hypothetical 1m-bar R, outcome_type hyp1m); lifts are in R per trade. A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2136; |t|>2: 331 (chance expectation ~97 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_renko8.parquet`.
+
+**top 10 positive lift (ALL/ALL)**
+
+| cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
+|---|---|---|---|---|---|---|---|---|---|
+| c4_fvgS_cnt_renko8_side | 43313 | 0.90 | 0.048 | -0.011 | 0.059 [0.033, 0.086] | 4.4 | 4/4 | 0.046 | 0.068 |
+| c4_fvgF_cnt_renko8_side | 43313 | 0.90 | 0.048 | -0.011 | 0.059 [0.033, 0.086] | 4.4 | 4/4 | 0.046 | 0.068 |
+| c4_fvg_cnt_renko8_side | 43313 | 0.90 | 0.048 | -0.011 | 0.059 [0.033, 0.086] | 4.4 | 4/4 | 0.046 | 0.068 |
+| c4_sdS_cnt_renko8_side | 39922 | 0.83 | 0.050 | 0.004 | 0.047 [0.026, 0.068] | 4.4 | 3/4 | 0.018 | 0.034 |
+| c4_sd_cnt_renko8_side | 40863 | 0.85 | 0.050 | 0.001 | 0.049 [0.027, 0.070] | 4.4 | 2/4 | -0.003 | 0.013 |
+| c4_kvoF_renko8_divwith | 4349 | 0.09 | 0.097 | 0.037 | 0.060 [0.032, 0.089] | 4.2 | 4/4 | 0.054 | 0.063 |
+| c4_sdF_cnt_renko8_side | 40879 | 0.85 | 0.049 | 0.003 | 0.046 [0.024, 0.068] | 4.1 | 2/4 | -0.004 | 0.004 |
+| c4_rfiltS_renko8_rise | 26903 | 0.56 | 0.057 | 0.024 | 0.032 [0.016, 0.049] | 3.9 | 4/4 | 0.036 | 0.044 |
+| c4_lrcS_slope_renko8_side | 37569 | 0.78 | 0.051 | 0.013 | 0.037 [0.018, 0.057] | 3.8 | 4/4 | 0.039 | 0.020 |
+| c4_lrcS_renko8_fresh5 | 9338 | 0.19 | 0.073 | 0.035 | 0.038 [0.018, 0.058] | 3.7 | 3/4 | 0.036 | 0.055 |
+
+**top negative lift = candidate veto (ALL/ALL)**
+
+| cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
+|---|---|---|---|---|---|---|---|---|---|
+| c4_w1_boll10_walk_renko8_nodiv | 42981 | 0.89 | 0.037 | 0.082 | -0.045 [-0.070, -0.020] | -3.5 | 0/4 | -0.004 | 0.014 |
+| c4_w1_stoch14_renko8_nodiv | 44707 | 0.92 | 0.038 | 0.089 | -0.051 [-0.081, -0.021] | -3.3 | 0/4 | -0.020 | -0.003 |
+| c4_w1_vwma200_px_renko8_nodiv | 46574 | 0.96 | 0.040 | 0.111 | -0.071 [-0.114, -0.029] | -3.3 | 1/4 | -0.092 | 0.002 |
+| c4_w1_kama_stack_slow_renko8_against | 4997 | 0.10 | 0.003 | 0.047 | -0.043 [-0.069, -0.017] | -3.2 | 0/4 | -0.024 | -0.043 |
+| c4_w1_ema_stack_slow_renko8_against | 3486 | 0.07 | -0.003 | 0.046 | -0.049 [-0.079, -0.019] | -3.2 | 1/4 | 0.020 | 0.066 |
+| c4_w1_trendcolor_renko8_nodiv | 43899 | 0.91 | 0.038 | 0.082 | -0.043 [-0.071, -0.016] | -3.1 | 0/4 | -0.042 | -0.065 |
+| c4_w1_stoch8_renko8_nodiv | 44574 | 0.92 | 0.039 | 0.083 | -0.044 [-0.074, -0.015] | -2.9 | 0/4 | -0.006 | 0.009 |
+| c4_fvgF_in_renko8_side | 15643 | 0.32 | 0.026 | 0.050 | -0.025 [-0.042, -0.007] | -2.8 | 0/4 | -0.032 | -0.044 |
+| c4_fvgS_in_renko8_side | 15643 | 0.32 | 0.026 | 0.050 | -0.025 [-0.042, -0.007] | -2.8 | 0/4 | -0.032 | -0.044 |
+| c4_fvg_in_renko8_side | 15643 | 0.32 | 0.026 | 0.050 | -0.025 [-0.042, -0.007] | -2.8 | 0/4 | -0.032 | -0.044 |
+
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (287 of 47404 cell-conditions pass; chance at t>2.5 alone ~293)**
+
+| book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
+|---|---|---|---|---|---|---|---|---|---|
+| K7 | asia | c4_lrcS_slope_renko8_side | 3253 | 0.079 | -0.029 | 0.107 | 3.9 | 4/4 | 0.098 |
+| K7 | asia | c4_w1_vwma200_px_renko8_side | 4132 | 0.062 | -0.092 | 0.154 | 3.8 | 4/4 | 0.210 |
+| K7 | asia | c4_w1_sma200_px_renko8_side | 4143 | 0.062 | -0.092 | 0.154 | 3.8 | 4/4 | 0.249 |
+| A7 | asia | c4_obF_in_renko8_against | 242 | 0.316 | 0.100 | 0.216 | 3.6 | 3/4 | 0.228 |
+| A7 | asia | c4_ob_in_renko8_against | 242 | 0.316 | 0.100 | 0.216 | 3.6 | 3/4 | 0.228 |
+| P7 | asia | c4_crsiF_renko8_divwith | 917 | 0.163 | 0.054 | 0.110 | 3.6 | 3/4 | 0.123 |
+| M7 | london | c4_w1_ichi_slow_lag_renko8_nodiv | 4437 | 0.023 | -0.330 | 0.353 | 3.6 | 3/3 | 0.278 |
+| K7 | asia | c4_w1_ema_stack_slow_renko8_hold3 | 3321 | 0.074 | -0.024 | 0.099 | 3.6 | 3/4 | 0.096 |
+| K7 | nyam | c4_w1_boll40_pctb_renko8_ewith | 69 | 0.366 | -0.009 | 0.375 | 3.6 | 4/4 | 0.046 |
+| K7 | london | c4_sd_cnt_renko8_side | 3024 | 0.034 | -0.111 | 0.145 | 3.6 | 3/4 | 0.014 |
+| K7 | asia | c4_fvgS_cnt_renko8_side | 4080 | 0.061 | -0.070 | 0.132 | 3.5 | 4/4 | 0.089 |
+| K7 | asia | c4_fvg_cnt_renko8_side | 4080 | 0.061 | -0.070 | 0.132 | 3.5 | 4/4 | 0.089 |
+| K7 | asia | c4_fvgF_cnt_renko8_side | 4080 | 0.061 | -0.070 | 0.132 | 3.5 | 4/4 | 0.089 |
+| K7 | asia | c4_w1_ema_stack_slow_renko8_side | 3404 | 0.072 | -0.025 | 0.097 | 3.5 | 3/4 | 0.084 |
+| A7 | london | c4_turt20_renko8_side | 1022 | 0.071 | -0.116 | 0.187 | 3.5 | 3/3 | 0.165 |
+| A7 | close | c4_w1_vwma8_px_renko8_fresh5 | 163 | -0.024 | -0.364 | 0.340 | 3.4 | 3/3 | 0.426 |
+| A7 | london | c4_turt20_renko8_hold3 | 915 | 0.080 | -0.094 | 0.174 | 3.4 | 3/3 | 0.175 |
+| P7 | nyam | c4_rfiltS_renko8_rise | 919 | 0.067 | -0.065 | 0.131 | 3.4 | 4/4 | 0.113 |
+| P7 | nypm | c4_w1_stochrsi8_renko8_rise | 548 | 0.131 | -0.044 | 0.175 | 3.4 | 3/3 | 0.194 |
+| P7 | nypm | c4_srsiF_renko8_rise | 547 | 0.131 | -0.044 | 0.174 | 3.4 | 3/3 | 0.194 |
+| K7 | london | c4_sdF_cnt_renko8_side | 3033 | 0.033 | -0.105 | 0.138 | 3.3 | 4/4 | 0.016 |
+| A7 | london | c4_w1_sma_stack_fast_renko8_side | 957 | 0.075 | -0.099 | 0.174 | 3.3 | 3/3 | 0.172 |
+| M7 | london | c4_w1_linreg_slope50_renko8_side | 3625 | 0.040 | -0.071 | 0.111 | 3.3 | 4/4 | 0.129 |
+| M7 | london | c4_lrcF_slope_renko8_side | 3625 | 0.040 | -0.071 | 0.111 | 3.3 | 4/4 | 0.129 |
+| K7 | nyam | c4_w1_stoch21_renko8_eleave | 85 | 0.311 | -0.010 | 0.321 | 3.3 | 3/3 | 0.182 |
+| M7 | london | c4_don55_pos_renko8_side | 4039 | 0.033 | -0.109 | 0.142 | 3.3 | 4/4 | 0.133 |
+| K7 | asia | c4_ob_cnt_renko8_side | 3683 | 0.067 | -0.034 | 0.101 | 3.3 | 3/4 | 0.106 |
+| K7 | asia | c4_obF_cnt_renko8_side | 3683 | 0.067 | -0.034 | 0.101 | 3.3 | 3/4 | 0.106 |
+| P7 | london | c4_w1_kama_stack_slow_renko8_hold3 | 2144 | 0.095 | 0.007 | 0.088 | 3.3 | 4/4 | 0.025 |
+| M7 | london | c4_stPS_renko8_side | 3907 | 0.035 | -0.092 | 0.126 | 3.3 | 4/4 | 0.143 |
+
 ## B4 alternate bars: tick2000
 
 Outcome = R (W-CF1 entry table signals_all: 19,798 taken signals with engine R, 28,555 skipped signals with the hypothetical 1m-bar R, outcome_type hyp1m); lifts are in R per trade. A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2246; |t|>2: 1401 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_tick2000.parquet`.
@@ -1440,6 +1578,75 @@ Outcome = R (W-CF1 entry table signals_all: 19,798 taken signals with engine R, 
 | K7 | asia | c4_hilo_tick2000_hold3 | 2144 | 0.129 | -0.024 | 0.153 | 6.1 | 3/4 | 0.165 |
 | K7 | asia | c4_w1_kama34_px_tick2000_side | 2700 | 0.111 | -0.044 | 0.155 | 6.1 | 3/4 | 0.197 |
 | M7 | asia | c4_sqzmF_mom_tick2000_side | 2169 | 0.145 | -0.071 | 0.215 | 6.1 | 3/3 | 0.132 |
+
+## B4 alternate bars: vol2000
+
+Outcome = R (W-CF1 entry table signals_all: 19,798 taken signals with engine R, 28,555 skipped signals with the hypothetical 1m-bar R, outcome_type hyp1m); lifts are in R per trade. A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2244; |t|>2: 1296 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_vol2000.parquet`.
+
+**top 10 positive lift (ALL/ALL)**
+
+| cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
+|---|---|---|---|---|---|---|---|---|---|
+| c4_lrcS_vol2000_ewith | 9974 | 0.21 | 0.141 | 0.016 | 0.126 [0.106, 0.145] | 12.5 | 3/4 | 0.152 | 0.164 |
+| c4_smieS_vol2000_ewith | 6721 | 0.14 | 0.147 | 0.025 | 0.121 [0.099, 0.144] | 10.4 | 3/4 | 0.185 | 0.236 |
+| c4_w1_supertrend_14_4_vol2000_side | 34278 | 0.71 | 0.069 | -0.023 | 0.092 [0.074, 0.110] | 10.3 | 3/4 | 0.104 | 0.080 |
+| c4_tsiS_vol2000_ewith | 6384 | 0.13 | 0.148 | 0.026 | 0.121 [0.098, 0.145] | 10.2 | 3/4 | 0.171 | 0.239 |
+| c4_w1_rsi21_vol2000_ewith | 2547 | 0.05 | 0.208 | 0.033 | 0.175 [0.140, 0.210] | 9.8 | 3/4 | 0.231 | 0.141 |
+| c4_fractal_alli_vol2000_hold3 | 28355 | 0.59 | 0.076 | -0.005 | 0.081 [0.065, 0.097] | 9.8 | 4/4 | 0.065 | 0.074 |
+| c4_rsima21_vol2000_ewith | 2547 | 0.05 | 0.208 | 0.033 | 0.175 [0.140, 0.210] | 9.8 | 3/4 | 0.231 | 0.141 |
+| c4_tsi_vol2000_ewith | 11033 | 0.23 | 0.115 | 0.021 | 0.094 [0.075, 0.113] | 9.7 | 3/4 | 0.108 | 0.141 |
+| c4_w1_ema_stack_fast_vol2000_hold3 | 28809 | 0.60 | 0.075 | -0.005 | 0.080 [0.064, 0.096] | 9.7 | 3/4 | 0.057 | 0.032 |
+| c4_w1_ema_8_21_34_stack_vol2000_hold3 | 28809 | 0.60 | 0.075 | -0.005 | 0.080 [0.064, 0.096] | 9.7 | 3/4 | 0.057 | 0.032 |
+
+**top negative lift = candidate veto (ALL/ALL)**
+
+| cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
+|---|---|---|---|---|---|---|---|---|---|
+| c4_kerS_abs_vol2000_lo_z1 | 37209 | 0.77 | 0.023 | 0.107 | -0.085 [-0.104, -0.066] | -8.8 | 1/4 | -0.123 | -0.166 |
+| c4_stA_vol2000_against | 12881 | 0.27 | -0.013 | 0.062 | -0.076 [-0.094, -0.058] | -8.3 | 1/4 | -0.042 | -0.014 |
+| c4_ker_dir_vol2000_divwith | 5825 | 0.12 | -0.045 | 0.054 | -0.100 [-0.124, -0.075] | -8.1 | 1/4 | -0.145 | -0.208 |
+| c4_stPS_vol2000_against | 16143 | 0.33 | -0.004 | 0.065 | -0.069 [-0.086, -0.052] | -8.0 | 1/4 | -0.057 | -0.003 |
+| c4_hiloS_vol2000_against | 9692 | 0.20 | -0.021 | 0.058 | -0.079 [-0.099, -0.060] | -7.9 | 0/4 | -0.032 | -0.050 |
+| c4_fractal_brk_vol2000_against | 12221 | 0.25 | -0.012 | 0.061 | -0.072 [-0.091, -0.054] | -7.8 | 0/4 | -0.067 | -0.064 |
+| c4_stAS_vol2000_against | 13849 | 0.29 | -0.007 | 0.062 | -0.069 [-0.086, -0.051] | -7.6 | 1/4 | -0.052 | -0.028 |
+| c4_w1_cci14_vol2000_divwith | 5571 | 0.12 | -0.043 | 0.053 | -0.096 [-0.121, -0.071] | -7.6 | 1/4 | -0.102 | -0.098 |
+| c4_rfilt_dir_vol2000_against | 11587 | 0.24 | -0.012 | 0.059 | -0.071 [-0.090, -0.053] | -7.5 | 2/4 | 0.003 | 0.035 |
+| c4_structS_vol2000_against | 14391 | 0.30 | -0.004 | 0.062 | -0.066 [-0.084, -0.049] | -7.4 | 1/4 | -0.074 | -0.080 |
+
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (2103 of 48335 cell-conditions pass; chance at t>2.5 alone ~299)**
+
+| book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
+|---|---|---|---|---|---|---|---|---|---|
+| P7 | asia | c4_sslhyb_vol2000_hold3 | 2979 | 0.152 | -0.027 | 0.179 | 7.8 | 4/4 | 0.214 |
+| M7 | asia | c4_w1_supertrend_14_4_vol2000_side | 2124 | 0.161 | -0.101 | 0.261 | 7.4 | 3/3 | 0.233 |
+| M7 | asia | c4_stA_vol2000_hold3 | 1977 | 0.169 | -0.078 | 0.246 | 7.3 | 3/3 | 0.212 |
+| M7 | asia | c4_w1_hv_pct50_vol2000_hi | 2044 | 0.159 | -0.074 | 0.234 | 7.2 | 3/3 | 0.255 |
+| P7 | asia | c4_smieS_vol2000_ewith | 946 | 0.233 | 0.038 | 0.195 | 6.7 | 3/4 | 0.259 |
+| K7 | asia | c4_sslhyb_vol2000_hold3 | 1899 | 0.146 | -0.022 | 0.168 | 6.6 | 4/4 | 0.184 |
+| M7 | asia | c4_w1_donchian10_width_vol2000_hi | 2556 | 0.126 | -0.161 | 0.287 | 6.6 | 3/3 | 0.327 |
+| P7 | asia | c4_kerS_abs_vol2000_hi | 1329 | 0.201 | 0.030 | 0.171 | 6.6 | 3/4 | 0.197 |
+| M7 | asia | c4_w1_atr_pct100_vol2000_hi | 2570 | 0.125 | -0.166 | 0.292 | 6.5 | 3/3 | 0.347 |
+| P7 | asia | c4_w1_hv_pct50_vol2000_hi | 3602 | 0.123 | -0.031 | 0.154 | 6.5 | 4/4 | 0.205 |
+| P7 | asia | c4_smieS_vol2000_eagainst | 70 | 0.556 | 0.066 | 0.490 | 6.4 | 3/3 | 0.510 |
+| K7 | asia | c4_stA_vol2000_hold3 | 2338 | 0.126 | -0.034 | 0.160 | 6.4 | 3/4 | 0.182 |
+| P7 | pre | c4_w1_aroon50_vol2000_side | 232 | 0.329 | -0.255 | 0.583 | 6.3 | 3/3 | 0.473 |
+| P7 | asia | c4_sqzmS_mom_vol2000_rise | 3813 | 0.118 | -0.041 | 0.159 | 6.3 | 4/4 | 0.138 |
+| K7 | asia | c4_chandS_vol2000_hold3 | 2314 | 0.124 | -0.031 | 0.155 | 6.2 | 3/4 | 0.193 |
+| K7 | asia | c4_fractal_alli_vol2000_hold3 | 1903 | 0.139 | -0.018 | 0.157 | 6.2 | 4/4 | 0.169 |
+| K7 | asia | c4_smiS_vol2000_ewith | 1602 | 0.152 | -0.009 | 0.161 | 6.2 | 4/4 | 0.213 |
+| P7 | asia | c4_tsiS_vol2000_ewith | 829 | 0.233 | 0.043 | 0.189 | 6.1 | 3/4 | 0.261 |
+| K7 | asia | c4_elderS_bull_vol2000_side | 2703 | 0.111 | -0.044 | 0.156 | 6.1 | 3/4 | 0.122 |
+| P7 | asia | c4_chopS_vol2000_lo_z1 | 684 | 0.248 | 0.047 | 0.201 | 6.1 | 4/4 | 0.195 |
+| K7 | asia | c4_qqemod_vol2000_hold3 | 1600 | 0.151 | -0.008 | 0.159 | 6.1 | 4/4 | 0.174 |
+| K7 | asia | c4_w1_supertrend_14_4_vol2000_side | 2523 | 0.116 | -0.037 | 0.153 | 6.1 | 3/4 | 0.209 |
+| M7 | asia | c4_zlema_slope_vol2000_side | 2561 | 0.123 | -0.146 | 0.269 | 6.1 | 3/3 | 0.221 |
+| K7 | asia | c4_turt20_vol2000_hold3 | 1853 | 0.139 | -0.015 | 0.154 | 6.1 | 4/4 | 0.179 |
+| M7 | asia | c4_w1_supertrend_10_3_vol2000_side | 2177 | 0.144 | -0.072 | 0.216 | 6.1 | 3/3 | 0.178 |
+| M7 | asia | c4_stA_vol2000_side | 2177 | 0.144 | -0.072 | 0.216 | 6.1 | 3/3 | 0.178 |
+| P7 | asia | c4_hilo_vol2000_hold3 | 3488 | 0.123 | -0.022 | 0.145 | 6.0 | 4/4 | 0.166 |
+| P7 | asia | c4_tsi_vol2000_ewith | 1424 | 0.185 | 0.032 | 0.153 | 6.0 | 3/4 | 0.188 |
+| M7 | asia | c4_sqzm_bright_vol2000_hold3 | 1023 | 0.218 | 0.018 | 0.200 | 6.0 | 3/3 | 0.241 |
+| K7 | asia | c4_w1_kama100_px_vol2000_side | 2718 | 0.109 | -0.043 | 0.153 | 6.0 | 4/4 | 0.179 |
 
 ## B4 alternate bars: vol500
 

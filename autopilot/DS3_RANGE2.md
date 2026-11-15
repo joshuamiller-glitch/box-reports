@@ -1,4 +1,4 @@
-# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T00:17Z. Research only, NO PASS claim.
+# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T00:32Z. Research only, NO PASS claim.
 **VERDICT (plain, page 1 of the forecast part; engine dial re-runs below are still running): the options-market number from CME NQ options, put on top of our own realised-range model (HAR), beats UW (b) in london, nyam, nyam2, nypm, late, matches in none, loses in asia, pre (out-of-sample, R2 in L3M / L6M / older, same sample start as UW). The bigger fact: the HAR realised-range model ALONE already beats UW (b) in london, nyam, nyam2, nypm and (L3M/L6M) late; UW's range signal is mostly an IV-term proxy. CME options add real, placebo-clean gain over HAR in asia (+0.10 to +0.14 R2) and the last 90 minutes (+0.12 to +0.24), small in nypm (+0.03 to +0.07), and nothing in london / nyam. Asia is where UW (b) is still the best single model (its NDX/QQQ/SPX IV term beats our CME read of the same night), so UW is not yet fully replaceable for asia. Pre (08:30-09:30) is driven by the calendar flags (CPI/NFP/FOMC), not by CME or UW. UW (c) (full UW) is worse than (b) everywhere. Whether UW is still needed: for asia yes (UW b, or Cboe VIX-family inputs, which reach nearly the same R2 free); for london, nyam, nypm, late a HAR + CME (or HAR alone) forecast replaces it. Not a PASS claim; selection of the best model per session is by mean R2 over the three windows (hindsight among ~12 models, see caveats).**
 
 Prereg: autopilot/RANGE2_PREREG.md (sha 942f27a55458bebb, in DECISIONS.md before scoring). Order: DIRECTIVE_RANGE2_20261114.md. Code: code/th_range2. Bulk: /mnt/l2/l2vast/_range2. Causal forecast files for the dials: /mnt/l2/l2vast/_range2/fc_r2_v1.parquet (HAR + CME; var 'r'), fc_r2_har.parquet (HAR only), same schema as W-RU fc.parquet; sent to W-CH2, W-D9, W-LR.
@@ -358,6 +358,16 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_D9A_C_N_HAR | london | -1 $/wk, DD -0.0%, ww +0, stops 2.74(2.74), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -1 / n/a |
 | TL3_R2_D9A_C_N_HAR | nyam | -7 $/wk, DD -0.2%, ww +0, stops 1.29(1.29), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -7 / n/a |
 | TL3_R2_D9A_C_N_HAR | nypm | -5 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -5 / n/a |
+| TL3_R2_D9A_T1_B | all | -9605 $/wk, DD -78.1%, ww -3267, stops 8.90(10.35), b5 85%, w2l 3 | n/a | n/a | False | None | n/a | -9471 / n/a |
+| TL3_R2_D9A_T1_B | asia | -4397 $/wk, DD -15.4%, ww -14649, stops 4.64(6.24), b5 74%, w2l 1 | n/a | n/a | False | None | n/a | -4246 / n/a |
+| TL3_R2_D9A_T1_B | london | -6008 $/wk, DD -5.1%, ww +11241, stops 3.12(2.74), b5 50%, w2l 3 | n/a | n/a | False | None | n/a | -5975 / n/a |
+| TL3_R2_D9A_T1_B | nyam | +675 $/wk, DD +21.4%, ww -1597, stops 1.14(1.29), b5 57%, w2l 1 | n/a | n/a | False | None | n/a | +641 / n/a |
+| TL3_R2_D9A_T1_B | nypm | +125 $/wk, DD -14.4%, ww -4086, stops 0.00(0.08), b5 83%, w2l 1 | n/a | n/a | False | None | n/a | +109 / n/a |
+| TL3_R2_D9A_T1_N | all | +1392 $/wk, DD +0.0%, ww +0, stops 10.65(10.35), b5 101%, w2l 0 | n/a | n/a | True | None | n/a | +1311 / n/a |
+| TL3_R2_D9A_T1_N | asia | +108 $/wk, DD +0.0%, ww +0, stops 6.32(6.24), b5 100%, w2l 1 | n/a | n/a | False | None | n/a | +101 / n/a |
+| TL3_R2_D9A_T1_N | london | +6 $/wk, DD +10.4%, ww +4733, stops 3.04(2.74), b5 102%, w2l 0 | n/a | n/a | True | None | n/a | -28 / n/a |
+| TL3_R2_D9A_T1_N | nyam | +791 $/wk, DD +15.7%, ww +20, stops 1.22(1.29), b5 91%, w2l 0 | n/a | n/a | True | None | n/a | +770 / n/a |
+| TL3_R2_D9A_T1_N | nypm | +486 $/wk, DD -13.0%, ww +1545, stops 0.08(0.08), b5 114%, w2l 1 | n/a | n/a | False | None | n/a | +468 / n/a |
 | TL3_R2_D9S_C_B | all | -521 $/wk, DD -5.5%, ww -2905, stops 10.27(10.35), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -521 / n/a |
 | TL3_R2_D9S_C_B | asia | -426 $/wk, DD -6.0%, ww -2905, stops 6.16(6.24), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -426 / n/a |
 | TL3_R2_D9S_C_B | london | +138 $/wk, DD +0.1%, ww +0, stops 2.74(2.74), b5 104%, w2l 0 | n/a | n/a | True | None | n/a | +138 / n/a |
@@ -368,13 +378,18 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_D9S_C_N | london | -3 $/wk, DD -0.0%, ww +0, stops 2.74(2.74), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -3 / n/a |
 | TL3_R2_D9S_C_N | nyam | -12 $/wk, DD -0.3%, ww +0, stops 1.29(1.29), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -12 / n/a |
 | TL3_R2_D9S_C_N | nypm | -8 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 99%, w2l 0 | n/a | n/a | False | None | n/a | -8 / n/a |
+| TL3_R2_D9S_T1_B | all | -6331 $/wk, DD -37.7%, ww +10114, stops 11.95(10.35), b5 95%, w2l 3 | n/a | n/a | False | None | n/a | -6217 / n/a |
+| TL3_R2_D9S_T1_B | asia | -3526 $/wk, DD +17.7%, ww -8854, stops 4.41(6.24), b5 78%, w2l 1 | n/a | n/a | False | None | n/a | -3396 / n/a |
+| TL3_R2_D9S_T1_B | london | -3977 $/wk, DD +14.5%, ww +13917, stops 3.88(2.74), b5 66%, w2l 2 | n/a | n/a | False | None | n/a | -3952 / n/a |
+| TL3_R2_D9S_T1_B | nyam | +966 $/wk, DD -18.9%, ww -829, stops 2.43(1.29), b5 77%, w2l 1 | n/a | n/a | False | None | n/a | +939 / n/a |
+| TL3_R2_D9S_T1_B | nypm | +206 $/wk, DD +15.6%, ww +271, stops 1.22(0.08), b5 110%, w2l 1 | n/a | n/a | True | None | n/a | +192 / n/a |
 | TL3_R2_OS3_8 | all | -666 $/wk, DD +0.0%, ww +0, stops 10.27(10.35), b5 95%, w2l 0 | n/a | n/a | False | None | n/a | -677 / n/a |
 | TL3_R2_OS3_8 | asia | +334 $/wk, DD +0.0%, ww +0, stops 6.32(6.24), b5 100%, w2l 1 | n/a | n/a | False | None | n/a | +335 / n/a |
 | TL3_R2_OS3_8 | london | -316 $/wk, DD -0.3%, ww +3016, stops 2.74(2.74), b5 102%, w2l 1 | n/a | n/a | False | None | n/a | -321 / n/a |
 | TL3_R2_OS3_8 | nyam | -319 $/wk, DD -11.2%, ww -1200, stops 1.14(1.29), b5 88%, w2l 1 | n/a | n/a | False | None | n/a | -323 / n/a |
 | TL3_R2_OS3_8 | nypm | -365 $/wk, DD -2.2%, ww +0, stops 0.08(0.08), b5 75%, w2l 3 | n/a | n/a | False | None | n/a | -368 / n/a |
 
-Cells with results: 6. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
+Cells with results: 9. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
 
 
 ## 6. Caveats

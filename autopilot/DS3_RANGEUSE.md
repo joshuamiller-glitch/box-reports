@@ -1401,7 +1401,7 @@ Cross: version x half (L3M scope all, median DD cut % / median d mean $/wk)
 ### Placebos (forecast shifted 11 / 23 / 37 trading days) beside the finalists, scope all, L6M (a real lead must beat all three)
 | finalist | real L6M | pl11 | pl23 | pl37 |
 |---|---|---|---|---|
-| S_c_T1_B_15 | n/a | L3M -4181 $/wk, DD +5.8%, ww +14702, stops 16.21(10.35), b5 65%, w2l 2 | -8243 $/wk, DD -39.7%, ww -4609, stops 11.64(10.99), b5 52%, w2l 4 | -10289 $/wk, DD -69.4%, ww +3061, stops 11.11(10.99), b5 62%, w2l 3 |
+| S_c_T1_B_15 | n/a | -1839 $/wk, DD +5.8%, ww +14702, stops 13.12(10.99), b5 61%, w2l 2 | -8243 $/wk, DD -39.7%, ww -4609, stops 11.64(10.99), b5 52%, w2l 4 | -10289 $/wk, DD -69.4%, ww +3061, stops 11.11(10.99), b5 62%, w2l 3 |
 | A_a_C_B_15 | n/a | -369 $/wk, DD -0.0%, ww -30, stops 11.11(10.99), b5 99%, w2l 0 | -617 $/wk, DD +0.2%, ww +20, stops 10.99(10.99), b5 96%, w2l 0 | -40 $/wk, DD -0.0%, ww -30, stops 10.96(10.99), b5 98%, w2l 0 |
 | A_b_C_B_15 | n/a | -296 $/wk, DD -0.1%, ww -32, stops 11.07(10.99), b5 100%, w2l 0 | L3M +132 $/wk, DD -0.0%, ww -10, stops 10.50(10.35), b5 97%, w2l 0 | L3M +733 $/wk, DD -0.2%, ww -158, stops 10.58(10.35), b5 102%, w2l 0 |
 

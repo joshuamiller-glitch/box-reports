@@ -39,6 +39,37 @@ Reading. In $ the K7 Asia at least 4 pass both 95th-percentile tests (drawdown p
 ## 1c. Search-level control bar versus library size (bit-light search, code cf3_big.py; in-sample best lift-t, greedy must-have list or best-k score; shuffled = outcomes permuted within book/session/month)
 K7 Asia, 10 shuffles (the 50-shuffle run and STACK run are in progress): library 50 conditions: real 4.8, shuffled median 5.1, 95th pctl 5.7; 150 conditions: real 8.7, shuffled 6.9 / 7.3; 330 conditions: real 9.4, shuffled 8.0 / 9.0 (max 9.0). The bar rises with the library as the order expects, and the real best only clears it at 150 and 330 columns. Files bar_*.csv.
 
+## 4. The joined library (all column sets) - stack-wide search, shuffled-outcome bar by library size, walk-forward (W-CF3, 2026-11-15)
+Library: 21,094 yes/no conditions on the 19,798 TAKEN signals (engine $ outcomes), from W-CF1 (A B C D E K L S T U and M 5,537), W-CF4 (osc 3,047, trend 3,221, smc 1,858, irl 273, ml 216, vol 441), W-CF5 (named systems 4,200), W-CF6 (1,314), W-CF2 (F-J and other-market states 626); columns with fewer than 50 yes or 50 no dropped. Raw v_* values are not conditions. Skipped-signal rows are NOT used in any result (hypothetical points only as a screen, none run yet). Redundancy clusters (outcome-free, random-projection correlation, |phi| >= 0.85): 16,330 clusters (13,204 singletons, largest 28; 1,323 clusters span more than one block), so most columns are NOT near-duplicates at this threshold. The search runs on one leader per cluster (16,330) chosen without looking at outcomes.
+
+**Search-level control bar by library size** (in-sample best lift-t of greedy must-have list or best-k score, STACK, 50 shuffles of outcomes within book/session/month; file bigbar_STACK_0.85_pnl.csv):
+
+| library (random leaders) | real best | shuffled median | shuffled 95th | shuffled max | share of shuffles >= real |
+|--|--|--|--|--|--|
+| 50 | 10.9 | 7.7 | 8.5 | 8.6 | 0.00 |
+| 150 | 12.3 | 9.5 | 11.5 | 12.7 | 0.02 |
+| 330 | 13.6 | 12.6 | 14.8 | 16.0 | 0.26 |
+| 1,000 | 21.5 | 19.2 | 22.8 | 23.1 | 0.14 |
+| 3,000 | 25.0 | 23.8 | 26.8 | 29.3 | 0.32 |
+| 16,330 (all) | 28.5 | 29.2 | 32.8 | 34.3 | 0.62 |
+
+Reading: the bar rises steeply with the library, and from 330 conditions up the best checklist found on real outcomes is no better than what the same search finds on shuffled outcomes. The small-library rows pass only because a few columns (book / session / state conditions) carry a real but small effect; adding the other 20,000 conditions adds search power for noise, not signal. Nothing found by search on the full library beats its own shuffled bar.
+
+**Walk-forward of the whole library, stack-wide** (trailing 52 weeks, 2-week refits, first test 2023-10-16, greedy over leaders, minimum kept share of the training window = strictness; matched-count control 1,000 subsets; files wfbig_*.json):
+
+| strictness (min kept share) | OOS trades kept (per day) | $/trade kept vs all | max DD kept vs all | expectancy / DD percentile | item stability across refits | 95 % bootstrap of $/trade |
+|--|--|--|--|--|--|--|
+| minimum 60 trades | 240 (0.3) | 334 vs 117 | 30,589 vs 92,243 | 0.83 / 0.59 | 0.15 | -113 .. 800 |
+| 10 % | 1,691 (2.2) | 152 vs 117 | 72,020 vs 92,243 | 0.31 / 0.15 | 0.13 | -3 .. 302 |
+| 20 % | 3,329 (4.2) | 235 vs 117 | 122,156 vs 92,243 | 0.99 / 0.01 | 0.17 | 122 .. 345 |
+| 40 % | 6,823 (8.7) | 152 vs 117 | 137,032 vs 92,243 | 0.90 / 0.01 | 0.18 | 71 .. 228 |
+
+Reading: no strictness passes. The loosest versions raise expectancy but make the drawdown WORSE than random subsets of the same size (DD percentile 0.01); the tightest has too few trades (0.3 per day, below the 3 per day floor) and a bootstrap interval spanning zero; the chosen items change at almost every refit (Jaccard 0.13-0.18, i.e. noise). Verdict for the stack-wide search on the full library: fewer trades, no drawdown protection, unstable items. No exact-engine run is justified for it. Next: the same by book and session (cells), the per-block importance table (running: blocks_STACK.csv, real minus shuffled 95th percentile for each block alone and added to the base blocks), and 50 shuffled walk-forward reruns for any cell with a lead. Reminder: universe-wide significance counts are not findings.
+
+## 5. Pre-specified small lists (registered before scoring: autopilot/CONFLUENCE_SMALL_LISTS_PREREG.md, sha256[:16] 1c1580364fd5b5f4, DECISIONS.md)
+One item per family (trend, level, VWAP, volume/tape, momentum), plain standard item, chosen by definition not by outcomes. Same controls as USER_SET_V0 (matched-count 500 draws; full-history in-sample; results /mnt/l2/l2vast/_confl/cf3/lists_SL*.csv). Stack-wide none passes (drawdown percentiles 0.03-0.74). Cells passing both 95th tests, of 48 cell-rule combinations per list: SL1 0; SL3 0; SL2 (slower: 60-min trend, monthly open, weekly VWAP, 15-min relative volume >= 1, 60-min efficiency ratio >= 0.3 with the trade) 2: P7 Asia at least 4 (707 of 2,161 trades, $839 vs $424 per trade, max DD 36,080 vs 75,069, pctl 1.00 / 0.99) and K7 NY AM all 5 (119 trades, below the 150 floor, ignored). SL3 has 70 % unknown items in the overnight sessions (opening-range and RTH VWAP exist only in RTH), so it is not a fair test outside RTH.
+Reading: P7 Asia improves under two independent pre-specified lists (USER_SET_V0 all-5, SL2 at least 4), which is a better sign than either alone, but the lists overlap in what they say (trend / VWAP side), the cell is the one with the 7-lot heavy tail, and the older window of USER_SET_V0 (2023) was negative; both are in-sample on full history. Exact-engine sets TL3_CF_U3 (V0 all-5) and TL3_CF_U6 (SL2 at least 4) with 3 random-skip placebos each are running; the engine, not the table, decides.
+
 ## 2. Machinery and its validation (steps 4-5)
 Built and tested on a stand-in table: planted +$800/+$1,500 edge recovered by greedy and by the 2-week walk-forward (905 vs 219 $/trade OOS, DD cut 6x, matched-count controls pass); shuffled outcomes rejected; a leak (open-trade results in 'previous trade' columns) produced a fake 3x OOS edge and was removed (W-CF1 informed; v1 table defines L columns over closed trades only).
 First run of the searched families on the PARTIAL table (A, E, L categories only, 271 conditions), stack-wide walk-forward (trailing 52 weeks, 2-week refits, first test 2023-10-16): score on positive-alone items 7.3 trades/day $184 vs $117 per trade but max DD 75k vs 92k and DD percentile 0.33; one-per-category 0.70; cluster score 0.09; greedy must-have list 0.57 trades/day $527 vs $117, DD percentile 0.87, items change on most refits (stability 0.34); gradient boosting (upper bound) 9 trades/day $175, DD worse than all trades. None passes the matched-count test on drawdown. The full run on the v1 table (with U) is in progress; the 50 shuffled-outcome search reruns and the per-block importance table follow once the M, F-J and Block 2-5 columns are in.
