@@ -1,4 +1,4 @@
-# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-15 19:28Z
+# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-15 22:29Z
 
 VERDICT (data ends 2026-10-30; plain): FIRST PASS: A7 flat -40 is +$1,869/wk in L6M (DD +10.3%, +5.5% with W44 removed) and positive in HOLD (+468) and PRE (+358), but only about a fifth of the L6M gain is A7 itself (+349 own, +1,500 other books: P7 +660, K7 +300, U7 +312, H7 +283) and in PRE A7 itself loses (-472) while other books gain 770; the flat cut removes the stop-triggered stack cuts (StackCut 40 to 15), so the lead is a stack-path effect, not an A7 effect, and the random-subset placebos (TL3_PM_P_A7F40_S1..3) and GAP / X' months are still running. No PASS claim.
 BASIS (one line): every $ and DD number on this page sums raw engine net_fee of JN05W2-family sets at BASE (box) lots, live = x1.75, with the engine own fills and $1.18/contract RT (not FEES.md $4.84 RT); columns dmean@4.84 reprice the mean change at $4.84 RT per contract (delta contracts x $3.66), no rerun.
@@ -125,7 +125,11 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | X_A7AS_F40 | 2126 | 10 | 10.3>6.5 | 1,869 | 10 | 11.0>7.2 | 5,527 | 1 | 0 | - | - | - | 2109 | 1,854 | - | 6 | - | - | - |
 | X_A7AS_F45 | 1571 | -1 | 10.3>6.5 | - | - | - | - | - | - | - | - | - | 1557 | - | - | - | - | - | - |
 | X_A7AS_F50 | 1652 | 2 | 10.3>6.5 | - | - | - | - | - | - | - | - | - | 1642 | - | - | - | - | - | - |
+| P_A7F40_S1 | 1600 | 9 | 10.3>8.1 | 1,096 | 9 | 11.0>8.8 | 4,787 | 1 | 0 | 662 | -2 | 10.7>9.0 | 1596 | 1,092 | 660 | 1 | 126 | 1 | 9.3>8.4 |
+| P_A7F40_S2 | -275 | -3 | 10.3>8.8 | -126 | -3 | 11.0>9.2 | -1,255 | 1 | 0 | -320 | 1 | 10.7>9.2 | -283 | -132 | -321 | 3 | 759 | 8 | 9.3>8.5 |
+| P_A7F40_S3 | 816 | 3 | 10.3>8.3 | 776 | 3 | 11.0>9.2 | 1,902 | 1 | 0 | - | - | - | 807 | 767 | - | 4 | - | - | - |
 | N_A7NOSC | 1641 | -0 | 10.3>10.6 | 1,741 | -0 | 11.0>11.1 | -208 | 1 | 0 | 688 | -0 | 10.7>10.8 | 1632 | 1,733 | 687 | -2 | 845 | 7 | 9.3>9.4 |
+| N_ALLNOSC | 1701 | -0 | 10.3>11.0 | 2,247 | -0 | 11.0>11.6 | -208 | 1 | 0 | 473 | -4 | 10.7>11.3 | 1693 | 2,233 | 473 | -5 | 1,068 | 8 | 9.3>9.6 |
 
 ## 4. All windows with decomposition (FIRST PASS; delta vs JN05W2 at base lots, x1.75 for live; own/other = change in the cell book vs all other books; placebo cells TL3_PM_P_* apply the same A7 flat -40 to a random 50% of A7 trades)
 | cell | L3M | L6M | HOLD | GAP | PREUW | X' | ALL43 |
@@ -146,7 +150,11 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | E_U7_N15X10 | -766/wk DD +4.6% stops 10.3>8.7 own -943/other +177 noW44 -14.7% | -20/wk DD +4.6% stops 11.0>9.4 own -328/other +309 noW44 -14.7% | -211/wk DD +8.3% stops 10.7>9.4 own -402/other +192 | - | +239/wk DD -0.0% stops 9.3>8.4 own +320/other -80 | - | - |
 | E_U7_N30X10 | -1596/wk DD -7.7% stops 10.3>9.0 own -1315/other -281 noW44 -8.5% | - | - | - | - | - | - |
 | E_U7_N5X20 | +543/wk DD +0.0% stops 10.3>9.8 own +481/other +61 noW44 +9.3% | +66/wk DD +0.0% stops 11.0>10.6 own +41/other +24 noW44 +9.3% | +54/wk DD +2.8% stops 10.7>10.2 own +243/other -189 | - | +267/wk DD +0.2% stops 9.3>9.1 own +460/other -193 | - | - |
-| N_A7NOSC | +1641/wk DD -0.4% stops 10.3>10.6 own +0/other +1641 noW44 -1.7% | +1741/wk DD -0.4% stops 11.0>11.1 own +0/other +1741 noW44 -1.7% | +688/wk DD -0.3% stops 10.7>10.8 own +0/other +688 | +1399/wk DD +0.6% stops 9.9>10.4 own +0/other +1398 | +845/wk DD +7.1% stops 9.3>9.4 own +0/other +844 | - | - |
+| N_A7NOSC | +1641/wk DD -0.4% stops 10.3>10.6 own +0/other +1641 noW44 -1.7% | +1741/wk DD -0.4% stops 11.0>11.1 own +0/other +1741 noW44 -1.7% | +688/wk DD -0.3% stops 10.7>10.8 own +0/other +688 | +1399/wk DD +0.6% stops 9.9>10.4 own +0/other +1398 | +845/wk DD +7.1% stops 9.3>9.4 own +0/other +844 | +149/wk DD +3.5% stops 10.3>10.5 own +0/other +148 | +562/wk DD -0.1% stops 10.1>10.3 own +0/other +562 |
+| N_ALLNOSC | +1701/wk DD -0.4% stops 10.3>11.0 noW44 -4.9% | +2247/wk DD -0.4% stops 11.0>11.6 noW44 -4.9% | +473/wk DD -3.6% stops 10.7>11.3 | +1501/wk DD -4.4% stops 9.9>10.8 | +1068/wk DD +7.8% stops 9.3>9.6 | - | - |
+| P_A7F40_S1 | +1600/wk DD +9.2% stops 10.3>8.1 own -77/other +1678 noW44 +1.1% | +1096/wk DD +9.2% stops 11.0>8.8 own -30/other +1127 noW44 +1.1% | +662/wk DD -1.5% stops 10.7>9.0 own -67/other +728 | +700/wk DD -0.6% stops 9.9>9.2 own -58/other +758 | +126/wk DD +1.1% stops 9.3>8.4 own +33/other +94 | -144/wk DD +0.7% stops 10.3>9.8 own +73/other -215 | +216/wk DD -1.3% stops 10.1>9.2 own +13/other +203 |
+| P_A7F40_S2 | -275/wk DD -2.6% stops 10.3>8.8 own +200/other -474 noW44 +2.7% | -126/wk DD -2.6% stops 11.0>9.2 own -321/other +195 noW44 +2.7% | -320/wk DD +0.7% stops 10.7>9.2 own -120/other -201 | +1464/wk DD +3.2% stops 9.9>9.2 own +237/other +1228 | +759/wk DD +7.7% stops 9.3>8.5 own -94/other +853 | +295/wk DD +7.1% stops 10.3>9.8 own -92/other +387 | +330/wk DD +0.9% stops 10.1>9.3 own -69/other +401 |
+| P_A7F40_S3 | +816/wk DD +3.4% stops 10.3>8.3 own +459/other +357 noW44 +3.5% | +776/wk DD +3.4% stops 11.0>9.2 own +300/other +475 noW44 +3.5% | - | - | - | - | - |
 | S_ID | - | - | - | - | - | - | - |
 | T_M7_NP10 | -1446/wk DD -0.9% stops 10.3>10.0 own -197/other -1249 noW44 +7.2% | - | - | - | - | - | - |
 | T_M7_NP15 | -835/wk DD -2.8% stops 10.3>10.1 own +212/other -1047 noW44 +0.3% | - | - | - | - | - | - |

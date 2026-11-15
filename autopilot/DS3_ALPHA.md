@@ -1,6 +1,6 @@
 # DS3_ALPHA - one combined forecast for NQ (W-AL1, T-ALPHA parts 1, 2, 4-NQ)
 
-VERDICT (FIRST PASS, NQ, data end 2026-10-30; test span 2023-10..2026-10-16 for the full feature set, 2023-04..2026-10-30 for price/intermarket/clock): the combined NQ forecast has a small real information coefficient at 5-15 minutes (average of ridge/GBM/MLP: IC +0.0103 at 5 min t +4.6, +0.0083 at 15 min t +2.5) that is carried by price and intermarket reversal in the thin hours (Asia), the same 200-input nonsense pipeline gives -0.0001 / -0.0018; at 30-120 min the IC (+0.0055 at 60 min) is not distinguishable from the nonsense null; the ~400 library/L2/L3/counting inputs add nothing over the 90 price/intermarket/clock inputs; on D7 the forecast as size is not separable from a shuffled-forecast placebo yet (see Part 2). Numbers are FIRST PASS, one run per cell.
+VERDICT (data ends 2026-10-30; FIRST PASS, NQ, test span 2023-10..2026-10-16 for the full feature set, 2023-04..2026-10-30 for price/intermarket/clock): the combined NQ forecast has a small real information coefficient at 5-15 minutes (average of ridge/GBM/MLP: IC +0.0103 at 5 min t +4.6, +0.0083 at 15 min t +2.5) that is carried by price and intermarket reversal in the thin hours (Asia), the same 200-input nonsense pipeline gives -0.0001 / -0.0018; at 30-120 min the IC (+0.0055 at 60 min) is not distinguishable from the nonsense null; the ~400 library/L2/L3/counting inputs add nothing over the 90 price/intermarket/clock inputs; on D7 the forecast as size is not separable from a shuffled-forecast placebo yet (see Part 2). Numbers are FIRST PASS, one run per cell.
 
 ## 0. What was built, and the rules
 - Grid: 5-minute decision grid (bar end at :00, :05, ...), NQ 2018-01..2026-10-30, 623,287 decision rows; horizons 5/15/30/60/120 min; training target = return / (trailing 1-min sigma x sqrt(h)), clipped +-4 (vol-scaled); IC is scored against the raw point return (Spearman, pooled ranks, day-clustered standard errors).
@@ -9,7 +9,7 @@ VERDICT (FIRST PASS, NQ, data end 2026-10-30; test span 2023-10..2026-10-16 for 
 - Not yet in this pass: CME/UW options block (feat1m J_*), macro block, other markets (W-AL2), horizons beyond 120 min.
 
 ## 1. Data audit (Part 4 item 15)
-| market | rows | monotonic | dup ts | bad OHLC | gaps >5 min | gaps >1 h | max gap h | same-close runs >=10 | spike-revert bars | roll bars | |ret| at roll med / max | off-tick closes |
+| market | rows | monotonic | dup ts | bad OHLC | gaps >5 min | gaps >1 h | max gap h | same-close runs >=10 | spike-revert bars | roll bars | abs ret at roll med/max | off-tick closes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | NQ | 3,111,736 | True | 0 | 0 | 3260 | 2260 | 76.8 | 19 | 14 | 35 | 2.25 / 12.75 | 0% |
 | ES | 3,111,625 | True | 0 | 0 | 3235 | 2232 | 76.8 | 134 | 845 | 35 | 0.50 / 2.50 | 0% |
@@ -30,8 +30,21 @@ VERDICT (FIRST PASS, NQ, data end 2026-10-30; test span 2023-10..2026-10-16 for 
 
   Max |IC| of any single input as built = 0.0223; max with one step of future injected = 0.999. The test is therefore sensitive (a one-bar leak would show as IC 0.1-1.0) and no input jumps: IC decays smoothly from newer to as-built to older. The full-library inputs come from other agents; their own builders were checked by them against stored signal-time values (0 differences); a joint shift test of the full set (run lag_m1/lag_p1) is in section 4 when finished.
 
+
+- JOINT shift test (ridge, full set): as built +0.0112, +0.0052, +0.0050, +0.0058, +0.0097 ; inputs one step OLDER +0.0018, +0.0039, +0.0015, +0.0034, +0.0089 (IC falls, as it must if there is no leak; the one-step-NEWER run is pending).
 ## 2. Planted-edge check
-PENDING (run queued: run_wf_cfg.py planted). W-AL2 ran the same plant on ES with ridge only: recovered +0.014 at 5 min, +0.008 at 15 min, +0.003 at 30 min and about 0 beyond, i.e. ridge shrinks a 0.02 feature heavily and 30-120 min cells are noise-limited (se 0.006-0.009).
+A synthetic AR(1) signal (persistence 0.9 per decision step) was added to every vol-scaled training/test target with strength giving corr(signal, target) = 0.02, and appended as one extra input to the 90 core inputs; the whole walk-forward was rerun. Scored against the PLANTED target (ys), core-only run of the same inputs scored against the same planted target for the baseline:
+| quantity | 5m | 15m | 30m | 60m | 120m |
+|---|---|---|---|---|---|
+| ridge: planted run IC | +0.0212 | +0.0126 | +0.0109 | +0.0117 | +0.0104 |
+| ridge: same inputs without the planted one (core run) on the planted target | +0.0114 | +0.0031 | -0.0001 | -0.0027 | -0.0057 |
+| ridge: RECOVERED = difference | +0.0098 (se ~0.0021) | +0.0095 (se ~0.0033) | +0.0109 (se ~0.0045) | +0.0144 (se ~0.0061) | +0.0160 (se ~0.0083) |
+| avg: planted run IC | +0.0189 | +0.0152 | +0.0119 | +0.0122 | +0.0066 |
+| avg: same inputs without the planted one (core run) on the planted target | +0.0110 | +0.0086 | +0.0008 | -0.0028 | -0.0114 |
+| avg: RECOVERED = difference | +0.0079 (se ~0.0020) | +0.0066 (se ~0.0031) | +0.0111 (se ~0.0041) | +0.0150 (se ~0.0057) | +0.0180 (se ~0.0080) |
+| planted signal alone vs planted target (what a perfect model would get) | +0.0208 | +0.0212 | +0.0224 | +0.0283 | +0.0337 |
+
+Reading: the pipeline recovers the planted edge at the right sign and horizon-by-horizon about 45-70% of its size for ridge (+0.010 to +0.016 against the 0.02-0.03 present), i.e. it is sensitive to a 0.02 signal but shrinks it by the heavy regularisation; GBM and MLP recover less (see planted_ic.csv). A real 0.02 input would therefore show up as +0.01 to +0.015 in the forecast IC. Noise floor: se 0.002 at 5 min to 0.008 at 120 min, so a 0.01 gain is detectable at 5-60 min but not at 120 min.
 
 ## 3. Forecast information coefficient (walk-forward, cluster-robust by day; null = same pipeline, 200 nonsense inputs)
 Format: IC (t day-clustered) | null IC of the nonsense run for the same cell. avg model (mean of ridge/GBM/MLP).
@@ -193,7 +206,18 @@ Forecast used: core (price+intermarket+clock) avg_h from the walk-forward, mappe
 | TL3_AL_H120 | 4,224 | 7,210 | 645,185 | 618,797 | 51,621 | -33,660 | -15,517 | -612 | 2,711 |
 | TL3_AL_T60 | 4,015 | 7,465 | 646,985 | 619,663 | 59,574 | -42,974 | -13,717 | 7,341 | -6,604 |
 | TL3_AL_PL120 | 4,116 | 7,773 | 582,318 | 553,868 | 68,945 | -52,300 | -78,384 | 16,712 | -15,930 |
+| TL3_AL_PL15_11 | 4,052 | 7,700 | 688,385 | 660,203 | 45,149 | -31,301 | 27,684 | -7,084 | 5,070 |
+| TL3_AL_PL15_12 | 4,122 | 7,809 | 625,769 | 597,188 | 57,890 | -41,243 | -34,932 | 5,657 | -4,872 |
+| TL3_AL_PL15_13 | 4,162 | 7,805 | 635,902 | 607,336 | 52,242 | -35,752 | -24,800 | 8 | 619 |
+| TL3_AL_PL15_14 | 4,126 | 7,771 | 746,242 | 717,800 | 63,142 | -47,676 | 85,540 | 10,909 | -11,305 |
+| TL3_AL_PL120_11 | 4,054 | 7,686 | 694,454 | 666,323 | 49,499 | -30,796 | 33,752 | -2,735 | 5,575 |
+| TL3_AL_PL120_12 | 4,031 | 7,664 | 581,769 | 553,719 | 41,785 | -24,571 | -78,932 | -10,448 | 11,799 |
+| TL3_AL_PL120_13 | 4,066 | 7,639 | 570,930 | 542,972 | 57,832 | -40,156 | -89,771 | 5,599 | -3,786 |
+| TL3_AL_PL120_14 | 4,109 | 7,722 | 736,195 | 707,932 | 60,747 | -41,838 | 75,493 | 8,514 | -5,468 |
 
+- S15: change in 6-month total vs JN05W2 +40,142; 4 placebos (same size table, forecast shuffled within book and month) give +13,373 on average, sd 55,388, range -34,932..+85,540; max drawdown change +11,980 vs placebo mean +2,372 sd 7,717. z of real vs placebo = +0.48.
+- S120: change in 6-month total vs JN05W2 +46,620; 5 placebos (same size table, forecast shuffled within book and month) give -27,569 on average, sd 76,602, range -89,771..+75,493; max drawdown change +12,691 vs placebo mean +3,528 sd 10,459. z of real vs placebo = +0.97.
+- KEY FINDING for every sizing test: any re-sizing of the stack, even a meaningless one, moves the 6-month engine total by roughly +-$55-75k (sd, on a $660k base) and max drawdown by +-$8-10k through path effects (locks, caps, day-done rules). A forecast-sized book has to beat that placebo spread, not just the base; with this first-pass forecast it does not (z below 1). Sizing by forecast is NOT shown to help.
 (LOT BASIS: base lots JN05W2, live x1.75, engine fee $1.18/contract vs FEES.md $4.84: column tot484 carries $4.84; live caps P7 14,700 vs engine 8,400.)
 
 ## 7. Honest summary: what we have, where it comes from, what would raise it

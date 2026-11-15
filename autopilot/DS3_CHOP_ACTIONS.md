@@ -1,4 +1,4 @@
-# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-15 21:52Z
+# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-15 22:14Z
 
 **VERDICT (running): 48 cells scored so far; no PASS claimed. See section 2 (oracle ceiling, NON-CAUSAL), section 3 (causal calls), section 5 (placebos).**
 
@@ -205,6 +205,7 @@ prog = programme tolerant gate for the window (DD cut > -2% and mean change > -3
 | TL3_CH_S90f33F_A5       |      75 | 11034.8 |    866.9 |  74015.5 |  76186.1 |      2.8 |        nan |      1 |        0 |        nan |        877.8 |     174.9 |         177.9 | -52547.4 | -52547.4 |       1 |     0 |      30.9 |          31.8 |   98.4 |      100.3 |
 | TL3_CH_K790f33_A2       |      75 | 10512.2 |    344.3 |  74875.8 |  76186.1 |      1.7 |        nan |      1 |        0 |        nan |        351.9 |     175.9 |         177.9 | -52547.4 | -52547.4 |       1 |     0 |      32.1 |          31.8 |  100.7 |      100.3 |
 | TL3_CH_S90f33F_A3f      |      75 | 10210.4 |     42.5 |  75522   |  76186.1 |      0.9 |        nan |      1 |        0 |        nan |         42.1 |     178   |         177.9 | -52547.4 | -52547.4 |       1 |     0 |      31.7 |          31.8 |  100.5 |      100.3 |
+| TL3_CH_X_Raq10_T67_a_K7 |      75 | 10199.9 |     32   |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |         31.7 |     178   |         177.9 | -52547.4 | -52547.4 |       1 |     0 |      31.8 |          31.8 |  100.4 |      100.3 |
 | TL3_CH_X_Raq10_T67_a_M7 |      75 | 10198.7 |     30.8 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |         30.7 |     177.9 |         177.9 | -52547.4 | -52547.4 |       1 |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
 | TL3_CH_Raq10_T5         |      75 | 10445.3 |    277.4 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |        274.4 |     178.7 |         177.9 | -52547.4 | -52547.4 |       1 |     0 |      31.8 |          31.8 |  100.8 |      100.3 |
 | TL3_CH_Raq10_T67        |      75 | 10360.7 |    192.8 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |        191.6 |     178.3 |         177.9 | -52547.4 | -52547.4 |       1 |     0 |      31.8 |          31.8 |  100.5 |      100.3 |
