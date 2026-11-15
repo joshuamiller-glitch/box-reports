@@ -1,4 +1,4 @@
-# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-15 00:18Z)
+# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-15 01:56Z)
 Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.py, ta_ind.py, ta_cond.py); this page is generated from the same registries; nothing here has been scored yet.
 
 ## Table and ids

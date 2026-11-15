@@ -1,6 +1,6 @@
-# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T00:26Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
+# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T01:56Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
 
-**VERDICT (plain): 6 cell-months done over 0 cells; 0 cells pass the tolerant gate in L3M, 0 pass in every present window incl. older ones (leads, before placebo read). Leads: none yet. No PASS claim. Queue note: 14 chains wait in tp_admit (box load 60+, cap 28); EC share 2 workers.**
+**VERDICT (plain): 12 cell-months done over 1 cells; 0 cells pass the tolerant gate in L3M, 0 pass in every present window incl. older ones (leads, before placebo read). Leads: none yet. No PASS claim. Queue note: 14 chains wait in tp_admit (box load 60+, cap 28); EC share 2 workers.**
 
 Prereg autopilot/EXPAND_C_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine, all layers ON. Identity: TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -9,6 +9,12 @@ LOT BASIS (one line): all numbers are BASE (box) lots, live = x1.75; raw engine 
 Row format: delta vs JN05W2 in the rule's own session scope: d mean, max-DD cut % (positive = smaller; /x = with 2026-W44 removed), d worst week, full stops/wk cell(ref), best-5 weeks kept, winning weeks turned losing, X = fails tolerant gate.
 
 ## Range-used-up (1)
+
+**asia**
+
+| cell | L3M | L6M | HOLD | GAP | PRE | X' | lead |
+|---|---|---|---|---|---|---|---|
+| RU_asia_hS075 | -6875 $/wk (fee4.84 -6617), DD +36%/-18, ww +9318, st 3.73(6.24), b5 54%, w2l 2 X |  |  |  |  |  |  |
 
 ## Session clock (2)
 

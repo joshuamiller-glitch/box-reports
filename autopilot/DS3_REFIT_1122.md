@@ -2,7 +2,7 @@
 
 VERDICT (2026-11-14 17:10Z, FIRST-ORDER stage; exact stage running, nothing here is a PASS): (1) The rolling 14-day refit of the lot-level layers (SIZER LOT SIGQ REG STACK COOL ZONE A06 B02) does NOT beat the frozen JN04 setting and is worse than random layer settings in the recent windows (L6M max DD 82% deeper, mean -$15.7k/wk, 79 refits, 9 procedure variants all negative or noise): keep those layers frozen. (2) Rolling refit over the exit/entry rule layers (existing exact one-rule cells on JN05W2, session-group slots) gives L3M/L6M max-DD cut +60%/+49% and +$6.1k/+$3.3k per week, but placebos (random options, stale fits) give about the same and PRE is -14%: the value is in the rules, not in the rolling selection; as an exact joint it is untested. (3) Exact one-layer variants on the JN04-live base (K7 flat, C22, E1, F3, P7 cap/table, ATR skip, post-stop blackout) are queued (tag RF); candidate v2.10 and the code-change list follow when they land.
 
-Generated 2026-11-14 23:06 UTC (epoch 1794697571). Exact engine for every verdict dollar; first-order composition only to rank (always labelled). Shadow only, no PASS claims. Prereg autopilot/REFIT1122_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_refit1122/; bulk /mnt/l2/l2vast/_refit1122/.
+Generated 2026-11-15 01:33 UTC (epoch 1794706429). Exact engine for every verdict dollar; first-order composition only to rank (always labelled). Shadow only, no PASS claims. Prereg autopilot/REFIT1122_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_refit1122/; bulk /mnt/l2/l2vast/_refit1122/.
 
 ## 0. Plan (first publish, 2026-11-14 ~17:00Z)
 1. Stage 1 - candidate sets per layer from existing results (DS3_JOINT top-K / pools, registered topK, the 43-month exact cells on the JN05W2 base and the survivor cells from priorities 2-11 as they reach 43 months).
@@ -515,18 +515,39 @@ Cells = max-DD cut % vs the frozen base / d mean $/wk on the same OOS days (+ = 
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
 | BO15 | 3 | +0% / +0 / +0.0 / 1.00 / 0 / +0% / fees484 dm +0 |  |  |  |  |  |  |
-| BO30 | 2 |  |  |  |  |  |  |  |
-| BO60 | 2 |  |  |  |  |  |  |  |
+| BO30 | 3 | +0% / +5 / +0.0 / 1.00 / 0 / +1% / fees484 dm +5 |  |  |  |  |  |  |
+| BO60 | 3 | +0% / -46 / +0.0 / 1.00 / 0 / -4% / fees484 dm -46 |  |  |  |  |  |  |
+
+**breadth skip P7 (live breadth_ext15 == 3)**
+| cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
+|--|--|--|--|--|--|--|--|--|
+| BR2 | 2 |  |  |  |  |  |  |  |
+| BR30 | 1 |  |  |  |  |  |  |  |
 
 **Shelved rules rebuilt on the JN04-live base; composites CA (all-layer pick today, layer level) / CH (pick with the hold-in-both-halves gate) and three placebo composites PA1-3 (random one-option-per-layer subsets of size 8, exact)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| O_SM_A6_halfNP7 | 1 |  |  |  |  |  |  |  |
-| O_NC_K7_T20_20RC | 1 |  |  |  |  |  |  |  |
-| O_NC_U7_T20_15F | 1 |  |  |  |  |  |  |  |
+| O_SM_A6_halfNP7 | 3 | -14% / -1390 / -0.3 / 0.89 / 0 / +32% / fees484 dm -1362 |  |  |  |  |  |  |
+| O_NC_K7_T20_20RC | 3 | +2% / +968 / -0.2 / 1.07 / 0 / -19% / fees484 dm +964 |  |  |  |  |  |  |
+| O_NC_U7_T20_15F | 3 | +12% / +825 / -0.8 / 1.04 / 0 / +0% / fees484 dm +826 |  |  |  |  |  |  |
+| O_NC_A7_T10_10F | 3 | +3% / +390 / -0.3 / 1.02 / 0 / +0% / fees484 dm +390 |  |  |  |  |  |  |
+| O_NH_M7_B9_X10N60 | 3 | -3% / +1207 / -0.2 / 1.07 / 0 / +28% / fees484 dm +1203 |  |  |  |  |  |  |
+| O_NH_U7_B7_X30N120 | 3 | -7% / -439 / -0.3 / 0.99 / 0 / -43% / fees484 dm -439 |  |  |  |  |  |  |
+| O_SB_SP85 | 3 | -4% / +412 / +0.1 / 1.02 / 0 / +14% / fees484 dm +413 |  |  |  |  |  |  |
+| O_G2_P7A_PRE | 2 |  |  |  |  |  |  |  |
+| CA | 3 | +41% / -2580 / -1.4 / 0.64 / 1 / +60% / fees484 dm -2571 |  |  |  |  |  |  |
+| CH | 3 | +37% / -938 / -1.3 / 0.72 / 1 / +50% / fees484 dm -937 |  |  |  |  |  |  |
+| PA1 | 3 | -4% / -3576 / +10.2 / 0.64 / 1 / -9% / fees484 dm -3563 |  |  |  |  |  |  |
+| PA2 | 2 |  |  |  |  |  |  |  |
+| PA3 | 1 |  |  |  |  |  |  |  |
 
 ## 9. Candidate v2.10 (BASE lots, engine fees $1.18/contract; PROVISIONAL, 2026-11-14 20:15Z; exact evidence is L3M only for the one-layer variants, so nothing below is a lead yet)
 - Frozen layers (no change): the JN04 lot layers LOT / SIGQ / REG / STACK, F3 context cut, WL_E1, C22, BR3S, K7 flat 45, P7 cap 14,700 live (engine 8,400 base lots, x1.75) and the P7 table 7,4,0,4,0,0. Reason: the rolling refit of the lot-level layers lost to the frozen setting and to random settings (section 3); the policy file therefore does not depend on any first-order lot layer.
 - Open leads waiting for L6M/HOLD (L3M exact, W44 inside): K7 flat 40 or 50 (+15% DD cut, +$515/+$1,149 per wk), P7 table 5,4,0,4,0,0 (+22%, -$1,584 per wk), C22 pnl_r -1.5 (+11%, +$538). Rejected on L3M: C22 n 18/26, E1 ge 1, F3 fresh 40/50, F3 rechase 25 (mean -$3.8k).
 - Policy-file lines that exist today (D7 syntax): `loss K7 * pct<=-0.75 cut` (flat 45 of a 60-pt stop; a flat 40 would be pct<=-0.667, 50 pct<=-0.833). Everything else (C22, E1, F3, BR3S, table, cap) is a panel/code field, not a policy line.
 - Code-change list for v2.0 is the JV/LR/PR/RA specs as scored on their own pages; this page adds none until a composite lands.
+
+### Update 2026-11-15: exact L3M for every one-layer variant and the composites (JN05W2J base, BASE lots, engine fees; L6M/HOLD still queued)
+- Composite CA (layer-level pick today: A6 half non-P7, NC K7/U7/A7 time stops, NH M7/U7 near-zone limits, SB split 85, G2 P7 Asia-PRE table) vs JN05W2J, L3M: max DD -41% (cut +41%, +60% with W44 removed), mean -$2,580/wk, full stops -1.4/wk, only 64% of the 5 best weeks kept, 1 winning week turned losing. CH (hold-gated pick): +37%, -$938/wk, 72% of best weeks. Exact placebo PA1 (random subset, same size): -4%, -$3,576/wk. So the pick beats the random subset on drawdown, but both give up mean and the CA/CH cost a third of the best weeks (trend-week clause FAILS at L3M).
+- Single rules, L3M exact, mean-positive and DD-neutral or better: NC_U7 time stop (+12%, +$825, -0.8 stops/wk), NC_K7 (+$968, but W44-removed -19%), NH_M7 limit (+$1,207, DD -3%), SB split 85 (+$412), NC_A7 (+$390). A6 half non-P7 costs -$1,390. ATR skip 1.4/1.6/1.8 on P7: DD deeper (-11..-19%) and mean -$243..-$615: no. Post-stop blackout 15/30/60: zero effect at L3M (rule rarely binds). P7 day cap 6,000 (engine base lots; live 10,500): +23% DD cut at +$20/wk, the cheapest DD lever so far; cap 10,800: nothing. P7 table 5,4,0,4,0,0: +22% for -$1,584/wk.
+- Reading: no combination is yet a lead; L6M and HOLD decide. Provisional ranking for the v2.10 candidate: P7 day cap 6,000 base (10,500 live), NC_U7 fresh time stop, NH_M7 limit, SB split 85, with K7 flat 40/50 pending.

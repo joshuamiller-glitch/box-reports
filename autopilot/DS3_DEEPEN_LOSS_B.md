@@ -1,8 +1,8 @@
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 3 of 113 cells have an exact L3M result so far; 0 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 6 of 127 cells have an exact L3M result so far; 1 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T01:01Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T01:31Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -91,6 +91,9 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 |---|---|---|---|---|---|
 | BR_K7_X15 | 3 | -7.2 / -3577 / -3566 / -3545 / -3809 / False / 11.1 / 0.88 / 0 | - / - / - / - | - / - | - / - |
 | BR_K7_H15 | 3 | 14.8 / -602 / -598 / -584 / 7753 / False / 2.5 / 0.98 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_X15 | 3 | -6.1 / -1491 / -1489 / -1490 / -2520 / False / 3.9 / 0.97 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15 | 3 | 1.2 / 144 / 147 / 157 / 615 / True / 5.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_A7_X15 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | BR_A7_H15 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### EV  skips / half before scheduled events (calendar from 2024-10; identity before)
@@ -125,8 +128,26 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): none yet
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15
 
+Auto-expansions launched (expansion of <parent>):
+
+- HIT BR_M7_H15: L3M cut 1.2% d mean 144 (adj 157) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - BR_M7_H15_Sasi: expansion of BR_M7_H15
+- - BR_M7_H15_Slon: expansion of BR_M7_H15
+- - BR_M7_H15_Snya: expansion of BR_M7_H15
+- - BR_M7_H15_Snyp: expansion of BR_M7_H15
+- - BR_M7_H15_xt5: expansion of BR_M7_H15
+- - BR_M7_H15_30: expansion of BR_M7_H15
+- - BR_M7_H15_v19: expansion of BR_M7_H15
+- - BR_M7_H15_G2: expansion of BR_M7_H15
+- - BR_M7_H15_K7: expansion of BR_M7_H15
+- - BR_M7_H15_P7: expansion of BR_M7_H15
+- - BR_M7_H15_U7: expansion of BR_M7_H15
+- - BR_M7_H15_H7: expansion of BR_M7_H15
+- - BR_M7_H15_A7: expansion of BR_M7_H15
+- - BR_M7_H15_O7: expansion of BR_M7_H15
+- - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
 
 ## 4. Not run / limits
 - Passive-entry fill rule: a print through the limit by 1 tick (primary). Engine has no queue position model; real fill rates for resting limits are not in the frozen live set. Treat LE rows as an upper bound on fills.
