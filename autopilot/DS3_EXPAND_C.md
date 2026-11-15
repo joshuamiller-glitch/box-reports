@@ -1,6 +1,6 @@
-# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T18:36Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
+# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T21:24Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
 
-**VERDICT (plain): 264 cell-months done over 37 cells; 28 cells pass the tolerant gate in L3M, 0 pass the STRICT gate in every present window; 0 pass the TOLERANT lead gate (recent clearly positive and beating placebos, older DD <= 10% deeper, mean >= -5%). Strict leads: none yet. Tolerant leads: none yet. FIRST PASS, no PASS claim.**
+**VERDICT (plain): 266 cell-months done over 37 cells; 28 cells pass the tolerant gate in L3M, 0 pass the STRICT gate in every present window; 0 pass the TOLERANT lead gate (recent clearly positive and beating placebos, older DD <= 10% deeper, mean >= -5%). Strict leads: none yet. Tolerant leads: none yet. FIRST PASS, no PASS claim.**
 
 Prereg autopilot/EXPAND_C_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine, all layers ON. Identity: TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
