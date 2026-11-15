@@ -1,6 +1,6 @@
-# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 05:56Z
+# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 06:29Z
 
-**VERDICT (running): 15 LA cells scored, 11 pass the programme tolerant gate in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
+**VERDICT (running): 19 LA cells scored, 12 pass the programme tolerant gate in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
 
 LOT BASIS: sets are JN05W2 at BASE lots (live = x1.75; live caps = engine caps x1.75, P7 8,400 engine = 14,700 live). Engine fee $1.18/contract RT vs FEES.md $4.84: column d_mean_484 reprices the change in lots. dd/ww are $ per week series at base lots. prog = tolerant gate (dd cut > -2% and mean change > -3% of reference); strict = dd44_cut>0 and d_mean_484>=0 and dd_cut>=0.
 Cells: TL3_LA_<grp>_*  S = state-cut grid (NOCUT, persist P1/2/3/5, arm A+-5/10, mult M05/M2, win W2/5/10; P7 edits the F3 context cells, FP/RP = fresh/rechase only) | E = WL_E1 | C = C22 | F = flat cuts (session, alone = book state cut OFF, tight, FC forecast units, ATR) | FA = state-cut arm in forecast units | X = state-cut arm +-10 under an entry-context tag. Hook code/th_deepen_la/la_hooks.py (identity: see below). W-PM owns all-session flat cuts TL3_PM_X_*.
@@ -18,6 +18,7 @@ Identity: TL3_LA_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 - TL3_LA_XA_M7_ANDID
 - TL3_LA_XA_P7_ANDID
 - TL3_LA_XA_U7_ANDID
+- TL3_LA_X_K7_N3_L
 - TL3_LA_X_K7_N3_T
 
 ## 2. Persist sensitivity of the state cut (live-fidelity risk: persist=3 lines were silent live, persist<=2 fired)
@@ -25,21 +26,24 @@ Identity: TL3_LA_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 |:----------------|--------------------:|--------------------:|--------------------:|--------------------:|
 | ('K7', 'NOCUT') |              1318.6 |               308.3 |                17.6 |                17.6 |
 | ('K7', 'P1')    |             -1220.5 |             -2394.2 |               -14.1 |               -14.1 |
+| ('K7', 'P2')    |             -1090   |             -1794   |                 0.8 |                 0.8 |
 
 Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity risk.
 
 ## 3. STATE CUT GRID (item 1)
-### L3M (2 cells)
+### L3M (3 cells)
 | cell              |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
-| TL3_LA_S_K7_NOCUT |      13 | 17333.8 |   1318.6 | 29974.2 |  36370.5 |     17.6 |        1.8 |      1 |        1 |      592.4 |       1326.2 | -26603.7 | -36370.5 |       1 |     0 |      41.2 |          52.5 |  142.8 |      144.2 |
-| TL3_LA_S_K7_P1    |      13 | 14794.7 |  -1220.5 | 41516.2 |  36370.5 |    -14.1 |      -36   |      0 |        0 |    -1961.4 |      -1234.8 | -37536.2 | -36370.5 |       1 |     0 |      77.7 |          52.5 |  150.5 |      144.2 |
+| TL3_LA_S_K7_NOCUT |      13 | 17333.8 |   1318.6 | 29974.2 |  36370.5 |     17.6 |        1.8 |      1 |        1 |      592.4 |       1326.2 | -26603.7 | -36370.5 |     1   |     0 |      41.2 |          52.5 |  142.8 |      144.2 |
+| TL3_LA_S_K7_P2    |      13 | 14925.2 |  -1090   | 36092.9 |  36370.5 |      0.8 |      -18.2 |      0 |        0 |    -2022.7 |      -1109.7 | -35050.9 | -36370.5 |     0.9 |     0 |      71.2 |          52.5 |  149.6 |      144.2 |
+| TL3_LA_S_K7_P1    |      13 | 14794.7 |  -1220.5 | 41516.2 |  36370.5 |    -14.1 |      -36   |      0 |        0 |    -1961.4 |      -1234.8 | -37536.2 | -36370.5 |     1   |     0 |      77.7 |          52.5 |  150.5 |      144.2 |
 
-### L6M (2 cells)
+### L6M (3 cells)
 | cell              |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
-| TL3_LA_S_K7_NOCUT |      26 | 25445.2 |    308.3 | 29974.2 |  36370.5 |     17.6 |        1.8 |      1 |        1 |      -80.7 |        310.6 | -26603.7 | -36370.5 |       1 |     1 |      45   |          57.1 |  159.4 |      160.3 |
-| TL3_LA_S_K7_P1    |      26 | 22742.7 |  -2394.2 | 41516.2 |  36370.5 |    -14.1 |      -36   |      0 |        0 |    -2796.8 |      -2405   | -37536.2 | -36370.5 |       1 |     1 |      84.8 |          57.1 |  165.4 |      160.3 |
+| TL3_LA_S_K7_NOCUT |      26 | 25445.2 |    308.3 | 29974.2 |  36370.5 |     17.6 |        1.8 |      1 |        1 |      -80.7 |        310.6 | -26603.7 | -36370.5 |     1   |     1 |      45   |          57.1 |  159.4 |      160.3 |
+| TL3_LA_S_K7_P2    |      26 | 23342.9 |  -1794   | 36092.9 |  36370.5 |      0.8 |      -18.2 |      0 |        0 |    -2269.8 |      -1802.1 | -35050.9 | -36370.5 |     0.9 |     0 |      77.6 |          57.1 |  163.4 |      160.3 |
+| TL3_LA_S_K7_P1    |      26 | 22742.7 |  -2394.2 | 41516.2 |  36370.5 |    -14.1 |      -36   |      0 |        0 |    -2796.8 |      -2405   | -37536.2 | -36370.5 |     1   |     1 |      84.8 |          57.1 |  165.4 |      160.3 |
 
 ## 4. STATE CUT ARM IN FORECAST UNITS (item 1)
 ### L3M (2 cells)
@@ -55,15 +59,17 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_FA_K7_K03 |      26 | 25445.2 |    308.3 | 29974.2 |  36370.5 |     17.6 |        1.8 |      1 |        1 |      -80.7 |        310.6 | -26603.7 | -36370.5 |       1 |     1 |      45   |          57.1 |  159.4 |      160.3 |
 
 ## 5. CONTEXT-TAGGED STATE CUT (items 1, 5)
-### L3M (1 cells)
+### L3M (2 cells)
 | cell             |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:-----------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
-| TL3_LA_X_K7_N3_T |      13 | 17219.5 |   1204.4 | 31690.9 |  36370.5 |     12.9 |       -3.8 |      1 |        0 |      671.9 |       1202.1 | -28776.9 | -36370.5 |       1 |     0 |      48.6 |          52.5 |    145 |      144.2 |
+| TL3_LA_X_K7_N3_T |      13 | 17219.5 |   1204.4 | 31690.9 |  36370.5 |     12.9 |       -3.8 |      1 |        0 |      671.9 |       1202.1 | -28776.9 | -36370.5 |       1 |     0 |      48.6 |          52.5 |  145   |      144.2 |
+| TL3_LA_X_K7_N3_L |      13 | 17473.4 |   1458.2 | 31970.9 |  36370.5 |     12.1 |       -4.7 |      1 |        0 |      678   |       1456.3 | -26338.4 | -36370.5 |       1 |     0 |      47   |          52.5 |  144.9 |      144.2 |
 
-### L6M (1 cells)
+### L6M (2 cells)
 | cell             |   weeks |   mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:-----------------|--------:|-------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_X_K7_N3_T |      26 |  26218 |   1081.1 | 31690.9 |  36370.5 |     12.9 |       -3.8 |      1 |        0 |      820.6 |       1084.8 | -28776.9 | -36370.5 |       1 |     0 |      52.2 |          57.1 |  159.3 |      160.3 |
+| TL3_LA_X_K7_N3_L |      26 |  26244 |   1107.1 | 31970.9 |  36370.5 |     12.1 |       -4.7 |      1 |        0 |      718.6 |       1111.1 | -26338.4 | -36370.5 |       1 |     0 |      49.9 |          57.1 |  159.2 |      160.3 |
 
 ## 7. FLAT CUTS (item 2)
 ### L3M (2 cells)
@@ -79,30 +85,34 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_F_K7_LO_D40 |      26 | 25580.2 |    443.3 | 32040.3 |  36370.5 |     11.9 |       12.6 |      1 |        1 |      287.8 |        437.2 | -32040.3 | -36370.5 |       1 |     0 |      56.5 |          57.1 |  161.7 |      160.3 |
 
 ## 8. C22 FAMILY (item 3)
-### L3M (2 cells)
+### L3M (3 cells)
 | cell         |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:-------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_C_N18 |      13 | 16964.7 |    949.5 | 33755.5 |  36370.5 |      7.2 |      -10.6 |      1 |        0 |      338.6 |        994.3 | -33755.5 | -36370.5 |     1   |     0 |      48.9 |          52.5 |  135.7 |      144.2 |
 | TL3_LA_C_N14 |      13 | 14784.8 |  -1230.4 | 50026.9 |  36370.5 |    -37.5 |      -63.8 |      0 |        0 |    -3313.4 |      -1105.4 | -36787.9 | -36370.5 |     0.9 |     0 |      42.9 |          52.5 |  121.2 |      144.2 |
+| TL3_LA_C_N26 |      13 | 13630.6 |  -2384.6 | 52213.7 |  36370.5 |    -43.6 |       -0.2 |      0 |        0 |    -1263   |      -2416.4 | -52213.7 | -36370.5 |     1   |     0 |      55.4 |          52.5 |  150.9 |      144.2 |
 
-### L6M (2 cells)
+### L6M (3 cells)
 | cell         |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:-------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_C_N18 |      26 | 25294.4 |    157.5 | 33755.5 |  36370.5 |      7.2 |      -10.6 |      1 |        0 |     -167.4 |        203.3 | -33755.5 | -36370.5 |     1   |     0 |      53.5 |          57.1 |  152.1 |      160.3 |
 | TL3_LA_C_N14 |      26 | 22799.6 |  -2337.3 | 50026.9 |  36370.5 |    -37.5 |      -63.8 |      0 |        0 |    -3381.5 |      -2209.5 | -36787.9 | -36370.5 |     0.8 |     1 |      47.9 |          57.1 |  138.1 |      160.3 |
+| TL3_LA_C_N26 |      26 | 23447.5 |  -1689.4 | 52213.7 |  36370.5 |    -43.6 |       -0.2 |      0 |        0 |    -1123.3 |      -1721   | -52213.7 | -36370.5 |     1   |     0 |      59.7 |          57.1 |  166.8 |      160.3 |
 
 ## 9. WL_E1 (item 4)
-### L3M (2 cells)
-| cell        |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
-|:------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
-| TL3_LA_E_G3 |      13 | 15410.2 |   -605   | 30533.4 |  36370.5 |     16   |        0   |      0 |        0 |    -1223.2 |       -609.2 | -29556.4 | -36370.5 |     0.9 |     0 |      52.6 |          52.5 |  144.2 |      144.2 |
-| TL3_LA_E_G1 |      13 | 13036.9 |  -2978.2 | 45958.6 |  36370.5 |    -26.4 |      -50.5 |      0 |        0 |    -3234.1 |      -2927   | -39238.5 | -36370.5 |     0.9 |     1 |      50   |          52.5 |  139.5 |      144.2 |
+### L3M (3 cells)
+| cell           |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
+|:---------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
+| TL3_LA_E_G3    |      13 | 15410.2 |   -605   | 30533.4 |  36370.5 |     16   |        0   |      0 |        0 |    -1223.2 |       -609.2 | -29556.4 | -36370.5 |     0.9 |     0 |      52.6 |          52.5 |  144.2 |      144.2 |
+| TL3_LA_E_NOEV0 |      13 | 16786.3 |    771.1 | 37779.4 |  36370.5 |     -3.9 |      -23.7 |      0 |        0 |     -489.6 |        784   | -33271.9 | -36370.5 |     1   |     0 |      51.8 |          52.5 |  143.5 |      144.2 |
+| TL3_LA_E_G1    |      13 | 13036.9 |  -2978.2 | 45958.6 |  36370.5 |    -26.4 |      -50.5 |      0 |        0 |    -3234.1 |      -2927   | -39238.5 | -36370.5 |     0.9 |     1 |      50   |          52.5 |  139.5 |      144.2 |
 
-### L6M (2 cells)
-| cell        |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
-|:------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
-| TL3_LA_E_G3 |      26 | 24151.6 |   -985.2 | 30533.4 |  36370.5 |     16   |        0   |      0 |        0 |    -1297.2 |       -988.8 | -29556.4 | -36370.5 |     1   |     0 |      57.4 |          57.1 |  160.3 |      160.3 |
-| TL3_LA_E_G1 |      26 | 22100   |  -3036.9 | 45958.6 |  36370.5 |    -26.4 |      -50.5 |      0 |        0 |    -3162   |      -2963.4 | -39238.5 | -36370.5 |     0.9 |     2 |      53.7 |          57.1 |  153.3 |      160.3 |
+### L6M (3 cells)
+| cell           |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
+|:---------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
+| TL3_LA_E_G3    |      26 | 24151.6 |   -985.2 | 30533.4 |  36370.5 |     16   |        0   |      0 |        0 |    -1297.2 |       -988.8 | -29556.4 | -36370.5 |     1   |     0 |      57.4 |          57.1 |  160.3 |      160.3 |
+| TL3_LA_E_NOEV0 |      26 | 24830.8 |   -306.1 | 37779.4 |  36370.5 |     -3.9 |      -23.7 |      0 |        0 |     -954.3 |       -284   | -33271.9 | -36370.5 |     1   |     0 |      55.9 |          57.1 |  158   |      160.3 |
+| TL3_LA_E_G1    |      26 | 22100   |  -3036.9 | 45958.6 |  36370.5 |    -26.4 |      -50.5 |      0 |        0 |    -3162   |      -2963.4 | -39238.5 | -36370.5 |     0.9 |     2 |      53.7 |          57.1 |  153.3 |      160.3 |
 
 ## 6. Auto-expansions (PART 0)
 
@@ -112,9 +122,9 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 # SECTION W-LB (items 6-9)
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 30 of 192 cells have an exact L3M result so far; 6 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 33 of 192 cells have an exact L3M result so far; 6 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T05:31Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T06:01Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -236,6 +246,9 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | EV_FOMC_P15_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_FOMC_P30_S | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_FOMC_P30_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_EARN_Q60_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_EARN_Q120_S | 3 | 0.0 / -91 / -91 / -91 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_EARN_Q120_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### RB  range used up AND breadth / event day (HAR+CME forecast; plain range rule is W-EC)
 
