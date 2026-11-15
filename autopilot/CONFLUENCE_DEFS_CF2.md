@@ -76,3 +76,7 @@ VERDICT: 5 column files (638 conditions, FG 101, I 72, J 148, H 55, B5 262) buil
 | B5     |              262 |       223 |         48353 |                   100   |
 
 Column names are listed by `python3 -c "import pandas as pd;print(list(pd.read_parquet('/mnt/l2/l2vast/_confl/cols_cf2/FG.parquet').columns))"`. J burst thresholds are frozen from the first full build (v_J_J_burst_q10_*/q05_* columns). H covers MBO days only (2026-05-01..2026-11-13 now). Known limits: YM has no tape or L2; intraday VIX is not on the box; 6J is L6M only; the megacap composite VWAP is an approximation.
+
+## H2 (drift-robust L3, added after the full NQ MBO history; /mnt/l2/l2vast/_confl/cols_cf2/H2.parquet, 39 columns c_H2_*, code derive_h.py)
+- H.parquet is now rebuilt on the full 2023-04..2026-11 MBO history for all 191,520 universe rows (per-second tables /mnt/l2/l2vast/_confl/cf2_mbo, 1,126 day files, compact).
+- Because L3 microstructure drifted (order sizes at the touch, cancel-to-trade, spoof-like frequency), H2 compares each raw value (v_H_ctr_mine/ahead 60/300, touch sizes, bmax mine/ahead, spoof counts mine/ahead 60/300, gmax with/against, arrival_imb60, aggr20 with/against 300) with the same raw value over the entries of the previous 20 trading days (all books, causal, >= 150 prior entries): `_hi` = above the 80th percentile, `_lo` = at or below the 20th. Plus `spoof_ahead_gt_mine{60,300}` and `spoof_mine_gt_ahead{60,300}` (relative, no threshold).

@@ -1,7 +1,26 @@
 # DS3_CONFLUENCE_ITEMS_CF2 (W-CF2): each condition of categories F, G, H, I, J and Block 5 alone (STEP 3)
-VERDICT: 638 conditions measured alone on 19,798 taken JN05W2 trades; 89 have |z|>2 in the pooled cell (chance alone gives about 31); 57 of those have the same sign in every year and in L6M; no condition is a lead on this table alone (a lead needs the step 5 proofs, W-CF3); the map is below. No PASS claim.
+VERDICT: 676 conditions measured alone on 19,798 taken JN05W2 trades; 102 have |z|>2 in the pooled cell (chance alone gives about 33); 66 of those have the same sign in every year and in L6M; no condition is a lead on this table alone (a lead needs the step 5 proofs, W-CF3); the map is below. No PASS claim.
 
-Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry table; the FEES.md $4.84 basis lowers each trade by lots x $3.66 x sides, a difference between yes and no groups only through their lot mix), taken trades only until the skipped-signal rows land. Lift = mean $ when the condition is yes minus when it is no (95% CI Welch). `share_yes` over entries where the condition could be computed. Years: 2023..2026; L6M = 2026-05..10, L3M = 2026-08..10, L1M = 2026-10 (cap 2026-10-31). Cells: ALL, per book (K7 M7 U7 P7 H7 A7 O7), per session (0 Asia, 1 London, 3 NY, 4 close), book x session. Full table (21,692 rows): /mnt/l2/l2vast/_confl/cols_cf2/step3_ALL.csv. Multiple-testing note: 18,393 (cell, condition) tests with n>=50 each side; at 5% about 919 will show |z|>2 by chance, so cell-level tops below are a map, not leads.
+Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry table; the FEES.md $4.84 basis lowers each trade by lots x $3.66 x sides, a difference between yes and no groups only through their lot mix), taken trades only until the skipped-signal rows land. Lift = mean $ when the condition is yes minus when it is no (95% CI Welch). `share_yes` over entries where the condition could be computed. Years: 2023..2026; L6M = 2026-05..10, L3M = 2026-08..10, L1M = 2026-10 (cap 2026-10-31). Cells: ALL, per book (K7 M7 U7 P7 H7 A7 O7), per session (0 Asia, 1 London, 3 NY, 4 close), book x session. Full table (22,984 rows): /mnt/l2/l2vast/_confl/cols_cf2/step3_ALL.csv. Multiple-testing note: 19,589 (cell, condition) tests with n>=50 each side; at 5% about 979 will show |z|>2 by chance, so cell-level tops below are a map, not leads.
+
+## L3 RESULT (full NQ MBO history 2023-04..2026-11, 19,798 taken entries, 191,520 universe rows; added after the history purchase)
+
+- Drift: L3 microstructure changed a lot (share of entries with a spoof-like add-and-pull ahead fell from 26-41% in 2023-25 to 4% in 2026-H2; share with cancel-to-trade at my side < 10 fell from 94% to 17%; mean order size at the touch fell). Absolute L3 thresholds are therefore NOT comparable across years. The one-year lead (spoof-like ahead, 179 entries, -$546, z -4.25) was partly this drift: on the full history the same item is 6,373 entries, lift -$106/trade, z -3.4, by year 2023 +1, 2024 -97, 2025 -76, 2026 -246 (negative in 3 of 4 years, ~0 in 2023), and it shrinks to t = -1.6 once trend/tape/book controls are added.
+- Drift-robust items (code derive_h.py, c_H2_*): each raw L3 value vs its own entries of the previous 20 trading days (above the 80th / at or below the 20th percentile). Four of them keep the sign in every year: arrival_imb60_lo (fewer order adds on my side than ahead, 20% of entries) +$144/trade, z 3.4, years +75/+200/+114/+160, L6M +249; ctr_mine300_lo (low own-side cancel-to-trade) +$129, z 2.8; spoof_ahead300_lo +$85, z 2.7; ctr_mine60_hi -$117 (negative in 4 of 4). They hold at the reference levels except exactly AT a level (behind<=3 pts: arrival_imb60_lo +94, z 1.0, n 873); strongest with a cluster behind (+167, z 3.3) and a level within 20 pts ahead (+139, z 3.1).
+- Controls (week-clustered OLS on pnl, controls = NQ 5m EMA stack, NQ 15m hold of EMA21, ES 5m hold21, NQ 5m squeeze momentum, rvol5, cd5, book imbalance, book and session dummies):
+
+| cond                   |     n |   lift_alone |   t_week_cluster |   lift_with_controls |   t_with_controls |
+|:-----------------------|------:|-------------:|-----------------:|---------------------:|------------------:|
+| c_H2_arrival_imb60_lo  | 19350 |          142 |             3.25 |                  118 |              2.69 |
+| c_H2_spoof_ahead60_lo  | 19350 |          105 |             2.68 |                   70 |              1.62 |
+| c_H2_ctr_mine300_lo    | 19350 |          142 |             2.66 |                  107 |              1.99 |
+| c_H2_spoof_ahead300_lo | 19350 |           86 |             2.37 |                   48 |              1.22 |
+| c_H2_ctr_mine60_hi     | 19350 |         -120 |            -2.99 |                 -157 |             -3.64 |
+| c_H2_spoof_ahead60_hi  | 19350 |          -89 |            -2.12 |                  -40 |             -0.84 |
+| c_H_spoof_ahead60_ge1  | 19361 |         -106 |            -2.7  |                  -70 |             -1.63 |
+
+
+- Reading: 39 drift-robust L3 items were tried; about 13 reach |z|>2 pooled (chance ~2), several with the same sign in 4 of 4 years, and two (arrival_imb60_lo, ctr_mine60_hi) keep |t| 2.7-3.6 after controls with week clustering. That is a set of leads for W-CF3 (matched-count control, shuffled-search control, walk-forward), not a result; the spoof-like item does not survive controls. Did the L3 history justify its $1,095.50? Cost is small against D7 (a few days of one book) and it removed one false one-year lead and produced 2-3 year-stable candidates, so the data were worth buying as research; whether they are worth a LIVE L3 feed (about $199/month on Databento Standard) depends only on whether these items add to the free L1/L2/intermarket/options items in the step 5 proofs. Until then the answer is 'justified as a test, unproven as a trading input'.
 
 ## Per category (pooled ALL cell, both sides n>=100)
 
@@ -10,7 +29,7 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | B5 indicator states on other markets |          257 |          44 |               31 |
 | F tape                               |           50 |           3 |                2 |
 | G order book L2                      |           49 |           1 |                0 |
-| H order by order L3                  |           53 |          14 |                9 |
+| H order by order L3                  |           91 |          27 |               18 |
 | I intermarket                        |           72 |           6 |                4 |
 | J options/positioning                |          148 |          21 |               11 |
 
@@ -22,9 +41,11 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | c_B5_NQ_5m_sqz_mom_with          |   15025 |   4772 |        75.9 |       135 |       14 |      44.4 |     41.9 |    121 |   57 |  185 |  3.73 |         3 |          4 |        170 |        280 |        183 |
 | c_B5_ALL_1m_sqz_fired_dir_ge3of4 |     160 |  19637 |         0.8 |      -293 |      109 |      30.6 |     43.9 |   -402 | -618 | -185 | -3.64 |         0 |          4 |       -314 |        nan |        nan |
 | c_B5_NQ_15m_hold21_with          |   11088 |   8273 |        57.3 |       154 |       43 |      44.4 |     42.9 |    111 |   49 |  172 |  3.53 |         4 |          4 |        145 |        233 |        246 |
+| c_H2_arrival_imb60_lo            |    3861 |  15924 |        19.5 |       222 |       78 |      46.1 |     43.2 |    144 |   62 |  226 |  3.44 |         4 |          4 |        249 |        184 |        -73 |
 | c_H_spoof_ahead60_ge1            |    6373 |  13425 |        32.2 |        34 |      140 |      42.4 |     44.4 |   -106 | -168 |  -45 | -3.38 |         1 |          4 |       -546 |       -741 |       -560 |
 | c_J_nowall_ahead25_SPX_vol       |   11866 |   1035 |        92   |       141 |      -95 |      43.9 |     40   |    236 |   99 |  374 |  3.37 |         3 |          3 |        254 |          1 |         75 |
 | c_B5_NQ_5m_supertrend_with       |   16171 |   3626 |        81.7 |       122 |       32 |      43.9 |     43.2 |     91 |   38 |  144 |  3.36 |         4 |          4 |        144 |        172 |         93 |
+| c_H2_spoof_ahead60_lo            |   13416 |   6369 |        67.8 |       140 |       35 |      44.4 |     42.5 |    105 |   43 |  166 |  3.34 |         3 |          4 |        546 |        741 |        560 |
 | c_B5_ES_5m_hold21_with           |   13613 |   6184 |        68.8 |       138 |       35 |      44.6 |     42   |    103 |   42 |  164 |  3.31 |         4 |          4 |         24 |         77 |        -18 |
 | c_B5_NQ_5m_adx_di_with           |   12136 |   7661 |        61.3 |       145 |       43 |      44.4 |     42.7 |    102 |   41 |  162 |  3.3  |         4 |          4 |         99 |        242 |        203 |
 | c_B5_NQ_5m_ema_stack_with        |   13706 |   6091 |        69.2 |       137 |       36 |      44.4 |     42.3 |    101 |   39 |  163 |  3.22 |         4 |          4 |        160 |        292 |        458 |
@@ -44,10 +65,8 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | c_B5_RTY_15m_rsi_with            |   12869 |   6492 |        66.5 |       137 |       45 |      44.2 |     42.8 |     93 |   29 |  156 |  2.86 |         4 |          4 |         99 |        196 |        352 |
 | c_B5_NQ_15m_cci_with             |   14646 |   4715 |        75.6 |       129 |       37 |      44.2 |     42.5 |     92 |   29 |  155 |  2.86 |         4 |          4 |        174 |        239 |        381 |
 | c_B5_ES_5m_cci_with              |   16381 |   3416 |        82.7 |       125 |       12 |      44.2 |     41.8 |    113 |   33 |  193 |  2.78 |         4 |          4 |         30 |         89 |        -20 |
+| c_H2_ctr_mine300_lo              |    3372 |  16413 |        17   |       213 |       84 |      47.4 |     43   |    129 |   38 |  220 |  2.77 |         4 |          4 |         99 |        284 |        563 |
 | c_I_RTY_conf15_z05               |    9886 |   9194 |        51.8 |        63 |      153 |      43.3 |     44.3 |    -90 | -154 |  -26 | -2.76 |         0 |          4 |        -61 |       -119 |        -29 |
-| c_B5_ES_15m_hold21_with          |   10764 |   8597 |        55.6 |       145 |       58 |      44.3 |     43   |     86 |   24 |  148 |  2.74 |         4 |          4 |         48 |         57 |         63 |
-| c_J_wall_behind25_SPX_oi         |     802 |  12099 |         6.2 |       -82 |      136 |      38.4 |     43.9 |   -218 | -375 |  -61 | -2.72 |         2 |          3 |       -143 |         97 |        862 |
-| c_F_big10_net15_pos              |   10800 |   8998 |        54.6 |        67 |      153 |      43.2 |     44.4 |    -86 | -149 |  -23 | -2.68 |         0 |          4 |       -117 |       -137 |       -215 |
 
 ## Pooled ALL cell: stable conditions (same sign in every evaluated year and in L6M), 25 largest |z|
 
@@ -56,6 +75,7 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | c_I_ratio_trend240_pos           |   12916 |   4620 |        73.6 |       121 |       -8 |      44.2 |     41.3 |    129 |   62 |  197 |  3.76 |         4 |          4 |         98 |        163 |         40 |
 | c_B5_ALL_1m_sqz_fired_dir_ge3of4 |     160 |  19637 |         0.8 |      -293 |      109 |      30.6 |     43.9 |   -402 | -618 | -185 | -3.64 |         0 |          4 |       -314 |        nan |        nan |
 | c_B5_NQ_15m_hold21_with          |   11088 |   8273 |        57.3 |       154 |       43 |      44.4 |     42.9 |    111 |   49 |  172 |  3.53 |         4 |          4 |        145 |        233 |        246 |
+| c_H2_arrival_imb60_lo            |    3861 |  15924 |        19.5 |       222 |       78 |      46.1 |     43.2 |    144 |   62 |  226 |  3.44 |         4 |          4 |        249 |        184 |        -73 |
 | c_J_nowall_ahead25_SPX_vol       |   11866 |   1035 |        92   |       141 |      -95 |      43.9 |     40   |    236 |   99 |  374 |  3.37 |         3 |          3 |        254 |          1 |         75 |
 | c_B5_NQ_5m_supertrend_with       |   16171 |   3626 |        81.7 |       122 |       32 |      43.9 |     43.2 |     91 |   38 |  144 |  3.36 |         4 |          4 |        144 |        172 |         93 |
 | c_B5_ES_5m_hold21_with           |   13613 |   6184 |        68.8 |       138 |       35 |      44.6 |     42   |    103 |   42 |  164 |  3.31 |         4 |          4 |         24 |         77 |        -18 |
@@ -74,10 +94,9 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | c_B5_RTY_15m_rsi_with            |   12869 |   6492 |        66.5 |       137 |       45 |      44.2 |     42.8 |     93 |   29 |  156 |  2.86 |         4 |          4 |         99 |        196 |        352 |
 | c_B5_NQ_15m_cci_with             |   14646 |   4715 |        75.6 |       129 |       37 |      44.2 |     42.5 |     92 |   29 |  155 |  2.86 |         4 |          4 |        174 |        239 |        381 |
 | c_B5_ES_5m_cci_with              |   16381 |   3416 |        82.7 |       125 |       12 |      44.2 |     41.8 |    113 |   33 |  193 |  2.78 |         4 |          4 |         30 |         89 |        -20 |
+| c_H2_ctr_mine300_lo              |    3372 |  16413 |        17   |       213 |       84 |      47.4 |     43   |    129 |   38 |  220 |  2.77 |         4 |          4 |         99 |        284 |        563 |
 | c_I_RTY_conf15_z05               |    9886 |   9194 |        51.8 |        63 |      153 |      43.3 |     44.3 |    -90 | -154 |  -26 | -2.76 |         0 |          4 |        -61 |       -119 |        -29 |
 | c_B5_ES_15m_hold21_with          |   10764 |   8597 |        55.6 |       145 |       58 |      44.3 |     43   |     86 |   24 |  148 |  2.74 |         4 |          4 |         48 |         57 |         63 |
-| c_F_big10_net15_pos              |   10800 |   8998 |        54.6 |        67 |      153 |      43.2 |     44.4 |    -86 | -149 |  -23 | -2.68 |         0 |          4 |       -117 |       -137 |       -215 |
-| c_I_ES_not_against_10s           |   16130 |   3347 |        82.8 |       126 |       21 |      44.3 |     41.8 |    105 |   27 |  184 |  2.62 |         4 |          4 |        244 |        219 |       -103 |
 
 ## Recent windows: |lift| in L3M with same sign as the full sample and as L6M (pooled, n_yes and n_no in L3M >= 40)
 
@@ -89,6 +108,8 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | c_J_wall_behind50_Nd_oi         |     928 |   8773 |         9.6 |       132 |       82 |      44.8 |     42.6 |     50 |  -97 |  197 |  0.67 |         2 |          3 |         30 |        570 |        620 |
 | c_J_0dte_flip_far25_Nh_oi       |    4261 |    381 |        91.8 |        99 |       29 |      43.4 |     39.9 |     70 | -161 |  300 |  0.59 |         3 |          3 |        565 |        566 |        nan |
 | c_J_0dte_pw0_not_ahead50_Nd_oi  |    4436 |    324 |        93.2 |        78 |       73 |      42.6 |     45.1 |      5 | -228 |  237 |  0.04 |         2 |          3 |        321 |        492 |        857 |
+| c_H2_bmax_ahead_hi              |    1929 |  17856 |         9.8 |       189 |       97 |      48.2 |     43.3 |     92 |   -4 |  188 |  1.88 |         4 |          4 |        193 |        485 |       1092 |
+| c_H2_bmax_ahead_lo              |   17700 |   2085 |        89.5 |        95 |      198 |      43.2 |     48.6 |   -104 | -197 |  -11 | -2.18 |         0 |          4 |       -193 |       -485 |      -1092 |
 | c_H_no_big10_ahead              |   17709 |   2089 |        89.4 |        95 |      198 |      43.2 |     48.6 |   -103 | -196 |  -10 | -2.17 |         0 |          4 |       -193 |       -485 |      -1092 |
 | c_J_tide_npp_s15_neg            |    2323 |    858 |        73   |        30 |       29 |      42.7 |     44.1 |      1 | -106 |  109 |  0.03 |         2 |          3 |        159 |        479 |        122 |
 | c_J_wall_behind25_NDX_oi        |     749 |  12136 |         5.8 |       -32 |      134 |      41.8 |     43.7 |   -166 | -328 |   -3 | -2    |         0 |          3 |       -438 |       -446 |       -276 |
@@ -101,8 +122,6 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | c_B5_NQ_15m_rsi_with            |   14631 |   4730 |        75.6 |       125 |       48 |      44.2 |     42.4 |     77 |   10 |  143 |  2.26 |         3 |          4 |        222 |        366 |        493 |
 | c_J_0dte_pw0_not_ahead50_Nd_vol |    4478 |    497 |        90   |        69 |       97 |      42.4 |     44.9 |    -27 | -218 |  164 | -0.28 |         2 |          3 |       -216 |       -363 |       -902 |
 | c_B5_NQ_1m_ema_stack_with       |   17684 |   2113 |        89.3 |       114 |       35 |      44   |     41.6 |     79 |  -48 |  206 |  1.23 |         4 |          4 |         92 |        363 |        525 |
-| c_H_big10_mine_present          |    1108 |  18690 |         5.6 |       110 |      106 |      46.3 |     43.6 |      5 | -127 |  137 |  0.07 |         2 |          4 |          3 |        354 |        840 |
-| c_J_nowall_ahead50_SPX_oi       |   11607 |   1294 |        90   |       123 |      118 |      43.7 |     43   |      4 | -127 |  136 |  0.06 |         1 |          3 |        180 |        339 |       -237 |
 
 ## Per session (cells sess:0..4), 8 largest |z| each with n_yes,n_no >= 100
 
@@ -131,7 +150,7 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | c_J_em_frac_pos_Nd         |    2401 |   1352 |        64   |       -10 |      148 |      40.2 |     43.4 |   -158 | -276 |  -39 | -2.6  |         1 |          3 |       -109 |       -173 |        138 |
 | c_B5_ES_1m_sqz_mom_with    |    4768 |   1684 |        73.9 |        -6 |      133 |      41.2 |     42.5 |   -139 | -244 |  -34 | -2.6  |         0 |          4 |        -84 |       -216 |       -132 |
 | c_H_big10_mine_present     |     257 |   6195 |         4   |       329 |       18 |      48.6 |     41.2 |    311 |   73 |  549 |  2.56 |         4 |          4 |        772 |        925 |        nan |
-| c_B5_ES_1m_supertrend_with |    5430 |   1022 |        84.2 |         4 |      169 |      40.9 |     44.7 |   -165 | -291 |  -38 | -2.55 |         1 |          4 |       -251 |       -312 |       -449 |
+| c_H2_bmax_mine_lo          |    6193 |    257 |        96   |        18 |      329 |      41.2 |     48.6 |   -310 | -548 |  -72 | -2.55 |         0 |          4 |       -772 |       -925 |        nan |
 
 ### sess:3 (n=4,911)
 
@@ -140,49 +159,49 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | c_B5_RTY_15m_macd_rising_with |    2838 |   2073 |        57.8 |        99 |      -71 |      44.7 |     38.3 |    170 |   93 |  247 |  4.33 |         4 |          4 |        140 |        172 |        476 |
 | c_B5_ES_1m_hold21_with        |    3541 |   1370 |        72.1 |        83 |     -116 |      43.3 |     38.7 |    198 |  107 |  290 |  4.26 |         3 |          4 |        216 |        342 |        635 |
 | c_G_no_wall_ahead4_lt15       |    4515 |    396 |        91.9 |         3 |      307 |      40.8 |     55.6 |   -304 | -445 | -164 | -4.24 |         0 |          4 |        nan |        nan |        nan |
+| c_H2_bmax_ahead_lo            |    4172 |    733 |        85.1 |        -5 |      221 |      40.6 |     50.5 |   -226 | -334 | -118 | -4.09 |         0 |          4 |        -37 |       -248 |        nan |
 | c_H_no_big10_ahead            |    4176 |    735 |        85   |        -6 |      217 |      40.5 |     50.3 |   -223 | -331 | -115 | -4.05 |         0 |          4 |        -37 |       -248 |        nan |
+| c_H2_bmax_ahead_hi            |     669 |   4236 |        13.6 |       214 |       -1 |      50.1 |     40.8 |    215 |  103 |  327 |  3.76 |         4 |          4 |         37 |        248 |        nan |
 | c_G_no_wall_ahead40_lt15      |    3701 |   1210 |        75.4 |       -12 |      149 |      40.1 |     47.9 |   -162 | -250 |  -73 | -3.6  |         1 |          4 |        104 |         14 |        nan |
 | c_G_no_wall_ahead10_lt15      |    3701 |   1210 |        75.4 |       -12 |      149 |      40.1 |     47.9 |   -162 | -250 |  -73 | -3.6  |         1 |          4 |        104 |         14 |        nan |
-| c_B5_NQ_1m_hold21_with        |    3907 |   1004 |        79.6 |        65 |     -118 |      43.1 |     37.8 |    182 |   79 |  285 |  3.47 |         4 |          4 |        187 |        -50 |       -863 |
-| c_G_imb5_ge0.0                |    2360 |   2551 |        48.1 |       -42 |       92 |      39.4 |     44.4 |   -134 | -210 |  -58 | -3.46 |         0 |          4 |        -71 |       -379 |       -570 |
 
 ### sess:4 (n=1,136)
 
-| cond                     |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
-|:-------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
-| c_J_tide_net_s30_pos     |     550 |    110 |        83.3 |        -5 |      426 |      43.3 |     60.9 |   -431 | -676 | -185 | -3.44 |         0 |          3 |       -757 |        nan |        nan |
-| c_J_flip_far100_SPX_oi   |     509 |    128 |        79.9 |       142 |     -236 |      49.5 |     33.6 |    377 |  158 |  596 |  3.37 |         3 |          3 |        269 |        nan |        nan |
-| c_G_imb5_ge0.2           |     103 |   1033 |         9.1 |       436 |       25 |      61.2 |     44.2 |    411 |  162 |  661 |  3.23 |         4 |          4 |        702 |        nan |        nan |
-| c_B5_corr_mean3_60_ge0.8 |     622 |    514 |        54.8 |       -43 |      189 |      41.6 |     50.8 |   -231 | -374 |  -88 | -3.17 |         0 |          4 |        -90 |       -711 |        nan |
-| c_B5_corr_NQ_YM_60_ge0.8 |     506 |    630 |        44.5 |       -65 |      164 |      41.3 |     49.4 |   -228 | -369 |  -87 | -3.17 |         0 |          4 |       -226 |       -786 |        nan |
-| c_B5_NQ_5m_sqz_on        |     310 |    826 |        27.3 |      -102 |      124 |      39   |     48.3 |   -226 | -367 |  -85 | -3.15 |         0 |          4 |       -239 |       -333 |        nan |
-| c_I_NQ_leads_ES15        |     512 |    624 |        45.1 |       186 |      -40 |      49.8 |     42.5 |    226 |   83 |  369 |  3.1  |         4 |          4 |        135 |        154 |        nan |
-| c_I_NQ_lags_ES15         |     624 |    512 |        54.9 |       -40 |      186 |      42.5 |     49.8 |   -226 | -369 |  -83 | -3.1  |         0 |          4 |       -135 |       -154 |        nan |
+| cond                      |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
+|:--------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| c_J_tide_net_s30_pos      |     550 |    110 |        83.3 |        -5 |      426 |      43.3 |     60.9 |   -431 | -676 | -185 | -3.44 |         0 |          3 |       -757 |        nan |        nan |
+| c_J_flip_far100_SPX_oi    |     509 |    128 |        79.9 |       142 |     -236 |      49.5 |     33.6 |    377 |  158 |  596 |  3.37 |         3 |          3 |        269 |        nan |        nan |
+| c_G_imb5_ge0.2            |     103 |   1033 |         9.1 |       436 |       25 |      61.2 |     44.2 |    411 |  162 |  661 |  3.23 |         4 |          4 |        702 |        nan |        nan |
+| c_B5_corr_mean3_60_ge0.8  |     622 |    514 |        54.8 |       -43 |      189 |      41.6 |     50.8 |   -231 | -374 |  -88 | -3.17 |         0 |          4 |        -90 |       -711 |        nan |
+| c_B5_corr_NQ_YM_60_ge0.8  |     506 |    630 |        44.5 |       -65 |      164 |      41.3 |     49.4 |   -228 | -369 |  -87 | -3.17 |         0 |          4 |       -226 |       -786 |        nan |
+| c_H2_aggr20_against300_hi |     489 |    647 |        43   |       194 |      -38 |      50.5 |     42.2 |    231 |   88 |  375 |  3.16 |         3 |          4 |        -46 |       -201 |        nan |
+| c_B5_NQ_5m_sqz_on         |     310 |    826 |        27.3 |      -102 |      124 |      39   |     48.3 |   -226 | -367 |  -85 | -3.15 |         0 |          4 |       -239 |       -333 |        nan |
+| c_I_NQ_leads_ES15         |     512 |    624 |        45.1 |       186 |      -40 |      49.8 |     42.5 |    226 |   83 |  369 |  3.1  |         4 |          4 |        135 |        154 |        nan |
 
 ## Per book (cells book:*), 6 largest |z| each with n_yes,n_no >= 100
 
 
 ### book:A7 (n=1,156)
 
-| cond                        |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
-|:----------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
-| c_H_ctr_mine_lt10_300       |     597 |    559 |        51.6 |       218 |        5 |      57.4 |     46.5 |    214 |   83 |  344 |  3.21 |         3 |          3 |        111 |        432 |        554 |
-| c_J_em_used_lt0.5_Nh        |     504 |    148 |        77.3 |        17 |      339 |      47.6 |     61.5 |   -322 | -525 | -119 | -3.11 |         0 |          2 |       -358 |       -489 |       -820 |
-| c_J_em_room_ge150_Nh        |     526 |    126 |        80.7 |        31 |      337 |      48.1 |     61.9 |   -306 | -523 |  -90 | -2.77 |         0 |          3 |       -419 |       -629 |       -848 |
-| c_H_ctr_ahead_gt_mine60     |     242 |    914 |        20.9 |       289 |       69 |      59.1 |     50.3 |    220 |   63 |  378 |  2.74 |         4 |          4 |        317 |        451 |        697 |
-| c_H_ctr_mine_lt10_60        |     526 |    630 |        45.5 |       207 |       38 |      57   |     48.1 |    169 |   38 |  301 |  2.52 |         4 |          4 |         82 |        417 |        549 |
-| c_J_nowall_ahead100_NDX_vol |     697 |    122 |        85.1 |       142 |     -121 |      52.9 |     41   |    263 |   47 |  478 |  2.39 |         2 |          2 |        286 |        188 |        438 |
+| cond                    |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
+|:------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| c_H_ctr_mine_lt10_300   |     597 |    559 |        51.6 |       218 |        5 |      57.4 |     46.5 |    214 |   83 |  344 |  3.21 |         3 |          3 |        111 |        432 |        554 |
+| c_H2_ctr_mine300_hi     |     180 |    975 |        15.6 |      -127 |      158 |      40.6 |     54.3 |   -285 | -460 | -110 | -3.19 |         0 |          4 |       -123 |        -46 |       -227 |
+| c_H2_ctr_mine60_hi      |     226 |    929 |        19.6 |       -96 |      165 |      42.5 |     54.5 |   -261 | -424 |  -98 | -3.13 |         0 |          4 |       -102 |       -231 |       -457 |
+| c_J_em_used_lt0.5_Nh    |     504 |    148 |        77.3 |        17 |      339 |      47.6 |     61.5 |   -322 | -525 | -119 | -3.11 |         0 |          2 |       -358 |       -489 |       -820 |
+| c_J_em_room_ge150_Nh    |     526 |    126 |        80.7 |        31 |      337 |      48.1 |     61.9 |   -306 | -523 |  -90 | -2.77 |         0 |          3 |       -419 |       -629 |       -848 |
+| c_H_ctr_ahead_gt_mine60 |     242 |    914 |        20.9 |       289 |       69 |      59.1 |     50.3 |    220 |   63 |  378 |  2.74 |         4 |          4 |        317 |        451 |        697 |
 
 ### book:H7 (n=1,048)
 
 | cond                       |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
 |:---------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
 | c_F_big10_noagainst15      |     355 |    693 |        33.9 |       471 |       -2 |      52.7 |     45.6 |    474 |  188 |  759 |  3.25 |         3 |          4 |        154 |         12 |        nan |
+| c_H2_touch_mine_sz_hi      |     154 |    893 |        14.7 |      -239 |      230 |      42.2 |     49   |   -469 | -763 | -174 | -3.12 |         0 |          4 |       -144 |       -120 |        nan |
 | c_H_mine_touch_ge5         |     107 |    941 |        10.2 |      -277 |      208 |      43.9 |     48.5 |   -485 | -840 | -130 | -2.68 |         0 |          3 |        nan |        nan |        nan |
+| c_H2_ctr_ahead60_hi        |     366 |    681 |        35   |       -23 |      259 |      43.4 |     50.5 |   -283 | -551 |  -14 | -2.06 |         1 |          4 |         12 |       -250 |        nan |
 | c_B5_ALL_15m_adx_di_ge3of4 |     324 |    713 |        31.2 |       -56 |      239 |      43.2 |     50.1 |   -295 | -579 |  -11 | -2.04 |         1 |          4 |       -613 |       -738 |        nan |
 | c_B5_NQ_1m_adx_di_with     |     843 |    205 |        80.4 |        98 |      406 |      46.9 |     52.7 |   -308 | -606 |  -10 | -2.02 |         0 |          4 |        -52 |        121 |        nan |
-| c_F_no_absorb_400          |     918 |    130 |        87.6 |       200 |     -135 |      48.7 |     43.1 |    335 |    9 |  662 |  2.01 |         3 |          3 |        nan |        nan |        nan |
-| c_F_no_absorb_100          |     571 |    477 |        54.5 |       277 |       16 |      47.8 |     48.2 |    261 |    6 |  516 |  2.01 |         2 |          4 |        391 |       -201 |       -273 |
 
 ### book:K7 (n=7,078)
 
@@ -219,106 +238,106 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 
 ### book:P7 (n=4,748)
 
-| cond                      |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
-|:--------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
-| c_B5_NQ_15m_hold21_with   |    3118 |   1597 |        66.1 |       302 |       -3 |      41.4 |     39.9 |    305 |  103 |  507 |  2.97 |         4 |          4 |        450 |        663 |        911 |
-| c_J_tide_nv_s_pos         |     403 |    151 |        72.7 |        94 |     -424 |      41.2 |     29.8 |    518 |  149 |  887 |  2.75 |         3 |          3 |        644 |        330 |        nan |
-| c_H_spoof_ahead60_ge1     |    1407 |   3341 |        29.6 |         9 |      276 |      38.2 |     42   |   -266 | -470 |  -63 | -2.56 |         1 |          4 |      -1967 |        nan |        nan |
-| c_B5_NQ_1m_adx_di_with    |    2657 |   2091 |        56   |       312 |       51 |      40.8 |     41   |    261 |   61 |  461 |  2.56 |         4 |          4 |        119 |        289 |        367 |
-| c_B5_NQ_5m_ema_stack_with |    3491 |   1257 |        73.5 |       269 |       -4 |      41.2 |     40   |    273 |   61 |  485 |  2.52 |         4 |          4 |        417 |        689 |       1050 |
-| c_F_ice_with5_ge1         |    1498 |   3250 |        31.6 |        27 |      275 |      39.6 |     41.5 |   -248 | -442 |  -55 | -2.52 |         1 |          4 |       -610 |       -486 |       -325 |
+| cond                    |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
+|:------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| c_B5_NQ_15m_hold21_with |    3118 |   1597 |        66.1 |       302 |       -3 |      41.4 |     39.9 |    305 |  103 |  507 |  2.97 |         4 |          4 |        450 |        663 |        911 |
+| c_J_tide_nv_s_pos       |     403 |    151 |        72.7 |        94 |     -424 |      41.2 |     29.8 |    518 |  149 |  887 |  2.75 |         3 |          3 |        644 |        330 |        nan |
+| c_H2_aggr20_with300_hi  |     682 |   4062 |        14.4 |       -41 |      236 |      38.7 |     41.3 |   -277 | -480 |  -73 | -2.66 |         1 |          4 |       -219 |       -255 |        171 |
+| c_H_spoof_ahead60_ge1   |    1407 |   3341 |        29.6 |         9 |      276 |      38.2 |     42   |   -266 | -470 |  -63 | -2.56 |         1 |          4 |      -1967 |        nan |        nan |
+| c_B5_NQ_1m_adx_di_with  |    2657 |   2091 |        56   |       312 |       51 |      40.8 |     41   |    261 |   61 |  461 |  2.56 |         4 |          4 |        119 |        289 |        367 |
+| c_H2_spoof_ahead60_lo   |    3338 |   1406 |        70.4 |       275 |       10 |      42.1 |     38.2 |    265 |   61 |  468 |  2.54 |         3 |          4 |       1967 |        nan |        nan |
 
 ### book:U7 (n=1,331)
 
-| cond                           |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |    lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
-|:-------------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|------:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
-| c_B5_ES_5m_sqz_mom_with        |    1218 |    113 |        91.5 |       316 |     -301 |      52.7 |     39.8 |    617 |   144 | 1090 |  2.56 |         4 |          4 |       1189 |       2154 |        nan |
-| c_I_NQ_leads_RTY15             |     903 |    366 |        71.2 |       395 |     -101 |      53.6 |     46.4 |    496 |   103 |  889 |  2.47 |         3 |          4 |        970 |       1883 |        nan |
-| c_H_arrival_imb30_pos          |     764 |    567 |        57.4 |        74 |      518 |      49.6 |     54.3 |   -444 |  -796 |  -92 | -2.47 |         1 |          4 |       -333 |       -542 |       -448 |
-| c_J_nowall_ahead100_SPX_vol    |     625 |    214 |        74.5 |       443 |     -156 |      53.3 |     46.3 |    599 |    97 | 1100 |  2.34 |         3 |          3 |        306 |         85 |        nan |
-| c_B5_MEGA_1m_adx_di_with       |     208 |    100 |        67.5 |        30 |      909 |      46.6 |     60   |   -879 | -1637 | -120 | -2.27 |         0 |          2 |       -220 |        173 |        nan |
-| c_B5_YM_15m_sqz_fired_dir_with |     119 |   1157 |         9.3 |       863 |      184 |      57.1 |     50.8 |    679 |    51 | 1307 |  2.12 |         3 |          4 |       -886 |        nan |        nan |
+| cond                        |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |    lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
+|:----------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|------:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| c_B5_ES_5m_sqz_mom_with     |    1218 |    113 |        91.5 |       316 |     -301 |      52.7 |     39.8 |    617 |   144 | 1090 |  2.56 |         4 |          4 |       1189 |       2154 |        nan |
+| c_I_NQ_leads_RTY15          |     903 |    366 |        71.2 |       395 |     -101 |      53.6 |     46.4 |    496 |   103 |  889 |  2.47 |         3 |          4 |        970 |       1883 |        nan |
+| c_H_arrival_imb30_pos       |     764 |    567 |        57.4 |        74 |      518 |      49.6 |     54.3 |   -444 |  -796 |  -92 | -2.47 |         1 |          4 |       -333 |       -542 |       -448 |
+| c_J_nowall_ahead100_SPX_vol |     625 |    214 |        74.5 |       443 |     -156 |      53.3 |     46.3 |    599 |    97 | 1100 |  2.34 |         3 |          3 |        306 |         85 |        nan |
+| c_B5_MEGA_1m_adx_di_with    |     208 |    100 |        67.5 |        30 |      909 |      46.6 |     60   |   -879 | -1637 | -120 | -2.27 |         0 |          2 |       -220 |        173 |        nan |
+| c_H2_ctr_mine60_hi          |     240 |   1090 |        18   |      -155 |      351 |      45   |     53   |   -506 |  -960 |  -53 | -2.19 |         1 |          4 |       -522 |      -1868 |        nan |
 
 ## H (L3) items: MBO months only; pooled and strata
 
 | cond                          |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
 |:------------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| c_H2_arrival_imb60_lo         |    3861 |  15924 |        19.5 |       222 |       78 |      46.1 |     43.2 |    144 |   62 |  226 |  3.44 |         4 |          4 |        249 |        184 |        -73 |
 | c_H_spoof_ahead60_ge1         |    6373 |  13425 |        32.2 |        34 |      140 |      42.4 |     44.4 |   -106 | -168 |  -45 | -3.38 |         1 |          4 |       -546 |       -741 |       -560 |
+| c_H2_spoof_ahead60_lo         |   13416 |   6369 |        67.8 |       140 |       35 |      44.4 |     42.5 |    105 |   43 |  166 |  3.34 |         3 |          4 |        546 |        741 |        560 |
 | c_H_spoof_ahead300_ge1        |    9509 |  10289 |        48   |        58 |      150 |      43   |     44.5 |    -92 | -154 |  -31 | -2.95 |         0 |          4 |       -227 |       -195 |       -230 |
+| c_H2_ctr_mine300_lo           |    3372 |  16413 |        17   |       213 |       84 |      47.4 |     43   |    129 |   38 |  220 |  2.77 |         4 |          4 |         99 |        284 |        563 |
+| c_H2_spoof_ahead300_lo        |   10444 |   9341 |        52.8 |       146 |       61 |      44.4 |     43   |     85 |   24 |  146 |  2.73 |         4 |          4 |        227 |        195 |        230 |
+| c_H2_ctr_mine60_hi            |    3868 |  15917 |        19.6 |        12 |      128 |      40.7 |     44.5 |   -116 | -201 |  -32 | -2.72 |         0 |          4 |        -97 |       -242 |       -334 |
+| c_H2_spoof_ahead60_hi         |    3638 |  16147 |        18.4 |        33 |      122 |      42.8 |     44   |    -89 | -155 |  -22 | -2.61 |         0 |          4 |       -546 |       -741 |       -560 |
 | c_H_gmax_against60_lt10       |   10693 |   9105 |        54   |       142 |       63 |      44   |     43.5 |     79 |   19 |  139 |  2.57 |         4 |          4 |         86 |         92 |        -18 |
 | c_H_no_aged_big_ahead         |   18599 |   1199 |        93.9 |        96 |      261 |      43.4 |     49.5 |   -165 | -291 |  -39 | -2.57 |         1 |          4 |       -484 |       -632 |      -1085 |
 | c_H_aggr50_with300_ge1        |    5828 |  13970 |        29.4 |        54 |      128 |      42.9 |     44.1 |    -74 | -132 |  -16 | -2.52 |         0 |          4 |       -177 |       -188 |       -274 |
 | c_H_arrival_imb60_pos         |   12870 |   6928 |        65   |        77 |      159 |      43.1 |     45   |    -82 | -146 |  -17 | -2.48 |         0 |          4 |       -201 |        -88 |        135 |
 | c_H_gmax_with60_ge10          |   12415 |   7383 |        62.7 |        74 |      159 |      43.3 |     44.5 |    -85 | -154 |  -17 | -2.44 |         0 |          4 |        -12 |        109 |        143 |
+| c_H2_aggr20_with300_hi        |    4770 |  15015 |        24.1 |        54 |      122 |      43.2 |     43.9 |    -68 | -123 |  -12 | -2.4  |         0 |          4 |        -94 |       -125 |       -135 |
+| c_H2_ctr_ahead60_hi           |    4122 |  15663 |        20.8 |        32 |      125 |      41.6 |     44.4 |    -93 | -169 |  -16 | -2.37 |         0 |          4 |         19 |       -162 |       -220 |
+| c_H2_ctr_mine60_lo            |    3620 |  16165 |        18.3 |       188 |       87 |      47.2 |     43   |    100 |   17 |  184 |  2.36 |         4 |          4 |        212 |        266 |        487 |
 | c_H_aggr50_with60_ge1         |    2629 |  17169 |        13.3 |        35 |      117 |      42.7 |     43.9 |    -81 | -150 |  -12 | -2.31 |         1 |          4 |        -51 |         17 |        -59 |
 | c_H_arrival_imb30_pos         |   12023 |   7775 |        60.7 |        77 |      151 |      43.4 |     44.3 |    -75 | -138 |  -11 | -2.3  |         1 |          4 |          8 |          2 |        194 |
+| c_H2_spoof_ahead300_hi        |    4372 |  15413 |        22.1 |        49 |      122 |      42.8 |     44   |    -73 | -136 |  -10 | -2.28 |         0 |          4 |       -170 |       -195 |       -230 |
 | c_H_aggr50_with_gt_against300 |    4583 |  15215 |        23.2 |        52 |      122 |      43   |     44   |    -70 | -131 |  -10 | -2.27 |         0 |          4 |       -107 |        -87 |       -180 |
 | c_H_no_spoof_mine300          |   10547 |   9251 |        53.3 |       138 |       69 |      44.2 |     43.3 |     70 |    9 |  131 |  2.24 |         3 |          4 |        167 |        282 |        368 |
+| c_H2_bmax_ahead_lo            |   17700 |   2085 |        89.5 |        95 |      198 |      43.2 |     48.6 |   -104 | -197 |  -11 | -2.18 |         0 |          4 |       -193 |       -485 |      -1092 |
 | c_H_no_big10_ahead            |   17709 |   2089 |        89.4 |        95 |      198 |      43.2 |     48.6 |   -103 | -196 |  -10 | -2.17 |         0 |          4 |       -193 |       -485 |      -1092 |
 | c_H_sweep3_with60_ge1         |   15287 |   4511 |        77.2 |        85 |      176 |      43.1 |     46.1 |    -91 | -173 |   -8 | -2.15 |         0 |          4 |       -111 |         36 |        522 |
-| c_H_ahead_touch_le2           |   14681 |   5117 |        74.2 |       123 |       56 |      43.6 |     44.2 |     68 |    2 |  134 |  2.03 |         4 |          4 |         93 |        150 |        641 |
-| c_H_no_refill_ahead60         |   19260 |    538 |        97.3 |       109 |      -12 |      43.8 |     42.4 |    121 |   -1 |  243 |  1.94 |         3 |          4 |       -177 |       -166 |        nan |
-| c_H_aggr20_with_gt_against300 |    9167 |  10631 |        46.3 |        74 |      133 |      43.3 |     44.2 |    -59 | -120 |    1 | -1.91 |         0 |          4 |        -50 |        -60 |       -282 |
-| c_H_big20_mine_present        |     366 |  19432 |         1.8 |       -99 |      110 |      42.1 |     43.8 |   -208 | -430 |   13 | -1.85 |         1 |          4 |       -620 |       -282 |        nan |
-| c_H_gmax_with60_ge25          |    5741 |  14057 |        29   |        67 |      122 |      43.5 |     43.9 |    -55 | -114 |    4 | -1.81 |         0 |          4 |         23 |         17 |         44 |
-| c_H_aggr50_with_gt_against60  |    2347 |  17451 |        11.8 |        46 |      114 |      43.3 |     43.8 |    -67 | -140 |    6 | -1.8  |         1 |          4 |        -32 |         49 |         -7 |
-| c_H_refill_mine300_ge1        |    1046 |  18752 |         5.3 |        23 |      110 |      41.8 |     43.9 |    -87 | -183 |    8 | -1.8  |         0 |          4 |        -35 |       -239 |       -324 |
-| c_H_no_aggr50_against60       |   18776 |   1022 |        94.8 |       110 |       31 |      43.9 |     41.2 |     79 |  -15 |  173 |  1.66 |         3 |          4 |         87 |         35 |        695 |
-| c_H_ctr_mine_lt10_300         |   10038 |   9760 |        50.7 |       132 |       79 |      45.6 |     41.9 |     52 |  -10 |  114 |  1.65 |         3 |          4 |        162 |        325 |        629 |
-| c_H_aggr20_with300_ge1        |   12205 |   7593 |        61.6 |        85 |      140 |      43.6 |     44   |    -55 | -123 |   13 | -1.58 |         0 |          4 |        -84 |        -72 |       -156 |
-| c_H_aggr20_with60_ge1         |    7392 |  12406 |        37.3 |        77 |      123 |      43.5 |     43.9 |    -46 | -106 |   13 | -1.54 |         1 |          4 |         34 |         20 |        -62 |
-| c_H_no_spoof_mine60           |   13894 |   5904 |        70.2 |       120 |       72 |      44.1 |     43   |     48 |  -14 |  110 |  1.53 |         3 |          4 |        268 |        227 |        -33 |
+| c_H2_ctr_ahead300_hi          |    4103 |  15682 |        20.7 |        41 |      123 |      40.4 |     44.6 |    -82 | -159 |   -5 | -2.1  |         1 |          4 |        -40 |       -108 |       -257 |
 
 ### H items in stratum lvl:ahead<=10pts(level close ahead) (n=12,346), 12 largest |z|
 
-| cond                          |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
-|:------------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
-| c_H_spoof_ahead60_ge1         |    3977 |   8369 |        32.2 |        12 |      138 |      41.8 |     44.5 |   -127 | -206 |  -47 | -3.12 |         1 |          4 |       -691 |       -919 |        nan |
-| c_H_spoof_ahead300_ge1        |    5973 |   6373 |        48.4 |        41 |      151 |      42.6 |     44.6 |   -110 | -190 |  -31 | -2.72 |         1 |          4 |       -313 |       -304 |       -736 |
-| c_H_ahead_touch_le2           |    8975 |   3371 |        72.7 |       129 |       15 |      43.8 |     43   |    114 |   29 |  199 |  2.63 |         4 |          4 |        183 |        346 |       1143 |
-| c_H_aggr50_with60_ge1         |    1547 |  10799 |        12.5 |        -7 |      112 |      41.4 |     43.9 |   -119 | -209 |  -30 | -2.61 |         0 |          4 |       -100 |         57 |       -299 |
-| c_H_arrival_imb30_pos         |    7430 |   4916 |        60.2 |        56 |      160 |      43   |     44.5 |   -103 | -186 |  -21 | -2.47 |         1 |          4 |        -37 |        -45 |        271 |
-| c_H_gmax_against60_lt10       |    6996 |   5350 |        56.7 |       140 |       43 |      44.2 |     42.9 |     97 |   20 |  174 |  2.47 |         4 |          4 |         93 |         52 |         -8 |
-| c_H_arrival_imb60_pos         |    7952 |   4394 |        64.4 |        63 |      160 |      42.9 |     45   |    -96 | -180 |  -13 | -2.27 |         1 |          4 |       -168 |       -112 |        176 |
-| c_H_aggr50_with_gt_against300 |    2698 |   9648 |        21.8 |        32 |      116 |      42.2 |     44   |    -84 | -163 |   -5 | -2.08 |         0 |          4 |       -151 |       -108 |       -350 |
-| c_H_aggr50_with300_ge1        |    3446 |   8900 |        27.9 |        41 |      120 |      42.3 |     44.1 |    -79 | -154 |   -4 | -2.07 |         0 |          4 |       -237 |       -216 |       -459 |
-| c_H_aggr50_with_gt_against60  |    1372 |  10974 |        11.1 |        12 |      108 |      42.4 |     43.8 |    -96 | -191 |   -1 | -1.99 |         0 |          4 |        -77 |         76 |       -319 |
-| c_H_gmax_with60_ge25          |    3406 |   8940 |        27.6 |        42 |      119 |      42.9 |     43.9 |    -77 | -153 |   -1 | -1.99 |         2 |          4 |        -99 |       -106 |       -272 |
-| c_H_gmax_with60_ge10          |    7409 |   4937 |        60   |        65 |      147 |      43   |     44.6 |    -82 | -168 |    4 | -1.87 |         1 |          4 |         54 |        132 |        442 |
+| cond                    |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
+|:------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| c_H_spoof_ahead60_ge1   |    3977 |   8369 |        32.2 |        12 |      138 |      41.8 |     44.5 |   -127 | -206 |  -47 | -3.12 |         1 |          4 |       -691 |       -919 |        nan |
+| c_H2_spoof_ahead60_lo   |    8364 |   3973 |        67.8 |       138 |       13 |      44.5 |     41.9 |    125 |   46 |  205 |  3.08 |         3 |          4 |        691 |        919 |        nan |
+| c_H2_aggr20_with300_hi  |    2799 |   9538 |        22.7 |        21 |      120 |      42.4 |     44   |    -99 | -170 |  -29 | -2.76 |         1 |          4 |       -280 |       -294 |       -702 |
+| c_H_spoof_ahead300_ge1  |    5973 |   6373 |        48.4 |        41 |      151 |      42.6 |     44.6 |   -110 | -190 |  -31 | -2.72 |         1 |          4 |       -313 |       -304 |       -736 |
+| c_H_ahead_touch_le2     |    8975 |   3371 |        72.7 |       129 |       15 |      43.8 |     43   |    114 |   29 |  199 |  2.63 |         4 |          4 |        183 |        346 |       1143 |
+| c_H_aggr50_with60_ge1   |    1547 |  10799 |        12.5 |        -7 |      112 |      41.4 |     43.9 |   -119 | -209 |  -30 | -2.61 |         0 |          4 |       -100 |         57 |       -299 |
+| c_H2_spoof_ahead300_lo  |    6481 |   5856 |        52.5 |       146 |       44 |      44.5 |     42.7 |    102 |   23 |  182 |  2.53 |         3 |          4 |        313 |        304 |        736 |
+| c_H_gmax_against60_lt10 |    6996 |   5350 |        56.7 |       140 |       43 |      44.2 |     42.9 |     97 |   20 |  174 |  2.47 |         4 |          4 |         93 |         52 |         -8 |
+| c_H_arrival_imb30_pos   |    7430 |   4916 |        60.2 |        56 |      160 |      43   |     44.5 |   -103 | -186 |  -21 | -2.47 |         1 |          4 |        -37 |        -45 |        271 |
+| c_H2_arrival_imb60_lo   |    2495 |   9842 |        20.2 |       201 |       71 |      46.2 |     43   |    130 |   25 |  236 |  2.42 |         4 |          4 |        200 |        181 |       -286 |
+| c_H2_touch_mine_sz_hi   |    1376 |  10961 |        11.2 |       -17 |      112 |      42.5 |     43.8 |   -129 | -239 |  -19 | -2.3  |         2 |          4 |       -272 |       -384 |       -485 |
+| c_H_arrival_imb60_pos   |    7952 |   4394 |        64.4 |        63 |      160 |      42.9 |     45   |    -96 | -180 |  -13 | -2.27 |         1 |          4 |       -168 |       -112 |        176 |
 
 ### H items in stratum lvl:ahead<=20pts (n=16,903), 12 largest |z|
 
 | cond                          |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
 |:------------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
 | c_H_spoof_ahead60_ge1         |    5473 |  11430 |        32.4 |        11 |      135 |      41.6 |     44.1 |   -124 | -191 |  -57 | -3.63 |         1 |          4 |       -488 |       -898 |        nan |
+| c_H2_spoof_ahead60_lo         |   11423 |   5469 |        67.6 |       135 |       11 |      44.1 |     41.7 |    123 |   56 |  190 |  3.6  |         3 |          4 |        488 |        898 |        nan |
+| c_H2_arrival_imb60_lo         |    3335 |  13557 |        19.7 |       206 |       67 |      45.9 |     42.7 |    139 |   50 |  228 |  3.06 |         4 |          4 |        234 |        205 |        -84 |
 | c_H_spoof_ahead300_ge1        |    8177 |   8726 |        48.4 |        41 |      145 |      42.4 |     44.1 |   -104 | -171 |  -37 | -3.03 |         1 |          4 |       -128 |       -239 |       -517 |
 | c_H_aggr50_with300_ge1        |    4821 |  12082 |        28.5 |        29 |      121 |      41.9 |     43.9 |    -91 | -154 |  -29 | -2.86 |         0 |          4 |       -253 |       -265 |       -325 |
+| c_H2_spoof_ahead300_lo        |    8861 |   8031 |        52.5 |       140 |       44 |      44.1 |     42.4 |     96 |   29 |  163 |  2.82 |         3 |          4 |        128 |        239 |        517 |
+| c_H2_ctr_mine300_lo           |    2916 |  13976 |        17.3 |       212 |       70 |      46.9 |     42.6 |    142 |   42 |  242 |  2.78 |         4 |          4 |        133 |        252 |        494 |
+| c_H2_aggr20_with300_hi        |    3954 |  12938 |        23.4 |        32 |      114 |      42.4 |     43.6 |    -82 | -142 |  -23 | -2.7  |         1 |          4 |       -142 |       -196 |       -262 |
 | c_H_gmax_with60_ge10          |   10343 |   6560 |        61.2 |        56 |      156 |      42.5 |     44.5 |   -100 | -174 |  -27 | -2.67 |         0 |          4 |         38 |        107 |        259 |
 | c_H_aggr50_with_gt_against300 |    3775 |  13128 |        22.3 |        25 |      114 |      42   |     43.7 |    -89 | -156 |  -23 | -2.64 |         0 |          4 |       -164 |       -148 |       -185 |
+| c_H2_spoof_ahead60_hi         |    3100 |  13792 |        18.4 |        18 |      112 |      42   |     43.6 |    -94 | -166 |  -22 | -2.56 |         1 |          4 |       -488 |       -898 |        nan |
 | c_H_arrival_imb30_pos         |   10239 |   6664 |        60.6 |        59 |      149 |      42.7 |     44.2 |    -89 | -158 |  -20 | -2.53 |         1 |          4 |        -19 |        -54 |        125 |
-| c_H_arrival_imb60_pos         |   10948 |   5955 |        64.8 |        63 |      153 |      42.5 |     44.7 |    -90 | -160 |  -19 | -2.5  |         0 |          4 |       -202 |       -156 |         13 |
-| c_H_aggr50_with60_ge1         |    2164 |  14739 |        12.8 |        17 |      106 |      42   |     43.5 |    -89 | -164 |  -13 | -2.3  |         1 |          4 |       -100 |         24 |         36 |
-| c_H_ahead_touch_le2           |   12473 |   4430 |        73.8 |       116 |       33 |      43.3 |     43.3 |     83 |   12 |  155 |  2.28 |         4 |          4 |        159 |        234 |        819 |
-| c_H_gmax_against60_lt10       |    9325 |   7578 |        55.2 |       128 |       53 |      43.6 |     42.9 |     75 |   10 |  141 |  2.26 |         4 |          4 |         59 |         43 |       -129 |
-| c_H_no_spoof_mine300          |    8974 |   7929 |        53.1 |       130 |       54 |      43.9 |     42.6 |     77 |   10 |  143 |  2.25 |         3 |          4 |        171 |        345 |        558 |
-| c_H_aggr20_with_gt_against300 |    7676 |   9227 |        45.4 |        54 |      129 |      42.6 |     43.9 |    -75 | -141 |   -9 | -2.23 |         0 |          4 |        -98 |       -103 |       -386 |
 
 ### H items in stratum lvl:behind<=3pts(at a level) (n=4,312), 12 largest |z|
 
-| cond                     |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
-|:-------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
-| c_H_no_aged_big_ahead    |    4003 |    309 |        92.8 |        98 |      418 |      44.2 |     51.8 |   -320 | -574 |  -65 | -2.46 |         0 |          4 |         -8 |        nan |        nan |
-| c_H_no_big10_ahead       |    3809 |    503 |        88.3 |        94 |      323 |      43.8 |     51.5 |   -229 | -422 |  -36 | -2.33 |         0 |          4 |       -254 |        -49 |        nan |
-| c_H_arrival_imb30_pos    |    2580 |   1732 |        59.8 |        58 |      214 |      44.3 |     45.3 |   -156 | -295 |  -17 | -2.2  |         0 |          4 |       -174 |        235 |        573 |
-| c_H_touch_ratio_ge1.0    |    2883 |   1429 |        66.9 |        81 |      201 |      43.7 |     46.8 |   -119 | -263 |   24 | -1.63 |         0 |          4 |       -386 |       -185 |       -881 |
-| c_H_sweep3_with60_ge1    |    3003 |   1309 |        69.6 |        80 |      213 |      43.3 |     48   |   -133 | -294 |   28 | -1.62 |         0 |          4 |       -118 |        104 |        795 |
-| c_H_sweep3_with300_ge1   |    3955 |    357 |        91.7 |       140 |      -92 |      44.8 |     43.7 |    232 |  -82 |  546 |  1.45 |         3 |          4 |        nan |        nan |        nan |
-| c_H_ctr_mine_lt10_300    |    2634 |   1678 |        61.1 |       154 |       68 |      46.6 |     41.7 |     87 |  -50 |  223 |  1.25 |         3 |          4 |         41 |        234 |        126 |
-| c_H_ctr_ahead_ge30_60    |      99 |   4213 |         2.3 |       408 |      114 |      46.5 |     44.7 |    294 | -173 |  761 |  1.23 |         1 |          1 |        160 |       -109 |        nan |
-| c_H_big20_mine_present   |      71 |   4241 |         1.6 |      -219 |      126 |      36.6 |     44.8 |   -345 | -908 |  218 | -1.2  |         0 |          2 |        nan |        nan |        nan |
-| c_H_no_sweep3_against300 |     671 |   3641 |        15.6 |        11 |      141 |      45.3 |     44.6 |   -130 | -356 |   95 | -1.13 |         2 |          4 |        442 |        166 |        nan |
-| c_H_refill_mine60_ge1    |      52 |   4260 |         1.2 |       -97 |      123 |      40.4 |     44.8 |   -220 | -622 |  181 | -1.08 |         1 |          2 |        nan |        nan |        nan |
-| c_H_big10_mine_present   |     272 |   4040 |         6.3 |       248 |      112 |      47.8 |     44.5 |    136 | -132 |  403 |  0.99 |         3 |          4 |        686 |        nan |        nan |
+| cond                        |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
+|:----------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| c_H_no_aged_big_ahead       |    4003 |    309 |        92.8 |        98 |      418 |      44.2 |     51.8 |   -320 | -574 |  -65 | -2.46 |         0 |          4 |         -8 |        nan |        nan |
+| c_H2_bmax_ahead_lo          |    3806 |    502 |        88.4 |        93 |      326 |      43.8 |     51.6 |   -233 | -426 |  -40 | -2.36 |         0 |          4 |       -254 |        -49 |        nan |
+| c_H_no_big10_ahead          |    3809 |    503 |        88.3 |        94 |      323 |      43.8 |     51.5 |   -229 | -422 |  -36 | -2.33 |         0 |          4 |       -254 |        -49 |        nan |
+| c_H_arrival_imb30_pos       |    2580 |   1732 |        59.8 |        58 |      214 |      44.3 |     45.3 |   -156 | -295 |  -17 | -2.2  |         0 |          4 |       -174 |        235 |        573 |
+| c_H2_bmax_ahead_hi          |     453 |   3855 |        10.5 |       286 |      100 |      50.3 |     44.1 |    186 |  -15 |  387 |  1.82 |         4 |          4 |        254 |         49 |        nan |
+| c_H2_spoof_mine_gt_ahead300 |     900 |   3412 |        20.9 |        14 |      149 |      42.6 |     45.3 |   -136 | -289 |   18 | -1.73 |         2 |          4 |        -81 |        -94 |        nan |
+| c_H_touch_ratio_ge1.0       |    2883 |   1429 |        66.9 |        81 |      201 |      43.7 |     46.8 |   -119 | -263 |   24 | -1.63 |         0 |          4 |       -386 |       -185 |       -881 |
+| c_H2_gmax_with60_lo         |    1035 |   3273 |        24   |       233 |       84 |      46.5 |     44.2 |    148 |  -30 |  327 |  1.63 |         3 |          4 |        -64 |       -545 |       -311 |
+| c_H_sweep3_with60_ge1       |    3003 |   1309 |        69.6 |        80 |      213 |      43.3 |     48   |   -133 | -294 |   28 | -1.62 |         0 |          4 |       -118 |        104 |        795 |
+| c_H2_touch_mine_sz_hi       |     482 |   3826 |        11.2 |        -9 |      136 |      42.3 |     45   |   -145 | -330 |   40 | -1.54 |         1 |          4 |        -15 |       -106 |        362 |
+| c_H_sweep3_with300_ge1      |    3955 |    357 |        91.7 |       140 |      -92 |      44.8 |     43.7 |    232 |  -82 |  546 |  1.45 |         3 |          4 |        nan |        nan |        nan |
+| c_H2_spoof_ahead_gt_mine300 |    1267 |   3045 |        29.4 |       194 |       90 |      46.7 |     43.9 |    104 |  -39 |  246 |  1.42 |         2 |          4 |       -467 |         77 |        nan |
 
 ### H items in stratum lvl:behind<=5&ahead>=20 (n=1,154), 12 largest |z|
 
@@ -327,66 +346,66 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | c_H_touch_ratio_ge1.0         |     805 |    349 |        69.8 |        73 |      411 |      45.1 |     51.6 |   -338 | -583 |  -93 | -2.7  |         0 |          4 |       -419 |       -303 |        nan |
 | c_H_ctr_mine_lt10_300         |     529 |    625 |        45.8 |       329 |       45 |      51.8 |     43   |    284 |   52 |  517 |  2.39 |         1 |          3 |        -45 |         55 |        nan |
 | c_H_no_aged_big_ahead         |    1078 |     76 |        93.4 |       141 |      653 |      46   |     61.8 |   -512 | -941 |  -82 | -2.33 |         0 |          3 |        nan |        nan |        nan |
+| c_H2_touch_ahead_sz_lo        |     578 |    574 |        50.2 |        40 |      300 |      44.1 |     49.8 |   -260 | -493 |  -27 | -2.18 |         1 |          4 |       -311 |       -421 |        nan |
+| c_H2_spoof_mine300_hi         |     259 |    893 |        22.5 |       -10 |      222 |      46   |     47.3 |   -232 | -477 |   14 | -1.85 |         0 |          4 |       -641 |       -561 |        nan |
 | c_H_arrival_imb60_ge0.1       |     242 |    912 |        21   |       392 |      117 |      52.5 |     45.6 |    274 |  -39 |  587 |  1.72 |         4 |          4 |        -95 |       -275 |       -310 |
 | c_H_aggr50_with_gt_against300 |     280 |    874 |        24.3 |       320 |      128 |      51.8 |     45.5 |    192 |  -50 |  434 |  1.55 |         1 |          4 |        580 |        575 |         61 |
+| c_H2_spoof_mine_gt_ahead300   |     251 |    903 |        21.8 |        19 |      218 |      45.4 |     47.5 |   -199 | -454 |   56 | -1.53 |         1 |          4 |       -411 |        nan |        nan |
 | c_H_no_big10_ahead            |    1026 |    128 |        88.9 |       146 |      403 |      45.8 |     57   |   -256 | -588 |   76 | -1.51 |         1 |          4 |        -51 |        nan |        nan |
 | c_H_no_big20_ahead            |    1110 |     44 |        96.2 |       161 |      532 |      46.3 |     65.9 |   -372 | -885 |  142 | -1.42 |         1 |          1 |        nan |        nan |        nan |
+| c_H2_touch_mine_sz_hi         |     142 |   1010 |        12.3 |       -43 |      200 |      46.5 |     47   |   -242 | -585 |  100 | -1.39 |         1 |          4 |        -74 |        430 |        nan |
 | c_H_no_refill_ahead300        |    1061 |     93 |        91.9 |       190 |       -1 |      47.4 |     43   |    192 |  -84 |  468 |  1.36 |         3 |          4 |       -259 |        nan |        nan |
-| c_H_aggr50_with300_ge1        |     358 |    796 |        31   |       279 |      128 |      50.6 |     45.5 |    150 |  -78 |  379 |  1.29 |         2 |          4 |        554 |        598 |        186 |
-| c_H_arrival_imb30_ge0.1       |     267 |    887 |        23.1 |       321 |      131 |      51.3 |     45.8 |    190 | -108 |  488 |  1.25 |         3 |          4 |        217 |        299 |       -210 |
-| c_H_gmax_against60_lt25       |     961 |    193 |        83.3 |       200 |       51 |      47.3 |     45.6 |    148 |  -90 |  386 |  1.22 |         3 |          4 |        188 |       -100 |        nan |
-| c_H_ctr_ahead_gt_mine60       |     247 |    907 |        21.4 |        46 |      210 |      43.3 |     48.1 |   -164 | -441 |  113 | -1.16 |         1 |          4 |        171 |        -43 |        nan |
 
 ### H items in stratum lvl:behind<=5pts (n=7,606), 12 largest |z|
 
 | cond                    |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
 |:------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| c_H2_spoof_ahead300_hi  |    1518 |   6080 |        20   |        15 |      138 |      42.9 |     44.7 |   -123 | -225 |  -22 | -2.38 |         1 |          4 |       -443 |        -72 |       -634 |
 | c_H_touch_ratio_ge1.0   |    5174 |   2432 |        68   |        76 |      198 |      43.3 |     46.5 |   -122 | -230 |  -14 | -2.21 |         0 |          4 |       -311 |       -213 |       -503 |
 | c_H_no_aged_big_ahead   |    7056 |    550 |        92.8 |       100 |      310 |      43.8 |     51.4 |   -210 | -405 |  -15 | -2.11 |         0 |          4 |        272 |        804 |        nan |
 | c_H_no_aggr50_against60 |    7267 |    339 |        95.5 |       123 |      -52 |      44.6 |     38.9 |    175 |   12 |  337 |  2.1  |         3 |          4 |        287 |       -553 |        nan |
+| c_H2_spoof_ahead60_hi   |    1289 |   6309 |        17   |        25 |      132 |      43   |     44.6 |   -107 | -214 |   -1 | -1.97 |         2 |          4 |       -689 |        nan |        nan |
+| c_H2_touch_mine_sz_hi   |     863 |   6735 |        11.4 |       -11 |      130 |      41.8 |     44.6 |   -140 | -281 |    0 | -1.96 |         1 |          4 |       -135 |       -199 |        625 |
 | c_H_refill_mine300_ge1  |     357 |   7249 |         4.7 |       -27 |      122 |      40.1 |     44.5 |   -149 | -309 |   11 | -1.82 |         0 |          4 |       -129 |       -190 |        nan |
 | c_H_no_big10_ahead      |    6720 |    886 |        88.4 |        99 |      234 |      43.4 |     51.1 |   -134 | -282 |   13 | -1.79 |         1 |          4 |        114 |        468 |       -231 |
 | c_H_gmax_against60_lt25 |    6543 |   1063 |        86   |       129 |       31 |      44.5 |     43.2 |     98 |  -10 |  206 |  1.78 |         3 |          4 |       -102 |       -476 |        -24 |
-| c_H_spoof_ahead60_ge1   |    2367 |   5239 |        31.1 |        56 |      142 |      42.8 |     45   |    -86 | -186 |   15 | -1.67 |         1 |          4 |       -689 |        nan |        nan |
-| c_H_sweep3_with60_ge1   |    5386 |   2220 |        70.8 |        85 |      188 |      43.3 |     46.7 |   -104 | -226 |   18 | -1.66 |         0 |          4 |       -188 |       -147 |       1127 |
-| c_H_no_aggr20_against60 |    6067 |   1539 |        79.8 |       131 |       53 |      44.5 |     43.6 |     77 |  -21 |  176 |  1.53 |         3 |          4 |        -88 |       -422 |       -245 |
-| c_H_refill_mine60_ge1   |     108 |   7498 |         1.4 |      -106 |      118 |      38.9 |     44.4 |   -224 | -515 |   66 | -1.52 |         1 |          4 |        411 |        nan |        nan |
-| c_H_no_spoof_mine60     |    5430 |   2176 |        71.4 |       136 |       64 |      45   |     42.7 |     72 |  -31 |  174 |  1.38 |         3 |          4 |        346 |        336 |        nan |
-| c_H_ctr_mine_lt10_300   |    4480 |   3126 |        58.9 |       144 |       73 |      46   |     41.9 |     71 |  -31 |  173 |  1.37 |         3 |          4 |        481 |        698 |        474 |
+| c_H2_aggr20_with300_hi  |    1615 |   5983 |        21.3 |        50 |      131 |      43.3 |     44.6 |    -80 | -170 |    9 | -1.76 |         1 |          4 |       -149 |        128 |       -364 |
+| c_H2_bmax_ahead_lo      |    6714 |    884 |        88.4 |        98 |      230 |      43.4 |     51.1 |   -132 | -279 |   16 | -1.75 |         1 |          4 |        114 |        468 |       -231 |
+| c_H2_ctr_mine60_lo      |    1581 |   6017 |        20.8 |       205 |       90 |      47   |     43.6 |    116 |  -16 |  247 |  1.72 |         3 |          4 |        366 |        230 |         78 |
 
 ### H items in stratum lvl:behind>5 (n=12,192), 12 largest |z|
 
 | cond                          |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
 |:------------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| c_H2_arrival_imb60_lo         |    2299 |   9888 |        18.9 |       260 |       64 |      46.6 |     42.7 |    196 |   90 |  301 |  3.64 |         4 |          4 |        245 |        348 |        172 |
+| c_H2_spoof_ahead60_lo         |    8183 |   4004 |        67.2 |       140 |       21 |      44   |     42.3 |    118 |   40 |  196 |  2.98 |         4 |          4 |        502 |        739 |        nan |
 | c_H_spoof_ahead60_ge1         |    4006 |   8186 |        32.9 |        21 |      139 |      42.3 |     44   |   -118 | -196 |  -40 | -2.98 |         0 |          4 |       -502 |       -739 |        nan |
 | c_H_spoof_ahead300_ge1        |    5918 |   6274 |        48.5 |        40 |      157 |      42.6 |     44.1 |   -116 | -194 |  -39 | -2.95 |         0 |          4 |       -158 |       -254 |        -67 |
+| c_H2_spoof_ahead300_lo        |    6355 |   5832 |        52.2 |       154 |       42 |      44.2 |     42.6 |    112 |   35 |  190 |  2.85 |         4 |          4 |        158 |        254 |         67 |
 | c_H_arrival_imb60_pos         |    7952 |   4240 |        65.2 |        62 |      172 |      42.5 |     45.1 |   -110 | -192 |  -29 | -2.64 |         0 |          4 |       -214 |       -150 |        -19 |
 | c_H_aggr50_with300_ge1        |    3810 |   8382 |        31.2 |        37 |      129 |      42.6 |     43.8 |    -92 | -164 |  -19 | -2.48 |         1 |          4 |       -219 |       -254 |       -336 |
+| c_H2_ctr_mine300_lo           |    1831 |  10356 |        15   |       232 |       77 |      47.8 |     42.6 |    154 |   32 |  277 |  2.47 |         4 |          4 |         15 |        128 |        706 |
+| c_H2_spoof_ahead_gt_mine60    |    2573 |   9619 |        21.1 |        16 |      122 |      41.7 |     43.8 |   -106 | -194 |  -18 | -2.37 |         2 |          4 |       -662 |       -727 |        nan |
+| c_H2_ctr_ahead300_hi          |    2694 |   9493 |        22.1 |        12 |      126 |      39.4 |     44.6 |   -114 | -210 |  -18 | -2.33 |         1 |          4 |       -103 |       -288 |       -354 |
 | c_H_aggr50_with_gt_against300 |    2993 |   9199 |        24.6 |        32 |      122 |      42.8 |     43.6 |    -91 | -167 |  -14 | -2.33 |         0 |          4 |       -136 |       -112 |       -218 |
 | c_H_no_spoof_mine300          |    6362 |   5830 |        52.2 |       143 |       53 |      43.8 |     43   |     90 |   13 |  167 |  2.29 |         3 |          4 |        126 |        342 |        376 |
-| c_H_aggr50_with60_ge1         |    1732 |  10460 |        14.2 |        15 |      114 |      42.3 |     43.6 |    -99 | -185 |  -13 | -2.26 |         0 |          4 |        -88 |         29 |        -23 |
-| c_H_gmax_against60_lt10       |    6195 |   5997 |        50.8 |       144 |       55 |      43.4 |     43.4 |     89 |   11 |  166 |  2.25 |         3 |          4 |        132 |        229 |        194 |
-| c_H_gmax_with60_ge10          |    8017 |   4175 |        65.8 |        67 |      164 |      43.1 |     44   |    -97 | -187 |   -8 | -2.13 |         0 |          4 |         13 |        128 |        167 |
-| c_H_aggr20_with_gt_against300 |    5879 |   6313 |        48.2 |        59 |      138 |      42.8 |     44   |    -79 | -156 |   -2 | -2.01 |         0 |          4 |        -75 |        -55 |       -357 |
-| c_H_aggr50_with_gt_against60  |    1533 |  10659 |        12.6 |        19 |      112 |      42.7 |     43.5 |    -93 | -184 |   -2 | -1.99 |         0 |          4 |        -72 |         82 |         -4 |
-| c_H_ahead_touch_le2           |    9211 |   2981 |        75.6 |       120 |       37 |      43.3 |     43.6 |     83 |    1 |  165 |  1.99 |         4 |          4 |        161 |        182 |        779 |
 
 ### H items in stratum lvl:cluster_behind_10 (n=12,752), 12 largest |z|
 
 | cond                    |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   win_yes |   win_no |   lift |   lo |   hi |     z |   yrs_pos |   yrs_eval |   lift_L6M |   lift_L3M |   lift_L1M |
 |:------------------------|--------:|-------:|------------:|----------:|---------:|----------:|---------:|-------:|-----:|-----:|------:|----------:|-----------:|-----------:|-----------:|-----------:|
 | c_H_spoof_ahead60_ge1   |    4469 |   8283 |        35   |        26 |      171 |      42.3 |     45.1 |   -145 | -219 |  -71 | -3.85 |         0 |          4 |       -882 |      -1134 |        nan |
+| c_H2_spoof_ahead60_lo   |    8275 |   4465 |        65   |       170 |       27 |      45.1 |     42.4 |    143 |   69 |  217 |  3.79 |         4 |          4 |        882 |       1134 |        nan |
 | c_H_gmax_against60_lt10 |    6786 |   5966 |        53.2 |       181 |       52 |      44.8 |     43.3 |    129 |   55 |  202 |  3.42 |         3 |          4 |        144 |        145 |         44 |
+| c_H2_arrival_imb60_lo   |    2492 |  10248 |        19.6 |       255 |       87 |      47.3 |     43.4 |    167 |   67 |  267 |  3.28 |         4 |          4 |        404 |        233 |        -11 |
 | c_H_arrival_imb30_pos   |    7651 |   5101 |        60   |        71 |      195 |      43.2 |     45.4 |   -124 | -202 |  -47 | -3.16 |         0 |          4 |       -201 |       -109 |         89 |
 | c_H_no_aged_big_ahead   |   11832 |    920 |        92.8 |       105 |      322 |      43.6 |     50.9 |   -217 | -361 |  -73 | -2.96 |         1 |          4 |       -167 |       -178 |       -890 |
 | c_H_arrival_imb60_pos   |    8234 |   4518 |        64.6 |        81 |      193 |      43.1 |     45.9 |   -112 | -190 |  -33 | -2.8  |         0 |          4 |       -264 |        -98 |        -11 |
+| c_H2_spoof_ahead300_hi  |    3059 |   9681 |        24   |        43 |      144 |      43.3 |     44.4 |   -101 | -175 |  -27 | -2.66 |         0 |          4 |       -324 |       -348 |       -570 |
 | c_H_spoof_ahead300_ge1  |    6551 |   6201 |        51.4 |        71 |      173 |      43.5 |     44.8 |   -101 | -177 |  -25 | -2.62 |         0 |          4 |       -338 |       -348 |       -570 |
+| c_H2_spoof_ahead300_lo  |    6297 |   6443 |        49.4 |       170 |       71 |      44.7 |     43.5 |     99 |   23 |  175 |  2.57 |         4 |          4 |        338 |        348 |        570 |
+| c_H2_ctr_mine300_hi     |    2750 |   9990 |        21.6 |        27 |      146 |      40.6 |     45.1 |   -119 | -211 |  -27 | -2.54 |         0 |          4 |          3 |        -89 |       -380 |
 | c_H_no_spoof_mine60     |    8629 |   4123 |        67.7 |       152 |       56 |      44.7 |     42.9 |     96 |   22 |  170 |  2.54 |         3 |          4 |        227 |        137 |       -446 |
-| c_H_no_spoof_mine300    |    6436 |   6316 |        50.5 |       168 |       73 |      44.7 |     43.5 |     95 |   20 |  170 |  2.47 |         4 |          4 |        246 |        357 |        232 |
-| c_H_gmax_with60_ge10    |    7975 |   4777 |        62.5 |        83 |      184 |      43.3 |     45.4 |   -100 | -185 |  -16 | -2.34 |         0 |          4 |         -3 |        -24 |        120 |
-| c_H_aggr50_with60_ge1   |    1829 |  10923 |        14.3 |        38 |      134 |      42.5 |     44.4 |    -97 | -178 |  -15 | -2.31 |         0 |          4 |       -110 |        -16 |        -42 |
-| c_H_aggr50_with300_ge1  |    3962 |   8790 |        31.1 |        64 |      146 |      43.1 |     44.5 |    -81 | -151 |  -12 | -2.29 |         1 |          4 |       -236 |       -258 |       -343 |
-| c_H_sweep3_with60_ge1   |    9530 |   3222 |        74.7 |        93 |      203 |      43.2 |     46.9 |   -110 | -207 |  -13 | -2.22 |         0 |          4 |       -215 |       -237 |        190 |
 
 ### Year-by-year for the spoof-like items and the five largest pooled H items (lift in $/trade, yes minus no; n_yes shown)
 
@@ -442,63 +461,63 @@ Basis: net $ per trade at base lots, engine fee $1.18/contract (pnl in the entry
 | lvl:behind<=5&ahead>=20             |     822 |    332 |    100 |  0.86 |          74 |         288 |         518 |         199 |        468 |
 | lvl:behind>5                        |    8464 |   3728 |     34 |  0.85 |          97 |        -132 |          52 |          57 |        235 |
 
-`c_H_gmax_against60_lt10`
+`c_H2_arrival_imb60_lo`
 
 | cell                                |   n_yes |   n_no |   lift |     z |   lift_2023 |   lift_2024 |   lift_2025 |   lift_2026 |   lift_L6M |
 |:------------------------------------|--------:|-------:|-------:|------:|------------:|------------:|------------:|------------:|-----------:|
-| ALL                                 |   10693 |   9105 |     79 |  2.57 |          81 |          68 |          42 |         105 |         86 |
-| sess:0                              |    5582 |   1717 |    103 |  1.35 |         104 |          -0 |         -38 |         218 |        205 |
-| sess:1                              |    4703 |   1749 |     -4 | -0.09 |          26 |           7 |         -49 |          16 |         -5 |
-| sess:3                              |     282 |   4629 |   -150 | -1.77 |         183 |        -241 |        -293 |         -14 |        -30 |
-| sess:4                              |     126 |   1010 |   -210 | -1.85 |        -159 |        -376 |          86 |        -390 |       -545 |
-| lvl:behind<=3pts(at a level)        |    2582 |   1730 |     18 |  0.27 |         -74 |         202 |        -156 |          59 |         77 |
-| lvl:behind<=5pts                    |    4498 |   3108 |     61 |  1.24 |          48 |         187 |           0 |         -14 |        -26 |
-| lvl:ahead<=10pts(level close ahead) |    6996 |   5350 |     97 |  2.47 |          73 |         128 |          56 |          89 |         93 |
-| lvl:ahead<=20pts                    |    9325 |   7578 |     75 |  2.26 |          55 |          96 |          35 |          84 |         59 |
-| lvl:cluster_behind_10               |    6786 |   5966 |    129 |  3.42 |         232 |         158 |         -20 |         168 |        144 |
-| lvl:behind<=5&ahead>=20             |     603 |    551 |     74 |  0.63 |          25 |         372 |         190 |         -35 |        105 |
-| lvl:behind>5                        |    6195 |   5997 |     89 |  2.25 |         115 |         -53 |          67 |         155 |        132 |
+| ALL                                 |    3861 |  15924 |    144 |  3.44 |          75 |         200 |         114 |         160 |        249 |
+| sess:0                              |    1666 |   5628 |    178 |  2.12 |         112 |          49 |         254 |         222 |        324 |
+| sess:1                              |    1279 |   5171 |    100 |  1.67 |          66 |         251 |          21 |          89 |        148 |
+| sess:3                              |     755 |   4150 |    111 |  2.01 |          33 |         284 |         -63 |         159 |        268 |
+| sess:4                              |     161 |    975 |     -4 | -0.04 |         -90 |         142 |          97 |        -273 |       -207 |
+| lvl:behind<=3pts(at a level)        |     873 |   3435 |     94 |  1.03 |          -1 |         222 |         106 |          10 |        295 |
+| lvl:behind<=5pts                    |    1562 |   6036 |     66 |  0.98 |         106 |         141 |         -50 |          78 |        260 |
+| lvl:ahead<=10pts(level close ahead) |    2495 |   9842 |    130 |  2.42 |          88 |         253 |          86 |          84 |        200 |
+| lvl:ahead<=20pts                    |    3335 |  13557 |    139 |  3.06 |          74 |         184 |         128 |         142 |        234 |
+| lvl:cluster_behind_10               |    2492 |  10248 |    167 |  3.28 |          87 |         154 |         135 |         270 |        404 |
+| lvl:behind<=5&ahead>=20             |     210 |    942 |     47 |  0.3  |         438 |         156 |         275 |        -255 |       -182 |
+| lvl:behind>5                        |    2299 |   9888 |    196 |  3.64 |          34 |         244 |         210 |         196 |        245 |
 
-`c_H_no_aged_big_ahead`
-
-| cell                                |   n_yes |   n_no |   lift |     z |   lift_2023 |   lift_2024 |   lift_2025 |   lift_2026 |   lift_L6M |
-|:------------------------------------|--------:|-------:|-------:|------:|------------:|------------:|------------:|------------:|-----------:|
-| ALL                                 |   18599 |   1199 |   -165 | -2.57 |        -204 |        -184 |          51 |        -590 |       -484 |
-| sess:0                              |    6872 |    427 |   -344 | -2.38 |        -470 |        -198 |        -254 |        -692 |       -580 |
-| sess:1                              |    6069 |    383 |     17 |  0.19 |        -134 |          27 |         316 |        -336 |       -158 |
-| sess:3                              |    4615 |    296 |   -267 | -3.22 |        -105 |        -583 |         101 |        -799 |       -550 |
-| sess:4                              |    1043 |     93 |    209 |  1.56 |         290 |         280 |         224 |         nan |        nan |
-| lvl:behind<=3pts(at a level)        |    4003 |    309 |   -320 | -2.46 |        -512 |        -244 |        -222 |        -192 |         -8 |
-| lvl:behind<=5pts                    |    7056 |    550 |   -210 | -2.11 |        -371 |        -191 |         -94 |        -125 |        272 |
-| lvl:ahead<=10pts(level close ahead) |   11501 |    845 |    -66 | -0.84 |        -143 |        -213 |         174 |        -280 |        -84 |
-| lvl:ahead<=20pts                    |   15852 |   1051 |   -148 | -2.13 |        -199 |        -226 |         103 |        -538 |       -421 |
-| lvl:cluster_behind_10               |   11832 |    920 |   -217 | -2.96 |        -307 |        -295 |         104 |        -671 |       -167 |
-| lvl:behind<=5&ahead>=20             |    1078 |     76 |   -512 | -2.33 |         -75 |        -235 |        -411 |         nan |        nan |
-| lvl:behind>5                        |   11543 |    649 |   -126 | -1.5  |         -22 |        -155 |         142 |        -770 |       -850 |
-
-`c_H_aggr50_with300_ge1`
+`c_H2_spoof_ahead60_lo`
 
 | cell                                |   n_yes |   n_no |   lift |     z |   lift_2023 |   lift_2024 |   lift_2025 |   lift_2026 |   lift_L6M |
 |:------------------------------------|--------:|-------:|-------:|------:|------------:|------------:|------------:|------------:|-----------:|
-| ALL                                 |    5828 |  13970 |    -74 | -2.52 |         -93 |         -20 |         -26 |        -138 |       -177 |
-| sess:0                              |     904 |   6395 |    -85 | -0.94 |         -54 |         137 |         213 |        -331 |       -460 |
-| sess:1                              |     769 |   5683 |     52 |  0.74 |          60 |         181 |           9 |           5 |        101 |
-| sess:3                              |    3455 |   1456 |    -39 | -0.89 |        -170 |         -20 |          78 |         -88 |       -166 |
-| sess:4                              |     700 |    436 |     51 |  0.69 |          56 |         171 |        -128 |         156 |        310 |
-| lvl:behind<=3pts(at a level)        |    1117 |   3195 |    -11 | -0.17 |          52 |         -26 |           6 |         -86 |       -108 |
-| lvl:behind<=5pts                    |    2018 |   5588 |    -41 | -0.84 |         -10 |         -40 |         -29 |         -79 |        -71 |
-| lvl:ahead<=10pts(level close ahead) |    3446 |   8900 |    -79 | -2.07 |         -87 |         -50 |          -8 |        -136 |       -237 |
-| lvl:ahead<=20pts                    |    4821 |  12082 |    -91 | -2.86 |         -52 |         -62 |         -42 |        -167 |       -253 |
-| lvl:cluster_behind_10               |    3962 |   8790 |    -81 | -2.29 |        -206 |         -57 |          39 |        -119 |       -236 |
-| lvl:behind<=5&ahead>=20             |     358 |    796 |    150 |  1.29 |        -195 |          70 |        -148 |         380 |        554 |
-| lvl:behind>5                        |    3810 |   8382 |    -92 | -2.48 |        -168 |          10 |         -27 |        -163 |       -219 |
+| ALL                                 |   13416 |   6369 |    105 |  3.34 |          -9 |          97 |          76 |         246 |        546 |
+| sess:0                              |    5967 |   1327 |    164 |  1.8  |        -199 |         196 |         116 |         470 |       1330 |
+| sess:1                              |    4967 |   1483 |    -15 | -0.27 |        -142 |         -88 |          23 |          64 |        610 |
+| sess:3                              |    1964 |   2941 |     82 |  2.07 |         115 |         153 |          13 |         100 |        355 |
+| sess:4                              |     518 |    618 |    -14 | -0.19 |        -134 |        -174 |         -70 |         374 |         98 |
+| lvl:behind<=3pts(at a level)        |    2977 |   1331 |     40 |  0.58 |        -250 |         176 |          52 |         184 |        778 |
+| lvl:behind<=5pts                    |    5233 |   2365 |     83 |  1.61 |         -56 |         112 |          72 |         320 |        689 |
+| lvl:ahead<=10pts(level close ahead) |    8364 |   3973 |    125 |  3.08 |         -29 |          95 |          79 |         302 |        691 |
+| lvl:ahead<=20pts                    |   11423 |   5469 |    123 |  3.6  |         -26 |         131 |          76 |         276 |        488 |
+| lvl:cluster_behind_10               |    8275 |   4465 |    143 |  3.79 |          53 |         174 |         118 |         223 |        882 |
+| lvl:behind<=5&ahead>=20             |     803 |    349 |    -14 | -0.11 |          20 |          78 |         301 |         208 |        969 |
+| lvl:behind>5                        |    8183 |   4004 |    118 |  2.98 |          36 |          67 |          80 |         218 |        502 |
+
+`c_H2_ctr_mine300_lo`
+
+| cell                                |   n_yes |   n_no |   lift |     z |   lift_2023 |   lift_2024 |   lift_2025 |   lift_2026 |   lift_L6M |
+|:------------------------------------|--------:|-------:|-------:|------:|------------:|------------:|------------:|------------:|-----------:|
+| ALL                                 |    3372 |  16413 |    129 |  2.77 |         190 |          82 |         151 |         127 |         99 |
+| sess:0                              |    1854 |   5440 |    130 |  1.62 |         169 |          27 |         291 |         105 |        -21 |
+| sess:1                              |     801 |   5649 |     74 |  0.97 |         360 |         176 |        -183 |         194 |        420 |
+| sess:3                              |     580 |   4325 |    -19 | -0.33 |          30 |        -159 |          39 |         -11 |         -2 |
+| sess:4                              |     137 |    999 |    142 |  1.18 |         nan |          75 |         140 |         175 |        172 |
+| lvl:behind<=3pts(at a level)        |     905 |   3403 |    -48 | -0.52 |        -110 |        -210 |         214 |         -21 |       -103 |
+| lvl:behind<=5pts                    |    1541 |   6057 |     95 |  1.36 |         142 |         -67 |          57 |         317 |        275 |
+| lvl:ahead<=10pts(level close ahead) |    2260 |  10077 |    104 |  1.74 |         138 |          87 |         161 |          56 |        -36 |
+| lvl:ahead<=20pts                    |    2916 |  13976 |    142 |  2.78 |         169 |          96 |         175 |         152 |        133 |
+| lvl:cluster_behind_10               |    2334 |  10406 |     68 |  1.24 |         188 |          36 |          32 |          57 |        -92 |
+| lvl:behind<=5&ahead>=20             |     209 |    943 |   -107 | -0.67 |         242 |        -102 |          -2 |        -377 |       -518 |
+| lvl:behind>5                        |    1831 |  10356 |    154 |  2.47 |         271 |         216 |         212 |          29 |         15 |
 
 H caveat: MBO covers 2023-04..2026-11 after the history purchase, so years can test stability.
 
 ## Skipped signals (not taken by the live stack): the same conditions on the hypothetical outcome (1-minute bars, entry-table outcome_type hyp1m), lift in R (units of risk), not $
 
 
-### ALL_skipped (n=171,722; mean R = 0.017 typical), 10 largest |z|
+### ALL_skipped (n=171,722; mean R = 0.018 typical), 10 largest |z|
 
 | cond                        |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   lift |      z |   yrs_pos |   yrs_eval |
 |:----------------------------|--------:|-------:|------------:|----------:|---------:|-------:|-------:|----------:|-----------:|
@@ -558,7 +577,7 @@ H caveat: MBO covers 2023-04..2026-11 after the history purchase, so years can t
 | c_I_ratio_trend240_pos      |   60229 |  22345 |        72.9 |     0.037 |   -0.016 |  0.053 |  8.36 |         4 |          4 |
 | c_B5_RTY_15m_ema_stack_with |   46545 |  45639 |        50.5 |     0.046 |    0.002 |  0.044 |  8.3  |         4 |          4 |
 
-### reason:other (n=8,221; mean R = 0.009 typical), 10 largest |z|
+### reason:other (n=8,221; mean R = 0.010 typical), 10 largest |z|
 
 | cond                        |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   lift |     z |   yrs_pos |   yrs_eval |
 |:----------------------------|--------:|-------:|------------:|----------:|---------:|-------:|------:|----------:|-----------:|
@@ -573,7 +592,7 @@ H caveat: MBO covers 2023-04..2026-11 after the history purchase, so years can t
 | c_J_beyond_0dte_flip_Nd_vol |    1219 |    670 |        64.5 |     0.068 |   -0.109 |  0.178 |  3.97 |         3 |          3 |
 | c_J_beyond_0dte_flip_Nd_oi  |    1163 |    646 |        64.3 |     0.076 |   -0.103 |  0.18  |  3.92 |         3 |          3 |
 
-### reason:session_lots_0 (n=34,664; mean R = 0.031 typical), 10 largest |z|
+### reason:session_lots_0 (n=34,664; mean R = 0.032 typical), 10 largest |z|
 
 | cond                        |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   lift |     z |   yrs_pos |   yrs_eval |
 |:----------------------------|--------:|-------:|------------:|----------:|---------:|-------:|------:|----------:|-----------:|
@@ -588,7 +607,7 @@ H caveat: MBO covers 2023-04..2026-11 after the history purchase, so years can t
 | c_J_wall_behind50_Nh_oi     |    1920 |  12936 |        12.9 |     0.121 |    0.005 |  0.116 |  5.54 |         3 |          3 |
 | c_B5_corr_NQ_ES_60_ge0.9    |   17085 |  17579 |        49.3 |     0.009 |    0.058 | -0.049 | -5.48 |         0 |          4 |
 
-### reason:timeBlocked (n=15,536; mean R = -0.014 typical), 10 largest |z|
+### reason:timeBlocked (n=15,536; mean R = -0.013 typical), 10 largest |z|
 
 | cond                       |   n_yes |   n_no |   share_yes |   exp_yes |   exp_no |   lift |     z |   yrs_pos |   yrs_eval |
 |:---------------------------|--------:|-------:|------------:|----------:|---------:|-------:|------:|----------:|-----------:|
