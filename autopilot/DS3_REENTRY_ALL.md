@@ -1,8 +1,8 @@
 # DS3_REENTRY_ALL - re-entry discipline for K7 M7 U7 H7 A7 O7 (W-RA, priority 6)
 
-**VERDICT: 46 of 258 re-entry cells x windows scored (315 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
+**VERDICT: 46 of 258 re-entry cells x windows scored (354 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
 
-Built epoch 1794745081. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
+Built epoch 1794755939. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
 
 ## 1. Where the money is by entry number and fresh vs rechase (JN05W2, exact engine trades; $/wk by window)
 
@@ -238,20 +238,26 @@ Stack level (scope all):
 
 | real | win | pl_dMean_min | pl_dMean_max | pl_ddcut_min | pl_ddcut_max | n | d_mean | dd_cut_pct |
 |---|---|---|---|---|---|---|---|---|
+| BLKiv | HOLD | -836.7 | -477.3 | 15.1 | 16.8 | 2 | -864.8 | 19.1 |
+| BLKiv | L3M | -3422.8 | -2806.8 | -18.5 | -15.3 | 3 | -2926.1 | -4.7 |
+| BLKiv | L6M | -3434.9 | -2512.6 | -18.5 | -15.3 | 3 | -3450.9 | -4.7 |
 | CAP2 | HOLD | -3084.3 | -2779.3 | -1.0 | 2.1 | 3 | -2855.4 | 8.6 |
 | CAP2 | L3M | -5707.5 | -4060.4 | -11.5 | -3.5 | 3 | -5056.8 | -12.8 |
 | CAP2 | L6M | -5951.2 | -5052.5 | -11.5 | -3.5 | 3 | -5188.3 | -12.8 |
 | CAP3 | HOLD | -3322.3 | -2357.7 | -8.1 | 4.6 | 3 | -594.1 | 8.5 |
 | CAP3 | L3M | -7321.5 | -4976.5 | -9.7 | -3.7 | 3 | -2233.5 | 5.2 |
 | CAP3 | L6M | -5899.0 | -5216.2 | -9.7 | -3.7 | 3 | -2154.4 | 5.2 |
-| CAP4 | HOLD | -569.8 | -569.8 | 2.0 | 2.0 | 1 | -272.4 | 0.1 |
+| CAP4 | HOLD | -1390.5 | -569.8 | 2.0 | 2.5 | 3 | -272.4 | 0.1 |
 | CAP4 | L3M | -5048.7 | -2727.2 | -9.8 | 14.1 | 3 | -2861.4 | 4.0 |
-| CAP4 | L6M | -3702.0 | -2533.1 | -9.8 | 14.1 | 2 | -1811.4 | 4.0 |
+| CAP4 | L6M | -3702.0 | -2533.1 | -9.8 | 14.1 | 3 | -1811.4 | 4.0 |
 
 ### Scoped exact placebos for the leads (random block at the real per-book rate, 3 seeds)
 
 | cell | scope | win | real_dMean | pl_dMean_min | pl_dMean_max | real_ddcut | pl_ddcut_min | pl_ddcut_max | seeds | beats_all_placebos_on_both |
 |---|---|---|---|---|---|---|---|---|---|---|
+| BLKiv | M7:london | L3M | 333.2 | 276.1 | 389.5 | 19.1 | 16.8 | 19.1 | 3 | False |
+| BLKiv | M7:london | L6M | 699.2 | 628.1 | 799.6 | 19.1 | 16.8 | 19.1 | 3 | False |
+| BLKiv | M7:london | HOLD | 794.8 | 764.8 | 804.4 | 33.4 | 31.6 | 33.4 | 2 | False |
 | CAP2 | M7:london | L3M | 1380.8 | 245.9 | 734.0 | 46.8 | 25.3 | 33.4 | 3 | True |
 | CAP2 | M7:london | L6M | 887.3 | 288.1 | 468.4 | 46.8 | 9.5 | 33.4 | 3 | True |
 | CAP2 | M7:london | HOLD | 665.3 | 197.9 | 566.4 | 39.9 | 20.9 | 25.5 | 3 | True |
@@ -262,8 +268,8 @@ Stack level (scope all):
 | CAP3 | M7:london | L6M | 1324.8 | -399.6 | 269.0 | 39.2 | -25.1 | 3.6 | 3 | True |
 | CAP3 | M7:london | HOLD | 916.3 | -269.9 | 701.1 | 32.8 | -47.3 | -2.9 | 3 | True |
 | CAP4 | M7:london | L3M | 500.1 | -787.9 | 602.7 | 18.4 | -6.2 | 5.8 | 3 | False |
-| CAP4 | M7:london | L6M | 997.3 | -520.3 | 79.5 | 18.4 | -24.4 | 5.8 | 2 | True |
-| CAP4 | M7:london | HOLD | 457.1 | 144.5 | 144.5 | 27.8 | 13.7 | 13.7 | 1 | True |
+| CAP4 | M7:london | L6M | 997.3 | -520.3 | 170.9 | 18.4 | -24.4 | 5.8 | 3 | True |
+| CAP4 | M7:london | HOLD | 457.1 | -51.5 | 164.5 | 27.8 | -2.3 | 13.7 | 3 | True |
 
 ## 5b. Walk-forward every 2 weeks (per book x session pick of the best of 14 cells on trailing 182 days, DD cut + 0.5 x mean; none if <= 0)
 

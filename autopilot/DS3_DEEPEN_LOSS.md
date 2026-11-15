@@ -1,6 +1,6 @@
-# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 14:58Z
+# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 15:22Z
 
-**VERDICT (running): 74 LA cells scored, 49 pass the programme tolerant gate in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
+**VERDICT (running): 75 LA cells scored, 49 pass the programme tolerant gate in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
 
 LOT BASIS: sets are JN05W2 at BASE lots (live = x1.75; live caps = engine caps x1.75, P7 8,400 engine = 14,700 live). Engine fee $1.18/contract RT vs FEES.md $4.84: column d_mean_484 reprices the change in lots. dd/ww are $ per week series at base lots. prog = tolerant gate (dd cut > -2% and mean change > -3% of reference); strict = dd44_cut>0 and d_mean_484>=0 and dd_cut>=0.
 Cells: TL3_LA_<grp>_*  S = state-cut grid (NOCUT, persist P1/2/3/5, arm A+-5/10, mult M05/M2, win W2/5/10; P7 edits the F3 context cells, FP/RP = fresh/rechase only) | E = WL_E1 | C = C22 | F = flat cuts (session, alone = book state cut OFF, tight, FC forecast units, ATR) | FA = state-cut arm in forecast units | X = state-cut arm +-10 under an entry-context tag. Hook code/th_deepen_la/la_hooks.py (identity: see below). W-PM owns all-session flat cuts TL3_PM_X_*.
@@ -134,7 +134,7 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_FA_P7_K03 |      26 | 18884.6 |  -6252.3 | 46903.5 |  36370.5 |    -29   |      -53.4 |      0 |        0 |    -6081.1 |      -6170.4 | -46903.5 | -36370.5 |     0.6 |     0 |      49.1 |          57.1 |  152.6 |      160.3 |
 
 ## 5. CONTEXT-TAGGED STATE CUT (items 1, 5)
-### L3M (11 cells)
+### L3M (12 cells)
 | cell                 |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:---------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_X_K7_FIRSTA_T |      13 | 16820.5 |    805.3 | 29132.7 |  36370.5 |     19.9 |        4.6 |      1 |        1 |     -157.5 |        814.9 | -26388.4 | -36370.5 |     1   |     0 |      48.8 |          52.5 |  142.5 |      144.2 |
@@ -147,9 +147,10 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_X_K7_GAP15_L  |      13 | 16921.7 |    906.5 | 32888.7 |  36370.5 |      9.6 |       -7.7 |      1 |        0 |       -5.3 |        909   | -27038.4 | -36370.5 |     1   |     0 |      47.6 |          52.5 |  143.3 |      144.2 |
 | TL3_LA_X_K7_CH1_L    |      13 | 17144   |   1128.8 | 34331.6 |  36370.5 |      5.6 |        4.7 |      1 |        1 |     1053   |       1142.6 | -34331.6 | -36370.5 |     1.1 |     0 |      44.5 |          52.5 |  141.2 |      144.2 |
 | TL3_LA_X_K7_FRESH_T  |      13 | 15677.9 |   -337.3 | 36738   |  36370.5 |     -1   |        0   |      1 |        0 |     -334.7 |       -328   | -36738   | -36370.5 |     1   |     0 |      51.5 |          52.5 |  142.6 |      144.2 |
+| TL3_LA_X_K7_FRESH_L  |      13 | 15667.6 |   -347.6 | 36738   |  36370.5 |     -1   |        0   |      1 |        0 |     -346   |       -338.3 | -36738   | -36370.5 |     1   |     0 |      51.4 |          52.5 |  142.6 |      144.2 |
 | TL3_LA_X_K7_CH1_T    |      13 | 16990.6 |    975.4 | 37826.8 |  36370.5 |     -4   |        5.4 |      0 |        0 |     1178   |        989.2 | -37826.8 | -36370.5 |     1.1 |     0 |      46.5 |          52.5 |  141.2 |      144.2 |
 
-### L6M (11 cells)
+### L6M (12 cells)
 | cell                 |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:---------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_X_K7_FIRSTA_T |      26 | 24834.8 |   -302.1 | 29132.7 |  36370.5 |     19.9 |        4.6 |      1 |        0 |     -808.5 |       -293.4 | -26388.4 | -36370.5 |       1 |     1 |      53.3 |          57.1 |  158.7 |      160.3 |
@@ -162,6 +163,7 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_X_K7_GAP15_L  |      26 | 25893.9 |    757   | 32888.7 |  36370.5 |      9.6 |       -7.7 |      1 |        0 |      313.4 |        763   | -27038.4 | -36370.5 |       1 |     0 |      51.6 |          57.1 |  158.5 |      160.3 |
 | TL3_LA_X_K7_CH1_L    |      26 | 25074.4 |    -62.5 | 34331.6 |  36370.5 |      5.6 |        4.7 |      1 |        0 |     -146.6 |        -59.3 | -34331.6 | -36370.5 |       1 |     1 |      49.9 |          57.1 |  159.2 |      160.3 |
 | TL3_LA_X_K7_FRESH_T  |      26 | 23882.8 |  -1254.1 | 36738   |  36370.5 |     -1   |       -0   |      0 |        0 |    -1289.6 |      -1249.5 | -36738   | -36370.5 |       1 |     1 |      56.2 |          57.1 |  159.5 |      160.3 |
+| TL3_LA_X_K7_FRESH_L  |      26 | 23866.8 |  -1270.1 | 36738   |  36370.5 |     -1   |       -0   |      0 |        0 |    -1306.2 |      -1265.4 | -36738   | -36370.5 |       1 |     1 |      56   |          57.1 |  159.5 |      160.3 |
 | TL3_LA_X_K7_CH1_T    |      26 | 25113.5 |    -23.3 | 37826.8 |  36370.5 |     -4   |        5.4 |      0 |        0 |       34   |        -20.1 | -37826.8 | -36370.5 |       1 |     1 |      52.1 |          57.1 |  159.2 |      160.3 |
 
 ## 7. FLAT CUTS (item 2)
@@ -271,9 +273,9 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 # SECTION W-LB (items 6-9)
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 111 of 504 cells have an exact L3M result so far; 34 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 114 of 504 cells have an exact L3M result so far; 34 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T14:33Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T15:04Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -378,6 +380,8 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | BR_P7_X5 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | BR_P7_H2 | 3 | 0.4 / -1321 / -1286 / -1222 / 187 / False / -6.5 / 0.97 / 0 | - / - / - / - | - / - | - / - |
 | BR_P7_V19 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_Snyp | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_G2 | 3 | 1.2 / -145 / -140 / -125 / 615 / True / 7.3 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 
 ### EV  skips / half before scheduled events (calendar from 2024-10; identity before)
 
@@ -421,6 +425,7 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | RB_nyam_K125_BR | 3 | -2.3 / 222 / 228 / 245 / -1199 / False / 2.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
 | RB_nyam_K100_BRH | 3 | 0.0 / -189 / -187 / -183 / 0 / True / 0.0 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 | RB_nyam_K100_EV | 3 | 0.0 / 175 / 179 / 188 / 0 / True / 10.5 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| RB_nypm_K75_BR | 3 | 0.0 / -270 / -268 / -265 / 0 / True / -0.6 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | RB_nypm_K125_BR | 3 | 0.0 / -228 / -227 / -225 / 0 / True / -2.8 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | RB_nypm_K100_BRH | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | RB_nypm_K100_EV | 3 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
