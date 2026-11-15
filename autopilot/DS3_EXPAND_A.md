@@ -1,8 +1,8 @@
 # DS3_EXPAND_A - family A: the session's own early result sets the size
 
-**VERDICT: Exact results on 91 cell-months of 19 cells so far; best L6M drawdown cut TL3_EA_SF_NP_S1_U150_R120_CXN 0.0% (d mean -157 $/wk); nothing is a PASS, placebos and walk-forward still to come.**
+**VERDICT: Exact results on 97 cell-months of 20 cells so far; best L6M drawdown cut TL3_EA_SF_NP_S1_U150_R120_CXN 0.0% (d mean -157 $/wk); nothing is a PASS, placebos and walk-forward still to come.**
 
-**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-15 02:55 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
+**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-15 03:15 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
 
 ## 0. Identity and parent
 
@@ -69,6 +69,8 @@ dd cut % = (maxDD ref - maxDD cell) / maxDD ref (positive = shallower). dd44 = w
 | TL3_EA_CYS1_NP_S1_U150_RN | L6M | 26 | 0.0 | 7.8 | 442 | 432 | -36371 / -36371 | 1.02 | 0 | 55.00 / 57.08 | 156.2 / 160.3 |
 | TL3_EA_CYS1_P7_ALL_H50_RN_CXC | L1M | 4 | 0.0 | - | 0 | 12 | -36371 / -36371 | 1.00 | 0 | 56.00 / 56.00 | 149.5 / 149.5 |
 | TL3_EA_CYS1_P7_ALL_H50_RN_CXC | L3M | 13 | 0.0 | 0.0 | 131 | 145 | -36371 / -36371 | 1.00 | 0 | 52.31 / 52.46 | 144.0 / 144.2 |
+| TL3_EA_F1_ALL_ALL_H50_R120 | L1M | 4 | 0.0 | - | 0 | 30 | -36371 / -36371 | 1.00 | 0 | 58.00 / 56.00 | 152.0 / 149.5 |
+| TL3_EA_F1_ALL_ALL_H50_R120 | L3M | 13 | 0.0 | -5.5 | -35 | -8 | -36371 / -36371 | 1.00 | 0 | 54.15 / 52.46 | 147.5 / 144.2 |
 | TL3_EA_F1_P7_S0_H75_RN_CXN | L1M | 4 | 0.0 | - | 0 | 27 | -36371 / -36371 | 1.00 | 0 | 56.00 / 56.00 | 149.2 / 149.5 |
 | TL3_EA_F1_P7_S0_H75_RN_CXN | L3M | 13 | 0.0 | 0.0 | 90 | 103 | -36371 / -36371 | 1.00 | 0 | 53.08 / 52.46 | 145.7 / 144.2 |
 | TL3_EA_F1_P7_S1_H50_RN_CXN | L1M | 4 | 0.0 | - | 0 | 10 | -36371 / -36371 | 1.00 | 0 | 56.00 / 56.00 | 149.5 / 149.5 |
@@ -103,7 +105,7 @@ dd cut % = (maxDD ref - maxDD cell) / maxDD ref (positive = shallower). dd44 = w
 
 ## 4. Queue state
 
-- exact cell-months done: 91; pending lines: 31; cells in cells.txt: 35
+- exact cell-months done: 97; pending lines: 25; cells in cells.txt: 35
 - last promotions: 23:06Z TL3_EA_A6 PROMOTE [1] ; 00:07Z TL3_EA_SF_NP_S1_U150_R120_CXN PROMOTE [1] ; 00:57Z TL3_EA_CYS1_NP_S1_U150_RN PROMOTE [1] ; 02:52Z TL3_EA_CYS1_NP_S1_U150_RN PROMOTE [2, 3]
 
 ## 5. Not yet done (in order)

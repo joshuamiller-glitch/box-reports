@@ -1,6 +1,6 @@
-# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T01:56Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
+# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T03:26Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
 
-**VERDICT (plain): 12 cell-months done over 1 cells; 0 cells pass the tolerant gate in L3M, 0 pass in every present window incl. older ones (leads, before placebo read). Leads: none yet. No PASS claim. Queue note: 14 chains wait in tp_admit (box load 60+, cap 28); EC share 2 workers.**
+**VERDICT (plain): 37 cell-months done over 8 cells; 4 cells pass the tolerant gate in L3M, 0 pass in every present window incl. older ones (leads, before placebo read). Leads: none yet. No PASS claim. Queue note: 14 chains wait in tp_admit (box load 60+, cap 28); EC share 2 workers.**
 
 Prereg autopilot/EXPAND_C_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine, all layers ON. Identity: TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -14,7 +14,33 @@ Row format: delta vs JN05W2 in the rule's own session scope: d mean, max-DD cut 
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | lead |
 |---|---|---|---|---|---|---|---|
+| RU_asia_hS1 | -3645 $/wk (fee4.84 -3442), DD +46%/+0, ww +434, st 4.26(6.24), b5 56%, w2l 1 X |  |  |  |  |  |  |
 | RU_asia_hS075 | -6875 $/wk (fee4.84 -6617), DD +36%/-18, ww +9318, st 3.73(6.24), b5 54%, w2l 2 X |  |  |  |  |  |  |
+
+**london**
+
+| cell | L3M | L6M | HOLD | GAP | PRE | X' | lead |
+|---|---|---|---|---|---|---|---|
+| RU_london_hS1 | -329 $/wk (fee4.84 -247), DD +34%/+34, ww +13238, st 2.05(2.74), b5 76%, w2l 0 X |  |  |  |  |  |  |
+
+**nyam**
+
+| cell | L3M | L6M | HOLD | GAP | PRE | X' | lead |
+|---|---|---|---|---|---|---|---|
+| RU_nyam_hS1 | +424 $/wk (fee4.84 +445), DD +34%/+39, ww +1280, st 1.07(1.29), b5 83%, w2l 2 | -414 $/wk (fee4.84 -388), DD +18%/+18, ww +2244, st 1.45(1.67), b5 69%, w2l 3 X |  |  |  |  |  |
+| &nbsp;&nbsp;placebo L3M (pl11/23/37) | DD +1/+23, mean -840/+134 | | | | | | |
+
+**nypm**
+
+| cell | L3M | L6M | HOLD | GAP | PRE | X' | lead |
+|---|---|---|---|---|---|---|---|
+| RU_nypm_hS1 | +345 $/wk (fee4.84 +347), DD +33%/+33, ww +0, st 0.08(0.08), b5 127%, w2l 0 |  |  |  |  |  |  |
+
+**l90**
+
+| cell | L3M | L6M | HOLD | GAP | PRE | X' | lead |
+|---|---|---|---|---|---|---|---|
+| RU_l90_hS1 | -91 $/wk (fee4.84 -91), DD +0%/-3, ww +0, st 10.35(10.35), b5 100%, w2l 0 |  |  |  |  |  |  |
 
 ## Session clock (2)
 

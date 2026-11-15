@@ -1,5 +1,5 @@
-# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T02:51Z. Research only, NO PASS claim.
-**VERDICT (plain, page 1 of the forecast part; engine dial re-runs below are still running): the options-market number from CME NQ options, put on top of our own realised-range model (HAR), beats UW (b) in london, nyam, nyam2, nypm, late, matches in none, loses in asia, pre (out-of-sample, R2 in L3M / L6M / older, same sample start as UW). The bigger fact: the HAR realised-range model ALONE already beats UW (b) in london, nyam, nyam2, nypm and (L3M/L6M) late; UW's range signal is mostly an IV-term proxy. CME options add real, placebo-clean gain over HAR in asia (+0.10 to +0.14 R2) and the last 90 minutes (+0.12 to +0.24), small in nypm (+0.03 to +0.07), and nothing in london / nyam. Asia is where UW (b) is still the best single model (its NDX/QQQ/SPX IV term beats our CME read of the same night), so UW is not yet fully replaceable for asia. Pre (08:30-09:30) is driven by the calendar flags (CPI/NFP/FOMC), not by CME or UW. UW (c) (full UW) is worse than (b) everywhere. Whether UW is still needed: for asia yes (UW b, or Cboe VIX-family inputs, which reach nearly the same R2 free); for london, nyam, nypm, late a HAR + CME (or HAR alone) forecast replaces it. Not a PASS claim; selection of the best model per session is by mean R2 over the three windows (hindsight among ~12 models, see caveats).**
+# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T03:29Z. Research only, NO PASS claim.
+**VERDICT (plain, page 1 of the forecast part; engine dial re-runs below are still running): the options-market number from CME NQ options, put on top of our own realised-range model (HAR), beats UW (b) in london, nyam, nyam2, nypm, late, matches in none, loses in asia, pre (out-of-sample, R2 in L3M / L6M / older, same sample start as UW). The bigger fact: the HAR realised-range model ALONE already beats UW (b) in london, nyam, nyam2, nypm and (L3M/L6M) late; UW's range signal is mostly an IV-term proxy. CME options add real, placebo-clean gain over HAR in asia (+0.10 to +0.14 R2) and the last 90 minutes (+0.12 to +0.24), small in nypm (+0.03 to +0.07), and nothing in london / nyam. Asia is where UW (b) is still the best single model (its NDX/QQQ/SPX IV term beats our CME read of the same night), so UW is not yet fully replaceable for asia. ES options (pulled at $0.00) add on top of NQ options only in the last 90 minutes (R2 0.45/0.48/0.43 vs 0.34/0.43/0.40) and in nypm for L3M/L6M, nothing elsewhere. Pre (08:30-09:30) is driven by the calendar flags (CPI/NFP/FOMC), not by CME or UW. UW (c) (full UW) is worse than (b) everywhere. Whether UW is still needed: for asia yes (UW b, or Cboe VIX-family inputs, which reach nearly the same R2 free); for london, nyam, nypm, late a HAR + CME (or HAR alone) forecast replaces it. Not a PASS claim; selection of the best model per session is by mean R2 over the three windows (hindsight among ~12 models, see caveats).**
 
 Prereg: autopilot/RANGE2_PREREG.md (sha 942f27a55458bebb, in DECISIONS.md before scoring). Order: DIRECTIVE_RANGE2_20261114.md. Code: code/th_range2. Bulk: /mnt/l2/l2vast/_range2. Causal forecast files for the dials: /mnt/l2/l2vast/_range2/fc_r2_v1.parquet (HAR + CME; var 'r'), fc_r2_har.parquet (HAR only), same schema as W-RU fc.parquet; sent to W-CH2, W-D9, W-LR.
 
@@ -315,7 +315,96 @@ R2 is against the eval-window mean of the target (the UW pages' definition); acc
 | UW_c | -0.100 | 0.087 | 0.308 | 0.51 | 0.51 | 0.47 | -0.324 | -0.241 | -0.044 |
 
 
-_ES options: $0.00 pulls downloading; NQ-only in this page._
+## 3c. ES options added (CME ES options: ohlcv-1m + definitions pulled at $0.00, 2023-04..2026-11; same IV pipeline, parity de-adjustment 1.00 to 1.135)
+ES coverage: 99.9% of readings have a nearest and a next expiry IV (ES options trade much thicker than NQ). Models: HAR+ES (HAR + ES block), HAR+CME+ES (HAR + NQ block + ES block), HAR+CMElite+ESlite (3+3 columns). Same windows, same sample start as UW (prim).
+
+**Plain result: ES options help only in the last 90 minutes (HAR+CME+ES R2 0.45 / 0.48 / 0.43 vs HAR+CME 0.34 / 0.43 / 0.40 and HAR 0.22 / 0.31 / -0.07; HAR+ES alone 0.49 / 0.47 / 0.38), and in nypm in L3M/L6M (HAR+ES +0.13 / +0.08 over HAR, older -0.03). For asia, london, nyam, nyam2 and pre the ES block adds nothing reliable (changes within +-0.05, shifted-day placebos ~0 to slightly negative).** So the ES read is a late-session input; it does not rescue asia against UW (b).
+
+
+**asia** (n L3M/L6M/OLDER = 74/140/288); R2 | tercile accuracy | gain over HAR in R2 (placebo mean of 3 shifted-day versions in brackets)
+
+| model | R2 L3M | R2 L6M | R2 OLDER | acc L3M | acc L6M | acc OLDER | gain L3M | gain L6M | gain OLDER |
+|---|---|---|---|---|---|---|---|---|---|
+| HAR | 0.165 | 0.152 | 0.292 | 0.46 | 0.59 | 0.59 | +0.000 | +0.000 | +0.000 |
+| HAR+CME | 0.287 | 0.253 | 0.305 | 0.50 | 0.57 | 0.63 | +0.122 (-0.005) | +0.101 (-0.007) | +0.013 (-0.011) |
+| HAR+CME+ES | 0.296 | 0.206 | 0.299 | 0.47 | 0.54 | 0.60 | +0.131 (-0.008) | +0.053 (-0.006) | +0.007 (-0.021) |
+| HAR+ES | 0.294 | 0.122 | 0.332 | 0.47 | 0.52 | 0.60 | +0.129 (+0.001) | -0.030 (-0.002) | +0.040 (-0.012) |
+| HAR+CMElite+ESlite | 0.316 | 0.247 | 0.307 | 0.54 | 0.61 | 0.59 | +0.151 (-0.007) | +0.095 (-0.001) | +0.015 (-0.003) |
+| HAR+CMElite | 0.306 | 0.277 | 0.310 | 0.53 | 0.59 | 0.60 | +0.142 (+0.004) | +0.124 (+0.002) | +0.018 (-0.001) |
+| UW_b | 0.365 | 0.255 | 0.418 | 0.43 | 0.55 | 0.63 | +0.200 | +0.103 | +0.126 |
+
+**london** (n L3M/L6M/OLDER = 74/140/288); R2 | tercile accuracy | gain over HAR in R2 (placebo mean of 3 shifted-day versions in brackets)
+
+| model | R2 L3M | R2 L6M | R2 OLDER | acc L3M | acc L6M | acc OLDER | gain L3M | gain L6M | gain OLDER |
+|---|---|---|---|---|---|---|---|---|---|
+| HAR | 0.165 | 0.044 | 0.459 | 0.35 | 0.43 | 0.60 | +0.000 | +0.000 | +0.000 |
+| HAR+CME | 0.121 | 0.053 | 0.502 | 0.41 | 0.44 | 0.63 | -0.044 (-0.018) | +0.010 (-0.002) | +0.043 (-0.032) |
+| HAR+CME+ES | 0.110 | 0.085 | 0.502 | 0.36 | 0.41 | 0.64 | -0.054 (-0.056) | +0.041 (-0.029) | +0.043 (-0.044) |
+| HAR+ES | 0.119 | 0.102 | 0.493 | 0.39 | 0.46 | 0.62 | -0.045 (-0.011) | +0.058 (-0.017) | +0.034 (-0.027) |
+| HAR+CMElite+ESlite | 0.124 | 0.090 | 0.495 | 0.42 | 0.44 | 0.67 | -0.041 (-0.030) | +0.047 (-0.017) | +0.036 (-0.016) |
+| HAR+CMElite | 0.129 | 0.050 | 0.491 | 0.39 | 0.42 | 0.66 | -0.036 (-0.021) | +0.006 (-0.007) | +0.032 (-0.013) |
+| UW_b | 0.011 | -0.015 | 0.349 | 0.36 | 0.44 | 0.64 | -0.154 | -0.059 | -0.110 |
+
+**pre** (n L3M/L6M/OLDER = 74/140/289); R2 | tercile accuracy | gain over HAR in R2 (placebo mean of 3 shifted-day versions in brackets)
+
+| model | R2 L3M | R2 L6M | R2 OLDER | acc L3M | acc L6M | acc OLDER | gain L3M | gain L6M | gain OLDER |
+|---|---|---|---|---|---|---|---|---|---|
+| HAR | -0.098 | -0.002 | 0.269 | 0.35 | 0.36 | 0.58 | +0.000 | +0.000 | +0.000 |
+| HAR+CME | -0.114 | -0.021 | 0.043 | 0.36 | 0.38 | 0.54 | -0.016 (+0.043) | -0.019 (+0.026) | -0.226 (-0.019) |
+| HAR+CME+ES | -0.348 | -0.171 | -0.130 | 0.42 | 0.38 | 0.58 | -0.250 (+0.030) | -0.169 (+0.000) | -0.399 (-0.042) |
+| HAR+ES | -0.310 | -0.152 | -0.064 | 0.43 | 0.42 | 0.55 | -0.212 (-0.007) | -0.150 (-0.005) | -0.332 (-0.054) |
+| HAR+CMElite+ESlite | -0.049 | 0.024 | -0.092 | 0.45 | 0.41 | 0.56 | +0.048 (+0.015) | +0.026 (+0.006) | -0.361 (-0.023) |
+| HAR+CMElite | -0.036 | 0.040 | -0.008 | 0.41 | 0.39 | 0.55 | +0.061 (+0.009) | +0.042 (+0.009) | -0.277 (-0.014) |
+| UW_b | -0.009 | 0.045 | 0.349 | 0.49 | 0.43 | 0.54 | +0.089 | +0.047 | +0.080 |
+
+**nyam** (n L3M/L6M/OLDER = 74/140/288); R2 | tercile accuracy | gain over HAR in R2 (placebo mean of 3 shifted-day versions in brackets)
+
+| model | R2 L3M | R2 L6M | R2 OLDER | acc L3M | acc L6M | acc OLDER | gain L3M | gain L6M | gain OLDER |
+|---|---|---|---|---|---|---|---|---|---|
+| HAR | 0.223 | 0.245 | 0.394 | 0.50 | 0.54 | 0.61 | +0.000 | +0.000 | +0.000 |
+| HAR+CME | 0.221 | 0.247 | 0.415 | 0.42 | 0.55 | 0.55 | -0.002 (-0.002) | +0.002 (-0.001) | +0.021 (-0.005) |
+| HAR+CME+ES | 0.218 | 0.254 | 0.441 | 0.47 | 0.55 | 0.55 | -0.005 (-0.036) | +0.009 (-0.017) | +0.047 (-0.011) |
+| HAR+ES | 0.264 | 0.266 | 0.439 | 0.54 | 0.61 | 0.55 | +0.041 (-0.009) | +0.021 (-0.002) | +0.045 (-0.005) |
+| HAR+CMElite+ESlite | 0.213 | 0.254 | 0.416 | 0.51 | 0.58 | 0.53 | -0.010 (-0.019) | +0.009 (-0.006) | +0.022 (-0.005) |
+| HAR+CMElite | 0.218 | 0.257 | 0.414 | 0.47 | 0.58 | 0.53 | -0.005 (+0.003) | +0.012 (+0.003) | +0.020 (-0.002) |
+| UW_b | 0.102 | 0.146 | 0.313 | 0.42 | 0.51 | 0.55 | -0.122 | -0.099 | -0.081 |
+
+**nyam2** (n L3M/L6M/OLDER = 74/140/288); R2 | tercile accuracy | gain over HAR in R2 (placebo mean of 3 shifted-day versions in brackets)
+
+| model | R2 L3M | R2 L6M | R2 OLDER | acc L3M | acc L6M | acc OLDER | gain L3M | gain L6M | gain OLDER |
+|---|---|---|---|---|---|---|---|---|---|
+| HAR | 0.329 | 0.289 | 0.489 | 0.46 | 0.52 | 0.55 | +0.000 | +0.000 | +0.000 |
+| HAR+CME | 0.205 | 0.248 | 0.516 | 0.42 | 0.49 | 0.59 | -0.124 (-0.023) | -0.041 (-0.010) | +0.026 (-0.003) |
+| HAR+CME+ES | 0.150 | 0.230 | 0.516 | 0.39 | 0.49 | 0.58 | -0.179 (-0.063) | -0.058 (-0.018) | +0.026 (-0.011) |
+| HAR+ES | 0.222 | 0.226 | 0.523 | 0.39 | 0.51 | 0.57 | -0.107 (-0.039) | -0.062 (-0.010) | +0.033 (-0.006) |
+| HAR+CMElite+ESlite | 0.336 | 0.312 | 0.495 | 0.41 | 0.51 | 0.56 | +0.006 (-0.030) | +0.023 (-0.011) | +0.006 (-0.002) |
+| HAR+CMElite | 0.346 | 0.307 | 0.497 | 0.43 | 0.51 | 0.57 | +0.016 (-0.007) | +0.018 (-0.003) | +0.007 (+0.000) |
+| UW_b | 0.052 | 0.204 | 0.341 | 0.46 | 0.51 | 0.59 | -0.278 | -0.085 | -0.149 |
+
+**nypm** (n L3M/L6M/OLDER = 73/136/278); R2 | tercile accuracy | gain over HAR in R2 (placebo mean of 3 shifted-day versions in brackets)
+
+| model | R2 L3M | R2 L6M | R2 OLDER | acc L3M | acc L6M | acc OLDER | gain L3M | gain L6M | gain OLDER |
+|---|---|---|---|---|---|---|---|---|---|
+| HAR | -0.282 | 0.096 | 0.321 | 0.47 | 0.49 | 0.49 | +0.000 | +0.000 | +0.000 |
+| HAR+CME | -0.248 | 0.156 | 0.324 | 0.55 | 0.55 | 0.54 | +0.034 (-0.035) | +0.060 (-0.011) | +0.003 (-0.014) |
+| HAR+CME+ES | -0.272 | 0.149 | 0.266 | 0.58 | 0.58 | 0.53 | +0.010 (-0.058) | +0.052 (-0.019) | -0.055 (-0.030) |
+| HAR+ES | -0.157 | 0.178 | 0.287 | 0.53 | 0.55 | 0.56 | +0.125 (-0.011) | +0.081 (-0.011) | -0.034 (-0.016) |
+| HAR+CMElite+ESlite | -0.289 | 0.183 | 0.272 | 0.52 | 0.54 | 0.57 | -0.007 (+0.006) | +0.087 (-0.000) | -0.049 (-0.009) |
+| HAR+CMElite | -0.392 | 0.137 | 0.315 | 0.48 | 0.50 | 0.54 | -0.110 (+0.014) | +0.040 (+0.001) | -0.007 (-0.003) |
+| UW_b | -0.496 | -0.024 | 0.283 | 0.47 | 0.49 | 0.52 | -0.214 | -0.120 | -0.039 |
+
+**late** (n L3M/L6M/OLDER = 73/136/278); R2 | tercile accuracy | gain over HAR in R2 (placebo mean of 3 shifted-day versions in brackets)
+
+| model | R2 L3M | R2 L6M | R2 OLDER | acc L3M | acc L6M | acc OLDER | gain L3M | gain L6M | gain OLDER |
+|---|---|---|---|---|---|---|---|---|---|
+| HAR | 0.224 | 0.314 | -0.069 | 0.60 | 0.59 | 0.52 | +0.000 | +0.000 | +0.000 |
+| HAR+CME | 0.340 | 0.429 | 0.396 | 0.62 | 0.63 | 0.60 | +0.116 (-0.015) | +0.115 (+0.000) | +0.465 (-0.013) |
+| HAR+CME+ES | 0.453 | 0.484 | 0.431 | 0.66 | 0.63 | 0.60 | +0.229 (-0.049) | +0.170 (-0.016) | +0.500 (-0.010) |
+| HAR+ES | 0.492 | 0.470 | 0.381 | 0.59 | 0.59 | 0.62 | +0.268 (-0.044) | +0.157 (-0.016) | +0.450 (-0.005) |
+| HAR+CMElite+ESlite | 0.352 | 0.451 | 0.394 | 0.59 | 0.58 | 0.59 | +0.128 (-0.001) | +0.137 (-0.005) | +0.463 (-0.011) |
+| HAR+CMElite | 0.204 | 0.372 | 0.320 | 0.62 | 0.62 | 0.59 | -0.020 (-0.000) | +0.058 (-0.001) | +0.389 (-0.007) |
+| UW_b | 0.005 | 0.056 | 0.380 | 0.52 | 0.51 | 0.50 | -0.219 | -0.258 | +0.449 |
+
 
 ## 4. Reading the table (plain)
 - ATR alone is poor everywhere (R2 -0.2 to 0.15). The HAR benchmark is far stronger than ATR and is the right baseline; the UW pages' "gain over ATR" overstated what the options data add.
@@ -348,6 +437,11 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_D9A_C_B | london | +592 $/wk, DD +0.7%, ww -5, stops 2.74(2.74), b5 99%, w2l 0 | n/a | n/a | True | None | n/a | +592 / n/a |
 | TL3_R2_D9A_C_B | nyam | +24 $/wk, DD -6.8%, ww -250, stops 1.29(1.29), b5 93%, w2l 0 | n/a | n/a | False | None | n/a | +22 / n/a |
 | TL3_R2_D9A_C_B | nypm | -382 $/wk, DD -27.3%, ww -286, stops 0.08(0.08), b5 100%, w2l 1 | n/a | n/a | False | None | n/a | -383 / n/a |
+| TL3_R2_D9A_C_B_HAR | all | +113 $/wk, DD +6.4%, ww +3343, stops 10.42(10.35), b5 100%, w2l 0 | n/a | n/a | True | None | n/a | +110 / n/a |
+| TL3_R2_D9A_C_B_HAR | asia | -412 $/wk, DD -0.9%, ww -435, stops 6.32(6.24), b5 95%, w2l 0 | n/a | n/a | False | None | n/a | -413 / n/a |
+| TL3_R2_D9A_C_B_HAR | london | +828 $/wk, DD +4.6%, ww +2502, stops 2.66(2.74), b5 100%, w2l 0 | n/a | n/a | True | None | n/a | +828 / n/a |
+| TL3_R2_D9A_C_B_HAR | nyam | -16 $/wk, DD -6.8%, ww -250, stops 1.37(1.29), b5 93%, w2l 0 | n/a | n/a | False | None | n/a | -17 / n/a |
+| TL3_R2_D9A_C_B_HAR | nypm | -286 $/wk, DD -28.2%, ww -286, stops 0.08(0.08), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -288 / n/a |
 | TL3_R2_D9A_C_N | all | -114 $/wk, DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -114 / n/a |
 | TL3_R2_D9A_C_N | asia | +5 $/wk, DD +0.0%, ww +0, stops 6.24(6.24), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | +5 / n/a |
 | TL3_R2_D9A_C_N | london | -3 $/wk, DD -0.0%, ww +0, stops 2.74(2.74), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -3 / n/a |
@@ -419,7 +513,7 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_PL37_D9A_T1_N | nyam | +547 $/wk, DD +6.8%, ww +0, stops 1.22(1.29), b5 100%, w2l 0 | -246 $/wk, DD -8.7%, ww +0, stops 1.71(1.67), b5 99%, w2l 1 | n/a | True | False | -388 $/wk, DD -8.7%, ww +0, stops 1.67(1.64), b5 99%, w2l 1 | +546 / -249 |
 | TL3_R2_PL37_D9A_T1_N | nypm | +234 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 123%, w2l 0 | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | n/a | False | False | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | +233 / -228 |
 
-Cells with results: 15. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
+Cells with results: 16. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
 
 
 ## 6. Caveats

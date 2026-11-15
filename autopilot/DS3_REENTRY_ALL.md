@@ -1,8 +1,8 @@
 # DS3_REENTRY_ALL - re-entry discipline for K7 M7 U7 H7 A7 O7 (W-RA, priority 6)
 
-**VERDICT: 46 of 258 re-entry cells x windows scored (207 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
+**VERDICT: 46 of 258 re-entry cells x windows scored (227 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
 
-Built epoch 1794701690. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
+Built epoch 1794712534. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
 
 ## 1. Where the money is by entry number and fresh vs rechase (JN05W2, exact engine trades; $/wk by window)
 
@@ -231,6 +231,20 @@ Gate: DD not worse by >2%, worst week not worse by >2%, mean not lower by >3% of
 | H7:nyam | LCAP15 | pass | 36.0 | 0.0 | 0.0 | 30.0 | nan | 0.0 | 0.0 | 0.0 | nan | 0.0 | 0.0 |
 | A7:asia | BLKii | pass | 353.0 | 157.0 | 27.4 | 13.8 | nan | 13.8 | 8.7 | 0.0 | nan | 0.0 | -0.0 |
 | O7:nyam | LCAP15 | fails | 46.0 | -92.0 | -38.8 | -11.0 | nan | 0.0 | 3.7 | 3.7 | nan | 766.2 | 0.0 |
+
+## 5. Exact placebos (same candidate set, random block at the real per-book rate; 3 seeds)
+
+Stack level (scope all):
+
+| real | win | pl_dMean_min | pl_dMean_max | pl_ddcut_min | pl_ddcut_max | n | d_mean | dd_cut_pct |
+|---|---|---|---|---|---|---|---|---|
+| CAP2 | L3M | -5707.5 | -4096.9 | -4.4 | -3.5 | 2 | -5056.8 | -12.8 |
+
+### Scoped exact placebos for the leads (random block at the real per-book rate, 3 seeds)
+
+| cell | scope | win | real_dMean | pl_dMean_min | pl_dMean_max | real_ddcut | pl_ddcut_min | pl_ddcut_max | seeds | beats_all_placebos_on_both |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CAP2 | M7:london | L3M | 1380.8 | 245.9 | 734.0 | 46.8 | 29.2 | 33.4 | 2 | True |
 
 ## 5b. Walk-forward every 2 weeks (per book x session pick of the best of 14 cells on trailing 182 days, DD cut + 0.5 x mean; none if <= 0)
 
