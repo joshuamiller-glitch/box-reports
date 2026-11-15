@@ -31,7 +31,10 @@ VERDICT (data ends 2026-10-30; FIRST PASS, NQ, test span 2023-10..2026-10-16 for
   Max |IC| of any single input as built = 0.0223; max with one step of future injected = 0.999. The test is therefore sensitive (a one-bar leak would show as IC 0.1-1.0) and no input jumps: IC decays smoothly from newer to as-built to older. The full-library inputs come from other agents; their own builders were checked by them against stored signal-time values (0 differences); a joint shift test of the full set (run lag_m1/lag_p1) is in section 4 when finished.
 
 
-- JOINT shift test (ridge, full set): as built +0.0112, +0.0052, +0.0050, +0.0058, +0.0097 ; inputs one step OLDER +0.0018, +0.0039, +0.0015, +0.0034, +0.0089 (IC falls, as it must if there is no leak; the one-step-NEWER run is pending).
+- JOINT shift test of the full input set (ridge; all ~400 inputs shifted together by one decision step): IC at 5/15/30/60/120 min as built / inputs one step OLDER / inputs one step NEWER (future):
+  - lag_0: +0.0112, +0.0052, +0.0050, +0.0058, +0.0097
+  - lag_m1: +0.0018, +0.0039, +0.0015, +0.0034, +0.0089
+  - lag_p1: +0.9499, +0.5130, +0.3600, +0.2455, +0.1608
 ## 2. Planted-edge check
 A synthetic AR(1) signal (persistence 0.9 per decision step) was added to every vol-scaled training/test target with strength giving corr(signal, target) = 0.02, and appended as one extra input to the 90 core inputs; the whole walk-forward was rerun. Scored against the PLANTED target (ys), core-only run of the same inputs scored against the same planted target for the baseline:
 | quantity | 5m | 15m | 30m | 60m | 120m |
@@ -218,6 +221,20 @@ Forecast used: core (price+intermarket+clock) avg_h from the walk-forward, mappe
 - S15: change in 6-month total vs JN05W2 +40,142; 4 placebos (same size table, forecast shuffled within book and month) give +13,373 on average, sd 55,388, range -34,932..+85,540; max drawdown change +11,980 vs placebo mean +2,372 sd 7,717. z of real vs placebo = +0.48.
 - S120: change in 6-month total vs JN05W2 +46,620; 5 placebos (same size table, forecast shuffled within book and month) give -27,569 on average, sd 76,602, range -89,771..+75,493; max drawdown change +12,691 vs placebo mean +3,528 sd 10,459. z of real vs placebo = +0.97.
 - KEY FINDING for every sizing test: any re-sizing of the stack, even a meaningless one, moves the 6-month engine total by roughly +-$55-75k (sd, on a $660k base) and max drawdown by +-$8-10k through path effects (locks, caps, day-done rules). A forecast-sized book has to beat that placebo spread, not just the base; with this first-pass forecast it does not (z below 1). Sizing by forecast is NOT shown to help.
+
+### 6b. Fault 1 (re-entry against the trend) - forecast defines "trend has turned against this book"
+Definition: a = side x z of the walk-forward forecast (60 or 120 min) at the signal; R1 = a prior same-side LOSING trade (any book) closed earlier in the same session instance AND a < -0.5; R2 = two or more prior same-side losers in the session AND a < 0. Action is SIZE (x0.5), never skip. First-order on the 43-month taken trades (signals_all pnl, 20 worst Globex weeks of the post-mortem definition), placebo = same number of random taken trades within book x month (300 draws):
+
+| rule | n | n_worst | pnl_flag_in_worst | pnl_flag_elsewhere | pnl_flag_all | placebo_in_worst_mean | z_vs_placebo |
+|---|---|---|---|---|---|---|---|
+| against forecast a60<-0.5 | 5,019 | 602 | -124,056 | 532,410 | 408,354 | -184,741 | 1 |
+| R1: prior same-side loser in session and a60<-0.5 | 1,882 | 243 | -46,259 | 190,628 | 144,369 | -70,407 | 1 |
+| R2: 2+ prior same-side losers in session and a60<0 | 1,731 | 237 | 2,552 | 262,513 | 265,066 | -65,205 | 2 |
+| against forecast a120<-0.5 | 5,399 | 622 | -95,609 | 630,862 | 535,252 | -198,794 | 2 |
+| R1: prior same-side loser in session and a120<-0.5 | 2,069 | 256 | -20,331 | 273,716 | 253,385 | -75,811 | 2 |
+| R2: 2+ prior same-side losers in session and a120<0 | 1,808 | 247 | -18,557 | 315,757 | 297,200 | -67,739 | 2 |
+
+Reading: the flagged trades lose LESS than random trades inside the 20 worst weeks (positive z = flagged are better than the placebo there) and are net positive over the whole history, so halving them would give up profit and would not remove the worst-week loss. The forecast does not identify the re-entries that hurt. Exact-engine size cells R1_60 / R2_60 / RB_60 (union) and their forecast-shuffled placebos are in the table above.
 (LOT BASIS: base lots JN05W2, live x1.75, engine fee $1.18/contract vs FEES.md $4.84: column tot484 carries $4.84; live caps P7 14,700 vs engine 8,400.)
 
 ## 7. Honest summary: what we have, where it comes from, what would raise it
