@@ -4,7 +4,7 @@ LOT BASIS (lead, 11-14): JN05W2-family sets are at BASE (box) lots; live is x1.7
 
 Basis of every dollar figure on this page: (a) usdB, usdC, the "mismatch causes" dollars and the live-vs-engine total P&L compare LIVE dollars (actual NT commissions) with ENGINE base-lot dollars (fee $1.18/contract). For the matched window 11-01..11-11 live ran box-scale lots (P7 qty 7/4, K7 1-2, etc.; the x1.75 user lots first appear 11-12), so these two sides are on the SAME lot scale: no x1.75 factor is applied or needed, and the only dollar bias is the fee difference (about $3.7 per contract RT, engine more favourable) plus fill drift. (b) Day-cap and give-back tests use LIVE dollars against caps converted to live dollars for the box-lot weeks (section 5). (c) Section 7 (re-score) compares engine with engine: stored reference month results vs the engine-copy runs, both base-lot dollars, both at the $1.18 fee: no lot or fee mismatch inside that table; multiply by 1.75 for user-lot dollars. (d) Entry-match counts (A/B/C, U) contain no dollars and no lot or fee dependence.
 
-VERDICT (data ends 2026-11-13; 2026-11-15 18:59Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP_LC): ALL 0.675, W45 0.742, W46 0.567. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
+VERDICT (data ends 2026-11-13; 2026-11-15 19:18Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP_LC): ALL 0.675, W45 0.742, W46 0.567. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
 
 Shadow only, no PASS claims, nothing adopted into the shared engine. Prereg autopilot/EV_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_engfix/ (evmatch.py, ev_analyze.py, ev_report.py, ev_run.py, ev_drive.py, ev_panel.py, ev_jnprep.py, build_page.py, page_gen.py); runs and logs /mnt/l2/l2vast/_engvslive/. Admission tag EV (TL3_EV_*).
 
@@ -325,14 +325,14 @@ Mismatch causes (side B = engine took / live flat, C = live took / engine flat; 
 
 | run            | window                                        | nLive   | nEng   | A   | B   | C   | U     | usdB   | usdC   |
 |:---------------|:----------------------------------------------|:--------|:-------|:----|:----|:----|:------|:-------|:-------|
-| TL3_EV_NW_D    | W45 11-01..11-06                              | 232     | 260    | 203 | 57  | 29  | 0.702 | 380    | 3705   |
-| TL3_EV_NW_D    | W46 11-08..11-11                              | 123     | 150    | 98  | 52  | 25  | 0.560 | 20978  | 12445  |
-| TL3_EV_NW_D    | W47 11-11 18:00..11-13 17:00 (user-lot build) | 54      | 95     | 44  | 51  | 10  | 0.419 | 4031   | -3455  |
-| TL3_EV_NW_D    | ALL 11-01..11-13                              | 409     | 505    | 345 | 160 | 64  | 0.606 | 25390  | 12695  |
-| TL3_EV_NW_D_DR | W45 11-01..11-06                              | 232     | 249    | 227 | 22  | 5   | 0.894 | 4801   | -2430  |
-| TL3_EV_NW_D_DR | W46 11-08..11-11                              | 123     | 134    | 118 | 16  | 5   | 0.849 | 4684   | -1330  |
-| TL3_EV_NW_D_DR | W47 11-11 18:00..11-13 17:00 (user-lot build) | 54      | 58     | 42  | 16  | 12  | 0.600 | 1892   | -11840 |
-| TL3_EV_NW_D_DR | ALL 11-01..11-13                              | 409     | 441    | 387 | 54  | 22  | 0.836 | 11376  | -15600 |
+| TL3_EV_NX_D    | W45 11-01..11-06                              | 232     | 253    | 196 | 57  | 36  | 0.678 | 380    | 4810   |
+| TL3_EV_NX_D    | W46 11-08..11-11                              | 123     | 150    | 98  | 52  | 25  | 0.560 | 20978  | 12445  |
+| TL3_EV_NX_D    | W47 11-11 18:00..11-13 17:00 (user-lot build) | 54      | 95     | 44  | 51  | 10  | 0.419 | 4031   | -3455  |
+| TL3_EV_NX_D    | ALL 11-01..11-13                              | 409     | 498    | 338 | 160 | 71  | 0.594 | 25390  | 13800  |
+| TL3_EV_NX_D_DR | W45 11-01..11-06                              | 232     | 244    | 228 | 16  | 4   | 0.919 | 2568   | -735   |
+| TL3_EV_NX_D_DR | W46 11-08..11-11                              | 123     | 134    | 118 | 16  | 5   | 0.849 | 4684   | -1330  |
+| TL3_EV_NX_D_DR | W47 11-11 18:00..11-13 17:00 (user-lot build) | 54      | 58     | 42  | 16  | 12  | 0.600 | 1892   | -11840 |
+| TL3_EV_NX_D_DR | ALL 11-01..11-13                              | 409     | 436    | 388 | 48  | 21  | 0.849 | 9143   | -13905 |
 
 ### 9b. Every remaining mismatch class after the exit cascade is removed (live-drive, ALL 11-01..11-13), with dollars (B = engine net, C = live net; engine base-lot dollars at $1.18 vs live dollars at actual fees; no x1.75 applied to either side)
 
@@ -341,13 +341,13 @@ Mismatch causes (side B = engine took / live flat, C = live took / engine flat; 
 | B      | LIVE JN04 P7 post-stop blackout                                           | 1   | -2327  |
 | B      | LIVE O7 not trading (no live O7 entry since 11-06)                        | 4   | 2095   |
 | B      | LIVE book lock fired earlier that day (BookLock exit)                     | 4   | 80     |
-| B      | LIVE flat, no live entry (gate/signal unknown)                            | 40  | 4335   |
+| B      | LIVE flat, no live entry (gate/signal unknown)                            | 34  | 2102   |
 | B      | LIVE flat; other book entered                                             | 1   | 1199   |
 | B      | LIVE reconnect/stall window                                               | 4   | 5994   |
 | C      | ENGINE give-back lock: engine P&L path only (live book had not crossed)   | 2   | -3670  |
 | C      | ENGINE give-back lock: live book had ALSO crossed it (live kept entering) | 4   | -2175  |
 | C      | ENGINE loss cap: engine P&L path only (live book had not crossed)         | 1   | -2175  |
-| C      | ENGINE loss cap: live book had ALSO crossed it (live kept entering)       | 6   | -3025  |
+| C      | ENGINE loss cap: live book had ALSO crossed it (live kept entering)       | 5   | -1330  |
 | C      | ENGINE no signal                                                          | 8   | 6845   |
 | C      | ENGINE skip: SKIP JN04 post-stop blackout                                 | 1   | -11400 |
 
@@ -362,6 +362,42 @@ B1/B2 apply the cut behaviour the lead listed (K7 flat -45 only, P7 flat -42 fro
 | AS LIVE BEHAVED B2 (flat lines only from the v1.9a install 11-12 20:41Z, P7 silent 11-11 22Z..install) | 237      | 21           | -9860           | -11225          | -19644           | -35923            |
 | ALL CUTS OFF all week (lower bound; flat K7 45 / P7 42 only from the 11-12 20:41Z install)             | 225      | 58           | 32838           | 31502           | 55128            | -29135            |
 | LIVE actual (live lots, actual NT fees)                                                                | 177      | 45           |                 |                 | -26520           | -29195            |
+
+### 9d. Engine-only entries with no identified live gate, window 11-11 18:00..11-13 17:00 (live-drive, caps corrected: box to 11-08 23Z, live-coded to 11-12 20:41Z, engine-unit after), engine state and live state at entry
+
+Each row: engine path (ARM/ENTRY/confirm from the engine log), live day closes and day P&L (user-lot dollars after 11-12), live consecutive same-side losers of the book in the session (v1.9 EVIDENCE candidate for P7), minutes since the live book last exited.
+
+| cls                                                               | n   | usd   |
+|:------------------------------------------------------------------|:----|:------|
+| EVIDENCE candidate (P7, >=2 same-side live losers in the session) | 2   | -4715 |
+| live exited <60 min ago (re-entry gate/blackout/ctx?)             | 1   | 1199  |
+| live flat >60 min, signal present engine-side only                | 11  | 6536  |
+
+| book   | te_et               | qty   | usd   | live_day_closes   | live_day_pnl   | live_same_side_loser_run   | mins_since_live_exit   | last_live_exit   | engine_log                                                                                 | cls                                                               |
+|:-------|:--------------------|:------|:------|:------------------|:---------------|:---------------------------|:-----------------------|:-----------------|:-------------------------------------------------------------------------------------------|:------------------------------------------------------------------|
+| M7     | 2026-11-12 08:29:00 | 1     | -2302 | 19                | -19955         | 0                          | 68                     | PolicyCut        | ARM side -1 sigpx 28078.75 stopLevel 28138.75 lots | ENTRY side -1 qty 1 slices; trade_sto | live flat >60 min, signal present engine-side only                |
+| O7     | 2026-11-12 09:43:00 | 1     | -781  | 19                | -19955         | 0                          | 8640                   | PolicyCut        | pb1 signal 1 at 28371.75 | ENTRY side 1 qty 1 market | BRACKET stop 28330.00 (native 28330 | live flat >60 min, signal present engine-side only                |
+| M7     | 2026-11-12 10:54:00 | 1     | 1199  | 19                | -19955         | 1                          | 212                    | PolicyCut        | ARM side 1 sigpx 28430.25 stopLevel 28370.25 lots  | ENTRY side 1 qty 1 slices; trade_stop | live flat >60 min, signal present engine-side only                |
+| P7     | 2026-11-12 21:02:00 | 2     | -2357 | 6                 | -9015          | 2                          | 57                     | PolicyCut        | ARM side 1 sigpx 28577.75 stopLevel 28517.75 lots  | ENTRY side 1 qty 1 slices; trade_stop | EVIDENCE candidate (P7, >=2 same-side live losers in the session) |
+| K7     | 2026-11-12 21:18:00 | 1     | 1199  | 7                 | -10765         | 0                          | 2                      | PolicyCut        | ARM side -1 sigpx 28512.50 stopLevel 28572.50 lots | ENTRY side -1 qty 1 slices; trade_sto | live exited <60 min ago (re-entry gate/blackout/ctx?)             |
+| P7     | 2026-11-12 21:39:00 | 2     | -2357 | 8                 | -15615         | 2                          | 94                     | PolicyCut        | ARM side 1 sigpx 28533.00 stopLevel 28473.00 lots  | ENTRY side 1 qty 1 slices; trade_stop | EVIDENCE candidate (P7, >=2 same-side live losers in the session) |
+| P7     | 2026-11-12 22:09:00 | 1     | 1199  | 8                 | -15615         | 0                          | 124                    | PolicyCut        | ARM side -1 sigpx 28472.00 stopLevel 28532.00 lots | ENTRY side -1 qty 1 slices; trade_sto | live flat >60 min, signal present engine-side only                |
+| U7     | 2026-11-12 22:30:00 | 4     | 4800  | 8                 | -15615         | 0                          | 862                    | Target           | ARM side -1 sigpx 28409.25 stopLevel 28469.25 lots | ENTRY side -1 qty 3 slices; trade_sto | live flat >60 min, signal present engine-side only                |
+| A7     | 2026-11-12 22:33:00 | 1     | 1199  | 8                 | -15615         | 0                          | 1282                   | Stop             | ENTRY side -1 qty 1 slices; trade_stop_pts 0.00 | BRACKET stop 28454.25 (native 28454.25)  | live flat >60 min, signal present engine-side only                |
+| K7     | 2026-11-12 22:51:00 | 1     | -1    | 8                 | -15615         | 0                          | 95                     | PolicyCut        | ARM side -1 sigpx 28400.25 stopLevel 28460.25 lots | ENTRY side -1 qty 1 slices; trade_sto | live flat >60 min, signal present engine-side only                |
+| A7     | 2026-11-13 00:38:00 | 1     | 1199  | 8                 | -15615         | 0                          | 1407                   | Stop             | ENTRY side -1 qty 1 slices; trade_stop_pts 0.00 | BRACKET stop 28379.00 (native 28379.00)  | live flat >60 min, signal present engine-side only                |
+| H7     | 2026-11-13 01:00:00 | 2     | -1772 | 9                 | -13255         | 0                          | 215                    | Stop             | ARM side -1 sigpx 28289.50 stopLevel 28349.50 lots | ENTRY side -1 qty 1 slices; trade_sto | live flat >60 min, signal present engine-side only                |
+| A7     | 2026-11-13 01:06:00 | 1     | -1    | 9                 | -13255         | 0                          | 1435                   | Stop             | ENTRY side -1 qty 1 slices; trade_stop_pts 0.00 | BRACKET stop 28322.25 (native 28322.25)  | live flat >60 min, signal present engine-side only                |
+| O7     | 2026-11-13 09:41:00 | 1     | 1799  | 25                | -2120          | 0                          | 10078                  | PolicyCut        | pb1 signal -1 at 28286.50 | ENTRY side -1 qty 1 market | BRACKET stop 28327.00 (native 283 | live flat >60 min, signal present engine-side only                |
+
+### 9e. Same classes, unconditional run, ALL 11-01..11-13
+
+| cls                                                               | n   | usd   |
+|:------------------------------------------------------------------|:----|:------|
+| DAY-DONE candidate (closes>=22 and day<=-4200)                    | 12  | -4718 |
+| EVIDENCE candidate (P7, >=2 same-side live losers in the session) | 1   | -1769 |
+| live exited <60 min ago (re-entry gate/blackout/ctx?)             | 10  | 569   |
+| live flat >60 min, signal present engine-side only                | 12  | 6163  |
 
 ## 7. Which earlier results move by more than 10 % (stage 1: L6M 202605-202610 and HOLD 202511-202604; ref = stored month results, fix = engine copy)
 L6 = ATR-SKIP (P7, atr_rel >= 1.6) + P7 post-stop/cut 30-min same-side blackout as in DS7.cs v1.9a Live.

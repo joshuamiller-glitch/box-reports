@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 18:46Z 11-15 (t+485.8 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 19:16Z 11-15 (t+486.3 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 96% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-15T18:46:12Z. Box: CPU 99.7%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 100% min 98% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-15T19:16:41Z. Box: CPU 100.0%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-15T18:39Z
+## TREND (TL) update 2026-11-15T19:10Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-15T18:33:12Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-15T19:03:13Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 17:17Z 11-15 (t+532.5 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 19:17Z 11-15 (t+534.5 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 99% min 96% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 100% min 98% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -3349,3 +3349,40 @@ T-OPEN block (ii) ETA: harness usable ~2-3 h; family screens (3.1-3.9, NQ, 12-ce
 - (wall 18:57Z) W-CH2 status: CH workers busy 0, pending exact cell-months 377, done CH cell-months 1703; 9430 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
 - lead 18:59Z: W-CF1 'extend done' 18:59Z: signals_all.parquet now to 2026-11-13 (November rows flagged 'engine copy store' until W-EV confirms parity). Told CF2/CF3/CF4/CF5/CF6 to rebuild on the extended universe; November exact engine months still wait on W-EV STORE READY.
 - 2026-11-15T18:59:51Z W-EV P13 (item 1, data end 2026-11-13): extended store ev1113b landed (parity identical); entry match on the store, live panel timeline + caps: unconditional ALL 11-01..11-13 U .606 (W45 .702, W46 .560, W47 .419); conditional on live exits .836 (W45 .894, W46 .849, W47 .600). Label week 11-08..11-13 (base-lot $, $4.84 fee, x1.75): engine AS DESIGNED +2.1k (+3.8k x1.75), AS LIVE BEHAVED -11.5k/-11.2k (-20.1k/-19.6k x1.75), ALL CUTS OFF +31.5k (+55.1k, 58 full stops), LIVE actual -26.5k (45 full stops). ATR-SKIP is not firing live (P7 entered at atr_rel 2.81 on 11-13). Closest to live: engine with live-behaved cuts (-19.6k..-20.1k x1.75 vs live -26.5k); what it still lacks: the remaining cuts silent in whole sessions (label 11-09 K7/P7/U7, 11-11 K7) and 40 engine-only entries with no identified live gate. Page DS3_ENGINE_VS_LIVE.md rebuilt+stamped.
+- lead 19:00Z W-EV item 1 (data end 2026-11-13, STORE READY ev1113b, parity 202610 identical 769 trades): entry match vs live panel timeline: uncond/cond-on-live-exits 11-01..06 0.702/0.894; 11-08..11 0.560/0.849; 11-11 18:00..11-13 17:00 0.419/0.600; ALL 0.606/0.836. Mismatch: engine took/live flat: gate unknown 40 (+4.3k), reconnect/stall 4 (+6.0k), O7 not trading since 11-06 4 (+2.1k); live took/engine flat: engine give-back lock 6 (-5.8k), loss cap 7 (-5.2k), no engine signal 8 (+6.8k), JN04 blackout skip 1 (-11.4k). ATR-SKIP NOT FIRING LIVE (live P7 entered at atr_rel 2.81 on 11-13 11:18 and 1.63 on 11-11 19:11). Label week 11-08..11-13 base lots / x1.75: engine as designed +2.1k/+3.8k (18 full stops); live-behaved cuts B1 -11.5k/-20.1k, B2 -11.2k/-19.6k; all cuts off +31.5k/+55.1k (58 full stops); live actual -26.5k (45 full stops). First pass, one week. Withdrawn: 'live ignored P7/M7 cap'. QUESTION FOR USER: is the P7 ATR skip supposed to be live in v2.9?
+- lead 19:02Z: RE added to LOAD_EXEMPT/CAP_EXEMPT (quota 4): November reference months (JN05W2 202611 etc.) are the item-0 blocker for many agents.
+- 2026-11-15T19:04Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 48 (+driver: 182 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
+- (epoch 1794769603) W-RF status P12: load1 129 of 32 cores, exact workers (all tags) 23, RF exact workers 0, RF exact jobs outstanding 14, first-order WF procs 0; RF exact cell-months done 441; 1301 jobs wanted, 14 chains running, 1794769603
+- (wall 19:12Z) W-CF6: Block 6 rebuilt on the extended universe (100,860 signals to 2026-11-13; Nov rows engine copy store): week-cluster-robust step 3 |t_cr|>2 5.3% vs 5.4% shuffle = noise; school checklists unchanged (gate False everywhere). Closest to live: none. CNT/Asia engine chains still running.
+- lead 19:15Z: JN05W2 202611 reference landed (RE copy, 340 trades, net 19,226 base, label days 11-02..11-13); EA_A6, LR_LS1, EB_U7F_T15D10 202611 landed; PR_BLK_M30, JV_B running; W-RE rerun auto-starts.
+- 2026-11-15T19:16Z W-D10: November (202611, provisional, ref TL3_RE_JN05W2) started for the q50 cap cell via ev_store_launch (chain_d10n.sh)
+- (wall 19:16Z) W-PR status: PR chains running 25, jobs pending 25, cell-months done 0; cores busy (box-wide exact workers >50% cpu) 24; load 88.88
+- 2026-11-15T19:17Z W-PR DS3_P7_ASIA_REENTRY.md rebuilt (inputs changed): UPDATE 3 (full 43-month run of BLK_M30 and 12 expansion cells; first pass, base-lot dollars, x1.75 and $4.84 columns beside): NO RULE IS A LEAD. BLK_M30 (30-min same-side block after a P7 Asia loser) ; next check in 3 h
+- 2026-11-15T19:19:41Z W-EV P13 (data end 2026-11-13): caps timeline fixed from live evidence (box caps through label day 11-06 [K7 stopped entering after -4,805 on 11-06 = box 4,800], live-coded caps from 11-09, engine-unit after the 11-12 20:41Z user-lot install; only 5 P7 entries on label day 11-10 remain unexplained): conditional entry match ALL .849 (W45 .919, W46 .849, W47 .600), unconditional .594. Engine-only entries with no identified live gate in W47: 14, net +$3.0k (2 P7 EVIDENCE candidates -$4.7k, 11 live-flat >60 min +$6.5k, 1 re-entry +$1.2k); over ALL 11-01..11-13 the 35 such entries net about +$0.2k: not a loss source. L6 chain stopped by pid (ATR-SKIP not live). Closest to live: engine with live-behaved cuts.
+- (wall 19:20Z) W-RA status: priority 6 re-entry: 382 cell-months done, 8 jobs pending/running, ~0 RA workers, box load 66.12 80.80 82.69; 1100 jobs wanted, 8 chains running, 1794770373
+- 2026-11-15T19:20Z W-TK2 DS3_TICK_BOOKS.md rebuilt (epoch 1794770431); next in 3 h
+- lead 19:23Z QUESTION FOR USER (W-AL2 quotes, DS3_ALPHA_QUOTES.md): bars (ohlcv-1m/1s) are $0.00 for all 32 symbols: pulls allowed only after a same-minute cost check of 0.00 and a <=20 GB disk cap. PAID, NOT BOUGHT, needs your OK: tbbo for YM ZN ZB 6E 6J GC CL NKD SI about $760 (measured half-spreads, passive fills); trades same nine about $456 optional; mbp-10 all symbols $14.9k not recommended. W-AL2 first IC table (gross, ridge stand-in): ES 5 min 0.033 (not tradeable, needs ~0.22), beyond 15 min indistinguishable from zero; 6E slow decay but far below the 0.18-0.5 needed.
+- (wall 19:24Z epoch 1794770662) W-NT status: NT exact jobs running 0 (quota 6), pending 226 set-months, done 200 set-months; box load1 76 of 32; P7/P11 pages DS3_NEAR_TARGET.md / DS3_LOT_TABLE.md
+- (wall 19:24Z) W-LR status: LR workers (cores busy) 12, jobs outstanding 24 (pending file), cell-months done 1012, load 75.02 78.88 81.48, epoch 1794770664
+- (wall 19:24Z epoch 1794770662) W-NT pages rebuilt (inputs changed): autopilot/DS3_NEAR_TARGET.md, DS3_LOT_TABLE.md; next check in 3 h
+- (wall 19:24Z) W-AL2 $0 PULL: ohlcv-1m RTY.v.0 2013-01-01..2017-07-10; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:24Z) W-AL2 $0 PULL: ohlcv-1m 6A.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:25Z) W-AL2 $0 PULL: ohlcv-1m 6B.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:25Z) W-AL2 $0 PULL: ohlcv-1m 6C.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:25Z) W-AL2 $0 PULL: ohlcv-1m ZF.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:25Z) W-AL2 $0 PULL: ohlcv-1m ZT.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:25Z) W-AL2 $0 PULL: ohlcv-1m ZC.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:26Z) W-AL2 $0 PULL: ohlcv-1m ZS.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:26Z) W-AL2 $0 PULL: ohlcv-1m ZW.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:26Z) W-AL2 $0 PULL: ohlcv-1m HG.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:27Z) W-AL2 $0 PULL: ohlcv-1m PL.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:27Z) W-AL2 $0 PULL: ohlcv-1m HO.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:28Z) W-AL2 $0 PULL: ohlcv-1m RB.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:28Z) W-AL2 $0 PULL: ohlcv-1m NG.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- 2026-11-15T19:28Z W-D10 Dial 10: cores busy by D10 11 (quota 3), jobs outstanding 60 (918 jobs wanted), cell-months finished last hour 53, total done 538; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
+- (wall 19:28Z) W-PM status: load1 61.32, PM exact jobs pending 12, cells with output 30; 817 jobs wanted, 12 chains running, 1794770859; P5 page done, P8 grid np_m15_x10_y15 2898
+- (wall 19:28Z) W-AL2 $0 PULL: ohlcv-1m LE.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:29Z) W-AL2 $0 PULL: ohlcv-1m HE.v.0 2026-10-16..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:29Z) W-AL2 $0 PULL: ohlcv-1m 6E.v.0 2026-11-10..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:29Z) W-AL2 $0 PULL: ohlcv-1m 6J.v.0 2026-11-10..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
+- (wall 19:29Z) W-AL2 $0 PULL: ohlcv-1m NKD.v.0 2026-11-10..2026-11-15; metadata.get_cost returned exactly 0.0 immediately before; logged in SPEND.json as $0
