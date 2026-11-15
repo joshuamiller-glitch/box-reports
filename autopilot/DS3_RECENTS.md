@@ -1,8 +1,8 @@
 # DS3_RECENTS - is "what is working now" used optimally? (T-RECENTS, W-RE)
 
-VERDICT (data ends 2026-10-30; exact-engine weeks to 2026-10-30 [W44 2026-10-26..11-01]; November exact months only for 7 FW2 sets to 2026-11-11; market-state vector to 2026-11-11; price store daily4 to 2026-10-16; FIRST PASS, first-order composition labelled, no PASS): recency does NOT meet the 60% bar in any family. Of 144 real (family, scope, W, H) persistence cells none has P(next-H positive | positive and top third over W) >= 60% with a CI above the base rate and enough independent observations: the highest are 68% and 63% in stack-level brackets at W 3-6m -> H 3m with 0.5-2.8 effective observations, below or equal to their own shuffled-time placebo (66%, 40%); everything else is 17-53%, within a few points of the base rate. Only 6 of 144 real cells beat shuffled time at p<0.05 (all in cuts, +2..+4 points, P 25-51%) versus 8 of 60 nonsense cells (random skips/half-days) - the same magnitude, so not distinguishable from an artefact of the test. In the 43-month walk-forward the best recency window is the 26-week trailing mean (-$11/wk vs frozen on ~$11.4k/wk, block CI -60..+58 = tie); 2-week and 4-week memory are clearly worse (W4 -$139/wk, CI -192..-73); no cadence, refit scope, selection rule, shrinkage or market-state-similarity selection beats the frozen setting (JN05W2 as run) outside noise, and the only arms above it are drawdown / worst-window / placebo-gated rules that mostly stay frozen (<= +$30/wk). Change-points in market state do not precede changes of the best setting (28% vs 30% chance). Answer by family: cuts, sizing, skips, brackets, confluence = FROZEN current setting, recency is not an input; session books cannot be measured (no 43-month cohort). Shelved recent-only rules: strict reading FAIL for every rule whose older windows are run, tolerant reading PASS only for the U7 time stop B (X' and PRE run, GAP not run); the rest FAIL or are UNRESOLVED (older windows not run). Updated 2026-11-15 18:24 UTC.
+VERDICT (data ends 2026-11-13; exact-engine weeks to 2026-11-13 (true last day in series; weeks to 2026-11-09 complete Mon-Fri); November exact months only for 7 FW2 sets to 2026-11-11; market-state vector to 2026-11-11; price store daily4 to 2026-10-16; FIRST PASS, first-order composition labelled, no PASS): recency does NOT meet the 60% bar in any family. Of 144 real (family, scope, W, H) persistence cells none has P(next-H positive | positive and top third over W) >= 60% with a CI above the base rate and enough independent observations: the highest are 68% and 63% in stack-level brackets at W 3-6m -> H 3m with 0.5-2.8 effective observations, below or equal to their own shuffled-time placebo (66%, 40%); everything else is 17-53%, within a few points of the base rate. Only 6 of 144 real cells beat shuffled time at p<0.05 (all in cuts, +2..+4 points, P 25-51%) versus 10 of 60 nonsense cells (random skips/half-days) - the same magnitude, so not distinguishable from an artefact of the test. In the 43-month walk-forward the best recency window is the 26-week trailing mean (-$11/wk vs frozen on ~$11.4k/wk, block CI -60..+58 = tie); 2-week and 4-week memory are clearly worse (W4 -$139/wk, CI -192..-73); no cadence, refit scope, selection rule, shrinkage or market-state-similarity selection beats the frozen setting (JN05W2 as run) outside noise, and the only arms above it are drawdown / worst-window / placebo-gated rules that mostly stay frozen (<= +$30/wk). Change-points in market state do not precede changes of the best setting (28% vs 30% chance). Answer by family: cuts, sizing, skips, brackets, confluence = FROZEN current setting, recency is not an input; session books cannot be measured (no 43-month cohort). Shelved recent-only rules: strict reading FAIL for every rule whose older windows are run, tolerant reading PASS only for the U7 time stop B (X' and PRE run, GAP not run); the rest FAIL or are UNRESOLVED (older windows not run). Updated 2026-11-15 19:41 UTC.
 
-Generated 2026-11-15 18:24 UTC. Research only; shadow only. Code outputs/code/th_recents/ (rc_extract, rc_lib, rc_persist, rc_walk, rc_walk_run, rc_regime, rc_gate, rc_state, rc_enddate, rc_page); bulk /mnt/l2/l2vast/_recents/. Basis everywhere: exact-engine stored runs (runs_rf/<set>/<month>/trades.parquet), weekly = Monday-start weeks of the Globex label day, BASE LOTS, engine fee $1.18/ct RT (x1.75 live-size and the $4.84 repricing are NOT applied in the weekly series: multiply dollar figures by 1.75 for live-lot scale; fee repricing moves each rule by (4.84-1.18) x its lot change per week, small vs the effects here). Live caps P7 14,700 = engine 8,400 (live-lot figures = base x1.75). Weekly delta = set minus its own base (JN05W2 for TL3_*/SM_A6; LPB_EMPTY for EC_FLAT*; JN04RM for JN04RM_FLAT*). Sets on other bases (PTR_, BO_, G3_, WL/WG, SB_ ...) are excluded, no like-for-like reference.
+Generated 2026-11-15 19:41 UTC. Research only; shadow only. Code outputs/code/th_recents/ (rc_extract, rc_lib, rc_persist, rc_walk, rc_walk_run, rc_regime, rc_gate, rc_state, rc_enddate, rc_page); bulk /mnt/l2/l2vast/_recents/. Basis everywhere: exact-engine stored runs (runs_rf/<set>/<month>/trades.parquet), weekly = Monday-start weeks of the Globex label day, BASE LOTS, engine fee $1.18/ct RT (x1.75 live-size and the $4.84 repricing are NOT applied in the weekly series: multiply dollar figures by 1.75 for live-lot scale; fee repricing moves each rule by (4.84-1.18) x its lot change per week, small vs the effects here). Live caps P7 14,700 = engine 8,400 (live-lot figures = base x1.75). Weekly delta = set minus its own base (JN05W2 for TL3_*/SM_A6; LPB_EMPTY for EC_FLAT*; JN04RM for JN04RM_FLAT*). Sets on other bases (PTR_, BO_, G3_, WL/WG, SB_ ...) are excluded, no like-for-like reference.
 
 
 ## 0. Data ends before today, and the end-date checker
@@ -20,14 +20,14 @@ Today is 2026-11-15. Ends found on the box:
 
 **The windows L1M/L3M/L6M of every page therefore end 2026-10-30 (not today); they cannot be moved to 2026-11-15 without engine months for 202611.** Request logged in MORNING.md to W-EV (extended price store, command) and W-CF1 (universe/logger to today) to schedule the November exact months for the main sets (JN05W2, JN05W2J, JV_A/AB/B/C, EA_A6, LR_LS1/LS125, RA_CAP3/BLKiv, EB_U7F_T15D10, PR_BLK_M30, EC_FLAT40K/A, CF_G P7A sets). This page re-runs from the stored files in minutes once those months land (rc_extract.py then rc_persist/rc_walk_run).
 
-End-date checker: code/th_recents/rc_enddate.py scans autopilot/DS3_*.md and flags verdict lines without a stated data end date; output autopilot/ENDDATE_AUDIT.csv. Result today: 1183 DS3 pages; 247 carry a verdict line in the first 60 lines; **246 of 247 verdict lines state no data end date** (and 936 pages have no verdict line at all). Of the 51 verdict pages touched since 2026-11-14, 1 state an end date. This page's verdict states one.
+End-date checker: code/th_recents/rc_enddate.py scans autopilot/DS3_*.md and flags verdict lines without a stated data end date; output autopilot/ENDDATE_AUDIT.csv. Result today: 1185 DS3 pages; 248 carry a verdict line in the first 60 lines; **229 of 248 verdict lines state no data end date** (and 937 pages have no verdict line at all). Of the 52 verdict pages touched since 2026-11-14, 19 state an end date. This page's verdict states one.
 
 
 ## 1. Persistence, measured properly (answer first)
 
 Unit = (set, book) [scope 'book', family x book cohorts] or (set, all books) [scope 'ALL', family cohorts]; delta = weekly $ minus the set's own base, 187 weeks 2023-04-03..2026-10-26 (sets with fewer months contribute their available stretch). A setting is SELECTED at origin week i if its trailing-W mean delta > 0 AND it is in the top third of its cohort (family x book) at i (cohort >= 3 live units, trailing window complete, delta not identically 0). Outcome: mean delta over the next H weeks > 0 (W: 2w=2, 1m=4, 3m=13, 6m=26, 12m=52 weeks; H: 2w=2, 1m=4, 3m=13). Cells: P(next-H positive | selected) / base rate P(next-H positive | any eligible unit, same origins) / shuffled-time P (each unit's selection signal circularly shifted by an independent random offset, 100 reps, outcome unshifted: keeps the unit's long-run quality, destroys the recency link). 'p vs shift' = share of shuffled reps >= the real P (small = recency adds information). 95% CI = moving-block bootstrap over origin weeks (block = max(W,H,8)). 'eff n' = origins / max(W,H) = independent observations (overlapping windows). Bar: P >= 60% AND CI low > base AND p vs shift < 0.05.
 
-**Result: 0 of 144 real-family cells pass the 60% bar test.** Highest P cells: brackets/ALL W6m H3m P=68% (base 51%, shuffled 40%, eff n 0.5), brackets/ALL W3m H3m P=63% (base 47%, shuffled 66%, eff n 2.8), skips/ALL W6m H3m P=53% (base 46%, shuffled 56%, eff n 5.7), skips/ALL W12m H1m P=52% (base 46%, shuffled 54%, eff n 2.5), cuts/ALL W1m H2w P=51% (base 47%, shuffled 47%, eff n 44.2), skips/ALL W6m H1m P=51% (base 43%, shuffled 50%, eff n 6.1). The few cells above 60% sit on 3-6 month windows with eff n <= 5 and are at or below their own shuffled placebo.
+**Result: 0 of 144 real-family cells pass the 60% bar test.** Highest P cells: brackets/ALL W6m H3m P=68% (base 51%, shuffled 33%, eff n 0.5), brackets/ALL W3m H3m P=63% (base 47%, shuffled 65%, eff n 2.8), skips/ALL W6m H3m P=53% (base 46%, shuffled 56%, eff n 5.8), skips/ALL W12m H1m P=52% (base 46%, shuffled 54%, eff n 2.6), cuts/ALL W1m H2w P=51% (base 47%, shuffled 47%, eff n 44.8), skips/ALL W6m H1m P=51% (base 43%, shuffled 50%, eff n 6.2). The few cells above 60% sit on 3-6 month windows with eff n <= 5 and are at or below their own shuffled placebo.
 
 
 **Scope 'book'** (cell text = real P / base rate / shuffled P, then p vs shift, all in %):
@@ -37,10 +37,10 @@ Unit = (set, book) [scope 'book', family x book cohorts] or (set, all books) [sc
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 42 / 43 / 49 (p 0.98; n_sel 1,500, eff n 42.0) | 44 / 45 / 48 (p 0.91; n_sel 1,426, eff n 20.0) | 43 / 43 / 44 (p 0.56; n_sel 1,146, eff n 4.8) |
-| 1m | 39 / 39 / 45 (p 0.94; n_sel 1,656, eff n 20.0) | 42 / 42 / 46 (p 0.84; n_sel 1,574, eff n 19.0) | 42 / 43 / 45 (p 0.62; n_sel 1,263, eff n 4.5) |
-| 3m | 31 / 31 / 38 (p 0.90; n_sel 1,566, eff n 4.8) | 34 / 34 / 41 (p 0.79; n_sel 1,480, eff n 4.5) | 48 / 40 / 52 (p 0.67; n_sel 1,107, eff n 3.1) |
-| 6m | 28 / 29 / 38 (p 0.74; n_sel 1,062, eff n 1.4) | 31 / 31 / 26 (p 0.34; n_sel 966, eff n 1.2) | 42 / 37 / 50 (p 0.56; n_sel 535, eff n 0.5) |
+| 2w | 42 / 43 / 50 (p 0.99; n_sel 1,500, eff n 42.0) | 44 / 45 / 49 (p 0.90; n_sel 1,426, eff n 20.0) | 43 / 43 / 44 (p 0.55; n_sel 1,146, eff n 4.8) |
+| 1m | 39 / 39 / 45 (p 0.93; n_sel 1,656, eff n 20.0) | 42 / 42 / 46 (p 0.81; n_sel 1,574, eff n 19.0) | 42 / 43 / 45 (p 0.60; n_sel 1,263, eff n 4.5) |
+| 3m | 31 / 31 / 38 (p 0.88; n_sel 1,566, eff n 4.8) | 34 / 34 / 41 (p 0.85; n_sel 1,480, eff n 4.5) | 48 / 40 / 52 (p 0.69; n_sel 1,107, eff n 3.1) |
+| 6m | 28 / 29 / 38 (p 0.76; n_sel 1,062, eff n 1.4) | 31 / 31 / 26 (p 0.35; n_sel 966, eff n 1.2) | 42 / 37 / 50 (p 0.59; n_sel 535, eff n 0.5) |
 | 12m | n_sel<30 | n_sel<30 | n_sel<30 |
 
 
@@ -48,54 +48,54 @@ Unit = (set, book) [scope 'book', family x book cohorts] or (set, all books) [sc
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 37 / 36 / 43 (p 1.00; n_sel 7,863, eff n 91.5) | 41 / 40 / 46 (p 1.00; n_sel 7,513, eff n 45.2) | 42 / 42 / 46 (p 1.00; n_sel 6,092, eff n 13.2) |
-| 1m | 34 / 32 / 40 (p 1.00; n_sel 9,564, eff n 45.2) | 39 / 37 / 44 (p 1.00; n_sel 9,135, eff n 44.8) | 41 / 41 / 46 (p 1.00; n_sel 7,450, eff n 13.1) |
-| 3m | 28 / 26 / 34 (p 1.00; n_sel 10,836, eff n 13.3) | 34 / 31 / 39 (p 1.00; n_sel 10,336, eff n 13.2) | 41 / 38 / 43 (p 0.88; n_sel 8,192, eff n 12.5) |
-| 6m | 24 / 23 / 30 (p 1.00; n_sel 8,812, eff n 6.2) | 29 / 27 / 35 (p 1.00; n_sel 8,244, eff n 6.1) | 36 / 33 / 40 (p 0.95; n_sel 5,611, eff n 5.7) |
-| 12m | 22 / 24 / 31 (p 1.00; n_sel 2,487, eff n 2.6) | 27 / 29 / 36 (p 1.00; n_sel 2,412, eff n 2.5) | 38 / 38 / 43 (p 0.96; n_sel 2,106, eff n 2.4) |
+| 2w | 38 / 37 / 44 (p 1.00; n_sel 8,115, eff n 92.0) | 41 / 41 / 48 (p 1.00; n_sel 7,809, eff n 45.5) | 43 / 43 / 49 (p 1.00; n_sel 6,475, eff n 13.3) |
+| 1m | 34 / 33 / 42 (p 1.00; n_sel 9,846, eff n 45.5) | 39 / 38 / 46 (p 1.00; n_sel 9,474, eff n 45.0) | 42 / 42 / 49 (p 1.00; n_sel 7,823, eff n 13.2) |
+| 3m | 29 / 27 / 37 (p 1.00; n_sel 11,204, eff n 13.3) | 35 / 32 / 42 (p 1.00; n_sel 10,692, eff n 13.2) | 42 / 39 / 47 (p 1.00; n_sel 8,540, eff n 12.5) |
+| 6m | 27 / 24 / 35 (p 1.00; n_sel 9,184, eff n 6.2) | 31 / 29 / 40 (p 1.00; n_sel 8,610, eff n 6.1) | 38 / 35 / 46 (p 1.00; n_sel 5,978, eff n 5.7) |
+| 12m | 29 / 27 / 37 (p 1.00; n_sel 2,826, eff n 2.6) | 34 / 32 / 43 (p 1.00; n_sel 2,750, eff n 2.5) | 44 / 41 / 49 (p 0.96; n_sel 2,446, eff n 2.4) |
 
 
 *cuts* - 222 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 37 / 31 / 44 (p 1.00; n_sel 3,000, eff n 89.0) | 41 / 35 / 43 (p 0.98; n_sel 2,894, eff n 44.0) | 40 / 41 / 41 (p 0.62; n_sel 2,380, eff n 12.8) |
-| 1m | 33 / 27 / 37 (p 1.00; n_sel 3,862, eff n 44.5) | 37 / 32 / 39 (p 0.92; n_sel 3,713, eff n 43.8) | 40 / 39 / 41 (p 0.76; n_sel 3,027, eff n 12.8) |
-| 3m | 25 / 22 / 26 (p 0.90; n_sel 4,835, eff n 13.3) | 30 / 27 / 30 (p 0.51; n_sel 4,642, eff n 13.2) | 39 / 36 / 38 (p 0.20; n_sel 3,860, eff n 12.5) |
-| 6m | 25 / 20 / 22 (p 0.00; n_sel 4,456, eff n 6.2) | 30 / 25 / 27 (p 0.00; n_sel 4,233, eff n 6.1) | 38 / 33 / 38 (p 0.49; n_sel 3,265, eff n 5.7) |
-| 12m | 17 / 17 / 17 (p 0.45; n_sel 2,560, eff n 2.6) | 25 / 22 / 28 (p 0.90; n_sel 2,481, eff n 2.5) | 37 / 32 / 45 (p 1.00; n_sel 2,153, eff n 2.4) |
+| 2w | 37 / 31 / 43 (p 1.00; n_sel 3,023, eff n 90.0) | 41 / 35 / 44 (p 1.00; n_sel 2,916, eff n 44.5) | 41 / 41 / 41 (p 0.62; n_sel 2,390, eff n 12.8) |
+| 1m | 33 / 27 / 37 (p 1.00; n_sel 3,905, eff n 45.0) | 37 / 32 / 39 (p 0.93; n_sel 3,741, eff n 44.2) | 40 / 39 / 41 (p 0.75; n_sel 3,044, eff n 12.8) |
+| 3m | 25 / 22 / 26 (p 0.89; n_sel 4,887, eff n 13.5) | 30 / 27 / 30 (p 0.49; n_sel 4,686, eff n 13.3) | 40 / 36 / 38 (p 0.13; n_sel 3,881, eff n 12.5) |
+| 6m | 25 / 20 / 22 (p 0.01; n_sel 4,495, eff n 6.2) | 31 / 25 / 27 (p 0.00; n_sel 4,266, eff n 6.2) | 38 / 33 / 38 (p 0.48; n_sel 3,275, eff n 5.8) |
+| 12m | 17 / 17 / 17 (p 0.43; n_sel 2,563, eff n 2.6) | 25 / 22 / 28 (p 0.93; n_sel 2,485, eff n 2.6) | 37 / 32 / 45 (p 1.00; n_sel 2,153, eff n 2.4) |
 
 
 *nonsense_half (NONSENSE control)* - 336 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 34 / 34 / 37 (p 1.00; n_sel 12,912, eff n 92.0) | 38 / 39 / 40 (p 1.00; n_sel 12,764, eff n 45.5) | 36 / 37 / 36 (p 0.25; n_sel 12,141, eff n 13.3) |
-| 1m | 33 / 33 / 34 (p 1.00; n_sel 15,820, eff n 45.5) | 38 / 38 / 39 (p 0.99; n_sel 15,651, eff n 45.0) | 37 / 37 / 37 (p 0.22; n_sel 14,847, eff n 13.2) |
-| 3m | 30 / 31 / 30 (p 0.86; n_sel 16,968, eff n 13.3) | 36 / 36 / 36 (p 0.98; n_sel 16,774, eff n 13.2) | 37 / 37 / 37 (p 0.71; n_sel 16,010, eff n 12.5) |
-| 6m | 30 / 30 / 29 (p 0.09; n_sel 14,789, eff n 6.2) | 36 / 36 / 36 (p 0.54; n_sel 14,645, eff n 6.1) | 37 / 36 / 37 (p 0.37; n_sel 13,954, eff n 5.7) |
-| 12m | 28 / 30 / 29 (p 0.74; n_sel 10,466, eff n 2.6) | 35 / 35 / 35 (p 0.47; n_sel 10,331, eff n 2.5) | 37 / 35 / 36 (p 0.08; n_sel 9,726, eff n 2.4) |
+| 2w | 34 / 34 / 36 (p 1.00; n_sel 13,051, eff n 93.0) | 39 / 39 / 40 (p 1.00; n_sel 12,912, eff n 46.0) | 36 / 37 / 36 (p 0.21; n_sel 12,285, eff n 13.5) |
+| 1m | 32 / 32 / 34 (p 1.00; n_sel 16,007, eff n 46.0) | 38 / 38 / 39 (p 1.00; n_sel 15,820, eff n 45.5) | 37 / 37 / 37 (p 0.17; n_sel 15,023, eff n 13.3) |
+| 3m | 30 / 30 / 30 (p 0.90; n_sel 17,165, eff n 13.5) | 36 / 36 / 36 (p 0.96; n_sel 16,968, eff n 13.3) | 37 / 37 / 37 (p 0.71; n_sel 16,173, eff n 12.6) |
+| 6m | 30 / 30 / 29 (p 0.03; n_sel 14,942, eff n 6.2) | 36 / 36 / 36 (p 0.51; n_sel 14,789, eff n 6.2) | 37 / 36 / 37 (p 0.36; n_sel 14,119, eff n 5.8) |
+| 12m | 28 / 30 / 28 (p 0.59; n_sel 10,611, eff n 2.6) | 35 / 35 / 35 (p 0.41; n_sel 10,466, eff n 2.6) | 37 / 35 / 36 (p 0.08; n_sel 9,866, eff n 2.4) |
 
 
 *nonsense_skip (NONSENSE control)* - 336 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 35 / 34 / 37 (p 1.00; n_sel 12,939, eff n 92.0) | 39 / 39 / 40 (p 0.99; n_sel 12,777, eff n 45.5) | 38 / 38 / 37 (p 0.06; n_sel 12,193, eff n 13.3) |
-| 1m | 33 / 33 / 35 (p 1.00; n_sel 15,814, eff n 45.5) | 38 / 38 / 39 (p 0.96; n_sel 15,640, eff n 45.0) | 38 / 38 / 37 (p 0.42; n_sel 14,898, eff n 13.2) |
-| 3m | 31 / 31 / 31 (p 0.76; n_sel 16,920, eff n 13.3) | 37 / 37 / 37 (p 0.21; n_sel 16,740, eff n 13.2) | 38 / 38 / 38 (p 0.07; n_sel 16,016, eff n 12.5) |
-| 6m | 31 / 30 / 29 (p 0.00; n_sel 15,125, eff n 6.2) | 37 / 36 / 35 (p 0.00; n_sel 14,968, eff n 6.1) | 38 / 36 / 37 (p 0.01; n_sel 14,226, eff n 5.7) |
-| 12m | 29 / 30 / 28 (p 0.07; n_sel 11,269, eff n 2.6) | 36 / 36 / 34 (p 0.03; n_sel 11,139, eff n 2.5) | 37 / 36 / 35 (p 0.00; n_sel 10,510, eff n 2.4) |
+| 2w | 34 / 34 / 37 (p 1.00; n_sel 13,084, eff n 93.0) | 39 / 39 / 40 (p 0.99; n_sel 12,939, eff n 46.0) | 38 / 38 / 37 (p 0.06; n_sel 12,326, eff n 13.5) |
+| 1m | 33 / 33 / 34 (p 1.00; n_sel 15,999, eff n 46.0) | 38 / 38 / 39 (p 0.94; n_sel 15,814, eff n 45.5) | 38 / 38 / 38 (p 0.39; n_sel 15,061, eff n 13.3) |
+| 3m | 31 / 31 / 31 (p 0.67; n_sel 17,108, eff n 13.5) | 37 / 37 / 37 (p 0.25; n_sel 16,920, eff n 13.3) | 38 / 38 / 38 (p 0.09; n_sel 16,177, eff n 12.6) |
+| 6m | 30 / 30 / 29 (p 0.00; n_sel 15,277, eff n 6.2) | 37 / 36 / 35 (p 0.00; n_sel 15,125, eff n 6.2) | 38 / 37 / 37 (p 0.00; n_sel 14,400, eff n 5.8) |
+| 12m | 29 / 30 / 28 (p 0.02; n_sel 11,411, eff n 2.6) | 36 / 36 / 34 (p 0.03; n_sel 11,269, eff n 2.6) | 38 / 36 / 35 (p 0.00; n_sel 10,650, eff n 2.4) |
 
 
 *placebo_exact (NONSENSE control)* - 295 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 37 / 38 / 43 (p 1.00; n_sel 3,296, eff n 33.0) | 41 / 41 / 44 (p 0.87; n_sel 3,190, eff n 16.0) | 40 / 40 / 43 (p 0.74; n_sel 2,650, eff n 4.2) |
-| 1m | 35 / 36 / 41 (p 0.98; n_sel 3,618, eff n 16.0) | 39 / 40 / 43 (p 0.91; n_sel 3,483, eff n 15.5) | 42 / 40 / 46 (p 0.77; n_sel 2,878, eff n 4.1) |
-| 3m | 32 / 34 / 37 (p 0.94; n_sel 3,541, eff n 4.2) | 37 / 38 / 43 (p 0.90; n_sel 3,387, eff n 4.1) | 40 / 39 / 62 (p 0.96; n_sel 2,701, eff n 3.4) |
-| 6m | 31 / 32 / 46 (p 0.76; n_sel 2,454, eff n 1.6) | 37 / 35 / 52 (p 0.73; n_sel 2,295, eff n 1.5) | n_sel<30 |
+| 2w | 37 / 38 / 43 (p 1.00; n_sel 3,296, eff n 33.0) | 41 / 41 / 44 (p 0.90; n_sel 3,190, eff n 16.0) | 40 / 40 / 43 (p 0.74; n_sel 2,650, eff n 4.2) |
+| 1m | 35 / 36 / 41 (p 0.97; n_sel 3,618, eff n 16.0) | 39 / 40 / 43 (p 0.89; n_sel 3,483, eff n 15.5) | 42 / 40 / 46 (p 0.79; n_sel 2,878, eff n 4.1) |
+| 3m | 32 / 34 / 37 (p 0.95; n_sel 3,541, eff n 4.2) | 37 / 38 / 43 (p 0.90; n_sel 3,387, eff n 4.1) | 40 / 39 / 63 (p 0.95; n_sel 2,701, eff n 3.4) |
+| 6m | 31 / 32 / 46 (p 0.74; n_sel 2,454, eff n 1.6) | 37 / 35 / 52 (p 0.74; n_sel 2,295, eff n 1.5) | n_sel<30 |
 | 12m | n_sel<30 | n_sel<30 | n_sel<30 |
 
 
@@ -103,22 +103,22 @@ Unit = (set, book) [scope 'book', family x book cohorts] or (set, all books) [sc
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 38 / 36 / 43 (p 1.00; n_sel 1,812, eff n 85.0) | 41 / 40 / 46 (p 1.00; n_sel 1,771, eff n 42.0) | 42 / 43 / 50 (p 1.00; n_sel 1,543, eff n 12.2) |
-| 1m | 35 / 33 / 40 (p 1.00; n_sel 2,229, eff n 44.2) | 38 / 37 / 43 (p 1.00; n_sel 2,186, eff n 43.8) | 41 / 42 / 49 (p 1.00; n_sel 1,911, eff n 12.8) |
-| 3m | 32 / 29 / 34 (p 0.87; n_sel 2,614, eff n 13.2) | 37 / 34 / 39 (p 0.86; n_sel 2,546, eff n 13.1) | 38 / 40 / 46 (p 1.00; n_sel 2,242, eff n 12.4) |
-| 6m | 29 / 27 / 31 (p 0.94; n_sel 2,310, eff n 6.2) | 32 / 32 / 37 (p 0.97; n_sel 2,243, eff n 6.1) | 37 / 38 / 45 (p 1.00; n_sel 1,897, eff n 5.7) |
-| 12m | 25 / 26 / 33 (p 0.99; n_sel 1,585, eff n 2.6) | 30 / 32 / 38 (p 1.00; n_sel 1,551, eff n 2.5) | 41 / 42 / 52 (p 1.00; n_sel 1,399, eff n 2.4) |
+| 2w | 38 / 36 / 43 (p 1.00; n_sel 1,813, eff n 85.5) | 41 / 40 / 46 (p 0.99; n_sel 1,771, eff n 42.0) | 42 / 43 / 50 (p 1.00; n_sel 1,546, eff n 12.4) |
+| 1m | 35 / 33 / 40 (p 1.00; n_sel 2,231, eff n 44.8) | 38 / 37 / 44 (p 1.00; n_sel 2,187, eff n 44.0) | 41 / 42 / 49 (p 1.00; n_sel 1,913, eff n 12.9) |
+| 3m | 32 / 29 / 34 (p 0.87; n_sel 2,614, eff n 13.2) | 37 / 34 / 39 (p 0.81; n_sel 2,548, eff n 13.2) | 38 / 40 / 45 (p 1.00; n_sel 2,248, eff n 12.5) |
+| 6m | 29 / 27 / 31 (p 0.90; n_sel 2,317, eff n 6.2) | 32 / 32 / 37 (p 0.98; n_sel 2,248, eff n 6.2) | 37 / 38 / 45 (p 1.00; n_sel 1,903, eff n 5.8) |
+| 12m | 25 / 26 / 32 (p 0.99; n_sel 1,595, eff n 2.6) | 30 / 32 / 38 (p 1.00; n_sel 1,560, eff n 2.6) | 41 / 42 / 52 (p 1.00; n_sel 1,409, eff n 2.4) |
 
 
 *skips* - 1329 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 40 / 39 / 44 (p 1.00; n_sel 15,701, eff n 81.0) | 44 / 43 / 48 (p 1.00; n_sel 15,021, eff n 39.8) | 47 / 46 / 52 (p 1.00; n_sel 12,321, eff n 11.5) |
-| 1m | 37 / 36 / 41 (p 1.00; n_sel 18,347, eff n 44.5) | 42 / 40 / 46 (p 1.00; n_sel 17,579, eff n 44.0) | 47 / 45 / 53 (p 1.00; n_sel 14,556, eff n 12.8) |
-| 3m | 33 / 30 / 36 (p 1.00; n_sel 20,264, eff n 13.3) | 38 / 35 / 42 (p 1.00; n_sel 19,369, eff n 13.2) | 44 / 41 / 52 (p 1.00; n_sel 16,020, eff n 12.5) |
-| 6m | 32 / 27 / 34 (p 0.99; n_sel 17,141, eff n 6.2) | 37 / 31 / 41 (p 1.00; n_sel 16,273, eff n 6.1) | 42 / 38 / 49 (p 1.00; n_sel 12,628, eff n 5.7) |
-| 12m | 29 / 24 / 32 (p 0.95; n_sel 7,452, eff n 2.6) | 36 / 30 / 39 (p 0.83; n_sel 7,128, eff n 2.5) | 44 / 41 / 48 (p 0.87; n_sel 5,657, eff n 2.4) |
+| 2w | 40 / 39 / 44 (p 1.00; n_sel 15,730, eff n 82.0) | 44 / 43 / 48 (p 1.00; n_sel 15,034, eff n 40.2) | 47 / 46 / 52 (p 1.00; n_sel 12,330, eff n 11.7) |
+| 1m | 37 / 36 / 41 (p 1.00; n_sel 18,380, eff n 45.0) | 42 / 40 / 46 (p 1.00; n_sel 17,603, eff n 44.5) | 47 / 45 / 53 (p 1.00; n_sel 14,574, eff n 13.0) |
+| 3m | 33 / 30 / 36 (p 1.00; n_sel 20,290, eff n 13.5) | 38 / 35 / 42 (p 1.00; n_sel 19,393, eff n 13.3) | 44 / 41 / 52 (p 1.00; n_sel 16,031, eff n 12.6) |
+| 6m | 32 / 27 / 34 (p 0.97; n_sel 17,156, eff n 6.2) | 37 / 31 / 41 (p 1.00; n_sel 16,288, eff n 6.2) | 42 / 38 / 49 (p 1.00; n_sel 12,639, eff n 5.8) |
+| 12m | 29 / 24 / 32 (p 0.96; n_sel 7,465, eff n 2.6) | 36 / 30 / 39 (p 0.81; n_sel 7,136, eff n 2.6) | 44 / 41 / 48 (p 0.85; n_sel 5,665, eff n 2.4) |
 
 
 **Scope 'ALL'** (cell text = real P / base rate / shuffled P, then p vs shift, all in %):
@@ -128,10 +128,10 @@ Unit = (set, book) [scope 'book', family x book cohorts] or (set, all books) [sc
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 38 / 41 / 40 (p 0.61; n_sel 274, eff n 38.5) | 43 / 42 / 40 (p 0.41; n_sel 261, eff n 18.2) | 42 / 40 / 34 (p 0.24; n_sel 208, eff n 4.5) |
-| 1m | 39 / 39 / 39 (p 0.49; n_sel 290, eff n 18.5) | 40 / 41 / 39 (p 0.48; n_sel 274, eff n 17.5) | 46 / 42 / 37 (p 0.26; n_sel 214, eff n 4.1) |
-| 3m | 40 / 36 / 37 (p 0.36; n_sel 257, eff n 4.5) | 47 / 41 / 45 (p 0.41; n_sel 241, eff n 4.2) | 63 / 47 / 66 (p 0.59; n_sel 172, eff n 2.8) |
-| 6m | 42 / 36 / 22 (p 0.14; n_sel 151, eff n 1.2) | 51 / 40 / 57 (p 0.57; n_sel 135, eff n 1.1) | 68 / 51 / 40 (p 0.29; n_sel 75, eff n 0.5) |
+| 2w | 38 / 41 / 40 (p 0.60; n_sel 274, eff n 38.5) | 43 / 42 / 39 (p 0.35; n_sel 261, eff n 18.2) | 42 / 40 / 34 (p 0.27; n_sel 208, eff n 4.5) |
+| 1m | 39 / 39 / 38 (p 0.46; n_sel 290, eff n 18.5) | 40 / 41 / 39 (p 0.45; n_sel 274, eff n 17.5) | 46 / 42 / 36 (p 0.26; n_sel 214, eff n 4.1) |
+| 3m | 40 / 36 / 37 (p 0.37; n_sel 257, eff n 4.5) | 47 / 41 / 43 (p 0.41; n_sel 241, eff n 4.2) | 63 / 47 / 65 (p 0.54; n_sel 172, eff n 2.8) |
+| 6m | 42 / 36 / 20 (p 0.19; n_sel 151, eff n 1.2) | 51 / 40 / 50 (p 0.49; n_sel 135, eff n 1.1) | 68 / 51 / 33 (p 0.33; n_sel 75, eff n 0.5) |
 | 12m | n_sel<30 | n_sel<30 | n_sel<30 |
 
 
@@ -139,54 +139,54 @@ Unit = (set, book) [scope 'book', family x book cohorts] or (set, all books) [sc
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 45 / 44 / 47 (p 0.86; n_sel 3,777, eff n 90.5) | 48 / 47 / 48 (p 0.75; n_sel 3,637, eff n 44.2) | 45 / 46 / 49 (p 1.00; n_sel 3,020, eff n 12.8) |
-| 1m | 44 / 43 / 46 (p 0.91; n_sel 4,067, eff n 44.0) | 48 / 46 / 48 (p 0.46; n_sel 3,904, eff n 43.2) | 47 / 46 / 49 (p 0.91; n_sel 3,226, eff n 12.5) |
-| 3m | 43 / 41 / 44 (p 0.79; n_sel 3,591, eff n 13.2) | 47 / 44 / 46 (p 0.47; n_sel 3,429, eff n 12.9) | 50 / 46 / 47 (p 0.25; n_sel 2,719, eff n 11.7) |
-| 6m | 45 / 41 / 43 (p 0.29; n_sel 2,554, eff n 5.5) | 49 / 44 / 45 (p 0.07; n_sel 2,394, eff n 5.4) | 49 / 46 / 47 (p 0.20; n_sel 1,650, eff n 4.7) |
-| 12m | 43 / 43 / 44 (p 0.60; n_sel 633, eff n 2.0) | 41 / 44 / 45 (p 0.84; n_sel 611, eff n 1.9) | 36 / 42 / 36 (p 0.53; n_sel 534, eff n 1.7) |
+| 2w | 46 / 44 / 47 (p 0.86; n_sel 3,820, eff n 91.0) | 48 / 47 / 49 (p 0.79; n_sel 3,688, eff n 44.8) | 46 / 47 / 50 (p 1.00; n_sel 3,088, eff n 13.0) |
+| 1m | 44 / 43 / 46 (p 0.94; n_sel 4,124, eff n 44.8) | 48 / 46 / 49 (p 0.56; n_sel 3,972, eff n 44.0) | 47 / 47 / 50 (p 0.95; n_sel 3,302, eff n 12.7) |
+| 3m | 44 / 41 / 45 (p 0.88; n_sel 3,681, eff n 13.2) | 47 / 45 / 47 (p 0.54; n_sel 3,519, eff n 12.9) | 50 / 46 / 48 (p 0.25; n_sel 2,802, eff n 11.8) |
+| 6m | 45 / 41 / 45 (p 0.46; n_sel 2,624, eff n 5.7) | 49 / 44 / 46 (p 0.14; n_sel 2,463, eff n 5.5) | 49 / 46 / 48 (p 0.44; n_sel 1,714, eff n 4.9) |
+| 12m | 45 / 44 / 47 (p 0.94; n_sel 722, eff n 2.3) | 43 / 45 / 49 (p 0.94; n_sel 700, eff n 2.3) | 37 / 43 / 40 (p 0.66; n_sel 619, eff n 2.1) |
 
 
 *cuts* - 42 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 50 / 48 / 49 (p 0.25; n_sel 1,431, eff n 89.0) | 50 / 47 / 47 (p 0.05; n_sel 1,391, eff n 44.0) | 44 / 43 / 41 (p 0.07; n_sel 1,190, eff n 12.6) |
-| 1m | 51 / 47 / 47 (p 0.00; n_sel 1,454, eff n 44.2) | 50 / 47 / 46 (p 0.04; n_sel 1,410, eff n 43.5) | 45 / 43 / 41 (p 0.03; n_sel 1,197, eff n 12.2) |
-| 3m | 46 / 46 / 46 (p 0.41; n_sel 1,320, eff n 12.8) | 48 / 46 / 44 (p 0.11; n_sel 1,267, eff n 12.5) | 47 / 43 / 37 (p 0.00; n_sel 1,049, eff n 11.6) |
-| 6m | 47 / 46 / 44 (p 0.20; n_sel 1,064, eff n 5.7) | 46 / 45 / 43 (p 0.14; n_sel 1,013, eff n 5.6) | 39 / 39 / 34 (p 0.15; n_sel 797, eff n 5.2) |
-| 12m | 34 / 39 / 32 (p 0.38; n_sel 535, eff n 2.4) | 31 / 37 / 31 (p 0.42; n_sel 520, eff n 2.4) | 22 / 32 / 40 (p 1.00; n_sel 439, eff n 2.1) |
+| 2w | 49 / 48 / 49 (p 0.25; n_sel 1,441, eff n 90.0) | 49 / 48 / 47 (p 0.07; n_sel 1,401, eff n 44.5) | 44 / 43 / 41 (p 0.06; n_sel 1,192, eff n 12.5) |
+| 1m | 51 / 47 / 47 (p 0.00; n_sel 1,466, eff n 44.8) | 50 / 47 / 46 (p 0.02; n_sel 1,421, eff n 44.0) | 46 / 44 / 41 (p 0.02; n_sel 1,203, eff n 12.3) |
+| 3m | 46 / 46 / 46 (p 0.34; n_sel 1,332, eff n 12.9) | 48 / 46 / 44 (p 0.08; n_sel 1,277, eff n 12.7) | 48 / 43 / 37 (p 0.00; n_sel 1,053, eff n 11.3) |
+| 6m | 47 / 46 / 44 (p 0.16; n_sel 1,073, eff n 5.8) | 46 / 45 / 44 (p 0.16; n_sel 1,020, eff n 5.7) | 39 / 39 / 34 (p 0.16; n_sel 796, eff n 5.3) |
+| 12m | 34 / 39 / 33 (p 0.40; n_sel 537, eff n 2.5) | 31 / 37 / 31 (p 0.50; n_sel 522, eff n 2.4) | 22 / 32 / 40 (p 1.00; n_sel 439, eff n 2.1) |
 
 
 *nonsense_half (NONSENSE control)* - 48 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 40 / 40 / 40 (p 0.45; n_sel 2,584, eff n 92.0) | 34 / 36 / 35 (p 0.92; n_sel 2,562, eff n 45.5) | 23 / 24 / 24 (p 0.92; n_sel 2,451, eff n 13.3) |
-| 1m | 40 / 39 / 40 (p 0.55; n_sel 2,440, eff n 45.5) | 35 / 35 / 36 (p 0.78; n_sel 2,422, eff n 45.0) | 23 / 24 / 25 (p 0.93; n_sel 2,299, eff n 13.2) |
-| 3m | 39 / 39 / 39 (p 0.53; n_sel 1,879, eff n 13.3) | 33 / 35 / 35 (p 0.96; n_sel 1,870, eff n 13.2) | 22 / 24 / 24 (p 0.82; n_sel 1,832, eff n 12.5) |
-| 6m | 41 / 39 / 39 (p 0.12; n_sel 1,312, eff n 6.0) | 37 / 34 / 35 (p 0.08; n_sel 1,312, eff n 6.0) | 29 / 23 / 23 (p 0.01; n_sel 1,286, eff n 5.7) |
-| 12m | 43 / 38 / 40 (p 0.05; n_sel 685, eff n 2.6) | 42 / 33 / 35 (p 0.00; n_sel 683, eff n 2.5) | 34 / 20 / 20 (p 0.00; n_sel 667, eff n 2.4) |
+| 2w | 39 / 40 / 39 (p 0.53; n_sel 2,613, eff n 93.0) | 35 / 36 / 36 (p 0.86; n_sel 2,584, eff n 46.0) | 23 / 24 / 24 (p 0.89; n_sel 2,480, eff n 13.5) |
+| 1m | 39 / 39 / 39 (p 0.54; n_sel 2,467, eff n 46.0) | 35 / 36 / 36 (p 0.75; n_sel 2,440, eff n 45.5) | 23 / 24 / 24 (p 0.91; n_sel 2,328, eff n 13.3) |
+| 3m | 39 / 39 / 39 (p 0.49; n_sel 1,895, eff n 13.5) | 33 / 35 / 36 (p 0.94; n_sel 1,879, eff n 13.3) | 22 / 24 / 24 (p 0.85; n_sel 1,839, eff n 12.6) |
+| 6m | 41 / 39 / 39 (p 0.11; n_sel 1,313, eff n 6.0) | 37 / 34 / 35 (p 0.11; n_sel 1,312, eff n 6.0) | 29 / 23 / 23 (p 0.01; n_sel 1,293, eff n 5.8) |
+| 12m | 43 / 38 / 39 (p 0.05; n_sel 685, eff n 2.6) | 42 / 33 / 36 (p 0.02; n_sel 685, eff n 2.6) | 34 / 20 / 21 (p 0.00; n_sel 671, eff n 2.4) |
 
 
 *nonsense_skip (NONSENSE control)* - 48 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 41 / 40 / 41 (p 0.32; n_sel 2,603, eff n 92.0) | 37 / 36 / 37 (p 0.53; n_sel 2,575, eff n 45.5) | 27 / 27 / 27 (p 0.75; n_sel 2,470, eff n 13.3) |
-| 1m | 40 / 40 / 41 (p 0.79; n_sel 2,440, eff n 45.5) | 36 / 36 / 36 (p 0.61; n_sel 2,425, eff n 45.0) | 26 / 27 / 27 (p 0.88; n_sel 2,316, eff n 13.2) |
-| 3m | 40 / 40 / 40 (p 0.62; n_sel 2,008, eff n 13.3) | 35 / 36 / 36 (p 0.76; n_sel 1,994, eff n 13.2) | 26 / 26 / 27 (p 0.64; n_sel 1,962, eff n 12.5) |
-| 6m | 41 / 39 / 41 (p 0.51; n_sel 1,458, eff n 6.2) | 37 / 35 / 36 (p 0.28; n_sel 1,455, eff n 6.1) | 28 / 25 / 27 (p 0.33; n_sel 1,435, eff n 5.7) |
-| 12m | 39 / 39 / 38 (p 0.28; n_sel 752, eff n 2.4) | 33 / 34 / 30 (p 0.10; n_sel 752, eff n 2.4) | 22 / 24 / 20 (p 0.40; n_sel 748, eff n 2.4) |
+| 2w | 41 / 40 / 41 (p 0.35; n_sel 2,633, eff n 93.0) | 37 / 37 / 37 (p 0.46; n_sel 2,603, eff n 46.0) | 27 / 27 / 27 (p 0.72; n_sel 2,494, eff n 13.5) |
+| 1m | 40 / 40 / 40 (p 0.81; n_sel 2,469, eff n 46.0) | 36 / 36 / 36 (p 0.61; n_sel 2,440, eff n 45.5) | 26 / 27 / 27 (p 0.88; n_sel 2,341, eff n 13.3) |
+| 3m | 40 / 40 / 40 (p 0.69; n_sel 2,022, eff n 13.5) | 35 / 36 / 36 (p 0.79; n_sel 2,008, eff n 13.3) | 26 / 26 / 27 (p 0.60; n_sel 1,966, eff n 12.6) |
+| 6m | 41 / 39 / 40 (p 0.45; n_sel 1,463, eff n 6.2) | 37 / 35 / 36 (p 0.33; n_sel 1,458, eff n 6.2) | 28 / 25 / 27 (p 0.37; n_sel 1,440, eff n 5.8) |
+| 12m | 39 / 39 / 38 (p 0.25; n_sel 754, eff n 2.5) | 33 / 34 / 31 (p 0.15; n_sel 752, eff n 2.4) | 22 / 24 / 20 (p 0.38; n_sel 749, eff n 2.4) |
 
 
 *placebo_exact (NONSENSE control)* - 45 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 40 / 43 / 44 (p 0.90; n_sel 704, eff n 31.5) | 35 / 38 / 38 (p 0.80; n_sel 694, eff n 15.2) | 24 / 31 / 35 (p 0.95; n_sel 580, eff n 4.0) |
-| 1m | 39 / 43 / 44 (p 0.89; n_sel 657, eff n 15.2) | 33 / 37 / 38 (p 0.81; n_sel 645, eff n 14.8) | 23 / 31 / 37 (p 0.94; n_sel 551, eff n 3.9) |
-| 3m | 37 / 41 / 45 (p 0.85; n_sel 505, eff n 4.1) | 30 / 36 / 41 (p 0.81; n_sel 501, eff n 3.9) | 22 / 29 / 69 (p 0.88; n_sel 423, eff n 3.2) |
-| 6m | 40 / 39 / 65 (p 0.87; n_sel 326, eff n 1.6) | 35 / 30 / 70 (p 0.87; n_sel 311, eff n 1.5) | n_sel<30 |
+| 2w | 40 / 43 / 44 (p 0.89; n_sel 704, eff n 31.5) | 35 / 38 / 38 (p 0.84; n_sel 694, eff n 15.2) | 24 / 31 / 35 (p 0.94; n_sel 580, eff n 4.0) |
+| 1m | 39 / 43 / 44 (p 0.89; n_sel 657, eff n 15.2) | 33 / 37 / 38 (p 0.82; n_sel 645, eff n 14.8) | 23 / 31 / 37 (p 0.95; n_sel 551, eff n 3.9) |
+| 3m | 37 / 41 / 45 (p 0.84; n_sel 505, eff n 4.1) | 30 / 36 / 41 (p 0.79; n_sel 501, eff n 3.9) | 22 / 29 / 69 (p 0.88; n_sel 423, eff n 3.2) |
+| 6m | 40 / 39 / 66 (p 0.89; n_sel 326, eff n 1.6) | 35 / 30 / 67 (p 0.85; n_sel 311, eff n 1.5) | n_sel<30 |
 | 12m | n_sel<30 | n_sel<30 | n_sel<30 |
 
 
@@ -194,22 +194,22 @@ Unit = (set, book) [scope 'book', family x book cohorts] or (set, all books) [sc
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 44 / 45 / 46 (p 0.79; n_sel 561, eff n 81.5) | 44 / 43 / 47 (p 0.85; n_sel 549, eff n 40.2) | 41 / 43 / 50 (p 1.00; n_sel 492, eff n 11.7) |
-| 1m | 44 / 44 / 47 (p 0.84; n_sel 560, eff n 43.0) | 44 / 42 / 47 (p 0.83; n_sel 554, eff n 42.5) | 39 / 43 / 51 (p 1.00; n_sel 494, eff n 12.4) |
-| 3m | 42 / 42 / 46 (p 0.96; n_sel 542, eff n 13.0) | 40 / 40 / 45 (p 0.89; n_sel 534, eff n 12.8) | 32 / 40 / 50 (p 1.00; n_sel 477, eff n 12.1) |
-| 6m | 42 / 39 / 45 (p 0.90; n_sel 485, eff n 6.2) | 42 / 37 / 43 (p 0.57; n_sel 473, eff n 6.1) | 39 / 39 / 51 (p 0.95; n_sel 407, eff n 5.7) |
-| 12m | 43 / 43 / 49 (p 0.89; n_sel 271, eff n 2.4) | 48 / 44 / 48 (p 0.50; n_sel 265, eff n 2.4) | 45 / 45 / 55 (p 0.87; n_sel 244, eff n 2.2) |
+| 2w | 44 / 45 / 46 (p 0.83; n_sel 561, eff n 81.5) | 44 / 43 / 47 (p 0.90; n_sel 549, eff n 40.2) | 41 / 43 / 50 (p 0.99; n_sel 492, eff n 11.7) |
+| 1m | 44 / 44 / 47 (p 0.75; n_sel 560, eff n 43.0) | 44 / 42 / 46 (p 0.79; n_sel 554, eff n 42.5) | 39 / 43 / 51 (p 1.00; n_sel 494, eff n 12.4) |
+| 3m | 42 / 42 / 46 (p 0.92; n_sel 542, eff n 13.0) | 40 / 40 / 45 (p 0.86; n_sel 534, eff n 12.8) | 32 / 40 / 49 (p 1.00; n_sel 479, eff n 12.2) |
+| 6m | 42 / 39 / 45 (p 0.90; n_sel 487, eff n 6.2) | 42 / 37 / 43 (p 0.60; n_sel 475, eff n 6.2) | 39 / 39 / 51 (p 0.95; n_sel 409, eff n 5.8) |
+| 12m | 43 / 43 / 49 (p 0.91; n_sel 273, eff n 2.5) | 48 / 44 / 48 (p 0.52; n_sel 267, eff n 2.4) | 45 / 45 / 55 (p 0.86; n_sel 246, eff n 2.2) |
 
 
 *skips* - 214 units
 
 | W \ H | 2w | 1m | 3m |
 |--|--|--|--|
-| 2w | 45 / 45 / 47 (p 0.97; n_sel 4,123, eff n 89.5) | 46 / 47 / 50 (p 0.99; n_sel 3,955, eff n 44.0) | 48 / 49 / 53 (p 0.99; n_sel 3,299, eff n 12.8) |
-| 1m | 45 / 44 / 46 (p 0.86; n_sel 4,382, eff n 44.5) | 48 / 46 / 50 (p 0.94; n_sel 4,210, eff n 44.0) | 49 / 49 / 54 (p 1.00; n_sel 3,502, eff n 12.8) |
-| 3m | 45 / 41 / 45 (p 0.43; n_sel 4,030, eff n 13.1) | 48 / 44 / 50 (p 0.86; n_sel 3,868, eff n 12.9) | 50 / 47 / 57 (p 1.00; n_sel 3,216, eff n 12.2) |
-| 6m | 46 / 41 / 44 (p 0.13; n_sel 3,227, eff n 6.2) | 51 / 43 / 50 (p 0.30; n_sel 3,076, eff n 6.1) | 53 / 46 / 56 (p 0.80; n_sel 2,438, eff n 5.7) |
-| 12m | 47 / 42 / 47 (p 0.52; n_sel 1,349, eff n 2.6) | 52 / 46 / 54 (p 0.63; n_sel 1,293, eff n 2.5) | 50 / 51 / 56 (p 0.66; n_sel 1,044, eff n 2.4) |
+| 2w | 45 / 45 / 48 (p 0.99; n_sel 4,133, eff n 90.5) | 46 / 47 / 50 (p 0.98; n_sel 3,961, eff n 44.5) | 48 / 49 / 53 (p 0.98; n_sel 3,305, eff n 13.0) |
+| 1m | 45 / 44 / 46 (p 0.84; n_sel 4,390, eff n 45.0) | 48 / 46 / 50 (p 0.95; n_sel 4,215, eff n 44.5) | 49 / 49 / 54 (p 0.99; n_sel 3,505, eff n 13.0) |
+| 3m | 45 / 41 / 45 (p 0.50; n_sel 4,044, eff n 13.2) | 48 / 44 / 50 (p 0.86; n_sel 3,882, eff n 13.1) | 50 / 47 / 57 (p 1.00; n_sel 3,225, eff n 12.4) |
+| 6m | 46 / 41 / 44 (p 0.07; n_sel 3,233, eff n 6.2) | 51 / 43 / 50 (p 0.30; n_sel 3,080, eff n 6.2) | 53 / 46 / 56 (p 0.77; n_sel 2,442, eff n 5.8) |
+| 12m | 47 / 42 / 47 (p 0.48; n_sel 1,354, eff n 2.6) | 52 / 46 / 54 (p 0.61; n_sel 1,297, eff n 2.6) | 50 / 51 / 56 (p 0.64; n_sel 1,046, eff n 2.4) |
 
 
 How to read the controls: nonsense units (random day skips or random half-size days of 5-30% on JN05W2, 12 seeds each, built from the day tables; plus the exact placebo sets TL3_*_PL11/23/37, *_PB1-3) go through the identical pipeline. They land in the same band as the real families (P 20-43%, base 20-40%) and, like the real cuts, show a few cells with p<0.05 vs shuffled time (8 of 60), so a +2..+4 point lift is the size of the test's own artefact. Next-H dollars of the selected units minus the shuffled-selection units (persist_table.csv: meanF_sel - meanF_shift, $/wk): cuts +70 (book) / +170 (all-books), confluence +73 / +164, nonsense_skip +46 / +343, sizing -44 / -335, skips -59 / -260, brackets -16 / -373: mixed in sign and no larger for real cuts/confluence than for nonsense; none is tested to be nonzero. Persistence of 'what works now' is therefore indistinguishable from the persistence of long-run quality (the shuffled placebo keeps each unit's own level), and where it differs from that it is not robustly positive.
@@ -420,43 +420,43 @@ Definitions (weekly basis, base lots, stored exact runs; windows by week Monday:
 
 | rule | W | H | n_origins | eff_indep | P next-H pos % | base % | shuffled % | p_vs_shift |
 |--|--|--|--|--|--|--|--|--|
-| A half-size (SM_A6_halfNP7 = TL3_EA_A6) | 4 | 4 | 180 | 45.0 | 51.6 | 49.4 | 48.1 | 0.3 |
-| A half-size (SM_A6_halfNP7 = TL3_EA_A6) | 13 | 13 | 162 | 12.5 | 52.7 | 54.9 | 51.3 | 0.4 |
-| A half-size (SM_A6_halfNP7 = TL3_EA_A6) | 26 | 13 | 149 | 5.7 | 59.1 | 57.0 | 53.0 | 0.4 |
-| A half-size (SM_A6_halfNP7 = TL3_EA_A6) | 13 | 4 | 171 | 13.2 | 51.0 | 47.4 | 45.3 | 0.2 |
-| London range LS1 | 4 | 4 | 62 | 15.5 | 48.3 | 51.6 | 57.0 | 0.6 |
-| London range LS1 | 13 | 13 | 44 | 3.4 | 15.4 | 52.3 | 49.7 | 0.9 |
-| London range LS1 | 26 | 13 | 31 | 1.2 | 16.7 | 54.8 |  |  |
-| London range LS1 | 13 | 4 | 53 | 4.1 | 54.5 | 56.6 | 67.3 | 0.7 |
-| London range LS125 | 4 | 4 | 62 | 15.5 | 39.3 | 51.6 | 56.4 | 0.7 |
-| London range LS125 | 13 | 13 | 44 | 3.4 | 27.3 | 52.3 | 57.5 | 0.8 |
+| A half-size (SM_A6_halfNP7 = TL3_EA_A6) | 4 | 4 | 182 | 45.5 | 51.6 | 48.9 | 47.5 | 0.2 |
+| A half-size (SM_A6_halfNP7 = TL3_EA_A6) | 13 | 13 | 164 | 12.6 | 51.6 | 54.3 | 50.5 | 0.4 |
+| A half-size (SM_A6_halfNP7 = TL3_EA_A6) | 26 | 13 | 151 | 5.8 | 57.8 | 56.3 | 52.2 | 0.4 |
+| A half-size (SM_A6_halfNP7 = TL3_EA_A6) | 13 | 4 | 173 | 13.3 | 51.0 | 46.8 | 44.9 | 0.2 |
+| London range LS1 | 4 | 4 | 64 | 16.0 | 50.0 | 53.1 | 58.2 | 0.6 |
+| London range LS1 | 13 | 13 | 46 | 3.5 | 26.7 | 54.3 | 47.7 | 0.7 |
+| London range LS1 | 26 | 13 | 33 | 1.3 | 16.7 | 57.6 | 100.0 | 1.0 |
+| London range LS1 | 13 | 4 | 55 | 4.2 | 58.3 | 58.2 | 69.1 | 0.6 |
+| London range LS125 | 4 | 4 | 62 | 15.5 | 39.3 | 51.6 | 56.6 | 0.8 |
+| London range LS125 | 13 | 13 | 44 | 3.4 | 27.3 | 52.3 | 58.2 | 0.8 |
 | London range LS125 | 26 | 13 | 31 | 1.2 | 33.3 | 58.1 |  |  |
-| London range LS125 | 13 | 4 | 53 | 4.1 | 50.0 | 52.8 | 61.6 | 0.6 |
-| M7 London CAP3 | 4 | 4 | 45 | 11.2 | 36.4 | 40.0 | 40.6 | 0.5 |
+| London range LS125 | 13 | 4 | 53 | 4.1 | 50.0 | 52.8 | 60.8 | 0.6 |
+| M7 London CAP3 | 4 | 4 | 45 | 11.2 | 36.4 | 40.0 | 39.5 | 0.5 |
 | M7 London CAP3 | 13 | 13 | 27 | 2.1 | 13.3 | 22.2 |  |  |
-| M7 London CAP3 | 13 | 4 | 36 | 2.8 | 33.3 | 38.9 | 31.7 | 0.6 |
-| M7 London CAP2 | 4 | 4 | 45 | 11.2 | 30.8 | 20.0 | 14.8 | 0.1 |
+| M7 London CAP3 | 13 | 4 | 36 | 2.8 | 33.3 | 38.9 | 32.2 | 0.6 |
+| M7 London CAP2 | 4 | 4 | 45 | 11.2 | 30.8 | 20.0 | 16.9 | 0.2 |
 | M7 London CAP2 | 13 | 13 | 27 | 2.1 | 0.0 | 0.0 |  |  |
-| M7 London CAP2 | 13 | 4 | 36 | 2.8 | 20.0 | 8.3 | 8.5 | 0.0 |
-| M7 BLKiv | 4 | 4 | 45 | 11.2 | 30.8 | 22.2 | 19.7 | 0.2 |
+| M7 London CAP2 | 13 | 4 | 36 | 2.8 | 20.0 | 8.3 | 8.2 | 0.0 |
+| M7 BLKiv | 4 | 4 | 45 | 11.2 | 30.8 | 22.2 | 21.5 | 0.2 |
 | M7 BLKiv | 13 | 13 | 27 | 2.1 | 18.8 | 25.9 |  |  |
 | M7 BLKiv | 13 | 4 | 36 | 2.8 | 25.0 | 25.0 | 13.8 | 0.1 |
-| K7 flat -40 | 4 | 4 | 159 | 39.8 | 53.7 | 49.1 | 47.8 | 0.2 |
-| K7 flat -40 | 13 | 13 | 123 | 9.5 | 40.0 | 43.9 | 40.4 | 0.5 |
-| K7 flat -40 | 26 | 13 | 97 | 3.7 | 43.2 | 36.1 | 31.2 | 0.3 |
-| K7 flat -40 | 13 | 4 | 141 | 10.8 | 42.0 | 46.1 | 44.5 | 0.6 |
-| A7 flat -40 | 4 | 4 | 159 | 39.8 | 54.2 | 46.5 | 44.7 | 0.0 |
-| A7 flat -40 | 13 | 13 | 123 | 9.5 | 58.7 | 35.8 | 27.5 | 0.1 |
-| A7 flat -40 | 26 | 13 | 97 | 3.7 | 42.2 | 32.0 | 30.4 | 0.3 |
-| A7 flat -40 | 13 | 4 | 141 | 10.8 | 66.7 | 48.2 | 44.4 | 0.1 |
-| BLK_M30 | 4 | 4 | 168 | 42.0 | 35.4 | 29.2 | 25.9 | 0.2 |
-| BLK_M30 | 13 | 13 | 132 | 10.2 | 32.5 | 37.9 | 32.0 | 0.5 |
-| BLK_M30 | 26 | 13 | 106 | 4.1 | 35.7 | 39.6 | 36.5 | 0.5 |
-| BLK_M30 | 13 | 4 | 150 | 11.5 | 38.0 | 30.0 | 26.7 | 0.1 |
-| U7 time stop B (T15D10) | 4 | 4 | 159 | 39.8 | 47.4 | 50.9 | 50.1 | 0.6 |
-| U7 time stop B (T15D10) | 13 | 13 | 123 | 9.5 | 52.4 | 52.0 | 50.4 | 0.4 |
-| U7 time stop B (T15D10) | 26 | 13 | 97 | 3.7 | 43.8 | 51.5 | 46.8 | 0.5 |
-| U7 time stop B (T15D10) | 13 | 4 | 141 | 10.8 | 48.2 | 48.2 | 45.7 | 0.4 |
+| K7 flat -40 | 4 | 4 | 159 | 39.8 | 53.7 | 49.1 | 47.6 | 0.2 |
+| K7 flat -40 | 13 | 13 | 123 | 9.5 | 40.0 | 43.9 | 40.1 | 0.4 |
+| K7 flat -40 | 26 | 13 | 97 | 3.7 | 43.2 | 36.1 | 31.5 | 0.3 |
+| K7 flat -40 | 13 | 4 | 141 | 10.8 | 42.0 | 46.1 | 44.6 | 0.6 |
+| A7 flat -40 | 4 | 4 | 159 | 39.8 | 54.2 | 46.5 | 44.6 | 0.0 |
+| A7 flat -40 | 13 | 13 | 123 | 9.5 | 58.7 | 35.8 | 27.9 | 0.1 |
+| A7 flat -40 | 26 | 13 | 97 | 3.7 | 42.2 | 32.0 | 31.9 | 0.3 |
+| A7 flat -40 | 13 | 4 | 141 | 10.8 | 66.7 | 48.2 | 44.5 | 0.1 |
+| BLK_M30 | 4 | 4 | 170 | 42.5 | 35.4 | 30.0 | 26.4 | 0.2 |
+| BLK_M30 | 13 | 13 | 134 | 10.3 | 35.7 | 38.8 | 32.5 | 0.4 |
+| BLK_M30 | 26 | 13 | 108 | 4.2 | 40.0 | 40.7 | 36.3 | 0.4 |
+| BLK_M30 | 13 | 4 | 152 | 11.7 | 40.4 | 30.9 | 27.2 | 0.0 |
+| U7 time stop B (T15D10) | 4 | 4 | 161 | 40.2 | 47.5 | 50.9 | 50.0 | 0.6 |
+| U7 time stop B (T15D10) | 13 | 13 | 125 | 9.6 | 52.9 | 52.8 | 51.2 | 0.4 |
+| U7 time stop B (T15D10) | 26 | 13 | 99 | 3.8 | 45.5 | 52.5 | 47.8 | 0.5 |
+| U7 time stop B (T15D10) | 13 | 4 | 143 | 11.0 | 48.3 | 48.3 | 45.8 | 0.4 |
 
 No gated rule has persistence above 60% with at least 5 independent observations. A7 flat -40 reaches 67% at W13->H4 (base 48%, shuffled 44%, p 0.11, eff n 10.8) and 59% at 3m->3m (base 36%, p 0.10, eff n 9.5), the highest of the set, but both miss the 0.05 bar and its level fails the strict test (L6M +$661, HOLD -$30, PRE -$225, X' +$381 vs LPB_EMPTY; DD cut +1.2/-1.9/-2.1/+5.6%). The half-size rule A is the closest to the user's standard on the DD side (L1M/L3M/L6M/HOLD DD cut 11.6-11.8%, X' +7.8%, GAP +2.3%) but its L3M mean is -$886/wk (L6M +$601, HOLD +$635), PRE DD 7.6% deeper (within the 10% tolerance) and mean in the GAP window -$828/wk (about -8% of the reference: fails the -5% tolerance); its persistence is 52-59% against 49-57% base (p 0.27-0.44): no. The London range rule LS1/LS125 is strongly positive recently (L3M +$2.9k/+$4.0k, L6M +$1.8k/+$2.4k, DD cut 12-14% in L3M/L6M) but the GAP window (2025-07..10, -$1.6k/-$1.1k per week, branch A K7/U7 trades) fails both readings and PRE/X' are not yet run. M7 London caps are unresolved (older windows not run; recent: CAP3 -$2.2k/wk mean, DD cut +3.9%; CAP2/BLKiv negative DD). The recent-only confluence cells exist only for 12 months (L6M/L3M window): P7 Asia all-5 L6M -$8.7k/wk (negative), L3M negative; unresolved/fail. BLK_M30 and the U7 time stop B pass the recent side (L3M/L6M/HOLD positive; BLK_M30 L3M +$1.2k, DD cut 15.6%; U7B L3M +$1.0k, DD cut 11.7%) and the older X'/PRE windows by the tolerant test; the GAP window is not run, so 'PASS on available older windows only'. The U7 time stop B is the only shelved rule that clears the tolerant reading on everything that has been run; its persistence is 44-52% vs base 48-52% (no better than coin), so the case for it rests on the level (positive in X' +$249, PRE -$93, L6M +$916), not on recency.
 

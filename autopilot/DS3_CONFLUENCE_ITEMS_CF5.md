@@ -1,3 +1,5 @@
+**NOTE (2026-11-15): this page is the PRE-EXTENSION version (universe to 2026-10-30, plain Welch tables). The current each-alone verdicts with the cluster-robust zw and the nonsense bar are in DS3_CONFLUENCE_ITEMS_CF5_ZW.md (data to 2026-11-13, November provisional).** PRE-EXTENSION
+
 # DS3_CONFLUENCE_ITEMS_CF5 - Block 3 (desk / named-trader systems), STEP 3 each alone
 
 **Verdict line (updated 2026-11-15 17:15Z): sub-blocks A, B, B2, C1, C2, D and Addendum-6 Blocks 7, 8, 9, 13 and 16 are built and scored each alone (4847 conditions); no item is claimed as a finding, the tables are the map (flow measures at our entries are mostly null, like the earlier MBO screen).**
