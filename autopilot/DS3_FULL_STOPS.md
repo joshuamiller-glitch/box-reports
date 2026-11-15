@@ -1,4 +1,4 @@
-# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-15 04:27Z
+# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-15 07:27Z
 
 VERDICT (plain): First-order only so far (exact cells queued, none finished): the full stops sit in A7 (4.0/wk) and U7 (3.4/wk) and are indistinguishable from winners in the first minute but separate at 5-10 minutes; the one time stop with no mean loss in every window and a clear gap to its random-time placebo is U7 in London (below -10 at 5 min, full stops 1.6 to 1.1/wk, +$165..598/wk, but old windows have few U7 trades), plus small M7 no-progress and P7 NY AM rules; for A7 every rule that removes its full stops costs $130-400/wk, so there is no free setting. No PASS claim.
 BASIS (one line): every $ and DD number on this page sums raw engine net_fee of JN05W2-family sets at BASE (box) lots, live = x1.75, with the engine own fills and $1.18/contract RT (not FEES.md $4.84 RT); columns dmean@4.84 reprice the mean change at $4.84 RT per contract (delta contracts x $3.66), no rerun.
@@ -103,9 +103,12 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | G5HC | -438 | 2 | 10.3>10.3 | -803 | 2 | 11.0>11.0 | -1,519 | 1 | 0 | - | - | - | -423 | -787 | - | -18 | - | - | - |
 | G5S | -9579 | -3 | 10.3>7.2 | -9,561 | -3 | 11.0>7.7 | -3,048 | 1 | 3 | - | - | - | -9287 | -9,258 | - | -24 | - | - | - |
 | G5SC | -4757 | -39 | 10.3>10.4 | - | - | - | - | - | - | - | - | - | -4729 | - | - | - | - | - | - |
+| E_U7L_N5X10 | 390 | 0 | 10.3>9.7 | - | - | - | - | - | - | - | - | - | 390 | - | - | - | - | - | - |
+| E_P7N_F35 | 149 | 0 | 10.3>10.0 | - | - | - | - | - | - | - | - | - | 149 | - | - | - | - | - | - |
 | E_H7N_N15X10 | -3 | 0 | 10.3>10.3 | 29 | 0 | 11.0>10.9 | 0 | 1 | 0 | - | - | - | -3 | 29 | - | 0 | - | - | - |
-| E_A7_N10X20 | 2363 | 1 | 10.3>9.6 | 1,420 | 1 | 11.0>10.4 | 511 | 1 | 0 | 612 | -2 | 10.7>10.3 | 2353 | 1,414 | 609 | 2 | - | - | - |
-| E_A7_F50 | 1652 | 2 | 10.3>6.5 | 1,331 | 2 | 11.0>7.3 | 1,114 | 1 | 0 | 494 | 1 | 10.7>7.6 | 1642 | 1,324 | 493 | 0 | - | - | - |
+| E_A7_N10X20 | 2363 | 1 | 10.3>9.6 | 1,420 | 1 | 11.0>10.4 | 511 | 1 | 0 | 612 | -2 | 10.7>10.3 | 2353 | 1,414 | 609 | 2 | 250 | 0 | 9.3>9.1 |
+| E_A7_F50 | 1652 | 2 | 10.3>6.5 | 1,331 | 2 | 11.0>7.3 | 1,114 | 1 | 0 | 494 | 1 | 10.7>7.6 | 1642 | 1,324 | 493 | 0 | 715 | 8 | 9.3>7.9 |
 | E_A7_F40 | 2126 | 10 | 10.3>6.5 | 1,869 | 10 | 11.0>7.2 | 5,527 | 1 | 0 | 468 | -0 | 10.7>7.6 | 2109 | 1,854 | 464 | 6 | 358 | 8 | 9.3>7.8 |
-| E_M7_F45 | -202 | 0 | 10.3>9.3 | - | - | - | - | - | - | - | - | - | -205 | - | - | - | - | - | - |
-| E_H7_F50 | -112 | 0 | 10.3>9.8 | -157 | 0 | 11.0>10.3 | 0 | 1 | 0 | -217 | -4 | 10.7>9.7 | -112 | -157 | -217 | 0 | - | - | - |
+| E_M7_F50 | -47 | 0 | 10.3>9.4 | - | - | - | - | - | - | - | - | - | -48 | - | - | - | - | - | - |
+| E_M7_F45 | -202 | 0 | 10.3>9.3 | -520 | 0 | 11.0>9.9 | 5 | 1 | 0 | - | - | - | -205 | -521 | - | -4 | - | - | - |
+| E_H7_F50 | -112 | 0 | 10.3>9.8 | -157 | 0 | 11.0>10.3 | 0 | 1 | 0 | -217 | -4 | 10.7>9.7 | -112 | -157 | -217 | 0 | 259 | 0 | 9.3>8.1 |

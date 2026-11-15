@@ -1,4 +1,4 @@
-# DS3_LOT_TABLE - PRIORITY 11: session lot table and small books H7 / A7 / O7 (page generated 2026-11-15 04:24 UTC)
+# DS3_LOT_TABLE - PRIORITY 11: session lot table and small books H7 / A7 / O7 (page generated 2026-11-15 07:24 UTC)
 
 **VERDICT: INTERIM (first-order; exact lot strings queued): keep the live table. A free refit does not walk forward (L6M max DD x2.9 at equal mean); refitting only H7/A7/O7 is mild (L6M x1.08, HOLD 0.97, PRE 0.81, X' 0.63). Leads to confirm exactly: H7 asia 4->5 lots (equal-mean DD better in L6M/HOLD/GAP/PRE, worse X'), O7 1->2 lots (better HOLD/GAP/PRE, flat L6M), A7 stay at 1 (mixed), K7 nypm 2->3. M7 unchanged.**
 
@@ -256,6 +256,7 @@ Status: Shadow only, post hoc, no PASS claims. Prereg autopilot/NT_PREREG.md. Li
 | TL3_NT_LT_H7_5011 | HOLD | 7/7 | 9772.9 | 186.6 | 8.606 | 8.606 | -56539.8 | -55145.4 | 100.6 | 0.000 | 173.4 | 229.1 | 225.5 | 10.2 | 10.1 |
 | TL3_NT_LT_H7_asiaonly | HOLD | 7/7 | 9581.8 | -4.533 | 0.406 | 0.406 | -55145.4 | -55145.4 | 99.5 | 0.000 | 0.076 | 224.3 | 225.5 | 9.481 | 10.1 |
 | TL3_NT_LT_JOINT1 | HOLD | 7/7 | 9919.3 | 332.9 | 6.877 | 6.877 | -57789.2 | -55145.4 | 97.7 | 0.000 | 296.2 | 235.6 | 225.5 | 10.1 | 10.1 |
+| TL3_NT_LT_K7_nypm3 | HOLD | 7/7 | 9296.6 | -289.7 | -0.450 | -0.450 | -55145.4 | -55145.4 | 99.4 | 0.000 | -297.7 | 227.7 | 225.5 | 10.1 | 10.1 |
 | TL3_NT_LT_O7_2 | HOLD | 7/7 | 9905.1 | 318.8 | 3.321 | 3.321 | -53346.6 | -55145.4 | 97.5 | 0.000 | 312.7 | 227.2 | 225.5 | 10.0 | 10.1 |
 | TL3_NT_LT_SMALL1 | HOLD | 7/7 | 10145.3 | 559.0 | 11.9 | 11.9 | -55193.3 | -55145.4 | 98.0 | 0.000 | 539.3 | 230.9 | 225.5 | 10.1 | 10.1 |
 

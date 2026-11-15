@@ -1,7 +1,7 @@
 # DS3_P7_ASIA_REENTRY - P7 Asia same-side re-entry after a loser (W-PR, PRIORITY 3 of BACK TO D7)
 **VERDICT: UPDATE 2: BEST SETTING SO FAR = BLK_M30 (after a P7 Asia loser, block that same side for 30 min; nothing else changes) - recent-window evidence only, weak: exact L3M/L6M d$ +1,210 / +1,428 per wk, DD cut 16.9% / 16.9%, worst week +10.2k, best-5 weeks kept 1.00 / 1.03, no winning week turned losing, and it beats 3 random same-count block placebos (DD cut -0.4% to -0.5%, d$ -19 to -1,367) - BUT the DD gain is the single week 2026-W44 (ex-W44: DD cut 0.0, +385 / +1,040 $/wk), HOLD (1 month missing) and PRE/X'/GAP are not run yet (PR admission starved by load), so it is NOT yet a lead under the both-windows rule; evidence blocks (new extreme / entry / opposite / 120 min), session caps and loss caps are worse or unproven; HALF is a mean-only +1.4k/+0.6k with no DD effect; no PASS.**
 
-Page stamp 2026-11-15T04:14Z (epoch 1794716049). Label: PRE-PROOF, post-hoc, Shadow only, no PASS claims. Prereg autopilot/P7_ASIA_REENTRY_PREREG.md (sha in DECISIONS.md before any exact cell). Code code/th_p7re/ (pr_load, pr_meas2, pr_fo, pr_hooks, pr_cells, pr_driver, pr_score, pr_page). Base: JN05W2 exact engine, all layers ON (which already contains the c_gov governor: skip a P7 signal after >= 2 same-side losers in the session unless a new session extreme was made). Fills as measured (+0.23 entry / +0.44 stop / +1.36 at 08:30 pts, $4.84 RT). Recent max DD is ONE week (2026-W44, 10-26..11-01, stack -36.4k); read drawdown against the -W44 rows and the placebos.
+Page stamp 2026-11-15T07:14Z (epoch 1794726880). Label: PRE-PROOF, post-hoc, Shadow only, no PASS claims. Prereg autopilot/P7_ASIA_REENTRY_PREREG.md (sha in DECISIONS.md before any exact cell). Code code/th_p7re/ (pr_load, pr_meas2, pr_fo, pr_hooks, pr_cells, pr_driver, pr_score, pr_page). Base: JN05W2 exact engine, all layers ON (which already contains the c_gov governor: skip a P7 signal after >= 2 same-side losers in the session unless a new session extreme was made). Fills as measured (+0.23 entry / +0.44 stop / +1.36 at 08:30 pts, $4.84 RT). Recent max DD is ONE week (2026-W44, 10-26..11-01, stack -36.4k); read drawdown against the -W44 rows and the placebos.
 
 BASIS (one line): every $ on this page is the sum of the JN05W2 exact-engine trade table at BASE (box) lots, NOT live x1.75, with net_fee = gross - $1.18 per contract RT (engine's own fills), not FEES.md $4.84; the column 'd$/wk at FEES.md $4.84' reprices each trade at net_fee - 3.66 x lots (same trades, no rerun) for cell minus JN05W2.
 
@@ -272,6 +272,7 @@ Hook identity proof: TL3_PR_ID 202610 (hook module loaded, empty par): 598 trade
 | BLK_M30 | HOLD | +642 | +643 | 18902 | -86418 | +6.1 | -69237 | -14091 | 10.8 | 0.99 | 0 | 7507/7452 |
 | BLK_M30 | HOLD-W44 | +435 | +437 | 19763 | -86418 | +6.1 | -69237 | -14091 | 10.8 | 0.99 | 0 | 7372/7324 |
 | BLK_M30 | PRE | -783 | -777 | 11083 | -90432 | +2.0 | -52547 | +0 | 9.3 | 0.95 | 1 | 4365/4383 |
+| BLK_M30 | X' | +61 | +62 | 5895 | -80356 | +0.0 | -45983 | -65 | 10.3 | 1.03 | 0 | 6286/6286 |
 | BLK_M30 | GAP | +0 | +0 | 11043 | -82063 | +0.0 | -68947 | +0 | 10.1 | 1.00 | 0 | 1167/1167 |
 | BLK_M60 | L3M | +1366 | +1365 | 20502 | -52438 | -0.4 | -35783 | +587 | 10.3 | 1.00 | 0 | 1888/1875 |
 | BLK_M60 | L3M-W44 | +100 | +107 | 23807 | -52438 | -20.8 | -35783 | -9757 | 10.2 | 1.00 | 0 | 1752/1747 |
@@ -284,6 +285,7 @@ Hook identity proof: TL3_PR_ID 202610 (hook module loaded, empty par): 598 trade
 | HALF | HOLD | +72 | +99 | 18332 | -87226 | +5.2 | -44681 | +10464 | 10.7 | 0.98 | 1 | 7504/7452 |
 | HALF | HOLD-W44 | +5 | +32 | 19333 | -87226 | +5.2 | -44681 | +10464 | 10.7 | 0.98 | 1 | 7374/7324 |
 | HALF | PRE | -339 | -326 | 11527 | -89924 | +2.5 | -52547 | +0 | 9.3 | 0.97 | 0 | 4403/4383 |
+| HALF | X' | -231 | -229 | 5603 | -82133 | -2.2 | -52155 | -6236 | 10.3 | 1.01 | 0 | 6291/6286 |
 | HALF | GAP | +1141 | +1143 | 12184 | -73922 | +9.9 | -67092 | +1854 | 10.1 | 1.03 | 0 | 1171/1167 |
 | CAP2 | L3M | -2454 | -2341 | 16682 | -59189 | -13.3 | -28041 | +8330 | 10.7 | 0.91 | 1 | 1834/1875 |
 | CAP2 | L3M-W44 | -4327 | -4215 | 19380 | -59189 | -36.4 | -28041 | -2015 | 10.6 | 0.91 | 1 | 1701/1747 |
@@ -327,6 +329,8 @@ Hook identity proof: TL3_PR_ID 202610 (hook module loaded, empty par): 598 trade
 | XB_ALLBK | L6M-W44 | +2041 | +2040 | 29609 | -41842 | +3.6 | -25947 | +79 | 11.2 | 1.02 | 0 | 4071/4041 |
 | XB_ALLBK | HOLD | +1234 | +1236 | 19495 | -84171 | +8.6 | -80599 | -25453 | 10.8 | 0.97 | 0 | 7492/7452 |
 | XB_ALLBK | HOLD-W44 | +822 | +824 | 20151 | -84171 | +8.6 | -80599 | -25453 | 10.8 | 0.97 | 0 | 7365/7324 |
+| XB_ALLBK | PRE | -919 | -914 | 10948 | -88244 | +4.3 | -52547 | +0 | 9.3 | 0.92 | 1 | 4376/4383 |
+| XB_ALLBK | GAP | -16 | -17 | 11027 | -80238 | +2.2 | -68947 | +0 | 10.1 | 1.00 | 0 | 1171/1167 |
 | XS_P7_LON | L3M | -236 | -234 | 18900 | -52233 | +0.0 | -36371 | +0 | 10.3 | 0.99 | 0 | 1873/1875 |
 | XS_P7_LON | L3M-W44 | -256 | -253 | 23451 | -45618 | -5.1 | -25231 | +795 | 10.2 | 0.99 | 0 | 1745/1747 |
 | XS_ALL_LON | L3M | -1364 | -1352 | 17772 | -52002 | +0.4 | -34940 | +1430 | 10.3 | 0.96 | 0 | 1836/1875 |
@@ -343,11 +347,16 @@ Hook identity proof: TL3_PR_ID 202610 (hook module loaded, empty par): 598 trade
 | XG_N15 | L3M-W44 | +706 | +698 | 24414 | -43405 | +0.0 | -26026 | +0 | 10.4 | 1.04 | 0 | 1760/1747 |
 | XG_N15 | L6M | +619 | +616 | 25754 | -46762 | +10.5 | -30899 | +5471 | 11.2 | 1.01 | 0 | 4191/4169 |
 | XG_N15 | L6M-W44 | +427 | +427 | 27994 | -43405 | +0.0 | -26619 | -593 | 11.2 | 1.01 | 0 | 4056/4041 |
+| XG_N15 | HOLD | +150 | +147 | 18411 | -92044 | -0.0 | -58921 | -3776 | 10.8 | 1.00 | 0 | 7511/7452 |
+| XG_N15 | HOLD-W44 | +46 | +44 | 19375 | -92044 | -0.0 | -58921 | -3776 | 10.8 | 1.00 | 0 | 7376/7324 |
 | XG_N15 | PRE | -459 | -457 | 11408 | -89398 | +3.1 | -52547 | +0 | 9.3 | 0.98 | 1 | 4387/4383 |
+| XG_N15 | GAP | +0 | +0 | 11043 | -82063 | +0.0 | -68947 | +0 | 10.1 | 1.00 | 0 | 1167/1167 |
 | XG_N45 | L3M | +73 | +73 | 19209 | -51208 | +2.0 | -33964 | +2406 | 10.3 | 0.99 | 0 | 1874/1875 |
 | XG_N45 | L3M-W44 | -945 | -939 | 22762 | -51208 | -18.0 | -33964 | -7938 | 10.2 | 0.99 | 0 | 1739/1747 |
 | XG_N45 | L6M | +484 | +510 | 25619 | -51208 | +2.0 | -33964 | +2406 | 11.0 | 1.06 | 0 | 4121/4169 |
 | XG_N45 | L6M-W44 | +11 | +41 | 27579 | -51208 | -18.0 | -33964 | -7938 | 11.0 | 1.06 | 0 | 3986/4041 |
+| XG_N45 | HOLD | -263 | -243 | 17997 | -89057 | +3.2 | -61083 | -5938 | 10.7 | 1.01 | 0 | 7402/7452 |
+| XG_N45 | HOLD-W44 | -512 | -489 | 18817 | -89057 | +3.2 | -61083 | -5938 | 10.7 | 1.01 | 0 | 7267/7324 |
 | XG_N45 | PRE | -284 | -279 | 11582 | -87446 | +5.2 | -52547 | +0 | 9.3 | 0.93 | 1 | 4367/4383 |
 | XG_N45 | GAP | -119 | -120 | 10924 | -82063 | +0.0 | -68947 | +0 | 10.1 | 0.99 | 0 | 1168/1167 |
 | XG_N60 | L3M | +1366 | +1365 | 20502 | -52438 | -0.4 | -35783 | +587 | 10.3 | 1.00 | 0 | 1888/1875 |
@@ -374,14 +383,28 @@ Hook identity proof: TL3_PR_ID 202610 (hook module loaded, empty par): 598 trade
 | XG_ANYBLK | L6M-W44 | -533 | -495 | 27035 | -51787 | -19.3 | -26176 | -150 | 11.3 | 0.84 | 0 | 4014/4041 |
 | XG_ANYBLK | HOLD | +352 | +371 | 18613 | -85111 | +7.5 | -44192 | +10954 | 10.8 | 0.82 | 0 | 7501/7452 |
 | XG_ANYBLK | HOLD-W44 | +3 | +24 | 19332 | -85111 | +7.5 | -44192 | +10954 | 10.8 | 0.82 | 0 | 7364/7324 |
+| XG_ANYBLK | GAP | -320 | -320 | 10723 | -81863 | +0.2 | -68747 | +200 | 10.2 | 1.02 | 0 | 1167/1167 |
 | XF_CARRY | L3M | +1210 | +1202 | 20346 | -43405 | +16.9 | -26176 | +10195 | 10.3 | 1.00 | 0 | 1882/1875 |
 | XF_CARRY | L3M-W44 | +385 | +382 | 24092 | -43405 | +0.0 | -26176 | -150 | 10.1 | 1.00 | 0 | 1747/1747 |
+| XF_CARRY | L6M | +1428 | +1427 | 26563 | -43405 | +16.9 | -26176 | +10195 | 11.1 | 1.03 | 0 | 4201/4169 |
+| XF_CARRY | L6M-W44 | +1040 | +1042 | 28608 | -43405 | -0.0 | -26176 | -150 | 11.1 | 1.03 | 0 | 4066/4041 |
+| XF_CARRY | HOLD | +642 | +643 | 18902 | -86418 | +6.1 | -69237 | -14091 | 10.8 | 0.99 | 0 | 7507/7452 |
+| XF_CARRY | HOLD-W44 | +435 | +437 | 19763 | -86418 | +6.1 | -69237 | -14091 | 10.8 | 0.99 | 0 | 7372/7324 |
+| XF_CARRY | GAP | +0 | +0 | 11043 | -82063 | +0.0 | -68947 | +0 | 10.1 | 1.00 | 0 | 1167/1167 |
 | XF_CARRY_ALL | L3M | +1614 | +1611 | 20750 | -45618 | +12.7 | -27779 | +8592 | 10.3 | 1.00 | 0 | 1877/1875 |
 | XF_CARRY_ALL | L3M-W44 | +857 | +860 | 24564 | -45618 | -5.1 | -27779 | -1753 | 10.2 | 1.00 | 0 | 1741/1747 |
+| XF_CARRY_ALL | L6M | +1237 | +1244 | 26373 | -45618 | +12.7 | -27779 | +8592 | 11.1 | 1.01 | 0 | 4177/4169 |
+| XF_CARRY_ALL | L6M-W44 | +859 | +869 | 28427 | -45618 | -5.1 | -27779 | -1753 | 11.1 | 1.01 | 0 | 4041/4041 |
+| XF_CARRY_ALL | PRE | -637 | -625 | 11229 | -83634 | +9.3 | -52547 | +0 | 9.3 | 0.98 | 1 | 4334/4383 |
+| XF_CARRY_ALL | GAP | -93 | -90 | 10950 | -74964 | +8.6 | -64536 | +4410 | 10.3 | 0.96 | 0 | 1166/1167 |
 | XF_P7_ALLSESS | L3M | +1615 | +1612 | 20751 | -45618 | +12.7 | -27779 | +8592 | 10.3 | 1.00 | 0 | 1874/1875 |
 | XF_P7_ALLSESS | L3M-W44 | +858 | +861 | 24565 | -45618 | -5.1 | -27779 | -1753 | 10.1 | 1.00 | 0 | 1738/1747 |
 | XF_P7_ALLSESS | L6M | +1238 | +1244 | 26373 | -45618 | +12.7 | -27779 | +8592 | 11.1 | 1.01 | 0 | 4174/4169 |
 | XF_P7_ALLSESS | L6M-W44 | +860 | +870 | 28428 | -45618 | -5.1 | -27779 | -1753 | 11.1 | 1.01 | 0 | 4038/4041 |
+| XF_P7_ALLSESS | HOLD | +662 | +668 | 18922 | -84983 | +7.7 | -72252 | -17107 | 10.7 | 0.99 | 0 | 7475/7452 |
+| XF_P7_ALLSESS | HOLD-W44 | +464 | +471 | 19792 | -84983 | +7.7 | -72252 | -17107 | 10.7 | 0.99 | 0 | 7339/7324 |
+| XF_P7_ALLSESS | PRE | -609 | -597 | 11258 | -83634 | +9.3 | -52547 | +0 | 9.3 | 0.97 | 1 | 4335/4383 |
+| XF_P7_ALLSESS | GAP | -91 | -87 | 10953 | -74929 | +8.7 | -64501 | +4445 | 10.3 | 0.96 | 0 | 1166/1167 |
 | PLA_M30_s1 | L3M | -1183 | -1185 | 17953 | -52463 | -0.4 | -33709 | +2661 | 10.3 | 0.98 | 0 | 1874/1875 |
 | PLA_M30_s1 | L3M-W44 | -1804 | -1805 | 21903 | -52463 | -20.9 | -33709 | -7683 | 10.2 | 0.98 | 0 | 1745/1747 |
 | PLA_M30_s1 | L6M | -410 | -406 | 24725 | -52463 | -0.4 | -33709 | +2661 | 11.0 | 0.99 | 0 | 4163/4169 |
@@ -500,4 +523,4 @@ Update 2 (placebos and older windows so far):
 
 
 ## 5. Status
-driver: 1794716014 epoch chains 85 ident TL3_PR_ID 202610 (hook module loaded, empty par): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL outstanding 140; cells with complete windows: {"TL3_PR_BLK_EXT": ["L3M", "L3M-W44"], "TL3_PR_BLK_ENT": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE", "X'"], "TL3_PR_BLK_OPP": ["L3M", "L3M-W44"], "TL3_PR_BLK_HL": ["L3M", "L3M-W44"], "TL3_PR_BLK_M30": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_BLK_M60": ["L3M", "L3M-W44"], "TL3_PR_BLK_M120": ["L3M", "L3M-W44"], "TL3_PR_HALF": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_CAP2": ["L3M", "L3M-W44"], "TL3_PR_CAP3": ["L3M", "L3M-W44"], "TL3_PR_CAP4": ["L3M", "L3M-W44"], "TL3_PR_RCAP10": ["L3M", "L3M-W44"], "TL3_PR_RCAP15": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_RCAP20": ["L3M", "L3M-W44"], "TL3_PR_SN": ["L3M", "L3M-W44"], "TL3_PR_XB_K7": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XB_U7": ["L3M", "L3M-W44"], "TL3_PR_XB_M7": ["L3M", "L3M-W44"], "TL3_PR_XB_A7": ["L3M", "L3M-W44"], "TL3_PR_XB_H7": ["L3M", "L3M-W44"], "TL3_PR_XB_ALLBK": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_XS_P7_LON": ["L3M", "L3M-W44"], "TL3_PR_XS_ALL_LON": ["L3M", "L3M-W44"], "TL3_PR_XS_P7_NYAM": ["L3M", "L3M-W44"], "TL3_PR_XS_ALL_NYAM": ["L3M", "L3M-W44"], "TL3_PR_XS_P7_NYPM": ["L3M", "L3M-W44"], "TL3_PR_XS_ALL_NYPM": ["L3M", "L3M-W44"], "TL3_PR_XG_N15": ["L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XG_N45": ["GAP", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XG_N60": ["L3M", "L3M-W44"], "TL3_PR_XG_N90": ["L3M", "L3M-W44"], "TL3_PR_XM_W15": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XM_ONLY15": ["L3M", "L3M-W44"], "TL3_PR_XM_ONLY30": ["L3M", "L3M-W44"], "TL3_PR_XG_WINBLK": ["L3M", "L3M-W44"], "TL3_PR_XG_ANYBLK": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_XF_CARRY": ["L3M", "L3M-W44"], "TL3_PR_XF_CARRY_ALL": ["L3M", "L3M-W44"], "TL3_PR_XF_P7_ALLSESS": ["L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_PLA_M30_s1": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_PLA_M30_s2": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_PLA_M30_s3": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_M30HALF": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_ENT_SH11": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_ENT_SH23": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_RG30": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"]}
+driver: 1794726825 epoch chains 61 ident TL3_PR_ID 202610 (hook module loaded, empty par): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL outstanding 0; cells with complete windows: {"TL3_PR_BLK_EXT": ["L3M", "L3M-W44"], "TL3_PR_BLK_ENT": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE", "X'"], "TL3_PR_BLK_OPP": ["L3M", "L3M-W44"], "TL3_PR_BLK_HL": ["L3M", "L3M-W44"], "TL3_PR_BLK_M30": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE", "X'"], "TL3_PR_BLK_M60": ["L3M", "L3M-W44"], "TL3_PR_BLK_M120": ["L3M", "L3M-W44"], "TL3_PR_HALF": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE", "X'"], "TL3_PR_CAP2": ["L3M", "L3M-W44"], "TL3_PR_CAP3": ["L3M", "L3M-W44"], "TL3_PR_CAP4": ["L3M", "L3M-W44"], "TL3_PR_RCAP10": ["L3M", "L3M-W44"], "TL3_PR_RCAP15": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_RCAP20": ["L3M", "L3M-W44"], "TL3_PR_SN": ["L3M", "L3M-W44"], "TL3_PR_XB_K7": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XB_U7": ["L3M", "L3M-W44"], "TL3_PR_XB_M7": ["L3M", "L3M-W44"], "TL3_PR_XB_A7": ["L3M", "L3M-W44"], "TL3_PR_XB_H7": ["L3M", "L3M-W44"], "TL3_PR_XB_ALLBK": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XS_P7_LON": ["L3M", "L3M-W44"], "TL3_PR_XS_ALL_LON": ["L3M", "L3M-W44"], "TL3_PR_XS_P7_NYAM": ["L3M", "L3M-W44"], "TL3_PR_XS_ALL_NYAM": ["L3M", "L3M-W44"], "TL3_PR_XS_P7_NYPM": ["L3M", "L3M-W44"], "TL3_PR_XS_ALL_NYPM": ["L3M", "L3M-W44"], "TL3_PR_XG_N15": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XG_N45": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XG_N60": ["L3M", "L3M-W44"], "TL3_PR_XG_N90": ["L3M", "L3M-W44"], "TL3_PR_XM_W15": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XM_ONLY15": ["L3M", "L3M-W44"], "TL3_PR_XM_ONLY30": ["L3M", "L3M-W44"], "TL3_PR_XG_WINBLK": ["L3M", "L3M-W44"], "TL3_PR_XG_ANYBLK": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_XF_CARRY": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_XF_CARRY_ALL": ["GAP", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_XF_P7_ALLSESS": ["GAP", "HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44", "PRE"], "TL3_PR_PLA_M30_s1": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_PLA_M30_s2": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_PLA_M30_s3": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_M30HALF": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_ENT_SH11": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_ENT_SH23": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"], "TL3_PR_RG30": ["HOLD", "HOLD-W44", "L3M", "L3M-W44", "L6M", "L6M-W44"]}
