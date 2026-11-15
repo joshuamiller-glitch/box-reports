@@ -1,4 +1,4 @@
-VERDICT (plain, 2026-11-15 01:37 UTC): family B is running; 3 of 239 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_T15D10 11.7% (mean +1244 $/wk). No PASS claim; the parents are reproduced.
+VERDICT (plain, 2026-11-15 02:07 UTC): family B is running; 5 of 239 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_T15D10 11.7% (mean +1244 $/wk). No PASS claim; the parents are reproduced.
 
 # DS3_EXPAND_B - an exit fitted to how each book fails (W-EB, T-EXPAND family B)
 
@@ -28,6 +28,8 @@ Identity: TL3_EB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | TL3_EB_U7F_T15D10 | L3M   |      13 | 17258.8 |   1243.6 | 32116.9 |  36370.5 |     11.7 |       -5.2 |          1243.3 | -31571.5 | -36370.5 |     1.1 |     0 |      9 |      52.4 | PASS   |
 | TL3_EB_PB         | L3M   |      13 | 17258.8 |   1243.6 | 32116.9 |  36370.5 |     11.7 |       -5.2 |          1243.3 | -31571.5 | -36370.5 |     1.1 |     0 |      9 |      52.4 | PASS   |
 | TL3_EB_PC         | L3M   |      13 | 17760.9 |   1745.7 | 35985.2 |  36370.5 |      1.1 |       28.3 |          1713.3 | -35985.2 | -36370.5 |     1.1 |     0 |      9 |      51.4 | PASS   |
+| TL3_EB_U7F_Sst1   | L3M   |      13 | 15245.1 |   -770.1 | 36370.5 |  36370.5 |      0   |        0   |          -770.1 | -36370.5 | -36370.5 |     1   |     0 |      9 |      52.2 | fail   |
+| TL3_EB_U7F_Sfr51  | L3M   |      13 | 15436.1 |   -579.1 | 36943.2 |  36370.5 |     -1.6 |        7.8 |          -584.2 | -36943.2 | -36370.5 |     1   |     0 |      9 |      52.5 | fail   |
 
 ## 3. Anatomy (full stops, cost in targets, saved stops) for cells scored on L3M/L6M
 
@@ -36,6 +38,8 @@ Identity: TL3_EB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | TL3_EB_U7F_T15D10 | L3M   |      13 | U7      |       10.46 |        -19607.1 |         3.31 |         -10021.9 |          4823.66 |         9.54 |         -16683.4 |          2.31 |          -7006.6  |           5798.62 |      1.23 |                0.23 |                449.81 |              1    |              1424.77 |                  0    |                0    |                0 |      241079 |       244735 |
 | TL3_EB_PB         | L3M   |      13 | U7      |       10.46 |        -19607.1 |         3.31 |         -10021.9 |          4823.66 |         9.54 |         -16683.4 |          2.31 |          -7006.6  |           5798.62 |      1.23 |                0.23 |                449.81 |              1    |              1424.77 |                  0    |                0    |                0 |      241079 |       244735 |
 | TL3_EB_PC         | L3M   |      13 | U7      |       10.46 |        -19607.1 |         3.31 |         -10021.9 |          4823.66 |         8.08 |         -12203.5 |          0.69 |          -2310.73 |           6166.67 |      4.54 |                1.23 |               4379.9  |              2.62 |              3253.34 |                  0.69 |              203.98 |                0 |      241079 |       245753 |
+| TL3_EB_U7F_Sst1   | L3M   |      13 | U7      |       10.46 |        -19607.1 |         3.31 |         -10021.9 |          4823.66 |        10.23 |         -18899.5 |          3.15 |          -9406.66 |           4093.41 |      0.46 |                0.15 |                693.18 |              0.31 |               228.97 |                  0    |                0    |                0 |      241079 |       239624 |
+| TL3_EB_U7F_Sfr51  | L3M   |      13 | U7      |       10.46 |        -19607.1 |         3.31 |         -10021.9 |          4823.66 |        10.23 |         -18902.9 |          3.15 |          -9410.12 |           4473.8  |      0.38 |                0.08 |                732.59 |              0.31 |               -87.81 |                  0    |                0    |                0 |      241079 |       246097 |
 
 ## 4. Reference: W-PM exact A7/U7 cells (L3M first rows, from the lead 2026-11-14). W-EB does not duplicate them; TL3_EB_A7*_T10D20 is the clock-minute twin of E_A7_N10X20 (row convention) and is reported beside it.
 
