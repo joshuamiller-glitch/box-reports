@@ -1,4 +1,4 @@
-# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 19:54Z
+# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 20:28Z
 
 **VERDICT (running): 72 LA cells scored, 16 are ACTIVE (not no-ops), pass the tolerant gate and still cut drawdown with W44 removed in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
 
@@ -193,6 +193,16 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_C_N14   |      26 | 22799.6 |  -2337.3 | 50026.9 |  36370.5 |    -37.5 |      -63.8 |      0 |        0 |    -3381.5 |      -2209.5 | -36787.9 | -36370.5 |     0.8 |     1 |      47.9 |          57.1 |  138.1 |      160.3 |
 | TL3_LA_C_N26   |      26 | 23447.5 |  -1689.4 | 52213.7 |  36370.5 |    -43.6 |       -0.2 |      0 |        0 |    -1123.3 |      -1721   | -52213.7 | -36370.5 |     1   |     0 |      59.7 |          57.1 |  166.8 |      160.3 |
 | TL3_LA_C_N30   |      26 | 23494.4 |  -1642.5 | 53874.9 |  36370.5 |    -48.1 |      -16.1 |      0 |        0 |    -1008   |      -1708.5 | -53874.9 | -36370.5 |     1   |     0 |      62.4 |          57.1 |  173.6 |      160.3 |
+
+### HOLD (1 cells)
+| cell           |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |     ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
+|:---------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|-------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
+| TL3_LA_C_Rm3p0 |      52 | 17390.8 |    -98.5 | 63185.1 |  63185.1 |        0 |          0 |      1 |        0 |     -100.4 |       -107.2 | -51923 | -55145.4 |       1 |     0 |      50.5 |          49.8 |  145.2 |      143.3 |
+
+### PRE (1 cells)
+| cell           |   weeks |   mean |   d_mean |    dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
+|:---------------|--------:|-------:|---------:|------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
+| TL3_LA_C_Rm3p0 |      75 |  10006 |   -161.9 | 79059 |  76186.1 |     -3.8 |        nan |      0 |        0 |        nan |       -163.9 | -52547.4 | -52547.4 |       1 |     0 |        32 |          31.8 |  100.7 |      100.3 |
 
 ### GAP (1 cells)
 | cell           |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |

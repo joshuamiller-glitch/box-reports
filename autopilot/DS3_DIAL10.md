@@ -222,7 +222,7 @@ Per session, q60 H75 take-anyway and remaining-range k=1.25 (own):
 ### Exact cap cells (global: all books at once; L3M, L6M when promoted; delta vs JN05W2)
 | cell | L3M | L6M | HOLD | d mean/wk at $4.84 L3M |
 |---|---|---|---|---|
-| quantile 50 cap, horizon = 75th-percentile holding time | +1486 $/wk, DD -0.5%, ww -240, stops 10.12(10.35), b5 101%, w2l 0 | +721 $/wk, DD -0.5%, ww -240, stops 10.80(10.99), b5 101%, w2l 0 | n/a | +1452 (lots +9/wk) |
+| quantile 50 cap, horizon = 75th-percentile holding time | +1486 $/wk, DD -0.5%, ww -240, stops 10.12(10.35), b5 101%, w2l 0 | +721 $/wk, DD -0.5%, ww -240, stops 10.80(10.99), b5 101%, w2l 0 | -807 $/wk, DD -5.3%, ww -1223, stops 10.59(10.66), b5 98%, w2l 2 | +1452 (lots +9/wk) |
 | quantile 60 cap, horizon = 75th-percentile holding time | pending | | | |
 | quantile 75 cap, horizon = 75th-percentile holding time | +177 $/wk, DD +0.0%, ww +0, stops 10.35(10.35), b5 101%, w2l 0 | n/a | n/a | +176 (lots +0/wk) |
 | quantile 90 cap, horizon = 75th-percentile holding time | pending | | | |
@@ -244,26 +244,26 @@ Per session, q60 H75 take-anyway and remaining-range k=1.25 (own):
 | quantile 50 cap, horizon = 75th-percentile holding time, caps < 30 pts at half size | pending | | | |
 | PLANTED-EDGE CHECK (look-ahead oracle 0.9 x realised MFE, not a result) | +85531 $/wk, DD +67.0%, ww +64263, stops 6.54(10.35), b5 259%, w2l 0 | n/a | n/a | +85219 (lots +85/wk) |
 | PLANTED-EDGE CHECK (oracle 0.6 x realised MFE, not a result) | pending | | | |
-| PLACEBO pl11: quantile 50 cap, horizon = 75th-percentile holding time | -120 $/wk, DD +7.9%, ww +4202, stops 10.20(10.35), b5 98%, w2l 0 | n/a | n/a | -125 (lots +1/wk) |
-| PLACEBO pl23: quantile 50 cap, horizon = 75th-percentile holding time | -859 $/wk, DD -5.3%, ww -2539, stops 10.12(10.35), b5 101%, w2l 0 | n/a | n/a | -871 (lots +3/wk) |
-| PLACEBO pl37: quantile 50 cap, horizon = 75th-percentile holding time | -606 $/wk, DD +9.1%, ww +4306, stops 10.35(10.35), b5 99%, w2l 0 | n/a | n/a | -612 (lots +2/wk) |
-| PLACEBO plR1: quantile 50 cap, horizon = 75th-percentile holding time | -657 $/wk, DD -5.3%, ww -2771, stops 10.04(10.35), b5 99%, w2l 0 | n/a | n/a | -670 (lots +4/wk) |
+| PLACEBO pl11: quantile 50 cap, horizon = 75th-percentile holding time | -120 $/wk, DD +7.9%, ww +4202, stops 10.20(10.35), b5 98%, w2l 0 | -1209 $/wk, DD +7.9%, ww +4202, stops 10.80(10.99), b5 91%, w2l 0 | n/a | -125 (lots +1/wk) |
+| PLACEBO pl23: quantile 50 cap, horizon = 75th-percentile holding time | -859 $/wk, DD -5.3%, ww -2539, stops 10.12(10.35), b5 101%, w2l 0 | -1357 $/wk, DD -5.3%, ww -2539, stops 10.92(10.99), b5 98%, w2l 0 | n/a | -871 (lots +3/wk) |
+| PLACEBO pl37: quantile 50 cap, horizon = 75th-percentile holding time | -606 $/wk, DD +9.1%, ww +4306, stops 10.35(10.35), b5 99%, w2l 0 | -2237 $/wk, DD +9.1%, ww +4306, stops 10.99(10.99), b5 95%, w2l 0 | n/a | -612 (lots +2/wk) |
+| PLACEBO plR1: quantile 50 cap, horizon = 75th-percentile holding time | -657 $/wk, DD -5.3%, ww -2771, stops 10.04(10.35), b5 99%, w2l 0 | -1688 $/wk, DD -5.3%, ww -2771, stops 10.77(10.99), b5 99%, w2l 0 | n/a | -670 (lots +4/wk) |
 
 ### The one candidate: forecast-quantile-50 cap, horizon = 75th-percentile holding time (L3M mean-only so far): all windows, W44 removed, placebos
 | window | scope all | W44 removed |
 |---|---|---|
 | L3M | +1486 $/wk, DD -0.5%, ww -240, stops 10.12(10.35), b5 101%, w2l 0 | +1486 $/wk, DD -0.5%, ww -240, stops 10.12(10.35), b5 101%, w2l 0 |
 | L6M | +721 $/wk, DD -0.5%, ww -240, stops 10.80(10.99), b5 101%, w2l 0 | +721 $/wk, DD -0.5%, ww -240, stops 10.80(10.99), b5 101%, w2l 0 |
-| HOLD | n/a | n/a |
-| MID | n/a | n/a |
-| PREUW | n/a | n/a |
+| HOLD | -807 $/wk, DD -5.3%, ww -1223, stops 10.59(10.66), b5 98%, w2l 2 | -807 $/wk, DD -5.3%, ww -1223, stops 10.59(10.66), b5 98%, w2l 2 |
+| MID | -1977 $/wk, DD +4.2%, ww +2535, stops 10.63(10.88), b5 103%, w2l 1 | -1977 $/wk, DD +4.2%, ww +2535, stops 10.63(10.88), b5 103%, w2l 1 |
+| PREUW | -2044 $/wk, DD +7.8%, ww +14602, stops 9.44(9.31), b5 100%, w2l 3 | -2044 $/wk, DD +7.8%, ww +14602, stops 9.44(9.31), b5 100%, w2l 3 |
 Placebos (same cap, forecast features taken n sessions earlier at the same clock / a random earlier session), L3M then L6M when run:
 | placebo | L3M | L6M |
 |---|---|---|
-| pl11 | -120 $/wk, DD +7.9%, ww +4202, stops 10.20(10.35), b5 98%, w2l 0 | pending |
-| pl23 | -859 $/wk, DD -5.3%, ww -2539, stops 10.12(10.35), b5 101%, w2l 0 | pending |
-| pl37 | -606 $/wk, DD +9.1%, ww +4306, stops 10.35(10.35), b5 99%, w2l 0 | pending |
-| plR1 | -657 $/wk, DD -5.3%, ww -2771, stops 10.04(10.35), b5 99%, w2l 0 | pending |
+| pl11 | -120 $/wk, DD +7.9%, ww +4202, stops 10.20(10.35), b5 98%, w2l 0 | -1209 $/wk, DD +7.9%, ww +4202, stops 10.80(10.99), b5 91%, w2l 0 |
+| pl23 | -859 $/wk, DD -5.3%, ww -2539, stops 10.12(10.35), b5 101%, w2l 0 | -1357 $/wk, DD -5.3%, ww -2539, stops 10.92(10.99), b5 98%, w2l 0 |
+| pl37 | -606 $/wk, DD +9.1%, ww +4306, stops 10.35(10.35), b5 99%, w2l 0 | -2237 $/wk, DD +9.1%, ww +4306, stops 10.99(10.99), b5 95%, w2l 0 |
+| plR1 | -657 $/wk, DD -5.3%, ww -2771, stops 10.04(10.35), b5 99%, w2l 0 | -1688 $/wk, DD -5.3%, ww -2771, stops 10.77(10.99), b5 99%, w2l 0 |
 
 ### Per book x session exact cap cells (clean: one book in one session)
 | slice | cap | L3M | May-Jul |
@@ -384,7 +384,7 @@ Reading of the W/ATR5 table: ATR5 = mean range of the last 14 five-minute bucket
 
 
 ## Dial 10: trade-horizon bracket
-**VERDICT (plain, not a PASS): 129 of 386 registered cells scored through L3M, 26 through L6M, 1 through HOLD; 3 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo; this is the GLOBAL one-setting-for-all-books family only, the per-book per-session test (B1) is in the section above and still running. Best L3M cell inside the mean gate: M1_50_g00_c1_d10_c20_tb_B_tcoracle0.9T75 (DD +67.0%, +85531 $/wk).**
+**VERDICT (plain, not a PASS): 135 of 386 registered cells scored through L3M, 30 through L6M, 2 through HOLD; 2 (cell,scope) leads pass the tolerant gate in every scored window (0 at scope all) - before placebo; this is the GLOBAL one-setting-for-all-books family only, the per-book per-session test (B1) is in the section above and still running. Best L3M cell inside the mean gate: M1_50_g00_c1_d10_c20_tb_B_tcoracle0.9T75 (DD +67.0%, +85531 $/wk).**
 
 Identity: TL3_D10_M1_50_g00_c1_d10_c20_tb_B 202610 (hook active, g=0): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. Prereg autopilot/DIAL10_PREREG.md (sha line in DECISIONS.md 2026-11-14T22:33Z). Order: ADDENDUM_DIAL10_20261114.md. Code code/th_dial10 (d10_core.py features, d10_coef.py coefficient table, d10_hooks.py hook, d10_driver.py). Bulk /mnt/l2/l2vast/_dial10. Tag D10 (quota 3).
 **LOT BASIS**: engine dollars are BASE lots (live user lots x1.75, live caps = engine caps x1.75); the engine charges its raw $1.18/contract RT with the engine fills, FEES.md says $4.84 RT. Every $ column is raw $1.18 unless it says $4.84; the $4.84 columns reprice delta mean/wk as net - lots x 3.66 per trade for cell and JN05W2 alike (no rerun) and show the lot change per week.
@@ -496,20 +496,25 @@ Reading: cell = R2 / Spearman. Out-of-sample, no look-ahead (inputs closed bars 
 | M1_50_g00_c1_d10_c20_tb_B_tcremhar05T75 | -10795 $/wk, DD +40.3%, ww +11430, stops 7.00(10.35), b5 51%, w2l 4 | n/a | n/a | n/a | n/a | -11257 (lots +126/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_tcremhar10T75 | -7259 $/wk, DD +39.4%, ww +17319, stops 7.76(10.35), b5 65%, w2l 2 | n/a | n/a | n/a | n/a | -7570 (lots +85/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_tcremown10T75 | -6226 $/wk, DD +27.0%, ww +12290, stops 8.98(10.35), b5 66%, w2l 2 | n/a | n/a | n/a | n/a | -6458 (lots +63/wk) | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx40x90 | -1332 $/wk, DD +24.5%, ww +14953, stops 10.27(10.35), b5 98%, w2l 1 | n/a | n/a | n/a | n/a | -1323 (lots -3/wk) | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx60x90 | -2670 $/wk, DD +22.8%, ww +11680, stops 10.42(10.35), b5 96%, w2l 1 | n/a | n/a | n/a | n/a | -2652 (lots -5/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x60 | +900 $/wk, DD +22.5%, ww +10172, stops 10.73(10.35), b5 98%, w2l 0 | n/a | n/a | n/a | n/a | +885 (lots +4/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx60x40 | +303 $/wk, DD +22.1%, ww +10998, stops 12.40(10.35), b5 90%, w2l 0 | n/a | n/a | n/a | n/a | +291 (lots +4/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x40 | +1149 $/wk, DD +20.9%, ww +12597, stops 12.63(10.35), b5 94%, w2l 0 | n/a | n/a | n/a | n/a | +1119 (lots +8/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x90 | +1830 $/wk, DD +13.7%, ww +8914, stops 7.99(10.35), b5 101%, w2l 0 | n/a | n/a | n/a | n/a | +1810 (lots +5/wk) | n/a |
 | M1_75_g10_c1_d10_c20_t08_W | -1835 $/wk, DD +13.2%, ww +6516, stops 9.21(10.35), b5 82%, w2l 0 | n/a | n/a | n/a | n/a | -1901 (lots +18/wk) | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx40x60 | +534 $/wk, DD +12.1%, ww +9089, stops 10.12(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | +501 (lots +9/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx85x60 | +52 $/wk, DD +10.9%, ww +9854, stops 10.73(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | +51 (lots +0/wk) | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx40x40 | -2415 $/wk, DD +9.5%, ww -707, stops 10.27(10.35), b5 104%, w2l 1 | n/a | n/a | n/a | n/a | -2509 (lots +26/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bH7_sas_fx85x40 | -112 $/wk, DD +9.5%, ww +4687, stops 10.65(10.35), b5 98%, w2l 0 | n/a | n/a | n/a | n/a | -136 (lots +7/wk) | n/a |
 | M1_75_g10_c2_d20_c20_tb_B | -2648 $/wk, DD +9.3%, ww +7285, stops 12.93(10.35), b5 75%, w2l 2 | n/a | n/a | n/a | n/a | -2950 (lots +82/wk) | n/a |
-| M1_50_g00_c1_d10_c20_tb_B_pl37_tcq50T75 | -606 $/wk, DD +9.1%, ww +4306, stops 10.35(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | -612 (lots +2/wk) | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_pl37_tcq50T75 | -606 $/wk, DD +9.1%, ww +4306, stops 10.35(10.35), b5 99%, w2l 0 | -2237 $/wk, DD +9.1%, ww +4306, stops 10.99(10.99), b5 95%, w2l 0 | n/a | n/a | n/a | -612 (lots +2/wk) | -2263 (lots +7/wk) |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx85x40 | -2043 $/wk, DD +9.1%, ww +4192, stops 12.78(10.35), b5 90%, w2l 0 | n/a | n/a | n/a | n/a | -2057 (lots +4/wk) | n/a |
-| M1_50_g00_c1_d10_c20_tb_B_pl11_tcq50T75 | -120 $/wk, DD +7.9%, ww +4202, stops 10.20(10.35), b5 98%, w2l 0 | n/a | n/a | n/a | n/a | -125 (lots +1/wk) | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_pl11_tcq50T75 | -120 $/wk, DD +7.9%, ww +4202, stops 10.20(10.35), b5 98%, w2l 0 | -1209 $/wk, DD +7.9%, ww +4202, stops 10.80(10.99), b5 91%, w2l 0 | n/a | n/a | n/a | -125 (lots +1/wk) | -1221 (lots +3/wk) |
 | M1_75_g10_c1_d20_c20_tb_B | -1154 $/wk, DD +7.5%, ww +7015, stops 12.71(10.35), b5 79%, w2l 2 | n/a | n/a | n/a | n/a | -1457 (lots +83/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bH7_sas_fx60x40 | -358 $/wk, DD +7.4%, ww +3584, stops 10.58(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | -382 (lots +6/wk) | n/a |
 | M1_75_g10_c1_d20_c20_tb_N | -288 $/wk, DD +6.1%, ww +6186, stops 13.09(10.35), b5 86%, w2l 2 | n/a | n/a | n/a | n/a | -598 (lots +85/wk) | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx85x60 | -2729 $/wk, DD +3.6%, ww +1891, stops 10.50(10.35), b5 105%, w2l 1 | n/a | n/a | n/a | n/a | -2697 (lots -9/wk) | n/a |
 | M1_75_g10_c1_d10_c20_t08_N | -4047 $/wk, DD +3.0%, ww +9786, stops 12.48(10.35), b5 66%, w2l 2 | n/a | n/a | n/a | n/a | -4529 (lots +132/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_tcq60T50 | -1554 $/wk, DD +2.5%, ww +1445, stops 10.42(10.35), b5 89%, w2l 1 | n/a | n/a | n/a | n/a | -1658 (lots +29/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_tcremown05T75 | -8393 $/wk, DD +2.1%, ww +5889, stops 7.76(10.35), b5 57%, w2l 3 | n/a | n/a | n/a | n/a | -8805 (lots +113/wk) | n/a |
@@ -533,7 +538,7 @@ Reading: cell = R2 / Spearman. Out-of-sample, no look-ahead (inputs closed bars 
 | M1_50_g00_c1_d10_c20_tb_B_bH7_sam_fx85x40 | -265 $/wk, DD +0.0%, ww +0, stops 10.65(10.35), b5 98%, w2l 0 | n/a | n/a | n/a | n/a | -269 (lots +1/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bH7_sam_fx85x60 | -138 $/wk, DD +0.0%, ww +0, stops 10.50(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | -138 (lots +0/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bH7_sam_fx85x90 | -323 $/wk, DD +0.0%, ww +0, stops 10.27(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | -323 (lots +0/wk) | n/a |
-| M1_50_g00_c1_d10_c20_tb_B_tcq50T75 | +1486 $/wk, DD -0.5%, ww -240, stops 10.12(10.35), b5 101%, w2l 0 | +721 $/wk, DD -0.5%, ww -240, stops 10.80(10.99), b5 101%, w2l 0 | n/a | n/a | n/a | +1452 (lots +9/wk) | +694 (lots +7/wk) |
+| M1_50_g00_c1_d10_c20_tb_B_tcq50T75 | +1486 $/wk, DD -0.5%, ww -240, stops 10.12(10.35), b5 101%, w2l 0 | +721 $/wk, DD -0.5%, ww -240, stops 10.80(10.99), b5 101%, w2l 0 | -807 $/wk, DD -5.3%, ww -1223, stops 10.59(10.66), b5 98%, w2l 2 | -1977 $/wk, DD +4.2%, ww +2535, stops 10.63(10.88), b5 103%, w2l 1 | -2044 $/wk, DD +7.8%, ww +14602, stops 9.44(9.31), b5 100%, w2l 3 | +1452 (lots +9/wk) | +694 (lots +7/wk) |
 | M1_50_g00_c1_d10_c20_tb_B_tcq50T75skip | +1443 $/wk, DD -0.5%, ww -240, stops 10.12(10.35), b5 101%, w2l 0 | n/a | n/a | n/a | n/a | +1410 (lots +9/wk) | n/a |
 | M1_75_g10_c1_d10_c20_tm_N | -3553 $/wk, DD -0.7%, ww +1066, stops 13.16(10.35), b5 79%, w2l 3 | n/a | n/a | n/a | n/a | -3971 (lots +114/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bH7_sas_fx40x40 | +76 $/wk, DD -1.1%, ww -816, stops 10.58(10.35), b5 97%, w2l 0 | n/a | n/a | n/a | n/a | +50 (lots +7/wk) | n/a |
@@ -550,11 +555,12 @@ Reading: cell = R2 / Spearman. Out-of-sample, no look-ahead (inputs closed bars 
 | M1_75_g10_c1_d10_c20_t10_B | -2708 $/wk, DD -2.3%, ww -945, stops 13.47(10.35), b5 69%, w2l 2 | n/a | n/a | n/a | n/a | -3047 (lots +92/wk) | n/a |
 | M1_75_g10_c2_d10_c20_tb_B | -4536 $/wk, DD -2.7%, ww -675, stops 13.62(10.35), b5 58%, w2l 2 | -2465 $/wk, DD -2.7%, ww -675, stops 11.79(10.99), b5 44%, w2l 2 | n/a | n/a | n/a | -4867 (lots +90/wk) | -2570 (lots +29/wk) |
 | M1_75_g10_c2_d10_c20_t10_B | -4536 $/wk, DD -2.7%, ww -675, stops 13.62(10.35), b5 58%, w2l 2 | -2465 $/wk, DD -2.7%, ww -675, stops 11.79(10.99), b5 44%, w2l 2 | n/a | n/a | n/a | -4867 (lots +90/wk) | -2570 (lots +29/wk) |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_slo_fx40x40 | -1067 $/wk, DD -3.6%, ww -5552, stops 10.58(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | -1132 (lots +18/wk) | n/a |
 | M1_75_g10_c1_d00_c20_tb_W | -1254 $/wk, DD -4.0%, ww -3816, stops 9.89(10.35), b5 95%, w2l 0 | n/a | n/a | n/a | n/a | -1238 (lots -4/wk) | n/a |
 | M1_75_g10_c2_d00_c20_tb_B | -4332 $/wk, DD -4.2%, ww -1893, stops 13.70(10.35), b5 53%, w2l 2 | n/a | n/a | n/a | n/a | -4664 (lots +91/wk) | n/a |
 | M1_75_g10_c1_d00_c20_tb_B | -2284 $/wk, DD -4.7%, ww -2163, stops 13.47(10.35), b5 64%, w2l 2 | -2454 $/wk, DD -4.7%, ww -2163, stops 11.79(10.99), b5 50%, w2l 2 | n/a | n/a | n/a | -2623 (lots +93/wk) | -2561 (lots +29/wk) |
-| M1_50_g00_c1_d10_c20_tb_B_pl23_tcq50T75 | -859 $/wk, DD -5.3%, ww -2539, stops 10.12(10.35), b5 101%, w2l 0 | n/a | n/a | n/a | n/a | -871 (lots +3/wk) | n/a |
-| M1_50_g00_c1_d10_c20_tb_B_plR1_tcq50T75 | -657 $/wk, DD -5.3%, ww -2771, stops 10.04(10.35), b5 99%, w2l 0 | n/a | n/a | n/a | n/a | -670 (lots +4/wk) | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_pl23_tcq50T75 | -859 $/wk, DD -5.3%, ww -2539, stops 10.12(10.35), b5 101%, w2l 0 | -1357 $/wk, DD -5.3%, ww -2539, stops 10.92(10.99), b5 98%, w2l 0 | n/a | n/a | n/a | -871 (lots +3/wk) | -1376 (lots +5/wk) |
+| M1_50_g00_c1_d10_c20_tb_B_plR1_tcq50T75 | -657 $/wk, DD -5.3%, ww -2771, stops 10.04(10.35), b5 99%, w2l 0 | -1688 $/wk, DD -5.3%, ww -2771, stops 10.77(10.99), b5 99%, w2l 0 | n/a | n/a | n/a | -670 (lots +4/wk) | -1715 (lots +7/wk) |
 | M1_75_g10_c2_d10_c15_tb_B | -5625 $/wk, DD -5.8%, ww -2391, stops 13.54(10.35), b5 58%, w2l 2 | n/a | n/a | n/a | n/a | -5914 (lots +79/wk) | n/a |
 | M1_75_g10_c2_d10_c20_tb_W | -475 $/wk, DD -6.8%, ww -2446, stops 10.04(10.35), b5 96%, w2l 0 | n/a | n/a | n/a | n/a | -464 (lots -3/wk) | n/a |
 | M1_75_g10_c2_d10_c20_tm_B | -6531 $/wk, DD -7.1%, ww -3998, stops 12.86(10.35), b5 71%, w2l 3 | n/a | n/a | n/a | n/a | -6940 (lots +112/wk) | n/a |
@@ -566,13 +572,7 @@ Reading: cell = R2 / Spearman. Out-of-sample, no look-ahead (inputs closed bars 
 | M1_50_g15_c2_d10_c20_tb_B | -7400 $/wk, DD -7.4%, ww -4214, stops 14.30(10.35), b5 63%, w2l 3 | n/a | n/a | n/a | n/a | -8036 (lots +174/wk) | n/a |
 | M1_50_g05_c1_d10_c20_tb_B | -1623 $/wk, DD -7.5%, ww -4085, stops 11.79(10.35), b5 78%, w2l 3 | -3584 $/wk, DD -7.5%, ww -4085, stops 11.07(10.99), b5 87%, w2l 3 | n/a | n/a | n/a | -1835 (lots +58/wk) | -3659 (lots +20/wk) |
 | M1_50_g05_c2_d10_c20_tb_B | -1623 $/wk, DD -7.5%, ww -4085, stops 11.79(10.35), b5 78%, w2l 3 | -3555 $/wk, DD -7.5%, ww -4085, stops 11.07(10.99), b5 87%, w2l 3 | n/a | n/a | n/a | -1835 (lots +58/wk) | -3630 (lots +20/wk) |
-| M1_50_g05_c3_d10_c20_tb_B | -1623 $/wk, DD -7.5%, ww -4085, stops 11.79(10.35), b5 78%, w2l 3 | -3555 $/wk, DD -7.5%, ww -4085, stops 11.07(10.99), b5 87%, w2l 3 | n/a | n/a | n/a | -1835 (lots +58/wk) | -3630 (lots +20/wk) |
-| M1_75_g10_c1_d10_c20_tm_B | -6257 $/wk, DD -7.6%, ww -4278, stops 12.78(10.35), b5 73%, w2l 3 | n/a | n/a | n/a | n/a | -6650 (lots +107/wk) | n/a |
-| M1_50_g00_c1_d10_c20_tb_B_bH7_sas_fx60x90 | -286 $/wk, DD -8.4%, ww -3979, stops 10.50(10.35), b5 102%, w2l 0 | n/a | n/a | n/a | n/a | -276 (lots -3/wk) | n/a |
-| M1_75_g10_c1_d10_c15_tb_B | -3080 $/wk, DD -9.1%, ww -945, stops 13.47(10.35), b5 69%, w2l 2 | n/a | n/a | n/a | n/a | -3390 (lots +85/wk) | n/a |
-| M1_75_g10_c1_d10_c20_tm_W | -2430 $/wk, DD -9.1%, ww -3939, stops 10.42(10.35), b5 87%, w2l 1 | n/a | n/a | n/a | n/a | -2482 (lots +14/wk) | n/a |
-| M1_50_g00_c1_d10_c20_tb_B_bH7_sas_fx85x90 | -656 $/wk, DD -9.6%, ww -4595, stops 10.58(10.35), b5 101%, w2l 0 | n/a | n/a | n/a | n/a | -645 (lots -3/wk) | n/a |
-(49 more cells in /mnt/l2/l2vast/_dial10/cells.json)
+(55 more cells in /mnt/l2/l2vast/_dial10/cells.json)
 
 ### Narrow-only and wide-only for the leading cells (item 8; same cell, half B / N / W)
 | base cell | half | L3M | L6M |
@@ -626,20 +626,24 @@ Single-book and book x session cells (wave 3, clean test of item 2; same config 
 | M1_50_g00_c1_d10_c20_tb_B_bH7_sam_fx85x40 | H7/am | -265 $/wk, DD -106.7%, ww -1634, stops 0.91(0.61), b5 130%, w2l 1 | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bH7_sam_fx85x60 | H7/am | -138 $/wk, DD -39.2%, ww +0, stops 0.76(0.61), b5 98%, w2l 1 | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bH7_sam_fx85x90 | H7/am | -323 $/wk, DD -66.9%, ww +1270, stops 0.53(0.61), b5 85%, w2l 1 | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx40x40 | K7/as | +2200 $/wk, DD -27.4%, ww -2748, stops 0.08(0.00), b5 154%, w2l 1 | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx40x60 | K7/as | +1019 $/wk, DD -23.2%, ww -2510, stops 0.00(0.00), b5 89%, w2l 1 | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx40x90 | K7/as | -1386 $/wk, DD -74.1%, ww -8079, stops 0.08(0.00), b5 26%, w2l 3 | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx60x90 | K7/as | -1015 $/wk, DD -79.0%, ww -2751, stops 0.00(0.00), b5 47%, w2l 2 | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx85x60 | K7/as | +42 $/wk, DD -42.9%, ww -5353, stops 0.00(0.00), b5 36%, w2l 3 | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bK7_slo_fx40x40 | K7/lo | -636 $/wk, DD -128.9%, ww -1301, stops 0.53(0.30), b5 -16%, w2l 5 | n/a |
 
 ### Leads (tolerant gate in every scored window incl. L3M and L6M, DD cut > 0 in some window)
 | cell | scope | L6M DD cut % | L6M d mean | windows | W44 removed L3M / L6M |
 |---|---|---|---|---|---|
-| M1_50_g00_c1_d10_c20_tb_B_tcq50T75 | nypm | +34.9 | +67 | 2 | +208 $/wk, DD +34.9%, ww +822, stops 0.08(0.08), b5 114%, w2l 2 / +67 $/wk, DD +34.9%, ww +822, stops 0.08(0.08), b5 96%, w2l 3 |
-| M1_50_g00_c1_d10_c20_tb_B_tcq50T75 | london | +6.3 | +708 | 2 | +1176 $/wk, DD +6.3%, ww -550, stops 2.59(2.74), b5 118%, w2l 1 / +708 $/wk, DD +6.3%, ww -550, stops 2.74(2.89), b5 112%, w2l 1 |
-| M1_50_g00_c1_d10_c20_tb_B_tcq50T75 | nyam | -1.1 | +200 | 2 | +614 $/wk, DD +23.1%, ww +1086, stops 1.22(1.29), b5 101%, w2l 0 / +200 $/wk, DD -1.1%, ww +0, stops 1.64(1.67), b5 89%, w2l 1 |
+| M1_50_g00_c1_d10_c20_tb_B_pl11_tcq50T75 | nypm | +16.5 | +245 | 2 | +245 $/wk, DD +16.5%, ww +185, stops 0.08(0.08), b5 131%, w2l 1 / +245 $/wk, DD +16.5%, ww +185, stops 0.08(0.08), b5 95%, w2l 1 |
+| M1_50_g00_c1_d10_c20_tb_B_pl11_tcq50T75 | nyam | +8.0 | +173 | 2 | +622 $/wk, DD +14.2%, ww +0, stops 1.37(1.29), b5 103%, w2l 1 / +173 $/wk, DD +8.0%, ww +2555, stops 1.71(1.67), b5 91%, w2l 2 |
 
 ### Placebos beside the finalists (forecast shifted 11 / 23 / 37 sessions at the same clock; random other session at the same clock), scope all, L6M (a real lead must beat all of them)
 | finalist | real | pl11 | pl23 | pl37 | random |
 |---|---|---|---|---|---|
-| M1_50_g00_c1_d10_c20_tb_B_tcq50T75 | +721 $/wk, DD -0.5%, ww -240, stops 10.80(10.99), b5 101%, w2l 0 | pending | pending | pending | pending |
-| M1_50_g00_c1_d10_c20_tb_B_tcq50T75 | +721 $/wk, DD -0.5%, ww -240, stops 10.80(10.99), b5 101%, w2l 0 | pending | pending | pending | pending |
-| M1_50_g00_c1_d10_c20_tb_B_tcq50T75 | +721 $/wk, DD -0.5%, ww -240, stops 10.80(10.99), b5 101%, w2l 0 | pending | pending | pending | pending |
+| M1_50_g00_c1_d10_c20_tb_B_pl11_tcq50T75 | -1209 $/wk, DD +7.9%, ww +4202, stops 10.80(10.99), b5 91%, w2l 0 | pending | pending | pending | pending |
+| M1_50_g00_c1_d10_c20_tb_B_pl11_tcq50T75 | -1209 $/wk, DD +7.9%, ww +4202, stops 10.80(10.99), b5 91%, w2l 0 | pending | pending | pending | pending |
 
 ### Combined with the chop call and the trend-day call (item 7)
 | cell | mode | L3M | L6M |
