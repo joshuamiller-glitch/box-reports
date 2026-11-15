@@ -1,8 +1,8 @@
-# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T18:27Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
+# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-15T18:36Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
 
 **VERDICT (plain): 264 cell-months done over 37 cells; 28 cells pass the tolerant gate in L3M, 0 pass the STRICT gate in every present window; 0 pass the TOLERANT lead gate (recent clearly positive and beating placebos, older DD <= 10% deeper, mean >= -5%). Strict leads: none yet. Tolerant leads: none yet. FIRST PASS, no PASS claim.**
 
-Prereg autopilot/EXPAND_C_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine, all layers ON. Identity: TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
+Prereg autopilot/EXPAND_C_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine, all layers ON. Identity: TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
 Forecast windows: the W-R2 files (HAR, HAR+CME) start 2023-10-16, so X' months 2023-04..2023-10-15 are inactive (= JN05W2) for range-used-up cells. Pre (08:30-09:30) has no D7 entries, so pre cells are vacuous and not run. Last 90 minutes (14:30-16:00): D7 only enters until ~15:00 (K7).
 LOT BASIS (one line): all numbers are BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18 per contract round turn with the engine fills, not FEES.md $4.84; "fee4.84" = d mean/wk repriced at $4.84 RT per contract on the change in contracts per week (page code only, no rerun).
@@ -10,16 +10,16 @@ Row format: delta vs JN05W2 in the rule's own session scope: d mean, max-DD cut 
 
 ## Stage counts and nonsense rate (placebo = forecast shifted 11/23/37 days)
 
-| window | real cells done | pass strict gate | pass tolerant | placebo cells done | placebo pass strict gate |
-|---|---|---|---|---|---|
-| L3M | 16 | 10 | 7 | 21 | 18 |
-| L6M | 10 | 4 | 0 | 18 | 5 |
-| HOLD | 4 | 3 | 3 | 0 | 0 |
-| GAP | 2 | 2 | 2 | 0 | 0 |
-| PRE | 1 | 1 | 1 | 0 | 0 |
-| X' | 1 | 1 | 1 | 0 | 0 |
+| window | real cells done | pass strict gate | pass tolerant | placebo cells done | placebo pass strict gate | random-skip controls done | random-skip pass strict gate |
+|---|---|---|---|---|---|---|---|
+| L3M | 16 | 10 | 7 | 21 | 18 | 0 | 0 |
+| L6M | 10 | 4 | 0 | 18 | 5 | 0 | 0 |
+| HOLD | 4 | 3 | 3 | 0 | 0 | 0 | 0 |
+| GAP | 2 | 2 | 2 | 0 | 0 | 0 | 0 |
+| PRE | 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| X' | 1 | 1 | 1 | 0 | 0 | 0 | 0 |
 
-Headline rows are BASE lots; live = x1.75 (P7 cap 14,700 live = 8,400 base). Closest to live: nothing in family C is near a live change yet; the nearest candidates are the nyam / nypm HAR skip cells (L3M pass, L6M fail) and the l90 cells, which barely act.
+PATH EFFECT = FREED-BOOK REPLACEMENT (generic, autopilot/PATH_EFFECT_RULE.md): every skip-type cell that passes L3M is read against an engine random skip at the same keep share (cell trades / JN05W2 trades in the scope over L3M, 2 seeds, hook rs); a skip cell is only called better than the base if it also beats that control on DD and mean. Headline rows are BASE lots; live = x1.75 (P7 cap 14,700 live = 8,400 base). Closest to live: nothing in family C is near a live change yet; the nearest candidates are the nyam / nypm HAR skip cells (L3M pass, L6M fail) and the l90 cells, which barely act.
 
 ## Range-used-up (1)
 

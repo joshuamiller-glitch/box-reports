@@ -2,7 +2,9 @@
 
 **VERDICT: 46 of 258 re-entry cells x windows scored (382 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
 
-Built epoch 1794767163. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
+Built epoch 1794767774. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
+
+**PATH EFFECT = FREED-BOOK REPLACEMENT (generic; autopilot/PATH_EFFECT_RULE.md).** Every cap and block here frees the book, so the freed book takes later weaker re-signals and drawdown can rise for ANY skip (random 50% skip: DD 86k vs base 52k). The baseline for every number below is therefore the exact random-block placebo at the same per-book block rate, NOT the base alone: read each delta against its placebo seeds (section 5, scoped table, 5c). A rule that does not beat its placebos is just 'fewer re-entries'.
 
 ## 1. Where the money is by entry number and fresh vs rechase (JN05W2, exact engine trades; $/wk by window)
 
@@ -106,6 +108,8 @@ Rechase = same-side entry whose most recent closed trade in the same (book, sess
 
 ## 2. Stack level: each rule on all six books (exact engine, all layers ON)
 
+Baseline = exact random-block placebo at the same block rate (PATH EFFECT = FREED-BOOK REPLACEMENT, generic): see section 5 for the placebo rows beside these.
+
 d_mean = $/wk vs JN05W2; DD = max drawdown of cumulative daily P&L; dd_cut_pct positive = shallower; d_ww = worst week change; best5 = share of the reference 5 best weeks kept; w2l = winning weeks turned losing.
 
 | cell | win | d_mean | d_mean_484 | dd | dd_ref | dd_cut_pct | ww | d_ww | stops_wk | stops_ref | best5 | w2l |
@@ -191,6 +195,8 @@ d_mean = $/wk vs JN05W2; DD = max drawdown of cumulative daily P&L; dd_cut_pct p
 | LCAP20 | L6M | -436.2 | -48200.4 | -43405.1 | -11.0 | -4795.3 |
 
 ## 3. Book x session: rules that pass the tolerant gate (before placebos)
+
+These pass against the BASE only; the baseline that counts is the same-rate random block (freed-book replacement), shown in the scoped placebo table below.
 
 Gate: DD not worse by >2%, worst week not worse by >2%, mean not lower by >3% of the scope mean, in every window present, a DD cut in at least one; recent (L3M or L6M) must be present; a lead needs older windows (HOLD, PREUW, X', GAP) to count as holding in both. Scope numbers are on the scope's own trades inside the all-books run (other books' coupling included).
 

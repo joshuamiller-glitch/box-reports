@@ -10,6 +10,21 @@ VERDICT (data ends 2026-10-30; FIRST PASS): (1) PATH EFFECT, not yet fully expla
 - Same-side re-entry (H002): replacements within 15 / 30 / 60 minutes of a dropped base trade of the same book: 11 % / 21 % / 34 % of replacements, of which 97 % / 86 % / 71 % same side; mean $ of the same-side ones within 30 min +$83 (opposite -$559). Re-entering into the failed move explains a minority.
 - Queued (tag CF, L6M): random gate with the same keep share (PX_RND), gate with 30-minute stand-down (PX_G30), random with stand-down (PX_RND30), mirror gate (PX_MIR). Switching off post-stop blackout, DAY-DONE, stack cap and lot gates needs engine flags not exposed in the set files; to be added after the stand-down result.
 
+## 1b. Path effect: engine diagnostics landed (L6M, JN05W2, every universe signal gated; FIRST PASS; data ends 2026-10-30)
+| set | trades | net $ | max DD $ | max DD R | worst week $ | PF | $/trade | R/trade | share of trades that are replacements |
+|--|--|--|--|--|--|--|--|--|--|
+| JN05W2 base | 4,169 | 660,702 | 52,233 | 20.8 | -36,371 | 1.20 | 158 | 0.061 | 0 % |
+| PL_G aligned gate (all three true, 50 % keep) | 2,863 | 499,963 | 103,361 | 60.5 | -47,069 | 1.24 | 175 | 0.070 | 38 % |
+| PX_RND random gate, same keep share per book/session/month | 3,397 | 428,037 | 85,922 | 35.5 | -36,621 | 1.16 | 126 | 0.054 | 43 % |
+| PX_G30 aligned gate + 30-min stand-down after each skip | 2,600 | 448,342 | 98,303 | 51.2 | -56,388 | 1.23 | 172 | 0.067 | 38 % |
+| PX_RND30 random gate + 30-min stand-down | 2,765 | 345,348 | 72,422 | 31.1 | -30,544 | 1.17 | 125 | 0.060 | 40 % |
+| PX_MIR all three FALSE (66 trades) | 66 | 8,566 | 32,933 | 10.1 | -14,698 | 1.09 | 130 | 0.068 | 65 % |
+
+Findings: (1) A RANDOM 50 % skip rule already raises the stack drawdown from $52k to $86k (R 20.8 to 35.5) and cuts net from $661k to $428k: the path effect is generic to skip rules, not specific to the aligned gate. Mechanism: the freed book takes later re-signals that the base run could not take (the book was in a position when they arrived): 43 % of trades under the random gate are such replacements and the trade average falls from $158 to $126, i.e. replacements are weaker, later entries, and they add trades in the same stretch. (2) The aligned gate adds about $17k on top (hedge removal, trend-aligned clustering: $103k vs $86k) and earns a higher expectancy than the random gate ($175 vs $126 per trade, 0.070 vs 0.054 R, PF 1.24 vs 1.16). (3) A 30-minute stand-down after a skip helps the random gate (DD 86k to 72k, R 35.5 to 31.1) but hardly helps the aligned gate (103k to 98k); it does not return to base. (4) So of the extra $51k drawdown of the aligned gate, about $34k is the generic replacement effect (random gate) and about $17k is specific to the aligned selection.
+Consequence for verdicts: any skip-rule engine result must be read against the engine random gate of the same keep share (PX_RND-type placebo) and against the stack, not against the table or the base alone; sizing the kept trades or waiting (which do not free the book) avoid (1). The flag PATH EFFECT UNEXPLAINED is replaced by PATH EFFECT = FREED-BOOK REPLACEMENT (generic, quantified above) for skip rules; the one-cause-at-a-time switch runs (stack cut, DAY-DONE C22, c_gov, LOT, SIGQ, REG, day caps; sets TL3_CF_DX_G_* / DX_B_*) are queued to say WHICH engine rule lets the replacements through.
+
+Note from W-PM (relayed 2026-11-15): TL3_PM_N_A7NOSC (an A7 Stop no longer triggers the same-side stack cut on other books) is +$1,641/wk in L3M (A7 itself +0, others +1,641, DD -0.4 %, -1.7 % ex-W44) vs A7 flat -40 +2,126/wk: most of the A7 flat -40 gain is the stack cut losing money, not an A7 exit effect. The stack rule (Asia entries only, cuts 50 % of same-side positions in other books) is therefore a SECOND path-effect cause besides freed-book replacement; the DX_G_NOSC / DX_B_NOSC sets (queued) will be read against it.
+
 ## 2. Raw books (isolation mode TL3_CF_ISO2, 23 months), each-alone, cluster-robust by week (zw), nonsense calibrated
 Outcome R (clipped +-3); a condition passes alone if |zw| is above the 99th percentile of |zw| of the 200 nonsense conditions in the same cell and its sign is the same in every year with >= 30 per side. At that bar 1 % of conditions (about 70) would pass by construction.
 

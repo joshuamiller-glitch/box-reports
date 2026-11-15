@@ -515,3 +515,5 @@ Reading: the K7 London call survives the vol-regime split in direction and, pool
 
 ### 11.1 Extension to 2026-11-13 (W-EV store, done)
 W-EV's extended store (days 20261112 and 20261113 under _engvslive/store_1113/days_root) was added: NQ 1m bars rebuilt to 2026-11-13 21:59Z (offset 3,732.25, volume ratio 1.000), label extended with the frozen rule (100 new sessions, 29.0% chop), features, regime, mbp minute table and fixed-model calls rerun. File /mnt/l2/l2vast/_chop/f1/chop_bucket_calls_through_20261113.parquet (same schema). 2026-11-14 is a Saturday (no NQ session). Cluster-based versions stay NaN after 2026-10-31 (exact D7 trade log ends 10-30/31); the pre-session HGB_OWN version is complete to 2026-11-13. Market data end 2026-11-13; exact-engine dollar columns end 2026-10-30.
+
+Note 2026-11-15: W-EV rebuilt NQ_20261112.npz (the first file was out of order); bars, label, mbp minute table, features and calls for 11-12 were regenerated from the corrected file and chop_bucket_calls_through_20261113.parquet rewritten.

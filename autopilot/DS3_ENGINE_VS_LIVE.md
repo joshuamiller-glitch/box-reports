@@ -4,7 +4,7 @@ LOT BASIS (lead, 11-14): JN05W2-family sets are at BASE (box) lots; live is x1.7
 
 Basis of every dollar figure on this page: (a) usdB, usdC, the "mismatch causes" dollars and the live-vs-engine total P&L compare LIVE dollars (actual NT commissions) with ENGINE base-lot dollars (fee $1.18/contract). For the matched window 11-01..11-11 live ran box-scale lots (P7 qty 7/4, K7 1-2, etc.; the x1.75 user lots first appear 11-12), so these two sides are on the SAME lot scale: no x1.75 factor is applied or needed, and the only dollar bias is the fee difference (about $3.7 per contract RT, engine more favourable) plus fill drift. (b) Day-cap and give-back tests use LIVE dollars against caps converted to live dollars for the box-lot weeks (section 5). (c) Section 7 (re-score) compares engine with engine: stored reference month results vs the engine-copy runs, both base-lot dollars, both at the $1.18 fee: no lot or fee mismatch inside that table; multiply by 1.75 for user-lot dollars. (d) Entry-match counts (A/B/C, U) contain no dollars and no lot or fee dependence.
 
-VERDICT (2026-11-15 18:23Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP_LC): ALL 0.675, W45 0.742, W46 0.567. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
+VERDICT (data ends 2026-11-13; 2026-11-15 18:59Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP_LC): ALL 0.675, W45 0.742, W46 0.567. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
 
 Shadow only, no PASS claims, nothing adopted into the shared engine. Prereg autopilot/EV_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_engfix/ (evmatch.py, ev_analyze.py, ev_report.py, ev_run.py, ev_drive.py, ev_panel.py, ev_jnprep.py, build_page.py, page_gen.py); runs and logs /mnt/l2/l2vast/_engvslive/. Admission tag EV (TL3_EV_*).
 
@@ -292,8 +292,8 @@ Mismatch causes (side B = engine took / live flat, C = live took / engine flat; 
 | one position per book (EntriesPerDirection 1) | TryEntry L816 InTrade | try_entry L224 | 0 overlapping live trades in any book | OK |
 | day loss / profit caps, give-back lock, week floor | CheckLimits L4071, CheckBookLock L4031 (R = BaseQty x SizeMult x stop x $20) | check_limits L722, check_book_lock L731 | K7 on label day 11-06 stopped entering exactly after -$4,805 at 08:30 (cap 4,800); 0 live entries after a profit cap or give-back crossing; CORRECTED (user, 11-14). Code check: live v1.9a defaults are the engine values x1.75 for every cap (K7 21,000/8,400 vs sim.DAYCAP 12,000/4,800; M7 same; U7 42,000/16,800 vs 24,000/9,600; P7 73,500/14,700 vs 42,000/8,400; H7 42,000/16,800 vs 24,000/9,600; A7 10,500/4,200 vs 6,000/2,400) and the book lots x1.75 (K7 4 vs 2, M7 4/2, U7 7/4, P7 12/7, H7 7/4, A7 2/1), and BookR uses BaseQty, so locks scale too: in engine units the caps ARE the live caps of the user-lot build. LPB_EMPTY (= LPB_BASE), JN04RM, JN05W2, JN05W2J were scored in engine units with P7 8,400 (p7_daycap [42000, 8400] in their set files) = live 14,700; the other books at the sim.DAYCAP box values = live x1/1.75. S1b-COMB / RB_COMB-type bases used P7 16,800 engine units = 29,400 live: flagged. BUT live ran box-scale lots until 11-11 (P7 qty 7/4, 6 on 11-11; user lots first appear 11-12) with the x1.75 caps already in force, so for 11-01..11-11 the engine caps are 1.75x too tight in live dollars. Evidence (live dollars): P7 11-11 -13,865 after two stops then a third entry, ended -20,285 and halted (cap 14,700); M7 -5,360 on 11-10 kept entering (cap 8,400, not 4,800); against the coded live caps only 6 entries follow a crossing in 11 days (P7 11-10 5 entries after -17.8k, -$1.3k, unexplained; P7 11-06 1). The earlier claim that live ignored the P7/M7 caps is WITHDRAWN (it compared live dollars to engine-unit caps). | Engine = code; the 11-01..11-11 Nov replays use the live-dollar caps (TL3_EV_*_LC); the 43-month history needs no cap change |
 | U7 same-side 30-min blackout after a cut | L1856 | sim.blackout_until L54/L231 | 0 live U7 same-side entries inside 30 min of a cut | OK |
-| JN04 post-stop/cut blackout (P7) | JnOnClosed L2012, JnBlackout L2156 | NOT in JN04RM / JN05W2 / LPB references | 19 live P7 same-side re-entries within 30 min of a P7 stop/cut, the last on 11-10 03:48; none after | MISSING in the engine references, live from about 11-10 |
-| ATR-SKIP (P7 atr_rel >= 1.6) | Jn04Size L1967 | NOT in the references (ATRSKIP_P7 is a separate set) | live P7 entered at atr_rel 2-3 on 11-04 and 11-08/09 (REG halves the lots, no skip); none above 1.6 after 11-10 | MISSING in the references, Shadow before ~11-10 |
+| JN04 post-stop/cut blackout (P7) | JnOnClosed L2012, JnBlackout L2156 | NOT in JN04RM / JN05W2 / LPB references | 19 live P7 same-side re-entries within 30 min of a P7 stop/cut up to 11-10 03:48; 0 after (through 11-13 14:50) | live from ~11-10 (consistent with zero violations); MISSING in the references |
+| ATR-SKIP (P7 atr_rel >= 1.6) | Jn04Size L1967 | NOT in the references (ATRSKIP_P7 is a separate set) | live P7 entered at atr_rel 2.81 on 11-13 11:18 (7 lots) and 1.63 on 11-11 19:11 (6 lots), and at 2-3 on 11-04 and 11-08/09: NOT firing live through 11-13 (Shadow, or a different input) | NOT live; the extended-store replays drop it |
 | LOT / SIGQ / REG sizing | Jn04Size | jnrule layers | live P7 qty in W45 is 4/7 (no layers); engine JN04RM gives 1/2: layers not live in W45 | timeline |
 | STACK cap | Jn04Stack L1999: 10 lots London (user-lot build) | cap 6 (box lots) | scale-consistent (x1.75) | OK |
 | v1.9 DAY-DONE (C22), EVIDENCE, BREADTH, ctx cut | V9Gate L2090, DayDoneLossDollars 4,200 | scr_hooks conj gate with R = $1,200 x -2 = -$2,400 | 79 live entries after >=22 closes with day <= -$4,200 (through 11-13 14:06): not firing live. Engine threshold -$2,400 vs source 4,200 | JN05W2 is not what was live |
@@ -320,6 +320,48 @@ Mismatch causes (side B = engine took / live flat, C = live took / engine flat; 
 - ev_drive.py: live-drive mixin (diagnostic C2).  ev_jnprep.py: private JN input extension to 11-11.  build_1113.py: separate price-store extension (11-12, 11-13) at /mnt/l2/l2vast/_engvslive/store_1113/ (days_root, std_root; shared stores untouched; the 1-s state days 11-10/11-11 rebuilt there are bit-identical to the shared ones). ev_run.py: run wrapper (EV_DAYS/EV_STD for the separate store, EV_DRIVE for the diagnostic).
 - Diff: no edit to any shared engine file (replica/sim.py, th_redo/state_base_b.py, th_sz_ijk/state_sizer_ijk.py, hist_pipe): the fixes are additive subclasses in th_engfix/ev_panel.py and the matcher convention (order second, not signal second, +0.02 U).
 
+
+## 9. Extended store (tape, 1-s state days and REG inputs to 2026-11-13 17:00 ET; store ev1113b, parity with the shared store identical on 202610) - panel timeline, live-dollar caps to 11-12 20:41Z then engine-unit caps (user-lot build), JN04 blackout from 11-10 09:00Z, no ATR-SKIP
+
+| run            | window                                        | nLive   | nEng   | A   | B   | C   | U     | usdB   | usdC   |
+|:---------------|:----------------------------------------------|:--------|:-------|:----|:----|:----|:------|:-------|:-------|
+| TL3_EV_NW_D    | W45 11-01..11-06                              | 232     | 260    | 203 | 57  | 29  | 0.702 | 380    | 3705   |
+| TL3_EV_NW_D    | W46 11-08..11-11                              | 123     | 150    | 98  | 52  | 25  | 0.560 | 20978  | 12445  |
+| TL3_EV_NW_D    | W47 11-11 18:00..11-13 17:00 (user-lot build) | 54      | 95     | 44  | 51  | 10  | 0.419 | 4031   | -3455  |
+| TL3_EV_NW_D    | ALL 11-01..11-13                              | 409     | 505    | 345 | 160 | 64  | 0.606 | 25390  | 12695  |
+| TL3_EV_NW_D_DR | W45 11-01..11-06                              | 232     | 249    | 227 | 22  | 5   | 0.894 | 4801   | -2430  |
+| TL3_EV_NW_D_DR | W46 11-08..11-11                              | 123     | 134    | 118 | 16  | 5   | 0.849 | 4684   | -1330  |
+| TL3_EV_NW_D_DR | W47 11-11 18:00..11-13 17:00 (user-lot build) | 54      | 58     | 42  | 16  | 12  | 0.600 | 1892   | -11840 |
+| TL3_EV_NW_D_DR | ALL 11-01..11-13                              | 409     | 441    | 387 | 54  | 22  | 0.836 | 11376  | -15600 |
+
+### 9b. Every remaining mismatch class after the exit cascade is removed (live-drive, ALL 11-01..11-13), with dollars (B = engine net, C = live net; engine base-lot dollars at $1.18 vs live dollars at actual fees; no x1.75 applied to either side)
+
+| side   | cause                                                                     | n   | usd    |
+|:-------|:--------------------------------------------------------------------------|:----|:-------|
+| B      | LIVE JN04 P7 post-stop blackout                                           | 1   | -2327  |
+| B      | LIVE O7 not trading (no live O7 entry since 11-06)                        | 4   | 2095   |
+| B      | LIVE book lock fired earlier that day (BookLock exit)                     | 4   | 80     |
+| B      | LIVE flat, no live entry (gate/signal unknown)                            | 40  | 4335   |
+| B      | LIVE flat; other book entered                                             | 1   | 1199   |
+| B      | LIVE reconnect/stall window                                               | 4   | 5994   |
+| C      | ENGINE give-back lock: engine P&L path only (live book had not crossed)   | 2   | -3670  |
+| C      | ENGINE give-back lock: live book had ALSO crossed it (live kept entering) | 4   | -2175  |
+| C      | ENGINE loss cap: engine P&L path only (live book had not crossed)         | 1   | -2175  |
+| C      | ENGINE loss cap: live book had ALSO crossed it (live kept entering)       | 6   | -3025  |
+| C      | ENGINE no signal                                                          | 8   | 6845   |
+| C      | ENGINE skip: SKIP JN04 post-stop blackout                                 | 1   | -11400 |
+
+### 9c. What the engine would have made 11-08 18:00 .. 11-13 17:00 (label week), base-lot dollars, x1.75 and the $4.84 fee beside; live actual beside
+
+B1/B2 apply the cut behaviour the lead listed (K7 flat -45 only, P7 flat -42 from 11-12, the P7 split-entry trades of 11-11 evening silent). Full stops counted on exit names Stop*.
+
+| run                                                                                                    | trades   | full_stops   | net_1p18_base   | net_4p84_base   | net_4p84_x1p75   | maxDayLoss_base   |
+|:-------------------------------------------------------------------------------------------------------|:---------|:-------------|:----------------|:----------------|:-----------------|:------------------|
+| AS DESIGNED (state cuts as in the policy lines)                                                        | 245      | 18           | 3558            | 2149            | 3761             | -35923            |
+| AS LIVE BEHAVED B1 (K7 flat45 all week, P7 silent 11-11 22Z..11-12 20:41Z, P7 flat42 after)            | 251      | 17           | -10056          | -11473          | -20077           | -36196            |
+| AS LIVE BEHAVED B2 (flat lines only from the v1.9a install 11-12 20:41Z, P7 silent 11-11 22Z..install) | 237      | 21           | -9860           | -11225          | -19644           | -35923            |
+| ALL CUTS OFF all week (lower bound; flat K7 45 / P7 42 only from the 11-12 20:41Z install)             | 225      | 58           | 32838           | 31502           | 55128            | -29135            |
+| LIVE actual (live lots, actual NT fees)                                                                | 177      | 45           |                 |                 | -26520           | -29195            |
 
 ## 7. Which earlier results move by more than 10 % (stage 1: L6M 202605-202610 and HOLD 202511-202604; ref = stored month results, fix = engine copy)
 L6 = ATR-SKIP (P7, atr_rel >= 1.6) + P7 post-stop/cut 30-min same-side blackout as in DS7.cs v1.9a Live.

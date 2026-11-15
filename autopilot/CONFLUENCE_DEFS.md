@@ -1,4 +1,4 @@
-# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-15 17:10Z)
+# CONFLUENCE_DEFS.md - exact definitions of the entry-table columns (W-CF1, built 2026-11-15 18:59Z)
 Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.py, ta_ind.py, ta_cond.py); this page is generated from the same registries; nothing here has been scored yet.
 
 ## Table and ids
@@ -903,7 +903,7 @@ Verdict line: definitions are frozen by code (code/th_confl/ta_cats.py, ta_user.
 
 # ===== Categories F G H I J + Block 5 (W-CF2) : merged verbatim from CONFLUENCE_DEFS_CF2.md =====
 # CONFLUENCE_DEFS_CF2 (W-CF2). Categories F, G, H, I, J and Block 5. Code: code/th_confl_cf2. Columns: /mnt/l2/l2vast/_confl/cols_cf2/{FG,I,J,H,B5}.parquet keyed by sig_id (= <book7>_<sig_ts>).
-VERDICT: 5 column files (638 conditions, FG 101, I 72, J 148, H 55, B5 262) built for all 48,353 rows of signals_all.parquet (19,798 taken + 28,555 skipped, W-CF1's current rows; later rows are appended by `python3 code/th_confl_cf2/build_all.py <FG|I|J|H|B5>`, which only computes missing sig_ids); no PASS claims.
+VERDICT (data ends 2026-10-30): 5 column files (638 conditions, FG 101, I 72, J 148, H 55, B5 262) built for all 48,353 rows of signals_all.parquet (19,798 taken + 28,555 skipped, W-CF1's current rows; later rows are appended by `python3 code/th_confl_cf2/build_all.py <FG|I|J|H|B5>`, which only computes missing sig_ids); no PASS claims.
 
 ## Conventions (all families)
 - Signal second T = sig_ts. Everything uses data with timestamp < T (seconds <= T-1; 1-minute bars with bar end <= T; prior-day files for daily/level data). No repainting, no look-ahead.
@@ -1844,6 +1844,13 @@ From the per-second table cf2_sec (rows < sig_ts) and 1-min bars. Baselines excl
 - Odd-lot share (proxy): avgprint{60,300}_le115 / ge16 = average print size over the window <= 1.15 contracts (mostly single-lot prints) / >= 1.6 (cf2_sec has no size histogram; true odd-lot share not available).
 - Not built: order-book resilience measured on cf2_mbo (L3), only months on the box; quote counts (not stored).
 
+## 1-MINUTE GRID VERSIONS FOR T-ALPHA (W-AL1), code/th_confl_cf5/cf5_grid.py and cf5_grid_a.py
+Every block above runs unchanged on a 1-minute grid by overriding the signal table (cf5_core.SIG_OVERRIDE): rows = every NQ 1-minute bar start ts (epoch s, same as the panel ts_event) from 2023-02-01 to 2026-10-30 (1.34 M rows), evaluated at the FIRST second of the minute (only bars up to ts-60 used; same code and causality as the signal builds; checked: for 2,438 June-2025 signals the grid row at floor(sig_ts/60) equals the signal-build row in all 780 columns of Blocks 7, 8, 9, 0 mismatches). Orientation side = +1: '_with' = bullish, '_against' = bearish; '_S' files (cf5_grid.py <block> --side=-1) give the mirrored set if wanted. Files /mnt/l2/l2vast/_confl/cols_cf5/grid/<block>_<yyyymm>.parquet, first column ts, then int8 conditions (1/0/-1 unknown) and float32 raw values (n_v_*, graded):
+- calendar / clock first: B16_<ym> (calendar, 48 cols), B7_<ym> (time-of-day events, 580), B9_<ym> (week / session structure, 69), B8_<ym> (opens, gaps, handoffs, 131), B13_<ym> (microstructure from cf2_sec, 61).
+- A_<tf>_<ym> for tf in 1m 3m 5m 15m 60m 1d (named systems, 766 columns per tf incl. raw values), written by cf5_grid_a.py.
+- then B2_, B_, C1_, D_, C2_ (session-anchored, Dalton/Crabel/ACD/Williams, execution levels, RV/VIX/dispersion, order flow), slower builds, chain log <tmp>
+Entry points: grid_frame(side) in cf5_grid.py (the grid), run(block, ym) (one block-month), cf5_specs.specs(H) + cf5_cond.cond_block2 (indicator specs and the condition template), cf5_ind.py (plain-OHLC kernels). Graded values: the indicator value series themselves are the n_v_* columns of A_* (one per indicator x timeframe). Calendar and clock blocks have no graded value, they are flags.
+
 
 # ===== Block 6 counting (W-CF6) : merged verbatim from CONFLUENCE_DEFS_CF6.md =====
 # CONFLUENCE_DEFS_CF6.md (W-CF6, Block 6 candle counting). Code: outputs/code/th_confl_cf6. Columns: /mnt/l2/l2vast/_confl/cols_cf6/ keyed by sig_id = <book>_<signal ts>.
@@ -1904,3 +1911,6 @@ Same rules R1-R4, key counts, outcomes, trend/neighbour/random-anchor controls a
 Step B (ict_stepB.py, CF6_LONG=1 bars so daily/weekly counts are warm): per tf 5/15/60/240 and anchor a40 / b5 / cday (+ a40 with R4 N12 k1.5): cur_with, cur_against (count of the move in the trade's direction / opposite, base rules), bars_since_anchor_with, distortion_with (bars since anchor / counted candles), atkey_with|against (count in {7,8,12,13,20,21,33,34,40,41,42}), keygroup_with (1=7-8, 2=12-13, 3=20-21, 4=33-34, 5=40-42), with78_after_retr / with3334_after_retr (key count with the trade AND the leg extreme minus close >= 0.5 ATR), exhaust_with_move / exhaust_against_move (count in 12-13,20-21,40-42 with / against the trade), per-group with_/against_ flags, ict_ntf_atkey_with|against(_ge1..3) over the four timeframes (a40), daily a20/a40 and weekly a20 context.
 Alt bars (cf6_alt.py): Brooks coding A and streaks on range8/16, renko8/16, vol500/2000, tick2000 (W-CF4 stores); bar used only if ts_close <= signal second; HA from each bar set (APX).
 Step C (ict_books.py, ict_books_run.py): standalone 1-min screen described in the page; cost 1.0 pt RT + $4.84 per lot; stop first when both levels in one minute.
+
+## Addendum C (2026-11-15), appended: C4 and counting books
+C4 (checklist as the signal) coding: see DS3_CONFLUENCE_C4.md 'What was built' (13 outcome-free clusters of 120 indicator states, 12-month trailing selection with |t| >= 2, direction from the training mean, entry = first minute >= 15 of the window with k kept clusters agreeing for 5 consecutive minutes, k = 3/4/5, one entry per side per window and day; brackets standard 30/60 and forecast 0.3F/0.6F). Block 17 analog columns: a_analogs.py. Counting books: count_books.py (definitions in the page section 'COUNTING BOOKS').

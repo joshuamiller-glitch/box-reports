@@ -67,7 +67,9 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
 | 40x40 | +205 (live +359; $4.84 +189) DD +24.7% ww +2588 stops 6.62(4.03) | n/a | n/a |
+| 40x90 | -20 (live -35; $4.84 -26) DD -34.2% ww -532 stops 1.52(4.03) | n/a | n/a |
 | 60x90 | -23 (live -40; $4.84 -18) DD -68.2% ww -4785 stops 1.45(4.03) | n/a | n/a |
+| 85x60 | -614 (live -1074; $4.84 -609) DD -87.0% ww -2571 stops 4.41(4.03) | n/a | n/a |
 
 #### H7 asia
 Today (actual JN05W2 slice): ALL43 +807 $/wk (live +1412), maxDD -43602, OLDER +640 $/wk (live +1119), maxDD -43473, L6M +1832 $/wk (live +3206), maxDD -13817, L3M +914 $/wk (live +1600), maxDD -9048
@@ -130,6 +132,8 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
+| 40x40 | -350 (live -613; $4.84 -374) DD -97.5% ww -2100 stops 0.53(0.23) | n/a | n/a |
+| 40x90 | -393 (live -687; $4.84 -379) DD +47.1% ww +341 stops 0.23(0.23) | n/a | n/a |
 | 60x90 | -720 (live -1260; $4.84 -705) DD +4.5% ww -1633 stops 0.23(0.23) | n/a | n/a |
 | 85x60 | -336 (live -588; $4.84 -336) DD -59.3% ww -2623 stops 0.30(0.23) | n/a | n/a |
 

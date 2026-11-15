@@ -7,3 +7,5 @@ The Claude Code session that ran the agents ended (cause not visible from the bo
 5. Memory: compute <= 2 threads per analysis script, nice 10; /mnt/l2 has ~270 GB free (93 pct used).
 
 ENDDATE RULE (added 18:21Z): read autopilot/ENDDATE_RULE.md; stamp every page verdict line with its data end date after each rebuild.
+
+PATH EFFECT RULE (added 18:35Z): read autopilot/PATH_EFFECT_RULE.md; skip results must be compared with an engine random skip of the same keep share.

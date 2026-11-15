@@ -1,5 +1,5 @@
-# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-15T17:51Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
-**VERDICT (plain): FIRST PASS (PRE/X'/GAP and placebo sets incomplete; closest to live: London skip k=1.25, lacks PRE/X' confirmation and a drawdown gain visible at a powered horizon). 924 cell-months done; 17 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 3 windows; LS1/all beats-all-3-placebos in 2 of 3 windows; LS1/london beats-all-3-placebos in 0 of 3 windows; LS125/london beats-all-3-placebos in 3 of 3 windows; LS15/london beats-all-3-placebos in 0 of 0 windows; LS2/london beats-all-3-placebos in 0 of 0 windows; LH1/all beats-all-3-placebos in 0 of 0 windows; LH1/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
+# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-15T18:47Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
+**VERDICT (plain): FIRST PASS, PATH EFFECT = FREED-BOOK REPLACEMENT (generic): every skip result must beat an engine random skip at the same keep share (RK cells, section 7c); LS1/LS125 RECENT-ONLY until they pass tolerant on GAP/PRE (PRE/X'/GAP and placebo sets incomplete; closest to live: London skip k=1.25, lacks PRE/X' confirmation and a drawdown gain visible at a powered horizon). 971 cell-months done; 17 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 3 windows; LS1/all beats-all-3-placebos in 2 of 3 windows; LS1/london beats-all-3-placebos in 0 of 3 windows; LS125/london beats-all-3-placebos in 3 of 3 windows; LS15/london beats-all-3-placebos in 0 of 0 windows; LS2/london beats-all-3-placebos in 0 of 0 windows; LH1/all beats-all-3-placebos in 0 of 0 windows; LH1/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
 
 Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scoring). Base JN05W2 exact engine, all layers ON, measured fills, shared TP cache. Identity (hook path active at k=1e9-neutral and empty rule): TL3_LR_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LR_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -411,6 +411,14 @@ strict = in every present window DD cut >= 0, worst week not worse, d mean >= 0.
 | MW05 | fail | L3M,L6M,HOLD,GAP | fail | L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -3.5%, mean -1538 vs floor -913); PRE n/a |
 | RII05 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD +24.9%, mean -1278 vs floor -913) |
 | RII1 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD +7.8%, mean -1561 vs floor -913) |
+| HS075 | fail | L3M | fail | L3M not clearly positive; L3M placebo n/a; L6M n/a; HOLD n/a; GAP n/a |
+| OS075 | fail | L3M | fail | L3M not clearly positive; L3M placebo n/a; L6M n/a; HOLD n/a; GAP n/a |
+| HS1 | fail | L3M | fail | L3M not clearly positive; L3M placebo n/a; L6M n/a; HOLD n/a; GAP n/a |
+| OS1 | fail | L3M,L6M | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD n/a |
+| HS125 | fail | L3M | fail | L3M not clearly positive; L3M placebo n/a; L6M n/a; HOLD n/a; GAP n/a |
+| OS125 | fail | L3M | fail | L3M not clearly positive; L3M placebo n/a; L6M n/a; HOLD n/a; GAP n/a |
+| HS15 | fail | L3M | fail | L3M not clearly positive; L3M placebo n/a; L6M n/a; HOLD n/a; GAP n/a |
+| OS15 | fail | L3M | fail | L3M not clearly positive; L3M placebo n/a; L6M n/a; HOLD n/a; GAP n/a |
 | LS1_K7 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP fails (DD +0.9%, mean -1370 vs floor -634) |
 | LS1_P7 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; PRE n/a |
 | LS1_U7 | fail | L3M,L6M,HOLD,GAP | fail | L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP fails (DD -0.2%, mean -1408 vs floor -634); PRE n/a |
@@ -764,6 +772,13 @@ wk
 2026-10-26/2026-11-01 -36371.0 -29452.0   6919.0   -7772.0
 ```
 
+
+## 7c. PATH EFFECT = FREED-BOOK REPLACEMENT (generic) - flag on every skip result here
+
+Per autopilot/PATH_EFFECT_RULE.md a skip frees the book and the freed book takes later weaker re-signals, so drawdown rises for any skip, aligned or random. Every skip row (S variants) must be read against an engine RANDOM skip at the same keep share and scope: RK72S1-3 (skip prob 0.28, trade keep share ~0.72 = LS125) and RK69S1-3 (0.31, ~0.69 = LS1), London, all live books. Size changes (half, big) and wider targets do not free the book. Columns: d mean $/wk, DD cut %, worst week delta (scope all).
+
+| rule | window | rule | random seeds 1 / 2 / 3 | rule beats all 3 on mean | on DD cut |
+|---|---|---|---|---|---|
 
 ## 8. Best setting per book / session with plain strength (filled as windows complete)
 
