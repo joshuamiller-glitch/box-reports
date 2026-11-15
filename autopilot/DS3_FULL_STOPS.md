@@ -1,4 +1,4 @@
-# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-15 01:27Z
+# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-15 04:27Z
 
 VERDICT (plain): First-order only so far (exact cells queued, none finished): the full stops sit in A7 (4.0/wk) and U7 (3.4/wk) and are indistinguishable from winners in the first minute but separate at 5-10 minutes; the one time stop with no mean loss in every window and a clear gap to its random-time placebo is U7 in London (below -10 at 5 min, full stops 1.6 to 1.1/wk, +$165..598/wk, but old windows have few U7 trades), plus small M7 no-progress and P7 NY AM rules; for A7 every rule that removes its full stops costs $130-400/wk, so there is no free setting. No PASS claim.
 BASIS (one line): every $ and DD number on this page sums raw engine net_fee of JN05W2-family sets at BASE (box) lots, live = x1.75, with the engine own fills and $1.18/contract RT (not FEES.md $4.84 RT); columns dmean@4.84 reprice the mean change at $4.84 RT per contract (delta contracts x $3.66), no rerun.
@@ -97,14 +97,15 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | ts_m10_x10 | U7|all | 35 | 68 | 3.4 | 2.1 | 100.8 | 390.8 | 123.1 | -1,054.8 | 139.4 | -437.4 | -680.9 |
 
 ## 3. Exact engine results (vs JN05W2, scope all; dmean $/wk, dd% = max-DD change (+ = smaller DD), stops/wk base>cell). Months present only; stage logic L3M -> L6M -> HOLD -> PREUW on promotion.
-| cell | L3M dmean | L3M dd% | L3M stops/wk | L6M dmean | L6M dd% | L6M stops/wk | L6M ww d$ | L6M best5 | L6M w2l | HOLD dmean | HOLD dd% | HOLD stops/wk | L3M dmean@4.84 | L6M dmean@4.84 | HOLD dmean@4.84 | L6M dd% noW44 |
-|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| G5H | -1188 | 14 | 10.3>10.0 | -195 | 14 | 11.0>10.7 | 1,805 | 1 | 0 | -842 | 11 | 10.7>10.5 | -1134 | -147 | -787 | -3 |
-| G5HC | -438 | 2 | 10.3>10.3 | -803 | 2 | 11.0>11.0 | -1,519 | 1 | 0 | - | - | - | -423 | -787 | - | -18 |
-| G5S | -9579 | -3 | 10.3>7.2 | -9,561 | -3 | 11.0>7.7 | -3,048 | 1 | 3 | - | - | - | -9287 | -9,258 | - | -24 |
-| G5SC | -4757 | -39 | 10.3>10.4 | - | - | - | - | - | - | - | - | - | -4729 | - | - | - |
-| E_H7N_N15X10 | -3 | 0 | 10.3>10.3 | 29 | 0 | 11.0>10.9 | 0 | 1 | 0 | - | - | - | -3 | 29 | - | 0 |
-| E_A7_N10X20 | 2363 | 1 | 10.3>9.6 | 1,420 | 1 | 11.0>10.4 | 511 | 1 | 0 | - | - | - | 2353 | 1,414 | - | 2 |
-| E_A7_F50 | 1652 | 2 | 10.3>6.5 | 1,331 | 2 | 11.0>7.3 | 1,114 | 1 | 0 | 494 | 1 | 10.7>7.6 | 1642 | 1,324 | 493 | 0 |
-| E_A7_F40 | 2126 | 10 | 10.3>6.5 | 1,869 | 10 | 11.0>7.2 | 5,527 | 1 | 0 | - | - | - | 2109 | 1,854 | - | 6 |
-| E_H7_F50 | -112 | 0 | 10.3>9.8 | -157 | 0 | 11.0>10.3 | 0 | 1 | 0 | - | - | - | -112 | -157 | - | 0 |
+| cell | L3M dmean | L3M dd% | L3M stops/wk | L6M dmean | L6M dd% | L6M stops/wk | L6M ww d$ | L6M best5 | L6M w2l | HOLD dmean | HOLD dd% | HOLD stops/wk | L3M dmean@4.84 | L6M dmean@4.84 | HOLD dmean@4.84 | L6M dd% noW44 | PREUW dmean | PREUW dd% | PREUW stops/wk |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| G5H | -1188 | 14 | 10.3>10.0 | -195 | 14 | 11.0>10.7 | 1,805 | 1 | 0 | -842 | 11 | 10.7>10.5 | -1134 | -147 | -787 | -3 | - | - | - |
+| G5HC | -438 | 2 | 10.3>10.3 | -803 | 2 | 11.0>11.0 | -1,519 | 1 | 0 | - | - | - | -423 | -787 | - | -18 | - | - | - |
+| G5S | -9579 | -3 | 10.3>7.2 | -9,561 | -3 | 11.0>7.7 | -3,048 | 1 | 3 | - | - | - | -9287 | -9,258 | - | -24 | - | - | - |
+| G5SC | -4757 | -39 | 10.3>10.4 | - | - | - | - | - | - | - | - | - | -4729 | - | - | - | - | - | - |
+| E_H7N_N15X10 | -3 | 0 | 10.3>10.3 | 29 | 0 | 11.0>10.9 | 0 | 1 | 0 | - | - | - | -3 | 29 | - | 0 | - | - | - |
+| E_A7_N10X20 | 2363 | 1 | 10.3>9.6 | 1,420 | 1 | 11.0>10.4 | 511 | 1 | 0 | 612 | -2 | 10.7>10.3 | 2353 | 1,414 | 609 | 2 | - | - | - |
+| E_A7_F50 | 1652 | 2 | 10.3>6.5 | 1,331 | 2 | 11.0>7.3 | 1,114 | 1 | 0 | 494 | 1 | 10.7>7.6 | 1642 | 1,324 | 493 | 0 | - | - | - |
+| E_A7_F40 | 2126 | 10 | 10.3>6.5 | 1,869 | 10 | 11.0>7.2 | 5,527 | 1 | 0 | 468 | -0 | 10.7>7.6 | 2109 | 1,854 | 464 | 6 | 358 | 8 | 9.3>7.8 |
+| E_M7_F45 | -202 | 0 | 10.3>9.3 | - | - | - | - | - | - | - | - | - | -205 | - | - | - | - | - | - |
+| E_H7_F50 | -112 | 0 | 10.3>9.8 | -157 | 0 | 11.0>10.3 | 0 | 1 | 0 | -217 | -4 | 10.7>9.7 | -112 | -157 | -217 | 0 | - | - | - |

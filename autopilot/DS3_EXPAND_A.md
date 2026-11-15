@@ -1,8 +1,8 @@
 # DS3_EXPAND_A - family A: the session's own early result sets the size
 
-**VERDICT: Exact results on 105 cell-months of 26 cells so far; best L6M drawdown cut TL3_EA_SF_NP_S1_U150_R120_CXN 0.0% (d mean -157 $/wk); nothing is a PASS, placebos and walk-forward still to come.**
+**VERDICT: Exact results on 108 cell-months of 26 cells so far; best L6M drawdown cut TL3_EA_SF_NP_S1_U150_R120_CXN 0.0% (d mean -157 $/wk); nothing is a PASS, placebos and walk-forward still to come.**
 
-**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-15 03:55 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
+**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-15 04:15 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
 
 ## 0. Identity and parent
 
@@ -117,7 +117,7 @@ dd cut % = (maxDD ref - maxDD cell) / maxDD ref (positive = shallower). dd44 = w
 
 ## 4. Queue state
 
-- exact cell-months done: 105; pending lines: 20; cells in cells.txt: 35
+- exact cell-months done: 108; pending lines: 17; cells in cells.txt: 35
 - last promotions: 23:06Z TL3_EA_A6 PROMOTE [1] ; 00:07Z TL3_EA_SF_NP_S1_U150_R120_CXN PROMOTE [1] ; 00:57Z TL3_EA_CYS1_NP_S1_U150_RN PROMOTE [1] ; 02:52Z TL3_EA_CYS1_NP_S1_U150_RN PROMOTE [2, 3] ; 03:37Z TL3_EA_F1_NP_ALL_U125_RF PROMOTE [1]
 
 ## 5. Not yet done (in order)
