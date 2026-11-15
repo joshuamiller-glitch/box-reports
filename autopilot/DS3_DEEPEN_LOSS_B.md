@@ -1,8 +1,8 @@
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 71 of 346 cells have an exact L3M result so far; 22 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 75 of 359 cells have an exact L3M result so far; 23 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T10:33Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T11:03Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -160,6 +160,7 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
 |---|---|---|---|---|---|
 | LE_C1_K7 | 3 | 6.8 / 1719 / 1713 / 1906 / 3656 / True / -3.3 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_P7 | 3 | -2.4 / -492 / -507 / -141 / -1107 / False / -4.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_U7 | 3 | 0.3 / 523 / 520 / 607 / 130 / True / 0.2 / 1.02 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_H7 | 3 | 0.0 / -227 / -228 / -186 / -90 / True / -0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_M7 | 3 | -7.6 / -208 / -208 / -102 / -2506 / False / -4.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
@@ -168,6 +169,9 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | LE_C1_london | 3 | -1.0 / -721 / -724 / -459 / 925 / False / -7.5 / 0.95 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_nyam | 3 | -0.0 / -260 / -259 / -163 / -10 / True / 0.3 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_nypm | 3 | 0.0 / -50 / -49 / -29 / 0 / True / -2.9 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_P7 | 3 | -2.7 / -2082 / -2094 / -1658 / -1367 / False / 4.7 / 0.90 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_U7 | 3 | 0.1 / 590 / 587 / 690 / 25 / True / 0.0 / 1.03 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_M7 | 3 | -6.6 / -1513 / -1505 / -1369 / -1961 / False / -0.8 / 1.02 / 1 | - / - / - / - | - / - | - / - |
 
 ### WK  work the cut with a resting limit (per book / session / 08:30)
 
@@ -193,7 +197,7 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nypm, WK2_W830, WK5_W830
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_U7, WK2_U7, WK2_H7, WK2_A7, WK2_nypm, WK2_W830, WK5_W830
 
 Auto-expansions launched (expansion of <parent>):
 
@@ -464,6 +468,21 @@ Auto-expansions launched (expansion of <parent>):
 - - LE_C1_A7_H7: expansion of LE_C1_A7
 - - LE_C1_A7_M7: expansion of LE_C1_A7
 - - LE_C1_A7_A7: expansion of LE_C1_A7
+- - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
+- HIT LE_C2_U7: L3M cut 0.1% d mean 590 (adj 690) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - LE_C2_U7_T3: expansion of LE_C2_U7
+- - LE_C2_U7_T15: expansion of LE_C2_U7
+- - LE_C2_U7_T30: expansion of LE_C2_U7
+- - LE_C2_U7_bid: expansion of LE_C2_U7
+- - LE_C2_U7_mid: expansion of LE_C2_U7
+- - LE_C2_U7_touch: expansion of LE_C2_U7
+- - LE_C2_U7_skip: expansion of LE_C2_U7
+- - LE_C2_U7_K7: expansion of LE_C2_U7
+- - LE_C2_U7_P7: expansion of LE_C2_U7
+- - LE_C2_U7_U7: expansion of LE_C2_U7
+- - LE_C2_U7_H7: expansion of LE_C2_U7
+- - LE_C2_U7_M7: expansion of LE_C2_U7
+- - LE_C2_U7_A7: expansion of LE_C2_U7
 - - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
 
 ## 4. Not run / limits

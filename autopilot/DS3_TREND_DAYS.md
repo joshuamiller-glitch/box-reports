@@ -2,7 +2,7 @@
 
 **VERDICT (plain): 102 trend-day cells scored, none yet passes the tolerant gate in L3M, L6M and the older windows together; best by L6M drawdown is XC2_snypm (DD cut 8.4%, d mean 508 $/wk, gate Y). No PASS claim.**
 
-Rebuilt 2026-11-15T08:25Z (epoch 1794731148) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
+Rebuilt 2026-11-15T11:26Z (epoch 1794741978) by code/th_trendevent/td_loop.sh. Research only, NO PASS claim. Prereg autopilot/TRENDEVENT_PREREG.md (sha 902e8acf65f05aa0 + addenda A b7faa5d87fc820e1, B 69bc618cfb2721f2, C faab906024e809c7, D 6bf6f88e5100fc03, E c61df02737498986 in DECISIONS.md, logged before scoring).
 
 Identity: TL3_TD_ID 202610 (hook path active, neutral): 598 trades net_fee 25943.82 vs JN05W2 598 / 25943.82 -> IDENTICAL (trade lists equal row by row).
 Base JN05W2 exact engine, all layers ON; score = MEASURED net (gross - $4.84/ct RT - excess slip entry +0.23 / cut +0.40 / stop +0.44 / target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET); Globex label day; windows L3M (08-01..10-31) L6M (05-01..) HOLD (2025-11-01..) GAP (2025-07..10) PRE (2024-10..2025-06) X' (2023-04..2024-09). Max DD of the recent windows is one week (2026-W44): every row shows the DD cut with and without that week. Calendar not needed here: all 43 months scored (X' included).
@@ -118,7 +118,9 @@ Columns: dMean = cell minus JN05W2 $/wk; DDcut = max-DD cut in % (positive = sma
 | XC2_tgx | L3M | 4711 | 6.7 | -6.3 | 3741 | 10.38(10.46) | 109 | 0 | 71 | Y |
 | XC2_tgx | L6M | 1601 | 6.7 | -6.3 | 3741 | 10.76(11.03) | 88 | 0 | 57 | Y |
 | XC2_ctflat | L3M | 3718 | 6.7 | -6.3 | 3741 | 10.46(10.46) | 117 | 0 | 86 | Y |
+| XC2_ctflat | L6M | -185 | 6.7 | -6.3 | 3741 | 10.84(11.03) | 92 | 0 | 57 | Y |
 | XC2_ctsz5 | L3M | 3082 | 6.6 | -3.9 | 3721 | 10.31(10.46) | 112 | 0 | 71 | Y |
+| XC2_ctsz5 | L6M | 913 | 6.6 | -3.9 | 3721 | 10.92(11.03) | 98 | 0 | 57 | Y |
 | C2_lift | L3M | 292 | 6.6 | 0.0 | 3704 | 10.46(10.46) | 99 | 0 | 86 | Y |
 | C2_lift | L6M | 573 | 6.6 | 0.0 | 3704 | 11.07(11.03) | 100 | 0 | 79 | Y |
 | XC2_slon | L3M | 1769 | 6.6 | -4.3 | 3704 | 10.38(10.46) | 107 | 0 | 71 | Y |
@@ -229,6 +231,7 @@ Per cell and window: days with at least one called minute (cell's own dump); rig
 | XC2_tgx | L3M | 58 | 50 | 8 | 61249 | -1400 | 80102 | -18853 | 0 |
 | XC2_tgx | L6M | 122 | 104 | 18 | 42464 | -22068 | 77806 | -35343 | -510 |
 | XC2_ctflat | L3M | 58 | 50 | 8 | 48338 | 89 | 59630 | -11293 | 0 |
+| XC2_ctflat | L6M | 122 | 103 | 19 | -4324 | -20966 | 40222 | -44546 | -510 |
 
 ## 5. Exact placebos (call table shifted 11 / 23 / 37 business days, same clock time, same actions)
 
