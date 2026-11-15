@@ -1,6 +1,6 @@
-# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 12:25Z
+# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 12:50Z
 
-**VERDICT (running): 56 LA cells scored, 36 pass the programme tolerant gate in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
+**VERDICT (running): 59 LA cells scored, 38 pass the programme tolerant gate in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
 
 LOT BASIS: sets are JN05W2 at BASE lots (live = x1.75; live caps = engine caps x1.75, P7 8,400 engine = 14,700 live). Engine fee $1.18/contract RT vs FEES.md $4.84: column d_mean_484 reprices the change in lots. dd/ww are $ per week series at base lots. prog = tolerant gate (dd cut > -2% and mean change > -3% of reference); strict = dd44_cut>0 and d_mean_484>=0 and dd_cut>=0.
 Cells: TL3_LA_<grp>_*  S = state-cut grid (NOCUT, persist P1/2/3/5, arm A+-5/10, mult M05/M2, win W2/5/10; P7 edits the F3 context cells, FP/RP = fresh/rechase only) | E = WL_E1 | C = C22 | F = flat cuts (session, alone = book state cut OFF, tight, FC forecast units, ATR) | FA = state-cut arm in forecast units | X = state-cut arm +-10 under an entry-context tag. Hook code/th_deepen_la/la_hooks.py (identity: see below). W-PM owns all-session flat cuts TL3_PM_X_*.
@@ -27,6 +27,7 @@ Identity: TL3_LA_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 - TL3_LA_F_K7_LO_D40
 - TL3_LA_F_K7_PM_D40
 - TL3_LA_F_K7_PR_D40
+- TL3_LA_F_P7_PR_D40
 - TL3_LA_S_K7_Am5
 - TL3_LA_S_K7_Ap10
 - TL3_LA_S_K7_Ap5
@@ -44,6 +45,7 @@ Identity: TL3_LA_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 - TL3_LA_X_K7_GAP15_T
 - TL3_LA_X_K7_N3_L
 - TL3_LA_X_K7_N3_T
+- TL3_LA_X_K7_PRIORA_T
 
 ## 2. Persist sensitivity of the state cut (live-fidelity risk: persist=3 lines were silent live, persist<=2 fired)
 |                 |   ('d_mean', 'L3M') |   ('d_mean', 'L6M') |   ('dd_cut', 'L3M') |   ('dd_cut', 'L6M') |
@@ -57,7 +59,7 @@ Identity: TL3_LA_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity risk.
 
 ## 3. STATE CUT GRID (item 1)
-### L3M (9 cells)
+### L3M (10 cells)
 | cell              |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_S_K7_Ap5   |      13 | 18364.9 |   2349.7 | 27758.9 |  36370.5 |     23.7 |        9.1 |      1 |        1 |     1443.2 |       2354   | -26125.9 | -36370.5 |     1.1 |     0 |      50   |          52.5 |  143.8 |      144.2 |
@@ -68,6 +70,7 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_S_K7_Am5   |      13 | 15647.2 |   -368   | 35868   |  36370.5 |      1.4 |        3.9 |      1 |        0 |     -440.5 |       -367.7 | -35868   | -36370.5 |     1   |     0 |      54.3 |          52.5 |  144.7 |      144.2 |
 | TL3_LA_S_K7_P2    |      13 | 14925.2 |  -1090   | 36092.9 |  36370.5 |      0.8 |      -18.2 |      0 |        0 |    -2022.7 |      -1109.7 | -35050.9 | -36370.5 |     0.9 |     0 |      71.2 |          52.5 |  149.6 |      144.2 |
 | TL3_LA_S_K7_P3    |      13 | 16015.2 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |     1   |     0 |      52.5 |          52.5 |  144.2 |      144.2 |
+| TL3_LA_S_K7_M05   |      13 | 14850.5 |  -1164.7 | 40687.8 |  36370.5 |    -11.9 |      -33.3 |      0 |        0 |    -1998.8 |      -1190.9 | -40687.8 | -36370.5 |     0.9 |     0 |      78.1 |          52.5 |  152.2 |      144.2 |
 | TL3_LA_S_K7_P1    |      13 | 14794.7 |  -1220.5 | 41516.2 |  36370.5 |    -14.1 |      -36   |      0 |        0 |    -1961.4 |      -1234.8 | -37536.2 | -36370.5 |     1   |     0 |      77.7 |          52.5 |  150.5 |      144.2 |
 
 ### L6M (9 cells)
@@ -97,7 +100,7 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_FA_P7_K03 |      13 | 15849.9 |   -165.3 | 46903.5 |  36370.5 |    -29   |      -29.1 |      0 |        0 |      698.7 |       -125.8 | -46903.5 | -36370.5 |     1.1 |     0 |      46.2 |          52.5 |  142.2 |      144.2 |
 | TL3_LA_FA_P7_K04 |      13 | 16436.2 |    421   | 46903.5 |  36370.5 |    -29   |      -29.1 |      0 |        0 |     1333.9 |        461.6 | -46903.5 | -36370.5 |     1.2 |     0 |      46.1 |          52.5 |  142   |      144.2 |
 
-### L6M (8 cells)
+### L6M (9 cells)
 | cell             |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:-----------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_FA_K7_K02 |      26 | 25467.4 |    330.5 | 29974.2 |  36370.5 |     17.6 |        1.8 |      1 |        1 |      -57.6 |        332.5 | -26603.7 | -36370.5 |     1   |     1 |      45.2 |          57.1 |  159.5 |      160.3 |
@@ -105,16 +108,18 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_FA_K7_K04 |      26 | 25445.2 |    308.3 | 29974.2 |  36370.5 |     17.6 |        1.8 |      1 |        1 |      -80.7 |        310.6 | -26603.7 | -36370.5 |     1   |     1 |      45   |          57.1 |  159.4 |      160.3 |
 | TL3_LA_FA_M7_K03 |      26 | 23685.6 |  -1451.3 | 37232.5 |  36370.5 |     -2.4 |      -14.4 |      0 |        0 |    -1474.9 |      -1432.6 | -37232.5 | -36370.5 |     1   |     1 |      47.3 |          57.1 |  156   |      160.3 |
 | TL3_LA_FA_M7_K02 |      26 | 23055.5 |  -2081.4 | 37232.5 |  36370.5 |     -2.4 |      -14.4 |      0 |        0 |    -2130.2 |      -2061.7 | -37232.5 | -36370.5 |     1   |     1 |      48.3 |          57.1 |  155.8 |      160.3 |
+| TL3_LA_FA_M7_K04 |      26 | 23685.6 |  -1451.3 | 37232.5 |  36370.5 |     -2.4 |      -14.4 |      0 |        0 |    -1474.9 |      -1432.6 | -37232.5 | -36370.5 |     1   |     1 |      47.2 |          57.1 |  156   |      160.3 |
 | TL3_LA_FA_P7_K02 |      26 | 20776.8 |  -4360.1 | 46700.1 |  36370.5 |    -28.4 |      -52.9 |      0 |        0 |    -4142.8 |      -4301.1 | -46700.1 | -36370.5 |     0.8 |     0 |      50.7 |          57.1 |  154.6 |      160.3 |
-| TL3_LA_FA_P7_K04 |      26 | 19176.7 |  -5960.2 | 46903.5 |  36370.5 |    -29   |      -53.4 |      0 |        0 |    -5777.3 |      -5877.7 | -46903.5 | -36370.5 |     0.6 |     0 |      49   |          57.1 |  152.5 |      160.3 |
 | TL3_LA_FA_P7_K03 |      26 | 18884.6 |  -6252.3 | 46903.5 |  36370.5 |    -29   |      -53.4 |      0 |        0 |    -6081.1 |      -6170.4 | -46903.5 | -36370.5 |     0.6 |     0 |      49.1 |          57.1 |  152.6 |      160.3 |
+| TL3_LA_FA_P7_K04 |      26 | 19176.7 |  -5960.2 | 46903.5 |  36370.5 |    -29   |      -53.4 |      0 |        0 |    -5777.3 |      -5877.7 | -46903.5 | -36370.5 |     0.6 |     0 |      49   |          57.1 |  152.5 |      160.3 |
 
 ## 5. CONTEXT-TAGGED STATE CUT (items 1, 5)
-### L3M (8 cells)
+### L3M (9 cells)
 | cell                 |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:---------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_X_K7_FIRSTA_T |      13 | 16820.5 |    805.3 | 29132.7 |  36370.5 |     19.9 |        4.6 |      1 |        1 |     -157.5 |        814.9 | -26388.4 | -36370.5 |     1   |     0 |      48.8 |          52.5 |  142.5 |      144.2 |
 | TL3_LA_X_K7_FIRSTA_L |      13 | 16876.4 |    861.2 | 29475.2 |  36370.5 |     19   |        3.5 |      1 |        1 |      -93.4 |        872.4 | -26520.9 | -36370.5 |     1   |     0 |      47.5 |          52.5 |  142.1 |      144.2 |
+| TL3_LA_X_K7_PRIORA_T |      13 | 16521.5 |    506.3 | 31631.5 |  36370.5 |     13   |       -3.6 |      1 |        0 |     -530.3 |        518.4 | -25458.7 | -36370.5 |     1   |     0 |      48.5 |          52.5 |  141.6 |      144.2 |
 | TL3_LA_X_K7_N3_T     |      13 | 17219.5 |   1204.4 | 31690.9 |  36370.5 |     12.9 |       -3.8 |      1 |        0 |      671.9 |       1202.1 | -28776.9 | -36370.5 |     1   |     0 |      48.6 |          52.5 |  145   |      144.2 |
 | TL3_LA_X_K7_N3_L     |      13 | 17473.4 |   1458.2 | 31970.9 |  36370.5 |     12.1 |       -4.7 |      1 |        0 |      678   |       1456.3 | -26338.4 | -36370.5 |     1   |     0 |      47   |          52.5 |  144.9 |      144.2 |
 | TL3_LA_X_K7_GAP15_T  |      13 | 16551.5 |    536.3 | 32878.7 |  36370.5 |      9.6 |       -7.7 |      1 |        0 |      -94.1 |        538.2 | -28270.1 | -36370.5 |     1   |     0 |      48.8 |          52.5 |  143.5 |      144.2 |
@@ -122,11 +127,12 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_X_K7_CH1_L    |      13 | 17144   |   1128.8 | 34331.6 |  36370.5 |      5.6 |        4.7 |      1 |        1 |     1053   |       1142.6 | -34331.6 | -36370.5 |     1.1 |     0 |      44.5 |          52.5 |  141.2 |      144.2 |
 | TL3_LA_X_K7_CH1_T    |      13 | 16990.6 |    975.4 | 37826.8 |  36370.5 |     -4   |        5.4 |      0 |        0 |     1178   |        989.2 | -37826.8 | -36370.5 |     1.1 |     0 |      46.5 |          52.5 |  141.2 |      144.2 |
 
-### L6M (8 cells)
+### L6M (9 cells)
 | cell                 |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:---------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_X_K7_FIRSTA_T |      26 | 24834.8 |   -302.1 | 29132.7 |  36370.5 |     19.9 |        4.6 |      1 |        0 |     -808.5 |       -293.4 | -26388.4 | -36370.5 |       1 |     1 |      53.3 |          57.1 |  158.7 |      160.3 |
 | TL3_LA_X_K7_FIRSTA_L |      26 | 25068.8 |    -68.1 | 29475.2 |  36370.5 |     19   |        3.5 |      1 |        0 |     -563.4 |        -56.8 | -26520.9 | -36370.5 |       1 |     1 |      51.5 |          57.1 |  158   |      160.3 |
+| TL3_LA_X_K7_PRIORA_T |      26 | 24774.6 |   -362.3 | 31631.5 |  36370.5 |     13   |       -3.6 |      1 |        0 |     -894.6 |       -355.1 | -25458.7 | -36370.5 |       1 |     1 |      53.5 |          57.1 |  158.7 |      160.3 |
 | TL3_LA_X_K7_N3_T     |      26 | 26218   |   1081.1 | 31690.9 |  36370.5 |     12.9 |       -3.8 |      1 |        0 |      820.6 |       1084.8 | -28776.9 | -36370.5 |       1 |     0 |      52.2 |          57.1 |  159.3 |      160.3 |
 | TL3_LA_X_K7_N3_L     |      26 | 26244   |   1107.1 | 31970.9 |  36370.5 |     12.1 |       -4.7 |      1 |        0 |      718.6 |       1111.1 | -26338.4 | -36370.5 |       1 |     0 |      49.9 |          57.1 |  159.2 |      160.3 |
 | TL3_LA_X_K7_GAP15_T  |      26 | 25681.8 |    544.9 | 32878.7 |  36370.5 |      9.6 |       -7.7 |      1 |        0 |      242.7 |        549.4 | -28270.1 | -36370.5 |       1 |     0 |      53.2 |          57.1 |  159   |      160.3 |
@@ -135,28 +141,30 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_X_K7_CH1_T    |      26 | 25113.5 |    -23.3 | 37826.8 |  36370.5 |     -4   |        5.4 |      0 |        0 |       34   |        -20.1 | -37826.8 | -36370.5 |       1 |     1 |      52.1 |          57.1 |  159.2 |      160.3 |
 
 ## 7. FLAT CUTS (item 2)
-### L3M (8 cells)
+### L3M (9 cells)
 | cell               |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:-------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_F_K7_AS_D40 |      13 | 16575.6 |    560.4 | 28537.6 |  36370.5 |     21.5 |        6.5 |      1 |        1 |     -387.5 |        555.9 | -25118.4 | -36370.5 |     1   |     0 |      51.2 |          52.5 |  145.1 |      144.2 |
 | TL3_LA_F_K7_LO_D40 |      13 | 16880.9 |    865.7 | 32040.3 |  36370.5 |     11.9 |       12.6 |      1 |        1 |      577   |        851.6 | -32040.3 | -36370.5 |     1   |     0 |      52.8 |          52.5 |  147.6 |      144.2 |
 | TL3_LA_F_P7_AS_D40 |      13 | 14053.7 |  -1961.5 | 35076.4 |  36370.5 |      3.6 |      -11.8 |      0 |        0 |    -2232.8 |      -1962.7 | -35076.4 | -36370.5 |     0.9 |     0 |      50.8 |          52.5 |  143.3 |      144.2 |
-| TL3_LA_F_K7_PR_D40 |      13 | 16015.2 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |     1   |     0 |      52.5 |          52.5 |  144.2 |      144.2 |
-| TL3_LA_F_K7_CL_D40 |      13 | 16015.2 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |     1   |     0 |      52.5 |          52.5 |  144.2 |      144.2 |
 | TL3_LA_F_K7_PM_D40 |      13 | 15754.8 |   -260.4 | 36370.5 |  36370.5 |      0   |      -11.2 |      1 |        0 |     -282.1 |       -261.2 | -36370.5 | -36370.5 |     1   |     0 |      52.5 |          52.5 |  144.5 |      144.2 |
+| TL3_LA_F_K7_PR_D40 |      13 | 16015.2 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |     1   |     0 |      52.5 |          52.5 |  144.2 |      144.2 |
 | TL3_LA_F_P7_LO_D40 |      13 | 14888.5 |  -1126.7 | 36370.5 |  36370.5 |      0   |        1.2 |      0 |        0 |    -1220.6 |      -1126.4 | -36370.5 | -36370.5 |     0.9 |     0 |      52   |          52.5 |  144.4 |      144.2 |
+| TL3_LA_F_K7_CL_D40 |      13 | 16015.2 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |     1   |     0 |      52.5 |          52.5 |  144.2 |      144.2 |
+| TL3_LA_F_P7_PR_D40 |      13 | 16015.2 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |     1   |     0 |      52.5 |          52.5 |  144.2 |      144.2 |
 | TL3_LA_F_K7_AM_D40 |      13 | 16167.9 |    152.7 | 36418   |  36370.5 |     -0.1 |        0.7 |      1 |        0 |      169.4 |        152.1 | -36418   | -36370.5 |     1   |     0 |      51.7 |          52.5 |  144.4 |      144.2 |
 
-### L6M (8 cells)
+### L6M (9 cells)
 | cell               |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:-------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_F_K7_AS_D40 |      26 | 25566.6 |    429.7 | 28537.6 |  36370.5 |     21.5 |        6.5 |      1 |        1 |      -30.5 |        430.7 | -25118.4 | -36370.5 |       1 |     0 |      55.6 |          57.1 |  159.9 |      160.3 |
 | TL3_LA_F_K7_LO_D40 |      26 | 25580.2 |    443.3 | 32040.3 |  36370.5 |     11.9 |       12.6 |      1 |        1 |      287.8 |        437.2 | -32040.3 | -36370.5 |       1 |     0 |      56.5 |          57.1 |  161.7 |      160.3 |
 | TL3_LA_F_P7_AS_D40 |      26 | 24187   |   -949.9 | 35076.4 |  36370.5 |      3.6 |      -11.8 |      0 |        0 |    -1039.7 |       -950.6 | -35076.4 | -36370.5 |       1 |     0 |      55.6 |          57.1 |  159.8 |      160.3 |
-| TL3_LA_F_K7_PR_D40 |      26 | 25136.9 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |       1 |     0 |      57.1 |          57.1 |  160.3 |      160.3 |
-| TL3_LA_F_K7_CL_D40 |      26 | 25136.9 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |       1 |     0 |      57.1 |          57.1 |  160.3 |      160.3 |
 | TL3_LA_F_K7_PM_D40 |      26 | 24881.5 |   -255.4 | 36370.5 |  36370.5 |      0   |      -11.2 |      1 |        0 |     -265.6 |       -255.8 | -36370.5 | -36370.5 |       1 |     0 |      57   |          57.1 |  160.5 |      160.3 |
+| TL3_LA_F_K7_PR_D40 |      26 | 25136.9 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |       1 |     0 |      57.1 |          57.1 |  160.3 |      160.3 |
 | TL3_LA_F_P7_LO_D40 |      26 | 24346.5 |   -790.4 | 36370.5 |  36370.5 |      0   |        1.2 |      0 |        0 |     -822   |       -789.1 | -36370.5 | -36370.5 |       1 |     0 |      56.4 |          57.1 |  160.3 |      160.3 |
+| TL3_LA_F_K7_CL_D40 |      26 | 25136.9 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |       1 |     0 |      57.1 |          57.1 |  160.3 |      160.3 |
+| TL3_LA_F_P7_PR_D40 |      26 | 25136.9 |      0   | 36370.5 |  36370.5 |      0   |        0   |      1 |        0 |        0   |          0   | -36370.5 | -36370.5 |       1 |     0 |      57.1 |          57.1 |  160.3 |      160.3 |
 | TL3_LA_F_K7_AM_D40 |      26 | 25151   |     14.1 | 36418   |  36370.5 |     -0.1 |        0.7 |      1 |        0 |       16.6 |         13.6 | -36418   | -36370.5 |       1 |     0 |      56.4 |          57.1 |  160.5 |      160.3 |
 
 ## 8. C22 FAMILY (item 3)
@@ -173,14 +181,15 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_C_N26   |      13 | 13630.6 |  -2384.6 | 52213.7 |  36370.5 |    -43.6 |       -0.2 |      0 |        0 |    -1263   |      -2416.4 | -52213.7 | -36370.5 |     1   |     0 |      55.4 |          52.5 |  150.9 |      144.2 |
 | TL3_LA_C_N30   |      13 | 12680.1 |  -3335.1 | 53874.9 |  36370.5 |    -48.1 |      -16.1 |      0 |        0 |    -2154.3 |      -3399.8 | -53874.9 | -36370.5 |     1   |     0 |      57.9 |          52.5 |  157.5 |      144.2 |
 
-### L6M (8 cells)
+### L6M (9 cells)
 | cell           |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:---------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_C_N18   |      26 | 25294.4 |    157.5 | 33755.5 |  36370.5 |      7.2 |      -10.6 |      1 |        0 |     -167.4 |        203.3 | -33755.5 | -36370.5 |     1   |     0 |      53.5 |          57.1 |  152.1 |      160.3 |
+| TL3_LA_C_Rm3p0 |      26 | 24602   |   -534.9 | 36370.5 |  36370.5 |      0   |        2.1 |      1 |        0 |     -556.3 |       -541.4 | -36370.5 | -36370.5 |     1   |     0 |      57.7 |          57.1 |  161.8 |      160.3 |
+| TL3_LA_C_Rm1p0 |      26 | 25883.7 |    746.8 | 36370.5 |  36370.5 |      0   |      -17.3 |      1 |        0 |      776.7 |        753.9 | -36370.5 | -36370.5 |     1   |     0 |      56.2 |          57.1 |  158.9 |      160.3 |
 | TL3_LA_C_Rm2p5 |      26 | 24815.5 |   -321.3 | 36370.5 |  36370.5 |      0   |        2.1 |      1 |        0 |     -334.2 |       -325.7 | -36370.5 | -36370.5 |     1   |     0 |      57.5 |          57.1 |  161.3 |      160.3 |
 | TL3_LA_C_Rm1p5 |      26 | 25501.3 |    364.4 | 36370.5 |  36370.5 |      0   |       -0   |      1 |        0 |      378.9 |        367.3 | -36370.5 | -36370.5 |     1   |     0 |      56.7 |          57.1 |  159.7 |      160.3 |
-| TL3_LA_C_Rm1p0 |      26 | 25883.7 |    746.8 | 36370.5 |  36370.5 |      0   |      -17.3 |      1 |        0 |      776.7 |        753.9 | -36370.5 | -36370.5 |     1   |     0 |      56.2 |          57.1 |  158.9 |      160.3 |
-| TL3_LA_C_Rm3p0 |      26 | 24602   |   -534.9 | 36370.5 |  36370.5 |      0   |        2.1 |      1 |        0 |     -556.3 |       -541.4 | -36370.5 | -36370.5 |     1   |     0 |      57.7 |          57.1 |  161.8 |      160.3 |
+| TL3_LA_C_Rm4p0 |      26 | 24174.4 |   -962.5 | 40146.6 |  36370.5 |    -10.4 |        2.1 |      0 |        0 |     -850   |       -978.4 | -40146.6 | -36370.5 |     1   |     0 |      58.5 |          57.1 |  163.5 |      160.3 |
 | TL3_LA_C_N14   |      26 | 22799.6 |  -2337.3 | 50026.9 |  36370.5 |    -37.5 |      -63.8 |      0 |        0 |    -3381.5 |      -2209.5 | -36787.9 | -36370.5 |     0.8 |     1 |      47.9 |          57.1 |  138.1 |      160.3 |
 | TL3_LA_C_N26   |      26 | 23447.5 |  -1689.4 | 52213.7 |  36370.5 |    -43.6 |       -0.2 |      0 |        0 |    -1123.3 |      -1721   | -52213.7 | -36370.5 |     1   |     0 |      59.7 |          57.1 |  166.8 |      160.3 |
 | TL3_LA_C_N30   |      26 | 23494.4 |  -1642.5 | 53874.9 |  36370.5 |    -48.1 |      -16.1 |      0 |        0 |    -1008   |      -1708.5 | -53874.9 | -36370.5 |     1   |     0 |      62.4 |          57.1 |  173.6 |      160.3 |
@@ -220,9 +229,9 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 # SECTION W-LB (items 6-9)
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 85 of 429 cells have an exact L3M result so far; 29 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 90 of 447 cells have an exact L3M result so far; 30 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T12:03Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T12:33Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -355,6 +364,7 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 
 | cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
 |---|---|---|---|---|---|
+| RB_asia_K100_EV | 3 | 16.3 / 1584 / 1596 / 1642 / 10024 / True / -0.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### TG  target 1-2 ticks short
 
@@ -392,10 +402,14 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | LE_C2_K7 | 3 | 0.4 / 744 / 745 / 994 / 333 / True / -2.9 / 1.05 / 0 | - / - / - / - | - / - | - / - |
 | LE_C2_P7 | 3 | -2.7 / -2082 / -2094 / -1658 / -1367 / False / 4.7 / 0.90 / 0 | - / - / - / - | - / - | - / - |
 | LE_C2_U7 | 3 | 0.1 / 590 / 587 / 690 / 25 / True / 0.0 / 1.03 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_H7 | 3 | 0.2 / -127 / -128 / -80 / 10 / True / -0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 | LE_C2_M7 | 3 | -6.6 / -1513 / -1505 / -1369 / -1961 / False / -0.8 / 1.02 / 1 | - / - / - / - | - / - | - / - |
 | LE_C2_A7 | 3 | 15.2 / 737 / 738 / 794 / 7920 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | LE_C2_asia | 3 | -1.7 / 43 / 31 / 601 / -832 / False / 5.5 / 1.03 / 0 | - / - / - / - | - / - | - / - |
 | LE_C2_london | 3 | 0.8 / -1825 / -1822 / -1501 / 1897 / False / -3.7 / 0.97 / 1 | - / - / - / - | - / - | - / - |
+| LE_C2_nyam | 3 | -0.2 / -227 / -226 / -122 / -108 / True / 0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_nypm | 3 | 0.0 / -49 / -49 / -26 / 0 / True / -2.9 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_P7_london | 3 | 0.0 / -1329 / -1330 / -1237 / 0 / False / -0.3 / 0.93 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_K7_london | 3 | 6.3 / 415 / 413 / 470 / 3291 / True / -0.5 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_K7_nyam | 3 | -0.0 / 72 / 72 / 99 / -10 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_M7_london | 3 | -7.6 / -9 / -9 / 72 / -2506 / False / -4.7 / 1.02 / 0 | - / - / - / - | - / - | - / - |
@@ -427,7 +441,7 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830
 
 Auto-expansions launched (expansion of <parent>):
 
@@ -791,6 +805,26 @@ Auto-expansions launched (expansion of <parent>):
 - - LE_C1_A7_asia_H7: expansion of LE_C1_A7_asia
 - - LE_C1_A7_asia_M7: expansion of LE_C1_A7_asia
 - - LE_C1_A7_asia_A7: expansion of LE_C1_A7_asia
+- - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
+- HIT RB_asia_K100_EV: L3M cut 16.3% d mean 1584 (adj 1642) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - RB_asia_K100_EV_k50: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_k60: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_k90: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_k110: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_k150: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_sasi: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_slon: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_snya: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_snyp: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_b3: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_bnone: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_oth: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_K7: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_P7: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_U7: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_H7: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_M7: expansion of RB_asia_K100_EV
+- - RB_asia_K100_EV_A7: expansion of RB_asia_K100_EV
 - - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
 
 ## 4. Not run / limits
