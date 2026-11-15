@@ -1,4 +1,4 @@
-# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T09:51Z. Research only, NO PASS claim.
+# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-15T10:22Z. Research only, NO PASS claim.
 **VERDICT (plain, page 1 of the forecast part; engine dial re-runs below are still running): the options-market number from CME NQ options, put on top of our own realised-range model (HAR), beats UW (b) in london, nyam, nyam2, nypm, late, matches in none, loses in asia, pre (out-of-sample, R2 in L3M / L6M / older, same sample start as UW). The bigger fact: the HAR realised-range model ALONE already beats UW (b) in london, nyam, nyam2, nypm and (L3M/L6M) late; UW's range signal is mostly an IV-term proxy. CME options add real, placebo-clean gain over HAR in asia (+0.10 to +0.14 R2) and the last 90 minutes (+0.12 to +0.24), small in nypm (+0.03 to +0.07), and nothing in london / nyam. Asia is where UW (b) is still the best single model (its NDX/QQQ/SPX IV term beats our CME read of the same night), so UW is not yet fully replaceable for asia. ES options (pulled at $0.00) add on top of NQ options only in the last 90 minutes (R2 0.45/0.48/0.43 vs 0.34/0.43/0.40) and in nypm for L3M/L6M, nothing elsewhere. Pre (08:30-09:30) is driven by the calendar flags (CPI/NFP/FOMC), not by CME or UW. UW (c) (full UW) is worse than (b) everywhere. Whether UW is still needed: for asia yes (UW b, or Cboe VIX-family inputs, which reach nearly the same R2 free); for london, nyam, nypm, late a HAR + CME (or HAR alone) forecast replaces it. Not a PASS claim; selection of the best model per session is by mean R2 over the three windows (hindsight among ~12 models, see caveats).**
 
 Prereg: autopilot/RANGE2_PREREG.md (sha 942f27a55458bebb, in DECISIONS.md before scoring). Order: DIRECTIVE_RANGE2_20261114.md. Code: code/th_range2. Bulk: /mnt/l2/l2vast/_range2. Causal forecast files for the dials: /mnt/l2/l2vast/_range2/fc_r2_v1.parquet (HAR + CME; var 'r'), fc_r2_har.parquet (HAR only), same schema as W-RU fc.parquet; sent to W-CH2, W-D9, W-LR.
@@ -443,11 +443,11 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 
 | cell | scope | L3M | L6M | HOLD | gate L3M | gate L6M | L6M without W44 | FEES $4.84: d mean $/wk L3M / L6M |
 |---|---|---|---|---|---|---|---|---|
-| TL3_R2_D9A_C_B | all | +370 $/wk, DD -0.4%, ww +225, stops 10.35(10.35), b5 102%, w2l 0 | n/a | n/a | False | None | n/a | +366 / n/a |
-| TL3_R2_D9A_C_B | asia | +136 $/wk, DD -8.4%, ww -3577, stops 6.24(6.24), b5 102%, w2l 0 | n/a | n/a | False | None | n/a | +134 / n/a |
-| TL3_R2_D9A_C_B | london | +592 $/wk, DD +0.7%, ww -5, stops 2.74(2.74), b5 99%, w2l 0 | n/a | n/a | True | None | n/a | +592 / n/a |
-| TL3_R2_D9A_C_B | nyam | +24 $/wk, DD -6.8%, ww -250, stops 1.29(1.29), b5 93%, w2l 0 | n/a | n/a | False | None | n/a | +22 / n/a |
-| TL3_R2_D9A_C_B | nypm | -382 $/wk, DD -27.3%, ww -286, stops 0.08(0.08), b5 100%, w2l 1 | n/a | n/a | False | None | n/a | -383 / n/a |
+| TL3_R2_D9A_C_B | all | +370 $/wk, DD -0.4%, ww +225, stops 10.35(10.35), b5 102%, w2l 0 | -144 $/wk, DD -0.4%, ww +225, stops 10.88(10.99), b5 100%, w2l 0 | n/a | False | False | -152 $/wk, DD -3.5%, ww -1036, stops 10.42(10.54), b5 100%, w2l 0 | +366 / -145 |
+| TL3_R2_D9A_C_B | asia | +136 $/wk, DD -8.4%, ww -3577, stops 6.24(6.24), b5 102%, w2l 0 | -523 $/wk, DD -8.4%, ww -3577, stops 6.24(6.35), b5 98%, w2l 0 | n/a | False | False | -387 $/wk, DD -4.3%, ww +231, stops 5.90(6.01), b5 98%, w2l 0 | +134 / -524 |
+| TL3_R2_D9A_C_B | london | +592 $/wk, DD +0.7%, ww -5, stops 2.74(2.74), b5 99%, w2l 0 | +778 $/wk, DD +0.7%, ww -5, stops 2.97(2.89), b5 102%, w2l 0 | n/a | True | True | +630 $/wk, DD +0.7%, ww -5, stops 2.89(2.82), b5 102%, w2l 0 | +592 / +778 |
+| TL3_R2_D9A_C_B | nyam | +24 $/wk, DD -6.8%, ww -250, stops 1.29(1.29), b5 93%, w2l 0 | -215 $/wk, DD -24.1%, ww -369, stops 1.64(1.67), b5 101%, w2l 1 | n/a | False | False | -351 $/wk, DD -24.1%, ww -369, stops 1.60(1.64), b5 101%, w2l 1 | +22 / -216 |
+| TL3_R2_D9A_C_B | nypm | -382 $/wk, DD -27.3%, ww -286, stops 0.08(0.08), b5 100%, w2l 1 | -184 $/wk, DD -27.3%, ww -286, stops 0.04(0.08), b5 107%, w2l 1 | n/a | False | False | -45 $/wk, DD +0.0%, ww +0, stops 0.04(0.08), b5 107%, w2l 1 | -383 / -183 |
 | TL3_R2_D9A_C_B_HAR | all | +113 $/wk, DD +6.4%, ww +3343, stops 10.42(10.35), b5 100%, w2l 0 | n/a | n/a | True | None | n/a | +110 / n/a |
 | TL3_R2_D9A_C_B_HAR | asia | -412 $/wk, DD -0.9%, ww -435, stops 6.32(6.24), b5 95%, w2l 0 | n/a | n/a | False | None | n/a | -413 / n/a |
 | TL3_R2_D9A_C_B_HAR | london | +828 $/wk, DD +4.6%, ww +2502, stops 2.66(2.74), b5 100%, w2l 0 | n/a | n/a | True | None | n/a | +828 / n/a |
@@ -468,11 +468,11 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_D9A_T1_B | london | -6008 $/wk, DD -5.1%, ww +11241, stops 3.12(2.74), b5 50%, w2l 3 | n/a | n/a | False | None | n/a | -5975 / n/a |
 | TL3_R2_D9A_T1_B | nyam | +675 $/wk, DD +21.4%, ww -1597, stops 1.14(1.29), b5 57%, w2l 1 | n/a | n/a | False | None | n/a | +641 / n/a |
 | TL3_R2_D9A_T1_B | nypm | +125 $/wk, DD -14.4%, ww -4086, stops 0.00(0.08), b5 83%, w2l 1 | n/a | n/a | False | None | n/a | +109 / n/a |
-| TL3_R2_D9A_T1_N | all | +1392 $/wk, DD +0.0%, ww +0, stops 10.65(10.35), b5 101%, w2l 0 | n/a | n/a | True | None | n/a | +1311 / n/a |
-| TL3_R2_D9A_T1_N | asia | +108 $/wk, DD +0.0%, ww +0, stops 6.32(6.24), b5 100%, w2l 1 | n/a | n/a | False | None | n/a | +101 / n/a |
-| TL3_R2_D9A_T1_N | london | +6 $/wk, DD +10.4%, ww +4733, stops 3.04(2.74), b5 102%, w2l 0 | n/a | n/a | True | None | n/a | -28 / n/a |
-| TL3_R2_D9A_T1_N | nyam | +791 $/wk, DD +15.7%, ww +20, stops 1.22(1.29), b5 91%, w2l 0 | n/a | n/a | True | None | n/a | +770 / n/a |
-| TL3_R2_D9A_T1_N | nypm | +486 $/wk, DD -13.0%, ww +1545, stops 0.08(0.08), b5 114%, w2l 1 | n/a | n/a | False | None | n/a | +468 / n/a |
+| TL3_R2_D9A_T1_N | all | +1392 $/wk, DD +0.0%, ww +0, stops 10.65(10.35), b5 101%, w2l 0 | +386 $/wk, DD +0.0%, ww +0, stops 11.30(10.99), b5 101%, w2l 1 | -916 $/wk, DD -24.4%, ww +0, stops 11.30(10.66), b5 96%, w2l 3 | True | True | +386 $/wk, DD +22.0%, ww +713, stops 10.84(10.54), b5 101%, w2l 1 | +1311 / +345 |
+| TL3_R2_D9A_T1_N | asia | +108 $/wk, DD +0.0%, ww +0, stops 6.32(6.24), b5 100%, w2l 1 | +54 $/wk, DD +0.0%, ww +0, stops 6.39(6.35), b5 100%, w2l 1 | -1033 $/wk, DD -0.0%, ww +0, stops 6.04(5.87), b5 97%, w2l 2 | False | False | +54 $/wk, DD +0.0%, ww +0, stops 6.05(6.01), b5 100%, w2l 1 | +101 / +51 |
+| TL3_R2_D9A_T1_N | london | +6 $/wk, DD +10.4%, ww +4733, stops 3.04(2.74), b5 102%, w2l 0 | +3 $/wk, DD +10.4%, ww +4733, stops 3.04(2.89), b5 102%, w2l 0 | -228 $/wk, DD -5.2%, ww +4733, stops 2.86(2.61), b5 102%, w2l 1 | True | True | +3 $/wk, DD +10.4%, ww +4733, stops 2.97(2.82), b5 102%, w2l 0 | -28 / -14 |
+| TL3_R2_D9A_T1_N | nyam | +791 $/wk, DD +15.7%, ww +20, stops 1.22(1.29), b5 91%, w2l 0 | +101 $/wk, DD -1.2%, ww +0, stops 1.79(1.67), b5 92%, w2l 0 | +307 $/wk, DD +15.7%, ww +4335, stops 2.36(2.15), b5 108%, w2l 0 | True | True | +101 $/wk, DD -1.2%, ww +0, stops 1.75(1.64), b5 92%, w2l 0 | +770 / +89 |
+| TL3_R2_D9A_T1_N | nypm | +486 $/wk, DD -13.0%, ww +1545, stops 0.08(0.08), b5 114%, w2l 1 | +228 $/wk, DD -13.0%, ww +1545, stops 0.08(0.08), b5 100%, w2l 1 | +39 $/wk, DD -4.9%, ww +0, stops 0.04(0.04), b5 100%, w2l 3 | False | False | +228 $/wk, DD -13.0%, ww +1545, stops 0.08(0.08), b5 100%, w2l 1 | +468 / +219 |
 | TL3_R2_D9S_C_B | all | -521 $/wk, DD -5.5%, ww -2905, stops 10.27(10.35), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -521 / n/a |
 | TL3_R2_D9S_C_B | asia | -426 $/wk, DD -6.0%, ww -2905, stops 6.16(6.24), b5 100%, w2l 0 | n/a | n/a | False | None | n/a | -426 / n/a |
 | TL3_R2_D9S_C_B | london | +138 $/wk, DD +0.1%, ww +0, stops 2.74(2.74), b5 104%, w2l 0 | n/a | n/a | True | None | n/a | +138 / n/a |
@@ -493,6 +493,8 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_D9S_T1_N | london | -89 $/wk, DD +7.1%, ww +5997, stops 4.18(2.74), b5 106%, w2l 0 | -44 $/wk, DD +7.1%, ww +5997, stops 3.61(2.89), b5 106%, w2l 0 | +219 $/wk, DD +2.3%, ww +5691, stops 3.45(2.61), b5 105%, w2l 0 | True | True | -44 $/wk, DD +7.1%, ww +5997, stops 3.54(2.82), b5 106%, w2l 0 | -119 / -60 |
 | TL3_R2_D9S_T1_N | nyam | +624 $/wk, DD -12.8%, ww +345, stops 2.59(1.29), b5 101%, w2l 0 | +9 $/wk, DD -2.2%, ww +0, stops 2.51(1.67), b5 102%, w2l 0 | +301 $/wk, DD +11.5%, ww +4335, stops 3.26(2.15), b5 104%, w2l 0 | False | False | +9 $/wk, DD -2.2%, ww +0, stops 2.47(1.64), b5 102%, w2l 0 | +605 / -1 |
 | TL3_R2_D9S_T1_N | nypm | +146 $/wk, DD -22.6%, ww -1637, stops 1.83(0.08), b5 130%, w2l 1 | +50 $/wk, DD -22.6%, ww -1637, stops 0.99(0.08), b5 100%, w2l 1 | -7 $/wk, DD -0.3%, ww -33, stops 0.81(0.04), b5 100%, w2l 1 | False | False | +50 $/wk, DD -22.6%, ww -1637, stops 0.99(0.08), b5 100%, w2l 1 | +128 / +41 |
+| TL3_R2_LR125 | all | -1282 $/wk, DD +3.0%, ww +1551, stops 9.97(10.35), b5 95%, w2l 0 | n/a | n/a | False | None | n/a | -1218 / n/a |
+| TL3_R2_LR125 | london | -513 $/wk, DD +17.6%, ww +10574, stops 2.05(2.74), b5 85%, w2l 0 | n/a | n/a | False | None | n/a | -435 / n/a |
 | TL3_R2_LR125_HAR | all | +30 $/wk, DD -5.4%, ww +1551, stops 9.89(10.35), b5 97%, w2l 0 | n/a | n/a | False | None | n/a | +88 / n/a |
 | TL3_R2_LR125_HAR | london | +354 $/wk, DD +31.4%, ww +11322, stops 2.05(2.74), b5 90%, w2l 0 | n/a | n/a | True | None | n/a | +427 / n/a |
 | TL3_R2_OS10_5 | all | +42 $/wk, DD +0.0%, ww +0, stops 10.35(10.35), b5 98%, w2l 0 | n/a | n/a | False | None | n/a | +38 / n/a |
@@ -561,7 +563,7 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_PL37_D9A_T1_N | nyam | +547 $/wk, DD +6.8%, ww +0, stops 1.22(1.29), b5 100%, w2l 0 | -246 $/wk, DD -8.7%, ww +0, stops 1.71(1.67), b5 99%, w2l 1 | +40 $/wk, DD +47.2%, ww +4335, stops 2.24(2.15), b5 91%, w2l 4 | True | False | -388 $/wk, DD -8.7%, ww +0, stops 1.67(1.64), b5 99%, w2l 1 | +546 / -249 |
 | TL3_R2_PL37_D9A_T1_N | nypm | +234 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 123%, w2l 0 | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | -86 $/wk, DD -1.6%, ww +1798, stops 0.06(0.04), b5 75%, w2l 0 | False | False | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | +233 / -228 |
 
-Cells with results: 24. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
+Cells with results: 25. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
 
 
 ## 6. Caveats
