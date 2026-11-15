@@ -1,8 +1,8 @@
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 82 of 390 cells have an exact L3M result so far; 26 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 85 of 429 cells have an exact L3M result so far; 29 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T11:33Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T12:03Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -176,8 +176,11 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 | LE_C2_A7 | 3 | 15.2 / 737 / 738 / 794 / 7920 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | LE_C2_asia | 3 | -1.7 / 43 / 31 / 601 / -832 / False / 5.5 / 1.03 / 0 | - / - / - / - | - / - | - / - |
 | LE_C2_london | 3 | 0.8 / -1825 / -1822 / -1501 / 1897 / False / -3.7 / 0.97 / 1 | - / - / - / - | - / - | - / - |
+| LE_C1_K7_london | 3 | 6.3 / 415 / 413 / 470 / 3291 / True / -0.5 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_K7_nyam | 3 | -0.0 / 72 / 72 / 99 / -10 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_M7_london | 3 | -7.6 / -9 / -9 / 72 / -2506 / False / -4.7 / 1.02 / 0 | - / - / - / - | - / - | - / - |
 | LE_C1_M7_nyam | 3 | 0.0 / -215 / -215 / -188 / 0 / True / 0.0 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_A7_asia | 3 | 15.5 / 233 / 234 / 277 / 8023 / True / -0.2 / 0.98 / 0 | - / - / - / - | - / - | - / - |
 
 ### WK  work the cut with a resting limit (per book / session / 08:30)
 
@@ -204,7 +207,7 @@ Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.8
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830
 
 Auto-expansions launched (expansion of <parent>):
 
@@ -525,6 +528,49 @@ Auto-expansions launched (expansion of <parent>):
 - - WK2_nyam_w5: expansion of WK2_nyam
 - - WK2_nyam_touch: expansion of WK2_nyam
 - - WK2_nyam_fb12: expansion of WK2_nyam
+- - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
+- HIT LE_C1_K7_london: L3M cut 6.3% d mean 415 (adj 470) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - LE_C1_K7_london_T3: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_T15: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_T30: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_bid: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_mid: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_touch: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_skip: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_K7: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_P7: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_U7: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_H7: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_M7: expansion of LE_C1_K7_london
+- - LE_C1_K7_london_A7: expansion of LE_C1_K7_london
+- HIT LE_C1_K7_nyam: L3M cut -0.0% d mean 72 (adj 99) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - LE_C1_K7_nyam_T3: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_T15: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_T30: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_bid: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_mid: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_touch: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_skip: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_K7: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_P7: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_U7: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_H7: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_M7: expansion of LE_C1_K7_nyam
+- - LE_C1_K7_nyam_A7: expansion of LE_C1_K7_nyam
+- HIT LE_C1_A7_asia: L3M cut 15.5% d mean 233 (adj 277) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - LE_C1_A7_asia_T3: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_T15: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_T30: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_bid: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_mid: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_touch: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_skip: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_K7: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_P7: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_U7: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_H7: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_M7: expansion of LE_C1_A7_asia
+- - LE_C1_A7_asia_A7: expansion of LE_C1_A7_asia
 - - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
 
 ## 4. Not run / limits
