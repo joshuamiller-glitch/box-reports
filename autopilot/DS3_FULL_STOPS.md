@@ -1,9 +1,9 @@
-# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-15 16:28Z
+# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-15 17:49Z
 
-VERDICT (plain): First-order only so far (exact cells queued, none finished): the full stops sit in A7 (4.0/wk) and U7 (3.4/wk) and are indistinguishable from winners in the first minute but separate at 5-10 minutes; the one time stop with no mean loss in every window and a clear gap to its random-time placebo is U7 in London (below -10 at 5 min, full stops 1.6 to 1.1/wk, +$165..598/wk, but old windows have few U7 trades), plus small M7 no-progress and P7 NY AM rules; for A7 every rule that removes its full stops costs $130-400/wk, so there is no free setting. No PASS claim.
+VERDICT (plain): FIRST PASS: A7 flat -40 is +$1,869/wk in L6M (DD +10.3%, +5.5% with W44 removed) and positive in HOLD (+468) and PRE (+358), but only about a fifth of the L6M gain is A7 itself (+349 own, +1,500 other books: P7 +660, K7 +300, U7 +312, H7 +283) and in PRE A7 itself loses (-472) while other books gain 770; the flat cut removes the stop-triggered stack cuts (StackCut 40 to 15), so the lead is a stack-path effect, not an A7 effect, and the random-subset placebos (TL3_PM_P_A7F40_S1..3) and GAP / X' months are still running. No PASS claim.
 BASIS (one line): every $ and DD number on this page sums raw engine net_fee of JN05W2-family sets at BASE (box) lots, live = x1.75, with the engine own fills and $1.18/contract RT (not FEES.md $4.84 RT); columns dmean@4.84 reprice the mean change at $4.84 RT per contract (delta contracts x $3.66), no rerun.
 
-Base JN05W2 exact (43 months), L6M full stops = 11.0/wk (A7 4.0, U7 3.4, M7 1.3, H7 0.8, P7 0.5, K7 0.5 after its flat -45, O7 0.6). Full stop = exit Stop/StopJoin/StopJoinFallback. First-order rows use stored 1-s mid paths of the same trades (rule replaces the actual exit by a market exit at mid -0.8 pt when it fires before the actual exit; state-cut dynamics after that ignored); exact rows use the engine (hooks th_pm, identity TL3_PM_ID/ECID on 202610: TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | ).
+Base JN05W2 exact (43 months), L6M full stops = 11.0/wk (A7 4.0, U7 3.4, M7 1.3, H7 0.8, P7 0.5, K7 0.5 after its flat -45, O7 0.6). Full stop = exit Stop/StopJoin/StopJoinFallback. First-order rows use stored 1-s mid paths of the same trades (rule replaces the actual exit by a market exit at mid -0.8 pt when it fires before the actual exit; state-cut dynamics after that ignored); exact rows use the engine (hooks th_pm, identity TL3_PM_ID/ECID on 202610: TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | ).
 
 ## 1. Anatomy: first 1/3/5/10 minutes, stopped vs target-reaching (JN05W2 trades, only trades still open at T; mae/cur in pts from entry; uw = share of seconds under water; nofav = share of the window elapsed since the last new favourable extreme; p_stop_if_cur<-10 = share of trades below -10 at T that end as full stops vs base rate)
 | book | sess | T | n_stop | n_tgt | mae_stop | mae_tgt | cur_stop | cur_tgt | uw_stop | uw_tgt | nofav_stop | nofav_tgt | p_stop_if_cur_lt_neg10 | base_p_stop |
@@ -106,7 +106,7 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | E_U7L_N5X10 | 390 | 0 | 10.3>9.7 | 188 | 0 | 11.0>10.5 | 0 | 1 | 0 | 258 | 5 | 10.7>10.2 | 390 | 188 | 257 | 6 | 694 | 4 | 9.3>8.8 |
 | E_U7L_N5X20 | 584 | 0 | 10.3>10.0 | 287 | 0 | 11.0>10.8 | 0 | 1 | 0 | 329 | 0 | 10.7>10.5 | 585 | 287 | 329 | 5 | 64 | 0 | 9.3>9.2 |
 | E_U7_N5X20 | 543 | 0 | 10.3>9.8 | 66 | 0 | 11.0>10.6 | 0 | 1 | 0 | 54 | 3 | 10.7>10.2 | 539 | 64 | 56 | 9 | - | - | - |
-| E_U7_N15X10 | -766 | 5 | 10.3>8.7 | -20 | 5 | 11.0>9.4 | 7,435 | 1 | 0 | -211 | 8 | 10.7>9.4 | -759 | -16 | -210 | -15 | - | - | - |
+| E_U7_N15X10 | -766 | 5 | 10.3>8.7 | -20 | 5 | 11.0>9.4 | 7,435 | 1 | 0 | -211 | 8 | 10.7>9.4 | -759 | -16 | -210 | -15 | 239 | -0 | 9.3>8.4 |
 | E_U7_N30X10 | -1596 | -8 | 10.3>9.0 | - | - | - | - | - | - | - | - | - | -1587 | - | - | - | - | - | - |
 | E_P7N_N15X10 | -44 | 0 | 10.3>10.1 | - | - | - | - | - | - | - | - | - | -45 | - | - | - | - | - | - |
 | E_P7N_F35 | 149 | 0 | 10.3>10.0 | 125 | 0 | 11.0>10.8 | 0 | 1 | 0 | 150 | 1 | 10.7>10.5 | 149 | 125 | 150 | 4 | -74 | -4 | 9.3>9.2 |
@@ -121,7 +121,33 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | E_H7_F50 | -112 | 0 | 10.3>9.8 | -157 | 0 | 11.0>10.3 | 0 | 1 | 0 | -217 | -4 | 10.7>9.7 | -112 | -157 | -217 | 0 | 259 | 0 | 9.3>8.1 |
 | T_M7_NP15 | -835 | -3 | 10.3>10.1 | - | - | - | - | - | - | - | - | - | -845 | - | - | - | - | - | - |
 | T_M7_NP10 | -1446 | -1 | 10.3>10.0 | - | - | - | - | - | - | - | - | - | -1472 | - | - | - | - | - | - |
-| X_A7AS_F35 | 2043 | 13 | 10.3>6.6 | 1,718 | 13 | 11.0>7.2 | 7,010 | 1 | 0 | - | - | - | 2023 | 1,700 | - | 7 | - | - | - |
-| X_A7AS_F40 | 2126 | 10 | 10.3>6.5 | - | - | - | - | - | - | - | - | - | 2109 | - | - | - | - | - | - |
+| X_A7AS_F35 | 2043 | 13 | 10.3>6.6 | 1,718 | 13 | 11.0>7.2 | 7,010 | 1 | 0 | 400 | 3 | 10.7>7.6 | 2023 | 1,700 | 394 | 7 | - | - | - |
+| X_A7AS_F40 | 2126 | 10 | 10.3>6.5 | 1,869 | 10 | 11.0>7.2 | 5,527 | 1 | 0 | - | - | - | 2109 | 1,854 | - | 6 | - | - | - |
 | X_A7AS_F45 | 1571 | -1 | 10.3>6.5 | - | - | - | - | - | - | - | - | - | 1557 | - | - | - | - | - | - |
 | X_A7AS_F50 | 1652 | 2 | 10.3>6.5 | - | - | - | - | - | - | - | - | - | 1642 | - | - | - | - | - | - |
+
+## 4. All windows with decomposition (FIRST PASS; delta vs JN05W2 at base lots, x1.75 for live; own/other = change in the cell book vs all other books; placebo cells TL3_PM_P_* apply the same A7 flat -40 to a random 50% of A7 trades)
+| cell | L3M | L6M | HOLD | GAP | PREUW | X' | ALL43 |
+|--|--|--|--|--|--|--|--|
+| E_A7_F40 | +2126/wk DD +10.3% stops 10.3>6.5 own +591/other +1533 noW44 +5.5% | +1869/wk DD +10.3% stops 11.0>7.2 own +345/other +1524 noW44 +5.5% | +468/wk DD -0.5% stops 10.7>7.6 own +143/other +325 | - | +358/wk DD +8.4% stops 9.3>7.8 own -472/other +830 | - | - |
+| E_A7_F50 | +1652/wk DD +2.1% stops 10.3>6.5 own +183/other +1469 noW44 +0.4% | +1331/wk DD +2.1% stops 11.0>7.3 own -207/other +1538 noW44 +0.4% | +494/wk DD +0.6% stops 10.7>7.6 own -41/other +535 | - | +715/wk DD +7.8% stops 9.3>7.9 own -126/other +840 | - | - |
+| E_A7_N10X20 | +2363/wk DD +1.0% stops 10.3>9.6 own +255/other +2109 noW44 +2.1% | +1420/wk DD +1.0% stops 11.0>10.4 own +213/other +1208 noW44 +2.1% | +612/wk DD -2.3% stops 10.7>10.3 own +7/other +606 | - | +250/wk DD +0.0% stops 9.3>9.1 own -29/other +278 | - | - |
+| E_H7N_N15X10 | -3/wk DD +0.0% stops 10.3>10.3 own -3/other +0 noW44 +0.0% | +29/wk DD +0.0% stops 11.0>10.9 own +29/other +0 noW44 +0.0% | - | - | - | - | - |
+| E_H7_F50 | -112/wk DD +0.0% stops 10.3>9.8 own -95/other -19 noW44 +0.2% | -157/wk DD +0.0% stops 11.0>10.3 own +12/other -169 noW44 +0.2% | -217/wk DD -3.8% stops 10.7>9.7 own -88/other -129 | - | +259/wk DD +0.1% stops 9.3>8.1 own +118/other +143 | - | - |
+| E_M7_F45 | -202/wk DD +0.0% stops 10.3>9.3 own +45/other -247 noW44 -3.6% | -520/wk DD +0.0% stops 11.0>9.9 own -260/other -261 noW44 -3.6% | -462/wk DD +2.5% stops 10.7>9.6 own -331/other -131 | - | +82/wk DD +0.3% stops 9.3>7.6 own -110/other +192 | - | - |
+| E_M7_F50 | -47/wk DD +0.0% stops 10.3>9.4 own +29/other -76 noW44 -3.1% | - | - | - | - | - | - |
+| E_P7N_F35 | +149/wk DD +0.0% stops 10.3>10.0 own +149/other +0 noW44 +4.1% | +125/wk DD +0.0% stops 11.0>10.8 own +125/other +0 noW44 +4.1% | +150/wk DD +0.9% stops 10.7>10.5 own +150/other +0 | - | -74/wk DD -3.7% stops 9.3>9.2 own -74/other +0 | - | - |
+| E_P7N_N15X10 | -44/wk DD +0.0% stops 10.3>10.1 own -44/other +0 noW44 +0.9% | - | - | - | - | - | - |
+| E_U7L_N5X10 | +390/wk DD +0.0% stops 10.3>9.7 own +404/other -14 noW44 +6.2% | +188/wk DD +0.0% stops 11.0>10.5 own +195/other -7 noW44 +6.2% | +258/wk DD +5.3% stops 10.7>10.2 own +209/other +49 | - | +694/wk DD +3.6% stops 9.3>8.8 own +947/other -253 | - | - |
+| E_U7L_N5X20 | +584/wk DD +0.0% stops 10.3>10.0 own +417/other +168 noW44 +4.7% | +287/wk DD +0.0% stops 11.0>10.8 own +203/other +84 noW44 +4.7% | +329/wk DD +0.0% stops 10.7>10.5 own +241/other +88 | - | +64/wk DD +0.2% stops 9.3>9.2 own +310/other -247 | - | - |
+| E_U7_F40 | -1010/wk DD -9.2% stops 10.3>7.5 own -356/other -654 noW44 -8.9% | +172/wk DD -9.2% stops 11.0>7.9 own +208/other -35 noW44 -8.9% | +608/wk DD +10.9% stops 10.7>7.6 own +1189/other -581 | - | -1304/wk DD -18.0% stops 9.3>6.7 own -1170/other -134 | - | - |
+| E_U7_F50 | -449/wk DD +2.6% stops 10.3>7.6 own -392/other -57 noW44 -17.2% | +296/wk DD +2.6% stops 11.0>8.0 own +123/other +173 noW44 -17.2% | +243/wk DD -0.1% stops 10.7>7.7 own +652/other -409 | - | -766/wk DD -3.7% stops 9.3>6.8 own -839/other +74 | - | - |
+| E_U7_N15X10 | -766/wk DD +4.6% stops 10.3>8.7 own -943/other +177 noW44 -14.7% | -20/wk DD +4.6% stops 11.0>9.4 own -328/other +309 noW44 -14.7% | -211/wk DD +8.3% stops 10.7>9.4 own -402/other +192 | - | +239/wk DD -0.0% stops 9.3>8.4 own +320/other -80 | - | - |
+| E_U7_N30X10 | -1596/wk DD -7.7% stops 10.3>9.0 own -1315/other -281 noW44 -8.5% | - | - | - | - | - | - |
+| E_U7_N5X20 | +543/wk DD +0.0% stops 10.3>9.8 own +481/other +61 noW44 +9.3% | +66/wk DD +0.0% stops 11.0>10.6 own +41/other +24 noW44 +9.3% | +54/wk DD +2.8% stops 10.7>10.2 own +243/other -189 | - | - | - | - |
+| T_M7_NP10 | -1446/wk DD -0.9% stops 10.3>10.0 own -197/other -1249 noW44 +7.2% | - | - | - | - | - | - |
+| T_M7_NP15 | -835/wk DD -2.8% stops 10.3>10.1 own +212/other -1047 noW44 +0.3% | - | - | - | - | - | - |
+| X_A7AS_F35 | +2043/wk DD +13.4% stops 10.3>6.6 own +744/other +1298 noW44 +7.3% | +1718/wk DD +13.4% stops 11.0>7.2 own +278/other +1440 noW44 +7.3% | +400/wk DD +3.4% stops 10.7>7.6 own +6/other +393 | - | - | - | - |
+| X_A7AS_F40 | +2126/wk DD +10.3% stops 10.3>6.5 own +591/other +1533 noW44 +5.5% | +1869/wk DD +10.3% stops 11.0>7.2 own +345/other +1524 noW44 +5.5% | - | - | - | - | - |
+| X_A7AS_F45 | +1571/wk DD -1.3% stops 10.3>6.5 own +174/other +1395 noW44 +3.6% | - | - | - | - | - | - |
+| X_A7AS_F50 | +1652/wk DD +2.1% stops 10.3>6.5 own +183/other +1469 noW44 +0.4% | - | - | - | - | - | - |

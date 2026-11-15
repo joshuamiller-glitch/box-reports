@@ -537,3 +537,47 @@ Per cell, a_K25_lrn_meanR (ALL window):
 | K7|3   | -0.023 | -0.513 |    715 |    727 |
 | U7|1   | -0.09  | -1.082 |    299 |    236 |
 | M7|3   | -0.087 | -1.903 |    758 |    619 |
+
+
+# COUNTING BOOKS (injection-style screen, 13 years, W-CF6), 2026-11-15
+
+**VERDICT: none of the four counting books earns money after costs, none is positive in both 2013-2022 and 2023-2026, and none beats its controls (mirror side, date-shifted events). Best configurations: Brooks High 2 / Low 2 at the 20 EMA on 15-min with 2R target -7 $/trade (CI -27..+13; -23 before 2023, +23 after); second entry after a failed first on 15-min with 2R +1 $/trade (CI -26..+30; -18 before 2023, +50 after); three-push wedge reversal in a chop call and DeMark perfected-9 fades at a level cluster are negative everywhere that matters (DeMark +6 to +18 before 2023 on 5/15-min with 1.5-2R, -44 to -54 after). 5-min versions are negative with CIs below zero (-20 to -30 $/trade over 3,400-7,300 entries a year): with about $25 per trade of cost, a pure bar-count entry has no edge to pay for it. Not taken to the exact engine.**
+
+Definitions in CONFLUENCE_DEFS_CF6.md (Brooks coding A; wedge = three successive 0.6-ATR zig-zag highs with rising lows between and RSI14 divergence at the third, chop call = ADX14 < 20 on the same bars, entry at the third push's confirmation; DeMark = W-CF5 perfected setup 9 fading the move, level cluster = >= 2 of {PDH, PDL, PDC, week open, month open, round 100} within 0.5 ATR). Code count_books.py (CF6_LONG=1; 1-min fills, stop first, 12-bar time stop, flat at session end, 1 lot, 1.0 pt + $4.84). Mirror = same events, opposite side, same stop and target distances; shift = the same events moved 11 / 23 / 37 days later at the same clock.
+
+| book   |   tf |   target R |   entries |   per year |   mean $ |   CI lo |   CI hi |   2013-22 $ |   2023-26 $ |   win rate |   mirror $ |   shift 11 $ |   shift 23 $ |   shift 37 $ |
+|:-------|-----:|-----------:|----------:|-----------:|---------:|--------:|--------:|------------:|------------:|-----------:|-----------:|-------------:|-------------:|-------------:|
+| H2     |    5 |        1   |      7253 |        526 |      -22 |     -29 |     -16 |         -23 |         -21 |       0.49 |        -29 |          -26 |          -30 |          -22 |
+| H2     |    5 |        1.5 |      7253 |        526 |      -21 |     -28 |     -14 |         -22 |         -20 |       0.41 |        -27 |          -27 |          -25 |          -18 |
+| H2     |    5 |        2   |      7253 |        526 |      -20 |     -28 |     -12 |         -21 |         -19 |       0.36 |        -26 |          -28 |          -24 |          -19 |
+| H2     |   15 |        1   |      4095 |        297 |      -17 |     -30 |      -4 |         -24 |          -2 |       0.5  |        -34 |          -23 |          -27 |          -34 |
+| H2     |   15 |        1.5 |      4095 |        297 |       -9 |     -25 |       8 |         -22 |          14 |       0.43 |        -33 |          -29 |          -30 |          -33 |
+| H2     |   15 |        2   |      4095 |        297 |       -7 |     -27 |      13 |         -23 |          23 |       0.39 |        -28 |          -26 |          -26 |          -38 |
+| SE     |    5 |        1   |      7207 |        522 |      -28 |     -39 |     -18 |         -24 |         -40 |       0.43 |        -22 |          -24 |          -18 |           -8 |
+| SE     |    5 |        1.5 |      7207 |        522 |      -30 |     -41 |     -19 |         -26 |         -39 |       0.42 |        -24 |          -26 |          -18 |           -8 |
+| SE     |    5 |        2   |      7207 |        522 |      -29 |     -39 |     -18 |         -25 |         -39 |       0.42 |        -23 |          -26 |          -16 |           -7 |
+| SE     |   15 |        1   |      3440 |        249 |       -6 |     -30 |      22 |         -24 |          41 |       0.48 |        -44 |          -26 |            0 |          -30 |
+| SE     |   15 |        1.5 |      3440 |        249 |       -3 |     -28 |      24 |         -19 |          39 |       0.47 |        -43 |          -32 |            2 |          -28 |
+| SE     |   15 |        2   |      3440 |        249 |        1 |     -26 |      30 |         -18 |          50 |       0.47 |        -43 |          -32 |            2 |          -32 |
+| WEDGE  |    5 |        1   |      4042 |        293 |      -23 |     -33 |     -13 |         -18 |         -31 |       0.48 |        -28 |          -27 |          -27 |          -24 |
+| WEDGE  |    5 |        1.5 |      4042 |        293 |      -21 |     -32 |     -11 |         -15 |         -32 |       0.41 |        -27 |          -27 |          -21 |          -27 |
+| WEDGE  |    5 |        2   |      4042 |        293 |      -19 |     -31 |      -6 |         -14 |         -26 |       0.38 |        -28 |          -32 |          -25 |          -30 |
+| WEDGE  |   15 |        1   |      1261 |         91 |      -16 |     -45 |      11 |         -13 |         -20 |       0.48 |        -35 |          -22 |          -32 |          -40 |
+| WEDGE  |   15 |        1.5 |      1261 |         91 |      -17 |     -49 |      15 |         -19 |         -13 |       0.42 |        -30 |           -8 |          -27 |          -29 |
+| WEDGE  |   15 |        2   |      1261 |         91 |      -13 |     -44 |      22 |         -19 |          -3 |       0.39 |        -24 |          -12 |          -32 |          -24 |
+| DM     |    5 |        1   |       576 |         42 |      -34 |     -63 |      -4 |          -8 |         -65 |       0.5  |        -21 |          -15 |          -59 |            4 |
+| DM     |    5 |        1.5 |       576 |         42 |      -16 |     -54 |      23 |           7 |         -44 |       0.43 |        -31 |          -43 |          -54 |           13 |
+| DM     |    5 |        2   |       576 |         42 |      -22 |     -56 |      21 |           6 |         -54 |       0.37 |        -28 |          -47 |          -62 |           26 |
+| DM     |   15 |        1   |       536 |         39 |      -13 |     -59 |      27 |          15 |         -48 |       0.51 |        -39 |          -39 |            4 |          -28 |
+| DM     |   15 |        1.5 |       536 |         39 |       -9 |     -61 |      39 |          17 |         -44 |       0.44 |        -56 |          -42 |           29 |          -31 |
+| DM     |   15 |        2   |       536 |         39 |      -12 |     -72 |      43 |          18 |         -51 |       0.4  |        -42 |          -34 |           10 |          -32 |
+
+
+# BLOCK 6 on the signals_all universe (taken + non-blocked skipped signals, 35,913 rows), step 3 each alone, 2026-11-15
+
+**VERDICT: the sign pattern found on the taken signals holds and is larger on the bigger universe: |t|>2 share 12.8 pct of 15,233 rows against 5.6 pct under 20 outcome shuffles (taken-only 6.2 vs 5.0). Brooks 'a pullback count already at 2 or more with the trade' is negative (-0.077 R, t -8.1, 15-min coding A; same sign in 3 of 4 years, L6M -0.13), 'new extreme within the last 2 bars' (reset) positive (+0.06 to +0.076 R, t 6.4-7.3), 'High/Low 1 within 5 bars with the trade' +0.077 (t 7.8), first entry of the leg positive; these are trend-continuation versus late-pullback signatures. The lifts of the 556 conditions common to both universes correlate 0.63. Outcomes for skipped signals are W-CF1's hypothetical 1-minute bracket R (not engine trades), so this is a screen; the engine verdicts stay on taken trades. Columns: cols_cf6/cf6_cols_all.parquet (1,181), cf6_ictB_all (408), cf6_alt_all (358); table cols_cf6/step3_all.csv. Caveat: skipped signals include the ones the live stack rejects; a condition predicting 'would have won' on those is not a take/skip rule until gated through the exact engine (W-CF3).**
+
+
+# Block 6 step 3 with WEEK-CLUSTER-ROBUST t (sandwich, clusters = ISO weeks), 2026-11-15 (supersedes the naive-t share of the previous section)
+
+**VERDICT: with week-clustered errors the counting columns carry almost no more significant rows than chance. Taken signals: |t_cr|>2 in 6.2 pct of 7,206 testable rows against 3.8-6.2 pct (mean 5.0) under 10 outcome shuffles; signals_all universe: 6.6 pct of 11,423 rows against 5.5-7.9 pct (mean 6.3). The naive-t excess I reported for the larger universe (12.8 vs 5.6 pct) was overlap between simultaneous signals, not information. What survives the clustered test is small and of the same kind as before: DeMark countdown-13 / perfected 9 completed on the trade's own side (taken, stack: +0.115 R, t_cr 3.7; 60-min nine_against +0.20, t_cr 3.6, 4 of 4 years, L6M +0.16), TDST 'against' negative (-0.07, t_cr -3.2), Brooks 'with-count >= 4' negative (-0.05 to -0.07, t_cr -3.4), K7 NY PM 'session high older than 12 bars' -0.26 R (t_cr -5.0, 4 of 4 years) and 'new extreme within 2 bars' +0.20 (t_cr 3.7). Universe-wide: Brooks open pullback count with the trade -0.07 to -0.08 R (t_cr -4.0 to -4.8), reset within 2 bars +0.076 (t_cr 4.1). Effect sizes 0.05-0.2 R; the K7-cell items have 60-500 yes-rows. Files: cols_cf6/step3_cr_taken.csv, step3_cr_all.csv; code cf6_step3_cr.py. Skipped-signal outcomes are hypothetical 1-minute brackets.**

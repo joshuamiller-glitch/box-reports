@@ -1,8 +1,8 @@
 # DS3_REENTRY_ALL - re-entry discipline for K7 M7 U7 H7 A7 O7 (W-RA, priority 6)
 
-**VERDICT: 46 of 258 re-entry cells x windows scored (354 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
+**VERDICT: 46 of 258 re-entry cells x windows scored (382 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
 
-Built epoch 1794755939. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
+Built epoch 1794764982. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
 
 ## 1. Where the money is by entry number and fresh vs rechase (JN05W2, exact engine trades; $/wk by window)
 
@@ -250,6 +250,9 @@ Stack level (scope all):
 | CAP4 | HOLD | -1390.5 | -569.8 | 2.0 | 2.5 | 3 | -272.4 | 0.1 |
 | CAP4 | L3M | -5048.7 | -2727.2 | -9.8 | 14.1 | 3 | -2861.4 | 4.0 |
 | CAP4 | L6M | -3702.0 | -2533.1 | -9.8 | 14.1 | 3 | -1811.4 | 4.0 |
+| HALF | HOLD | 524.1 | 524.1 | 9.0 | 9.0 | 1 | -141.9 | -0.6 |
+| HALF | L3M | -558.0 | 210.8 | 1.5 | 17.1 | 2 | -668.9 | -0.0 |
+| HALF | L6M | -614.8 | 189.6 | 1.5 | 17.1 | 2 | -56.7 | -0.0 |
 
 ### Scoped exact placebos for the leads (random block at the real per-book rate, 3 seeds)
 
@@ -270,6 +273,42 @@ Stack level (scope all):
 | CAP4 | M7:london | L3M | 500.1 | -787.9 | 602.7 | 18.4 | -6.2 | 5.8 | 3 | False |
 | CAP4 | M7:london | L6M | 997.3 | -520.3 | 170.9 | 18.4 | -24.4 | 5.8 | 3 | True |
 | CAP4 | M7:london | HOLD | 457.1 | -51.5 | 164.5 | 27.8 | -2.3 | 13.7 | 3 | True |
+| HALF | *:london | L3M | 60.6 | -743.3 | 96.0 | 9.4 | -6.3 | -1.9 | 2 | False |
+| HALF | *:london | L6M | 414.6 | -961.1 | -108.6 | 9.4 | -6.3 | -1.9 | 2 | True |
+| HALF | *:london | HOLD | 205.4 | -27.7 | -27.7 | 1.3 | 8.8 | 8.8 | 1 | False |
+| HALF | A7:asia | L3M | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 2 | False |
+| HALF | A7:asia | L6M | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 2 | False |
+| HALF | A7:asia | HOLD | 12.1 | 12.1 | 12.1 | 5.1 | 5.1 | 5.1 | 1 | False |
+| HALF | K7:london | L3M | -1.9 | -526.6 | -158.3 | 5.9 | -15.3 | 0.2 | 2 | True |
+| HALF | K7:london | L6M | 43.0 | -578.2 | -240.9 | 5.9 | -15.3 | 0.2 | 2 | True |
+| HALF | K7:london | HOLD | 7.0 | -131.8 | -131.8 | 0.0 | 0.0 | 0.0 | 1 | False |
+| HALF | K7:nyam | L3M | 91.2 | 27.0 | 245.3 | 11.0 | -7.8 | 13.4 | 2 | False |
+| HALF | K7:nyam | L6M | 23.5 | 45.6 | 84.7 | 11.0 | -7.8 | 13.4 | 2 | False |
+| HALF | K7:nyam | HOLD | 11.9 | 79.7 | 79.7 | 0.0 | 6.6 | 6.6 | 1 | False |
+| HALF | M7:london | L3M | 62.5 | 85.7 | 186.9 | 9.8 | 3.2 | 5.8 | 2 | False |
+| HALF | M7:london | L6M | 280.6 | -140.3 | 98.6 | 9.8 | 3.2 | 4.1 | 2 | True |
+| HALF | M7:london | HOLD | 198.5 | 133.1 | 133.1 | 25.7 | 2.1 | 2.1 | 1 | True |
+
+## 5c. Week-clustered robustness, M7_london (HOLD = last 12 months, 52 weeks; delta vs JN05W2 on the scope; real cell and its 3 exact placebo seeds)
+
+t_cluster = mean weekly delta / its week-clustered standard error; CI = paired week bootstrap 90%; mean_noW44 = without week 2026-W44; mean_wo_top3 = without the 3 best delta weeks; P_dd_shallower = share of 2000 week-resamples (52 weeks, the full horizon) in which the cell max DD is shallower than the reference. Base-lot engine dollars ($1.18 RT); x1.75 for live lots.
+
+| cell | run | weeks | mean_wk | t_cluster | ci90_lo | ci90_hi | pos_weeks | mean_noW44 | mean_wo_top3 | dd_ref | dd_cell | P_dd_shallower |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| CAP2 | real | 52 | 667.16 | 1.33 | -145.16 | 1486.71 | 0.54 | 766.39 | 190.67 | -27910.88 | -15221.64 | 0.93 |
+| CAP2 | PL1 | 52 | 198.49 | 0.36 | -690.91 | 1104.25 | 0.50 | 247.77 | -355.44 | -27910.88 | -24139.12 | 0.73 |
+| CAP2 | PL2 | 52 | 386.41 | 0.73 | -454.42 | 1239.74 | 0.42 | 410.99 | -95.40 | -27910.88 | -26039.36 | 0.83 |
+| CAP2 | PL3 | 52 | 567.97 | 1.20 | -187.78 | 1329.24 | 0.56 | 616.47 | 101.79 | -27910.88 | -21827.76 | 0.90 |
+| CAP3 | real | 52 | 918.78 | 2.04 | 195.51 | 1645.22 | 0.62 | 1010.87 | 479.05 | -27910.88 | -14455.84 | 0.96 |
+| CAP3 | PL1 | 52 | -270.61 | -0.54 | -1101.80 | 536.34 | 0.56 | -273.11 | -675.61 | -27910.88 | -49179.16 | 0.32 |
+| CAP3 | PL2 | 52 | -188.42 | -0.39 | -990.44 | 588.33 | 0.56 | -189.31 | -595.27 | -27910.88 | -45178.68 | 0.37 |
+| CAP3 | PL3 | 52 | 702.98 | 1.31 | -184.88 | 1541.30 | 0.60 | 802.03 | 297.46 | -27910.88 | -30273.22 | 0.80 |
+| CAP4 | real | 52 | 458.36 | 1.33 | -86.67 | 1013.52 | 0.46 | 559.66 | 121.33 | -27910.88 | -17887.74 | 0.92 |
+| CAP4 | PL1 | 52 | -51.66 | -0.16 | -603.52 | 467.21 | 0.50 | -34.00 | -316.81 | -27910.88 | -26829.36 | 0.57 |
+| CAP4 | PL2 | 52 | 144.94 | 0.46 | -392.67 | 647.78 | 0.52 | 147.14 | -113.74 | -27910.88 | -27504.74 | 0.71 |
+| CAP4 | PL3 | 52 | 164.93 | 0.42 | -456.30 | 791.11 | 0.54 | 251.86 | -203.83 | -27910.88 | -33917.86 | 0.53 |
+
+Reading: CAP3 is the only real cell whose 90% interval clears zero (t about 2.0) and it still leans on a few weeks (about half the mean survives without the 3 best weeks); two of its three placebo seeds are negative but seed 3 gives +703 $/wk, so the separation from random blocking is real in the mean and thin in the interval. CAP2 and CAP4 have positive means but intervals that include zero. BLKiv (evidence-based block) is indistinguishable from its random-block placebos, i.e. the evidence content adds nothing beyond having fewer re-entries. Many scopes and cells were looked at (14 cells x 12 scopes): treat as a LEAD, not a result. Identity re-check after the hook edit: TL3_RA_IDB 202610 598 trades 25943.82 IDENTICAL to ID and JN05W2; TL3_RA_CAP3B IDENTICAL to stored CAP3 (554 trades, 7151.34).
 
 ## 5b. Walk-forward every 2 weeks (per book x session pick of the best of 14 cells on trailing 182 days, DD cut + 0.5 x mean; none if <= 0)
 

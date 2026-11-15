@@ -48,6 +48,12 @@ A6 READING (engine part): the +0.3 R plant is recovered on EXPECTANCY and NOT on
 - The UNPLANTED engine gate is worse on drawdown than every random subset of the same size (DD $103,361 vs $52,233, DD_R 60.5 vs 20.8, percentile 0.000): keeping only 'all three true' signals concentrates the book on trend-aligned days and the engine run gives a much deeper drawdown than a random subset of the base trades. This is a path effect (which trades the stack can take after the skips) that the table-level screen cannot see; it is the reason every checklist needs its engine run.
 - What this proves: the hook, the full-universe table (found = 100 % of executed signals had a decision), the replacement handling and the scoring chain recover an edge that exists in outcomes. What it does not prove: that a real edge would survive the engine's path effects; the plant is added after the fact to the trade file.
 
+A1 READING (FIRST PASS, P7 Asia USER_SET_V0 all-5 only; the other 12 sets are still running): with EVERY signal gated the old verdict flips.
+- OLD (taken-only table): the cell kept 219 of 243 trades in L3M (replacements filled the freed slots), expectancy fell from $408 to $80 per trade and the STACK drawdown rose from $52k to $78k.
+- NEW skip-only: 84 trades kept in L3M (158 in L6M of 575), expectancy $922 (L6M $887) vs $408 ($545) per trade, 0.091 R (0.123) vs 0.078 R (0.118), cell max DD $17,964 vs $39,663 in L3M (-55 %) and $18,945 vs $39,663 in L6M, stack drawdown unchanged ($52,182 vs $52,233); matched-count percentile for expectancy 0.947 / 0.933 and for drawdown 0.863 / 0.957; profit factor 1.61 / 1.56 vs 1.24 / 1.33. $/wk of the cell falls (L3M 5,956 vs 7,634; L6M 5,190 vs 11,598).
+- A2 skip + size: x1.5 gives L3M $8,040/wk (above the base 7,634) with cell DD $27,067 (-32 %), expectancy percentile 1.000, stack DD $52,690; in L6M x1.5 gives only $7,209/wk (base 11,598) at DD $27,338 (-31 %); x2 and x(1/share, cap 3) raise $/wk modestly and raise the cell DD back toward the base (x3: L6M DD $49,282, stack DD $56,428). Realised lots/wk (L6M) 98 base, 28 skip-only, 40 / 47 / 57 sized: the P7 caps and integer lots stop the sized versions from restoring the lost lots.
+- So a P7-Asia all-5 gate is a real drawdown and per-trade gain in the engine; whether it is a gain in dollars depends on the window and on re-sizing; older windows (HOLD, PRE, X'; USER_SET_V0 was negative in 2023) are not scored yet. Flag PATH EFFECT UNEXPLAINED stays on this row until the diagnostics land (here the stack drawdown did not change).
+
 ### A1/A2 P7 Asia and K7 Asia: OLD (taken-only table, replacements ungated) vs NEW (every signal gated), skip-only and skip + size
 
 **P7A_V0all5, Asia, window L3M**
@@ -56,6 +62,10 @@ A6 READING (engine part): the +0.3 R plant is recovered on EXPECTANCY and NOT on
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | JN05W2 base | 243 | 408 | 0.078 | 39663 | 8.5 | -31051 | 1.24 | 7634 | 13360 | 7324 | 85 | - / - | 52233 | 19346 |
 | OLD skip-only (TL3_CF_U3) | 219 | 80 | 0.019 | 38887 | 8.0 | -26139 | 1.04 | 1345 | 2354 | 1067 | 76 | 0.002 / 0.322 | 78338 | 11570 |
+| NEW K | 84 | 922 | 0.091 | 17964 | 3.7 | -15431 | 1.61 | 5956 | 10423 | 5851 | 29 | 0.946 / 0.858 | 52182 | 15013 |
+| NEW S15 | 84 | 1244 | 0.118 | 27067 | 3.4 | -23274 | 1.58 | 8040 | 14069 | 7886 | 42 | 0.996 / 0.512 | 52690 | 18863 |
+| NEW S2 | 82 | 1523 | 0.121 | 32750 | 3.2 | -28957 | 1.61 | 9609 | 16815 | 9426 | 50 | 1.000 / 0.338 | 52182 | 20543 |
+| NEW SI | 76 | 1856 | 0.134 | 36187 | 2.6 | -31115 | 1.57 | 10850 | 18987 | 10631 | 60 | 1.000 / 0.196 | 54567 | 20550 |
 
 **P7A_SL2ge4, Asia, window L3M**
 
@@ -84,6 +94,10 @@ A6 READING (engine part): the +0.3 R plant is recovered on EXPECTANCY and NOT on
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | JN05W2 base | 575 | 545 | 0.118 | 39663 | 8.5 | -31051 | 1.33 | 11598 | 20297 | 11240 | 98 | - / - | 52233 | 24470 |
 | OLD skip-only (TL3_CF_U3) | 475 | 348 | 0.072 | 38887 | 8.0 | -26139 | 1.19 | 6129 | 10726 | 5832 | 81 | 0.018 / 0.462 | 78338 | 18429 |
+| NEW K | 158 | 887 | 0.123 | 18945 | 3.8 | -15431 | 1.56 | 5190 | 9083 | 5089 | 28 | 0.934 / 0.962 | 52182 | 15796 |
+| NEW S15 | 155 | 1256 | 0.136 | 27338 | 3.4 | -23274 | 1.56 | 7209 | 12616 | 7064 | 40 | 0.998 / 0.714 | 52690 | 19086 |
+| NEW S2 | 150 | 1429 | 0.123 | 37276 | 3.5 | -28957 | 1.54 | 7939 | 13893 | 7768 | 47 | 1.000 / 0.288 | 52182 | 20248 |
+| NEW SI | 142 | 1376 | 0.109 | 49282 | 3.0 | -31115 | 1.38 | 7236 | 12663 | 7027 | 57 | 0.998 / 0.114 | 56428 | 17918 |
 
 **P7A_SL2ge4, Asia, window L6M**
 
@@ -261,6 +275,7 @@ Skip rule applies to the signals in the entry table (taken JN05W2 signals); sign
 | stack >=4 gate | 52 | 88768 | 63185 | -40.5 | -40.5 | no | -61944 | -6799 | -3510 | -20.1 | -3419 | -7.4, -19.1, 18.4 | -3541, -6432, -4578 | 24.9 / -22 |
 | K7 Asia >=4 + P7 Asia all5 | 52 | 63479 | 63185 | -0.5 | -0.5 | no | -51949 | 3196 | -4625 | -26.4 | -4578 | -43.0, -19.7, -38.3 | -5415, -4158, -5395 | - |
 | P7 Asia SL2 >=4 | 52 | 77232 | 63185 | -22.2 | -22.2 | no | -46871 | 8274 | -3798 | -21.7 | -3767 | - | - | - |
+| L3 arrival imbalance low (stack gate) | 52 | 108597 | 63185 | -71.9 | -71.9 | no | -48077 | 7068 | -9256 | -52.9 | -9057 | - | - | - |
 
 ### PRE
 

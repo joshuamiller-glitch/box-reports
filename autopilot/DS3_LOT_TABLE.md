@@ -1,6 +1,6 @@
-# DS3_LOT_TABLE - PRIORITY 11: session lot table and small books H7 / A7 / O7 (page generated 2026-11-15 07:24 UTC)
+# DS3_LOT_TABLE - PRIORITY 11: session lot table and small books H7 / A7 / O7 (page generated 2026-11-15 17:49 UTC)
 
-**VERDICT: INTERIM (first-order; exact lot strings queued): keep the live table. A free refit does not walk forward (L6M max DD x2.9 at equal mean); refitting only H7/A7/O7 is mild (L6M x1.08, HOLD 0.97, PRE 0.81, X' 0.63). Leads to confirm exactly: H7 asia 4->5 lots (equal-mean DD better in L6M/HOLD/GAP/PRE, worse X'), O7 1->2 lots (better HOLD/GAP/PRE, flat L6M), A7 stay at 1 (mixed), K7 nypm 2->3. M7 unchanged.**
+**VERDICT: FIRST PASS (exact, L6M+HOLD): keep the live lot table for P7/K7/M7. H7: keep 4,0,0,1 (asia-only is worse, 5 lots is mixed: L6M ex-W44 DD worse). A7: keep 1 lot (2 lots: L6M DD -12%). O7: 2 lots is flat in L6M and +$319/wk in HOLD (DD cut 3.3%) - weak lead, resize optional. Best joint small-book set SMALL1 (H7 5 lots asia + O7 2): +55 / +559 $/wk, DD cut 2.6% / 11.9%, but ex-W44 L6M -11.8%. No PASS.**
 
 Status: Shadow only, post hoc, no PASS claims. Prereg autopilot/NT_PREREG.md. Live baseline = engine session lot tables: K7 2,2,0,1,2,0; U7 4,4,0,0,0,0; P7 7,4,0,4,0,0 (installed 7/4/4); H7 4,0,0,1,0,0; M7 0,2,0,1,0,0; A7 1,0,0,0,0,0; O7 1 lot (GATE0_ANSWERS_1106.md section 5 + panel p7_sess). Order asia, london, pre, nyam, nypm, close. Base trades = exact JN05W2.
 

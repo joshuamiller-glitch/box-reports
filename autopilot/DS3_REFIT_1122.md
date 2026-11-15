@@ -1,8 +1,8 @@
 # DS3_REFIT_1122 - the 2026-11-22 JOINT REFIT, walked forward through 43 months (PRIORITY 12, W-RF)
 
-VERDICT (2026-11-14 17:10Z, FIRST-ORDER stage; exact stage running, nothing here is a PASS): (1) The rolling 14-day refit of the lot-level layers (SIZER LOT SIGQ REG STACK COOL ZONE A06 B02) does NOT beat the frozen JN04 setting and is worse than random layer settings in the recent windows (L6M max DD 82% deeper, mean -$15.7k/wk, 79 refits, 9 procedure variants all negative or noise): keep those layers frozen. (2) Rolling refit over the exit/entry rule layers (existing exact one-rule cells on JN05W2, session-group slots) gives L3M/L6M max-DD cut +60%/+49% and +$6.1k/+$3.3k per week, but placebos (random options, stale fits) give about the same and PRE is -14%: the value is in the rules, not in the rolling selection; as an exact joint it is untested. (3) Exact one-layer variants on the JN04-live base (K7 flat, C22, E1, F3, P7 cap/table, ATR skip, post-stop blackout) are queued (tag RF); candidate v2.10 and the code-change list follow when they land.
+VERDICT (2026-11-15, exact L6M + HOLD for 38 one-layer / shelved sets, FIRST PASS, no PASS): rolling refit of any layer (lot-level first-order, or exact one-layer cells on the JN04-live base) does NOT beat the frozen setting and is no better than random picks; keep the layers frozen. Of 30 exact variants only 2 hold in both L6M and HOLD (U7 fresh time stop; P7 ATR skip 1.6), both small; the P7 6,000-base loss cap (+23% at L3M) fails (L6M +10% / -$701, HOLD +0% / -$364, 3 winners turned losing). Composite picks (+46% / +53% L6M DD cut) sit inside the placebo band (+23..+36%). Candidate v2.10 = JN05W2J + U7/A7 fresh time stops + M7 limit entry (+ optional ATR skip 1.6); exact sets V210/V210B/V210C queued first, base lots.
 
-Generated 2026-11-15 02:06 UTC (epoch 1794708377). Exact engine for every verdict dollar; first-order composition only to rank (always labelled). Shadow only, no PASS claims. Prereg autopilot/REFIT1122_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_refit1122/; bulk /mnt/l2/l2vast/_refit1122/.
+Generated 2026-11-15 17:48 UTC (epoch 1794764885). Exact engine for every verdict dollar; first-order composition only to rank (always labelled). Shadow only, no PASS claims. Prereg autopilot/REFIT1122_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_refit1122/; bulk /mnt/l2/l2vast/_refit1122/.
 
 ## 0. Plan (first publish, 2026-11-14 ~17:00Z)
 1. Stage 1 - candidate sets per layer from existing results (DS3_JOINT top-K / pools, registered topK, the 43-month exact cells on the JN05W2 base and the survivor cells from priorities 2-11 as they reach 43 months).
@@ -458,96 +458,196 @@ Cells = max-DD cut % vs the frozen base / d mean $/wk on the same OOS days (+ = 
 **K7 flat cut d (live 45)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| K7F40 | 3 | +15% / +515 / -0.2 / 1.00 / 0 / -13% / fees484 dm +512 |  |  |  |  |  |  |
-| K7F50 | 3 | +15% / +1149 / +0.3 / 1.08 / 0 / -14% / fees484 dm +1161 |  |  |  |  |  |  |
+| K7F40 | 12 | +15% / +515 / -0.2 / 1.00 / 0 / -13% / fees484 dm +512 | +11% / -175 / -0.2 / 1.00 / 1 / +11% / fees484 dm -176 | -30% / -980 / -0.1 / 0.97 / 3 / -30% / fees484 dm -984 |  |  |  |  |
+| K7F50 | 12 | +15% / +1149 / +0.3 / 1.08 / 0 / -14% / fees484 dm +1161 | -4% / -523 / +0.4 / 0.99 / 0 / -4% / fees484 dm -510 | -12% / -609 / +0.3 / 1.05 / 3 / -12% / fees484 dm -600 |  |  |  |  |
 
 **C22 closes n (live 22)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| C22N18 | 3 | -46% / -132 / -0.4 / 1.05 / 0 / -95% / fees484 dm -111 |  |  |  |  |  |  |
-| C22N26 | 3 | -42% / -1432 / +0.5 / 1.02 / 0 / -33% / fees484 dm -1453 |  |  |  |  |  |  |
+| C22N18 | 12 | -46% / -132 / -0.4 / 1.05 / 0 / -95% / fees484 dm -111 | -9% / +29 / -0.4 / 1.01 / 0 / -9% / fees484 dm +62 | +3% / +363 / -0.4 / 1.01 / 1 / +3% / fees484 dm +395 |  |  |  |  |
+| C22N26 | 12 | -42% / -1432 / +0.5 / 1.02 / 0 / -33% / fees484 dm -1453 | -6% / -471 / +0.6 / 1.00 / 0 / +23% / fees484 dm -494 | +4% / -461 / +0.5 / 1.00 / 3 / +4% / fees484 dm -485 |  |  |  |  |
 
 **C22 day P&L R (live -2)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| C22R15 | 3 | +11% / +538 / -0.1 / 1.03 / 0 / -5% / fees484 dm +545 |  |  |  |  |  |  |
-| C22R25 | 3 | +0% / -28 / +0.0 / 1.01 / 0 / -14% / fees484 dm -31 |  |  |  |  |  |  |
+| C22R15 | 12 | +11% / +538 / -0.1 / 1.03 / 0 / -5% / fees484 dm +545 | +0% / +423 / -0.0 / 0.99 / 0 / +0% / fees484 dm +429 | -22% / +138 / -0.0 / 0.99 / 0 / -22% / fees484 dm +144 |  |  |  |  |
+| C22R25 | 12 | +0% / -28 / +0.0 / 1.01 / 0 / -14% / fees484 dm -31 | +0% / -140 / +0.1 / 1.00 / 0 / +0% / fees484 dm -145 | +0% / -104 / +0.0 / 1.00 / 1 / +0% / fees484 dm -110 |  |  |  |  |
 
 **WL_E1 loss_same_ge (live 2)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| E1G1 | 3 | -35% / -2878 / +0.0 / 0.83 / 0 / -81% / fees484 dm -2850 |  |  |  |  |  |  |
-| E1G3 | 3 | -6% / -318 / -0.2 / 0.98 / 0 / +4% / fees484 dm -319 |  |  |  |  |  |  |
+| E1G1 | 12 | -35% / -2878 / +0.0 / 0.83 / 0 / -81% / fees484 dm -2850 | -1% / -1606 / +0.0 / 0.90 / 0 / -1% / fees484 dm -1567 | -8% / -2132 / +0.1 / 0.96 / 4 / -8% / fees484 dm -2106 |  |  |  |  |
+| E1G3 | 12 | -6% / -318 / -0.2 / 0.98 / 0 / +4% / fees484 dm -319 | -4% / +486 / -0.2 / 0.98 / 0 / -4% / fees484 dm +477 | +14% / +146 / -0.1 / 0.99 / 1 / +14% / fees484 dm +140 |  |  |  |  |
 
 **F3 fresh cut arm (live 45)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| F3F40 | 3 | -27% / -966 / -0.2 / 0.97 / 0 / -69% / fees484 dm -964 |  |  |  |  |  |  |
-| F3F50 | 3 | -15% / -219 / +0.4 / 0.99 / 0 / -16% / fees484 dm -214 |  |  |  |  |  |  |
+| F3F40 | 12 | -27% / -966 / -0.2 / 0.97 / 0 / -69% / fees484 dm -964 | +0% / -1015 / -0.2 / 1.00 / 0 / +0% / fees484 dm -1012 | +3% / +106 / -0.2 / 1.00 / 1 / +3% / fees484 dm +103 |  |  |  |  |
+| F3F50 | 12 | -15% / -219 / +0.4 / 0.99 / 0 / -16% / fees484 dm -214 | -1% / +76 / +0.3 / 1.00 / 0 / -1% / fees484 dm +79 | +0% / -26 / +0.4 / 1.00 / 1 / +0% / fees484 dm -22 |  |  |  |  |
 
 **F3 rechase cut arm (live 30)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| F3R25 | 3 | +18% / -3784 / -0.1 / 0.73 / 0 / -10% / fees484 dm -3789 |  |  |  |  |  |  |
-| F3R35 | 3 | -17% / -3387 / +0.2 / 0.82 / 0 / +5% / fees484 dm -3377 |  |  |  |  |  |  |
+| F3R25 | 12 | +18% / -3784 / -0.1 / 0.73 / 0 / -10% / fees484 dm -3789 | +21% / -5074 / -0.1 / 0.80 / 0 / +21% / fees484 dm -5061 | +6% / -2447 / -0.1 / 0.90 / 2 / +6% / fees484 dm -2447 |  |  |  |  |
+| F3R35 | 12 | -17% / -3387 / +0.2 / 0.82 / 0 / +5% / fees484 dm -3377 | -18% / -2414 / +0.2 / 0.95 / 0 / -18% / fees484 dm -2404 | -3% / -1438 / +0.2 / 0.94 / 2 / -3% / fees484 dm -1429 |  |  |  |  |
 
 **P7 day loss cap (live 8400)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| DC6000 | 3 | +23% / +20 / +0.1 / 1.00 / 0 / +0% / fees484 dm +23 |  |  |  |  |  |  |
-| DC10800 | 3 | -2% / -735 / +0.1 / 0.98 / 0 / +0% / fees484 dm -740 |  |  |  |  |  |  |
+| DC6000 | 12 | +23% / +20 / +0.1 / 1.00 / 0 / +0% / fees484 dm +23 | +10% / -701 / +0.2 / 1.00 / 0 / +10% / fees484 dm -696 | +0% / -364 / +0.1 / 1.00 / 3 / +0% / fees484 dm -359 |  |  |  |  |
+| DC10800 | 12 | -2% / -735 / +0.1 / 0.98 / 0 / +0% / fees484 dm -740 | +0% / -614 / +0.0 / 0.99 / 0 / +0% / fees484 dm -617 | +0% / +108 / +0.0 / 0.99 / 1 / +0% / fees484 dm +103 |  |  |  |  |
 
 **P7 session table (live 7,4,0,4,0,0)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| T5404 | 3 | +22% / -1584 / +0.0 / 0.87 / 0 / +1% / fees484 dm -1554 |  |  |  |  |  |  |
-| T7304 | 3 | +0% / +89 / +0.0 / 1.01 / 0 / +0% / fees484 dm +92 |  |  |  |  |  |  |
-| T7403 | 3 | +0% / +55 / +0.0 / 1.00 / 0 / +0% / fees484 dm +55 |  |  |  |  |  |  |
+| T5404 | 12 | +22% / -1584 / +0.0 / 0.87 / 0 / +1% / fees484 dm -1554 | +1% / -2411 / +0.0 / 0.91 / 0 / +1% / fees484 dm -2376 | -18% / -1602 / +0.1 / 0.93 / 3 / -18% / fees484 dm -1571 |  |  |  |  |
+| T7304 | 12 | +0% / +89 / +0.0 / 1.01 / 0 / +0% / fees484 dm +92 | +0% / +115 / +0.0 / 1.01 / 0 / +0% / fees484 dm +117 | +0% / +59 / +0.0 / 1.01 / 0 / +0% / fees484 dm +61 |  |  |  |  |
+| T7403 | 12 | +0% / +55 / +0.0 / 1.00 / 0 / +0% / fees484 dm +55 | +0% / +27 / +0.0 / 1.00 / 0 / +0% / fees484 dm +28 | +0% / -32 / +0.0 / 0.99 / 0 / +0% / fees484 dm -32 |  |  |  |  |
 
 **ATR skip P7 (live none in the engine reference)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| ATR14 | 3 | -16% / -615 / -0.1 / 0.96 / 0 / +7% / fees484 dm -596 |  |  |  |  |  |  |
-| ATR16 | 3 | -11% / -243 / -0.1 / 0.98 / 0 / +11% / fees484 dm -231 |  |  |  |  |  |  |
-| ATR18 | 3 | -19% / -411 / +0.0 / 0.99 / 0 / +7% / fees484 dm -404 |  |  |  |  |  |  |
+| ATR14 | 12 | -16% / -615 / -0.1 / 0.96 / 0 / +7% / fees484 dm -596 | +14% / -1336 / -0.1 / 0.90 / 1 / +48% / fees484 dm -1295 | +6% / -597 / -0.2 / 0.89 / 3 / +6% / fees484 dm -554 |  |  |  |  |
+| ATR16 | 12 | -11% / -243 / -0.1 / 0.98 / 0 / +11% / fees484 dm -231 | +17% / +334 / +0.1 / 0.97 / 0 / +50% / fees484 dm +358 | +2% / +287 / -0.1 / 0.97 / 1 / +2% / fees484 dm +316 |  |  |  |  |
+| ATR18 | 12 | -19% / -411 / +0.0 / 0.99 / 0 / +7% / fees484 dm -404 | +11% / -315 / +0.0 / 0.99 / 0 / +26% / fees484 dm -295 | -3% / +38 / -0.1 / 0.99 / 1 / -3% / fees484 dm +61 |  |  |  |  |
 
 **post-stop blackout P7 same side (live none in the engine reference)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| BO15 | 3 | +0% / +0 / +0.0 / 1.00 / 0 / +0% / fees484 dm +0 |  |  |  |  |  |  |
-| BO30 | 3 | +0% / +5 / +0.0 / 1.00 / 0 / +1% / fees484 dm +5 |  |  |  |  |  |  |
-| BO60 | 3 | +0% / -46 / +0.0 / 1.00 / 0 / -4% / fees484 dm -46 |  |  |  |  |  |  |
+| BO15 | 12 | +0% / +0 / +0.0 / 1.00 / 0 / +0% / fees484 dm +0 | +0% / +0 / +0.0 / 1.00 / 0 / +0% / fees484 dm +0 | +0% / +12 / +0.0 / 1.00 / 0 / +0% / fees484 dm +12 |  |  |  |  |
+| BO30 | 12 | +0% / +5 / +0.0 / 1.00 / 0 / +1% / fees484 dm +5 | +0% / +3 / +0.0 / 1.00 / 0 / +0% / fees484 dm +3 | +0% / +14 / +0.0 / 1.00 / 0 / +0% / fees484 dm +14 |  |  |  |  |
+| BO60 | 12 | +0% / -46 / +0.0 / 1.00 / 0 / -4% / fees484 dm -46 | +0% / +7 / +0.0 / 1.00 / 0 / +0% / fees484 dm +7 | +0% / -7 / +0.0 / 1.00 / 0 / +0% / fees484 dm -7 |  |  |  |  |
 
 **breadth skip P7 (live breadth_ext15 == 3)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| BR2 | 2 |  |  |  |  |  |  |  |
-| BR30 | 1 |  |  |  |  |  |  |  |
+| BR2 | 6 | +24% / -1801 / +0.2 / 0.84 / 0 / -2% / fees484 dm -1777 | -5% / -2741 / +0.2 / 0.82 / 0 / -5% / fees484 dm -2712 |  |  |  |  |  |
+| BR30 | 6 | -2% / -2593 / +0.1 / 0.87 / 0 / -36% / fees484 dm -2565 | +24% / -3554 / +0.3 / 0.81 / 1 / +24% / fees484 dm -3517 |  |  |  |  |  |
+| BR5 | 6 | +11% / -1049 / +0.0 / 1.00 / 1 / -19% / fees484 dm -1069 | -8% / -2120 / -0.2 / 0.89 / 1 / -8% / fees484 dm -2139 |  |  |  |  |  |
 
 **Shelved rules rebuilt on the JN04-live base; composites CA (all-layer pick today, layer level) / CH (pick with the hold-in-both-halves gate) and three placebo composites PA1-3 (random one-option-per-layer subsets of size 8, exact)**
 | cell | months | L3M | L6M | HOLD | PRE | X' | GAP | rule 2a label |
 |--|--|--|--|--|--|--|--|--|
-| O_SM_A6_halfNP7 | 3 | -14% / -1390 / -0.3 / 0.89 / 0 / +32% / fees484 dm -1362 |  |  |  |  |  |  |
-| O_NC_K7_T20_20RC | 3 | +2% / +968 / -0.2 / 1.07 / 0 / -19% / fees484 dm +964 |  |  |  |  |  |  |
-| O_NC_U7_T20_15F | 3 | +12% / +825 / -0.8 / 1.04 / 0 / +0% / fees484 dm +826 |  |  |  |  |  |  |
-| O_NC_A7_T10_10F | 3 | +3% / +390 / -0.3 / 1.02 / 0 / +0% / fees484 dm +390 |  |  |  |  |  |  |
-| O_NH_M7_B9_X10N60 | 3 | -3% / +1207 / -0.2 / 1.07 / 0 / +28% / fees484 dm +1203 |  |  |  |  |  |  |
-| O_NH_U7_B7_X30N120 | 3 | -7% / -439 / -0.3 / 0.99 / 0 / -43% / fees484 dm -439 |  |  |  |  |  |  |
-| O_SB_SP85 | 3 | -4% / +412 / +0.1 / 1.02 / 0 / +14% / fees484 dm +413 |  |  |  |  |  |  |
-| O_G2_P7A_PRE | 2 |  |  |  |  |  |  |  |
-| CA | 3 | +41% / -2580 / -1.4 / 0.64 / 1 / +60% / fees484 dm -2571 |  |  |  |  |  |  |
-| CH | 3 | +37% / -938 / -1.3 / 0.72 / 1 / +50% / fees484 dm -937 |  |  |  |  |  |  |
-| PA1 | 3 | -4% / -3576 / +10.2 / 0.64 / 1 / -9% / fees484 dm -3563 |  |  |  |  |  |  |
-| PA2 | 2 |  |  |  |  |  |  |  |
-| PA3 | 1 |  |  |  |  |  |  |  |
+| O_SM_A6_halfNP7 | 12 | -14% / -1390 / -0.3 / 0.89 / 0 / +32% / fees484 dm -1362 | -9% / +73 / -0.2 / 1.02 / 0 / -9% / fees484 dm +91 | +16% / +38 / -0.2 / 1.01 / 1 / +16% / fees484 dm +54 |  |  |  |  |
+| O_NC_K7_T20_20RC | 12 | +2% / +968 / -0.2 / 1.07 / 0 / -19% / fees484 dm +964 | +14% / -166 / -0.2 / 0.97 / 0 / +14% / fees484 dm -171 | +5% / -115 / -0.1 / 0.97 / 0 / +5% / fees484 dm -119 |  |  |  |  |
+| O_NC_U7_T20_15F | 12 | +12% / +825 / -0.8 / 1.04 / 0 / +0% / fees484 dm +826 | +2% / +314 / -0.5 / 0.98 / 0 / +2% / fees484 dm +314 | +1% / +536 / -0.4 / 0.99 / 0 / +1% / fees484 dm +534 |  |  |  |  |
+| O_NC_A7_T10_10F | 12 | +3% / +390 / -0.3 / 1.02 / 0 / +0% / fees484 dm +390 | +0% / +287 / -0.2 / 1.00 / 0 / +0% / fees484 dm +287 | +0% / +143 / -0.2 / 1.00 / 0 / +0% / fees484 dm +142 |  |  |  |  |
+| O_NH_M7_B9_X10N60 | 11 | -3% / +1207 / -0.2 / 1.07 / 0 / +28% / fees484 dm +1203 | -1% / +783 / +0.0 / 1.03 / 0 / -1% / fees484 dm +775 |  |  |  |  |  |
+| O_NH_U7_B7_X30N120 | 12 | -7% / -439 / -0.3 / 0.99 / 0 / -43% / fees484 dm -439 | -16% / +668 / -0.3 / 0.98 / 0 / -16% / fees484 dm +667 | -19% / +342 / -0.4 / 0.99 / 1 / -19% / fees484 dm +343 |  |  |  |  |
+| O_SB_SP85 | 12 | -4% / +412 / +0.1 / 1.02 / 0 / +14% / fees484 dm +413 | +9% / +666 / +0.1 / 1.02 / 0 / +9% / fees484 dm +666 | -5% / -20 / +0.1 / 1.05 / 1 / -5% / fees484 dm -21 |  |  |  |  |
+| O_G2_P7A_PRE | 12 | +63% / -1839 / -0.1 / 0.67 / 0 / +72% / fees484 dm -1832 | +60% / -1294 / +0.0 / 0.75 / 0 / +60% / fees484 dm -1286 | -18% / -476 / +0.0 / 0.78 / 3 / -18% / fees484 dm -479 |  |  |  |  |
+| CA | 8 | +41% / -2580 / -1.4 / 0.64 / 1 / +60% / fees484 dm -2571 | +46% / -3043 / -1.0 / 0.67 / 1 / +46% / fees484 dm -3028 |  |  |  |  |  |
+| CH | 9 | +37% / -938 / -1.3 / 0.72 / 1 / +50% / fees484 dm -937 | +53% / -2082 / -0.7 / 0.74 / 1 / +57% / fees484 dm -2076 |  |  |  |  |  |
+| PA1 | 6 | -4% / -3576 / +10.2 / 0.64 / 1 / -9% / fees484 dm -3563 | +23% / -1737 / +12.5 / 0.80 / 2 / +39% / fees484 dm -1721 |  |  |  |  |  |
+| PA2 | 6 | +7% / -1119 / +10.2 / 0.73 / 1 / -24% / fees484 dm -1087 | +31% / -92 / +12.6 / 0.80 / 1 / +31% / fees484 dm -58 |  |  |  |  |  |
+| PA3 | 6 | +15% / -1322 / +10.8 / 0.72 / 1 / -14% / fees484 dm -1293 | +36% / +461 / +13.1 / 0.83 / 1 / +36% / fees484 dm +490 |  |  |  |  |  |
 
-## 9. Candidate v2.10 (BASE lots, engine fees $1.18/contract; PROVISIONAL, 2026-11-14 20:15Z; exact evidence is L3M only for the one-layer variants, so nothing below is a lead yet)
+## 5. Hook / exit / entry layers, rolling joint refit, base JN05W2J (JN04 lot layers ON, exact cells)
+Slots = layer x session group (Asia / London / NY AM+pre / NY PM+close); each option is an EXACT one-layer cell, deltas vs the base cell are added across layers (FIRST-ORDER additive across layers; stage 3 re-runs the winners exactly). Eligibility: an option is usable at a refit only when its months cover the training window and the OOS fortnight. Mean gate 0.85 of live, hysteresis 0. 79 refits.
+
+| arm | L3M | L6M | HOLD | PRE | X' | GAP |
+|--|--|--|--|--|--|--|
+| ROLLING (real) | -79% / -8710 | +0% / -10725 | -21% / -5783 | +13% / +1344 | -63% / +345 | -19% / +1340 |
+| stale-fit placebo 11 d | -247% / -12556 | -94% / -12171 | -21% / -7100 | +18% / +1408 | -63% / +389 | -19% / +1606 |
+| stale-fit placebo 23 d | -253% / -11152 | -97% / -10370 | -21% / -6020 | +14% / +1745 | -63% / +383 | -19% / +3489 |
+| stale-fit placebo 37 d | -257% / -10245 | -99% / -6446 | -11% / -2325 | +14% / +1335 | -63% / +110 | -19% / +2567 |
+| random options seed 1 | -25% / -8170 | -16% / -6935 | -21% / -3495 | +7% / +1092 | -79% / +381 | -18% / +739 |
+| random options seed 2 | -105% / -11118 | -15% / -9367 | -9% / -4791 | +14% / +1361 | -69% / +261 | -2% / +1412 |
+| random options seed 3 | -64% / -9075 | -3% / -8115 | -21% / -3924 | +12% / +889 | -69% / +266 | -19% / +800 |
+| random options seed 4 | -174% / -14386 | -53% / -9878 | -21% / -5813 | +12% / +1292 | -94% / +543 | -19% / +86 |
+| random options seed 5 | -249% / -13109 | -95% / -11715 | -11% / -5923 | +12% / +1132 | -68% / +870 | -18% / +1153 |
+| BEST_SINGLE_FIT (pick once, first refit) | +70% / -3919 | +66% / -2182 | -11% / -1108 | -15% / -2136 | -63% / +931 | +4% / -2171 |
+| HINDSIGHT whole-sample pick (IN-SAMPLE, full-coverage cells only) | +4% / -2163 | +15% / -226 | +17% / -245 | +13% / +641 | -10% / +1021 | -2% / +1038 |
+
+Cells = max-DD cut % vs the frozen base / d mean $/wk on the same OOS days (+ = shallower). Period-beat 49%, mean slots changed per refit 2.7.
+
+### Realised rolling walk-forward vs frozen base, recent windows first
+| window | weeks | WF mean $/wk | live mean | d mean | WF max DD | live max DD | DD cut % | equal-mean cut % | WF worst wk | live worst wk | full stops/wk WF / live | 5 best live wks kept | live winners turned losing | DD cut % no W44 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| L1M | 2 | -1102 | 12279 | -13381 | 12591 | 3827 | -229.0 |  | -12591 | -3827 | 13.5 / 16.0 | -0.09 | 1/1 |  |
+| L3M | 11 | 10224 | 18934 | -8710 | 23926 | 13387 | -78.7 | -231.0 | -23926 | -12417 | 10.8 / 10.7 | 0.50 | 1/8 |  |
+| L6M | 24 | 12463 | 23188 | -10725 | 23926 | 23965 | 0.2 | -85.7 | -23926 | -23965 | 17.5 / 10.5 | 0.73 | 4/20 |  |
+| HOLD | 50 | 9479 | 15262 | -5783 | 52921 | 43622 | -21.3 | -95.3 | -45446 | -35078 | 16.4 / 10.6 | 0.81 | 4/38 |  |
+| PRE | 75 | 8598 | 7254 | 1344 | 49470 | 56843 | 13.0 | 26.6 | -30026 | -33380 | 12.9 / 9.3 | 0.99 | 3/48 |  |
+| X' | 16 | 7524 | 7178 | 345 | 21139 | 12990 | -62.7 | -55.3 | -12117 | -6521 | 8.0 / 10.0 | 1.05 | 1/10 |  |
+| GAP | 18 | 13327 | 11987 | 1340 | 56279 | 47481 | -18.5 | -6.6 | -56279 | -47481 | 14.8 / 9.9 | 0.88 | 0/12 |  |
+
+### Session by session
+| session group | window | WF mean | live mean | d mean | WF max DD | live max DD | DD cut % |
+|--|--|--|--|--|--|--|--|
+| Asia | L3M | 10396 | 17763 | -7366 | 12281 | 8759 | -40.2 |
+| Asia | L6M | 11222 | 19187 | -7965 | 25707 | 20813 | -23.5 |
+| Asia | HOLD | 8907 | 12737 | -3830 | 52493 | 44433 | -18.1 |
+| Asia | PRE | 6743 | 6551 | +193 | 53338 | 53338 | 0.0 |
+| London | L3M | 3325 | 670 | +2655 | 38272 | 49063 | 22.0 |
+| London | L6M | 2842 | 1278 | +1564 | 38272 | 49063 | 22.0 |
+| London | HOLD | 1845 | 1128 | +716 | 38272 | 49063 | 22.0 |
+| London | PRE | -546 | -801 | +255 | 78754 | 82707 | 4.8 |
+| NY AM + pre | L3M | -2025 | 569 | -2594 | 25353 | 9201 | -175.5 |
+| NY AM + pre | L6M | -2172 | 1148 | -3320 | 54938 | 9713 | -465.6 |
+| NY AM + pre | HOLD | -1133 | 872 | -2005 | 63256 | 36730 | -72.2 |
+| NY AM + pre | PRE | 1983 | 1270 | +713 | 29806 | 22885 | -30.2 |
+| NY PM + close | L3M | -1472 | -68 | -1404 | 16944 | 7348 | -130.6 |
+| NY PM + close | L6M | 571 | 1575 | -1004 | 16801 | 6921 | -142.8 |
+| NY PM + close | HOLD | -140 | 525 | -665 | 35496 | 22519 | -57.6 |
+| NY PM + close | PRE | 418 | 234 | +184 | 29125 | 30081 | 3.2 |
+
+### How often each layer moved (share of refits with a non-live option, by session group)
+| layer | Asia | London | NY AM+pre | NY PM+close | options |
+|--|--|--|--|--|--|
+| K7FLAT |  |  |  |  | K7F40(260d), K7F50(260d) |
+| C22N |  |  |  |  | C22N18(260d), C22N26(260d) |
+| C22R |  |  |  |  | C22R15(260d), C22R25(260d) |
+| E1 |  |  |  |  | E1G1(260d), E1G3(260d) |
+| F3F |  |  |  |  | F3F40(260d), F3F50(260d) |
+| F3R |  |  |  |  | F3R25(260d), F3R35(260d) |
+| P7CAP |  |  |  |  | DC6000(260d), DC10800(260d) |
+| P7TAB |  |  |  |  | T5404(260d), T7304(260d), T7403(260d) |
+| ATR |  |  |  |  | ATR14(260d), ATR16(260d), ATR18(260d) |
+| BLACKOUT |  |  |  |  | BO15(260d), BO30(260d), BO60(260d) |
+| BREADTH |  |  |  |  | BR2(131d), BR30(131d), BR5(131d) |
+| P7FLAT42 |  |  |  |  | FLAT42P7_JN05W2J(935d) |
+| G2P7 |  |  |  |  | G2J_P7A_PRE(935d) |
+| G2M7 |  |  |  |  | G2J_M7_HALF(935d), G2J_M7_LON(935d), G2J_M7_NYAM(935d) |
+
+### REFIT 2026-11-22 (training = last 26 weeks of data, 2026-05-04..2026-10-30; first-order additive; exact stage 3 below when run)
+| layer | Asia | London | NY AM+pre | NY PM+close |
+|--|--|--|--|--|
+| K7FLAT | live | live | live | live |
+| C22N | live | live | live | live |
+| C22R | live | live | live | live |
+| E1 | live | live | live | live |
+| F3F | live | live | live | live |
+| F3R | live | live | live | live |
+| P7CAP | live | live | live | live |
+| P7TAB | live | live | live | live |
+| ATR | live | live | live | live |
+| BLACKOUT | live | live | live | live |
+| BREADTH | live | live | live | live |
+| P7FLAT42 | live | live | live | live |
+| G2P7 | live | live | live | live |
+| G2M7 | live | live | live | live |
+
+## 9. Candidate v2.10 - FIRST PASS, 2026-11-15 (BASE lots, live x1.75; engine fees $1.18/contract, fees484 column in section 5)
 - Frozen layers (no change): the JN04 lot layers LOT / SIGQ / REG / STACK, F3 context cut, WL_E1, C22, BR3S, K7 flat 45, P7 cap 14,700 live (engine 8,400 base lots, x1.75) and the P7 table 7,4,0,4,0,0. Reason: the rolling refit of the lot-level layers lost to the frozen setting and to random settings (section 3); the policy file therefore does not depend on any first-order lot layer.
 - Open leads waiting for L6M/HOLD (L3M exact, W44 inside): K7 flat 40 or 50 (+15% DD cut, +$515/+$1,149 per wk), P7 table 5,4,0,4,0,0 (+22%, -$1,584 per wk), C22 pnl_r -1.5 (+11%, +$538). Rejected on L3M: C22 n 18/26, E1 ge 1, F3 fresh 40/50, F3 rechase 25 (mean -$3.8k).
 - Policy-file lines that exist today (D7 syntax): `loss K7 * pct<=-0.75 cut` (flat 45 of a 60-pt stop; a flat 40 would be pct<=-0.667, 50 pct<=-0.833). Everything else (C22, E1, F3, BR3S, table, cap) is a panel/code field, not a policy line.
 - Code-change list for v2.0 is the JV/LR/PR/RA specs as scored on their own pages; this page adds none until a composite lands.
 
-### Update 2026-11-15: exact L3M for every one-layer variant and the composites (JN05W2J base, BASE lots, engine fees; L6M/HOLD still queued)
-- Composite CA (layer-level pick today: A6 half non-P7, NC K7/U7/A7 time stops, NH M7/U7 near-zone limits, SB split 85, G2 P7 Asia-PRE table) vs JN05W2J, L3M: max DD -41% (cut +41%, +60% with W44 removed), mean -$2,580/wk, full stops -1.4/wk, only 64% of the 5 best weeks kept, 1 winning week turned losing. CH (hold-gated pick): +37%, -$938/wk, 72% of best weeks. Exact placebo PA1 (random subset, same size): -4%, -$3,576/wk. So the pick beats the random subset on drawdown, but both give up mean and the CA/CH cost a third of the best weeks (trend-week clause FAILS at L3M).
-- Single rules, L3M exact, mean-positive and DD-neutral or better: NC_U7 time stop (+12%, +$825, -0.8 stops/wk), NC_K7 (+$968, but W44-removed -19%), NH_M7 limit (+$1,207, DD -3%), SB split 85 (+$412), NC_A7 (+$390). A6 half non-P7 costs -$1,390. ATR skip 1.4/1.6/1.8 on P7: DD deeper (-11..-19%) and mean -$243..-$615: no. Post-stop blackout 15/30/60: zero effect at L3M (rule rarely binds). P7 day cap 6,000 (engine base lots; live 10,500): +23% DD cut at +$20/wk, the cheapest DD lever so far; cap 10,800: nothing. P7 table 5,4,0,4,0,0: +22% for -$1,584/wk.
-- Reading: no combination is yet a lead; L6M and HOLD decide. Provisional ranking for the v2.10 candidate: P7 day cap 6,000 base (10,500 live), NC_U7 fresh time stop, NH_M7 limit, SB split 85, with K7 flat 40/50 pending.
+
+### 9a. Exact L6M and HOLD for the 38 one-layer / shelved sets (JN05W2J base; HOLD = 52 weeks is the powered horizon, L6M = 26 weeks with W44 inside; the W44-removed cut is the last field of each section-5 cell)
+- **Nonsense rate:** of 30 scored variants (12 months each), 3 have L6M DD cut > 0 with mean >= 0, and 2 hold in BOTH L6M and HOLD on DD and mean (ATR skip 1.6; NC_U7 T20/N15 fresh). Placebo composites (random 8-rule subsets, PA1-3) show L6M DD cuts of +23/+31/+36% at -$1,737/-$92/+$461 per week, i.e. a random pile of rules also "cuts" L6M drawdown by a quarter to a third. Composite CA +46% (-$3,043/wk, 67% of best weeks) and CH +53% (-$2,082/wk, 74%) sit inside that placebo band: no composite pick beats its placebo; HOLD for the composites is still running (8 of 12 months).
+- **P7 day loss cap 6,000 base (10,500 live) - the L3M lever: L3M +23% / +$20 per wk; L6M +10% / -$701; HOLD +0% / -$364 with 3 winning weeks turned losing. It does NOT hold: not a lead.** Cap 10,800 base: nothing (+0% / -$614, HOLD +$108).
+- Fail on HOLD or mean: K7 flat 40 (L6M +11%, HOLD -30%), K7 flat 50 (L6M -4%), C22 n 18/26 and R-1.5/-2.5 (no consistent sign), E1 ge 1/3, F3 fresh 40/50, F3 rechase 25 (+21% L6M for -$5,074/wk) and 35, P7 table 5,4,0,4,0,0 (+1% L6M, -$2,411/wk, HOLD -18%), 7,3,0,4,0,0 and 7,4,0,3,0,0 (no effect), breadth variants (mean -$2.1k..-$3.6k/wk), post-stop blackout 15/30/60 (zero effect: the rule almost never binds), G2 P7 Asia-PRE table on J (L6M +60% but HOLD -18%, -$1,294/wk).
+- Pass both recent and older, small: **NC_U7 fresh time stop X -20 pts N 15 min: L6M +2% / +$314, HOLD +1% / +$536, -0.5 / -0.4 full stops per wk; ATR skip P7 atr_rel >= 1.6: L6M +17% / +$334 (W44 out +50%), HOLD +2% / +$287, but L3M -11% / -$243.** NC_A7 (+$287 / +$143) and NH_M7 limit (L6M +$783, DD -1%) are mean-positive, DD-neutral.
+### 9b. J-world rolling refit (79 refits; options exist only for the last 12 months, so only about the last 12 refits can change anything)
+Real rolling pick over the exact one-layer cells: L6M DD cut 0.2%, mean -$10,725/wk; HOLD -21%, -$5,783/wk; L3M -79%. Stale-fit placebos (11/23/37 d) -94/-97/-99% and random picks -3..-16% at -$6.4k..-$12.2k/wk: the rolling selection is NOT better than random and loses mean against the frozen JN05W2J. Verdict: keep the layers frozen; no rolling refit of these layers.
+### 9c. Candidate v2.10 (FIRST PASS, nothing PASS)
+V210 = JN05W2J + NC_U7 fresh time stop (X -20, N 15) + NC_A7 fresh time stop (X -10, N 10) + NH_M7 limit entry (p7 0.9, p8 10, p9 60); V210B = V210 + P7 ATR skip 1.6; V210C = NC_U7 + ATR skip only. Exact sets TL3J_RF_V210 / V210B / V210C are at the front of the RF queue (HOLD months first); numbers follow when they land. All other layers (JN04 LOT/SIGQ/REG/STACK, F3, WL_E1, C22, BR3S, K7 flat 45, P7 table 7,4,0,4,0,0, P7 cap 14,700 live = 8,400 base) stay as they are. The policy file is autopilot/THP_POLICY_V210_CANDIDATE.txt (only the K7 line is expressible as a policy line; the rest are panel/code fields).
+Trader reading: NC_U7 / NC_A7 = cut a fresh trade that has gone nowhere by minute 15 / 10 (what a desk does); ATR skip = no fading P7 into a volatility expansion; NH_M7 limit = work an entry at a better price instead of chasing. Rules that merely curve-fit and a trader would not do: P7 table 5,4,0,4, cap 6,000, F3 rechase 25.
+### 9d. Code-change list for a v2.0 build (spec as scored; base lots, one fill model)
+1. U7 no-progress exit (fresh context only): 15:00 after the first fill, if open P&L < -20 pts market exit (exit name EarlyCut). Rule {"book":"U7","kind":"nft","p":{"X":-20,"N":15},"ctx":["fresh"]} in nf_hooks. Fresh = not a same-side re-entry / chase (W-C context definition P7_CONTEXT_DEFS.md).
+2. A7 same with X -10, N 10, fresh only.
+3. M7 near-zone limit entry (nz_hooks cell {"book":"M7","sess":"*","P":{"p7":0.9,"p8":10,"p9":60}}, mslip 1.2, limslip 0.25) - semantics in DS3_NO_TRADE_ZONES.md.
+4. P7 ATR skip (candidate B only): skip P7 entries when 5-min ATR(14) / median of the previous 20 trading dates' daily medians >= 1.6 (JN04_LIVE_SPEC D1; fields Ss6Feature=AtrRel5m, Ss6Template=SkipAbove, Ss6Threshold=1.6).
+No change to the P7 cap, table, K7 flat, C22, E1, F3, BR3S, JN04 layers.

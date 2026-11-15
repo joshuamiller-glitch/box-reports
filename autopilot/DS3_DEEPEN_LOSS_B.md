@@ -1,8 +1,8 @@
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 130 of 585 cells have an exact L3M result so far; 40 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 138 of 599 cells have an exact L3M result so far; 41 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T17:04Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T17:51Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -83,176 +83,184 @@ MNQ is 1/10 of an NQ contract at $1.78 RT (FEES.md, proxy) = $17.80 per NQ-equiv
 
 ## 2. Exact cells (JN05W2 base, all layers ON; delta vs JN05W2 on the same months; cut % positive = shallower maxDD)
 
-Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.84 and live-excess / worst-week change / gate (tolerant) ; x44 = DD cut with 2026-W44 removed from both; b5 = 5 best base weeks kept; w2l = winning weeks turned losing. A window shows only when all its months exist.
+Flag PATH EFFECT = a skip rule frees the book (replacement entries, post-stop blackout, DAY-DONE, stack caps); gated-stack DD was $103k vs $52k for random same-size subsets, so no skip verdict stands until W-CF3 explains it. Weekly-cluster t = mean/SE of the weekly P&L difference vs JN05W2 (weeks are the clusters; |t|<2 is noise). Columns: L3M/L6M/HOLD = maxDD cut % / d mean $/wk (engine) / d mean $/wk at $4.84 and live-excess / worst-week change / gate (tolerant) ; x44 = DD cut with 2026-W44 removed from both; b5 = 5 best base weeks kept; w2l = winning weeks turned losing. A window shows only when all its months exist.
 
 ### BR  breadth-extreme skip to the other books (parent BR3S = P7 breadth_ext15 == 3 skip, already in JN05W2)
 
-| cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
-|---|---|---|---|---|---|
-| BR_K7_X15 | 3 | -7.2 / -3577 / -3566 / -3545 / -3809 / False / 11.1 / 0.88 / 0 | - / - / - / - | - / - | - / - |
-| BR_K7_H15 | 3 | 14.8 / -602 / -598 / -584 / 7753 / False / 2.5 / 0.98 / 0 | - / - / - / - | - / - | - / - |
-| BR_U7_X15 | 3 | 0.5 / -1409 / -1376 / -1307 / 2643 / False / 0.7 / 0.98 / 1 | - / - / - / - | - / - | - / - |
-| BR_U7_H15 | 3 | 4.8 / -540 / -519 / -470 / 3687 / True / 0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| BR_H7_X15 | 3 | -12.2 / -819 / -816 / -813 / -6390 / False / -5.3 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| BR_H7_H15 | 3 | -4.6 / -82 / -77 / -61 / -2403 / False / -0.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_X15 | 3 | -6.1 / -1491 / -1489 / -1490 / -2520 / False / 3.9 / 0.97 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15 | 3 | 1.2 / 144 / 147 / 157 / 615 / True / 5.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_A7_X15 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_A7_H15 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_O7_X15 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_O7_H15 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_ALL6_X15 | 3 | -16.1 / -5079 / -5030 / -4925 / -6601 / False / 24.7 / 0.85 / 0 | - / - / - / - | - / - | - / - |
-| BR_ALL6_H15 | 3 | 10.2 / -1631 / -1601 / -1526 / 6505 / False / 14.5 / 0.94 / 0 | - / - / - / - | - / - | - / - |
-| BR_P7_X30 | 3 | -9.3 / -4193 / -4146 / -4051 / 7835 / False / -31.6 / 0.84 / 1 | - / - / - / - | - / - | - / - |
-| BR_P7_X5 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_P7_H2 | 3 | 0.4 / -1321 / -1286 / -1222 / 187 / False / -6.5 / 0.97 / 0 | - / - / - / - | - / - | - / - |
-| BR_P7_V19 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_Sasi | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_Snya | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_Snyp | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_xt5 | 3 | 0.0 / 264 / 266 / 274 / 0 / True / 3.3 / 1.01 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_30 | 3 | 1.2 / 442 / 447 / 469 / 615 / True / 10.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_v19 | 3 | 1.2 / 136 / 138 / 146 / 615 / True / 4.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_G2 | 3 | 1.2 / -145 / -140 / -125 / 615 / True / 7.3 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_K7 | 3 | 14.8 / -602 / -598 / -584 / 7753 / False / 2.5 / 0.98 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_P7 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_U7 | 3 | 4.8 / -540 / -519 / -470 / 3687 / True / 0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_H7 | 3 | -4.6 / -82 / -77 / -61 / -2403 / False / -0.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| BR_M7_H15_O7 | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| cell | months | flag | L3M weekly-cluster t | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
+|---|---|---|---|---|---|---|---|
+| BR_K7_X15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -2.31 | -7.2 / -3577 / -3566 / -3545 / -3809 / False / 11.1 / 0.88 / 0 | - / - / - / - | - / - | - / - |
+| BR_K7_H15 | 3 | size (does not free the book) | -0.55 | 14.8 / -602 / -598 / -584 / 7753 / False / 2.5 / 0.98 / 0 | - / - / - / - | - / - | - / - |
+| BR_U7_X15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.87 | 0.5 / -1409 / -1376 / -1307 / 2643 / False / 0.7 / 0.98 / 1 | - / - / - / - | - / - | - / - |
+| BR_U7_H15 | 3 | size (does not free the book) | -0.83 | 4.8 / -540 / -519 / -470 / 3687 / True / 0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| BR_H7_X15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.09 | -12.2 / -819 / -816 / -813 / -6390 / False / -5.3 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| BR_H7_H15 | 3 | size (does not free the book) | -0.38 | -4.6 / -82 / -77 / -61 / -2403 / False / -0.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_X15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.60 | -6.1 / -1491 / -1489 / -1490 / -2520 / False / 3.9 / 0.97 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15 | 3 | size (does not free the book) | 0.34 | 1.2 / 144 / 147 / 157 / 615 / True / 5.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_A7_X15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_A7_H15 | 3 | size (does not free the book) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_O7_X15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_O7_H15 | 3 | size (does not free the book) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_ALL6_X15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -2.89 | -16.1 / -5079 / -5030 / -4925 / -6601 / False / 24.7 / 0.85 / 0 | - / - / - / - | - / - | - / - |
+| BR_ALL6_H15 | 3 | size (does not free the book) | -1.55 | 10.2 / -1631 / -1601 / -1526 / 6505 / False / 14.5 / 0.94 / 0 | - / - / - / - | - / - | - / - |
+| BR_P7_X30 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.51 | -9.3 / -4193 / -4146 / -4051 / 7835 / False / -31.6 / 0.84 / 1 | - / - / - / - | - / - | - / - |
+| BR_P7_X5 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_P7_H2 | 3 | size (does not free the book) | -0.78 | 0.4 / -1321 / -1286 / -1222 / 187 / False / -6.5 / 0.97 / 0 | - / - / - / - | - / - | - / - |
+| BR_P7_V19 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_Sasi | 3 | size (does not free the book) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_Slon | 3 | size (does not free the book) | 0.34 | 1.2 / 144 / 147 / 157 / 615 / True / 5.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_Snya | 3 | size (does not free the book) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_Snyp | 3 | size (does not free the book) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_xt5 | 3 | size (does not free the book) | 1.18 | 0.0 / 264 / 266 / 274 / 0 / True / 3.3 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_30 | 3 | size (does not free the book) | 0.78 | 1.2 / 442 / 447 / 469 / 615 / True / 10.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_v19 | 3 | size (does not free the book) | 0.36 | 1.2 / 136 / 138 / 146 / 615 / True / 4.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_G2 | 3 | size (does not free the book) | -0.25 | 1.2 / -145 / -140 / -125 / 615 / True / 7.3 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_K7 | 3 | size (does not free the book) | -0.55 | 14.8 / -602 / -598 / -584 / 7753 / False / 2.5 / 0.98 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_P7 | 3 | size (does not free the book) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_U7 | 3 | size (does not free the book) | -0.83 | 4.8 / -540 / -519 / -470 / 3687 / True / 0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_H7 | 3 | size (does not free the book) | -0.38 | -4.6 / -82 / -77 / -61 / -2403 / False / -0.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_A7 | 3 | size (does not free the book) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| BR_M7_H15_O7 | 3 | size (does not free the book) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### EV  skips / half before scheduled events (calendar from 2024-10; identity before)
 
-| cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
-|---|---|---|---|---|---|
-| EV_T0830_P10_S | 3 | 0.0 / -37 / -36 / -29 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P10_H | 3 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P20_S | 3 | 0.0 / -71 / -70 / -62 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P20_H | 3 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P30_S | 3 | 0.0 / -71 / -70 / -62 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P30_H | 3 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P60_S | 3 | 0.0 / 206 / 209 / 222 / 0 / True / -0.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P60_H | 3 | 0.0 / 102 / 103 / 107 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_FOMC_P15_S | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_FOMC_P15_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_FOMC_P30_S | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_FOMC_P30_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_FOMC_P60_S | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_FOMC_P60_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_EARN_Q60_S | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_EARN_Q60_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_EARN_Q120_S | 3 | 0.0 / -91 / -91 / -91 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_EARN_Q120_H | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P30_H_p15 | 3 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P30_H_p45 | 3 | 0.0 / 102 / 103 / 107 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P30_H_p90 | 3 | 0.0 / 236 / 237 / 244 / 0 / True / 2.6 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P30_H_sasi | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| EV_T0830_P30_H_snya | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| cell | months | flag | L3M weekly-cluster t | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
+|---|---|---|---|---|---|---|---|
+| EV_T0830_P10_S | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.33 | 0.0 / -37 / -36 / -29 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P10_H | 3 | - | 1.00 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P20_S | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.62 | 0.0 / -71 / -70 / -62 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P20_H | 3 | - | 1.00 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_S | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.62 | 0.0 / -71 / -70 / -62 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H | 3 | - | 1.00 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_S | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 0.81 | 0.0 / 206 / 209 / 222 / 0 / True / -0.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_H | 3 | - | 1.00 | 0.0 / 102 / 103 / 107 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_FOMC_P15_S | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_FOMC_P15_H | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_FOMC_P30_S | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_FOMC_P30_H | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_FOMC_P60_S | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_FOMC_P60_H | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_EARN_Q60_S | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_EARN_Q60_H | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_EARN_Q120_S | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.00 | 0.0 / -91 / -91 / -91 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_EARN_Q120_H | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_p5 | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_p15 | 3 | - | 1.00 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_p45 | 3 | - | 1.00 | 0.0 / 102 / 103 / 107 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_p90 | 3 | - | 1.80 | 0.0 / 236 / 237 / 244 / 0 / True / 2.6 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_sasi | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_snya | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_snyp | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_kCPI | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_kISM_MFG | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_S_p5 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.00 | 0.0 / -91 / -91 / -91 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_S_p15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.91 | 0.0 / -128 / -127 / -120 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### RB  range used up AND breadth / event day (HAR+CME forecast; plain range rule is W-EC)
 
-| cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
-|---|---|---|---|---|---|
-| RB_asia_K75_BR | 3 | 3.8 / -3171 / -3161 / -3148 / 3713 / False / 1.1 / 0.92 / 1 | - / - / - / - | - / - | - / - |
-| RB_asia_K100_BR | 3 | -1.1 / -990 / -974 / -942 / -571 / False / -5.3 / 1.00 / 1 | - / - / - / - | - / - | - / - |
-| RB_asia_K125_BR | 3 | 2.4 / -1258 / -1246 / -1221 / 1228 / False / -5.3 / 0.97 / 1 | - / - / - / - | - / - | - / - |
-| RB_asia_K100_BRH | 3 | 6.6 / 270 / 280 / 299 / 3434 / True / -6.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
-| RB_asia_K100_EV | 3 | 16.3 / 1584 / 1596 / 1642 / 10024 / True / -0.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| RB_london_K75_BR | 3 | -3.2 / -2823 / -2804 / -2768 / -454 / False / -1.3 / 0.93 / 0 | - / - / - / - | - / - | - / - |
-| RB_london_K100_BR | 3 | -3.2 / -2699 / -2681 / -2646 / -454 / False / -9.0 / 0.94 / 0 | - / - / - / - | - / - | - / - |
-| RB_london_K125_BR | 3 | -2.2 / -2801 / -2788 / -2765 / -1646 / False / -20.0 / 0.94 / 0 | - / - / - / - | - / - | - / - |
-| RB_london_K100_BRH | 3 | 0.0 / -1383 / -1370 / -1339 / 0 / False / 5.4 / 0.96 / 0 | - / - / - / - | - / - | - / - |
-| RB_london_K100_EV | 3 | 0.0 / -67 / -63 / -54 / 0 / True / 5.2 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| RB_nyam_K75_BR | 3 | -2.3 / -254 / -245 / -220 / -1199 / False / -1.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| RB_nyam_K100_BR | 3 | -2.3 / -1 / 7 / 28 / -1199 / False / 2.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
-| RB_nyam_K125_BR | 3 | -2.3 / 222 / 228 / 245 / -1199 / False / 2.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
-| RB_nyam_K100_BRH | 3 | 0.0 / -189 / -187 / -183 / 0 / True / 0.0 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| RB_nyam_K100_EV | 3 | 0.0 / 175 / 179 / 188 / 0 / True / 10.5 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| RB_nypm_K75_BR | 3 | 0.0 / -270 / -268 / -265 / 0 / True / -0.6 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| RB_nypm_K100_BR | 3 | 0.0 / -82 / -79 / -73 / 0 / True / -0.6 / 1.01 / 0 | - / - / - / - | - / - | - / - |
-| RB_nypm_K125_BR | 3 | 0.0 / -228 / -227 / -225 / 0 / True / -2.8 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| RB_nypm_K100_BRH | 3 | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| RB_nypm_K100_EV | 3 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| cell | months | flag | L3M weekly-cluster t | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
+|---|---|---|---|---|---|---|---|
+| RB_asia_K75_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.36 | 3.8 / -3171 / -3161 / -3148 / 3713 / False / 1.1 / 0.92 / 1 | - / - / - / - | - / - | - / - |
+| RB_asia_K100_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.43 | -1.1 / -990 / -974 / -942 / -571 / False / -5.3 / 1.00 / 1 | - / - / - / - | - / - | - / - |
+| RB_asia_K125_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.64 | 2.4 / -1258 / -1246 / -1221 / 1228 / False / -5.3 / 0.97 / 1 | - / - / - / - | - / - | - / - |
+| RB_asia_K100_BRH | 3 | - | 0.18 | 6.6 / 270 / 280 / 299 / 3434 / True / -6.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| RB_asia_K100_EV | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 1.11 | 16.3 / 1584 / 1596 / 1642 / 10024 / True / -0.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| RB_london_K75_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -3.38 | -3.2 / -2823 / -2804 / -2768 / -454 / False / -1.3 / 0.93 / 0 | - / - / - / - | - / - | - / - |
+| RB_london_K100_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -4.06 | -3.2 / -2699 / -2681 / -2646 / -454 / False / -9.0 / 0.94 / 0 | - / - / - / - | - / - | - / - |
+| RB_london_K125_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -3.34 | -2.2 / -2801 / -2788 / -2765 / -1646 / False / -20.0 / 0.94 / 0 | - / - / - / - | - / - | - / - |
+| RB_london_K100_BRH | 3 | - | -2.37 | 0.0 / -1383 / -1370 / -1339 / 0 / False / 5.4 / 0.96 / 0 | - / - / - / - | - / - | - / - |
+| RB_london_K100_EV | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.22 | 0.0 / -67 / -63 / -54 / 0 / True / 5.2 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| RB_nyam_K75_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.40 | -2.3 / -254 / -245 / -220 / -1199 / False / -1.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| RB_nyam_K100_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.00 | -2.3 / -1 / 7 / 28 / -1199 / False / 2.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| RB_nyam_K125_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 0.39 | -2.3 / 222 / 228 / 245 / -1199 / False / 2.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| RB_nyam_K100_BRH | 3 | - | -0.72 | 0.0 / -189 / -187 / -183 / 0 / True / 0.0 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| RB_nyam_K100_EV | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 0.40 | 0.0 / 175 / 179 / 188 / 0 / True / 10.5 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| RB_nypm_K75_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.46 | 0.0 / -270 / -268 / -265 / 0 / True / -0.6 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| RB_nypm_K100_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.30 | 0.0 / -82 / -79 / -73 / 0 / True / -0.6 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| RB_nypm_K125_BR | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.43 | 0.0 / -228 / -227 / -225 / 0 / True / -2.8 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| RB_nypm_K100_BRH | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| RB_nypm_K100_EV | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 1.00 | 0.0 / 51 / 52 / 55 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### TG  target 1-2 ticks short
 
-| cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
-|---|---|---|---|---|---|
-| TG1_K7 | 3 | -0.2 / 455 / 457 / 464 / -105 / True / -0.3 / 1.03 / 0 | - / - / - / - | - / - | - / - |
-| TG1_P7 | 3 | -0.2 / -230 / -230 / -230 / -95 / True / -0.5 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| TG1_U7 | 3 | -0.1 / -69 / -69 / -69 / -50 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| TG1_H7 | 3 | -0.1 / -22 / -22 / -22 / -30 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| TG1_M7 | 3 | -0.1 / -61 / -61 / -61 / -35 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| TG1_A7 | 3 | -0.1 / 208 / 208 / 209 / -45 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| TG1_ALL | 3 | -0.7 / 368 / 369 / 377 / -360 / True / -1.3 / 1.02 / 0 | - / - / - / - | - / - | - / - |
-| TG2_K7 | 3 | 6.7 / 795 / 794 / 797 / 3518 / True / -0.6 / 1.03 / 0 | - / - / - / - | - / - | - / - |
-| TG2_P7 | 3 | -0.4 / -362 / -363 / -363 / -190 / True / -1.0 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| TG2_U7 | 3 | -0.2 / -138 / -138 / -138 / -100 / True / -0.5 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| TG2_H7 | 3 | -0.1 / -36 / -36 / -38 / -60 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| TG2_M7 | 3 | -0.2 / -86 / -86 / -86 / -70 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| TG2_A7 | 3 | -0.2 / 94 / 93 / 94 / -90 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| TG2_ALL | 3 | 5.7 / 194 / 191 / 194 / 3008 / True / -2.5 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| cell | months | flag | L3M weekly-cluster t | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
+|---|---|---|---|---|---|---|---|
+| TG1_K7 | 3 | - | 0.77 | -0.2 / 455 / 457 / 464 / -105 / True / -0.3 / 1.03 / 0 | - / - / - / - | - / - | - / - |
+| TG1_P7 | 3 | - | -11.70 | -0.2 / -230 / -230 / -230 / -95 / True / -0.5 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| TG1_U7 | 3 | - | -12.12 | -0.1 / -69 / -69 / -69 / -50 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG1_H7 | 3 | - | -10.94 | -0.1 / -22 / -22 / -22 / -30 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG1_M7 | 3 | - | -7.19 | -0.1 / -61 / -61 / -61 / -35 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG1_A7 | 3 | - | 0.88 | -0.1 / 208 / 208 / 209 / -45 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG1_ALL | 3 | - | 0.60 | -0.7 / 368 / 369 / 377 / -360 / True / -1.3 / 1.02 / 0 | - / - / - / - | - / - | - / - |
+| TG2_K7 | 3 | - | 1.27 | 6.7 / 795 / 794 / 797 / 3518 / True / -0.6 / 1.03 / 0 | - / - / - / - | - / - | - / - |
+| TG2_P7 | 3 | - | -3.43 | -0.4 / -362 / -363 / -363 / -190 / True / -1.0 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| TG2_U7 | 3 | - | -12.12 | -0.2 / -138 / -138 / -138 / -100 / True / -0.5 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG2_H7 | 3 | - | -5.62 | -0.1 / -36 / -36 / -38 / -60 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG2_M7 | 3 | - | -1.61 | -0.2 / -86 / -86 / -86 / -70 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG2_A7 | 3 | - | 0.36 | -0.2 / 94 / 93 / 94 / -90 / True / -0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| TG2_ALL | 3 | - | 0.29 | 5.7 / 194 / 191 / 194 / 3008 / True / -2.5 / 1.01 / 0 | - / - / - / - | - / - | - / - |
 
 ### LE  passive vs market entry per book / session (through-1-tick fill rule, market on timeout)
 
-| cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
-|---|---|---|---|---|---|
-| LE_C1_K7 | 3 | 6.8 / 1719 / 1713 / 1906 / 3656 / True / -3.3 / 1.01 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_P7 | 3 | -2.4 / -492 / -507 / -141 / -1107 / False / -4.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_U7 | 3 | 0.3 / 523 / 520 / 607 / 130 / True / 0.2 / 1.02 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_H7 | 3 | 0.0 / -227 / -228 / -186 / -90 / True / -0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_M7 | 3 | -7.6 / -208 / -208 / -102 / -2506 / False / -4.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_A7 | 3 | 15.5 / 233 / 234 / 277 / 8023 / True / -0.2 / 0.98 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_asia | 3 | 5.9 / 1063 / 1047 / 1503 / 3182 / True / -5.7 / 1.02 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_london | 3 | -1.0 / -721 / -724 / -459 / 925 / False / -7.5 / 0.95 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_nyam | 3 | -0.0 / -260 / -259 / -163 / -10 / True / 0.3 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_nypm | 3 | 0.0 / -50 / -49 / -29 / 0 / True / -2.9 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| LE_C2_K7 | 3 | 0.4 / 744 / 745 / 994 / 333 / True / -2.9 / 1.05 / 0 | - / - / - / - | - / - | - / - |
-| LE_C2_P7 | 3 | -2.7 / -2082 / -2094 / -1658 / -1367 / False / 4.7 / 0.90 / 0 | - / - / - / - | - / - | - / - |
-| LE_C2_U7 | 3 | 0.1 / 590 / 587 / 690 / 25 / True / 0.0 / 1.03 / 0 | - / - / - / - | - / - | - / - |
-| LE_C2_H7 | 3 | 0.2 / -127 / -128 / -80 / 10 / True / -0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| LE_C2_M7 | 3 | -6.6 / -1513 / -1505 / -1369 / -1961 / False / -0.8 / 1.02 / 1 | - / - / - / - | - / - | - / - |
-| LE_C2_A7 | 3 | 15.2 / 737 / 738 / 794 / 7920 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| LE_C2_asia | 3 | -1.7 / 43 / 31 / 601 / -832 / False / 5.5 / 1.03 / 0 | - / - / - / - | - / - | - / - |
-| LE_C2_london | 3 | 0.8 / -1825 / -1822 / -1501 / 1897 / False / -3.7 / 0.97 / 1 | - / - / - / - | - / - | - / - |
-| LE_C2_nyam | 3 | -0.2 / -227 / -226 / -122 / -108 / True / 0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| LE_C2_nypm | 3 | 0.0 / -49 / -49 / -26 / 0 / True / -2.9 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_P7_london | 3 | 0.0 / -1329 / -1330 / -1237 / 0 / False / -0.3 / 0.93 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_K7_london | 3 | 6.3 / 415 / 413 / 470 / 3291 / True / -0.5 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_K7_nyam | 3 | -0.0 / 72 / 72 / 99 / -10 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_M7_london | 3 | -7.6 / -9 / -9 / 72 / -2506 / False / -4.7 / 1.02 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_M7_nyam | 3 | 0.0 / -215 / -215 / -188 / 0 / True / 0.0 / 0.99 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_A7_asia | 3 | 15.5 / 233 / 234 / 277 / 8023 / True / -0.2 / 0.98 / 0 | - / - / - / - | - / - | - / - |
-| LE_C1_P7_nyam | 3 | 0.0 / -116 / -116 / -78 / 0 / True / 0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| cell | months | flag | L3M weekly-cluster t | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
+|---|---|---|---|---|---|---|---|
+| LE_C1_K7 | 3 | - | 1.74 | 6.8 / 1719 / 1713 / 1906 / 3656 / True / -3.3 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_P7 | 3 | - | -0.81 | -2.4 / -492 / -507 / -141 / -1107 / False / -4.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_U7 | 3 | - | 0.98 | 0.3 / 523 / 520 / 607 / 130 / True / 0.2 / 1.02 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_H7 | 3 | - | -1.43 | 0.0 / -227 / -228 / -186 / -90 / True / -0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_M7 | 3 | - | -0.55 | -7.6 / -208 / -208 / -102 / -2506 / False / -4.7 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_A7 | 3 | - | 0.31 | 15.5 / 233 / 234 / 277 / 8023 / True / -0.2 / 0.98 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_asia | 3 | - | 0.69 | 5.9 / 1063 / 1047 / 1503 / 3182 / True / -5.7 / 1.02 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_london | 3 | - | -0.61 | -1.0 / -721 / -724 / -459 / 925 / False / -7.5 / 0.95 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_nyam | 3 | - | -1.02 | -0.0 / -260 / -259 / -163 / -10 / True / 0.3 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_nypm | 3 | - | -0.39 | 0.0 / -50 / -49 / -29 / 0 / True / -2.9 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_K7 | 3 | - | 0.68 | 0.4 / 744 / 745 / 994 / 333 / True / -2.9 / 1.05 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_P7 | 3 | - | -1.75 | -2.7 / -2082 / -2094 / -1658 / -1367 / False / 4.7 / 0.90 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_U7 | 3 | - | 0.93 | 0.1 / 590 / 587 / 690 / 25 / True / 0.0 / 1.03 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_H7 | 3 | - | -0.87 | 0.2 / -127 / -128 / -80 / 10 / True / -0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_M7 | 3 | - | -0.90 | -6.6 / -1513 / -1505 / -1369 / -1961 / False / -0.8 / 1.02 / 1 | - / - / - / - | - / - | - / - |
+| LE_C2_A7 | 3 | - | 1.12 | 15.2 / 737 / 738 / 794 / 7920 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_asia | 3 | - | 0.04 | -1.7 / 43 / 31 / 601 / -832 / False / 5.5 / 1.03 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_london | 3 | - | -0.90 | 0.8 / -1825 / -1822 / -1501 / 1897 / False / -3.7 / 0.97 / 1 | - / - / - / - | - / - | - / - |
+| LE_C2_nyam | 3 | - | -0.83 | -0.2 / -227 / -226 / -122 / -108 / True / 0.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C2_nypm | 3 | - | -0.38 | 0.0 / -49 / -49 / -26 / 0 / True / -2.9 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_P7_london | 3 | - | -1.18 | 0.0 / -1329 / -1330 / -1237 / 0 / False / -0.3 / 0.93 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_K7_london | 3 | - | 1.17 | 6.3 / 415 / 413 / 470 / 3291 / True / -0.5 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_K7_nyam | 3 | - | 1.15 | -0.0 / 72 / 72 / 99 / -10 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_M7_london | 3 | - | -0.02 | -7.6 / -9 / -9 / 72 / -2506 / False / -4.7 / 1.02 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_M7_nyam | 3 | - | -1.34 | 0.0 / -215 / -215 / -188 / 0 / True / 0.0 / 0.99 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_A7_asia | 3 | - | 0.31 | 15.5 / 233 / 234 / 277 / 8023 / True / -0.2 / 0.98 / 0 | - / - / - / - | - / - | - / - |
+| LE_C1_P7_nyam | 3 | - | -0.71 | 0.0 / -116 / -116 / -78 / 0 / True / 0.1 / 0.99 / 0 | - / - / - / - | - / - | - / - |
 
 ### WK  work the cut with a resting limit (per book / session / 08:30)
 
-| cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
-|---|---|---|---|---|---|
-| WK2_K7 | 3 | 0.2 / -23 / -28 / -41 / 54 / True / 2.6 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_P7 | 3 | -2.8 / -168 / -173 / -188 / -1158 / False / -0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_U7 | 3 | 0.1 / 77 / 77 / 76 / 32 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_H7 | 3 | 0.0 / 27 / 27 / 27 / 82 / True / 0.3 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_M7 | 3 | 0.1 / -59 / -59 / -61 / 22 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_A7 | 3 | 0.1 / 86 / 85 / 85 / -6 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_asia | 3 | -2.5 / 9 / 4 / -12 / -1043 / False / 2.3 / 1.01 / 0 | - / - / - / - | - / - | - / - |
-| WK2_london | 3 | 0.1 / -183 / -184 / -189 / 42 / True / -1.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_nyam | 3 | 0.0 / 19 / 19 / 18 / 19 / True / -0.3 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_nypm | 3 | 0.0 / 12 / 12 / 12 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_W830 | 3 | 0.0 / 9 / 9 / 9 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK5_W830 | 3 | 0.0 / 15 / 15 / 15 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| WK2_ALLCUTS | 3 | -2.2 / -75 / -82 / -101 / -943 / False / 1.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| cell | months | flag | L3M weekly-cluster t | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
+|---|---|---|---|---|---|---|---|
+| WK2_K7 | 3 | - | -0.14 | 0.2 / -23 / -28 / -41 / 54 / True / 2.6 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_P7 | 3 | - | -0.65 | -2.8 / -168 / -173 / -188 / -1158 / False / -0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_U7 | 3 | - | 1.08 | 0.1 / 77 / 77 / 76 / 32 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_H7 | 3 | - | 1.23 | 0.0 / 27 / 27 / 27 / 82 / True / 0.3 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_M7 | 3 | - | -0.64 | 0.1 / -59 / -59 / -61 / 22 / True / -0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_A7 | 3 | - | 1.01 | 0.1 / 86 / 85 / 85 / -6 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_asia | 3 | - | 0.04 | -2.5 / 9 / 4 / -12 / -1043 / False / 2.3 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| WK2_london | 3 | - | -1.25 | 0.1 / -183 / -184 / -189 / 42 / True / -1.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_nyam | 3 | - | 0.33 | 0.0 / 19 / 19 / 18 / 19 / True / -0.3 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_nypm | 3 | - | 0.84 | 0.0 / 12 / 12 / 12 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_W830 | 3 | - | 0.84 | 0.0 / 9 / 9 / 9 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK5_W830 | 3 | - | 1.53 | 0.0 / 15 / 15 / 15 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| WK2_ALLCUTS | 3 | - | -0.26 | -2.2 / -75 / -82 / -101 / -943 / False / 1.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### SJ  join-then-market stop seconds
 
-| cell | months | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
-|---|---|---|---|---|---|
-| SJ2 | 3 | 0.0 / 16 / 16 / 16 / 0 / True / 0.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| SJA2 | 3 | -0.2 / -200 / -201 / -204 / -125 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
-| SJA5 | 3 | -0.4 / -80 / -81 / -81 / -190 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| cell | months | flag | L3M weekly-cluster t | L3M cut / d mean / $4.84 / live-exc / d ww / gate / x44 cut / b5 / w2l | L6M cut / d mean / live-exc / gate | HOLD cut / d mean | PRE cut / d mean |
+|---|---|---|---|---|---|---|---|
+| SJ2 | 3 | - | 0.91 | 0.0 / 16 / 16 / 16 / 0 / True / 0.4 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| SJA2 | 3 | - | -1.09 | -0.2 / -200 / -201 / -204 / -125 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| SJA5 | 3 | - | -0.46 | -0.4 / -80 / -81 / -81 / -190 / True / 0.1 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, RB_nyam_K100_EV, RB_nypm_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2, BR_M7_H15_xt5, BR_M7_H15_30, BR_M7_H15_v19, EV_T0830_P30_H_p15, EV_T0830_P30_H_p45, EV_T0830_P30_H_p90
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, RB_nyam_K100_EV, RB_nypm_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2, BR_M7_H15_Slon, BR_M7_H15_xt5, BR_M7_H15_30, BR_M7_H15_v19, EV_T0830_P30_H_p15, EV_T0830_P30_H_p45, EV_T0830_P30_H_p90
 
 Auto-expansions launched (expansion of <parent>):
 
@@ -791,6 +799,58 @@ Auto-expansions launched (expansion of <parent>):
 - - EV_T0830_P30_H_p45_kISM_MFG: expansion of EV_T0830_P30_H_p45
 - - EV_T0830_P30_H_p45_kFOMC: expansion of EV_T0830_P30_H_p45
 - - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
+- HIT BR_M7_H15_Slon: L3M cut 1.2% d mean 144 (adj 157) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - BR_M7_H15_Slon_Sasi: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_Slon: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_Snya: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_Snyp: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_xt5: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_30: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_v19: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_G2: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_K7: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_P7: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_U7: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_H7: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_A7: expansion of BR_M7_H15_Slon
+- - BR_M7_H15_Slon_O7: expansion of BR_M7_H15_Slon
+- - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
+
+### Tolerant-gate passers NOT promoted (BELOW NOISE FLOOR; addendum 1 of the prereg: floor 5% DD or $300/wk is a noise floor, not a gate; promotable on request)
+
+| cell | L3M DD cut % | d mean | d mean live-exc adj | d trades | reason |
+|---|---|---|---|---|---|
+| BR_M7_H15 | 1.2 | 144 | 157 | 12 | below noise floor |
+| EV_T0830_P10_H | 0.0 | 51 | 55 | 0 | trade list equals base |
+| EV_T0830_P20_H | 0.0 | 51 | 55 | 0 | trade list equals base |
+| EV_T0830_P30_H | 0.0 | 51 | 55 | 0 | trade list equals base |
+| EV_T0830_P60_S | 0.0 | 206 | 222 | -8 | below noise floor |
+| EV_T0830_P60_H | 0.0 | 102 | 107 | 0 | trade list equals base |
+| RB_nyam_K100_EV | 0.0 | 175 | 188 | -8 | below noise floor |
+| RB_nypm_K100_EV | 0.0 | 51 | 55 | -2 | below noise floor |
+| TG1_A7 | -0.1 | 208 | 209 | 0 | trade list equals base |
+| TG2_K7 | 6.7 | 795 | 797 | 0 | trade list equals base |
+| TG2_A7 | -0.2 | 94 | 94 | 1 | below noise floor |
+| LE_C1_U7 | 0.3 | 523 | 607 | 0 | trade list equals base |
+| LE_C2_U7 | 0.1 | 590 | 690 | 0 | trade list equals base |
+| LE_C2_A7 | 15.2 | 737 | 794 | 0 | trade list equals base |
+| LE_C1_K7_nyam | -0.0 | 72 | 99 | -1 | below noise floor |
+| WK2_U7 | 0.1 | 77 | 76 | -1 | below noise floor |
+| WK2_H7 | 0.0 | 27 | 27 | 0 | trade list equals base |
+| WK2_A7 | 0.1 | 86 | 85 | -1 | below noise floor |
+| WK2_nyam | 0.0 | 19 | 18 | 1 | below noise floor |
+| WK2_nypm | 0.0 | 12 | 12 | 0 | trade list equals base |
+| WK2_W830 | 0.0 | 9 | 9 | 0 | trade list equals base |
+| WK5_W830 | 0.0 | 15 | 15 | 0 | trade list equals base |
+| SJ2 | 0.0 | 16 | 16 | 0 | trade list equals base |
+| BR_M7_H15_Slon | 1.2 | 144 | 157 | 12 | below noise floor |
+| BR_M7_H15_xt5 | 0.0 | 264 | 274 | 3 | below noise floor |
+| BR_M7_H15_v19 | 1.2 | 136 | 146 | 12 | below noise floor |
+| EV_T0830_P30_H_p15 | 0.0 | 51 | 55 | 0 | trade list equals base |
+| EV_T0830_P30_H_p45 | 0.0 | 102 | 107 | 0 | trade list equals base |
+| EV_T0830_P30_H_p90 | 0.0 | 236 | 244 | 0 | trade list equals base |
+
+LE (passive entry) rows are FILL-RULE UPPER BOUNDS: a print through the limit by 1 tick fills, no queue position, so real fill rates and adverse selection would lower them.
 
 ## 4. Not run / limits
 - Passive-entry fill rule: a print through the limit by 1 tick (primary). Engine has no queue position model; real fill rates for resting limits are not in the frozen live set. Treat LE rows as an upper bound on fills.

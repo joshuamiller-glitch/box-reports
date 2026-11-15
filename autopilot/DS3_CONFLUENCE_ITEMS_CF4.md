@@ -1,6 +1,6 @@
 # DS3_CONFLUENCE_ITEMS_CF4: STEP 3 each condition alone, Block 2 (and 4) of the indicator library
 
-**Verdict line: Block 2 conditions built so far = 39082 scored columns across 21 sub-blocks; every one is a MAP entry only (no PASS claim; matched-count and shuffled-outcome controls belong to W-CF3).**
+**Verdict line: Block 2 conditions built so far = 39159 scored columns across 21 sub-blocks; every one is a MAP entry only (no PASS claim; matched-count and shuffled-outcome controls belong to W-CF3).**
 
 ## IRL / ERL Step A (Addendum 5): measure-only, headline = 5-min bars, 2 pts, W=3, minor pivot 3
 
@@ -297,7 +297,7 @@ Book 1 = fade the sweep of the range high/low at the close back inside, stop = p
 
 ## B2-A momentum / oscillators
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 3105; |t|>2: 570 (chance expectation ~141 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_osc.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 3105; |t|>2: 570 (chance expectation ~141 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_osc.parquet`.
 
 **top 25 positive lift (ALL/ALL)**
 
@@ -437,7 +437,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B2-B trend followers
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 3313; |t|>2: 790 (chance expectation ~150 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_trend.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 3313; |t|>2: 790 (chance expectation ~150 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_trend.parquet`.
 
 **top 25 positive lift (ALL/ALL)**
 
@@ -577,7 +577,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B2-C smart-money / price action
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 1909; |t|>2: 221 (chance expectation ~86 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_smc.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 1909; |t|>2: 221 (chance expectation ~86 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_smc.parquet`.
 
 **top 25 positive lift (ALL/ALL)**
 
@@ -717,7 +717,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B2-D volume
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 482; |t|>2: 54 (chance expectation ~21 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_vol.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 482; |t|>2: 54 (chance expectation ~21 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_vol.parquet`.
 
 **top 25 positive lift (ALL/ALL)**
 
@@ -844,7 +844,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B2-E causal ML-style
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 222; |t|>2: 62 (chance expectation ~10 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_ml.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 222; |t|>2: 62 (chance expectation ~10 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_ml.parquet`.
 
 **top 25 positive lift (ALL/ALL)**
 
@@ -972,7 +972,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B2-C2 IRL/ERL sweeps (Addendum 5 Step B)
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 294; |t|>2: 36 (chance expectation ~13 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_irl.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 294; |t|>2: 36 (chance expectation ~13 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_irl.parquet`.
 
 **top 25 positive lift (ALL/ALL)**
 
@@ -1082,7 +1082,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B11 candlestick library
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2228; |t|>2: 152 (chance expectation ~101 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_candle.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2228; |t|>2: 152 (chance expectation ~101 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_candle.parquet`.
 
 **top 25 positive lift (ALL/ALL)**
 
@@ -1222,7 +1222,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B12 bar-level volume at price (footprint)
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 159; |t|>2: 18 (chance expectation ~7 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_fp.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 159; |t|>2: 18 (chance expectation ~7 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_fp.parquet`.
 
 **top 25 positive lift (ALL/ALL)**
 
@@ -1334,7 +1334,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B10 geometry and chart patterns
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 915; |t|>2: 81 (chance expectation ~41 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_geom.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 915; |t|>2: 81 (chance expectation ~41 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_geom.parquet`.
 
 **top 25 positive lift (ALL/ALL)**
 
@@ -1473,7 +1473,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: ha1
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2165; |t|>2: 405 (chance expectation ~98 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha1.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2165; |t|>2: 405 (chance expectation ~98 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha1.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
@@ -1583,7 +1583,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: ha15
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2238; |t|>2: 1230 (chance expectation ~101 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha15.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2238; |t|>2: 1230 (chance expectation ~101 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha15.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
@@ -1693,7 +1693,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: ha3
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2186; |t|>2: 654 (chance expectation ~99 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha3.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2186; |t|>2: 654 (chance expectation ~99 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha3.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
@@ -1803,7 +1803,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: ha5
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2216; |t|>2: 915 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha5.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2216; |t|>2: 915 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha5.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
@@ -1913,7 +1913,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: ha60
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2248; |t|>2: 1423 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha60.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2248; |t|>2: 1423 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_ha60.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
@@ -2023,7 +2023,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: range16
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2212; |t|>2: 213 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_range16.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2212; |t|>2: 213 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_range16.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
@@ -2133,7 +2133,7 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: range8
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2219; |t|>2: 485 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_range8.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2219; |t|>2: 485 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_range8.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
@@ -2243,117 +2243,117 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: renko16
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2126; |t|>2: 317 (chance expectation ~96 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_renko16.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2163; |t|>2: 188 (chance expectation ~98 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_renko16.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_w1_ema200_px_renko16_side | 43891 | 0.91 | 0.052 | -0.058 | 0.110 [0.084, 0.137] | 8.1 | 3/4 | 0.078 | 0.131 |
-| c4_obF_cnt_renko16_side | 38181 | 0.79 | 0.059 | -0.020 | 0.079 [0.060, 0.098] | 8.1 | 4/4 | 0.063 | 0.097 |
-| c4_ob_cnt_renko16_side | 38181 | 0.79 | 0.059 | -0.020 | 0.079 [0.060, 0.098] | 8.1 | 4/4 | 0.063 | 0.097 |
-| c4_w1_sma200_px_renko16_side | 43114 | 0.89 | 0.053 | -0.044 | 0.097 [0.072, 0.122] | 7.6 | 3/4 | 0.081 | 0.109 |
-| c4_rfiltS_dir_renko16_side | 39361 | 0.81 | 0.056 | -0.018 | 0.074 [0.054, 0.095] | 7.2 | 3/4 | 0.043 | 0.028 |
-| c4_obS_cnt_renko16_side | 37328 | 0.77 | 0.058 | -0.009 | 0.067 [0.048, 0.086] | 7.0 | 3/4 | 0.052 | 0.084 |
-| c4_w1_vwma200_px_renko16_side | 43049 | 0.89 | 0.051 | -0.030 | 0.081 [0.056, 0.105] | 6.3 | 3/4 | 0.047 | 0.068 |
-| c4_fvgF_cnt_renko16_side | 42234 | 0.87 | 0.051 | -0.021 | 0.073 [0.049, 0.096] | 6.0 | 2/4 | -0.018 | -0.004 |
-| c4_fvgS_cnt_renko16_side | 42234 | 0.87 | 0.051 | -0.021 | 0.073 [0.049, 0.096] | 6.0 | 2/4 | -0.018 | -0.004 |
-| c4_fvg_cnt_renko16_side | 42234 | 0.87 | 0.051 | -0.021 | 0.073 [0.049, 0.096] | 6.0 | 2/4 | -0.018 | -0.004 |
+| c4_rfiltS_dir_renko16_side | 151108 | 0.79 | 0.035 | -0.021 | 0.056 [0.031, 0.081] | 4.4 | 4/4 | 0.075 | 0.078 |
+| c4_rfiltS_dir_renko16_hold3 | 145418 | 0.76 | 0.034 | -0.014 | 0.048 [0.024, 0.072] | 3.9 | 4/4 | 0.063 | 0.058 |
+| c4_oteS_renko16_against | 11795 | 0.06 | 0.065 | 0.020 | 0.045 [0.018, 0.073] | 3.2 | 4/4 | -0.008 | -0.039 |
+| c4_ichiS_thick_renko16_hi | 143375 | 0.75 | 0.030 | 0.000 | 0.030 [0.012, 0.049] | 3.2 | 4/4 | 0.052 | 0.062 |
+| c4_w1_linreg_chan50_renko16_eleave | 3295 | 0.02 | 0.092 | 0.022 | 0.070 [0.027, 0.114] | 3.2 | 4/4 | 0.064 | 0.099 |
+| c4_mcgS_slope_renko16_side | 176258 | 0.92 | 0.026 | -0.011 | 0.037 [0.013, 0.061] | 3.0 | 4/4 | 0.048 | 0.040 |
+| c4_mcgS_px_renko16_side | 176258 | 0.92 | 0.026 | -0.011 | 0.037 [0.013, 0.061] | 3.0 | 4/4 | 0.048 | 0.040 |
+| c4_fvg_cnt_renko16_side | 158742 | 0.83 | 0.032 | -0.020 | 0.051 [0.018, 0.085] | 3.0 | 4/4 | -0.011 | -0.009 |
+| c4_fvgS_cnt_renko16_side | 158742 | 0.83 | 0.032 | -0.020 | 0.051 [0.018, 0.085] | 3.0 | 4/4 | -0.011 | -0.009 |
+| c4_fvgF_cnt_renko16_side | 158742 | 0.83 | 0.032 | -0.020 | 0.051 [0.018, 0.085] | 3.0 | 4/4 | -0.011 | -0.009 |
 
 **top negative lift = candidate veto (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_rfiltS_dir_renko16_against | 8992 | 0.19 | -0.018 | 0.056 | -0.074 [-0.095, -0.054] | -7.2 | 1/4 | -0.043 | -0.028 |
-| c4_w1_ema_stack_slow_renko16_against | 6174 | 0.13 | -0.020 | 0.051 | -0.071 [-0.095, -0.048] | -6.0 | 1/4 | -0.059 | -0.097 |
-| c4_w1_vwma50_px_renko16_nodiv | 43670 | 0.90 | 0.035 | 0.110 | -0.075 [-0.102, -0.048] | -5.4 | 1/4 | -0.084 | -0.161 |
-| c4_w1_kama_stack_fast_renko16_against | 4200 | 0.09 | -0.021 | 0.048 | -0.070 [-0.097, -0.042] | -4.9 | 1/4 | -0.052 | -0.114 |
-| c4_w1_kama_stack_slow_renko16_against | 6631 | 0.14 | -0.007 | 0.050 | -0.057 [-0.079, -0.034] | -4.9 | 1/4 | -0.048 | -0.049 |
-| c4_w1_vwma_stack_slow_renko16_against | 6051 | 0.13 | -0.008 | 0.049 | -0.057 [-0.081, -0.033] | -4.7 | 1/4 | -0.022 | -0.049 |
-| c4_ichiS_cloud_renko16_against | 3207 | 0.07 | -0.025 | 0.047 | -0.072 [-0.103, -0.041] | -4.5 | 0/4 | -0.017 | -0.036 |
-| c4_w1_vwma21_px_renko16_nodiv | 40997 | 0.85 | 0.035 | 0.083 | -0.048 [-0.071, -0.026] | -4.3 | 1/4 | -0.015 | -0.039 |
-| c4_w1_stoch14_renko16_divwith | 1525 | 0.03 | -0.052 | 0.045 | -0.097 [-0.143, -0.052] | -4.2 | 0/4 | -0.050 | -0.077 |
-| c4_w1_sma50_px_renko16_nodiv | 43820 | 0.91 | 0.037 | 0.094 | -0.057 [-0.084, -0.030] | -4.1 | 2/4 | -0.093 | -0.139 |
+| c4_rfiltS_dir_renko16_against | 40412 | 0.21 | -0.021 | 0.035 | -0.056 [-0.081, -0.031] | -4.4 | 0/4 | -0.075 | -0.078 |
+| c4_w1_kama_stack_fast_renko16_against | 20039 | 0.10 | -0.028 | 0.029 | -0.057 [-0.088, -0.026] | -3.6 | 0/4 | -0.044 | -0.095 |
+| c4_ichiS_cloud_renko16_against | 15982 | 0.08 | -0.024 | 0.027 | -0.051 [-0.082, -0.020] | -3.2 | 0/4 | -0.046 | -0.030 |
+| c4_wtF_renko16_eleave_z2 | 2271 | 0.01 | -0.052 | 0.024 | -0.076 [-0.122, -0.030] | -3.2 | 0/4 | -0.170 | -0.174 |
+| c4_wt_renko16_eleave_z2 | 1464 | 0.01 | -0.060 | 0.023 | -0.083 [-0.134, -0.032] | -3.2 | 1/4 | -0.011 | 0.161 |
+| c4_w1_ao_renko16_rise | 134322 | 0.70 | 0.016 | 0.038 | -0.022 [-0.036, -0.008] | -3.1 | 0/4 | 0.008 | 0.019 |
+| c4_w1_vwmacd_renko16_sig | 131966 | 0.69 | 0.015 | 0.040 | -0.026 [-0.042, -0.009] | -3.0 | 1/4 | -0.033 | -0.027 |
+| c4_obS_near_renko16_against | 33095 | 0.17 | 0.001 | 0.027 | -0.027 [-0.045, -0.009] | -2.9 | 2/4 | 0.002 | -0.012 |
+| c4_w1_wave_agree_renko16_hold3 | 48606 | 0.25 | 0.005 | 0.029 | -0.023 [-0.039, -0.008] | -2.9 | 0/4 | -0.029 | -0.014 |
+| c4_sdF_in_renko16_hold3 | 257 | 0.00 | -0.136 | 0.023 | -0.159 [-0.267, -0.051] | -2.9 | 1/4 | -0.250 | 0.158 |
 
-**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 468 of 11584 session-condition cells pass (chance-level expectation under independence ~143 at |t|>2.5 before the sign filters)**
+**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 255 of 12494 session-condition cells pass (chance-level expectation under independence ~154 at |t|>2.5 before the sign filters)**
 
 | session | cond | n_yes | lift R | shrunk | t | yrs+ | L6M lift |
 |---|---|---|---|---|---|---|---|
-| asia | c4_obF_cnt_renko16_side | 12659 | 0.108 | 0.099 | 7.1 | 4/4 | 0.086 |
-| asia | c4_ob_cnt_renko16_side | 12659 | 0.108 | 0.099 | 7.1 | 4/4 | 0.086 |
-| asia | c4_wtS_renko16_divwith | 372 | -0.163 | -0.092 | -3.7 | 0/4 | -0.045 |
-| asia | c4_ote_wideS_renko16_side | 513 | -0.141 | -0.091 | -3.8 | 0/4 | -0.086 |
-| asia | c4_ichi_score_renko16_eleave | 619 | -0.127 | -0.086 | -3.7 | 0/4 | -0.138 |
-| asia | c4_wt_renko16_eleave_z2 | 140 | -0.220 | -0.079 | -3.3 | 0/4 | -0.273 |
-| close | c4_kstS_renko16_divwith | 302 | 0.327 | 0.150 | 6.0 | 3/3 | 0.216 |
-| close | c4_sdF_cnt_renko16_side | 1995 | 0.239 | 0.131 | 5.3 | 3/3 | 0.198 |
-| close | c4_sd_cnt_renko16_side | 1996 | 0.222 | 0.121 | 4.9 | 3/3 | 0.163 |
-| close | c4_w1_trix30_renko16_divwith | 327 | 0.255 | 0.120 | 4.8 | 3/3 | 0.210 |
-| close | c4_sqzmS_mom_renko16_divwith | 203 | 0.298 | 0.111 | 4.6 | 3/3 | 0.222 |
-| close | c4_ob_cnt_renko16_side | 1984 | 0.188 | 0.104 | 4.2 | 3/3 | 0.094 |
-| london | c4_w1_boll40_walk_renko16_nodiv | 14233 | -0.260 | -0.156 | -6.4 | 0/4 | -0.158 |
-| london | c4_turt10_renko16_against | 836 | -0.167 | -0.120 | -5.4 | 0/4 | -0.097 |
-| london | c4_w1_stoch8_renko16_divwith | 589 | -0.176 | -0.116 | -4.9 | 0/4 | -0.103 |
-| london | c4_lrcS_slope_renko16_fresh5 | 264 | 0.247 | 0.113 | 4.5 | 4/4 | 0.238 |
-| london | c4_w1_stoch14_renko16_divwith | 452 | -0.174 | -0.103 | -4.2 | 0/4 | -0.182 |
-| london | c4_w1_stochrsi14_renko16_divwith | 1000 | -0.125 | -0.095 | -4.4 | 0/4 | -0.078 |
-| nyam | c4_w1_wave_mid_hist_renko16_divwith | 594 | 0.146 | 0.089 | 3.7 | 4/4 | 0.139 |
-| nyam | c4_w1_macd12_26_9_hist_renko16_divwith | 594 | 0.146 | 0.089 | 3.7 | 4/4 | 0.139 |
-| nyam | c4_w1_demarker7_renko16_divwith | 404 | 0.163 | 0.084 | 3.4 | 4/4 | 0.051 |
-| nyam | c4_w1_ichi_slow_lag_renko16_divwith | 100 | -0.330 | -0.078 | -3.7 | 0/4 | -0.319 |
-| nyam | c4_w1_hma50_px_renko16_divwith | 598 | 0.125 | 0.076 | 3.1 | 4/4 | 0.090 |
-| nyam | c4_w1_psar_0.01_renko16_divwith | 470 | 0.134 | 0.076 | 3.1 | 4/4 | 0.092 |
-| nypm | c4_w1_aroon50_renko16_divwith | 416 | 0.217 | 0.117 | 4.7 | 4/4 | 0.196 |
-| nypm | c4_obS_dres_renko16_hi | 2124 | 0.158 | 0.105 | 4.4 | 4/4 | 0.180 |
-| nypm | c4_t3S_slope_renko16_fresh5 | 1070 | 0.126 | 0.090 | 4.0 | 4/4 | 0.113 |
-| nypm | c4_w1_linreg_chan10_renko16_divwith | 1045 | 0.118 | 0.083 | 3.7 | 4/4 | 0.102 |
-| nypm | c4_w1_cci50_renko16_nodiv | 4377 | 0.129 | 0.081 | 3.4 | 4/4 | 0.074 |
-| nypm | c4_stc_renko16_eleave | 658 | 0.125 | 0.079 | 3.3 | 4/4 | 0.154 |
-| pre | c4_w1_demarker7_renko16_nodiv | 1300 | -0.451 | -0.156 | -6.6 | 0/3 | -0.302 |
-| pre | c4_w1_uo_renko16_nodiv | 1239 | -0.392 | -0.150 | -6.2 | 0/3 | -0.232 |
-| pre | c4_w1_vortex7_renko16_nodiv | 1250 | -0.369 | -0.137 | -5.7 | 0/3 | -0.184 |
-| pre | c4_w1_mfi7_renko16_nodiv | 1242 | -0.355 | -0.134 | -5.5 | 0/3 | -0.222 |
-| pre | c4_stc_renko16_nodiv | 1286 | -0.364 | -0.125 | -5.3 | 0/3 | -0.250 |
-| pre | c4_fvgS_cnt_renko16_side | 1351 | 0.432 | 0.119 | 5.3 | 3/3 | 0.085 |
+| asia | c4_w1_ema200_px_renko16_side | 51008 | 0.110 | 0.092 | 5.0 | 4/4 | 0.079 |
+| asia | c4_w1_demarker14_renko16_eagainst | 991 | -0.121 | -0.085 | -3.7 | 0/4 | -0.047 |
+| asia | c4_wt_renko16_eleave_z2 | 785 | -0.117 | -0.082 | -3.6 | 0/4 | -0.249 |
+| asia | c4_obF_cnt_renko16_side | 42939 | 0.091 | 0.076 | 4.1 | 4/4 | 0.072 |
+| asia | c4_ob_cnt_renko16_side | 42939 | 0.091 | 0.076 | 4.1 | 4/4 | 0.072 |
+| asia | c4_w1_sma200_px_renko16_side | 50011 | 0.088 | 0.074 | 4.0 | 4/4 | 0.066 |
+| close | c4_w1_uo_renko16_divwith | 769 | -0.147 | -0.079 | -3.2 | 0/4 | -0.095 |
+| close | c4_w1_vortex7_renko16_divwith | 823 | -0.148 | -0.077 | -3.1 | 0/4 | -0.183 |
+| close | c4_smieF_renko16_divwith | 694 | -0.162 | -0.077 | -3.1 | 0/4 | -0.283 |
+| close | c4_w1_keltner10_pos_renko16_divwith | 696 | -0.157 | -0.075 | -3.0 | 0/4 | -0.251 |
+| close | c4_w1_demarker7_renko16_divwith | 612 | -0.148 | -0.073 | -2.9 | 0/4 | -0.236 |
+| close | c4_stc_renko16_divwith | 572 | -0.146 | -0.073 | -2.9 | 0/4 | -0.185 |
+| london | c4_w1_kama_stack_fast_renko16_against | 6610 | -0.094 | -0.069 | -3.1 | 0/4 | -0.063 |
+| london | c4_rfiltS_dir_renko16_side | 44606 | 0.085 | 0.065 | 3.1 | 4/4 | 0.074 |
+| london | c4_rfiltS_dir_renko16_against | 12692 | -0.085 | -0.065 | -3.1 | 0/4 | -0.074 |
+| london | c4_rfiltS_dir_renko16_hold3 | 42716 | 0.074 | 0.059 | 2.9 | 4/4 | 0.036 |
+| london | c4_w1_vwmacd_renko16_sig | 41224 | -0.046 | -0.041 | -2.6 | 0/4 | -0.050 |
+| london | c4_w1_hma8_px_renko16_nodiv | 35921 | 0.040 | 0.037 | 2.7 | 4/4 | 0.054 |
+| nyam | c4_qqe_renko16_ewith | 1201 | -0.121 | -0.077 | -3.2 | 0/4 | -0.008 |
+| nyam | c4_crsi_renko16_ewith_z1 | 1411 | -0.103 | -0.074 | -3.3 | 0/4 | -0.117 |
+| nyam | c4_t3S_px_renko16_divwith | 1730 | 0.093 | 0.062 | 2.6 | 4/4 | 0.123 |
+| nyam | c4_pd_renko16_fresh5 | 4194 | 0.070 | 0.061 | 3.7 | 4/4 | 0.052 |
+| nyam | c4_lrc_renko16_ewith | 3259 | -0.072 | -0.061 | -3.4 | 0/4 | -0.044 |
+| nyam | c4_crsi_renko16_eenter_z1 | 999 | -0.094 | -0.061 | -2.6 | 0/4 | -0.129 |
+| nypm | c4_w1_sma8_px_renko16_divwith | 1691 | -0.130 | -0.077 | -3.1 | 0/4 | -0.155 |
+| nypm | c4_stPS_renko16_fresh1 | 428 | -0.146 | -0.072 | -2.9 | 0/4 | -0.259 |
+| nypm | c4_don55_pos_renko16_eleave | 141 | 0.271 | 0.067 | 3.1 | 4/4 | 0.158 |
+| nypm | c4_brkF_near_renko16_against | 1575 | 0.099 | 0.067 | 2.9 | 4/4 | 0.075 |
+| nypm | c4_brk_near_renko16_against | 1575 | 0.099 | 0.067 | 2.9 | 4/4 | 0.075 |
+| nypm | c4_brkS_in_renko16_against | 775 | 0.116 | 0.067 | 2.7 | 4/4 | 0.185 |
+| pre | c4_pd_renko16_ewith | 596 | 0.218 | 0.081 | 3.3 | 4/4 | 0.115 |
+| pre | c4_w1_vortex7_renko16_divwith | 613 | -0.242 | -0.080 | -3.4 | 0/4 | -0.249 |
+| pre | c4_w1_ao_renko16_rise | 6387 | -0.108 | -0.076 | -3.3 | 0/4 | -0.027 |
+| pre | c4_halft_renko16_side | 7325 | -0.115 | -0.076 | -3.2 | 0/4 | -0.008 |
+| pre | c4_halft_renko16_against | 1871 | 0.115 | 0.076 | 3.2 | 4/4 | 0.008 |
+| pre | c4_smiF_renko16_divwith | 641 | -0.233 | -0.074 | -3.2 | 0/4 | -0.378 |
 
-**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (502 of 45792 cell-conditions pass; chance at t>2.5 alone ~283)**
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (755 of 63011 cell-conditions pass; chance at t>2.5 alone ~390)**
 
 | book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| M7 | asia | c4_w1_ema200_px_renko16_side | 2758 | 0.114 | -0.281 | 0.395 | 9.3 | 3/3 | 0.680 |
-| P7 | close | c4_sdS_cnt_renko16_side | 634 | 0.094 | -0.448 | 0.542 | 8.1 | 3/3 | 0.442 |
-| M7 | asia | c4_w1_sma200_px_renko16_side | 2725 | 0.114 | -0.231 | 0.345 | 7.9 | 3/3 | 0.320 |
-| M7 | asia | c4_w1_kama200_px_renko16_side | 2773 | 0.108 | -0.223 | 0.330 | 6.7 | 3/3 | 0.210 |
-| K7 | asia | c4_w1_ema200_px_renko16_side | 3742 | 0.084 | -0.120 | 0.204 | 6.6 | 4/4 | 0.248 |
-| P7 | close | c4_obF_cnt_renko16_side | 629 | 0.065 | -0.354 | 0.418 | 6.2 | 3/3 | 0.269 |
-| P7 | close | c4_ob_cnt_renko16_side | 629 | 0.065 | -0.354 | 0.418 | 6.2 | 3/3 | 0.269 |
-| P7 | close | c4_sdF_cnt_renko16_side | 645 | 0.061 | -0.375 | 0.436 | 6.2 | 3/3 | 0.308 |
-| M7 | asia | c4_w1_vwma200_px_renko16_side | 2706 | 0.110 | -0.163 | 0.273 | 6.1 | 3/3 | 0.462 |
-| K7 | asia | c4_fvgF_cnt_renko16_side | 3528 | 0.086 | -0.084 | 0.170 | 5.9 | 4/4 | 0.257 |
-| K7 | asia | c4_fvg_cnt_renko16_side | 3528 | 0.086 | -0.084 | 0.170 | 5.9 | 4/4 | 0.257 |
-| K7 | asia | c4_fvgS_cnt_renko16_side | 3528 | 0.086 | -0.084 | 0.170 | 5.9 | 4/4 | 0.257 |
-| P7 | close | c4_sd_cnt_renko16_side | 643 | 0.053 | -0.346 | 0.399 | 5.7 | 3/3 | 0.253 |
-| K7 | asia | c4_w1_ema100_px_renko16_side | 4007 | 0.071 | -0.122 | 0.193 | 5.5 | 4/4 | 0.143 |
-| K7 | asia | c4_w1_sma200_px_renko16_side | 3655 | 0.080 | -0.083 | 0.163 | 5.4 | 3/4 | 0.229 |
-| M7 | asia | c4_w1_ema_stack_slow_renko16_side | 2307 | 0.128 | -0.058 | 0.186 | 5.3 | 3/3 | 0.113 |
-| K7 | asia | c4_w1_kama200_px_renko16_side | 3817 | 0.075 | -0.093 | 0.168 | 5.2 | 4/4 | 0.166 |
-| K7 | asia | c4_w1_sma100_px_renko16_side | 3934 | 0.072 | -0.105 | 0.177 | 5.2 | 4/4 | 0.123 |
-| P7 | close | c4_obS_cnt_renko16_side | 617 | 0.051 | -0.296 | 0.347 | 5.1 | 3/3 | 0.159 |
-| M7 | asia | c4_w1_ema_stack_slow_renko16_hold3 | 2272 | 0.128 | -0.048 | 0.175 | 5.0 | 3/3 | 0.092 |
-| M7 | asia | c4_obF_cnt_renko16_side | 2466 | 0.119 | -0.073 | 0.192 | 4.9 | 3/3 | 0.124 |
-| M7 | asia | c4_ob_cnt_renko16_side | 2466 | 0.119 | -0.073 | 0.192 | 4.9 | 3/3 | 0.124 |
-| P7 | close | c4_lrcS_slope_renko16_side | 598 | 0.051 | -0.270 | 0.321 | 4.8 | 3/3 | 0.265 |
-| K7 | asia | c4_w1_kama100_px_renko16_side | 3948 | 0.069 | -0.092 | 0.161 | 4.7 | 4/4 | 0.115 |
-| M7 | asia | c4_obS_cnt_renko16_side | 2418 | 0.118 | -0.052 | 0.170 | 4.5 | 3/3 | 0.076 |
-| A7 | asia | c4_w1_cmf10_renko16_nodiv | 1726 | 0.171 | -0.021 | 0.192 | 4.4 | 4/4 | 0.153 |
-| K7 | asia | c4_ob_cnt_renko16_side | 2999 | 0.087 | -0.027 | 0.114 | 4.4 | 4/4 | 0.110 |
-| K7 | asia | c4_obF_cnt_renko16_side | 2999 | 0.087 | -0.027 | 0.114 | 4.4 | 4/4 | 0.110 |
-| K7 | asia | c4_w1_vwma200_px_renko16_side | 3626 | 0.074 | -0.056 | 0.131 | 4.4 | 4/4 | 0.187 |
-| K7 | asia | c4_obS_cnt_renko16_side | 2913 | 0.087 | -0.022 | 0.109 | 4.2 | 3/4 | 0.093 |
+| K7 | asia | c4_w1_ema200_px_renko16_side | 11040 | 0.065 | -0.054 | 0.119 | 5.4 | 4/4 | 0.203 |
+| K7 | asia | c4_fvgF_cnt_renko16_side | 10162 | 0.068 | -0.038 | 0.106 | 4.9 | 4/4 | 0.199 |
+| K7 | asia | c4_fvgS_cnt_renko16_side | 10162 | 0.068 | -0.038 | 0.106 | 4.9 | 4/4 | 0.199 |
+| K7 | asia | c4_fvg_cnt_renko16_side | 10162 | 0.068 | -0.038 | 0.106 | 4.9 | 4/4 | 0.199 |
+| K7 | asia | c4_w1_donchian50_pos_renko16_side | 12068 | 0.053 | -0.046 | 0.099 | 4.9 | 4/4 | 0.105 |
+| K7 | asia | c4_w1_ema100_px_renko16_side | 11965 | 0.055 | -0.051 | 0.106 | 4.7 | 4/4 | 0.213 |
+| K7 | asia | c4_don55_pos_renko16_side | 11961 | 0.053 | -0.042 | 0.095 | 4.7 | 4/4 | 0.108 |
+| K7 | asia | c4_w1_ema_8_21_stack_renko16_hold3 | 10568 | 0.056 | -0.022 | 0.079 | 4.6 | 4/4 | 0.093 |
+| K7 | asia | c4_krS_px_renko16_side | 12958 | 0.047 | -0.049 | 0.095 | 4.6 | 4/4 | 0.142 |
+| K7 | asia | c4_ob_cnt_renko16_side | 8790 | 0.075 | -0.026 | 0.101 | 4.6 | 4/4 | 0.099 |
+| K7 | asia | c4_obF_cnt_renko16_side | 8790 | 0.075 | -0.026 | 0.101 | 4.6 | 4/4 | 0.099 |
+| K7 | asia | c4_qqeS_renko16_side | 11479 | 0.055 | -0.036 | 0.090 | 4.5 | 4/4 | 0.087 |
+| K7 | asia | c4_mcgS_px_renko16_side | 13270 | 0.045 | -0.051 | 0.096 | 4.5 | 4/4 | 0.130 |
+| K7 | asia | c4_mcgS_slope_renko16_side | 13270 | 0.045 | -0.051 | 0.096 | 4.5 | 4/4 | 0.130 |
+| K7 | asia | c4_w1_keltner40_pos_renko16_side | 13096 | 0.046 | -0.050 | 0.096 | 4.5 | 4/4 | 0.125 |
+| K7 | asia | c4_w1_ema34_px_renko16_side | 13287 | 0.044 | -0.049 | 0.093 | 4.5 | 4/4 | 0.145 |
+| K7 | asia | c4_w1_macd12_26_9_line_renko16_side | 11476 | 0.054 | -0.033 | 0.087 | 4.5 | 4/4 | 0.058 |
+| K7 | asia | c4_w1_ao_renko16_side | 11271 | 0.053 | -0.025 | 0.078 | 4.4 | 4/4 | 0.066 |
+| K7 | asia | c4_w1_keltner40_pos_renko16_ewith | 9443 | 0.061 | -0.014 | 0.074 | 4.4 | 4/4 | 0.102 |
+| K7 | asia | c4_w1_sma50_px_renko16_side | 12477 | 0.049 | -0.043 | 0.093 | 4.4 | 4/4 | 0.182 |
+| K7 | asia | c4_w1_di21_renko16_side | 12710 | 0.048 | -0.046 | 0.093 | 4.4 | 4/4 | 0.074 |
+| K7 | asia | c4_w1_cci50_renko16_side | 12283 | 0.050 | -0.042 | 0.092 | 4.4 | 4/4 | 0.158 |
+| K7 | asia | c4_smieS_renko16_side | 11667 | 0.053 | -0.034 | 0.087 | 4.4 | 4/4 | 0.059 |
+| K7 | asia | c4_smie_renko16_side | 12652 | 0.047 | -0.040 | 0.087 | 4.4 | 4/4 | 0.176 |
+| K7 | asia | c4_rfiltS_dir_renko16_side | 10079 | 0.061 | -0.024 | 0.085 | 4.4 | 4/4 | 0.029 |
+| K7 | asia | c4_w1_rsi21_renko16_side | 13064 | 0.046 | -0.047 | 0.093 | 4.4 | 4/4 | 0.148 |
+| K7 | asia | c4_krS_dir_renko16_side | 12553 | 0.049 | -0.045 | 0.093 | 4.3 | 4/4 | 0.133 |
+| K7 | asia | c4_rsima21_renko16_side | 13069 | 0.045 | -0.047 | 0.092 | 4.3 | 4/4 | 0.148 |
+| K7 | asia | c4_w1_boll40_pctb_renko16_side | 12817 | 0.047 | -0.044 | 0.091 | 4.3 | 4/4 | 0.246 |
+| K7 | asia | c4_w1_vwma50_px_renko16_side | 12475 | 0.049 | -0.043 | 0.092 | 4.3 | 4/4 | 0.174 |
 
 ## B4 alternate bars: renko8
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2136; |t|>2: 331 (chance expectation ~97 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_renko8.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2136; |t|>2: 331 (chance expectation ~97 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_renko8.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
@@ -2463,117 +2463,117 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: tick2000
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2246; |t|>2: 1401 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_tick2000.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2259; |t|>2: 278 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_tick2000.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_lrcS_tick2000_ewith | 8626 | 0.18 | 0.143 | 0.019 | 0.124 [0.103, 0.145] | 11.7 | 3/4 | 0.157 | 0.172 |
-| c4_w1_rsi21_tick2000_ewith | 2796 | 0.06 | 0.221 | 0.031 | 0.189 [0.156, 0.223] | 11.1 | 3/4 | 0.242 | 0.240 |
-| c4_rsima21_tick2000_ewith | 2796 | 0.06 | 0.221 | 0.031 | 0.189 [0.156, 0.223] | 11.1 | 3/4 | 0.242 | 0.240 |
-| c4_lrc_tick2000_ewith | 8872 | 0.18 | 0.136 | 0.021 | 0.115 [0.094, 0.135] | 11.0 | 3/4 | 0.161 | 0.129 |
-| c4_tsiS_tick2000_ewith | 6098 | 0.13 | 0.157 | 0.026 | 0.131 [0.107, 0.155] | 10.7 | 3/4 | 0.134 | 0.203 |
-| c4_tsiF_tick2000_ewith | 18349 | 0.38 | 0.097 | 0.009 | 0.088 [0.072, 0.105] | 10.5 | 3/4 | 0.089 | 0.074 |
-| c4_smie_tick2000_ewith | 12067 | 0.25 | 0.115 | 0.018 | 0.097 [0.078, 0.115] | 10.3 | 3/4 | 0.110 | 0.176 |
-| c4_qqeS_tick2000_ewith | 1835 | 0.04 | 0.235 | 0.035 | 0.200 [0.160, 0.241] | 9.7 | 3/4 | 0.249 | 0.282 |
-| c4_sqzmS_bright_tick2000_hold3 | 16080 | 0.33 | 0.098 | 0.015 | 0.083 [0.066, 0.100] | 9.6 | 3/4 | 0.085 | 0.095 |
-| c4_w1_rsi14_tick2000_ewith | 5584 | 0.12 | 0.148 | 0.028 | 0.119 [0.095, 0.144] | 9.5 | 3/4 | 0.169 | 0.244 |
+| c4_w1_rsi21_tick2000_ewith | 8526 | 0.04 | 0.154 | 0.017 | 0.137 [0.074, 0.201] | 4.2 | 4/4 | 0.218 | 0.235 |
+| c4_rsima21_tick2000_ewith | 8543 | 0.04 | 0.153 | 0.017 | 0.137 [0.073, 0.200] | 4.2 | 4/4 | 0.218 | 0.235 |
+| c4_tsiS_tick2000_ewith | 21396 | 0.11 | 0.100 | 0.013 | 0.087 [0.041, 0.133] | 3.7 | 4/4 | 0.138 | 0.234 |
+| c4_qqeS_tick2000_ewith | 5219 | 0.03 | 0.179 | 0.018 | 0.161 [0.075, 0.247] | 3.7 | 4/4 | 0.194 | 0.280 |
+| c4_ker_dir_tick2000_ewith | 38374 | 0.20 | 0.061 | 0.013 | 0.048 [0.023, 0.074] | 3.7 | 4/4 | 0.028 | 0.015 |
+| c4_rsima21_tick2000_eenter | 4204 | 0.02 | 0.153 | 0.020 | 0.133 [0.060, 0.207] | 3.6 | 4/4 | 0.291 | 0.376 |
+| c4_w1_rsi21_tick2000_eenter | 4203 | 0.02 | 0.153 | 0.020 | 0.133 [0.060, 0.206] | 3.6 | 4/4 | 0.291 | 0.376 |
+| c4_smieS_tick2000_ewith | 23057 | 0.12 | 0.090 | 0.014 | 0.077 [0.034, 0.120] | 3.5 | 4/4 | 0.134 | 0.231 |
+| c4_ichiF_chikou_tick2000_side | 145472 | 0.76 | 0.033 | -0.010 | 0.043 [0.018, 0.069] | 3.3 | 4/4 | 0.018 | 0.010 |
+| c4_lrcS_tick2000_ewith | 30426 | 0.16 | 0.079 | 0.011 | 0.067 [0.027, 0.107] | 3.3 | 4/4 | 0.130 | 0.115 |
 
 **top negative lift = candidate veto (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_stAS_tick2000_against | 15368 | 0.32 | -0.014 | 0.068 | -0.082 [-0.099, -0.065] | -9.4 | 1/4 | -0.074 | -0.060 |
-| c4_turt10_tick2000_against | 7619 | 0.16 | -0.035 | 0.057 | -0.092 [-0.113, -0.070] | -8.4 | 0/4 | -0.002 | -0.020 |
-| c4_ichiF_chikou_tick2000_against | 11107 | 0.23 | -0.019 | 0.061 | -0.080 [-0.099, -0.061] | -8.4 | 0/4 | -0.029 | -0.018 |
-| c4_stA_tick2000_against | 13866 | 0.29 | -0.011 | 0.064 | -0.075 [-0.093, -0.057] | -8.3 | 1/4 | -0.057 | -0.048 |
-| c4_stP_tick2000_against | 15877 | 0.33 | -0.006 | 0.066 | -0.072 [-0.089, -0.055] | -8.2 | 1/4 | -0.068 | -0.042 |
-| c4_kerS_dir_tick2000_eagainst | 135 | 0.00 | -0.473 | 0.044 | -0.516 [-0.647, -0.385] | -7.7 | 0/4 | -0.475 | -0.464 |
-| c4_kerS_abs_tick2000_lo_z1 | 37184 | 0.77 | 0.025 | 0.099 | -0.075 [-0.094, -0.056] | -7.7 | 1/4 | -0.111 | -0.174 |
-| c4_lrcS_tick2000_eagainst | 1112 | 0.02 | -0.155 | 0.046 | -0.201 [-0.252, -0.150] | -7.7 | 0/4 | -0.097 | -0.027 |
-| c4_ichiS_cloud_tick2000_against | 11046 | 0.23 | -0.015 | 0.059 | -0.074 [-0.093, -0.055] | -7.6 | 1/4 | -0.075 | -0.045 |
-| c4_rfilt_dir_tick2000_against | 13062 | 0.27 | -0.007 | 0.061 | -0.068 [-0.086, -0.050] | -7.4 | 1/4 | -0.024 | -0.028 |
+| c4_almaF_slope_tick2000_fresh5 | 127934 | 0.67 | 0.012 | 0.045 | -0.034 [-0.053, -0.015] | -3.5 | 0/4 | -0.010 | 0.004 |
+| c4_ichiF_chikou_tick2000_against | 45549 | 0.24 | -0.010 | 0.033 | -0.043 [-0.069, -0.018] | -3.3 | 0/4 | -0.018 | -0.009 |
+| c4_don20_pos_tick2000_eagainst | 942 | 0.00 | -0.097 | 0.023 | -0.120 [-0.192, -0.049] | -3.3 | 0/4 | -0.078 | -0.114 |
+| c4_w1_donchian20_pos_tick2000_eagainst | 942 | 0.00 | -0.097 | 0.023 | -0.120 [-0.192, -0.049] | -3.3 | 0/4 | -0.078 | -0.114 |
+| c4_w1_ha_run_tick2000_fresh5 | 121484 | 0.63 | 0.011 | 0.044 | -0.033 [-0.052, -0.013] | -3.3 | 0/4 | -0.013 | -0.007 |
+| c4_alma_px_tick2000_fresh5 | 143612 | 0.75 | 0.015 | 0.047 | -0.033 [-0.053, -0.013] | -3.2 | 0/4 | -0.001 | 0.042 |
+| c4_w1_cci14_tick2000_eagainst_z1 | 7820 | 0.04 | -0.033 | 0.025 | -0.058 [-0.093, -0.023] | -3.2 | 0/4 | -0.011 | -0.037 |
+| c4_w1_pat_inside_tick2000_hi | 16292 | 0.09 | -0.015 | 0.026 | -0.041 [-0.066, -0.016] | -3.2 | 0/4 | -0.021 | -0.036 |
+| c4_t3_px_tick2000_fresh5 | 123289 | 0.64 | 0.011 | 0.043 | -0.032 [-0.052, -0.012] | -3.2 | 0/4 | -0.015 | -0.002 |
+| c4_chop_tick2000_hi_z1 | 26560 | 0.14 | -0.013 | 0.029 | -0.042 [-0.069, -0.015] | -3.1 | 0/4 | -0.026 | -0.004 |
 
-**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 1342 of 12307 session-condition cells pass (chance-level expectation under independence ~152 at |t|>2.5 before the sign filters)**
+**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 298 of 13131 session-condition cells pass (chance-level expectation under independence ~162 at |t|>2.5 before the sign filters)**
 
 | session | cond | n_yes | lift R | shrunk | t | yrs+ | L6M lift |
 |---|---|---|---|---|---|---|---|
-| asia | c4_qqeS_tick2000_ewith | 616 | 0.288 | 0.197 | 8.5 | 4/4 | 0.334 |
-| asia | c4_w1_rsi21_tick2000_ewith | 1206 | 0.237 | 0.190 | 9.5 | 4/4 | 0.299 |
-| asia | c4_rsima21_tick2000_ewith | 1206 | 0.237 | 0.190 | 9.5 | 4/4 | 0.299 |
-| asia | c4_fvgF_dres_tick2000_hi | 529 | -0.291 | -0.184 | -7.6 | 0/4 | -0.397 |
-| asia | c4_kerS_dir_tick2000_ewith | 606 | 0.257 | 0.174 | 7.4 | 4/4 | 0.305 |
-| asia | c4_kerS_dir_tick2000_eenter | 345 | 0.296 | 0.169 | 6.8 | 3/3 | 0.430 |
-| close | c4_w1_hma200_px_tick2000_divwith | 208 | 0.428 | 0.176 | 7.1 | 3/3 | 0.475 |
-| close | c4_w1_sma50_px_tick2000_divwith | 200 | 0.420 | 0.173 | 7.0 | 3/3 | 0.510 |
-| close | c4_w1_vwma50_px_tick2000_divwith | 199 | 0.421 | 0.173 | 7.0 | 3/3 | 0.513 |
-| close | c4_w1_sma100_px_tick2000_divwith | 175 | 0.397 | 0.154 | 6.3 | 3/3 | 0.388 |
-| close | c4_stcS_tick2000_divwith | 238 | 0.351 | 0.153 | 6.2 | 3/3 | 0.304 |
-| close | c4_w1_vwma100_px_tick2000_divwith | 176 | 0.389 | 0.151 | 6.2 | 3/3 | 0.388 |
-| london | c4_rsima21_tick2000_divwith | 1370 | -0.218 | -0.175 | -8.8 | 0/4 | -0.221 |
-| london | c4_w1_rsi21_tick2000_divwith | 1370 | -0.218 | -0.175 | -8.8 | 0/4 | -0.221 |
-| london | c4_w1_kama100_px_tick2000_divwith | 1065 | -0.220 | -0.169 | -8.0 | 0/4 | -0.272 |
-| london | c4_smiF_tick2000_divwith | 2143 | -0.194 | -0.166 | -9.4 | 0/4 | -0.198 |
-| london | c4_w1_kama8_px_tick2000_divwith | 2005 | -0.186 | -0.158 | -8.8 | 0/4 | -0.247 |
-| london | c4_w1_kama50_px_tick2000_divwith | 1317 | -0.198 | -0.158 | -7.9 | 0/4 | -0.217 |
-| nyam | c4_w1_sma200_px_tick2000_fresh5 | 1000 | -0.141 | -0.102 | -4.5 | 0/4 | -0.254 |
-| nyam | c4_w1_vwma200_px_tick2000_fresh5 | 988 | -0.139 | -0.100 | -4.4 | 0/4 | -0.249 |
-| nyam | c4_turt10_tick2000_against | 630 | -0.144 | -0.095 | -4.0 | 0/4 | -0.340 |
-| nyam | c4_ichiS_tk_tick2000_nodiv | 6309 | -0.116 | -0.093 | -4.6 | 0/4 | -0.056 |
-| nyam | c4_w1_ichi_slow_tkkj_tick2000_nodiv | 6309 | -0.116 | -0.093 | -4.6 | 0/4 | -0.056 |
-| nyam | c4_w1_aroon14_tick2000_nodiv | 6725 | -0.120 | -0.092 | -4.4 | 0/4 | -0.111 |
-| nypm | c4_w1_hma100_px_tick2000_fresh5 | 1568 | 0.193 | 0.147 | 6.9 | 4/4 | 0.201 |
-| nypm | c4_w1_demarker21_tick2000_nodiv | 3973 | 0.176 | 0.124 | 5.5 | 4/4 | 0.172 |
-| nypm | c4_alma_px_tick2000_fresh5 | 3780 | -0.162 | -0.119 | -5.4 | 0/4 | -0.162 |
-| nypm | c4_w1_rsi2_tick2000_fresh5 | 3835 | -0.162 | -0.118 | -5.3 | 0/4 | -0.174 |
-| nypm | c4_crsi_tick2000_nodiv | 3469 | 0.149 | 0.113 | 5.3 | 4/4 | 0.201 |
-| nypm | c4_fvg_cnt_tick2000_fresh5 | 205 | -0.293 | -0.111 | -4.6 | 0/4 | -0.443 |
-| pre | c4_sdflip_near_tick2000_side | 412 | 0.462 | 0.212 | 8.5 | 3/3 | 0.295 |
-| pre | c4_sdflip_near_tick2000_hold3 | 299 | 0.466 | 0.193 | 7.8 | 3/3 | 0.351 |
-| pre | c4_stPF_tick2000_hold3 | 941 | 0.380 | 0.182 | 7.3 | 3/3 | 0.227 |
-| pre | c4_w1_cci50_tick2000_ewith_z1 | 570 | 0.368 | 0.179 | 7.2 | 3/3 | 0.260 |
-| pre | c4_stPF_tick2000_against | 509 | -0.380 | -0.178 | -7.1 | 0/3 | -0.213 |
-| pre | c4_stPF_tick2000_side | 990 | 0.380 | 0.178 | 7.1 | 3/3 | 0.213 |
+| asia | c4_w1_uo_tick2000_eagainst | 305 | -0.249 | -0.110 | -4.4 | 0/4 | -0.456 |
+| asia | c4_lrcS_tick2000_ewith | 11049 | 0.141 | 0.105 | 4.9 | 4/4 | 0.289 |
+| asia | c4_w1_rsi21_tick2000_ewith | 3747 | 0.183 | 0.094 | 3.8 | 4/4 | 0.259 |
+| asia | c4_rsima21_tick2000_ewith | 3763 | 0.181 | 0.094 | 3.7 | 4/4 | 0.259 |
+| asia | c4_w1_willr21_tick2000_eagainst | 3817 | -0.113 | -0.086 | -4.1 | 0/4 | -0.007 |
+| asia | c4_lrc_tick2000_eagainst | 1742 | -0.126 | -0.086 | -3.7 | 0/4 | -0.190 |
+| close | c4_w1_boll40_walk_tick2000_side | 731 | 0.186 | 0.081 | 3.3 | 4/4 | 0.221 |
+| close | c4_fvg_near_tick2000_hold3 | 1802 | 0.141 | 0.079 | 3.2 | 4/4 | 0.153 |
+| close | c4_sebF_tick2000_fresh5 | 8164 | -0.094 | -0.074 | -3.5 | 0/4 | -0.301 |
+| close | c4_w1_aroon50_tick2000_nodiv | 11832 | 0.116 | 0.070 | 2.8 | 4/4 | 0.160 |
+| close | c4_brkF_in_tick2000_side | 850 | 0.136 | 0.067 | 2.7 | 4/4 | 0.109 |
+| close | c4_obF_near_tick2000_hold3 | 1508 | -0.131 | -0.067 | -2.7 | 0/4 | -0.108 |
+| london | c4_w1_boll10_pctb_tick2000_eagainst | 780 | -0.139 | -0.077 | -3.1 | 0/4 | -0.149 |
+| london | c4_ifvgS_in_tick2000_side | 1746 | 0.146 | 0.072 | 2.9 | 4/4 | 0.351 |
+| london | c4_w1_willr7_tick2000_eagainst | 1818 | -0.108 | -0.071 | -3.0 | 0/4 | -0.027 |
+| london | c4_ifvgF_in_tick2000_side | 2778 | 0.114 | 0.067 | 2.7 | 4/4 | 0.270 |
+| london | c4_ifvgS_in_tick2000_hold3 | 501 | 0.241 | 0.064 | 2.9 | 4/4 | 0.466 |
+| london | c4_wtS_tick2000_ewith_z2 | 9263 | 0.101 | 0.063 | 2.6 | 4/4 | 0.150 |
+| nyam | c4_nwe_tick2000_eenter | 171 | -0.385 | -0.088 | -4.2 | 0/4 | -0.243 |
+| nyam | c4_nwe_tick2000_ewith | 183 | -0.315 | -0.086 | -3.8 | 0/4 | -0.032 |
+| nyam | c4_kerF_dir_tick2000_eagainst | 784 | 0.122 | 0.075 | 3.1 | 4/4 | 0.063 |
+| nyam | c4_stA21_tick2000_fresh1 | 965 | -0.107 | -0.071 | -3.0 | 0/4 | -0.075 |
+| nyam | c4_chochS_tick2000_fresh1 | 649 | -0.125 | -0.069 | -2.8 | 0/4 | -0.253 |
+| nyam | c4_smieF_tick2000_eleave | 982 | -0.108 | -0.063 | -2.6 | 0/4 | -0.270 |
+| nypm | c4_sd_cnt_tick2000_fresh5 | 1148 | -0.205 | -0.094 | -3.8 | 0/4 | -0.135 |
+| nypm | c4_sdflip_in_tick2000_side | 2601 | -0.108 | -0.078 | -3.5 | 0/4 | -0.010 |
+| nypm | c4_sdflipS_in_tick2000_side | 1941 | -0.123 | -0.077 | -3.2 | 0/4 | -0.046 |
+| nypm | c4_sdF_cnt_tick2000_fresh5 | 1362 | -0.157 | -0.073 | -2.9 | 0/4 | -0.213 |
+| nypm | c4_w1_linreg_chan50_tick2000_eleave | 295 | 0.266 | 0.069 | 3.1 | 4/4 | 0.307 |
+| nypm | c4_pdF_tick2000_ewith | 1297 | 0.129 | 0.069 | 2.8 | 4/4 | 0.086 |
+| pre | c4_crsiF_tick2000_eleave | 241 | 0.403 | 0.075 | 3.9 | 4/4 | 0.073 |
+| pre | c4_rsima14_tick2000_nodiv | 7912 | 0.219 | 0.065 | 2.9 | 4/4 | 0.018 |
+| pre | c4_w1_rsi14_tick2000_nodiv | 7912 | 0.219 | 0.065 | 2.9 | 4/4 | 0.018 |
+| pre | c4_qqeF_tick2000_eenter | 806 | -0.201 | -0.060 | -2.6 | 0/4 | -0.259 |
+| pre | c4_alma_x_tick2000_nodiv | 7946 | 0.205 | 0.059 | 2.6 | 4/4 | 0.368 |
+| pre | c4_elderS_bear_tick2000_rise | 5501 | 0.078 | 0.057 | 2.5 | 4/4 | 0.123 |
 
-**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (2420 of 48683 cell-conditions pass; chance at t>2.5 alone ~301)**
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (785 of 65947 cell-conditions pass; chance at t>2.5 alone ~408)**
 
 | book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| P7 | asia | c4_lrcS_tick2000_ewith | 1191 | 0.238 | 0.025 | 0.213 | 7.9 | 3/4 | 0.353 |
-| M7 | asia | c4_w1_atr_pct100_tick2000_hi | 2219 | 0.145 | -0.086 | 0.231 | 6.9 | 3/3 | 0.318 |
-| K7 | asia | c4_w1_kama50_px_tick2000_side | 2653 | 0.119 | -0.052 | 0.171 | 6.8 | 4/4 | 0.229 |
-| M7 | asia | c4_stAS_tick2000_side | 2050 | 0.158 | -0.073 | 0.231 | 6.8 | 3/3 | 0.262 |
-| P7 | asia | c4_w1_atr_pct100_tick2000_hi | 3848 | 0.119 | -0.046 | 0.165 | 6.8 | 4/4 | 0.299 |
-| A7 | asia | c4_wt_tick2000_nodiv | 2061 | 0.164 | -0.226 | 0.391 | 6.6 | 4/4 | 0.621 |
-| M7 | asia | c4_w1_kama8_px_tick2000_side | 2460 | 0.132 | -0.133 | 0.265 | 6.6 | 3/3 | 0.166 |
-| K7 | asia | c4_ssl_tick2000_hold3 | 2162 | 0.134 | -0.030 | 0.163 | 6.5 | 4/4 | 0.157 |
-| P7 | asia | c4_w1_rsi21_tick2000_ewith | 393 | 0.326 | 0.052 | 0.273 | 6.5 | 4/4 | 0.340 |
-| P7 | asia | c4_rsima21_tick2000_ewith | 393 | 0.326 | 0.053 | 0.273 | 6.5 | 4/4 | 0.340 |
-| M7 | asia | c4_turt55_tick2000_fresh5 | 310 | 0.363 | 0.055 | 0.308 | 6.5 | 3/3 | 0.360 |
-| M7 | asia | c4_stAS_tick2000_hold3 | 1915 | 0.163 | -0.051 | 0.214 | 6.5 | 3/3 | 0.254 |
-| K7 | asia | c4_qqemod_tick2000_hold3 | 1556 | 0.160 | -0.010 | 0.170 | 6.5 | 4/4 | 0.275 |
-| P7 | asia | c4_qqeS_tick2000_ewith | 221 | 0.403 | 0.058 | 0.345 | 6.4 | 3/3 | 0.429 |
-| K7 | asia | c4_w1_willr14_tick2000_side | 2862 | 0.108 | -0.054 | 0.162 | 6.3 | 4/4 | 0.150 |
-| P7 | asia | c4_w1_rsi14_tick2000_ewith | 791 | 0.239 | 0.043 | 0.196 | 6.3 | 4/4 | 0.273 |
-| P7 | asia | c4_rsima14_tick2000_ewith | 791 | 0.239 | 0.044 | 0.196 | 6.3 | 4/4 | 0.273 |
-| K7 | asia | c4_w1_eom14_tick2000_side | 2588 | 0.116 | -0.042 | 0.158 | 6.3 | 4/4 | 0.131 |
-| K7 | asia | c4_ichiF_score_tick2000_ewith | 1748 | 0.147 | -0.014 | 0.161 | 6.3 | 3/4 | 0.233 |
-| M7 | asia | c4_stA_tick2000_side | 2123 | 0.149 | -0.070 | 0.219 | 6.2 | 3/3 | 0.126 |
-| M7 | asia | c4_w1_supertrend_10_3_tick2000_side | 2123 | 0.149 | -0.070 | 0.219 | 6.2 | 3/3 | 0.126 |
-| K7 | asia | c4_qqeS_tick2000_side | 2510 | 0.118 | -0.038 | 0.156 | 6.2 | 3/4 | 0.238 |
-| K7 | asia | c4_pd_tick2000_eagainst | 1990 | 0.136 | -0.020 | 0.156 | 6.2 | 3/4 | 0.187 |
-| K7 | asia | c4_w1_ema100_px_tick2000_side | 2651 | 0.113 | -0.043 | 0.156 | 6.2 | 3/4 | 0.190 |
-| P7 | asia | c4_w1_hma_stack_fast_tick2000_hold3 | 1631 | 0.178 | 0.026 | 0.151 | 6.2 | 4/4 | 0.161 |
-| K7 | asia | c4_sslhyb_tick2000_hold3 | 1800 | 0.143 | -0.014 | 0.157 | 6.2 | 4/4 | 0.186 |
-| K7 | asia | c4_stA_tick2000_hold3 | 2280 | 0.125 | -0.029 | 0.153 | 6.1 | 3/4 | 0.162 |
-| K7 | asia | c4_hilo_tick2000_hold3 | 2144 | 0.129 | -0.024 | 0.153 | 6.1 | 3/4 | 0.165 |
-| K7 | asia | c4_w1_kama34_px_tick2000_side | 2700 | 0.111 | -0.044 | 0.155 | 6.1 | 3/4 | 0.197 |
-| M7 | asia | c4_sqzmF_mom_tick2000_side | 2169 | 0.145 | -0.071 | 0.215 | 6.1 | 3/3 | 0.132 |
+| K7 | asia | c4_w1_eom14_tick2000_side | 8311 | 0.082 | -0.028 | 0.110 | 5.4 | 4/4 | 0.126 |
+| K7 | asia | c4_ichiF_chikou_tick2000_side | 8706 | 0.079 | -0.030 | 0.109 | 5.3 | 4/4 | 0.101 |
+| K7 | asia | c4_w1_boll20_pctb_tick2000_side | 8889 | 0.079 | -0.033 | 0.112 | 5.3 | 4/4 | 0.102 |
+| K7 | asia | c4_w1_force13_tick2000_side | 9121 | 0.075 | -0.032 | 0.107 | 5.3 | 4/4 | 0.089 |
+| K7 | asia | c4_lrcS_tick2000_ewith | 1838 | 0.169 | 0.011 | 0.158 | 5.2 | 4/4 | 0.323 |
+| K7 | asia | c4_w1_willr14_tick2000_side | 9043 | 0.079 | -0.036 | 0.115 | 5.2 | 4/4 | 0.111 |
+| K7 | asia | c4_mcg_px_tick2000_side | 9120 | 0.076 | -0.033 | 0.109 | 5.2 | 4/4 | 0.102 |
+| K7 | asia | c4_mcg_slope_tick2000_side | 9120 | 0.076 | -0.033 | 0.109 | 5.2 | 4/4 | 0.102 |
+| K7 | asia | c4_w1_kama34_px_tick2000_side | 8735 | 0.079 | -0.030 | 0.109 | 5.1 | 4/4 | 0.167 |
+| K7 | asia | c4_w1_keltner10_pos_tick2000_side | 9351 | 0.072 | -0.030 | 0.102 | 5.1 | 4/4 | 0.083 |
+| K7 | asia | c4_krF_px_tick2000_side | 9117 | 0.075 | -0.032 | 0.107 | 5.1 | 4/4 | 0.114 |
+| K7 | asia | c4_w1_vwma21_px_tick2000_side | 8844 | 0.077 | -0.030 | 0.108 | 5.1 | 4/4 | 0.108 |
+| K7 | asia | c4_ichiF_kj_tick2000_side | 9067 | 0.076 | -0.032 | 0.109 | 5.0 | 4/4 | 0.121 |
+| K7 | asia | c4_w1_cmo9_tick2000_ewith | 2545 | 0.131 | 0.013 | 0.119 | 5.0 | 4/4 | 0.136 |
+| K7 | asia | c4_w1_sma21_px_tick2000_side | 8871 | 0.077 | -0.030 | 0.107 | 5.0 | 4/4 | 0.115 |
+| K7 | asia | c4_w1_ema21_px_tick2000_side | 8996 | 0.077 | -0.032 | 0.109 | 5.0 | 4/4 | 0.132 |
+| K7 | asia | c4_w1_rsi7_tick2000_side | 9170 | 0.073 | -0.030 | 0.103 | 5.0 | 4/4 | 0.090 |
+| K7 | asia | c4_w1_keltner20_pos_tick2000_side | 9013 | 0.076 | -0.031 | 0.107 | 5.0 | 4/4 | 0.112 |
+| K7 | asia | c4_rsima7_tick2000_side | 9180 | 0.073 | -0.029 | 0.103 | 4.9 | 4/4 | 0.090 |
+| K7 | asia | c4_w1_ichi_fast_lag_tick2000_side | 7517 | 0.083 | -0.017 | 0.100 | 4.9 | 4/4 | 0.104 |
+| K7 | asia | c4_nweS_tick2000_side | 8828 | 0.078 | -0.032 | 0.110 | 4.9 | 4/4 | 0.137 |
+| K7 | asia | c4_almaS_px_tick2000_side | 8908 | 0.076 | -0.029 | 0.106 | 4.9 | 4/4 | 0.097 |
+| K7 | asia | c4_w1_kama50_px_tick2000_side | 8566 | 0.079 | -0.027 | 0.106 | 4.9 | 4/4 | 0.196 |
+| K7 | asia | c4_w1_donchian20_pos_tick2000_side | 8867 | 0.075 | -0.027 | 0.103 | 4.8 | 4/4 | 0.087 |
+| K7 | asia | c4_don20_pos_tick2000_side | 8867 | 0.075 | -0.027 | 0.103 | 4.8 | 4/4 | 0.087 |
+| K7 | asia | c4_w1_ema8_px_tick2000_side | 9487 | 0.069 | -0.028 | 0.098 | 4.8 | 4/4 | 0.079 |
+| P7 | nypm | c4_lrc_tick2000_eagainst | 63 | 0.534 | -0.019 | 0.553 | 4.8 | 4/4 | 0.859 |
+| K7 | asia | c4_rvi_tick2000_side | 8209 | 0.081 | -0.024 | 0.105 | 4.8 | 4/4 | 0.124 |
+| K7 | asia | c4_mcgF_slope_tick2000_side | 9447 | 0.069 | -0.028 | 0.097 | 4.8 | 4/4 | 0.087 |
+| K7 | asia | c4_mcgF_px_tick2000_side | 9447 | 0.069 | -0.028 | 0.097 | 4.8 | 4/4 | 0.087 |
 
 ## B4 alternate bars: vol2000
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2244; |t|>2: 1296 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_vol2000.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2244; |t|>2: 1296 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_vol2000.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
@@ -2683,110 +2683,110 @@ Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, 
 
 ## B4 alternate bars: vol500
 
-Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by trading day (blocks scored before 2026-11-15 17:00Z used naive SEs and are re-scored). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2219; |t|>2: 804 (chance expectation ~100 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_vol500.parquet`.
+Outcome = R (W-CF1 signals_all: every signal of the universe, taken = engine R, skipped = hypothetical 1m-bar R); lifts are in R per trade; the 95% CI and t are CLUSTER-ROBUST by calendar week (rescored with weekly clusters 2026-11-15). A second table on TAKEN trades only in net $ per base contract (engine fee) is in step3usd_<block>.parquet. Conditions with n_yes>=100 and n_no>=100 in ALL/ALL: 2246; |t|>2: 236 (chance expectation ~102 if independent; conditions are strongly correlated across timeframes and cluster counts are W-CF3's job). Full table (every condition x book x session cell, share yes, mean yes/no, win rate yes/no, lift with 95% CI, per-year and L6M/L3M/L1M lifts, years positive): `/mnt/l2/l2vast/_confl/cols_cf4/step3_alt_vol500.parquet`.
 
 **top 10 positive lift (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_obF_cnt_vol500_side | 34867 | 0.72 | 0.066 | -0.018 | 0.084 [0.066, 0.102] | 9.3 | 3/4 | 0.071 | 0.010 |
-| c4_w1_ema_stack_slow_vol500_side | 31027 | 0.64 | 0.068 | -0.004 | 0.072 [0.055, 0.088] | 8.5 | 3/4 | 0.047 | 0.022 |
-| c4_ob_cnt_vol500_side | 34404 | 0.71 | 0.063 | -0.010 | 0.074 [0.056, 0.091] | 8.2 | 3/4 | 0.059 | -0.021 |
-| c4_stAS_vol500_side | 38726 | 0.80 | 0.059 | -0.024 | 0.082 [0.063, 0.102] | 8.2 | 4/4 | 0.024 | 0.015 |
-| c4_w1_ema_stack_slow_vol500_hold3 | 30279 | 0.63 | 0.068 | -0.001 | 0.068 [0.052, 0.085] | 8.2 | 3/4 | 0.044 | 0.032 |
-| c4_w1_atr_pct250_vol500_hi | 31708 | 0.66 | 0.066 | -0.003 | 0.070 [0.053, 0.087] | 8.0 | 4/4 | 0.123 | 0.115 |
-| c4_w1_sma100_px_vol500_side | 41839 | 0.87 | 0.054 | -0.036 | 0.090 [0.067, 0.113] | 7.7 | 4/4 | 0.076 | 0.084 |
-| c4_w1_supertrend_14_4_vol500_side | 38464 | 0.80 | 0.058 | -0.019 | 0.077 [0.057, 0.096] | 7.7 | 4/4 | 0.022 | 0.004 |
-| c4_w1_vwma100_px_vol500_side | 41823 | 0.87 | 0.054 | -0.035 | 0.089 [0.066, 0.112] | 7.6 | 4/4 | 0.075 | 0.084 |
-| c4_w1_trix30_vol500_side | 35364 | 0.73 | 0.061 | -0.008 | 0.069 [0.051, 0.087] | 7.6 | 3/4 | 0.033 | 0.015 |
+| c4_stAS_vol500_side | 150336 | 0.78 | 0.032 | -0.011 | 0.043 [0.017, 0.069] | 3.2 | 4/4 | -0.004 | -0.014 |
+| c4_w1_ema50_px_vol500_side | 172890 | 0.90 | 0.027 | -0.015 | 0.042 [0.016, 0.068] | 3.2 | 4/4 | 0.026 | 0.014 |
+| c4_krS_dir_vol500_side | 170718 | 0.89 | 0.027 | -0.013 | 0.040 [0.016, 0.065] | 3.2 | 4/4 | 0.018 | 0.012 |
+| c4_w1_supertrend_14_4_vol500_side | 149437 | 0.78 | 0.032 | -0.011 | 0.044 [0.017, 0.071] | 3.2 | 4/4 | -0.016 | -0.041 |
+| c4_qqeS_vol500_side | 163385 | 0.85 | 0.028 | -0.009 | 0.038 [0.014, 0.061] | 3.2 | 4/4 | 0.006 | -0.013 |
+| c4_smieS_vol500_side | 163818 | 0.86 | 0.028 | -0.008 | 0.036 [0.013, 0.058] | 3.1 | 4/4 | -0.005 | -0.025 |
+| c4_w1_linreg_chan10_vol500_eleave | 8273 | 0.04 | 0.063 | 0.021 | 0.042 [0.015, 0.069] | 3.1 | 3/4 | 0.033 | 0.111 |
+| c4_stAS_vol500_hold3 | 144111 | 0.75 | 0.032 | -0.006 | 0.039 [0.014, 0.064] | 3.0 | 4/4 | -0.011 | -0.011 |
+| c4_w1_donchian50_pos_vol500_side | 168013 | 0.88 | 0.028 | -0.011 | 0.039 [0.013, 0.064] | 3.0 | 4/4 | 0.004 | -0.031 |
+| c4_kstS_vol500_side | 141080 | 0.74 | 0.033 | -0.004 | 0.037 [0.012, 0.062] | 2.9 | 3/4 | 0.011 | 0.013 |
 
 **top negative lift = candidate veto (ALL/ALL)**
 
 | cond | n_yes | share | mean yes | mean no | lift [95% CI] | t | yrs+ | L6M lift | L3M lift |
 |---|---|---|---|---|---|---|---|---|---|
-| c4_stAS_vol500_against | 9627 | 0.20 | -0.024 | 0.059 | -0.082 [-0.102, -0.063] | -8.2 | 0/4 | -0.024 | -0.015 |
-| c4_ichiS_cloud_vol500_against | 5082 | 0.11 | -0.041 | 0.052 | -0.093 [-0.118, -0.067] | -7.2 | 0/4 | -0.044 | -0.036 |
-| c4_ichi_cloud_vol500_against | 4672 | 0.10 | -0.038 | 0.051 | -0.089 [-0.115, -0.062] | -6.6 | 0/4 | -0.031 | -0.033 |
-| c4_chandS_vol500_against | 7041 | 0.15 | -0.022 | 0.053 | -0.075 [-0.097, -0.052] | -6.6 | 0/4 | -0.050 | -0.056 |
-| c4_stP_vol500_against | 9956 | 0.21 | -0.009 | 0.056 | -0.065 [-0.085, -0.046] | -6.5 | 0/4 | -0.041 | -0.010 |
-| c4_obS_near_vol500_against | 9887 | 0.20 | -0.009 | 0.055 | -0.064 [-0.084, -0.044] | -6.4 | 1/4 | -0.090 | -0.083 |
-| c4_stPS_vol500_against | 11563 | 0.24 | -0.001 | 0.056 | -0.057 [-0.076, -0.039] | -6.0 | 1/4 | -0.010 | 0.010 |
-| c4_stA_vol500_against | 9063 | 0.19 | -0.007 | 0.054 | -0.061 [-0.082, -0.041] | -5.9 | 0/4 | -0.033 | -0.028 |
-| c4_sqzm_mom_vol500_divwith | 4365 | 0.09 | -0.033 | 0.050 | -0.082 [-0.110, -0.055] | -5.8 | 0/4 | -0.100 | -0.090 |
-| c4_w1_sqz_hist_vol500_divwith | 4365 | 0.09 | -0.033 | 0.050 | -0.082 [-0.110, -0.055] | -5.8 | 0/4 | -0.100 | -0.090 |
+| c4_w1_ichi_slow_lag_vol500_divwith | 4689 | 0.02 | -0.069 | 0.025 | -0.094 [-0.146, -0.042] | -3.5 | 0/4 | -0.180 | -0.229 |
+| c4_w1_ema21_hold_vol500_against | 4530 | 0.02 | -0.034 | 0.024 | -0.058 [-0.091, -0.025] | -3.4 | 0/4 | -0.066 | -0.065 |
+| c4_w1_ema_8_21_34_stack_vol500_against | 17909 | 0.09 | -0.013 | 0.026 | -0.039 [-0.062, -0.017] | -3.4 | 0/4 | -0.029 | -0.024 |
+| c4_w1_ema_stack_fast_vol500_against | 17909 | 0.09 | -0.013 | 0.026 | -0.039 [-0.062, -0.017] | -3.4 | 0/4 | -0.029 | -0.024 |
+| c4_sfpF_vol500_against | 13088 | 0.07 | -0.010 | 0.025 | -0.035 [-0.056, -0.015] | -3.3 | 0/4 | -0.101 | -0.110 |
+| c4_ichiS_score_vol500_eagainst | 9177 | 0.05 | -0.024 | 0.025 | -0.050 [-0.079, -0.020] | -3.3 | 0/4 | -0.062 | -0.006 |
+| c4_stAS_vol500_against | 41184 | 0.22 | -0.011 | 0.032 | -0.043 [-0.069, -0.017] | -3.2 | 0/4 | 0.004 | 0.014 |
+| c4_kstS_vol500_fresh5 | 23009 | 0.12 | -0.004 | 0.027 | -0.031 [-0.050, -0.012] | -3.2 | 0/4 | -0.043 | -0.062 |
+| c4_turt55_vol500_against | 16903 | 0.09 | -0.020 | 0.027 | -0.047 [-0.076, -0.018] | -3.2 | 1/4 | -0.004 | 0.024 |
+| c4_elderF_bull_vol500_nodiv | 150679 | 0.79 | 0.016 | 0.047 | -0.031 [-0.051, -0.011] | -3.0 | 0/4 | -0.056 | -0.082 |
 
-**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 744 of 12191 session-condition cells pass (chance-level expectation under independence ~151 at |t|>2.5 before the sign filters)**
+**Per session, same sign every year (>=3 years tested) and in L6M, cluster-robust |t|>2.5, shrunk lift (prior sd 0.05 R): 375 of 13033 session-condition cells pass (chance-level expectation under independence ~161 at |t|>2.5 before the sign filters)**
 
 | session | cond | n_yes | lift R | shrunk | t | yrs+ | L6M lift |
 |---|---|---|---|---|---|---|---|
-| asia | c4_w1_ao_vol500_divwith | 1262 | -0.217 | -0.175 | -8.8 | 0/4 | -0.392 |
-| asia | c4_kstF_vol500_divwith | 1435 | -0.204 | -0.167 | -8.7 | 0/4 | -0.245 |
-| asia | c4_w1_wave_long_hist_vol500_divwith | 1438 | -0.203 | -0.166 | -8.7 | 0/4 | -0.289 |
-| asia | c4_sqzm_mom_vol500_divwith | 1717 | -0.195 | -0.164 | -9.0 | 0/4 | -0.311 |
-| asia | c4_w1_sqz_hist_vol500_divwith | 1717 | -0.194 | -0.164 | -9.0 | 0/4 | -0.311 |
-| asia | c4_wt_vol500_divwith | 1072 | -0.209 | -0.163 | -7.9 | 0/4 | -0.369 |
-| close | c4_w1_kama_stack_slow_vol500_hold3 | 1447 | 0.225 | 0.146 | 6.1 | 3/3 | 0.159 |
-| close | c4_w1_kama_stack_slow_vol500_against | 218 | -0.358 | -0.143 | -5.8 | 0/3 | -0.429 |
-| close | c4_w1_kama_stack_slow_vol500_side | 1484 | 0.214 | 0.138 | 5.8 | 3/3 | 0.133 |
-| close | c4_sd_cnt_vol500_side | 2029 | 0.215 | 0.113 | 4.5 | 3/3 | 0.319 |
-| close | c4_smiF_vol500_nodiv | 1967 | 0.191 | 0.107 | 4.3 | 3/3 | 0.200 |
-| close | c4_w1_macd8_17_9_hist_vol500_nodiv | 1893 | 0.183 | 0.107 | 4.3 | 3/3 | 0.256 |
-| london | c4_w1_pat_pin_vol500_nodiv | 13686 | -0.160 | -0.119 | -5.5 | 0/4 | -0.065 |
-| london | c4_w1_mfi21_vol500_ewith | 262 | -0.251 | -0.112 | -4.5 | 0/4 | -0.369 |
-| london | c4_ichiS_score_vol500_eagainst | 582 | -0.161 | -0.105 | -4.4 | 0/4 | -0.128 |
-| london | c4_pdS_vol500_eleave | 782 | 0.143 | 0.101 | 4.4 | 4/4 | 0.256 |
-| london | c4_w1_kama50_px_vol500_side | 13113 | 0.121 | 0.099 | 5.1 | 4/4 | 0.030 |
-| london | c4_wtS_vol500_eenter_z1 | 370 | 0.182 | 0.099 | 4.0 | 4/4 | 0.104 |
-| nyam | c4_w1_ichi_slow_lag_vol500_nodiv | 7874 | 0.186 | 0.079 | 3.2 | 4/4 | 0.339 |
-| nyam | c4_sdF_cnt_vol500_fresh5 | 442 | -0.130 | -0.074 | -3.0 | 0/4 | -0.116 |
-| nyam | c4_ichiS_tk_vol500_fresh5 | 993 | -0.095 | -0.069 | -3.1 | 0/4 | -0.114 |
-| nyam | c4_w1_ichi_slow_tkkj_vol500_fresh5 | 993 | -0.095 | -0.069 | -3.1 | 0/4 | -0.114 |
-| nyam | c4_wtF_vol500_eenter_z1 | 678 | -0.102 | -0.068 | -2.9 | 0/4 | -0.085 |
-| nyam | c4_fvgS_cnt_vol500_fresh5 | 500 | -0.113 | -0.067 | -2.7 | 0/4 | -0.104 |
-| nypm | c4_kerS_dir_vol500_fresh5 | 1192 | -0.156 | -0.113 | -5.1 | 0/4 | -0.174 |
-| nypm | c4_ichiS_chikou_vol500_fresh5 | 1192 | -0.156 | -0.113 | -5.1 | 0/4 | -0.174 |
-| nypm | c4_w1_ichi_slow_lag_vol500_fresh5 | 1330 | -0.137 | -0.102 | -4.7 | 0/4 | -0.154 |
-| nypm | c4_sqzm_mom_vol500_nodiv | 3828 | -0.140 | -0.102 | -4.6 | 0/4 | -0.158 |
-| nypm | c4_w1_sqz_hist_vol500_nodiv | 3828 | -0.140 | -0.102 | -4.6 | 0/4 | -0.158 |
-| nypm | c4_ote_vol500_against | 354 | -0.185 | -0.093 | -3.7 | 0/4 | -0.099 |
-| pre | c4_lrcS_slope_vol500_side | 873 | 0.329 | 0.160 | 6.4 | 3/3 | 0.197 |
-| pre | c4_w1_ema_stack_slow_vol500_hold3 | 888 | 0.325 | 0.158 | 6.3 | 3/3 | 0.236 |
-| pre | c4_w1_ema_stack_slow_vol500_side | 903 | 0.312 | 0.150 | 6.0 | 3/3 | 0.227 |
-| pre | c4_w1_sma_stack_slow_vol500_side | 712 | 0.294 | 0.145 | 5.8 | 3/3 | 0.228 |
-| pre | c4_w1_vwma_stack_slow_vol500_side | 712 | 0.294 | 0.145 | 5.8 | 3/3 | 0.228 |
-| pre | c4_fvg_cnt_vol500_side | 1021 | 0.310 | 0.142 | 5.7 | 3/3 | 0.182 |
+| asia | c4_w1_keltner40_pos_vol500_eagainst | 754 | -0.170 | -0.108 | -4.5 | 0/4 | -0.271 |
+| asia | c4_w1_demarker21_vol500_eagainst | 782 | -0.137 | -0.094 | -4.1 | 0/4 | -0.309 |
+| asia | c4_w1_keltner20_pos_vol500_eagainst | 370 | -0.168 | -0.089 | -3.6 | 0/4 | -0.337 |
+| asia | c4_tsiF_vol500_eagainst | 1214 | -0.117 | -0.087 | -3.9 | 0/4 | -0.089 |
+| asia | c4_w1_ema21_hold_vol500_against | 2251 | -0.111 | -0.086 | -4.1 | 0/4 | -0.126 |
+| asia | c4_w1_ema50_px_vol500_side | 53047 | 0.092 | 0.080 | 4.7 | 4/4 | 0.080 |
+| close | c4_sqzmF_mom_vol500_fresh1 | 727 | -0.103 | -0.070 | -3.0 | 0/4 | -0.151 |
+| close | c4_w1_vwma200_px_vol500_fresh5 | 1215 | -0.099 | -0.067 | -2.9 | 0/4 | -0.137 |
+| close | c4_w1_sma200_px_vol500_fresh5 | 1209 | -0.098 | -0.066 | -2.8 | 0/4 | -0.136 |
+| close | c4_fvgF_cnt_vol500_fresh5 | 748 | -0.116 | -0.066 | -2.7 | 0/4 | -0.161 |
+| close | c4_stA_vol500_fresh1 | 406 | -0.117 | -0.066 | -2.6 | 0/4 | -0.241 |
+| close | c4_w1_supertrend_10_3_vol500_rise | 406 | -0.117 | -0.066 | -2.6 | 0/4 | -0.241 |
+| london | c4_ifvg_in_vol500_hold3 | 374 | 0.212 | 0.095 | 3.8 | 4/4 | 0.288 |
+| london | c4_ifvgF_in_vol500_hold3 | 378 | 0.211 | 0.095 | 3.8 | 4/4 | 0.288 |
+| london | c4_w1_ichi_fast_lag_vol500_divwith | 1412 | 0.180 | 0.084 | 3.4 | 4/4 | 0.003 |
+| london | c4_rsima21_vol500_eenter | 460 | -0.160 | -0.076 | -3.0 | 0/4 | -0.135 |
+| london | c4_w1_rsi21_vol500_eenter | 460 | -0.160 | -0.076 | -3.0 | 0/4 | -0.135 |
+| london | c4_ifvgS_in_vol500_hold3 | 327 | 0.199 | 0.071 | 3.0 | 4/4 | 0.323 |
+| nyam | c4_stcF_vol500_divwith | 1995 | 0.099 | 0.074 | 3.4 | 4/4 | 0.063 |
+| nyam | c4_w1_cmo21_vol500_ewith | 1505 | -0.095 | -0.072 | -3.4 | 0/4 | -0.037 |
+| nyam | c4_w1_keltner40_pos_vol500_eleave | 201 | 0.182 | 0.065 | 2.7 | 4/4 | 0.023 |
+| nyam | c4_w1_linreg_chan50_vol500_ewith | 866 | -0.103 | -0.065 | -2.7 | 0/4 | -0.095 |
+| nyam | c4_w1_linreg_chan20_vol500_eagainst | 229 | 0.219 | 0.063 | 2.8 | 4/4 | 0.317 |
+| nyam | c4_lrc_vol500_ewith | 2239 | -0.076 | -0.060 | -2.9 | 0/4 | -0.044 |
+| nypm | c4_ichiS_futcloud_vol500_fresh1 | 450 | -0.130 | -0.071 | -2.9 | 0/4 | -0.141 |
+| nypm | c4_sfpF_vol500_fresh5 | 2610 | 0.089 | 0.071 | 3.5 | 4/4 | 0.076 |
+| nypm | c4_ichiF_cloud_vol500_against | 1364 | 0.100 | 0.071 | 3.1 | 4/4 | 0.065 |
+| nypm | c4_sfp_vol500_fresh5 | 1561 | 0.099 | 0.068 | 2.9 | 4/4 | 0.053 |
+| nypm | c4_krS_px_vol500_side | 23493 | -0.091 | -0.067 | -3.1 | 0/4 | -0.006 |
+| nypm | c4_w1_vwma50_px_vol500_side | 23360 | -0.088 | -0.065 | -3.0 | 0/4 | -0.005 |
+| pre | c4_w1_trix15_vol500_divwith | 956 | -0.212 | -0.083 | -3.4 | 0/4 | -0.261 |
+| pre | c4_stcF_vol500_divwith | 605 | 0.231 | 0.083 | 3.5 | 4/4 | 0.247 |
+| pre | c4_w1_stoch21_vol500_eleave | 344 | 0.197 | 0.080 | 3.3 | 4/4 | 0.331 |
+| pre | c4_w1_hv_pct50_vol500_hi | 3115 | 0.158 | 0.079 | 3.2 | 4/4 | 0.126 |
+| pre | c4_mcgF_px_vol500_nodiv | 6973 | 0.122 | 0.076 | 3.2 | 4/4 | 0.088 |
+| pre | c4_w1_macd12_26_9_hist_vol500_divwith | 619 | 0.197 | 0.074 | 3.0 | 4/4 | 0.257 |
 
-**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (846 of 47802 cell-conditions pass; chance at t>2.5 alone ~296)**
+**book x session cells: lift t>2.5, >=3 positive years, L6M lift positive (597 of 65287 cell-conditions pass; chance at t>2.5 alone ~404)**
 
 | book | sess | cond | n_yes | mean yes | mean no | lift | t | yrs+ | L6M |
 |---|---|---|---|---|---|---|---|---|---|
-| P7 | pre | c4_sdF_cnt_vol500_side | 283 | 0.266 | -0.338 | 0.604 | 6.2 | 3/3 | 0.431 |
-| M7 | asia | c4_w1_kama100_px_vol500_side | 2718 | 0.112 | -0.196 | 0.308 | 6.1 | 3/3 | 0.300 |
-| P7 | asia | c4_w1_atr_pct250_vol500_hi | 4794 | 0.097 | -0.133 | 0.229 | 6.0 | 4/4 | 0.250 |
-| M7 | asia | c4_lrcF_slope_vol500_side | 2205 | 0.141 | -0.072 | 0.213 | 6.0 | 3/3 | 0.161 |
-| M7 | asia | c4_w1_linreg_slope50_vol500_side | 2205 | 0.141 | -0.072 | 0.213 | 6.0 | 3/3 | 0.161 |
-| K7 | asia | c4_obF_cnt_vol500_side | 2493 | 0.114 | -0.033 | 0.147 | 5.9 | 3/4 | 0.180 |
-| M7 | close | c4_w1_kama_stack_slow_vol500_hold3 | 416 | 0.160 | -0.248 | 0.408 | 5.8 | 3/3 | 0.350 |
-| M7 | asia | c4_w1_ema100_px_vol500_side | 2738 | 0.109 | -0.192 | 0.301 | 5.7 | 3/3 | 0.275 |
-| M7 | asia | c4_w1_vwma100_px_vol500_side | 2681 | 0.113 | -0.166 | 0.279 | 5.7 | 3/3 | 0.204 |
-| K7 | asia | c4_ob_cnt_vol500_side | 2428 | 0.114 | -0.027 | 0.141 | 5.6 | 3/4 | 0.174 |
-| M7 | close | c4_w1_kama_stack_slow_vol500_side | 426 | 0.151 | -0.249 | 0.400 | 5.6 | 3/3 | 0.316 |
-| M7 | asia | c4_w1_sma100_px_vol500_side | 2684 | 0.113 | -0.163 | 0.275 | 5.6 | 3/3 | 0.193 |
-| M7 | asia | c4_w1_hma_stack_slow_vol500_hold3 | 1284 | 0.187 | 0.010 | 0.177 | 5.5 | 3/3 | 0.208 |
-| P7 | pre | c4_sd_cnt_vol500_side | 281 | 0.246 | -0.292 | 0.539 | 5.5 | 3/3 | 0.354 |
-| P7 | pre | c4_w1_ema_stack_slow_vol500_hold3 | 252 | 0.276 | -0.246 | 0.522 | 5.5 | 3/3 | 0.430 |
-| P7 | pre | c4_lrcS_slope_vol500_side | 239 | 0.290 | -0.227 | 0.516 | 5.5 | 3/3 | 0.435 |
-| A7 | london | c4_w1_atr_pct250_vol500_hi | 1030 | 0.102 | -0.199 | 0.301 | 5.5 | 3/3 | 0.287 |
-| M7 | asia | c4_w1_donchian50_pos_vol500_side | 2765 | 0.107 | -0.198 | 0.305 | 5.5 | 3/3 | 0.321 |
-| M7 | asia | c4_krS_dir_vol500_side | 2830 | 0.102 | -0.235 | 0.337 | 5.4 | 3/3 | 0.244 |
-| K7 | asia | c4_w1_ema_stack_slow_vol500_side | 2101 | 0.121 | -0.015 | 0.135 | 5.4 | 3/4 | 0.163 |
-| K7 | asia | c4_w1_donchian50_pos_vol500_side | 3474 | 0.085 | -0.071 | 0.156 | 5.4 | 4/4 | 0.204 |
-| M7 | asia | c4_stPS_vol500_hold3 | 2141 | 0.138 | -0.047 | 0.186 | 5.3 | 3/3 | 0.123 |
-| K7 | asia | c4_w1_sma100_px_vol500_side | 3187 | 0.091 | -0.052 | 0.143 | 5.3 | 4/4 | 0.161 |
-| M7 | asia | c4_w1_ema50_px_vol500_side | 2847 | 0.100 | -0.240 | 0.340 | 5.2 | 3/3 | 0.356 |
-| K7 | asia | c4_w1_ema100_px_vol500_side | 3302 | 0.088 | -0.057 | 0.145 | 5.2 | 4/4 | 0.161 |
-| M7 | asia | c4_w1_sma50_px_vol500_side | 2811 | 0.103 | -0.217 | 0.320 | 5.2 | 3/3 | 0.351 |
-| K7 | asia | c4_w1_hma_stack_slow_vol500_hold3 | 1481 | 0.142 | 0.003 | 0.139 | 5.2 | 4/4 | 0.176 |
-| P7 | pre | c4_w1_ema_stack_slow_vol500_side | 255 | 0.261 | -0.233 | 0.494 | 5.2 | 3/3 | 0.397 |
-| K7 | asia | c4_w1_vwma100_px_vol500_side | 3182 | 0.090 | -0.050 | 0.140 | 5.2 | 4/4 | 0.164 |
-| P7 | pre | c4_fvg_cnt_vol500_side | 278 | 0.238 | -0.266 | 0.504 | 5.2 | 3/3 | 0.365 |
+| K7 | asia | c4_w1_ema100_px_vol500_side | 10379 | 0.067 | -0.043 | 0.110 | 5.0 | 4/4 | 0.156 |
+| K7 | asia | c4_w1_ema50_px_vol500_side | 11281 | 0.060 | -0.047 | 0.107 | 4.9 | 4/4 | 0.171 |
+| K7 | asia | c4_w1_stoch21_vol500_side | 10717 | 0.059 | -0.030 | 0.088 | 4.8 | 4/4 | 0.150 |
+| K7 | asia | c4_w1_keltner40_pos_vol500_side | 11677 | 0.057 | -0.047 | 0.104 | 4.8 | 4/4 | 0.172 |
+| K7 | asia | c4_w1_sma100_px_vol500_side | 10064 | 0.068 | -0.038 | 0.106 | 4.8 | 4/4 | 0.145 |
+| K7 | asia | c4_w1_vwma100_px_vol500_side | 10055 | 0.068 | -0.037 | 0.105 | 4.7 | 4/4 | 0.145 |
+| K7 | asia | c4_stPS_vol500_side | 8588 | 0.078 | -0.027 | 0.104 | 4.7 | 4/4 | 0.119 |
+| K7 | asia | c4_rsima21_vol500_side | 11631 | 0.056 | -0.046 | 0.102 | 4.7 | 4/4 | 0.169 |
+| K7 | asia | c4_w1_rsi21_vol500_side | 11628 | 0.057 | -0.045 | 0.102 | 4.6 | 4/4 | 0.169 |
+| K7 | asia | c4_w1_di14_vol500_side | 11409 | 0.056 | -0.038 | 0.094 | 4.6 | 4/4 | 0.124 |
+| K7 | asia | c4_w1_kama200_px_vol500_side | 10032 | 0.066 | -0.033 | 0.099 | 4.6 | 4/4 | 0.139 |
+| K7 | asia | c4_kr_dir_vol500_side | 12088 | 0.053 | -0.048 | 0.101 | 4.6 | 4/4 | 0.189 |
+| K7 | asia | c4_krS_dir_vol500_side | 10925 | 0.061 | -0.041 | 0.102 | 4.6 | 4/4 | 0.168 |
+| K7 | asia | c4_w1_donchian20_pos_vol500_side | 12159 | 0.051 | -0.041 | 0.092 | 4.6 | 4/4 | 0.174 |
+| K7 | asia | c4_don20_pos_vol500_side | 12159 | 0.051 | -0.041 | 0.092 | 4.6 | 4/4 | 0.174 |
+| K7 | asia | c4_w1_di21_vol500_side | 10835 | 0.060 | -0.035 | 0.095 | 4.6 | 4/4 | 0.165 |
+| K7 | asia | c4_w1_kama100_px_vol500_side | 10412 | 0.065 | -0.039 | 0.104 | 4.5 | 4/4 | 0.134 |
+| K7 | asia | c4_kr_px_vol500_side | 12256 | 0.051 | -0.046 | 0.098 | 4.5 | 4/4 | 0.171 |
+| K7 | asia | c4_stPS_vol500_hold3 | 8338 | 0.077 | -0.022 | 0.099 | 4.5 | 4/4 | 0.117 |
+| K7 | asia | c4_mcgS_slope_vol500_side | 11904 | 0.053 | -0.043 | 0.097 | 4.4 | 4/4 | 0.191 |
+| K7 | asia | c4_mcgS_px_vol500_side | 11904 | 0.053 | -0.043 | 0.097 | 4.4 | 4/4 | 0.191 |
+| K7 | asia | c4_w1_willr21_vol500_side | 12081 | 0.051 | -0.040 | 0.091 | 4.4 | 4/4 | 0.198 |
+| K7 | asia | c4_rfiltS_vol500_side | 12295 | 0.050 | -0.041 | 0.091 | 4.4 | 4/4 | 0.170 |
+| K7 | asia | c4_smie_vol500_side | 10974 | 0.057 | -0.030 | 0.087 | 4.4 | 4/4 | 0.175 |
+| K7 | asia | c4_krS_px_vol500_side | 11502 | 0.056 | -0.041 | 0.097 | 4.4 | 4/4 | 0.199 |
+| K7 | asia | c4_w1_ema200_px_vol500_side | 9771 | 0.067 | -0.030 | 0.097 | 4.4 | 4/4 | 0.155 |
+| K7 | asia | c4_ichi_kj_vol500_side | 11751 | 0.053 | -0.038 | 0.092 | 4.3 | 4/4 | 0.221 |
+| K7 | asia | c4_w1_sma200_px_vol500_side | 9553 | 0.068 | -0.028 | 0.096 | 4.3 | 4/4 | 0.139 |
+| K7 | asia | c4_w1_ema34_px_vol500_side | 11946 | 0.053 | -0.043 | 0.096 | 4.3 | 4/4 | 0.199 |
+| K7 | asia | c4_w1_vwma200_px_vol500_side | 9553 | 0.068 | -0.028 | 0.096 | 4.3 | 4/4 | 0.140 |

@@ -314,3 +314,187 @@ Caveats: 11,364 cells per target were scanned, so a few percent pass by chance; 
 
 ### 9.6 Files for W-CH2 and W-D10
 /mnt/l2/l2vast/_chop/f1/calls6_<HGB|LRp|LRs>_<ALL|OWN>_<target|tD_q|tD_cpt>_<h>.parquet (h = 0,15,30,45,60,75,90,105,120; HGB OWN and logistic ALL/per-session saved): day, sess, call_epoch, score, chop_flag (top third of training scores), the target, rest_net, n_rest. NaN before 2024-07-01. Best candidates for the exact engine: calls6_HGB_OWN_tD_cpt_0 (London pre-session), calls6_LRs_ALL_tD_cpt_90 / calls6_HGB_OWN_tD_cpt_75 (London), with off_epoch from the flip_calls3 files of section 8.
+
+
+## 10. RESTART RE-STATEMENT 2026-11-15: weekly cluster-robust inputs table, nonsense 99th-percentile bar, bucket call files, per-minute API
+Code: code/th_chop1/ch_zw.py, ch_zw_table.py (table), ch_api.py + ch_api_test.py (per-minute entry point); data /mnt/l2/l2vast/_chop/f1/zw_all.parquet, zw_wide_real.parquet, input_table_zw.csv/.md, chop_bucket_calls.parquet. Dollar columns: JN05W2 BASE lots (live x1.75), fee $4.84 NQ RT proxy included in net_fee. FIRST PASS.
+Standard applied (replaces the placebo-p screen of sections 3 and 9.1 for every statement about "forecasts"): zw = z of the OLS slope of the 0/1 target on the rank-normalised input with ISO-WEEK cluster-robust (CR0) errors, in three windows OLDER 2023-04..2025-06, RECENT 2025-07..2026-10, L6M 2026-05..2026-10. Nonsense: 200 inputs per session x clock x target cell through the identical pipeline (100 circular shifts of real inputs of that cell, 60-400 sessions, which keeps their autocorrelation and missingness; 100 AR(1) noises, rho 0.5-0.95). Nonsense 99th-percentile |zw| bars: tD_cpt OLDER 3.18 / RECENT 3.57 / L6M 5.47; tD_q 3.14 / 4.18 / 5.85; market label 3.15 / 3.69 / 6.93. PASS = |zw| above the bar in RECENT and OLDER (OLDER skipped if the input did not exist), same sign, and same sign with |zw| > 2 in L6M. Inputs with one value in more than 90% of the sessions (sparse per-book cut counts) are excluded: they gave |zw| of 15-30 purely from tiny support (cut_U7, cut_H7, cut_A7) and are an artifact of CR0 with a handful of non-zero weeks.
+Result (352 inputs x 9 clocks x 4 sessions x 3 targets): the nonsense pass rate under this rule is 0.16% (market label), 0.19% (tD_q), 0.16% (tD_cpt). Real inputs pass at 0.31% (market label), 0.15% (tD_q), 1.08% (tD_cpt) before the sparse-support exclusion. After it: 0 cells for the market-shape label, 0 for tD_q, 15 for tD_cpt, all in asia and London. So the earlier "35 / 67 / 189 consistent cells" are mostly NOT surviving: the old screen used a placebo that kept serial correlation out of the tail and ignored week clustering.
+What survives for tD_cpt (D7 cuts per target for the rest of the session), zw OLDER / RECENT / L6M: asia Bollinger width 1-min last 30 min at 105 min (+4.7 / +5.6 / +6.2) and Keltner width 3-min last 60 min at 90 min (+4.7 / +4.7 / +6.5); asia implied-move ratio to the NDX sigma at 75 min (+3.3 / +3.7 / +4.7); asia mbp-10 spread since start at 105 min (+4.0 / +3.9 / +3.6) and quote changes per minute (+4.4 / +3.6 / +3.3); asia range-forecast c top bucket at 60 min (RECENT +4.0 / L6M +3.2) and rank at 90 min; London Keltner width 15-min at 120 min (+4.9 / +4.3 / +2.7), Bollinger width since start at 105 min (+4.2 / +3.8 / +2.5), profile value-area width / ATR at 90 min (+3.9 / +3.6 / +3.9), forecast range b top bucket at 120 min (+4.3 / +2.2), HMM P(choppy) since start at 120 min (-3.3 / -4.1 / -2.3, i.e. a higher P(choppy state) means FEWER cuts per target: the HMM "choppy" state is the quiet state). All are the same thing: range/volatility already shown (wide bands, high implied ratio, wide spread, many quote changes) predicts more cuts per target; none is a quiet-chop detector. No cut-cluster, gamma, sector, effort, HTF, calendar, ZN, megacap, clock or Cboe input passes; nothing passes for the market-shape label or tD_q.
+Calls under the same standard (flag f33, rest-of-session D7 net regressed on the flag, week clusters, nonsense = the same flag series shifted 5-100 sessions): London S_tD_cpt_90 older beta -$1,212 zw -1.98 (nonsense99 2.48), L6M -$2,990 zw -2.19 (2.72), all 2024-07..2026-10 -$1,476 zw -2.65 (2.47, nonsense max 3.24). London K7 call (B_K7_90) older -$606 zw -2.76 (2.85), L6M -$952 zw -2.81 (2.91), all -$683 zw -3.66 (2.83, nonsense max 2.84). So the London calls clear the nonsense bar only on the pooled 2024-07..2026-10 sample (K7 clearly, the stack call narrowly) and are borderline in each window: lead, not a confirmed result. The exact-engine tests in DS3_CHOP_ACTIONS.md are the judge.
+### Input table, weekly cluster-robust (A L N P = asia london nyam nypm sessions with at least one passing cell; last column = strongest passing cell, zw OLDER / RECENT / L6M)
+| input (family:name) | market label (A L N P) | D7 tD_q | D7 tD_cpt | best passing cell (target, session, input, clock): zw OLDER / RECENT / L6M |
+|--|--|--|--|--|
+| bars:corr_nq_es | .... | .... | .... |  |
+| bars:corr_nq_es_r60 | .... | .... | .... |  |
+| bars:corr_nq_es_r90 | .... | .... | .... |  |
+| bars:corr_nq_rty | .... | .... | .... |  |
+| bars:corr_nq_rty_r60 | .... | .... | .... |  |
+| bars:corr_nq_rty_r90 | .... | .... | .... |  |
+| bars:cross | .... | .... | .... |  |
+| bars:cross_r60 | .... | .... | .... |  |
+| bars:cross_r90 | .... | .... | .... |  |
+| bars:disp | .... | .... | .... |  |
+| bars:er | .... | .... | .... |  |
+| bars:er_r60 | .... | .... | .... |  |
+| bars:er_r90 | .... | .... | .... |  |
+| bars:nr | .... | .... | .... |  |
+| bars:nr_r60 | .... | .... | .... |  |
+| bars:nr_r90 | .... | .... | .... |  |
+| bars:ppc_ratio | .... | .... | .... |  |
+| bars:rng_sf_atr | .... | .... | .... |  |
+| bars:rsflip | .... | .... | .... |  |
+| bars:vol_ratio | .... | .... | .... |  |
+| book:aimb5 | .... | .... | .... |  |
+| book:churn_tr | .... | .... | .... |  |
+| book:churn_tr_r30 | .... | .... | .... |  |
+| book:churn_tr_sf | .... | .... | .... |  |
+| book:dep10 | .... | .... | .... |  |
+| book:dep10_r30 | .... | .... | .... |  |
+| book:dep10_sf | .... | .... | .... |  |
+| book:imb5 | .... | .... | .... |  |
+| book:maxage | .... | .... | .... |  |
+| book:maxage_r30 | .... | .... | .... |  |
+| book:maxage_sf | .... | .... | .... |  |
+| book:nchg | .... | .... | A... | tD_cpt asia mb_nchg_r30 h105: +4.4 / +3.6 / +3.3 |
+| book:nchg_r30 | .... | .... | .... |  |
+| book:nchg_sf | .... | .... | .... |  |
+| book:pull_tr | .... | .... | .... |  |
+| book:pull_tr_r30 | .... | .... | .... |  |
+| book:pull_tr_sf | .... | .... | .... |  |
+| book:spread | .... | .... | A... | tD_cpt asia mb_spread_sf h105: +4.0 / +3.9 / +3.6 |
+| calendar:E_earn_prev | .... | .... | .... |  |
+| calendar:E_ev_day | .... | .... | .... |  |
+| calendar:E_hi_day | .... | .... | .... |  |
+| calendar:monthend | .... | .... | .... |  |
+| calendar:opexday | .... | .... | .... |  |
+| calendar:opexweek | .... | .... | .... |  |
+| clock:fripm | .... | .... | .... |  |
+| clock:holweek | .... | .... | .... |  |
+| clock:rate_dow_tD_cpt | .... | .... | .... |  |
+| clock:rate_dow_tD_q | .... | .... | .... |  |
+| clock:rate_dow_target | .... | .... | .... |  |
+| clock:rate_hol_tD_cpt | .... | .... | .... |  |
+| clock:rate_hol_tD_q | .... | .... | .... |  |
+| clock:rate_hol_target | .... | .... | .... |  |
+| clock:rate_me_tD_cpt | .... | .... | .... |  |
+| clock:rate_me_tD_q | .... | .... | .... |  |
+| clock:rate_me_target | .... | .... | .... |  |
+| cluster:cut | .... | .... | .... |  |
+| cluster:cut_A7 | .... | .... | .... |  |
+| cluster:cut_H7 | .... | .... | .... |  |
+| cluster:cut_K7 | .... | .... | .... |  |
+| cluster:cut_M7 | .... | .... | .... |  |
+| cluster:cut_P7 | .... | .... | .... |  |
+| cluster:cut_U7 | .... | .... | .... |  |
+| cluster:cutnt | .... | .... | .... |  |
+| cluster:cutnt_A7 | .... | .... | .... |  |
+| cluster:cutnt_H7 | .... | .... | .... |  |
+| cluster:cutnt_K7 | .... | .... | .... |  |
+| cluster:cutnt_M7 | .... | .... | .... |  |
+| cluster:cutnt_P7 | .... | .... | .... |  |
+| cluster:cutnt_U7 | .... | .... | .... |  |
+| cluster:cutratio | .... | .... | .... |  |
+| effort:adelta_pp | .... | .... | .... |  |
+| effort:dflip_ph | .... | .... | .... |  |
+| effort:ext_age | .... | .... | .... |  |
+| effort:ext_vol | .... | .... | .... |  |
+| effort:vol_pp | .... | .... | .... |  |
+| gamma:0dte_share | .... | .... | .... |  |
+| gamma:dir_sign | .... | .... | .... |  |
+| gamma:flip_dist | .... | .... | .... |  |
+| gamma:gk_net | .... | .... | .... |  |
+| gamma:sign | .... | .... | .... |  |
+| gamma:size_rank | .... | .... | .... |  |
+| gamma:zc | .... | .... | .... |  |
+| gauge:ac1 | .... | .... | .... |  |
+| gauge:bbw | .... | .... | AL.. | tD_cpt asia g1_r30_bbw h105: +4.7 / +5.6 / +6.2 |
+| gauge:chi | .... | .... | .... |  |
+| gauge:disp | .... | .... | .... |  |
+| gauge:dx | .... | .... | .... |  |
+| gauge:er | .... | .... | .... |  |
+| gauge:hurst | .... | .... | .... |  |
+| gauge:kcw | .... | .... | AL.. | tD_cpt asia g3_r60_kcw h90: +4.7 / +4.7 / +6.5 |
+| gauge:sqz | .... | .... | .... |  |
+| gauge:vr4 | .... | .... | .... |  |
+| htf:d_er10 | .... | .... | .... |  |
+| htf:days_since_big | .... | .... | .... |  |
+| htf:h4_er | .... | .... | .... |  |
+| htf:in_va5 | .... | .... | .... |  |
+| htf:inside_day | .... | .... | .... |  |
+| htf:nr4 | .... | .... | .... |  |
+| htf:nr7 | .... | .... | .... |  |
+| htf:poc5_dist_atr | .... | .... | .... |  |
+| htf:pos10d | .... | .... | .... |  |
+| htf:pos3d | .... | .... | .... |  |
+| htf:pos5d | .... | .... | .... |  |
+| htf:rng10d_atr | .... | .... | .... |  |
+| htf:rng3d_atr | .... | .... | .... |  |
+| htf:rng5d_atr | .... | .... | .... |  |
+| htf:va5_dist_atr | .... | .... | .... |  |
+| implied:ndx_ratio | .... | .... | A... | tD_cpt asia imp_ndx_ratio h75: +3.3 / +3.7 / +4.7 |
+| implied:vix_ratio | .... | .... | .... |  |
+| megacap:breadth | .... | .... | .... |  |
+| megacap:corr | .... | .... | .... |  |
+| megacap:disp | .... | .... | .... |  |
+| megacap:er | .... | .... | .... |  |
+| prior:d_poc_atr | .... | .... | .... |  |
+| prior:er_prev | .... | .... | .... |  |
+| prior:gap_atr | .... | .... | .... |  |
+| prior:in_rng | .... | .... | .... |  |
+| prior:in_va | .... | .... | .... |  |
+| prior:latr | .... | .... | .... |  |
+| prior:on6_atr | .... | .... | .... |  |
+| prior:prev_big | .... | .... | .... |  |
+| prior:prev_chop | .... | .... | .... |  |
+| prior:prev_cs | .... | .... | .... |  |
+| prior:prev_rng_atr | .... | .... | .... |  |
+| profile:in_va | .... | .... | .... |  |
+| profile:npeaks | .... | .... | .... |  |
+| profile:poc_mig | .... | .... | .... |  |
+| profile:poc_mig_abs | .... | .... | .... |  |
+| profile:rot | .... | .... | .... |  |
+| profile:rot_ph | .... | .... | .... |  |
+| profile:va_w_atr | .... | .... | .L.. | tD_cpt london pf_va_w_atr h90: +3.9 / +3.6 / +3.9 |
+| profile:va_w_rng | .... | .... | .... |  |
+| rangefc:rf_q10 | .... | .... | AL.. | tD_cpt asia rfc_q10 h60: +nan / +4.0 / +3.2 |
+| rangefc:rf_q3 | .... | .... | .... |  |
+| rangefc:rf_q5 | .... | .... | AL.. | tD_cpt asia rfc_q5 h60: +nan / +3.7 / +2.5 |
+| rangefc:rf_rk | .... | .... | AL.. | tD_cpt asia rfc_rk h90: +nan / +3.6 / +3.7 |
+| rangefc:rfa | .... | .... | .... |  |
+| rangefc:rfb | .... | .... | .... |  |
+| rangefc:rfc | .... | .... | .... |  |
+| regime:rg2_p | .... | .... | .... |  |
+| regime:rg2_p30 | .... | .... | .... |  |
+| regime:rg2_psf | .... | .... | .L.. | tD_cpt london rg2_psf h120: -3.3 / -4.1 / -2.3 |
+| regime:rg3_p | .... | .... | .... |  |
+| regime:rg3_p30 | .... | .... | .... |  |
+| regime:rg3_psf | .... | .... | .... |  |
+| sector:disp | .... | .... | .... |  |
+| sector:iwm_spy_flips | .... | .... | .... |  |
+| sector:qqq_spy_flips | .... | .... | .... |  |
+| sector:with | .... | .... | .... |  |
+| volx:cor1m | .... | .... | .... |  |
+| volx:cor1m_chg5 | .... | .... | .... |  |
+| volx:cor1m_rank | .... | .... | .... |  |
+| volx:cor3m | .... | .... | .... |  |
+| volx:cor_term | .... | .... | .... |  |
+| volx:vix | .... | .... | .... |  |
+| volx:vix9_term | .... | .... | .... |  |
+| volx:vix_chg5 | .... | .... | .... |  |
+| volx:vix_rank | .... | .... | .... |  |
+| volx:vix_term | .... | .... | .... |  |
+| volx:vvix | .... | .... | .... |  |
+| volx:vvix_chg5 | .... | .... | .... |  |
+| volx:vvix_rank | .... | .... | .... |  |
+| volx:vvix_vix | .... | .... | .... |  |
+| zn:er | .... | .... | .... |  |
+| zn:rng | .... | .... | .... |  |
+| zn:rng_sf | .... | .... | .... |  |
+| zn:vol | .... | .... | .... |  |
+| zn:vol_sf | .... | .... | .... |  |
+
+### 10.1 Bucket for BASIC_TESTS Part 1b ("chop call vs trend call")
+File /mnt/l2/l2vast/_chop/f1/chop_bucket_calls.parquet: one row per (day, sess, version): call_epoch, chop_flag (1 = chop call, 0 = trend call; trend_call = 1 - chop_flag), score, off_epoch (flip-back epoch where defined, NaN otherwise), validated (1 = the version/session pair is one of the leads above, 0 = not validated, use only as a labelled bucket). Versions: S_tD_cpt_90_f33 (call at session start + 90 min, flag from calls3_S_tD_cpt_90, off_epoch from the flip rule; validated for London), K7_90_f33 (K7's own rest-of-session book, London), HGB_OWN_tD_cpt_pre (pre-session call, call_epoch = session start, London), LRs_ALL_tD_cpt_90. Use S_tD_cpt_90_f33 as THE chop-vs-trend bucket for London and the pre-session version when the grid needs a call known at the session start. Asia/nyam/nypm rows exist for completeness but no call is validated there (flag rates 22-69% with no stable lead). Flags are NaN before 2024-07-01 (walk-forward start); rows currently end 2026-10-16 (see 10.3).
+### 10.2 Per-minute entry point for the minute-grid forecast
+code/th_chop1/ch_api.py: `cf = ChopFeatures(); x = cf.at(day, sess, T)` returns every causal feature at epoch T (bars with ts+60 <= T; session sess in asia/london/nyam/nypm of Globex day `day`); `cf.grid(day, sess, step=60, first=900)` returns one row per minute. Families: gauges g{1,3,5,15}_{sf,r30,r60,r120}_*, ctx_* (HTF), pf_* (profile), ef_* (effort vs result), sec_* (ETF), clk_*, gm_* (gamma), rg2_*/rg3_* (HMM), mb_* (mbp-10 minute book), cut_*/cutnt_*/cutratio_*, imp_*. ch_api_test.py compares 2,804 values at random rows to features6.parquet: 0 mismatches. Builders behind it: ch_feat.py (bars/prior), ch_feat2.py (cluster, mbp, implied, megacap), ch_feat4/5.py (gauges, HTF, profile, effort, clock, gamma, ETF), ch_regime.py (HMM fit and forward filter), ch_feat6.py (regime join, ZN, clock rates).

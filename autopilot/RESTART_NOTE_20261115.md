@@ -1,0 +1,7 @@
+# RESTART NOTE (lead, 2026-11-15 ~17:50Z) - read first, then your own role line
+The Claude Code session that ran the agents ended (cause not visible from the box: no OOM or crash trace was looked for yet; the harness reports that the previous session ended). All sub-agent sessions are gone; the nohup setsid drivers, loops and chains survived. You are being re-invoked from your transcript. Do this:
+1. Read MORNING.md from the last line of the lead ('REAIM assignments sent') back to your last line; read autopilot/DIRECTIVE_MASTER_PRIORITY_20261114.md, DIRECTIVE_REAIM_20261115.md and the NEW DIRECTIVE_BASIC_TESTS_20261115.md (35 pct of cores, goes to the front after the live-log item).
+2. Check your own drivers/loops/chains with `ps -eo pid,etimes,args | grep <yourtag>`; restart only what died, by explicit pid, never `pkill -f`; chains that still run belong to you: do not duplicate them (the admission pollers are many: keep waiting chains <= 25 each).
+3. Continue your queue, bases at live caps (P7 14,700), base-lot dollars with x1.75 beside headline rows, $4.84 column, FIRST PASS labelled, nonsense rate beside every stage, cluster-robust statistics, drawdown at a powered horizon.
+4. Hourly MORNING.md line as before; the lead also runs an automatic block (code/lead_watchdog/hourly_block.py). Add a 'closest to live' sentence to your own line.
+5. Memory: compute <= 2 threads per analysis script, nice 10; /mnt/l2 has ~270 GB free (93 pct used).

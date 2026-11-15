@@ -1,8 +1,8 @@
 # DS3_DEEPEN_PROFIT - T-DEEPEN part 2, profit side (W-PA)
 
-**VERDICT (plain, not a PASS): first-order screens done for items 1, 2, 3, 5; the exact engine has 0 of 158 queued set-months done (the box is at load 70 and tag PA has quota 1, so exact results are hours away). First-order leads: the Asia P7 pyramid (add 0.5 x lots after +15 pts) cuts equal-mean drawdown in every window but a random-time add after +15 does as well (placebo p 0.25), runner lots only help on a with-trend call and still fail X', structure trails help only in the recent windows (RECENT-ONLY) and fail HOLD/PRE mean, the ER trend sizer is inside its time-shift placebo band. Nothing is promoted.**
+**VERDICT (plain, not a PASS): exact L3M is in for ~55 sets; identities ID/SB_ID/SS_ID pass (598 / 25,943.82), ID_ALL failed by my design error (ID_ALL2 pending). The first-order pyramid lead did NOT survive the engine (P7 Asia add: +507/wk but maxDD 9.7% worse); runner on the with-trend call (+972 to +1,245/wk L3M at equal DD), whole-stack give-back trail TR_ALL_G30 (+1,505/wk) and session book SB_M7_asia (+2,871/wk, DD -14.5%, W44-removed -2.9%) are staged to L6M/HOLD with exact placebos for the runner (call shifted 11/23/37 days); nothing is promoted. Done set-months 158, pending 136.**
 
-Rebuilt 2026-11-14 23:45Z by code/th_deepen_pa/pa_page.py. Prereg autopilot/DEEPEN_PA_PREREG.md (sha line in DECISIONS.md 2026-11-14T23:32Z). Tag PA, sets TL3_PA_* (56 sets), queue /mnt/l2/l2vast/_deepen_pa/pending.txt, code code/th_deepen_pa, bulk /mnt/l2/l2vast/_deepen_pa. Hook pa_hooks.py (ladders/trails modes 0-3, runner, ER sizer, sub-session gate, pyramid add, session-lot override); identity sets TL3_PA_ID, TL3_PA_SB_ID, TL3_PA_ID_R, TL3_PA_ID_ALL queued first (202610 must give 598 trades / 25,943.82).
+Rebuilt 2026-11-15 17:51Z by code/th_deepen_pa/pa_page.py. Prereg autopilot/DEEPEN_PA_PREREG.md (sha line in DECISIONS.md 2026-11-14T23:32Z). Tag PA, sets TL3_PA_* (60 sets), queue /mnt/l2/l2vast/_deepen_pa/pending.txt, code code/th_deepen_pa, bulk /mnt/l2/l2vast/_deepen_pa. Hook pa_hooks.py (ladders/trails modes 0-3, runner, ER sizer, sub-session gate, pyramid add, session-lot override); identity sets TL3_PA_ID, TL3_PA_SB_ID, TL3_PA_ID_R, TL3_PA_ID_ALL queued first (202610 must give 598 trades / 25,943.82).
 
 **LOT BASIS**: engine dollars are BASE lots (live user lots x1.75; live caps = engine caps x1.75, JN05W2 P7 8,400 engine = 14,700 live); the engine charges $1.18/contract RT with its measured fills, FEES.md says $4.84. Every first-order $ column is on base lots with the engine's own net (fee $1.18); added contracts (pyramid) are charged $4.84 RT; a $4.84 repricing of a lot change = net - lots x $3.66 per trade.
 
@@ -120,7 +120,61 @@ The OFF sessions (22 book x session cells: K7 pre/close, U7 pre/nyam/nypm/close,
 
 ## 6. Exact engine status and results
 
-Done set-months: none yet (queue 158 lines, PA waiting on admission: MemAvail ~48 GB, 50 workers, load 70 on 32 cores, quota PA = 1 in PRIORITY.txt although the brief says 2).
+Done set-months: TL3_PA_ADDL_P7ALL_CUT [202608,202609,202610]; TL3_PA_ADDL_P7ASIA_AVG [202608,202609,202610]; TL3_PA_ADDL_P7ASIA_CUT [202608,202609,202610]; TL3_PA_ADDM_P7ASIA_REDUCE [202608,202609,202610]; TL3_PA_ADD_P7ASIA_15_12_5 [202608,202609,202610]; TL3_PA_ADD_P7ASIA_15_8_5 [202608,202609,202610]; TL3_PA_ADD_P7ASIA_20_12_5 [202608,202609,202610]; TL3_PA_ADD_P7_15_12_5 [202608,202609,202610]; TL3_PA_ER_K7ASIA_240_15_4 [202608,202609,202610]; TL3_PA_ER_P7ASIA_120_15_2 [202608,202609,202610]; TL3_PA_ER_P7ASIA_120_15_6 [202608,202609,202610]; TL3_PA_ID [202610]; TL3_PA_ID_ALL [202610]; TL3_PA_ID_R [202610]; TL3_PA_PRESS_H7ASIA_AGR60 [202608,202609,202610]; TL3_PA_PRESS_U7ASIA_AGR60 [202608,202609,202610]; TL3_PA_PRESS_U7ASIA_ST80 [202608,202609,202610]; TL3_PA_RUN_ALL_W [202608,202609,202610]; TL3_PA_RUN_P7_W [202608,202609,202610]; TL3_PA_SB_A7_close [202608,202609,202610]; TL3_PA_SB_A7_london [202608,202609,202610]; TL3_PA_SB_A7_nyam [202608,202609,202610]; TL3_PA_SB_A7_nypm [202608,202609,202610]; TL3_PA_SB_A7_pre [202608,202609,202610]; TL3_PA_SB_H7_close [202608,202609,202610]; TL3_PA_SB_H7_london [202608,202609,202610]; TL3_PA_SB_H7_nypm [202608,202609,202610]; TL3_PA_SB_H7_pre [202608,202609,202610]; TL3_PA_SB_ID [202610]; TL3_PA_SB_K7_close [202608,202609,202610]; TL3_PA_SB_K7_pre [202608,202609,202610]; TL3_PA_SB_M7_asia [202608,202609,202610]; TL3_PA_SB_M7_close [202608,202609,202610]; TL3_PA_SB_M7_nypm [202608,202609,202610]; TL3_PA_SB_M7_pre [202608,202609,202610]; TL3_PA_SB_P7_close [202608,202609,202610]; TL3_PA_SB_P7_nypm [202608,202609,202610]; TL3_PA_SB_P7_pre [202608,202609,202610]; TL3_PA_SB_U7_close [202608,202609,202610]; TL3_PA_SB_U7_nyam [202608,202609,202610]; TL3_PA_SB_U7_nypm [202608,202609,202610]; TL3_PA_SB_U7_pre [202608,202609,202610]; TL3_PA_SS_A7_asia_late [202608,202609,202610]; TL3_PA_SS_ID [202610]; TL3_PA_SS_K7_asia_late [202608,202609,202610]; TL3_PA_SS_M7_london_open [202608,202609,202610]; TL3_PA_SS_M7_ny_am_rest [202608,202609,202610]; TL3_PA_SS_P7_asia_late [202608,202609,202610]; TL3_PA_SS_U7_asia_open [202608,202609,202610]; TL3_PA_TR_ALL_D900 [202608,202609,202610]; TL3_PA_TR_ALL_E1200 [202608,202609,202610]; TL3_PA_TR_ALL_G30 [202608,202609,202610]; TL3_PA_TR_M7NY_D900 [202608,202609,202610]; TL3_PA_TR_M7NY_L90_30 [202608,202609,202610]; TL3_PA_TR_P7ASIA_G30 [202608,202609,202610]; TL3_PA_TR_P7_G30 [202608,202609,202610]
+
+| set | win | mo | dmean | dd | dd_base | ddcut | ddcut_x44 | worst | worst_base | best5 | stops_wk | base_stops_wk | ntr | ntr_base | d484 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADDL_P7ALL_CUT | L3M | 3/3 | -4765.7 | 48136.8 | 52233.1 | 7.8 | 4.4 | -28593.0 | -36370.5 | 86.0 | 10.5 | 10.5 | 1878.0 | 1875.0 | -4775.5 |
+| ADDL_P7ASIA_AVG | L3M | 3/3 | 1237.0 | 64555.0 | 52233.1 | -23.6 | -48.7 | -44699.9 | -36370.5 | 106.7 | 10.8 | 10.5 | 1836.0 | 1875.0 | 1183.5 |
+| ADDL_P7ASIA_CUT | L3M | 3/3 | -4414.3 | 48136.8 | 52233.1 | 7.8 | 4.9 | -28593.0 | -36370.5 | 87.0 | 10.5 | 10.5 | 1885.0 | 1875.0 | -4426.9 |
+| ADDM_P7ASIA_REDUCE | L3M | 3/3 | -4761.1 | 45727.1 | 52233.1 | 12.5 | -1.8 | -26016.0 | -36370.5 | 80.6 | 10.6 | 10.5 | 1923.0 | 1875.0 | -4792.6 |
+| ADD_P7ASIA_15_12_5 | L3M | 3/3 | 506.9 | 57324.0 | 52233.1 | -9.7 | -32.1 | -46240.0 | -36370.5 | 108.5 | 10.5 | 10.5 | 1821.0 | 1875.0 | 440.5 |
+| ADD_P7ASIA_15_8_5 | L3M | 3/3 | 680.9 | 58516.0 | 52233.1 | -12.0 | -32.9 | -46240.0 | -36370.5 | 112.3 | 10.7 | 10.5 | 1827.0 | 1875.0 | 619.0 |
+| ADD_P7ASIA_20_12_5 | L3M | 3/3 | -1128.1 | 55064.2 | 52233.1 | -5.4 | 1.0 | -39046.6 | -36370.5 | 96.3 | 10.5 | 10.5 | 1826.0 | 1875.0 | -1189.2 |
+| ADD_P7_15_12_5 | L3M | 3/3 | 2209.3 | 64186.1 | 52233.1 | -22.9 | -47.9 | -46481.1 | -36370.5 | 118.4 | 10.5 | 10.5 | 1836.0 | 1875.0 | 2093.9 |
+| ER_K7ASIA_240_15_4 | L3M | 3/3 | -4515.7 | 45592.4 | 52233.1 | 12.7 | -3.4 | -37798.0 | -36370.5 | 92.8 | 10.8 | 10.5 | 1756.0 | 1875.0 | -4499.7 |
+| ER_P7ASIA_120_15_2 | L3M | 3/3 | 3435.4 | 63931.1 | 52233.1 | -22.4 | -20.3 | -44330.2 | -36370.5 | 113.4 | 10.6 | 10.5 | 1862.0 | 1875.0 | 3288.2 |
+| ER_P7ASIA_120_15_6 | L3M | 3/3 | 5081.5 | 56363.1 | 52233.1 | -7.9 | -18.9 | -40500.4 | -36370.5 | 120.0 | 10.2 | 10.5 | 1852.0 | 1875.0 | 5039.5 |
+| PRESS_H7ASIA_AGR60 | L3M | 3/3 | 322.6 | 50106.7 | 52233.1 | 4.1 | 4.0 | -35278.4 | -36370.5 | 101.0 | 10.5 | 10.5 | 1869.0 | 1875.0 | 311.1 |
+| PRESS_U7ASIA_AGR60 | L3M | 3/3 | 621.7 | 54219.2 | 52233.1 | -3.8 | 5.5 | -35787.2 | -36370.5 | 102.2 | 10.5 | 10.5 | 1877.0 | 1875.0 | 600.0 |
+| PRESS_U7ASIA_ST80 | L3M | 3/3 | -891.9 | 50922.1 | 52233.1 | 2.5 | 0.0 | -35059.5 | -36370.5 | 101.5 | 10.7 | 10.5 | 1874.0 | 1875.0 | -894.5 |
+| RUN_ALL_W | L3M | 3/3 | 1244.5 | 52233.1 | 52233.1 | 0.0 | 3.8 | -36370.5 | -36370.5 | 105.4 | 10.5 | 10.5 | 1871.0 | 1875.0 | 1246.5 |
+| RUN_P7_W | L3M | 3/3 | 972.4 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 103.6 | 10.5 | 10.5 | 1874.0 | 1875.0 | 972.7 |
+| SB_A7_close | L3M | 3/3 | 0.0 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 100.0 | 10.5 | 10.5 | 1875.0 | 1875.0 | 0.0 |
+| SB_A7_london | L3M | 3/3 | 1095.0 | 53796.7 | 52233.1 | -3.0 | -8.6 | -37934.1 | -36370.5 | 98.4 | 12.6 | 10.5 | 1968.0 | 1875.0 | 1071.6 |
+| SB_A7_nyam | L3M | 3/3 | 705.8 | 49835.5 | 52233.1 | 4.6 | -5.4 | -33972.9 | -36370.5 | 100.9 | 11.6 | 10.5 | 1922.0 | 1875.0 | 692.5 |
+| SB_A7_nypm | L3M | 3/3 | -113.9 | 53424.3 | 52233.1 | -2.3 | -2.7 | -37561.7 | -36370.5 | 100.0 | 11.5 | 10.5 | 1906.0 | 1875.0 | -122.7 |
+| SB_A7_pre | L3M | 3/3 | -345.2 | 52233.1 | 52233.1 | 0.0 | 2.8 | -36370.5 | -36370.5 | 98.1 | 10.7 | 10.5 | 1888.0 | 1875.0 | -348.8 |
+| SB_H7_close | L3M | 3/3 | 0.0 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 100.0 | 10.5 | 10.5 | 1875.0 | 1875.0 | 0.0 |
+| SB_H7_london | L3M | 3/3 | -539.5 | 53447.5 | 52233.1 | -2.3 | 2.4 | -37674.9 | -36370.5 | 98.4 | 11.2 | 10.5 | 1942.0 | 1875.0 | -558.0 |
+| SB_H7_nypm | L3M | 3/3 | -450.6 | 52233.1 | 52233.1 | 0.0 | -2.9 | -36370.5 | -36370.5 | 99.8 | 11.0 | 10.5 | 1894.0 | 1875.0 | -455.9 |
+| SB_H7_pre | L3M | 3/3 | -141.0 | 52912.8 | 52233.1 | -1.3 | 0.0 | -37050.2 | -36370.5 | 99.5 | 10.6 | 10.5 | 1879.0 | 1875.0 | -142.1 |
+| SB_K7_close | L3M | 3/3 | 0.0 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 100.0 | 10.5 | 10.5 | 1875.0 | 1875.0 | 0.0 |
+| SB_K7_pre | L3M | 3/3 | 27.9 | 49712.5 | 52233.1 | 4.8 | -4.4 | -33849.8 | -36370.5 | 99.2 | 10.5 | 10.5 | 1884.0 | 1875.0 | 25.4 |
+| SB_M7_asia | L3M | 3/3 | 2871.4 | 44644.4 | 52233.1 | 14.5 | -2.9 | -31714.3 | -36370.5 | 110.5 | 10.5 | 10.5 | 1991.0 | 1875.0 | 2855.9 |
+| SB_M7_close | L3M | 3/3 | 0.0 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 100.0 | 10.5 | 10.5 | 1875.0 | 1875.0 | 0.0 |
+| SB_M7_nypm | L3M | 3/3 | -702.3 | 52016.5 | 52233.1 | 0.4 | -2.3 | -36153.9 | -36370.5 | 98.7 | 10.9 | 10.5 | 1940.0 | 1875.0 | -720.6 |
+| SB_M7_pre | L3M | 3/3 | 253.0 | 52233.1 | 52233.1 | 0.0 | 2.8 | -36370.5 | -36370.5 | 100.3 | 10.5 | 10.5 | 1890.0 | 1875.0 | 248.8 |
+| SB_P7_close | L3M | 3/3 | 0.0 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 100.0 | 10.5 | 10.5 | 1875.0 | 1875.0 | 0.0 |
+| SB_P7_nypm | L3M | 3/3 | 739.3 | 52233.1 | 52233.1 | 0.0 | -3.9 | -36370.5 | -36370.5 | 102.1 | 10.8 | 10.5 | 1931.0 | 1875.0 | 719.6 |
+| SB_P7_pre | L3M | 3/3 | 7.4 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 99.5 | 10.5 | 10.5 | 1880.0 | 1875.0 | 6.0 |
+| SB_U7_close | L3M | 3/3 | 0.0 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 100.0 | 10.5 | 10.5 | 1875.0 | 1875.0 | 0.0 |
+| SB_U7_nyam | L3M | 3/3 | 652.0 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 100.4 | 10.6 | 10.5 | 1889.0 | 1875.0 | 648.1 |
+| SB_U7_nypm | L3M | 3/3 | 282.4 | 52233.1 | 52233.1 | 0.0 | 0.0 | -36370.5 | -36370.5 | 100.5 | 10.6 | 10.5 | 1882.0 | 1875.0 | 280.5 |
+| SB_U7_pre | L3M | 3/3 | 292.9 | 52233.1 | 52233.1 | 0.0 | 2.8 | -36370.5 | -36370.5 | 101.0 | 10.5 | 10.5 | 1880.0 | 1875.0 | 291.5 |
+| SS_A7_asia_late | L3M | 3/3 | 860.1 | 64137.2 | 52233.1 | -22.8 | -2.4 | -50637.8 | -36370.5 | 102.8 | 8.1 | 10.5 | 1846.0 | 1875.0 | 861.8 |
+| SS_K7_asia_late | L3M | 3/3 | -3196.7 | 49924.2 | 52233.1 | 4.4 | -12.1 | -41195.0 | -36370.5 | 88.6 | 10.8 | 10.5 | 1781.0 | 1875.0 | -3171.0 |
+| SS_M7_london_open | L3M | 3/3 | -505.1 | 54998.2 | 52233.1 | -5.3 | 22.3 | -37754.2 | -36370.5 | 95.2 | 10.2 | 10.5 | 1756.0 | 1875.0 | -462.0 |
+| SS_M7_ny_am_rest | L3M | 3/3 | -751.9 | 51623.5 | 52233.1 | 1.2 | 0.0 | -35760.8 | -36370.5 | 97.6 | 10.5 | 10.5 | 1851.0 | 1875.0 | -745.2 |
+| SS_P7_asia_late | L3M | 3/3 | -4104.7 | 58886.7 | 52233.1 | -12.7 | -35.7 | -25751.6 | -36370.5 | 80.3 | 10.5 | 10.5 | 1797.0 | 1875.0 | -3953.2 |
+| SS_U7_asia_open | L3M | 3/3 | -5247.0 | 66082.6 | 52233.1 | -26.5 | -52.2 | -42649.8 | -36370.5 | 87.5 | 9.4 | 10.5 | 1837.0 | 1875.0 | -5208.4 |
+| TR_ALL_D900 | L3M | 3/3 | -1494.7 | 40913.3 | 52233.1 | 21.7 | 40.0 | -19919.5 | -36370.5 | 82.3 | 9.0 | 10.5 | 2051.0 | 1875.0 | -1602.2 |
+| TR_ALL_E1200 | L3M | 3/3 | -2619.0 | 35734.9 | 52233.1 | 31.6 | 51.7 | -15525.0 | -36370.5 | 62.2 | 9.4 | 10.5 | 2200.0 | 1875.0 | -2790.5 |
+| TR_ALL_G30 | L3M | 3/3 | 1504.9 | 50178.0 | 52233.1 | 3.9 | 43.8 | -29353.1 | -36370.5 | 82.9 | 8.6 | 10.5 | 2075.0 | 1875.0 | 1376.5 |
+| TR_M7NY_D900 | L3M | 3/3 | 149.9 | 52233.1 | 52233.1 | 0.0 | -0.4 | -36370.5 | -36370.5 | 100.3 | 10.5 | 10.5 | 1878.0 | 1875.0 | 149.0 |
+| TR_M7NY_L90_30 | L3M | 3/3 | 54.8 | 52233.1 | 52233.1 | 0.0 | 0.6 | -36370.5 | -36370.5 | 99.7 | 10.5 | 10.5 | 1877.0 | 1875.0 | 54.2 |
+| TR_P7ASIA_G30 | L3M | 3/3 | -2259.5 | 48603.5 | 52233.1 | 6.9 | -12.0 | -32548.6 | -36370.5 | 79.5 | 10.4 | 10.5 | 1913.0 | 1875.0 | -2313.8 |
+| TR_P7_G30 | L3M | 3/3 | -1322.0 | 48411.2 | 52233.1 | 7.3 | 5.0 | -32548.6 | -36370.5 | 80.0 | 10.2 | 10.5 | 1950.0 | 1875.0 | -1400.2 |
 
 ## 4. Press rules (item 4)
 
