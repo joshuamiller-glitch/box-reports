@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-16 19:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-16 20:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-16 19:45Z | box1: busy 90%, load1 34.38, workers 30, MemAvail 87 GB | server2: busy 100%, load1 91.43, workers 98, MemAvail 1374 GB (copying, 289 GB of 305 GB done) | jobs pending 3379
+LATEST CORES.md LINE: 2026-11-16 20:00Z | box1: busy 89%, load1 37.44, workers 32, MemAvail 84 GB | server2: busy 100%, load1 116.29, workers 126, MemAvail 1349 GB (copying, 301 GB of 305 GB done) | jobs pending 3309
 
 ## UTC TIME WRITTEN
-2026-11-16 19:45Z
+2026-11-16 20:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-16 19:45Z | box1: busy 90%, load1 34.38, workers 3
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 87.6 GB; live reservations 14 (14 GB); workers 30, of which TP-adopted 30 (RSS 51.3 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 34.59, 31.76, 32.19
-  by tag: CF quota 4 running 4 hungry False RSS 5.9 GB PSS 5.2 GB; D10 quota 12 running 11 hungry True RSS 17.9 GB PSS 15.0 GB; BD quota 10 running 7 hungry True RSS 11.9 GB PSS 10.5 GB; FL quota 4 running 1 hungry True RSS 2.2 GB PSS 2.0 GB; RA quota 2 running 3 hungry False RSS 5.4 GB PSS 4.7 GB; REST quota 99 running 4 hungry False RSS 7.9 GB PSS 7.4 GB
-  cell-months finished last hour (DONE markers): 858
-  top running jobs: TL3_RA_JL2_PL2_M7L_CAP3 (x4);TL3_CF_G_P7A_V0all5_S15_JL2 (x4);TL3_CF_G_P7A_V0all5_K_JL2 (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 91.43, 76.65, 51.43|/dev/md2         28T  837G   28T   3% /mnt/l2|190|
+Server 1 (this box): MemAvail 84.3 GB; live reservations 9 (9 GB); workers 32, of which TP-adopted 32 (RSS 60.4 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 37.64, 32.81, 32.02
+  by tag: CF quota 4 running 1 hungry True RSS 1.8 GB PSS 1.6 GB; D10 quota 12 running 23 hungry False RSS 42.5 GB PSS 31.7 GB; BD quota 10 running 1 hungry True RSS 2.1 GB PSS 1.5 GB; FL quota 4 running 2 hungry True RSS 4.1 GB PSS 3.5 GB; JV quota 4 running 1 hungry True RSS 2.1 GB PSS 1.5 GB; REST quota 99 running 4 hungry False RSS 7.8 GB PSS 7.3 GB
+  cell-months finished last hour (DONE markers): 860
+  top running jobs: TL3_JE_ID_P (x2);TL3_FL_WAITP7_30_TAKE (x2);TL3_FL_WAITP7_120_DROP (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 116.98, 107.61, 85.24|/dev/md2         28T  849G   28T   3% /mnt/l2|248|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,7 +35,6 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 91.43, 76.65, 51.43|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261116_1827Z_rebuild-addendum2-tape-speed.md 20261116_1830Z_status-file-and-faster-mirror.md 20261116_1838Z_fill-the-cap.md 20261116_1840Z_core-meter-both-servers.md 20261116_1938Z_server2-ramp-faster-and-cores-file.md
-- lead 19:37Z INBOX 20261116_1938Z_server2-ramp-faster-and-cores-file.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
-- INBOX 20261116_1840Z_core-meter-both-servers received (late, found 19:37Z) - will write cron CORES.md every 5 min for both servers + WARNING lines, mirror, to
-- INBOX 20261116_1938Z_server2-ramp-faster-and-cores-file received - S2_WORKER_CAP 96 now, throughput-based knee test 96/112/128, backfill acts after 1 check, C
+20261116_1838Z_fill-the-cap.md 20261116_1840Z_core-meter-both-servers.md 20261116_1938Z_server2-ramp-faster-and-cores-file.md 20261116_1954Z_calibrate-the-pass-rule.md 20261116_2000Z_desk-standard-validation.md
+- lead 19:53Z INBOX 20261116_1954Z_calibrate-the-pass-rule.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- lead 19:54Z INBOX 20261116_2000Z_desk-standard-validation.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
