@@ -46,3 +46,6 @@
 2026-11-16 22:35Z | box1: busy 94%, load1 28.99, workers 21, MemAvail 97 GB | server2: busy 100%, load1 87.41, workers 98, MemAvail 1380 GB | jobs pending 2244
 2026-11-16 22:40Z | box1: busy 93%, load1 30.67, workers 26, MemAvail 91 GB | server2: busy 100%, load1 84.85, workers 88, MemAvail 1415 GB | jobs pending 2202
 2026-11-16 22:45Z | box1: busy 88%, load1 29.47, workers 20, MemAvail 96 GB | server2: busy 100%, load1 93.46, workers 94, MemAvail 1379 GB | jobs pending 2163
+2026-11-16 22:50Z | box1: busy 85%, load1 26.36, workers 14, MemAvail 104 GB | server2: busy 100%, load1 94.36, workers 98, MemAvail 1374 GB | jobs pending 2129
+2026-11-16 22:55Z | box1: busy 84%, load1 31.03, workers 25, MemAvail 91 GB | server2: busy 100%, load1 95.09, workers 96, MemAvail 1374 GB | jobs pending 2114
+2026-11-16 22:55Z | WARNING box1 below 85% busy for 2 readings in a row with jobs pending
