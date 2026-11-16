@@ -1,4 +1,4 @@
-# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-16 07:46Z
+# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-16 08:21Z
 
 **VERDICT (running): 72 LA cells scored, 16 are ACTIVE (not no-ops), pass the tolerant gate and still cut drawdown with W44 removed in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
 
@@ -185,10 +185,11 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_F_K7_LO_D40 |      52 | 17975.5 |    486.1 | 65403.3 |  63185.1 |     -3.5 |       -3.5 |      0 |        0 |      410.8 |        480.9 | -54980.4 | -55145.4 |       1 |     0 |      49.2 |          49.8 |  144.5 |      143.3 |
 | TL3_LA_F_K7_AS_D40 |      52 | 17562.8 |     73.4 | 67330.1 |  63185.1 |     -6.6 |       -6.6 |      0 |        0 |     -159.1 |         69.3 | -51122.1 | -55145.4 |       1 |     0 |      48.8 |          49.8 |  144.2 |      143.3 |
 
-### PRE (1 cells)
+### PRE (2 cells)
 | cell               |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:-------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_F_K7_LO_D40 |      75 | 10473.6 |    305.7 | 70392.9 |  76186.1 |      7.6 |        nan |      1 |        0 |        nan |        303.6 | -48860.6 | -52547.4 |       1 |     0 |      31.6 |          31.8 |  100.8 |      100.3 |
+| TL3_LA_F_K7_AS_D40 |      75 | 10421.9 |    254   | 78005   |  76186.1 |     -2.4 |        nan |      0 |        0 |        nan |        253.7 | -53564.2 | -52547.4 |       1 |     1 |      31.3 |          31.8 |  100.4 |      100.3 |
 
 ### X' (2 cells)
 | cell               |   weeks |   mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
