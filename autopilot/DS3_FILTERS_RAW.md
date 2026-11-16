@@ -37,6 +37,8 @@ Note from W-PM (relayed 2026-11-15): TL3_PM_N_A7NOSC (an A7 Stop no longer trigg
 
 Reading: no single engine rule is the cause of the gate's extra drawdown. With any of the stack cut, DAY-DONE C22, the governor or the day caps switched off the gate still has $99k-$110k drawdown against $43k-$67k for the base with the same switch off (gap $43k-$67k vs $51k), and the replacement share stays 38-40 %. The path effect is the freed-book replacement itself (random 50 % skip: $86k), not one of these rules; the stack cut explains part of the A7 flat -40 gain (W-PM) but not the gate's drawdown. Side findings, not mine to claim: switching the same-side-loss governor off lowers the BASE max drawdown ($52.2k to $43.4k, worst week -$36.4k to -$26.0k) at -1 % net; switching the stack cut off raises base net by $59k at unchanged drawdown. Flag: PATH EFFECT = FREED-BOOK REPLACEMENT (generic); explained.
 
+Live-layer check (W-EV, DS3_ENGINE_VS_LIVE.md 10-11, 2026-11-16): JN05W2 has NO Jn04 stack cap (no cde key) and no blackout / ATR-SKIP / NKD take; the live-matching base is JN05W2J. All path-effect numbers above are on JN05W2 and are therefore PROVISIONAL; the stack cut (Asia, 50 %), governor, C22, NTZ and BREADTH match live. Confirmation sets on the live-matching base are queued: TL3J_CF_PL_G (aligned gate) and TL3J_CF_PX_RND (random gate), L3M and L6M.
+
 ## 2. Raw books (isolation mode TL3_CF_ISO2, 23 months), each-alone, cluster-robust by week (zw), nonsense calibrated
 Outcome R (clipped +-3); a condition passes alone if |zw| is above the 99th percentile of |zw| of the 200 nonsense conditions in the same cell and its sign is the same in every year with >= 30 per side. At that bar 1 % of conditions (about 70) would pass by construction.
 

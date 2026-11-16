@@ -113,11 +113,24 @@ Ridge only, same inputs:
 
 Decay with horizon and stability: the IC is largest at 5 min and falls toward the null by 30-60 min; by year it is positive in every year at 5 min (t 1.6-3.4) and the recent months since 2026-05 are not weaker. Per-session: Asia carries the 5-30 min IC; NY AM is zero or negative at longer horizons (the full set is worse than price-only there).
 
+## 3d. Longer horizons (AL-H6): 240 min, 480 min and return-to-session-close (>=20 min left), for D7 holds of hours
+Same pipeline and walk-forward (test 2023-04-03..2026-10-30 for price/intermarket/clock = L_core; 2023-10-02..2026-10-16 for the full input set = L_full). Targets stay inside one trading day (no halt/weekend crossing), so 480-min targets exist for about 65% of decisions. Column c = session close. IC (t) | nonsense null where run.
+
+| run | slice | 240 | 480 | c |
+|---|---|---|---|
+| core avg | all | -0.0046 (t -0.4) | -0.0110 (t -0.6) | +0.0080 (t +0.7) |
+| core avg | sess_asia | -0.0021 (t -0.1) | -0.0089 (t -0.4) | -0.0104 (t -0.4) |
+| core avg | sess_london | -0.0276 (t -1.4) | -0.0137 (t -0.5) | -0.0148 (t -0.7) |
+| core avg | sess_nyam | +0.0410 (t +1.6) | +nan (t +nan) | +0.0279 (t +1.3) |
+| core avg | sess_nypm | +0.0366 (t +1.2) | +nan (t +nan) | +0.0101 (t +0.4) |
+| core avg | recent_since_2026-05 | +0.0298 (t +0.9) | +0.0359 (t +0.7) | -0.0461 (t -1.6) |
+
 ## 4. Which data carries it (block ablation)
 IC of the ridge+GBM average with ONE BLOCK REMOVED (abl_<block>) or with ONLY that block (only_<block>), all sessions; blocks: price, inter (intermarket), clock, cf4ind (indicator library), cf5cal (calendar/session), l2, l3, cf6 (counting/ICT/analog). Share surviving = ablated IC / reference IC.
 
 | run | 5m | 15m | 30m | 60m | 120m |
 |---|---|---|---|---|---|
+| abl_cf4ind | +0.0119 | +0.0095 | +0.0055 | +0.0037 | -0.0009 |
 | abl_clock | +0.0111 | +0.0088 | +0.0055 | +0.0060 | +0.0054 |
 | abl_inter | +0.0123 | +0.0106 | +0.0055 | +0.0047 | +0.0022 |
 | abl_l2 | +0.0127 | +0.0081 | +0.0051 | +0.0040 | +0.0039 |
@@ -129,6 +142,7 @@ Asia only:
 
 | run | 5m | 15m | 30m | 60m | 120m |
 |---|---|---|---|---|---|
+| abl_cf4ind | +0.0251 | +0.0316 | +0.0238 | +0.0202 | +0.0092 |
 | abl_clock | +0.0228 | +0.0277 | +0.0198 | +0.0165 | +0.0181 |
 | abl_inter | +0.0229 | +0.0280 | +0.0153 | +0.0146 | +0.0100 |
 | abl_l2 | +0.0228 | +0.0219 | +0.0133 | +0.0126 | +0.0077 |
@@ -140,6 +154,7 @@ Share of the reference IC surviving after removing the block (n/a where the refe
 
 | block removed | 5m | 15m | 30m | 60m | 120m |
 |---|---|---|---|---|---|
+| abl_cf4ind | 104% | 94% | 137% | 111% | n/a |
 | abl_clock | 96% | 87% | 138% | 180% | n/a |
 | abl_inter | 107% | 104% | 138% | 141% | n/a |
 | abl_l2 | 111% | 79% | 128% | 121% | n/a |

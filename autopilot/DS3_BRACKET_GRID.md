@@ -67,6 +67,7 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
 | 40x40 | +205 (live +359; $4.84 +189) DD +24.7% ww +2588 stops 6.62(4.03) | +594 (live +1040; $4.84 +572) DD +19.6% ww +760 stops 7.30(3.88) | +400 (live +700; $4.84 +381) DD +24.7% ww +2274 stops 6.96(3.96) |
+| 40x40 | +111 (live +194; $4.84 +105) DD +22.4% ww +517 stops 5.25(4.03) | n/a | n/a |
 | 40x60 | -373 (live -653; $4.84 -384) DD -2.3% ww +1411 stops 4.49(4.03) | n/a | n/a |
 | 40x90 | -20 (live -35; $4.84 -26) DD -34.2% ww -532 stops 1.52(4.03) | -811 (live -1419; $4.84 -816) DD -3.7% ww -303 stops 1.67(3.88) | -415 (live -727; $4.84 -421) DD -93.7% ww -532 stops 1.60(3.96) |
 | 60x40 | +879 (live +1539; $4.84 +874) DD +38.1% ww +2338 stops 6.24(4.03) | n/a | n/a |
