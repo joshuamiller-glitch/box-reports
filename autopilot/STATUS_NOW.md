@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-16 23:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-16 23:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-16 23:15Z | WARNING box1 below 85% busy for 2 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-16 23:30Z | WARNING box1 below 85% busy for 5 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-16 23:15Z
+2026-11-16 23:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-16 23:15Z | WARNING box1 below 85% busy for 2 read
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 126.2 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 1.09, 7.80, 18.08
+Server 1 (this box): MemAvail 125.9 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 2.00, 2.90, 8.42
   by tag: 
-  cell-months finished last hour (DONE markers): 671
+  cell-months finished last hour (DONE markers): 574
   top running jobs: 
-Server 2 (rs4 metal): load / disk / tp_launch procs: 90.10, 91.32, 92.11|/dev/md2         28T  868G   28T   4% /mnt/l2|192|
+Server 2 (rs4 metal): load / disk / tp_launch procs: 94.29, 92.49, 92.10|/dev/md2         28T  868G   28T   4% /mnt/l2|181|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
