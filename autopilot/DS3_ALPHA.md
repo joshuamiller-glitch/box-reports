@@ -144,12 +144,14 @@ IC of the ridge+GBM average with ONE BLOCK REMOVED (abl_<block>) or with ONLY th
 | run | 5m | 15m | 30m | 60m | 120m |
 |---|---|---|---|---|---|
 | abl_cf4ind | +0.0119 | +0.0095 | +0.0055 | +0.0037 | -0.0009 |
+| abl_cf5cal | +0.0145 | +0.0080 | +0.0055 | +0.0027 | -0.0022 |
 | abl_cf6 | +0.0130 | +0.0076 | +0.0038 | +0.0063 | +0.0034 |
 | abl_clock | +0.0111 | +0.0088 | +0.0055 | +0.0060 | +0.0054 |
 | abl_inter | +0.0123 | +0.0106 | +0.0055 | +0.0047 | +0.0022 |
 | abl_l2 | +0.0127 | +0.0081 | +0.0051 | +0.0040 | +0.0039 |
 | abl_l3 | +0.0121 | +0.0103 | +0.0046 | +0.0046 | +0.0041 |
 | abl_price | +0.0102 | +0.0091 | +0.0049 | +0.0067 | +0.0066 |
+| only_price | +0.0133 | +0.0044 | +0.0030 | +0.0004 | +0.0048 |
 | REFERENCE full set (ridge+GBM avg) | +0.0115 | +0.0102 | +0.0040 | +0.0033 | +0.0007 |
 
 Asia only:
@@ -157,12 +159,14 @@ Asia only:
 | run | 5m | 15m | 30m | 60m | 120m |
 |---|---|---|---|---|---|
 | abl_cf4ind | +0.0251 | +0.0316 | +0.0238 | +0.0202 | +0.0092 |
+| abl_cf5cal | +0.0221 | +0.0246 | +0.0112 | +0.0087 | -0.0025 |
 | abl_cf6 | +0.0217 | +0.0281 | +0.0151 | +0.0173 | +0.0127 |
 | abl_clock | +0.0228 | +0.0277 | +0.0198 | +0.0165 | +0.0181 |
 | abl_inter | +0.0229 | +0.0280 | +0.0153 | +0.0146 | +0.0100 |
 | abl_l2 | +0.0228 | +0.0219 | +0.0133 | +0.0126 | +0.0077 |
 | abl_l3 | +0.0228 | +0.0274 | +0.0189 | +0.0120 | +0.0065 |
 | abl_price | +0.0201 | +0.0254 | +0.0195 | +0.0215 | +0.0115 |
+| only_price | +0.0198 | +0.0164 | +0.0072 | +0.0057 | +0.0084 |
 | REFERENCE full set (ridge+GBM avg) | +0.0232 | +0.0268 | +0.0157 | +0.0142 | +0.0054 |
 
 Share of the reference IC surviving after removing the block (n/a where the reference IC is below 0.003):
@@ -170,6 +174,7 @@ Share of the reference IC surviving after removing the block (n/a where the refe
 | block removed | 5m | 15m | 30m | 60m | 120m |
 |---|---|---|---|---|---|
 | abl_cf4ind | 104% | 94% | 137% | 111% | n/a |
+| abl_cf5cal | 127% | 79% | 138% | 82% | n/a |
 | abl_cf6 | 113% | 74% | 95% | 188% | n/a |
 | abl_clock | 96% | 87% | 138% | 180% | n/a |
 | abl_inter | 107% | 104% | 138% | 141% | n/a |
@@ -179,6 +184,16 @@ Share of the reference IC surviving after removing the block (n/a where the refe
 
 
 Reading: no single block is necessary. Removing price, intermarket, clock or L2 leaves 80-110% of the 5-15 min IC (above 100% means the block was adding noise), because the short-term reversal information is redundant across blocks (the indicator library and intermarket inputs carry the same recent-return information as the price block). The IC is therefore a property of recent price action itself, not of L2, L3, options or the counting libraries; L3, CF6, CF4 and CF5 ablations follow in this section as they finish.
+
+### 4b. Options (CF2 feat1m J_*, UW history only from 2024-Q4), macro (B15_*) and extra intermarket/breadth (I_*, B14_*) blocks added to the 90 core inputs (ridge+GBM average, IC; options test span 2025-04-14..2026-10-30 vs the same core inputs on the same span):
+
+| run | 5m | 15m | 30m | 60m | 120m |
+|---|---|---|---|---|---|
+| optbase | +0.0072 | +0.0068 | +0.0077 | +0.0092 | +0.0009 |
+| optrun | +0.0034 | +0.0008 | +0.0042 | +0.0028 | -0.0002 |
+| macrorun | +0.0114 | +0.0057 | +0.0049 | +0.0056 | +0.0068 |
+| inter2run | +0.0176 | +0.0091 | +0.0030 | +0.0050 | +0.0072 |
+
 ## 5. Trades with costs inside (Part 1 item 5, NQ)
 Rules: position = rounded z-score of the forecast (forecast / trailing 20-day std) up to 3 lots, enter when |z| >= band, hold until |z| < 0.3 band (hysteresis = no-trade band), flat when the next 5-min return is unknown (halt/gap); trades at the decision price with slippage 0.23 pt per side (measured entry) + fee $4.84 RT = $2.42/side, $20 per point; P&L over each 5-min step. gross/net are $ per trading day at up to 3 lots. FIRST PASS: no stop model, execution at the decision bar close.
 ### full set (2023-10..2026-10-16), band |z|>=2, market execution
@@ -394,6 +409,7 @@ Forecast used: core (price+intermarket+clock) avg_h from the walk-forward, mappe
 | TL3_AL_CUT2P32 | 4,202 | 7,866 | 610,534 | 581,745 | 57,863 | -42,001 | -50,168 | 5,630 | -5,630 | 39,572 |
 | TL3_AL_CUT2P33 | 4,173 | 7,770 | 614,258 | 585,820 | 61,714 | -42,099 | -46,443 | 9,481 | -5,728 | 39,813 |
 | TL3_AL_CUT3 | 4,187 | 7,742 | 576,325 | 547,989 | 49,954 | -33,016 | -84,377 | -2,279 | 3,354 | 37,354 |
+| TL3_AL_CUT3P31 | 4,233 | 7,877 | 526,632 | 497,802 | 64,521 | -32,878 | -134,070 | 12,288 | 3,492 | 34,134 |
 | TL3_AL_CUT3P32 | 4,296 | 7,984 | 629,655 | 600,433 | 47,513 | -31,345 | -31,047 | -4,720 | 5,025 | 40,811 |
 | TL3_AL_CUT3P33 | 4,282 | 7,946 | 585,367 | 556,285 | 55,938 | -40,087 | -75,334 | 3,705 | -3,717 | 37,940 |
 
@@ -403,7 +419,7 @@ Forecast used: core (price+intermarket+clock) avg_h from the walk-forward, mappe
 - RB_60: change in 6-month total vs JN05W2 -15,630; 3 placebos (same size table, forecast shuffled within book and month) give -49,645 on average, sd 11,205, range -61,964..-40,059; max drawdown change +5,901 vs placebo mean -498 sd 2,059. z of real vs placebo = +3.04.
 - CUT1: change in 6-month total vs JN05W2 -37,571; 3 placebos (same size table, forecast shuffled within book and month) give -97,525 on average, sd 11,974, range -110,181..-86,374; max drawdown change +887 vs placebo mean +19,173 sd 16,703. z of real vs placebo = +5.01.
 - CUT2: change in 6-month total vs JN05W2 -1,200; 2 placebos (same size table, forecast shuffled within book and month) give -48,305 on average, sd 2,633, range -50,168..-46,443; max drawdown change +0 vs placebo mean +7,555 sd 2,723. z of real vs placebo = +17.89.
-- CUT3: change in 6-month total vs JN05W2 -84,377; 2 placebos (same size table, forecast shuffled within book and month) give -53,191 on average, sd 31,316, range -75,334..-31,047; max drawdown change -2,279 vs placebo mean -508 sd 5,957. z of real vs placebo = -1.00.
+- CUT3: change in 6-month total vs JN05W2 -84,377; 3 placebos (same size table, forecast shuffled within book and month) give -80,150 on average, sd 51,680, range -134,070..-31,047; max drawdown change -2,279 vs placebo mean +3,758 sd 8,504. z of real vs placebo = -0.08.
 - KEY FINDING for every sizing test: any re-sizing of the stack, even a meaningless one, moves the 6-month engine total by roughly +-$55-75k (sd, on a $660k base) and max drawdown by +-$8-10k through path effects (locks, caps, day-done rules). A forecast-sized book has to beat that placebo spread, not just the base; with this first-pass forecast it does not (z below 1). Sizing by forecast is NOT shown to help.
 
 ### 6b. Fault 1 (re-entry against the trend) - forecast defines "trend has turned against this book"
@@ -441,7 +457,7 @@ Rule: at k minutes after the entry fill, if the 60-min forecast (z of avg_60; CU
 |---|---|---|---|---|---|---|---|---|---|---|
 | CUT1 | JN05W2 (base lots) | 329 | 43,713 | -37,571 | -36,684 | 887 | 3 | -97,525 | 9,777 | 19,173 |
 | CUT2 | JN05W2 (base lots) | 113 | 18,711 | -1,200 | -1,200 | 0 | 2 | -48,305 | 1,862 | 7,555 |
-| CUT3 | JN05W2 (base lots) | 178 | -23,705 | -84,377 | -87,731 | -2,279 | 2 | -53,191 | 22,144 | -508 |
+| CUT3 | JN05W2 (base lots) | 178 | -23,705 | -84,377 | -87,731 | -2,279 | 3 | -80,150 | 42,196 | 3,758 |
 
 Per book x session (cells with >= 10 cuts fired; session 0 asia, 1 london, 2 pre, 3 nyam, 4 nypm), change vs base and vs the placebo mean:
 
@@ -460,12 +476,12 @@ Per book x session (cells with >= 10 cuts fired; session 0 asia, 1 london, 2 pre
 | CUT2 | JN05W2 (base lots) | K7 | 1 | 25 | -4,159 | -4,435 | 276 |
 | CUT2 | JN05W2 (base lots) | M7 | 1 | 21 | -3,724 | -7,895 | 4,171 |
 | CUT2 | JN05W2 (base lots) | P7 | 1 | 17 | 1,204 | 5,002 | -3,798 |
-| CUT3 | JN05W2 (base lots) | A7 | 0 | 12 | -1,899 | -1,613 | -287 |
-| CUT3 | JN05W2 (base lots) | K7 | 0 | 20 | 1,255 | -10,052 | 11,307 |
-| CUT3 | JN05W2 (base lots) | K7 | 1 | 35 | -1,831 | 9,363 | -11,194 |
-| CUT3 | JN05W2 (base lots) | M7 | 1 | 32 | -8,532 | -13,853 | 5,321 |
-| CUT3 | JN05W2 (base lots) | P7 | 0 | 14 | -19,112 | -17,338 | -1,774 |
-| CUT3 | JN05W2 (base lots) | P7 | 1 | 24 | -30,197 | 15,202 | -45,399 |
+| CUT3 | JN05W2 (base lots) | A7 | 0 | 12 | -1,899 | -1,674 | -225 |
+| CUT3 | JN05W2 (base lots) | K7 | 0 | 20 | 1,255 | -9,302 | 10,557 |
+| CUT3 | JN05W2 (base lots) | K7 | 1 | 35 | -1,831 | 9,793 | -11,624 |
+| CUT3 | JN05W2 (base lots) | M7 | 1 | 32 | -8,532 | -10,053 | 1,521 |
+| CUT3 | JN05W2 (base lots) | P7 | 0 | 14 | -19,112 | -31,169 | 12,057 |
+| CUT3 | JN05W2 (base lots) | P7 | 1 | 24 | -30,197 | 8,904 | -39,100 |
 
 Reading (written on partial results; re-read the table when all rows are filled): the cut works trade by trade (cut trades earn more than the same entries would have, trade_level_gain > 0, the first-order result) and random-trigger cuts lose much more, so the forecast carries real information for the cut; but at the stack level the earlier exit frees the book to re-enter and replace, and the net change is zero to negative (path effect), so the forecast cut adds nothing the live state cut and flat cuts do not already deliver in this window. PATH_EFFECT caution: the stack-level number is the verdict, the trade-level gain is not.
 LIVE COMPUTABILITY of the 60-min forecast: yes, from 1-min bars of NQ, ES, RTY and YM (the NT8/CQG feed D7 has for NQ/ES/RTY; YM is used by three of the 90 inputs: ym_ret, rel_ym, ym_es, so without YM refit the ridge without them). The CUTR1 ridge-only rule is a 90-coefficient linear formula refit every two weeks plus a trailing 20-day standard deviation of the forecast; GBM and MLP are not needed (ridge 60-min IC 0.007 vs average 0.008).

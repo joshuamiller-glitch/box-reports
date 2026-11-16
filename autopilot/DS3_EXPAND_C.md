@@ -1,6 +1,6 @@
-# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-16T03:33Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
+# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-16T05:03Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
 
-**VERDICT (plain): 273 cell-months done over 39 cells; 30 cells pass the tolerant gate in L3M, 0 pass the STRICT gate in every present window; 0 pass the TOLERANT lead gate (recent clearly positive and beating placebos, older DD <= 10% deeper, mean >= -5%). Strict leads: none yet. Tolerant leads: none yet. FIRST PASS, no PASS claim.**
+**VERDICT (plain): 284 cell-months done over 41 cells; 30 cells pass the tolerant gate in L3M, 0 pass the STRICT gate in every present window; 0 pass the TOLERANT lead gate (recent clearly positive and beating placebos, older DD <= 10% deeper, mean >= -5%). Strict leads: none yet. Tolerant leads: none yet. FIRST PASS, no PASS claim.**
 
 Prereg autopilot/EXPAND_C_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine, all layers ON. Identity: TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -12,7 +12,7 @@ Row format: delta vs JN05W2 in the rule's own session scope: d mean, max-DD cut 
 
 | window | real cells done | pass strict gate | pass tolerant | placebo cells done | placebo pass strict gate | random-skip controls done | random-skip pass strict gate |
 |---|---|---|---|---|---|---|---|
-| L3M | 16 | 10 | 7 | 23 | 20 | 0 | 0 |
+| L3M | 16 | 10 | 7 | 23 | 20 | 2 | 0 |
 | L6M | 10 | 4 | 0 | 18 | 5 | 0 | 0 |
 | HOLD | 4 | 3 | 3 | 0 | 0 | 0 | 0 |
 | GAP | 2 | 2 | 2 | 0 | 0 | 0 | 0 |
@@ -37,6 +37,7 @@ PATH EFFECT = FREED-BOOK REPLACEMENT (generic, autopilot/PATH_EFFECT_RULE.md): e
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL | lead |
 |---|---|---|---|---|---|---|---|---|
 | RU_london_hS125 | +354 $/wk (fee4.84 +427), DD +31%/+31, ww +11322, st 2.05(2.74), b5 90%, w2l 0 | -33 $/wk (fee4.84 +30), DD +31%/+31, ww +11322, st 2.24(2.89), b5 87%, w2l 0 | -725 $/wk (fee4.84 -659), DD +29%/+29, ww +4364, st 2.09(2.61), b5 88%, w2l 4 X |  |  |  |  |  |
+| &nbsp;&nbsp;engine random skip L3M (same keep share, seeds) | DD +13, mean -265 | | | | | | | |
 | &nbsp;&nbsp;placebo L3M (pl11/23/37) | DD +20/+28/+21, mean +1717/+1831/+2180 | | | | | | | |
 | &nbsp;&nbsp;placebo L6M (pl11/23/37) | DD +20/+28, mean +1482/+1165 | | | | | | | |
 | RU_london_hS1 | -329 $/wk (fee4.84 -247), DD +34%/+34, ww +13238, st 2.05(2.74), b5 76%, w2l 0 X |  |  |  |  |  |  |  |
@@ -53,6 +54,7 @@ PATH EFFECT = FREED-BOOK REPLACEMENT (generic, autopilot/PATH_EFFECT_RULE.md): e
 | &nbsp;&nbsp;placebo L3M (pl11/23/37) | DD +1/+23/+19, mean -840/+134/+1137 | | | | | | | |
 | &nbsp;&nbsp;placebo L6M (pl11/23/37) | DD +13/-5/+24, mean -1186/-1001/-181 | | | | | | | |
 | RU_nyam_hS075 | +294 $/wk (fee4.84 +321), DD +27%/+32, ww +4232, st 0.91(1.29), b5 81%, w2l 3 | -510 $/wk (fee4.84 -478), DD +12%/+12, ww +1045, st 1.33(1.67), b5 59%, w2l 4 X |  |  |  |  |  |  |
+| &nbsp;&nbsp;engine random skip L3M (same keep share, seeds) | DD -8, mean +432 | | | | | | | |
 | &nbsp;&nbsp;placebo L3M (pl11/23/37) | DD +9/+9/+9, mean -187/+135/+723 | | | | | | | |
 | &nbsp;&nbsp;placebo L6M (pl11/23/37) | DD +23/-7/+14, mean -1215/-979/-443 | | | | | | | |
 

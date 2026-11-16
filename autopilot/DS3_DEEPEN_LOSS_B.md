@@ -1,8 +1,8 @@
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 147 of 599 cells have an exact L3M result so far; 47 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 151 of 612 cells have an exact L3M result so far; 49 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-16T04:36Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-16T05:06Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -159,11 +159,15 @@ Flag PATH EFFECT = a skip rule frees the book (replacement entries, post-stop bl
 | EV_T0830_P60_S_p5 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.00 | 0.0 / -91 / -91 / -91 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_p15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.91 | 0.0 / -128 / -127 / -120 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_p45 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 0.84 | 0.0 / 168 / 171 / 182 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_S_p90 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 0.96 | 0.0 / 333 / 337 / 354 / 0 / True / 5.2 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_sasi | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_slon | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 0.81 | 0.0 / 206 / 209 / 222 / 0 / True / -0.7 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_snyp | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_oth | 3 | - | 1.00 | 0.0 / 102 / 103 / 107 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_kPCE | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 1.66 | 0.0 / 242 / 244 / 253 / 0 / True / 0.0 / 1.01 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_H_p5 | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_H_p45 | 3 | - | 1.00 | 0.0 / 102 / 103 / 107 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_H_sasi | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 
 ### RB  range used up AND breadth / event day (HAR+CME forecast; plain range rule is W-EC)
 
@@ -269,7 +273,7 @@ Flag PATH EFFECT = a skip rule frees the book (replacement entries, post-stop bl
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, RB_nyam_K100_EV, RB_nypm_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2, BR_M7_H15_Slon, BR_M7_H15_xt5, BR_M7_H15_30, BR_M7_H15_v19, EV_T0830_P30_H_p15, EV_T0830_P30_H_p45, EV_T0830_P30_H_p90, EV_T0830_P30_H_slon, EV_T0830_P30_H_kPCE, EV_T0830_P60_S_p45, EV_T0830_P60_S_slon, EV_T0830_P60_S_oth, EV_T0830_P60_S_kPCE
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, RB_nyam_K100_EV, RB_nypm_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2, BR_M7_H15_Slon, BR_M7_H15_xt5, BR_M7_H15_30, BR_M7_H15_v19, EV_T0830_P30_H_p15, EV_T0830_P30_H_p45, EV_T0830_P30_H_p90, EV_T0830_P30_H_slon, EV_T0830_P30_H_kPCE, EV_T0830_P60_S_p45, EV_T0830_P60_S_p90, EV_T0830_P60_S_slon, EV_T0830_P60_S_oth, EV_T0830_P60_S_kPCE, EV_T0830_P60_H_p45
 
 Auto-expansions launched (expansion of <parent>):
 
@@ -824,6 +828,21 @@ Auto-expansions launched (expansion of <parent>):
 - - BR_M7_H15_Slon_A7: expansion of BR_M7_H15_Slon
 - - BR_M7_H15_Slon_O7: expansion of BR_M7_H15_Slon
 - - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
+- HIT EV_T0830_P60_S_p90: L3M cut 0.0% d mean 333 (adj 354) -> promoted to L6M/HOLD/GAP/PRE and battery launched
+- - EV_T0830_P60_S_p90_p5: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_p15: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_p45: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_p90: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_sasi: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_slon: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_snya: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_snyp: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_oth: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_kCPI: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_kPCE: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_kISM_MFG: expansion of EV_T0830_P60_S_p90
+- - EV_T0830_P60_S_p90_kFOMC: expansion of EV_T0830_P60_S_p90
+- - NOT SUPPORTED in this registry: size-UP mirror (needs a size-up hook), carry to next session, fresh/rechase split, joint (sent to W-JV)
 
 ### Tolerant-gate passers NOT promoted (BELOW NOISE FLOOR; addendum 1 of the prereg: floor 5% DD or $300/wk is a noise floor, not a gate; promotable on request)
 
@@ -864,6 +883,7 @@ Auto-expansions launched (expansion of <parent>):
 | EV_T0830_P60_S_slon | 0.0 | 206 | 222 | -8 | below noise floor |
 | EV_T0830_P60_S_oth | 0.0 | 102 | 107 | 0 | trade list equals base |
 | EV_T0830_P60_S_kPCE | 0.0 | 242 | 253 | -4 | below noise floor |
+| EV_T0830_P60_H_p45 | 0.0 | 102 | 107 | 0 | trade list equals base |
 
 LE (passive entry) rows are FILL-RULE UPPER BOUNDS: a print through the limit by 1 tick fills, no queue position, so real fill rates and adverse selection would lower them.
 

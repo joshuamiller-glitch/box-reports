@@ -1,4 +1,4 @@
-VERDICT (plain, 2026-11-16 04:54 UTC): family B is running; 22 of 251 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_P30D0 12.5% (mean -1613 $/wk); L6M best DD change TL3_EB_U7F_T15D10 11.7% (mean +573 $/wk). No PASS claim; the parents are reproduced.
+VERDICT (plain, 2026-11-16 05:12 UTC): family B is running; 22 of 251 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_P30D0 12.5% (mean -1613 $/wk); L6M best DD change TL3_EB_U7F_T15D10 11.7% (mean +573 $/wk). No PASS claim; the parents are reproduced.
 
 # DS3_EXPAND_B - an exit fitted to how each book fails (W-EB, T-EXPAND family B)
 

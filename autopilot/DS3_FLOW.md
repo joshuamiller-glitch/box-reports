@@ -1,8 +1,12 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (70 FL cell-months done, 19 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (74 FL cell-months done, 22 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
+
+## 0. Engine planted-edge and noise checks (L3M, five books U7 P7 O7 M7 A7)
+
+A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.35) is recovered by the pipeline: PLANT SKIP +16.4k/wk vs base (DD 43.6k vs 52.2k), PLANT SKIP vs its random skip +21.7k/wk, PLANT X15 +4.1k/wk; a pure-noise state gives SKIP -15.7k/wk (random skip -10.9k, i.e. path-effect spread about +-5k/wk at this keep share) and X15 -0.8k/wk. So a real edge of that size is visible, and a skip result inside +-5k/wk of its random skip is noise. Rows of the sets are in section 1.
 
 ## 1. Engine results: Part A lead (c_imb_n5_60_lo) and Part B items, per scope and window
 
@@ -26,9 +30,12 @@ Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all la
 | TL3_FL_LEADU7_SKIP_RND | U7 | 1809 | -8859 | -15504 | -8797 | 64768 | 52233 | 12535 | 25 | 121 | -1272 | 518 | -7269 | 35831 | 14457 | 14799 | 23989 | 64768 | 43405 |
 | TL3_FL_LEADU7_X15 | U7 | 1877 | 862 | 1509 | 855 | 53105 | 52233 | 872 | 121 | 121 | 624 | 518 | 986 | 15613 | 14457 | 24996 | 23989 | 42280 | 43405 |
 | TL3_FL_LEADU7_X2 | U7 | 1875 | -657 | -1149 | -655 | 56341 | 52233 | 4107 | 120 | 121 | 500 | 518 | -212 | 14417 | 14457 | 23621 | 23989 | 43828 | 43405 |
+| TL3_FL_NOISEL5_SKIP | L5 | 1691 | -15719 | -27509 | -15584 | 94651 | 52233 | 42418 | 882 | 1104 | 29.24 | 173 | -12728 | 74333 | 42565 | 7155 | 23989 | 94651 | 43405 |
+| TL3_FL_NOISEL5_SKIP_RND | L5 | 1682 | -10907 | -19086 | -10764 | 69068 | 52233 | 16835 | 875 | 1104 | 63.51 | 173 | -10436 | 56489 | 42565 | 9390 | 23989 | 69068 | 43405 |
 | TL3_FL_NOISEL5_X15 | L5 | 1896 | -793 | -1387 | -797 | 62090 | 52233 | 9857 | 1117 | 1104 | 161 | 173 | -843 | 53134 | 42565 | 23630 | 23989 | 44267 | 43405 |
 | TL3_FL_PLANTL5_SKIP | L5 | 1797 | 16370 | 28647 | 16460 | 43563 | 52233 | -8670 | 916 | 1104 | 428 | 173 | 15444 | 34566 | 42565 | 38717 | 23989 | 43563 | 43405 |
 | TL3_FL_PLANTL5_SKIP_RND | L5 | 1710 | -5312 | -9296 | -5214 | 49052 | 52233 | -3181 | 914 | 1104 | 150 | 173 | -4198 | 36338 | 42565 | 17600 | 23989 | 49052 | 43405 |
+| TL3_FL_PLANTL5_X15 | L5 | 1898 | 4083 | 7146 | 4072 | 53506 | 52233 | 1273 | 1119 | 1104 | 217 | 173 | 3975 | 44550 | 42565 | 28197 | 23989 | 34490 | 43405 |
 
 
 ### 1b. Each set read against its control (random skip / unconditional hold / random ladder / nonsense score / noise)
@@ -38,7 +45,11 @@ Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all la
 | TL3_FL_LEADP7_SKIP | L3M | SKIP_RND | -3526 | 872 | 58417 | 42529 | 52233 | 316 | 218 | 28679 | 35082 |
 | TL3_FL_LEADU70_SKIP | L3M | SKIP_RND | -2666 | 3386 | 55106 | 60662 | 52233 | 1954 | -140 | 4206 | 19164 |
 | TL3_FL_LEADU7_SKIP | L3M | SKIP_RND | -2964 | 5895 | 56937 | 64768 | 52233 | 1265 | -1272 | 4181 | 35831 |
+| TL3_FL_NOISEL5_SKIP | L3M | SKIP_RND | -15719 | -4813 | 94651 | 69068 | 52233 | 29.24 | 63.51 | 74333 | 56489 |
 | TL3_FL_PLANTL5_SKIP | L3M | SKIP_RND | 16370 | 21682 | 43563 | 49052 | 52233 | 428 | 150 | 34566 | 36338 |
+| TL3_FL_PLANTL5_SKIP | L3M | NOISE | 16370 | 32089 | 43563 | 94651 | 52233 | 428 | 29.24 | 34566 | 74333 |
+| TL3_FL_PLANTL5_SKIP_RND | L3M | NOISE | -5312 | 5595 | 49052 | 69068 | 52233 | 150 | 63.51 | 36338 | 56489 |
+| TL3_FL_PLANTL5_X15 | L3M | NOISE | 4083 | 4876 | 53506 | 62090 | 52233 | 217 | 161 | 44550 | 53134 |
 
 
 ## 2. Part C score sizing (table-level screen on taken trades; engine sets queued)
