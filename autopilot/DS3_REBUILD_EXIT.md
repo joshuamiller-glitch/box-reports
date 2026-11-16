@@ -1,7 +1,7 @@
-# DS3_REBUILD_EXIT - T-REBUILD addendum 3: EXIT CONFLUENCE (W-RX). Parts A, B, C1, C2 built; C3 / D / E: see section 4. Updated 2026-11-16 20:54Z
+# DS3_REBUILD_EXIT - T-REBUILD addendum 3: EXIT CONFLUENCE (W-RX). Parts A, B, C1, C2 built; C3 / D / E: see section 4. Updated 2026-11-16 21:36Z
 > VALIDATION (W-RX, FIRST PASS, 2026-11-16): trials counted = C1 about 6,200 cell-conditions per source (190 conditions x 36 cells x pooled view; per-checkpoint views are descriptive) x 2 sources, C2 264-282 cells per source, C3 72 variants x 7 books x 2 sources + 9 give-back comparators (TRIALS_LEDGER.csv REX1 REX2 REX3); correction = nonsense bar (99th percentile of |t| of 33 controls per cell: 3 shifted 11/23/37 trading days + 30 persistent-draw random flags, realised share within 0.05) + Benjamini-Hochberg 10% per cell for C1, percentile among 33 controls for C2, White RC / Hansen SPA + deflated Sharpe + BH + CSCV PBO (12/14/16 blocks, 1-week purge) for C3; PBO is computed on the 72-variant weekly-difference matrix; C1 / C2 are in-sample descriptive tests (nothing fitted), C3 scores are WALK-FORWARD (trailing 26 weeks -> next 2) and every number is out of sample from 2023-10, nothing untouched yet (the HOLD path is inside the walk-forward span but was never used to choose anything). Prereg: REXIT_PREREG.md, REXIT_C3_PREREG.md (sha lines in DECISIONS.md, one correction and one deviation logged there).
 
-VERDICT (data ends 2026-10-30; FIRST PASS; C3 / D / E pending, see section 4): while a trade is open, no single re-read condition and no count of conditions against the trade tells the desk to get out. Pooled over all books (checkpoints 5/15/30/60/120 minutes in trade, JL2 and the stage-0 raw base), the average remaining result is +0.03 to +0.06 R in EVERY state we can build, including the state with 4 or more of 16 independent clusters against the trade (+0.03 R), and it turns negative only at 9 or more clusters against (-0.03 R, week-clustered SE 0.02, 1,300 rows): the count is not a staircase in the frozen 0..4+ bins (JL2 raw slope t -2.0, adjusted for open profit / give-back / time in trade t -1.2, percentile among the nonsense counts 73; raw base t -0.8 / -0.2). C1: of about 6,100-6,200 conditions x cells per source, the frozen survivor rule keeps 6 on JL2 (P7 15-minute trend against; H7 RTY flip) and 0 on the raw base, against 3 / 15 on two shuffled-outcome nulls (JL2) and 0 / 0 (raw): the real counts sit inside the null range, so nothing here is separable from noise at the single-condition level; the consistent themes are small (15-minute trend / VWAP / day vote against: remaining R lower by 0.03-0.06 R pooled, 0.1-0.2 R in P7 / U7 / H7 cells) and the mechanical ones (near the stop, 15 pt from the target). Part C2 leads only in P7 Asia and U7 (count against 0 to 4+: +0.12 R to +0.03 R on both bases, adjusted t about -2.2, percentile 97-100), still never negative, so even there the reading says tighten, not exit. The planted-edge check recovers a +0.15 R in-trade signal in 7 of 8 cells (all but O7, 417 trades), so the null is not a power failure for effects of that size; effects of 0.08 R are found only in the big cells. Exits are priced at a 1.2 pt slip (0.02 R) against that, so nothing found would pay for itself as a full exit.
+VERDICT (data ends 2026-10-30; FIRST PASS; D engine run NOT launched, reason below): while a trade is open, no re-read condition and no count of conditions against the trade tells the desk to get out, and no walk-forward exit score does either. (1) The average remaining result is +0.03 to +0.06 R in every state we can build, including 4 or more of 16 independent clusters against (+0.03 R); it is negative only at 9+ clusters against (-0.03 R, SE 0.02). The count is not a staircase in the frozen 0..4+ bins (JL2 raw slope t -2.0, adjusted for open profit / give-back / time in trade t -1.2, percentile among nonsense counts 73; raw base t -0.8 / -0.2); the only cells with an adjusted t <= -2 are P7 Asia and U7 (P7 Asia: +0.12 R at 0 clusters against falling to +0.03 R at 4+, on both bases), still never negative: the reading says tighten, not exit. (2) C1, about 6,100-6,200 cell-conditions per source: the frozen survivor rule keeps 6 on JL2 (P7 15-minute trend against, H7 RTY flip) and 0 on the raw base; four shuffled-outcome nulls keep 3 / 15 / 4 (JL2) and 0 / 0 / 2 (raw): the real counts sit inside the null range. Leads only: 15-minute trend / VWAP / day vote against (lift -0.03 to -0.06 R pooled, -0.1 to -0.2 R in P7 / U7 / H7 cells; HOLD sign flips for P7), M7 adverse-aggressor tape ratio at 5 s (-0.05 to -0.13 R at every checkpoint on raw, t -3.1, JL2 -0.1 t -2.1). (3) C3: the walk-forward exit score has an out-of-sample rank IC of -0.05 to +0.02 (ridge), -0.03 to +0.10 (boosted; only A7 reaches t 2.3-2.9), path-only baseline negative, null runs -0.01 +- 0.02: no information. Best of 72 actions per book (path arithmetic, $1.2 pt slip): +$0 to +$245/week on JL2 (U7 X in loss at -0.2 R, t 1.9) and +$121 to +$367/week on the raw base, against stack-book means of $0.6k-3.9k/week; White RC p 0.41-0.98 and SPA p 0.13-0.94 over the 72, DSR 0.00-0.43, BH discoveries 0 in all 12 book x source families, PBO above 0.5 for P7 and A7 on JL2. The simple give-back rule on the same trades is negative in $ on 11 of 12 book x source cells (-$145 to -$3,593/week). Max drawdown: the best-of-72 DD cut is 19-40% of the unchanged out-of-sample max DD for JL2 M7 / U7 / H7 / A7 and 25-40% for raw M7 / U7 / H7 / A7, above the 3 permutation nulls in several (JL2 U7 40% vs 0-28%, raw M7 40% vs 1-11%) but at a mean of -$510 / -$146 to +$166 per week and with random-exit controls (matched share, minutes and open profit) mostly worse than the real variants only because every random exit pays the slip; the DD cuts are LEADS, not results (3 nulls per book cannot support a percentile). The planted-edge check recovers a +0.15 R in-trade signal in 7 of 8 cells (all but O7, 417 trades; O7 has no walk-forward window with enough rows and is not scored in C3), so the nulls are not a power failure for effects of that size. Exits are priced at 1.2 pt (0.02 R); nothing found pays for itself as a full exit. D: because no variant passes the path-arithmetic gate (RC / SPA / DSR / BH / PBO) the exact-engine run was not launched; exit schedules of the best-by-mean and best-by-DD variants are exported at /mnt/l2/l2vast/_rexit/sched for an engine hook if the lead wants the DD leads verified. Stage 2 (entry score) and stage 3 (loss cuts) are not available on this box, so the joint step of D is not run.
 
 ## 1. Parts A and B: the in-trade state table and the remaining-R label (built)
 **What exists.** Two tables built from the same code (code/th_rexit: build_grid.py, add_z.py, features.py, build_rows.py, run_all.py): (1) SOURCE raw = every trade of the T-REBUILD stage-0 raw base (one book alone, no layers, hold to bracket), the 7 live books K7 M7 U7 P7 H7 A7 O7, built from /mnt/l2/l2vast/_th_sz/ijk/exact/runs_rf/TL3_RB_S0_<BOOK> for the months that had landed at 20:30Z on 16 Nov (listed in the first table; the shadow books X3-X5 not built yet); (2) SOURCE jl2 = TL3_EV_JN05W2JL2, all 43 months (2023-04..2026-10), all 7 live books. Files: /mnt/l2/l2vast/_rexit/rows/<source>/<BOOK>_<YYYYMM>.parquet (one row per closed minute in trade, decision times T_j = (floor(entry/60)+1+j)*60 so the first decision is 60-120 s after the entry, cap 480 minutes in trade, about 2.4 million rows JL2 and 2.6 million raw), E_<BOOK>_<YYYYMM>.parquet (one row per trade with the ENTRY readings e_*, the exit and the path pointer) and U_<BOOK>_<YYYYMM>.npy (the 1-second path u = side x (mid - entry) from entry to the real exit, pointer p_off / p_len). The grid of per-minute readings is /mnt/l2/l2vast/_rexit/grid1m.parquet (1.94 million minutes, 187 columns).
@@ -88,9 +88,11 @@ Method (frozen in REXIT_PREREG.md). Condition = a reading re-read in trade, in t
 | jl2 | REAL | 6143 | 107 | 90 | 795 | 458 | 18 | 6 | 6 |
 | jl2 | null y-shuffle 1 | 6143 | 45 | 24 | 330 | 262 | 15 | 3 | 3 |
 | jl2 | null y-shuffle 2 | 6143 | 168 | 133 | 618 | 569 | 74 | 15 | 15 |
+| jl2 | null y-shuffle 3 | 6143 | 142 | 78 | 428 | 491 | 17 | 4 | 4 |
 | raw | REAL | 6196 | 117 | 72 | 873 | 446 | 20 | 0 | 0 |
 | raw | null y-shuffle 1 | 6196 | 105 | 22 | 323 | 478 | 42 | 0 | 0 |
 | raw | null y-shuffle 2 | 6196 | 60 | 37 | 341 | 312 | 3 | 0 | 0 |
+| raw | null y-shuffle 3 | 6196 | 68 | 39 | 428 | 344 | 6 | 2 | 2 |
 
 Reading the table: 'tests' are the cell-conditions that had enough rows; 'abs_t_ge_bar' counts tests whose |t| reached the 99th percentile of the 33 controls of their own cell (about 1% expected per independent test; the conditions are highly correlated so null runs swing from 45 to 168). The null runs are the same pipeline with rem_R permuted inside book x session x checkpoint (seeds 1..n). The real JL2 counts (107 bar-passing, 6 survivors) sit inside the null range (45-168, 3-15); the raw base real counts (117, 0) sit inside its null range as well. That is the verdict on C1 at the level of the whole table: the conditions as a family do not separate from nonsense. Individual cells (below) are leads.
 
@@ -145,49 +147,49 @@ RAW
 
 | source | family | tests | real_neg_t_le_bar | null_mean | excess |
 |--|--|--|--|--|--|
-| jl2 | K_TREND15 | 163 | 12 | 4.5 | 7.5 |
-| jl2 | PATH | 216 | 6 | 2.0 | 4.0 |
-| jl2 | K_L3 | 386 | 5 | 1.5 | 3.5 |
-| jl2 | K_NKD | 184 | 5 | 2.5 | 2.5 |
+| jl2 | K_TREND15 | 163 | 12 | 4.3 | 7.7 |
+| jl2 | PATH | 216 | 6 | 3.0 | 3.0 |
+| jl2 | K_NKD | 184 | 5 | 2.3 | 2.7 |
+| jl2 | K_L3 | 386 | 5 | 3.0 | 2.0 |
+| jl2 | BOOK | 45 | 2 | 1.0 | 1.0 |
 | jl2 | K_BOOK | 252 | 3 | 2.0 | 1.0 |
-| jl2 | K_XIND | 414 | 6 | 5.0 | 1.0 |
-| jl2 | K_DAY | 222 | 6 | 7.0 | -1.0 |
-| jl2 | K_SQZ | 190 | 0 | 1.0 | -1.0 |
-| jl2 | K_TAPE | 271 | 1 | 2.0 | -1.0 |
-| jl2 | TAPE | 161 | 0 | 1.0 | -1.0 |
-| jl2 | K_ALPHA | 183 | 0 | 2.0 | -2.0 |
-| jl2 | K_TREND | 391 | 7 | 9.0 | -2.0 |
-| jl2 | K_MACD | 230 | 5 | 8.5 | -3.5 |
-| jl2 | K_XMOVE | 411 | 4 | 8.0 | -4.0 |
-| jl2 | OTHER | 1509 | 20 | 24.5 | -4.5 |
-| jl2 | K_VWAP | 228 | 4 | 11.0 | -7.0 |
-| jl2 | K_OSC | 230 | 3 | 13.0 | -10.0 |
-| jl2 | BOOK | 45 | 2 |  |  |
+| jl2 | OTHER | 1509 | 20 | 19.0 | 1.0 |
+| jl2 | K_XIND | 414 | 6 | 6.0 | 0.0 |
+| jl2 | K_TREND | 391 | 7 | 7.3 | -0.3 |
+| jl2 | K_DAY | 222 | 6 | 6.5 | -0.5 |
+| jl2 | K_MACD | 230 | 5 | 6.0 | -1.0 |
+| jl2 | K_TAPE | 271 | 1 | 3.0 | -2.0 |
+| jl2 | K_XMOVE | 411 | 4 | 6.0 | -2.0 |
+| jl2 | K_SQZ | 190 | 0 | 2.5 | -2.5 |
+| jl2 | K_VWAP | 228 | 4 | 7.0 | -3.0 |
+| jl2 | K_WALL | 92 | 0 | 3.0 | -3.0 |
+| jl2 | TAPE | 161 | 0 | 3.5 | -3.5 |
+| jl2 | K_ALPHA | 183 | 0 | 4.0 | -4.0 |
+| jl2 | K_OSC | 230 | 3 | 7.5 | -4.5 |
 | jl2 | K_PATH | 23 | 0 |  |  |
 | jl2 | K_RANGE | 69 | 0 |  |  |
-| jl2 | K_WALL | 92 | 0 |  |  |
 | jl2 | LEVELS | 92 | 0 |  |  |
 | jl2 | RANGE | 112 | 1 |  |  |
 | jl2 | SQZ | 69 | 0 |  |  |
-| raw | OTHER | 1523 | 19 | 6.5 | 12.5 |
-| raw | PATH | 227 | 13 | 3.0 | 10.0 |
-| raw | K_TREND15 | 167 | 7 | 1.0 | 6.0 |
-| raw | K_VWAP | 228 | 6 | 1.0 | 5.0 |
-| raw | K_DAY | 228 | 6 | 1.5 | 4.5 |
+| raw | OTHER | 1523 | 19 | 4.7 | 14.3 |
+| raw | PATH | 227 | 13 | 2.7 | 10.3 |
+| raw | K_TREND15 | 167 | 7 | 1.5 | 5.5 |
+| raw | K_DAY | 228 | 6 | 3.0 | 3.0 |
+| raw | K_VWAP | 228 | 6 | 3.0 | 3.0 |
 | raw | K_XMOVE | 412 | 5 | 3.0 | 2.0 |
-| raw | K_BOOK | 249 | 4 | 3.0 | 1.0 |
-| raw | K_L3 | 393 | 3 | 2.0 | 1.0 |
+| raw | K_ALPHA | 184 | 0 | 1.0 | -1.0 |
+| raw | K_BOOK | 249 | 4 | 5.0 | -1.0 |
+| raw | K_L3 | 393 | 3 | 4.0 | -1.0 |
 | raw | K_TAPE | 273 | 0 | 1.0 | -1.0 |
+| raw | K_XIND | 414 | 1 | 2.0 | -1.0 |
 | raw | LEVELS | 92 | 0 | 1.0 | -1.0 |
 | raw | SQZ | 69 | 1 | 2.0 | -1.0 |
+| raw | K_MACD | 230 | 1 | 3.0 | -2.0 |
 | raw | K_RANGE | 69 | 0 | 2.0 | -2.0 |
-| raw | K_SQZ | 191 | 0 | 2.0 | -2.0 |
-| raw | K_XIND | 414 | 1 | 3.0 | -2.0 |
-| raw | K_TREND | 400 | 0 | 3.0 | -3.0 |
-| raw | TAPE | 161 | 0 | 3.0 | -3.0 |
-| raw | K_MACD | 230 | 1 | 5.0 | -4.0 |
+| raw | K_SQZ | 191 | 0 | 2.5 | -2.5 |
+| raw | K_TREND | 400 | 0 | 2.5 | -2.5 |
+| raw | TAPE | 161 | 0 | 2.5 | -2.5 |
 | raw | BOOK | 46 | 0 |  |  |
-| raw | K_ALPHA | 184 | 0 |  |  |
 | raw | K_NKD | 184 | 3 |  |  |
 | raw | K_OSC | 230 | 2 |  |  |
 | raw | K_PATH | 23 | 0 |  |  |
@@ -270,6 +272,34 @@ RAW
 | raw | U7 | 0.150 | -0.139 | -3.758 | 99.848 | 0.950 |
 
 Planted edge (run first, shuffled before any real result was read): the +0.15 R plant is found (lift < 0, |t| >= 2.6, percentile >= 95) in 95-100% of seeds in ALL, K7, M7, P7, U7 and A7, 75-85% in H7, 5% in O7 (417 trades); +0.08 R in 100% in ALL and K7, 85-95% in M7 and P7, 10-55% in the small books; zero plant never found (0%). So 'nothing found' means: nothing of 0.15 R or larger in books with 1,000+ trades, nothing of 0.08 R in the pooled and K7 / M7 / P7 cells.
+### 2.4 The 5-second flow items (adverse / favourable aggressor trades and contracts over 5 and 15 s, acceleration of the adverse side, message-rate acceleration), checkpoints entry + 60 / 300 / 900 / 1800 / 3600 s, first 60 minutes only; 16 thresholded items x cells, same controls
+
+JL2: 131 cell-items, 0 reach their cell bar
+
+| cell | cond | n | share | lift | t | pct_abs | bar99 | lift_k60 | lift_k300 | lift_k900 | lift_k1800 | lift_k3600 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| O7 | acc_mps_ge1.5 | 1205 | 0.028 | -0.570 | -2.589 | 96.970 | 3.874 | -0.328 | -0.697 | -0.365 | -0.792 |  |
+| M7 | ratio_adv_fav_15_tn_ge5 | 14631 | 0.015 | -0.115 | -2.149 | 100.000 | 2.622 | -0.251 | -0.039 | -0.053 | -0.020 | -0.305 |
+| M7 | ratio_adv_fav_15_cps_ge5 | 14631 | 0.023 | -0.076 | -1.703 | 93.939 | 2.622 | -0.162 | -0.011 | -0.020 | -0.071 | -0.201 |
+| H7 | adv5_ge10_fav_le2 | 4436 | 0.008 | -0.253 | -1.690 | 90.909 | 2.647 | -0.566 | -0.393 | 0.282 | -0.349 | -0.361 |
+| M7 | ratio_adv_fav_15_cps_ge2 | 14631 | 0.146 | -0.035 | -1.632 | 87.879 | 2.622 | -0.021 | -0.004 | -0.039 | -0.063 | -0.082 |
+| M7 | ratio_adv_fav_15_tn_ge3 | 14631 | 0.041 | -0.045 | -1.324 | 78.788 | 2.622 | -0.085 | 0.054 | -0.038 | -0.099 | -0.121 |
+| P7 | ratio_adv_fav_15_cps_ge2 | 15452 | 0.231 | -0.018 | -1.220 | 66.667 | 2.963 | 0.018 | -0.015 | -0.035 | -0.012 | -0.069 |
+| ALL | adv5_ge10_fav_le2 | 74397 | 0.008 | -0.036 | -1.105 | 72.727 | 2.369 | 0.087 | -0.108 | -0.098 | -0.070 | 0.012 |
+
+RAW: 132 cell-items, 4 reach their cell bar
+
+| cell | cond | n | share | lift | t | pct_abs | bar99 | lift_k60 | lift_k300 | lift_k900 | lift_k1800 | lift_k3600 |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| M7 | combo_cps5_ge3_acc_ge2 | 14219 | 0.043 | -0.131 | -3.202 | 100.000 | 2.709 | -0.059 | -0.160 | -0.188 | -0.089 | -0.164 |
+| M7 | ratio_adv_fav_5_cps_ge3 | 14219 | 0.096 | -0.087 | -3.123 | 100.000 | 2.709 | -0.075 | -0.054 | -0.163 | -0.033 | -0.106 |
+| M7 | ratio_adv_fav_5_tn_ge2 | 14219 | 0.166 | -0.069 | -3.087 | 100.000 | 2.709 | -0.066 | -0.065 | -0.090 | -0.054 | -0.066 |
+| O7 | acc_mps_ge1.5 | 1299 | 0.028 | -0.543 | -2.527 | 96.970 | 2.936 | -0.462 | -0.767 | -0.141 | -0.578 |  |
+| M7 | ratio_adv_fav_5_cps_ge5 | 14219 | 0.045 | -0.108 | -2.518 | 96.970 | 2.709 | -0.104 | -0.110 | -0.161 | -0.083 | -0.062 |
+| M7 | ratio_adv_fav_5_tn_ge3 | 14219 | 0.070 | -0.078 | -2.479 | 100.000 | 2.709 | -0.067 | -0.089 | -0.110 | -0.009 | -0.123 |
+| M7 | ratio_adv_fav_5_cps_ge2 | 14219 | 0.204 | -0.048 | -2.370 | 93.939 | 2.709 | -0.064 | -0.059 | -0.021 | -0.013 | -0.090 |
+| M7 | ratio_adv_fav_15_cps_ge2 | 14219 | 0.135 | -0.055 | -1.972 | 93.939 | 2.709 | 0.026 | -0.089 | -0.062 | -0.091 | -0.073 |
+
 ## 3. Part C2: exit confluence count (clusters against now / flipped since entry)
 Method (frozen). 16 clusters (code/th_rexit/features.py CLUSTERS: TREND 1-5 min, TREND15, OSC, MACD, SQZ, VWAP, DAY, XIND (ES / RTY states), XMOVE, NKD, ALPHA, TAPE, BOOK, WALL, L3, RANGE); cluster vote = mean of its members' ternary votes; against when <= -0.5. 'now' = number of clusters against now; 'flip' = number that were not against at entry and are now (the directive's 'count of flips'). Rows with fewer than 12 known clusters are dropped (on average 15.9 of 16 known). Table: mean remaining R by count 0, 1, 2, 3, 4+; the main statistic is the slope of the remaining R on min(count, 4) AFTER regressing both on open R, give-back R, ln(minutes in trade) and book x session effects (profit / loss state and time in trade are mechanically tied to how many readings are against), week-clustered t; raw slope beside; controls = the same count built from the shifted flags (11/23/37) and from 30 persistent-draw random cluster flags with each cluster's realised share matched within 0.05; pct_abs_t = share of controls with a smaller |t|. A staircase flag needs >= 3 of 4 steps down, adjusted slope < 0 and slope percentile >= 95. By state: open < 0 (loss) and open >= 0 (profit) separately, because the thresholds are separate.
 **Pooled ALL cell: mean remaining R by number of clusters against (0,1,2,3,4+), all months**
@@ -330,14 +360,194 @@ Method (frozen). 16 clusters (code/th_rexit/features.py CLUSTERS: TREND 1-5 min,
 | jl2 | REAL | 138 | 28 | 8 | 3 |
 | jl2 | null 1 | 138 | 6 | 3 | 0 |
 | jl2 | null 2 | 138 | 10 | 3 | 2 |
+| jl2 | null 3 | 138 | 9 | 6 | 0 |
 | raw | REAL | 138 | 15 | 1 | 3 |
 | raw | null 1 | 138 | 3 | 0 | 2 |
 | raw | null 2 | 138 | 6 | 0 | 1 |
+| raw | null 3 | 138 | 25 | 16 | 3 |
 
-Reading: the pooled bins are flat (JL2 now: +0.058, +0.065, +0.043, +0.064, +0.030 R for 0, 1, 2, 3, 4+; raw: +0.053, +0.055, +0.041, +0.058, +0.039): not a staircase on either base. The finer bins show only a soft decline above 5 clusters and a negative mean at 9+ (-0.03 R, SE 0.02), where the trade is typically already deep against the entry. The slope percentile of the frozen rule (pct_adj in the parquet) is high in many cells because random controls are far less noisy than a regime-persistent real count; pct_abs_t (shown) is the fair comparison. The staircase flags exceed the null run count (JL2 28 vs 6, raw 15 vs 3) but the t of those cells is small (the flagged cells in the second table have |t| < 2.8 and 11 of them are P7 Asia / U7 cells that overlap in trades). Treat P7 Asia and U7 as LEADS for C3 / the engine, not as results.
-## 4. Parts C3, D, E
+Reading: the pooled bins are flat (JL2 now: +0.058, +0.065, +0.043, +0.064, +0.030 R for 0, 1, 2, 3, 4+; raw: +0.053, +0.055, +0.041, +0.058, +0.039): not a staircase on either base. The finer bins show only a soft decline above 5 clusters and a negative mean at 9+ (-0.03 R, SE 0.02), where the trade is typically already deep against the entry. Minimum detectable slope: the pooled adjusted slope has a standard error of 0.0045 R per cluster (0.018 R over the 4 steps), so a slope under about 0.013 per cluster step (0.05 R over 0..4+) cannot be seen in the pooled cell, and 0.03-0.06 per step in single book x session cells. The slope percentile of the frozen rule (pct_adj in the parquet) is high in many cells because random controls are far less noisy than a regime-persistent real count; pct_abs_t (shown) is the fair comparison. Frozen-rule staircase flags (all windows and strata): JL2 28 vs 6 / 10 / 9 in the three nulls, raw 15 vs 3 / 6 / 25; cells with adjusted t <= -2 (win all): JL2 8 vs 3 / 3 / 6, raw 1 vs 0 / 0 / 16. JL2 shows a mild excess carried by P7 Asia and U7 (overlapping cells), the raw base none. Treat P7 Asia and U7 as LEADS.
+## 4. Parts C3, D, E: one exit score per book, walk-forward, actions, controls
+Method (frozen in REXIT_C3_PREREG.md). Rows = every 5th closed minute in trade (5, 10, ..., 480), per book, target rem_R. Features: the signed readings, 16 cluster votes, count against, count flipped, path state, missing-block indicators (about 160 columns). Walk-forward: 2-week test blocks, training = the trailing 26 weeks of trades that were entered AND closed before the block (label known), ridge (alpha from {1,000, 10,000, 100,000}, chosen on the last 4 training weeks; deviation from the frozen grid logged) and LightGBM (150 trees, 8 leaves) as the boosted check, and a path-only ridge as the baseline for what the readings add; scores exist from 2023-10. Actions on the predicted remaining R, thresholds separate in profit (open > 0) and in loss: X = exit the trade, H = take half and move the stop of the rest to breakeven (in profit) / cut half (in loss), B = tighten the stop (profit: to breakeven; loss: 20 pt below the price); grid {off, -0.05, -0.10, -0.20, -0.30} R in each state = 24 per family, 72 per book; cost 1.2 pt per exit; path arithmetic on the stored 1-s paths (no re-entry, no engine).
+**4.1 Out-of-sample information coefficient (Spearman, score vs remaining R, all out-of-sample rows 2023-10..2026-10; t = mean/SE of the weekly ICs)**
 
-IN PROGRESS (see STATUS below).
+| source | book | oos_rows | ridge_ic_all | ridge_t | ridge_ic_profit | ridge_ic_loss | ridge_ic_L6M | gbm_ic_all | gbm_t | gbm_ic_profit | gbm_ic_loss | pathonly_ic_all | pathonly_t | null_ic_mean | null_ic_sd | n_null |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| jl2 | K7 | 126758 | -0.029 | -0.681 | -0.031 | -0.022 | 0.008 | 0.003 | 1.040 | 0.010 | 0.001 | -0.030 | -0.004 | -0.003 | 0.018 | 9 |
+| jl2 | M7 | 57557 | -0.018 | -0.431 | -0.025 | -0.016 | -0.016 | -0.004 | 0.450 | 0.001 | 0.018 | -0.037 | -2.182 | -0.009 | 0.013 | 9 |
+| jl2 | U7 | 42624 | -0.052 | -3.331 | -0.071 | -0.025 | -0.073 | -0.013 | 0.587 | -0.050 | 0.040 | -0.061 | -3.999 | -0.004 | 0.017 | 9 |
+| jl2 | P7 | 89281 | 0.002 | -0.255 | -0.004 | 0.016 | -0.002 | 0.013 | -0.072 | 0.004 | 0.039 | -0.031 | -1.183 | 0.008 | 0.011 | 9 |
+| jl2 | H7 | 33329 | 0.006 | -1.652 | 0.005 | -0.001 | -0.127 | -0.004 | 1.935 | -0.017 | -0.005 | -0.025 | -2.760 | 0.001 | 0.011 | 9 |
+| jl2 | A7 | 35011 | 0.023 | 1.277 | -0.039 | 0.067 | 0.029 | 0.070 | 2.258 | 0.035 | 0.106 | 0.033 | 1.122 |  |  | 9 |
+| jl2 | O7 | 0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 6 |
+| raw | K7 | 133247 | -0.004 | 0.077 | 0.005 | -0.009 | 0.034 | -0.005 | 0.405 | 0.009 | -0.014 | 0.010 | 0.907 | 0.007 | 0.010 | 9 |
+| raw | M7 | 68304 | -0.015 | -3.606 | -0.026 | -0.017 | -0.049 | -0.016 | -1.740 | 0.011 | -0.033 | -0.024 | -3.886 | -0.004 | 0.013 | 9 |
+| raw | U7 | 43673 | -0.037 | -0.842 | -0.043 | -0.024 | -0.040 | -0.009 | 0.750 | -0.035 | 0.032 | -0.038 | -1.474 | -0.004 | 0.015 | 9 |
+| raw | P7 | 115200 | -0.041 | -1.813 | -0.054 | -0.048 | -0.021 | -0.027 | -0.697 | -0.053 | -0.010 | -0.044 | -1.639 | -0.003 | 0.024 | 9 |
+| raw | H7 | 35771 | -0.032 | -2.468 | -0.033 | -0.034 | -0.214 | -0.025 | -0.155 | -0.040 | -0.026 | -0.023 | -3.351 | -0.008 | 0.017 | 9 |
+| raw | A7 | 33790 | 0.028 | 0.956 | -0.035 | 0.067 | -0.007 | 0.100 | 2.890 | 0.066 | 0.121 | 0.039 | 1.007 |  |  | 9 |
+| raw | O7 | 0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 6 |
 
+Reading: an exit score is useful only if its out-of-sample rank correlation with the remaining R is clearly positive; the IC of a score that tells the desk when to leave is about 0.01-0.03 at best in this problem. null_ic = the same ridge pipeline with the outcome permuted inside session x checkpoint (3 seeds) and with the readings taken from the trade 11 / 23 / 37 trading days earlier (3 shifts), mean and sd of those six runs.
+
+**4.2 JL2: best of the 72 variants per book (path arithmetic on the stored 1-s paths, base lots, out-of-sample weeks; d_usd = weekly P&L difference vs the unchanged trade; family tests over all 72; control percentile = share of the 30 random-exit draws that are worse than the real variant; dd in $ of weekly cumulative P&L)**
+
+| book | weeks | trades_oos | best_by_mean | d_usd_week | d_usd_week_x175 | real_usd_week | t_week | RC_p | SPA_p | DSR | BH_disc | PBO16 | PBO12 | dd_real | dd_best_mean | dd_best_dd | best_by_dd | ctl_pct_mean | ctl_pct_dd | ctl_n | ctl_share |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| K7 | 161 | 6049 | B pNone l-0.3 | 0 | 0 | 3522 | 1.000 | 0.980 | 0.699 | 0.000 | 0 | 0.004 | 0.001 | 32592 | 32592 | 32592 | H p-0.1 lNone |  |  | 0 | 0.000 |
+| M7 | 161 | 3186 | B p-0.2 l-0.05 | 60 | 105 | 604 | 0.676 | 0.800 | 0.803 | 0.261 | 0 | 0.280 | 0.301 | 42530 | 34057 | 32516 | B p-0.1 l-0.05 | 97 | 87 | 30 | 0.230 |
+| U7 | 161 | 1155 | X pNone l-0.2 | 245 | 429 | 1450 | 1.888 | 0.532 | 0.260 | 0.216 | 0 | 0.025 | 0.052 | 42266 | 31317 | 25233 | X pNone l-0.05 | 100 | 100 | 29 | 0.086 |
+| P7 | 161 | 3289 | B p-0.1 l-0.05 | 28 | 48 | 3922 | 0.135 | 0.922 | 0.938 | 0.147 | 0 | 0.544 | 0.604 | 36379 | 35159 | 33863 | H pNone l-0.05 | 90 | 73 | 30 | 0.208 |
+| H7 | 161 | 871 | B pNone l-0.2 | 33 | 58 | 1204 | 1.659 | 0.929 | 0.242 | 0.311 | 0 | 0.139 | 0.126 | 35057 | 33388 | 26772 | X p-0.3 l-0.2 | 75 | 62 | 24 | 0.040 |
+| A7 | 134 | 818 | B p-0.1 l-0.05 | 50 | 87 | 803 | 0.579 | 0.842 | 0.898 | 0.066 | 0 | 0.583 | 0.552 | 7738 | 7617 | 6263 | X p-0.05 l-0.05 | 90 | 63 | 30 | 0.286 |
+
+**4.3 JL2: drawdown as a distribution (stationary block bootstrap of the out-of-sample weekly P&L, 3,000 resamples, block length from the autocorrelation; thresholds = multiples of the average weekly profit of the unchanged book)**
+
+| book | real_median_dd | real_p95_dd | real_p_gt_1x | real_p_gt_3x | bestmean_median_dd | bestmean_p95 | bestdd_median_dd | bestdd_p95 | block_len |
+|--|--|--|--|--|--|--|--|--|--|
+| K7 | 30981 | 52546 | 1.000 | 1.000 | 30981 | 52546 | 31337 | 53212 | 1.0 |
+| M7 | 42928 | 82455 | 1.000 | 1.000 | 41586 | 79862 | 42289 | 81381 | 1.6 |
+| U7 | 44261 | 79705 | 1.000 | 1.000 | 38956 | 69231 | 42791 | 81925 | 1.0 |
+| P7 | 36379 | 54441 | 1.000 | 1.000 | 40209 | 70161 | 33863 | 51448 | 13.2 |
+| H7 | 25744 | 46116 | 1.000 | 1.000 | 25244 | 45179 | 24911 | 45057 | 1.0 |
+| A7 | 13053 | 23345 | 1.000 | 1.000 | 11140 | 19659 | 11128 | 20584 | 1.0 |
+
+**4.4 JL2: simple give-back rule on the same trades (exit when give-back >= F of best, best >= B pts; 9 variants per book; 1-s paths; best by d_usd_week shown per book; all 9 in c3_ctl_jl2.json)**
+
+| book | F | B_pts | share_exited | d_usd_week | d_dd | d_worst_week |
+|--|--|--|--|--|--|--|
+| H7 | 0.600 | 40.000 | 0.262 | -145 | -10446 | -774 |
+| U7 | 0.500 | 40.000 | 0.313 | -156 | -6147 | 2408 |
+| M7 | 0.600 | 40.000 | 0.234 | -161 | -6574 | 1832 |
+| A7 | 0.400 | 40.000 | 0.399 | -327 | 4401 | 1916 |
+| P7 | 0.600 | 40.000 | 0.230 | -641 | 2439 | 3306 |
+| K7 | 0.600 | 40.000 | 0.251 | -803 | -1503 | 1909 |
+
+**4.5 JL2 (part E): which trades the best-by-mean variant helps (groups exclusive: winner that gave it back = MFE >= 30 pt and final < 25% of MFE; loser that never went green = MFE <= 2 pt and a loss; cut by the current loss lines = StateCut / EarlyCut / StackCut / BookLock exits; other)**
+
+| book | variant | group | n_trades | n_fired | d_usd_total | d_usd_per_fired | real_usd_total |
+|--|--|--|--|--|--|--|--|
+| K7 | B None -0.3 | winner_gave_back | 1886 | 2 | 42 | 21 | -1682855 |
+| K7 | B None -0.3 | loser_never_green | 308 | 0 | 0 |  | -275668 |
+| K7 | B None -0.3 | cut_by_loss_line | 1122 | 0 | 0 |  | -1040498 |
+| K7 | B None -0.3 | other | 2733 | 1 | 0 | 0 | 3566055 |
+| M7 | B -0.2 -0.05 | winner_gave_back | 1035 | 286 | 70687 | 247 | -934835 |
+| M7 | B -0.2 -0.05 | loser_never_green | 170 | 47 | 6409 | 136 | -151406 |
+| M7 | B -0.2 -0.05 | cut_by_loss_line | 535 | 138 | 20311 | 147 | -462984 |
+| M7 | B -0.2 -0.05 | other | 1446 | 261 | -87736 | -336 | 1646492 |
+| U7 | X None -0.2 | winner_gave_back | 328 | 44 | 58650 | 1333 | -747532 |
+| U7 | X None -0.2 | loser_never_green | 46 | 5 | 7360 | 1472 | -104164 |
+| U7 | X None -0.2 | cut_by_loss_line | 41 | 6 | 3708 | 618 | -60917 |
+| U7 | X None -0.2 | other | 740 | 44 | -30216 | -687 | 1146063 |
+| P7 | B -0.1 -0.05 | winner_gave_back | 1001 | 222 | 143391 | 646 | -1458670 |
+| P7 | B -0.1 -0.05 | loser_never_green | 173 | 33 | 8983 | 272 | -208857 |
+| P7 | B -0.1 -0.05 | cut_by_loss_line | 687 | 140 | 52461 | 375 | -965031 |
+| P7 | B -0.1 -0.05 | other | 1428 | 289 | -200376 | -693 | 3264020 |
+| H7 | B None -0.2 | winner_gave_back | 255 | 13 | 4936 | 380 | -375009 |
+| H7 | B None -0.2 | loser_never_green | 33 | 1 | -11 | -11 | -43760 |
+| H7 | B None -0.2 | cut_by_loss_line | 64 | 4 | 226 | 57 | -76474 |
+| H7 | B None -0.2 | other | 519 | 17 | 193 | 11 | 689143 |
+| A7 | B -0.1 -0.05 | winner_gave_back | 228 | 75 | 54359 | 725 | -240407 |
+| A7 | B -0.1 -0.05 | loser_never_green | 38 | 4 | 1058 | 264 | -42136 |
+| A7 | B -0.1 -0.05 | cut_by_loss_line | 32 | 5 | 2200 | 440 | -26974 |
+| A7 | B -0.1 -0.05 | other | 520 | 150 | -50942 | -340 | 417145 |
+
+**4.6 JL2: HOLD path 2025-11-17..12-10 alone (3.5 weeks, trade-order cumulative drawdown in $, base lots)**
+
+| book | pick | variant | trades_in_HOLD | fired | d_usd | real_usd | policy_usd | dd_real | dd_policy | worst_trade_real | worst_trade_policy |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| K7 | best_mean | B None -0.3 | 144 | 0 | 0 | -16920 | -16920 | 34366 | 34366 | -1932 | -1932 |
+| K7 | best_dd | H -0.1 None | 144 | 0 | 0 | -16920 | -16920 | 34366 | 34366 | -1932 | -1932 |
+| M7 | best_mean | B -0.2 -0.05 | 79 | 11 | 784 | 2616 | 3401 | 13078 | 12534 | -2152 | -2152 |
+| M7 | best_dd | B -0.1 -0.05 | 79 | 11 | 784 | 2616 | 3401 | 13078 | 12534 | -2152 | -2152 |
+| U7 | best_mean | X None -0.2 | 25 | 0 | 0 | -17595 | -17595 | 21235 | 21235 | -5080 | -5080 |
+| U7 | best_dd | X None -0.05 | 25 | 0 | 0 | -17595 | -17595 | 21235 | 21235 | -5080 | -5080 |
+| P7 | best_mean | B -0.1 -0.05 | 87 | 14 | -1017 | -4435 | -5452 | 14907 | 14330 | -3914 | -3914 |
+| P7 | best_dd | H None -0.05 | 87 | 14 | -2991 | -4435 | -7426 | 14907 | 15180 | -3914 | -3914 |
+| H7 | best_mean | B None -0.2 | 17 | 0 | 0 | -4370 | -4370 | 6960 | 6960 | -2954 | -2954 |
+| H7 | best_dd | X -0.3 -0.2 | 17 | 0 | 0 | -4370 | -4370 | 6960 | 6960 | -2954 | -2954 |
+| A7 | best_mean | B -0.1 -0.05 | 14 | 0 | 0 | 3429 | 3429 | 2400 | 2400 | -1215 | -1215 |
+| A7 | best_dd | X -0.05 -0.05 | 14 | 0 | 0 | 3429 | 3429 | 2400 | 2400 | -1215 | -1215 |
+
+**4.2 RAW: best of the 72 variants per book (path arithmetic on the stored 1-s paths, base lots, out-of-sample weeks; d_usd = weekly P&L difference vs the unchanged trade; family tests over all 72; control percentile = share of the 30 random-exit draws that are worse than the real variant; dd in $ of weekly cumulative P&L)**
+
+| book | weeks | trades_oos | best_by_mean | d_usd_week | d_usd_week_x175 | real_usd_week | t_week | RC_p | SPA_p | DSR | BH_disc | PBO16 | PBO12 | dd_real | dd_best_mean | dd_best_dd | best_by_dd | ctl_pct_mean | ctl_pct_dd | ctl_n | ctl_share |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| K7 | 154 | 5749 | B p-0.1 lNone | 134 | 235 | 3202 | 0.649 | 0.765 | 0.770 | 0.130 | 0 | 0.246 | 0.244 | 83875 | 83875 | 83875 | X pNone l-0.05 | 30 | 17 | 30 | 0.067 |
+| M7 | 154 | 2968 | B p-0.2 l-0.1 | 166 | 291 | 3 | 0.759 | 0.688 | 0.565 | 0.086 | 0 | 0.236 | 0.233 | 108840 | 77882 | 65056 | B p-0.1 l-0.05 | 77 | 100 | 30 | 0.175 |
+| U7 | 152 | 1102 | B p-0.3 l-0.05 | 207 | 363 | 1429 | 0.591 | 0.788 | 0.675 | 0.032 | 0 | 0.049 | 0.102 | 90375 | 75298 | 67086 | B p-0.05 l-0.05 | 100 | 77 | 30 | 0.326 |
+| P7 | 153 | 4450 | B p-0.3 l-0.2 | 367 | 642 | 6880 | 1.052 | 0.803 | 0.504 | 0.057 | 0 | 0.041 | 0.012 | 234532 | 227568 | 216893 | X p-0.1 l-0.2 | 56 | 44 | 9 | 0.031 |
+| H7 | 157 | 895 | X pNone l-0.3 | 134 | 234 | 1315 | 1.129 | 0.743 | 0.488 | 0.372 | 0 | 0.233 | 0.238 | 75071 | 59658 | 53011 | X p-0.1 l-0.3 | 96 | 100 | 25 | 0.032 |
+| A7 | 127 | 716 | B p-0.3 l-0.2 | 121 | 211 | 726 | 1.841 | 0.412 | 0.130 | 0.431 | 0 | 0.149 | 0.139 | 8160 | 8816 | 5618 | X p-0.1 l-0.05 | 100 | 53 | 30 | 0.151 |
+
+**4.3 RAW: drawdown as a distribution (stationary block bootstrap of the out-of-sample weekly P&L, 3,000 resamples, block length from the autocorrelation; thresholds = multiples of the average weekly profit of the unchanged book)**
+
+| book | real_median_dd | real_p95_dd | real_p_gt_1x | real_p_gt_3x | bestmean_median_dd | bestmean_p95 | bestdd_median_dd | bestdd_p95 | block_len |
+|--|--|--|--|--|--|--|--|--|--|
+| K7 | 67757 | 123465 | 1.000 | 1.000 | 60187 | 107720 | 70534 | 130652 | 1.0 |
+| M7 | 115675 | 231400 | 1.000 | 1.000 | 83620 | 164157 | 87580 | 165090 | 1.0 |
+| U7 | 97297 | 195541 | 1.000 | 1.000 | 85397 | 166590 | 101926 | 206701 | 1.1 |
+| P7 | 209939 | 389021 | 1.000 | 1.000 | 192364 | 341022 | 189972 | 339358 | 1.0 |
+| H7 | 63760 | 119255 | 1.000 | 1.000 | 60487 | 110280 | 54914 | 101715 | 1.0 |
+| A7 | 14808 | 27742 | 1.000 | 1.000 | 12034 | 21539 | 11309 | 20802 | 1.0 |
+
+**4.4 RAW: simple give-back rule on the same trades (exit when give-back >= F of best, best >= B pts; 9 variants per book; 1-s paths; best by d_usd_week shown per book; all 9 in c3_ctl_raw.json)**
+
+| book | F | B_pts | share_exited | d_usd_week | d_dd | d_worst_week |
+|--|--|--|--|--|--|--|
+| U7 | 0.500 | 40.000 | 0.319 | 64 | 757 | 700 |
+| H7 | 0.400 | 40.000 | 0.360 | -177 | -13608 | 255 |
+| M7 | 0.500 | 25.000 | 0.586 | -184 | -25238 | -2830 |
+| A7 | 0.600 | 40.000 | 0.318 | -334 | 4878 | 1394 |
+| K7 | 0.600 | 40.000 | 0.277 | -902 | -12374 | 5838 |
+| P7 | 0.400 | 40.000 | 0.366 | -3593 | 7551 | 14426 |
+
+**4.5 RAW (part E): which trades the best-by-mean variant helps (groups exclusive: winner that gave it back = MFE >= 30 pt and final < 25% of MFE; loser that never went green = MFE <= 2 pt and a loss; cut by the current loss lines = StateCut / EarlyCut / StackCut / BookLock exits; other)**
+
+| book | variant | group | n_trades | n_fired | d_usd_total | d_usd_per_fired | real_usd_total |
+|--|--|--|--|--|--|--|--|
+| K7 | B -0.1 None | winner_gave_back | 1662 | 135 | 243963 | 1807 | -3317150 |
+| K7 | B -0.1 None | loser_never_green | 260 | 1 | 2427 | 2427 | -558714 |
+| K7 | B -0.1 None | cut_by_loss_line | 53 | 1 | 2344 | 2344 | -104361 |
+| K7 | B -0.1 None | other | 3774 | 248 | -228033 | -919 | 4473310 |
+| M7 | B -0.2 -0.1 | winner_gave_back | 898 | 186 | 191512 | 1030 | -1718720 |
+| M7 | B -0.2 -0.1 | loser_never_green | 143 | 29 | 18670 | 644 | -286750 |
+| M7 | B -0.2 -0.1 | cut_by_loss_line | 0 | 0 | 0 |  | 0 |
+| M7 | B -0.2 -0.1 | other | 1927 | 305 | -184576 | -605 | 2005945 |
+| U7 | B -0.3 -0.05 | winner_gave_back | 298 | 112 | 275306 | 2458 | -1418622 |
+| U7 | B -0.3 -0.05 | loser_never_green | 60 | 17 | 30098 | 1770 | -290189 |
+| U7 | B -0.3 -0.05 | cut_by_loss_line | 1 | 0 | 0 |  | -4514 |
+| U7 | B -0.3 -0.05 | other | 743 | 230 | -273906 | -1191 | 1930600 |
+| P7 | B -0.3 -0.2 | winner_gave_back | 1283 | 56 | 168780 | 3014 | -7780665 |
+| P7 | B -0.3 -0.2 | loser_never_green | 155 | 1 | 1519 | 1519 | -936982 |
+| P7 | B -0.3 -0.2 | cut_by_loss_line | 0 | 0 | 0 |  | 0 |
+| P7 | B -0.3 -0.2 | other | 3012 | 80 | -114212 | -1428 | 9770267 |
+| H7 | X None -0.3 | winner_gave_back | 255 | 13 | 38916 | 2994 | -827096 |
+| H7 | X None -0.3 | loser_never_green | 46 | 4 | 11738 | 2934 | -164592 |
+| H7 | X None -0.3 | cut_by_loss_line | 17 | 1 | 557 | 557 | -64171 |
+| H7 | X None -0.3 | other | 577 | 11 | -30244 | -2749 | 1262310 |
+| A7 | B -0.3 -0.2 | winner_gave_back | 193 | 38 | 29188 | 768 | -224585 |
+| A7 | B -0.3 -0.2 | loser_never_green | 34 | 1 | 136 | 136 | -39435 |
+| A7 | B -0.3 -0.2 | cut_by_loss_line | 0 | 0 | 0 |  | 0 |
+| A7 | B -0.3 -0.2 | other | 489 | 69 | -13994 | -203 | 356275 |
+
+**4.6 RAW: HOLD path 2025-11-17..12-10 alone (3.5 weeks, trade-order cumulative drawdown in $, base lots)**
+
+| book | pick | variant | trades_in_HOLD | fired | d_usd | real_usd | policy_usd | dd_real | dd_policy | worst_trade_real | worst_trade_policy |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| K7 | best_mean | B -0.1 None | 167 | 57 | 581 | -37779 | -37198 | 54835 | 50582 | -2895 | -2895 |
+| K7 | best_dd | X None -0.05 | 167 | 59 | 11020 | -37779 | -26759 | 54835 | 51152 | -2895 | -2895 |
+| M7 | best_mean | B -0.2 -0.1 | 86 | 0 | 0 | 445 | 445 | 29670 | 29670 | -2545 | -2545 |
+| M7 | best_dd | B -0.1 -0.05 | 86 | 7 | 3158 | 445 | 3603 | 29670 | 27189 | -2545 | -2545 |
+| U7 | best_mean | B -0.3 -0.05 | 30 | 0 | 0 | -8675 | -8675 | 28205 | 28205 | -4925 | -4925 |
+| U7 | best_dd | B -0.05 -0.05 | 30 | 0 | 0 | -8675 | -8675 | 28205 | 28205 | -4925 | -4925 |
+| P7 | best_mean | B -0.3 -0.2 | 131 | 6 | 10994 | 3707 | 14702 | 67985 | 59574 | -9285 | -9285 |
+| P7 | best_dd | X -0.1 -0.2 | 131 | 18 | -7042 | 3707 | -3335 | 67985 | 61777 | -9285 | -9285 |
+| H7 | best_mean | X None -0.3 | 17 | 0 | 0 | -3085 | -3085 | 16375 | 16375 | -4825 | -4825 |
+| H7 | best_dd | X -0.1 -0.3 | 17 | 1 | -4846 | -3085 | -7931 | 16375 | 16375 | -4825 | -4825 |
+| A7 | best_mean | B -0.3 -0.2 | 14 | 1 | 473 | 2420 | 2894 | 2400 | 2380 | -1215 | -1215 |
+| A7 | best_dd | X -0.1 -0.05 | 14 | 3 | 450 | 2420 | 2870 | 2400 | 2380 | -1215 | -1215 |
+
+**D, engine verdict: see the STATUS line of section 5.**
 ## 5. Status, files, what is next
 Code: code/th_rexit (build_grid.py, add_z.py, features.py, conds.py, build_rows.py, run_all.py, c12lib.py, c1.py, c2.py, c2_fine.py, c1_plant.py, c3.py, c3_eval.py, c3_ctl.py, c3_e.py, tape5s.py, tape5s_eval.py, page.py). Results: /mnt/l2/l2vast/_rexit/res (c1_*.parquet, c2_*.parquet, null*_c*.parquet, c3/ and c3_*.json). Re-run when more raw months land: run_all.py raw (idempotent), then run_c12.sh raw, then page.py.
