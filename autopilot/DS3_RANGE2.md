@@ -1,4 +1,4 @@
-# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-16T04:16Z. Research only, NO PASS claim.
+# DS3_RANGE2 - T-RANGE2: a better range forecast than UW (W-R2). Built 2026-11-16T04:48Z. Research only, NO PASS claim.
 **VERDICT (data ends 2026-10-30; plain; data end: forecasts scored to 2026-11-12 with CME option inputs to 2026-11-13 (pulled at $0.00 on 11-15; 11-13 afternoon bars missing), engine cells to 2026-10-30; DIALS: on the exact engine no dial using this forecast is a lead - dial 9 narrow-tercile passes L3M/L6M but loses in HOLD and placebos match it, one-sided nearer target and London range-used-up lose, details in section 7): the options-market number from CME NQ options, put on top of our own realised-range model (HAR), beats UW (b) in london, nyam, nyam2, nypm, late, matches in none, loses in asia, pre (out-of-sample, R2 in L3M / L6M / older, same sample start as UW). The bigger fact: the HAR realised-range model ALONE already beats UW (b) in london, nyam, nyam2, nypm and (L3M/L6M) late; UW's range signal is mostly an IV-term proxy. CME options add real, placebo-clean gain over HAR in asia (+0.10 to +0.14 R2) and the last 90 minutes (+0.12 to +0.24), small in nypm (+0.03 to +0.07), and nothing in london / nyam. Asia is where UW (b) is still the best single model (its NDX/QQQ/SPX IV term beats our CME read of the same night), so UW is not yet fully replaceable for asia. ES options (pulled at $0.00) add on top of NQ options only in the last 90 minutes (R2 0.45/0.48/0.43 vs 0.34/0.43/0.40) and in nypm for L3M/L6M, nothing elsewhere. Pre (08:30-09:30) is driven by the calendar flags (CPI/NFP/FOMC), not by CME or UW. UW (c) (full UW) is worse than (b) everywhere. Whether UW is still needed: for asia yes (UW b, or Cboe VIX-family inputs, which reach nearly the same R2 free); for london, nyam, nypm, late a HAR + CME (or HAR alone) forecast replaces it. Not a PASS claim; selection of the best model per session is by mean R2 over the three windows (hindsight among ~12 models, see caveats).**
 
 Prereg: autopilot/RANGE2_PREREG.md (sha 942f27a55458bebb, in DECISIONS.md before scoring). Order: DIRECTIVE_RANGE2_20261114.md. Code: code/th_range2. Bulk: /mnt/l2/l2vast/_range2. Causal forecast files for the dials: /mnt/l2/l2vast/_range2/fc_r2_v1.parquet (HAR + CME; var 'r'), fc_r2_har.parquet (HAR only), same schema as W-RU fc.parquet; sent to W-CH2, W-D9, W-LR.
@@ -503,6 +503,8 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_LR125_HAR | london | +354 $/wk, DD +31.4%, ww +11322, stops 2.05(2.74), b5 90%, w2l 0 | -33 $/wk, DD +31.4%, ww +11322, stops 2.24(2.89), b5 87%, w2l 0 | -725 $/wk, DD +29.3%, ww +4364, stops 2.09(2.61), b5 88%, w2l 4 | True | True | -93 $/wk, DD +31.4%, ww +11322, stops 2.17(2.82), b5 87%, w2l 0 | +427 / +30 |
 | TL3_R2_LR1_HAR | all | -761 $/wk, DD -5.2%, ww +1717, stops 9.97(10.35), b5 94%, w2l 0 | n/a | n/a | False | None | n/a | -698 / n/a |
 | TL3_R2_LR1_HAR | london | -329 $/wk, DD +33.7%, ww +13238, stops 2.05(2.74), b5 76%, w2l 0 | n/a | n/a | False | None | n/a | -247 / n/a |
+| TL3_R2_LRR125_s1 | all | -2085 $/wk, DD +1.2%, ww +1791, stops 9.97(10.35), b5 82%, w2l 0 | n/a | n/a | False | None | n/a | -2074 / n/a |
+| TL3_R2_LRR125_s1 | london | -572 $/wk, DD +33.6%, ww +550, stops 2.05(2.74), b5 70%, w2l 0 | n/a | n/a | False | None | n/a | -549 / n/a |
 | TL3_R2_OS10_5 | all | +42 $/wk, DD +0.0%, ww +0, stops 10.35(10.35), b5 98%, w2l 0 | -2 $/wk, DD +0.0%, ww +0, stops 10.99(10.99), b5 99%, w2l 0 | n/a | False | False | -2 $/wk, DD -0.9%, ww +591, stops 10.54(10.54), b5 99%, w2l 0 | +38 / -4 |
 | TL3_R2_OS10_5 | asia | +407 $/wk, DD +0.0%, ww +0, stops 6.24(6.24), b5 100%, w2l 0 | +203 $/wk, DD +0.0%, ww +0, stops 6.35(6.35), b5 100%, w2l 0 | n/a | False | False | +203 $/wk, DD +0.0%, ww +0, stops 6.01(6.01), b5 100%, w2l 0 | +405 / +203 |
 | TL3_R2_OS10_5 | london | -197 $/wk, DD +0.0%, ww +0, stops 2.74(2.74), b5 100%, w2l 0 | -98 $/wk, DD +0.0%, ww +0, stops 2.89(2.89), b5 100%, w2l 0 | n/a | False | False | -98 $/wk, DD +0.0%, ww +0, stops 2.82(2.82), b5 100%, w2l 0 | -197 / -99 |
@@ -569,15 +571,19 @@ Lot basis: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine n
 | TL3_R2_PL37_D9A_T1_N | nyam | +547 $/wk, DD +6.8%, ww +0, stops 1.22(1.29), b5 100%, w2l 0 | -246 $/wk, DD -8.7%, ww +0, stops 1.71(1.67), b5 99%, w2l 1 | +40 $/wk, DD +47.2%, ww +4335, stops 2.24(2.15), b5 91%, w2l 4 | True | False | -388 $/wk, DD -8.7%, ww +0, stops 1.67(1.64), b5 99%, w2l 1 | +546 / -249 |
 | TL3_R2_PL37_D9A_T1_N | nypm | +234 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 123%, w2l 0 | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | -86 $/wk, DD -1.6%, ww +1798, stops 0.06(0.04), b5 75%, w2l 0 | False | False | -229 $/wk, DD +0.0%, ww +0, stops 0.08(0.08), b5 75%, w2l 0 | +233 / -228 |
 
-Cells with results: 27. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
+Cells with results: 28. Placebo cells (forecast shifted 11/23/37 days) are named TL3_R2_PL*; a lead needs to beat them.
 
 ## 8. November 2026 (202611, provisional: extended store via ev_store_launch.py, reference TL3_RE_JN05W2/202611; one month, not a window)
 
 | cell | d net $ (month) | d maxDD $ (positive = smaller) | d worst week $ | trades (ref) | $4.84: d net $ |
 |---|---|---|---|---|---|
+| TL3_R2_D5H13 | +36966 | +35082 | +24390 | 428 (338) | +37442 |
 | TL3_R2_D9A_T1_N | +0 | +0 | +0 | 338 (338) | +0 |
+| TL3_R2_LR125 | -4784 | +0 | +0 | 325 (338) | -4696 |
 | TL3_R2_OS10_67 | +0 | +0 | +0 | 338 (338) | +0 |
 | TL3_R2_PL23_D9A_T1_N | +8298 | +8298 | +399 | 338 (338) | +8115 |
+| TL3_R2_PL37_D9A_T1_N | +8 | +0 | +8 | 338 (338) | +0 |
+| TL3_R2_TBK7_N | +0 | +0 | +0 | 338 (338) | +0 |
 
 
 ## 6. Caveats

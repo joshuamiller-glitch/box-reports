@@ -1,7 +1,7 @@
-# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-16 01:29Z
+# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-16 04:30Z
 
 VERDICT (data ends 2026-10-30; plain): FIRST PASS: A7 flat -40 is +$1,869/wk in L6M (DD +10.3%, +5.5% with W44 removed) and positive in HOLD (+468) and PRE (+358), but only about a fifth of the L6M gain is A7 itself (+349 own, +1,500 other books: P7 +660, K7 +300, U7 +312, H7 +283) and in PRE A7 itself loses (-472) while other books gain 770; the flat cut removes the stop-triggered stack cuts (StackCut 40 to 15), so the lead is a stack-path effect, not an A7 effect, and the random-subset placebos (TL3_PM_P_A7F40_S1..3) and GAP / X' months are still running. No PASS claim.
-BASIS (one line): every $ and DD number on this page sums raw engine net_fee of JN05W2-family sets at BASE (box) lots, live = x1.75, with the engine own fills and $1.18/contract RT (not FEES.md $4.84 RT); columns dmean@4.84 reprice the mean change at $4.84 RT per contract (delta contracts x $3.66), no rerun.
+BASIS (one line): every $ and DD number on this page sums raw engine net_fee of JN05W2-family sets at BASE (box) lots, live = x1.75, with the engine own fills and $1.18/contract RT (not FEES.md $4.84 RT); columns dmean@4.84 reprice the mean change at $4.84 RT per contract (delta contracts x $3.66), no rerun. BASE CAVEAT (W-EV, DS3_ENGINE_VS_LIVE.md 10-11): JN05W2 matches live for governor, C22, stack cut 50% Asia-only, NTZ and BREADTH, but has NO JN04 stack cap (10 lots London), no P7 post-exit blackout, no ATR-SKIP and no NKD take; the live-matching base is JN05W2J, so every delta here is vs a base without those four layers.
 
 Base JN05W2 exact (43 months), L6M full stops = 11.0/wk (A7 4.0, U7 3.4, M7 1.3, H7 0.8, P7 0.5, K7 0.5 after its flat -45, O7 0.6). Full stop = exit Stop/StopJoin/StopJoinFallback. First-order rows use stored 1-s mid paths of the same trades (rule replaces the actual exit by a market exit at mid -0.8 pt when it fires before the actual exit; state-cut dynamics after that ignored); exact rows use the engine (hooks th_pm, identity TL3_PM_ID/ECID on 202610: TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_S_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_ECID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_PM_S_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | ).
 
@@ -135,10 +135,20 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | S_TGTOFF_A7 | -5 | 0 | 10.3>10.7 | -65 | 0 | 11.0>11.4 | 0 | 1 | 0 | - | - | - | -4 | -65 | - | -0 | - | - | - |
 | S_TGTOFF_H7 | 785 | -0 | 10.3>10.5 | 311 | -0 | 11.0>11.1 | -68 | 1 | 0 | - | - | - | 781 | 309 | - | 2 | - | - | - |
 | S_TGTOFF_K7 | -78 | -0 | 10.3>10.3 | 240 | -0 | 11.0>11.0 | -139 | 1 | 0 | - | - | - | -77 | 239 | - | 2 | - | - | - |
-| S_TGTOFF_M7 | -10 | 0 | 10.3>10.4 | - | - | - | - | - | - | - | - | - | -10 | - | - | - | - | - | - |
+| S_TGTOFF_M7 | -10 | 0 | 10.3>10.4 | -5 | 0 | 11.0>11.0 | 0 | 1 | 0 | - | - | - | -10 | -5 | - | 0 | - | - | - |
+| S_TGTOFF_P7 | 1091 | 0 | 10.3>10.4 | 1,349 | 0 | 11.0>11.0 | 0 | 1 | 0 | - | - | - | 1085 | 1,341 | - | -4 | - | - | - |
+| S_TGTOFF_U7 | 11 | 0 | 10.3>10.3 | 260 | 0 | 11.0>11.0 | 0 | 1 | 0 | - | - | - | 11 | 261 | - | -1 | - | - | - |
+| S_TGTOFF_O7 | 0 | 0 | 10.3>10.3 | 0 | 0 | 11.0>11.0 | 0 | 1 | 0 | - | - | - | 0 | 0 | - | 0 | - | - | - |
+| S_TRIGOFF_K7 | 0 | 0 | 10.3>10.3 | 0 | 0 | 11.0>11.0 | 0 | 1 | 0 | - | - | - | 0 | 0 | - | 0 | - | - | - |
+| S_TRIGOFF_M7 | 0 | 0 | 10.3>10.3 | 0 | 0 | 11.0>11.0 | 0 | 1 | 0 | - | - | - | 0 | 0 | - | 0 | - | - | - |
+| S_TRIGOFF_P7 | -29 | 0 | 10.3>10.3 | -14 | 0 | 11.0>11.0 | 0 | 1 | 0 | - | - | - | -29 | -14 | - | 0 | - | - | - |
+| S_TRIGOFF_U7 | -175 | 0 | 10.3>10.6 | 114 | 0 | 11.0>11.2 | 0 | 1 | 0 | - | - | - | -175 | 113 | - | -3 | - | - | - |
+| S_TRIGOFF_H7 | -18 | 0 | 10.3>10.4 | 280 | 0 | 11.0>11.2 | 0 | 1 | 0 | - | - | - | -18 | 275 | - | 0 | - | - | - |
 | S_R50_S1 | -155 | -0 | 10.3>10.4 | 677 | -0 | 11.0>11.2 | -208 | 1 | 0 | - | - | - | -155 | 670 | - | -1 | - | - | - |
 | S_R50_S2 | 1161 | -0 | 10.3>10.6 | 1,093 | -0 | 11.0>11.3 | -108 | 1 | 0 | - | - | - | 1156 | 1,087 | - | -4 | - | - | - |
 | S_R50_S3 | 1305 | -0 | 10.3>10.8 | 748 | -0 | 11.0>11.3 | -68 | 1 | 0 | - | - | - | 1296 | 743 | - | -3 | - | - | - |
+| V_GOVOFF | 173 | 17 | 10.3>10.2 | -231 | 17 | 11.0>11.0 | 10,345 | 1 | 0 | - | - | - | 169 | -248 | - | 0 | - | - | - |
+| V_GOV_ALLB | 617 | 8 | 10.3>10.2 | -109 | 8 | 11.0>10.9 | 5,641 | 1 | 0 | - | - | - | 623 | -99 | - | -11 | - | - | - |
 
 ## 4. All windows with decomposition (FIRST PASS; delta vs JN05W2 at base lots, x1.75 for live; own/other = change in the cell book vs all other books; rows TL3_PM_V_GOV* (governor / WL_E1) and TL3_PM_S_* (stack cut): both LIVE per user answer 2026-11-16; placebo cells TL3_PM_P_* apply the same A7 flat -40 to a random 50% of A7 trades)
 | cell | L3M | L6M | HOLD | GAP | PREUW | X' | ALL43 |
@@ -173,10 +183,21 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | S_TGTOFF_A7 | -5/wk DD +0.0% stops 10.3>10.7 own -22/other +17 noW44 -0.1% | -65/wk DD +0.0% stops 11.0>11.4 own -78/other +13 noW44 -0.1% | - | - | - | - | - |
 | S_TGTOFF_H7 | +785/wk DD -0.1% stops 10.3>10.5 own +620/other +164 noW44 +2.1% | +311/wk DD -0.1% stops 11.0>11.1 own +229/other +82 noW44 +2.1% | - | - | - | - | - |
 | S_TGTOFF_K7 | -78/wk DD -0.3% stops 10.3>10.3 own -78/other +0 noW44 +1.9% | +240/wk DD -0.3% stops 11.0>11.0 own +290/other -50 noW44 +1.9% | - | - | - | - | - |
-| S_TGTOFF_M7 | -10/wk DD +0.0% stops 10.3>10.4 own -10/other +0 noW44 +0.0% | - | - | - | - | - | - |
-| S_TGTOFF_O7 | - | - | - | - | - | - | - |
+| S_TGTOFF_M7 | -10/wk DD +0.0% stops 10.3>10.4 own -10/other +0 noW44 +0.0% | -5/wk DD +0.0% stops 11.0>11.0 own -5/other +0 noW44 +0.0% | - | - | - | - | - |
+| S_TGTOFF_O7 | +0/wk DD +0.0% stops 10.3>10.3 own +0/other +0 noW44 +0.0% | +0/wk DD +0.0% stops 11.0>11.0 own +0/other +0 noW44 +0.0% | - | - | - | - | - |
+| S_TGTOFF_P7 | +1091/wk DD +0.0% stops 10.3>10.4 own +392/other +699 noW44 -4.0% | +1349/wk DD +0.0% stops 11.0>11.0 own +918/other +432 noW44 -4.0% | - | - | - | - | - |
+| S_TGTOFF_U7 | +11/wk DD +0.0% stops 10.3>10.3 own +11/other +0 noW44 -1.0% | +260/wk DD +0.0% stops 11.0>11.0 own +322/other -61 noW44 -1.0% | - | - | - | - | - |
+| S_TRIGOFF_H7 | -18/wk DD +0.0% stops 10.3>10.4 own +0/other -19 noW44 +0.0% | +280/wk DD +0.0% stops 11.0>11.2 own +0/other +279 noW44 +0.0% | - | - | - | - | - |
+| S_TRIGOFF_K7 | +0/wk DD +0.0% stops 10.3>10.3 own +0/other +0 noW44 +0.0% | +0/wk DD +0.0% stops 11.0>11.0 own +0/other +0 noW44 +0.0% | - | - | - | - | - |
+| S_TRIGOFF_M7 | +0/wk DD +0.0% stops 10.3>10.3 own +0/other +0 noW44 +0.0% | +0/wk DD +0.0% stops 11.0>11.0 own +0/other +0 noW44 +0.0% | - | - | - | - | - |
+| S_TRIGOFF_P7 | -29/wk DD +0.0% stops 10.3>10.3 own +0/other -29 noW44 +0.0% | -14/wk DD +0.0% stops 11.0>11.0 own +0/other -14 noW44 +0.0% | - | - | - | - | - |
+| S_TRIGOFF_U7 | -175/wk DD +0.0% stops 10.3>10.6 own +0/other -175 noW44 -3.2% | +114/wk DD +0.0% stops 11.0>11.2 own +0/other +114 noW44 -3.2% | - | - | - | - | - |
 | T_M7_NP10 | -1446/wk DD -0.9% stops 10.3>10.0 own -197/other -1249 noW44 +7.2% | - | - | - | - | - | - |
 | T_M7_NP15 | -835/wk DD -2.8% stops 10.3>10.1 own +212/other -1047 noW44 +0.3% | - | - | - | - | - | - |
+| V_GOVOFF | +173/wk DD +16.9% stops 10.3>10.2 noW44 +0.0% | -231/wk DD +16.9% stops 11.0>11.0 noW44 +0.0% | - | - | - | - | - |
+| V_GOV_ALLB | +617/wk DD +7.9% stops 10.3>10.2 noW44 -10.8% | -109/wk DD +7.9% stops 11.0>10.9 noW44 -10.8% | - | - | - | - | - |
+| V_GOV_ASIA | - | - | - | - | - | - | - |
+| V_GOV_HALF | - | - | - | - | - | - | - |
 | X_A7AS_F35 | +2043/wk DD +13.4% stops 10.3>6.6 own +744/other +1298 noW44 +7.3% | +1718/wk DD +13.4% stops 11.0>7.2 own +278/other +1440 noW44 +7.3% | +400/wk DD +3.4% stops 10.7>7.6 own +6/other +393 | - | - | - | - |
 | X_A7AS_F40 | +2126/wk DD +10.3% stops 10.3>6.5 own +591/other +1533 noW44 +5.5% | +1869/wk DD +10.3% stops 11.0>7.2 own +345/other +1524 noW44 +5.5% | - | - | - | - | - |
 | X_A7AS_F45 | +1571/wk DD -1.3% stops 10.3>6.5 own +174/other +1395 noW44 +3.6% | - | - | - | - | - | - |
