@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (223 FL cell-months done, 72 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (243 FL cell-months done, 78 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -38,22 +38,28 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_LEADP70_SKIP_PD | P70 | 1784 | -7615 | -13327 | -7502 | 46614 | 52233 | -5619 | 149 | 243 | 330 | 408 | -3848 | 40256 | 39663 | 14060 | 23989 | 46614 | 43405 |
 | TL3_FL_LEADP7_HALF | P7 | 1878 | -1916 | -3352 | -1927 | 55446 | 52233 | 3213 | 471 | 467 | 251 | 253 | 2.72 | 49368 | 39663 | 21803 | 23989 | 48910 | 43405 |
 | TL3_FL_LEADP7_SKIP | P7 | 1724 | -3526 | -6171 | -3352 | 58417 | 52233 | 6184 | 264 | 467 | 316 | 253 | -2679 | 28679 | 39663 | 19030 | 23989 | 58417 | 43405 |
+| TL3_FL_LEADP7_SKIP_PD | P7 | 1720 | -6576 | -11508 | -6401 | 73703 | 52233 | 21470 | 282 | 467 | 231 | 253 | -4093 | 41283 | 39663 | 15425 | 23989 | 73703 | 43405 |
 | TL3_FL_LEADP7_SKIP_RND | P7 | 1754 | -4398 | -7696 | -4245 | 42529 | 52233 | -9704 | 288 | 467 | 218 | 253 | -4262 | 35082 | 39663 | 16616 | 23989 | 42529 | 43405 |
 | TL3_FL_LEADP7_X15 | P7 | 1876 | 681 | 1191 | 656 | 48820 | 52233 | -3413 | 471 | 467 | 274 | 253 | 830 | 42419 | 39663 | 24443 | 23989 | 44956 | 43405 |
 | TL3_FL_LEADP7_X2 | P7 | 1878 | -1916 | -3352 | -1927 | 55446 | 52233 | 3213 | 471 | 467 | 251 | 253 | 2.72 | 49368 | 39663 | 21803 | 23989 | 48910 | 43405 |
 | TL3_FL_LEADU70_HALF | U70 | 1872 | 36.31 | 63.55 | 37.16 | 56403 | 52233 | 4170 | 72 | 72 | 517 | 602 | -471 | 14280 | 15497 | 24376 | 23989 | 43385 | 43405 |
 | TL3_FL_LEADU70_SKIP | U70 | 1839 | -2666 | -4665 | -2630 | 55106 | 52233 | 2873 | 17 | 72 | 1954 | 602 | -778 | 4206 | 15497 | 21440 | 23989 | 48127 | 43405 |
+| TL3_FL_LEADU70_SKIP_PD | U70 | 1852 | -3501 | -6128 | -3479 | 60448 | 52233 | 8215 | 27 | 72 | 273 | 602 | -2767 | 12451 | 15497 | 20980 | 23989 | 49987 | 43405 |
 | TL3_FL_LEADU70_SKIP_RND | U70 | 1849 | -6052 | -10590 | -6019 | 60662 | 52233 | 8429 | 17 | 72 | -140 | 602 | -3517 | 19164 | 15497 | 18217 | 23989 | 60662 | 43405 |
 | TL3_FL_LEADU70_X15 | U70 | 1875 | 535 | 936 | 530 | 53105 | 52233 | 872 | 72 | 72 | 698 | 602 | 535 | 15479 | 15497 | 24641 | 23989 | 43387 | 43405 |
 | TL3_FL_LEADU70_X2 | U70 | 1872 | 36.31 | 63.55 | 37.16 | 56403 | 52233 | 4170 | 72 | 72 | 517 | 602 | -471 | 14280 | 15497 | 24376 | 23989 | 43385 | 43405 |
 | TL3_FL_LEADU7_HALF | U7 | 1875 | -657 | -1149 | -655 | 56341 | 52233 | 4107 | 120 | 121 | 500 | 518 | -212 | 14417 | 14457 | 23621 | 23989 | 43828 | 43405 |
 | TL3_FL_LEADU7_SKIP | U7 | 1811 | -2964 | -5188 | -2901 | 56937 | 52233 | 4703 | 28 | 121 | 1265 | 518 | -2099 | 4181 | 14457 | 21000 | 23989 | 48183 | 43405 |
+| TL3_FL_LEADU7_SKIP_PD | U7 | 1815 | -2641 | -4623 | -2588 | 53353 | 52233 | 1120 | 33 | 121 | 950 | 518 | -2411 | 9829 | 14457 | 21052 | 23989 | 51514 | 43405 |
 | TL3_FL_LEADU7_SKIP_RND | U7 | 1809 | -8859 | -15504 | -8797 | 64768 | 52233 | 12535 | 25 | 121 | -1272 | 518 | -7269 | 35831 | 14457 | 14799 | 23989 | 64768 | 43405 |
 | TL3_FL_LEADU7_X15 | U7 | 1877 | 862 | 1509 | 855 | 53105 | 52233 | 872 | 121 | 121 | 624 | 518 | 986 | 15613 | 14457 | 24996 | 23989 | 42280 | 43405 |
 | TL3_FL_LEADU7_X2 | U7 | 1875 | -657 | -1149 | -655 | 56341 | 52233 | 4107 | 120 | 121 | 500 | 518 | -212 | 14417 | 14457 | 23621 | 23989 | 43828 | 43405 |
 | TL3_FL_NOISEL5_SKIP | L5 | 1691 | -15719 | -27509 | -15584 | 94651 | 52233 | 42418 | 882 | 1104 | 29.24 | 173 | -12728 | 74333 | 42565 | 7155 | 23989 | 94651 | 43405 |
+| TL3_FL_NOISEL5_SKIP_PD | L5 | 1666 | -11231 | -19654 | -11077 | 75685 | 52233 | 23452 | 870 | 1104 | 73.01 | 173 | -9826 | 85062 | 42565 | 13640 | 23989 | 32894 | 43405 |
 | TL3_FL_NOISEL5_SKIP_RND | L5 | 1682 | -10907 | -19086 | -10764 | 69068 | 52233 | 16835 | 875 | 1104 | 63.51 | 173 | -10436 | 56489 | 42565 | 9390 | 23989 | 69068 | 43405 |
 | TL3_FL_NOISEL5_X15 | L5 | 1896 | -793 | -1387 | -797 | 62090 | 52233 | 9857 | 1117 | 1104 | 161 | 173 | -843 | 53134 | 42565 | 23630 | 23989 | 44267 | 43405 |
+| TL3_FL_PAfl010NY_SKIP_PD | NY | 1732 | -1493 | -2612 | -1442 | 51623 | 52233 | -610 | 101 | 271 | 84.63 | 47.09 | -324 | 8172 | 16913 | 22322 | 23989 | 43297 | 43405 |
+| TL3_FL_PAfl015NY_SKIP_PD | NY | 1720 | -2176 | -3808 | -2122 | 53255 | 52233 | 1022 | 88 | 271 | -63.82 | 47.09 | -1414 | 14293 | 16913 | 21717 | 23989 | 39074 | 43405 |
 | TL3_FL_PLANTL5_SKIP | L5 | 1797 | 16370 | 28647 | 16460 | 43563 | 52233 | -8670 | 916 | 1104 | 428 | 173 | 15444 | 34566 | 42565 | 38717 | 23989 | 43563 | 43405 |
 | TL3_FL_PLANTL5_SKIP_RND | L5 | 1710 | -5312 | -9296 | -5214 | 49052 | 52233 | -3181 | 914 | 1104 | 150 | 173 | -4198 | 36338 | 42565 | 17600 | 23989 | 49052 | 43405 |
 | TL3_FL_PLANTL5_X15 | L5 | 1898 | 4083 | 7146 | 4072 | 53506 | 52233 | 1273 | 1119 | 1104 | 217 | 173 | 3975 | 44550 | 42565 | 28197 | 23989 | 34490 | 43405 |

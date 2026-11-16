@@ -47,6 +47,16 @@ Rule definitions. Day direction at the signal second from CLOSED 1-minute bars o
 | 3-of-4 vote: WITH the day -> target 120  | -110258 (-74402; -48.2%) | -39967 (-31211) | -110258 (-74402) | -558 (-976; -427) | 10.71 (10.17) | fails screen |
 | session VWAP: WITH the day -> target 120  | -122283 (-74402; -64.4%) | -39223 (-31211) | -106650 (-74402) | +766 (+1341; +911) | 10.67 (10.17) | fails screen |
 
+### Survivors with controls (HOLD; other windows as they land)
+| candidate | window | real DD cut / d mean | placebo 1-3 | matched 1-3 | verdict |
+|---|---|---|---|---|---|
+| session VWAP: AGAINST the day -> skip  | HOLD | +3.1% / +207 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
+| session VWAP: AGAINST the day -> skip  | L6M | not finished | | | not finished |
+| session VWAP: AGAINST the day -> skip  | L3M | not finished | | | not finished |
+| session VWAP: AGAINST the day -> skip  | GAP | -23.9% / -1599 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
+| session VWAP: AGAINST the day -> skip  | PRE | not finished | | | not finished |
+| session VWAP: AGAINST the day -> skip  | X' | not finished | | | not finished |
+
 ## (W-BD2) DS3_BRACKET_DD_D - T-BRACKET-DD Parts D (partial exits), C (target by room), E (time) on TL3_EV_JN05W2JL2 (W-BD2)
 **VERDICT (data ends 2026-10-31; FIRST PASS, rebuilt 16:04Z UTC): NO candidate qualifies yet (see per-candidate rows; some are not finished). Not finished candidates are listed as such; no row is called a lead without its 6 controls. Dollars BASE lots; live = x1.75; $4.84 = FEES.md RT repriced (net - lots x 3.66).**
 
