@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-16T22:42Z
+## TREND (TL) update 2026-11-16T23:12Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-16T22:33:23Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-16T23:03:24Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 21:19Z 11-16 (t+560.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 23:19Z 11-16 (t+562.6 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
-Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
+Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (changed since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 95% min 88% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 88% min 4% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -4162,3 +4162,6 @@ LATE / AT RISK: Step 2 controls will not all finish by 20:30Z (real cells HOLD+L
 23:06Z W-LA: LA cell-months done 867, jobs outstanding 22, chains 10; auto-expansions launched: 207 (cumulative new sets)
 - lead 23:12Z BOX1 UNDERUSE CAUSE+FIX: box1 was at 15-22 of 32 workers (CORES 23:00Z 78% busy, WARNING x3). Causes found: (1) closed old-sizer PTR workers+respawning szq_watchdog (killed, see 23:00Z line); (2) ~219 admission waiters of quota-0 (closed) tags (CH 40, LR 24, AL 24, EA 22, LB 22, EC 14, D9 15, R2 16, EB 12, PM 12, LA 10, TKB 8...) each scanned /proc every 4 s (1.1 s sys per request): admission itself slowed (a manual request took >120 s) and CPU "busy" was inflated by polling; (3) PC/RX/FB queues (server-2-only) had no local launcher or priority tag. FIX: stop_waiters.py (cron every minute) SIGSTOPs waiters of quota-0 tags (reversible, nothing killed, SIGCONT when quota > 0; 219 stopped); tp_admit.py wait now sleeps 60 s for quota-0 tags (backup tp_admit.py.bak_lead_2308); ql_driver.py local fillers (PC, RX, EV for FB) take lines from the END of the server-2 queues with shared leases; PRIORITY PC 6, RX 4 (RX jobs currently classed TOOLS by its broad regex, quota 8, fine). RB stage 0/5 queue nearly done (99 lines all leased).
 - 2026-11-16T23:09:03Z W-EV FLAT-vs-BOOK: 24 FB cell-months done (of 28 sets x 12 months stage 1-2), page DS3_FLAT_VS_BOOK.md rebuilt; closest to live: not yet scored
+- (wall 23:14Z) WATCHDOG: 15-min avg cores busy 48.3% (<90%, min last 15 3.7%); reason: hungry tags: CF(run 0/q 8),EV(run 0/q 8),BD(run 0/q 10),FL(run 0/q 8),RB(run 0/q 4),RA(run 0/q 2),SURVX(run 0/q 8),GAPS(run 0/q 6),NXHC(run 0/q 8),NEXTF(run 0/q 9),SMART(run 0/q 10),SMARTB(run 0/q 8),SMARTC(run 0/q 8),WORKS_JN05(run 0/q 8),PC(run 0/q 6),RX(run 0/q 4); last WAIT: 23:07:14 LA WAIT running exact workers 21 (cap 32, limit for LA 30) load1 28.8 (cap 40, measured knee ~24 busy workers) OVER-SHARE(others hungry ['CF', 'BD', 'FL', 'RB', 'RA', 'SURVX', 'GAPS', 'NXHC', 'NEXTF', 'SMART', 'SMARTB', 'SMARTC', 'WORKS_JN05', 'PC', '; MemAvail 126.2 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 G. Lead must act within 15 min.
+- lead 23:17Z W-RX ENGINE D (exact engine, JL2, all 43 months, hook code/th_rexit_hook/rx_hooks.py, identity TL3_RX_ID run; 202304-202309 = JL2 copies, no schedule before 2023-10): the unverified DD leads FAIL on the exact engine: U7 best-by-DD L6M max DD -33.9k vs -22.6k, ulcer 20% worse, mean -1.9k/wk = FAIL; A7 best-by-DD ulcer 5.6% worse, mean -0.4k/wk = FAIL; M7 best-by-DD ulcer +1.4% L6M/+2.4% HOLD (worse), P(ulcer lower) .89/.54, mean +208/-102 /wk = LEAD at most; H7 best-by-DD no effect; A7 best-by-mean +770/wk L6M (+3.5%), ulcer 2.9% better, nothing in HOLD = small LEAD. Family tests over 8 cells: RC p .35 L6M / .22 HOLD, DSR(N=288) .006. 30-draw random-exit controls (TL3_RX_C_*, 2,880 cell-months) barely started (queue); rx_watch.sh re-scores every 30 min; section 4.8 of DS3_REBUILD_EXIT.md fills in. Raw base re-run with K7 43 months: C1/C2/C3 unchanged.
+- 2026-11-16T23:19Z W-RU DS3_RANGEUSE.md rebuilt: 74 cells scored through L6M; 6 (cell,scope) pass the tolerant gate with a drawdown cut in recent AND older windows (leads, before placebo/null); placebo/null/gain-of-(b,(c) over (a) below. No PASS claim.; next rebuild in 3 h
