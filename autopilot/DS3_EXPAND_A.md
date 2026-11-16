@@ -2,7 +2,7 @@
 
 **VERDICT: Exact results on 221 cell-months of 36 cells so far; best L6M drawdown cut TL3_EA_A6 11.8% (d mean 383 $/wk); nothing is a PASS, placebos and walk-forward still to come.**
 
-**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-16 00:59 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
+**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-16 02:20 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
 
 ## 0. Identity and parent
 
