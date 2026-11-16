@@ -1,5 +1,5 @@
-# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-16T00:49Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
-**VERDICT (plain): FIRST PASS, PATH EFFECT = FREED-BOOK REPLACEMENT (generic): every skip result must beat an engine random skip at the same keep share (RK cells, section 7c); LS1/LS125 RECENT-ONLY until they pass tolerant on GAP/PRE (PRE/X'/GAP and placebo sets incomplete; closest to live: London skip k=1.25, lacks PRE/X' confirmation and a drawdown gain visible at a powered horizon). 1298 cell-months done; 18 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 3 windows; LS1/all beats-all-3-placebos in 2 of 3 windows; LS1/london beats-all-3-placebos in 0 of 3 windows; LS125/london beats-all-3-placebos in 3 of 3 windows; LS15/london beats-all-3-placebos in 0 of 0 windows; LS2/london beats-all-3-placebos in 0 of 0 windows; LH1/all beats-all-3-placebos in 0 of 0 windows; LH1/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
+# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-16T03:51Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
+**VERDICT (plain): OLD BASE numbers (JN05W2) everywhere except section 7e (JL base, PROVISIONAL, never mixed with old-base tables). FIRST PASS, PATH EFFECT = FREED-BOOK REPLACEMENT (generic): every skip result must beat an engine random skip at the same keep share (RK cells, section 7c); LS1/LS125 RECENT-ONLY until they pass tolerant on GAP/PRE (PRE/X'/GAP and placebo sets incomplete; closest to live: London skip k=1.25, lacks PRE/X' confirmation and a drawdown gain visible at a powered horizon). 1505 cell-months done; 18 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 3 windows; LS1/all beats-all-3-placebos in 2 of 3 windows; LS1/london beats-all-3-placebos in 0 of 3 windows; LS125/london beats-all-3-placebos in 3 of 3 windows; LS15/london beats-all-3-placebos in 0 of 0 windows; LS2/london beats-all-3-placebos in 0 of 0 windows; LH1/all beats-all-3-placebos in 0 of 0 windows; LH1/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
 
 Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scoring). Base JN05W2 exact engine, all layers ON, measured fills, shared TP cache. Identity (hook path active at k=1e9-neutral and empty rule): TL3_LR_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LR_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -378,6 +378,9 @@ D5SK13F_a = skip when the forecast ratio pred/fref >= 1.3 (ATR-only forecast, fu
 
 | cell | WF beat % | WF DD cut % | WF d mean $/wk |
 |---|---|---|---|
+| RKMP68S1 | 34.2 | -0.7 | 445.4 |
+| RKMP68S2 | 12.7 | -4.6 | -4.1 |
+| RKMP68S3 | 17.7 | -2.6 | -33.1 |
 
 ## 7b. Gate reading: strict and tolerant (T-RECENTS) side by side, scope all
 
@@ -794,7 +797,26 @@ A skip-only MP gain is a lead only if it beats this control on mean AND DD cut. 
 
 | rule | window | rule | matched random seeds 1 / 2 / 3 | beats all 3 on mean | on DD cut |
 |---|---|---|---|---|---|
-| LS1_MP | L3M | +1936 / +0.2% / +1485 | -3170 / -3.6% / -726 ; n/a ; n/a | no | no |
+| LS1_MP | L3M | +1936 / +0.2% / +1485 | -3170 / -3.6% / -726 ; -3337 / -5.3% / -1344 ; -4595 / -2.4% / -59 | yes | yes |
+| LS1_MP | L6M | +2047 / +0.2% / +1485 | -1855 / -3.6% / -726 ; -1498 / -5.3% / -1344 ; -1601 / -2.4% / -59 | yes | yes |
+| LS1_MP | HOLD | +1002 / +17.2% / -1448 | -273 / +17.0% / +5127 ; -997 / +7.5% / -8797 ; +45 / +1.5% / +2112 | yes | yes |
+| LS1_MP | GAP | +433 / +21.2% / +4245 | +589 / +2.9% / +1409 ; +1617 / +7.0% / -279 ; +176 / +8.1% / +5512 | no | yes |
+| LS1_MP | PRE | +632 / +19.1% / +16463 | -216 / +5.5% / +2513 ; +312 / +7.1% / +5569 ; -129 / +0.3% / +7318 | yes | yes |
+| LS1_MP | X' | -413 / +0.0% / -7420 | -259 / +0.0% / +0 ; +318 / +0.0% / +0 ; +94 / +0.0% / +0 | no | no |
+| LS1_MP | FULL | +472 / +17.4% / +4245 | -167 / +5.5% / +1409 ; +71 / +3.4% / -279 ; -0 / +0.3% / +5512 | yes | yes |
+| LS125_MP | L3M | +2027 / +0.2% / +1485 | -2118 / -3.6% / -726 ; n/a ; n/a | no | no |
+| LS125_MP | L6M | +2149 / +0.2% / +1485 | -1546 / -3.6% / -726 ; n/a ; n/a | no | no |
+| LS125_MP | HOLD | +1097 / +12.3% / -1055 | -169 / +14.9% / +1882 ; n/a ; n/a | no | no |
+| LS125_MP | GAP | +240 / +12.0% / +2278 | +527 / +4.3% / +1409 ; n/a ; n/a | no | no |
+
+## 7e. PROVISIONAL - LIVE-EQUIVALENT BASE JN05W2JL2 (W-EV corrected ATR series jnr_atr_ev3, live-faithful; JL is superseded and no longer scored) (W-EV: JN05W2J + P7 post-stop/cut blackout 30 min + ATR-SKIP P7 atr_rel>=1.6): M7+P7 London skip re-run ON the new base (reference = TL3_EV_JN05W2JL, same months). ALL SECTIONS ABOVE ARE ON THE OLD BASE JN05W2.
+
+Scope all, base lots, delta vs JN05W2JL: d mean $/wk (x1.75 live) / DD cut % / worst-week delta / w2l. Controls = MP-matched random skip seeds.
+
+| cell | scope | L3M | L6M | HOLD | GAP | PRE | X' |
+|---|---|---|---|---|---|---|---|
+| JL2_LS1_MP | all | +1657 (x1.75 +2899; 4.84: +1708) / +0.2% / +839 / w2l 0 | +895 (x1.75 +1567; 4.84: +943) / +0.2% / +839 / w2l 0 | n/a | n/a | n/a | n/a |
+| JL2_LS1_MP | london | +2692 (x1.75 +4711; 4.84: +2744) / +26.3% / +6303 / w2l 0 | +1339 (x1.75 +2344; 4.84: +1391) / +26.3% / +6303 / w2l 2 | n/a | n/a | n/a | n/a |
 
 ## 8. Best setting per book / session with plain strength (filled as windows complete)
 
