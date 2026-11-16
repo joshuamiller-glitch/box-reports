@@ -1,7 +1,7 @@
-# STATUS_NOW (written 2026-11-16 19:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-16 19:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
 ## UTC TIME WRITTEN
-2026-11-16 19:00Z
+2026-11-16 19:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -19,12 +19,12 @@
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 86.2 GB; live reservations 9 (9 GB); workers 30, of which TP-adopted 30 (RSS 51.1 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 37.70, 34.95, 34.64
-  by tag: CF quota 4 running 2 hungry True RSS 2.9 GB PSS 2.6 GB; D10 quota 12 running 17 hungry False RSS 30.3 GB PSS 23.0 GB; BD quota 10 running 3 hungry True RSS 5.1 GB PSS 4.4 GB; FL quota 4 running 2 hungry True RSS 3.8 GB PSS 3.2 GB; JV quota 4 running 3 hungry True RSS 3.9 GB PSS 3.6 GB; RA quota 2 running 2 hungry False RSS 3.4 GB PSS 2.6 GB; REST quota 99 running 1 hungry False RSS 1.7 GB PSS 1.6 GB
-  cell-months finished last hour (DONE markers): 426
-  top running jobs: TL3_JE_ID_Z (x6);TL3_CF_L3D_W30_P20_X15_JL2 (x4);TL3_RA_JL2_PL3_M7L_CAP3 (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 14.25, 12.92, 8.91|/dev/md2         28T  768G   28T   3% /mnt/l2|21|
+Server 1 (this box): MemAvail 89.7 GB; live reservations 3 (3 GB); workers 27, of which TP-adopted 27 (RSS 49.2 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 38.02, 34.89, 34.20
+  by tag: CF quota 4 running 2 hungry True RSS 3.9 GB PSS 3.3 GB; D10 quota 12 running 18 hungry False RSS 31.6 GB PSS 24.5 GB; BD quota 10 running 2 hungry True RSS 4.1 GB PSS 3.5 GB; FL quota 4 running 1 hungry True RSS 2.1 GB PSS 1.5 GB; RA quota 2 running 1 hungry True RSS 1.8 GB PSS 1.2 GB; REST quota 99 running 3 hungry False RSS 5.7 GB PSS 5.3 GB
+  cell-months finished last hour (DONE markers): 567
+  top running jobs: TL3_CF_L3D_W30_P20_HALF_JL2 (x4);TL3_RA_JL2_PP3_M7L_CAP3 (x2);TL3_FL_PAfl015NY_SKIP_PD (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 26.75, 24.53, 17.01|/dev/md2         28T  838G   28T   3% /mnt/l2|47|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -34,4 +34,3 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 14.25, 12.92, 8.91|/dev/md2
 
 ## INBOX (last 5 received)
 20261116_1826Z_profit-lines-leave-one-out.md 20261116_1827Z_rebuild-addendum2-tape-speed.md 20261116_1830Z_status-file-and-faster-mirror.md 20261116_1838Z_fill-the-cap.md 20261116_1840Z_core-meter-both-servers.md
-- lead 18:49Z W-CF2 (INBOX tape speed + MBO hole): per-second MBO tables for 2026-11-01..05 REBUILT, NO PURCHASE (blind-week MBO files were on the box: /mnt/l2/
