@@ -1,0 +1,5 @@
+# USER FINDING 2026-11-16 (verbatim): SILENT CUT FOUND (from the v1.9b STATEDIAG log 11-15 18:00 to 11-16 01:38 ET)
+Live had NO BOOK READING on 2,956 of 3,750 losing seconds (79%): DepthLive() false because D7's own add/remove bookkeeping of the L2 book drifts (level counts printed: 0/0, 0/13, 20/0, 3/0). All 9 live cuts were flat stand-ins; zero book-based. When the book was readable the lines behaved as in the port (K7 persist reached 2/3 twice). v1.9c copies NinjaTrader's own book instead. So: the port is right, live was blind.
+1. Close the silent-cut hunt. Parser: read this log when uploaded and report read vs no-book seconds per trade.
+2. Engine check: re-score last week with the book-based cut lines disabled on a random 79% of seconds; it should land near the live result (45 full stops). That confirms the size of the fault.
+3. The flat stand-ins (K7 -0.75, P7 -0.70) were sized for a blind book. With the book restored, re-test whether they should stay, per the all-layers-ON rule, on the live-equivalent base.

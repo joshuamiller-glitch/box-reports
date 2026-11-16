@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (143 FL cell-months done, 44 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (149 FL cell-months done, 47 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -63,6 +63,9 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_LEADP7_HALF | P7 | 4140 | 727 | 1272 | 728 | 55446 | 52233 | 3213 | 1034 | 1037 | 379 | 328 | 1899 | 49368 | 39663 | 27514 | 26810 | 48910 | 43405 |
 | TL3_FL_LEADP7_SKIP | P7 | 3756 | -4973 | -8703 | -4756 | 58417 | 52233 | 6184 | 537 | 1037 | 451 | 328 | -3647 | 34938 | 39663 | 21120 | 26810 | 58417 | 43405 |
 | TL3_FL_LEADP7_SKIP_RND | P7 | 3862 | -3998 | -6997 | -3809 | 42529 | 52233 | -9704 | 597 | 1037 | 429 | 328 | -3115 | 35082 | 39663 | 21455 | 26810 | 42529 | 43405 |
+| TL3_FL_LEADP7_X15 | P7 | 4190 | 2007 | 3512 | 1978 | 48820 | 52233 | -3413 | 1053 | 1037 | 381 | 328 | 2269 | 42419 | 39663 | 28763 | 26810 | 44956 | 43405 |
+| TL3_FL_LEADU70_SKIP | U70 | 4031 | -2586 | -4525 | -2538 | 55106 | 52233 | 2873 | 48 | 157 | 804 | 419 | -1006 | 11594 | 15497 | 24282 | 26810 | 48127 | 43405 |
+| TL3_FL_LEADU70_SKIP_RND | U70 | 4048 | -3845 | -6729 | -3803 | 60662 | 52233 | 8429 | 49 | 157 | 184 | 419 | -2101 | 19164 | 15497 | 23179 | 26810 | 60662 | 43405 |
 
 
 ### 1b. Each set read against its control (random skip / unconditional hold / random ladder / nonsense score / noise)
@@ -80,6 +83,7 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_PLANTL5_X15 | L3M | NOISE | 4083 | 4876 | 53506 | 62090 | 52233 | 217 | 161 | 44550 | 53134 |
 | TL3_FL_LEADL5_SKIP | L6M | SKIP_RND | -3882 | 8593 | 47752 | 63936 | 52233 | 315 | 128 | 27355 | 40500 |
 | TL3_FL_LEADP7_SKIP | L6M | SKIP_RND | -4973 | -975 | 58417 | 42529 | 52233 | 451 | 429 | 34938 | 35082 |
+| TL3_FL_LEADU70_SKIP | L6M | SKIP_RND | -2586 | 1259 | 55106 | 60662 | 52233 | 804 | 184 | 11594 | 19164 |
 
 
 ## 2. Part C score sizing (table-level screen on taken trades; engine sets queued)
