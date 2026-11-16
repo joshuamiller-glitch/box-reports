@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 19:17Z 11-16 (t+510.3 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 19:33Z 11-16 (t+510.6 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
 Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 92% min 84% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-16T19:17:56Z. Box: CPU 91.3%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Updated 2026-11-16T19:33:04Z. Box: CPU 89.5%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -3930,3 +3930,12 @@ LATE / AT RISK: Step 2 controls will not all finish by 20:30Z (real cells HOLD+L
 
 - lead 19:25Z W-S2 correction: first knee verdict (cap 16) INVALID (job mix changed 42 s S0 -> 130 s BD/S5, not contention). S2_WORKER_CAP reset to 32, ramp 2 running (32..128, knee judged on TL3_RB_S0 family only vs 45.1 s baseline; may end early as ~208 S0 lines remain, cap then stays at last good step). Copy ~290/305 GB, 31 workers busy, no S2 IDLE.
 - 2026-11-16T19:21Z W-RA M7 cap JL2 (85 of 294 cell-months): HOLD: stack DD real -70924 vs ref -74402, best control -63564 -> does NOT beat all controls on DD; mean +1012 $/wk (6.6% of ref) -> ok | L6M: stack DD real -23715 vs ref -22565, best control -22397 -> does NOT beat all controls on DD; mean +1747 $/wk (7.9% of ref) -> ok (DS3_BRACKET_DD_BUILD_RA.md)
+- (wall 19:32Z) W-PM status: load1 32.81, PM exact jobs pending 12, cells with output 59; 743 jobs wanted, 12 chains running, 1794857472; P5 page done, P8 grid np_m15_x10_y15 2898
+- (wall 19:33Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 24 (pending file), cell-months done 1979, load 35.40 32.96 33.11, epoch 1794857627
+- lead 19:35Z BACKFILL (never idle): workers 25 < cap 32 for 2 checks; raised RB quota 0 -> 4 (1333 pending lines) per user order of the queue sequence
+- lead 19:37Z INBOX 20261116_1938Z_server2-ramp-faster-and-cores-file.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+
+- INBOX 20261116_1840Z_core-meter-both-servers received (late, found 19:37Z) - will write cron CORES.md every 5 min for both servers + WARNING lines, mirror, top line of STATUS_NOW.
+- INBOX 20261116_1938Z_server2-ramp-faster-and-cores-file received - S2_WORKER_CAP 96 now, throughput-based knee test 96/112/128, backfill acts after 1 check, CORES.md within 15 min.
+- (wall 19:38Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 35.31 31.76 32.46
+- lead 19:42Z inbox actions: S2_WORKER_CAP=96 set 19:3xZ (ramp2 stopped, pid 1116541); s2_ramp3.py (pid above) tests 96/112/128 for 10 min each on TOTAL cell-months, final cap + three totals will be logged here; backfill now acts after 1 check; CORES.md cron (cores_meter.py, every 5 min, warnings, mirrored by *.md sync, top line of STATUS_NOW) running. server 2 nproc=64 threads, not 128 (checked). Copy ~282/305 GB.
