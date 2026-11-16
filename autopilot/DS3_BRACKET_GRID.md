@@ -70,12 +70,12 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 | 40x40 | -85 (live -148; $4.84 -92) DD -17.0% ww +673 stops 5.48(4.03) | +244 (live +428; $4.84 +237) DD -38.6% ww -3644 stops 5.25(3.88) | +80 (live +140; $4.84 +72) DD -17.0% ww -2130 stops 5.36(3.96) |
 | 40x40 | +111 (live +194; $4.84 +105) DD +22.4% ww +517 stops 5.25(4.03) | -430 (live -753; $4.84 -437) DD +4.3% ww +1422 stops 5.17(3.88) | -160 (live -279; $4.84 -166) DD +10.2% ww +517 stops 5.21(3.96) |
 | 40x40 | +243 (live +424; $4.84 +236) DD +29.7% ww -1424 stops 4.95(4.03) | -81 (live -141; $4.84 -88) DD -2.5% ww -75 stops 5.40(3.88) | +81 (live +142; $4.84 +74) DD +12.5% ww -1424 stops 5.17(3.96) |
-| 40x60 | -373 (live -653; $4.84 -384) DD -2.3% ww +1411 stops 4.49(4.03) | n/a | n/a |
+| 40x60 | -373 (live -653; $4.84 -384) DD -2.3% ww +1411 stops 4.49(4.03) | +151 (live +264; $4.84 +135) DD +10.5% ww -307 stops 4.18(3.88) | -111 (live -195; $4.84 -124) DD -19.9% ww +1207 stops 4.34(3.96) |
 | 40x90 | -20 (live -35; $4.84 -26) DD -34.2% ww -532 stops 1.52(4.03) | -811 (live -1419; $4.84 -816) DD -3.7% ww -303 stops 1.67(3.88) | -415 (live -727; $4.84 -421) DD -93.7% ww -532 stops 1.60(3.96) |
 | 40x90 | -23 (live -41; $4.84 -26) DD -0.7% ww +1475 stops 3.12(4.03) | +487 (live +852; $4.84 +485) DD -8.5% ww +171 stops 2.82(3.88) | +232 (live +406; $4.84 +230) DD -15.1% ww +1475 stops 2.97(3.96) |
 | 40x90 | +55 (live +96; $4.84 +53) DD -19.0% ww +1866 stops 2.74(4.03) | -1135 (live -1987; $4.84 -1139) DD -2.8% ww -249 stops 3.35(3.88) | -540 (live -945; $4.84 -543) DD -41.4% ww +1265 stops 3.04(3.96) |
 | 40x90 | +10 (live +18; $4.84 +7) DD -16.9% ww -660 stops 3.20(4.03) | -92 (live -161; $4.84 -94) DD -4.8% ww +890 stops 2.59(3.88) | -41 (live -71; $4.84 -43) DD -53.6% ww -660 stops 2.89(3.96) |
-| 60x40 | +879 (live +1539; $4.84 +874) DD +38.1% ww +2338 stops 6.24(4.03) | n/a | n/a |
+| 60x40 | +879 (live +1539; $4.84 +874) DD +38.1% ww +2338 stops 6.24(4.03) | +361 (live +631; $4.84 +354) DD -27.2% ww -1841 stops 7.23(3.88) | +620 (live +1085; $4.84 +614) DD +18.3% ww -327 stops 6.73(3.96) |
 | 60x90 | -23 (live -40; $4.84 -18) DD -68.2% ww -4785 stops 1.45(4.03) | -148 (live -260; $4.84 -141) DD -45.2% ww -2905 stops 1.29(3.88) | -86 (live -150; $4.84 -79) DD -127.0% ww -4785 stops 1.37(3.96) |
 | 85x40 | -159 (live -279; $4.84 -161) DD -54.1% ww -2126 stops 6.54(4.03) | n/a | n/a |
 | 85x60 | -614 (live -1074; $4.84 -609) DD -87.0% ww -2571 stops 4.41(4.03) | -154 (live -270; $4.84 -146) DD -20.2% ww +787 stops 3.58(3.88) | -384 (live -672; $4.84 -378) DD -176.9% ww -2571 stops 3.99(3.96) |
@@ -144,7 +144,7 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 |---|---|---|---|
 | 40x40 | -350 (live -613; $4.84 -374) DD -97.5% ww -2100 stops 0.53(0.23) | -743 (live -1299; $4.84 -763) DD -22.8% ww +2102 stops 1.07(0.61) | -546 (live -956; $4.84 -569) DD -29.3% ww +2102 stops 0.80(0.42) |
 | 40x60 | -311 (live -545; $4.84 -313) DD -42.9% ww -1200 stops 0.30(0.23) | n/a | n/a |
-| 40x90 | -393 (live -687; $4.84 -379) DD +47.1% ww +341 stops 0.23(0.23) | n/a | n/a |
+| 40x90 | -393 (live -687; $4.84 -379) DD +47.1% ww +341 stops 0.23(0.23) | -876 (live -1533; $4.84 -864) DD +19.0% ww +3419 stops 0.00(0.61) | -634 (live -1110; $4.84 -621) DD +19.0% ww +3419 stops 0.11(0.42) |
 | 60x40 | -205 (live -359; $4.84 -225) DD -91.8% ww -2847 stops 0.53(0.23) | n/a | n/a |
 | 60x90 | -720 (live -1260; $4.84 -705) DD +4.5% ww -1633 stops 0.23(0.23) | n/a | n/a |
 | 85x40 | +151 (live +263; $4.84 +131) DD -129.9% ww -2100 stops 0.61(0.23) | n/a | n/a |
@@ -914,6 +914,7 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 |---|---|---|---|
 | 40x40 | +1733 (live +3032; $4.84 +1703) DD +30.8% ww -4307 stops 1.75(1.83) | +1272 (live +2227; $4.84 +1241) DD +17.7% ww +4297 stops 2.43(1.83) | +1503 (live +2630; $4.84 +1472) DD +30.8% ww +260 stops 2.09(1.83) |
 | 40x40 | +77 (live +135; $4.84 +66) DD -2.7% ww -1716 stops 1.90(1.83) | +952 (live +1665; $4.84 +935) DD -27.4% ww +3526 stops 2.05(1.83) | +514 (live +900; $4.84 +500) DD -6.6% ww +2851 stops 1.98(1.83) |
+| 40x40 | +1405 (live +2458; $4.84 +1392) DD +2.6% ww -349 stops 1.67(1.83) | n/a | n/a |
 | 40x60 | -178 (live -311; $4.84 -178) DD +35.0% ww +1288 stops 1.45(1.83) | n/a | n/a |
 | 40x90 | -1860 (live -3254; $4.84 -1841) DD -31.7% ww -1661 stops 0.76(1.83) | n/a | n/a |
 | 60x40 | +920 (live +1609; $4.84 +889) DD -22.1% ww -3107 stops 2.59(1.83) | n/a | n/a |
@@ -987,6 +988,7 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 | 40x90 | +201 (live +351; $4.84 +212) DD +39.9% ww +398 stops 0.61(1.45) | n/a | n/a |
 | 60x90 | -32 (live -56; $4.84 -20) DD -12.7% ww -2350 stops 0.68(1.45) | n/a | n/a |
 | 85x60 | -1165 (live -2039; $4.84 -1165) DD -102.3% ww -4462 stops 1.67(1.45) | n/a | n/a |
+| 85x90 | -1307 (live -2287; $4.84 -1295) DD -134.1% ww -850 stops 0.84(1.45) | n/a | n/a |
 
 ### 1b/1d first pass: lookup by bucket known at the signal second (offline replay nets, walk-forward: best trailing mean of the 49 grid points per bucket, min 30 prior trades, else 60/60)
 Median over the 14 cells, full history. Controls: bucket labels shifted by 11 / 23 / 37 trades and randomly permuted. "beats all controls" = share of the 14 x bucket cases where the real labels give a higher d mean than the best of the four controls (chance is about 20%).
