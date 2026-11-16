@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (409 FL cell-months done, 131 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (411 FL cell-months done, 133 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -86,6 +86,8 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_PAfl010NY_SKIP_PD | NY | 1732 | -1493 | -2612 | -1442 | 51623 | 52233 | -610 | 101 | 271 | 84.63 | 47.09 | -324 | 8172 | 16913 | 22322 | 23989 | 43297 | 43405 |
 | TL3_FL_PAfl010NY_SKIP_RND | NY | 1697 | -3630 | -6352 | -3573 | 54731 | 52233 | 2498 | 61 | 271 | -372 | 47.09 | -2728 | 22705 | 16913 | 20265 | 23989 | 43860 | 43405 |
 | TL3_FL_PAfl010NY_X15 | NY | 1875 | 76.05 | 133 | 74.36 | 52233 | 52233 | 0.00 | 271 | 271 | 50.74 | 47.09 | 76.05 | 16246 | 16913 | 24072 | 23989 | 43405 | 43405 |
+| TL3_FL_PAfl015NY_HALF | NY | 1873 | 1078 | 1887 | 1077 | 52233 | 52233 | -0.00 | 271 | 271 | 97.20 | 47.09 | 1045 | 13021 | 16913 | 25158 | 23989 | 42763 | 43405 |
+| TL3_FL_PAfl015NY_SKIP | NY | 1684 | -1236 | -2164 | -1171 | 54150 | 52233 | 1916 | 50 | 271 | 182 | 47.09 | -282 | 7695 | 16913 | 22810 | 23989 | 42664 | 43405 |
 | TL3_FL_PAfl015NY_SKIP_PD | NY | 1720 | -2176 | -3808 | -2122 | 53255 | 52233 | 1022 | 88 | 271 | -63.82 | 47.09 | -1414 | 14293 | 16913 | 21717 | 23989 | 39074 | 43405 |
 | TL3_FL_PAfl016NY_SKIP_PD | NY | 1737 | -2054 | -3595 | -2006 | 53255 | 52233 | 1022 | 114 | 271 | -23.66 | 47.09 | -1189 | 13613 | 16913 | 21849 | 23989 | 41164 | 43405 |
 | TL3_FL_PLANTL5_SKIP | L5 | 1797 | 16370 | 28647 | 16460 | 43563 | 52233 | -8670 | 916 | 1104 | 428 | 173 | 15444 | 34566 | 42565 | 38717 | 23989 | 43563 | 43405 |

@@ -1,4 +1,4 @@
-# DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 22:53Z)
+# DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 23:25Z)
 <!-- PR2:BEGIN -->
 ## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 21:55 UTC)
 
@@ -156,11 +156,11 @@ Rows owned by W-BD2 (b half-off, c step-down, e HAR remaining range, f atr/squee
 
 **VERDICT (drawdown first; pass rule = real cell beats ALL its controls on stack max DD in HOLD and L6M and mean not worse than -5%; missing controls = not finished): HOLD: stack DD real -70924 vs ref -74402, best control -63564 -> does NOT beat all controls on DD; mean +1012 $/wk (6.6% of ref) -> ok | L6M: stack DD real -23715 vs ref -22565, best control -22397 -> does NOT beat all controls on DD; mean +1747 $/wk (7.9% of ref) -> ok. No PASS claim until the controls are in.**
 
-Built epoch 1794868956. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
+Built epoch 1794871382. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
 
 identity of the placebo branch (PP with p=0, 202610): 642 trades net 27487.58 vs JL2 642 net 27487.58 -> IDENTICAL
 
-Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 1/7, X' 1/7
+Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 6/7, X' 1/7
 
 ## STACK (all books), drawdown first
 
@@ -195,6 +195,11 @@ Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 
 | GAP | PP2_M7L_CAP3 | -53876.2 | -55205.5 | 2.4 | -94283.3 | -43527.4 | -43527.4 | 9.7 | 9.8 | -479.9 | -839.8 | -472.7 | 1.0 | 1 | 1082 | 1102 |
 | GAP | PP3_M7L_CAP3 | -51781.0 | -55205.5 | 6.2 | -90616.7 | -39543.8 | -43527.4 | 9.5 | 9.8 | 46.4 | 81.2 | 53.7 | 1.0 | 0 | 1080 | 1102 |
 | PREUW | M7L_CAP3 | -71239.3 | -70931.2 | -0.4 | -124668.7 | -25913.0 | -28957.8 | 8.8 | 9.0 | 457.6 | 800.8 | 466.3 | 1.0 | 0 | 4125 | 4201 |
+| PREUW | PL1_M7L_CAP3 | -71572.0 | -70931.2 | -0.9 | -125250.9 | -25279.2 | -28957.8 | 8.8 | 9.0 | 44.6 | 78.1 | 53.5 | 1.0 | 0 | 4112 | 4201 |
+| PREUW | PL2_M7L_CAP3 | -66798.6 | -70931.2 | 5.8 | -116897.5 | -23067.5 | -28957.8 | 8.8 | 9.0 | 313.0 | 547.7 | 323.2 | 1.0 | 0 | 4106 | 4201 |
+| PREUW | PP1_M7L_CAP3 | -75969.0 | -70931.2 | -7.1 | -132945.8 | -26041.9 | -28957.8 | 8.8 | 9.0 | 398.6 | 697.5 | 409.5 | 1.0 | 1 | 4109 | 4201 |
+| PREUW | PP2_M7L_CAP3 | -69377.5 | -70931.2 | 2.2 | -121410.6 | -23094.2 | -28957.8 | 8.8 | 9.0 | 275.0 | 481.2 | 285.0 | 1.0 | 0 | 4114 | 4201 |
+| PREUW | PP3_M7L_CAP3 | -61325.2 | -70931.2 | 13.5 | -107319.1 | -21884.5 | -28957.8 | 8.8 | 9.0 | 566.4 | 991.2 | 578.3 | 1.0 | 0 | 4096 | 4201 |
 | X' | M7L_CAP3 | -70353.1 | -73618.0 | 4.4 | -123117.9 | -35303.7 | -37051.8 | 9.9 | 9.9 | 107.7 | 188.4 | 109.2 | 1.0 | 0 | 5787 | 5816 |
 
 ## M7 LONDON slice, drawdown first
@@ -230,6 +235,11 @@ Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 
 | GAP | PP2_M7L_CAP3 | -26627.6 | -19185.5 | -38.8 | -46598.4 | -11000.5 | -9801.7 | 0.8 | 0.8 | -571.1 | -999.5 | -563.6 | 0.6 | 1 | 114 | 135 |
 | GAP | PP3_M7L_CAP3 | -20478.4 | -19185.5 | -6.7 | -35837.2 | -8407.3 | -9801.7 | 0.5 | 0.8 | 155.6 | 272.3 | 164.0 | 0.8 | 1 | 110 | 135 |
 | PREUW | M7L_CAP3 | -27579.8 | -27201.4 | -1.4 | -48264.7 | -9547.4 | -9750.3 | 0.9 | 1.2 | -61.3 | -107.3 | -48.3 | 0.7 | 4 | 451 | 568 |
+| PREUW | PL1_M7L_CAP3 | -25913.7 | -27201.4 | 4.7 | -45348.9 | -7592.4 | -9750.3 | 0.9 | 1.2 | -199.5 | -349.2 | -184.6 | 0.7 | 5 | 428 | 568 |
+| PREUW | PL2_M7L_CAP3 | -21065.7 | -27201.4 | 22.6 | -36864.9 | -7165.3 | -9750.3 | 0.9 | 1.2 | -10.7 | -18.7 | 4.7 | 0.8 | 5 | 428 | 568 |
+| PREUW | PP1_M7L_CAP3 | -30520.1 | -27201.4 | -12.2 | -53410.2 | -7016.3 | -9750.3 | 0.8 | 1.2 | -219.2 | -383.6 | -200.5 | 0.6 | 5 | 401 | 568 |
+| PREUW | PP2_M7L_CAP3 | -26211.7 | -27201.4 | 3.6 | -45870.4 | -7036.7 | -9750.3 | 0.9 | 1.2 | -337.7 | -590.9 | -320.5 | 0.6 | 1 | 414 | 568 |
+| PREUW | PP3_M7L_CAP3 | -16130.4 | -27201.4 | 40.7 | -28228.3 | -6637.5 | -9750.3 | 0.8 | 1.2 | 193.0 | 337.7 | 212.1 | 0.7 | 4 | 396 | 568 |
 | X' | M7L_CAP3 | -56843.4 | -69240.2 | 17.9 | -99476.0 | -6448.3 | -7313.8 | 1.2 | 1.3 | 175.9 | 307.8 | 177.8 | 1.0 | 0 | 653 | 689 |
 
 ## With week 2026-W44 removed from both sides
