@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (337 FL cell-months done, 108 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (345 FL cell-months done, 109 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -20,6 +20,7 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_BAGO73_SKIP_PD | O73 | 1866 | 62.93 | 110 | 65.47 | 51467 | 52233 | -766 | 11 | 20 | 618 | 299 | 62.93 | 1068 | 3760 | 23994 | 23989 | 42940 | 43405 |
 | TL3_FL_BFC15NY_HALF | NY | 1875 | -91.69 | -160 | -95.07 | 52233 | 52233 | 0.00 | 271 | 271 | 42.70 | 47.09 | -91.69 | 17923 | 16913 | 23890 | 23989 | 45139 | 43405 |
 | TL3_FL_BFC15NY_SKIP_PD | NY | 1815 | -974 | -1704 | -951 | 53100 | 52233 | 866 | 195 | 271 | 31.24 | 47.09 | -513 | 15442 | 16913 | 23007 | 23989 | 41756 | 43405 |
+| TL3_FL_BZN60M71_HALF | M71 | 1884 | 696 | 1218 | 678 | 53577 | 52233 | 1344 | 248 | 248 | 8.93 | -22.30 | 596 | 32859 | 28133 | 24802 | 23989 | 41690 | 43405 |
 | TL3_FL_BZN60M71_SKIP_PD | M71 | 1827 | -1493 | -2613 | -1477 | 55132 | 52233 | 2899 | 135 | 248 | 29.83 | -22.30 | 735 | 11183 | 28133 | 22648 | 23989 | 42456 | 43405 |
 | TL3_FL_E3INJ | nan | 1938 | -122 | -214 | -136 | 52677 | 52233 | 444 | 1938 | 1875 | 129 | 134 | -122 | 52677 | 52233 | 23525 | 23989 | 37944 | 43405 |
 | TL3_FL_E3INJ_P11 | nan | 1902 | 465 | 813 | 456 | 53535 | 52233 | 1302 | 1902 | 1875 | 135 | 134 | 465 | 53535 | 52233 | 24633 | 23989 | 42783 | 43405 |
