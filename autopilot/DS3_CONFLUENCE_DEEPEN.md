@@ -2,6 +2,8 @@
 
 VERDICT (data ends 2026-10-30; FIRST PASS; nothing has landed yet): no engine result exists for this order yet. The L3 arrival-imbalance sets (Part 2 item 1) are queued first, then the P7 Asia / K7 Asia gated sets with older windows, then the Part 1 states once W-CF4 sends the passing list. Engine rules for all sets: JN05W2, every universe signal gated (taken and replacement), all layers ON, base lots with x1.75 live beside, constant stack risk where size moves, every skip against an engine random skip with the same keep share, nonsense bar per cell.
 
+Book groups (user answer, autopilot/ANSWER_BOOK_TYPES_20261116.md): no book is mean-reversion. Part 1 groups on this page are BREAKOUT/TREND books (K7 M7 U7 H7) and PULLBACK books (P7 A7 O7). W-CF4 redoes its tables on these groups; my engine results will be reported by group. Reference base: all numbers here are on the OLD base JN05W2 until W-EV's live-equivalent base JN05W2JL lands; then the reference, the L3 arrival item (L3C / L3D best sets) and the P7 Asia gated set are re-run on it first and every older number is labelled 'old base'.
+
 ## Queue and set names (tag CF)
 | item | sets | status |
 |--|--|--|

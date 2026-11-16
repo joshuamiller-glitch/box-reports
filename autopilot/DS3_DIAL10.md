@@ -384,7 +384,7 @@ Reading of the W/ATR5 table: ATR5 = mean range of the last 14 five-minute bucket
 
 
 ## Dial 10: trade-horizon bracket
-**VERDICT (plain, not a PASS): 216 of 395 registered cells scored through L3M, 38 through L6M, 7 through HOLD; 4 (cell,scope) leads pass the tolerant gate in every scored window (1 at scope all) - before placebo; this is the GLOBAL one-setting-for-all-books family only, the per-book per-session test (B1) is in the section above and still running. Best L3M cell inside the mean gate: M1_50_g00_c1_d10_c20_tb_B_tcoracle0.9T75 (DD +67.0%, +85531 $/wk).**
+**VERDICT (plain, not a PASS): 218 of 395 registered cells scored through L3M, 39 through L6M, 7 through HOLD; 4 (cell,scope) leads pass the tolerant gate in every scored window (1 at scope all) - before placebo; this is the GLOBAL one-setting-for-all-books family only, the per-book per-session test (B1) is in the section above and still running. Best L3M cell inside the mean gate: M1_50_g00_c1_d10_c20_tb_B_tcoracle0.9T75 (DD +67.0%, +85531 $/wk).**
 
 Identity: TL3_D10_M1_50_g00_c1_d10_c20_tb_B 202610 (hook active, g=0): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. Prereg autopilot/DIAL10_PREREG.md (sha line in DECISIONS.md 2026-11-14T22:33Z). Order: ADDENDUM_DIAL10_20261114.md. Code code/th_dial10 (d10_core.py features, d10_coef.py coefficient table, d10_hooks.py hook, d10_driver.py). Bulk /mnt/l2/l2vast/_dial10. Tag D10 (quota 3).
 **LOT BASIS**: engine dollars are BASE lots (live user lots x1.75, live caps = engine caps x1.75); the engine charges its raw $1.18/contract RT with the engine fills, FEES.md says $4.84 RT. Every $ column is raw $1.18 unless it says $4.84; the $4.84 columns reprice delta mean/wk as net - lots x 3.66 per trade for cell and JN05W2 alike (no rerun) and show the lot change per week.
@@ -506,6 +506,7 @@ Reading: cell = R2 / Spearman. Out-of-sample, no look-ahead (inputs closed bars 
 | M1_50_g00_c1_d10_c20_tb_B_bK7_slo_fx40x60 | +53 $/wk, DD +19.7%, ww +8749, stops 10.12(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | +36 (lots +5/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x40s3 | +1384 $/wk, DD +18.1%, ww +9334, stops 11.03(10.35), b5 96%, w2l 0 | +805 $/wk, DD +18.1%, ww +9334, stops 12.06(10.99), b5 100%, w2l 1 | -188 $/wk, DD -4.1%, ww -2105, stops 11.58(10.66), b5 102%, w2l 2 | -678 $/wk, DD -6.2%, ww -5328, stops 11.64(10.88), b5 100%, w2l 0 | -309 $/wk, DD +3.0%, ww +399, stops 9.54(9.31), b5 92%, w2l 0 | +1375 (lots +3/wk) | +790 (lots +4/wk) |
 | M1_50_g00_c1_d10_c20_tb_B_bK7_slo_fx40x90 | -837 $/wk, DD +16.5%, ww +7135, stops 10.12(10.35), b5 92%, w2l 0 | n/a | n/a | n/a | n/a | -846 (lots +3/wk) | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x90s2 | +907 $/wk, DD +16.2%, ww +8536, stops 9.13(10.35), b5 106%, w2l 0 | n/a | n/a | -507 $/wk, DD -1.4%, ww -1987, stops 9.87(10.88), b5 101%, w2l 0 | n/a | +899 (lots +2/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x90 | +1830 $/wk, DD +13.7%, ww +8914, stops 7.99(10.35), b5 101%, w2l 0 | +975 $/wk, DD +13.7%, ww +8914, stops 8.79(10.99), b5 99%, w2l 0 | +917 $/wk, DD +0.7%, ww -2284, stops 8.88(10.66), b5 100%, w2l 0 | -950 $/wk, DD -3.1%, ww -5507, stops 9.36(10.88), b5 98%, w2l 0 | +384 $/wk, DD +9.4%, ww +33, stops 8.62(9.31), b5 99%, w2l 0 | +1810 (lots +5/wk) | +958 (lots +5/wk) |
 | M1_75_g10_c1_d10_c20_t08_W | -1835 $/wk, DD +13.2%, ww +6516, stops 9.21(10.35), b5 82%, w2l 0 | n/a | n/a | n/a | n/a | -1901 (lots +18/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bK7_sas_fx40x60 | +534 $/wk, DD +12.1%, ww +9089, stops 10.12(10.35), b5 100%, w2l 0 | n/a | n/a | n/a | n/a | +501 (lots +9/wk) | n/a |
@@ -571,8 +572,7 @@ Reading: cell = R2 / Spearman. Out-of-sample, no look-ahead (inputs closed bars 
 | M1_50_g00_c1_d10_c20_tb_B_bP7_slo_fx40x90 | -906 $/wk, DD +0.0%, ww +0, stops 10.42(10.35), b5 96%, w2l 0 | n/a | n/a | n/a | n/a | -883 (lots -6/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bP7_slo_fx60x40 | -1106 $/wk, DD +0.0%, ww +0, stops 10.27(10.35), b5 92%, w2l 0 | n/a | n/a | n/a | n/a | -1165 (lots +16/wk) | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bP7_slo_fx60x90 | -1239 $/wk, DD +0.0%, ww +0, stops 10.42(10.35), b5 98%, w2l 0 | n/a | n/a | n/a | n/a | -1206 (lots -9/wk) | n/a |
-| M1_50_g00_c1_d10_c20_tb_B_bP7_slo_fx85x60 | -671 $/wk, DD +0.0%, ww +0, stops 10.42(10.35), b5 98%, w2l 0 | n/a | n/a | n/a | n/a | -655 (lots -4/wk) | n/a |
-(136 more cells in /mnt/l2/l2vast/_dial10/cells.json)
+(138 more cells in /mnt/l2/l2vast/_dial10/cells.json)
 
 ### Narrow-only and wide-only for the leading cells (item 8; same cell, half B / N / W)
 | base cell | half | L3M | L6M |
@@ -698,7 +698,7 @@ Single-book and book x session cells (wave 3, clean test of item 2; same config 
 | M1_50_g00_c1_d10_c20_tb_B_bP7_sam_fx85x40 | P7/am | -1404 $/wk, DD +0.0%, ww +0, stops 0.53(0.61), b5 80%, w2l 0 | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bP7_sam_fx85x60 | P7/am | -1227 $/wk, DD +0.0%, ww +0, stops 0.68(0.61), b5 83%, w2l 0 | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bP7_sam_fx85x90 | P7/am | -824 $/wk, DD +0.0%, ww +0, stops 0.38(0.61), b5 94%, w2l 1 | n/a |
-| M1_50_g00_c1_d10_c20_tb_B_bU7_sas_fx40x40 | U7/as | +1733 $/wk, DD +30.8%, ww -4307, stops 1.75(1.83), b5 114%, w2l 2 | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bU7_sas_fx40x40 | U7/as | +1733 $/wk, DD +30.8%, ww -4307, stops 1.75(1.83), b5 114%, w2l 2 | +1503 $/wk, DD +30.8%, ww +260, stops 2.09(1.83), b5 110%, w2l 3 |
 | M1_50_g00_c1_d10_c20_tb_B_bU7_sas_fx40x60 | U7/as | -178 $/wk, DD +35.0%, ww +1288, stops 1.45(1.83), b5 79%, w2l 2 | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bU7_sas_fx40x90 | U7/as | -1860 $/wk, DD -31.7%, ww -1661, stops 0.76(1.83), b5 53%, w2l 2 | n/a |
 | M1_50_g00_c1_d10_c20_tb_B_bU7_sas_fx60x40 | U7/as | +920 $/wk, DD -22.1%, ww -3107, stops 2.59(1.83), b5 121%, w2l 3 | n/a |
@@ -713,6 +713,8 @@ Single-book and book x session cells (wave 3, clean test of item 2; same config 
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x40s1 | A7/as | -85 $/wk, DD -17.0%, ww +673, stops 5.48(4.03), b5 64%, w2l 2 | +80 $/wk, DD -17.0%, ww -2130, stops 5.36(3.96), b5 118%, w2l 2 |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x40s2 | A7/as | +111 $/wk, DD +22.4%, ww +517, stops 5.25(4.03), b5 89%, w2l 0 | -160 $/wk, DD +10.2%, ww +517, stops 5.21(3.96), b5 93%, w2l 1 |
 | M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x40s3 | A7/as | +243 $/wk, DD +29.7%, ww -1424, stops 4.95(4.03), b5 61%, w2l 1 | +81 $/wk, DD +12.5%, ww -1424, stops 5.17(3.96), b5 100%, w2l 4 |
+| M1_50_g00_c1_d10_c20_tb_B_bA7_sas_fx40x90s2 | A7/as | +55 $/wk, DD -19.0%, ww +1866, stops 2.74(4.03), b5 135%, w2l 2 | n/a |
+| M1_50_g00_c1_d10_c20_tb_B_bU7_sas_fx40x40s1 | U7/as | +77 $/wk, DD -2.7%, ww -1716, stops 1.90(1.83), b5 106%, w2l 1 | n/a |
 
 ### Leads (tolerant gate in every scored window incl. L3M and L6M, DD cut > 0 in some window)
 | cell | scope | L6M DD cut % | L6M d mean | windows | W44 removed L3M / L6M |

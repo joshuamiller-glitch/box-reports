@@ -16,7 +16,7 @@ B OSCILLATORS read relative to the trade side (RSI14 30/70, RSI2 10/90, CCI20 -1
 C MACD(12,26,9) histogram: macd_hist_with / macd_hist_against (sign), macd_slope_with / macd_slope_against (change over 1 bar), macd_with_rising (sign with and slope with), macd_against_falling
 D AGREEMENT over the 4 timeframes (column group c4_st_agree_<A|B|C>_*): A_with = squeeze (k=1.5) FIRED with histogram with the trade (A2 any age); B_with = RSI14 on the trade's side of 50 and not at the against-extreme; C_with = macd_with_rising. n = number of the 4 timeframes with the state (0-4): _n (raw), _eq0.._eq4, _ge2, _ge3.
 
-BOOK GROUPS (my definition from the repo notes, not from the engine): mean-reversion = K7 (T-UWREGIME: "mean-reversion books (K7) ... trend/pullback books (P7, U7)"); trend / pullback = P7, U7; H7, M7, A7, O7 are mixed or unclassified and shown as "other". "long into overbought" is read as AGAINST for trend books and can be WITH for mean-reversion books; the table keeps the sign of the measured lift per book so both readings are visible.
+BOOK GROUPS (USER ANSWER 2026-11-16, autopilot/ANSWER_BOOK_TYPES_20261116.md): NO book is mean-reversion. Breakout / trend = K7 (Keltner break 3-min), M7 (momentum vote 4-of-5), U7 (Supertrend 10-min), H7 (HMA 20/55 cross + EMA200); pullback = P7 (pullback inside a Supertrend 5-min regime), A7 (Asia pullback), O7 (opening drive with pullback). The earlier grouping K7 = mean-reversion was wrong and is replaced; the per-book table below is unchanged. The sign of the measured lift is kept per row.
 
 Rule for a pass (W-CF1): |zw| (weekly cluster-robust t, >= 8 weeks) above the 99th percentile of |zw| of the 200 nonsense controls in the same cell, lift keeps its sign in every calendar year with >= 30 per side and in L6M. Matched-count: 300 random subsets of the kept set's size and book x session x month composition drawn from the cell; pct_expect = share with lower mean R, pct_drawdown = share with larger max drawdown (R units) than the kept set; kept set = the state if lift>0, its complement if lift<0.
 
@@ -24,10 +24,28 @@ Rule for a pass (W-CF1): |zw| (weekly cluster-robust t, >= 8 weeks) above the 99
 
 | group | passing tests | with lift>0 | median lift R | median pct_expect | median pct_drawdown | both >= 0.95 |
 |---|---|---|---|---|---|---|
-| mean-reversion (K7) | 28 | 10 | -0.102 | 1.00 | 0.84 | 8 |
-| other (H7, M7, A7, O7) | 37 | 10 | -0.059 | 1.00 | 0.85 | 11 |
+| breakout / trend (K7, M7, U7, H7) | 61 | 19 | -0.073 | 1.00 | 0.86 | 18 |
 | pooled (ALL or session cell) | 35 | 10 | -0.069 | 1.00 | 0.91 | 13 |
-| trend / pullback (P7, U7) | 25 | 13 | 0.071 | 1.00 | 0.87 | 7 |
+| pullback (P7, A7, O7) | 29 | 14 | -0.060 | 1.00 | 0.86 | 8 |
+
+## Sign of the passing lifts by state type and book group (breakout / trend vs pullback)
+
+| state type | group | passing tests | lift>0 | lift<0 |
+|---|---|---|---|---|
+| osc_mid | breakout / trend (K7, M7, U7, H7) | 3 | 1 | 2 |
+| osc_xin_against | breakout / trend (K7, M7, U7, H7) | 5 | 1 | 4 |
+| sqz_fa_4_8 | breakout / trend (K7, M7, U7, H7) | 3 | 0 | 3 |
+| sqz_fa_9p | breakout / trend (K7, M7, U7, H7) | 5 | 1 | 4 |
+| sqz_fw_1_3 | pullback (P7, A7, O7) | 3 | 1 | 2 |
+| sqz_mom_against_slope_with | breakout / trend (K7, M7, U7, H7) | 6 | 0 | 6 |
+| sqz_mom_with_slope_against | pullback (P7, A7, O7) | 3 | 3 | 0 |
+| sqz_mom_with_slope_with | breakout / trend (K7, M7, U7, H7) | 6 | 3 | 3 |
+| sqz_on_1_5 | breakout / trend (K7, M7, U7, H7) | 3 | 0 | 3 |
+| sqz_on_1_5 | pullback (P7, A7, O7) | 3 | 0 | 3 |
+| sqz_slope_against | breakout / trend (K7, M7, U7, H7) | 3 | 3 | 0 |
+| sqz_slope_against | pullback (P7, A7, O7) | 3 | 3 | 0 |
+| sqz_slope_with | breakout / trend (K7, M7, U7, H7) | 3 | 0 | 3 |
+| sqz_slope_with | pullback (P7, A7, O7) | 3 | 0 | 3 |
 
 ## Passing states by individual book (no grouping assumed)
 

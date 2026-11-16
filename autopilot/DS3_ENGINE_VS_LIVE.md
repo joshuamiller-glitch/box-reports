@@ -4,7 +4,7 @@ LOT BASIS (lead, 11-14): JN05W2-family sets are at BASE (box) lots; live is x1.7
 
 Basis of every dollar figure on this page: (a) usdB, usdC, the "mismatch causes" dollars and the live-vs-engine total P&L compare LIVE dollars (actual NT commissions) with ENGINE base-lot dollars (fee $1.18/contract). For the matched window 11-01..11-11 live ran box-scale lots (P7 qty 7/4, K7 1-2, etc.; the x1.75 user lots first appear 11-12), so these two sides are on the SAME lot scale: no x1.75 factor is applied or needed, and the only dollar bias is the fee difference (about $3.7 per contract RT, engine more favourable) plus fill drift. (b) Day-cap and give-back tests use LIVE dollars against caps converted to live dollars for the box-lot weeks (section 5). (c) Section 7 (re-score) compares engine with engine: stored reference month results vs the engine-copy runs, both base-lot dollars, both at the $1.18 fee: no lot or fee mismatch inside that table; multiply by 1.75 for user-lot dollars. (d) Entry-match counts (A/B/C, U) contain no dollars and no lot or fee dependence.
 
-VERDICT (data ends 2026-11-13; 2026-11-16 02:54Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP_LC): ALL 0.675, W45 0.742, W46 0.567. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
+VERDICT (data ends 2026-11-13; 2026-11-16 03:16Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP_LC): ALL 0.675, W45 0.742, W46 0.567. Conditional on live exits (live-drive): 0.811 (TL3_EV_LPB_D).
 
 Shadow only, no PASS claims, nothing adopted into the shared engine. Prereg autopilot/EV_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_engfix/ (evmatch.py, ev_analyze.py, ev_report.py, ev_run.py, ev_drive.py, ev_panel.py, ev_jnprep.py, build_page.py, page_gen.py); runs and logs /mnt/l2/l2vast/_engvslive/. Admission tag EV (TL3_EV_*).
 
@@ -293,7 +293,7 @@ Mismatch causes (side B = engine took / live flat, C = live took / engine flat; 
 | day loss / profit caps, give-back lock, week floor | CheckLimits L4071, CheckBookLock L4031 (R = BaseQty x SizeMult x stop x $20) | check_limits L722, check_book_lock L731 | K7 on label day 11-06 stopped entering exactly after -$4,805 at 08:30 (cap 4,800); 0 live entries after a profit cap or give-back crossing; CORRECTED (user, 11-14). Code check: live v1.9a defaults are the engine values x1.75 for every cap (K7 21,000/8,400 vs sim.DAYCAP 12,000/4,800; M7 same; U7 42,000/16,800 vs 24,000/9,600; P7 73,500/14,700 vs 42,000/8,400; H7 42,000/16,800 vs 24,000/9,600; A7 10,500/4,200 vs 6,000/2,400) and the book lots x1.75 (K7 4 vs 2, M7 4/2, U7 7/4, P7 12/7, H7 7/4, A7 2/1), and BookR uses BaseQty, so locks scale too: in engine units the caps ARE the live caps of the user-lot build. LPB_EMPTY (= LPB_BASE), JN04RM, JN05W2, JN05W2J were scored in engine units with P7 8,400 (p7_daycap [42000, 8400] in their set files) = live 14,700; the other books at the sim.DAYCAP box values = live x1/1.75. S1b-COMB / RB_COMB-type bases used P7 16,800 engine units = 29,400 live: flagged. BUT live ran box-scale lots until 11-11 (P7 qty 7/4, 6 on 11-11; user lots first appear 11-12) with the x1.75 caps already in force, so for 11-01..11-11 the engine caps are 1.75x too tight in live dollars. Evidence (live dollars): P7 11-11 -13,865 after two stops then a third entry, ended -20,285 and halted (cap 14,700); M7 -5,360 on 11-10 kept entering (cap 8,400, not 4,800); against the coded live caps only 6 entries follow a crossing in 11 days (P7 11-10 5 entries after -17.8k, -$1.3k, unexplained; P7 11-06 1). The earlier claim that live ignored the P7/M7 caps is WITHDRAWN (it compared live dollars to engine-unit caps). | Engine = code; the 11-01..11-11 Nov replays use the live-dollar caps (TL3_EV_*_LC); the 43-month history needs no cap change |
 | U7 same-side 30-min blackout after a cut | L1856 | sim.blackout_until L54/L231 | 0 live U7 same-side entries inside 30 min of a cut | OK |
 | JN04 post-stop/cut blackout (P7) | JnOnClosed L2012, JnBlackout L2156 | NOT in JN04RM / JN05W2 / LPB references | 19 live P7 same-side re-entries within 30 min of a P7 stop/cut up to 11-10 03:48; 0 after (through 11-13 14:50) | live from ~11-10 (consistent with zero violations); MISSING in the references |
-| ATR-SKIP (P7 atr_rel >= 1.6) | Jn04Size L1967 | NOT in the references (ATRSKIP_P7 is a separate set) | live P7 entered at atr_rel 2.81 on 11-13 11:18 (7 lots) and 1.63 on 11-11 19:11 (6 lots), and at 2-3 on 11-04 and 11-08/09: NOT firing live through 11-13 (Shadow, or a different input) | NOT live; the extended-store replays drop it |
+| ATR-SKIP (P7 atr_rel >= 1.6) | Jn04Size L1967 | NOT in the references (ATRSKIP_P7 is a separate set) | live P7 entered at atr_rel 2.81 on 11-13 11:18 (7 lots) and 1.63 on 11-11 19:11 (6 lots), and at 2-3 on 11-04 and 11-08/09: READ AS firing live (user 11-16: Output shows 'REG atr_rel 1.49 -> lots 12 -> 6' at 11-11 19:11; engine read 1.63 because DS7 drops the 5-min bucket after a >120-pt open gap); only 11-13 11:18:45 (2.80) remains to check | LIVE; engine series corrected in JN05W2JL2 (section 11) |
 | LOT / SIGQ / REG sizing | Jn04Size | jnrule layers | live P7 qty in W45 is 4/7 (no layers); engine JN04RM gives 1/2: layers not live in W45 | timeline |
 | STACK cap | Jn04Stack L1999: 10 lots London (user-lot build) | cap 6 (box lots) | scale-consistent (x1.75) | OK |
 | v1.9 DAY-DONE (C22), EVIDENCE, BREADTH, ctx cut | V9Gate L2090, DayDoneLossDollars 4,200 | scr_hooks conj gate with R = $1,200 x -2 = -$2,400 | 79 live entries after >=22 closes with day <= -$4,200 (through 11-13 14:06): not firing live. Engine threshold -$2,400 vs source 4,200 | JN05W2 is not what was live |
@@ -327,7 +327,7 @@ Engine sets compared: NY_A = JN05W2 as scored in the research (LPB + ctx cut F3 
 | live layer (user list) | live spec | engine base JN05W2 | match | note |
 |--|--|--|--|--|
 | Governor WL_E1 (NEW EVIDENCE) | Live, P7, skip after 2 same-side losers without a new session extreme; no session list in the property; session key = label day x 6-session clock | c_gov rule gov: loss_same_ge 2 and noevid 1, sess [0,1,3,4], P7 only, history by session key of the signal | YES in effect | the engine list excludes sessions 2 (pre) and 5 (close), but P7's lot table is 0 in both, so nothing is traded there; extreme definition: engine 1-min bar highs/lows, live bar highs/lows and the current price; opposite-side entry resets the run in both |
-| ATR-SKIP | Live, P7, atr_rel >= 1.6 (5-min ATR(14) Wilder vs median of the previous 20 dates' daily medians, >= 5 dates) | NOT in JN05W2/JN04RM/LPB; restored in NY_D | restored | definition identical to fgh_feat.bar_features (checked against DS7.cs JnClose5m/JnAtrRel L1914-1938); live behaviour: see section 11 |
+| ATR-SKIP | Live, P7, atr_rel >= 1.6 (5-min ATR(14) Wilder vs median of the previous 20 dates' daily medians, >= 5 dates) | NOT in JN05W2/JN04RM/LPB; restored in NY_D (old ATR series) | restored | live-faithful ATR needs the roll-jump rule (section 11); NY_D used the series without it; JN05W2JL2 has it |
 | DAY-DONE C22 | Live, >= 22 closed trades today (all books) AND day loss >= $4,200 | scr_hooks conj: n >= 22 and day P&L <= -2 x $1,200 = -$2,400 engine dollars (= $4,200 / 1.75), closes counted by exit label day over all books | YES in the user-lot build (x1.75 lots); in the box-lot weeks 11-01..11-11 live dollars are 1.0x the engine, so the equivalent live threshold would have been $2,400 | live closes counted per session roll (IsFirstBarOfSession), engine per 18:00 ET label day; X-book shadow closes count live, not in the engine (7 rows) |
 | Stack cut 50% | Live, Asia only (StackAsiaOnly) | sim.stack_on_stop: entry_session != 0 -> 'Asia-only, no cut'; 50% ceil of the other same-side books; trigger = exit name with Stop and not StackCut | YES | identical code path |
 | Jn04 stack cap 10 lots, London only | Live (sessions 0,1,0,0,0,0) | JN05W2 has NO cde key = no STACK cap. JN04RM and JN05W2J DO (cde code 8, cap 6 engine lots = 10 live lots, London). The live-matching base is JN05W2J (JN04RM base), not JN05W2 | NO for JN05W2 | effect on the label week: see the table below (B minus A) |
@@ -346,156 +346,170 @@ Engine sets compared: NY_A = JN05W2 as scored in the research (LPB + ctx cut F3 
 | C: B + P7 post-stop/cut blackout 30 min (from 11-10 09:00Z)                          | 189      | 7            | -3476                | -6083            | -7609                    | 0.539   | 0.470          |
 | D: C + ATR-SKIP P7 atr_rel>=1.6 restored = full live list in the engine              | 183      | 8            | 7977                 | 13959            | 11452                    | 0.490   | 0.457          |
 
-Reading: adding the STACK cap moves the week by +$11.1k base (+$19.4k x1.75), the blackout by -$7.6k, restoring ATR-SKIP by +$11.5k. With the whole live list in the engine (NY_D) the label week is +$8.0k base (+$14.0k x1.75) against live -$26.5k, 183 trades against 177 live, and the entry match FALLS (0.490 all, 0.457 label week) when ATR-SKIP is restored: the live record does not look like an ATR-SKIP world (section 11). The JN05W2-family layers (governor, C22, ctx cut, BR3S) cut the engine's trade count to 165-194 for the week, close to the live 177; they are why the family matches live entries less well (0.49-0.54) than the plain panel-timeline base NX_D (0.594) while having the right number of trades.
+Reading: adding the STACK cap moves the week by +$11.1k base (+$19.4k x1.75), the blackout by -$7.6k, restoring ATR-SKIP by +$11.5k. With the whole live list in the engine (NY_D) the label week is +$8.0k base (+$14.0k x1.75) against live -$26.5k, 183 trades against 177 live, and the entry match FALLS (0.490 all, 0.457 label week) when ATR-SKIP is restored: (NY_D used the ATR series without DS7's roll-jump rule; section 11). The JN05W2-family layers (governor, C22, ctx cut, BR3S) cut the engine's trade count to 165-194 for the week, close to the live 177; they are why the family matches live entries less well (0.49-0.54) than the plain panel-timeline base NX_D (0.594) while having the right number of trades.
 
-## 11. ATR-SKIP on the live record: every P7 entry/signal with atr_rel >= 1.6 (2026-10-01..11-13), for checking against the Output log
-atr5 = Wilder ATR(14) of 5-min NQ bars at the last closed bar, base = median over the previous 20 trading dates (>= 5) of the daily medians of atr5, atr_rel = atr5/base (the engine's computation, same as DS7.cs JnAtrRel). LIVE rows are real P7 entries; ENGINE rows are P7 signals of the engine run (October: LPB_EMPTY; November: NX_D).
-- Of 101 live P7 entries from 11-01, 40 had atr_rel >= 1.6. By label day (entries / with atr_rel >= 1.6 / max): 11-02 10/3/1.74, 11-03 8/4/2.23, 11-04 19/15/3.20, 11-05 16/5/4.60, 11-06 8/8/3.55, 11-09 4/3/2.32, 11-10 16/0/1.30, 11-11 12/0/1.55 (but one at 1.63 on 11-11 19:11), 11-12 3/1/1.63, 11-13 5/1/2.81.
-- After the ATR-SKIP "Live" date the two live P7 entries at atr_rel >= 1.6 to check in the Output log are: 2026-11-11 19:11:00 (6 lots, atr5 50.95 / base 31.34 = 1.63) and 2026-11-13 11:18:45 (7 lots, atr5 87.93 / base 31.34 = 2.81; this trade lost 67 pts at 11:26 on a gap move). If ATR-SKIP was Live on those seconds the log must show an 'ATR-SKIP: ... -> signal SKIPPED' line; if it shows nothing, jnDailyMed had fewer than 5 dates or jnAtr was NaN at the entry (strategy reload: JnAtrRel returns NaN until 5 daily medians exist), which is the first thing to look for.
-- Full list (all 140 rows):
+## 11. ATR-SKIP / REG on the live record (re-issued 11-16 after the user's Output line): live reads 1.49, the engine read 1.63 - cause found and reproduced
+Live Output 11-11 19:11:00: 'P7 JN04 REG atr_rel 1.49 -> lots 12 -> 6' (REG halves at atr_rel >= 1.3; ATR-SKIP skips at >= 1.6). The earlier statement 'ATR-SKIP probably not firing live' is WITHDRAWN: that entry sits below 1.6 on the live reading (REG halving, not skip).
+Cause: DS7.cs JnOnBar1m (L1914) has a roll-jump rule: if |open - previous 1-min close| > 120 pts, prevClose = NaN and the open 5-min bucket is dropped (written for contract rolls). It also fires on genuine session-open gaps: the 11-11 evening open gaped -138 pts (and 11-08 23:00Z -229, 10-18 22:00Z -164). After a drop the next TR is high-low only, so the Wilder ATR(14) stays lower for hours. The engine's ATR (fgh_feat.bar_features, used by REG, ATR-SKIP and every JN04 layer in all earlier runs) has no such rule. Literal port (ev_atrport.py / ev_atrseries.py): atr5 46.90 / base 31.35 = 1.496 at 19:11:00 (live printed 1.49; engine before 50.95 / 31.34 = 1.63; with the rule switched off the port gives 1.625). Base window, days available (>= 30 loaded days give the same base), session bounds, bar source and smoothing were not the cause. New series for every bar close: /mnt/l2/l2vast/_engvslive/work/jnr_atr_ev3.npz (set TL3_EV_JN05W2JL2 uses it for REG and ATR-SKIP; JN05W2JL uses the old series and is superseded).
+Recount with the live-faithful series: of 101 live P7 entries from 11-01, 47 had atr_rel >= 1.3 (REG halving) and 39 had >= 1.6 (ATR-SKIP; was 40 with the old series). By label day (entries / >= 1.3 / >= 1.6 / max):
 
-| source                       | time_ET             |   qty_or_lots |   atr5_pts |   base_20d_median_pts |   atr_rel |
-|:-----------------------------|:--------------------|--------------:|-----------:|----------------------:|----------:|
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-05 10:09:00 |             3 |      36.2  |                 19.44 |      1.86 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-06 10:43:00 |             1 |      32.82 |                 19.84 |      1.65 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-07 10:35:00 |             1 |      37.13 |                 19.44 |      1.91 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-12 10:00:00 |             3 |      36.77 |                 19.79 |      1.86 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-12 10:23:00 |             2 |      38.29 |                 19.79 |      1.94 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-14 18:50:00 |             7 |      34.11 |                 20.44 |      1.67 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-14 19:27:00 |             7 |      33.58 |                 20.44 |      1.64 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-14 20:00:00 |             7 |      34.44 |                 20.44 |      1.68 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-14 20:15:00 |             4 |      36.77 |                 20.44 |      1.8  |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-14 21:08:00 |             4 |      37.2  |                 20.44 |      1.82 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-14 21:25:00 |             4 |      38.7  |                 20.44 |      1.89 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-16 10:08:00 |             4 |      52.57 |                 21.36 |      2.46 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-16 11:03:00 |             1 |      57.44 |                 21.36 |      2.69 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-16 11:56:00 |             1 |      53.16 |                 21.36 |      2.49 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-20 10:53:00 |             4 |      58.59 |                 22.77 |      2.57 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-20 11:49:00 |             1 |      57.26 |                 22.77 |      2.51 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-21 10:00:00 |             2 |      48.98 |                 23.43 |      2.09 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-21 10:39:00 |             1 |      52.97 |                 23.43 |      2.26 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-22 11:04:00 |             4 |      52.59 |                 23.95 |      2.2  |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-22 11:41:00 |             4 |      52.53 |                 23.95 |      2.19 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-25 21:00:00 |             4 |      43.67 |                 24.1  |      1.81 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-25 21:46:00 |             4 |      44.7  |                 24.1  |      1.86 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-26 10:37:00 |             1 |      58.55 |                 24.1  |      2.43 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-26 11:15:00 |             4 |      55.72 |                 24.1  |      2.31 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-28 18:07:00 |             4 |      60.44 |                 24.41 |      2.48 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-28 18:49:00 |             7 |      50.35 |                 24.41 |      2.06 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-28 20:22:00 |             4 |      42.84 |                 24.41 |      1.76 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-28 20:39:00 |             1 |      42.44 |                 24.41 |      1.74 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-29 18:59:00 |             4 |      43.26 |                 24.41 |      1.77 |
-| ENGINE P7 signal (LPB_EMPTY) | 2026-10-29 21:39:00 |             7 |      40.55 |                 24.41 |      1.66 |
-| ENGINE P7 signal (NX_D)      | 2026-11-01 18:36:00 |             1 |      41.06 |                 25.28 |      1.62 |
-| LIVE P7 entry                | 2026-11-01 18:36:00 |             4 |      41.06 |                 25.28 |      1.62 |
-| ENGINE P7 signal (NX_D)      | 2026-11-02 10:02:00 |             1 |      42.11 |                 25.28 |      1.67 |
-| LIVE P7 entry                | 2026-11-02 10:02:15 |             4 |      42.11 |                 25.28 |      1.67 |
-| ENGINE P7 signal (NX_D)      | 2026-11-02 11:39:00 |             1 |      46.59 |                 25.28 |      1.84 |
-| LIVE P7 entry                | 2026-11-02 11:51:45 |             2 |      44.01 |                 25.28 |      1.74 |
-| LIVE P7 entry                | 2026-11-02 18:47:01 |             4 |      45.3  |                 26.24 |      1.73 |
-| ENGINE P7 signal (NX_D)      | 2026-11-02 18:47:01 |             1 |      45.3  |                 26.24 |      1.73 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 10:18:00 |             1 |      56.26 |                 26.24 |      2.14 |
-| LIVE P7 entry                | 2026-11-03 10:20:15 |             4 |      57.37 |                 26.24 |      2.19 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 10:42:00 |             1 |      56.24 |                 26.24 |      2.14 |
-| LIVE P7 entry                | 2026-11-03 10:46:30 |             4 |      58.47 |                 26.24 |      2.23 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 11:53:00 |             1 |      50.22 |                 26.24 |      1.91 |
-| LIVE P7 entry                | 2026-11-03 11:57:00 |             3 |      50.24 |                 26.24 |      1.91 |
-| LIVE P7 entry                | 2026-11-03 18:56:01 |             4 |      43.75 |                 27.08 |      1.62 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 18:56:01 |             1 |      43.75 |                 27.08 |      1.62 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 19:15:00 |             1 |      46.9  |                 27.08 |      1.73 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 20:03:00 |             2 |      57.84 |                 27.08 |      2.14 |
-| LIVE P7 entry                | 2026-11-03 20:03:00 |             7 |      57.84 |                 27.08 |      2.14 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 20:30:00 |             2 |      86.58 |                 27.08 |      3.2  |
-| LIVE P7 entry                | 2026-11-03 20:30:00 |             7 |      86.58 |                 27.08 |      3.2  |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 20:44:00 |             2 |      86.79 |                 27.08 |      3.2  |
-| LIVE P7 entry                | 2026-11-03 20:44:00 |             7 |      86.79 |                 27.08 |      3.2  |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 21:34:00 |             2 |      77.64 |                 27.08 |      2.87 |
-| LIVE P7 entry                | 2026-11-03 21:34:00 |             7 |      77.64 |                 27.08 |      2.87 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 21:56:00 |             1 |      65.59 |                 27.08 |      2.42 |
-| LIVE P7 entry                | 2026-11-03 21:56:00 |             4 |      65.59 |                 27.08 |      2.42 |
-| LIVE P7 entry                | 2026-11-03 22:15:00 |             4 |      65.55 |                 27.08 |      2.42 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 22:15:00 |             1 |      65.55 |                 27.08 |      2.42 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 22:52:00 |             2 |      58.69 |                 27.08 |      2.17 |
-| LIVE P7 entry                | 2026-11-03 22:52:00 |             7 |      58.69 |                 27.08 |      2.17 |
-| LIVE P7 entry                | 2026-11-03 23:07:00 |             4 |      57.62 |                 27.08 |      2.13 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 23:07:00 |             1 |      57.62 |                 27.08 |      2.13 |
-| ENGINE P7 signal (NX_D)      | 2026-11-03 23:18:01 |             1 |      59.65 |                 27.08 |      2.2  |
-| LIVE P7 entry                | 2026-11-03 23:18:01 |             4 |      59.65 |                 27.08 |      2.2  |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 00:30:00 |             2 |      67.61 |                 27.08 |      2.5  |
-| LIVE P7 entry                | 2026-11-04 00:30:00 |             7 |      67.61 |                 27.08 |      2.5  |
-| LIVE P7 entry                | 2026-11-04 00:53:00 |             7 |      63.83 |                 27.08 |      2.36 |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 00:53:00 |             2 |      63.83 |                 27.08 |      2.36 |
-| LIVE P7 entry                | 2026-11-04 01:31:01 |             7 |      57.3  |                 27.08 |      2.12 |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 01:31:01 |             2 |      57.3  |                 27.08 |      2.12 |
-| LIVE P7 entry                | 2026-11-04 02:45:00 |             4 |      43.93 |                 27.08 |      1.62 |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 02:45:00 |             1 |      43.93 |                 27.08 |      1.62 |
-| LIVE P7 entry                | 2026-11-04 07:25:00 |             5 |      45.16 |                 27.08 |      1.67 |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 07:25:00 |             1 |      45.16 |                 27.08 |      1.67 |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 07:43:00 |             1 |      45.35 |                 27.08 |      1.67 |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 08:05:00 |             1 |      50.25 |                 27.08 |      1.86 |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 11:21:00 |             1 |      87.97 |                 27.08 |      3.25 |
-| LIVE P7 entry                | 2026-11-04 21:11:00 |             4 |      50.18 |                 27.94 |      1.8  |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 21:11:00 |             1 |      50.18 |                 27.94 |      1.8  |
-| ENGINE P7 signal (NX_D)      | 2026-11-04 21:31:00 |             1 |      49.53 |                 27.94 |      1.77 |
-| LIVE P7 entry                | 2026-11-04 21:31:00 |             4 |      49.53 |                 27.94 |      1.77 |
-| LIVE P7 entry                | 2026-11-04 21:42:02 |             4 |      48.48 |                 27.94 |      1.74 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 10:37:00 |             2 |     103.14 |                 27.94 |      3.69 |
-| LIVE P7 entry                | 2026-11-05 10:39:00 |             5 |     103.14 |                 27.94 |      3.69 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 11:00:00 |             1 |     128.45 |                 27.94 |      4.6  |
-| LIVE P7 entry                | 2026-11-05 11:04:30 |             5 |     128.45 |                 27.94 |      4.6  |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 18:06:00 |             4 |      85.02 |                 28.62 |      2.97 |
-| LIVE P7 entry                | 2026-11-05 18:06:00 |             7 |      85.02 |                 28.62 |      2.97 |
-| LIVE P7 entry                | 2026-11-05 18:38:00 |             7 |     101.52 |                 28.62 |      3.55 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 18:38:00 |             4 |     101.52 |                 28.62 |      3.55 |
-| LIVE P7 entry                | 2026-11-05 18:50:00 |             4 |     100.88 |                 28.62 |      3.52 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 18:50:00 |             2 |     100.88 |                 28.62 |      3.52 |
-| LIVE P7 entry                | 2026-11-05 19:17:00 |             4 |      98.17 |                 28.62 |      3.43 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 19:17:00 |             1 |      98.17 |                 28.62 |      3.43 |
-| LIVE P7 entry                | 2026-11-05 20:07:00 |             7 |      87.83 |                 28.62 |      3.07 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 20:07:00 |             2 |      87.83 |                 28.62 |      3.07 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 20:15:00 |             1 |      94.44 |                 28.62 |      3.3  |
-| LIVE P7 entry                | 2026-11-05 20:15:00 |             7 |      94.44 |                 28.62 |      3.3  |
-| LIVE P7 entry                | 2026-11-05 20:21:00 |             7 |      93.5  |                 28.62 |      3.27 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 20:21:00 |             1 |      93.5  |                 28.62 |      3.27 |
-| LIVE P7 entry                | 2026-11-05 20:28:00 |             4 |      93.63 |                 28.62 |      3.27 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 20:28:00 |             1 |      93.63 |                 28.62 |      3.27 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 20:32:00 |             2 |      92.89 |                 28.62 |      3.24 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 20:48:00 |             1 |      89.51 |                 28.62 |      3.13 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 21:00:00 |             2 |      88.07 |                 28.62 |      3.08 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 21:18:00 |             2 |      84.42 |                 28.62 |      2.95 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 21:38:00 |             2 |      77.24 |                 28.62 |      2.7  |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 21:49:00 |             2 |      75.37 |                 28.62 |      2.63 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 22:56:01 |             1 |      56.34 |                 28.62 |      1.97 |
-| ENGINE P7 signal (NX_D)      | 2026-11-05 23:09:00 |             4 |      57.72 |                 28.62 |      2.02 |
-| ENGINE P7 signal (NX_D)      | 2026-11-06 00:13:01 |             1 |      47.48 |                 28.62 |      1.66 |
-| ENGINE P7 signal (NX_D)      | 2026-11-06 00:28:00 |             1 |      49.9  |                 28.62 |      1.74 |
-| ENGINE P7 signal (NX_D)      | 2026-11-06 01:01:02 |             1 |      48.82 |                 28.62 |      1.71 |
-| ENGINE P7 signal (NX_D)      | 2026-11-06 03:02:00 |             1 |      51.41 |                 28.62 |      1.8  |
-| ENGINE P7 signal (NX_D)      | 2026-11-06 03:39:01 |             1 |      50.81 |                 28.62 |      1.78 |
-| ENGINE P7 signal (NX_D)      | 2026-11-06 04:02:00 |             2 |      48.58 |                 28.62 |      1.7  |
-| ENGINE P7 signal (NX_D)      | 2026-11-06 04:45:00 |             2 |      46.56 |                 28.62 |      1.63 |
-| ENGINE P7 signal (NX_D)      | 2026-11-06 08:04:00 |             2 |      46.09 |                 28.62 |      1.61 |
-| ENGINE P7 signal (NX_D)      | 2026-11-06 10:42:00 |             2 |      90.9  |                 28.62 |      3.18 |
-| LIVE P7 entry                | 2026-11-08 18:33:00 |             4 |      61.88 |                 29.14 |      2.12 |
-| ENGINE P7 signal (NX_D)      | 2026-11-08 18:33:00 |             2 |      61.88 |                 29.14 |      2.12 |
-| LIVE P7 entry                | 2026-11-08 19:01:00 |             4 |      67.61 |                 29.14 |      2.32 |
-| ENGINE P7 signal (NX_D)      | 2026-11-08 19:01:00 |             2 |      67.61 |                 29.14 |      2.32 |
-| ENGINE P7 signal (NX_D)      | 2026-11-08 19:03:00 |             2 |      67.61 |                 29.14 |      2.32 |
-| LIVE P7 entry                | 2026-11-08 21:44:00 |             4 |      58.05 |                 29.14 |      1.99 |
-| ENGINE P7 signal (NX_D)      | 2026-11-08 21:44:00 |             1 |      58.05 |                 29.14 |      1.99 |
-| ENGINE P7 signal (NX_D)      | 2026-11-09 04:01:00 |             2 |      49.84 |                 29.14 |      1.71 |
-| ENGINE P7 signal (NX_D)      | 2026-11-09 10:08:00 |             1 |      62.59 |                 29.14 |      2.15 |
-| ENGINE P7 signal (NX_D)      | 2026-11-09 10:27:00 |             1 |      61.53 |                 29.14 |      2.11 |
-| ENGINE P7 signal (NX_D)      | 2026-11-09 10:41:00 |             1 |      58.81 |                 29.14 |      2.02 |
-| ENGINE P7 signal (NX_D)      | 2026-11-09 11:08:00 |             1 |      60.28 |                 29.14 |      2.07 |
-| ENGINE P7 signal (NX_D)      | 2026-11-09 11:42:00 |             1 |      54.12 |                 29.14 |      1.86 |
-| ENGINE P7 signal (NX_D)      | 2026-11-11 11:13:00 |             1 |      52.08 |                 31.34 |      1.66 |
-| ENGINE P7 signal (NX_D)      | 2026-11-11 19:11:00 |             4 |      50.95 |                 31.34 |      1.63 |
-| LIVE P7 entry                | 2026-11-11 19:11:00 |             6 |      50.95 |                 31.34 |      1.63 |
-| ENGINE P7 signal (NX_D)      | 2026-11-12 10:38:00 |             1 |      78.16 |                 31.34 |      2.49 |
-| ENGINE P7 signal (NX_D)      | 2026-11-12 10:52:00 |             1 |      74.85 |                 31.34 |      2.39 |
-| ENGINE P7 signal (NX_D)      | 2026-11-13 11:15:00 |             2 |      87.93 |                 31.34 |      2.81 |
-| LIVE P7 entry                | 2026-11-13 11:18:45 |             7 |      87.93 |                 31.34 |      2.81 |
+| ld    |   entries |   reg_ge_1p3 |   skip_ge_1p6 |   max_rel |
+|:------|----------:|-------------:|--------------:|----------:|
+| 11-02 |        10 |            4 |             3 |      1.74 |
+| 11-03 |         8 |            4 |             4 |      2.23 |
+| 11-04 |        19 |           17 |            15 |      3.2  |
+| 11-05 |        16 |            6 |             5 |      4.6  |
+| 11-06 |         8 |            8 |             8 |      3.55 |
+| 11-09 |         4 |            4 |             3 |      2.28 |
+| 11-10 |        16 |            1 |             0 |      1.3  |
+| 11-11 |        12 |            1 |             0 |      1.59 |
+| 11-12 |         3 |            1 |             0 |      1.5  |
+| 11-13 |         5 |            1 |             1 |      2.8  |
+
+- After 11-10 the only live P7 entry at atr_rel >= 1.6 is 2026-11-13 11:18:45 (7 lots, atr5 87.93 / base 31.35 = 2.80). The 11-11 19:11 entry is 1.496 (REG halving, correct). Check the Output log for the 11-13 11:18:45 REG / ATR-SKIP line; if it shows a REG halving instead of a skip, atr_rel read lower than 1.6 live at that second (gap-drop rule again: look for a >120-pt jump in the previous hours; there is none in the 1-min NQ bars before 11-13 11:18 on this tape, so a skip would be expected).
+- Engine P7 signals and live entries at atr_rel >= 1.6 since 2026-10-01 (live-faithful series):
+
+| source                              | time_ET             |   qty_or_lots |   atr5_pts |   base_20d_median_pts |   atr_rel |
+|:------------------------------------|:--------------------|--------------:|-----------:|----------------------:|----------:|
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-05 10:09:00 |             3 |      36.2  |                 19.44 |      1.86 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-06 10:43:00 |             1 |      32.82 |                 19.84 |      1.65 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-07 10:35:00 |             1 |      37.39 |                 19.44 |      1.92 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-12 10:00:00 |             3 |      36.5  |                 19.79 |      1.84 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-12 10:23:00 |             2 |      38.29 |                 19.79 |      1.94 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-14 19:27:00 |             7 |      33.58 |                 20.44 |      1.64 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-14 20:00:00 |             7 |      34.39 |                 20.44 |      1.68 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-14 20:15:00 |             4 |      35.86 |                 20.44 |      1.75 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-14 21:08:00 |             4 |      37.2  |                 20.44 |      1.82 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-14 21:25:00 |             4 |      37.72 |                 20.44 |      1.85 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-16 10:08:00 |             4 |      52.57 |                 21.36 |      2.46 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-16 11:03:00 |             1 |      57.44 |                 21.36 |      2.69 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-16 11:56:00 |             1 |      53.16 |                 21.36 |      2.49 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-20 10:53:00 |             4 |      58.59 |                 22.77 |      2.57 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-20 11:49:00 |             1 |      57.26 |                 22.77 |      2.51 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-21 10:00:00 |             2 |      47.39 |                 23.43 |      2.02 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-21 10:39:00 |             1 |      52.97 |                 23.43 |      2.26 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-22 11:04:00 |             4 |      52.59 |                 23.95 |      2.2  |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-22 11:41:00 |             4 |      52.53 |                 23.95 |      2.19 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-25 21:00:00 |             4 |      42.26 |                 24.1  |      1.75 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-25 21:46:00 |             4 |      44.7  |                 24.1  |      1.86 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-26 10:37:00 |             1 |      58.55 |                 24.1  |      2.43 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-26 11:15:00 |             4 |      57.89 |                 24.1  |      2.4  |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-28 18:07:00 |             4 |      60.44 |                 24.41 |      2.48 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-28 18:49:00 |             7 |      50.35 |                 24.41 |      2.06 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-28 20:22:00 |             4 |      42.84 |                 24.41 |      1.76 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-28 20:39:00 |             1 |      42.44 |                 24.41 |      1.74 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-29 18:59:00 |             4 |      43.26 |                 24.41 |      1.77 |
+| ENGINE P7 signal (LPB_EMPTY 202610) | 2026-10-29 21:39:00 |             7 |      40.55 |                 24.41 |      1.66 |
+| LIVE P7 entry                       | 2026-11-01 18:36:00 |             4 |      41.06 |                 25.28 |      1.62 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-01 18:36:00 |             1 |      41.06 |                 25.28 |      1.62 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-02 10:02:00 |             1 |      42.11 |                 25.28 |      1.67 |
+| LIVE P7 entry                       | 2026-11-02 10:02:15 |             4 |      42.11 |                 25.28 |      1.67 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-02 11:39:00 |             1 |      46.59 |                 25.28 |      1.84 |
+| LIVE P7 entry                       | 2026-11-02 11:51:45 |             2 |      44.01 |                 25.28 |      1.74 |
+| LIVE P7 entry                       | 2026-11-02 18:47:01 |             4 |      45.3  |                 26.24 |      1.73 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-02 18:47:01 |             1 |      45.3  |                 26.24 |      1.73 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 10:18:00 |             1 |      56.26 |                 26.24 |      2.14 |
+| LIVE P7 entry                       | 2026-11-03 10:20:15 |             4 |      56.26 |                 26.24 |      2.14 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 10:42:00 |             1 |      56.24 |                 26.24 |      2.14 |
+| LIVE P7 entry                       | 2026-11-03 10:46:30 |             4 |      58.47 |                 26.24 |      2.23 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 11:53:00 |             1 |      50.22 |                 26.24 |      1.91 |
+| LIVE P7 entry                       | 2026-11-03 11:57:00 |             3 |      50.24 |                 26.24 |      1.91 |
+| LIVE P7 entry                       | 2026-11-03 18:56:01 |             4 |      43.75 |                 27.08 |      1.62 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 18:56:01 |             1 |      43.75 |                 27.08 |      1.62 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 19:15:00 |             1 |      46.53 |                 27.08 |      1.72 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 20:03:00 |             2 |      57.84 |                 27.08 |      2.14 |
+| LIVE P7 entry                       | 2026-11-03 20:03:00 |             7 |      57.84 |                 27.08 |      2.14 |
+| LIVE P7 entry                       | 2026-11-03 20:30:00 |             7 |      81.85 |                 27.08 |      3.02 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 20:30:00 |             2 |      81.85 |                 27.08 |      3.02 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 20:44:00 |             2 |      86.79 |                 27.08 |      3.2  |
+| LIVE P7 entry                       | 2026-11-03 20:44:00 |             7 |      86.79 |                 27.08 |      3.2  |
+| LIVE P7 entry                       | 2026-11-03 21:34:00 |             7 |      77.64 |                 27.08 |      2.87 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 21:34:00 |             2 |      77.64 |                 27.08 |      2.87 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 21:56:00 |             1 |      65.59 |                 27.08 |      2.42 |
+| LIVE P7 entry                       | 2026-11-03 21:56:00 |             4 |      65.59 |                 27.08 |      2.42 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 22:15:00 |             1 |      67.33 |                 27.08 |      2.49 |
+| LIVE P7 entry                       | 2026-11-03 22:15:00 |             4 |      67.33 |                 27.08 |      2.49 |
+| LIVE P7 entry                       | 2026-11-03 22:52:00 |             7 |      58.69 |                 27.08 |      2.17 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 22:52:00 |             2 |      58.69 |                 27.08 |      2.17 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 23:07:00 |             1 |      57.62 |                 27.08 |      2.13 |
+| LIVE P7 entry                       | 2026-11-03 23:07:00 |             4 |      57.62 |                 27.08 |      2.13 |
+| LIVE P7 entry                       | 2026-11-03 23:18:01 |             4 |      59.65 |                 27.08 |      2.2  |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-03 23:18:01 |             1 |      59.65 |                 27.08 |      2.2  |
+| LIVE P7 entry                       | 2026-11-04 00:30:00 |             7 |      68.1  |                 27.08 |      2.51 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 00:30:00 |             2 |      68.1  |                 27.08 |      2.51 |
+| LIVE P7 entry                       | 2026-11-04 00:53:00 |             7 |      63.83 |                 27.08 |      2.36 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 00:53:00 |             2 |      63.83 |                 27.08 |      2.36 |
+| LIVE P7 entry                       | 2026-11-04 01:31:01 |             7 |      57.3  |                 27.08 |      2.12 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 01:31:01 |             2 |      57.3  |                 27.08 |      2.12 |
+| LIVE P7 entry                       | 2026-11-04 02:45:00 |             4 |      44.48 |                 27.08 |      1.64 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 02:45:00 |             1 |      44.48 |                 27.08 |      1.64 |
+| LIVE P7 entry                       | 2026-11-04 07:25:00 |             5 |      44.75 |                 27.08 |      1.65 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 07:25:00 |             1 |      44.75 |                 27.08 |      1.65 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 07:43:00 |             1 |      45.35 |                 27.08 |      1.67 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 08:05:00 |             1 |      48.9  |                 27.08 |      1.81 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 11:21:00 |             1 |      87.97 |                 27.08 |      3.25 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 21:11:00 |             1 |      50.18 |                 27.95 |      1.8  |
+| LIVE P7 entry                       | 2026-11-04 21:11:00 |             4 |      50.18 |                 27.95 |      1.8  |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-04 21:31:00 |             1 |      49.53 |                 27.95 |      1.77 |
+| LIVE P7 entry                       | 2026-11-04 21:31:00 |             4 |      49.53 |                 27.95 |      1.77 |
+| LIVE P7 entry                       | 2026-11-04 21:42:02 |             4 |      48.48 |                 27.95 |      1.73 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 10:37:00 |             2 |     103.14 |                 27.95 |      3.69 |
+| LIVE P7 entry                       | 2026-11-05 10:39:00 |             5 |     103.14 |                 27.95 |      3.69 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 11:00:00 |             1 |     123.37 |                 27.95 |      4.41 |
+| LIVE P7 entry                       | 2026-11-05 11:04:30 |             5 |     128.45 |                 27.95 |      4.6  |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 18:06:00 |             4 |      85.02 |                 28.61 |      2.97 |
+| LIVE P7 entry                       | 2026-11-05 18:06:00 |             7 |      85.02 |                 28.61 |      2.97 |
+| LIVE P7 entry                       | 2026-11-05 18:38:00 |             7 |     101.52 |                 28.61 |      3.55 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 18:38:00 |             4 |     101.52 |                 28.61 |      3.55 |
+| LIVE P7 entry                       | 2026-11-05 18:50:00 |             4 |     101.31 |                 28.61 |      3.54 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 18:50:00 |             2 |     101.31 |                 28.61 |      3.54 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 19:17:00 |             1 |      98.17 |                 28.61 |      3.43 |
+| LIVE P7 entry                       | 2026-11-05 19:17:00 |             4 |      98.17 |                 28.61 |      3.43 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 20:07:00 |             2 |      87.83 |                 28.61 |      3.07 |
+| LIVE P7 entry                       | 2026-11-05 20:07:00 |             7 |      87.83 |                 28.61 |      3.07 |
+| LIVE P7 entry                       | 2026-11-05 20:15:00 |             7 |      92.79 |                 28.61 |      3.24 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 20:15:00 |             1 |      92.79 |                 28.61 |      3.24 |
+| LIVE P7 entry                       | 2026-11-05 20:21:00 |             7 |      93.5  |                 28.61 |      3.27 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 20:21:00 |             1 |      93.5  |                 28.61 |      3.27 |
+| LIVE P7 entry                       | 2026-11-05 20:28:00 |             4 |      93.63 |                 28.61 |      3.27 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 20:28:00 |             1 |      93.63 |                 28.61 |      3.27 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 20:32:00 |             2 |      92.89 |                 28.61 |      3.25 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 20:48:00 |             1 |      89.51 |                 28.61 |      3.13 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 21:00:00 |             2 |      87.52 |                 28.61 |      3.06 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 21:18:00 |             2 |      84.42 |                 28.61 |      2.95 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 21:38:00 |             2 |      77.24 |                 28.61 |      2.7  |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 21:49:00 |             2 |      75.37 |                 28.61 |      2.63 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 22:56:01 |             1 |      56.34 |                 28.61 |      1.97 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-05 23:09:00 |             4 |      57.72 |                 28.61 |      2.02 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-06 00:13:01 |             1 |      47.48 |                 28.61 |      1.66 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-06 00:28:00 |             1 |      49.9  |                 28.61 |      1.74 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-06 01:01:02 |             1 |      48.82 |                 28.61 |      1.71 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-06 03:02:00 |             1 |      51.41 |                 28.61 |      1.8  |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-06 03:39:01 |             1 |      50.81 |                 28.61 |      1.78 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-06 04:02:00 |             2 |      48.58 |                 28.61 |      1.7  |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-06 04:45:00 |             2 |      47.46 |                 28.61 |      1.66 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-06 08:04:00 |             2 |      46.09 |                 28.61 |      1.61 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-06 10:42:00 |             2 |      90.9  |                 28.61 |      3.18 |
+| LIVE P7 entry                       | 2026-11-08 18:33:00 |             4 |      59.95 |                 29.11 |      2.06 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-08 18:33:00 |             2 |      59.95 |                 29.11 |      2.06 |
+| LIVE P7 entry                       | 2026-11-08 19:01:00 |             4 |      66.37 |                 29.11 |      2.28 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-08 19:01:00 |             2 |      66.37 |                 29.11 |      2.28 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-08 19:03:00 |             2 |      66.37 |                 29.11 |      2.28 |
+| LIVE P7 entry                       | 2026-11-08 21:44:00 |             4 |      57.94 |                 29.11 |      1.99 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-08 21:44:00 |             1 |      57.94 |                 29.11 |      1.99 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-09 04:01:00 |             2 |      49.84 |                 29.11 |      1.71 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-09 05:07:00 |             1 |      46.58 |                 29.11 |      1.6  |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-09 10:08:00 |             1 |      62.59 |                 29.11 |      2.15 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-09 10:27:00 |             1 |      61.53 |                 29.11 |      2.11 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-09 10:41:00 |             1 |      58.81 |                 29.11 |      2.02 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-09 11:08:00 |             1 |      60.28 |                 29.11 |      2.07 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-09 11:42:00 |             1 |      54.12 |                 29.11 |      1.86 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-11 11:13:00 |             1 |      52.08 |                 31.35 |      1.66 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-12 10:38:00 |             1 |      78.16 |                 31.35 |      2.49 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-12 10:52:00 |             1 |      74.85 |                 31.35 |      2.39 |
+| ENGINE P7 signal (NX_D 202611)      | 2026-11-13 11:15:00 |             2 |      86.6  |                 31.35 |      2.76 |
+| LIVE P7 entry                       | 2026-11-13 11:18:45 |             7 |      87.93 |                 31.35 |      2.8  |
+
 
 ## 9. Extended store (tape, 1-s state days and REG inputs to 2026-11-13 17:00 ET; store ev1113b, parity with the shared store identical on 202610) - panel timeline, live-dollar caps to 11-12 20:41Z then engine-unit caps (user-lot build), JN04 blackout from 11-10 09:00Z, no ATR-SKIP
 
