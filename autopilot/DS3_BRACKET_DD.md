@@ -54,7 +54,7 @@ Rule definitions. Day direction at the signal second from CLOSED 1-minute bars o
 | session VWAP: AGAINST the day -> skip  | L6M | not finished | | | not finished |
 | session VWAP: AGAINST the day -> skip  | L3M | not finished | | | not finished |
 | session VWAP: AGAINST the day -> skip  | GAP | -23.9% / -1599 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
-| session VWAP: AGAINST the day -> skip  | PRE | not finished | | | not finished |
+| session VWAP: AGAINST the day -> skip  | PRE | +14.8% / -534 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
 | session VWAP: AGAINST the day -> skip  | X' | not finished | | | not finished |
 
 ## (W-BD2) DS3_BRACKET_DD_D - T-BRACKET-DD Parts D (partial exits), C (target by room), E (time) on TL3_EV_JN05W2JL2 (W-BD2)

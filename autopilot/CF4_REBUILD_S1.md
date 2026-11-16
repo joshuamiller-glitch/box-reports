@@ -1,12 +1,23 @@
 # CF4_REBUILD_S1 - T-REBUILD Stage 1, family 1 (indicator / alt-bar / structure / state conditions) scored per book x session x cell (W-CF4)
 
-**Verdict (data ends 2026-11-11) line (PREVIEW on signals_all outcomes = JN05W2 taken trades + 1-minute-hypothetical skipped signals, NOT the raw table; to be re-run on the Stage 0 raw trades): 22071 conditions scored (13 family-1 blocks plus IRL/ERL); effect on mean R: 16470 of 1103550 tests beat their cell's nonsense bar (1.49%, nominal 1%) and 5840 also keep the sign every year and in L6M (0.53%; the 200 nonsense controls pass the same full rule in ~0.44%); MFE: 2.06% beat the bar; MAE: 2.69% beat the bar. MAE and MFE effects are largely mechanical (conditions that mark high or low volatility move the excursions), read them as a map, not as edge.**
+**Verdict (data ends 2026-11-11) line (PREVIEW on signals_all outcomes = JN05W2 taken trades + 1-minute-hypothetical skipped signals, NOT the raw table; to be re-run on the Stage 0 raw trades): 47492 conditions scored (24 family-1 blocks plus IRL/ERL); effect on mean R: 38726 of 2374600 tests beat their cell's nonsense bar (1.63%, nominal 1%) and 14178 also keep the sign every year and in L6M (0.60%; the 200 nonsense controls pass the same full rule in ~0.44%); MFE: 2.47% beat the bar; MAE: 3.20% beat the bar. MAE and MFE effects are largely mechanical (conditions that mark high or low volatility move the excursions), read them as a map, not as edge.**
 
 Scoring: per condition and cell (pooled, book, session, book x session; prev outcomes) lift of yes vs no for R (higher better), MFE points (higher better), MAE points (lower better); weekly cluster-robust zw; bar = 99th percentile of |zw| of the 200 nonsense controls in the same cell and outcome; R pass additionally needs the same lift sign in every year with >= 30 per side and in L6M. Code code/th_confl_cf4/c4_s1.py; tables /mnt/l2/l2vast/_confl/cols_cf4/s1_prev/; manifest /mnt/l2/l2vast/_confl/cols_cf4/s1_manifest.csv (conditions, family, feed flags: D7 can compute all of them live from its own completed bars; footprint and delta/CVD need tick data with aggressor side = NT8 time&sales, flagged not dropped).
 
 | block | family | conditions | R tests | R beat bar | R pass | MFE beat bar | MFE pass | MAE beat bar | MAE pass |
 |---|---|---|---|---|---|---|---|---|---|
+| alt_ha1 | 1 | 2311 | 115550 | 1411 (1.22%) | 597 | 2689 (2.33%) | 1429 | 4948 (4.28%) | 2654 |
+| alt_ha15 | 1 | 2311 | 115550 | 2330 (2.02%) | 698 | 3334 (2.89%) | 1411 | 4010 (3.47%) | 1728 |
+| alt_ha3 | 1 | 2311 | 115550 | 1829 (1.58%) | 681 | 3192 (2.76%) | 1621 | 5193 (4.49%) | 2461 |
+| alt_ha5 | 1 | 2311 | 115550 | 2385 (2.06%) | 936 | 3703 (3.20%) | 1890 | 5141 (4.45%) | 2478 |
+| alt_ha60 | 1 | 2311 | 115550 | 3934 (3.40%) | 1037 | 4343 (3.76%) | 1316 | 3027 (2.62%) | 1247 |
+| alt_range16 | 1 | 2311 | 115550 | 1542 (1.33%) | 720 | 2395 (2.07%) | 1373 | 2918 (2.53%) | 1394 |
 | alt_range8 | 1 | 2311 | 115550 | 1874 (1.62%) | 1045 | 1663 (1.44%) | 859 | 3976 (3.44%) | 2436 |
+| alt_renko16 | 1 | 2311 | 115550 | 1646 (1.42%) | 708 | 2859 (2.47%) | 1354 | 3282 (2.84%) | 1728 |
+| alt_renko8 | 1 | 2311 | 115550 | 1503 (1.30%) | 664 | 2207 (1.91%) | 1082 | 3078 (2.66%) | 1601 |
+| alt_tick2000 | 1 | 2311 | 115550 | 2169 (1.88%) | 883 | 3996 (3.46%) | 2123 | 4925 (4.26%) | 2672 |
+| alt_vol2000 | 1 | 2311 | 115550 | 1929 (1.67%) | 662 | 4244 (3.67%) | 2256 | 4973 (4.30%) | 2725 |
+| alt_vol500 | 1 | 2311 | 115550 | 1578 (1.37%) | 752 | 3119 (2.70%) | 1793 | 4868 (4.21%) | 2864 |
 | altagree | 1 | 4622 | 231100 | 2114 (0.91%) | 736 | 3733 (1.62%) | 1557 | 4450 (1.93%) | 1955 |
 | candle | 1 | 3370 | 168500 | 1562 (0.93%) | 423 | 1890 (1.12%) | 531 | 1599 (0.95%) | 604 |
 | fp | 1 | 197 | 9850 | 155 (1.57%) | 62 | 171 (1.74%) | 83 | 276 (2.80%) | 139 |
@@ -29,6 +40,7 @@ Scoring: per condition and cell (pooled, book, session, book x session; prev out
 | alt_ha60 | ALL |  |  | c4_smie_ha60_eleave | 6542 | -0.123 | -5.9 | 2.4 | 0/4 | -0.101 |
 | trend | sess |  | 3 | c4_alma_x_1d_fresh1 | 580 | -0.272 | -5.6 | 2.0 | 0/4 | -0.168 |
 | altagree | book_sess | H7 | 4 | c4_agr_w1_psar_0.01_fresh5_ge3 | 198 | -0.184 | -5.6 | 2.9 | 0/4 | -0.443 |
+| alt_tick2000 | book | A7 |  | c4_w1_stoch21_tick2000_eagainst | 100 | 0.418 | 5.5 | 2.3 | 2/2 | 0.534 |
 | candle | sess |  | 2 | c4_cdl_hammer_5m_against | 118 | 0.335 | 5.4 | 2.7 | 2/2 | 0.315 |
 | osc | sess |  | 3 | c4_elderF_bull_15m_nodiv | 14655 | 0.144 | 5.4 | 2.0 | 4/4 | 0.112 |
 | geom | sess |  | 0 | c4_flag_5m_against | 870 | -0.177 | -5.4 | 2.9 | 0/4 | -0.097 |
@@ -38,14 +50,13 @@ Scoring: per condition and cell (pooled, book, session, book x session; prev out
 | altagree | sess |  | 1 | c4_agr_crsi_ewith_z1_ge6 | 141 | -0.255 | -5.4 | 2.5 | 0/3 | -0.268 |
 | alt_ha60 | book | A7 |  | c4_elderF_bear_ha60_divwith | 2476 | -0.108 | -5.3 | 2.3 | 0/4 | -0.035 |
 | alt_ha60 | book | A7 |  | c4_ker_dir_ha60_divwith | 2715 | -0.121 | -5.3 | 2.3 | 0/4 | -0.115 |
+| alt_tick2000 | book_sess | A7 | 1 | c4_w1_stoch21_tick2000_eagainst | 88 | 0.416 | 5.3 | 2.9 | 2/2 | 0.582 |
 | osc | sess |  | 3 | c4_elder_bull_15m_nodiv | 14857 | 0.144 | 5.3 | 2.0 | 4/4 | 0.154 |
 | osc | book | M7 |  | c4_tsiF_60m_eleave | 1785 | -0.138 | -5.2 | 2.2 | 0/4 | -0.139 |
 | alt_ha60 | book | A7 |  | c4_w1_trix8_ha60_divwith | 2506 | -0.114 | -5.2 | 2.3 | 0/4 | -0.056 |
 | squeeze | ALL |  |  | c4_sqz_alt_ha60_fired5_against | 7165 | -0.083 | -5.2 | 2.4 | 0/4 | -0.171 |
 | alt_ha60 | ALL |  |  | c4_w1_cmo14_ha60_eleave | 8921 | -0.097 | -5.2 | 2.4 | 0/4 | -0.144 |
+| alt_vol2000 | book_sess | P7 | 4 | c4_w1_willr14_vol2000_eagainst | 117 | 0.270 | 5.1 | 2.5 | 2/2 | 0.428 |
 | trend | book | A7 |  | c4_ichiF_score_60m_eleave | 2339 | -0.163 | -5.1 | 2.3 | 0/4 | -0.105 |
 | alt_ha60 | book | A7 |  | c4_w1_aroon50_ha60_eagainst | 2187 | -0.148 | -5.1 | 2.3 | 0/4 | -0.101 |
 | state | ALL |  |  | c4_st_60m_sqzk20_fa_1_3 | 3107 | -0.093 | -5.1 | 2.4 | 0/4 | -0.147 |
-| altagree | sess |  | 0 | c4_agr_sd_near_hold3_ge3 | 743 | -0.125 | -5.1 | 2.9 | 0/4 | -0.020 |
-| alt_ha60 | sess |  | 3 | c4_tsi_ha60_divwith | 1438 | -0.103 | -5.1 | 2.0 | 0/4 | -0.006 |
-| osc | book_sess | A7 | 3 | c4_elderF_bull_15m_nodiv | 3189 | 0.296 | 5.0 | 2.6 | 4/4 | 0.402 |
