@@ -7,3 +7,5 @@
 2026-11-16 19:55Z | box1: busy 97%, load1 32.51, workers 24, MemAvail 94 GB | server2: busy 100%, load1 105.09, workers 113, MemAvail 1364 GB (copying, 295 GB of 305 GB done) | jobs pending 3335
 2026-11-16 20:00Z | box1: busy 89%, load1 37.44, workers 32, MemAvail 84 GB | server2: busy 100%, load1 116.29, workers 126, MemAvail 1349 GB (copying, 301 GB of 305 GB done) | jobs pending 3309
 2026-11-16 20:05Z | box1: busy 95%, load1 31.50, workers 19, MemAvail 96 GB | server2: busy 100%, load1 124.55, workers 124, MemAvail 1346 GB (copying, 301 GB of 305 GB done) | jobs pending 3247
+2026-11-16 20:10Z | box1: busy 97%, load1 32.06, workers 22, MemAvail 98 GB | server2: busy 100%, load1 122.10, workers 115, MemAvail 1350 GB (copying, 303 GB of 305 GB done) | jobs pending 3223
+2026-11-16 20:15Z | box1: busy 95%, load1 34.06, workers 24, MemAvail 93 GB | server2: busy 100%, load1 94.57, workers 98, MemAvail 1374 GB (copying, 304 GB of 305 GB done) | jobs pending 3161

@@ -1,4 +1,5 @@
 # DS3_TARGET_REPLAY - fast replay of alternative exits on the JL2 trade list (W-RP, FIRST PASS)
+> VALIDATION (W-DV, FIRST PASS, 2026-11-16): trials counted 181 rules x 15 book-session scopes = 2,715 screens (TRIALS_LEDGER.csv); correction none on this page (replay screen; best-of-N winners here are NOT corrected: read them with the DSR in DV_FAMILY_SNOOP.csv, which fails at this N); PBO not fitted; number shown is IN-SAMPLE (43 months); data end 2026-10-31.
 
 VERDICT (data ends 2026-10-31; FIRST PASS, replay only, no engine, no controls; families built so far: a,b,c,d,e,f,g,h,i,j,k): see ranking tables below.
 

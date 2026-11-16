@@ -1,4 +1,5 @@
 # DS3_JOINT_EXIT - joint exit design (T-JOINT-EXIT, owner W-JV). STATUS: DESIGN, no engine run yet (engine starts 21:00Z 11-16, JV quota set by the lead then)
+> VALIDATION (W-DV, FIRST PASS, 2026-11-16): trials counted design 16 cells x 7 books = 112 stage-1 cells, N_used 112 (TRIALS_LEDGER.csv JV; stage 2 picks inside it); correction will be RC / SPA / DSR over the stage-1 family and PBO on stage-2 picks; no result on this page yet; number shown will be IN-SAMPLE until a walk-forward or untouched window exists.
 
 **Plain verdict line: design only, no result. Factor P (profit lines) is REPLAY ONLY. Nothing here is a lead. First results table due 12:00Z 11-17.**
 

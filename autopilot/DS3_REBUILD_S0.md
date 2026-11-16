@@ -1,4 +1,5 @@
 # DS3_REBUILD_S0 - T-REBUILD stage 0: raw base, each book alone with no layers (W-PM). DESIGN PAGE, no engine result yet.
+> VALIDATION (W-DV, FIRST PASS, 2026-11-16): trials counted none (measurement of 10 raw books, TRIALS_LEDGER.csv RB0); no correction needed (no selection); PBO not applicable; no result yet.
 
 VERDICT (data ends 2026-10-30; DESIGN ONLY, nothing run): stage 0 needs 10 raw single-book sets on the JL2 chassis (K7 M7 U7 P7 H7 A7 O7 and the shadow books X3 X4 X5 that the engine knows; 43 months each = 430 cell-months plus about 14 one-month identity proofs); S7 is in the engine book list but not in the live book set (needs enabling = 43 more), and X1 X2 X6 X7 X8 do not exist in the engine at all (flagged: they need a build before they can run raw); it waits for W-EV's list of layer switches, the "all layers off" config and a book mask, and for server 2 (PM quota is 0 on this box until the deadline work ends).
 

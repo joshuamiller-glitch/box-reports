@@ -1,4 +1,5 @@
 # DS3_BRACKET_DD_BUILD_RA - M7 London cap 3 on the live-equivalent base JN05W2JL2 (W-RA)
+> VALIDATION (W-DV, FIRST PASS, 2026-11-16): trials counted engine 40 RA variants (+8 JL2-base cells and controls), N_used 258 re-entry cells x windows (TRIALS_LEDGER.csv M7L); correction RC p .88, SPA p .78, DSR .04 at N 258 / .21 at N 14 (JN05W2 base, H12), no BH survivor; PBO .29-.45 (S 12/14/16, 52 weeks); the cap level 3 is also the box spec; number shown is IN-SAMPLE (HOLD+L6M(+L3M) engine cells); data end 2026-10-31.
 
 **VERDICT (drawdown first; pass rule = real cell beats ALL its controls on stack max DD in HOLD and L6M and mean not worse than -5%; missing controls = not finished): HOLD: stack DD real -70924 vs ref -74402, best control -63564 -> does NOT beat all controls on DD; mean +1012 $/wk (6.6% of ref) -> ok | L6M: stack DD real -23715 vs ref -22565, best control -22397 -> does NOT beat all controls on DD; mean +1747 $/wk (7.9% of ref) -> ok. No PASS claim until the controls are in.**
 
