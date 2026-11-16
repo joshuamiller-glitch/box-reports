@@ -51,11 +51,11 @@ Rule definitions. Day direction at the signal second from CLOSED 1-minute bars o
 | candidate | window | real DD cut / d mean | placebo 1-3 | matched 1-3 | verdict |
 |---|---|---|---|---|---|
 | session VWAP: AGAINST the day -> skip  | HOLD | +3.1% / +207 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
-| session VWAP: AGAINST the day -> skip  | L6M | not finished | | | not finished |
-| session VWAP: AGAINST the day -> skip  | L3M | not finished | | | not finished |
+| session VWAP: AGAINST the day -> skip  | L6M | -26.3% / -493 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
+| session VWAP: AGAINST the day -> skip  | L3M | -26.3% / +1158 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
 | session VWAP: AGAINST the day -> skip  | GAP | -23.9% / -1599 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
 | session VWAP: AGAINST the day -> skip  | PRE | +14.8% / -534 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
-| session VWAP: AGAINST the day -> skip  | X' | not finished | | | not finished |
+| session VWAP: AGAINST the day -> skip  | X' | -46.0% / +178 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
 
 ## (W-BD2) DS3_BRACKET_DD_D - T-BRACKET-DD Parts D (partial exits), C (target by room), E (time) on TL3_EV_JN05W2JL2 (W-BD2)
 **VERDICT (data ends 2026-10-31; FIRST PASS, rebuilt 16:04Z UTC): NO candidate qualifies yet (see per-candidate rows; some are not finished). Not finished candidates are listed as such; no row is called a lead without its 6 controls. Dollars BASE lots; live = x1.75; $4.84 = FEES.md RT repriced (net - lots x 3.66).**
