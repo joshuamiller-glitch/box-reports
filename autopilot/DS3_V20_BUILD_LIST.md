@@ -4,7 +4,7 @@ VERDICT: build list v0. Only B (U7 fresh time stop) holds in recent and older wi
 
 **Closest to live: B (U7 fresh time stop, Shadow).** It is the only rule that passes the tolerant gate in all five windows (L3M, L6M, HOLD, PRE, X'). It still lacks: (1) specificity - its DD cut equals the delayed-exit placebo and is -5.2 pct with W44 removed, so only the mean gain (+573 L6M, +799 HOLD vs placebo +238..+625) is specific; (2) walk-forward beat rate is 16.5 pct of 2-week blocks (cut 0.0); (3) HOLD placebos incomplete. Joint candidates AB+F, DV, AR, ABD, BR show recent+HOLD gains and are in the PRE/X' battery (S3) now; none is a lead until PRE and X' land.
 
-Generated 2026-11-16 15:05 UTC. Exact engine, JN05W2 all layers ON, base lots (user lots x1.75), engine fee $1.18/contract RT; every number is the single rule vs JN05W2. Joint results and interaction table: DS3_JOINT_V20.md. Each rule gets its own switch `<Rule>Mode` = Off | Shadow | Live (Shadow = evaluate and log the would-be action, orders unchanged). Recommendation text is mine, not a PASS. Exact specs as scored: DS3_JOINT_V20.md section 7.
+Generated 2026-11-16 15:57 UTC. Exact engine, JN05W2 all layers ON, base lots (user lots x1.75), engine fee $1.18/contract RT; every number is the single rule vs JN05W2. Joint results and interaction table: DS3_JOINT_V20.md. Each rule gets its own switch `<Rule>Mode` = Off | Shadow | Live (Shadow = evaluate and log the would-be action, orders unchanged). Recommendation text is mine, not a PASS. Exact specs as scored: DS3_JOINT_V20.md section 7.
 
 | rule | scope | windows scored | DD cut % WEEKLY L3M / L6M / HOLD / PRE / X' / GAP | DD cut % DAILY same windows | d mean $/wk (same windows) | d mean @4.84 L6M | DD cut % L6M with W44 removed | holds recent AND older? | placebo | vs random skip (PATH EFFECT) | recommendation |
 |--|--|--|--|--|--|--|--|--|--|--|--|
@@ -86,6 +86,9 @@ List B only (rules passing the proposed tolerant reading):
 | B = U7 time stop (TL3_EB_U7F_T15D10) | L3M +998/wk DD cut 11.7 pct; L6M +916/wk 11.7 pct; HOLD +679/wk +3.3 pct | PASS on available older windows only: X' +249/wk DD cut +18.0 pct; PRE -93/wk DD cut -1.0 pct; GAP not run | beats placebo p95 | own weekly delta persistence 44-52 pct vs base 48-52 pct: NOT above 60 pct, level case only |
 
 Everything else fails or is unresolved under the tolerant reading: half-size A, London range LS1/LS125 (GAP -1.6k/-1.1k per wk fails), K7/A7 flat -40, BLK_M30 (placebo/recent DD, HOLD -9.6 pct), M7 caps CAP3/CAP2/BLKiv and the recent-only confluence cells (older windows not run: UNRESOLVED).
+
+
+**STANDING CONTROL RULE (user order 11-16):** a skip-type rule (R, W, V, D, L, E, G, P and any pair carrying them) is NOT a lead until it has its persistent-draw random-skip control (bucket=300). Audit: DS3_CONTROL_AUDIT.md.
 
 
 **PATH EFFECT = FREED-BOOK REPLACEMENT (generic; autopilot/PATH_EFFECT_RULE.md: a random 50 pct skip alone takes L6M DD 52k -> 86k and net 661k -> 428k).** Every skip-type rule (R, W, V, D, L, P, F with its stack cut) must be read against an engine random skip of the same keep share; column vs random skip. Rule F (A7 flat -40) is a PATH EFFECT / stack-cut (W-PM: A7 itself is +345 of the +1,869 $/wk; StackCut exits go 40 -> 15). Every pair that carries F (BF, ABF, AF) or an R-type skip inherits the flag until W-CF3 PX runs land; do not read their gain as the rule on its own trades.

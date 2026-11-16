@@ -1,4 +1,4 @@
-VERDICT (plain, 2026-11-16 05:42 UTC): family B is running; 22 of 251 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_P30D0 12.5% (mean -1613 $/wk); L6M best DD change TL3_EB_PB 11.7% (mean +573 $/wk). No PASS claim; the parents are reproduced.
+VERDICT (plain, 2026-11-16 15:58 UTC): family B is running; 22 of 251 registered cells have at least one scored window. L3M best DD change TL3_EB_U7F_P30D0 12.5% (mean -1613 $/wk); L6M best DD change TL3_EB_PB 11.7% (mean +573 $/wk). No PASS claim; the parents are reproduced.
 
 # DS3_EXPAND_B - an exit fitted to how each book fails (W-EB, T-EXPAND family B)
 
@@ -182,7 +182,7 @@ p_le0 = bootstrap share of weekly-mean-delta draws <= 0 (weeks resampled); ci_lo
 |:------------------|:----------------|--------:|------------:|------------:|---------:|-------------:|-------------:|--------:|------------:|------------:|-------:|-----------:|-----------:|----------------:|---------------:|----------:|---------:|----------:|
 | TL3_EB_PB         | L6M,HOLD,PRE,X' |  572.61 |        0.13 |     -294.5  |   799.06 |         0.01 |       189.53 |  -90.04 |        0.64 |     -509.34 | 249.23 |       0.17 |    -153.27 |            4.77 |            171 |     16.46 |     0    |     24.51 |
 | TL3_EB_U7F_T15D10 | L6M,HOLD,PRE,X' |  572.61 |        0.13 |     -337.83 |   799.06 |         0.02 |       190.4  |  -90.04 |        0.63 |     -506.77 | 249.23 |       0.17 |    -149.34 |            4.77 |            171 |     16.46 |     0    |     24.51 |
-| TL3_EB_U7F_T5D10  | L6M,HOLD,PRE    | -177.33 |        0.63 |    -1021.13 |   293.07 |         0.19 |      -247.67 |  149.92 |        0.24 |     -207.67 | nan    |     nan    |     nan    |            3.19 |            127 |     10.13 |    -1.16 |     89.96 |
+| TL3_EB_U7F_T5D10  | L6M,HOLD,PRE    | -177.33 |        0.63 |    -1021.13 |   293.07 |         0.19 |      -247.67 |  149.92 |        0.24 |     -207.67 | nan    |     nan    |     nan    |            3.19 |            127 |     10.13 |    -1.16 |     57.34 |
 | TL3_EB_U7F_T15D20 | L6M,HOLD        |  509.51 |        0.13 |     -256.96 |   640.67 |         0.01 |       190.73 |  nan    |      nan    |      nan    | nan    |     nan    |     nan    |            0.81 |             52 |     11.39 |     0    |     86.94 |
 | TL3_EB_U7F_T30D10 | L6M,HOLD        |  399.59 |        0.12 |     -138.1  |   457.26 |         0.08 |       -76.28 |  nan    |      nan    |      nan    | nan    |     nan    |     nan    |            0.68 |             52 |     11.39 |     0    |     57.94 |
 | TL3_EB_U7F_T10D20 | L6M,HOLD        |    8.03 |        0.47 |     -576.89 |    40.17 |         0.41 |      -316.2  |  nan    |      nan    |      nan    | nan    |     nan    |     nan    |            0    |             52 |      2.53 |     0    |    -27.82 |
@@ -217,3 +217,9 @@ p_le0 = bootstrap share of weekly-mean-delta draws <= 0 (weeks resampled); ci_lo
 | S_TGTOFF_A7  |          -5 |       0   | 10.3>10.7      |         -65 |       0   | 11.0>11.4      |           0 |        1    |         0 |          nan |      nan   | nan             |               -4 |              -65 |               nan |            -0.1 |           nan |       nan   | nan              |
 | S_TGTOFF_U7  |          11 |       0   | 10.3>10.3      |         260 |       0   | 11.0>11.0      |           0 |        1    |         0 |          nan |      nan   | nan             |               11 |              261 |               nan |            -1   |           nan |       nan   | nan              |
 | S_TRIGOFF_U7 |        -175 |       0   | 10.3>10.6      |         114 |       0   | 11.0>11.2      |           0 |        1.01 |         0 |          nan |      nan   | nan             |             -175 |              113 |               nan |            -3.2 |           nan |       nan   | nan              |
+
+## 5. Random-time-exit placebo: same-count control and fire counts
+
+All EB rules are exits, so there is no skip to redraw. The control (tstop with check time drawn per trade 5..30 min from md5(entry_ns, seed, book), same -d trigger) also exits the trade and frees the book, as the real rule does; per W-LB/lead 11-15 no bucket=300 persistent draw is needed for exits unless a control fails to mimic the freeing. Fire counts must agree within 5 % to be a same-count control; the table states the measured ratio.
+
+control cells have not completed a window yet.

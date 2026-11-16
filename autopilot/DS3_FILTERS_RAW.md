@@ -39,6 +39,8 @@ Reading: no single engine rule is the cause of the gate's extra drawdown. With a
 
 Live-layer check (W-EV, DS3_ENGINE_VS_LIVE.md 10-11, 2026-11-16): JN05W2 has NO Jn04 stack cap (no cde key) and no blackout / ATR-SKIP / NKD take; the live-matching base is JN05W2J. All path-effect numbers above are on JN05W2 and are therefore PROVISIONAL; the stack cut (Asia, 50 %), governor, C22, NTZ and BREADTH match live. Confirmation sets on the live-matching base are queued: TL3J_CF_PL_G (aligned gate) and TL3J_CF_PX_RND (random gate), L3M and L6M.
 
+USER RULE (2026-11-16): a skip rule is not called a lead until its control uses the PERSISTENT draw (bucket 300: one draw per 5-minute bucket per book and side, a skipped signal never redrawn, measured keep share within 0.05 of the real rule's). All random controls on this page (PX_RND, PX_RND30, RS_*, _RND) used independent per-signal draws (table keep share matches the target within 0.012 but replacement signals get their own independent draw), so the random-gate drawdown ($86k) and the split 'generic $34k / aligned-specific $17k' are UNVERIFIED until the persistent re-runs (TL3_CF_PD_*, queued on the JL2 base after the HOLD rows). The DX finding (no single engine rule removes the gate's extra drawdown) compares gate with base and is not affected by the draw type.
+
 ## 2. Raw books (isolation mode TL3_CF_ISO2, 23 months), each-alone, cluster-robust by week (zw), nonsense calibrated
 Outcome R (clipped +-3); a condition passes alone if |zw| is above the 99th percentile of |zw| of the 200 nonsense conditions in the same cell and its sign is the same in every year with >= 30 per side. At that bar 1 % of conditions (about 70) would pass by construction.
 
