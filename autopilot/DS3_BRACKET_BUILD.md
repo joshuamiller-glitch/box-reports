@@ -84,7 +84,7 @@ Controls (drawdown cut % vs reference, d mean $/wk):
 | cell | real (drawdown first) | W44 removed | verdict |
 |---|---|---|---|
 | A7|asia|40x40 | not finished | n/a | not finished |
-| U7|asia|40x40 | not finished | n/a | not finished |
+| U7|asia|40x40 | maxDD -80137 (ref -70931; -13.0%), worst wk -29106 (ref -28958), d net -158/wk (live x1.75 -277; $4.84 -183), stops 9.23 (9.03) | n/a | not finished (controls pending); real DD -13.0%, d mean -158 |
 | K7|nyam|40x40 | not finished | n/a | not finished |
 | K7|nyam|40x60 | maxDD -70642 (ref -70931; +0.4%), worst wk -27717 (ref -28958), d net -103/wk (live x1.75 -181; $4.84 -109), stops 9.05 (9.03) | n/a | not finished (controls pending); real DD +0.4%, d mean -103 |
 | K7|london|40x60 | not finished | n/a | not finished |

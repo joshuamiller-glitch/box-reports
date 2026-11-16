@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (198 FL cell-months done, 56 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (214 FL cell-months done, 64 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -53,6 +53,14 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_SCALL_F | ALL | 1720 | 3642 | 6373 | 3543 | 98216 | 52233 | 45983 | 1720 | 1875 | 174 | 134 | 3642 | 98216 | 52233 | 27279 | 23989 | 98216 | 43405 |
 | TL3_FL_SCALL_F_NS | ALL | 1732 | -136 | -238 | -235 | 81238 | 52233 | 29005 | 1732 | 1875 | 144 | 134 | -136 | 81238 | 52233 | 22217 | 23989 | 81238 | 43405 |
 | TL3_FL_SCALL_F_RL | ALL | 1670 | -3943 | -6901 | -4021 | 78903 | 52233 | 26670 | 1670 | 1875 | 120 | 134 | -3943 | 78903 | 52233 | 20366 | 23989 | 78903 | 43405 |
+| TL3_FL_SCM7_F | M7 | 1867 | 2388 | 4178 | 2362 | 52065 | 52233 | -169 | 318 | 336 | 117 | 16.37 | 2430 | 33140 | 28109 | 26562 | 23989 | 41697 | 43405 |
+| TL3_FL_SCM7_F_NS | M7 | 1867 | 1993 | 3488 | 1965 | 49632 | 52233 | -2601 | 320 | 336 | 100 | 16.37 | 2050 | 29802 | 28109 | 26077 | 23989 | 42576 | 43405 |
+| TL3_FL_SCM7_F_RL | M7 | 1870 | 2638 | 4616 | 2616 | 51674 | 52233 | -559 | 321 | 336 | 126 | 16.37 | 2680 | 33364 | 28109 | 26747 | 23989 | 42169 | 43405 |
+| TL3_FL_SCM7_R2 | M7 | 1877 | 1132 | 1981 | 1099 | 51820 | 52233 | -414 | 326 | 336 | 83.76 | 16.37 | 1677 | 35026 | 28109 | 25181 | 23989 | 43560 | 43405 |
+| TL3_FL_SCM7_R2_NS | M7 | 1869 | 349 | 611 | 321 | 53869 | 52233 | 1636 | 318 | 336 | 56.97 | 16.37 | 970 | 34725 | 28109 | 24451 | 23989 | 44739 | 43405 |
+| TL3_FL_SCM7_R2_RL | M7 | 1854 | -364 | -636 | -379 | 52857 | 52233 | 624 | 320 | 336 | 28.17 | 16.37 | 270 | 25474 | 28109 | 23594 | 23989 | 44165 | 43405 |
+| TL3_FL_WAITL5_120_DROP | L5 | 1688 | -5413 | -9472 | -5278 | 70463 | 52233 | 18230 | 882 | 1104 | 163 | 173 | -3621 | 54351 | 42565 | 17398 | 23989 | 70463 | 43405 |
+| TL3_FL_WAITL5_120_TAKE | L5 | 1844 | -6225 | -10895 | -6204 | 56361 | 52233 | 4128 | 1086 | 1104 | 117 | 173 | -4926 | 44502 | 42565 | 16998 | 23989 | 56361 | 43405 |
 
 ### window L6M
 
@@ -94,6 +102,12 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_PLANTL5_X15 | L3M | NOISE | 4083 | 4876 | 53506 | 62090 | 52233 | 217 | 161 | 44550 | 53134 |
 | TL3_FL_SCALL_F | L3M | RANDOM LADDER | 3642 | 7585 | 98216 | 78903 | 52233 | 174 | 120 | 98216 | 78903 |
 | TL3_FL_SCALL_F | L3M | NONSENSE SCORE | 3642 | 3778 | 98216 | 81238 | 52233 | 174 | 144 | 98216 | 81238 |
+| TL3_FL_SCM7_F | L3M | RANDOM LADDER | 2388 | -250 | 52065 | 51674 | 52233 | 117 | 126 | 33140 | 33364 |
+| TL3_FL_SCM7_F | L3M | NONSENSE SCORE | 2388 | 395 | 52065 | 49632 | 52233 | 117 | 100 | 33140 | 29802 |
+| TL3_FL_SCM7_R2 | L3M | RANDOM LADDER | 1132 | 1496 | 51820 | 52857 | 52233 | 83.76 | 28.17 | 35026 | 25474 |
+| TL3_FL_SCM7_R2 | L3M | NONSENSE SCORE | 1132 | 783 | 51820 | 53869 | 52233 | 83.76 | 56.97 | 35026 | 34725 |
+| TL3_FL_WAITL5_120_DROP | L3M | HOLD | -5413 | 5263 | 70463 | 69567 | 52233 | 163 | 60.81 | 54351 | 61069 |
+| TL3_FL_WAITL5_120_TAKE | L3M | HOLD | -6225 | 4450 | 56361 | 69567 | 52233 | 117 | 60.81 | 44502 | 61069 |
 | TL3_FL_LEADL5_SKIP | L6M | SKIP_RND | -3882 | 8593 | 47752 | 63936 | 52233 | 315 | 128 | 27355 | 40500 |
 | TL3_FL_LEADP7_SKIP | L6M | SKIP_RND | -4973 | -975 | 58417 | 42529 | 52233 | 451 | 429 | 34938 | 35082 |
 | TL3_FL_LEADU70_SKIP | L6M | SKIP_RND | -2586 | 1259 | 55106 | 60662 | 52233 | 804 | 184 | 11594 | 19164 |
