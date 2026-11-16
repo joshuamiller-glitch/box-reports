@@ -1,6 +1,6 @@
-# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-16 06:58Z
+# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-16 07:20Z
 
-**VERDICT (running): 54 cells scored so far; no PASS claimed. See section 2 (oracle ceiling, NON-CAUSAL), section 3 (causal calls), section 5 (placebos).**
+**VERDICT (running): 56 cells scored so far; no PASS claimed. See section 2 (oracle ceiling, NON-CAUSAL), section 3 (causal calls), section 5 (placebos).**
 
 ## 0. Method
 Hook code/th_chop2/chop_hooks.py (outermost, additive; identity: TL3_CH_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL). Actions: A1 stand-down (rest of call) | A2 half size | A3b target x0.67 | A3f chop mode (tgt x.67 + session-mean + 60 min time stop + no same-side re-entry after a loss) | A4 favour K7, others x0.5 | A5 book loss cap x0.5 + stack day-done (n>=8 or <= -6000) | T5/T67/T8 target only (x0.5/.67/.8) | A6x no flip-back ablation. Call versions: O = ORACLE (W-CH1 label_sessions, hindsight, ceiling only), P = previous session was chop, Y = same session yesterday chop, M/R/C/Rg/Y/A + h = W-CH1 causal calls at h minutes, DP/DS = W-CH1 D7-dollar calls, R<var><q> = lowest range-forecast bucket (one-sided), RH = HIGH-forecast tail (separate arm). Months before a call file starts are inert (=reference).
@@ -304,9 +304,11 @@ prog = programme tolerant gate for the window (DD cut > -2% and mean change > -3
 ## 5. Exact placebos (same action, same frequency per session type; shift 11/23/37 sessions forward, 3 permutations within month x session)
 | cell               | win   |   n_pl |   real_dd_cut |   pl_dd_cut_mean |   pl_dd_cut_max |   real_d_mean |   pl_d_mean_mean |   pl_d_mean_max |
 |:-------------------|:------|-------:|--------------:|-----------------:|----------------:|--------------:|-----------------:|----------------:|
+| TL3_CH_K790f33_A2  | L1M   |      2 |             0 |                0 |               0 |           0   |           -148.4 |           900.7 |
+| TL3_CH_K790f33_A2  | L3M   |      2 |             0 |                0 |               0 |         488.4 |           -449.1 |          -381.3 |
 | TL3_CH_K790f33_T67 | L1M   |      2 |             0 |                0 |               0 |           0   |            169.4 |          1083.8 |
 | TL3_CH_K790f33_T67 | L3M   |      2 |             0 |                0 |               0 |         110   |           -593.8 |          -555.5 |
-| TL3_CH_K790f33_T67 | L6M   |      1 |             0 |                0 |               0 |         473.3 |          -1561.1 |         -1561.1 |
+| TL3_CH_K790f33_T67 | L6M   |      2 |             0 |                0 |               0 |         473.3 |          -1328.8 |         -1096.6 |
 
 ## 6. Walk-forward every 2 weeks (cells with every month done)
 | cell                      |   wf_beat |   wf_cut |   wf_mean |

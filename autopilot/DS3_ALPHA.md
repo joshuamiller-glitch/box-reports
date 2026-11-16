@@ -460,7 +460,7 @@ Rule: at k minutes after the entry fill, if the 60-min forecast (z of avg_60; CU
 | CUT2 | JN05W2 (base lots) | 113 | 18,711 | -1,200 | -1,200 | 0 | 3 | -48,942 | 1,767 | 7,749 |
 | CUT3 | JN05W2 (base lots) | 178 | -23,705 | -84,377 | -87,731 | -2,279 | 3 | -80,150 | 42,196 | 3,758 |
 | CUTR1 | JN05W2 (base lots) | 355 | -24,475 | -119,800 | -124,795 | 10,456 | 2 | -105,586 | 29,209 | -12,173 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | 330 | 28,143 | -3,180 | -6,069 | -6,153 | 1 | -48,244 |  | 22,637 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | 330 | 28,143 | -3,180 | -6,069 | -6,153 | 2 | -65,812 | 17,568 | 13,728 |
 | JL_CUT2 | JN05W2JL (live-equivalent) | 109 | 17,713 | 19,403 | 19,403 | -332 | 2 | -36,150 | 32,919 | 5,489 |
 
 Per book x session (cells with >= 10 cuts fired; session 0 asia, 1 london, 2 pre, 3 nyam, 4 nypm), change vs base and vs the placebo mean:
@@ -496,15 +496,15 @@ Per book x session (cells with >= 10 cuts fired; session 0 asia, 1 london, 2 pre
 | CUTR1 | JN05W2 (base lots) | P7 | 1 | 40 | -28,052 | -19,778 | -8,273 |
 | CUTR1 | JN05W2 (base lots) | U7 | 0 | 11 | -5,659 | -15,249 | 9,590 |
 | CUTR1 | JN05W2 (base lots) | U7 | 1 | 13 | -6,197 | -18,725 | 12,527 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | A7 | 0 | 13 | 377 | 5,033 | -4,656 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | K7 | 0 | 48 | 12,277 | -13,281 | 25,558 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | K7 | 1 | 72 | -8,229 | 5,244 | -13,474 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | K7 | 3 | 14 | 872 | 10,080 | -9,207 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | K7 | 4 | 17 | -10,672 | -446 | -10,226 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | M7 | 1 | 63 | 2,254 | 16,998 | -14,745 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | M7 | 3 | 11 | 3,997 | 3,995 | 2 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | P7 | 0 | 24 | 1,554 | -53,210 | 54,764 |
-| JL_CUT1 | JN05W2JL (live-equivalent) | P7 | 1 | 48 | -13,991 | -9,386 | -4,605 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | A7 | 0 | 13 | 377 | 248 | 130 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | K7 | 0 | 48 | 12,277 | -6,627 | 18,904 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | K7 | 1 | 72 | -8,229 | 214 | -8,444 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | K7 | 3 | 14 | 872 | 7,939 | -7,067 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | K7 | 4 | 17 | -10,672 | 5,247 | -15,919 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | M7 | 1 | 63 | 2,254 | 645 | 1,609 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | M7 | 3 | 11 | 3,997 | -305 | 4,302 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | P7 | 0 | 24 | 1,554 | -37,453 | 39,007 |
+| JL_CUT1 | JN05W2JL (live-equivalent) | P7 | 1 | 48 | -13,991 | -15,680 | 1,689 |
 | JL_CUT2 | JN05W2JL (live-equivalent) | K7 | 0 | 12 | 4,430 | -5,553 | 9,983 |
 | JL_CUT2 | JN05W2JL (live-equivalent) | K7 | 1 | 27 | -4,808 | 3,703 | -8,511 |
 | JL_CUT2 | JN05W2JL (live-equivalent) | M7 | 1 | 21 | 1,468 | -3,919 | 5,386 |

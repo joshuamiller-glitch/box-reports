@@ -985,13 +985,13 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
-| 40x40 | -96 (live -169; $4.84 -111) DD -41.7% ww -2340 stops 1.52(1.45) | n/a | n/a |
-| 40x60 | -136 (live -239; $4.84 -136) DD +39.0% ww +931 stops 1.07(1.45) | n/a | n/a |
-| 40x90 | +201 (live +351; $4.84 +212) DD +39.9% ww +398 stops 0.61(1.45) | n/a | n/a |
-| 60x40 | +467 (live +817; $4.84 +452) DD -23.3% ww +860 stops 1.75(1.45) | n/a | n/a |
-| 60x90 | -32 (live -56; $4.84 -20) DD -12.7% ww -2350 stops 0.68(1.45) | n/a | n/a |
-| 85x40 | +657 (live +1150; $4.84 +643) DD -50.8% ww -1813 stops 1.90(1.45) | n/a | n/a |
-| 85x60 | -1165 (live -2039; $4.84 -1165) DD -102.3% ww -4462 stops 1.67(1.45) | n/a | n/a |
+| 40x40 | -96 (live -169; $4.84 -111) DD -41.7% ww -2340 stops 1.52(1.45) | -800 (live -1401; $4.84 -823) DD -47.0% ww -9069 stops 2.21(1.75) | -448 (live -785; $4.84 -467) DD -80.2% ww -9069 stops 1.86(1.60) |
+| 40x60 | -136 (live -239; $4.84 -136) DD +39.0% ww +931 stops 1.07(1.45) | -1427 (live -2497; $4.84 -1426) DD -8.4% ww -2521 stops 1.60(1.75) | -782 (live -1368; $4.84 -781) DD -8.2% ww -2521 stops 1.33(1.60) |
+| 40x90 | +201 (live +351; $4.84 +212) DD +39.9% ww +398 stops 0.61(1.45) | -1118 (live -1957; $4.84 -1103) DD -30.2% ww -1075 stops 1.07(1.75) | -459 (live -803; $4.84 -445) DD -29.8% ww -1075 stops 0.84(1.60) |
+| 60x40 | +467 (live +817; $4.84 +452) DD -23.3% ww +860 stops 1.75(1.45) | +724 (live +1268; $4.84 +700) DD -21.1% ww -7869 stops 2.36(1.75) | +596 (live +1042; $4.84 +576) DD -23.3% ww -7869 stops 2.05(1.60) |
+| 60x90 | -32 (live -56; $4.84 -20) DD -12.7% ww -2350 stops 0.68(1.45) | -668 (live -1170; $4.84 -653) DD +13.4% ww +525 stops 1.29(1.75) | -350 (live -613; $4.84 -336) DD -12.7% ww -896 stops 0.99(1.60) |
+| 85x40 | +657 (live +1150; $4.84 +643) DD -50.8% ww -1813 stops 1.90(1.45) | -3660 (live -6406; $4.84 -3679) DD -375.3% ww -8247 stops 2.74(1.75) | -1502 (live -2628; $4.84 -1518) DD -374.1% ww -8247 stops 2.32(1.60) |
+| 85x60 | -1165 (live -2039; $4.84 -1165) DD -102.3% ww -4462 stops 1.67(1.45) | -3279 (live -5738; $4.84 -3276) DD -213.8% ww -5405 stops 2.28(1.75) | -2222 (live -3888; $4.84 -2221) DD -236.5% ww -5405 stops 1.98(1.60) |
 | 85x90 | -1307 (live -2287; $4.84 -1295) DD -134.1% ww -850 stops 0.84(1.45) | n/a | n/a |
 
 ### 1b/1d first pass: lookup by bucket known at the signal second (offline replay nets, walk-forward: best trailing mean of the 49 grid points per bucket, min 30 prior trades, else 60/60)

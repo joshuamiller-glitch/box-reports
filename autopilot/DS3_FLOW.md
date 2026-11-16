@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (88 FL cell-months done, 25 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (92 FL cell-months done, 28 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -14,6 +14,9 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 
 | set | scope | n | d_wk | d_wk175 | d_wk484 | dd | base_dd | d_dd | cn | base_cn | cexp | base_cexp | d_cwk | cdd | base_cdd | wk_noW44 | base_wk_noW44 | dd_noW44 | base_dd_noW44 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TL3_FL_HOLDL5_W120 | L5 | 1835 | -10675 | -18682 | -10654 | 69567 | 52233 | 17334 | 1070 | 1104 | 60.81 | 173 | -9706 | 61069 | 42565 | 13589 | 23989 | 58005 | 43405 |
+| TL3_FL_HOLDL5_W60 | L5 | 1882 | -8973 | -15702 | -8958 | 60318 | 52233 | 8084 | 1107 | 1104 | 59.47 | 173 | -9648 | 61509 | 42565 | 13988 | 23989 | 60318 | 43405 |
+| TL3_FL_HOLDP7_W120 | P7 | 1873 | -6058 | -10602 | -6052 | 57416 | 52233 | 5183 | 468 | 467 | 131 | 253 | -4381 | 51015 | 39663 | 17804 | 23989 | 57077 | 43405 |
 | TL3_FL_LEADL5_HALF | L5 | 1851 | -1346 | -2356 | -1361 | 60810 | 52233 | 8577 | 1078 | 1104 | 179 | 173 | 111 | 60067 | 42565 | 22867 | 23989 | 48075 | 43405 |
 | TL3_FL_LEADL5_SKIP | L5 | 1453 | -3736 | -6538 | -3440 | 47752 | 52233 | -4481 | 562 | 1104 | 255 | 173 | -3707 | 27355 | 42565 | 17399 | 23989 | 47752 | 43405 |
 | TL3_FL_LEADL5_SKIP_RND | L5 | 1443 | -10097 | -17669 | -9815 | 63936 | 52233 | 11702 | 573 | 1104 | 111 | 173 | -9798 | 40500 | 42565 | 10407 | 23989 | 63936 | 43405 |
