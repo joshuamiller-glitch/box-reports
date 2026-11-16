@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (139 FL cell-months done, 44 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (143 FL cell-months done, 44 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 

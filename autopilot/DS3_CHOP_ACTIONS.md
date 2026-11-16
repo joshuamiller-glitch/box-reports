@@ -1,6 +1,6 @@
-# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-16 12:28Z
+# DS3_CHOP_ACTIONS - what D7 does on a chop call (exact engine, JN05W2 / JN05W2J, all layers ON). W-CH2, built 2026-11-16 12:50Z
 
-**VERDICT (running): 74 cells scored so far; no PASS claimed. See section 2 (oracle ceiling, NON-CAUSAL), section 3 (causal calls), section 5 (placebos).**
+**VERDICT (running): 75 cells scored so far; no PASS claimed. See section 2 (oracle ceiling, NON-CAUSAL), section 3 (causal calls), section 5 (placebos).**
 
 ## 0. Method
 Hook code/th_chop2/chop_hooks.py (outermost, additive; identity: TL3_CH_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL). Actions: A1 stand-down (rest of call) | A2 half size | A3b target x0.67 | A3f chop mode (tgt x.67 + session-mean + 60 min time stop + no same-side re-entry after a loss) | A4 favour K7, others x0.5 | A5 book loss cap x0.5 + stack day-done (n>=8 or <= -6000) | T5/T67/T8 target only (x0.5/.67/.8) | A6x no flip-back ablation. Call versions: O = ORACLE (W-CH1 label_sessions, hindsight, ceiling only), P = previous session was chop, Y = same session yesterday chop, M/R/C/Rg/Y/A + h = W-CH1 causal calls at h minutes, DP/DS = W-CH1 D7-dollar calls, R<var><q> = lowest range-forecast bucket (one-sided), RH = HIGH-forecast tail (separate arm). Months before a call file starts are inert (=reference).
@@ -238,14 +238,15 @@ prog = programme tolerant gate for the window (DD cut > -2% and mean change > -3
 | TL3_CH_X_Raq10_T67_a_K7            |      75 | 10199.9 |     32   |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |         31.7 |     178   |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.4 |      100.3 |
 | TL3_CH_X_Raq10_T67_a_M7            |      75 | 10198.7 |     30.8 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |         30.7 |     177.9 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
 | TL3_CH_X_Raq10_T67_a_U7            |      75 | 10273.1 |    105.2 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |        105.2 |     177.9 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
-| TL3_CH_X_Raq10_T67_b_s1            |      75 | 10321.5 |    153.6 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |        152.8 |     178.1 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.4 |      100.3 |
+| TL3_CH_X_Raq10_T67_a_P7            |      75 | 10170   |      2.1 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |          1.5 |     178.1 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
 | TL3_CH_X_Raq10_T67_b_s2            |      75 | 10167.9 |      0   |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |          0   |     177.9 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
 | TL3_CH_X_Raq10_T67_b_s3            |      75 | 10150.7 |    -17.2 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |        -17.4 |     178   |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
 | TL3_CH_X_Raq10_T67_b_s4            |      75 | 10140.3 |    -27.5 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |        -27.6 |     177.9 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
-| TL3_CH_X_Raq10_T67_a_P7            |      75 | 10170   |      2.1 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |          1.5 |     178.1 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
+| TL3_CH_X_Raq10_T67_b_s5            |      75 | 10167.9 |      0   |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |          0   |     177.9 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
 | TL3_CH_X_Raq10_T67_a_H7            |      75 | 10173.5 |      5.6 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |          5.6 |     177.9 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
 | TL3_CH_X_Raq10_T67_a_A7            |      75 | 10184.1 |     16.2 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |         16.2 |     177.9 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
 | TL3_CH_X_Raq10_T67_b_s0            |      75 | 10199.1 |     31.3 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |         31.1 |     178   |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.3 |      100.3 |
+| TL3_CH_X_Raq10_T67_b_s1            |      75 | 10321.5 |    153.6 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |        152.8 |     178.1 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.4 |      100.3 |
 | TL3_CH_X_Raq10_T67_g_long          |      75 | 10325.1 |    157.2 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |        156.7 |     178.1 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.4 |      100.3 |
 | TL3_CH_X_Raq10_T67_d_wide150       |      75 |  9965.5 |   -202.4 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |       -200.8 |     177.5 |         177.9 | -52547.4 | -52547.4 |     0.9 |     0 |      31.7 |          31.8 |  100   |      100.3 |
 | TL3_CH_X_Raq10_T67_c_t90           |      75 | 10354.5 |    186.7 |  76186.1 |  76186.1 |      0   |        nan |      1 |        0 |        nan |        185.9 |     178.1 |         177.9 | -52547.4 | -52547.4 |     1   |     0 |      31.8 |          31.8 |  100.5 |      100.3 |
@@ -337,15 +338,15 @@ prog = programme tolerant gate for the window (DD cut > -2% and mean change > -3
 |:-------------------|:------|-------:|--------------:|-----------------:|----------------:|--------------:|-----------------:|----------------:|
 | TL3_CH_K790f33_A2  | L1M   |      6 |           0   |              0   |             0   |           0   |           -637.9 |           900.7 |
 | TL3_CH_K790f33_A2  | L3M   |      6 |           0   |              0   |             0   |         488.4 |           -187.5 |           307.3 |
-| TL3_CH_K790f33_A2  | L6M   |      3 |           0   |              0   |             0   |        1259.6 |           -116.6 |           232.3 |
+| TL3_CH_K790f33_A2  | L6M   |      4 |           0   |              0   |             0   |        1259.6 |            -61.1 |           232.3 |
 | TL3_CH_K790f33_T67 | HOLD  |      1 |           9.3 |             -7.5 |            -7.5 |         526.2 |           -930.2 |          -930.2 |
 | TL3_CH_K790f33_T67 | L1M   |      6 |           0   |              0   |             0   |           0   |            594.8 |          2080.1 |
 | TL3_CH_K790f33_T67 | L3M   |      6 |           0   |             -0.5 |             0   |         110   |           -134.9 |          1239.1 |
-| TL3_CH_K790f33_T67 | L6M   |      4 |           0   |             -0.7 |             0   |         473.3 |          -1031.5 |          -379.5 |
+| TL3_CH_K790f33_T67 | L6M   |      5 |           0   |             -0.5 |             0   |         473.3 |           -948.2 |          -379.5 |
 | TL3_CH_S90f33_A2   | L1M   |      3 |           0   |              0   |             0   |        1069.7 |           -622.4 |          -265.8 |
 | TL3_CH_S90f33_A2   | L3M   |      3 |           0   |              0   |             0   |          71.6 |           -370.2 |           275.9 |
-| TL3_CH_S90f33_T67  | L1M   |      4 |           0   |              0   |             0   |         941.8 |           2635.7 |          3163.9 |
-| TL3_CH_S90f33_T67  | L3M   |      4 |           0   |              0   |             0   |        -233   |            465.8 |           970.5 |
+| TL3_CH_S90f33_T67  | L1M   |      5 |           0   |              0   |             0   |         941.8 |           2347.2 |          3163.9 |
+| TL3_CH_S90f33_T67  | L3M   |      5 |           0   |             -5   |             0   |        -233   |             76.2 |           970.5 |
 | TL3_CH_S90f33_T67  | L6M   |      1 |           0   |              0   |             0   |       -1577.7 |          -1009.5 |         -1009.5 |
 
 ## 6. Walk-forward every 2 weeks (cells with every month done)
@@ -407,3 +408,4 @@ prog = programme tolerant gate for the window (DD cut > -2% and mean change > -3
 | TL3_CH_X_Raq10_T67_i_plp2          |      0    |     0    |      0    |
 | TL3_CH_X_Raq10_T67_b_s2            |      0    |     0    |      0    |
 | TL3_CH_K790f33_A3f                 |     13.92 |    -0.71 |    122.72 |
+| TL3_CH_X_Raq10_T67_b_s5            |      0    |     0    |      0    |
