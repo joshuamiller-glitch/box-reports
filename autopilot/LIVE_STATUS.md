@@ -1,4 +1,4 @@
-# AUTOPILOT LIVE STATUS  2026-11-16T22:08:03Z  load 34.99 / 32 cores   (48h ends 2026-10-17T21:52Z)
+# AUTOPILOT LIVE STATUS  2026-11-16T23:08:04Z  load 23.68 / 32 cores   (48h ends 2026-10-17T21:52Z)
 
 - A10 done 2026-10-16
 - A1 done 2026-10-16
@@ -1419,5 +1419,5 @@
 - autopilot/REPORT_Z9.md
 
 ## spend
-committed 8967.4122 of 8000
+committed 9044.8222 of 8000
 1-min bar files: 377/364
