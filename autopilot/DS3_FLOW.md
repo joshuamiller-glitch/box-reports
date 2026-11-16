@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (289 FL cell-months done, 92 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (297 FL cell-months done, 96 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -111,8 +111,12 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_LEADU70_X15 | U70 | 4174 | 252 | 440 | 245 | 53105 | 52233 | 872 | 157 | 157 | 452 | 419 | 196 | 15479 | 15497 | 27105 | 26810 | 43387 | 43405 |
 | TL3_FL_LEADU7_HALF | U7 | 4173 | -45.84 | -80.23 | -46.52 | 56341 | 52233 | 4107 | 270 | 271 | 414 | 385 | 277 | 16341 | 23940 | 26921 | 26810 | 43828 | 43405 |
 | TL3_FL_LEADU7_SKIP | U7 | 3972 | -3496 | -6119 | -3421 | 56937 | 52233 | 4703 | 74 | 271 | 682 | 385 | -1995 | 15668 | 23940 | 23282 | 26810 | 48183 | 43405 |
+| TL3_FL_LEADU7_SKIP_PD | U7 | 3999 | -2568 | -4495 | -2505 | 53353 | 52233 | 1120 | 78 | 271 | 618 | 385 | -2079 | 10054 | 23940 | 24108 | 26810 | 51514 | 43405 |
 | TL3_FL_LEADU7_SKIP_RND | U7 | 4000 | -5942 | -10399 | -5876 | 64768 | 52233 | 12535 | 72 | 271 | -226 | 385 | -4466 | 35831 | 23940 | 20828 | 26810 | 64768 | 43405 |
 | TL3_FL_LEADU7_X15 | U7 | 4169 | 703 | 1231 | 695 | 53105 | 52233 | 872 | 270 | 271 | 452 | 385 | 660 | 21922 | 23940 | 27575 | 26810 | 42280 | 43405 |
+| TL3_FL_NOISEL5_SKIP_PD | L5 | 3702 | -9895 | -17316 | -9730 | 75685 | 52233 | 23452 | 1904 | 2440 | 122 | 195 | -9046 | 85062 | 42565 | 17374 | 26810 | 36082 | 43405 |
+| TL3_FL_PAfl010NY_SKIP_PD | NY | 3804 | -1197 | -2094 | -1137 | 51623 | 52233 | -610 | 188 | 600 | 136 | 74.84 | -717 | 16431 | 21686 | 25544 | 26810 | 43297 | 43405 |
+| TL3_FL_PAfl015NY_SKIP_PD | NY | 3817 | -1621 | -2836 | -1565 | 53255 | 52233 | 1022 | 200 | 600 | 57.60 | 74.84 | -1237 | 14293 | 21686 | 25167 | 26810 | 39074 | 43405 |
 
 
 ### 1b. Each set read against its control (random skip / unconditional hold / random ladder / nonsense score / noise)

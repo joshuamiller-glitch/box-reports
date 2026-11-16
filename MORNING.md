@@ -3927,3 +3927,6 @@ LATE / AT RISK: Step 2 controls will not all finish by 20:30Z (real cells HOLD+L
 
 - lead 19:10Z W-S2 report: server 2 ready, identity PASS, copy ~85% (ETA 19:10Z), pool 2 dispatcher/pull/state/ramp running (cap 16 -> ramp 32+; step16 = 912 cell-months/h, 80 of 421 cell-months last hour), no credentials on it, extended-store sets (202611+) not supported yet. Final S2_WORKER_CAP pending knee.
 - lead 19:15Z BACKFILL (never idle): workers 27 < cap 32 for 2 checks; raised EV quota 0 -> 4 (19 pending lines) per user order of the queue sequence
+
+- lead 19:25Z W-S2 correction: first knee verdict (cap 16) INVALID (job mix changed 42 s S0 -> 130 s BD/S5, not contention). S2_WORKER_CAP reset to 32, ramp 2 running (32..128, knee judged on TL3_RB_S0 family only vs 45.1 s baseline; may end early as ~208 S0 lines remain, cap then stays at last good step). Copy ~290/305 GB, 31 workers busy, no S2 IDLE.
+- 2026-11-16T19:21Z W-RA M7 cap JL2 (85 of 294 cell-months): HOLD: stack DD real -70924 vs ref -74402, best control -63564 -> does NOT beat all controls on DD; mean +1012 $/wk (6.6% of ref) -> ok | L6M: stack DD real -23715 vs ref -22565, best control -22397 -> does NOT beat all controls on DD; mean +1747 $/wk (7.9% of ref) -> ok (DS3_BRACKET_DD_BUILD_RA.md)

@@ -1,17 +1,24 @@
 # DS3_BRACKET_DD_BUILD_RA - M7 London cap 3 on the live-equivalent base JN05W2JL2 (W-RA)
 
-**VERDICT (drawdown first; pass rule = real cell beats ALL its controls on stack max DD in HOLD and L6M and mean not worse than -5%; missing controls = not finished): HOLD: controls missing (0 of 7 cells present) = NOT FINISHED | L6M: stack DD real -23715 vs ref -22565, best control -22397 -> does NOT beat all controls on DD; mean +1747 $/wk (7.9% of ref) -> ok. No PASS claim until the controls are in.**
+**VERDICT (drawdown first; pass rule = real cell beats ALL its controls on stack max DD in HOLD and L6M and mean not worse than -5%; missing controls = not finished): HOLD: stack DD real -70924 vs ref -74402, best control -63564 -> does NOT beat all controls on DD; mean +1012 $/wk (6.6% of ref) -> ok | L6M: stack DD real -23715 vs ref -22565, best control -22397 -> does NOT beat all controls on DD; mean +1747 $/wk (7.9% of ref) -> ok. No PASS claim until the controls are in.**
 
-Built epoch 1794855684. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
+Built epoch 1794856899. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
 
 identity of the placebo branch (PP with p=0, 202610): 642 trades net 27487.58 vs JL2 642 net 27487.58 -> IDENTICAL
 
-Windows landed (cells present / 7) : HOLD 0/7, L6M 7/7, L3M 7/7, GAP 0/7, PREUW 0/7, X' 0/7
+Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 0/7, PREUW 0/7, X' 0/7
 
 ## STACK (all books), drawdown first
 
 | win | cell | dd | dd_ref | dd_cut_pct | dd_x175 | ww | ww_ref | stops_wk | stops_ref | d_mean | d_mean_x175 | d_mean_484 | best5 | w2l | n | n_ref |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| HOLD | M7L_CAP3 | -70923.9 | -74401.8 | 4.7 | -124116.8 | -30595.5 | -31210.9 | 10.3 | 10.5 | 1011.6 | 1770.3 | 1029.2 | 1.0 | 1 | 7166 | 7380 |
+| HOLD | PL1_M7L_CAP3 | -67021.1 | -74401.8 | 9.9 | -117286.9 | -34187.6 | -31210.9 | 10.4 | 10.5 | 124.1 | 217.1 | 140.9 | 1.0 | 2 | 7171 | 7380 |
+| HOLD | PL2_M7L_CAP3 | -63564.4 | -74401.8 | 14.6 | -111237.8 | -30872.9 | -31210.9 | 10.4 | 10.5 | -100.7 | -176.3 | -82.6 | 1.0 | 2 | 7163 | 7380 |
+| HOLD | PL3_M7L_CAP3 | -65459.9 | -74401.8 | 12.0 | -114554.8 | -29477.7 | -31210.9 | 10.5 | 10.5 | 741.6 | 1297.8 | 758.3 | 1.0 | 3 | 7172 | 7380 |
+| HOLD | PP1_M7L_CAP3 | -64352.7 | -74401.8 | 13.5 | -112617.3 | -31210.9 | -31210.9 | 10.4 | 10.5 | 814.0 | 1424.4 | 831.8 | 1.0 | 1 | 7168 | 7380 |
+| HOLD | PP2_M7L_CAP3 | -64370.5 | -74401.8 | 13.5 | -112648.4 | -31210.9 | -31210.9 | 10.4 | 10.5 | 343.8 | 601.6 | 363.3 | 1.0 | 1 | 7145 | 7380 |
+| HOLD | PP3_M7L_CAP3 | -66190.1 | -74401.8 | 11.0 | -115832.7 | -30595.5 | -31210.9 | 10.3 | 10.5 | 361.9 | 633.3 | 382.9 | 1.0 | 1 | 7118 | 7380 |
 | L6M | M7L_CAP3 | -23715.3 | -22564.6 | -5.1 | -41501.7 | -15143.1 | -13429.6 | 10.7 | 10.9 | 1747.4 | 3057.9 | 1768.0 | 1.1 | 0 | 4034 | 4161 |
 | L6M | PL1_M7L_CAP3 | -22396.6 | -22564.6 | 0.7 | -39194.0 | -13152.1 | -13429.6 | 10.7 | 10.9 | 108.5 | 189.9 | 125.9 | 1.0 | 1 | 4047 | 4161 |
 | L6M | PL2_M7L_CAP3 | -24637.3 | -22564.6 | -9.2 | -43115.3 | -15048.0 | -13429.6 | 10.7 | 10.9 | -519.3 | -908.8 | -498.7 | 1.0 | 1 | 4028 | 4161 |
@@ -31,6 +38,13 @@ Windows landed (cells present / 7) : HOLD 0/7, L6M 7/7, L3M 7/7, GAP 0/7, PREUW 
 
 | win | cell | dd | dd_ref | dd_cut_pct | dd_x175 | ww | ww_ref | stops_wk | stops_ref | d_mean | d_mean_x175 | d_mean_484 | best5 | w2l | n | n_ref |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| HOLD | M7L_CAP3 | -13877.0 | -54248.4 | 74.4 | -24284.7 | -9211.1 | -14641.5 | 0.4 | 0.7 | 1086.3 | 1901.0 | 1110.2 | 0.9 | 3 | 674 | 963 |
+| HOLD | PL1_M7L_CAP3 | -28451.4 | -54248.4 | 47.6 | -49789.9 | -8662.4 | -14641.5 | 0.4 | 0.7 | 752.2 | 1316.3 | 778.3 | 0.7 | 5 | 652 | 963 |
+| HOLD | PL2_M7L_CAP3 | -32327.4 | -54248.4 | 40.4 | -56572.9 | -8255.8 | -14641.5 | 0.4 | 0.7 | 660.1 | 1155.1 | 685.3 | 0.7 | 4 | 669 | 963 |
+| HOLD | PL3_M7L_CAP3 | -24580.7 | -54248.4 | 54.7 | -43016.3 | -9363.7 | -14641.5 | 0.6 | 0.7 | 905.2 | 1584.1 | 929.6 | 1.1 | 7 | 658 | 963 |
+| HOLD | PP1_M7L_CAP3 | -27757.4 | -54248.4 | 48.8 | -48575.5 | -8986.9 | -14641.5 | 0.4 | 0.7 | 892.4 | 1561.7 | 920.1 | 0.8 | 5 | 632 | 963 |
+| HOLD | PP2_M7L_CAP3 | -29760.3 | -54248.4 | 45.1 | -52080.5 | -10579.7 | -14641.5 | 0.4 | 0.7 | 378.0 | 661.6 | 407.3 | 0.8 | 5 | 612 | 963 |
+| HOLD | PP3_M7L_CAP3 | -16954.8 | -54248.4 | 68.7 | -29670.9 | -10917.8 | -14641.5 | 0.4 | 0.7 | 687.9 | 1203.8 | 718.0 | 0.9 | 6 | 599 | 963 |
 | L6M | M7L_CAP3 | -13877.0 | -37263.0 | 62.8 | -24284.7 | -9189.1 | -14641.5 | 0.5 | 0.8 | 1945.3 | 3404.3 | 1971.5 | 1.1 | 1 | 349 | 512 |
 | L6M | PL1_M7L_CAP3 | -16003.8 | -37263.0 | 57.1 | -28006.7 | -8087.7 | -14641.5 | 0.3 | 0.8 | 893.4 | 1563.5 | 920.7 | 0.7 | 2 | 346 | 512 |
 | L6M | PL2_M7L_CAP3 | -16954.1 | -37263.0 | 54.5 | -29669.6 | -8093.4 | -14641.5 | 0.4 | 0.8 | 747.2 | 1307.7 | 774.1 | 0.6 | 2 | 349 | 512 |
@@ -50,6 +64,13 @@ Windows landed (cells present / 7) : HOLD 0/7, L6M 7/7, L3M 7/7, GAP 0/7, PREUW 
 
 | win | cell | scope | dd | dd_ref | dd_cut_pct | d_ww | d_mean |
 |---|---|---|---|---|---|---|---|
+| HOLD | M7L_CAP3 | M7:london | -13877.0 | -54248.4 | 74.4 | 5430.4 | 1105.9 |
+| HOLD | PL1_M7L_CAP3 | M7:london | -28451.4 | -54248.4 | 47.6 | 5979.1 | 748.5 |
+| HOLD | PL2_M7L_CAP3 | M7:london | -32327.4 | -54248.4 | 40.4 | 6385.7 | 669.3 |
+| HOLD | PL3_M7L_CAP3 | M7:london | -24580.7 | -54248.4 | 54.7 | 5277.8 | 948.5 |
+| HOLD | PP1_M7L_CAP3 | M7:london | -27757.4 | -54248.4 | 48.8 | 5654.6 | 915.4 |
+| HOLD | PP2_M7L_CAP3 | M7:london | -29760.3 | -54248.4 | 45.1 | 4061.8 | 397.7 |
+| HOLD | PP3_M7L_CAP3 | M7:london | -16954.8 | -54248.4 | 68.7 | 3723.7 | 694.3 |
 | L3M | M7L_CAP3 | M7:london | -13877.0 | -23405.7 | 40.7 | 5452.4 | 1783.9 |
 | L3M | PL1_M7L_CAP3 | M7:london | -16003.8 | -23405.7 | 31.6 | 6553.8 | 691.6 |
 | L3M | PL2_M7L_CAP3 | M7:london | -16954.1 | -23405.7 | 27.6 | 6548.1 | 585.3 |
@@ -64,6 +85,13 @@ Windows landed (cells present / 7) : HOLD 0/7, L6M 7/7, L3M 7/7, GAP 0/7, PREUW 
 | L6M | PP1_M7L_CAP3 | M7:london | -15532.6 | -37263.0 | 58.3 | 8363.0 | 1325.2 |
 | L6M | PP2_M7L_CAP3 | M7:london | -15034.0 | -37263.0 | 59.7 | 6397.0 | 1072.4 |
 | L6M | PP3_M7L_CAP3 | M7:london | -15664.7 | -37263.0 | 58.0 | 5951.0 | 1128.0 |
+| HOLD | M7L_CAP3 | all | -70923.9 | -74401.8 | 4.7 | 615.4 | 1031.2 |
+| HOLD | PL1_M7L_CAP3 | all | -67021.1 | -74401.8 | 9.9 | -2976.6 | 120.4 |
+| HOLD | PL2_M7L_CAP3 | all | -63564.4 | -74401.8 | 14.6 | 338.0 | -91.4 |
+| HOLD | PL3_M7L_CAP3 | all | -65459.9 | -74401.8 | 12.0 | 1733.2 | 749.7 |
+| HOLD | PP1_M7L_CAP3 | all | -64352.7 | -74401.8 | 13.5 | 0.0 | 836.9 |
+| HOLD | PP2_M7L_CAP3 | all | -64370.5 | -74401.8 | 13.5 | 0.0 | 363.4 |
+| HOLD | PP3_M7L_CAP3 | all | -66190.1 | -74401.8 | 11.0 | 615.4 | 368.3 |
 | L3M | M7L_CAP3 | all | -23715.3 | -22508.4 | -5.4 | -1713.5 | 1348.6 |
 | L3M | PL1_M7L_CAP3 | all | -21542.6 | -22508.4 | 4.3 | 277.5 | -784.1 |
 | L3M | PL2_M7L_CAP3 | all | -24637.3 | -22508.4 | -9.5 | -1618.4 | -987.3 |
@@ -78,6 +106,31 @@ Windows landed (cells present / 7) : HOLD 0/7, L6M 7/7, L3M 7/7, GAP 0/7, PREUW 
 | L6M | PP1_M7L_CAP3 | all | -19463.8 | -22508.4 | 13.5 | 2472.9 | 1249.3 |
 | L6M | PP2_M7L_CAP3 | all | -21422.1 | -22508.4 | 4.8 | 363.0 | 981.6 |
 | L6M | PP3_M7L_CAP3 | all | -25538.1 | -22508.4 | -13.5 | -1766.4 | 751.4 |
+
+## Placebo validity: realized M7 London keep share (entries with >=1 earlier close in the instance) vs the real cell, HOLD
+
+A control is INVALID when its kept-entry count differs from the real cell by more than 5%.
+
+| control | kept_n_ge2 | real_kept_n_ge2 | ratio_to_real | trades | real_trades | INVALID_CONTROL |
+|---|---|---|---|---|---|---|
+| PL1_M7L_CAP3 | 401 | 423 | 0.948 | 652 | 674 | True |
+| PL2_M7L_CAP3 | 418 | 423 | 0.988 | 669 | 674 | False |
+| PL3_M7L_CAP3 | 407 | 423 | 0.962 | 658 | 674 | False |
+| PP1_M7L_CAP3 | 381 | 423 | 0.901 | 632 | 674 | True |
+| PP2_M7L_CAP3 | 361 | 423 | 0.853 | 612 | 674 | True |
+| PP3_M7L_CAP3 | 348 | 423 | 0.823 | 599 | 674 | True |
+
+## Week-clustered statistics, M7 London slice, HOLD (52 weeks; delta vs reference)
+
+| cell | weeks | mean_wk | t_cluster | ci90_lo | ci90_hi | pos_weeks | mean_noW44 | mean_wo_top3 | dd_ref | dd_cell | P_dd_shallower |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| M7L_CAP3 | 52 | 1089.25 | 2.64 | 431.62 | 1766.69 | 0.62 | 1130.67 | 615.01 | -48166.20 | -11416.62 | 0.99 |
+| PL1_M7L_CAP3 | 52 | 754.23 | 1.77 | 48.12 | 1455.79 | 0.56 | 765.28 | 321.35 | -48166.20 | -27663.08 | 0.95 |
+| PL2_M7L_CAP3 | 52 | 661.87 | 1.56 | -38.24 | 1344.24 | 0.52 | 684.34 | 250.51 | -48166.20 | -31539.08 | 0.93 |
+| PL3_M7L_CAP3 | 52 | 907.71 | 2.13 | 211.08 | 1599.63 | 0.60 | 969.76 | 578.53 | -48166.20 | -19751.14 | 0.98 |
+| PP1_M7L_CAP3 | 52 | 894.85 | 1.87 | 144.35 | 1691.06 | 0.54 | 935.90 | 415.62 | -48166.20 | -24070.96 | 0.95 |
+| PP2_M7L_CAP3 | 52 | 379.08 | 0.88 | -303.16 | 1081.07 | 0.52 | 406.57 | -67.15 | -48166.20 | -24229.10 | 0.90 |
+| PP3_M7L_CAP3 | 52 | 689.75 | 1.71 | 60.52 | 1356.88 | 0.50 | 709.81 | 263.01 | -48166.20 | -14668.32 | 0.97 |
 
 ## Earlier statements about random placebos (see DS3_REENTRY_ALL.md 5a)
 See autopilot/RA_PLACEBO_VOID_LIST.md.
