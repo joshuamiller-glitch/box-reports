@@ -1,5 +1,5 @@
 # DS3_BRACKET_BUILD - the five bracket cells on TL3_EV_JN05W2JL2 (deadline order 2026-11-16, P2 and P3)
-**STATUS: A7|asia|40x40: no window complete; U7|asia|40x40: no window complete; K7|nyam|40x40: no window complete; K7|nyam|40x60: no window complete; K7|london|40x60: no window complete. Not a PASS claim. Dollars are BASE lots; x1.75 = live lots; $4.84 = FEES.md round-turn repriced (net - lots x 3.66).**
+**STATUS: A7|asia|40x40: L3M,L6M; U7|asia|40x40: L3M,L6M; K7|nyam|40x40: L3M,L6M; K7|nyam|40x60: L3M,L6M; K7|london|40x60: L3M,L6M. Not a PASS claim. Dollars are BASE lots; x1.75 = live lots; $4.84 = FEES.md round-turn repriced (net - lots x 3.66).**
 
 Reference: TL3_EV_JN05W2JL2 (final, 43 months). Cells: hook d10_hooks fix=[target, stop] on ONE book in ONE session, policy-line equivalent (`pol`): only the stop and target points change, lots x baseStop/newStop rounded half-up min 1 (the DS7.cs default lotmult), cut arms/trails/caps/day-lock R left at the engine values. Placebo (3 seeds) = the same target/stop applied to a pseudo-random subset of ALL signals (every book and session) with the same expected count as the cell's signals (share of all signals); matched random control (3 seeds) = the same bracket applied to a pseudo-random 50% of the cell's own book x session signals (same book x session x month mix, half the count, so read the control against about half of the real effect). Pass rule: DD not worse than the reference AND the real cell beats all six controls on both DD cut and mean delta, per window; W44-removed rows shown for windows that contain 2026-W44 (L3M, L6M). Windows: L3M 2026-08..10, L6M 2026-05..10, HOLD 2025-11..2026-04, GAP 2026-02-07..04-30, PRE 2024-10..2025-06, X' 2023-04..2024-01. Drawdown is the whole-stack max drawdown (daily cumulative) in the window.
 
@@ -7,45 +7,45 @@ Reference: TL3_EV_JN05W2JL2 (final, 43 months). Cells: hook d10_hooks fix=[targe
 
 | cell | real (drawdown first) | W44 removed | verdict |
 |---|---|---|---|
-| A7|asia|40x40 | not finished | not finished | not finished |
-| U7|asia|40x40 | maxDD -19400 (ref -22565; +14.0%), worst wk -6939 (ref -13430), d net +1716/wk (live x1.75 +3004; $4.84 +1682), stops 9.89 (10.27) | maxDD -19400 (ref -22508; +13.8%), worst wk -5235 (ref -13430), d net +1400/wk (live x1.75 +2450; $4.84 +1367), stops 9.05 (9.43) | not finished (controls pending); real DD +14.0%, d mean +1716 |
-| K7|nyam|40x40 | not finished | not finished | not finished |
-| K7|nyam|40x60 | not finished | not finished | not finished |
-| K7|london|40x60 | not finished | not finished | not finished |
+| A7|asia|40x40 | maxDD -32772 (ref -22565; -45.2%), worst wk -13709 (ref -13430), d net -2417/wk (live x1.75 -4230; $4.84 -2433), stops 13.70 (10.27) | maxDD -32772 (ref -22508; -45.6%), worst wk -13709 (ref -13430), d net -2868/wk (live x1.75 -5020; $4.84 -2880), stops 12.55 (9.43) | FAILS (DD vs ref -45.2%; beats all 6 controls on DD and mean: no) |
+| U7|asia|40x40 | maxDD -19400 (ref -22565; +14.0%), worst wk -6939 (ref -13430), d net +1716/wk (live x1.75 +3004; $4.84 +1682), stops 9.89 (10.27) | maxDD -19400 (ref -22508; +13.8%), worst wk -5235 (ref -13430), d net +1400/wk (live x1.75 +2450; $4.84 +1367), stops 9.05 (9.43) | FAILS (DD vs ref +14.0%; beats all 6 controls on DD and mean: no) |
+| K7|nyam|40x40 | maxDD -23765 (ref -22565; -5.3%), worst wk -14595 (ref -13430), d net +1524/wk (live x1.75 +2667; $4.84 +1498), stops 13.39 (10.27) | maxDD -22691 (ref -22508; -0.8%), worst wk -14595 (ref -13430), d net +1615/wk (live x1.75 +2826; $4.84 +1589), stops 12.55 (9.43) | FAILS (DD vs ref -5.3%; beats all 6 controls on DD and mean: no) |
+| K7|nyam|40x60 | maxDD -23765 (ref -22565; -5.3%), worst wk -13831 (ref -13430), d net +1118/wk (live x1.75 +1957; $4.84 +1110), stops 10.27 (10.27) | maxDD -22110 (ref -22508; +1.8%), worst wk -13831 (ref -13430), d net +1209/wk (live x1.75 +2117; $4.84 +1201), stops 9.43 (9.43) | FAILS (DD vs ref -5.3%; beats all 6 controls on DD and mean: no) |
+| K7|london|40x60 | maxDD -21970 (ref -22565; +2.6%), worst wk -14936 (ref -13430), d net -1390/wk (live x1.75 -2432; $4.84 -1405), stops 10.04 (10.27) | maxDD -21970 (ref -22508; +2.4%), worst wk -14936 (ref -13430), d net -1799/wk (live x1.75 -3148; $4.84 -1813), stops 9.21 (9.43) | FAILS (DD vs ref +2.6%; beats all 6 controls on DD and mean: no) |
 
 Controls (drawdown cut % vs reference, d mean $/wk):
 | cell | placebo 1 | placebo 2 | placebo 3 | matched 1 | matched 2 | matched 3 |
 |---|---|---|---|---|---|---|
-| A7|asia|40x40 | +7.3% / +2616 | n/f | +0.8% / +955 | n/f | -10.5% / -1626 | n/f |
-| U7|asia|40x40 | n/f | -8.1% / +1767 | n/f | -6.3% / +288 | n/f | +0.2% / +1910 |
-| K7|nyam|40x40 | -26.2% / +1620 | n/f | -3.9% / +341 | n/f | n/f | n/f |
-| K7|nyam|40x60 | n/f | -1.5% / -1565 | n/f | n/f | n/f | n/f |
-| K7|london|40x60 | n/f | n/f | n/f | n/f | n/f | n/f |
+| A7|asia|40x40 | +7.3% / +2616 | -9.0% / +527 | +0.8% / +955 | -5.1% / -1927 | -10.5% / -1626 | -24.3% / -1235 |
+| U7|asia|40x40 | -2.9% / +1327 | -8.1% / +1767 | -3.3% / +1221 | -6.3% / +288 | +11.3% / +457 | +0.2% / +1910 |
+| K7|nyam|40x40 | -26.2% / +1620 | -9.0% / -1392 | -3.9% / +341 | -2.3% / +1202 | -5.3% / +1189 | -1.8% / +566 |
+| K7|nyam|40x60 | -6.4% / +1802 | -1.5% / -1565 | +0.8% / +98 | -1.8% / +848 | -5.3% / +921 | -1.8% / +525 |
+| K7|london|40x60 | -8.7% / +1875 | -0.5% / -1443 | -7.6% / +364 | +0.2% / -87 | +4.5% / +62 | +9.4% / +524 |
 
 ## Window L6M
 
 | cell | real (drawdown first) | W44 removed | verdict |
 |---|---|---|---|
-| A7|asia|40x40 | not finished | not finished | not finished |
-| U7|asia|40x40 | not finished | not finished | not finished |
-| K7|nyam|40x40 | not finished | not finished | not finished |
-| K7|nyam|40x60 | not finished | not finished | not finished |
-| K7|london|40x60 | not finished | not finished | not finished |
+| A7|asia|40x40 | maxDD -32772 (ref -22565; -45.2%), worst wk -13709 (ref -13430), d net -1060/wk (live x1.75 -1855; $4.84 -1078), stops 14.57 (10.88) | maxDD -32772 (ref -22508; -45.6%), worst wk -13709 (ref -13430), d net -1286/wk (live x1.75 -2250; $4.84 -1301), stops 14.00 (10.46) | FAILS (DD vs ref -45.2%; beats all 6 controls on DD and mean: no) |
+| U7|asia|40x40 | maxDD -19715 (ref -22565; +12.6%), worst wk -10253 (ref -13430), d net +1151/wk (live x1.75 +2014; $4.84 +1116), stops 11.07 (10.88) | maxDD -19715 (ref -22508; +12.4%), worst wk -10253 (ref -13430), d net +993/wk (live x1.75 +1737; $4.84 +959), stops 10.65 (10.46) | FAILS (DD vs ref +12.6%; beats all 6 controls on DD and mean: no) |
+| K7|nyam|40x40 | maxDD -23765 (ref -22565; -5.3%), worst wk -14595 (ref -13430), d net +489/wk (live x1.75 +856; $4.84 +466), stops 14.04 (10.88) | maxDD -22691 (ref -22508; -0.8%), worst wk -14595 (ref -13430), d net +535/wk (live x1.75 +936; $4.84 +512), stops 13.62 (10.46) | FAILS (DD vs ref -5.3%; beats all 6 controls on DD and mean: no) |
+| K7|nyam|40x60 | maxDD -23765 (ref -22565; -5.3%), worst wk -13831 (ref -13430), d net +377/wk (live x1.75 +659; $4.84 +371), stops 10.88 (10.88) | maxDD -22110 (ref -22508; +1.8%), worst wk -13831 (ref -13430), d net +422/wk (live x1.75 +739; $4.84 +417), stops 10.46 (10.46) | FAILS (DD vs ref -5.3%; beats all 6 controls on DD and mean: no) |
+| K7|london|40x60 | maxDD -21970 (ref -22565; +2.6%), worst wk -14936 (ref -13430), d net -1410/wk (live x1.75 -2468; $4.84 -1421), stops 10.65 (10.88) | maxDD -21970 (ref -22508; +2.4%), worst wk -14936 (ref -13430), d net -1615/wk (live x1.75 -2826; $4.84 -1625), stops 10.23 (10.46) | FAILS (DD vs ref +2.6%; beats all 6 controls on DD and mean: no) |
 
 Controls (drawdown cut % vs reference, d mean $/wk):
 | cell | placebo 1 | placebo 2 | placebo 3 | matched 1 | matched 2 | matched 3 |
 |---|---|---|---|---|---|---|
-| A7|asia|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
-| U7|asia|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
-| K7|nyam|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
-| K7|nyam|40x60 | n/f | n/f | n/f | n/f | n/f | n/f |
-| K7|london|40x60 | n/f | n/f | n/f | n/f | n/f | n/f |
+| A7|asia|40x40 | +3.6% / +894 | -9.0% / +1256 | +0.8% / -33 | -5.1% / -1520 | -10.5% / -1113 | -24.3% / -429 |
+| U7|asia|40x40 | -2.9% / +928 | -8.1% / +1656 | -3.3% / +656 | -6.3% / -280 | -1.2% / -506 | +0.2% / +1221 |
+| K7|nyam|40x40 | -26.2% / +235 | -9.0% / +1006 | -3.9% / -220 | -2.3% / +542 | -5.3% / +298 | -1.8% / +110 |
+| K7|nyam|40x60 | -6.4% / +284 | -1.5% / -419 | +0.8% / -559 | -1.8% / +419 | -5.3% / +230 | -1.8% / +270 |
+| K7|london|40x60 | -8.7% / +935 | -0.5% / +76 | -7.6% / -632 | +0.2% / -465 | +4.5% / -197 | +7.6% / -24 |
 
 ## Window HOLD
 
 | cell | real (drawdown first) | W44 removed | verdict |
 |---|---|---|---|
-| A7|asia|40x40 | not finished | n/a | not finished |
+| A7|asia|40x40 | maxDD -72222 (ref -74402; +2.9%), worst wk -28915 (ref -31211), d net -1305/wk (live x1.75 -2284; $4.84 -1304), stops 12.14 (10.17) | n/a | not finished (controls pending); real DD +2.9%, d mean -1305 |
 | U7|asia|40x40 | not finished | n/a | not finished |
 | K7|nyam|40x40 | not finished | n/a | not finished |
 | K7|nyam|40x60 | not finished | n/a | not finished |
@@ -54,7 +54,7 @@ Controls (drawdown cut % vs reference, d mean $/wk):
 Controls (drawdown cut % vs reference, d mean $/wk):
 | cell | placebo 1 | placebo 2 | placebo 3 | matched 1 | matched 2 | matched 3 |
 |---|---|---|---|---|---|---|
-| A7|asia|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
+| A7|asia|40x40 | +2.0% / -717 | -7.8% / +1528 | -9.6% / -83 | n/f | n/f | n/f |
 | U7|asia|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
 | K7|nyam|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
 | K7|nyam|40x60 | n/f | n/f | n/f | n/f | n/f | n/f |
@@ -64,7 +64,7 @@ Controls (drawdown cut % vs reference, d mean $/wk):
 
 | cell | real (drawdown first) | W44 removed | verdict |
 |---|---|---|---|
-| A7|asia|40x40 | not finished | n/a | not finished |
+| A7|asia|40x40 | maxDD -65204 (ref -54615; -19.4%), worst wk -28915 (ref -30852), d net -1311/wk (live x1.75 -2294; $4.84 -1297), stops 13.16 (10.29) | n/a | not finished (controls pending); real DD -19.4%, d mean -1311 |
 | U7|asia|40x40 | not finished | n/a | not finished |
 | K7|nyam|40x40 | not finished | n/a | not finished |
 | K7|nyam|40x60 | not finished | n/a | not finished |
@@ -73,7 +73,7 @@ Controls (drawdown cut % vs reference, d mean $/wk):
 Controls (drawdown cut % vs reference, d mean $/wk):
 | cell | placebo 1 | placebo 2 | placebo 3 | matched 1 | matched 2 | matched 3 |
 |---|---|---|---|---|---|---|
-| A7|asia|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
+| A7|asia|40x40 | -23.3% / -1048 | -6.3% / +3239 | -31.8% / +13 | +8.1% / +1447 | n/f | n/f |
 | U7|asia|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
 | K7|nyam|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
 | K7|nyam|40x60 | n/f | n/f | n/f | n/f | n/f | n/f |

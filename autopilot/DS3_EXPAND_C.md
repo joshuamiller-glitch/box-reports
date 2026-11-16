@@ -1,6 +1,6 @@
-# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-16T12:34Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
+# DS3_EXPAND_C - T-EXPAND family C: rules that belong to one session (W-EC). Rebuilt 2026-11-16T14:04Z by code/th_expand_c/ec_page.py. Research only, NO PASS claim.
 
-**VERDICT (plain): 408 cell-months done over 59 cells; 34 cells pass the tolerant gate in L3M, 0 pass the STRICT gate in every present window; 0 pass the TOLERANT lead gate (recent clearly positive and beating placebos, older DD <= 10% deeper, mean >= -5%). Strict leads: none yet. Tolerant leads: none yet. FIRST PASS, no PASS claim.**
+**VERDICT (plain): 427 cell-months done over 63 cells; 35 cells pass the tolerant gate in L3M, 0 pass the STRICT gate in every present window; 0 pass the TOLERANT lead gate (recent clearly positive and beating placebos, older DD <= 10% deeper, mean >= -5%). Strict leads: none yet. Tolerant leads: none yet. FIRST PASS, no PASS claim.**
 
 Prereg autopilot/EXPAND_C_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine, all layers ON. Identity: TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_EC_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -12,8 +12,8 @@ Row format: delta vs JN05W2 in the rule's own session scope: d mean, max-DD cut 
 
 | window | real cells done | pass strict gate | pass tolerant | placebo cells done | placebo pass strict gate | random-skip controls done | random-skip pass strict gate |
 |---|---|---|---|---|---|---|---|
-| L3M | 19 | 12 | 9 | 24 | 21 | 16 | 1 |
-| L6M | 11 | 4 | 0 | 23 | 6 | 14 | 3 |
+| L3M | 21 | 13 | 9 | 24 | 21 | 18 | 1 |
+| L6M | 11 | 4 | 0 | 23 | 6 | 15 | 3 |
 | HOLD | 4 | 3 | 3 | 0 | 0 | 0 | 0 |
 | GAP | 3 | 3 | 3 | 0 | 0 | 0 | 0 |
 | PRE | 1 | 1 | 1 | 0 | 0 | 0 | 0 |
@@ -43,6 +43,7 @@ PATH EFFECT = FREED-BOOK REPLACEMENT (generic, autopilot/PATH_EFFECT_RULE.md): e
 | &nbsp;&nbsp;engine random skip L6M (same keep share, seeds) | DD +13/+23, mean -133/-1051 | | | | | | | |
 | &nbsp;&nbsp;placebo L6M (pl11/23/37) | DD +20/+28/+21, mean +1482/+1165/+1944 | | | | | | | |
 | RU_london_hS1 | -329 $/wk (fee4.84 -247), DD +34%/+34, ww +13238, st 2.05(2.74), b5 76%, w2l 0 X |  |  |  |  |  |  |  |
+| RU_london_vS1 | -1244 $/wk (fee4.84 -1143), DD +32%/+32, ww +10574, st 1.98(2.74), b5 73%, w2l 0 X |  |  |  |  |  |  |  |
 | RU_london_hS075 | -1582 $/wk (fee4.84 -1466), DD +43%/+43, ww +10574, st 1.67(2.74), b5 59%, w2l 0 X |  |  |  |  |  |  |  |
 
 **nyam**
@@ -87,6 +88,7 @@ PATH EFFECT = FREED-BOOK REPLACEMENT (generic, autopilot/PATH_EFFECT_RULE.md): e
 | &nbsp;&nbsp;engine random skip L6M (same keep share, seeds) | DD +9/+12, mean -445/-89 | | | | | | | |
 | &nbsp;&nbsp;placebo L6M (pl11/23/37) | DD +37/+19/+19, mean -439/-313/-233 | | | | | | | |
 | RU_nypm_hS05 | +152 $/wk (fee4.84 +159), DD +53%/+53, ww +1194, st 0.08(0.08), b5 83%, w2l 1 |  |  |  |  |  |  |  |
+| &nbsp;&nbsp;engine random skip L3M (same keep share, seeds) | DD +34/+29, mean -623/-701 | | | | | | | |
 
 **l90**
 
@@ -97,6 +99,7 @@ PATH EFFECT = FREED-BOOK REPLACEMENT (generic, autopilot/PATH_EFFECT_RULE.md): e
 | &nbsp;&nbsp;placebo L3M (pl11/23/37) | DD +0/+0/+0, mean -91/+0/+0 | | | | | | | |
 | &nbsp;&nbsp;placebo L6M (pl11/23/37) | DD +0/+0/+0, mean -145/-55/-182 | | | | | | | |
 | RU_l90_hS125 | -91 $/wk (fee4.84 -91), DD +0%/-3, ww +0, st 10.35(10.35), b5 100%, w2l 0 | -46 $/wk (fee4.84 -45), DD +0%/-3, ww +0, st 10.99(10.99), b5 100%, w2l 0 | -23 $/wk (fee4.84 -23), DD +0%/+0, ww +0, st 10.66(10.66), b5 100%, w2l 0 | +9 $/wk (fee4.84 +10), DD +0%, ww +0, st 9.90(9.90), b5 99%, w2l 0 |  |  |  |  |
+| RU_l90_hS05 | -116 $/wk (fee4.84 -114), DD +0%/-6, ww +0, st 10.35(10.35), b5 100%, w2l 0 |  |  |  |  |  |  |  |
 
 ## Session clock (2)
 
