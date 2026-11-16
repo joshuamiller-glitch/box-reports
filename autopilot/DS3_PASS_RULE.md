@@ -19,17 +19,14 @@ Directive starting cut-offs: conf_hi 0.90, conf_other 0.40, conf_pdd 0.80, conf_
 **FINAL cut-offs (tuned on 800 pooled noise seeds per noise family and control family: CONFIRMED false positive <= 3.5%; pooled because a 400-seed tune / 400-seed validate split showed selection bias of about 1-2 points): conf_hi 0.85, conf_other 0.25, conf_pdd 0.80, conf_old 0.25, LEAD hi 0.75, LEAD floor 0.25** (change vs directive: conf_hi .90 -> .85, conf_other .40 -> .25). Measured CONFIRMED false positive 1.8-4.2% (fresh seeds, per family), LEAD-or-better 4.0-6.5%.
 
 <!-- PR2:BEGIN -->
-## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 20:40 UTC)
+## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 21:14 UTC)
 
 **Every "not confirmed" issued under the 11-16 morning rule (beat all 6 controls on max DD in HOLD and L6M) is VOID as a negative result: that rule detects a real 10% / 20% max-DD cut only 5-13% of the time (DS3_PASS_RULE.md step 1).** Tiers below use ulcer index (RMS of daily drawdown; + = lower ulcer than JL2) and mean, percentile among 200 persistent-draw controls (PATH ARITHMETIC delta-permutation controls, not engine runs; 0 of the 30 engine-exact draws have landed; engine draws queued on server 2), week-clustered bootstrap (2,000 resamples). Cut-offs (tuned so noise reaches CONFIRMED under 5%): CONFIRMED needs ulcer-or-mean percentile >= 0.85 in L6M and L3M with the other >= 0.25, P(ulcer lower, L6M) >= 0.80, ulcer percentile >= 0.25 in the older windows run; LEAD needs >= 0.75 in L6M and L3M and nothing below 0.25 in any window run. A candidate whose older windows (GAP, PREUW, X') were not run cannot be issued CONFIRMED ("PROVISIONAL"). Old verdict = what its source page said.
 
 | candidate | OLD verdict | NEW tier | ulcer JL2 -> real (lower = better), HOLD / L6M / L3M | pct ulcer, HOLD / L6M / L3M | P(ulcer lower) HOLD / L6M | P(max DD shallower) HOLD / L6M | 90% interval of mean change $/wk base (L6M; HOLD) | d mean $/wk base (x1.75; $4.84) L6M | max DD cut %, HOLD / L6M | DV block bootstrap, 12 months (W-DV): median DD / 95th pct DD / P(DD > 2x avg weekly profit) | not LEAD because |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| M7 London cap 3 (block entry after 3 closes) | NOT PASS under the morning rule: DD worse than best control in HOLD (-70,924 vs -63,564) and L6M (-23,715 vs -22,397); placebos partly INVALID (keep 0.70-0.73 vs 0.62) | **LEAD (older windows PREUW,X' not run)** | 24530 -> 22302 (+9.1%) / 8356 -> 8055 (+3.6%) / 9798 -> 9454 (+3.5%) | 0.92 / 0.57 / 0.49 | 0.97 / 0.20 | 0.96 / 0.18 | +771..+2655; -654..+1108 | +1747 (+3058; +1768) | +4.7% / -5.1% | -59277 / -90315 / 0.99 | LEAD floor met |
 | give-back H7 Asia 40% / 40pt | ENGINE ONLY (not CONFIRMED; controls rs101-103 are diluted copies) | **FAIL (windows GAP,PREUW,X' not run)** | 24530 -> 23683 (+3.5%) / 8356 -> 8568 (-2.5%) / 9798 -> 10189 (-4.0%) | 0.93 / 0.65 / 0.62 | 0.55 / 0.35 | 0.60 / 0.37 | -1691..-6; -373..+1131 | -841 (-1472; -840) | +3.6% / -6.0% | -59228 / -95725 / 1.00 | L6M best pct 0.65<0.75; L3M best pct 0.68<0.75; L6M mean pct 0.15<0.25 |
 | give-back H7 Asia 60% / 30pt | ENGINE ONLY (not CONFIRMED) | **FAIL (windows GAP,PREUW,X' not run)** | 24530 -> 24376 (+0.6%) / 8356 -> 8590 (-2.8%) / 9798 -> 10364 (-5.8%) | 0.76 / 0.62 / 0.50 | 0.57 / 0.46 | 0.54 / 0.37 | -2555..-110; +166..+1818 | -1271 (-2224; -1265) | +2.7% / -10.9% | -59140 / -96289 / 1.00 | L6M best pct 0.62<0.75; L3M best pct 0.50<0.75; L3M mean pct 0.07<0.25; L6M mean pct 0.04<0.25 |
-| give-back H7 NY AM 40% / 40pt | ENGINE ONLY (not CONFIRMED) | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** | 24530 -> 24257 (+1.1%) / 8356 -> 8076 (+3.3%) / 9798 -> 9368 (+4.4%) | 0.76 / 1.00 / 0.98 | 0.66 / 0.88 | 0.57 / 0.87 | -171..+354; -191..+329 | +82 (+143; +82) | +2.5% / +0.0% | -60523 / -96415 / 1.00 | LEAD floor met |
-| give-back H7 NY AM 50% / 40pt | ENGINE ONLY (not CONFIRMED) | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** | 24530 -> 24246 (+1.2%) / 8356 -> 8112 (+2.9%) / 9798 -> 9424 (+3.8%) | 0.79 / 0.99 / 1.00 | 0.65 / 0.88 | 0.57 / 0.86 | -134..+355; -203..+296 | +97 (+169; +97) | +2.4% / +0.0% | -60685 / -96554 / 1.00 | LEAD floor met |
 | give-back K7 NY AM 40% / 40pt | ENGINE ONLY (not CONFIRMED) | **FAIL (windows GAP,PREUW,X' not run)** | 24530 -> 23854 (+2.8%) / 8356 -> 8418 (-0.7%) / 9798 -> 9867 (-0.7%) | 0.47 / 0.34 / 0.39 | 0.68 / 0.55 | 0.73 / 0.43 | -324..+879; -350..+578 | +263 (+460; +257) | -1.2% / -2.0% | -59882 / -95754 / 1.00 | L6M best pct 0.39<0.75; HOLD mean pct 0.10<0.25 |
 | give-back K7 NY AM 50% / 20pt | ENGINE ONLY (not CONFIRMED) | **FAIL (windows GAP,PREUW,X' not run)** | 24530 -> 25085 (-2.3%) / 8356 -> 8686 (-4.0%) / 9798 -> 10294 (-5.1%) | 0.28 / 0.17 / 0.18 | 0.42 / 0.18 | 0.43 / 0.17 | -999..+313; -1412..+523 | -345 (-603; -354) | -5.3% / -7.9% | -62101 / -99494 / 1.00 | L6M best pct 0.17<0.75; L3M best pct 0.64<0.75; L3M ulcer pct 0.18<0.25; L6M mean pct 0.06<0.25; HOLD mean pct 0.04<0.25 |
 | give-back P7 Asia 40% / 40pt | ENGINE ONLY (not CONFIRMED; L6M DD -40%) | **FAIL (windows GAP,PREUW,X' not run)** | 24530 -> 27326 (-11.4%) / 8356 -> 9882 (-18.3%) / 9798 -> 12052 (-23.0%) | 0.86 / 0.81 / 0.74 | 0.34 / 0.17 | 0.29 / 0.12 | -4492..-1364; -1471..+2390 | -2989 (-5232; -3022) | -0.4% / -40.2% | -60164 / -103010 / 1.00 | L3M best pct 0.74<0.75 |
@@ -46,12 +43,43 @@ Directive starting cut-offs: conf_hi 0.90, conf_other 0.40, conf_pdd 0.80, conf_
 | K7 London fixed 40x60 (morning bracket cell) | ENGINE ONLY / VOID (fixsub controls not persistent) | **FAIL (windows GAP,PREUW,X' not run)** | 24530 -> 26957 (-9.9%) / 8356 -> 8578 (-2.6%) / 9798 -> 9510 (+2.9%) | 0.23 / 0.68 / 0.86 | 0.46 / 0.61 | 0.54 / 0.47 | -2491..-237; -1295..+957 | -1410 (-2468; -1421) | -2.3% / +2.6% | -62242 / -99017 / 1.00 | L6M best pct 0.68<0.75; L3M mean pct 0.09<0.25; L6M mean pct 0.01<0.25; HOLD ulcer pct 0.23<0.25 |
 | London skip k=1.25 true points, M7+P7 | UNVERIFIED (PD controls not run; RK controls INVALID) | **FAIL** | 24530 -> 26600 (-8.4%) / 8356 -> 7257 (+13.2%) / 9798 -> 7786 (+20.5%) | 0.17 / 0.96 / 0.99 | 0.67 / 0.95 | 0.60 / 0.97 | -518..+2867; -1412..+1107 | +1200 (+2100; +1240) | -8.6% / +0.2% | -62212 / -97117 / 0.99 | HOLD ulcer pct 0.17<0.25 |
 | London skip k=1.25 with UC, M7+P7 | UNVERIFIED (RKUC controls INVALID) | **LEAD (older windows PREUW,X' not run)** | 24530 -> 24548 (-0.1%) / 8356 -> 7567 (+9.4%) / 9798 -> 8141 (+16.9%) | 0.49 / 0.82 / 0.90 | 0.71 / 0.79 | 0.64 / 0.83 | -1356..+2168; -1402..+1362 | +408 (+714; +459) | +0.8% / +0.2% | not in DV table | LEAD floor met |
+| M7 London cap 3 (block entry after 3 closes) | NOT PASS under the morning rule: DD worse than best control in HOLD (-70,924 vs -63,564) and L6M (-23,715 vs -22,397); placebos partly INVALID (keep 0.70-0.73 vs 0.62) | **LEAD (older windows PREUW,X' not run)** | 24530 -> 22302 (+9.1%) / 8356 -> 8055 (+3.6%) / 9798 -> 9454 (+3.5%) | 0.94 / 0.55 / 0.40 | 0.97 / 0.20 | 0.96 / 0.18 | +771..+2655; -654..+1108 | +1747 (+3058; +1768) | +4.7% / -5.1% | -59277 / -90315 / 0.99 | LEAD floor met |
+| give-back H7 NY AM 40% / 40pt | ENGINE ONLY (not CONFIRMED) | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** | 24530 -> 24257 (+1.1%) / 8356 -> 8076 (+3.3%) / 9798 -> 9368 (+4.4%) | 0.76 / 1.00 / 0.98 | 0.66 / 0.88 | 0.57 / 0.87 | -171..+354; -191..+329 | +82 (+143; +82) | +2.5% / +0.0% | -60523 / -96415 / 1.00 | LEAD floor met |
+| give-back H7 NY AM 50% / 40pt | ENGINE ONLY (not CONFIRMED) | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** | 24530 -> 24246 (+1.2%) / 8356 -> 8112 (+2.9%) / 9798 -> 9424 (+3.8%) | 0.79 / 0.99 / 1.00 | 0.65 / 0.88 | 0.57 / 0.86 | -134..+355; -203..+296 | +97 (+169; +97) | +2.4% / +0.0% | -60685 / -96554 / 1.00 | LEAD floor met |
 | JL2 reference (for scale) | - | - | HOLD 24530 / L6M 8356 / L3M 9798 | - | - | - | - | - | - | -61074 / -97706 / 1.00 | - |
 | the three profit lines, as designed vs as coded | not scored (replay only: DS3_PROFIT_LINES_REPLAY.md) | **NOT ENOUGH CONTROLS YET** (no engine cell of either version exists on JL2; /mnt/l2/l2vast/_jointexit has identity cells only) | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | not finished |
 
 **Detectable mean effect (power floor).** The paired weekly P&L difference of a typical candidate has a standard error of the mean change of about the 90% interval half-width / 1.645; the effect detectable at 80% power (one-sided 5%) is 2.49 x SE. From the candidates above, that floor in L6M (27 weeks) is 1426 $/wk base and in HOLD (26 weeks) 1460 $/wk base (median over candidates with changed trades); JL2 earns about 22,076 $/wk in L6M and 8,359 in HOLD. Planted mean gains confirm it: of planted +3 / +6 / +10 / +20 / +40% mean gains, the 90% interval of the mean change excludes zero in BOTH HOLD and L6M for 2 / 4 / 8 / 44 / 98% of seeds, and the tiers (ulcer+mean) reach LEAD-or-better for 11 / 16 / 29 / 66 / 90%. **Plain: a rule that touches one book x session needs about +1,000 $/wk base (pooled HOLD+L6M, 53 weeks; about +7% of the average stack mean of 15,000 $/wk) to be proven at 80% power, and a rule that re-weights a quarter of all trades needs about +30% (+5,000 $/wk). Smaller mean gains - including every +3% / +6% effect - cannot be proven on 12 months; they need the full 43 months or live incubation.**
 
 Engine-exact vs arithmetic: real cells and JL2 are exact-engine trade lists. Controls are 200 persistent-bucket draws (one draw per 5-minute bucket per book and side, realised affected share within 0.05 of the real rule, printed in the detail table); exit/size/target/label rules deal the real rule's per-lot P&L deltas to random trades, skip rules remove random trades. They have no freed-book replacement trades and do not match minutes-since-entry or open profit at exit, so the exit-rule control is approximate until the engine controls land. The first scoring pass ran before its prereg line was appended to DECISIONS.md.
+## Older-window progress for the two closest candidates (real cells landing from server 2; arithmetic controls unless engine draws are noted)
+
+| candidate | window | landed | JL2 trades in scope | real trades in scope | trades that differ from JL2 | weeks touched | ulcer change vs JL2 | pct ulcer / mean | P(ulcer lower) | tier |
+|---|---|---|---|---|---|---|---|---|---|---|
+| M7 London cap 3 (block entry after 3 closes) | L6M | yes | 512 | 349 | 163 | 26 | +3.6% | 0.55 / 1.00 | 0.20 | LEAD (older windows PREUW,X' not run) |
+| M7 London cap 3 (block entry after 3 closes) | L3M | yes | 236 | 175 | 61 | 13 | +3.5% | 0.40 / 0.96 | 0.12 |  |
+| M7 London cap 3 (block entry after 3 closes) | HOLD | yes | 451 | 325 | 126 | 22 | +9.1% | 0.94 / 0.61 | 0.97 |  |
+| M7 London cap 3 (block entry after 3 closes) | GAP | yes | 135 | 125 | 10 | 6 | +1.4% | 0.41 / 0.27 | 0.65 |  |
+| M7 London cap 3 (block entry after 3 closes) | PREUW | NOT LANDED (2 of 9 months) | - | - | - | - | - | - | - | - |
+| M7 London cap 3 (block entry after 3 closes) | X' | NOT LANDED (0 of 18 months) | - | - | - | - | - | - | - | - |
+| M7 London cap 3 (block entry after 3 closes) | **tier now** | | | | | | | | | **LEAD (older windows PREUW,X' not run)** |
+| give-back H7 NY AM 40% / 40pt | L6M | yes | 38 | 38 | 15 | 13 | +3.3% | 1.00 / 0.58 | 0.88 | PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued) |
+| give-back H7 NY AM 40% / 40pt | L3M | yes | 18 | 18 | 9 | 8 | +4.4% | 0.98 / 0.69 | 0.66 |  |
+| give-back H7 NY AM 40% / 40pt | HOLD | yes | 40 | 41 | 13 | 10 | +1.1% | 0.76 / 0.50 | 0.66 |  |
+| give-back H7 NY AM 40% / 40pt | GAP | NOT LANDED (0 of 3 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 40% / 40pt | PREUW | NOT LANDED (0 of 9 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 40% / 40pt | X' | NOT LANDED (0 of 18 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 40% / 40pt | **tier now** | | | | | | | | | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** |
+| give-back H7 NY AM 50% / 40pt | L6M | yes | 38 | 38 | 12 | 11 | +2.9% | 0.99 / 0.59 | 0.88 | PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued) |
+| give-back H7 NY AM 50% / 40pt | L3M | yes | 18 | 18 | 8 | 7 | +3.8% | 1.00 / 0.61 | 0.65 |  |
+| give-back H7 NY AM 50% / 40pt | HOLD | yes | 40 | 40 | 11 | 9 | +1.2% | 0.79 / 0.44 | 0.65 |  |
+| give-back H7 NY AM 50% / 40pt | GAP | NOT LANDED (0 of 3 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 50% / 40pt | PREUW | NOT LANDED (0 of 9 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 50% / 40pt | X' | NOT LANDED (0 of 18 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 50% / 40pt | **tier now** | | | | | | | | | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** |
+
+Meaning at small counts: H7 NY AM has 78 JL2 trades in the 12 months (23-28 differ from JL2); a 6-month window holds about a dozen affected trades in a handful of weeks, so a percentile among controls that change the same number of random trades is mostly the luck of which weeks are touched. Treat any H7 NY AM tier below 40 affected trades per window as NOT MEANINGFUL (it can neither confirm nor reject); only the pooled 43-month count (about 100 affected trades) can carry a verdict.
+
 <!-- PR2:END -->
 
 #### Control family A: controls restored to equal mean (random reallocation of the same size)
@@ -109,22 +137,12 @@ Sets TL3_PC_<ID>_S<k> (JL2 + pc_hooks). Queue /mnt/l2/l2vast/_s2/pc_pending.txt 
 
 | candidate | window | ulcer JL2 -> real (change) | pct ulcer / max DD / worst wk / mean (n=200) | pct ulcer real-arith | boot P(ulcer lower) / P(max DD shallower) / P(worst wk better) | max DD JL2 -> real (cut %) | worst week JL2 -> real | d mean/wk (x1.75; $4.84) | 90% interval mean change | MDE 80% | W44 removed: ulcer change, pct ulcer, P(ulcer lower) | DV bootstrap H12 (real cell): median DD / 95th DD / P(DD>2x avg wk profit) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| M7 London cap 3 (block entry after 3 closes) | L6M | 8356 -> 8055 (+3.6%) | 0.57 / 0.34 / 0.20 / 1.00 | n/a | 0.20 / 0.18 / 0.10 | -22565 -> -23715 (-5.1%) | -13430 -> -15143 | +1747 (+3058; +1768) | +771 .. +2655 | 1426 | +5.2%, 0.60, 0.32 |  |
-| M7 London cap 3 (block entry after 3 closes) | L3M | 9798 -> 9454 (+3.5%) | 0.49 / 0.34 / 0.20 / 0.98 | n/a | 0.12 / 0.11 / 0.07 | -22565 -> -23715 (-5.1%) | -13430 -> -15143 | +1271 (+2224; +1284) | -61 .. +2512 | 1947 | +6.1%, 0.52, 0.07 |  |
-| M7 London cap 3 (block entry after 3 closes) | HOLD | 24530 -> 22302 (+9.1%) | 0.92 / 0.63 / 0.58 / 0.56 | n/a | 0.97 / 0.96 / 1.00 | -74402 -> -70924 (+4.7%) | -31211 -> -30596 | +264 (+461; +278) | -654 .. +1108 | 1333 | +9.1%, 0.92, 0.98 |  |
-| M7 London cap 3 (block entry after 3 closes) | GAP | 21125 -> 20825 (+1.4%) | 0.48 / 0.54 / 0.49 / 0.26 | n/a | 0.65 / 0.65 / 0.54 | -55206 -> -53876 (+2.4%) | -43527 -> -43527 | -120 (-209; -115) | -691 .. +360 | 795 | +1.4%, 0.48, 0.66 |  |
 | give-back H7 Asia 40% / 40pt | L6M | 8356 -> 8568 (-2.5%) | 0.65 / 0.77 / 0.73 / 0.15 | n/a | 0.35 / 0.37 / 0.41 | -22565 -> -23908 (-6.0%) | -13430 -> -13430 | -841 (-1472; -840) | -1691 .. -6 | 1276 | -2.5%, 0.66, 0.47 |  |
 | give-back H7 Asia 40% / 40pt | L3M | 9798 -> 10189 (-4.0%) | 0.62 / 0.77 / 0.71 / 0.68 | n/a | 0.03 / 0.21 / 0.35 | -22565 -> -23908 (-6.0%) | -13430 -> -13430 | -131 (-228; -127) | -911 .. +699 | 1218 | -4.5%, 0.62, 0.05 |  |
 | give-back H7 Asia 40% / 40pt | HOLD | 24530 -> 23683 (+3.5%) | 0.93 / 0.85 / 0.82 / 0.95 | n/a | 0.55 / 0.60 / 0.93 | -74402 -> -71746 (+3.6%) | -31211 -> -31074 | +378 (+661; +377) | -373 .. +1131 | 1138 | +3.5%, 0.93, 0.56 |  |
 | give-back H7 Asia 60% / 30pt | L6M | 8356 -> 8590 (-2.8%) | 0.62 / 0.61 / 0.70 / 0.04 | n/a | 0.46 / 0.37 / 0.40 | -22565 -> -25023 (-10.9%) | -13430 -> -13430 | -1271 (-2224; -1265) | -2555 .. -110 | 1851 | -3.2%, 0.60, 0.54 |  |
 | give-back H7 Asia 60% / 30pt | L3M | 9798 -> 10364 (-5.8%) | 0.50 / 0.61 / 0.67 / 0.07 | n/a | 0.00 / 0.14 / 0.33 | -22565 -> -25023 (-10.9%) | -13430 -> -13430 | -1263 (-2210; -1255) | -2448 .. -30 | 1830 | -7.3%, 0.52, 0.00 |  |
 | give-back H7 Asia 60% / 30pt | HOLD | 24530 -> 24376 (+0.6%) | 0.76 / 0.69 / 0.38 / 0.99 | n/a | 0.57 / 0.54 / 0.31 | -74402 -> -72429 (+2.7%) | -31211 -> -33394 | +1033 (+1808; +1030) | +166 .. +1818 | 1251 | +0.6%, 0.76, 0.59 |  |
-| give-back H7 NY AM 40% / 40pt | L6M | 8356 -> 8076 (+3.3%) | 1.00 / 0.62 / 0.89 / 0.58 | n/a | 0.88 / 0.87 / 0.86 | -22565 -> -22565 (+0.0%) | -13430 -> -11690 | +82 (+143; +82) | -171 .. +354 | 397 | +4.0%, 1.00, 0.88 |  |
-| give-back H7 NY AM 40% / 40pt | L3M | 9798 -> 9368 (+4.4%) | 0.98 / 0.62 / 0.89 / 0.69 | n/a | 0.66 / 0.80 / 0.83 | -22565 -> -22565 (+0.0%) | -13430 -> -11690 | +130 (+228; +130) | -263 .. +561 | 623 | +5.8%, 0.98, 0.62 |  |
-| give-back H7 NY AM 40% / 40pt | HOLD | 24530 -> 24257 (+1.1%) | 0.76 / 0.94 / 0.65 / 0.50 | n/a | 0.66 / 0.57 / 0.50 | -74402 -> -72537 (+2.5%) | -31211 -> -31211 | +72 (+125; +71) | -191 .. +329 | 394 | +1.1%, 0.76, 0.70 |  |
-| give-back H7 NY AM 50% / 40pt | L6M | 8356 -> 8112 (+2.9%) | 0.99 / 0.62 / 0.93 / 0.59 | n/a | 0.88 / 0.86 / 0.86 | -22565 -> -22565 (+0.0%) | -13430 -> -11775 | +97 (+169; +97) | -134 .. +355 | 370 | +3.5%, 0.99, 0.88 |  |
-| give-back H7 NY AM 50% / 40pt | L3M | 9798 -> 9424 (+3.8%) | 1.00 / 0.62 / 0.93 / 0.61 | n/a | 0.65 / 0.80 / 0.83 | -22565 -> -22565 (+0.0%) | -13430 -> -11775 | +111 (+194; +111) | -278 .. +536 | 616 | +5.0%, 1.00, 0.62 |  |
-| give-back H7 NY AM 50% / 40pt | HOLD | 24530 -> 24246 (+1.2%) | 0.79 / 0.93 / 0.62 / 0.44 | n/a | 0.65 / 0.57 / 0.50 | -74402 -> -72627 (+2.4%) | -31211 -> -31211 | +48 (+84; +48) | -203 .. +296 | 378 | +1.2%, 0.79, 0.69 |  |
 | give-back K7 NY AM 40% / 40pt | L6M | 8356 -> 8418 (-0.7%) | 0.34 / 0.67 / 0.56 / 0.39 | n/a | 0.55 / 0.43 / 0.39 | -22565 -> -23010 (-2.0%) | -13430 -> -13430 | +263 (+460; +257) | -324 .. +879 | 910 | -0.5%, 0.42, 0.64 |  |
 | give-back K7 NY AM 40% / 40pt | L3M | 9798 -> 9867 (-0.7%) | 0.39 / 0.67 / 0.56 / 0.89 | n/a | 0.10 / 0.23 / 0.35 | -22565 -> -23010 (-2.0%) | -13430 -> -13430 | +925 (+1619; +918) | +134 .. +1617 | 1122 | -0.3%, 0.46, 0.13 |  |
 | give-back K7 NY AM 40% / 40pt | HOLD | 24530 -> 23854 (+2.8%) | 0.47 / 0.20 / 0.78 / 0.10 | n/a | 0.68 / 0.73 / 0.95 | -74402 -> -75309 (-1.2%) | -31211 -> -30699 | +125 (+218; +118) | -350 .. +578 | 702 | +2.8%, 0.47, 0.67 |  |
@@ -174,14 +192,21 @@ Sets TL3_PC_<ID>_S<k> (JL2 + pc_hooks). Queue /mnt/l2/l2vast/_s2/pc_pending.txt 
 | London skip k=1.25 with UC, M7+P7 | L3M | 9798 -> 8141 (+16.9%) | 0.90 / 0.56 / 0.58 / 0.91 | n/a | 0.83 / 0.92 / 0.96 | -22565 -> -22508 (+0.2%) | -13430 -> -12590 | +895 (+1566; +949) | -1885 .. +3538 | 4104 | +14.9%, 0.76, 0.57 |  |
 | London skip k=1.25 with UC, M7+P7 | HOLD | 24530 -> 24548 (-0.1%) | 0.49 / 0.33 / 0.24 / 0.58 | n/a | 0.71 / 0.64 / 0.34 | -74402 -> -73823 (+0.8%) | -31211 -> -34751 | -63 (-110; -21) | -1402 .. +1362 | 2092 | -0.1%, 0.49, 0.72 |  |
 | London skip k=1.25 with UC, M7+P7 | GAP | 21125 -> 17779 (+15.8%) | 0.81 / 0.89 / 0.70 / 0.34 | n/a | 0.94 / 0.98 / 1.00 | -55206 -> -43490 (+21.2%) | -43527 -> -40390 | +466 (+816; +508) | -2501 .. +3147 | 4275 | +15.8%, 0.81, 0.94 |  |
+| M7 London cap 3 (block entry after 3 closes) | L6M | 8356 -> 8055 (+3.6%) | 0.55 / 0.24 / 0.16 / 1.00 | n/a | 0.20 / 0.18 / 0.10 | -22565 -> -23715 (-5.1%) | -13430 -> -15143 | +1747 (+3058; +1768) | +771 .. +2655 | 1426 | +5.2%, 0.62, 0.32 |  |
+| M7 London cap 3 (block entry after 3 closes) | L3M | 9798 -> 9454 (+3.5%) | 0.40 / 0.24 / 0.15 / 0.96 | n/a | 0.12 / 0.11 / 0.07 | -22565 -> -23715 (-5.1%) | -13430 -> -15143 | +1271 (+2224; +1284) | -61 .. +2512 | 1947 | +6.1%, 0.53, 0.07 |  |
+| M7 London cap 3 (block entry after 3 closes) | HOLD | 24530 -> 22302 (+9.1%) | 0.94 / 0.68 / 0.62 / 0.61 | n/a | 0.97 / 0.96 / 1.00 | -74402 -> -70924 (+4.7%) | -31211 -> -30596 | +264 (+461; +278) | -654 .. +1108 | 1333 | +9.1%, 0.94, 0.98 |  |
+| M7 London cap 3 (block entry after 3 closes) | GAP | 21125 -> 20825 (+1.4%) | 0.41 / 0.50 / 0.42 / 0.27 | n/a | 0.65 / 0.65 / 0.54 | -55206 -> -53876 (+2.4%) | -43527 -> -43527 | -120 (-209; -115) | -691 .. +360 | 795 | +1.4%, 0.41, 0.66 |  |
+| give-back H7 NY AM 40% / 40pt | L6M | 8356 -> 8076 (+3.3%) | 1.00 / 0.62 / 0.89 / 0.58 | n/a | 0.88 / 0.87 / 0.86 | -22565 -> -22565 (+0.0%) | -13430 -> -11690 | +82 (+143; +82) | -171 .. +354 | 397 | +4.0%, 1.00, 0.88 |  |
+| give-back H7 NY AM 40% / 40pt | L3M | 9798 -> 9368 (+4.4%) | 0.98 / 0.62 / 0.89 / 0.69 | n/a | 0.66 / 0.80 / 0.83 | -22565 -> -22565 (+0.0%) | -13430 -> -11690 | +130 (+228; +130) | -263 .. +561 | 623 | +5.8%, 0.98, 0.62 |  |
+| give-back H7 NY AM 40% / 40pt | HOLD | 24530 -> 24257 (+1.1%) | 0.76 / 0.94 / 0.65 / 0.50 | n/a | 0.66 / 0.57 / 0.50 | -74402 -> -72537 (+2.5%) | -31211 -> -31211 | +72 (+125; +71) | -191 .. +329 | 394 | +1.1%, 0.76, 0.70 |  |
+| give-back H7 NY AM 50% / 40pt | L6M | 8356 -> 8112 (+2.9%) | 0.99 / 0.62 / 0.93 / 0.59 | n/a | 0.88 / 0.86 / 0.86 | -22565 -> -22565 (+0.0%) | -13430 -> -11775 | +97 (+169; +97) | -134 .. +355 | 370 | +3.5%, 0.99, 0.88 |  |
+| give-back H7 NY AM 50% / 40pt | L3M | 9798 -> 9424 (+3.8%) | 1.00 / 0.62 / 0.93 / 0.61 | n/a | 0.65 / 0.80 / 0.83 | -22565 -> -22565 (+0.0%) | -13430 -> -11775 | +111 (+194; +111) | -278 .. +536 | 616 | +5.0%, 1.00, 0.62 |  |
+| give-back H7 NY AM 50% / 40pt | HOLD | 24530 -> 24246 (+1.2%) | 0.79 / 0.93 / 0.62 / 0.44 | n/a | 0.65 / 0.57 / 0.50 | -74402 -> -72627 (+2.4%) | -31211 -> -31211 | +48 (+84; +48) | -203 .. +296 | 378 | +1.2%, 0.79, 0.69 |  |
 
 | candidate | affected share real / ctrl mean (n draws, redraws) | new trades (path effect) |
 |---|---|---|
-| M7 London cap 3 (block entry after 3 closes) | 0.264 / 0.264 (200, 0) skip-type | 96 |
 | give-back H7 Asia 40% / 40pt | 0.348 / 0.349 (200, 31) delta-type | 20 |
 | give-back H7 Asia 60% / 30pt | 0.416 / 0.416 (200, 31) delta-type | 41 |
-| give-back H7 NY AM 40% / 40pt | 0.359 / 0.359 (200, 132) delta-type | 1 |
-| give-back H7 NY AM 50% / 40pt | 0.295 / 0.294 (200, 125) delta-type | 0 |
 | give-back K7 NY AM 40% / 40pt | 0.328 / 0.329 (200, 5) delta-type | 123 |
 | give-back K7 NY AM 50% / 20pt | 0.566 / 0.565 (200, 5) delta-type | 193 |
 | give-back P7 Asia 40% / 40pt | 0.381 / 0.382 (200, 1) delta-type | 486 |
@@ -198,6 +223,9 @@ Sets TL3_PC_<ID>_S<k> (JL2 + pc_hooks). Queue /mnt/l2/l2vast/_s2/pc_pending.txt 
 | K7 London fixed 40x60 (morning bracket cell) | 0.556 / 0.557 (200, 1) delta-type | 402 |
 | London skip k=1.25 true points, M7+P7 | 0.373 / 0.374 (200, 0) skip-type | 346 |
 | London skip k=1.25 with UC, M7+P7 | 0.440 / 0.440 (200, 0) skip-type | 279 |
+| M7 London cap 3 (block entry after 3 closes) | 0.257 / 0.257 (200, 0) skip-type | 102 |
+| give-back H7 NY AM 40% / 40pt | 0.359 / 0.359 (200, 132) delta-type | 1 |
+| give-back H7 NY AM 50% / 40pt | 0.295 / 0.294 (200, 125) delta-type | 0 |
 
 Notes. (a) Verdict uses W44-included windows; where the W44-removed result differs, the result rests on one week. (b) Affected share counts every trade whose P&L differs from JL2 in that book x session, including lot/stack path changes. (c) Small cells (H7 NY AM, P7 NY AM) need many redraws to hit the 0.05 share tolerance. (d) against-the-day T20 rows change no engine trades. (e) U7/A7/K7 fixed brackets touch most trades: control = permutation of the rule deltas across the same trades; the stop change is not reproduced by the control. (f) DV bootstrap column is W-DV's stationary block bootstrap of 52 weekly P&L (H12 window), when the cell is in DV_DD_TABLE.csv.
 

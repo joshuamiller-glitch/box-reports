@@ -51,8 +51,8 @@ Rule definitions. Day direction at the signal second from CLOSED 1-minute bars o
 | candidate | window | real DD cut / d mean | placebo 1-3 | matched 1-3 | verdict |
 |---|---|---|---|---|---|
 | session VWAP: AGAINST the day -> skip  | HOLD | +3.1% / +207 | +18.5% / -1911; +20.4% / -4830; +14.4% / -5871 | +1.2% / +640; -2.4% / -26; -0.0% / +58 | FAILS this window |
-| session VWAP: AGAINST the day -> skip  | L6M | -26.3% / -493 | n/f; -261.0% / -11286; n/f | n/f; n/f; n/f | not finished (controls pending) |
-| session VWAP: AGAINST the day -> skip  | L3M | -26.3% / +1158 | n/f; -261.0% / -12837; n/f | n/f; n/f; n/f | not finished (controls pending) |
+| session VWAP: AGAINST the day -> skip  | L6M | -26.3% / -493 | n/f; -261.0% / -11286; n/f | -0.3% / -4; n/f; +0.2% / +712 | not finished (controls pending) |
+| session VWAP: AGAINST the day -> skip  | L3M | -26.3% / +1158 | n/f; -261.0% / -12837; n/f | -0.3% / +461; n/f; +0.2% / +2133 | not finished (controls pending) |
 | session VWAP: AGAINST the day -> skip  | GAP | -23.9% / -1599 | +38.0% / -4189; -8.4% / -7603; -16.7% / -5870 | +1.0% / +813; +6.2% / +114; +0.1% / -188 | FAILS this window |
 | session VWAP: AGAINST the day -> skip  | PRE | +14.8% / -534 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
 | session VWAP: AGAINST the day -> skip  | X' | -46.0% / +178 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
