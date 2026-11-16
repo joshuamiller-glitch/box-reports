@@ -2,7 +2,7 @@
 
 VERDICT (5 of 5 windows complete for the leader): best joint set so far is JV_B: worst-window max-DD cut -1.0 % vs JN05W2, mean 555 $/wk avg; passes the tolerant gate in every complete window. Recent max DD is the single week 2026-W44, so read section 2 and section 5 before believing any recent cut. Strength: weak - see 6b (C rejected, A recent-only, D pending older windows); no PASS claim.
 
-Generated 2026-11-16 01:04 UTC (epoch 1794791081). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse). LOT/FEE BASIS: base lots (user lots are x1.75, so multiply every $ by 1.75); the engine charges $1.18 per contract round trip inside net_fee (what every table sums); the column d mean @4.84 reprices the change in mean at $4.84 RT per contract using the change in contracts traded (d mean - 3.66 x change in lots/wk), no rerun. Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-16 15:03 UTC (epoch 1794841436). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse). LOT/FEE BASIS: base lots (user lots are x1.75, so multiply every $ by 1.75); the engine charges $1.18 per contract round trip inside net_fee (what every table sums); the column d mean @4.84 reprices the change in mean at $4.84 RT per contract using the change in contracts traded (d mean - 3.66 x change in lots/wk), no rerun. Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
 
 Candidates: **A** = SM_A6_halfNP7 (first trade of a book-session lost -> later signals of that book-session at half lots, books K7 M7 U7 H7 A7; P7 untouched). **B** = U7 time stop on fresh entries (at 15:00 after the first fill, if open P&L < -10 pts: market exit, fresh context only). **C** = U7 Keltner-mid structure stop (stop at 5-min EMA20 mid - 2 pts, filled 1.4 pt adverse, lots x 60/stop distance clamped 25..60). Full specs in section 6.
 
@@ -383,6 +383,8 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 Sets with fewer than 4 complete windows (the D = London range-used-up combinations so far) are listed but cannot lead.
 
 **PATH EFFECT = FREED-BOOK REPLACEMENT (generic; PATH_EFFECT_RULE.md: a random 50 pct skip alone takes L6M DD 52k -> 86k, net 661k -> 428k): every skip-type rule (R, W, V, D, L, P, and F with its stack cut) is read against an engine random skip of the same keep share, see column vs random skip in DS3_V20_BUILD_LIST.md. F (A7 flat -40) is a path effect / stack-cut (W-PM: A7 itself +345 of +1,869 $/wk; StackCut exits 40 -> 15). BF, ABF, AF and any R-type skip pair inherit the flag until W-CF3 PX runs land.
+
+**CONTROL VALIDITY:** W-LR found its London random-skip controls (RK69/RK72, RKMP68/72, RKUC65) INVALID (per-second redraw lets a skipped signal re-enter a second later; keep share 0.87-0.92 vs 0.60-0.73 for the rule). Every E/G/D/L (London range-used-up) comparison against a random skip is marked INVALID CONTROL / not finished: no claim of beating random. The random sources of W-PR (random blocks), W-RA (PL seeds) and W-CF3 (RS_*) are unverified until each owner confirms the draw is per signal/event and not redrawn each second.
 
 ## 6b. Reading (written by W-JV)
 

@@ -1,11 +1,11 @@
 # SPEC_LONDON_RANGE_MP - exact live spec of the London range-used-up skip, M7 + P7 only (LS1_MP k=1, LS125_MP k=1.25)
 Written 2026-11-16 13:31Z by W-LR for D7 v2.0 build prep (USER ORDER BUILD PREP item 1; deadline order: no engine time used, every number from finished runs and stored trades). Research only, nothing on the execution server changes. **FIRST PASS: not a PASS claim.**
 
-**VERDICT (plain).** Recommend k = 1 (LS1_MP). On the live-equivalent base JN05W2JL2 (43 months, final) it adds about +1,657 / +895 $/wk base (L3M / L6M; x1.75 live +2,899 / +1,567) and +395 HOLD, +567 GAP, +524 PRE, -189 X', beating its three matched random-skip controls on mean in L3M, L6M, HOLD, PRE (not GAP, not X') and on DD in L3M, L6M, GAP, PRE (NOT HOLD). Strength: moderate on recent mean, weak on drawdown: the stack max DD is not reduced at a long horizon (FULL 43 months: -74.4k -> -78.2k, HOLD -74.4k -> -78.2k, because a skip frees the book: PATH EFFECT = FREED-BOOK REPLACEMENT, generic). It passes the T-RECENTS tolerant gate, fails the strict gate. **Fidelity warning (section 7): the engine compares a forecast in engine-price points with a range-so-far measured on a ratio-adjusted bar file that is 3-14% smaller; the unit-consistent re-score (cells TL3_LR_JL2_LS1_MPUC / LS125_MPUC) is built and queued but NOT run (LR engine quota is 0 until 20:00Z). Treat k as provisional until it is run.**
+**VERDICT (plain).** Recommend k = 1 (LS1_MP). On the live-equivalent base JN05W2JL2 (43 months, final) it adds about +1,657 / +895 $/wk base (L3M / L6M; x1.75 live +2,899 / +1,567) and +395 HOLD, +567 GAP, +524 PRE, -189 X', beating its three random-skip controls on mean in L3M, L6M, HOLD, PRE (not GAP, not X') and on DD in L3M, L6M, GAP, PRE (NOT HOLD) - BUT those controls are invalid (they remove only ~10% of trades, section 10). Strength: moderate on recent mean, weak on drawdown: the stack max DD is not reduced at a long horizon (FULL 43 months: -74.4k -> -78.2k, HOLD -74.4k -> -78.2k, because a skip frees the book: PATH EFFECT = FREED-BOOK REPLACEMENT, generic). It passes the T-RECENTS tolerant gate, fails the strict gate. **Fidelity warning (section 7): the engine compares a forecast in engine-price points with a range-so-far measured on a ratio-adjusted bar file that is 3-14% smaller; the unit-consistent re-score (cells TL3_LR_JL2_LS1_MPUC / LS125_MPUC) is built and queued but NOT run (LR engine quota is 0 until 20:00Z). Treat k as provisional until it is run.**
 
 Labelling: every number below is on the live-equivalent base **JN05W2JL2** (W-EV, live-faithful ATR series, 43 months landed) unless marked "OLD BASE (JN05W2)". Dollars are base (box) lots; live = x1.75 shown beside headline rows; the raw engine charges $1.18/contract round trip, the "$4.84" column reprices to FEES.md $4.84.
 
-**UPDATE (unit-consistent re-score, section 10, supersedes the k=1 recommendation below).** Measured in TRUE engine points (what live D7 will measure), k=1 LOSES the recent gain (L3M -161, L6M -195 $/wk base; recent DD 11.6% worse); k=1.25 keeps a small gain (+895 / +408 / +174 $/wk in L3M / L6M / HOLD, x1.75 live +1,566 / +714 / +305; DD flat in recent windows, GAP +641 with +21.2% DD). The old-unit k=1 numbers in sections 1-8 are OLD-UNIT (range 3-14% understated). **Do not build k=1 in true points. The live threshold must be at least k=1.25 in true points; the equivalent of the old-unit k=1 skip share is a true-point k of about 1.4 (interpolated, NOT run). No matched random control exists for the unit-consistent cells.** Off / Shadow only.
+**UPDATE (unit-consistent re-score, section 10, supersedes the k=1 recommendation below).** Measured in TRUE engine points (what live D7 will measure), k=1 LOSES the recent gain (L3M -161, L6M -195 $/wk base; recent DD 11.6% worse); k=1.25 keeps a small gain (+895 / +408 / +174 $/wk in L3M / L6M / HOLD, x1.75 live +1,566 / +714 / +305; DD flat in recent windows, GAP +641 with +21.2% DD). The old-unit k=1 numbers in sections 1-8 are OLD-UNIT (range 3-14% understated). **Do not build k=1 in true points. The live threshold must be at least k=1.25 in true points; the equivalent of the old-unit k=1 skip share is a true-point k of about 1.4 (interpolated, NOT run). The random controls in this spec are INVALID as run (they remove only ~10% of trades, see section 10), so there is no valid control for any setting: NOT A PASS. Off / Shadow only; if built at all k >= 1.25 in true points.**
 
 ## 1. What the rule does (as scored)
 1. **Scope.** Engine session 1 = London = entry time 02:00:00 <= t < 08:30:00 America/New_York. Asia (18:00-02:00), pre-market (08:30-09:30), NY AM (09:30-12:00) and NY PM are never gated (identity: slice delta 0.0 in Asia). Books: **M7 and P7 only** (K7, U7, H7, A7, O7 untouched; legacy X3/X4/X5 never gated).
@@ -179,9 +179,9 @@ D7 already holds everything needed: (a) 1-minute NQ bars (highs, lows, closes, t
 - Strict gate fails and HOLD/GAP matched-control reads are as stated; the random controls are 3 seeds (placebo shifts 11/23/37 days exist only on the old base).
 - Numbers produced from the existing finished runs only (no engine time used for this document).
 
-## 10. UNIT-CONSISTENT RE-SCORE (range used rescaled to TRUE engine-price points) - corrected numbers, JN05W2JL2 base
+## 10. UNIT-CONSISTENT RE-SCORE (range used in TRUE engine-price points) - corrected numbers, JN05W2JL2 base
 
-**Which numbers are which.** Sections 1-6 and 8 were scored with range-so-far measured in the ratio-adjusted bar-file points (OLD-UNIT, 3-14% too small against the engine-price forecast). THIS section is UNIT-CONSISTENT: R(true) = R(file) x (engine price / file close at the signal minute), the unit a live D7 will measure in, since live bars are true prices. Cells TL3_LR_JL2_LS1_MPUC (k=1) and TL3_LR_JL2_LS125_MPUC (k=1.25); identity cell TL3_LR_JL2_UCID (rule path active, rescale on, never fires) on 202610 = JN05W2JL2: 642 trades, net 27,487.58 = 642, 27,487.58 IDENTICAL. Everything else (forecast, M7+P7, London, 60-point target, tests) is unchanged.
+**Which numbers are which.** Sections 1-6 and 8 are OLD-UNIT: range-so-far measured in the ratio-adjusted bar-file points (3-14% too small against the engine-price forecast). THIS section is UNIT-CONSISTENT: R(true) = R(file) x (engine price / file close at the signal minute), the unit a live D7 measures (live bars are true prices). Cells TL3_LR_JL2_LS{1,125,15,2}_MPUC (k = 1, 1.25, 1.5, 2); identity TL3_LR_JL2_UCID on 202610 = JN05W2JL2: 642 trades, net 27,487.58 = 642, 27,487.58 IDENTICAL. Forecast, M7+P7, London, 60-point target, test unchanged. 'NOT FINISHED' = engine quota was cut to 0 before the cell finished (no further engine work until quotas are restored).
 
 **LS1_MPUC (k = 1, true points), scope all**
 
@@ -191,8 +191,8 @@ D7 already holds everything needed: (a) 1-minute NQ bars (highs, lows, closes, t
 | L6M | -195 | -342 | -138 | -22565 -> -25189 (-11.6%) | -6017 | 10.50 (10.88) | 102% | 0 | -11.9% |
 | HOLD | -375 | -656 | -321 | -74402 -> -72184 (+3.0%) | -2113 | 10.34 (10.53) | 97% | 1 | +3.0% |
 | GAP | +619 | +1083 | +661 | -55206 -> -40984 (+25.8%) | +3807 | 8.88 (9.45) | 95% | 0 | - |
-| PRE | not run / not complete when this was written | | | | | | | | |
-| X' | not run / not complete when this was written | | | | | | | | |
+| PRE | +447 | +782 | +491 | -73618 -> -60785 (+17.4%) | +13241 | 8.66 (9.22) | 106% | 3 | - |
+| X' | NOT FINISHED | | | | | | | | |
 
 **LS125_MPUC (k = 1.25, true points), scope all**
 
@@ -202,24 +202,54 @@ D7 already holds everything needed: (a) 1-minute NQ bars (highs, lows, closes, t
 | L6M | +408 | +714 | +459 | -22565 -> -22508 (+0.2%) | +839 | 10.46 (10.88) | 102% | 0 | +0.0% |
 | HOLD | +174 | +305 | +221 | -74402 -> -73823 (+0.8%) | -3540 | 10.32 (10.53) | 99% | 1 | +0.8% |
 | GAP | +641 | +1121 | +680 | -55206 -> -43490 (+21.2%) | +3138 | 8.93 (9.45) | 96% | 0 | - |
-| PRE | not run / not complete when this was written | | | | | | | | |
-| X' | not run / not complete when this was written | | | | | | | | |
+| PRE | NOT FINISHED | | | | | | | | |
+| X' | NOT FINISHED | | | | | | | | |
 
-**Side by side (scope all, d mean $/wk base / DD cut; OLD-UNIT as scored vs UNIT-CONSISTENT)**
+**LS15_MPUC (k = 1.5, true points), scope all**
 
-| window | k=1 OLD-UNIT | k=1 UNIT-CONSISTENT | k=1.25 OLD-UNIT | k=1.25 UNIT-CONSISTENT |
-|---|---|---|---|---|
-| L3M | +1657 / +0.2% | -161 / -11.6% | +2205 / +0.2% | +895 / +0.2% |
-| L6M | +895 / +0.2% | -195 / -11.6% | +1200 / +0.2% | +408 / +0.2% |
-| HOLD | +395 / -5.1% | -375 / +3.0% | +555 / -8.6% | +174 / +0.8% |
-| GAP | +567 / +24.5% | +619 / +25.8% | +220 / +11.7% | +641 / +21.2% |
-| PRE | +524 / +16.4% | n/a | +863 / +16.9% | n/a |
-| X' | -189 / -0.0% | n/a | -82 / -1.0% | n/a |
+| window | d mean $/wk base | x1.75 live | at $4.84 RT | max DD ref -> cell (cut) | d worst week | full stops/wk cell (ref) | best-5 weeks kept | winning weeks turned losing | DD cut with W44 removed |
+|---|---|---|---|---|---|---|---|---|---|
+| L3M | +709 | +1241 | +758 | -22565 -> -22508 (+0.2%) | +839 | 9.97 (10.27) | 91% | 0 | +0.0% |
+| L6M | +561 | +981 | +607 | -22565 -> -22508 (+0.2%) | +839 | 10.54 (10.88) | 103% | 0 | +0.0% |
+| HOLD | +3 | +6 | +47 | -74402 -> -78185 (-5.1%) | -3540 | 10.32 (10.53) | 99% | 2 | -5.1% |
+| GAP | NOT FINISHED | | | | | | | | |
+| PRE | NOT FINISHED | | | | | | | | |
+| X' | NOT FINISHED | | | | | | | | |
 
-M7+P7 London trade keep share (cell / JN05W2JL2): k=1 OLD-UNIT L6M 0.674, HOLD 0.650; k=1 UNIT-CONSISTENT 0.597 / 0.561; k=1.25 OLD-UNIT 0.717 / 0.697; k=1.25 UNIT-CONSISTENT 0.649 / 0.622.
+**LS2_MPUC (k = 2, true points), scope all**
 
-**What changed (plain).** In true engine points the rule skips MORE at the same k (the file range was understated, so the old-unit rule skipped less than its k says). At k=1 the recent gain disappears (L3M -161, L6M -195 $/wk) and the recent max DD gets 11.6% deeper; the old-unit k=1 result (+1,657 / +895) was a rule that skips about as many M7+P7 London signals as a true-unit k of roughly 1.4-1.5 would (keep share 0.67 vs 0.60 at true k=1 and 0.65 at true k=1.25): **in true points the threshold must be larger, not k=1.** Unit-consistent k=1.25 keeps a smaller gain: +895 / +408 / +174 $/wk in L3M / L6M / HOLD (x1.75 live +1,566 / +714 / +305), DD cut +0.2 / +0.2 / +0.8% (flat), GAP +641 $/wk with +21.2% DD. It no longer has its matched random control (the RKMP controls were matched to the OLD-UNIT keep shares 0.68 / 0.72; the unit-consistent keep share is 0.65 / 0.62), so no placebo-beating claim can be made for the unit-consistent cells.
+| window | d mean $/wk base | x1.75 live | at $4.84 RT | max DD ref -> cell (cut) | d worst week | full stops/wk cell (ref) | best-5 weeks kept | winning weeks turned losing | DD cut with W44 removed |
+|---|---|---|---|---|---|---|---|---|---|
+| L3M | +1150 | +2013 | +1191 | -22565 -> -22508 (+0.2%) | +839 | 10.04 (10.27) | 96% | 0 | +0.0% |
+| L6M | +672 | +1177 | +713 | -22565 -> -22508 (+0.2%) | +839 | 10.61 (10.88) | 99% | 0 | +0.0% |
+| HOLD | NOT FINISHED | | | | | | | | |
+| GAP | NOT FINISHED | | | | | | | | |
+| PRE | NOT FINISHED | | | | | | | | |
+| X' | NOT FINISHED | | | | | | | | |
 
-**Live threshold recommendation (provisional).** The live code MUST measure R in true engine points (live bars are true prices, so this is automatic) and compare with F = pred x last close in the same units. The scored evidence supports a true-unit k of at least 1.25 (not 1.0); k = 1.25 in true points is the smallest tested setting that is non-negative in all of L3M, L6M, HOLD and GAP, but its gain is small (+408 $/wk in L6M base) and not shown to beat a matched random skip. A true-unit k of 1.5 and 2 (closer to the old-unit k=1 skip share) are NOT run (engine quota); request: TL3_LR_JL2_LS15_MPUC and LS2_MPUC if the engine is available. Until they are run, Off / Shadow only; log every skipped signal with R(true), F, rem.
+**Side by side, scope all (d mean $/wk base / max-DD cut); OLD-UNIT vs UNIT-CONSISTENT**
 
-PRE / X' / GAP for the unit-consistent cells: shown above where complete; rows marked "not run / not complete" were not finished when this was written (LR quota until ~20:00Z; PRE/X' only if finished before 19:00Z).
+| window | k=1 OLD-UNIT | k=1 TRUE | k=1.25 OLD-UNIT | k=1.25 TRUE | k=1.5 TRUE | k=2 TRUE |
+|---|---|---|---|---|---|---|
+| L3M | +1657 / +0.2% | -161 / -11.6% | +2205 / +0.2% | +895 / +0.2% | +709 / +0.2% | +1150 / +0.2% |
+| L6M | +895 / +0.2% | -195 / -11.6% | +1200 / +0.2% | +408 / +0.2% | +561 / +0.2% | +672 / +0.2% |
+| HOLD | +395 / -5.1% | -375 / +3.0% | +555 / -8.6% | +174 / +0.8% | +3 / -5.1% | not finished |
+| GAP | +567 / +24.5% | +619 / +25.8% | +220 / +11.7% | +641 / +21.2% | not finished | not finished |
+| PRE | +524 / +16.4% | +447 / +17.4% | +863 / +16.9% | not finished | not finished | not finished |
+| X' | -189 / -0.0% | not finished | -82 / -1.0% | not finished | not finished | not finished |
+
+M7+P7 London trade keep share (cell / JN05W2JL2), L6M / HOLD: k=1 OLD-UNIT 0.674 / 0.650; k=1 TRUE 0.597 / 0.561; k=1.25 TRUE 0.649 / 0.622; k=1.5 TRUE 0.690 / 0.662; k=2 TRUE 0.729 / n/a.
+
+**HOLD drawdown effect (stated explicitly), JN05W2JL2 HOLD max DD -74,402.** k=1.25 TRUE: -73,823 (+0.8%, essentially unchanged); k=1.5 TRUE: HOLD DD -5.1% deeper; k=1 TRUE: -72,184 (+3.0%) but with negative mean (-375). Old-unit k=1: -78,185 (-5.1%), old-unit k=1.25: -80,811 (-8.6%). **The rule does not cut the HOLD drawdown at any tested setting; at best it leaves it unchanged.**
+
+**Random controls: INVALID AS RUN (disclosed).** The RKMP (old-unit) and RKUC65 (true-unit) random-skip cells draw a fresh random number every second, so a skipped signal is redrawn the next second and the book enters shortly after: they remove only about 10% of M7+P7 London trades (keep share 0.87-0.92 in L6M/HOLD; measured) while the rule keeps 0.60-0.73. They are NOT matched controls; every sentence in sections 5 and 6 and the verdict saying the rule "beats matched random controls" must be read as "beats a random skip that removes only ~10% of trades". A persistent random skip (hook flag bucket=300, one draw per 5-minute bucket per book and side) is coded but NOT run (quota 0). Valid, as-run (under-skipping) control results for what they are worth, scope all, d mean $/wk / DD cut:
+
+| window | RKUC65 seed 1 | seed 2 | seed 3 | (true-unit rule k=1.25 | k=1.5 | k=2) |
+|---|---|---|---|---|---|---|
+| L3M | -1582 / -2.1% | -2999 / -24.0% | -2430 / -14.9% | +895 / +0.2% | +709 / +0.2% | +1150 / +0.2% |
+| L6M | -1559 / -2.1% | -2193 / -24.0% | -1123 / -14.9% | +408 / +0.2% | +561 / +0.2% | +672 / +0.2% |
+| HOLD | not finished | -833 / +4.9% | +107 / +8.3% | +174 / +0.8% | +3 / -5.1% | not finished |
+
+**k recommendation in true points (plain).** Minimum k that holds L6M and HOLD (mean >= 0 and DD not worse than 2%): **k = 1.25** (L6M +408, HOLD +174 $/wk base; DD +0.2% / +0.8%). k = 1.5 fails the HOLD DD tolerance (-5.1%) with HOLD mean +3; k = 2 has L3M +1,150 / L6M +672 but its HOLD is not finished. k = 1 loses the recent gain and is worse by 11.6% in the recent DD. **The controls are invalid as run, so no setting beats a valid matched control on mean AND DD: this is NOT a pass. Recommendation: Off / Shadow. If built at all: k >= 1.25 in true points, range measured in TRUE points from 1-min bars, forecast in true points, constants of section 2 unchanged; log every skipped signal (R(true), F, rem). Do not count on a drawdown benefit: the HOLD drawdown is unchanged at best.**
+
+**Not finished (stated plainly):** k=2 HOLD; PRE/X'/GAP for k=1.5 and k=2 and X' for all; PRE for k=1.25; persistent-skip matched controls; random controls at the LS15/LS2 keep shares. LR quota is 0 until the lead restores it.

@@ -1,8 +1,8 @@
 # DS3_REENTRY_ALL - re-entry discipline for K7 M7 U7 H7 A7 O7 (W-RA, priority 6)
 
-**VERDICT: 52 of 258 re-entry cells x windows scored (506 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
+**VERDICT: 52 of 258 re-entry cells x windows scored (518 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
 
-Built epoch 1794832518. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
+Built epoch 1794841560. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
 
 **PATH EFFECT = FREED-BOOK REPLACEMENT (generic; autopilot/PATH_EFFECT_RULE.md).** Every cap and block here frees the book, so the freed book takes later weaker re-signals and drawdown can rise for ANY skip (random 50% skip: DD 86k vs base 52k). The baseline for every number below is therefore the exact random-block placebo at the same per-book block rate, NOT the base alone: read each delta against its placebo seeds (section 5, scoped table, 5c). A rule that does not beat its placebos is just 'fewer re-entries'.
 
@@ -267,9 +267,9 @@ Stack level (scope all):
 | HALF | HOLD | 524.1 | 524.1 | 9.0 | 9.0 | 1 | -141.9 | -0.6 |
 | HALF | L3M | -558.0 | 210.8 | 1.5 | 17.1 | 2 | -668.9 | -0.0 |
 | HALF | L6M | -614.8 | 189.6 | 1.5 | 17.1 | 2 | -56.7 | -0.0 |
-| M7L_CAP3 | HOLD | -310.5 | 209.1 | -4.1 | 13.9 | 6 | 955.5 | 3.5 |
-| M7L_CAP3 | L3M | -2359.5 | -824.0 | -5.0 | 0.2 | 7 | 690.7 | -2.6 |
-| M7L_CAP3 | L6M | -1681.1 | -836.9 | -5.0 | -2.5 | 6 | 923.3 | -2.6 |
+| M7L_CAP3 | HOLD | -310.5 | 209.1 | -4.1 | 13.9 | 7 | 955.5 | 3.5 |
+| M7L_CAP3 | L3M | -2359.5 | -824.0 | -7.2 | 0.2 | 8 | 690.7 | -2.6 |
+| M7L_CAP3 | L6M | -1681.1 | -836.9 | -7.2 | 0.2 | 8 | 923.3 | -2.6 |
 
 ### Scoped exact placebos for the leads (random block at the real per-book rate, 3 seeds)
 
@@ -327,9 +327,109 @@ t_cluster = mean weekly delta / its week-clustered standard error; CI = paired w
 
 Reading: CAP3 is the only real cell whose 90% interval clears zero (t about 2.0) and it still leans on a few weeks (about half the mean survives without the 3 best weeks); two of its three placebo seeds are negative but seed 3 gives +703 $/wk, so the separation from random blocking is real in the mean and thin in the interval. CAP2 and CAP4 have positive means but intervals that include zero. BLKiv (evidence-based block) is indistinguishable from its random-block placebos, i.e. the evidence content adds nothing beyond having fewer re-entries. Many scopes and cells were looked at (14 cells x 12 scopes): treat as a LEAD, not a result. Identity re-check after the hook edit: TL3_RA_IDB 202610 598 trades 25943.82 IDENTICAL to ID and JN05W2; TL3_RA_CAP3B IDENTICAL to stored CAP3 (554 trades, 7151.34).
 
+## 5c. Week-clustered robustness, M7_london_M7L (HOLD = last 12 months, 52 weeks; delta vs JN05W2 on the scope; real cell and its 3 exact placebo seeds)
+
+t_cluster = mean weekly delta / its week-clustered standard error; CI = paired week bootstrap 90%; mean_noW44 = without week 2026-W44; mean_wo_top3 = without the 3 best delta weeks; P_dd_shallower = share of 2000 week-resamples (52 weeks, the full horizon) in which the cell max DD is shallower than the reference. Base-lot engine dollars ($1.18 RT); x1.75 for live lots.
+
+| cell | run | weeks | mean_wk | t_cluster | ci90_lo | ci90_hi | pos_weeks | mean_noW44 | mean_wo_top3 | dd_ref | dd_cell | P_dd_shallower |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| M7L_CAP3 | real | 52 | 1175.58 | 2.68 | 455.18 | 1887.51 | 0.63 | 1200.46 | 709.66 | -27910.88 | -13860.90 | 0.99 |
+| M7L_CAP3 | PL1 | 52 | 244.60 | 0.45 | -641.53 | 1147.61 | 0.56 | 249.38 | -286.10 | -27910.88 | -26315.98 | 0.71 |
+| M7L_CAP3 | PL2 | 52 | 258.45 | 0.50 | -581.92 | 1098.97 | 0.52 | 276.73 | -219.06 | -27910.88 | -22795.30 | 0.73 |
+| M7L_CAP3 | PL3 | 52 | 639.22 | 1.27 | -170.47 | 1457.08 | 0.58 | 677.78 | 248.86 | -27910.88 | -19621.54 | 0.91 |
+| M7L_CAP3 | PL4 | 52 | 395.83 | 0.81 | -422.10 | 1196.29 | 0.63 | 403.58 | -88.44 | -27910.88 | -25006.22 | 0.73 |
+| M7L_CAP3 | PL5 | 52 | 663.20 | 1.42 | -91.50 | 1424.82 | 0.56 | 688.51 | 235.56 | -27910.88 | -18016.22 | 0.93 |
+| M7L_CAP3 | PL6 | 52 | 328.49 | 0.64 | -510.34 | 1172.86 | 0.52 | 347.24 | -107.12 | -27910.88 | -26962.84 | 0.81 |
+| M7L_CAP3 | PL7 | 52 | 292.66 | 0.56 | -563.31 | 1134.99 | 0.56 | 271.16 | -198.63 | -27910.88 | -26087.90 | 0.68 |
+
+Reading (M7-only rule, no coupling with other books): M7L_CAP3 gives the largest, cleanest number so far, t about 2.7, 90% interval clear of zero, about 60% of the mean survives without the 3 best weeks and without W44, M7 London DD halves (P shallower 0.99); the 7 valid same-keep placebo seeds give +245..+663 $/wk (mean about +350), so the real cell exceeds the best placebo by about +500 $/wk. Still a lead: one search family, one 52-week horizon, placebo seeds overlap in DD.
+
 ## 5b. Walk-forward every 2 weeks (per book x session pick of the best of 14 cells on trailing 182 days, DD cut + 0.5 x mean; none if <= 0)
 
 Aggregated on the JN05W2 stack daily series from 20260504.0 (coupling ignored). WF: mean 25321 $/wk (ref 25430), max DD -48854 (ref -52233), worst week -35947 (ref -36371). Placebo = same procedure picking a random variant (or none) each block, 30 draws: DD -60435..-41662 (mean -50890), mean 22629..26235, worst week -44512..-25859. WF DD is inside the placebo range.
+
+## 5a. Placebo validity: measured keep share vs the real rule (L6M)
+
+Draw method: the random block is drawn ONCE per signal second from a hash of (seed, book, signal second) (events are logged once per signal: evaluations per signal second = 1.0, so there is no per-second redraw of the same signal). A later re-signal of the same idea IS a new signal with a new draw, as in the real rule. The control that matters is the REALIZED keep share: entries with >= 1 earlier close in the same session instance, placebo run / JN05W2, against the same number for the real rule. Sets whose realized keep differs from the real rule by more than 0.05 are marked INVALID CONTROL.
+
+| placebo | book | real_keep | placebo_keep | dev | INVALID_CONTROL |
+|---|---|---|---|---|---|
+| PL1_BLKiv | K7 | 0.868 | 0.920 | 0.053 | True |
+| PL1_BLKiv | M7 | 0.630 | 0.638 | 0.008 | False |
+| PL1_BLKiv | H7 | 0.608 | 0.608 | 0.000 | False |
+| PL1_BLKiv | A7 | 0.639 | 0.639 | 0.000 | False |
+| PL1_BLKiv | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL1_CAP2 | K7 | 0.363 | 0.385 | 0.021 | False |
+| PL1_CAP2 | M7 | 0.398 | 0.442 | 0.044 | False |
+| PL1_CAP2 | U7 | 0.921 | 0.843 | -0.079 | True |
+| PL1_CAP2 | H7 | 0.824 | 0.824 | 0.000 | False |
+| PL1_CAP2 | A7 | 0.436 | 0.405 | -0.031 | False |
+| PL1_CAP2 | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL1_CAP3 | K7 | 0.602 | 0.606 | 0.004 | False |
+| PL1_CAP3 | M7 | 0.680 | 0.703 | 0.023 | False |
+| PL1_CAP3 | H7 | 0.961 | 0.961 | 0.000 | False |
+| PL1_CAP3 | A7 | 0.731 | 0.696 | -0.035 | False |
+| PL1_CAP3 | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL1_CAP4 | K7 | 0.735 | 0.728 | -0.007 | False |
+| PL1_CAP4 | M7 | 0.848 | 0.907 | 0.059 | True |
+| PL1_CAP4 | A7 | 0.868 | 0.907 | 0.040 | False |
+| PL1_CAP4 | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL1_HALF | U7 | 0.989 | 1.011 | 0.022 | False |
+| PL1_HALF | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL1_M7L_CAP3 | M7 | 0.565 | 0.585 | 0.020 | False |
+| PL2_BLKiv | K7 | 0.868 | 0.921 | 0.053 | True |
+| PL2_BLKiv | M7 | 0.630 | 0.640 | 0.010 | False |
+| PL2_BLKiv | H7 | 0.608 | 0.608 | 0.000 | False |
+| PL2_BLKiv | A7 | 0.639 | 0.639 | 0.000 | False |
+| PL2_BLKiv | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL2_CAP2 | K7 | 0.363 | 0.357 | -0.006 | False |
+| PL2_CAP2 | M7 | 0.398 | 0.444 | 0.046 | False |
+| PL2_CAP2 | U7 | 0.921 | 0.955 | 0.034 | False |
+| PL2_CAP2 | H7 | 0.824 | 0.804 | -0.020 | False |
+| PL2_CAP2 | A7 | 0.436 | 0.419 | -0.018 | False |
+| PL2_CAP2 | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL2_CAP3 | K7 | 0.602 | 0.588 | -0.014 | False |
+| PL2_CAP3 | M7 | 0.680 | 0.691 | 0.011 | False |
+| PL2_CAP3 | H7 | 0.961 | 1.000 | 0.039 | False |
+| PL2_CAP3 | A7 | 0.731 | 0.696 | -0.035 | False |
+| PL2_CAP3 | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL2_CAP4 | K7 | 0.735 | 0.732 | -0.003 | False |
+| PL2_CAP4 | M7 | 0.848 | 0.893 | 0.046 | False |
+| PL2_CAP4 | A7 | 0.868 | 0.899 | 0.031 | False |
+| PL2_CAP4 | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL2_HALF | U7 | 0.989 | 1.011 | 0.022 | False |
+| PL2_HALF | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL2_M7L_CAP3 | M7 | 0.565 | 0.595 | 0.030 | False |
+| PL3_BLKiv | K7 | 0.868 | 0.893 | 0.025 | False |
+| PL3_BLKiv | M7 | 0.630 | 0.630 | 0.000 | False |
+| PL3_BLKiv | H7 | 0.608 | 0.608 | 0.000 | False |
+| PL3_BLKiv | A7 | 0.639 | 0.639 | 0.000 | False |
+| PL3_BLKiv | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL3_CAP2 | K7 | 0.363 | 0.379 | 0.015 | False |
+| PL3_CAP2 | M7 | 0.398 | 0.438 | 0.040 | False |
+| PL3_CAP2 | U7 | 0.921 | 0.933 | 0.011 | False |
+| PL3_CAP2 | H7 | 0.824 | 0.843 | 0.020 | False |
+| PL3_CAP2 | A7 | 0.436 | 0.454 | 0.018 | False |
+| PL3_CAP2 | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL3_CAP3 | K7 | 0.602 | 0.610 | 0.008 | False |
+| PL3_CAP3 | M7 | 0.680 | 0.695 | 0.015 | False |
+| PL3_CAP3 | H7 | 0.961 | 0.941 | -0.020 | False |
+| PL3_CAP3 | A7 | 0.731 | 0.665 | -0.066 | True |
+| PL3_CAP3 | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL3_CAP4 | K7 | 0.735 | 0.750 | 0.015 | False |
+| PL3_CAP4 | M7 | 0.848 | 0.899 | 0.051 | True |
+| PL3_CAP4 | A7 | 0.868 | 0.907 | 0.040 | False |
+| PL3_CAP4 | O7 | 0.000 | 0.000 | 0.000 | False |
+| PL3_M7L_CAP3 | M7 | 0.565 | 0.565 | 0.000 | False |
+| PL4_M7L_CAP3 | M7 | 0.565 | 0.592 | 0.028 | False |
+| PL5_M7L_CAP3 | M7 | 0.565 | 0.534 | -0.030 | False |
+| PL6_M7L_CAP3 | M7 | 0.565 | 0.552 | -0.013 | False |
+| PL7_M7L_CAP3 | M7 | 0.565 | 0.567 | 0.003 | False |
+| PL8_M7L_CAP3 | M7 | 0.565 | 0.567 | 0.003 | False |
+
+INVALID CONTROL (book level): PL1_BLKiv/K7 (dev +0.05), PL1_CAP2/U7 (dev -0.08), PL1_CAP4/M7 (dev +0.06), PL2_BLKiv/K7 (dev +0.05), PL3_CAP3/A7 (dev -0.07), PL3_CAP4/M7 (dev +0.05).
+
+Scope caveat: the all-books cap-3 placebos PL1-3_CAP3 keep MORE M7 London entries than the real CAP3 (realized keep of n>=2 entries 0.72/0.70/0.73 vs 0.62), i.e. dev +0.08 to +0.11 in the London scope: INVALID CONTROL for the M7 London comparison, they flatter nothing (a weaker block than the real rule). For M7 London use PL1-8_M7L_CAP3 (rule restricted to M7 London; realized keep 0.53-0.60 vs the real M7L_CAP3 0.565, all within 0.04: valid).
 
 ## 6. Live night 2026-11-13 (K7 and M7, London 02:00-08:30 ET), what each rule would have done
 

@@ -1,12 +1,14 @@
 # DS3_ENGINE_VS_LIVE - PRIORITY 13 engine vs live (W-EV)
 
+VOID NOTICE (user root cause 11-16): live read every NQ depth event and tick once per NQ data series (13), and in the v1.5 state engine a drifted book; every live-vs-engine statement below that rests on book or volume features (pulled_mult, delta_mult, tot_rel, imb5/10, ahead_rel, MedLevel, the L2 entry gate, the silent-cut attribution) is VOID as an engine finding; price-based rules, flat stand-ins, caps, layers and entry signals STAND. Map and dates in section 14.
+
 SCALE CORRECTION (11-16): earlier x1.75 columns of the label-week tables applied x1.75 to the whole week; live lots were box-scale until 11-11 17:00 ET and x1.75 after, so engine-vs-live week dollars are now shown on LIVE SCALE (x1.75 only for exits from 11-11 18:00 ET).
 
 LOT BASIS (lead, 11-14): JN05W2-family sets are at BASE (box) lots; live is x1.75 in the user-lot build; raw engine net_fee charges $1.18/contract RT (not the $4.84 of FEES.md) with the engine own fills; live fills carry the actual NT fees.
 
 Basis of every dollar figure on this page: (a) usdB, usdC, the "mismatch causes" dollars and the live-vs-engine total P&L compare LIVE dollars (actual NT commissions) with ENGINE base-lot dollars (fee $1.18/contract). For the matched window 11-01..11-11 live ran box-scale lots (P7 qty 7/4, K7 1-2, etc.; the x1.75 user lots first appear 11-12), so these two sides are on the SAME lot scale: no x1.75 factor is applied or needed, and the only dollar bias is the fee difference (about $3.7 per contract RT, engine more favourable) plus fill drift. (b) Day-cap and give-back tests use LIVE dollars against caps converted to live dollars for the box-lot weeks (section 5). (c) Section 7 (re-score) compares engine with engine: stored reference month results vs the engine-copy runs, both base-lot dollars, both at the $1.18 fee: no lot or fee mismatch inside that table; multiply by 1.75 for user-lot dollars. (d) Entry-match counts (A/B/C, U) contain no dollars and no lot or fee dependence.
 
-VERDICT (data ends 2026-11-13; 2026-11-16 13:39Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP_LC): ALL 0.675, W45 0.742, W46 0.567. Conditional on live exits (live-drive): 0.858 (TL3_EV_LPBP_LC_D).
+VERDICT (data ends 2026-11-13; 2026-11-16 15:10Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-second stamps, +-30 s): entry match U = A/(A+B+C) is 0.645 before any fix (best of LPB / JN04RM / JN05W2: TL3_EV_JN04RM_S), 0.730 in the first week (11-01..11-06) and 0.497 in the second (11-08..11-11); chance level (engine shifted 1-3 days or 10-60 min) is 0.00-0.01; raw signals agree (353 of 357 live entries have an engine signal), so the miss is exit cascades, live-cut silence, day-cap states and panel cells, not signals. AFTER the panel-timeline fix (TL3_EV_LPBP_LC): ALL 0.675, W45 0.742, W46 0.567. Conditional on live exits (live-drive): 0.858 (TL3_EV_LPBP_LC_D).
 
 Shadow only, no PASS claims, nothing adopted into the shared engine. Prereg autopilot/EV_PREREG.md (sha in DECISIONS.md). Code outputs/code/th_engfix/ (evmatch.py, ev_analyze.py, ev_report.py, ev_run.py, ev_drive.py, ev_panel.py, ev_jnprep.py, build_page.py, page_gen.py); runs and logs /mnt/l2/l2vast/_engvslive/. Admission tag EV (TL3_EV_*).
 
@@ -668,6 +670,52 @@ Section 12 above is kept as is: this section tests the explanation.
 | blind 79 pct of seconds, seed 5                                                     | 190      | 25           | 21890      | 8848             | 21719        | 38008              |
 | blind 79 pct: mean of 4 seeds                                                       | 187      | 25           | 17388      | 3952             | 23979        | 40322              |
 | LIVE actual (its own lots: box to 11-11 17:00, x1.75 after; actual fees)            | 177      | 45           |            | -26520           |              | 56825              |
+
+## 14. User root cause 11-16 (NinjaTrader delivers every NQ depth event and tick once per NQ data series; D7 had 13): what is VOID, what stands, when it started, what it explains
+### 14a. NQ data series by date (from the DS7.cs v1.9a header history; series = bars objects on the NQ chart, each receiving its own copy of every depth event and tick)
+| date (header) | version | NQ series added | NQ series total |
+|--|--|--|--|
+| 2026-10-26/27 | DS3 / DS5 lineage | chart 1-min + Keltner 3-min + Supertrend 10-min | 3 (Keltner/SM series exist in DualStrat2/DS3 too: more than one NQ series long before 10-26; no depth or volume feature was read from it then) |
+| 2026-10-27 | D6 v1.0 | + 5-min EM series (BarsInProgress 3); ES and RTY series (4, 5) are other instruments | 4 |
+| 2026-10-28 evening | D6 v1.3 | + 30-s and 15-s series (iFVG, kept as sub-bars in the code since) | 6 |
+| 2026-10-29 | D6 v1.8 / v2.0 | FIRST LIVE BOOK FEATURES: OnMarketDepth top-10 -> imb5, imb10, wall_tgt, wall_stop; TH-L2 loss cut and L2-gated entry (v1.9, 10-29) read per-print pulled/MedLevel | 6 |
+| 2026-10-30 | D6 v2.2 | + 45-s confirmation series, + 5-min trend-sizer series | 8 |
+| 2026-11-01 (Sunday install) | D7 v1.0a | + alt-bar slots X1..X5 (X6..X8 Off) | 13 (bip 0,1,2,3,6..14) |
+| 2026-11-08 23:30Z | D7 v1.5 | state engine (StateTick / 1-s book states) reads the same duplicated depth and tick stream | 13 |
+| 2026-11-16 | v1.9c | primary-series copy only | 1 |
+So: the first live day with more than one NQ series is long before the live files on the box (DualStrat2/DS3, 10-20/26); the first day on which a live BOOK or VOLUME feature existed is 2026-10-29 (6 copies), 8 copies from 10-30, 13 copies from 2026-11-01 18:00 ET. The live trade files on the box with entries: DualStrat2 (10-20..10-26), DS3 (10-26..10-27), DS5 (10-27..10-28), DS6 (10-28..10-30), DS7 (11-01..11-13). The history above before 10-26 (DualStrat/DS headers) is not on the box: ask the user for those headers if the earlier dates matter.
+
+### 14b. Validity map of earlier statements on this page and in my reports
+| statement class | status | why |
+|--|--|--|
+| live-vs-engine comparisons resting on pulled_mult, delta_mult, tot_rel, imb5/10, ahead_rel, MedLevel, wall features | VOID | live read 13x duplicated depth/volume (and, in the v1.5 state engine, drifted book arrays: 79% of losing seconds had no reading) |
+| the L2 entry gate comparisons (L2-CONFIRMED add timing; lots PLAN / AMB / BAD pair classes; 'live more' lots) | VOID as engine defects; the live add gate ran on corrupted deltas | confirmations (absorption, delta turn, imbalance flip, pulled/added, microprice) use book and volume |
+| the 'silent cut' attribution (§12: 32 of 45 live full stops where the engine cut earlier; §12b blind-book model) and the exit-class cascade tables | the FACTS stand (engine cut fired, live did not); the CAUSE is now known (13x duplicated stream, then the blind book); no engine defect | the port and engine were right |
+| the P7/K7 cut-fidelity and live-cut 'why' discussion (DS3_P7_CUT_FIDELITY, LIVE_CUT_PORT) | closed by the user finding | |
+| price-based statements: stops, targets, flat stand-in cuts (K7 -45, P7 -42), day caps, give-back locks, the cap timeline, session lots, blackout, layers (JN04 LOT/SIGQ/REG/STACK, ATR-SKIP and the ATR roll-jump reproduction, BREADTH, governor, C22) | STAND | price, clock and trade-list rules, no book or volume input |
+| entry signals (353 of 357 live entries have an engine signal) | STAND | Keltner / Supertrend / PB3B / MV / HMA signals are price-only |
+| engine-side results (all earlier exact runs) | STAND | the engine reads one clean tape |
+
+### 14c. Does the onset show in the numbers? Day by day inside the D7 window (13 series throughout), engine runs NX_D (unconditional) and NX_D_DR (live exits drive the book states)
+| label_day                            | U_unc   | A_unc   | B_unc   | C_unc   | live_trades   | live_full_stops   | live_stop_usd   | eng_full_stops   | U_drv   | A_drv   | B_drv   | C_drv   |
+|:-------------------------------------|:--------|:--------|:--------|:--------|:--------------|:------------------|:----------------|:-----------------|:--------|:--------|:--------|:--------|
+| 11-02 (Sun 11-01 18:00..11-02 17:00) | 0.568   | 25      | 8       | 11      | 36            | 0                 | 0               | 4                | 0.786   | 33      | 6       | 3       |
+| 11-03                                | 0.629   | 22      | 11      | 2       | 24            | 2                 | -3275           | 4                | 0.857   | 24      | 4       | 0       |
+| 11-04                                | 0.762   | 61      | 4       | 15      | 76            | 0                 | 0               | 5                | 0.938   | 76      | 5       | 0       |
+| 11-05                                | 0.783   | 36      | 4       | 6       | 42            | 0                 | 0               | 0                | 0.976   | 41      | 0       | 1       |
+| 11-06                                | 0.619   | 52      | 30      | 2       | 54            | 3                 | -4600           | 8                | 0.982   | 54      | 1       | 0       |
+| 11-09                                | 0.566   | 30      | 19      | 4       | 34            | 9                 | -33025          | 3                | 0.944   | 34      | 2       | 0       |
+| 11-10                                | 0.556   | 35      | 15      | 13      | 48            | 17                | -33025          | 8                | 0.782   | 43      | 7       | 5       |
+| 11-11                                | 0.559   | 33      | 18      | 8       | 41            | 4                 | -5680           | 1                | 0.854   | 41      | 7       | 0       |
+| 11-12                                | 0.370   | 17      | 27      | 2       | 19            | 7                 | -31835          | 2                | 0.826   | 19      | 4       | 0       |
+| 11-13                                | 0.458   | 27      | 24      | 8       | 35            | 8                 | -19000          | 4                | 0.489   | 23      | 12      | 12      |
+Reading: live full stops are 0, 2, 0, 0, 3 on the five label days of the first week (11-02..11-06: 5 stops, -$7.9k) and 9, 17, 4, 7, 8 in the second (11-09..11-13: 45 stops, -$122.6k); the engine's own stop count does not rise (4, 4, 5, 0, 8 then 3, 8, 1, 2, 4). The jump in live stops falls between the label days 11-06 and 11-09, i.e. at the D7 v1.5 state-engine install (2026-11-08 23:30Z), NOT at the series count (13 copies since 11-01 18:00): the old per-print TH-L2 cut of week 1 read the same 13-fold stream, where a 13-fold 'pulled' passes the 'pulled >= 30 x a normal level' test easily (week 1 had about 100 live cuts), while the v1.5 state engine had its own add/remove bookkeeping that drifted (level counts 0/13, 20/0) and read no book on 79% of the losing seconds. Conditional entry match (live exits drive the book states) is 0.79-0.98 on 11-02..11-11, falls to 0.83 / 0.49 on 11-12 / 11-13 (user-lot build, v1.9 layers; 12 engine-only entries on 11-13). Before 11-01 the only live book-feature days are the DS6 days 10-29 and 10-30 (6 to 8 copies): the engine (D7 state base) against the DS6 live trades of 10-28 18:00..10-30 17:00 gives U = 0.23 (A 33, B 48, C 61 at 30 s) but that comparison is NOT like-for-like (different strategy version: lots about 2x, no JN04 layers, old per-print TH-L2, L2-gated add, other session tables), so it carries no information about the onset; the days before 10-27 are other strategies (DS3, DualStrat2) with no replica.
+
+### 14d. Which earlier mismatch classes are explained
+- 'Engine cut fired earlier while live silent' (32 of the 45 live full stops, $52.8k of the gap, §12): explained as a live-side fault (blind/drifted book on the v1.5 state engine, 13-fold duplicated stream upstream). The blind-book re-score (§12b) reproduces the stop count range (25 at 79% blind, 40 always blind, live 45) and most of the drawdown but not the sign of the week; drifted-but-readable seconds (only 43% of the readable samples had clean 13/13 counts) are the likely rest.
+- L2 entry gate / add-timing / lots pair classes (PLAN, AMB, BAD; 'live more'): explained as the live add gate reading duplicated deltas and imbalances; not engine defects.
+- NOT explained by this finding: the P7/M7 residuals on label day 11-10 (5 P7 entries after -$17.8k), the 11 engine-only entries with no identified live gate in 11-11..11-13 (+$6.5k), O7 not trading live since 11-06, the reconnect windows of 11-03, and the 11-13 11:18:45 P7 ATR line.
+
 
 ## 13. JN05W2JL = JN05W2J + P7 post-stop/cut blackout (30 min) + ATR-SKIP (P7, atr_rel >= 1.6), all history; BR3S/LOT/SIGQ as the base; NKD take NOT included (labelled, needs NKD book data). Windows L6M 202605-202610 and HOLD 202511-202604 (a window row appears only when all its months are done). Identity of the hook with an empty parameter set vs JN05W2J on 202610: IDENTICAL (658 trades, net 23596.16)
 
