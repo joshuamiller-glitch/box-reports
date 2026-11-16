@@ -1,6 +1,6 @@
 # DS3_SMART_A1 — T-SMART A1 (cut, then get back in), A6 (first trade sets the session), A7 (never green) — W-SM1
 
-Generated 2026-11-16 10:50 UTC. Exact engine (JN05W2 stack: live panel base + F3 + E1 + C22 + BR3S + FLAT45K), one set per job, shared-memory engine, hook code/th_smart1/sm1_hooks.py (outermost hooklist entry, no engine file touched). Shadow only, no PASS claim. Prereg autopilot/SMART_A1_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-16 11:21 UTC. Exact engine (JN05W2 stack: live panel base + F3 + E1 + C22 + BR3S + FLAT45K), one set per job, shared-memory engine, hook code/th_smart1/sm1_hooks.py (outermost hooklist entry, no engine file touched). Shadow only, no PASS claim. Prereg autopilot/SMART_A1_PREREG.md (sha in DECISIONS.md).
 
 **CAVEAT on every number here:** the engine P7/K7 state cut fires in the engine but did NOT fire live on 11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). A1 depends on cuts firing, so it is reported in two worlds: **E world** = engine state cut on (reference = JN05W2, "the cut alone"; re-entry after StateCut/EarlyCut) and **N world** = every state-cut arm off and the F3 context cut removed, FLAT45K kept = flat/full-stop only (reference = SM_A1_NC0; re-entry after Stop/StopJoin/EarlyCut). SM_A1_NC1 = N world with FLAT45K also off = never cutting.
 
@@ -10,8 +10,8 @@ Thresholds: A1 trigger levels/ A7 pts are in points (lot independent); A6 is cou
 
 | set | ref | months | 5 best ref wks kept | winning wks turned losing | L6M cut % | L6M d mean/wk (all wks) | HOLD cut % | HOLD d mean/wk | WF cut / beat |
 |--|--|--|--|--|--|--|--|--|--|
-| SM_A1E_C10L | JN05W2 | 12 | 76% ($239k of $316k) | 1 of 20 | -41.9 | -5318 | -39.8 | -4226 | - |
-| SM_A1E_L0L | JN05W2 | 12 | 100% ($318k of $316k) | 0 of 20 | -1.4 | -13 | -15.2 | 1010 | - |
+| SM_A1E_C10L | JN05W2 | 12 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202507/trades.parquet') ||||||
+| SM_A1E_L0L | JN05W2 | 12 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202601/trades.parquet') ||||||
 | SM_A1E_XL | JN05W2 | 43 | 100% ($315k of $316k) | 0 of 20 | 0.0 | 508 | -4.8 | 468 | -1.3 / 9% |
 | SM_A1N_C10L | SM_A1_NC0 | 12 | 60% ($181k of $302k) | 5 of 19 | -23.1 | -6326 | 8.0 | -4853 | - |
 | SM_A1N_L0L | SM_A1_NC0 | 43 | 98% ($296k of $302k) | 0 of 19 | -13.8 | 195 | 19.4 | 511 | 0.0 / 19% |
