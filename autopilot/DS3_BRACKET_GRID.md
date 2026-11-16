@@ -767,6 +767,10 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
 | 40x40 | -646 (live -1131; $4.84 -746) DD -23.7% ww -9688 stops 0.15(0.08) | n/a | n/a |
+| 40x60 | +991 (live +1735; $4.84 +973) DD +42.4% ww -57 stops 0.08(0.08) | n/a | n/a |
+| 60x40 | -1503 (live -2630; $4.84 -1572) DD -73.4% ww -9391 stops 0.15(0.08) | n/a | n/a |
+| 85x40 | -2397 (live -4194; $4.84 -2436) DD -40.0% ww -11199 stops 0.30(0.08) | n/a | n/a |
+| 85x90 | -940 (live -1645; $4.84 -889) DD +28.1% ww +2210 stops 0.23(0.08) | n/a | n/a |
 
 #### P7 nyam
 Today (actual JN05W2 slice): ALL43 -188 $/wk (live -330), maxDD -89128, OLDER -307 $/wk (live -537), maxDD -89128, L6M +536 $/wk (live +938), maxDD -17496, L3M -298 $/wk (live -521), maxDD -16154
@@ -825,6 +829,12 @@ maxDD change %, all 43 months (+ = smaller drawdown)
 
 **Plain statement (first pass): keep 58/60** (no fixed bracket in the grid beats it on mean and drawdown in L6M, older and full history together).
 
+Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs JN05W2 on the same slice):
+
+| T x S | L3M | May-Jul | L6M |
+|---|---|---|---|
+| 40x60 | -182 (live -318; $4.84 -189) DD +19.2% ww -800 stops 0.30(0.38) | n/a | n/a |
+
 #### U7 asia
 Today (actual JN05W2 slice): ALL43 +1412 $/wk (live +2471), maxDD -35707, OLDER +1234 $/wk (live +2160), maxDD -35707, L6M +2502 $/wk (live +4378), maxDD -15497, L3M +3297 $/wk (live +5771), maxDD -15497
 
@@ -881,6 +891,14 @@ maxDD change %, all 43 months (+ = smaller drawdown)
 | 120 | -111 | -55 | -25 | +18 | -10 | +15 |
 
 **Plain statement (first pass): keep 58/60** (no fixed bracket in the grid beats it on mean and drawdown in L6M, older and full history together).
+
+Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs JN05W2 on the same slice):
+
+| T x S | L3M | May-Jul | L6M |
+|---|---|---|---|
+| 40x90 | -1860 (live -3254; $4.84 -1841) DD -31.7% ww -1661 stops 0.76(1.83) | n/a | n/a |
+| 60x90 | -2913 (live -5098; $4.84 -2894) DD -36.2% ww -6366 stops 0.84(1.83) | n/a | n/a |
+| 85x60 | -3502 (live -6129; $4.84 -3502) DD -115.3% ww -8377 stops 2.43(1.83) | n/a | n/a |
 
 #### U7 london
 Today (actual JN05W2 slice): ALL43 +462 $/wk (live +808), maxDD -35472, OLDER +297 $/wk (live +520), maxDD -35472, L6M +1468 $/wk (live +2569), maxDD -11805, L3M +1474 $/wk (live +2579), maxDD -11805

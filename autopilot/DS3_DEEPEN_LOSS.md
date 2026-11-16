@@ -1,4 +1,4 @@
-# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 23:20Z
+# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-15 23:59Z
 
 **VERDICT (running): 72 LA cells scored, 16 are ACTIVE (not no-ops), pass the tolerant gate and still cut drawdown with W44 removed in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
 
@@ -158,6 +158,11 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_F_K7_AM_D40 |      26 | 25151   |     14.1 | 36418   |  36370.5 |     -0.1 |        0.7 |      1 |        0 |       16.6 |         13.6 | -36418   | -36370.5 |       1 |     0 |      56.4 |          57.1 |  160.5 |      160.3 |
 | TL3_LA_F_M7_LO_D40 |      26 | 24954.9 |   -182   | 36540.5 |  36370.5 |     -0.5 |        4.9 |      1 |        0 |     -182.5 |       -185.1 | -36540.5 | -36370.5 |       1 |     0 |      54.2 |          57.1 |  161   |      160.3 |
 
+### HOLD (1 cells)
+| cell               |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
+|:-------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
+| TL3_LA_F_K7_LO_D40 |      52 | 17975.5 |    486.1 | 65403.3 |  63185.1 |     -3.5 |       -3.5 |      0 |        0 |      410.8 |        480.9 | -54980.4 | -55145.4 |       1 |     0 |      49.2 |          49.8 |  144.5 |      143.3 |
+
 ## 8. C22 FAMILY (item 3)
 ### L3M (14 cells)
 | cell           |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
@@ -206,10 +211,11 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_C_Rm2p5 |      75 | 10069.8 |    -98.1 | 77297.1 |  76186.1 |     -1.5 |        nan |      1 |        0 |        nan |        -99.8 | -52547.4 | -52547.4 |       1 |     0 |        32 |          31.8 |  100.7 |      100.3 |
 | TL3_LA_C_Rm3p0 |      75 | 10006   |   -161.9 | 79059   |  76186.1 |     -3.8 |        nan |      0 |        0 |        nan |       -163.9 | -52547.4 | -52547.4 |       1 |     0 |        32 |          31.8 |  100.7 |      100.3 |
 
-### X' (1 cells)
+### X' (2 cells)
 | cell           |   weeks |   mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:---------------|--------:|-------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
 | TL3_LA_C_Rm3p0 |      44 | 3585.1 |        0 | 55325.6 |  55325.6 |        0 |        nan |      0 |        0 |        nan |            0 | -21663.5 | -21663.5 |       1 |     0 |      14.5 |          14.5 |   71.6 |       71.6 |
+| TL3_LA_C_Rm2p5 |      44 | 3585.1 |        0 | 55325.6 |  55325.6 |        0 |        nan |      0 |        0 |        nan |            0 | -21663.5 | -21663.5 |       1 |     0 |      14.5 |          14.5 |   71.6 |       71.6 |
 
 ### GAP (2 cells)
 | cell           |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
@@ -535,9 +541,9 @@ Weekly delta series for W-RE: /mnt/l2/l2vast/_deepen_la/a/weekly_delta.csv (cell
 # SECTION W-LB (items 6-9)
 # DS3_DEEPEN_LOSS_B - T-DEEPEN PART 1 item 6 (SKIPS) and item 9 (EXECUTION COSTS), W-LB
 
-**VERDICT (plain): 142 of 599 cells have an exact L3M result so far; 43 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
+**VERDICT (plain): 145 of 599 cells have an exact L3M result so far; 45 pass the tolerant gate in L3M with a positive mean (candidates for promotion, none claimed). Item 9 cost measurement is in section 1: fees plus excess slippage are 16.0% of L6M gross, the 08:30 bump is only about $50-60/wk of it. No PASS claim.**
 
-Written 2026-11-15T23:05Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
+Written 2026-11-15T23:35Z (date -u). Research only, shadow, no PASS claims. Prereg autopilot/DEEPEN_LB_PREREG.md (sha 9d2b5bd88f64ed49 in DECISIONS.md). Code code/th_deepen_lb (lb_hooks.py outermost additive hook; lb_cells.py registry; lb_score.py; lb_page.py), bulk /mnt/l2/l2vast/_deepen_lb. Identity: TL3_LB_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LB_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
 
 **LOT BASIS.** Sets run at BASE lots (live user lots x1.75; live caps = engine caps x1.75, P7 day cap 8,400 engine = 14,700 live). The engine charges $1.18/contract RT in net_fee; FEES.md standard is $4.84 (NQ proxy), MNQ $1.78. Every table carries a $4.84 column (d mean $4.84 = d mean repriced on the change in contracts) and a live-excess column (adds entry +0.23, cut +0.40, stop +0.44, target 0 pt, +1.36 pt on non-target exits 08:30-08:44 ET; passive fills carry no entry excess). Noise floor (DS3_REDO_R4_ENTRY): |maxDD cut| below ~8% and |mean delta| below ~$1,238/wk is path-dependence level.
 
@@ -689,10 +695,13 @@ Flag PATH EFFECT = a skip rule frees the book (replacement entries, post-stop bl
 | EV_T0830_P30_H_snyp | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P30_H_kCPI | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P30_H_kISM_MFG | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P30_H_kFOMC | 3 | - | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_p5 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -1.00 | 0.0 / -91 / -91 / -91 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_p15 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | -0.91 | 0.0 / -128 / -127 / -120 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_S_p45 | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 0.84 | 0.0 / 168 / 171 / 182 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_sasi | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_snyp | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | - | 0.0 / 0 / 0 / 0 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
+| EV_T0830_P60_S_oth | 3 | - | 1.00 | 0.0 / 102 / 103 / 107 / 0 / True / 0.0 / 1.00 / 0 | - / - / - / - | - / - | - / - |
 | EV_T0830_P60_S_kPCE | 3 | PATH EFFECT (skip frees the book; unexplained until W-CF3, BASIC_TESTS 2a) | 1.66 | 0.0 / 242 / 244 / 253 / 0 / True / 0.0 / 1.01 / 0 | - / - / - / - | - / - | - / - |
 
 ### RB  range used up AND breadth / event day (HAR+CME forecast; plain range rule is W-EC)
@@ -799,7 +808,7 @@ Flag PATH EFFECT = a skip rule frees the book (replacement entries, post-stop bl
 
 ## 3. Hits and auto-expansions (PART 0)
 
-Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, RB_nyam_K100_EV, RB_nypm_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2, BR_M7_H15_Slon, BR_M7_H15_xt5, BR_M7_H15_30, BR_M7_H15_v19, EV_T0830_P30_H_p15, EV_T0830_P30_H_p45, EV_T0830_P30_H_p90, EV_T0830_P30_H_slon, EV_T0830_P60_S_kPCE
+Hits (L3M tolerant gate and d mean > 0): BR_M7_H15, EV_T0830_P10_H, EV_T0830_P20_H, EV_T0830_P30_H, EV_T0830_P60_S, EV_T0830_P60_H, RB_asia_K100_BRH, RB_asia_K100_EV, RB_nyam_K100_EV, RB_nypm_K100_EV, TG1_K7, TG1_A7, TG1_ALL, TG2_K7, TG2_A7, TG2_ALL, LE_C1_K7, LE_C1_U7, LE_C1_A7, LE_C1_asia, LE_C2_K7, LE_C2_U7, LE_C2_A7, LE_C1_K7_london, LE_C1_K7_nyam, LE_C1_A7_asia, WK2_U7, WK2_H7, WK2_A7, WK2_nyam, WK2_nypm, WK2_W830, WK5_W830, SJ2, BR_M7_H15_Slon, BR_M7_H15_xt5, BR_M7_H15_30, BR_M7_H15_v19, EV_T0830_P30_H_p15, EV_T0830_P30_H_p45, EV_T0830_P30_H_p90, EV_T0830_P30_H_slon, EV_T0830_P60_S_p45, EV_T0830_P60_S_oth, EV_T0830_P60_S_kPCE
 
 Auto-expansions launched (expansion of <parent>):
 
@@ -1389,6 +1398,8 @@ Auto-expansions launched (expansion of <parent>):
 | EV_T0830_P30_H_p45 | 0.0 | 102 | 107 | 0 | trade list equals base |
 | EV_T0830_P30_H_p90 | 0.0 | 236 | 244 | 0 | trade list equals base |
 | EV_T0830_P30_H_slon | 0.0 | 51 | 55 | 0 | trade list equals base |
+| EV_T0830_P60_S_p45 | 0.0 | 168 | 182 | -7 | below noise floor |
+| EV_T0830_P60_S_oth | 0.0 | 102 | 107 | 0 | trade list equals base |
 | EV_T0830_P60_S_kPCE | 0.0 | 242 | 253 | -4 | below noise floor |
 
 LE (passive entry) rows are FILL-RULE UPPER BOUNDS: a print through the limit by 1 tick fills, no queue position, so real fill rates and adverse selection would lower them.

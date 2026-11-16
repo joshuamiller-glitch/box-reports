@@ -1,8 +1,8 @@
 # DS3_EXPAND_A - family A: the session's own early result sets the size
 
-**VERDICT: Exact results on 215 cell-months of 34 cells so far; best L6M drawdown cut TL3_EA_A6 11.8% (d mean 383 $/wk); nothing is a PASS, placebos and walk-forward still to come.**
+**VERDICT: Exact results on 217 cell-months of 36 cells so far; best L6M drawdown cut TL3_EA_A6 11.8% (d mean 383 $/wk); nothing is a PASS, placebos and walk-forward still to come.**
 
-**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-15 22:58 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
+**LOT BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; raw engine net_fee charges $1.18/contract RT (not FEES.md $4.84), so the FEES column reprices d mean at $4.84 RT on the change in contracts per week.** W-EA, T-EXPAND family A. Page built 2026-11-15 23:59 UTC. Prereg autopilot/EXPAND_A_PREREG.md (sha f0ad23f9cef5e77e). Hook code/th_expand_a/ea_hooks.py, builder mk_ea.py (cell name = rule), driver ea_driver.py, first-order screen fo_ea.py. Exact engine (TP_ENGINE=1, JN05W2, all layers ON, engine dollars = base lots, live = x1.75). Shadow only, no PASS claim.
 
 ## 0. Identity and parent
 
@@ -111,6 +111,10 @@ dd cut % = (maxDD ref - maxDD cell) / maxDD ref (positive = shallower). dd44 = w
 | TL3_EA_LS_NP_ALL_H50_R30 | L3M | 13 | 5.0 | 14.3 | -718 | -713 | -0.90 | -34559 / -36371 | 0.97 | 0 | 53.23 / 52.46 | 145.3 / 144.2 |
 | TL3_EA_LS_P7_S01_H50_R30 | L1M | 4 | 24.2 | - | 825 | 854 | 0.30 | -27561 / -36371 | 2.36 | 0 | 56.50 / 56.00 | 150.2 / 149.5 |
 | TL3_EA_LS_P7_S01_H50_R30 | L3M | 13 | 17.3 | 1.5 | 1381 | 1404 | 0.62 | -27561 / -36371 | 1.08 | 0 | 53.15 / 52.46 | 145.3 / 144.2 |
+| TL3_EA_LS_P7_S01_H50_R30_PB2 | L1M | 4 | 33.6 | - | 3062 | 3086 | 1.00 | -24167 / -36371 | 6.05 | 0 | 57.00 / 56.00 | 152.2 / 149.5 |
+| TL3_EA_LS_P7_S01_H50_R30_PB2 | L3M | 13 | 15.3 | -0.9 | 3272 | 3292 | 1.56 | -25195 / -36371 | 1.13 | 0 | 53.00 / 52.46 | 145.7 / 144.2 |
+| TL3_EA_LS_P7_S01_H50_R30_PB3 | L1M | 4 | 25.6 | - | 3739 | 3760 | 1.86 | -27043 / -36371 | 7.17 | 0 | 56.50 / 56.00 | 151.0 / 149.5 |
+| TL3_EA_LS_P7_S01_H50_R30_PB3 | L3M | 13 | 15.7 | -0.4 | 832 | 862 | 0.50 | -27731 / -36371 | 0.98 | 0 | 53.00 / 52.46 | 144.4 / 144.2 |
 | TL3_EA_LS_P7_S0_H50_R30 | L1M | 4 | 24.2 | - | 1107 | 1131 | 0.41 | -27561 / -36371 | 2.83 | 0 | 56.50 / 56.00 | 150.2 / 149.5 |
 | TL3_EA_LS_P7_S0_H50_R30 | L3M | 13 | 21.1 | 6.0 | 1294 | 1310 | 0.59 | -27561 / -36371 | 1.08 | 0 | 53.00 / 52.46 | 145.3 / 144.2 |
 | TL3_EA_N0_ALL_ALL_U125_RN_CXN | L1M | 4 | -28.7 | - | 880 | 778 | 0.21 | -46811 / -36371 | 2.45 | 0 | 53.00 / 56.00 | 145.2 / 149.5 |
@@ -145,8 +149,8 @@ dd cut % = (maxDD ref - maxDD cell) / maxDD ref (positive = shallower). dd44 = w
 
 ## 4. Queue state
 
-- exact cell-months done: 215; pending lines: 47; cells in cells.txt: 86
-- last promotions: 17:50Z TL3_EA_N5_K7_S0_H50_RN PROMOTE [1] ; 17:50Z TL3_EA_CYS1_P7_ALL_H50_RN_CXC PROMOTE [1] ; 17:50Z TL3_EA_SF_ALL_S1_U150_R120 PROMOTE [1] ; 17:50Z TL3_EA_SF_NP_S1_U150_R120_CXN PROMOTE [2, 3] ; 17:50Z TL3_EA_N5_U7_S1_U150_RN PROMOTE [1] ; 17:50Z TL3_EA_F2_K7_ALL_U150_R60_CXC PROMOTE [1] ; 17:50Z TL3_EA_F1_NP_ALL_U125_RF PROMOTE [2, 3] ; 17:50Z TL3_EA_N1_ALL_S0_U125_RN_CXN PROMOTE [2, 3]
+- exact cell-months done: 217; pending lines: 51; cells in cells.txt: 86
+- last promotions: 17:50Z TL3_EA_SF_ALL_S1_U150_R120 PROMOTE [1] ; 17:50Z TL3_EA_SF_NP_S1_U150_R120_CXN PROMOTE [2, 3] ; 17:50Z TL3_EA_N5_U7_S1_U150_RN PROMOTE [1] ; 17:50Z TL3_EA_F2_K7_ALL_U150_R60_CXC PROMOTE [1] ; 17:50Z TL3_EA_F1_NP_ALL_U125_RF PROMOTE [2, 3] ; 17:50Z TL3_EA_N1_ALL_S0_U125_RN_CXN PROMOTE [2, 3] ; 23:56Z TL3_EA_LS_P7_S01_H50_R30_PB2 PROMOTE [1] ; 23:56Z TL3_EA_LS_P7_S01_H50_R30_PB3 PROMOTE [1]
 
 ## 5. Not yet done (in order)
 

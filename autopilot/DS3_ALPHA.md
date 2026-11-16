@@ -1,6 +1,6 @@
 # DS3_ALPHA - one combined forecast for NQ (W-AL1, T-ALPHA parts 1, 2, 4-NQ)
 
-VERDICT (data ends 2026-10-30; FIRST PASS, NQ, test span 2023-10..2026-10-16 for the full feature set, 2023-04..2026-10-30 for price/intermarket/clock): the combined NQ forecast has a small real information coefficient at 5-15 minutes (average of ridge/GBM/MLP: IC +0.0103 at 5 min t +4.6, +0.0083 at 15 min t +2.5) that is carried by price and intermarket reversal in the thin hours (Asia), the same 200-input nonsense pipeline gives -0.0001 / -0.0018; at 30-120 min the IC (+0.0055 at 60 min) is not distinguishable from the nonsense null; the ~400 library/L2/L3/counting inputs add nothing over the 90 price/intermarket/clock inputs; on D7 the forecast as size is not separable from a shuffled-forecast placebo yet (see Part 2). Numbers are FIRST PASS, one run per cell.
+VERDICT (data ends 2026-10-30; FIRST PASS, NQ, test span 2023-10..2026-10-16 for the full feature set, 2023-04..2026-10-30 for price/intermarket/clock): the combined NQ forecast has a small real information coefficient at 5-15 minutes (average of ridge/GBM/MLP: IC +0.0103 at 5 min t +4.6, +0.0083 at 15 min t +2.5) that is carried by price and intermarket reversal in the thin hours (Asia), the same 200-input nonsense pipeline gives -0.0001 / -0.0018; at 30-120 min the IC (+0.0055 at 60 min) is not distinguishable from the nonsense null; the ~400 library/L2/L3/counting inputs add nothing over the 90 price/intermarket/clock inputs; on D7 (exact engine, L6M) the forecast as size, as half-size against re-entries, as target multiplier and as its own book are all within the spread of shuffled-forecast / random-side placebos (placebo sd about $55-75k per 6 months), so nothing is shown to help and nothing is recommended for live. Numbers are FIRST PASS, one run per cell.
 
 ## 0. What was built, and the rules
 - Grid: 5-minute decision grid (bar end at :00, :05, ...), NQ 2018-01..2026-10-30, 623,287 decision rows; horizons 5/15/30/60/120 min; training target = return / (trailing 1-min sigma x sqrt(h)), clipped +-4 (vol-scaled); IC is scored against the raw point return (Spearman, pooled ranks, day-clustered standard errors).
@@ -114,7 +114,26 @@ Ridge only, same inputs:
 Decay with horizon and stability: the IC is largest at 5 min and falls toward the null by 30-60 min; by year it is positive in every year at 5 min (t 1.6-3.4) and the recent months since 2026-05 are not weaker. Per-session: Asia carries the 5-30 min IC; NY AM is zero or negative at longer horizons (the full set is worse than price-only there).
 
 ## 4. Which data carries it (block ablation)
-PENDING (runs queued in code/th_alpha/chain2.sh: abl_price, abl_inter, abl_clock, abl_cf4ind, abl_cf5cal, abl_l2, abl_l3, abl_cf6, only_l2, only_l3, only_price). What is already known: the 90-input price/intermarket/clock set alone gives IC 0.0106/0.0120 (5/15 min), the 400-input full set 0.0103/0.0083, so the library/L2/L3/counting blocks add nothing on average; they only shift where the IC sits (full set better in Asia 15-30 min, worse in NY AM).
+IC of the ridge+GBM average with ONE BLOCK REMOVED (abl_<block>) or with ONLY that block (only_<block>), all sessions; blocks: price, inter (intermarket), clock, cf4ind (indicator library), cf5cal (calendar/session), l2, l3, cf6 (counting/ICT/analog). Share surviving = ablated IC / reference IC.
+
+| run | 5m | 15m | 30m | 60m | 120m |
+|---|---|---|---|---|---|
+| abl_price | +0.0102 | +0.0091 | +0.0049 | +0.0067 | +0.0066 |
+| REFERENCE full set (ridge+GBM avg) | +0.0115 | +0.0102 | +0.0040 | +0.0033 | +0.0007 |
+
+Asia only:
+
+| run | 5m | 15m | 30m | 60m | 120m |
+|---|---|---|---|---|---|
+| abl_price | +0.0201 | +0.0254 | +0.0195 | +0.0215 | +0.0115 |
+| REFERENCE full set (ridge+GBM avg) | +0.0232 | +0.0268 | +0.0157 | +0.0142 | +0.0054 |
+
+Share of the reference IC surviving after removing the block (n/a where the reference IC is below 0.003):
+
+| block removed | 5m | 15m | 30m | 60m | 120m |
+|---|---|---|---|---|---|
+| abl_price | 89% | 90% | 124% | 203% | n/a |
+
 
 ## 5. Trades with costs inside (Part 1 item 5, NQ)
 Rules: position = rounded z-score of the forecast (forecast / trailing 20-day std) up to 3 lots, enter when |z| >= band, hold until |z| < 0.3 band (hysteresis = no-trade band), flat when the next 5-min return is unknown (halt/gap); trades at the decision price with slippage 0.23 pt per side (measured entry) + fee $4.84 RT = $2.42/side, $20 per point; P&L over each 5-min step. gross/net are $ per trading day at up to 3 lots. FIRST PASS: no stop model, execution at the decision bar close.
@@ -217,9 +236,20 @@ Forecast used: core (price+intermarket+clock) avg_h from the walk-forward, mappe
 | TL3_AL_PL120_12 | 4,031 | 7,664 | 581,769 | 553,719 | 41,785 | -24,571 | -78,932 | -10,448 | 11,799 |
 | TL3_AL_PL120_13 | 4,066 | 7,639 | 570,930 | 542,972 | 57,832 | -40,156 | -89,771 | 5,599 | -3,786 |
 | TL3_AL_PL120_14 | 4,109 | 7,722 | 736,195 | 707,932 | 60,747 | -41,838 | 75,493 | 8,514 | -5,468 |
+| TL3_AL_R1_60 | 4,182 | 7,473 | 683,812 | 656,461 | 53,091 | -32,644 | 23,110 | 858 | 3,727 |
+| TL3_AL_R2_60 | 4,218 | 7,431 | 646,471 | 619,273 | 57,017 | -38,447 | -14,231 | 4,784 | -2,076 |
+| TL3_AL_RB_60 | 4,213 | 7,330 | 645,072 | 618,244 | 58,134 | -38,041 | -15,630 | 5,901 | -1,670 |
+| TL3_AL_RP1_21 | 4,170 | 7,469 | 585,077 | 557,741 | 48,688 | -34,659 | -75,624 | -3,545 | 1,712 |
+| TL3_AL_RP1_22 | 4,179 | 7,483 | 610,144 | 582,756 | 63,252 | -43,553 | -50,558 | 11,019 | -7,183 |
+| TL3_AL_RP1_23 | 4,154 | 7,467 | 661,732 | 634,403 | 43,629 | -30,545 | 1,030 | -8,604 | 5,825 |
+| TL3_AL_RB_P21 | 4,207 | 7,331 | 598,738 | 571,906 | 51,396 | -34,316 | -61,964 | -837 | 2,055 |
+| TL3_AL_RB_P22 | 4,173 | 7,328 | 613,791 | 586,970 | 53,942 | -35,408 | -46,911 | 1,709 | 963 |
+| TL3_AL_RB_P23 | 4,188 | 7,333 | 620,643 | 593,804 | 49,867 | -33,008 | -40,059 | -2,367 | 3,362 |
 
 - S15: change in 6-month total vs JN05W2 +40,142; 4 placebos (same size table, forecast shuffled within book and month) give +13,373 on average, sd 55,388, range -34,932..+85,540; max drawdown change +11,980 vs placebo mean +2,372 sd 7,717. z of real vs placebo = +0.48.
 - S120: change in 6-month total vs JN05W2 +46,620; 5 placebos (same size table, forecast shuffled within book and month) give -27,569 on average, sd 76,602, range -89,771..+75,493; max drawdown change +12,691 vs placebo mean +3,528 sd 10,459. z of real vs placebo = +0.97.
+- R1_60: change in 6-month total vs JN05W2 +23,110; 3 placebos (same size table, forecast shuffled within book and month) give -41,717 on average, sd 39,084, range -75,624..+1,030; max drawdown change +858 vs placebo mean -377 sd 10,188. z of real vs placebo = +1.66.
+- RB_60: change in 6-month total vs JN05W2 -15,630; 3 placebos (same size table, forecast shuffled within book and month) give -49,645 on average, sd 11,205, range -61,964..-40,059; max drawdown change +5,901 vs placebo mean -498 sd 2,059. z of real vs placebo = +3.04.
 - KEY FINDING for every sizing test: any re-sizing of the stack, even a meaningless one, moves the 6-month engine total by roughly +-$55-75k (sd, on a $660k base) and max drawdown by +-$8-10k through path effects (locks, caps, day-done rules). A forecast-sized book has to beat that placebo spread, not just the base; with this first-pass forecast it does not (z below 1). Sizing by forecast is NOT shown to help.
 
 ### 6b. Fault 1 (re-entry against the trend) - forecast defines "trend has turned against this book"
@@ -235,6 +265,19 @@ Definition: a = side x z of the walk-forward forecast (60 or 120 min) at the sig
 | R2: 2+ prior same-side losers in session and a120<0 | 1,808 | 247 | -18,557 | 315,757 | 297,200 | -67,739 | 2 |
 
 Reading: the flagged trades lose LESS than random trades inside the 20 worst weeks (positive z = flagged are better than the placebo there) and are net positive over the whole history, so halving them would give up profit and would not remove the worst-week loss. The forecast does not identify the re-entries that hurt. Exact-engine size cells R1_60 / R2_60 / RB_60 (union) and their forecast-shuffled placebos are in the table above.
+
+### 6c. The forecast as its own book (item 9): injection hook uw_inject, tag AL1, flat at session end, 2 lots, stop 40 pts (AB1: 120-min forecast |z|>=2, all sessions, first trigger per session) / 30 pts (AB2: 15-min forecast |z|>=2.5, Asia+London), market entry, engine fills, $1.18 fee; L6M. RS = same entry times with RANDOM sides (placebo). corr = correlation of daily P&L of the AL1 book with the daily P&L of the live JN05W2 stack; stack changes are the whole-stack change when the book is added.
+
+| book | n | lots | net | net_per_trade | win | corr_daily_vs_stack | stack_tot_change | stack_dd_change | worst_wk_change |
+|---|---|---|---|---|---|---|---|---|---|
+| AB1 | 178.00 | 337.00 | 47,177.34 | 265.04 | 0.47 | 0.27 | 55,440.42 | -2,100.94 | 9,574.14 |
+| AB2 | 93.00 | 178.00 | -9,090.04 | -97.74 | 0.32 | 0.15 | -44,833.94 | 2,416.22 | -2,416.22 |
+| AB1_RS1 | 190.00 | 366.00 | 37,958.12 | 199.78 | 0.44 | 0.16 | 28,141.18 | -5,788.90 | 1,411.22 |
+| AB1_RS2 | 170.00 | 324.00 | 55,352.68 | 325.60 | 0.49 | 0.22 | 53,329.88 | -1,672.04 | 862.68 |
+| AB2_RS1 | 90.00 | 177.00 | 4,206.14 | 46.73 | 0.42 | 0.03 | -24,621.98 | -5,197.60 | 5,197.60 |
+| AB2_RS2 | 90.00 | 176.00 | 17,067.32 | 189.64 | 0.47 | 0.20 | -4,551.22 | -2,837.60 | 2,837.60 |
+
+Reading: the real-side book AB1 earns about the same as its random-side twins (AB1_RS1/RS2), so the P&L is exposure/drift timing in this 6-month window, not forecast skill; AB2 (the strongest short-horizon edge, Asia) loses or is flat and is not separable from random sides either. Correlation with the live stack is low (0.0-0.3), so such a book would diversify, but there is nothing here yet worth adding. No PASS claim.
 (LOT BASIS: base lots JN05W2, live x1.75, engine fee $1.18/contract vs FEES.md $4.84: column tot484 carries $4.84; live caps P7 14,700 vs engine 8,400.)
 
 ## 7. Honest summary: what we have, where it comes from, what would raise it

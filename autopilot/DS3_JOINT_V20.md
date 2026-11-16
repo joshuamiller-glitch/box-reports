@@ -2,7 +2,7 @@
 
 VERDICT (5 of 5 windows complete for the leader): best joint set so far is JV_B: worst-window max-DD cut -1.0 % vs JN05W2, mean 555 $/wk avg; passes the tolerant gate in every complete window. Recent max DD is the single week 2026-W44, so read section 2 and section 5 before believing any recent cut. Strength: weak - see 6b (C rejected, A recent-only, D pending older windows); no PASS claim.
 
-Generated 2026-11-15 20:48 UTC (epoch 1794775711). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse). LOT/FEE BASIS: base lots (user lots are x1.75, so multiply every $ by 1.75); the engine charges $1.18 per contract round trip inside net_fee (what every table sums); the column d mean @4.84 reprices the change in mean at $4.84 RT per contract using the change in contracts traded (d mean - 3.66 x change in lots/wk), no rerun. Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-15 23:49 UTC (epoch 1794786548). Exact engine (TP), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K, all layers ON, measured fills (engine slip 0.8; structure stop 1.4 adverse). LOT/FEE BASIS: base lots (user lots are x1.75, so multiply every $ by 1.75); the engine charges $1.18 per contract round trip inside net_fee (what every table sums); the column d mean @4.84 reprices the change in mean at $4.84 RT per contract using the change in contracts traded (d mean - 3.66 x change in lots/wk), no rerun. Shadow only, no PASS claim. Prereg autopilot/JOINTV20_PREREG.md (sha in DECISIONS.md).
 
 Candidates: **A** = SM_A6_halfNP7 (first trade of a book-session lost -> later signals of that book-session at half lots, books K7 M7 U7 H7 A7; P7 untouched). **B** = U7 time stop on fresh entries (at 15:00 after the first fill, if open P&L < -10 pts: market exit, fresh context only). **C** = U7 Keltner-mid structure stop (stop at 5-min EMA20 mid - 2 pts, filled 1.4 pt adverse, lots x 60/stop distance clamped 25..60). Full specs in section 6.
 
@@ -178,6 +178,7 @@ Identity: TL3_JV_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -
 | JV_B | 18 | 68947 | 68947 | 0.0 | 0.0 | -68947 | 0 | 9.6 (9.7) | 101% | 0 (13) | 12381 | 5 | 5 |
 | JV_C | 18 | 85805 | 68947 | -24.5 | -15.3 | -74665 | -5719 | 7.7 (9.7) | 83% | 1 (13) | 7653 | -4724 | -4831 |
 | JV_AB | 18 | 67381 | 68947 | 2.3 | -0.7 | -67381 | 1566 | 9.5 (9.7) | 95% | 0 (13) | 11548 | -829 | -816 |
+| JV_F | 18 | 68342 | 68947 | 0.9 | 4.0 | -68342 | 604 | 8.1 (9.7) | 99% | 0 (13) | 13913 | 1536 | 1535 |
 
 ## 2. The recent max drawdown is one week (2026-W44): L6M / L3M with W44 removed from both cell and JN05W2
 
