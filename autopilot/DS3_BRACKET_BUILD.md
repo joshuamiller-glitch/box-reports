@@ -112,7 +112,7 @@ Controls (drawdown cut % vs reference, d mean $/wk):
 | cell | placebo 1 | placebo 2 | placebo 3 | matched 1 | matched 2 | matched 3 |
 |---|---|---|---|---|---|---|
 | A7|asia|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
-| U7|asia|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
+| U7|asia|40x40 | n/f | +2.5% / -236 | n/f | n/f | n/f | n/f |
 | K7|nyam|40x40 | n/f | n/f | n/f | n/f | n/f | n/f |
 | K7|nyam|40x60 | n/f | n/f | n/f | n/f | n/f | n/f |
 | K7|london|40x60 | n/f | n/f | n/f | n/f | n/f | n/f |

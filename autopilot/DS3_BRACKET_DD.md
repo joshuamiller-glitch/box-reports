@@ -54,7 +54,7 @@ Rule definitions. Day direction at the signal second from CLOSED 1-minute bars o
 | session VWAP: AGAINST the day -> skip  | L6M | -26.3% / -493 | -124.5% / -8990; -261.0% / -11286; -110.2% / -6107 | -0.3% / -4; +0.6% / -432; +0.2% / +712 | FAILS this window |
 | session VWAP: AGAINST the day -> skip  | L3M | -26.3% / +1158 | -124.5% / -12704; -261.0% / -12837; -110.2% / -2787 | -0.3% / +461; +0.6% / -373; +0.2% / +2133 | FAILS this window |
 | session VWAP: AGAINST the day -> skip  | GAP | -23.9% / -1599 | +38.0% / -4189; -8.4% / -7603; -16.7% / -5870 | +1.0% / +813; +6.2% / +114; +0.1% / -188 | FAILS this window |
-| session VWAP: AGAINST the day -> skip  | PRE | +14.8% / -534 | +37.2% / -442; +8.7% / -5423; +27.3% / -1822 | n/f; +4.4% / -520; -4.6% / -499 | not finished (controls pending) |
+| session VWAP: AGAINST the day -> skip  | PRE | +14.8% / -534 | +37.2% / -442; +8.7% / -5423; +27.3% / -1822 | -2.5% / -101; +4.4% / -520; -4.6% / -499 | FAILS this window |
 | session VWAP: AGAINST the day -> skip  | X' | -46.0% / +178 | n/f; n/f; n/f | n/f; n/f; n/f | not finished (controls pending) |
 
 ## (W-BD2) DS3_BRACKET_DD_D - T-BRACKET-DD Parts D (partial exits), C (target by room), E (time) on TL3_EV_JN05W2JL2 (W-BD2)

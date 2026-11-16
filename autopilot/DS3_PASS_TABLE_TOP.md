@@ -1,5 +1,5 @@
 <!-- PR2:BEGIN -->
-## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 21:14 UTC)
+## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 21:55 UTC)
 
 **Every "not confirmed" issued under the 11-16 morning rule (beat all 6 controls on max DD in HOLD and L6M) is VOID as a negative result: that rule detects a real 10% / 20% max-DD cut only 5-13% of the time (DS3_PASS_RULE.md step 1).** Tiers below use ulcer index (RMS of daily drawdown; + = lower ulcer than JL2) and mean, percentile among 200 persistent-draw controls (PATH ARITHMETIC delta-permutation controls, not engine runs; 0 of the 30 engine-exact draws have landed; engine draws queued on server 2), week-clustered bootstrap (2,000 resamples). Cut-offs (tuned so noise reaches CONFIRMED under 5%): CONFIRMED needs ulcer-or-mean percentile >= 0.85 in L6M and L3M with the other >= 0.25, P(ulcer lower, L6M) >= 0.80, ulcer percentile >= 0.25 in the older windows run; LEAD needs >= 0.75 in L6M and L3M and nothing below 0.25 in any window run. A candidate whose older windows (GAP, PREUW, X') were not run cannot be issued CONFIRMED ("PROVISIONAL"). Old verdict = what its source page said.
 
@@ -23,9 +23,9 @@
 | K7 London fixed 40x60 (morning bracket cell) | ENGINE ONLY / VOID (fixsub controls not persistent) | **FAIL (windows GAP,PREUW,X' not run)** | 24530 -> 26957 (-9.9%) / 8356 -> 8578 (-2.6%) / 9798 -> 9510 (+2.9%) | 0.23 / 0.68 / 0.86 | 0.46 / 0.61 | 0.54 / 0.47 | -2491..-237; -1295..+957 | -1410 (-2468; -1421) | -2.3% / +2.6% | -62242 / -99017 / 1.00 | L6M best pct 0.68<0.75; L3M mean pct 0.09<0.25; L6M mean pct 0.01<0.25; HOLD ulcer pct 0.23<0.25 |
 | London skip k=1.25 true points, M7+P7 | UNVERIFIED (PD controls not run; RK controls INVALID) | **FAIL** | 24530 -> 26600 (-8.4%) / 8356 -> 7257 (+13.2%) / 9798 -> 7786 (+20.5%) | 0.17 / 0.96 / 0.99 | 0.67 / 0.95 | 0.60 / 0.97 | -518..+2867; -1412..+1107 | +1200 (+2100; +1240) | -8.6% / +0.2% | -62212 / -97117 / 0.99 | HOLD ulcer pct 0.17<0.25 |
 | London skip k=1.25 with UC, M7+P7 | UNVERIFIED (RKUC controls INVALID) | **LEAD (older windows PREUW,X' not run)** | 24530 -> 24548 (-0.1%) / 8356 -> 7567 (+9.4%) / 9798 -> 8141 (+16.9%) | 0.49 / 0.82 / 0.90 | 0.71 / 0.79 | 0.64 / 0.83 | -1356..+2168; -1402..+1362 | +408 (+714; +459) | +0.8% / +0.2% | not in DV table | LEAD floor met |
-| M7 London cap 3 (block entry after 3 closes) | NOT PASS under the morning rule: DD worse than best control in HOLD (-70,924 vs -63,564) and L6M (-23,715 vs -22,397); placebos partly INVALID (keep 0.70-0.73 vs 0.62) | **LEAD (older windows PREUW,X' not run)** | 24530 -> 22302 (+9.1%) / 8356 -> 8055 (+3.6%) / 9798 -> 9454 (+3.5%) | 0.94 / 0.55 / 0.40 | 0.97 / 0.20 | 0.96 / 0.18 | +771..+2655; -654..+1108 | +1747 (+3058; +1768) | +4.7% / -5.1% | -59277 / -90315 / 0.99 | LEAD floor met |
-| give-back H7 NY AM 40% / 40pt | ENGINE ONLY (not CONFIRMED) | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** | 24530 -> 24257 (+1.1%) / 8356 -> 8076 (+3.3%) / 9798 -> 9368 (+4.4%) | 0.76 / 1.00 / 0.98 | 0.66 / 0.88 | 0.57 / 0.87 | -171..+354; -191..+329 | +82 (+143; +82) | +2.5% / +0.0% | -60523 / -96415 / 1.00 | LEAD floor met |
-| give-back H7 NY AM 50% / 40pt | ENGINE ONLY (not CONFIRMED) | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** | 24530 -> 24246 (+1.2%) / 8356 -> 8112 (+2.9%) / 9798 -> 9424 (+3.8%) | 0.79 / 0.99 / 1.00 | 0.65 / 0.88 | 0.57 / 0.86 | -134..+355; -203..+296 | +97 (+169; +97) | +2.4% / +0.0% | -60685 / -96554 / 1.00 | LEAD floor met |
+| M7 London cap 3 (block entry after 3 closes) | NOT PASS under the morning rule: DD worse than best control in HOLD (-70,924 vs -63,564) and L6M (-23,715 vs -22,397); placebos partly INVALID (keep 0.70-0.73 vs 0.62) | **FAIL (windows PREUW,X' not run)** | 24530 -> 22302 (+9.1%) / 8356 -> 8055 (+3.6%) / 9798 -> 9454 (+3.5%) | 0.96 / 0.62 / 0.56 | 0.97 / 0.20 | 0.96 / 0.18 | +771..+2655; -654..+1108 | +1747 (+3058; +1768) | +4.7% / -5.1% | -59277 / -90315 / 0.99 | GAP mean pct 0.21<0.25 |
+| give-back H7 NY AM 40% / 40pt | ENGINE ONLY (not CONFIRMED) | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** | 24530 -> 24257 (+1.1%) / 8356 -> 8076 (+3.3%) / 9798 -> 9368 (+4.4%) | 0.82 / 1.00 / 1.00 | 0.66 / 0.88 | 0.57 / 0.87 | -171..+354; -191..+329 | +82 (+143; +82) | +2.5% / +0.0% | -60523 / -96415 / 1.00 | LEAD floor met |
+| give-back H7 NY AM 50% / 40pt | ENGINE ONLY (not CONFIRMED) | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** | 24530 -> 24246 (+1.2%) / 8356 -> 8112 (+2.9%) / 9798 -> 9424 (+3.8%) | 0.87 / 0.99 / 0.99 | 0.65 / 0.88 | 0.57 / 0.86 | -134..+355; -203..+296 | +97 (+169; +97) | +2.4% / +0.0% | -60685 / -96554 / 1.00 | LEAD floor met |
 | JL2 reference (for scale) | - | - | HOLD 24530 / L6M 8356 / L3M 9798 | - | - | - | - | - | - | -61074 / -97706 / 1.00 | - |
 | the three profit lines, as designed vs as coded | not scored (replay only: DS3_PROFIT_LINES_REPLAY.md) | **NOT ENOUGH CONTROLS YET** (no engine cell of either version exists on JL2; /mnt/l2/l2vast/_jointexit has identity cells only) | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | not finished |
 
@@ -36,26 +36,26 @@ Engine-exact vs arithmetic: real cells and JL2 are exact-engine trade lists. Con
 
 | candidate | window | landed | JL2 trades in scope | real trades in scope | trades that differ from JL2 | weeks touched | ulcer change vs JL2 | pct ulcer / mean | P(ulcer lower) | tier |
 |---|---|---|---|---|---|---|---|---|---|---|
-| M7 London cap 3 (block entry after 3 closes) | L6M | yes | 512 | 349 | 163 | 26 | +3.6% | 0.55 / 1.00 | 0.20 | LEAD (older windows PREUW,X' not run) |
-| M7 London cap 3 (block entry after 3 closes) | L3M | yes | 236 | 175 | 61 | 13 | +3.5% | 0.40 / 0.96 | 0.12 |  |
-| M7 London cap 3 (block entry after 3 closes) | HOLD | yes | 451 | 325 | 126 | 22 | +9.1% | 0.94 / 0.61 | 0.97 |  |
-| M7 London cap 3 (block entry after 3 closes) | GAP | yes | 135 | 125 | 10 | 6 | +1.4% | 0.41 / 0.27 | 0.65 |  |
-| M7 London cap 3 (block entry after 3 closes) | PREUW | NOT LANDED (2 of 9 months) | - | - | - | - | - | - | - | - |
-| M7 London cap 3 (block entry after 3 closes) | X' | NOT LANDED (0 of 18 months) | - | - | - | - | - | - | - | - |
-| M7 London cap 3 (block entry after 3 closes) | **tier now** | | | | | | | | | **LEAD (older windows PREUW,X' not run)** |
-| give-back H7 NY AM 40% / 40pt | L6M | yes | 38 | 38 | 15 | 13 | +3.3% | 1.00 / 0.58 | 0.88 | PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued) |
-| give-back H7 NY AM 40% / 40pt | L3M | yes | 18 | 18 | 9 | 8 | +4.4% | 0.98 / 0.69 | 0.66 |  |
-| give-back H7 NY AM 40% / 40pt | HOLD | yes | 40 | 41 | 13 | 10 | +1.1% | 0.76 / 0.50 | 0.66 |  |
-| give-back H7 NY AM 40% / 40pt | GAP | NOT LANDED (0 of 3 months) | - | - | - | - | - | - | - | - |
-| give-back H7 NY AM 40% / 40pt | PREUW | NOT LANDED (0 of 9 months) | - | - | - | - | - | - | - | - |
-| give-back H7 NY AM 40% / 40pt | X' | NOT LANDED (0 of 18 months) | - | - | - | - | - | - | - | - |
+| M7 London cap 3 (block entry after 3 closes) | L6M | yes | 512 | 349 | 163 | 26 | +3.6% | 0.62 / 1.00 | 0.20 | FAIL (windows PREUW,X' not run) |
+| M7 London cap 3 (block entry after 3 closes) | L3M | yes | 236 | 175 | 61 | 13 | +3.5% | 0.56 / 0.99 | 0.12 |  |
+| M7 London cap 3 (block entry after 3 closes) | HOLD | yes | 451 | 325 | 126 | 22 | +9.1% | 0.96 / 0.63 | 0.97 |  |
+| M7 London cap 3 (block entry after 3 closes) | GAP | yes | 135 | 125 | 10 | 6 | +1.4% | 0.40 / 0.21 | 0.65 |  |
+| M7 London cap 3 (block entry after 3 closes) | PREUW | NOT LANDED (8 of 9 months) | - | - | - | - | - | - | - | - |
+| M7 London cap 3 (block entry after 3 closes) | X' | NOT LANDED (16 of 18 months) | - | - | - | - | - | - | - | - |
+| M7 London cap 3 (block entry after 3 closes) | **tier now** | | | | | | | | | **FAIL (windows PREUW,X' not run)** |
+| give-back H7 NY AM 40% / 40pt | L6M | yes | 38 | 38 | 15 | 13 | +3.3% | 1.00 / 0.79 | 0.88 | PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued) |
+| give-back H7 NY AM 40% / 40pt | L3M | yes | 18 | 18 | 9 | 8 | +4.4% | 1.00 / 0.75 | 0.66 |  |
+| give-back H7 NY AM 40% / 40pt | HOLD | yes | 40 | 41 | 13 | 10 | +1.1% | 0.82 / 0.69 | 0.66 |  |
+| give-back H7 NY AM 40% / 40pt | GAP | NOT LANDED (2 of 3 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 40% / 40pt | PREUW | NOT LANDED (8 of 9 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 40% / 40pt | X' | NOT LANDED (16 of 18 months) | - | - | - | - | - | - | - | - |
 | give-back H7 NY AM 40% / 40pt | **tier now** | | | | | | | | | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** |
-| give-back H7 NY AM 50% / 40pt | L6M | yes | 38 | 38 | 12 | 11 | +2.9% | 0.99 / 0.59 | 0.88 | PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued) |
-| give-back H7 NY AM 50% / 40pt | L3M | yes | 18 | 18 | 8 | 7 | +3.8% | 1.00 / 0.61 | 0.65 |  |
-| give-back H7 NY AM 50% / 40pt | HOLD | yes | 40 | 40 | 11 | 9 | +1.2% | 0.79 / 0.44 | 0.65 |  |
-| give-back H7 NY AM 50% / 40pt | GAP | NOT LANDED (0 of 3 months) | - | - | - | - | - | - | - | - |
-| give-back H7 NY AM 50% / 40pt | PREUW | NOT LANDED (0 of 9 months) | - | - | - | - | - | - | - | - |
-| give-back H7 NY AM 50% / 40pt | X' | NOT LANDED (0 of 18 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 50% / 40pt | L6M | yes | 38 | 38 | 12 | 11 | +2.9% | 0.99 / 0.90 | 0.88 | PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued) |
+| give-back H7 NY AM 50% / 40pt | L3M | yes | 18 | 18 | 8 | 7 | +3.8% | 0.99 / 0.85 | 0.65 |  |
+| give-back H7 NY AM 50% / 40pt | HOLD | yes | 40 | 40 | 11 | 9 | +1.2% | 0.87 / 0.73 | 0.65 |  |
+| give-back H7 NY AM 50% / 40pt | GAP | NOT LANDED (2 of 3 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 50% / 40pt | PREUW | NOT LANDED (6 of 9 months) | - | - | - | - | - | - | - | - |
+| give-back H7 NY AM 50% / 40pt | X' | NOT LANDED (16 of 18 months) | - | - | - | - | - | - | - | - |
 | give-back H7 NY AM 50% / 40pt | **tier now** | | | | | | | | | **PROVISIONAL (CONFIRMED on the windows run; older windows GAP,PREUW,X' NOT RUN: not issued)** |
 
 Meaning at small counts: H7 NY AM has 78 JL2 trades in the 12 months (23-28 differ from JL2); a 6-month window holds about a dozen affected trades in a handful of weeks, so a percentile among controls that change the same number of random trades is mostly the luck of which weeks are touched. Treat any H7 NY AM tier below 40 affected trades per window as NOT MEANINGFUL (it can neither confirm nor reject); only the pooled 43-month count (about 100 affected trades) can carry a verdict.
