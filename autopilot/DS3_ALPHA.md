@@ -118,6 +118,10 @@ IC of the ridge+GBM average with ONE BLOCK REMOVED (abl_<block>) or with ONLY th
 
 | run | 5m | 15m | 30m | 60m | 120m |
 |---|---|---|---|---|---|
+| abl_clock | +0.0111 | +0.0088 | +0.0055 | +0.0060 | +0.0054 |
+| abl_inter | +0.0123 | +0.0106 | +0.0055 | +0.0047 | +0.0022 |
+| abl_l2 | +0.0127 | +0.0081 | +0.0051 | +0.0040 | +0.0039 |
+| abl_l3 | +0.0121 | +0.0103 | +0.0046 | +0.0046 | +0.0041 |
 | abl_price | +0.0102 | +0.0091 | +0.0049 | +0.0067 | +0.0066 |
 | REFERENCE full set (ridge+GBM avg) | +0.0115 | +0.0102 | +0.0040 | +0.0033 | +0.0007 |
 
@@ -125,6 +129,10 @@ Asia only:
 
 | run | 5m | 15m | 30m | 60m | 120m |
 |---|---|---|---|---|---|
+| abl_clock | +0.0228 | +0.0277 | +0.0198 | +0.0165 | +0.0181 |
+| abl_inter | +0.0229 | +0.0280 | +0.0153 | +0.0146 | +0.0100 |
+| abl_l2 | +0.0228 | +0.0219 | +0.0133 | +0.0126 | +0.0077 |
+| abl_l3 | +0.0228 | +0.0274 | +0.0189 | +0.0120 | +0.0065 |
 | abl_price | +0.0201 | +0.0254 | +0.0195 | +0.0215 | +0.0115 |
 | REFERENCE full set (ridge+GBM avg) | +0.0232 | +0.0268 | +0.0157 | +0.0142 | +0.0054 |
 
@@ -132,9 +140,14 @@ Share of the reference IC surviving after removing the block (n/a where the refe
 
 | block removed | 5m | 15m | 30m | 60m | 120m |
 |---|---|---|---|---|---|
+| abl_clock | 96% | 87% | 138% | 180% | n/a |
+| abl_inter | 107% | 104% | 138% | 141% | n/a |
+| abl_l2 | 111% | 79% | 128% | 121% | n/a |
+| abl_l3 | 106% | 101% | 115% | 139% | n/a |
 | abl_price | 89% | 90% | 124% | 203% | n/a |
 
 
+Reading: no single block is necessary. Removing price, intermarket, clock or L2 leaves 80-110% of the 5-15 min IC (above 100% means the block was adding noise), because the short-term reversal information is redundant across blocks (the indicator library and intermarket inputs carry the same recent-return information as the price block). The IC is therefore a property of recent price action itself, not of L2, L3, options or the counting libraries; L3, CF6, CF4 and CF5 ablations follow in this section as they finish.
 ## 5. Trades with costs inside (Part 1 item 5, NQ)
 Rules: position = rounded z-score of the forecast (forecast / trailing 20-day std) up to 3 lots, enter when |z| >= band, hold until |z| < 0.3 band (hysteresis = no-trade band), flat when the next 5-min return is unknown (halt/gap); trades at the decision price with slippage 0.23 pt per side (measured entry) + fee $4.84 RT = $2.42/side, $20 per point; P&L over each 5-min step. gross/net are $ per trading day at up to 3 lots. FIRST PASS: no stop model, execution at the decision bar close.
 ### full set (2023-10..2026-10-16), band |z|>=2, market execution
@@ -215,36 +228,72 @@ Net $/day, market (slip 0.23 pt) vs passive-fill upper bound (slip 0, no queue/a
 
 Reading: gross edge exists (the forecast direction is right slightly more often) but about 40-70% of gross is eaten by cost at market execution; net Sharpe stays below ~1 and is not statistically separable from zero over ~900 days. Asia 120-min and Asia+London 15-min are the best cells. Capacity: the edge is measured at <= 3 lots; at 5-50 lots the extra slippage (assume +0.02 pt per additional contract in Asia, NQ top-of-book 10-30 lots) removes the net quickly: 5 lots is the practical size here, 50 lots is not supported at market execution. Passive entry is the route to keep the 5-min reversal (needs queue-position data, W-AL2 part 4).
 
+## 5b. Small-size items (user addendum A): micros, the 17:00-18:00 ET halt, holiday sessions, passive entries
+IC of the core forecast (price+intermarket+clock, 2023-04..2026-10-30) in time windows around the halt and on early-close/holiday trading days (13:00 ET closes: Presidents Day, Memorial, Juneteenth, Independence, Labor, Thanksgiving Friday, Christmas Eve ...; 33 such days in the test span, so low power):
+
+| window | 5m | 15m | 60m |
+|---|---|---|---|
+| 15:00-16:30 ET | -0.0005 (t -0.1, n 16,002, 889 d) | -0.0096 (t -0.8, n 16,002, 889 d) | -0.0525 (t -2.0, n 11,557, 889 d) |
+| 18:30-20:00 ET | +0.0249 (t +3.1, n 16,668, 926 d) | +0.0074 (t +0.6, n 16,666, 926 d) | +0.0116 (t +0.6, n 16,657, 926 d) |
+| all | +0.0106 (t +5.2, n 253,586, 927 d) | +0.0120 (t +3.7, n 251,732, 927 d) | +0.0076 (t +1.3, n 243,389, 927 d) |
+| early-close / holiday trading days (76 days) | +0.0316 (t +2.8, n 7,419, 33 d) | -0.0071 (t -0.4, n 7,351, 33 d) | +0.0332 (t +1.1, n 7,045, 33 d) |
+| first 30 min after the 18:00 ET reopen | +0.0230 (t +1.8, n 5,555, 926 d) | +0.0297 (t +1.7, n 5,555, 926 d) | +0.0318 (t +1.4, n 5,555, 926 d) |
+| last 30 min before the 17:00 halt | +0.0048 (t +0.4, n 5,334, 889 d) | +0.0303 (t +1.2, n 3,556, 889 d) |  |
+
+Reading: the first 30 minutes after the 18:00 ET reopen and 18:30-20:00 ET carry the same or stronger 5-min IC (0.023-0.025, t 1.8-3.1); the last 30 minutes before the halt are noise; 15:00-16:30 ET is zero to negative at 60 min (-0.05, t -2); early-close days: 5-min IC +0.032 (t 2.8) on only 33 days, not enough to say more.
+Micros (MNQ: $2/pt, $1.78 RT fee per FEES.md, same 0.23 pt slippage, same lots count so $ are 1/10 of NQ): cost/gross is about 2x worse than NQ because the fee is a larger fraction of a $2 point: 15-min forecast cost/gross 0.55 (NQ) vs 1.08 (MNQ); 120-min Asia 0.51 vs 0.98. Micro market orders do not keep the edge; micros only work with passive entry and exit.
+
+| h | session | instrument | gross_per_day | cost_per_day | net_per_day | cost_over_gross |
+|---|---|---|---|---|---|---|
+| 15 | all | NQ | 412.37 | 231.76 | 180.61 | 0.56 |
+| 15 | all | MNQ | 41.24 | 44.57 | -3.33 | 1.08 |
+| 15 | asia | NQ | 407.99 | 222.96 | 185.03 | 0.55 |
+| 15 | asia | MNQ | 40.80 | 42.88 | -2.08 | 1.05 |
+| 120 | all | NQ | 457.48 | 138.01 | 319.47 | 0.30 |
+| 120 | all | MNQ | 45.75 | 26.54 | 19.21 | 0.58 |
+| 120 | asia | NQ | 309.04 | 157.42 | 151.62 | 0.51 |
+| 120 | asia | MNQ | 30.90 | 30.27 | 0.63 | 0.98 |
+
+Passive entry for the Asia 5-min reversal (2,317 Asia decisions with |z5| >= 2, 2023-04..2026-10, per-second NQ tape and touch sizes; rest one order at the touch at the decision second, queue ahead = touch size, filled when the aggressor volume against us at an unchanged touch reaches the queue, or when the market trades through; cancel after N seconds; points, entry-side only; exit assumed at the 5-min mid for both so the comparison is entry-only). Mean touch spread in Asia is 1.18 pt; the signed 5-min mid move after the signal is +1.03 pt per decision; crossing the touch (market) keeps +0.44 pt; resting keeps +0.54..+0.62 pt per decision (fills 73% at 10 s, 82% at 30 s, 87% at 60 s). Adverse selection is visible: unfilled orders are the ones that moved +3 to +10 pt in our direction.
+
+| N_sec | fill_rate | edge_pts_filled | uncond_move_of_filled | uncond_move_of_unfilled | edge_pts_per_decision | mkt_edge_pts_per_decision | n |
+|---|---|---|---|---|---|---|---|
+| 10 | 0.727 | 0.745 | 0.178 | 3.308 | 0.542 | 0.443 | 2317.000 |
+| 30 | 0.820 | 0.752 | 0.185 | 4.880 | 0.616 | 0.443 | 2317.000 |
+| 60 | 0.868 | 0.676 | 0.109 | 7.118 | 0.587 | 0.443 | 2317.000 |
+| 120 | 0.903 | 0.646 | 0.077 | 9.951 | 0.583 | 0.443 | 2317.000 |
+
+Minus the $4.84 fee (0.24 pt) the passive version nets about +0.3..+0.4 pt per decision (about $7 per NQ contract per trade, about 2.5 trades per day = under $20 per day per contract): real but small; it is not a standalone book, and queue-position uncertainty (cancels ahead ignored = conservative; hidden size = optimistic) is the main error. Capacity: 1-3 NQ lots at the touch (touch size 1-70 contracts, median in Asia about 10).
 ## 6. Part 2 - forecast on D7 (exact engine, tag AL, JN05W2 base lots, L6M = 2026-05..2026-10, every signal evaluated, none skipped)
 Forecast used: core (price+intermarket+clock) avg_h from the walk-forward, mapped to each signal second (last 5-min decision <= signal second), a = side x z. Sets: S15/S60/S120 = size m = clip(1+0.35a, 0.5, 1.5) renormalised to mean 1; H60/H120 = half size when a < -0.5; T60 = target distance x clip(1+0.25a, 0.75, 1.25); PL120 and PLxx_n = same size table as S with the forecast SHUFFLED within book and month (placebo). Identity proven: TL3_AL_ID reproduces 598 trades / 25,943.82 on 202610.
 
-| set | n | lots | tot | tot484 | maxdd | worst_wk | d_tot | d_dd | d_ww |
-|---|---|---|---|---|---|---|---|---|---|
-| JN05W2 | 4,169 | 7,741 | 660,702 | 632,370 | 52,233 | -36,371 | 0 | 0 | 0 |
-| TL3_AL_S15 | 4,117 | 7,657 | 700,844 | 672,819 | 64,213 | -38,849 | 40,142 | 11,980 | -2,478 |
-| TL3_AL_S60 | 4,117 | 7,642 | 656,187 | 628,217 | 60,996 | -40,406 | -4,515 | 8,763 | -4,035 |
-| TL3_AL_S120 | 4,177 | 7,783 | 707,322 | 678,836 | 64,924 | -48,981 | 46,620 | 12,691 | -12,611 |
-| TL3_AL_H60 | 4,191 | 7,289 | 649,588 | 622,911 | 52,999 | -36,053 | -11,114 | 766 | 318 |
-| TL3_AL_H120 | 4,224 | 7,210 | 645,185 | 618,797 | 51,621 | -33,660 | -15,517 | -612 | 2,711 |
-| TL3_AL_T60 | 4,015 | 7,465 | 646,985 | 619,663 | 59,574 | -42,974 | -13,717 | 7,341 | -6,604 |
-| TL3_AL_PL120 | 4,116 | 7,773 | 582,318 | 553,868 | 68,945 | -52,300 | -78,384 | 16,712 | -15,930 |
-| TL3_AL_PL15_11 | 4,052 | 7,700 | 688,385 | 660,203 | 45,149 | -31,301 | 27,684 | -7,084 | 5,070 |
-| TL3_AL_PL15_12 | 4,122 | 7,809 | 625,769 | 597,188 | 57,890 | -41,243 | -34,932 | 5,657 | -4,872 |
-| TL3_AL_PL15_13 | 4,162 | 7,805 | 635,902 | 607,336 | 52,242 | -35,752 | -24,800 | 8 | 619 |
-| TL3_AL_PL15_14 | 4,126 | 7,771 | 746,242 | 717,800 | 63,142 | -47,676 | 85,540 | 10,909 | -11,305 |
-| TL3_AL_PL120_11 | 4,054 | 7,686 | 694,454 | 666,323 | 49,499 | -30,796 | 33,752 | -2,735 | 5,575 |
-| TL3_AL_PL120_12 | 4,031 | 7,664 | 581,769 | 553,719 | 41,785 | -24,571 | -78,932 | -10,448 | 11,799 |
-| TL3_AL_PL120_13 | 4,066 | 7,639 | 570,930 | 542,972 | 57,832 | -40,156 | -89,771 | 5,599 | -3,786 |
-| TL3_AL_PL120_14 | 4,109 | 7,722 | 736,195 | 707,932 | 60,747 | -41,838 | 75,493 | 8,514 | -5,468 |
-| TL3_AL_R1_60 | 4,182 | 7,473 | 683,812 | 656,461 | 53,091 | -32,644 | 23,110 | 858 | 3,727 |
-| TL3_AL_R2_60 | 4,218 | 7,431 | 646,471 | 619,273 | 57,017 | -38,447 | -14,231 | 4,784 | -2,076 |
-| TL3_AL_RB_60 | 4,213 | 7,330 | 645,072 | 618,244 | 58,134 | -38,041 | -15,630 | 5,901 | -1,670 |
-| TL3_AL_RP1_21 | 4,170 | 7,469 | 585,077 | 557,741 | 48,688 | -34,659 | -75,624 | -3,545 | 1,712 |
-| TL3_AL_RP1_22 | 4,179 | 7,483 | 610,144 | 582,756 | 63,252 | -43,553 | -50,558 | 11,019 | -7,183 |
-| TL3_AL_RP1_23 | 4,154 | 7,467 | 661,732 | 634,403 | 43,629 | -30,545 | 1,030 | -8,604 | 5,825 |
-| TL3_AL_RB_P21 | 4,207 | 7,331 | 598,738 | 571,906 | 51,396 | -34,316 | -61,964 | -837 | 2,055 |
-| TL3_AL_RB_P22 | 4,173 | 7,328 | 613,791 | 586,970 | 53,942 | -35,408 | -46,911 | 1,709 | 963 |
-| TL3_AL_RB_P23 | 4,188 | 7,333 | 620,643 | 593,804 | 49,867 | -33,008 | -40,059 | -2,367 | 3,362 |
+| set | n | lots | tot | tot484 | maxdd | worst_wk | d_tot | d_dd | d_ww | wk175 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| JN05W2 | 4,169 | 7,741 | 660,702 | 632,370 | 52,233 | -36,371 | 0 | 0 | 0 | 42,823 |
+| TL3_AL_S15 | 4,117 | 7,657 | 700,844 | 672,819 | 64,213 | -38,849 | 40,142 | 11,980 | -2,478 | 45,425 |
+| TL3_AL_S60 | 4,117 | 7,642 | 656,187 | 628,217 | 60,996 | -40,406 | -4,515 | 8,763 | -4,035 | 42,531 |
+| TL3_AL_S120 | 4,177 | 7,783 | 707,322 | 678,836 | 64,924 | -48,981 | 46,620 | 12,691 | -12,611 | 45,845 |
+| TL3_AL_H60 | 4,191 | 7,289 | 649,588 | 622,911 | 52,999 | -36,053 | -11,114 | 766 | 318 | 42,103 |
+| TL3_AL_H120 | 4,224 | 7,210 | 645,185 | 618,797 | 51,621 | -33,660 | -15,517 | -612 | 2,711 | 41,818 |
+| TL3_AL_T60 | 4,015 | 7,465 | 646,985 | 619,663 | 59,574 | -42,974 | -13,717 | 7,341 | -6,604 | 41,934 |
+| TL3_AL_PL120 | 4,116 | 7,773 | 582,318 | 553,868 | 68,945 | -52,300 | -78,384 | 16,712 | -15,930 | 37,743 |
+| TL3_AL_PL15_11 | 4,052 | 7,700 | 688,385 | 660,203 | 45,149 | -31,301 | 27,684 | -7,084 | 5,070 | 44,618 |
+| TL3_AL_PL15_12 | 4,122 | 7,809 | 625,769 | 597,188 | 57,890 | -41,243 | -34,932 | 5,657 | -4,872 | 40,559 |
+| TL3_AL_PL15_13 | 4,162 | 7,805 | 635,902 | 607,336 | 52,242 | -35,752 | -24,800 | 8 | 619 | 41,216 |
+| TL3_AL_PL15_14 | 4,126 | 7,771 | 746,242 | 717,800 | 63,142 | -47,676 | 85,540 | 10,909 | -11,305 | 48,368 |
+| TL3_AL_PL120_11 | 4,054 | 7,686 | 694,454 | 666,323 | 49,499 | -30,796 | 33,752 | -2,735 | 5,575 | 45,011 |
+| TL3_AL_PL120_12 | 4,031 | 7,664 | 581,769 | 553,719 | 41,785 | -24,571 | -78,932 | -10,448 | 11,799 | 37,707 |
+| TL3_AL_PL120_13 | 4,066 | 7,639 | 570,930 | 542,972 | 57,832 | -40,156 | -89,771 | 5,599 | -3,786 | 37,005 |
+| TL3_AL_PL120_14 | 4,109 | 7,722 | 736,195 | 707,932 | 60,747 | -41,838 | 75,493 | 8,514 | -5,468 | 47,716 |
+| TL3_AL_R1_60 | 4,182 | 7,473 | 683,812 | 656,461 | 53,091 | -32,644 | 23,110 | 858 | 3,727 | 44,321 |
+| TL3_AL_R2_60 | 4,218 | 7,431 | 646,471 | 619,273 | 57,017 | -38,447 | -14,231 | 4,784 | -2,076 | 41,901 |
+| TL3_AL_RB_60 | 4,213 | 7,330 | 645,072 | 618,244 | 58,134 | -38,041 | -15,630 | 5,901 | -1,670 | 41,810 |
+| TL3_AL_RP1_21 | 4,170 | 7,469 | 585,077 | 557,741 | 48,688 | -34,659 | -75,624 | -3,545 | 1,712 | 37,922 |
+| TL3_AL_RP1_22 | 4,179 | 7,483 | 610,144 | 582,756 | 63,252 | -43,553 | -50,558 | 11,019 | -7,183 | 39,546 |
+| TL3_AL_RP1_23 | 4,154 | 7,467 | 661,732 | 634,403 | 43,629 | -30,545 | 1,030 | -8,604 | 5,825 | 42,890 |
+| TL3_AL_RB_P21 | 4,207 | 7,331 | 598,738 | 571,906 | 51,396 | -34,316 | -61,964 | -837 | 2,055 | 38,807 |
+| TL3_AL_RB_P22 | 4,173 | 7,328 | 613,791 | 586,970 | 53,942 | -35,408 | -46,911 | 1,709 | 963 | 39,783 |
+| TL3_AL_RB_P23 | 4,188 | 7,333 | 620,643 | 593,804 | 49,867 | -33,008 | -40,059 | -2,367 | 3,362 | 40,227 |
 
 - S15: change in 6-month total vs JN05W2 +40,142; 4 placebos (same size table, forecast shuffled within book and month) give +13,373 on average, sd 55,388, range -34,932..+85,540; max drawdown change +11,980 vs placebo mean +2,372 sd 7,717. z of real vs placebo = +0.48.
 - S120: change in 6-month total vs JN05W2 +46,620; 5 placebos (same size table, forecast shuffled within book and month) give -27,569 on average, sd 76,602, range -89,771..+75,493; max drawdown change +12,691 vs placebo mean +3,528 sd 10,459. z of real vs placebo = +0.97.
@@ -278,6 +327,7 @@ Reading: the flagged trades lose LESS than random trades inside the 20 worst wee
 | AB2_RS2 | 90.00 | 176.00 | 17,067.32 | 189.64 | 0.47 | 0.20 | -4,551.22 | -2,837.60 | 2,837.60 |
 
 Reading: the real-side book AB1 earns about the same as its random-side twins (AB1_RS1/RS2), so the P&L is exposure/drift timing in this 6-month window, not forecast skill; AB2 (the strongest short-horizon edge, Asia) loses or is flat and is not separable from random sides either. Correlation with the live stack is low (0.0-0.3), so such a book would diversify, but there is nothing here yet worth adding. No PASS claim.
+LIVE-CAP FRAMING: every dollar figure in this section (tot, tot484, maxdd, worst_wk, d_tot, d_dd, d_ww) is at BASE lots of JN05W2 (engine P7 cap 8,400). Live is x1.75 (P7 14,700): multiply each dollar column by 1.75 (live 6-month JN05W2 total $660,702 base = $1,156,229 live-scaled; max drawdown $52,233 = $91,408; worst week -$36,371 = -$63,649; the placebo sd of $55-75k per 6 months becomes $96-131k); wk175 = live-scaled average weekly total. Ratios and z-scores are unchanged by the scaling.
 (LOT BASIS: base lots JN05W2, live x1.75, engine fee $1.18/contract vs FEES.md $4.84: column tot484 carries $4.84; live caps P7 14,700 vs engine 8,400.)
 
 ## 7. Honest summary: what we have, where it comes from, what would raise it
