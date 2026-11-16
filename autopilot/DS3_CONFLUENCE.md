@@ -134,6 +134,8 @@ A1 READING (FIRST PASS, P7 Asia USER_SET_V0 all-5 only; the other 12 sets are st
 | A2 go (S15) NQ 5-min ADX/DI with the trade (B5 NQ  | 875 | 216 | 0.053 | 43302 | 17.4 | -39416 | 1.23 | 14558 | 25476 | 13985 | 156 | 0.937 / 0.980 | 54453 | 16138 |
 | A3 go (S15) NQ 5-min squeeze momentum with the tra | 875 | 234 | 0.047 | 54170 | 17.7 | -35221 | 1.25 | 15781 | 27616 | 15197 | 159 | 1.000 / 0.000 | 58793 | 19495 |
 | A5 go (S15) RTY 15-min Supertrend with the trade | 880 | 192 | 0.058 | 40315 | 15.8 | -20902 | 1.21 | 13007 | 22762 | 12460 | 149 | 0.030 / 1.000 | 61616 | 20915 |
+| A6 go (S15) NQ 5-min EMA stack (20/50 order) with  | 867 | 275 | 0.058 | 45192 | 17.5 | -29457 | 1.30 | 18325 | 32069 | 17752 | 157 | 1.000 / 0.783 | 68216 | 22567 |
+| L1 go (S15) ZN moving with the trade over 60 min ( | 653 | 116 | 0.017 | 54335 | 30.0 | -30130 | 1.14 | 5810 | 10167 | 5462 | 95 | 1.000 / 0.977 | 49909 | 20698 |
 
 **window L6M** (reference: JN05W2 same session)
 

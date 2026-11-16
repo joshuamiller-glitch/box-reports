@@ -2,11 +2,11 @@
 
 **VERDICT (drawdown first; pass rule = real cell beats ALL its controls on stack max DD in HOLD and L6M and mean not worse than -5%; missing controls = not finished): HOLD: stack DD real -70924 vs ref -74402, best control -63564 -> does NOT beat all controls on DD; mean +1012 $/wk (6.6% of ref) -> ok | L6M: stack DD real -23715 vs ref -22565, best control -22397 -> does NOT beat all controls on DD; mean +1747 $/wk (7.9% of ref) -> ok. No PASS claim until the controls are in.**
 
-Built epoch 1794871382. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
+Built epoch 1794872602. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
 
 identity of the placebo branch (PP with p=0, 202610): 642 trades net 27487.58 vs JL2 642 net 27487.58 -> IDENTICAL
 
-Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 6/7, X' 1/7
+Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 7/7, X' 1/7
 
 ## STACK (all books), drawdown first
 
@@ -43,6 +43,7 @@ Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 
 | PREUW | M7L_CAP3 | -71239.3 | -70931.2 | -0.4 | -124668.7 | -25913.0 | -28957.8 | 8.8 | 9.0 | 457.6 | 800.8 | 466.3 | 1.0 | 0 | 4125 | 4201 |
 | PREUW | PL1_M7L_CAP3 | -71572.0 | -70931.2 | -0.9 | -125250.9 | -25279.2 | -28957.8 | 8.8 | 9.0 | 44.6 | 78.1 | 53.5 | 1.0 | 0 | 4112 | 4201 |
 | PREUW | PL2_M7L_CAP3 | -66798.6 | -70931.2 | 5.8 | -116897.5 | -23067.5 | -28957.8 | 8.8 | 9.0 | 313.0 | 547.7 | 323.2 | 1.0 | 0 | 4106 | 4201 |
+| PREUW | PL3_M7L_CAP3 | -69367.0 | -70931.2 | 2.2 | -121392.3 | -25066.1 | -28957.8 | 8.8 | 9.0 | 668.4 | 1169.6 | 681.0 | 1.0 | 2 | 4090 | 4201 |
 | PREUW | PP1_M7L_CAP3 | -75969.0 | -70931.2 | -7.1 | -132945.8 | -26041.9 | -28957.8 | 8.8 | 9.0 | 398.6 | 697.5 | 409.5 | 1.0 | 1 | 4109 | 4201 |
 | PREUW | PP2_M7L_CAP3 | -69377.5 | -70931.2 | 2.2 | -121410.6 | -23094.2 | -28957.8 | 8.8 | 9.0 | 275.0 | 481.2 | 285.0 | 1.0 | 0 | 4114 | 4201 |
 | PREUW | PP3_M7L_CAP3 | -61325.2 | -70931.2 | 13.5 | -107319.1 | -21884.5 | -28957.8 | 8.8 | 9.0 | 566.4 | 991.2 | 578.3 | 1.0 | 0 | 4096 | 4201 |
@@ -83,6 +84,7 @@ Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 
 | PREUW | M7L_CAP3 | -27579.8 | -27201.4 | -1.4 | -48264.7 | -9547.4 | -9750.3 | 0.9 | 1.2 | -61.3 | -107.3 | -48.3 | 0.7 | 4 | 451 | 568 |
 | PREUW | PL1_M7L_CAP3 | -25913.7 | -27201.4 | 4.7 | -45348.9 | -7592.4 | -9750.3 | 0.9 | 1.2 | -199.5 | -349.2 | -184.6 | 0.7 | 5 | 428 | 568 |
 | PREUW | PL2_M7L_CAP3 | -21065.7 | -27201.4 | 22.6 | -36864.9 | -7165.3 | -9750.3 | 0.9 | 1.2 | -10.7 | -18.7 | 4.7 | 0.8 | 5 | 428 | 568 |
+| PREUW | PL3_M7L_CAP3 | -17690.8 | -27201.4 | 35.0 | -30959.0 | -5309.8 | -9750.3 | 0.9 | 1.2 | 224.0 | 391.9 | 242.5 | 0.3 | 2 | 407 | 568 |
 | PREUW | PP1_M7L_CAP3 | -30520.1 | -27201.4 | -12.2 | -53410.2 | -7016.3 | -9750.3 | 0.8 | 1.2 | -219.2 | -383.6 | -200.5 | 0.6 | 5 | 401 | 568 |
 | PREUW | PP2_M7L_CAP3 | -26211.7 | -27201.4 | 3.6 | -45870.4 | -7036.7 | -9750.3 | 0.9 | 1.2 | -337.7 | -590.9 | -320.5 | 0.6 | 1 | 414 | 568 |
 | PREUW | PP3_M7L_CAP3 | -16130.4 | -27201.4 | 40.7 | -28228.3 | -6637.5 | -9750.3 | 0.8 | 1.2 | 193.0 | 337.7 | 212.1 | 0.7 | 4 | 396 | 568 |
