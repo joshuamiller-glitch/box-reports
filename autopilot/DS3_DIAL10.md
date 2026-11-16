@@ -324,6 +324,7 @@ Method (user order PART B, 2026-11-15): each cell = the Dial 10 hook restricted 
 | K7 london | narrow/g1.0/H50 | n/a | -182 (live -319; $4.84 -204) DD -13.7% ww +3097 stops 0.23(0.30) | n/a |
 | K7 london | both/g1.0/H75 | n/a | +481 (live +841; $4.84 +462) DD -25.5% ww +4257 stops 0.38(0.30) | n/a |
 | K7 london | narrow/g1.0/H75 | n/a | -31 (live -55; $4.84 -55) DD -42.3% ww +4122 stops 0.38(0.30) | n/a |
+| K7 nyam | both/g0.0/H50 | -645 (live -1129; $4.84 -647) DD -55.9% ww -1158 stops 0.08(0.08) | +805 (live +1408; $4.84 +793) DD +62.7% ww +1729 stops 0.00(0.00) | +80 (live +139; $4.84 +73) DD +44.5% ww +1153 stops 0.04(0.04) |
 | K7 nyam | both/g0.0/H50 | -488 (live -855; $4.84 -488) DD -38.7% ww -514 stops 0.08(0.08) | +1078 (live +1886; $4.84 +1069) DD +53.9% ww +1605 stops 0.00(0.00) | +295 (live +516; $4.84 +290) DD +50.6% ww +1605 stops 0.04(0.04) |
 | K7 nyam | narrow/g1.0/H50 | n/a | +769 (live +1345; $4.84 +761) DD +51.0% ww +2185 stops 0.00(0.00) | n/a |
 | K7 nyam | both/g1.0/H75 | n/a | +1160 (live +2030; $4.84 +1153) DD +49.1% ww +2130 stops 0.00(0.00) | n/a |
@@ -357,7 +358,9 @@ Method (user order PART B, 2026-11-15): each cell = the Dial 10 hook restricted 
 | M7 nyam | wide/g1.0/H50 | n/a | +6 (live +11; $4.84 +6) DD +0.0% ww +0 stops 0.15(0.23) | n/a |
 | M7 nyam | both/g1.0/H75 | n/a | +419 (live +733; $4.84 +405) DD -6.8% ww -991 stops 0.46(0.23) | n/a |
 | M7 nyam | narrow/g1.0/H75 | n/a | +402 (live +704; $4.84 +388) DD -6.8% ww -991 stops 0.53(0.23) | n/a |
+| M7 nyam | both/g0.0/H50 | -130 (live -227; $4.84 -131) DD -16.3% ww -1329 stops 0.61(0.61) | +102 (live +179; $4.84 +99) DD -11.5% ww +0 stops 0.23(0.23) | -14 (live -24; $4.84 -16) DD -19.5% ww -1329 stops 0.42(0.42) |
 | P7 asia | both/g0.0/H50 | -5189 (live -9081; $4.84 -4987) DD +44.9% ww +11844 stops 0.00(0.00) | -703 (live -1230; $4.84 -620) DD +51.2% ww +20259 stops 0.08(0.15) | -2946 (live -5156; $4.84 -2804) DD +51.2% ww +17717 stops 0.04(0.08) |
+| P7 asia | both/g0.0/H50 | -6897 (live -12069; $4.84 -6699) DD +42.2% ww +13069 stops 0.00(0.00) | -322 (live -564; $4.84 -245) DD +51.2% ww +19309 stops 0.08(0.15) | -3609 (live -6317; $4.84 -3472) DD +51.2% ww +18942 stops 0.04(0.08) |
 | P7 asia | narrow/g1.0/H50 | n/a | -3918 (live -6857; $4.84 -4186) DD -0.4% ww -4286 stops 0.46(0.15) | n/a |
 | P7 asia | both/g0.5/H75 | n/a | -5946 (live -10406; $4.84 -6044) DD -1.0% ww +6944 stops 0.15(0.15) | n/a |
 | P7 asia | narrow/g0.5/H75 | n/a | -5762 (live -10084; $4.84 -5860) DD -1.0% ww +9022 stops 0.15(0.15) | n/a |
