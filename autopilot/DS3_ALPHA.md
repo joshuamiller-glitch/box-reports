@@ -406,6 +406,7 @@ Forecast used: core (price+intermarket+clock) avg_h from the walk-forward, mappe
 | TL3_AL_CUT1P32 | 4,207 | 7,953 | 550,521 | 521,413 | 52,120 | -32,398 | -110,181 | -113 | 3,972 | 35,682 |
 | TL3_AL_CUT1P33 | 4,273 | 7,925 | 574,328 | 545,322 | 81,134 | -46,298 | -86,374 | 28,900 | -9,928 | 37,225 |
 | TL3_AL_CUT2 | 4,199 | 7,784 | 659,502 | 631,013 | 52,233 | -36,371 | -1,200 | 0 | 0 | 42,746 |
+| TL3_AL_CUT2P31 | 4,232 | 7,841 | 610,487 | 581,789 | 60,369 | -31,835 | -50,215 | 8,136 | 4,536 | 39,569 |
 | TL3_AL_CUT2P32 | 4,202 | 7,866 | 610,534 | 581,745 | 57,863 | -42,001 | -50,168 | 5,630 | -5,630 | 39,572 |
 | TL3_AL_CUT2P33 | 4,173 | 7,770 | 614,258 | 585,820 | 61,714 | -42,099 | -46,443 | 9,481 | -5,728 | 39,813 |
 | TL3_AL_CUT3 | 4,187 | 7,742 | 576,325 | 547,989 | 49,954 | -33,016 | -84,377 | -2,279 | 3,354 | 37,354 |
@@ -418,7 +419,7 @@ Forecast used: core (price+intermarket+clock) avg_h from the walk-forward, mappe
 - R1_60: change in 6-month total vs JN05W2 +23,110; 3 placebos (same size table, forecast shuffled within book and month) give -41,717 on average, sd 39,084, range -75,624..+1,030; max drawdown change +858 vs placebo mean -377 sd 10,188. z of real vs placebo = +1.66.
 - RB_60: change in 6-month total vs JN05W2 -15,630; 3 placebos (same size table, forecast shuffled within book and month) give -49,645 on average, sd 11,205, range -61,964..-40,059; max drawdown change +5,901 vs placebo mean -498 sd 2,059. z of real vs placebo = +3.04.
 - CUT1: change in 6-month total vs JN05W2 -37,571; 3 placebos (same size table, forecast shuffled within book and month) give -97,525 on average, sd 11,974, range -110,181..-86,374; max drawdown change +887 vs placebo mean +19,173 sd 16,703. z of real vs placebo = +5.01.
-- CUT2: change in 6-month total vs JN05W2 -1,200; 2 placebos (same size table, forecast shuffled within book and month) give -48,305 on average, sd 2,633, range -50,168..-46,443; max drawdown change +0 vs placebo mean +7,555 sd 2,723. z of real vs placebo = +17.89.
+- CUT2: change in 6-month total vs JN05W2 -1,200; 3 placebos (same size table, forecast shuffled within book and month) give -48,942 on average, sd 2,164, range -50,215..-46,443; max drawdown change +0 vs placebo mean +7,749 sd 1,954. z of real vs placebo = +22.06.
 - CUT3: change in 6-month total vs JN05W2 -84,377; 3 placebos (same size table, forecast shuffled within book and month) give -80,150 on average, sd 51,680, range -134,070..-31,047; max drawdown change -2,279 vs placebo mean +3,758 sd 8,504. z of real vs placebo = -0.08.
 - KEY FINDING for every sizing test: any re-sizing of the stack, even a meaningless one, moves the 6-month engine total by roughly +-$55-75k (sd, on a $660k base) and max drawdown by +-$8-10k through path effects (locks, caps, day-done rules). A forecast-sized book has to beat that placebo spread, not just the base; with this first-pass forecast it does not (z below 1). Sizing by forecast is NOT shown to help.
 
@@ -456,8 +457,10 @@ Rule: at k minutes after the entry fill, if the 60-min forecast (z of avg_60; CU
 | set | base | fired | trade_level_gain | stack_d_tot | stack_d_tot_noW44 | stack_d_dd | n_placebos | placebo_d_tot_mean | placebo_d_tot_sd | placebo_d_dd_mean |
 |---|---|---|---|---|---|---|---|---|---|---|
 | CUT1 | JN05W2 (base lots) | 329 | 43,713 | -37,571 | -36,684 | 887 | 3 | -97,525 | 9,777 | 19,173 |
-| CUT2 | JN05W2 (base lots) | 113 | 18,711 | -1,200 | -1,200 | 0 | 2 | -48,305 | 1,862 | 7,555 |
+| CUT2 | JN05W2 (base lots) | 113 | 18,711 | -1,200 | -1,200 | 0 | 3 | -48,942 | 1,767 | 7,749 |
 | CUT3 | JN05W2 (base lots) | 178 | -23,705 | -84,377 | -87,731 | -2,279 | 3 | -80,150 | 42,196 | 3,758 |
+| CUTR1 | JN05W2 (base lots) | 355 | -24,475 | -119,800 | -124,795 | 10,456 | 2 | -105,586 | 29,209 | -12,173 |
+| JL_CUT2 | JN05W2JL (live-equivalent) | 109 | 17,713 | 19,403 | 19,403 | -332 | 2 | -36,150 | 32,919 | 5,489 |
 
 Per book x session (cells with >= 10 cuts fired; session 0 asia, 1 london, 2 pre, 3 nyam, 4 nypm), change vs base and vs the placebo mean:
 
@@ -472,16 +475,30 @@ Per book x session (cells with >= 10 cuts fired; session 0 asia, 1 london, 2 pre
 | CUT1 | JN05W2 (base lots) | P7 | 0 | 31 | 9,842 | -31,055 | 40,897 |
 | CUT1 | JN05W2 (base lots) | P7 | 1 | 55 | -33,217 | -14,701 | -18,516 |
 | CUT1 | JN05W2 (base lots) | U7 | 1 | 10 | -15,133 | -17,500 | 2,368 |
-| CUT2 | JN05W2 (base lots) | K7 | 0 | 12 | 5,352 | -14,601 | 19,953 |
-| CUT2 | JN05W2 (base lots) | K7 | 1 | 25 | -4,159 | -4,435 | 276 |
-| CUT2 | JN05W2 (base lots) | M7 | 1 | 21 | -3,724 | -7,895 | 4,171 |
-| CUT2 | JN05W2 (base lots) | P7 | 1 | 17 | 1,204 | 5,002 | -3,798 |
+| CUT2 | JN05W2 (base lots) | K7 | 0 | 12 | 5,352 | -12,006 | 17,358 |
+| CUT2 | JN05W2 (base lots) | K7 | 1 | 25 | -4,159 | -61 | -4,098 |
+| CUT2 | JN05W2 (base lots) | M7 | 1 | 21 | -3,724 | -7,029 | 3,305 |
+| CUT2 | JN05W2 (base lots) | P7 | 1 | 17 | 1,204 | -3,891 | 5,095 |
 | CUT3 | JN05W2 (base lots) | A7 | 0 | 12 | -1,899 | -1,674 | -225 |
 | CUT3 | JN05W2 (base lots) | K7 | 0 | 20 | 1,255 | -9,302 | 10,557 |
 | CUT3 | JN05W2 (base lots) | K7 | 1 | 35 | -1,831 | 9,793 | -11,624 |
 | CUT3 | JN05W2 (base lots) | M7 | 1 | 32 | -8,532 | -10,053 | 1,521 |
 | CUT3 | JN05W2 (base lots) | P7 | 0 | 14 | -19,112 | -31,169 | 12,057 |
 | CUT3 | JN05W2 (base lots) | P7 | 1 | 24 | -30,197 | 8,904 | -39,100 |
+| CUTR1 | JN05W2 (base lots) | A7 | 0 | 26 | -5,417 | -4,061 | -1,355 |
+| CUTR1 | JN05W2 (base lots) | K7 | 0 | 63 | 10,706 | 3,020 | 7,686 |
+| CUTR1 | JN05W2 (base lots) | K7 | 1 | 54 | -11,412 | -735 | -10,677 |
+| CUTR1 | JN05W2 (base lots) | K7 | 3 | 15 | -1,702 | 187 | -1,889 |
+| CUTR1 | JN05W2 (base lots) | K7 | 4 | 17 | -11,768 | -19,838 | 8,070 |
+| CUTR1 | JN05W2 (base lots) | M7 | 1 | 51 | 3,394 | -14,711 | 18,105 |
+| CUTR1 | JN05W2 (base lots) | P7 | 0 | 46 | -46,197 | 3,704 | -49,901 |
+| CUTR1 | JN05W2 (base lots) | P7 | 1 | 40 | -28,052 | -19,778 | -8,273 |
+| CUTR1 | JN05W2 (base lots) | U7 | 0 | 11 | -5,659 | -15,249 | 9,590 |
+| CUTR1 | JN05W2 (base lots) | U7 | 1 | 13 | -6,197 | -18,725 | 12,527 |
+| JL_CUT2 | JN05W2JL (live-equivalent) | K7 | 0 | 12 | 4,430 | -5,553 | 9,983 |
+| JL_CUT2 | JN05W2JL (live-equivalent) | K7 | 1 | 27 | -4,808 | 3,703 | -8,511 |
+| JL_CUT2 | JN05W2JL (live-equivalent) | M7 | 1 | 21 | 1,468 | -3,919 | 5,386 |
+| JL_CUT2 | JN05W2JL (live-equivalent) | P7 | 1 | 13 | 4,045 | -10,123 | 14,168 |
 
 Reading (written on partial results; re-read the table when all rows are filled): the cut works trade by trade (cut trades earn more than the same entries would have, trade_level_gain > 0, the first-order result) and random-trigger cuts lose much more, so the forecast carries real information for the cut; but at the stack level the earlier exit frees the book to re-enter and replace, and the net change is zero to negative (path effect), so the forecast cut adds nothing the live state cut and flat cuts do not already deliver in this window. PATH_EFFECT caution: the stack-level number is the verdict, the trade-level gain is not.
 LIVE COMPUTABILITY of the 60-min forecast: yes, from 1-min bars of NQ, ES, RTY and YM (the NT8/CQG feed D7 has for NQ/ES/RTY; YM is used by three of the 90 inputs: ym_ret, rel_ym, ym_es, so without YM refit the ridge without them). The CUTR1 ridge-only rule is a 90-coefficient linear formula refit every two weeks plus a trailing 20-day standard deviation of the forecast; GBM and MLP are not needed (ridge 60-min IC 0.007 vs average 0.008).
