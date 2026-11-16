@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (257 FL cell-months done, 81 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (273 FL cell-months done, 87 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -59,6 +59,8 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_NOISEL5_SKIP_RND | L5 | 1682 | -10907 | -19086 | -10764 | 69068 | 52233 | 16835 | 875 | 1104 | 63.51 | 173 | -10436 | 56489 | 42565 | 9390 | 23989 | 69068 | 43405 |
 | TL3_FL_NOISEL5_X15 | L5 | 1896 | -793 | -1387 | -797 | 62090 | 52233 | 9857 | 1117 | 1104 | 161 | 173 | -843 | 53134 | 42565 | 23630 | 23989 | 44267 | 43405 |
 | TL3_FL_PAfl000ALL_SKIP_PD | ALL | 1767 | -11769 | -20595 | -11710 | 60957 | 52233 | 8724 | 1767 | 1875 | 55.75 | 134 | -11769 | 60957 | 52233 | 11122 | 23989 | 60957 | 43405 |
+| TL3_FL_PAfl001ALL_SKIP_PD | ALL | 1765 | -10719 | -18758 | -10662 | 57945 | 52233 | 5712 | 1765 | 1875 | 63.55 | 134 | -10719 | 57945 | 52233 | 12502 | 23989 | 57945 | 43405 |
+| TL3_FL_PAfl002ALL_SKIP_PD | ALL | 1767 | -11769 | -20595 | -11710 | 60957 | 52233 | 8724 | 1767 | 1875 | 55.75 | 134 | -11769 | 60957 | 52233 | 11122 | 23989 | 60957 | 43405 |
 | TL3_FL_PAfl010NY_SKIP_PD | NY | 1732 | -1493 | -2612 | -1442 | 51623 | 52233 | -610 | 101 | 271 | 84.63 | 47.09 | -324 | 8172 | 16913 | 22322 | 23989 | 43297 | 43405 |
 | TL3_FL_PAfl015NY_SKIP_PD | NY | 1720 | -2176 | -3808 | -2122 | 53255 | 52233 | 1022 | 88 | 271 | -63.82 | 47.09 | -1414 | 14293 | 16913 | 21717 | 23989 | 39074 | 43405 |
 | TL3_FL_PAfl016NY_SKIP_PD | NY | 1737 | -2054 | -3595 | -2006 | 53255 | 52233 | 1022 | 114 | 271 | -23.66 | 47.09 | -1189 | 13613 | 16913 | 21849 | 23989 | 41164 | 43405 |
@@ -83,6 +85,10 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 
 | set | scope | n | d_wk | d_wk175 | d_wk484 | dd | base_dd | d_dd | cn | base_cn | cexp | base_cexp | d_cwk | cdd | base_cdd | wk_noW44 | base_wk_noW44 | dd_noW44 | base_dd_noW44 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TL3_FL_B6E1P7_SKIP_PD | P7 | 4057 | -3748 | -6559 | -3712 | 56038 | 52233 | 3805 | 973 | 1037 | 263 | 328 | -3133 | 50230 | 39663 | 23070 | 26810 | 55014 | 43405 |
+| TL3_FL_BAGO73_SKIP_PD | O73 | 4155 | 70.00 | 123 | 71.90 | 51467 | 52233 | -766 | 32 | 46 | 393 | 232 | 70.00 | 3002 | 5116 | 26854 | 26810 | 42940 | 43405 |
+| TL3_FL_BFC15NY_SKIP_PD | NY | 4020 | -1295 | -2267 | -1270 | 53100 | 52233 | 867 | 431 | 600 | 39.23 | 74.84 | -1037 | 22054 | 21686 | 25499 | 26810 | 41756 | 43405 |
+| TL3_FL_BZN60M71_SKIP_PD | M71 | 3996 | -1235 | -2161 | -1206 | 55132 | 52233 | 2899 | 261 | 519 | -14.64 | -17.75 | 200 | 19618 | 28133 | 25656 | 26810 | 42456 | 43405 |
 | TL3_FL_E3INJ | nan | 4329 | 1398 | 2447 | 1380 | 52677 | 52233 | 444 | 4329 | 4169 | 161 | 158 | 1398 | 52677 | 52233 | 28109 | 26810 | 37944 | 43405 |
 | TL3_FL_E3INJ_P11 | nan | 4222 | 1073 | 1878 | 1066 | 53535 | 52233 | 1302 | 4222 | 4169 | 163 | 158 | 1073 | 53535 | 52233 | 27989 | 26810 | 42783 | 43405 |
 | TL3_FL_E3INJ_P23 | nan | 4222 | 58.38 | 102 | 53.37 | 52486 | 52233 | 253 | 4222 | 4169 | 157 | 158 | 58.38 | 52486 | 52233 | 26881 | 26810 | 45668 | 43405 |

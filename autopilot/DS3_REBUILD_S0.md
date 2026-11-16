@@ -19,3 +19,6 @@ S0 cells TL3_RB_S0_<BOOK> (10) x 43 months = 430 cell-months; identity proofs TL
 
 ## Status
 Pending: layer-switch list and book mask from W-EV (asked 16 Nov); server 2 readiness from W-S2.
+
+## BUILD STATUS (16 Nov, sets written, nothing run)
+Sets TL3_RB_S0_<K7 M7 U7 P7 H7 A7 O7 X3 X4 X5> written with mk_ly.build(off='ALL', only=<book>) on JL2: ALL = lot sigq reg stackcap atrskip bo breadth ntz ote a06 b02 er governor dayDone ctxcut k7flat stackcut statecut locks daycaps l2gate cf. What stays by construction: the session lot table (a table entry of 0 means the book has no entry in that session, e.g. P7 has none in pre and nypm), time-block guards, the roll blackout, one position per book, fills and slippage; market entry on the signal with no L2 split. Queue /mnt/l2/l2vast/_rebuild/pending.txt starts with these 10 sets x 12 recent months (120 lines), then stage 5 recent, then the older months. Identity (W-EV, pending) gates reading any result.
