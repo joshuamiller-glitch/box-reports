@@ -1,4 +1,4 @@
-# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-16 07:29Z
+# DS3_DEEPEN_LOSS - T-DEEPEN PART 1 loss side (W-LA items 1-5; W-LB section appended below). Built 2026-11-16 07:46Z
 
 **VERDICT (running): 72 LA cells scored, 16 are ACTIVE (not no-ops), pass the tolerant gate and still cut drawdown with W44 removed in BOTH L3M and L6M (list in section 1); no PASS claimed. Each gate-passer gets its PART 0 battery; see section 6.**
 
@@ -178,9 +178,10 @@ Reading: a variant that only wins at P1/P2 and loses at P3/P5 is a live-fidelity
 | TL3_LA_F_K7_AM_D40 |      26 | 25151   |     14.1 | 36418   |  36370.5 |     -0.1 |        0.7 |      1 |        0 |       16.6 |         13.6 | -36418   | -36370.5 |       1 |     0 |      56.4 |          57.1 |  160.5 |      160.3 |
 | TL3_LA_F_M7_LO_D40 |      26 | 24954.9 |   -182   | 36540.5 |  36370.5 |     -0.5 |        4.9 |      1 |        0 |     -182.5 |       -185.1 | -36540.5 | -36370.5 |       1 |     0 |      54.2 |          57.1 |  161   |      160.3 |
 
-### HOLD (2 cells)
+### HOLD (3 cells)
 | cell               |   weeks |    mean |   d_mean |      dd |   dd_ref |   dd_cut |   dd44_cut |   prog |   strict |   d_mean44 |   d_mean_484 |       ww |   ww_ref |   best5 |   w2l |   cuts_wk |   cuts_wk_ref |   n_wk |   n_wk_ref |
 |:-------------------|--------:|--------:|---------:|--------:|---------:|---------:|-----------:|-------:|---------:|-----------:|-------------:|---------:|---------:|--------:|------:|----------:|--------------:|-------:|-----------:|
+| TL3_LA_F_M7_LO_D40 |      52 | 17276.2 |   -213.1 | 62097.1 |  63185.1 |      1.7 |        1.7 |      1 |        0 |     -214   |       -215.4 | -55107.9 | -55145.4 |       1 |     0 |      47   |          49.8 |  143.8 |      143.3 |
 | TL3_LA_F_K7_LO_D40 |      52 | 17975.5 |    486.1 | 65403.3 |  63185.1 |     -3.5 |       -3.5 |      0 |        0 |      410.8 |        480.9 | -54980.4 | -55145.4 |       1 |     0 |      49.2 |          49.8 |  144.5 |      143.3 |
 | TL3_LA_F_K7_AS_D40 |      52 | 17562.8 |     73.4 | 67330.1 |  63185.1 |     -6.6 |       -6.6 |      0 |        0 |     -159.1 |         69.3 | -51122.1 | -55145.4 |       1 |     0 |      48.8 |          49.8 |  144.2 |      143.3 |
 

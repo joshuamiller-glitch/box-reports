@@ -1,4 +1,4 @@
-# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-16 04:30Z
+# DS3_FULL_STOPS - P8 full stops (W-PM), built 2026-11-16 07:30Z
 
 VERDICT (data ends 2026-10-30; plain): FIRST PASS: A7 flat -40 is +$1,869/wk in L6M (DD +10.3%, +5.5% with W44 removed) and positive in HOLD (+468) and PRE (+358), but only about a fifth of the L6M gain is A7 itself (+349 own, +1,500 other books: P7 +660, K7 +300, U7 +312, H7 +283) and in PRE A7 itself loses (-472) while other books gain 770; the flat cut removes the stop-triggered stack cuts (StackCut 40 to 15), so the lead is a stack-path effect, not an A7 effect, and the random-subset placebos (TL3_PM_P_A7F40_S1..3) and GAP / X' months are still running. No PASS claim.
 BASIS (one line): every $ and DD number on this page sums raw engine net_fee of JN05W2-family sets at BASE (box) lots, live = x1.75, with the engine own fills and $1.18/contract RT (not FEES.md $4.84 RT); columns dmean@4.84 reprice the mean change at $4.84 RT per contract (delta contracts x $3.66), no rerun. BASE CAVEAT (W-EV, DS3_ENGINE_VS_LIVE.md 10-11): JN05W2 matches live for governor, C22, stack cut 50% Asia-only, NTZ and BREADTH, but has NO JN04 stack cap (10 lots London), no P7 post-exit blackout, no ATR-SKIP and no NKD take; the live-matching base is JN05W2J, so every delta here is vs a base without those four layers.
@@ -147,8 +147,12 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | S_R50_S1 | -155 | -0 | 10.3>10.4 | 677 | -0 | 11.0>11.2 | -208 | 1 | 0 | - | - | - | -155 | 670 | - | -1 | - | - | - |
 | S_R50_S2 | 1161 | -0 | 10.3>10.6 | 1,093 | -0 | 11.0>11.3 | -108 | 1 | 0 | - | - | - | 1156 | 1,087 | - | -4 | - | - | - |
 | S_R50_S3 | 1305 | -0 | 10.3>10.8 | 748 | -0 | 11.0>11.3 | -68 | 1 | 0 | - | - | - | 1296 | 743 | - | -3 | - | - | - |
-| V_GOVOFF | 173 | 17 | 10.3>10.2 | -231 | 17 | 11.0>11.0 | 10,345 | 1 | 0 | - | - | - | 169 | -248 | - | 0 | - | - | - |
-| V_GOV_ALLB | 617 | 8 | 10.3>10.2 | -109 | 8 | 11.0>10.9 | 5,641 | 1 | 0 | - | - | - | 623 | -99 | - | -11 | - | - | - |
+| V_GOVOFF | 173 | 17 | 10.3>10.2 | -231 | 17 | 11.0>11.0 | 10,345 | 1 | 0 | -5 | 2 | 10.7>10.6 | 169 | -248 | -17 | 0 | - | - | - |
+| V_GOV_HALF | -190 | 8 | 10.3>10.3 | -83 | 8 | 11.0>11.0 | 8,405 | 1 | 0 | - | - | - | -189 | -93 | - | 0 | - | - | - |
+| V_GOV_ASIA | -221 | 0 | 10.3>10.3 | -226 | 0 | 11.0>11.0 | 0 | 1 | 0 | - | - | - | -224 | -234 | - | 0 | - | - | - |
+| V_GOV_LON | 342 | 17 | 10.3>10.2 | - | - | - | - | - | - | - | - | - | 341 | - | - | - | - | - | - |
+| V_GOV_K7 | 609 | 16 | 10.3>10.3 | 29 | 16 | 11.0>10.9 | 8,886 | 1 | 0 | - | - | - | 614 | 33 | - | -2 | - | - | - |
+| V_GOV_ALLB | 617 | 8 | 10.3>10.2 | -109 | 8 | 11.0>10.9 | 5,641 | 1 | 0 | -76 | 2 | 10.7>10.6 | 623 | -99 | -70 | -11 | -42 | 0 | 9.3>9.3 |
 
 ## 4. All windows with decomposition (FIRST PASS; delta vs JN05W2 at base lots, x1.75 for live; own/other = change in the cell book vs all other books; rows TL3_PM_V_GOV* (governor / WL_E1) and TL3_PM_S_* (stack cut): both LIVE per user answer 2026-11-16; placebo cells TL3_PM_P_* apply the same A7 flat -40 to a random 50% of A7 trades)
 | cell | L3M | L6M | HOLD | GAP | PREUW | X' | ALL43 |
@@ -194,10 +198,12 @@ Largest full-stop sources (A7, U7) with their cheapest rules (some mean cost):
 | S_TRIGOFF_U7 | -175/wk DD +0.0% stops 10.3>10.6 own +0/other -175 noW44 -3.2% | +114/wk DD +0.0% stops 11.0>11.2 own +0/other +114 noW44 -3.2% | - | - | - | - | - |
 | T_M7_NP10 | -1446/wk DD -0.9% stops 10.3>10.0 own -197/other -1249 noW44 +7.2% | - | - | - | - | - | - |
 | T_M7_NP15 | -835/wk DD -2.8% stops 10.3>10.1 own +212/other -1047 noW44 +0.3% | - | - | - | - | - | - |
-| V_GOVOFF | +173/wk DD +16.9% stops 10.3>10.2 noW44 +0.0% | -231/wk DD +16.9% stops 11.0>11.0 noW44 +0.0% | - | - | - | - | - |
-| V_GOV_ALLB | +617/wk DD +7.9% stops 10.3>10.2 noW44 -10.8% | -109/wk DD +7.9% stops 11.0>10.9 noW44 -10.8% | - | - | - | - | - |
-| V_GOV_ASIA | - | - | - | - | - | - | - |
-| V_GOV_HALF | - | - | - | - | - | - | - |
+| V_GOVOFF | +173/wk DD +16.9% stops 10.3>10.2 noW44 +0.0% | -231/wk DD +16.9% stops 11.0>11.0 noW44 +0.0% | -5/wk DD +2.0% stops 10.7>10.6 | - | - | - | - |
+| V_GOV_ALLB | +617/wk DD +7.9% stops 10.3>10.2 noW44 -10.8% | -109/wk DD +7.9% stops 11.0>10.9 noW44 -10.8% | -76/wk DD +2.4% stops 10.7>10.6 | -92/wk DD +0.8% stops 9.9>9.9 | -42/wk DD +0.0% stops 9.3>9.3 | - | - |
+| V_GOV_ASIA | -221/wk DD +0.0% stops 10.3>10.3 noW44 +0.0% | -226/wk DD +0.0% stops 11.0>11.0 noW44 +0.0% | - | - | - | - | - |
+| V_GOV_HALF | -190/wk DD +8.0% stops 10.3>10.3 noW44 +0.0% | -83/wk DD +8.0% stops 11.0>11.0 noW44 +0.0% | - | - | - | - | - |
+| V_GOV_K7 | +609/wk DD +15.6% stops 10.3>10.3 own +140/other +470 noW44 -1.6% | +29/wk DD +15.6% stops 11.0>10.9 own -138/other +167 noW44 -1.6% | - | - | - | - | - |
+| V_GOV_LON | +342/wk DD +16.9% stops 10.3>10.2 noW44 +0.0% | - | - | - | - | - | - |
 | X_A7AS_F35 | +2043/wk DD +13.4% stops 10.3>6.6 own +744/other +1298 noW44 +7.3% | +1718/wk DD +13.4% stops 11.0>7.2 own +278/other +1440 noW44 +7.3% | +400/wk DD +3.4% stops 10.7>7.6 own +6/other +393 | - | - | - | - |
 | X_A7AS_F40 | +2126/wk DD +10.3% stops 10.3>6.5 own +591/other +1533 noW44 +5.5% | +1869/wk DD +10.3% stops 11.0>7.2 own +345/other +1524 noW44 +5.5% | - | - | - | - | - |
 | X_A7AS_F45 | +1571/wk DD -1.3% stops 10.3>6.5 own +174/other +1395 noW44 +3.6% | - | - | - | - | - | - |

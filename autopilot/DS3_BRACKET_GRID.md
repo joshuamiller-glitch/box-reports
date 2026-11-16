@@ -992,7 +992,7 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 | 60x90 | -32 (live -56; $4.84 -20) DD -12.7% ww -2350 stops 0.68(1.45) | -668 (live -1170; $4.84 -653) DD +13.4% ww +525 stops 1.29(1.75) | -350 (live -613; $4.84 -336) DD -12.7% ww -896 stops 0.99(1.60) |
 | 85x40 | +657 (live +1150; $4.84 +643) DD -50.8% ww -1813 stops 1.90(1.45) | -3660 (live -6406; $4.84 -3679) DD -375.3% ww -8247 stops 2.74(1.75) | -1502 (live -2628; $4.84 -1518) DD -374.1% ww -8247 stops 2.32(1.60) |
 | 85x60 | -1165 (live -2039; $4.84 -1165) DD -102.3% ww -4462 stops 1.67(1.45) | -3279 (live -5738; $4.84 -3276) DD -213.8% ww -5405 stops 2.28(1.75) | -2222 (live -3888; $4.84 -2221) DD -236.5% ww -5405 stops 1.98(1.60) |
-| 85x90 | -1307 (live -2287; $4.84 -1295) DD -134.1% ww -850 stops 0.84(1.45) | n/a | n/a |
+| 85x90 | -1307 (live -2287; $4.84 -1295) DD -134.1% ww -850 stops 0.84(1.45) | -14 (live -25; $4.84 +5) DD +17.7% ww +2525 stops 1.37(1.75) | -661 (live -1156; $4.84 -645) DD -134.1% ww +604 stops 1.10(1.60) |
 
 ### 1b/1d first pass: lookup by bucket known at the signal second (offline replay nets, walk-forward: best trailing mean of the 49 grid points per bucket, min 30 prior trades, else 60/60)
 Median over the 14 cells, full history. Controls: bucket labels shifted by 11 / 23 / 37 trades and randomly permuted. "beats all controls" = share of the 14 x bucket cases where the real labels give a higher d mean than the best of the four controls (chance is about 20%).
