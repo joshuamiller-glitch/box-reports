@@ -66,13 +66,13 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
-| 40x40 | +205 (live +359; $4.84 +189) DD +24.7% ww +2588 stops 6.62(4.03) | n/a | n/a |
+| 40x40 | +205 (live +359; $4.84 +189) DD +24.7% ww +2588 stops 6.62(4.03) | +594 (live +1040; $4.84 +572) DD +19.6% ww +760 stops 7.30(3.88) | +400 (live +700; $4.84 +381) DD +24.7% ww +2274 stops 6.96(3.96) |
 | 40x60 | -373 (live -653; $4.84 -384) DD -2.3% ww +1411 stops 4.49(4.03) | n/a | n/a |
-| 40x90 | -20 (live -35; $4.84 -26) DD -34.2% ww -532 stops 1.52(4.03) | n/a | n/a |
+| 40x90 | -20 (live -35; $4.84 -26) DD -34.2% ww -532 stops 1.52(4.03) | -811 (live -1419; $4.84 -816) DD -3.7% ww -303 stops 1.67(3.88) | -415 (live -727; $4.84 -421) DD -93.7% ww -532 stops 1.60(3.96) |
 | 60x40 | +879 (live +1539; $4.84 +874) DD +38.1% ww +2338 stops 6.24(4.03) | n/a | n/a |
-| 60x90 | -23 (live -40; $4.84 -18) DD -68.2% ww -4785 stops 1.45(4.03) | n/a | n/a |
+| 60x90 | -23 (live -40; $4.84 -18) DD -68.2% ww -4785 stops 1.45(4.03) | -148 (live -260; $4.84 -141) DD -45.2% ww -2905 stops 1.29(3.88) | -86 (live -150; $4.84 -79) DD -127.0% ww -4785 stops 1.37(3.96) |
 | 85x40 | -159 (live -279; $4.84 -161) DD -54.1% ww -2126 stops 6.54(4.03) | n/a | n/a |
-| 85x60 | -614 (live -1074; $4.84 -609) DD -87.0% ww -2571 stops 4.41(4.03) | n/a | n/a |
+| 85x60 | -614 (live -1074; $4.84 -609) DD -87.0% ww -2571 stops 4.41(4.03) | -154 (live -270; $4.84 -146) DD -20.2% ww +787 stops 3.58(3.88) | -384 (live -672; $4.84 -378) DD -176.9% ww -2571 stops 3.99(3.96) |
 | 85x90 | -944 (live -1652; $4.84 -935) DD -175.4% ww -3751 stops 1.37(4.03) | n/a | n/a |
 
 #### H7 asia
@@ -136,7 +136,7 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
-| 40x40 | -350 (live -613; $4.84 -374) DD -97.5% ww -2100 stops 0.53(0.23) | n/a | n/a |
+| 40x40 | -350 (live -613; $4.84 -374) DD -97.5% ww -2100 stops 0.53(0.23) | -743 (live -1299; $4.84 -763) DD -22.8% ww +2102 stops 1.07(0.61) | -546 (live -956; $4.84 -569) DD -29.3% ww +2102 stops 0.80(0.42) |
 | 40x60 | -311 (live -545; $4.84 -313) DD -42.9% ww -1200 stops 0.30(0.23) | n/a | n/a |
 | 40x90 | -393 (live -687; $4.84 -379) DD +47.1% ww +341 stops 0.23(0.23) | n/a | n/a |
 | 60x40 | -205 (live -359; $4.84 -225) DD -91.8% ww -2847 stops 0.53(0.23) | n/a | n/a |
@@ -772,6 +772,7 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 | 60x40 | -1503 (live -2630; $4.84 -1572) DD -73.4% ww -9391 stops 0.15(0.08) | n/a | n/a |
 | 60x90 | -968 (live -1694; $4.84 -931) DD +16.1% ww +756 stops 0.08(0.08) | n/a | n/a |
 | 85x40 | -2397 (live -4194; $4.84 -2436) DD -40.0% ww -11199 stops 0.30(0.08) | n/a | n/a |
+| 85x60 | -461 (live -807; $4.84 -443) DD +14.4% ww +1011 stops 0.23(0.08) | n/a | n/a |
 | 85x90 | -940 (live -1645; $4.84 -889) DD +28.1% ww +2210 stops 0.23(0.08) | n/a | n/a |
 
 #### P7 nyam
@@ -835,10 +836,13 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
+| 40x40 | -905 (live -1583; $4.84 -934) DD -22.6% ww -1282 stops 0.23(0.38) | n/a | n/a |
 | 40x60 | -182 (live -318; $4.84 -189) DD +19.2% ww -800 stops 0.30(0.38) | n/a | n/a |
+| 40x90 | +135 (live +237; $4.84 +142) DD +40.7% ww -2282 stops 0.08(0.38) | n/a | n/a |
 | 60x40 | -441 (live -771; $4.84 -461) DD -21.2% ww -482 stops 0.23(0.38) | n/a | n/a |
 | 60x90 | -245 (live -429; $4.84 -235) DD +13.2% ww -1482 stops 0.08(0.38) | n/a | n/a |
 | 85x40 | -1404 (live -2457; $4.84 -1421) DD -91.1% ww -5554 stops 0.30(0.38) | n/a | n/a |
+| 85x60 | -1227 (live -2147; $4.84 -1225) DD -69.8% ww -2893 stops 0.46(0.38) | n/a | n/a |
 | 85x90 | -550 (live -963; $4.84 -538) DD -40.4% ww -1679 stops 0.15(0.38) | n/a | n/a |
 
 #### U7 asia
@@ -902,8 +906,11 @@ Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs
 
 | T x S | L3M | May-Jul | L6M |
 |---|---|---|---|
+| 40x40 | +1733 (live +3032; $4.84 +1703) DD +30.8% ww -4307 stops 1.75(1.83) | n/a | n/a |
 | 40x90 | -1860 (live -3254; $4.84 -1841) DD -31.7% ww -1661 stops 0.76(1.83) | n/a | n/a |
+| 60x40 | +920 (live +1609; $4.84 +889) DD -22.1% ww -3107 stops 2.59(1.83) | n/a | n/a |
 | 60x90 | -2913 (live -5098; $4.84 -2894) DD -36.2% ww -6366 stops 0.84(1.83) | n/a | n/a |
+| 85x40 | +355 (live +621; $4.84 +324) DD -65.8% ww -7904 stops 2.89(1.83) | n/a | n/a |
 | 85x60 | -3502 (live -6129; $4.84 -3502) DD -115.3% ww -8377 stops 2.43(1.83) | n/a | n/a |
 
 #### U7 london
@@ -962,6 +969,15 @@ maxDD change %, all 43 months (+ = smaller drawdown)
 | 120 | -315 | -219 | -69 | -60 | -56 | -134 |
 
 **Plain statement (first pass): change to target 50 / stop 50** (replay: +446 $/wk full history, +1334 L6M, +300 older, DD +10% full history); needs the exact cell to confirm.
+
+Exact-engine static cells (L3M out of the selection window May-Jul too; delta vs JN05W2 on the same slice):
+
+| T x S | L3M | May-Jul | L6M |
+|---|---|---|---|
+| 40x40 | -96 (live -169; $4.84 -111) DD -41.7% ww -2340 stops 1.52(1.45) | n/a | n/a |
+| 40x90 | +201 (live +351; $4.84 +212) DD +39.9% ww +398 stops 0.61(1.45) | n/a | n/a |
+| 60x90 | -32 (live -56; $4.84 -20) DD -12.7% ww -2350 stops 0.68(1.45) | n/a | n/a |
+| 85x60 | -1165 (live -2039; $4.84 -1165) DD -102.3% ww -4462 stops 1.67(1.45) | n/a | n/a |
 
 ### 1b/1d first pass: lookup by bucket known at the signal second (offline replay nets, walk-forward: best trailing mean of the 49 grid points per bucket, min 30 prior trades, else 60/60)
 Median over the 14 cells, full history. Controls: bucket labels shifted by 11 / 23 / 37 trades and randomly permuted. "beats all controls" = share of the 14 x bucket cases where the real labels give a higher d mean than the best of the four controls (chance is about 20%).

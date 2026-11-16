@@ -1,5 +1,5 @@
-# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-15T21:48Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
-**VERDICT (plain): FIRST PASS, PATH EFFECT = FREED-BOOK REPLACEMENT (generic): every skip result must beat an engine random skip at the same keep share (RK cells, section 7c); LS1/LS125 RECENT-ONLY until they pass tolerant on GAP/PRE (PRE/X'/GAP and placebo sets incomplete; closest to live: London skip k=1.25, lacks PRE/X' confirmation and a drawdown gain visible at a powered horizon). 1145 cell-months done; 18 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 3 windows; LS1/all beats-all-3-placebos in 2 of 3 windows; LS1/london beats-all-3-placebos in 0 of 3 windows; LS125/london beats-all-3-placebos in 3 of 3 windows; LS15/london beats-all-3-placebos in 0 of 0 windows; LS2/london beats-all-3-placebos in 0 of 0 windows; LH1/all beats-all-3-placebos in 0 of 0 windows; LH1/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
+# DS3_LONDON_RANGE - T-LONDON-RANGE: range-used-up rule applied LONDON ONLY (W-LR, PRIORITY 2 of DIRECTIVE_BACK_TO_D7_20261114). Rebuilt 2026-11-16T00:49Z by code/th_londonrange/lr_page.py. Research only, NO PASS claim.
+**VERDICT (plain): FIRST PASS, PATH EFFECT = FREED-BOOK REPLACEMENT (generic): every skip result must beat an engine random skip at the same keep share (RK cells, section 7c); LS1/LS125 RECENT-ONLY until they pass tolerant on GAP/PRE (PRE/X'/GAP and placebo sets incomplete; closest to live: London skip k=1.25, lacks PRE/X' confirmation and a drawdown gain visible at a powered horizon). 1298 cell-months done; 18 (cell,scope) pass the tolerant gate in every present window incl. recent and older (leads, before placebo read): LS075/london beats-all-3-placebos in 0 of 3 windows; LS1/all beats-all-3-placebos in 2 of 3 windows; LS1/london beats-all-3-placebos in 0 of 3 windows; LS125/london beats-all-3-placebos in 3 of 3 windows; LS15/london beats-all-3-placebos in 0 of 0 windows; LS2/london beats-all-3-placebos in 0 of 0 windows; LH1/all beats-all-3-placebos in 0 of 0 windows; LH1/london beats-all-3-placebos in 0 of 0 windows. No PASS claim.**
 
 Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scoring). Base JN05W2 exact engine, all layers ON, measured fills, shared TP cache. Identity (hook path active at k=1e9-neutral and empty rule): TL3_LR_ID 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL | TL3_LR_ID0 202610: 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL
 
@@ -272,7 +272,7 @@ Prereg autopilot/LONDON_RANGE_PREREG.md (sha in DECISIONS.md, logged before scor
 
 | cell | L3M | L6M | HOLD | GAP | PRE | X' | FULL |
 |---|---|---|---|---|---|---|---|
-| LS125_A7 | +0 $/wk (x1.75 live +0; at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | +0 $/wk (x1.75 live +0; at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.99(10.99), b5 100%, w2l 0 | +0 $/wk (x1.75 live +0; at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.66(10.66), b5 100%, w2l 0 | n/a | n/a | n/a | n/a |
+| LS125_A7 | +0 $/wk (x1.75 live +0; at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.35(10.35), b5 100%, w2l 0 | +0 $/wk (x1.75 live +0; at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.99(10.99), b5 100%, w2l 0 | +0 $/wk (x1.75 live +0; at $4.84 RT: +0), DD +0.0%, ww +0, stops 10.66(10.66), b5 100%, w2l 0 | +0 $/wk (x1.75 live +0; at $4.84 RT: +0), DD +0.0%, ww +0, stops 9.90(9.90), b5 100%, w2l 0 | n/a | n/a | n/a |
 
 **exact per-book gated LS125_O7** (scope all; delta vs JN05W2 on the same months; placebos in the line below each row)
 
@@ -411,14 +411,14 @@ strict = in every present window DD cut >= 0, worst week not worse, d mean >= 0.
 | MW05 | fail | L3M,L6M,HOLD,GAP | fail | L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -3.5%, mean -1538 vs floor -913); PRE n/a |
 | RII05 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD +24.9%, mean -1278 vs floor -913) |
 | RII1 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD +7.8%, mean -1561 vs floor -913) |
-| HS075 | fail | L3M,L6M,HOLD | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -1.1%, mean -1657 vs floor -913) |
-| OS075 | fail | L3M,L6M,HOLD | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -1.2%, mean -1300 vs floor -913) |
-| HS1 | fail | L3M,L6M,HOLD | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP n/a |
-| OS1 | fail | L3M,L6M,HOLD | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -0.2%, mean -1155 vs floor -913) |
-| HS125 | fail | L3M,L6M,HOLD | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP n/a |
-| OS125 | fail | L3M,L6M,HOLD | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -1.9%, mean -1854 vs floor -913) |
-| HS15 | fail | L3M,L6M,HOLD | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP n/a |
-| OS15 | fail | L3M,L6M,HOLD | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -3.2%, mean -1668 vs floor -913) |
+| HS075 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -1.1%, mean -1657 vs floor -913) |
+| OS075 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -1.2%, mean -1300 vs floor -913) |
+| HS1 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP fails (DD +15.7%, mean -3050 vs floor -634) |
+| OS1 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -0.2%, mean -1155 vs floor -913) |
+| HS125 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP fails (DD +10.4%, mean -2297 vs floor -634) |
+| OS125 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -1.9%, mean -1854 vs floor -913) |
+| HS15 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; PRE n/a |
+| OS15 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; HOLD fails (DD -3.2%, mean -1668 vs floor -913) |
 | LS1_K7 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP fails (DD +0.9%, mean -1370 vs floor -634) |
 | LS1_P7 | fail | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; PRE n/a |
 | LS1_U7 | fail | L3M,L6M,HOLD,GAP | fail | L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP fails (DD -0.2%, mean -1408 vs floor -634); PRE n/a |
@@ -431,7 +431,7 @@ strict = in every present window DD cut >= 0, worst week not worse, d mean >= 0.
 | LS125_U7 | fail | L3M,L6M,HOLD,GAP | fail | L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP fails (DD -1.6%, mean -723 vs floor -634); PRE n/a |
 | LS125_H7 | PASS | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; PRE n/a |
 | LS125_M7 | fail | L3M,L6M,HOLD,GAP | PASS | L3M placebo n/a; L6M placebo n/a; PRE n/a; X' n/a |
-| LS125_A7 | PASS | L3M,L6M,HOLD | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; GAP n/a |
+| LS125_A7 | PASS | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; PRE n/a |
 | LS125_O7 | PASS | L3M,L6M,HOLD,GAP | fail | L3M not clearly positive; L3M placebo n/a; L6M not clearly positive; L6M placebo n/a; PRE n/a |
 
 ## 9. Anatomy of the window losses and wins (which trades the rule removed, by branch and book)
@@ -782,11 +782,19 @@ Per autopilot/PATH_EFFECT_RULE.md a skip frees the book and the freed book takes
 | LS125 | L3M | +3978 / +4.7% / +4283 | -3103 / +2.5% / +2442 ; -4052 / -2.4% / +146 ; -3307 / -0.9% / -459 | yes | yes |
 | LS125 | L6M | +2375 / +4.7% / +4283 | -3550 / +2.5% / +952 ; -2967 / -2.4% / +146 ; -1402 / -0.9% / -459 | yes | yes |
 | LS125 | HOLD | +782 / +18.0% / -4704 | -570 / +9.1% / -109 ; -1631 / +10.2% / -6717 ; +39 / +20.1% / +4406 | yes | no |
-| LS125 | GAP | -1839 / +7.9% / +3024 | n/a ; n/a ; +596 / +13.6% / +9454 | no | no |
+| LS125 | GAP | -1839 / +7.9% / +3024 | -1774 / -6.0% / -1280 ; +1321 / -1.7% / -1143 ; +596 / +13.6% / +9454 | no | no |
 | LS1 | L3M | +2847 / +4.7% / +5052 | -3316 / +2.5% / +2442 ; -4636 / -5.1% / +171 ; -3862 / -0.9% / -459 | yes | yes |
 | LS1 | L6M | +1746 / +4.7% / +5052 | -3443 / +2.5% / +952 ; -2546 / -5.1% / +171 ; -1191 / -0.9% / -459 | yes | yes |
 | LS1 | HOLD | +466 / +13.6% / +3431 | -314 / +12.6% / +3137 ; -1515 / +8.3% / -8448 ; -123 / +18.4% / +3559 | yes | no |
-| LS1 | GAP | -2343 / +20.3% / +5903 | -1946 / -8.7% / -1280 ; +1774 / +9.9% / +981 ; n/a | no | no |
+| LS1 | GAP | -2343 / +20.3% / +5903 | -1946 / -8.7% / -1280 ; +1774 / +9.9% / +981 ; +551 / +10.7% / +7057 | no | yes |
+
+## 7d. M7+P7-only skip against its MATCHED random control (M7+P7 London only, keep share 0.68 for LS1_MP / 0.72 for LS125_MP; RKMP cells, 3 seeds)
+
+A skip-only MP gain is a lead only if it beats this control on mean AND DD cut. Scope all; cells: d mean / DD cut / worst-week delta.
+
+| rule | window | rule | matched random seeds 1 / 2 / 3 | beats all 3 on mean | on DD cut |
+|---|---|---|---|---|---|
+| LS1_MP | L3M | +1936 / +0.2% / +1485 | -3170 / -3.6% / -726 ; n/a ; n/a | no | no |
 
 ## 8. Best setting per book / session with plain strength (filled as windows complete)
 
