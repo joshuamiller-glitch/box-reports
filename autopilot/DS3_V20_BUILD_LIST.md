@@ -4,7 +4,7 @@ VERDICT: build list v0. Only B (U7 fresh time stop) holds in recent and older wi
 
 **Closest to live: B (U7 fresh time stop, Shadow).** It is the only rule that passes the tolerant gate in all five windows (L3M, L6M, HOLD, PRE, X'). It still lacks: (1) specificity - its DD cut equals the delayed-exit placebo and is -5.2 pct with W44 removed, so only the mean gain (+573 L6M, +799 HOLD vs placebo +238..+625) is specific; (2) walk-forward beat rate is 16.5 pct of 2-week blocks (cut 0.0); (3) HOLD placebos incomplete. Joint candidates AB+F, DV, AR, ABD, BR show recent+HOLD gains and are in the PRE/X' battery (S3) now; none is a lead until PRE and X' land.
 
-Generated 2026-11-15 23:49 UTC. Exact engine, JN05W2 all layers ON, base lots (user lots x1.75), engine fee $1.18/contract RT; every number is the single rule vs JN05W2. Joint results and interaction table: DS3_JOINT_V20.md. Each rule gets its own switch `<Rule>Mode` = Off | Shadow | Live (Shadow = evaluate and log the would-be action, orders unchanged). Recommendation text is mine, not a PASS. Exact specs as scored: DS3_JOINT_V20.md section 7.
+Generated 2026-11-16 00:08 UTC. Exact engine, JN05W2 all layers ON, base lots (user lots x1.75), engine fee $1.18/contract RT; every number is the single rule vs JN05W2. Joint results and interaction table: DS3_JOINT_V20.md. Each rule gets its own switch `<Rule>Mode` = Off | Shadow | Live (Shadow = evaluate and log the would-be action, orders unchanged). Recommendation text is mine, not a PASS. Exact specs as scored: DS3_JOINT_V20.md section 7.
 
 | rule | scope | windows scored | DD cut % WEEKLY L3M / L6M / HOLD / PRE / X' / GAP | DD cut % DAILY same windows | d mean $/wk (same windows) | d mean @4.84 L6M | DD cut % L6M with W44 removed | holds recent AND older? | placebo | vs random skip (PATH EFFECT) | recommendation |
 |--|--|--|--|--|--|--|--|--|--|--|--|
@@ -21,6 +21,8 @@ Generated 2026-11-15 23:49 UTC. Exact engine, JN05W2 all layers ON, base lots (u
 | N | W-NT U7 near-target ladder: trigger 70 pct of target, lock 40 pct, persist 3 s, resting-stop ladder, fill min(lock level, second mid) - 0.44 pt (FIRST PASS). | L1M | - / - / - / - / - / - | - / - / - / - / - / - | - / - / - / - / - / - | - | - | recent only (older windows missing) | none yet | n/a (not a skip) | Shadow-only candidate; do not build Live until older windows land |
 | Q | W-NT M7 ladder 90/20/3 s (FIRST PASS). | none yet | | | | | | | Off until scored |
 | Z | W-NT lot table SMALL1: H7 lots 5,0,0,1,0,0 by session and O7 | none yet | | | | | | | Off until scored |
+| E | W-LR London range-used-up SKIP k=1 gated to M7 and P7 only ( | none yet | | | | | | | Off until scored |
+| G | Same with k=1.25 (FIRST PASS). | none yet | | | | | | | Off until scored |
 | W | Same with 2 closed trades (live night 2026-11-13 cost -2040 per W-RA). | L1M,L3M | -1.7 / - / - / - / - / - | -7.3 / - / - / - / - / - | 869 / - / - / - / - / - | - | - | recent only (older windows missing) | W-LR/W-PR/W-RA own placebos (see their pages) | L6M: cut -23.5 / -27.6 / -17.0 | dMean -4955 / -4728 / -5739; HOLD: cut 6.4 / 2.2 / 4.5 | dMean -2942 / -3103 / -3156 [W-RA random block (all-books scope)] | Shadow-only candidate; do not build Live until older windows land |
 | V | W-RA M7 London block same-side re-entry after a same-side loser until an opposite-side M7 signal. | L1M,L3M,L6M,HOLD | -0.9 / -0.9 / 17.2 / - / - / - | -1.6 / -1.6 / 13.5 / - / - / - | -856 / -303 / 302 / - / - / - | -286 | -20.2 | NO | W-LR/W-PR/W-RA own placebos (see their pages) | L6M: cut -24.6 / -26.2 / -23.4 | dMean -3152 / -2310 / -3325; HOLD: cut 23.1 / 23.1 | dMean -748 / -393 [W-RA random block (all-books scope)] | BASIS-DEPENDENT (passes on daily DD, fails on weekly): Shadow-only |
 
@@ -41,6 +43,8 @@ Note on drawdown basis: this page and DS3_JOINT_V20 use the program convention (
 - **N** per-trade MFE vs target distance; moving a resting stop.
 - **Q** as N.
 - **Z** session lot table.
+- **E** as D.
+- **G** as D.
 - **W** as R.
 - **V** M7 signal log including skipped signals.
 

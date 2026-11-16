@@ -1,8 +1,8 @@
 # DS3_REENTRY_ALL - re-entry discipline for K7 M7 U7 H7 A7 O7 (W-RA, priority 6)
 
-**VERDICT: 46 of 258 re-entry cells x windows scored (385 cell-months); 18 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
+**VERDICT: 48 of 258 re-entry cells x windows scored (393 cell-months); 20 (cell, book:session) leads pass the tolerant gate before placebos; best stack-level DD cut TL3_RA_BLKiii30 L6M 20.4% (-892 $/wk). No PASS claim.**
 
-Built epoch 1794777790. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
+Built epoch 1794788651. Prereg autopilot/REENTRY_ALL_PREREG.md (sha in DECISIONS.md). Base JN05W2 exact engine all layers ON, engine fills. LOT/FEE BASIS: JN05W2-family sets run at BASE (box) lots, live = x1.75; every $ in this page (d_mean, dd, ww) is raw engine net_fee, which charges $1.18 per contract round trip, NOT the FEES.md $4.84; the column d_mean_484 reprices the mean at $4.84 per contract (net_fee - 3.66 x lots). Drawdown columns are not repriced.  TL3_RA_ID 202610 (hook path active, never fires): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL. P7 Asia is W-PR (not duplicated); the cells apply to the six books in all sessions, P7 untouched but coupled through the stack. Sessions: engine index asia 0, london 1, pre 2, nyam 3, nypm 4, close 5 (pre and close carry no trades in JN05W2).
 
 **PATH EFFECT = FREED-BOOK REPLACEMENT (generic; autopilot/PATH_EFFECT_RULE.md).** Every cap and block here frees the book, so the freed book takes later weaker re-signals and drawdown can rise for ANY skip (random 50% skip: DD 86k vs base 52k). The baseline for every number below is therefore the exact random-block placebo at the same per-book block rate, NOT the base alone: read each delta against its placebo seeds (section 5, scoped table, 5c). A rule that does not beat its placebos is just 'fewer re-entries'.
 
@@ -128,6 +128,7 @@ d_mean = $/wk vs JN05W2; DD = max drawdown of cumulative daily P&L; dd_cut_pct p
 | LCAP10 | L3M | -2850.8 | -2827.4 | -61417.5 | -52233.1 | -17.6 | -44810.5 | -8440.0 | 10.0 | 10.3 | 0.9 | 0 |
 | LCAP15 | L3M | -1415.4 | -1404.0 | -55723.3 | -52233.1 | -6.7 | -37790.5 | -1420.0 | 10.0 | 10.3 | 1.0 | 0 |
 | LCAP20 | L3M | 284.7 | 294.4 | -48200.4 | -52233.1 | 7.7 | -31078.8 | 5291.7 | 10.3 | 10.3 | 1.0 | 0 |
+| M7L_CAP3 | L3M | 690.7 | 707.7 | -53605.6 | -52233.1 | -2.6 | -36464.1 | -93.6 | 10.2 | 10.3 | 1.0 | 0 |
 | BLKi | L6M | -2551.2 | -2515.0 | -54370.8 | -52233.1 | -4.1 | -37161.9 | -791.3 | 11.0 | 11.0 | 1.0 | 1 |
 | BLKii | L6M | -2225.0 | -2205.5 | -53264.3 | -52233.1 | -2.0 | -38354.8 | -1984.3 | 11.0 | 11.0 | 1.0 | 1 |
 | BLKiii120 | L6M | -2435.9 | -2395.9 | -59520.8 | -52233.1 | -14.0 | -43491.3 | -7120.7 | 10.7 | 11.0 | 0.9 | 0 |
@@ -142,6 +143,7 @@ d_mean = $/wk vs JN05W2; DD = max drawdown of cumulative daily P&L; dd_cut_pct p
 | LCAP10 | L6M | -3222.5 | -3180.6 | -61417.5 | -52233.1 | -17.6 | -44810.5 | -8440.0 | 10.4 | 11.0 | 0.9 | 0 |
 | LCAP15 | L6M | -959.8 | -947.7 | -55723.3 | -52233.1 | -6.7 | -37790.5 | -1420.0 | 10.8 | 11.0 | 1.0 | 0 |
 | LCAP20 | L6M | -234.8 | -227.5 | -48200.4 | -52233.1 | 7.7 | -31078.8 | 5291.7 | 11.1 | 11.0 | 1.0 | 0 |
+| M7L_CAP3 | L6M | 923.3 | 944.0 | -53605.6 | -52233.1 | -2.6 | -36464.1 | -93.6 | 10.9 | 11.0 | 1.0 | 0 |
 | BLKi | HOLD | -1126.5 | -1104.0 | -89908.4 | -92044.3 | 2.3 | -60924.3 | -5778.9 | 10.5 | 10.7 | 1.0 | 3 |
 | BLKii | HOLD | -1421.5 | -1411.5 | -90046.0 | -92044.3 | 2.2 | -53507.6 | 1637.8 | 10.7 | 10.7 | 1.0 | 2 |
 | BLKiii120 | HOLD | -897.0 | -868.2 | -89516.0 | -92044.3 | 2.7 | -60817.8 | -5672.3 | 10.3 | 10.7 | 0.9 | 3 |
@@ -193,6 +195,8 @@ d_mean = $/wk vs JN05W2; DD = max drawdown of cumulative daily P&L; dd_cut_pct p
 | LCAP15 | L6M | -1006.5 | -55723.3 | -43405.1 | -28.4 | -11764.6 |
 | LCAP20 | L3M | -117.9 | -48200.4 | -43405.1 | -11.0 | -4795.3 |
 | LCAP20 | L6M | -436.2 | -48200.4 | -43405.1 | -11.0 | -4795.3 |
+| M7L_CAP3 | L3M | 697.8 | -43386.9 | -43405.1 | 0.0 | -5328.0 |
+| M7L_CAP3 | L6M | 926.9 | -43386.9 | -43405.1 | 0.0 | -5328.0 |
 
 ## 3. Book x session: rules that pass the tolerant gate (before placebos)
 
@@ -220,6 +224,8 @@ Gate: DD not worse by >2%, worst week not worse by >2%, mean not lower by >3% of
 | HALF | A7:asia | HOLD,L3M,L6M | yes | 0.0 | 0.0 | 12.2 | 0.0 | 12.1 | 5.1 | 0.0 | 0.0 | 4.0 | 4.0 | 1.0 | 0 |
 | LCAP15 | H7:nyam | HOLD,L3M,L6M | yes | 0.0 | 0.0 | 29.8 | 0.0 | 30.0 | 0.0 | 0.0 | 0.0 | 0.4 | 0.4 | 1.0 | 0 |
 | LCAP20 | H7:nyam | HOLD,L3M,L6M | yes | 0.0 | 0.0 | 29.8 | 0.0 | 30.0 | 0.0 | 0.0 | 0.0 | 0.4 | 0.4 | 1.0 | 0 |
+| M7L_CAP3 | M7:london | L3M,L6M | recent only | 1743.7 | 1773.4 | 0.0 | 36.7 | 0.0 | 0.0 | 0.0 | 0.0 | 0.5 | 0.8 | 0.8 | 0 |
+| M7L_CAP3 | *:london | L3M,L6M | recent only | 1504.9 | 1533.6 | 0.0 | 22.5 | 0.0 | 0.0 | 0.0 | 0.0 | 2.4 | 2.7 | 1.0 | 0 |
 
 ## 4. Best rule per book x session (always delivered, with plain strength)
 

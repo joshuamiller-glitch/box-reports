@@ -25,6 +25,18 @@ Consequence for verdicts: any skip-rule engine result must be read against the e
 
 Note from W-PM (relayed 2026-11-15): TL3_PM_N_A7NOSC (an A7 Stop no longer triggers the same-side stack cut on other books) is +$1,641/wk in L3M (A7 itself +0, others +1,641, DD -0.4 %, -1.7 % ex-W44) vs A7 flat -40 +2,126/wk: most of the A7 flat -40 gain is the stack cut losing money, not an A7 exit effect. The stack rule (Asia entries only, cuts 50 % of same-side positions in other books) is therefore a SECOND path-effect cause besides freed-book replacement; the DX_G_NOSC / DX_B_NOSC sets (queued) will be read against it.
 
+## 1c. Path effect: one-cause-at-a-time switches (L6M, JN05W2; engine sets TL3_CF_DX_G_* gate PL_G with the switch off, DX_B_* base with the switch off; data ends 2026-10-30; FIRST PASS)
+| switch off | base: trades / net / max DD $ / R | gate PL_G: trades / net / max DD $ / R | gate-minus-base DD $ | replacement share of gate trades |
+|--|--|--|--|--|
+| none | 4,169 / 660,702 / 52,233 / 20.8 | 2,863 / 499,963 / 103,361 / 60.5 | 51,128 | 38 % |
+| stack cut (nosc) | 4,248 / 719,754 / 52,441 / 20.2 | 2,861 / 508,582 / 107,666 / 62.6 | 55,225 | 38 % |
+| DAY-DONE C22 | 4,916 / 561,064 / 66,779 / 40.1 | 3,001 / 508,234 / 110,164 / 65.1 | 43,385 | 40 % |
+| c_gov same-side-loss governor | 4,200 / 654,641 / 43,405 / 20.0 | 2,849 / 440,283 / 110,234 / 62.4 | 66,829 | 38 % |
+| day caps (cap_tl 0,0, all books) | 4,306 / 703,688 / 53,065 / 21.0 | 2,908 / 515,097 / 98,909 / 56.9 | 45,844 | 39 % |
+| LOT / SIGQ / REG | identical to the base and to the gate with everything on (no effect in this set: those layers do not act in the JN05W2 L6M run, or the switch is a no-op there) | | 51,128 | 38 % |
+
+Reading: no single engine rule is the cause of the gate's extra drawdown. With any of the stack cut, DAY-DONE C22, the governor or the day caps switched off the gate still has $99k-$110k drawdown against $43k-$67k for the base with the same switch off (gap $43k-$67k vs $51k), and the replacement share stays 38-40 %. The path effect is the freed-book replacement itself (random 50 % skip: $86k), not one of these rules; the stack cut explains part of the A7 flat -40 gain (W-PM) but not the gate's drawdown. Side findings, not mine to claim: switching the same-side-loss governor off lowers the BASE max drawdown ($52.2k to $43.4k, worst week -$36.4k to -$26.0k) at -1 % net; switching the stack cut off raises base net by $59k at unchanged drawdown. Flag: PATH EFFECT = FREED-BOOK REPLACEMENT (generic); explained.
+
 ## 2. Raw books (isolation mode TL3_CF_ISO2, 23 months), each-alone, cluster-robust by week (zw), nonsense calibrated
 Outcome R (clipped +-3); a condition passes alone if |zw| is above the 99th percentile of |zw| of the 200 nonsense conditions in the same cell and its sign is the same in every year with >= 30 per side. At that bar 1 % of conditions (about 70) would pass by construction.
 
