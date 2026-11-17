@@ -1,6 +1,6 @@
 # DS3_MAJOR_E_AGAINST - against-the-day streak rules on JL3 (W-ME, MAJOR PART E)
 
-Page refreshed 2026-11-17 21:29Z (unattended loop me_loop). Data end 2026-10-31 (JL3 months 202304..202610). FIRST PASS.
+Page refreshed 2026-11-17 21:59Z (unattended loop me_loop). Data end 2026-10-31 (JL3 months 202304..202610). FIRST PASS.
 
 PLAIN SUMMARY
 
@@ -8,7 +8,7 @@ PLAIN SUMMARY
 2. Key finding: the 2025-11-17..12-10 losers were WITH the causal 3-of-4 vote (333 trades -78.0k; against 26 trades +3.4k): the books enter after the move and the reversal comes later, so only hindsight labels show "against the day".
 3. Screen: the ordered vote rules bind on 0.0-0.6% of trades and do nothing (P2 press hurts HOLD by 15-21%); extended-entry halving improves ulcer 6-12% in L6M but costs 1.5-4.7k/wk and is NOT better than random halving of the same share (p_ulc 0.2-0.9, no tier); the extended bucket earns MORE per trade (about $110 vs $60) but concentrates the drawdown (-39k of the path in the open_atr bucket).
 4. What survives the screen: same-side loser K=2 pause 30 min (LS_K2_M30: ulcer +4% to +7% in TRAIN/L6M/L3M/HOLD at flat mean, screen tier LEAD, post-hoc); the longer pauses help HOLD (+14%/+19%) but hurt L6M. Nothing is CONFIRMED; DS7 needs nothing until the exact tiers below land.
-5. Next: exact cells on the engine queue (identity IDX first; 14 queue lines pending, 1991 run-months landed); stage 2 adds 34 matched controls for the best cells automatically; this page refreshes every 30 min.
+5. Next: exact cells on the engine queue (identity IDX first; 12 queue lines pending, 1993 run-months landed); stage 2 adds 34 matched controls for the best cells automatically; this page refreshes every 30 min.
 
 HEADER: trials counted = 30 screen configs (every one counted) + 6 exact picks; correction: no White RC/SPA/DSR run on this family yet (best-of picked per family on TRAIN only; DSR/BH on the ledger row ME in TRIALS_LEDGER.csv); PBO not computed; selection = walk-forward (choose <=2025-10, freeze), HOLD and L6M untouched for the 6 frozen exact picks; the screen tier table below is path arithmetic (kept trades keep their outcome; freed-book effects NOT in the screen). Prereg autopilot/PREREG_ME.md (screen run before the file was written, declared in DECISIONS.md).
 
@@ -101,7 +101,7 @@ IDENTITY (TL3_ME_JL3_ID vs TL3_EV_JL3, trade for trade on entry_ns, exit_ns, lot
 | LS_K2_M120 | 12 | NOT FINISHED | -28.4 / -2644 / -2601 / -5122 | 0.12 (8) | -41.3 | +4.5 0.47 (30) | 0.02 | 0.049 |
 | LS_K2_M120_B | 12 | NOT FINISHED | -6.9 / +179 / +196 / +233 | n/a | -11.9 | +5.4 n/a | 0.06 | 0.020 |
 | LS_K2_M120_R | 12 | NOT FINISHED | -21.7 / -2049 / -2018 / -3957 | n/a | -29.5 | -1.5 n/a | 0.02 | 0.036 |
-| LS_K2_M30 | 43 | NOT FINISHED | -1.0 / -563 / -551 / -1035 | 0.55 (20) | -4.4 | +2.1 0.60 (20) | 0.26 | 0.014 |
+| LS_K2_M30 | 43 | NOT FINISHED | -1.0 / -563 / -551 / -1035 | 0.55 (20) | -4.4 | +2.1 0.62 (21) | 0.26 | 0.014 |
 | LS_K2_M30_B | 12 | NOT FINISHED | -0.7 / +418 / +422 / +836 | n/a | -5.9 | -0.4 n/a | 0.57 | 0.005 |
 | LS_K2_M30_R | 12 | NOT FINISHED | -3.8 / -555 / -546 / -1047 | n/a | -1.4 | +2.9 n/a | 0.22 | 0.011 |
 | LS_K2_M60 | 12 | NOT FINISHED | -15.9 / -1971 / -1941 / -3725 | n/a | -16.0 | +10.3 n/a | 0.00 | 0.036 |
