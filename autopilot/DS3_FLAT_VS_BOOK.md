@@ -8,7 +8,7 @@
 - Engine note: the engine book is the clean one, so engine (b) is what v1.9c should do. Live results of (a)/(c) before v1.9c are NOT comparable to the engine (blind book, section 14 of DS3_ENGINE_VS_LIVE.md).
 
 ## Cell map
-- ID = JN05W2JL2 with K7 flat re-expressed through la_hooks (must equal JL2); A_* = book + flat (K7 45 live, P7 42 stand-in); B_* = flat off (book only); C_* = flat only (that book cut off by la_hooks scut nocut); D_* = flat level moved (K7 39/51, P7 36/48; both together diagonal); E_* = book arm -10/+10 pts (K7 all sessions floor 15; P7 fresh and rechase); PC_* = persistent random-trigger flats (bucket 300, one draw per 5-min bucket per book and side, never re-drawn) REPLACING that book flat, q 0.05/0.10/0.20: the nonsense rate beside every flat row. Units: 60-pt stop; K7 -0.65/-0.75/-0.85 = 39/45/51 pts, P7 -0.60/-0.70/-0.80 = 36/42/48.
+- ID = JN05W2JL2 with K7 flat re-expressed through la_hooks (must equal JL2); A_K7 = book + K7 flat 45 (= ID); A_KP = book + K7 flat 45 + P7 flat 42 (the live pair); A_P7 = P7 flat 42 ONLY (K7 flat OFF; the builder did not add K7 45, so A_P7 is NOT reference plus P7 flat: read A_KP for that); B_K7 = K7 flat off, B_P7 = P7 flat off (K7 flat on, = reference), B_KP = both off; C_* = flat only (that book cut off by la_hooks scut nocut); D_* = flat level moved (K7 39/51, P7 36/48; both together diagonal); E_* = book arm -10/+10 pts (K7 all sessions floor 15; P7 fresh and rechase); PC_* = persistent random-trigger flats (bucket 300, one draw per 5-min bucket per book and side, never re-drawn) REPLACING that book flat, q 0.05/0.10/0.20: the nonsense rate beside every flat row. Units: 60-pt stop; K7 -0.65/-0.75/-0.85 = 39/45/51 pts, P7 -0.60/-0.70/-0.80 = 36/42/48.
 BASE: JL2 base (without live take/lock lines). A cut-vs-flat result can shift once the live take/lock lines are on (JL3 = TL3_EV_JL3), because they change which trades reach the cut.
 
 Columns: dd_cut / dd44_cut = max-drawdown cut % vs JL2 (all weeks / W44 removed), ww = worst week $, best5 = share of the reference best-5 weeks kept, w2l = winning weeks turned losing, d_mean / d_mean_484 = $/wk vs JL2 base lots (live x1.75; $4.84 repriced), flat_wk = LaFlat exits per week, flat_usd_wk vs same_entries_noflat_usd_wk = the cut trades vs the same entries without the flat (path effect caution), t / p = weekly-cluster t and sign-flip p.
@@ -63,9 +63,9 @@ Columns: dd_cut / dd44_cut = max-drawdown cut % vs JL2 (all weeks / W44 removed)
 ### group control (persistent random-trigger flat, bucket 300)
 | cell                |   weeks |   dd_cut |   dd44_cut |       ww |   ww_ref |   best5 |   w2l |   d_mean |   d_mean_484 |   cuts_wk |   flat_wk |   flat_usd_wk |   same_entries_noflat_usd_wk |     t |    p |
 |:--------------------|--------:|---------:|-----------:|---------:|---------:|--------:|------:|---------:|-------------:|----------:|----------:|--------------:|-----------------------------:|------:|-----:|
-| TL3_EV_FB_PC_P7_Q10 |      13 |   -39.8  |     -39.8  | -18775.3 | -13429.6 |    1    |     1 |  -926.73 |      -935.18 |     57.15 |      2.46 |       -452.07 |                      -155.26 | -0.76 | 0.46 |
-| TL3_EV_FB_PC_P7_Q05 |      13 |   -49.08 |     -49.08 | -20020.3 | -13429.6 |    1.08 |     1 |  -597.42 |      -592.63 |     57.38 |      0.92 |       -162.7  |                         9.43 | -0.36 | 0.73 |
-| TL3_EV_FB_PC_K7_Q05 |      13 |   -59.95 |     -59.95 | -21481.1 | -13429.6 |    1.06 |     0 |  -626.63 |      -623.82 |     57.62 |      1.46 |       -228.52 |                      -478.81 | -0.44 | 0.66 |
+| TL3_EV_FB_PC_P7_Q10 |      13 |   -39.8  |     -39.8  | -18775.3 | -13429.6 |    1    |     1 |  -926.73 |      -935.18 |     57.15 |      2.46 |       -452.07 |                      -155.26 | -0.76 | 0.47 |
+| TL3_EV_FB_PC_P7_Q05 |      13 |   -49.08 |     -49.08 | -20020.3 | -13429.6 |    1.08 |     1 |  -597.42 |      -592.63 |     57.38 |      0.92 |       -162.7  |                         9.43 | -0.36 | 0.72 |
+| TL3_EV_FB_PC_K7_Q05 |      13 |   -59.95 |     -59.95 | -21481.1 | -13429.6 |    1.06 |     0 |  -626.63 |      -623.82 |     57.62 |      1.46 |       -228.52 |                      -478.81 | -0.44 | 0.65 |
 | TL3_EV_FB_PC_P7_Q20 |      13 |   -77.21 |     -61.24 | -21654   | -13429.6 |    0.86 |     1 | -4597.76 |     -4612.68 |     56.31 |      6.23 |      -2091.02 |                       366.72 | -1.84 | 0.07 |
 | TL3_EV_FB_PC_K7_Q20 |      13 |   -61.34 |     -61.34 | -21667.4 | -13429.6 |    1.08 |     0 |  -380.94 |      -392.48 |     56.08 |      7.92 |      -1194.19 |                     -1334.2  | -0.28 | 0.78 |
 | TL3_EV_FB_PC_K7_Q10 |      13 |   -64.38 |     -64.38 | -22075.4 | -13429.6 |    1.11 |     0 |     7.77 |         7.77 |     56.69 |      3.46 |       -563.96 |                     -1059.68 |  0.01 | 1    |
@@ -121,11 +121,11 @@ Columns: dd_cut / dd44_cut = max-drawdown cut % vs JL2 (all weeks / W44 removed)
 | cell                |   weeks |   dd_cut |   dd44_cut |       ww |   ww_ref |   best5 |   w2l |   d_mean |   d_mean_484 |   cuts_wk |   flat_wk |   flat_usd_wk |   same_entries_noflat_usd_wk |     t |    p |
 |:--------------------|--------:|---------:|-----------:|---------:|---------:|--------:|------:|---------:|-------------:|----------:|----------:|--------------:|-----------------------------:|------:|-----:|
 | TL3_EV_FB_PC_P7_Q10 |      26 |   -39.8  |     -39.8  | -18775.3 | -13429.6 |    1.01 |     1 | -1037.87 |     -1034.49 |     60.81 |      2.5  |       -519.6  |                      -643.72 | -1.11 | 0.28 |
-| TL3_EV_FB_PC_P7_Q05 |      26 |   -49.08 |     -49.08 | -20020.3 | -13429.6 |    1.02 |     1 |  -914.34 |      -901.67 |     61.19 |      1.08 |       -178.31 |                        -1.96 | -0.81 | 0.42 |
+| TL3_EV_FB_PC_P7_Q05 |      26 |   -49.08 |     -49.08 | -20020.3 | -13429.6 |    1.02 |     1 |  -914.34 |      -901.67 |     61.19 |      1.08 |       -178.31 |                        -1.96 | -0.81 | 0.43 |
 | TL3_EV_FB_PC_K7_Q05 |      26 |   -59.95 |     -59.95 | -21481.1 | -13429.6 |    0.97 |     0 | -1145.24 |     -1134.26 |     61.58 |      1.46 |       -233.14 |                      -293.65 | -1.14 | 0.26 |
 | TL3_EV_FB_PC_P7_Q20 |      26 |   -77.21 |     -61.24 | -21654   | -13429.6 |    1    |     2 | -4830.65 |     -4836.14 |     60.35 |      5.69 |      -1693.42 |                        91.12 | -2.84 | 0.01 |
 | TL3_EV_FB_PC_K7_Q20 |      26 |   -61.34 |     -61.34 | -21667.4 | -13429.6 |    0.99 |     0 | -1158.46 |     -1158.6  |     59.19 |      8.12 |      -1374.36 |                     -1303.08 | -1.01 | 0.32 |
-| TL3_EV_FB_PC_K7_Q10 |      26 |   -64.38 |     -64.38 | -22075.4 | -13429.6 |    0.98 |     0 |  -803.28 |      -792.58 |     60.27 |      3.65 |       -670.44 |                      -942.56 | -0.86 | 0.41 |
+| TL3_EV_FB_PC_K7_Q10 |      26 |   -64.38 |     -64.38 | -22075.4 | -13429.6 |    0.98 |     0 |  -803.28 |      -792.58 |     60.27 |      3.65 |       -670.44 |                      -942.56 | -0.86 | 0.4  |
 
 ## HOLD
 ### group ID
@@ -172,15 +172,17 @@ Columns: dd_cut / dd44_cut = max-drawdown cut % vs JL2 (all weeks / W44 removed)
 | TL3_EV_FB_E_K7_P10 |      52 |    -5.07 |      -5.07 | -31631.9 | -31210.9 |    0.96 |     1 |   -22.83 |       -17.27 |     44.15 |     20.56 |      -21474.9 |                     -19713.4 | -0.04 | 0.98 |
 | TL3_EV_FB_E_K7_M10 |      52 |   -16.05 |     -16.05 | -28818.1 | -31210.9 |    0.96 |     1 | -1072.28 |     -1072.63 |     51.92 |     16.33 |      -16860.2 |                     -15589.8 | -2.39 | 0.02 |
 | TL3_EV_FB_E_P7_P10 |      52 |   -17.31 |     -17.31 | -34787.2 | -31210.9 |    0.97 |     3 | -1125.86 |     -1111.15 |     39.46 |     24.65 |      -30259.5 |                     -27348   | -1.11 | 0.26 |
+| TL3_EV_FB_E_KP_P10 |      52 |   -21.03 |     -21.03 | -35567.5 | -31210.9 |    0.93 |     4 | -1706.87 |     -1685.89 |     35.5  |     27.06 |      -32965.4 |                     -28239.3 | -1.42 | 0.16 |
 
 ### group control (persistent random-trigger flat, bucket 300)
 | cell                |   weeks |   dd_cut |   dd44_cut |       ww |   ww_ref |   best5 |   w2l |   d_mean |   d_mean_484 |   cuts_wk |   flat_wk |   flat_usd_wk |   same_entries_noflat_usd_wk |     t |    p |
 |:--------------------|--------:|---------:|-----------:|---------:|---------:|--------:|------:|---------:|-------------:|----------:|----------:|--------------:|-----------------------------:|------:|-----:|
-| TL3_EV_FB_PC_K7_Q20 |      52 |   -12.05 |     -12.05 | -33777.3 | -31210.9 |    1    |     1 |  -814.68 |      -818.48 |     51.19 |      7.75 |      -1415.62 |                     -1011.77 | -0.89 | 0.38 |
-| TL3_EV_FB_PC_P7_Q05 |      52 |   -13.85 |     -13.85 | -30673.4 | -31210.9 |    1.07 |     2 |  -929.49 |      -918.15 |     52.48 |      0.98 |       -159.37 |                       157.36 | -1.08 | 0.28 |
+| TL3_EV_FB_PC_K7_Q20 |      52 |   -12.05 |     -12.05 | -33777.3 | -31210.9 |    1    |     1 |  -814.68 |      -818.48 |     51.19 |      7.75 |      -1415.62 |                     -1011.77 | -0.89 | 0.39 |
+| TL3_EV_FB_PC_P7_Q05 |      52 |   -13.85 |     -13.85 | -30673.4 | -31210.9 |    1.07 |     2 |  -929.49 |      -918.15 |     52.48 |      0.98 |       -159.37 |                       157.36 | -1.08 | 0.29 |
 | TL3_EV_FB_PC_K7_Q05 |      52 |   -14.74 |     -14.74 | -29488.8 | -31210.9 |    1.01 |     1 |  -986.56 |      -980.51 |     53.12 |      1.56 |       -221.42 |                      -128.15 | -1.2  | 0.24 |
+| TL3_EV_FB_PC_K7_Q10 |      52 |   -15.57 |     -15.57 | -34279.8 | -31210.9 |    1.01 |     1 |  -818.09 |      -812.81 |     52.13 |      3.52 |       -631.41 |                      -548.26 | -1.04 | 0.3  |
 | TL3_EV_FB_PC_P7_Q20 |      52 |   -17.57 |     -17.57 | -26873.4 | -31210.9 |    1.04 |     3 | -2229.09 |     -2233.18 |     51.23 |      5.06 |      -1416.47 |                      -256.47 | -1.95 | 0.06 |
-| TL3_EV_FB_PC_P7_Q10 |      52 |   -24.98 |     -24.98 | -30135.9 | -31210.9 |    1.06 |     2 | -1002.86 |      -997.87 |     52.15 |      2.1  |       -461.72 |                      -438.18 | -1.23 | 0.21 |
+| TL3_EV_FB_PC_P7_Q10 |      52 |   -24.98 |     -24.98 | -30135.9 | -31210.9 |    1.06 |     2 | -1002.86 |      -997.87 |     52.15 |      2.1  |       -461.72 |                      -438.18 | -1.23 | 0.23 |
 
 ## GAP
 (no cell has all months of this window yet)

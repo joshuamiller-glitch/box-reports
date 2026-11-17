@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (649 FL cell-months done, 214 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (673 FL cell-months done, 221 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -47,9 +47,16 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_E3INJ_P11 | nan | 1902 | 465 | 813 | 456 | 53535 | 52233 | 1302 | 1902 | 1875 | 135 | 134 | 465 | 53535 | 52233 | 24633 | 23989 | 42783 | 43405 |
 | TL3_FL_E3INJ_P23 | nan | 1908 | -295 | -517 | -304 | 52486 | 52233 | 253 | 1908 | 1875 | 130 | 134 | -295 | 52486 | 52233 | 23691 | 23989 | 45668 | 43405 |
 | TL3_FL_HOLDALL_W120 | ALL | 1823 | -13131 | -22979 | -13105 | 78004 | 52233 | 25770 | 1823 | 1875 | 44.32 | 134 | -13131 | 78004 | 52233 | 11537 | 23989 | 78004 | 43405 |
+| TL3_FL_HOLDALL_W30 | ALL | 1883 | -9032 | -15805 | -8997 | 50252 | 52233 | -1982 | 1883 | 1875 | 71.21 | 134 | -9032 | 50252 | 52233 | 12977 | 23989 | 50252 | 43405 |
+| TL3_FL_HOLDALL_W60 | ALL | 1846 | -11646 | -20380 | -11619 | 71766 | 52233 | 19532 | 1846 | 1875 | 54.23 | 134 | -11646 | 71766 | 52233 | 10953 | 23989 | 71766 | 43405 |
+| TL3_FL_HOLDK7_W120 | K7 | 1904 | -1523 | -2665 | -1535 | 58109 | 52233 | 5876 | 700 | 687 | 47.62 | 67.87 | -1023 | 49788 | 14614 | 22492 | 23989 | 53485 | 43405 |
+| TL3_FL_HOLDK7_W30 | K7 | 1879 | -634 | -1109 | -633 | 43867 | 52233 | -8367 | 693 | 687 | 65.38 | 67.87 | -102 | 14106 | 14614 | 22508 | 23989 | 43867 | 43405 |
+| TL3_FL_HOLDK7_W60 | K7 | 1881 | -1209 | -2116 | -1214 | 47530 | 52233 | -4703 | 676 | 687 | 44.02 | 67.87 | -1298 | 35631 | 14614 | 22013 | 23989 | 47530 | 43405 |
 | TL3_FL_HOLDL5_W120 | L5 | 1835 | -10675 | -18682 | -10654 | 69567 | 52233 | 17334 | 1070 | 1104 | 60.81 | 173 | -9706 | 61069 | 42565 | 13589 | 23989 | 58005 | 43405 |
 | TL3_FL_HOLDL5_W30 | L5 | 1898 | -7962 | -13933 | -7935 | 50806 | 52233 | -1427 | 1115 | 1104 | 87.81 | 173 | -7180 | 45640 | 42565 | 14867 | 23989 | 50806 | 43405 |
 | TL3_FL_HOLDL5_W60 | L5 | 1882 | -8973 | -15702 | -8958 | 60318 | 52233 | 8084 | 1107 | 1104 | 59.47 | 173 | -9648 | 61509 | 42565 | 13988 | 23989 | 60318 | 43405 |
+| TL3_FL_HOLDM7_W120 | M7 | 1885 | 155 | 270 | 149 | 59610 | 52233 | 7377 | 320 | 336 | 41.65 | 16.37 | 602 | 28561 | 28109 | 24630 | 23989 | 41226 | 43405 |
+| TL3_FL_HOLDM7_W30 | M7 | 1905 | 197 | 345 | 187 | 57034 | 52233 | 4801 | 342 | 336 | 42.30 | 16.37 | 690 | 21031 | 28109 | 24505 | 23989 | 35052 | 43405 |
 | TL3_FL_HOLDP7_W120 | P7 | 1873 | -6058 | -10602 | -6052 | 57416 | 52233 | 5183 | 468 | 467 | 131 | 253 | -4381 | 51015 | 39663 | 17804 | 23989 | 57077 | 43405 |
 | TL3_FL_HOLDP7_W30 | P7 | 1885 | -5390 | -9432 | -5367 | 68613 | 52233 | 16379 | 472 | 467 | 118 | 253 | -4793 | 50413 | 39663 | 16800 | 23989 | 68613 | 43405 |
 | TL3_FL_HOLDP7_W60 | P7 | 1903 | -5048 | -8835 | -5047 | 64169 | 52233 | 11935 | 474 | 467 | 109 | 253 | -5102 | 50387 | 39663 | 17618 | 23989 | 64169 | 43405 |
