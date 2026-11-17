@@ -23,3 +23,4 @@
 2026-11-17T21:03Z W-GRIDD wall lines built (BK_*); modules trig_levels_book_walls / _loose enabled in the harness (they were held out until the lines existed)
 2026-11-17T21:03Z W-GRIDD wall lines built (BK_*); modules trig_levels_book_walls / _loose enabled in the harness (they were held out until the lines existed)
 2026-11-17T21:08:14Z W-GRIDC hourly: feature store rows complete 348 (rows<=1M missing 63, <=2M missing 104), store size 5.4G, free 136 GB, builder running; triggers_c 23 modules ready
+2026-11-17T21:19:37Z W-GRIDB hourly: modules 27, accepted by harness 25, rejected 2 (['trig_manual_squeeze.py', 'trig_structure_inside.py']); result files of my modules by tag {"rand1": 234, "rand2": 204, "rand3": 198, "rand4": 198, "rand5": 198, "real": 300}; real-tag rows with any result 40; heat/top20 21:07Z
