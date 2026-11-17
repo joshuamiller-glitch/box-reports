@@ -1,12 +1,12 @@
 # DS3_REBUILD_S1 [AT-ENTRY CLEAN TABLES: NONE YET - every table below is NOT at-entry-clean unless marked; see AT-ENTRY STATUS] - Stage 1 on RAW book trades (W-S1; order DIRECTIVE_REBUILD_20261116 + addenda + REFILL 11-17)
-AT-ENTRY STATUS (read first, 2026-11-17 07:40 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
+AT-ENTRY STATUS (read first, 2026-11-17 07:54 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
 
-> VALIDATION (FIRST PASS, written 2026-11-17 07:40 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
+> VALIDATION (FIRST PASS, written 2026-11-17 07:54 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
 
-VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 417 of 3988; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
+VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 514 of 3816; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
 
 ## Status
-Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 4, server 2 leased 73, load1 box 1 41.6. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 417/3988. Updated 2026-11-17 07:40 UTC.
+Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 7, server 2 leased 48, load1 box 1 44.5. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 514/3816. Updated 2026-11-17 07:54 UTC.
 
 ## Raw base (stage 0 table used here, engine $ at base lots and $1.18 RT; MAE_R positive = worse; R = net / (lots x 20 x stop))
 | book | session | trades | mean R | win % | net $ (base) | mean MFE_R | mean MAE_R |
@@ -201,7 +201,7 @@ Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - 
 |--|--|--|--|--|
 | 1 | 1192 | 152 | 408 | 41 |
 | 10 | 16 | 3 | 3 | 2 |
-| 2 | 144 | 26 | 31 | 9 |
+| 2 | 144 | 26 | 31 | 8 |
 | 3 | 8 | 2 | 2 | 1 |
 | 4 | 8 | 2 | 2 | 0 |
 | 5 | 144 | 56 | 60 | 41 |
@@ -214,23 +214,23 @@ Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - 
 Leading cells by permutation p (count of real stable passes vs shifted nulls):
 | chunk | book | family | real stable | real rate % | control rate % | draws | p | BH q |
 |--|--|--|--|--|--|--|--|--|
-| cf6_analogs_00 | U7 | 9 | 124 | 4.70 | 0.82 | 400 | 0.0025 | 0.031 |
-| TAPE_SPEED_01 | U7 | 5 | 382 | 4.42 | 1.11 | 350 | 0.0028 | 0.031 |
-| fam9_raw_00 | A7 | 9 | 100 | 8.93 | 0.76 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_01 | P7 | 5 | 1264 | 3.06 | 1.13 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_00 | P7 | 5 | 1589 | 3.91 | 1.41 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_00 | A7 | 5 | 617 | 4.48 | 1.14 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_01 | K7 | 5 | 2416 | 4.38 | 1.58 | 350 | 0.0028 | 0.031 |
-| cf6_cols_all_01 | A7 | 2 | 229 | 4.06 | 1.80 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_04 | A7 | 5 | 515 | 3.90 | 1.04 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_05 | A7 | 5 | 365 | 4.30 | 1.42 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_05 | M7 | 5 | 781 | 4.54 | 1.24 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_05 | P7 | 5 | 1405 | 5.40 | 1.07 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_02 | U7 | 5 | 537 | 2.59 | 1.46 | 350 | 0.0028 | 0.031 |
-| FLOW_PARTA_02 | K7 | 5 | 2556 | 4.72 | 1.52 | 300 | 0.0033 | 0.031 |
-| FLOW_PARTA_00 | POOL | 5 | 5148 | 7.28 | 1.24 | 300 | 0.0033 | 0.031 |
+| cf4_altagree_11 | P7 | 1 | 338 | 3.11 | 1.43 | 400 | 0.0025 | 0.027 |
+| fam9_raw_00 | A7 | 9 | 100 | 8.93 | 0.76 | 400 | 0.0025 | 0.027 |
+| cf6_analogs_00 | U7 | 9 | 124 | 4.70 | 0.82 | 400 | 0.0025 | 0.027 |
+| FLOW_PARTA_01 | K7 | 5 | 2416 | 4.38 | 1.58 | 400 | 0.0025 | 0.027 |
+| FLOW_PARTA_00 | P7 | 5 | 1589 | 3.91 | 1.41 | 400 | 0.0025 | 0.027 |
+| FLOW_PARTA_00 | A7 | 5 | 617 | 4.48 | 1.14 | 400 | 0.0025 | 0.027 |
+| FLOW_PARTA_00 | K7 | 5 | 2508 | 4.70 | 1.23 | 400 | 0.0025 | 0.027 |
+| cf6_analogs_00 | POOL | 9 | 321 | 4.56 | 0.99 | 400 | 0.0025 | 0.027 |
+| FLOW_PARTA_01 | P7 | 5 | 1264 | 3.06 | 1.13 | 400 | 0.0025 | 0.027 |
+| univ_entry_table_ABCDEKL_00 | POOL | 8/9 | 340 | 3.63 | 2.18 | 400 | 0.0025 | 0.027 |
+| cf6_cols_all_01 | A7 | 2 | 229 | 4.06 | 1.80 | 400 | 0.0025 | 0.027 |
+| FLOW_PARTA_03 | M7 | 5 | 862 | 3.17 | 1.24 | 400 | 0.0025 | 0.027 |
+| FLOW_PARTA_02 | U7 | 5 | 537 | 2.59 | 1.46 | 400 | 0.0025 | 0.027 |
+| FLOW_PARTA_02 | P7 | 5 | 1699 | 4.17 | 1.11 | 400 | 0.0025 | 0.027 |
+| FLOW_PARTA_02 | M7 | 5 | 831 | 3.07 | 1.57 | 400 | 0.0025 | 0.027 |
 
-## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 06:58 UTC; A shards landed 1576 of 1576
+## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 07:40 UTC; A shards landed 1576 of 1576
 STATUS: COMPLETE
 
 Family table at-entry, window ALL43, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
@@ -571,7 +571,68 @@ Most-chosen columns in plain words (count of cells choosing it; feed: Unusual Wh
 - c_J_flip_far25_SPX_oi (3 cells): name only: c_J_flip_far25_SPX_oi
 - c_J_wall_behind50_SPX_oi (3 cells): name only: c_J_wall_behind50_SPX_oi
 
+Reading (FIRST PASS): family 9 has a real untouched-year association (stable count 58 vs null 17, p 0.001) but the frozen rules do NOT hold: sign kept 56-70% in HOLD but 35-37% in L6M vs 46-54% for the shifted-label procedure, 1 of 20 cell score rules reaches WF-LEAD, none WF-CONFIRMED. Family 10: p 0.10, 0 of 8 above FAIL. Family 7: p 0.13 (60 vs null 48.5), but the family-score skip rule keeps sign in 68% of L6M cells with +0.066 R lift and +116 $/wk median vs the shifted procedure 54% / -18 $/wk; 4 of 19 cells reach WF-CONFIRMED and 2 WF-LEAD. CAVEATS: the tier null (how many cells the identical procedure on shifted labels would lift to WF-CONFIRMED) was computed only for the percentile columns above, not as a tier count; the tier is on 15-19 cells selected among several rules, in-sample for GAP/PRE/XP; the UW feed is not in D7; path arithmetic, no freed-book effect. Family 7 is the only one worth an engine test (JL3) and a shifted-label tier-count null before any use.
+
+### Tier-count null (JOB 1 follow-up): how many cells the IDENTICAL procedure lifts to WF-CONFIRMED / WF-LEAD
+Same selection (top 5 per cell on 2023-04..2025-10), same family score rule, same tier test (all windows, 200 persistent random controls, L6M bootstrap). Rows: real columns on real labels; the same columns chosen on shifted labels (11/23/37) and evaluated on TRUE outcomes; and for scale the 200 NONSENSE columns (pseudo-family N) on real and shifted labels. Score rule SKIP / HALF-SIZE.
+| family | rule | source | cells | WF-CONFIRMED | WF-LEAD | WF-FAIL | n/a |
+|--|--|--|--|--|--|--|--|
+| 7 | skip | real | 19 | 4 | 2 | 13 | 0 |
+| 7 | skip | s11 | 19 | 1 | 0 | 18 | 0 |
+| 7 | skip | s23 | 19 | 1 | 2 | 16 | 0 |
+| 7 | skip | s37 | 19 | 1 | 0 | 18 | 0 |
+| 7 | half | real | 19 | 3 | 1 | 15 | 0 |
+| 7 | half | s11 | 19 | 2 | 0 | 17 | 0 |
+| 7 | half | s23 | 19 | 1 | 1 | 17 | 0 |
+| 7 | half | s37 | 19 | 1 | 0 | 18 | 0 |
+| 9 | skip | real | 20 | 0 | 1 | 19 | 0 |
+| 9 | skip | s11 | 18 | 0 | 0 | 18 | 0 |
+| 9 | skip | s23 | 19 | 0 | 0 | 19 | 0 |
+| 9 | skip | s37 | 18 | 0 | 0 | 17 | 1 |
+| 9 | half | real | 20 | 0 | 1 | 19 | 0 |
+| 9 | half | s11 | 18 | 0 | 0 | 18 | 0 |
+| 9 | half | s23 | 19 | 0 | 0 | 19 | 0 |
+| 9 | half | s37 | 18 | 1 | 0 | 16 | 1 |
+| 10 | skip | real | 8 | 0 | 0 | 8 | 0 |
+| 10 | skip | s11 | 10 | 0 | 0 | 9 | 1 |
+| 10 | skip | s23 | 9 | 0 | 0 | 5 | 4 |
+| 10 | skip | s37 | 9 | 0 | 1 | 7 | 1 |
+| 10 | half | real | 8 | 0 | 0 | 8 | 0 |
+| 10 | half | s11 | 10 | 0 | 0 | 9 | 1 |
+| 10 | half | s23 | 9 | 0 | 0 | 5 | 4 |
+| 10 | half | s37 | 9 | 0 | 0 | 8 | 1 |
+| N | skip | real | 20 | 1 | 1 | 18 | 0 |
+| N | skip | s11 | 20 | 1 | 0 | 19 | 0 |
+| N | skip | s23 | 20 | 0 | 1 | 19 | 0 |
+| N | skip | s37 | 20 | 0 | 0 | 20 | 0 |
+| N | half | real | 20 | 1 | 1 | 18 | 0 |
+| N | half | s11 | 20 | 2 | 0 | 18 | 0 |
+| N | half | s23 | 20 | 0 | 0 | 20 | 0 |
+| N | half | s37 | 20 | 1 | 0 | 19 | 0 |
+Reading: family 7 real = 4 WF-CONFIRMED of 19 cells; the same procedure on shifted labels gives [1, 1, 1] (mean 1.0 per 19 cells; pooled rate 0.060) and on nonsense columns 2 of 80 cell-rules across real+shifted labels. Binomial P(>= 4 of 19 | null rate 0.060) = 0.025. Family 7 therefore stands only weakly (tier-count p about 0.02; the untouched-year permutation p is 0.13): the 4 WF-CONFIRMED cells are read only relative to this null.
+
 Family 9 leakage check (rb1_fam9_check.py): see the log lines in MORNING.md; independent brute-force recompute of 8 features on 600 random trades from raw trades with exit_ts < signal second matched in every case, and scrambling the outcomes (R, exit price, P&L) of a trade and all later trades changed none of the features of earlier trades nor of the first scrambled trade of each book: the features use only trades CLOSED before the signal second on the raw chassis (book alone), not the JL2 stack.
+
+## FAMILY 9 ON THE STACKED BOOK (JL2 / JL3 trade lists): frozen raw-chassis rules re-tested - at-entry clean (causal), FIRST PASS
+What family 9 plausibly measures: the book OWN recent results and pacing (last result, same-side losers, gap since the last close, re-chase vs fresh entry, net R so far today / this session): a streak / clustering effect of the strategy own signals, not market information. The raw-chassis association (untouched-year permutation p 0.001) exists because the book alone has a different trade sequence from the live stack; on the stack the sequence is shaped by caps, cuts, governors and other books, so the same columns mean something else. Test: features recomputed causally from the stacked trade list of the same book (only trades CLOSED before the signal second), the SAME frozen columns/directions/score rules chosen on the raw table, evaluated in HOLD (2025-11..2026-04) and L6M (2026-05..10); skip rule, path arithmetic, 200 persistent random skips of the same share (5-min bucket per book and side).
+
+### Base TL3_EV_JN05W2JL2: 18979 stacked trades, frozen family-9 rules evaluated on 108 cell-rules
+| rule | window | cell-rules | sign kept % (flagged trades worse than unflagged) | median lift R (unflagged minus flagged) | median ulcer change % | median mean $/wk (engine, stack lots) | share pct>=.75 on ulcer or mean vs 200 random | raw-chassis result for comparison (L6M score skip: sign kept 35%, lift -0.024) |
+|--|--|--|--|--|--|--|--|--|
+| score | HOLD | 18 | 89 | 0.030 | 40.5 | -35 | 61% | |
+| score | L6M | 18 | 39 | -0.033 | 11.2 | -467 | 22% | |
+| col | HOLD | 89 | 57 | 0.022 | 33.4 | -135 | 49% | |
+| col | L6M | 90 | 47 | -0.006 | 14.3 | -296 | 31% | |
+
+### Base TL3_EV_JL3: 7603 stacked trades, frozen family-9 rules evaluated on 108 cell-rules
+| rule | window | cell-rules | sign kept % (flagged trades worse than unflagged) | median lift R (unflagged minus flagged) | median ulcer change % | median mean $/wk (engine, stack lots) | share pct>=.75 on ulcer or mean vs 200 random | raw-chassis result for comparison (L6M score skip: sign kept 35%, lift -0.024) |
+|--|--|--|--|--|--|--|--|--|
+| score | HOLD | 18 | 78 | 0.039 | 47.4 | -78 | 61% | |
+| score | L6M | 18 | 50 | -0.005 | 19.7 | -443 | 22% | |
+| col | HOLD | 89 | 63 | 0.022 | 37.7 | -193 | 45% | |
+| col | L6M | 90 | 57 | 0.009 | 13.3 | -281 | 33% | |
+
+Reading (stacked book): the family-9 rules chosen on the raw chassis keep sign in HOLD (JL2 score rules 89%, JL3 78%) but not in L6M (JL2 39%, JL3 50%; JL3 lists cover 13 months), the same failure as on the raw chassis: the association is real in-sample/HOLD and is not a stable at-entry rule. The raw-vs-stack difference in what the columns mean (caps, cuts, other books shape the sequence) is why the stacked version is the one that matters for D7.
 
 ## Read this first
 - Missing controls are "not finished", never passing: the perm p column is blank until every chunk x book permutation shard of a batch has landed for that family.
