@@ -1,7 +1,7 @@
 # DS3_DAYDONE_VARIANTS - DAY-DONE settings on the exact engine (W-DD, order 11-17 13:31Z)
-VERDICT (data ends 2026-10-31; FIRST PASS 2026-11-17 17:19Z; OFF landed 12 of 43 months; ulcer index primary; tiers use the calibrated cut-offs): no variant has a scored tier yet (controls or windows missing = NOT FINISHED, never passing). No removal of the live rule is implied; this is a search for a better SETTING of the same layer.
+VERDICT (data ends 2026-10-31; FIRST PASS 2026-11-17 17:49Z; OFF landed 38 of 43 months; ulcer index primary; tiers use the calibrated cut-offs): no variant has a scored tier yet (controls or windows missing = NOT FINISHED, never passing). No removal of the live rule is implied; this is a search for a better SETTING of the same layer.
 
-> VALIDATION (desk standard, W-DD, FIRST PASS, 2026-11-17 17:19Z): trials counted = 37 settings on JL3 (7 named variants LATCH BE BT C D2 D4 F + 30 grid cells = closes {18,22,26,30} x live loss {3,000 4,200 6,000 8,000} for the eval form and for the session-boundary form, minus the two cells that equal REF and C), plus the references REF / OFF and JL2 OFF; controls = 6 families x 30 persistent random-day-halt draws (A day-reset, B open-P&L, C session, D2, D4, F per-book); correction = percentile among the controls of the matching family on the calibrated tiers, and over the 37 settings White RC / Hansen SPA / DSR / BH on weekly P&L deltas vs REF (mean) plus a block-bootstrap reality check on the ulcer statistic and PBO (CSCV, weekly P&L of the 37 + REF); in-sample on the 43 months (no fitted choice; recent windows L6M/L3M and older HOLD/GAP/PRE/X' are the walk-forward-style split); FIRST PASS, shown only for what landed.
+> VALIDATION (desk standard, W-DD, FIRST PASS, 2026-11-17 17:49Z): trials counted = 37 settings on JL3 (7 named variants LATCH BE BT C D2 D4 F + 30 grid cells = closes {18,22,26,30} x live loss {3,000 4,200 6,000 8,000} for the eval form and for the session-boundary form, minus the two cells that equal REF and C), plus the references REF / OFF and JL2 OFF; controls = 6 families x 30 persistent random-day-halt draws (A day-reset, B open-P&L, C session, D2, D4, F per-book); correction = percentile among the controls of the matching family on the calibrated tiers, and over the 37 settings White RC / Hansen SPA / DSR / BH on weekly P&L deltas vs REF (mean) plus a block-bootstrap reality check on the ulcer statistic and PBO (CSCV, weekly P&L of the 37 + REF); in-sample on the 43 months (no fitted choice; recent windows L6M/L3M and older HOLD/GAP/PRE/X' are the walk-forward-style split); FIRST PASS, shown only for what landed.
 
 ## Status (what has landed)
 - IDENTITY gate (inert / re-implemented cell = TL3_EV_JL3 trade for trade on 202610 and 202504): PASS
@@ -13,7 +13,7 @@ VERDICT (data ends 2026-10-31; FIRST PASS 2026-11-17 17:19Z; OFF landed 12 of 43
   - TL3_DD_JL3_REF_P 202610: 691 trades net 37159.82 vs reference 691 net 37159.82 -> IDENTICAL
   - TL3_DD_JL2_ID 202610: 642 trades net 27487.58 vs reference 642 net 27487.58 -> IDENTICAL
   - TL3_DD_JL2_REF_O 202610: 642 trades net 27487.58 vs reference 642 net 27487.58 -> IDENTICAL
-- JL3 months landed (of 43): REF 43; LATCH 12; BE 12; BT 12; C 12; D2 12; D4 12; F 12; OFF 12; grid cells: 0 of 30 with all 43 months, 18 with any month. Inert-month copies written by the prefilter: 0 (a month in which the rule condition never holds on the OFF trade list cannot change anything; verification runs: see section 9).
+- JL3 months landed (of 43): REF 43; LATCH 18; BE 16; BT 16; C 18; D2 18; D4 18; F 18; OFF 38; grid cells: 0 of 30 with all 43 months, 30 with any month. Inert-month copies written by the prefilter: 288 (a month in which the rule condition never holds on the OFF trade list cannot change anything; verification runs: see section 9).
 - Controls: not built yet: the controls are calibrated on the OFF path once all 43 OFF months have landed (analytic halted-share match; sets pre-listed in the queue). A cell with fewer than 10 valid controls in a window is NOT FINISHED, never passing.
 - Rule as implemented (code/th_dd/dd_hooks.py): the live C22 gate = stack closes today >= n AND stack day P&L (net of fees, engine BASE lots) <= thr, day = 17:00 ET roll, checked at every entry attempt (not latched). Live $4,200 = 2,400 base (x1.75). Variants replace the gate (OFF + hook). The engine's gate is NOT latched; the live rule may latch at the trip (variant a2).
 
@@ -22,14 +22,14 @@ Ulcer = RMS of daily drawdown on cumulative P&L. P(lower) = week-clustered boots
 
 | setting | months | L6M | HOLD | GAP | PRE | X' | pooled | P(ulcer lower) L6M / HOLD / pooled | halted days L6M / pooled | halted share of sessions | tier |
 |--|--|--|--|--|--|--|--|--|--|--|--|
-| a. DAY-DONE as in the engine (22 / live -4,200, eval at entry, until reset) = JL3 | 43 | +30.5% / +1,687 | +0.4% / +992 | n/l | n/l | n/l | n/l | 0.96 / 0.81 / n/l | 50 / 160 | 0.096 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
-| a2. live rule latched at the 22nd close, until reset | 12 | +32.1% / +1,594 | +0.4% / +940 | n/l | n/l | n/l | n/l | 0.97 / 0.81 / n/l | 50 / n/l | 0.220 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
-| b1. open P&L counted, checked at entry, until reset | 12 | +30.6% / +1,705 | +0.3% / +921 | n/l | n/l | n/l | n/l | 0.96 / 0.81 / n/l | 50 / n/l | 0.218 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
-| b2. open P&L counted, checked at each close, latched to reset | 12 | +32.6% / +1,483 | +0.1% / +801 | n/l | n/l | n/l | n/l | 0.97 / 0.80 / n/l | 49 / n/l | 0.217 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
-| c. halt to next session boundary (22 / -4,200) | 12 | +25.6% / +1,641 | -5.2% / +281 | n/l | n/l | n/l | n/l | 0.84 / 0.68 / n/l | 50 / n/l | 0.185 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
-| d. halt 2 h | 12 | +18.1% / +2,542 | -13.9% / -253 | n/l | n/l | n/l | n/l | 0.73 / 0.54 / n/l | 50 / n/l | 0.209 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
-| d. halt 4 h | 12 | +26.2% / +1,919 | -9.9% / +411 | n/l | n/l | n/l | n/l | 0.96 / 0.67 / n/l | 50 / n/l | 0.215 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
-| f. per-book (books net negative on the day stop) | 12 | +15.5% / -42 | -0.1% / +969 | n/l | n/l | n/l | n/l | 0.36 / 0.84 / n/l | 50 / n/l | 0.126 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| a. DAY-DONE as in the engine (22 / live -4,200, eval at entry, until reset) = JL3 | 43 | +30.5% / +1,687 | +0.4% / +992 | +0.1% / -166 | +0.7% / +347 | n/l | n/l | 0.96 / 0.81 / n/l | 50 / 160 | 0.096 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| a2. live rule latched at the 22nd close, until reset | 18 | +32.1% / +1,594 | +0.4% / +940 | n/l | n/l | n/l | n/l | 0.97 / 0.81 / n/l | 50 / n/l | 0.147 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| b1. open P&L counted, checked at entry, until reset | 16 | +30.6% / +1,705 | +0.3% / +921 | n/l | n/l | n/l | n/l | 0.96 / 0.81 / n/l | 50 / n/l | 0.164 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| b2. open P&L counted, checked at each close, latched to reset | 16 | +32.6% / +1,483 | +0.1% / +801 | n/l | n/l | n/l | n/l | 0.97 / 0.80 / n/l | 49 / n/l | 0.163 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| c. halt to next session boundary (22 / -4,200) | 18 | +25.6% / +1,641 | -5.2% / +281 | n/l | n/l | n/l | n/l | 0.84 / 0.68 / n/l | 50 / n/l | 0.124 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| d. halt 2 h | 18 | +18.1% / +2,542 | -13.9% / -253 | n/l | n/l | n/l | n/l | 0.73 / 0.54 / n/l | 50 / n/l | 0.140 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| d. halt 4 h | 18 | +26.2% / +1,919 | -9.9% / +411 | n/l | n/l | n/l | n/l | 0.96 / 0.67 / n/l | 50 / n/l | 0.144 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| f. per-book (books net negative on the day stop) | 18 | +15.5% / -42 | -0.1% / +969 | n/l | n/l | n/l | n/l | 0.36 / 0.84 / n/l | 50 / n/l | 0.084 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
 
 Same, vs REF (the live setting; ulcer + = lower than live):
 
@@ -74,6 +74,18 @@ pct = share of valid controls the setting beats (ulcer: lower is better; mean). 
 | GC_18_3000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
 | GC_18_4200 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
 | GC_18_6000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_18_8000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_22_3000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_22_6000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_22_8000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_26_3000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_26_4200 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_26_6000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_26_8000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_30_3000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_30_4200 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_30_6000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| GC_30_8000 | C | n/l | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a | n/a | n/a / n/a / n/a | n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
 
 ## Table 3 - what the halt skipped (JL3 cell vs OFF; trades present in OFF and absent in the cell = skipped, trades only in the cell = gained after the freed room; base-lot dollars, OFF lots)
 Positive $ on the skipped trades = the skipped sessions were winners on average (the halt cost money); negative = losers (the halt saved money). Common-trade change = path effect on trades both runs share.
@@ -154,15 +166,15 @@ live form (eval at entry, until reset) - window L6M
 | 18 | +18.2% / +1,094 | +16.3% / +1,065 | +9.7% / +699 | +13.4% / +1,041 |
 | 22 | +31.6% / +1,715 | +30.5% / +1,687 | +30.0% / +1,581 | +25.3% / +1,362 |
 | 26 | +28.9% / +836 | +28.2% / +554 | +29.5% / +628 | +24.4% / +557 |
-| 30 | +15.7% / -20 | n/l | +5.3% / -167 | n/l |
+| 30 | +15.7% / -20 | +11.9% / -203 | +5.3% / -167 | +6.5% / -39 |
 
 live form (eval at entry, until reset) - window HOLD
 | closes \ live loss | 3,000 | 4,200 | 6,000 | 8,000 |
 |--|--|--|--|--|
-| 18 | +16.8% / +2,070 | +0.8% / +1,464 | n/l | -1.0% / +974 |
+| 18 | +16.8% / +2,070 | +0.8% / +1,464 | -2.0% / +1,513 | -1.0% / +974 |
 | 22 | +6.6% / +1,223 | +0.4% / +992 | -5.0% / +757 | -7.9% / +406 |
 | 26 | +10.8% / +1,192 | +3.9% / +859 | -3.1% / +535 | -4.7% / +405 |
-| 30 | +6.8% / +998 | n/l | +6.8% / +773 | n/l |
+| 30 | +6.8% / +998 | +8.4% / +992 | +6.8% / +773 | +4.8% / +719 |
 
 live form (eval at entry, until reset) - window pooled
 | closes \ live loss | 3,000 | 4,200 | 6,000 | 8,000 |
@@ -175,18 +187,18 @@ live form (eval at entry, until reset) - window pooled
 halt only to the next session boundary - window L6M
 | closes \ live loss | 3,000 | 4,200 | 6,000 | 8,000 |
 |--|--|--|--|--|
-| 18 | +20.5% / +723 | n/l | n/l | n/l |
-| 22 | n/l | +25.6% / +1,641 | n/l | n/l |
-| 26 | n/l | n/l | n/l | n/l |
-| 30 | n/l | n/l | n/l | n/l |
+| 18 | +20.5% / +723 | +19.0% / +497 | +8.8% / +360 | +8.4% / +413 |
+| 22 | +23.3% / +1,023 | +25.6% / +1,641 | +21.9% / +834 | +16.9% / +870 |
+| 26 | +22.6% / +556 | +22.3% / +509 | +24.1% / +350 | +19.6% / +631 |
+| 30 | +9.6% / +173 | +8.7% / +166 | -1.5% / +179 | +2.4% / +176 |
 
 halt only to the next session boundary - window HOLD
 | closes \ live loss | 3,000 | 4,200 | 6,000 | 8,000 |
 |--|--|--|--|--|
-| 18 | n/l | n/l | n/l | n/l |
-| 22 | n/l | -5.2% / +281 | n/l | n/l |
-| 26 | n/l | n/l | n/l | n/l |
-| 30 | n/l | n/l | n/l | n/l |
+| 18 | +7.5% / +1,383 | -1.3% / +819 | -7.6% / +931 | -11.7% / +393 |
+| 22 | +2.0% / +569 | -5.2% / +281 | -11.1% / +165 | -16.9% / -131 |
+| 26 | +5.2% / +678 | -1.4% / +409 | -2.7% / +365 | -10.2% / +88 |
+| 30 | +5.1% / +583 | +7.5% / +629 | +3.0% / +403 | -2.8% / +295 |
 
 halt only to the next session boundary - window pooled
 | closes \ live loss | 3,000 | 4,200 | 6,000 | 8,000 |
@@ -221,39 +233,53 @@ Cells TL3_DD_JL3_<R code> = OFF + hook code/th_dd/dd_resume.py: trip as live (22
 
 | resume rule | months | L6M | HOLD | GAP | PRE | X' | pooled | halted share (designed) | halted days L6M / pooled | pct ulcer L6M / HOLD (family controls) | tier |
 |--|--|--|--|--|--|--|--|--|--|--|--|
-| R1_N2 | 0 | not landed | | | | | | | | | |
-| R1_N3 | 0 | not landed | | | | | | | | | |
-| R1_N4 | 0 | not landed | | | | | | | | | |
-| R1_X1000 | 0 | not landed | | | | | | | | | |
-| R1_X2000 | 0 | not landed | | | | | | | | | |
-| R1_X3000 | 0 | not landed | | | | | | | | | |
-| R2_13 | 0 | not landed | | | | | | | | | |
-| R2_16 | 0 | not landed | | | | | | | | | |
-| R3_1000 | 0 | not landed | | | | | | | | | |
-| R3_2000 | 0 | not landed | | | | | | | | | |
-| R3_3000 | 0 | not landed | | | | | | | | | |
-| R4 | 0 | not landed | | | | | | | | | |
-| R5 | 0 | not landed | | | | | | | | | |
-| R6 | 0 | not landed | | | | | | | | | |
+| R1_N2 | 12 | +7.8% / -663 | +12.2% / +1,534 | n/l | n/l | n/l | n/l | 0.065 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R1_N3 | 12 | +21.6% / +1,078 | -2.6% / +522 | n/l | n/l | n/l | n/l | 0.073 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R1_N4 | 12 | +22.1% / +1,191 | -7.1% / +679 | n/l | n/l | n/l | n/l | 0.076 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R1_X1000 | 12 | +24.1% / +538 | -10.8% / -6 | n/l | n/l | n/l | n/l | 0.076 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R1_X2000 | 12 | +26.6% / +995 | -3.8% / +586 | n/l | n/l | n/l | n/l | 0.088 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R1_X3000 | 12 | +28.5% / +1,428 | -4.4% / +458 | n/l | n/l | n/l | n/l | 0.093 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R2_13 | 12 | +29.1% / +834 | -17.5% / +69 | n/l | n/l | n/l | n/l | 0.097 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R2_16 | 12 | +27.4% / +589 | -17.5% / +69 | n/l | n/l | n/l | n/l | 0.096 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R3_1000 | 12 | +32.0% / +1,599 | +0.0% / +1,050 | n/l | n/l | n/l | n/l | 0.111 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R3_2000 | 12 | +32.4% / +1,513 | +0.4% / +1,120 | n/l | n/l | n/l | n/l | 0.111 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R3_3000 | 12 | +32.4% / +1,513 | +0.4% / +940 | n/l | n/l | n/l | n/l | 0.111 | 50 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R4 | 12 | +21.4% / +362 | -8.5% / +49 | n/l | n/l | n/l | n/l | 0.044 | 51 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R5 | 12 | +15.6% / +2,038 | +3.1% / +560 | n/l | n/l | n/l | n/l | 0.055 | 51 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| R6 | 12 | +6.8% / +468 | -17.1% / -385 | n/l | n/l | n/l | n/l | 0.044 | 51 / n/l | n/a / n/a | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
 | R_BEST2 | 0 | not landed | | | | | | | | | |
 
 Same, ulcer / mean vs REF (the live rule, + = better than live):
 | resume rule | L6M | HOLD | GAP | PRE | X' | pooled |
 |--|--|--|--|--|--|--|
+| R1_N2 | -32.7% / -2,350 | +11.8% / +543 | n/l | n/l | n/l | n/l |
+| R1_N3 | -12.8% / -608 | -3.0% / -470 | n/l | n/l | n/l | n/l |
+| R1_N4 | -12.0% / -496 | -7.5% / -313 | n/l | n/l | n/l | n/l |
+| R1_X1000 | -9.2% / -1,149 | -11.2% / -998 | n/l | n/l | n/l | n/l |
+| R1_X2000 | -5.6% / -692 | -4.1% / -406 | n/l | n/l | n/l | n/l |
+| R1_X3000 | -2.9% / -259 | -4.7% / -534 | n/l | n/l | n/l | n/l |
+| R2_13 | -2.1% / -853 | -17.9% / -923 | n/l | n/l | n/l | n/l |
+| R2_16 | -4.5% / -1,097 | -17.9% / -923 | n/l | n/l | n/l | n/l |
+| R3_1000 | +2.1% / -88 | -0.4% / +58 | n/l | n/l | n/l | n/l |
+| R3_2000 | +2.7% / -173 | +0.0% / +128 | n/l | n/l | n/l | n/l |
+| R3_3000 | +2.7% / -173 | -0.0% / -52 | n/l | n/l | n/l | n/l |
+| R4 | -13.2% / -1,324 | -8.8% / -943 | n/l | n/l | n/l | n/l |
+| R5 | -21.5% / +351 | +2.8% / -432 | n/l | n/l | n/l | n/l |
+| R6 | -34.2% / -1,219 | -17.5% / -1,377 | n/l | n/l | n/l | n/l |
 
 Walk-forward pick (SEL = 2023-04..2025-10 ulcer vs OFF; tested on the untouched L6M and HOLD): NOT FINISHED (needs all SEL months of every cell of the group; older months are queued as the OFF months land)
 
 ## 12. What the halt cost or saved: shadow P&L of the skipped sessions after every trip (JL3; shadow trades = the OFF run's trades entered after the trip of that label day, base lots, net of fees; x1.75 = live lots approx.)
-Tripped days: 89 (months with OFF landed: 12). Format: days with >= 1 shadow trade in the session | mean $ per tripped day | share of those days positive | worst day | sum.
+Tripped days: 163 (months with OFF landed: 32). Format: days with >= 1 shadow trade in the session | mean $ per tripped day | share of those days positive | worst day | sum.
 
-pooled (all OFF months landed): 89 tripped days
+pooled (all OFF months landed): 163 tripped days
 | session skipped | days with trades | mean $/day base | mean x1.75 | share positive | worst day | sum $ |
 |--|--|--|--|--|--|--|
 | Asia | 3 | -1,962 | -3,433 | 0.00 | -2,914 | -5,885 |
-| London | 52 | +193 | +338 | 0.58 | -9,902 | +10,043 |
-| NY AM | 82 | -479 | -839 | 0.44 | -5,935 | -39,298 |
-| NY PM | 62 | -501 | -876 | 0.37 | -4,327 | -31,046 |
-| total | 86 | -770 | -1,347 | 0.41 | -14,094 | -66,187 |
+| London | 67 | +38 | +66 | 0.57 | -9,902 | +2,540 |
+| NY AM | 129 | -289 | -505 | 0.47 | -6,161 | -37,240 |
+| NY PM | 117 | -231 | -405 | 0.41 | -4,327 | -27,073 |
+| total | 150 | -451 | -789 | 0.44 | -14,094 | -67,658 |
 
 L6M + HOLD (2025-11..2026-10): 89 tripped days
 | session skipped | days with trades | mean $/day base | mean x1.75 | share positive | worst day | sum $ |
@@ -264,14 +290,14 @@ L6M + HOLD (2025-11..2026-10): 89 tripped days
 | NY PM | 62 | -501 | -876 | 0.37 | -4,327 | -31,046 |
 | total | 86 | -770 | -1,347 | 0.41 | -14,094 | -66,187 |
 
-older (before 2025-11): 0 tripped days
+older (before 2025-11): 74 tripped days
 | session skipped | days with trades | mean $/day base | mean x1.75 | share positive | worst day | sum $ |
 |--|--|--|--|--|--|--|
 | Asia | 0 | | | | | |
-| London | 0 | | | | | |
-| NY AM | 0 | | | | | |
-| NY PM | 0 | | | | | |
-| total | 0 | | | | | |
+| London | 15 | -500 | -875 | 0.53 | -5,913 | -7,503 |
+| NY AM | 47 | +44 | +77 | 0.51 | -6,161 | +2,058 |
+| NY PM | 55 | +72 | +126 | 0.45 | -3,084 | +3,973 |
+| total | 64 | -23 | -40 | 0.48 | -7,646 | -1,471 |
 
 Negative mean = the skipped sessions were net losers (the halt saved money); positive = winners (the halt cost money).
 
