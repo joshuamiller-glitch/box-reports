@@ -1,6 +1,6 @@
-# DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 02:29Z)
+# DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 05:30Z)
 <!-- PR2:BEGIN -->
-## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 05:08 UTC)
+## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 05:39 UTC)
 
 **Every "not confirmed" issued under the 11-16 morning rule (beat all 6 controls on max DD in HOLD and L6M) is VOID as a negative result: that rule detects a real 10% / 20% max-DD cut only 5-13% of the time (DS3_PASS_RULE.md step 1).** Tiers below use ulcer index (RMS of daily drawdown; + = lower ulcer than JL2) and mean, percentile among 200 persistent-draw controls (PATH ARITHMETIC delta-permutation controls, not engine runs; 0 of the 30 engine-exact draws have landed; engine draws queued on server 2), week-clustered bootstrap (2,000 resamples). Cut-offs (tuned so noise reaches CONFIRMED under 5%): CONFIRMED needs ulcer-or-mean percentile >= 0.85 in L6M and L3M with the other >= 0.25, P(ulcer lower, L6M) >= 0.80, ulcer percentile >= 0.25 in the older windows run; LEAD needs >= 0.75 in L6M and L3M and nothing below 0.25 in any window run. A candidate whose older windows (GAP, PREUW, X') were not run cannot be issued CONFIRMED ("PROVISIONAL"). Old verdict = what its source page said.
 
@@ -97,25 +97,25 @@ Note: the M7 London cap draws realise a share about 0.03-0.06 below the real rul
 | London skip k=1.25 UC M7+P7 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
 | London skip k=1.25 UC M7+P7 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
 | London skip k=1.25 UC M7+P7 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
-| give-back P7 Asia 50/40 | L3M | 0.289 | 5 | 0 [0] | 0.496 | not enough valid draws | - |  |
+| give-back P7 Asia 50/40 | L3M | 0.289 | 7 | 0 [0] | 0.474 | not enough valid draws | - |  |
 | give-back P7 Asia 50/40 | L6M | 0.286 | 1 | 0 [0] | 0.421 | not enough valid draws | - |  |
-| give-back P7 Asia 50/40 | HOLD | 0.254 | 1 | 0 [0] | 0.637 | not enough valid draws | - |  |
+| give-back P7 Asia 50/40 | HOLD | 0.254 | 2 | 0 [0] | 0.623 | not enough valid draws | - |  |
 | give-back P7 Asia 50/40 | GAP | real cell not landed | - | - | - | - | - | - |
 | give-back P7 Asia 50/40 | PREUW | real cell not landed | - | - | - | - | - | - |
 | give-back P7 Asia 50/40 | X' | real cell not landed | - | - | - | - | - | - |
 | give-back P7 Asia 50/40 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
 | give-back P7 Asia 50/40 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
 | give-back P7 Asia 50/40 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
-| London skip k=1.25 true pts M7+P7 | L3M | 0.280 | 2 | 0 [0] | 0.237 | not enough valid draws | - |  |
-| London skip k=1.25 true pts M7+P7 | L6M | 0.283 | 0 | 0 [0] | None | not enough valid draws | - |  |
-| London skip k=1.25 true pts M7+P7 | HOLD | 0.327 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 true pts M7+P7 | L3M | 0.280 | 4 | 0 [0] | 0.24 | not enough valid draws | - |  |
+| London skip k=1.25 true pts M7+P7 | L6M | 0.283 | 1 | 0 [0] | 0.25 | not enough valid draws | - |  |
+| London skip k=1.25 true pts M7+P7 | HOLD | 0.327 | 2 | 0 [0] | 0.231 | not enough valid draws | - |  |
 | London skip k=1.25 true pts M7+P7 | GAP | 0.488 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | London skip k=1.25 true pts M7+P7 | PREUW | 0.434 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | London skip k=1.25 true pts M7+P7 | X' | 0.402 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | London skip k=1.25 true pts M7+P7 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
 | London skip k=1.25 true pts M7+P7 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
 | London skip k=1.25 true pts M7+P7 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
-| give-back K7 NY AM 40/40 | L3M | 0.312 | 3 | 0 [0] | 0.281 | not enough valid draws | - |  |
+| give-back K7 NY AM 40/40 | L3M | 0.312 | 5 | 0 [0] | 0.29 | not enough valid draws | - |  |
 | give-back K7 NY AM 40/40 | L6M | 0.322 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | give-back K7 NY AM 40/40 | HOLD | 0.292 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | give-back K7 NY AM 40/40 | GAP | real cell not landed | - | - | - | - | - | - |
@@ -124,7 +124,7 @@ Note: the M7 London cap draws realise a share about 0.03-0.06 below the real rul
 | give-back K7 NY AM 40/40 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
 | give-back K7 NY AM 40/40 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
 | give-back K7 NY AM 40/40 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
-| A7 Asia target 45 | L3M | 0.412 | 3 | 0 [0] | 0.623 | not enough valid draws | - |  |
+| A7 Asia target 45 | L3M | 0.412 | 6 | 0 [0] | 0.65 | not enough valid draws | - |  |
 | A7 Asia target 45 | L6M | 0.459 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | A7 Asia target 45 | HOLD | 0.507 | 2 | 0 [0] | 0.834 | not enough valid draws | - |  |
 | A7 Asia target 45 | GAP | real cell not landed | - | - | - | - | - | - |
@@ -134,7 +134,7 @@ Note: the M7 London cap draws realise a share about 0.03-0.06 below the real rul
 | A7 Asia target 45 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
 | A7 Asia target 45 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
 | U7 Asia 40x40 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
-| against-the-day VWAP skip all books | L3M | 0.033 | 5 | 0 [0] | 0.054 | not enough valid draws | - |  |
+| against-the-day VWAP skip all books | L3M | 0.033 | 6 | 0 [0] | 0.053 | not enough valid draws | - |  |
 | against-the-day VWAP skip all books | L6M | 0.036 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | against-the-day VWAP skip all books | HOLD | 0.035 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | against-the-day VWAP skip all books | GAP | real cell not landed | - | - | - | - | - | - |
@@ -244,11 +244,11 @@ Rows owned by W-BD2 (b half-off, c step-down, e HAR remaining range, f atr/squee
 
 **VERDICT (drawdown first; pass rule = real cell beats ALL its controls on stack max DD in HOLD and L6M and mean not worse than -5%; missing controls = not finished): HOLD: stack DD real -70924 vs ref -74402, best control -63564 -> does NOT beat all controls on DD; mean +1012 $/wk (6.6% of ref) -> ok | L6M: stack DD real -23715 vs ref -22565, best control -22397 -> does NOT beat all controls on DD; mean +1747 $/wk (7.9% of ref) -> ok. No PASS claim until the controls are in.**
 
-Built epoch 1794882370. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
+Built epoch 1794886056. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
 
 identity of the placebo branch (PP with p=0, 202610): 642 trades net 27487.58 vs JL2 642 net 27487.58 -> IDENTICAL
 
-Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 7/7, X' 1/7
+Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 7/7, X' 7/7
 
 ## STACK (all books), drawdown first
 
@@ -290,6 +290,12 @@ Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 
 | PREUW | PP2_M7L_CAP3 | -69377.5 | -70931.2 | 2.2 | -121410.6 | -23094.2 | -28957.8 | 8.8 | 9.0 | 275.0 | 481.2 | 285.0 | 1.0 | 0 | 4114 | 4201 |
 | PREUW | PP3_M7L_CAP3 | -61325.2 | -70931.2 | 13.5 | -107319.1 | -21884.5 | -28957.8 | 8.8 | 9.0 | 566.4 | 991.2 | 578.3 | 1.0 | 0 | 4096 | 4201 |
 | X' | M7L_CAP3 | -70353.1 | -73618.0 | 4.4 | -123117.9 | -35303.7 | -37051.8 | 9.9 | 9.9 | 107.7 | 188.4 | 109.2 | 1.0 | 0 | 5787 | 5816 |
+| X' | PL1_M7L_CAP3 | -69835.4 | -73618.0 | 5.1 | -122212.0 | -31337.3 | -37051.8 | 9.8 | 9.9 | 148.9 | 260.5 | 154.6 | 1.0 | 1 | 5724 | 5816 |
+| X' | PL2_M7L_CAP3 | -70475.1 | -73618.0 | 4.3 | -123331.5 | -30138.5 | -37051.8 | 9.8 | 9.9 | 109.7 | 191.9 | 115.1 | 1.0 | 0 | 5729 | 5816 |
+| X' | PL3_M7L_CAP3 | -73458.9 | -73618.0 | 0.2 | -128553.1 | -35092.6 | -37051.8 | 9.8 | 9.9 | 149.0 | 260.8 | 154.4 | 1.0 | 0 | 5727 | 5816 |
+| X' | PP1_M7L_CAP3 | -71241.4 | -73618.0 | 3.2 | -124672.5 | -36289.6 | -37051.8 | 9.8 | 9.9 | 266.7 | 466.7 | 271.7 | 1.0 | 0 | 5726 | 5816 |
+| X' | PP2_M7L_CAP3 | -72189.9 | -73618.0 | 1.9 | -126332.4 | -36373.4 | -37051.8 | 9.8 | 9.9 | 309.0 | 540.7 | 313.7 | 1.0 | 0 | 5736 | 5816 |
+| X' | PP3_M7L_CAP3 | -70186.7 | -73618.0 | 4.7 | -122826.8 | -35137.4 | -37051.8 | 9.8 | 9.9 | 334.0 | 584.5 | 339.1 | 1.0 | 1 | 5727 | 5816 |
 
 ## M7 LONDON slice, drawdown first
 
@@ -331,6 +337,12 @@ Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 
 | PREUW | PP2_M7L_CAP3 | -26211.7 | -27201.4 | 3.6 | -45870.4 | -7036.7 | -9750.3 | 0.9 | 1.2 | -337.7 | -590.9 | -320.5 | 0.6 | 1 | 414 | 568 |
 | PREUW | PP3_M7L_CAP3 | -16130.4 | -27201.4 | 40.7 | -28228.3 | -6637.5 | -9750.3 | 0.8 | 1.2 | 193.0 | 337.7 | 212.1 | 0.7 | 4 | 396 | 568 |
 | X' | M7L_CAP3 | -56843.4 | -69240.2 | 17.9 | -99476.0 | -6448.3 | -7313.8 | 1.2 | 1.3 | 175.9 | 307.8 | 177.8 | 1.0 | 0 | 653 | 689 |
+| X' | PL1_M7L_CAP3 | -60393.7 | -69240.2 | 12.8 | -105688.9 | -7067.9 | -7313.8 | 1.1 | 1.3 | 204.7 | 358.2 | 211.0 | 0.6 | 4 | 587 | 689 |
+| X' | PL2_M7L_CAP3 | -66223.6 | -69240.2 | 4.4 | -115891.3 | -7067.9 | -7313.8 | 1.1 | 1.3 | 143.4 | 251.0 | 149.2 | 0.7 | 1 | 597 | 689 |
+| X' | PL3_M7L_CAP3 | -28549.3 | -69240.2 | 58.8 | -49961.2 | -5736.1 | -7313.8 | 1.1 | 1.3 | 313.9 | 549.3 | 319.7 | 0.7 | 4 | 593 | 689 |
+| X' | PP1_M7L_CAP3 | -50669.3 | -69240.2 | 26.8 | -88671.3 | -7075.6 | -7313.8 | 1.1 | 1.3 | 326.8 | 571.9 | 332.7 | 0.9 | 1 | 584 | 689 |
+| X' | PP2_M7L_CAP3 | -51289.4 | -69240.2 | 25.9 | -89756.5 | -7075.6 | -7313.8 | 1.1 | 1.3 | 336.7 | 589.2 | 342.5 | 0.9 | 0 | 587 | 689 |
+| X' | PP3_M7L_CAP3 | -51763.7 | -69240.2 | 25.2 | -90586.5 | -6448.3 | -7313.8 | 1.1 | 1.3 | 325.3 | 569.3 | 331.4 | 1.0 | 1 | 582 | 689 |
 
 ## With week 2026-W44 removed from both sides
 
