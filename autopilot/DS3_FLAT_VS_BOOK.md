@@ -1,5 +1,50 @@
 # DS3_FLAT_VS_BOOK - flat stand-in vs book-based cut on the live-equivalent base TL3_EV_JN05W2JL2 (W-EV, user order 11-16)
 
+## FIVE-LINE SUMMARY (FIRST PASS; ulcer = RMS weekly drawdown, lower is better; negative % = flat ON is better; flat ON vs OFF with the book cut working)
+1. JL2 K7 flat 45 ON vs OFF (P7 flat off): L6M ulcer -24.6% (7357->5547), mean +1264 $/wk (x1.75 +2212, $4.84 +1249); HOLD ulcer -18.5% (19847->16184), mean +105 $/wk (x1.75 +183, $4.84 +98); pooled ulcer -19.3% (14977->12088), mean +709 $/wk (x1.75 +1240, $4.84 +698)
+2. JL2 P7 flat 42 ON vs OFF (K7 flat 45 on): L6M ulcer +29.3% (5547->7174), mean -651 $/wk (x1.75 -1140, $4.84 -652); HOLD ulcer -12.1% (16184->14220), mean +374 $/wk (x1.75 +654, $4.84 +373); pooled ulcer -6.8% (12088->11270), mean -151 $/wk (x1.75 -265, $4.84 -152)
+3. JL3 K7 flat 45 ON vs OFF (P7 flat off): L6M n/a; HOLD n/a; pooled n/a
+4. JL3 P7 flat 42 ON vs OFF (K7 flat 45 on): L6M n/a; HOLD n/a; pooled n/a
+5. Landed: JL3 older windows 0 cell-months over 3 L3FB sets, leave-one-out 19 of 473 cell-months over 11 TL3_EV_L3_* sets (11 lines x 43 months); tiers: calibrated ulcer-primary tiers (DS3_PASS_RULE.md) need 30 engine draws, only 3 PC cells per book exist, so the control reading is the rank of the real flat among them.
+
+A_P7 note: A_P7 = P7 flat 42 ONLY (K7 flat OFF): a builder gap against the design (A_P7 was meant as the reference plus P7 flat = A_KP); relabelled, not rebuilt; B_P7 = the reference (P7 had no flat) and B_KP = B_K7; the comparisons above use the right pairs.
+
+### JL2 base (without live take/lock lines)
+
+| comparison | window | ON vs OFF (book cut working) | PC_* controls (same slot replaced by a persistent random trigger, q 0.05 / 0.10 / 0.20: ulcer% / mean $/wk) | rank of the real flat |
+|:--|:--|:--|:--|:--|
+| K7 flat 45 ON vs OFF (P7 flat off) | L6M | ulcer -24.6% (7357->5547), mean +1264 $/wk (x1.75 +2212, $4.84 +1249) | q05 +1.6% -167 / q10 +6.0% +472 / q20 +5.2% +197 | ulcer better than 3 of 3 controls |
+| K7 flat 45 ON vs OFF (P7 flat off) | HOLD | ulcer -18.5% (19847->16184), mean +105 $/wk (x1.75 +183, $4.84 +98) | q05 +0.7% -166 / q10 -2.6% -875 / q20 -9.1% -744 | ulcer better than 3 of 3 controls |
+| K7 flat 45 ON vs OFF (P7 flat off) | pooled | ulcer -19.3% (14977->12088), mean +709 $/wk (x1.75 +1240, $4.84 +698) | q05 +0.8% -170 / q10 -1.5% -192 / q20 -7.2% -270 | ulcer better than 3 of 3 controls |
+| P7 flat 42 ON vs OFF (K7 flat 45 on) | L6M | ulcer +29.3% (5547->7174), mean -651 $/wk (x1.75 -1140, $4.84 -652) | q05 +34.6% -1183 / q10 +27.5% -1133 / q20 +50.3% -4786 | ulcer better than 2 of 3 controls |
+| P7 flat 42 ON vs OFF (K7 flat 45 on) | HOLD | ulcer -12.1% (16184->14220), mean +374 $/wk (x1.75 +654, $4.84 +373) | q05 +21.3% -615 / q10 +22.6% -813 / q20 +20.5% +513 | ulcer better than 3 of 3 controls |
+| P7 flat 42 ON vs OFF (K7 flat 45 on) | pooled | ulcer -6.8% (12088->11270), mean -151 $/wk (x1.75 -265, $4.84 -152) | q05 +23.0% -921 / q10 +23.3% -995 / q20 +24.2% -2228 | ulcer better than 3 of 3 controls |
+| K7 flat 45 ON vs OFF (P7 flat 42 on) | L6M | ulcer -29.3% (10144->7174), mean +1775 $/wk (x1.75 +3106, $4.84 +1760) | - | - |
+| K7 flat 45 ON vs OFF (P7 flat 42 on) | HOLD | ulcer -15.8% (16885->14220), mean +259 $/wk (x1.75 +454, $4.84 +251) | - | - |
+| K7 flat 45 ON vs OFF (P7 flat 42 on) | pooled | ulcer -19.3% (13972->11270), mean +1051 $/wk (x1.75 +1839, $4.84 +1039) | - | - |
+| P7 flat 42 ON vs OFF (K7 flat off) | L6M | ulcer +37.9% (7357->10144), mean -1162 $/wk (x1.75 -2034, $4.84 -1162) | - | - |
+| P7 flat 42 ON vs OFF (K7 flat off) | HOLD | ulcer -14.9% (19847->16885), mean +219 $/wk (x1.75 +384, $4.84 +220) | - | - |
+| P7 flat 42 ON vs OFF (K7 flat off) | pooled | ulcer -6.7% (14977->13972), mean -494 $/wk (x1.75 -864, $4.84 -493) | - | - |
+
+### JL3 base (live take and lock lines on)
+
+| comparison | window | ON vs OFF (book cut working) | PC_* controls (same slot replaced by a persistent random trigger, q 0.05 / 0.10 / 0.20: ulcer% / mean $/wk) | rank of the real flat |
+|:--|:--|:--|:--|:--|
+| K7 flat 45 ON vs OFF (P7 flat off) | L6M | n/a | - | - |
+| K7 flat 45 ON vs OFF (P7 flat off) | HOLD | n/a | - | - |
+| K7 flat 45 ON vs OFF (P7 flat off) | pooled | n/a | - | - |
+| P7 flat 42 ON vs OFF (K7 flat 45 on) | L6M | n/a | - | - |
+| P7 flat 42 ON vs OFF (K7 flat 45 on) | HOLD | n/a | - | - |
+| P7 flat 42 ON vs OFF (K7 flat 45 on) | pooled | n/a | - | - |
+| K7 flat 45 ON vs OFF (P7 flat 42 on) | L6M | n/a | - | - |
+| K7 flat 45 ON vs OFF (P7 flat 42 on) | HOLD | n/a | - | - |
+| K7 flat 45 ON vs OFF (P7 flat 42 on) | pooled | n/a | - | - |
+| P7 flat 42 ON vs OFF (K7 flat off) | L6M | n/a | - | - |
+| P7 flat 42 ON vs OFF (K7 flat off) | HOLD | n/a | - | - |
+| P7 flat 42 ON vs OFF (K7 flat off) | pooled | n/a | - | - |
+
+
+
 **VERDICT (data ends 2026-10-30; FIRST PASS, running; 28 of 28 cells have a scored window; windows appear as months land; no PASS claimed).** Reference = TL3_EV_JN05W2JL2 (K7 flat 45 + K7 book cut; P7 book cut (ctx fresh 45/5x/w5/p10, rechase 30/10x/w5/p2) and NO P7 flat). Drawdown first.
 
 ## What is live-computable today and what is not
