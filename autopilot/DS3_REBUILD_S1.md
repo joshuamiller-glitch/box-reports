@@ -1,10 +1,10 @@
 # DS3_REBUILD_S1 - Stage 1: every condition family scored against the RAW book trades (W-S1; order DIRECTIVE_REBUILD_20261116 + addenda + REFILL 11-17)
-> VALIDATION (FIRST PASS, written 2026-11-17 05:09 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
+> VALIDATION (FIRST PASS, written 2026-11-17 05:24 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
 
-VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 1624, permutation shards 9 of 32480; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
+VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 30 of 4055; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
 
 ## Status
-Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 12, server 2 leased 73, load1 box 1 39.6. Shards: S (real + shifted labels + controls) 1618/1624, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 9/32480. Updated 2026-11-17 05:09 UTC.
+Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 9, server 2 leased 76, load1 box 1 40.9. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 30/4055. Updated 2026-11-17 05:24 UTC.
 
 ## Raw base (stage 0 table used here, engine $ at base lots and $1.18 RT; MAE_R positive = worse; R = net / (lots x 20 x stop))
 | book | session | trades | mean R | win % | net $ (base) | mean MFE_R | mean MAE_R |
@@ -190,6 +190,43 @@ Tier counts: {'FAIL': 532, 'CONFIRMED': 269, 'LEAD': 99}. Persistent draws 60 (5
 | CONFIRMED | 1 | U7|S1 | c4_sdF_dsup_range8_rise | skip yes | -4.4 | -0.116 | yes | -13693 -> -8035 | -180 -> 923 | 0.95 / 0.80 | 0.88 / 0.83 | 0.95 | 0.96 | 1103 | 1930 |
 | CONFIRMED | 1 | K7|S0 | c4_kst_60m_nodiv | skip yes | -4.1 | -0.244 | yes | -28120 -> -5412 | 3429 -> 2699 | 0.88 / 0.98 | 0.63 / 0.90 | 1.00 | 0.97 | -730 | -1277 |
 (The $4.84 column here equals the engine-$ change with the commission repricing not applied per trade: a skip removes trades, so the $4.84 repricing changes only the removed trades; exact repricing is in the Stage 6 head-to-head. x1.75 = live lots.)
+
+## Adaptive permutation screen (rb1_sched.py; replaces the fixed 1,000-permutation plan)
+Rule: each chunk x book cell is SCREENED IN when its real STABLE pass count (book x session cells, windows ALL43+L6M, 20 outcomes) is >= 3 and >= 1.5 x the larger of the nonsense stable rate and the mean shifted-label (11/23/37) real stable rate on the same cell. Screened-in cells run 100 permutations first (batches 0,1); a cell is EXTENDED to 1,000 when its permutation p of the real stable count is <= 0.02 or its BH q (over all cells with 100 draws) is <= 0.10. A fixed-seed random 5% of the non-screened cells run the full 1,000 as a CALIBRATION check (their share with p < 0.05 should be about 5%); the other non-screened cells get 100 permutations last. Full 1,000 permutations are therefore not run for every cell: stated here, not hidden.
+Cells 1624, screened in 266, extended 0, calibration cells 54 (done with >=1,000 draws: 0). Cells with permutation p computed: 165.
+Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - not finished (fewer than 20 cells done).
+| family | cells | screened in | with perm p | p < 0.05 |
+|--|--|--|--|--|
+| 1 | 1192 | 152 | 165 | 5 |
+| 10 | 16 | 3 | 0 | 0 |
+| 2 | 144 | 26 | 0 | 0 |
+| 3 | 8 | 2 | 0 | 0 |
+| 4 | 8 | 2 | 0 | 0 |
+| 5 | 144 | 56 | 0 | 0 |
+| 6 | 48 | 9 | 0 | 0 |
+| 7 | 8 | 1 | 0 | 0 |
+| 8 | 32 | 4 | 0 | 0 |
+| 8/9 | 8 | 3 | 0 | 0 |
+| 9 | 16 | 8 | 0 | 0 |
+
+Leading cells by permutation p (count of real stable passes vs shifted nulls):
+| chunk | book | family | real stable | real rate % | control rate % | draws | p | BH q |
+|--|--|--|--|--|--|--|--|--|
+| univ_entry_table_D4_00 | A7 | 1 | 161 | 3.55 | 0.76 | 50 | 0.0196 |  |
+| univ_cols_M_12 | O7 | 1 | 74 | 1.99 | 0.70 | 50 | 0.0196 |  |
+| univ_cols_M_09 | A7 | 1 | 460 | 3.36 | 1.43 | 50 | 0.0196 |  |
+| univ_cols_M_01 | A7 | 1 | 281 | 3.13 | 2.18 | 50 | 0.0392 |  |
+| univ_cols_M_08 | A7 | 1 | 362 | 2.69 | 1.51 | 50 | 0.0392 |  |
+| univ_cols_M_03 | H7 | 1 | 183 | 1.98 | 1.22 | 50 | 0.0588 |  |
+| entry_table_universe_00 | POOL | 1 | 699 | 1.91 | 1.44 | 50 | 0.0588 |  |
+| entry_table_universe_00 | P7 | 1 | 420 | 2.05 | 1.55 | 50 | 0.0588 |  |
+| univ_cols_M_13 | O7 | 1 | 54 | 1.28 | 0.32 | 50 | 0.0588 |  |
+| univ_cols_M_14 | A7 | 1 | 83 | 3.67 | 0.94 | 50 | 0.0588 |  |
+| cf4_osc_04 | A7 | 1 | 372 | 2.84 | 1.42 | 50 | 0.0588 |  |
+| entry_table_universe_00 | A7 | 1 | 122 | 2.34 | 1.01 | 50 | 0.0784 |  |
+| univ_entry_table_D4_00 | P7 | 1 | 270 | 1.88 | 1.92 | 50 | 0.0784 |  |
+| univ_cols_M_10 | A7 | 1 | 462 | 3.23 | 1.66 | 50 | 0.0980 |  |
+| univ_entry_table_U_00 | A7 | 1 | 10 | 5.00 | 0.83 | 50 | 0.0980 |  |
 
 ## Read this first
 - Missing controls are "not finished", never passing: the perm p column is blank until every chunk x book permutation shard of a batch has landed for that family.
