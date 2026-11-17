@@ -1,7 +1,7 @@
 # DS3_CELL_TESTS - engine cell tests: do not trade / half size weak book x session cells on JL3 and JL2 (W-CELL, order 11-17 07:28Z JOB 2)
 VERDICT (data ends 2026-10-31; FIRST PASS; see below)
 
-> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 13:21Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
+> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 13:32Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
 ## M7 London focus (lead order 10:48Z; DO NOT TRADE M7 London = M7 session lots london 0)
 
 Row (a) - JL3 cell vs JL3 base at the live price columns: mean $/wk change, max DD and worst week (base -> cell), ulcer change.
@@ -213,7 +213,7 @@ Window pooled
 | DO NOT TRADE K7 NY PM | 30 | 0 | None; None; None |
 | DO NOT TRADE K7 London | 30 | 0 | None; None; None |
 | DO NOT TRADE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | 30 | 0 | None; None; None |
-| HALF SIZE M7 London | 30 | 0 | [('M7', 0.5, 0.897, 0.05)]; [('M7', 0.5, 0.918, 0.05)]; [('M7', 0.5, 0.914, 0.05)] |
+| HALF SIZE M7 London | 30 | 0 | [('M7', 0.5, 0.899, 0.05)]; [('M7', 0.5, 0.917, 0.05)]; [('M7', 0.5, 0.908, 0.05)] |
 | HALF SIZE P7 London | 30 | 0 | None; None; None |
 | HALF SIZE P7 NY AM | 30 | 0 | None; None; None |
 | HALF SIZE K7 NY PM | 30 | 0 | None; None; None |
