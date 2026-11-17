@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 18:18Z 11-17 (t+533.3 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 18:33Z 11-17 (t+533.6 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 96% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-17T18:18:36Z. Box: CPU 99.7%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 97% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-17T18:33:41Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -4787,3 +4787,7 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 2026-11-17T18:24:55Z W-S1R: progress, core cells done 0/15, wait cells 2/14
 - 2026-11-17 18:25Z W-ME PART E: queue _major_e 798 lines pending, 1176 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
 - lead 18:28Z LEAD NOTE: CORES 18:25Z box1 100% load 47, server2 100% 97 workers, pending 39.2k/41.9k; inbox empty; agents W-BAR, W-BAR2, W-SWA, W-SWB, W-S1R running; 18:50Z per-tag throughput note next.
+- (wall 18:33Z) W-PM status: load1 46.28, PM exact jobs pending 12, cells with output 59; 743 jobs wanted, 12 chains running, 1794940347; P5 page done, P8 grid np_m15_x10_y15 2898
+- (wall 18:35Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 24 (pending file), cell-months done 1979, load 50.87 48.29 45.34, epoch 1794940523
+- lead 18:38Z LEAD NOTE (promised throughput): DONE months measured on box1 runs_rf: last 10 min ME 192; last 60 min ME 1,329, DD 273, MF 37, JV 36, MB 33, other (incl. S3 raw-chassis sets) 133. ME is by far the fastest (was 40/h before the 17:45Z reorder). DD lines in the first list were ~103 left at 18:00Z, so the DD table should land with the next lead note; same-side-loser tier ~19:30-20:00Z unchanged; S3 first picks at risk for 02:00Z, partial picks will be labelled partial. Swap engine queues: SWA/SWB at position 4 (quota 6 each; pending_a 0 lines, pending_b 8 lines identity cells, waiting for first non-RED pick).
+- (wall 18:39Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 50.42 48.50 46.01
