@@ -356,3 +356,28 @@ A control is INVALID when its kept-entry count differs from the real cell by mor
 ## Earlier statements about random placebos (see DS3_REENTRY_ALL.md 5a)
 See autopilot/RA_PLACEBO_VOID_LIST.md.
 
+
+## Profit-line leave-one-out (W-JV, T-JOINT-EXIT priority; written 2026-11-17 01:33 UTC)
+
+**World A (as coded tonight, DS7.cs v2.0 line 1790): the three lines with persist >= 2 (K7 delta_mult lock persist=10, U7 delta_mult tighten persist=5, M7 tot_rel step persist=2) can NEVER fire live, because the shared persistence counter is cleared on every winning second before ManageProfitState increments it. As coded they are identical to NONE = JL2: every leave-one-out delta is 0 by construction (no engine run needed).** World B (as designed, counter fixed) below. JL2 itself has none of the lines. BASE LABEL: every number here is on the JL2 base (without live take/lock lines); the live-equivalent base JL3 (JL2 + persist=1 takes/locks, W-EV TL3_EV_JL3*) is being built, and per the W-EV replay JL3 costs about -3 pct mean and 5-8k more drawdown, so these decisions should be re-judged on JL3. Recommendations are for the FIXED build.
+
+Cells: TL3_JV_PL_ALL = JL2 + K7 lock + U7 tighten + M7 step (clean-book series per DS7.cs v2.0, step set once, tighten ratchets); noK / noU / noM = ALL minus one line; d = JL2 (none). Identity: TL3_JV_PL_ID (hook, all lines inert) = JL2 on 202610/09/08/07.
+
+| cell | window | ulcer index JL2 -> cell (lower = better) | maxDD weekly (JL2) cut % | maxDD daily cut % | worst wk (JL2) | d mean $/wk | d mean @4.84 | full stops/wk (JL2) | K7 / P7 / M7 / U7 / H7 / A7 / O7 d net $/wk |
+|--|--|--|--|--|--|--|--|--|--|
+| TL3_JV_PL_ALL (all three ON (as designed)) | HOLD | 18323 -> 17626 (+3.8%) | -18.1 (38470) | 5.0 | -34826 (-31211) | -635 | -674 | 9.9 (10.6) | -1260 / -35 / 842 / -391 / 17 / -45 / -37 |
+| TL3_JV_PL_ALL (all three ON (as designed)) | L6M | 8274 -> 8134 (+1.7%) | -1.8 (13430) | -16.4 | -8036 (-13430) | 647 | 593 | 10.2 (11.0) | -108 / -394 / 973 / -51 / 14 / 0 / 87 |
+| TL3_JV_PL_noK (without K7 lock) | HOLD | 18323 -> 18025 (+1.6%) | -29.2 (38470) | 5.5 | -38918 (-31211) | 332 | 326 | 10.0 (10.6) | -8 / -206 / 658 / -230 / -0 / -45 / 46 |
+| TL3_JV_PL_noK (without K7 lock) | L6M | 8274 -> 8395 (-1.5%) | -23.0 (13430) | -24.7 | -11796 (-13430) | 743 | 742 | 10.4 (11.0) | -11 / -524 / 821 / 147 / 0 / 0 / 69 |
+| TL3_JV_PL_noU (without U7 tighten) | HOLD | 18323 -> 20260 (-10.6%) | -32.7 (38470) | 4.6 | -36871 (-31211) | -1029 | -1066 | 10.4 (10.6) | -1293 / -214 / 748 / -302 / -31 / 0 / -124 |
+| TL3_JV_PL_noU (without U7 tighten) | L6M | 8274 -> 7925 (+4.2%) | -7.0 (13430) | -14.7 | -14371 (-13430) | -170 | -222 | 10.6 (11.0) | -102 / -415 / 907 / -503 / -32 / 0 / 2 |
+| TL3_JV_PL_noM (without M7 step) | HOLD | 18323 -> 18895 (-3.1%) | -10.3 (38470) | -2.7 | -30976 (-31211) | -1253 | -1286 | 10.0 (10.6) | -1329 / -56 / 303 / -487 / 63 / -45 / 19 |
+| TL3_JV_PL_noM (without M7 step) | L6M | 8274 -> 8539 (-3.2%) | -31.3 (13430) | -19.3 | -10293 (-13430) | -145 | -191 | 10.3 (11.0) | -417 / -186 / 191 / -88 / 106 / 0 / 30 |
+
+**World B verdict per line (fixed build; leave-one-out = ALL vs the cell without the line, drawdown first, then mean; HOLD and L6M):**
+
+- K7 lock: HOLD: line adds DD cut +11.1 pts (weekly) and mean -966 $/wk; L6M: line adds DD cut +21.1 pts (weekly) and mean -96 $/wk -> COSTS MONEY (mean lower in at least one window)
+- U7 tighten: HOLD: line adds DD cut +14.6 pts (weekly) and mean +394 $/wk; L6M: line adds DD cut +5.2 pts (weekly) and mean +817 $/wk -> KEEP (helps or neutral in both windows)
+- M7 step: HOLD: line adds DD cut -7.8 pts (weekly) and mean +619 $/wk; L6M: line adds DD cut +29.5 pts (weekly) and mean +792 $/wk -> MIXED: adds mean in both windows but deepens drawdown in at least one (fixed build only)
+
+**Fidelity limits (plain):** (1) inputs are MBO-derived clean series (delta = the DS7 print classification from the replica quote, + at or above the ask, - at or below the bid, none inside the spread, as W-CF2 built it; the exchange-flag version correlates 0.996-1.0; live NT8 reads its own prints; before v1.9c live delta_mult was about 13x too high; the v1.9b log prints no features, so parity cannot be tested); (2) per-second granularity: decision at the close of second s, exit on the next 1-s row at the worse of level and the next mid minus 0.8 pt, versus live exits on the first print through the level; (3) tot_rel: live baseline is per 30-minute slot, cold at start (300 snapshots), kept only while the strategy runs; the series carries the baseline continuously across days; (4) ManageProfitState returns early when the book is blind (!depthLive or stMedLevel <= 0): with clean inputs that does not apply here (lines see every second), which makes world B slightly more active than a live build with gaps; (5) lines act once per trade; step is set once (no ratchet), tighten ratchets; (6) series coverage: W-CF2 files are 23:00Z-23:00Z sessions, so in EDT months the first hour after the 18:00 ET Globex open (22:00-23:00Z) has no series and no line can fire there; delta is the DS7 print classification (+ at or above the ask, - at or below the bid, none inside the spread) as in v2.0 with the replica quote, exchange-flag delta correlates 0.996-1.0; tot_rel baselines are continuous inside 4 blocks of days (DS7 resets at every restart); (7) the engine does not model the loss-side persistence reset on adverse seconds beyond what the shared counter does for these rules; the world B counter is correct by design (persist consecutive seconds).

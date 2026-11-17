@@ -75,3 +75,4 @@
 | RX-R1 | 2026-11-16 | RESULT of RX-H1 (C1) | W-RX | c1_*.parquet, DS3_REBUILD_EXIT.md section 2 | NOT SUPPORTED as a family: JL2 6 survivors vs null 3/15/4, raw 0 vs 0/0/2; leads P7 15-min trend against, H7 RTY flip, M7 adverse tape (FIRST PASS) |
 | RX-R2 | 2026-11-16 | RESULT of RX-H2 (C2) | W-RX | c2_*.parquet | NOT SUPPORTED: pooled bins flat (+0.03..+0.06 R for 0..4+ clusters against), negative only at 9+; leads P7 Asia / U7 (FIRST PASS) |
 | RX-R3 | 2026-11-16 | RESULT of RX-H3 (C3/D) | W-RX | c3_eval_*.json, c3_ctl_*.json | NOT SUPPORTED on path arithmetic (RC p >= 0.41, BH 0, IC ~ 0); exact engine not run; DD leads need verification (FIRST PASS) |
+| RB5-H1 | 2026-11-17 | Each live/engine layer (30 S5 sets) has positive value on ulcer or mean vs its leave-one-out cell in recent windows; null = no value | W-S5 | code/th_rebuild_s5/rb5_score.py, s5_res.pkl | PREREG, scoring pending (FIRST PASS) |

@@ -1,0 +1,22 @@
+# DS3_REBUILD_S5 - T-REBUILD stage 5: leave-one-out audit of every live layer on JL2 (W-PM). DESIGN PAGE, no engine result yet.
+
+VERDICT (data ends 2026-10-30; DESIGN ONLY, nothing run): stage 5 is about 28 leave-one-out cells plus about 18 persistent-draw controls on the JL2 base (46 cells; 1,978 cell-months for 43 months, 552 for the recent L6M + HOLD tier first); reference rows only, nothing is removed from live; it waits for W-EV's switch list (some layers have no switch yet: NKD take, BREADTH, NTZ, profit lines) and server 2.
+
+## Layers (live list, ANSWER_LIVE_LAYERS_20261116.md) and the switch to turn each OFF on JL2
+1 governor / WL_E1 (c_gov gov []); 2 ATR-SKIP (ev_panel atr_skip removed); 3 DAY-DONE C22 (scr_hooks entry removed); 4 stack cut 50% Asia-only (pm_hooks sc off); 5 JN04 stack cap 10 lots London (cde key removed; JL2 has cap 6 London in the cde key, to be stated); 6 NTZ half size within 20 pts (switch needed from W-EV); 7 BREADTH P7 15 min (switch needed); 8 P7 post-exit blackout 30 min (ev_panel bo removed); 9 NKD take P7,U7 at 0.80 (not in JL2: adding it is a different test, flagged); 10-12 JN04 LOT, SIGQ, REG on P7 (ev_switch lot_off, sigq_off, reg_off); 13 K7 flat -45 (ec_hooks rule removed); 14 P7 flat -42 (live from 11-12; not in JL2); 15-21 book cut lines: the state cut off per book (K7 P7 M7 U7 H7 A7 O7, 7 cells); 22-24 profit lines (K7 delta_mult lock, M7 tot_rel step, U7 delta_mult tighten, 3 cells); 25 lot tables / p7_sess; 26 session caps; 27 P7 day cap 8,400 (wb_hooks panel); 28 F3 context cut (wb_hooks ctxcut).
+
+## Also audited (stage 3/4 existing rules, per the addendum)
+brackets by forecast (D10 / W-D10 bracket cells: reference rows from their JL2 runs, not new cells), NKD take, stack cut, stack cap, NTZ, breadth skip, blackout, governor, ATR skip, LOT/SIGQ/REG: all already in the 28-cell list above except the forecast brackets.
+
+## Table (per layer, per window L3M L6M HOLD GAP PRE X' ALL43)
+worth of the layer = JL2 (layer on) minus leave-one-out: net per week (and x1.75 live, and at $4.84 RT), DD cut by the layer, worst-week change, trades changed. Overlap with other layers = share of the trades changed by layer A that are also changed by layer B (computed from the trade tables, matrix at ALL43 and at HOLD). Layers that skip or shrink get 3 persistent-draw controls (same rate, one persistent random draw per signal across the run, not a per-second redraw) beside the real row; W44-removed DD for L6M. Scorer: code/th_pm/pm_rb.py (s5, worth_row, overlap) already tested on a stand-in cell.
+
+## Budget and order
+46 cells: tier A months 202511..202610 (12) = 552 cell-months, tier B the other 31 months = 1,426; total 1,978. With S0 (315) the program is about 2,300 cell-months, about 770 worker-hours (about 26 hours on 30 workers). Queue file /mnt/l2/l2vast/_rebuild/pending.txt, set prefix TL3_RB_S5_<LAYER>; the lead adds the PRIORITY tag RB when the sets are ready.
+
+## Status
+Pending: W-EV switch list, server 2.
+
+## BUILD STATUS (16 Nov, sets written, nothing run)
+Sets built with W-EV's mk_ly on JL2 (switch list: RB_LAYER_SWITCHES.md; identity proofs TL3_EV_LY_ID / LY_ID_W2 pending at W-EV: no result is read until W-EV says IDENTICAL). 30 stage-5 cells, prefix TL3_RB_S5_: 22 layer-off cells (LOT SIGQ REG STACKCAP ATRSKIP BLACKOUT BREADTH NTZ OTE62 A06 B02 ERLADDER GOVERNOR DAYDONE F3CTXCUT K7FLAT45 STACKCUT STATECUT_ALL GIVEBACKLOCK DAYCAPS L2GATE P7CONFIRM), 7 per-book state-cut-line-off cells (CUTLINE_<book> via la_hooks scut nocut; for P7 also overrides the F3 context cell) and 1 add cell (ADD_P7FLAT42: P7 flat -42 per session, live since 11-12, not in JL2). NOT available: NKD take (no data), profit-side lines K7 delta_mult lock / M7 tot_rel step / U7 delta_mult tighten (absent in JL2 = inert, add with th_ptr ptr_hooks if wanted), session lot tables (they are the entry gate: a table of 0 means no entry; a leave-one-out would need a defined alternative). Persistent-draw controls: la_hooks "rskip" (persistent random-skip, bucketed) is available; each control needs the skip rate of its layer from the leave-one-out run, so the control sets are built after the first L6M rows land (about 18 cells).
+Queue: /mnt/l2/l2vast/_rebuild/pending.txt, 1,720 set-month lines in priority order: stage 0 (10 books) x 12 recent months, then stage 5 (30 cells) x 12 recent months, then the 31 older months for both. Stage 5 queued budget 1,290 cell-months (360 recent) plus about 774 for controls later.
