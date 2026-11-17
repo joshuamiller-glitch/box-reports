@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (673 FL cell-months done, 221 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (703 FL cell-months done, 229 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -57,14 +57,22 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_HOLDL5_W60 | L5 | 1882 | -8973 | -15702 | -8958 | 60318 | 52233 | 8084 | 1107 | 1104 | 59.47 | 173 | -9648 | 61509 | 42565 | 13988 | 23989 | 60318 | 43405 |
 | TL3_FL_HOLDM7_W120 | M7 | 1885 | 155 | 270 | 149 | 59610 | 52233 | 7377 | 320 | 336 | 41.65 | 16.37 | 602 | 28561 | 28109 | 24630 | 23989 | 41226 | 43405 |
 | TL3_FL_HOLDM7_W30 | M7 | 1905 | 197 | 345 | 187 | 57034 | 52233 | 4801 | 342 | 336 | 42.30 | 16.37 | 690 | 21031 | 28109 | 24505 | 23989 | 35052 | 43405 |
+| TL3_FL_HOLDM7_W60 | M7 | 1904 | -466 | -816 | -476 | 57943 | 52233 | 5710 | 340 | 336 | 19.29 | 16.37 | 81.25 | 23453 | 28109 | 23849 | 23989 | 37939 | 43405 |
 | TL3_FL_HOLDP7_W120 | P7 | 1873 | -6058 | -10602 | -6052 | 57416 | 52233 | 5183 | 468 | 467 | 131 | 253 | -4381 | 51015 | 39663 | 17804 | 23989 | 57077 | 43405 |
 | TL3_FL_HOLDP7_W30 | P7 | 1885 | -5390 | -9432 | -5367 | 68613 | 52233 | 16379 | 472 | 467 | 118 | 253 | -4793 | 50413 | 39663 | 16800 | 23989 | 68613 | 43405 |
 | TL3_FL_HOLDP7_W60 | P7 | 1903 | -5048 | -8835 | -5047 | 64169 | 52233 | 11935 | 474 | 467 | 109 | 253 | -5102 | 50387 | 39663 | 17618 | 23989 | 64169 | 43405 |
+| TL3_FL_HOLDU7_W120 | U7 | 1857 | -5577 | -9760 | -5564 | 61242 | 52233 | 9009 | 119 | 121 | 73.35 | 518 | -4152 | 20406 | 14457 | 18667 | 23989 | 41326 | 43405 |
+| TL3_FL_HOLDU7_W30 | U7 | 1877 | -2833 | -4957 | -2826 | 57381 | 52233 | 5148 | 119 | 121 | 204 | 518 | -2952 | 16260 | 14457 | 21367 | 23989 | 38987 | 43405 |
+| TL3_FL_HOLDU7_W60 | U7 | 1861 | -5213 | -9122 | -5199 | 56605 | 52233 | 4372 | 119 | 121 | 138 | 518 | -3564 | 16529 | 14457 | 18727 | 23989 | 40387 | 43405 |
 | TL3_FL_LEADL5_HALF | L5 | 1851 | -1346 | -2356 | -1361 | 60810 | 52233 | 8577 | 1078 | 1104 | 179 | 173 | 111 | 60067 | 42565 | 22867 | 23989 | 48075 | 43405 |
 | TL3_FL_LEADL5_SKIP | L5 | 1453 | -3736 | -6538 | -3440 | 47752 | 52233 | -4481 | 562 | 1104 | 255 | 173 | -3707 | 27355 | 42565 | 17399 | 23989 | 47752 | 43405 |
+| TL3_FL_LEADL5_SKIP_L1 | L5 | 1451 | -4648 | -8133 | -4350 | 47859 | 52233 | -4374 | 561 | 1104 | 249 | 173 | -3963 | 27280 | 42565 | 16468 | 23989 | 47859 | 43405 |
+| TL3_FL_LEADL5_SKIP_L2 | L5 | 1446 | -5664 | -9913 | -5361 | 54415 | 52233 | 2182 | 562 | 1104 | 225 | 173 | -4982 | 32040 | 42565 | 15319 | 23989 | 54415 | 43405 |
+| TL3_FL_LEADL5_SKIP_L5 | L5 | 1435 | -4511 | -7895 | -4199 | 48671 | 52233 | -3562 | 561 | 1104 | 242 | 173 | -4270 | 27706 | 42565 | 16528 | 23989 | 48671 | 43405 |
 | TL3_FL_LEADL5_SKIP_PD | L5 | 1425 | -15504 | -27132 | -15192 | 91737 | 52233 | 39504 | 574 | 1104 | 24.76 | 173 | -13618 | 76898 | 42565 | 6992 | 23989 | 91737 | 43405 |
 | TL3_FL_LEADL5_SKIP_RND | L5 | 1443 | -10097 | -17669 | -9815 | 63936 | 52233 | 11702 | 573 | 1104 | 111 | 173 | -9798 | 40500 | 42565 | 10407 | 23989 | 63936 | 43405 |
 | TL3_FL_LEADL5_X15 | L5 | 1860 | 751 | 1314 | 724 | 49692 | 52233 | -2541 | 1091 | 1104 | 198 | 173 | 1887 | 40451 | 42565 | 24591 | 23989 | 46758 | 43405 |
+| TL3_FL_LEADL5_X15_L1 | L5 | 1862 | 1451 | 2539 | 1427 | 55441 | 52233 | 3208 | 1094 | 1104 | 206 | 173 | 2657 | 45713 | 42565 | 25693 | 23989 | 46397 | 43405 |
 | TL3_FL_LEADM71_SKIP_PD | M71 | 1768 | -2385 | -4174 | -2348 | 56545 | 52233 | 4312 | 103 | 248 | -44.42 | -22.30 | 73.37 | 16958 | 28133 | 21644 | 23989 | 42381 | 43405 |
 | TL3_FL_LEADP70_SKIP_PD | P70 | 1784 | -7615 | -13327 | -7502 | 46614 | 52233 | -5619 | 149 | 243 | 330 | 408 | -3848 | 40256 | 39663 | 14060 | 23989 | 46614 | 43405 |
 | TL3_FL_LEADP7_HALF | P7 | 1878 | -1916 | -3352 | -1927 | 55446 | 52233 | 3213 | 471 | 467 | 251 | 253 | 2.72 | 49368 | 39663 | 21803 | 23989 | 48910 | 43405 |

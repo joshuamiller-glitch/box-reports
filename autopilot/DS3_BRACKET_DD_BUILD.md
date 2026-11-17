@@ -1,6 +1,6 @@
 # DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 02:29Z)
 <!-- PR2:BEGIN -->
-## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 23:33 UTC)
+## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 04:05 UTC)
 
 **Every "not confirmed" issued under the 11-16 morning rule (beat all 6 controls on max DD in HOLD and L6M) is VOID as a negative result: that rule detects a real 10% / 20% max-DD cut only 5-13% of the time (DS3_PASS_RULE.md step 1).** Tiers below use ulcer index (RMS of daily drawdown; + = lower ulcer than JL2) and mean, percentile among 200 persistent-draw controls (PATH ARITHMETIC delta-permutation controls, not engine runs; 0 of the 30 engine-exact draws have landed; engine draws queued on server 2), week-clustered bootstrap (2,000 resamples). Cut-offs (tuned so noise reaches CONFIRMED under 5%): CONFIRMED needs ulcer-or-mean percentile >= 0.85 in L6M and L3M with the other >= 0.25, P(ulcer lower, L6M) >= 0.80, ulcer percentile >= 0.25 in the older windows run; LEAD needs >= 0.75 in L6M and L3M and nothing below 0.25 in any window run. A candidate whose older windows (GAP, PREUW, X') were not run cannot be issued CONFIRMED ("PROVISIONAL"). Old verdict = what its source page said.
 
@@ -71,29 +71,78 @@ Meaning at small counts: H7 NY AM has 78 JL2 trades in the 12 months (23-28 diff
 
 ## Engine-exact draws landed so far (TL3_PC_<ID>_S1..S30 = JL2 + persistent-draw control hook; 30 draws asked per candidate)
 
-A draw counts in a window only if every month of the window landed and its realised share in that window is within 0.05 (strict; 0.10 relaxed in brackets) of the real rule. Percentiles are among valid draws; a window with fewer than 10 valid draws is excluded from the tier ("not enough valid draws").
+A draw counts in a window only if every month of the window landed and its realised share pooled over all months it shares with the real cell (>= 12 months) is within 0.05 (strict; 0.10 relaxed in brackets) of the real rule share over the same months (per-window shares of 10-40 trades are too noisy for a 0.05 test; they are displayed). Percentiles are among valid draws; a window with fewer than 10 valid draws is excluded from the tier ("not enough valid draws").
 
 Note: the M7 London cap draws realise a share about 0.03-0.06 below the real rule (calibrated on two pilot months), so many windows fail the strict 0.05 test; both readings are shown. Candidates with no draws yet are marked NOT ENOUGH CONTROLS YET.
 
 | candidate | window | real share | draws landed (of 30) | valid strict [relaxed] | control share mean | pct ulcer / mean / max DD (strict) | P(ulcer lower) vs JL2 | engine tier (strict) |
 |---|---|---|---|---|---|---|---|---|
-| M7 London cap 3 | L3M | 0.353 | 30 | 22 [30] | 0.342 | 1.00 / 1.00 / 0.95 | 0.12 |  |
-| M7 London cap 3 | L6M | 0.421 | 30 | 11 [30] | 0.365 | 1.00 / 1.00 / 1.00 | 0.20 |  |
-| M7 London cap 3 | HOLD | 0.388 | 29 | 8 [28] | 0.322 | not enough valid draws | - |  |
-| M7 London cap 3 | GAP | 0.145 | 30 | 7 [25] | 0.211 | not enough valid draws | - |  |
-| M7 London cap 3 | PREUW | 0.310 | 30 | 30 [30] | 0.3 | 0.43 / 0.53 / 0.33 | 0.86 |  |
-| M7 London cap 3 | X' | 0.117 | 0 | 0 [0] | None | not enough valid draws | - |  |
-| M7 London cap 3 | **tier (engine draws, strict 0.05)** | | | | | | | **LEAD (older windows HOLD,GAP,X' not run)** |
-| M7 London cap 3 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | FAIL (windows X' not run) |
-| give-back H7 NY AM 40/40 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
-| give-back H7 NY AM 50/40 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
-| London skip k=1.25 UC M7+P7 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
-| give-back P7 Asia 50/40 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
-| London skip k=1.25 true pts M7+P7 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
-| give-back K7 NY AM 40/40 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
-| A7 Asia target 45 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
+| give-back H7 NY AM 40/40 (v2 p) | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
+| give-back H7 NY AM 50/40 (v2 p) | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
+| M7 London cap 3 | L3M | 0.353 | 30 | 30 [30] | 0.342 | 1.00 / 1.00 / 0.97 | 0.12 |  |
+| M7 London cap 3 | L6M | 0.421 | 30 | 30 [30] | 0.365 | 1.00 / 1.00 / 0.97 | 0.20 |  |
+| M7 London cap 3 | HOLD | 0.388 | 30 | 30 [30] | 0.322 | 0.60 / 0.13 / 0.23 | 0.97 |  |
+| M7 London cap 3 | GAP | 0.145 | 30 | 30 [30] | 0.211 | 0.13 / 0.00 / 0.10 | 0.65 |  |
+| M7 London cap 3 | PREUW | 0.310 | 30 | 30 [30] | 0.3 | 0.43 / 0.53 / 0.33 | 0.85 |  |
+| M7 London cap 3 | X' | 0.117 | 30 | 30 [30] | 0.239 | 0.83 / 0.53 / 0.67 | 0.73 |  |
+| M7 London cap 3 | pooled validity (months shared with the real cell >= 12): 30 draws pooled, 30 valid, control share 0.305 vs real 0.308 | | | | | | | |
+| M7 London cap 3 | **tier (engine draws, strict 0.05)** | | | | | | | **FAIL** |
+| M7 London cap 3 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | FAIL |
+| London skip k=1.25 UC M7+P7 | L3M | 0.349 | 1 | 0 [0] | 0.297 | not enough valid draws | - |  |
+| London skip k=1.25 UC M7+P7 | L6M | 0.351 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 UC M7+P7 | HOLD | 0.411 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 UC M7+P7 | GAP | 0.558 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 UC M7+P7 | PREUW | real cell not landed | - | - | - | - | - | - |
+| London skip k=1.25 UC M7+P7 | X' | real cell not landed | - | - | - | - | - | - |
+| London skip k=1.25 UC M7+P7 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
+| London skip k=1.25 UC M7+P7 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
+| London skip k=1.25 UC M7+P7 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
+| give-back P7 Asia 50/40 | L3M | 0.289 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| give-back P7 Asia 50/40 | L6M | 0.286 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| give-back P7 Asia 50/40 | HOLD | 0.254 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| give-back P7 Asia 50/40 | GAP | real cell not landed | - | - | - | - | - | - |
+| give-back P7 Asia 50/40 | PREUW | real cell not landed | - | - | - | - | - | - |
+| give-back P7 Asia 50/40 | X' | real cell not landed | - | - | - | - | - | - |
+| give-back P7 Asia 50/40 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
+| give-back P7 Asia 50/40 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
+| give-back P7 Asia 50/40 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
+| London skip k=1.25 true pts M7+P7 | L3M | 0.280 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 true pts M7+P7 | L6M | 0.283 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 true pts M7+P7 | HOLD | 0.327 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 true pts M7+P7 | GAP | 0.488 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 true pts M7+P7 | PREUW | 0.434 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 true pts M7+P7 | X' | 0.402 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| London skip k=1.25 true pts M7+P7 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
+| London skip k=1.25 true pts M7+P7 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
+| London skip k=1.25 true pts M7+P7 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
+| give-back K7 NY AM 40/40 | L3M | 0.312 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| give-back K7 NY AM 40/40 | L6M | 0.322 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| give-back K7 NY AM 40/40 | HOLD | 0.292 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| give-back K7 NY AM 40/40 | GAP | real cell not landed | - | - | - | - | - | - |
+| give-back K7 NY AM 40/40 | PREUW | real cell not landed | - | - | - | - | - | - |
+| give-back K7 NY AM 40/40 | X' | real cell not landed | - | - | - | - | - | - |
+| give-back K7 NY AM 40/40 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
+| give-back K7 NY AM 40/40 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
+| give-back K7 NY AM 40/40 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
+| A7 Asia target 45 | L3M | 0.412 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| A7 Asia target 45 | L6M | 0.459 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| A7 Asia target 45 | HOLD | 0.507 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| A7 Asia target 45 | GAP | real cell not landed | - | - | - | - | - | - |
+| A7 Asia target 45 | PREUW | real cell not landed | - | - | - | - | - | - |
+| A7 Asia target 45 | X' | real cell not landed | - | - | - | - | - | - |
+| A7 Asia target 45 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
+| A7 Asia target 45 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
+| A7 Asia target 45 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
 | U7 Asia 40x40 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
-| against-the-day VWAP skip all books | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
+| against-the-day VWAP skip all books | L3M | 0.033 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| against-the-day VWAP skip all books | L6M | 0.036 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| against-the-day VWAP skip all books | HOLD | 0.035 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| against-the-day VWAP skip all books | GAP | real cell not landed | - | - | - | - | - | - |
+| against-the-day VWAP skip all books | PREUW | 0.028 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| against-the-day VWAP skip all books | X' | 0.018 | 0 | 0 [0] | None | not enough valid draws | - |  |
+| against-the-day VWAP skip all books | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
+| against-the-day VWAP skip all books | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
+| against-the-day VWAP skip all books | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
 | give-back K7 NY AM 50/20 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
 | give-back P7 Asia 40/40 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
 | give-back H7 Asia 40/40 | all | - | 0 landed | - | - | - | - | NOT ENOUGH CONTROLS YET (0 of 30) |
