@@ -2,17 +2,17 @@
 
 1. Tried: 24 lot cells (K7 M7 U7 P7 H7 A7 x Asia/London/NY AM/NY PM, base lots 0..14, live = floor(1.75 x base + 0.5)) solved for min ulcer at mean >= today, max mean at ulcer <= today and a 10-point frontier, on a trade-list lot-scaling model of JL3, with walk-forward (trailing 12/6 months, hold 3), week-shuffled nulls, same-size random controls, a uniform trim/press benchmark (x0.5 ... x1.5) and exact engine runs.
 2. The arithmetic model FAILS the additivity test (30 exact random vectors: median ulcer error 24%, the engine realises only ~49% of the arithmetic change in P&L), so every vector below is judged on exact JL3 engine runs, not on the arithmetic.
-3. Holds: in-sample gain 35% lower ulcer at equal mean, but week-shuffled nulls give 49% on noise; exact runs of the finals and the uniform benchmark are still landing; interim vector G1 (arithmetic) labelled BEST-AVAILABLE-NOT-PROVEN.
+3. Holds: the in-sample gain (32% lower ulcer at equal mean) is mostly fit: shuffled-cell nulls give 46% on noise; walk-forward gain over the uniform benchmark is small (see section 5); proposed vector F2 = T6-F4, label BEST-AVAILABLE-NOT-PROVEN; vs uniform at equal mean / equal ulcer (exact, L6M / HOLD / all 43 mo): ulcer +19% / -23% / -9% and mean +68% / n/a / -10%.
 4. Needs in DS7: a session lot table per book (panel setting, no new code); M7 London 0 is shown as a row (variant G = M7 London fixed 0, F = free); no live change until the exact JL3/JL2 and uniform comparison is read.
 5. Next: stack cap / stack-cut variants on the best vector, JL2 exact runs, exact controls of the same size if the lead wants a calibrated tier, refresh every 30 min.
 
 Header: trials counted ~1,400 integer lot vectors solved/evaluated by arithmetic (frontier 12 points x folds x 2 windows, 30 nulls, finals) + 30 random + 5 uniform + 6 final exact vectors; correction: none yet (first pass); PBO not computed; selection status: in-sample solve on landed months, WALK-FORWARD on the calibrated arithmetic, exact engine on 6 finals (3 on JL2); the final vectors are re-solved on the trailing window to 2026-10-31, so L6M/HOLD are NOT untouched for them (training window), only the walk-forward OOS days are. Data end 2026-10-31. FIRST PASS. Tiers CONFIRMED/LEAD: not issued (engine-exact same-size controls not run; the additivity test says the arithmetic controls cannot stand in).
 
-Updated 2026-11-17 14:54Z UTC. Cell P&L landed for 39 months. Live vector today (live lots): K7 4,4,0,2,4,0; M7 0,4,0,2,0,0; U7 7,7,0,0,0,0; P7 12,7,0,7,0,0; H7 7,0,0,2,0,0; A7 2 Asia. O7 is not a decision variable (no session table in the engine; constant background in the arithmetic, in the engine runs unchanged).
+Updated 2026-11-17 15:25Z UTC. Cell P&L landed for 43 months. Live vector today (live lots): K7 4,4,0,2,4,0; M7 0,4,0,2,0,0; U7 7,7,0,0,0,0; P7 12,7,0,7,0,0; H7 7,0,0,2,0,0; A7 2 Asia. O7 is not a decision variable (no session table in the engine; constant background in the arithmetic, in the engine runs unchanged).
 
 ## 1. Cell: lots today -> lots proposed (base/live; * = changed)
 
-Proposed vector (package, judged jointly): **G1** (T12-F6, M7 London 0). All finals are shown as columns. Variants F* = M7 London free, G* = M7 London fixed at 0. Rules: T12/T6 = trailing window, F0..F9 = frontier point (F0 = min ulcer at mean >= today in the window ... F9 = highest mean on the frontier), A = min ulcer at mean >= today, B = max mean at ulcer <= today.
+Proposed vector (package, judged jointly): **F2** (T6-F4). All finals are shown as columns. Variants F* = M7 London free, G* = M7 London fixed at 0. Rules: T12/T6 = trailing window, F0..F9 = frontier point (F0 = min ulcer at mean >= today in the window ... F9 = highest mean on the frontier), A = min ulcer at mean >= today, B = max mean at ulcer <= today.
 
 | cell | today | F1 (T12-F6) | G1 (T12-F6) | F2 (T6-F4) | G2 (T6-F4) | F3 (T6-F5) | G3 (T6-F5) |
 |---|---|---|---|---|---|---|---|
@@ -57,6 +57,12 @@ Columns: ulcer / max DD / worst week / mean per week at live lots with $4.84 rou
 | U075 | 19919 | -67152 | -34793 | 29459 | 30964 | 16345 | 15571 | +1.4% | -17.8% | 0.55 |
 | U125 | 20251 | -60915 | -43348 | 41489 | 43302 | 23492 | 22531 | +3.1% | +15.8% | 0.40 |
 | U150 | 20117 | -55791 | -36027 | 45958 | 47896 | 26009 | 24970 | +2.4% | +28.3% | 0.70 |
+| F1 | 34675 | -139511 | -62210 | 32329 | 34038 | 17660 | 16759 | +76.5% | -9.8% | 0.04 |
+| G1 | 24455 | -83714 | -57710 | 44906 | 46416 | 24612 | 23803 | +24.4% | +25.3% | 0.37 |
+| F2 | 16385 | -59747 | -50433 | 43846 | 45429 | 23979 | 23138 | -16.6% | +22.4% | 0.68 |
+| G2 | 16659 | -60174 | -51547 | 48359 | 49985 | 26827 | 25963 | -15.2% | +35.0% | 0.65 |
+| F3 | 20177 | -76989 | -68595 | 42499 | 44117 | 23458 | 22600 | +2.7% | +18.6% | 0.45 |
+| G3 | 22807 | -82343 | -60714 | 41386 | 42994 | 22794 | 21945 | +16.1% | +15.5% | 0.49 |
 
 **L3M** (exact JL3)
 
@@ -68,6 +74,12 @@ Columns: ulcer / max DD / worst week / mean per week at live lots with $4.84 rou
 | U075 | 24418 | -67152 | -34793 | 21431 | 22834 | 12409 | 11686 | +3.1% | -25.9% | 0.46 |
 | U125 | 21255 | -60915 | -32511 | 41139 | 42903 | 22880 | 21943 | -10.2% | +42.3% | 0.82 |
 | U150 | 20404 | -55791 | -24820 | 45473 | 47367 | 25255 | 24239 | -13.8% | +57.3% | 0.97 |
+| F1 | 45840 | -139511 | -62210 | 27729 | 29408 | 15258 | 14371 | +93.6% | -4.1% | 0.17 |
+| G1 | 32293 | -83714 | -57710 | 31241 | 32692 | 17146 | 16367 | +36.4% | +8.1% | 0.32 |
+| F2 | 20626 | -59747 | -50433 | 35236 | 36744 | 19354 | 18547 | -12.9% | +21.9% | 0.58 |
+| G2 | 22059 | -60174 | -51547 | 36531 | 38101 | 20264 | 19425 | -6.8% | +26.4% | 0.55 |
+| F3 | 25122 | -76989 | -68595 | 35578 | 37118 | 19669 | 18848 | +6.1% | +23.1% | 0.43 |
+| G3 | 29683 | -82343 | -60714 | 32211 | 33735 | 17949 | 17143 | +25.4% | +11.4% | 0.44 |
 
 **HOLD** (exact JL3)
 
@@ -79,39 +91,125 @@ Columns: ulcer / max DD / worst week / mean per week at live lots with $4.84 rou
 | U075 | 54324 | -127426 | -62386 | 14386 | 15547 | 7696 | 7099 | -1.6% | -20.6% | 0.68 |
 | U125 | 62433 | -157638 | -58113 | 18875 | 20310 | 10567 | 9805 | +13.0% | +4.2% | 0.44 |
 | U150 | 62117 | -150157 | -63194 | 20679 | 22201 | 11936 | 11120 | +12.5% | +14.2% | 0.45 |
+| F1 | 40945 | -141271 | -35418 | 23257 | 24621 | 13109 | 12386 | -25.9% | +28.4% | 0.92 |
+| G1 | 45471 | -157459 | -94461 | 21374 | 22537 | 12586 | 11963 | -17.7% | +18.0% | 0.46 |
+| F2 | 71774 | -205397 | -74309 | 18428 | 19680 | 10891 | 10221 | +30.0% | +1.7% | 0.40 |
+| G2 | 78255 | -181111 | -83333 | 13146 | 14437 | 8482 | 7798 | +41.7% | -27.4% | 0.22 |
+| F3 | 73978 | -199779 | -77573 | 15623 | 16945 | 9163 | 8458 | +34.0% | -13.7% | 0.29 |
+| G3 | 81547 | -211750 | -77006 | 16549 | 17857 | 9719 | 9024 | +47.7% | -8.6% | 0.32 |
 
 **GAP** (exact JL3)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 35577 | -86295 | -76769 | 15366 | 16229 | 8970 | 8525 | +0.0% | +0.0% | - |
+| U050 | 35236 | -92635 | -72623 | 7251 | 7941 | 4124 | 3778 | -1.0% | -52.8% | 0.56 |
 | U067 | 37576 | -99606 | -74704 | 7767 | 8518 | 4662 | 4280 | +5.6% | -49.5% | 0.42 |
 | U075 | 37180 | -97099 | -70394 | 9104 | 9885 | 5555 | 5153 | +4.5% | -40.7% | 0.37 |
 | U125 | 38169 | -96493 | -81670 | 21885 | 22878 | 12805 | 12277 | +7.3% | +42.4% | 0.26 |
 | U150 | 39730 | -97734 | -85918 | 23792 | 24838 | 13820 | 13262 | +11.7% | +54.8% | 0.27 |
+| F1 | 86585 | -184612 | -110642 | 8986 | 9936 | 5284 | 4782 | +143.4% | -41.5% | 0.01 |
+| G1 | 76384 | -141151 | -83753 | 6946 | 7699 | 4366 | 3967 | +114.7% | -54.8% | 0.05 |
+| F2 | 34392 | -79585 | -65113 | 8896 | 9738 | 5652 | 5204 | -3.3% | -42.1% | 0.28 |
+| G2 | 36784 | -93929 | -85412 | 11353 | 12218 | 6809 | 6355 | +3.4% | -26.1% | 0.26 |
+| F3 | 34146 | -96816 | -76725 | 12211 | 13125 | 7453 | 6967 | -4.0% | -20.5% | 0.32 |
+| G3 | 32016 | -91656 | -78965 | 14161 | 15108 | 8535 | 8033 | -10.0% | -7.8% | 0.38 |
 
 **PRE** (exact JL3)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 65848 | -178374 | -71328 | 11077 | 12145 | 6359 | 5811 | +0.0% | +0.0% | - |
+| U050 | 37108 | -112999 | -41676 | 8752 | 9632 | 4819 | 4378 | -43.6% | -21.0% | 0.76 |
+| U067 | 49173 | -138600 | -41511 | 9028 | 9966 | 5056 | 4581 | -25.3% | -18.5% | 0.74 |
+| U075 | 54353 | -148270 | -40909 | 9087 | 10069 | 5326 | 4823 | -17.5% | -18.0% | 0.74 |
+| U125 | 54834 | -160561 | -69063 | 13645 | 14867 | 8135 | 7490 | -16.7% | +23.2% | 0.47 |
+| U150 | 57989 | -139254 | -77866 | 15468 | 16745 | 9269 | 8590 | -11.9% | +39.6% | 0.44 |
+| F1 | 92824 | -264759 | -56650 | 8907 | 10078 | 5414 | 4797 | +41.0% | -19.6% | 0.23 |
+| G1 | 49110 | -174808 | -65638 | 14402 | 15336 | 8486 | 7989 | -25.4% | +30.0% | 0.68 |
+| F2 | 63471 | -205717 | -74811 | 10738 | 11757 | 6216 | 5672 | -3.6% | -3.1% | 0.57 |
+| G2 | 60772 | -159529 | -65137 | 9326 | 10398 | 5768 | 5203 | -7.7% | -15.8% | 0.42 |
+| F3 | 87287 | -242989 | -67425 | 7813 | 8931 | 4844 | 4250 | +32.6% | -29.5% | 0.37 |
+| G3 | 75575 | -245034 | -66204 | 12031 | 13174 | 7105 | 6499 | +14.8% | +8.6% | 0.42 |
 
 **X'** (exact JL3)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 45533 | -136464 | -72178 | 5390 | 6137 | 3241 | 2857 | +0.0% | +0.0% | - |
+| U067 | 39865 | -115749 | -50990 | 4668 | 5325 | 2739 | 2405 | -12.4% | -13.4% | 0.77 |
+| U075 | 38243 | -115341 | -60920 | 4748 | 5429 | 2825 | 2476 | -16.0% | -11.9% | 0.79 |
+| U125 | 45335 | -170813 | -93753 | 6929 | 7786 | 4246 | 3793 | -0.4% | +28.6% | 0.35 |
+| U150 | 49154 | -161375 | -93347 | 7602 | 8503 | 4600 | 4120 | +8.0% | +41.0% | 0.29 |
+| F1 | 87118 | -189677 | -77737 | 3202 | 4026 | 2314 | 1879 | +91.3% | -40.6% | 0.08 |
+| G1 | 114471 | -229681 | -86739 | 3129 | 3765 | 2061 | 1725 | +151.4% | -42.0% | 0.14 |
+| F2 | 49373 | -115441 | -53410 | 3987 | 4708 | 2452 | 2068 | +8.4% | -26.0% | 0.25 |
+| G2 | 39394 | -98795 | -55756 | 7195 | 7971 | 4078 | 3673 | -13.5% | +33.5% | 0.68 |
+| F3 | 105585 | -254040 | -53357 | 2697 | 3529 | 1900 | 1458 | +131.9% | -50.0% | 0.09 |
+| G3 | 70279 | -211795 | -86172 | 4700 | 5567 | 2936 | 2476 | +54.3% | -12.8% | 0.13 |
 
 **ALL43** (exact JL3)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 49721 | -178374 | -76769 | 14107 | 15137 | 8022 | 7493 | +0.0% | +0.0% | - |
+| U067 | 41255 | -138600 | -74704 | 10531 | 11433 | 5859 | 5401 | -17.0% | -25.3% | 0.76 |
+| U075 | 42847 | -148270 | -70394 | 11417 | 12357 | 6462 | 5980 | -13.8% | -19.1% | 0.75 |
+| U125 | 57372 | -182466 | -103087 | 16594 | 17759 | 9649 | 9032 | +15.4% | +17.6% | 0.27 |
+| U150 | 63038 | -239915 | -98776 | 18045 | 19274 | 10518 | 9861 | +26.8% | +27.9% | 0.28 |
+| F1 | 81619 | -264759 | -110642 | 11972 | 13085 | 6986 | 6398 | +64.2% | -15.1% | 0.07 |
+| G1 | 83397 | -229681 | -94461 | 14731 | 15641 | 8483 | 7999 | +67.7% | +4.4% | 0.18 |
+| F2 | 53075 | -205717 | -74811 | 13672 | 14664 | 7832 | 7304 | +6.7% | -3.1% | 0.31 |
+| G2 | 49764 | -181111 | -85412 | 14810 | 15851 | 8560 | 8012 | +0.1% | +5.0% | 0.43 |
+| F3 | 88433 | -254040 | -77573 | 12040 | 13121 | 7057 | 6483 | +77.9% | -14.7% | 0.10 |
+| G3 | 72741 | -245034 | -86172 | 13749 | 14850 | 7953 | 7369 | +46.3% | -2.5% | 0.14 |
 
 ## 3. Beats the uniform benchmark? (exact JL3; uniform ray = today and U050..U150 interpolated)
 
 | vector | window | ulcer | mean | uniform ulcer at the SAME mean | uniform mean at the SAME ulcer | ulcer advantage at equal mean | mean advantage at equal ulcer |
 |---|---|---|---|---|---|---|---|
+| F1 | L6M | 34675 | 32329 | 19798 | out of range | -75.1% | - |
+| F1 | L3M | 45840 | 27729 | 23792 | out of range | -92.7% | - |
+| F1 | HOLD | 40945 | 23257 | out of range | out of range | - | - |
+| F1 | GAP | 86585 | 8986 | 37215 | out of range | -132.7% | - |
+| F1 | PRE | 92824 | 8907 | 43872 | out of range | -111.6% | - |
+| F1 | X' | 87118 | 3202 | out of range | out of range | - | - |
+| F1 | ALL43 | 81619 | 11972 | 44265 | out of range | -84.4% | - |
+| G1 | L6M | 24455 | 44906 | 20148 | out of range | -21.4% | - |
+| G1 | L3M | 32293 | 31241 | 23213 | out of range | -39.1% | - |
+| G1 | HOLD | 45471 | 21374 | out of range | 10132 | - | +111.0% |
+| G1 | GAP | 76384 | 6946 | out of range | out of range | - | - |
+| G1 | PRE | 49110 | 14402 | 56144 | 9027 | +12.5% | +59.5% |
+| G1 | X' | 114471 | 3129 | out of range | out of range | - | - |
+| G1 | ALL43 | 83397 | 14731 | 51639 | out of range | -61.5% | - |
+| F2 | L6M | 16385 | 43846 | 20180 | 26066 | +18.8% | +68.2% |
+| F2 | L3M | 20626 | 35236 | 22423 | 44342 | +8.0% | -20.5% |
+| F2 | HOLD | 71774 | 18428 | 58214 | out of range | -23.3% | - |
+| F2 | GAP | 34392 | 8896 | 37242 | out of range | +7.7% | - |
+| F2 | PRE | 63471 | 10738 | 63890 | 12405 | +0.7% | -13.4% |
+| F2 | X' | 49373 | 3987 | out of range | out of range | - | - |
+| F2 | ALL43 | 53075 | 13672 | 48610 | 15197 | -9.2% | -10.0% |
+| G2 | L6M | 16659 | 48359 | out of range | 26181 | - | +84.7% |
+| G2 | L3M | 22059 | 36531 | 22167 | 32156 | +0.5% | +13.6% |
+| G2 | HOLD | 78255 | 13146 | 51218 | out of range | -52.8% | - |
+| G2 | GAP | 36784 | 11353 | 36604 | 10652 | -0.5% | +6.6% |
+| G2 | PRE | 60772 | 9326 | 55731 | 13913 | -9.0% | -33.0% |
+| G2 | X' | 39394 | 7195 | 46842 | 4691 | +15.9% | +53.4% |
+| G2 | ALL43 | 49764 | 14810 | 51883 | 14121 | +4.1% | +4.9% |
+| F3 | L6M | 20177 | 42499 | 20220 | 43937 | +0.2% | -3.3% |
+| F3 | L3M | 25122 | 35578 | 22355 | out of range | -12.4% | - |
+| F3 | HOLD | 73978 | 15623 | 54623 | out of range | -35.4% | - |
+| F3 | GAP | 34146 | 12211 | 36384 | out of range | +6.2% | - |
+| F3 | PRE | 87287 | 7813 | out of range | out of range | - | - |
+| F3 | X' | 105585 | 2697 | out of range | out of range | - | - |
+| F3 | ALL43 | 88433 | 12040 | 44440 | out of range | -99.0% | - |
+| G3 | L6M | 22807 | 41386 | 20240 | out of range | -12.7% | - |
+| G3 | L3M | 29683 | 32211 | 23021 | out of range | -28.9% | - |
+| G3 | HOLD | 81547 | 16549 | 54848 | out of range | -48.7% | - |
+| G3 | GAP | 32016 | 14161 | 35885 | out of range | +10.8% | - |
+| G3 | PRE | 75575 | 12031 | 61758 | out of range | -22.4% | - |
+| G3 | X' | 70279 | 4700 | 39208 | out of range | -79.2% | - |
+| G3 | ALL43 | 72741 | 13749 | 48807 | out of range | -49.0% | - |
 
 Positive = better than just trading smaller/bigger. "out of range" = the vector sits outside the measured uniform ray (no extrapolation).
 
@@ -122,42 +220,63 @@ Positive = better than just trading smaller/bigger. "out of range" = the vector 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 18729 | -55033 | -28790 | 39669 | 41251 | 22076 | 21261 | +0.0% | +0.0% | - |
+| F1 | 38519 | -146879 | -40765 | 41479 | 43148 | 22450 | 21570 | +105.7% | +4.6% | 0.07 |
+| F2 | 18271 | -72211 | -53630 | 49473 | 51010 | 27081 | 26263 | -2.4% | +24.7% | 0.52 |
+| F3 | 23049 | -90174 | -72608 | 48621 | 50192 | 26692 | 25859 | +23.1% | +22.6% | 0.38 |
 
 **L3M** (exact JL2)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 22892 | -55033 | -28790 | 30558 | 32044 | 17566 | 16800 | +0.0% | +0.0% | - |
+| F1 | 52570 | -146879 | -40765 | 32140 | 33771 | 17456 | 16595 | +129.6% | +5.2% | 0.17 |
+| F2 | 23425 | -72211 | -53630 | 36214 | 37675 | 20121 | 19341 | +2.3% | +18.5% | 0.46 |
+| F3 | 30024 | -90174 | -72608 | 34517 | 35996 | 19175 | 18388 | +31.2% | +13.0% | 0.28 |
 
 **HOLD** (exact JL2)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 47535 | -140077 | -61474 | 14844 | 16092 | 8359 | 7716 | +0.0% | +0.0% | - |
+| F1 | 36986 | -140397 | -56546 | 21511 | 22837 | 12231 | 11526 | -22.2% | +44.9% | 0.85 |
+| F2 | 53785 | -158699 | -61736 | 17952 | 19152 | 10660 | 10017 | +13.1% | +20.9% | 0.60 |
+| F3 | 61397 | -189850 | -65475 | 15546 | 16815 | 9271 | 8595 | +29.2% | +4.7% | 0.50 |
 
 **GAP** (exact JL2)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 43185 | -114581 | -85624 | 12912 | 13746 | 7592 | 7162 | +0.0% | +0.0% | - |
+| F1 | 90402 | -202527 | -126720 | 9049 | 9952 | 5376 | 4900 | +109.3% | -29.9% | 0.01 |
+| F2 | 35795 | -82170 | -69545 | 9424 | 10229 | 6021 | 5594 | -17.1% | -27.0% | 0.35 |
+| F3 | 42466 | -124868 | -80378 | 12715 | 13595 | 7462 | 6995 | -1.7% | -1.5% | 0.36 |
 
 **PRE** (exact JL2)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 52451 | -144128 | -55528 | 12672 | 13701 | 7157 | 6630 | +0.0% | +0.0% | - |
+| F1 | 82042 | -241585 | -65197 | 11910 | 13045 | 6914 | 6315 | +56.4% | -6.0% | 0.15 |
+| F2 | 46056 | -159070 | -69704 | 13497 | 14472 | 7543 | 7023 | -12.2% | +6.5% | 0.53 |
+| F3 | 73862 | -210153 | -71934 | 12522 | 13605 | 7205 | 6630 | +40.8% | -1.2% | 0.37 |
 
 **X'** (exact JL2)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 38065 | -144400 | -73286 | 8250 | 8972 | 4752 | 4382 | +0.0% | +0.0% | - |
+| F1 | 77648 | -182590 | -81395 | 5253 | 6051 | 3327 | 2906 | +104.0% | -36.3% | 0.04 |
+| F2 | 45967 | -112690 | -54123 | 6137 | 6833 | 3673 | 3302 | +20.8% | -25.6% | 0.24 |
+| F3 | 109097 | -272732 | -52533 | 4003 | 4814 | 2713 | 2282 | +186.6% | -51.5% | 0.04 |
 
 **ALL43** (exact JL2)
 
 | vector | ulcer (live lots, $4.84) | max DD | worst week | mean $/wk | mean x1.75 live (engine fee) | mean base lots (engine fee) | mean base lots $4.84 | d ulcer | d mean | boot P(ulcer lower) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | TODAY | 41508 | -144400 | -85624 | 15586 | 16580 | 8796 | 8285 | +0.0% | +0.0% | - |
+| F1 | 76723 | -241585 | -126720 | 14729 | 15808 | 8394 | 7824 | +84.8% | -5.5% | 0.03 |
+| F2 | 44366 | -159070 | -69704 | 16025 | 16980 | 9110 | 8601 | +6.9% | +2.8% | 0.37 |
+| F3 | 84739 | -272732 | -80378 | 14537 | 15585 | 8402 | 7845 | +104.1% | -6.7% | 0.09 |
 
 ## 5. Walk-forward (calibrated arithmetic, theta=0.49): solve on trailing T months, hold the next 3, roll; OOS days only
 
@@ -166,61 +285,61 @@ Positive = better than just trading smaller/bigger. "out of range" = the vector 
 | rule | OOS ulcer | OOS max DD | OOS worst week | OOS mean $/wk | d ulcer vs today | d mean vs today | uniform ulcer at same mean | advantage |
 |---|---|---|---|---|---|---|---|---|
 | TODAY | 50830 | -178374 | -76769 | 17948 | | | | |
-| A | 40053 | -107967 | -71319 | 14346 | -21.2% | -20.1% | out of range | - |
-| F0 | 36524 | -106300 | -71319 | 14176 | -28.1% | -21.0% | out of range | - |
-| F1 | 37731 | -110202 | -70282 | 15454 | -25.8% | -13.9% | 45783 | +17.6% |
-| F2 | 43509 | -130268 | -70625 | 15785 | -14.4% | -12.1% | 47321 | +8.1% |
-| F3 | 46025 | -135986 | -94361 | 17230 | -9.5% | -4.0% | 49514 | +7.0% |
-| F4 | 46540 | -135393 | -83777 | 17695 | -8.4% | -1.4% | 50367 | +7.6% |
-| F5 | 48741 | -152009 | -89727 | 19519 | -4.1% | +8.8% | 61280 | +20.5% |
-| F6 | 59058 | -170074 | -93171 | 19110 | +16.2% | +6.5% | 58562 | -0.8% |
-| F7 | 59535 | -228826 | -129772 | 20807 | +17.1% | +15.9% | 67676 | +12.0% |
-| F8 | 69491 | -216281 | -125649 | 20743 | +36.7% | +15.6% | 67413 | -3.1% |
-| F9 | 73842 | -248746 | -122510 | 22927 | +45.3% | +27.7% | out of range | - |
-| B | 74828 | -248746 | -127822 | 22822 | +47.2% | +27.2% | out of range | - |
+| A | 34803 | -116230 | -68059 | 15020 | -31.5% | -16.3% | out of range | - |
+| F0 | 38817 | -109214 | -67709 | 14108 | -23.6% | -21.4% | out of range | - |
+| F1 | 38749 | -108739 | -72950 | 14691 | -23.8% | -18.1% | out of range | - |
+| F2 | 46444 | -141219 | -69258 | 14851 | -8.6% | -17.3% | out of range | - |
+| F3 | 45122 | -148632 | -76085 | 16448 | -11.2% | -8.4% | 48082 | +6.2% |
+| F4 | 43086 | -123856 | -81657 | 17174 | -15.2% | -4.3% | 49413 | +12.8% |
+| F5 | 48132 | -155603 | -94134 | 17921 | -5.3% | -0.1% | 50781 | +5.2% |
+| F6 | 52964 | -159610 | -84842 | 18635 | +4.2% | +3.8% | 55403 | +4.4% |
+| F7 | 63630 | -209179 | -93567 | 20797 | +25.2% | +15.9% | 67633 | +5.9% |
+| F8 | 71250 | -224643 | -123972 | 21417 | +40.2% | +19.3% | out of range | - |
+| F9 | 77475 | -260312 | -134537 | 22876 | +52.4% | +27.5% | out of range | - |
+| B | 70754 | -241489 | -125358 | 22976 | +39.2% | +28.0% | out of range | - |
 
-**trailing 6 months** (OOS days 20240101..20261031, 1035 days; uniform points computed on the same days)
+**trailing 6 months** (OOS days 20231001..20261031, 1127 days; uniform points computed on the same days)
 
 | rule | OOS ulcer | OOS max DD | OOS worst week | OOS mean $/wk | d ulcer vs today | d mean vs today | uniform ulcer at same mean | advantage |
 |---|---|---|---|---|---|---|---|---|
-| TODAY | 52698 | -178374 | -76769 | 17005 | | | | |
-| A | 44028 | -148590 | -69135 | 13575 | -16.5% | -20.2% | out of range | - |
-| F0 | 43503 | -142588 | -69135 | 12695 | -17.4% | -25.3% | out of range | - |
-| F1 | 39327 | -133074 | -69196 | 14310 | -25.4% | -15.8% | out of range | - |
-| F2 | 44201 | -141332 | -70091 | 15751 | -16.1% | -7.4% | 49540 | +10.8% |
-| F3 | 45803 | -158312 | -70959 | 15829 | -13.1% | -6.9% | 49737 | +7.9% |
-| F4 | 42314 | -153146 | -80607 | 17485 | -19.7% | +2.8% | 55763 | +24.1% |
-| F5 | 48592 | -156438 | -89587 | 18164 | -7.8% | +6.8% | 60096 | +19.1% |
-| F6 | 50238 | -160835 | -99084 | 18120 | -4.7% | +6.6% | 59812 | +16.0% |
-| F7 | 55395 | -184142 | -107140 | 20147 | +5.1% | +18.5% | 69844 | +20.7% |
-| F8 | 64078 | -184234 | -112615 | 20212 | +21.6% | +18.9% | 70092 | +8.6% |
-| F9 | 73920 | -244614 | -115975 | 22335 | +40.3% | +31.3% | out of range | - |
-| B | 70257 | -244614 | -115594 | 21971 | +33.3% | +29.2% | out of range | - |
+| TODAY | 51471 | -178374 | -76769 | 16046 | | | | |
+| A | 36816 | -131088 | -69135 | 12828 | -28.5% | -20.1% | out of range | - |
+| F0 | 37008 | -134140 | -69135 | 12629 | -28.1% | -21.3% | out of range | - |
+| F1 | 39370 | -132847 | -75478 | 13216 | -23.5% | -17.6% | out of range | - |
+| F2 | 38120 | -137867 | -67009 | 14615 | -25.9% | -8.9% | 47748 | +20.2% |
+| F3 | 41725 | -139523 | -74667 | 14472 | -18.9% | -9.8% | 47375 | +11.9% |
+| F4 | 44502 | -154574 | -90551 | 15088 | -13.5% | -6.0% | 48978 | +9.1% |
+| F5 | 47694 | -152403 | -87439 | 16069 | -7.3% | +0.1% | 51612 | +7.6% |
+| F6 | 49962 | -165042 | -85338 | 17829 | -2.9% | +11.1% | 62412 | +19.9% |
+| F7 | 55630 | -185976 | -101520 | 17912 | +8.1% | +11.6% | 62923 | +11.6% |
+| F8 | 67911 | -227733 | -120306 | 19182 | +31.9% | +19.5% | 67876 | -0.1% |
+| F9 | 67469 | -244614 | -122836 | 20964 | +31.1% | +30.6% | out of range | - |
+| B | 71205 | -244614 | -123067 | 20268 | +38.3% | +26.3% | out of range | - |
 
-## 6. In-sample frontier (calibrated arithmetic, 39 landed months 202307..202610; FIT, not evidence)
+## 6. In-sample frontier (calibrated arithmetic, 43 landed months 202304..202610; FIT, not evidence)
 
-Today: ulcer 50371, mean 15439 per week (live lots, $4.84).
+Today: ulcer 49721, mean 14107 per week (live lots, $4.84).
 
 | point | ulcer | mean | vector (24 cells: K7 AL-NA-NQ.. in cell order) |
 |---|---|---|---|
-| A | 32676 | 15700 | 2 0 0 0 1 0 1 0 0 1 0 0 6 0 0 0 2 0 1 0 3 0 0 0 |
-| F0 | 33743 | 15513 | 1 1 0 0 2 0 0 0 0 0 0 2 6 0 0 0 2 0 1 0 2 0 0 0 |
-| F1 | 34563 | 16128 | 1 0 0 0 0 0 1 0 1 0 0 0 13 0 0 0 2 0 0 0 1 0 0 2 |
-| F2 | 34237 | 16713 | 2 0 0 0 1 0 0 0 1 0 0 0 9 0 2 0 2 0 1 0 3 0 0 0 |
-| F3 | 36041 | 17372 | 2 1 0 0 0 0 2 0 0 0 0 1 11 0 0 0 2 0 0 0 3 0 0 0 |
-| F4 | 39854 | 18090 | 2 1 0 1 4 0 0 0 1 0 0 0 7 0 0 0 6 0 3 0 1 0 0 0 |
-| F5 | 40077 | 18603 | 2 2 0 3 0 0 1 0 1 0 0 2 11 0 0 0 6 0 0 0 2 0 0 0 |
-| F6 | 42087 | 19246 | 2 4 0 1 0 0 1 0 3 0 0 2 14 0 0 0 2 0 0 0 2 0 0 0 |
-| F7 | 42820 | 19872 | 1 2 0 4 3 0 2 0 1 0 0 4 7 0 5 0 6 0 1 0 3 0 0 0 |
-| F8 | 46044 | 20550 | 4 2 0 1 4 0 3 0 3 4 0 2 4 0 0 0 6 0 1 0 3 0 0 0 |
-| F9 | 48385 | 21150 | 2 4 0 4 4 0 1 0 4 0 0 2 6 0 0 0 6 3 3 0 3 0 0 0 |
-| B | 50169 | 21133 | 2 2 0 4 4 0 1 0 3 4 0 4 7 0 8 0 6 0 3 0 3 0 3 0 |
+| A | 33674 | 14184 | 1 0 0 0 1 0 1 0 1 0 0 0 6 0 0 0 2 3 0 0 2 0 0 1 |
+| F0 | 34260 | 14127 | 2 0 0 1 0 0 1 0 1 0 0 0 9 0 0 0 0 0 1 0 2 0 0 0 |
+| F1 | 36007 | 14795 | 2 0 0 2 2 0 1 0 1 0 0 0 7 0 0 0 3 0 0 0 1 0 0 0 |
+| F2 | 35256 | 15381 | 1 0 0 0 3 0 0 0 1 0 0 0 8 0 0 0 1 2 0 0 2 0 0 1 |
+| F3 | 39851 | 15936 | 2 3 0 2 0 0 1 0 1 0 0 1 8 0 4 0 6 0 1 1 2 0 0 0 |
+| F4 | 38707 | 16534 | 0 1 0 0 2 0 0 0 1 0 0 0 13 0 0 0 2 0 0 0 3 0 2 1 |
+| F5 | 43687 | 17161 | 4 0 0 0 3 0 1 0 1 5 0 0 7 0 8 0 2 1 0 0 2 0 0 3 |
+| F6 | 45661 | 17745 | 2 2 0 4 0 0 1 0 3 2 0 3 14 0 6 0 3 3 0 0 1 0 0 0 |
+| F7 | 48039 | 18346 | 2 4 0 4 0 0 2 0 4 0 0 3 12 0 4 0 3 0 2 1 2 0 0 4 |
+| F8 | 45759 | 18953 | 2 2 0 0 1 0 3 0 3 6 0 0 14 0 5 0 2 3 0 0 2 0 0 2 |
+| F9 | 54081 | 19572 | 4 0 0 4 3 0 3 0 1 8 0 0 7 0 6 0 6 3 0 0 2 0 1 4 |
+| B | 49630 | 19553 | 4 4 0 2 0 0 3 0 4 0 0 1 12 0 0 0 3 4 2 0 3 0 0 4 |
 
 ## 7. Nulls and controls
 
-Week-block shuffles of each cell P&L (independent per cell, 30): the same solve (min ulcer at mean >= today) finds on average **49%** lower ulcer on pure noise (real data: 35%); max-mean at ulcer <= today finds +48% mean on noise. So the in-sample gain is about 100% fit.
+Week-block shuffles of each cell P&L (independent per cell, 30): the same solve (min ulcer at mean >= today) finds on average **46%** lower ulcer on pure noise (real data: 32%); max-mean at ulcer <= today finds +47% mean on noise. So the in-sample gain is about 100% fit.
 
-30 random vectors of the same total lots as the in-sample A vector: ulcer median 40693 (range 35471..48159), mean median 11600; A: ulcer 32676, mean 15700; today 50371 / 15439.
+30 random vectors of the same total lots as the in-sample A vector: ulcer median 44320 (range 35791..54042), mean median 10931; A: ulcer 33674, mean 14184; today 49721 / 14107.
 
 ## 8. Additivity test (30 exact random vectors TL3_MA_R01..R30, L14M, live lots $4.84)
 
@@ -258,6 +377,28 @@ model = arithmetic lot-scaling of the JL3/ADD trade lists (uncalibrated); engine
 | TL3_MA_R28 | 61775 | 73798 | 19% | 14897 | 18990 |
 | TL3_MA_R29 | 42386 | 59208 | 40% | 17217 | 22997 |
 | TL3_MA_R30 | 34613 | 53576 | 55% | 17931 | 23061 |
+
+## 9. Freed-book effects (exact JL3, proposed vector F2 vs today, mean $/wk per book, live lots $4.84)
+
+| window | K7 | M7 | U7 | P7 | H7 | A7 | O7 | peak concurrent live lots today -> proposed |
+|---|---|---|---|---|---|---|---|---|
+| L6M | 5849 -> 5435 | 122 -> 12487 | 3780 -> 4513 | 20583 -> 18008 | 3351 -> 3735 | 1324 -> -1089 | 817 -> 758 | 36 -> 34 |
+| HOLD | 6237 -> 1032 | -175 -> 7389 | 1291 -> 1086 | 8778 -> 8934 | -1025 -> -585 | 1379 -> -1094 | 1626 -> 1667 | 36 -> 34 |
+| ALL43 | 3861 -> 1813 | -125 -> 3841 | 1358 -> 1637 | 5212 -> 4882 | 1612 -> 1610 | 1311 -> -996 | 879 -> 884 | 36 -> 34 |
+
+## Stack cap / stack cut variants on F2 (exact JL3, last 14 months 2025-09..2026-10, live lots $4.84)
+
+Live = London same-side cap 6 (truncate) + Asia-only 50% stack cut. C4/C8/C12/CNO = London cap 4/8/12/none; SCOFF = stack cut off; SCALL = stack cut in every session. Last column = ulcer change vs the proposed vector with the live cap/cut. The 50% share itself is not a switch in the engine (only off / Asia / all).
+
+| variant | ulcer | max DD | worst week | mean $/wk | d ulcer vs live cap/cut |
+|---|---|---|---|---|---|
+| C4 | 0/14 months landed | | | | |
+| C8 | 0/14 months landed | | | | |
+| C12 | 0/14 months landed | | | | |
+| CNO | 0/14 months landed | | | | |
+| SCOFF | 0/14 months landed | | | | |
+| SCALL | 0/14 months landed | | | | |
+
 
 ## 10. Caveats
 
