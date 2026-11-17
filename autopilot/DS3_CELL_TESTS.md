@@ -1,7 +1,38 @@
 # DS3_CELL_TESTS - engine cell tests: do not trade / half size weak book x session cells on JL3 and JL2 (W-CELL, order 11-17 07:28Z JOB 2)
 VERDICT (data ends 2026-10-31; FIRST PASS; see below)
 
-> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 10:29Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
+> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 10:53Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
+## M7 London focus (lead order 10:48Z; DO NOT TRADE M7 London = M7 session lots london 0)
+
+Row (a) - JL3 cell vs JL3 base at the live price columns: mean $/wk change, max DD and worst week (base -> cell), ulcer change.
+
+| column | window | mean $/wk base -> cell (change) | max DD base -> cell | worst week base -> cell | ulcer change |
+|--|--|--|--|--|--|
+| engine base lots $1.18 RT | L6M | 20,109 -> 21,147 (+1,038) | -30,189 -> -23,870 | -15,066 -> -14,160 | +15.0% |
+| engine base lots $1.18 RT | HOLD | 9,996 -> 9,552 (-445) | -82,017 -> -67,418 | -36,787 -> -34,209 | +11.8% |
+| engine base lots $1.18 RT | pooled | 8,022 -> 8,528 (+506) | -88,502 -> -76,979 | -38,412 -> -36,455 | +11.7% |
+| $4.84 RT, base lots | L6M | 19,265 -> 20,359 (+1,093) | -31,112 -> -24,760 | -15,728 -> -14,786 | +14.8% |
+| $4.84 RT, base lots | HOLD | 9,332 -> 8,942 (-389) | -83,755 -> -69,021 | -37,321 -> -34,688 | +12.3% |
+| $4.84 RT, base lots | pooled | 7,493 -> 8,042 (+549) | -91,437 -> -79,673 | -38,899 -> -36,894 | +12.8% |
+| x1.75 live lots, $1.18 RT | L6M | 37,463 -> 39,514 (+2,051) | -60,591 -> -46,986 | -31,735 -> -29,923 | +16.4% |
+| x1.75 live lots, $1.18 RT | HOLD | 19,402 -> 18,442 (-961) | -152,332 -> -124,305 | -71,572 -> -66,416 | +12.3% |
+| x1.75 live lots, $1.18 RT | pooled | 15,137 -> 16,121 (+984) | -172,602 -> -149,519 | -75,818 -> -71,909 | +12.7% |
+
+Row (b) - FREED-BOOK effect, JL3, M7 London off (trades and $ at engine base lots; n lost ($) / n gained ($) / $ change on trades both runs share). M7 London lost trades are M7's own removed trades; K7/P7/U7/H7 London gains are other books using the freed room.
+
+| window | M7 own London trades removed | K7 London | P7 London | U7 London | H7 London | K7+P7+U7+H7+A7+O7 other sessions (all, net $) | whole-stack $ change |
+|--|--|--|--|--|--|--|--|
+| L6M | 522 (-2,117) | 6 (-2,344) / 81 (+14,583) / +997 (5) | 3 (-2,540) / 33 (-2,286) / -1,718 (10) | 1 (-1,254) / 12 (+3,258) / +2,005 (3) | 0 (+0) / 7 (-950) / +0 (0) | +8,146 | +37,989 |
+| HOLD | 454 (-9,112) | 18 (+1,471) / 63 (-15,788) / -796 (3) | 3 (+7,297) / 27 (+3,151) / -1,422 (5) | 0 (+0) / 7 (+12,128) / -3,110 (2) | 1 (-1,181) / 1 (+934) / +0 (0) | -12,355 | -29,527 |
+| pooled | 2495 (-52,356) | 71 (-2,337) / 305 (+11,907) / -1,943 (19) | 34 (-2,249) / 114 (+7,698) / -5,772 (45) | 1 (-1,254) / 24 (+19,362) / +5,673 (21) | 1 (-1,181) / 23 (-1,358) / +0 (0) | +2,390 | +90,690 |
+
+One line: L6M: M7 London own trades removed carried +2,117, other books in London net +22,027, other sessions net +8,146, stack total +37,989; HOLD: M7 London own trades removed carried +9,112, other books in London net -12,489, other sessions net -12,355, stack total -29,527; pooled: M7 London own trades removed carried +52,356, other books in London net +42,591, other sessions net +2,390, stack total +90,690. (Positive "own trades removed" means M7 London lost money in the base; the stack total is the whole-stack $ change, not the mean per week.)
+
+Row (3) - why JL2 and JL3 disagree on ulcer for this cell:
+- JL3 = JL2 + live persist=1 take lines (M7 pct >= 0.95 take with target 59.5) and P7/U7/H7 locks. In M7 London over 43 months JL2 has 2420 trades, net -66,772; JL3 has 2455 trades, net -60,492. M7 London exits JL2: StateCut 1230, Target 958, StopJoin 116, StopJoinFallback 67, StackCut 26. JL3: StateCut 1233, PolicyTake 496, Target 496, StopJoin 114, StopJoinFallback 68.
+- Pooled: JL3 ulcer change +11.7% (mean +506 $/wk); JL2 +0.7% (mean +399 $/wk). Base ulcer (RMS daily drawdown, $) JL3 24,344 vs JL2 20,293. The difference is the stack, not M7 London itself: JL3 turns about half of M7 London's Target exits into PolicyTake exits (M7 London loses a little less, -60k vs -67k), and its P7/U7/H7 locks lengthen the other books' drawdowns (higher base ulcer, 24.3k vs 20.3k), so removing M7 London's trades takes out a larger share of the stack's drawdown in JL3 and leaves the freed room to different trades. Freed-room table above is JL3; JL2 M7 London own trades removed carried +61,977.
+
+
 
 ## Status (what has landed)
 - Base months landed: JL3 43 of 43, JL2 43 of 43. Real cells with at least one scored window: 26 of 26; with all 43 months: 26.
@@ -15,7 +46,7 @@ Cell vs JL3 base, same engine, same months. ulcer cell = % change of RMS daily d
 
 | cell | L6M | HOLD | GAP | PRE | X' | pooled | P(ulcer lower) L6M / HOLD / pooled | max DD base -> cell, L6M / pooled | worst week base -> cell, L6M / pooled | pct ulcer / mean / DD, L6M | pct, HOLD | valid controls L6M | tier | tier W44 |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| DO NOT TRADE M7 London (43 mo) | +15.0% / +1,038 | +11.8% / -445 | +14.4% / +1,859 | +17.5% / +314 | +5.7% / +443 | +11.7% / +506 | 0.83 / 0.80 / 0.98 | -30,189 -> -23,870 / -88,502 -> -76,979 | -15,066 -> -14,160 / -38,412 -> -36,455 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
+| DO NOT TRADE M7 London (43 mo) | +15.0% / +1,038 | +11.8% / -445 | +14.4% / +1,859 | +17.5% / +314 | +5.7% / +443 | +11.7% / +506 | 0.83 / 0.80 / 0.98 | -30,189 -> -23,870 / -88,502 -> -76,979 | -15,066 -> -14,160 / -38,412 -> -36,455 | n/a | n/a | 0 of 1 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | DO NOT TRADE K7 NY AM (43 mo) | -16.1% / +171 | +3.5% / -515 | +1.0% / +1,250 | -8.4% / -942 | -4.6% / -466 | -4.3% / -438 | 0.01 / 0.68 / 0.40 | -30,189 -> -37,671 / -88,502 -> -88,029 | -15,066 -> -19,093 / -38,412 -> -37,966 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | DO NOT TRADE P7 London (43 mo) | -2.0% / -1,883 | +8.3% / -1,237 | +16.2% / +1,070 | +40.5% / +1,927 | +5.1% / -127 | +15.6% / -16 | 0.20 / 0.27 / 0.83 | -30,189 -> -31,637 / -88,502 -> -73,812 | -15,066 -> -17,426 / -38,412 -> -34,644 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | DO NOT TRADE P7 NY AM (43 mo) | +2.7% / -395 | +0.4% / -566 | -3.8% / -386 | +4.3% / +555 | -3.3% / -110 | +0.8% / -94 | 0.93 / 0.47 / 0.58 | -30,189 -> -28,337 / -88,502 -> -87,259 | -15,066 -> -14,441 / -38,412 -> -39,775 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
@@ -156,7 +187,7 @@ Window pooled
 ## Table 7 - controls: draws landed / valid, realised vs cell share (JL3)
 | control set | landed | valid | per-draw (book, cell share, realised, tol) of the first 3 draws |
 |--|--|--|--|
-| DO NOT TRADE M7 London | 30 | 0 | None; None; None |
+| DO NOT TRADE M7 London | 30 | 0 | None; None; [('M7', 0.683, 0.612, 0.05)] |
 | DO NOT TRADE K7 NY AM | 30 | 0 | None; None; None |
 | DO NOT TRADE P7 London | 30 | 0 | None; None; None |
 | DO NOT TRADE P7 NY AM | 30 | 0 | None; None; None |
