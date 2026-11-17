@@ -1,11 +1,11 @@
 # DS3_CELL_TESTS - engine cell tests: do not trade / half size weak book x session cells on JL3 and JL2 (W-CELL, order 11-17 07:28Z JOB 2)
 VERDICT (data ends 2026-10-31; FIRST PASS; see below)
 
-> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 09:59Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
+> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 10:29Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
 
 ## Status (what has landed)
-- Base months landed: JL3 43 of 43, JL2 43 of 43. Real cells with at least one scored window: 26 of 26; with all 43 months: 23.
-- Controls (JL3 + persistent random skip): N M7 London 0 landed / 0 valid; N K7 NY AM 0 landed / 0 valid; N P7 London 0 landed / 0 valid; N P7 NY AM 0 landed / 0 valid; N K7 NY PM 0 landed / 0 valid; N K7 London 0 landed / 0 valid; N four weakest (M7 Lon 0 landed / 0 valid; H M7 London 0 landed / 0 valid; H P7 London 0 landed / 0 valid; H P7 NY AM 0 landed / 0 valid; H K7 NY PM 0 landed / 0 valid; H K7 London 0 landed / 0 valid; H four weakest (M7 Lon 0 landed / 0 valid. A cell with fewer than 10 valid controls in a window is NOT FINISHED, never passing.
+- Base months landed: JL3 43 of 43, JL2 43 of 43. Real cells with at least one scored window: 26 of 26; with all 43 months: 26.
+- Controls (JL3 + persistent random skip): N M7 London 30 landed / 0 valid; N K7 NY AM 30 landed / 0 valid; N P7 London 30 landed / 0 valid; N P7 NY AM 30 landed / 0 valid; N K7 NY PM 30 landed / 0 valid; N K7 London 30 landed / 0 valid; N four weakest (M7 Lon 30 landed / 0 valid; H M7 London 30 landed / 0 valid; H P7 London 30 landed / 0 valid; H P7 NY AM 30 landed / 0 valid; H K7 NY PM 30 landed / 0 valid; H K7 London 30 landed / 0 valid; H four weakest (M7 Lon 30 landed / 0 valid. A cell with fewer than 10 valid controls in a window is NOT FINISHED, never passing.
 - Mechanism: ev_panel hook (outermost) overrides the book session lot table: do-not-trade = lots 0 in that session (engine entry gate, same as M7 asia = 0 today), half = lots/2 rounded half up (K7 2->1, M7 2->1, P7 4->2). Everything else (stack cap, locks, cuts, sizer, day caps, freed stack room, re-entries) runs unchanged = engine test, not path arithmetic. Identity cells TL3_CT_JL3_ID / TL3_CT_JL2_ID: TL3_CT_JL3_ID 202609: 647 trades net 85599.32 vs TL3_EV_JL3 647 net 85599.32 -> IDENTICAL; TL3_CT_JL3_ID 202610: 691 trades net 37159.82 vs TL3_EV_JL3 691 net 37159.82 -> IDENTICAL; TL3_CT_JL2_ID 202609: 645 trades net 113229.66 vs TL3_EV_JN05W2JL2 645 net 113229.66 -> IDENTICAL; TL3_CT_JL2_ID 202610: 642 trades net 27487.58 vs TL3_EV_JN05W2JL2 642 net 27487.58 -> IDENTICAL.
 - Four weakest chosen by the raw-base table (DS3_REBUILD_S1 / S0: one book alone, no layers): lowest mean R per trade: M7 London -0.009 (net -$48k), P7 NY AM 0.006, P7 London 0.008, K7 NY AM 0.008 (net $18k over 43 months); next K7 NY PM 0.015, K7 London 0.024. Stage 5 has no session-lot leave-one-out, so the raw base decides.
 - Controls: book-wide persistent random skip (one uniform per 5-minute bucket, book, side; same seed set across cells), p calibrated by pilots so the realised share of the book removed matches the cell share within max(min(0.05, 0.25 x share), 0.002) (stricter than 0.05 for small shares); draw valid if pooled over its landed months it is within that tolerance. Half-size stand-in controls: 50% persistent skip inside the cell session, L6M + HOLD months only (so half-size tiers cannot reach older windows: shown as PROVISIONAL/NOT FINISHED).
@@ -18,14 +18,14 @@ Cell vs JL3 base, same engine, same months. ulcer cell = % change of RMS daily d
 | DO NOT TRADE M7 London (43 mo) | +15.0% / +1,038 | +11.8% / -445 | +14.4% / +1,859 | +17.5% / +314 | +5.7% / +443 | +11.7% / +506 | 0.83 / 0.80 / 0.98 | -30,189 -> -23,870 / -88,502 -> -76,979 | -15,066 -> -14,160 / -38,412 -> -36,455 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | DO NOT TRADE K7 NY AM (43 mo) | -16.1% / +171 | +3.5% / -515 | +1.0% / +1,250 | -8.4% / -942 | -4.6% / -466 | -4.3% / -438 | 0.01 / 0.68 / 0.40 | -30,189 -> -37,671 / -88,502 -> -88,029 | -15,066 -> -19,093 / -38,412 -> -37,966 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | DO NOT TRADE P7 London (43 mo) | -2.0% / -1,883 | +8.3% / -1,237 | +16.2% / +1,070 | +40.5% / +1,927 | +5.1% / -127 | +15.6% / -16 | 0.20 / 0.27 / 0.83 | -30,189 -> -31,637 / -88,502 -> -73,812 | -15,066 -> -17,426 / -38,412 -> -34,644 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
-| DO NOT TRADE P7 NY AM (41 mo) | +2.7% / -395 | +0.4% / -566 | -3.8% / -386 | +4.3% / +555 | n/l | n/l | 0.93 / 0.47 / n/l | -30,189 -> -28,337 / n/l | -15,066 -> -14,441 / n/l | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
+| DO NOT TRADE P7 NY AM (43 mo) | +2.7% / -395 | +0.4% / -566 | -3.8% / -386 | +4.3% / +555 | -3.3% / -110 | +0.8% / -94 | 0.93 / 0.47 / 0.58 | -30,189 -> -28,337 / -88,502 -> -87,259 | -15,066 -> -14,441 / -38,412 -> -39,775 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | DO NOT TRADE K7 NY PM (43 mo) | -1.9% / -860 | +0.7% / -238 | -0.2% / -1,071 | +13.0% / +134 | -16.0% / -434 | -0.3% / -472 | 0.33 / 0.49 / 0.52 | -30,189 -> -31,822 / -88,502 -> -82,239 | -15,066 -> -17,515 / -38,412 -> -37,654 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
-| DO NOT TRADE K7 London (40 mo) | -2.7% / -519 | -0.0% / -1,778 | +0.1% / -675 | +12.3% / -59 | n/l | n/l | 0.47 / 0.14 / n/l | -30,189 -> -26,923 / n/l | -15,066 -> -19,605 / n/l | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
+| DO NOT TRADE K7 London (43 mo) | -2.7% / -519 | -0.0% / -1,778 | +0.1% / -675 | +12.3% / -59 | +3.7% / +273 | +6.9% / -321 | 0.47 / 0.14 / 0.60 | -30,189 -> -26,923 / -88,502 -> -76,362 | -15,066 -> -19,605 / -38,412 -> -35,742 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | DO NOT TRADE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) (43 mo) | -10.9% / -1,181 | +9.6% / -2,090 | +23.8% / +2,893 | +49.1% / +1,189 | +5.2% / -137 | +19.5% / -117 | 0.14 / 0.63 / 0.94 | -30,189 -> -32,384 / -88,502 -> -74,167 | -15,066 -> -22,847 / -38,412 -> -30,117 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | HALF SIZE M7 London (43 mo) | +5.5% / +234 | +1.9% / +245 | +3.0% / -194 | +0.9% / -139 | +4.9% / +220 | +2.3% / +120 | 0.98 / 0.98 / 0.94 | -30,189 -> -26,619 / -88,502 -> -90,541 | -15,066 -> -12,898 / -38,412 -> -38,573 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | HALF SIZE P7 London (43 mo) | +1.4% / -369 | -0.4% / -611 | +9.0% / +525 | +8.1% / +289 | +5.3% / +185 | +5.0% / +30 | 0.22 / 0.41 / 0.78 | -30,189 -> -28,512 / -88,502 -> -83,863 | -15,066 -> -14,566 / -38,412 -> -36,802 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | HALF SIZE P7 NY AM (43 mo) | +1.1% / -80 | +1.7% / -104 | -0.4% / +476 | +1.6% / +22 | -0.0% / -20 | +0.9% / +4 | 0.83 / 0.81 / 0.80 | -30,189 -> -29,263 / -88,502 -> -87,311 | -15,066 -> -15,066 / -38,412 -> -38,538 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
-| HALF SIZE K7 NY PM (36 mo) | +0.4% / -80 | +0.8% / -323 | -3.3% / -444 | -2.9% / -91 | n/l | n/l | 0.80 / 0.33 / n/l | -30,189 -> -30,189 / n/l | -15,066 -> -15,066 / n/l | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
+| HALF SIZE K7 NY PM (43 mo) | +0.4% / -80 | +0.8% / -323 | -3.3% / -444 | -2.9% / -91 | -1.8% / -225 | -1.3% / -219 | 0.80 / 0.33 / 0.26 | -30,189 -> -30,189 / -88,502 -> -89,678 | -15,066 -> -15,066 / -38,412 -> -38,412 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | HALF SIZE K7 London (43 mo) | -6.8% / -17 | -1.9% / -495 | -5.0% / -660 | +1.7% / -282 | +5.6% / +161 | +1.6% / -117 | 0.36 / 0.35 / 0.46 | -30,189 -> -32,986 / -88,502 -> -86,850 | -15,066 -> -22,935 / -38,412 -> -37,455 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 | HALF SIZE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) (43 mo) | +7.4% / -450 | +6.6% / -106 | +11.7% / +695 | +9.9% / -56 | +6.8% / +380 | +7.4% / +114 | 0.75 / 1.00 / 0.97 | -30,189 -> -24,015 / -88,502 -> -84,591 | -15,066 -> -12,399 / -38,412 -> -35,262 | n/a | n/a | 0 of 0 landed | NOT FINISHED (fewer than 10 valid controls in L6M/L3M) | NOT FINISHED |
 
@@ -54,14 +54,14 @@ Cell vs JL2 base, same engine, same months. ulcer cell = % change of RMS daily d
 | DO NOT TRADE M7 London | +1,038/-445/+506  |  +108/-164/+399 | +1,093/-389/+549  |  +166/-107/+442 | +2,051/-961/+984  |  +229/-358/+772 |
 | DO NOT TRADE K7 NY AM | +171/-515/-438  |  -576/-150/-445 | +190/-488/-416  |  -556/-127/-424 | +342/-1,030/-875  |  -1,151/-300/-891 |
 | DO NOT TRADE P7 London | -1,883/-1,237/-16  |  -2,841/-1,064/-245 | -1,813/-1,191/+22  |  -2,777/-1,020/-212 | -3,674/-2,537/-41  |  -5,573/-2,043/-458 |
-| DO NOT TRADE P7 NY AM | -395/-566/n/l  |  -313/-436/-142 | -388/-561/n/l  |  -306/-431/-137 | -747/-1,086/n/l  |  -653/-779/-263 |
+| DO NOT TRADE P7 NY AM | -395/-566/-94  |  -313/-436/-142 | -388/-561/-89  |  -306/-431/-137 | -747/-1,086/-176  |  -653/-779/-263 |
 | DO NOT TRADE K7 NY PM | -860/-238/-472  |  -1,419/+542/-451 | -834/-210/-444  |  -1,393/+567/-423 | -1,720/-476/-944  |  -2,838/+1,084/-901 |
-| DO NOT TRADE K7 London | -519/-1,778/n/l  |  -1,439/-606/-232 | -474/-1,739/n/l  |  -1,392/-575/-206 | -1,059/-3,605/n/l  |  -2,900/-1,289/-483 |
+| DO NOT TRADE K7 London | -519/-1,778/-321  |  -1,439/-606/-232 | -474/-1,739/-294  |  -1,392/-575/-206 | -1,059/-3,605/-672  |  -2,900/-1,289/-483 |
 | DO NOT TRADE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | -1,181/-2,090/-117  |  -1,695/-1,591/-368 | -1,020/-1,952/-3  |  -1,541/-1,458/-260 | -2,197/-4,194/-250  |  -3,345/-3,004/-711 |
 | HALF SIZE M7 London | +234/+245/+120  |  +200/+164/+124 | +243/+254/+128  |  +209/+174/+131 | +501/+558/+264  |  +492/+398/+263 |
 | HALF SIZE P7 London | -369/-611/+30  |  -541/-267/-32 | -351/-596/+39  |  -522/-254/-24 | -663/-1,278/+56  |  -1,008/-487/-50 |
 | HALF SIZE P7 NY AM | -80/-104/+4  |  +142/-228/-19 | -79/-103/+4  |  +144/-227/-18 | -118/-162/+8  |  +259/-363/-28 |
-| HALF SIZE K7 NY PM | -80/-323/n/l  |  -316/-156/-218 | -78/-321/n/l  |  -314/-154/-215 | -160/-645/n/l  |  -632/-311/-436 |
+| HALF SIZE K7 NY PM | -80/-323/-219  |  -316/-156/-218 | -78/-321/-217  |  -314/-154/-215 | -160/-645/-439  |  -632/-311/-436 |
 | HALF SIZE K7 London | -17/-495/-117  |  +376/-70/+9 | -13/-492/-115  |  +380/-71/+10 | -8/-971/-226  |  +800/-122/+23 |
 | HALF SIZE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | -450/-106/+114  |  -381/-84/+83 | -423/-81/+131  |  -351/-62/+99 | -783/-177/+235  |  -669/+16/+201 |
 
@@ -108,14 +108,14 @@ Window pooled
 | DO NOT TRADE M7 London | 71 (-2,337) / 305 (+11,907) / -1,943 (19) | 2495 (-52,356) / 235 (+2,929) / -1,103 (4) | 1 (-1,254) / 24 (+19,362) / +5,673 (21) | 34 (-2,249) / 114 (+7,698) / -5,772 (45) | 1 (-1,181) / 23 (-1,358) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 22 (-2,163) / +0 (0) | -59,378 / +38,376 / -3,145 |
 | DO NOT TRADE K7 NY AM | 1889 (+23,320) / 682 (-46,988) / -4,192 (21) | 2 (-1,544) / 28 (-6,630) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 4 (-3,793) / +0 (0) | 0 (+0) / 5 (+1,480) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | +21,775 / -55,931 / -4,192 |
 | DO NOT TRADE P7 London | 96 (+5,934) / 203 (+316) / -2,719 (18) | 40 (-1,833) / 131 (-15,047) / -2,640 (9) | 1 (+1,199) / 15 (+7,840) / +17,356 (16) | 1693 (-1,296) / 26 (+941) / -6,439 (38) | 2 (+2,098) / 11 (+1,469) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 2 (-1,558) / 14 (+526) / +0 (0) | +4,543 / -3,954 / +5,558 |
-| DO NOT TRADE P7 NY AM | n/l | | | | | | | |
+| DO NOT TRADE P7 NY AM | 3 (+1,488) / 12 (+1,117) / +193 (1) | 0 (+0) / 2 (+172) / +0 (0) | 0 (+0) / 0 (+0) / +940 (1) | 252 (+18,146) / 4 (-315) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | +19,634 / +974 / +1,133 |
 | DO NOT TRADE K7 NY PM | 1286 (+90,083) / 4 (+2,494) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / -732 (1) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | +90,083 / +2,494 / -732 |
-| DO NOT TRADE K7 London | n/l | | | | | | | |
+| DO NOT TRADE K7 London | 1952 (+79,712) / 458 (+18,107) / -4,646 (50) | 33 (+546) / 151 (-18,334) / -1,980 (8) | 2 (-55) / 16 (+622) / +12,835 (19) | 15 (+1,350) / 63 (+19,630) / -4,319 (29) | 1 (+894) / 9 (-1,481) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 1 (-781) / 17 (+1,096) / +0 (0) | +81,665 / +19,640 / +1,890 |
 | DO NOT TRADE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | 1956 (+17,731) / 994 (-70,312) / -3,498 (46) | 2496 (-49,277) / 329 (-1,365) / -1,103 (4) | 0 (+0) / 31 (+15,963) / +13,822 (24) | 1940 (+20,384) / 7 (+16,762) / -6,439 (38) | 0 (+0) / 39 (+3,114) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 1 (-786) / 31 (-873) / +0 (0) | -11,948 / -36,710 / +2,781 |
 | HALF SIZE M7 London | 36 (+6,263) / 25 (-481) / +1,285 (5) | 15 (+11,976) / 67 (+4,565) / +34,009 (471) | 0 (+0) / 3 (-180) / -2,242 (6) | 6 (-3,360) / 23 (+4,796) / -2,495 (16) | 1 (+1,199) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 1 (+1,799) / 2 (+1,162) / +0 (0) | +17,877 / +9,862 / +30,557 |
 | HALF SIZE P7 London | 34 (+491) / 22 (-4,015) / +3,788 (10) | 20 (-1,689) / 11 (-3,787) / -1,772 (5) | 0 (+0) / 4 (+4,778) / +8,888 (6) | 29 (-12,038) / 34 (-5,607) / -10,592 (408) | 1 (+899) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 2 (-1,558) / 0 (+0) / +0 (0) | -13,897 / -8,631 / +311 |
 | HALF SIZE P7 NY AM | 0 (+0) / 1 (-887) / +0 (0) | 4 (-2,344) / 2 (+348) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 1 (+1,109) / 1 (+8,387) / -8,330 (26) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | -1,235 / +7,847 / -8,330 |
-| HALF SIZE K7 NY PM | n/l | | | | | | | |
+| HALF SIZE K7 NY PM | 8 (-3,800) / 28 (-3,427) / -41,449 (177) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | -3,800 / -3,427 / -41,449 |
 | HALF SIZE K7 London | 37 (+8,685) / 84 (+8,247) / -20,694 (200) | 10 (-4,525) / 12 (-2,856) / -1,609 (2) | 1 (-2,452) / 1 (-1,191) / -1,870 (5) | 1 (+1,199) / 6 (+2,768) / -1,801 (10) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | +2,906 / +6,968 / -25,975 |
 | HALF SIZE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | 70 (+4,707) / 46 (-4,644) / +4,272 (14) | 39 (+8,028) / 80 (+1,971) / +32,420 (469) | 0 (+0) / 6 (-527) / +4,719 (10) | 37 (-13,181) / 60 (+5,097) / -20,308 (434) | 2 (+2,098) / 0 (+0) / +0 (0) | 0 (+0) / 0 (+0) / +0 (0) | 1 (+1,799) / 1 (+1,799) / +0 (0) | +3,450 / +3,696 / +21,104 |
 
@@ -125,14 +125,14 @@ Window pooled
 | DO NOT TRADE M7 London | 3940 / 4292 | 2976 / 3311 | 1011 / 1138 | 3912 / 4315 | 5388 / 5992 | 17673 / 19552 | -1,090..+2,960 | -63..+1,107 |
 | DO NOT TRADE K7 NY AM | 4146 / 4292 | 3116 / 3311 | 1054 / 1138 | 4055 / 4315 | 5529 / 5992 | 18380 / 19552 | -637..+964 | -845..+8 |
 | DO NOT TRADE P7 London | 3915 / 4292 | 3077 / 3311 | 1055 / 1138 | 4021 / 4315 | 5581 / 5992 | 18118 / 19552 | -3,293..-343 | -508..+491 |
-| DO NOT TRADE P7 NY AM | 4250 / 4292 | 3284 / 3311 | 1122 / 1138 | 4252 / 4315 | n/l | n/l | -931..+124 | n/l |
+| DO NOT TRADE P7 NY AM | 4250 / 4292 | 3284 / 3311 | 1122 / 1138 | 4252 / 4315 | 5905 / 5992 | 19315 / 19552 | -931..+124 | -269..+82 |
 | DO NOT TRADE K7 NY PM | 4123 / 4292 | 3134 / 3311 | 1061 / 1138 | 3999 / 4315 | 5489 / 5992 | 18270 / 19552 | -1,652..-33 | -851..-90 |
-| DO NOT TRADE K7 London | 3976 / 4292 | 3054 / 3311 | 1076 / 1138 | 4008 / 4315 | n/l | n/l | -1,964..+865 | n/l |
+| DO NOT TRADE K7 London | 3976 / 4292 | 3054 / 3311 | 1076 / 1138 | 4008 / 4315 | 5686 / 5992 | 18262 / 19552 | -1,964..+865 | -826..+177 |
 | DO NOT TRADE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | 3325 / 4292 | 2499 / 3311 | 805 / 1138 | 3172 / 4315 | 4407 / 5992 | 14590 / 19552 | -4,044..+1,641 | -1,040..+837 |
 | HALF SIZE M7 London | 4304 / 4292 | 3324 / 3311 | 1139 / 1138 | 4329 / 4315 | 6002 / 5992 | 19613 / 19552 | -349..+779 | -101..+340 |
 | HALF SIZE P7 London | 4275 / 4292 | 3294 / 3311 | 1141 / 1138 | 4323 / 4315 | 6000 / 5992 | 19537 / 19552 | -1,492..+518 | -208..+253 |
 | HALF SIZE P7 NY AM | 4293 / 4292 | 3310 / 3311 | 1137 / 1138 | 4315 / 4315 | 5992 / 5992 | 19551 / 19552 | -261..+86 | -71..+91 |
-| HALF SIZE K7 NY PM | 4292 / 4292 | 3315 / 3311 | 1138 / 1138 | 4321 / 4315 | n/l | n/l | -334..+182 | n/l |
+| HALF SIZE K7 NY PM | 4292 / 4292 | 3315 / 3311 | 1138 / 1138 | 4321 / 4315 | 6002 / 5992 | 19572 / 19552 | -334..+182 | -343..-94 |
 | HALF SIZE K7 London | 4299 / 4292 | 3330 / 3311 | 1143 / 1138 | 4332 / 4315 | 5998 / 5992 | 19606 / 19552 | -881..+883 | -341..+105 |
 | HALF SIZE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | 4298 / 4292 | 3305 / 3311 | 1141 / 1138 | 4327 / 4315 | 6010 / 5992 | 19596 / 19552 | -1,911..+788 | -261..+463 |
 
@@ -142,33 +142,33 @@ Window pooled
 | DO NOT TRADE M7 London | +11.3% / +484 | +13.5% / +1,106 | +11.7% / +512 | NOT FINISHED |
 | DO NOT TRADE K7 NY AM | -22.9% / +338 | -16.4% / +313 | -4.3% / -421 | NOT FINISHED |
 | DO NOT TRADE P7 London | -1.1% / -1,006 | -2.9% / -1,728 | +15.7% / +14 | NOT FINISHED |
-| DO NOT TRADE P7 NY AM | +5.2% / -705 | +3.2% / -408 | n/l | NOT FINISHED |
+| DO NOT TRADE P7 NY AM | +5.2% / -705 | +3.2% / -408 | +0.8% / -94 | NOT FINISHED |
 | DO NOT TRADE K7 NY PM | -4.8% / -508 | -3.8% / -997 | -0.3% / -489 | NOT FINISHED |
-| DO NOT TRADE K7 London | -4.7% / -1,322 | -4.3% / -612 | n/l | NOT FINISHED |
+| DO NOT TRADE K7 London | -4.7% / -1,322 | -4.3% / -612 | +6.9% / -333 | NOT FINISHED |
 | DO NOT TRADE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | -14.4% / -1,876 | -8.2% / -790 | +19.6% / -59 | NOT FINISHED |
 | HALF SIZE M7 London | +10.1% / +231 | +6.5% / +242 | +2.3% / +121 | NOT FINISHED |
 | HALF SIZE P7 London | +3.7% / +67 | +1.3% / -369 | +5.0% / +32 | NOT FINISHED |
 | HALF SIZE P7 NY AM | +1.9% / -283 | +1.3% / -83 | +0.9% / +4 | NOT FINISHED |
-| HALF SIZE K7 NY PM | -0.2% / -367 | -0.2% / -118 | n/l | NOT FINISHED |
+| HALF SIZE K7 NY PM | -0.2% / -367 | -0.2% / -118 | -1.3% / -225 | NOT FINISHED |
 | HALF SIZE K7 London | -12.1% / -420 | -7.9% / -17 | +1.6% / -118 | NOT FINISHED |
 | HALF SIZE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | +13.9% / -324 | +8.3% / -453 | +7.4% / +116 | NOT FINISHED |
 
 ## Table 7 - controls: draws landed / valid, realised vs cell share (JL3)
 | control set | landed | valid | per-draw (book, cell share, realised, tol) of the first 3 draws |
 |--|--|--|--|
-| DO NOT TRADE M7 London | 0 | 0 | |
-| DO NOT TRADE K7 NY AM | 0 | 0 | |
-| DO NOT TRADE P7 London | 0 | 0 | |
-| DO NOT TRADE P7 NY AM | 0 | 0 | |
-| DO NOT TRADE K7 NY PM | 0 | 0 | |
-| DO NOT TRADE K7 London | 0 | 0 | |
-| DO NOT TRADE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | 0 | 0 | |
-| HALF SIZE M7 London | 0 | 0 | |
-| HALF SIZE P7 London | 0 | 0 | |
-| HALF SIZE P7 NY AM | 0 | 0 | |
-| HALF SIZE K7 NY PM | 0 | 0 | |
-| HALF SIZE K7 London | 0 | 0 | |
-| HALF SIZE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | 0 | 0 | |
+| DO NOT TRADE M7 London | 30 | 0 | None; None; None |
+| DO NOT TRADE K7 NY AM | 30 | 0 | None; None; None |
+| DO NOT TRADE P7 London | 30 | 0 | None; None; None |
+| DO NOT TRADE P7 NY AM | 30 | 0 | None; None; None |
+| DO NOT TRADE K7 NY PM | 30 | 0 | None; None; None |
+| DO NOT TRADE K7 London | 30 | 0 | None; None; None |
+| DO NOT TRADE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | 30 | 0 | None; None; None |
+| HALF SIZE M7 London | 30 | 0 | None; None; None |
+| HALF SIZE P7 London | 30 | 0 | None; None; None |
+| HALF SIZE P7 NY AM | 30 | 0 | None; None; None |
+| HALF SIZE K7 NY PM | 30 | 0 | None; None; None |
+| HALF SIZE K7 London | 30 | 0 | None; None; None |
+| HALF SIZE four weakest (M7 London + P7 NY AM + P7 London + K7 NY AM) | 30 | 0 | None; None; None |
 
 ## Notes
 - Everything is FIRST PASS, in-sample over the 43 months; a window is shown only when every month of it landed for the cell and for the base. "n/l" = not landed. Missing = not finished.
