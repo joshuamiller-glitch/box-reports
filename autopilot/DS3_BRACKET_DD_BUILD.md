@@ -1,6 +1,6 @@
 # DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 09:32Z)
 <!-- PR2:BEGIN -->
-## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 09:23 UTC)
+## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 09:56 UTC)
 
 **Every "not confirmed" issued under the 11-16 morning rule (beat all 6 controls on max DD in HOLD and L6M) is VOID as a negative result: that rule detects a real 10% / 20% max-DD cut only 5-13% of the time (DS3_PASS_RULE.md step 1).** Tiers below use ulcer index (RMS of daily drawdown; + = lower ulcer than JL2) and mean, percentile among 200 persistent-draw controls (PATH ARITHMETIC delta-permutation controls, not engine runs; 0 of the 30 engine-exact draws have landed; engine draws queued on server 2), week-clustered bootstrap (2,000 resamples). Cut-offs (tuned so noise reaches CONFIRMED under 5%): CONFIRMED needs ulcer-or-mean percentile >= 0.85 in L6M and L3M with the other >= 0.25, P(ulcer lower, L6M) >= 0.80, ulcer percentile >= 0.25 in the older windows run; LEAD needs >= 0.75 in L6M and L3M and nothing below 0.25 in any window run. A candidate whose older windows (GAP, PREUW, X') were not run cannot be issued CONFIRMED ("PROVISIONAL"). Old verdict = what its source page said.
 
@@ -82,16 +82,16 @@ Note: the M7 London cap draws realise a share about 0.03-0.06 below the real rul
 | give-back H7 NY AM 40/40 (v2 p) | HOLD | 0.325 | 30 | 21 [30] | 0.282 | 0.86 / 0.62 / 1.00 | 0.66 |  |
 | give-back H7 NY AM 40/40 (v2 p) | GAP | 0.346 | 30 | 21 [30] | 0.446 | 0.48 / 0.81 / 0.57 | 0.57 |  |
 | give-back H7 NY AM 40/40 (v2 p) | PREUW | 0.474 | 30 | 21 [30] | 0.356 | 0.38 / 0.38 / 0.43 | 0.41 |  |
-| give-back H7 NY AM 40/40 (v2 p) | X' | 0.296 | 28 | 19 [28] | 0.423 | 0.26 / 0.47 / 0.84 | 0.42 |  |
-| give-back H7 NY AM 40/40 (v2 p) | pooled validity (months shared with the real cell >= 12): 30 draws pooled, 21 valid, control share 0.373 vs real 0.353 | | | | | | | |
-| give-back H7 NY AM 40/40 (v2 p) | **tier (engine draws, strict 0.05)** | | | | | | | **CONFIRMED** |
-| give-back H7 NY AM 40/40 (v2 p) | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | CONFIRMED |
-| give-back H7 NY AM 50/40 (v2 p) | L3M | 0.444 | 30 | 19 [29] | 0.239 | 0.74 / 1.00 / 0.50 | 0.65 |  |
-| give-back H7 NY AM 50/40 (v2 p) | L6M | 0.316 | 30 | 19 [29] | 0.205 | 0.89 / 1.00 / 0.50 | 0.88 |  |
-| give-back H7 NY AM 50/40 (v2 p) | HOLD | 0.275 | 29 | 19 [28] | 0.266 | 0.84 / 0.58 / 1.00 | 0.65 |  |
-| give-back H7 NY AM 50/40 (v2 p) | GAP | 0.308 | 29 | 19 [28] | 0.394 | 0.42 / 0.58 / 0.34 | 0.51 |  |
-| give-back H7 NY AM 50/40 (v2 p) | PREUW | 0.434 | 28 | 19 [28] | 0.311 | 0.21 / 0.11 / 0.26 | 0.36 |  |
-| give-back H7 NY AM 50/40 (v2 p) | X' | 0.266 | 30 | 19 [29] | 0.393 | 0.05 / 0.26 / 0.89 | 0.37 |  |
+| give-back H7 NY AM 40/40 (v2 p) | X' | 0.296 | 30 | 21 [30] | 0.425 | 0.24 / 0.43 / 0.86 | 0.42 |  |
+| give-back H7 NY AM 40/40 (v2 p) | pooled validity (months shared with the real cell >= 12): 30 draws pooled, 21 valid, control share 0.374 vs real 0.352 | | | | | | | |
+| give-back H7 NY AM 40/40 (v2 p) | **tier (engine draws, strict 0.05)** | | | | | | | **FAIL** |
+| give-back H7 NY AM 40/40 (v2 p) | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | FAIL |
+| give-back H7 NY AM 50/40 (v2 p) | L3M | 0.444 | 30 | 19 [30] | 0.239 | 0.74 / 1.00 / 0.50 | 0.65 |  |
+| give-back H7 NY AM 50/40 (v2 p) | L6M | 0.316 | 30 | 19 [30] | 0.205 | 0.89 / 1.00 / 0.50 | 0.88 |  |
+| give-back H7 NY AM 50/40 (v2 p) | HOLD | 0.275 | 30 | 19 [30] | 0.267 | 0.84 / 0.58 / 1.00 | 0.65 |  |
+| give-back H7 NY AM 50/40 (v2 p) | GAP | 0.308 | 30 | 19 [30] | 0.399 | 0.42 / 0.58 / 0.34 | 0.51 |  |
+| give-back H7 NY AM 50/40 (v2 p) | PREUW | 0.434 | 30 | 19 [30] | 0.318 | 0.21 / 0.11 / 0.26 | 0.36 |  |
+| give-back H7 NY AM 50/40 (v2 p) | X' | 0.266 | 30 | 19 [30] | 0.393 | 0.05 / 0.26 / 0.89 | 0.37 |  |
 | give-back H7 NY AM 50/40 (v2 p) | pooled validity (months shared with the real cell >= 12): 30 draws pooled, 19 valid, control share 0.342 vs real 0.312 | | | | | | | |
 | give-back H7 NY AM 50/40 (v2 p) | **tier (engine draws, strict 0.05)** | | | | | | | **FAIL** |
 | give-back H7 NY AM 50/40 (v2 p) | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | FAIL |
@@ -185,12 +185,12 @@ Note: the M7 London cap draws realise a share about 0.03-0.06 below the real rul
 | give-back P7 Asia 40/40 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
 | give-back P7 Asia 40/40 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
 | give-back P7 Asia 40/40 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
-| give-back H7 Asia 40/40 | L3M | 0.303 | 29 | 0 [0] | 0.335 | not enough valid draws | - |  |
+| give-back H7 Asia 40/40 | L3M | 0.303 | 30 | 0 [0] | 0.343 | not enough valid draws | - |  |
 | give-back H7 Asia 40/40 | L6M | 0.381 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | give-back H7 Asia 40/40 | HOLD | 0.298 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | give-back H7 Asia 40/40 | GAP | 0.269 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | give-back H7 Asia 40/40 | PREUW | 0.387 | 0 | 0 [0] | None | not enough valid draws | - |  |
-| give-back H7 Asia 40/40 | X' | real cell not landed | - | - | - | - | - | - |
+| give-back H7 Asia 40/40 | X' | 0.387 | 0 | 0 [0] | None | not enough valid draws | - |  |
 | give-back H7 Asia 40/40 | pooled validity (months shared with the real cell >= 12): 0 draws pooled, 0 valid, control share n/a vs real n/a | | | | | | | |
 | give-back H7 Asia 40/40 | **tier (engine draws, strict 0.05)** | | | | | | | **NOT FINISHED (recent windows missing)** |
 | give-back H7 Asia 40/40 | tier (engine draws, relaxed 0.10; share bias of the draws, see note) | | | | | | | NOT FINISHED (recent windows missing) |
