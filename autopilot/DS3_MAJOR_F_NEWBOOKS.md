@@ -1,4 +1,4 @@
-# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 20:07Z (unattended loop, every 30 min)
+# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 20:38Z (unattended loop, every 30 min)
 
 > VALIDATION (W-MF, FIRST PASS): trials counted = 3604 standalone cells (wave 1: 109 configs x 4 exits, PREREG_MF.md, ledger MF1; wave 2: 222 configs x 4 exits incl. limit variants, PREREG_MF2.md, ledger MF2); correction = per-family and per-session best-of selection on 2023-04..2025-10 only, then HOLD 2025-11..2026-04 and L6M 2026-05..10 untouched; White RC over the selection cells (1,000 block bootstraps) + deflated Sharpe on the untouched year with N = cells of the group; PBO not computed (selection is a single frozen pick, rolling 12m/3m version shown); engine controls: 30 date-shifted stack controls NOT FINISHED (staged by the loop after the real months land); shifted-label standalone controls (+-11/23/37 days) shown. Data end 2026-10-30 (ES bars end 2026-10-16).
 
@@ -583,6 +583,17 @@ Identity (inert event file, registered book): 202610 PASS (691 vs 691 trades, ne
 | DM3FAILEDBR_lb30rj5_E2 | L6M | 6 | 54 | 16.061 | -0.027 | 18755.264 | 18658.226 | 9416.278 | 9593.892 | -31109.180 | -32843.700 | -15728.040 | -16247.720 | -113.099 | 16789.311 | 32651.895 |
 | DM3FAILEDBR_lb30rj5_E2 | HOLD | 6 | 51 | 133.775 | -0.160 | 9280.225 | 9348.552 | 29372.481 | 29746.949 | -83756.500 | -85535.700 | -37323.640 | -37333.320 | -65.449 | 52057.160 | 16359.965 |
 | DM3FAILEDBR_lb30rj5_E2 | UNT | 12 | 105 | 75.227 | -0.089 | 14378.423 | 14362.201 | 21716.175 | 22003.761 | -83756.500 | -85535.700 | -37323.640 | -37333.320 | -91.449 | 38506.583 | 25133.851 |
+| DM3FAILEDBR_lb30rj5_E2 | ALL43 | 43 | 448 | 120.651 | -0.074 | 7498.827 | 7581.744 | 26029.846 | 24923.865 | -91440.680 | -86998.040 | -38896.220 | -41357.100 | -37.734 | 43616.763 | 13268.053 |
+| DN41000REVE_k03modecont_E36e45 | L6M | 6 | 30 | -370.941 | 0.078 | 18755.264 | 18447.950 | 9416.278 | 9519.006 | -31109.180 | -31363.540 | -15728.040 | -17302.720 | 63.627 | 16658.261 | 32283.913 |
+| R3X4OPENDRIV_W10rm075pb1_E343d9 | L6M | 6 | 63 | -4.253 | -0.049 | 18755.264 | 18650.979 | 9416.278 | 10069.518 | -31109.180 | -34283.540 | -15728.040 | -17282.720 | -100.031 | 17621.656 | 32639.214 |
+| R3X4ORBDIRPU_OR15lvledgectx_E302 | L6M | 6 | 32 | -440.744 | -0.026 | 18755.264 | 18169.713 | 9416.278 | 9924.657 | -31109.180 | -32673.860 | -15728.040 | -18837.400 | -144.807 | 17368.150 | 31796.997 |
+| DW7POWERHOU_t1459k03filtdv_E402 | L6M | 6 | 29 | -16.788 | 0.072 | 18755.264 | 18738.476 | 9416.278 | 9398.955 | -31109.180 | -31109.180 | -15728.040 | -15728.040 | 0.000 | 16448.171 | 32792.332 |
+| R3X4RSI215MI_tf15th5_E310ce | L6M | 6 | 56 | -84.707 | -0.024 | 18755.264 | 18615.854 | 9416.278 | 9456.071 | -31109.180 | -31109.180 | -15728.040 | -12594.800 | -54.703 | 16548.124 | 32577.745 |
+| DW11SESSION_r80_E31445 | L6M | 6 | 22 | 8.964 | 0.022 | 18755.264 | 18654.019 | 9416.278 | 10104.274 | -31109.180 | -36889.780 | -15728.040 | -20808.500 | -110.209 | 17682.479 | 32644.534 |
+| R3X4FAILEDBR_tf15lb120rj10_E1cac | L6M | 6 | 35 | 233.748 | 0.007 | 18755.264 | 18846.502 | 9416.278 | 9609.303 | -31109.180 | -32633.860 | -15728.040 | -15728.040 | -142.510 | 16816.280 | 32981.379 |
+| R3X4OPENDRIV_W5rm075pb1_E39d7a | L6M | 6 | 61 | 285.353 | 0.074 | 18755.264 | 18923.379 | 9416.278 | 9563.872 | -31109.180 | -29073.540 | -15728.040 | -17282.720 | -117.237 | 16736.777 | 33115.914 |
+| R3X4ORBDIRPU_OR15lvlvwapctx_E5c2 | L6M | 6 | 34 | -375.338 | 0.068 | 18755.264 | 18334.064 | 9416.278 | 9728.601 | -31109.180 | -32313.860 | -15728.040 | -15917.400 | -45.861 | 17025.052 | 32084.613 |
+| R3X4RSI215MI_tf15th5_E23ce0 | L6M | 6 | 56 | -209.298 | -0.148 | 18755.264 | 18545.966 | 9416.278 | 9364.801 | -31109.180 | -31109.180 | -15728.040 | -14532.880 | 0.000 | 16388.401 | 32455.440 |
 
 Dollars: engine base lots with $4.84 RT unless the column says x175 (stack scaled x1.75 linearly; lot rounding ignored). others_delta_wk = FREED-BOOK effect: change in the other books' mean $/wk caused by the injected book (shared stack cap, one-position rule, SCR gate).
 
