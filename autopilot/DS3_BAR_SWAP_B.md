@@ -1,7 +1,7 @@
 # DS3 BAR SWAP B (W-SWB): P7 / H7 / A7 / O7 on every bar row
 
 Rule: standing selection rule (CLAUDE.md, user 11-17 18:10Z/18:13Z): pick on the trailing 6 months to the newest data, trailing 3M beside it; validated by rolling walk-forward; older years tolerant (AMBER 15-30% / RED >30% worse than the live bar). FIRST PASS standalone (tape fills, raw chassis, live bracket); engine swap test is section 4.
-Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-17 19:34:44 UTC (loop every 30 min, bi-weekly refit rule); trials counted 4704 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
+Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-17 23:17:50 UTC (loop every 30 min, bi-weekly refit rule); trials counted 39451 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
 
 ## Plain summary
 - Tried: every available bar row (time, activity, information, price, composite as they land) as the signal clock of P7, H7, A7, O7, standalone on the tape with live brackets.
@@ -9,6 +9,31 @@ Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 20
 - Needs in DS7: per row (native NT8 bar type or a custom BarsType with the build rule given).
 - Engine: swap test (section 4) runs only on the picks; until it lands nothing is CONFIRMED.
 - Next: grid re-fit for the top rows, random-clock nulls, engine swap sets TL3_SWB_*.
+
+## 0. Which inputs run on which clock (book x input x source)  [user order 19:45Z item 1]
+Source: NEW = recomputed from the swapped bar series; TIME = still read from time bars (1-min / 5-min / 45-s) built from the clock; CLOCK = wall-clock rule (minutes, sessions). "Transplanted" = live parameters laid over the new bar; "native" = rule rewritten in the bar's own units.
+
+| book | input | transplanted, live settings (sets A/B/C) and refit (G*) | native (sets N*) |
+|---|---|---|---|
+| P7 | trend regime: Supertrend(10, 3.0) on hl2 of 5-min buckets | A: 5-min CLOCK buckets of the new bars; B: every 5th new bar (NEW); ATR comes from the bar ranges of the new series | EMA(fast)/EMA(slow) of the NEW closes in BARS (brick / bar moving average), channel slope, or N-bar streak; no ATR |
+| P7 | pullback level: EMA(20) of 1-min closes | NEW (20 bars of the new series) | NEW: EMA(fast bars) / channel mid / counter-bar count M |
+| P7 | arm window 30 bars, break of the pull bar (T2) | NEW (bars) | NEW (10 / 30 bars) |
+| P7 | speed / volatility measure | none | optional speed gate: bar duration EMA(5) below its trailing median (time per bar; 'spd' sets, non-time bars only) |
+| P7 | 90-minute gap disarm, session / lot table, time guards | CLOCK | CLOCK |
+| P7 | ThreeBar confirmation in NY AM / NY PM (45-s sub-bars), ER ladder (5-min closes), ATR-skip REG (5-min ATR14 of 1-min bars), signal-state St1Dist, NTZ / OTE lines (1-min / 15-min bars) | TIME (engine layers, unchanged by the swap) | TIME (unchanged) |
+| P7 | context cut, new-evidence, trade-health cuts (loss + profit), flat lines, stack cap, day stop, profit locks | tick / L2 / seconds based (no bar input) | same |
+| H7 | HMA(20), HMA(55) of close - VWAP; buckets | A: 5-min CLOCK buckets; B: every 5th new bar; C: every new bar (periods in bars) | periods in BARS (6/17 ... 45/120) and a CLOCK-MATCHED set (periods scaled to the series' median bar duration); EMA filter 50 / 200 bars |
+| H7 | VWAP (day, UTC-4 anchor) | volume of the new bars (NEW) | NEW |
+| H7 | slow-slope confirm, EMA200 on close | NEW (bar count) | NEW (50 / 200 bars or clock-matched) |
+| H7 | slots / session guards, ER ladder, ATR-skip, state features | CLOCK / TIME | CLOCK / TIME |
+| A7 | regime Supertrend(10, 3.0) 10-min; ATR14 on 5-min bars for the level; W15; T1 | A: 10-min / 5-min CLOCK buckets; B: every 10th / 5th new bar | the P7-native rules (EMA / channel / streak) in the Asia session |
+| O7 | open window 09:30 (also 02:00 / 03:00 / 08:30 / 10:00 tested), drive 10 min, hi-lo of the first 5 min (20-day median), pullback window 09:40-09:44 | CLOCK windows; direction of each bar (close vs open) NEW | window start CLOCK; drive = first N bars (3/5/8/12), threshold 0.5 x median hi-lo of the first N/2 bars (20 days), pullback = first counter bar within N/2 bars |
+| O7 | bracket 40 / 90 points, 16:00 time exit | points / CLOCK | points / CLOCK |
+
+Layers that still read TIME bars in every engine test below (version "layers on time bars"): ER ladder, ATR-skip, ThreeBar confirm (P7 NY), signal-state features, NTZ / OTE lines. The version "layers recomputed on the picked bar" is NOT built yet: those five layers are hard-wired to the engine's 1-min / 5-min / 45-s series (replica sim.py on_1m / on_45s); the other layers (cuts, locks, stack cap, day stop) read no bars, so the two versions differ only in those five. Until the recomputation is coded every engine row is "layers on time bars" (stated on the row).
+
+"With layers (fast)" score: no fast replay of the live layer stack on arbitrary-bar trades exists on the box; the exact engine with the full JL3 stack IS the with-layers score, so no row is gated on the naked result: for every weak cell the engine gets the top 5 naked (6M), the top 5 naked (3M), the best row of each bar family and 30 random-clock controls. The swap verdict of a cell is the engine-with-layers row only.
+
 
 ## 1. Fidelity (live time bar vs engine raw chassis S0, sig_ts within 2 s)
 
@@ -42,161 +67,203 @@ Finding: the live bar closes at the FIRST PRINT AFTER the boundary (thin Asia/Lo
 
 ### P7 NY AM
 
-Live bar row `tm60__A`: 6M -1939 pts (n 529, ulcer 1136, maxDD 2315), 3M -1857 pts. PICK (trailing 6M, pick): `cdr_1000__A` 967 pts (n 69, ulcer 39, maxDD 134); 3M-pick: `cdr_1000__A` (agrees).
+Live bar row `tm60__A`: 6M -1939 pts (n 529, ulcer 1136, maxDD 2315), 3M -1857 pts. PICK (trailing 6M, pick): `cdr_1000__NE13_50a10s` 1058 pts (n 68, ulcer 39, maxDD 131); 3M-pick: `tsf_5_700__NC40` (DISAGREES).
+Side by side (trailing-6M pick within each class; WF = rolling pick at month ends, OOS mean pts/month vs live bar; share = months pick beat live bar; older-year worst):
+
+| class | pick row__set | 6M pts | n | ulcer | WF 6M->1M OOS/mo (live) | share beat | WF 6M->2w share beat | older years |
+|---|---|---:|---:|---:|---|---:|---:|---|
+| live-settings | cdr_1000__A | 967 | 69 | 39 | -55.7 (-74.6) | 0.49 | 0.51 | RED |
+| refit | cdr_1000__G20t5 | 967 | 69 | 39 | 29.9 (-74.6) | 0.59 | 0.51 | RED |
+| native | cdr_1000__NE13_50a10s | 1058 | 68 | 39 | 47.0 (-74.6) | 0.54 | 0.49 | RED |
+
+(live-settings = transplanted, live book parameters; refit = transplanted + the book grid; native = bar-native rules, see input table. Earlier rows stay labelled transplanted.)
+
 Top rows on trailing 6M (score = pts/(ulcer+1)):
 
 | row__set | 6M pts | n | ulcer | maxDD | 3M pts | $/wk x live lots (6M) |
 |---|---:|---:|---:|---:|---:|---:|
-| cdr_1000__A | 967 | 69 | 39 | 134 | 625 | 5206 |
+| cdr_1000__NE13_50a10s | 1058 | 68 | 39 | 131 | 665 | 5699 |
+| cdr_1000__NE13_50a30s | 1041 | 69 | 39 | 131 | 665 | 5606 |
 | cdr_1000__G20t5 | 967 | 69 | 39 | 134 | 625 | 5206 |
-| cdr_1000__G20k3 | 614 | 64 | 56 | 149 | 329 | 3308 |
-| frenko_112__A | 682 | 65 | 77 | 186 | 290 | 3671 |
-| mrenko_56__A | 1053 | 166 | 186 | 456 | 424 | 5669 |
-| rc1200s1__A | 534 | 74 | 97 | 244 | 439 | 2877 |
-| frenko_112__B | 506 | 58 | 105 | 199 | 318 | 2727 |
-| cdr_250__G40k8 | 1011 | 359 | 211 | 497 | 488 | 5443 |
-| drb_3500__B | 1253 | 225 | 272 | 608 | 881 | 6747 |
-| mom_112__A | 886 | 81 | 205 | 524 | 194 | 4772 |
-| mom_80__A | 786 | 168 | 187 | 469 | 543 | 4234 |
-| trb_10000__A | 594 | 104 | 141 | 359 | 350 | 3196 |
+| cdr_1000__A | 967 | 69 | 39 | 134 | 625 | 5206 |
+| mom_20__NC10s | 3448 | 459 | 166 | 559 | 1922 | 18566 |
+| renko_40__G40k3 | 1928 | 160 | 93 | 361 | 925 | 10382 |
+| trend_112__NC20 | 614 | 30 | 35 | 121 | 396 | 3306 |
+| wrenko_112__NC20 | 614 | 30 | 35 | 121 | 396 | 3306 |
+| swing_pct_35__NE5_20a30s | 952 | 48 | 57 | 252 | 362 | 5126 |
+| swing_pct_35__NE5_20a10s | 952 | 48 | 57 | 252 | 362 | 5126 |
+| vrb_10000__NC20 | 1237 | 76 | 79 | 213 | 763 | 6660 |
+| tm900__NS4_1 | 591 | 30 | 38 | 150 | 192 | 3182 |
 
 Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; ref = live bar; share = periods pick beat live bar):
 
 | procedure | periods | OOS mean/mo | live-bar mean/mo | share beat | OOS ulcer | live ulcer |
 |---|---:|---:|---:|---:|---:|---:|
-| 6M->1M | 37 | -73.4 | -74.6 | 0.43 | 1756 | 2066 |
-| 6M->3M | 37 | -39.5 | -88.1 | 0.59 | 3210 | 5992 |
-| 3M->1M | 37 | -7.7 | -74.6 | 0.59 | 748 | 2066 |
-| 3M->3M | 37 | -21.4 | -88.1 | 0.68 | 2062 | 5992 |
-| 12M->1M | 37 | 1.4 | -74.6 | 0.49 | 1059 | 2066 |
-| 12M->3M | 37 | -10.8 | -88.1 | 0.65 | 2180 | 5992 |
-| 6M->2w | 37 | -12.5 | 10.7 | 0.49 | 1085 | 1648 |
+| 6M->1M | 37 | 3.3 | -74.6 | 0.51 | 826 | 2066 |
+| 6M->3M | 37 | 10.6 | -88.1 | 0.65 | 1620 | 5992 |
+| 3M->1M | 37 | 0.9 | -74.6 | 0.62 | 410 | 2066 |
+| 3M->3M | 37 | 27.6 | -88.1 | 0.68 | 637 | 5992 |
+| 12M->1M | 37 | 76.1 | -74.6 | 0.62 | 582 | 2066 |
+| 12M->3M | 37 | 30.9 | -88.1 | 0.49 | 1874 | 5992 |
+| 6M->2w | 37 | -53.0 | 10.7 | 0.46 | 1034 | 1648 |
 
-Nulls (same pick procedure): shift11: OOS -54.9/mo share beat 0.49; shift23: OOS -85.6/mo share beat 0.46; shift37: OOS -58.9/mo share beat 0.65; random-clock pool: OOS -13.7/mo share beat 0.51
+Nulls (same pick procedure): shift11: OOS 16.9/mo share beat 0.59; shift23: OOS 33.8/mo share beat 0.62; shift37: OOS -32.1/mo share beat 0.57; random-clock pool: OOS 64.4/mo share beat 0.65
 
-Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -75 vs -79 (n 36); +3M 2 vs -102 (n 34); +6M -32 vs -98 (n 31)
+Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 4 vs -79 (n 36); +3M 45 vs -102 (n 34); +6M -95 vs -98 (n 31)
 
 Older-year check of the pick vs live bar (worse%: + = pick worse): worst = **RED**
 
 | window | pick pts/wk | live pts/wk | mean | ulcer | maxDD | lab |
 |---|---:|---:|---:|---:|---:|---|
-| PRIOR12M | 9.8 | -41.1 | -124% | -90% | -82% | GREEN |
-| Y2023 | 0.0 | 77.9 | +100% | -100% | -100% | RED |
-| Y2024 | 0.0 | 1.6 | +100% | -100% | -100% | RED |
-| Y2025 | 12.5 | -30.5 | -141% | -89% | -83% | GREEN |
-| Y2026 | 1.5 | -7.7 | -120% | -77% | -75% | GREEN |
+| PRIOR12M | 18.6 | -41.1 | -145% | -91% | -86% | GREEN |
+| Y2023 | -15.0 | 77.9 | +119% | +151% | +35% | RED |
+| Y2024 | -7.7 | 1.6 | +581% | -30% | -21% | RED |
+| Y2025 | 16.4 | -30.5 | -154% | -90% | -87% | GREEN |
+| Y2026 | 18.8 | -7.7 | -345% | -75% | -71% | GREEN |
 
-Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.203, 'spa_p': 0.189, 'T': 26, 'K': 628}
+Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.468, 'spa_p': 0.001, 'T': 26, 'K': 11994}
 
-**Deliverable row**: P7 NY AM: bar today 1-minute time (live) -> proposed cdr_1000 | construction: cdr_1000 (cumulative-delta-range bar: closes when (max - min) of the running cumulative delta inside the bar >= D) | param set A | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: custom BarsType | scaling: size x s_vol; s_vol = trailing-20-prior-trading-date median of daily volume / R0 (R0 = median of the first 60 trading dates 2023-04..06, a unit consta (new custom BarsType)
+**Deliverable row**: P7 NY AM: bar today 1-minute time (live) -> proposed cdr_1000 | construction: cdr_1000 (cumulative-delta-range bar: closes when (max - min) of the running cumulative delta inside the bar >= D) | param set NE13_50a10s | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: custom BarsType | scaling: size x s_vol; s_vol = trailing-20-prior-trading-date median of daily volume / R0 (R0 = median of the first 60 trading dates 2023-04..06, a unit consta (new custom BarsType)
 
 ### P7 London
 
-Live bar row `tm60__A`: 6M 1575 pts (n 559, ulcer 200, maxDD 470), 3M 450 pts. PICK (trailing 6M, pick): `rng_80__A` 1804 pts (n 110, ulcer 69, maxDD 212); 3M-pick: `cdr_400__G10k5` (DISAGREES).
+Live bar row `tm60__A`: 6M 1575 pts (n 559, ulcer 200, maxDD 470), 3M 450 pts. PICK (trailing 6M, pick): `wrenko_56__NC40` 913 pts (n 31, ulcer 26, maxDD 65); 3M-pick: `vnorm_400__NS6_1` (DISAGREES).
+Side by side (trailing-6M pick within each class; WF = rolling pick at month ends, OOS mean pts/month vs live bar; share = months pick beat live bar; older-year worst):
+
+| class | pick row__set | 6M pts | n | ulcer | WF 6M->1M OOS/mo (live) | share beat | WF 6M->2w share beat | older years |
+|---|---|---:|---:|---:|---|---:|---:|---|
+| live-settings | rng_80__A | 1804 | 110 | 69 | -30.5 (-17.6) | 0.46 | 0.54 | RED |
+| refit | dol_1700__G40k8 | 2050 | 125 | 62 | -48.2 (-17.6) | 0.49 | 0.54 | RED |
+| native | lbrk_5_10__NC40 | 2389 | 157 | 46 | -37.2 (-17.6) | 0.57 | 0.49 | RED |
+
+(live-settings = transplanted, live book parameters; refit = transplanted + the book grid; native = bar-native rules, see input table. Earlier rows stay labelled transplanted.)
+
 Top rows on trailing 6M (score = pts/(ulcer+1)):
 
 | row__set | 6M pts | n | ulcer | maxDD | 3M pts | $/wk x live lots (6M) |
 |---|---:|---:|---:|---:|---:|---:|
+| lbrk_5_10__NC40 | 2389 | 157 | 46 | 141 | 1321 | 12865 |
+| wrenko_56__NC40 | 913 | 31 | 26 | 65 | 576 | 4918 |
+| trend_56__NC40 | 913 | 31 | 26 | 65 | 576 | 4918 |
+| dol_1700__G40k8 | 2050 | 125 | 62 | 244 | 539 | 11041 |
+| rng_80__G20k3 | 1815 | 114 | 61 | 200 | 657 | 9773 |
+| cusum_80__G20k3 | 1961 | 115 | 71 | 229 | 629 | 10562 |
 | rng_80__A | 1804 | 110 | 69 | 212 | 408 | 9713 |
-| cusum_80__A | 1918 | 112 | 85 | 272 | 349 | 10330 |
-| tm1800__A | 1156 | 65 | 64 | 189 | 306 | 6224 |
-| cdr_400__G10k5 | 1203 | 82 | 70 | 186 | 727 | 6476 |
-| cusum_80__B | 1585 | 110 | 94 | 283 | 276 | 8536 |
-| kagi_40__B | 1618 | 153 | 98 | 298 | 929 | 8714 |
-| dchg_40__B | 1618 | 153 | 98 | 298 | 929 | 8714 |
-| cdr_400__G10k3 | 1156 | 94 | 72 | 186 | 580 | 6223 |
-| rng_80__B | 1257 | 105 | 80 | 255 | 304 | 6770 |
-| rc60s4__B | 2808 | 527 | 207 | 498 | 1213 | 15120 |
-| rng_40__A | 1972 | 299 | 149 | 496 | 1162 | 10616 |
-| rc60s3__B | 2114 | 547 | 162 | 501 | 820 | 11383 |
+| rng_80__G20t5 | 1804 | 110 | 69 | 212 | 408 | 9713 |
+| tsf_25_40__NE5_20a10 | 1477 | 119 | 61 | 215 | 858 | 7954 |
+| tsf_25_40__NE5_20a30 | 1477 | 119 | 61 | 215 | 858 | 7954 |
+| renko_20__NE20_80a30s | 1287 | 85 | 54 | 192 | 982 | 6931 |
+| wrenko_56__G20k3 | 949 | 54 | 40 | 105 | 293 | 5109 |
 
 Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; ref = live bar; share = periods pick beat live bar):
 
 | procedure | periods | OOS mean/mo | live-bar mean/mo | share beat | OOS ulcer | live ulcer |
 |---|---:|---:|---:|---:|---:|---:|
-| 6M->1M | 37 | -17.3 | -17.6 | 0.46 | 607 | 1806 |
-| 6M->3M | 37 | -41.2 | -18.0 | 0.46 | 3841 | 5373 |
-| 3M->1M | 37 | -10.4 | -17.6 | 0.51 | 708 | 1806 |
-| 3M->3M | 37 | -1.7 | -18.0 | 0.62 | 1300 | 5373 |
-| 12M->1M | 37 | -42.0 | -17.6 | 0.49 | 1075 | 1806 |
-| 12M->3M | 37 | -49.1 | -18.0 | 0.43 | 4787 | 5373 |
-| 6M->2w | 37 | -0.8 | -101.3 | 0.54 | 404 | 2126 |
+| 6M->1M | 37 | -59.6 | -17.6 | 0.49 | 2163 | 1806 |
+| 6M->3M | 37 | -58.5 | -18.0 | 0.54 | 4554 | 5373 |
+| 3M->1M | 37 | -21.8 | -17.6 | 0.59 | 649 | 1806 |
+| 3M->3M | 37 | -23.6 | -18.0 | 0.51 | 1379 | 5373 |
+| 12M->1M | 37 | -21.9 | -17.6 | 0.57 | 734 | 1806 |
+| 12M->3M | 37 | -13.0 | -18.0 | 0.46 | 1880 | 5373 |
+| 6M->2w | 37 | -29.3 | -101.3 | 0.46 | 1088 | 2126 |
 
-Nulls (same pick procedure): shift11: OOS -3.9/mo share beat 0.49; shift23: OOS -26.1/mo share beat 0.49; shift37: OOS 20.6/mo share beat 0.51; random-clock pool: OOS -31.6/mo share beat 0.39
+Nulls (same pick procedure): shift11: OOS -35.4/mo share beat 0.49; shift23: OOS -70.9/mo share beat 0.49; shift37: OOS -9.5/mo share beat 0.54; random-clock pool: OOS -10.4/mo share beat 0.49
 
-Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -18 vs -14 (n 36); +3M -99 vs -22 (n 34); +6M -63 vs 6 (n 31)
+Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -72 vs -14 (n 36); +3M -60 vs -22 (n 34); +6M 30 vs 6 (n 31)
 
 Older-year check of the pick vs live bar (worse%: + = pick worse): worst = **RED**
 
 | window | pick pts/wk | live pts/wk | mean | ulcer | maxDD | lab |
 |---|---:|---:|---:|---:|---:|---|
-| PRIOR12M | 18.7 | 0.7 | -2713% | -74% | -73% | GREEN |
-| Y2023 | 0.0 | 20.1 | +100% | -100% | -100% | RED |
-| Y2024 | -13.9 | -32.4 | -57% | -79% | -64% | GREEN |
-| Y2025 | 20.2 | -11.3 | -278% | -89% | -83% | GREEN |
-| Y2026 | 10.6 | -4.6 | -329% | -79% | -70% | GREEN |
+| PRIOR12M | -11.2 | 0.7 | +1779% | -41% | -47% | RED |
+| Y2023 | -0.3 | 20.1 | +102% | -56% | -62% | RED |
+| Y2024 | -12.7 | -32.4 | -61% | -71% | -64% | GREEN |
+| Y2025 | -7.7 | -11.3 | -32% | -68% | -70% | GREEN |
+| Y2026 | -21.9 | -4.6 | +372% | -64% | -60% | RED |
 
-Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.894, 'spa_p': 0.772, 'T': 26, 'K': 558}
+Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.975, 'spa_p': 0.442, 'T': 26, 'K': 9157}
 
-**Deliverable row**: P7 London: bar today 1-minute time (live) -> proposed rng_80 | construction: rng_80 (true range bar: bar closes when a print would make high-low > N ticks; that print opens the next bar; known at that print) | param set A | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: native Range (verify: NT8 closes when range reaches N ticks; see step C) | scaling: size x s_rng (same, daily high-low range in points) (native)
+**Deliverable row**: P7 London: bar today 1-minute time (live) -> proposed wrenko_56 | construction: wrenko_56 (Renko with wicks (BetterRenko style): classic Renko bricks whose high/low include the raw print extremes since the previous brick) | param set NC40 | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: custom BarsType (BetterRenko third-party) | scaling: size x s_rng (same, daily high-low range in points) (new custom BarsType)
 
 ### H7 NY AM
 
-Live bar row `tm60__A`: 6M 874 pts (n 86, ulcer 86, maxDD 245), 3M 445 pts. PICK (trailing 6M, pick): `vol_6000__A` 992 pts (n 43, ulcer 42, maxDD 135); 3M-pick: `drb_2000__B` (DISAGREES).
+Live bar row `tm60__A`: 6M 874 pts (n 86, ulcer 86, maxDD 245), 3M 445 pts. PICK (trailing 6M, pick): `tm300__NH20_55e50` 1513 pts (n 91, ulcer 35, maxDD 123); 3M-pick: `drb_2000__B` (DISAGREES).
+Side by side (trailing-6M pick within each class; WF = rolling pick at month ends, OOS mean pts/month vs live bar; share = months pick beat live bar; older-year worst):
+
+| class | pick row__set | 6M pts | n | ulcer | WF 6M->1M OOS/mo (live) | share beat | WF 6M->2w share beat | older years |
+|---|---|---:|---:|---:|---|---:|---:|---|
+| live-settings | vol_6000__A | 992 | 43 | 42 | -45.8 (12.1) | 0.43 | 0.46 | RED |
+| refit | cdr_250__G12_34k3 | 768 | 61 | 110 | 4.7 (55.3) | 0.53 | 0.59 | RED |
+| native | tm300__NH20_55e50 | 1513 | 91 | 35 | 29.8 (12.1) | 0.57 | 0.65 | RED |
+
+(live-settings = transplanted, live book parameters; refit = transplanted + the book grid; native = bar-native rules, see input table. Earlier rows stay labelled transplanted.)
+
 Top rows on trailing 6M (score = pts/(ulcer+1)):
 
 | row__set | 6M pts | n | ulcer | maxDD | 3M pts | $/wk x live lots (6M) |
 |---|---:|---:|---:|---:|---:|---:|
+| tm300__NH20_55e50 | 1513 | 91 | 35 | 123 | 489 | 2328 |
+| tm300__NHc | 1392 | 93 | 40 | 125 | 428 | 2142 |
 | vol_6000__A | 992 | 43 | 42 | 135 | 452 | 1527 |
-| tm300__A | 1010 | 80 | 49 | 181 | 490 | 1554 |
 | tm300__C | 1010 | 80 | 49 | 181 | 490 | 1554 |
+| tm300__NH20_55e200 | 1010 | 80 | 49 | 181 | 490 | 1554 |
+| tm300__A | 1010 | 80 | 49 | 181 | 490 | 1554 |
 | drb_2000__B | 1073 | 45 | 61 | 207 | 698 | 1651 |
+| dib_15000__A | 786 | 55 | 48 | 135 | 386 | 1209 |
 | vsess_200__A | 1071 | 88 | 66 | 172 | 440 | 1648 |
 | mrenko_28__B | 852 | 46 | 56 | 132 | 373 | 1311 |
 | tsf_10_60__B | 784 | 30 | 53 | 181 | 204 | 1207 |
 | trb_3500__A | 710 | 49 | 49 | 167 | 443 | 1092 |
-| vnorm_150__A | 823 | 50 | 58 | 182 | 380 | 1266 |
-| rc60s3__B | 840 | 73 | 63 | 185 | 540 | 1292 |
-| dib_6000__B | 1371 | 125 | 105 | 295 | 793 | 2110 |
-| vib_400__A | 960 | 86 | 74 | 184 | 381 | 1478 |
 
 Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; ref = live bar; share = periods pick beat live bar):
 
 | procedure | periods | OOS mean/mo | live-bar mean/mo | share beat | OOS ulcer | live ulcer |
 |---|---:|---:|---:|---:|---:|---:|
-| 6M->1M | 37 | -63.5 | 12.1 | 0.41 | 2059 | 668 |
-| 6M->3M | 37 | -7.3 | 4.9 | 0.51 | 1899 | 2222 |
-| 3M->1M | 37 | 48.5 | 12.1 | 0.68 | 346 | 668 |
-| 3M->3M | 37 | 23.5 | 4.9 | 0.65 | 656 | 2222 |
-| 12M->1M | 37 | -33.9 | 12.1 | 0.41 | 724 | 668 |
-| 12M->3M | 37 | -15.0 | 4.9 | 0.43 | 1750 | 2222 |
-| 6M->2w | 37 | -35.4 | 4.3 | 0.46 | 680 | 458 |
+| 6M->1M | 37 | -37.5 | 12.1 | 0.41 | 1108 | 668 |
+| 6M->3M | 37 | 1.5 | 4.9 | 0.43 | 1516 | 2222 |
+| 3M->1M | 37 | 9.4 | 12.1 | 0.54 | 522 | 668 |
+| 3M->3M | 37 | 9.9 | 4.9 | 0.62 | 872 | 2222 |
+| 12M->1M | 37 | -26.4 | 12.1 | 0.46 | 1057 | 668 |
+| 12M->3M | 37 | 7.8 | 4.9 | 0.46 | 1244 | 2222 |
+| 6M->2w | 37 | -104.7 | 4.3 | 0.46 | 1396 | 458 |
 
-Nulls (same pick procedure): shift11: OOS -29.3/mo share beat 0.49; shift23: OOS -16.8/mo share beat 0.54; shift37: OOS -23.0/mo share beat 0.54; random-clock pool: OOS 20.4/mo share beat 0.68
+Nulls (same pick procedure): shift11: OOS 15.4/mo share beat 0.54; shift23: OOS 12.6/mo share beat 0.57; shift37: OOS 2.4/mo share beat 0.59; random-clock pool: OOS 67.4/mo share beat 0.68
 
-Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -68 vs 12 (n 36); +3M 43 vs 10 (n 34); +6M 68 vs 27 (n 31)
+Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -39 vs 12 (n 36); +3M 19 vs 10 (n 34); +6M 63 vs 27 (n 31)
 
 Older-year check of the pick vs live bar (worse%: + = pick worse): worst = **RED**
 
 | window | pick pts/wk | live pts/wk | mean | ulcer | maxDD | lab |
 |---|---:|---:|---:|---:|---:|---|
-| PRIOR12M | -1.0 | -7.5 | -86% | -37% | -24% | GREEN |
-| Y2023 | 0.0 | 1.9 | +100% | -100% | -100% | RED |
-| Y2024 | 8.2 | -27.5 | -130% | -88% | -82% | GREEN |
-| Y2025 | -0.4 | 14.1 | +103% | -61% | -33% | RED |
-| Y2026 | 1.3 | 4.8 | +73% | -46% | -58% | RED |
+| PRIOR12M | -2.4 | -7.5 | -68% | +7% | +15% | GREEN |
+| Y2023 | 0.3 | 1.9 | +84% | +1% | -21% | RED |
+| Y2024 | -21.4 | -27.5 | -22% | -19% | -17% | GREEN |
+| Y2025 | 20.0 | 14.1 | -42% | +13% | +6% | GREEN |
+| Y2026 | 20.9 | 4.8 | -336% | -3% | +4% | GREEN |
 
-Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 1.0, 'spa_p': 0.987, 'T': 26, 'K': 693}
+Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 1.0, 'spa_p': 0.864, 'T': 26, 'K': 707}
 
-**Deliverable row**: H7 NY AM: bar today 1-minute time (live) -> proposed vol_6000 | construction: vol_6000 (volume bar: closes when cumulative contracts >= N; closing print belongs to the closing bar (NT8 splits the closing print across bars; see C)) | param set A | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: native Volume | scaling: size x s_vol; s_vol = trailing-20-prior-trading-date median of daily volume / R0 (R0 = median of the first 60 trading dates 2023-04..06, a unit consta (native)
+**Deliverable row**: H7 NY AM: bar today 1-minute time (live) -> proposed tm300 | construction: 5-minute time bar | param set NH20_55e50 | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: native NT8 Minute bar (OnBarClose at the first print after the boundary) (native)
 
 ### O7 NY AM
 
-Live bar row `tm60__A`: 6M 141 pts (n 65, ulcer 232, maxDD 445), 3M -3 pts. PICK (trailing 6M, pick): `frenko_56__A` 896 pts (n 56, ulcer 99, maxDD 225); 3M-pick: `tm10__A` (DISAGREES).
+Live bar row `tm60__A`: 6M 141 pts (n 65, ulcer 232, maxDD 445), 3M -3 pts. PICK (trailing 6M, pick): `pasl_20__A` 772 pts (n 42, ulcer 70, maxDD 162); 3M-pick: `tm10__A` (DISAGREES).
+Side by side (trailing-6M pick within each class; WF = rolling pick at month ends, OOS mean pts/month vs live bar; share = months pick beat live bar; older-year worst):
+
+| class | pick row__set | 6M pts | n | ulcer | WF 6M->1M OOS/mo (live) | share beat | WF 6M->2w share beat | older years |
+|---|---|---:|---:|---:|---|---:|---:|---|
+| live-settings | pasl_20__A | 772 | 42 | 70 | 55.2 (123.9) | 0.30 | 0.32 | RED |
+| refit | cdr_400__G1000_10 | 422 | 32 | 92 | 17.0 (97.8) | 0.33 | 0.27 | RED |
+| native | tm300__NO1000_12 | 762 | 67 | 77 | 6.8 (123.9) | 0.38 | 0.30 | RED |
+
+(live-settings = transplanted, live book parameters; refit = transplanted + the book grid; native = bar-native rules, see input table. Earlier rows stay labelled transplanted.)
+
 Top rows on trailing 6M (score = pts/(ulcer+1)):
 
 | row__set | 6M pts | n | ulcer | maxDD | 3M pts | $/wk x live lots (6M) |
 |---|---:|---:|---:|---:|---:|---:|
+| pasl_20__A | 772 | 42 | 70 | 162 | 402 | 1188 |
+| tm300__NO1000_12 | 762 | 67 | 77 | 162 | 53 | 1173 |
 | frenko_56__A | 896 | 56 | 99 | 225 | 250 | 1379 |
 | vsess_200__A | 692 | 60 | 85 | 188 | 289 | 1065 |
 | vnorm_700__A | 841 | 66 | 111 | 266 | 437 | 1293 |
@@ -207,74 +274,82 @@ Top rows on trailing 6M (score = pts/(ulcer+1)):
 | cusum_40__A | 605 | 59 | 110 | 299 | 339 | 931 |
 | rng_28__A | 483 | 62 | 89 | 234 | 118 | 744 |
 | urenko_28__A | 663 | 64 | 124 | 330 | 428 | 1019 |
-| swing_atr_0.4__A | 514 | 58 | 106 | 243 | 168 | 791 |
-| tm10__A | 614 | 62 | 132 | 321 | 600 | 945 |
 
 Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; ref = live bar; share = periods pick beat live bar):
 
 | procedure | periods | OOS mean/mo | live-bar mean/mo | share beat | OOS ulcer | live ulcer |
 |---|---:|---:|---:|---:|---:|---:|
-| 6M->1M | 37 | 64.2 | 123.9 | 0.35 | 186 | 157 |
-| 6M->3M | 37 | 78.0 | 125.9 | 0.30 | 292 | 202 |
-| 3M->1M | 37 | 96.5 | 123.9 | 0.41 | 229 | 157 |
-| 3M->3M | 37 | 78.7 | 125.9 | 0.35 | 357 | 202 |
-| 12M->1M | 37 | 78.1 | 123.9 | 0.51 | 189 | 157 |
-| 12M->3M | 37 | 88.2 | 125.9 | 0.38 | 209 | 202 |
-| 6M->2w | 37 | 33.2 | 125.7 | 0.35 | 286 | 146 |
+| 6M->1M | 37 | 41.3 | 123.9 | 0.30 | 220 | 157 |
+| 6M->3M | 37 | 62.1 | 125.9 | 0.22 | 251 | 202 |
+| 3M->1M | 37 | 51.0 | 123.9 | 0.30 | 226 | 157 |
+| 3M->3M | 37 | 47.5 | 125.9 | 0.22 | 356 | 202 |
+| 12M->1M | 37 | 35.5 | 123.9 | 0.30 | 262 | 157 |
+| 12M->3M | 37 | 48.0 | 125.9 | 0.14 | 323 | 202 |
+| 6M->2w | 37 | -29.0 | 125.7 | 0.30 | 404 | 146 |
 
-Nulls (same pick procedure): shift11: OOS 82.8/mo share beat 0.35; shift23: OOS 77.3/mo share beat 0.35; shift37: OOS 92.7/mo share beat 0.43; random-clock pool: OOS 0.0/mo share beat 1.00
+Nulls (same pick procedure): shift11: OOS 50.5/mo share beat 0.35; shift23: OOS 65.8/mo share beat 0.32; shift37: OOS 61.4/mo share beat 0.32; random-clock pool: OOS 100.8/mo share beat 0.41
 
-Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 63 vs 122 (n 36); +3M 82 vs 141 (n 34); +6M 86 vs 138 (n 31)
+Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 42 vs 122 (n 36); +3M 98 vs 141 (n 34); +6M 121 vs 138 (n 31)
 
 Older-year check of the pick vs live bar (worse%: + = pick worse): worst = **RED**
 
 | window | pick pts/wk | live pts/wk | mean | ulcer | maxDD | lab |
 |---|---:|---:|---:|---:|---:|---|
-| PRIOR12M | 16.8 | 45.5 | +63% | +90% | +22% | RED |
-| Y2023 | 0.0 | -13.3 | -100% | -100% | -100% | GREEN |
-| Y2024 | 2.2 | 40.2 | +94% | -78% | -38% | RED |
-| Y2025 | 16.4 | 26.6 | +38% | +9% | +22% | RED |
-| Y2026 | 9.8 | 58.8 | +83% | +197% | +86% | RED |
+| PRIOR12M | 34.9 | 45.5 | +23% | +6% | -11% | AMBER |
+| Y2023 | -8.3 | -13.3 | -37% | +25% | +8% | AMBER |
+| Y2024 | 39.9 | 40.2 | +1% | -24% | -26% | GREEN |
+| Y2025 | 30.2 | 26.6 | -13% | -31% | -25% | GREEN |
+| Y2026 | 14.8 | 58.8 | +75% | +94% | +39% | RED |
 
-Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.646, 'spa_p': 0.428, 'T': 26, 'K': 210}
+Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.67, 'spa_p': 0.441, 'T': 26, 'K': 229}
 
-**Deliverable row**: O7 NY AM: bar today 1-minute time (live) -> proposed frenko_56 | construction: frenko_56 (flex / hybrid Renko: trend brick N, reversal bar of 0.5N opening at last close) | param set A | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: custom BarsType (FlexRenko/HybridRenko third-party) | scaling: size x s_rng (same, daily high-low range in points) (new custom BarsType)
+**Deliverable row**: O7 NY AM: bar today 1-minute time (live) -> proposed pasl_20 | construction: pasl_20 (price-action swing legs: pivot confirmed by a retrace of max(N ticks, 0.5 x previous completed leg); bar = leg) | param set A | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: custom BarsType | scaling: size x s_rng (same, daily high-low range in points) (new custom BarsType)
 
 ### A7 Asia (phase 2)
 
 Live bar row `tm60__A`: 6M -160 pts (n 367, ulcer 475, maxDD 1039), 3M -323 pts. PICK (trailing 6M, pick): `tm900__A` 679 pts (n 31, ulcer 30, maxDD 106); 3M-pick: `tsf_5_200__B` (DISAGREES).
+Side by side (trailing-6M pick within each class; WF = rolling pick at month ends, OOS mean pts/month vs live bar; share = months pick beat live bar; older-year worst):
+
+| class | pick row__set | 6M pts | n | ulcer | WF 6M->1M OOS/mo (live) | share beat | WF 6M->2w share beat | older years |
+|---|---|---:|---:|---:|---|---:|---:|---|
+| live-settings | tm900__A | 679 | 31 | 30 | 68.6 (84.8) | 0.51 | 0.43 | RED |
+| refit | cdr_400__Gt10k2 | 420 | 30 | 48 | -60.6 (63.7) | 0.18 | 0.12 | RED |
+| native | tm300__NC20 | 1872 | 329 | 242 | 47.0 (84.8) | 0.49 | 0.41 | RED |
+
+(live-settings = transplanted, live book parameters; refit = transplanted + the book grid; native = bar-native rules, see input table. Earlier rows stay labelled transplanted.)
+
 Top rows on trailing 6M (score = pts/(ulcer+1)):
 
 | row__set | 6M pts | n | ulcer | maxDD | 3M pts | $/wk x live lots (6M) |
 |---|---:|---:|---:|---:|---:|---:|
 | tm900__A | 679 | 31 | 30 | 106 | 182 | 1045 |
+| pasl_28__A | 976 | 101 | 57 | 123 | 716 | 1501 |
 | tm300__A | 856 | 55 | 62 | 154 | 670 | 1317 |
+| pasl_40__B | 678 | 55 | 49 | 125 | 346 | 1043 |
 | renko_40__B | 801 | 62 | 59 | 182 | 325 | 1233 |
 | tsf_5_200__B | 825 | 45 | 64 | 284 | 565 | 1269 |
 | drb_2000__A | 651 | 41 | 57 | 122 | 363 | 1001 |
 | lbrk_3_40__B | 539 | 39 | 54 | 182 | 370 | 829 |
 | mrenko_40__B | 662 | 81 | 66 | 189 | 211 | 1018 |
-| rc300s1__B | 843 | 143 | 90 | 242 | 203 | 1298 |
 | renko_14__A | 1483 | 353 | 161 | 410 | 1063 | 2282 |
 | tsf_5_200__A | 954 | 59 | 108 | 222 | 837 | 1468 |
 | lbrk_4_10__B | 1224 | 222 | 141 | 361 | 622 | 1883 |
-| cdr_400__Gt10k2 | 420 | 30 | 48 | 122 | 313 | 646 |
 
 Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; ref = live bar; share = periods pick beat live bar):
 
 | procedure | periods | OOS mean/mo | live-bar mean/mo | share beat | OOS ulcer | live ulcer |
 |---|---:|---:|---:|---:|---:|---:|
-| 6M->1M | 37 | 28.6 | 84.8 | 0.41 | 858 | 299 |
-| 6M->3M | 37 | 36.9 | 90.4 | 0.35 | 882 | 571 |
-| 3M->1M | 37 | 87.3 | 84.8 | 0.57 | 176 | 299 |
-| 3M->3M | 37 | 60.0 | 90.4 | 0.46 | 543 | 571 |
-| 12M->1M | 37 | 63.2 | 84.8 | 0.38 | 319 | 299 |
-| 12M->3M | 37 | 57.9 | 90.4 | 0.35 | 309 | 571 |
-| 6M->2w | 37 | 21.9 | 114.1 | 0.46 | 504 | 211 |
+| 6M->1M | 37 | 54.4 | 84.8 | 0.46 | 162 | 299 |
+| 6M->3M | 37 | 39.1 | 90.4 | 0.32 | 336 | 571 |
+| 3M->1M | 37 | 56.4 | 84.8 | 0.51 | 195 | 299 |
+| 3M->3M | 37 | 41.8 | 90.4 | 0.38 | 618 | 571 |
+| 12M->1M | 37 | 77.1 | 84.8 | 0.51 | 144 | 299 |
+| 12M->3M | 37 | 66.2 | 90.4 | 0.35 | 191 | 571 |
+| 6M->2w | 37 | 34.6 | 114.1 | 0.38 | 210 | 211 |
 
-Nulls (same pick procedure): shift11: OOS 31.5/mo share beat 0.43; shift23: OOS 49.5/mo share beat 0.51; shift37: OOS 14.9/mo share beat 0.43; random-clock pool: OOS 75.9/mo share beat 0.46
+Nulls (same pick procedure): shift11: OOS 72.2/mo share beat 0.49; shift23: OOS 29.0/mo share beat 0.51; shift37: OOS 19.1/mo share beat 0.43; random-clock pool: OOS 66.0/mo share beat 0.43
 
-Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 28 vs 89 (n 36); +3M 48 vs 94 (n 34); +6M 78 vs 87 (n 31)
+Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 54 vs 89 (n 36); +3M 50 vs 94 (n 34); +6M 110 vs 87 (n 31)
 
 Older-year check of the pick vs live bar (worse%: + = pick worse): worst = **RED**
 
@@ -286,63 +361,83 @@ Older-year check of the pick vs live bar (worse%: + = pick worse): worst = **RED
 | Y2025 | 3.2 | 20.8 | +85% | -20% | -46% | RED |
 | Y2026 | 39.7 | 55.3 | +28% | -86% | -87% | AMBER |
 
-Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.025, 'spa_p': 0.134, 'T': 26, 'K': 517}
+Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.052, 'spa_p': 0.139, 'T': 26, 'K': 516}
 
 **Deliverable row**: A7 Asia: bar today 1-minute time (live) -> proposed tm900 | construction: 15-minute time bar | param set A | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: native NT8 Minute bar (OnBarClose at the first print after the boundary) (native)
 
 ### P7 Asia (phase 2)
 
-Live bar row `tm60__A`: 6M 1200 pts (n 669, ulcer 358, maxDD 1021), 3M 914 pts. PICK (trailing 6M, pick): `rc600s2__A` 1923 pts (n 154, ulcer 69, maxDD 230); 3M-pick: `rc300s6__A` (DISAGREES).
+Live bar row `tm60__A`: 6M 1200 pts (n 669, ulcer 358, maxDD 1021), 3M 914 pts. PICK (trailing 6M, pick): `vsess_80__NE8_30a30s` 962 pts (n 35, ulcer 20, maxDD 62); 3M-pick: `dchg_40__G40k3` (DISAGREES).
+Side by side (trailing-6M pick within each class; WF = rolling pick at month ends, OOS mean pts/month vs live bar; share = months pick beat live bar; older-year worst):
+
+| class | pick row__set | 6M pts | n | ulcer | WF 6M->1M OOS/mo (live) | share beat | WF 6M->2w share beat | older years |
+|---|---|---:|---:|---:|---|---:|---:|---|
+| live-settings | renko_40__A | 908 | 100 | 79 | 7.1 (75.0) | 0.46 | 0.35 | RED |
+| refit | dol_1700__G40k3 | 1941 | 168 | 71 | -6.4 (75.0) | 0.38 | 0.38 | RED |
+| native | vsess_80__NE8_30a10s | 962 | 35 | 20 | -13.6 (75.0) | 0.41 | 0.43 | RED |
+
+(live-settings = transplanted, live book parameters; refit = transplanted + the book grid; native = bar-native rules, see input table. Earlier rows stay labelled transplanted.)
+
 Top rows on trailing 6M (score = pts/(ulcer+1)):
 
 | row__set | 6M pts | n | ulcer | maxDD | 3M pts | $/wk x live lots (6M) |
 |---|---:|---:|---:|---:|---:|---:|
-| rc600s2__A | 1923 | 154 | 69 | 230 | 923 | 17752 |
-| cdr_400__G40k8 | 852 | 62 | 56 | 127 | 200 | 7866 |
-| rc60s3__B | 2409 | 631 | 166 | 423 | 1441 | 22241 |
-| rc300s2__B | 2179 | 289 | 164 | 544 | 1434 | 20117 |
-| cdr_250__G40k3 | 1430 | 142 | 109 | 327 | 1145 | 13204 |
-| rc60s1__A | 2553 | 628 | 201 | 741 | 532 | 23567 |
-| rc600s2__B | 1020 | 157 | 86 | 236 | 448 | 9416 |
-| renko_40__A | 908 | 100 | 79 | 272 | 411 | 8379 |
-| rc60s1__B | 3030 | 635 | 265 | 962 | 560 | 27971 |
-| rc180s3__B | 1974 | 381 | 176 | 468 | 1133 | 18222 |
-| vsess_600__A | 1917 | 828 | 173 | 467 | 879 | 17698 |
-| cdr_250__G40k5 | 1226 | 144 | 120 | 326 | 1084 | 11320 |
+| vsess_80__NE8_30a30s | 962 | 35 | 20 | 62 | 301 | 8876 |
+| vsess_80__NE8_30a10s | 962 | 35 | 20 | 62 | 301 | 8876 |
+| dib_10000__NS3_2s | 754 | 32 | 21 | 64 | 316 | 6962 |
+| dlt_70__NC10 | 3811 | 584 | 130 | 417 | 2174 | 35180 |
+| dol_1700__G40k3 | 1941 | 168 | 71 | 215 | 1064 | 17914 |
+| tm420__G10k5 | 2738 | 310 | 123 | 332 | 1447 | 25274 |
+| swing_pct_8__G40k3 | 1914 | 161 | 86 | 269 | 961 | 17671 |
+| vib_10000__NS4_1s | 773 | 34 | 34 | 127 | 316 | 7132 |
+| dlt_70__G10t5 | 2850 | 520 | 141 | 336 | 1477 | 26307 |
+| pasl_40__NC40 | 933 | 44 | 46 | 124 | 452 | 8610 |
+| dol_1700__G10k3 | 1975 | 259 | 101 | 304 | 1297 | 18229 |
+| tm1800__NC10 | 1417 | 110 | 74 | 304 | 744 | 13079 |
 
 Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; ref = live bar; share = periods pick beat live bar):
 
 | procedure | periods | OOS mean/mo | live-bar mean/mo | share beat | OOS ulcer | live ulcer |
 |---|---:|---:|---:|---:|---:|---:|
-| 6M->1M | 37 | 12.2 | 75.0 | 0.38 | 769 | 416 |
-| 6M->3M | 37 | 34.4 | 87.6 | 0.38 | 470 | 564 |
-| 3M->1M | 37 | 29.7 | 75.0 | 0.49 | 425 | 416 |
-| 3M->3M | 37 | 1.8 | 87.6 | 0.32 | 1607 | 564 |
-| 12M->1M | 37 | -33.7 | 75.0 | 0.32 | 1065 | 416 |
-| 12M->3M | 37 | -4.2 | 87.6 | 0.30 | 1673 | 564 |
-| 6M->2w | 37 | 33.8 | 126.4 | 0.46 | 332 | 244 |
+| 6M->1M | 37 | -32.8 | 75.0 | 0.30 | 972 | 416 |
+| 6M->3M | 37 | -26.7 | 87.6 | 0.16 | 2300 | 564 |
+| 3M->1M | 37 | -43.6 | 75.0 | 0.35 | 1145 | 416 |
+| 3M->3M | 37 | -9.4 | 87.6 | 0.22 | 1492 | 564 |
+| 12M->1M | 37 | -43.0 | 75.0 | 0.38 | 1394 | 416 |
+| 12M->3M | 37 | -14.2 | 87.6 | 0.24 | 2081 | 564 |
+| 6M->2w | 37 | 12.1 | 126.4 | 0.41 | 305 | 244 |
 
-Nulls (same pick procedure): shift11: OOS 28.5/mo share beat 0.43; shift23: OOS 29.3/mo share beat 0.43; shift37: OOS -41.7/mo share beat 0.35; random-clock pool: OOS -26.4/mo share beat 0.42
+Nulls (same pick procedure): shift11: OOS -19.0/mo share beat 0.35; shift23: OOS -55.2/mo share beat 0.38; shift37: OOS -2.1/mo share beat 0.38; random-clock pool: OOS 43.4/mo share beat 0.49
 
-Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 15 vs 81 (n 36); +3M 45 vs 105 (n 34); +6M -1 vs 121 (n 31)
+Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -37 vs 81 (n 36); +3M -14 vs 105 (n 34); +6M -47 vs 121 (n 31)
 
 Older-year check of the pick vs live bar (worse%: + = pick worse): worst = **RED**
 
 | window | pick pts/wk | live pts/wk | mean | ulcer | maxDD | lab |
 |---|---:|---:|---:|---:|---:|---|
-| PRIOR12M | -9.3 | 10.6 | +188% | +17% | -5% | RED |
-| Y2023 | -2.6 | -18.4 | -86% | -73% | -66% | GREEN |
-| Y2024 | -9.6 | 16.5 | +158% | +3% | +3% | RED |
-| Y2025 | -7.3 | 21.5 | +134% | +214% | +53% | RED |
-| Y2026 | -25.2 | 11.5 | +319% | +22% | -5% | RED |
+| PRIOR12M | 15.7 | 10.6 | -49% | -71% | -61% | GREEN |
+| Y2023 | -5.5 | -18.4 | -70% | -65% | -70% | GREEN |
+| Y2024 | 9.5 | 16.5 | +42% | -80% | -78% | RED |
+| Y2025 | 13.7 | 21.5 | +36% | -53% | -57% | RED |
+| Y2026 | 12.8 | 11.5 | -11% | -65% | -61% | GREEN |
 
-Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.715, 'spa_p': 0.726, 'T': 26, 'K': 572}
+Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.892, 'spa_p': 0.876, 'T': 26, 'K': 8849}
 
-**Deliverable row**: P7 Asia: bar today 1-minute time (live) -> proposed rc600s2 | construction: rc600s2 | param set A | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: see BAR_REGISTRY.md (see registry)
+**Deliverable row**: P7 Asia: bar today 1-minute time (live) -> proposed vsess_80 | construction: vsess_80 (volume-clock / session-relative: N equal-volume bars per session; bar volume = trailing median session volume / N (a session with a typical volume curve gets N bars; NY open fast, lunch slow in clock ) | param set NE8_30a30s | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: custom BarsType (volume threshold set at session start from a trailing table) | scaling: N bars per session; bar volume = trailing-20-date median volume of that session code / N (new custom BarsType)
 
 ### H7 Asia (phase 2)
 
 Live bar row `tm60__A`: 6M 624 pts (n 138, ulcer 156, maxDD 360), 3M 24 pts. PICK (trailing 6M, pick): `cusum_10__G12_34k5` 3076 pts (n 384, ulcer 118, maxDD 372); 3M-pick: `lbrk_5_20__A` (DISAGREES).
+Side by side (trailing-6M pick within each class; WF = rolling pick at month ends, OOS mean pts/month vs live bar; share = months pick beat live bar; older-year worst):
+
+| class | pick row__set | 6M pts | n | ulcer | WF 6M->1M OOS/mo (live) | share beat | WF 6M->2w share beat | older years |
+|---|---|---:|---:|---:|---|---:|---:|---|
+| live-settings | tib_1200__B | 1604 | 141 | 72 | 8.6 (13.1) | 0.54 | 0.62 | RED |
+| refit | cusum_10__G12_34k5 | 3076 | 384 | 118 | 46.6 (-23.5) | 0.53 | 0.53 | RED |
+| native | tm300__NH30_80e200 | 991 | 113 | 141 | 52.2 (13.1) | 0.49 | 0.54 | RED |
+
+(live-settings = transplanted, live book parameters; refit = transplanted + the book grid; native = bar-native rules, see input table. Earlier rows stay labelled transplanted.)
+
 Top rows on trailing 6M (score = pts/(ulcer+1)):
 
 | row__set | 6M pts | n | ulcer | maxDD | 3M pts | $/wk x live lots (6M) |
@@ -352,43 +447,58 @@ Top rows on trailing 6M (score = pts/(ulcer+1)):
 | cusum_10__G12_34t5 | 1807 | 172 | 115 | 334 | 780 | 9730 |
 | urenko_28__C | 1507 | 149 | 116 | 311 | 929 | 8112 |
 | dlt_70__A | 848 | 86 | 69 | 148 | 537 | 4567 |
-| rc300s1__C | 1604 | 140 | 133 | 362 | -131 | 8637 |
 | trb_400__C | 2187 | 357 | 183 | 468 | 994 | 11776 |
 | tm240__C | 1500 | 168 | 131 | 426 | 503 | 8076 |
 | tsf_2_400__C | 1512 | 136 | 135 | 369 | 229 | 8143 |
 | drb_400__C | 1880 | 356 | 168 | 409 | 1206 | 10124 |
 | vib_700__A | 1127 | 133 | 102 | 249 | 165 | 6066 |
 | dib_400__A | 1230 | 136 | 113 | 301 | 321 | 6624 |
+| vnorm_400__C | 1409 | 171 | 129 | 326 | 890 | 7585 |
 
 Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; ref = live bar; share = periods pick beat live bar):
 
 | procedure | periods | OOS mean/mo | live-bar mean/mo | share beat | OOS ulcer | live ulcer |
 |---|---:|---:|---:|---:|---:|---:|
-| 6M->1M | 37 | 23.1 | 13.1 | 0.46 | 693 | 552 |
-| 6M->3M | 37 | 5.2 | 17.7 | 0.57 | 1866 | 1363 |
-| 3M->1M | 37 | 11.0 | 13.1 | 0.51 | 371 | 552 |
-| 3M->3M | 37 | -9.8 | 17.7 | 0.49 | 1592 | 1363 |
-| 12M->1M | 37 | -18.4 | 13.1 | 0.49 | 877 | 552 |
-| 12M->3M | 37 | -17.9 | 17.7 | 0.43 | 2303 | 1363 |
-| 6M->2w | 37 | 61.7 | 47.2 | 0.54 | 335 | 254 |
+| 6M->1M | 37 | 18.0 | 13.1 | 0.51 | 842 | 552 |
+| 6M->3M | 37 | 3.8 | 17.7 | 0.51 | 1849 | 1363 |
+| 3M->1M | 37 | -2.0 | 13.1 | 0.49 | 613 | 552 |
+| 3M->3M | 37 | 3.3 | 17.7 | 0.43 | 1316 | 1363 |
+| 12M->1M | 37 | -20.9 | 13.1 | 0.41 | 1197 | 552 |
+| 12M->3M | 37 | -30.2 | 17.7 | 0.41 | 4313 | 1363 |
+| 6M->2w | 37 | 40.3 | 47.2 | 0.59 | 538 | 254 |
 
-Nulls (same pick procedure): shift11: OOS 27.0/mo share beat 0.49; shift23: OOS -39.7/mo share beat 0.43; shift37: OOS 42.9/mo share beat 0.59; random-clock pool: OOS 9.0/mo share beat 0.60
+Nulls (same pick procedure): shift11: OOS 25.8/mo share beat 0.57; shift23: OOS 1.6/mo share beat 0.57; shift37: OOS 29.8/mo share beat 0.59; random-clock pool: OOS -4.0/mo share beat 0.46
 
-Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 9 vs 14 (n 36); +3M 9 vs 18 (n 34); +6M 40 vs 6 (n 31)
+Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 4 vs 14 (n 36); +3M 6 vs 18 (n 34); +6M 39 vs 6 (n 31)
 
 Older-year check of the pick vs live bar (worse%: + = pick worse): worst = **RED**
 
 | window | pick pts/wk | live pts/wk | mean | ulcer | maxDD | lab |
 |---|---:|---:|---:|---:|---:|---|
 | PRIOR12M | -4.5 | -18.2 | -75% | +12% | +21% | AMBER |
-| Y2023 | 0.0 | 7.0 | +100% | -100% | -100% | RED |
-| Y2024 | 0.0 | 17.0 | +100% | -100% | -100% | RED |
+| Y2023 | 0.0 | 7.0 | +100% | -100% | -100% | THIN(n=0) |
+| Y2024 | 0.0 | 17.0 | +100% | -100% | -100% | THIN(n=0) |
 | Y2025 | -19.7 | -9.1 | +118% | +0% | +41% | RED |
 | Y2026 | 40.9 | -23.7 | -272% | +37% | +68% | RED |
 
-Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.379, 'spa_p': 0.063, 'T': 26, 'K': 607}
+Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.369, 'spa_p': 0.057, 'T': 26, 'K': 582}
 
 **Deliverable row**: H7 Asia: bar today 1-minute time (live) -> proposed cusum_10 | construction: cusum_10 (CUSUM-filter events (Lopez de Prado): S+ = max(0,S+ + dp), S- = min(0,S- + dp) on print price changes; event when S+ > h or S- < -h, then reset; h = k x trailing sigma-scale (ticks)) | param set G12_34k5 | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: custom BarsType (event-driven) | scaling: size x s_rng (same, daily high-low range in points) (new custom BarsType)
 
-## 4. Engine swap test
-Not yet run (hook th_swb/swb_inject.py; sets TL3_SWB_*; queue /mnt/l2/l2vast/_major_sw/pending_b.txt).
+## 4. Engine swap test (hook swb_inject on JL3; same book object, native entries in the swapped session suppressed, bar signals injected)
+
+### Identity (live 1-minute bar signals through the hook vs JL3, trade for trade; key = book, side, entry second, lots)
+
+| set | month | JL3 trades | swap trades | identical | JL3 net | swap net |
+|---|---|---:|---:|---:|---:|---:|
+| TL3_SWB_ID_H73 | 202504 | 637 | 637 | 637 | 41239.76 | 41309.76 |
+| TL3_SWB_ID_H73 | 202610 | 691 | 691 | 691 | 37159.82 | 37334.82 |
+| TL3_SWB_ID_O73 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID_O73 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
+| TL3_SWB_ID_P71 | 202504 | 637 | 634 | 632 | 41239.76 | 38913.48 |
+| TL3_SWB_ID_P71 | 202610 | 691 | 697 | 683 | 37159.82 | 37534.42 |
+| TL3_SWB_ID_P73 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID_P73 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
+
+JL3 reference numbers: 202610 691 trades / 37,159.82; 202504 637 / 41,239.76.
+
