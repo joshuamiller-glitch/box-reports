@@ -1,7 +1,7 @@
 # DS3_CELL_TESTS - engine cell tests: do not trade / half size weak book x session cells on JL3 and JL2 (W-CELL, order 11-17 07:28Z JOB 2)
 VERDICT (data ends 2026-10-31; FIRST PASS; see below)
 
-> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 12:03Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
+> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 12:36Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
 ## M7 London focus (lead order 10:48Z; DO NOT TRADE M7 London = M7 session lots london 0)
 
 Row (a) - JL3 cell vs JL3 base at the live price columns: mean $/wk change, max DD and worst week (base -> cell), ulcer change.
@@ -31,6 +31,25 @@ One line: L6M: M7 London own trades removed carried +2,117, other books in Londo
 Row (3) - why JL2 and JL3 disagree on ulcer for this cell:
 - JL3 = JL2 + live persist=1 take lines (M7 pct >= 0.95 take with target 59.5) and P7/U7/H7 locks. In M7 London over 43 months JL2 has 2420 trades, net -66,772; JL3 has 2455 trades, net -60,492. M7 London exits JL2: StateCut 1230, Target 958, StopJoin 116, StopJoinFallback 67, StackCut 26. JL3: StateCut 1233, PolicyTake 496, Target 496, StopJoin 114, StopJoinFallback 68.
 - Pooled: JL3 ulcer change +11.7% (mean +506 $/wk); JL2 +0.7% (mean +399 $/wk). Base ulcer (RMS daily drawdown, $) JL3 24,344 vs JL2 20,293. The difference is the stack, not M7 London itself: JL3 turns about half of M7 London's Target exits into PolicyTake exits (M7 London loses a little less, -60k vs -67k), and its P7/U7/H7 locks lengthen the other books' drawdowns (higher base ulcer, 24.3k vs 20.3k), so removing M7 London's trades takes out a larger share of the stack's drawdown in JL3 and leaves the freed room to different trades. Freed-room table above is JL3; JL2 M7 London own trades removed carried +61,977.
+
+Row (c) - M7 London DO NOT TRADE (JL3) per window: percentile of the real cell among its OWN valid controls (share of valid controls the cell beats; higher = better), number of valid controls in that window, ulcer change. Tier = PROVISIONAL (CONFIRMED on the windows run; older windows X' NOT RUN: not issued); W44 variant = PROVISIONAL (CONFIRMED on the windows run; older windows X' NOT RUN: not issued).
+
+| window | valid controls (of landed) | pct ulcer | pct mean | pct max DD | pct worst week | ulcer change | mean change $/wk | P(ulcer lower) |
+|--|--|--|--|--|--|--|--|--|
+| L6M | 19 (of 31) | 1.00 | 0.95 | 0.95 | 0.89 | +15.0% | +1,038 | 0.83 |
+| HOLD | 19 (of 30) | 0.95 | 0.53 | 0.89 | 0.11 | +11.8% | -445 | 0.80 |
+| GAP | 16 (of 26) | 0.25 | 0.94 | 0.19 | 0.06 | +14.4% | +1,859 | 0.98 |
+| PRE | 16 (of 26) | 0.38 | 1.00 | 0.44 | 0.56 | +17.5% | +314 | 0.92 |
+| X' | 0 (of 0) | fewer than 10 valid controls (not finished) | | | | +5.7% | +443 | 0.88 |
+| pooled | 0 (of 0) | fewer than 10 valid controls (not finished) | | | | +11.7% | +506 | 0.98 |
+
+Row (d) - half-session variants (JL3, real cells only, no controls): M7 London lots 0 only 02:00-05:00 ET, or only 05:00-08:30 ET (hook th_cell/ct_hooks.py; inert setting TL3_CT_JL3_X_ID = base). Ulcer change / mean change $/wk base lots / max DD base -> cell.
+
+| variant | L6M | HOLD | pooled (months landed) |
+|--|--|--|--|
+| zero 02:00-05:00 ET only | not landed | | |
+| zero 05:00-08:30 ET only | not landed | | |
+| whole London (reference) (43 mo) | +15.0% / +1,038 / -30,189 -> -23,870 | +11.8% / -445 / -82,017 -> -67,418 | +11.7% / +506 / -88,502 -> -76,979 |
 
 
 
