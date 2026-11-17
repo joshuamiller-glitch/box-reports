@@ -1,6 +1,6 @@
 # DS3_FLAT_VS_BOOK - flat stand-in vs book-based cut on the live-equivalent base TL3_EV_JN05W2JL2 (W-EV, user order 11-16)
 
-**VERDICT (data ends 2026-10-30; FIRST PASS, running; 9 of 28 cells have a scored window; windows appear as months land; no PASS claimed).** Reference = TL3_EV_JN05W2JL2 (K7 flat 45 + K7 book cut; P7 book cut (ctx fresh 45/5x/w5/p10, rechase 30/10x/w5/p2) and NO P7 flat). Drawdown first.
+**VERDICT (data ends 2026-10-30; FIRST PASS, running; 12 of 28 cells have a scored window; windows appear as months land; no PASS claimed).** Reference = TL3_EV_JN05W2JL2 (K7 flat 45 + K7 book cut; P7 book cut (ctx fresh 45/5x/w5/p10, rechase 30/10x/w5/p2) and NO P7 flat). Drawdown first.
 
 ## What is live-computable today and what is not
 - LIVE TODAY (v1.9b, blind book): the flat stand-ins (K7 -0.75 x stop = 45, P7 -0.70 = 42; price-only, win=1 persist=1) are computable live; the book-based lines (K7 45/10x/w2/p3, P7 40/5x/w5/p3 or the F3 context cells) were NOT, because live read no book on 79% of losing seconds.
@@ -37,11 +37,14 @@ Columns: dd_cut / dd44_cut = max-drawdown cut % vs JL2 (all weeks / W44 removed)
 | cell           |   weeks |   dd_cut |   dd44_cut |       ww |   ww_ref |   best5 |   w2l |   d_mean |   d_mean_484 |   cuts_wk |   flat_wk |   flat_usd_wk |   same_entries_noflat_usd_wk |    t |    p |
 |:---------------|--------:|---------:|-----------:|---------:|---------:|--------:|------:|---------:|-------------:|----------:|----------:|--------------:|-----------------------------:|-----:|-----:|
 | TL3_EV_FB_C_K7 |      13 |    -3.72 |      -3.72 | -13929.4 | -13429.6 |    1.05 |     0 |   893.66 |       909.14 |     39.62 |     26.54 |      -27113.1 |                     -22122.5 | 1.34 | 0.21 |
+| TL3_EV_FB_C_KP |      13 |   -63.63 |     -63.63 | -21515.5 | -13429.6 |    1.14 |     1 |  2482.94 |      2499.83 |     20.92 |     43.69 |      -58306.5 |                     -42820.2 | 1.18 | 0.26 |
+| TL3_EV_FB_C_P7 |      13 |   -93.83 |     -93.83 | -23796.1 | -13429.6 |    1.08 |     1 |   977.18 |       980.84 |     34.15 |     34.08 |      -48781.3 |                     -38584.2 | 0.48 | 0.64 |
 
 ### group d
 | cell               |   weeks |   dd_cut |   dd44_cut |       ww |   ww_ref |   best5 |   w2l |   d_mean |   d_mean_484 |   cuts_wk |   flat_wk |   flat_usd_wk |   same_entries_noflat_usd_wk |    t |    p |
 |:-------------------|--------:|---------:|-----------:|---------:|---------:|--------:|------:|---------:|-------------:|----------:|----------:|--------------:|-----------------------------:|-----:|-----:|
-| TL3_EV_FB_D_K7_D51 |      13 |    -16.7 |      -16.7 | -14809.9 | -13429.6 |    1.12 |     1 |  1183.85 |      1195.68 |     55.15 |     11.77 |      -13899.5 |                     -11874.7 | 1.24 | 0.27 |
+| TL3_EV_FB_D_K7_D51 |      13 |    -16.7 |      -16.7 | -14809.9 | -13429.6 |    1.12 |     1 |  1183.85 |      1195.68 |     55.15 |     11.77 |      -13899.5 |                     -11874.7 | 1.24 | 0.28 |
+| TL3_EV_FB_D_K7_D39 |      13 |    -35.5 |      -35.5 | -16093.6 | -13429.6 |    1.04 |     1 |   656.26 |       652.88 |     49.46 |     21.77 |      -19782   |                     -17543   | 0.76 | 0.5  |
 
 ## L6M
 ### group ID
@@ -66,7 +69,14 @@ Columns: dd_cut / dd44_cut = max-drawdown cut % vs JL2 (all weeks / W44 removed)
 ### group c
 | cell           |   weeks |   dd_cut |   dd44_cut |       ww |   ww_ref |   best5 |   w2l |   d_mean |   d_mean_484 |   cuts_wk |   flat_wk |   flat_usd_wk |   same_entries_noflat_usd_wk |     t |    p |
 |:---------------|--------:|---------:|-----------:|---------:|---------:|--------:|------:|---------:|-------------:|----------:|----------:|--------------:|-----------------------------:|------:|-----:|
-| TL3_EV_FB_C_K7 |      26 |    -3.72 |      -3.72 | -13929.4 | -13429.6 |    0.97 |     1 |  -381.27 |       -368.6 |     42.46 |        29 |      -29800.1 |                     -24709.9 | -0.36 | 0.82 |
+| TL3_EV_FB_C_K7 |      26 |    -3.72 |      -3.72 | -13929.4 | -13429.6 |    0.97 |     1 |  -381.27 |      -368.6  |     42.46 |     29    |      -29800.1 |                     -24709.9 | -0.36 | 0.82 |
+| TL3_EV_FB_C_P7 |      26 |   -93.83 |     -93.83 | -23796.1 | -13429.6 |    0.96 |     1 | -1387.22 |     -1375.11 |     36.15 |     36.96 |      -50868.2 |                     -41025.1 | -1.1  | 0.29 |
+
+### group d
+| cell               |   weeks |   dd_cut |   dd44_cut |       ww |   ww_ref |   best5 |   w2l |   d_mean |   d_mean_484 |   cuts_wk |   flat_wk |   flat_usd_wk |   same_entries_noflat_usd_wk |     t |    p |
+|:-------------------|--------:|---------:|-----------:|---------:|---------:|--------:|------:|---------:|-------------:|----------:|----------:|--------------:|-----------------------------:|------:|-----:|
+| TL3_EV_FB_D_K7_D51 |      26 |    -16.7 |      -16.7 | -14809.9 | -13429.6 |    1.01 |     1 |  -243.12 |      -230.87 |     58.27 |     14.08 |      -16647.6 |                     -14253.5 | -0.33 | 0.75 |
+| TL3_EV_FB_D_K7_D39 |      26 |    -35.5 |      -35.5 | -16755.7 | -13429.6 |    1    |     1 |  -822.51 |      -823.63 |     52.31 |     24.77 |      -22560.8 |                     -19319.2 | -1.12 | 0.28 |
 
 ## HOLD
 (no cell has all months of this window yet)
