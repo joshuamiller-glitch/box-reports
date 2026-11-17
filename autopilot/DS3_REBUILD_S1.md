@@ -1,10 +1,12 @@
-# DS3_REBUILD_S1 - Stage 1: every condition family scored against the RAW book trades (W-S1; order DIRECTIVE_REBUILD_20261116 + addenda + REFILL 11-17)
-> VALIDATION (FIRST PASS, written 2026-11-17 05:24 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
+# DS3_REBUILD_S1 [AT-ENTRY CLEAN TABLES: NONE YET - every table below is NOT at-entry-clean unless marked; see AT-ENTRY STATUS] - Stage 1 on RAW book trades (W-S1; order DIRECTIVE_REBUILD_20261116 + addenda + REFILL 11-17)
+AT-ENTRY STATUS (read first, 2026-11-17 05:57 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
 
-VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 30 of 4055; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
+> VALIDATION (FIRST PASS, written 2026-11-17 05:57 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
+
+VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 259 of 4503; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
 
 ## Status
-Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 9, server 2 leased 76, load1 box 1 40.9. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 30/4055. Updated 2026-11-17 05:24 UTC.
+Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 0, server 2 leased 41, load1 box 1 42.8. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 259/4503. Updated 2026-11-17 05:57 UTC.
 
 ## Raw base (stage 0 table used here, engine $ at base lots and $1.18 RT; MAE_R positive = worse; R = net / (lots x 20 x stop))
 | book | session | trades | mean R | win % | net $ (base) | mean MFE_R | mean MAE_R |
@@ -145,88 +147,156 @@ Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 
 | 10 internals (TICK) | 16/16 | 408 | 1.47 | 1.47 | 0.95 | 2.14 | 0.98 | 0.97 | 44 | 0 | not finished |
 | 8/9 day context + trade context (stack-based CF1 L/K) | 8/8 | 1077 | 2.32 | 1.95 | 0.95 | 2.14 | 1.92 | 0.97 | 44 | 0 | not finished |
 
-## Survivors with the ulcer-primary tier test (outcome R, ALL43 stable, per book x session cell, top 60 by |zw| per cell; skip rule on the raw cell, path arithmetic)
-Tier counts: {'FAIL': 532, 'CONFIRMED': 269, 'LEAD': 99}. Persistent draws 60 (5-minute bucket per book and side, same skipped share). Tiers need ulcer-or-mean percentile >= .85 (CONFIRMED) / .75 (LEAD) in L6M and L3M, P(ulcer lower, L6M) >= .80, nothing below .25 in older windows.
+## In-sample survivors screen with the ulcer-primary percentile test (AT-ENTRY NAME-CLEAN COLUMNS ONLY; outcome R, ALL43 stable, per book x session cell; skip rule on the raw cell, path arithmetic)
+IN-SAMPLE SCREEN ONLY (selection on the same 43 months it is tested on, top 60 by |zw| per cell: this ALWAYS passes against random skips; the words CONFIRMED / LEAD are NOT used here; see the walk-forward and selection-null sections). Tier counts: {'IS-FAIL': 553, 'IS-HI': 241, 'IS-MID': 106}. Persistent draws 60. IS-HI needs ulcer-or-mean percentile >= .85 in L6M and L3M, P(ulcer lower, L6M) >= .80, nothing below .25 in older windows; IS-MID >= .75. Only columns classified clean-by-name are listed (no _d>=5 wait variants, no ahead columns, no family-9 context).
 | tier | family | cell | condition | rule | zw | lift R | BH ok | L6M ulc raw -> rule | L6M mean $/wk raw -> rule | pct ulc / mean L6M | L3M | HOLD ulc | P(ulc lower L6M) | L6M $/wk $4.84 | L6M $/wk x1.75 |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| CONFIRMED | 5 | M7|S3 | fl259_d120 | skip yes | -7.9 | -0.512 | yes | -8747 -> -1833 | 199 -> 3241 | 1.00 / 1.00 | 0.95 / 1.00 | 1.00 | 0.99 | 3042 | 5323 |
-| CONFIRMED | 5 | P7|S3 | fl259_d120 | skip yes | -7.6 | -0.496 | yes | -52822 -> -5834 | -169 -> 8755 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 | 1.00 | 8924 | 15617 |
-| CONFIRMED | 5 | K7|S3 | fl259_d120 | skip yes | -7.4 | -0.389 | yes | -24248 -> -3302 | -995 -> 1571 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 | 1.00 | 2566 | 4490 |
-| CONFIRMED | 5 | K7|S4 | fl259_d120 | skip yes | -6.8 | -0.345 | yes | -13606 -> -3027 | 1320 -> 4116 | 1.00 / 1.00 | 1.00 / 1.00 | 0.98 | 1.00 | 2797 | 4894 |
-| CONFIRMED | 5 | K7|S4 | fl051_d120 | skip no | 6.6 | 0.367 | yes | -13606 -> -1753 | 1320 -> 3676 | 1.00 / 1.00 | 1.00 / 1.00 | 0.98 | 1.00 | 2357 | 4124 |
-| CONFIRMED | 5 | K7|S3 | fl116_d120 | skip no | 6.3 | 0.318 | yes | -24248 -> -3417 | -995 -> 862 | 0.97 / 1.00 | 0.78 / 1.00 | 0.95 | 1.00 | 1856 | 3249 |
-| CONFIRMED | 1 | K7|S0 | c_B_cl_ahead_kinds2_15 | skip no | 6.3 | 0.259 | yes | -28120 -> -5082 | 3429 -> 3062 | 0.98 / 0.98 | 1.00 / 1.00 | 0.42 | 0.97 | -367 | -643 |
-| CONFIRMED | 5 | K7|S4 | fl108_d120 | skip no | 6.3 | 0.356 | yes | -13606 -> -2050 | 1320 -> 3688 | 1.00 / 1.00 | 1.00 / 1.00 | 0.98 | 1.00 | 2368 | 4145 |
-| CONFIRMED | 1 | K7|S0 | c_B_cl_ahead_cnt2_15 | skip no | 6.1 | 0.255 | yes | -28120 -> -5340 | 3429 -> 2972 | 0.95 / 0.97 | 1.00 / 1.00 | 0.52 | 0.96 | -457 | -799 |
-| CONFIRMED | 5 | P7|S3 | fl222_d120 | skip yes | -6.1 | -0.361 | yes | -52822 -> -18718 | -169 -> 3259 | 1.00 / 1.00 | 0.98 / 1.00 | 0.98 | 1.00 | 3428 | 5999 |
-| CONFIRMED | 5 | P7|S3 | fl051_d120 | skip no | 5.8 | 0.393 | yes | -52822 -> -5035 | -169 -> 5405 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 | 1.00 | 5575 | 9755 |
-| CONFIRMED | 5 | M7|S3 | fl108_d120 | skip no | 5.5 | 0.380 | yes | -8747 -> -1140 | 199 -> 1680 | 1.00 / 1.00 | 0.90 / 0.93 | 0.98 | 1.00 | 1481 | 2592 |
-| CONFIRMED | 5 | P7|S3 | fl103_d60 | skip no | 5.1 | 0.230 | yes | -52822 -> -7428 | -169 -> 3264 | 0.97 / 1.00 | 0.97 / 0.92 | 0.70 | 1.00 | 3433 | 6008 |
-| CONFIRMED | 5 | K7|S3 | fl108_d120 | skip no | 5.0 | 0.300 | yes | -24248 -> -2198 | -995 -> 810 | 1.00 / 1.00 | 0.97 / 1.00 | 1.00 | 1.00 | 1805 | 3158 |
-| CONFIRMED | 1 | P7|S0 | c_B_cl_ahead_kinds2_10 | skip no | 4.9 | 0.222 | yes | -36590 -> -29394 | 16772 -> 9689 | 0.50 / 0.93 | 0.95 / 0.90 | 0.85 | 0.84 | -7083 | -12395 |
-| CONFIRMED | 5 | K7|S3 | fl018_d60 | skip no | 4.9 | 0.264 | yes | -24248 -> -3744 | -995 -> 727 | 0.97 / 1.00 | 0.83 / 0.97 | 0.95 | 1.00 | 1721 | 3012 |
-| CONFIRMED | 5 | P7|S3 | fl165_d120 | skip yes | -4.9 | -0.314 | yes | -52822 -> -16222 | -169 -> 3779 | 1.00 / 1.00 | 0.97 / 1.00 | 1.00 | 1.00 | 3948 | 6910 |
-| CONFIRMED | 1 | K7|S3 | c4_smieS_1m_divwith | skip no | 7.4 | 0.213 | yes | -24248 -> -1300 | -995 -> 86 | 0.85 / 0.82 | 0.53 / 0.87 | 0.30 | 1.00 | 1081 | 1892 |
-| CONFIRMED | 1 | K7|S0 | c4_don20_pos_ha15_eenter | skip no | 9.4 | 0.322 | yes | -28120 -> -1590 | 3429 -> 1242 | 0.93 / 1.00 | 0.99 / 0.97 | 0.80 | 1.00 | -2187 | -3827 |
-| CONFIRMED | 1 | K7|S0 | c4_w1_donchian20_pos_ha15_eenter | skip no | 9.4 | 0.322 | yes | -28120 -> -1590 | 3429 -> 1242 | 0.93 / 1.00 | 0.99 / 0.97 | 0.80 | 1.00 | -2187 | -3827 |
-| CONFIRMED | 5 | M7|S3 | fl051_d120 | skip no | 4.7 | 0.371 | yes | -8747 -> -856 | 199 -> 1899 | 1.00 / 1.00 | 0.95 / 0.93 | 0.65 | 1.00 | 1700 | 2975 |
-| CONFIRMED | 5 | P7|S3 | fl018_d120 | skip no | 4.7 | 0.262 | yes | -52822 -> -6274 | -169 -> 3193 | 1.00 / 1.00 | 0.98 / 0.98 | 1.00 | 1.00 | 3362 | 5884 |
-| CONFIRMED | 1 | P7|S3 | m_uo_1d_divwith | skip yes | -5.0 | -0.118 | yes | -52822 -> -42582 | -169 -> 1276 | 0.67 / 0.88 | 0.88 / 0.98 | 1.00 | 0.92 | 1445 | 2528 |
-| CONFIRMED | 5 | P7|S3 | fl126_d120 | skip no | 4.6 | 0.340 | no | -52822 -> -4040 | -169 -> 2015 | 1.00 / 0.93 | 1.00 / 1.00 | 1.00 | 1.00 | 2185 | 3823 |
-| CONFIRMED | 5 | K7|S3 | fl151_d60 | skip yes | -4.6 | -0.242 | yes | -24248 -> -14699 | -995 -> -105 | 0.90 / 1.00 | 0.82 / 0.98 | 0.80 | 0.99 | 889 | 1557 |
-| CONFIRMED | 1 | K7|S0 | c4_fvgS_cnt_ha3_side | skip no | 4.6 | 0.292 | yes | -28120 -> -2668 | 3429 -> 2380 | 0.98 / 1.00 | 0.78 / 0.97 | 0.57 | 1.00 | -1048 | -1835 |
-| CONFIRMED | 5 | K7|S3 | fl222_d120 | skip yes | -4.6 | -0.292 | yes | -24248 -> -13410 | -995 -> -348 | 0.98 / 0.97 | 0.97 / 0.98 | 0.87 | 0.88 | 646 | 1131 |
-| CONFIRMED | 5 | U7|S0 | fl214_d5 | skip no | 5.4 | 0.122 | yes | -10662 -> -3742 | 2753 -> 1681 | 0.93 / 0.93 | 0.92 / 0.83 | 0.92 | 0.91 | -1072 | -1876 |
-| CONFIRMED | 1 | K7|S3 | c4_mc_comp2_mtf_ge4 | skip yes | -4.3 | -0.104 | yes | -24248 -> -1349 | -995 -> 483 | 1.00 / 1.00 | 1.00 / 0.95 | 0.40 | 1.00 | 1478 | 2586 |
-| CONFIRMED | 5 | M7|S3 | fl178_d120 | skip no | 4.3 | 0.279 | yes | -8747 -> -1569 | 199 -> 1688 | 1.00 / 1.00 | 1.00 / 1.00 | 0.32 | 1.00 | 1489 | 2607 |
-| CONFIRMED | 1 | K7|S1 | m_ao_5m_nodiv | skip yes | -4.6 | -0.336 | yes | -40458 -> -4691 | -1103 -> 983 | 0.87 / 0.98 | 1.00 / 1.00 | 0.98 | 0.99 | 2086 | 3650 |
-| CONFIRMED | 5 | M7|S3 | fl116_d120 | skip no | 4.3 | 0.323 | yes | -8747 -> -1467 | 199 -> 1353 | 0.98 / 1.00 | 0.95 / 1.00 | 1.00 | 0.98 | 1154 | 2019 |
-| CONFIRMED | 1 | M7|S1 | c4_w1_kama200_px_range16_fresh5 | skip yes | -4.3 | -0.196 | yes | -32674 -> -25387 | -623 -> 369 | 0.75 / 0.93 | 0.72 / 0.92 | 0.97 | 0.90 | 992 | 1736 |
-| CONFIRMED | 5 | K7|S3 | fl274_d60 | skip yes | -4.2 | -0.255 | yes | -24248 -> -14794 | -995 -> -362 | 0.85 / 0.92 | 0.42 / 0.85 | 0.97 | 0.96 | 632 | 1106 |
-| CONFIRMED | 5 | P7|S0 | fl268_d30 | skip yes | -4.2 | -0.200 | yes | -36590 -> -16746 | 16772 -> 22361 | 1.00 / 1.00 | 1.00 / 1.00 | 0.57 | 0.98 | 5589 | 9781 |
-| CONFIRMED | 5 | U7|S0 | fl136_d5 | skip no | 4.7 | 0.193 | no | -10662 -> -3439 | 2753 -> 2895 | 0.95 / 0.98 | 0.93 / 0.97 | 0.98 | 0.94 | 141 | 247 |
-| CONFIRMED | 1 | H7|S0 | c4_lorS_1m_flip3 | skip yes | -4.5 | -0.195 | yes | -25780 -> -19680 | 1221 -> 2565 | 0.63 / 0.95 | 0.68 / 0.93 | 0.87 | 0.96 | 1344 | 2352 |
-| CONFIRMED | 1 | K7|S3 | n_dl_sp_ahead_60 | skip yes | -7.0 | -0.439 | yes | -24248 -> -20494 | -995 -> -766 | 0.98 / 0.98 | 0.75 / 0.98 | 0.43 | 0.94 | 229 | 400 |
-| CONFIRMED | 1 | U7|S1 | c4_sdF_dsup_range8_rise | skip yes | -4.4 | -0.116 | yes | -13693 -> -8035 | -180 -> 923 | 0.95 / 0.80 | 0.88 / 0.83 | 0.95 | 0.96 | 1103 | 1930 |
-| CONFIRMED | 1 | K7|S0 | c4_kst_60m_nodiv | skip yes | -4.1 | -0.244 | yes | -28120 -> -5412 | 3429 -> 2699 | 0.88 / 0.98 | 0.63 / 0.90 | 1.00 | 0.97 | -730 | -1277 |
+| IS-HI | 1 | K7|S3 | c4_smieS_1m_divwith | skip no | 7.4 | 0.213 | yes | -24248 -> -1300 | -995 -> 86 | 0.85 / 0.82 | 0.53 / 0.87 | 0.30 | 1.00 | 1081 | 1892 |
+| IS-HI | 1 | K7|S0 | c4_don20_pos_ha15_eenter | skip no | 9.4 | 0.322 | yes | -28120 -> -1590 | 3429 -> 1242 | 0.93 / 1.00 | 0.99 / 0.97 | 0.80 | 1.00 | -2187 | -3827 |
+| IS-HI | 1 | K7|S0 | c4_w1_donchian20_pos_ha15_eenter | skip no | 9.4 | 0.322 | yes | -28120 -> -1590 | 3429 -> 1242 | 0.93 / 1.00 | 0.99 / 0.97 | 0.80 | 1.00 | -2187 | -3827 |
+| IS-HI | 1 | P7|S3 | m_uo_1d_divwith | skip yes | -5.0 | -0.118 | yes | -52822 -> -42582 | -169 -> 1276 | 0.67 / 0.88 | 0.88 / 0.98 | 1.00 | 0.92 | 1445 | 2528 |
+| IS-HI | 1 | K7|S0 | c4_fvgS_cnt_ha3_side | skip no | 4.6 | 0.292 | yes | -28120 -> -2668 | 3429 -> 2380 | 0.98 / 1.00 | 0.78 / 0.97 | 0.57 | 1.00 | -1048 | -1835 |
+| IS-HI | 1 | K7|S3 | c4_mc_comp2_mtf_ge4 | skip yes | -4.3 | -0.104 | yes | -24248 -> -1349 | -995 -> 483 | 1.00 / 1.00 | 1.00 / 0.95 | 0.40 | 1.00 | 1478 | 2586 |
+| IS-HI | 1 | K7|S1 | m_ao_5m_nodiv | skip yes | -4.6 | -0.336 | yes | -40458 -> -4691 | -1103 -> 983 | 0.87 / 0.98 | 1.00 / 1.00 | 0.98 | 0.99 | 2086 | 3650 |
+| IS-HI | 1 | M7|S1 | c4_w1_kama200_px_range16_fresh5 | skip yes | -4.3 | -0.196 | yes | -32674 -> -25387 | -623 -> 369 | 0.75 / 0.93 | 0.72 / 0.92 | 0.97 | 0.90 | 992 | 1736 |
+| IS-HI | 1 | H7|S0 | c4_lorS_1m_flip3 | skip yes | -4.5 | -0.195 | yes | -25780 -> -19680 | 1221 -> 2565 | 0.63 / 0.95 | 0.68 / 0.93 | 0.87 | 0.96 | 1344 | 2352 |
+| IS-HI | 1 | U7|S1 | c4_sdF_dsup_range8_rise | skip yes | -4.4 | -0.116 | yes | -13693 -> -8035 | -180 -> 923 | 0.95 / 0.80 | 0.88 / 0.83 | 0.95 | 0.96 | 1103 | 1930 |
+| IS-HI | 1 | K7|S0 | c4_kst_60m_nodiv | skip yes | -4.1 | -0.244 | yes | -28120 -> -5412 | 3429 -> 2699 | 0.88 / 0.98 | 0.63 / 0.90 | 1.00 | 0.97 | -730 | -1277 |
+| IS-HI | 1 | M7|S1 | c4_w1_donchian50_pos_ha15_ewith | skip no | 4.6 | 0.219 | yes | -32674 -> -1149 | -623 -> 704 | 1.00 / 0.88 | 0.93 / 0.85 | 0.70 | 1.00 | 1328 | 2323 |
+| IS-HI | 1 | K7|S4 | c4_wtS_1d_eagainst_z1 | skip no | 5.0 | 0.246 | yes | -13606 -> -0 | 1320 -> 0 | 1.00 / 0.42 | 0.99 / 0.45 | 0.92 | 1.00 | -1320 | -2309 |
+| IS-HI | 1 | A7|S0 | c4_agr_smieS_fresh5_ge3 | skip yes | -4.3 | -0.292 | yes | -4779 -> -1277 | 587 -> 589 | 0.98 / 0.92 | 0.87 / 0.57 | 0.55 | 0.93 | 1 | 2 |
+| IS-HI | 1 | A7|S0 | c4_sdflipS_in_ha60_against | skip no | 4.2 | 0.197 | yes | -4779 -> -910 | 587 -> 633 | 1.00 / 0.93 | 1.00 / 0.98 | 0.93 | 0.99 | 46 | 80 |
+| IS-HI | 1 | P7|S1 | c4_agr_w1_willr14_ewith_ge3 | skip yes | -4.1 | -0.230 | yes | -32871 -> -7336 | 2733 -> 4535 | 0.97 / 0.98 | 0.88 / 0.93 | 1.00 | 0.98 | 1802 | 3153 |
+| IS-HI | 2 | K7|S0 | c4_cdl_hammer_15m_against | skip no | 7.7 | 0.162 | yes | -28120 -> -1645 | 3429 -> 812 | 0.92 / 0.98 | 0.65 / 1.00 | 0.55 | 0.99 | -2617 | -4580 |
+| IS-HI | 1 | K7|S1 | c4_agr_w1_mfi14_rise_ge6 | skip yes | -4.2 | -0.193 | yes | -40458 -> -4621 | -1103 -> 970 | 0.92 / 0.95 | 0.98 / 1.00 | 1.00 | 1.00 | 2073 | 3627 |
+| IS-HI | 1 | P7|S0 | c4_fvg_cnt_ha60_fresh5 | skip no | 6.8 | 0.311 | yes | -36590 -> -2356 | 16772 -> 1572 | 0.95 / 0.80 | 0.97 / 0.68 | 0.92 | 0.99 | -15199 | -26599 |
+| IS-HI | 1 | P7|S1 | c4_ker_dir_tick2000_eenter | skip yes | -4.0 | -0.162 | yes | -32871 -> -17828 | 2733 -> 3509 | 1.00 / 0.83 | 1.00 / 0.78 | 0.93 | 0.87 | 776 | 1358 |
+| IS-HI | 1 | K7|S0 | c4_wtF_tick2000_eleave_z1 | skip yes | -4.6 | -0.421 | yes | -28120 -> -20683 | 3429 -> 4203 | 0.98 / 0.98 | 0.90 / 0.93 | 0.65 | 0.99 | 775 | 1356 |
+| IS-HI | 1 | K7|S4 | c4_qqeS_15m_ewith | skip no | 4.8 | 0.354 | yes | -13606 -> -301 | 1320 -> 1291 | 1.00 / 1.00 | 1.00 / 1.00 | 0.88 | 1.00 | -28 | -50 |
+| IS-HI | 1 | K7|S0 | c4_w1_macd12_26_9_line_ha60_nodiv | skip yes | -4.0 | -0.254 | yes | -28120 -> -6143 | 3429 -> 2150 | 0.83 / 0.97 | 0.58 / 0.87 | 0.92 | 0.98 | -1279 | -2237 |
+| IS-HI | 1 | P7|S3 | m_demarker7_1d_divwith | skip yes | -4.2 | -0.222 | yes | -52822 -> -49316 | -169 -> 1321 | 0.47 / 0.93 | 0.65 / 0.93 | 0.73 | 0.89 | 1490 | 2608 |
+| IS-HI | 5 | K7|S4 | fl070_d0 | skip yes | -3.9 | -0.169 | yes | -13606 -> -7637 | 1320 -> 2212 | 0.83 / 0.90 | 0.80 / 0.87 | 0.98 | 0.81 | 892 | 1561 |
+| IS-HI | 1 | A7|S0 | c4_agr_tsi_fresh5_ge3 | skip yes | -4.0 | -0.180 | yes | -4779 -> -1433 | 587 -> 867 | 0.98 / 0.95 | 0.93 / 0.82 | 0.38 | 0.96 | 279 | 489 |
+| IS-HI | 1 | O7|S3 | c4_w1_stoch14_tick2000_fresh5 | skip no | 5.4 | 0.232 | yes | -3756 -> -1951 | 311 -> 422 | 0.80 / 0.92 | 0.88 / 0.97 | 0.93 | 0.96 | 112 | 195 |
+| IS-HI | 1 | M7|S1 | c4_don55_pos_ha15_ewith | skip no | 4.2 | 0.217 | yes | -32674 -> -1069 | -623 -> 881 | 1.00 / 0.90 | 0.97 / 0.88 | 0.85 | 1.00 | 1504 | 2632 |
+| IS-HI | 6 | P7|S0 | c6_fc_agree_none5_against | skip no | 3.9 | 0.199 | yes | -36590 -> -8695 | 16772 -> 6148 | 1.00 / 0.92 | 0.97 / 0.88 | 0.68 | 1.00 | -10623 | -18591 |
+| IS-HI | 1 | K7|S3 | c_S_weekrange_used_le0.8 | skip no | 3.9 | 0.075 | yes | -24248 -> -11774 | -995 -> -209 | 0.78 / 0.87 | 0.98 / 0.98 | 0.82 | 0.94 | 786 | 1375 |
+| IS-HI | 1 | P7|S1 | c4_w1_willr7_ha15_nodiv | skip yes | -3.9 | -0.197 | no | -32871 -> -6918 | 2733 -> 4229 | 0.98 / 0.97 | 0.95 / 0.95 | 0.47 | 0.94 | 1496 | 2618 |
+| IS-HI | 1 | K7|S1 | c4_agr_t3S_px_fresh5_ge6 | skip no | 3.8 | 0.164 | yes | -40458 -> -8022 | -1103 -> 1420 | 0.82 / 0.97 | 0.95 / 1.00 | 0.83 | 0.99 | 2523 | 4415 |
+| IS-HI | 2 | K7|S1 | c4_pitchfork_15m_eleave | skip no | 3.8 | 0.187 | no | -40458 -> -8297 | -1103 -> 1418 | 0.82 / 0.97 | 1.00 / 1.00 | 0.98 | 0.97 | 2520 | 4411 |
+| IS-HI | 1 | K7|S4 | c4_kerS_abs_tick2000_rise | skip no | 3.7 | 0.132 | yes | -13606 -> -6492 | 1320 -> 2663 | 0.83 / 0.98 | 0.97 / 0.97 | 0.92 | 0.96 | 1344 | 2351 |
+| IS-HI | 5 | U7|S0 | fl214_d2 | skip no | 4.4 | 0.147 | yes | -10662 -> -4201 | 2753 -> 2019 | 0.90 / 0.95 | 0.90 / 0.83 | 0.85 | 0.95 | -735 | -1286 |
+| IS-HI | 1 | P7|S0 | c4_w1_vortex21_ha1_divwith | skip yes | -3.9 | -0.185 | yes | -36590 -> -27981 | 16772 -> 19785 | 0.85 / 1.00 | 0.97 / 1.00 | 0.98 | 0.86 | 3013 | 5273 |
+| IS-HI | 1 | M7|S1 | c4_obS_near_renko8_against | skip no | 3.7 | 0.177 | yes | -32674 -> -3487 | -623 -> 1000 | 0.98 / 0.88 | 0.82 / 0.87 | 0.78 | 1.00 | 1623 | 2840 |
+| IS-HI | 2 | K7|S3 | c4_fib_cluster_dir_60m_side | skip yes | -3.8 | -0.213 | no | -24248 -> -15806 | -995 -> -420 | 0.87 / 0.93 | 0.95 / 0.98 | 0.95 | 0.94 | 574 | 1005 |
+| IS-HI | 1 | P7|S0 | c4_fractal_alli_1d_fresh1 | skip no | 4.1 | 0.238 | yes | -36590 -> -4320 | 16772 -> 4630 | 0.98 / 0.93 | 1.00 / 0.93 | 0.65 | 0.97 | -12142 | -21248 |
+| IS-HI | 5 | A7|S0 | fl190_d0 | skip no | 3.8 | 0.112 | yes | -4779 -> -1397 | 587 -> 538 | 0.98 / 0.87 | 0.92 / 0.77 | 0.73 | 0.94 | -50 | -87 |
 (The $4.84 column here equals the engine-$ change with the commission repricing not applied per trade: a skip removes trades, so the $4.84 repricing changes only the removed trades; exact repricing is in the Stage 6 head-to-head. x1.75 = live lots.)
 
 ## Adaptive permutation screen (rb1_sched.py; replaces the fixed 1,000-permutation plan)
 Rule: each chunk x book cell is SCREENED IN when its real STABLE pass count (book x session cells, windows ALL43+L6M, 20 outcomes) is >= 3 and >= 1.5 x the larger of the nonsense stable rate and the mean shifted-label (11/23/37) real stable rate on the same cell. Screened-in cells run 100 permutations first (batches 0,1); a cell is EXTENDED to 1,000 when its permutation p of the real stable count is <= 0.02 or its BH q (over all cells with 100 draws) is <= 0.10. A fixed-seed random 5% of the non-screened cells run the full 1,000 as a CALIBRATION check (their share with p < 0.05 should be about 5%); the other non-screened cells get 100 permutations last. Full 1,000 permutations are therefore not run for every cell: stated here, not hidden.
-Cells 1624, screened in 266, extended 0, calibration cells 54 (done with >=1,000 draws: 0). Cells with permutation p computed: 165.
+Cells 1624, screened in 266, extended 64, calibration cells 54 (done with >=1,000 draws: 0). Cells with permutation p computed: 534.
 Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - not finished (fewer than 20 cells done).
 | family | cells | screened in | with perm p | p < 0.05 |
 |--|--|--|--|--|
-| 1 | 1192 | 152 | 165 | 5 |
-| 10 | 16 | 3 | 0 | 0 |
-| 2 | 144 | 26 | 0 | 0 |
-| 3 | 8 | 2 | 0 | 0 |
-| 4 | 8 | 2 | 0 | 0 |
-| 5 | 144 | 56 | 0 | 0 |
-| 6 | 48 | 9 | 0 | 0 |
-| 7 | 8 | 1 | 0 | 0 |
-| 8 | 32 | 4 | 0 | 0 |
-| 8/9 | 8 | 3 | 0 | 0 |
-| 9 | 16 | 8 | 0 | 0 |
+| 1 | 1192 | 152 | 408 | 38 |
+| 10 | 16 | 3 | 3 | 2 |
+| 2 | 144 | 26 | 31 | 6 |
+| 3 | 8 | 2 | 2 | 1 |
+| 4 | 8 | 2 | 2 | 0 |
+| 5 | 144 | 56 | 60 | 41 |
+| 6 | 48 | 9 | 11 | 2 |
+| 7 | 8 | 1 | 1 | 1 |
+| 8 | 32 | 4 | 5 | 1 |
+| 8/9 | 8 | 3 | 3 | 2 |
+| 9 | 16 | 8 | 8 | 5 |
 
 Leading cells by permutation p (count of real stable passes vs shifted nulls):
 | chunk | book | family | real stable | real rate % | control rate % | draws | p | BH q |
 |--|--|--|--|--|--|--|--|--|
-| univ_entry_table_D4_00 | A7 | 1 | 161 | 3.55 | 0.76 | 50 | 0.0196 |  |
-| univ_cols_M_12 | O7 | 1 | 74 | 1.99 | 0.70 | 50 | 0.0196 |  |
-| univ_cols_M_09 | A7 | 1 | 460 | 3.36 | 1.43 | 50 | 0.0196 |  |
-| univ_cols_M_01 | A7 | 1 | 281 | 3.13 | 2.18 | 50 | 0.0392 |  |
-| univ_cols_M_08 | A7 | 1 | 362 | 2.69 | 1.51 | 50 | 0.0392 |  |
-| univ_cols_M_03 | H7 | 1 | 183 | 1.98 | 1.22 | 50 | 0.0588 |  |
-| entry_table_universe_00 | POOL | 1 | 699 | 1.91 | 1.44 | 50 | 0.0588 |  |
-| entry_table_universe_00 | P7 | 1 | 420 | 2.05 | 1.55 | 50 | 0.0588 |  |
-| univ_cols_M_13 | O7 | 1 | 54 | 1.28 | 0.32 | 50 | 0.0588 |  |
-| univ_cols_M_14 | A7 | 1 | 83 | 3.67 | 0.94 | 50 | 0.0588 |  |
-| cf4_osc_04 | A7 | 1 | 372 | 2.84 | 1.42 | 50 | 0.0588 |  |
-| entry_table_universe_00 | A7 | 1 | 122 | 2.34 | 1.01 | 50 | 0.0784 |  |
-| univ_entry_table_D4_00 | P7 | 1 | 270 | 1.88 | 1.92 | 50 | 0.0784 |  |
-| univ_cols_M_10 | A7 | 1 | 462 | 3.23 | 1.66 | 50 | 0.0980 |  |
-| univ_entry_table_U_00 | A7 | 1 | 10 | 5.00 | 0.83 | 50 | 0.0980 |  |
+| cf4_altagree_11 | P7 | 1 | 338 | 3.11 | 1.43 | 100 | 0.0099 | 0.049 |
+| fam9_raw_00 | A7 | 9 | 100 | 8.93 | 0.76 | 100 | 0.0099 | 0.049 |
+| TAPE_SPEED_01 | U7 | 5 | 382 | 4.42 | 1.11 | 100 | 0.0099 | 0.049 |
+| cf6_analogs_00 | POOL | 9 | 321 | 4.56 | 0.99 | 100 | 0.0099 | 0.049 |
+| cf6_analogs_00 | U7 | 9 | 124 | 4.70 | 0.82 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_00 | K7 | 5 | 2508 | 4.70 | 1.23 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_00 | A7 | 5 | 617 | 4.48 | 1.14 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_02 | K7 | 5 | 2556 | 4.72 | 1.52 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_00 | POOL | 5 | 5148 | 7.28 | 1.24 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_01 | K7 | 5 | 2416 | 4.38 | 1.58 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_01 | P7 | 5 | 1264 | 3.06 | 1.13 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_01 | POOL | 5 | 4303 | 6.06 | 1.36 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_02 | M7 | 5 | 831 | 3.07 | 1.57 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_00 | P7 | 5 | 1589 | 3.91 | 1.41 | 100 | 0.0099 | 0.049 |
+| J_00 | A7 | 7 | 122 | 4.77 | 1.29 | 100 | 0.0099 | 0.049 |
+
+## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 05:51 UTC; A shards landed 18 of 1576
+STATUS: PARTIAL: the tables below cover only the families whose A shards landed; families marked with fewer shards are NOT finished
+
+Family table at-entry, window ALL43, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
+| family | shards | tests | real beyond % | real STABLE % | shifted-label real STABLE % | nonsense stable % | random-draw stable % | planted detected % |
+|--|--|--|--|--|--|--|--|--|
+| 1 | 18/1192 | 13146 | 1.29 | 0.75 | 1.05 | 0.49 | 0.68 | 68 |
+
+Family table at-entry, window L6M, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
+| family | shards | tests | real beyond % | real STABLE % | shifted-label real STABLE % | nonsense stable % | random-draw stable % | planted detected % |
+|--|--|--|--|--|--|--|--|--|
+| 1 | 18/1192 | 10650 | 1.73 | 1.73 | 1.99 | 0.95 | 1.27 | 48 |
+
+Family table at-entry, window UNT, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
+| family | shards | tests | real beyond % | real STABLE % | shifted-label real STABLE % | nonsense stable % | random-draw stable % | planted detected % |
+|--|--|--|--|--|--|--|--|--|
+| 1 | 18/1192 | 11805 | 2.29 | 2.08 | 1.80 | 0.89 | 1.63 | 57 |
+
+PENDING (A shards not all landed: 18 of 1576): walk-forward and selection-null tables are not finished and are not shown.
+
+## WAIT variants re-scored honestly (every _d5/_d30/_d60/_d120 and tapelegs _L5 column; 7 of 7 book files landed)
+WAIT-THEN-ENTER (WTE): entry at signal+delay at the price then, same native stop/target distances from the new entry; trades closed inside the wait are excluded; approximation: the 1-s path ends at the original exit, so unresolved new brackets are marked at that exit (share in the table). EARLY-EXIT (EE): entered at signal, rule acts at +delay, value = mark at +delay minus hold-to-raw-outcome (only the remaining path counts).
+| kind | delay s | window | real columns scored | real beyond-bar % | shifted-label beyond-bar % | nonsense bar beyond % (by construction ~1) | unresolved WTE share |
+|--|--|--|--|--|--|--|--|
+| EARLY-EXIT | 5 | ALL43 | 394 | 1.62 | 1.54 | 1 |  |
+| EARLY-EXIT | 5 | HOLD | 394 | 1.11 | 1.56 | 1 |  |
+| EARLY-EXIT | 5 | L6M | 394 | 0.88 | 1.51 | 1 |  |
+| EARLY-EXIT | 30 | ALL43 | 283 | 1.22 | 1.74 | 1 |  |
+| EARLY-EXIT | 30 | HOLD | 283 | 1.36 | 1.73 | 1 |  |
+| EARLY-EXIT | 30 | L6M | 283 | 0.94 | 1.25 | 1 |  |
+| EARLY-EXIT | 60 | ALL43 | 282 | 1.15 | 1.47 | 1 |  |
+| EARLY-EXIT | 60 | HOLD | 282 | 1.42 | 1.60 | 1 |  |
+| EARLY-EXIT | 60 | L6M | 282 | 0.88 | 1.40 | 1 |  |
+| EARLY-EXIT | 120 | ALL43 | 282 | 1.12 | 1.53 | 1 |  |
+| EARLY-EXIT | 120 | HOLD | 282 | 1.03 | 1.23 | 1 |  |
+| EARLY-EXIT | 120 | L6M | 282 | 1.50 | 1.44 | 1 |  |
+| WAIT-THEN-ENTER | 5 | ALL43 | 394 | 1.54 | 1.50 | 1 | 0.66 |
+| WAIT-THEN-ENTER | 5 | HOLD | 394 | 1.20 | 1.54 | 1 | 0.66 |
+| WAIT-THEN-ENTER | 5 | L6M | 394 | 0.96 | 1.54 | 1 | 0.66 |
+| WAIT-THEN-ENTER | 30 | ALL43 | 283 | 1.11 | 1.73 | 1 | 0.61 |
+| WAIT-THEN-ENTER | 30 | HOLD | 283 | 1.62 | 1.72 | 1 | 0.61 |
+| WAIT-THEN-ENTER | 30 | L6M | 283 | 1.22 | 1.23 | 1 | 0.61 |
+| WAIT-THEN-ENTER | 60 | ALL43 | 282 | 1.17 | 1.53 | 1 | 0.60 |
+| WAIT-THEN-ENTER | 60 | HOLD | 282 | 1.57 | 1.79 | 1 | 0.60 |
+| WAIT-THEN-ENTER | 60 | L6M | 282 | 1.27 | 1.62 | 1 | 0.60 |
+| WAIT-THEN-ENTER | 120 | ALL43 | 282 | 1.17 | 1.53 | 1 | 0.60 |
+| WAIT-THEN-ENTER | 120 | HOLD | 282 | 1.14 | 1.28 | 1 | 0.60 |
+| WAIT-THEN-ENTER | 120 | L6M | 282 | 1.50 | 1.47 | 1 | 0.60 |
+
+Strongest wait columns after the honest re-score (ALL43, cell, kind; compare the pre-fix look-ahead zw 6-8): 
+| kind | delay | book|cell | column | zw | lift (R) |
+|--|--|--|--|--|--|
+| EE | 5 | U7|S0 | fl214_d5 | -5.4 | -0.114 |
+| WTE | 5 | U7|S0 | fl214_d5 | 5.1 | 0.108 |
+| WTE | 120 | U7|S1 | fl248_d120 | 4.9 | 0.204 |
+| EE | 30 | P7|S0 | fl268_d30 | 4.6 | 0.205 |
+| WTE | 30 | P7|S0 | fl268_d30 | -4.5 | -0.206 |
+| EE | 120 | U7|S1 | fl248_d120 | -4.5 | -0.215 |
+| EE | 5 | P7|S3 | fl117_d5 | 4.2 | 0.186 |
+| WTE | 5 | P7|S3 | fl117_d5 | -4.2 | -0.173 |
+| EE | 120 | P7|S1 | fl135_d120 | -4.1 | -0.148 |
+| EE | 120 | P7|S3 | fl231_d120 | 4.1 | 0.143 |
+| EE | 30 | K7|S3 | fl020_d30 | -4.1 | -0.239 |
+| WTE | 30 | U7|S1 | fl027_d30 | 4.1 | 0.091 |
+| EE | 5 | U7|S0 | fl136_d5 | -4.1 | -0.182 |
+| EE | 5 | U7|S1 | fl073_d5 | 4.1 | 0.154 |
+| EE | 120 | O7|S3 | fl043_d120 | 4.1 | -0.052 |
 
 ## Read this first
 - Missing controls are "not finished", never passing: the perm p column is blank until every chunk x book permutation shard of a batch has landed for that family.

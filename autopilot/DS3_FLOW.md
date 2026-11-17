@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (783 FL cell-months done, 256 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (797 FL cell-months done, 260 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -166,6 +166,7 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_SCM7_R2_NS | M7 | 1869 | 349 | 611 | 321 | 53869 | 52233 | 1636 | 318 | 336 | 56.97 | 16.37 | 970 | 34725 | 28109 | 24451 | 23989 | 44739 | 43405 |
 | TL3_FL_SCM7_R2_RL | M7 | 1854 | -364 | -636 | -379 | 52857 | 52233 | 624 | 320 | 336 | 28.17 | 16.37 | 270 | 25474 | 28109 | 23594 | 23989 | 44165 | 43405 |
 | TL3_FL_SCP7_1_F | P7 | 1871 | -470 | -823 | -488 | 52233 | 52233 | 0.00 | 463 | 467 | 237 | 253 | -636 | 39663 | 39663 | 23480 | 23989 | 38436 | 43405 |
+| TL3_FL_SCP7_1_R2 | P7 | 1861 | -343 | -600 | -351 | 52233 | 52233 | 0.00 | 462 | 467 | 244 | 253 | -429 | 39663 | 39663 | 23618 | 23989 | 38559 | 43405 |
 | TL3_FL_WAITL5_120_DROP | L5 | 1688 | -5413 | -9472 | -5278 | 70463 | 52233 | 18230 | 882 | 1104 | 163 | 173 | -3621 | 54351 | 42565 | 17398 | 23989 | 70463 | 43405 |
 | TL3_FL_WAITL5_120_TAKE | L5 | 1844 | -6225 | -10895 | -6204 | 56361 | 52233 | 4128 | 1086 | 1104 | 117 | 173 | -4926 | 44502 | 42565 | 16998 | 23989 | 56361 | 43405 |
 | TL3_FL_WAITL5_30_DROP | L5 | 1571 | -3090 | -5408 | -2871 | 61139 | 52233 | 8905 | 703 | 1104 | 227 | 173 | -2412 | 35435 | 42565 | 18077 | 23989 | 61139 | 43405 |
@@ -179,6 +180,9 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_WAITP7_60_DROP | P7 | 1817 | -2580 | -4515 | -2491 | 63454 | 52233 | 11221 | 370 | 467 | 271 | 253 | -1380 | 39201 | 39663 | 19387 | 23989 | 63454 | 43405 |
 | TL3_FL_WAITP7_60_TAKE | P7 | 1912 | -223 | -390 | -236 | 73001 | 52233 | 20768 | 481 | 467 | 244 | 253 | -76.07 | 53471 | 39663 | 23122 | 23989 | 73001 | 43405 |
 | TL3_FL_WAITU7_120_DROP | U7 | 1837 | -3583 | -6269 | -3542 | 62153 | 52233 | 9920 | 73 | 121 | 281 | 518 | -3245 | 16615 | 14457 | 20971 | 23989 | 52047 | 43405 |
+| TL3_FL_WAITU7_120_TAKE | U7 | 1861 | -6025 | -10544 | -6013 | 60992 | 52233 | 8759 | 119 | 121 | 56.58 | 518 | -4306 | 17144 | 14457 | 18228 | 23989 | 42779 | 43405 |
+| TL3_FL_WAITU7_30_DROP | U7 | 1805 | -3679 | -6437 | -3615 | 56937 | 52233 | 4703 | 38 | 121 | 934 | 518 | -2094 | 5726 | 14457 | 20227 | 23989 | 52592 | 43405 |
+| TL3_FL_WAITU7_30_TAKE | U7 | 1878 | -3300 | -5775 | -3293 | 57266 | 52233 | 5033 | 119 | 121 | 163 | 518 | -3328 | 16300 | 14457 | 20851 | 23989 | 39781 | 43405 |
 
 ### window L6M
 
@@ -324,6 +328,9 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_WAITP7_60_DROP | L3M | HOLD | -2580 | 2469 | 63454 | 64169 | 52233 | 271 | 109 | 39201 | 50387 |
 | TL3_FL_WAITP7_60_TAKE | L3M | HOLD | -223 | 4826 | 73001 | 64169 | 52233 | 244 | 109 | 53471 | 50387 |
 | TL3_FL_WAITU7_120_DROP | L3M | HOLD | -3583 | 1995 | 62153 | 61242 | 52233 | 281 | 73.35 | 16615 | 20406 |
+| TL3_FL_WAITU7_120_TAKE | L3M | HOLD | -6025 | -448 | 60992 | 61242 | 52233 | 56.58 | 73.35 | 17144 | 20406 |
+| TL3_FL_WAITU7_30_DROP | L3M | HOLD | -3679 | -846 | 56937 | 57381 | 52233 | 934 | 204 | 5726 | 16260 |
+| TL3_FL_WAITU7_30_TAKE | L3M | HOLD | -3300 | -467 | 57266 | 57381 | 52233 | 163 | 204 | 16300 | 16260 |
 | TL3_FL_BFC15NY_SKIP | L6M | SKIP_RND | -542 | 135 | 53100 | 52166 | 52233 | 77.32 | 65.26 | 20516 | 23514 |
 | TL3_FL_BZN60M71_SKIP | L6M | SKIP_RND | -632 | 418 | 54957 | 55221 | 52233 | 19.34 | -22.91 | 17765 | 29659 |
 | TL3_FL_LEADL5_SKIP | L6M | SKIP_RND | -3882 | 8593 | 47752 | 63936 | 52233 | 315 | 128 | 27355 | 40500 |
