@@ -71,3 +71,9 @@
 2026-11-16 23:45Z | box1: busy 81%, load1 28.25, workers 18, MemAvail 101 GB | server2: busy 100%, load1 90.45, workers 91, MemAvail 1385 GB | jobs pending 1973
 2026-11-16 23:45Z | WARNING box1 below 85% busy for 2 readings in a row with jobs pending
 2026-11-16 23:45Z | box1 AUTO-FILL: SIGCONT of 0 stopped admission/launch/driver procs []; admit.log silent -3 s; ql_drivers alive before=4 restarted=[]; workers 18
+2026-11-16 23:50Z | box1: busy 82%, load1 32.03, workers 23, MemAvail 97 GB | server2: busy 100%, load1 93.07, workers 98, MemAvail 1374 GB | jobs pending 1964
+2026-11-16 23:50Z | WARNING box1 below 85% busy for 3 readings in a row with jobs pending
+2026-11-16 23:50Z | box1 AUTO-FILL: SIGCONT of 0 stopped admission/launch/driver procs []; admit.log silent -3 s; ql_drivers alive before=4 restarted=[]; workers 23
+2026-11-16 23:55Z | box1: busy 81%, load1 31.10, workers 27, MemAvail 90 GB | server2: busy 100%, load1 92.49, workers 86, MemAvail 1390 GB | jobs pending 1961
+2026-11-16 23:55Z | WARNING box1 below 85% busy for 4 readings in a row with jobs pending
+2026-11-16 23:55Z | box1 AUTO-FILL: SIGCONT of 0 stopped admission/launch/driver procs []; admit.log silent -3 s; ql_drivers alive before=4 restarted=[]; workers 27
