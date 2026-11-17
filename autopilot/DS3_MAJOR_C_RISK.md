@@ -1,13 +1,13 @@
 # DS3_MAJOR_C_RISK - stack-level risk overlay on JL3 (W-MC, MAJOR programme part C, order 11-17 14:00Z)
-FIVE-LINE SUMMARY (FIRST PASS 2026-11-17 14:46Z, data ends 2026-10-31):
+FIVE-LINE SUMMARY (FIRST PASS 2026-11-17 15:16Z, data ends 2026-10-31):
 1. TRIED: 62 single-policy cells + 3 joint overlays (65) on JL3 (trailing-drawdown and N-day-P&L size cut/press, volatility target, per-session loss stop, same-side cap beyond London) by path arithmetic with random-scale / random-halt controls matched on lots removed, then 12 exact-engine finalists (picked on 2023-04..2025-10 only) plus 3 joint cells with persistent engine controls queued only where a cell looks alive; DAY-DONE settings are W-DD's (pointer below).
 2. HOLDS: so far nothing beats uniform trimming of lots: 0 of 65 screen cells reach LEAD/CONFIRMED (screen tiers use arithmetic controls); the best cell that keeps >= 95% of the mean cuts pooled ulcer by only -2.4% (SS_noAsia_T4000). Engine status: identity PASSED on 202610 and 202504, 0 of 15 engine cells fully landed, 0 engine control draws landed.
 3. DOES NOT: 2 of 65 screen cells give less ulcer per dollar than a uniform lot trim in L6M, HOLD and pooled at once (ND_press_N5_k1.5, SS_noAsia_T4000); median pooled ulcer-per-dollar excess over a uniform trim by family (percent; positive = worse than just trimming): DD +19; NDcut +10; NDpress +7; VT +7; SS +10; CAP +18; JOINT +24. Pressing after strong days (ND_press) earns more only by adding lots (its mean RC p is leverage, not skill). Rolling trailing-12-month pick on the screen (from 2024-04): pooled ulcer +9.7% / mean -9.2% vs JL3; frozen FIT pick VT_N10_q50_hi1.0.
 4. NEEDS IN DS7: nothing is proposed. Any size scaling would need lots below the base unit (one base lot = 1.75 live lots; most JL3 orders are 1 base lot = 2 live lots, so a x0.5 cut can only be 2 -> 1 live lot) and a stack-level equity series in the live code; the existing day lock and London cap stay as they are.
 5. NEXT: engine cells for the 12 finalists run L6M+HOLD first, then 2023-04..2025-10; controls are queued automatically for a family when its exact cell passes the gate (ulcer < JL3 and ulcer-per-dollar < 1 in L6M or HOLD); the page refreshes unattended every 30 minutes (loop pid _major_c/loop.pid).
-VERDICT (data ends 2026-10-31; FIRST PASS 2026-11-17 14:46Z; ): 0 of 65 screen cells reach LEAD or CONFIRMED on arithmetic controls; exact-engine tiers: see section 2; every engine cell without 30 valid persistent controls is NOT FINISHED, never passing.
+VERDICT (data ends 2026-10-31; FIRST PASS 2026-11-17 15:16Z; ): 0 of 65 screen cells reach LEAD or CONFIRMED on arithmetic controls; exact-engine tiers: see section 2; every engine cell without 30 valid persistent controls is NOT FINISHED, never passing.
 
-> VALIDATION (desk standard, W-MC, FIRST PASS 2026-11-17 14:46Z): trials counted = 65 screen cells (62 single + 3 joint) + 15 engine cells (12 picked on FIT, 3 joint by PREREG_MC_ADD2) + engine controls (families: none yet); correction = White RC / SPA on weekly mean change and a 4-week-block RC on ulcer over the 65 screen cells vs JL3 (pooled): mean RC p 0.00, SPA p 0.01, ulcer RC p 0.49 (best by mean ND_press_N20_k0.5 +2703 $/wk base; best by ulcer J2, 7780 ulcer-$ better than JL3 of 19183); PBO (CSCV, 65 cells + JL3) S=8/12/16: 8 0.59, 12 0.55, 16 0.52; in-sample = screen on 2023-04..2025-10 (finalist pick), walk-forward = frozen FIT pick and rolling trailing-12-month pick (PREREG_MC_ADD1), untouched = HOLD 2025-11..2026-04 and L6M 2026-05..2026-10 (finalists were picked without them; the screen output of all windows was read once before the prereg file was written, disclosed in PREREG_MC.md). Prereg sha lines in DECISIONS.md; hypothesis MC-H1; trial row MC in TRIALS_LEDGER.csv. All numbers are PATH ARITHMETIC (screen) or EXACT ENGINE (labelled).
+> VALIDATION (desk standard, W-MC, FIRST PASS 2026-11-17 15:16Z): trials counted = 65 screen cells (62 single + 3 joint) + 15 engine cells (12 picked on FIT, 3 joint by PREREG_MC_ADD2) + engine controls (families: none yet); correction = White RC / SPA on weekly mean change and a 4-week-block RC on ulcer over the 65 screen cells vs JL3 (pooled): mean RC p 0.00, SPA p 0.01, ulcer RC p 0.49 (best by mean ND_press_N20_k0.5 +2703 $/wk base; best by ulcer J2, 7780 ulcer-$ better than JL3 of 19183); PBO (CSCV, 65 cells + JL3) S=8/12/16: 8 0.59, 12 0.55, 16 0.52; in-sample = screen on 2023-04..2025-10 (finalist pick), walk-forward = frozen FIT pick and rolling trailing-12-month pick (PREREG_MC_ADD1), untouched = HOLD 2025-11..2026-04 and L6M 2026-05..2026-10 (finalists were picked without them; the screen output of all windows was read once before the prereg file was written, disclosed in PREREG_MC.md). Prereg sha lines in DECISIONS.md; hypothesis MC-H1; trial row MC in TRIALS_LEDGER.csv. All numbers are PATH ARITHMETIC (screen) or EXACT ENGINE (labelled).
 
 Judging: ulcer index (RMS daily drawdown of cumulative P&L) is primary; "ulc" below = change vs JL3 in percent (negative = lower ulcer = better); "mean" = change in mean $/week; "eff" = (ulcer ratio)/(mean ratio) - 1 (negative = less ulcer per dollar than a uniform lot trim; a uniform trim has eff 0). Base lots, $1.18 RT unless a column says otherwise.
 
@@ -15,7 +15,7 @@ Judging: ulcer index (RMS daily drawdown of cumulative P&L) is primary; "ulc" be
 - Hook: code/th_mc/mc_hooks.py (outermost hook, overrides only sess_lots_at / ntz_check / try_entry, always calls super; scale / session-stop / same-side-cap). Identity cell TL3_MC_ID = all three rules active and inert.
   - TL3_MC_ID 202610: 691 trades net 37159.82 vs JL3 691 net 37159.82 -> IDENTICAL
   - TL3_MC_ID 202504: 637 trades net 41239.76 vs JL3 637 net 41239.76 -> IDENTICAL
-- Engine finalists, months landed (of 43): DD_W250_T10000 2; DD_W60_T10000 2; ND_cut_N5_k1.0 2; ND_cut_N10_k0.5 2; ND_press_N5_k1.5 2; ND_press_N20_k1.0 2; VT_N10_q50_hi1.0 2; VT_N10_q75_hi1.0 2; SS_noAsia_T4000 2; SS_noAsia_T9000 2; CAP_nonlon_8 2; CAP_asia_8 1; J1 0; J2 0; J3 0
+- Engine finalists, months landed (of 43): DD_W250_T10000 4; DD_W60_T10000 4; ND_cut_N5_k1.0 4; ND_cut_N10_k0.5 4; ND_press_N5_k1.5 4; ND_press_N20_k1.0 4; VT_N10_q50_hi1.0 4; VT_N10_q75_hi1.0 3; SS_noAsia_T4000 3; SS_noAsia_T9000 3; CAP_nonlon_8 3; CAP_asia_8 3; J1 0; J2 0; J3 0
 - Engine controls (30 valid draws needed per family top cell): none queued yet (gate not passed by any exact cell)
 - Gate for queueing controls: DD_W250_T10000: not landed; DD_W60_T10000: not landed; ND_cut_N5_k1.0: not landed; ND_cut_N10_k0.5: not landed; ND_press_N5_k1.5: not landed; ND_press_N20_k1.0: not landed; VT_N10_q50_hi1.0: not landed; VT_N10_q75_hi1.0: not landed; SS_noAsia_T4000: not landed; SS_noAsia_T9000: not landed; CAP_nonlon_8: not landed; CAP_asia_8: not landed; J1: not landed; J2: not landed; J3: not landed
 - Fidelity note: the engine works in BASE lots (1 base lot = 1.75 live lots). A x0.5 cut of a 1-base-lot order has no base-lot representation, so the exact cells use unbiased dithered rounding by (day, session, book) (floor(lots x m + u), u from a hash): expected lots equal the arithmetic, realised lots do not. The screen rounds at LIVE-lot level instead (2 live lots -> 1). Section 4 compares engine to screen.
@@ -96,18 +96,18 @@ Columns: base lots $1.18 RT | $4.84 RT | x1.75 live lots. ulc / mean change vs J
 
 | cell | months | window | ulc base / 4.84 / live | mean change $/wk base / 4.84 / live | max DD JL3 -> cell | worst week JL3 -> cell | P(ulc lower) | engine controls: pct ulc / pct mean (valid) | tier |
 |--|--|--|--|--|--|--|--|--|--|
-| DD_W250_T10000 | 2 | no window fully landed yet | | | | | | | |
-| DD_W60_T10000 | 2 | no window fully landed yet | | | | | | | |
-| ND_cut_N5_k1.0 | 2 | no window fully landed yet | | | | | | | |
-| ND_cut_N10_k0.5 | 2 | no window fully landed yet | | | | | | | |
-| ND_press_N5_k1.5 | 2 | no window fully landed yet | | | | | | | |
-| ND_press_N20_k1.0 | 2 | no window fully landed yet | | | | | | | |
-| VT_N10_q50_hi1.0 | 2 | no window fully landed yet | | | | | | | |
-| VT_N10_q75_hi1.0 | 2 | no window fully landed yet | | | | | | | |
-| SS_noAsia_T4000 | 2 | no window fully landed yet | | | | | | | |
-| SS_noAsia_T9000 | 2 | no window fully landed yet | | | | | | | |
-| CAP_nonlon_8 | 2 | no window fully landed yet | | | | | | | |
-| CAP_asia_8 | 1 | no window fully landed yet | | | | | | | |
+| DD_W250_T10000 | 4 | L3M | -4.0% / -0.3% / -1.7% | -1,913 / -1,828 / -2,992 | -30,189 -> -24,531 | -15,066 -> -12,311 | 0.87 | not queued | |
+| DD_W60_T10000 | 4 | L3M | -4.0% / -0.3% / -1.7% | -1,913 / -1,828 / -2,992 | -30,189 -> -24,531 | -15,066 -> -12,311 | 0.87 | not queued | |
+| ND_cut_N5_k1.0 | 4 | L3M | +0.0% / +0.0% / +0.0% | +0 / +0 / +0 | -30,189 -> -30,189 | -15,066 -> -15,066 | 0.50 | not queued | |
+| ND_cut_N10_k0.5 | 4 | L3M | +3.4% / +3.7% / +3.6% | -1,295 / -1,285 / -2,523 | -30,189 -> -30,189 | -15,066 -> -15,066 | 0.81 | not queued | |
+| ND_press_N5_k1.5 | 4 | L3M | +1.5% / +1.6% / -1.9% | +1,467 / +1,412 / +2,730 | -30,189 -> -30,189 | -15,066 -> -15,066 | 0.48 | not queued | |
+| ND_press_N20_k1.0 | 4 | L3M | +32.9% / +33.2% / +14.8% | +5,032 / +4,848 / +10,601 | -30,189 -> -38,254 | -15,066 -> -22,571 | 0.04 | not queued | |
+| VT_N10_q50_hi1.0 | 4 | L3M | +12.7% / +17.0% / +21.5% | -875 / -825 / -1,287 | -30,189 -> -33,951 | -15,066 -> -15,066 | 0.19 | not queued | |
+| VT_N10_q75_hi1.0 | 3 | L3M | +4.6% / +7.6% / +10.2% | -1,812 / -1,784 / -3,057 | -30,189 -> -30,189 | -15,066 -> -15,066 | 0.14 | not queued | |
+| SS_noAsia_T4000 | 3 | L3M | +3.3% / +2.8% / +0.5% | +3,223 / +3,244 / +6,335 | -30,189 -> -32,044 | -15,066 -> -16,616 | 0.10 | not queued | |
+| SS_noAsia_T9000 | 3 | L3M | -0.8% / -0.9% / -2.5% | +585 / +584 / +1,170 | -30,189 -> -30,189 | -15,066 -> -15,066 | 0.61 | not queued | |
+| CAP_nonlon_8 | 3 | L3M | -1.3% / -1.4% / -2.6% | -1,012 / -995 / -1,855 | -30,189 -> -30,189 | -15,066 -> -15,066 | 0.76 | not queued | |
+| CAP_asia_8 | 3 | L3M | -1.3% / -1.4% / -2.6% | -1,012 / -995 / -1,855 | -30,189 -> -30,189 | -15,066 -> -15,066 | 0.76 | not queued | |
 | J1 | 0 | not landed | | | | | | | |
 | J2 | 0 | not landed | | | | | | | |
 | J3 | 0 | not landed | | | | | | | |
@@ -133,18 +133,18 @@ Frozen FIT pick (rule of PREREG_MC.md, best FIT efficiency over all 65): **VT_N1
 ## 4. Arithmetic vs engine (landed months)
 | cell | months | lots ratio engine / arithmetic (cell vs JL3) | P&L landed months: engine / arithmetic / JL3 | daily corr engine-arith / engine-JL3 |
 |--|--|--|--|--|
-| DD_W250_T10000 | 2 | 0.907 / 0.824 | +117,017 / +113,071 / +126,534 | 0.977 / 0.972 |
-| DD_W60_T10000 | 2 | 0.907 / 0.824 | +117,017 / +113,071 / +126,534 | 0.977 / 0.972 |
-| ND_cut_N5_k1.0 | 2 | 1.000 / 1.000 | +126,534 / +126,534 / +126,534 | 1.000 / 1.000 |
-| ND_cut_N10_k0.5 | 2 | 0.981 / 0.966 | +109,511 / +111,084 / +126,534 | 0.996 / 0.983 |
-| ND_press_N5_k1.5 | 2 | 1.055 / 1.097 | +149,357 / +154,847 / +126,534 | 0.988 / 0.974 |
-| ND_press_N20_k1.0 | 2 | 1.192 / 1.317 | +161,918 / +142,701 / +126,534 | 0.945 / 0.939 |
-| VT_N10_q50_hi1.0 | 2 | 0.949 / 0.923 | +135,959 / +118,599 / +126,534 | 0.934 / 0.953 |
-| VT_N10_q75_hi1.0 | 2 | 0.983 / 0.980 | +114,152 / +123,311 / +126,534 | 0.993 / 0.992 |
-| SS_noAsia_T4000 | 2 | 0.973 / 0.956 | +153,907 / +141,561 / +126,534 | 0.987 / 0.965 |
-| SS_noAsia_T9000 | 2 | 1.000 / 0.999 | +130,424 / +128,106 / +126,534 | 0.999 / 0.998 |
-| CAP_nonlon_8 | 2 | 0.979 / 0.980 | +113,671 / +121,823 / +126,534 | 0.993 / 0.990 |
-| CAP_asia_8 | 1 | 0.988 / 0.983 | +43,678 / +50,253 / +45,725 | 0.989 / 0.998 |
+| DD_W250_T10000 | 4 | 0.902 / 0.840 | +285,641 / +273,254 / +325,512 | 0.979 / 0.972 |
+| DD_W60_T10000 | 4 | 0.902 / 0.840 | +285,641 / +273,254 / +325,512 | 0.979 / 0.972 |
+| ND_cut_N5_k1.0 | 4 | 1.000 / 1.000 | +325,512 / +325,512 / +325,512 | 1.000 / 1.000 |
+| ND_cut_N10_k0.5 | 4 | 0.991 / 0.984 | +308,489 / +310,062 / +325,512 | 0.998 / 0.992 |
+| ND_press_N5_k1.5 | 4 | 1.064 / 1.110 | +330,515 / +373,350 / +325,512 | 0.979 / 0.981 |
+| ND_press_N20_k1.0 | 4 | 1.224 / 1.421 | +379,830 / +448,713 / +325,512 | 0.925 / 0.927 |
+| VT_N10_q50_hi1.0 | 4 | 0.929 / 0.883 | +292,328 / +291,441 / +325,512 | 0.950 / 0.960 |
+| VT_N10_q75_hi1.0 | 3 | 0.965 / 0.976 | +195,954 / +211,981 / +219,767 | 0.992 / 0.990 |
+| SS_noAsia_T4000 | 3 | 0.975 / 0.961 | +262,130 / +236,379 / +219,767 | 0.987 / 0.961 |
+| SS_noAsia_T9000 | 3 | 1.002 / 0.999 | +227,455 / +222,674 / +219,767 | 0.999 / 0.998 |
+| CAP_nonlon_8 | 3 | 0.979 / 0.976 | +206,466 / +207,255 / +219,767 | 0.994 / 0.990 |
+| CAP_asia_8 | 3 | 0.979 / 0.976 | +206,466 / +207,255 / +219,767 | 0.994 / 0.990 |
 
 ## 5. Selection nulls and planted-edge check
 Shifted-label nulls (the policy's multiplier series moved 11 / 23 / 37 days; screen path; pooled ALL43; ulc / mean vs JL3 and the real policy):
@@ -209,11 +209,11 @@ Over all 65 cells the in-window drawdown ranged from -108,711 (ND_press_N20_k0.5
 Over all 65 cells the in-window drawdown ranged from -36,493 (ND_press_N20_k1.0) to -12,469 (SS_all_T2500); P&L change ranged -12,787 to +24,791.
 
 ## 7. DAY-DONE settings: pointer (W-DD owns them, order 1331Z)
-Not rebuilt here. Page autopilot/DS3_DAYDONE_VARIANTS.md (sets TL3_DD_*, queue _dd/pending.txt). Queue action taken by W-MC: the real JL3 cells for L6M+HOLD were moved to the front of _dd/pending.txt (backup pending.txt.bak_mc_1400, order only, file valid) and the _dd queue line in QUEUES.txt now sits right after the W-MC line. W-DD page, verbatim status and verdict lines (at 14:46Z):
-> VERDICT (data ends 2026-10-31; FIRST PASS 2026-11-17 14:45Z; OFF landed 12 of 43 months; ulcer index primary; tiers use the calibrated cut-offs): no variant has a scored tier yet (controls or windows missing = NOT FINISHED, never passing). No removal of the live rule is implied; this is a search for a better SETTING of the same layer.
-> > VALIDATION (desk standard, W-DD, FIRST PASS, 2026-11-17 14:45Z): trials counted = 37 settings on JL3 (7 named variants LATCH BE BT C D2 D4 F + 30 grid cells = closes {18,22,26,30} x live loss {3,000 4,200 6,000 8,000} for the eval form and for the session-boundary form, minus the two cells that equal REF and C), plus the references REF / OFF and JL2 OFF; controls = 6 families x 30 persistent random-day-halt draws (A day-reset, B open-P&L, C session, D2, D4, F per-book); correction = percentile among the controls of the matching family on the calibrated tiers, and over the 37 settings White RC / Hansen SPA / DSR / BH on weekly P&L deltas vs REF (mean) plus a block-bootstrap reality check on the ulcer statistic and PBO (CSCV, weekly P&L of the 37 + REF); in-sample on the 43 months (no fitted choice; recent windows L6M/L3M and older HOLD/GAP/PRE/X' are the walk-forward-style split); FIRST
+Not rebuilt here. Page autopilot/DS3_DAYDONE_VARIANTS.md (sets TL3_DD_*, queue _dd/pending.txt). Queue action taken by W-MC: the real JL3 cells for L6M+HOLD were moved to the front of _dd/pending.txt (backup pending.txt.bak_mc_1400, order only, file valid) and the _dd queue line in QUEUES.txt now sits right after the W-MC line. W-DD page, verbatim status and verdict lines (at 15:16Z):
+> VERDICT (FIRST PASS 2026-11-17 15:12Z; OFF landed 12 of 43 months; ulcer index primary; tiers use the calibrated cut-offs): no variant has a scored tier yet (controls or windows missing = NOT FINISHED, never passing). No removal of the live rule is implied; this is a search for a better SETTING of the same layer.
+> > VALIDATION (desk standard, W-DD, FIRST PASS, 2026-11-17 15:12Z): trials counted = 37 settings on JL3 (7 named variants LATCH BE BT C D2 D4 F + 30 grid cells = closes {18,22,26,30} x live loss {3,000 4,200 6,000 8,000} for the eval form and for the session-boundary form, minus the two cells that equal REF and C), plus the references REF / OFF and JL2 OFF; controls = 6 families x 30 persistent random-day-halt draws (A day-reset, B open-P&L, C session, D2, D4, F per-book); correction = percentile among the controls of the matching family on the calibrated tiers, and over the 37 settings White RC / Hansen SPA / DSR / BH on weekly P&L deltas vs REF (mean) plus a block-bootstrap reality check on the ulcer statistic and PBO (CSCV, weekly P&L of the 37 + REF); in-sample on the 43 months (no fitted choice; recent windows L6M/L3M and older HOLD/GAP/PRE/X' are the walk-forward-style split); FIRST
 > - IDENTITY gate (inert / re-implemented cell = TL3_EV_JL3 trade for trade on 202610 and 202504): PASS
-> - JL3 months landed (of 43): REF 43; LATCH 0; BE 0; BT 0; C 11; D2 0; D4 2; F 0; OFF 12; grid cells: 0 of 30 with all 43 months, 0 with any month. Inert-month copies written by the prefilter: 0 (a month in which the rule condition never holds on the OFF trade list cannot change anything; verification runs: see section 9).
+> - JL3 months landed (of 43): REF 43; LATCH 0; BE 0; BT 0; C 12; D2 7; D4 12; F 0; OFF 12; grid cells: 0 of 30 with all 43 months, 0 with any month. Inert-month copies written by the prefilter: 0 (a month in which the rule condition never holds on the OFF trade list cannot change anything; verification runs: see section 9).
 > - Controls: not built yet: the controls are calibrated on the OFF path once all 43 OFF months have landed (analytic halted-share match; sets pre-listed in the queue). A cell with fewer than 10 valid controls in a window is NOT FINISHED, never passing.
 
 W-DD Table 1 as it stands:
@@ -225,17 +225,18 @@ Ulcer = RMS of daily drawdown on cumulative P&L. P(lower) = week-clustered boots
 | a2. live rule latched at the 22nd close, until reset | 0 | not landed | | | | | | | | | |
 | b1. open P&L counted, checked at entry, until reset | 0 | not landed | | | | | | | | | |
 | b2. open P&L counted, checked at each close, latched to reset | 0 | not landed | | | | | | | | | |
-| c. halt to next session boundary (22 / -4,200) | 11 | +25.6% / +1,641 | n/l | n/l | n/l | n/l | n/l | 0.84 / n/l / n/l | 50 / n/l | 0.179 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
-| d. halt 2 h | 0 | not landed | | | | | | | | | |
-| d. halt 4 h | 2 | n/l | n/l | n/l | n/l | n/l | n/l | n/l / n/l / n/l | n/l / n/l | 0.278 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| c. halt to next session boundary (22 / -4,200) | 12 | +25.6% / +1,641 | -5.2% / +281 | n/l | n/l | n/l | n/l | 0.84 / 0.68 / n/l | 50 / n/l | 0.185 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| d. halt 2 h | 7 | +18.1% / +2,542 | n/l | n/l | n/l | n/l | n/l | 0.73 / n/l / n/l | 50 / n/l | 0.224 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
+| d. halt 4 h | 12 | +26.2% / +1,919 | -9.9% / +411 | n/l | n/l | n/l | n/l | 0.96 / 0.67 / n/l | 50 / n/l | 0.215 | NO MATCHED CONTROLS (grid cell: ulcer/mean only, no tier) |
 | f. per-book (books net negative on the day stop) | 0 | not landed | | | | | | | | | |
 
 Same, vs REF (the live setting; ulcer + = lower than live):
 
 | setting | L6M | HOLD | GAP | PRE | X' | pooled |
 |--|--|--|--|--|--|--|
-| c. halt to next session boundary (22 / -4,200) | -7.0% / -46 | n/l | n/l | n/l | n/l | n/l |
-| d. halt 4 h | n/l | n/l | n/l | n/l | n/l | n/l |
+| c. halt to next session boundary (22 / -4,200) | -7.0% / -46 | -5.6% / -710 | n/l | n/l | n/l | n/l |
+| d. halt 2 h | -17.9% / +856 | n/l | n/l | n/l | n/l | n/l |
+| d. halt 4 h | -6.3% / +232 | -10.3% / -581 | n/l | n/l | n/l | n/l |
 
 
 ## 8. Which survive (per item; FIRST PASS, nothing CONFIRMED)

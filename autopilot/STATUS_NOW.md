@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-17 15:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 15:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-17 15:00Z | box1: busy 99%, load1 39.12, workers 25, MemAvail 85 GB | server2: busy 100%, load1 92.74, workers 98, MemAvail 1379 GB | pending box1-eligible 37565 / server2-eligible 41185 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-17 15:15Z | box1: busy 98%, load1 37.27, workers 31, MemAvail 83 GB | server2: busy 100%, load1 89.84, workers 87, MemAvail 1386 GB | pending box1-eligible 37800 / server2-eligible 41553 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-17 15:00Z
+2026-11-17 15:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-17 15:00Z | box1: busy 99%, load1 39.12, workers 2
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 85.7 GB; live reservations 7 (7 GB); workers 25, of which TP-adopted 25 (RSS 41.8 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 39.12, 39.69, 39.58
-  by tag: MA quota 8 running 3 hungry True RSS 5.9 GB PSS 5.6 GB; ME quota 6 running 2 hungry True RSS 2.3 GB PSS 2.0 GB; MB quota 6 running 3 hungry True RSS 5.8 GB PSS 4.8 GB; MF quota 4 running 3 hungry True RSS 5.3 GB PSS 4.9 GB; JV quota 6 running 10 hungry False RSS 15.1 GB PSS 11.8 GB; DD quota 4 running 2 hungry True RSS 3.4 GB PSS 2.7 GB; CF quota 8 running 2 hungry True RSS 4.1 GB PSS 3.1 GB
-  cell-months finished last hour (DONE markers): 1544
-  top running jobs: TL3_ME_C_LH_K2_S33 (x6);TL3_CF_ST_29_S_RND (x6);TL3_MB_ID (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 92.74, 92.34, 92.25|/dev/md2         28T  881G   28T   4% /mnt/l2|187|
+Server 1 (this box): MemAvail 83.2 GB; live reservations 14 (14 GB); workers 31, of which TP-adopted 31 (RSS 53.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 37.27, 35.23, 37.00
+  by tag: MA quota 8 running 3 hungry True RSS 4.0 GB PSS 3.7 GB; MC quota 6 running 2 hungry True RSS 4.3 GB PSS 3.6 GB; ME quota 6 running 2 hungry True RSS 2.9 GB PSS 2.6 GB; MB quota 6 running 2 hungry True RSS 3.4 GB PSS 2.9 GB; MF quota 4 running 3 hungry True RSS 5.3 GB PSS 4.4 GB; JV quota 6 running 13 hungry False RSS 23.5 GB PSS 17.4 GB; DD quota 4 running 3 hungry True RSS 5.2 GB PSS 4.9 GB; CF quota 8 running 3 hungry True RSS 4.3 GB PSS 3.9 GB
+  cell-months finished last hour (DONE markers): 1532
+  top running jobs: TL3_MA_U050 (x4);TL3_MA_F1_JL2 (x4);TL3_DD_JL3_D2 (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 90.09, 92.03, 92.28|/dev/md2         28T  881G   28T   4% /mnt/l2|181|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,6 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 92.74, 92.34, 92.25|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261117_1337Z_exits-add-uw-levels-sizing-book-walls.md 20261117_1342Z_MAJOR-CHANGES-PROGRAMME.md 20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md 20261117_1426Z_major-follow-ups-late-entry-and-same-side-losers.md 20261117_1447Z_DELIVERABLES-every-part-ends-in-a-setting.md
+20261117_1342Z_MAJOR-CHANGES-PROGRAMME.md 20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md 20261117_1426Z_major-follow-ups-late-entry-and-same-side-losers.md 20261117_1447Z_DELIVERABLES-every-part-ends-in-a-setting.md 20261117_1509Z_day-done-conditional-resume.md
+- lead 15:07Z INBOX 20261117_1509Z_day-done-conditional-resume.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- INBOX 20261117_1509Z_day-done-conditional-resume received 15:10Z: DAY-DONE addendum CONDITIONAL RESUME (user question: can trading resume if certain condition
