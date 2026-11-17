@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 17:21Z 11-17 (t+580.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 19:21Z 11-17 (t+582.6 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 98% min 96% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 100% min 99% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -4816,3 +4816,9 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 2026-11-17T19:13Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
 - (wall 19:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 - lead 19:19Z LEAD NOTE: CORES above; inbox empty; agents running W-BAR, W-BAR2, W-SWA (identity fix + grid refit), W-SWB, W-S1R, W-RECENT; DD page crash fixed 19:15Z; next: check DD table landing and W-BAR registry (due ~22:10Z).
+2026-11-17T19:24:56Z W-S1R: progress, core cells done 0/15, wait cells 15/14
+2026-11-17T19:26Z W-RECENT first page autopilot/DS3_RECENT_REREAD.md: re-read of landed results under the rolling trailing-6M rule; same-side loser LS_K2_M30 rolling-positive (persistence 59%, null pct .93) but engine L6M disagrees; brackets: 0 cells pass (prior-year RED/persistence); DAY-DONE/resume downgraded to BEST-AVAILABLE; hourly loop pid in _recent/loop.pid; pending list /mnt/l2/l2vast/_recent/pending.txt (31 cells, not in QUEUES)
+- lead 19:26Z LEAD NOTE: W-RECENT first page (DS3_RECENT_REREAD.md, pick end 2026-10-31): brackets no cell passes (13/14 picks differ from native; best persistence 62-73% U7/H7/A7 Asia; most RED in 2024; only K7 Asia S040T040 and H7 NY AM S060T030 BEST-AVAILABLE-NOT-PROVEN); same-side-loser on the SCREEN under the rolling rule: OOS ulcer +4..+9%, mean +136 $/wk, beats random-skip null (pct 0.93-1.00), beats live in 59% of months, trailing-6M/3M pick LS_K2_M30 = WEAK-BUT-POSITIVE, but ENGINE (12 months) disagrees (L6M ulcer 9959 vs 9520 live): so more engine months needed: queued the missing LS_K2_M30 months (31) into _major_e/pending.txt (top priority). DAY-DONE/resume rolling picks do NOT beat live (persistence 20%/40%): rows downgraded to BEST-AVAILABLE-NOT-PROVEN. Late-entry halving no better than random.
+- 2026-11-17 19:26Z W-ME PART E: queue _major_e 45 lines pending, 1960 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
+- 2026-11-17T19:26:36Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- lead 19:29Z LEAD NOTE: CORES above; inbox empty; agents W-BAR, W-BAR2, W-SWA, W-SWB, W-S1R running (W-RECENT hourly loop live); 31 LS_K2_M30 months queued in _major_e.

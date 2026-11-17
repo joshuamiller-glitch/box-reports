@@ -36,16 +36,16 @@ VERDICT (data ends 2026-11-13; ): registry coverage list; 20 coverage rows of th
 | mom | PRICE | W-BAR | built | custom BarsType (MomentumBars third-party) | not yet | - |
 | trend | PRICE | W-BAR | planned | custom BarsType (TrendBars third-party) | not yet | - |
 | pasl | PRICE | W-BAR | planned | custom BarsType | not yet | - |
-| rngor | COMPOSITE | W-BAR2 | planned | custom BarsType | not yet | - |
-| volor | COMPOSITE | W-BAR2 | planned | custom BarsType | not yet | - |
-| dltor | COMPOSITE | W-BAR2 | planned | custom BarsType | not yet | - |
+| rngor | COMPOSITE | W-BAR2 | built | custom BarsType | not yet | - |
+| volor | COMPOSITE | W-BAR2 | built | custom BarsType | not yet | - |
+| dltor | COMPOSITE | W-BAR2 | built | custom BarsType | not yet | - |
 | ha | SMOOTHING | W-BAR2 | built | native HeikenAshi (BarsType) / custom for event bases | not yet | - |
 | smooth | SMOOTHING | W-BAR2 | planned | custom BarsType or indicator on the base | not yet | - |
 | vfp | FOOTPRINT | W-BAR2 | built | native Volumetric (NT8 Volumetric bars type) | not yet | - |
 | tpo | PROFILE | W-BAR2 | built | custom (Market Profile) | not yet | - |
 | anch | ANCHORED | W-BAR2 | built | custom BarsType | not yet | - |
-| qmid | ACTIVITY(book) | W-BAR2 | planned | custom BarsType (L1 quote events; NT8 supports OnMarketData) | not yet | - |
-| micro | ACTIVITY(book) | W-BAR2 | planned | custom BarsType | not yet | - |
-| bmsg | ACTIVITY(book) | W-BAR2 | planned | custom BarsType (needs L3/depth messages; NT8 OnMarketDepth) | not yet | - |
+| qmid | ACTIVITY(book) | W-BAR2 | built | custom BarsType (L1 quote events; NT8 supports OnMarketData) | not yet | - |
+| micro | ACTIVITY(book) | W-BAR2 | built | custom BarsType | not yet | - |
+| bmsg | ACTIVITY(book) | W-BAR2 | built | custom BarsType (needs L3/depth messages; NT8 OnMarketDepth) | not yet | - |
 | entropy | INFORMATION(book) | W-BAR2 | built | custom BarsType | not yet | - |
 | sessrng | SESSION-RELATIVE | W-BAR2 | built | custom BarsType | not yet | - |
