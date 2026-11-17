@@ -1,4 +1,4 @@
-# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-17 14:24Z
+# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-17 14:54Z
 > VALIDATION (W-S3, FIRST PASS, 2026-11-17): trials counted = per book 7 schemes x 3 buckets x <= 5 sessions + pooled x 11 candidates (native + 10 priority grid sets), 7 books; the screen is read against 21 shifted-label runs (11/23/37 days) and 3 nonsense 3-bucketings (all counted); correction = walk-forward (one freeze per book on the SEL months landed, then HOLD 2025-11..2026-04 and L6M 2026-05..10 read once) + label nulls; PBO / White RC over the full grid on the stage 3 page; engine-exact assembly and 30 random-bracket controls NOT built yet: nothing here is a tier, missing controls = NOT FINISHED. Numbers shown: SEL-only (no book frozen yet).
 
 VERDICT (data ends 2026-10-30; FIRST PASS, PARTIAL: only the 10-set priority subset of the grid (6 targets at stop 60, 40/40, 40/60, 90/60, 90/90) is used and it is still landing; frozen books none): see five lines below; nothing assembled on the engine, no tier.
@@ -10,15 +10,25 @@ VERDICT (data ends 2026-10-30; FIRST PASS, PARTIAL: only the 10-set priority sub
 4. DS7 needs: all inputs are own-bar features (atr_rel, day vote, 1-min closes, level distances, HAR range forecast) except the ER ladder (own ER30 proxy used, live ladder not replicated) and the no-trade zones (levels used instead).
 5. Next: for any holding rule: exact assembled raw-chassis and JL3 runs with 30 random-bracket controls (not built; needs the lead's queue OK); the stage 3 grid keeps landing.
 
+## THP grammar extension needed in DS7 (parser change for the Table 1 policy lines)
+```
+bracket <book> <session|*> stop=<pts> target=<pts> [timestop=<minutes>[:<min open profit pts>]] [halfoff=<pts> [be]]
+  session: asia | london | nyam | nypm (the existing lines 'bracket K7 * target=59' stay valid; today only target= exists)
+  stop=<pts>      initial stop distance in points; lots scale x 60/stop (min 1) as ApplyPolicyBracket does
+  timestop=N:M    N minutes after the entry fill, if open profit < M points exit at market (M omitted = unconditional exit at N)
+  halfoff=X [be]  at +X points take half (live lots floor, min 1); with 'be' the rest moves to breakeven
+```
+New parser tokens: stop=, timestop=, halfoff= and a session in the third column of 'bracket'. Everything on these pages is raw-chassis research until the exact JL3 assembly and 30 random-bracket controls (S3J) are scored.
+
 ## Table 0 - progress
 | book | common SEL months | HOLD+L6M months landed | state |
 |--|--|--|--|
-| K7 | 1 | 0 / 12 | too few months landed |
-| M7 | 1 | 0 / 12 | too few months landed |
-| P7 | 1 | 0 / 12 | too few months landed |
-| U7 | 1 | 0 / 12 | too few months landed |
-| H7 | 1 | 0 / 12 | too few months landed |
-| A7 | 1 | 0 / 12 | too few months landed |
+| K7 | 1 | 1 / 12 | too few months landed |
+| M7 | 1 | 1 / 12 | too few months landed |
+| P7 | 1 | 1 / 12 | too few months landed |
+| U7 | 1 | 1 / 12 | too few months landed |
+| H7 | 1 | 1 / 12 | too few months landed |
+| A7 | 1 | 1 / 12 | too few months landed |
 | O7 | 1 | 0 / 12 | too few months landed |
 
 Cuts (frozen from native SEL trades): atr_rel thirds [1.0641536788691555, 2.289134438305709], ER30 thirds [0.16943521594684385, 0.28316831683168314].
@@ -46,15 +56,15 @@ Cuts (frozen from native SEL trades): atr_rel thirds [1.0641536788691555, 2.2891
 not enough grid months landed yet
 
 <!-- MD:APPEND -->
-<!-- W-MD section start: written 2026-11-17 14:31Z; sections: UW levels, Size by environment, Own-book walls, one summary table. Source W-MD (MAJOR D addendum 1337Z). FIRST PASS, ARITHMETIC SCREEN (raw-chassis 1-s paths); no engine run yet; nothing assembled. -->
+<!-- W-MD section start: written 2026-11-17 14:59Z; sections: UW levels, Size by environment, Own-book walls, one summary table. Source W-MD (MAJOR D addendum 1337Z). FIRST PASS, ARITHMETIC SCREEN (raw-chassis 1-s paths); no engine run yet; nothing assembled. -->
 
 # W-MD sections (appended below the W-S3 ENV page): UW levels as exit levels, size by environment, own-book walls
-> VALIDATION (W-MD, FIRST PASS, written 2026-11-17 14:31Z): trials counted in autopilot/TRIALS_LEDGER.csv as MD1 (UW/free-level exit rules: 31 rules x 15 book x session cells = 465 + shape grid 5 targets x 4 dimensions x 15 cells = 300), MD2 (size by environment: 12 dimensions x 15 cells = 180), MD3 (walls: 8 rules x 5 groups = 40); correction: none applied beyond the shifted-label null (11/23/37 trades) and 3 nonsense bucketings; PBO not computed (no fitted portfolio); in-sample = SEL (2023-04..2025-10; UW sets 2024-10..2025-10 only: UW history starts 2024-10-01), walk-forward = frozen pick then HOLD (2025-11..2026-04) and L6M (2026-05..2026-10) untouched; planted-edge check passed (below); data ends 2026-10-30.
+> VALIDATION (W-MD, FIRST PASS, written 2026-11-17 14:59Z): trials counted in autopilot/TRIALS_LEDGER.csv as MD1 (UW/free-level exit rules: 31 rules x 15 book x session cells = 465 + shape grid 5 targets x 4 dimensions x 15 cells = 300), MD2 (size by environment: 12 dimensions x 15 cells = 180), MD3 (walls: 8 rules x 5 groups = 40); correction: none applied beyond the shifted-label null (11/23/37 trades) and 3 nonsense bucketings; PBO not computed (no fitted portfolio); in-sample = SEL (2023-04..2025-10; UW sets 2024-10..2025-10 only: UW history starts 2024-10-01), walk-forward = frozen pick then HOLD (2025-11..2026-04) and L6M (2026-05..2026-10) untouched; planted-edge check passed (below); data ends 2026-10-30.
 
 ## W-MD five-line summary
 1. Tried: (1) UW dealer / gamma-wall / max-pain / large-OI levels (prior-day snapshot only) as exit levels: target at the nearest level ahead minus 0/5/10 pts and stop to breakeven or -20 after a rejection, against the box own zones and round numbers, per book x session, frozen on the selection period, read on HOLD and L6M; the UW net-gamma sign and the room to the nearest level as buckets for target distance; (2) size x0.5/x1/x1.5 by 8 environment dimensions + the UW family-7 score; (3) own-book walls from MBO (nearest resting order >= 8/16/32 lots, age >= 30/120 s): target in front of the wall and exit when the wall is pulled.
-2. Timing audit (a): n_dl_sp_ahead_60 is NOT a UW column. It is the Dalton single-print flag (TPO of the last 5 completed RTH days, unfilled zones within 60 pts ahead; code/th_confl_cf5/cf5_sess.py) and uses only completed 1-min bars and completed RTH days: timing is clean. It fires on 49 of 1,849 K7 NY AM trades (R -0.37 vs +0.04; same sign in every year, n = 15/15/8/11 and L6M n = 7; P7 and M7 do not show it), so its z of -7 comes from a very thin flag, not from a UW level. UW levels are one end-of-day snapshot per date (about 16:14 ET); only the previous date is used: no look-ahead, no intraday history of UW levels exists.
-3. What holds / what does not: of the 15 book x session cells, 5 UW-level cell-rules and 4 free-level cell-rules (own zones, round numbers) hold on both untouched windows at the main fill assumption; the shifted-label null produces about as many (table 1b). Two cells hold for UW levels under all three fill assumptions and beat their null (0 of 3 shifted runs): H7 Asia (target at the UW level minus 10 pts, or stop to breakeven after a rejection; ulcer -46% / -33% on HOLD / L6M) and K7 NY PM (NDX-only levels minus 10 pts; ulcer -11% / -7%). LEADs only: both are thin, and a 250-point round-number target also holds in H7 Asia, so UW adds little over free levels there. Net-gamma sign and room buckets show no monotone shape. Sizing by environment: nothing beats the null (table 2). Walls: nothing holds on the 6 covered months; the walk-forward over 2023-2026 runs when the background extraction (3 workers, 11 s per day) finishes (progress 467 of about 965 older days).
+2. Timing audit (a): n_dl_sp_ahead_60 is NOT a UW column. It is the Dalton single-print flag (TPO of the last 5 completed RTH days, unfilled zones within 60 pts ahead; code/th_confl_cf5/cf5_sess.py) and uses only completed 1-min bars and completed RTH days: timing is clean. It fires on 49 of 1,849 K7 NY AM trades (mean R -0.42 vs +0.02 on the other 1,800, plain two-sample t = -3.4; same sign in every year, n = 15/15/8/11, mean R -0.12/-0.57/-0.37/-0.66, L6M n = 7; P7 and M7 do not show it), so the stage 1 z of -7 comes from a very thin flag counted over weeks, not from a UW level; it is one K7 NY AM cell out of thousands scanned. UW levels are one end-of-day snapshot per date (about 16:14 ET); only the previous date is used: no look-ahead, no intraday history of UW levels exists.
+3. What holds / what does not: of the 15 book x session cells, 6 UW-level cell-rules and 6 free-level cell-rules (own zones, round numbers) hold on both untouched windows at the main fill assumption; the shifted-label null produces about as many (table 1b). Two cells hold for UW levels under all three fill assumptions and beat their null (0 of 3 shifted runs): H7 Asia (target at the UW level minus 10 pts, or stop to breakeven after a rejection; ulcer -46% / -33% on HOLD / L6M) and K7 NY PM (NDX-only levels minus 10 pts; ulcer -11% / -7%). LEADs only: both are thin, and a 250-point round-number target also holds in H7 Asia, so UW adds little over free levels there. Net-gamma sign and room buckets show no monotone shape. Sizing by environment: nothing beats the null (table 2). Walls: nothing holds on the 6 covered months; the walk-forward over 2023-2026 runs when the background extraction (3 workers, 11 s per day) finishes (progress 964 of about 965 older days).
 4. What it needs in DS7: level exits need the UW gex-levels endpoint (oi and vol; NDX and SPX) plus the oi-per-strike endpoint (max-pain, large-OI strikes) once a day after the 16:15 ET snapshot (Advanced API tier as bought for the trial; about 6 requests a day), a mapping of index level to the traded NQ contract (snapshot basis) and a roll guard; the free-level versions need nothing. Walls need a depth feed (the CQG 20-level book is too shallow to see most walls inside 60 pts; MBO gives full depth).
 5. Next: if H7 Asia is kept as a lead, the engine test is an exact hook (target = prior-day UW level minus 10 pts) with an identity cell and 30 persistent random-target controls; it is built and queued by W-MD behind the A/C/E/B/F queues (see queue line below). Everything else is closed at screen level.
 
@@ -82,15 +92,15 @@ Rules replayed on the 1-s raw-chassis paths (21,049 trades, 7 books alone, nativ
 | rule family | cells | real: picks / holds | null holds (shift 11 / 23 / 37) | null mean picks / holds | OFF 0 (conservative): picks / holds | OFF 3 (optimistic): picks / holds |
 |--|--|--|--|--|--|--|
 | T_UW | 15 | 5 / 1 | 0 / 1 / 0 | 4.3 / 0.3 | 3 / 2 | 6 / 2 |
-| T_UWG | 15 | 4 / 1 | 0 / 0 / 1 | 4.0 / 0.3 | 3 / 1 | 8 / 2 |
-| T_UWN | 15 | 3 / 1 | 0 / 0 / 1 | 4.0 / 0.3 | 3 / 1 | 5 / 1 |
-| T_UWO | 15 | 5 / 0 | 0 / 0 / 1 | 6.0 / 0.3 | 5 / 0 | 7 / 2 |
-| T_OWN | 15 | 4 / 0 | 0 / 2 / 0 | 3.3 / 0.7 | 2 / 0 | 5 / 0 |
-| T_R250 | 15 | 6 / 2 | 3 / 0 / 2 | 7.3 / 1.7 | 5 / 1 | 7 / 3 |
-| T_R100 | 15 | 4 / 0 | 0 / 0 / 1 | 5.7 / 0.3 | 0 / 0 | 7 / 5 |
-| T_OWN@UWsample | 15 | 3 / 0 | 1 / 1 / 0 | 3.7 / 0.7 | 2 / 0 | 5 / 0 |
-| T_R250@UWsample | 15 | 6 / 2 | 3 / 2 / 1 | 7.3 / 2.0 | 5 / 1 | 8 / 4 |
-| T_R100@UWsample | 15 | 3 / 0 | 3 / 1 / 1 | 6.7 / 1.7 | 1 / 0 | 7 / 4 |
+| T_UWG | 15 | 5 / 2 | 0 / 0 / 2 | 4.0 / 0.7 | 3 / 1 | 8 / 2 |
+| T_UWN | 15 | 3 / 1 | 0 / 0 / 2 | 4.7 / 0.7 | 3 / 1 | 5 / 1 |
+| T_UWO | 15 | 5 / 0 | 0 / 0 / 1 | 6.7 / 0.3 | 5 / 0 | 7 / 2 |
+| T_OWN | 15 | 4 / 1 | 0 / 3 / 2 | 3.3 / 1.7 | 2 / 0 | 5 / 0 |
+| T_R250 | 15 | 6 / 3 | 3 / 2 / 2 | 7.7 / 2.3 | 5 / 1 | 7 / 3 |
+| T_R100 | 15 | 5 / 0 | 0 / 0 / 1 | 6.0 / 0.3 | 0 / 0 | 7 / 5 |
+| T_OWN@UWsample | 15 | 4 / 1 | 1 / 2 / 1 | 3.7 / 1.3 | 2 / 0 | 5 / 0 |
+| T_R250@UWsample | 15 | 7 / 4 | 4 / 2 / 1 | 7.7 / 2.3 | 5 / 1 | 8 / 4 |
+| T_R100@UWsample | 15 | 4 / 1 | 2 / 1 / 1 | 6.7 / 1.3 | 1 / 0 | 7 / 4 |
 | T_FIXED | 15 | 9 / 0 | 0 / 0 / 0 | 9.0 / 0.0 | 5 / 0 | 12 / 3 |
 | S_UW | 15 | 1 / 1 | 0 / 0 / 0 | 2.7 / 0.0 | 1 / 1 | 1 / 1 |
 | S_UWG | 15 | 1 / 1 | 0 / 0 / 0 | 1.7 / 0.0 | 2 / 1 | 1 / 1 |
@@ -108,13 +118,21 @@ Rules replayed on the 1-s raw-chassis paths (21,049 trades, 7 books alone, nativ
 | S_R250 | H7 Asia | BE | 49 | -19% | -12% / -19% | 769 / 1880 | 7 / 11 | cons:holds, opt:holds |
 | S_UW | H7 Asia | BE | 102 | -63% | -47% / -24% | 2004 / 1421 | 38 / 38 | cons:holds, opt:holds |
 | S_UWG | H7 Asia | BE | 99 | -62% | -47% / -24% | 2004 / 1789 | 38 / 37 | cons:holds, opt:holds |
-| T_R250 | H7 Asia | b10 | 94 | -17% | -9% / -14% | 562 / 1381 | 15 / 23 | cons:holds, opt:holds |
-| T_R250 | P7 London | b5 | 148 | -18% | -39% / -7% | 594 / -137 | 48 / 79 | cons:no, opt:holds |
-| T_R250@UWsample | K7 NY AM | b5 | 103 | -28% | -19% / -21% | 503 / 636 | 52 / 53 | cons:holds, opt:holds |
-| T_R250@UWsample | P7 London | b5 | 90 | -16% | -41% / -7% | 146 / -137 | 47 / 79 | cons:no, opt:holds |
+| T_HYBN | K7 NY PM | b10 | 277 | -69% | -39% / -39% | 1537 / 295 | 144 / 155 | cons:no, opt:no |
+| T_OWN | K7 NY PM | b20 | 579 | -57% | -40% / -63% | 1912 / 732 | 145 / 160 | cons:no, opt:no |
+| T_OWN@UWsample | K7 NY PM | b20 | 264 | -52% | -40% / -63% | 1941 / 628 | 142 / 158 | cons:no, opt:no |
+| T_R100@UWsample | K7 NY AM | b20 | 318 | -32% | -10% / -71% | 191 / 1778 | 169 / 191 | cons:no, opt:holds |
+| T_R250 | H7 Asia | b20 | 111 | -37% | -12% / -7% | 394 / 994 | 20 / 27 | cons:holds, opt:holds |
+| T_R250 | M7 London | b20 | 283 | -29% | -42% / -36% | 920 / 2724 | 91 / 123 | cons:no, opt:holds |
+| T_R250 | P7 London | b15 | 172 | -25% | -47% / -9% | 1500 / 895 | 55 / 99 | cons:no, opt:holds |
+| T_R250@UWsample | H7 Asia | b20 | 53 | -9% | -12% / -8% | 394 / 994 | 20 / 27 | cons:no, opt:no |
+| T_R250@UWsample | K7 NY AM | b15 | 130 | -32% | -18% / -31% | 586 / 737 | 64 / 64 | cons:holds, opt:holds |
+| T_R250@UWsample | M7 London | b20 | 147 | -20% | -42% / -36% | 739 / 2724 | 90 / 123 | cons:no, opt:holds |
+| T_R250@UWsample | P7 London | b15 | 104 | -27% | -49% / -9% | 1107 / 895 | 54 / 99 | cons:no, opt:holds |
 | T_UW | H7 Asia | b10 | 124 | -76% | -46% / -33% | 1132 / 2442 | 55 / 50 | cons:holds, opt:holds |
 | T_UWG | H7 Asia | b10 | 119 | -74% | -46% / -34% | 1236 / 3446 | 54 / 44 | cons:holds, opt:holds |
-| T_UWN | K7 NY PM | b10 | 111 | -20% | -11% / -7% | 307 / 1110 | 57 / 51 | cons:holds, opt:holds |
+| T_UWG | P7 NY AM | b20 | 216 | -44% | -0% / -15% | 1733 / 835 | 98 / 105 | cons:no, opt:no |
+| T_UWN | K7 NY PM | b20 | 127 | -28% | -21% / -11% | 610 / 909 | 67 / 57 | cons:holds, opt:holds |
 
 Planted-edge check (before reading "nothing holds"): the same T_UW procedure on a world where every trade the b0 rule fires on really reverses (native -40 pts) finds 15 / 15 picks / holds in 15 cells (null 0-4 picks, 0 holds); the sizing procedure on +$300 per lot on with-the-day trades (0.25 R) holds in 6 of 13 vote cells vs 0-1 in its null. Reading: the screen has power for effects of that size; an effect much smaller than that (like +$40 per lot) is not detectable by ulcer, in any cell.
 
@@ -199,25 +217,25 @@ Cells that hold (real, untouched; $/wk at x1.75):
 Reading: a positive median ulcer change on the untouched windows means the tilt made drawdown WORSE out of sample; the real count of holding cells is at or below the shifted-label null for every dimension. A signal too weak to skip on is also too weak to size on at this resolution. Nothing goes to the engine.
 
 ## 3. Own-book walls as targets and exits
-- What the box has: the per-second mbp-10 state days (2023-04..2026-11) see only the first 10 price levels = 2.25 pts from the touch (median, p10-p90 2.25-2.75; p99 about 37), so a wall within 60 pts cannot be seen in them. Full-depth order-by-order data (MBO) is on the box for the whole of 2023-04..2026-10 (about 190 GB, daily files); per-second wall features (nearest resting order >= 8 lots per side: distance, size, age; large cancels) exist for L6M (158 files). A background extractor (3 workers, nice 15, 11 s per day, STOP file /mnt/l2/l2vast/_major_d/mbo_feat/STOP) is producing the same features for older days, newest first (HOLD months first): 467 of about 965 older days done at 2026-11-17 14:31Z. The scoring (md8_walls.py) automatically switches from split-half to walk-forward (SEL = older days up to 2025-10, HOLD, L6M) once there are at least 4 older months covered.
+- What the box has: the per-second mbp-10 state days (2023-04..2026-11) see only the first 10 price levels = 2.25 pts from the touch (median, p10-p90 2.25-2.75; p99 about 37), so a wall within 60 pts cannot be seen in them. Full-depth order-by-order data (MBO) is on the box for the whole of 2023-04..2026-10 (about 190 GB, daily files); per-second wall features (nearest resting order >= 8 lots per side: distance, size, age; large cancels) exist for L6M (158 files). A background extractor (3 workers, nice 15, 11 s per day, STOP file /mnt/l2/l2vast/_major_d/mbo_feat/STOP) is producing the same features for older days, newest first (HOLD months first): 964 of about 965 older days done at 2026-11-17 14:59Z. The scoring (md8_walls.py) automatically switches from split-half to walk-forward (SEL = older days up to 2025-10, HOLD, L6M) once there are at least 4 older months covered.
 - Wall definition: the "3x/5x/10x the normal level" cannot be applied to a single order feature; absolute order size is used instead (NQ p99 order = 1 lot, so >= 8 / 16 / 32 lots = 8x / 16x / 32x), age >= 30 s or 120 s, within 60 pts ahead. W1 = target 1 pt in front of the wall (floor 8 pts) when nearer than native. W2 = the trade leans on an own-side order >= 8 or 16 lots within 10 pts and aged >= 30 s; exit next second at the mid - 0.5 when a large own-side cancel occurs and the nearest large order moves >= 2 ticks away.
 **Table 3a - what the rules do on the covered span (descriptive; $ at x1.75)**
 | rule | fired | covered trades | mean $ per fired trade | total $ change |
 |--|--|--|--|--|
-| W1 size>=8 age>=30s | 5214 | 8665 | -120 | -623087 |
-| W1 size>=8 age>=120s | 4435 | 8665 | -116 | -515687 |
-| W1 size>=16 age>=30s | 1149 | 8665 | -415 | -476529 |
-| W1 size>=16 age>=120s | 987 | 8665 | -441 | -435699 |
-| W1 size>=32 age>=30s | 351 | 8665 | -321 | -112499 |
-| W1 size>=32 age>=120s | 309 | 8665 | -302 | -93459 |
-| W2 lean>=8 | 583 | 8665 | -748 | -436258 |
-| W2 lean>=16 | 173 | 8665 | -763 | -131925 |
+| W1 size>=8 age>=30s | 10298 | 18684 | -151 | -1555191 |
+| W1 size>=8 age>=120s | 8363 | 18684 | -171 | -1432621 |
+| W1 size>=16 age>=30s | 2296 | 18684 | -364 | -835797 |
+| W1 size>=16 age>=120s | 1903 | 18684 | -446 | -847952 |
+| W1 size>=32 age>=30s | 622 | 18684 | -482 | -299772 |
+| W1 size>=32 age>=120s | 528 | 18684 | -523 | -275963 |
+| W2 lean>=8 | 2448 | 18684 | -482 | -1180835 |
+| W2 lean>=16 | 572 | 18684 | -795 | -454957 |
 
 **Table 3b - walk selection and null on the covered span (pooled books, groups ALL + 4 sessions)**
 | rule | mode | groups | real: picks / holds | null mean picks / holds |
 |--|--|--|--|--|
-| W1 | split-half | 5 | 4 / 0 | 2.7 / 1.0 |
-| W2 | split-half | 5 | 0 / 0 | 0.0 / 0.0 |
+| W1 | walk-forward (sampled older days) | 5 | 2 / 0 | 3.0 / 1.3 |
+| W2 | walk-forward (sampled older days) | 5 | 0 / 0 | 0.7 / 0.0 |
 
 Reading (covered span only, FIRST PASS): a target placed in front of a resting wall fires on 4-60% of the covered trades (more for the smaller wall class) and loses money on average per fired trade (the native 60-pt target is reached through the wall on many of them), and exiting when a leaned-on wall is pulled costs more than it saves. No rule holds on the covered span. The older-days walk-forward will replace this paragraph.
 
@@ -225,11 +243,11 @@ Reading (covered span only, FIRST PASS): a target placed in front of a resting w
 | rule | where it holds | ulcer change HOLD / L6M | mean $/wk change HOLD / L6M | real holds of picks; null | feed it needs |
 |--|--|--|--|--|--|
 | T1 target at nearest UW level minus 10/5/0 pts (all UW levels) | H7 Asia | -46% / -33% | 1132 / 2442 | 1 of 5 real; null mean 0.3 | UW gex-levels (oi+vol) NDX+SPX, oi-per-strike (max-pain/top OI), spot at the 16:15 ET snapshot; daily, Advanced tier |
-| T2 target at UW gamma level (NDX+SPX walls/flip/magnet) minus buffer | H7 Asia | -46% / -34% | 1236 / 3446 | 1 of 4 real; null mean 0.3 | UW gex-levels daily (NDX, SPX), Advanced tier |
+| T2 target at UW gamma level (NDX+SPX walls/flip/magnet) minus buffer | H7 Asia, P7 NY AM | -23% / -25% | 2968 / 4280 | 2 of 5 real; null mean 0.7 | UW gex-levels daily (NDX, SPX), Advanced tier |
 | S1 stop to breakeven (or -20) after rejection from a UW level | H7 Asia | -47% / -24% | 2004 / 1421 | 1 of 1 real; null mean 0.0 | UW gex-levels daily + own 1-s price |
-| T3 target at own free zones (prior-day H/L/C/POC/VAH/VAL, Globex H/L) | nowhere | - / - | - / - | 0 of 4 real; null mean 0.7 | none (own bars) |
-| T4 target at 250-pt round numbers | H7 Asia, P7 London | -24% / -10% | 1155 / 1244 | 2 of 6 real; null mean 1.7 | none |
-| T5 target at 100-pt round numbers | nowhere | - / - | - / - | 0 of 4 real; null mean 0.3 | none |
+| T3 target at own free zones (prior-day H/L/C/POC/VAH/VAL, Globex H/L) | K7 NY PM | -40% / -63% | 1912 / 732 | 1 of 4 real; null mean 1.7 | none (own bars) |
+| T4 target at 250-pt round numbers | H7 Asia, M7 London, P7 London | -42% / -9% | 2815 / 4613 | 3 of 6 real; null mean 2.3 | none |
+| T5 target at 100-pt round numbers | nowhere | - / - | - / - | 0 of 5 real; null mean 0.3 | none |
 | T0 best fixed nearer target (15..50), no level | nowhere | - / - | - / - | 0 of 9 real; null mean 0.0 | none |
 | Z atr_terc size x0.5/x1/x1.5 (exposure neutral) | K7 NY AM, M7 NY AM, P7 Asia | -14% / -22% | 1000 / 7643 | 3 of 15 cells; null 1/1/0 | own bars |
 | Z atr_live size x0.5/x1/x1.5 (exposure neutral) | H7 Asia, P7 NY AM | -4% / -18% | 1890 / 4374 | 2 of 14 cells; null 4/3/1 | own bars (DS7 atr_rel) |
@@ -240,10 +258,10 @@ Reading (covered span only, FIRST PASS): a target placed in front of a resting w
 | Z roomUW size x0.5/x1/x1.5 (exposure neutral) | P7 NY AM | -14% / -25% | 1074 / 823 | 1 of 15 cells; null 0/1/2 | UW gex-levels daily |
 | Z fresh size x0.5/x1/x1.5 (exposure neutral) | K7 NY AM, M7 NY AM | -9% / -3% | 130 / 567 | 2 of 15 cells; null 1/1/4 | D7 own trade log |
 | Z uwscore size x0.5/x1/x1.5 (exposure neutral) | nowhere | - / - | - / - | 0 of 14 cells; null 1/0/0 | UW family-7 columns (gamma, walls, flows; Advanced tier) |
-| W1 target in front of a resting >=8-lot order within 60 pts | covered span only | see section | see section | 0 / 4 real; null 1.0 | MBO / full-depth book (CQG 20 levels may see only part; MBO feed for exact sizes/ages) |
+| W1 target in front of a resting >=8-lot order within 60 pts | covered span only | see section | see section | 0 / 2 real; null 1.3 | MBO / full-depth book (CQG 20 levels may see only part; MBO feed for exact sizes/ages) |
 | W2 exit when the wall the trade leans on is pulled | covered span only | see section | see section | 0 / 0 real; null 0.0 | MBO / full-depth book (CQG 20 levels may see only part; MBO feed for exact sizes/ages) |
 
-### Engine (exact, raw chassis, base lots, $4.84; written 2026-11-17 14:31Z by md_eng_loop)
+### Engine (exact, raw chassis, base lots, $4.84; written 2026-11-17 14:51Z by md_eng_loop)
 - Identity (hook present and inert = TL3_RB_S0 trade for trade, 202610 and 202504, H7 and K7): PASSED
 - Real cells: not all 12 months landed yet.
 - identity PASSED
