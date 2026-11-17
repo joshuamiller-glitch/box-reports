@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-17 17:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 17:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-17 17:30Z | box1: busy 99%, load1 35.59, workers 22, MemAvail 93 GB | server2: busy 100%, load1 87.18, workers 95, MemAvail 1391 GB | pending box1-eligible 36628 / server2-eligible 39597 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-17 17:45Z | box1: busy 99%, load1 33.29, workers 25, MemAvail 93 GB | server2: busy 100%, load1 92.34, workers 92, MemAvail 1383 GB | pending box1-eligible 36101 / server2-eligible 38867 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-17 17:30Z
+2026-11-17 17:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-17 17:30Z | box1: busy 99%, load1 35.59, workers 2
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 93.2 GB; live reservations 4 (4 GB); workers 22, of which TP-adopted 22 (RSS 40.5 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 35.55, 36.44, 35.66
-  by tag: MA quota 8 running 3 hungry True RSS 5.0 GB PSS 4.6 GB; MC quota 6 running 1 hungry True RSS 2.0 GB PSS 1.3 GB; ME quota 6 running 1 hungry True RSS 2.1 GB PSS 2.0 GB; MB quota 6 running 2 hungry True RSS 3.5 GB PSS 3.3 GB; MF quota 4 running 3 hungry True RSS 5.0 GB PSS 4.4 GB; JV quota 6 running 8 hungry False RSS 15.1 GB PSS 10.2 GB; DD quota 4 running 2 hungry True RSS 3.7 GB PSS 3.4 GB; CF quota 8 running 2 hungry True RSS 4.1 GB PSS 3.1 GB
-  cell-months finished last hour (DONE markers): 1706
-  top running jobs: TL3_MB_ORBASIA15S60_L2 (x6);TL3_MA_R2A_JL2 (x6);TL3_DD_JL3_G_30_4200 (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 87.84, 90.73, 91.37|/dev/md2         28T  882G   28T   4% /mnt/l2|185|
+Server 1 (this box): MemAvail 92.5 GB; live reservations 9 (9 GB); workers 25, of which TP-adopted 25 (RSS 38.4 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 33.43, 36.44, 36.68
+  by tag: ME quota 10 running 7 hungry True RSS 14.9 GB PSS 11.7 GB; DD quota 6 running 3 hungry True RSS 5.1 GB PSS 4.8 GB; MB quota 4 running 3 hungry True RSS 4.8 GB PSS 4.3 GB; MF quota 4 running 5 hungry False RSS 4.8 GB PSS 4.5 GB; JV quota 8 running 6 hungry True RSS 7.2 GB PSS 6.2 GB; CF quota 8 running 1 hungry True RSS 1.5 GB PSS 1.4 GB
+  cell-months finished last hour (DONE markers): 2035
+  top running jobs: TL3_CF_ST_36_S_RND (x8);TL3_ME_JL3_LS_K2_M120 (x6);TL3_DD_JL3_OFF (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 92.34, 89.13, 88.82|/dev/md2         28T  882G   28T   4% /mnt/l2|174|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,5 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 87.84, 90.73, 91.37|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261117_1342Z_MAJOR-CHANGES-PROGRAMME.md 20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md 20261117_1426Z_major-follow-ups-late-entry-and-same-side-losers.md 20261117_1447Z_DELIVERABLES-every-part-ends-in-a-setting.md 20261117_1509Z_day-done-conditional-resume.md
+20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md 20261117_1426Z_major-follow-ups-late-entry-and-same-side-losers.md 20261117_1447Z_DELIVERABLES-every-part-ends-in-a-setting.md 20261117_1509Z_day-done-conditional-resume.md 20261117_1735Z_queue-priority-leads-first.md
+- INBOX 20261117_1735Z_queue-priority-leads-first received 17:35Z and ACTED 17:45-17:55Z: (1) PART A CLOSED: _major_a removed from QUEUES.txt (queue file empty)
