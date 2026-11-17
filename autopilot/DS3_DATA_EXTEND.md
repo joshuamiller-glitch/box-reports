@@ -1,0 +1,5 @@
+# DS3_DATA_EXTEND - W-DATA (owner), order autopilot/DIRECTIVE_L2_CONVERT_20261117.md (lead relay 11-17 20:42Z)
+Five-line summary: (1) hist_replica NQ day files 2026-11-02..11-13 now exist (11-02..11-11 had been built 11-12; 11-12 and 11-13 converted 11-17 20:52Z from the box's raw files, resume chain from 11-11 state) and are in manifest.json (980 days, data end 2026-11-13). (2) Validation: see table below. (3) ES/RTY: no raw mbp-10 newer than 2026-10-30 on the box, nothing to convert. (4) Engine base 202611 (store ev1113b, data to 11-13) already exists and passed identity; S0 raw-chassis 202611 months queued in /mnt/l2/l2vast/_data/pending_nov.txt for the lead. (5) Unattended loop converts each new complete session every 30 min (code/hist_pipe/daily_extend_loop.sh; STOP file /mnt/l2/l2vast/_hist_replica/STOP_DAILY_EXTEND).
+
+## Progress log (hourly lines appended by the loop)
+- 2026-11-17T20:54:19Z loop alive pid 2819417: hist_replica data end 20261113 (980 days), last pass log: 2026-11-17T20:54:17Z complete new labels []
