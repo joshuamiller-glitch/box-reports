@@ -8,7 +8,7 @@
 
 Header: trials counted ~1,400 integer lot vectors solved/evaluated by arithmetic (frontier 12 points x folds x 2 windows, 30 nulls, finals) + 30 random + 5 uniform + 6 final exact vectors; correction: none yet (first pass); PBO not computed; selection status: in-sample solve on landed months, WALK-FORWARD on the calibrated arithmetic, exact engine on 6 finals (3 on JL2); the final vectors are re-solved on the trailing window to 2026-10-31, so L6M/HOLD are NOT untouched for them (training window), only the walk-forward OOS days are. Data end 2026-10-31. FIRST PASS. Tiers CONFIRMED/LEAD: not issued (engine-exact same-size controls not run; the additivity test says the arithmetic controls cannot stand in).
 
-Updated 2026-11-17 15:25Z UTC. Cell P&L landed for 43 months. Live vector today (live lots): K7 4,4,0,2,4,0; M7 0,4,0,2,0,0; U7 7,7,0,0,0,0; P7 12,7,0,7,0,0; H7 7,0,0,2,0,0; A7 2 Asia. O7 is not a decision variable (no session table in the engine; constant background in the arithmetic, in the engine runs unchanged).
+Updated 2026-11-17 15:56Z UTC. Cell P&L landed for 43 months. Live vector today (live lots): K7 4,4,0,2,4,0; M7 0,4,0,2,0,0; U7 7,7,0,0,0,0; P7 12,7,0,7,0,0; H7 7,0,0,2,0,0; A7 2 Asia. O7 is not a decision variable (no session table in the engine; constant background in the arithmetic, in the engine runs unchanged).
 
 ## 1. Cell: lots today -> lots proposed (base/live; * = changed)
 
@@ -432,12 +432,12 @@ Live = London same-side cap 6 (truncate) + Asia-only 50% stack cut. C4/C8/C12/CN
 
 | variant | ulcer | max DD | worst week | mean $/wk | d ulcer vs live cap/cut |
 |---|---|---|---|---|---|
-| C4 | 0/14 months landed | | | | |
-| C8 | 0/14 months landed | | | | |
-| C12 | 0/14 months landed | | | | |
-| CNO | 0/14 months landed | | | | |
-| SCOFF | 0/14 months landed | | | | |
-| SCALL | 0/14 months landed | | | | |
+| C4 | 38120 | -159051 | -62578 | 29421 | -22.0% |
+| C8 | 41020 | -174149 | -57819 | 30421 | -16.1% |
+| C12 | 44534 | -185267 | -57819 | 29460 | -8.9% |
+| CNO | 44479 | -185267 | -57819 | 29064 | -9.0% |
+| SCOFF | 53018 | -219855 | -75973 | 28085 | +8.5% |
+| SCALL | 49216 | -206068 | -72359 | 29103 | +0.7% |
 
 
 ## 10. Caveats
