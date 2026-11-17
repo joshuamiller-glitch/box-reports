@@ -1,12 +1,12 @@
 # DS3_REBUILD_S1 [AT-ENTRY CLEAN TABLES: NONE YET - every table below is NOT at-entry-clean unless marked; see AT-ENTRY STATUS] - Stage 1 on RAW book trades (W-S1; order DIRECTIVE_REBUILD_20261116 + addenda + REFILL 11-17)
-AT-ENTRY STATUS (read first, 2026-11-17 08:34 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
+AT-ENTRY STATUS (read first, 2026-11-17 09:12 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
 
-> VALIDATION (FIRST PASS, written 2026-11-17 08:34 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
+> VALIDATION (FIRST PASS, written 2026-11-17 09:12 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
 
-VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 572 of 603; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
+VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 609 of 337; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
 
 ## Status
-Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 11, server 2 leased 10, load1 box 1 43.0. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 572/603. Updated 2026-11-17 08:34 UTC.
+Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 4, server 2 leased 10, load1 box 1 42.6. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 609/337. Updated 2026-11-17 09:12 UTC.
 
 ## Raw base (stage 0 table used here, engine $ at base lots and $1.18 RT; MAE_R positive = worse; R = net / (lots x 20 x stop))
 | book | session | trades | mean R | win % | net $ (base) | mean MFE_R | mean MAE_R |
@@ -203,7 +203,7 @@ Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - 
 |--|--|--|--|--|
 | 1 | 1192 | 152 | 408 | 41 |
 | 10 | 16 | 3 | 3 | 2 |
-| 2 | 144 | 26 | 31 | 8 |
+| 2 | 144 | 26 | 31 | 9 |
 | 3 | 8 | 2 | 2 | 1 |
 | 4 | 8 | 2 | 2 | 0 |
 | 5 | 144 | 56 | 60 | 41 |
@@ -216,10 +216,10 @@ Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - 
 Leading cells by permutation p (count of real stable passes vs shifted nulls):
 | chunk | book | family | real stable | real rate % | control rate % | draws | p | BH q |
 |--|--|--|--|--|--|--|--|--|
-| cf6_analogs_00 | POOL | 9 | 321 | 4.56 | 0.99 | 600 | 0.0017 | 0.018 |
-| cf4_altagree_11 | P7 | 1 | 338 | 3.11 | 1.43 | 550 | 0.0018 | 0.018 |
+| fam9_raw_00 | A7 | 9 | 100 | 8.93 | 0.76 | 800 | 0.0012 | 0.018 |
+| cf6_analogs_00 | POOL | 9 | 321 | 4.56 | 0.99 | 800 | 0.0012 | 0.018 |
 | FLOW_PARTA_00 | K7 | 5 | 2508 | 4.70 | 1.23 | 550 | 0.0018 | 0.018 |
-| fam9_raw_00 | A7 | 9 | 100 | 8.93 | 0.76 | 550 | 0.0018 | 0.018 |
+| cf4_altagree_11 | P7 | 1 | 338 | 3.11 | 1.43 | 550 | 0.0018 | 0.018 |
 | FLOW_PARTA_01 | POOL | 5 | 4303 | 6.06 | 1.36 | 550 | 0.0018 | 0.018 |
 | cf6_cols_all_01 | A7 | 2 | 229 | 4.06 | 1.80 | 550 | 0.0018 | 0.018 |
 | FLOW_PARTA_02 | P7 | 5 | 1699 | 4.17 | 1.11 | 550 | 0.0018 | 0.018 |
@@ -232,7 +232,7 @@ Leading cells by permutation p (count of real stable passes vs shifted nulls):
 | FLOW_PARTA_00 | POOL | 5 | 5148 | 7.28 | 1.24 | 550 | 0.0018 | 0.018 |
 | FLOW_PARTA_00 | P7 | 5 | 1589 | 3.91 | 1.41 | 550 | 0.0018 | 0.018 |
 
-## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 08:21 UTC; A shards landed 1576 of 1576
+## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 09:01 UTC; A shards landed 1576 of 1576
 STATUS: COMPLETE
 
 Family table at-entry, window ALL43, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
