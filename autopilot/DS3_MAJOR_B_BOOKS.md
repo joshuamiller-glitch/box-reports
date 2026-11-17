@@ -1,13 +1,13 @@
 # DS3_MAJOR_B_BOOKS - diversifying books from the shelf, scored against the JL3 stack (W-MB, part B of the MAJOR-CHANGES programme)
 
-**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 20:34 UTC by an unattended loop)**
-1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 56 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
-2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 21 of 55 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
+**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 21:04 UTC by an unattended loop)**
+1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 65 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
+2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 25 of 65 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
 3. Does not: no non-NQ book can be engine-tested (the engine is NQ-only; no price store or product path exists for ES/RTY on the engine, none for the rest); their screen is HARNESS BASIS only; almost all candidates are 2026 regime earners (PRE / X' negative) and the ulcer gain of a screened book is mostly its mean (r=-0.95), so only the excess over the date-shift null counts.
 4. Needs in DS7: every candidate here is a NEW book (fade / failed-break / gap / time-of-day / structure), none is a mean-reversion slot that exists today; code needs are in section 6 per book. A candidate counts only after it passes stage 2 (older windows) and the placebo draws.
 5. Next: stage 2 (PREUW, X') and lot variants for the best six, shifted-event placebos, then the best 3-5 together and on the part A lot vector; this page refreshes every 30 minutes.
 
-**VERDICT (data ends 2026-10-31; FIRST PASS, no tier claim yet):** header - trials counted = 6836 screened lists (harness basis) + 56 engine cells; correction = date-shift null (30 circular shifts, weekday kept) and excess over null median; no White RC/DSR yet (screen is a first pass; engine finalists get FIRST PASS labels only); PBO not computed (no fitted choice besides the frozen stage-1 rule: selection on the screen, which included HOLD and L6M, so engine HOLD/L6M are NOT untouched; PREUW and X' are the untouched windows for stage 2). In-sample = harness screen; walk-forward = engine windows stage 2. Costs: $4.84 RT per base lot, base lots (x1.75 live column where shown). Data end: engine months to 202610; harness lists to 2026-10-30.
+**VERDICT (data ends 2026-10-31; FIRST PASS, no tier claim yet):** header - trials counted = 6836 screened lists (harness basis) + 65 engine cells; correction = date-shift null (30 circular shifts, weekday kept) and excess over null median; no White RC/DSR yet (screen is a first pass; engine finalists get FIRST PASS labels only); PBO not computed (no fitted choice besides the frozen stage-1 rule: selection on the screen, which included HOLD and L6M, so engine HOLD/L6M are NOT untouched; PREUW and X' are the untouched windows for stage 2). In-sample = harness screen; walk-forward = engine windows stage 2. Costs: $4.84 RT per base lot, base lots (x1.75 live column where shown). Data end: engine months to 202610; harness lists to 2026-10-30.
 
 ## 1. The JL3 stack reference (what a diversifier must help)
 Engine JL3 (TL3_EV_JL3), base lots, $4.84, day = ET exit + 6 h, weeks Mon-Sun. Window table (mean $/wk, ulcer, max DD, worst week):
@@ -126,6 +126,9 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | TL3_MB_IBST20_L4 |  |  | 21 | 1790 | 1458 | -4135 | 4951 | 0 | 1041 | 16783 | -0.14 | -332 | -4343 | 0.00 |
+| TL3_MB_COMBO5 |  |  | 323 | 3387 | 3396 | -4616 | 17280 | 3957 | -3095 | 22083 | -0.06 | 9 | -3282 | 0.07 |
+| TL3_MB_COMBO3 |  |  | 173 | 1675 | 1665 | -3838 | 6527 | 2176 | -8171 | 14049 | -0.12 | -10 | -2569 | 0.13 |
+| TL3_MB_ORBASIA15S75_L4 |  |  | 40 | 424 | 231 | -3321 | 8880 | 0 | 4962 | 11049 | -0.05 | -193 | -2326 | 0.00 |
 | TL3_MB_FADELVd6f9339b_L4 |  |  | 159 | 601 | 496 | -1902 | 5306 | 2416 | -9581 | 8090 | -0.01 | -105 | -2243 | 0.00 |
 | TL3_MB_MONDAYLONGA1c2b44c6_L1_P11 |  |  | 46 | 95 | 118 | -1909 | 8630 | 165 | 14406 | 13456 | -0.02 | 23 | -1978 | 0.00 |
 | TL3_MB_O7V1000_k10_L4 |  |  | 44 | 945 | 906 | -1942 | 0 | 0 | 6161 | 11133 | 0.04 | -38 | -1932 | 0.00 |
@@ -145,16 +148,20 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | NQ.DIST_DISBPRELcont.7bb655 | pre | 3 | 67 | 151 | 320 | -412 | -1261 | 315 | 1152 | 11087 | -0.01 | 169 | -812 | 0.00 |
 | NQ.DIST_DISBNRELrev.6628b1 | nyam | 2 | 55 | 915 | 952 | -975 | -2623 | 0 | -2864 | 6203 | 0.08 | 38 | -783 | 0.17 |
 | NQ.FADE_LV.a8632973 | nypm | 3 | 78 | 457 | 434 | -1000 | 1922 | 2156 | 5103 | 4695 | 0.08 | -23 | -772 | 0.03 |
+| TL3_MB_ORBASIA15S75_L1 |  |  | 40 | 439 | 423 | -475 | -480 | 0 | -790 | 21 | 0.04 | -16 | -717 | 0.03 |
 | NQ.DIST_DISQ1550drift.78db2c | close | 1 | 163 | 519 | 519 | -734 | 2241 | 355 | 2836 | 3594 | 0.07 | 0 | -503 | 0.10 |
 | NQ.MONDAY_LONG_A.1c2b44c6 | daily | 1 | 42 | 1166 | 1222 | -1049 | 9944 | 0 | -390 | 5231 | 0.04 | 57 | -429 | 0.30 |
 | TL3_MB_FADELV4edbfdf0_L1 |  |  | 120 | 254 | 527 | -1431 | 2210 | 471 | 207 | 3369 | -0.09 | 273 | -386 | 0.00 |
 | NQ.FADE_LV.b6a2c134 | nyam | 2 | 94 | 100 | -15 | 58 | -1958 | 3041 | 592 | 4636 | -0.06 | -116 | -322 | 0.07 |
+| TL3_MB_AG1_COMBO3 |  |  | 180 | 1485 | 1450 | -914 | 2151 | 2385 | -16810 | 7845 | -0.12 | -35 | -315 | 0.37 |
 | NQ.FADE_LV.90b9322c | nyam | 1 | 101 | 247 | 253 | -2 | 2236 | 3380 | 3026 | -4993 | 0.00 | 6 | -107 | 0.37 |
+| TL3_MB_MONDAYLONGA1c2b44c6_L2 |  |  | 42 | 2316 | 2334 | -778 | 14231 | 0 | 2841 | 6602 | 0.02 | 18 | -71 | 0.40 |
 | NQ.T2FNQ.e77382a9 | pre | 1 | 195 | 384 | 24 | -267 | 1358 | 5782 | 2182 | 9839 | -0.05 | -360 | 5 | 0.53 |
 | NQ.FADE_LV.6fb3aa4d | london | 3 | 41 | -84 | 145 | -806 | 3721 | 4461 | 2881 | -262 | 0.00 | 229 | 97 | 0.77 |
 | NQ.LRS.ef7b7bdf | nypm | 1 | 183 | 326 | 305 | 81 | -2764 | -530 | 898 | -1366 | 0.17 | -21 | 102 | 0.77 |
 | NQ.T2F1B.6f26737b | nyam | 7 | 112 | 253 | 289 | -764 | -1877 | 774 | -6753 | 957 | 0.02 | 36 | 139 | 0.90 |
 | TL3_MB_IBST20_L2_P23 |  |  | 25 | 448 | 375 | 342 | 621 | -740 | -1030 | -2188 | -0.01 | -74 | 157 | 0.63 |
+| TL3_MB_ORBASIA15S75_L2_P11 |  |  | 42 | -46 | 180 | -1399 | 3195 | 3669 | -1364 | -1196 | 0.07 | 225 | 258 | 0.90 |
 | TL3_MB_FADELV4edbfdf0_L4 |  |  | 119 | 582 | 413 | 621 | 259 | 3598 | 3792 | 9240 | -0.14 | -169 | 274 | 0.60 |
 | O7 variant t0=0200 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 79 | -368 | -15 | -542 | -1986 | 0 | 7577 | 4134 | 0.06 | 353 | 500 | 0.90 |
 | NQ.T2F1B.fa471237 | nyam | 7 | 115 | -60 | -14 | -511 | -1877 | 774 | -6568 | -1968 | 0.00 | 46 | 508 | 1.00 |
@@ -167,6 +174,7 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | O7 variant t0=0200 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 134 | -381 | -246 | -604 | -1450 | 2156 | 7958 | 297 | 0.09 | 134 | 962 | 1.00 |
 | NQ.T2F1B.e3dde7b1 | nyam | 10 | 102 | 40 | 109 | -10 | 1096 | 3361 | -2090 | -10567 | -0.04 | 69 | 1328 | 1.00 |
 | old-harness sleeve RSI2_t10 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 15 | 9 | -28 | 1751 | -11970 | 0 | 0 | -979 | -0.10 | -37 | 1583 | 0.87 |
+| TL3_MB_ORBASIA15S75_L2_P23 |  |  | 43 | -297 | -356 | 2309 | -8034 | -570 | -4994 | -7676 | 0.09 | -59 | 1712 | 1.00 |
 | TL3_MB_O7V1000_k10_L2_P11 |  |  | 41 | -384 | -362 | 1188 | 1881 | 7855 | 3590 | -9157 | -0.01 | 22 | 1758 | 0.97 |
 | TL3_MB_O7V1000_k10_L2_P23 |  |  | 39 | -871 | -782 | 2147 | -3814 | -3899 | -3899 | -14501 | -0.02 | 89 | 1899 | 1.00 |
 | O7 variant t0=0300 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 137 | -143 | -310 | 1397 | -3913 | 3590 | 1449 | -11381 | 0.07 | -166 | 1913 | 1.00 |
@@ -175,6 +183,8 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | TL3_MB_FADELVd6f9339b_L2_P23 |  |  | 203 | -2230 | -2033 | 3054 | -3752 | 576 | -1611 | -16523 | 0.07 | 197 | 1989 | 0.93 |
 | TL3_MB_O7V1000_k10_L2_P37 |  |  | 47 | -1016 | -984 | 2328 | -1590 | -1590 | -5629 | -13611 | 0.05 | 32 | 2281 | 1.00 |
 | TL3_MB_FADELV4edbfdf0_L2_P11 |  |  | 113 | -1113 | -933 | 2094 | -98 | 5591 | -3518 | -12401 | -0.01 | 180 | 2498 | 0.97 |
+| TL3_MB_ORBASIA15S75_L2_P37 |  |  | 43 | -141 | -355 | 2649 | -5694 | -925 | -2429 | -14887 | 0.08 | -214 | 2543 | 1.00 |
+| TL3_MB_AG1_COMBO5 |  |  | 367 | 3461 | 3490 | 1377 | -10963 | 2150 | -3542 | 24233 | -0.03 | 30 | 2622 | 1.00 |
 | TL3_MB_IBST20_L2_P11 |  |  | 27 | -854 | -717 | 3221 | -11970 | 0 | 0 | -4534 | -0.04 | 137 | 2836 | 0.97 |
 | TL3_MB_FADELVd6f9339b_L2_P11 |  |  | 220 | -2616 | -2752 | 6772 | -7033 | -1040 | -13666 | -20303 | 0.06 | -137 | 3599 | 0.97 |
 | l2vast/ds3/out/SF/trades_CRT_M15_M1_close_ib.parquet | london | 9 | 287 | -2410 | -2473 | 6051 | -16314 | -302 | -13965 | -30528 | 0.01 | -63 | 4961 | 0.93 |
@@ -186,6 +196,7 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | NQ.FADE_LV.4edbfdf0 | asia | 2 | 68 | 230 | 114 | -560 | 3492 | -8206 | -680 | 0 | -0.11 | -116 | -997 | 0.03 |
 | TL3_MB_FADELV4edbfdf0_L4 |  |  | 67 | 514 | 10 | 1197 | -3767 | -17205 | -1389 | 0 | -0.13 | -504 | -871 | 0.20 |
+| TL3_MB_COMBO5 |  |  | 162 | 3768 | 3749 | -842 | 2822 | -5543 | -2630 | 0 | -0.06 | -19 | -836 | 0.13 |
 | TL3_MB_IBST20_L2_P37 |  |  | 10 | 98 | 162 | 272 | -1575 | -889 | -1575 | 0 | -0.02 | 65 | -684 | 0.20 |
 | TL3_MB_FADELV4edbfdf0_L1 |  |  | 68 | 161 | 178 | -446 | 1181 | -3737 | -185 | 0 | -0.11 | 17 | -619 | 0.03 |
 | TL3_MB_IBST20_L2_P11 |  |  | 12 | -1243 | -937 | -162 | 1229 | 0 | 0 | 0 | 0.01 | 306 | -480 | 0.33 |
@@ -199,13 +210,16 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | TL3_MB_O7V1000_k10_L2_P23 |  |  | 19 | -786 | -681 | 379 | -3145 | 0 | 0 | 0 | 0.05 | 105 | -240 | 0.20 |
 | NQ.DIST_DISBNRELrev.6628b1 | nyam | 2 | 27 | 1049 | 1269 | 128 | 674 | -3540 | 91 | 0 | 0.10 | 220 | -236 | 0.23 |
 | NQ.FADE_LV.d6f9339b | nypm | 2 | 76 | -79 | -191 | 183 | 406 | -3451 | -1260 | 0 | -0.07 | -112 | -217 | 0.40 |
+| TL3_MB_COMBO3 |  |  | 92 | 1161 | 788 | 334 | -2811 | -9558 | -6645 | 0 | -0.16 | -374 | -212 | 0.37 |
 | NQ.DIST_DISBPRELcont.7bb655 | pre | 3 | 34 | -23 | 405 | -201 | 4071 | 1169 | 2711 | 0 | -0.00 | 428 | -160 | 0.33 |
+| TL3_MB_ORBASIA15S75_L4 |  |  | 15 | 375 | -267 | 25 | 0 | 3133 | 8871 | 0 | -0.07 | -643 | -157 | 0.37 |
 | old-harness sleeve IBS_t20_n1 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 5 | -296 | -546 | 118 | -832 | -2959 | -3645 | 0 | -0.21 | -250 | -147 | 0.40 |
 | NQ.T2FNQ.80f7f135 | pre | 1 | 97 | 165 | -395 | 277 | -1012 | -2897 | 41 | 0 | -0.00 | -560 | -144 | 0.27 |
 | old-harness sleeve RSI2_t10 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 6 | -966 | -1006 | 173 | 0 | 0 | 0 | 0 | -0.09 | -40 | -121 | 0.37 |
 | O7 variant t0=0830 k=0.5 stop40/tgt90 flat 1600 | pre | 2 | 55 | -209 | -106 | -14 | 2611 | 2441 | 2441 | 0 | 0.01 | 103 | -111 | 0.33 |
 | TL3_MB_O7V1000_k10_L2_P11 |  |  | 20 | 8 | -142 | 340 | -3899 | 0 | 0 | 0 | 0.04 | -150 | -105 | 0.37 |
 | NQ.T2FNQ.e77382a9 | pre | 1 | 92 | 152 | -442 | 313 | -1297 | -3182 | -244 | 0 | -0.00 | -594 | -84 | 0.37 |
+| TL3_MB_ORBASIA15S75_L2_P37 |  |  | 19 | -11 | -86 | -79 | 2013 | -932 | -404 | 0 | 0.16 | -74 | -81 | 0.40 |
 | TL3_MB_MONDAYLONGA1c2b44c6_L1_P11 |  |  | 24 | -478 | -502 | 498 | 13 | -1127 | 385 | 0 | -0.02 | -23 | -78 | 0.40 |
 | TL3_MB_FADELVd6f9339b_L1 |  |  | 76 | 46 | -1 | -7 | 1030 | -630 | -630 | 0 | -0.05 | -47 | -68 | 0.43 |
 | O7 variant t0=0200 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 74 | -873 | -1473 | 296 | 4135 | -1311 | 1976 | 0 | 0.11 | -600 | -33 | 0.47 |
@@ -219,15 +233,18 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | TL3_MB_O7V1000_k10_L4 |  |  | 22 | 1549 | 1567 | -192 | 0 | 0 | 0 | 0 | 0.03 | 18 | 32 | 0.53 |
 | TL3_MB_FADELV4edbfdf0_L2_P11 |  |  | 68 | -1022 | -776 | 943 | -3737 | -2014 | -724 | 0 | -0.02 | 246 | 37 | 0.77 |
 | old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 15 | 388 | 182 | 217 | 0 | 3 | 3315 | 0 | 0.12 | -207 | 67 | 0.53 |
+| TL3_MB_ORBASIA15S75_L1 |  |  | 15 | 301 | 165 | 142 | 0 | 1378 | 2225 | 0 | 0.06 | -137 | 86 | 0.67 |
 | NQ.FADE_LV.a8632973 | nypm | 3 | 37 | 295 | 295 | -32 | 0 | 665 | 665 | 0 | 0.11 | 0 | 94 | 0.70 |
 | O7 variant t0=0300 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 32 | -59 | -214 | -195 | 2484 | 2484 | 300 | 0 | -0.08 | -156 | 101 | 0.67 |
 | O7 variant t0=0300 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 66 | -114 | -517 | 820 | -3310 | -3520 | -449 | 0 | -0.03 | -403 | 128 | 0.63 |
 | NQ.LRS.ef7b7bdf | nypm | 1 | 81 | 273 | 273 | -6 | -220 | -1614 | -1614 | 0 | 0.17 | -0 | 138 | 0.67 |
+| TL3_MB_ORBASIA15S75_L2_P23 |  |  | 18 | -313 | -417 | 416 | -2285 | 0 | 0 | 0 | 0.01 | -104 | 141 | 0.77 |
 | TL3_MB_O7V1000_k10_L1 |  |  | 22 | 490 | 450 | -6 | 0 | 0 | 0 | 0 | 0.12 | -40 | 151 | 0.83 |
 | TL3_MB_IBST20_L1 |  |  | 5 | 301 | 227 | 421 | -2713 | -4839 | -3550 | 0 | -0.16 | -74 | 157 | 0.67 |
 | TL3_MB_FADELVd6f9339b_L2_P23 |  |  | 94 | -2851 | -2456 | 2007 | -6715 | -3971 | -615 | 0 | 0.08 | 396 | 163 | 0.60 |
 | TL3_MB_FADELVd6f9339b_L4 |  |  | 67 | 660 | 354 | 902 | -1952 | -11241 | -2524 | 0 | -0.00 | -306 | 184 | 0.57 |
 | O7 variant t0=1000 k=1.0 stop40/tgt90 flat 1600 | nyam | 2 | 22 | 685 | 677 | 5 | 0 | 0 | 0 | 0 | 0.03 | -7 | 184 | 0.83 |
+| TL3_MB_ORBASIA15S75_L2_P11 |  |  | 17 | -352 | -240 | 150 | -1175 | 0 | 0 | 0 | -0.02 | 112 | 233 | 0.80 |
 | TL3_MB_IBST20_L4 |  |  | 5 | -729 | -1054 | 1033 | -4547 | -5988 | -7299 | 0 | -0.20 | -325 | 415 | 0.60 |
 | TL3_MB_FADELVd6f9339b_L2_P11 |  |  | 107 | -3096 | -3107 | 2594 | -5695 | -4503 | -3214 | 0 | 0.09 | -11 | 484 | 0.70 |
 | NQ.T2F1B.e3dde7b1 | nyam | 10 | 45 | 216 | 142 | 562 | -3551 | -4537 | -4537 | 0 | -0.09 | -74 | 502 | 0.97 |
@@ -238,13 +255,18 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | NQ.T2F1B.6f26737b | nyam | 7 | 49 | 167 | 103 | 1249 | -7577 | -6923 | -5798 | 0 | -0.03 | -65 | 1303 | 1.00 |
 | NQ.MONDAY_LONG_A.1c2b44c6 | daily | 1 | 22 | 1766 | 1938 | 1436 | -7989 | -5414 | -4125 | 0 | 0.16 | 172 | 1321 | 0.97 |
 | TL3_MB_MONDAYLONGA1c2b44c6_L1_P37 |  |  | 24 | 288 | 170 | 1207 | -7335 | 525 | 520 | 0 | 0.09 | -118 | 1360 | 0.87 |
+| TL3_MB_AG1_COMBO3 |  |  | 96 | 816 | 529 | 681 | -360 | -4981 | -8184 | 0 | -0.12 | -287 | 1363 | 0.83 |
 | l2vast/ds3/out/SF/trades_CRT_M15_M1_close_ib.parquet | london | 9 | 137 | -2093 | -2264 | 4180 | -20086 | -14312 | -6313 | 0 | 0.04 | -172 | 1808 | 0.93 |
-| TL3_MB_MONDAYLONGA1c2b44c6_L2 |  |  | 22 | 3693 | 3699 | 2743 | -12429 | -3924 | -4610 | 0 | 0.13 | 6 | 2057 | 0.93 |
+| TL3_MB_AG1_COMBO5 |  |  | 183 | 2830 | 2647 | 1047 | -1927 | -6690 | -7598 | 0 | -0.03 | -182 | 1915 | 0.77 |
+| TL3_MB_MONDAYLONGA1c2b44c6_L2 |  |  | 22 | 3693 | 3699 | 2743 | -12429 | -3924 | -4610 | 0 | 0.13 | 6 | 2026 | 0.93 |
 
 **Window HOLD** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | TL3_MB_IBST20_L4 |  |  | 16 | 4350 | 4012 | -6712 | 4951 | 0 | 8341 | 16783 | -0.08 | -338 | -6837 | 0.00 |
+| TL3_MB_COMBO5 |  |  | 161 | 2999 | 3038 | -6645 | 17280 | 3957 | -465 | 22083 | -0.07 | 39 | -4568 | 0.10 |
+| TL3_MB_COMBO3 |  |  | 81 | 2197 | 2557 | -5936 | 6527 | 2176 | -1526 | 14049 | -0.07 | 359 | -3731 | 0.13 |
+| TL3_MB_ORBASIA15S75_L4 |  |  | 25 | 473 | 737 | -5016 | 8880 | 0 | -3909 | 11049 | -0.04 | 264 | -3495 | 0.00 |
 | TL3_MB_FADELVd6f9339b_L4 |  |  | 92 | 541 | 639 | -3202 | 5306 | 2416 | -7056 | 8090 | -0.02 | 98 | -3266 | 0.00 |
 | TL3_MB_MONDAYLONGA1c2b44c6_L1_P11 |  |  | 22 | 678 | 749 | -3051 | 8630 | 165 | 14020 | 13456 | -0.01 | 70 | -3031 | 0.00 |
 | TL3_MB_O7V1000_k10_L4 |  |  | 22 | 330 | 235 | -2845 | 0 | 0 | 6161 | 11133 | 0.03 | -95 | -2846 | 0.00 |
@@ -259,10 +281,13 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | TL3_MB_MONDAYLONGA1c2b44c6_L1_P23 |  |  | 23 | 790 | 751 | -2080 | 4994 | 675 | -6530 | 9947 | -0.04 | -40 | -1831 | 0.00 |
 | TL3_MB_IBST20_L1 |  |  | 16 | 458 | 445 | -1653 | 890 | 0 | 980 | 7596 | -0.21 | -13 | -1733 | 0.00 |
 | O7 variant t0=0830 k=0.5 stop40/tgt90 flat 1600 | pre | 2 | 54 | 11 | -223 | -766 | -2712 | -660 | -2270 | 8431 | -0.03 | -234 | -1531 | 0.00 |
+| TL3_MB_AG1_COMBO3 |  |  | 84 | 2164 | 2386 | -1942 | 2151 | 2385 | -8626 | 7845 | -0.11 | 222 | -1393 | 0.13 |
 | TL3_MB_FADELVd6f9339b_L1 |  |  | 111 | 353 | 449 | -1812 | 3220 | 1670 | -2204 | 3361 | -0.07 | 95 | -1375 | 0.00 |
 | NQ.FADE_LV.a8632973 | nypm | 3 | 41 | 622 | 576 | -1484 | 1922 | 2156 | 4438 | 4695 | 0.06 | -46 | -1319 | 0.03 |
 | NQ.MONDAY_LONG_A.1c2b44c6 | daily | 1 | 20 | 556 | 495 | -2115 | 9944 | 0 | 3735 | 5231 | -0.13 | -61 | -1291 | 0.33 |
+| TL3_MB_MONDAYLONGA1c2b44c6_L2 |  |  | 20 | 915 | 947 | -2265 | 14231 | 0 | 7450 | 6602 | -0.15 | 31 | -1242 | 0.20 |
 | NQ.DIST_DISBPRELcont.7bb655 | pre | 3 | 33 | 328 | 233 | -548 | -1261 | 315 | -1559 | 11087 | -0.01 | -95 | -1175 | 0.00 |
+| TL3_MB_ORBASIA15S75_L1 |  |  | 25 | 579 | 687 | -759 | -480 | 0 | -3015 | 21 | 0.03 | 107 | -1155 | 0.07 |
 | NQ.FADE_LV.4edbfdf0 | asia | 2 | 52 | 783 | 1229 | -2427 | 4051 | 2176 | 1903 | 8317 | -0.07 | 446 | -1106 | 0.20 |
 | NQ.DIST_DISBNRELrev.6628b1 | nyam | 2 | 28 | 778 | 630 | -1504 | -2623 | 0 | -2954 | 6203 | 0.06 | -148 | -1074 | 0.13 |
 | NQ.DIST_DISQ1550drift.78db2c | close | 1 | 85 | 426 | 426 | -1081 | 2241 | 355 | 3111 | 3594 | 0.01 | 0 | -799 | 0.10 |
@@ -274,6 +299,7 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | NQ.LRS.ef7b7bdf | nypm | 1 | 102 | 381 | 337 | 122 | -2764 | -530 | 2512 | -1366 | 0.17 | -43 | 119 | 0.67 |
 | NQ.FADE_LV.6fb3aa4d | london | 3 | 19 | -276 | -142 | -1033 | 3721 | 4461 | 2126 | -262 | -0.04 | 135 | 176 | 0.80 |
 | NQ.T2F1B.fa471237 | nyam | 7 | 64 | 187 | 325 | -1253 | -1877 | 774 | -771 | -1968 | 0.09 | 139 | 245 | 0.87 |
+| TL3_MB_ORBASIA15S75_L2_P11 |  |  | 25 | 265 | 606 | -2150 | 3195 | 3669 | -1364 | -1196 | 0.13 | 341 | 295 | 0.90 |
 | TL3_MB_IBST20_L2_P23 |  |  | 17 | -446 | -588 | 407 | 621 | -740 | -1030 | -2188 | -0.03 | -143 | 412 | 0.73 |
 | TL3_MB_FADELV4edbfdf0_L4 |  |  | 52 | 651 | 822 | 514 | 259 | 3598 | 5181 | 9240 | -0.17 | 171 | 507 | 0.63 |
 | NQ.T2F1B.f3379ae5 | nyam | 5 | 69 | -132 | 88 | -1014 | -2198 | 1619 | -21 | -3043 | 0.01 | 220 | 716 | 0.90 |
@@ -285,6 +311,7 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | NQ.FADE_LV.628da3af | nyam | 2 | 84 | -320 | -656 | 2315 | 1103 | 2081 | -1343 | -4915 | -0.22 | -336 | 1410 | 0.97 |
 | O7 variant t0=0200 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 60 | 120 | 1001 | -1006 | -1450 | 2156 | 5982 | 297 | 0.08 | 880 | 1475 | 1.00 |
 | NQ.T2F1B.e3dde7b1 | nyam | 10 | 57 | -139 | 76 | -207 | 1096 | 3361 | 2447 | -10567 | 0.05 | 215 | 1788 | 1.00 |
+| TL3_MB_ORBASIA15S75_L2_P23 |  |  | 25 | -281 | -295 | 3303 | -8034 | -570 | -4994 | -7676 | 0.14 | -14 | 2489 | 1.00 |
 | old-harness sleeve RSI2_t10 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 9 | 1000 | 966 | 2550 | -11970 | 0 | 0 | -979 | -0.10 | -34 | 2545 | 0.97 |
 | TL3_MB_FADELV4edbfdf0_L2_P37 |  |  | 46 | -502 | -70 | 2115 | -5688 | -504 | -4258 | -5790 | -0.06 | 432 | 2598 | 1.00 |
 | TL3_MB_O7V1000_k10_L2_P11 |  |  | 21 | -783 | -586 | 1661 | 1881 | 7855 | 3590 | -9157 | -0.09 | 197 | 2651 | 0.97 |
@@ -292,8 +319,10 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | TL3_MB_O7V1000_k10_L2_P23 |  |  | 20 | -957 | -885 | 3073 | -3814 | -3899 | -3899 | -14501 | -0.11 | 72 | 2912 | 1.00 |
 | TL3_MB_FADELV4edbfdf0_L2_P23 |  |  | 49 | -704 | -865 | 4046 | -7973 | -1029 | -1823 | -8810 | 0.05 | -161 | 3010 | 1.00 |
 | TL3_MB_FADELVd6f9339b_L2_P23 |  |  | 109 | -1598 | -1603 | 3887 | -3752 | 576 | -997 | -16523 | 0.07 | -6 | 3323 | 0.90 |
+| TL3_MB_AG1_COMBO5 |  |  | 184 | 4102 | 4347 | 1646 | -10963 | 2150 | 4056 | 24233 | -0.02 | 245 | 3366 | 1.00 |
 | TL3_MB_FADELV4edbfdf0_L2_P11 |  |  | 45 | -1206 | -1093 | 2813 | -98 | 5591 | -2794 | -12401 | 0.00 | 112 | 3631 | 0.97 |
 | TL3_MB_O7V1000_k10_L2_P37 |  |  | 24 | -1079 | -1008 | 3334 | -1590 | -1590 | -5014 | -13611 | 0.03 | 71 | 3642 | 1.00 |
+| TL3_MB_ORBASIA15S75_L2_P37 |  |  | 24 | -274 | -630 | 3954 | -5694 | -925 | -2025 | -14887 | 0.00 | -356 | 3858 | 1.00 |
 | TL3_MB_IBST20_L2_P11 |  |  | 15 | -458 | -492 | 4821 | -11970 | 0 | 0 | -4534 | -0.08 | -34 | 4480 | 1.00 |
 | TL3_MB_FADELVd6f9339b_L2_P11 |  |  | 113 | -2127 | -2392 | 9247 | -7033 | -1040 | -10452 | -20303 | 0.03 | -265 | 5390 | 0.97 |
 | l2vast/ds3/out/SF/trades_CRT_M15_M1_close_ib.parquet | london | 9 | 150 | -2732 | -2685 | 7613 | -16314 | -302 | -7651 | -30528 | -0.02 | 47 | 6713 | 0.93 |
@@ -303,6 +332,7 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 **Window PREUW** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| TL3_MB_COMBO5 |  |  | 237 | 253 | 376 | -5449 | 1849 | 6651 | 235 | -3967 | -0.11 | 123 | -7308 | 0.00 |
 | NQ.FADE_LV.d6f9339b | nypm | 2 | 171 | 279 | 208 | -3583 | 1841 | 1157 | 1322 | -28 | -0.09 | -71 | -4299 | 0.03 |
 | old-harness sleeve IBS_t20_n1 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 21 | 165 | 146 | -942 | -4519 | 0 | -1800 | -3019 | -0.10 | -19 | -3126 | 0.37 |
 | NQ.MONDAY_LONG_A.1c2b44c6 | daily | 1 | 32 | 371 | 488 | -3606 | 4576 | 0 | 1185 | 4815 | 0.03 | 117 | -2693 | 0.00 |
@@ -310,6 +340,7 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | NQ.FADE_LV.4edbfdf0 | asia | 2 | 59 | 552 | 828 | -3799 | 6661 | 5099 | -902 | 253 | -0.10 | 276 | 799 | 0.83 |
 | old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 38 | 115 | -95 | 1224 | -3716 | 0 | -5064 | 357 | 0.21 | -210 | 977 | 0.77 |
 | O7 variant t0=1000 k=1.0 stop40/tgt90 flat 1600 | nyam | 2 | 33 | 102 | -25 | 1355 | -3679 | 0 | 1857 | -1998 | 0.23 | -127 | 1454 | 0.73 |
+| TL3_MB_COMBO3 |  |  | 103 | -153 | 1 | 1071 | -12701 | 5099 | -929 | -17075 | -0.11 | 154 | 2201 | 0.70 |
 
 **Window X'** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
@@ -331,5 +362,5 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 - DS7 need for every row: new code (a book); none maps to an existing mean-reversion slot. X3-X5 slots are empty, X1/X2/X6-X8 and S7 have no definition.
 
 
-PARTIAL TABLE: engine set-months landed so far: 930 (a window is scored only when all its months have landed; sets with fewer months are not shown).
-Status (auto): engine sets scored 56; queue: /mnt/l2/l2vast/_major_b/pending.txt (186 lines open); page rebuilt 2026-11-17 20:34 UTC.
+PARTIAL TABLE: engine set-months landed so far: 1043 (a window is scored only when all its months have landed; sets with fewer months are not shown).
+Status (auto): engine sets scored 65; queue: /mnt/l2/l2vast/_major_b/pending.txt (66 lines open); page rebuilt 2026-11-17 21:04 UTC.
