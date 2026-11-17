@@ -1,6 +1,6 @@
 # DS3_SMART_C — T-SMART items B4 (MNQ granularity), C1 (dead slots), C2 (risk budget reallocation), C3 (add to winners), C4 (trade count), W-SM5
 
-Generated 2026-11-17 18:28Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S + FLAT45K) and JN05W2J (same five on JN04RM), exact 43 months. Exact engine, one set per job, shared-memory cache, admission tag SMARTC. Shadow only, no PASS claim. Prereg autopilot/SMART_C_PREREG.md (sha in DECISIONS.md).
+Generated 2026-11-17 19:00Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S + FLAT45K) and JN05W2J (same five on JN04RM), exact 43 months. Exact engine, one set per job, shared-memory cache, admission tag SMARTC. Shadow only, no PASS claim. Prereg autopilot/SMART_C_PREREG.md (sha in DECISIONS.md).
 
 **CAVEAT on every number here: the engine P7 state cut fires in the engine but did not fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md); the bases and these cells inherit the engine cut.**
 
@@ -27,7 +27,7 @@ Generated 2026-11-17 18:28Z UTC. Bases JN05W2 (live panel + F3 + E1 + C22 + BR3S
 | SC_C3_P7_v60_f50 | 12 | JN05W2 | 85% ($268k of $316k) | 3 of 20 | 20.7 | -1144 | -177.7 | -4880 | - / - | - / - | - |
 | SC_C4_max2 | 12 | JN05W2 | 51% ($161k of $316k) | 0 of 20 | -98.2 | -7770 | -64.8 | -6877 | - / - | - / - | - |
 | SC_C4_max3 | 1 | JN05W2 | (running) |||||||||
-| SC_C4_max4 | 12 | JN05W2 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202505/trades.parquet') |||||||||
+| SC_C4_max4 | 12 | JN05W2 | 62% ($197k of $316k) | 1 of 20 | -10.4 | -4197 | 8.4 | -2168 | - / - | - / - | - |
 
 cut % = maxDD of the stack vs the base set (positive = shallower); d mean = all-weeks mean difference ($/wk) vs the base on the same months; the same-side run columns of score_sc (run_max / run_p95) are in the per-set files /mnt/l2/l2vast/_th_smart_c/score_<SET>.csv.
 
@@ -48,6 +48,7 @@ cut % = maxDD of the stack vs the base set (positive = shallower); d mean = all-
 - **SC_C3_P7_v60_f33** acceptance_p7: `ACCEPTANCE P7 SC_C3_P7_v60_f33  2026-11-13 01:10Z   (months 6: 202605..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C3_P7_v60_f33.txt
 - **SC_C3_P7_v60_f50** acceptance_p7: `ACCEPTANCE P7 SC_C3_P7_v60_f50  2026-11-13 05:44Z   (months 6: 202605..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C3_P7_v60_f50.txt
 - **SC_C4_max2** acceptance_p7: `ACCEPTANCE P7 SC_C4_max2  2026-11-13 04:12Z   (months 6: 202605..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C4_max2.txt
+- **SC_C4_max4** acceptance_p7: `ACCEPTANCE P7 SC_C4_max4  2026-11-13 03:42Z   (months 7: 202604..202610; reference LPB_BASE months 43)`; scorecard text /mnt/l2/l2vast/_th_works/q/sc/sc_SC_C4_max4.txt
 
 ## 2. First-order screens on the exact reference trades (screen only: lots are not re-rounded, paths do not change; EXACT overstates/understates; the exact rows above are the verdict)
 
