@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-17 14:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 14:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-17 14:30Z | box1: busy 100%, load1 40.97, workers 20, MemAvail 92 GB | server2: busy 100%, load1 90.52, workers 96, MemAvail 1383 GB | pending box1-eligible 37187 / server2-eligible 38656 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-17 14:45Z | box1: busy 100%, load1 41.94, workers 22, MemAvail 91 GB | server2: busy 100%, load1 91.32, workers 96, MemAvail 1385 GB | pending box1-eligible 37139 / server2-eligible 38633 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-17 14:30Z
+2026-11-17 14:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-17 14:30Z | box1: busy 100%, load1 40.97, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 91.7 GB; live reservations 1 (1 GB); workers 20, of which TP-adopted 20 (RSS 31.4 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 40.97, 39.47, 38.88
-  by tag: CF quota 8 running 2 hungry True RSS 3.8 GB PSS 3.2 GB; MA quota 8 running 4 hungry True RSS 7.5 GB PSS 6.4 GB; JV quota 14 running 6 hungry True RSS 8.7 GB PSS 7.7 GB; TOOLS quota 8 running 8 hungry False RSS 11.4 GB PSS 10.5 GB
-  cell-months finished last hour (DONE markers): 1766
-  top running jobs: TL3_ME_C_LH_K2_S39 (x6);TL3_CF_ST_29_S (x6);TL3_MA_ADD_A7N (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 90.64, 91.70, 90.65|/dev/md2         28T  881G   28T   4% /mnt/l2|187|
+Server 1 (this box): MemAvail 91.8 GB; live reservations 2 (2 GB); workers 23, of which TP-adopted 23 (RSS 35.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 41.94, 39.62, 39.10
+  by tag: MA quota 8 running 1 hungry True RSS 1.5 GB PSS 1.4 GB; MC quota 6 running 1 hungry True RSS 2.1 GB PSS 1.8 GB; ME quota 6 running 4 hungry True RSS 5.7 GB PSS 4.8 GB; MF quota 4 running 1 hungry True RSS 1.4 GB PSS 1.3 GB; MD quota 4 running 1 hungry True RSS 0.6 GB PSS 0.4 GB; S3 quota 6 running 2 hungry True RSS 1.2 GB PSS 0.8 GB; JV quota 6 running 5 hungry True RSS 8.3 GB PSS 6.7 GB; DD quota 4 running 4 hungry False RSS 6.9 GB PSS 6.1 GB
+  cell-months finished last hour (DONE markers): 1683
+  top running jobs: TL3_ME_C_LH_K2_S34 (x8);TL3_DD_JL3_D4 (x6);TL3_CF_ST_29_S (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 91.32, 92.16, 91.68|/dev/md2         28T  881G   28T   4% /mnt/l2|184|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,6 +35,5 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 90.64, 91.70, 90.65|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261117_1334Z_stage3-brackets-by-environment.md 20261117_1337Z_exits-add-uw-levels-sizing-book-walls.md 20261117_1342Z_MAJOR-CHANGES-PROGRAMME.md 20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md 20261117_1426Z_major-follow-ups-late-entry-and-same-side-losers.md
-- lead 14:24Z INBOX 20261117_1426Z_major-follow-ups-late-entry-and-same-side-losers.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the
-- INBOX 20261117_1426Z_major-follow-ups-late-entry-and-same-side-losers received 14:25Z and routed: part E re-aimed (W-ME): (a) same-side-loser rule LS_K2_M30/M
+20261117_1337Z_exits-add-uw-levels-sizing-book-walls.md 20261117_1342Z_MAJOR-CHANGES-PROGRAMME.md 20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md 20261117_1426Z_major-follow-ups-late-entry-and-same-side-losers.md 20261117_1447Z_DELIVERABLES-every-part-ends-in-a-setting.md
+- lead 14:44Z INBOX 20261117_1447Z_DELIVERABLES-every-part-ends-in-a-setting.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action

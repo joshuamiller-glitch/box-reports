@@ -1,6 +1,6 @@
 # DS3_NEXT_FEATURES_F1 — T-NEXT-FEATURES items 1 (stack-level evidence) and 6 (after a halt/lock), W-F1
 
-Generated 2026-11-17 14:13 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
+Generated 2026-11-17 14:44 UTC. Exact engine, one set per job, reference = JN05W2 (live panel base + F3 + E1 + C22 + BR3S + FLAT45K, 43 exact months) on the same months. Shadow only, no PASS claim. Prereg autopilot/NEXTF1_PREREG.md. Thresholds are counts (no dollar thresholds), so they transfer unchanged to x1.75 lots; the half-size rounding does not.
 
 Hook code/th_nextf/nf_hooks.py (outermost of the hooklist). **sev**: N same-side losing closed trades by ANY book in the ET six-session, no new session extreme in the trade direction beyond the extreme at the last failure exit (completed 1-min bars) -> skip (S) or half (H) for every book on that side; suffix N = scorecard convention (opposite-side trades do not end the run). **ah**: previous 18:00-ET day ended day-halted by the loss cap (L), give-back lock (K) or either (E) -> first signal dropped (S) or first sized entry halved (H).
 
@@ -10,7 +10,7 @@ Baseline stack same-side losing run (behavioural scorecard c convention): JN05W2
 
 | set | months | 5 best wks kept | winning wks turned losing | L6M cut % | L6M d mean/wk (all wks) | L6M run max/p95 (ref 13/6) | HOLD cut % | HOLD d mean/wk | HOLD run max/p95 | WF cut / beat |
 |--|--|--|--|--|--|--|--|--|--|--|
-| NF_AHH_E | 12 | 98% ($310k of $316k) | 0 of 20 | -10.0 | -519 | 13/6 | -5.6 | -99 | 13/6 | - |
+| NF_AHH_E | 12 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202512/trades.parquet') |||||||||
 | NF_AHH_K | 12 | 98% ($311k of $316k) | 0 of 20 | 0.0 | -450 | 13/6 | -0.0 | -297 | 13/6 | - |
 | NF_AHH_L | 12 | 100% ($316k of $316k) | 0 of 20 | -10.0 | -143 | 13/6 | -5.6 | 161 | 13/6 | - |
 | NF_AHS_E | 12 | 96% ($304k of $316k) | 0 of 20 | -11.0 | -1224 | 12/6 | 1.1 | -648 | 12/6 | - |
