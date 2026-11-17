@@ -173,6 +173,7 @@ A1 READING (FIRST PASS, P7 Asia USER_SET_V0 all-5 only; the other 12 sets are st
 | Z1 against (S15) squeeze on at entry (NQ 5-min), all se | 1889 | 132 | 0.042 | 56722 | 22.3 | -40776 | 1.17 | 19212 | 33621 | 18257 | 261 | 0.160 / 0.000 | 56722 | 19212 |
 | Z1 against (T) squeeze on at entry (NQ 5-min), all se | 1792 | 67 | 0.013 | 76212 | 41.2 | -41744 | 1.08 | 9255 | 16196 | 8325 | 254 | 0.000 / 0.000 | 76212 | 9255 |
 | Z2 go (S15) NQ/ES ratio 240-min trend with the tra | 1847 | 96 | 0.028 | 58625 | 25.8 | -38901 | 1.12 | 13634 | 23859 | 12692 | 257 | 0.000 / 0.000 | 58625 | 13634 |
+| Z2 go (T) NQ/ES ratio 240-min trend with the tra | 1805 | 74 | 0.013 | 54680 | 30.6 | -36371 | 1.09 | 10289 | 18005 | 9352 | 256 | 0.000 / 0.133 | 54680 | 10289 |
 
 **window L6M** (reference: JN05W2 same session)
 
@@ -215,6 +216,7 @@ A1 READING (FIRST PASS, P7 Asia USER_SET_V0 all-5 only; the other 12 sets are st
 | Z1 against (S15) squeeze on at entry (NQ 5-min), all se | 4124 | 153 | 0.058 | 56722 | 22.3 | -40776 | 1.20 | 23354 | 40869 | 22335 | 278 | 0.130 / 0.000 | 56722 | 23354 |
 | Z1 against (T) squeeze on at entry (NQ 5-min), all se | 3841 | 119 | 0.042 | 79577 | 41.2 | -41744 | 1.14 | 16944 | 29652 | 15970 | 266 | 0.000 / 0.000 | 79577 | 16944 |
 | Z2 go (S15) NQ/ES ratio 240-min trend with the tra | 4113 | 128 | 0.051 | 58625 | 25.8 | -38901 | 1.16 | 19526 | 34170 | 18505 | 279 | 0.000 / 0.000 | 58625 | 19526 |
+| Z2 go (T) NQ/ES ratio 240-min trend with the tra | 3928 | 115 | 0.043 | 80623 | 30.9 | -43942 | 1.14 | 16668 | 29168 | 15678 | 270 | 0.000 / 0.000 | 80623 | 16668 |
 
 <!--/FIX-->
 

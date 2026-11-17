@@ -77,3 +77,4 @@
 | RX-R3 | 2026-11-16 | RESULT of RX-H3 (C3/D) | W-RX | c3_eval_*.json, c3_ctl_*.json | NOT SUPPORTED on path arithmetic (RC p >= 0.41, BH 0, IC ~ 0); exact engine not run; DD leads need verification (FIRST PASS) |
 | RB5-H1 | 2026-11-17 | Each live/engine layer (30 S5 sets) has positive value on ulcer or mean vs its leave-one-out cell in recent windows; null = no value | W-S5 | code/th_rebuild_s5/rb5_score.py, s5_res.pkl | PREREG, scoring pending (FIRST PASS) |
 | RB5-R1 | 2026-11-17 | RESULT of RB5-H1 | W-S5 | DS3_REBUILD_S5.md | see headline: layers help/cost/NOT DISTINGUISHABLE per page; in-sample FIRST PASS |
+| RB1-H1 | 2026-11-17 | Some condition families change mean R / MAE / MFE of the RAW book trades beyond the cell nonsense bar and the shifted-label/permutation nulls; null = pass rate equals nonsense (1%) | W-S1 | code/th_rb_s1/, DS3_REBUILD_S1.md, /mnt/l2/l2vast/_rebuild/s1/ | PREREG (DECISIONS 11-17 sha), shards running (FIRST PASS) |
