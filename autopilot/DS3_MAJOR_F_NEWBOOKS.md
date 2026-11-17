@@ -1,4 +1,4 @@
-# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 19:36Z (unattended loop, every 30 min)
+# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 20:07Z (unattended loop, every 30 min)
 
 > VALIDATION (W-MF, FIRST PASS): trials counted = 3604 standalone cells (wave 1: 109 configs x 4 exits, PREREG_MF.md, ledger MF1; wave 2: 222 configs x 4 exits incl. limit variants, PREREG_MF2.md, ledger MF2); correction = per-family and per-session best-of selection on 2023-04..2025-10 only, then HOLD 2025-11..2026-04 and L6M 2026-05..10 untouched; White RC over the selection cells (1,000 block bootstraps) + deflated Sharpe on the untouched year with N = cells of the group; PBO not computed (selection is a single frozen pick, rolling 12m/3m version shown); engine controls: 30 date-shifted stack controls NOT FINISHED (staged by the loop after the real months land); shifted-label standalone controls (+-11/23/37 days) shown. Data end 2026-10-30 (ES bars end 2026-10-16).
 
@@ -547,11 +547,48 @@ Hook: at the event the engine runs its normal try_entry path (all gates/skips/NT
 
 Identity (inert event file, registered book): 202610 PASS (691 vs 691 trades, net 37159.82 vs 37159.82); 202504 PASS (637 vs 637 trades, net 41239.76 vs 41239.76). Reference: JL3 202610 = 691 trades net 37,159.82; 202504 = 637 / 41,239.76 (engine fee 1.18/lot). A candidate's rows are NOT USED until both identity lines say PASS.
 
-No engine months have landed for the candidates yet (queued: _major_f/pending.txt after B in QUEUES.txt; tag MF @4; box 1 filler QL_NCH=4). Rows appear here automatically.
+| cand | window | months | MF_trades | MF_alone_wk | corr | mean_wk_JL3 | mean_wk_with | ulcer_JL3 | ulcer_with | maxdd_JL3 | maxdd_with | worstwk_JL3 | worstwk_with | others_delta_wk | ulcer_with_x175 | mean_wk_with_x175 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| M3FAILEDBR_lb60rj5_E2 | L6M | 6 | 73 | 405.988 | -0.084 | 18755.264 | 19142.146 | 9416.278 | 8686.211 | -31109.180 | -28506.700 | -15728.040 | -14325.720 | -19.106 | 15200.869 | 33498.755 |
+| M3FAILEDBR_lb60rj5_E2 | HOLD | 6 | 72 | 191.212 | -0.023 | 9280.225 | 9712.417 | 29372.481 | 27928.811 | -83756.500 | -81683.180 | -37323.640 | -34064.300 | 240.979 | 48875.419 | 16996.730 |
+| M3FAILEDBR_lb60rj5_E2 | UNT | 12 | 145 | 306.408 | -0.053 | 14378.423 | 14795.400 | 21716.175 | 20592.735 | -83756.500 | -81683.180 | -37323.640 | -34064.300 | 110.569 | 36037.286 | 25891.949 |
+| M3FAILEDBR_lb30rj5_E2 | L6M | 6 | 45 | -13.807 | -0.032 | 18755.264 | 18741.456 | 9416.278 | 9407.858 | -31109.180 | -31109.180 | -15728.040 | -16917.880 | 0.000 | 16463.752 | 32797.549 |
+| M3FAILEDBR_lb30rj5_E2 | HOLD | 6 | 55 | -7.162 | 0.023 | 9280.225 | 9227.096 | 29373.164 | 29710.250 | -83756.500 | -87340.700 | -37323.640 | -37938.160 | -45.968 | 51992.937 | 16147.418 |
+| M3FAILEDBR_lb30rj5_E2 | UNT | 12 | 100 | -10.750 | -0.004 | 14378.423 | 14344.689 | 21681.557 | 21900.935 | -83756.500 | -87340.700 | -37323.640 | -37938.160 | -22.984 | 38326.636 | 25103.205 |
+| N2GAP_k03modego_E3 | L6M | 6 | 60 | 720.890 | 0.086 | 18755.264 | 19342.139 | 9416.278 | 10340.042 | -31109.180 | -35370.420 | -15728.040 | -20968.500 | -134.016 | 18095.074 | 33848.742 |
+| N2GAP_k03modego_E3 | HOLD | 6 | 48 | -440.762 | -0.039 | 9280.225 | 8604.855 | 29373.164 | 30649.995 | -83756.500 | -83756.500 | -37323.640 | -37323.640 | -234.608 | 53637.492 | 15058.497 |
+| N2GAP_k03modego_E3 | UNT | 12 | 108 | 153.928 | 0.041 | 14378.423 | 14345.461 | 21681.557 | 22735.077 | -83756.500 | -83756.500 | -37323.640 | -37323.640 | -186.889 | 39786.384 | 25104.557 |
+| R3R3YMLEDLON_L15bp3winLONsr_E3 | L6M | 6 | 122 | 859.367 | 0.191 | 18755.264 | 20314.588 | 9416.278 | 9256.893 | -31109.180 | -31756.080 | -15728.040 | -20609.260 | 699.957 | 16199.563 | 35550.529 |
+| R3R3YMLEDLON_L15bp3winLONsr_E3 | HOLD | 6 | 122 | 178.351 | 0.087 | 9280.225 | 9795.903 | 29372.481 | 28648.132 | -83756.500 | -86566.640 | -37323.640 | -36238.340 | 337.327 | 50134.231 | 17142.830 |
+| R3R3YMLEDLON_L15bp3winLONsr_E3 | UNT | 12 | 244 | 535.385 | 0.146 | 14378.423 | 15445.911 | 21716.175 | 21217.344 | -83756.500 | -86566.640 | -37323.640 | -36238.340 | 532.103 | 37130.352 | 27030.344 |
+| R3R3RTYLEDLO_L15bp3winLONsr_E4 | L6M | 6 | 122 | 303.750 | -0.038 | 18755.264 | 20033.883 | 9416.278 | 9183.418 | -31109.180 | -34691.240 | -15728.040 | -18684.740 | 974.870 | 16070.981 | 35059.295 |
+| R3R3RTYLEDLO_L15bp3winLONsr_E4 | HOLD | 6 | 125 | 174.911 | 0.060 | 9280.225 | 9999.083 | 29372.481 | 26119.874 | -83756.500 | -76169.780 | -37323.640 | -26673.120 | 543.947 | 45709.779 | 17498.395 |
+| R3R3RTYLEDLO_L15bp3winLONsr_E4 | UNT | 12 | 247 | 245.172 | 0.008 | 14378.423 | 15401.750 | 21716.175 | 19493.810 | -83756.500 | -76169.780 | -37323.640 | -26673.120 | 778.156 | 34114.167 | 26953.063 |
+| DN2GAP_k015modefill_E3 | L6M | 6 | 77 | -135.957 | -0.027 | 18755.264 | 18536.222 | 9416.278 | 8904.852 | -31109.180 | -27333.600 | -15728.040 | -15697.080 | -83.084 | 15583.491 | 32438.389 |
+| DN2GAP_k015modefill_E3 | HOLD | 6 | 77 | 833.615 | 0.058 | 9280.225 | 10334.615 | 29373.164 | 26304.820 | -83756.500 | -82033.720 | -37323.640 | -34327.300 | 220.774 | 46033.435 | 18085.576 |
+| DN2GAP_k015modefill_E3 | UNT | 12 | 154 | 346.215 | 0.008 | 14378.423 | 14791.884 | 21681.557 | 19575.020 | -83756.500 | -82033.720 | -37323.640 | -34327.300 | 67.247 | 34256.285 | 25885.797 |
+| DN2GAP_k015modefill_E3 | ALL43 | 43 | 603 | 186.125 | -0.058 | 7498.827 | 7740.499 | 26020.359 | 24502.907 | -91440.680 | -82033.720 | -38896.220 | -41806.600 | 55.546 | 42880.087 | 13545.872 |
+| R3R3ESLEDNYA_L30bp3winNYAMs_E3 | L6M | 6 | 91 | 270.302 | 0.167 | 18755.264 | 18953.094 | 9416.278 | 10135.706 | -31109.180 | -34851.920 | -15728.040 | -21122.860 | -72.472 | 17737.485 | 33167.915 |
+| R3R3ESLEDNYA_L30bp3winNYAMs_E3 | HOLD | 6 | 98 | 520.809 | 0.197 | 9280.225 | 9700.399 | 29373.164 | 28640.991 | -83756.500 | -82070.940 | -37323.640 | -35019.520 | -100.635 | 50121.734 | 16975.699 |
+| R3R3ESLEDNYA_L30bp3winNYAMs_E3 | UNT | 12 | 189 | 400.754 | 0.179 | 14378.423 | 14691.229 | 21681.557 | 21412.499 | -83756.500 | -82070.940 | -37323.640 | -35019.520 | -87.947 | 37471.873 | 25709.651 |
+| R3R3ESLEDNYA_L30bp3winNYAMs_E3 | ALL43 | 43 | 819 | 240.261 | 0.075 | 7498.827 | 7688.094 | 26026.137 | 23881.229 | -91440.680 | -89101.960 | -38896.220 | -40641.280 | -50.995 | 41792.152 | 13454.164 |
+| DW7POWERHOU_t1459k03filtda_E4 | L6M | 6 | 53 | 14.692 | -0.015 | 18755.264 | 18769.956 | 9416.278 | 9400.745 | -31109.180 | -31109.180 | -15728.040 | -15728.040 | 0.000 | 16451.304 | 32847.422 |
+| DW7POWERHOU_t1459k03filtda_E4 | HOLD | 6 | 58 | 437.682 | 0.076 | 9280.225 | 9717.907 | 29373.164 | 28590.286 | -83756.500 | -86305.860 | -37323.640 | -37633.480 | 0.000 | 50033.000 | 17006.337 |
+| DW7POWERHOU_t1459k03filtda_E4 | UNT | 12 | 111 | 226.469 | 0.023 | 14378.423 | 14604.892 | 21681.557 | 21144.628 | -83756.500 | -86305.860 | -37323.640 | -37633.480 | 0.000 | 37003.098 | 25558.561 |
+| DW7POWERHOU_t1459k03filtda_E4 | ALL43 | 43 | 456 | 145.931 | 0.068 | 7498.827 | 7644.759 | 26036.179 | 25950.412 | -91440.680 | -93453.480 | -38896.220 | -39890.900 | 0.000 | 45413.221 | 13378.328 |
+| DW11SESSION_r75_E3 | L6M | 6 | 51 | -222.914 | -0.068 | 18755.264 | 18688.136 | 9416.278 | 9734.589 | -31109.180 | -34922.460 | -15728.040 | -18186.500 | 155.786 | 17035.531 | 32704.237 |
+| DW11SESSION_r75_E3 | HOLD | 6 | 74 | 22.065 | 0.094 | 9280.225 | 9259.367 | 29373.164 | 29982.897 | -83756.500 | -78890.220 | -37323.640 | -34262.300 | -42.923 | 52470.069 | 16203.892 |
+| DW11SESSION_r75_E3 | UNT | 12 | 125 | -104.712 | 0.018 | 14378.423 | 14333.138 | 21681.557 | 22144.040 | -83756.500 | -78890.220 | -37323.640 | -34262.300 | 59.427 | 38752.071 | 25082.992 |
+| DW11SESSION_r75_E3 | ALL43 | 43 | 452 | 36.198 | -0.087 | 7498.827 | 7626.850 | 26034.972 | 24892.194 | -91440.680 | -90719.200 | -38896.220 | -39431.600 | 91.825 | 43561.339 | 13346.988 |
+| DM3FAILEDBR_lb30rj5_E2 | L6M | 6 | 54 | 16.061 | -0.027 | 18755.264 | 18658.226 | 9416.278 | 9593.892 | -31109.180 | -32843.700 | -15728.040 | -16247.720 | -113.099 | 16789.311 | 32651.895 |
+| DM3FAILEDBR_lb30rj5_E2 | HOLD | 6 | 51 | 133.775 | -0.160 | 9280.225 | 9348.552 | 29372.481 | 29746.949 | -83756.500 | -85535.700 | -37323.640 | -37333.320 | -65.449 | 52057.160 | 16359.965 |
+| DM3FAILEDBR_lb30rj5_E2 | UNT | 12 | 105 | 75.227 | -0.089 | 14378.423 | 14362.201 | 21716.175 | 22003.761 | -83756.500 | -85535.700 | -37323.640 | -37333.320 | -91.449 | 38506.583 | 25133.851 |
+
+Dollars: engine base lots with $4.84 RT unless the column says x175 (stack scaled x1.75 linearly; lot rounding ignored). others_delta_wk = FREED-BOOK effect: change in the other books' mean $/wk caused by the injected book (shared stack cap, one-position rule, SCR gate).
 
 Candidates sent to the engine (frozen 11-17 from the standalone table: family or session pick with UNT R > 0.03, UNT n >= 100, SEL R > 0): P3_POWER_HOUR|k=0.4 E4_vol, L6_ES_LED_NYAM|L=30,bp=3,win=NYAM E3_40_90, M3_FAILED_BREAK_LON|lb=60,rj=5 E2_60_60, M3_FAILED_BREAK_NYPM|lb=30,rj=5 E2_60_60, N2_GAP|k=0.3,mode=go E3_40_90, R3_YM_LED_LON|L=15,bp=3,win=LON,src=YM E3_40_90, R3_RTY_LED_LON|L=15,bp=3,win=LON,src=RTY E4_vol, N2_GAP|k=0.15,mode=fill E3_40_90, R3_ES_LED_NYAM|L=30,bp=3,win=NYAM,src=ES E3_40_90, W7_POWER_HOUR_LOOSE|t=(14, 59),k=0.3,filt=day E4_vol, W11_SESSION_EXTREME_RSI14_LON|r=75 E3_40_90, M3_FAILED_BREAK_NYAM|lb=30,rj=5 E2_60_60, N4_1000_REVERSAL|k=0.3,mode=cont E3_40_90, X4_OPEN_DRIVE_DR|W=10,rm=0.75,pb=1 E3_40_90, X4_ORB_DIR_PULLBACK|OR=15,lvl=edge,ctx=with E3_40_90, W7_POWER_HOUR_LOOSE|t=(14, 59),k=0.3,filt=dvh E4_vol, X4_RSI2_15MIN_NYPM|tf=15,th=5 E3_40_90, W11_SESSION_EXTREME_RSI14_LON|r=80 E3_40_90, X4_FAILED_BREAK_BARS_LON|tf=15,lb=120,rj=10 E1_40_40, X4_OPEN_DRIVE_DR|W=5,rm=0.75,pb=1 E3_40_90, X4_ORB_DIR_PULLBACK|OR=15,lvl=vwap,ctx=with E5_30_60, X4_RSI2_15MIN_NYPM|tf=15,th=5 E2_60_60.
 
-30 date-shifted engine controls: NOT FINISHED (the loop builds them for the best candidate once its L6M+HOLD months and the identity lines have landed).
+30 date-shifted engine controls: candidate R3_YM_LED_LON|L=15,bp=3,win=LON,src=YM E3_40_90: real stack delta mean $/wk 1067, ulcer delta -499; valid shifted-date controls finished 0/30 (trade count within 15% of the real rule) -> NOT FINISHED (needs 30 valid draws)
 
 Part A lot vector and part B shelf picks together with survivors: NOT FINISHED (needs W-MA / W-MB sets; the loop does not stack on top of their sets without their final picks).
 

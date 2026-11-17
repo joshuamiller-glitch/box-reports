@@ -1,13 +1,13 @@
 # DS3_MAJOR_B_BOOKS - diversifying books from the shelf, scored against the JL3 stack (W-MB, part B of the MAJOR-CHANGES programme)
 
-**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 19:33 UTC by an unattended loop)**
-1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 30 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
-2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 2 of 2 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
+**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 20:03 UTC by an unattended loop)**
+1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 32 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
+2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 12 of 32 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
 3. Does not: no non-NQ book can be engine-tested (the engine is NQ-only; no price store or product path exists for ES/RTY on the engine, none for the rest); their screen is HARNESS BASIS only; almost all candidates are 2026 regime earners (PRE / X' negative) and the ulcer gain of a screened book is mostly its mean (r=-0.95), so only the excess over the date-shift null counts.
 4. Needs in DS7: every candidate here is a NEW book (fade / failed-break / gap / time-of-day / structure), none is a mean-reversion slot that exists today; code needs are in section 6 per book. A candidate counts only after it passes stage 2 (older windows) and the placebo draws.
 5. Next: stage 2 (PREUW, X') and lot variants for the best six, shifted-event placebos, then the best 3-5 together and on the part A lot vector; this page refreshes every 30 minutes.
 
-**VERDICT (data ends 2026-10-31; FIRST PASS, no tier claim yet):** header - trials counted = 6836 screened lists (harness basis) + 30 engine cells; correction = date-shift null (30 circular shifts, weekday kept) and excess over null median; no White RC/DSR yet (screen is a first pass; engine finalists get FIRST PASS labels only); PBO not computed (no fitted choice besides the frozen stage-1 rule: selection on the screen, which included HOLD and L6M, so engine HOLD/L6M are NOT untouched; PREUW and X' are the untouched windows for stage 2). In-sample = harness screen; walk-forward = engine windows stage 2. Costs: $4.84 RT per base lot, base lots (x1.75 live column where shown). Data end: engine months to 202610; harness lists to 2026-10-30.
+**VERDICT (data ends 2026-10-31; FIRST PASS, no tier claim yet):** header - trials counted = 6836 screened lists (harness basis) + 32 engine cells; correction = date-shift null (30 circular shifts, weekday kept) and excess over null median; no White RC/DSR yet (screen is a first pass; engine finalists get FIRST PASS labels only); PBO not computed (no fitted choice besides the frozen stage-1 rule: selection on the screen, which included HOLD and L6M, so engine HOLD/L6M are NOT untouched; PREUW and X' are the untouched windows for stage 2). In-sample = harness screen; walk-forward = engine windows stage 2. Costs: $4.84 RT per base lot, base lots (x1.75 live column where shown). Data end: engine months to 202610; harness lists to 2026-10-30.
 
 ## 1. The JL3 stack reference (what a diversifier must help)
 Engine JL3 (TL3_EV_JL3), base lots, $4.84, day = ET exit + 6 h, weeks Mon-Sun. Window table (mean $/wk, ulcer, max DD, worst week):
@@ -125,59 +125,124 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 **Window RECENT12** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| old-harness sleeve IBS_t20_n1 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 20 | 710 | 480 | -1998 | 2475 | 0 | -8604 | 19977 | -0.15 | -230 | -1922 | 0.20 |
+| O7 variant t0=1000 k=1.0 stop40/tgt90 flat 1600 | nyam | 2 | 44 | 476 | 472 | -1835 | 0 | 0 | 3091 | 5607 | 0.03 | -4 | -1765 | 0.00 |
+| NQ.FADE_LV.d6f9339b | nypm | 2 | 187 | 339 | 347 | -1740 | 6822 | 3341 | -5682 | 7407 | -0.07 | 8 | -1749 | 0.00 |
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 40 | 523 | 488 | -1028 | 1885 | 0 | -1599 | 1112 | 0.02 | -35 | -1435 | 0.10 |
 | old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 40 | 458 | 418 | -1008 | 1385 | 0 | -1464 | 3237 | 0.07 | -39 | -1384 | 0.03 |
+| NQ.LRS.69f1daac | pre | 1 | 76 | 871 | 639 | -857 | 2406 | 1475 | 6651 | 21037 | 0.04 | -232 | -1351 | 0.03 |
+| O7 variant t0=0830 k=0.5 stop40/tgt90 flat 1600 | pre | 2 | 109 | -100 | -164 | -516 | -2712 | -660 | 171 | 8431 | -0.01 | -64 | -1128 | 0.00 |
+| NQ.FADE_LV.4edbfdf0 | asia | 2 | 120 | 504 | 667 | -1750 | 4051 | 2176 | 1224 | 8317 | -0.10 | 163 | -999 | 0.00 |
+| NQ.MONDAY_LONG_A.1c2b44c6 | daily | 1 | 42 | 1166 | 1222 | -1049 | 9944 | 0 | -390 | 5231 | 0.04 | 57 | -958 | 0.13 |
+| NQ.DIST_DISBPRELcont.7bb655 | pre | 3 | 67 | 151 | 320 | -412 | -1261 | 315 | 1152 | 11087 | -0.01 | 169 | -812 | 0.00 |
+| NQ.DIST_DISBNRELrev.6628b1 | nyam | 2 | 55 | 915 | 952 | -975 | -2623 | 0 | -2864 | 6203 | 0.08 | 38 | -783 | 0.17 |
+| NQ.FADE_LV.a8632973 | nypm | 3 | 78 | 457 | 434 | -1000 | 1922 | 2156 | 5103 | 4695 | 0.08 | -23 | -772 | 0.03 |
+| NQ.DIST_DISQ1550drift.78db2c | close | 1 | 163 | 519 | 519 | -734 | 2241 | 355 | 2836 | 3594 | 0.07 | 0 | -503 | 0.10 |
+| NQ.FADE_LV.b6a2c134 | nyam | 2 | 94 | 100 | -15 | 58 | -1958 | 3041 | 592 | 4636 | -0.06 | -116 | -322 | 0.07 |
+| NQ.FADE_LV.90b9322c | nyam | 1 | 101 | 247 | 253 | -2 | 2236 | 3380 | 3026 | -4993 | 0.00 | 6 | -107 | 0.37 |
+| NQ.T2FNQ.e77382a9 | pre | 1 | 195 | 384 | 24 | -267 | 1358 | 5782 | 2182 | 9839 | -0.05 | -360 | 5 | 0.53 |
+| NQ.FADE_LV.6fb3aa4d | london | 3 | 41 | -84 | 145 | -806 | 3721 | 4461 | 2881 | -262 | 0.00 | 229 | 97 | 0.77 |
+| NQ.LRS.ef7b7bdf | nypm | 1 | 183 | 326 | 305 | 81 | -2764 | -530 | 898 | -1366 | 0.17 | -21 | 102 | 0.77 |
+| NQ.T2F1B.6f26737b | nyam | 7 | 112 | 253 | 289 | -764 | -1877 | 774 | -6753 | 957 | 0.02 | 36 | 139 | 0.90 |
+| O7 variant t0=0200 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 79 | -368 | -15 | -542 | -1986 | 0 | 7577 | 4134 | 0.06 | 353 | 500 | 0.90 |
+| NQ.T2F1B.fa471237 | nyam | 7 | 115 | -60 | -14 | -511 | -1877 | 774 | -6568 | -1968 | 0.00 | 46 | 508 | 1.00 |
+| O7 variant t0=0300 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 66 | 111 | 99 | -635 | 421 | 3590 | -2218 | -3195 | 0.02 | -12 | 554 | 1.00 |
+| NQ.T2F1B.f3379ae5 | nyam | 5 | 122 | -140 | -42 | -440 | -2198 | 1619 | -5475 | -3043 | -0.00 | 99 | 694 | 1.00 |
+| NQ.FADE_LV.02ddffde | nyam | 2 | 168 | -215 | -396 | 1457 | 1178 | 2081 | -2512 | -4060 | -0.09 | -182 | 705 | 0.97 |
+| NQ.T2FNQ.80f7f135 | pre | 1 | 201 | 286 | -55 | -183 | 2972 | 7396 | -623 | 7384 | -0.01 | -341 | 816 | 0.90 |
+| NQ.FADE_LV.628da3af | nyam | 2 | 168 | -225 | -407 | 1633 | 1103 | 2081 | -2567 | -4915 | -0.09 | -182 | 837 | 0.97 |
+| NQ.FADE_LV.0a316e6d | nyam | 2 | 225 | 930 | 863 | 70 | -6433 | -2615 | -430 | 2747 | 0.05 | -67 | 895 | 0.90 |
+| O7 variant t0=0200 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 134 | -381 | -246 | -604 | -1450 | 2156 | 7958 | 297 | 0.09 | 134 | 962 | 1.00 |
+| NQ.T2F1B.e3dde7b1 | nyam | 10 | 102 | 40 | 109 | -10 | 1096 | 3361 | -2090 | -10567 | -0.04 | 69 | 1328 | 1.00 |
+| old-harness sleeve RSI2_t10 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 15 | 9 | -28 | 1751 | -11970 | 0 | 0 | -979 | -0.10 | -37 | 1583 | 0.87 |
+| O7 variant t0=0300 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 137 | -143 | -310 | 1397 | -3913 | 3590 | 1449 | -11381 | 0.07 | -166 | 1913 | 1.00 |
+| l2vast/ds3/out/SF/trades_CRT_M15_M1_close_ib.parquet | london | 9 | 287 | -2410 | -2473 | 6051 | -16314 | -302 | -13965 | -30528 | 0.01 | -63 | 4961 | 0.93 |
 
 **Window L6M** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| NQ.FADE_LV.4edbfdf0 | asia | 2 | 68 | 230 | 114 | -560 | 3492 | -8206 | -680 | 0 | -0.11 | -116 | -987 | 0.03 |
-| NQ.FADE_LV.90b9322c | nyam | 1 | 51 | 386 | 338 | -50 | -156 | -3470 | -1035 | 0 | 0.10 | -47 | -388 | 0.23 |
-| NQ.FADE_LV.02ddffde | nyam | 2 | 85 | -90 | -120 | 348 | -497 | -2911 | -1169 | 0 | 0.03 | -29 | -331 | 0.30 |
-| NQ.FADE_LV.b6a2c134 | nyam | 2 | 42 | -30 | -107 | -60 | -830 | 0 | 0 | 0 | -0.07 | -76 | -289 | 0.33 |
+| NQ.FADE_LV.4edbfdf0 | asia | 2 | 68 | 230 | 114 | -560 | 3492 | -8206 | -680 | 0 | -0.11 | -116 | -997 | 0.03 |
+| NQ.FADE_LV.90b9322c | nyam | 1 | 51 | 386 | 338 | -50 | -156 | -3470 | -1035 | 0 | 0.10 | -47 | -399 | 0.27 |
+| NQ.FADE_LV.02ddffde | nyam | 2 | 85 | -90 | -120 | 348 | -497 | -2911 | -1169 | 0 | 0.03 | -29 | -322 | 0.30 |
 | NQ.FADE_LV.628da3af | nyam | 2 | 84 | -133 | -162 | 361 | -397 | -2966 | -1224 | 0 | 0.02 | -29 | -281 | 0.30 |
-| NQ.DIST_DISBNRELrev.6628b1 | nyam | 2 | 27 | 1049 | 1269 | 128 | 674 | -3540 | 91 | 0 | 0.10 | 220 | -258 | 0.17 |
-| NQ.FADE_LV.d6f9339b | nypm | 2 | 76 | -79 | -191 | 183 | 406 | -3451 | -1260 | 0 | -0.07 | -112 | -195 | 0.40 |
-| NQ.DIST_DISBPRELcont.7bb655 | pre | 3 | 34 | -23 | 405 | -201 | 4071 | 1169 | 2711 | 0 | -0.00 | 428 | -141 | 0.37 |
-| NQ.T2FNQ.80f7f135 | pre | 1 | 97 | 165 | -395 | 277 | -1012 | -2897 | 41 | 0 | -0.00 | -560 | -71 | 0.30 |
-| O7 variant t0=0200 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 74 | -873 | -1473 | 296 | 4135 | -1311 | 1976 | 0 | 0.11 | -600 | -31 | 0.47 |
-| NQ.LRS.69f1daac | pre | 1 | 43 | 235 | 100 | 509 | -2841 | -5860 | -2230 | 0 | 0.02 | -135 | -16 | 0.50 |
-| NQ.T2FNQ.e77382a9 | pre | 1 | 92 | 152 | -442 | 313 | -1297 | -3182 | -244 | 0 | -0.00 | -594 | -14 | 0.47 |
-| NQ.DIST_DISQ1550drift.78db2c | close | 1 | 78 | 610 | 610 | -50 | -400 | -275 | -275 | 0 | 0.13 | 0 | -10 | 0.47 |
-| NQ.FADE_LV.0a316e6d | nyam | 2 | 109 | 1283 | 1386 | -256 | 2700 | -106 | 3162 | 0 | 0.04 | 103 | -9 | 0.47 |
-| O7 variant t0=0830 k=0.5 stop40/tgt90 flat 1600 | pre | 2 | 55 | -209 | -106 | -14 | 2611 | 2441 | 2441 | 0 | 0.01 | 103 | 15 | 0.50 |
+| NQ.FADE_LV.b6a2c134 | nyam | 2 | 42 | -30 | -107 | -60 | -830 | 0 | 0 | 0 | -0.07 | -76 | -269 | 0.37 |
+| NQ.DIST_DISBNRELrev.6628b1 | nyam | 2 | 27 | 1049 | 1269 | 128 | 674 | -3540 | 91 | 0 | 0.10 | 220 | -236 | 0.23 |
+| NQ.FADE_LV.d6f9339b | nypm | 2 | 76 | -79 | -191 | 183 | 406 | -3451 | -1260 | 0 | -0.07 | -112 | -217 | 0.40 |
+| NQ.DIST_DISBPRELcont.7bb655 | pre | 3 | 34 | -23 | 405 | -201 | 4071 | 1169 | 2711 | 0 | -0.00 | 428 | -160 | 0.33 |
+| old-harness sleeve IBS_t20_n1 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 5 | -296 | -546 | 118 | -832 | -2959 | -3645 | 0 | -0.21 | -250 | -147 | 0.40 |
+| NQ.T2FNQ.80f7f135 | pre | 1 | 97 | 165 | -395 | 277 | -1012 | -2897 | 41 | 0 | -0.00 | -560 | -144 | 0.27 |
+| old-harness sleeve RSI2_t10 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 6 | -966 | -1006 | 173 | 0 | 0 | 0 | 0 | -0.09 | -40 | -121 | 0.37 |
+| O7 variant t0=0830 k=0.5 stop40/tgt90 flat 1600 | pre | 2 | 55 | -209 | -106 | -14 | 2611 | 2441 | 2441 | 0 | 0.01 | 103 | -111 | 0.33 |
+| NQ.T2FNQ.e77382a9 | pre | 1 | 92 | 152 | -442 | 313 | -1297 | -3182 | -244 | 0 | -0.00 | -594 | -84 | 0.37 |
+| O7 variant t0=0200 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 74 | -873 | -1473 | 296 | 4135 | -1311 | 1976 | 0 | 0.11 | -600 | -33 | 0.47 |
+| NQ.FADE_LV.0a316e6d | nyam | 2 | 109 | 1283 | 1386 | -256 | 2700 | -106 | 3162 | 0 | 0.04 | 103 | -22 | 0.43 |
+| NQ.FADE_LV.6fb3aa4d | london | 3 | 22 | 105 | 427 | -519 | 2042 | 2042 | 755 | 0 | 0.03 | 322 | 6 | 0.50 |
+| NQ.DIST_DISQ1550drift.78db2c | close | 1 | 78 | 610 | 610 | -50 | -400 | -275 | -275 | 0 | 0.13 | -0 | 9 | 0.53 |
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 15 | 281 | 125 | 224 | 0 | -142 | 4445 | 0 | 0.07 | -156 | 27 | 0.53 |
-| NQ.FADE_LV.a8632973 | nypm | 3 | 37 | 295 | 295 | -32 | 0 | 665 | 665 | 0 | 0.11 | -0 | 49 | 0.63 |
-| NQ.FADE_LV.6fb3aa4d | london | 3 | 22 | 105 | 427 | -519 | 2042 | 2042 | 755 | 0 | 0.03 | 322 | 59 | 0.53 |
+| NQ.LRS.69f1daac | pre | 1 | 43 | 235 | 100 | 509 | -2841 | -5860 | -2230 | 0 | 0.02 | -135 | 29 | 0.53 |
+| O7 variant t0=0200 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 41 | -571 | -578 | -80 | 3440 | 0 | 0 | 0 | 0.09 | -7 | 32 | 0.60 |
 | old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 15 | 388 | 182 | 217 | 0 | 3 | 3315 | 0 | 0.12 | -207 | 67 | 0.53 |
-| O7 variant t0=0300 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 32 | -59 | -214 | -195 | 2484 | 2484 | 300 | 0 | -0.08 | -156 | 83 | 0.67 |
-| O7 variant t0=0200 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 41 | -571 | -578 | -80 | 3440 | 0 | 0 | 0 | 0.09 | -7 | 85 | 0.60 |
-| NQ.LRS.ef7b7bdf | nypm | 1 | 81 | 273 | 273 | -6 | -220 | -1614 | -1614 | 0 | 0.17 | 0 | 144 | 0.67 |
-| O7 variant t0=0300 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 66 | -114 | -517 | 820 | -3310 | -3520 | -449 | 0 | -0.03 | -403 | 153 | 0.63 |
-| O7 variant t0=1000 k=1.0 stop40/tgt90 flat 1600 | nyam | 2 | 22 | 685 | 677 | 5 | 0 | 0 | 0 | 0 | 0.03 | -7 | 161 | 0.77 |
-| NQ.T2F1B.e3dde7b1 | nyam | 10 | 45 | 216 | 142 | 562 | -3551 | -4537 | -4537 | 0 | -0.09 | -74 | 488 | 0.97 |
-| NQ.T2F1B.f3379ae5 | nyam | 5 | 53 | -148 | -169 | 996 | -5984 | -6579 | -5453 | 0 | -0.01 | -21 | 847 | 1.00 |
-| NQ.T2F1B.6f26737b | nyam | 7 | 49 | 167 | 103 | 1249 | -7577 | -6923 | -5798 | 0 | -0.03 | -65 | 1244 | 1.00 |
-| NQ.T2F1B.fa471237 | nyam | 7 | 51 | -302 | -348 | 1334 | -7577 | -6923 | -5798 | 0 | -0.07 | -45 | 1250 | 1.00 |
-| NQ.MONDAY_LONG_A.1c2b44c6 | daily | 1 | 22 | 1766 | 1938 | 1436 | -7989 | -5414 | -4125 | 0 | 0.16 | 172 | 1345 | 0.97 |
-| l2vast/ds3/out/SF/trades_CRT_M15_M1_close_ib.parquet | london | 9 | 137 | -2093 | -2264 | 4180 | -20086 | -14312 | -6313 | 0 | 0.04 | -172 | 2190 | 1.00 |
+| NQ.FADE_LV.a8632973 | nypm | 3 | 37 | 295 | 295 | -32 | 0 | 665 | 665 | 0 | 0.11 | 0 | 94 | 0.70 |
+| O7 variant t0=0300 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 32 | -59 | -214 | -195 | 2484 | 2484 | 300 | 0 | -0.08 | -156 | 101 | 0.67 |
+| O7 variant t0=0300 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 66 | -114 | -517 | 820 | -3310 | -3520 | -449 | 0 | -0.03 | -403 | 128 | 0.63 |
+| NQ.LRS.ef7b7bdf | nypm | 1 | 81 | 273 | 273 | -6 | -220 | -1614 | -1614 | 0 | 0.17 | -0 | 138 | 0.67 |
+| O7 variant t0=1000 k=1.0 stop40/tgt90 flat 1600 | nyam | 2 | 22 | 685 | 677 | 5 | 0 | 0 | 0 | 0 | 0.03 | -7 | 184 | 0.83 |
+| NQ.T2F1B.e3dde7b1 | nyam | 10 | 45 | 216 | 142 | 562 | -3551 | -4537 | -4537 | 0 | -0.09 | -74 | 502 | 0.97 |
+| NQ.T2F1B.f3379ae5 | nyam | 5 | 53 | -148 | -169 | 996 | -5984 | -6579 | -5453 | 0 | -0.01 | -21 | 828 | 1.00 |
+| NQ.T2F1B.fa471237 | nyam | 7 | 51 | -302 | -348 | 1334 | -7577 | -6923 | -5798 | 0 | -0.07 | -45 | 1253 | 1.00 |
+| NQ.T2F1B.6f26737b | nyam | 7 | 49 | 167 | 103 | 1249 | -7577 | -6923 | -5798 | 0 | -0.03 | -65 | 1303 | 1.00 |
+| NQ.MONDAY_LONG_A.1c2b44c6 | daily | 1 | 22 | 1766 | 1938 | 1436 | -7989 | -5414 | -4125 | 0 | 0.16 | 172 | 1321 | 0.97 |
+| l2vast/ds3/out/SF/trades_CRT_M15_M1_close_ib.parquet | london | 9 | 137 | -2093 | -2264 | 4180 | -20086 | -14312 | -6313 | 0 | 0.04 | -172 | 1808 | 0.93 |
 
 **Window HOLD** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| O7 variant t0=1000 k=1.0 stop40/tgt90 flat 1600 | nyam | 2 | 22 | 263 | 263 | -2755 | 0 | 0 | 3091 | 5607 | 0.03 | 0 | -2744 | 0.00 |
+| old-harness sleeve IBS_t20_n1 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 15 | 1732 | 1523 | -3042 | 2475 | 0 | -4960 | 19977 | -0.11 | -209 | -2601 | 0.23 |
+| NQ.FADE_LV.d6f9339b | nypm | 2 | 111 | 764 | 893 | -2677 | 6822 | 3341 | -4422 | 7407 | -0.06 | 129 | -2546 | 0.00 |
+| NQ.LRS.69f1daac | pre | 1 | 33 | 1516 | 1186 | -1464 | 2406 | 1475 | 8881 | 21037 | 0.08 | -330 | -2197 | 0.03 |
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 25 | 768 | 857 | -1617 | 1885 | 0 | -6044 | 1112 | -0.01 | 89 | -2178 | 0.10 |
+| NQ.MONDAY_LONG_A.1c2b44c6 | daily | 1 | 20 | 556 | 495 | -2115 | 9944 | 0 | 3735 | 5231 | -0.13 | -61 | -2050 | 0.13 |
 | old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 25 | 528 | 659 | -1584 | 1385 | 0 | -4779 | 3237 | 0.02 | 131 | -2036 | 0.07 |
+| O7 variant t0=0830 k=0.5 stop40/tgt90 flat 1600 | pre | 2 | 54 | 11 | -223 | -766 | -2712 | -660 | -2270 | 8431 | -0.03 | -234 | -1531 | 0.00 |
+| NQ.FADE_LV.a8632973 | nypm | 3 | 41 | 622 | 576 | -1484 | 1922 | 2156 | 4438 | 4695 | 0.06 | -46 | -1319 | 0.03 |
+| NQ.DIST_DISBPRELcont.7bb655 | pre | 3 | 33 | 328 | 233 | -548 | -1261 | 315 | -1559 | 11087 | -0.01 | -95 | -1175 | 0.00 |
+| NQ.FADE_LV.4edbfdf0 | asia | 2 | 52 | 783 | 1229 | -2427 | 4051 | 2176 | 1903 | 8317 | -0.07 | 446 | -1116 | 0.00 |
+| NQ.DIST_DISBNRELrev.6628b1 | nyam | 2 | 28 | 778 | 630 | -1504 | -2623 | 0 | -2954 | 6203 | 0.06 | -148 | -1074 | 0.13 |
+| NQ.DIST_DISQ1550drift.78db2c | close | 1 | 85 | 426 | 426 | -1081 | 2241 | 355 | 3111 | 3594 | 0.01 | 0 | -799 | 0.10 |
+| NQ.FADE_LV.b6a2c134 | nyam | 2 | 52 | 233 | 77 | 106 | -1958 | 3041 | 592 | 4636 | -0.05 | -155 | -359 | 0.10 |
+| NQ.T2F1B.6f26737b | nyam | 7 | 63 | 341 | 479 | -1605 | -1877 | 774 | -956 | 957 | 0.10 | 139 | -268 | 0.23 |
+| NQ.FADE_LV.90b9322c | nyam | 1 | 50 | 106 | 166 | 14 | 2236 | 3380 | 4061 | -4993 | -0.13 | 60 | -65 | 0.43 |
+| NQ.T2FNQ.e77382a9 | pre | 1 | 103 | 621 | 498 | -506 | 1358 | 5782 | 2426 | 9839 | -0.10 | -123 | 20 | 0.60 |
+| NQ.LRS.ef7b7bdf | nypm | 1 | 102 | 381 | 337 | 122 | -2764 | -530 | 2512 | -1366 | 0.17 | -43 | 119 | 0.67 |
+| NQ.FADE_LV.6fb3aa4d | london | 3 | 19 | -276 | -142 | -1033 | 3721 | 4461 | 2126 | -262 | -0.04 | 135 | 176 | 0.80 |
+| NQ.T2F1B.fa471237 | nyam | 7 | 64 | 187 | 325 | -1253 | -1877 | 774 | -771 | -1968 | 0.09 | 139 | 245 | 0.87 |
+| NQ.T2F1B.f3379ae5 | nyam | 5 | 69 | -132 | 88 | -1014 | -2198 | 1619 | -21 | -3043 | 0.01 | 220 | 716 | 0.90 |
+| O7 variant t0=0200 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 38 | -162 | 557 | -782 | -1986 | 0 | 7577 | 4134 | 0.03 | 720 | 728 | 0.90 |
+| O7 variant t0=0300 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 34 | 284 | 418 | -884 | 421 | 3590 | -2519 | -3195 | 0.13 | 134 | 803 | 1.00 |
+| NQ.FADE_LV.02ddffde | nyam | 2 | 83 | -341 | -677 | 2058 | 1178 | 2081 | -1343 | -4060 | -0.22 | -336 | 1168 | 0.97 |
+| NQ.T2FNQ.80f7f135 | pre | 1 | 104 | 409 | 290 | -366 | 2972 | 7396 | -664 | 7384 | -0.01 | -118 | 1267 | 0.97 |
+| NQ.FADE_LV.0a316e6d | nyam | 2 | 116 | 570 | 331 | 187 | -6433 | -2615 | -3592 | 2747 | 0.06 | -239 | 1348 | 0.90 |
+| NQ.FADE_LV.628da3af | nyam | 2 | 84 | -320 | -656 | 2315 | 1103 | 2081 | -1343 | -4915 | -0.22 | -336 | 1410 | 0.97 |
+| O7 variant t0=0200 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 60 | 120 | 1001 | -1006 | -1450 | 2156 | 5982 | 297 | 0.08 | 880 | 1475 | 1.00 |
+| NQ.T2F1B.e3dde7b1 | nyam | 10 | 57 | -139 | 76 | -207 | 1096 | 3361 | 2447 | -10567 | 0.05 | 215 | 1788 | 1.00 |
+| old-harness sleeve RSI2_t10 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 9 | 1000 | 966 | 2550 | -11970 | 0 | 0 | -979 | -0.10 | -34 | 2545 | 0.97 |
+| O7 variant t0=0300 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 71 | -173 | -99 | 1813 | -3913 | 3590 | 1898 | -11381 | 0.17 | 75 | 2800 | 1.00 |
+| l2vast/ds3/out/SF/trades_CRT_M15_M1_close_ib.parquet | london | 9 | 150 | -2732 | -2685 | 7613 | -16314 | -302 | -7651 | -30528 | -0.02 | 47 | 6713 | 0.93 |
 
 **Window PREUW** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| old-harness sleeve IBS_t20_n1 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 21 | 165 | 146 | -942 | -4519 | 0 | -1800 | -3019 | -0.10 | -19 | -3126 | 0.37 |
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 38 | -98 | -310 | -534 | 338 | 0 | -3539 | 6257 | 0.22 | -212 | -2367 | 0.20 |
 | old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 38 | 115 | -95 | 1224 | -3716 | 0 | -5064 | 357 | 0.21 | -210 | 977 | 0.77 |
 
 **Window X'** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 65 | 24 | -22 | 382 | 3545 | 0 | 1796 | 6873 | 0.13 | -46 | 998 | 0.60 |
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 65 | 282 | 216 | -33 | 4440 | 0 | 461 | 9043 | 0.14 | -66 | 1515 | 0.97 |
+| old-harness sleeve IBS_t20_n1 (close/overnight), replayed by clock, stop 300 pts, no target | close | 2 | 62 | 911 | 773 | 2631 | -755 | 0 | 3375 | -13697 | -0.01 | -138 | 3845 | 1.00 |
 
 
 ## 5. Method notes and open items (hand-written by W-MB, 2026-11-17)
@@ -188,5 +253,5 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 - DS7 need for every row: new code (a book); none maps to an existing mean-reversion slot. X3-X5 slots are empty, X1/X2/X6-X8 and S7 have no definition.
 
 
-PARTIAL TABLE: engine set-months landed so far: 352 (a window is scored only when all its months have landed; sets with fewer months are not shown).
-Status (auto): engine sets scored 30; queue: /mnt/l2/l2vast/_major_b/pending.txt (217 lines open); page rebuilt 2026-11-17 19:33 UTC.
+PARTIAL TABLE: engine set-months landed so far: 503 (a window is scored only when all its months have landed; sets with fewer months are not shown).
+Status (auto): engine sets scored 32; queue: /mnt/l2/l2vast/_major_b/pending.txt (607 lines open); page rebuilt 2026-11-17 20:03 UTC.
