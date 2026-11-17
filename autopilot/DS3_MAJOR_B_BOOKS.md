@@ -1,13 +1,13 @@
 # DS3_MAJOR_B_BOOKS - diversifying books from the shelf, scored against the JL3 stack (W-MB, part B of the MAJOR-CHANGES programme)
 
-**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 16:32 UTC by an unattended loop)**
-1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 1 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
-2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 1 of 1 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
+**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 17:02 UTC by an unattended loop)**
+1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 2 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
+2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 2 of 2 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
 3. Does not: no non-NQ book can be engine-tested (the engine is NQ-only; no price store or product path exists for ES/RTY on the engine, none for the rest); their screen is HARNESS BASIS only; almost all candidates are 2026 regime earners (PRE / X' negative) and the ulcer gain of a screened book is mostly its mean (r=-0.95), so only the excess over the date-shift null counts.
 4. Needs in DS7: every candidate here is a NEW book (fade / failed-break / gap / time-of-day / structure), none is a mean-reversion slot that exists today; code needs are in section 6 per book. A candidate counts only after it passes stage 2 (older windows) and the placebo draws.
 5. Next: stage 2 (PREUW, X') and lot variants for the best six, shifted-event placebos, then the best 3-5 together and on the part A lot vector; this page refreshes every 30 minutes.
 
-**VERDICT (data ends 2026-10-31; FIRST PASS, no tier claim yet):** header - trials counted = 6836 screened lists (harness basis) + 1 engine cells; correction = date-shift null (30 circular shifts, weekday kept) and excess over null median; no White RC/DSR yet (screen is a first pass; engine finalists get FIRST PASS labels only); PBO not computed (no fitted choice besides the frozen stage-1 rule: selection on the screen, which included HOLD and L6M, so engine HOLD/L6M are NOT untouched; PREUW and X' are the untouched windows for stage 2). In-sample = harness screen; walk-forward = engine windows stage 2. Costs: $4.84 RT per base lot, base lots (x1.75 live column where shown). Data end: engine months to 202610; harness lists to 2026-10-30.
+**VERDICT (data ends 2026-10-31; FIRST PASS, no tier claim yet):** header - trials counted = 6836 screened lists (harness basis) + 2 engine cells; correction = date-shift null (30 circular shifts, weekday kept) and excess over null median; no White RC/DSR yet (screen is a first pass; engine finalists get FIRST PASS labels only); PBO not computed (no fitted choice besides the frozen stage-1 rule: selection on the screen, which included HOLD and L6M, so engine HOLD/L6M are NOT untouched; PREUW and X' are the untouched windows for stage 2). In-sample = harness screen; walk-forward = engine windows stage 2. Costs: $4.84 RT per base lot, base lots (x1.75 live column where shown). Data end: engine months to 202610; harness lists to 2026-10-30.
 
 ## 1. The JL3 stack reference (what a diversifier must help)
 Engine JL3 (TL3_EV_JL3), base lots, $4.84, day = ET exit + 6 h, weeks Mon-Sun. Window table (mean $/wk, ulcer, max DD, worst week):
@@ -126,21 +126,29 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 40 | 523 | 488 | -1028 | 1885 | 0 | -1599 | 1112 | 0.02 | -35 | -1435 | 0.10 |
+| old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 40 | 458 | 418 | -1008 | 1385 | 0 | -1464 | 3237 | 0.07 | -39 | -1425 | 0.00 |
 
 **Window L6M** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 15 | 281 | 125 | 224 | 0 | -142 | 4445 | 0 | 0.07 | -156 | 27 | 0.53 |
+| old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 15 | 388 | 182 | 217 | 0 | 3 | 3315 | 0 | 0.12 | -207 | 67 | 0.53 |
 
 **Window HOLD** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 25 | 768 | 857 | -1617 | 1885 | 0 | -6044 | 1112 | -0.01 | 89 | -2178 | 0.10 |
+| old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 25 | 528 | 659 | -1584 | 1385 | 0 | -4779 | 3237 | 0.02 | 131 | -2146 | 0.00 |
 
 **Window PREUW** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 38 | -98 | -310 | -534 | 338 | 0 | -3539 | 6257 | 0.22 | -212 | -2367 | 0.20 |
+
+**Window X'** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
+| book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 65 | 282 | 216 | -33 | 4440 | 0 | 461 | 9043 | 0.14 | -66 | 1515 | 0.97 |
 
 
 ## 5. Method notes and open items (hand-written by W-MB, 2026-11-17)
@@ -151,5 +159,5 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 - DS7 need for every row: new code (a book); none maps to an existing mean-reversion slot. X3-X5 slots are empty, X1/X2/X6-X8 and S7 have no definition.
 
 
-PARTIAL TABLE: engine set-months landed so far: 50 (a window is scored only when all its months have landed; sets with fewer months are not shown).
-Status (auto): engine sets scored 1; queue: /mnt/l2/l2vast/_major_b/pending.txt (519 lines open); page rebuilt 2026-11-17 16:32 UTC.
+PARTIAL TABLE: engine set-months landed so far: 65 (a window is scored only when all its months have landed; sets with fewer months are not shown).
+Status (auto): engine sets scored 2; queue: /mnt/l2/l2vast/_major_b/pending.txt (504 lines open); page rebuilt 2026-11-17 17:02 UTC.
