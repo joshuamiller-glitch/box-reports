@@ -1,0 +1,10 @@
+# PREREG BAR SWAP A (W-SWA, 2026-11-17 ~19:00Z) - K7 / M7 / U7 on every bar row
+Books (exact DS7 v2.0 signal definitions, code/th_swap/{k7,m7,u7}.py; fidelity page DS3_BAR_SWAP_FIDELITY.md: live time-bar reproduces engine S0 sig_ts >= 99.6%).
+Cells: K7 nyam, london, nypm; M7 london, nyam; U7 london; phase 2 Asia (code 0) simulated in the same pass, reported separately. Pre (08:30-09:30) and close not simulated (live lots 0).
+Rows: every bar row in the registry that exists (own epoch time bars tm<seconds> + W-BAR store <type>_<param>); same book parameters first (lookbacks in BARS); small per-book grid re-fit only afterwards (separate prereg line).
+Standalone: raw chassis, 1 lot equal dollar risk, bracket 60/60 (live), entry = first print >= signal time + 1 s plus measured adverse slip (0.625 pt K7/M7, 0.594 pt U7), flat at session end, one position per book, cost 4.84 USD RT/lot.
+Selection (user rule 11-17 18:10Z/18:13Z): PICK = best row per cell on the TRAILING 6 MONTHS to the newest data (trailing 3M beside it; disagreement stated); criterion total net points, min 30 trades in window, neighbour agreement (adjacent sizes of same type both >0 in the same window). No frozen old-period pick.
+Validation: rolling walk-forward of the same procedure (pick on trailing 6/3/12M, trade next 14 and 30 days) from 2023-10; OOS mean, ulcer, share of periods pick beat the live bar, decay at 1/3/6 months; same procedure on nonsense random-clock rows (same bar counts, persistent seeds); shifted-label (11/23/37 d) reported as stale-pick control.
+Older-year check: per calendar year, pick row vs live-bar row on mean, ulcer, max DD: AMBER 15-30% worse, RED > 30% worse (RED not delivered as a pick).
+Multiple testing: White reality check (stationary day-block bootstrap, 2,000 draws) of best row vs live bar on the pick window per cell; trials counted = rows x books x cells in TRIALS_LEDGER.csv.
+Engine swap test only for the recent pick (hook, identity first), labels by the calibrated rule.

@@ -1,4 +1,4 @@
-# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-17 18:07Z, every 30 min)
+# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-17 18:17Z, every 30 min)
 VERDICT (data ends 2026-10-31; FIRST PASS; every row is a BEST SETTING with its honest label; rows labelled LEAD-ASSEMBLED are copied by the assembler from existing pages and wait for the owner to confirm)
 
 > HEADER: trials counted = per row (see each row; ledger families CT1, RB3, RB5, ME, MF1/MF2); correction = per row (BH / White RC / controls where run, else 'not run'); in-sample vs walk-forward is stated per row (untouched-year line). Labels CONFIRMED / LEAD need engine-exact persistent-draw controls (calibrated pass rule); a missing field prints 'n/a (owner has not delivered)'. Seal untouched.
@@ -1707,14 +1707,14 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 ## Status block (owner files in /mnt/l2/l2vast/_deliver/)
 | owner | table | rows | bad lines | last update age | state |
 |--|--|--|--|--|--|
-| W-S3 | 1 | 14 | 0 | 7 min | ok |
-| W-MD | 1 | 31 | 0 | 20 min | ok |
-| W-MB | 2 | 7 | 0 | 5 min | ok |
-| W-MF | 2 | 16 | 0 | 3 min | ok |
-| W-MA | 3 | 20 | 0 | 3 min | ok |
-| W-MC | 4 | 2 | 0 | 50 min | ok |
-| W-ME | 4 | 3 | 0 | 13 min | ok |
-| W-DD | 4 | 2 | 0 | 18 min | ok |
+| W-S3 | 1 | 14 | 0 | 17 min | ok |
+| W-MD | 1 | 31 | 0 | 29 min | ok |
+| W-MB | 2 | 7 | 0 | 15 min | ok |
+| W-MF | 2 | 16 | 0 | 13 min | ok |
+| W-MA | 3 | 20 | 0 | 13 min | ok |
+| W-MC | 4 | 2 | 0 | 60 min | ok |
+| W-ME | 4 | 3 | 0 | 23 min | ok |
+| W-DD | 4 | 2 | 0 | 28 min | ok |
 | W-SWA | 5 | 0 | 0 | n/a | NO FILE YET |
 | W-SWB | 5 | 0 | 0 | n/a | NO FILE YET |
 | W-BAR | 5 | 0 | 0 | n/a | NO FILE YET |
