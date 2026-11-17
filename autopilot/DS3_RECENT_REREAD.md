@@ -1,4 +1,4 @@
-# DS3_RECENT_REREAD - the live questions re-read with the user's standing selection rule (W-RECENT). Updated 2026-11-17 19:35Z
+# DS3_RECENT_REREAD - the live questions re-read with the user's standing selection rule (W-RECENT). Updated 2026-11-17 20:45Z
 
 RULE USED: trailing 6 months to the newest session (3 months beside it), refit bi-weekly, validated by rolling the same procedure through history (month-end pick from 2023-09-30, trade the next 1M / 3M, also a 2-week re-pick), same procedure on the existing random controls, older years = tolerant AMBER 15-30% / RED >30% worse than the live setting. NO new engine cells were run; only results that had already landed.
 PICK WINDOW END: 2026-10-31. REFIT DATE: 2026-11-22 (bi-weekly). DATA END: 2026-10-31 (last session 2026-10-30; engine months 202304..202610, nothing from 202611). PRIOR-YEAR PERCENTAGES: on every row below (ulcer / max DD / mean, % worse than the reference, rolled OOS series; "not run" where the older months of the candidate sets have not landed).
@@ -88,21 +88,21 @@ Trailing-6M and 3M window to the data end (ref mean $/wk, ulcer, max DD): live 1
 ### Engine-exact ME cells (12 months 202511..202610, JL3; 5-9 OOS months only)
 | candidate set | procedure | n | switched | OOS ulcer chg | d mean $/wk | months beating live |
 |--|--|--|--|--|--|--|
-| LSLH4 6M1 | 5 | 80% | -5.5% | +793 | 40% | 50% |
-| LSLH4 3M1 | 9 | 100% | -12.9% | -1625 | 56% | 56% |
-| LSLH4 6M2W | 12 | 83% | -8.8% | -682 | 25% | 30% |
-| LSLH 6M1 | 5 | 80% | -8.3% | +122 | 40% | 50% |
-| LSLH 3M1 | 9 | 100% | -16.6% | -1790 | 33% | 33% |
-| LSLH 6M2W | 12 | 83% | -12.5% | -598 | 17% | 20% |
+| LSLH4 6M1 | 37 | 70% | +1.7% | +111 | 38% | 54% |
+| LSLH4 3M1 | 37 | 70% | +0.1% | -320 | 41% | 58% |
+| LSLH4 6M2W | 80 | 72% | +1.6% | -6 | 34% | 47% |
+| LSLH 6M1 | 37 | 70% | +1.6% | +20 | 38% | 54% |
+| LSLH 3M1 | 37 | 70% | -0.2% | -360 | 35% | 50% |
+| LSLH 6M2W | 80 | 72% | +1.5% | +6 | 32% | 45% |
 | EXT_SZ 6M1 | 5 | 100% | +8.2% | -3026 | 60% | 60% |
 | EXT_SZ 3M1 | 9 | 78% | +4.3% | -2134 | 44% | 57% |
 | EXT_SZ 6M2W | 12 | 92% | +8.0% | -2716 | 50% | 55% |
 | EXT_CUT 6M1 | 5 | 100% | -12.7% | -2380 | 20% | 20% |
 | EXT_CUT 3M1 | 9 | 100% | +9.9% | -2523 | 44% | 44% |
 | EXT_CUT 6M2W | 12 | 100% | -8.0% | -2751 | 42% | 42% |
-| ALLENG 6M1 | 5 | 100% | -14.7% | -1797 | 20% | 20% |
-| ALLENG 3M1 | 9 | 100% | +10.1% | -2411 | 44% | 44% |
-| ALLENG 6M2W | 12 | 100% | -10.3% | -1649 | 33% | 33% |
+| ALLENG 6M1 | 37 | 73% | +1.5% | -241 | 35% | 48% |
+| ALLENG 3M1 | 37 | 70% | +2.1% | -511 | 38% | 54% |
+| ALLENG 6M2W | 80 | 75% | +1.5% | -151 | 35% | 47% |
 
 Engine-exact persistent random controls (34 draws x {LS_K2_M30, LS_K2_M120, LH_K2, LH_K3}; same rolling procedure): 6M1: OOS ulcer chg mean -4.1% (5-95%: -18.6..+6.2), months beating 40%, switched 87%; 3M1: OOS ulcer chg mean -2.6% (5-95%: -16.6..+12.7), months beating 44%, switched 89%; 6M2W: OOS ulcer chg mean -5.0% (5-95%: -25.1..+7.3), months beating 33%, switched 86%. Engine-exact trailing-6M window (live 19686 / 9520 / 31112): LS_K2_M30 19205 / 9959 / 36615; LS_K2_M120 17289 / 12212 / 47779; LH_K2 19891 / 10116 / 35874; LH_K3 19694 / 9477 / 31486.
 
@@ -143,9 +143,9 @@ Random-pick null (a random landed cell per month): GRID+C: OOS ulcer chg mean -1
 - landed months per DD cell (of 43): ; resume cells R*: 12 each.
 
 ## Engine cells still missing to confirm (queue file /mnt/l2/l2vast/_recent/pending.txt, NOT in QUEUES.txt: lead decides)
-42 cells missing for the picks above (42 already sit in s3_pending.txt / s3_first.txt / the W-ME pending file, so they are NOT repeated; 0 are new and written to pending.txt, recent months first). dead_lookup: specs exit|bracket|<book>|<session>|stop=|target=, skip|same_side_loser, dayhalt|stack all returned (False, []) = not dead, no similar dead cell (checked 2026-11-17). Set JSONs checked to exist in exact/sets/ before listing.
+28 cells missing for the picks above (28 already sit in s3_pending.txt / s3_first.txt / the W-ME pending file, so they are NOT repeated; 0 are new and written to pending.txt, recent months first). dead_lookup: specs exit|bracket|<book>|<session>|stop=|target=, skip|same_side_loser, dayhalt|stack all returned (False, []) = not dead, no similar dead cell (checked 2026-11-17). Set JSONs checked to exist in exact/sets/ before listing.
 
-Cells already in the stage 3 queue that matter most (ask the lead to move them to the front of s3_pending): K7_S040T040, TL3_ME_JL3_LS_K2_M30 for the months 202409..202508 first (prior-year check), then 202304..202408.
+Cells already in the stage 3 queue that matter most (ask the lead to move them to the front of s3_pending): K7_S040T040 for the months 202409..202508 first (prior-year check), then 202304..202408.
 
 ## What this does NOT settle
 - Brackets are one-book-alone raw-chassis cells; the exact JL3 assembly and the 30 random-bracket engine controls (S3J) are not landed, so nothing in Table 1 is CONFIRMED. Prior-year AMBER/RED is only as good as the landed older months (see coverage). "Native" is the raw-chassis 60/60, not the live THP line.

@@ -1,0 +1,4 @@
+RESEARCH ORDER (relay, 11-17 20:42Z): two small items from W-GRIDD's note (20:16Z).
+1. Book history (hist_replica) ends 2026-10-30, so own-book wall / L2 triggers have no data for the last two weeks, and the user's rule picks on the trailing 6 months TO TODAY. Convert the L2 days 2026-11-02..11-13 (and each new day as it arrives) into the same format now; this is a conversion of data already on the box: no spend. Same for the raw engine base: extend to 202611 so STAGE 1R and the grid score through the newest complete session. Say who owns it and when it is done.
+2. The data quotes (volatility-proxy ETFs $1.50-2.50; CME tails quoted $0.00; 6J history $33.13) are NOT approved by this file. The user has been asked; approval comes only from him pasting to you directly. Until then build the "other markets" triggers on the data already held and mark the volatility family "waiting for data".
+Research only. No spend.
