@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-17 22:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 23:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-17 22:45Z | box1: busy 91%, load1 35.21, workers 8, MemAvail 105 GB | server2: busy 98%, load1 77.66, workers 14, MemAvail 1358 GB | pending box1-eligible 801 / server2-eligible 40019 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-17 23:00Z | box1: busy 100%, load1 40.98, workers 0, MemAvail 104 GB | server2: busy 100%, load1 77.41, workers 13, MemAvail 1403 GB | pending box1-eligible 734 / server2-eligible 39955 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-17 22:45Z
+2026-11-17 23:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-17 22:45Z | box1: busy 91%, load1 35.21, workers 8
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 108.7 GB; live reservations 0 (0 GB); workers 8, of which TP-adopted 8 (RSS 12.1 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 35.21, 32.04, 38.73
-  by tag: SWA quota 4 running 8 hungry False RSS 12.1 GB PSS 11.2 GB
-  cell-months finished last hour (DONE markers): 347
-  top running jobs: TL3_SWA_K71_urenko14 (x16);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 77.87, 59.47, 53.79|/dev/md2         28T  935G   28T   4% /mnt/l2|24|
+Server 1 (this box): MemAvail 103.9 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 40.98, 41.62, 40.77
+  by tag: 
+  cell-months finished last hour (DONE markers): 300
+  top running jobs: 
+Server 2 (rs4 metal): load / disk / tp_launch procs: 77.45, 76.48, 67.86|/dev/md2         28T  922G   28T   4% /mnt/l2|22|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,6 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 77.87, 59.47, 53.79|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261117_1957Z_SIGNAL-x-BAR-addendum-L2-orderflow-everything.md 20261117_2042Z_convert-recent-L2-days-and-data-quotes-wait.md 20261117_2046Z_TRIGGER-STUDY-is-priority-one-time-bars-included.md 20261117_2224Z_trigger-grid-speed-coarse-to-fine-not-cut.md 20261117_2233Z_triggers-before-confluence-give-grid-the-cores.md
+20261117_2042Z_convert-recent-L2-days-and-data-quotes-wait.md 20261117_2046Z_TRIGGER-STUDY-is-priority-one-time-bars-included.md 20261117_2224Z_trigger-grid-speed-coarse-to-fine-not-cut.md 20261117_2233Z_triggers-before-confluence-give-grid-the-cores.md 20261117_2258Z_backfill-must-count-grid-workers.md
+- lead 22:56Z INBOX 20261117_2258Z_backfill-must-count-grid-workers.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- lead 22:57Z INBOX 20261117_2258Z_backfill-must-count-grid-workers received: research order, accepted and DONE: code/lead_watchdog/backfill.py (backup .bak_lea
