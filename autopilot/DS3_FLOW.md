@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (969 FL cell-months done, 321 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (984 FL cell-months done, 326 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -342,6 +342,11 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_WAITP7_60_DROP | P7 | 3995 | -1800 | -3150 | -1692 | 63454 | 52233 | 11221 | 812 | 1037 | 390 | 328 | -889 | 39201 | 39663 | 24107 | 26810 | 63454 | 43405 |
 | TL3_FL_WAITP7_60_TAKE | P7 | 4203 | -302 | -528 | -299 | 73001 | 52233 | 20768 | 1062 | 1037 | 314 | 328 | -269 | 53471 | 39663 | 26208 | 26810 | 73001 | 43405 |
 | TL3_FL_WAITU7_120_DROP | U7 | 4100 | -786 | -1376 | -749 | 62153 | 52233 | 9920 | 179 | 271 | 523 | 385 | -396 | 16615 | 23940 | 26392 | 26810 | 52047 | 43405 |
+| TL3_FL_WAITU7_120_TAKE | U7 | 4146 | -2581 | -4516 | -2569 | 60992 | 52233 | 8759 | 267 | 271 | 188 | 385 | -2002 | 19212 | 23940 | 24484 | 26810 | 42779 | 43405 |
+| TL3_FL_WAITU7_30_DROP | U7 | 3978 | -2550 | -4463 | -2480 | 56937 | 52233 | 4703 | 111 | 271 | 686 | 385 | -1045 | 7495 | 23940 | 24265 | 26810 | 52592 | 43405 |
+| TL3_FL_WAITU7_30_TAKE | U7 | 4154 | -1877 | -3284 | -1866 | 57266 | 52233 | 5033 | 268 | 271 | 216 | 385 | -1723 | 20657 | 23940 | 25063 | 26810 | 39781 | 43405 |
+| TL3_FL_WAITU7_60_DROP | U7 | 4072 | -874 | -1530 | -828 | 55599 | 52233 | 3365 | 147 | 271 | 649 | 385 | -330 | 12475 | 23940 | 26078 | 26810 | 46187 | 43405 |
+| TL3_FL_WAITU7_60_TAKE | U7 | 4171 | -1833 | -3208 | -1825 | 56765 | 52233 | 4532 | 268 | 271 | 203 | 385 | -1845 | 18592 | 23940 | 25091 | 26810 | 42037 | 43405 |
 
 
 ### 1b. Each set read against its control (random skip / unconditional hold / random ladder / nonsense score / noise)
@@ -430,6 +435,11 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_WAITP7_60_DROP | L6M | HOLD | -1800 | 1355 | 63454 | 64169 | 52233 | 390 | 247 | 39201 | 50387 |
 | TL3_FL_WAITP7_60_TAKE | L6M | HOLD | -302 | 2853 | 73001 | 64169 | 52233 | 314 | 247 | 53471 | 50387 |
 | TL3_FL_WAITU7_120_DROP | L6M | HOLD | -786 | 2526 | 62153 | 61242 | 52233 | 523 | 130 | 16615 | 23913 |
+| TL3_FL_WAITU7_120_TAKE | L6M | HOLD | -2581 | 731 | 60992 | 61242 | 52233 | 188 | 130 | 19212 | 23913 |
+| TL3_FL_WAITU7_30_DROP | L6M | HOLD | -2550 | -1173 | 56937 | 57381 | 52233 | 686 | 266 | 7495 | 19821 |
+| TL3_FL_WAITU7_30_TAKE | L6M | HOLD | -1877 | -499 | 57266 | 57381 | 52233 | 216 | 266 | 20657 | 19821 |
+| TL3_FL_WAITU7_60_DROP | L6M | HOLD | -874 | 2548 | 55599 | 56605 | 52233 | 649 | 113 | 12475 | 26436 |
+| TL3_FL_WAITU7_60_TAKE | L6M | HOLD | -1833 | 1589 | 56765 | 56605 | 52233 | 203 | 113 | 18592 | 26436 |
 
 
 ## 2. Part C score sizing (table-level screen on taken trades; engine sets queued)
