@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-17 19:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 19:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-17 19:30Z | box1: busy 100%, load1 62.42, workers 6, MemAvail 64 GB | server2: busy 100%, load1 88.22, workers 93, MemAvail 1383 GB | pending box1-eligible 37207 / server2-eligible 38831 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-17 19:45Z | box1: busy 100%, load1 56.64, workers 5, MemAvail 74 GB | server2: busy 100%, load1 91.52, workers 91, MemAvail 1391 GB | pending box1-eligible 37470 / server2-eligible 39094 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-17 19:30Z
+2026-11-17 19:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-17 19:30Z | box1: busy 100%, load1 62.42, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 63.6 GB; live reservations 0 (0 GB); workers 6, of which TP-adopted 6 (RSS 10.0 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 62.42, 62.05, 58.38
-  by tag: SWA quota 6 running 2 hungry True RSS 2.1 GB PSS 1.8 GB; CF quota 8 running 4 hungry True RSS 8.0 GB PSS 6.8 GB
-  cell-months finished last hour (DONE markers): 2002
-  top running jobs: TL3_SWA_ID2 (x4);TL3_CF_SQ_S1_SKIP (x4);TL3_CF_SQ_S1_SIZE (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 88.50, 88.07, 82.94|/dev/md2         28T  885G   28T   4% /mnt/l2|186|
+Server 1 (this box): MemAvail 74.5 GB; live reservations 0 (0 GB); workers 5, of which TP-adopted 5 (RSS 8.2 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 56.64, 57.18, 57.95
+  by tag: SWA quota 16 running 1 hungry True RSS 1.8 GB PSS 1.6 GB; CF quota 8 running 4 hungry True RSS 6.4 GB PSS 5.5 GB
+  cell-months finished last hour (DONE markers): 1929
+  top running jobs: TL3_CF_SQ_S1_SKIP_RND (x4);TL3_SWA_ID5 (x2);TL3_CF_SQ_S3_SIZE (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 91.52, 92.01, 88.65|/dev/md2         28T  885G   28T   4% /mnt/l2|174|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,7 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 88.50, 88.07, 82.94|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261117_1802Z_event-bars-addendum-full-bar-list.md 20261117_1806Z_BAR-SWAP-PROGRAMME.md 20261117_1810Z_SELECTION-RULE-pick-on-recent-walk-forward.md 20261117_1813Z_selection-rule-older-window-tolerance.md 20261117_1817Z_STAGE1R-rescore-everything-by-the-users-rule.md
+20261117_1810Z_SELECTION-RULE-pick-on-recent-walk-forward.md 20261117_1813Z_selection-rule-older-window-tolerance.md 20261117_1817Z_STAGE1R-rescore-everything-by-the-users-rule.md 20261117_1945Z_bar-swap-native-signals-not-time-bar-indicators.md 20261117_1949Z_bar-swap-test-with-the-layers-not-only-naked.md
+- lead 19:42Z INBOX 20261117_1945Z_bar-swap-native-signals received: research order, accepted; owners: W-SWA (K7, M7, U7) and W-SWB (P7, H7, A7, O7) own items 1
+- lead 19:44Z INBOX 20261117_1949Z_bar-swap-test-with-the-layers-not-only-naked.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the act
+- lead 19:44Z INBOX 20261117_1949Z_bar-swap-test-with-the-layers received: research order, accepted; two scores per bar row (naked + with layers), engine NOT ga

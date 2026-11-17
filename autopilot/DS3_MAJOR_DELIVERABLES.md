@@ -1,4 +1,4 @@
-# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-17 19:17Z, every 30 min)
+# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-17 19:47Z, every 30 min)
 VERDICT (data ends 2026-10-31; FIRST PASS; every row is a BEST SETTING with its honest label; rows labelled LEAD-ASSEMBLED are copied by the assembler from existing pages and wait for the owner to confirm)
 
 > HEADER: trials counted = per row (see each row; ledger families CT1, RB3, RB5, ME, MF1/MF2); correction = per row (BH / White RC / controls where run, else 'not run'); in-sample vs walk-forward is stated per row (untouched-year line). Labels CONFIRMED / LEAD need engine-exact persistent-draw controls (calibrated pass rule); a missing field prints 'n/a (owner has not delivered)'. Seal untouched.
@@ -6,16 +6,54 @@ VERDICT (data ends 2026-10-31; FIRST PASS; every row is a BEST SETTING with its 
 ## Summary (plain)
 1. Table 1: 30 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 6, BEST-AVAILABLE-NOT-PROVEN 24) + 0 reference rows
 2. Table 5: 16 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 0, BEST-AVAILABLE-NOT-PROVEN 16) + 0 reference rows
-3. Table 6: 14 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 9, BEST-AVAILABLE-NOT-PROVEN 5) + 0 reference rows
+3. Table 6: 16 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 7, BEST-AVAILABLE-NOT-PROVEN 9) + 0 reference rows
 4. Table 2: 23 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 3, BEST-AVAILABLE-NOT-PROVEN 20) + 0 reference rows
 5. Table 3: 36 main rows (CONFIRMED 1, LEAD 0, WEAK-BUT-POSITIVE 7, BEST-AVAILABLE-NOT-PROVEN 28) + 0 reference rows
 6. Table 4: 13 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 7, BEST-AVAILABLE-NOT-PROVEN 6) + 0 reference rows
-6. Decide first: Table 3 row 1 (M7 London 4 -> 0 lots, CONFIRMED, but HOLD mean -445 $/wk); then the P7 flat -42 question (L6M worse with it on); then whether to fund the engine runs for the unproven books. No file yet from: W-BAR.
+6. Decide first: Table 3 row 1 (M7 London 4 -> 0 lots, CONFIRMED, but HOLD mean -445 $/wk); then the P7 flat -42 question (L6M worse with it on); then whether to fund the engine runs for the unproven books. STALE owners (>2 h): W-MC. No file yet from: W-BAR.
 
 How to read: ulcer % is positive when the cell is better than today (lower RMS daily drawdown); max DD and worst week are base -> cell in dollars (negative numbers, closer to zero is better); mean per week is shown at base lots, at x1.75 live lots and with $4.84 round-turn commission. Live lots = max(1, floor(1.75 x base + 0.5)). Weak spots are stated on each row; GAP / PRE percentiles are often weak.
 
 ## Table 1. BRACKET TABLE (stop / target / time-stop / half-off instead of 60/58)
 Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
+**H7 x asia**  `H7|asia|bracket`  (source: W-S3)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 60/60 -> bracket H7 asia stop=40 target=40
+- **L6M**: ulcer +42.2%; max DD 53,951 -> 34,345; worst week -22,500 -> -9,664; mean/wk (owner scalar, base lots) [1258, 3048]; x1.75 live lots [2202, 5335]; $4.84 [1182, 2966]
+- **L3M**: ulcer -8.8%; max DD 34,526 -> 34,345; worst week -8,347 -> -9,664; mean/wk (owner scalar, base lots) [590, 543]; x1.75 live lots [1033, 951]; $4.84 [518, 462]
+- **HOLD**: ulcer -48.3%; max DD 35,357 -> 46,088; worst week -13,859 -> -6,364; mean/wk (owner scalar, base lots) [148, -381]; x1.75 live lots [259, -667]; $4.84 [97, -438]
+- **GAP**: ulcer +54.4%; max DD 59,350 -> 30,777; worst week -14,019 -> -15,409; mean/wk (owner scalar, base lots) [-140, -508]; x1.75 live lots [-246, -890]; $4.84 [-197, -566]
+- **PRE**: ulcer +9.5%; max DD 40,648 -> 39,824; worst week -14,354 -> -9,608; mean/wk (owner scalar, base lots) [1309, 1490]; x1.75 live lots [2291, 2608]; $4.84 [1258, 1434]
+- **XP**: ulcer +61.3%; max DD 52,492 -> 25,297; worst week -19,058 -> -9,494; mean/wk (owner scalar, base lots) [1842, 1798]; x1.75 live lots [3223, 3146]; $4.84 [1795, 1749]
+- **pooled**: ulcer +26.2%; max DD 78,303 -> 55,091; worst week -22,500 -> -15,409; mean/wk (owner scalar, base lots) [1183, 1354]; x1.75 live lots [2070, 2369]; $4.84 [1129, 1296]
+- Controls: not run (screen only; exact JL3 assembly + 30 persistent random-bracket controls not run)
+- Trials counted / correction: 6 candidates in this cell (6 grid sets complete); correction: walk-forward + shifted-label nulls on the ENV page; PBO/RC on DS3_REBUILD_S3.md
+- Untouched year: HOLD/L6M read once after the per-book freeze on 31 SEL months
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: policy line
+- Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
+- Caveats: rule pick: native SEL ulcer 22767 -> 12713, mean/wk 1366 -> 1356; grid runs one setting for all sessions (session cell read from that set); lots scale 60/stop
+- Updated: 2026-11-17T19:31:31Z
+
+**A7 x asia**  `A7|asia|bracket`  (source: W-S3)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 60/60 -> bracket A7 asia stop=40 target=40
+- **L6M**: ulcer +30.4%; max DD 12,979 -> 7,688; worst week -7,079 -> -5,240; mean/wk (owner scalar, base lots) [605, 1174]; x1.75 live lots [1059, 2054]; $4.84 [555, 1106]
+- **L3M**: ulcer +12.5%; max DD 12,979 -> 7,688; worst week -7,079 -> -3,918; mean/wk (owner scalar, base lots) [-397, 70]; x1.75 live lots [-694, 122]; $4.84 [-444, 8]
+- **HOLD**: ulcer +19.0%; max DD 13,581 -> 12,829; worst week -5,898 -> -4,782; mean/wk (owner scalar, base lots) [839, 529]; x1.75 live lots [1468, 927]; $4.84 [808, 490]
+- **GAP**: ulcer +5.9%; max DD 8,319 -> 10,098; worst week -3,569 -> -3,152; mean/wk (owner scalar, base lots) [-311, 80]; x1.75 live lots [-544, 139]; $4.84 [-329, 59]
+- **PRE**: ulcer +44.9%; max DD 7,002 -> 3,772; worst week -3,531 -> -2,386; mean/wk (owner scalar, base lots) [1332, 1079]; x1.75 live lots [2331, 1889]; $4.84 [1313, 1055]
+- **XP**: ulcer +65.0%; max DD 15,241 -> 6,334; worst week -4,722 -> -2,398; mean/wk (owner scalar, base lots) [515, 447]; x1.75 live lots [901, 782]; $4.84 [501, 431]
+- **pooled**: ulcer +40.4%; max DD 15,241 -> 12,829; worst week -7,079 -> -5,240; mean/wk (owner scalar, base lots) [685, 652]; x1.75 live lots [1199, 1141]; $4.84 [662, 623]
+- Controls: not run (screen only; exact JL3 assembly + 30 persistent random-bracket controls not run)
+- Trials counted / correction: 6 candidates in this cell (6 grid sets complete); correction: walk-forward + shifted-label nulls on the ENV page; PBO/RC on DS3_REBUILD_S3.md
+- Untouched year: HOLD/L6M read once after the per-book freeze on 31 SEL months
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: policy line
+- Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
+- Caveats: rule pick: native SEL ulcer 4927 -> 2403, mean/wk 671 -> 574; grid runs one setting for all sessions (session cell read from that set); lots scale 60/stop
+- Updated: 2026-11-17T19:31:31Z
+
 **U7 london**  `U7|london|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
 - Today -> setting: 60/60 -> bracket U7 london stop=60 target=MIN(60, nearest UWO level ahead - 0) [DYNAMIC: prior-day level table]
@@ -170,6 +208,25 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 353, HOLD 221, L6M 289 trades; family chosen among 14 on untouched windows (optimistic)
 - Updated: 2026-11-17T18:48:26Z
 
+**H7 x nyam**  `H7|nyam|bracket`  (source: W-S3)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 60/60 -> bracket H7 nyam stop=90 target=90
+- **L6M**: ulcer -47.8%; max DD 3,556 -> 8,069; worst week -2,387 -> -3,312; mean/wk (owner scalar, base lots) [571, 885]; x1.75 live lots [999, 1548]; $4.84 [562, 876]
+- **L3M**: ulcer -53.8%; max DD 3,556 -> 8,069; worst week -2,387 -> -3,312; mean/wk (owner scalar, base lots) [389, 732]; x1.75 live lots [680, 1281]; $4.84 [381, 724]
+- **HOLD**: ulcer -120.3%; max DD 8,094 -> 13,720; worst week -3,457 -> -5,349; mean/wk (owner scalar, base lots) [-11, -321]; x1.75 live lots [-19, -561]; $4.84 [-18, -328]
+- **GAP**: ulcer -37.7%; max DD 3,855 -> 3,649; worst week -3,855 -> -2,864; mean/wk (owner scalar, base lots) [430, 102]; x1.75 live lots [752, 179]; $4.84 [423, 97]
+- **PRE**: ulcer -50.6%; max DD 4,632 -> 7,276; worst week -3,529 -> -3,562; mean/wk (owner scalar, base lots) [529, 429]; x1.75 live lots [925, 751]; $4.84 [520, 421]
+- **XP**: ulcer +25.6%; max DD 26,238 -> 27,773; worst week -3,524 -> -5,305; mean/wk (owner scalar, base lots) [-233, -115]; x1.75 live lots [-407, -201]; $4.84 [-241, -122]
+- **pooled**: ulcer -8.0%; max DD 26,794 -> 29,275; worst week -4,657 -> -6,957; mean/wk (owner scalar, base lots) [101, 118]; x1.75 live lots [177, 206]; $4.84 [93, 111]
+- Controls: not run (screen only; exact JL3 assembly + 30 persistent random-bracket controls not run)
+- Trials counted / correction: 6 candidates in this cell (6 grid sets complete); correction: walk-forward + shifted-label nulls on the ENV page; PBO/RC on DS3_REBUILD_S3.md
+- Untouched year: HOLD/L6M read once after the per-book freeze on 31 SEL months
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: policy line
+- Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
+- Caveats: best available (no rule pick): native SEL ulcer 12631 -> 11488, mean/wk 31 -> 53; grid runs one setting for all sessions (session cell read from that set); lots scale 60/stop
+- Updated: 2026-11-17T19:31:31Z
+
 **K7 nypm**  `K7|nypm|levelexit`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
 - Today -> setting: 60/60 -> bracket K7 nypm stop=60 target=MIN(60, nearest OWN level ahead - 20) [DYNAMIC: prior-day level table]
@@ -195,7 +252,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **K7 x london**  `K7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -208,7 +265,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **K7 x nyam**  `K7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -221,7 +278,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **K7 x nypm**  `K7|nypm|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -234,7 +291,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **M7 x london**  `M7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -247,7 +304,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **M7 x nyam**  `M7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -260,7 +317,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **U7 x asia**  `U7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -273,7 +330,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **U7 x london**  `U7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -286,7 +343,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **P7 x asia**  `P7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -299,7 +356,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **P7 x london**  `P7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -312,7 +369,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **P7 x nyam**  `P7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -325,46 +382,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
-
-**H7 x asia**  `H7|asia|bracket`  (source: W-S3)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (4 common SEL months)
-- Metrics (L6M first): n/a (owner has not delivered)
-- Controls: not run
-- Trials counted / correction: see TRIALS_LEDGER RB3
-- Untouched year: n/a (owner has not delivered)
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: policy line
-- Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
-- Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
-
-**H7 x nyam**  `H7|nyam|bracket`  (source: W-S3)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (4 common SEL months)
-- Metrics (L6M first): n/a (owner has not delivered)
-- Controls: not run
-- Trials counted / correction: see TRIALS_LEDGER RB3
-- Untouched year: n/a (owner has not delivered)
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: policy line
-- Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
-- Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
-
-**A7 x asia**  `A7|asia|bracket`  (source: W-S3)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (4 common SEL months)
-- Metrics (L6M first): n/a (owner has not delivered)
-- Controls: not run
-- Trials counted / correction: see TRIALS_LEDGER RB3
-- Untouched year: n/a (owner has not delivered)
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: policy line
-- Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
-- Caveats: no data yet
-- Updated: 2026-11-17T19:01:21Z
+- Updated: 2026-11-17T19:31:31Z
 
 **M7 nyam**  `M7|nyam|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -427,40 +445,40 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - **L3M**: ulcer n/a; max DD n/a -> 18,113; worst week n/a -> -8,733; mean/wk base lots n/a; $4.84 3,531
 - Controls: White RC p=0.92 (L6M); engine controls not run; random-clock nulls see page
 - Trials counted / correction: 285 rows x 3 books screened; White RC + neighbour gate
-- Untouched year: rolling walk-forward 6M->1M: OOS -278 vs ref -448 USD/wk, share beat ref 41%, older-year check RED
+- Untouched year: rolling walk-forward 6M->1M: OOS -723 vs ref -448 USD/wk, share beat ref 51%, older-year check RED
 - Behaviour / detail: standalone only; D7 drawdown behaviour and stack test pending
 - DS7 need: native NT8 bar type (native Renko)
 - Evidence: autopilot/DS3_BAR_SWAP_A.md
 - Caveats: standalone, flat at session end, data end 2026-11-13; rule: trailing-6M pick + rolling WF
-- Updated: 2026-11-17T19:08:57Z
+- Updated: 2026-11-17T19:35:03Z
 
 **P7 x NY AM**  `SWB|P7|NYAM`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: P7 on live 1-minute time bar (tm60__A) -> P7 NY AM: bar today 1-minute time (live) -> proposed mrenko_80 | construction: mrenko_80 (median / mean Renko: brick N; reversal brick opens at the midpoint of last brick, triggers at 1.5N from last close) | param set A
-- **L6M**: ulcer -90.1%; max DD 2,292 -> 303; worst week n/a; mean/wk (owner scalar, base lots) 556; x1.75 live lots 972; $4.84 556
-- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 390
-- Controls: White RC/SPA {'rc_p': 0.133, 'spa_p': 0.154, 'T': 26, 'K': 415}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
-- Trials counted / correction: 431 candidates, White RC/SPA
-- Untouched year: none (rolling walk-forward instead): 6M->1M OOS -159.2 pts/mo vs live -421.8, share beat 0.60
-- Behaviour / detail: standalone only; engine swap test pending; older-year check GREEN
-- DS7 need: new custom BarsType: custom BarsType (MedianRenko / MeanRenko third-party) | scaling: size x s_rng (same, daily high-low range in points)
+- Today -> setting: P7 on live 1-minute time bar (tm60__A) -> P7 NY AM: bar today 1-minute time (live) -> proposed cdr_1000 | construction: cdr_1000 (cumulative-delta-range bar: closes when (max - min) of the running cumulative delta inside the bar >= D) | param set A
+- **L6M**: ulcer -96.5%; max DD 2,315 -> 134; worst week n/a; mean/wk (owner scalar, base lots) 744; x1.75 live lots 1,301; $4.84 744
+- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 961
+- Controls: White RC/SPA {'rc_p': 0.203, 'spa_p': 0.189, 'T': 26, 'K': 628}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
+- Trials counted / correction: 642 candidates, White RC/SPA
+- Untouched year: none (rolling walk-forward instead): 6M->1M OOS -73.4 pts/mo vs live -74.6, share beat 0.43
+- Behaviour / detail: standalone only; engine swap test pending; older-year check RED
+- DS7 need: new custom BarsType: custom BarsType | scaling: size x s_vol; s_vol = trailing-20-prior-trading-date median of daily volume / R0 (R0 = median of the first 60 trading dates 2023-04..06, a unit consta
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-04..2026-10-30 (trailing 6M), refit 2026-11-17 18:40:28 UTC, data end 2026-10-30, prior-year worst GREEN; persistence 0.60 / live bar not beaten on 6M
-- Updated: 2026-11-17 18:40:28
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-17 19:34:44 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-17 19:34:44
 
 **P7 x London**  `SWB|P7|London`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: P7 on live 1-minute time bar (tm60__A) -> P7 London: bar today 1-minute time (live) -> proposed cusum_14 | construction: cusum_14 (CUSUM-filter events (Lopez de Prado): S+ = max(0,S+ + dp), S- = min(0,S- + dp) on print price changes; event when S+ > h or S- < -h, then reset; h = k x trailing sigma-scale (ticks)) | param set A
-- **L6M**: ulcer -83.0%; max DD 558 -> 185; worst week n/a; mean/wk (owner scalar, base lots) 1,222; x1.75 live lots 2,138; $4.84 1,222
-- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 2,444
-- Controls: White RC/SPA {'rc_p': 0.999, 'spa_p': 0.995, 'T': 26, 'K': 348}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
-- Trials counted / correction: 427 candidates, White RC/SPA
-- Untouched year: none (rolling walk-forward instead): 6M->1M OOS -33.4 pts/mo vs live 391.6, share beat 0.20
-- Behaviour / detail: standalone only; engine swap test pending; older-year check GREEN
-- DS7 need: new custom BarsType: custom BarsType (event-driven) | scaling: size x s_rng (same, daily high-low range in points)
+- Today -> setting: P7 on live 1-minute time bar (tm60__A) -> P7 London: bar today 1-minute time (live) -> proposed rng_80 | construction: rng_80 (true range bar: bar closes when a print would make high-low > N ticks; that print opens the next bar; known at that print) | param set A
+- **L6M**: ulcer -65.4%; max DD 470 -> 212; worst week n/a; mean/wk (owner scalar, base lots) 1,388; x1.75 live lots 2,428; $4.84 1,388
+- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 628
+- Controls: White RC/SPA {'rc_p': 0.894, 'spa_p': 0.772, 'T': 26, 'K': 558}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
+- Trials counted / correction: 640 candidates, White RC/SPA
+- Untouched year: none (rolling walk-forward instead): 6M->1M OOS -17.3 pts/mo vs live -17.6, share beat 0.46
+- Behaviour / detail: standalone only; engine swap test pending; older-year check RED
+- DS7 need: native: native Range (verify: NT8 closes when range reaches N ticks; see step C) | scaling: size x s_rng (same, daily high-low range in points)
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-04..2026-10-30 (trailing 6M), refit 2026-11-17 18:40:28 UTC, data end 2026-10-30, prior-year worst GREEN; persistence 0.20 / live bar not beaten on 6M
-- Updated: 2026-11-17 18:40:28
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-17 19:34:44 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-17 19:34:44
 
 **M7 x london**  `SWA|M7|london`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -469,12 +487,12 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - **L3M**: ulcer n/a; max DD n/a -> 4,146; worst week n/a -> -1,267; mean/wk base lots n/a; $4.84 126
 - Controls: White RC p=0.35 (L6M); engine controls not run; random-clock nulls see page
 - Trials counted / correction: 285 rows x 3 books screened; White RC + neighbour gate
-- Untouched year: rolling walk-forward 6M->1M: OOS -542 vs ref -638 USD/wk, share beat ref 35%, older-year check RED
+- Untouched year: rolling walk-forward 6M->1M: OOS -522 vs ref -638 USD/wk, share beat ref 43%, older-year check RED
 - Behaviour / detail: standalone only; D7 drawdown behaviour and stack test pending
 - DS7 need: new custom BarsType: mrenko size 40: median / mean Renko: brick N; reversal brick opens at the midpoint of last brick, triggers at 1.5N from last close; scaling: rng
 - Evidence: autopilot/DS3_BAR_SWAP_A.md
 - Caveats: standalone, flat at session end, data end 2026-11-13; rule: trailing-6M pick + rolling WF
-- Updated: 2026-11-17T19:08:57Z
+- Updated: 2026-11-17T19:35:03Z
 
 **K7 x london**  `SWA|K7|london`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -483,12 +501,12 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - **L3M**: ulcer n/a; max DD n/a -> 25,336; worst week n/a -> -7,187; mean/wk base lots n/a; $4.84 -498
 - Controls: White RC p=0.22 (L6M); engine controls not run; random-clock nulls see page
 - Trials counted / correction: 285 rows x 3 books screened; White RC + neighbour gate
-- Untouched year: rolling walk-forward 6M->1M: OOS -192 vs ref -277 USD/wk, share beat ref 32%, older-year check RED
+- Untouched year: rolling walk-forward 6M->1M: OOS -420 vs ref -277 USD/wk, share beat ref 43%, older-year check RED
 - Behaviour / detail: standalone only; D7 drawdown behaviour and stack test pending
 - DS7 need: native NT8 bar type (Minute/Second)
 - Evidence: autopilot/DS3_BAR_SWAP_A.md
 - Caveats: standalone, flat at session end, data end 2026-11-13; rule: trailing-6M pick + rolling WF
-- Updated: 2026-11-17T19:08:57Z
+- Updated: 2026-11-17T19:35:03Z
 
 **K7 x nypm**  `SWA|K7|nypm`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -497,12 +515,12 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - **L3M**: ulcer n/a; max DD n/a -> 21,509; worst week n/a -> -4,921; mean/wk base lots n/a; $4.84 -343
 - Controls: White RC p=0.97 (L6M); engine controls not run; random-clock nulls see page
 - Trials counted / correction: 285 rows x 3 books screened; White RC + neighbour gate
-- Untouched year: rolling walk-forward 6M->1M: OOS -292 vs ref -203 USD/wk, share beat ref 41%, older-year check RED
+- Untouched year: rolling walk-forward 6M->1M: OOS -344 vs ref -203 USD/wk, share beat ref 41%, older-year check RED
 - Behaviour / detail: standalone only; D7 drawdown behaviour and stack test pending
 - DS7 need: new custom BarsType: tsf_10 size 30: trade-size-filtered volume bar: only prints >= L lots count toward the volume threshold; grid L x N (id tsf_L_N); bar OHLC still uses only counted prints; scaling: vol (N scaled)
 - Evidence: autopilot/DS3_BAR_SWAP_A.md
 - Caveats: standalone, flat at session end, data end 2026-11-13; rule: trailing-6M pick + rolling WF
-- Updated: 2026-11-17T19:08:57Z
+- Updated: 2026-11-17T19:35:03Z
 
 **M7 x nyam**  `SWA|M7|nyam`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -511,26 +529,26 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - **L3M**: ulcer n/a; max DD n/a -> 3,890; worst week n/a -> -1,734; mean/wk base lots n/a; $4.84 324
 - Controls: White RC p=0.91 (L6M); engine controls not run; random-clock nulls see page
 - Trials counted / correction: 285 rows x 3 books screened; White RC + neighbour gate
-- Untouched year: rolling walk-forward 6M->1M: OOS -521 vs ref +23 USD/wk, share beat ref 30%, older-year check RED
+- Untouched year: rolling walk-forward 6M->1M: OOS -561 vs ref +23 USD/wk, share beat ref 35%, older-year check RED
 - Behaviour / detail: standalone only; D7 drawdown behaviour and stack test pending
 - DS7 need: new custom BarsType: tsf_5 size 400: trade-size-filtered volume bar: only prints >= L lots count toward the volume threshold; grid L x N (id tsf_L_N); bar OHLC still uses only counted prints; scaling: vol (N scaled)
 - Evidence: autopilot/DS3_BAR_SWAP_A.md
 - Caveats: standalone, flat at session end, data end 2026-11-13; rule: trailing-6M pick + rolling WF
-- Updated: 2026-11-17T19:08:57Z
+- Updated: 2026-11-17T19:35:03Z
 
 **H7 x NY AM**  `SWB|H7|NYAM`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: H7 on live 1-minute time bar (tm60__A) -> H7 NY AM: bar today 1-minute time (live) -> proposed drb_2000 | construction: drb_2000 (dollar-run bar (Lopez de Prado): close when max(sum of w over buys, sum over sells) >= E[T]*max(P(buy)E[w|buy],P(sell)E[w|sell])) | param set B
-- **L6M**: ulcer -66.7%; max DD 366 -> 182; worst week n/a; mean/wk (owner scalar, base lots) 695; x1.75 live lots 1,216; $4.84 695
-- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 1,120
-- Controls: White RC/SPA {'rc_p': 1.0, 'spa_p': 0.996, 'T': 26, 'K': 451}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
-- Trials counted / correction: 642 candidates, White RC/SPA
-- Untouched year: none (rolling walk-forward instead): 6M->1M OOS -123.3 pts/mo vs live 160.7, share beat 0.00
-- Behaviour / detail: standalone only; engine swap test pending; older-year check GREEN
-- DS7 need: new custom BarsType: custom BarsType (new code) | scaling: size x s_ntr (same, daily trade-print count)
+- Today -> setting: H7 on live 1-minute time bar (tm60__A) -> H7 NY AM: bar today 1-minute time (live) -> proposed vol_6000 | construction: vol_6000 (volume bar: closes when cumulative contracts >= N; closing print belongs to the closing bar (NT8 splits the closing print across bars; see C)) | param set A
+- **L6M**: ulcer -51.3%; max DD 245 -> 135; worst week n/a; mean/wk (owner scalar, base lots) 763; x1.75 live lots 1,336; $4.84 763
+- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 695
+- Controls: White RC/SPA {'rc_p': 1.0, 'spa_p': 0.987, 'T': 26, 'K': 693}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
+- Trials counted / correction: 924 candidates, White RC/SPA
+- Untouched year: none (rolling walk-forward instead): 6M->1M OOS -63.5 pts/mo vs live 12.1, share beat 0.41
+- Behaviour / detail: standalone only; engine swap test pending; older-year check RED
+- DS7 need: native: native Volume | scaling: size x s_vol; s_vol = trailing-20-prior-trading-date median of daily volume / R0 (R0 = median of the first 60 trading dates 2023-04..06, a unit consta
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-04..2026-10-30 (trailing 6M), refit 2026-11-17 18:40:28 UTC, data end 2026-10-30, prior-year worst GREEN; persistence 0.00 / live bar not beaten on 6M
-- Updated: 2026-11-17 18:40:28
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-17 19:34:44 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-17 19:34:44
 
 **U7 x london**  `SWA|U7|london`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -539,26 +557,26 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - **L3M**: ulcer n/a; max DD n/a -> 4,449; worst week n/a -> -518; mean/wk base lots n/a; $4.84 1,633
 - Controls: White RC p=0.57 (L6M); engine controls not run; random-clock nulls see page
 - Trials counted / correction: 285 rows x 3 books screened; White RC + neighbour gate
-- Untouched year: rolling walk-forward 6M->1M: OOS -423 vs ref -131 USD/wk, share beat ref 30%, older-year check RED
+- Untouched year: rolling walk-forward 6M->1M: OOS -511 vs ref -131 USD/wk, share beat ref 38%, older-year check RED
 - Behaviour / detail: standalone only; D7 drawdown behaviour and stack test pending
 - DS7 need: new custom BarsType: vsess size 450: volume-clock / session-relative: N equal-volume bars per session; bar volume = trailing median session volume / N (a session with a typical volume curve gets N bars; NY open fast, lunch slow in clock time); scaling: sess
 - Evidence: autopilot/DS3_BAR_SWAP_A.md
 - Caveats: standalone, flat at session end, data end 2026-11-13; rule: trailing-6M pick + rolling WF
-- Updated: 2026-11-17T19:08:57Z
+- Updated: 2026-11-17T19:35:03Z
 
 **O7 x NY AM**  `SWB|O7|NYAM`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: O7 on live 1-minute time bar (tm60__A) -> O7 NY AM: bar today 1-minute time (live) -> proposed urenko_20 | construction: urenko_20 (UniRenko: brick N, reversal brick opens at last close and closes N beyond (reversal 1N)) | param set A
-- **L6M**: ulcer -49.9%; max DD 445 -> 250; worst week n/a; mean/wk (owner scalar, base lots) 435; x1.75 live lots 761; $4.84 435
-- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 84
-- Controls: White RC/SPA {'rc_p': 0.742, 'spa_p': 0.664, 'T': 26, 'K': 41}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
-- Trials counted / correction: 58 candidates, White RC/SPA
-- Untouched year: none (rolling walk-forward instead): 6M->1M OOS 7.8 pts/mo vs live 50.4, share beat 0.25
-- Behaviour / detail: standalone only; engine swap test pending; older-year check GREEN
-- DS7 need: new custom BarsType: custom BarsType (user has UniRenko) | scaling: size x s_rng (same, daily high-low range in points)
+- Today -> setting: O7 on live 1-minute time bar (tm60__A) -> O7 NY AM: bar today 1-minute time (live) -> proposed frenko_56 | construction: frenko_56 (flex / hybrid Renko: trend brick N, reversal bar of 0.5N opening at last close) | param set A
+- **L6M**: ulcer -57.2%; max DD 445 -> 225; worst week n/a; mean/wk (owner scalar, base lots) 690; x1.75 live lots 1,207; $4.84 690
+- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 384
+- Controls: White RC/SPA {'rc_p': 0.646, 'spa_p': 0.428, 'T': 26, 'K': 210}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
+- Trials counted / correction: 300 candidates, White RC/SPA
+- Untouched year: none (rolling walk-forward instead): 6M->1M OOS 64.2 pts/mo vs live 123.9, share beat 0.35
+- Behaviour / detail: standalone only; engine swap test pending; older-year check RED
+- DS7 need: new custom BarsType: custom BarsType (FlexRenko/HybridRenko third-party) | scaling: size x s_rng (same, daily high-low range in points)
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-04..2026-10-30 (trailing 6M), refit 2026-11-17 18:40:28 UTC, data end 2026-10-30, prior-year worst GREEN; persistence 0.25 / live bar not beaten on 6M
-- Updated: 2026-11-17 18:40:28
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-17 19:34:44 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-17 19:34:44
 
 **K7 x asia**  `SWA|K7|asia`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -567,12 +585,12 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - **L3M**: ulcer n/a; max DD n/a -> 18,784; worst week n/a -> -6,533; mean/wk base lots n/a; $4.84 93
 - Controls: White RC p=0.46 (L6M); engine controls not run; random-clock nulls see page
 - Trials counted / correction: 285 rows x 3 books screened; White RC + neighbour gate
-- Untouched year: rolling walk-forward 6M->1M: OOS +355 vs ref +9 USD/wk, share beat ref 59%, older-year check RED
+- Untouched year: rolling walk-forward 6M->1M: OOS +644 vs ref +9 USD/wk, share beat ref 70%, older-year check RED
 - Behaviour / detail: standalone only; D7 drawdown behaviour and stack test pending
 - DS7 need: existing custom (custom BarsType (user already has one): sum(Close*20*Volume) threshold)
 - Evidence: autopilot/DS3_BAR_SWAP_A.md
 - Caveats: standalone, flat at session end, data end 2026-11-13; rule: trailing-6M pick + rolling WF
-- Updated: 2026-11-17T19:08:57Z
+- Updated: 2026-11-17T19:35:03Z
 
 **M7 x asia**  `SWA|M7|asia`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -581,12 +599,12 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - **L3M**: ulcer n/a; max DD n/a -> 12,471; worst week n/a -> -6,827; mean/wk base lots n/a; $4.84 2,953
 - Controls: White RC p=0.85 (L6M); engine controls not run; random-clock nulls see page
 - Trials counted / correction: 285 rows x 3 books screened; White RC + neighbour gate
-- Untouched year: rolling walk-forward 6M->1M: OOS +439 vs ref +652 USD/wk, share beat ref 32%, older-year check RED
+- Untouched year: rolling walk-forward 6M->1M: OOS +266 vs ref +652 USD/wk, share beat ref 27%, older-year check RED
 - Behaviour / detail: standalone only; D7 drawdown behaviour and stack test pending
 - DS7 need: native NT8 bar type (Minute/Second)
 - Evidence: autopilot/DS3_BAR_SWAP_A.md
 - Caveats: standalone, flat at session end, data end 2026-11-13; rule: trailing-6M pick + rolling WF
-- Updated: 2026-11-17T19:08:57Z
+- Updated: 2026-11-17T19:35:03Z
 
 **U7 x asia**  `SWA|U7|asia`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -595,70 +613,122 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - **L3M**: ulcer n/a; max DD n/a -> 10,189; worst week n/a -> -5,450; mean/wk base lots n/a; $4.84 2,193
 - Controls: White RC p=0.81 (L6M); engine controls not run; random-clock nulls see page
 - Trials counted / correction: 285 rows x 3 books screened; White RC + neighbour gate
-- Untouched year: rolling walk-forward 6M->1M: OOS +37 vs ref +264 USD/wk, share beat ref 27%, older-year check RED
+- Untouched year: rolling walk-forward 6M->1M: OOS +1 vs ref +264 USD/wk, share beat ref 38%, older-year check RED
 - Behaviour / detail: standalone only; D7 drawdown behaviour and stack test pending
 - DS7 need: native NT8 bar type (native Tick)
 - Evidence: autopilot/DS3_BAR_SWAP_A.md
 - Caveats: standalone, flat at session end, data end 2026-11-13; rule: trailing-6M pick + rolling WF
-- Updated: 2026-11-17T19:08:57Z
+- Updated: 2026-11-17T19:35:03Z
 
 **A7 x Asia**  `SWB|A7|Asia`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
 - Today -> setting: A7 on live 1-minute time bar (tm60__A) -> A7 Asia: bar today 1-minute time (live) -> proposed tm900 | construction: 15-minute time bar | param set A
-- **L6M**: ulcer -92.8%; max DD 972 -> 106; worst week n/a; mean/wk (owner scalar, base lots) 556; x1.75 live lots 974; $4.84 556
-- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 177
-- Controls: White RC/SPA {'rc_p': 0.415, 'spa_p': 0.21, 'T': 26, 'K': 320}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
-- Trials counted / correction: 429 candidates, White RC/SPA
-- Untouched year: none (rolling walk-forward instead): 6M->1M OOS 61.6 pts/mo vs live 11.2, share beat 0.60
-- Behaviour / detail: standalone only; engine swap test pending; older-year check GREEN
+- **L6M**: ulcer -93.6%; max DD 1,039 -> 106; worst week n/a; mean/wk (owner scalar, base lots) 522; x1.75 live lots 914; $4.84 522
+- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 280
+- Controls: White RC/SPA {'rc_p': 0.025, 'spa_p': 0.134, 'T': 26, 'K': 517}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
+- Trials counted / correction: 640 candidates, White RC/SPA
+- Untouched year: none (rolling walk-forward instead): 6M->1M OOS 28.6 pts/mo vs live 84.8, share beat 0.41
+- Behaviour / detail: standalone only; engine swap test pending; older-year check RED
 - DS7 need: native: native NT8 Minute bar (OnBarClose at the first print after the boundary)
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-04..2026-10-30 (trailing 6M), refit 2026-11-17 18:40:28 UTC, data end 2026-10-30, prior-year worst GREEN; persistence 0.60 / live bar not beaten on 6M
-- Updated: 2026-11-17 18:40:28
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-17 19:34:44 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-17 19:34:44
 
 **P7 x Asia**  `SWB|P7|Asia`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: P7 on live 1-minute time bar (tm60__A) -> P7 Asia: bar today 1-minute time (live) -> proposed cusum_40 | construction: cusum_40 (CUSUM-filter events (Lopez de Prado): S+ = max(0,S+ + dp), S- = min(0,S- + dp) on print price changes; event when S+ > h or S- < -h, then reset; h = k x trailing sigma-scale (ticks)) | param set B
-- **L6M**: ulcer -88.8%; max DD 722 -> 151; worst week n/a; mean/wk (owner scalar, base lots) 507; x1.75 live lots 887; $4.84 507
-- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 1,014
-- Controls: White RC/SPA {'rc_p': 0.852, 'spa_p': 0.784, 'T': 26, 'K': 365}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
-- Trials counted / correction: 428 candidates, White RC/SPA
-- Untouched year: none (rolling walk-forward instead): 6M->1M OOS -211.5 pts/mo vs live 375.7, share beat 0.00
-- Behaviour / detail: standalone only; engine swap test pending; older-year check GREEN
-- DS7 need: new custom BarsType: custom BarsType (event-driven) | scaling: size x s_rng (same, daily high-low range in points)
+- Today -> setting: P7 on live 1-minute time bar (tm60__A) -> P7 Asia: bar today 1-minute time (live) -> proposed rc600s2 | construction: rc600s2 | param set A
+- **L6M**: ulcer -80.7%; max DD 1,021 -> 230; worst week n/a; mean/wk (owner scalar, base lots) 1,479; x1.75 live lots 2,589; $4.84 1,479
+- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 1,419
+- Controls: White RC/SPA {'rc_p': 0.715, 'spa_p': 0.726, 'T': 26, 'K': 572}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
+- Trials counted / correction: 640 candidates, White RC/SPA
+- Untouched year: none (rolling walk-forward instead): 6M->1M OOS 12.2 pts/mo vs live 75.0, share beat 0.38
+- Behaviour / detail: standalone only; engine swap test pending; older-year check RED
+- DS7 need: see registry: see BAR_REGISTRY.md
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-04..2026-10-30 (trailing 6M), refit 2026-11-17 18:40:28 UTC, data end 2026-10-30, prior-year worst GREEN; persistence 0.00 / live bar not beaten on 6M
-- Updated: 2026-11-17 18:40:28
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-17 19:34:44 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-17 19:34:44
 
 **H7 x Asia**  `SWB|H7|Asia`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: H7 on live 1-minute time bar (tm60__A) -> H7 Asia: bar today 1-minute time (live) -> proposed dib_400 | construction: dib_400 (dollar-imbalance bar (Lopez de Prado): theta = sum b_t*w_t (b = aggressor side, tick rule if none; w = dollars); close when |theta| >= E[T]*max(|EWMA(b w)|, EWMA|w|/sqrt(E[T])); E[T] = EWMA(0.2) of ba) | param set A
-- **L6M**: ulcer -48.9%; max DD 392 -> 301; worst week n/a; mean/wk (owner scalar, base lots) 975; x1.75 live lots 1,706; $4.84 975
-- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 667
-- Controls: White RC/SPA {'rc_p': 0.584, 'spa_p': 0.61, 'T': 26, 'K': 382}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
-- Trials counted / correction: 628 candidates, White RC/SPA
-- Untouched year: none (rolling walk-forward instead): 6M->1M OOS 221.1 pts/mo vs live 140.4, share beat 0.40
-- Behaviour / detail: standalone only; engine swap test pending; older-year check GREEN
-- DS7 need: new custom BarsType: custom BarsType (stateful EWMA; buildable, new code) | scaling: size x s_ntr (same, daily trade-print count)
+- Today -> setting: H7 on live 1-minute time bar (tm60__A) -> H7 Asia: bar today 1-minute time (live) -> proposed cusum_10 | construction: cusum_10 (CUSUM-filter events (Lopez de Prado): S+ = max(0,S+ + dp), S- = min(0,S- + dp) on print price changes; event when S+ > h or S- < -h, then reset; h = k x trailing sigma-scale (ticks)) | param set G12_34k5
+- **L6M**: ulcer -24.5%; max DD 360 -> 372; worst week n/a; mean/wk (owner scalar, base lots) 2,366; x1.75 live lots 4,141; $4.84 2,366
+- **L3M**: ulcer n/a; max DD n/a; worst week n/a; mean/wk (owner scalar, base lots) 2,253
+- Controls: White RC/SPA {'rc_p': 0.379, 'spa_p': 0.063, 'T': 26, 'K': 607}; random-clock / shifted-label nulls on the same pick procedure (page); 30 engine controls not yet run
+- Trials counted / correction: 918 candidates, White RC/SPA
+- Untouched year: none (rolling walk-forward instead): 6M->1M OOS 23.1 pts/mo vs live 13.1, share beat 0.46
+- Behaviour / detail: standalone only; engine swap test pending; older-year check RED
+- DS7 need: new custom BarsType: custom BarsType (event-driven) | scaling: size x s_rng (same, daily high-low range in points)
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-04..2026-10-30 (trailing 6M), refit 2026-11-17 18:40:28 UTC, data end 2026-10-30, prior-year worst GREEN; persistence 0.40 / live bar not beaten on 6M
-- Updated: 2026-11-17 18:40:28
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-17 19:34:44 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-17 19:34:44
 
 ## Table 6. ENTRY CONDITIONS / SCORES (per book x session: condition or score, action skip / half / x1.5)
 Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
-**all books x sessions (15 cells), family levels and zones (own zones, session/round levels)**  `S1R|3|rolling-top5`  (source: W-S1R)
-- Label: **WEAK-BUT-POSITIVE**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 levels and zones (own zones, session/round levels) conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer +0.0%; max DD 8,448 -> 8,448; worst week n/a; mean/wk base lots n/a; x1.75 live lots 0; $4.84 0
-- **L3M**: ulcer +0.0%; max DD 4,139 -> 4,139; worst week n/a; mean/wk base lots n/a; x1.75 live lots 0; $4.84 0
-- **HOLD**: ulcer +0.0%; max DD 4,649 -> 4,649; worst week n/a; mean/wk base lots n/a; x1.75 live lots 0; $4.84 0
-- **GAP**: ulcer +2.0%; max DD 4,489 -> 4,489; worst week n/a; mean/wk base lots n/a; x1.75 live lots -250; $4.84 -143
-- **PRE**: ulcer +5.0%; max DD 7,024 -> 7,024; worst week n/a; mean/wk base lots n/a; x1.75 live lots -464; $4.84 -265
-- **XP**: ulcer -49.5%; max DD 9,842 -> 4,253; worst week n/a; mean/wk base lots n/a; x1.75 live lots 87; $4.84 50
+**all books x sessions (15 cells), family range forecasts (HAR / options / UW / own bar)**  `S1R|4|rolling-top5`  (source: W-S1R)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 range forecasts (HAR / options / UW / own bar) conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer +16.1%; max DD 3,584 -> 4,181; worst week n/a; mean/wk base lots n/a; x1.75 live lots -251; $4.84 -143
+- **L3M**: ulcer +18.8%; max DD 3,584 -> 4,181; worst week n/a; mean/wk base lots n/a; x1.75 live lots -183; $4.84 -105
+- **HOLD**: ulcer -37.1%; max DD 8,141 -> 5,578; worst week n/a; mean/wk base lots n/a; x1.75 live lots 12; $4.84 7
+- **GAP**: ulcer -5.8%; max DD 3,869 -> 3,869; worst week n/a; mean/wk base lots n/a; x1.75 live lots -166; $4.84 -95
+- **PRE**: ulcer -11.6%; max DD 4,654 -> 4,451; worst week n/a; mean/wk base lots n/a; x1.75 live lots -281; $4.84 -161
+- **XP**: ulcer -42.9%; max DD 24,265 -> 14,395; worst week n/a; mean/wk base lots n/a; x1.75 live lots 305; $4.84 174
 - Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.023 R, dUlcer -16.3%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 41%
-- Excess over nulls: vs shifted-label nulls dMeanR -0.012 R, dUlcer -14.8%; beats random-skip draws 10% (dU) / 20% (dm); beats all 3 shifts: no
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.005 R, dUlcer -44.2%; 3M picks: dMeanR -0.032 R, dUlcer -9.2% (OOS, next 2 weeks chained)
+- Rolling persistence: 44%
+- Excess over nulls: vs shifted-label nulls dMeanR +0.008 R, dUlcer -30.0%; beats random-skip draws 100% (dU) / 50% (dm); beats all 3 shifts: no
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
+- Flag: GREEN by construction; fragile if 6M and 3M disagree
+- Feed need: NQ bars (+options/UW)
+- D7 live-computable: HAR: yes; options/UW range: needs outside feed
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
+- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
+- Untouched year: rolling OOS (no frozen holdout); thirds in the page
+- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
+- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
+- Updated: 2026-11-17T19:39:15Z
+
+**all books x sessions (15 cells), family candle counting, ICT 7-13-21, IRL/ERL**  `S1R|2|rolling-top5`  (source: W-S1R)
+- Label: **WEAK-BUT-POSITIVE**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 candle counting, ICT 7-13-21, IRL/ERL conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer +5.1%; max DD 3,584 -> 3,822; worst week n/a; mean/wk base lots n/a; x1.75 live lots -244; $4.84 -140
+- **L3M**: ulcer +8.5%; max DD 3,584 -> 3,822; worst week n/a; mean/wk base lots n/a; x1.75 live lots -373; $4.84 -213
+- **HOLD**: ulcer -41.4%; max DD 8,141 -> 5,331; worst week n/a; mean/wk base lots n/a; x1.75 live lots 163; $4.84 93
+- **GAP**: ulcer -13.3%; max DD 3,869 -> 3,224; worst week n/a; mean/wk base lots n/a; x1.75 live lots -185; $4.84 -106
+- **PRE**: ulcer -25.7%; max DD 4,654 -> 3,255; worst week n/a; mean/wk base lots n/a; x1.75 live lots -123; $4.84 -70
+- **XP**: ulcer -19.8%; max DD 24,265 -> 20,236; worst week n/a; mean/wk base lots n/a; x1.75 live lots 103; $4.84 59
+- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.001 R, dUlcer -15.0%; 3M picks: dMeanR -0.000 R, dUlcer -18.1% (OOS, next 2 weeks chained)
+- Rolling persistence: 49%
+- Excess over nulls: vs shifted-label nulls dMeanR -0.012 R, dUlcer -12.7%; beats random-skip draws 50% (dU) / 30% (dm); beats all 3 shifts: no
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
+- Flag: GREEN by construction; fragile if 6M and 3M disagree
+- Feed need: NQ bars
+- D7 live-computable: yes: own bars
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
+- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
+- Untouched year: rolling OOS (no frozen holdout); thirds in the page
+- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
+- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
+- Updated: 2026-11-17T19:39:15Z
+
+**all books x sessions (15 cells), family levels and zones (own zones, session/round levels)**  `S1R|3|rolling-top5`  (source: W-S1R)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 levels and zones (own zones, session/round levels) conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer +0.0%; max DD 3,584 -> 3,584; worst week n/a; mean/wk base lots n/a; x1.75 live lots 0; $4.84 0
+- **L3M**: ulcer +0.0%; max DD 3,584 -> 3,584; worst week n/a; mean/wk base lots n/a; x1.75 live lots 0; $4.84 0
+- **HOLD**: ulcer -14.9%; max DD 8,141 -> 6,372; worst week n/a; mean/wk base lots n/a; x1.75 live lots -138; $4.84 -79
+- **GAP**: ulcer -34.0%; max DD 3,869 -> 2,147; worst week n/a; mean/wk base lots n/a; x1.75 live lots -129; $4.84 -74
+- **PRE**: ulcer -24.5%; max DD 4,654 -> 3,867; worst week n/a; mean/wk base lots n/a; x1.75 live lots -187; $4.84 -107
+- **XP**: ulcer -29.6%; max DD 24,265 -> 16,379; worst week n/a; mean/wk base lots n/a; x1.75 live lots 296; $4.84 169
+- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.013 R, dUlcer -31.5%; 3M picks: dMeanR 0.021 R, dUlcer -40.9% (OOS, next 2 weeks chained)
+- Rolling persistence: 38%
+- Excess over nulls: vs shifted-label nulls dMeanR +0.014 R, dUlcer -33.3%; beats random-skip draws 70% (dU) / 50% (dm); beats all 3 shifts: no
 - Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
 - Flag: GREEN by construction; fragile if 6M and 3M disagree
 - Feed need: NQ bars + prior-day levels
@@ -670,21 +740,21 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
 - Evidence: autopilot/DS3_REBUILD_S1R.md
 - Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
+- Updated: 2026-11-17T19:39:15Z
 
 **all books x sessions (15 cells), family causal trade context (raw)**  `S1R|9|rolling-top5`  (source: W-S1R)
-- Label: **WEAK-BUT-POSITIVE**
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
 - Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 causal trade context (raw) conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -29.2%; max DD 8,448 -> 5,471; worst week n/a; mean/wk base lots n/a; x1.75 live lots -57; $4.84 -33
-- **L3M**: ulcer -13.1%; max DD 4,139 -> 3,094; worst week n/a; mean/wk base lots n/a; x1.75 live lots 212; $4.84 121
-- **HOLD**: ulcer +9.1%; max DD 4,649 -> 3,964; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,701; $4.84 -972
-- **GAP**: ulcer -45.6%; max DD 4,489 -> 2,889; worst week n/a; mean/wk base lots n/a; x1.75 live lots -607; $4.84 -347
-- **PRE**: ulcer -45.8%; max DD 7,024 -> 3,959; worst week n/a; mean/wk base lots n/a; x1.75 live lots -636; $4.84 -363
-- **XP**: ulcer -76.0%; max DD 9,842 -> 3,302; worst week n/a; mean/wk base lots n/a; x1.75 live lots -337; $4.84 -192
+- **L6M**: ulcer -7.7%; max DD 3,584 -> 3,599; worst week n/a; mean/wk base lots n/a; x1.75 live lots -225; $4.84 -129
+- **L3M**: ulcer -20.2%; max DD 3,584 -> 3,599; worst week n/a; mean/wk base lots n/a; x1.75 live lots -102; $4.84 -58
+- **HOLD**: ulcer -36.9%; max DD 8,141 -> 6,020; worst week n/a; mean/wk base lots n/a; x1.75 live lots 184; $4.84 105
+- **GAP**: ulcer -9.0%; max DD 3,869 -> 3,272; worst week n/a; mean/wk base lots n/a; x1.75 live lots -77; $4.84 -44
+- **PRE**: ulcer -14.8%; max DD 4,654 -> 4,378; worst week n/a; mean/wk base lots n/a; x1.75 live lots -87; $4.84 -50
+- **XP**: ulcer -31.4%; max DD 24,265 -> 18,571; worst week n/a; mean/wk base lots n/a; x1.75 live lots 200; $4.84 114
 - Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.040 R, dUlcer -48.7%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 34%
-- Excess over nulls: vs shifted-label nulls dMeanR -0.062 R, dUlcer -24.0%; beats random-skip draws 50% (dU) / 70% (dm); beats all 3 shifts: no
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.016 R, dUlcer -29.4%; 3M picks: dMeanR 0.015 R, dUlcer -8.4% (OOS, next 2 weeks chained)
+- Rolling persistence: 47%
+- Excess over nulls: vs shifted-label nulls dMeanR +0.022 R, dUlcer -32.1%; beats random-skip draws 90% (dU) / 100% (dm); beats all 3 shifts: no
 - Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
 - Flag: GREEN by construction; fragile if 6M and 3M disagree
 - Feed need: D7 trade log
@@ -696,229 +766,21 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
 - Evidence: autopilot/DS3_REBUILD_S1R.md
 - Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
-
-**all books x sessions (15 cells), family confluence: oscillators**  `S1R|1c|rolling-top5`  (source: W-S1R)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 oscillators conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -29.7%; max DD 8,448 -> 3,892; worst week n/a; mean/wk base lots n/a; x1.75 live lots -603; $4.84 -345
-- **L3M**: ulcer -69.0%; max DD 4,139 -> 1,280; worst week n/a; mean/wk base lots n/a; x1.75 live lots -477; $4.84 -273
-- **HOLD**: ulcer -83.9%; max DD 4,649 -> 795; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,811; $4.84 -1,035
-- **GAP**: ulcer -91.8%; max DD 4,489 -> 596; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,076; $4.84 -615
-- **PRE**: ulcer -53.2%; max DD 7,024 -> 3,095; worst week n/a; mean/wk base lots n/a; x1.75 live lots -963; $4.84 -550
-- **XP**: ulcer -40.8%; max DD 9,842 -> 3,484; worst week n/a; mean/wk base lots n/a; x1.75 live lots -561; $4.84 -321
-- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.099 R, dUlcer -42.1%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 32%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.001 R, dUlcer -56.6%; beats random-skip draws 10% (dU) / 60% (dm); beats all 3 shifts: no
-- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
-- Flag: GREEN by construction; fragile if 6M and 3M disagree
-- Feed need: NQ bars
-- D7 live-computable: yes: own bars
-- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
-- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
-- Untouched year: rolling OOS (no frozen holdout); thirds in the page
-- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
-- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
-- Evidence: autopilot/DS3_REBUILD_S1R.md
-- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
-
-**all books x sessions (15 cells), family order flow: tape prints and speed**  `S1R|5a|rolling-top5`  (source: W-S1R)
-- Label: **WEAK-BUT-POSITIVE**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 tape prints and speed conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -71.0%; max DD 8,448 -> 1,883; worst week n/a; mean/wk base lots n/a; x1.75 live lots -546; $4.84 -312
-- **L3M**: ulcer -86.4%; max DD 4,139 -> 750; worst week n/a; mean/wk base lots n/a; x1.75 live lots -534; $4.84 -305
-- **HOLD**: ulcer -8.3%; max DD 4,649 -> 4,111; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,807; $4.84 -1,033
-- **GAP**: ulcer -73.4%; max DD 4,489 -> 745; worst week n/a; mean/wk base lots n/a; x1.75 live lots -510; $4.84 -291
-- **PRE**: ulcer -76.8%; max DD 7,024 -> 1,752; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,229; $4.84 -702
-- **XP**: ulcer -67.7%; max DD 9,842 -> 2,079; worst week n/a; mean/wk base lots n/a; x1.75 live lots -366; $4.84 -209
-- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.226 R, dUlcer -64.5%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 38%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.035 R, dUlcer -55.3%; beats random-skip draws 60% (dU) / 70% (dm); beats all 3 shifts: yes
-- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
-- Flag: GREEN by construction; fragile if 6M and 3M disagree
-- Feed need: NQ prints (+L3 for message rates)
-- D7 live-computable: prints yes (NT8); message rates need L3
-- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
-- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
-- Untouched year: rolling OOS (no frozen holdout); thirds in the page
-- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
-- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
-- Evidence: autopilot/DS3_REBUILD_S1R.md
-- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
-
-**all books x sessions (15 cells), family candle counting, ICT 7-13-21, IRL/ERL**  `S1R|2|rolling-top5`  (source: W-S1R)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 candle counting, ICT 7-13-21, IRL/ERL conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -78.1%; max DD 8,448 -> 2,937; worst week n/a; mean/wk base lots n/a; x1.75 live lots -204; $4.84 -117
-- **L3M**: ulcer -89.3%; max DD 4,139 -> 435; worst week n/a; mean/wk base lots n/a; x1.75 live lots 146; $4.84 83
-- **HOLD**: ulcer -84.9%; max DD 4,649 -> 591; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,829; $4.84 -1,045
-- **GAP**: ulcer -69.9%; max DD 4,489 -> 1,046; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,041; $4.84 -595
-- **PRE**: ulcer -64.1%; max DD 7,024 -> 1,235; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,244; $4.84 -711
-- **XP**: ulcer -33.0%; max DD 9,842 -> 3,204; worst week n/a; mean/wk base lots n/a; x1.75 live lots -571; $4.84 -326
-- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.108 R, dUlcer -44.0%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 31%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.148 R, dUlcer -72.7%; beats random-skip draws 10% (dU) / 70% (dm); beats all 3 shifts: no
-- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
-- Flag: GREEN by construction; fragile if 6M and 3M disagree
-- Feed need: NQ bars
-- D7 live-computable: yes: own bars
-- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
-- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
-- Untouched year: rolling OOS (no frozen holdout); thirds in the page
-- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
-- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
-- Evidence: autopilot/DS3_REBUILD_S1R.md
-- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
-
-**all books x sessions (15 cells), family confluence: alt-bar agreement**  `S1R|1h|rolling-top5`  (source: W-S1R)
-- Label: **WEAK-BUT-POSITIVE**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 alt-bar agreement conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -79.3%; max DD 8,448 -> 2,327; worst week n/a; mean/wk base lots n/a; x1.75 live lots -398; $4.84 -227
-- **L3M**: ulcer -56.9%; max DD 4,139 -> 2,327; worst week n/a; mean/wk base lots n/a; x1.75 live lots -528; $4.84 -302
-- **HOLD**: ulcer -75.6%; max DD 4,649 -> 880; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,855; $4.84 -1,060
-- **GAP**: ulcer -93.4%; max DD 4,489 -> 215; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,006; $4.84 -575
-- **PRE**: ulcer -83.5%; max DD 7,024 -> 596; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,271; $4.84 -726
-- **XP**: ulcer -76.6%; max DD 9,842 -> 1,730; worst week n/a; mean/wk base lots n/a; x1.75 live lots -326; $4.84 -186
-- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.285 R, dUlcer -79.3%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 35%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.048 R, dUlcer -47.2%; beats random-skip draws 50% (dU) / 70% (dm); beats all 3 shifts: yes
-- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
-- Flag: GREEN by construction; fragile if 6M and 3M disagree
-- Feed need: NQ prints -> alt bars
-- D7 live-computable: yes, same as 1g
-- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
-- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
-- Untouched year: rolling OOS (no frozen holdout); thirds in the page
-- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
-- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
-- Evidence: autopilot/DS3_REBUILD_S1R.md
-- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
-
-**all books x sessions (15 cells), family F5 order flow (all)**  `S1R|5|rolling-top5`  (source: W-S1R)
-- Label: **WEAK-BUT-POSITIVE**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 F5 order flow (all) conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -80.2%; max DD 8,448 -> 1,160; worst week n/a; mean/wk base lots n/a; x1.75 live lots -447; $4.84 -256
-- **L3M**: ulcer -59.3%; max DD 4,139 -> 1,160; worst week n/a; mean/wk base lots n/a; x1.75 live lots -319; $4.84 -182
-- **HOLD**: ulcer -89.0%; max DD 4,649 -> 795; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,384; $4.84 -791
-- **GAP**: ulcer -37.8%; max DD 4,489 -> 3,261; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,384; $4.84 -791
-- **PRE**: ulcer -86.4%; max DD 7,024 -> 795; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,025; $4.84 -586
-- **XP**: ulcer -98.7%; max DD 9,842 -> 380; worst week n/a; mean/wk base lots n/a; x1.75 live lots -409; $4.84 -234
-- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.510 R, dUlcer -68.7%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 34%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.067 R, dUlcer -58.6%; beats random-skip draws 40% (dU) / 100% (dm); beats all 3 shifts: yes
-- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
-- Flag: GREEN by construction; fragile if 6M and 3M disagree
-- Feed need: n/a (owner has not delivered)
-- D7 live-computable: partly
-- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
-- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
-- Untouched year: rolling OOS (no frozen holdout); thirds in the page
-- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
-- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
-- Evidence: autopilot/DS3_REBUILD_S1R.md
-- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
-
-**all books x sessions (15 cells), family TICK internals**  `S1R|10|rolling-top5`  (source: W-S1R)
-- Label: **WEAK-BUT-POSITIVE**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 TICK internals conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -81.5%; max DD 8,448 -> 1,810; worst week n/a; mean/wk base lots n/a; x1.75 live lots 173; $4.84 99
-- **L3M**: ulcer -65.6%; max DD 4,139 -> 1,810; worst week n/a; mean/wk base lots n/a; x1.75 live lots 113; $4.84 65
-- **HOLD**: ulcer -76.9%; max DD 4,649 -> 1,226; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,668; $4.84 -953
-- **GAP**: ulcer -46.9%; max DD 4,489 -> 2,409; worst week n/a; mean/wk base lots n/a; x1.75 live lots -669; $4.84 -383
-- **PRE**: ulcer -63.8%; max DD 7,024 -> 2,369; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,205; $4.84 -689
-- **XP**: ulcer -43.8%; max DD 9,842 -> 4,105; worst week n/a; mean/wk base lots n/a; x1.75 live lots -539; $4.84 -308
-- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.056 R, dUlcer -52.2%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 31%
-- Excess over nulls: vs shifted-label nulls dMeanR -0.078 R, dUlcer -10.0%; beats random-skip draws 40% (dU) / 50% (dm); beats all 3 shifts: yes
-- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
-- Flag: GREEN by construction; fragile if 6M and 3M disagree
-- Feed need: NYSE TICK
-- D7 live-computable: needs NYSE TICK feed in NT8 (delayed-feed check open)
-- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
-- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
-- Untouched year: rolling OOS (no frozen holdout); thirds in the page
-- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
-- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
-- Evidence: autopilot/DS3_REBUILD_S1R.md
-- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
-
-**all books x sessions (15 cells), family other markets and breadth**  `S1R|6|rolling-top5`  (source: W-S1R)
-- Label: **WEAK-BUT-POSITIVE**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 other markets and breadth conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -83.2%; max DD 8,448 -> 1,538; worst week n/a; mean/wk base lots n/a; x1.75 live lots -243; $4.84 -139
-- **L3M**: ulcer -93.5%; max DD 4,139 -> 192; worst week n/a; mean/wk base lots n/a; x1.75 live lots -30; $4.84 -17
-- **HOLD**: ulcer -70.0%; max DD 4,649 -> 1,353; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,786; $4.84 -1,020
-- **GAP**: ulcer -70.4%; max DD 4,489 -> 800; worst week n/a; mean/wk base lots n/a; x1.75 live lots -356; $4.84 -204
-- **PRE**: ulcer -72.4%; max DD 7,024 -> 1,419; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,278; $4.84 -730
-- **XP**: ulcer -61.3%; max DD 9,842 -> 3,078; worst week n/a; mean/wk base lots n/a; x1.75 live lots -394; $4.84 -225
-- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.237 R, dUlcer -63.0%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 34%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.033 R, dUlcer -57.4%; beats random-skip draws 50% (dU) / 80% (dm); beats all 3 shifts: yes
-- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
-- Flag: GREEN by construction; fragile if 6M and 3M disagree
-- Feed need: ES/RTY/YM/rates/other markets
-- D7 live-computable: NO today: other-market feeds not on the D7 chart
-- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
-- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
-- Untouched year: rolling OOS (no frozen holdout); thirds in the page
-- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
-- DS7 need: new code (rolling bi-weekly condition picker + the feed above)
-- Evidence: autopilot/DS3_REBUILD_S1R.md
-- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
-
-**all books x sessions (15 cells), family confluence: named indicators / session anchors**  `S1R|1a|rolling-top5`  (source: W-S1R)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 named indicators / session anchors conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -83.9%; max DD 8,448 -> 961; worst week n/a; mean/wk base lots n/a; x1.75 live lots -443; $4.84 -253
-- **L3M**: ulcer -82.5%; max DD 4,139 -> 605; worst week n/a; mean/wk base lots n/a; x1.75 live lots -442; $4.84 -253
-- **HOLD**: ulcer -79.9%; max DD 4,649 -> 1,200; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,699; $4.84 -971
-- **GAP**: ulcer -96.9%; max DD 4,489 -> 100; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,130; $4.84 -646
-- **PRE**: ulcer -29.2%; max DD 7,024 -> 2,882; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,482; $4.84 -847
-- **XP**: ulcer -90.0%; max DD 9,842 -> 795; worst week n/a; mean/wk base lots n/a; x1.75 live lots -375; $4.84 -214
-- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.281 R, dUlcer -54.9%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 34%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.203 R, dUlcer -68.7%; beats random-skip draws 0% (dU) / 50% (dm); beats all 3 shifts: no
-- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
-- Flag: GREEN by construction; fragile if 6M and 3M disagree
-- Feed need: NQ bars
-- D7 live-computable: yes: own bars/session anchors
-- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
-- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
-- Untouched year: rolling OOS (no frozen holdout); thirds in the page
-- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
-- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
-- Evidence: autopilot/DS3_REBUILD_S1R.md
-- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
+- Updated: 2026-11-17T19:39:15Z
 
 **all books x sessions (15 cells), family order flow: L3 / L2 book / flow library**  `S1R|5b|rolling-top5`  (source: W-S1R)
-- Label: **WEAK-BUT-POSITIVE**
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
 - Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 L3 / L2 book / flow library conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -85.6%; max DD 8,448 -> 1,767; worst week n/a; mean/wk base lots n/a; x1.75 live lots -431; $4.84 -246
-- **L3M**: ulcer -63.9%; max DD 4,139 -> 1,767; worst week n/a; mean/wk base lots n/a; x1.75 live lots -413; $4.84 -236
-- **HOLD**: ulcer -89.0%; max DD 4,649 -> 795; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,415; $4.84 -809
-- **GAP**: ulcer -48.1%; max DD 4,489 -> 3,099; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,124; $4.84 -642
-- **PRE**: ulcer -64.6%; max DD 7,024 -> 2,165; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,019; $4.84 -583
-- **XP**: ulcer -81.9%; max DD 9,842 -> 1,676; worst week n/a; mean/wk base lots n/a; x1.75 live lots -419; $4.84 -239
+- **L6M**: ulcer -7.8%; max DD 3,584 -> 3,576; worst week n/a; mean/wk base lots n/a; x1.75 live lots -260; $4.84 -149
+- **L3M**: ulcer +2.5%; max DD 3,584 -> 3,576; worst week n/a; mean/wk base lots n/a; x1.75 live lots -327; $4.84 -187
+- **HOLD**: ulcer -9.4%; max DD 8,141 -> 6,495; worst week n/a; mean/wk base lots n/a; x1.75 live lots -43; $4.84 -25
+- **GAP**: ulcer -30.4%; max DD 3,869 -> 2,913; worst week n/a; mean/wk base lots n/a; x1.75 live lots -61; $4.84 -35
+- **PRE**: ulcer -49.1%; max DD 4,654 -> 2,222; worst week n/a; mean/wk base lots n/a; x1.75 live lots -98; $4.84 -56
+- **XP**: ulcer -16.2%; max DD 24,265 -> 18,098; worst week n/a; mean/wk base lots n/a; x1.75 live lots 181; $4.84 103
 - Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.373 R, dUlcer -70.6%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 38%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.006 R, dUlcer -57.6%; beats random-skip draws 60% (dU) / 100% (dm); beats all 3 shifts: yes
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.009 R, dUlcer -25.7%; 3M picks: dMeanR -0.013 R, dUlcer -12.0% (OOS, next 2 weeks chained)
+- Rolling persistence: 40%
+- Excess over nulls: vs shifted-label nulls dMeanR +0.011 R, dUlcer -33.6%; beats random-skip draws 50% (dU) / 90% (dm); beats all 3 shifts: no
 - Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
 - Flag: GREEN by construction; fragile if 6M and 3M disagree
 - Feed need: L3 / L2 book
@@ -930,25 +792,25 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (rolling bi-weekly condition picker + the feed above)
 - Evidence: autopilot/DS3_REBUILD_S1R.md
 - Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
+- Updated: 2026-11-17T19:39:15Z
 
-**all books x sessions (15 cells), family confluence: vol / squeeze / state / ML**  `S1R|1f|rolling-top5`  (source: W-S1R)
-- Label: **WEAK-BUT-POSITIVE**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 vol / squeeze / state / ML conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -87.6%; max DD 8,448 -> 1,690; worst week n/a; mean/wk base lots n/a; x1.75 live lots -306; $4.84 -175
-- **L3M**: ulcer -100.0%; max DD 4,139 -> 0; worst week n/a; mean/wk base lots n/a; x1.75 live lots -279; $4.84 -159
-- **HOLD**: ulcer -54.9%; max DD 4,649 -> 1,481; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,878; $4.84 -1,073
-- **GAP**: ulcer -72.9%; max DD 4,489 -> 1,182; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,129; $4.84 -645
-- **PRE**: ulcer -50.5%; max DD 7,024 -> 1,983; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,451; $4.84 -829
-- **XP**: ulcer -87.9%; max DD 9,842 -> 1,155; worst week n/a; mean/wk base lots n/a; x1.75 live lots -256; $4.84 -146
+**all books x sessions (15 cells), family F5 order flow (all)**  `S1R|5|rolling-top5`  (source: W-S1R)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 F5 order flow (all) conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer -12.1%; max DD 3,584 -> 3,576; worst week n/a; mean/wk base lots n/a; x1.75 live lots -270; $4.84 -154
+- **L3M**: ulcer -3.6%; max DD 3,584 -> 3,576; worst week n/a; mean/wk base lots n/a; x1.75 live lots -250; $4.84 -143
+- **HOLD**: ulcer -7.9%; max DD 8,141 -> 6,482; worst week n/a; mean/wk base lots n/a; x1.75 live lots -83; $4.84 -48
+- **GAP**: ulcer -45.6%; max DD 3,869 -> 2,224; worst week n/a; mean/wk base lots n/a; x1.75 live lots -63; $4.84 -36
+- **PRE**: ulcer -45.2%; max DD 4,654 -> 2,575; worst week n/a; mean/wk base lots n/a; x1.75 live lots -119; $4.84 -68
+- **XP**: ulcer -12.0%; max DD 24,265 -> 19,053; worst week n/a; mean/wk base lots n/a; x1.75 live lots 150; $4.84 86
 - Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.199 R, dUlcer -67.0%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 32%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.088 R, dUlcer -64.9%; beats random-skip draws 40% (dU) / 70% (dm); beats all 3 shifts: no
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.003 R, dUlcer -20.9%; 3M picks: dMeanR 0.013 R, dUlcer -23.3% (OOS, next 2 weeks chained)
+- Rolling persistence: 40%
+- Excess over nulls: vs shifted-label nulls dMeanR +0.011 R, dUlcer -36.6%; beats random-skip draws 30% (dU) / 80% (dm); beats all 3 shifts: no
 - Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
 - Flag: GREEN by construction; fragile if 6M and 3M disagree
-- Feed need: NQ bars
-- D7 live-computable: yes: own bars
+- Feed need: n/a (owner has not delivered)
+- D7 live-computable: partly
 - Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
 - Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
 - Untouched year: rolling OOS (no frozen holdout); thirds in the page
@@ -956,21 +818,47 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
 - Evidence: autopilot/DS3_REBUILD_S1R.md
 - Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
+- Updated: 2026-11-17T19:39:15Z
+
+**all books x sessions (15 cells), family TICK internals**  `S1R|10|rolling-top5`  (source: W-S1R)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 TICK internals conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer -16.9%; max DD 3,584 -> 3,195; worst week n/a; mean/wk base lots n/a; x1.75 live lots -19; $4.84 -11
+- **L3M**: ulcer -11.1%; max DD 3,584 -> 3,195; worst week n/a; mean/wk base lots n/a; x1.75 live lots -150; $4.84 -86
+- **HOLD**: ulcer -7.6%; max DD 8,141 -> 6,561; worst week n/a; mean/wk base lots n/a; x1.75 live lots -132; $4.84 -75
+- **GAP**: ulcer -17.8%; max DD 3,869 -> 3,205; worst week n/a; mean/wk base lots n/a; x1.75 live lots -73; $4.84 -42
+- **PRE**: ulcer -17.9%; max DD 4,654 -> 3,781; worst week n/a; mean/wk base lots n/a; x1.75 live lots -145; $4.84 -83
+- **XP**: ulcer -24.7%; max DD 24,265 -> 19,965; worst week n/a; mean/wk base lots n/a; x1.75 live lots 179; $4.84 103
+- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.008 R, dUlcer -23.3%; 3M picks: dMeanR -0.012 R, dUlcer -25.4% (OOS, next 2 weeks chained)
+- Rolling persistence: 51%
+- Excess over nulls: vs shifted-label nulls dMeanR -0.004 R, dUlcer -23.7%; beats random-skip draws 50% (dU) / 30% (dm); beats all 3 shifts: no
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
+- Flag: GREEN by construction; fragile if 6M and 3M disagree
+- Feed need: NYSE TICK
+- D7 live-computable: needs NYSE TICK feed in NT8 (delayed-feed check open)
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
+- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
+- Untouched year: rolling OOS (no frozen holdout); thirds in the page
+- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
+- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
+- Updated: 2026-11-17T19:39:15Z
 
 **all books x sessions (15 cells), family confluence: SMC / ICT structure**  `S1R|1e|rolling-top5`  (source: W-S1R)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Label: **WEAK-BUT-POSITIVE**
 - Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 SMC / ICT structure conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -88.7%; max DD 8,448 -> 1,367; worst week n/a; mean/wk base lots n/a; x1.75 live lots -253; $4.84 -145
-- **L3M**: ulcer -88.0%; max DD 4,139 -> 1,367; worst week n/a; mean/wk base lots n/a; x1.75 live lots -351; $4.84 -201
-- **HOLD**: ulcer -55.8%; max DD 4,649 -> 1,600; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,651; $4.84 -943
-- **GAP**: ulcer -54.2%; max DD 4,489 -> 800; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,033; $4.84 -590
-- **PRE**: ulcer -15.8%; max DD 7,024 -> 4,510; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,230; $4.84 -703
-- **XP**: ulcer -74.8%; max DD 9,842 -> 1,966; worst week n/a; mean/wk base lots n/a; x1.75 live lots -313; $4.84 -179
+- **L6M**: ulcer -17.7%; max DD 3,584 -> 3,573; worst week n/a; mean/wk base lots n/a; x1.75 live lots -197; $4.84 -113
+- **L3M**: ulcer -15.1%; max DD 3,584 -> 3,573; worst week n/a; mean/wk base lots n/a; x1.75 live lots -180; $4.84 -103
+- **HOLD**: ulcer -50.1%; max DD 8,141 -> 4,887; worst week n/a; mean/wk base lots n/a; x1.75 live lots 256; $4.84 146
+- **GAP**: ulcer -4.8%; max DD 3,869 -> 3,049; worst week n/a; mean/wk base lots n/a; x1.75 live lots -265; $4.84 -152
+- **PRE**: ulcer -12.7%; max DD 4,654 -> 3,959; worst week n/a; mean/wk base lots n/a; x1.75 live lots -257; $4.84 -147
+- **XP**: ulcer -31.7%; max DD 24,265 -> 15,166; worst week n/a; mean/wk base lots n/a; x1.75 live lots 291; $4.84 166
 - Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.185 R, dUlcer -48.6%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 34%
-- Excess over nulls: vs shifted-label nulls dMeanR +0.067 R, dUlcer -67.0%; beats random-skip draws 30% (dU) / 60% (dm); beats all 3 shifts: no
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.020 R, dUlcer -38.4%; 3M picks: dMeanR 0.003 R, dUlcer -6.0% (OOS, next 2 weeks chained)
+- Rolling persistence: 54%
+- Excess over nulls: vs shifted-label nulls dMeanR +0.004 R, dUlcer -22.6%; beats random-skip draws 80% (dU) / 80% (dm); beats all 3 shifts: yes
 - Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
 - Flag: GREEN by construction; fragile if 6M and 3M disagree
 - Feed need: NQ bars
@@ -982,21 +870,99 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
 - Evidence: autopilot/DS3_REBUILD_S1R.md
 - Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
+- Updated: 2026-11-17T19:39:15Z
 
-**all books x sessions (15 cells), family confluence: entry-table universe**  `S1R|1b|rolling-top5`  (source: W-S1R)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 entry-table universe conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
-- **L6M**: ulcer -96.0%; max DD 8,448 -> 770; worst week n/a; mean/wk base lots n/a; x1.75 live lots -209; $4.84 -120
-- **L3M**: ulcer -88.8%; max DD 4,139 -> 770; worst week n/a; mean/wk base lots n/a; x1.75 live lots -113; $4.84 -64
-- **HOLD**: ulcer -69.6%; max DD 4,649 -> 1,167; worst week n/a; mean/wk base lots n/a; x1.75 live lots -2,017; $4.84 -1,152
-- **GAP**: ulcer -55.6%; max DD 4,489 -> 1,350; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,026; $4.84 -586
-- **PRE**: ulcer -83.8%; max DD 7,024 -> 800; worst week n/a; mean/wk base lots n/a; x1.75 live lots -1,133; $4.84 -648
-- **XP**: ulcer -40.1%; max DD 9,842 -> 3,398; worst week n/a; mean/wk base lots n/a; x1.75 live lots -532; $4.84 -304
+**all books x sessions (15 cells), family day / regime / time of day / calendar**  `S1R|8|rolling-top5`  (source: W-S1R)
+- Label: **WEAK-BUT-POSITIVE**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 day / regime / time of day / calendar conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer -19.7%; max DD 3,584 -> 3,141; worst week n/a; mean/wk base lots n/a; x1.75 live lots -49; $4.84 -28
+- **L3M**: ulcer -17.0%; max DD 3,584 -> 3,141; worst week n/a; mean/wk base lots n/a; x1.75 live lots -31; $4.84 -18
+- **HOLD**: ulcer +20.8%; max DD 8,141 -> 7,436; worst week n/a; mean/wk base lots n/a; x1.75 live lots -236; $4.84 -135
+- **GAP**: ulcer -25.5%; max DD 3,869 -> 3,018; worst week n/a; mean/wk base lots n/a; x1.75 live lots -142; $4.84 -81
+- **PRE**: ulcer -10.7%; max DD 4,654 -> 4,068; worst week n/a; mean/wk base lots n/a; x1.75 live lots -124; $4.84 -71
+- **XP**: ulcer -30.3%; max DD 24,265 -> 16,603; worst week n/a; mean/wk base lots n/a; x1.75 live lots 260; $4.84 149
 - Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
-- Trailing 6M / 3M effect: 6M picks: dMeanR +0.213 R, dUlcer -55.4%; 3M picks: dMeanR  R, dUlcer % (OOS, next 2 weeks chained)
-- Rolling persistence: 34%
-- Excess over nulls: vs shifted-label nulls dMeanR -0.066 R, dUlcer -59.5%; beats random-skip draws 50% (dU) / 90% (dm); beats all 3 shifts: no
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.005 R, dUlcer -29.8%; 3M picks: dMeanR 0.003 R, dUlcer -26.7% (OOS, next 2 weeks chained)
+- Rolling persistence: 44%
+- Excess over nulls: vs shifted-label nulls dMeanR -0.010 R, dUlcer -8.7%; beats random-skip draws 80% (dU) / 60% (dm); beats all 3 shifts: yes
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
+- Flag: GREEN by construction; fragile if 6M and 3M disagree
+- Feed need: calendar (+macro feed)
+- D7 live-computable: yes (calendar); macro surprise columns need a feed
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
+- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
+- Untouched year: rolling OOS (no frozen holdout); thirds in the page
+- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
+- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
+- Updated: 2026-11-17T19:39:15Z
+
+**all books x sessions (15 cells), family confluence: alt-bar agreement**  `S1R|1h|rolling-top5`  (source: W-S1R)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 alt-bar agreement conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer -20.8%; max DD 3,584 -> 2,990; worst week n/a; mean/wk base lots n/a; x1.75 live lots -290; $4.84 -166
+- **L3M**: ulcer -19.5%; max DD 3,584 -> 2,990; worst week n/a; mean/wk base lots n/a; x1.75 live lots -100; $4.84 -57
+- **HOLD**: ulcer -23.0%; max DD 8,141 -> 6,069; worst week n/a; mean/wk base lots n/a; x1.75 live lots -7; $4.84 -4
+- **GAP**: ulcer -30.6%; max DD 3,869 -> 2,488; worst week n/a; mean/wk base lots n/a; x1.75 live lots -100; $4.84 -57
+- **PRE**: ulcer -27.8%; max DD 4,654 -> 3,606; worst week n/a; mean/wk base lots n/a; x1.75 live lots -266; $4.84 -152
+- **XP**: ulcer -36.1%; max DD 24,265 -> 15,385; worst week n/a; mean/wk base lots n/a; x1.75 live lots 296; $4.84 169
+- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.009 R, dUlcer -36.7%; 3M picks: dMeanR -0.003 R, dUlcer -15.2% (OOS, next 2 weeks chained)
+- Rolling persistence: 47%
+- Excess over nulls: vs shifted-label nulls dMeanR +0.014 R, dUlcer -37.4%; beats random-skip draws 100% (dU) / 80% (dm); beats all 3 shifts: no
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
+- Flag: GREEN by construction; fragile if 6M and 3M disagree
+- Feed need: NQ prints -> alt bars
+- D7 live-computable: yes, same as 1g
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
+- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
+- Untouched year: rolling OOS (no frozen holdout); thirds in the page
+- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
+- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
+- Updated: 2026-11-17T19:39:15Z
+
+**all books x sessions (15 cells), family confluence: named indicators / session anchors**  `S1R|1a|rolling-top5`  (source: W-S1R)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 named indicators / session anchors conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer -30.5%; max DD 3,584 -> 2,625; worst week n/a; mean/wk base lots n/a; x1.75 live lots -365; $4.84 -209
+- **L3M**: ulcer -26.1%; max DD 3,584 -> 2,625; worst week n/a; mean/wk base lots n/a; x1.75 live lots -273; $4.84 -156
+- **HOLD**: ulcer -64.9%; max DD 8,141 -> 3,276; worst week n/a; mean/wk base lots n/a; x1.75 live lots 128; $4.84 73
+- **GAP**: ulcer -40.4%; max DD 3,869 -> 2,232; worst week n/a; mean/wk base lots n/a; x1.75 live lots 62; $4.84 36
+- **PRE**: ulcer -27.4%; max DD 4,654 -> 3,429; worst week n/a; mean/wk base lots n/a; x1.75 live lots -160; $4.84 -92
+- **XP**: ulcer -21.7%; max DD 24,265 -> 19,607; worst week n/a; mean/wk base lots n/a; x1.75 live lots 230; $4.84 131
+- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.015 R, dUlcer -22.2%; 3M picks: dMeanR 0.011 R, dUlcer -20.5% (OOS, next 2 weeks chained)
+- Rolling persistence: 52%
+- Excess over nulls: vs shifted-label nulls dMeanR -0.000 R, dUlcer -39.0%; beats random-skip draws 30% (dU) / 90% (dm); beats all 3 shifts: no
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
+- Flag: GREEN by construction; fragile if 6M and 3M disagree
+- Feed need: NQ bars
+- D7 live-computable: yes: own bars/session anchors
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
+- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
+- Untouched year: rolling OOS (no frozen holdout); thirds in the page
+- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
+- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
+- Updated: 2026-11-17T19:39:15Z
+
+**all books x sessions (15 cells), family confluence: trend**  `S1R|1d|rolling-top5`  (source: W-S1R)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 trend conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer -35.4%; max DD 3,584 -> 2,749; worst week n/a; mean/wk base lots n/a; x1.75 live lots -189; $4.84 -108
+- **L3M**: ulcer -37.8%; max DD 3,584 -> 2,749; worst week n/a; mean/wk base lots n/a; x1.75 live lots -49; $4.84 -28
+- **HOLD**: ulcer -39.7%; max DD 8,141 -> 4,620; worst week n/a; mean/wk base lots n/a; x1.75 live lots -75; $4.84 -43
+- **GAP**: ulcer -29.5%; max DD 3,869 -> 2,586; worst week n/a; mean/wk base lots n/a; x1.75 live lots -185; $4.84 -106
+- **PRE**: ulcer -33.0%; max DD 4,654 -> 3,083; worst week n/a; mean/wk base lots n/a; x1.75 live lots -281; $4.84 -160
+- **XP**: ulcer -38.1%; max DD 24,265 -> 16,588; worst week n/a; mean/wk base lots n/a; x1.75 live lots 305; $4.84 175
+- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.008 R, dUlcer -35.8%; 3M picks: dMeanR 0.048 R, dUlcer -64.3% (OOS, next 2 weeks chained)
+- Rolling persistence: 50%
+- Excess over nulls: vs shifted-label nulls dMeanR +0.017 R, dUlcer -34.2%; beats random-skip draws 100% (dU) / 80% (dm); beats all 3 shifts: no
 - Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
 - Flag: GREEN by construction; fragile if 6M and 3M disagree
 - Feed need: NQ bars
@@ -1008,7 +974,106 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
 - Evidence: autopilot/DS3_REBUILD_S1R.md
 - Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
-- Updated: 2026-11-17T18:32:11Z
+- Updated: 2026-11-17T19:39:15Z
+
+**all books x sessions (15 cells), family other markets and breadth**  `S1R|6|rolling-top5`  (source: W-S1R)
+- Label: **WEAK-BUT-POSITIVE**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 other markets and breadth conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer -36.8%; max DD 3,584 -> 2,825; worst week n/a; mean/wk base lots n/a; x1.75 live lots -148; $4.84 -84
+- **L3M**: ulcer -44.2%; max DD 3,584 -> 2,506; worst week n/a; mean/wk base lots n/a; x1.75 live lots -60; $4.84 -35
+- **HOLD**: ulcer -25.1%; max DD 8,141 -> 6,421; worst week n/a; mean/wk base lots n/a; x1.75 live lots -64; $4.84 -37
+- **GAP**: ulcer -23.5%; max DD 3,869 -> 3,253; worst week n/a; mean/wk base lots n/a; x1.75 live lots 137; $4.84 78
+- **PRE**: ulcer -23.2%; max DD 4,654 -> 3,191; worst week n/a; mean/wk base lots n/a; x1.75 live lots -88; $4.84 -50
+- **XP**: ulcer -19.4%; max DD 24,265 -> 17,775; worst week n/a; mean/wk base lots n/a; x1.75 live lots 207; $4.84 118
+- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.022 R, dUlcer -26.5%; 3M picks: dMeanR 0.000 R, dUlcer -33.7% (OOS, next 2 weeks chained)
+- Rolling persistence: 45%
+- Excess over nulls: vs shifted-label nulls dMeanR -0.010 R, dUlcer -20.0%; beats random-skip draws 60% (dU) / 100% (dm); beats all 3 shifts: no
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
+- Flag: GREEN by construction; fragile if 6M and 3M disagree
+- Feed need: ES/RTY/YM/rates/other markets
+- D7 live-computable: NO today: other-market feeds not on the D7 chart
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
+- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
+- Untouched year: rolling OOS (no frozen holdout); thirds in the page
+- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
+- DS7 need: new code (rolling bi-weekly condition picker + the feed above)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
+- Updated: 2026-11-17T19:39:15Z
+
+**all books x sessions (15 cells), family confluence: oscillators**  `S1R|1c|rolling-top5`  (source: W-S1R)
+- Label: **WEAK-BUT-POSITIVE**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 oscillators conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer -41.6%; max DD 3,584 -> 2,505; worst week n/a; mean/wk base lots n/a; x1.75 live lots -368; $4.84 -210
+- **L3M**: ulcer -53.1%; max DD 3,584 -> 2,016; worst week n/a; mean/wk base lots n/a; x1.75 live lots -19; $4.84 -11
+- **HOLD**: ulcer -72.5%; max DD 8,141 -> 2,793; worst week n/a; mean/wk base lots n/a; x1.75 live lots 345; $4.84 197
+- **GAP**: ulcer -45.0%; max DD 3,869 -> 2,345; worst week n/a; mean/wk base lots n/a; x1.75 live lots 104; $4.84 60
+- **PRE**: ulcer -13.9%; max DD 4,654 -> 3,697; worst week n/a; mean/wk base lots n/a; x1.75 live lots -206; $4.84 -118
+- **XP**: ulcer -29.1%; max DD 24,265 -> 16,986; worst week n/a; mean/wk base lots n/a; x1.75 live lots 236; $4.84 135
+- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.026 R, dUlcer -34.4%; 3M picks: dMeanR 0.029 R, dUlcer -50.9% (OOS, next 2 weeks chained)
+- Rolling persistence: 45%
+- Excess over nulls: vs shifted-label nulls dMeanR -0.004 R, dUlcer -32.8%; beats random-skip draws 80% (dU) / 100% (dm); beats all 3 shifts: no
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
+- Flag: GREEN by construction; fragile if 6M and 3M disagree
+- Feed need: NQ bars
+- D7 live-computable: yes: own bars
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
+- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
+- Untouched year: rolling OOS (no frozen holdout); thirds in the page
+- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
+- DS7 need: new code (rolling bi-weekly condition picker on D7 own data)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
+- Updated: 2026-11-17T19:39:15Z
+
+**all books x sessions (15 cells), family Unusual Whales options / positioning**  `S1R|7|rolling-top5`  (source: W-S1R)
+- Label: **WEAK-BUT-POSITIVE**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 Unusual Whales options / positioning conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five
+- **L6M**: ulcer -48.7%; max DD 3,584 -> 2,237; worst week n/a; mean/wk base lots n/a; x1.75 live lots -30; $4.84 -17
+- **L3M**: ulcer -57.1%; max DD 3,584 -> 2,237; worst week n/a; mean/wk base lots n/a; x1.75 live lots 73; $4.84 42
+- **HOLD**: ulcer -12.4%; max DD 8,141 -> 6,520; worst week n/a; mean/wk base lots n/a; x1.75 live lots -133; $4.84 -76
+- **GAP**: ulcer -12.1%; max DD 3,869 -> 3,329; worst week n/a; mean/wk base lots n/a; x1.75 live lots -32; $4.84 -18
+- **PRE**: ulcer +10.0%; max DD 4,654 -> 5,019; worst week n/a; mean/wk base lots n/a; x1.75 live lots 194; $4.84 111
+- **XP**: ulcer +0.0%; max DD 24,265 -> 24,265; worst week n/a; mean/wk base lots n/a; x1.75 live lots 0; $4.84 0
+- Action (skip/half/x1.5): skip / half / x1.5 on the top-5 recent conditions (see the page for the current list per book x session)
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.005 R, dUlcer -2.7%; 3M picks: dMeanR -0.013 R, dUlcer 2.6% (OOS, next 2 weeks chained)
+- Rolling persistence: 47%
+- Excess over nulls: vs shifted-label nulls dMeanR -0.015 R, dUlcer +6.5%; beats random-skip draws 50% (dU) / 90% (dm); beats all 3 shifts: no
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 keeps only picks <=15% worse than doing nothing on ulcer and mean in each prior 365-day block (30% line: g30 table on the page)
+- Flag: GREEN by construction; fragile if 6M and 3M disagree
+- Feed need: Unusual Whales
+- D7 live-computable: NO: Unusual Whales feed
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws + nonsense/random/planted families
+- Trials counted / correction: 65,192 columns x 2 sides x 3 actions x 15 cells x 79 refits (nulls beside)
+- Untouched year: rolling OOS (no frozen holdout); thirds in the page
+- Behaviour / detail: not engine-exact; raw-chassis, no re-entry/freed-book effects
+- DS7 need: new code (rolling bi-weekly condition picker + the feed above)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: first pass, raw books, data end 2026-10-30; label from the page rules
+- Updated: 2026-11-17T19:39:15Z
+
+**H7_3 (book_session) x family confluence: SMC / ICT structure**  `S1R|H7_3|1e|rolling-top5`  (source: W-S1R)
+- Label: **WEAK-BUT-POSITIVE**
+- Today -> setting: no entry-condition rule today -> rolling: every 14 days pick the top 5 SMC / ICT structure conditions on the trailing six months (rules skip / half / x1.5 on yes or no; both gates 15% prior-year; ranked by effect on mean R and ulcer), trade the next 2 weeks; score = equal-weight vote of the five (this book x session only)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Action (skip/half/x1.5): skip / half / x1.5 on the cell's top-5 recent conditions of this family
+- Trailing 6M / 3M effect: 6M picks: dMeanR +0.020 R, dUlcer -38.4%; 3M picks: dMeanR +0.003 R, dUlcer -6.0%
+- Rolling persistence: 54%
+- Excess over nulls: shifted-label mean dMeanR +0.004 R, dUlcer -22.6%; beats random-skip draws 80% / 80%
+- Prior-year % (AMBER 15-30 / RED >30): gate g15 (<=15% worse on ulcer and mean in each prior 365-day block)
+- Flag: cell-level, no time-thirds check
+- Feed need: NQ bars
+- D7 live-computable: yes: own bars
+- Controls: shifted labels 11/23/37 + 10 random persistent skip draws
+- Trials counted / correction: cell x family x 79 refits
+- Untouched year: rolling OOS
+- Behaviour / detail: raw-chassis, not engine-exact
+- DS7 need: new code (rolling bi-weekly condition picker)
+- Evidence: autopilot/DS3_REBUILD_S1R.md
+- Caveats: single cell, weaker evidence than the pooled family row
+- Updated: 2026-11-17T19:39:15Z
 
 ## Table 2. NEW YORK AND LONDON BOOKS
 Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
@@ -1089,7 +1154,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **NYAM X4_OPEN_DRIVE_DR**  `NYAM-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1103,7 +1168,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **NYAM X4_ORB_DIR_PULLBACK**  `NYAM-book-3`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1117,7 +1182,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **NYPM W7_POWER_HOUR_LOOSE**  `NYPM-book-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1131,7 +1196,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **NYPM X4_RSI2_15MIN_NYPM**  `NYPM-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1145,7 +1210,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **LONDON NQ.FADE_LV.f4d004a6**  `LONDON-book-1`  (source: W-MB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1161,7 +1226,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (book; see setting)
 - Evidence: autopilot/DS3_MAJOR_B_BOOKS.md
 - Caveats: harness basis only until the engine stack test lands
-- Updated: 2026-11-17 19:03
+- Updated: 2026-11-17 19:33
 
 **LONDON NQ.FADE_LV.6fb3aa4d**  `LONDON-book-2`  (source: W-MB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1177,7 +1242,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (book; see setting)
 - Evidence: autopilot/DS3_MAJOR_B_BOOKS.md
 - Caveats: harness basis only until the engine stack test lands
-- Updated: 2026-11-17 19:03
+- Updated: 2026-11-17 19:33
 
 **LON W11_SESSION_EXTREME_RSI14_LON**  `LON-book-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1191,7 +1256,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **LON X4_FAILED_BREAK_BARS_LON**  `LON-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1205,7 +1270,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **LON R3_YM_LED_LON**  `LON-book-3`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1219,7 +1284,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **NYAM X4_OPEN_DRIVE_DR**  `NYAM-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1233,7 +1298,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **NYAM X4_ORB_DIR_PULLBACK**  `NYAM-book-alt-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1247,7 +1312,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **NYAM N2_GAP**  `NYAM-book-alt-3`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1261,7 +1326,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **NYPM W7_POWER_HOUR_LOOSE**  `NYPM-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1275,7 +1340,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **NYPM X4_RSI2_15MIN_NYPM**  `NYPM-book-alt-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1289,7 +1354,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **LON W11_SESSION_EXTREME_RSI14_LON**  `LON-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1303,7 +1368,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **LON R3_YM_LED_LON**  `LON-book-alt-2`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1317,7 +1382,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 **LON M3_FAILED_BREAK_LON**  `LON-book-alt-3`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1331,7 +1396,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T19:06Z
+- Updated: 2026-11-17T19:36Z
 
 ## Table 3. LOT VECTOR (lots per book x session)
 Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
@@ -1995,7 +2060,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (stack-level same-side loser counter per session instance + per-side entry block with timer)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md
 - Caveats: source screen; score(min ulcer improvement L6M/L3M/HOLD)=4.2%; top 3 alternatives: LS_K2_M30 4.2, LS_K2_M20_R 2.8, LS_K2_M20 1.6
-- Updated: 2026-11-17T18:55Z
+- Updated: 2026-11-17T19:26Z
 
 **DAY-DONE conditional resume**  `DAYDONE-RESUME`  (source: W-DD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -2010,7 +2075,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (shadow-trade ledger for R1/R2; day-scoped lot multiplier for R4/R6; open-P&L check for R3; side P&L counter for R5)
 - Evidence: autopilot/DS3_DAYDONE_VARIANTS.md
 - Caveats: first pass, in-sample 43 months; deltas vs the live rule (REF); beats live in L6M and HOLD
-- Updated: 2026-11-17T18:54Z
+- Updated: 2026-11-17T19:26Z
 
 **DAY-DONE setting (stack-wide)**  `DAYDONE`  (source: W-DD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -2025,7 +2090,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (V9Gate: latch/duration/threshold change)
 - Evidence: autopilot/DS3_DAYDONE_VARIANTS.md
 - Caveats: first pass, in-sample 43 months; deltas vs the live rule (REF); beats live in L6M and HOLD
-- Updated: 2026-11-17T18:54Z
+- Updated: 2026-11-17T19:26Z
 
 **stack risk overlay (JL3)**  `STACKRISK`  (source: W-MC)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -2059,7 +2124,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (hook on a cut-line close that applies the existing StackCut partial-exit path to the other same-side positions in every session)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md
 - Caveats: no path-arithmetic screen is possible for exits; the result is exact-engine only
-- Updated: 2026-11-17T18:55Z
+- Updated: 2026-11-17T19:26Z
 
 **stack: extended-entry bucket (EXT_used_ST67)**  `ME-late-entry-size-target`  (source: W-ME)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -2074,7 +2139,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (feature at signal: distance from session open / 18:00 open in ATR5, VWAP sigma, share of typical session range used, chase count; lot/target multiplier)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md section 2b
 - Caveats: alternatives: EXT_used_TG67 -16.3, SZ_o18_atr -98.9, SZ_open_atr -98.9; target/stop pull-in cells only exist as exact runs (queued); breakeven-after-+20 not built
-- Updated: 2026-11-17T18:55Z
+- Updated: 2026-11-17T19:26Z
 
 **P7 flat stop 42 (live since 11-12)**  `FLAT|P7|42`  (source: bootstrap)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -2150,17 +2215,17 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 ## Status block (owner files in /mnt/l2/l2vast/_deliver/)
 | owner | table | rows | bad lines | last update age | state |
 |--|--|--|--|--|--|
-| W-S3 | 1 | 14 | 0 | 17 min | ok |
-| W-MD | 1 | 31 | 0 | 29 min | ok |
-| W-MB | 2 | 7 | 0 | 15 min | ok |
-| W-MF | 2 | 16 | 0 | 12 min | ok |
-| W-MA | 3 | 20 | 0 | 4 min | ok |
-| W-MC | 4 | 2 | 0 | 120 min | ok |
-| W-ME | 4 | 3 | 0 | 22 min | ok |
-| W-DD | 4 | 2 | 0 | 23 min | ok |
-| W-SWA | 5 | 9 | 0 | 9 min | ok |
-| W-SWB | 5 | 7 | 0 | 37 min | ok |
+| W-S3 | 1 | 14 | 0 | 16 min | ok |
+| W-MD | 1 | 31 | 0 | 60 min | ok |
+| W-MB | 2 | 7 | 0 | 14 min | ok |
+| W-MF | 2 | 16 | 0 | 11 min | ok |
+| W-MA | 3 | 20 | 0 | 34 min | ok |
+| W-MC | 4 | 2 | 0 | 150 min | STALE (>2 h) |
+| W-ME | 4 | 3 | 0 | 21 min | ok |
+| W-DD | 4 | 2 | 0 | 22 min | ok |
+| W-SWA | 5 | 9 | 0 | 13 min | ok |
+| W-SWB | 5 | 7 | 0 | 13 min | ok |
 | W-BAR | 5 | 0 | 0 | n/a | NO FILE YET |
-| W-S1R | 6 | 14 | 0 | 46 min | ok |
+| W-S1R | 6 | 16 | 0 | 9 min | ok |
 
 Bootstrap (LEAD-ASSEMBLED) rows currently shown: 13 (an owner row with the same row_id replaces them).

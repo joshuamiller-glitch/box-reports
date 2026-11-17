@@ -1,8 +1,8 @@
 # DS3_BAR_PROPS - property screen of every W-BAR bar type x size x session (descriptive; no book fitted)
-VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6M = 2026-05-13 .. 2026-11-13, 3M beside it, years secondary; refit: with each 2-week book refit): see five lines below. PREREG_BAR_PROPS.md (sha in DECISIONS.md). Trials counted: 1034 (series x session) rows x 2 rules (momentum/reversal) as one family; correction BH on |t| in the table; in-sample screen, NOT a pick.
+VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6M = 2026-05-13 .. 2026-11-13, 3M beside it, years secondary; refit: with each 2-week book refit): see five lines below. PREREG_BAR_PROPS.md (sha in DECISIONS.md). Trials counted: 1125 (series x session) rows x 2 rules (momentum/reversal) as one family; correction BH on |t| in the table; in-sample screen, NOT a pick.
 
-1. Tried: 259 bar series (all W-BAR registry rows built so far) x 4 sessions: bars per session, serial correlation lag 1-5, efficiency ratio, variance ratio, and a plain momentum/reversal rule filled on the next bar open (tape-style).
-2. Holds: 43 of 1034 (series,session) rows have L3M and L6M agreeing in sign, >=3 of 4 years agreeing and |t(L6M)|>=2.5 (about 12 expected by chance at |t|>2.5 ignoring clustering, so read only the clusters of neighbouring sizes).
+1. Tried: 283 bar series (all W-BAR registry rows built so far) x 4 sessions: bars per session, serial correlation lag 1-5, efficiency ratio, variance ratio, and a plain momentum/reversal rule filled on the next bar open (tape-style).
+2. Holds: 45 of 1125 (series,session) rows have L3M and L6M agreeing in sign, >=3 of 4 years agreeing and |t(L6M)|>=2.5 (about 14 expected by chance at |t|>2.5 ignoring clustering, so read only the clusters of neighbouring sizes).
 3. Does not: most clocks have lag-1 autocorrelation within +-0.05 and variance ratio near 1; a rule with mean < ~1.2 ticks per trade does not pay $4.84 RT + slippage.
 4. Needs in DS7: nothing yet; W-SWA/W-SWB start from the "carry" rows below for the swap tests (neighbours of the same type must agree).
 5. Next: complete the registry builds (information/price types), refresh this page every 3 h, then book-on-bar.
@@ -83,6 +83,7 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | time_s_20  | reversal |               702.2 |      -3.178 |          -0.295 |      -1.511 |          -0.173 |          4 |    -0.009 |      0.22  |     1.041 | True    |
 | dib_400    | momentum |              2513.2 |       3.056 |           0.096 |       3.056 |           0.111 |          4 |    -0.008 |      0.231 |     0.98  | True    |
 | vib_400    | momentum |              2521.6 |       2.916 |           0.093 |       2.911 |           0.104 |          4 |    -0.009 |      0.231 |     0.985 | True    |
+| vib_15000  | momentum |               147.4 |       2.686 |           1.126 |       3.299 |           1.757 |          3 |     0.02  |      0.21  |     0.989 | True    |
 | time_m_4   | reversal |                57.6 |      -2.682 |          -2.752 |      -2.082 |          -2.643 |          3 |    -0.027 |      0.221 |     0.999 | True    |
 | lbrk_5_20  | momentum |                34.1 |       2.488 |           3.883 |       0.404 |           0.921 |          4 |     0.023 |      0.32  |     1.127 | False   |
 | time_m_5   | reversal |                45.9 |      -2.424 |          -3.21  |      -2.131 |          -3.559 |          2 |    -0.025 |      0.209 |     1.01  | False   |
@@ -92,15 +93,14 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | lbrk_4_20  | momentum |                40.7 |       2.161 |           3.057 |       1.389 |           3.081 |          4 |     0.013 |      0.27  |     1.106 | False   |
 | vrb_240    | momentum |              2028.9 |       2.077 |           0.071 |       1.537 |           0.052 |          4 |    -0.007 |      0.224 |     0.978 | False   |
 | time_s_10  | reversal |              1404.5 |      -1.974 |          -0.108 |      -1.115 |          -0.057 |          4 |    -0.018 |      0.222 |     0.961 | False   |
+| vib_40000  | momentum |                63.2 |       1.973 |           1.844 |       1.163 |           1.227 |          2 |     0.022 |      0.222 |     1.085 | False   |
 | tib_700    | momentum |              1291.4 |       1.965 |           0.109 |       2.102 |           0.14  |          3 |    -0.009 |      0.222 |     0.972 | False   |
-| wrenko_112 | momentum |                 3.4 |       1.965 |          43.435 |       0.815 |          23.508 |          4 |     0.099 |      0.154 |     1.203 | False   |
 | renko_112  | momentum |                 3.4 |       1.965 |          43.435 |       0.815 |          23.508 |          4 |     0.099 |      0.154 |     1.203 | False   |
+| wrenko_112 | momentum |                 3.4 |       1.965 |          43.435 |       0.815 |          23.508 |          4 |     0.099 |      0.154 |     1.203 | False   |
 | frenko_10  | momentum |              1345.8 |       1.94  |           0.108 |       0.737 |           0.057 |          4 |     0.041 |      0.19  |     1.027 | False   |
+| tib_25000  | momentum |                40.2 |       1.939 |           2.92  |      -0.187 |          -0.321 |          2 |     0.024 |      0.218 |     1.044 | False   |
 | lbrk_3_40  | momentum |                15.5 |       1.923 |           7.056 |       1.135 |           4.988 |          4 |     0.033 |      0.231 |     1.066 | False   |
 | vsess_450  | reversal |               471.4 |      -1.898 |          -0.223 |      -0.431 |          -0.057 |          3 |    -0.012 |      0.228 |     0.978 | False   |
-| tsf_10_120 | reversal |                39.5 |      -1.898 |          -3.072 |      -1.398 |          -2.562 |          4 |     0.003 |      0.243 |     0.934 | False   |
-| time_m_3   | reversal |                77.1 |      -1.832 |          -1.407 |      -2.594 |          -1.95  |          3 |     0.01  |      0.214 |     0.97  | False   |
-| tsf_25_40  | reversal |                22.5 |      -1.825 |          -4.73  |      -0.738 |          -2.488 |          2 |     0.001 |      0.299 |     0.994 | False   |
 
 ## Asia: top 25 series by |t| of the plain rule on trailing 6M (rule = sign of the sign of t)
 | series     | rule     |   bars_per_sess_L6M |   mom_t_L6M |   mom_ticks_L6M |   mom_t_L3M |   mom_ticks_L3M |   yr_agree |   ac1_L6M |   er20_L6M |   vr5_L6M | carry   |
@@ -120,6 +120,7 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | tick_3200  | momentum |                13.3 |       3.019 |          14.436 |       1.795 |           9.533 |          2 |     0.034 |      0.237 |     0.913 | False   |
 | time_s_20  | reversal |              1429.2 |      -2.996 |          -0.151 |      -3.353 |          -0.212 |          4 |    -0.023 |      0.223 |     0.953 | True    |
 | mrenko_56  | momentum |                14.9 |       2.567 |          10.913 |       1.84  |          10.661 |          4 |     0.056 |      0.165 |     1.1   | True    |
+| vib_25000  | momentum |                35.9 |       2.536 |           4.934 |       1.678 |           4.344 |          3 |     0.048 |      0.201 |     0.933 | True    |
 | tsf_10_700 | momentum |                 1.9 |       2.534 |         101.192 |       2.788 |         127.549 |          2 |     0.282 |    nan     |   nan     | False   |
 | vrb_3500   | momentum |                14   |       2.507 |           9.998 |       2.053 |          11.053 |          4 |     0.037 |      0.227 |     0.989 | True    |
 | dlt_250    | momentum |                14.8 |       2.384 |           9.669 |       2.257 |          10.65  |          2 |     0.063 |      0.291 |     0.999 | False   |
@@ -129,42 +130,41 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | tib_240    | momentum |              1428.5 |       2.328 |           0.113 |       0.531 |           0.033 |          3 |    -0.004 |      0.227 |     0.995 | False   |
 | cdr_400    | momentum |                10.8 |       2.32  |          14.889 |       2.387 |          17.778 |          3 |     0.058 |      0.27  |     1.055 | False   |
 | tsf_2_2000 | momentum |                12.3 |       2.289 |          13.162 |       1.289 |           8.621 |          3 |     0.046 |      0.204 |     1.006 | False   |
-| lbrk_3_40  | momentum |                15.6 |       2.288 |          10.309 |       1.615 |           9.139 |          4 |     0.057 |      0.272 |     1.055 | False   |
 
 ## Carry rows (L3M and L6M same sign, >=3/4 years same sign, |t L6M|>=2.5), grouped by type and session
-| id     | session   | sizes      |   mean_abs_ticks | rule     |
-|:-------|:----------|:-----------|-----------------:|:---------|
-| dib    | Asia      | 240,400    |             0.19 | momentum |
-| dib    | London    | 240        |             0.13 | momentum |
-| dib    | NYAM      | 240,400    |             0.13 | momentum |
-| dib    | NYPM      | 240,400    |             0.11 | momentum |
-| dol    | NYAM      | 1700       |             1.8  | reversal |
-| frenko | Asia      | 10         |             0.2  | momentum |
-| frenko | London    | 112        |            16.19 | reversal |
-| frenko | NYAM      | 10         |             0.18 | momentum |
-| lbrk   | Asia      | 4_20,5_20  |             5.99 | momentum |
-| lbrk   | London    | 5_40       |            16.33 | momentum |
-| lbrk   | NYPM      | 5_40       |            15.89 | momentum |
-| mrenko | Asia      | 56         |            10.91 | momentum |
-| renko  | Asia      | 56         |            16.88 | momentum |
-| rng    | Asia      | 10         |             0.21 | momentum |
-| rng    | NYAM      | 10         |             0.19 | momentum |
-| tib    | Asia      | 400        |             0.2  | momentum |
-| tib    | NYAM      | 240,400    |             0.1  | momentum |
-| tib    | NYPM      | 240        |             0.09 | momentum |
-| time_m | London    | 15         |             6.22 | reversal |
-| time_m | NYPM      | 4          |             2.75 | reversal |
-| time_s | Asia      | 20,5       |             0.1  | reversal |
-| time_s | London    | 10,15,20,5 |             0.1  | reversal |
-| time_s | NYAM      | 30         |             1.07 | reversal |
-| time_s | NYPM      | 20         |             0.29 | reversal |
-| vib    | Asia      | 240,400    |             0.19 | momentum |
-| vib    | London    | 240        |             0.13 | momentum |
-| vib    | NYAM      | 240,400    |             0.13 | momentum |
-| vib    | NYPM      | 240,400    |             0.11 | momentum |
-| vnorm  | NYAM      | 1000       |             0.43 | reversal |
-| vrb    | Asia      | 3500       |            10    | momentum |
-| wrenko | Asia      | 56         |            16.88 | momentum |
+| id     | session   | sizes         |   mean_abs_ticks | rule     |
+|:-------|:----------|:--------------|-----------------:|:---------|
+| dib    | Asia      | 240,400       |             0.19 | momentum |
+| dib    | London    | 240           |             0.13 | momentum |
+| dib    | NYAM      | 240,400       |             0.13 | momentum |
+| dib    | NYPM      | 240,400       |             0.11 | momentum |
+| dol    | NYAM      | 1700          |             1.8  | reversal |
+| frenko | Asia      | 10            |             0.2  | momentum |
+| frenko | London    | 112           |            16.19 | reversal |
+| frenko | NYAM      | 10            |             0.18 | momentum |
+| lbrk   | Asia      | 4_20,5_20     |             5.99 | momentum |
+| lbrk   | London    | 5_40          |            16.33 | momentum |
+| lbrk   | NYPM      | 5_40          |            15.89 | momentum |
+| mrenko | Asia      | 56            |            10.91 | momentum |
+| renko  | Asia      | 56            |            16.88 | momentum |
+| rng    | Asia      | 10            |             0.21 | momentum |
+| rng    | NYAM      | 10            |             0.19 | momentum |
+| tib    | Asia      | 400           |             0.2  | momentum |
+| tib    | NYAM      | 240,400       |             0.1  | momentum |
+| tib    | NYPM      | 240           |             0.09 | momentum |
+| time_m | London    | 15            |             6.22 | reversal |
+| time_m | NYPM      | 4             |             2.75 | reversal |
+| time_s | Asia      | 20,5          |             0.1  | reversal |
+| time_s | London    | 10,15,20,5    |             0.1  | reversal |
+| time_s | NYAM      | 30            |             1.07 | reversal |
+| time_s | NYPM      | 20            |             0.29 | reversal |
+| vib    | Asia      | 240,25000,400 |             1.77 | momentum |
+| vib    | London    | 240           |             0.13 | momentum |
+| vib    | NYAM      | 240,400       |             0.13 | momentum |
+| vib    | NYPM      | 15000,240,400 |             0.45 | momentum |
+| vnorm  | NYAM      | 1000          |             0.43 | reversal |
+| vrb    | Asia      | 3500          |            10    | momentum |
+| wrenko | Asia      | 56            |            16.88 | momentum |
 
 ## By-type summary (median over sizes), trailing 6M
 | id     | session   |   ac1_L6M |   er20_L6M |   vr5_L6M |   mom_t_L6M |
@@ -181,10 +181,10 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | dchg   | London    |    -0.808 |      0.09  |     0.37  |     nan     |
 | dchg   | NYAM      |    -0.803 |      0.089 |     0.366 |     nan     |
 | dchg   | NYPM      |    -0.8   |      0.088 |     0.357 |     nan     |
-| dib    | Asia      |     0.001 |      0.221 |     0.998 |       1.232 |
-| dib    | London    |    -0.002 |      0.227 |     0.993 |       0.9   |
-| dib    | NYAM      |    -0.008 |      0.225 |     0.977 |       0.84  |
-| dib    | NYPM      |    -0.009 |      0.224 |     0.98  |       0.982 |
+| dib    | Asia      |     0.004 |      0.219 |     0.995 |       1.021 |
+| dib    | London    |    -0.002 |      0.222 |     0.996 |       0.497 |
+| dib    | NYAM      |    -0.008 |      0.219 |     0.977 |      -0.073 |
+| dib    | NYPM      |    -0.009 |      0.222 |     0.98  |       0.764 |
 | dlt    | Asia      |    -0.003 |      0.237 |     1.006 |       0.715 |
 | dlt    | London    |    -0.005 |      0.236 |     0.983 |       0.293 |
 | dlt    | NYAM      |    -0.01  |      0.233 |     0.971 |      -0.007 |
@@ -193,10 +193,10 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | dol    | London    |    -0.006 |      0.222 |     0.981 |      -1.198 |
 | dol    | NYAM      |    -0.012 |      0.229 |     0.974 |      -0.568 |
 | dol    | NYPM      |     0.001 |      0.223 |     0.994 |      -0.076 |
-| drb    | Asia      |     0.013 |      0.231 |     1.013 |       0.957 |
-| drb    | London    |    -0.003 |      0.221 |     1.005 |      -0.105 |
-| drb    | NYAM      |    -0.007 |      0.226 |     0.987 |       0.319 |
-| drb    | NYPM      |    -0.011 |      0.223 |     0.988 |       0.125 |
+| drb    | Asia      |     0.019 |      0.231 |     1.013 |       0.724 |
+| drb    | London    |    -0.007 |      0.221 |     1.005 |       0.07  |
+| drb    | NYAM      |    -0.004 |      0.226 |     0.989 |       0.319 |
+| drb    | NYPM      |    -0.011 |      0.223 |     0.988 |      -0.058 |
 | frenko | Asia      |     0.029 |      0.188 |     1.047 |       0.275 |
 | frenko | London    |    -0.003 |      0.186 |     0.995 |      -1.387 |
 | frenko | NYAM      |     0.002 |      0.182 |     0.987 |       0.183 |
@@ -233,10 +233,10 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | swing  | London    |    -0.806 |      0.086 |     0.364 |     nan     |
 | swing  | NYAM      |    -0.804 |      0.087 |     0.363 |     nan     |
 | swing  | NYPM      |    -0.802 |      0.09  |     0.359 |     nan     |
-| tib    | Asia      |    -0.005 |      0.22  |     0.984 |       0.462 |
-| tib    | London    |    -0.006 |      0.221 |     0.984 |       0.335 |
-| tib    | NYAM      |    -0.009 |      0.218 |     0.975 |       0.461 |
-| tib    | NYPM      |    -0.011 |      0.219 |     0.976 |       1.342 |
+| tib    | Asia      |    -0.004 |      0.215 |     0.984 |       0.687 |
+| tib    | London    |    -0.009 |      0.225 |     0.984 |       0.201 |
+| tib    | NYAM      |    -0.008 |      0.217 |     0.975 |       0.209 |
+| tib    | NYPM      |    -0.011 |      0.222 |     0.976 |       1.342 |
 | tick   | Asia      |     0.003 |      0.239 |     1.007 |      -0.012 |
 | tick   | London    |    -0.011 |      0.222 |     0.999 |      -1.175 |
 | tick   | NYAM      |    -0.005 |      0.228 |     0.981 |      -0.749 |
@@ -249,10 +249,10 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | time_s | London    |    -0.024 |      0.225 |     0.966 |      -2.785 |
 | time_s | NYAM      |    -0.01  |      0.225 |     0.978 |      -1.55  |
 | time_s | NYPM      |    -0.007 |      0.223 |     1.016 |      -1.525 |
-| trb    | Asia      |     0.018 |      0.234 |     1.038 |       0.523 |
-| trb    | London    |    -0.015 |      0.217 |     1.019 |      -0.649 |
-| trb    | NYAM      |    -0.009 |      0.225 |     0.991 |      -0.275 |
-| trb    | NYPM      |    -0.005 |      0.223 |     0.972 |       0.164 |
+| trb    | Asia      |     0.007 |      0.234 |     1.038 |       0.437 |
+| trb    | London    |    -0.015 |      0.217 |     1.019 |      -0.537 |
+| trb    | NYAM      |    -0.009 |      0.225 |     0.992 |      -0.309 |
+| trb    | NYPM      |    -0.012 |      0.223 |     0.972 |       0.139 |
 | tsf    | Asia      |     0.011 |      0.259 |     1.047 |       0.877 |
 | tsf    | London    |    -0.007 |      0.253 |     0.984 |      -0.354 |
 | tsf    | NYAM      |    -0.002 |      0.243 |     1.015 |      -0.14  |
@@ -261,10 +261,10 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | urenko | London    |    -0.005 |      0.178 |     0.962 |      -0.938 |
 | urenko | NYAM      |     0.001 |      0.177 |     0.992 |       0.159 |
 | urenko | NYPM      |     0     |      0.178 |     1.01  |       0.157 |
-| vib    | Asia      |    -0.001 |      0.223 |     1.005 |       1.06  |
-| vib    | London    |    -0.005 |      0.225 |     0.986 |       0.771 |
-| vib    | NYAM      |    -0.008 |      0.225 |     0.979 |       0.848 |
-| vib    | NYPM      |    -0.008 |      0.225 |     0.984 |       1.164 |
+| vib    | Asia      |    -0     |      0.22  |     0.997 |       1.054 |
+| vib    | London    |    -0.003 |      0.225 |     0.986 |       0.597 |
+| vib    | NYAM      |    -0.009 |      0.217 |     0.979 |       0.061 |
+| vib    | NYPM      |    -0.008 |      0.219 |     0.986 |       1.164 |
 | vnorm  | Asia      |    -0.003 |      0.23  |     0.99  |       0.889 |
 | vnorm  | London    |    -0.008 |      0.22  |     0.985 |      -0.913 |
 | vnorm  | NYAM      |    -0.01  |      0.22  |     0.989 |      -0.669 |
@@ -273,10 +273,10 @@ VERDICT (data ends 2026-11-13; pick window: none, descriptive screen; trailing 6
 | vol    | London    |    -0.011 |      0.222 |     1.003 |      -0.845 |
 | vol    | NYAM      |    -0.013 |      0.229 |     0.99  |      -1.161 |
 | vol    | NYPM      |     0.001 |      0.228 |     0.977 |       0.264 |
-| vrb    | Asia      |     0.011 |      0.231 |     1.01  |       1.087 |
-| vrb    | London    |    -0.006 |      0.227 |     0.981 |      -0.58  |
-| vrb    | NYAM      |    -0.009 |      0.227 |     0.984 |       0.031 |
-| vrb    | NYPM      |    -0.01  |      0.224 |     0.976 |      -0.326 |
+| vrb    | Asia      |     0.005 |      0.231 |     1.01  |       0.853 |
+| vrb    | London    |    -0.005 |      0.227 |     0.981 |      -0.58  |
+| vrb    | NYAM      |    -0.006 |      0.227 |     0.988 |       0.031 |
+| vrb    | NYPM      |    -0.014 |      0.225 |     0.977 |      -0.133 |
 | vsess  | Asia      |    -0.005 |      0.235 |     1.001 |       0.137 |
 | vsess  | London    |    -0.01  |      0.222 |     0.977 |      -0.673 |
 | vsess  | NYAM      |    -0.008 |      0.228 |     0.973 |      -0.74  |
