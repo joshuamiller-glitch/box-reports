@@ -7,18 +7,18 @@ VERDICT (data ends 2026-11-13; pick rule: trailing 6M, validated by rolling walk
 | 1 | time | time_s,time_m | 2/2 | 6 | - | native |
 | 2 | tick | tick | 1/1 | 2 | - | native |
 | 3 | volume | vol | 1/1 | 2 | - | native |
-| 4 | dollar | dol | 1/1 | 3 | - | custom |
-| 5 | volume-clock | vsess | 1/1 | 4 | - | custom |
-| 6 | tick-imbalance | tib,trb | 2/2 | 5 | - | custom |
-| 7 | volume/dollar-imbalance | vib,dib | 2/2 | 4 | - | custom |
-| 8 | run | trb,vrb,drb | 3/3 | 7 | - | custom |
+| 4 | dollar | dol | 1/1 | 6 | - | custom |
+| 5 | volume-clock | vsess | 1/1 | 3 | - | custom |
+| 6 | tick-imbalance | tib,trb | 2/2 | 9 | - | custom |
+| 7 | volume/dollar-imbalance | vib,dib | 2/2 | 8 | - | custom |
+| 8 | run | trb,vrb,drb | 3/3 | 14 | - | custom |
 | 9 | range | rng | 1/1 | 1 | - | native |
-| 10 | Renko/UniRenko | renko,mrenko,urenko,frenko,wrenko | 5/5 | 13 | - | custom/native |
-| 11 | delta | dlt,cdr | 2/2 | 3 | - | custom |
+| 10 | Renko/UniRenko | renko,mrenko,urenko,frenko,wrenko | 5/5 | 12 | - | custom/native |
+| 11 | delta | dlt,cdr | 2/2 | 14 | - | custom |
 | 12 | volatility-normalised | vnorm | 1/1 | 1 | - | custom |
 | 13 | quote/mid | qmid,micro | 2/2 | 0 | - | custom |
 | 14 | book-event clock | bmsg | 1/1 | 0 | - | custom |
-| 15 | directional-change/CUSUM | dchg,cusum | 2/2 | 3 | - | custom |
+| 15 | directional-change/CUSUM | dchg,cusum | 2/2 | 13 | - | custom |
 | 16 | point-and-figure/Kagi/line-break | pnf,kagi,lbrk | 3/3 | 5 | - | native |
 | 17 | profile periods | tpo | 1/1 | 0 | - | custom |
 | 18 | footprint | vfp | 1/1 | 0 | - | native |
@@ -32,31 +32,31 @@ VERDICT (data ends 2026-11-13; pick rule: trailing 6M, validated by rolling walk
 | time_m | TIME | W-BAR | built / property-screened | native Minute | 6 | - |
 | tick | ACTIVITY | W-BAR | built / property-screened | native Tick | 2 | - |
 | vol | ACTIVITY | W-BAR | built / property-screened | native Volume | 2 | - |
-| dol | ACTIVITY | W-BAR | built / property-screened | custom BarsType (user already has one): sum(Close*20*Volume) threshold | 3 | - |
-| vsess | ACTIVITY | W-BAR | built / property-screened | custom BarsType (volume threshold set at session start from a trailing table) | 4 | - |
+| dol | ACTIVITY | W-BAR | built / property-screened | custom BarsType (user already has one): sum(Close*20*Volume) threshold | 6 | - |
+| vsess | ACTIVITY | W-BAR | built / property-screened | custom BarsType (volume threshold set at session start from a trailing table) | 3 | - |
 | tsf | ACTIVITY | W-BAR | built / property-screened | custom BarsType (filter on tick size) | 3 | - |
-| tib | INFORMATION | W-BAR | built / property-screened | custom BarsType (stateful EWMA; buildable, new code) | 2 | - |
-| vib | INFORMATION | W-BAR | built / property-screened | custom BarsType (stateful EWMA; buildable, new code) | 1 | - |
-| dib | INFORMATION | W-BAR | built / property-screened | custom BarsType (stateful EWMA; buildable, new code) | 3 | - |
-| trb | INFORMATION | W-BAR | built / property-screened | custom BarsType (new code) | 3 | - |
+| tib | INFORMATION | W-BAR | built / property-screened | custom BarsType (stateful EWMA; buildable, new code) | 5 | - |
+| vib | INFORMATION | W-BAR | built / property-screened | custom BarsType (stateful EWMA; buildable, new code) | 2 | - |
+| dib | INFORMATION | W-BAR | built / property-screened | custom BarsType (stateful EWMA; buildable, new code) | 6 | - |
+| trb | INFORMATION | W-BAR | built / property-screened | custom BarsType (new code) | 4 | - |
 | vrb | INFORMATION | W-BAR | built / property-screened | custom BarsType (new code) | 2 | - |
-| drb | INFORMATION | W-BAR | built / property-screened | custom BarsType (new code) | 2 | - |
-| dlt | INFORMATION | W-BAR | built / property-screened | custom BarsType (NT8 DeltaBars style; buildable) | 3 | - |
-| cdr | INFORMATION | W-BAR | built / property-screened | custom BarsType | 0 | - |
+| drb | INFORMATION | W-BAR | built / property-screened | custom BarsType (new code) | 8 | - |
+| dlt | INFORMATION | W-BAR | built / property-screened | custom BarsType (NT8 DeltaBars style; buildable) | 6 | - |
+| cdr | INFORMATION | W-BAR | built / property-screened | custom BarsType | 8 | - |
 | vnorm | INFORMATION | W-BAR | built / property-screened | custom BarsType | 1 | - |
-| cusum | INFORMATION | W-BAR | built / property-screened | custom BarsType (event-driven) | 1 | - |
-| dchg | INFORMATION | W-BAR | built / property-screened | custom BarsType (zigzag-like; same as swing by ticks) | 2 | - |
+| cusum | INFORMATION | W-BAR | built / property-screened | custom BarsType (event-driven) | 6 | - |
+| dchg | INFORMATION | W-BAR | built / property-screened | custom BarsType (zigzag-like; same as swing by ticks) | 7 | - |
 | rng | PRICE | W-BAR | built / property-screened | native Range (verify: NT8 closes when range reaches N ticks; see step C) | 1 | - |
 | renko | PRICE | W-BAR | built / property-screened | native Renko | 1 | - |
 | mrenko | PRICE | W-BAR | built / property-screened | custom BarsType (MedianRenko / MeanRenko third-party) | 6 | - |
-| urenko | PRICE | W-BAR | built / property-screened | custom BarsType (user has UniRenko) | 2 | - |
+| urenko | PRICE | W-BAR | built / property-screened | custom BarsType (user has UniRenko) | 1 | - |
 | frenko | PRICE | W-BAR | built / property-screened | custom BarsType (FlexRenko/HybridRenko third-party) | 2 | - |
 | wrenko | PRICE | W-BAR | built / property-screened | custom BarsType (BetterRenko third-party) | 2 | - |
 | pnf | PRICE | W-BAR | built / property-screened | native PointAndFigure | 2 | - |
 | kagi | PRICE | W-BAR | built / property-screened | native Kagi | 2 | - |
 | lbrk | PRICE | W-BAR | built / property-screened | native LineBreak (3 lines; N-line custom) | 1 | - |
 | swing | PRICE | W-BAR | built / property-screened | custom BarsType (ZigZag-style) | 0 | - |
-| trend | PRICE | W-BAR | built | custom BarsType (NT8 TrendBars-style) | 0 | - |
+| trend | PRICE | W-BAR | built | custom BarsType (NT8 TrendBars-style) | 2 | - |
 | mom | PRICE | W-BAR | built / property-screened | custom BarsType (MomentumBars third-party) | 0 | - |
 | pasl | PRICE | W-BAR | built | custom BarsType | 0 | - |
 | rngor | COMPOSITE | W-BAR2 | built | custom BarsType | 0 | - |

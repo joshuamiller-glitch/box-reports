@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 19:21Z 11-17 (t+582.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 21:21Z 11-17 (t+584.6 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 100% min 99% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 100% min 100% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -4916,3 +4916,9 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - lead 21:13Z LEAD NOTE: CORES above; inbox empty; no new landings.
 - (wall 21:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 2026-11-17T21:17:26Z W-S1R: page refreshed, core cells done 9/15, wait cells 15/14; autopilot/DS3_REBUILD_S1R.md
+- 2026-11-17T21:25Z W-DATA validation DONE: fresh from-scratch block re-conversion of 11-02..11-13 equals the installed day files array-for-array on all 10 days (8 old days bit-equal; only the embedded tag string differs); raw T-count and contracts per day = manifest on 10/10 days; DS3_DATA_EXTEND.md has the table. Data end stays 2026-11-13 until new raw files land (none on the box).
+- lead 21:23Z LEAD NOTE: CORES above; inbox empty; no new landings.
+- lead 21:24Z LEAD NOTE: W-DATA DONE: L2 replica days 2026-11-02..11-13 in the manifest (980 days; data end 2026-11-13 17:00 ET close, nothing newer on the box), validated (independent raw count 10/10, from-scratch re-conversion array-equal 10/10 incl. old days; seal sha unchanged), ES/RTY raw ends 2026-10-30 so nothing newer; daily_extend_loop pid 2819417 (30 min). Engine base 202611 exists (W-EV store to 11-13, identity TL3_RE_JN05W2 202611 338 trades / 13,072.68). Queued at the HEAD of server 2 (QUEUES.txt .bak_lead_2125): S0 raw chassis 202611 x 7 books + TL3_EV_JL3 / TL3_EV_JN05W2JL2 202611. Gap noted: TL3_RB_S0_U7 has no 202309. Days after 11-13: hist/state files only; the engine store for new days is a manual W-EV build (build_1113.py pattern): needs a W-EV rebuild when new raw data lands.
+- lead 21:24Z LEAD NOTE: W-GRIDC rebuilding 202611 for all 411 feature rows (replica days to 11-13; November files had only 5 days), ~10-15 min; passes 1-2 around month 202412 at 20:46Z; data end 2026-11-13 stamped on W-GRIDC rows.
+- 2026-11-17T21:28Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- 2026-11-17 21:29Z W-ME PART E: queue _major_e 14 lines pending, 1991 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
