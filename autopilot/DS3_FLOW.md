@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (609 FL cell-months done, 199 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (624 FL cell-months done, 206 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -17,8 +17,13 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | set | scope | n | d_wk | d_wk175 | d_wk484 | dd | base_dd | d_dd | cn | base_cn | cexp | base_cexp | d_cwk | cdd | base_cdd | wk_noW44 | base_wk_noW44 | dd_noW44 | base_dd_noW44 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | TL3_FL_B6E1P7_HALF | P7 | 1895 | 1016 | 1778 | 1019 | 42598 | 52233 | -9635 | 490 | 467 | 266 | 253 | 943 | 37519 | 39663 | 24287 | 23989 | 42455 | 43405 |
+| TL3_FL_B6E1P7_SKIP | P7 | 1888 | 1342 | 2349 | 1345 | 49746 | 52233 | -2487 | 458 | 467 | 267 | 253 | 330 | 33197 | 39663 | 24222 | 23989 | 49746 | 43405 |
 | TL3_FL_B6E1P7_SKIP_PD | P7 | 1839 | -5486 | -9601 | -5458 | 56038 | 52233 | 3805 | 441 | 467 | 154 | 253 | -3877 | 50230 | 39663 | 18375 | 23989 | 55014 | 43405 |
+| TL3_FL_B6E1P7_SKIP_RND | P7 | 1859 | -484 | -846 | -469 | 51590 | 52233 | -644 | 451 | 467 | 234 | 253 | -977 | 41033 | 39663 | 23251 | 23989 | 51007 | 43405 |
+| TL3_FL_BAGO73_HALF | O73 | 1875 | 0.00 | 0.00 | 0.00 | 52233 | 52233 | 0.00 | 20 | 20 | 299 | 299 | 0.00 | 3760 | 3760 | 23989 | 23989 | 43405 | 43405 |
+| TL3_FL_BAGO73_SKIP | O73 | 1869 | 162 | 283 | 164 | 51467 | 52233 | -766 | 14 | 20 | 577 | 299 | 162 | 1952 | 3760 | 24101 | 23989 | 43405 | 43405 |
 | TL3_FL_BAGO73_SKIP_PD | O73 | 1866 | 62.93 | 110 | 65.47 | 51467 | 52233 | -766 | 11 | 20 | 618 | 299 | 62.93 | 1068 | 3760 | 23994 | 23989 | 42940 | 43405 |
+| TL3_FL_BAGO73_SKIP_RND | O73 | 1869 | -90.57 | -158 | -88.88 | 51467 | 52233 | -766 | 14 | 20 | 343 | 299 | -90.57 | 1805 | 3760 | 23828 | 23989 | 42940 | 43405 |
 | TL3_FL_BFC15NY_HALF | NY | 1875 | -91.69 | -160 | -95.07 | 52233 | 52233 | 0.00 | 271 | 271 | 42.70 | 47.09 | -91.69 | 17923 | 16913 | 23890 | 23989 | 45139 | 43405 |
 | TL3_FL_BFC15NY_SKIP | NY | 1800 | -1094 | -1914 | -1069 | 53100 | 52233 | 866 | 183 | 271 | 4.51 | 47.09 | -918 | 17309 | 16913 | 22877 | 23989 | 49585 | 43405 |
 | TL3_FL_BFC15NY_SKIP_PD | NY | 1815 | -974 | -1704 | -951 | 53100 | 52233 | 866 | 195 | 271 | 31.24 | 47.09 | -513 | 15442 | 16913 | 23007 | 23989 | 41756 | 43405 |
@@ -29,6 +34,8 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_BZN60M71_SKIP_PD | M71 | 1827 | -1493 | -2613 | -1477 | 55132 | 52233 | 2899 | 135 | 248 | 29.83 | -22.30 | 735 | 11183 | 28133 | 22648 | 23989 | 42456 | 43405 |
 | TL3_FL_BZN60M71_SKIP_RND | M71 | 1812 | -731 | -1279 | -709 | 55221 | 52233 | 2988 | 142 | 248 | 16.87 | -22.30 | 610 | 18542 | 28133 | 23481 | 23989 | 43988 | 43405 |
 | TL3_FL_BZN60M71_X15 | M71 | 1871 | 143 | 250 | 136 | 52233 | 52233 | 0.00 | 247 | 248 | -18.63 | -22.30 | 71.31 | 31247 | 28133 | 24144 | 23989 | 45837 | 43405 |
+| TL3_FL_DELAYL5_L1 | L5 | 1888 | 642 | 1124 | 638 | 59331 | 52233 | 7098 | 1114 | 1104 | 181 | 173 | 837 | 49604 | 42565 | 25141 | 23989 | 43487 | 43405 |
+| TL3_FL_DELAYL5_L2 | L5 | 1898 | 357 | 625 | 359 | 59379 | 52233 | 7146 | 1119 | 1104 | 179 | 173 | 661 | 50333 | 42565 | 24945 | 23989 | 43083 | 43405 |
 | TL3_FL_E3INJ | nan | 1938 | -122 | -214 | -136 | 52677 | 52233 | 444 | 1938 | 1875 | 129 | 134 | -122 | 52677 | 52233 | 23525 | 23989 | 37944 | 43405 |
 | TL3_FL_E3INJ_P11 | nan | 1902 | 465 | 813 | 456 | 53535 | 52233 | 1302 | 1902 | 1875 | 135 | 134 | 465 | 53535 | 52233 | 24633 | 23989 | 42783 | 43405 |
 | TL3_FL_E3INJ_P23 | nan | 1908 | -295 | -517 | -304 | 52486 | 52233 | 253 | 1908 | 1875 | 130 | 134 | -295 | 52486 | 52233 | 23691 | 23989 | 45668 | 43405 |
@@ -226,6 +233,8 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 
 | set | win | control | d_wk_vs_base | d_wk_vs_control | dd | dd_control | base_dd | cell_exp | cell_exp_control | cell_dd | cell_dd_control |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| TL3_FL_B6E1P7_SKIP | L3M | SKIP_RND | 1342 | 1826 | 49746 | 51590 | 52233 | 267 | 234 | 33197 | 41033 |
+| TL3_FL_BAGO73_SKIP | L3M | SKIP_RND | 162 | 252 | 51467 | 51467 | 52233 | 577 | 343 | 1952 | 1805 |
 | TL3_FL_BFC15NY_SKIP | L3M | SKIP_RND | -1094 | -437 | 53100 | 52166 | 52233 | 4.51 | 38.45 | 17309 | 23514 |
 | TL3_FL_BZN60M71_SKIP | L3M | SKIP_RND | -1060 | -329 | 54957 | 55221 | 52233 | 62.50 | 16.87 | 10703 | 18542 |
 | TL3_FL_LEADL5_SKIP | L3M | SKIP_RND | -3736 | 6361 | 47752 | 63936 | 52233 | 255 | 111 | 27355 | 40500 |
