@@ -76,3 +76,4 @@
 | RX-R2 | 2026-11-16 | RESULT of RX-H2 (C2) | W-RX | c2_*.parquet | NOT SUPPORTED: pooled bins flat (+0.03..+0.06 R for 0..4+ clusters against), negative only at 9+; leads P7 Asia / U7 (FIRST PASS) |
 | RX-R3 | 2026-11-16 | RESULT of RX-H3 (C3/D) | W-RX | c3_eval_*.json, c3_ctl_*.json | NOT SUPPORTED on path arithmetic (RC p >= 0.41, BH 0, IC ~ 0); exact engine not run; DD leads need verification (FIRST PASS) |
 | RB5-H1 | 2026-11-17 | Each live/engine layer (30 S5 sets) has positive value on ulcer or mean vs its leave-one-out cell in recent windows; null = no value | W-S5 | code/th_rebuild_s5/rb5_score.py, s5_res.pkl | PREREG, scoring pending (FIRST PASS) |
+| RB5-R1 | 2026-11-17 | RESULT of RB5-H1 | W-S5 | DS3_REBUILD_S5.md | see headline: layers help/cost/NOT DISTINGUISHABLE per page; in-sample FIRST PASS |

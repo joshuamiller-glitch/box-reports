@@ -153,6 +153,8 @@ A1 READING (FIRST PASS, P7 Asia USER_SET_V0 all-5 only; the other 12 sets are st
 | P2 go (S15) far (>= 50 pts) from the SPX gamma fli | 56 | 188 | 0.093 | 6510 | 4.6 | -3362 | 1.40 | 810 | 1418 | 792 | 5 | 0.080 / 0.000 | 52233 | 19346 |
 | P3 against (S15) NQ-ES 60-min correlation >= 0.8 | 55 | 220 | 0.076 | 6510 | 4.6 | -3362 | 1.46 | 932 | 1631 | 912 | 5 | 0.950 / 0.400 | 52233 | 19468 |
 | P4 against (S15) NQ 5-min squeeze on | 56 | 188 | 0.093 | 6510 | 4.6 | -3362 | 1.40 | 810 | 1418 | 792 | 5 | 0.080 / 0.000 | 52233 | 19346 |
+| Z1 against (S15) squeeze on at entry (NQ 5-min), all se | 1889 | 132 | 0.042 | 56722 | 22.3 | -40776 | 1.17 | 19212 | 33621 | 18257 | 261 | 0.160 / 0.000 | 56722 | 19212 |
+| Z2 go (S15) NQ/ES ratio 240-min trend with the tra | 1847 | 96 | 0.028 | 58625 | 25.8 | -38901 | 1.12 | 13634 | 23859 | 12692 | 257 | 0.000 / 0.000 | 58625 | 13634 |
 
 **window L6M** (reference: JN05W2 same session)
 
@@ -175,6 +177,8 @@ A1 READING (FIRST PASS, P7 Asia USER_SET_V0 all-5 only; the other 12 sets are st
 | P2 go (S15) far (>= 50 pts) from the SPX gamma fli | 151 | 300 | 0.191 | 6510 | 4.6 | -3362 | 1.67 | 1678 | 2937 | 1654 | 7 | 0.390 / 0.000 | 52233 | 24470 |
 | P3 against (S15) NQ-ES 60-min correlation >= 0.8 | 150 | 317 | 0.186 | 6510 | 4.6 | -3362 | 1.68 | 1763 | 3086 | 1738 | 7 | 1.000 / 0.000 | 52233 | 24556 |
 | P4 against (S15) NQ 5-min squeeze on | 151 | 300 | 0.191 | 6510 | 4.6 | -3362 | 1.67 | 1678 | 2937 | 1654 | 7 | 0.390 / 0.000 | 52233 | 24470 |
+| Z1 against (S15) squeeze on at entry (NQ 5-min), all se | 4124 | 153 | 0.058 | 56722 | 22.3 | -40776 | 1.20 | 23354 | 40869 | 22335 | 278 | 0.130 / 0.000 | 56722 | 23354 |
+| Z2 go (S15) NQ/ES ratio 240-min trend with the tra | 4113 | 128 | 0.051 | 58625 | 25.8 | -38901 | 1.16 | 19526 | 34170 | 18505 | 279 | 0.000 / 0.000 | 58625 | 19526 |
 
 <!--/FIX-->
 
