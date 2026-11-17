@@ -1,12 +1,12 @@
 # DS3_REBUILD_S1 [AT-ENTRY CLEAN TABLES: NONE YET - every table below is NOT at-entry-clean unless marked; see AT-ENTRY STATUS] - Stage 1 on RAW book trades (W-S1; order DIRECTIVE_REBUILD_20261116 + addenda + REFILL 11-17)
-AT-ENTRY STATUS (read first, 2026-11-17 05:57 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
+AT-ENTRY STATUS (read first, 2026-11-17 06:30 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
 
-> VALIDATION (FIRST PASS, written 2026-11-17 05:57 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
+> VALIDATION (FIRST PASS, written 2026-11-17 06:30 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
 
-VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 259 of 4503; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
+VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 259 of 4764; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
 
 ## Status
-Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 0, server 2 leased 41, load1 box 1 42.8. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 259/4503. Updated 2026-11-17 05:57 UTC.
+Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 10, server 2 leased 60, load1 box 1 40.5. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 259/4764. Updated 2026-11-17 06:30 UTC.
 
 ## Raw base (stage 0 table used here, engine $ at base lots and $1.18 RT; MAE_R positive = worse; R = net / (lots x 20 x stop))
 | book | session | trades | mean R | win % | net $ (base) | mean MFE_R | mean MAE_R |
@@ -195,13 +195,13 @@ IN-SAMPLE SCREEN ONLY (selection on the same 43 months it is tested on, top 60 b
 
 ## Adaptive permutation screen (rb1_sched.py; replaces the fixed 1,000-permutation plan)
 Rule: each chunk x book cell is SCREENED IN when its real STABLE pass count (book x session cells, windows ALL43+L6M, 20 outcomes) is >= 3 and >= 1.5 x the larger of the nonsense stable rate and the mean shifted-label (11/23/37) real stable rate on the same cell. Screened-in cells run 100 permutations first (batches 0,1); a cell is EXTENDED to 1,000 when its permutation p of the real stable count is <= 0.02 or its BH q (over all cells with 100 draws) is <= 0.10. A fixed-seed random 5% of the non-screened cells run the full 1,000 as a CALIBRATION check (their share with p < 0.05 should be about 5%); the other non-screened cells get 100 permutations last. Full 1,000 permutations are therefore not run for every cell: stated here, not hidden.
-Cells 1624, screened in 266, extended 64, calibration cells 54 (done with >=1,000 draws: 0). Cells with permutation p computed: 534.
+Cells 1624, screened in 266, extended 72, calibration cells 54 (done with >=1,000 draws: 0). Cells with permutation p computed: 534.
 Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - not finished (fewer than 20 cells done).
 | family | cells | screened in | with perm p | p < 0.05 |
 |--|--|--|--|--|
-| 1 | 1192 | 152 | 408 | 38 |
+| 1 | 1192 | 152 | 408 | 41 |
 | 10 | 16 | 3 | 3 | 2 |
-| 2 | 144 | 26 | 31 | 6 |
+| 2 | 144 | 26 | 31 | 7 |
 | 3 | 8 | 2 | 2 | 1 |
 | 4 | 8 | 2 | 2 | 0 |
 | 5 | 144 | 56 | 60 | 41 |
@@ -230,25 +230,46 @@ Leading cells by permutation p (count of real stable passes vs shifted nulls):
 | FLOW_PARTA_00 | P7 | 5 | 1589 | 3.91 | 1.41 | 100 | 0.0099 | 0.049 |
 | J_00 | A7 | 7 | 122 | 4.77 | 1.29 | 100 | 0.0099 | 0.049 |
 
-## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 05:51 UTC; A shards landed 18 of 1576
+## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 06:23 UTC; A shards landed 953 of 1576
 STATUS: PARTIAL: the tables below cover only the families whose A shards landed; families marked with fewer shards are NOT finished
 
 Family table at-entry, window ALL43, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
 | family | shards | tests | real beyond % | real STABLE % | shifted-label real STABLE % | nonsense stable % | random-draw stable % | planted detected % |
 |--|--|--|--|--|--|--|--|--|
-| 1 | 18/1192 | 13146 | 1.29 | 0.75 | 1.05 | 0.49 | 0.68 | 68 |
+| 1 | 617/1192 | 821652 | 1.45 | 0.80 | 1.18 | 0.52 | 0.68 | 71 |
+| 2 | 144/144 | 83487 | 2.03 | 1.42 | 1.57 | 0.52 | 0.68 | 72 |
+| 4 | 8/8 | 1476 | 2.51 | 1.63 | 1.22 | 0.52 | 0.68 | 72 |
+| 5 | 80/112 | 52254 | 2.01 | 1.25 | 0.96 | 0.52 | 0.68 | 72 |
+| 6 | 48/48 | 20226 | 1.23 | 0.74 | 1.22 | 0.52 | 0.68 | 72 |
+| 7 | 8/8 | 2751 | 2.98 | 2.29 | 1.44 | 0.52 | 0.68 | 72 |
+| 8 | 32/32 | 4992 | 2.06 | 1.22 | 1.35 | 0.52 | 0.68 | 72 |
+| 10 | 16/16 | 774 | 1.55 | 1.29 | 0.69 | 0.52 | 0.68 | 72 |
 
 Family table at-entry, window L6M, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
 | family | shards | tests | real beyond % | real STABLE % | shifted-label real STABLE % | nonsense stable % | random-draw stable % | planted detected % |
 |--|--|--|--|--|--|--|--|--|
-| 1 | 18/1192 | 10650 | 1.73 | 1.73 | 1.99 | 0.95 | 1.27 | 48 |
+| 1 | 617/1192 | 628137 | 1.44 | 1.44 | 2.04 | 0.95 | 1.34 | 51 |
+| 2 | 144/144 | 52239 | 1.84 | 1.84 | 2.12 | 0.95 | 1.33 | 51 |
+| 4 | 8/8 | 1056 | 0.28 | 0.28 | 2.87 | 0.95 | 1.33 | 51 |
+| 5 | 80/112 | 41361 | 1.56 | 1.56 | 1.93 | 0.95 | 1.33 | 51 |
+| 6 | 48/48 | 15837 | 1.41 | 1.41 | 1.96 | 0.95 | 1.33 | 51 |
+| 7 | 8/8 | 1965 | 1.88 | 1.88 | 2.17 | 0.95 | 1.33 | 51 |
+| 8 | 32/32 | 2559 | 1.84 | 1.84 | 2.38 | 0.95 | 1.33 | 51 |
+| 10 | 16/16 | 366 | 1.09 | 1.09 | 3.46 | 0.95 | 1.33 | 51 |
 
 Family table at-entry, window UNT, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
 | family | shards | tests | real beyond % | real STABLE % | shifted-label real STABLE % | nonsense stable % | random-draw stable % | planted detected % |
 |--|--|--|--|--|--|--|--|--|
-| 1 | 18/1192 | 11805 | 2.29 | 2.08 | 1.80 | 0.89 | 1.63 | 57 |
+| 1 | 617/1192 | 702183 | 1.95 | 1.81 | 1.79 | 0.88 | 1.69 | 61 |
+| 2 | 144/144 | 65136 | 2.33 | 2.20 | 2.20 | 0.88 | 1.69 | 61 |
+| 4 | 8/8 | 1221 | 0.41 | 0.41 | 1.83 | 0.88 | 1.69 | 61 |
+| 5 | 80/112 | 45729 | 1.78 | 1.65 | 1.76 | 0.88 | 1.69 | 61 |
+| 6 | 48/48 | 17205 | 1.97 | 1.83 | 1.72 | 0.88 | 1.69 | 61 |
+| 7 | 8/8 | 2391 | 2.97 | 2.51 | 1.56 | 0.88 | 1.69 | 61 |
+| 8 | 32/32 | 3687 | 2.25 | 2.17 | 2.52 | 0.88 | 1.69 | 61 |
+| 10 | 16/16 | 450 | 3.11 | 3.11 | 1.26 | 0.88 | 1.69 | 61 |
 
-PENDING (A shards not all landed: 18 of 1576): walk-forward and selection-null tables are not finished and are not shown.
+PENDING (A shards not all landed: 953 of 1576): walk-forward and selection-null tables are not finished and are not shown.
 
 ## WAIT variants re-scored honestly (every _d5/_d30/_d60/_d120 and tapelegs _L5 column; 7 of 7 book files landed)
 WAIT-THEN-ENTER (WTE): entry at signal+delay at the price then, same native stop/target distances from the new entry; trades closed inside the wait are excluded; approximation: the 1-s path ends at the original exit, so unresolved new brackets are marked at that exit (share in the table). EARLY-EXIT (EE): entered at signal, rule acts at +delay, value = mark at +delay minus hold-to-raw-outcome (only the remaining path counts).
