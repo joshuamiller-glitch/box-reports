@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 15:21Z 11-17 (t+578.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 17:21Z 11-17 (t+580.6 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 99% min 98% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 98% min 96% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -4728,3 +4728,7 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 17:11Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 36.89 34.68 34.45 load; auto-expansions 0 (battery stopped by user order)
 - lead 17:11Z LEAD NOTE (heartbeat wake): inbox empty; box1 97-100% busy 25-29 workers (load 33-37), server 2 100% busy 88-98 workers (load 88-91); pending box1-eligible 36,831 / server2-eligible 40,244 (-250 per 10 min). W-MA rows file 20 rows (R2A headline). No tier change. Heartbeat task bx843r0li.
 - (wall 17:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
+- lead 17:21Z LEAD NOTE (heartbeat wake): inbox empty; box1 98-99% busy 25-31 workers (load 34-36), server 2 100% busy 92-98 workers (load 90-94); pending box1-eligible 36,574 / server2-eligible 39,763. Deliverables page 17:17Z (T1 30 / T2 23 / T3 36 / T4 13). No tier change. Heartbeat task btoa91rba.
+- 2026-11-17T17:22:24Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- 2026-11-17 17:24Z W-ME PART E: queue _major_e 1447 lines pending, 119 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
+- 2026-11-17T17:26Z W-RU DS3_RANGEUSE.md rebuilt: 74 cells scored through L6M; 6 (cell,scope) pass the tolerant gate with a drawdown cut in recent AND older windows (leads, before placebo/null); placebo/null/gain-of-(b,(c) over (a) below. No PASS claim.; next rebuild in 3 h
