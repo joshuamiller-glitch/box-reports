@@ -3,9 +3,9 @@
 ## FIVE-LINE SUMMARY (FIRST PASS; ulcer = RMS weekly drawdown, lower is better; negative % = flat ON is better; flat ON vs OFF with the book cut working)
 1. JL2 K7 flat 45 ON vs OFF (P7 flat off): L6M ulcer -24.6% (7357->5547), mean +1264 $/wk (x1.75 +2212, $4.84 +1249); HOLD ulcer -18.5% (19847->16184), mean +105 $/wk (x1.75 +183, $4.84 +98); pooled ulcer -19.3% (14977->12088), mean +709 $/wk (x1.75 +1240, $4.84 +698)
 2. JL2 P7 flat 42 ON vs OFF (K7 flat 45 on): L6M ulcer +29.3% (5547->7174), mean -651 $/wk (x1.75 -1140, $4.84 -652); HOLD ulcer -12.1% (16184->14220), mean +374 $/wk (x1.75 +654, $4.84 +373); pooled ulcer -6.8% (12088->11270), mean -151 $/wk (x1.75 -265, $4.84 -152)
-3. JL3 K7 flat 45 ON vs OFF (P7 flat off): L6M n/a; HOLD n/a; pooled n/a
-4. JL3 P7 flat 42 ON vs OFF (K7 flat 45 on): L6M n/a; HOLD n/a; pooled n/a
-5. Landed: JL3 older windows 0 cell-months over 3 L3FB sets, leave-one-out 19 of 473 cell-months over 11 TL3_EV_L3_* sets (11 lines x 43 months); tiers: calibrated ulcer-primary tiers (DS3_PASS_RULE.md) need 30 engine draws, only 3 PC cells per book exist, so the control reading is the rank of the real flat among them.
+3. JL3 K7 flat 45 ON vs OFF (P7 flat off): L6M ulcer -23.8% (9080->6922), mean +570 $/wk (x1.75 +997, $4.84 +558); HOLD ulcer -1.9% (18815->18458), mean -752 $/wk (x1.75 -1316, $4.84 -762); pooled ulcer -5.8% (14810->13953), mean -80 $/wk (x1.75 -140, $4.84 -91)
+4. JL3 P7 flat 42 ON vs OFF (K7 flat 45 on): L6M ulcer +27.6% (6922->8830), mean -1011 $/wk (x1.75 -1769, $4.84 -1008); HOLD ulcer -7.0% (18458->17157), mean +532 $/wk (x1.75 +932, $4.84 +531); pooled ulcer -2.0% (13953->13679), mean -259 $/wk (x1.75 -453, $4.84 -258)
+5. Landed: JL2 older windows (GAP/PRE/X') landed cell-months: 74 over 28 FB sets (A_K7 1, A_KP 31, A_P7 1, B_K7 1, B_KP 1, B_P7 1, C_K7 1, C_KP 1, C_P7 1, D_K7_D39 1, D_K7_D51 1, D_KP_D39_D36 2); JL3 cells 110 cell-months over 10 L3FB sets, leave-one-out 19 of 473 cell-months over 11 TL3_EV_L3_* sets (11 lines x 43 months); tiers: calibrated ulcer-primary tiers (DS3_PASS_RULE.md) need 30 engine draws, only 3 PC cells per book exist, so the control reading is the rank of the real flat among them.
 
 A_P7 note: A_P7 = P7 flat 42 ONLY (K7 flat OFF): a builder gap against the design (A_P7 was meant as the reference plus P7 flat = A_KP); relabelled, not rebuilt; B_P7 = the reference (P7 had no flat) and B_KP = B_K7; the comparisons above use the right pairs.
 
@@ -30,18 +30,18 @@ A_P7 note: A_P7 = P7 flat 42 ONLY (K7 flat OFF): a builder gap against the desig
 
 | comparison | window | ON vs OFF (book cut working) | PC_* controls (same slot replaced by a persistent random trigger, q 0.05 / 0.10 / 0.20: ulcer% / mean $/wk) | rank of the real flat |
 |:--|:--|:--|:--|:--|
-| K7 flat 45 ON vs OFF (P7 flat off) | L6M | n/a | - | - |
-| K7 flat 45 ON vs OFF (P7 flat off) | HOLD | n/a | - | - |
-| K7 flat 45 ON vs OFF (P7 flat off) | pooled | n/a | - | - |
-| P7 flat 42 ON vs OFF (K7 flat 45 on) | L6M | n/a | - | - |
-| P7 flat 42 ON vs OFF (K7 flat 45 on) | HOLD | n/a | - | - |
-| P7 flat 42 ON vs OFF (K7 flat 45 on) | pooled | n/a | - | - |
-| K7 flat 45 ON vs OFF (P7 flat 42 on) | L6M | n/a | - | - |
-| K7 flat 45 ON vs OFF (P7 flat 42 on) | HOLD | n/a | - | - |
-| K7 flat 45 ON vs OFF (P7 flat 42 on) | pooled | n/a | - | - |
-| P7 flat 42 ON vs OFF (K7 flat off) | L6M | n/a | - | - |
-| P7 flat 42 ON vs OFF (K7 flat off) | HOLD | n/a | - | - |
-| P7 flat 42 ON vs OFF (K7 flat off) | pooled | n/a | - | - |
+| K7 flat 45 ON vs OFF (P7 flat off) | L6M | ulcer -23.8% (9080->6922), mean +570 $/wk (x1.75 +997, $4.84 +558) | q05 +4.0% -10 / q10 +7.5% +518 / q20 +18.2% +432 | ulcer better than 3 of 3 controls |
+| K7 flat 45 ON vs OFF (P7 flat off) | HOLD | ulcer -1.9% (18815->18458), mean -752 $/wk (x1.75 -1316, $4.84 -762) | q05 +7.5% -423 / q10 +18.9% -1453 / q20 +6.2% -1572 | ulcer better than 3 of 3 controls |
+| K7 flat 45 ON vs OFF (P7 flat off) | pooled | ulcer -5.8% (14810->13953), mean -80 $/wk (x1.75 -140, $4.84 -91) | q05 +6.9% -217 / q10 +16.8% -458 / q20 +8.6% -562 | ulcer better than 3 of 3 controls |
+| P7 flat 42 ON vs OFF (K7 flat 45 on) | L6M | ulcer +27.6% (6922->8830), mean -1011 $/wk (x1.75 -1769, $4.84 -1008) | q05 +39.2% -375 / q10 +40.1% -202 / q20 +46.5% -2513 | ulcer better than 3 of 3 controls |
+| P7 flat 42 ON vs OFF (K7 flat 45 on) | HOLD | ulcer -7.0% (18458->17157), mean +532 $/wk (x1.75 +932, $4.84 +531) | q05 -3.7% +695 / q10 -6.8% +592 | ulcer better than 2 of 2 controls |
+| P7 flat 42 ON vs OFF (K7 flat 45 on) | pooled | ulcer -2.0% (13953->13679), mean -259 $/wk (x1.75 -453, $4.84 -258) | q05 +2.8% +153 / q10 +0.4% +191 / q20 +46.5% -2513 | ulcer better than 3 of 3 controls |
+| K7 flat 45 ON vs OFF (P7 flat 42 on) | L6M | ulcer -26.2% (11962->8830), mean +985 $/wk (x1.75 +1724, $4.84 +978) | - | - |
+| K7 flat 45 ON vs OFF (P7 flat 42 on) | HOLD | ulcer +5.2% (16317->17157), mean -791 $/wk (x1.75 -1384, $4.84 -802) | - | - |
+| K7 flat 45 ON vs OFF (P7 flat 42 on) | pooled | ulcer -4.9% (14385->13679), mean +116 $/wk (x1.75 +203, $4.84 +107) | - | - |
+| P7 flat 42 ON vs OFF (K7 flat off) | L6M | ulcer +31.7% (9080->11962), mean -1426 $/wk (x1.75 -2496, $4.84 -1428) | - | - |
+| P7 flat 42 ON vs OFF (K7 flat off) | HOLD | ulcer -13.3% (18815->16317), mean +571 $/wk (x1.75 +999, $4.84 +570) | - | - |
+| P7 flat 42 ON vs OFF (K7 flat off) | pooled | ulcer -2.9% (14810->14385), mean -455 $/wk (x1.75 -797, $4.84 -456) | - | - |
 
 
 
