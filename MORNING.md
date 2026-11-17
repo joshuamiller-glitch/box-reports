@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-16T23:42Z
+## TREND (TL) update 2026-11-17T00:12Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-16T23:33:24Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T00:03:24Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -4198,3 +4198,5 @@ LATE / AT RISK: Step 2 controls will not all finish by 20:30Z (real cells HOLD+L
 - (wall 00:06Z) W-FL1 hourly: FL cell-months done 451, pending 11; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 - lead 00:07Z INBOX 20261117_0007Z_box1-underfilled.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
 - 2026-11-17T00:09:28Z W-EV FLAT-vs-BOOK: 60 FB cell-months done (of 28 sets x 12 months stage 1-2), page DS3_FLAT_VS_BOOK.md rebuilt; closest to live: not yet scored
+- (wall 00:14Z) W-TL2b T2 page refreshed: autopilot/DS3_TOOLS_T2_P3.md
+- (wall 00:14Z) WATCHDOG: 15-min avg cores busy 82.6% (<90%, min last 15 52.8%); reason: hungry tags: CF(run 2/q 8),EV(run 2/q 8),BD(run 6/q 10),FL(run 4/q 8),RB(run 0/q 4),RA(run 0/q 2),SURVX(run 0/q 8),GAPS(run 0/q 6),NXHC(run 0/q 8),NEXTF(run 0/q 9),SMART(run 0/q 10),SMARTB(run 0/q 8),SMARTC(run 0/q 8),WORKS_JN05(run 0/q 8),PC(run 0/q 6),RX(run 0/q 4); last WAIT: 00:14:46 CH WAIT running exact workers 23 (cap 32, limit for CH 28) load1 29.1 (cap 40, measured knee ~24 busy workers) OVER-SHARE(others hungry ['CF', 'EV', 'BD', 'FL', 'RB', 'RA', 'SURVX', 'GAPS', 'NXHC', 'NEXTF', 'SMART', 'SMARTB', 'SMARTC', 'WORKS_JN05', '; MemAvail 94.9 GB; live reservations 0 (0 GB); workers 23, of which TP-adopted 23 (RSS 44.4. Lead must act within 15 min.
