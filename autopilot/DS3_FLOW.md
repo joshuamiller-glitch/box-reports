@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (797 FL cell-months done, 260 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (814 FL cell-months done, 267 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -183,12 +183,19 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_WAITU7_120_TAKE | U7 | 1861 | -6025 | -10544 | -6013 | 60992 | 52233 | 8759 | 119 | 121 | 56.58 | 518 | -4306 | 17144 | 14457 | 18228 | 23989 | 42779 | 43405 |
 | TL3_FL_WAITU7_30_DROP | U7 | 1805 | -3679 | -6437 | -3615 | 56937 | 52233 | 4703 | 38 | 121 | 934 | 518 | -2094 | 5726 | 14457 | 20227 | 23989 | 52592 | 43405 |
 | TL3_FL_WAITU7_30_TAKE | U7 | 1878 | -3300 | -5775 | -3293 | 57266 | 52233 | 5033 | 119 | 121 | 163 | 518 | -3328 | 16300 | 14457 | 20851 | 23989 | 39781 | 43405 |
+| TL3_FL_WAITU7_60_DROP | U7 | 1822 | -2590 | -4533 | -2539 | 55599 | 52233 | 3365 | 54 | 121 | 686 | 518 | -1974 | 9718 | 14457 | 21563 | 23989 | 46187 | 43405 |
+| TL3_FL_WAITU7_60_TAKE | U7 | 1878 | -4124 | -7217 | -4116 | 56765 | 52233 | 4532 | 119 | 121 | 72.72 | 518 | -4158 | 18592 | 14457 | 19919 | 23989 | 42037 | 43405 |
 
 ### window L6M
 
 | set | scope | n | d_wk | d_wk175 | d_wk484 | dd | base_dd | d_dd | cn | base_cn | cexp | base_cexp | d_cwk | cdd | base_cdd | wk_noW44 | base_wk_noW44 | dd_noW44 | base_dd_noW44 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TL3_FL_B6E1P7_HALF | P7 | 4217 | 1383 | 2421 | 1395 | 42598 | 52233 | -9635 | 1068 | 1037 | 350 | 328 | 1240 | 37519 | 39663 | 27876 | 26810 | 42455 | 43405 |
+| TL3_FL_B6E1P7_SKIP | P7 | 4189 | 426 | 746 | 440 | 49746 | 52233 | -2487 | 991 | 1037 | 331 | 328 | -445 | 33197 | 39663 | 26689 | 26810 | 49746 | 43405 |
 | TL3_FL_B6E1P7_SKIP_PD | P7 | 4057 | -3748 | -6559 | -3712 | 56038 | 52233 | 3805 | 973 | 1037 | 263 | 328 | -3133 | 50230 | 39663 | 23070 | 26810 | 55014 | 43405 |
+| TL3_FL_B6E1P7_SKIP_RND | P7 | 4106 | -2370 | -4148 | -2338 | 51590 | 52233 | -644 | 961 | 1037 | 301 | 328 | -1882 | 41033 | 39663 | 24250 | 26810 | 51007 | 43405 |
+| TL3_FL_BAGO73_HALF | O73 | 4169 | 0.00 | 0.00 | 0.00 | 52233 | 52233 | 0.00 | 46 | 46 | 232 | 232 | 0.00 | 5116 | 5116 | 26810 | 26810 | 43405 | 43405 |
+| TL3_FL_BAGO73_SKIP | O73 | 4151 | 74.32 | 130 | 76.76 | 51467 | 52233 | -766 | 28 | 46 | 453 | 232 | 74.32 | 2406 | 5116 | 26858 | 26810 | 43405 | 43405 |
 | TL3_FL_BAGO73_SKIP_PD | O73 | 4155 | 70.00 | 123 | 71.90 | 51467 | 52233 | -766 | 32 | 46 | 393 | 232 | 70.00 | 3002 | 5116 | 26854 | 26810 | 42940 | 43405 |
 | TL3_FL_BFC15NY_HALF | NY | 4171 | 225 | 394 | 221 | 52233 | 52233 | 0.00 | 602 | 600 | 84.70 | 74.84 | 225 | 22125 | 21686 | 27044 | 26810 | 45139 | 43405 |
 | TL3_FL_BFC15NY_SKIP | NY | 4022 | -542 | -949 | -519 | 53100 | 52233 | 867 | 426 | 600 | 77.32 | 74.84 | -443 | 20516 | 21686 | 26281 | 26810 | 49585 | 43405 |
@@ -331,6 +338,9 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_WAITU7_120_TAKE | L3M | HOLD | -6025 | -448 | 60992 | 61242 | 52233 | 56.58 | 73.35 | 17144 | 20406 |
 | TL3_FL_WAITU7_30_DROP | L3M | HOLD | -3679 | -846 | 56937 | 57381 | 52233 | 934 | 204 | 5726 | 16260 |
 | TL3_FL_WAITU7_30_TAKE | L3M | HOLD | -3300 | -467 | 57266 | 57381 | 52233 | 163 | 204 | 16300 | 16260 |
+| TL3_FL_WAITU7_60_DROP | L3M | HOLD | -2590 | 2622 | 55599 | 56605 | 52233 | 686 | 138 | 9718 | 16529 |
+| TL3_FL_WAITU7_60_TAKE | L3M | HOLD | -4124 | 1088 | 56765 | 56605 | 52233 | 72.72 | 138 | 18592 | 16529 |
+| TL3_FL_B6E1P7_SKIP | L6M | SKIP_RND | 426 | 2796 | 49746 | 51590 | 52233 | 331 | 301 | 33197 | 41033 |
 | TL3_FL_BFC15NY_SKIP | L6M | SKIP_RND | -542 | 135 | 53100 | 52166 | 52233 | 77.32 | 65.26 | 20516 | 23514 |
 | TL3_FL_BZN60M71_SKIP | L6M | SKIP_RND | -632 | 418 | 54957 | 55221 | 52233 | 19.34 | -22.91 | 17765 | 29659 |
 | TL3_FL_LEADL5_SKIP | L6M | SKIP_RND | -3882 | 8593 | 47752 | 63936 | 52233 | 315 | 128 | 27355 | 40500 |
