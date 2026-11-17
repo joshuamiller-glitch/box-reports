@@ -1,0 +1,6 @@
+RESEARCH ORDER (relay, 11-17 22:33Z): user, just now: "the new triggers on all bar types, including one minute, and every other bar type and time, is more important than confluence right now. I hope it's prioritised." Make it so on BOTH machines:
+1. The trigger x bar grid (all time bars incl. 1-minute, and every other bar type) and the bar-swap engine rows get the cores. Confluence work yields: W-S1R finishes the cells it is in the middle of and publishes its 00:20Z table from what is done, then stops taking cores until the grid's pass 1 is complete (its remaining cells and the re-run to 11-13 wait). Same for W-RECENT's hourly loop, range-use (W-RU), W-PM / W-LR / W-EC fillers and any other non-trigger analysis loop on box 1: pause or nice 19, and free their memory (box 1 MemAvail was 41 GB).
+2. Box 1 then runs grid workers too (as many as memory allows above 40 GB free), heavy fine-bar rows on server 2.
+3. Order of work stays: speed fix (2224Z) -> pass 1 live time bars + live-seven baseline -> pass 1 all other time bars -> pass 1 every other bar type -> pass 2 depth -> layers + engine. Bar-swap engine rows and LS_K2_M30 months keep the 12 engine slots.
+4. Next lead note: what was paused, cores now on the grid on each machine, seconds per job after the fix, and the times for each pass-1 stage.
+Research only. No spend.
