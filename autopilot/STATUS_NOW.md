@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-17 13:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 14:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-17 13:45Z | box1: busy 99%, load1 40.41, workers 30, MemAvail 83 GB | server2: busy 100%, load1 92.54, workers 94, MemAvail 1381 GB | pending box1-eligible 43891 / server2-eligible 59355 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-17 14:00Z | box1: busy 99%, load1 37.30, workers 25, MemAvail 92 GB | server2: busy 100%, load1 88.58, workers 90, MemAvail 1391 GB | pending box1-eligible 36157 / server2-eligible 37630 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-17 13:45Z
+2026-11-17 14:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-17 13:45Z | box1: busy 99%, load1 40.41, workers 3
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 83.3 GB; live reservations 0 (0 GB); workers 30, of which TP-adopted 30 (RSS 54.5 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 40.41, 39.01, 38.93
-  by tag: CF quota 8 running 4 hungry True RSS 6.3 GB PSS 5.3 GB; JV quota 14 running 8 hungry True RSS 15.0 GB PSS 11.0 GB; RB quota 4 running 1 hungry True RSS 0.6 GB PSS 0.4 GB; TOOLS quota 8 running 17 hungry False RSS 32.6 GB PSS 24.0 G
-  cell-months finished last hour (DONE markers): 1601
-  top running jobs: TL3_CF_ST_25_S_RND (x8);TL3_DD_JL3_ID (x4);TL3_CF_ST_26_S (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 92.54, 91.52, 91.53|/dev/md2         28T  880G   28T   4% /mnt/l2|184|
+Server 1 (this box): MemAvail 92.1 GB; live reservations 4 (4 GB); workers 25, of which TP-adopted 25 (RSS 46.6 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 37.30, 37.91, 38.48
+  by tag: CF quota 8 running 5 hungry True RSS 7.3 GB PSS 6.7 GB; MA quota 8 running 4 hungry True RSS 7.9 GB PSS 5.6 GB; JV quota 14 running 2 hungry True RSS 3.3 GB PSS 2.8 GB; TOOLS quota 8 running 14 hungry False RSS 28.1 GB PSS 21.3 G
+  cell-months finished last hour (DONE markers): 1727
+  top running jobs: TL3_DD_JL3_OFF (x6);TL3_MC_ID (x4);TL3_CF_ST_27_S (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 88.58, 89.94, 90.58|/dev/md2         28T  880G   28T   4% /mnt/l2|176|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -36,6 +36,3 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 92.54, 91.52, 91.53|/dev/md
 
 ## INBOX (last 5 received)
 20261117_1331Z_day-done-variants-from-live-night.md 20261117_1334Z_stage3-brackets-by-environment.md 20261117_1337Z_exits-add-uw-levels-sizing-book-walls.md 20261117_1342Z_MAJOR-CHANGES-PROGRAMME.md 20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md
-- lead 13:35Z INBOX 20261117_1337Z_exits-add-uw-levels-sizing-book-walls.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
-- lead 13:40Z INBOX 20261117_1342Z_MAJOR-CHANGES-PROGRAMME.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
-- lead 13:45Z INBOX 20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
