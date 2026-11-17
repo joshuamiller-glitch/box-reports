@@ -1,14 +1,14 @@
-# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 14:07Z (unattended loop, every 30 min)
+# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 14:10Z (unattended loop, every 30 min)
 
 > VALIDATION (W-MF, FIRST PASS): trials counted = 1324 standalone cells (wave 1: 109 configs x 4 exits, PREREG_MF.md, ledger MF1; wave 2: 222 configs x 4 exits incl. limit variants, PREREG_MF2.md, ledger MF2); correction = per-family and per-session best-of selection on 2023-04..2025-10 only, then HOLD 2025-11..2026-04 and L6M 2026-05..10 untouched; White RC over the selection cells (1,000 block bootstraps) + deflated Sharpe on the untouched year with N = cells of the group; PBO not computed (selection is a single frozen pick, rolling 12m/3m version shown); engine controls: 30 date-shifted stack controls NOT FINISHED (staged by the loop after the real months land); shifted-label standalone controls (+-11/23/37 days) shown. Data end 2026-10-30 (ES bars end 2026-10-16).
 
-VERDICT (data ends 2026-10-30; FIRST PASS): standalone screen of 1324 London/PRE/NY cells (waves 1+2): 1 family picks pass (a), 0 pass (a)+(b); engine stack identity 202610 pending, 202504 pending; no CONFIRMED book.
+VERDICT (data ends 2026-10-30; FIRST PASS): standalone screen of 1324 London/PRE/NY cells (waves 1+2): 1 family picks pass (a), 0 pass (a)+(b); engine stack identity 202610 PASS (691 vs 691 trades, net 37159.82 vs 37159.82), 202504 PASS (637 vs 637 trades, net 41239.76 vs 41239.76); no CONFIRMED book.
 
 ## Summary (five lines)
 1. TRIED: 1324 pre-registered cells (wave 1: 109 configs; wave 2: new families W1-W12, loosened near-miss grids and 0/4-point resting-limit variants with a 0.5 pt haircut) x 4 exit cells in ~60 families for London, PRE, NY AM and NY PM (open drive/fail, Asia range, 08:30 pullback, VWAP reversion, ORB break/fade, gap, drive pullback, 10:00 reversal, trend/chop day, lunch break, power hour, ES-led, mean-reversion sweeps/RSI2/failed breakouts) on a standalone 1-min simulator; selection on 2023-04..2025-10, the last 12 months untouched.
 2. HOLDS: 1 of 59 family picks (both waves) are positive on the untouched year with >= 150 trades and > 60% positive months (M3_FAILED_BREAK_LON|lb=60,rj=5 E2_60_60 UNT 0.057 R n 150 (b fail: corr -0.06, worst-20-weeks $-1696)); 0 also pass the diversification test (b). Standalone survivors are LEADS only until the engine stack test and 30 shifted-date controls land. Highest untouched-year R among picks: P3_POWER_HOUR|k=0.4 E4_vol, 0.194 R on 122 trades (selection 0.063 R, below the 150-trade bar).
 3. DOES NOT HOLD: most families have a selection-window mean near 0.03-0.06 R that does not survive the untouched year; no family has a White RC p below 0.05 over its selection cells; ORB, drive pullback, 10:00 reversal, RSI2 and lunch/PM VWAP reversion picks are negative on the untouched year. No cell reaches the 0.2+ R O7 has on its 506 trades. Wave 2 adds no survivor: no new family or limit variant (fill rates 0.6-0.99) passes (a), and loosening the near-miss grids does not reproduce P3 or ES-led NY AM (3e).
-4. NEEDS IN DS7: nothing yet. Engine injection sets TL3_MF_* (JL3 + one injected book, tag MF1) are queued: identity 202610 pending, 202504 pending; no standalone result is used for a build until identity passes and the stack rows below fill in.
+4. NEEDS IN DS7: nothing yet. Engine injection sets TL3_MF_* (JL3 + one injected book, tag MF1) are queued: identity 202610 PASS (691 vs 691 trades, net 37159.82 vs 37159.82), 202504 PASS (637 vs 637 trades, net 41239.76 vs 41239.76); no standalone result is used for a build until identity passes and the stack rows below fill in.
 5. NEXT: engine identity and stack rows (alone; with part A vector and part B picks once their finals exist) as months land, then 30 shifted-date engine controls for the best candidate; shelf London/NY re-score is in 2b (standalone; engine-exact marginals are W-MB's).
 
 ## 1. Method and simulator fidelity
@@ -358,7 +358,7 @@ Reading: nearly every shelf book is NEGATIVE or flat on the 31-month selection w
 
 ## 5. Exact-engine stack test (JL3 + one injected book, tag MF1; uw_inject hook; sets TL3_MF_*)
 
-Identity (inert event file, registered book): 202610 pending; 202504 pending. Reference: JL3 202610 = 691 trades net 37,159.82; 202504 = 637 / 41,239.76 (engine fee 1.18/lot). A candidate's rows are NOT USED until both identity lines say PASS.
+Identity (inert event file, registered book): 202610 PASS (691 vs 691 trades, net 37159.82 vs 37159.82); 202504 PASS (637 vs 637 trades, net 41239.76 vs 41239.76). Reference: JL3 202610 = 691 trades net 37,159.82; 202504 = 637 / 41,239.76 (engine fee 1.18/lot). A candidate's rows are NOT USED until both identity lines say PASS.
 
 No engine months have landed for the candidates yet (queued: _major_f/pending.txt after B in QUEUES.txt; tag MF @4; box 1 filler QL_NCH=4). Rows appear here automatically.
 
