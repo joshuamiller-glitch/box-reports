@@ -1,12 +1,12 @@
-# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-17 18:57Z
-> VALIDATION (W-S3, FIRST PASS, 2026-11-17): trials counted = per book 7 schemes x 3 buckets x <= 5 sessions + pooled x 11 candidates (native + 10 priority grid sets), 7 books; the screen is read against 21 shifted-label runs (11/23/37 days) and 3 nonsense 3-bucketings (all counted); correction = walk-forward (one freeze per book on the SEL months landed, then HOLD 2025-11..2026-04 and L6M 2026-05..10 read once) + label nulls; PBO / White RC over the full grid on the stage 3 page; engine-exact assembly and 30 random-bracket controls NOT built yet: nothing here is a tier, missing controls = NOT FINISHED. Numbers shown: SEL-only (no book frozen yet).
+# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-17 19:29Z
+> VALIDATION (W-S3, FIRST PASS, 2026-11-17): trials counted = per book 7 schemes x 3 buckets x <= 5 sessions + pooled x 11 candidates (native + 10 priority grid sets), 7 books; the screen is read against 21 shifted-label runs (11/23/37 days) and 3 nonsense 3-bucketings (all counted); correction = walk-forward (one freeze per book on the SEL months landed, then HOLD 2025-11..2026-04 and L6M 2026-05..10 read once) + label nulls; PBO / White RC over the full grid on the stage 3 page; engine-exact assembly and 30 random-bracket controls NOT built yet: nothing here is a tier, missing controls = NOT FINISHED. Numbers shown: out of sample after the freeze for frozen books, SEL-only otherwise.
 
-VERDICT (data ends 2026-10-30; FIRST PASS, PARTIAL: only the 10-set priority subset of the grid (6 targets at stop 60, 40/40, 40/60, 90/60, 90/90) is used and it is still landing; frozen books none): see five lines below; nothing assembled on the engine, no tier.
+VERDICT (data ends 2026-10-30; FIRST PASS, PARTIAL: only the 10-set priority subset of the grid (6 targets at stop 60, 40/40, 40/60, 90/60, 90/90) is used and it is still landing; frozen books H7, A7): see five lines below; nothing assembled on the engine, no tier.
 
 ## Five-line summary
 1. Tried: every stage 3 trade is tagged at the signal with 7 environment bucketings (atr_rel thirds and live 1.3/1.6 marks, with/against the day 3-of-4 vote, ER30 proxy, range used vs HAR forecast, room to nearest level ahead, fresh/rechase); the best of 11 bracket settings is picked per book x session x bucket on SEL only.
-2. Holds / not: the untouched read is in the null table: a real scheme counts only if its holding-pick count is above the three shifted-label runs and the nonsense runs (no book frozen yet).
-3. Shape: Table 4 counts cells whose best target moves in the expected direction (nearer against the day / low room / high range used): 0 consistent of 0 cells with a varying pick.
+2. Holds / not: the untouched read is in the null table: a real scheme counts only if its holding-pick count is above the three shifted-label runs and the nonsense runs (see Table 2).
+3. Shape: Table 4 counts cells whose best target moves in the expected direction (nearer against the day / low room / high range used): 2 consistent of 10 cells with a varying pick.
 4. DS7 needs: all inputs are own-bar features (atr_rel, day vote, 1-min closes, level distances, HAR range forecast) except the ER ladder (own ER30 proxy used, live ladder not replicated) and the no-trade zones (levels used instead).
 5. Next: for any holding rule: exact assembled raw-chassis and JL3 runs with 30 random-bracket controls (not built; needs the lead's queue OK); the stage 3 grid keeps landing.
 
@@ -27,39 +27,104 @@ New parser tokens: stop=, timestop=, halfoff= and a session in the third column 
 | M7 | 3 | 12 / 12 | too few months landed |
 | P7 | 3 | 12 / 12 | too few months landed |
 | U7 | 3 | 12 / 12 | too few months landed |
-| H7 | 3 | 12 / 12 | too few months landed |
-| A7 | 3 | 12 / 12 | too few months landed |
-| O7 | 1 | 0 / 12 | too few months landed |
+| H7 | 31 | 12 / 12 | FROZEN on 31 SEL months (HOLD/L6M read once after the freeze) |
+| A7 | 31 | 12 / 12 | FROZEN on 31 SEL months (HOLD/L6M read once after the freeze) |
+| O7 | 1 | 7 / 12 | too few months landed |
 
 Cuts (frozen from native SEL trades): atr_rel thirds [1.0641536788691555, 2.289134438305709], ER30 thirds [0.16943521594684385, 0.28316831683168314].
 
-## Table 2 - the null: how often a pick is made and holds untouched (HOLD and L6M ulcer lower than native, mean within -25%), frozen books only (none)
+## Table 2 - the null: how often a pick is made and holds untouched (HOLD and L6M ulcer lower than native, mean within -25%), frozen books only (H7, A7)
 | scheme | real: picks made / holding untouched | shift 11 | shift 23 | shift 37 | nonsense (3 runs, pooled) |
 |--|--|--|--|--|--|
-| ATRT | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
-| ATRL | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
-| DAY | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
-| ER | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
-| RNG | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
-| ROOM | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
-| FRESH | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| ATRT | 8 / 2 | 11 / 6 | 7 / 3 | 8 / 3 | 31 / 13 |
+| ATRL | 5 / 0 | 7 / 2 | 7 / 1 | 6 / 2 | 31 / 13 |
+| DAY | 5 / 2 | 5 / 0 | 5 / 0 | 3 / 0 | 31 / 13 |
+| ER | 8 / 1 | 10 / 0 | 8 / 2 | 8 / 4 | 31 / 13 |
+| RNG | 12 / 6 | 9 / 3 | 7 / 2 | 10 / 6 | 31 / 13 |
+| ROOM | 5 / 2 | 5 / 2 | 5 / 0 | 4 / 1 | 31 / 13 |
+| FRESH | 4 / 0 | 4 / 0 | 7 / 4 | 7 / 2 | 31 / 13 |
 
 ## Table 1 - picks (non-native) by book x scheme x session x bucket
 | book | scheme | session | bucket | SEL n (native) | pick | SEL ulcer native -> pick | HOLD ulcer | HOLD mean $/wk (@4.84) | L6M ulcer | L6M mean $/wk (@4.84) | holds untouched |
 |--|--|--|--|--|--|--|--|--|--|--|--|
+| H7 | ATRT | ALL | atr_rel low third | 382 | S040T040 | 21104 -> 10431 | 9509 -> 15787 | 783 -> -373 (744 -> -417) | 6570 -> 9647 | 3044 -> 2197 (2998 -> 2146) | no |
+| H7 | ATRT | ALL | high third | 236 | S090T090 | 11384 -> 7438 | 5538 -> 10970 | 45 -> 75 (39 -> 69) | 995 -> 2546 | 568 -> 675 (562 -> 669) | no |
+| H7 | ATRT | asia | atr_rel low third | 379 | S040T040 | 21207 -> 10509 | 9747 -> 15892 | 737 -> -404 (698 -> -447) | 6570 -> 9647 | 3044 -> 2197 (2998 -> 2146) | no |
+| H7 | ATRT | nyam | high third | 225 | S090T090 | 13889 -> 10066 | 3535 -> 8618 | 25 -> -39 (20 -> -44) | 1137 -> 2576 | 385 -> 400 (379 -> 394) | no |
+| H7 | ATRL | ALL | atr_rel <1.3 | 414 | S040T040 | 19213 -> 10340 | 11937 -> 18794 | 998 -> -109 (955 -> -157) | 12103 -> 13823 | 2950 -> 2819 (2891 -> 2753) | no |
+| H7 | ATRL | asia | atr_rel <1.3 | 406 | S040T040 | 19316 -> 10386 | 12175 -> 18908 | 952 -> -140 (909 -> -188) | 12572 -> 13824 | 2859 -> 2758 (2800 -> 2693) | no |
+| H7 | ATRL | nyam | >=1.6 | 283 | S060T090 | 13659 -> 10368 | 5020 -> 8251 | -104 -> -398 (-111 -> -405) | 1343 -> 2471 | 524 -> 714 (516 -> 707) | no |
+| H7 | DAY | ALL | WITH the day | 659 | S060T030 | 16754 -> 13178 | 12788 -> 28749 | 666 -> -835 (618 -> -888) | 15335 -> 10449 | 2335 -> 2700 (2259 -> 2620) | no |
+| H7 | DAY | asia | WITH the day | 374 | S040T040 | 17412 -> 13762 | 13079 -> 17380 | 686 -> 335 (645 -> 290) | 17565 -> 10531 | 1723 -> 3168 (1655 -> 3094) | no |
+| H7 | DAY | nyam | WITH the day | 285 | S090T090 | 9882 -> 8311 | 3908 -> 9596 | -21 -> -377 (-27 -> -383) | 1657 -> 2535 | 612 -> 925 (604 -> 917) | no |
+| H7 | ER | ALL | ER30 low third | 145 | S040T040 | 14554 -> 3808 | 3969 -> 11450 | 239 -> -342 (226 -> -355) | 23080 -> 8456 | -789 -> 105 (-806 -> 88) | no |
+| H7 | ER | ALL | mid | 206 | S040T040 | 36987 -> 21116 | 13767 -> 13970 | -544 -> -251 (-559 -> -269) | 14417 -> 4582 | 1155 -> 1323 (1134 -> 1300) | no |
+| H7 | ER | ALL | high | 406 | S060T040 | 10947 -> 9100 | 14392 -> 17509 | 442 -> -207 (412 -> -239) | 8453 -> 9180 | 1463 -> 1354 (1417 -> 1305) | no |
+| H7 | ER | asia | mid | 116 | S040T040 | 36386 -> 16084 | 14260 -> 11972 | -420 -> -103 (-433 -> -119) | 16241 -> 5101 | 785 -> 1256 (765 -> 1234) | YES |
+| H7 | ER | asia | high | 255 | S060T040 | 12127 -> 9006 | 15506 -> 16844 | 383 -> -233 (356 -> -261) | 9629 -> 9970 | 1266 -> 1123 (1224 -> 1079) | no |
+| H7 | ER | nyam | high | 151 | S040T060 | 9400 -> 4819 | 1490 -> 1073 | 60 -> 123 (56 -> 119) | 1273 -> 1607 | 197 -> 164 (193 -> 160) | no |
+| H7 | RNG | ALL | range used <50% | 139 | S040T060 | 23208 -> 13145 | 12367 -> 9485 | 1049 -> 878 (1024 -> 852) | 9494 -> 14177 | 731 -> 558 (700 -> 525) | no |
+| H7 | RNG | ALL | 50-100% | 466 | S040T040 | 23792 -> 8716 | 28498 -> 18447 | -624 -> -508 (-644 -> -532) | 8747 -> 8381 | 1378 -> 1832 (1341 -> 1793) | YES |
+| H7 | RNG | ALL | >100% of forecast | 152 | S060T030 | 17578 -> 9929 | 9094 -> 13469 | -288 -> -311 (-301 -> -326) | 9757 -> 8026 | -280 -> -98 (-297 -> -116) | no |
+| H7 | RNG | asia | range used <50% | 129 | S040T060 | 25130 -> 13039 | 12367 -> 9485 | 1049 -> 878 (1024 -> 852) | 9081 -> 14138 | 775 -> 587 (745 -> 555) | no |
+| H7 | RNG | asia | 50-100% | 247 | S040T040 | 22850 -> 8716 | 24052 -> 16975 | -417 -> -459 (-433 -> -478) | 12110 -> 8251 | 1048 -> 1669 (1015 -> 1635) | YES |
+| H7 | RNG | nyam | 50-100% | 219 | S090T090 | 10876 -> 5022 | 4939 -> 7145 | -207 -> -315 (-210 -> -319) | 3055 -> 3329 | 330 -> 420 (325 -> 415) | no |
+| H7 | ROOM | ALL | room <30 pts | 667 | S040T040 | 25517 -> 12713 | 15631 -> 20759 | 390 -> 89 (339 -> 32) | 11868 -> 12733 | 2836 -> 2945 (2768 -> 2871) | no |
+| H7 | ROOM | asia | room <30 pts | 404 | S040T040 | 25192 -> 11973 | 16579 -> 21626 | 321 -> -15 (275 -> -66) | 12913 -> 12250 | 2544 -> 2867 (2481 -> 2798) | no |
+| H7 | ROOM | nyam | room <30 pts | 263 | S090T090 | 8872 -> 7353 | 1814 -> 4200 | 69 -> -139 (64 -> -144) | 1903 -> 2474 | 292 -> 607 (287 -> 601) | no |
+| H7 | FRESH | ALL | fresh | 676 | S040T040 | 25424 -> 10773 | 10716 -> 12531 | 945 -> -87 (895 -> -137) | 13379 -> 10920 | 1653 -> 1941 (1593 -> 1882) | no |
+| H7 | FRESH | asia | fresh | 415 | S040T040 | 26846 -> 10037 | 10978 -> 11118 | 1003 -> -12 (960 -> -56) | 14503 -> 10672 | 1224 -> 1825 (1172 -> 1773) | no |
+| A7 | ATRT | ALL | atr_rel low third | 396 | S040T040 | 4703 -> 2219 | 2868 -> 1525 | 390 -> 433 (374 -> 411) | 2025 -> 1979 | 1097 -> 895 (1071 -> 861) | YES |
+| A7 | ATRT | ALL | mid third | 155 | S060T040 | 2616 -> 1928 | 6936 -> 6691 | 76 -> 175 (64 -> 161) | 7652 -> 8452 | -358 -> -209 (-381 -> -240) | no |
+| A7 | ATRT | asia | atr_rel low third | 396 | S040T040 | 4703 -> 2219 | 2868 -> 1525 | 390 -> 433 (374 -> 411) | 2025 -> 1979 | 1097 -> 895 (1071 -> 861) | YES |
+| A7 | ATRT | asia | mid third | 155 | S060T040 | 2616 -> 1928 | 6936 -> 6691 | 76 -> 175 (64 -> 161) | 7652 -> 8452 | -358 -> -209 (-381 -> -240) | no |
+| A7 | ATRL | ALL | atr_rel <1.3 | 457 | S040T040 | 3930 -> 1908 | 3237 -> 1782 | 495 -> 541 (474 -> 514) | 2172 -> 2606 | 1388 -> 1048 (1352 -> 999) | no |
+| A7 | ATRL | asia | atr_rel <1.3 | 457 | S040T040 | 3930 -> 1908 | 3237 -> 1782 | 495 -> 541 (474 -> 514) | 2172 -> 2606 | 1388 -> 1048 (1352 -> 999) | no |
+| A7 | DAY | ALL | WITH the day | 549 | S040T040 | 4957 -> 2127 | 6211 -> 3617 | 788 -> 649 (761 -> 614) | 4216 -> 3971 | 826 -> 1277 (779 -> 1214) | YES |
+| A7 | DAY | asia | WITH the day | 549 | S040T040 | 4957 -> 2127 | 6211 -> 3617 | 788 -> 649 (761 -> 614) | 4216 -> 3971 | 826 -> 1277 (779 -> 1214) | YES |
+| A7 | ER | ALL | high | 364 | S040T040 | 3484 -> 2394 | 2599 -> 3240 | 546 -> 373 (528 -> 351) | 4075 -> 3560 | 530 -> 410 (499 -> 370) | no |
+| A7 | ER | asia | high | 364 | S040T040 | 3484 -> 2394 | 2599 -> 3240 | 546 -> 373 (528 -> 351) | 4075 -> 3560 | 530 -> 410 (499 -> 370) | no |
+| A7 | RNG | ALL | range used <50% | 107 | S040T040 | 1548 -> 908 | 1221 -> 1727 | 553 -> 232 (547 -> 225) | 4284 -> 2434 | 68 -> 130 (58 -> 118) | no |
+| A7 | RNG | ALL | 50-100% | 316 | S040T040 | 6719 -> 2275 | 6532 -> 4548 | -200 -> -38 (-213 -> -54) | 3935 -> 1961 | 133 -> 640 (109 -> 608) | YES |
+| A7 | RNG | ALL | >100% of forecast | 165 | S040T060 | 2273 -> 1403 | 5788 -> 3957 | 486 -> 623 (474 -> 609) | 2783 -> 1586 | 405 -> 736 (388 -> 718) | YES |
+| A7 | RNG | asia | range used <50% | 107 | S040T040 | 1548 -> 908 | 1221 -> 1727 | 553 -> 232 (547 -> 225) | 4284 -> 2434 | 68 -> 130 (58 -> 118) | no |
+| A7 | RNG | asia | 50-100% | 316 | S040T040 | 6719 -> 2275 | 6532 -> 4548 | -200 -> -38 (-213 -> -54) | 3935 -> 1961 | 133 -> 640 (109 -> 608) | YES |
+| A7 | RNG | asia | >100% of forecast | 165 | S040T060 | 2273 -> 1403 | 5788 -> 3957 | 486 -> 623 (474 -> 609) | 2783 -> 1586 | 405 -> 736 (388 -> 718) | YES |
+| A7 | ROOM | ALL | room <30 pts | 513 | S040T040 | 5455 -> 2121 | 7293 -> 4687 | 696 -> 526 (669 -> 492) | 4742 -> 4470 | 727 -> 911 (683 -> 852) | YES |
+| A7 | ROOM | asia | room <30 pts | 513 | S040T040 | 5455 -> 2121 | 7293 -> 4687 | 696 -> 526 (669 -> 492) | 4742 -> 4470 | 727 -> 911 (683 -> 852) | YES |
+| A7 | FRESH | ALL | fresh | 451 | S040T040 | 5928 -> 2363 | 3826 -> 1956 | 389 -> 253 (374 -> 237) | 4837 -> 2253 | 138 -> 355 (120 -> 337) | no |
+| A7 | FRESH | asia | fresh | 451 | S040T040 | 5928 -> 2363 | 3826 -> 1956 | 389 -> 253 (374 -> 237) | 4837 -> 2253 | 138 -> 355 (120 -> 337) | no |
 
 ## Table 4 - shape: best target by bucket (N = native kept; * = time-stop/half-off pick shown at native target) and rank correlation with bucket order
 | book | scheme | session | pick target by bucket (low -> high; N = native) | rank corr | expected sign | consistent |
 |--|--|--|--|--|--|--|
+| H7 | ATRT | ALL | 40 / N60 / 90 | +1.00 | none |  |
+| H7 | ATRL | ALL | 40 / - / N60 | +1.00 | none |  |
+| H7 | RNG | ALL | 60 / 40 / 30 | -1.00 | - | yes |
+| H7 | RNG | asia | 60 / 40 / - | -1.00 | - | yes |
+| A7 | ER | ALL | - / N60 / 40 | -1.00 | none |  |
+| A7 | ER | asia | - / N60 / 40 | -1.00 | none |  |
+| A7 | RNG | ALL | 40 / 40 / 60 | +0.87 | - | no |
+| A7 | RNG | asia | 40 / 40 / 60 | +0.87 | - | no |
+| A7 | FRESH | ALL | 40 / N60 / - | +1.00 | none |  |
+| A7 | FRESH | asia | 40 / N60 / - | +1.00 | none |  |
 
 ## Table 5 - simplest rule alone (no selection, arithmetic substitution from the S060 grid sets; stop 60 books; native = fixed 58/60)
-not enough grid months landed yet
+| rule | window | months | ulcer (stack of 6 books, base lots) | mean $/wk | @4.84 | substituted trades / all |
+|--|--|--|--|--|--|--|
+| native 58/60 k=0 | L6M | 6 | 63989 | 27151 | 25122 | 0 / 0 |
+| room k=0.5 | L6M | 6 | 51449 | 12246 | 10219 | 4731 / 5062 |
+| room k=0.75 | L6M | 6 | 70993 | 12645 | 10617 | 4597 / 5062 |
+| room k=1.0 | L6M | 6 | 100293 | 9254 | 7225 | 4515 / 5062 |
+| range k=0.5 | L6M | 6 | 111594 | 12364 | 10338 | 4223 / 5062 |
+| range k=0.75 | L6M | 6 | 101030 | 15539 | 13512 | 4104 / 5062 |
+| range k=1.0 | L6M | 6 | 129412 | 13879 | 11852 | 4074 / 5062 |
 
 <!-- MD:APPEND -->
-<!-- W-MD section start: written 2026-11-17 19:07Z; sections: UW levels, Size by environment, Own-book walls, one summary table. Source W-MD (MAJOR D addendum 1337Z). FIRST PASS, ARITHMETIC SCREEN (raw-chassis 1-s paths); no engine run yet; nothing assembled. -->
+<!-- W-MD section start: written 2026-11-17 19:37Z; sections: UW levels, Size by environment, Own-book walls, one summary table. Source W-MD (MAJOR D addendum 1337Z). FIRST PASS, ARITHMETIC SCREEN (raw-chassis 1-s paths); no engine run yet; nothing assembled. -->
 
 # W-MD sections (appended below the W-S3 ENV page): UW levels as exit levels, size by environment, own-book walls
-> VALIDATION (W-MD, FIRST PASS, written 2026-11-17 19:07Z): trials counted in autopilot/TRIALS_LEDGER.csv as MD1 (UW/free-level exit rules: 31 rules x 15 book x session cells = 465 + shape grid 5 targets x 4 dimensions x 15 cells = 300), MD2 (size by environment: 12 dimensions x 15 cells = 180), MD3 (walls: 8 rules x 5 groups = 40); correction: none applied beyond the shifted-label null (11/23/37 trades) and 3 nonsense bucketings; PBO not computed (no fitted portfolio); in-sample = SEL (2023-04..2025-10; UW sets 2024-10..2025-10 only: UW history starts 2024-10-01), walk-forward = frozen pick then HOLD (2025-11..2026-04) and L6M (2026-05..2026-10) untouched; planted-edge check passed (below); data ends 2026-10-30.
+> VALIDATION (W-MD, FIRST PASS, written 2026-11-17 19:37Z): trials counted in autopilot/TRIALS_LEDGER.csv as MD1 (UW/free-level exit rules: 31 rules x 15 book x session cells = 465 + shape grid 5 targets x 4 dimensions x 15 cells = 300), MD2 (size by environment: 12 dimensions x 15 cells = 180), MD3 (walls: 8 rules x 5 groups = 40); correction: none applied beyond the shifted-label null (11/23/37 trades) and 3 nonsense bucketings; PBO not computed (no fitted portfolio); in-sample = SEL (2023-04..2025-10; UW sets 2024-10..2025-10 only: UW history starts 2024-10-01), walk-forward = frozen pick then HOLD (2025-11..2026-04) and L6M (2026-05..2026-10) untouched; planted-edge check passed (below); data ends 2026-10-30.
 
 ## W-MD five-line summary
 1. Tried: (1) UW dealer / gamma-wall / max-pain / large-OI levels (prior-day snapshot only) as exit levels: target at the nearest level ahead minus 0/5/10 pts and stop to breakeven or -20 after a rejection, against the box own zones and round numbers, per book x session, frozen on the selection period, read on HOLD and L6M; the UW net-gamma sign and the room to the nearest level as buckets for target distance; (2) size x0.5/x1/x1.5 by 8 environment dimensions + the UW family-7 score; (3) own-book walls from MBO (nearest resting order >= 8/16/32 lots, age >= 30/120 s): target in front of the wall and exit when the wall is pulled.
@@ -217,7 +282,7 @@ Cells that hold (real, untouched; $/wk at x1.75):
 Reading: a positive median ulcer change on the untouched windows means the tilt made drawdown WORSE out of sample; the real count of holding cells is at or below the shifted-label null for every dimension. A signal too weak to skip on is also too weak to size on at this resolution. Nothing goes to the engine.
 
 ## 3. Own-book walls as targets and exits
-- What the box has: the per-second mbp-10 state days (2023-04..2026-11) see only the first 10 price levels = 2.25 pts from the touch (median, p10-p90 2.25-2.75; p99 about 37), so a wall within 60 pts cannot be seen in them. Full-depth order-by-order data (MBO) is on the box for the whole of 2023-04..2026-10 (about 190 GB, daily files); per-second wall features (nearest resting order >= 8 lots per side: distance, size, age; large cancels) exist for L6M (158 files). A background extractor (3 workers, nice 15, 11 s per day, STOP file /mnt/l2/l2vast/_major_d/mbo_feat/STOP) is producing the same features for older days, newest first (HOLD months first): 973 of about 965 older days done at 2026-11-17 19:07Z. The scoring (md8_walls.py) automatically switches from split-half to walk-forward (SEL = older days up to 2025-10, HOLD, L6M) once there are at least 4 older months covered.
+- What the box has: the per-second mbp-10 state days (2023-04..2026-11) see only the first 10 price levels = 2.25 pts from the touch (median, p10-p90 2.25-2.75; p99 about 37), so a wall within 60 pts cannot be seen in them. Full-depth order-by-order data (MBO) is on the box for the whole of 2023-04..2026-10 (about 190 GB, daily files); per-second wall features (nearest resting order >= 8 lots per side: distance, size, age; large cancels) exist for L6M (158 files). A background extractor (3 workers, nice 15, 11 s per day, STOP file /mnt/l2/l2vast/_major_d/mbo_feat/STOP) is producing the same features for older days, newest first (HOLD months first): 973 of about 965 older days done at 2026-11-17 19:37Z. The scoring (md8_walls.py) automatically switches from split-half to walk-forward (SEL = older days up to 2025-10, HOLD, L6M) once there are at least 4 older months covered.
 - Wall definition: the "3x/5x/10x the normal level" cannot be applied to a single order feature; absolute order size is used instead (NQ p99 order = 1 lot, so >= 8 / 16 / 32 lots = 8x / 16x / 32x), age >= 30 s or 120 s, within 60 pts ahead. W1 = target 1 pt in front of the wall (floor 8 pts) when nearer than native. W2 = the trade leans on an own-side order >= 8 or 16 lots within 10 pts and aged >= 30 s; exit next second at the mid - 0.5 when a large own-side cancel occurs and the nearest large order moves >= 2 ticks away.
 **Table 3a - what the rules do on the covered span (descriptive; $ at x1.75)**
 | rule | fired | covered trades | mean $ per fired trade | total $ change |
@@ -261,7 +326,7 @@ Reading (covered span only, FIRST PASS): a target placed in front of a resting w
 | W1 target in front of a resting >=8-lot order within 60 pts | covered span only | see section | see section | 0 / 2 real; null 0.3 | MBO / full-depth book (CQG 20 levels may see only part; MBO feed for exact sizes/ages) |
 | W2 exit when the wall the trade leans on is pulled | covered span only | see section | see section | 0 / 0 real; null 0.0 | MBO / full-depth book (CQG 20 levels may see only part; MBO feed for exact sizes/ages) |
 
-### Engine (exact, raw chassis, base lots, $4.84; written 2026-11-17 19:01Z by md_eng_loop)
+### Engine (exact, raw chassis, base lots, $4.84; written 2026-11-17 19:31Z by md_eng_loop)
 - Identity (hook present and inert = TL3_RB_S0 trade for trade, 202610 and 202504, H7 and K7): PASSED
 | cell | HOLD ulcer / mean $/wk (x1.75) | L6M ulcer / mean $/wk (x1.75) | holds | controls at least as good (of 30) HOLD / L6M |
 |--|--|--|--|--|

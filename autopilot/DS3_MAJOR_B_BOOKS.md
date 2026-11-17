@@ -1,13 +1,13 @@
 # DS3_MAJOR_B_BOOKS - diversifying books from the shelf, scored against the JL3 stack (W-MB, part B of the MAJOR-CHANGES programme)
 
-**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 19:03 UTC by an unattended loop)**
-1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 2 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
+**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 19:33 UTC by an unattended loop)**
+1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 30 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
 2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 2 of 2 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
 3. Does not: no non-NQ book can be engine-tested (the engine is NQ-only; no price store or product path exists for ES/RTY on the engine, none for the rest); their screen is HARNESS BASIS only; almost all candidates are 2026 regime earners (PRE / X' negative) and the ulcer gain of a screened book is mostly its mean (r=-0.95), so only the excess over the date-shift null counts.
 4. Needs in DS7: every candidate here is a NEW book (fade / failed-break / gap / time-of-day / structure), none is a mean-reversion slot that exists today; code needs are in section 6 per book. A candidate counts only after it passes stage 2 (older windows) and the placebo draws.
 5. Next: stage 2 (PREUW, X') and lot variants for the best six, shifted-event placebos, then the best 3-5 together and on the part A lot vector; this page refreshes every 30 minutes.
 
-**VERDICT (data ends 2026-10-31; FIRST PASS, no tier claim yet):** header - trials counted = 6836 screened lists (harness basis) + 2 engine cells; correction = date-shift null (30 circular shifts, weekday kept) and excess over null median; no White RC/DSR yet (screen is a first pass; engine finalists get FIRST PASS labels only); PBO not computed (no fitted choice besides the frozen stage-1 rule: selection on the screen, which included HOLD and L6M, so engine HOLD/L6M are NOT untouched; PREUW and X' are the untouched windows for stage 2). In-sample = harness screen; walk-forward = engine windows stage 2. Costs: $4.84 RT per base lot, base lots (x1.75 live column where shown). Data end: engine months to 202610; harness lists to 2026-10-30.
+**VERDICT (data ends 2026-10-31; FIRST PASS, no tier claim yet):** header - trials counted = 6836 screened lists (harness basis) + 30 engine cells; correction = date-shift null (30 circular shifts, weekday kept) and excess over null median; no White RC/DSR yet (screen is a first pass; engine finalists get FIRST PASS labels only); PBO not computed (no fitted choice besides the frozen stage-1 rule: selection on the screen, which included HOLD and L6M, so engine HOLD/L6M are NOT untouched; PREUW and X' are the untouched windows for stage 2). In-sample = harness screen; walk-forward = engine windows stage 2. Costs: $4.84 RT per base lot, base lots (x1.75 live column where shown). Data end: engine months to 202610; harness lists to 2026-10-30.
 
 ## 1. The JL3 stack reference (what a diversifier must help)
 Engine JL3 (TL3_EV_JL3), base lots, $4.84, day = ET exit + 6 h, weeks Mon-Sun. Window table (mean $/wk, ulcer, max DD, worst week):
@@ -131,8 +131,36 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 **Window L6M** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| NQ.FADE_LV.4edbfdf0 | asia | 2 | 68 | 230 | 114 | -560 | 3492 | -8206 | -680 | 0 | -0.11 | -116 | -987 | 0.03 |
+| NQ.FADE_LV.90b9322c | nyam | 1 | 51 | 386 | 338 | -50 | -156 | -3470 | -1035 | 0 | 0.10 | -47 | -388 | 0.23 |
+| NQ.FADE_LV.02ddffde | nyam | 2 | 85 | -90 | -120 | 348 | -497 | -2911 | -1169 | 0 | 0.03 | -29 | -331 | 0.30 |
+| NQ.FADE_LV.b6a2c134 | nyam | 2 | 42 | -30 | -107 | -60 | -830 | 0 | 0 | 0 | -0.07 | -76 | -289 | 0.33 |
+| NQ.FADE_LV.628da3af | nyam | 2 | 84 | -133 | -162 | 361 | -397 | -2966 | -1224 | 0 | 0.02 | -29 | -281 | 0.30 |
+| NQ.DIST_DISBNRELrev.6628b1 | nyam | 2 | 27 | 1049 | 1269 | 128 | 674 | -3540 | 91 | 0 | 0.10 | 220 | -258 | 0.17 |
+| NQ.FADE_LV.d6f9339b | nypm | 2 | 76 | -79 | -191 | 183 | 406 | -3451 | -1260 | 0 | -0.07 | -112 | -195 | 0.40 |
+| NQ.DIST_DISBPRELcont.7bb655 | pre | 3 | 34 | -23 | 405 | -201 | 4071 | 1169 | 2711 | 0 | -0.00 | 428 | -141 | 0.37 |
+| NQ.T2FNQ.80f7f135 | pre | 1 | 97 | 165 | -395 | 277 | -1012 | -2897 | 41 | 0 | -0.00 | -560 | -71 | 0.30 |
+| O7 variant t0=0200 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 74 | -873 | -1473 | 296 | 4135 | -1311 | 1976 | 0 | 0.11 | -600 | -31 | 0.47 |
+| NQ.LRS.69f1daac | pre | 1 | 43 | 235 | 100 | 509 | -2841 | -5860 | -2230 | 0 | 0.02 | -135 | -16 | 0.50 |
+| NQ.T2FNQ.e77382a9 | pre | 1 | 92 | 152 | -442 | 313 | -1297 | -3182 | -244 | 0 | -0.00 | -594 | -14 | 0.47 |
+| NQ.DIST_DISQ1550drift.78db2c | close | 1 | 78 | 610 | 610 | -50 | -400 | -275 | -275 | 0 | 0.13 | 0 | -10 | 0.47 |
+| NQ.FADE_LV.0a316e6d | nyam | 2 | 109 | 1283 | 1386 | -256 | 2700 | -106 | 3162 | 0 | 0.04 | 103 | -9 | 0.47 |
+| O7 variant t0=0830 k=0.5 stop40/tgt90 flat 1600 | pre | 2 | 55 | -209 | -106 | -14 | 2611 | 2441 | 2441 | 0 | 0.01 | 103 | 15 | 0.50 |
 | old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 15 | 281 | 125 | 224 | 0 | -142 | 4445 | 0 | 0.07 | -156 | 27 | 0.53 |
+| NQ.FADE_LV.a8632973 | nypm | 3 | 37 | 295 | 295 | -32 | 0 | 665 | 665 | 0 | 0.11 | -0 | 49 | 0.63 |
+| NQ.FADE_LV.6fb3aa4d | london | 3 | 22 | 105 | 427 | -519 | 2042 | 2042 | 755 | 0 | 0.03 | 322 | 59 | 0.53 |
 | old-harness sleeve ORB_ASIA_15_v1__s60 (asia), replayed by clock, stop 60 pts, no target | asia | 2 | 15 | 388 | 182 | 217 | 0 | 3 | 3315 | 0 | 0.12 | -207 | 67 | 0.53 |
+| O7 variant t0=0300 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 32 | -59 | -214 | -195 | 2484 | 2484 | 300 | 0 | -0.08 | -156 | 83 | 0.67 |
+| O7 variant t0=0200 k=1.0 stop40/tgt90 flat 0825 | london | 2 | 41 | -571 | -578 | -80 | 3440 | 0 | 0 | 0 | 0.09 | -7 | 85 | 0.60 |
+| NQ.LRS.ef7b7bdf | nypm | 1 | 81 | 273 | 273 | -6 | -220 | -1614 | -1614 | 0 | 0.17 | 0 | 144 | 0.67 |
+| O7 variant t0=0300 k=0.5 stop40/tgt90 flat 0825 | london | 2 | 66 | -114 | -517 | 820 | -3310 | -3520 | -449 | 0 | -0.03 | -403 | 153 | 0.63 |
+| O7 variant t0=1000 k=1.0 stop40/tgt90 flat 1600 | nyam | 2 | 22 | 685 | 677 | 5 | 0 | 0 | 0 | 0 | 0.03 | -7 | 161 | 0.77 |
+| NQ.T2F1B.e3dde7b1 | nyam | 10 | 45 | 216 | 142 | 562 | -3551 | -4537 | -4537 | 0 | -0.09 | -74 | 488 | 0.97 |
+| NQ.T2F1B.f3379ae5 | nyam | 5 | 53 | -148 | -169 | 996 | -5984 | -6579 | -5453 | 0 | -0.01 | -21 | 847 | 1.00 |
+| NQ.T2F1B.6f26737b | nyam | 7 | 49 | 167 | 103 | 1249 | -7577 | -6923 | -5798 | 0 | -0.03 | -65 | 1244 | 1.00 |
+| NQ.T2F1B.fa471237 | nyam | 7 | 51 | -302 | -348 | 1334 | -7577 | -6923 | -5798 | 0 | -0.07 | -45 | 1250 | 1.00 |
+| NQ.MONDAY_LONG_A.1c2b44c6 | daily | 1 | 22 | 1766 | 1938 | 1436 | -7989 | -5414 | -4125 | 0 | 0.16 | 172 | 1345 | 0.97 |
+| l2vast/ds3/out/SF/trades_CRT_M15_M1_close_ib.parquet | london | 9 | 137 | -2093 | -2264 | 4180 | -20086 | -14312 | -6313 | 0 | 0.04 | -172 | 2190 | 1.00 |
 
 **Window HOLD** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
@@ -160,5 +188,5 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 - DS7 need for every row: new code (a book); none maps to an existing mean-reversion slot. X3-X5 slots are empty, X1/X2/X6-X8 and S7 have no definition.
 
 
-PARTIAL TABLE: engine set-months landed so far: 117 (a window is scored only when all its months have landed; sets with fewer months are not shown).
-Status (auto): engine sets scored 2; queue: /mnt/l2/l2vast/_major_b/pending.txt (452 lines open); page rebuilt 2026-11-17 19:03 UTC.
+PARTIAL TABLE: engine set-months landed so far: 352 (a window is scored only when all its months have landed; sets with fewer months are not shown).
+Status (auto): engine sets scored 30; queue: /mnt/l2/l2vast/_major_b/pending.txt (217 lines open); page rebuilt 2026-11-17 19:33 UTC.
