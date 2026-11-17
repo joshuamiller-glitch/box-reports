@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (831 FL cell-months done, 275 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (855 FL cell-months done, 283 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -215,9 +215,17 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_DELAYP7_L2 | P7 | 4186 | 380 | 665 | 381 | 58496 | 52233 | 6262 | 1043 | 1037 | 356 | 328 | 1160 | 47247 | 39663 | 27443 | 26810 | 41688 | 43405 |
 | TL3_FL_DELAYP7_L5 | P7 | 4193 | -459 | -803 | -454 | 57806 | 52233 | 5573 | 1056 | 1037 | 313 | 328 | -351 | 46558 | 39663 | 26541 | 26810 | 41396 | 43405 |
 | TL3_FL_DELAYU7_L1 | U7 | 4167 | 745 | 1304 | 746 | 53402 | 52233 | 1169 | 271 | 271 | 451 | 385 | 666 | 21492 | 23940 | 27629 | 26810 | 42284 | 43405 |
+| TL3_FL_DELAYU7_L2 | U7 | 4162 | 13.40 | 23.46 | 16.66 | 53427 | 52233 | 1194 | 270 | 271 | 387 | 385 | 5.87 | 22142 | 23940 | 26870 | 26810 | 42294 | 43405 |
+| TL3_FL_DELAYU7_L5 | U7 | 4167 | -314 | -550 | -311 | 53385 | 52233 | 1151 | 271 | 271 | 390 | 385 | 47.01 | 23081 | 23940 | 26527 | 26810 | 44908 | 43405 |
 | TL3_FL_E3INJ | nan | 4329 | 1398 | 2447 | 1380 | 52677 | 52233 | 444 | 4329 | 4169 | 161 | 158 | 1398 | 52677 | 52233 | 28109 | 26810 | 37944 | 43405 |
 | TL3_FL_E3INJ_P11 | nan | 4222 | 1073 | 1878 | 1066 | 53535 | 52233 | 1302 | 4222 | 4169 | 163 | 158 | 1073 | 53535 | 52233 | 27989 | 26810 | 42783 | 43405 |
 | TL3_FL_E3INJ_P23 | nan | 4222 | 58.38 | 102 | 53.37 | 52486 | 52233 | 253 | 4222 | 4169 | 157 | 158 | 58.38 | 52486 | 52233 | 26881 | 26810 | 45668 | 43405 |
+| TL3_FL_HOLDALL_W120 | ALL | 3908 | -13657 | -23900 | -13596 | 98927 | 52233 | 46694 | 3908 | 4169 | 74.71 | 158 | -13657 | 98927 | 52233 | 13446 | 26810 | 98927 | 43405 |
+| TL3_FL_HOLDALL_W30 | ALL | 4138 | -6422 | -11238 | -6380 | 50252 | 52233 | -1982 | 4138 | 4169 | 118 | 158 | -6422 | 50252 | 52233 | 19575 | 26810 | 50252 | 43405 |
+| TL3_FL_HOLDALL_W60 | ALL | 4096 | -7904 | -13833 | -7869 | 71766 | 52233 | 19532 | 4096 | 4169 | 109 | 158 | -7904 | 71766 | 52233 | 18408 | 26810 | 71766 | 43405 |
+| TL3_FL_HOLDK7_W120 | K7 | 4124 | -1762 | -3084 | -1758 | 58109 | 52233 | 5876 | 1498 | 1553 | 62.54 | 84.27 | -1378 | 71596 | 20393 | 25051 | 26810 | 53485 | 43405 |
+| TL3_FL_HOLDK7_W30 | K7 | 4089 | -2678 | -4687 | -2662 | 43867 | 52233 | -8367 | 1485 | 1553 | 49.54 | 84.27 | -2123 | 29150 | 20393 | 23663 | 26810 | 43867 | 43405 |
+| TL3_FL_HOLDK7_W60 | K7 | 4097 | -1967 | -3443 | -1958 | 47530 | 52233 | -4703 | 1474 | 1553 | 56.84 | 84.27 | -1745 | 37133 | 20393 | 24460 | 26810 | 47530 | 43405 |
 | TL3_FL_HOLDL5_W120 | L5 | 4027 | -11240 | -19670 | -11197 | 69567 | 52233 | 17334 | 2319 | 2440 | 86.77 | 195 | -10209 | 61069 | 42565 | 15676 | 26810 | 58005 | 43405 |
 | TL3_FL_HOLDL5_W30 | L5 | 4247 | -2976 | -5208 | -2957 | 50806 | 52233 | -1427 | 2487 | 2440 | 160 | 195 | -2953 | 47384 | 42565 | 23490 | 26810 | 50806 | 43405 |
 | TL3_FL_HOLDL5_W60 | L5 | 4145 | -6001 | -10502 | -5973 | 60318 | 52233 | 8084 | 2410 | 2440 | 128 | 195 | -6252 | 61509 | 42565 | 20449 | 26810 | 60318 | 43405 |
