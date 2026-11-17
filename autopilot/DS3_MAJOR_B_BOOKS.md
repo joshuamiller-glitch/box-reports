@@ -1,8 +1,8 @@
 # DS3_MAJOR_B_BOOKS - diversifying books from the shelf, scored against the JL3 stack (W-MB, part B of the MAJOR-CHANGES programme)
 
-**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 15:32 UTC by an unattended loop)**
+**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 16:02 UTC by an unattended loop)**
 1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 1 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
-2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 0 of 0 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
+2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 1 of 1 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
 3. Does not: no non-NQ book can be engine-tested (the engine is NQ-only; no price store or product path exists for ES/RTY on the engine, none for the rest); their screen is HARNESS BASIS only; almost all candidates are 2026 regime earners (PRE / X' negative) and the ulcer gain of a screened book is mostly its mean (r=-0.95), so only the excess over the date-shift null counts.
 4. Needs in DS7: every candidate here is a NEW book (fade / failed-break / gap / time-of-day / structure), none is a mean-reversion slot that exists today; code needs are in section 6 per book. A candidate counts only after it passes stage 2 (older windows) and the placebo draws.
 5. Next: stage 2 (PREUW, X') and lot variants for the best six, shifted-event placebos, then the best 3-5 together and on the part A lot vector; this page refreshes every 30 minutes.
@@ -122,10 +122,25 @@ Each list scaled to equal risk (1,200 $/trade), P&L in base-lot dollars, $4.84 w
 By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM': 44, 'ES': 37, 'RTY': 36, 'CL': 20, 'BTC': 13, 'MBT': 11, 'NKD': 7, 'ZB': 1}; count with p_ALL <= 0.05: 572 of 6836 (chance expects 342).
 
 ## 4. Engine marginal test (JL3 + one injected book, same stack cap, day rules, protection layers)
+**Window RECENT12** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
+| book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 40 | 523 | 488 | -1028 | 1885 | 0 | -1599 | 1112 | 0.02 | -35 | -1435 | 0.10 |
+
 **Window L6M** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
 | book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 15 | 281 | 125 | 224 | 0 | -142 | 4445 | 0 | 0.07 | -156 | 27 | 0.57 |
+| old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 15 | 281 | 125 | 224 | 0 | -142 | 4445 | 0 | 0.07 | -156 | 27 | 0.53 |
+
+**Window HOLD** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
+| book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 25 | 768 | 857 | -1617 | 1885 | 0 | -6044 | 1112 | -0.01 | 89 | -2178 | 0.10 |
+
+**Window PREUW** (stack = JL3 + MB1; d = set minus JL3; base lots $4.84; mean in $/wk; "freed" = change in the other books' P&L $/wk; p = fraction of 30 date-shifted copies of the book that did as well on ulcer):
+| book | session | lots | trades | book $/wk | d mean | d ulcer | d maxDD | d worst wk | book on JL3 worst wks | book in JL3 deep DDs | corr | freed $/wk | exc ulcer | p null |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| old-harness sleeve ORB_ASIA_15_v1__s75 (asia), replayed by clock, stop 75 pts, no target | asia | 2 | 38 | -98 | -310 | -534 | 338 | 0 | -3539 | 6257 | 0.22 | -212 | -2379 | 0.27 |
 
 
 ## 5. Method notes and open items (hand-written by W-MB, 2026-11-17)
@@ -136,5 +151,5 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 - DS7 need for every row: new code (a book); none maps to an existing mean-reversion slot. X3-X5 slots are empty, X1/X2/X6-X8 and S7 have no definition.
 
 
-PARTIAL TABLE: engine set-months landed so far: 17 (a window is scored only when all its months have landed; sets with fewer months are not shown).
-Status (auto): engine sets scored 1; queue: /mnt/l2/l2vast/_major_b/pending.txt (552 lines open); page rebuilt 2026-11-17 15:32 UTC.
+PARTIAL TABLE: engine set-months landed so far: 35 (a window is scored only when all its months have landed; sets with fewer months are not shown).
+Status (auto): engine sets scored 1; queue: /mnt/l2/l2vast/_major_b/pending.txt (534 lines open); page rebuilt 2026-11-17 16:02 UTC.
