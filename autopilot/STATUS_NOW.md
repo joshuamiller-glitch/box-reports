@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-17 22:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 22:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-17 22:30Z | box1: busy 98%, load1 42.48, workers 25, MemAvail 59 GB | server2: busy 60%, load1 17.80, workers 14, MemAvail 1482 GB | pending box1-eligible 38470 / server2-eligible 40094 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-17 22:45Z | box1: busy 91%, load1 35.21, workers 8, MemAvail 105 GB | server2: busy 98%, load1 77.66, workers 14, MemAvail 1358 GB | pending box1-eligible 801 / server2-eligible 40019 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-17 22:30Z
+2026-11-17 22:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-17 22:30Z | box1: busy 98%, load1 42.48, workers 2
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 57.9 GB; live reservations 27 (27 GB); workers 25, of which TP-adopted 24 (RSS 28.2 GB) vs others 1 (RSS 3.4 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 42.48, 45.20, 49.98
-  by tag: ME quota 10 running 6 hungry True RSS 7.5 GB PSS 6.8 GB; SWA quota 16 running 3 hungry True RSS 4.1 GB PSS 3.7 GB; SWB quota 16 running 1 hungry True RSS 1.2 GB PSS 1.0 GB; DD quota 6 running 2 hungry True RSS 2.0 GB PSS 1.8 GB; MB quota 4 running 2 hungry True RSS 2.2 GB PSS 2.0 GB; MF quota 4 running 5 hungry False RSS 5.6 GB PSS 5.1 GB; S3J quota 2 running 3 hungry False RSS 2.9 GB PSS 2.7 GB; CF quota 8 running 2 hungry True RSS 2.8 GB PSS 2.5 GB
-  cell-months finished last hour (DONE markers): 368
-  top running jobs: TL3_ME_C_LS_K2_M30_S27 (x10);TL3_CF_LAD_RAND (x6);TL3_SWA_ID6U7 (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 16.35, 48.72, 65.45|/dev/md2         28T  934G   28T   4% /mnt/l2|22|
+Server 1 (this box): MemAvail 108.7 GB; live reservations 0 (0 GB); workers 8, of which TP-adopted 8 (RSS 12.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 35.21, 32.04, 38.73
+  by tag: SWA quota 4 running 8 hungry False RSS 12.1 GB PSS 11.2 GB
+  cell-months finished last hour (DONE markers): 347
+  top running jobs: TL3_SWA_K71_urenko14 (x16);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 77.87, 59.47, 53.79|/dev/md2         28T  935G   28T   4% /mnt/l2|24|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,6 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 16.35, 48.72, 65.45|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261117_1953Z_SIGNAL-x-BAR-GRID-every-trigger-on-every-bar.md 20261117_1957Z_SIGNAL-x-BAR-addendum-L2-orderflow-everything.md 20261117_2042Z_convert-recent-L2-days-and-data-quotes-wait.md 20261117_2046Z_TRIGGER-STUDY-is-priority-one-time-bars-included.md 20261117_2224Z_trigger-grid-speed-coarse-to-fine-not-cut.md
-- lead 22:22Z INBOX 20261117_2224Z_trigger-grid-speed-coarse-to-fine-not-cut.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action
-- lead 22:22Z INBOX 20261117_2224Z_trigger-grid-speed-coarse-to-fine received: research order, accepted; owners: W-GRIDE (new helper: per-entry forward-path tab
+20261117_1957Z_SIGNAL-x-BAR-addendum-L2-orderflow-everything.md 20261117_2042Z_convert-recent-L2-days-and-data-quotes-wait.md 20261117_2046Z_TRIGGER-STUDY-is-priority-one-time-bars-included.md 20261117_2224Z_trigger-grid-speed-coarse-to-fine-not-cut.md 20261117_2233Z_triggers-before-confluence-give-grid-the-cores.md

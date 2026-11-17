@@ -1,4 +1,4 @@
-# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 22:12Z (unattended loop, every 30 min)
+# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 22:43Z (unattended loop, every 30 min)
 
 > VALIDATION (W-MF, FIRST PASS): trials counted = 3604 standalone cells (wave 1: 109 configs x 4 exits, PREREG_MF.md, ledger MF1; wave 2: 222 configs x 4 exits incl. limit variants, PREREG_MF2.md, ledger MF2); correction = per-family and per-session best-of selection on 2023-04..2025-10 only, then HOLD 2025-11..2026-04 and L6M 2026-05..10 untouched; White RC over the selection cells (1,000 block bootstraps) + deflated Sharpe on the untouched year with N = cells of the group; PBO not computed (selection is a single frozen pick, rolling 12m/3m version shown); engine controls: 30 date-shifted stack controls NOT FINISHED (staged by the loop after the real months land); shifted-label standalone controls (+-11/23/37 days) shown. Data end 2026-10-30 (ES bars end 2026-10-16).
 
@@ -516,8 +516,14 @@ Notes. (1) Renko and range bars here are built from 1-minute closes/highs/lows (
 | lots | window | months | MF_trades | MF_alone_wk | corr | mean_JL3 | mean_with | ulcer_JL3 | ulcer_with | maxdd_JL3 | maxdd_with | worstwk_JL3 | worstwk_with | others_delta_wk |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | x2 base (x3.5 live) | L6M | 6 | 73 | 677.335 | -0.122 | 18755.264 | 19329.689 | 9416.278 | 8361.713 | -31109.180 | -25991.060 | -15728.040 | -15835.540 | -102.910 |
+| x2 base (x3.5 live) | HOLD | 6 | 72 | 304.137 | -0.020 | 9280.225 | 9770.807 | 29372.481 | 27974.101 | -83756.500 | -81448.040 | -37323.640 | -33654.640 | 186.445 |
+| x2 base (x3.5 live) | UNT | 12 | 145 | 503.762 | -0.072 | 14378.423 | 14921.973 | 21716.175 | 20552.346 | -83756.500 | -81448.040 | -37323.640 | -33654.640 | 39.788 |
 | x3 base (x5.25 live) | L6M | 6 | 73 | 298.138 | -0.071 | 18755.264 | 19069.005 | 9416.278 | 8487.830 | -31109.180 | -23736.900 | -15728.040 | -17969.900 | 15.604 |
+| x3 base (x5.25 live) | HOLD | 6 | 72 | 19.003 | -0.062 | 9280.225 | 9640.578 | 29372.481 | 26620.001 | -83756.500 | -74939.400 | -37323.640 | -34343.320 | 341.350 |
+| x3 base (x5.25 live) | UNT | 12 | 145 | 164.304 | -0.065 | 14378.423 | 14721.503 | 21716.175 | 19681.662 | -83756.500 | -74939.400 | -37323.640 | -34343.320 | 178.777 |
 | x4 base (x7 live) | L6M | 6 | 73 | 416.892 | -0.052 | 18755.264 | 19524.174 | 9416.278 | 8244.763 | -31109.180 | -23911.420 | -15728.040 | -13918.620 | 352.019 |
+| x4 base (x7 live) | HOLD | 6 | 72 | -356.534 | -0.089 | 9280.225 | 9454.243 | 29372.481 | 27147.859 | -83756.500 | -73113.440 | -37323.640 | -33872.840 | 530.552 |
+| x4 base (x7 live) | UNT | 12 | 145 | 38.196 | -0.067 | 14378.423 | 14864.673 | 21716.175 | 19973.626 | -83756.500 | -73113.440 | -37323.640 | -33872.840 | 448.055 |
 
 
 BUG FOUND AND FIXED (one line): the CDE sizer in JL3 (cde_exact.SB_BI) raised KeyError on an injected book tag, so every first-version injected cell (old uw_inject hook, also W-MB's MB1) ended in ERROR; mf_inject registers the tag at index 7 (outside every book mask, multiplier 1.0); all earlier ERROR run dirs of TL3_MF_ sets were deleted and re-queued. Identity of the new hook with an inert event file (TL3_MF_ID2): 202610 PASS (691 vs 691 trades, net 37159.82 vs 37159.82); 202504 PASS (637 vs 637 trades, net 41239.76 vs 41239.76). No MF1 engine row below is used until both identity lines (ID and ID2) say PASS.

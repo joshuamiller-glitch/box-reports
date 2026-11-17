@@ -1,9 +1,9 @@
 # DS3_REREAD_SHELF_F - shelf (part B) and part F re-read through the rolling scorer (W-REREAD). RE-READ, NOT RE-RUN. FIRST PASS, cheap screen
 
-**FIVE-LINE PLAIN SUMMARY (refreshed 2026-11-17 22:39Z by the unattended loop)**
+**FIVE-LINE PLAIN SUMMARY (refreshed 2026-11-17 22:40Z by the unattended loop)**
 1. Pick window: trailing 26 weeks (3 months beside) ending at the newest data week 2026-11-01 (shelf/part-F lists end ~2026-10-30..11-01; grid data ends 2026-11-12); picks are re-made every 2 weeks (this table = refit of 2026-11-17, next refit due 2026-12-01).
 2. Rule: every shelf (6,798 lists x 3 side modes) and part-F cell (3,604 x 3) is pushed through W-GRIDA's rolling scorer unchanged (pick on trailing 26 weeks, score the next 2, roll from 2023-10), prior years AMBER 15-30% / RED >30% vs doing nothing, neighbours must agree, persistence >60%, best-pick zero-edge bootstrap null (the grid's random-entry draws are defective, section 5); unit = weekly R.
-3. Result: 1 cells reach LEAD (cheap-screen level, NOT engine-proven), 1045 more are WEAK-BUT-POSITIVE; 1 cells change verdict UP versus the old frozen-period page, 308 old "kept" cells are now OUT or only best-available.
+3. Result: 1 cells reach LEAD (cheap-screen level, NOT engine-proven), 1045 more are WEAK-BUT-POSITIVE; 351 cells change verdict UP (to LEAD or WEAK-BUT-POSITIVE) versus the old frozen-period page, 308 old "kept" cells are now OUT or only best-available.
 4. Needs in D7: nothing yet; every LEAD needs the engine row (list: /mnt/l2/l2vast/_reread/pending_engine.txt; only NQ cells can run on the engine, other instruments stay screen-only).
 5. Next: engine rows for the LEAD cells at the lead's queue slot; hourly refresh of this page; heat/null refits every 2 weeks.
 
@@ -296,10 +296,49 @@ Cell = OOS mean R/week of the rolling pick | ulcer (weekly R) | persistence (sha
 | 20 | WEAK-BUT-POSITIVE | new (side split) | 10.6 | 4.2 | 32 | 75% | 67% | -0.308/-0.164/0.374/0.110 | RED 76% | {2023: RED, 2024: RED, 2025: ok, 2026: ok} | 23.0 | 0 | T2F_YM|VR_close_30m|fade|z01.0_f1.0_tm1.0 | inst YM | CLOSE | mode short | id YM.T2FYM.50f3f8aa | trades YM.T2FYM.50f3f8aa.parquet |
 
 ## 3. Cells that CHANGE verdict versus the old page (old frozen-period rule = history only)
-**UP** (old killed / now-only, now LEAD under the trailing-6-month rule): 1 cells. Best 40 by trailing-26-week R:
+**UP** (old killed / now-only, now LEAD or WEAK-BUT-POSITIVE under the trailing-6-month rule): 351 cells. Best 40 by trailing-26-week R:
 | session | label | old | L6M R | L3M R | trades | persist | tolerant yrs | construction |
 |---|---|---|---|---|---|---|---|---|
+| NYAM | WEAK-BUT-POSITIVE | now-only | 39.1 | 12.0 | 122 | 83% | AMBER | YM__K_b1_ema13_atr7_m1.0__1__nyam__D600__2.0__120 | inst YM | NYAM | mode both | id YM.120.676b2a99 | trades YM.120.676b2a99.parquet |
+| NYAM | WEAK-BUT-POSITIVE | killed | 35.8 | 20.3 | 68 | 77% | AMBER | N1_ORB_LIM|OR=30,ctx=none,mode=fade,lim=4 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | now-only | 34.2 | 4.6 | 249 | 83% | AMBER | YM__K_b1_ema13_atr7_m1.0__1__nyam__A2__2.0__60 | inst YM | NYAM | mode both | id YM.60.9dc2f11e | trades YM.60.9dc2f11e.parquet |
+| NYAM | WEAK-BUT-POSITIVE | now-only | 33.8 | 11.6 | 122 | 83% | AMBER | YM__K_b1_ema13_atr7_m1.0__1__nyam__D600__1.5__120 | inst YM | NYAM | mode both | id YM.120.457d897d | trades YM.120.457d897d.parquet |
+| NYAM | WEAK-BUT-POSITIVE | killed | 33.5 | 19.1 | 70 | 77% | AMBER | N1_ORB|OR=30,ctx=none,mode=fade | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | killed | 33.5 | 19.1 | 70 | 77% | AMBER | N1_ORB_LIM|OR=30,ctx=none,mode=fade,lim=0 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
 | NYAM | LEAD | killed | 33.4 | 17.6 | 39 | 85% | AMBER | N1_ORB_LIM|OR=15,ctx=with,mode=fade,lim=4 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | killed | 33.3 | 17.7 | 78 | 77% | RED | N1_ORB_LIM|OR=15,ctx=none,mode=fade,lim=4 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| CLOSE | WEAK-BUT-POSITIVE | now-only | 32.5 | 5.7 | 224 | 83% | AMBER | T2F_NQ|1SLRS_close_rev_h1800|seed1_1sfix | inst NQ | CLOSE | mode both | id NQ.T2FNQ.3fd226db | trades NQ.T2FNQ.3fd226db.parquet |
+| NYAM | WEAK-BUT-POSITIVE | now-only | 30.7 | 4.0 | 249 | 83% | RED | YM__K_b1_ema13_atr7_m1.0__1__nyam__A2__1.5__60 | inst YM | NYAM | mode both | id YM.60.4847d7c6 | trades YM.60.4847d7c6.parquet |
+| CLOSE | WEAK-BUT-POSITIVE | now-only | 29.9 | 0.0 | 242 | 75% | AMBER | T2F_NQ|1SLRS_close_rev_h1800|seed2_1sfix | inst NQ | CLOSE | mode both | id NQ.T2FNQ.2665fb2e | trades NQ.T2FNQ.2665fb2e.parquet |
+| London | WEAK-BUT-POSITIVE | now-only | 27.6 | 10.6 | 296 | 75% | RED | CL|135|london|('atr',4)|1R|120|keltner_flip | inst CL | London | mode both | id CL.flip.45620ee3 | trades CL.flip.45620ee3.parquet |
+| NYAM | WEAK-BUT-POSITIVE | killed | 27.1 | 8.1 | 113 | 77% | RED | X4_RENKO_RANGE_NYAM_LIM|kind=renko,B=4,mode=rev,lim=4 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | killed | 26.7 | 14.6 | 81 | 62% | RED | N1_ORB|OR=15,ctx=none,mode=fade | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| London | WEAK-BUT-POSITIVE | now-only | 26.2 | 7.5 | 304 | 83% | RED | RTY__K_b3_ema34_atr10_m0.5__-1__london__D600__2.0__120 | inst RTY | London | mode both | id RTY.F_K_b3_ema34_atr10_m0.5.b7617756 | trades RTY.F_K_b3_ema34_atr10_m0.5.b7617756.parquet |
+| Asia | WEAK-BUT-POSITIVE | now-only | 26.2 | 11.0 | 338 | 75% | ok | GC|PB|asia|b2-e34-m1.0|usd2400|R1.5|T120 | inst GC | Asia | mode both | id GC.T120.8ce0c5d2 | trades GC.T120.8ce0c5d2.parquet |
+| London | WEAK-BUT-POSITIVE | now-only | 25.4 | 8.7 | 299 | 83% | RED | CL|130|london|('atr',4)|1R|120|keltner_flip | inst CL | London | mode both | id CL.flip.d62fc315 | trades CL.flip.d62fc315.parquet |
+| NYAM | WEAK-BUT-POSITIVE | now-only | 25.4 | 9.7 | 122 | 83% | RED | YM__K_b1_ema13_atr7_m1.0__1__nyam__D600__1.0__120 | inst YM | NYAM | mode both | id YM.120.e7c37009 | trades YM.120.e7c37009.parquet |
+| NYPM | WEAK-BUT-POSITIVE | killed | 25.4 | 17.2 | 121 | 62% | RED | M2_RSI2_NYPM|tf=1,th=10 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| CLOSE | WEAK-BUT-POSITIVE | now-only | 25.3 | 5.0 | 223 | 92% | RED | T2F_NQ|1SLRS_close_rev_h1800|seed1 | inst NQ | CLOSE | mode both | id NQ.T2FNQ.a4d978b9 | trades NQ.T2FNQ.a4d978b9.parquet |
+| NYAM | WEAK-BUT-POSITIVE | killed | 25.3 | 5.4 | 35 | 69% | ok | N1_ORB_LIM|OR=30,ctx=with,mode=fade,lim=4 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| London | WEAK-BUT-POSITIVE | now-only | 25.0 | 7.1 | 304 | 83% | RED | RTY__K_b3_ema34_atr10_m0.5__-1__london__D600__1.5__120 | inst RTY | London | mode both | id RTY.F_K_b3_ema34_atr10_m0.5.cf3d6e7a | trades RTY.F_K_b3_ema34_atr10_m0.5.cf3d6e7a.parquet |
+| London | WEAK-BUT-POSITIVE | now-only | 24.9 | 7.3 | 304 | 92% | RED | RTY__K_b3_ema34_atr10_m0.5__-1__london__D600__1.0__120 | inst RTY | London | mode both | id RTY.F_K_b3_ema34_atr10_m0.5.7ab71e08 | trades RTY.F_K_b3_ema34_atr10_m0.5.7ab71e08.parquet |
+| NYPM | WEAK-BUT-POSITIVE | killed | 24.8 | 26.9 | 119 | 85% | RED | W12_RSI2_3MIN_NYPM_LIM|tf=3,th=10,lim=0 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | killed | 24.7 | 12.3 | 40 | 62% | ok | N1_ORB|OR=15,ctx=with,mode=fade | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | now-only | 24.1 | 4.9 | 249 | 83% | ok | YM__K_b1_ema13_atr7_m1.0__1__nyam__A3__2.0__60 | inst YM | NYAM | mode both | id YM.60.392fcbd2 | trades YM.60.392fcbd2.parquet |
+| NYAM | WEAK-BUT-POSITIVE | killed | 24.0 | 15.6 | 80 | 62% | RED | N1_ORB_LIM|OR=15,ctx=none,mode=fade,lim=0 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYPM | WEAK-BUT-POSITIVE | killed | 23.4 | 15.1 | 103 | 77% | RED | R3V_W9_LATE_EXT_LOOSE_LIM|k=1.0,lim=4 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | killed | 23.2 | 10.7 | 78 | 85% | RED | N1_ORB_LIM|OR=15,ctx=none,mode=fade,lim=4 | exit E4_vol (stop=target=clip(round(0.12*ATR14d),25,90)) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | now-only | 22.9 | 6.4 | 74 | 75% | AMBER | RTY__K_b10_ema8_atr14_m2.0__1__nyam__A2__1.0__30 | inst RTY | NYAM | mode both | id RTY.F_K_b10_ema8_atr14_m2.0.9c0d1e09 | trades RTY.F_K_b10_ema8_atr14_m2.0.9c0d1e09.parquet |
+| NYAM | WEAK-BUT-POSITIVE | killed | 22.4 | 13.3 | 39 | 69% | ok | N1_ORB_LIM|OR=15,ctx=with,mode=fade,lim=0 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYPM | WEAK-BUT-POSITIVE | killed | 22.1 | 21.9 | 121 | 69% | RED | W12_RSI2_3MIN_NYPM|tf=3,th=10 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYPM | WEAK-BUT-POSITIVE | killed | 22.0 | 22.5 | 100 | 77% | RED | W12_RSI2_3MIN_NYPM_LIM|tf=3,th=10,lim=4 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | killed | 21.8 | 12.9 | 39 | 77% | AMBER | N1_ORB_LIM|OR=15,ctx=with,mode=fade,lim=4 | exit E2_60_60 (stop 60 / target 60) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYAM | WEAK-BUT-POSITIVE | now-only | 21.8 | 4.6 | 249 | 83% | ok | YM__K_b1_ema13_atr7_m1.0__1__nyam__A3__1.5__60 | inst YM | NYAM | mode both | id YM.60.8a300393 | trades YM.60.8a300393.parquet |
+| Asia | WEAK-BUT-POSITIVE | now-only | 21.7 | 8.8 | 336 | 75% | ok | GC|PB|asia|b2-e34-m1.0|usd2400|R2|T120 | inst GC | Asia | mode both | id GC.T120.b44a770d | trades GC.T120.b44a770d.parquet |
+| NYAM | WEAK-BUT-POSITIVE | now-only | 21.3 | 11.9 | 134 | 69% | RED | ('S1', 'OR15', 'NYAM', 'T2', 0.5, '1R', 60) | inst NQ | NYAM | mode both | id NQ.FADE_LV.310ca76a | trades NQ.FADE_LV.310ca76a.parquet |
+| NYAM | WEAK-BUT-POSITIVE | killed | 21.0 | 14.4 | 70 | 69% | AMBER | N1_ORB|OR=30,ctx=none,mode=fade | exit E4_vol (stop=target=clip(round(0.12*ATR14d),25,90)) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| NYPM | WEAK-BUT-POSITIVE | killed | 20.9 | 10.3 | 90 | 69% | RED | W9_LATE_EXT_LOOSE_LIM|k=1.5,lim=4 | exit E3_40_90 (stop 40 / target 90) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
+| London | WEAK-BUT-POSITIVE | killed | 20.8 | 5.5 | 125 | 77% | RED | L1_OPEN_DRIVE|W=30,mode=drive | exit E1_40_40 (stop 40 / target 40 pts) | mode both | 1-min sim, entry next bar open +1 tick, flat at session end, $4.84 |
 
 **DOWN / OUT** (old "kept" cells now negative or unproven in the trailing 26 weeks; includes DR5 / DR10-type picks): 308 cells. Worst 40 by trailing-26-week R (both-sided cells only):
 | session | now | old | L6M R | L3M R | trades | construction |
