@@ -1,7 +1,7 @@
 # DS3_JOINT_EXIT - joint exit design (T-JOINT-EXIT, owner W-JV). STATUS: DESIGN, no engine run yet (engine starts 21:00Z 11-16, JV quota set by the lead then)
 > VALIDATION (W-DV, FIRST PASS, 2026-11-16): trials counted design 16 cells x 7 books = 112 stage-1 cells, N_used 112 (TRIALS_LEDGER.csv JV; stage 2 picks inside it); correction will be RC / SPA / DSR over the stage-1 family and PBO on stage-2 picks; no result on this page yet; number shown will be IN-SAMPLE until a walk-forward or untouched window exists.
 
-**Plain verdict line: STAGE 1 + STAGE 2 FIRST TABLE (refreshed 2026-11-17 17:49 UTC): no cell reaches LEAD or CONFIRMED under the calibrated rule (controls and all six windows missing); stage-1 cells improving ulcer in both HOLD and L6M: TL3_JE_P7_01000; stage-2 sets doing so: TL3_JE_JOINT_B; stage 2: 14 cell-windows landed; older windows: 15 landed; profit-line controls per section 11.**
+**Plain verdict line: STAGE 1 + STAGE 2 FIRST TABLE (refreshed 2026-11-17 18:21 UTC): no cell reaches LEAD or CONFIRMED under the calibrated rule (controls and all six windows missing); stage-1 cells improving ulcer in both HOLD and L6M: TL3_JE_P7_01000; stage-2 sets doing so: TL3_JE_JOINT_B; stage 2: 14 cell-windows landed; older windows: 15 landed; profit-line controls per section 11.**
 
 Base TL3_EV_JN05W2JL2 (JL2: live caps, base lots, engine fee $1.18, x1.75 for live lots, $4.84 column). Books K7 P7 M7 U7 H7 A7 O7. Windows L3M, L6M, HOLD, PRE, X', GAP; recents first (L3M, L6M, HOLD). Drawdown on both bases (weekly series, daily cumulative) shown in every table; mean second; any setting that only works in L3M is flagged. Controls: persistent draw (bucket 300).
 
@@ -42,7 +42,7 @@ Every result on this page is on the JL2 base (without live take/lock lines). The
 
 ## 8. STAGE 1 RESULTS (FIRST PASS)
 
-Header: refreshed 2026-11-17 17:49 UTC; data end 2026-10-30 (windows HOLD = 2025-11..2026-04 and L6M = 2026-05..10 are the 12 stage months; older windows as listed); base JL2 = TL3_EV_JN05W2JL2 (without live take/lock lines; the live-equivalent JL3 base is W-EV work; re-judge on JL3 when it lands); trials counted so far = 33 cells (stage 1 23 + stage 2 7 + profit-line singles 3); no family correction applied here (see DS3_PASS_RULE.md block for White/SPA/DSR/BH/PBO). Base lots; x1.75 for user lots; $4.84 column. Reference for every book is JL2 except P7 cells and the joint sets (TL3_EV_FB_A_KP = K7 45 + P7 42 flat through la_hooks).
+Header: refreshed 2026-11-17 18:21 UTC; data end 2026-10-30 (windows HOLD = 2025-11..2026-04 and L6M = 2026-05..10 are the 12 stage months; older windows as listed); base JL2 = TL3_EV_JN05W2JL2 (without live take/lock lines; the live-equivalent JL3 base is W-EV work; re-judge on JL3 when it lands); trials counted so far = 33 cells (stage 1 23 + stage 2 7 + profit-line singles 3); no family correction applied here (see DS3_PASS_RULE.md block for White/SPA/DSR/BH/PBO). Base lots; x1.75 for user lots; $4.84 column. Reference for every book is JL2 except P7 cells and the joint sets (TL3_EV_FB_A_KP = K7 45 + P7 42 flat through la_hooks).
 
 | cell | window | ulcer ref -> cell | ulcer gain % (+ better) | DD cut weekly % | DD cut daily % | worst wk ref -> cell | d mean $/wk base (x1.75) | d mean @4.84 | full stops/wk ref -> cell | win->lose |
 |--|--|--|--|--|--|--|--|--|--|--|
@@ -153,7 +153,7 @@ Header: refreshed 2026-11-17 17:49 UTC; data end 2026-10-30 (windows HOLD = 2025
 |--|--|--|
 | TL3_JV_PL_K (K7) | controls with both windows complete: 30 of 30 (360 of 360 set-months landed) | calibration: p0 0.388 -> p_adj 0.604, share control 0.179 vs real 0.279 | HOLD: real ulcer gain -12.7% beats 33% of 30 draws (draws mean -9.8%), real d mean -1619 beats 47% (draws mean -1522) | L6M: real ulcer gain -0.3% beats 97% of 30 draws (draws mean -20.1%), real d mean -875 beats 73% (draws mean -1640) |
 | TL3_JV_PL_U (U7) | controls with both windows complete: 30 of 30 (360 of 360 set-months landed) | calibration: p0 0.188 -> p_adj 0.298, share control 0.136 vs real 0.215 | HOLD: real ulcer gain +0.8% beats 57% of 30 draws (draws mean +1.0%), real d mean -186 beats 67% (draws mean -286) | L6M: real ulcer gain -11.7% beats 30% of 30 draws (draws mean -8.1%), real d mean -173 beats 93% (draws mean -735) |
-| TL3_JV_PL_M (M7) | controls with both windows complete: 19 of 30 (349 of 360 set-months landed) | calibration: p0 0.178 -> p_adj 0.237, share control 0.105 vs real 0.139 | HOLD: real ulcer gain +1.0% beats 89% of 19 draws (draws mean -4.3%), real d mean +420 beats 100% (draws mean -265) | L6M: real ulcer gain +3.9% beats 100% of 19 draws (draws mean -5.2%), real d mean +717 beats 100% (draws mean -400) |
+| TL3_JV_PL_M (M7) | controls with both windows complete: 30 of 30 (360 of 360 set-months landed) | calibration: p0 0.178 -> p_adj 0.237, share control 0.105 vs real 0.139 | HOLD: real ulcer gain +1.0% beats 80% of 30 draws (draws mean -2.8%), real d mean +420 beats 93% (draws mean -174) | L6M: real ulcer gain +3.9% beats 97% of 30 draws (draws mean -3.8%), real d mean +717 beats 97% (draws mean -335) |
 
 Stage 3 draws: queue_stage3.txt EXISTS (1080 set-months; 90 control sets TL3_JV_PC_<K|U|M>_S1..30, built by refill_draws.py after calibration).
 
