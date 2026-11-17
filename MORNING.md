@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-17T00:42Z
+## TREND (TL) update 2026-11-17T01:12Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T00:33:24Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T01:03:24Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 23:19Z 11-16 (t+562.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 01:19Z 11-17 (t+564.6 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
-Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (changed since last edition).
+Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 88% min 4% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 74% min 5% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -4227,3 +4227,4 @@ LATE / AT RISK: Step 2 controls will not all finish by 20:30Z (real cells HOLD+L
 - (wall 01:06Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 239 of 294 cell-months done, 28.49 27.76 27.34 load; auto-expansions 0 (battery stopped by user order)
 - (wall 01:07Z) W-FL1 hourly: FL cell-months done 515, pending 18; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 - 2026-11-17T01:09:50Z W-EV FLAT-vs-BOOK: 157 FB cell-months done (of 28 sets x 12 months stage 1-2), page DS3_FLAT_VS_BOOK.md rebuilt; closest to live: not yet scored
+- (wall 01:14Z) WATCHDOG: 15-min avg cores busy 87.9% (<90%, min last 15 67.3%); reason: hungry tags: CF(run 1/q 8),EV(run 1/q 8),BD(run 7/q 10),FL(run 5/q 8),RB(run 0/q 4),SURVX(run 0/q 8),GAPS(run 0/q 6),NXHC(run 0/q 8),NEXTF(run 0/q 9),SMART(run 0/q 10),SMARTB(run 0/q 8),SMARTC(run 0/q 8),WORKS_JN05(run 0/q 8),PC(run 0/q 6),RX(run 0/q 4); last WAIT: 01:14:51 CH WAIT running exact workers 24 (cap 32, limit for CH 28) load1 33.1 (cap 40, measured knee ~24 busy workers) OVER-SHARE(others hungry ['CF', 'EV', 'BD', 'FL', 'RB', 'SURVX', 'GAPS', 'NXHC', 'NEXTF', 'SMART', 'SMARTB', 'SMARTC', 'WORKS_JN05', 'PC', '; MemAvail 90.2 GB; live reservations 7 (7 GB); workers 24, of which TP-adopted 24 (RSS 41.9. Lead must act within 15 min.
