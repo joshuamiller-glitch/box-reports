@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-17T21:44Z
+## TREND (TL) update 2026-11-17T22:14Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T21:33:36Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T22:03:36Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -4948,3 +4948,9 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 22:06Z W-LA: LA cell-months done 867, jobs outstanding 22, chains 10; auto-expansions launched: 207 (cumulative new sets)
 - 2026-11-17T22:06Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 59 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
 - (wall 22:08Z) W-MD hourly: page DS3_REBUILD_S3_ENV.md W-MD sections refreshed; MBO older-day features 973 extracted (finished workers 3 of 3); engine state: identity True real evaluated ['H7_TUW10', 'H7_SUWBE', 'K7_TUWN10'] controls done []
+- lead 22:10Z LEAD NOTE: CORES above; inbox empty; grid jobs measured next hourly line.
+- lead 22:11Z LEAD NOTE: grid throughput measured low (see above)
+- lead 22:11Z LEAD NOTE: grid throughput MEASURED after the 22:05Z restart: 38 result files in 10 min; 62 server-2 gjob workers at ~91% CPU, 133-193 s per tm10 job (~1,200 jobs/h at 64 workers, not the hoped 6-9k): the 00:00Z/02:30Z ETAs will not hold unless per-job cost drops. W-GRIDA asked to profile + fix (persistent workers, shared indicators across parameter sets/brackets, numba), deliver a labelled PARTIAL table at 00:00Z and post a corrected ETA; I free more cores or approve a reduced first-pass parameter grid on request with numbers (cutting grids reduces breadth: not my call without the user).
+- (wall 22:11Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 57.91 60.92 58.21 load; auto-expansions 0 (battery stopped by user order)
+- (wall 22:13Z) W-MF (part F) hourly: MF queue pending lines 591, set-months DONE 824, identity {'202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', 'mf_inject 202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)', 'mf_inject 202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)'}; page DS3_MAJOR_F_NEWBOOKS.md refreshed by loop (pid 2384092, stop: touch /mnt/l2/l2vast/_major_f/STOP)
+- (wall 22:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
