@@ -1,7 +1,7 @@
 # DS3_CELL_TESTS - engine cell tests: do not trade / half size weak book x session cells on JL3 and JL2 (W-CELL, order 11-17 07:28Z JOB 2)
 VERDICT (data ends 2026-10-31; FIRST PASS; see below)
 
-> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 12:47Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
+> VALIDATION (desk standard, W-CELL, FIRST PASS, 2026-11-17 12:58Z): trials counted = 26 real engine cells (13 cell definitions x JL3 and JL2: 6 do-not-trade singles + the four weakest together + 5 half-size singles + the four weakest half-sized; K7 NY AM is 1 lot so not halvable), each reported, no best-of selection (ledger family CT1); correction = percentile among 30 persistent-draw engine controls per cell (JL3 only; valid draws only) + week-clustered bootstrap (2,000) + the calibrated ulcer-primary tiers of DS3_PASS_RULE (cutoffs_ulc TUNED); no family-wide White/SPA because no cell is selected as best; PBO not applicable (no fitted choice); numbers shown: IN-SAMPLE (every window is part of the 43 months; the cells are fixed by the stage-0/1 raw table, not fitted per window; walk-forward not applicable). Data ends 2026-10-31.
 ## M7 London focus (lead order 10:48Z; DO NOT TRADE M7 London = M7 session lots london 0)
 
 Row (a) - JL3 cell vs JL3 base at the live price columns: mean $/wk change, max DD and worst week (base -> cell), ulcer change.
@@ -47,8 +47,8 @@ Row (d) - half-session variants (JL3, real cells only, no controls): M7 London l
 
 | variant | L6M | HOLD | pooled (months landed) |
 |--|--|--|--|
-| zero 02:00-05:00 ET only | not landed | | |
-| zero 05:00-08:30 ET only | not landed | | |
+| zero 02:00-05:00 ET only (43 mo) | -5.5% / -1,312 / -30,189 -> -31,395 | +2.4% / -814 / -82,017 -> -70,179 | +11.8% / +88 / -88,502 -> -70,179 |
+| zero 05:00-08:30 ET only (43 mo) | +12.1% / +1,228 / -30,189 -> -24,519 | +15.1% / +198 / -82,017 -> -69,728 | +4.0% / +358 / -88,502 -> -87,287 |
 | whole London (reference) (43 mo) | +15.0% / +1,038 / -30,189 -> -23,870 | +11.8% / -445 / -82,017 -> -67,418 | +11.7% / +506 / -88,502 -> -76,979 |
 
 
