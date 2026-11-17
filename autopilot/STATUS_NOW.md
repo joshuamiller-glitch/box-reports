@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-17 07:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 07:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-17 07:15Z | box1: busy 100%, load1 42.61, workers 27, MemAvail 87 GB | server2: busy 100%, load1 120.10, workers 74, MemAvail 1386 GB | pending box1-eligible 1496 / server2-eligible 14040 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-17 07:30Z | box1: busy 100%, load1 40.75, workers 24, MemAvail 87 GB | server2: busy 100%, load1 120.94, workers 71, MemAvail 1386 GB | pending box1-eligible 22866 / server2-eligible 35156 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-17 07:15Z
+2026-11-17 07:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-17 07:15Z | box1: busy 100%, load1 42.61, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 87.0 GB; live reservations 4 (4 GB); workers 27, of which TP-adopted 27 (RSS 49.1 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 42.61, 43.27, 42.36
-  by tag: CF quota 8 running 6 hungry True RSS 11.8 GB PSS 9.0 GB; EV quota 8 running 2 hungry True RSS 3.2 GB PSS 2.6 GB; BD quota 10 running 5 hungry True RSS 7.8 GB PSS 6.2 GB; FL quota 8 running 5 hungry True RSS 10.0 GB PSS 7.2 GB; JV quota 14 running 6 hungry True RSS 10.6 GB PSS 8.4 GB; TOOLS quota 8 running 3 hungry False RSS 5.7 GB PSS 5.3 GB
-  cell-months finished last hour (DONE markers): 322
-  top running jobs: TL3_JE_K7_10000 (x4);TL3_EV_FB_A_KP (x4);TL3_CF_ST_7_S (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 120.57, 119.22, 118.09|/dev/md2         28T  877G   28T   4% /mnt/l2|144|
+Server 1 (this box): MemAvail 87.6 GB; live reservations 1 (1 GB); workers 24, of which TP-adopted 24 (RSS 43.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 40.75, 41.75, 41.88
+  by tag: CF quota 8 running 2 hungry True RSS 2.9 GB PSS 2.4 GB; EV quota 8 running 1 hungry True RSS 1.9 GB PSS 1.4 GB; BD quota 10 running 10 hungry False RSS 18.7 GB PSS 16.2 GB; FL quota 8 running 3 hungry True RSS 4.5 GB PSS 3.9 GB; JV quota 14 running 5 hungry True RSS 9.7 GB PSS 7.8 GB; TOOLS quota 8 running 3 hungry False RSS 5.4 GB PSS 4.3 GB
+  cell-months finished last hour (DONE markers): 318
+  top running jobs: TL3_CF_ST_7_SKIP (x6);TL3_JE_P7_01000 (x4);TL3_JE_K7_00100 (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 120.94, 119.24, 118.80|/dev/md2         28T  877G   28T   4% /mnt/l2|145|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,6 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 120.57, 119.22, 118.09|/dev
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261117_0024Z_lead-note-and-box1.md 20261117_0146Z_wake-test.md 20261117_0312Z_flat-vs-book-explain-a-kp.md 20261117_0400Z_refill-both-queues-before-they-drain.md 20261117_0545Z_stage1-survivors-lookahead-and-selection.md
+20261117_0146Z_wake-test.md 20261117_0312Z_flat-vs-book-explain-a-kp.md 20261117_0400Z_refill-both-queues-before-they-drain.md 20261117_0545Z_stage1-survivors-lookahead-and-selection.md 20261117_0728Z_after-stage1-three-families-and-cell-tests.md
+- lead 07:25Z INBOX 20261117_0728Z_after-stage1-three-families-and-cell-tests.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the actio
+- INBOX 20261117_0728Z_after-stage1-three-families-and-cell-tests received 07:30Z: JOB 1 family-restricted walk-forward for families 9 (causal trade context), 1
