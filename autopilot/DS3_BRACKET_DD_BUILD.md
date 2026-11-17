@@ -1,4 +1,4 @@
-# DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 23:25Z)
+# DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 02:29Z)
 <!-- PR2:BEGIN -->
 ## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 23:33 UTC)
 
@@ -195,11 +195,11 @@ Rows owned by W-BD2 (b half-off, c step-down, e HAR remaining range, f atr/squee
 
 **VERDICT (drawdown first; pass rule = real cell beats ALL its controls on stack max DD in HOLD and L6M and mean not worse than -5%; missing controls = not finished): HOLD: stack DD real -70924 vs ref -74402, best control -63564 -> does NOT beat all controls on DD; mean +1012 $/wk (6.6% of ref) -> ok | L6M: stack DD real -23715 vs ref -22565, best control -22397 -> does NOT beat all controls on DD; mean +1747 $/wk (7.9% of ref) -> ok. No PASS claim until the controls are in.**
 
-Built epoch 1794871382. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
+Built epoch 1794882370. Cells: TL3_RA_JL2_M7L_CAP3 (rule: M7, London session 02:00-08:29 ET, block entry once 3 M7 trades closed in the Globex-day session; spec autopilot/SPEC_M7_LONDON_CAP3.md) vs reference TL3_EV_JN05W2JL2. Controls: PL1-3 = random block drawn once per signal second at block rate 0.703 (M7 London, entries with >=1 close); PP1-3 = persistent draw (one draw per session instance and number of closes, so a blocked idea is not redrawn at the next signal; p 0.208 = open-loop keep of cap 3 on the JL2 reference sequence, 0.594). Dollars are base-lot engine net_fee at $1.18/contract RT; columns x175 = live lots; d_mean_484 = mean change repriced at $4.84/contract. Drawdown from cumulative daily P&L of the scope. PATH EFFECT = FREED-BOOK REPLACEMENT (generic): the controls are the baseline.
 
 identity of the placebo branch (PP with p=0, 202610): 642 trades net 27487.58 vs JL2 642 net 27487.58 -> IDENTICAL
 
-Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 6/7, X' 1/7
+Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 7/7, X' 1/7
 
 ## STACK (all books), drawdown first
 
@@ -236,6 +236,7 @@ Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 
 | PREUW | M7L_CAP3 | -71239.3 | -70931.2 | -0.4 | -124668.7 | -25913.0 | -28957.8 | 8.8 | 9.0 | 457.6 | 800.8 | 466.3 | 1.0 | 0 | 4125 | 4201 |
 | PREUW | PL1_M7L_CAP3 | -71572.0 | -70931.2 | -0.9 | -125250.9 | -25279.2 | -28957.8 | 8.8 | 9.0 | 44.6 | 78.1 | 53.5 | 1.0 | 0 | 4112 | 4201 |
 | PREUW | PL2_M7L_CAP3 | -66798.6 | -70931.2 | 5.8 | -116897.5 | -23067.5 | -28957.8 | 8.8 | 9.0 | 313.0 | 547.7 | 323.2 | 1.0 | 0 | 4106 | 4201 |
+| PREUW | PL3_M7L_CAP3 | -69367.0 | -70931.2 | 2.2 | -121392.3 | -25066.1 | -28957.8 | 8.8 | 9.0 | 668.4 | 1169.6 | 681.0 | 1.0 | 2 | 4090 | 4201 |
 | PREUW | PP1_M7L_CAP3 | -75969.0 | -70931.2 | -7.1 | -132945.8 | -26041.9 | -28957.8 | 8.8 | 9.0 | 398.6 | 697.5 | 409.5 | 1.0 | 1 | 4109 | 4201 |
 | PREUW | PP2_M7L_CAP3 | -69377.5 | -70931.2 | 2.2 | -121410.6 | -23094.2 | -28957.8 | 8.8 | 9.0 | 275.0 | 481.2 | 285.0 | 1.0 | 0 | 4114 | 4201 |
 | PREUW | PP3_M7L_CAP3 | -61325.2 | -70931.2 | 13.5 | -107319.1 | -21884.5 | -28957.8 | 8.8 | 9.0 | 566.4 | 991.2 | 578.3 | 1.0 | 0 | 4096 | 4201 |
@@ -276,6 +277,7 @@ Windows landed (cells present / 7) : HOLD 7/7, L6M 7/7, L3M 7/7, GAP 7/7, PREUW 
 | PREUW | M7L_CAP3 | -27579.8 | -27201.4 | -1.4 | -48264.7 | -9547.4 | -9750.3 | 0.9 | 1.2 | -61.3 | -107.3 | -48.3 | 0.7 | 4 | 451 | 568 |
 | PREUW | PL1_M7L_CAP3 | -25913.7 | -27201.4 | 4.7 | -45348.9 | -7592.4 | -9750.3 | 0.9 | 1.2 | -199.5 | -349.2 | -184.6 | 0.7 | 5 | 428 | 568 |
 | PREUW | PL2_M7L_CAP3 | -21065.7 | -27201.4 | 22.6 | -36864.9 | -7165.3 | -9750.3 | 0.9 | 1.2 | -10.7 | -18.7 | 4.7 | 0.8 | 5 | 428 | 568 |
+| PREUW | PL3_M7L_CAP3 | -17690.8 | -27201.4 | 35.0 | -30959.0 | -5309.8 | -9750.3 | 0.9 | 1.2 | 224.0 | 391.9 | 242.5 | 0.3 | 2 | 407 | 568 |
 | PREUW | PP1_M7L_CAP3 | -30520.1 | -27201.4 | -12.2 | -53410.2 | -7016.3 | -9750.3 | 0.8 | 1.2 | -219.2 | -383.6 | -200.5 | 0.6 | 5 | 401 | 568 |
 | PREUW | PP2_M7L_CAP3 | -26211.7 | -27201.4 | 3.6 | -45870.4 | -7036.7 | -9750.3 | 0.9 | 1.2 | -337.7 | -590.9 | -320.5 | 0.6 | 1 | 414 | 568 |
 | PREUW | PP3_M7L_CAP3 | -16130.4 | -27201.4 | 40.7 | -28228.3 | -6637.5 | -9750.3 | 0.8 | 1.2 | 193.0 | 337.7 | 212.1 | 0.7 | 4 | 396 | 568 |
@@ -356,28 +358,3 @@ A control is INVALID when its kept-entry count differs from the real cell by mor
 ## Earlier statements about random placebos (see DS3_REENTRY_ALL.md 5a)
 See autopilot/RA_PLACEBO_VOID_LIST.md.
 
-
-## Profit-line leave-one-out (W-JV, T-JOINT-EXIT priority; written 2026-11-17 01:33 UTC)
-
-**World A (as coded tonight, DS7.cs v2.0 line 1790): the three lines with persist >= 2 (K7 delta_mult lock persist=10, U7 delta_mult tighten persist=5, M7 tot_rel step persist=2) can NEVER fire live, because the shared persistence counter is cleared on every winning second before ManageProfitState increments it. As coded they are identical to NONE = JL2: every leave-one-out delta is 0 by construction (no engine run needed).** World B (as designed, counter fixed) below. JL2 itself has none of the lines. BASE LABEL: every number here is on the JL2 base (without live take/lock lines); the live-equivalent base JL3 (JL2 + persist=1 takes/locks, W-EV TL3_EV_JL3*) is being built, and per the W-EV replay JL3 costs about -3 pct mean and 5-8k more drawdown, so these decisions should be re-judged on JL3. Recommendations are for the FIXED build.
-
-Cells: TL3_JV_PL_ALL = JL2 + K7 lock + U7 tighten + M7 step (clean-book series per DS7.cs v2.0, step set once, tighten ratchets); noK / noU / noM = ALL minus one line; d = JL2 (none). Identity: TL3_JV_PL_ID (hook, all lines inert) = JL2 on 202610/09/08/07.
-
-| cell | window | ulcer index JL2 -> cell (lower = better) | maxDD weekly (JL2) cut % | maxDD daily cut % | worst wk (JL2) | d mean $/wk | d mean @4.84 | full stops/wk (JL2) | K7 / P7 / M7 / U7 / H7 / A7 / O7 d net $/wk |
-|--|--|--|--|--|--|--|--|--|--|
-| TL3_JV_PL_ALL (all three ON (as designed)) | HOLD | 18323 -> 17626 (+3.8%) | -18.1 (38470) | 5.0 | -34826 (-31211) | -635 | -674 | 9.9 (10.6) | -1260 / -35 / 842 / -391 / 17 / -45 / -37 |
-| TL3_JV_PL_ALL (all three ON (as designed)) | L6M | 8274 -> 8134 (+1.7%) | -1.8 (13430) | -16.4 | -8036 (-13430) | 647 | 593 | 10.2 (11.0) | -108 / -394 / 973 / -51 / 14 / 0 / 87 |
-| TL3_JV_PL_noK (without K7 lock) | HOLD | 18323 -> 18025 (+1.6%) | -29.2 (38470) | 5.5 | -38918 (-31211) | 332 | 326 | 10.0 (10.6) | -8 / -206 / 658 / -230 / -0 / -45 / 46 |
-| TL3_JV_PL_noK (without K7 lock) | L6M | 8274 -> 8395 (-1.5%) | -23.0 (13430) | -24.7 | -11796 (-13430) | 743 | 742 | 10.4 (11.0) | -11 / -524 / 821 / 147 / 0 / 0 / 69 |
-| TL3_JV_PL_noU (without U7 tighten) | HOLD | 18323 -> 20260 (-10.6%) | -32.7 (38470) | 4.6 | -36871 (-31211) | -1029 | -1066 | 10.4 (10.6) | -1293 / -214 / 748 / -302 / -31 / 0 / -124 |
-| TL3_JV_PL_noU (without U7 tighten) | L6M | 8274 -> 7925 (+4.2%) | -7.0 (13430) | -14.7 | -14371 (-13430) | -170 | -222 | 10.6 (11.0) | -102 / -415 / 907 / -503 / -32 / 0 / 2 |
-| TL3_JV_PL_noM (without M7 step) | HOLD | 18323 -> 18895 (-3.1%) | -10.3 (38470) | -2.7 | -30976 (-31211) | -1253 | -1286 | 10.0 (10.6) | -1329 / -56 / 303 / -487 / 63 / -45 / 19 |
-| TL3_JV_PL_noM (without M7 step) | L6M | 8274 -> 8539 (-3.2%) | -31.3 (13430) | -19.3 | -10293 (-13430) | -145 | -191 | 10.3 (11.0) | -417 / -186 / 191 / -88 / 106 / 0 / 30 |
-
-**World B verdict per line (fixed build; leave-one-out = ALL vs the cell without the line, drawdown first, then mean; HOLD and L6M):**
-
-- K7 lock: HOLD: line adds DD cut +11.1 pts (weekly) and mean -966 $/wk; L6M: line adds DD cut +21.1 pts (weekly) and mean -96 $/wk -> COSTS MONEY (mean lower in at least one window)
-- U7 tighten: HOLD: line adds DD cut +14.6 pts (weekly) and mean +394 $/wk; L6M: line adds DD cut +5.2 pts (weekly) and mean +817 $/wk -> KEEP (helps or neutral in both windows)
-- M7 step: HOLD: line adds DD cut -7.8 pts (weekly) and mean +619 $/wk; L6M: line adds DD cut +29.5 pts (weekly) and mean +792 $/wk -> MIXED: adds mean in both windows but deepens drawdown in at least one (fixed build only)
-
-**Fidelity limits (plain):** (1) inputs are MBO-derived clean series (delta = the DS7 print classification from the replica quote, + at or above the ask, - at or below the bid, none inside the spread, as W-CF2 built it; the exchange-flag version correlates 0.996-1.0; live NT8 reads its own prints; before v1.9c live delta_mult was about 13x too high; the v1.9b log prints no features, so parity cannot be tested); (2) per-second granularity: decision at the close of second s, exit on the next 1-s row at the worse of level and the next mid minus 0.8 pt, versus live exits on the first print through the level; (3) tot_rel: live baseline is per 30-minute slot, cold at start (300 snapshots), kept only while the strategy runs; the series carries the baseline continuously across days; (4) ManageProfitState returns early when the book is blind (!depthLive or stMedLevel <= 0): with clean inputs that does not apply here (lines see every second), which makes world B slightly more active than a live build with gaps; (5) lines act once per trade; step is set once (no ratchet), tighten ratchets; (6) series coverage: W-CF2 files are 23:00Z-23:00Z sessions, so in EDT months the first hour after the 18:00 ET Globex open (22:00-23:00Z) has no series and no line can fire there; delta is the DS7 print classification (+ at or above the ask, - at or below the bid, none inside the spread) as in v2.0 with the replica quote, exchange-flag delta correlates 0.996-1.0; tot_rel baselines are continuous inside 4 blocks of days (DS7 resets at every restart); (7) the engine does not model the loss-side persistence reset on adverse seconds beyond what the shared counter does for these rules; the world B counter is correct by design (persist consecutive seconds).

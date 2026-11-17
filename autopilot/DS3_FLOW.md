@@ -1,6 +1,6 @@
 # DS3_FLOW - T-FLOW (order-by-order flow, other markets, score sizing, flow-as-entry), W-FL1
 
-VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (573 FL cell-months done, 185 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
+VERDICT (data ends 2026-10-31; FIRST PASS; base JN05W2 provisional, base lots, engine fee $1.18 with $4.84 column, live = x1.75): engine side running (590 FL cell-months done, 191 set x window rows scored); Part D flow-as-entry shadow books: 0 survivors in the first pass (see section 7); Part B other markets: no family beyond the nonsense pass rate at table level; see sections below. No PASS claim.
 
 Basis: exact engine (identity TL3_FL_ID 202610 = 598 trades / 25,943.82), all layers ON as in JN05W2 (ATR-SKIP, P7 blackout and Jn04 stack cap may be missing from the JN05W2 set: all deltas base-relative, provisional). Hook th_flow/fl_hooks.py (keep, size m, target tg, WAIT hold w s). Skip rules read against SKIP_RND (engine random skip, same keep share and scope, PATH_EFFECT_RULE). Size and WAIT are read against their own controls (HALF==X2 after constant-risk normalisation; WAIT against unconditional HOLD of the same length).
 
@@ -180,8 +180,14 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_PAfl001ALL_X15 | ALL | 4274 | -703 | -1230 | -647 | 55648 | 52233 | 3414 | 4274 | 4169 | 150 | 158 | -703 | 55648 | 52233 | 26138 | 26810 | 45657 | 43405 |
 | TL3_FL_PAfl002ALL_HALF | ALL | 4201 | 629 | 1101 | 584 | 49902 | 52233 | -2332 | 4201 | 4169 | 161 | 158 | 629 | 49902 | 52233 | 27315 | 26810 | 43323 | 43405 |
 | TL3_FL_PAfl002ALL_SKIP | ALL | 3352 | -2864 | -5011 | -2714 | 44632 | 52233 | -7601 | 3352 | 4169 | 174 | 158 | -2864 | 44632 | 52233 | 23508 | 26810 | 38892 | 43405 |
+| TL3_FL_PAfl002ALL_SKIP_RND | ALL | 3436 | -6257 | -10949 | -6128 | 54353 | 52233 | 2120 | 3436 | 4169 | 143 | 158 | -6257 | 54353 | 52233 | 20177 | 26810 | 54353 | 43405 |
+| TL3_FL_PAfl002ALL_X15 | ALL | 4191 | 1136 | 1988 | 1143 | 50248 | 52233 | -1985 | 4191 | 4169 | 165 | 158 | 1136 | 50248 | 52233 | 27852 | 26810 | 42643 | 43405 |
+| TL3_FL_PAfl010NY_HALF | NY | 4157 | -316 | -553 | -319 | 52233 | 52233 | 0.00 | 593 | 600 | 61.38 | 74.84 | -315 | 24107 | 21686 | 26482 | 26810 | 44025 | 43405 |
+| TL3_FL_PAfl010NY_SKIP | NY | 3740 | -2045 | -3579 | -1978 | 54271 | 52233 | 2038 | 122 | 600 | -37.34 | 74.84 | -1832 | 24731 | 21686 | 24765 | 26810 | 44941 | 43405 |
 | TL3_FL_PAfl010NY_SKIP_PD | NY | 3804 | -1197 | -2094 | -1137 | 51623 | 52233 | -610 | 188 | 600 | 136 | 74.84 | -717 | 16431 | 21686 | 25544 | 26810 | 43297 | 43405 |
 | TL3_FL_PAfl010NY_SKIP_RND | NY | 3748 | -2801 | -4901 | -2735 | 54731 | 52233 | 2498 | 127 | 600 | -150 | 74.84 | -2370 | 31766 | 21686 | 23998 | 26810 | 43860 | 43405 |
+| TL3_FL_PAfl010NY_X15 | NY | 4169 | 15.22 | 26.64 | 13.46 | 52233 | 52233 | 0.00 | 600 | 600 | 75.53 | 74.84 | 15.22 | 21686 | 21686 | 26826 | 26810 | 43405 | 43405 |
+| TL3_FL_PAfl015NY_HALF | NY | 4165 | 754 | 1319 | 751 | 52233 | 52233 | 0.00 | 598 | 600 | 112 | 74.84 | 817 | 19550 | 21686 | 27593 | 26810 | 42763 | 43405 |
 | TL3_FL_PAfl015NY_SKIP_PD | NY | 3817 | -1621 | -2836 | -1565 | 53255 | 52233 | 1022 | 200 | 600 | 57.60 | 74.84 | -1237 | 14293 | 21686 | 25167 | 26810 | 39074 | 43405 |
 | TL3_FL_PAfl016NY_SKIP_PD | NY | 3830 | -2197 | -3845 | -2143 | 53255 | 52233 | 1022 | 225 | 600 | -22.28 | 74.84 | -1849 | 16035 | 21686 | 24568 | 26810 | 41164 | 43405 |
 | TL3_FL_PLANTL5_SKIP_PD | L5 | 3666 | -11177 | -19560 | -11002 | 75878 | 52233 | 23645 | 1863 | 2440 | 111 | 195 | -10006 | 90116 | 42565 | 16049 | 26810 | 45460 | 43405 |
@@ -256,6 +262,8 @@ A lead state planted from each signal's own R (P(lead|R>0)=0.65, P(lead|R<=0)=0.
 | TL3_FL_LEADU7_SKIP | L6M | SKIP_RND | -3496 | 2446 | 56937 | 64768 | 52233 | 682 | -226 | 15668 | 35831 |
 | TL3_FL_PAfl000ALL_SKIP | L6M | SKIP_RND | -4375 | 802 | 48718 | 52640 | 52233 | 160 | 155 | 48718 | 52640 |
 | TL3_FL_PAfl001ALL_SKIP | L6M | SKIP_RND | -5833 | 5553 | 80088 | 94827 | 52233 | 145 | 102 | 80088 | 94827 |
+| TL3_FL_PAfl002ALL_SKIP | L6M | SKIP_RND | -2864 | 3393 | 44632 | 54353 | 52233 | 174 | 143 | 44632 | 54353 |
+| TL3_FL_PAfl010NY_SKIP | L6M | SKIP_RND | -2045 | 755 | 54271 | 54731 | 52233 | -37.34 | -150 | 24731 | 31766 |
 | TL3_FL_PLANTL5_SKIP_PD | L6M | NOISE | -11177 | -1282 | 75878 | 75685 | 52233 | 111 | 122 | 90116 | 85062 |
 | TL3_FL_SCALL_F | L6M | RANDOM LADDER | 1498 | 4825 | 98216 | 78903 | 52233 | 189 | 154 | 98216 | 78903 |
 | TL3_FL_SCALL_F | L6M | NONSENSE SCORE | 1498 | 5022 | 98216 | 81238 | 52233 | 189 | 147 | 98216 | 81238 |
