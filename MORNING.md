@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 19:03Z 11-17 (t+534.1 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 19:19Z 11-17 (t+534.3 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 98% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-17T19:03:58Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 100% min 98% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-17T19:19:05Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-17T18:43Z
+## TREND (TL) update 2026-11-17T19:13Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T18:33:34Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T19:03:34Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -4811,3 +4811,8 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 2026-11-17T19:09:14Z W-SWA: interface+fidelity (K7/M7/U7 live bar >=99.6%) done; 285 bar rows x K7/M7/U7 screened, page autopilot/DS3_BAR_SWAP_A.md; no weak cell has a non-RED gated pick yet (best real rows sit inside random-clock noise); swap hook code/th_swap_hook identity exact (replay 691/37,159.82); queue pending_a + SWA tag live; loop pid /mnt/l2/l2vast/_major_sw/loop.pid refreshes every 30 min
 - lead 19:09Z LEAD NOTE: DAY-DONE page build was crashing (KeyError X_R3_1000 in code/th_dd/dd_page.py line 134, resume-rule control families missing from the label dict); fixed with .get fallback (backup dd_page.py.bak_lead_1915); all 103 _dd/first lines are DONE, page rebuilds on the next W-DD loop cycle.
 - lead 19:09Z LEAD NOTE: W-SWA report: 285 bar rows x K7/M7/U7 screened on the 1810Z/1813Z rule; NO weak cell has a delivered pick (all six RED or NOT FINISHED older years; White RC p 0.22-0.97 for K7 NY AM/London/NY PM; best real rows inside the random-clock noise band, in K7 NY AM the best random-clock row beats the best real row on L6M). Identity: inert set and native replay reproduce JL3 202610 exactly (691 / 37,159.82); injecting own live 3-min signals gives 690 / 36,173.82 (one trade differs, -986): not yet trade-for-trade, W-SWA resumed to fix; param-grid refit prereg, shifted-label null, Asia phase 2 and x1.75 columns still open. Sim exit-kind agreement vs engine only 82-95% (standalone sim weaker than the signals).
+- (wall 19:11Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 54.12 52.63 51.98 load; auto-expansions 0 (battery stopped by user order)
+- lead 19:11Z LEAD NOTE: W-BAR2 interim: types built/tested (trade tape: rngor volor dltor sessrng entropy; book: qmid micro bmsg bmsgq on mbp-10; ha/med/typ/t3/kal, anchored, TPO, footprint); full extraction 422/970 days at 19:13Z (~21:30Z end), pipeline + property page ~23:00Z (order deadline 22:10Z: asked for a partial tape-based page earlier and more workers); book tables are 02:00-16:00 ET only, Asia extraction asked for behind the main run. Newest complete session 2026-11-12.
+- 2026-11-17T19:13Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- (wall 19:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
+- lead 19:19Z LEAD NOTE: CORES above; inbox empty; agents running W-BAR, W-BAR2, W-SWA (identity fix + grid refit), W-SWB, W-S1R, W-RECENT; DD page crash fixed 19:15Z; next: check DD table landing and W-BAR registry (due ~22:10Z).
