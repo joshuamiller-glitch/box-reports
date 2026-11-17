@@ -1,12 +1,12 @@
 # DS3_REBUILD_S1 [AT-ENTRY CLEAN TABLES: NONE YET - every table below is NOT at-entry-clean unless marked; see AT-ENTRY STATUS] - Stage 1 on RAW book trades (W-S1; order DIRECTIVE_REBUILD_20261116 + addenda + REFILL 11-17)
-AT-ENTRY STATUS (read first, 2026-11-17 06:30 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
+AT-ENTRY STATUS (read first, 2026-11-17 07:12 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
 
-> VALIDATION (FIRST PASS, written 2026-11-17 06:30 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
+> VALIDATION (FIRST PASS, written 2026-11-17 07:12 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
 
-VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 259 of 4764; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
+VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 346 of 4345; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
 
 ## Status
-Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 10, server 2 leased 60, load1 box 1 40.5. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 259/4764. Updated 2026-11-17 06:30 UTC.
+Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 11, server 2 leased 50, load1 box 1 45.2. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 346/4345. Updated 2026-11-17 07:12 UTC.
 
 ## Raw base (stage 0 table used here, engine $ at base lots and $1.18 RT; MAE_R positive = worse; R = net / (lots x 20 x stop))
 | book | session | trades | mean R | win % | net $ (base) | mean MFE_R | mean MAE_R |
@@ -195,13 +195,13 @@ IN-SAMPLE SCREEN ONLY (selection on the same 43 months it is tested on, top 60 b
 
 ## Adaptive permutation screen (rb1_sched.py; replaces the fixed 1,000-permutation plan)
 Rule: each chunk x book cell is SCREENED IN when its real STABLE pass count (book x session cells, windows ALL43+L6M, 20 outcomes) is >= 3 and >= 1.5 x the larger of the nonsense stable rate and the mean shifted-label (11/23/37) real stable rate on the same cell. Screened-in cells run 100 permutations first (batches 0,1); a cell is EXTENDED to 1,000 when its permutation p of the real stable count is <= 0.02 or its BH q (over all cells with 100 draws) is <= 0.10. A fixed-seed random 5% of the non-screened cells run the full 1,000 as a CALIBRATION check (their share with p < 0.05 should be about 5%); the other non-screened cells get 100 permutations last. Full 1,000 permutations are therefore not run for every cell: stated here, not hidden.
-Cells 1624, screened in 266, extended 72, calibration cells 54 (done with >=1,000 draws: 0). Cells with permutation p computed: 534.
+Cells 1624, screened in 266, extended 58, calibration cells 54 (done with >=1,000 draws: 0). Cells with permutation p computed: 534.
 Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - not finished (fewer than 20 cells done).
 | family | cells | screened in | with perm p | p < 0.05 |
 |--|--|--|--|--|
 | 1 | 1192 | 152 | 408 | 41 |
 | 10 | 16 | 3 | 3 | 2 |
-| 2 | 144 | 26 | 31 | 7 |
+| 2 | 144 | 26 | 31 | 8 |
 | 3 | 8 | 2 | 2 | 1 |
 | 4 | 8 | 2 | 2 | 0 |
 | 5 | 144 | 56 | 60 | 41 |
@@ -214,62 +214,153 @@ Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - 
 Leading cells by permutation p (count of real stable passes vs shifted nulls):
 | chunk | book | family | real stable | real rate % | control rate % | draws | p | BH q |
 |--|--|--|--|--|--|--|--|--|
-| cf4_altagree_11 | P7 | 1 | 338 | 3.11 | 1.43 | 100 | 0.0099 | 0.049 |
-| fam9_raw_00 | A7 | 9 | 100 | 8.93 | 0.76 | 100 | 0.0099 | 0.049 |
-| TAPE_SPEED_01 | U7 | 5 | 382 | 4.42 | 1.11 | 100 | 0.0099 | 0.049 |
-| cf6_analogs_00 | POOL | 9 | 321 | 4.56 | 0.99 | 100 | 0.0099 | 0.049 |
-| cf6_analogs_00 | U7 | 9 | 124 | 4.70 | 0.82 | 100 | 0.0099 | 0.049 |
-| FLOW_PARTA_00 | K7 | 5 | 2508 | 4.70 | 1.23 | 100 | 0.0099 | 0.049 |
-| FLOW_PARTA_00 | A7 | 5 | 617 | 4.48 | 1.14 | 100 | 0.0099 | 0.049 |
-| FLOW_PARTA_02 | K7 | 5 | 2556 | 4.72 | 1.52 | 100 | 0.0099 | 0.049 |
-| FLOW_PARTA_00 | POOL | 5 | 5148 | 7.28 | 1.24 | 100 | 0.0099 | 0.049 |
-| FLOW_PARTA_01 | K7 | 5 | 2416 | 4.38 | 1.58 | 100 | 0.0099 | 0.049 |
-| FLOW_PARTA_01 | P7 | 5 | 1264 | 3.06 | 1.13 | 100 | 0.0099 | 0.049 |
-| FLOW_PARTA_01 | POOL | 5 | 4303 | 6.06 | 1.36 | 100 | 0.0099 | 0.049 |
-| FLOW_PARTA_02 | M7 | 5 | 831 | 3.07 | 1.57 | 100 | 0.0099 | 0.049 |
-| FLOW_PARTA_00 | P7 | 5 | 1589 | 3.91 | 1.41 | 100 | 0.0099 | 0.049 |
-| J_00 | A7 | 7 | 122 | 4.77 | 1.29 | 100 | 0.0099 | 0.049 |
+| FLOW_PARTA_00 | A7 | 5 | 617 | 4.48 | 1.14 | 250 | 0.0040 | 0.057 |
+| TAPE_SPEED_01 | U7 | 5 | 382 | 4.42 | 1.11 | 200 | 0.0050 | 0.057 |
+| cf6_analogs_00 | U7 | 9 | 124 | 4.70 | 0.82 | 200 | 0.0050 | 0.057 |
+| fam9_raw_00 | A7 | 9 | 100 | 8.93 | 0.76 | 200 | 0.0050 | 0.057 |
+| FLOW_PARTA_01 | K7 | 5 | 2416 | 4.38 | 1.58 | 200 | 0.0050 | 0.057 |
+| FLOW_PARTA_00 | P7 | 5 | 1589 | 3.91 | 1.41 | 200 | 0.0050 | 0.057 |
+| cf6_analogs_00 | POOL | 9 | 321 | 4.56 | 0.99 | 200 | 0.0050 | 0.057 |
+| FLOW_PARTA_02 | M7 | 5 | 831 | 3.07 | 1.57 | 200 | 0.0050 | 0.057 |
+| FLOW_PARTA_04 | K7 | 5 | 2063 | 3.79 | 1.50 | 200 | 0.0050 | 0.057 |
+| FLOW_PARTA_03 | K7 | 5 | 2558 | 4.76 | 1.58 | 200 | 0.0050 | 0.057 |
+| FLOW_PARTA_03 | P7 | 5 | 1670 | 4.02 | 1.32 | 200 | 0.0050 | 0.057 |
+| FLOW_PARTA_03 | M7 | 5 | 862 | 3.17 | 1.24 | 200 | 0.0050 | 0.057 |
+| cf6_cols_all_01 | A7 | 2 | 229 | 4.06 | 1.80 | 200 | 0.0050 | 0.057 |
+| FLOW_PARTA_04 | A7 | 5 | 515 | 3.90 | 1.04 | 200 | 0.0050 | 0.057 |
+| FLOW_PARTA_05 | M7 | 5 | 781 | 4.54 | 1.24 | 200 | 0.0050 | 0.057 |
 
-## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 06:23 UTC; A shards landed 953 of 1576
-STATUS: PARTIAL: the tables below cover only the families whose A shards landed; families marked with fewer shards are NOT finished
+## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 06:58 UTC; A shards landed 1576 of 1576
+STATUS: COMPLETE
 
 Family table at-entry, window ALL43, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
 | family | shards | tests | real beyond % | real STABLE % | shifted-label real STABLE % | nonsense stable % | random-draw stable % | planted detected % |
 |--|--|--|--|--|--|--|--|--|
-| 1 | 617/1192 | 821652 | 1.45 | 0.80 | 1.18 | 0.52 | 0.68 | 71 |
+| 1 | 1192/1192 | 1678362 | 1.46 | 0.84 | 1.23 | 0.52 | 0.68 | 72 |
 | 2 | 144/144 | 83487 | 2.03 | 1.42 | 1.57 | 0.52 | 0.68 | 72 |
+| 3 | 8/8 | 714 | 2.10 | 1.40 | 1.77 | 0.52 | 0.68 | 72 |
 | 4 | 8/8 | 1476 | 2.51 | 1.63 | 1.22 | 0.52 | 0.68 | 72 |
-| 5 | 80/112 | 52254 | 2.01 | 1.25 | 0.96 | 0.52 | 0.68 | 72 |
+| 5 | 112/112 | 83394 | 1.84 | 1.11 | 0.99 | 0.52 | 0.68 | 72 |
 | 6 | 48/48 | 20226 | 1.23 | 0.74 | 1.22 | 0.52 | 0.68 | 72 |
 | 7 | 8/8 | 2751 | 2.98 | 2.29 | 1.44 | 0.52 | 0.68 | 72 |
 | 8 | 32/32 | 4992 | 2.06 | 1.22 | 1.35 | 0.52 | 0.68 | 72 |
+| 9 | 8/8 | 1128 | 7.71 | 2.22 | 1.00 | 0.52 | 0.68 | 72 |
 | 10 | 16/16 | 774 | 1.55 | 1.29 | 0.69 | 0.52 | 0.68 | 72 |
 
 Family table at-entry, window L6M, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
 | family | shards | tests | real beyond % | real STABLE % | shifted-label real STABLE % | nonsense stable % | random-draw stable % | planted detected % |
 |--|--|--|--|--|--|--|--|--|
-| 1 | 617/1192 | 628137 | 1.44 | 1.44 | 2.04 | 0.95 | 1.34 | 51 |
+| 1 | 1192/1192 | 1292619 | 1.40 | 1.40 | 2.07 | 0.95 | 1.33 | 51 |
 | 2 | 144/144 | 52239 | 1.84 | 1.84 | 2.12 | 0.95 | 1.33 | 51 |
+| 3 | 8/8 | 192 | 1.56 | 1.56 | 2.95 | 0.95 | 1.33 | 51 |
 | 4 | 8/8 | 1056 | 0.28 | 0.28 | 2.87 | 0.95 | 1.33 | 51 |
-| 5 | 80/112 | 41361 | 1.56 | 1.56 | 1.93 | 0.95 | 1.33 | 51 |
+| 5 | 112/112 | 64554 | 1.51 | 1.51 | 1.99 | 0.95 | 1.33 | 51 |
 | 6 | 48/48 | 15837 | 1.41 | 1.41 | 1.96 | 0.95 | 1.33 | 51 |
 | 7 | 8/8 | 1965 | 1.88 | 1.88 | 2.17 | 0.95 | 1.33 | 51 |
 | 8 | 32/32 | 2559 | 1.84 | 1.84 | 2.38 | 0.95 | 1.33 | 51 |
+| 9 | 8/8 | 945 | 4.02 | 4.02 | 2.01 | 0.95 | 1.33 | 51 |
 | 10 | 16/16 | 366 | 1.09 | 1.09 | 3.46 | 0.95 | 1.33 | 51 |
 
 Family table at-entry, window UNT, outcomes R/MFE_R/MAE_R, book x session cells (stable = beyond nonsense bar and sign stable by year/L6M). Real vs shifted-label (11/23/37) and nonsense/random controls:
 | family | shards | tests | real beyond % | real STABLE % | shifted-label real STABLE % | nonsense stable % | random-draw stable % | planted detected % |
 |--|--|--|--|--|--|--|--|--|
-| 1 | 617/1192 | 702183 | 1.95 | 1.81 | 1.79 | 0.88 | 1.69 | 61 |
+| 1 | 1192/1192 | 1440045 | 1.97 | 1.83 | 1.81 | 0.88 | 1.69 | 61 |
 | 2 | 144/144 | 65136 | 2.33 | 2.20 | 2.20 | 0.88 | 1.69 | 61 |
+| 3 | 8/8 | 291 | 1.37 | 1.37 | 2.98 | 0.88 | 1.69 | 61 |
 | 4 | 8/8 | 1221 | 0.41 | 0.41 | 1.83 | 0.88 | 1.69 | 61 |
-| 5 | 80/112 | 45729 | 1.78 | 1.65 | 1.76 | 0.88 | 1.69 | 61 |
+| 5 | 112/112 | 72591 | 1.72 | 1.60 | 1.71 | 0.88 | 1.69 | 61 |
 | 6 | 48/48 | 17205 | 1.97 | 1.83 | 1.72 | 0.88 | 1.69 | 61 |
 | 7 | 8/8 | 2391 | 2.97 | 2.51 | 1.56 | 0.88 | 1.69 | 61 |
 | 8 | 32/32 | 3687 | 2.25 | 2.17 | 2.52 | 0.88 | 1.69 | 61 |
+| 9 | 8/8 | 999 | 6.61 | 5.81 | 1.47 | 0.88 | 1.69 | 61 |
 | 10 | 16/16 | 450 | 3.11 | 3.11 | 1.26 | 0.88 | 1.69 | 61 |
 
-PENDING (A shards not all landed: 953 of 1576): walk-forward and selection-null tables are not finished and are not shown.
+### Selection null: the identical top-60-then-tier procedure (OLD = chosen and tested on the same 43 months, tiers renamed IS-HI / IS-MID so they cannot be read as CONFIRMED) on real, shifted-label and nonsense columns, outcome R, book x session cells, at-entry columns only
+| procedure | source | rules selected | IS-HI | IS-MID | IS-FAIL |
+|--|--|--|--|--|--|
+| OLD | real | 900 | 238 | 109 | 553 |
+| OLD | shift11 | 858 | 32 | 10 | 816 |
+| OLD | shift23 | 900 | 39 | 19 | 842 |
+| OLD | shift37 | 900 | 36 | 14 | 850 |
+| OLD | nonsense | 720 | 300 | 60 | 360 |
+Reading: the real IS-HI count only means something relative to the shifted-label / nonsense rows of the same procedure.
+
+### Walk-forward: choose on 2023-04..2025-10 (SEL) only, freeze, report HOLD (2025-11..2026-04) and L6M (2026-05..10) untouched; skip-rule path arithmetic on the raw cell; ulcer change = rule vs raw (positive = lower ulcer), mean change in engine $/wk (base lots, $1.18 RT), $4.84 RT and x1.75 live
+| source | cell | chosen | sign kept HOLD | sign kept L6M | median ulcer change HOLD % | median ulcer change L6M % | median mean $/wk HOLD (eng / $4.84 / x1.75) | median mean $/wk L6M (eng / $4.84 / x1.75) | share with pct>=.75 on ulcer or mean in HOLD and L6M |
+|--|--|--|--|--|--|--|--|--|--|
+| real | A7|S0 | 60 | 34 | 22 | 49.5 | -3.3 | -557 / -531 / -975 | -421 / -378 / -736 | 11% |
+| real | H7|S0 | 60 | 31 | 25 | 27.6 | 34.4 | -24 / -13 / -42 | -774 / -756 / -1354 | 13% |
+| real | H7|S3 | 25 | 5 | 13 | 15.7 | 13.3 | -67 / -64 / -117 | -371 / -365 / -650 | 8% |
+| real | K7|S0 | 60 | 29 | 30 | 20.6 | 35.7 | -2234 / -2151 / -3910 | -1357 / -1337 / -2374 | 11% |
+| real | K7|S1 | 60 | 31 | 21 | 22.2 | 20.0 | -26 / -14 / -45 | 118 / 127 / 206 | 15% |
+| real | K7|S3 | 60 | 34 | 31 | 68.7 | 64.0 | 761 / 799 / 1331 | 706 / 748 / 1236 | 11% |
+| real | K7|S4 | 60 | 24 | 32 | 44.3 | 40.3 | 953 / 987 / 1667 | -644 / -581 / -1127 | 5% |
+| real | M7|S1 | 60 | 36 | 30 | 35.8 | 36.7 | -123 / -94 / -215 | 235 / 274 / 411 | 8% |
+| real | M7|S3 | 60 | 34 | 20 | 32.2 | 36.5 | -296 / -259 / -518 | -175 / -155 / -306 | 15% |
+| real | O7|S3 | 60 | 23 | 29 | 14.3 | 23.4 | -539 / -534 / -944 | -152 / -150 / -266 | 5% |
+| real | P7|S0 | 60 | 26 | 22 | -8.6 | 16.6 | -3015 / -2949 / -5276 | -8002 / -7752 / -14003 | 8% |
+| real | P7|S1 | 60 | 27 | 26 | 16.8 | 26.7 | -747 / -701 / -1307 | -1082 / -1050 / -1893 | 10% |
+| real | P7|S3 | 60 | 35 | 31 | 31.0 | 28.7 | 1816 / 1958 / 3179 | 276 / 345 / 483 | 15% |
+| real | U7|S0 | 60 | 25 | 34 | 22.8 | 6.7 | 158 / 185 / 277 | -807 / -791 / -1412 | 8% |
+| real | U7|S1 | 60 | 29 | 29 | 27.9 | 8.3 | -306 / -271 / -536 | 28 / 46 / 49 | 6% |
+| shift11 | A7|S0 | 60 | 24 | 32 | 40.7 | 16.2 | -594 / -567 / -1039 | -398 / -356 / -696 | 18% |
+| shift11 | H7|S0 | 60 | 34 | 29 | 36.4 | 42.9 | 2 / 14 / 4 | -733 / -696 / -1282 | 13% |
+| shift11 | H7|S3 | 15 | 11 | 10 | 52.7 | 1.6 | 239 / 243 / 418 | -360 / -355 / -629 | 20% |
+| shift11 | K7|S0 | 60 | 15 | 22 | 8.7 | 48.4 | -3005 / -2927 / -5259 | -2202 / -2097 / -3854 | 3% |
+| shift11 | K7|S1 | 60 | 28 | 24 | 18.7 | 40.4 | -209 / -144 / -366 | 522 / 629 / 914 | 8% |
+| shift11 | K7|S3 | 60 | 22 | 27 | 40.2 | 61.4 | 361 / 382 / 632 | 519 / 546 / 909 | 6% |
+| shift11 | K7|S4 | 60 | 26 | 14 | 61.7 | 33.2 | 1176 / 1241 / 2059 | -1266 / -1182 / -2216 | 8% |
+| shift11 | M7|S1 | 60 | 25 | 23 | 17.1 | 31.1 | -385 / -298 / -673 | 233 / 286 / 408 | 11% |
+| shift11 | M7|S3 | 60 | 23 | 24 | 19.8 | 20.5 | -282 / -279 / -494 | -106 / -87 / -186 | 16% |
+| shift11 | O7|S3 | 60 | 19 | 5 | -9.1 | 20.2 | -671 / -664 / -1173 | -315 / -310 / -552 | 0% |
+| shift11 | P7|S0 | 60 | 24 | 32 | 4.2 | 25.1 | -4821 / -4542 / -8436 | -8481 / -8116 / -14841 | 10% |
+| shift11 | P7|S1 | 60 | 30 | 32 | 41.9 | 40.8 | -957 / -868 / -1675 | -1477 / -1243 / -2585 | 10% |
+| shift11 | P7|S3 | 60 | 33 | 28 | 31.5 | 52.0 | 938 / 958 / 1641 | -46 / 132 / -81 | 15% |
+| shift11 | U7|S0 | 60 | 26 | 35 | 26.5 | 10.2 | 197 / 225 / 346 | -1098 / -1060 / -1921 | 6% |
+| shift11 | U7|S1 | 60 | 37 | 28 | 43.7 | 12.3 | -154 / -135 / -270 | 90 / 150 / 158 | 16% |
+| shift23 | A7|S0 | 60 | 26 | 42 | 24.6 | 7.8 | -254 / -251 / -445 | -7 / -3 / -12 | 15% |
+| shift23 | H7|S0 | 60 | 27 | 27 | 39.3 | 44.1 | -203 / -179 / -355 | -995 / -927 / -1742 | 10% |
+| shift23 | H7|S3 | 60 | 41 | 38 | 50.4 | 12.9 | 76 / 81 / 133 | -221 / -216 / -387 | 15% |
+| shift23 | K7|S0 | 60 | 32 | 33 | 21.2 | 26.5 | -734 / -717 / -1285 | -1355 / -1311 / -2371 | 16% |
+| shift23 | K7|S1 | 60 | 27 | 33 | 5.5 | 8.1 | -110 / -62 / -193 | 218 / 224 / 381 | 5% |
+| shift23 | K7|S3 | 60 | 28 | 23 | 62.5 | 64.6 | 659 / 686 / 1154 | 634 / 674 / 1110 | 3% |
+| shift23 | K7|S4 | 60 | 40 | 18 | 76.4 | 31.8 | 1788 / 1860 / 3129 | -1255 / -1185 / -2195 | 13% |
+| shift23 | M7|S1 | 60 | 35 | 28 | 29.6 | 25.0 | -81 / -53 / -141 | 281 / 298 / 491 | 16% |
+| shift23 | M7|S3 | 60 | 41 | 33 | 36.4 | 44.8 | -255 / -233 / -446 | -114 / -82 / -200 | 30% |
+| shift23 | O7|S3 | 60 | 20 | 16 | -11.2 | 14.8 | -455 / -452 / -796 | -220 / -216 / -385 | 5% |
+| shift23 | P7|S0 | 60 | 34 | 34 | -15.7 | 2.1 | -1878 / -1758 / -3286 | -4651 / -4431 / -8140 | 21% |
+| shift23 | P7|S1 | 60 | 26 | 44 | 31.3 | 43.7 | -1059 / -947 / -1853 | -186 / -162 / -325 | 15% |
+| shift23 | P7|S3 | 60 | 31 | 33 | 56.6 | 67.1 | 1600 / 1721 / 2801 | 471 / 576 / 824 | 16% |
+| shift23 | U7|S0 | 60 | 33 | 27 | 45.1 | 15.1 | 509 / 552 / 891 | -1588 / -1545 / -2779 | 11% |
+| shift23 | U7|S1 | 60 | 32 | 36 | 21.1 | 8.7 | -168 / -136 / -293 | 367 / 377 / 643 | 21% |
+| shift37 | A7|S0 | 60 | 31 | 34 | 31.2 | 14.8 | -356 / -350 / -623 | -332 / -289 / -581 | 20% |
+| shift37 | H7|S0 | 60 | 27 | 24 | 32.2 | 38.4 | -204 / -166 / -357 | -929 / -873 / -1626 | 11% |
+| shift37 | H7|S3 | 60 | 31 | 25 | 30.6 | 1.2 | 20 / 25 / 35 | -404 / -400 / -706 | 16% |
+| shift37 | K7|S0 | 60 | 36 | 30 | 34.3 | 15.0 | -776 / -734 / -1357 | -771 / -714 / -1350 | 20% |
+| shift37 | K7|S1 | 60 | 39 | 35 | 34.4 | 33.0 | 151 / 179 / 264 | 643 / 671 / 1125 | 30% |
+| shift37 | K7|S3 | 60 | 31 | 40 | 56.9 | 63.3 | 676 / 697 / 1184 | 701 / 724 / 1226 | 26% |
+| shift37 | K7|S4 | 60 | 27 | 34 | 60.9 | 37.7 | 1401 / 1470 / 2451 | -657 / -594 / -1150 | 23% |
+| shift37 | M7|S1 | 60 | 29 | 11 | 40.2 | 29.8 | -351 / -308 / -614 | -189 / -112 / -332 | 8% |
+| shift37 | M7|S3 | 60 | 24 | 23 | 41.0 | 33.7 | -444 / -425 / -777 | -124 / -113 / -217 | 13% |
+| shift37 | O7|S3 | 60 | 37 | 28 | 17.1 | 24.5 | -402 / -399 / -704 | -162 / -158 / -283 | 18% |
+| shift37 | P7|S0 | 60 | 29 | 29 | 14.5 | 29.6 | -5065 / -4705 / -8864 | -12977 / -12434 / -22710 | 6% |
+| shift37 | P7|S1 | 60 | 38 | 26 | 33.1 | 19.2 | -123 / -35 / -216 | -1550 / -1370 / -2712 | 15% |
+| shift37 | P7|S3 | 60 | 29 | 24 | 62.9 | 64.8 | 1521 / 1667 / 2661 | -20 / 123 / -36 | 8% |
+| shift37 | U7|S0 | 60 | 33 | 22 | 38.0 | 2.6 | 496 / 507 / 869 | -1827 / -1774 / -3196 | 8% |
+| shift37 | U7|S1 | 60 | 29 | 42 | 9.8 | 6.7 | -161 / -117 / -281 | 630 / 642 / 1102 | 21% |
+| nonsense | A7|S0 | 60 | 0 | 60 | 31.2 | 14.0 | -572 / -557 / -1002 | -269 / -245 / -470 | 0% |
+| nonsense | H7|S0 | 60 | 0 | 60 | -69.1 | 55.2 | -2099 / -2074 / -3673 | -220 / -183 / -384 | 0% |
+| nonsense | K7|S0 | 60 | 0 | 60 | -7.1 | 59.9 | -3139 / -3079 / -5494 | -1461 / -1373 / -2557 | 0% |
+| nonsense | K7|S1 | 60 | 60 | 60 | 38.1 | 63.1 | 603 / 658 / 1055 | 2683 / 2753 / 4694 | 100% |
+| nonsense | K7|S3 | 60 | 60 | 60 | 37.3 | 71.4 | 579 / 602 / 1014 | 1373 / 1396 / 2402 | 0% |
+| nonsense | K7|S4 | 60 | 60 | 60 | 57.9 | 71.1 | 1512 / 1549 / 2645 | 556 / 605 / 973 | 100% |
+| nonsense | M7|S1 | 60 | 0 | 0 | 40.6 | 46.1 | -716 / -664 / -1253 | 162 / 236 / 283 | 0% |
+| nonsense | M7|S3 | 60 | 0 | 0 | 33.1 | 4.0 | -342 / -324 / -599 | -686 / -663 / -1201 | 0% |
+| nonsense | O7|S3 | 60 | 60 | 60 | 34.0 | 7.5 | -445 / -439 / -779 | -155 / -150 / -271 | 0% |
+| nonsense | P7|S0 | 60 | 0 | 0 | -33.0 | -29.2 | -5359 / -5164 / -9378 | -11992 / -11701 / -20986 | 0% |
+| nonsense | P7|S1 | 60 | 0 | 0 | -27.9 | 3.9 | -3238 / -3145 / -5666 | -1843 / -1715 / -3225 | 0% |
+| nonsense | U7|S1 | 60 | 60 | 0 | 3.9 | -40.0 | -177 / -146 / -310 | -781 / -739 / -1366 | 0% |
+"sign kept" = the rule raises mean R (remaining trades minus all trades) in that untouched window. Shifted-label and nonsense rows are the selection null for this table: compare each cell with its real row.
 
 ## WAIT variants re-scored honestly (every _d5/_d30/_d60/_d120 and tapelegs _L5 column; 7 of 7 book files landed)
 WAIT-THEN-ENTER (WTE): entry at signal+delay at the price then, same native stop/target distances from the new entry; trades closed inside the wait are excluded; approximation: the 1-s path ends at the original exit, so unresolved new brackets are marked at that exit (share in the table). EARLY-EXIT (EE): entered at signal, rule acts at +delay, value = mark at +delay minus hold-to-raw-outcome (only the remaining path counts).
