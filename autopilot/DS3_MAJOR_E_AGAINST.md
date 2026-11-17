@@ -1,14 +1,14 @@
 # DS3_MAJOR_E_AGAINST - against-the-day streak rules on JL3 (W-ME, MAJOR PART E)
 
-Page refreshed 2026-11-17 14:03Z (unattended loop me_loop). Data end 2026-10-31 (JL3 months 202304..202610). FIRST PASS.
+Page refreshed 2026-11-17 14:29Z (unattended loop me_loop). Data end 2026-10-31 (JL3 months 202304..202610). FIRST PASS.
 
 PLAIN SUMMARY
 
-1. Tried: stack-wide, causal rules on JL3 - after K=2/3/4 consecutive losers AGAINST the 3-of-4 day vote in a session, half size (H) or no new entries on that side for M=30/60/120 min (S), and a x1.5 press with the day (P1 after against-losers, P2 after with-day winners); plus an EXTENSION (no vote) on repeated same-side losers (LH half, LS skip). 30 screen configs, walk-forward pick on 2023-04..2025-10, 6 exact-engine cells + 160 matched control sets queued.
-2. Key finding: the drawdown "against the day" loss (-53.5k) in DS3_DD_HOLD uses the HINDSIGHT day close-open; the CAUSAL vote at the signal second calls only 7.1% of JL3 trades against (HOLD path 2025-11-17..12-10: 26 of 396 trades, net +3.4k; the 333 WITH-vote trades lost -78.0k, 37 neutral +5.9k). The losers were with the vote when they entered, the trend flipped afterwards.
-3. What does not hold: the rules as ordered (H, S, P1) bind on 0.0-0.2% of trades (K=3,4 almost never) and move ulcer by under 2% either way: FAIL / NOT FINISHED. The with-day press P2 worsens ulcer in HOLD (-15% to -21%). Nothing from the ordered families reaches a tier.
-4. What survives the screen (extension, no vote): same-side loser streak, K=2, skip that side 30 min (LS_K2_M30, 2.4% of trades): ulcer +5.2% TRAIN, +4.3% L6M, +7.3% L3M, +4.2% HOLD at roughly flat mean (screen tier LEAD, post-hoc, not the walk-forward pick); the walk-forward pick LS_K2_M120 helps TRAIN (+7.5%) and HOLD (+19%) but loses in L6M (-5.4%): not CONFIRMED. Needs in DS7: nothing yet; a same-side loser-streak pause would be a small stack-level counter if the exact runs confirm.
-5. Next: exact runs (identity first) land on the engine queue after A and C; this page refreshes every 30 min with identity, exact tables, 30-draw controls, tiers, $4.84 and x1.75 columns, freed-book effects. Queue status: 1994 lines in pending, 0 exact run-months landed.
+1. Tried (re-aimed 11-17 14:26Z at what a manual trader sees): (a) same-side loser streak (vote-free) as skip/half, with a resume-at-new-session-extreme and a per-book version; (b) extended-entry bucket (how far price already ran: ATR from session open / 18:00 open, VWAP sigma, share of typical session range used, chase count, minutes since extreme) as SIZE and as TARGET/STOP, with a drawdown-period table; (c) after a book cut, halve or tighten the other same-side positions; the ordered vote rules (H/S/P1/P2) stay only as reference rows.
+2. Key finding: the 2025-11-17..12-10 losers were WITH the causal 3-of-4 vote (333 trades -78.0k; against 26 trades +3.4k): the books enter after the move and the reversal comes later, so only hindsight labels show "against the day".
+3. Screen: the ordered vote rules bind on 0.0-0.6% of trades and do nothing (P2 press hurts HOLD by 15-21%); extended-entry halving improves ulcer 6-12% in L6M but costs 1.5-4.7k/wk and is NOT better than random halving of the same share (p_ulc 0.2-0.9, no tier); the extended bucket earns MORE per trade (about $110 vs $60) but concentrates the drawdown (-39k of the path in the open_atr bucket).
+4. What survives the screen: same-side loser K=2 pause 30 min (LS_K2_M30: ulcer +4% to +7% in TRAIN/L6M/L3M/HOLD at flat mean, screen tier LEAD, post-hoc); the longer pauses help HOLD (+14%/+19%) but hurt L6M. Nothing is CONFIRMED; DS7 needs nothing until the exact tiers below land.
+5. Next: exact cells on the engine queue (identity IDX first; 1550 queue lines pending, 13 run-months landed); stage 2 adds 34 matched controls for the best cells automatically; this page refreshes every 30 min.
 
 HEADER: trials counted = 30 screen configs (every one counted) + 6 exact picks; correction: no White RC/SPA/DSR run on this family yet (best-of picked per family on TRAIN only; DSR/BH on the ledger row ME in TRIALS_LEDGER.csv); PBO not computed; selection = walk-forward (choose <=2025-10, freeze), HOLD and L6M untouched for the 6 frozen exact picks; the screen tier table below is path arithmetic (kept trades keep their outcome; freed-book effects NOT in the screen). Prereg autopilot/PREREG_ME.md (screen run before the file was written, declared in DECISIONS.md).
 
@@ -65,6 +65,21 @@ imp% = ulcer reduction vs JL3 in the window (+ = smaller ulcer); dMean = change 
 
 JL3 reference ulcer (RMS daily drawdown, base $): TRAIN -25599, L6M -9176, L3M -10841, HOLD -27872, GAP -17546, PREUW -31421, X' -22483, ALL43 -24344; mean $/wk TRAIN 5291, L6M 20109, HOLD 9996.
 
+## 2b. Late entry / extension as SIZE (item b screen; lots x0.5 on the top third of each feature, thresholds frozen on TRAIN <=2025-10)
+
+Feature thresholds (top third of TRAIN trades): open_atr ge 3.3; o18_atr ge 4.4; vwap_sig ge 1.72; used ge 0.96; mins_ext le 5; chase ge 2. imp% = ulcer reduction; p_ulc vs 30 persistent-draw random halvings with the same share per session; DD path = 2025-11-17..12-10.
+
+| feature bucket | share | mean $/trade bucket vs rest | DD path bucket $ (n) | TRAIN imp% / dMean | L6M imp% / dMean / p_ulc | L3M imp% / p_ulc | HOLD imp% / dMean / p_ulc | tier |
+|--|--|--|--|--|--|--|--|--|
+| SZ_open_atr | 31.2% | 113 vs 60 | -39,132 (111 of 396) | +9.7 / -825 | +11.2 / -3271 / 0.80 | +11.6 / 0.70 | +7.6 / -678 / 0.30 | FAIL |
+| SZ_o18_atr | 31.9% | 117 vs 58 | -26,549 (89 of 396) | +7.6 / -676 | +11.9 / -3091 / 0.83 | +16.7 / 1.00 | +6.5 / +2 / 0.33 | FAIL |
+| SZ_vwap_sig | 28.0% | 114 vs 62 | -52,015 (109 of 396) | -1.6 / -814 | +11.4 / -2111 / 0.90 | +19.9 / 1.00 | +18.3 / -569 / 0.97 | FAIL |
+| SZ_used | 32.4% | 84 vs 73 | 1,532 (102 of 396) | +15.5 / -642 | -0.4 / -1432 / 0.23 | -3.9 / 0.23 | +4.2 / -1523 / 0.17 | FAIL |
+| SZ_mins_ext | 32.4% | 76 vs 77 | -37,480 (118 of 396) | +6.6 / -412 | +5.6 / -1690 / 0.47 | +10.0 / 0.73 | +7.8 / -122 / 0.47 | FAIL |
+| SZ_chase | 51.8% | 94 vs 59 | -41,383 (231 of 396) | +9.9 / -887 | +6.7 / -4672 / 0.17 | +2.7 / 0.17 | +16.8 / -1670 / 0.30 | FAIL |
+
+Target pull-in (x0.5, x0.67), stop x0.67 and breakeven cannot be judged by path arithmetic (they change the exit): exact cells EXT_<feature>_<TG50|TG67|ST67|SZ50> below for the two TRAIN-best features (used = share of the typical session range already used; open_atr). Breakeven-after-+20 is NOT built (needs a stop-move mechanism in the engine hook; stated as not done). The same cells are the item-D (W-MD / W-S3 environment) extension test: run once here.
+
 ## 3. Walk-forward pick (choose on TRAIN <=2025-10, freeze; HOLD / L6M untouched)
 
 Best TRAIN ulcer improvement per family: H_K2 (+0.5%), S_K2_M120 (+0.2%), P1 none positive (P1_K2 0.0%), P2_K3 (+1.8%, +347/wk), LH_K2 (0.0%), LS_K2_M120 (+7.5%, +104/wk; overall best). LS_K2_M30 (+5.2%) is the only screen LEAD and is carried as a flagged post-hoc cell. Frozen exact picks: LS_K2_M120, P2_K3, LS_K2_M30, LH_K2, S_K2_M120, H_K2 (order of the queue).
@@ -75,7 +90,7 @@ Walk-forward out-of-sample read of the picks (screen): LS_K2_M120 HOLD +19.4% / 
 
 Hook method: only try_entry, exec_exit and trend_size are overridden (no base layer method: lock/exit/stack layers untouched, so no switched-off layer can be re-enabled); it is the LAST entry of the base hooklist. Day vote = th_dial10/d10_core.day_dir(sec,key,t0,"vote"), the engine-side function W-D10 already uses: reads only NQ 1-min bars (min1_NQ.npz), closed bars ts <= sec-60 at the signal second (clock second of try_entry); sessions asia/london/nyam/nypm (08:30-09:30 and 15:00-18:00 have no key: vote 0, rule off). Counters: causal, stack-wide, updated only when a trade fully closes (s.trades grows) over all books; a closed trade is classified with the vote at ITS OWN signal second (tr.sig_ns) and net_fee; instance = (Globex day, session of the signal); a winner resets the streak; a new instance starts at 0. Half size = lots x0.5 round-half-up min 1 inside trend_size; press x1.5. Identity cell TL3_ME_JL3_ID (state machine runs, never acts).
 
-STATUS: no exact cell has landed yet (queue position after A and C; 1994 lines pending).
+STATUS: no exact cell has landed yet (queue position after A and C; 1550 lines pending).
 
 Controls: persistent draws (crc32 hash of seed, book, side, 300 s bucket), per-session p from the screen shares in L6M+HOLD; valid = lots-exposure share within max(min(0.05,0.25 share),0.002) of the real cell; <30 valid in L6M/L3M = NOT FINISHED, never passing; an invalid-draw refill (recalibrated p, seeds 101+) is added by me_loop when needed. Selection nulls (shifted labels) are not meaningful for a streak counter (no labels): the matched random-halving/skip controls are the null.
 
