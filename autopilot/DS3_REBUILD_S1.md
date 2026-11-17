@@ -1,12 +1,12 @@
 # DS3_REBUILD_S1 [AT-ENTRY CLEAN TABLES: NONE YET - every table below is NOT at-entry-clean unless marked; see AT-ENTRY STATUS] - Stage 1 on RAW book trades (W-S1; order DIRECTIVE_REBUILD_20261116 + addenda + REFILL 11-17)
-AT-ENTRY STATUS (read first, 2026-11-17 07:12 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
+AT-ENTRY STATUS (read first, 2026-11-17 07:40 UTC): NO table on this page is at-entry-clean yet. (1) The family tables below pool ALL columns including _d5/_d30/_d60/_d120 WAIT variants (read 5-120 s after the signal, scored against a signal-time entry = LOOK-AHEAD), "ahead" columns and family-9 context: they are NOT at-entry and must not be used for a decision. (2) The survivors screen lists only columns whose NAME is at-entry (no _d>=5, no ahead, no family 9); it is in-sample and selection-biased, NOT a result. (3) Clean tables (at-entry-only family comparison, walk-forward, selection null, wait-then-enter and early-exit re-scores) are being built: sections marked PENDING below.
 
-> VALIDATION (FIRST PASS, written 2026-11-17 07:12 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
+> VALIDATION (FIRST PASS, written 2026-11-17 07:40 UTC): trials counted = condition columns x 20 outcomes x book-session cells x 7 windows (TRIALS_LEDGER.csv RB1_RAW; correlated: outcomes, windows and cells overlap); correction = cell nonsense bar (99th pct of 200 nonsense columns) + sign stable in every year and L6M + BH 10% across all scored tests per window/outcome + shifted-label (11/23/37) and block-shift permutation nulls + 90 persistent-draw random columns + planted-edge columns per shard; ulcer-primary tier test (skip-rule path arithmetic vs 60 persistent draws, week-clustered bootstrap) on survivors; PBO: selecting best-of-65k is a fit, the permutation nulls play that role, no walk-forward fit in stage 1; in-sample on 2023-04..2026-10-30, NOT walk-forward or untouched; engine-exact re-runs of leads not done (no re-entry, no freed-book effect). Dollar columns: engine $ at base lots and engine fees $1.18 RT, $4.84 RT repriced and x1.75 live lots shown for the tier leaders.
 
-VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 346 of 4345; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
+VERDICT (data ends 2026-10-30; FIRST PASS): shards landed S 1618 of 0, permutation shards 417 of 3988; this page is rewritten as shards land. See "Read this first" below for what is and is not finished.
 
 ## Status
-Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 11, server 2 leased 50, load1 box 1 45.2. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 346/4345. Updated 2026-11-17 07:12 UTC.
+Raw base: 21049 trades, 7 books (K7 M7 P7 U7 A7 H7 O7); X3 X4 X5 raw cells hold 0 trades (shadow books not tradable in the raw chassis: not scored; S7, X1 X2 X6 X7 X8 have no engine definition). Driver: box 1 running 4, server 2 leased 73, load1 box 1 41.6. Shards: S (real + shifted labels + controls) 1618/0, P (50 block-shift permutations each, 20 batches = 1,000 per chunk x book) 417/3988. Updated 2026-11-17 07:40 UTC.
 
 ## Raw base (stage 0 table used here, engine $ at base lots and $1.18 RT; MAE_R positive = worse; R = net / (lots x 20 x stop))
 | book | session | trades | mean R | win % | net $ (base) | mean MFE_R | mean MAE_R |
@@ -195,13 +195,13 @@ IN-SAMPLE SCREEN ONLY (selection on the same 43 months it is tested on, top 60 b
 
 ## Adaptive permutation screen (rb1_sched.py; replaces the fixed 1,000-permutation plan)
 Rule: each chunk x book cell is SCREENED IN when its real STABLE pass count (book x session cells, windows ALL43+L6M, 20 outcomes) is >= 3 and >= 1.5 x the larger of the nonsense stable rate and the mean shifted-label (11/23/37) real stable rate on the same cell. Screened-in cells run 100 permutations first (batches 0,1); a cell is EXTENDED to 1,000 when its permutation p of the real stable count is <= 0.02 or its BH q (over all cells with 100 draws) is <= 0.10. A fixed-seed random 5% of the non-screened cells run the full 1,000 as a CALIBRATION check (their share with p < 0.05 should be about 5%); the other non-screened cells get 100 permutations last. Full 1,000 permutations are therefore not run for every cell: stated here, not hidden.
-Cells 1624, screened in 266, extended 58, calibration cells 54 (done with >=1,000 draws: 0). Cells with permutation p computed: 534.
+Cells 1624, screened in 266, extended 55, calibration cells 54 (done with >=1,000 draws: 0). Cells with permutation p computed: 534.
 Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - not finished (fewer than 20 cells done).
 | family | cells | screened in | with perm p | p < 0.05 |
 |--|--|--|--|--|
 | 1 | 1192 | 152 | 408 | 41 |
 | 10 | 16 | 3 | 3 | 2 |
-| 2 | 144 | 26 | 31 | 8 |
+| 2 | 144 | 26 | 31 | 9 |
 | 3 | 8 | 2 | 2 | 1 |
 | 4 | 8 | 2 | 2 | 0 |
 | 5 | 144 | 56 | 60 | 41 |
@@ -214,21 +214,21 @@ Calibration check: 0 of 0 calibration cells with p < 0.05 (expected about 5%) - 
 Leading cells by permutation p (count of real stable passes vs shifted nulls):
 | chunk | book | family | real stable | real rate % | control rate % | draws | p | BH q |
 |--|--|--|--|--|--|--|--|--|
-| FLOW_PARTA_00 | A7 | 5 | 617 | 4.48 | 1.14 | 250 | 0.0040 | 0.057 |
-| TAPE_SPEED_01 | U7 | 5 | 382 | 4.42 | 1.11 | 200 | 0.0050 | 0.057 |
-| cf6_analogs_00 | U7 | 9 | 124 | 4.70 | 0.82 | 200 | 0.0050 | 0.057 |
-| fam9_raw_00 | A7 | 9 | 100 | 8.93 | 0.76 | 200 | 0.0050 | 0.057 |
-| FLOW_PARTA_01 | K7 | 5 | 2416 | 4.38 | 1.58 | 200 | 0.0050 | 0.057 |
-| FLOW_PARTA_00 | P7 | 5 | 1589 | 3.91 | 1.41 | 200 | 0.0050 | 0.057 |
-| cf6_analogs_00 | POOL | 9 | 321 | 4.56 | 0.99 | 200 | 0.0050 | 0.057 |
-| FLOW_PARTA_02 | M7 | 5 | 831 | 3.07 | 1.57 | 200 | 0.0050 | 0.057 |
-| FLOW_PARTA_04 | K7 | 5 | 2063 | 3.79 | 1.50 | 200 | 0.0050 | 0.057 |
-| FLOW_PARTA_03 | K7 | 5 | 2558 | 4.76 | 1.58 | 200 | 0.0050 | 0.057 |
-| FLOW_PARTA_03 | P7 | 5 | 1670 | 4.02 | 1.32 | 200 | 0.0050 | 0.057 |
-| FLOW_PARTA_03 | M7 | 5 | 862 | 3.17 | 1.24 | 200 | 0.0050 | 0.057 |
-| cf6_cols_all_01 | A7 | 2 | 229 | 4.06 | 1.80 | 200 | 0.0050 | 0.057 |
-| FLOW_PARTA_04 | A7 | 5 | 515 | 3.90 | 1.04 | 200 | 0.0050 | 0.057 |
-| FLOW_PARTA_05 | M7 | 5 | 781 | 4.54 | 1.24 | 200 | 0.0050 | 0.057 |
+| cf6_analogs_00 | U7 | 9 | 124 | 4.70 | 0.82 | 400 | 0.0025 | 0.031 |
+| TAPE_SPEED_01 | U7 | 5 | 382 | 4.42 | 1.11 | 350 | 0.0028 | 0.031 |
+| fam9_raw_00 | A7 | 9 | 100 | 8.93 | 0.76 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_01 | P7 | 5 | 1264 | 3.06 | 1.13 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_00 | P7 | 5 | 1589 | 3.91 | 1.41 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_00 | A7 | 5 | 617 | 4.48 | 1.14 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_01 | K7 | 5 | 2416 | 4.38 | 1.58 | 350 | 0.0028 | 0.031 |
+| cf6_cols_all_01 | A7 | 2 | 229 | 4.06 | 1.80 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_04 | A7 | 5 | 515 | 3.90 | 1.04 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_05 | A7 | 5 | 365 | 4.30 | 1.42 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_05 | M7 | 5 | 781 | 4.54 | 1.24 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_05 | P7 | 5 | 1405 | 5.40 | 1.07 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_02 | U7 | 5 | 537 | 2.59 | 1.46 | 350 | 0.0028 | 0.031 |
+| FLOW_PARTA_02 | K7 | 5 | 2556 | 4.72 | 1.52 | 300 | 0.0033 | 0.031 |
+| FLOW_PARTA_00 | POOL | 5 | 5148 | 7.28 | 1.24 | 300 | 0.0033 | 0.031 |
 
 ## AT-ENTRY TABLES (name-clean columns only: no _d>=5 / _L>=5 wait variants, no unaudited ahead, no stack-based family 9; family 9 = rebuilt causal version) - written 2026-11-17 06:58 UTC; A shards landed 1576 of 1576
 STATUS: COMPLETE
@@ -409,6 +409,169 @@ Strongest wait columns after the honest re-score (ALL43, cell, kind; compare the
 | EE | 5 | U7|S0 | fl136_d5 | -4.1 | -0.182 |
 | EE | 5 | U7|S1 | fl073_d5 | 4.1 | 0.154 |
 | EE | 120 | O7|S3 | fl043_d120 | 4.1 | -0.052 |
+
+## FAMILY-RESTRICTED WALK-FORWARD (JOB 1) - AT-ENTRY CLEAN (name-clean columns; family 9 audited causal) - families 9, 10, 7 separately, choose on 2023-04..2025-10 only, freeze, HOLD + L6M untouched
+Procedure: per family, per book x session cell (book|S<k>, book|ALL): top 5 columns by |zw| among columns sign-stable across years inside the selection window (>=20 yes and >=20 no trades), direction = sign of the selection lift; rules = each column as SKIP and as HALF-SIZE of the unfavourable state, and an equal-weight FAMILY SCORE (sum of +1 favourable / -1 unfavourable / 0 unknown over the chosen columns; acts when score < 0). Controls: (a) the identical procedure with outcomes shifted 11/23/37 trades inside the selection window, rule evaluated on TRUE outcomes; (b) 200 persistent random skips / half-sizes of the same share (5-min bucket per book and side) = percentile columns. Ulcer = RMS daily drawdown of the cell P&L (positive change = lower ulcer). Dollar columns: engine $/wk at base lots ($1.18 RT), $4.84 RT repriced and x1.75 live lots. Path arithmetic on the raw cell (no re-entry, no freed-book effect). FIRST PASS.
+
+### Family 9 trade context (rebuilt causal)
+Feed: D7 own trade log (closed trades of the same book; NOTE: the raw-chassis history is the book alone, live D7 history is the stacked book, so live values differ and the rule must be re-derived on live-stack history). D7 live today: YES, computable today from D7 own trade log. Block-shift permutation test on the UNTOUCHED year (2025-11..2026-10, R/MFE_R/MAE_R, 15 book x session cells, 31 columns): real stable count 58 vs null mean 17.4, 95th pct 28, p = 0.0010 (1,000 draws).
+
+Summary over all frozen rules (untouched windows). "sign kept" = share of rules whose flagged trades have LOWER mean R than the unflagged ones in that window (the direction chosen in the selection period holds); real vs the shifted-label procedure:
+| source | rule | mode | window | rules | sign kept % | median lift R (unflagged minus flagged) | median ulcer change % | median mean $/wk eng / $4.84 / x1.75 | share with pct>=.75 on ulcer or mean vs 200 random |
+|--|--|--|--|--|--|--|--|--|--|
+| real | col | half | HOLD | 94 | 56 | 0.030 | 17.1 | -50 / -41 / -88 | 46% |
+| real | col | half | L6M | 94 | 37 | -0.028 | 15.3 | -199 / -196 / -348 | 31% |
+| shift | col | half | HOLD | 258 | 46 | -0.012 | 18.4 | -151 / -141 / -265 | 34% |
+| shift | col | half | L6M | 257 | 51 | 0.007 | 18.0 | -161 / -127 / -282 | 36% |
+| real | col | skip | HOLD | 94 | 56 | 0.030 | 20.0 | -100 / -83 / -175 | 45% |
+| real | col | skip | L6M | 94 | 37 | -0.028 | 17.8 | -397 / -391 / -696 | 27% |
+| shift | col | skip | HOLD | 258 | 46 | -0.012 | 22.3 | -303 / -283 / -530 | 35% |
+| shift | col | skip | L6M | 257 | 51 | 0.007 | 25.6 | -322 / -254 / -564 | 37% |
+| real | score | half | HOLD | 20 | 70 | 0.061 | 21.7 | 50 / 71 / 88 | 55% |
+| real | score | half | L6M | 20 | 35 | -0.024 | 17.3 | -133 / -104 / -232 | 25% |
+| shift | score | half | HOLD | 55 | 49 | -0.006 | 16.6 | -165 / -163 / -289 | 29% |
+| shift | score | half | L6M | 54 | 54 | 0.011 | 14.0 | -214 / -191 / -374 | 30% |
+| real | score | skip | HOLD | 20 | 70 | 0.061 | 28.4 | 100 / 142 / 176 | 60% |
+| real | score | skip | L6M | 20 | 35 | -0.024 | 20.9 | -265 / -208 / -464 | 25% |
+| shift | score | skip | HOLD | 55 | 49 | -0.006 | 23.3 | -331 / -326 / -579 | 38% |
+| shift | score | skip | L6M | 54 | 54 | 0.011 | 17.6 | -428 / -381 / -748 | 30% |
+
+Family-score SKIP rule per cell (real selection), calibrated tier from DS3_PASS_RULE.md (WF-CONFIRMED/WF-LEAD/WF-FAIL; HOLD and L6M untouched, GAP/PRE/XP inside the selection period):
+| cell | tier | chosen columns | HOLD ulcer raw -> rule | L6M ulcer raw -> rule | HOLD mean $/wk raw -> rule | L6M mean $/wk raw -> rule | pct ulcer/mean HOLD | pct ulcer/mean L6M | P(ulcer lower) L6M | L6M $/wk $4.84 / x1.75 |
+|--|--|--|--|--|--|--|--|--|--|--|
+| A7|S0 | WF-FAIL | c_F9_day_net_ge0+c_F9_sess_net_ge0+c_F9_prev2_loss+c_F9_gap_le300+c_F9_gap_gt4h | -6016 -> -741 | -4779 -> -3130 | 832 -> 324 | 587 -> -21 | 0.99 / 0.78 | 0.55 / 0.33 | 0.57 | -574 / -1065 |
+| H7|ALL | WF-FAIL | c_F9_opp_loser_prev+c_F9_day_net_le_m1+c_F9_sess_net_ge0+c_F9_same_side_prev+c_F9_fresh15 | -17428 -> -11214 | -23157 -> -20610 | 136 -> 985 | 1775 -> 2145 | 0.99 / 0.96 | 0.65 / 0.82 | 0.65 | 377 / 648 |
+| H7|S0 | WF-FAIL | c_F9_ss_loser_prev+c_F9_first_sess+c_F9_rechase20+c_F9_gap_gt4h+c_F9_fresh5 | -17090 -> -17337 | -25780 -> -14291 | 147 -> -445 | 1221 -> 201 | 0.12 / 0.28 | 0.24 / 0.47 | 0.70 | -966 / -1785 |
+| H7|S3 | WF-FAIL | c_F9_same_side_prev | -4043 -> -1607 | -1725 -> -1875 | -12 -> 325 | 623 -> 318 | 0.86 / 0.94 | 0.43 / 0.51 | 0.61 | -301 / -534 |
+| K7|ALL | WF-FAIL | c_F9_same_side_prev+c_F9_opp_loser_prev+c_F9_ge3_sess+c_F9_day_net_le_m1+c_F9_prev_target | -58709 -> -32502 | -39645 -> -51068 | 1115 -> 2724 | 2602 -> -2071 | 0.81 / 0.94 | 0.09 / 0.01 | 0.06 | -4487 / -8178 |
+| K7|S0 | WF-FAIL | c_F9_fresh15+c_F9_day_net_le_m1+c_F9_sess_net_le_m1+c_F9_rechase20+c_F9_day_ge3 | -16192 -> -10712 | -28120 -> -15438 | 3770 -> 587 | 3429 -> 1853 | 0.28 / 0.39 | 0.29 / 0.88 | 0.75 | -1453 / -2758 |
+| K7|S1 | WF-FAIL | c_F9_prev3_loss+c_F9_gap_le60+c_F9_rechase10+c_F9_sess_net_le_m1+c_F9_gap_le900 | -20433 -> -9495 | -40458 -> -23514 | 323 -> 505 | -1103 -> -426 | 0.69 / 0.73 | 0.30 / 0.47 | 0.71 | 776 / 1184 |
+| K7|S3 | WF-FAIL | c_F9_opp_loser_prev+c_F9_fresh15+c_F9_sess_net_ge0+c_F9_day_ge5+c_F9_same_side_prev | -24362 -> -24537 | -24248 -> -18861 | -1088 -> -1181 | -995 -> -855 | 0.12 / 0.13 | 0.39 / 0.33 | 0.67 | 149 / 244 |
+| K7|S4 | WF-FAIL | c_F9_prev3_loss+c_F9_rechase20+c_F9_gap_le3600+c_F9_ge3_sess+c_F9_gap_le60 | -44579 -> -27648 | -13606 -> -12916 | -1890 -> -1058 | 1320 -> -74 | 0.33 / 0.33 | 0.32 / 0.21 | 0.34 | -1329 / -2438 |
+| M7|ALL | WF-FAIL | c_F9_ss_loser_prev+c_F9_day_ge5+c_F9_second_sess+c_F9_first_sess+c_F9_fresh15 | -13398 -> -27493 | -40445 -> -29395 | 1147 -> -1918 | -424 -> -650 | 0.10 / 0.01 | 0.34 / 0.36 | 0.78 | -116 / -394 |
+| M7|S1 | WF-FAIL | c_F9_prev2_loss+c_F9_gap_le60+c_F9_gap_le300+c_F9_gap_le900+c_F9_fresh5 | -19414 -> -1781 | -32674 -> -17477 | 485 -> 1886 | -623 -> 6 | 0.98 / 1.00 | 0.12 / 0.57 | 0.97 | 753 / 1100 |
+| M7|S3 | WF-FAIL | c_F9_gap_le300+c_F9_ss_loser_30m+c_F9_fresh15+c_F9_first_sess+c_F9_sess_net_le_m1 | -8076 -> -6094 | -8747 -> -5108 | 662 -> 660 | 199 -> 157 | 0.90 / 0.56 | 1.00 / 0.51 | 0.72 | -36 / -73 |
+| O7|S3 | WF-FAIL | c_F9_opp_loser_prev+c_F9_prev_stop+c_F9_prev_target+c_F9_rechase10+c_F9_same_side_prev | -1547 -> -1535 | -3756 -> -2763 | 1023 -> 709 | 311 -> 191 | 0.32 / 0.88 | 0.36 / 0.55 | 0.55 | -116 / -210 |
+| P7|ALL | WF-FAIL | c_F9_ss_loser_30m+c_F9_rechase20+c_F9_gap_le60+c_F9_ss_loser_60m | -45045 -> -39084 | -40900 -> -32802 | 6421 -> 8043 | 19336 -> 18987 | 0.90 / 0.94 | 0.91 / 0.52 | 0.52 | -318 / -610 |
+| P7|S0 | WF-FAIL | c_F9_gap_le900+c_F9_day_net_ge0+c_F9_sess_net_ge0+c_F9_gap_gt4h+c_F9_same_side_prev | -28855 -> -23902 | -36590 -> -38151 | 7077 -> 5424 | 16772 -> 6301 | 0.79 / 0.59 | 0.29 / 0.10 | 0.45 | -10170 / -18323 |
+| P7|S1 | WF-FAIL | c_F9_fresh5+c_F9_first_sess+c_F9_second_sess+c_F9_ss_loser_60m+c_F9_rechase0 | -33536 -> -23661 | -32871 -> -46665 | 1443 -> 704 | 2733 -> -335 | 0.62 / 0.47 | 0.07 / 0.14 | 0.34 | -2938 / -5370 |
+| P7|S3 | WF-FAIL | c_F9_fresh5+c_F9_ss_loser_30m+c_F9_ss_loser_60m+c_F9_ge3_sess+c_F9_sess_net_le_m1 | -37450 -> -32194 | -52822 -> -41196 | -2099 -> -1206 | -169 -> 543 | 0.71 / 0.79 | 0.67 / 0.69 | 0.88 | 749 / 1245 |
+| U7|ALL | WF-FAIL | c_F9_prev2_loss+c_F9_gap_le900+c_F9_sess_net_ge0+c_F9_gap_le3600+c_F9_rechase20 | -29102 -> -21125 | -12603 -> -18174 | -176 -> 1780 | 2471 -> 378 | 0.64 / 0.92 | 0.27 / 0.29 | 0.24 | -2030 / -3662 |
+| U7|S0 | WF-LEAD | c_F9_rechase0+c_F9_fresh5+c_F9_prev2_loss+c_F9_rechase10 | -26093 -> -11715 | -10662 -> -9742 | -705 -> -6 | 2753 -> 2691 | 0.78 / 0.62 | 0.64 / 0.95 | 0.59 | -25 / -109 |
+| U7|S1 | WF-FAIL | c_F9_prev2_loss+c_F9_gap_le3600+c_F9_same_side_prev+c_F9_gap_le900+c_F9_opp_loser_prev | -18394 -> -18013 | -13693 -> -19495 | 529 -> 548 | -180 -> -75 | 0.46 / 0.60 | 0.20 / 0.55 | 0.54 | 130 / 184 |
+
+Most-chosen columns in plain words (count of cells choosing it; feed: D7 own trade log; live today: YES, computable today from D7 own trade log):
+- c_F9_same_side_prev (7 cells): same side as the last closed trade
+- c_F9_sess_net_ge0 (5 cells): book net R this session so far >= 0
+- c_F9_prev2_loss (5 cells): last two closed trades were both losers
+- c_F9_rechase20 (5 cells): entry is 20+ pts beyond the last exit price (re-chase)
+- c_F9_fresh5 (5 cells): entry is 5+ pts better than the last exit price (fresh)
+- c_F9_opp_loser_prev (5 cells): last closed trade was an opposite-side loser
+- c_F9_fresh15 (5 cells): entry is 15+ pts better than the last exit price (fresh)
+- c_F9_gap_le900 (5 cells): gap since the last close <= 900 s
+
+### Family 10 TICK internals
+Feed: NYSE TICK index feed (delayed ok). D7 live today: NO: D7 does not have the TICK feed today. Block-shift permutation test on the UNTOUCHED year (2025-11..2026-10, R/MFE_R/MAE_R, 15 book x session cells, 80 columns): real stable count 14 vs null mean 8.1, 95th pct 16, p = 0.1019 (1,000 draws).
+
+Summary over all frozen rules (untouched windows). "sign kept" = share of rules whose flagged trades have LOWER mean R than the unflagged ones in that window (the direction chosen in the selection period holds); real vs the shifted-label procedure:
+| source | rule | mode | window | rules | sign kept % | median lift R (unflagged minus flagged) | median ulcer change % | median mean $/wk eng / $4.84 / x1.75 | share with pct>=.75 on ulcer or mean vs 200 random |
+|--|--|--|--|--|--|--|--|--|--|
+| real | col | half | HOLD | 40 | 72 | 0.109 | 24.3 | 258 / 274 / 451 | 55% |
+| real | col | half | L6M | 36 | 36 | -0.023 | 12.1 | -87 / -83 / -153 | 25% |
+| shift | col | half | HOLD | 125 | 69 | 0.067 | 15.1 | 75 / 77 / 132 | 46% |
+| shift | col | half | L6M | 109 | 50 | -0.004 | 10.5 | -22 / 5 / -39 | 32% |
+| real | col | skip | HOLD | 40 | 72 | 0.109 | 27.7 | 515 / 548 / 902 | 60% |
+| real | col | skip | L6M | 36 | 36 | -0.023 | 19.6 | -174 / -166 / -305 | 31% |
+| shift | col | skip | HOLD | 125 | 69 | 0.067 | 15.3 | 150 / 154 / 263 | 46% |
+| shift | col | skip | L6M | 109 | 50 | -0.004 | 8.0 | -44 / 11 / -77 | 35% |
+| real | score | half | HOLD | 8 | 75 | 0.093 | 24.6 | 462 / 490 / 809 | 50% |
+| real | score | half | L6M | 8 | 12 | -0.078 | 7.5 | -268 / -236 / -468 | 25% |
+| shift | score | half | HOLD | 27 | 67 | 0.068 | 11.3 | 47 / 48 / 82 | 37% |
+| shift | score | half | L6M | 22 | 50 | -0.011 | 6.1 | -51 / -50 / -90 | 32% |
+| real | score | skip | HOLD | 8 | 75 | 0.093 | 33.5 | 924 / 980 / 1618 | 62% |
+| real | score | skip | L6M | 8 | 12 | -0.078 | 5.3 | -535 / -472 / -937 | 25% |
+| shift | score | skip | HOLD | 27 | 67 | 0.068 | 11.3 | 94 / 97 / 164 | 37% |
+| shift | score | skip | L6M | 22 | 50 | -0.011 | 6.6 | -103 / -100 / -180 | 36% |
+
+Family-score SKIP rule per cell (real selection), calibrated tier from DS3_PASS_RULE.md (WF-CONFIRMED/WF-LEAD/WF-FAIL; HOLD and L6M untouched, GAP/PRE/XP inside the selection period):
+| cell | tier | chosen columns | HOLD ulcer raw -> rule | L6M ulcer raw -> rule | HOLD mean $/wk raw -> rule | L6M mean $/wk raw -> rule | pct ulcer/mean HOLD | pct ulcer/mean L6M | P(ulcer lower) L6M | L6M $/wk $4.84 / x1.75 |
+|--|--|--|--|--|--|--|--|--|--|--|
+| K7|ALL | WF-FAIL | c_T_tick_no_ext_against_600+c_T_tick_ma5_side+c_T10_tk_now_with+c_T10_mean5_with200+c_T10_pos15_against60 | -58709 -> -31453 | -39645 -> -37566 | 1115 -> 2641 | 2602 -> 1589 | 0.84 / 0.93 | 0.38 / 0.46 | 0.33 | -915 / -1774 |
+| K7|S3 | WF-FAIL | c_T10_ext600_30_against+c_T10_lastext800_against+c_T10_ext600_5_with+c_T10_tk_now_with500+c_T10_mean5_with200 | -24362 -> -23362 | -24248 -> -26358 | -1088 -> -766 | -995 -> -1081 | 0.30 / 0.69 | 0.04 / 0.18 | 0.51 | -83 / -151 |
+| K7|S4 | WF-FAIL | c_T_tick_no_ext_against_600+c_T10_pos15_with60+c_T10_tk_now_with+c_T10_mean60_with+c_T10_cumslope15_with | -44579 -> -11469 | -13606 -> -14222 | -1890 -> 274 | 1320 -> -509 | 0.67 / 0.90 | 0.11 / 0.10 | 0.37 | -1760 / -3199 |
+| M7|ALL | WF-FAIL | c_T10_ext600_15_with+c_T10_pos30_with60+c_T10_lastext800_against+c_T10_mean60_with200+c_T_tick_no_ext_against_600 | -13398 -> -19776 | -40445 -> -35012 | 1147 -> 491 | -424 -> -784 | 0.32 / 0.49 | 0.35 / 0.32 | 0.57 | -317 / -629 |
+| M7|S3 | WF-FAIL | c_T10_ext600_15_with+c_T10_pos30_with60+c_T10_lastext800_against+c_T10_mean60_with200+c_T_tick_no_ext_against_600 | -8076 -> -1718 | -8747 -> -2634 | 662 -> 7 | 199 -> -161 | 0.76 / 0.41 | 0.59 / 0.28 | 0.98 | -317 / -629 |
+| O7|S3 | WF-FAIL | c_T_tick_cum_slope+c_T10_pos15_against60+c_T10_pos60_against60+c_T10_pos30_against60+c_T_tick_ma15_strong | -1547 -> -1246 | -3756 -> -1862 | 1023 -> 545 | 311 -> 300 | 0.61 / 0.56 | 0.81 / 0.72 | 0.73 | -7 / -20 |
+| P7|ALL | WF-FAIL | c_T10_cumslope15_with+c_T10_mean60_with200+c_T_tick_ext_with_600+c_T10_cumslope30_with+c_T10_f15_pos_with60 | -45045 -> -34466 | -40900 -> -44413 | 6421 -> 8531 | 19336 -> 18625 | 0.90 / 0.90 | 0.38 / 0.76 | 0.65 | -628 / -1244 |
+| P7|S3 | WF-FAIL | c_T10_cumslope15_with+c_T10_mean60_with200+c_T_tick_ext_with_600+c_T10_cumslope30_with+c_T10_f15_pos_with60 | -37450 -> -21161 | -52822 -> -50007 | -2099 -> 10 | -169 -> -880 | 0.76 / 0.79 | 0.20 / 0.27 | 0.71 | -628 / -1244 |
+
+Most-chosen columns in plain words (count of cells choosing it; feed: NYSE TICK index feed; live today: NO: D7 does not have the TICK feed today):
+- c_T_tick_no_ext_against_600 (4 cells): - c_T_tick_no_ext_against_600 : NO TICK extreme beyond 600 against the trade within the last 15 min
+- c_T10_mean60_with200 (4 cells): name only: c_T10_mean60_with200
+- c_T10_lastext800_against (3 cells): name only: c_T10_lastext800_against
+- c_T10_cumslope15_with (3 cells): name only: c_T10_cumslope15_with
+- c_T10_mean5_with200 (2 cells): name only: c_T10_mean5_with200
+- c_T10_tk_now_with (2 cells): name only: c_T10_tk_now_with
+- c_T10_pos15_against60 (2 cells): name only: c_T10_pos15_against60
+- c_T10_ext600_15_with (2 cells): name only: c_T10_ext600_15_with
+
+### Family 7 UW options positioning
+Feed: Unusual Whales options / gamma exposure subscription. D7 live today: NO: needs the UW subscription. Block-shift permutation test on the UNTOUCHED year (2025-11..2026-10, R/MFE_R/MAE_R, 15 book x session cells, 108 columns): real stable count 60 vs null mean 48.5, 95th pct 66, p = 0.1339 (1,000 draws).
+
+Summary over all frozen rules (untouched windows). "sign kept" = share of rules whose flagged trades have LOWER mean R than the unflagged ones in that window (the direction chosen in the selection period holds); real vs the shifted-label procedure:
+| source | rule | mode | window | rules | sign kept % | median lift R (unflagged minus flagged) | median ulcer change % | median mean $/wk eng / $4.84 / x1.75 | share with pct>=.75 on ulcer or mean vs 200 random |
+|--|--|--|--|--|--|--|--|--|--|
+| real | col | half | HOLD | 92 | 61 | 0.038 | 13.2 | 36 / 53 / 63 | 45% |
+| real | col | half | L6M | 92 | 67 | 0.050 | 14.2 | 50 / 58 / 87 | 57% |
+| shift | col | half | HOLD | 276 | 63 | 0.043 | 19.0 | 25 / 44 / 44 | 59% |
+| shift | col | half | L6M | 276 | 54 | 0.018 | 16.6 | -69 / -54 / -120 | 52% |
+| real | col | skip | HOLD | 92 | 61 | 0.038 | 15.9 | 72 / 105 / 126 | 47% |
+| real | col | skip | L6M | 92 | 67 | 0.050 | 20.2 | 100 / 116 / 175 | 58% |
+| shift | col | skip | HOLD | 276 | 63 | 0.043 | 24.4 | 50 / 87 / 87 | 58% |
+| shift | col | skip | L6M | 276 | 54 | 0.018 | 21.5 | -137 / -108 / -240 | 47% |
+| real | score | half | HOLD | 19 | 58 | 0.020 | 12.6 | -7 / 2 / -13 | 58% |
+| real | score | half | L6M | 19 | 68 | 0.066 | 13.9 | 58 / 66 / 101 | 63% |
+| shift | score | half | HOLD | 57 | 47 | -0.006 | 17.3 | -17 / -1 / -29 | 54% |
+| shift | score | half | L6M | 57 | 54 | 0.026 | 15.3 | -9 / -6 / -15 | 58% |
+| real | score | skip | HOLD | 19 | 58 | 0.020 | 15.2 | -15 / 4 / -26 | 42% |
+| real | score | skip | L6M | 19 | 68 | 0.066 | 23.8 | 116 / 132 / 202 | 63% |
+| shift | score | skip | HOLD | 57 | 47 | -0.006 | 22.1 | -33 / -3 / -58 | 53% |
+| shift | score | skip | L6M | 57 | 54 | 0.026 | 18.0 | -18 / -11 / -31 | 53% |
+
+Family-score SKIP rule per cell (real selection), calibrated tier from DS3_PASS_RULE.md (WF-CONFIRMED/WF-LEAD/WF-FAIL; HOLD and L6M untouched, GAP/PRE/XP inside the selection period):
+| cell | tier | chosen columns | HOLD ulcer raw -> rule | L6M ulcer raw -> rule | HOLD mean $/wk raw -> rule | L6M mean $/wk raw -> rule | pct ulcer/mean HOLD | pct ulcer/mean L6M | P(ulcer lower) L6M | L6M $/wk $4.84 / x1.75 |
+|--|--|--|--|--|--|--|--|--|--|--|
+| A7|S0 | WF-CONFIRMED | c_J_em_room_ge150_Nh+c_J_beyond_flip_Nd_vol+c_J_em_used_lt0.5_Nh+c_J_em_frac_pos_Nd+c_J_em_room_ge100_Nh | -6016 -> -1404 | -4779 -> -2613 | 832 -> 760 | 587 -> 883 | 0.99 / 0.89 | 0.93 / 0.93 | 0.91 | 327 / 518 |
+| H7|ALL | WF-FAIL | c_J_flip_far25_NDX_vol+c_J_flip_far50_NDX_vol+c_J_flip_far100_NDX_vol+c_J_wall_behind50_Nh_oi+c_J_netgamma_pos_Nh_vol | -17428 -> -14831 | -23157 -> -17641 | 136 -> -175 | 1775 -> 1593 | 0.71 / 0.33 | 0.75 / 0.54 | 0.45 | -163 / -318 |
+| H7|S0 | WF-CONFIRMED | c_J_flip_far25_NDX_vol+c_J_flip_far50_NDX_vol+c_J_wall_behind50_NDX_oi+c_J_flip_far100_SPX_vol+c_J_flip_far100_NDX_oi | -17090 -> -14485 | -25780 -> -11096 | 147 -> 411 | 1221 -> 2234 | 0.69 / 0.69 | 0.99 / 0.94 | 0.89 | 1036 / 1773 |
+| K7|ALL | WF-FAIL | c_J_0dte_flip_far50_Nd_oi+c_J_beyond_flip_Nh_vol+c_J_wall_behind50_SPX_oi+c_J_beyond_0dte_flip_Nd_oi+c_J_0dte_flip_far25 | -58709 -> -53645 | -39645 -> -31033 | 1115 -> -323 | 2602 -> 3500 | 0.46 / 0.08 | 0.80 / 0.84 | 0.86 | 953 / 1571 |
+| K7|S0 | WF-FAIL | c_J_wall_behind25_SPX_vol+c_J_wall_behind50_SPX_vol+c_J_em_used_lt0.75_Nh+c_J_flip_far50_SPX_vol+c_J_netgamma_pos_Nh_vol | -16192 -> -16407 | -28120 -> -15219 | 3770 -> 2829 | 3429 -> 3219 | 0.20 / 0.52 | 0.93 / 0.81 | 0.92 | -165 / -367 |
+| K7|S1 | WF-CONFIRMED | c_J_flip_far100_SPX_oi+c_J_beyond_flip_Nd_oi+c_J_wall_behind25_SPX_vol+c_J_beyond_flip_Nh_oi+c_J_netgamma_pos_Nh_oi | -20433 -> -8399 | -40458 -> -12800 | 323 -> 238 | -1103 -> 614 | 0.87 / 0.53 | 0.88 / 0.86 | 0.91 | 1815 / 3005 |
+| K7|S3 | WF-FAIL | c_J_tide_npp_s5_neg+c_J_netgamma_pos_Nd_vol+c_J_wall_behind25_SPX_oi+c_J_flip_far25_SPX_oi+c_J_tide_nv_s5_pos | -24362 -> -13922 | -24248 -> -17419 | -1088 -> -535 | -995 -> -879 | 0.78 / 0.76 | 0.52 / 0.32 | 0.61 | 132 / 202 |
+| K7|S4 | WF-CONFIRMED | c_J_0dte_flip_far50_Nh_oi+c_J_wall_behind50_Nh_vol+c_J_wall_behind50_SPX_oi+c_J_tide_nv_s30_pos+c_J_beyond_0dte_flip_Nh_ | -44579 -> -45844 | -13606 -> -9971 | -1890 -> -1967 | 1320 -> 1622 | 0.28 / 0.34 | 0.95 / 0.86 | 0.89 | 306 / 530 |
+| M7|ALL | WF-FAIL | c_J_flip_far100_SPX_oi+c_J_wall_behind25_Nd_oi+c_J_flip_far100_NDX_oi+c_J_tide_npp_s_neg+c_J_flip_far25_NDX_vol | -13398 -> -23630 | -40445 -> -42808 | 1147 -> -84 | -424 -> 137 | 0.07 / 0.07 | 0.23 / 0.80 | 0.86 | 594 / 982 |
+| M7|S1 | WF-FAIL | c_J_wall_behind50_Nd_oi+c_J_flip_far25_NDX_vol+c_J_wall_behind25_Nd_oi+c_J_flip_far25_SPX_oi+c_J_0dte_flip_far50_Nd_oi | -19414 -> -18412 | -32674 -> -24902 | 485 -> 772 | -623 -> -252 | 0.71 / 0.87 | 0.96 / 0.81 | 0.67 | 377 / 650 |
+| M7|S3 | WF-FAIL | c_J_beyond_0dte_flip_Nh_vol+c_J_tide_npp_s_neg+c_J_beyond_0dte_flip_Nd_vol+c_J_beyond_flip_Nh_oi+c_J_gex_pos_QQQ_vol | -8076 -> -6881 | -8747 -> -9816 | 662 -> 609 | 199 -> -377 | 0.41 / 0.68 | 0.27 / 0.09 | 0.43 | -558 / -1007 |
+| O7|S3 | WF-FAIL | c_J_beyond_flip_SPX_vol+c_J_tide_npp_s5_neg | -1547 -> -1488 | -3756 -> -3179 | 1023 -> 710 | 311 -> 352 | 0.46 / 0.14 | 0.67 / 0.76 | 0.77 | 44 / 72 |
+| P7|ALL | WF-FAIL | c_J_wall_behind25_Nh_vol+c_J_gex_pos_QQQ_vol+c_J_wall_behind50_Nh_oi+c_J_gex_pos_NDX_oi+c_J_0dte_flip_far50_Nh_oi | -45045 -> -20718 | -40900 -> -43372 | 6421 -> 7887 | 19336 -> 7977 | 0.95 / 0.91 | 0.39 / 0.33 | 0.67 | -10651 / -19878 |
+| P7|S0 | WF-FAIL | c_J_flip_far25_NDX_oi+c_J_wall_behind25_SPX_oi+c_J_flip_far100_NDX_oi+c_J_wall_behind50_SPX_oi+c_J_flip_far25_SPX_oi | -28855 -> -24122 | -36590 -> -51879 | 7077 -> 9085 | 16772 -> 12348 | 0.80 / 0.91 | 0.07 / 0.49 | 0.20 | -4228 / -7742 |
+| P7|S1 | WF-LEAD | c_J_wall_behind50_Nd_oi+c_J_flip_far100_SPX_oi+c_J_flip_far25_NDX_vol+c_J_netgamma_pos_Nd_vol+c_J_netgamma_pos_Nh_vol | -33536 -> -20609 | -32871 -> -19621 | 1443 -> 2522 | 2733 -> 5591 | 0.88 / 0.85 | 0.94 / 0.97 | 0.95 | 2943 / 5001 |
+| P7|S3 | WF-FAIL | c_J_gex_pos_QQQ_vol+c_J_wall_behind50_Nh_vol+c_J_netgamma_pos_Nh_vol+c_J_gex_pos_NDX_oi+c_J_wall_behind50_NDX_oi | -37450 -> -30878 | -52822 -> -53671 | -2099 -> -1688 | -169 -> -1247 | 0.62 / 0.55 | 0.23 / 0.15 | 0.59 | -1024 / -1887 |
+| U7|ALL | WF-FAIL | c_J_flip_far100_SPX_vol+c_J_flip_far100_NDX_vol+c_J_wall_behind50_SPX_vol+c_J_flip_far50_SPX_oi+c_J_wall_behind25_SPX_vo | -29102 -> -29091 | -12603 -> -14033 | -176 -> -191 | 2471 -> 1750 | 0.51 / 0.50 | 0.40 / 0.26 | 0.35 | -713 / -1262 |
+| U7|S0 | WF-FAIL | c_J_flip_far100_SPX_vol+c_J_beyond_flip_NDX_oi+c_J_ivshort_fell+c_J_flip_far100_SPX_oi+c_J_wall_behind50_NDX_vol | -26093 -> -17339 | -10662 -> -18655 | -705 -> -407 | 2753 -> -482 | 0.69 / 0.41 | 0.09 / 0.03 | 0.12 | -3195 / -5662 |
+| U7|S1 | WF-LEAD | c_J_em_frac_pos_Nh+c_J_em_frac_pos_Nd+c_J_beyond_flip_SPX_oi+c_J_beyond_flip_NDX_vol+c_J_beyond_flip_SPX_vol | -18394 -> -11145 | -13693 -> -10378 | 529 -> 1900 | -180 -> 430 | 0.77 / 0.94 | 0.84 / 0.75 | 0.88 | 649 / 1069 |
+
+Most-chosen columns in plain words (count of cells choosing it; feed: Unusual Whales options / gamma exposure subscription; live today: NO: needs the UW subscription):
+- c_J_flip_far25_NDX_vol (5 cells): name only: c_J_flip_far25_NDX_vol
+- c_J_netgamma_pos_Nh_vol (4 cells): name only: c_J_netgamma_pos_Nh_vol
+- c_J_flip_far100_SPX_oi (4 cells): name only: c_J_flip_far100_SPX_oi
+- c_J_flip_far100_SPX_vol (3 cells): name only: c_J_flip_far100_SPX_vol
+- c_J_flip_far100_NDX_oi (3 cells): name only: c_J_flip_far100_NDX_oi
+- c_J_wall_behind25_SPX_vol (3 cells): name only: c_J_wall_behind25_SPX_vol
+- c_J_flip_far25_SPX_oi (3 cells): name only: c_J_flip_far25_SPX_oi
+- c_J_wall_behind50_SPX_oi (3 cells): name only: c_J_wall_behind50_SPX_oi
+
+Family 9 leakage check (rb1_fam9_check.py): see the log lines in MORNING.md; independent brute-force recompute of 8 features on 600 random trades from raw trades with exit_ts < signal second matched in every case, and scrambling the outcomes (R, exit price, P&L) of a trade and all later trades changed none of the features of earlier trades nor of the first scrambled trade of each book: the features use only trades CLOSED before the signal second on the raw chassis (book alone), not the JL2 stack.
 
 ## Read this first
 - Missing controls are "not finished", never passing: the perm p column is blank until every chunk x book permutation shard of a batch has landed for that family.
