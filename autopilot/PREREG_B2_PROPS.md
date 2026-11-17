@@ -1,0 +1,5 @@
+# PREREG W-BAR2 property screen (written before any property row is read)
+Bars: W-BAR2 registry ids rngor, volor, dltor, sessrng (trade tape), qmid, micro, bmsg, bmsgq (top-of-book from mbp-10), later entropy, vfp, anch, tpo, ha/smooth transforms; each x B in {30,50,80,130,200,320,500} target bars/session.
+Thresholds trailing only: median over the previous 20 trading days (>=10) of the same session code; range/delta thresholds calibrated so the trailing-median bar count is closest to B (code/th_bars/b2_lib.py pick()). No look-ahead.
+Statistics per type x param x session (London, pre, NYAM, NYPM): bars/session, serial corr lag 1-5, excess kurtosis, JB/n, efficiency ratio, VR5, rules mom1/mom3 (follow sign of last k bar returns; reversal = negative) mean ticks/bar and hit rate on windows ALL, L3M, L6M, 2023..2026. Selection rule: trailing 6M primary, 3M beside; no pick from 2023-04..2025-10 alone.
+Trials counted: types x params x sessions x 2 rules x 2 k (counted in TRIALS_LEDGER row B2PROPS).

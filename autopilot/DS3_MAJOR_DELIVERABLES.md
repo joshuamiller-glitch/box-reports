@@ -1,18 +1,21 @@
-# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-17 17:47Z, every 30 min)
+# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-17 18:07Z, every 30 min)
 VERDICT (data ends 2026-10-31; FIRST PASS; every row is a BEST SETTING with its honest label; rows labelled LEAD-ASSEMBLED are copied by the assembler from existing pages and wait for the owner to confirm)
 
 > HEADER: trials counted = per row (see each row; ledger families CT1, RB3, RB5, ME, MF1/MF2); correction = per row (BH / White RC / controls where run, else 'not run'); in-sample vs walk-forward is stated per row (untouched-year line). Labels CONFIRMED / LEAD need engine-exact persistent-draw controls (calibrated pass rule); a missing field prints 'n/a (owner has not delivered)'. Seal untouched.
 
 ## Summary (plain)
 1. Table 1: 30 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 6, BEST-AVAILABLE-NOT-PROVEN 24) + 0 reference rows
-2. Table 2: 23 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 3, BEST-AVAILABLE-NOT-PROVEN 20) + 0 reference rows
-3. Table 3: 36 main rows (CONFIRMED 1, LEAD 0, WEAK-BUT-POSITIVE 7, BEST-AVAILABLE-NOT-PROVEN 28) + 0 reference rows
-4. Table 4: 13 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 6, BEST-AVAILABLE-NOT-PROVEN 7) + 0 reference rows
-5. Decide first: Table 3 row 1 (M7 London 4 -> 0 lots, CONFIRMED, but HOLD mean -445 $/wk); then the P7 flat -42 question (L6M worse with it on); then whether to fund the engine runs for the unproven books. 
+2. Table 5: 0 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 0, BEST-AVAILABLE-NOT-PROVEN 0) + 0 reference rows, 11 weak cells missing (owner W-SWA/W-SWB has not delivered) - ZERO ROWS, owed by W-SWA/W-SWB/W-BAR
+3. Table 6: 0 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 0, BEST-AVAILABLE-NOT-PROVEN 0) + 0 reference rows - ZERO ROWS, owed by W-S1R
+4. Table 2: 23 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 3, BEST-AVAILABLE-NOT-PROVEN 20) + 0 reference rows
+5. Table 3: 36 main rows (CONFIRMED 1, LEAD 0, WEAK-BUT-POSITIVE 7, BEST-AVAILABLE-NOT-PROVEN 28) + 0 reference rows
+6. Table 4: 13 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 7, BEST-AVAILABLE-NOT-PROVEN 6) + 0 reference rows
+6. Decide first: Table 3 row 1 (M7 London 4 -> 0 lots, CONFIRMED, but HOLD mean -445 $/wk); then the P7 flat -42 question (L6M worse with it on); then whether to fund the engine runs for the unproven books. No file yet from: W-SWA, W-SWB, W-BAR, W-S1R.
 
 How to read: ulcer % is positive when the cell is better than today (lower RMS daily drawdown); max DD and worst week are base -> cell in dollars (negative numbers, closer to zero is better); mean per week is shown at base lots, at x1.75 live lots and with $4.84 round-turn commission. Live lots = max(1, floor(1.75 x base + 0.5)). Weak spots are stated on each row; GAP / PRE percentiles are often weak.
 
 ## Table 1. BRACKET TABLE (stop / target / time-stop / half-off instead of 60/58)
+Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
 **U7 london**  `U7|london|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
 - Today -> setting: 60/60 -> bracket U7 london stop=60 target=MIN(60, nearest UWO level ahead - 0) [DYNAMIC: prior-day level table]
@@ -25,7 +28,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: UW gex-levels/oi-per-strike daily table (Advanced tier) + roll guard
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 19, HOLD 12, L6M 11 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **P7 asia**  `P7|asia|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -39,7 +42,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: UW gex-levels/oi-per-strike daily table (Advanced tier) + roll guard
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 56, HOLD 48, L6M 34 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **P7 london**  `P7|london|levelexit`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -53,7 +56,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: own zones / round-number target (no feed)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 172, HOLD 55, L6M 99 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **H7 nyam**  `H7|nyam|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -67,7 +70,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: own zones / round-number target (no feed)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 55, HOLD 7, L6M 12 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 london**  `K7|london|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -81,7 +84,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: UW gex-levels/oi-per-strike daily table (Advanced tier) + roll guard
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 45, HOLD 44, L6M 37 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **P7 nyam**  `P7|nyam|levelexit`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -95,7 +98,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: UW gex-levels/oi-per-strike daily table (Advanced tier) + roll guard
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 216, HOLD 98, L6M 105 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **A7 asia**  `A7|asia|levelexit`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -109,7 +112,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: own zones / round-number target (no feed)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 47, HOLD 17, L6M 26 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 nyam**  `K7|nyam|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -123,7 +126,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: own zones / round-number target (no feed)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 479, HOLD 118, L6M 119 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **H7 asia**  `H7|asia|levelexit`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -137,7 +140,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: UW gex-levels/oi-per-strike daily table (Advanced tier) + roll guard
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 119, HOLD 54, L6M 44 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **M7 london**  `M7|london|levelexit`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -151,7 +154,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: own zones / round-number target (no feed)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 283, HOLD 91, L6M 123 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 asia**  `K7|asia|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -165,7 +168,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: UW gex-levels/oi-per-strike daily table (Advanced tier) + roll guard
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 353, HOLD 221, L6M 289 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 nypm**  `K7|nypm|levelexit`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -179,11 +182,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code: own zones / round-number target (no feed)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: extra data that could help non-holding cells: intraday-refreshed UW levels / 0DTE strike levels (not available historically); fired in SEL 579, HOLD 145, L6M 160 trades; family chosen among 14 on untouched windows (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 x asia**  `K7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/59 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/59 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -192,11 +195,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **K7 x london**  `K7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/59 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/59 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -205,11 +208,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **K7 x nyam**  `K7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/59 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/59 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -218,11 +221,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **K7 x nypm**  `K7|nypm|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/59 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/59 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -231,11 +234,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **M7 x london**  `M7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/59.5 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/59.5 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -244,11 +247,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **M7 x nyam**  `M7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/59.5 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/59.5 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -257,11 +260,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **U7 x asia**  `U7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -270,11 +273,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **U7 x london**  `U7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -283,11 +286,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **P7 x asia**  `P7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/58 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/58 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -296,11 +299,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **P7 x london**  `P7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/58 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/58 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -309,11 +312,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **P7 x nyam**  `P7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/58 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/58 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -322,11 +325,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **H7 x asia**  `H7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -335,11 +338,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **H7 x nyam**  `H7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -348,11 +351,11 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **A7 x asia**  `A7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (1 common SEL months)
+- Today -> setting: 60/60 -> pending: stage 3 priority subset still landing (2 common SEL months)
 - Metrics (L6M first): n/a (owner has not delivered)
 - Controls: not run
 - Trials counted / correction: see TRIALS_LEDGER RB3
@@ -361,7 +364,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T17:31:01Z
+- Updated: 2026-11-17T18:01:04Z
 
 **M7 nyam**  `M7|nyam|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -374,7 +377,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line (existing)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: no level-based target/stop rule picked in selection for this cell
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **O7 nyam**  `O7|nyam|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -387,7 +390,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line (existing)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: no level-based target/stop rule picked in selection for this cell
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **U7 asia**  `U7|asia|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -400,7 +403,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line (existing)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: no level-based target/stop rule picked in selection for this cell
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **all books (pooled groups)**  `WALL|target-in-front`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -413,9 +416,159 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: needs MBO/L3 (full-depth) feed: walls inside 60 pts are not visible in the CQG 20-level book (about 2-5 pts deep)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: wall rules lose money per fired trade on the covered span
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
+
+## Table 5. BAR SWAP (bar today -> bar proposed per weak book x session)
+Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
+**K7 x NY AM**  `BARSWAP|K7|NY AM|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: K7 3-min -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**P7 x NY AM**  `BARSWAP|P7|NY AM|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: 1-5 min or second bars -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**P7 x London**  `BARSWAP|P7|London|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: 1-5 min or second bars -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**M7 x London**  `BARSWAP|M7|London|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: 1-5 min or second bars -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**K7 x London**  `BARSWAP|K7|London|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: K7 3-min -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**K7 x NY PM**  `BARSWAP|K7|NY PM|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: K7 3-min -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**M7 x NY AM**  `BARSWAP|M7|NY AM|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: 1-5 min or second bars -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**H7 x NY AM**  `BARSWAP|H7|NY AM|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: 1-5 min or second bars -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**U7 x London**  `BARSWAP|U7|London|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: U7 10-min -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**O7 x all sessions**  `BARSWAP|O7|all sessions|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: 1-5 min or second bars -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+**Asia phase 2 x Asia**  `BARSWAP|Asia phase 2|Asia|missing`  (source: placeholder)
+- Label: **n/a**
+- Today -> setting: time bars -> n/a (owner has not delivered) (owner W-SWA/W-SWB)
+- Metrics (L6M first): n/a (owner has not delivered)
+- Controls: n/a (owner has not delivered)
+- Trials counted / correction: n/a (owner has not delivered)
+- Untouched year: n/a (owner has not delivered)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: n/a (owner has not delivered)
+- Evidence: n/a (owner has not delivered)
+- Caveats: n/a (owner has not delivered)
+- Updated: n/a
+
+## Table 6. ENTRY CONDITIONS / SCORES (per book x session: condition or score, action skip / half / x1.5)
+Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
+n/a (W-S1R not delivered)
 
 ## Table 2. NEW YORK AND LONDON BOOKS
+Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
 **London book: M3_FAILED_BREAK_LON**  `BOOK|LON|M3_FAILED_BREAK_LON`  (source: bootstrap)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
 - Today -> setting: not live -> Signal M3 failed break, lookback 60 min, reject 5 pts, London window, 1-min bars, market entry, exit E2 = stop 60 / target 60, equal-dollar-risk lots (round(1200/(stop x 20))); exact entry rule per owner page
@@ -493,7 +646,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **NYAM X4_OPEN_DRIVE_DR**  `NYAM-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -507,7 +660,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **NYAM X4_ORB_DIR_PULLBACK**  `NYAM-book-3`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -521,7 +674,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **NYPM W7_POWER_HOUR_LOOSE**  `NYPM-book-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -535,7 +688,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **NYPM X4_RSI2_15MIN_NYPM**  `NYPM-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -549,7 +702,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **LONDON NQ.FADE_LV.f4d004a6**  `LONDON-book-1`  (source: W-MB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -565,7 +718,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (book; see setting)
 - Evidence: autopilot/DS3_MAJOR_B_BOOKS.md
 - Caveats: harness basis only until the engine stack test lands
-- Updated: 2026-11-17 17:32
+- Updated: 2026-11-17 18:02
 
 **LONDON NQ.FADE_LV.6fb3aa4d**  `LONDON-book-2`  (source: W-MB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -581,7 +734,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (book; see setting)
 - Evidence: autopilot/DS3_MAJOR_B_BOOKS.md
 - Caveats: harness basis only until the engine stack test lands
-- Updated: 2026-11-17 17:32
+- Updated: 2026-11-17 18:02
 
 **LON W11_SESSION_EXTREME_RSI14_LON**  `LON-book-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -595,7 +748,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **LON X4_FAILED_BREAK_BARS_LON**  `LON-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -609,7 +762,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **LON R3_YM_LED_LON**  `LON-book-3`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -623,7 +776,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **NYAM X4_OPEN_DRIVE_DR**  `NYAM-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -637,7 +790,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **NYAM X4_ORB_DIR_PULLBACK**  `NYAM-book-alt-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -651,7 +804,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **NYAM N2_GAP**  `NYAM-book-alt-3`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -665,7 +818,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **NYPM W7_POWER_HOUR_LOOSE**  `NYPM-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -679,7 +832,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **NYPM X4_RSI2_15MIN_NYPM**  `NYPM-book-alt-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -693,7 +846,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **LON W11_SESSION_EXTREME_RSI14_LON**  `LON-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -707,7 +860,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **LON R3_YM_LED_LON**  `LON-book-alt-2`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -721,7 +874,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 **LON M3_FAILED_BREAK_LON**  `LON-book-alt-3`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -735,9 +888,10 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T17:34Z
+- Updated: 2026-11-17T18:05Z
 
 ## Table 3. LOT VECTOR (lots per book x session)
+Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
 **M7 x London (live 4 lots)**  `LOT|M7|london|0`  (source: bootstrap)
 - Label: **CONFIRMED**
 - Today -> setting: M7 London 4 live lots (base ~2) -> M7 London session lots: 4 -> 0 (do not trade M7 in London); all other lots unchanged
@@ -768,7 +922,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (trade-log context)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **P7 london x range_used**  `P7|london|size-by-env`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -782,7 +936,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (HAR range forecast)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **O7 nyam x roomOWN**  `O7|nyam|size-by-env`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -796,7 +950,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (zone room)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 x nyam**  `K7|nyam|lots`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -815,7 +969,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: HEADLINE R2A = essentially an x0.75-style trim (untouched 2023-04..2025-10: ulcer -8%, mean -23%, 14% worse than uniform ray at same mean); first evidenced lot change = M7 London 0 (CONFIRMED w/ caveats, DS3_CELL_TESTS.md); metrics = exact JL3 (all 43 months)
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **K7 x nypm**  `K7|nypm|lots`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -834,7 +988,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: HEADLINE R2A = essentially an x0.75-style trim (untouched 2023-04..2025-10: ulcer -8%, mean -23%, 14% worse than uniform ray at same mean); first evidenced lot change = M7 London 0 (CONFIRMED w/ caveats, DS3_CELL_TESTS.md); metrics = exact JL3 (all 43 months)
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **M7 x london**  `M7|london|lots`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -853,7 +1007,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: HEADLINE R2A = essentially an x0.75-style trim (untouched 2023-04..2025-10: ulcer -8%, mean -23%, 14% worse than uniform ray at same mean); first evidenced lot change = M7 London 0 (CONFIRMED w/ caveats, DS3_CELL_TESTS.md); metrics = exact JL3 (all 43 months)
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **U7 x asia**  `U7|asia|lots`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -872,7 +1026,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: HEADLINE R2A = essentially an x0.75-style trim (untouched 2023-04..2025-10: ulcer -8%, mean -23%, 14% worse than uniform ray at same mean); first evidenced lot change = M7 London 0 (CONFIRMED w/ caveats, DS3_CELL_TESTS.md); metrics = exact JL3 (all 43 months)
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **U7 x london**  `U7|london|lots`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -891,7 +1045,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: HEADLINE R2A = essentially an x0.75-style trim (untouched 2023-04..2025-10: ulcer -8%, mean -23%, 14% worse than uniform ray at same mean); first evidenced lot change = M7 London 0 (CONFIRMED w/ caveats, DS3_CELL_TESTS.md); metrics = exact JL3 (all 43 months)
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **P7 x asia**  `P7|asia|lots`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -910,7 +1064,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: HEADLINE R2A = essentially an x0.75-style trim (untouched 2023-04..2025-10: ulcer -8%, mean -23%, 14% worse than uniform ray at same mean); first evidenced lot change = M7 London 0 (CONFIRMED w/ caveats, DS3_CELL_TESTS.md); metrics = exact JL3 (all 43 months)
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **H7 x london**  `H7|london|lots`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -929,7 +1083,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: HEADLINE R2A = essentially an x0.75-style trim (untouched 2023-04..2025-10: ulcer -8%, mean -23%, 14% worse than uniform ray at same mean); first evidenced lot change = M7 London 0 (CONFIRMED w/ caveats, DS3_CELL_TESTS.md); metrics = exact JL3 (all 43 months)
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **H7 x nyam**  `H7|nyam|lots`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -948,7 +1102,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: HEADLINE R2A = essentially an x0.75-style trim (untouched 2023-04..2025-10: ulcer -8%, mean -23%, 14% worse than uniform ray at same mean); first evidenced lot change = M7 London 0 (CONFIRMED w/ caveats, DS3_CELL_TESTS.md); metrics = exact JL3 (all 43 months)
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **A7 x london**  `A7|london|lots`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -967,7 +1121,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: HEADLINE R2A = essentially an x0.75-style trim (untouched 2023-04..2025-10: ulcer -8%, mean -23%, 14% worse than uniform ray at same mean); first evidenced lot change = M7 London 0 (CONFIRMED w/ caveats, DS3_CELL_TESTS.md); metrics = exact JL3 (all 43 months)
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **A7 asia x vote**  `A7|asia|size-by-env`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -981,7 +1135,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (day vote exists in v2.0)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 nypm x er60**  `K7|nypm|size-by-env`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -995,7 +1149,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (ER ladder)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **H7 nyam x fresh**  `H7|nyam|size-by-env`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1009,7 +1163,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (trade-log context)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 x asia**  `K7|asia|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1028,7 +1182,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **K7 x nyam**  `K7|nyam|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1047,7 +1201,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **K7 x nypm**  `K7|nypm|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1066,7 +1220,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **M7 x london**  `M7|london|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1085,7 +1239,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **U7 x asia**  `U7|asia|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1104,7 +1258,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **U7 x london**  `U7|london|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1123,7 +1277,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **P7 x asia**  `P7|asia|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1142,7 +1296,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **P7 x london**  `P7|london|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1161,7 +1315,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **P7 x nyam**  `P7|nyam|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1180,7 +1334,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **H7 x asia**  `H7|asia|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1199,7 +1353,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **H7 x nyam**  `H7|nyam|lots|H3_in_sample_fit`  (source: W-MA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1218,7 +1372,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting
 - Evidence: autopilot/DS3_MAJOR_A_LOTS.md
 - Caveats: SECONDARY: best in-sample fit, training data, proves nothing
-- Updated: 2026-11-17T17:33Z
+- Updated: 2026-11-17T18:04Z
 
 **P7 asia x atr_terc**  `P7|asia|size-by-env`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1232,7 +1386,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting / own bars (atr_rel)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 nyam x atr_terc**  `K7|nyam|size-by-env`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1246,7 +1400,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting / own bars (atr_rel)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 asia x roomOWN**  `K7|asia|size-by-env`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1260,7 +1414,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (zone room)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **P7 nyam x er60**  `P7|nyam|size-by-env`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1274,7 +1428,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (ER ladder)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **H7 asia x atr_live**  `H7|asia|size-by-env`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1288,7 +1442,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: existing switch (atr_rel marks 1.3/1.6)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **U7 london x vote**  `U7|london|size-by-env`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1302,7 +1456,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (day vote exists in v2.0)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **K7 london x roomOWN**  `K7|london|size-by-env`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1316,7 +1470,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (zone room)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **M7 nyam x atr_terc**  `M7|nyam|size-by-env`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1330,7 +1484,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: panel setting / own bars (atr_rel)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 **M7 london x vote**  `M7|london|size-by-env`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1344,9 +1498,10 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (day vote exists in v2.0)
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
-- Updated: 2026-11-17T16:48:24Z
+- Updated: 2026-11-17T17:48:25Z
 
 ## Table 4. BEHAVIOUR RULES (DAY-DONE, same-side loser, late entry, same-side stack)
+Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
 **K7 flat stop 45 (live EC_FLAT45K)**  `FLAT|K7|45`  (source: bootstrap)
 - Label: **WEAK-BUT-POSITIVE**
 - Today -> setting: K7 flat 45 ON -> Keep K7 flat -45 ON
@@ -1361,25 +1516,6 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - Evidence: autopilot/DS3_FLAT_VS_BOOK.md ; autopilot/DS3_REBUILD_S5.md
 - Caveats: HOLD ulcer gain is only 1.9% on JL3 with mean down 752 $/wk. LEAD-ASSEMBLED, owner to confirm (source: DS3_FLAT_VS_BOOK.md)
 - Updated: n/a
-
-**stack: extended-entry bucket (SZ_o18_atr)**  `ME-late-entry-size-target`  (source: W-ME)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: full lots, native target/stop at every entry -> Feature o18_atr at the signal second (closed 1-min bars): bucket = top third of TRAIN trades (see page section 2b for the threshold); in the bucket trade lots x0.5 (round half up, min 1); no skip
-- **L6M**: ulcer +11.7%; max DD -60,591 -> -50,136; worst week -31,735 -> -28,229; mean/wk (owner scalar, base lots) 17,017; x1.75 live lots 32,653; $4.84 16,243 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
-- **L3M**: ulcer +16.1%; max DD -60,591 -> -50,136; worst week -31,735 -> -28,229; mean/wk (owner scalar, base lots) 14,139; x1.75 live lots 26,399; $4.84 13,399 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
-- **HOLD**: ulcer +8.5%; max DD -152,332 -> -134,100; worst week -71,572 -> -59,948; mean/wk (owner scalar, base lots) 9,998; x1.75 live lots 19,466; $4.84 9,386 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
-- **GAP**: ulcer +5.2%; max DD -83,942 -> -84,851; worst week -75,818 -> -70,700; mean/wk (owner scalar, base lots) 7,549; x1.75 live lots 13,658; $4.84 7,137 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
-- **PRE**: ulcer +10.9%; max DD -172,602 -> -158,539; worst week -70,515 -> -59,167; mean/wk (owner scalar, base lots) 6,038; x1.75 live lots 11,579; $4.84 5,531 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
-- **XP**: ulcer +7.1%; max DD -133,884 -> -127,345; worst week -71,105 -> -58,239; mean/wk (owner scalar, base lots) 2,553; x1.75 live lots 5,035; $4.84 2,197 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
-- **pooled**: ulcer +7.8%; max DD -172,602 -> -158,539; worst week -75,818 -> -70,700; mean/wk (owner scalar, base lots) 7,101; x1.75 live lots 13,654; $4.84 6,612 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
-- Controls: screen only: 30 persistent random halvings per window (path arithmetic); tier FAIL
-- Trials counted / correction: screen 30+68 configs (+6 ext features) + exact 0 cells; no multiple-testing correction beyond matched controls; selection on recents (post-hoc) for the best-available row
-- Untouched year: thresholds frozen on TRAIN<=2025-10; TRAIN-best feature was used (+15.5% TRAIN, -0.4% L6M); this row is the best recent-consistent one
-- Behaviour / detail: extended bucket earns more per trade (about $110 vs $60) but holds 39k of the -78k drawdown path losses; halving costs mean $/wk
-- DS7 need: new code (feature at signal: distance from session open / 18:00 open in ATR5, VWAP sigma, share of typical session range used, chase count; lot/target multiplier)
-- Evidence: autopilot/DS3_MAJOR_E_AGAINST.md section 2b
-- Caveats: alternatives: SZ_open_atr -98.9, SZ_vwap_sig -98.9, SZ_chase -98.9; target/stop pull-in cells only exist as exact runs (queued); breakeven-after-+20 not built
-- Updated: 2026-11-17T17:24Z
 
 **Same-side loser pause (all books)**  `SAME-SIDE-LOSER|LS_K2_M30`  (source: bootstrap)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1410,13 +1546,28 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - **XP**: ulcer +2.0%; max DD -133,884 -> -118,141; worst week -71,105 -> -63,749; mean/wk (owner scalar, base lots) 3,172; x1.75 live lots 6,010; $4.84 2,793 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
 - **pooled**: ulcer +4.8%; max DD -172,602 -> -159,363; worst week -75,818 -> -70,515; mean/wk (owner scalar, base lots) 8,116; x1.75 live lots 15,330; $4.84 7,598 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
 - Controls: screen (path arithmetic, kept trades keep outcome, freed-book effects not in) controls, valid draws {'L6M': 30, 'HOLD': 30}; tier LEAD
-- Trials counted / correction: screen 30+68 configs (+6 ext features) + exact 0 cells; no multiple-testing correction beyond matched controls; selection on recents (post-hoc) for the best-available row
+- Trials counted / correction: screen 30+68 configs (+6 ext features) + exact 27 cells; no multiple-testing correction beyond matched controls; selection on recents (post-hoc) for the best-available row
 - Untouched year: walk-forward family pick (best TRAIN<=2025-10): LS_K2_M120 -> L6M -5.4% ulcer (fails); this row is selected on recents
 - Behaviour / detail: n/a (owner has not delivered)
 - DS7 need: new code (stack-level same-side loser counter per session instance + per-side entry block with timer)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md
 - Caveats: source screen; score(min ulcer improvement L6M/L3M/HOLD)=4.2%; top 3 alternatives: LS_K2_M30 4.2, LS_K2_M20_R 2.8, LS_K2_M20 1.6
-- Updated: 2026-11-17T17:24Z
+- Updated: 2026-11-17T17:54Z
+
+**DAY-DONE conditional resume**  `DAYDONE-RESUME`  (source: W-DD)
+- Label: **WEAK-BUT-POSITIVE**
+- Today -> setting: no resume (halt to 18:00 ET) -> resume when realised + open day P&L >= trip level + 2,000 live [cell TL3_DD_JL3_R3_2000]
+- **L6M**: ulcer +2.7%; max DD -30,189 -> -30,189; worst week -15,066 -> -15,066; mean/wk (owner scalar, base lots) -173; x1.75 live lots -347; $4.84 -167
+- **L3M**: ulcer +1.3%; max DD -30,189 -> -30,189; worst week -15,066 -> -15,066; mean/wk (owner scalar, base lots) -566; x1.75 live lots -1,132; $4.84 -556
+- **HOLD**: ulcer +0.0%; max DD -82,017 -> -82,017; worst week -36,787 -> -36,787; mean/wk (owner scalar, base lots) 128; x1.75 live lots 256; $4.84 129
+- Controls: not finished (controls missing)
+- Trials counted / correction: 37 settings + 14 resume cells counted; tier NO MATCHED CONTROLS; selection RC/SPA/DSR/PBO not finished
+- Untouched year: not finished (older months landing)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: new code (shadow-trade ledger for R1/R2; day-scoped lot multiplier for R4/R6; open-P&L check for R3; side P&L counter for R5)
+- Evidence: autopilot/DS3_DAYDONE_VARIANTS.md
+- Caveats: first pass, in-sample 43 months; deltas vs the live rule (REF); beats live in L6M and HOLD
+- Updated: 2026-11-17T17:50Z
 
 **DAY-DONE setting (stack-wide)**  `DAYDONE`  (source: W-DD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1431,7 +1582,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (V9Gate: latch/duration/threshold change)
 - Evidence: autopilot/DS3_DAYDONE_VARIANTS.md
 - Caveats: first pass, in-sample 43 months; deltas vs the live rule (REF); beats live in L6M and HOLD
-- Updated: 2026-11-17T17:19Z
+- Updated: 2026-11-17T17:50Z
 
 **stack risk overlay (JL3)**  `STACKRISK`  (source: W-MC)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1451,6 +1602,36 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - Evidence: autopilot/DS3_MAJOR_C_RISK.md
 - Caveats: does not beat a uniform trim by more than noise; benchmark uniform trim/press row is in Table 3
 - Updated: 2026-11-17T17:18:15Z
+
+**stack: other same-side positions after a book cut (CUT_half)**  `ME-same-side-stack-after-cut`  (source: W-ME)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: live stack rule exists only for Asia full stops (50% cut of same-side positions); no rule after book cuts -> When a book closes at a LOSS through a cut line (StateCut/EarlyCut/PolicyCut, not StackCut) while >=1 other book holds a same-side position: sell floor(50%) of each such position at market (a position of 1 lot is left alone)
+- **L6M**: ulcer -0.0%; max DD -60,591 -> -61,626; worst week -31,735 -> -29,790; mean/wk (owner scalar, base lots) 19,410; x1.75 live lots 36,263; $4.84 18,573 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
+- **L3M**: ulcer -2.2%; max DD -60,591 -> -61,626; worst week -31,735 -> -29,790; mean/wk (owner scalar, base lots) 13,957; x1.75 live lots 25,457; $4.84 13,171 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
+- **HOLD**: ulcer -5.9%; max DD -152,332 -> -153,234; worst week -71,572 -> -70,472; mean/wk (owner scalar, base lots) 9,698; x1.75 live lots 18,757; $4.84 9,033 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
+- Controls: ENGINE-EXACT cell vs JL3; tier NOT FINISHED
+- Trials counted / correction: screen 30+68 configs (+6 ext features) + exact 27 cells; no multiple-testing correction beyond matched controls; selection on recents (post-hoc) for the best-available row
+- Untouched year: n/a (not selected by fit; two a-priori cells)
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: new code (hook on a cut-line close that applies the existing StackCut partial-exit path to the other same-side positions in every session)
+- Evidence: autopilot/DS3_MAJOR_E_AGAINST.md
+- Caveats: no path-arithmetic screen is possible for exits; the result is exact-engine only
+- Updated: 2026-11-17T17:54Z
+
+**stack: extended-entry bucket (EXT_used_ST67)**  `ME-late-entry-size-target`  (source: W-ME)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: full lots, native target/stop at every entry -> Bucket by feature per code EXT_used_ST67 (threshold frozen on TRAIN): act = stop x0.67 with the target points unchanged, lots unchanged
+- **L6M**: ulcer -1.3%; max DD -60,591 -> -58,039; worst week -31,735 -> -32,790; mean/wk (owner scalar, base lots) 19,508; x1.75 live lots 36,413; $4.84 18,682 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
+- **L3M**: ulcer -0.8%; max DD -60,591 -> -58,039; worst week -31,735 -> -32,790; mean/wk (owner scalar, base lots) 16,704; x1.75 live lots 30,527; $4.84 15,920 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
+- **HOLD**: ulcer +3.2%; max DD -152,332 -> -140,406; worst week -71,572 -> -66,455; mean/wk (owner scalar, base lots) 10,034; x1.75 live lots 19,555; $4.84 9,391 [basis: maxdd/worst_week/ulcer at live lots x1.75 (engine net)]
+- Controls: ENGINE-EXACT; tier NOT FINISHED
+- Trials counted / correction: screen 30+68 configs (+6 ext features) + exact 27 cells; no multiple-testing correction beyond matched controls; selection on recents (post-hoc) for the best-available row
+- Untouched year: thresholds frozen on TRAIN<=2025-10; TRAIN-best feature was used (+15.5% TRAIN, -0.4% L6M); this row is the best recent-consistent one
+- Behaviour / detail: extended bucket earns more per trade (about $110 vs $60) but holds 39k of the -78k drawdown path losses; halving costs mean $/wk
+- DS7 need: new code (feature at signal: distance from session open / 18:00 open in ATR5, VWAP sigma, share of typical session range used, chase count; lot/target multiplier)
+- Evidence: autopilot/DS3_MAJOR_E_AGAINST.md section 2b
+- Caveats: alternatives: EXT_used_TG67 -16.3, SZ_o18_atr -98.9, SZ_open_atr -98.9; target/stop pull-in cells only exist as exact runs (queued); breakeven-after-+20 not built
+- Updated: 2026-11-17T17:54Z
 
 **P7 flat stop 42 (live since 11-12)**  `FLAT|P7|42`  (source: bootstrap)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1523,42 +1704,20 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - Caveats: In-sample; per-layer L6M/HOLD numbers on the page. LEAD-ASSEMBLED, owner to confirm (source: DS3_REBUILD_S5.md)
 - Updated: n/a
 
-**stack: other same-side positions after a book cut (CUT_half)**  `ME-same-side-stack-after-cut`  (source: W-ME)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: live stack rule exists only for Asia full stops (50% cut of same-side positions); no rule after book cuts -> When a book closes at a LOSS through a cut line (StateCut/EarlyCut/PolicyCut, not StackCut) while >=1 other book holds a same-side position: sell floor(50%) of each such position at market (a position of 1 lot is left alone)
-- Metrics (L6M first): n/a (owner has not delivered)
-- Controls: not run yet (exact cells CUT_half / CUT_tight queued behind the engine queue)
-- Trials counted / correction: screen 30+68 configs (+6 ext features) + exact 0 cells; no multiple-testing correction beyond matched controls; selection on recents (post-hoc) for the best-available row
-- Untouched year: n/a (not selected by fit; two a-priori cells)
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: new code (hook on a cut-line close that applies the existing StackCut partial-exit path to the other same-side positions in every session)
-- Evidence: autopilot/DS3_MAJOR_E_AGAINST.md
-- Caveats: no path-arithmetic screen is possible for exits; the result is exact-engine only
-- Updated: 2026-11-17T17:24Z
-
-**DAY-DONE conditional resume**  `DAYDONE-RESUME`  (source: W-DD)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: no resume (halt to 18:00 ET) -> no variant landed yet
-- Metrics (L6M first): n/a (owner has not delivered)
-- Controls: not run
-- Trials counted / correction: 37 settings + 14 resume cells; RC/SPA/DSR/PBO when all landed
-- Untouched year: n/a (owner has not delivered)
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: n/a
-- Evidence: autopilot/DS3_DAYDONE_VARIANTS.md
-- Caveats: nothing landed
-- Updated: 2026-11-17T17:19Z
-
 ## Status block (owner files in /mnt/l2/l2vast/_deliver/)
 | owner | table | rows | bad lines | last update age | state |
 |--|--|--|--|--|--|
-| W-S3 | 1 | 14 | 0 | 17 min | ok |
-| W-MD | 1 | 31 | 0 | 59 min | ok |
-| W-MB | 2 | 7 | 0 | 15 min | ok |
-| W-MF | 2 | 16 | 0 | 13 min | ok |
-| W-MA | 3 | 20 | 0 | 15 min | ok |
-| W-MC | 4 | 2 | 0 | 30 min | ok |
-| W-ME | 4 | 3 | 0 | 23 min | ok |
-| W-DD | 4 | 2 | 0 | 28 min | ok |
+| W-S3 | 1 | 14 | 0 | 7 min | ok |
+| W-MD | 1 | 31 | 0 | 20 min | ok |
+| W-MB | 2 | 7 | 0 | 5 min | ok |
+| W-MF | 2 | 16 | 0 | 3 min | ok |
+| W-MA | 3 | 20 | 0 | 3 min | ok |
+| W-MC | 4 | 2 | 0 | 50 min | ok |
+| W-ME | 4 | 3 | 0 | 13 min | ok |
+| W-DD | 4 | 2 | 0 | 18 min | ok |
+| W-SWA | 5 | 0 | 0 | n/a | NO FILE YET |
+| W-SWB | 5 | 0 | 0 | n/a | NO FILE YET |
+| W-BAR | 5 | 0 | 0 | n/a | NO FILE YET |
+| W-S1R | 6 | 0 | 0 | n/a | NO FILE YET |
 
 Bootstrap (LEAD-ASSEMBLED) rows currently shown: 13 (an owner row with the same row_id replaces them).

@@ -1,4 +1,4 @@
-# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 17:34Z (unattended loop, every 30 min)
+# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-17 18:04Z (unattended loop, every 30 min)
 
 > VALIDATION (W-MF, FIRST PASS): trials counted = 3604 standalone cells (wave 1: 109 configs x 4 exits, PREREG_MF.md, ledger MF1; wave 2: 222 configs x 4 exits incl. limit variants, PREREG_MF2.md, ledger MF2); correction = per-family and per-session best-of selection on 2023-04..2025-10 only, then HOLD 2025-11..2026-04 and L6M 2026-05..10 untouched; White RC over the selection cells (1,000 block bootstraps) + deflated Sharpe on the untouched year with N = cells of the group; PBO not computed (selection is a single frozen pick, rolling 12m/3m version shown); engine controls: 30 date-shifted stack controls NOT FINISHED (staged by the loop after the real months land); shifted-label standalone controls (+-11/23/37 days) shown. Data end 2026-10-30 (ES bars end 2026-10-16).
 
@@ -513,12 +513,17 @@ Notes. (1) Renko and range bars here are built from 1-minute closes/highs/lows (
 
 ### 3.4 M3_FAILED_BREAK_LON on the exact engine (JL3 + injected book, lots 1-4 times the equal-risk base lot; user follow-up 3a)
 
-No engine months landed yet for the lots-1-4 sets (queued at the front of _major_f/pending.txt; L1 = the earlier hook set, the new-hook identity check L1 vs old hook is TL3_MF_M3LON_L1 on 202610/202504).
+| lots | window | months | MF_trades | MF_alone_wk | corr | mean_JL3 | mean_with | ulcer_JL3 | ulcer_with | maxdd_JL3 | maxdd_with | worstwk_JL3 | worstwk_with | others_delta_wk |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| x2 base (x3.5 live) | L6M | 6 | 73 | 677.335 | -0.122 | 18755.264 | 19329.689 | 9416.278 | 8361.713 | -31109.180 | -25991.060 | -15728.040 | -15835.540 | -102.910 |
+| x3 base (x5.25 live) | L6M | 6 | 73 | 298.138 | -0.071 | 18755.264 | 19069.005 | 9416.278 | 8487.830 | -31109.180 | -23736.900 | -15728.040 | -17969.900 | 15.604 |
+| x4 base (x7 live) | L6M | 6 | 73 | 416.892 | -0.052 | 18755.264 | 19524.174 | 9416.278 | 8244.763 | -31109.180 | -23911.420 | -15728.040 | -13918.620 | 352.019 |
+
 
 BUG FOUND AND FIXED (one line): the CDE sizer in JL3 (cde_exact.SB_BI) raised KeyError on an injected book tag, so every first-version injected cell (old uw_inject hook, also W-MB's MB1) ended in ERROR; mf_inject registers the tag at index 7 (outside every book mask, multiplier 1.0); all earlier ERROR run dirs of TL3_MF_ sets were deleted and re-queued. Identity of the new hook with an inert event file (TL3_MF_ID2): 202610 PASS (691 vs 691 trades, net 37159.82 vs 37159.82); 202504 PASS (637 vs 637 trades, net 41239.76 vs 41239.76). No MF1 engine row below is used until both identity lines (ID and ID2) say PASS.
 
 ### 3.5 Resting-limit entries on the engine (honest path): hook code/th_majorf/mf_inject.py
-Hook: at the event the engine runs its normal try_entry path (all gates/skips/NTZ/caps), the market submission is intercepted and a resting limit at rt(mid - side x d) is kept; fill = first TAPE print strictly through the limit (buy: price < limit), at the limit + 0.5 pt haircut, no queue modelling (fill='through', same rule as the standalone simulator); alternative fill='cumvol' = the engine's measured resting-target rule mirrored (aggressor volume at/through the limit reaches the order size; queue ahead not modelled = optimistic); unfilled after 10 minutes = cancelled, no trade. Validation cells (M3 NY AM limit, d=4, 202610): through: pending; cumvol: pending; engine log: pending. Until a limit survivor exists the hook is a tested tool, not a result; a limit book also needs the identity check of the hook (market events equal the old hook, above).
+Hook: at the event the engine runs its normal try_entry path (all gates/skips/NTZ/caps), the market submission is intercepted and a resting limit at rt(mid - side x d) is kept; fill = first TAPE print strictly through the limit (buy: price < limit), at the limit + 0.5 pt haircut, no queue modelling (fill='through', same rule as the standalone simulator); alternative fill='cumvol' = the engine's measured resting-target rule mirrored (aggressor volume at/through the limit reaches the order size; queue ahead not modelled = optimistic); unfilled after 10 minutes = cancelled, no trade. Validation cells (M3 NY AM limit, d=4, 202610): through: 9 MF1 trades in 202610, net $ -1054; cumvol: 9 MF1 trades in 202610, net $ -1054; engine log: pending. Until a limit survivor exists the hook is a tested tool, not a result; a limit book also needs the identity check of the hook (market events equal the old hook, above).
 
 ## 3.6 ONE LIST: FINISHED-AND-DEAD vs NOT-FAIRLY-TESTED (market-entry families; each family's best-of pick on the selection window judged on the untouched year)
 

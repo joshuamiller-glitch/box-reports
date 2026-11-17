@@ -1,6 +1,6 @@
 # DS3_MAJOR_B_BOOKS - diversifying books from the shelf, scored against the JL3 stack (W-MB, part B of the MAJOR-CHANGES programme)
 
-**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 17:32 UTC by an unattended loop)**
+**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 18:02 UTC by an unattended loop)**
 1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 2 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
 2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 2 of 2 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
 3. Does not: no non-NQ book can be engine-tested (the engine is NQ-only; no price store or product path exists for ES/RTY on the engine, none for the rest); their screen is HARNESS BASIS only; almost all candidates are 2026 regime earners (PRE / X' negative) and the ulcer gain of a screened book is mostly its mean (r=-0.95), so only the excess over the date-shift null counts.
@@ -160,5 +160,5 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 - DS7 need for every row: new code (a book); none maps to an existing mean-reversion slot. X3-X5 slots are empty, X1/X2/X6-X8 and S7 have no definition.
 
 
-PARTIAL TABLE: engine set-months landed so far: 81 (a window is scored only when all its months have landed; sets with fewer months are not shown).
-Status (auto): engine sets scored 2; queue: /mnt/l2/l2vast/_major_b/pending.txt (488 lines open); page rebuilt 2026-11-17 17:32 UTC.
+PARTIAL TABLE: engine set-months landed so far: 108 (a window is scored only when all its months have landed; sets with fewer months are not shown).
+Status (auto): engine sets scored 2; queue: /mnt/l2/l2vast/_major_b/pending.txt (461 lines open); page rebuilt 2026-11-17 18:02 UTC.
