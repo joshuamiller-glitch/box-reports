@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-17T02:42Z
+## TREND (TL) update 2026-11-17T03:12Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T02:33:25Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T03:03:25Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 01:19Z 11-17 (t+564.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 03:19Z 11-17 (t+566.6 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 74% min 5% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 96% min 75% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -4285,3 +4285,9 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - lead 03:07Z LEAD NOTE (heartbeat wake): inbox empty; box1 99% busy 22-30 workers (load 34-40), server 2 100% busy 95-97 workers; pending box1-eligible 2,517 / server2-eligible 2,806 (-210 in 10 min). No tier change, nothing newly landed. Heartbeat task bdc6xfds3.
 - (wall 03:08Z) W-FL1 hourly: FL cell-months done 624, pending 24; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 - (wall 03:09Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 294 of 294 cell-months done, 36.81 37.04 36.28 load; auto-expansions 0 (battery stopped by user order)
+- lead 03:11Z INBOX 20261117_0312Z_flat-vs-book-explain-a-kp.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- 2026-11-17T03:11:17Z W-EV FLAT-vs-BOOK: 334 FB cell-months done (of 28 sets x 12 months stage 1-2), page DS3_FLAT_VS_BOOK.md rebuilt; closest to live: not yet scored
+- INBOX 20261117_0312Z_flat-vs-book-explain-a-kp received 03:12Z - checking cell definitions of FB_A_KP vs FB_A_P7 now; two-line explanation + five-line summary at top of DS3_FLAT_VS_BOOK.md when older windows land.
+- lead 03:12Z FLAT vs BOOK A_KP vs A_P7 (inbox 0312Z): CELL DEFINITION, not a path effect. Diffed the set JSONs (sets/TL3_EV_FB_A_{K7,KP,P7}.json): A_K7 = K7 flat 45 in 6 sessions (= reference); A_KP = K7 flat 45 (6 sessions) PLUS P7 flat 42 (6 sessions) = the true "P7 flat 42 added"; A_P7 = P7 flat 42 ONLY: its flat list holds just the 6 P7 entries, the K7 flat 45 entries are ABSENT, so A_P7 vs the reference = K7 flat 45 REMOVED + P7 flat 42 added (not "added"), which is why its dd_cut/d_mean (-150.8/-2,351) is worse than A_KP (-58.4/-799) for the same P7 line. Correct reading for the live P7 flat 42 ON vs OFF = A_KP minus A_K7; A_P7 is a replacement arm. Fix: W-EV to relabel A_P7 as "P7 flat only, K7 flat OFF" on the page (design text says A_* = book + flat with K7 45 live), rebuild, and add the five-line summary at the top when older windows land (K7 flat 45 and live P7 flat 42, ulcer and mean/wk ON vs OFF with the book cut working, per L6M/HOLD/pooled, tier vs PC_* persistent random-trigger controls; same on JL3 when it exists).
+
+[W-EV 2026-11-17 ~03:25Z] JL3 DONE on L6M+HOLD (JL3, JL3T takes only, JL3L locks only; 12 months each). Identity: TL3_EV_JL3_ID == JL2 on 202610 (642 trades, net 27,487.58, trade-by-trade equal). Engine size vs JL2 (engine base lots, trade-level equity, FIRST PASS; code th_engfix/jl3_cmp.py): L6M mean/wk 21,492 -> 19,577 (-9%), maxDD 34,972 -> 42,097 (+20%), ulcer +4%; HOLD mean 8,313 -> 9,942 (+20%), maxDD 79,121 -> 88,669 (+12%), ulcer +7%; pooled mean -1%, maxDD +12%. Takes mostly raise mean, locks cost mean; both raise worst week. FB A_P7 = P7 flat only (K7 flat OFF) - relabelled on the page; A_KP is reference + P7 flat.
