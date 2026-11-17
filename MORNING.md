@@ -4702,3 +4702,5 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 16:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 - (wall 16:17Z) W-TL2b T2 page refreshed: autopilot/DS3_TOOLS_T2_P3.md
 - lead 16:19Z LEAD NOTE (heartbeat wake): inbox empty; box1 92-99% busy 23-30 workers (load 32-35), server 2 100% busy 80-95 workers (load 92-95); pending box1-eligible 37,732 / server2-eligible 41,341. Deliverables page 16:17Z (T1 30 / T2 23 / T3 32 / T4 13). No tier change. Heartbeat task blp6khc7o.
+- 2026-11-17T16:21:21Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- 2026-11-17 16:24Z W-ME PART E: queue _major_e 1485 lines pending, 81 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).

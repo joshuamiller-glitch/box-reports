@@ -2,17 +2,17 @@
 
 1. Tried: 24 lot cells (K7 M7 U7 P7 H7 A7 x Asia/London/NY AM/NY PM, base lots 0..14, live = floor(1.75 x base + 0.5)) solved for min ulcer at mean >= today, max mean at ulcer <= today and a 10-point frontier, on a trade-list lot-scaling model of JL3, with walk-forward (trailing 12/6 months, hold 3), week-shuffled nulls, same-size random controls, a uniform trim/press benchmark (x0.5 ... x1.5) and exact engine runs.
 2. The arithmetic model FAILS the additivity test (30 exact random vectors: median ulcer error 24%, the engine realises only ~49% of the arithmetic change in P&L), so every vector below is judged on exact JL3 engine runs, not on the arithmetic.
-3. Holds: the in-sample gain (32% lower ulcer at equal mean) is mostly fit: shuffled-cell nulls give 46% on noise; walk-forward gain over the uniform benchmark is small (see section 5); proposed vector F2 = T6-F4, label BEST-AVAILABLE-NOT-PROVEN; vs uniform at equal mean / equal ulcer (exact, L6M / HOLD / all 43 mo): ulcer +19% / -23% / -9% and mean +68% / n/a / -10%.
+3. Holds: the in-sample gain (32% lower ulcer at equal mean) is mostly fit: shuffled-cell nulls give 46% on noise; walk-forward gain over the uniform benchmark is small (see section 5); proposed vector H3 = INSAMPLE-F2, label BEST-AVAILABLE-NOT-PROVEN; vs uniform at equal mean / equal ulcer (exact, L6M / HOLD / all 43 mo): ulcer +17% / -5% / +19% and mean +34% / -12% / +27%.
 4. Needs in DS7: a session lot table per book (panel setting, no new code); M7 London 0 is shown as a row (variant G = M7 London fixed 0, F = free); no live change until the exact JL3/JL2 and uniform comparison is read.
 5. Next: stack cap / stack-cut variants on the best vector, JL2 exact runs, exact controls of the same size if the lead wants a calibrated tier, refresh every 30 min.
 
 Header: trials counted ~1,400 integer lot vectors solved/evaluated by arithmetic (frontier 12 points x folds x 2 windows, 30 nulls, finals) + 30 random + 5 uniform + 6 final exact vectors; correction: none yet (first pass); PBO not computed; selection status: in-sample solve on landed months, WALK-FORWARD on the calibrated arithmetic, exact engine on 6 finals (3 on JL2); the final vectors are re-solved on the trailing window to 2026-10-31, so L6M/HOLD are NOT untouched for them (training window), only the walk-forward OOS days are. Data end 2026-10-31. FIRST PASS. Tiers CONFIRMED/LEAD: not issued (engine-exact same-size controls not run; the additivity test says the arithmetic controls cannot stand in).
 
-Updated 2026-11-17 15:56Z UTC. Cell P&L landed for 43 months. Live vector today (live lots): K7 4,4,0,2,4,0; M7 0,4,0,2,0,0; U7 7,7,0,0,0,0; P7 12,7,0,7,0,0; H7 7,0,0,2,0,0; A7 2 Asia. O7 is not a decision variable (no session table in the engine; constant background in the arithmetic, in the engine runs unchanged).
+Updated 2026-11-17 16:28Z UTC. Cell P&L landed for 43 months. Live vector today (live lots): K7 4,4,0,2,4,0; M7 0,4,0,2,0,0; U7 7,7,0,0,0,0; P7 12,7,0,7,0,0; H7 7,0,0,2,0,0; A7 2 Asia. O7 is not a decision variable (no session table in the engine; constant background in the arithmetic, in the engine runs unchanged).
 
 ## 1. Cell: lots today -> lots proposed (base/live; * = changed)
 
-Proposed vector (package, judged jointly): **F2** (T6-F4). All finals are shown as columns. Variants F* = M7 London free, G* = M7 London fixed at 0. Rules: T12/T6 = trailing window, F0..F9 = frontier point (F0 = min ulcer at mean >= today in the window ... F9 = highest mean on the frontier), A = min ulcer at mean >= today, B = max mean at ulcer <= today.
+Proposed vector (package, judged jointly): **H3** (INSAMPLE-F2). All finals are shown as columns. Variants F* = M7 London free, G* = M7 London fixed at 0. Rules: T12/T6 = trailing window, F0..F9 = frontier point (F0 = min ulcer at mean >= today in the window ... F9 = highest mean on the frontier), A = min ulcer at mean >= today, B = max mean at ulcer <= today.
 
 | cell | today | F1 (T12-F6) | G1 (T12-F6) | F2 (T6-F4) | G2 (T6-F4) | F3 (T6-F5) | G3 (T6-F5) | H1 (INSAMPLE-A) | H2 (INSAMPLE-A) | H3 (INSAMPLE-F2) |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -165,6 +165,7 @@ Columns: ulcer / max DD / worst week / mean per week at live lots with $4.84 rou
 | G3 | 70279 | -211795 | -86172 | 4700 | 5567 | 2936 | 2476 | +54.3% | -12.8% | 0.13 |
 | H1 | 42533 | -92183 | -40720 | 3889 | 4324 | 2310 | 2082 | -6.6% | -27.8% | 0.66 |
 | H2 | 38270 | -94995 | -32640 | 4510 | 4963 | 2649 | 2411 | -16.0% | -16.3% | 0.70 |
+| H3 | 38699 | -102585 | -51905 | 5201 | 5701 | 3092 | 2825 | -15.0% | -3.5% | 0.60 |
 
 **ALL43** (exact JL3)
 
@@ -184,6 +185,7 @@ Columns: ulcer / max DD / worst week / mean per week at live lots with $4.84 rou
 | G3 | 72741 | -245034 | -86172 | 13749 | 14850 | 7953 | 7369 | +46.3% | -2.5% | 0.14 |
 | H1 | 45605 | -208701 | -62605 | 10400 | 11010 | 5945 | 5622 | -8.3% | -26.3% | 0.60 |
 | H2 | 41535 | -185757 | -82299 | 11928 | 12562 | 6819 | 6483 | -16.5% | -15.4% | 0.61 |
+| H3 | 37017 | -132543 | -88981 | 12490 | 13211 | 7353 | 6966 | -25.6% | -11.5% | 0.58 |
 
 ## 3. Beats the uniform benchmark? (exact JL3; uniform ray = today and U050..U150 interpolated)
 
@@ -250,6 +252,8 @@ Columns: ulcer / max DD / worst week / mean per week at live lots with $4.84 rou
 | H3 | HOLD | 48620 | 10691 | 46368 | 12094 | -4.9% | -11.6% |
 | H3 | GAP | 24330 | 15815 | 35755 | out of range | +32.0% | - |
 | H3 | PRE | 33179 | 12011 | 61845 | out of range | +46.4% | - |
+| H3 | X' | 38699 | 5201 | 43383 | 4726 | +10.8% | +10.1% |
+| H3 | ALL43 | 37017 | 12490 | 45589 | 9862 | +18.8% | +26.6% |
 
 Positive = better than just trading smaller/bigger. "out of range" = the vector sits outside the measured uniform ray (no extrapolation).
 
@@ -418,13 +422,13 @@ model = arithmetic lot-scaling of the JL3/ADD trade lists (uncalibrated); engine
 | TL3_MA_R29 | 42386 | 59208 | 40% | 17217 | 22997 |
 | TL3_MA_R30 | 34613 | 53576 | 55% | 17931 | 23061 |
 
-## 9. Freed-book effects (exact JL3, proposed vector F2 vs today, mean $/wk per book, live lots $4.84)
+## 9. Freed-book effects (exact JL3, proposed vector H3 vs today, mean $/wk per book, live lots $4.84)
 
 | window | K7 | M7 | U7 | P7 | H7 | A7 | O7 | peak concurrent live lots today -> proposed |
 |---|---|---|---|---|---|---|---|---|
-| L6M | 5849 -> 5435 | 122 -> 12487 | 3780 -> 4513 | 20583 -> 18008 | 3351 -> 3735 | 1324 -> -1089 | 817 -> 758 | 36 -> 34 |
-| HOLD | 6237 -> 1032 | -175 -> 7389 | 1291 -> 1086 | 8778 -> 8934 | -1025 -> -585 | 1379 -> -1094 | 1626 -> 1667 | 36 -> 34 |
-| ALL43 | 3861 -> 1813 | -125 -> 3841 | 1358 -> 1637 | 5212 -> 4882 | 1612 -> 1610 | 1311 -> -996 | 879 -> 884 | 36 -> 34 |
+| L6M | 5849 -> -451 | 122 -> 433 | 3780 -> -257 | 20583 -> 29668 | 3351 -> 3241 | 1324 -> 1282 | 817 -> 884 | 36 -> 42 |
+| HOLD | 6237 -> -1444 | -175 -> -1386 | 1291 -> 1124 | 8778 -> 10028 | -1025 -> -869 | 1379 -> 1497 | 1626 -> 1741 | 36 -> 42 |
+| ALL43 | 3861 -> -452 | -125 -> 289 | 1358 -> 22 | 5212 -> 8422 | 1612 -> 1968 | 1311 -> 1340 | 879 -> 902 | 36 -> 42 |
 
 ## Stack cap / stack cut variants on F2 (exact JL3, last 14 months 2025-09..2026-10, live lots $4.84)
 

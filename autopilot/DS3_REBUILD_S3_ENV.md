@@ -1,4 +1,4 @@
-# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-17 15:55Z
+# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-17 16:25Z
 > VALIDATION (W-S3, FIRST PASS, 2026-11-17): trials counted = per book 7 schemes x 3 buckets x <= 5 sessions + pooled x 11 candidates (native + 10 priority grid sets), 7 books; the screen is read against 21 shifted-label runs (11/23/37 days) and 3 nonsense 3-bucketings (all counted); correction = walk-forward (one freeze per book on the SEL months landed, then HOLD 2025-11..2026-04 and L6M 2026-05..10 read once) + label nulls; PBO / White RC over the full grid on the stage 3 page; engine-exact assembly and 30 random-bracket controls NOT built yet: nothing here is a tier, missing controls = NOT FINISHED. Numbers shown: SEL-only (no book frozen yet).
 
 VERDICT (data ends 2026-10-30; FIRST PASS, PARTIAL: only the 10-set priority subset of the grid (6 targets at stop 60, 40/40, 40/60, 90/60, 90/90) is used and it is still landing; frozen books none): see five lines below; nothing assembled on the engine, no tier.
@@ -23,12 +23,12 @@ New parser tokens: stop=, timestop=, halfoff= and a session in the third column 
 ## Table 0 - progress
 | book | common SEL months | HOLD+L6M months landed | state |
 |--|--|--|--|
-| K7 | 1 | 3 / 12 | too few months landed |
-| M7 | 1 | 3 / 12 | too few months landed |
-| P7 | 1 | 3 / 12 | too few months landed |
-| U7 | 1 | 3 / 12 | too few months landed |
-| H7 | 1 | 3 / 12 | too few months landed |
-| A7 | 1 | 3 / 12 | too few months landed |
+| K7 | 1 | 5 / 12 | too few months landed |
+| M7 | 1 | 4 / 12 | too few months landed |
+| P7 | 1 | 4 / 12 | too few months landed |
+| U7 | 1 | 4 / 12 | too few months landed |
+| H7 | 1 | 4 / 12 | too few months landed |
+| A7 | 1 | 4 / 12 | too few months landed |
 | O7 | 1 | 0 / 12 | too few months landed |
 
 Cuts (frozen from native SEL trades): atr_rel thirds [1.0641536788691555, 2.289134438305709], ER30 thirds [0.16943521594684385, 0.28316831683168314].
@@ -56,6 +56,7 @@ Cuts (frozen from native SEL trades): atr_rel thirds [1.0641536788691555, 2.2891
 not enough grid months landed yet
 
 <!-- MD:APPEND -->
+
 <!-- W-MD section start: written 2026-11-17 16:07Z; sections: UW levels, Size by environment, Own-book walls, one summary table. Source W-MD (MAJOR D addendum 1337Z). FIRST PASS, ARITHMETIC SCREEN (raw-chassis 1-s paths); no engine run yet; nothing assembled. -->
 
 # W-MD sections (appended below the W-S3 ENV page): UW levels as exit levels, size by environment, own-book walls
