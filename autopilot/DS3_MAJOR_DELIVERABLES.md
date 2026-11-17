@@ -1,4 +1,4 @@
-# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-17 15:17Z, every 30 min)
+# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-17 15:47Z, every 30 min)
 VERDICT (data ends 2026-10-31; FIRST PASS; every row is a BEST SETTING with its honest label; rows labelled LEAD-ASSEMBLED are copied by the assembler from existing pages and wait for the owner to confirm)
 
 > HEADER: trials counted = per row (see each row; ledger families CT1, RB3, RB5, ME, MF1/MF2); correction = per row (BH / White RC / controls where run, else 'not run'); in-sample vs walk-forward is stated per row (untouched-year line). Labels CONFIRMED / LEAD need engine-exact persistent-draw controls (calibrated pass rule); a missing field prints 'n/a (owner has not delivered)'. Seal untouched.
@@ -6,7 +6,7 @@ VERDICT (data ends 2026-10-31; FIRST PASS; every row is a BEST SETTING with its 
 ## Summary (plain)
 1. Table 1: 30 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 6, BEST-AVAILABLE-NOT-PROVEN 24) + 0 reference rows
 2. Table 2: 23 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 3, BEST-AVAILABLE-NOT-PROVEN 20) + 0 reference rows
-3. Table 3: 34 main rows (CONFIRMED 1, LEAD 0, WEAK-BUT-POSITIVE 7, BEST-AVAILABLE-NOT-PROVEN 26) + 0 reference rows
+3. Table 3: 32 main rows (CONFIRMED 1, LEAD 0, WEAK-BUT-POSITIVE 7, BEST-AVAILABLE-NOT-PROVEN 24) + 0 reference rows
 4. Table 4: 13 main rows (CONFIRMED 0, LEAD 0, WEAK-BUT-POSITIVE 5, BEST-AVAILABLE-NOT-PROVEN 8) + 0 reference rows
 5. Decide first: Table 3 row 1 (M7 London 4 -> 0 lots, CONFIRMED, but HOLD mean -445 $/wk); then the P7 flat -42 question (L6M worse with it on); then whether to fund the engine runs for the unproven books. 
 
@@ -192,7 +192,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **K7 x london**  `K7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -205,7 +205,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **K7 x nyam**  `K7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -218,7 +218,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **K7 x nypm**  `K7|nypm|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -231,7 +231,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **M7 x london**  `M7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -244,7 +244,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **M7 x nyam**  `M7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -257,7 +257,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **U7 x asia**  `U7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -270,7 +270,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **U7 x london**  `U7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -283,7 +283,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **P7 x asia**  `P7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -296,7 +296,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **P7 x london**  `P7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -309,7 +309,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **P7 x nyam**  `P7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -322,7 +322,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **H7 x asia**  `H7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -335,7 +335,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **H7 x nyam**  `H7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -348,7 +348,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **A7 x asia**  `A7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -361,7 +361,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-17T15:00:46Z
+- Updated: 2026-11-17T15:30:49Z
 
 **M7 nyam**  `M7|nyam|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -493,7 +493,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **NYAM X4_OPEN_DRIVE_DR**  `NYAM-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -507,7 +507,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **NYAM X4_ORB_DIR_PULLBACK**  `NYAM-book-3`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -521,7 +521,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **NYPM W7_POWER_HOUR_LOOSE**  `NYPM-book-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -535,7 +535,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **NYPM X4_RSI2_15MIN_NYPM**  `NYPM-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -549,7 +549,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **LONDON NQ.FADE_LV.f4d004a6**  `LONDON-book-1`  (source: W-MB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -565,7 +565,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (book; see setting)
 - Evidence: autopilot/DS3_MAJOR_B_BOOKS.md
 - Caveats: harness basis only until the engine stack test lands
-- Updated: 2026-11-17 15:04
+- Updated: 2026-11-17 15:32
 
 **LONDON NQ.FADE_LV.6fb3aa4d**  `LONDON-book-2`  (source: W-MB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -581,7 +581,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (book; see setting)
 - Evidence: autopilot/DS3_MAJOR_B_BOOKS.md
 - Caveats: harness basis only until the engine stack test lands
-- Updated: 2026-11-17 15:04
+- Updated: 2026-11-17 15:32
 
 **LON W11_SESSION_EXTREME_RSI14_LON**  `LON-book-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -595,7 +595,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **LON X4_FAILED_BREAK_BARS_LON**  `LON-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -609,7 +609,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **LON R3_YM_LED_LON**  `LON-book-3`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -623,7 +623,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **NYAM X4_OPEN_DRIVE_DR**  `NYAM-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -637,7 +637,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **NYAM X4_ORB_DIR_PULLBACK**  `NYAM-book-alt-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -651,7 +651,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **NYAM N2_GAP**  `NYAM-book-alt-3`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -665,7 +665,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **NYPM W7_POWER_HOUR_LOOSE**  `NYPM-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -679,7 +679,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **NYPM X4_RSI2_15MIN_NYPM**  `NYPM-book-alt-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -693,7 +693,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **LON W11_SESSION_EXTREME_RSI14_LON**  `LON-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -707,7 +707,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **LON R3_YM_LED_LON**  `LON-book-alt-2`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -721,7 +721,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 **LON M3_FAILED_BREAK_LON**  `LON-book-alt-3`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -735,7 +735,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-17T15:03Z
+- Updated: 2026-11-17T15:33Z
 
 ## Table 3. LOT VECTOR (lots per book x session)
 **M7 x London (live 4 lots)**  `LOT|M7|london|0`  (source: bootstrap)
@@ -798,348 +798,6 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
 - Updated: 2026-11-17T14:49:39Z
 
-**K7 x london**  `K7|london|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 2 base / 4 live lots -> session lot table K7 london: base lots 2 -> 0 (live lots 4 -> 0); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**K7 x nyam**  `K7|nyam|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 1 base / 2 live lots -> session lot table K7 nyam: base lots 1 -> 0 (live lots 2 -> 0); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**K7 x nypm**  `K7|nypm|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 2 base / 4 live lots -> session lot table K7 nypm: base lots 2 -> 1 (live lots 4 -> 2); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**M7 x asia**  `M7|asia|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 0 base / 0 live lots -> session lot table M7 asia: base lots 0 -> 4 (live lots 0 -> 7); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**M7 x london**  `M7|london|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 2 base / 4 live lots -> session lot table M7 london: base lots 2 -> 0 (live lots 4 -> 0); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**M7 x nyam**  `M7|nyam|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 1 base / 2 live lots -> session lot table M7 nyam: base lots 1 -> 0 (live lots 2 -> 0); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**U7 x asia**  `U7|asia|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 4 base / 7 live lots -> session lot table U7 asia: base lots 4 -> 1 (live lots 7 -> 2); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**U7 x london**  `U7|london|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 4 base / 7 live lots -> session lot table U7 london: base lots 4 -> 0 (live lots 7 -> 0); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**P7 x asia**  `P7|asia|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 7 base / 12 live lots -> session lot table P7 asia: base lots 7 -> 11 (live lots 12 -> 19); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**P7 x london**  `P7|london|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 4 base / 7 live lots -> session lot table P7 london: base lots 4 -> 0 (live lots 7 -> 0); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**P7 x nyam**  `P7|nyam|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 4 base / 7 live lots -> session lot table P7 nyam: base lots 4 -> 0 (live lots 7 -> 0); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**P7 x nypm**  `P7|nypm|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 0 base / 0 live lots -> session lot table P7 nypm: base lots 0 -> 1 (live lots 0 -> 2); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**H7 x asia**  `H7|asia|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 4 base / 7 live lots -> session lot table H7 asia: base lots 4 -> 0 (live lots 7 -> 0); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**H7 x london**  `H7|london|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 0 base / 0 live lots -> session lot table H7 london: base lots 0 -> 3 (live lots 0 -> 5); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**H7 x nyam**  `H7|nyam|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 1 base / 2 live lots -> session lot table H7 nyam: base lots 1 -> 0 (live lots 2 -> 0); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**H7 x nypm**  `H7|nypm|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 0 base / 0 live lots -> session lot table H7 nypm: base lots 0 -> 4 (live lots 0 -> 7); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**A7 x asia**  `A7|asia|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 1 base / 2 live lots -> session lot table A7 asia: base lots 1 -> 3 (live lots 2 -> 5); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
-**A7 x london**  `A7|london|lots`  (source: W-MA)
-- Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: 0 base / 0 live lots -> session lot table A7 london: base lots 0 -> 2 (live lots 0 -> 4); vector G1 = T12-F6 (all rows of the vector are one package, evaluated jointly)
-- **L6M**: ulcer -1.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 25,988; x1.75 live lots 48,532; $4.84 46,815
-- **L3M**: ulcer +0.8%; max DD -65,865 -> -62,230; worst week -33,041 -> -32,818; mean/wk (owner scalar, base lots) 19,671; x1.75 live lots 36,517; $4.84 34,906
-- **HOLD**: ulcer -32.8%; max DD -155,735 -> -121,682; worst week -72,626 -> -43,049; mean/wk (owner scalar, base lots) 14,745; x1.75 live lots 27,454; $4.84 26,143
-- **GAP**: ulcer +23.7%; max DD -86,295 -> -101,667; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 6,825; x1.75 live lots 12,083; $4.84 11,252
-- **PRE**: ulcer -2.8%; max DD -178,374 -> -210,279; worst week -71,328 -> -70,858; mean/wk (owner scalar, base lots) 7,911; x1.75 live lots 14,430; $4.84 13,386
-- **XP**: ulcer -13.2%; max DD -136,464 -> -113,287; worst week -72,178 -> -67,526; mean/wk (owner scalar, base lots) 4,143; x1.75 live lots 7,745; $4.84 7,023
-- **pooled**: ulcer -11.0%; max DD -178,374 -> -210,279; worst week -76,769 -> -76,327; mean/wk (owner scalar, base lots) 10,609; x1.75 live lots 19,697; $4.84 18,640
-- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
-- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
-- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
-- Behaviour / detail: n/a (owner has not delivered)
-- DS7 need: panel setting
-- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
-- Caveats: package vector, metrics = calibrated arithmetic (theta 0.49) on 39 landed months; exact run 0/43 months landed; NOT proven vs uniform trim/press
-- Updated: 2026-11-17T14:55Z
-
 **A7 asia x vote**  `A7|asia|size-by-env`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
 - Today -> setting: x1 all buckets -> lots multiplier by vote bucket (exposure neutral): with:1.50;mixed:0.50
@@ -1181,6 +839,310 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - Evidence: autopilot/DS3_REBUILD_S3_ENV.md (W-MD sections)
 - Caveats: lot rounding ignored; best dimension per cell chosen by untouched result (optimistic)
 - Updated: 2026-11-17T14:49:39Z
+
+**K7 x asia**  `K7|asia|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 2 base / 4 live lots -> session lot table K7 asia: base lots 2 -> 1 (live lots 4 -> 2); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**K7 x london**  `K7|london|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 2 base / 4 live lots -> session lot table K7 london: base lots 2 -> 0 (live lots 4 -> 0); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**K7 x nypm**  `K7|nypm|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 2 base / 4 live lots -> session lot table K7 nypm: base lots 2 -> 0 (live lots 4 -> 0); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**M7 x asia**  `M7|asia|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 0 base / 0 live lots -> session lot table M7 asia: base lots 0 -> 3 (live lots 0 -> 5); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**M7 x london**  `M7|london|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 2 base / 4 live lots -> session lot table M7 london: base lots 2 -> 0 (live lots 4 -> 0); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**M7 x nyam**  `M7|nyam|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 1 base / 2 live lots -> session lot table M7 nyam: base lots 1 -> 0 (live lots 2 -> 0); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**U7 x asia**  `U7|asia|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 4 base / 7 live lots -> session lot table U7 asia: base lots 4 -> 3 (live lots 7 -> 5); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**U7 x london**  `U7|london|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 4 base / 7 live lots -> session lot table U7 london: base lots 4 -> 5 (live lots 7 -> 9); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**U7 x nyam**  `U7|nyam|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 0 base / 0 live lots -> session lot table U7 nyam: base lots 0 -> 3 (live lots 0 -> 5); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**U7 x nypm**  `U7|nypm|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 0 base / 0 live lots -> session lot table U7 nypm: base lots 0 -> 3 (live lots 0 -> 5); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**P7 x london**  `P7|london|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 4 base / 7 live lots -> session lot table P7 london: base lots 4 -> 6 (live lots 7 -> 11); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**P7 x nyam**  `P7|nyam|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 4 base / 7 live lots -> session lot table P7 nyam: base lots 4 -> 0 (live lots 7 -> 0); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**H7 x asia**  `H7|asia|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 4 base / 7 live lots -> session lot table H7 asia: base lots 4 -> 3 (live lots 7 -> 5); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**H7 x nyam**  `H7|nyam|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 1 base / 2 live lots -> session lot table H7 nyam: base lots 1 -> 3 (live lots 2 -> 5); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**A7 x asia**  `A7|asia|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 1 base / 2 live lots -> session lot table A7 asia: base lots 1 -> 0 (live lots 2 -> 0); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
+
+**A7 x london**  `A7|london|lots`  (source: W-MA)
+- Label: **BEST-AVAILABLE-NOT-PROVEN**
+- Today -> setting: 0 base / 0 live lots -> session lot table A7 london: base lots 0 -> 3 (live lots 0 -> 5); vector F2 = T6-F4 (all rows of the vector are one package, evaluated jointly)
+- **L6M**: ulcer -16.6%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 23,979; x1.75 live lots 45,429; $4.84 43,846
+- **L3M**: ulcer -12.9%; max DD -65,865 -> -59,747; worst week -33,041 -> -50,433; mean/wk (owner scalar, base lots) 19,354; x1.75 live lots 36,744; $4.84 35,236
+- **HOLD**: ulcer +30.0%; max DD -155,735 -> -205,397; worst week -72,626 -> -74,309; mean/wk (owner scalar, base lots) 10,891; x1.75 live lots 19,680; $4.84 18,428
+- **GAP**: ulcer -3.3%; max DD -86,295 -> -79,585; worst week -76,769 -> -65,113; mean/wk (owner scalar, base lots) 5,652; x1.75 live lots 9,738; $4.84 8,896
+- **PRE**: ulcer -3.6%; max DD -178,374 -> -205,717; worst week -71,328 -> -74,811; mean/wk (owner scalar, base lots) 6,216; x1.75 live lots 11,757; $4.84 10,738
+- **XP**: ulcer +8.4%; max DD -136,464 -> -115,441; worst week -72,178 -> -53,410; mean/wk (owner scalar, base lots) 2,452; x1.75 live lots 4,708; $4.84 3,987
+- **pooled**: ulcer +6.7%; max DD -178,374 -> -205,717; worst week -76,769 -> -74,811; mean/wk (owner scalar, base lots) 7,832; x1.75 live lots 14,664; $4.84 13,672
+- Controls: arithmetic: shuffled-null + 30 random same-size vectors (see page); exact-engine controls NOT run (additivity of the cell P&L failed on exact random vectors: median ulcer error 24%, theta 0.49)
+- Trials counted / correction: 1,350+ vectors solved / WF + null; no multiple-testing correction applied (first pass)
+- Untouched year: walk-forward 12m/6m trailing, hold 3 (calibrated model); see page
+- Behaviour / detail: n/a (owner has not delivered)
+- DS7 need: panel setting
+- Evidence: autopilot/DS3_MAJOR_A_LOTS.md
+- Caveats: package vector, metrics = exact JL3 (all 43 months); NOT proven vs uniform trim/press
+- Updated: 2026-11-17T15:26Z
 
 **P7 asia x atr_terc**  `P7|asia|size-by-env`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1341,7 +1303,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (feature at signal: distance from session open / 18:00 open in ATR5, VWAP sigma, share of typical session range used, chase count; lot/target multiplier)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md section 2b
 - Caveats: alternatives: SZ_open_atr -98.9, SZ_vwap_sig -98.9, SZ_chase -98.9; target/stop pull-in cells only exist as exact runs (queued); breakeven-after-+20 not built
-- Updated: 2026-11-17T14:54Z
+- Updated: 2026-11-17T15:24Z
 
 **Same-side loser pause (all books)**  `SAME-SIDE-LOSER|LS_K2_M30`  (source: bootstrap)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1378,26 +1340,24 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (stack-level same-side loser counter per session instance + per-side entry block with timer)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md
 - Caveats: source screen; score(min ulcer improvement L6M/L3M/HOLD)=4.2%; top 3 alternatives: LS_K2_M30 4.2, LS_K2_M20_R 2.8, LS_K2_M20 1.6
-- Updated: 2026-11-17T14:54Z
+- Updated: 2026-11-17T15:24Z
 
 **stack risk overlay (JL3)**  `STACKRISK`  (source: W-MC)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
-- Today -> setting: none (day lock + London cap only) -> size x clip(median trailing-10-day sd / current trailing-10-day sd of stack daily P&L, 0.5, 1.0), day-constant from the prior close [cell VT_N10_q50_hi1.0; lots removed 9.9%]
-- **L6M**: ulcer -3.0%; max DD -30,189 -> -30,189; worst week -15,066 -> -15,066; mean/wk (owner scalar, base lots) -3,383; x1.75 live lots -6,337; $4.84 -3,262 [basis: screen]
-- **L3M**: ulcer -1.1%; max DD -30,189 -> -30,189; worst week -15,066 -> -15,066; mean/wk (owner scalar, base lots) -1,720; x1.75 live lots -3,149; $4.84 -1,644 [basis: screen]
-- **HOLD**: ulcer +4.2%; max DD -82,017 -> -81,658; worst week -36,787 -> -36,787; mean/wk (owner scalar, base lots) -2,914; x1.75 live lots -5,802; $4.84 -2,826 [basis: screen]
-- **GAP**: ulcer -1.8%; max DD -41,050 -> -42,680; worst week -38,412 -> -33,789; mean/wk (owner scalar, base lots) -1,464; x1.75 live lots -2,676; $4.84 -1,424 [basis: screen]
-- **PRE**: ulcer -16.1%; max DD -88,502 -> -76,124; worst week -37,204 -> -37,204; mean/wk (owner scalar, base lots) -42; x1.75 live lots -85; $4.84 2 [basis: screen]
-- **XP**: ulcer -5.3%; max DD -70,704 -> -62,576; worst week -36,802 -> -32,232; mean/wk (owner scalar, base lots) -517; x1.75 live lots -992; $4.84 -495 [basis: screen]
-- **pooled**: ulcer -7.8%; max DD -88,502 -> -81,658; worst week -38,412 -> -37,204; mean/wk (owner scalar, base lots) -1,250; x1.75 live lots -2,396; $4.84 -1,198 [basis: screen]
-- Controls: engine cell queued; arithmetic controls: 60 valid draws, screen tier FAIL; engine controls queued through the gate
+- Today -> setting: none (day lock + London cap only) -> overlay SS_noAsia_T4000 (SS) [cell SS_noAsia_T4000; lots removed 2.8%]
+- **L6M**: ulcer +1.5%; max DD -30,189 -> -32,044; worst week -15,066 -> -16,616; mean/wk (owner scalar, base lots) 1,728; x1.75 live lots 3,401; $4.84 1,756 [basis: engine]
+- **L3M**: ulcer +3.3%; max DD -30,189 -> -32,044; worst week -15,066 -> -16,616; mean/wk (owner scalar, base lots) 3,223; x1.75 live lots 6,335; $4.84 3,244 [basis: engine]
+- **HOLD**: ulcer -0.2%; max DD -82,017 -> -78,616; worst week -36,787 -> -34,161; mean/wk (owner scalar, base lots) -323; x1.75 live lots -600; $4.84 -314 [basis: engine]
+- **GAP**: ulcer -12.2%; max DD -41,050 -> -35,942; worst week -38,412 -> -34,350; mean/wk (owner scalar, base lots) 477; x1.75 live lots 1,045; $4.84 482 [basis: engine]
+- **PRE**: ulcer -4.0%; max DD -88,502 -> -89,997; worst week -37,204 -> -34,841; mean/wk (owner scalar, base lots) -803; x1.75 live lots -1,585; $4.84 -786 [basis: engine]
+- Controls: engine cell; arithmetic controls: 60 valid draws, screen tier FAIL; engine controls queued through the gate
 - Trials counted / correction: 65 screen cells + 15 engine cells; White RC mean p 0.00 (leverage cells), ulcer RC p 0.49, PBO 0.524
 - Untouched year: selected on 2023-04..2025-10 only; HOLD and L6M columns are untouched; rolling-12m pick is worse (pooled ulcer +9.7%, mean -9.2%)
 - Behaviour / detail: n/a (owner has not delivered)
 - DS7 need: new code (a stack-level trailing daily-P&L series and a lot multiplier below one base lot: 2 -> 1 live lots only)
 - Evidence: autopilot/DS3_MAJOR_C_RISK.md
 - Caveats: does not beat a uniform trim by more than noise; benchmark uniform trim/press row is in Table 3
-- Updated: 2026-11-17T15:16:59Z
+- Updated: 2026-11-17T15:47:14Z
 
 **DAY-DONE setting (stack-wide)**  `DAYDONE`  (source: W-DD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1412,7 +1372,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (V9Gate: latch/duration/threshold change)
 - Evidence: autopilot/DS3_DAYDONE_VARIANTS.md
 - Caveats: first pass, in-sample 43 months; deltas vs the live rule (REF); does NOT beat the live rule in both L6M and HOLD
-- Updated: 2026-11-17T15:13Z
+- Updated: 2026-11-17T15:18Z
 
 **P7 flat stop 42 (live since 11-12)**  `FLAT|P7|42`  (source: bootstrap)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1496,7 +1456,7 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: new code (hook on a cut-line close that applies the existing StackCut partial-exit path to the other same-side positions in every session)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md
 - Caveats: no path-arithmetic screen is possible for exits; the result is exact-engine only
-- Updated: 2026-11-17T14:54Z
+- Updated: 2026-11-17T15:24Z
 
 **DAY-DONE conditional resume**  `DAYDONE-RESUME`  (source: W-DD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1509,18 +1469,18 @@ How to read: ulcer % is positive when the cell is better than today (lower RMS d
 - DS7 need: n/a
 - Evidence: autopilot/DS3_DAYDONE_VARIANTS.md
 - Caveats: nothing landed
-- Updated: 2026-11-17T15:13Z
+- Updated: 2026-11-17T15:18Z
 
 ## Status block (owner files in /mnt/l2/l2vast/_deliver/)
 | owner | table | rows | bad lines | last update age | state |
 |--|--|--|--|--|--|
 | W-S3 | 1 | 14 | 0 | 17 min | ok |
-| W-MD | 1 | 31 | 0 | 28 min | ok |
-| W-MB | 2 | 7 | 0 | 14 min | ok |
+| W-MD | 1 | 31 | 0 | 58 min | ok |
+| W-MB | 2 | 7 | 0 | 15 min | ok |
 | W-MF | 2 | 16 | 0 | 14 min | ok |
-| W-MA | 3 | 18 | 0 | 23 min | ok |
+| W-MA | 3 | 16 | 0 | 21 min | ok |
 | W-MC | 4 | 2 | 0 | 1 min | ok |
 | W-ME | 4 | 3 | 0 | 23 min | ok |
-| W-DD | 4 | 2 | 0 | 5 min | ok |
+| W-DD | 4 | 2 | 0 | 29 min | ok |
 
 Bootstrap (LEAD-ASSEMBLED) rows currently shown: 13 (an owner row with the same row_id replaces them).
