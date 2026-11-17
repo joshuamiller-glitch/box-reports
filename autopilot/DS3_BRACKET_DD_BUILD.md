@@ -1,6 +1,6 @@
 # DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 17:32Z)
 <!-- PR2:BEGIN -->
-## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 19:23 UTC)
+## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 19:59 UTC)
 
 **Every "not confirmed" issued under the 11-16 morning rule (beat all 6 controls on max DD in HOLD and L6M) is VOID as a negative result: that rule detects a real 10% / 20% max-DD cut only 5-13% of the time (DS3_PASS_RULE.md step 1).** Tiers below use ulcer index (RMS of daily drawdown; + = lower ulcer than JL2) and mean, percentile among 200 persistent-draw controls (PATH ARITHMETIC delta-permutation controls, not engine runs; 0 of the 30 engine-exact draws have landed; engine draws queued on server 2), week-clustered bootstrap (2,000 resamples). Cut-offs (tuned so noise reaches CONFIRMED under 5%): CONFIRMED needs ulcer-or-mean percentile >= 0.85 in L6M and L3M with the other >= 0.25, P(ulcer lower, L6M) >= 0.80, ulcer percentile >= 0.25 in the older windows run; LEAD needs >= 0.75 in L6M and L3M and nothing below 0.25 in any window run. A candidate whose older windows (GAP, PREUW, X') were not run cannot be issued CONFIRMED ("PROVISIONAL"). Old verdict = what its source page said.
 

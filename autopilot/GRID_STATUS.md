@@ -1,0 +1,1 @@
+2026-11-17T19:50:57Z W-GRIDD started: owns trigger families D (levels) and E (other markets), modules in code/th_grid/triggers_d/, feature stores /mnt/l2/l2vast/_bars/feat_d/. Building NQ 1m grid + level lines first.
