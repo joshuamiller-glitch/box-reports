@@ -1,6 +1,6 @@
 # DS3_MAJOR_B_BOOKS - diversifying books from the shelf, scored against the JL3 stack (W-MB, part B of the MAJOR-CHANGES programme)
 
-**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 14:42 UTC by an unattended loop)**
+**FIVE-LINE SUMMARY (plain; refreshed 2026-11-17 15:04 UTC by an unattended loop)**
 1. Tried: all 6836 exported shelf books (NQ 345, 11 other instruments) as daily P&L against the JL3 stack on its 20 worst weeks and five deepest drawdowns, plus 0 NQ books added to JL3 on the exact engine (event injection, shared stack rules).
 2. Holds: on the harness screen 72 NQ books are positive in both L6M and HOLD; engine stage 1 so far: 0 of 0 sets cut stack ulcer over the last 12 months, beat the date-shift null (p<=0.2) with positive own P&L (see section 4).
 3. Does not: no non-NQ book can be engine-tested (the engine is NQ-only; no price store or product path exists for ES/RTY on the engine, none for the rest); their screen is HARNESS BASIS only; almost all candidates are 2026 regime earners (PRE / X' negative) and the ulcer gain of a screened book is mostly its mean (r=-0.95), so only the excess over the date-shift null counts.
@@ -124,6 +124,13 @@ By instrument, count positive in L6M and HOLD and ALL: {'GC': 122, 'NQ': 56, 'YM
 ## 4. Engine marginal test (JL3 + one injected book, same stack cap, day rules, protection layers)
 (engine results not landed yet)
 
+## 5. Method notes and open items (hand-written by W-MB, 2026-11-17)
+- Engine route: NQ books only, through code/th_major_b/mb_inject.py (copy of th_uwbooks/uw_inject.py plus the CDE-sizer SB_BI fix), appended outermost to the JL3 set; identity TL3_MB_ID = JL3 trade for trade on 202610 and 202504 after the fix. Conversion of a harness list = replay by clock (entry time, stop, target, flat at the harness exit time); the engine then applies its own fills, caps and day rules.
+- O7 extension: events generated from replica/ports.py OpenDrive logic (501 of the 506 raw O7 signal times reproduced), windows 02:00, 03:00, 08:30, 10:00 x arm threshold 0.5 / 1.0 median5, stop 40 / target 90. DR5m_pb1 (DS3_OPEN) re-tested the same way. Shelved-for-non-edge families not yet rebuilt as events (ORB NY k3, RSI2 t10, washout, session-lock, TOPEN variants): their old-harness trade lists are in the inventory; they need the same conversion and are the next build.
+- Stages are automatic (autostage.py, frozen rules in its header): finalists = top 6 by RECENT12 ulcer change that beat the date-shift null; then older months, shifted-event placebos, lot variants x0.5 and x2, then best-3 and best-5 combinations. Combination on the part A lot vector is not wired (A page not final); add by building a base JSON from the A set and calling mk_mb.build_multi(base=...).
+- Queue: /mnt/l2/l2vast/_major_b/pending.txt (410 set-months at stage 1, about 540 more at stage 2). Throughput is limited by queue position behind the DD queue and by box-1 priority.
+- DS7 need for every row: new code (a book); none maps to an existing mean-reversion slot. X3-X5 slots are empty, X1/X2/X6-X8 and S7 have no definition.
 
 
-Status (auto): engine sets scored 0; queue: /mnt/l2/l2vast/_major_b/pending.txt (267 lines open); page rebuilt 2026-11-17 14:42 UTC.
+PARTIAL TABLE: engine set-months landed so far: 1 (a window is scored only when all its months have landed; sets with fewer months are not shown).
+Status (auto): engine sets scored 0; queue: /mnt/l2/l2vast/_major_b/pending.txt (568 lines open); page rebuilt 2026-11-17 15:04 UTC.
