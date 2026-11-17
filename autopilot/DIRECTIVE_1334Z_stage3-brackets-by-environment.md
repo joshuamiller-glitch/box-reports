@@ -1,0 +1,11 @@
+RESEARCH ORDER (relay, 11-17 13:34Z): stage 3 exits: add ENVIRONMENT, not only session. User question: nearer / farther targets and stops by environment and session.
+
+Stage 3 runs each book on one bracket setting in all sessions (41 stop x target cells, 24 time stops, 6 half-off) and picks per book x session walk-forward. Add, from the SAME runs (no new engine cells for the screen):
+
+1. Tag every stage-3 trade at entry with environment buckets known at the signal: (a) volatility: atr_rel terciles (and the live 1.3 / 1.6 marks); (b) with or against the day (the v2.0 3-of-4 vote: session open, 18:00 open, session VWAP, close 60 min earlier); (c) trend strength: ER ladder state; (d) session range used so far vs the HAR/own-bar forecast (under 50%, 50-100%, over 100%); (e) distance to the nearest zone / no-trade zone in the trade direction (room: under 30 pts, 30-60, over 60); (f) fresh vs rechase context.
+2. For each book x session x bucket, read the grid: which stop / target / time-stop is best (ulcer first, mean floor), chosen on 2023-04..2025-10 only, frozen, then HOLD and L6M untouched. Report the pick, the native 60/58 result, and the difference; and the SHAPE: does the best target get nearer when against the day / low room / high range used, and farther when with the day / high room? A monotone shape across buckets counts for more than one best cell.
+3. Null: same procedure with the bucket labels shifted (11/23/37 days) and with 3 nonsense bucketings; report how often the null "finds" a pick that holds.
+4. For any book x session x environment rule that holds untouched and beats the null: assemble the exact engine run on the raw chassis AND on JL3 (the rule as a policy bracket line conditioned on the bucket), with 30 persistent random-bracket controls. Weak cells and the Nov-Dec 2025 drawdown first (K7/P7/U7 Asia and London, trades against the day).
+5. Also report the simplest version alone: target scaled by (room to the nearest zone) and by (remaining forecast range), capped 20..90, vs fixed 58.
+
+Page: autopilot/DS3_REBUILD_S3_ENV.md, first table as soon as the HOLD + L6M months of the grid have landed (do not wait for all 43 months for the shape table; label it partial). Research only.

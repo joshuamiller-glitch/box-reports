@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-17 13:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 13:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-17 13:30Z | box1: busy 99%, load1 37.69, workers 27, MemAvail 81 GB | server2: busy 100%, load1 91.05, workers 93, MemAvail 1383 GB | pending box1-eligible 30636 / server2-eligible 46106 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-17 13:45Z | box1: busy 99%, load1 40.41, workers 30, MemAvail 83 GB | server2: busy 100%, load1 92.54, workers 94, MemAvail 1381 GB | pending box1-eligible 43891 / server2-eligible 59355 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-17 13:30Z
+2026-11-17 13:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-17 13:30Z | box1: busy 99%, load1 37.69, workers 2
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 80.2 GB; live reservations 6 (6 GB); workers 28, of which TP-adopted 28 (RSS 41.6 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 37.69, 39.18, 38.42
-  by tag: CF quota 8 running 4 hungry True RSS 7.7 GB PSS 6.6 GB; EV quota 8 running 3 hungry True RSS 6.0 GB PSS 4.3 GB; JV quota 14 running 6 hungry True RSS 5.8 GB PSS 5.4 GB; SURVIVORS quota 12 running 6 hungry False RSS 9.9 GB PSS 8.2; TOOLS quota 8 running 9 hungry False RSS 12.2 GB PSS 10.6 GB
-  cell-months finished last hour (DONE markers): 1518
-  top running jobs: TL3_CT_C_N_M7L_S87 (x6);TL3_CT_C_N_M7L_S86 (x6);TL3_CT_C_N_M7L_S62 (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 91.05, 91.24, 91.80|/dev/md2         28T  880G   28T   4% /mnt/l2|182|
+Server 1 (this box): MemAvail 83.3 GB; live reservations 0 (0 GB); workers 30, of which TP-adopted 30 (RSS 54.5 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 40.41, 39.01, 38.93
+  by tag: CF quota 8 running 4 hungry True RSS 6.3 GB PSS 5.3 GB; JV quota 14 running 8 hungry True RSS 15.0 GB PSS 11.0 GB; RB quota 4 running 1 hungry True RSS 0.6 GB PSS 0.4 GB; TOOLS quota 8 running 17 hungry False RSS 32.6 GB PSS 24.0 G
+  cell-months finished last hour (DONE markers): 1601
+  top running jobs: TL3_CF_ST_25_S_RND (x8);TL3_DD_JL3_ID (x4);TL3_CF_ST_26_S (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 92.54, 91.52, 91.53|/dev/md2         28T  880G   28T   4% /mnt/l2|184|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,7 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 91.05, 91.24, 91.80|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261117_0545Z_stage1-survivors-lookahead-and-selection.md 20261117_0728Z_after-stage1-three-families-and-cell-tests.md 20261117_0816Z_stop-moot-permutations-restore-engine-cap.md 20261117_1048Z_m7-london-controls-first.md 20261117_1235Z_m7-london-finish-the-tier.md
+20261117_1331Z_day-done-variants-from-live-night.md 20261117_1334Z_stage3-brackets-by-environment.md 20261117_1337Z_exits-add-uw-levels-sizing-book-walls.md 20261117_1342Z_MAJOR-CHANGES-PROGRAMME.md 20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md
+- lead 13:35Z INBOX 20261117_1337Z_exits-add-uw-levels-sizing-book-walls.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- lead 13:40Z INBOX 20261117_1342Z_MAJOR-CHANGES-PROGRAMME.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- lead 13:45Z INBOX 20261117_1346Z_MAJOR-F-new-london-and-newyork-books.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
