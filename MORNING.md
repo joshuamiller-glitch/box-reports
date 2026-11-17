@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-17T04:42Z
+## TREND (TL) update 2026-11-17T05:12Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T04:33:26Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-17T05:03:26Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 03:19Z 11-17 (t+566.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 05:20Z 11-17 (t+568.6 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 96% min 75% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 99% min 96% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -4339,3 +4339,6 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 2026-11-17T05:05Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 59 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
 05:06Z W-LA: LA cell-months done 867, jobs outstanding 22, chains 10; auto-expansions launched: 207 (cumulative new sets)
 - (wall 05:09Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 40.00 41.04 40.62 load; auto-expansions 0 (battery stopped by user order)
+- (wall 05:10Z) W-FL1 hourly: FL cell-months done 762, pending 15; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
+- lead 05:14Z LEAD NOTE (heartbeat wake): inbox empty; box1 100% busy 17-28 workers (load 40-44), server 2 100% busy (load 111-116, 55-62 engine workers + ~69 stage-1 shards leased); pending box1-eligible 2,671 / server2-eligible 15,867. STAGE-1 PACE: pointer 1,715 -> 1,839 of 34,104 in 10 min (+124): permutation shards are long; at this rate the permutation tail is far over 12 h - W-S1 asked at next report to cut permutations per chunk (e.g. 1,000 -> 200 adaptive: only chunks whose real stat clears the S-shard screen need the full permutation set) so the first table does not wait for all 32,480 P shards. No tier change. Heartbeat task b9hcbz6uf.
+- lead 05:19Z LEAD NOTE: W-S1 ADAPTIVE PERMUTATIONS LIVE (est. finish ~12:30Z, was days): all 1,624 S shards done; a chunk x book cell is screened in if real stable pass count >= 3 and >= 1.5x max(nonsense stable rate, mean shifted-label 11/23/37 stable rate): 266 cells; screened-in cells run 100 permutations first (4,056 P shards queued), extend to the full 1,000 if p <= 0.02 or BH q <= 0.10; fixed-seed random 5% of non-screened cells (54) run the full 1,000 as calibration (about 5% expected at p<0.05, reported on the page), remaining non-screened get 100 last. First 100-permutation results for screened-in cells ~06:00Z, extensions + calibration ~08:30Z; no shard stopped; scheduler rb1_sched.py every 10 min (sched_loop.sh), driver restarted 05:16Z with launch settings kept (24 per 20 s, REMOTE_LOAD 125). Prereg amendment in DECISIONS.md; page section "Adaptive permutation screen". Queue ~150 core-hours at 12 shards/min => ~7 h; engine cap on server 2 (60) can be raised back once the queue is short.
