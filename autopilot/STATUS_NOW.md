@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-16 23:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-17 00:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-16 23:40Z | box1: busy 78%, load1 30.71, workers 28, MemAvail 86 GB | server2: busy 100%, load1 91.14, workers 96, MemAvail 1385 GB | jobs pending 1993
+LATEST CORES.md LINE: 2026-11-16 23:55Z | box1 AUTO-FILL: SIGCONT of 0 stopped admission/launch/driver procs []; admit.log silent -3 s; ql_drivers alive before=4 restarted=[]; workers 27
 
 ## UTC TIME WRITTEN
-2026-11-16 23:45Z
+2026-11-17 00:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-16 23:40Z | box1: busy 78%, load1 30.71, workers 2
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 100.7 GB; live reservations 2 (2 GB); workers 18, of which TP-adopted 18 (RSS 30.8 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 28.25, 26.85, 21.38
-  by tag: CF quota 8 running 2 hungry True RSS 3.7 GB PSS 3.4 GB; BD quota 10 running 5 hungry True RSS 9.1 GB PSS 7.8 GB; FL quota 8 running 5 hungry True RSS 8.2 GB PSS 7.2 GB; RA quota 2 running 1 hungry True RSS 1.7 GB PSS 1.6 GB; TOOLS quota 8 running 5 hungry False RSS 8.0 GB PSS 6.6 GB
-  cell-months finished last hour (DONE markers): 725
-  top running jobs: TL3_CF_PD_PX_RND_JL2 (x6);TL3_RA_JL2_PP2_M7L_CAP3 (x2);TL3_PC_H7NYAM50_S28 (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 90.33, 90.76, 91.01|/dev/md2         28T  868G   28T   4% /mnt/l2|182|
+Server 1 (this box): MemAvail 93.5 GB; live reservations 3 (3 GB); workers 21, of which TP-adopted 21 (RSS 38.2 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 36.22, 30.50, 25.91
+  by tag: CF quota 8 running 3 hungry True RSS 5.5 GB PSS 4.6 GB; EV quota 8 running 2 hungry True RSS 2.9 GB PSS 2.5 GB; BD quota 10 running 5 hungry True RSS 9.6 GB PSS 8.2 GB; FL quota 8 running 2 hungry True RSS 4.3 GB PSS 3.4 GB; RA quota 2 running 2 hungry False RSS 3.9 GB PSS 3.3 GB; TOOLS quota 8 running 7 hungry False RSS 12.0 GB PSS 9.5 GB
+  cell-months finished last hour (DONE markers): 654
+  top running jobs: TL3_CF_SP_L2_S15 (x6);TL3_BD_F_fix_T25_H7_am_mr1_p209 (x4);TL3_RA_JL2_PL3_M7L_CAP3 (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 90.90, 90.65, 90.80|/dev/md2         28T  868G   28T   4% /mnt/l2|187|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
