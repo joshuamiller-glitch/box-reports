@@ -1,8 +1,8 @@
 # DS3_ORB_FADE_LEAD - N1_ORB_LIM fade (OR=15, ctx=with, lim=4) exit 40/90, NY AM, both sides, injected on JL3 (W-ORB)
 
-**FIVE-LINE PLAIN SUMMARY (refreshed 2026-11-18 15:30Z by the unattended loop)**
+**FIVE-LINE PLAIN SUMMARY (refreshed 2026-11-18 16:00Z by the unattended loop)**
 1. Tried: the one NQ LEAD of the shelf re-read (opening-range fade, 15-min OR, with-trend context, 4-point resting limit, stop 40 / target 90, 2 base lots) injected into the live-equivalent stack JL3 on the exact engine (events 261, limit fill model through-print + 0.5 pt).
-2. Status: identity of the hook PASS; engine months landed L6M 6/6, L3M 3/3, HOLD 6/6, pooled 42/43; label now: LEAD (controls 10/30 valid: cannot be CONFIRMED).
+2. Status: identity of the hook PASS; engine months landed L6M 6/6, L3M 3/3, HOLD 6/6, pooled 43/43; label now: LEAD (controls 10/30 valid: cannot be CONFIRMED).
 3. L6M: mean $/wk +19933 vs JL3 18755 (base lots), ulcer 9242 vs 9416 (-2%), max DD -31109 vs -31109; trades of the book 28.
 4. Needs in D7: new code (event book with own cap, resting limit entry) - nothing is delivered unless the label is LEAD or better with controls.
 5. Next: 10 date-shifted controls (queued), 20 more draws needed for 30; older months; refit date 2026-11-17, next 2026-12-01.
@@ -19,9 +19,9 @@
 | 2026 | 10/10 | 15149 / 15024 (+1%) | 17067 / 16553 | +900 | -58792 / -58740 | -20963 / -19819 | 50 | -84 | ok (worse = ulcer up or mean down, AMBER>15 RED>30) |
 | 2025 | 12/12 | 34715 / 33572 (+3%) | 6763 / 6846 | -144 | -95611 / -91441 | -39137 / -38896 | 54 | -69 | ok (worse = ulcer up or mean down, AMBER>15 RED>30) |
 | 2024 | 12/12 | 31943 / 28856 (+11%) | 4038 / 4549 | -894 | -74796 / -72026 | -37355 / -37355 | 60 | -0 | ok (worse = ulcer up or mean down, AMBER>15 RED>30) |
-| 2023 | 8/9 | 15386 / 15261 (+1%) | 2483 / 2494 | -20 | -38624 / -40171 | -17538 / -17538 | 36 | +0 | ok (worse = ulcer up or mean down, AMBER>15 RED>30) |
-| PRE(2023-04..2025-10) | 30/31 | 28973 / 27189 (+7%) | 4885 / 5128 | -426 | -95611 / -91441 | -39137 / -38896 | 140 | -24 | ok (worse = ulcer up or mean down, AMBER>15 RED>30) |
-| pooled | 42/43 | 27220 / 25738 (+6%) | 7707 / 7757 | -88 | -95611 / -91441 | -39137 / -38896 | 200 | -40 | n/a (worse = ulcer up or mean down, AMBER>15 RED>30) |
+| 2023 | 9/9 | 16629 / 18922 (-12%) | 1925 / 1797 | +225 | -38624 / -41848 | -17538 / -17538 | 41 | +0 | ok (worse = ulcer up or mean down, AMBER>15 RED>30) |
+| PRE(2023-04..2025-10) | 31/31 | 28810 / 27526 (+5%) | 4653 / 4849 | -344 | -95611 / -91441 | -39137 / -38896 | 145 | -23 | ok (worse = ulcer up or mean down, AMBER>15 RED>30) |
+| pooled | 43/43 | 27140 / 26032 (+4%) | 7479 / 7499 | -35 | -95611 / -91441 | -39137 / -38896 | 205 | -40 | n/a (worse = ulcer up or mean down, AMBER>15 RED>30) |
 
 ## Controls (10 date-shifted, same rule on shifted days; L6M, complete months only)
 
