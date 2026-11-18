@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-18 04:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 05:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-18 04:45Z | AUTO-FILL step run: dispatcher alive pid 1240823/3354863
+LATEST CORES.md LINE: 2026-11-18 05:00Z | box1: busy 98%, load1 35.68, workers 4, MemAvail 85 GB | server2: busy 98%, load1 71.88, workers 22, MemAvail 1365 GB | pending box1-eligible 1380 / server2-eligible 40593 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-18 04:45Z
+2026-11-18 05:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 04:45Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 100.3 GB; live reservations 0 (0 GB); workers 3, of which TP-adopted 3 (RSS 5.2 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 48.64, 45.70, 42.78
-  by tag: SWB quota 4 running 3 hungry True RSS 5.2 GB PSS 4.8 GB
-  cell-months finished last hour (DONE markers): 277
-  top running jobs: TL3_SWB_O73_9707f5 (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 59.73, 52.21, 57.59|/dev/md2         28T  1.1T   27T   4% /mnt/l2|40|
+Server 1 (this box): MemAvail 85.6 GB; live reservations 0 (0 GB); workers 4, of which TP-adopted 4 (RSS 5.9 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 35.68, 34.92, 38.35
+  by tag: SWB quota 4 running 4 hungry False RSS 5.9 GB PSS 5.5 GB
+  cell-months finished last hour (DONE markers): 305
+  top running jobs: TL3_SWB_O73_9707f5 (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 72.05, 70.51, 65.80|/dev/md2         28T  1.1T   27T   4% /mnt/l2|40|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
