@@ -1,7 +1,7 @@
 # DS3 BAR SWAP B (W-SWB): P7 / H7 / A7 / O7 on every bar row
 
 Rule: standing selection rule (CLAUDE.md, user 11-17 18:10Z/18:13Z): pick on the trailing 6 months to the newest data, trailing 3M beside it; validated by rolling walk-forward; older years tolerant (AMBER 15-30% / RED >30% worse than the live bar). FIRST PASS standalone (tape fills, raw chassis, live bracket); engine swap test is section 4.
-Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 14:42:28 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
+Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 15:32:29 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
 
 ## Plain summary
 - Tried: every available bar row (~490 time / activity / information / price / composite rows) as the signal clock of P7, H7, A7, O7 in three versions side by side: transplanted live settings, transplanted + the book grid refit, and bar-NATIVE rules (bars / bricks as the unit, no minute ATR); standalone on the tape with live brackets, then the exact engine with the full JL3 stack (not gated on the naked result).
@@ -354,7 +354,7 @@ Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; r
 | 12M->3M | 37 | 37.2 | 90.4 | 0.41 | 605 | 571 |
 | 6M->2w | 37 | 52.9 | 114.1 | 0.38 | 242 | 211 |
 
-Nulls (same pick procedure): shift11: OOS 19.8/mo share beat 0.43; shift23: OOS 24.7/mo share beat 0.49; shift37: OOS 26.4/mo share beat 0.49; random-clock pool: OOS 19.3/mo share beat 0.46
+Nulls (same pick procedure): shift11: OOS 19.8/mo share beat 0.43; shift23: OOS 24.7/mo share beat 0.49; shift37: OOS 26.4/mo share beat 0.49; random-clock pool: OOS 26.5/mo share beat 0.46
 
 Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 29 vs 89 (n 36); +3M 43 vs 94 (n 34); +6M -4 vs 87 (n 31)
 
