@@ -6495,3 +6495,28 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - LEAD NOTE: DELIVERABLES page 2026-11-18 16:48Z: rows per table T1 30 / T2 23 / T3 36 / T4 13 / T5 bar swap 16; labels {'CONFIRMED': 1, 'BEST-AVAILABLE-NOT-PROVEN': 101, 'WEAK-BUT-POSITIVE': 51, 'LEAD': 7}; stale owners ['W-MB', 'W-MC', 'W-S1R']; no file yet ['W-BAR'] (autopilot/DS3_MAJOR_DELIVERABLES.md)
 - (wall 16:49Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 16:49Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T16:51Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- (wall 16:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 16:52Z LEAD NOTE: both machines 100% busy (16:50Z box 1 load 39, server 2 load 86; box-1 MemAvail 76 GB). NY engine: 1,202 NYE/NYW set-months done on box 1 at 16:42Z (722 at 15:50Z, ~480/h box-1 share); first-priority WP1/WP10 queue (prior years, 10 controls, BARE/gate-off, pair sets) 200 -> 158 lines at 16:51Z. NEW_BOOK_ENGINE.md last written 16:35Z (cron every 30 min, next ~17:05Z). Waiting: WP1/WP10 verdict rows (~17:15Z), London L6M rows 18:30Z, build specs final 19:00Z. Heartbeat running, inbox empty.
+- (wall 16:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T16:56:19Z W-GRIDA 2026-11-18T16:56Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 296 / 2915 / 9.8 h; (b) pass-1 level modules 1275 / 68 / 0.1 h; (c) pass-2 family cells 105 / 0 / 0.0 h; (d) rest of pass 1 0 / 81058 / n/a (no jobs done in last hour); workers 56 (49 R       7 S); load 80.66; todo counts refreshed {"": 29, "_p2": 28} min ago
+- (wall 16:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 624, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+2026-11-18T16:58:07Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- (wall 16:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
