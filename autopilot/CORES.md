@@ -1,5 +1,3 @@
-2026-11-17 07:15Z | box1: busy 100%, load1 40.93, workers 27, MemAvail 89 GB | server2: busy 100%, load1 121.11, workers 71, MemAvail 1392 GB | pending box1-eligible 1492 / server2-eligible 14032 (shared queues count in both; unleased, not DONE)
-2026-11-17 07:20Z | box1: busy 100%, load1 41.73, workers 28, MemAvail 85 GB | server2: busy 100%, load1 120.30, workers 73, MemAvail 1392 GB | pending box1-eligible 1483 / server2-eligible 13949 (shared queues count in both; unleased, not DONE)
 2026-11-17 07:25Z | box1: busy 100%, load1 40.79, workers 26, MemAvail 86 GB | server2: busy 100%, load1 118.67, workers 75, MemAvail 1388 GB | pending box1-eligible 1484 / server2-eligible 13865 (shared queues count in both; unleased, not DONE)
 2026-11-17 07:25Z | box1: busy 100%, load1 43.09, workers 27, MemAvail 85 GB | server2: busy 100%, load1 119.26, workers 78, MemAvail 1386 GB | pending box1-eligible 1484 / server2-eligible 13853 (shared queues count in both; unleased, not DONE)
 2026-11-17 07:30Z | box1: busy 100%, load1 40.75, workers 24, MemAvail 87 GB | server2: busy 100%, load1 120.94, workers 71, MemAvail 1386 GB | pending box1-eligible 22866 / server2-eligible 35156 (shared queues count in both; unleased, not DONE)
@@ -298,3 +296,5 @@
 2026-11-18 01:40Z | WARNING server2 below 85% busy for 2 readings in a row with jobs pending
 2026-11-18 01:40Z | AUTO-FILL step run: dispatcher alive pid 1240823/3147929
 2026-11-18 01:45Z | box1: busy 98%, load1 42.69, workers 3, MemAvail 81 GB | server2: unreachable | pending box1-eligible 1638 / server2-eligible 40851 (shared queues count in both; unleased, not DONE)
+2026-11-18 01:50Z | box1: busy 100%, load1 41.51, workers 0, MemAvail 80 GB | server2: busy 95%, load1 137.47, workers 52, MemAvail 1153 GB | pending box1-eligible 1564 / server2-eligible 40777 (shared queues count in both; unleased, not DONE)
+2026-11-18 01:55Z | box1: busy 100%, load1 42.31, workers 0, MemAvail 92 GB | server2: busy 100%, load1 180.30, workers 46, MemAvail 1035 GB | pending box1-eligible 1511 / server2-eligible 40724 (shared queues count in both; unleased, not DONE)
