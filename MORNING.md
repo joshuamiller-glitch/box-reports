@@ -5506,3 +5506,27 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 10:28Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 10:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 10:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:30Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:30Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:31Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:31Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T10:32:14Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (wall 10:32Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:32Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:33Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:33Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:34Z) W-PM status: load1 36.01, PM exact jobs pending 12, cells with output 59; 743 jobs wanted, 12 chains running, 1794997967; P5 page done, P8 grid np_m15_x10_y15 2898
+- (wall 10:34Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:34Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:35Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:35Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:36Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:36Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 24 (pending file), cell-months done 1979, load 35.85 35.71 33.35, epoch 1794998184
+- (wall 10:36Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:37Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:37Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:38Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:38Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:39Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:39Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 34.58 35.04 33.57
+- (wall 10:39Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
