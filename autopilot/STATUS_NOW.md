@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-18 14:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 14:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-18 14:15Z | box1: busy 100%, load1 40.86, workers 8, MemAvail 65 GB | server2: busy 100%, load1 74.65, workers 18, MemAvail 1375 GB | pending box1-eligible 1528 / server2-eligible 40741 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-18 14:30Z | box1: busy 99%, load1 33.81, workers 1, MemAvail 65 GB | server2: busy 100%, load1 85.84, workers 14, MemAvail 1276 GB | pending box1-eligible 1768 / server2-eligible 40981 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-18 14:15Z
+2026-11-18 14:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 14:15Z | box1: busy 100%, load1 40.86, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 65.3 GB; live reservations 1 (1 GB); workers 8, of which TP-adopted 8 (RSS 13.0 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 41.03, 38.54, 38.86
-  by tag: P7L quota 4 running 4 hungry False RSS 6.7 GB PSS 5.4 GB; ORB quota 4 running 4 hungry False RSS 6.2 GB PSS 5.8 GB
-  cell-months finished last hour (DONE markers): 602
-  top running jobs: TL3_MF_N1ORBLIM_OR15ctxwithmod_E3c6ee (x8);TL3_P7L_CHP_S9 (x2);TL3_P7L_CHP_S8 (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 74.60, 75.45, 77.55|/dev/md2         28T  1.1T   27T   4% /mnt/l2|30|
+Server 1 (this box): MemAvail 74.6 GB; live reservations 2 (2 GB); workers 1, of which TP-adopted 1 (RSS 2.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 33.81, 38.96, 39.11
+  by tag: ORB quota 4 running 1 hungry True RSS 2.1 GB PSS 1.9 GB
+  cell-months finished last hour (DONE markers): 456
+  top running jobs: TL3_P7L_CHP_S18 (x2);TL3_P7L_CHP_S17 (x2);TL3_P7L_CHP_S16 (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 86.56, 84.94, 81.46|/dev/md2         28T  1.1T   27T   4% /mnt/l2|23|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -36,5 +36,3 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 74.60, 75.45, 77.55|/dev/md
 
 ## INBOX (last 5 received)
 20261118_0633Z_LEAD-WAKE-server2-42pct-box1-falling.md 20261118_1306Z_never-idle-again-inbox-wake.md 20261118_1324Z_level-triggers-best-NON-reversal-bar-table.md 20261118_1333Z_TODAY-new-book-shortlist-all-four-sessions.md 20261118_1415Z_NY-FIRST-build-specs-by-1900Z.md
-- lead 14:12Z INBOX 20261118_1415Z_NY-FIRST-build-specs-by-1900Z.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
-- 14:13Z INBOX 20261118_1415Z_NY-FIRST-build-specs-by-1900Z.md received (accepted, research only; read started 14:12Z after the wake line). WATCHDOG fired: A (t

@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 14:17Z 11-18 (t+553.3 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 14:32Z 11-18 (t+553.5 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 97% min 84% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-18T14:17:27Z. Box: CPU 99.7%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 98% min 90% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-18T14:32:28Z. Box: CPU 99.4%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -6125,3 +6125,28 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 14:29Z W-LEVEL status: feat_c/feat_d now fully on server 2 (15G/16G, cron s2_sync_feat.sh every 30 min); 1,430 failed .err files moved to _grid/err_moved_1405 so the book/tape/sdx jobs re-queue (pass-1 todo 84,966, p2 25,204); level audits (343) and NYAM overlap (89 cells) re-run. RESULTS: (a) fill-delay test, six best NYAM level cells, entry +4/+14/+29 s after the usual +1 s: all stay positive in L6M and in 2023-25 except piv_floor/pnf_10 plain60/60 (2025 +163, 2026 -777 at +29 s); sdx_rng28/pnf_14 L6M +2,787 -> +2,780 (+14 s), swsr5/pnf_10 +2,673 -> +1,217 (+14 s): the pnf level edge does not hinge on the exact confirming-print fill (out/level_delay.csv). (b) overlap with live NYAM books (daily P&L, base lots): 89 cells, median correlation with the live NYAM total +0.12 (range -0.12..+0.30); 46 of 89 make money on days the live NYAM total is negative (best: swsr5 break urenko_14 +$258/day on live-losing days, corr +0.02) (out/level_overlap.csv). (c) family-level rolling (2 null draws only = no label): NYAM swing S/R all bars +55 pts/wk OOS persistence 0.64 all years ok; pnf-only ALL LEVEL +38; PRICE-without-pnf ALL LEVEL -1; London ALL LEVEL +36 (0.65); NYPM negative (page section 'FAMILY-LEVEL rolling'). (d) NR table + top-12 'Level triggers on non-reversal bars' are on the pages (14:28Z rebuild); null draws p1rand6..25 for 94 pairs: only 22 files per tag landed so far - ETA for >=20 draws NOT assured by 17:30Z, will be re-stated; engine sets for the best 6 wait for >=5 accepted nulls. Code: code/th_grid/glev*.py, backups *.bak_wlevel*.
 - (wall 14:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 14:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:30Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 14:30Z W-SHORT STATUS: NEW_BOOK_SHORTLIST.md published (stage 2: 12 per session x 4 from 15.0M scored cells; NY first). Stage 3 so far: trust audit 50/50 PASS (brute-force 0 mismatch, 6 truncation cuts 0 differ, fills never early) - but most rows sit on the 120/120 pt bracket clip (median stop 120 on >50% of rows; alt 30/30, 60/60, 60/120 on the page) and avg hold up to 186 min. KEY CAUTIONS: (1) rolling over each session's 12 finalists (pick trailing 26w -> next 2w) is positive over 2023-26 (+19..+40 pts/wk) but NEGATIVE in the last 26 weeks (Asia -48, London -1, NY AM -139, NY PM +5 pts/wk) - the finalists look good only on their own L6M in-sample; (2) cell-level random-entry nulls have only 2-5 draws so far and several cells do not beat even those (random wide-bracket entries earned a lot in this L6M) - 20-draw nulls for the 24 NY finalists are queued (picked up when the p2 loop refreshes its todo at ~14:36Z, ~460 jobs); London/Asia pairs queued after NY. Nothing is BUILD-READY, no row is past stage 3. Refresh: cron */20 refresh_short.sh (stage 3 A/B/CD + page); page rebuilds from server-2 out/shortlist*.csv. Stage 4/5 are not mine yet (hand-off to W-NYENG / W-SPEC for NY).
+- 14:30Z LEAD NOTE: W-SHORT stage 2 (12 per session) + stage 3 trust audit: 50/50 rows pass brute-force, truncation and fill checks. CAUTION from its rolling test (pick on trailing 26 wk -> next 2 wk over each session's 12 finalists): positive over 2023-26 (+19..+40 pts/wk) but NEGATIVE in the last 26 weeks for NY AM (-139), Asia (-48), London (-1), NY PM ~flat (+5): finalists look good only on their own in-sample L6M; over half sit on the 120/120 clip (wide-bracket bets, avg hold up to 186 min); only 2-5 random-entry draws per cell yet, several do not beat even those. 20+ draw nulls for the 23 NY pairs (~460 jobs) queued on server 2. No row BUILD-READY. Core-hours: ~270 needed vs ~815 available to 23:00Z. W-LEVEL finished (no look-ahead in pnf/renko/kagi/dchg; 343 LEVEL candidates; level overlap with live NY AM median corr +0.12).
+- (wall 14:30Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:31Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:32Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:32Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:33Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:33Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:34Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:34Z) W-PM status: load1 51.92, PM exact jobs pending 12, cells with output 59; 743 jobs wanted, 12 chains running, 1795012439; P5 page done, P8 grid np_m15_x10_y15 2898
+- (wall 14:34Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:35Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:35Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:36Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:36Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:36Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 24 (pending file), cell-months done 1979, load 35.72 41.98 40.94, epoch 1795012600
+- (wall 14:37Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:37Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:38Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:38Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:39Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T14:39Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- (wall 14:39Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:40Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 47.93 43.39 41.56
