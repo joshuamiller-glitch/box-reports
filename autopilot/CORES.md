@@ -1,11 +1,3 @@
-2026-11-17 20:00Z | box1: busy 100%, load1 56.85, workers 3, MemAvail 80 GB | server2: busy 100%, load1 94.83, workers 98, MemAvail 1373 GB | pending box1-eligible 37223 / server2-eligible 38847 (shared queues count in both; unleased, not DONE)
-2026-11-17 20:05Z | box1: busy 100%, load1 67.98, workers 3, MemAvail 70 GB | server2: busy 100%, load1 93.14, workers 95, MemAvail 1377 GB | pending box1-eligible 38054 / server2-eligible 39678 (shared queues count in both; unleased, not DONE)
-2026-11-17 20:10Z | box1: busy 100%, load1 82.76, workers 5, MemAvail 59 GB | server2: busy 100%, load1 96.67, workers 96, MemAvail 1378 GB | pending box1-eligible 38319 / server2-eligible 39943 (shared queues count in both; unleased, not DONE)
-2026-11-17 20:15Z | box1: busy 100%, load1 102.71, workers 5, MemAvail 48 GB | server2: busy 100%, load1 140.91, workers 96, MemAvail 1355 GB | pending box1-eligible 38233 / server2-eligible 39857 (shared queues count in both; unleased, not DONE)
-2026-11-17 20:20Z | box1: busy 100%, load1 101.65, workers 4, MemAvail 55 GB | server2: busy 100%, load1 138.96, workers 61, MemAvail 1387 GB | pending box1-eligible 38172 / server2-eligible 39796 (shared queues count in both; unleased, not DONE)
-2026-11-17 20:25Z | box1: busy 100%, load1 92.49, workers 3, MemAvail 66 GB | server2: busy 100%, load1 93.73, workers 53, MemAvail 1429 GB | pending box1-eligible 38080 / server2-eligible 39704 (shared queues count in both; unleased, not DONE)
-2026-11-17 20:30Z | box1: busy 100%, load1 72.02, workers 3, MemAvail 75 GB | server2: busy 100%, load1 98.01, workers 57, MemAvail 1425 GB | pending box1-eligible 38012 / server2-eligible 39636 (shared queues count in both; unleased, not DONE)
-2026-11-17 20:35Z | box1: busy 100%, load1 71.74, workers 4, MemAvail 82 GB | server2: busy 100%, load1 96.75, workers 55, MemAvail 1430 GB | pending box1-eligible 37916 / server2-eligible 39540 (shared queues count in both; unleased, not DONE)
 2026-11-17 20:40Z | box1: busy 100%, load1 69.34, workers 5, MemAvail 80 GB | server2: busy 100%, load1 102.63, workers 55, MemAvail 1424 GB | pending box1-eligible 37834 / server2-eligible 39458 (shared queues count in both; unleased, not DONE)
 2026-11-17 20:45Z | box1: busy 100%, load1 78.48, workers 5, MemAvail 72 GB | server2: busy 100%, load1 89.74, workers 30, MemAvail 1448 GB | pending box1-eligible 37788 / server2-eligible 39412 (shared queues count in both; unleased, not DONE)
 2026-11-17 20:50Z | box1: busy 100%, load1 79.08, workers 6, MemAvail 70 GB | server2: busy 99%, load1 72.98, workers 22, MemAvail 1464 GB | pending box1-eligible 37745 / server2-eligible 39369 (shared queues count in both; unleased, not DONE)
@@ -298,3 +290,11 @@
 2026-11-18 10:05Z | box1: busy 92%, load1 28.97, workers 0, MemAvail 81 GB | server2: busy 43%, load1 26.93, workers 30, MemAvail 1318 GB | pending box1-eligible 3239 / server2-eligible 42452 (shared queues count in both; unleased, not DONE)
 2026-11-18 10:05Z | WARNING server2 below 85% busy for 52 readings in a row with jobs pending
 2026-11-18 10:05Z | AUTO-FILL step run: dispatcher alive pid 1240823/3708622
+2026-11-18 10:10Z | box1: busy 79%, load1 24.90, workers 0, MemAvail 92 GB | server2: busy 42%, load1 26.56, workers 29, MemAvail 1320 GB | pending box1-eligible 3212 / server2-eligible 42425 (shared queues count in both; unleased, not DONE)
+2026-11-18 10:10Z | WARNING server2 below 85% busy for 53 readings in a row with jobs pending
+2026-11-18 10:10Z | AUTO-FILL step run: dispatcher alive pid 1240823/3715018
+2026-11-18 10:15Z | box1: busy 82%, load1 27.28, workers 0, MemAvail 91 GB | server2: busy 43%, load1 27.20, workers 29, MemAvail 1318 GB | pending box1-eligible 3188 / server2-eligible 42401 (shared queues count in both; unleased, not DONE)
+2026-11-18 10:15Z | WARNING box1 below 85% busy for 2 readings in a row with jobs pending
+2026-11-18 10:15Z | WARNING server2 below 85% busy for 54 readings in a row with jobs pending
+2026-11-18 10:15Z | box1 AUTO-FILL: SIGCONT of 0 stopped admission/launch/driver procs []; admit.log silent -3 s; ql_drivers alive before=19 restarted=[]; workers 0
+2026-11-18 10:15Z | AUTO-FILL step run: dispatcher alive pid 1240823/3721169
