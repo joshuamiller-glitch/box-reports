@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 16:03Z 11-18 (t+555.1 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 16:18Z 11-18 (t+555.3 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 98% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-18T16:03:45Z. Box: CPU 99.8%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 100% min 98% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-18T16:18:52Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-18T15:47Z
+## TREND (TL) update 2026-11-18T16:17Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T15:33:47Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T16:03:48Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -6397,3 +6397,29 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 16:09Z W-NYENG: order 1610Z item 4 + cron question. QUEUED FIRST (tag NYF, quota 20 ahead of NYE/NYW/LON on box 1, server-2 QUEUES.txt line right after _orb; backups .bak_lead_1615): for WP1 (dlt_100 VWAP reject plain 60/60) and WP10 (vol_350 cmf asym20u/10u): prior years 202304-202604 for ADD, RK7 (WP10 as K7-NY-PM replacement), ALL (K7 off), P2 (K7 kept + both new books) and C2 (K7 off + both); 10 date-shift controls each (L6M); BARE and ACCT (gate-off) variants; 452 set-months in /mnt/l2/l2vast/_nye/pending_f.txt. Server 2 (cap 32) was already leasing them at 16:09Z; measured total rate 428 set-months in the last 26 min (~990/h incl. server 2), so ETA for the full WP1 + WP10 prior-year + control + variant block ~16:45-17:00Z, verdict row on NEW_BOOK_ENGINE.md by ~17:15Z, well inside 19:00Z. ID RECONCILIATION: engine id WP1 = dlt_100 levels_vwap.reject plain 60/60 (W-SHORT 14:23Z rank 1), NOT tm1800; tm1800 xmarket_ym.follow = XP2 (W-SHORT 15:19Z rank 2; separate ADD sets, no headline row yet); WP10 = vol_350 cmf asym20u/10u (not XP1 dib_400 cmf). Glossary now at the top of NEW_BOOK_ENGINE.md; W-SPEC told. CRON: ny_cron.sh took >7 min and skipped runs under flock because ny_bridge re-simulated all ~35 cells x 2 windows on the tape every run and ny_stage2 re-scored ~900 sets a second time; fixed 16:09Z: bridge is now cached by (cell, window) and stage2 reads score.csv; page cadence */30 unchanged (cache makes a run ~1-2 min). MEMORY NOTE: box-1 MemAvail 29-35 GB because another agent's th_swb/agg_swb.py holds 30 GB RSS (not mine; tp_admit gate 35 GB is holding box-1 engine admissions; server 2 carries the new queue).
 - (wall 16:09Z) W-MD hourly: page DS3_REBUILD_S3_ENV.md W-MD sections refreshed; MBO older-day features 973 extracted (finished workers 3 of 3); engine state: identity True real evaluated ['H7_TUW10', 'H7_SUWBE', 'K7_TUWN10'] controls done []
 - (wall 16:09Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 16:10Z W-SPEC: order 1610Z: (1) WP10 full 7-item block DONE in NEW_BOOK_BUILD_SPECS.md section D2 (volume-bar scale formula + last 30 dates of vol_350 thresholds, Chaikin as coded, entry event, bracket asym20u/10u after the clip = stop 120 / target median 95 pt last month, 3 worked trades). (2) ID RECONCILIATION: engine id WP1 = NY PM dlt_100 levels_vwap.reject plain 60/60 (NOT tm1800); tm1800 xmarket_ym.follow = XP2 (= old engine id WP11, same signals); WP1 block written (dlt_100 delta-bar threshold table, K7-off ALL c=2.00 = 4 live lots, RK7 c=1.00 = 2 live lots, blocked counts from bridge.csv: conj 147 / inTrade 104 / dayHalt 1 over the parsed month logs); XP2 block now carries the YM facts: Databento YM.v.0 roll, no roll adjustment (NaN for w minutes after an id change), sigma = pandas rolling std over 4,320 CALENDAR minutes (72 h, not 3 trading days) with min 600 obs, breaks/weekends skipped as NaN, no YM print in the minute -> z NaN -> no signal. (3) STANDING: Headline-table rows get a block within 30 min; I rebuild with code/th_spec/build_specs.py. (4) prior years / controls / BARE / K7-off / pair runs belong to W-NYENG (queued first, ETA in their line); not mine. Open: NYE headline row XA/XP engine rows are landing (XA1-4 scored); XP2 engine rows under id XP2 not scored yet; no row has controls.
+- (wall 16:10Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 16:10Z LEAD NOTE: W-SPEC 1610Z done: WP10 (vol_350 tape_libvol.cmf, asym20u/10u, 75,296 events; stop 120 pt after clip, target median 95 pt last month vs 60 pt L6M per W-NYENG; one stop at 1 base lot = $4,800 trips the day cap) and WP1 blocks written. ID RECONCILIATION: engine id WP1 = NY PM dlt_100 levels_vwap.reject plain 60/60 (11,877 events), NOT tm1800; tm1800 xmarket_ym.follow = XP2 on the shortlist = older engine id WP11 (1,554 events, scored sets exist); TL3_NYW_XP2_ADD not scored yet. XP2 YM facts: Databento YM.v.0 volume roll, no roll adjustment (z NaN after id change), sigma window 4,320 calendar minutes (72 h, not 3 trading days), min 600 obs, breaks/weekends NaN, no print in minute -> no signal. Still no row has controls; labels capped at NEEDS MORE.
+- (wall 16:11Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:11Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 16:11Z LEAD NOTE: W-NYENG queued 452 set-months (tag NYF quota 20, first after near-target) for WP1 (=dlt_100 vwap reject) and WP10 (vol_350 cmf): prior years 2023-25, 10 date-shift controls each, BARE/gate-off variants, pair sets; measured ~990 set-months/h over both machines (26-min measurement): block done ~16:45-17:00Z, verdict row ~17:15Z. NEW_BOOK_ENGINE.md page build was slow (bridge re-simulating each cell, stage 2 re-scoring ~900 sets; lock skipped overlaps; last written 15:36Z): cached, rebuild test running, not yet confirmed. Box-1 free mem 44 GB (free) / 29-35 GB (agent reading): agg_swb.py (28 GB, loop script) holds it; left alone.
+- (wall 16:12Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:12Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:13Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T16:13:04Z W-NT hourly: NT set-months landed 340 (rate 0/h since last line); identity 4/4 landed (target 04:35Z); K7 L6M cells landed 0 (target table 06:00Z; first.txt 1 lines; controls K7+M7 target 12:00Z, pf.txt 50 lines built); page autopilot/DS3_NEAR_TARGET.md; closest to live: see page section 2
+- (wall 16:13Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:13Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 44.17 41.94 41.17 load; auto-expansions 0 (battery stopped by user order)
+- (wall 16:14Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:14Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:15Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:15Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:16Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
+- (wall 16:16Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:17Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T16:17:17Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (wall 16:17Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:18Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:18Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free

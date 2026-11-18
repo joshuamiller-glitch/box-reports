@@ -1,10 +1,21 @@
-# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-18 16:06Z
+# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-18 16:14Z
 
-Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 859.
+Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 914.
 
 ## What acts on a new book in these runs (plain words; full list NEW_BOOK_LAYER_FACTS.md)
 - ON the new book: the signal-state screen gate "conj" (written for all books; it skipped 334 of ~800 signals of NA1 in 202610), one position at a time, the book day caps (loss 4,800 $ / profit 12,000 $ default; a 120-pt stop = 2,400 $ at 1 base lot, 4,800 $ at 2 live lots = one stop trips it), the book give-back lock, measured slippage, the stack rule.
 - NOT on the new book: no-trade zones, policy take / near-target latch / locks / shave (named live books only), trade-health and context cuts, ATR-skip, breakout rule, governor, session lot tables. So the engine row = the cell under those rules only; its own fitted layers are variant (iii), not built yet. BARE (screen gate and caps off) and ACCT (gate off, account day caps on) variants for NA1 NA2 NA5 NP1 NP5 are queued.
+
+## ID glossary (reconciled 16:10Z; engine ids never change)
+- WA<n> / WP<n> = W-SHORT rank n on the 14:23Z page (frozen): **WP1 = NY PM dlt_100 levels_vwap.reject {tol 0, conf close}, plain 60/60** (NOT tm1800); **WP10 = NY PM vol_350 tape_libvol.cmf {len 10}, asym20u/10u (median stop/target 120/60)**; WP11 = tm1800 xmarket_ym.follow plain 60/60 on that page.
+- XA<n> / XP<n> = W-SHORT rank n on the 15:19Z equal-risk page (frozen): **XP2 = NY PM tm1800 xmarket_ym.follow {w 5, thr 1.0}**, XP1 = dib_400 tape_libvol.cmf {len 10}, XP3 = tm900 xmarket_es.follow. So XP2 (tm1800 YM follow) is a different cell from WP1 (dlt_100 VWAP reject); the headline rows NYE_WP1_* / NYW_WP1_* are dlt_100 VWAP reject.
+- NA<n> / NP<n> = my first provisional six per session (level_nr_qual picks). Set names: TL3_NYE_<id>_ADD|RK7|RP7|RM7|ALL|BARE|ACCT|CT<k><p|m>, TL3_NYW_<id>_ADD (W / X cells), TL3_NYE_C2|C3|D1|D2|P2_<session>_<ids> (P2 = K7 kept + both new books).
+
+## Date-shift controls (same events moved +-7..35 days, same weekday; ADD at 1 base lot; L6M)
+| cell | real d mean $/wk | real d ulcer | controls n | controls d mean median / best | controls d ulcer median / best | real beats controls on mean (share) | real better ulcer than controls (share) |
+|---|---|---|---|---|---|---|---|
+| NA4 | +1158 | -8 | 10 | +3 / +703 | +1487 / -504 | 1.00 | 0.90 |
+| WA2 | +1619 | +904 | 10 | -347 / +1765 | +971 / -720 | 0.90 | 0.50 |
 
 ## NY AM - HEADLINE: replacement
 
@@ -228,6 +239,14 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | WA2 | CT21m | L6M | +398 / +697 | -1501 | -122 / -213 | -3594 | c=0.50: +99 / +405 / -74 | 198 | -0.005 | -0.039 | +0.12 / -0.03 / -0.21 | ok |
 | WA2 | CT21p | L3M | +1456 / +2548 | -4646 | +563 / +985 | -2227 | c=0.50: +777 / -3194 / +247 | 99 | +0.035 | +0.264 | -0.24 / +0.14 / -0.00 | ok |
 | WA2 | CT21p | L6M | +1100 / +1924 | -4646 | +619 / +1084 | -2227 | c=0.50: +537 / -3194 / +263 | 224 | +0.036 | +0.297 | -0.17 / +0.11 / -0.03 | ok |
+| WA2 | CT28m | L3M | +3245 / +5678 | -8700 | -691 / -1209 | -11971 | c=0.50: +1563 / -4970 / -538 | 69 | -0.024 | -0.128 | +0.01 / +0.11 / +0.16 | RED |
+| WA2 | CT28m | L6M | +2243 / +3926 | -8700 | -732 / -1281 | -11971 | c=0.50: +1130 / -4970 / -617 | 187 | -0.014 | -0.096 | -0.07 / +0.04 / +0.03 | RED |
+| WA2 | CT28p | L3M | +1083 / +1895 | -3740 | -3777 / -6609 | -2584 | c=0.50: +427 / -1870 / -2220 | 90 | -0.187 | -1.297 | -0.09 / -0.13 / -0.18 | AMBER |
+| WA2 | CT28p | L6M | +891 / +1559 | -3740 | -2805 / -4909 | -2584 | c=0.50: +379 / -1870 / -1679 | 204 | -0.124 | -0.938 | -0.10 / -0.02 / -0.17 | ok |
+| WA2 | CT35m | L3M | +1365 / +2389 | -3769 | -191 / -334 | -6162 | c=0.50: +754 / -2447 / -57 | 64 | -0.023 | -0.112 | +0.11 / +0.25 / +0.02 | AMBER |
+| WA2 | CT35m | L6M | +1051 / +1839 | -3769 | +369 / +645 | -6162 | c=0.50: +540 / -2447 / +265 | 188 | +0.012 | +0.087 | +0.04 / +0.19 / +0.27 | AMBER |
+| WA2 | CT35p | L3M | -1466 / -2566 | +1540 | +2845 / +4980 | +2879 | c=0.50: -932 / +857 / +1885 | 101 | +0.103 | +0.801 | +0.08 / +0.04 / +0.16 | ok |
+| WA2 | CT35p | L6M | -720 / -1260 | +1540 | +1765 / +3089 | +2879 | c=0.50: -496 / +857 / +941 | 232 | +0.080 | +0.687 | +0.06 / -0.00 / -0.05 | ok |
 | WA2 | CT7m | L3M | +652 / +1142 | -2885 | -319 / -557 | -3114 | c=0.50: +59 / -2063 / -85 | 94 | -0.027 | -0.195 | -0.13 / -0.20 / -0.13 | ok |
 | WA2 | CT7m | L6M | +552 / +966 | -2885 | -1402 / -2453 | -3114 | c=0.50: +111 / -2063 / -683 | 206 | -0.079 | -0.599 | -0.11 / -0.08 / -0.03 | ok |
 | WA2 | CT7p | L3M | +2089 / +3656 | -1571 | -3991 / -6985 | -1089 | c=0.50: +556 / -1000 / -2461 | 84 | -0.197 | -1.276 | -0.11 / +0.18 / -0.20 | AMBER |
@@ -290,7 +309,7 @@ Reference row (not a deliverable) "all live NY PM books OFF" (engine set TL3_NYE
 | row | set | size | L6M | L3M | 2025 | 2024 | 2023 | controls |
 |---|---|---|---|---|---|---|---|---|
 | live as-is | JL3 | - | 0 / 0 / 0 / 0 | 0 / 0 / 0 / 0 | 0 | 0 | 0 | - |
-| best single swap | NYE_WP1_RK7 | risk-matched c=1.00 | +20 / -719 / +621 / +53 (+93) | +16 / -719 / +621 / +9 (+16) | n/a | n/a | n/a | 0 |
+| best single swap | NYE_WP1_RK7 | risk-matched c=1.00 | +20 / -719 / +621 / +53 (+93) | +16 / -719 / +621 / +9 (+16) | -5228 / -260 / +8837 / -82 (-144) | -1480 / +0 / +2969 / +85 (+148) | +498 / +1628 / -5144 / +315 (+551) | 0 |
 | best whole-session replacement | NYE_C2_NYPM_WP10_NP4 | risk-matched c=0.52 | -110 / -670 / -858 / +234 (+409) | -220 / -670 / -858 / +1276 (+2234) | n/a | n/a | n/a | 0 |
 | best mixed (keep best live book + new) | NYW_WP10_ADD | risk-matched c=0.50 | -154 / +201 / -35 / +736 (+1287) | -246 / +201 / -35 / +739 (+1292) | n/a | n/a | +1256 / +490 / -3429 / +39 (+68) | 0 |
 (Prior-year windows are queued only for the headline sets after the L6M triage; "n/a" = not run yet. Controls = date-shift sets of the same cell run: 0 so far.)
@@ -378,6 +397,9 @@ Reference row (not a deliverable) "all live NY PM books OFF" (engine set TL3_NYE
 | WP1 | ALL | L6M | +20 / +34 | -719 | +53 / +93 | +621 | c=2.00: -10 / +997 / +919 | 198 | +0.098 | +0.721 | +0.08 / n/a / n/a | ok |
 | WP1 | RK7 | L3M | +16 / +29 | -719 | +9 / +16 | +621 | c=1.00: +16 / -719 / +9 | 83 | +0.033 | +0.213 | -0.09 / n/a / n/a | ok |
 | WP1 | RK7 | L6M | +20 / +34 | -719 | +53 / +93 | +621 | c=1.00: +20 / -719 / +53 | 198 | +0.098 | +0.721 | +0.08 / n/a / n/a | ok |
+| WP1 | RK7 | Y2023 | +498 / +872 | +1628 | +315 / +551 | -5144 | c=1.00: +498 / +1628 / +315 | 257 | +0.063 | +0.412 | +0.03 / n/a / n/a | ok |
+| WP1 | RK7 | Y2024 | -1480 / -2590 | +0 | +85 / +148 | +2969 | c=1.00: -1480 / +0 / +85 | 379 | +0.052 | +0.372 | +0.09 / n/a / n/a | ok |
+| WP1 | RK7 | Y2025 | -5228 / -9150 | -260 | -82 / -144 | +8837 | c=1.00: -5228 / -260 / -82 | 393 | +0.067 | +0.500 | -0.04 / n/a / n/a | ok |
 | WP1 | ADD | L3M | -176 / -309 | +1716 | -204 / -356 | +2390 | c=1.00: -176 / +1716 / -204 | 78 | -0.003 | -0.017 | -0.10 / n/a / n/a | ok |
 | WP1 | ADD | L6M | -132 / -231 | +1716 | +655 / +1146 | +2390 | c=1.00: -132 / +1716 / +655 | 196 | +0.075 | +0.544 | +0.08 / n/a / n/a | ok |
 | WP10 | ALL | L3M | +181 / +316 | -2034 | +1234 / +2160 | -3029 | c=1.00: +181 / -2034 / +1234 | 111 | +0.072 | +0.617 | -0.12 / n/a / n/a | ok |
