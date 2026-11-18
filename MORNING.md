@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-18T00:14Z
+## TREND (TL) update 2026-11-18T00:44Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T00:03:37Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T00:33:38Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -5055,3 +5055,8 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - lead 00:37Z LEAD NOTE: CORES 00:35Z box1 100% load 41, server2 94% load 60; grid page still stale (23:45Z) while W-GRIDA fixes the gscore crash; inbox empty.
 - 2026-11-18T00:38:42Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
 - (wall 00:39Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 41.57 43.20 44.89
+- (wall 00:45Z) W-EA status: EA workers busy 0, pending exact cell-months 39, done EA cell-months 241; chains 22 chains running; identity vs JN05W2 598 net 25943.82 -> IDENTICAL; promote 05:06Z TL3_EA_CYS1_P7_ALL_H50_RN_CXC_PB3 PROMOTE [1] 
+- lead 00:47Z LEAD NOTE: GRID on server 2 (measured there): 7,437 result files in the last 10 min, 20,898 in 30 min (~40-44k jobs/h), 66 gjob2 workers, todo 76,376 at 00:40Z: pass 1 on pace for ~2-3 h (estimate); gscore London load now 457 s with 81 pools (W-GRIDA running the fix, page still 23:45Z).
+- (wall 00:47Z) HOURLY BLOCK (auto): cores busy 15-min avg 100 pct, hour min 99 pct (load1 51.98); /mnt/l2 free 73 GB; procs running/pending by tag: CF 0/24; EV 0/19; D10 0/0; LR 0/24; CH 0/624; D9 0/59; EA 0/39; EB 0/22; EC 0/149; LA 0/22; LB 0/22; PA 0/225; R2 0/16; JV 0/25; RF 0/14; PR 0/25; PM 0/12; NT 0/212; TD 0/45; RA 0/0; UW 0/0; closest to live: (not yet set by the lead); hypothesis ledger entries: 25; page verdicts: DS3_FILTERS_RAW: VERDICT (data ends 2026-10-30; FIRST PASS): (1) PATH EFFECT, not yet fully explained: of the engine gate's extra drawdown ($103k vs $52k base) about $11k is the selection; DS3_BRACKET_GRID: VERDICT: in the offline replay screen, 7 of 14 book x session cells have some fixed (target, stop) that beats 58/60 on mean AND drawdown in all of L6M, the older 40 month; DS3_ENGINE_VS_LIVE: VERDICT (data ends 2026-11-13; 2026-11-16 15:10Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-se; DS3_CONFLUENCE: VERDICT (data ends 2026-10-30; ): out of sample the count of agreeing independent clusters does not climb: Spearman(count, R) is between -0.07 and +0.07 in every book-ses; DS3_LONDON_RANGE: VERDICT (plain): OLD BASE numbers (JN05W2) everywhere except section 7e (JL base, PROVISIONAL, never mixed with old-base tables). FIRST PASS, PATH EFFECT = FREED-BOOK REP
+- 2026-11-18T00:47Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- LEAD NOTE: DELIVERABLES page 2026-11-18 00:48Z: rows per table T1 30 / T2 23 / T3 36 / T4 13 / T5 bar swap 16; labels {'CONFIRMED': 1, 'BEST-AVAILABLE-NOT-PROVEN': 101, 'WEAK-BUT-POSITIVE': 51, 'LEAD': 7}; stale owners ['W-MB', 'W-MC', 'W-S1R']; no file yet ['W-BAR'] (autopilot/DS3_MAJOR_DELIVERABLES.md)

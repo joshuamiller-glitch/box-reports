@@ -1,14 +1,21 @@
 # DS3 BAR SWAP B (W-SWB): P7 / H7 / A7 / O7 on every bar row
 
 Rule: standing selection rule (CLAUDE.md, user 11-17 18:10Z/18:13Z): pick on the trailing 6 months to the newest data, trailing 3M beside it; validated by rolling walk-forward; older years tolerant (AMBER 15-30% / RED >30% worse than the live bar). FIRST PASS standalone (tape fills, raw chassis, live bracket); engine swap test is section 4.
-Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 00:32:58 UTC (loop every 30 min, bi-weekly refit rule); trials counted 42601 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
+Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 00:49:36 UTC (loop every 30 min, bi-weekly refit rule); trials counted 42601 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
 
 ## Plain summary
-- Tried: every available bar row (time, activity, information, price, composite as they land) as the signal clock of P7, H7, A7, O7, standalone on the tape with live brackets.
-- Holds / does not: see cell tables; "pick" is the best trailing-6M row, label shows whether walk-forward persistence and the older-year check support it.
-- Needs in DS7: per row (native NT8 bar type or a custom BarsType with the build rule given).
-- Engine: swap test (section 4) runs only on the picks; until it lands nothing is CONFIRMED.
-- Next: grid re-fit for the top rows, random-clock nulls, engine swap sets TL3_SWB_*.
+- Tried: every available bar row (~490 time / activity / information / price / composite rows) as the signal clock of P7, H7, A7, O7 in three versions side by side: transplanted live settings, transplanted + the book grid refit, and bar-NATIVE rules (bars / bricks as the unit, no minute ATR); standalone on the tape with live brackets, then the exact engine with the full JL3 stack (not gated on the naked result).
+- What holds / does not (trailing 6M to the data end, rolling walk-forward from 2023-10, nulls; no cell is CONFIRMED until engine controls finish):
+  - P7 NY AM: live bar L6M -1939 pts; trailing-6M pick cdr_1000__NE13_50a10s 1058 pts; rolling WF 6M->1M share of months beating the live bar 0.51 (OOS 3 vs live -75 pts/mo); random-clock pool share 0.65; older years RED
+  - P7 London: live bar L6M 1575 pts; trailing-6M pick wrenko_56__NC40 913 pts; rolling WF 6M->1M share of months beating the live bar 0.49 (OOS -60 vs live -18 pts/mo); random-clock pool share 0.49; older years RED
+  - H7 NY AM: live bar L6M 874 pts; trailing-6M pick tm300__NH20_55e50 1513 pts; rolling WF 6M->1M share of months beating the live bar 0.41 (OOS -38 vs live 12 pts/mo); random-clock pool share 0.68; older years RED
+  - O7 NY AM: live bar L6M 141 pts; trailing-6M pick kagi_56__NO930_3 1582 pts; rolling WF 6M->1M share of months beating the live bar 0.30 (OOS 4 vs live 124 pts/mo); random-clock pool share 0.35; older years RED
+  - A7 Asia: live bar L6M -160 pts; trailing-6M pick tm900__A 679 pts; rolling WF 6M->1M share of months beating the live bar 0.46 (OOS 54 vs live 85 pts/mo); random-clock pool share 0.43; older years RED
+  - P7 Asia: live bar L6M 1200 pts; trailing-6M pick vsess_80__NE8_30a30s 962 pts; rolling WF 6M->1M share of months beating the live bar 0.30 (OOS -33 vs live 75 pts/mo); random-clock pool share 0.49; older years RED
+  - H7 Asia: live bar L6M 624 pts; trailing-6M pick cusum_10__G12_34k5 3076 pts; rolling WF 6M->1M share of months beating the live bar 0.51 (OOS 18 vs live 13 pts/mo); random-clock pool share 0.46; older years RED
+- Needs in DS7: per row (native NT8 bar type or a custom BarsType with the build rule given); layers (ER ladder, ATR-skip, ThreeBar, state features, NTZ/OTE) stay on time bars in every engine test (see section 0).
+- Engine: hook swb_inject2 (identity exact on P7 NY AM, P7 London, H7 NY AM, O7, 202504 and 202610); sets TL3_SWB_* queued per cell: top 5 naked (6M), top 5 naked (3M), best row per bar family, 30 random-clock controls on the primary pick; verdict = engine rows in section 4 only.
+- Next: H7 / A7 native + grid stages (loop), controls, refit every 2 weeks; layers-recomputed-on-the-picked-bar version is not built.
 
 ## 0. Which inputs run on which clock (book x input x source)  [user order 19:45Z item 1]
 Source: NEW = recomputed from the swapped bar series; TIME = still read from time bars (1-min / 5-min / 45-s) built from the clock; CLOCK = wall-clock rule (minutes, sessions). "Transplanted" = live parameters laid over the new bar; "native" = rule rewritten in the bar's own units.
@@ -491,6 +498,26 @@ Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p':
 
 | set | month | JL3 trades | swap trades | identical | JL3 net | swap net |
 |---|---|---:|---:|---:|---:|---:|
+| TL3_SWB_ID2_H73 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID2_H73 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
+| TL3_SWB_ID2_O73 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID2_O73 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
+| TL3_SWB_ID2_P71 | 202504 | 637 | 634 | 632 | 41239.76 | 38913.48 |
+| TL3_SWB_ID2_P71 | 202610 | 691 | 697 | 683 | 37159.82 | 37534.42 |
+| TL3_SWB_ID2_P73 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID2_P73 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
+| TL3_SWB_ID3_A70 | 202504 | 637 | 637 | 635 | 41239.76 | 39066.26 |
+| TL3_SWB_ID3_A70 | 202610 | 691 | 691 | 685 | 37159.82 | 36528.82 |
+| TL3_SWB_ID3_H70 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID3_H70 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
+| TL3_SWB_ID3_H73 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID3_H73 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
+| TL3_SWB_ID3_P70 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID3_P70 | 202610 | 691 | 690 | 688 | 37159.82 | 28687.82 |
+| TL3_SWB_ID3_P71 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID3_P71 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
+| TL3_SWB_ID3_P73 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
+| TL3_SWB_ID3_P73 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
 | TL3_SWB_ID_H73 | 202504 | 637 | 637 | 637 | 41239.76 | 41309.76 |
 | TL3_SWB_ID_H73 | 202610 | 691 | 691 | 691 | 37159.82 | 37334.82 |
 | TL3_SWB_ID_O73 | 202504 | 637 | 637 | 637 | 41239.76 | 41239.76 |
@@ -506,12 +533,12 @@ JL3 reference numbers: 202610 691 trades / 37,159.82; 202504 637 / 41,239.76.
 
 | window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| L3M | 2/3 | $4.84 base lots | 12465 | 12002 | -3.7% | 31109 | 29254 | -16875 | -16247 | 12855 | 11872 | 1338/1325 |
-| L3M | 2/3 | $4.84 x1.75 | 21813 | 21004 | -3.7% | 54441 | 51195 | -29532 | -28432 | 22497 | 20776 | 1338/1325 |
-| L6M | 2/6 | $4.84 base lots | 12465 | 12002 | -3.7% | 31109 | 29254 | -16875 | -16247 | 12855 | 11872 | 1338/1325 |
-| L6M | 2/6 | $4.84 x1.75 | 21813 | 21004 | -3.7% | 54441 | 51195 | -29532 | -28432 | 22497 | 20776 | 1338/1325 |
+| L3M | 3/3 | $4.84 base lots | 11035 | 10539 | -4.5% | 31109 | 29254 | -15728 | -15100 | 16098 | 15476 | 1981/1954 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 18444 | -4.5% | 54441 | 51195 | -27524 | -26424 | 28172 | 27083 | 1981/1954 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9328 | -2.9% | 31109 | 29254 | -15728 | -15100 | 18755 | 18435 | 4292/4256 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 16325 | -2.9% | 54441 | 51195 | -27524 | -26424 | 32822 | 32261 | 4292/4256 |
 
-Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 -2132 -> -2132; H7 15402 -> 15402; K7 21629 -> 19201; M7 17626 -> 17797; O7 -2225 -> -2225; P7 70620 -> 63966; U7 1839 -> 1839
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 18691; H7 46650 -> 46650; K7 83430 -> 80324; M7 4691 -> 4862; O7 10923 -> 10923; P7 304772 -> 298886; U7 59410 -> 59410
 
 ### TL3_SWB_P73_d6c62d (BEST-AVAILABLE-NOT-PROVEN | row cdr_1000 set NE13_50a10s)
 
