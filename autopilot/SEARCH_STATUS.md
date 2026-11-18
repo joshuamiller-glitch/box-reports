@@ -393,3 +393,13 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 
 - Rankings are best-of-many on the last 6 months; the selection-corrected best-pick null (phase 2b) is not applied yet to any row.
 - Screen numbers are naked triggers; the engine rows (NEW_BOOK_ENGINE*.md) show layers and account rules change results both ways.
+
+<!-- ENGINE_PLAN_ETAS -->
+**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-18 22:05Z):**
+
+- phase 1 pass 1: 116808 jobs left at 3174/h = 36.8 h (rate from the grid line above; sums over machines).
+- phase 1 pass 2: 25368 jobs left at 589/h = 43.1 h at today's allocation.
+- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 26 h at the current fleet (1156/h) or 22.8 h with A and B engine-ready (projected 1336/h). Full table: ENGINE_PLAN.md section 11.
+- luck test (order 2042Z): R3 = per-cell p-values with BH at q = 10% (stages A 30 / B 200 / C 1,000 draws); screen cost ~454-1759 core-h in all (hours on the 262 pool 1.7-6.7); R4 = 5 null draws, 1,585 core-h = 38 h at 25% of A+B; engine for the BH passers: ~68 core-h per passer incl. layers, 48 h on the pool for up to ~186 passers; BH passer counts per session come from W-SHORT (SURVIVOR_COUNTS.md). Dated D8-spec estimates: ENGINE_PLAN.md section 0.
+- N is not a limit (order 1845Z): N only sizes the estimate; engine capacity decides the ORDER, never whether a passing cell is tested.
+<!-- /ENGINE_PLAN_ETAS -->
