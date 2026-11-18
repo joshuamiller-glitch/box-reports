@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-18 20:30Z
+# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-18 21:00Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'. London is decided after Asia (clock order Asia -> London -> NY AM -> NY PM): London results stay PROVISIONAL.**
 
@@ -53,7 +53,7 @@ Combos: {"key": "LA5,LA1|LA5,LA1,LA6|P7|LA5", "sets": ["TL3_LON_C2_LA5_LA1", "TL
 Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot dollars at $4.84 RT/contract proxy plus an x1.75 live-lot column; deltas = WITH candidate minus the reference on the same months; ulcer and worst week FIRST, then mean $/week. ADD = new book at 1 base lot (2 live lots); R* = the live London book (K7/M7/U7/P7) suppressed in London and replaced; ADDM = ADD plus the confirmed setting M7 London lots 4 live -> 0 (ev_panel, = TL3_CT_JL3_N_M7L) and is compared with TL3_CT_JL3_N_M7L (the base alternative: the stack without M7 London) and with JL3.
 **EQUAL RISK (1447Z):** risk-matched c = 60/stop pts; shown as reference + c x the new book daily P&L (exact when the book does not change other books through caps/locks); wide (120-clip) rows are judged on the same-bracket null, not marked down. Day cap: MF1 loss cap $4,800/day: one 120-pt stop = $2,400 at 1 base lot (2 stops trip), $4,800 at 2 live lots (ONE stop trips).
 **Identity of the M7-London mechanism (TL3_LON_ID = inert event + M7L0 vs TL3_CT_JL3_N_M7L):** 202610: PASS (645 trades, net 47685.32); 202504: PASS (575 trades, net 53447.62). JL3 identity of the injection (TL3_NYE_ID, W-NYENG): 202610 691 / 37,159.82, 202504 637 / 41,239.76.
-**Set-months done:** 384 of 1279 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
+**Set-months done:** 416 of 1022 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
 
 | cell | bar | trigger | stop/tgt pts ($ stop per base lot) | variant | reference | window | d ulcer x1 / x1.75 | d worst wk x1 | d mean $/wk x1 / x1.75 | d maxDD x1 | RISK-MATCHED c: d ulcer / d worst / d mean | trades | R/trade | R/wk | flag vs ref |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -157,6 +157,16 @@ Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot do
 | LB1 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | 120/120 ($2400) | ADD | EV_JL3 | L3M | +491 / +859 | +1144 | +1575 / +2757 | +2270 | c=0.50: -456 / +1050 / +1080 | 122 | +0.044 | +0.413 | ok |
 | LB2 | cusum_28 | trend_macd.hist_turn_native {"len": 26, "width": 0.03} | 60/60 ($1200) | ADD | EV_JL3 | L6M | +706 / +1236 | -4719 | -384 / -673 | -4190 | c=1.00: +706 / -4719 / -384 | 430 | +0.003 | +0.053 | ok |
 | LB2 | cusum_28 | trend_macd.hist_turn_native {"len": 26, "width": 0.03} | 60/60 ($1200) | ADD | EV_JL3 | L3M | +1391 / +2434 | -4719 | +850 / +1488 | -4190 | c=1.00: +1391 / -4719 / +850 | 219 | +0.112 | +1.880 | ok |
+| LB3 | bmsgq_B080 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 120/120 ($2400) | ADD | EV_JL3 | L6M | -762 / -1334 | -306 | -654 / -1145 | +3927 | c=0.50: -331 / -1562 / -616 | 224 | -0.004 | -0.031 | ok |
+| LB3 | bmsgq_B080 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 120/120 ($2400) | ADD | EV_JL3 | L3M | -685 / -1199 | -67 | -3069 / -5371 | +3927 | c=0.50: +42 / -1562 / -2550 | 107 | -0.052 | -0.432 | AMBER |
+| LB4 | bmsg_B320 | bands_regchan.fade_linreg_native {"clk": 5, "k": 1.5} | 120/120 ($2400) | ADD | EV_JL3 | L6M | -1434 / -2510 | +2016 | +917 / +1606 | +4089 | c=0.50: -1217 / +255 / +651 | 186 | +0.032 | +0.222 | ok |
+| LB4 | bmsg_B320 | bands_regchan.fade_linreg_native {"clk": 5, "k": 1.5} | 120/120 ($2400) | ADD | EV_JL3 | L3M | -1675 / -2930 | +2016 | +539 / +943 | +4089 | c=0.50: -1247 / +255 / +160 | 89 | +0.046 | +0.316 | ok |
+| LB5 | bmsg_B320 | manual_macd.sigcross_native {"f": 20, "s": 45, "g": 15} | 120/120 ($2400) | ADD | EV_JL3 | L6M | -121 / -211 | -456 | +2071 / +3625 | +829 | c=0.50: -371 / +1339 / +1482 | 228 | +0.058 | +0.491 | ok |
+| LB5 | bmsg_B320 | manual_macd.sigcross_native {"f": 20, "s": 45, "g": 15} | 120/120 ($2400) | ADD | EV_JL3 | L3M | +602 / +1053 | -456 | +1500 / +2625 | +829 | c=0.50: +77 / +1339 / +1170 | 111 | +0.032 | +0.275 | ok |
+| LB6 | dib_2000 | book_micro.fade {"L": 50, "z": 1.0} | 60/60 ($1200) | ADD | EV_JL3 | L6M | +1828 / +3199 | -10766 | +772 / +1351 | -8646 | c=1.00: +1828 / -10766 / +772 | 485 | +0.058 | +1.045 | AMBER |
+| LB6 | dib_2000 | book_micro.fade {"L": 50, "z": 1.0} | 60/60 ($1200) | ADD | EV_JL3 | L3M | +3355 / +5871 | -10766 | -1135 / -1986 | -8646 | c=1.00: +3355 / -10766 / -1135 | 226 | +0.016 | +0.272 | RED |
+| LB7 | dlt_70 | levels_zones.reject {"tol": 1.0, "conf": "body"} | 60/60 ($1200) | ADD | EV_JL3 | L6M | -280 / -490 | -1761 | +409 / +715 | +1702 | c=1.00: -280 / -1761 / +409 | 193 | +0.070 | +0.503 | ok |
+| LB7 | dlt_70 | levels_zones.reject {"tol": 1.0, "conf": "body"} | 60/60 ($1200) | ADD | EV_JL3 | L3M | -353 / -618 | -1761 | +369 / +645 | +1702 | c=1.00: -353 / -1761 / +369 | 97 | -0.005 | -0.037 | ok |
 
 Labels: none yet (controls pending).
 

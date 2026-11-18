@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-18 20:30Z
+# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-18 21:00Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'.** Asia is decided FIRST in clock order (Asia -> London -> NY AM -> NY PM).
 
@@ -50,6 +50,16 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | L3M | +2518 / +4407 | -3618 | -7491 | -1543 / -2699 | 0 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | L6M | +250 / +438 | -42 | +1261 | +387 / +677 | 0 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | L3M | +491 / +859 | +2623 | +1261 | +369 / +645 | 0 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L6M | +2055 / +3597 | -21205 | -10544 | -287 / -503 | 0 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L3M | -940 / -1645 | +3685 | +6881 | +542 / +949 | 0 |
+| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | L6M | -434 / -759 | -9949 | +3150 | +1 / +2 | 0 |
+| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | L3M | -1849 / -3236 | +5283 | +7619 | +1732 / +3032 | 0 |
+| AB5 | dlt_45 | momentum_willr.break_native {"len": 21, "lvl": 30} | 60.0/60.0 | AB5_ADD | L6M | +1641 / +2871 | -5672 | -2194 | -1079 / -1888 | 0 |
+| AB5 | dlt_45 | momentum_willr.break_native {"len": 21, "lvl": 30} | 60.0/60.0 | AB5_ADD | L3M | +2408 / +4214 | -1552 | -2194 | -1040 / -1819 | 0 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | L6M | +335 / +586 | -3583 | -631 | +1217 / +2131 | 0 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | L3M | +511 / +895 | -3583 | -631 | -702 / -1228 | 0 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | L6M | +2304 / +4032 | -9683 | -9855 | -584 / -1023 | 0 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | L3M | +2644 / +4626 | -9343 | -9855 | -469 / -820 | 0 |
 
 Reading: a replacement/add must lower the Asia contribution to stack ulcer or worst week AND beat the live book in $ on L6M and L3M; the rows above are the dollars and ulcer it has to beat. Nothing else is claimed. Candidates, controls and the selection-corrected test are not started (phase 2 of 1722Z).
 

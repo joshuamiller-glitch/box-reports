@@ -10,3 +10,6 @@
 
 ## 2026-11-18 21:00Z (addendum)
 7. R3 PASS RULE: SET 1 (strict: BH on the last-6-month p-value) vs SET 2 (BH on the whole-history p-value AND R0/R1 unchanged), order 2057Z. Both counts will be on SURVIVOR_COUNTS.md. Safe default applied: the engine takes SET 1 first, then SET 2 members best p first (no cap, nothing dropped). Caution: the whole-history p-value includes the window the cells were picked on and does not pay for best-of-family selection; choosing the rule after seeing both counts is a forking-paths choice; the 5-draw whole-search null run through BOTH sets is the check.
+
+## 2026-11-18 21:05Z (addendum 2)
+8. AUTONOMOUS RESTART (order 2052Z): the watchdog (code/th_night/wd_levels.py) can restart the lead Claude Code in tmux b5 with `claude --resume 286aaa96-...` and no human awake; the harness flagged the build as 'Create Unsafe Agents'. I reviewed it: no permission-bypass flag, no stored token, only the b5 pane's own claude pid is touched. Open point for you: a restarted session runs in the install's default permission mode ('auto mode on' in the test), which may differ from the mode this session was started in. Default applied: the real restart of b5 is NOT tested tonight until you agree (flag file <tmp> not created); L2/L1 and RESTART_LEAD on throwaway sessions are tested. Say if you want the autonomous L3 disabled instead (touch <tmp>).
