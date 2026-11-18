@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-18 22:00Z
+# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-18 22:30Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'. London is decided after Asia (clock order Asia -> London -> NY AM -> NY PM): London results stay PROVISIONAL.**
 
@@ -41,6 +41,8 @@
 | live as-is (zero line) | TL3_EV_JL3 | all | 0 | 0 | 0 | 0 | - |
 | single swap | LA5_RK7 | L6M | -1244 / -2177 | +2026 | +7579 | +1864 / +3263 | 0 |
 | single swap | LA5_RK7 | L3M | -1876 / -3283 | +2026 | +7579 | +1473 / +2577 | 0 |
+| single swap | LA5_RK7 | Y2025 | +2077 / +3635 | +2657 | -7890 | -365 / -638 | 0 |
+| single swap | LA5_RK7 | Y2024 | +1516 / +2653 | +183 | +4271 | -140 / -246 | 0 |
 | single swap | LA5_RK7 | Y2023 | -300 / -526 | -1665 | -6454 | +330 / +578 | 0 |
 | whole-session replacement | C2_LA5_LA1 | L6M | -21 / -36 | -1118 | +730 | +429 / +750 | 0 |
 | whole-session replacement | C2_LA5_LA1 | L3M | -434 / -760 | -1118 | +730 | -728 / -1274 | 0 |
@@ -54,7 +56,7 @@ Combos: {"key": "LA5,LA1|LA5,LA1,LA6|P7|LA5", "sets": ["TL3_LON_C2_LA5_LA1", "TL
 Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot dollars at $4.84 RT/contract proxy plus an x1.75 live-lot column; deltas = WITH candidate minus the reference on the same months; ulcer and worst week FIRST, then mean $/week. ADD = new book at 1 base lot (2 live lots); R* = the live London book (K7/M7/U7/P7) suppressed in London and replaced; ADDM = ADD plus the confirmed setting M7 London lots 4 live -> 0 (ev_panel, = TL3_CT_JL3_N_M7L) and is compared with TL3_CT_JL3_N_M7L (the base alternative: the stack without M7 London) and with JL3.
 **EQUAL RISK (1447Z):** risk-matched c = 60/stop pts; shown as reference + c x the new book daily P&L (exact when the book does not change other books through caps/locks); wide (120-clip) rows are judged on the same-bracket null, not marked down. Day cap: MF1 loss cap $4,800/day: one 120-pt stop = $2,400 at 1 base lot (2 stops trip), $4,800 at 2 live lots (ONE stop trips).
 **Identity of the M7-London mechanism (TL3_LON_ID = inert event + M7L0 vs TL3_CT_JL3_N_M7L):** 202610: PASS (645 trades, net 47685.32); 202504: PASS (575 trades, net 53447.62). JL3 identity of the injection (TL3_NYE_ID, W-NYENG): 202610 691 / 37,159.82, 202504 637 / 41,239.76.
-**Set-months done:** 474 of 2155 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
+**Set-months done:** 501 of 2128 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
 
 | cell | bar | trigger | stop/tgt pts ($ stop per base lot) | variant | reference | window | d ulcer x1 / x1.75 | d worst wk x1 | d mean $/wk x1 / x1.75 | d maxDD x1 | RISK-MATCHED c: d ulcer / d worst / d mean | trades | R/trade | R/wk | flag vs ref |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -109,9 +111,12 @@ Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot do
 | LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | ADDM | CT_JL3_N_M7L | L3M | +275 / +482 | -457 | +226 / +395 | -1023 | c=0.50: +355 / -1080 / -905 | 96 | +0.128 | +0.942 | ok |
 | LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | RK7 | EV_JL3 | L6M | -1244 / -2177 | +2026 | +1864 / +3263 | +7579 | c=0.50: -1039 / +641 / +803 | 195 | +0.122 | +0.884 | ok |
 | LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | RK7 | EV_JL3 | L3M | -1876 / -3283 | +2026 | +1473 / +2577 | +7579 | c=0.50: -1454 / +641 / +262 | 94 | +0.139 | +1.009 | ok |
+| LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | RK7 | EV_JL3 | Y2025 | +2077 / +3635 | +2657 | -365 / -638 | -7890 | c=0.50: -86 / +3329 / -328 | 332 | -0.005 | -0.031 | ok |
+| LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | RK7 | EV_JL3 | Y2024 | +1516 / +2653 | +183 | -140 / -246 | +4271 | c=0.50: -506 / +2373 / -105 | 302 | -0.005 | -0.029 | ok |
 | LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | RK7 | EV_JL3 | Y2023 | -300 / -526 | -1665 | +330 / +578 | -6454 | c=0.50: -317 / -2677 / +175 | 209 | +0.024 | +0.130 | AMBER |
 | LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | RM7 | EV_JL3 | L6M | -1041 / -1823 | +485 | +2258 / +3952 | +5327 | c=0.50: -1063 / -137 / +1221 | 199 | +0.117 | +0.865 | ok |
 | LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | RM7 | EV_JL3 | L3M | -1325 / -2318 | +485 | +670 / +1173 | +5327 | c=0.50: -1245 / -137 / -461 | 96 | +0.128 | +0.942 | ok |
+| LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | RM7 | EV_JL3 | Y2023 | +1331 / +2330 | +3452 | +289 / +506 | -2749 | c=0.50: +1444 / +2439 / +134 | 209 | +0.024 | +0.130 | ok |
 | LA6 | tick_1300 | levels_opens.reject_native {"tol": 1.0, "conf": "close"} | 120/120 ($2400) | ADD | EV_JL3 | L6M | +471 / +824 | -14141 | +720 / +1260 | +623 | c=0.50: -91 / -6707 / +431 | 175 | +0.037 | +0.241 | ok |
 | LA6 | tick_1300 | levels_opens.reject_native {"tol": 1.0, "conf": "close"} | 120/120 ($2400) | ADD | EV_JL3 | L3M | -805 / -1409 | -236 | +2495 / +4366 | +623 | c=0.50: -757 / +244 / +1468 | 88 | +0.126 | +0.856 | ok |
 | LA6 | tick_1300 | levels_opens.reject_native {"tol": 1.0, "conf": "close"} | 120/120 ($2400) | ADDM | EV_JL3 | L6M | -53 / -94 | -5373 | +1130 / +1977 | +75 | c=0.50: -624 / -942 / +811 | 181 | +0.040 | +0.266 | ok |

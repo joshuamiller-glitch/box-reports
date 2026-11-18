@@ -1,8 +1,8 @@
-# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-18 22:04Z
+# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-18 22:34Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer add / swap one book in today's stack, not the rebuilt stack.** WP10 and XA3 stay leads on that basis.
 
-Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 2058.
+Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 2121.
 
 ## What acts on a new book in these runs (plain words; full list NEW_BOOK_LAYER_FACTS.md)
 - ON the new book: the live DAY-DONE rule (engine: scr_hooks gate "conj" = the stack has >= 22 closes today AND the day is <= -2R = -2,400 base = -4,200 live; it applies to every book incl. the new one and skipped 334 of ~800 signals of NA1 in 202610), one position at a time, the book day caps (loss 4,800 $ / profit 12,000 $ default; a 120-pt stop = 2,400 $ at 1 base lot, 4,800 $ at 2 live lots = one stop trips it), the book give-back lock, measured slippage, the stack rule.
@@ -44,6 +44,12 @@ Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract
 | Y2025 | +80630 | +66984 (589, +13646) | +75866 (633, +4764) | +80619 (652, +11) |
 | Y2024 | +55727 | +52735 (502, +2991) | +53890 (531, +1837) | +54531 (540, +1195) |
 | Y2023 | +43592 | +44609 (339, -1017) | +44046 (352, -454) | +45942 (356, -2350) |
+
+## R5 ladder (engine staged; SCREEN RANK, NOT YET CALIBRATED: the whole-search null is the judge)
+Cells seeded in rank order from /mnt/l2/l2vast/_nye/ladder_cells.json (NY AM by R3 p6 then p_all; NY PM family-bests of the bare rule, R3 not yet run for NY PM). Stage A = last 6 + 3 months as ADD and as replacement of the weakest live book of the session (K7), 12 set-months per cell; B = prior years for rows not negative; C = 30 date-shift controls for rows still alive; D = layer programme in clock order. Built so far: 300 cells ({'A': 300}); set-months still queued: 3537. Everything is vs TODAY's stack, provisional until Asia and London are decided.
+
+## XA3 phase 3a (own layers; vs today's stack, provisional until Asia and London are decided)
+Identity TL3_NYL_XA3_ID1-9 PASS. Fit stage F1 (72 settings x last 6 months) landed; scored on autopilot/NEW_BOOK_LAYER_FIT_XA3.md (ulcer first, vs the ADD row and vs JL3); stage F2 (top 2 settings per layer with ulcer better and >= 80% of trades, prior years 2023-2026-04) queued; joint stage after F2.
 
 ## ID glossary (reconciled 16:10Z; engine ids never change)
 - WA<n> / WP<n> = W-SHORT rank n on the 14:23Z page (frozen): **WP1 = NY PM dlt_100 levels_vwap.reject {tol 0, conf close}, plain 60/60** (NOT tm1800); **WP10 = NY PM vol_350 tape_libvol.cmf {len 10}, asym20u/10u (median stop/target 120/60)**; WP11 = tm1800 xmarket_ym.follow plain 60/60 on that page.
@@ -158,6 +164,15 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 ### All sets (detail)
 | cell | variant | window | d ulcer (x1 / x1.75) | d worst wk | d mean $/wk (x1 / x1.75) | d max DD | RISK-MATCHED c: d ulcer / d worst / d mean | new-book trades | R/trade | R/wk | corr daily w/ K7 / P7 / M7 | flag vs JL3 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
+|  | RK7 | L3M | +811 / +1418 | -2650 | +1481 / +2593 | -3220 | c=1.00: +811 / -2650 / +1481 | 78 | +0.160 | +0.962 | -0.03 / +0.04 / -0.17 | ok |
+|  | ADD | L3M | -810 / -1417 | +481 | +1100 / +1925 | +1305 | c=1.00: -810 / +481 / +1100 | 77 | +0.154 | +0.913 | -0.00 / +0.04 / -0.18 | ok |
+|  | ADD | L6M | -565 / -989 | +481 | +1119 / +1959 | +1305 | c=1.00: -565 / +481 / +1119 | 172 | +0.143 | +0.912 | +0.14 / +0.06 / -0.10 | ok |
+|  | ADD | L3M | -1172 / -2051 | +3906 | +2247 / +3933 | +5826 | c=1.00: -1172 / +3906 / +2247 | 129 | +0.181 | +1.793 | +0.27 / +0.08 / +0.16 | ok |
+|  | ADD | L3M | -763 / -1335 | +904 | +1249 / +2187 | +4490 | c=1.00: -763 / +904 / +1249 | 120 | +0.116 | +1.070 | +0.16 / +0.10 / +0.05 | ok |
+|  | ADD | L3M | +3229 / +5652 | -7920 | +113 / +198 | -10820 | c=1.00: +3229 / -7920 / +113 | 69 | +0.067 | +0.358 | +0.12 / +0.33 / +0.38 | RED |
+|  | ADD | L3M | -639 / -1119 | -3140 | +1012 / +1772 | +2561 | c=1.00: -639 / -3140 / +1012 | 41 | +0.213 | +0.671 | -0.04 / -0.06 / +0.10 | ok |
+|  | ADD | L6M | -177 / -310 | -3711 | +1013 / +1772 | +2561 | c=1.00: -177 / -3711 / +1013 | 90 | +0.228 | +0.761 | -0.01 / +0.02 / +0.12 | ok |
+| Lcb97bb95 | ADD | L3M | -671 / -1175 | +40 | +1609 / +2815 | +1841 | c=0.59: -491 / +24 / +985 | 63 | +0.156 | +0.756 | +0.21 / -0.09 / +0.14 | ok |
 | NA1 | CT | L3M | +2562 / +4484 | -10610 | -3062 / -5358 | -9861 | c=0.50: +629 / -4141 / -1308 | 137 | -0.139 | -1.462 | -0.17 / +0.10 / -0.03 | RED |
 | NA1 | CT | L6M | +1333 / +2334 | -10610 | +633 / +1108 | -9861 | c=0.50: +55 / -4141 / +538 | 330 | +0.006 | +0.079 | -0.07 / +0.06 / -0.02 | RED |
 | NA1 | ADD | L3M | +5762 / +10083 | +360 | -2340 / -4095 | -15707 | c=0.50: +2009 / +378 / -1141 | 95 | -0.137 | -0.999 | -0.21 / +0.12 / -0.09 | RED |
