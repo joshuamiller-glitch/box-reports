@@ -1,7 +1,7 @@
 # DS3 BAR SWAP B (W-SWB): P7 / H7 / A7 / O7 on every bar row
 
 Rule: standing selection rule (CLAUDE.md, user 11-17 18:10Z/18:13Z): pick on the trailing 6 months to the newest data, trailing 3M beside it; validated by rolling walk-forward; older years tolerant (AMBER 15-30% / RED >30% worse than the live bar). FIRST PASS standalone (tape fills, raw chassis, live bracket); engine swap test is section 4.
-Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 09:38:07 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
+Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 10:23:54 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
 
 ## Plain summary
 - Tried: every available bar row (~490 time / activity / information / price / composite rows) as the signal clock of P7, H7, A7, O7 in three versions side by side: transplanted live settings, transplanted + the book grid refit, and bar-NATIVE rules (bars / bricks as the unit, no minute ATR); standalone on the tape with live brackets, then the exact engine with the full JL3 stack (not gated on the naked result).
@@ -9,7 +9,7 @@ Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 20
   - P7 NY AM: live bar L6M -1939 pts; trailing-6M pick cdr_1000__NE13_50a10s 1058 pts; rolling WF 6M->1M share of months beating the live bar 0.51 (OOS 3 vs live -75 pts/mo); random-clock pool share 0.62; older years RED
   - P7 London: live bar L6M 1575 pts; trailing-6M pick wrenko_56__NC40 913 pts; rolling WF 6M->1M share of months beating the live bar 0.49 (OOS -60 vs live -18 pts/mo); random-clock pool share 0.54; older years RED
   - H7 NY AM: live bar L6M 874 pts; trailing-6M pick tm300__NH20_55e50 1513 pts; rolling WF 6M->1M share of months beating the live bar 0.43 (OOS -11 vs live 12 pts/mo); random-clock pool share 0.68; older years RED
-  - O7 NY AM: live bar L6M 141 pts; trailing-6M pick kagi_56__NO930_3 1582 pts; rolling WF 6M->1M share of months beating the live bar 0.27 (OOS -3 vs live 124 pts/mo); random-clock pool share 0.41; older years RED
+  - O7 NY AM: live bar L6M 141 pts; trailing-6M pick kagi_56__NO930_3 1582 pts; rolling WF 6M->1M share of months beating the live bar 0.27 (OOS -3 vs live 124 pts/mo); random-clock pool share 0.32; older years RED
   - A7 Asia: live bar L6M -160 pts; trailing-6M pick vsess_80__NE8_30a30s 1067 pts; rolling WF 6M->1M share of months beating the live bar 0.43 (OOS 32 vs live 85 pts/mo); random-clock pool share 0.41; older years RED
   - P7 Asia: live bar L6M 1200 pts; trailing-6M pick vsess_80__NE8_30a10s 962 pts; rolling WF 6M->1M share of months beating the live bar 0.30 (OOS -33 vs live 75 pts/mo); random-clock pool share 0.46; older years RED
   - H7 Asia: live bar L6M 624 pts; trailing-6M pick swing_pct_12__NH9_26e50 2041 pts; rolling WF 6M->1M share of months beating the live bar 0.57 (OOS 48 vs live 13 pts/mo); random-clock pool share 0.51; older years RED
@@ -273,8 +273,8 @@ Top rows on trailing 6M (score = pts/(ulcer+1)):
 | dchg_56__NO930_3 | 1582 | 87 | 81 | 244 | 989 | 2433 |
 | vib_15000__NO930_8 | 1432 | 61 | 76 | 243 | 802 | 2204 |
 | tm420__NO930_12 | 720 | 31 | 40 | 122 | 86 | 1108 |
-| kagi_40__NO830_12 | 1141 | 53 | 70 | 163 | 435 | 1755 |
 | dchg_40__NO830_12 | 1141 | 53 | 70 | 163 | 435 | 1755 |
+| kagi_40__NO830_12 | 1141 | 53 | 70 | 163 | 435 | 1755 |
 | swing_pct_5__NO1000_8 | 1214 | 80 | 76 | 202 | 311 | 1867 |
 | renko_28__NO1000_5 | 1091 | 47 | 71 | 203 | 492 | 1679 |
 | vnorm_400__NO930_12 | 891 | 68 | 58 | 162 | 339 | 1370 |
@@ -294,7 +294,7 @@ Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; r
 | 12M->3M | 37 | 12.4 | 125.9 | 0.16 | 377 | 202 |
 | 6M->2w | 37 | -8.8 | 125.7 | 0.32 | 473 | 146 |
 
-Nulls (same pick procedure): shift11: OOS 30.7/mo share beat 0.30; shift23: OOS 26.8/mo share beat 0.32; shift37: OOS 2.8/mo share beat 0.32; random-clock pool: OOS 32.1/mo share beat 0.41
+Nulls (same pick procedure): shift11: OOS 30.7/mo share beat 0.30; shift23: OOS 26.8/mo share beat 0.32; shift37: OOS 2.8/mo share beat 0.32; random-clock pool: OOS 6.8/mo share beat 0.32
 
 Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -8 vs 122 (n 36); +3M 65 vs 141 (n 34); +6M 61 vs 138 (n 31)
 
@@ -536,6 +536,168 @@ Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p':
 | TL3_SWB_ID_P73 | 202610 | 691 | 691 | 691 | 37159.82 | 37159.82 |
 
 JL3 reference numbers: 202610 691 trades / 37,159.82; 202504 637 / 41,239.76.
+
+### TL3_SWB_A70_0ceb3c (BEST-AVAILABLE-NOT-PROVEN | row dlt_70 set NC10)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 12174 | +10.3% | 31109 | 41101 | -15728 | -18698 | 16098 | 18177 | 1981/2075 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 21305 | +10.3% | 54441 | 71926 | -27524 | -32722 | 28172 | 31810 | 1981/2075 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9912 | +3.1% | 31109 | 41101 | -15728 | -18698 | 18755 | 20183 | 4292/4453 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17346 | +3.1% | 54441 | 71926 | -27524 | -32722 | 32822 | 35321 | 4292/4453 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 27520 | -6.3% | 83756 | 80609 | -37324 | -34576 | 9280 | 9289 | 3311/3332 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 48159 | -6.3% | 146574 | 141065 | -65316 | -60508 | 16240 | 16256 | 3311/3332 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 50991; H7 46650 -> 48077; K7 83430 -> 91064; M7 4691 -> -1961; O7 10923 -> 11911; P7 304772 -> 294951; U7 59410 -> 72652
+
+### TL3_SWB_A70_18c336 (BEST-AVAILABLE-NOT-PROVEN | row vrb_2000 set Gk10t5)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 12361 | +12.0% | 31109 | 36807 | -15728 | -21789 | 16098 | 16255 | 1981/1904 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 21631 | +12.0% | 54441 | 64413 | -27524 | -38131 | 28172 | 28446 | 1981/1904 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 10263 | +6.8% | 31109 | 36807 | -15728 | -21789 | 18755 | 17900 | 4292/4084 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17961 | +6.8% | 54441 | 64413 | -27524 | -38131 | 32822 | 31325 | 4292/4084 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 32053 | +9.1% | 83756 | 87579 | -37324 | -35315 | 9280 | 8250 | 3311/3149 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 56093 | +9.1% | 146574 | 153264 | -65316 | -61801 | 16240 | 14438 | 3311/3149 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 10483; H7 46650 -> 48121; K7 83430 -> 94411; M7 4691 -> -9646; O7 10923 -> 6740; P7 304772 -> 303725; U7 59410 -> 50984
+
+### TL3_SWB_A70_21e445 (BEST-AVAILABLE-NOT-PROVEN | row pasl_40 set NC40)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 12181 | +10.4% | 31109 | 35018 | -15728 | -27386 | 16098 | 15740 | 1981/1900 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 21316 | +10.4% | 54441 | 61282 | -27524 | -47926 | 28172 | 27545 | 1981/1900 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9910 | +3.1% | 31109 | 35018 | -15728 | -27386 | 18755 | 17658 | 4292/4090 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17343 | +3.1% | 54441 | 61282 | -27524 | -47926 | 32822 | 30902 | 4292/4090 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 31132 | +6.0% | 83756 | 87289 | -37324 | -36514 | 9280 | 8237 | 3311/3154 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 54482 | +6.0% | 146574 | 152756 | -65316 | -63900 | 16240 | 14414 | 3311/3154 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 6197; H7 46650 -> 49120; K7 83430 -> 96316; M7 4691 -> -11679; O7 10923 -> 7582; P7 304772 -> 301507; U7 59410 -> 49269
+
+### TL3_SWB_A70_3deda2 (BEST-AVAILABLE-NOT-PROVEN | row vsess_80 set NE8_30a10s)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 11608 | +5.2% | 31109 | 32338 | -15728 | -25046 | 16098 | 16053 | 1981/1908 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 20315 | +5.2% | 54441 | 56592 | -27524 | -43831 | 28172 | 28093 | 1981/1908 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9892 | +2.9% | 31109 | 32338 | -15728 | -25046 | 18755 | 17705 | 4292/4108 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17311 | +2.9% | 54441 | 56592 | -27524 | -43831 | 32822 | 30983 | 4292/4108 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 30076 | +2.4% | 83756 | 85519 | -37324 | -34753 | 9280 | 8977 | 3311/3190 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 52633 | +2.4% | 146574 | 149658 | -65316 | -60818 | 16240 | 15710 | 3311/3190 |
+| PRIOR | 31/31 | $4.84 base lots | 27534 | 28018 | +1.8% | 91441 | 80525 | -38896 | -39335 | 4849 | 4409 | 11949/11652 |
+| PRIOR | 31/31 | $4.84 x1.75 | 48184 | 49032 | +1.8% | 160021 | 140918 | -68068 | -68836 | 8486 | 7715 | 11949/11652 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 17192; H7 46650 -> 46782; K7 83430 -> 92320; M7 4691 -> -8345; O7 10923 -> 7010; P7 304772 -> 301435; U7 59410 -> 43241
+
+### TL3_SWB_A70_47f89f (BEST-AVAILABLE-NOT-PROVEN | row vib_3500 set NS6_2)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 9145 | -17.1% | 31109 | 24587 | -15728 | -13400 | 16098 | 18912 | 1981/1999 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 16005 | -17.1% | 54441 | 43028 | -27524 | -23449 | 28172 | 33096 | 1981/1999 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9137 | -4.9% | 31109 | 29605 | -15728 | -15784 | 18755 | 18577 | 4292/4253 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 15990 | -4.9% | 54441 | 51809 | -27524 | -27622 | 32822 | 32510 | 4292/4253 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 31958 | +8.8% | 83756 | 87240 | -37324 | -38083 | 9280 | 8292 | 3311/3298 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 55927 | +8.8% | 146574 | 152670 | -65316 | -66645 | 16240 | 14511 | 3311/3298 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 30358; H7 46650 -> 46198; K7 83430 -> 73675; M7 4691 -> -2311; O7 10923 -> 9309; P7 304772 -> 302820; U7 59410 -> 63517
+
+### TL3_SWB_A70_586135 (BEST-AVAILABLE-NOT-PROVEN | row cdr_100 set NS4_1s)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 10678 | -3.2% | 31109 | 31653 | -15728 | -19404 | 16098 | 16884 | 1981/1916 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 18687 | -3.2% | 54441 | 55394 | -27524 | -33958 | 28172 | 29547 | 1981/1916 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9247 | -3.8% | 31109 | 31653 | -15728 | -19404 | 18755 | 17945 | 4292/4098 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 16182 | -3.8% | 54441 | 55394 | -27524 | -33958 | 32822 | 31405 | 4292/4098 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 32352 | +10.1% | 83756 | 87272 | -37324 | -35315 | 9280 | 8423 | 3311/3169 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 56615 | +10.1% | 146574 | 152725 | -65316 | -61801 | 16240 | 14740 | 3311/3169 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 11965; H7 46650 -> 44389; K7 83430 -> 91444; M7 4691 -> -7235; O7 10923 -> 7010; P7 304772 -> 301036; U7 59410 -> 57431
+
+### TL3_SWB_A70_b52de8 (BEST-AVAILABLE-NOT-PROVEN | row tm2700 set Gk5k5)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 11596 | +5.1% | 31109 | 33711 | -15728 | -27386 | 16098 | 15809 | 1981/1912 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 20292 | +5.1% | 54441 | 58994 | -27524 | -47926 | 28172 | 27665 | 1981/1912 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9716 | +1.1% | 31109 | 33711 | -15728 | -27386 | 18755 | 17752 | 4292/4087 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17003 | +1.1% | 54441 | 58994 | -27524 | -47926 | 32822 | 31066 | 4292/4087 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 30152 | +2.7% | 83756 | 85552 | -37324 | -33685 | 9280 | 8433 | 3311/3151 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 52766 | +2.7% | 146574 | 149715 | -65316 | -58949 | 16240 | 14758 | 3311/3151 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 16893; H7 46650 -> 46782; K7 83430 -> 89944; M7 4691 -> -9777; O7 10923 -> 7010; P7 304772 -> 301658; U7 59410 -> 48318
+
+### TL3_SWB_A70_bb72ac (BEST-AVAILABLE-NOT-PROVEN | row vrb_1200 set Gk10k2)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 11567 | +4.8% | 31109 | 33830 | -15728 | -22277 | 16098 | 16211 | 1981/1914 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 20241 | +4.8% | 54441 | 59203 | -27524 | -38985 | 28172 | 28369 | 1981/1914 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9847 | +2.4% | 31109 | 33830 | -15728 | -22277 | 18755 | 17911 | 4292/4092 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17232 | +2.4% | 54441 | 59203 | -27524 | -38985 | 32822 | 31344 | 4292/4092 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 32173 | +9.5% | 83756 | 88311 | -37324 | -35372 | 9280 | 8363 | 3311/3161 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 56302 | +9.5% | 146574 | 154544 | -65316 | -61901 | 16240 | 14636 | 3311/3161 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 17893; H7 46650 -> 47139; K7 83430 -> 87950; M7 4691 -> -8853; O7 10923 -> 6275; P7 304772 -> 305113; U7 59410 -> 49616
+
+### TL3_SWB_A70_d23a42 (BEST-AVAILABLE-NOT-PROVEN | row dib_10000 set NS3_2s)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 11367 | +3.0% | 31109 | 32516 | -15728 | -27059 | 16098 | 15841 | 1981/1898 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 19893 | +3.0% | 54441 | 56903 | -27524 | -47354 | 28172 | 27722 | 1981/1898 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9659 | +0.5% | 31109 | 32516 | -15728 | -27059 | 18755 | 17637 | 4292/4080 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 16903 | +0.5% | 54441 | 56903 | -27524 | -47354 | 32822 | 30864 | 4292/4080 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 31471 | +7.1% | 83756 | 85170 | -37324 | -35315 | 9280 | 8114 | 3311/3141 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 55075 | +7.1% | 146574 | 149048 | -65316 | -61801 | 16240 | 14199 | 3311/3141 |
+| PRIOR | 31/31 | $4.84 base lots | 27534 | 29615 | +7.6% | 91441 | 85395 | -38896 | -36118 | 4849 | 4256 | 11949/11457 |
+| PRIOR | 31/31 | $4.84 x1.75 | 48184 | 51825 | +7.6% | 160021 | 149440 | -68068 | -63206 | 8486 | 7448 | 11949/11457 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 11301; H7 46650 -> 46782; K7 83430 -> 94480; M7 4691 -> -9598; O7 10923 -> 7061; P7 304772 -> 299909; U7 59410 -> 47758
+
+### TL3_SWB_A70_e02516 (BEST-AVAILABLE-NOT-PROVEN | row tm420 set Gk10k2)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 11736 | +6.4% | 31109 | 35665 | -15728 | -18243 | 16098 | 16143 | 1981/1895 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 20539 | +6.4% | 54441 | 62414 | -27524 | -31926 | 28172 | 28251 | 1981/1895 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9885 | +2.8% | 31109 | 35665 | -15728 | -18243 | 18755 | 18347 | 4292/4111 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17299 | +2.8% | 54441 | 62414 | -27524 | -31926 | 32822 | 32108 | 4292/4111 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 32545 | +10.8% | 83756 | 88038 | -37324 | -36429 | 9280 | 8298 | 3311/3168 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 56953 | +10.8% | 146574 | 154066 | -65316 | -63751 | 16240 | 14522 | 3311/3168 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 25020; H7 46650 -> 48031; K7 83430 -> 83136; M7 4691 -> -3690; O7 10923 -> 6740; P7 304772 -> 305544; U7 59410 -> 52208
+
+### TL3_SWB_A70_f19d8f (BEST-AVAILABLE-NOT-PROVEN | row tsf_5_200 set Gk10t5)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 11706 | +6.1% | 31109 | 33868 | -15728 | -23086 | 16098 | 16283 | 1981/1906 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 20485 | +6.1% | 54441 | 59268 | -27524 | -40401 | 28172 | 28495 | 1981/1906 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9819 | +2.2% | 31109 | 33868 | -15728 | -23086 | 18755 | 17761 | 4292/4100 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17183 | +2.2% | 54441 | 59268 | -27524 | -40401 | 32822 | 31082 | 4292/4100 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 32704 | +11.3% | 83756 | 89939 | -37324 | -37604 | 9280 | 8445 | 3311/3156 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 57232 | +11.3% | 146574 | 157394 | -65316 | -65808 | 16240 | 14778 | 3311/3156 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 6056; H7 46650 -> 48059; K7 83430 -> 94625; M7 4691 -> -8600; O7 10923 -> 6275; P7 304772 -> 303725; U7 59410 -> 50984
+
+### TL3_SWB_A70_f306e1 (BEST-AVAILABLE-NOT-PROVEN | row vsess_80 set NE8_30a30s)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 11608 | +5.2% | 31109 | 32338 | -15728 | -25046 | 16098 | 16053 | 1981/1908 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 20315 | +5.2% | 54441 | 56592 | -27524 | -43831 | 28172 | 28093 | 1981/1908 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9877 | +2.8% | 31109 | 32338 | -15728 | -25046 | 18755 | 17797 | 4292/4107 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17284 | +2.8% | 54441 | 56592 | -27524 | -43831 | 32822 | 31145 | 4292/4107 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 30020 | +2.2% | 83756 | 85519 | -37324 | -34753 | 9280 | 9132 | 3311/3196 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 52535 | +2.2% | 146574 | 149658 | -65316 | -60818 | 16240 | 15981 | 3311/3196 |
+| PRIOR | 31/31 | $4.84 base lots | 27534 | 27998 | +1.7% | 91441 | 80421 | -38896 | -38130 | 4849 | 4453 | 11949/11649 |
+| PRIOR | 31/31 | $4.84 x1.75 | 48184 | 48997 | +1.7% | 160021 | 140737 | -68068 | -66727 | 8486 | 7793 | 11949/11649 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 19680; H7 46650 -> 46782; K7 83430 -> 92320; M7 4691 -> -8345; O7 10923 -> 7010; P7 304772 -> 301435; U7 59410 -> 43241
 
 ### TL3_SWB_H70_02d9c0 (BEST-AVAILABLE-NOT-PROVEN | row lbrk_5_20 set NHc)
 
