@@ -1,5 +1,5 @@
 # DS3_P7_NYAM_LOT - P7 NY AM lots on JL3, all layers on (W-P7L, order 11-17 23:30Z)
-VERDICT (data ends 2026-11-13; FIRST PASS; updated 2026-11-18 08:41Z): best L6M ulcer cell = HP (NY AM 7, only 11:00-12:00); tiers: {'L0': "LEAD (older windows GAP,PREUW,X' not run)", 'HP': 'NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {\'L6M\': 0, \'L3M\': 0, \'HOLD\': 0, \'GAP\': 0, \'PRE\': 0, "X\'": 0})'}
+VERDICT (data ends 2026-11-13; FIRST PASS; updated 2026-11-18 09:11Z): best L6M ulcer cell = HP (NY AM 7, only 11:00-12:00); tiers: {'L0': "LEAD (older windows PREUW,X' not run)", 'HP': 'NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {\'L6M\': 0, \'L3M\': 0, \'HOLD\': 0, \'GAP\': 0, \'PRE\': 0, "X\'": 0})'}
 
 Five-line summary: (1) pick window end 2026-11-13 (trailing 6M 2026-05-14..2026-11-13, 3M beside, 1M also). (2) refit date 2026-11-18, then every 2 weeks (walk-forward refit dates every 14 days from 2023-10-02). (3) data end 2026-11-13 (202611 base-lot store months via W-DATA). (4) rule: P7 NY AM lots 7 live = base 4 vs base 3 / 2 / 1 / 0 (live 5 / 4 / 2 / 0; live 3 is not reachable with x1.75) and the two halves at 7 live (HA 09:30-11:00 only, HP 11:00-12:00 only); walk-forward rule R6 = cut when trailing-6M P7 NY AM P&L is negative. (5) prior-year % vs live: see the per-year table (AMBER 15-30%, RED >30% worse on ulcer / max DD / mean).
 
@@ -156,13 +156,13 @@ L3 by period (ulcer rule vs always-7, %; positive = worse): 2023-10..2024-09 +0.
 
 ## Table D - persistent random controls and calibrated tier
 
-L0: tier **LEAD (older windows GAP,PREUW,X' not run)**; draws landed 60, valid 17; p 0.1854 (target removed share 0.0611, generation 1)
+L0: tier **LEAD (older windows PREUW,X' not run)**; draws landed 60, valid 15; p 0.1854 (target removed share 0.0611, generation 1)
 | window | valid controls (landed) | pct ulcer | pct mean | pct max DD | pct worst week |
 |--|--|--|--|--|--|
-| L6M | 17 (60) | 1.00 | 1.00 | 1.00 | 1.00 |
-| L3M | 17 (60) | 1.00 | 0.76 | 1.00 | 1.00 |
-| HOLD | 17 (30) | 0.29 | 0.35 | 0.29 | 0.71 |
-| GAP | 0 (0) | nan | nan | nan | nan |
+| L6M | 15 (60) | 1.00 | 1.00 | 1.00 | 1.00 |
+| L3M | 15 (60) | 1.00 | 0.80 | 1.00 | 1.00 |
+| HOLD | 15 (30) | 0.33 | 0.40 | 0.33 | 0.73 |
+| GAP | 15 (30) | 0.40 | 0.33 | 0.67 | 0.47 |
 | PRE | 0 (0) | nan | nan | nan | nan |
 | X' | 0 (0) | nan | nan | nan | nan |
 
