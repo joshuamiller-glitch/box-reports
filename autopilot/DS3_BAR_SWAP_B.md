@@ -1,7 +1,7 @@
 # DS3 BAR SWAP B (W-SWB): P7 / H7 / A7 / O7 on every bar row
 
 Rule: standing selection rule (CLAUDE.md, user 11-17 18:10Z/18:13Z): pick on the trailing 6 months to the newest data, trailing 3M beside it; validated by rolling walk-forward; older years tolerant (AMBER 15-30% / RED >30% worse than the live bar). FIRST PASS standalone (tape fills, raw chassis, live bracket); engine swap test is section 4.
-Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 12:42:31 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
+Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 13:36:36 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
 
 ## Plain summary
 - Tried: every available bar row (~490 time / activity / information / price / composite rows) as the signal clock of P7, H7, A7, O7 in three versions side by side: transplanted live settings, transplanted + the book grid refit, and bar-NATIVE rules (bars / bricks as the unit, no minute ATR); standalone on the tape with live brackets, then the exact engine with the full JL3 stack (not gated on the naked result).
@@ -9,7 +9,7 @@ Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 20
   - P7 NY AM: live bar L6M -1939 pts; trailing-6M pick cdr_1000__NE13_50a10s 1058 pts; rolling WF 6M->1M share of months beating the live bar 0.51 (OOS 3 vs live -75 pts/mo); random-clock pool share 0.62; older years RED
   - P7 London: live bar L6M 1575 pts; trailing-6M pick wrenko_56__NC40 913 pts; rolling WF 6M->1M share of months beating the live bar 0.49 (OOS -60 vs live -18 pts/mo); random-clock pool share 0.54; older years RED
   - H7 NY AM: live bar L6M 874 pts; trailing-6M pick tm300__NH20_55e50 1513 pts; rolling WF 6M->1M share of months beating the live bar 0.43 (OOS -11 vs live 12 pts/mo); random-clock pool share 0.65; older years RED
-  - O7 NY AM: live bar L6M 141 pts; trailing-6M pick kagi_56__NO930_3 1582 pts; rolling WF 6M->1M share of months beating the live bar 0.27 (OOS -3 vs live 124 pts/mo); random-clock pool share 0.32; older years RED
+  - O7 NY AM: live bar L6M 141 pts; trailing-6M pick dchg_56__NO930_3 1582 pts; rolling WF 6M->1M share of months beating the live bar 0.27 (OOS -3 vs live 124 pts/mo); random-clock pool share 0.32; older years RED
   - A7 Asia: live bar L6M -160 pts; trailing-6M pick vsess_80__NE8_30a30s 1067 pts; rolling WF 6M->1M share of months beating the live bar 0.43 (OOS 32 vs live 85 pts/mo); random-clock pool share 0.41; older years RED
   - P7 Asia: live bar L6M 1200 pts; trailing-6M pick vsess_80__NE8_30a10s 962 pts; rolling WF 6M->1M share of months beating the live bar 0.30 (OOS -33 vs live 75 pts/mo); random-clock pool share 0.46; older years RED
   - H7 Asia: live bar L6M 624 pts; trailing-6M pick swing_pct_12__NH9_26e50 2041 pts; rolling WF 6M->1M share of months beating the live bar 0.57 (OOS 48 vs live 13 pts/mo); random-clock pool share 0.41; older years RED
@@ -254,7 +254,7 @@ Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p':
 
 ### O7 NY AM
 
-Live bar row `tm60__A`: 6M 141 pts (n 65, ulcer 232, maxDD 445), 3M -3 pts. PICK (trailing 6M, pick): `kagi_56__NO930_3` 1582 pts (n 87, ulcer 81, maxDD 244); 3M-pick: `vrb_400__NO1000_3` (DISAGREES).
+Live bar row `tm60__A`: 6M 141 pts (n 65, ulcer 232, maxDD 445), 3M -3 pts. PICK (trailing 6M, pick): `dchg_56__NO930_3` 1582 pts (n 87, ulcer 81, maxDD 244); 3M-pick: `vrb_400__NO1000_3` (DISAGREES).
 Side by side (trailing-6M pick within each class; WF = rolling pick at month ends, OOS mean pts/month vs live bar; share = months pick beat live bar; older-year worst):
 
 | class | pick row__set | 6M pts | n | ulcer | WF 6M->1M OOS/mo (live) | share beat | WF 6M->2w share beat | older years |
@@ -269,12 +269,12 @@ Top rows on trailing 6M (score = pts/(ulcer+1)):
 
 | row__set | 6M pts | n | ulcer | maxDD | 3M pts | $/wk x live lots (6M) |
 |---|---:|---:|---:|---:|---:|---:|
-| kagi_56__NO930_3 | 1582 | 87 | 81 | 244 | 989 | 2433 |
 | dchg_56__NO930_3 | 1582 | 87 | 81 | 244 | 989 | 2433 |
+| kagi_56__NO930_3 | 1582 | 87 | 81 | 244 | 989 | 2433 |
 | vib_15000__NO930_8 | 1432 | 61 | 76 | 243 | 802 | 2204 |
 | tm420__NO930_12 | 720 | 31 | 40 | 122 | 86 | 1108 |
-| dchg_40__NO830_12 | 1141 | 53 | 70 | 163 | 435 | 1755 |
 | kagi_40__NO830_12 | 1141 | 53 | 70 | 163 | 435 | 1755 |
+| dchg_40__NO830_12 | 1141 | 53 | 70 | 163 | 435 | 1755 |
 | swing_pct_5__NO1000_8 | 1214 | 80 | 76 | 202 | 311 | 1867 |
 | renko_28__NO1000_5 | 1091 | 47 | 71 | 203 | 492 | 1679 |
 | vnorm_400__NO930_12 | 891 | 68 | 58 | 162 | 339 | 1370 |
@@ -294,7 +294,7 @@ Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; r
 | 12M->3M | 37 | 12.4 | 125.9 | 0.16 | 377 | 202 |
 | 6M->2w | 37 | -8.8 | 125.7 | 0.32 | 473 | 146 |
 
-Nulls (same pick procedure): shift11: OOS 30.7/mo share beat 0.30; shift23: OOS 26.8/mo share beat 0.32; shift37: OOS 2.8/mo share beat 0.32; random-clock pool: OOS 6.8/mo share beat 0.32
+Nulls (same pick procedure): shift11: OOS 30.7/mo share beat 0.30; shift23: OOS 26.8/mo share beat 0.32; shift37: OOS 2.8/mo share beat 0.32; random-clock pool: OOS -0.0/mo share beat 0.32
 
 Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -8 vs 122 (n 36); +3M 65 vs 141 (n 34); +6M 61 vs 138 (n 31)
 
@@ -310,7 +310,7 @@ Older-year check of the pick vs live bar (worse%: + = pick worse): worst = **RED
 
 Reality check (pick pool vs live bar, weekly diffs on the pick window): {'rc_p': 0.538, 'spa_p': 0.296, 'T': 26, 'K': 3181}
 
-**Deliverable row**: O7 NY AM: bar today 1-minute time (live) -> proposed kagi_56 | construction: kagi_56 (Kagi line segments: reversal amount N ticks; bar per segment between reversals (shoulder/waist thickness change recorded by the segment extent)) | param set NO930_3 | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: native Kagi | scaling: size x s_rng (same, daily high-low range in points) (native)
+**Deliverable row**: O7 NY AM: bar today 1-minute time (live) -> proposed dchg_56 | construction: dchg_56 (directional-change / intrinsic-time events (Guillaume et al.): event when price reverses by theta ticks from the running extreme; bar = leg between events (stores overshoot beyond theta before the nex) | param set NO930_3 | label BEST-AVAILABLE-NOT-PROVEN | DS7 need: custom BarsType (zigzag-like; same as swing by ticks) | scaling: size x s_rng (same, daily high-low range in points) (new custom BarsType)
 
 ### A7 Asia (phase 2)
 
@@ -929,6 +929,19 @@ Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): 
 Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 18691; H7 46650 -> 46455; K7 83430 -> 83132; M7 4691 -> 4691; O7 10923 -> 10923; P7 304772 -> 304772; U7 59410 -> 59410
 
 ### TL3_SWB_H73_9af800 (BEST-AVAILABLE-NOT-PROVEN | row wrenko_28 set NH30_80e200)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 11274 | +2.2% | 31109 | 32009 | -15728 | -16223 | 16098 | 15449 | 1981/1979 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 19730 | +2.2% | 54441 | 56016 | -27524 | -28391 | 28172 | 27036 | 1981/1979 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9770 | +1.6% | 31109 | 32009 | -15728 | -16223 | 18755 | 18521 | 4292/4287 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17098 | +1.6% | 54441 | 56016 | -27524 | -28391 | 32822 | 32412 | 4292/4287 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 27389 | -6.8% | 83756 | 82926 | -37324 | -35598 | 9280 | 9851 | 3311/3322 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 47930 | -6.8% | 146574 | 145121 | -65316 | -62297 | 16240 | 17240 | 3311/3322 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 18691; H7 46650 -> 37528; K7 83430 -> 85585; M7 4691 -> 5320; O7 10923 -> 10923; P7 304772 -> 304772; U7 59410 -> 59410
+
+### TL3_SWB_H73_9cd8fa (BEST-AVAILABLE-NOT-PROVEN | row trend_28 set NH30_80e200)
 
 | window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|

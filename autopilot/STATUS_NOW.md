@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-18 13:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 13:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-18 13:15Z | AUTO-FILL step run: dispatcher alive pid 1240823/3925406
+LATEST CORES.md LINE: 2026-11-18 13:30Z | box1: busy 100%, load1 39.00, workers 8, MemAvail 63 GB | server2: busy 90%, load1 97.17, workers 33, MemAvail 1254 GB | pending box1-eligible 1895 / server2-eligible 41108 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-18 13:15Z
+2026-11-18 13:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 13:15Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 58.1 GB; live reservations 0 (0 GB); workers 16, of which TP-adopted 16 (RSS 31.2 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 45.15, 38.61, 35.75
-  by tag: NT quota 8 running 8 hungry False RSS 15.6 GB PSS 10.6 GB; P7L quota 4 running 4 hungry False RSS 7.9 GB PSS 5.3 GB; ORB quota 4 running 4 hungry False RSS 7.8 GB PSS 6.3 GB; NT quota 0 running 8 hungry False RSS 15.6 GB PSS 10.6 GB
-  cell-months finished last hour (DONE markers): 391
-  top running jobs: TL3_MF_ORBFADE_ID (x4);TL3_MF_N1ORBLIM_OR15ctxwithmod_E3c6ee (x4);TL3_P7L_CHP_S4 (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 34.41, 43.32, 36.88|/dev/md2         28T  1.1T   27T   4% /mnt/l2|43|
+Server 1 (this box): MemAvail 63.3 GB; live reservations 8 (8 GB); workers 8, of which TP-adopted 8 (RSS 11.4 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 39.16, 39.33, 37.90
+  by tag: P7L quota 4 running 4 hungry False RSS 5.8 GB PSS 5.1 GB; ORB quota 4 running 4 hungry False RSS 5.6 GB PSS 5.1 GB
+  cell-months finished last hour (DONE markers): 499
+  top running jobs: TL3_MF_N1ORBLIM_OR15ctxwithmod_E3c6ee (x8);TL3_P7L_CHP_S16 (x2);TL3_P7L_CHP_S15 (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 97.53, 73.88, 52.51|/dev/md2         28T  1.1T   27T   4% /mnt/l2|64|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,6 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 34.41, 43.32, 36.88|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261118_0525Z_publish-now-stages-abc-are-done.md 20261118_0602Z_level-cells-positive-every-year-to-deep-test.md 20261118_0616Z_URGENT-server2-30pct-idle-fill-now.md 20261118_0633Z_LEAD-WAKE-server2-42pct-box1-falling.md 20261118_1306Z_never-idle-again-inbox-wake.md
+20261118_0602Z_level-cells-positive-every-year-to-deep-test.md 20261118_0616Z_URGENT-server2-30pct-idle-fill-now.md 20261118_0633Z_LEAD-WAKE-server2-42pct-box1-falling.md 20261118_1306Z_never-idle-again-inbox-wake.md 20261118_1324Z_level-triggers-best-NON-reversal-bar-table.md
+- lead 13:22Z INBOX 20261118_1324Z_level-triggers-best-NON-reversal-bar-table.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the actio
+- 13:22Z INBOX 20261118_1324Z_level-triggers-best-NON-reversal-bar-table.md received: research-only order, accepted; routed to W-LEVEL (non-reversal level table
