@@ -1,10 +1,10 @@
 # DS3_NEAR_TARGET - W-NT near-target take that catches a touch-and-reverse (user relay 11-18 01:25Z) 
 
-Generated 2026-11-18 01:24Z. Data end 2026-11-13 (JL3 months 202304..202611, 44 months, exact engine TL3_EV_JL3 trades + 1-s tape p_high/p_low/mid). Pick window (trailing 6M) 2026-05-14..2026-11-13, 3M beside 2026-08-14..2026-11-13; refit date 2026-11-22 (2-week roll); prior-year percentages to follow with the engine rows (this page version = COUNT TABLE only, no selection yet, no trials counted). Standing selection rule applies to every pick below. The earlier near-target page (user order 17:25Z, first-order screen on LPB_BASE) is kept at the bottom and in autopilot/DS3_NEAR_TARGET_1725Z_prev.md.
+Generated 2026-11-18 01:45Z. Data end 2026-11-13 (JL3 months 202304..202611, 44 months, exact engine TL3_EV_JL3 trades + 1-s tape p_high/p_low/mid). Pick window (trailing 6M) 2026-05-14..2026-11-13, 3M beside 2026-08-14..2026-11-13; refit date 2026-11-22 (2-week roll); prior-year percentages to follow with the engine rows (this page version = COUNT TABLE only, no selection yet, no trials counted). Standing selection rule applies to every pick below. The earlier near-target page (user order 17:25Z, first-order screen on LPB_BASE) is kept at the bottom and in autopilot/DS3_NEAR_TARGET_1725Z_prev.md.
 
 ## Five lines
 1. Tried: counted, per book x session, the JL3 trades whose 1-s print extreme reached 85/90/95/97.5/100% of the target without a Target fill, and how they ended (live take, live lock, other exit).
-2. Holds: in the JL3 engine the live per-print take lines (K7 P7 M7 0.95/5, U7 A7 0.983/5, H7 0.9875/30, O7 0.975/5) and persist=1 locks end almost all trades that reach 97.5%% (see live-line share column); the residue the lines do NOT catch is small in count but costly: see the unprotected columns.
+2. Holds: in the JL3 engine the live per-print take lines (K7 P7 M7 0.95/5, U7 A7 0.983/5, H7 0.9875/30, O7 0.975/5) and persist=1 locks end almost all trades that reach 97.5% (see live-line share column); the residue the lines do NOT catch is small in count but costly: see the unprotected columns.
 3. Does not hold: the touch-and-reverse (price inside the band for less than the 5 s the line needs) is only caught by chance; K7 and M7 have no simple lock; K7/M7/U7 persist>=2 lines are dead (counter bug L1790).
 4. DS7 needs: simple lock lines and target shave are POLICY FILE only; a latched near-target take (new latch grammar) is NEW CODE; the persist counter fix is a one-line code change (L1790).
 5. Next: first-order screen of the latch / lock / shave families on these paths, then a small engine batch under TL3_NT_ (queue file /mnt/l2/l2vast/_nt/pending.txt).
@@ -218,8 +218,143 @@ ALL
 | Y2025 | 5691 | 1000 | 412 | 392 | 15 | 5 | 4 | 4 | 59,916 | 6,823 | 13,647 | 129 |
 | Y2026 | 6941 | 1318 | 529 | 500 | 15 | 14 | 13 | 13 | 86,618 | 27,794 | 55,588 | 604 |
 
+## 1b. UNPROTECTED RESIDUE - exact definitions, decomposition, exit distribution, placebo (answer to lead check 11-18)
+
+**Definitions.** Reached 95% = the 1-s favourable print extreme between entry and exit was >= 0.95 x target (57 pts; O7 85.5) and the trade did not end with a Target fill. **Unprotected residue** = reached 95%, no Target fill, and the JL3 exit was NOT the live take (PolicyTake) or live lock (PolicyTrail): i.e. it ended by StateCut, EarlyCut, StackCut, Stop/StopJoin, TimeBlock, BookLock. (a) = realized price P&L of those trades = pts x $20 x lots, minus $4.84 x lots RT fee. (b) = what a take at 95% would have captured = (0.95 x target - 0.80 pt market slippage) x $20 x lots, minus the same $4.84 x lots fee. (c) = b - a = the real "left on the table" (the fee cancels). x1.75 columns use live lots = max(1, floor(1.75 x base + 0.5)) on the same pts. The earlier count-table column "$ given back vs a take at X" was (c) without the 0.8 pt slippage, summed over the unprotected trades; it is a DIFFERENCE, not the target value. Why ~$2k per trade: these trades touched +57 and then ended at -26..-71 pts (state cut / early cut / stop), a swing of ~90 pts = $1.8k per lot; a 59-pt target alone is $1.2k per lot but the swing is what is lost. Base lots are 1-2 per trade here (K7 15 lots on 13 trades). Count of residue trades L6M: 29 of 1,379 that reached 95% (2.1%), of 4,376 L6M trades.
+
+### L6M (2026-05-14..2026-11-13) by book
+| book | trades | base lots | live lots | (a) realized net $4.84, base | (b) take at 95% less 0.8 pt slip, net $4.84, base | (c) = b - a left on the table, base | (a) x1.75 | (b) x1.75 | (c) x1.75 | (c) per trade base |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A7 | 5 | 5 | 10 | -4,376 | 5,596 | 9,971 | -8,751 | 11,192 | 19,943 | 1,994 |
+| K7 | 13 | 15 | 30 | -10,997 | 16,787 | 27,784 | -21,994 | 33,575 | 55,569 | 2,137 |
+| M7 | 11 | 14 | 28 | -10,629 | 15,668 | 26,297 | -21,259 | 31,336 | 52,595 | 2,391 |
+| **all** | 29 | 34 | 68 | -26,002 | 38,051 | 64,053 | -52,004 | 76,103 | 128,107 | 2,209 |
+
+### L6M by session
+| sess | trades | base lots | live lots | (a) realized net $4.84, base | (b) take at 95% less 0.8 pt slip, net $4.84, base | (c) = b - a left on the table, base | (a) x1.75 | (b) x1.75 | (c) x1.75 | (c) per trade base |
+|---|---|---|---|---|---|---|---|---|---|---|
+| asia | 9 | 9 | 18 | -7,216 | 10,072 | 17,288 | -14,431 | 20,145 | 34,576 | 1,921 |
+| london | 15 | 20 | 40 | -14,915 | 22,383 | 37,298 | -29,830 | 44,766 | 74,596 | 2,487 |
+| nyam | 4 | 4 | 8 | -2,943 | 4,477 | 7,420 | -5,887 | 8,953 | 14,840 | 1,855 |
+| nypm | 1 | 1 | 2 | -928 | 1,119 | 2,047 | -1,857 | 2,238 | 4,095 | 2,047 |
+| **all** | 29 | 34 | 68 | -26,002 | 38,051 | 64,053 | -52,004 | 76,103 | 128,107 | 2,209 |
+
+### All 44 months by calendar year
+| yr | trades | base lots | live lots | (a) realized net $4.84, base | (b) take at 95% less 0.8 pt slip, net $4.84, base | (c) = b - a left on the table, base | (a) x1.75 | (b) x1.75 | (c) x1.75 | (c) per trade base |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2023 | 9 | 10 | 20 | 441 | 12,332 | 11,890 | 882 | 24,663 | 23,781 | 1,321 |
+| 2024 | 29 | 32 | 64 | -14,907 | 38,093 | 53,000 | -29,815 | 76,186 | 106,001 | 1,828 |
+| 2025 | 19 | 21 | 42 | -10,439 | 25,212 | 35,651 | -20,877 | 50,425 | 71,302 | 1,876 |
+| 2026 | 48 | 54 | 108 | -34,805 | 62,715 | 97,520 | -69,611 | 125,429 | 195,040 | 2,032 |
+| **all** | 105 | 117 | 234 | -59,710 | 138,352 | 198,062 | -119,421 | 276,703 | 396,124 | 1,886 |
+
+### All 44 months by book
+| book | trades | base lots | live lots | (a) realized net $4.84, base | (b) take at 95% less 0.8 pt slip, net $4.84, base | (c) = b - a left on the table, base | (a) x1.75 | (b) x1.75 | (c) x1.75 | (c) per trade base |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A7 | 12 | 12 | 24 | -11,060 | 13,430 | 24,489 | -22,119 | 26,860 | 48,979 | 2,041 |
+| K7 | 47 | 54 | 108 | -29,824 | 60,435 | 90,258 | -59,648 | 120,869 | 180,517 | 1,920 |
+| M7 | 32 | 37 | 74 | -29,224 | 41,409 | 70,633 | -58,448 | 82,818 | 141,266 | 2,207 |
+| O7 | 13 | 13 | 26 | 10,817 | 21,959 | 11,142 | 21,634 | 43,918 | 22,284 | 857 |
+| P7 | 1 | 1 | 2 | -420 | 1,119 | 1,539 | -840 | 2,238 | 3,078 | 1,539 |
+| **all** | 105 | 117 | 234 | -59,710 | 138,352 | 198,062 | -119,421 | 276,703 | 396,124 | 1,886 |
+
+### Trades per book
+| book | trades_44m | trades_L6M | reached95_44m | reached95_L6M | residue_44m | residue_L6M |
+|---|---|---|---|---|---|---|
+| A7 | 1198 | 381 | 528 | 158 | 12 | 5 |
+| H7 | 1088 | 182 | 153 | 26 | 0 | 0 |
+| K7 | 7570 | 1688 | 2559 | 581 | 47 | 13 |
+| M7 | 4060 | 759 | 1429 | 248 | 32 | 11 |
+| O7 | 464 | 46 | 151 | 13 | 13 | 0 |
+| P7 | 4123 | 1055 | 814 | 251 | 1 | 0 |
+| U7 | 1378 | 265 | 539 | 102 | 0 | 0 |
+
+### Exit distribution of the 29 L6M residue trades (target-later is excluded by definition: those filled the Target and are not residue; of all 1,379 L6M trades that reached 95%, 728 filled the target later, 622 exited by the live take/lock, 29 residue)
+| end | n | mean pts | mean MFE |
+|---|---|---|---|
+| loss (cut / other) | 26 | -37.8 | 58.1 |
+| stop | 3 | -27.8 | 57.7 |
+By JL3 exit name: StateCut 20, EarlyCut 5, Stop 3, StackCut 1
+
+### Placebo (luck baseline): the same-clock 1-s path 11 / 23 / 37 days earlier, same side and duration for every JL3 trade, latched at 95% of target, with NO exit rule (hold to the same duration)
+| shift days | trades | reach 95% | ended <= +5 pts at the same duration | share of reached |
+|---|---|---|---|---|
+| 11 | 19881 | 4772 | 654 | 13.7% |
+| 23 | 19881 | 4581 | 592 | 12.9% |
+| 37 | 19881 | 4540 | 676 | 14.9% |
+Real JL3: 6,173 of 19,881 trades reach 95% (31%; placebo paths 23-24%, so real paths are not random: the strategy enters with the trend), and only 85 of those 6,173 (1.4%) end <= +5 pts under the live take/lock lines, against 13-15% for the unprotected random-path baseline. Reading: the live lines already remove about nine tenths of the touch-and-reverse outcomes; what remains is a 1.4% tail, concentrated in K7/M7/A7 state cuts and stops after a fast touch (price outside the 3-pt band before 5 s pass). A new rule has to beat the placebo-latch nulls in section 2 to count as edge.
+
 ## Steps 2-6
-(steps 2-6 pending)
+**Screen status**: FIRST-ORDER on JL3 trade paths (alternative exit only if it fires before the real JL3 exit; no freed-book effect; market exits at mid -0.80 pt; limit fills optimistic unless `cons`); in-sample 44 months, trailing-6M pick (2026-05-14..2026-11-13), L3M beside; older windows/years = ulcer and mean vs JL3 (AMBER 15-30%, RED >30% worse, mean drop floored at 10% of the stack mean). Trials counted: 12 LA + 12 LB (x3 latch levels) + 24 LC + 6 SH + 4 TS = 154 cells x 17 scopes; no multiple-testing correction applied; engine controls (30 persistent draws) not run -> nothing here is CONFIRMED or LEAD. Placebo column = ulcer change % (L6M, own book) of the same cell with decisions from the path 11/23/37 days earlier (real must be clearly lower than these).
+
+### K7 (pooled sessions, own-book ulcer)
+| cell | policy / what DS7 needs | ulcer chg L6M / L3M (%) | d mean $/wk L6M base ($4.84) / x1.75 | mean chg L6M / L3M (%) | fires L6M | worst older ulcer / mean drop (%) | older tier | placebo ulcer chg 11/23/37 | label |
+|---|---|---|---|---|---|---|---|---|---|
+| TS_X0.90_opt | NEW CODE (partial exit): half of the position at 0.90 of target (scale 0.5 style), rest to target | -6.8 / -12.9 | 418 / 835 | 13.8 / 15.6 | 676 | 2.3 / 19.2 | AMBER | n/a | WEAK-BUT-POSITIVE |
+| TS_X0.95_opt | NEW CODE (partial exit): half of the position at 0.95 of target (scale 0.5 style), rest to target | -4.4 / -5.6 | 452 / 903 | 14.9 / 10.9 | 484 | 0.5 / 5.4 | ok | n/a | WEAK-BUT-POSITIVE |
+| SH_k2_opt | bracket K7 * target=59.50  (engine/screen baseline target 60; live K7 is already 59 = 4 ticks, P7 58, M7 59.5) | -2.7 / -2.4 | 195 / 390 | 6.5 / 2.8 | 106 | -0.7 / -2.5 | ok | n/a | WEAK-BUT-POSITIVE |
+| SH_k4_opt | bracket K7 * target=59.00  (engine/screen baseline target 60; live K7 is already 59 = 4 ticks, P7 58, M7 59.5) | -2.5 / -2.1 | 182 / 364 | 6.0 / 1.2 | 215 | -0.4 / -4.4 | ok | n/a | WEAK-BUT-POSITIVE |
+| SH_k4_cons | bracket K7 * target=59.00  (engine/screen baseline target 60; live K7 is already 59 = 4 ticks, P7 58, M7 59.5) | -2.3 / -2.2 | 164 / 327 | 5.4 / 1.0 | 169 | -0.3 / -1.1 | ok | n/a | WEAK-BUT-POSITIVE |
+
+### M7 (pooled sessions, own-book ulcer)
+| cell | policy / what DS7 needs | ulcer chg L6M / L3M (%) | d mean $/wk L6M base ($4.84) / x1.75 | mean chg L6M / L3M (%) | fires L6M | worst older ulcer / mean drop (%) | older tier | placebo ulcer chg 11/23/37 | label |
+|---|---|---|---|---|---|---|---|---|---|
+| LB_X0.95_G8 | NEW CODE: latch at 0.95 of target, exit at market when price gives back 8 pts from the extreme | -23.6 / -15.9 | 472 / 943 | 25.3 / 36.9 | 69 | 11.6 / 22.9 | AMBER | 17.0 | WEAK-BUT-POSITIVE |
+| LA_X0.95_S10 | NEW CODE: latch at 0.95 of target, exit at market when no new favourable extreme for 10 s | -23.2 / -15.1 | 412 / 824 | 22.1 / 34.3 | 83 | 7.5 / 29.2 | AMBER | 18.2 | WEAK-BUT-POSITIVE |
+| TS_X0.95_opt | NEW CODE (partial exit): half of the position at 0.95 of target (scale 0.5 style), rest to target | -20.6 / -11.0 | 385 / 771 | 20.7 / 27.0 | 203 | 0.1 / -6.3 | ok | n/a | WEAK-BUT-POSITIVE |
+| SH_k2_opt | bracket M7 * target=59.50  (engine/screen baseline target 60; live K7 is already 59 = 4 ticks, P7 58, M7 59.5) | -20.2 / -0.0 | 240 / 480 | 12.9 / 0.1 | 65 | -0.1 / -1.2 | ok | n/a | WEAK-BUT-POSITIVE |
+| SH_k4_opt | bracket M7 * target=59.00  (engine/screen baseline target 60; live K7 is already 59 = 4 ticks, P7 58, M7 59.5) | -19.8 / -0.2 | 294 / 587 | 15.8 / 8.3 | 112 | 0.0 / -5.7 | ok | n/a | WEAK-BUT-POSITIVE |
+
+### A7 (pooled sessions, own-book ulcer)
+| cell | policy / what DS7 needs | ulcer chg L6M / L3M (%) | d mean $/wk L6M base ($4.84) / x1.75 | mean chg L6M / L3M (%) | fires L6M | worst older ulcer / mean drop (%) | older tier | placebo ulcer chg 11/23/37 | label |
+|---|---|---|---|---|---|---|---|---|---|
+| LB_X0.85_G12 | NEW CODE: latch at 0.85 of target, exit at market when price gives back 12 pts from the extreme | -12.7 / -15.8 | -81 / -161 | -4.3 / -16.0 | 107 | 18.8 / 26.2 | AMBER | 112.6 | BEST-AVAILABLE-NOT-PROVEN |
+| TS_X0.90_opt | NEW CODE (partial exit): half of the position at 0.90 of target (scale 0.5 style), rest to target | -7.6 / 1.1 | -35 / -69 | -1.9 / -9.5 | 172 | 12.2 / 4.8 | ok | n/a | BEST-AVAILABLE-NOT-PROVEN |
+| TS_X0.95_opt | NEW CODE (partial exit): half of the position at 0.95 of target (scale 0.5 style), rest to target | -5.6 / 0.8 | 44 / 88 | 2.4 / -0.0 | 141 | 3.8 / 5.4 | ok | n/a | BEST-AVAILABLE-NOT-PROVEN |
+| SH_k1_opt | bracket A7 * target=59.75  (engine/screen baseline target 60; live K7 is already 59 = 4 ticks, P7 58, M7 59.5) | -4.5 / -4.0 | 68 / 135 | 3.6 / 9.8 | 38 | 0.3 / 0.2 | ok | n/a | WEAK-BUT-POSITIVE |
+| SH_k2_cons | bracket A7 * target=59.50  (engine/screen baseline target 60; live K7 is already 59 = 4 ticks, P7 58, M7 59.5) | -4.2 / -3.8 | 61 / 121 | 3.3 / 9.2 | 37 | 0.6 / 0.8 | ok | n/a | WEAK-BUT-POSITIVE |
+
+### P7 (pooled sessions, own-book ulcer)
+| cell | policy / what DS7 needs | ulcer chg L6M / L3M (%) | d mean $/wk L6M base ($4.84) / x1.75 | mean chg L6M / L3M (%) | fires L6M | worst older ulcer / mean drop (%) | older tier | placebo ulcer chg 11/23/37 | label |
+|---|---|---|---|---|---|---|---|---|---|
+| LC_a0.80_L0.50 | profit P7 * pct>=0.80 lock 30.0 persist=1 | -3.4 / -3.9 | 83 / 110 | 0.8 / -1.3 | 88 | 3.2 / 14.4 | ok | -12.9 | WEAK-BUT-POSITIVE |
+| TS_X0.90_opt | NEW CODE (partial exit): half of the position at 0.90 of target (scale 0.5 style), rest to target | -2.1 / -2.3 | 343 / 633 | 3.4 / 4.2 | 401 | -0.8 / -4.4 | ok | n/a | WEAK-BUT-POSITIVE |
+| LC_a0.85_L0.50 | profit P7 * pct>=0.85 lock 30.0 persist=1 | -1.7 / -1.9 | 198 / 337 | 2.0 / 1.5 | 27 | -1.3 / 1.1 | ok | -11.8 | WEAK-BUT-POSITIVE |
+| TS_X0.95_opt | NEW CODE (partial exit): half of the position at 0.95 of target (scale 0.5 style), rest to target | -1.4 / -1.6 | 269 / 507 | 2.7 / 4.1 | 219 | -0.9 / -1.4 | ok | n/a | WEAK-BUT-POSITIVE |
+| LC_a0.90_L0.70 | profit P7 * pct>=0.90 lock 42.0 persist=1 | -1.3 / -1.2 | -77 / -129 | -0.8 / -4.8 | 60 | 1.1 / 0.9 | ok | -24.6 | BEST-AVAILABLE-NOT-PROVEN |
+
+### U7 (pooled sessions, own-book ulcer)
+| cell | policy / what DS7 needs | ulcer chg L6M / L3M (%) | d mean $/wk L6M base ($4.84) / x1.75 | mean chg L6M / L3M (%) | fires L6M | worst older ulcer / mean drop (%) | older tier | placebo ulcer chg 11/23/37 | label |
+|---|---|---|---|---|---|---|---|---|---|
+| LC_a0.70_L0.00 | profit U7 * pct>=0.70 lock 0.0 persist=1 | -24.8 / -24.6 | 745 / 1329 | 29.3 / 75.4 | 17 | 13.7 / 16.8 | AMBER | -16.4 | WEAK-BUT-POSITIVE |
+| LC_a0.90_L0.80 | profit U7 * pct>=0.90 lock 48.0 persist=1 | -14.9 / -23.3 | -54 / -97 | -2.1 / 16.5 | 45 | 17.2 / 26.0 | AMBER | -34.6 | BEST-AVAILABLE-NOT-PROVEN |
+| TS_X0.90_opt | NEW CODE (partial exit): half of the position at 0.90 of target (scale 0.5 style), rest to target | -8.6 / -14.3 | -76 / -132 | -3.0 / 5.6 | 112 | -1.9 / 7.2 | ok | n/a | BEST-AVAILABLE-NOT-PROVEN |
+| TS_X0.90_cons | NEW CODE (partial exit): half of the position at 0.90 of target (scale 0.5 style), rest to target | -6.4 / -10.7 | -207 / -372 | -8.1 / -6.2 | 110 | 1.7 / 26.0 | AMBER | n/a | BEST-AVAILABLE-NOT-PROVEN |
+| TS_X0.95_opt | NEW CODE (partial exit): half of the position at 0.95 of target (scale 0.5 style), rest to target | -0.0 / -1.1 | -26 / -37 | -1.0 / 3.0 | 95 | 3.0 / 12.5 | ok | n/a | BEST-AVAILABLE-NOT-PROVEN |
+
+### H7 (pooled sessions, own-book ulcer)
+| cell | policy / what DS7 needs | ulcer chg L6M / L3M (%) | d mean $/wk L6M base ($4.84) / x1.75 | mean chg L6M / L3M (%) | fires L6M | worst older ulcer / mean drop (%) | older tier | placebo ulcer chg 11/23/37 | label |
+|---|---|---|---|---|---|---|---|---|---|
+| LC_a0.60_L0.50 | profit H7 * pct>=0.60 lock 30.0 persist=1 | -8.7 / -5.4 | -220 / -468 | -11.6 / 3.1 | 62 | 18.0 / 20.0 | AMBER | -52.8 | BEST-AVAILABLE-NOT-PROVEN |
+| LC_a0.85_L0.80 | profit H7 * pct>=0.85 lock 48.0 persist=1 | -8.2 / -11.5 | 74 / 147 | 3.9 / 11.3 | 28 | 5.9 / 7.5 | ok | -38.7 | WEAK-BUT-POSITIVE |
+| LB_X0.85_G5 | NEW CODE: latch at 0.85 of target, exit at market when price gives back 5 pts from the extreme | -5.1 / -7.0 | 73 / 137 | 3.8 / 8.6 | 52 | 8.7 / 16.6 | AMBER | 30.1 | WEAK-BUT-POSITIVE |
+| LA_X0.85_S5 | NEW CODE: latch at 0.85 of target, exit at market when no new favourable extreme for 5 s | -4.4 / -6.2 | 54 / 99 | 2.9 / 7.7 | 46 | 6.4 / 13.9 | ok | 26.5 | WEAK-BUT-POSITIVE |
+| LC_a0.70_L0.50 | profit H7 * pct>=0.70 lock 30.0 persist=1 | -2.7 / 3.4 | -108 / -216 | -5.7 / 1.3 | 28 | 21.5 / 18.9 | AMBER | -29.7 | BEST-AVAILABLE-NOT-PROVEN |
+
+### O7 (pooled sessions, own-book ulcer)
+| cell | policy / what DS7 needs | ulcer chg L6M / L3M (%) | d mean $/wk L6M base ($4.84) / x1.75 | mean chg L6M / L3M (%) | fires L6M | worst older ulcer / mean drop (%) | older tier | placebo ulcer chg 11/23/37 | label |
+|---|---|---|---|---|---|---|---|---|---|
+| LC_a0.70_L0.50 | profit O7 * pct>=0.70 lock 30.0 persist=1 | -16.0 / -13.6 | -167 / -334 | -9.0 / -18.3 | 15 | 16.4 / 29.3 | AMBER | -11.4 | BEST-AVAILABLE-NOT-PROVEN |
+| LC_a0.70_L0.25 | profit O7 * pct>=0.70 lock 15.0 persist=1 | -5.7 / 4.5 | -102 / -204 | -5.5 / -5.7 | 8 | 28.3 / 19.0 | AMBER | -8.4 | BEST-AVAILABLE-NOT-PROVEN |
+| LC_a0.85_L0.00 | profit O7 * pct>=0.85 lock 0.0 persist=1 | -1.3 / 0.0 | 28 / 55 | 1.5 / 0.0 | 1 | 7.3 / 7.0 | ok | -5.0 | BEST-AVAILABLE-NOT-PROVEN |
+| LC_a0.80_L0.25 | profit O7 * pct>=0.80 lock 15.0 persist=1 | -0.9 / 0.0 | -57 / -114 | -3.0 / 0.0 | 3 | 6.7 / 10.6 | ok | -8.4 | BEST-AVAILABLE-NOT-PROVEN |
+| LC_a0.85_L0.25 | profit O7 * pct>=0.85 lock 15.0 persist=1 | -0.9 / 0.0 | -57 / -114 | -3.0 / 0.0 | 3 | 4.8 / 5.2 | ok | -8.4 | BEST-AVAILABLE-NOT-PROVEN |
+
+Families not yet run: (5) persist-counter fix and (6) order-book latch need the book features and the ptr grammar hook on the JL3 hooklist (batch 2 after the identity cells land); two-step exit needs live-lot (x1.75) partials, the base-lot engine cannot split 1 lot. Live K7 target is already 59 (4 ticks nearer than the engine 60), P7 58, M7 59.5: the incident trade had a 59-pt target.
+
+## 3. ENGINE ROWS (TL3_NT_* vs TL3_EV_JL3 on the same landed months; written 2026-11-18 01:45Z)
+
+Identity cells (TL3_NT_ID0/ID1 on 202610 and 202504): NOT LANDED YET. No engine row below may be used until they match JL3 (691 / 37,159.82 and 637 / 41,239.76).
 
 
 ---
