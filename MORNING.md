@@ -5293,3 +5293,9 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 06:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 - 2026-11-18T06:22:13Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
 2026-11-18T06:27:58Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- lead 06:30Z AUTO-FILL (cores_meter, server 2 below 85% twice): dispatcher alive pid 1240823/3468221; dispatch.log LAUNCH lines in last ~10 min: 33; dispatcher walks ALL queues in order and takes any eligible line with deps already pushed (prefetch threads push the rest), so an ineligible/empty front queue cannot block it.
+- lead 06:31Z INBOX 20261118_0633Z_LEAD-WAKE-server2-42pct-box1-falling.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- (wall 06:33Z) W-PM status: load1 34.95, PM exact jobs pending 12, cells with output 59; 743 jobs wanted, 12 chains running, 1794983611; P5 page done, P8 grid np_m15_x10_y15 2898
+- 2026-11-18T06:35Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- (wall 06:36Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 24 (pending file), cell-months done 1979, load 31.58 33.20 35.04, epoch 1794983769
+- (wall 06:39Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 31.46 32.23 34.27
