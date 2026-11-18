@@ -1,4 +1,4 @@
-# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-18 00:49Z
+# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-18 01:20Z
 > VALIDATION (W-S3, FIRST PASS, 2026-11-17): trials counted = per book 7 schemes x 3 buckets x <= 5 sessions + pooled x 11 candidates (native + 10 priority grid sets), 7 books; the screen is read against 21 shifted-label runs (11/23/37 days) and 3 nonsense 3-bucketings (all counted); correction = walk-forward (one freeze per book on the SEL months landed, then HOLD 2025-11..2026-04 and L6M 2026-05..10 read once) + label nulls; PBO / White RC over the full grid on the stage 3 page; engine-exact assembly and 30 random-bracket controls NOT built yet: nothing here is a tier, missing controls = NOT FINISHED. Numbers shown: out of sample after the freeze for frozen books, SEL-only otherwise.
 
 VERDICT (data ends 2026-10-30; FIRST PASS, PARTIAL: only the 10-set priority subset of the grid (6 targets at stop 60, 40/40, 40/60, 90/60, 90/90) is used and it is still landing; frozen books H7, A7): see five lines below; nothing assembled on the engine, no tier.
@@ -6,7 +6,7 @@ VERDICT (data ends 2026-10-30; FIRST PASS, PARTIAL: only the 10-set priority sub
 ## Five-line summary
 1. Tried: every stage 3 trade is tagged at the signal with 7 environment bucketings (atr_rel thirds and live 1.3/1.6 marks, with/against the day 3-of-4 vote, ER30 proxy, range used vs HAR forecast, room to nearest level ahead, fresh/rechase); the best of 11 bracket settings is picked per book x session x bucket on SEL only.
 2. Holds / not: the untouched read is in the null table: a real scheme counts only if its holding-pick count is above the three shifted-label runs and the nonsense runs (see Table 2).
-3. Shape: Table 4 counts cells whose best target moves in the expected direction (nearer against the day / low room / high range used): 2 consistent of 17 cells with a varying pick.
+3. Shape: Table 4 counts cells whose best target moves in the expected direction (nearer against the day / low room / high range used): 2 consistent of 16 cells with a varying pick.
 4. DS7 needs: all inputs are own-bar features (atr_rel, day vote, 1-min closes, level distances, HAR range forecast) except the ER ladder (own ER30 proxy used, live ladder not replicated) and the no-trade zones (levels used instead).
 5. Next: for any holding rule: exact assembled raw-chassis and JL3 runs with 30 random-bracket controls (not built; needs the lead's queue OK); the stage 3 grid keeps landing.
 
@@ -23,8 +23,8 @@ New parser tokens: stop=, timestop=, halfoff= and a session in the third column 
 ## Table 0 - progress
 | book | common SEL months | HOLD+L6M months landed | state |
 |--|--|--|--|
-| K7 | 4 | 12 / 12 | SEL-only partial picks |
-| M7 | 4 | 12 / 12 | SEL-only partial picks |
+| K7 | 5 | 12 / 12 | SEL-only partial picks |
+| M7 | 5 | 12 / 12 | SEL-only partial picks |
 | P7 | 3 | 12 / 12 | too few months landed |
 | U7 | 4 | 12 / 12 | SEL-only partial picks |
 | H7 | 31 | 12 / 12 | FROZEN on 31 SEL months (HOLD/L6M read once after the freeze) |
@@ -47,37 +47,42 @@ Cuts (frozen from native SEL trades): atr_rel thirds [1.0641536788691555, 2.2891
 ## Table 1 - picks (non-native) by book x scheme x session x bucket
 | book | scheme | session | bucket | SEL n (native) | pick | SEL ulcer native -> pick | HOLD ulcer | HOLD mean $/wk (@4.84) | L6M ulcer | L6M mean $/wk (@4.84) | holds untouched |
 |--|--|--|--|--|--|--|--|--|--|--|--|
-| K7 | ATRT | ALL | mid third | 181 | S040T060 | 15445 -> 6613 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | ATRT | ALL | high third | 218 | S040T040 | 6635 -> 2103 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | ATRT | nyam | high third | 127 | S060T040 | 5405 -> 1497 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | ATRL | ALL | >=1.6 | 305 | S040T040 | 10156 -> 1240 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | ATRL | nyam | >=1.6 | 149 | S040T040 | 2135 -> 935 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | DAY | ALL | WITH the day | 409 | S040T060 | 4313 -> 1512 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | DAY | asia | WITH the day | 117 | S040T060 | 5000 -> 3458 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | DAY | nyam | WITH the day | 128 | S040T060 | 1260 -> 919 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | ER | ALL | ER30 low third | 153 | S060T090 | 8875 -> 5272 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | RNG | ALL | range used <50% | 121 | S040T060 | 2615 -> 1443 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | RNG | ALL | 50-100% | 252 | S060T030 | 2963 -> 1978 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | RNG | ALL | >100% of forecast | 130 | S090T090 | 1551 -> 901 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | ROOM | ALL | room <30 pts | 387 | S060T090 | 13227 -> 2756 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | ROOM | nyam | room <30 pts | 113 | S040T060 | 911 -> 633 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| K7 | FRESH | ALL | rechase | 212 | S060T040 | 1582 -> 1160 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ATRT | ALL | high third | 123 | S090T090 | 1056 -> 771 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ATRT | nyam | high third | 109 | S040T060 | 1015 -> 769 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ATRL | ALL | atr_rel <1.3 | 113 | S040T040 | 7764 -> 3139 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ATRL | ALL | >=1.6 | 166 | S060T090 | 7656 -> 555 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ATRL | london | atr_rel <1.3 | 113 | S040T040 | 7764 -> 3139 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ATRL | nyam | >=1.6 | 134 | S060T030 | 904 -> 457 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | DAY | ALL | WITH the day | 277 | S040T060 | 8281 -> 1405 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | DAY | london | WITH the day | 142 | S060T030 | 12910 -> 3715 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | DAY | nyam | WITH the day | 135 | S060T030 | 905 -> 465 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ER | ALL | ER30 low third | 123 | S040T060 | 6801 -> 1833 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | RNG | ALL | 50-100% | 147 | S060T030 | 8339 -> 743 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ROOM | ALL | room <30 pts | 238 | S060T030 | 9094 -> 2722 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ROOM | london | room <30 pts | 136 | S060T030 | 14471 -> 5309 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | ROOM | nyam | room <30 pts | 102 | S060T090 | 1110 -> 623 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | FRESH | ALL | fresh | 166 | S060T030 | 4809 -> 2752 | n/a | n/a | n/a | n/a | not read (not frozen) |
-| M7 | FRESH | ALL | rechase | 132 | S060T090 | 12611 -> 3498 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ATRT | ALL | mid third | 222 | S040T060 | 15547 -> 7834 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ATRT | ALL | high third | 247 | S040T040 | 7339 -> 2188 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ATRT | nyam | high third | 147 | S060T040 | 5748 -> 1701 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ATRL | ALL | >=1.6 | 355 | S040T040 | 10533 -> 2498 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ATRL | nyam | >=1.6 | 182 | S060T030 | 2174 -> 1163 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ATRL | nypm | >=1.6 | 105 | S040T060 | 3619 -> 1832 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | DAY | ALL | WITH the day | 494 | S060T090 | 6660 -> 5281 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | DAY | asia | WITH the day | 143 | S040T040 | 6110 -> 4263 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | DAY | nyam | WITH the day | 159 | S060T030 | 1593 -> 1158 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | DAY | nypm | WITH the day | 112 | S040T060 | 4395 -> 1283 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ER | ALL | ER30 low third | 185 | S060T090 | 9322 -> 7383 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ER | ALL | high | 166 | S040T040 | 2771 -> 2294 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | RNG | ALL | range used <50% | 150 | S040T060 | 7440 -> 1992 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | RNG | ALL | 50-100% | 298 | S060T030 | 3553 -> 2058 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | RNG | nyam | 50-100% | 110 | S060T030 | 1954 -> 523 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ROOM | ALL | room <30 pts | 471 | S060T090 | 13758 -> 4813 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | ROOM | nypm | room <30 pts | 110 | S040T060 | 8241 -> 3380 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | FRESH | ALL | fresh | 362 | S040T060 | 6665 -> 3720 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| K7 | FRESH | nyam | fresh | 102 | S040T040 | 1461 -> 436 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | ATRT | ALL | mid third | 104 | S060T030 | 17543 -> 5571 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | ATRT | nyam | high third | 123 | S040T060 | 1091 -> 817 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | ATRL | ALL | atr_rel <1.3 | 149 | S060T030 | 7836 -> 4644 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | ATRL | ALL | >=1.6 | 196 | S090T090 | 7776 -> 926 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | ATRL | london | atr_rel <1.3 | 149 | S060T030 | 7836 -> 4644 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | DAY | ALL | WITH the day | 339 | S060T030 | 8593 -> 3667 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | DAY | london | WITH the day | 175 | S060T030 | 13297 -> 4217 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | ER | ALL | ER30 low third | 152 | S040T060 | 6759 -> 2405 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | RNG | ALL | 50-100% | 172 | S060T030 | 8588 -> 1723 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | RNG | nyam | 50-100% | 101 | S060T040 | 1053 -> 782 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | ROOM | ALL | room <30 pts | 291 | S060T030 | 8626 -> 3531 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | ROOM | london | room <30 pts | 167 | S060T030 | 13351 -> 5413 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | ROOM | nyam | room <30 pts | 124 | S060T090 | 1189 -> 865 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | FRESH | ALL | fresh | 208 | S060T030 | 4832 -> 3997 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | FRESH | ALL | rechase | 158 | S060T030 | 12620 -> 4414 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | FRESH | london | fresh | 108 | S090T090 | 6487 -> 4784 | n/a | n/a | n/a | n/a | not read (not frozen) |
+| M7 | FRESH | nyam | fresh | 100 | S060T030 | 2035 -> 570 | n/a | n/a | n/a | n/a | not read (not frozen) |
 | H7 | ATRT | ALL | atr_rel low third | 382 | S040T040 | 21104 -> 10431 | 9509 -> 15787 | 783 -> -373 (744 -> -417) | 6570 -> 9647 | 3044 -> 2197 (2998 -> 2146) | no |
 | H7 | ATRT | ALL | high third | 236 | S090T090 | 11384 -> 7438 | 5538 -> 10970 | 45 -> 75 (39 -> 69) | 995 -> 2546 | 568 -> 675 (562 -> 669) | no |
 | H7 | ATRT | asia | atr_rel low third | 379 | S040T040 | 21207 -> 10509 | 9747 -> 15892 | 737 -> -404 (698 -> -447) | 6570 -> 9647 | 3044 -> 2197 (2998 -> 2146) | no |
@@ -131,11 +136,10 @@ Cuts (frozen from native SEL trades): atr_rel thirds [1.0641536788691555, 2.2891
 |--|--|--|--|--|--|--|
 | K7 | ATRT | ALL | N60 / 60 / 40 | -0.87 | none |  |
 | K7 | ATRL | ALL | N60 / - / 40 | -1.00 | none |  |
-| K7 | ER | ALL | 90 / N60 / N60 | -0.87 | none |  |
-| K7 | RNG | ALL | 60 / 30 / 90 | +0.50 | - | no |
-| K7 | FRESH | ALL | N60 / 40 / - | -1.00 | none |  |
-| M7 | ATRL | ALL | 40 / - / 90 | +1.00 | none |  |
-| M7 | FRESH | ALL | 30 / 90 / - | +1.00 | none |  |
+| K7 | ER | ALL | 90 / N60 / 40 | -1.00 | none |  |
+| K7 | RNG | ALL | 60 / 30 / N60 | +0.00 | - | no |
+| M7 | ATRT | ALL | N60 / 30 / N60 | +0.00 | none |  |
+| M7 | ATRL | ALL | 30 / - / 90 | +1.00 | none |  |
 | H7 | ATRT | ALL | 40 / N60 / 90 | +1.00 | none |  |
 | H7 | ATRL | ALL | 40 / - / N60 | +1.00 | none |  |
 | H7 | RNG | ALL | 60 / 40 / 30 | -1.00 | - | yes |
@@ -159,6 +163,7 @@ Cuts (frozen from native SEL trades): atr_rel thirds [1.0641536788691555, 2.2891
 | range k=1.0 | L6M | 6 | 129412 | 13879 | 11852 | 4074 / 5062 |
 
 <!-- MD:APPEND -->
+
 <!-- W-MD section start: written 2026-11-18 01:08Z; sections: UW levels, Size by environment, Own-book walls, one summary table. Source W-MD (MAJOR D addendum 1337Z). FIRST PASS, ARITHMETIC SCREEN (raw-chassis 1-s paths); no engine run yet; nothing assembled. -->
 
 # W-MD sections (appended below the W-S3 ENV page): UW levels as exit levels, size by environment, own-book walls
