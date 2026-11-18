@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-18 20:18Z
+# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-18 20:30Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'.** Asia is decided FIRST in clock order (Asia -> London -> NY AM -> NY PM).
 
@@ -46,6 +46,10 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 ## B. Asia candidates in the engine (vs JL3 = today stack, base lots; every cell picked as best-of-many on the same L6M; drawdown first; NO LABEL without 30 controls + the selection-corrected test)
 | cell | bar | trigger | stop/tgt pts | set | window | d stack ulcer x1 / x1.75 | d worst wk x1 | d maxDD x1 | d mean $/wk x1 / x1.75 | date-shift controls landed |
 |---|---|---|---|---|---|---|---|---|---|---|
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | L6M | +1848 / +3233 | -3618 | -7491 | +94 / +165 | 0 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | L3M | +2518 / +4407 | -3618 | -7491 | -1543 / -2699 | 0 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | L6M | +250 / +438 | -42 | +1261 | +387 / +677 | 0 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | L3M | +491 / +859 | +2623 | +1261 | +369 / +645 | 0 |
 
 Reading: a replacement/add must lower the Asia contribution to stack ulcer or worst week AND beat the live book in $ on L6M and L3M; the rows above are the dollars and ulcer it has to beat. Nothing else is claimed. Candidates, controls and the selection-corrected test are not started (phase 2 of 1722Z).
 

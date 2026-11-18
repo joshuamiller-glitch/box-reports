@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-18 20:17Z
+# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-18 20:30Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'. London is decided after Asia (clock order Asia -> London -> NY AM -> NY PM): London results stay PROVISIONAL.**
 
@@ -53,7 +53,7 @@ Combos: {"key": "LA5,LA1|LA5,LA1,LA6|P7|LA5", "sets": ["TL3_LON_C2_LA5_LA1", "TL
 Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot dollars at $4.84 RT/contract proxy plus an x1.75 live-lot column; deltas = WITH candidate minus the reference on the same months; ulcer and worst week FIRST, then mean $/week. ADD = new book at 1 base lot (2 live lots); R* = the live London book (K7/M7/U7/P7) suppressed in London and replaced; ADDM = ADD plus the confirmed setting M7 London lots 4 live -> 0 (ev_panel, = TL3_CT_JL3_N_M7L) and is compared with TL3_CT_JL3_N_M7L (the base alternative: the stack without M7 London) and with JL3.
 **EQUAL RISK (1447Z):** risk-matched c = 60/stop pts; shown as reference + c x the new book daily P&L (exact when the book does not change other books through caps/locks); wide (120-clip) rows are judged on the same-bracket null, not marked down. Day cap: MF1 loss cap $4,800/day: one 120-pt stop = $2,400 at 1 base lot (2 stops trip), $4,800 at 2 live lots (ONE stop trips).
 **Identity of the M7-London mechanism (TL3_LON_ID = inert event + M7L0 vs TL3_CT_JL3_N_M7L):** 202610: PASS (645 trades, net 47685.32); 202504: PASS (575 trades, net 53447.62). JL3 identity of the injection (TL3_NYE_ID, W-NYENG): 202610 691 / 37,159.82, 202504 637 / 41,239.76.
-**Set-months done:** 373 of 1290 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
+**Set-months done:** 384 of 1279 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
 
 | cell | bar | trigger | stop/tgt pts ($ stop per base lot) | variant | reference | window | d ulcer x1 / x1.75 | d worst wk x1 | d mean $/wk x1 / x1.75 | d maxDD x1 | RISK-MATCHED c: d ulcer / d worst / d mean | trades | R/trade | R/wk | flag vs ref |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -153,6 +153,10 @@ Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot do
 | WL9 | time_m_4 | momentum_roc.break {"len": 10, "wd": 1.0} | 120/88 ($2400) | ADDM | EV_JL3 | L3M | +1315 / +2301 | -1656 | -747 / -1307 | -4232 | c=0.50: +170 / -1059 / -493 | 97 | -0.028 | -0.212 | ok |
 | WL9 | time_m_4 | momentum_roc.break {"len": 10, "wd": 1.0} | 120/88 ($2400) | ADDM | CT_JL3_N_M7L | L6M | +1538 / +2691 | -2599 | -468 / -819 | -10583 | c=0.50: +805 / -2002 / -233 | 210 | -0.025 | -0.196 | RED |
 | WL9 | time_m_4 | momentum_roc.break {"len": 10, "wd": 1.0} | 120/88 ($2400) | ADDM | CT_JL3_N_M7L | L3M | +2915 / +5101 | -2599 | -1191 / -2085 | -10583 | c=0.50: +1770 / -2002 / -937 | 97 | -0.028 | -0.212 | RED |
+| LB1 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | 120/120 ($2400) | ADD | EV_JL3 | L6M | +299 / +524 | -2345 | +42 / +74 | +2270 | c=0.50: -395 / -809 / +187 | 259 | -0.013 | -0.120 | ok |
+| LB1 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | 120/120 ($2400) | ADD | EV_JL3 | L3M | +491 / +859 | +1144 | +1575 / +2757 | +2270 | c=0.50: -456 / +1050 / +1080 | 122 | +0.044 | +0.413 | ok |
+| LB2 | cusum_28 | trend_macd.hist_turn_native {"len": 26, "width": 0.03} | 60/60 ($1200) | ADD | EV_JL3 | L6M | +706 / +1236 | -4719 | -384 / -673 | -4190 | c=1.00: +706 / -4719 / -384 | 430 | +0.003 | +0.053 | ok |
+| LB2 | cusum_28 | trend_macd.hist_turn_native {"len": 26, "width": 0.03} | 60/60 ($1200) | ADD | EV_JL3 | L3M | +1391 / +2434 | -4719 | +850 / +1488 | -4190 | c=1.00: +1391 / -4719 / +850 | 219 | +0.112 | +1.880 | ok |
 
 Labels: none yet (controls pending).
 
