@@ -1,0 +1,31 @@
+# NEW_BOOK_LAYER_PLAN - phase 3a: the new book's OWN fitted layers (W-NYENG, written 2026-11-18 ~17:35Z; order 1722Z + lead go-ahead)
+Lead books first: WP10 (NY PM, keep K7 + add) then XA3 (NY AM VWAP retest, tick_5000). Engine runs only AFTER the 435 lead-set controls/prior-year set-months clear (gate: code/th_nyeng/ny_layers_gate.py opens tag NYL by itself). Research only.
+
+## 1. What the injected book (engine tag MF1) has today and what it needs
+Today (NEW_BOOK_LAYER_FACTS.md): screen gate 'conj' (inherited from the live books), one position, day caps 12,000 / 4,800 $ (K7/M7 default, NOT sized to its stop), book give-back lock, measured slippage, stack rule. It has NO: loss cut, profit take / lock, context cut, no-trade times, own day cap, own sizer. Layers it needs = the same set the live books carry, each a SETTING fitted on the new book's own trades:
+| # | layer | live DS7 machinery that already exists | how it is attached to MF1 | new code? |
+|---|---|---|---|---|
+| L1 | profit take (take at pct of target distance after secs without a new extreme) | ev_profit takes {book: [pct, secs]} (DS7 policy lines) | add key 'MF1' to the ev_profit par of the set | NO (hook already keyed by tag) |
+| L2 | profit lock (tighten stop to entry + X once pct of target reached) | ev_profit locks {book: [[pct, X], ...]} | key 'MF1' | NO |
+| L3 | own loss cut (exit when unrealised <= -d pts; also scratch / back0 / rlock / partial / structure stop) | ec_hooks rules {book, kind flat/nft/back0/scratch/rlock/partial/struct, p} | rule with book 'MF1' | NO |
+| L4 | context cut (the same cut only in a state, e.g. fresh) | ec_hooks rules 'ctx' list | rule with ctx | NO (states available: fresh; others need the wb state) |
+| L5 | day cap sized to the book's stop (e.g. N x stop dollars) and day-done style closes | mf_inject par cap [profit, loss] (+ ev_panel cap_tl timeline) | set par; for a 120-pt stop at 1 base lot (2,400 $) the default 4,800 $ loss cap = 2 stops | NO |
+| L6 | post-stop blackout / ATR-skip | ev_panel bo {books, mins}, atr_skip {books, rel} | add MF1 to the books lists (shared mins/rel values) | NO, but shared value: needs a second ev_panel instance if the new book needs a different value |
+| L7 | no-trade times (new book's own NTZ, ET windows, e.g. data times, lunch, last minutes) | none for injected books (ignore_time_block) | NEW par ntz=[[hhmm,hhmm],...] in mf_inject2 (copy of mf_inject, identical when ntz is empty) | YES - written: code/th_nyeng/mf_inject2.py |
+| L8 | sizer: session lots, risk-matched lots, ER ladder / lot multipliers | ev_panel sess_tl [[book, from, 'a,b,c,d,e,f']]; trend_size layers (CDE sizer is inert for MF1: SB_BI index 7) | sess_tl key for MF1; whole-lot limit: base lots are integers (1 base = 2 live lots); a half-size is only reachable as a scaled column | NO (risk-matched half lots stay a scaled column) |
+| L9 | screen gate 'conj' on/off for the new book | scr_hooks gates books list | list without MF1 (variant _ACCT) | NO |
+Reuse verdict: 7 of 9 layers need NO new engine code, only MF1 keys in the existing hook parameters of the JL3 hooklist; only L7 needed new code (mf_inject2).
+
+## 2. Identity first (inert hook = the same trades as the ADD set)
+Built (WP10; XA3 next via the same builder): TL3_NYL_<cell>_ID1 take pct 9.99 | ID2 lock pct 9.99 | ID3 loss cut at 1e6 pts | ID4 context cut at 1e6 pts | ID5 own day cap = today's 12,000/4,800 through ev_panel cap_tl | ID7 mf_inject2 with ntz=[] | ID8 session lots 1,1,1,1,1,1. ID6 (blackout) is NOT inert for MF1 because the bo minutes value is shared with P7 (30), so it is tested as a real layer, not an identity cell. Test = months 202610 and 202504, trade-for-trade equal to TL3_NYW_<cell>_ADD (count, net_fee, exit names). 14 set-months, queued automatically when the controls clear (pending_l.txt). Potential trap to prove: mf_inject2 is the outermost hook (created after the inner hooks' __init__), so a layer that reads the MF1 book at init time (ev_panel cap_tl) may not see it; ID5 answers that; fallback = mf_inject2 first in the hooklist.
+
+## 3. Fit protocol (the standing selection rule)
+- Fit each layer setting on the TRAILING 6 MONTHS (202605-202610, 3M beside), one layer at a time, grid of 6-10 settings per layer (e.g. take pct 0.5-0.95 x secs 5-30; lock pct 0.5-0.8 x X; cut d at 0.5-1.0 x stop; day cap 1-4 stops; NTZ windows from the by-minute P&L of the new book), everything else at the ADD baseline ('off' = the ADD row, reference only; all live layers stay ON).
+- Metric order: stack ulcer first, worst week, max DD, then mean $/week at base and x1.75, R per week; a setting must also keep trade count >= 80% of baseline.
+- Test the chosen setting on prior years 2023 / 2024 / 2025 (amber 15-30% worse than the ADD row, red > 30% worse = not delivered) and on the 2-week rolling pick (pick on the trailing 26 weeks -> next 2 weeks) with date-shift nulls (the same 30 shifts as the ADD controls, layered).
+- Then JOINT: top 3 settings of each layer combined (grid of combos, at most ~40), picked on L6M, tested the same way. Output = one setting block per lead book + per-layer deltas, with the layer-by-layer table (what each rule added or removed in $ and ulcer).
+- Cheap pre-fit: the exit-path layers L1-L4 are first screened with the path-dependent exit harness (th_grid gexit, verified vs tape walk) on the cell's own trades so the engine only confirms the top settings (engine budget ~48 set-months per layer on the L6M months, ~290 for six layers for one book, then prior years only for the winners: 37 months each).
+- Labels as always; no label without the 30 controls (layered controls = the same layers on the date-shifted events).
+
+## 4. Order and status
+1. Controls + prior years of WP10 and XA3 (435 set-months): running. 2. Gate opens -> 14 identity set-months for WP10 -> report in MORNING.md when the first hook passes. 3. XA3 identity. 4. L1/L2/L3/L5/L7 fits for WP10 (largest expected effect: loss cut + day cap sized to the stop), then XA3. 5. Joint. 6. Spec mapping to D7 layer names for W-SPEC (take/lock = THP policy lines, cut = EarlyCut, cap = day loss cap, NTZ = no-trade set).
