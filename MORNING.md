@@ -5341,3 +5341,10 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 2026-11-18T07:57:59Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - (07:58Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label NOT FINISHED (identity pending/failed), identity {'202610': 'pending', '202504': 'pending'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
 2026-11-18 07:59:46Z W-SWB: bar swap B (P7/H7/A7/O7) loop alive; sig files 51700, sim months 44, engine set-months queued 1509 done 1721; page autopilot/DS3_BAR_SWAP_B.md, rows /mnt/l2/l2vast/_deliver/W-SWB.jsonl
+2026-11-18T08:04:21Z W-NT hourly: NT set-months landed 214 (rate 8/h since last line); identity 4/4 landed (target 04:35Z); K7 L6M cells landed 0 (target table 06:00Z; first.txt 1 lines; controls K7+M7 target 12:00Z, pf.txt 50 lines built); page autopilot/DS3_NEAR_TARGET.md; closest to live: see page section 2
+
+[S2 hourly 08:04Z] server 2: workers 28/cap 28, cell-months last hour: server-2 572, all 586; idle 0 min; cost ~$207 (38.0 h x $5.44).
+- lead 08:05Z AUTO-FILL (cores_meter, server 2 below 85% twice): dispatcher alive pid 1240823/3582268; dispatch.log LAUNCH lines in last ~10 min: 27; dispatcher walks ALL queues in order and takes any eligible line with deps already pushed (prefetch threads push the rest), so an ineligible/empty front queue cannot block it.
+08:06Z W-LA: LA cell-months done 867, jobs outstanding 22, chains 10; auto-expansions launched: 207 (cumulative new sets)
+- 2026-11-18T08:07Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 59 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
+- (wall 08:09Z) W-MD hourly: page DS3_REBUILD_S3_ENV.md W-MD sections refreshed; MBO older-day features 973 extracted (finished workers 3 of 3); engine state: identity True real evaluated ['H7_TUW10', 'H7_SUWBE', 'K7_TUWN10'] controls done []
