@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 09:43Z 11-18 (t+548.7 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 09:59Z 11-18 (t+549.0 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 95% min 86% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-18T09:43:45Z. Box: CPU 95.6%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 96% min 86% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-18T09:59:01Z. Box: CPU 99.7%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -5405,3 +5405,27 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 09:48Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 09:49Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 09:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T09:56:00Z W-GRIDA 2026-11-18T09:56Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 0 / 45 / n/a (no jobs done in last hour); (b) pass-1 level modules 0 / 3360 / n/a (no jobs done in last hour); (c) pass-2 family cells 219 / 0 / 0.0 h; (d) rest of pass 1 0 / 83614 / n/a (no jobs done in last hour); workers 52 (52 S); load 26.79; todo counts refreshed {"": 10, "_p2": 10} min ago
+- (wall 09:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:57Z) W-CH2 status: CH workers busy 0, pending exact cell-months 624, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+2026-11-18T09:58:01Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- (wall 09:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T09:58Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
+- (09:58Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label NOT FINISHED (identity pending/failed), identity {'202610': 'pending', '202504': 'pending'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
+- (wall 09:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
