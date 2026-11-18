@@ -1,4 +1,4 @@
-# SURVIVOR_COUNTS - rule-based shortlist, no top-N (W-SHORT, order 1845Z), refreshed 2026-11-18 19:08Z
+# SURVIVOR_COUNTS - rule-based shortlist, no top-N (W-SHORT, order 1845Z), refreshed 2026-11-18 19:20Z
 
 THRESHOLDS (equal risk; stop = clip(bracket multiple x row bar unit, 10, 120), plain 60/60 = 60; R = points / stop): R1 last 26 weeks (L6M) positive; R2 >= 100 trades in L6M; R3 last 13 weeks (L3M) positive; R4 persistence > 0.60 = share of 2-week windows since 2023-10 with positive P&L; R5 prior years 2023 / 24 / 25: R per week more than 30% below the cell's own L6M R per week = RED (shown, NOT delivered as a pick), 15-30% = AMBER (passes, flagged); R6 trust (brute-force tape walk) + look-ahead (6 truncation cuts) + fills >= signal + 1 s = run on every passing cell in phase 2, best first (about 5-20 CPU-s per cell; counts below are BEFORE R6). A cell gets the FIRST rule it fails; every evaluated cell stays on disk with its reason.
 W-GRIDOPS: no threshold differs from the 1845Z order. R4 = 0.60 strict (> 0.60). L3M and L6M are on net points after $4.84, equal-risk R has the same sign.
