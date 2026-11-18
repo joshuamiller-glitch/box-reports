@@ -5357,3 +5357,7 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 2026-11-18T08:27:23Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
 2026-11-18T08:27:59Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - lead 08:30Z BACKFILL (never idle): workers 13 < cap 32 for 2 checks; raised SWB quota 4 -> 8 (1492 pending lines) per user order of the queue sequence
+- (wall 08:33Z) W-PM status: load1 40.68, PM exact jobs pending 12, cells with output 59; 743 jobs wanted, 12 chains running, 1794990731; P5 page done, P8 grid np_m15_x10_y15 2898
+- (wall 08:36Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 24 (pending file), cell-months done 1979, load 37.91 36.22 34.36, epoch 1794990976
+- 2026-11-18T08:39Z W-RU DS3_RANGEUSE.md rebuilt: 74 cells scored through L6M; 6 (cell,scope) pass the tolerant gate with a drawdown cut in recent AND older windows (leads, before placebo/null); placebo/null/gain-of-(b,(c) over (a) below. No PASS claim.; next rebuild in 3 h
+- (wall 08:39Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 36.82 36.86 35.03

@@ -1,11 +1,3 @@
-2026-11-17 15:40Z | box1: busy 99%, load1 34.21, workers 27, MemAvail 88 GB | server2: busy 100%, load1 93.41, workers 94, MemAvail 1380 GB | pending box1-eligible 37393 / server2-eligible 41084 (shared queues count in both; unleased, not DONE)
-2026-11-17 15:45Z | box1: busy 97%, load1 33.87, workers 28, MemAvail 85 GB | server2: busy 100%, load1 94.83, workers 96, MemAvail 1373 GB | pending box1-eligible 37292 / server2-eligible 40968 (shared queues count in both; unleased, not DONE)
-2026-11-17 15:49Z | box1: busy 99%, load1 34.28, workers 24, MemAvail 93 GB | server2: busy 100%, load1 93.67, workers 97, MemAvail 1373 GB | pending box1-eligible 38012 / server2-eligible 41684 (shared queues count in both; unleased, not DONE)
-2026-11-17 15:50Z | box1: busy 98%, load1 32.71, workers 23, MemAvail 92 GB | server2: busy 100%, load1 94.36, workers 95, MemAvail 1377 GB | pending box1-eligible 37994 / server2-eligible 41662 (shared queues count in both; unleased, not DONE)
-2026-11-17 15:55Z | box1: busy 98%, load1 32.48, workers 25, MemAvail 91 GB | server2: busy 100%, load1 92.94, workers 92, MemAvail 1383 GB | pending box1-eligible 37900 / server2-eligible 41556 (shared queues count in both; unleased, not DONE)
-2026-11-17 15:59Z | box1: busy 99%, load1 35.99, workers 28, MemAvail 89 GB | server2: busy 100%, load1 94.07, workers 98, MemAvail 1371 GB | pending box1-eligible 37803 / server2-eligible 41449 (shared queues count in both; unleased, not DONE)
-2026-11-17 16:00Z | box1: busy 99%, load1 34.55, workers 25, MemAvail 91 GB | server2: busy 100%, load1 94.58, workers 97, MemAvail 1373 GB | pending box1-eligible 37795 / server2-eligible 41441 (shared queues count in both; unleased, not DONE)
-2026-11-17 16:05Z | box1: busy 99%, load1 34.76, workers 27, MemAvail 89 GB | server2: busy 100%, load1 94.06, workers 98, MemAvail 1377 GB | pending box1-eligible 38123 / server2-eligible 41756 (shared queues count in both; unleased, not DONE)
 2026-11-17 16:09Z | box1: busy 99%, load1 32.98, workers 27, MemAvail 90 GB | server2: busy 100%, load1 94.21, workers 98, MemAvail 1376 GB | pending box1-eligible 38005 / server2-eligible 41630 (shared queues count in both; unleased, not DONE)
 2026-11-17 16:10Z | box1: busy 92%, load1 31.79, workers 23, MemAvail 94 GB | server2: busy 100%, load1 94.56, workers 95, MemAvail 1376 GB | pending box1-eligible 37997 / server2-eligible 41621 (shared queues count in both; unleased, not DONE)
 2026-11-17 16:15Z | box1: busy 98%, load1 33.84, workers 30, MemAvail 85 GB | server2: busy 100%, load1 92.38, workers 80, MemAvail 1406 GB | pending box1-eligible 37865 / server2-eligible 41482 (shared queues count in both; unleased, not DONE)
@@ -298,3 +290,11 @@
 2026-11-18 08:25Z | box1: busy 98%, load1 35.10, workers 4, MemAvail 99 GB | server2: busy 41%, load1 26.93, workers 29, MemAvail 1317 GB | pending box1-eligible 3986 / server2-eligible 43199 (shared queues count in both; unleased, not DONE)
 2026-11-18 08:25Z | WARNING server2 below 85% busy for 32 readings in a row with jobs pending
 2026-11-18 08:25Z | AUTO-FILL step run: dispatcher alive pid 1240823/3602093
+2026-11-18 08:30Z | box1: busy 93%, load1 21.28, workers 3, MemAvail 114 GB | server2: busy 51%, load1 35.48, workers 30, MemAvail 1161 GB | pending box1-eligible 3931 / server2-eligible 43144 (shared queues count in both; unleased, not DONE)
+2026-11-18 08:30Z | WARNING server2 below 85% busy for 33 readings in a row with jobs pending
+2026-11-18 08:30Z | AUTO-FILL step run: dispatcher alive pid 1240823/3611142
+2026-11-18 08:30Z | LEAD SILENT 40 MIN (no real lead note in MORNING.md for 40 min)
+2026-11-18 08:35Z | box1: busy 99%, load1 38.59, workers 2, MemAvail 100 GB | server2: busy 51%, load1 31.46, workers 30, MemAvail 1202 GB | pending box1-eligible 3897 / server2-eligible 43110 (shared queues count in both; unleased, not DONE)
+2026-11-18 08:35Z | WARNING server2 below 85% busy for 34 readings in a row with jobs pending
+2026-11-18 08:35Z | AUTO-FILL step run: dispatcher alive pid 1240823/3618680
+2026-11-18 08:35Z | LEAD SILENT 40 MIN (no real lead note in MORNING.md for 45 min)
