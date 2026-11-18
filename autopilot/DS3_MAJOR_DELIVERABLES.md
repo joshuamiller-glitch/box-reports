@@ -1,4 +1,4 @@
-# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-18 16:18Z, every 30 min)
+# DS3_MAJOR_DELIVERABLES - best settings for the user to decide (W-DL assembler; rebuilt 2026-11-18 16:48Z, every 30 min)
 VERDICT (data ends 2026-10-31; FIRST PASS; every row is a BEST SETTING with its honest label; rows labelled LEAD-ASSEMBLED are copied by the assembler from existing pages and wait for the owner to confirm)
 
 > HEADER: trials counted = per row (see each row; ledger families CT1, RB3, RB5, ME, MF1/MF2); correction = per row (BH / White RC / controls where run, else 'not run'); in-sample vs walk-forward is stated per row (untouched-year line). Labels CONFIRMED / LEAD need engine-exact persistent-draw controls (calibrated pass rule); a missing field prints 'n/a (owner has not delivered)'. Seal untouched.
@@ -33,7 +33,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: rule pick: native SEL ulcer 22767 -> 12713, mean/wk 1366 -> 1356; grid runs one setting for all sessions (session cell read from that set); lots scale 60/stop
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **A7 x asia**  `A7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -52,7 +52,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: rule pick: native SEL ulcer 4927 -> 2403, mean/wk 671 -> 574; grid runs one setting for all sessions (session cell read from that set); lots scale 60/stop
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **U7 london**  `U7|london|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -225,7 +225,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: best available (no rule pick): native SEL ulcer 12631 -> 11488, mean/wk 31 -> 53; grid runs one setting for all sessions (session cell read from that set); lots scale 60/stop
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **K7 nypm**  `K7|nypm|levelexit`  (source: W-MD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -252,7 +252,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **K7 x london**  `K7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -265,7 +265,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **K7 x nyam**  `K7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -278,7 +278,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **K7 x nypm**  `K7|nypm|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -291,7 +291,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **M7 x london**  `M7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -304,7 +304,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **M7 x nyam**  `M7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -317,7 +317,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **U7 x asia**  `U7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -330,7 +330,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **U7 x london**  `U7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -343,7 +343,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **P7 x asia**  `P7|asia|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -356,7 +356,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **P7 x london**  `P7|london|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -369,7 +369,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **P7 x nyam**  `P7|nyam|bracket`  (source: W-S3)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -382,7 +382,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: policy line
 - Evidence: autopilot/DS3_REBUILD_S3.md; autopilot/DS3_REBUILD_S3_ENV.md
 - Caveats: no data yet
-- Updated: 2026-11-18T15:51:40Z
+- Updated: 2026-11-18T16:21:59Z
 
 **M7 nyam**  `M7|nyam|levelexit`  (source: W-MD)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -464,8 +464,8 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - Behaviour / detail: ENGINE full JL3 stack, layers left on time bars (not recomputed on the picked bar): L3M ulcer -4.5% mean/wk 15476 (3/3 months); L6M ulcer -2.9% mean/wk 18435 (6/6 months); HOLD ulcer -0.3% mean/wk 8860 (6/6 months); PRIOR ulcer -1.1% mean/wk 4893 (31/31 months); standalone: standalone only; engine swap test pending; older-year check RED
 - DS7 need: new custom BarsType: custom BarsType | scaling: size x s_vol; s_vol = trailing-20-prior-trading-date median of daily volume / R0 (R0 = median of the first 60 trading dates 2023-04..06, a unit consta
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 15:32:29 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
-- Updated: 2026-11-18 15:32:29
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 16:20:57 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-18 16:20:57
 
 **P7 x London**  `SWB|P7|London`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -479,8 +479,8 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - Behaviour / detail: ENGINE full JL3 stack, layers left on time bars (not recomputed on the picked bar): L3M ulcer -0.9% mean/wk 15820 (3/3 months); L6M ulcer +0.9% mean/wk 17574 (6/6 months); HOLD ulcer -12.6% mean/wk 8311 (6/6 months); PRIOR ulcer -21.1% mean/wk 5468 (31/31 months); standalone: standalone only; engine swap test pending; older-year check RED
 - DS7 need: new custom BarsType: custom BarsType (BetterRenko third-party) | scaling: size x s_rng (same, daily high-low range in points)
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 15:32:29 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED; engine L6M ulcer worse than today
-- Updated: 2026-11-18 15:32:29
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 16:20:57 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED; engine L6M ulcer worse than today
+- Updated: 2026-11-18 16:20:57
 
 **M7 x london**  `SWA|M7|london`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -550,8 +550,8 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - Behaviour / detail: ENGINE full JL3 stack, layers left on time bars (not recomputed on the picked bar): L3M ulcer -0.4% mean/wk 16139 (3/3 months); L6M ulcer -0.4% mean/wk 18903 (6/6 months); HOLD ulcer -0.1% mean/wk 9108 (6/6 months); PRIOR ulcer -5.5% mean/wk 4897 (31/31 months); standalone: standalone only; engine swap test pending; older-year check RED
 - DS7 need: native: native NT8 Minute bar (OnBarClose at the first print after the boundary)
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 15:32:29 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
-- Updated: 2026-11-18 15:32:29
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 16:20:57 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-18 16:20:57
 
 **U7 x london**  `SWA|U7|london`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -579,8 +579,8 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - Behaviour / detail: ENGINE full JL3 stack, layers left on time bars (not recomputed on the picked bar): L3M ulcer -1.4% mean/wk 18224 (3/3 months); L6M ulcer -1.8% mean/wk 19947 (6/6 months); HOLD ulcer +13.0% mean/wk 8301 (6/6 months); PRIOR ulcer +1.7% mean/wk 4970 (31/31 months); standalone: standalone only; engine swap test pending; older-year check RED
 - DS7 need: new custom BarsType: custom BarsType (zigzag-like; same as swing by ticks) | scaling: size x s_rng (same, daily high-low range in points)
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 15:32:29 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
-- Updated: 2026-11-18 15:32:29
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 16:20:57 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-18 16:20:57
 
 **K7 x asia**  `SWA|K7|asia`  (source: W-SWA)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -636,8 +636,8 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - Behaviour / detail: ENGINE full JL3 stack, layers left on time bars (not recomputed on the picked bar): L3M ulcer +5.2% mean/wk 16053 (3/3 months); L6M ulcer +2.9% mean/wk 17705 (6/6 months); HOLD ulcer +2.4% mean/wk 8977 (6/6 months); PRIOR ulcer +1.8% mean/wk 4409 (31/31 months); standalone: standalone only; engine swap test pending; older-year check RED
 - DS7 need: new custom BarsType: custom BarsType (volume threshold set at session start from a trailing table) | scaling: N bars per session; bar volume = trailing-20-date median volume of that session code / N
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 15:32:29 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED; engine L6M ulcer worse than today
-- Updated: 2026-11-18 15:32:29
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 16:20:57 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED; engine L6M ulcer worse than today
+- Updated: 2026-11-18 16:20:57
 
 **P7 x Asia**  `SWB|P7|Asia`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -651,8 +651,8 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - Behaviour / detail: ENGINE full JL3 stack, layers left on time bars (not recomputed on the picked bar): L3M ulcer +90.1% mean/wk 6793 (3/3 months); L6M ulcer +70.4% mean/wk 7748 (6/6 months); HOLD ulcer -29.4% mean/wk 7465 (6/6 months); PRIOR ulcer -1.1% mean/wk 3884 (31/31 months); standalone: standalone only; engine swap test pending; older-year check RED
 - DS7 need: new custom BarsType: custom BarsType (volume threshold set at session start from a trailing table) | scaling: N bars per session; bar volume = trailing-20-date median volume of that session code / N
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 15:32:29 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED; engine L6M ulcer worse than today
-- Updated: 2026-11-18 15:32:29
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 16:20:57 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED; engine L6M ulcer worse than today
+- Updated: 2026-11-18 16:20:57
 
 **H7 x Asia**  `SWB|H7|Asia`  (source: W-SWB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -666,8 +666,8 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - Behaviour / detail: ENGINE full JL3 stack, layers left on time bars (not recomputed on the picked bar): L3M ulcer -5.4% mean/wk 16102 (3/3 months); L6M ulcer -10.3% mean/wk 19165 (6/6 months); HOLD ulcer +6.9% mean/wk 9058 (6/6 months); PRIOR ulcer -1.5% mean/wk 4261 (31/31 months); standalone: standalone only; engine swap test pending; older-year check RED
 - DS7 need: new custom BarsType: custom BarsType (ZigZag-style) | scaling: none (clock/price units are absolute)
 - Evidence: autopilot/DS3_BAR_SWAP_B.md
-- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 15:32:29 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
-- Updated: 2026-11-18 15:32:29
+- Caveats: pick window 2026-05-18..2026-11-13 (trailing 6M), refit 2026-11-18 16:20:57 UTC, data end 2026-11-13, prior-year worst RED; older-year check RED
+- Updated: 2026-11-18 16:20:57
 
 ## Table 6. ENTRY CONDITIONS / SCORES (per book x session: condition or score, action skip / half / x1.5)
 Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
@@ -1682,7 +1682,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **NYAM X4_OPEN_DRIVE_DR**  `NYAM-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1696,7 +1696,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **NYAM X4_ORB_DIR_PULLBACK**  `NYAM-book-3`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1710,7 +1710,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **NYPM W7_POWER_HOUR_LOOSE**  `NYPM-book-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1724,7 +1724,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **NYPM X4_RSI2_15MIN_NYPM**  `NYPM-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1738,7 +1738,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **LONDON NQ.FADE_LV.f4d004a6**  `LONDON-book-1`  (source: W-MB)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1784,7 +1784,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **LON X4_FAILED_BREAK_BARS_LON**  `LON-book-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1798,7 +1798,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **LON R3_YM_LED_LON**  `LON-book-3`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1812,7 +1812,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **NYAM X4_OPEN_DRIVE_DR**  `NYAM-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1826,7 +1826,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **NYAM X4_ORB_DIR_PULLBACK**  `NYAM-book-alt-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1840,7 +1840,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **NYAM N2_GAP**  `NYAM-book-alt-3`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1854,7 +1854,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **NYPM W7_POWER_HOUR_LOOSE**  `NYPM-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1868,7 +1868,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **NYPM X4_RSI2_15MIN_NYPM**  `NYPM-book-alt-2`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1882,7 +1882,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **LON W11_SESSION_EXTREME_RSI14_LON**  `LON-book-alt-1`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1896,7 +1896,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **LON R3_YM_LED_LON**  `LON-book-alt-2`  (source: W-MF)
 - Label: **WEAK-BUT-POSITIVE**
@@ -1910,7 +1910,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 **LON M3_FAILED_BREAK_LON**  `LON-book-alt-3`  (source: W-MF)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -1924,7 +1924,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (event book with its own cap; market entry at signal-bar close)
 - Evidence: autopilot/DS3_MAJOR_F_NEWBOOKS.md
 - Caveats: 1-min screen with measured exit-kind agreement 85-91% vs engine; needs the engine stack rows and 30 date-shifted controls to be believed
-- Updated: 2026-11-18T15:54Z
+- Updated: 2026-11-18T16:24Z
 
 ## Table 3. LOT VECTOR (lots per book x session)
 Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >30% (outputs/CLAUDE.md)
@@ -2588,7 +2588,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (stack-level same-side loser counter per session instance + per-side entry block with timer)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md
 - Caveats: source screen; score(min ulcer improvement L6M/L3M/HOLD)=4.2%; top 3 alternatives: LS_K2_M30 4.2, LS_K2_M20_R 2.8, LS_K2_M20 1.6
-- Updated: 2026-11-18T15:56Z
+- Updated: 2026-11-18T16:27Z
 
 **DAY-DONE conditional resume**  `DAYDONE-RESUME`  (source: W-DD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -2603,7 +2603,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (shadow-trade ledger for R1/R2; day-scoped lot multiplier for R4/R6; open-P&L check for R3; side P&L counter for R5)
 - Evidence: autopilot/DS3_DAYDONE_VARIANTS.md
 - Caveats: first pass, in-sample 43 months; deltas vs the live rule (REF); beats live in L6M and HOLD
-- Updated: 2026-11-18T15:48Z
+- Updated: 2026-11-18T16:20Z
 
 **DAY-DONE setting (stack-wide)**  `DAYDONE`  (source: W-DD)
 - Label: **WEAK-BUT-POSITIVE**
@@ -2618,7 +2618,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (V9Gate: latch/duration/threshold change)
 - Evidence: autopilot/DS3_DAYDONE_VARIANTS.md
 - Caveats: first pass, in-sample 43 months; deltas vs the live rule (REF); beats live in L6M and HOLD
-- Updated: 2026-11-18T15:48Z
+- Updated: 2026-11-18T16:20Z
 
 **stack risk overlay (JL3)**  `STACKRISK`  (source: W-MC)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -2652,7 +2652,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (hook on a cut-line close that applies the existing StackCut partial-exit path to the other same-side positions in every session)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md
 - Caveats: no path-arithmetic screen is possible for exits; the result is exact-engine only
-- Updated: 2026-11-18T15:56Z
+- Updated: 2026-11-18T16:27Z
 
 **stack: extended-entry bucket (EXT_used_ST67)**  `ME-late-entry-size-target`  (source: W-ME)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -2667,7 +2667,7 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 - DS7 need: new code (feature at signal: distance from session open / 18:00 open in ATR5, VWAP sigma, share of typical session range used, chase count; lot/target multiplier)
 - Evidence: autopilot/DS3_MAJOR_E_AGAINST.md section 2b
 - Caveats: alternatives: EXT_used_TG67 -16.3, SZ_o18_atr -98.9, SZ_open_atr -98.9; target/stop pull-in cells only exist as exact runs (queued); breakeven-after-+20 not built
-- Updated: 2026-11-18T15:56Z
+- Updated: 2026-11-18T16:27Z
 
 **P7 flat stop 42 (live since 11-12)**  `FLAT|P7|42`  (source: bootstrap)
 - Label: **BEST-AVAILABLE-NOT-PROVEN**
@@ -2743,17 +2743,17 @@ Selection rule: trailing-6M pick, 2-week refit, prior years AMBER 15-30% / RED >
 ## Status block (owner files in /mnt/l2/l2vast/_deliver/)
 | owner | table | rows | bad lines | last update age | state |
 |--|--|--|--|--|--|
-| W-S3 | 1 | 14 | 0 | 27 min | ok |
-| W-MD | 1 | 31 | 0 | 30 min | ok |
-| W-MB | 2 | 7 | 0 | 1245 min | STALE (>2 h) |
-| W-MF | 2 | 16 | 0 | 25 min | ok |
-| W-MA | 3 | 20 | 0 | 1 min | ok |
-| W-MC | 4 | 2 | 0 | 1381 min | STALE (>2 h) |
-| W-ME | 4 | 3 | 0 | 22 min | ok |
-| W-DD | 4 | 2 | 0 | 30 min | ok |
-| W-SWA | 5 | 9 | 0 | 9 min | ok |
-| W-SWB | 5 | 7 | 0 | 46 min | ok |
+| W-S3 | 1 | 14 | 0 | 26 min | ok |
+| W-MD | 1 | 31 | 0 | 60 min | ok |
+| W-MB | 2 | 7 | 0 | 1275 min | STALE (>2 h) |
+| W-MF | 2 | 16 | 0 | 24 min | ok |
+| W-MA | 3 | 20 | 0 | 31 min | ok |
+| W-MC | 4 | 2 | 0 | 1411 min | STALE (>2 h) |
+| W-ME | 4 | 3 | 0 | 21 min | ok |
+| W-DD | 4 | 2 | 0 | 29 min | ok |
+| W-SWA | 5 | 9 | 0 | 39 min | ok |
+| W-SWB | 5 | 7 | 0 | 28 min | ok |
 | W-BAR | 5 | 0 | 0 | n/a | NO FILE YET |
-| W-S1R | 6 | 42 | 0 | 1101 min | STALE (>2 h) |
+| W-S1R | 6 | 42 | 0 | 1131 min | STALE (>2 h) |
 
 Bootstrap (LEAD-ASSEMBLED) rows currently shown: 13 (an owner row with the same row_id replaces them).
