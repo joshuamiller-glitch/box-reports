@@ -1,6 +1,6 @@
-# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-18 16:14Z
+# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-18 16:34Z
 
-Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 914.
+Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 1138.
 
 ## What acts on a new book in these runs (plain words; full list NEW_BOOK_LAYER_FACTS.md)
 - ON the new book: the signal-state screen gate "conj" (written for all books; it skipped 334 of ~800 signals of NA1 in 202610), one position at a time, the book day caps (loss 4,800 $ / profit 12,000 $ default; a 120-pt stop = 2,400 $ at 1 base lot, 4,800 $ at 2 live lots = one stop trips it), the book give-back lock, measured slippage, the stack rule.
@@ -16,6 +16,8 @@ Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract
 |---|---|---|---|---|---|---|---|
 | NA4 | +1158 | -8 | 10 | +3 / +703 | +1487 / -504 | 1.00 | 0.90 |
 | WA2 | +1619 | +904 | 10 | -347 / +1765 | +971 / -720 | 0.90 | 0.50 |
+| WP1 | +655 | -132 | 10 | -188 / +598 | +101 / -140 | 1.00 | 0.90 |
+| WP10 | +1516 | -206 | 10 | -464 / +868 | +191 / -589 | 1.00 | 0.90 |
 
 ## NY AM - HEADLINE: replacement
 
@@ -55,7 +57,7 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | row | set | size | L6M | L3M | 2025 | 2024 | 2023 | controls |
 |---|---|---|---|---|---|---|---|---|
 | live as-is | JL3 | - | 0 / 0 / 0 / 0 | 0 / 0 / 0 / 0 | 0 | 0 | 0 | - |
-| best single swap | NYE_NA4_RP7 | risk-matched c=0.50 | -218 / -2385 / +1927 / +221 (+386) | -282 / -2385 / +1927 / -250 (-437) | n/a | n/a | n/a | 0 |
+| best single swap | NYE_NA4_RP7 | risk-matched c=0.50 | -218 / -2385 / +1927 / +221 (+386) | -282 / -2385 / +1927 / -250 (-437) | n/a | +45 / +2708 / +3373 / +341 (+597) | +3453 / -3388 / -5952 / +95 (+166) | 0 |
 | best whole-session replacement | NYE_C3_NYAM_NA4_WA2_NA6 | risk-matched c=1.67 | +4503 / -14235 / -15729 / +1726 (+3020) | +6687 / -14235 / -15729 / -422 (-738) | n/a | n/a | n/a | 0 |
 | best mixed (keep best live book + new) | NYE_D2_NYAM_NA4_NA6 | risk-matched c=2.25 | +5773 / -18315 / -18927 / +1509 (+2641) | +8909 / -18315 / -18927 / +70 (+123) | n/a | n/a | n/a | 0 |
 (Prior-year windows are queued only for the headline sets after the L6M triage; "n/a" = not run yet. Controls = date-shift sets of the same cell run: 0 so far.)
@@ -102,6 +104,9 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | XA2 | renko_10 | momentum_mvote.v3of5_native | L6M | +44 (1386 tr) | +19579 (651 tr) | +2918 | blocked: inTrade 592; blocked: SCR gate conj 450; blocked: dayHalt 305; entries 96; exit: Target 48; exit: Stop 36; exit note: stack rule Asia-only, no cut 36 |
 | XA2 | renko_10 | momentum_mvote.v3of5_native | L3M | -4706 (471 tr) | +2802 (261 tr) | +3030 |  |
 | XA4 | pnf_7 | pullback_st.st | L3M | -5342 (313 tr) | -4100 (189 tr) | -6986 | blocked: SCR gate conj 234; entries 189; blocked: inTrade 181; exit: Target 85; exit: Stop 84; exit note: stack rule Asia-only, no cut 84; blocked: dayHalt 15 |
+| XA4 | pnf_7 | pullback_st.st | L6M | +17751 (803 tr) | +7154 (431 tr) | -13742 | blocked: SCR gate conj 573; entries 431; blocked: inTrade 349; exit: Target 200; exit: Stop 187; exit note: stack rule Asia-only, no cut 187; blocked: dayHalt 82 |
+| XA5 | kagi_28 | book_ofi.follow_sm | L6M | +19761 (1246 tr) | +47374 (648 tr) | -1969 | blocked: SCR gate conj 1302; blocked: inTrade 998; entries 648; exit: Target 313; blocked: dayHalt 294; exit: Stop 270; exit note: stack rule Asia-only, no cut 270 |
+| XA5 | kagi_28 | book_ofi.follow_sm | L3M | -52558 (458 tr) | -31913 (261 tr) | -1797 | blocked: SCR gate conj 564; blocked: inTrade 521; entries 261; exit: Stop 125; exit note: stack rule Asia-only, no cut 125; exit: Target 100; blocked: dayHalt 61 |
 
 ### All sets (detail)
 | cell | variant | window | d ulcer (x1 / x1.75) | d worst wk | d mean $/wk (x1 / x1.75) | d max DD | RISK-MATCHED c: d ulcer / d worst / d mean | new-book trades | R/trade | R/wk | corr daily w/ K7 / P7 / M7 | flag vs JL3 |
@@ -172,6 +177,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | NA4 | RM7 | L6M | +152 / +265 | -5177 | +751 / +1315 | -1679 | c=0.50: +137 / -4032 / +69 | 314 | +0.049 | +0.568 | +0.07 / +0.09 / +0.24 | ok |
 | NA4 | RP7 | L3M | -401 / -701 | -3530 | +89 / +156 | +2162 | c=0.50: -282 / -2385 / -250 | 137 | +0.027 | +0.283 | -0.02 / +0.07 / +0.07 | ok |
 | NA4 | RP7 | L6M | -294 / -514 | -3530 | +924 / +1617 | +2162 | c=0.50: -218 / -2385 / +221 | 316 | +0.050 | +0.586 | +0.08 / +0.09 / +0.25 | ok |
+| NA4 | RP7 | Y2023 | +5588 / +9779 | -5257 | +611 / +1069 | -11037 | c=0.50: +3453 / -3388 / +95 | 493 | +0.034 | +0.430 | -0.07 / -0.02 / -0.06 | AMBER |
+| NA4 | RP7 | Y2024 | +817 / +1430 | +2629 | +361 / +632 | -3068 | c=0.50: +45 / +2708 / +341 | 633 | +0.001 | +0.016 | -0.00 / +0.04 / +0.03 | ok |
 | NA4:NA6 | C2 | L3M | +5014 / +8774 | -9572 | -1559 / -2728 | -12302 | c=2.50: +10780 / -20063 / -288 | 0 | +nan | +0.353 | -0.30 / +0.07 / +0.02 | RED |
 | NA4:NA6 | C2 | L6M | +3087 / +5402 | -9572 | -82 / -143 | -12302 | c=2.50: +7123 / -20063 / +1363 | 0 | +nan | +0.401 | -0.07 / +0.11 / +0.15 | RED |
 | NA4:NA6 | D2 | L3M | +4271 / +7474 | -9572 | -989 / -1730 | -10080 | c=2.25: +8909 / -18315 / +70 | 0 | +nan | +0.353 | -0.30 / +0.07 / +0.02 | RED |
@@ -285,6 +292,10 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | XA3 | ADD | L6M | -262 / -458 | +1134 | +1965 / +3439 | +2888 | c=1.00: -262 / +1134 / +1965 | 383 | +0.125 | +1.767 | +0.15 / +0.08 / +0.16 | ok |
 | XA4 | ADD | L3M | +97 / +169 | -2550 | -853 / -1492 | +1064 | c=1.00: +97 / -2550 / -853 | 189 | -0.018 | -0.263 | +0.15 / +0.06 / +0.15 | ok |
 | XA4 | ADD | L6M | +115 / +200 | -2550 | -244 / -427 | +1064 | c=1.00: +115 / -2550 / -244 | 431 | +0.014 | +0.221 | +0.13 / +0.12 / +0.02 | ok |
+| XA5 | ADD | L3M | +4386 / +7675 | -7571 | -2593 / -4538 | -12500 | c=1.00: +4386 / -7571 / -2593 | 261 | -0.102 | -2.046 | +0.06 / +0.07 / +0.19 | RED |
+| XA5 | ADD | L6M | +2671 / +4674 | -7571 | +1682 / +2943 | -12500 | c=1.00: +2671 / -7571 / +1682 | 648 | +0.061 | +1.462 | +0.00 / +0.04 / +0.12 | RED |
+| XA6 | ADD | L3M | -354 / -620 | +4374 | +740 / +1296 | +2889 | c=1.00: -354 / +4374 / +740 | 219 | +0.063 | +1.067 | +0.33 / +0.13 / +0.09 | ok |
+| XA6 | ADD | L6M | -379 / -663 | +4374 | +1774 / +3104 | +2889 | c=1.00: -379 / +4374 / +1774 | 533 | +0.077 | +1.511 | +0.30 / +0.14 / +0.18 | ok |
 
 ## NY PM - HEADLINE: replacement
 
@@ -395,6 +406,27 @@ Reference row (not a deliverable) "all live NY PM books OFF" (engine set TL3_NYE
 | NP6 | RK7 | L6M | +733 / +1283 | -3009 | -565 / -988 | -4983 | c=1.14: +861 / -3091 / -529 | 85 | +0.075 | +0.236 | +0.21 / n/a / n/a | AMBER |
 | WP1 | ALL | L3M | +16 / +29 | -719 | +9 / +16 | +621 | c=2.00: -70 / +997 / +265 | 83 | +0.033 | +0.213 | -0.09 / n/a / n/a | ok |
 | WP1 | ALL | L6M | +20 / +34 | -719 | +53 / +93 | +621 | c=2.00: -10 / +997 / +919 | 198 | +0.098 | +0.721 | +0.08 / n/a / n/a | ok |
+| WP1 | ALL | Y2023 | +498 / +872 | +1628 | +315 / +551 | -5144 | c=2.00: -973 / -1688 / +809 | 257 | +0.063 | +0.412 | +0.03 / n/a / n/a | ok |
+| WP1 | CT14m | L3M | +155 / +272 | -1470 | -599 / -1048 | -13 | c=1.00: +155 / -1470 / -599 | 69 | -0.059 | -0.313 | +0.03 / n/a / n/a | ok |
+| WP1 | CT14m | L6M | +169 / +295 | -1470 | -252 / -440 | -13 | c=1.00: +169 / -1470 / -252 | 164 | -0.020 | -0.120 | +0.06 / n/a / n/a | ok |
+| WP1 | CT14p | L3M | +502 / +878 | -5494 | -2312 / -4046 | -467 | c=1.00: +502 / -5494 / -2312 | 79 | -0.292 | -1.774 | -0.27 / n/a / n/a | ok |
+| WP1 | CT14p | L6M | +262 / +459 | -5494 | -828 / -1449 | -467 | c=1.00: +262 / -5494 / -828 | 191 | -0.087 | -0.616 | -0.04 / n/a / n/a | ok |
+| WP1 | CT21m | L3M | -227 / -398 | +3133 | -1032 / -1806 | +1245 | c=1.00: -227 / +3133 / -1032 | 66 | -0.122 | -0.620 | +0.02 / n/a / n/a | ok |
+| WP1 | CT21m | L6M | -140 / -245 | +3133 | -1473 / -2578 | +1245 | c=1.00: -140 / +3133 / -1473 | 167 | -0.180 | -1.112 | -0.08 / n/a / n/a | ok |
+| WP1 | CT21p | L3M | +537 / +940 | +1216 | -50 / -87 | -1600 | c=1.00: +537 / +1216 / -50 | 83 | +0.023 | +0.144 | -0.08 / n/a / n/a | ok |
+| WP1 | CT21p | L6M | +271 / +475 | +1216 | +496 / +868 | -1600 | c=1.00: +271 / +1216 / +496 | 199 | +0.068 | +0.503 | -0.06 / n/a / n/a | ok |
+| WP1 | CT28m | L3M | +779 / +1363 | +3133 | +331 / +579 | -3894 | c=1.00: +779 / +3133 / +331 | 73 | +0.039 | +0.219 | -0.15 / n/a / n/a | ok |
+| WP1 | CT28m | L6M | +415 / +727 | +3133 | +323 / +566 | -3894 | c=1.00: +415 / +3133 / +323 | 172 | +0.038 | +0.242 | -0.01 / n/a / n/a | ok |
+| WP1 | CT28p | L3M | +221 / +386 | +0 | -417 / -729 | -1270 | c=1.00: +221 / +0 / -417 | 72 | -0.032 | -0.175 | -0.04 / n/a / n/a | ok |
+| WP1 | CT28p | L6M | +179 / +313 | +0 | -417 / -730 | -1270 | c=1.00: +179 / +0 / -417 | 173 | -0.041 | -0.264 | -0.04 / n/a / n/a | ok |
+| WP1 | CT35m | L3M | -68 / -119 | +136 | -125 / -219 | +1136 | c=1.00: -68 / +136 / -125 | 51 | -0.003 | -0.012 | +0.17 / n/a / n/a | ok |
+| WP1 | CT35m | L6M | -9 / -17 | +136 | -124 / -218 | +1136 | c=1.00: -9 / +136 / -124 | 176 | -0.009 | -0.059 | +0.15 / n/a / n/a | ok |
+| WP1 | CT35p | L3M | -191 / -335 | -804 | -486 / -851 | -0 | c=1.00: -191 / -804 / -486 | 70 | -0.041 | -0.219 | -0.16 / n/a / n/a | ok |
+| WP1 | CT35p | L6M | -128 / -224 | -804 | -102 / -178 | +0 | c=1.00: -128 / -804 / -102 | 178 | -0.006 | -0.040 | -0.08 / n/a / n/a | ok |
+| WP1 | CT7m | L3M | -38 / -67 | +1335 | +1778 / +3112 | -220 | c=1.00: -38 / +1335 / +1778 | 78 | +0.245 | +1.469 | -0.03 / n/a / n/a | ok |
+| WP1 | CT7m | L6M | +34 / +59 | +1335 | +598 / +1047 | -220 | c=1.00: +34 / +1335 / +598 | 166 | +0.080 | +0.492 | -0.05 / n/a / n/a | ok |
+| WP1 | CT7p | L3M | -245 / -428 | +836 | -920 / -1610 | +1395 | c=1.00: -245 / +836 / -920 | 90 | -0.106 | -0.734 | -0.46 / n/a / n/a | ok |
+| WP1 | CT7p | L6M | +32 / +55 | -375 | -773 / -1353 | +1395 | c=1.00: +32 / -375 / -773 | 170 | -0.100 | -0.628 | -0.38 / n/a / n/a | ok |
 | WP1 | RK7 | L3M | +16 / +29 | -719 | +9 / +16 | +621 | c=1.00: +16 / -719 / +9 | 83 | +0.033 | +0.213 | -0.09 / n/a / n/a | ok |
 | WP1 | RK7 | L6M | +20 / +34 | -719 | +53 / +93 | +621 | c=1.00: +20 / -719 / +53 | 198 | +0.098 | +0.721 | +0.08 / n/a / n/a | ok |
 | WP1 | RK7 | Y2023 | +498 / +872 | +1628 | +315 / +551 | -5144 | c=1.00: +498 / +1628 / +315 | 257 | +0.063 | +0.412 | +0.03 / n/a / n/a | ok |
@@ -404,6 +436,26 @@ Reference row (not a deliverable) "all live NY PM books OFF" (engine set TL3_NYE
 | WP1 | ADD | L6M | -132 / -231 | +1716 | +655 / +1146 | +2390 | c=1.00: -132 / +1716 / +655 | 196 | +0.075 | +0.544 | +0.08 / n/a / n/a | ok |
 | WP10 | ALL | L3M | +181 / +316 | -2034 | +1234 / +2160 | -3029 | c=1.00: +181 / -2034 / +1234 | 111 | +0.072 | +0.617 | -0.12 / n/a / n/a | ok |
 | WP10 | ALL | L6M | +188 / +329 | -2034 | +661 / +1156 | -3029 | c=1.00: +188 / -2034 / +661 | 228 | +0.073 | +0.614 | -0.15 / n/a / n/a | ok |
+| WP10 | CT14m | L3M | +209 / +366 | +2893 | -287 / -501 | +1091 | c=0.50: +1 / +1915 / -86 | 99 | -0.022 | -0.167 | +0.04 / n/a / n/a | ok |
+| WP10 | CT14m | L6M | +129 / +226 | +2893 | +207 / +362 | +1091 | c=0.50: +0 / +1915 / +131 | 226 | +0.008 | +0.063 | -0.08 / n/a / n/a | ok |
+| WP10 | CT14p | L3M | -131 / -228 | +3666 | +150 / +263 | +10 | c=0.50: -108 / +1833 / +121 | 99 | +0.003 | +0.024 | +0.06 / n/a / n/a | ok |
+| WP10 | CT14p | L6M | +280 / +490 | -2135 | +89 / +155 | +10 | c=0.50: +52 / +1092 / +104 | 216 | -0.002 | -0.013 | +0.12 / n/a / n/a | ok |
+| WP10 | CT21m | L3M | +227 / +397 | -2479 | -2391 / -4185 | -9 | c=0.50: +50 / -1239 / -1379 | 90 | -0.122 | -0.843 | +0.09 / n/a / n/a | ok |
+| WP10 | CT21m | L6M | +239 / +419 | -2479 | -712 / -1245 | -9 | c=0.50: +71 / -1239 / -418 | 229 | -0.029 | -0.245 | -0.13 / n/a / n/a | ok |
+| WP10 | CT21p | L3M | +84 / +147 | +4216 | -681 / -1191 | +906 | c=0.50: +23 / +2108 / -386 | 98 | -0.033 | -0.245 | +0.19 / n/a / n/a | ok |
+| WP10 | CT21p | L6M | +188 / +329 | +4216 | -623 / -1089 | +906 | c=0.50: +28 / +2108 / -333 | 226 | -0.029 | -0.241 | -0.03 / n/a / n/a | ok |
+| WP10 | CT28m | L3M | +227 / +396 | -4369 | -596 / -1043 | +363 | c=0.50: -165 / -2185 / -282 | 90 | -0.038 | -0.262 | -0.35 / n/a / n/a | ok |
+| WP10 | CT28m | L6M | +98 / +171 | -4369 | -212 / -371 | +363 | c=0.50: -121 / -2185 / -98 | 218 | -0.012 | -0.095 | -0.21 / n/a / n/a | ok |
+| WP10 | CT28p | L3M | -1208 / -2115 | +2117 | +123 / +214 | +5021 | c=0.50: -643 / +1058 / +61 | 113 | +0.006 | +0.051 | -0.06 / n/a / n/a | ok |
+| WP10 | CT28p | L6M | -589 / -1030 | +2117 | -788 / -1378 | +5021 | c=0.50: -365 / +1058 / -367 | 268 | -0.035 | -0.350 | -0.10 / n/a / n/a | ok |
+| WP10 | CT35m | L3M | -552 / -967 | +116 | -699 / -1224 | +2101 | c=0.50: -272 / +58 / -393 | 67 | -0.049 | -0.255 | +0.13 / n/a / n/a | ok |
+| WP10 | CT35m | L6M | -123 / -215 | -805 | -757 / -1326 | +2101 | c=0.50: -75 / +58 / -400 | 206 | -0.039 | -0.298 | +0.06 / n/a / n/a | ok |
+| WP10 | CT35p | L3M | +955 / +1672 | -5204 | +593 / +1037 | -4037 | c=0.50: +248 / -2602 / +193 | 93 | +0.047 | +0.333 | -0.19 / n/a / n/a | ok |
+| WP10 | CT35p | L6M | +507 / +887 | -5204 | +868 / +1519 | -4037 | c=0.50: +88 / -2602 / +384 | 241 | +0.045 | +0.403 | +0.06 / n/a / n/a | ok |
+| WP10 | CT7m | L3M | +255 / +446 | -5259 | +749 / +1310 | +278 | c=0.50: -156 / -2629 / +282 | 96 | +0.053 | +0.389 | +0.05 / n/a / n/a | ok |
+| WP10 | CT7m | L6M | +195 / +341 | -5259 | -306 / -536 | +278 | c=0.50: -107 / -2629 / -197 | 221 | -0.011 | -0.091 | -0.03 / n/a / n/a | ok |
+| WP10 | CT7p | L3M | +1146 / +2005 | -5914 | -1325 / -2319 | -2442 | c=0.50: +241 / -2957 / -697 | 102 | -0.067 | -0.524 | +0.04 / n/a / n/a | ok |
+| WP10 | CT7p | L6M | +661 / +1157 | -5914 | -1298 / -2272 | -2442 | c=0.50: +87 / -2957 / -628 | 223 | -0.068 | -0.559 | -0.17 / n/a / n/a | ok |
 | WP10 | RK7 | L3M | +181 / +316 | -2034 | +1234 / +2160 | -3029 | c=0.50: +162 / -2234 / +494 | 111 | +0.072 | +0.617 | -0.12 / n/a / n/a | ok |
 | WP10 | RK7 | L6M | +188 / +329 | -2034 | +661 / +1156 | -3029 | c=0.50: +138 / -2234 / -76 | 228 | +0.073 | +0.614 | -0.15 / n/a / n/a | ok |
 | WP10 | ADD | L3M | -372 / -652 | +401 | +1569 / +2746 | -285 | c=0.50: -246 / +201 / +739 | 110 | +0.082 | +0.692 | -0.12 / n/a / n/a | ok |
@@ -419,6 +471,8 @@ Reference row (not a deliverable) "all live NY PM books OFF" (engine set TL3_NYE
 | WP11 | RK7 | L6M | +31 / +55 | -3619 | -467 / -818 | -704 | c=1.00: +31 / -3619 / -467 | 110 | +0.071 | +0.288 | +0.15 / n/a / n/a | ok |
 | WP11 | ADD | L3M | +11 / +19 | -1185 | -23 / -40 | +1051 | c=1.00: +11 / -1185 / -23 | 49 | +0.020 | +0.076 | +0.05 / n/a / n/a | ok |
 | WP11 | ADD | L6M | -95 / -167 | -1185 | +290 / +508 | +1051 | c=1.00: -95 / -1185 / +290 | 110 | +0.071 | +0.288 | +0.15 / n/a / n/a | ok |
+| WP1:WP10 | C2 | L3M | -402 / -703 | +4616 | -410 / -718 | -588 | c=0.67: -330 / +2266 / -356 | 0 | +nan | -0.091 | +0.13 / n/a / n/a | ok |
+| WP1:WP10 | P2 | L3M | -339 / -593 | +6644 | -75 / -132 | -70 | c=1.00: -184 / +3526 / -84 | 0 | +nan | +0.014 | +0.14 / n/a / n/a | ok |
 | WP2 | ALL | L3M | -57 / -100 | +901 | +165 / +288 | -1153 | c=1.33: +3 / +2013 / +302 | 64 | +0.046 | +0.228 | +0.14 / n/a / n/a | ok |
 | WP2 | ALL | L6M | +132 / +232 | +901 | -827 / -1447 | -1153 | c=1.33: +209 / +2013 / -832 | 145 | -0.002 | -0.008 | +0.23 / n/a / n/a | ok |
 | WP2 | RK7 | L3M | -57 / -100 | +901 | +165 / +288 | -1153 | c=0.67: -103 / -211 / +28 | 64 | +0.046 | +0.228 | +0.14 / n/a / n/a | ok |

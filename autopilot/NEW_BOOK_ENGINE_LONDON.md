@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-18 16:00Z
+# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-18 16:30Z
 
 **Which rules act on a new book in these runs (plain words; from code/th_nyeng + autopilot/NEW_BOOK_LAYER_FACTS.md; London = same machinery as NY):** the new book (engine tag MF1) gets: its own bracket, the London session window, flat at session end, one position at a time, its own day cap (loss 4,800 / profit 12,000 $; a 120-pt stop = $2,400 at 1 base lot), a generic book give-back lock, measured slippage, the stack rule (an Asia-entered book that stops cuts others) and account-level rules. **The signal-state "conj" screen gate (written for ALL books) also blocks ~40% of its signals**, so the engine row is NOT the bare screen number; variants _BARE (screen gate off, book day caps off) and _ACCT (screen gate off, account day caps on) are built for the cells listed in the bridge section. The live-book layers (no-trade zones, policy take / near-target latch / profit locks / target shave, trade-health and context cuts) are named-book rules and do NOT act on the new book. Fitted-to-this-book layers (variant iii) are not built yet.
 
@@ -41,14 +41,14 @@
 | whole-session replacement (all 4 live London books OFF; ALL = one cell, C2/C3 = best 2/3 cells) | not landed yet | | | | | | 0 |
 | mixed (keep best live London book, replace the rest with the best 1-2 new books) | not landed yet | | | | | | 0 |
 
-Triage (ADD L6M standalone < 0 AND d mean < 0 = skipped, documented): LA1: queued: RK7,RM7,RU7,RP7,ALL (standalone $21914, d mean 1447); LA2: queued: RK7,RM7,RU7,RP7,ALL (standalone $18397, d mean 641); LA3: skipped: ADD L6M clearly negative (standalone $-22092, d mean $/wk -1294); LA4: queued: RK7,RM7,RU7,RP7,ALL (standalone $38249, d mean 1191); LA5: queued: RK7,RM7,RU7,RP7,ALL (standalone $59586, d mean 1902)
-Combos: {"key": "LA5,LA1|LA5,LA1,LA2|P7|LA5", "sets": ["TL3_LON_C2_LA5_LA1", "TL3_LON_C3_LA5_LA1_LA2", "TL3_LON_D1_P7_LA5", "TL3_LON_D2_P7_LA5_LA1"]}
+Triage (ADD L6M standalone < 0 AND d mean < 0 = skipped, documented): LA1: queued: RK7,RM7,RU7,RP7,ALL (standalone $21914, d mean 1447); LA2: queued: RK7,RM7,RU7,RP7,ALL (standalone $18397, d mean 641); LA3: skipped: ADD L6M clearly negative (standalone $-22092, d mean $/wk -1294); LA4: queued: RK7,RM7,RU7,RP7,ALL (standalone $38249, d mean 1191); LA5: queued: RK7,RM7,RU7,RP7,ALL (standalone $59586, d mean 1902); LA6: queued: RK7,RM7,RU7,RP7,ALL (standalone $15618, d mean 720); WL1: skipped: ADD L6M clearly negative (standalone $-1581, d mean $/wk -221)
+Combos: {"key": "LA5,LA1|LA5,LA1,LA6|P7|LA5", "sets": ["TL3_LON_C2_LA5_LA1", "TL3_LON_C3_LA5_LA1_LA6", "TL3_LON_D1_P7_LA5", "TL3_LON_D2_P7_LA5_LA1"]}
 
 ## Per-cell ADD / ADDM rows
 Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot dollars at $4.84 RT/contract proxy plus an x1.75 live-lot column; deltas = WITH candidate minus the reference on the same months; ulcer and worst week FIRST, then mean $/week. ADD = new book at 1 base lot (2 live lots); R* = the live London book (K7/M7/U7/P7) suppressed in London and replaced; ADDM = ADD plus the confirmed setting M7 London lots 4 live -> 0 (ev_panel, = TL3_CT_JL3_N_M7L) and is compared with TL3_CT_JL3_N_M7L (the base alternative: the stack without M7 London) and with JL3.
 **EQUAL RISK (1447Z):** risk-matched c = 60/stop pts; shown as reference + c x the new book daily P&L (exact when the book does not change other books through caps/locks); wide (120-clip) rows are judged on the same-bracket null, not marked down. Day cap: MF1 loss cap $4,800/day: one 120-pt stop = $2,400 at 1 base lot (2 stops trip), $4,800 at 2 live lots (ONE stop trips).
 **Identity of the M7-London mechanism (TL3_LON_ID = inert event + M7L0 vs TL3_CT_JL3_N_M7L):** 202610: PASS (645 trades, net 47685.32); 202504: PASS (575 trades, net 53447.62). JL3 identity of the injection (TL3_NYE_ID, W-NYENG): 202610 691 / 37,159.82, 202504 637 / 41,239.76.
-**Set-months done:** 33 of 361 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
+**Set-months done:** 45 of 391 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
 
 | cell | bar | trigger | stop/tgt pts ($ stop per base lot) | variant | reference | window | d ulcer x1 / x1.75 | d worst wk x1 | d mean $/wk x1 / x1.75 | d maxDD x1 | RISK-MATCHED c: d ulcer / d worst / d mean | trades | R/trade | R/wk | flag vs ref |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -62,6 +62,10 @@ Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot do
 | LA4 | time_m_5 | levels_vwap.reject_native {"tol": 1.0, "conf": "body"} | 120/120 ($2400) | ADD | EV_JL3 | L3M | -379 / -664 | +415 | +1704 / +2982 | -211 | c=0.50: -395 / +536 / +562 | 96 | +0.129 | +0.952 | ok |
 | LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | ADD | EV_JL3 | L6M | -151 / -265 | +1434 | +1902 / +3328 | +3529 | c=0.50: -138 / +1081 / +798 | 194 | +0.128 | +0.920 | ok |
 | LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | ADD | EV_JL3 | L3M | -295 / -517 | +2020 | +1674 / +2929 | +3529 | c=0.50: -283 / +1397 / +463 | 94 | +0.139 | +1.009 | ok |
+| LA6 | tick_1300 | levels_opens.reject_native {"tol": 1.0, "conf": "close"} | 120/120 ($2400) | ADD | EV_JL3 | L6M | +471 / +824 | -14141 | +720 / +1260 | +623 | c=0.50: -91 / -6707 / +431 | 175 | +0.037 | +0.241 | ok |
+| LA6 | tick_1300 | levels_opens.reject_native {"tol": 1.0, "conf": "close"} | 120/120 ($2400) | ADD | EV_JL3 | L3M | -805 / -1409 | -236 | +2495 / +4366 | +623 | c=0.50: -757 / +244 / +1468 | 88 | +0.126 | +0.856 | ok |
+| WL1 | rng_28 | levels_vwap_bands.break_native {"n": 1, "k": 0.5} | 90/90 ($1800) | ADD | EV_JL3 | L6M | +2575 / +4506 | -6363 | -221 / -388 | -12694 | c=0.67: +2045 / -5728 / -202 | 244 | -0.004 | -0.033 | RED |
+| WL1 | rng_28 | levels_vwap_bands.break_native {"n": 1, "k": 0.5} | 90/90 ($1800) | ADD | EV_JL3 | L3M | +4050 / +7088 | -6363 | -658 / -1151 | -12694 | c=0.67: +3372 / -5728 / -782 | 121 | +0.022 | +0.207 | RED |
 
 Labels: none yet (controls pending).
 
