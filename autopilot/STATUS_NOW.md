@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-18 15:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 15:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-18 15:00Z | box1: busy 99%, load1 38.57, workers 11, MemAvail 39 GB | server2: busy 100%, load1 90.34, workers 30, MemAvail 1317 GB | pending box1-eligible 1832 / server2-eligible 41045 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-18 15:15Z | box1: busy 100%, load1 40.93, workers 6, MemAvail 53 GB | server2: busy 100%, load1 93.88, workers 28, MemAvail 1316 GB | pending box1-eligible 1972 / server2-eligible 41185 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-18 15:00Z
+2026-11-18 15:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 15:00Z | box1: busy 99%, load1 38.57, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 39.5 GB; live reservations 0 (0 GB); workers 11, of which TP-adopted 11 (RSS 22.1 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 39.09, 40.19, 42.66
-  by tag: NYE quota 16 running 3 hungry True RSS 5.2 GB PSS 4.2 GB; NYW quota 8 running 1 hungry True RSS 2.2 GB PSS 1.6 GB; LON quota 8 running 5 hungry True RSS 10.7 GB PSS 9.0 GB; P7L quota 4 running 2 hungry True RSS 4.0 GB PSS 2.9 GB
-  cell-months finished last hour (DONE markers): 391
-  top running jobs: TL3_LON_LA1_ADD (x6);TL3_P7L_CHP_S25 (x2);TL3_P7L_CHP_S23 (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 90.86, 95.04, 88.51|/dev/md2         28T  1.1T   27T   4% /mnt/l2|59|
+Server 1 (this box): MemAvail 51.7 GB; live reservations 5 (5 GB); workers 6, of which TP-adopted 6 (RSS 9.3 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 41.10, 41.94, 41.85
+  by tag: NYE quota 16 running 2 hungry True RSS 1.8 GB PSS 1.7 GB; NYW quota 8 running 3 hungry True RSS 5.6 GB PSS 4.6 GB; ORB quota 4 running 1 hungry True RSS 1.9 GB PSS 1.8 GB
+  cell-months finished last hour (DONE markers): 453
+  top running jobs: TL3_NYE_NA5_BARE (x6);TL3_NYW_WA9_ADD (x2);TL3_NYW_WA6_ADD (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 92.89, 90.22, 89.23|/dev/md2         28T  1.1T   27T   4% /mnt/l2|52|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,6 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 90.86, 95.04, 88.51|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261118_1333Z_TODAY-new-book-shortlist-all-four-sessions.md 20261118_1415Z_NY-FIRST-build-specs-by-1900Z.md 20261118_1447Z_wide-brackets-are-fine-judge-on-equal-risk.md 20261118_1450Z_LONDON-second-same-treatment-as-NY.md 20261118_1500Z_NY-REPLACE-whole-session-rows.md
-- lead 14:58Z INBOX 20261118_1500Z_NY-REPLACE-whole-session-rows.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
-- 14:58Z INBOX 20261118_1500Z_NY-REPLACE-whole-session-rows.md received (accepted, research only): replacement becomes the headline: live-session baseline per b
+20261118_1415Z_NY-FIRST-build-specs-by-1900Z.md 20261118_1447Z_wide-brackets-are-fine-judge-on-equal-risk.md 20261118_1450Z_LONDON-second-same-treatment-as-NY.md 20261118_1500Z_NY-REPLACE-whole-session-rows.md 20261118_1505Z_new-books-which-layers-and-bare-vs-engine.md
