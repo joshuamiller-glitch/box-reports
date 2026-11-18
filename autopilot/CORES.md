@@ -1,9 +1,3 @@
-# MACHINES (order 1830Z, checked 2026-11-18 18:35Z): all four are compute pool only; rs4-metal-xlarge = AMD EPYC 9554P 64-core, 1 socket, 1.5 TB RAM
-# box 1 (London, this machine): 32 threads (lead, engine + light grid); server 2 (Dallas, 207.188.7.103, rs4-metal-xlarge-dal-1): 64 threads, SMT OFF in firmware (smt/control = notsupported, 1 thread per core); A (Frankfurt, 109.94.96.39, rs4-metal-xlarge-fra-1): 128 threads (2 per core); B (Singapore, 206.223.224.21, rs4-metal-xlarge-sgp-1): 128 threads (2 per core)
-# no cpuset / cgroup / taskset limit on server 2 (affinity mask all 64, cpuset.cpus.effective 0-63): it really is 64 threads
-2026-11-18 07:35Z | box1: busy 95%, load1 29.85, workers 2, MemAvail 79 GB | server2: busy 50%, load1 31.53, workers 29, MemAvail 1219 GB | pending box1-eligible 3173 / server2-eligible 42386 (shared queues count in both; unleased, not DONE)
-2026-11-18 07:35Z | WARNING server2 below 85% busy for 22 readings in a row with jobs pending
-2026-11-18 07:35Z | AUTO-FILL step run: dispatcher alive pid 1240823/3551605
 2026-11-18 07:35Z | LEAD SILENT 40 MIN (no real lead note in MORNING.md for 45 min)
 2026-11-18 07:40Z | box1: busy 95%, load1 31.75, workers 4, MemAvail 83 GB | server2: busy 43%, load1 26.15, workers 29, MemAvail 1319 GB | pending box1-eligible 3117 / server2-eligible 42330 (shared queues count in both; unleased, not DONE)
 2026-11-18 07:40Z | WARNING server2 below 85% busy for 23 readings in a row with jobs pending
@@ -301,3 +295,6 @@
 2026-11-18 18:15Z | box1: busy 100%, load1 49.71, workers 12, MemAvail 61 GB | server2: busy 100%, load1 91.82, workers 13, MemAvail 1284 GB | pending box1-eligible 1894 / server2-eligible 41107 (shared queues count in both; unleased, not DONE)
 2026-11-18 18:20Z | box1: busy 100%, load1 42.79, workers 10, MemAvail 45 GB | server2: busy 100%, load1 92.05, workers 14, MemAvail 1272 GB | pending box1-eligible 1866 / server2-eligible 41079 (shared queues count in both; unleased, not DONE)
 2026-11-18 18:25Z | box1: busy 100%, load1 52.78, workers 9, MemAvail 41 GB | server2: busy 100%, load1 92.66, workers 14, MemAvail 1274 GB | pending box1-eligible 1844 / server2-eligible 41057 (shared queues count in both; unleased, not DONE)
+2026-11-18 18:30Z | box1: busy 100%, load1 40.28, workers 13, MemAvail 38 GB | server2: busy 100%, load1 187.75, workers 14, MemAvail 1239 GB | pending box1-eligible 1823 / server2-eligible 41036 (shared queues count in both; unleased, not DONE)
+2026-11-18 18:31Z | box1: busy 100%, load1 49.98, workers 11, MemAvail 43 GB | server2: busy 100%, load1 114.04, workers 13, MemAvail 1163 GB | pending box1-eligible 1818 / server2-eligible 41031 (shared queues count in both; unleased, not DONE) | serverA: busy n/a%, load1 106.02, workers 113 (grid) + 1 (engine), 128 threads, MemAvail 1425 GB | serverB: busy n/a%, load1 1.52, workers 1 (grid) + 1 (engine), 128 threads, MemAvail 1500 GB
+2026-11-18 18:35Z | box1: busy 100%, load1 43.44, workers 5, MemAvail 51 GB | server2: busy 98%, load1 74.20, workers 14, MemAvail 1175 GB | pending box1-eligible 1801 / server2-eligible 41014 (shared queues count in both; unleased, not DONE) | serverA: busy 85%, load1 109.06, workers 113 (grid) + 1 (engine), 128 threads, MemAvail 1400 GB | serverB: busy 1%, load1 0.40, workers 1 (grid) + 1 (engine), 128 threads, MemAvail 1500 GB

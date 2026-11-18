@@ -1,4 +1,4 @@
-# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-18 18:29Z
+# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-18 18:38Z
 
 Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish the whole search -> 2 prove it is not luck (30 controls, selection-corrected null, trust) -> 3 gates/layers one by one then jointly -> 4 D8 spec. Every number below is a screen-level number unless it says engine.
 
@@ -6,39 +6,50 @@ Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish
 
 | item | done | todo | jobs/hour (last 60 min) | ETA at that rate |
 |---|---|---|---|---|
-| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 100138 result files | 142703 jobs | 7149 | 20.0 h |
-| pass 2 (family cells, exits a2, top cells) | n/a | 35826 (a top cells 3026, a2 exit families 8683, c family cells 24117) | 572 | 62.6 h |
+| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 69268 result files | 139421 jobs | 5116 | 27.3 h |
+| pass 2 (family cells, exits a2, top cells) | n/a | 26334 (a top cells 1902, a2 exit families 6651, c family cells 17781) | 503 | 52.4 h |
 
-CAUTION (18:35Z): the grid is now partitioned over server 2 + A (+B) by W-S3 (GL_PART); each server only sees its own finished results until the merge, so todo totals summed over servers can double count and the ETAs below are unreliable until W-S3 reports the merged counts.
+NOTE (18:40Z): the grid is partitioned over server 2 (rows 0-1 of 12), A (2-6) and B (7-11) by W-S3; finished results are merged into server 2 every ~5 min (lag <= 10 min), the todo and worker counts are summed over the three servers. A and B also see 172 bar rows that are complete on box 1 but not yet on server 2, so total todo is higher than the earlier single-server figure (about +50%).
 
-Pass-1 results on disk by tag: real 43073, null draw 1 26112, null draw 2 26027, extra draws (3-25) 4086 files. Pass-1 results still waiting for their pass-2 upgrade: real 28547.
+Pass-1 results on disk by tag: real 30667, null draw 1 17582, null draw 2 17497, extra draws (3-25) 2946 files. Pass-1 results still waiting for their pass-2 upgrade: real 21186.
 
-Machines (grid partitioned across servers): 207.188.7.103 load 128.95 workers 58; 109.94.96.39 load 60.69 workers 112; grid workers 170 (170 computing), engine workers 24; forward-path tables built (summed over servers) 230.
+Machines (grid partitioned across servers): 207.188.7.103 load 77.93 workers 30; 109.94.96.39 load 109.20 workers 112; 206.223.224.21 load 104.07 workers 124; grid workers 266 (259 computing), engine workers 24; forward-path tables built (summed over servers) 272.
 
-Since 17:23Z: pass-1 todo 80818 -> 142703 (+61885), pass-2 todo 25951 -> 35826 (+9875). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
+Since 17:23Z: pass-1 todo 80818 -> 139421 (+58603), pass-2 todo 25951 -> 26334 (+383). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
+
+## Machines (hourly; busy % is measured from /proc/stat against the REAL thread count of each machine)
+
+| machine | real threads | busy % | load1 | grid workers (computing) | engine workers | re-rank/other workers | results/hour (this machine) |
+|---|---|---|---|---|---|---|---|
+| server 2 Dallas | 64 | 100.0 | 77.93 | 266 (259) | 12 | 23 | 5628 |
+| A Frankfurt | 128 | 85.3 | 109.20 | 112 (109) | 0 | 0 | 3020 |
+| B Singapore | 128 | 93.1 | 104.07 | 124 (120) | 0 | 0 | 3417 |
+| box 1 London (lead, engine fillers) | 32 | 100 | 43.34 | 0 | see CORES.md | - | - |
+
+Server 2 has 64 threads (SMT off in firmware, order 1830Z check), A and B 128 each, box 1 32. Total jobs/hour and the phase-1 ETA are in the table above (sum over servers; double counting warning applies until W-S3 merges results). Any machine under 85% busy for 3 readings with work pending gets a one-line explanation in MORNING.md.
 
 ## Blocked / cannot run (listed, not skipped silently)
 
-Failed jobs leave an error stub that the loop retries after 4 hours (older stubs are retried automatically). Error files on disk: {'real': 355, 'p1real': 1844, 'p1rand1': 1481, 'p1rand2': 1448}.
+Failed jobs leave an error stub that the loop retries after 4 hours (older stubs are retried automatically). Error files on disk: {'real': 355, 'p1real': 1680, 'p1rand1': 1481, 'p1rand2': 1448}.
 
 | module | failures (files) | why |
 |---|---|---|
-| trig_book_wall | 305 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_ofi | 304 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_cancel | 304 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_ice | 304 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_queue | 305 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_pslope | 304 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_dwm | 304 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_imb | 305 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_micro | 304 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_thin | 304 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_sweep | 305 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_tape_run | 299 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_tape_block | 298 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_tape_unfinished | 297 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_tape_stack | 297 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_tape_sizemix | 297 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_ofi | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_cancel | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_ice | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_queue | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_pslope | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_dwm | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_imb | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_micro | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_thin | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_wall | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_sweep | 294 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_run | 289 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_block | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_unfinished | 287 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_stack | 287 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_sizemix | 287 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
 | trig_levels_sd5 | 19 | all signal calls raised (cause needs a test) |
 | trig_levels_sd15 | 19 | all signal calls raised (cause needs a test) |
 | trig_levels_sd60 | 19 | all signal calls raised (cause needs a test) |
@@ -54,6 +65,19 @@ Failed jobs leave an error stub that the loop retries after 4 hours (older stubs
 - NY leads to the full standard: WP10 (NY PM money flow, keep K7 and add) and XA3 (NY AM VWAP retest on 5000-tick): autopilot/NEW_BOOK_ENGINE.md. London replacement programme: NEW_BOOK_ENGINE_LONDON.md. Near-target K7 lock controls: DS3_NEAR_TARGET.md. ORB fade controls: DS3_ORB_FADE_LEAD.md.
 - Shortlist (bare, equal risk) and its trust audit: NEW_BOOK_SHORTLIST.md. Look-ahead gate for every reversal-type bar: BAR_LOOKAHEAD_GATE.md (all passed).
 - Account-rule scoring (DAY-DONE mask from the JL3 day-state): in progress by W-DAYMASK; the side-by-side ranking appears below when its file exists.
+
+## Survivor rule (order 1845Z: NO CAP, rule-based, no top-N anywhere)
+
+A cell goes forward to phases 2-3 if ALL of these hold, judged on the OWN-STOP ranking (stack-independent) with bare and current-stack mask shown beside it:
+- positive over the last 6 months (26 weeks to the data end) AND over the last 3 months beside it, on EQUAL RISK (R = points / the cell stop in points);
+- prior years 2023 / 2024 / 2025 not a disaster: AMBER = 15-30% worse than the reference (shown, still goes forward flagged), RED = more than 30% worse (shown, NOT delivered as a pick);
+- persistence over 60% (share of 2-week periods positive in the rolling pick); at least 100 trades in the last 6 months;
+- passes the trust audit (brute-force re-simulation, 6 truncation cuts, fills at least signal + 1 s) and the look-ahead gate.
+Engine capacity decides the ORDER cells are tested in (best first), never WHETHER a passing cell is tested. If the count makes phases 2-3 long, the count and the hours are reported here; nothing is trimmed. Near-duplicates (the same trigger on neighbouring bar sizes or parameters) are grouped as one FAMILY for the engine: best member first, neighbours listed with their screen numbers and run after, nothing dropped. Cells that fail the rule stay on disk with the reason so a later 2-week refit can pick them up.
+
+### Counts passing per session
+
+Not available yet: W-SHORT writes autopilot/SURVIVOR_COUNTS.md (counts per session on own-stop / bare / mask, failures by reason, number of families, path of the failing-cell file). The 4,000-cell tables in DAYMASK_RANK.md are capped for display only and are NOT the survivor count.
 
 ## Clock order (addendum 1731Z): sessions are decided Asia -> London -> NY AM -> NY PM
 
@@ -251,3 +275,12 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 
 - Rankings are best-of-many on the last 6 months; the selection-corrected best-pick null (phase 2b) is not applied yet to any row.
 - Screen numbers are naked triggers; the engine rows (NEW_BOOK_ENGINE*.md) show layers and account rules change results both ways.
+
+<!-- ENGINE_PLAN_ETAS -->
+**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-18 18:39Z):**
+
+- phase 1 pass 1: 139421 jobs left at 5116/h = 27.3 h (rate from the grid line above; sums over machines).
+- phase 1 pass 2: 26334 jobs left at 503/h = 52.4 h at today's allocation.
+- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 31 h at the current fleet (973/h) or 8.5 h with A and B engine-ready (projected 3589/h). Full table: ENGINE_PLAN.md section 11.
+- N is not a limit (order 1845Z): N only sizes the estimate; engine capacity decides the ORDER, never whether a passing cell is tested.
+<!-- /ENGINE_PLAN_ETAS -->
