@@ -6423,3 +6423,27 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 16:18Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 16:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 16:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:20Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:20Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18 16:21:01Z W-SWB: bar swap B (P7/H7/A7/O7) loop alive; sig files 66220, sim months 44, engine set-months queued 1779 done 1810; page autopilot/DS3_BAR_SWAP_B.md, rows /mnt/l2/l2vast/_deliver/W-SWB.jsonl
+- (wall 16:21Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:21Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:22Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:22Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:23Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:23Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:24Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:24Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:24Z) W-MF (part F) hourly: MF queue pending lines 585, set-months DONE 1115, identity {'202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', 'mf_inject 202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)', 'mf_inject 202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)'}; page DS3_MAJOR_F_NEWBOOKS.md refreshed by loop (pid 2384092, stop: touch /mnt/l2/l2vast/_major_f/STOP)
+- (wall 16:25Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:25Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:26Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:26Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:27Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18 16:27Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
+- (wall 16:27Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T16:28:07Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- (wall 16:28Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:28Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 16:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
