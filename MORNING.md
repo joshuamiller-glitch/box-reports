@@ -5387,3 +5387,7 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 2026-11-18T09:28:00Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - (wall 09:29Z) W-MF (part F) hourly: MF queue pending lines 585, set-months DONE 830, identity {'202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', 'mf_inject 202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)', 'mf_inject 202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)'}; page DS3_MAJOR_F_NEWBOOKS.md refreshed by loop (pid 2384092, stop: touch /mnt/l2/l2vast/_major_f/STOP)
 - 2026-11-18T09:29:34Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- lead 09:30Z AUTO-FILL (cores_meter, server 2 below 85% twice): dispatcher alive pid 1240823/3672724; dispatch.log LAUNCH lines in last ~10 min: 35; dispatcher walks ALL queues in order and takes any eligible line with deps already pushed (prefetch threads push the rest), so an ineligible/empty front queue cannot block it.
+- (wall 09:33Z) W-PM status: load1 31.81, PM exact jobs pending 12, cells with output 59; 743 jobs wanted, 12 chains running, 1794994352; P5 page done, P8 grid np_m15_x10_y15 2898
+- (wall 09:36Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 24 (pending file), cell-months done 1979, load 30.95 31.48 31.17, epoch 1794994580
+- (wall 09:39Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 37.88 33.63 31.98
