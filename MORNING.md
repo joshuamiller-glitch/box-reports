@@ -6341,3 +6341,29 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - LEAD NOTE: DELIVERABLES page 2026-11-18 15:48Z: rows per table T1 30 / T2 23 / T3 36 / T4 13 / T5 bar swap 16; labels {'CONFIRMED': 1, 'BEST-AVAILABLE-NOT-PROVEN': 101, 'WEAK-BUT-POSITIVE': 51, 'LEAD': 7}; stale owners ['W-MB', 'W-MC', 'W-S1R']; no file yet ['W-BAR'] (autopilot/DS3_MAJOR_DELIVERABLES.md)
 - (wall 15:49Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 15:49Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 15:52Z LEAD NOTE: both machines 100% busy (15:50Z: box 1 load 38, server 2 load 89; box-1 MemAvail 41 GB). W-SPEC restarted 15:42Z (v1 specs due 16:30Z). Engine agents' 15:30Z throughput statements not yet in MORNING.md: asked implicitly via their hourly lines; I will read set-months done from the run dirs at 16:15Z. NY stage 3 / bridge due 16:15Z.
+- (wall 15:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 15:53Z W-SPEC: NEW_BOOK_BUILD_SPECS.md v1 written (17 NY finalist blocks: XA1-6, NA1, NA2, NA5, XP1-6, NP1, NP5; one-screen summary D1, native-vs-custom statement D0; rebuild with code/th_spec/build_specs.py). Findings: 14 of 17 finalists are on native NT8 bar types, the single addition that carries most (13) is a daily scale table (s_vol/s_n/s_rng), not a custom bar; all five engine-tested cells carry a 120-pt stop in the last month so one stop at 1 base lot = the 4,800 day cap; XA/XP rows have NO engine row yet, no row has controls, reversal-bar rows await the look-ahead gate, so no label above NEEDS MORE. Several rows positive over L6M were negative in the last month on re-simulation (XA1, XA4-6, NA1, NP5). Gaps: XA2/XA4 etc. trigger text quotes code but NT8 coding of mvote-native (speed-weighted brick series) and book OFI is a design job.
+- 15:53Z LEAD NOTE: W-SPEC v1 of NEW_BOOK_BUILD_SPECS.md written (17 NY finalist blocks: XA1-6, NA1/NA2/NA5, XP1-6, NP1/NP5; 7 items + 3 worked trades each; labels capped at NEEDS MORE, no controls/engine rows yet). 14 of 17 finalists are on native NT8 bar types; best native within reach of best custom in both sessions; one addition carries 13 of 17: a daily scale table (volume/print-count/range), not a custom bar. CAUTION: all 5 engine-tested cells have a 120-pt median stop: one stop at 1 base lot (2 live) = $4,800 = the whole day loss cap, 80-232 entries blocked by day halt per cell in L6M; XA1, XA4, XA5, XA6, NA1, NP5 are negative in the last month re-simulation. XA1/XA5 need the order book, XP2/XP3 need YM/ES minute feeds, XA2 needs a speed-weighted brick design.
+- (wall 15:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T15:56:16Z W-GRIDA 2026-11-18T15:56Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 15 / 3129 / 208.6 h; (b) pass-1 level modules 1773 / 2235 / 1.3 h; (c) pass-2 family cells 65 / 0 / 0.0 h; (d) rest of pass 1 0 / 81175 / n/a (no jobs done in last hour); workers 56 (53 R       3 S); load 83.86; todo counts refreshed {"": 29, "_p2": 28} min ago
+- (wall 15:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 624, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+2026-11-18T15:58:06Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- (wall 15:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 15:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
