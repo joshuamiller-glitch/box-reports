@@ -1,14 +1,14 @@
 # DS3 BAR SWAP B (W-SWB): P7 / H7 / A7 / O7 on every bar row
 
 Rule: standing selection rule (CLAUDE.md, user 11-17 18:10Z/18:13Z): pick on the trailing 6 months to the newest data, trailing 3M beside it; validated by rolling walk-forward; older years tolerant (AMBER 15-30% / RED >30% worse than the live bar). FIRST PASS standalone (tape fills, raw chassis, live bracket); engine swap test is section 4.
-Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 11:52:22 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
+Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 12:42:31 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
 
 ## Plain summary
 - Tried: every available bar row (~490 time / activity / information / price / composite rows) as the signal clock of P7, H7, A7, O7 in three versions side by side: transplanted live settings, transplanted + the book grid refit, and bar-NATIVE rules (bars / bricks as the unit, no minute ATR); standalone on the tape with live brackets, then the exact engine with the full JL3 stack (not gated on the naked result).
 - What holds / does not (trailing 6M to the data end, rolling walk-forward from 2023-10, nulls; no cell is CONFIRMED until engine controls finish):
   - P7 NY AM: live bar L6M -1939 pts; trailing-6M pick cdr_1000__NE13_50a10s 1058 pts; rolling WF 6M->1M share of months beating the live bar 0.51 (OOS 3 vs live -75 pts/mo); random-clock pool share 0.62; older years RED
   - P7 London: live bar L6M 1575 pts; trailing-6M pick wrenko_56__NC40 913 pts; rolling WF 6M->1M share of months beating the live bar 0.49 (OOS -60 vs live -18 pts/mo); random-clock pool share 0.54; older years RED
-  - H7 NY AM: live bar L6M 874 pts; trailing-6M pick tm300__NH20_55e50 1513 pts; rolling WF 6M->1M share of months beating the live bar 0.43 (OOS -11 vs live 12 pts/mo); random-clock pool share 0.62; older years RED
+  - H7 NY AM: live bar L6M 874 pts; trailing-6M pick tm300__NH20_55e50 1513 pts; rolling WF 6M->1M share of months beating the live bar 0.43 (OOS -11 vs live 12 pts/mo); random-clock pool share 0.65; older years RED
   - O7 NY AM: live bar L6M 141 pts; trailing-6M pick kagi_56__NO930_3 1582 pts; rolling WF 6M->1M share of months beating the live bar 0.27 (OOS -3 vs live 124 pts/mo); random-clock pool share 0.32; older years RED
   - A7 Asia: live bar L6M -160 pts; trailing-6M pick vsess_80__NE8_30a30s 1067 pts; rolling WF 6M->1M share of months beating the live bar 0.43 (OOS 32 vs live 85 pts/mo); random-clock pool share 0.41; older years RED
   - P7 Asia: live bar L6M 1200 pts; trailing-6M pick vsess_80__NE8_30a10s 962 pts; rolling WF 6M->1M share of months beating the live bar 0.30 (OOS -33 vs live 75 pts/mo); random-clock pool share 0.46; older years RED
@@ -213,13 +213,13 @@ Top rows on trailing 6M (score = pts/(ulcer+1)):
 | tm300__NHc | 1392 | 93 | 40 | 125 | 428 | 2142 |
 | dib_25000__G12_34k3 | 1656 | 83 | 61 | 168 | 755 | 2548 |
 | dib_70000__G12_34k3 | 865 | 30 | 35 | 100 | 428 | 1331 |
-| vol_6000__G20_55t5 | 992 | 43 | 42 | 135 | 452 | 1527 |
 | vol_6000__A | 992 | 43 | 42 | 135 | 452 | 1527 |
-| tm300__NH20_55e200 | 1010 | 80 | 49 | 181 | 490 | 1554 |
-| tm300__G20_55k1 | 1010 | 80 | 49 | 181 | 490 | 1554 |
+| vol_6000__G20_55t5 | 992 | 43 | 42 | 135 | 452 | 1527 |
 | tm300__A | 1010 | 80 | 49 | 181 | 490 | 1554 |
-| tm300__G20_55t5 | 1010 | 80 | 49 | 181 | 490 | 1554 |
 | tm300__C | 1010 | 80 | 49 | 181 | 490 | 1554 |
+| tm300__G20_55t5 | 1010 | 80 | 49 | 181 | 490 | 1554 |
+| tm300__G20_55k1 | 1010 | 80 | 49 | 181 | 490 | 1554 |
+| tm300__NH20_55e200 | 1010 | 80 | 49 | 181 | 490 | 1554 |
 | tm180__G12_34k3 | 1330 | 71 | 68 | 182 | 310 | 2045 |
 
 Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; ref = live bar; share = periods pick beat live bar):
@@ -234,7 +234,7 @@ Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; r
 | 12M->3M | 37 | -51.5 | 4.9 | 0.38 | 3655 | 2222 |
 | 6M->2w | 37 | 44.6 | 4.3 | 0.54 | 468 | 458 |
 
-Nulls (same pick procedure): shift11: OOS -31.1/mo share beat 0.57; shift23: OOS 29.7/mo share beat 0.59; shift37: OOS -13.5/mo share beat 0.57; random-clock pool: OOS 30.1/mo share beat 0.62
+Nulls (same pick procedure): shift11: OOS -31.1/mo share beat 0.57; shift23: OOS 29.7/mo share beat 0.59; shift37: OOS -13.5/mo share beat 0.57; random-clock pool: OOS 26.4/mo share beat 0.65
 
 Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -13 vs 12 (n 36); +3M 13 vs 10 (n 34); +6M 7 vs 27 (n 31)
 
@@ -474,7 +474,7 @@ Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; r
 | 12M->3M | 37 | -7.9 | 17.7 | 0.59 | 3523 | 1363 |
 | 6M->2w | 37 | 62.2 | 47.2 | 0.51 | 126 | 254 |
 
-Nulls (same pick procedure): shift11: OOS -13.5/mo share beat 0.49; shift23: OOS 7.5/mo share beat 0.46; shift37: OOS -23.6/mo share beat 0.43; random-clock pool: OOS 32.1/mo share beat 0.41
+Nulls (same pick procedure): shift11: OOS -13.5/mo share beat 0.49; shift23: OOS 7.5/mo share beat 0.46; shift37: OOS -23.6/mo share beat 0.43; random-clock pool: OOS 32.0/mo share beat 0.41
 
 Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 48 vs 14 (n 36); +3M -32 vs 18 (n 34); +6M -5 vs 6 (n 31)
 
