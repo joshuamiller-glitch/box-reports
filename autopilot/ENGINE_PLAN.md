@@ -4,7 +4,7 @@ Plain words. Research only, no spend. "Set-month" = one engine run of one set (a
 
 ## 0. LADDER (orders 1932Z + 2042Z; supersedes the N = 3..50 sizing in section 2, which stays as the per-survivor cost model)
 Sized on SURVIVOR_COUNTS.md (bare, 19:08Z): Asia 2,992 cells / 1,890 families; London 1,035 / 808; NY AM 9,504 / 4,556; NY PM 531 / 396 = 14,062 cells / 7,650 families. No top-N cap; a cell leaves only by FAILING a rung; engine capacity only sets the ORDER. Live numbers (rates, counts, hours, tables): section 11, refreshed hourly; the A/B hyper-thread factor and engine rates there replace the assumptions as they are measured. Fleet: current = box 1 + Dallas = 96 core-equivalents; pool = + A + B at ASSUMED 1.3 core-eq per physical core with SMT = 262.
-Unit costs: R1 0.0091 core-h per pair (W-DAYMASK rate); R2 0.001-0.005 per cell; R3 per 30 same-bracket draws 15-47 CPU-s (order 2042Z; W-SHORT's earlier 0.31 core-h per pair was a different pricing and is not used here); R4 317 core-h per complete null draw; R5 0.045 core-h per engine set-month (160-180 s on Dallas/box 1; the 0.30 in the 1932Z order is the starved-A figure: its own 7.8 core-h per 30 controls implies 0.043); 30 date-shift controls 7.8 core-h per cell; layer programme 51 core-h per surviving book (29 with the validated fast replay).
+Unit costs: R1 0.0091 core-h per pair (W-DAYMASK rate); R2 0.001-0.005 per cell; R3 per cell, measured on XA3 by W-SHORT: stage A (30 draws) 0.010 core-h, B (draws 31-200) 0.025, C (201-1,000) 0.105, D (1,001-10,000) 1.17; stage advance on EITHER p_L6M or p_ALL; R4 317 core-h per complete null draw; R5 0.045 core-h per engine set-month (160-180 s on Dallas/box 1; the 0.30 in the 1932Z order is the starved-A figure: its own 7.8 core-h per 30 controls implies 0.043); 30 date-shift controls 7.8 core-h per cell; layer programme 51 core-h per surviving book (29 with the validated fast replay).
 Engine rate measured on A and B (30-min windows after dispatch start; includes per-month cache builds, not steady state): A 68-118 set-months/h, B 124-168 set-months/h, versus Dallas ~313 and box 1 ~450: the engine on A/B is improving but still far below the 1,300/h assumed per machine.
 
 | rung | in -> out | core-h | hours, current fleet (96) | hours, pool (262) | > 48 h? |
@@ -12,11 +12,12 @@ Engine rate measured on A and B (30-min windows after dispatch start; includes p
 | R0 bare (done) | 4.4M-4.8M cells per session -> 14,062 cells / 7,650 families | done | - | - | no |
 | R1 own-stop | 14,062 -> unknown (arrays for ~1,700 pairs; grid re-running the rest); failers kept | <= 128 | 1.3 | 0.5 | no |
 | R2 trust + look-ahead | R1 passers -> unknown | 14-70 | < 1 | < 1 | no |
-| R3 stage A 30 draws, every family-best | 7,650 -> ~30% beat >= 24/30 (ASSUMED; pure noise gives ~23%) | 32-100 | 0.3-1.0 | 0.1-0.4 | no |
-| R3 stage B 200 draws | ~2,300 cells (ASSUMED) -> p <= 0.02 after 200 | 64-200 | 0.7-2.1 | 0.2-0.8 | no |
-| R3 stage C 1,000 draws | ~230 cells (ASSUMED) -> BH at q = 10% per session over ALL family-bests: PASS = inside the BH set | 32-100 | 0.3-1.0 | 0.1-0.4 | no |
-| R3 neighbours, same procedure after their best member | 6,412 cells; family "isolated" if the best passes and all neighbours fail | 107-335 | 1.1-3.5 | 0.4-1.3 | no |
-| R3 total | | 235-735 | 2.5-7.7 | 0.9-2.8 | no |
+| R3 stage A: 30 draws, every family-best (0.010 core-h per cell, measured on XA3) | 7,650 -> advance to B on EITHER p_L6M or p_ALL | 76 | 0.8 | 0.3 | no |
+| R3 stage B: draws 31-200 (0.025 per cell) | 2,300-7,650 cells (ASSUMED 30-100%; on W-LONENG's 28 cells 27 qualified on whole history) | 57-191 | 0.6-2.0 | 0.2-0.7 | no |
+| R3 stage C: draws 201-1,000 (0.105 per cell) | 230-2,300 cells (ASSUMED 3-30%) -> BH at q = 10% per session on p_L6M (SET 1) and p_ALL (SET 2) | 24-241 | 0.3-2.5 | 0.1-0.9 | no |
+| R3 stage D: draws 1,001-10,000 (1.17 per cell) for cells at the minimum p of stage C | 76-380 cells (ASSUMED 1-5%) | 90-448 | 0.9-4.7 | 0.3-1.7 | no |
+| R3 neighbours, same procedure after their best member (6,412 cells; family "isolated" if the best passes and all neighbours fail) | | 207-803 | 2.2-8.4 | 0.8-3.1 | no |
+| R3 total (stages A-D, family-bests + neighbours) | TWO pass sets per session: SET 1 = inside BH on p_L6M, SET 2 = inside BH on p_ALL (whole history); counts at q 5/10/20% in SURVIVOR_COUNTS.md | 454-1,759 | 4.7-18 | 1.7-6.7 | no |
 | R4 whole-search null, 5 complete draws, ~25% of A+B | all four sessions -> false-discovery ratio per session, best-pick comparison | 1,585 | 16.5 (whole current fleet) | 38 h at 25% of A+B (42 core-eq); 6 h on the whole pool | no (38 h) |
 | R5 engine for the BH passers (+ layers) | P passers | 67.5 per passer (16.5 R5a-c + 51 layers) | see table | see table | when P > ~186 |
 
@@ -31,7 +32,9 @@ Engine hours for the BH passers (q = 10%, expected false passers = 0.1 x P); W-S
 | 1,600 | 160 | 108,000 | 412 | 1,125 | 24 |
 Break-even for the 48 h flag: P <= ~186 on the pool (~276 with the validated fast replay); P <= ~68 on the current fleet.
 
-MINIMUM p reachable and BH: p = (1 + hits) / (1 + draws): 30 draws -> 0.032, 200 -> 0.005, 1,000 -> 0.001, so a cell cannot pass on 30 draws alone. BH at q = 10% rejects the k-th smallest p only if p <= k x 0.10 / m (m = family-bests of the session). With 1,000 draws a session needs at least k >= 10 x m x 0.001 cells at the minimum p: Asia >= 19, London >= 8, NY AM >= 46, NY PM >= 4; a session with fewer such cells passes NOTHING at 1,000 draws even if its best cells are real, so the best few need a stage D (10,000 draws, p_min 0.0001, ~100-250 CPU-min per cell): recommend adding stage D for cells at p = 0.001 after stage C. (This is a design consequence of BH, not a shortcut.)
+TWO PASS SETS (W-SHORT 2057Z): the engine plan is sized on SET 1 (p_L6M, the pick rule) with SET 2 (p_ALL, whole history) beside it; the union is the upper case. W-SHORT's cost per passer is 264 set-months (12 L6M + 72 prior years + 180 controls) = ~13 core-h; W-PLAN keeps the larger 16.5 core-h (prior years priced on every replace variant) + 51 layers. XA3 reference at 1,000 draws: p_L6M 0.092, p_ALL 0.0030, p_PRIOR 0.0020 (not inside BH on L6M alone).
+
+MINIMUM p reachable and BH: p = (1 + hits) / (1 + draws): 30 draws -> 0.032, 200 -> 0.005, 1,000 -> 0.001, so a cell cannot pass on 30 draws alone. BH at q = 10% rejects the k-th smallest p only if p <= k x 0.10 / m (m = family-bests of the session). With 1,000 draws a session needs at least k >= 10 x m x 0.001 cells at the minimum p: Asia >= 19, London >= 8, NY AM >= 46, NY PM >= 4; a session with fewer such cells passes NOTHING at 1,000 draws even if its best cells are real, so the best few need stage D (10,000 draws, p_min 0.0001; BH floor m/1,000 cells at 0.0001). Stage D is now in the plan (1.17 core-h per cell).
 
 HONEST LINES. (a) R4 as now ordered (5 draws) is 38 h at 25% of A+B: no longer above 48 h. (b) No screen rung R1-R4 exceeds 48 h on the pool. (c) The ENGINE exceeds 48 h of the pool when more than ~186 family-bests pass BH (4 sessions together); the pass counts are unknown until stage B/C results exist (W-SHORT). (d) If every family-best went through R5 (what the old R3 would have allowed), it is 126,226 core-h = 482 h (20 days) on the pool: not feasible, which is what the BH gate prevents.
 
@@ -40,7 +43,7 @@ DATED ESTIMATES (written 2026-11-18 20:50Z; from SEARCH_STATUS.md 20:30Z: phase 
 |---|---|---|
 | phase 1 real pass 1 done | Nov 19 ~13:30Z | 17 h (SEARCH_STATUS 20:30Z) |
 | phase 1 pass 2 + exits done | Nov 20 ~01:00Z (restored split, 28 h); Nov 20 ~22:00Z if the split is not restored (49 h) | SEARCH_STATUS |
-| R3 end per session (stages A-C, neighbours after the best): Asia, London, NY PM | Nov 19 ~early afternoon after R1/R2 re-run (~20:00Z+); screen cost only 0.9-2.8 h of the pool but jobs run at nice 5 behind the engine and ahead of the null | W-SHORT queue; ASSUMED |
+| R3 end per session (stages A-C, neighbours after the best): Asia, London, NY PM | Nov 19 ~early afternoon after R1/R2 re-run (~20:00Z+); screen cost only 1.7-6.7 h of the pool but jobs run at nice 5 behind the engine and ahead of the null | W-SHORT queue; ASSUMED |
 | R3 end NY AM (4,556 families) | Nov 19 ~afternoon-evening | same; largest session |
 | R4 5 null draws (calibration) | Nov 20 ~11:00Z (38 h at 25% of A+B; W-GRIDOPS publishes its own ETA) | 1,585 core-h |
 | engine for the BH passers (R5 + layers) | starts per session as soon as its R3 BH set exists (Nov 19 afternoon); at a 25% share before phase 1 ends, the whole pool after it | P unknown |
@@ -155,7 +158,7 @@ Hourly measured rates (appended by W-PLAN each hour; format: HHZ box1 / Dallas /
 - 18:40Z box 1 ~320/h (partial hour, 11 workers), Dallas ~196/h (partial, 24 workers), A 0, B 0.
 
 <!-- ENGINE_PLAN_LIVE -->
-## 11. LIVE NUMBERS (auto, W-PLAN code/th_plan/plan_refresh.py, refreshed 2026-11-18 21:05Z; sections 1-9 above are the written plan, this block is the measurement)
+## 11. LIVE NUMBERS (auto, W-PLAN code/th_plan/plan_refresh.py, refreshed 2026-11-18 21:12Z; sections 1-9 above are the written plan, this block is the measurement)
 
 Measured engine set-months per clock hour (DONE marks; UTC hour; the current hour is partial):
 
@@ -166,15 +169,15 @@ Measured engine set-months per clock hour (DONE marks; UTC hour; the current hou
 | 11-18T17 | 426 | 288 | 0 | 0 | 714 |
 | 11-18T18 | 305 | 180 | 0 | 0 | 485 |
 | 11-18T19 | 542 | 218 | 80 | 85 | 925 |
-| 11-18T20 | 632 | 159 | 94 | 152 | 1037 |
-| 11-18T21 | 66 | 20 | 11 | 21 | 118 |
-| workers now | 34 | 22 | 56 | 56 | 168 |
+| 11-18T20 | 633 | 159 | 94 | 152 | 1038 |
+| 11-18T21 | 164 | 46 | 29 | 52 | 291 |
+| workers now | 34 | 24 | 56 | 55 | 169 |
 | mean of last 3 full hours | 493 | 186 | 58 | 79 | 816 |
 
-Hyper-thread factor for A/B: MEASURED 0.12 per worker vs Dallas (A Frankfurt, 56 workers; note: workers share cores with the grid, so a lower bound).
+Hyper-thread factor for A/B: MEASURED 0.13 per worker vs Dallas (A Frankfurt, 56 workers; note: workers share cores with the grid, so a lower bound).
 Engine-ready status: box 1 London engine runs seen, Dallas (server 2) engine runs seen, A Frankfurt engine runs seen, B Singapore engine runs seen.
 
-Hours for the engine workload (section 2 totals, no screen / with validated fast replay) at the CURRENT measured fleet rate of 816 set-months/h; and at the rate if A and B reach Dallas-equivalent per-thread speed x 0.12:
+Hours for the engine workload (section 2 totals, no screen / with validated fast replay) at the CURRENT measured fleet rate of 816 set-months/h; and at the rate if A and B reach Dallas-equivalent per-thread speed x 0.13:
 
 | N per session | set-months (no screen / screen) | hours at current fleet | hours with A and B engine-ready (projected) |
 |---|---|---|---|
@@ -182,9 +185,9 @@ Hours for the engine workload (section 2 totals, no screen / with validated fast
 | 6 | 30400 / 24500 | 37 / 30 h | 33.1 / 26.7 h |
 | 10 | 48700 / 38800 | 60 / 48 h | 53.1 / 42.3 h |
 | 20 | 94300 / 74600 | 116 / 91 h | 102.8 / 81.3 h |
-| 50 | 231400 / 182100 | 284 / 223 h | 252.3 / 198.5 h |
+| 50 | 231400 / 182100 | 284 / 223 h | 252.2 / 198.4 h |
 
-Projected engine rate with A and B engine-ready: 917 set-months/h (box 1 + Dallas measured + 2 x 128 threads x 8 per Dallas thread x factor x 90% busy).
+Projected engine rate with A and B engine-ready: 918 set-months/h (box 1 + Dallas measured + 2 x 128 threads x 8 per Dallas thread x factor x 90% busy).
 
 Queue inventory (set-months waiting; nothing deleted; decision list for Josh):
 
@@ -192,7 +195,7 @@ Queue inventory (set-months waiting; nothing deleted; decision list for Josh):
 |---|---|---|---|
 | NY leads (NYF) | _nye/pending_f.txt | 0 | keep |
 | NY other (NYE) | _nye/pending.txt | 0 | keep |
-| London K7/M7 | _lon/pending.txt | 1325 | keep |
+| London K7/M7 | _lon/pending.txt | 1610 | keep |
 | near-target (NT) | _nt/pending.txt | 160 | keep |
 | parked NY variants | _nye/parked_1722.txt | 332 | parked |
 | parked London variants | _lon/parked_1722.txt | 120 | parked |
@@ -215,10 +218,11 @@ Queue inventory (set-months waiting; nothing deleted; decision list for Josh):
 | R0 bare rule (done) | all evaluated cells | 14062 cells / 7650 families | 0-0 | 0.0-0.0 | 0.0-0.0 | no |
 | R1 own-stop (2 stops; 1.5/3 shown) | 14062 cells | unknown: own-stop arrays exist for ~1,700 pairs only; failers kept, labelled | 128-128 | 1.3-1.3 | 0.5-0.5 | no |
 | R2 trust + look-ahead | R1 passers (<= 14062) | unknown | 14-70 | 0.1-0.7 | 0.1-0.3 | no |
-| R3 stage A: 30 same-bracket draws, every family-best | 7650 families | ~30% of cells beat >= 24/30 (ASSUMED; noise gives ~23%) | 32-100 | 0.3-1.0 | 0.1-0.4 | no |
-| R3 stage B: 200 draws for cells beating >= 24/30 | ~2295 cells (ASSUMED 30%) | p <= 0.02 after 200 -> stage C (ASSUMED 10% of B) | 64-200 | 0.7-2.1 | 0.2-0.8 | no |
-| R3 stage C: 1,000 draws for p <= 0.02 after 200 | ~230 cells (ASSUMED) | BH at q = 10% per session across ALL family-bests; PASS = inside the BH set | 32-100 | 0.3-1.0 | 0.1-0.4 | no |
-| R3 neighbours (same procedure after their best member), all three stages | 6412 cells | family flagged "isolated" if the best passes and all neighbours fail | 107-335 | 1.1-3.5 | 0.4-1.3 | no |
+| R3 stage A: 30 same-bracket draws, every family-best (0.010 core-h per cell) | 7650 families | advance to B on EITHER p_L6M or p_ALL | 76-76 | 0.8-0.8 | 0.3-0.3 | no |
+| R3 stage B: draws 31-200 (0.025 per cell) | 2295-7650 cells (ASSUMED 30-100%) | advance to C when p <= 0.02 | 57-191 | 0.6-2.0 | 0.2-0.7 | no |
+| R3 stage C: draws 201-1,000 (0.105 per cell) | 230-2295 cells (ASSUMED 3-30%) | BH at q = 10% per session on p_L6M (SET 1) and on p_ALL (SET 2) | 24-241 | 0.3-2.5 | 0.1-0.9 | no |
+| R3 stage D: draws 1,001-10,000 (1.17 per cell), for cells at the minimum p of stage C | 76-382 cells (ASSUMED 1-5%) | p_min 0.0001 | 90-448 | 0.9-4.7 | 0.3-1.7 | no |
+| R3 neighbours (same procedure after their best member), all stages | 6412 cells | family "isolated" if the best passes and all neighbours fail | 207-802 | 2.2-8.3 | 0.8-3.1 | no |
 | R4 whole-search null: 5 complete draws (calibration of R3 + best-pick comparison), at ~25% of A+B | all four sessions | false-discovery ratio per session | 1585-1585 | 16.5-16.5 | 6.0-6.0 | no |
 
 R4 (5 null draws, 317 core-h each) = 1585 core-h; at a fixed 25% share of A+B (A+B = 166 core-eq assumed => 42 core-eq): 38 h (under 48 h); on the whole pool 6.0 h.
@@ -246,7 +250,7 @@ Per session if EVERY family-best went through R5 (upper bound, not the plan; the
 | NYPM | 531 / 396 | 95-154 | 214 | 1319 | 3089 | 4621 | 18 | 48 |
 
 HONEST LINE (> 48 h of the fleet): no screen rung (R1-R4) needs more than 48 h on the pool (R4: 38 h at 25% of A+B). The ENGINE for the BH passers needs more than 48 h of the pool when the number of passers P exceeds ~186 (more than ~276 on the pool with the validated fast replay); on the current fleet (box 1 + Dallas) above P ~ 68. Counts of BH passers per session are not known until stage B/C finish; if they exceed the break-even, Josh decides between more machines and waiting. Nothing is trimmed to fit.
-Measured engine rate on A / B (first 30 min, includes cache builds, NOT steady state): A 132 (last 30 min x2), B 238 (last 30 min x2) set-months/h; per-set-month cost 0.045 core-h on Dallas/box 1 (160-180 s) versus 0.30 on A when the engine was starved (1,072 s at nice 10). The order text quotes 0.3 per set-month; 7.8 core-h per cell for 30 controls implies 0.043: both are shown, the measured non-starved value is used for the totals.
+Measured engine rate on A / B (first 30 min, includes cache builds, NOT steady state): A 132 (last 30 min x2), B 240 (last 30 min x2) set-months/h; per-set-month cost 0.045 core-h on Dallas/box 1 (160-180 s) versus 0.30 on A when the engine was starved (1,072 s at nice 10). The order text quotes 0.3 per set-month; 7.8 core-h per cell for 30 controls implies 0.043: both are shown, the measured non-starved value is used for the totals.
 
 
 DECISION LIST FOR JOSH (nothing is deleted by W-PLAN): (1) cancel SWB (bar swap B queue): no weak cell proven, loop stopped; (2) keep P7L, EV, DD, S3 rebuild PARKED (they only run on cores nothing else can use) or cancel them if you do not want them any more; (3) MF: keep ORB controls only. Server price: NOT GIVEN to W-PLAN, no cost row is shown and none is guessed.
