@@ -1,11 +1,11 @@
-# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-18 18:38Z
+# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-18 19:09Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer add / swap one book in today's stack, not the rebuilt stack.** WP10 and XA3 stay leads on that basis.
 
-Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 1965.
+Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 2030.
 
 ## What acts on a new book in these runs (plain words; full list NEW_BOOK_LAYER_FACTS.md)
-- ON the new book: the signal-state screen gate "conj" (written for all books; it skipped 334 of ~800 signals of NA1 in 202610), one position at a time, the book day caps (loss 4,800 $ / profit 12,000 $ default; a 120-pt stop = 2,400 $ at 1 base lot, 4,800 $ at 2 live lots = one stop trips it), the book give-back lock, measured slippage, the stack rule.
+- ON the new book: the live DAY-DONE rule (engine: scr_hooks gate "conj" = the stack has >= 22 closes today AND the day is <= -2R = -2,400 base = -4,200 live; it applies to every book incl. the new one and skipped 334 of ~800 signals of NA1 in 202610), one position at a time, the book day caps (loss 4,800 $ / profit 12,000 $ default; a 120-pt stop = 2,400 $ at 1 base lot, 4,800 $ at 2 live lots = one stop trips it), the book give-back lock, measured slippage, the stack rule.
 - NOT on the new book: no-trade zones, policy take / near-target latch / locks / shave (named live books only), trade-health and context cuts, ATR-skip, breakout rule, governor, session lot tables. So the engine row = the cell under those rules only; its own fitted layers are variant (iii), not built yet. BARE (screen gate and caps off) and ACCT (gate off, account day caps on) variants for NA1 NA2 NA5 NP1 NP5 are queued.
 
 ## ID glossary (reconciled 16:10Z; engine ids never change)
@@ -415,14 +415,20 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | XA3 | CT98p | L6M | +911 / +1594 | -6715 | -334 / -585 | -3260 | c=1.00: +911 / -6715 / -334 | 316 | -0.001 | -0.017 | +0.11 / +0.15 / +0.14 | ok |
 | XA3 | RK7 | L3M | +303 / +530 | +1651 | +2638 / +4617 | +664 | c=1.00: +303 / +1651 / +2638 | 163 | +0.125 | +1.569 | +0.17 / +0.12 / +0.38 | ok |
 | XA3 | RK7 | L6M | +255 / +446 | +1651 | +2505 / +4384 | +664 | c=1.00: +255 / +1651 / +2505 | 382 | +0.123 | +1.742 | +0.14 / +0.08 / +0.16 | ok |
+| XA3 | RK7 | Y2025 | -4169 / -7296 | +7111 | +537 / +940 | +8946 | c=1.00: -4169 / +7111 / +537 | 664 | +0.092 | +1.158 | +0.17 / +0.05 / +0.07 | ok |
 | XA3 | RM7 | L3M | -881 / -1542 | +2357 | +965 / +1689 | +4663 | c=1.00: -881 / +2357 / +965 | 164 | +0.131 | +1.655 | +0.20 / +0.12 / +0.39 | ok |
 | XA3 | RM7 | L6M | -586 / -1025 | +2357 | +1544 / +2702 | +4663 | c=1.00: -586 / +2357 / +1544 | 383 | +0.123 | +1.749 | +0.15 / +0.09 / +0.16 | ok |
+| XA3 | RM7 | Y2023 | -2911 / -5095 | -4913 | +1346 / +2356 | +4364 | c=1.00: -2911 / -4913 / +1346 | 358 | +0.101 | +0.931 | +0.18 / +0.16 / +0.25 | ok |
+| XA3 | RM7 | Y2024 | -3883 / -6795 | +3882 | +331 / +578 | +17235 | c=1.00: -3883 / +3882 / +331 | 545 | +0.089 | +0.912 | +0.15 / +0.09 / +0.20 | ok |
 | XA3 | RM7 | Y2025 | -5100 / -8924 | +7674 | +755 / +1321 | +9739 | c=1.00: -5100 / +7674 / +755 | 661 | +0.094 | +1.177 | +0.17 / +0.05 / +0.07 | ok |
 | XA3 | RP7 | L3M | -1379 / -2413 | +1763 | +1230 / +2152 | +6179 | c=1.00: -1379 / +1763 / +1230 | 165 | +0.127 | +1.616 | +0.20 / +0.13 / +0.39 | ok |
 | XA3 | RP7 | L6M | -759 / -1329 | +1763 | +1519 / +2659 | +6179 | c=1.00: -759 / +1763 / +1519 | 384 | +0.122 | +1.730 | +0.15 / +0.09 / +0.16 | ok |
+| XA3 | RP7 | Y2023 | +620 / +1084 | -4232 | +786 / +1376 | -6433 | c=1.00: +620 / -4232 / +786 | 358 | +0.101 | +0.931 | +0.18 / +0.16 / +0.25 | AMBER |
+| XA3 | RP7 | Y2024 | -5702 / -9979 | +3433 | +1236 / +2163 | +12005 | c=1.00: -5702 / +3433 / +1236 | 541 | +0.086 | +0.876 | +0.15 / +0.09 / +0.21 | ok |
 | XA3 | RP7 | Y2025 | -5231 / -9154 | +2936 | +1235 / +2162 | +10482 | c=1.00: -5231 / +2936 / +1235 | 656 | +0.102 | +1.268 | +0.17 / +0.05 / +0.06 | ok |
 | XA3 | ADD | L3M | -456 / -798 | +1134 | +1935 / +3386 | +2888 | c=1.00: -456 / +1134 / +1935 | 165 | +0.127 | +1.616 | +0.20 / +0.13 / +0.39 | ok |
 | XA3 | ADD | L6M | -262 / -458 | +1134 | +1965 / +3439 | +2888 | c=1.00: -262 / +1134 / +1965 | 383 | +0.125 | +1.767 | +0.15 / +0.08 / +0.16 | ok |
+| XA3 | ADD | Y2025 | -4939 / -8644 | +674 | +1132 / +1981 | +9036 | c=1.00: -4939 / +674 / +1132 | 656 | +0.102 | +1.268 | +0.17 / +0.05 / +0.06 | ok |
 | XA4 | ADD | L3M | +97 / +169 | -2550 | -853 / -1492 | +1064 | c=1.00: +97 / -2550 / -853 | 189 | -0.018 | -0.263 | +0.15 / +0.06 / +0.15 | ok |
 | XA4 | ADD | L6M | +115 / +200 | -2550 | -244 / -427 | +1064 | c=1.00: +115 / -2550 / -244 | 431 | +0.014 | +0.221 | +0.13 / +0.12 / +0.02 | ok |
 | XA5 | ADD | L3M | +4386 / +7675 | -7571 | -2593 / -4538 | -12500 | c=1.00: +4386 / -7571 / -2593 | 261 | -0.102 | -2.046 | +0.06 / +0.07 / +0.19 | RED |
