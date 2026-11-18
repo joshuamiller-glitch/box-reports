@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-18 03:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 03:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-18 03:00Z | box1: busy 100%, load1 43.16, workers 2, MemAvail 76 GB | server2: busy 99%, load1 75.00, workers 10, MemAvail 1305 GB | pending box1-eligible 1344 / server2-eligible 40557 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-18 03:15Z | box1: busy 100%, load1 43.85, workers 0, MemAvail 105 GB | server2: busy 100%, load1 73.60, workers 10, MemAvail 1296 GB | pending box1-eligible 1307 / server2-eligible 40520 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-18 03:00Z
+2026-11-18 03:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 03:00Z | box1: busy 100%, load1 43.16, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 76.1 GB; live reservations 0 (0 GB); workers 2, of which TP-adopted 2 (RSS 4.3 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 43.16, 43.46, 44.13
-  by tag: SWB quota 4 running 2 hungry True RSS 4.3 GB PSS 4.0 GB
-  cell-months finished last hour (DONE markers): 159
-  top running jobs: TL3_SWB_P73_d6c62d (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 75.16, 76.23, 76.76|/dev/md2         28T  976G   27T   4% /mnt/l2|16|
+Server 1 (this box): MemAvail 105.3 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 43.85, 43.54, 43.59
+  by tag: 
+  cell-months finished last hour (DONE markers): 146
+  top running jobs: 
+Server 2 (rs4 metal): load / disk / tp_launch procs: 73.71, 74.28, 75.36|/dev/md2         28T  979G   27T   4% /mnt/l2|16|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -36,5 +36,3 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 75.16, 76.23, 76.76|/dev/md
 
 ## INBOX (last 5 received)
 20261118_0053Z_fill-server2-and-publish-grid-table.md 20261118_0125Z_near-target-take-misses-touch-and-reverse.md 20261118_0146Z_server2-75pct-cap-follow-wrong-way-and-pass2-now.md 20261118_0216Z_top40-candidates-into-pass2.md 20261118_0255Z_no-extra-server-tonight-order-of-work.md
-- lead 02:54Z INBOX 20261118_0255Z_no-extra-server-tonight-order-of-work.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
-- lead 02:54Z INBOX 20261118_0255Z_no-extra-server-tonight-order-of-work received: research order, accepted: NO extra server tonight (nothing rented, nothing ap
