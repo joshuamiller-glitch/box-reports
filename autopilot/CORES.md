@@ -1,9 +1,3 @@
-2026-11-17 13:15Z | box1: busy 99%, load1 34.73, workers 20, MemAvail 97 GB | server2: busy 100%, load1 91.58, workers 94, MemAvail 1392 GB | pending box1-eligible 31054 / server2-eligible 46530 (shared queues count in both; unleased, not DONE)
-2026-11-17 13:15Z | box1: busy 97%, load1 34.29, workers 27, MemAvail 91 GB | server2: busy 100%, load1 90.65, workers 94, MemAvail 1390 GB | pending box1-eligible 31044 / server2-eligible 46520 (shared queues count in both; unleased, not DONE)
-2026-11-17 13:20Z | box1: busy 100%, load1 36.86, workers 27, MemAvail 88 GB | server2: busy 100%, load1 93.18, workers 96, MemAvail 1379 GB | pending box1-eligible 30927 / server2-eligible 46400 (shared queues count in both; unleased, not DONE)
-2026-11-17 13:25Z | box1: busy 100%, load1 38.29, workers 23, MemAvail 85 GB | server2: busy 100%, load1 92.51, workers 95, MemAvail 1387 GB | pending box1-eligible 30795 / server2-eligible 46265 (shared queues count in both; unleased, not DONE)
-2026-11-17 13:25Z | box1: busy 100%, load1 41.19, workers 32, MemAvail 75 GB | server2: busy 100%, load1 90.05, workers 94, MemAvail 1392 GB | pending box1-eligible 30776 / server2-eligible 46246 (shared queues count in both; unleased, not DONE)
-2026-11-17 13:30Z | box1: busy 99%, load1 37.69, workers 27, MemAvail 81 GB | server2: busy 100%, load1 91.05, workers 93, MemAvail 1383 GB | pending box1-eligible 30636 / server2-eligible 46106 (shared queues count in both; unleased, not DONE)
 2026-11-17 13:30Z | box1: busy 100%, load1 39.99, workers 25, MemAvail 82 GB | server2: busy 100%, load1 91.64, workers 98, MemAvail 1383 GB | pending box1-eligible 30628 / server2-eligible 46095 (shared queues count in both; unleased, not DONE)
 2026-11-17 13:35Z | box1: busy 100%, load1 40.56, workers 26, MemAvail 79 GB | server2: busy 100%, load1 92.19, workers 90, MemAvail 1384 GB | pending box1-eligible 30866 / server2-eligible 46333 (shared queues count in both; unleased, not DONE)
 2026-11-17 13:40Z | box1: busy 100%, load1 37.19, workers 28, MemAvail 87 GB | server2: busy 100%, load1 91.49, workers 90, MemAvail 1385 GB | pending box1-eligible 44025 / server2-eligible 59490 (shared queues count in both; unleased, not DONE)
@@ -298,3 +292,9 @@
 2026-11-18 07:15Z | box1: busy 94%, load1 33.46, workers 0, MemAvail 90 GB | server2: busy 41%, load1 27.19, workers 27, MemAvail 1319 GB | pending box1-eligible 3143 / server2-eligible 42356 (shared queues count in both; unleased, not DONE)
 2026-11-18 07:15Z | WARNING server2 below 85% busy for 18 readings in a row with jobs pending
 2026-11-18 07:15Z | AUTO-FILL step run: dispatcher alive pid 1240823/3529457
+2026-11-18 07:20Z | box1: busy 90%, load1 30.69, workers 0, MemAvail 87 GB | server2: busy 40%, load1 26.86, workers 30, MemAvail 1316 GB | pending box1-eligible 3087 / server2-eligible 42300 (shared queues count in both; unleased, not DONE)
+2026-11-18 07:20Z | WARNING server2 below 85% busy for 19 readings in a row with jobs pending
+2026-11-18 07:20Z | AUTO-FILL step run: dispatcher alive pid 1240823/3535042
+2026-11-18 07:25Z | box1: busy 93%, load1 30.14, workers 0, MemAvail 105 GB | server2: busy 41%, load1 26.06, workers 24, MemAvail 1328 GB | pending box1-eligible 3272 / server2-eligible 42485 (shared queues count in both; unleased, not DONE)
+2026-11-18 07:25Z | WARNING server2 below 85% busy for 20 readings in a row with jobs pending
+2026-11-18 07:25Z | AUTO-FILL step run: dispatcher alive pid 1240823/3539766
