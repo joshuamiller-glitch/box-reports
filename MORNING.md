@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 12:15Z 11-18 (t+551.3 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 12:31Z 11-18 (t+551.5 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 91% min 78% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-18T12:15:56Z. Box: CPU 93.7%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 92% min 78% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-18T12:31:12Z. Box: CPU 93.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -5804,3 +5804,28 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 12:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 12:27Z) W-TL2b T2 page refreshed: autopilot/DS3_TOOLS_T2_P3.md
 - (wall 12:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:30Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:30Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:31Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:31Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:32Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:32Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:33Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:33Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:34Z) W-PM status: load1 30.86, PM exact jobs pending 12, cells with output 59; 743 jobs wanted, 12 chains running, 1795005176; P5 page done, P8 grid np_m15_x10_y15 2898
+- (wall 12:34Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:34Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- lead 12:35Z AUTO-FILL (cores_meter, server 2 below 85% twice): dispatcher alive pid 1240823/3878911; dispatch.log LAUNCH lines in last ~10 min: 36; dispatcher walks ALL queues in order and takes any eligible line with deps already pushed (prefetch threads push the rest), so an ineligible/empty front queue cannot block it.
+- (wall 12:35Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:35Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:36Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:36Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 24 (pending file), cell-months done 1979, load 30.64 31.12 31.43, epoch 1795005392
+- (wall 12:36Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:37Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:37Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T12:37:57Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (wall 12:38Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:38Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:39Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:39Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:39Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 32.72 32.35 31.90
