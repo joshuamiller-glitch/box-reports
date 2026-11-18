@@ -1,5 +1,5 @@
 # DS3_P7_NYAM_LOT - P7 NY AM lots on JL3, all layers on (W-P7L, order 11-17 23:30Z)
-VERDICT (data ends 2026-11-13; FIRST PASS; updated 2026-11-18 00:37Z): no real cells landed yet
+VERDICT (data ends 2026-11-13; FIRST PASS; updated 2026-11-18 01:07Z): no real cells landed yet
 
 Five-line summary: (1) pick window end 2026-11-13 (trailing 6M 2026-05-14..2026-11-13, 3M beside, 1M also). (2) refit date 2026-11-18, then every 2 weeks (walk-forward refit dates every 14 days from 2023-10-02). (3) data end 2026-11-13 (202611 base-lot store months via W-DATA). (4) rule: P7 NY AM lots 7 live = base 4 vs base 3 / 2 / 1 / 0 (live 5 / 4 / 2 / 0; live 3 is not reachable with x1.75) and the two halves at 7 live (HA 09:30-11:00 only, HP 11:00-12:00 only); walk-forward rule R6 = cut when trailing-6M P7 NY AM P&L is negative. (5) prior-year % vs live: see the per-year table (AMBER 15-30%, RED >30% worse on ulcer / max DD / mean).
 
@@ -30,6 +30,6 @@ walk-forward not run yet (needs the cell for all months).
 controls not queued/landed yet.
 
 ## Bar swap vs lot cut (W-SWB, 36 TL3_SWB sets for P7 NY AM)
-Swap page line: no P7 NY AM swap engine row landed yet | the lot-cut result is in Table A; compare on ulcer first.
+Swap page line: - Engine: hook swb_inject2 (identity exact on P7 NY AM, P7 London, H7 NY AM, O7, 202504 and 202610); sets TL3_SWB_* queued per cell: top 5 naked (6M), top 5 naked (3M), best row per bar family, 30 random-clock controls on the primary pick; verdict = engine rows in section 4 only. | the lot-cut result is in Table A; compare on ulcer first.
 
 Live DS7 need: panel setting only (P7 lots by session 12,7,0,7,0,0 -> 12,7,0,N,0,0 with N = live lots in the table); the half-session variants need a time-of-day lot window (new code: lots 0 for P7 in 09:30-11:00 or 11:00-12:00).
