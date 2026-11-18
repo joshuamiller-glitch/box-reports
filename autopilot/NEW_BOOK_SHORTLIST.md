@@ -1,6 +1,6 @@
 # NEW_BOOK_SHORTLIST - best new-book prospects per session (W-SHORT, order 1333Z)
 
-refreshed 2026-11-18 14:30Z | data end 2026-11-15 | pick window = trailing 26 weeks to the newest data (L3M beside); refit would be every 2 weeks, all layers jointly | prior-year check vs the cell's own L6M weekly mean: AMBER 15-30% worse, RED >30% worse (RED = not delivered as a pick, shown with numbers)
+refreshed 2026-11-18 14:42Z | data end 2026-11-15 | pick window = trailing 26 weeks to the newest data (L3M beside); refit would be every 2 weeks, all layers jointly | prior-year check vs the cell's own L6M weekly mean: AMBER 15-30% worse, RED >30% worse (RED = not delivered as a pick, shown with numbers)
 
 **STATUS**: stage 2 (shortlist of 12 per session) built from every scored pass-1/pass-2 cell of the grid; stage 3 (trust + nulls) per row below; stage 4 (7 exit families + layers) and stage 5 (exact engine JL3, identity first) NOT reached for any row yet. SCREEN LEVEL = naked trigger on the bar series, 1 lot, $4.84 incl, points x $20 = dollars at 1 lot (live lot x1.75 not applied); NOT dollars of the live book. No row is BUILD-READY: that label needs the exact engine (stage 5).
 **SELECTION CAUTION**: every row was picked as a best-of-millions cell on the same L6M it is judged on. Cell-level random-entry nulls do not correct for that; the selection-corrected numbers are the per-session best-pick null and the rolling result of the finalists (below), and both are still small-sample. Reversal-type bars (kagi, pnf, renko family, lbrk, swing, dchg, pasl) are PROVISIONAL until the look-ahead gate (stage 1) has passed them: gate result not published yet.
@@ -26,7 +26,7 @@ refreshed 2026-11-18 14:30Z | data end 2026-11-15 | pick window = trailing 26 we
 | 6 | lbrk_3_20 (REV; native LineBreak (3 lines; N-line custom)) | tape_vpin.fade_native | {"N": 600, "thr": 0.05} | sym15u | both | +263 / +5259 | -68 | 274 | +1877 / +1159 / +3343 | +21.9 | no |
 
 ## NYAM
-Grid best-pick (selection-corrected, pass 2, whole session grid, rolling 26w -> 2w): OOS +50.4 pts/wk vs null mean -50.2 (n=2 draws), excess 100.6, percentile 1.00, persistence 0.62, year flags {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"}.
+Grid best-pick (selection-corrected, pass 2, whole session grid, rolling 26w -> 2w): OOS +46.8 pts/wk vs null mean -50.2 (n=2 draws), excess 97.0, percentile 1.00, persistence 0.62, year flags {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"}.
 Grid best-pick (selection-corrected, pass 1, whole session grid, rolling 26w -> 2w): OOS +46.1 pts/wk vs null mean -31.5 (n=2 draws), excess 77.5, percentile 1.00, persistence 0.60, year flags {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"}.
 Rolling over these 12 finalists (hindsight set; pick trailing 26w -> next 2w): OOS +40.3 pts/wk, persistence 0.67, ulcer 593, L6M -139.1 / L3M -178.6 pts/wk, per year {"2023": 84.2, "2024": 51.5, "2025": 95.0, "2026": -51.6}; null (same 12 cells, 5 random-entry draws) mean 9.1, excess 31.2, percentile 0.80.
 
@@ -66,7 +66,7 @@ Rolling over these 12 finalists (hindsight set; pick trailing 26w -> next 2w): O
 | 12 | 2+3+null | lbrk_3_20  (REV) | tape_vpin.fade_native {"N": 600, "thr": 0.05} | sym15u 120/120 (u=13.0) | +18143 / +15722 / +14368 / +86243 | 2.1 | 77.5 | +5259 | -1356 | +37549 | +23190 | +66851 | +57336 | ok/ok/ok | 0.67 | 639 | 30/30: -314 pts, win 0.503; 60/60: +907 pts, win 0.518; 60/120: -315 pts, win 0.37 | 0/2 | -15033 / +20292 | 1.00 (n=2; beats all) | PASS (brute-force 0 mismatch, look-ahead 0/6 cuts differ, fills never early) | bar: native LineBreak (3 lines; N-line custom) | NEEDS MORE (stage 2+3+null); PROVISIONAL (reversal bar, look-ahead gate) |
 
 ## London
-Grid best-pick (selection-corrected, pass 2, whole session grid, rolling 26w -> 2w): OOS +1.1 pts/wk vs null mean 1.0 (n=2 draws), excess 0.1, percentile 0.50, persistence 0.41, year flags {"2023": "ok", "2024": "ok", "2025": "RED", "2026": "ok"}.
+Grid best-pick (selection-corrected, pass 2, whole session grid, rolling 26w -> 2w): OOS +1.1 pts/wk vs null mean 5.4 (n=2 draws), excess -4.2, percentile 0.50, persistence 0.41, year flags {"2023": "ok", "2024": "ok", "2025": "RED", "2026": "ok"}.
 Grid best-pick (selection-corrected, pass 1, whole session grid, rolling 26w -> 2w): OOS -20.8 pts/wk vs null mean 1.2 (n=2 draws), excess -22.0, percentile 0.00, persistence 0.43, year flags {"2023": "RED", "2024": "ok", "2025": "RED", "2026": "RED"}.
 Rolling over these 12 finalists (hindsight set; pick trailing 26w -> next 2w): OOS +19.4 pts/wk, persistence 0.69, ulcer 169, L6M -0.7 / L3M -49.2 pts/wk, per year {"2023": 12.7, "2024": 25.0, "2025": 10.0, "2026": 25.8}; null (same 12 cells, 5 random-entry draws) mean 10.3, excess 9.1, percentile 0.80.
 

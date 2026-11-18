@@ -1,0 +1,35 @@
+# NEW_BOOK_ENGINE - exact-engine rows for provisional NY new books (W-NYENG), refreshed 2026-11-18 14:47Z
+
+Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot dollars at $4.84 RT/contract proxy plus an x1.75 live-lot column (stats scaled); deltas = WITH candidate minus JL3 on the same months; ulcer and worst week FIRST, then mean $/week. ADD = new book at 1 base lot (= 2 live lots); RK7/RP7/RM7 = the live book is OFF in that NY session and the candidate takes its place. Prereg PREREG_NYE.md + AMEND1 (shas in DECISIONS.md). Cells are PROVISIONAL picks: the engine rows decide. Wide brackets are NOT marked down (order 1447Z): judge on the same-bracket null (controls, pending) + usual rules.
+**EQUAL RISK (order 1447Z):** risk-matched size c = 60 / stop pts (a 120-pt book = 0.5 of the lots; base lots must be whole, so this is shown as the JL3 daily stack + c x the new book daily P&L from the same engine run = exact when the book does not change the other books via caps/locks; state in live lots: a 120-pt book at 1 base lot = 2 live lots = a 60-pt book at 4 live lots; the whole-lot match for a 120-pt book at 1 live lot = 60-pt book at 2 live lots = the c=0.5 column). R per trade = mean P&L per trade / dollar stop at the tested size; R per week = weekly mean / dollar stop.
+DAY-CAP: MF1 book day loss cap 4,800 $ / day profit cap 12,000 $ (engine DAYCAP default for a new book). One stop of S points at 1 base lot costs S x $20 (120 pt = $2,400 = 50% of the day loss cap, two stops trip it); at 2 live lots (the x1.75 view) it costs S x $40 (a 120-pt stop = $4,800 = the whole cap: ONE stop trips the day cap). DAY-DONE layer sees the same dollars.
+**Identity (TL3_NYE_ID vs JL3):** 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76)
+**Set-months done (NYE + NYW):** 107 of 225 queued. Controls (date-shift): not run yet; no label without controls.
+
+## NY AM
+| cell | bar | trigger | bracket stop/target pts ($ per base lot stop) | day-cap | variant | window | d ulcer (x1 / x1.75) | d worst wk | d mean $/wk (x1 / x1.75) | d max DD | RISK-MATCHED c: d ulcer / d worst / d mean | new-book trades | R/trade | R/wk | corr daily w/ K7 / P7 / M7 | flag vs JL3 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| NA1 | vol_500 | levels_vwap.break_native {"n": 2, "k": 0.25} | 120/120 ($2400) | ONE stop trips at 2 live lots | ADD | L3M | +5762 / +10083 | +360 | -2340 / -4095 | -15707 | c=0.50: +2009 / +378 / -1141 | 95 | -0.137 | -0.999 | -0.21 / +0.12 / -0.09 | RED |
+| NA1 | vol_500 | levels_vwap.break_native {"n": 2, "k": 0.25} | 120/120 ($2400) | ONE stop trips at 2 live lots | RK7 | L3M | +6017 / +10529 | -2702 | -2012 / -3521 | -15862 | c=0.50: +2308 / -1510 / -813 | 95 | -0.137 | -0.999 | -0.21 / +0.12 / -0.09 | RED |
+| NA1 | vol_500 | levels_vwap.break_native {"n": 2, "k": 0.25} | 120/120 ($2400) | ONE stop trips at 2 live lots | RP7 | L3M | +4284 / +7498 | +748 | -2901 / -5076 | -11036 | c=0.50: +685 / +1006 / -1702 | 95 | -0.137 | -0.999 | -0.21 / +0.12 / -0.09 | RED |
+| NA1 | vol_500 | levels_vwap.break_native {"n": 2, "k": 0.25} | 120/120 ($2400) | ONE stop trips at 2 live lots | RM7 | L3M | +4784 / +8372 | -1512 | -3106 / -5435 | -13679 | c=0.50: +1677 / -319 / -1955 | 95 | -0.131 | -0.959 | -0.20 / +0.08 / -0.08 | RED |
+| NA2 | rng_28 | levels_vwap.retest_native {"M": 3, "tol": 0.5} | 84/84 ($1680) | no single stop trips | ADD | L3M | +104 / +182 | +758 | +153 / +268 | +3822 | c=0.71: -34 / +1437 / +188 | 88 | -0.011 | -0.073 | -0.22 / +0.15 / -0.19 | ok |
+| NA2 | rng_28 | levels_vwap.retest_native {"M": 3, "tol": 0.5} | 84/84 ($1680) | no single stop trips | RK7 | L3M | +1279 / +2238 | -2692 | +376 / +659 | +372 | c=0.71: +958 / -2014 / +411 | 88 | -0.011 | -0.073 | -0.22 / +0.15 / -0.19 | ok |
+| NA2 | rng_28 | levels_vwap.retest_native {"M": 3, "tol": 0.5} | 84/84 ($1680) | no single stop trips | RP7 | L3M | -324 / -567 | +758 | -566 / -990 | +3822 | c=0.71: -475 / +1437 / -531 | 88 | -0.011 | -0.073 | -0.22 / +0.15 / -0.19 | ok |
+| NA3 | vol_500 | levels_profile_nodes.break {"n": 1, "k": 0.5} | 81/120 ($1625) | no single stop trips | ADD | L3M | +1619 / +2833 | -3531 | -1393 / -2438 | -5081 | c=0.74: +1125 / -2426 / -1017 | 70 | -0.164 | -0.884 | -0.13 / -0.14 / -0.15 | AMBER |
+| NA4 | vol_350 | levels_vwap_bands.break_native {"n": 3, "k": 0.5} | 120/68 ($2400) | ONE stop trips at 2 live lots | ADD | L3M | +107 / +187 | -3530 | +375 / +657 | +307 | c=0.50: +239 / -2385 / +36 | 137 | +0.027 | +0.283 | -0.02 / +0.07 / +0.07 | ok |
+| NA5 | rng_28 | levels_round.break_native {"n": 3, "k": 0.5} | 120/120 ($2400) | ONE stop trips at 2 live lots | ADD | L3M | +1264 / +2212 | +236 | +1669 / +2922 | -4742 | c=0.50: +254 / +118 / +1336 | 111 | +0.033 | +0.278 | -0.05 / +0.11 / +0.05 | AMBER |
+| NA6 | vol_4000 | levels_opens.retest_native {"M": 3, "tol": 0.5} | 120/120 ($2400) | ONE stop trips at 2 live lots | ADD | L3M | +1674 / +2930 | -4066 | -279 / -489 | -5099 | c=0.50: +550 / -1686 / -117 | 80 | -0.022 | -0.135 | +0.18 / +0.34 / +0.34 | AMBER |
+
+## NY PM
+| cell | bar | trigger | bracket stop/target pts ($ per base lot stop) | day-cap | variant | window | d ulcer (x1 / x1.75) | d worst wk | d mean $/wk (x1 / x1.75) | d max DD | RISK-MATCHED c: d ulcer / d worst / d mean | new-book trades | R/trade | R/wk | corr daily w/ K7 / P7 / M7 | flag vs JL3 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| NP1 | vol_1100 | levels_round.break_native {"n": 3, "k": 0.5} | 107/107 ($2140) | no single stop trips | ADD | L3M | +297 / +520 | +2658 | +371 / +649 | -60 | c=0.56: +138 / +2867 / +208 | 79 | +0.029 | +0.173 | +0.09 / n/a / n/a | ok |
+| NP2 | vol_1100 | levels_vwap_bands.reject_native {"tol": 1.0, "conf": "close"} | 109/120 ($2175) | no single stop trips | ADD | L3M | +498 / +872 | +2318 | +27 / +47 | -1209 | c=0.55: +216 / +2684 / +15 | 77 | +0.002 | +0.012 | -0.14 / n/a / n/a | ok |
+| NP5 | tick_800 | levels_session_hl.break {"n": 3, "k": 0.25} | 120/120 ($2400) | ONE stop trips at 2 live lots | ADD | L6M | +242 / +423 | -2034 | +1382 / +2419 | -359 | c=0.50: +56 / -1017 / +691 | 132 | +0.118 | +0.576 | +0.20 / n/a / n/a | ok |
+| NP5 | tick_800 | levels_session_hl.break {"n": 3, "k": 0.25} | 120/120 ($2400) | ONE stop trips at 2 live lots | ADD | L3M | +330 / +577 | -2034 | +738 / +1291 | -359 | c=0.50: +57 / -1017 / +369 | 54 | +0.074 | +0.307 | +0.12 / n/a / n/a | ok |
+| NP6 | rng_10 | levels_profile_nodes.reject {"tol": 0.5, "conf": "close"} | 52/105 ($1050) | no single stop trips | ADD | L6M | +729 / +1275 | -574 | +203 / +356 | -4464 | c=1.14: +851 / -1092 / +239 | 85 | +0.075 | +0.236 | +0.21 / n/a / n/a | ok |
+| NP6 | rng_10 | levels_profile_nodes.reject {"tol": 0.5, "conf": "close"} | 52/105 ($1050) | no single stop trips | ADD | L3M | +1036 / +1813 | -574 | -563 / -985 | -4464 | c=1.14: +1200 / -656 / -630 | 42 | -0.139 | -0.448 | +0.29 / n/a / n/a | ok |
+
+Labels: none yet (controls pending; BUILD-READY / NEEDS MORE / DROPPED rule in PREREG_NYE.md).
+

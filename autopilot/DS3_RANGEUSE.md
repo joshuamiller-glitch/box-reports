@@ -1,8 +1,8 @@
-# DS3_RANGEUSE - T-RANGEUSE: the walk-forward range forecast on D7 dials (W-RU). Rebuilt 2026-11-18T11:41Z by code/th_rangeuse/ru_loop.sh (every 3 h). Research only, NO PASS claim.
+# DS3_RANGEUSE - T-RANGEUSE: the walk-forward range forecast on D7 dials (W-RU). Rebuilt 2026-11-18T14:43Z by code/th_rangeuse/ru_loop.sh (every 3 h). Research only, NO PASS claim.
 **VERDICT (plain): 74 cells scored through L6M; 6 (cell,scope) pass the tolerant gate with a drawdown cut in recent AND older windows (leads, before placebo/null); placebo/null/gain-of-(b,(c) over (a) below. No PASS claim.**
 
 Prereg: autopilot/RANGEUSE_PREREG.md (sha in DECISIONS.md, logged before scoring). Order: DIRECTIVE_UW_3PART_20261113.md PART 2. Base JN05W2 exact engine, all layers ON. Identity: TL3_RU_ID 202610 (hook path active at neutral multipliers): 598 trades net 25943.82 vs JN05W2 598 net 25943.82 -> IDENTICAL.
-Months scored (cells with all months of the window / 98 cells): L3M 98, L6M 74, HOLD 50, PREUW 38. Driver: 0 jobs wanted, 0 chains running, 1795002047.
+Months scored (cells with all months of the window / 98 cells): L3M 98, L6M 74, HOLD 50, PREUW 38. Driver: 0 jobs wanted, 0 chains running, 1795013038.
 
 ## 0. Method (short)
 - Forecast = walk-forward ridge (expanding, min 120 days, refit every 10 trading days) of the session ln range at the reading used by the trade (asia/london R0 prior close; nyam R2 09:30 before 10:00 else R3 10:00; nypm R3). (a) ATR benchmark only, (b) ATR + IV term (NDX/QQQ/SPX), (c) full UW (b + SPX/QQQ flip, SPX/ALL4 gamma, NDX/SPX IV level, tide). Forecast points = predicted ln range x last close; ratio = prediction / expanding median of the past predictions; terciles from the expanding past. First forecasts exist from ~2025-03, so PREUW (2024-10..2025-06) is mostly unscored by the rule (rule inactive without a forecast = same as JN05W2).
