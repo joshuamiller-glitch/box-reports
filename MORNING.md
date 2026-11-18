@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 09:22Z 11-18 (t+596.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 11:22Z 11-18 (t+598.6 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 96% min 87% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 92% min 79% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -5631,3 +5631,26 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 11:18Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 11:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 11:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- lead 11:20Z AUTO-FILL (cores_meter, server 2 below 85% twice): dispatcher alive pid 1240823/3798016; dispatch.log LAUNCH lines in last ~10 min: 33; dispatcher walks ALL queues in order and takes any eligible line with deps already pushed (prefetch threads push the rest), so an ineligible/empty front queue cannot block it.
+- (wall 11:20Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18 11:20Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
+- (wall 11:20Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:21Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:21Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:22Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:22Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:23Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:23Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:24Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:24Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:25Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:25Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:26Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:26Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:27Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:27Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T11:28:02Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- (wall 11:28Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:28Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
