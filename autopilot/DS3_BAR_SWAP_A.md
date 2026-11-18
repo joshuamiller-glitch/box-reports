@@ -1632,9 +1632,9 @@ Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': -2906.
 | L6M | 9327 | 13315 | +42.8% | +20109 | +17019 | -3201 | 30189/44597 | -19127/-17891 |
 | L3M | 10841 | 16976 | +56.6% | +16721 | +13571 | -3243 | 30189/44597 | -15066/-21425 |
 | HOLD | 27872 | 46587 | +67.1% | +9996 | +4317 | -5760 | 82017/93234 | -36787/-40024 |
-| OLDER | not finished ||||||| |
-| Y2023 | not finished ||||||| |
-| Y2024 | not finished ||||||| |
+| OLDER | 25599 | 19427 | -24.1% | +5291 | +5455 | +121 | 88502/52816 | -38412/-33648 |
+| Y2023 | 17453 | 22150 | +26.9% | +2124 | +3077 | +928 | 40010/50734 | -17197/-18939 |
+| Y2024 | 26429 | 18109 | -31.5% | +5049 | +5041 | -43 | 70704/52816 | -36802/-27553 |
 | Y2025 | 30332 | 18265 | -39.8% | +8447 | +8106 | -409 | 88502/46651 | -27370/-22307 |
 Controls L6M: 0 valid random-clock draws; real ulcer change +42.8% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
 Controls L3M: 0 valid random-clock draws; real ulcer change +56.6% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
@@ -1767,8 +1767,8 @@ Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': 0.0, '
 | L6M | 9327 | 9342 | +0.2% | +20109 | +20546 | +451 | 30189/31064 | -19127/-18618 |
 | L3M | 10841 | 10851 | +0.1% | +16721 | +17168 | +461 | 30189/31064 | -15066/-16757 |
 | HOLD | 27872 | 29103 | +4.4% | +9996 | +10001 | +21 | 82017/86526 | -36787/-35575 |
-| OLDER | not finished ||||||| |
-| Y2023 | not finished ||||||| |
+| OLDER | 25599 | 25203 | -1.5% | +5291 | +5132 | -146 | 88502/76244 | -38412/-39934 |
+| Y2023 | 17453 | 19478 | +11.6% | +2124 | +1866 | -248 | 40010/42805 | -17197/-18665 |
 | Y2024 | 26429 | 28167 | +6.6% | +5049 | +4989 | -47 | 70704/65191 | -36802/-36802 |
 | Y2025 | 30332 | 25989 | -14.3% | +8447 | +8259 | -173 | 88502/76244 | -27370/-31453 |
 Controls L6M: 0 valid random-clock draws; real ulcer change +0.2% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
@@ -1782,10 +1782,10 @@ Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': 0.0, '
 | L6M | 9327 | 9318 | -0.1% | +20109 | +19942 | -138 | 30189/31388 | -19127/-21394 |
 | L3M | 10841 | 11077 | +2.2% | +16721 | +15857 | -841 | 30189/31388 | -15066/-15939 |
 | HOLD | 27872 | 28699 | +3.0% | +9996 | +9527 | -443 | 82017/79737 | -36787/-29343 |
-| OLDER | not finished ||||||| |
-| Y2023 | not finished ||||||| |
-| Y2024 | not finished ||||||| |
-| Y2025 | not finished ||||||| |
+| OLDER | 25599 | 27491 | +7.4% | +5291 | +4850 | -417 | 88502/87848 | -38412/-33729 |
+| Y2023 | 17453 | 16024 | -8.2% | +2124 | +2140 | +38 | 40010/36330 | -17197/-19304 |
+| Y2024 | 26429 | 32488 | +22.9% | +5049 | +4053 | -970 | 70704/64141 | -36802/-33364 |
+| Y2025 | 30332 | 29081 | -4.1% | +8447 | +8260 | -162 | 88502/87848 | -27370/-22613 |
 Controls L6M: 0 valid random-clock draws; real ulcer change -0.1% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
 Controls L3M: 0 valid random-clock draws; real ulcer change +2.2% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
 Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': 0.0, 'K7': -1206.0, 'M7': -1956.0, 'O7': 0.0, 'P7': -1212.0, 'U7': 0.0}
