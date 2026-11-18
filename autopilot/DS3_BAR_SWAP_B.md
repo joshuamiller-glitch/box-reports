@@ -1,7 +1,7 @@
 # DS3 BAR SWAP B (W-SWB): P7 / H7 / A7 / O7 on every bar row
 
 Rule: standing selection rule (CLAUDE.md, user 11-17 18:10Z/18:13Z): pick on the trailing 6 months to the newest data, trailing 3M beside it; validated by rolling walk-forward; older years tolerant (AMBER 15-30% / RED >30% worse than the live bar). FIRST PASS standalone (tape fills, raw chassis, live bracket); engine swap test is section 4.
-Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 16:20:57 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
+Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 18:11:51 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
 
 ## Plain summary
 - Tried: every available bar row (~490 time / activity / information / price / composite rows) as the signal clock of P7, H7, A7, O7 in three versions side by side: transplanted live settings, transplanted + the book grid refit, and bar-NATIVE rules (bars / bricks as the unit, no minute ATR); standalone on the tape with live brackets, then the exact engine with the full JL3 stack (not gated on the naked result).

@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-18T17:47Z
+## TREND (TL) update 2026-11-18T18:17Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T17:33:48Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T18:03:49Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -6718,3 +6718,30 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 18:08Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 18:09Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 18:09Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:10Z) W-MD hourly: page DS3_REBUILD_S3_ENV.md W-MD sections refreshed; MBO older-day features 973 extracted (finished workers 3 of 3); engine state: identity True real evaluated ['H7_TUW10', 'H7_SUWBE', 'K7_TUWN10'] controls done []
+- (wall 18:10Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:10Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:11Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 18:11Z USER APPROVAL (pasted in session at ~18:08Z): two more compute servers rented by the user, 64 cores each, compute pool only: 109.94.96.39 and 206.223.224.21 (user ubuntu); rules as server 2 (no Claude Code, no vendor keys, no credentials, never copy /etc/trading or key files; research data and code only). SSH check 18:11Z: both refuse my key (109.94.96.39 publickey denied; 206.223.224.21 publickey/password denied): my PUBLIC key (id_ed25519.pub, the one already authorized on server 2) must be added to ~/.ssh/authorized_keys on both; posted to the user in the session. Meanwhile preparing the bootstrap (code, bars, feature stores, tape sizes measured on server 2) so phase 1 workers start the minute SSH works.
+- (wall 18:11Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:12Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:12Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:13Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:13Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:14Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 51.16 45.35 43.81 load; auto-expansions 0 (battery stopped by user order)
+- (wall 18:14Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:14Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:15Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T18:15:44Z W-NT hourly: NT set-months landed 340 (rate 0/h since last line); identity 4/4 landed (target 04:35Z); K7 L6M cells landed 0 (target table 06:00Z; first.txt 1 lines; controls K7+M7 target 12:00Z, pf.txt 50 lines built); page autopilot/DS3_NEAR_TARGET.md; closest to live: see page section 2
+- (wall 18:15Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
+- (wall 18:16Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:16Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 18:17Z W-S3: started on server A (109.94.96.39): checking blank NVMe, then format/mount /mnt/l2, copy code+venv+grid data from server 2, partition grid with server 2, CORES.md extension. Server B (206.223.224.21) still denies our key; re-testing every 10 min.
+- 18:17Z LEAD NOTE: user added my key (18:14Z). SERVER A 109.94.96.39 reachable: rs4-metal-xlarge-fra-1, 128 threads (user said 64 cores), 1.5 TB RAM, sudo OK, root 879 GB, four blank 7 TB NVMe (unmounted), RTT 117 ms to server 2, no /etc/trading. SERVER B 206.223.224.21: still 'Permission denied (publickey,password,keyboard-interactive)' at 18:20Z: key not accepted yet (user to check authorized_keys for user ubuntu / sshd). Agent W-S3 started to bootstrap A: format one NVMe as /mnt/l2, copy code+venv+bars+feat stores+tape (about 65-70 GB for phase 1), grid partition with server 2 (no duplicate work), 120 workers, CORES.md/watchdog extension, engine-data copy in the background; reports copy time and new jobs/h + phase-1 ETA. Sec: no credentials/keys copied; no Claude Code on A.
+- (wall 18:17Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:17Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:18Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:18Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 18:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
