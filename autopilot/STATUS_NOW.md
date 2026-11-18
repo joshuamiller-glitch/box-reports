@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-18 05:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 05:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-18 05:15Z | box1: busy 100%, load1 44.04, workers 2, MemAvail 93 GB | server2: busy 95%, load1 64.78, workers 14, MemAvail 1299 GB | pending box1-eligible 1330 / server2-eligible 40543 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-18 05:30Z | box1: busy 100%, load1 40.30, workers 3, MemAvail 98 GB | server2: busy 100%, load1 73.08, workers 13, MemAvail 1220 GB | pending box1-eligible 1265 / server2-eligible 40478 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-18 05:15Z
+2026-11-18 05:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 05:15Z | box1: busy 100%, load1 44.04, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 93.1 GB; live reservations 0 (0 GB); workers 2, of which TP-adopted 2 (RSS 3.7 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 44.04, 40.69, 38.86
-  by tag: SWB quota 4 running 2 hungry True RSS 3.7 GB PSS 3.5 GB
-  cell-months finished last hour (DONE markers): 302
-  top running jobs: TL3_SWB_H70_b52194 (x2);TL3_SWB_H70_084e20 (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 64.88, 63.96, 64.50|/dev/md2         28T  1.1T   27T   4% /mnt/l2|23|
+Server 1 (this box): MemAvail 98.5 GB; live reservations 0 (0 GB); workers 3, of which TP-adopted 3 (RSS 6.4 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 40.30, 40.10, 39.71
+  by tag: SWB quota 4 running 3 hungry True RSS 6.4 GB PSS 6.0 GB
+  cell-months finished last hour (DONE markers): 292
+  top running jobs: TL3_SWB_H70_1a4fbf (x4);TL3_SWB_H70_843d26 (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 73.08, 70.07, 66.93|/dev/md2         28T  1.1T   27T   4% /mnt/l2|22|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,6 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 64.88, 63.96, 64.50|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261118_0255Z_no-extra-server-tonight-order-of-work.md 20261118_0327Z_all-80-top-cells-recovered-seed-stage-a.md 20261118_0344Z_top-cells-NYPM-and-Asia-rows.md 20261118_0400Z_near-target-engine-rows-first.md 20261118_0424Z_EXIT-FAMILIES-seven-on-cells-that-show-life.md
+20261118_0327Z_all-80-top-cells-recovered-seed-stage-a.md 20261118_0344Z_top-cells-NYPM-and-Asia-rows.md 20261118_0400Z_near-target-engine-rows-first.md 20261118_0424Z_EXIT-FAMILIES-seven-on-cells-that-show-life.md 20261118_0525Z_publish-now-stages-abc-are-done.md
+- lead 05:23Z INBOX 20261118_0525Z_publish-now-stages-abc-are-done.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- lead 05:24Z INBOX 20261118_0525Z_publish-now-stages-abc-are-done received: research order, accepted. DIAGNOSIS (lead, server 2): gscore --sessions 1,2,3,0 --p
