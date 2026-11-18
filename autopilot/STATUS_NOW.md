@@ -1,11 +1,9 @@
-# STATUS_NOW (written 2026-11-18 08:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 09:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LEAD SILENT 40 MIN (CORES.md says no real lead note in MORNING.md for 40+ min)
-
-LATEST CORES.md LINE: 2026-11-18 08:45Z | LEAD SILENT 40 MIN (no real lead note in MORNING.md for 55 min)
+LATEST CORES.md LINE: 2026-11-18 09:00Z | AUTO-FILL step run: dispatcher alive pid 1240823/3642459
 
 ## UTC TIME WRITTEN
-2026-11-18 08:45Z
+2026-11-18 09:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -23,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 08:45Z | LEAD SILENT 40 MIN (no real lead note 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 103.4 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 36.34, 37.68, 36.02
+Server 1 (this box): MemAvail 69.4 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 29.49, 31.77, 34.27
   by tag: 
-  cell-months finished last hour (DONE markers): 587
+  cell-months finished last hour (DONE markers): 551
   top running jobs: 
-Server 2 (rs4 metal): load / disk / tp_launch procs: 27.30, 27.77, 28.40|/dev/md2         28T  1.1T   27T   4% /mnt/l2|56|
+Server 2 (rs4 metal): load / disk / tp_launch procs: 27.21, 27.19, 27.57|/dev/md2         28T  1.1T   27T   4% /mnt/l2|53|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
