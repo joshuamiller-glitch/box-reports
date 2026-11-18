@@ -110,6 +110,9 @@ Hourly measured rates (appended by W-PLAN each hour; format: HHZ box1 / Dallas /
 - 18:40Z box 1 ~320/h (partial hour, 11 workers), Dallas ~196/h (partial, 24 workers), A 0, B 0.
 
 <!-- ENGINE_PLAN_LIVE -->
+## 10b. Update from W-S3 (19:10Z): server A is ENGINE-READY
+Data copied (368 GB in 567 s), engine identity PASS at 19:07Z on A (TL3_NYE_ID 202610 = 691 trades / 37,159.82, 202504 = 637 / 41,239.76, bit-equal); per-host dispatch running since 19:09Z with engine cap 32 (live control: /mnt/l2/l2vast/_s3_A/CAP.txt); engine RSS 0.25-0.7 GB per worker (RAM is not the limit, CPU is). KEY FACT: A shares the host with 112 grid workers; with the engine at nice 10 the identity set took 1,072 s per month on A versus ~160 s on server 2 (6-7x slower), so engine throughput on A depends on the grid/engine split, not on the thread count. Consequence for the plan: the projection of 3,600/h for A+B engine-ready assumes engine workers get full cores; on a shared host it holds only if the engine gets its share (nice 0 / a CPU split). Decide the split per phase: while phase 1 is the long pole keep the grid share high; once phase 2/3 start give the engine the host. First measured set-months/h on A: /mnt/l2/l2vast/_s3_A/pull.log (PULLED lines, ~20-30 min). B: engine data copying from A, identity + dispatch next.
+
 ## 11. LIVE NUMBERS (auto, W-PLAN code/th_plan/plan_refresh.py, refreshed 2026-11-18 19:05Z; sections 1-9 above are the written plan, this block is the measurement)
 
 Measured engine set-months per clock hour (DONE marks; UTC hour; the current hour is partial):

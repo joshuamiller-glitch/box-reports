@@ -1,4 +1,4 @@
-# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-18 19:05Z
+# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-18 19:10Z
 
 Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish the whole search -> 2 prove it is not luck (30 controls, selection-corrected null, trust) -> 3 gates/layers one by one then jointly -> 4 D8 spec. Every number below is a screen-level number unless it says engine.
 
@@ -6,25 +6,25 @@ Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish
 
 | item | done | todo | jobs/hour (last 60 min) | ETA at that rate |
 |---|---|---|---|---|
-| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 72962 result files | 136769 jobs | 7059 | 19.4 h |
-| pass 2 (family cells, exits a2, top cells) | n/a | 26223 (a top cells 1791, a2 exit families 6651, c family cells 17781) | 1190 | 22.0 h |
+| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 73766 result files | 134979 jobs | 7405 | 18.2 h |
+| pass 2 (family cells, exits a2, top cells) | n/a | 26446 (a top cells 1668, a2 exit families 6651, c family cells 18127) | 1189 | 22.2 h |
 
 NOTE (18:40Z): the grid is partitioned over server 2 (rows 0-1 of 12), A (2-6) and B (7-11) by W-S3; finished results are merged into server 2 every ~5 min (lag <= 10 min), the todo and worker counts are summed over the three servers. A and B also see 172 bar rows that are complete on box 1 but not yet on server 2, so total todo is higher than the earlier single-server figure (about +50%).
 
-Pass-1 results on disk by tag: real 33860, null draw 1 17725, null draw 2 17708, extra draws (3-25) 3092 files. Pass-1 results still waiting for their pass-2 upgrade: real 24222.
+Pass-1 results on disk by tag: real 34629, null draw 1 17727, null draw 2 17724, extra draws (3-25) 3109 files. Pass-1 results still waiting for their pass-2 upgrade: real 24987.
 
-Machines (grid partitioned across servers): 207.188.7.103 load 75.56 workers 30; 109.94.96.39 load 111.46 workers 112; 206.223.224.21 load 117.11 workers 124; grid workers 266 (258 computing), engine workers 28; forward-path tables built (summed over servers) 306.
+Machines (grid partitioned across servers): 207.188.7.103 load 63.44 workers 30; 109.94.96.39 load 121.71 workers 112; 206.223.224.21 load 123.21 workers 124; grid workers 266 (258 computing), engine workers 72; forward-path tables built (summed over servers) 311.
 
-Since 17:23Z: pass-1 todo 80818 -> 136769 (+55951), pass-2 todo 25951 -> 26223 (+272). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
+Since 17:23Z: pass-1 todo 80818 -> 134979 (+54161), pass-2 todo 25951 -> 26446 (+495). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
 
 ## Machines (hourly; busy % is measured from /proc/stat against the REAL thread count of each machine)
 
 | machine | real threads | busy % | load1 | grid workers (computing) | engine workers | re-rank/other workers | results/hour (this machine) |
 |---|---|---|---|---|---|---|---|
-| server 2 Dallas | 64 | 99.9 | 75.56 | 266 (258) | 14 | 23 | 8249 |
-| A Frankfurt | 128 | 86.9 | 111.46 | 112 (109) | 2 | 0 | 3624 |
-| B Singapore | 128 | 91.5 | 117.11 | 124 (119) | 0 | 0 | 4490 |
-| box 1 London (lead, engine fillers) | 32 | 100 | 37.76 | 0 | see CORES.md | - | - |
+| server 2 Dallas | 64 | 99.7 | 63.44 | 266 (258) | 36 | 23 | 8594 |
+| A Frankfurt | 128 | 99.5 | 121.71 | 112 (109) | 24 | 0 | 3728 |
+| B Singapore | 128 | 94.3 | 123.21 | 124 (119) | 0 | 0 | 4598 |
+| box 1 London (lead, engine fillers) | 32 | 100 | 50.60 | 0 | see CORES.md | - | - |
 
 Server 2 has 64 threads (SMT off in firmware, order 1830Z check), A and B 128 each, box 1 32. Total jobs/hour and the phase-1 ETA are in the table above (sum over servers; double counting warning applies until W-S3 merges results). Any machine under 85% busy for 3 readings with work pending gets a one-line explanation in MORNING.md.
 
@@ -75,9 +75,48 @@ A cell goes forward to phases 2-3 if ALL of these hold, judged on the OWN-STOP r
 - passes the trust audit (brute-force re-simulation, 6 truncation cuts, fills at least signal + 1 s) and the look-ahead gate.
 Engine capacity decides the ORDER cells are tested in (best first), never WHETHER a passing cell is tested. If the count makes phases 2-3 long, the count and the hours are reported here; nothing is trimmed. Near-duplicates (the same trigger on neighbouring bar sizes or parameters) are grouped as one FAMILY for the engine: best member first, neighbours listed with their screen numbers and run after, nothing dropped. Cells that fail the rule stay on disk with the reason so a later 2-week refit can pick them up.
 
-### Counts passing per session
+### Counts passing per session (from SURVIVOR_COUNTS.md, W-SHORT)
 
-Not available yet: W-SHORT writes autopilot/SURVIVOR_COUNTS.md (counts per session on own-stop / bare / mask, failures by reason, number of families, path of the failing-cell file). The 4,000-cell tables in DAYMASK_RANK.md are capped for display only and are NOT the survivor count.
+# SURVIVOR_COUNTS - rule-based shortlist, no top-N (W-SHORT, order 1845Z), refreshed 2026-11-18 19:08Z
+
+THRESHOLDS (equal risk; stop = clip(bracket multiple x row bar unit, 10, 120), plain 60/60 = 60; R = points / stop): R1 last 26 weeks (L6M) positive; R2 >= 100 trades in L6M; R3 last 13 weeks (L3M) positive; R4 persistence > 0.60 = share of 2-week windows since 2023-10 with positive P&L; R5 prior years 2023 / 24 / 25: R per week more than 30% below the cell's own L6M R per week = RED (shown, NOT delivered as a pick), 15-30% = AMBER (passes, flagged); R6 trust (brute-force tape walk) + look-ahead (6 truncation cuts) + fills >= signal + 1 s = run on every passing cell in phase 2, best first (about 5-20 CPU-s per cell; counts below are BEFORE R6). A cell gets the FIRST rule it fails; every evaluated cell stays on disk with its reason.
+W-GRIDOPS: no threshold differs from the 1845Z order. R4 = 0.60 strict (> 0.60). L3M and L6M are on net points after $4.84, equal-risk R has the same sign.
+
+RANKING VARIANTS: bare = the grid result as scored (no account rule). OWN-STOP (cell's own bad-day stop, N = 2 stops, 1.5 / 3 neighbours) and current-stack MASK (JL3 DAY-DONE day state) are W-DAYMASK arrays that exist for only ~1,600-1,800 (row, module) pairs so far (cache_os2 / cache_acct); the full-grid arrays are produced by the phase-1 scoring (GL_OWNSTOP). Until they exist the OWN-STOP / MASK / difference counts cannot be computed: shown as n/a, not zero. The bare counts below are PROVISIONAL (the grid is partitioned over servers and each server sees only its own finished results until W-S3 merges them; counts from server 2 only, data week 189).
+
+FAMILIES: passing cells are linked into one family when they are the same module.variant on an adjacent bar size of the same bar type (grid size neighbours), an adjacent parameter of the same variant (grid parameter neighbours), or the identical parameter with another bracket / side; family = connected component of that graph. Best member (highest min(L6M R/wk, weakest prior-year R/wk)) is run first by the engine, the other members are listed after it with their screen numbers; nothing is dropped.
+
+## Asia
+- cells evaluated (server-2 results, data week 189): 4,386,735
+- PASS R1-R5, bare: **2,992** cells in **1,890 families** (non-reversal bars 2099, reversal 835, other 58; level / S-D modules 1061)
+- PASS on OWN-STOP: n/a (arrays not built for the full grid) | PASS on current-stack MASK: n/a | pass own-stop but not mask / mask but not own-stop: n/a
+- FAIL (first rule failed): R1 L6M<=0: 2,375,203; R2 trades<100: 960,658; R3 L3M<=0: 345,052; R4 persistence<=0.60: 622,303; R5 RED prior year (shown, not delivered): 80,527
+- AMBER prior year(s) (passing, flagged): 571 | trust fail / look-ahead fail: not run yet (R6 is phase 2; sample audit of 48 shortlisted cells: 47 pass, 1 look-ahead fail)
+- on-disk file with every cell and its reason: server 2 /mnt/l2/l2vast/_grid/rule/bare_Asia.parquet (+ pass_bare_Asia.csv = passing cells with family id, family order, rank in family)
+
+## London
+- cells evaluated (server-2 results, data week 189): 4,397,570
+- PASS R1-R5, bare: **1,035** cells in **808 families** (non-reversal bars 746, reversal 233, other 56; level / S-D modules 349)
+- PASS on OWN-STOP: n/a (arrays not built for the full grid) | PASS on current-stack MASK: n/a | pass own-stop but not mask / mask but not own-stop: n/a
+- FAIL (first rule failed): R1 L6M<=0: 2,458,413; R2 trades<100: 1,125,318; R3 L3M<=0: 268,528; R4 persistence<=0.60: 498,770; R5 RED prior year (shown, not delivered): 45,506
+- AMBER prior year(s) (passing, flagged): 216 | trust fail / look-ahead fail: not run yet (R6 is phase 2; sample audit of 48 shortlisted cells: 47 pass, 1 look-ahead fail)
+- on-disk file with every cell and its reason: server 2 /mnt/l2/l2vast/_grid/rule/bare_London.parquet (+ pass_bare_London.csv = passing cells with family id, family order, rank in family)
+
+## NYAM
+- cells evaluated (server-2 results, data week 189): 4,828,997
+- PASS R1-R5, bare: **9,504** cells in **4,556 families** (non-reversal bars 6560, reversal 2430, other 514; level / S-D modules 5157)
+- PASS on OWN-STOP: n/a (arrays not built for the full grid) | PASS on current-stack MASK: n/a | pass own-stop but not mask / mask but not own-stop: n/a
+- FAIL (first rule failed): R1 L6M<=0: 2,839,937; R2 trades<100: 755,347; R3 L3M<=0: 367,009; R4 persistence<=0.60: 788,984; R5 RED prior year (shown, not delivered): 68,216
+- AMBER prior year(s) (passing, flagged): 1565 | trust fail / look-ahead fail: not run yet (R6 is phase 2; sample audit of 48 shortlisted cells: 47 pass, 1 look-ahead fail)
+- on-disk file with every cell and its reason: server 2 /mnt/l2/l2vast/_grid/rule/bare_NYAM.parquet (+ pass_bare_NYAM.csv = passing cells with family id, family order, rank in family)
+
+## NYPM
+- cells evaluated (server-2 results, data week 189): 4,842,376
+- PASS R1-R5, bare: **531** cells in **396 families** (non-reversal bars 401, reversal 86, other 44; level / S-D modules 112)
+- PASS on OWN-STOP: n/a (arrays not built for the full grid) | PASS on current-stack MASK: n/a | pass own-stop but not mask / mask but not own-stop: n/a
+- FAIL (first rule failed): R1 L6M<=0: 2,596,024; R2 trades<100: 1,163,063; R3 L3M<=0: 294,813; R4 persistence<=0.60: 773,890; R5 RED prior year (shown, not delivered): 14,055
+- AMBER prior year(s) (passing, flagged): 116 | trust fail / look-ahead fail: not run yet (R6 is phase 2; sample audit of 48 shortlisted cells: 47 pass, 1 look-ahead fail)
+- on-disk file with every cell and its reason: server 2 /mnt/l2/l2vast/_grid/rule/bare_NYPM.parquet (+ pass_bare_NYPM.csv = passing cells with family id, family order, rank in family)
 
 ## Clock order (addendum 1731Z): sessions are decided Asia -> London -> NY AM -> NY PM
 
@@ -275,3 +314,12 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 
 - Rankings are best-of-many on the last 6 months; the selection-corrected best-pick null (phase 2b) is not applied yet to any row.
 - Screen numbers are naked triggers; the engine rows (NEW_BOOK_ENGINE*.md) show layers and account rules change results both ways.
+
+<!-- ENGINE_PLAN_ETAS -->
+**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-18 19:05Z):**
+
+- phase 1 pass 1: 139421 jobs left at 5116/h = 27.3 h (rate from the grid line above; sums over machines).
+- phase 1 pass 2: 26334 jobs left at 503/h = 52.4 h at today's allocation.
+- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 40 h at the current fleet (763/h) or 10.5 h with A and B engine-ready (projected 2894/h). Full table: ENGINE_PLAN.md section 11.
+- N is not a limit (order 1845Z): N only sizes the estimate; engine capacity decides the ORDER, never whether a passing cell is tested.
+<!-- /ENGINE_PLAN_ETAS -->
