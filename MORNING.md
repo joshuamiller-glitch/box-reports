@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 14:02Z 11-18 (t+553.0 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 14:17Z 11-18 (t+553.3 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 96% min 84% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-18T14:02:18Z. Box: CPU 99.5%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 97% min 84% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-18T14:17:27Z. Box: CPU 99.7%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-18T13:47Z
+## TREND (TL) update 2026-11-18T14:17Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T13:33:46Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T14:03:46Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -6065,3 +6065,33 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 14:09Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 14:09Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 14:09Z) W-MD hourly: page DS3_REBUILD_S3_ENV.md W-MD sections refreshed; MBO older-day features 973 extracted (finished workers 3 of 3); engine state: identity True real evaluated ['H7_TUW10', 'H7_SUWBE', 'K7_TUWN10'] controls done []
+- (wall 14:10Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:10Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:11Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T14:11:10Z W-NT hourly: NT set-months landed 264 (rate 49/h since last line); identity 4/4 landed (target 04:35Z); K7 L6M cells landed 0 (target table 06:00Z; first.txt 1 lines; controls K7+M7 target 12:00Z, pf.txt 50 lines built); page autopilot/DS3_NEAR_TARGET.md; closest to live: see page section 2
+- (wall 14:11Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:12Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 14:12Z W-SHORT CORE-HOURS ESTIMATE for stages 2-5 of the 1333Z funnel (23:00Z target; measured engine pace 2.6 core-min per set-month: server 2 551 set-months/h on 24 workers at 14:02Z): S2 shortlist ~0.5 core-h (re-read of cached weekly arrays); S3 trust + nulls on 48 cells ~90 core-h (48 cells x 20 extra random-entry draws = ~960 pass-2 jobs at about 5 core-min, plus brute-force re-sim and rolling); S4 exits on ~24 survivors ~40 core-h (68 s per parameter x specs, plus exit nulls); S5 exact engine 12 cells x 2 roles (new book / replacement) = 24 sets x 42 set-months (L6M + 3 prior years) = 1,008 + 30 controls x 6 months x 12 cells = 2,160 -> ~3,170 set-months ~137 core-h; total ~270 core-h. Available 14:30-23:00Z (8.5 h): server 2 64 threads + box 1 32 cores = ~96 cores x 8.5 h = ~815 core-h, minus other claims (near-target controls ~10 core-h, P7L/ORB/SWA/SWB/LS rows ~65 core-h, pass 1 fills the rest). VERDICT: core-hours are enough on the two machines (about 1/3 of capacity); the 23:00Z risk is wall-clock dependencies, not cores: (1) feat_d copy to server 2 (level modules fail until complete), (2) stage 4 'live layers in fast replay' does not exist (no fast layer replay; layers only via the exact engine injected-signal hooks, so S4 layers merge into S5), (3) stage-5 engine sets for custom bars (mk_sets.py untested, identity first; injected hooks exist only for K7/M7/U7 and P7/H7/A7/O7 books), (4) stage 1 look-ahead gate (W-GATE) must pass the reversal rows first. No rental needed on these numbers.
+- (wall 14:12Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- lead 14:12Z INBOX 20261118_1415Z_NY-FIRST-build-specs-by-1900Z.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- 2026-11-18T14:13:02Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (wall 14:13Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 14:13Z LEAD NOTE: server-2 error stubs: 7,038 of 8,444 stubs written since 13:00Z were for rows whose feat_c store is now complete -> deleted so the loops retry them; 1,406 kept (rows that legitimately have no feat_c store, e.g. mrenko_10: those book/tape modules cannot run on those rows). feat_d has no COMPLETE marker by design (rows/lines dirs), copy still running. Server 2 load 75-79 (busy 100%), box 1 99%.
+- (wall 14:13Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 38.96 37.46 38.57 load; auto-expansions 0 (battery stopped by user order)
+- (wall 14:13Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 14:13Z INBOX 20261118_1415Z_NY-FIRST-build-specs-by-1900Z.md received (accepted, research only; read started 14:12Z after the wake line). WATCHDOG fired: A (the cron saw the 1415Z file and typed the wake line; it was a live test and worked). NY AM/NY PM go first: engine sets for provisional top 6 per NY session start now (agent W-NYENG), build specs (agent W-SPEC, first version 16:30Z, final 19:00Z). Whether 19:00Z holds: to be stated by 14:45Z once the provisional six exist.
+- (wall 14:14Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:14Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:15Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:15Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:16Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
+- (wall 14:16Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:17Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:17Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 14:17Z W-SPEC: autopilot/NEW_BOOK_BUILD_SPECS.md v0 written (common facts with file:function, level-trigger family readings, 7-item spec template, native-vs-custom table); tools code/th_spec/examples.py (worked-trade reconstruction, tested on NYAM vol_500 levels_round: 110 trades Oct-Nov) and thresholds.py (daily absolute bar thresholds). No finalist entered yet (NEW_BOOK_SHORTLIST.md / NEW_BOOK_ENGINE.md not yet published); v1 for the provisional top 6 per NY session due 16:30Z needs those pages. Finding: level cells on vol_500 / rng bars collapse sym15u / asym20u/10u to a 120/120-pt clip (stated per finalist).
+- (wall 14:18Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 14:18Z W-GATE: stage 1 interim. Kernel truncation test of 14 bar types (13 reversal types + mom control; 42 specs x 3 months x 8 cuts = 1,008 cuts): 0 failures; known_ts >= t1 >= t0, known_ts is a print, monotone, all PASS. Kagi/dchg/swing/pasl legs: extreme known 25-330 s before the confirming print (stamp is at the confirming print = post-reversal entry, no look-ahead). Module-level causality on real rows (pnf_14, kagi_14, renko_14 ... 16 rows x 12 modules) and +4/+14/+29 s fill-delay test on all 340 NY AM/NY PM candidate cells running on server 2 (/mnt/l2/l2vast/_gate); first table autopilot/BAR_LOOKAHEAD_GATE.md (14:18Z), grid-page section via gpage.py gate_table.md. No bar type failed so no re-score.
+- (wall 14:18Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
