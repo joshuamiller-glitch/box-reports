@@ -44,3 +44,8 @@ Transient jobs (not supervised, re-issued by their drivers): R3 runners (/tmp/r3
 4. Engine queue empty in ~3 h (section 4) unless the ladder R5 builder and the layer programme keep refilling it; the grid still fills the CPU (rule A holds) but R5 evidence stalls.
 5. Admission-lock saturation by stale waiters (trigger D wakes the lead; the fix is by hand).
 6. ssh connectivity from London to Singapore (156 ms) / Frankfurt: supervise.py logs ALERT 'host unreachable' and guard.py raises E.
+
+## 6. Root filesystem of box 1 (added 22:50Z, order 2236Z)
+- Root /dev/md0 (439 GB) was 99% full (8.8 GB free); 61-65 GB free after moving cold research subtrees (outputs/autopilot/i, autopilot/b, n5, autopilot/ddmin: 56 GB) to /mnt/l2/rootmoved/ with symlinks back. Manifest: /mnt/l2/rootmoved/MANIFEST.txt. To move more: `python3 code/th_night/move_cold.py <dir>` (dry-run with --dry-run; refuses protected/warm/in-use dirs; verifies before removing the original).
+- Growth measured ~0.1 GB/h (upper bound ~0.9 GB/h from transcripts, box-reports git, system logs). Alarm: guard.py trigger F (root < 5 GB free or exhaustion within 12 h at the measured rate) for all four hosts; HEALTH.md shows root free GB, fill rate and hours left.
+- Never move: ~/.claude, /tmp/claude-1000 (the lead's own session files: 14.9 GB of task outputs there are the lead's runtime files), anything under ds3_all_ea (seal), files being written.
