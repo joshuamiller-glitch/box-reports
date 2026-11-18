@@ -816,7 +816,7 @@ FOUND: none. FOUND-PENDING (not counted): FVG family (now IMP3 tf3 m1.5 primary 
 - Forward table: outputs/FORWARD.md now 23 leads (+ REGIME tracker and Q34 ES1 being added) (first scored 10-14..16 = 0.6 week, nothing can be promoted). Below weekly band: BTC WT (-$25.8k) and Q20 RTY (-$21.2k) - flags only, kill-watch needs >=6 weeks. FVG trade level OK (P1 -0.062R, E1 +0.118R, IMP3 +0.217R per trade vs predicted +0.079/+0.078/+0.120; fill 72-75%). Newest pair week W42 +$38.0k.
 - PORTFOLIO-LEAD flag (assembly 21:19Z): library has 35k books; best T=16 portfolio S8_mon_h1_RTY x3 + BTC_1 x7 + FVG tf3 x3 + FVG tf15 x3 = clean/H1/H2 6.34/4.92/2.91 vs pair 1.46/2.83/2.26. CAUTION: clean Sharpe 6.66 is BELOW chance best-of-search (mean 8.37, p95 9.11; rank 0.00), two of four members are the unverified-fill FVG books, day-level account approximation, no give-back rule. Treat as provisional; re-score after FVG fill verification.
 <!-- ASSEMBLY:BEGIN -->
-**ASSEMBLY (library portfolio search, 20261118T0044Z)** pool 245 of 38452 library books. Best T=16 portfolio: S8ALL/S8_mon_h1_RTY x3, B1CO/BTC_1 x6, Q1CCO/NQ_6 x3, RU11_GC_IMP3_5_1.5 x4 - clean/H1/H2 weekly Sharpe 7.31/2.86/3.03 vs live pair 8/8 1.46/2.83/2.26. Chance (timing-destroyed library, best-of-search stage-1 clean Sharpe): mean 7.92, p95 9.07 vs real 7.26 (rank 0.20). PORTFOLIO-LEAD: YES. Report: REPORT_ASSEMBLY_20261118T0044Z.md
+**ASSEMBLY (library portfolio search, 20261118T1252Z)** pool 245 of 38452 library books. Best T=16 portfolio: S8ALL/S8_mon_h1_RTY x3, B1CO/BTC_1 x6, Q1CCO/NQ_6 x3, RU11_GC_IMP3_5_1.5 x4 - clean/H1/H2 weekly Sharpe 7.31/2.86/3.03 vs live pair 8/8 1.46/2.83/2.26. Chance (timing-destroyed library, best-of-search stage-1 clean Sharpe): mean 7.92, p95 9.07 vs real 7.26 (rank 0.20). PORTFOLIO-LEAD: YES. Report: REPORT_ASSEMBLY_20261118T1252Z.md
 <!-- ASSEMBLY:END -->
 
 ## 4. False-discovery accounting
@@ -5851,3 +5851,28 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - LEAD NOTE: DELIVERABLES page 2026-11-18 12:48Z: rows per table T1 30 / T2 23 / T3 36 / T4 13 / T5 bar swap 16; labels {'CONFIRMED': 1, 'BEST-AVAILABLE-NOT-PROVEN': 101, 'WEAK-BUT-POSITIVE': 51, 'LEAD': 7}; stale owners ['W-MB', 'W-MC', 'W-S1R']; no file yet ['W-BAR'] (autopilot/DS3_MAJOR_DELIVERABLES.md)
 - (wall 12:49Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 12:49Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- lead 12:50Z AUTO-FILL (cores_meter, server 2 below 85% twice): dispatcher alive pid 1240823/3896693; dispatch.log LAUNCH lines in last ~10 min: 37; dispatcher walks ALL queues in order and takes any eligible line with deps already pushed (prefetch threads push the rest), so an ineligible/empty front queue cannot block it.
+- (wall 12:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T12:56:07Z W-GRIDA 2026-11-18T12:56Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 0 / 45 / n/a (no jobs done in last hour); (b) pass-1 level modules 0 / 3360 / n/a (no jobs done in last hour); (c) pass-2 family cells 1223 / 0 / 0.0 h; (d) rest of pass 1 0 / 81336 / n/a (no jobs done in last hour); workers 52 (52 S); load 26.65; todo counts refreshed {"": 9, "_p2": 10} min ago
+- (wall 12:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:57Z) W-CH2 status: CH workers busy 0, pending exact cell-months 624, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+2026-11-18T12:58:04Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- (wall 12:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (12:58Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label NOT FINISHED (identity pending/failed), identity {'202610': 'pending', '202504': 'pending'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
+- (wall 12:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 12:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
