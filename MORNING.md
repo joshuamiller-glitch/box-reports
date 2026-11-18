@@ -5429,3 +5429,33 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (09:58Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label NOT FINISHED (identity pending/failed), identity {'202610': 'pending', '202504': 'pending'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
 - (wall 09:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 09:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:00Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:00Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T10:01:11Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (wall 10:01Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:01Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:01Z) W-MF (part F) hourly: MF queue pending lines 585, set-months DONE 830, identity {'202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', 'mf_inject 202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)', 'mf_inject 202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)'}; page DS3_MAJOR_F_NEWBOOKS.md refreshed by loop (pid 2384092, stop: touch /mnt/l2/l2vast/_major_f/STOP)
+
+[S2 hourly 10:01Z] server 2: workers 27/cap 28, cell-months last hour: server-2 441, all 445; idle 0 min; cost ~$217 (39.9 h x $5.44).
+- (wall 10:02Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:02Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:03Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:03Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:04Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T10:04Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- (wall 10:04Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- lead 10:05Z AUTO-FILL (cores_meter, server 2 below 85% twice): dispatcher alive pid 1240823/3708622; dispatch.log LAUNCH lines in last ~10 min: 35; dispatcher walks ALL queues in order and takes any eligible line with deps already pushed (prefetch threads push the rest), so an ineligible/empty front queue cannot block it.
+- (wall 10:05Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:05Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:06Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T10:06:28Z W-NT hourly: NT set-months landed 214 (rate 0/h since last line); identity 4/4 landed (target 04:35Z); K7 L6M cells landed 0 (target table 06:00Z; first.txt 1 lines; controls K7+M7 target 12:00Z, pf.txt 50 lines built); page autopilot/DS3_NEAR_TARGET.md; closest to live: see page section 2
+- (wall 10:06Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+10:06Z W-LA: LA cell-months done 867, jobs outstanding 22, chains 10; auto-expansions launched: 207 (cumulative new sets)
+- (wall 10:07Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T10:07Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 59 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
+- (wall 10:07Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:08Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:08Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:09Z) W-MD hourly: page DS3_REBUILD_S3_ENV.md W-MD sections refreshed; MBO older-day features 973 extracted (finished workers 3 of 3); engine state: identity True real evaluated ['H7_TUW10', 'H7_SUWBE', 'K7_TUWN10'] controls done []
+- (wall 10:09Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 10:09Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
