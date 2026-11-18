@@ -1,12 +1,12 @@
 # DS3_P7_NYAM_LOT - P7 NY AM lots on JL3, all layers on (W-P7L, order 11-17 23:30Z)
-VERDICT (data ends 2026-11-13; FIRST PASS; updated 2026-11-18 06:39Z): best L6M ulcer cell = HP (NY AM 7, only 11:00-12:00); tiers: {'L0': "NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {'L6M': 0, 'L3M': 0, 'HOLD': 0})"}
+VERDICT (data ends 2026-11-13; FIRST PASS; updated 2026-11-18 07:09Z): best L6M ulcer cell = HP (NY AM 7, only 11:00-12:00); tiers: {'L0': 'NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {\'L6M\': 0, \'L3M\': 0, \'HOLD\': 0, \'GAP\': 0, \'PRE\': 0, "X\'": 0})', 'HP': 'NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {\'L6M\': 0, \'L3M\': 0, \'HOLD\': 0, \'GAP\': 0, \'PRE\': 0, "X\'": 0})'}
 
 Five-line summary: (1) pick window end 2026-11-13 (trailing 6M 2026-05-14..2026-11-13, 3M beside, 1M also). (2) refit date 2026-11-18, then every 2 weeks (walk-forward refit dates every 14 days from 2023-10-02). (3) data end 2026-11-13 (202611 base-lot store months via W-DATA). (4) rule: P7 NY AM lots 7 live = base 4 vs base 3 / 2 / 1 / 0 (live 5 / 4 / 2 / 0; live 3 is not reachable with x1.75) and the two halves at 7 live (HA 09:30-11:00 only, HP 11:00-12:00 only); walk-forward rule R6 = cut when trailing-6M P7 NY AM P&L is negative. (5) prior-year % vs live: see the per-year table (AMBER 15-30%, RED >30% worse on ulcer / max DD / mean).
 
 > VALIDATION (desk standard, FIRST PASS): trials counted = 6 real engine cells + 2 walk-forward rules (levels L0/L2 and L1/L3 reported), no best-of selection beyond the per-cell table; correction = percentile among 30 persistent-draw engine controls (staged: controls run for the leading cells only) + week-clustered bootstrap (2,000) + calibrated ulcer-primary tiers (cutoffs_ulc TUNED); PBO not applicable (no fitted parameters; the cut level is a fixed table); in-sample on all 44 months, walk-forward section is the out-of-sample judge; prereg PREREG_P7L.md sha in DECISIONS.md.
 
 Identity (TL3_P7L_ID vs TL3_EV_JL3, trade for trade): 202504: 637 trades net 41239.76 vs JL3 637 / 41239.76 -> IDENTICAL; 202610: 691 trades net 37159.82 vs JL3 691 / 37159.82 -> IDENTICAL
-Months landed: L0 16/44, L2 16/44, L1 15/44, L3 15/44, HA 15/44, HP 15/44; JL3 base months 44.
+Months landed: L0 44/44, L2 44/44, L1 44/44, L3 44/44, HA 44/44, HP 44/44; JL3 base months 44.
 
 ## P7 NY AM in JL3 (anatomy; $4.84 RT, base lots)
 | window | trades | net $ | $/wk | 09:30-11:00 n / net | 11:00-12:00 n / net |
@@ -20,32 +20,53 @@ Months landed: L0 16/44, L2 16/44, L1 15/44, L3 15/44, HA 15/44, HP 15/44; JL3 b
 
 ## Table A - every cell vs JL3 live (lots 7), all windows (ulcer first; $4.84 RT base lots; x1.75 live lots at $4.84 beside)
 
-### L0: NY AM 0 (live 0; base 0) label BEST-AVAILABLE-NOT-PROVEN
+### L0: NY AM 0 (live 0; base 0) label WEAK-BUT-POSITIVE
 | window | ulcer chg | mean $/wk base -> cell (x1.75 live) | max DD base -> cell | worst wk base -> cell | boot P(ulcer lower) | worse vs live (ulc/DD/mean %%) | flag |
 |--|--|--|--|--|--|--|--|
 | L1M | +0.4% | 8,554 -> 8,413 (14,988 -> 14,706) | -24,916 -> -24,916 | -12,597 -> -12,597 | 0.00 | +0.4 / +0.0 / +1.7 | ok |
 | L3M | -3.3% | 14,008 -> 13,443 (25,234 -> 24,104) | -31,112 -> -29,256 | -15,728 -> -15,100 | 0.69 | -3.3 / -6.0 / +4.0 | ok |
 | L6M | -2.3% | 19,147 -> 18,715 (35,593 -> 34,770) | -31,112 -> -29,256 | -15,728 -> -15,100 | 0.75 | -2.3 / -6.0 / +2.3 | ok |
 | HOLD | -0.3% | 9,332 -> 8,770 (18,112 -> 17,035) | -83,755 -> -82,309 | -37,321 -> -35,059 | 0.45 | -0.3 / -1.7 / +6.0 | ok |
+| GAP | +3.7% | 8,525 -> 8,144 (15,366 -> 14,603) | -42,262 -> -43,027 | -38,899 -> -40,255 | 0.02 | +3.7 / +1.8 / +4.5 | ok |
+| PRE | -4.5% | 5,811 -> 6,372 (11,077 -> 12,193) | -91,437 -> -90,176 | -37,617 -> -37,584 | 0.98 | -4.5 / -1.4 / -9.6 | ok |
+| X' | +3.1% | 2,857 -> 2,752 (5,390 -> 5,179) | -72,026 -> -72,026 | -37,355 -> -36,581 | 0.30 | +3.1 / +0.0 / +3.7 | ok |
+| Y2023 | +7.6% | 1,784 -> 1,395 (3,201 -> 2,424) | -41,848 -> -45,177 | -17,538 -> -19,056 | 0.07 | +7.6 / +8.0 / +21.8 | AMBER |
+| Y2024 | -1.2% | 4,611 -> 4,969 (9,094 -> 9,809) | -72,026 -> -72,026 | -37,355 -> -36,581 | 0.84 | -1.2 / +0.0 / -7.8 | ok |
+| Y2025 | -3.3% | 6,958 -> 7,059 (12,905 -> 13,103) | -91,437 -> -90,176 | -38,899 -> -40,255 | 0.72 | -3.3 / -1.4 / -1.5 | ok |
 | Y2026 | +1.0% | 16,759 -> 16,186 (31,420 -> 30,326) | -58,717 -> -59,397 | -19,813 -> -21,008 | 0.34 | +1.0 / +1.2 / +3.4 | ok |
+| POOLED | -1.0% | 7,581 -> 7,490 (14,270 -> 14,099) | -91,437 -> -90,176 | -38,899 -> -40,255 | 0.55 | -1.0 / -1.4 / +1.2 | ok |
 
-### L2: NY AM 4 live (base 2) (live 4; base 2) label BEST-AVAILABLE-NOT-PROVEN
+### L2: NY AM 4 live (base 2) (live 4; base 2) label WEAK-BUT-POSITIVE
 | window | ulcer chg | mean $/wk base -> cell (x1.75 live) | max DD base -> cell | worst wk base -> cell | boot P(ulcer lower) | worse vs live (ulc/DD/mean %%) | flag |
 |--|--|--|--|--|--|--|--|
 | L1M | +0.0% | 8,554 -> 8,554 (14,988 -> 14,988) | -24,916 -> -24,916 | -12,597 -> -12,597 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
 | L3M | -1.3% | 14,008 -> 13,912 (25,234 -> 25,041) | -31,112 -> -30,185 | -15,728 -> -15,728 | 0.60 | -1.3 / -3.0 / +0.7 | ok |
 | L6M | -1.0% | 19,147 -> 19,044 (35,593 -> 35,429) | -31,112 -> -30,185 | -15,728 -> -15,728 | 0.63 | -1.0 / -3.0 / +0.5 | ok |
 | HOLD | -1.6% | 9,332 -> 9,229 (18,112 -> 17,952) | -83,755 -> -82,361 | -37,321 -> -35,927 | 0.64 | -1.6 / -1.7 / +1.1 | ok |
+| GAP | +0.4% | 8,525 -> 9,000 (15,366 -> 16,135) | -42,262 -> -42,389 | -38,899 -> -39,025 | 0.17 | +0.4 / +0.3 / -5.6 | ok |
+| PRE | -1.6% | 5,811 -> 5,833 (11,077 -> 11,121) | -91,437 -> -90,242 | -37,617 -> -36,423 | 0.69 | -1.6 / -1.3 / -0.4 | ok |
+| X' | +0.0% | 2,857 -> 2,838 (5,390 -> 5,351) | -72,026 -> -72,026 | -37,355 -> -37,355 | 0.22 | +0.0 / +0.0 / +0.7 | ok |
+| Y2023 | +0.0% | 1,784 -> 1,744 (3,201 -> 3,122) | -41,848 -> -41,848 | -17,538 -> -17,538 | 0.20 | +0.0 / +0.0 / +2.2 | ok |
+| Y2024 | +0.0% | 4,611 -> 4,611 (9,094 -> 9,094) | -72,026 -> -72,026 | -37,355 -> -37,355 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
+| Y2025 | -1.7% | 6,958 -> 7,121 (12,905 -> 13,185) | -91,437 -> -90,242 | -38,899 -> -39,025 | 0.85 | -1.7 / -1.3 / -2.3 | ok |
 | Y2026 | -0.2% | 16,759 -> 16,623 (31,420 -> 31,200) | -58,717 -> -58,717 | -19,813 -> -19,813 | 0.72 | -0.2 / +0.0 / +0.8 | ok |
+| POOLED | -0.8% | 7,581 -> 7,586 (14,270 -> 14,278) | -91,437 -> -90,242 | -38,899 -> -39,025 | 0.81 | -0.8 / -1.3 / -0.1 | ok |
 
-### L1: NY AM 2 live (base 1) (live 2; base 1) label BEST-AVAILABLE-NOT-PROVEN
+### L1: NY AM 2 live (base 1) (live 2; base 1) label WEAK-BUT-POSITIVE
 | window | ulcer chg | mean $/wk base -> cell (x1.75 live) | max DD base -> cell | worst wk base -> cell | boot P(ulcer lower) | worse vs live (ulc/DD/mean %%) | flag |
 |--|--|--|--|--|--|--|--|
 | L1M | +0.0% | 8,554 -> 8,554 (14,988 -> 14,988) | -24,916 -> -24,916 | -12,597 -> -12,597 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
 | L3M | -1.3% | 14,008 -> 13,912 (25,234 -> 25,041) | -31,112 -> -30,185 | -15,728 -> -15,728 | 0.60 | -1.3 / -3.0 / +0.7 | ok |
 | L6M | -1.0% | 19,147 -> 19,026 (35,593 -> 35,393) | -31,112 -> -30,185 | -15,728 -> -15,728 | 0.64 | -1.0 / -3.0 / +0.6 | ok |
 | HOLD | -1.6% | 9,332 -> 9,139 (18,112 -> 17,773) | -83,755 -> -82,361 | -37,321 -> -35,927 | 0.65 | -1.6 / -1.7 / +2.1 | ok |
+| GAP | +0.4% | 8,525 -> 9,000 (15,366 -> 16,135) | -42,262 -> -42,389 | -38,899 -> -39,025 | 0.17 | +0.4 / +0.3 / -5.6 | ok |
+| PRE | -1.6% | 5,811 -> 5,815 (11,077 -> 11,086) | -91,437 -> -90,242 | -37,617 -> -36,423 | 0.68 | -1.6 / -1.3 / -0.1 | ok |
+| X' | +0.0% | 2,857 -> 2,819 (5,390 -> 5,314) | -72,026 -> -72,026 | -37,355 -> -37,355 | 0.01 | +0.0 / +0.0 / +1.3 | ok |
+| Y2023 | +0.0% | 1,784 -> 1,708 (3,201 -> 3,049) | -41,848 -> -41,848 | -17,538 -> -17,538 | 0.01 | +0.0 / +0.0 / +4.3 | ok |
+| Y2024 | +0.0% | 4,611 -> 4,611 (9,094 -> 9,094) | -72,026 -> -72,026 | -37,355 -> -37,355 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
+| Y2025 | -1.7% | 6,958 -> 7,107 (12,905 -> 13,158) | -91,437 -> -90,242 | -38,899 -> -39,025 | 0.84 | -1.7 / -1.3 / -2.2 | ok |
 | Y2026 | -0.2% | 16,759 -> 16,562 (31,420 -> 31,077) | -58,717 -> -58,717 | -19,813 -> -19,813 | 0.72 | -0.2 / +0.0 / +1.2 | ok |
+| POOLED | -0.8% | 7,581 -> 7,560 (14,270 -> 14,226) | -91,437 -> -90,242 | -38,899 -> -39,025 | 0.77 | -0.8 / -1.3 / +0.3 | ok |
 
 ### L3: NY AM 5 live (base 3) (live 5; base 3) label BEST-AVAILABLE-NOT-PROVEN
 | window | ulcer chg | mean $/wk base -> cell (x1.75 live) | max DD base -> cell | worst wk base -> cell | boot P(ulcer lower) | worse vs live (ulc/DD/mean %%) | flag |
@@ -54,7 +75,14 @@ Months landed: L0 16/44, L2 16/44, L1 15/44, L3 15/44, HA 15/44, HP 15/44; JL3 b
 | L3M | +0.0% | 14,008 -> 14,008 (25,234 -> 25,234) | -31,112 -> -31,112 | -15,728 -> -15,728 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
 | L6M | +0.0% | 19,147 -> 19,103 (35,593 -> 35,506) | -31,112 -> -31,112 | -15,728 -> -15,728 | 0.01 | +0.0 / +0.0 / +0.2 | ok |
 | HOLD | +0.0% | 9,332 -> 9,285 (18,112 -> 18,019) | -83,755 -> -83,755 | -37,321 -> -37,321 | 0.03 | +0.0 / +0.0 / +0.5 | ok |
+| GAP | +0.0% | 8,525 -> 8,525 (15,366 -> 15,366) | -42,262 -> -42,262 | -38,899 -> -38,899 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
+| PRE | +0.0% | 5,811 -> 5,811 (11,077 -> 11,077) | -91,437 -> -91,437 | -37,617 -> -37,617 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
+| X' | +0.0% | 2,857 -> 2,857 (5,390 -> 5,390) | -72,026 -> -72,026 | -37,355 -> -37,355 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
+| Y2023 | +0.0% | 1,784 -> 1,784 (3,201 -> 3,201) | -41,848 -> -41,848 | -17,538 -> -17,538 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
+| Y2024 | +0.0% | 4,611 -> 4,611 (9,094 -> 9,094) | -72,026 -> -72,026 | -37,355 -> -37,355 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
+| Y2025 | +0.0% | 6,958 -> 6,958 (12,905 -> 12,905) | -91,437 -> -91,437 | -38,899 -> -38,899 | 0.00 | +0.0 / +0.0 / +0.0 | ok |
 | Y2026 | +0.0% | 16,759 -> 16,707 (31,420 -> 31,317) | -58,717 -> -58,717 | -19,813 -> -19,813 | 0.04 | +0.0 / +0.0 / +0.3 | ok |
+| POOLED | +0.0% | 7,581 -> 7,569 (14,270 -> 14,245) | -91,437 -> -91,437 | -38,899 -> -38,899 | 0.10 | +0.0 / +0.0 / +0.2 | ok |
 
 ### HA: NY AM 7, only 09:30-11:00 (live 7; base 4) label BEST-AVAILABLE-NOT-PROVEN
 | window | ulcer chg | mean $/wk base -> cell (x1.75 live) | max DD base -> cell | worst wk base -> cell | boot P(ulcer lower) | worse vs live (ulc/DD/mean %%) | flag |
@@ -63,7 +91,14 @@ Months landed: L0 16/44, L2 16/44, L1 15/44, L3 15/44, HA 15/44, HP 15/44; JL3 b
 | L3M | +0.4% | 14,008 -> 13,505 (25,234 -> 24,228) | -31,112 -> -31,112 | -15,728 -> -15,100 | 0.48 | +0.4 / +0.0 / +3.6 | ok |
 | L6M | +0.3% | 19,147 -> 18,874 (35,593 -> 35,047) | -31,112 -> -31,112 | -15,728 -> -15,100 | 0.49 | +0.3 / +0.0 / +1.4 | ok |
 | HOLD | -1.7% | 9,332 -> 9,190 (18,112 -> 17,828) | -83,755 -> -81,245 | -37,321 -> -36,295 | 0.36 | -1.7 / -3.0 / +1.5 | ok |
+| GAP | +0.1% | 8,525 -> 8,419 (15,366 -> 15,154) | -42,262 -> -41,671 | -38,899 -> -38,899 | 0.13 | +0.1 / -1.4 / +1.2 | ok |
+| PRE | -2.0% | 5,811 -> 6,030 (11,077 -> 11,515) | -91,437 -> -91,596 | -37,617 -> -38,728 | 0.67 | -2.0 / +0.2 / -3.8 | ok |
+| X' | +0.1% | 2,857 -> 2,800 (5,390 -> 5,275) | -72,026 -> -72,026 | -37,355 -> -36,581 | 0.40 | +0.1 / +0.0 / +2.0 | ok |
+| Y2023 | +1.5% | 1,784 -> 1,573 (3,201 -> 2,779) | -41,848 -> -42,006 | -17,538 -> -18,351 | 0.15 | +1.5 / +0.4 / +11.8 | ok |
+| Y2024 | -1.6% | 4,611 -> 4,766 (9,094 -> 9,404) | -72,026 -> -72,026 | -37,355 -> -36,581 | 0.81 | -1.6 / +0.0 / -3.4 | ok |
+| Y2025 | -2.2% | 6,958 -> 7,043 (12,905 -> 13,075) | -91,437 -> -91,596 | -38,899 -> -38,899 | 0.62 | -2.2 / +0.2 / -1.2 | ok |
 | Y2026 | +1.4% | 16,759 -> 16,457 (31,420 -> 30,816) | -58,717 -> -59,397 | -19,813 -> -21,008 | 0.13 | +1.4 / +1.2 / +1.8 | ok |
+| POOLED | -1.3% | 7,581 -> 7,532 (14,270 -> 14,170) | -91,437 -> -91,596 | -38,899 -> -38,899 | 0.45 | -1.3 / +0.2 / +0.7 | ok |
 
 ### HP: NY AM 7, only 11:00-12:00 (live 7; base 4) label BEST-AVAILABLE-NOT-PROVEN
 | window | ulcer chg | mean $/wk base -> cell (x1.75 live) | max DD base -> cell | worst wk base -> cell | boot P(ulcer lower) | worse vs live (ulc/DD/mean %%) | flag |
@@ -72,35 +107,74 @@ Months landed: L0 16/44, L2 16/44, L1 15/44, L3 15/44, HA 15/44, HP 15/44; JL3 b
 | L3M | -3.0% | 14,008 -> 13,577 (25,234 -> 24,371) | -31,112 -> -29,256 | -15,728 -> -15,728 | 0.57 | -3.0 / -6.0 / +3.1 | ok |
 | L6M | -2.3% | 19,147 -> 18,817 (35,593 -> 34,999) | -31,112 -> -29,256 | -15,728 -> -15,728 | 0.65 | -2.3 / -6.0 / +1.7 | ok |
 | HOLD | +2.2% | 9,332 -> 9,027 (18,112 -> 17,459) | -83,755 -> -85,435 | -37,321 -> -36,085 | 0.54 | +2.2 / +2.0 / +3.3 | ok |
+| GAP | +2.0% | 8,525 -> 8,501 (15,366 -> 15,286) | -42,262 -> -42,940 | -38,899 -> -39,577 | 0.12 | +2.0 / +1.6 / +0.3 | ok |
+| PRE | -3.2% | 5,811 -> 6,108 (11,077 -> 11,671) | -91,437 -> -89,673 | -37,617 -> -34,098 | 0.94 | -3.2 / -1.9 / -5.1 | ok |
+| X' | +4.2% | 2,857 -> 2,780 (5,390 -> 5,235) | -72,026 -> -72,026 | -37,355 -> -37,355 | 0.29 | +4.2 / +0.0 / +2.7 | ok |
+| Y2023 | +6.0% | 1,784 -> 1,575 (3,201 -> 2,784) | -41,848 -> -43,466 | -17,538 -> -18,041 | 0.14 | +6.0 / +3.9 / +11.7 | ok |
+| Y2024 | +1.7% | 4,611 -> 4,801 (9,094 -> 9,473) | -72,026 -> -72,026 | -37,355 -> -37,355 | 0.73 | +1.7 / +0.0 / -4.1 | ok |
+| Y2025 | -1.5% | 6,958 -> 6,983 (12,905 -> 12,947) | -91,437 -> -89,673 | -38,899 -> -39,577 | 0.76 | -1.5 / -1.9 / -0.4 | ok |
 | Y2026 | -0.4% | 16,759 -> 16,454 (31,420 -> 30,825) | -58,717 -> -58,712 | -19,813 -> -19,813 | 0.73 | -0.4 / -0.0 / +1.8 | ok |
+| POOLED | +0.6% | 7,581 -> 7,524 (14,270 -> 14,157) | -91,437 -> -89,673 | -38,899 -> -39,577 | 0.68 | +0.6 / -1.9 / +0.8 | ok |
 
 ## Table B - freed-book effects (net $ change vs JL3, base lots $1.18, by book; P7 NY AM = own cell, others = what the freed stack room did)
 | cell | window | P7 NY AM | P7 other sessions | K7 | M7 | U7 | H7 | A7 | O7 | stack |
 |--|--|--|--|--|--|--|--|--|--|--|
 | L0 | L6M | -7,386 | -1,224 | -3,106 | 172 | 0 | 0 | 0 | 0 | -11,545 |
 | L0 | HOLD | -14,637 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | -14,637 |
+| L0 | POOLED | -18,486 | -604 | -177 | 172 | 940 | 0 | 0 | 0 | -18,155 |
 | L2 | L6M | -1,846 | 0 | -887 | 0 | 0 | 0 | 0 | 0 | -2,734 |
 | L2 | HOLD | -3,406 | 0 | 0 | 717 | 0 | 0 | 0 | 0 | -2,689 |
+| L2 | POOLED | -8,330 | 7,278 | -887 | 2,692 | 0 | 0 | 0 | 0 | 752 |
 | L1 | L6M | -2,323 | 0 | -887 | 0 | 0 | 0 | 0 | 0 | -3,210 |
 | L1 | HOLD | -5,719 | 0 | 0 | 717 | 0 | 0 | 0 | 0 | -5,001 |
+| L1 | POOLED | -13,246 | 7,278 | -887 | 2,692 | 0 | 0 | 0 | 0 | -4,164 |
 | L3 | L6M | -1,159 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | -1,159 |
 | L3 | HOLD | -1,204 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | -1,204 |
+| L3 | POOLED | -2,363 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | -2,363 |
 | HA | L6M | -4,178 | 0 | -3,076 | 0 | 0 | 0 | 0 | 0 | -7,254 |
 | HA | HOLD | -3,732 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | -3,732 |
+| HA | POOLED | -12,902 | 1,094 | 1,971 | 0 | 0 | 0 | 0 | 0 | -9,837 |
 | HP | L6M | -4,919 | 0 | -4,016 | 172 | 0 | 0 | 0 | 0 | -8,763 |
 | HP | HOLD | -7,931 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | -7,931 |
+| HP | POOLED | -14,176 | 5,070 | -4,214 | 2,146 | 0 | 0 | 0 | 0 | -11,174 |
 
 ## Table C - rolling 2-week refit walk-forward of the lot choice (rule R6: cut P7 NY AM to the cell level when trailing-6M P7 NY AM P&L (JL3, base lots) < 0, else live 7; arithmetic splice of the cell and JL3 daily P&L, no boundary path effects; $4.84 base lots)
-walk-forward not run yet (needs the cell for all months).
+| level | periods (cut) | rule ulcer vs always-7 | rule mean $/wk vs always-7 | cut decisions followed by a negative next 2 weeks | mean next-2-wk P&L saved when cut | null: shifted labels 11/23/37 (ulcer chg %% / mean chg) | null: random flags (ulcer chg, P(random at least as good) ulcer / mean) |
+|--|--|--|--|--|--|--|--|
+| L0 | 82 (38) | -2.3% | 8,584 -> 8,703 | 21 of 38 | -509 | -2.3% / 128 / -2.2% / 120 / -2.2% / 99 | -0.6%, 0.06 / 0.98 |
+| L2 | 82 (38) | -0.6% | 8,584 -> 8,628 | 21 of 38 | -187 | -0.6% / 44 / -0.6% / 44 / -0.6% / 44 | -0.4%, 0.40 / 0.84 |
+| L1 | 82 (38) | -0.6% | 8,584 -> 8,623 | 21 of 38 | -169 | -0.6% / 39 / -0.6% / 39 / -0.6% / 39 | -0.4%, 0.40 / 0.83 |
+| L3 | 82 (38) | +0.0% | 8,584 -> 8,584 | 21 of 38 | 0 | +0.0% / 0 / +0.0% / 0 / +0.0% / 0 | +0.0%, 0.58 / 1.00 |
+
+L0 by period (ulcer rule vs always-7, %; positive = worse): 2023-10..2024-09 -0.5% (mean 3,681 vs 3,605); 2024-10..2025-06 -4.5% (mean 6,372 vs 5,811); 2025-07..2025-09 +3.7% (mean 8,144 vs 8,525); 2025-11..2026-04 +0.1% (mean 9,317 vs 9,332); 2026-05..2026-11 +0.0% (mean 19,082 vs 19,082)
+
+L2 by period (ulcer rule vs always-7, %; positive = worse): 2023-10..2024-09 +0.0% (mean 3,605 vs 3,605); 2024-10..2025-06 -1.6% (mean 5,833 vs 5,811); 2025-07..2025-09 +0.4% (mean 9,000 vs 8,525); 2025-11..2026-04 +0.0% (mean 9,332 vs 9,332); 2026-05..2026-11 +0.0% (mean 19,082 vs 19,082)
+
+L1 by period (ulcer rule vs always-7, %; positive = worse): 2023-10..2024-09 +0.0% (mean 3,605 vs 3,605); 2024-10..2025-06 -1.6% (mean 5,815 vs 5,811); 2025-07..2025-09 +0.4% (mean 9,000 vs 8,525); 2025-11..2026-04 +0.0% (mean 9,332 vs 9,332); 2026-05..2026-11 +0.0% (mean 19,082 vs 19,082)
+
+L3 by period (ulcer rule vs always-7, %; positive = worse): 2023-10..2024-09 +0.0% (mean 3,605 vs 3,605); 2024-10..2025-06 +0.0% (mean 5,811 vs 5,811); 2025-07..2025-09 +0.0% (mean 8,525 vs 8,525); 2025-11..2026-04 +0.0% (mean 9,332 vs 9,332); 2026-05..2026-11 +0.0% (mean 19,082 vs 19,082)
 
 ## Table D - persistent random controls and calibrated tier
 
-L0: tier **NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {'L6M': 0, 'L3M': 0, 'HOLD': 0})**; draws landed 0, valid 0; p 0.0611 (target removed share 0.0611, generation 0)
+L0: tier **NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {'L6M': 0, 'L3M': 0, 'HOLD': 0, 'GAP': 0, 'PRE': 0, "X'": 0})**; draws landed 0, valid 0; p 0.0611 (target removed share 0.0611, generation 0)
 | window | valid controls (landed) | pct ulcer | pct mean | pct max DD | pct worst week |
 |--|--|--|--|--|--|
 | L6M | 0 (0) | nan | nan | nan | nan |
 | L3M | 0 (0) | nan | nan | nan | nan |
 | HOLD | 0 (0) | nan | nan | nan | nan |
+| GAP | 0 (0) | nan | nan | nan | nan |
+| PRE | 0 (0) | nan | nan | nan | nan |
+| X' | 0 (0) | nan | nan | nan | nan |
+
+HP: tier **NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {'L6M': 0, 'L3M': 0, 'HOLD': 0, 'GAP': 0, 'PRE': 0, "X'": 0})**; draws landed 0, valid 0; p 0.0320 (target removed share 0.0320, generation 0)
+| window | valid controls (landed) | pct ulcer | pct mean | pct max DD | pct worst week |
+|--|--|--|--|--|--|
+| L6M | 0 (0) | nan | nan | nan | nan |
+| L3M | 0 (0) | nan | nan | nan | nan |
+| HOLD | 0 (0) | nan | nan | nan | nan |
+| GAP | 0 (0) | nan | nan | nan | nan |
+| PRE | 0 (0) | nan | nan | nan | nan |
+| X' | 0 (0) | nan | nan | nan | nan |
 
 ## Bar swap vs lot cut (W-SWB, 36 TL3_SWB sets for P7 NY AM)
 Swap page line: - Engine: hook identity (live 1-min bar through the hook = JL3 trade for trade): P7 NY AM and O7 exact on 202504 and 202610 (hook v1); P7 London and H7 NY AM exact on 202504 with hook v2 (swb_inject2; 202610 and the other cells in section 4 as they land); sets TL3_SWB_* queued per cell: top 5 naked (6M), top 5 naked (3M), best row per bar family, 30 random-clock controls on the primary pick; verdi | the lot-cut result is in Table A; compare on ulcer first.
