@@ -1,0 +1,10 @@
+RESEARCH ORDER (relay, 11-18 02:55Z): the user says NO extra server tonight (he can only arrange one in the morning). Nothing is approved; do not rent anything. Plan the night on the two machines we have so the most useful results exist when he wakes (about 13:00Z):
+1. ORDER OF WORK on server 2 (64 threads) and box 1:
+   a. pass 2 for the 80 top cells, the 23 with 2-3 prior years positive first, WITH their nulls (5 random-entry draws + random-clock + shifted labels that pass the null audit): a small complete answer beats a wide incomplete one;
+   b. pass 1 for the LEVEL modules on the time, volume, session-volume and range / Renko rows: supply / demand v2 (definitions A, Abrk, Agap, B, E; limit-at-proximal and zone-bracket entries), Fibonacci, pivots, swing S/R, level stack: first heat rows per session;
+   c. pass 2 for the best family cells (NY AM structure on price bars, levels on activity bars, pullback on information / price bars; London momentum on information bars; NY PM trend on information bars; Asia levels on price bars, trend on information bars) with nulls;
+   d. the rest of pass 1 (heavy fine-bar rows and the random 5%) last.
+2. ENGINE SLOTS (keep 8-12 on server 2 + box-1 quotas, do not starve them): near-target (identity, then K7 half-off at 95%, K7 target shave, M7 latch, persist fix), LS_K2_M30 months, bar-swap engine rows, P7L, ORB fade.
+3. BY 13:00Z deliver, even if partial and labelled: (i) autopilot/GRID_TOP_CANDIDATES.md with pass-2 results and accepted nulls for at least the first 23 candidates (neighbours, long / short, best bracket, per-period persistence, each year); (ii) level rows incl. supply / demand per session; (iii) near-target engine table with controls for K7 and M7; (iv) a one-screen morning summary at the top of MORNING.md: what is a LEAD, what died, what is still running, and how many hours of work remain on one vs two compute servers (so he can decide on the extra server in the morning with numbers).
+4. Keep both machines full all night; hourly lead line with jobs done per hour by stage (a-d) and the ETA for (i)-(iii).
+Research only. No spend.
