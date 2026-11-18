@@ -1,0 +1,3 @@
+# PREREG W-ORB (2026-11-18)
+Book: N1_ORB_LIM|OR=15,ctx=with,mode=fade,lim=4, exit E3_40_90 (stop 40/target 90), NY AM, both sides, equal-risk base lots (floor(1200/(40*20)+.5)=2), injected on TL3_EV_JL3 via code/th_majorf/mf_inject.py (resting limit 4 pt, fill=through, hair .5, wait 10 min, cap 12000/4800). No calibration or other injection.
+Score: ulcer first, mean $/wk (base, $4.84, x1.75), maxDD, freed-book effects, windows L6M/L3M/HOLD/pooled, prior-year AMBER/RED vs JL3, W44 removed variant. Controls: 10 date-shifted event sets (+-7,11,13,17,19,23 days), tier cap LEAD without >=30 valid controls; label by DS3_PASS_RULE.md. No parameter change after seeing engine rows.
