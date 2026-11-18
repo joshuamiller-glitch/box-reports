@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-18 22:30Z
+# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-18 23:00Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'.** Asia is decided FIRST in clock order (Asia -> London -> NY AM -> NY PM).
 
@@ -55,6 +55,7 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ALL | L3M | +16926 / +29621 | -11311 | -35520 | -13432 / -23506 | 0 |
 | AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | L6M | +305 / +533 | +994 | -4630 | +1155 / +2022 | 0 |
 | AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | L3M | +833 / +1457 | +994 | -4630 | +1518 / +2656 | 0 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | Y2024 | +313 / +548 | +4296 | +750 | -494 / -865 | 0 |
 | AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | Y2023 | +484 / +847 | -925 | -3151 | +255 / +446 | 0 |
 | AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | L6M | +749 / +1311 | +5294 | +1145 | -616 / -1078 | 0 |
 | AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | L3M | +207 / +363 | +5294 | +2337 | +103 / +180 | 0 |

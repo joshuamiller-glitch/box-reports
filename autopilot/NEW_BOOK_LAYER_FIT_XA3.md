@@ -1,12 +1,13 @@
-# NEW_BOOK_LAYER_FIT_XA3 - own fitted layers of the new book on the exact engine (W-NYENG phase 3a), refreshed 2026-11-18 22:30Z
+# NEW_BOOK_LAYER_FIT_XA3 - own fitted layers of the new book on the exact engine (W-NYENG phase 3a), refreshed 2026-11-18 23:00Z
 
 **All rows are vs TODAY's stack (JL3, today's DAY-DONE) and vs the cell's own ADD row; provisional until Asia and London are decided.** Each layer setting is fitted on the trailing 6 months (3 months beside) one layer at a time; 'off' = the ADD row (reference only, every live layer stays ON). Engine base lots, $4.84 RT proxy. Columns: stack ulcer change vs ADD (negative = better), worst week change, max DD change, mean $/week change (all WITH setting minus the ADD row), then the same ulcer / mean vs JL3, the new book's own ulcer x ADD and trades x ADD (a setting must keep trades >= 80 percent). Selection: every setting is the best of a grid on the same window; prior years / 2-week roll / 30 layered controls still to run. Identity: TL3_NYL_XA3_ID1-9 PASS (autopilot NEW_BOOK_LAYER_PLAN.md).
 
 ## L1 profit take
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XA3_TK6 | take at 65% of target after 30 s without a new extreme | -339 | +797 | +1428 | +364 | 1.12 | 0.63 | -542 / +301 | n/a | n/a | n/a | -601 | ulcer better |
-| XA3_TK9 | take at 80% of target after 30 s without a new extreme | -323 | +1027 | +2912 | +172 | 1.06 | 0.93 | -702 / +245 | n/a | n/a | n/a | -585 | ulcer better |
+| XA3_TK7 | take at 80% of target after 5 s without a new extreme | -361 | +1992 | +3058 | -94 | 1.06 | 0.93 | -769 / +444 | n/a | n/a | n/a | -623 | ulcer better |
+| XA3_TK6 | take at 65% of target after 30 s without a new extreme | -339 | +797 | +1428 | +364 | 1.12 | 0.63 | -542 / +301 | +1017 / -146 | +2189 / -671 | -1476 / +183 | -601 | ulcer better |
+| XA3_TK9 | take at 80% of target after 30 s without a new extreme | -323 | +1027 | +2912 | +172 | 1.06 | 0.93 | -702 / +245 | -14 / +102 | n/a | n/a | -585 | ulcer better |
 | XA3_TK8 | take at 80% of target after 15 s without a new extreme | -220 | +977 | +2222 | +170 | 1.06 | 1.00 | -483 / +19 | n/a | n/a | n/a | -482 | ulcer better |
 | XA3_TK4 | take at 65% of target after 5 s without a new extreme | -166 | +842 | +1058 | -136 | 1.15 | 0.62 | -234 / +45 | n/a | n/a | n/a | -428 | ulcer better |
 | XA3_TK5 | take at 65% of target after 15 s without a new extreme | -165 | +867 | +842 | -59 | 1.13 | 0.78 | -241 / -268 | n/a | n/a | n/a | -427 | ulcer better |
@@ -48,7 +49,7 @@
 ## L5 own day cap
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XA3_CP2 | own day loss cap 2 stops ($2400 base), profit cap 12,000 | -176 | +0 | +1195 | +73 | 0.94 | 0.85 | -354 / +81 | n/a | n/a | n/a | -438 | ulcer better |
+| XA3_CP2 | own day loss cap 2 stops ($2400 base), profit cap 12,000 | -176 | +0 | +1195 | +73 | 0.94 | 0.85 | -354 / +81 | -114 / -86 | n/a | n/a | -438 | ulcer better |
 | XA3_CP1 | own day loss cap 1 stops ($1200 base), profit cap 12,000 | -21 | +0 | -302 | -1004 | 0.76 | 1.30 | -7 / -288 | n/a | n/a | n/a | -283 | trades<80% |
 | XA3_CP4 | own day loss cap 4 stops ($4800 base), profit cap 12,000 | +0 | +0 | +0 | +0 | 1.00 | 1.00 | +0 / +0 | n/a | n/a | n/a | -262 | ulcer worse |
 | XA3_CP3 | own day loss cap 3 stops ($3600 base), profit cap 12,000 | +20 | +0 | +0 | -88 | 0.99 | 1.10 | +0 / +0 | n/a | n/a | n/a | -242 | ulcer worse |
@@ -72,7 +73,7 @@
 ## L10 DAY-DONE setting
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XA3_DD7 | DAY-DONE: stack >= 22 closes and day <= -1800 base (1.5R) | -311 | +1537 | +2328 | -56 | 0.98 | 1.07 | -486 / -174 | n/a | n/a | n/a | -573 | ulcer better |
+| XA3_DD7 | DAY-DONE: stack >= 22 closes and day <= -1800 base (1.5R) | -311 | +1537 | +2328 | -56 | 0.98 | 1.07 | -486 / -174 | +34 / -15 | n/a | +0 / +0 | -573 | ulcer better |
 | XA3_DD9 | DAY-DONE: stack >= 22 closes and day <= -2400 base (2.0R) | +0 | +0 | +0 | +0 | 1.00 | 1.00 | +0 / +0 | n/a | n/a | n/a | -262 | ulcer worse |
 | XA3_DD11 | DAY-DONE: stack >= 22 closes and day <= -3600 base (3.0R) | +1139 | -1624 | -4914 | -233 | 1.01 | 1.17 | +1706 / +110 | n/a | n/a | n/a | +877 | ulcer worse |
 | XA3_DD13 | DAY-DONE: stack >= 30 closes and day <= -1800 base (1.5R) | +4175 | -19770 | -16009 | -1913 | 1.12 | 1.95 | +6461 / -3324 | n/a | n/a | n/a | +3913 | ulcer worse |
