@@ -5579,3 +5579,33 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 2026-11-18T10:58Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
 - (wall 10:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - (wall 10:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- lead 11:00Z AUTO-FILL (cores_meter, server 2 below 85% twice): dispatcher alive pid 1240823/3771566; dispatch.log LAUNCH lines in last ~10 min: 43; dispatcher walks ALL queues in order and takes any eligible line with deps already pushed (prefetch threads push the rest), so an ineligible/empty front queue cannot block it.
+- (wall 11:00Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:00Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:01Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:01Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:02Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:02Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:03Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+
+[S2 hourly 11:03Z] server 2: workers 28/cap 28, cell-months last hour: server-2 419, all 417; idle 0 min; cost ~$223 (41.0 h x $5.44).
+- 2026-11-18T11:03:40Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (wall 11:03Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:04Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:04Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:05Z) WATCHDOG: 15-min avg cores busy 88.7% (<90%, min last 15 79.3%); reason: hungry tags: NT(run 0/q 8),ME(run 0/q 4),SWB(run 0/q 8),P7L(run 0/q 4),ORB(run 0/q 4); last WAIT: 11:05:09 CH WAIT running exact workers 0 (cap 32, limit for CH 28) load1 37.4 (cap 40, measured knee ~24 busy workers) OVER-SHARE(others hungry ['NT', 'ME', 'SWB', 'P7L', 'ORB']) avail-after-reservations 106 GB < need 40 (gate 35 + 5 hungry higher ['NT', 'ME',; MemAvail 106.1 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 G. Lead must act within 15 min.
+- (wall 11:05Z) W-MF (part F) hourly: MF queue pending lines 585, set-months DONE 830, identity {'202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', 'mf_inject 202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)', 'mf_inject 202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)'}; page DS3_MAJOR_F_NEWBOOKS.md refreshed by loop (pid 2384092, stop: touch /mnt/l2/l2vast/_major_f/STOP)
+- (wall 11:05Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:05Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:06Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:06Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+11:07Z W-LA: LA cell-months done 867, jobs outstanding 22, chains 10; auto-expansions launched: 207 (cumulative new sets)
+2026-11-18T11:07:28Z W-NT hourly: NT set-months landed 214 (rate 0/h since last line); identity 4/4 landed (target 04:35Z); K7 L6M cells landed 0 (target table 06:00Z; first.txt 1 lines; controls K7+M7 target 12:00Z, pf.txt 50 lines built); page autopilot/DS3_NEAR_TARGET.md; closest to live: see page section 2
+- (wall 11:07Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18T11:07Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 59 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
+- (wall 11:07Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:08Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:09Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:09Z) W-MD hourly: page DS3_REBUILD_S3_ENV.md W-MD sections refreshed; MBO older-day features 973 extracted (finished workers 3 of 3); engine state: identity True real evaluated ['H7_TUW10', 'H7_SUWBE', 'K7_TUWN10'] controls done []
+- (wall 11:09Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 11:10Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free

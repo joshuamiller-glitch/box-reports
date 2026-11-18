@@ -1,7 +1,7 @@
 # DS3 BAR SWAP B (W-SWB): P7 / H7 / A7 / O7 on every bar row
 
 Rule: standing selection rule (CLAUDE.md, user 11-17 18:10Z/18:13Z): pick on the trailing 6 months to the newest data, trailing 3M beside it; validated by rolling walk-forward; older years tolerant (AMBER 15-30% / RED >30% worse than the live bar). FIRST PASS standalone (tape fills, raw chassis, live bracket); engine swap test is section 4.
-Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 10:23:54 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
+Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 11:01:54 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
 
 ## Plain summary
 - Tried: every available bar row (~490 time / activity / information / price / composite rows) as the signal clock of P7, H7, A7, O7 in three versions side by side: transplanted live settings, transplanted + the book grid refit, and bar-NATIVE rules (bars / bricks as the unit, no minute ATR); standalone on the tape with live brackets, then the exact engine with the full JL3 stack (not gated on the naked result).
@@ -114,7 +114,7 @@ Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; r
 | 12M->3M | 37 | 11.0 | -88.1 | 0.43 | 2557 | 5992 |
 | 6M->2w | 37 | -53.0 | 10.7 | 0.46 | 1034 | 1648 |
 
-Nulls (same pick procedure): shift11: OOS 12.9/mo share beat 0.59; shift23: OOS 29.9/mo share beat 0.59; shift37: OOS -28.0/mo share beat 0.59; random-clock pool: OOS 75.1/mo share beat 0.62
+Nulls (same pick procedure): shift11: OOS 12.9/mo share beat 0.59; shift23: OOS 29.9/mo share beat 0.59; shift37: OOS -28.0/mo share beat 0.59; random-clock pool: OOS 75.7/mo share beat 0.62
 
 Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M 4 vs -79 (n 36); +3M 45 vs -102 (n 34); +6M -95 vs -98 (n 31)
 
@@ -155,12 +155,12 @@ Top rows on trailing 6M (score = pts/(ulcer+1)):
 | dol_1700__G40k8 | 2050 | 125 | 62 | 244 | 539 | 11041 |
 | rng_80__G20k3 | 1815 | 114 | 61 | 200 | 657 | 9773 |
 | cusum_80__G20k3 | 1961 | 115 | 71 | 229 | 629 | 10562 |
-| rng_80__G20t5 | 1804 | 110 | 69 | 212 | 408 | 9713 |
 | rng_80__A | 1804 | 110 | 69 | 212 | 408 | 9713 |
-| tsf_25_40__NE5_20a10 | 1477 | 119 | 61 | 215 | 858 | 7954 |
+| rng_80__G20t5 | 1804 | 110 | 69 | 212 | 408 | 9713 |
 | tsf_25_40__NE5_20a30 | 1477 | 119 | 61 | 215 | 858 | 7954 |
+| tsf_25_40__NE5_20a10 | 1477 | 119 | 61 | 215 | 858 | 7954 |
 | renko_20__NE20_80a30s | 1287 | 85 | 54 | 192 | 982 | 6931 |
-| trend_56__G20k3 | 949 | 54 | 40 | 105 | 293 | 5109 |
+| wrenko_56__G20k3 | 949 | 54 | 40 | 105 | 293 | 5109 |
 
 Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; ref = live bar; share = periods pick beat live bar):
 
@@ -174,7 +174,7 @@ Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; r
 | 12M->3M | 37 | -15.7 | -18.0 | 0.46 | 2342 | 5373 |
 | 6M->2w | 37 | -29.3 | -101.3 | 0.46 | 1088 | 2126 |
 
-Nulls (same pick procedure): shift11: OOS -29.7/mo share beat 0.49; shift23: OOS -70.9/mo share beat 0.49; shift37: OOS -10.8/mo share beat 0.54; random-clock pool: OOS 8.6/mo share beat 0.54
+Nulls (same pick procedure): shift11: OOS -29.7/mo share beat 0.49; shift23: OOS -70.9/mo share beat 0.49; shift37: OOS -10.8/mo share beat 0.54; random-clock pool: OOS -4.4/mo share beat 0.54
 
 Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -72 vs -14 (n 36); +3M -60 vs -22 (n 34); +6M 30 vs 6 (n 31)
 
@@ -414,7 +414,7 @@ Rolling walk-forward (pick at month ends from 2023-10; OOS mean pts per month; r
 | 12M->3M | 37 | -12.6 | 87.6 | 0.24 | 1988 | 564 |
 | 6M->2w | 37 | 12.1 | 126.4 | 0.41 | 305 | 244 |
 
-Nulls (same pick procedure): shift11: OOS -19.0/mo share beat 0.35; shift23: OOS -55.2/mo share beat 0.38; shift37: OOS -2.1/mo share beat 0.38; random-clock pool: OOS 17.7/mo share beat 0.46
+Nulls (same pick procedure): shift11: OOS -19.0/mo share beat 0.35; shift23: OOS -55.2/mo share beat 0.38; shift37: OOS -2.1/mo share beat 0.38; random-clock pool: OOS -8.3/mo share beat 0.46
 
 Decay (pick on trailing 6M, trade month +h; mean pts pick vs live): +1M -37 vs 81 (n 36); +3M -14 vs 105 (n 34); +6M -47 vs 121 (n 31)
 
@@ -981,6 +981,19 @@ Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): 
 | HOLD | 6/6 | $4.84 x1.75 | 51403 | 48481 | -5.7% | 146574 | 146049 | -65316 | -61650 | 16240 | 16658 | 3311/3286 |
 
 Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 18691; H7 46650 -> 43796; K7 83430 -> 82848; M7 4691 -> 4979; O7 10923 -> 10923; P7 304772 -> 305444; U7 59410 -> 59410
+
+### TL3_SWB_H73_bcd8fd (BEST-AVAILABLE-NOT-PROVEN | row trend_28 set G30_80k1)
+
+| window | months done/needed | dollar col | today ulcer | swap ulcer | change | today maxDD | swap maxDD | today worst wk | swap worst wk | today mean/wk | swap mean/wk | trades today/swap |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| L3M | 3/3 | $4.84 base lots | 11035 | 11274 | +2.2% | 31109 | 32009 | -15728 | -16223 | 16098 | 15449 | 1981/1979 |
+| L3M | 3/3 | $4.84 x1.75 | 19311 | 19730 | +2.2% | 54441 | 56016 | -27524 | -28391 | 28172 | 27036 | 1981/1979 |
+| L6M | 6/6 | $4.84 base lots | 9612 | 9770 | +1.6% | 31109 | 32009 | -15728 | -16223 | 18755 | 18521 | 4292/4287 |
+| L6M | 6/6 | $4.84 x1.75 | 16821 | 17098 | +1.6% | 54441 | 56016 | -27524 | -28391 | 32822 | 32412 | 4292/4287 |
+| HOLD | 6/6 | $4.84 base lots | 29373 | 27389 | -6.8% | 83756 | 82926 | -37324 | -35598 | 9280 | 9851 | 3311/3322 |
+| HOLD | 6/6 | $4.84 x1.75 | 51403 | 47930 | -6.8% | 146574 | 145121 | -65316 | -62297 | 16240 | 17240 | 3311/3322 |
+
+Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 18691; H7 46650 -> 37528; K7 83430 -> 85585; M7 4691 -> 5320; O7 10923 -> 10923; P7 304772 -> 304772; U7 59410 -> 59410
 
 ### TL3_SWB_H73_cf8470 (BEST-AVAILABLE-NOT-PROVEN | row drb_2000 set G20_55k5)
 
@@ -1679,6 +1692,8 @@ Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): 
 | L6M | 6/6 | $4.84 x1.75 | 16821 | 16346 | -2.8% | 54441 | 51195 | -27524 | -26424 | 32822 | 32113 | 4292/4254 |
 | HOLD | 6/6 | $4.84 base lots | 29373 | 29287 | -0.3% | 83756 | 82310 | -37324 | -35061 | 9280 | 8859 | 3311/3287 |
 | HOLD | 6/6 | $4.84 x1.75 | 51403 | 51253 | -0.3% | 146574 | 144043 | -65316 | -61357 | 16240 | 15503 | 3311/3287 |
+| PRIOR | 31/31 | $4.84 base lots | 27534 | 26823 | -2.6% | 91441 | 89930 | -38896 | -41204 | 4849 | 4927 | 11949/11813 |
+| PRIOR | 31/31 | $4.84 x1.75 | 48184 | 46940 | -2.6% | 160021 | 157377 | -68068 | -72107 | 8486 | 8622 | 11949/11813 |
 
 Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 18691; H7 46650 -> 46650; K7 83430 -> 80324; M7 4691 -> 4862; O7 10923 -> 10923; P7 304772 -> 296606; U7 59410 -> 59410
 
