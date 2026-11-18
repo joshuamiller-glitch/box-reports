@@ -1,4 +1,4 @@
-# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-18 17:25Z
+# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-18 17:35Z
 
 Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish the whole search -> 2 prove it is not luck (30 controls, selection-corrected null, trust) -> 3 gates/layers one by one then jointly -> 4 D8 spec. Every number below is a screen-level number unless it says engine.
 
@@ -6,37 +6,37 @@ Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish
 
 | item | done | todo | jobs/hour (last 60 min) | ETA at that rate |
 |---|---|---|---|---|
-| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 63567 result files | 80818 jobs | 1449 | 55.8 h |
-| pass 2 (family cells, exits a2, top cells) | n/a | 25951 (a top cells 2387, a2 exit families 5840, c family cells 17724) | 925 | 28.1 h |
+| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 64486 result files | 79158 jobs | 2338 | 33.9 h |
+| pass 2 (family cells, exits a2, top cells) | n/a | 25690 (a top cells 2069, a2 exit families 5840, c family cells 17781) | 887 | 29.0 h |
 
-Pass-1 results on disk by tag: real 25281, null draw 1 17546, null draw 2 17467, extra draws (3-25) 2698 files. Pass-1 results still waiting for their pass-2 upgrade: real 15932.
+Pass-1 results on disk by tag: real 26164, null draw 1 17552, null draw 2 17467, extra draws (3-25) 2728 files. Pass-1 results still waiting for their pass-2 upgrade: real 16785.
 
-Machine state: server 2 load 93.09 84.11 81.69 (64 threads); grid workers 60 (59 computing, avg cpu 55%); engine workers 24; forward-path tables built 166 of 322 rows.
+Machine state: server 2 load 105.56 105.51 94.45 (64 threads); grid workers 58 (58 computing, avg cpu 48%); engine workers 24; forward-path tables built 170 of 322 rows.
 
 
 ## Blocked / cannot run (listed, not skipped silently)
 
-Failed jobs leave an error stub that the loop retries after 4 hours (older stubs are retried automatically). Error files on disk: {'real': 355, 'p1real': 1713, 'p1rand1': 1561, 'p1rand2': 1526, 'p1gridops_test': 1}.
+Failed jobs leave an error stub that the loop retries after 4 hours (older stubs are retried automatically). Error files on disk: {'real': 355, 'p1real': 1839, 'p1rand1': 1561, 'p1rand2': 1526, 'p1gridops_test': 1}.
 
 | module | failures (files) | why |
 |---|---|---|
-| trig_book_ofi | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_cancel | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_ice | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_queue | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_pslope | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_dwm | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_imb | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_micro | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_thin | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_wall | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_sweep | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_xmarket_fast | 286 | all signal calls raised (cause needs a test) |
-| trig_tape_run | 283 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_tape_block | 282 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_tape_unfinished | 282 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_tape_stack | 282 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_tape_sizemix | 281 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_xmarket_fast | 329 | all signal calls raised (cause needs a test) |
+| trig_book_ofi | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_cancel | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_ice | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_queue | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_pslope | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_dwm | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_imb | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_micro | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_thin | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_wall | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_sweep | 293 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_run | 289 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_block | 288 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_unfinished | 287 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_stack | 287 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_tape_sizemix | 287 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
 | trig_levels_sd5 | 19 | all signal calls raised (cause needs a test) |
 | trig_levels_sd15 | 19 | all signal calls raised (cause needs a test) |
 | trig_levels_sd60 | 19 | all signal calls raised (cause needs a test) |
@@ -60,97 +60,189 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 
 (b) OWN-STOP ranking (stack-independent; carries the shortlist):
 
-- not available yet (W-DAYMASK file autopilot/DAYMASK_RANK.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | cusum_56 | momentum_roc.break_native {"len": 20, "wd": 1.0} | plain60/60 | +405 | +757 | +0.26 | 407 | AMBER/ok/ok | L6M @1.5 stops +405 / @3 stops +739 |
+| 2 | dchg_20 | bands_bollinger.break_native {"clk": 5, "k": 1.5} | plain60/60 | +270 | +774 | +0.17 | 362 | ok/ok/ok | L6M @1.5 stops +270 / @3 stops +263 |
+| 3 | cusum_56 | momentum_mvote.v3of5 {"scale": 0.25, "thr": 0.25} | plain60/60 | +272 | +1289 | +0.17 | 333 | ok/ok/ok | L6M @1.5 stops +272 / @3 stops <=0 or <100 tr |
+| 4 | cdr_100 | levels_fib15.break {"n": 3, "k": 0.5} | plain60/60 | +286 | +178 | +0.18 | 259 | AMBER/ok/AMBER | L6M @1.5 stops +286 / @3 stops +733 |
+| 5 | dchg_14 | bands_atrchan.break_ext {"n": 40, "atr": 14, "k": 4.0} | sym15u | +491 | -325 | +0.16 | 152 | ok/ok/ok | L6M @1.5 stops +491 / @3 stops +212 |
+| 6 | dchg_56 | xmarket_mega.diverge {"w": 5} | plain60/60 | +253 | +141 | +0.16 | 237 | ok/ok/ok | L6M @1.5 stops +253 / @3 stops +439 |
+| 7 | dchg_28 | bands_atrchan.break_ema {"n": 10, "atr": 14, "k": 1.5} | sym15u | +534 | -659 | +0.17 | 240 | AMBER/ok/ok | L6M @1.5 stops +534 / @3 stops +866 |
+| 8 | cusum_56 | bands_regchan.break_stderr_native {"clk": 10, "k": 2.0} | plain60/60 | +233 | +150 | +0.15 | 202 | ok/ok/ok | L6M @1.5 stops +233 / @3 stops +1032 |
+| 9 | dlt_100 | barnative_delta.run {"n": 5, "thr": 0.0} | plain60/60 | +190 | +648 | +0.12 | 333 | ok/ok/ok | L6M @1.5 stops +190 / @3 stops +224 |
+| 10 | cusum_14 | bands_vwap.break_native {"clk": 12, "k": 1.0} | sym15u | +498 | -597 | +0.16 | 268 | AMBER/ok/ok | L6M @1.5 stops +380 / @3 stops <=0 or <100 tr |
 
 (a) BARE ranking:
 
-- 1 | tm180 (NR, level) | levels_vwap.break_native {"n": 3, "k": 0.5} [both] | plain60/60: 60/60 | L6M +465 (1.00 lots) | L3M +0.422 / +0.606 / +0.377 / +0.051
-- 2 | cusum_10 (NR) | momentum_cci.brk {"len": 30, "lvl": 200} [both] | plain60/60: 60/60 | L6M +485 (1.00 lots) | L3M +0.481 / +0.342 / +0.416 / +0.748
-- 3 | time_m_7 (NR) | xmarket_rty.confirm {"w": 30} [both] | plain60/60: 60/60 | L6M +461 (1.00 lots) | L3M +0.477 / +0.348 / +0.342 / +0.548
-- 4 | tick_300 (NR) | momentum_mvote.v3of5 {"scale": 1.0, "thr": 0.25} [both] | plain60/60: 60/60 | L6M +386 (1.00 lots) | L3M +0.334 / +0.673 / +0.501 / +0.423
-- 5 | vsess_30 (NR) | bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} [both] | plain60/60: 60/60 | L6M +424 (1.00 lots) | L3M +0.304 / +0.449 / +0.508 / +0.363
-- 6 | vsess_30 (NR) | bands_envelope.break_ema_native {"clk": 10, "k": 1.5} [both] | plain60/60: 60/60 | L6M +424 (1.00 lots) | L3M +0.304 / +0.449 / +0.508 / +0.363
-- 7 | vrb_400 (NR, level) | levels_swsr15.break_native {"n": 3, "k": 0.5} [both] | plain60/60: 60/60 | L6M +476 (1.00 lots) | L3M +0.300 / +0.312 / +0.536 / +0.436
-- 8 | vol_750 (NR) | trend_libstack.ema_stack {"set": "5-13-34"} [both] | plain60/60: 60/60 | L6M +389 (1.00 lots) | L3M +0.406 / +0.299 / +0.431 / +0.222
-- 9 | rng_20 (NR) | momentum_mvote.v3of5 {"scale": 1.0, "thr": 0.25} [both] | plain60/60: 60/60 | L6M +365 (1.00 lots) | L3M +0.330 / +0.431 / +0.295 / +0.301
-- 10 | dib_1200 (NR, level) | levels_vwap.break_native {"n": 2, "k": 0.25} [both] | plain60/60: 60/60 | L6M +352 (1.00 lots) | L3M +0.316 / +0.493 / +0.301 / +0.780
-  (bare equal-risk list from NEW_BOOK_SHORTLIST.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | cusum_80 | momentum_cci.zero_native {"len": 30, "lvl": 50} | plain60/60 | +435 | -495 | +0.28 | 441 | ok/ok/ok | bare only (not positive on own-stop) |
+| 2 | dchg_28 | bands_regchan.break_linreg {"n": 20, "k": 2.0} | plain60/60 | +381 | -584 | +0.24 | 442 | ok/ok/ok | bare only (not positive on own-stop) |
+| 3 | dchg_10 | bands_vwap.walk_native {"clk": 6, "k": 1.0, "N": 2} | plain60/60 | +355 | +530 | +0.23 | 538 | AMBER/ok/ok | strong on (b) too |
+| 4 | dchg_10 | bands_atrchan.break_ext {"n": 40, "atr": 14, "k": 4.0} | plain60/60 | +325 | +43 | +0.21 | 464 | ok/ok/ok | bare only (not positive on own-stop) |
+| 5 | cusum_56 | momentum_roc.break_native {"len": 5, "wd": 0.5} | sym15u | +523 | -246 | +0.17 | 315 | ok/ok/ok | strong on (b) too |
+| 6 | dchg_10 | bands_vwap.walk {"minbars": 10, "k": 1.0, "N": 2} | plain60/60 | +266 | +189 | +0.17 | 537 | ok/ok/ok | strong on (b) too |
+| 7 | dchg_56 | xmarket_mega.diverge {"w": 30} | plain60/60 | +315 | -256 | +0.20 | 132 | AMBER/ok/ok | strong on (b) too |
+| 8 | cdr_400 | levels_vwap.break_native {"n": 2, "k": 0.25} | plain60/60 | +226 | -165 | +0.14 | 288 | ok/ok/ok | strong on (b) too |
+| 9 | dchg_28 | bands_atrchan.break_ext_native {"clk": 5, "k": 1.0} | plain60/60 | +224 | +1 | +0.14 | 445 | ok/ok/ok | strong on (b) too |
+| 10 | dchg_28 | bands_regchan.break_stderr {"n": 20, "k": 2.0} | plain60/60 | +267 | -435 | +0.17 | 283 | AMBER/ok/ok | strong on (b) too |
 
 (c) CURRENT-STACK MASK ranking (valid for ADDING a book to today's stack only; information, never the sole reason to shortlist or drop; strong only here = depends on today's stack):
 
-- not available yet (W-DAYMASK file autopilot/DAYMASK_RANK.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | dchg_28 | bands_regchan.break_linreg {"n": 20, "k": 2.0} | plain60/60 | +377 | -579 | +0.24 | 440 | ok/ok/ok | depends on today's stack |
+| 2 | cdr_100 | levels_vwap.break {"n": 3, "k": 0.0} | plain60/60 | +317 | +497 | +0.20 | 528 | ok/ok/ok | depends on today's stack |
+| 3 | cdr_100 | levels_vwap.break_native {"n": 3, "k": 0.0} | plain60/60 | +317 | +497 | +0.20 | 528 | ok/ok/ok | depends on today's stack |
+| 4 | cdr_100 | levels_vwap.break_native {"n": 2, "k": 0.5} | plain60/60 | +364 | +1033 | +0.23 | 554 | ok/ok/AMBER | depends on today's stack |
+| 5 | dchg_10 | bands_vwap.walk_native {"clk": 6, "k": 1.0, "N": 2} | plain60/60 | +355 | +530 | +0.23 | 538 | AMBER/ok/ok | also positive on (b) |
+| 6 | dlt_400 | structure_libpattern.nr {"n": 4} | plain60/60 | +328 | +14 | +0.21 | 121 | ok/ok/ok | depends on today's stack |
+| 7 | cusum_28 | levels_vwap.retest {"M": 10, "tol": 0.5} | plain60/60 | +292 | +776 | +0.19 | 471 | ok/ok/ok | depends on today's stack |
+| 8 | dlt_100 | momentum_stoch.zone_break_native {"len": 21, "lvl": 90} | plain60/60 | +380 | +113 | +0.24 | 477 | ok/ok/AMBER | depends on today's stack |
+| 9 | dchg_10 | bands_atrchan.break_ext {"n": 40, "atr": 14, "k": 4.0} | plain60/60 | +374 | +92 | +0.24 | 460 | AMBER/ok/ok | depends on today's stack |
+| 10 | cdr_250 | levels_opens.break_native {"n": 2, "k": 0.25} | plain60/60 | +394 | +607 | +0.25 | 300 | AMBER/AMBER/ok | also positive on (b) |
 
 ## Top 10 London
 
 (b) OWN-STOP ranking (stack-independent; carries the shortlist):
 
-- not available yet (W-DAYMASK file autopilot/DAYMASK_RANK.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | dlt_150 | levels_opens.retest_native {"M": 3, "tol": 0.0} | plain60/60 | +295 | +714 | +0.19 | 169 | ok/ok/ok | L6M @1.5 stops +297 / @3 stops +419 |
+| 2 | dlt_150 | levels_opens.retest {"M": 3, "tol": 0.0} | plain60/60 | +295 | +714 | +0.19 | 169 | ok/ok/ok | L6M @1.5 stops +297 / @3 stops +419 |
+| 3 | cusum_20 | bands_regchan.break_linreg_native {"clk": 20, "k": 2.0} | plain60/60 | +328 | -142 | +0.21 | 179 | AMBER/ok/ok | L6M @1.5 stops +228 / @3 stops +38 |
+| 4 | cdr_250 | xmarket_commod.against_CL {"w": 15, "thr": 2.0} | plain60/60 | +286 | +544 | +0.18 | 118 | AMBER/ok/ok | L6M @1.5 stops +286 / @3 stops +315 |
+| 5 | cusum_14 | bands_bollinger.break_native {"clk": 40, "k": 2.5} | plain60/60 | +222 | +124 | +0.14 | 244 | ok/ok/ok | L6M @1.5 stops +267 / @3 stops +68 |
+| 6 | cdr_250 | levels_vwap_bands.reject {"tol": 0.0, "conf": "close"} | plain60/60 | +218 | -111 | +0.14 | 294 | ok/ok/ok | L6M @1.5 stops +146 / @3 stops +521 |
+| 7 | cdr_250 | levels_vwap_bands.reject_native {"tol": 0.0, "conf": "close"} | plain60/60 | +218 | -111 | +0.14 | 294 | ok/ok/ok | L6M @1.5 stops +146 / @3 stops +521 |
+| 8 | cdr_160 | levels_fib5.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +550 | -482 | +0.18 | 197 | AMBER/AMBER/ok | L6M @1.5 stops +223 / @3 stops +443 |
+| 9 | cdr_160 | levels_fib5.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +440 | -357 | +0.14 | 101 | ok/ok/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +633 |
+| 10 | cusum_112 | tape_stack.r5_fade {"k": 4} | plain60/60 | +256 | -67 | +0.16 | 152 | ok/ok/AMBER | L6M @1.5 stops +136 / @3 stops +201 |
 
 (a) BARE ranking:
 
-- 1 | dlt_70 (NR, level) | levels_zones.reject {"tol": 1.0, "conf": "body"} [both] | plain60/60: 60/60 | L6M +741 (1.00 lots) | L3M +0.540 / +0.439 / +0.499 / +0.351
-- 2 | tm420 (NR) | momentum_stoch.zone_break {"len": 5, "lvl": 70} [both] | plain60/60: 60/60 | L6M +456 (1.00 lots) | L3M +0.498 / +0.490 / +0.637 / +0.440
-- 3 | tm20 (NR) | xmarket_rates.with_ZN {"w": 1, "thr": 1.0} [long] | plain60/60: 60/60 | L6M +439 (1.00 lots) | L3M +0.361 / +0.337 / +0.592 / +0.672
-- 4 | tm15 (NR) | trend_ma_hma.cross {"len": 21, "width": 3, "hyst": 0.0} [both] | asym10u/20u: 41/82 | L6M +383 (1.45 lots) | L3M +0.696 / +1.025 / +0.474 / -0.723
-- 5 | tm30 (NR) | bands_bollinger.fade {"n": 10, "k": 1.5} [both] | asym15u/30u: 92/120 | L6M +453 (0.65 lots) | L3M +0.364 / +0.319 / +0.327 / +0.061
-- 6 | dol_350 (NR, level) | levels_sdx3.rej_zone {"d": "A", "F": 0, "tgt": "opp"} [both] | plain60/60: 60/60 | L6M +378 (1.00 lots) | L3M +0.346 / +0.361 / +0.306 / -0.243
-- 7 | vrb_400 (NR) | trend_ma_t3.cross {"len": 4, "width": 2, "hyst": 0.0} [both] | plain60/60: 60/60 | L6M +398 (1.00 lots) | L3M +0.350 / +0.392 / +0.305 / -0.535
-- 8 | dlt_150 (NR) | bands_regchan.fade_linreg_native {"clk": 10, "k": 2.0} [both] | plain60/60: 60/60 | L6M +362 (1.00 lots) | L3M +0.386 / +0.379 / +0.365 / +0.104
-- 9 | vsess_600 (NR) | xmarket_rates.with_ZN {"w": 1, "thr": 1.0} [both] | plain60/60: 60/60 | L6M +357 (1.00 lots) | L3M +0.321 / +0.330 / +0.412 / +0.581
-- 10 | vrb_700 (NR) | book_dwm.dev_fade {"L": 50, "z": 1.0} [both] | plain60/60: 60/60 | L6M +467 (1.00 lots) | L3M +0.372 / +0.320 / +0.294 / +0.053
-  (bare equal-risk list from NEW_BOOK_SHORTLIST.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | dlt_150 | bands_regchan.fade_linreg_native {"clk": 10, "k": 2.0} | plain60/60 | +471 | -91 | +0.30 | 150 | ok/ok/ok | bare only (not positive on own-stop) |
+| 2 | cdr_250 | levels_vwap_bands.reject {"tol": 0.0, "conf": "close"} | plain60/60 | +352 | +384 | +0.23 | 446 | ok/ok/ok | strong on (b) too |
+| 3 | cdr_250 | levels_vwap_bands.reject_native {"tol": 0.0, "conf": "close"} | plain60/60 | +352 | +384 | +0.23 | 446 | ok/ok/ok | strong on (b) too |
+| 4 | dchg_20 | barnative_profile.va_fade {"va": 0.5, "buf": 0.0} | plain60/60 | +304 | +505 | +0.20 | 189 | ok/ok/ok | bare only (not positive on own-stop) |
+| 5 | dib_2000 | bands_atrchan.break_ext {"n": 20, "atr": 14, "k": 3.0} | plain60/60 | +299 | +838 | +0.19 | 597 | ok/ok/ok | bare only (not positive on own-stop) |
+| 6 | cusum_80 | levels_zones.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +598 | +1328 | +0.19 | 173 | ok/ok/ok | strong on (b) too |
+| 7 | cusum_28 | bands_regchan.break_linreg {"n": 40, "k": 2.5} | plain60/60 | +270 | -301 | +0.17 | 129 | ok/ok/ok | bare only (not positive on own-stop) |
+| 8 | cusum_56 | levels_zones.reject_native {"tol": 0.5, "conf": "body"} | plain60/60 | +313 | +147 | +0.20 | 280 | ok/AMBER/ok | strong on (b) too |
+| 9 | cusum_20 | book_wall.near_fade {"m": 4, "d": 4} | plain60/60 | +273 | +1571 | +0.17 | 609 | ok/ok/ok | strong on (b) too |
+| 10 | cdr_250 | xmarket_commod.against_CL {"w": 15, "thr": 2.0} | plain60/60 | +315 | +507 | +0.20 | 122 | AMBER/ok/ok | strong on (b) too |
 
 (c) CURRENT-STACK MASK ranking (valid for ADDING a book to today's stack only; information, never the sole reason to shortlist or drop; strong only here = depends on today's stack):
 
-- not available yet (W-DAYMASK file autopilot/DAYMASK_RANK.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | dlt_150 | bands_regchan.fade_linreg_native {"clk": 10, "k": 2.0} | plain60/60 | +373 | -316 | +0.24 | 130 | ok/ok/ok | depends on today's stack |
+| 2 | cusum_80 | levels_zones.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +679 | +1249 | +0.22 | 137 | ok/ok/ok | also positive on (b) |
+| 3 | cdr_100 | structure_libpattern.pin {"k": 3.0, "filt": 50} | plain60/60 | +242 | +348 | +0.16 | 204 | ok/ok/ok | depends on today's stack |
+| 4 | dib_700 | bands_bollinger.break_native {"clk": 20, "k": 2.0} | asym20u/10u | +497 | -6 | +0.16 | 284 | ok/ok/ok | depends on today's stack |
+| 5 | dlt_45 | bands_bollinger.walk_native {"clk": 5, "k": 1.5, "N": 2} | plain60/60 | +234 | -26 | +0.15 | 229 | ok/ok/ok | depends on today's stack |
+| 6 | dchg_20 | bands_regchan.break_linreg {"n": 20, "k": 2.0} | plain60/60 | +208 | -118 | +0.13 | 181 | ok/ok/ok | also positive on (b) |
+| 7 | cdr_100 | structure_swing.choch {"k": 5, "buf": 0.0} | plain60/60 | +205 | +54 | +0.13 | 194 | ok/ok/ok | depends on today's stack |
+| 8 | cusum_20 | book_sweep.cnt_follow {"thr": 2} | plain60/60 | +198 | -52 | +0.13 | 321 | ok/ok/ok | depends on today's stack |
+| 9 | dib_240 | bands_vwap.walk {"minbars": 20, "k": 1.5, "N": 2} | plain60/60 | +190 | +496 | +0.12 | 204 | ok/ok/ok | depends on today's stack |
+| 10 | dib_700 | bands_bollinger.walk {"n": 30, "k": 1.5, "N": 3} | plain60/60 | +183 | -104 | +0.12 | 265 | ok/ok/ok | depends on today's stack |
 
 ## Top 10 NY AM
 
 (b) OWN-STOP ranking (stack-independent; carries the shortlist):
 
-- not available yet (W-DAYMASK file autopilot/DAYMASK_RANK.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +2026 | +333 | +1.30 | 496 | AMBER/AMBER/ok | L6M @1.5 stops +2439 / @3 stops +579 |
+| 2 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +1028 | +506 | +0.66 | 250 | ok/ok/AMBER | L6M @1.5 stops +1199 / @3 stops +201 |
+| 3 | cdr_400 | levels_opens.break_native {"n": 3, "k": 0.5} | plain60/60 | +765 | -19 | +0.49 | 338 | ok/ok/ok | L6M @1.5 stops +342 / @3 stops +119 |
+| 4 | dchg_40 | manual_cci.go {"len": 14, "lvl": 100} | sym15u | +1811 | +863 | +0.58 | 297 | ok/AMBER/ok | L6M @1.5 stops +1902 / @3 stops +1089 |
+| 5 | dib_1200 | bands_bollinger.break_native {"clk": 5, "k": 2.0} | asym15u/30u | +1364 | -371 | +0.53 | 413 | AMBER/ok/AMBER | L6M @1.5 stops <=0 or <100 tr / @3 stops +385 |
+| 6 | cdr_600 | levels_vwap.false_break_native {"M": 2, "k": 0.5} | sym15u | +1373 | +488 | +0.44 | 230 | AMBER/ok/ok | L6M @1.5 stops +1360 / @3 stops +531 |
+| 7 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | sym15u | +1276 | +1006 | +0.41 | 281 | ok/ok/ok | L6M @1.5 stops +879 / @3 stops +1848 |
+| 8 | dib_25000 | structure_level.sopen_reject {"buf": 0.0} | plain60/60 | +576 | +53 | +0.37 | 179 | ok/ok/ok | L6M @1.5 stops +640 / @3 stops +674 |
+| 9 | cusum_112 | levels_fib5.break {"n": 3, "k": 0.5} | plain60/60 | +688 | +245 | +0.44 | 321 | AMBER/AMBER/ok | L6M @1.5 stops +509 / @3 stops +112 |
+| 10 | cusum_20 | bands_atrchan.break_ema {"n": 20, "atr": 14, "k": 2.0} | sym15u | +1147 | +94 | +0.37 | 140 | ok/AMBER/ok | L6M @1.5 stops +1456 / @3 stops +1274 |
 
 (a) BARE ranking:
 
-- 1 | frenko_40 (REV) | book_ofi.follow_sm {"L": 200, "z": 2.0, "sm": 3} [both] | plain60/60: 60/60 | L6M +1346 (1.00 lots) | L3M +0.853 / +0.921 / +1.427 / +0.378
-- 2 | renko_10 (REV) | momentum_mvote.v3of5_native {"scale": 0.25, "thr": 0.25} [both] | plain60/60: 60/60 | L6M +1001 (1.00 lots) | L3M +1.069 / +0.876 / +0.894 / -0.145
-- 3 | tick_5000 (NR, level) | levels_vwap.retest_native {"M": 6, "tol": 0.5} [both] | plain60/60: 60/60 | L6M +1264 (1.00 lots) | L3M +0.754 / +0.839 / +0.807 / +0.471
-- 4 | pnf_7 (REV) | pullback_st.st {"st_mult": 2.0, "ema": 14, "arm": 10} [both] | plain60/60: 60/60 | L6M +1172 (1.00 lots) | L3M +0.989 / +0.707 / +0.761 / +0.086
-- 5 | kagi_28 (REV) | book_ofi.follow_sm {"L": 50, "z": 1.0, "sm": 3} [both] | plain60/60: 60/60 | L6M +1046 (1.00 lots) | L3M +0.694 / +1.249 / +1.157 / +0.476
-- 6 | renko_20 (REV) | trend_libstack.ema_hold {"len": 13, "hold": 3} [both] | plain60/60: 60/60 | L6M +804 (1.00 lots) | L3M +0.901 / +0.728 / +0.765 / -0.740
-- 7 | rng_14 (NR) | tape_delta.follow_native {"L": 3600, "z": 1.0} [both] | plain60/60: 60/60 | L6M +1062 (1.00 lots) | L3M +0.669 / +0.669 / +0.720 / +0.116
-- 8 | pnf_10 (REV, level) | levels_sdx_rng28.break {"d": "E", "F": 9, "n": 1} [both] | plain60/60: 60/60 | L6M +832 (1.00 lots) | L3M +0.667 / +1.014 / +0.935 / +0.738
-- 9 | dol_6000 (NR, level) | levels_vwap.reject_native {"tol": 1.0, "conf": "body"} [both] | plain60/60: 60/60 | L6M +843 (1.00 lots) | L3M +0.652 / +0.741 / +0.678 / +0.664
-- 10 | tick_5000 (NR, level) | levels_round.retest_native {"M": 10, "tol": 0.5} [both] | plain60/60: 60/60 | L6M +1059 (1.00 lots) | L3M +0.625 / +0.623 / +0.672 / +0.625
-  (bare equal-risk list from NEW_BOOK_SHORTLIST.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | cusum_20 | book_ofi.follow_native {"L": 3600, "z": 2.0} | plain60/60 | +1408 | +528 | +0.90 | 1026 | AMBER/ok/ok | bare only (not positive on own-stop) |
+| 2 | dib_15000 | structure_fvg.cont {"w": 0.75} | plain60/60 | +1081 | +455 | +0.69 | 495 | ok/ok/ok | bare only (not positive on own-stop) |
+| 3 | dlt_100 | bands_bollinger.walk_native {"clk": 10, "k": 2.0, "N": 2} | plain60/60 | +1255 | +1563 | +0.80 | 502 | AMBER/ok/AMBER | strong on (b) too |
+| 4 | dib_10000 | levels_session_hl.break_native {"n": 3, "k": 0.5} | plain60/60 | +721 | +842 | +0.46 | 866 | ok/ok/ok | bare only (not positive on own-stop) |
+| 5 | dib_10000 | levels_session_hl.break_native {"n": 3, "k": 0.5} | plain60/60 | +737 | +574 | +0.47 | 434 | ok/ok/ok | bare only (not positive on own-stop) |
+| 6 | dchg_28 | bands_bollinger.break_native {"clk": 20, "k": 1.5} | sym15u | +1596 | -4 | +0.51 | 497 | ok/ok/ok | strong on (b) too |
+| 7 | dchg_40 | manual_cci.go {"len": 14, "lvl": 100} | sym15u | +1356 | +1098 | +0.43 | 411 | ok/ok/ok | strong on (b) too |
+| 8 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +642 | -121 | +0.41 | 1022 | ok/ok/ok | strong on (b) too |
+| 9 | dib_6000 | levels_profile_nodes.break {"n": 2, "k": 0.25} | plain60/60 | +639 | +19 | +0.41 | 631 | ok/ok/ok | bare only (not positive on own-stop) |
+| 10 | dlt_100 | bands_avwap0930.walk_0930_native {"clk": 6, "k": 1.0, "N": 2} | plain60/60 | +621 | +353 | +0.40 | 322 | ok/ok/ok | strong on (b) too |
 
 (c) CURRENT-STACK MASK ranking (valid for ADDING a book to today's stack only; information, never the sole reason to shortlist or drop; strong only here = depends on today's stack):
 
-- not available yet (W-DAYMASK file autopilot/DAYMASK_RANK.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +1493 | +667 | +0.96 | 633 | ok/ok/ok | also positive on (b) |
+| 2 | dchg_40 | manual_macd.sigcross_native {"f": 5, "s": 13, "g": 4} | plain60/60 | +1357 | -639 | +0.87 | 604 | ok/ok/ok | depends on today's stack |
+| 3 | dchg_28 | levels_vwap.break {"n": 3, "k": 0.5} | plain60/60 | +892 | -280 | +0.57 | 538 | ok/ok/ok | depends on today's stack |
+| 4 | dlt_100 | bands_bollinger.walk {"n": 20, "k": 2.0, "N": 2} | plain60/60 | +789 | +831 | +0.51 | 336 | ok/ok/ok | also positive on (b) |
+| 5 | dlt_150 | momentum_roc.break_native {"len": 20, "wd": 1.0} | plain60/60 | +755 | +597 | +0.48 | 422 | ok/ok/ok | depends on today's stack |
+| 6 | dib_240 | bands_avwap0930.walk_0930 {"minbars": 20, "k": 1.5, "N": 2} | plain60/60 | +738 | -713 | +0.47 | 548 | ok/ok/ok | depends on today's stack |
+| 7 | dol_350 | bands_atrchan.break_ema {"n": 40, "atr": 14, "k": 1.5} | plain60/60 | +681 | -347 | +0.44 | 841 | ok/ok/ok | depends on today's stack |
+| 8 | dib_10000 | levels_profile_nodes.false_break {"M": 1, "k": 0.0} | plain60/60 | +666 | -51 | +0.43 | 373 | ok/ok/ok | depends on today's stack |
+| 9 | dib_10000 | levels_profile_nodes.false_break_native {"M": 1, "k": 0.0} | plain60/60 | +666 | -51 | +0.43 | 373 | ok/ok/ok | depends on today's stack |
+| 10 | cdr_100 | levels_vwap.break_native {"n": 1, "k": 0.5} | asym10u/20u | +1368 | +85 | +0.44 | 219 | ok/ok/ok | depends on today's stack |
 
 ## Top 10 NY PM
 
 (b) OWN-STOP ranking (stack-independent; carries the shortlist):
 
-- not available yet (W-DAYMASK file autopilot/DAYMASK_RANK.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | cdr_250 | xmarket_fx.with_6J {"w": 1, "thr": 1.0} | sym15u | +1837 | +1382 | +0.59 | 170 | ok/ok/AMBER | L6M @1.5 stops +2040 / @3 stops +1926 |
+| 2 | cdr_100 | bands_atrchan.break_ext {"n": 10, "atr": 14, "k": 2.0} | plain60/60 | +506 | -942 | +0.32 | 271 | ok/ok/ok | L6M @1.5 stops +460 / @3 stops +420 |
+| 3 | dib_3500 | barnative_speed.burst_fade {"len": 20, "r": 0.6} | plain60/60 | +503 | +127 | +0.32 | 154 | ok/ok/ok | L6M @1.5 stops +494 / @3 stops +502 |
+| 4 | cusum_40 | bands_envelope.fade_sma {"n": 40, "pct": 0.2} | plain60/60 | +442 | -17 | +0.28 | 240 | ok/ok/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +376 |
+| 5 | cusum_20 | book_pslope.follow_sm {"L": 200, "z": 2.0, "sm": 3} | sym15u | +1040 | +1262 | +0.33 | 190 | AMBER/ok/ok | L6M @1.5 stops +1216 / @3 stops +841 |
+| 6 | dchg_56 | trend_macd.zero_native {"len": 6, "width": 0.0} | plain60/60 | +438 | +3 | +0.28 | 105 | ok/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
+| 7 | dchg_14 | bands_regchan.break_linreg {"n": 20, "k": 2.0} | sym15u | +698 | +402 | +0.22 | 159 | ok/ok/ok | L6M @1.5 stops +993 / @3 stops +533 |
+| 8 | dib_70000 | trend_ma_t3.price_native {"len": 5, "width": 0.25} | plain60/60 | +408 | +14 | +0.26 | 215 | ok/ok/ok | L6M @1.5 stops +267 / @3 stops <=0 or <100 tr |
+| 9 | cdr_600 | xmarket_fx.with_6J {"w": 1, "thr": 1.0} | plain60/60 | +400 | +628 | +0.26 | 139 | AMBER/ok/AMBER | L6M @1.5 stops +318 / @3 stops +113 |
+| 10 | cusum_20 | bands_regchan.break_stderr {"n": 10, "k": 1.5} | plain60/60 | +296 | +127 | +0.19 | 265 | ok/ok/ok | L6M @1.5 stops +313 / @3 stops <=0 or <100 tr |
 
 (a) BARE ranking:
 
-- 1 | dib_400 (NR) | tape_libvol.cmf {"len": 10} [both] | plain60/60: 60/60 | L6M +891 (1.00 lots) | L3M +0.721 / +0.962 / +0.712 / -0.345
-- 2 | tm1800 (NR) | xmarket_ym.follow {"w": 5, "thr": 1.0} [both] | plain60/60: 60/60 | L6M +754 (1.00 lots) | L3M +0.943 / +0.716 / +1.155 / +0.156
-- 3 | tm900 (NR) | xmarket_es.follow {"w": 5, "thr": 1.0} [both] | plain60/60: 60/60 | L6M +918 (1.00 lots) | L3M +0.659 / +0.836 / +0.622 / +0.059
-- 4 | vrb_700 (NR) | momentum_libosc.stochrsi {"len": 21, "lvl": 20} [both] | plain60/60: 60/60 | L6M +837 (1.00 lots) | L3M +0.603 / +0.869 / +0.621 / +0.039
-- 5 | time_s_20 (NR) | bands_atrchan.break_ext {"n": 10, "atr": 14, "k": 2.0} [both] | plain60/60: 60/60 | L6M +833 (1.00 lots) | L3M +1.048 / +0.622 / +0.599 / -0.164
-- 6 | tm10 (NR) | manual_macd.sigcross {"f": 19, "s": 39, "g": 9} [both] | asym10u/20u: 55/110 | L6M +687 (1.09 lots) | L3M +0.563 / +0.785 / +1.352 / -0.726
-- 7 | dol_350 (NR) | trend_adx_di.di_cross {"len": 7, "width": 15} [both] | plain60/60: 60/60 | L6M +777 (1.00 lots) | L3M +0.700 / +0.555 / +0.587 / +0.286
-- 8 | time_s_30 (NR) | structure_libpattern.nr {"n": 7} [both] | plain60/60: 60/60 | L6M +659 (1.00 lots) | L3M +0.621 / +1.204 / +0.529 / +0.233
-- 9 | dol_500 (NR, level) | levels_fibr_dev.break_native {"n": 2, "k": 0.25} [short] | plain60/60: 60/60 | L6M +572 (1.00 lots) | L3M +0.347 / +0.338 / +0.349 / +0.021
-- 10 | dlt_70 (NR, level) | levels_vwap.break {"n": 1, "k": 0.5} [both] | plain60/60: 60/60 | L6M +571 (1.00 lots) | L3M +0.549 / +0.423 / +0.338 / -0.190
-  (bare equal-risk list from NEW_BOOK_SHORTLIST.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | dib_3500 | barnative_speed.burst_fade {"len": 10, "r": 0.4} | plain60/60 | +811 | +1354 | +0.52 | 967 | ok/ok/AMBER | strong on (b) too |
+| 2 | dchg_40 | structure_swing.bos {"k": 2, "buf": 0.0} | plain60/60 | +471 | +421 | +0.30 | 274 | ok/ok/ok | strong on (b) too |
+| 3 | cusum_20 | bands_atrchan.break_ext {"n": 10, "atr": 14, "k": 2.0} | plain60/60 | +376 | +1246 | +0.24 | 487 | ok/ok/ok | strong on (b) too |
+| 4 | cdr_100 | bands_regchan.break_linreg {"n": 20, "k": 2.0} | plain60/60 | +435 | +110 | +0.28 | 395 | ok/ok/ok | bare only (not positive on own-stop) |
+| 5 | dib_25000 | momentum_stoch.zone_break_native {"len": 14, "lvl": 70} | plain60/60 | +372 | -106 | +0.24 | 271 | ok/ok/ok | bare only (not positive on own-stop) |
+| 6 | dib_40000 | tape_libvol.force {"len": 7} | plain60/60 | +371 | -425 | +0.24 | 205 | ok/ok/ok | bare only (not positive on own-stop) |
+| 7 | dib_70000 | trend_ma_t3.price_native {"len": 5, "width": 0.25} | plain60/60 | +360 | -369 | +0.23 | 215 | ok/ok/ok | strong on (b) too |
+| 8 | dib_15000 | xmarket_fx.with_6J {"w": 1, "thr": 1.0} | sym15u | +712 | +977 | +0.23 | 277 | ok/ok/ok | bare only (not positive on own-stop) |
+| 9 | cusum_56 | manual_squeeze.momturn {"len": 20} | plain60/60 | +356 | +309 | +0.23 | 131 | ok/ok/ok | bare only (not positive on own-stop) |
+| 10 | cdr_600 | structure_libpattern.nr {"n": 10} | plain60/60 | +335 | -232 | +0.21 | 179 | ok/ok/ok | strong on (b) too |
 
 (c) CURRENT-STACK MASK ranking (valid for ADDING a book to today's stack only; information, never the sole reason to shortlist or drop; strong only here = depends on today's stack):
 
-- not available yet (W-DAYMASK file autopilot/DAYMASK_RANK.md)
+| rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | cdr_100 | bands_regchan.break_linreg {"n": 10, "k": 1.5} | plain60/60 | +743 | -49 | +0.48 | 565 | ok/ok/ok | also positive on (b) |
+| 2 | cusum_56 | tape_vpin.fade {"N": 10, "thr": 0.05} | plain60/60 | +709 | -11 | +0.45 | 218 | ok/AMBER/ok | also positive on (b) |
+| 3 | dlt_100 | bands_regchan.break_stderr_native {"clk": 10, "k": 2.0} | plain60/60 | +568 | +415 | +0.36 | 464 | ok/ok/ok | depends on today's stack |
+| 4 | dlt_70 | bands_regchan.break_linreg {"n": 10, "k": 1.5} | plain60/60 | +503 | -725 | +0.32 | 577 | ok/ok/ok | depends on today's stack |
+| 5 | cdr_100 | bands_regchan.break_linreg {"n": 20, "k": 2.0} | plain60/60 | +585 | +99 | +0.37 | 233 | ok/AMBER/AMBER | depends on today's stack |
+| 6 | dlt_70 | bands_regchan.break_linreg {"n": 10, "k": 1.5} | plain60/60 | +556 | -576 | +0.36 | 294 | ok/AMBER/AMBER | depends on today's stack |
+| 7 | cdr_100 | structure_libpattern.rangeexp {"k": 1.5} | plain60/60 | +425 | +744 | +0.27 | 525 | ok/ok/ok | depends on today's stack |
+| 8 | dib_3500 | levels_profile_va.break {"n": 2, "k": 0.25} | plain60/60 | +447 | -327 | +0.29 | 137 | ok/ok/ok | depends on today's stack |
+| 9 | cusum_56 | momentum_libosc.aroon {"len": 25} | plain60/60 | +504 | +76 | +0.32 | 121 | AMBER/ok/ok | depends on today's stack |
+| 10 | dlt_70 | bands_regchan.break_linreg {"n": 20, "k": 2.0} | plain60/60 | +389 | -92 | +0.25 | 477 | ok/ok/ok | depends on today's stack |
 
 ## Honest limits
 

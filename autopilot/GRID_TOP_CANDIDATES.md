@@ -1,4 +1,4 @@
-# GRID_TOP_CANDIDATES - trigger x bar candidates so far (W-GRIDA), refreshed 2026-11-18 17:02Z
+# GRID_TOP_CANDIDATES - trigger x bar candidates so far (W-GRIDA), refreshed 2026-11-18 17:33Z
 
 ## NOTICE 1 (W-LEVEL, 13:20Z) - POINT-AND-FIGURE (pnf_*) LOOK-AHEAD CHECK: NO LOOK-AHEAD IN THE BAR CONSTRUCTION
 - Test: an independent causal replay of the P&F rule (box = p x trailing-20-day median range scale, excluding today; 3-box reversal) on 4 trading days of NQ prints (202606), session by session, versus the stored pnf_14 bars: column count, column extreme (close) and the bar's known_ts (= the print that confirms the reversal) agree in every complete session (20 of 20; the 21st is a session cut by my day-file window, not a bar error). The fill (fpx/fts) is the first print strictly after known_ts in every checked bar.
@@ -7,7 +7,7 @@
 
 VERDICT (data ends 2026-11-12; SCREEN-LEVEL: naked trigger, no layers, no engine, points per 1 lot at $4.84 incl, not dollars of the live book): 684 candidates = every top-20 cell per session of every scored pass-1 refresh (union kept); ranked by prior years 2023-25 positive, then persistence, then last-6-month points; null excess shows NO NULL YET until null files pass the audit (>=5 accepted draws); nothing here is a LEAD.
 
-**COUNT LINE: of 684 candidates, 297 have >= 5 audited random-entry draws and 200 of those beat ALL their draws (L6M). beat all: 200 (scalp-size <= 60/60: 28, wide > 60: 137, bracket not audited yet: 35); with >= 5 draws: 297 (scalp-size <= 60/60: 34, wide > 60: 177, bracket not audited yet: 86). CAUTION: this null is CELL-LEVEL (the same cell with random entries of the same count): a candidate was picked as the best of millions of cells, so beating one random draw of its own cell does NOT correct for that selection; the selection-corrected test is the best-pick null of the family tables on DS3_SIGNAL_BAR_GRID.md. rc (random-clock) and shifted-label nulls are not done for the candidates yet.**
+**COUNT LINE: of 684 candidates, 315 have >= 5 audited random-entry draws and 200 of those beat ALL their draws (L6M). beat all: 200 (scalp-size <= 60/60: 28, wide > 60: 137, bracket not audited yet: 35); with >= 5 draws: 315 (scalp-size <= 60/60: 34, wide > 60: 182, bracket not audited yet: 99). CAUTION: this null is CELL-LEVEL (the same cell with random entries of the same count): a candidate was picked as the best of millions of cells, so beating one random draw of its own cell does NOT correct for that selection; the selection-corrected test is the best-pick null of the family tables on DS3_SIGNAL_BAR_GRID.md. rc (random-clock) and shifted-label nulls are not done for the candidates yet.**
 
 ## Plain-word key for the bar codes
 | code | meaning | build rule (BAR_REGISTRY.md) |
