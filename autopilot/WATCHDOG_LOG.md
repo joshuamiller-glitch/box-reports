@@ -5,3 +5,4 @@
 2026-11-18 20:55Z WATCHDOG L3 [TEST session b5test]: SIGTERM pid 249643 (claude)
 2026-11-18 20:56Z WATCHDOG L3 [TEST session b5test]: restart done: the new session got the restart message
 2026-11-18 20:58Z WATCHDOG L1 fired: A
+2026-11-18 21:28Z WATCHDOG L1 fired: A
