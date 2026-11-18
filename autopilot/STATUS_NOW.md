@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-18 00:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 00:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-18 00:15Z | box1: busy 100%, load1 45.22, workers 1, MemAvail 93 GB | server2: busy 99%, load1 75.84, workers 18, MemAvail 1362 GB | pending box1-eligible 1623 / server2-eligible 40844 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-18 00:30Z | box1: busy 100%, load1 48.35, workers 3, MemAvail 83 GB | server2: busy 96%, load1 60.17, workers 16, MemAvail 1240 GB | pending box1-eligible 1553 / server2-eligible 40774 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-18 00:15Z
+2026-11-18 00:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 00:15Z | box1: busy 100%, load1 45.22, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 92.7 GB; live reservations 0 (0 GB); workers 1, of which TP-adopted 1 (RSS 2.0 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 45.20, 47.89, 47.14
-  by tag: SWA quota 4 running 1 hungry True RSS 2.0 GB PSS 1.9 GB
-  cell-months finished last hour (DONE markers): 286
-  top running jobs: TL3_SWA_K74_tm1800 (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 76.33, 69.88, 67.58|/dev/md2         28T  928G   28T   4% /mnt/l2|30|
+Server 1 (this box): MemAvail 83.0 GB; live reservations 0 (0 GB); workers 3, of which TP-adopted 3 (RSS 6.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 48.16, 48.49, 47.05
+  by tag: SWA quota 4 running 3 hungry True RSS 6.1 GB PSS 5.7 GB
+  cell-months finished last hour (DONE markers): 308
+  top running jobs: TL3_SWA_K74_tm1800 (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 60.13, 63.39, 65.96|/dev/md2         28T  930G   28T   4% /mnt/l2|32|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -36,5 +36,3 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 76.33, 69.88, 67.58|/dev/md
 
 ## INBOX (last 5 received)
 20261117_2305Z_levels-add-fib-pivots-swing-SR.md 20261117_2308Z_levels-as-trigger-AND-confluence-supply-demand-first.md 20261117_2330Z_p7-nyam-cell-lot-test.md 20261117_2357Z_supply-demand-publish-exact-zone-rules.md 20261118_0006Z_supply-demand-loosen-and-parameterise.md
-- lead 00:05Z INBOX 20261118_0006Z_supply-demand-loosen-and-parameterise.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
-- lead 00:06Z INBOX 20261118_0006Z_supply-demand-loosen-and-parameterise received: research order, accepted; W-GRIDD rebuilds fd_sd.py (all definitions paramete
