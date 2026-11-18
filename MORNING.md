@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 09:28Z 11-18 (t+548.5 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 09:43Z 11-18 (t+548.7 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
 Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 95% min 86% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-18T09:28:32Z. Box: CPU 86.3%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Updated 2026-11-18T09:43:45Z. Box: CPU 95.6%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-18T09:16Z
+## TREND (TL) update 2026-11-18T09:46Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T09:03:43Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-18T09:33:44Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -5391,3 +5391,17 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 09:33Z) W-PM status: load1 31.81, PM exact jobs pending 12, cells with output 59; 743 jobs wanted, 12 chains running, 1794994352; P5 page done, P8 grid np_m15_x10_y15 2898
 - (wall 09:36Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 24 (pending file), cell-months done 1979, load 30.95 31.48 31.17, epoch 1794994580
 - (wall 09:39Z) W-EC (EXPAND C) status: EC workers busy 0, jobs outstanding 149, cell-months done 427, load 37.88 33.63 31.98
+- lead 09:45Z AUTO-FILL (cores_meter, server 2 below 85% twice): dispatcher alive pid 1240823/3688388; dispatch.log LAUNCH lines in last ~10 min: 30; dispatcher walks ALL queues in order and takes any eligible line with deps already pushed (prefetch threads push the rest), so an ineligible/empty front queue cannot block it.
+- (wall 09:45Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:45Z) W-EA status: EA workers busy 0, pending exact cell-months 39, done EA cell-months 241; chains 22 chains running; identity vs JN05W2 598 net 25943.82 -> IDENTICAL; promote 05:06Z TL3_EA_CYS1_P7_ALL_H50_RN_CXC_PB3 PROMOTE [1] 
+- (wall 09:45Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:46Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:46Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:47Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:47Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:47Z) HOURLY BLOCK (auto): cores busy 15-min avg 97 pct, hour min 80 pct (load1 40.72); /mnt/l2 free 35 GB; procs running/pending by tag: CF 0/24; EV 0/19; D10 0/0; LR 0/24; CH 0/624; D9 0/59; EA 0/39; EB 0/22; EC 0/149; LA 0/22; LB 0/22; PA 0/225; R2 0/16; JV 0/25; RF 0/14; PR 0/25; PM 0/12; NT 0/212; TD 0/45; RA 0/0; UW 0/0; closest to live: (not yet set by the lead); hypothesis ledger entries: 25; page verdicts: DS3_FILTERS_RAW: VERDICT (data ends 2026-10-30; FIRST PASS): (1) PATH EFFECT, not yet fully explained: of the engine gate's extra drawdown ($103k vs $52k base) about $11k is the selection; DS3_BRACKET_GRID: VERDICT: in the offline replay screen, 7 of 14 book x session cells have some fixed (target, stop) that beats 58/60 on mean AND drawdown in all of L6M, the older 40 month; DS3_ENGINE_VS_LIVE: VERDICT (data ends 2026-11-13; 2026-11-16 15:10Z): exact-engine entries vs the live file, 2026-11-01 18:00 .. 11-11 17:00 ET (355 live entries, X books excluded, order-se; DS3_CONFLUENCE: VERDICT (data ends 2026-10-30; ): out of sample the count of agreeing independent clusters does not climb: Spearman(count, R) is between -0.07 and +0.07 in every book-ses; DS3_LONDON_RANGE: VERDICT (plain): OLD BASE numbers (JN05W2) everywhere except section 7e (JL base, PROVISIONAL, never mixed with old-base tables). FIRST PASS, PATH EFFECT = FREED-BOOK REP
+- (wall 09:48Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- LEAD NOTE: DELIVERABLES page 2026-11-18 09:48Z: rows per table T1 30 / T2 23 / T3 36 / T4 13 / T5 bar swap 16; labels {'CONFIRMED': 1, 'BEST-AVAILABLE-NOT-PROVEN': 101, 'WEAK-BUT-POSITIVE': 51, 'LEAD': 7}; stale owners ['W-MB', 'W-MC', 'W-S1R']; no file yet ['W-BAR'] (autopilot/DS3_MAJOR_DELIVERABLES.md)
+- (wall 09:48Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:49Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 09:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
