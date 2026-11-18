@@ -1,0 +1,12 @@
+# PREREG_NT2 - near-target K7/M7 controls, older windows, full table (W-NT2, order 2013Z item 4). Written 2026-11-18 before any NT2 set is scored.
+
+Question: which near-target / lock edits to K7 and M7 help the stack on the exact engine (JL3, every layer ON), and is the headline K7 lock (TL3_NT_LK_K7_a80_L50: lock at +30 pts after the 80% touch of the target) selection luck?
+
+Sets (all copies of TL3_EV_JL3, engine unchanged; code/th_nt2/mk_nt2.py): identity TL3_NT_LKID2 (K7 lock never reachable = JL3, 202610 + 202504); real latch-lock TL3_NT_LKX_K7_a80_L50 (same mechanism as controls A); controls A = random activation p=0.5 per (seed, book, side, 300 s bucket), 30 seeds for LKX, 30 for SH_K7_k2, seeds 11..30 added to the four existing CT variants (SH_K7_k4, L_K7_A95S10, L_M7_A95S10, SH_M7_k2); controls B = 30 random K7 lock settings (a~U(0.60,0.90), L~U(0,45) pts, rng 20261118+i; the selection null for "best of the 6 K7 lock settings tried"); older windows 202304..202510 for LK_K7_a80_L50, LKX, LK_K7_a70_L50, SH_K7_k2, L_M7_A95S10. Date-shift controls are NOT possible for a lock/latch edit in the engine (the rule acts on the live path); that is why A and B are used.
+
+Windows (trade-exit label day): L6M 2026-05-14..2026-11-13 (variants only); L6M* 2026-05-14..2026-10-31 and HOLD 2025-11-11..2026-05-11 (variants AND controls, same months 202511..202610); L3M 2026-08-14..2026-11-13 (variants); Y2023 / Y2024 / Y2025.
+Scored per window against TL3_EV_JL3 on the same months: d ulcer % (daily stack cumulative, PRIMARY), d worst week, d max DD, d mean $/wk base ($4.84) and x1.75 live lots (whole-lot rounding like the engine rows).
+
+Year status (vs JL3): GREEN d mean >= 0 and d ulcer <= +2%; AMBER d mean >= -0.15 x |L6M d mean| and d ulcer <= +5%; RED otherwise.
+Labels (fixed now): CONFIRMED = L6M, L3M and HOLD d mean > 0 with d ulcer <= 0 in L6M, no RED prior year, and the real variant beats >= 27 of 30 controls B on BOTH d mean and d ulcer (L6M*). LEAD = L6M/L3M d mean > 0, d ulcer <= +1%, at most one AMBER and no RED year, beats >= 24 of 30 controls B on d mean. WEAK-BUT-POSITIVE = L6M d mean > 0 but fails the above. Otherwise BEST-AVAILABLE-NOT-PROVEN. Controls A (random half activation) are reported (control median / best / share > 0 / dose ratio = mean control / real) but cannot by themselves confer a label.
+dead_lookup: 0 relevant hits (DEAD_CELLS: no K7/M7 profit-lock-at-target or latch cell; the K7+lock hits are entry-zone cells).

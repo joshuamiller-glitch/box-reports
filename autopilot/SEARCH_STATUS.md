@@ -1,4 +1,4 @@
-# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-18 20:05Z
+# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-18 20:15Z
 
 Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish the whole search -> 2 prove it is not luck (30 controls, selection-corrected null, trust) -> 3 gates/layers one by one then jointly -> 4 D8 spec. Every number below is a screen-level number unless it says engine.
 
@@ -6,16 +6,16 @@ Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish
 
 | item | done | todo | jobs/hour (last 60 min) | ETA at that rate |
 |---|---|---|---|---|
-| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 79563 result files | 128191 jobs | 6240 | 20.5 h |
-| pass 2 (family cells, exits a2, top cells) | n/a | 26085 (a top cells 1434, a2 exit families 6543, c family cells 18108) | 1198 | 21.8 h |
+| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 82002 result files | 123523 jobs | 7601 | 16.3 h |
+| pass 2 (family cells, exits a2, top cells) | n/a | 25873 (a top cells 1410, a2 exit families 6362, c family cells 18101) | 1253 | 20.6 h |
 
 NOTE (18:40Z): the grid is partitioned over server 2 (rows 0-1 of 12), A (2-6) and B (7-11) by W-S3; finished results are merged into server 2 every ~5 min (lag <= 10 min), the todo and worker counts are summed over the three servers. A and B also see 172 bar rows that are complete on box 1 but not yet on server 2, so total todo is higher than the earlier single-server figure (about +50%).
 
-Pass-1 results on disk by tag: real 39136, null draw 1 17868, null draw 2 17792, extra draws (3-25) 4113 files. Pass-1 results still waiting for their pass-2 upgrade: real 29464.
+Pass-1 results on disk by tag: real 41085, null draw 1 17882, null draw 2 17792, extra draws (3-25) 4450 files. Pass-1 results still waiting for their pass-2 upgrade: real 31348.
 
-Machines (grid partitioned across servers): 207.188.7.103 load 67.13 workers 36; 109.94.96.39 load 121.82 workers 118; 206.223.224.21 load 121.21 workers 124; grid workers 278 (278 computing), engine workers 8; forward-path tables built (summed over servers) 403.
+Machines (grid partitioned across servers): 207.188.7.103 load 69.37 workers 36; 109.94.96.39 load 107.03 workers 100; 206.223.224.21 load 114.19 workers 96; grid workers 232 (232 computing), engine workers 62; forward-path tables built (summed over servers) 411.
 
-Since 17:23Z: pass-1 todo 80818 -> 128191 (+47373), pass-2 todo 25951 -> 26085 (+134). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
+Since 17:23Z: pass-1 todo 80818 -> 123523 (+42705), pass-2 todo 25951 -> 25873 (-78). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
 
 ## R4 - selection-corrected null of the whole search (order 1932Z; prereg sha 125fd12566e72aa6)
 
@@ -23,10 +23,10 @@ What it is: 20 random-entry draws (tags p1rand1..p1rand20) of the SAME pass-1 se
 
 | item | now |
 |---|---|
-| results/hour, REAL search (p1real files, pass 1 and 2 together) | 6131 |
-| results/hour, NULL draws (p1rand1..20 files) | 1230 |
-| null result files on disk, draws 1 / 2 | 17868 / 17792 (real: 39136) |
-| null result files, draws 3-20 (all) | 3690 |
+| results/hour, REAL search (p1real files, pass 1 and 2 together) | 7135 |
+| results/hour, NULL draws (p1rand1..20 files) | 1503 |
+| null result files on disk, draws 1 / 2 | 17882 / 17792 (real: 41085) |
+| null result files, draws 3-20 (all) | 4027 |
 | draws complete (files incl. error stubs >= 99.5 percent of the real search) | 0 of 20 |
 | draws accepted by the null audit and counted | see null_summary below |
 
@@ -34,20 +34,23 @@ Estimate: about 18 more full draws at the null share of the fleet (64 threads, ~
 
 ### False-discovery counts (W-SHORT, rule/null_summary.md: per accepted null draw per session, null cells passing vs the real search on the SAME coverage; ratio null/real = false-discovery ratio)
 
-no accepted draw yet. PRELIMINARY first look (W-SHORT, 19:40Z, draw 1 only, bare rule, NY AM, server-2 data): null draw 1 has 2,390 cells passing R0 of 3.38 M evaluated; the real search on the same coverage has 3,252 of 2.62 M; ratio null/real = 0.73, i.e. about three quarters as many random-entry cells pass the bare rule as real cells (before own-stop, trust and R3): the bare rule alone discriminates weakly. One draw, different coverage: first look only.
+# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 20:10Z
+
+| tag | audit | Asia null / real (ratio) | London null / real (ratio) | NYAM null / real (ratio) | NYPM null / real (ratio) |
+|---|---|---|---|---|---|
 
 ## Grid / engine split per host (order 1932Z item 3; caps owned by W-S3)
 
-Proposed to W-S3 at 19:30Z (threads in brackets): A (128) = real pass 1 48 + real pass 2 20 + null 32 + ENGINE 28 at normal priority (guaranteed share for the lead / R5 sets); B (128) = pass 1 60 + pass 2 24 + null 32 + engine 8, then 28 once its identity passes; server 2 (64) = pass 1 22 + pass 2 8 + null 6 + engine 14 + re-rank 22 (re-run ends ~20:00Z). While phase 1 runs the grid gets most cores, the engine keeps its guaranteed workers, the null runs at lowest priority. The actual numbers are in the Machines table below.
+Since 20:15Z (order 2013Z item 5): priorities by nice level: engine slots nice 0 (lead sets: W-NYENG, W-LONENG, W-NT2), R3 jobs (W-SHORT) nice 5, null draws nice 8, real pass 1 / pass 2 nice 10. Leftover cores go to the R4 NULL draws FIRST, then pass 1: on A and B the real loops stay (A: pass 1 48 + pass 2 20; B: 40 + 24), the dedicated null loops have 32 workers each (nice 8), and a FILLER loop on the NULL tags (p1rand3..20, reverse order, nice 10, same own-stop/account flags) is resized every 5 minutes to 128 - real grid - engine busy - 4 (box-1 cron, filler_ctl.sh). Server 2 (64 threads): pass 1 22 + pass 2 8 + null 6 + engine + re-rank. The actual numbers are in the Machines table below.
 
 ## Machines (hourly; busy % is measured from /proc/stat against the REAL thread count of each machine)
 
 | machine | real threads | busy % | load1 | grid workers (computing) | engine workers | re-rank/other workers | results/hour (this machine) |
 |---|---|---|---|---|---|---|---|
-| server 2 Dallas | 64 | 98.9 | 67.13 | 278 (278) | 4 | 23 | 7438 |
-| A Frankfurt | 128 | 95.3 | 121.82 | 118 (118) | 4 | 0 | 4066 |
-| B Singapore | 128 | 96.2 | 121.21 | 124 (124) | 0 | 0 | 8610 |
-| box 1 London (lead, engine fillers) | 32 | 94 | 33.93 | 0 | see CORES.md | - | - |
+| server 2 Dallas | 64 | 100.0 | 69.37 | 232 (232) | 31 | 23 | 8854 |
+| A Frankfurt | 128 | 90.3 | 107.03 | 100 (100) | 13 | 0 | 4092 |
+| B Singapore | 128 | 81.4 | 114.19 | 96 (96) | 17 | 0 | 7919 |
+| box 1 London (lead, engine fillers) | 32 | 100 | 41.93 | 0 | see CORES.md | - | - |
 
 Server 2 has 64 threads (SMT off in firmware, order 1830Z check), A and B 128 each, box 1 32. Total jobs/hour and the phase-1 ETA are in the table above (sum over servers; double counting warning applies until W-S3 merges results). Any machine under 85% busy for 3 readings with work pending gets a one-line explanation in MORNING.md.
 

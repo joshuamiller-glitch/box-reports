@@ -1,6 +1,6 @@
 # DS3_NEAR_TARGET - W-NT near-target take that catches a touch-and-reverse (user relay 11-18 01:25Z) 
 
-Generated 2026-11-18 19:47Z. Data end 2026-11-13 (JL3 months 202304..202611, 44 months, exact engine TL3_EV_JL3 trades + 1-s tape p_high/p_low/mid). Pick window (trailing 6M) 2026-05-14..2026-11-13, 3M beside 2026-08-14..2026-11-13; refit date 2026-11-22 (2-week roll); prior-year percentages to follow with the engine rows (this page version = COUNT TABLE only, no selection yet, no trials counted). Standing selection rule applies to every pick below. The earlier near-target page (user order 17:25Z, first-order screen on LPB_BASE) is kept at the bottom and in autopilot/DS3_NEAR_TARGET_1725Z_prev.md.
+Generated 2026-11-18 20:17Z. Data end 2026-11-13 (JL3 months 202304..202611, 44 months, exact engine TL3_EV_JL3 trades + 1-s tape p_high/p_low/mid). Pick window (trailing 6M) 2026-05-14..2026-11-13, 3M beside 2026-08-14..2026-11-13; refit date 2026-11-22 (2-week roll); prior-year percentages to follow with the engine rows (this page version = COUNT TABLE only, no selection yet, no trials counted). Standing selection rule applies to every pick below. The earlier near-target page (user order 17:25Z, first-order screen on LPB_BASE) is kept at the bottom and in autopilot/DS3_NEAR_TARGET_1725Z_prev.md.
 
 ## Five lines
 1. Tried: counted, per book x session, the JL3 trades whose 1-s print extreme reached 85/90/95/97.5/100% of the target without a Target fill, and how they ended (live take, live lock, other exit).
@@ -352,7 +352,7 @@ Real JL3: 6,173 of 19,881 trades reach 95% (31%; placebo paths 23-24%, so real p
 
 Families not yet run: (5) persist-counter fix and (6) order-book latch need the book features and the ptr grammar hook on the JL3 hooklist (batch 2 after the identity cells land); two-step exit needs live-lot (x1.75) partials, the base-lot engine cannot split 1 lot. Live K7 target is already 59 (4 ticks nearer than the engine 60), P7 58, M7 59.5: the incident trade had a 59-pt target.
 
-## 3. ENGINE ROWS (TL3_NT_* vs TL3_EV_JL3 on the same landed months; written 2026-11-18 19:47Z)
+## 3. ENGINE ROWS (TL3_NT_* vs TL3_EV_JL3 on the same landed months; written 2026-11-18 20:17Z)
 
 ### Identity (inert == JL3 trade for trade)
 | set | month | trades | JL3 trades | net | JL3 net | identical |
@@ -365,46 +365,46 @@ Families not yet run: (5) persist-counter fix and (6) order-book latch need the 
 ### Sets landed (stack-level, landed months only; months are L6M/HOLD recent-first, so read as a partial window)
 | set | months landed | first..last | d mean $/wk ($4.84, base lots) | d mean $/wk x1.75 | stack ulcer change % | d trades | JL3 mean $/wk on these months |
 |---|---|---|---|---|---|---|---|
-| TL3_NT_LK_H7_a85_L80 | 8 | 202603..202610 | -32 | -64 | 2.5 | 1 | 17546 |
-| TL3_NT_LK_K7_a60_L25 | 8 | 202603..202610 | -1020 | -1992 | 2.7 | 293 | 17546 |
-| TL3_NT_LK_K7_a70_L25 | 9 | 202602..202610 | -985 | -1960 | -2.6 | 209 | 15657 |
-| TL3_NT_LK_K7_a70_L50 | 8 | 202603..202610 | -468 | -940 | -4.7 | 261 | 17546 |
-| TL3_NT_LK_K7_a80_L0 | 9 | 202602..202610 | -201 | -402 | 8.8 | 120 | 15657 |
-| TL3_NT_LK_K7_a80_L25 | 8 | 202603..202610 | 216 | 405 | 2.7 | 137 | 17546 |
-| TL3_NT_LK_K7_a80_L50 | 9 | 202602..202610 | 1010 | 1992 | -5.4 | 137 | 15657 |
-| TL3_NT_LK_M7_a60_L25 | 8 | 202603..202610 | -71 | -169 | -7.0 | 134 | 17546 |
-| TL3_NT_LK_M7_a70_L25 | 8 | 202603..202610 | -730 | -1460 | 0.7 | 76 | 17546 |
-| TL3_NT_LK_M7_a70_L50 | 8 | 202603..202610 | -208 | -415 | 4.6 | 86 | 17546 |
-| TL3_NT_LK_M7_a80_L0 | 9 | 202602..202610 | -309 | -618 | -2.4 | 38 | 15657 |
-| TL3_NT_LK_M7_a80_L25 | 8 | 202603..202610 | -528 | -1057 | -0.0 | 61 | 17546 |
-| TL3_NT_LK_M7_a80_L50 | 8 | 202603..202610 | 49 | 100 | 3.5 | 64 | 17546 |
-| TL3_NT_LK_P7_a80_L50 | 8 | 202603..202610 | -447 | -825 | 4.0 | 3 | 17546 |
-| TL3_NT_L_A7_A90S5 | 9 | 202602..202610 | -313 | -617 | 1.3 | 1 | 15657 |
-| TL3_NT_L_A7_A95S10 | 9 | 202602..202610 | -26 | -43 | -2.2 | 24 | 15657 |
-| TL3_NT_L_A7_A95S5 | 9 | 202602..202610 | -3 | 2 | -0.3 | 23 | 15657 |
-| TL3_NT_L_A7_B95G8 | 9 | 202602..202610 | -53 | -97 | -1.4 | 25 | 15657 |
-| TL3_NT_L_K7_A90S5 | 9 | 202602..202610 | 189 | 363 | -3.7 | 58 | 15657 |
-| TL3_NT_L_K7_A95S10 | 9 | 202602..202610 | -104 | -208 | 0.4 | 28 | 15657 |
-| TL3_NT_L_K7_A95S5 | 9 | 202602..202610 | 68 | 105 | -8.3 | 8 | 15657 |
-| TL3_NT_L_K7_B95G8 | 9 | 202602..202610 | -155 | -309 | 0.1 | 19 | 15657 |
-| TL3_NT_L_M7_A90S5 | 9 | 202602..202610 | 58 | 117 | 0.3 | 61 | 15657 |
-| TL3_NT_L_M7_A95S10 | 9 | 202602..202610 | 219 | 438 | -0.4 | 15 | 15657 |
-| TL3_NT_L_M7_A95S5 | 9 | 202602..202610 | 219 | 438 | -0.4 | 15 | 15657 |
-| TL3_NT_L_M7_B95G8 | 9 | 202602..202610 | 147 | 293 | 1.9 | 16 | 15657 |
-| TL3_NT_L_P7_A95S5 | 8 | 202603..202610 | -13 | -6 | -1.3 | -7 | 17546 |
-| TL3_NT_L_P7_B95G8 | 8 | 202603..202610 | -13 | -9 | -2.0 | -10 | 17546 |
-| TL3_NT_SH_A7_k1 | 8 | 202603..202610 | 57 | 114 | -1.8 | -1 | 17546 |
-| TL3_NT_SH_A7_k2 | 8 | 202603..202610 | 17 | 44 | -1.7 | 0 | 17546 |
-| TL3_NT_SH_A7_k4 | 8 | 202603..202610 | 66 | 132 | -2.8 | 11 | 17546 |
-| TL3_NT_SH_K7_k1 | 9 | 202602..202610 | 170 | 341 | -1.1 | -7 | 15657 |
-| TL3_NT_SH_K7_k2 | 8 | 202603..202610 | 247 | 494 | -1.5 | -3 | 17546 |
-| TL3_NT_SH_K7_k4 | 8 | 202603..202610 | 313 | 625 | 0.4 | 2 | 17546 |
-| TL3_NT_SH_M7_k1 | 8 | 202603..202610 | 84 | 168 | -0.2 | 1 | 17546 |
-| TL3_NT_SH_M7_k2 | 8 | 202603..202610 | 168 | 336 | -0.4 | 4 | 17546 |
-| TL3_NT_SH_M7_k4 | 8 | 202603..202610 | 156 | 311 | -2.1 | 2 | 17546 |
-| TL3_NT_SH_P7_k1 | 8 | 202603..202610 | -13 | -33 | -0.3 | 0 | 17546 |
-| TL3_NT_SH_P7_k2 | 8 | 202603..202610 | 27 | 48 | -0.2 | 2 | 17546 |
-| TL3_NT_SH_P7_k4 | 9 | 202602..202610 | 16 | 33 | 0.2 | 2 | 15657 |
+| TL3_NT_LK_H7_a85_L80 | 13 | 202511..202611 | -3 | -9 | 0.4 | 1 | 14413 |
+| TL3_NT_LK_K7_a60_L25 | 13 | 202511..202611 | -827 | -1625 | -6.4 | 415 | 14413 |
+| TL3_NT_LK_K7_a70_L25 | 13 | 202511..202611 | -709 | -1422 | -13.6 | 303 | 14413 |
+| TL3_NT_LK_K7_a70_L50 | 13 | 202511..202611 | -293 | -612 | -16.2 | 404 | 14413 |
+| TL3_NT_LK_K7_a80_L0 | 13 | 202511..202611 | -104 | -208 | 1.9 | 174 | 14413 |
+| TL3_NT_LK_K7_a80_L25 | 13 | 202511..202611 | 425 | 841 | -13.6 | 213 | 14413 |
+| TL3_NT_LK_K7_a80_L50 | 13 | 202511..202611 | 906 | 1793 | -10.9 | 186 | 14413 |
+| TL3_NT_LK_M7_a60_L25 | 13 | 202511..202611 | -64 | -134 | -4.1 | 214 | 14413 |
+| TL3_NT_LK_M7_a70_L25 | 13 | 202511..202611 | -442 | -873 | -4.7 | 143 | 14413 |
+| TL3_NT_LK_M7_a70_L50 | 13 | 202511..202611 | 139 | 278 | -7.4 | 166 | 14413 |
+| TL3_NT_LK_M7_a80_L0 | 13 | 202511..202611 | -171 | -342 | -0.5 | 61 | 14413 |
+| TL3_NT_LK_M7_a80_L25 | 13 | 202511..202611 | -451 | -890 | 2.5 | 112 | 14413 |
+| TL3_NT_LK_M7_a80_L50 | 13 | 202511..202611 | 99 | 200 | 2.6 | 127 | 14413 |
+| TL3_NT_LK_P7_a80_L50 | 13 | 202511..202611 | 105 | 212 | -5.3 | 47 | 14413 |
+| TL3_NT_L_A7_A90S5 | 13 | 202511..202611 | -355 | -703 | 0.8 | 13 | 14413 |
+| TL3_NT_L_A7_A95S10 | 13 | 202511..202611 | -15 | -24 | -0.1 | 31 | 14413 |
+| TL3_NT_L_A7_A95S5 | 13 | 202511..202611 | 8 | 23 | 0.2 | 30 | 14413 |
+| TL3_NT_L_A7_B95G8 | 13 | 202511..202611 | 4 | 13 | -1.1 | 31 | 14413 |
+| TL3_NT_L_K7_A90S5 | 13 | 202511..202611 | 215 | 418 | -4.0 | 75 | 14413 |
+| TL3_NT_L_K7_A95S10 | 13 | 202511..202611 | -66 | -131 | 2.8 | 26 | 14413 |
+| TL3_NT_L_K7_A95S5 | 13 | 202511..202611 | -4 | -30 | -0.8 | 7 | 14413 |
+| TL3_NT_L_K7_B95G8 | 13 | 202511..202611 | -121 | -241 | 3.1 | 18 | 14413 |
+| TL3_NT_L_M7_A90S5 | 13 | 202511..202611 | 195 | 391 | 1.2 | 82 | 14413 |
+| TL3_NT_L_M7_A95S10 | 13 | 202511..202611 | 256 | 512 | -0.1 | 21 | 14413 |
+| TL3_NT_L_M7_A95S5 | 13 | 202511..202611 | 258 | 516 | 0.0 | 21 | 14413 |
+| TL3_NT_L_M7_B95G8 | 13 | 202511..202611 | 222 | 443 | 0.8 | 22 | 14413 |
+| TL3_NT_L_P7_A95S5 | 13 | 202511..202611 | 3 | 20 | 0.1 | -7 | 14413 |
+| TL3_NT_L_P7_B95G8 | 13 | 202511..202611 | 15 | 39 | -0.3 | -10 | 14413 |
+| TL3_NT_SH_A7_k1 | 13 | 202511..202611 | 31 | 63 | -0.4 | -1 | 14413 |
+| TL3_NT_SH_A7_k2 | 13 | 202511..202611 | -6 | -5 | -0.2 | 2 | 14413 |
+| TL3_NT_SH_A7_k4 | 13 | 202511..202611 | 56 | 112 | -2.1 | 15 | 14413 |
+| TL3_NT_SH_K7_k1 | 13 | 202511..202611 | 132 | 265 | -0.8 | -6 | 14413 |
+| TL3_NT_SH_K7_k2 | 13 | 202511..202611 | 163 | 325 | -0.8 | -2 | 14413 |
+| TL3_NT_SH_K7_k4 | 13 | 202511..202611 | 48 | 97 | 0.1 | 0 | 14413 |
+| TL3_NT_SH_M7_k1 | 13 | 202511..202611 | 52 | 103 | 0.0 | 1 | 14413 |
+| TL3_NT_SH_M7_k2 | 13 | 202511..202611 | 98 | 195 | 0.2 | 4 | 14413 |
+| TL3_NT_SH_M7_k4 | 13 | 202511..202611 | 111 | 222 | -0.2 | 4 | 14413 |
+| TL3_NT_SH_P7_k1 | 13 | 202511..202611 | 10 | 14 | -0.0 | 0 | 14413 |
+| TL3_NT_SH_P7_k2 | 13 | 202511..202611 | 43 | 79 | -0.2 | 2 | 14413 |
+| TL3_NT_SH_P7_k4 | 13 | 202511..202611 | 45 | 86 | -0.1 | 2 | 14413 |
 
 
 ---
