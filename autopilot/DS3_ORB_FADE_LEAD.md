@@ -1,9 +1,9 @@
 # DS3_ORB_FADE_LEAD - N1_ORB_LIM fade (OR=15, ctx=with, lim=4) exit 40/90, NY AM, both sides, injected on JL3 (W-ORB)
 
-**FIVE-LINE PLAIN SUMMARY (refreshed 2026-11-18 12:58Z by the unattended loop)**
+**FIVE-LINE PLAIN SUMMARY (refreshed 2026-11-18 13:28Z by the unattended loop)**
 1. Tried: the one NQ LEAD of the shelf re-read (opening-range fade, 15-min OR, with-trend context, 4-point resting limit, stop 40 / target 90, 2 base lots) injected into the live-equivalent stack JL3 on the exact engine (events 261, limit fill model through-print + 0.5 pt).
-2. Status: identity of the hook NOT PASSED YET; engine months landed L6M 0/6, L3M 0/3, HOLD 0/6, pooled 0/43; label now: NOT FINISHED (identity pending/failed).
-3. L6M engine rows not complete yet (queue file /mnt/l2/l2vast/_orb/pending.txt, recent months first).
+2. Status: identity of the hook PASS; engine months landed L6M 6/6, L3M 3/3, HOLD 4/6, pooled 10/43; label now: LEAD (controls 10/30 valid: cannot be CONFIRMED).
+3. L6M: mean $/wk +19933 vs JL3 18755 (base lots), ulcer 9242 vs 9416 (-2%), max DD -31109 vs -31109; trades of the book 28.
 4. Needs in D7: new code (event book with own cap, resting limit entry) - nothing is delivered unless the label is LEAD or better with controls.
 5. Next: 10 date-shifted controls (queued), 20 more draws needed for 30; older months; refit date 2026-11-17, next 2026-12-01.
 
@@ -13,11 +13,29 @@
 
 | window | months | ulcer with / JL3 (chg %) | mean $/wk with / JL3 (base) | x1.75 mean $/wk delta | max DD with / JL3 | worst wk with / JL3 | book trades | freed-book effect (other books mean $/wk) | flag vs JL3 |
 |---|---|---|---|---|---|---|---|---|---|
+| L6M | 6/6 | 9242 / 9416 (-2%) | 19933 / 18755 | +2062 | -31109 / -31109 | -14838 / -15728 | 28 | -96 | n/a (worse = ulcer up or mean down, AMBER>15 RED>30) |
+| L3M | 3/3 | 10749 / 11035 (-3%) | 18178 / 16098 | +3640 | -31109 / -31109 | -14838 / -15728 | 15 | -199 | n/a (worse = ulcer up or mean down, AMBER>15 RED>30) |
+| HOLD | 4/6 | 21089 / 20765 (+2%) | 11819 / 12329 | -893 | -58792 / -58740 | -20963 / -19819 | 22 | -62 | n/a (worse = ulcer up or mean down, AMBER>15 RED>30) |
+| 2026 | 10/10 | 15149 / 15024 (+1%) | 17067 / 16553 | +900 | -58792 / -58740 | -20963 / -19819 | 50 | -84 | ok (worse = ulcer up or mean down, AMBER>15 RED>30) |
+| pooled | 10/43 | 15149 / 15024 (+1%) | 17067 / 16553 | +900 | -58792 / -58740 | -20963 / -19819 | 50 | -84 | n/a (worse = ulcer up or mean down, AMBER>15 RED>30) |
 
 ## Controls (10 date-shifted, same rule on shifted days; L6M, complete months only)
 
-none finished yet.
+| control | mean $/wk delta vs JL3 | ulcer chg % | book trades |
+|---|---|---|---|
+| TL3_MF_N1ORBLIM_CT7p | -213 | +1 | 29 |
+| TL3_MF_N1ORBLIM_CT11p | -467 | +1 | 22 |
+| TL3_MF_N1ORBLIM_CT13p | -385 | +5 | 19 |
+| TL3_MF_N1ORBLIM_CT17p | +301 | +2 | 24 |
+| TL3_MF_N1ORBLIM_CT19p | -31 | +1 | 26 |
+| TL3_MF_N1ORBLIM_CT23p | -124 | +1 | 20 |
+| TL3_MF_N1ORBLIM_CT7m | +94 | +0 | 19 |
+| TL3_MF_N1ORBLIM_CT11m | -380 | -1 | 27 |
+| TL3_MF_N1ORBLIM_CT13m | -158 | -0 | 16 |
+| TL3_MF_N1ORBLIM_CT17m | -128 | -1 | 25 |
 
-Identity: 202610 pending; 202504 pending (expected 691/37,159.82 and 637/41,239.76 at engine fee $1.18).
+real delta +1178 $/wk, ulcer -2%; real rank by mean 1/11. Valid 10/30 needed: NOT FINISHED, no CONFIRMED.
+
+Identity: 202610 PASS (691 vs 691 trades, 37159.82 vs 37159.82); 202504 PASS (637 vs 637 trades, 41239.76 vs 41239.76) (expected 691/37,159.82 and 637/41,239.76 at engine fee $1.18).
 
 Caveat: shelf standalone is 1-min sim (entry next bar +1 tick); the engine injection is a resting limit with tape-through fill, so trade count and fills differ; 2026-11 months not in the engine set.

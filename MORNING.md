@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 11:22Z 11-18 (t+598.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 13:22Z 11-18 (t+600.6 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 92% min 79% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 94% min 85% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -5935,3 +5935,29 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 13:19Z LEAD NOTE: W-ENG reported: box 1 had 0 engine workers (NT filler read empty first.txt; ORB/NT queues sat behind 1,325 P7L lines on server 2); fillers started (NT 8, ORB 4, P7L 4), QUEUES.txt reordered (bak .bak_lead_1315). ORB identity PASS (691/37,159.82, 637/41,239.76). K7 L6M engine rows on DS3_NEAR_TARGET.md sec 3, NO controls yet (240 set-months queued, 10 seeds not 30; LK_ variants have no control) so no label. Disk candidates (need your OK, nothing deleted): _th_tp/cache 223 GB, _th_exh/feat 202 GB, _th_exh/G 130 GB. W-LEVEL running.
 - (wall 13:19Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
 - lead 13:20Z S2-CAP-FOLLOW: server-2 engine cap 44 -> 48 (server-2 busy [71, 73]% (<95% twice))
+- (wall 13:20Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 13:20Z LEAD NOTE: server 2 after restart: pass-1 loop 28/28 workers busy, pass-2 loop 28 workers idle (likely waiting on table builds shared with pass 1); load 38 of 64 = ~60% busy. Re-measuring at next wake (heartbeat); if pass-2 workers still idle I retune GL_AHEAD/GL_BUILD_TOT and restart pass-2 only.
+- (wall 13:20Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:21Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:21Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:22Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- lead 13:22Z INBOX 20261118_1324Z_level-triggers-best-NON-reversal-bar-table.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- 13:22Z INBOX 20261118_1324Z_level-triggers-best-NON-reversal-bar-table.md received: research-only order, accepted; routed to W-LEVEL (non-reversal level table, non-reversal vs Kagi/P&F side-by-side, S/D by definition, >=20-draw nulls, P&F look-ahead stays first). ETA for the table to be stated by W-LEVEL.
+- (wall 13:22Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:23Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 2026-11-18 13:23Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
+- (wall 13:23Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:24Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:24Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:25Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:25Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 13:26Z LEAD NOTE: ROOT CAUSE of server-2 idle grid (found 13:30Z): book/tape/levels modules fail instantly with 'feature store for row X missing or incomplete' because server 2 holds only a stale partial copy of /mnt/l2/l2vast/_bars/feat_c (411 dirs, 0 COMPLETE markers) and feat_d from 20:xx last night; each failed job writes a .err stub (8,369 written 13:05-13:23Z, ~9,100 in all) which the loop then skips for 4 h. Fix in progress: rsync box1->server2 of feat_c (15 GB) and feat_d (16 GB) with COMPLETE markers (running, ~7 min), then delete only the .err stubs newer than 13:00Z on server 2 (error markers, not data) so the loops retry them. The earlier 'idle' since ~05:00Z is probably the same cause (loops producing .err stubs).
+- (wall 13:26Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:26Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:27Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:27Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T13:28:04Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- (wall 13:28Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:28Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 13:29Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
