@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-18 05:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 05:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-18 05:00Z | box1: busy 98%, load1 35.68, workers 4, MemAvail 85 GB | server2: busy 98%, load1 71.88, workers 22, MemAvail 1365 GB | pending box1-eligible 1380 / server2-eligible 40593 (shared queues count in both; unleased, not DONE)
+LATEST CORES.md LINE: 2026-11-18 05:15Z | box1: busy 100%, load1 44.04, workers 2, MemAvail 93 GB | server2: busy 95%, load1 64.78, workers 14, MemAvail 1299 GB | pending box1-eligible 1330 / server2-eligible 40543 (shared queues count in both; unleased, not DONE)
 
 ## UTC TIME WRITTEN
-2026-11-18 05:00Z
+2026-11-18 05:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 05:00Z | box1: busy 98%, load1 35.68, workers 4
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 85.6 GB; live reservations 0 (0 GB); workers 4, of which TP-adopted 4 (RSS 5.9 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 35.68, 34.92, 38.35
-  by tag: SWB quota 4 running 4 hungry False RSS 5.9 GB PSS 5.5 GB
-  cell-months finished last hour (DONE markers): 305
-  top running jobs: TL3_SWB_O73_9707f5 (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 72.05, 70.51, 65.80|/dev/md2         28T  1.1T   27T   4% /mnt/l2|40|
+Server 1 (this box): MemAvail 93.1 GB; live reservations 0 (0 GB); workers 2, of which TP-adopted 2 (RSS 3.7 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 44.04, 40.69, 38.86
+  by tag: SWB quota 4 running 2 hungry True RSS 3.7 GB PSS 3.5 GB
+  cell-months finished last hour (DONE markers): 302
+  top running jobs: TL3_SWB_H70_b52194 (x2);TL3_SWB_H70_084e20 (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 64.88, 63.96, 64.50|/dev/md2         28T  1.1T   27T   4% /mnt/l2|23|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
