@@ -1,7 +1,7 @@
 # DS3 BAR SWAP B (W-SWB): P7 / H7 / A7 / O7 on every bar row
 
 Rule: standing selection rule (CLAUDE.md, user 11-17 18:10Z/18:13Z): pick on the trailing 6 months to the newest data, trailing 3M beside it; validated by rolling walk-forward; older years tolerant (AMBER 15-30% / RED >30% worse than the live bar). FIRST PASS standalone (tape fills, raw chassis, live bracket); engine swap test is section 4.
-Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 07:24:31 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
+Pick window: 2026-05-18..2026-11-13 (trailing 6M); data end 2026-11-13; refit 2026-11-18 07:59:43 UTC (loop every 30 min, bi-weekly refit rule); trials counted 70666 candidates (rows x param sets x cells), correction White RC / Hansen SPA per cell on weekly differences vs the live bar; PBO not used (rolling walk-forward instead); in-sample = trailing window, walk-forward = month-end picks from 2023-10, untouched = none frozen.
 
 ## Plain summary
 - Tried: every available bar row (~490 time / activity / information / price / composite rows) as the signal clock of P7, H7, A7, O7 in three versions side by side: transplanted live settings, transplanted + the book grid refit, and bar-NATIVE rules (bars / bricks as the unit, no minute ATR); standalone on the tape with live brackets, then the exact engine with the full JL3 stack (not gated on the naked result).
@@ -856,8 +856,8 @@ Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): 
 | L6M | 6/6 | $4.84 x1.75 | 16821 | 16749 | -0.4% | 54441 | 54441 | -27524 | -27524 | 32822 | 33081 | 4292/4297 |
 | HOLD | 6/6 | $4.84 base lots | 29373 | 29352 | -0.1% | 83756 | 84732 | -37324 | -37404 | 9280 | 9141 | 3311/3303 |
 | HOLD | 6/6 | $4.84 x1.75 | 51403 | 51366 | -0.1% | 146574 | 148280 | -65316 | -65456 | 16240 | 15997 | 3311/3303 |
-| PRIOR | 27/31 | $4.84 base lots | 28200 | 26787 | -5.0% | 91441 | 87845 | -38896 | -39076 | 5471 | 5534 | 10863/10861 |
-| PRIOR | 27/31 | $4.84 x1.75 | 49349 | 46876 | -5.0% | 160021 | 153729 | -68068 | -68383 | 9575 | 9685 | 10863/10861 |
+| PRIOR | 31/31 | $4.84 base lots | 27534 | 26308 | -4.5% | 91441 | 87845 | -38896 | -39076 | 4849 | 4880 | 11949/11948 |
+| PRIOR | 31/31 | $4.84 x1.75 | 48184 | 46038 | -4.5% | 160021 | 153729 | -68068 | -68383 | 8486 | 8540 | 11949/11948 |
 
 Freed-book / other-book effects (net_fee base lots, window L6M, today -> swap): A7 18691 -> 18691; H7 46650 -> 50671; K7 83430 -> 83430; M7 4691 -> 4691; O7 10923 -> 10923; P7 304772 -> 304772; U7 59410 -> 59410
 

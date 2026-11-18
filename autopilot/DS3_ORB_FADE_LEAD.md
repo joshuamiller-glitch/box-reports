@@ -1,6 +1,6 @@
 # DS3_ORB_FADE_LEAD - N1_ORB_LIM fade (OR=15, ctx=with, lim=4) exit 40/90, NY AM, both sides, injected on JL3 (W-ORB)
 
-**FIVE-LINE PLAIN SUMMARY (refreshed 2026-11-18 07:28Z by the unattended loop)**
+**FIVE-LINE PLAIN SUMMARY (refreshed 2026-11-18 07:58Z by the unattended loop)**
 1. Tried: the one NQ LEAD of the shelf re-read (opening-range fade, 15-min OR, with-trend context, 4-point resting limit, stop 40 / target 90, 2 base lots) injected into the live-equivalent stack JL3 on the exact engine (events 261, limit fill model through-print + 0.5 pt).
 2. Status: identity of the hook NOT PASSED YET; engine months landed L6M 0/6, L3M 0/3, HOLD 0/6, pooled 0/43; label now: NOT FINISHED (identity pending/failed).
 3. L6M engine rows not complete yet (queue file /mnt/l2/l2vast/_orb/pending.txt, recent months first).
