@@ -7036,3 +7036,7 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - (wall 23:14Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 71.31 72.58 74.56 load; auto-expansions 0 (battery stopped by user order)
 - (wall 23:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 2026-11-18T23:24:40Z W-NT hourly: NT set-months landed 698 (rate 0/h since last line); identity 4/4 landed (target 04:35Z); K7 L6M cells landed 0 (target table 06:00Z; first.txt 1 lines; controls K7+M7 target 12:00Z, pf.txt 50 lines built); page autopilot/DS3_NEAR_TARGET.md; closest to live: see page section 2
+- 23:26Z WATCHDOG fired: C
+2026-11-18T23:28:12Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 2026-11-18T23:28Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- 2026-11-18T23:29:37Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
