@@ -6182,3 +6182,29 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - lead 14:49Z INBOX 20261118_1450Z_LONDON-second-same-treatment-as-NY.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
 - 14:49Z INBOX 20261118_1450Z_LONDON-second-same-treatment-as-NY.md received (accepted, research only). Priority NY > London > Asia (add-only). Agent W-LONENG started (London engine sets: ADD + REPLACE K7/M7/U7/P7 for the provisional top 6, risk-matched for wide brackets, base alternative 'M7 London lots 4 -> 0'; L6M rows 18:30Z, prior years + 10 controls 21:00Z). Provisional London six + whether 18:30Z/21:00Z hold: to be stated by 15:30Z (engine capacity is shared with the NY sets).
 - (wall 14:49Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:50Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:51Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:52Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- 14:53Z W-LONENG: LONDON engine sets built and queued (prereg PREREG_LON.md sha256:3d49887a27ae116b in DECISIONS.md before scoring; code/th_loneng). PROVISIONAL SIX (level_nr_qual.csv rule as NY: non-reversal native-type bars, >=150 L6M trades, min(y23,y24,y25,2xL6M)): LA1 rng_80 levels_zones reject_native tol1 body sym8u | LA2 vol_4000 vwap_bands reject_native tol1 close sym30u | LA3 tm120 vwap_bands retest_native M10 tol.5 sym30u | LA4 time_m_5 vwap reject_native tol1 body sym15u | LA5 vol_500 vwap break n3 k.25 asym15u/30u | LA6 tick_1300 opens reject_native tol1 close asym20u/10u; plus 6 W-SHORT London non-reversal rows WL1 WL2 WL4 WL6 WL7 WL9. Sets: TL3_LON_<id>_ADD (all 12), _ADDM (ADD + the confirmed M7-London-lots-4->0, hook ev_panel = TL3_CT_JL3_N_M7L, compared with N_M7L AND JL3), _RK7/_RM7/_RU7/_RP7 (LA cells). 290 set-months, L6M first; TL3_LON_ID identity (inert + M7L0 = TL3_CT_JL3_N_M7L) queued first. Most cells sit on the 120/120 clip (LA1-6 median stop 120; WL1 90, WL6 94, WL7 58): equal-risk columns per 1447Z on autopilot/NEW_BOOK_ENGINE_LONDON.md (cron */30; separate from the NY page, no clobber). Queue: PRIORITY LON quota 8 after NYW (bak .bak_lead_1455), CAPS LOAD_EXEMPT +LON, server-2 QUEUES line after _nye/pending_w.txt (bak .bak_lead_1455), box-1 filler QL_TAG=LON 6 chains. ETA: L6M rows by 18:30Z should hold (~290 set-months at ~150/h = ~2 h if admitted, NY sets ahead of London); prior years + 10 controls by 21:00Z holds only for the top ~4 cells (controls = 10 x 6 months per surviving cell), measured rate reported 15:30Z. No label without controls.
+- (wall 14:53Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:54Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:55Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+2026-11-18T14:56:13Z W-GRIDA 2026-11-18T14:56Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 95 / 2778 / 29.2 h; (b) pass-1 level modules 312 / 3360 / 10.8 h; (c) pass-2 family cells 525 / 0 / 0.0 h; (d) rest of pass 1 0 / 81606 / n/a (no jobs done in last hour); workers 56 (56 R); load 99.81; todo counts refreshed {"": 29, "_p2": 29} min ago
+- (wall 14:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:56Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:57Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 624, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+2026-11-18T14:58:06Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- (wall 14:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- lead 14:58Z INBOX 20261118_1500Z_NY-REPLACE-whole-session-rows.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- 14:58Z INBOX 20261118_1500Z_NY-REPLACE-whole-session-rows.md received (accepted, research only): replacement becomes the headline: live-session baseline per book, single swaps for every cell, whole-session replacement (cells alone, best 2 / best 3 by lowest pairwise correlation, risk-matched to the live session's dollar stop risk), mixed (keep best live book + 1-2 new). Routed to W-NYENG (NY first, then London via W-LONENG). W-NYENG states by 15:30Z how much the extra rows push 19:00Z.
+- (wall 14:58Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
+- (wall 14:59Z) UW LIVE RECORDER STOPPED: /mnt/l2 below 50 GB free
