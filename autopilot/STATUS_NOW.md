@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-18 12:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-18 12:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-18 12:00Z | AUTO-FILL step run: dispatcher alive pid 1240823/3840415
+LATEST CORES.md LINE: 2026-11-18 12:15Z | AUTO-FILL step run: dispatcher alive pid 1240823/3857986
 
 ## UTC TIME WRITTEN
-2026-11-18 12:00Z
+2026-11-18 12:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-18 12:00Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 96.7 GB; live reservations 0 (0 GB); workers 1, of which TP-adopted 0 (RSS 0.0 GB) vs others 1 (RSS 0.7 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 39.46, 40.64, 36.82
-  by tag: REST quota 2 running 1 hungry False RSS 0.7 GB PSS 0.6 GB
-  cell-months finished last hour (DONE markers): 491
-  top running jobs: TL3_SWB_H73_9cd8fa (x1);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 27.58, 27.21, 27.48|/dev/md2         28T  1.1T   27T   4% /mnt/l2|54|
+Server 1 (this box): MemAvail 83.5 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 26.01, 29.04, 32.14
+  by tag: 
+  cell-months finished last hour (DONE markers): 484
+  top running jobs: 
+Server 2 (rs4 metal): load / disk / tp_launch procs: 27.59, 27.17, 27.26|/dev/md2         28T  1.1T   27T   4% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
