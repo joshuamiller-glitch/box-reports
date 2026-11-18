@@ -1317,9 +1317,9 @@ Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': 941.0,
 | L6M | 9327 | 9927 | +6.4% | +20109 | +18931 | -1191 | 30189/30715 | -19127/-15955 |
 | L3M | 10841 | 11546 | +6.5% | +16721 | +16322 | -414 | 30189/30715 | -15066/-16075 |
 | HOLD | 27872 | 31263 | +12.2% | +9996 | +6743 | -3259 | 82017/81364 | -36787/-35914 |
-| OLDER | not finished ||||||| |
-| Y2023 | not finished ||||||| |
-| Y2024 | not finished ||||||| |
+| OLDER | 25599 | 24763 | -3.3% | +5291 | +4894 | -403 | 88502/90189 | -38412/-37547 |
+| Y2023 | 17453 | 15014 | -14.0% | +2124 | +3260 | +1133 | 40010/36752 | -17197/-19477 |
+| Y2024 | 26429 | 24147 | -8.6% | +5049 | +4539 | -516 | 70704/57405 | -36802/-33336 |
 | Y2025 | 30332 | 31618 | +4.2% | +8447 | +6798 | -1656 | 88502/90189 | -27370/-27455 |
 Controls L6M: 0 valid random-clock draws; real ulcer change +6.4% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
 Controls L3M: 0 valid random-clock draws; real ulcer change +6.5% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
@@ -1331,7 +1331,7 @@ Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': 1196.0
 |---|---|---|---|---|---|---|---|---|
 | L6M | 9327 | 9158 | -1.8% | +20109 | +20494 | +391 | 30189/25846 | -19127/-19695 |
 | L3M | 10841 | 10186 | -6.0% | +16721 | +17270 | +551 | 30189/25846 | -15066/-19807 |
-| HOLD | not finished ||||||| |
+| HOLD | 27872 | 27900 | +0.1% | +9996 | +10040 | +55 | 82017/79539 | -36787/-33303 |
 | OLDER | not finished ||||||| |
 | Y2023 | not finished ||||||| |
 | Y2024 | not finished ||||||| |
@@ -1344,73 +1344,91 @@ Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': -1159.
 
 | window | JL3 ulcer | swap ulcer | ulcer change | JL3 USD/wk | swap USD/wk | $4.84 diff USD/wk | maxDD base/swap | worst week base/swap |
 |---|---|---|---|---|---|---|---|---|
-| L6M | not finished ||||||| |
-| L3M | not finished ||||||| |
-| HOLD | not finished ||||||| |
+| L6M | 9327 | 9239 | -0.9% | +20109 | +19757 | -343 | 30189/29556 | -19127/-20695 |
+| L3M | 10841 | 10337 | -4.6% | +16721 | +17242 | +521 | 30189/25671 | -15066/-20139 |
+| HOLD | 27872 | 26188 | -6.0% | +9996 | +9068 | -927 | 82017/74148 | -36787/-33863 |
 | OLDER | not finished ||||||| |
 | Y2023 | not finished ||||||| |
 | Y2024 | not finished ||||||| |
 | Y2025 | not finished ||||||| |
+Controls L6M: 0 valid random-clock draws; real ulcer change -0.9% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Controls L3M: 0 valid random-clock draws; real ulcer change -4.6% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': -2098.0, 'K7': 3570.0, 'M7': -7436.0, 'O7': 1929.0, 'P7': -9237.0, 'U7': 4019.0}
 
 ### K7_1_tm900 (TL3_SWA_K71_tm900)
 
 | window | JL3 ulcer | swap ulcer | ulcer change | JL3 USD/wk | swap USD/wk | $4.84 diff USD/wk | maxDD base/swap | worst week base/swap |
 |---|---|---|---|---|---|---|---|---|
-| L6M | not finished ||||||| |
-| L3M | not finished ||||||| |
-| HOLD | not finished ||||||| |
+| L6M | 9327 | 9069 | -2.8% | +20109 | +18774 | -1303 | 30189/27480 | -19127/-12862 |
+| L3M | 10841 | 10769 | -0.7% | +16721 | +15962 | -735 | 30189/27480 | -15066/-19767 |
+| HOLD | 27872 | 30325 | +8.8% | +9996 | +8168 | -1809 | 82017/86572 | -36787/-36184 |
 | OLDER | not finished ||||||| |
 | Y2023 | not finished ||||||| |
 | Y2024 | not finished ||||||| |
 | Y2025 | not finished ||||||| |
+Controls L6M: 0 valid random-clock draws; real ulcer change -2.8% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Controls L3M: 0 valid random-clock draws; real ulcer change -0.7% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': -1923.0, 'K7': -23015.0, 'M7': -4590.0, 'O7': -1983.0, 'P7': -6892.0, 'U7': 3328.0}
 
 ### K7_1_dol_1700 (TL3_SWA_K71_dol1700)
 
 | window | JL3 ulcer | swap ulcer | ulcer change | JL3 USD/wk | swap USD/wk | $4.84 diff USD/wk | maxDD base/swap | worst week base/swap |
 |---|---|---|---|---|---|---|---|---|
-| L6M | not finished ||||||| |
-| L3M | not finished ||||||| |
-| HOLD | not finished ||||||| |
+| L6M | 9327 | 8434 | -9.6% | +20109 | +20910 | +827 | 30189/24322 | -19127/-14628 |
+| L3M | 10841 | 9539 | -12.0% | +16721 | +17128 | +427 | 30189/24322 | -15066/-17318 |
+| HOLD | 27872 | 28322 | +1.6% | +9996 | +8675 | -1306 | 82017/68329 | -36787/-27021 |
 | OLDER | not finished ||||||| |
 | Y2023 | not finished ||||||| |
 | Y2024 | not finished ||||||| |
 | Y2025 | not finished ||||||| |
+Controls L6M: 0 valid random-clock draws; real ulcer change -9.6% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Controls L3M: 0 valid random-clock draws; real ulcer change -12.0% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': 0.0, 'K7': 25618.0, 'M7': 1626.0, 'O7': -2021.0, 'P7': -9494.0, 'U7': 5348.0}
 
 ### K7_1_vsess_120 (TL3_SWA_K71_vsess120)
 
 | window | JL3 ulcer | swap ulcer | ulcer change | JL3 USD/wk | swap USD/wk | $4.84 diff USD/wk | maxDD base/swap | worst week base/swap |
 |---|---|---|---|---|---|---|---|---|
-| L6M | not finished ||||||| |
-| L3M | not finished ||||||| |
-| HOLD | not finished ||||||| |
+| L6M | 9327 | 10664 | +14.3% | +20109 | +18957 | -1142 | 30189/35434 | -19127/-19369 |
+| L3M | 10841 | 12222 | +12.7% | +16721 | +15684 | -1036 | 30189/35434 | -15066/-23425 |
+| HOLD | 27872 | 26970 | -3.2% | +9996 | +10335 | +338 | 82017/79032 | -36787/-33104 |
 | OLDER | not finished ||||||| |
 | Y2023 | not finished ||||||| |
 | Y2024 | not finished ||||||| |
 | Y2025 | not finished ||||||| |
+Controls L6M: 0 valid random-clock draws; real ulcer change +14.3% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Controls L3M: 0 valid random-clock draws; real ulcer change +12.7% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': -2658.0, 'K7': -16531.0, 'M7': -7533.0, 'O7': -1705.0, 'P7': -6544.0, 'U7': 4698.0}
 
 ### K7_4_tsf_10_60 (TL3_SWA_K74_tsf1060)
 
 | window | JL3 ulcer | swap ulcer | ulcer change | JL3 USD/wk | swap USD/wk | $4.84 diff USD/wk | maxDD base/swap | worst week base/swap |
 |---|---|---|---|---|---|---|---|---|
-| L6M | not finished ||||||| |
-| L3M | not finished ||||||| |
-| HOLD | not finished ||||||| |
-| OLDER | not finished ||||||| |
-| Y2023 | not finished ||||||| |
-| Y2024 | not finished ||||||| |
-| Y2025 | not finished ||||||| |
+| L6M | 9327 | 9337 | +0.1% | +20109 | +20493 | +386 | 30189/30958 | -19127/-18853 |
+| L3M | 10841 | 10791 | -0.5% | +16721 | +17354 | +635 | 30189/30958 | -15066/-16852 |
+| HOLD | 27872 | 30546 | +9.6% | +9996 | +8730 | -1267 | 82017/87788 | -36787/-36752 |
+| OLDER | 25599 | 26997 | +5.5% | +5291 | +4676 | -618 | 88502/82315 | -38412/-39848 |
+| Y2023 | 17453 | 24180 | +38.5% | +2124 | +1259 | -868 | 40010/53660 | -17197/-17467 |
+| Y2024 | 26429 | 28178 | +6.6% | +5049 | +4623 | -430 | 70704/71604 | -36802/-36802 |
+| Y2025 | 30332 | 27931 | -7.9% | +8447 | +7830 | -618 | 88502/82315 | -27370/-34573 |
+Controls L6M: 0 valid random-clock draws; real ulcer change +0.1% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Controls L3M: 0 valid random-clock draws; real ulcer change -0.5% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': 0.0, 'K7': 10106.0, 'M7': 0.0, 'O7': 0.0, 'P7': 0.0, 'U7': 0.0}
 
 ### K7_4_drb_6000 (TL3_SWA_K74_drb6000)
 
 | window | JL3 ulcer | swap ulcer | ulcer change | JL3 USD/wk | swap USD/wk | $4.84 diff USD/wk | maxDD base/swap | worst week base/swap |
 |---|---|---|---|---|---|---|---|---|
-| L6M | not finished ||||||| |
-| L3M | not finished ||||||| |
-| HOLD | not finished ||||||| |
-| OLDER | not finished ||||||| |
-| Y2023 | not finished ||||||| |
-| Y2024 | not finished ||||||| |
-| Y2025 | not finished ||||||| |
+| L6M | 9327 | 9385 | +0.6% | +20109 | +20061 | -31 | 30189/31656 | -19127/-18618 |
+| L3M | 10841 | 10986 | +1.3% | +16721 | +16865 | +157 | 30189/31656 | -15066/-17348 |
+| HOLD | 27872 | 28201 | +1.2% | +9996 | +10124 | +143 | 82017/83127 | -36787/-34860 |
+| OLDER | 25599 | 25489 | -0.4% | +5291 | +5056 | -221 | 88502/73761 | -38412/-40204 |
+| Y2023 | 17453 | 23651 | +35.5% | +2124 | +1539 | -572 | 40010/54005 | -17197/-18778 |
+| Y2024 | 26429 | 27421 | +3.8% | +5049 | +4861 | -174 | 70704/69045 | -36802/-36802 |
+| Y2025 | 30332 | 24651 | -18.7% | +8447 | +8473 | +41 | 88502/73761 | -27370/-28539 |
+Controls L6M: 0 valid random-clock draws; real ulcer change +0.6% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Controls L3M: 0 valid random-clock draws; real ulcer change +1.3% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
+Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': 0.0, 'K7': -1242.0, 'M7': 0.0, 'O7': 0.0, 'P7': 0.0, 'U7': 0.0}
 
 ### K7_4_tm1800 (TL3_SWA_K74_tm1800)
 
@@ -1429,12 +1447,13 @@ Freed-book effects L6M (USD, swap minus JL3, per book): {'A7': 0.0, 'H7': -1159.
 | window | JL3 ulcer | swap ulcer | ulcer change | JL3 USD/wk | swap USD/wk | $4.84 diff USD/wk | maxDD base/swap | worst week base/swap |
 |---|---|---|---|---|---|---|---|---|
 | L6M | not finished ||||||| |
-| L3M | not finished ||||||| |
+| L3M | 10841 | 11462 | +5.7% | +16721 | +16013 | -706 | 30189/32816 | -15066/-18916 |
 | HOLD | not finished ||||||| |
 | OLDER | not finished ||||||| |
 | Y2023 | not finished ||||||| |
 | Y2024 | not finished ||||||| |
 | Y2025 | not finished ||||||| |
+Controls L3M: 0 valid random-clock draws; real ulcer change +5.7% vs controls median +nan%, percentile (share of controls better or equal) nan (NOT FINISHED: < 30 valid draws)
 
 ### K7_4_pnf_56 (TL3_SWA_K74_pnf56)
 
