@@ -6979,3 +6979,7 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 2026-11-18T21:57:42Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
 - (wall 21:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
 2026-11-18T21:58:11Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+
+[S2 hourly 22:01Z] server 2: workers 11/cap 12, cell-months last hour: server-2 633, all 859; idle 0 min; cost ~$283 (51.9 h x $5.44).
+- (22:03Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label LEAD (controls 10/30 valid: cannot be CONFIRMED), identity {'202610': 'PASS (691 vs 691 trades, 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, 41239.76 vs 41239.76)'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
+- 2026-11-18 22:04Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
