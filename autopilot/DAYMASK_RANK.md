@@ -1,4 +1,4 @@
-# DAYMASK_RANK - three screen rankings per session (W-DAYMASK, orders 1722Z + 1731Z), refreshed 2026-11-19 05:25Z
+# DAYMASK_RANK - three screen rankings per session (W-DAYMASK, orders 1722Z + 1731Z), refreshed 2026-11-19 08:18Z
 
 Screen level, 1 lot, $4.84 round trip in the points, last 26 weeks to the data end (L6M) and 13 weeks (L3M); EQUAL RISK (R = points / the cell stop in points; R/week); ranked by (red prior years, then min(L6M R/week, weakest prior-year R/week)); cells need L6M > 0 and >= 100 trades under THAT variant.
 (a) BARE: no account rule. (b) OWN-STOP: stack-independent; no new entries for the rest of the 17:00-ET trading day once the cell itself is down 2 stops on the day (1.5 and 3 stops shown as neighbours). THIS ranking carries the shortlist. (c) CURRENT-STACK MASK: entries blocked while today's JL3 stack has >= 22 closes and day P&L <= -$4,200 live (JL3 history, code/th_grid/gday.py); valid for ADDING a book to today's stack only; not valid for a rebuilt stack; information, never the sole reason to shortlist or drop.
@@ -27,15 +27,15 @@ Cells passing per session (a / b / c): Asia 4000 / 4000 / 4000; London 4000 / 40
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | trb_400 | levels_vwap.break {"n": 3, "k": 0.5} | asym20u/10u | +930 | -376 | +0.60 | 254 | AMBER/AMBER/ok | L6M @1.5 stops +810 / @3 stops +866 |
-| 2 | mrenko_20 | momentum_er.trend_z {"len": 10, "thr": 0.4} | plain60/60 | +870 | +360 | +0.56 | 432 | ok/ok/AMBER | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
-| 3 | trb_400 | levels_vwap.break {"n": 3, "k": 0.5} | asym15u/30u | +602 | -390 | +0.39 | 226 | ok/ok/ok | L6M @1.5 stops +602 / @3 stops +538 |
-| 4 | tsf_5_100 | structure_breakout.brk {"n": 40, "buf": 0.0} | sym15u | +670 | -804 | +0.43 | 236 | ok/ok/ok | L6M @1.5 stops +706 / @3 stops +248 |
-| 5 | vib_3500 | momentum_stoch.zone_break_native {"len": 14, "lvl": 70} | sym15u | +713 | -429 | +0.46 | 293 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +749 |
-| 6 | tsf_5_100 | bands_donchian.break_native {"clk": 5, "buf": 0.0} | sym15u | +738 | -862 | +0.47 | 260 | AMBER/AMBER/ok | L6M @1.5 stops +620 / @3 stops +386 |
-| 7 | time_m_7 | xmarket_rty.confirm {"w": 30} | plain60/60 | +634 | +74 | +0.41 | 386 | ok/ok/ok | L6M @1.5 stops +634 / @3 stops +598 |
-| 8 | cusum_40 | momentum_rsi.mom_native {"len": 21, "lvl": 55} | plain60/60 | +562 | -75 | +0.36 | 470 | ok/ok/ok | L6M @1.5 stops +562 / @3 stops <=0 or <100 tr |
-| 9 | trend_10 | momentum_er.trend_native {"len": 30, "thr": 0.3} | sym15u | +549 | -350 | +0.35 | 290 | ok/ok/ok | L6M @1.5 stops +403 / @3 stops <=0 or <100 tr |
-| 10 | tsf_5_100 | levels_fib5.break {"n": 3, "k": 0.5} | sym15u | +548 | -417 | +0.35 | 295 | ok/ok/ok | L6M @1.5 stops +502 / @3 stops +435 |
+| 2 | vib_700 | pullback_ema.count {"len": 50, "n": 4} | sym15u | +862 | +234 | +0.55 | 360 | AMBER/ok/AMBER | L6M @1.5 stops +624 / @3 stops <=0 or <100 tr |
+| 3 | dol_350 | momentum_mvote.v3of5 {"scale": 1.0, "thr": 0.25} | plain60/60 | +629 | +930 | +0.40 | 416 | ok/ok/ok | L6M @1.5 stops +629 / @3 stops +616 |
+| 4 | mrenko_20 | momentum_er.trend_z {"len": 10, "thr": 0.4} | plain60/60 | +870 | +360 | +0.56 | 432 | ok/ok/AMBER | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
+| 5 | trb_400 | levels_vwap.break {"n": 3, "k": 0.5} | asym15u/30u | +602 | -390 | +0.39 | 226 | ok/ok/ok | L6M @1.5 stops +602 / @3 stops +538 |
+| 6 | tsf_5_100 | structure_breakout.brk {"n": 40, "buf": 0.0} | sym15u | +670 | -804 | +0.43 | 236 | ok/ok/ok | L6M @1.5 stops +706 / @3 stops +248 |
+| 7 | vib_3500 | momentum_stoch.zone_break_native {"len": 14, "lvl": 70} | sym15u | +713 | -429 | +0.46 | 293 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +749 |
+| 8 | tsf_5_100 | bands_donchian.break_native {"clk": 5, "buf": 0.0} | sym15u | +738 | -862 | +0.47 | 260 | AMBER/AMBER/ok | L6M @1.5 stops +620 / @3 stops +386 |
+| 9 | time_m_7 | xmarket_rty.confirm {"w": 30} | plain60/60 | +634 | +74 | +0.41 | 386 | ok/ok/ok | L6M @1.5 stops +634 / @3 stops +598 |
+| 10 | cusum_40 | momentum_rsi.mom_native {"len": 21, "lvl": 55} | plain60/60 | +562 | -75 | +0.36 | 470 | ok/ok/ok | L6M @1.5 stops +562 / @3 stops <=0 or <100 tr |
 
 ### (c) CURRENT-STACK MASK (valid for ADDING a book to today's stack only; not valid for a rebuilt stack)  (cells passing: 4000)
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
@@ -59,13 +59,13 @@ Cells passing per session (a / b / c): Asia 4000 / 4000 / 4000; London 4000 / 40
 | 1 | typ_bmsgq_B080 | bands_atrchan.fade_ema_native {"clk": 5, "k": 1.0} | sym15u | +865 | -1 | +0.55 | 231 | ok/ok/ok | strong on (b) too |
 | 2 | typ_bmsgq_B080 | bands_envelope.fade_ema_native {"clk": 5, "k": 1.0} | sym15u | +865 | -1 | +0.55 | 231 | ok/ok/ok | strong on (b) too |
 | 3 | typ_bmsgq_B080 | bands_keltner.fade_native {"clk": 5, "k": 1.0} | sym15u | +865 | -1 | +0.55 | 231 | ok/ok/ok | strong on (b) too |
-| 4 | med_bmsgq_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +783 | -106 | +0.50 | 240 | ok/ok/ok | strong on (b) too |
-| 5 | vol_2600 | levels_fib5.retest_native {"M": 10, "tol": 0.5} | plain60/60 | +791 | +384 | +0.51 | 611 | ok/ok/ok | bare only (not positive on own-stop) |
-| 6 | med_rngor_B200 | trend_ma_hma.cross {"len": 34, "width": 4, "hyst": 0.0} | sym15u | +736 | -344 | +0.47 | 260 | ok/ok/ok | strong on (b) too |
-| 7 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | sym15u | +702 | +131 | +0.45 | 287 | ok/ok/ok | strong on (b) too |
-| 8 | trb_400 | levels_piv_floor.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +815 | +8 | +0.52 | 213 | ok/ok/AMBER | strong on (b) too |
-| 9 | entropy_B200 | book_micro.fade_sm {"L": 100, "z": 1.5, "sm": 3} | sym15u | +852 | +899 | +0.55 | 255 | ok/AMBER/AMBER | strong on (b) too |
-| 10 | dlt_70 | levels_zones.reject {"tol": 1.0, "conf": "body"} | plain60/60 | +964 | -521 | +0.62 | 225 | ok/AMBER/AMBER | bare only (not positive on own-stop) |
+| 4 | vnorm_700 | xmarket_rates.with_ZN {"w": 1, "thr": 1.0} | sym15u | +946 | +1390 | +0.61 | 264 | ok/ok/ok | bare only (not positive on own-stop) |
+| 5 | med_bmsgq_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +783 | -106 | +0.50 | 240 | ok/ok/ok | strong on (b) too |
+| 6 | vol_2600 | levels_fib5.retest_native {"M": 10, "tol": 0.5} | plain60/60 | +791 | +384 | +0.51 | 611 | ok/ok/ok | bare only (not positive on own-stop) |
+| 7 | dol_750 | levels_fib5.break_native {"n": 3, "k": 0.5} | asym20u/10u | +822 | -260 | +0.53 | 251 | ok/ok/ok | strong on (b) too |
+| 8 | med_rngor_B200 | trend_ma_hma.cross {"len": 34, "width": 4, "hyst": 0.0} | sym15u | +736 | -344 | +0.47 | 260 | ok/ok/ok | strong on (b) too |
+| 9 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | sym15u | +702 | +131 | +0.45 | 287 | ok/ok/ok | strong on (b) too |
+| 10 | trb_400 | levels_piv_floor.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +815 | +8 | +0.52 | 213 | ok/ok/AMBER | strong on (b) too |
 
 ### (b) OWN-STOP (2 stops; 1.5 and 3 shown as neighbours)  (cells passing: 4000)
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
@@ -90,10 +90,10 @@ Cells passing per session (a / b / c): Asia 4000 / 4000 / 4000; London 4000 / 40
 | 4 | med_sessrng_B080 | xmarket_rates.with_ZB {"w": 5, "thr": 1.0} | sym15u | +954 | +1179 | +0.61 | 186 | AMBER/ok/ok | depends on today's stack |
 | 5 | t3_sessrng_B080 | xmarket_rates.with_ZB {"w": 5, "thr": 1.0} | sym15u | +954 | +1179 | +0.61 | 186 | AMBER/ok/ok | depends on today's stack |
 | 6 | typ_sessrng_B080 | xmarket_rates.with_ZB {"w": 5, "thr": 1.0} | sym15u | +954 | +1179 | +0.61 | 186 | AMBER/ok/ok | depends on today's stack |
-| 7 | rngor_B320 | book_queue.follow_sm {"thr": 0.3, "min": 3, "sm": 3} | sym15u | +704 | +434 | +0.45 | 122 | ok/ok/ok | also positive on (b) |
-| 8 | t3_bmsg_B200 | trend_supertrend.native {"len": 14, "width": 3.0} | sym15u | +970 | +1287 | +0.62 | 228 | AMBER/AMBER/ok | also positive on (b) |
-| 9 | med_bmsgq_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +677 | -374 | +0.43 | 189 | ok/ok/ok | also positive on (b) |
-| 10 | dlt_70 | levels_zones.reject {"tol": 1.0, "conf": "body"} | plain60/60 | +674 | -435 | +0.43 | 182 | ok/ok/ok | depends on today's stack |
+| 7 | vnorm_700 | book_ice.follow {"thr": 1} | plain60/60 | +870 | -88 | +0.56 | 472 | ok/ok/AMBER | also positive on (b) |
+| 8 | vnorm_700 | book_ice.follow_native {"thr": 1, "sm": 60} | plain60/60 | +870 | -88 | +0.56 | 472 | ok/ok/AMBER | also positive on (b) |
+| 9 | volor_B130 | levels_fib5.retest {"M": 6, "tol": 0.5} | sym15u | +924 | +236 | +0.59 | 218 | AMBER/ok/ok | also positive on (b) |
+| 10 | rngor_B320 | book_queue.follow_sm {"thr": 0.3, "min": 3, "sm": 3} | sym15u | +704 | +434 | +0.45 | 122 | ok/ok/ok | also positive on (b) |
 
 ## NYAM
 
@@ -120,10 +120,10 @@ Cells passing per session (a / b / c): Asia 4000 / 4000 / 4000; London 4000 / 40
 | 4 | med_volor_B200 | structure_level.round_break {"grid": 100, "buf": 0.25} | sym15u | +1842 | +959 | +1.18 | 289 | ok/ok/ok | L6M @1.5 stops +900 / @3 stops <=0 or <100 tr |
 | 5 | t3_dltor_B080 | levels_round.break {"n": 2, "k": 0.25} | sym15u | +2133 | +679 | +1.37 | 380 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
 | 6 | t3_micro_B200 | bands_envelope.break_ema {"n": 10, "pct": 0.05} | sym15u | +1552 | +1171 | +1.00 | 345 | ok/ok/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +985 |
-| 7 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +2026 | +333 | +1.30 | 496 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +579 |
-| 8 | vrb_1200 | xmarket_fast.revert_ES {"w": 60, "thr": 2.0} | sym15u | +1549 | +422 | +0.99 | 305 | ok/ok/ok | L6M @1.5 stops +1530 / @3 stops +1671 |
-| 9 | trend_14 | levels_vwap.retest {"M": 10, "tol": 0.5} | sym15u | +1566 | +354 | +1.00 | 248 | ok/ok/ok | L6M @1.5 stops +1562 / @3 stops +1096 |
-| 10 | trb_700 | levels_vwap.break_native {"n": 1, "k": 0.5} | asym10u/20u | +1546 | -1184 | +0.99 | 288 | ok/ok/ok | L6M @1.5 stops +704 / @3 stops <=0 or <100 tr |
+| 7 | tsf_2_400 | levels_swsr5.retest_native {"M": 6, "tol": 0.5} | sym15u | +1610 | +1155 | +1.03 | 278 | ok/ok/ok | L6M @1.5 stops +1243 / @3 stops +1523 |
+| 8 | volor_B030 | book_ofi.follow_sm {"L": 100, "z": 1.5, "sm": 3} | sym15u | +1537 | +330 | +0.99 | 282 | ok/ok/ok | L6M @1.5 stops +1725 / @3 stops +1263 |
+| 9 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +2026 | +333 | +1.30 | 496 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +579 |
+| 10 | vrb_1200 | xmarket_fast.revert_ES {"w": 60, "thr": 2.0} | sym15u | +1549 | +422 | +0.99 | 305 | ok/ok/ok | L6M @1.5 stops +1530 / @3 stops +1671 |
 
 ### (c) CURRENT-STACK MASK (valid for ADDING a book to today's stack only; not valid for a rebuilt stack)  (cells passing: 4000)
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
@@ -150,10 +150,10 @@ Cells passing per session (a / b / c): Asia 4000 / 4000 / 4000; London 4000 / 40
 | 4 | tsf_2_100 | levels_trendline.break {"n": 3, "k": 0.5} | sym15u | +1489 | +512 | +0.95 | 264 | AMBER/AMBER/ok | strong on (b) too |
 | 5 | dib_400 | tape_libvol.cmf {"len": 10} | plain60/60 | +1160 | +1543 | +0.74 | 1086 | ok/ok/ok | bare only (not positive on own-stop) |
 | 6 | vib_70000 | tape_speed.fade_native {"f": 2.0, "L": 1800} | sym15u | +1081 | -253 | +0.69 | 195 | ok/ok/ok | strong on (b) too |
-| 7 | dol_1700 | levels_trendline.reject_native {"tol": 0.5, "conf": "body"} | sym15u | +1099 | -1207 | +0.70 | 234 | ok/ok/ok | strong on (b) too |
-| 8 | t3_sessrng_B200 | tape_libvol.obv {"len": 10} | plain60/60 | +1193 | +1124 | +0.76 | 794 | ok/ok/ok | bare only (not positive on own-stop) |
-| 9 | vnorm_1500 | levels_trendline.reject_native {"tol": 0.5, "conf": "body"} | sym15u | +1134 | -1187 | +0.73 | 243 | ok/ok/ok | bare only (not positive on own-stop) |
-| 10 | lbrk_3_10 | momentum_rsi.mom_native {"len": 7, "lvl": 55} | plain60/60 | +1323 | +1957 | +0.85 | 778 | AMBER/ok/AMBER | bare only (not positive on own-stop) |
+| 7 | vnorm_1000 | structure_level.round_reject {"grid": 50, "buf": 0.0} | sym15u | +1250 | +1252 | +0.80 | 322 | ok/ok/ok | bare only (not positive on own-stop) |
+| 8 | dol_1700 | levels_trendline.reject_native {"tol": 0.5, "conf": "body"} | sym15u | +1099 | -1207 | +0.70 | 234 | ok/ok/ok | strong on (b) too |
+| 9 | t3_sessrng_B200 | tape_libvol.obv {"len": 10} | plain60/60 | +1193 | +1124 | +0.76 | 794 | ok/ok/ok | bare only (not positive on own-stop) |
+| 10 | vnorm_1500 | levels_trendline.reject_native {"tol": 0.5, "conf": "body"} | sym15u | +1134 | -1187 | +0.73 | 243 | ok/ok/ok | bare only (not positive on own-stop) |
 
 ### (b) OWN-STOP (2 stops; 1.5 and 3 shown as neighbours)  (cells passing: 4000)
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
@@ -175,11 +175,11 @@ Cells passing per session (a / b / c): Asia 4000 / 4000 / 4000; London 4000 / 40
 | 1 | vib_15000 | book_pslope.follow {"L": 100, "z": 1.5} | sym15u | +1137 | +614 | +0.73 | 173 | ok/ok/ok | also positive on (b) |
 | 2 | kal_rngor_B080 | levels_round.retest {"M": 6, "tol": 0.5} | sym15u | +1024 | +671 | +0.66 | 210 | ok/ok/ok | depends on today's stack |
 | 3 | micro_B030 | xmarket_fast.follow_RTY {"w": 5, "thr": 1.0} | sym15u | +1283 | +430 | +0.82 | 130 | ok/AMBER/ok | depends on today's stack |
-| 4 | kal_sessrng_B200 | levels_round.retest {"M": 6, "tol": 0.5} | plain60/60 | +1186 | +925 | +0.76 | 646 | ok/AMBER/ok | depends on today's stack |
-| 5 | vib_10000 | levels_trendline.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +1003 | -479 | +0.64 | 144 | ok/ok/ok | depends on today's stack |
-| 6 | dol_750 | levels_trendline.break_native {"n": 3, "k": 0.25} | asym15u/30u | +1148 | -83 | +0.74 | 131 | AMBER/ok/ok | depends on today's stack |
-| 7 | kal_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
-| 8 | med_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
-| 9 | t3_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
-| 10 | typ_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
+| 4 | vol_350 | levels_fibr_dev.break {"n": 3, "k": 0.25} | plain60/60 | +1033 | +694 | +0.66 | 528 | ok/ok/ok | depends on today's stack |
+| 5 | volor_B130 | levels_trendline.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +984 | -925 | +0.63 | 152 | ok/ok/ok | depends on today's stack |
+| 6 | kal_sessrng_B200 | levels_round.retest {"M": 6, "tol": 0.5} | plain60/60 | +1186 | +925 | +0.76 | 646 | ok/AMBER/ok | depends on today's stack |
+| 7 | vib_10000 | levels_trendline.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +1003 | -479 | +0.64 | 144 | ok/ok/ok | depends on today's stack |
+| 8 | dol_750 | levels_trendline.break_native {"n": 3, "k": 0.25} | asym15u/30u | +1148 | -83 | +0.74 | 131 | AMBER/ok/ok | depends on today's stack |
+| 9 | kal_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
+| 10 | med_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
 
