@@ -399,7 +399,7 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 07:23Z 11-19 (t+618.6 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 09:24Z 11-19 (t+620.7 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
@@ -7546,3 +7546,4 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 - (wall 09:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 09:17Z LEAD NOTE: real pass 1 after the own-autogroup fix, last 10 min / todo (Dallas | Frankfurt | Singapore): real10=470 todo=548  | real10=30 todo=1073  | real10=5 todo=852  | inbox empty; 09:45Z re-measure kept. Research only.
 - 09:20Z W-FASTLADDER (auto): identity rev B 152 of 152 sample set-months identical, 0 FAIL (rev A 52/52 identical); details autopilot/FAST_LADDER.md section 7; nothing switched in any queue.
+- 09:22Z WATCHDOG fired: G
