@@ -7158,3 +7158,6 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 2026-11-19T01:56:51Z W-GRIDA 2026-11-19T01:56Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 412 / 303 / 0.7 h; (b) pass-1 level modules 528 / 394 / 0.7 h; (c) pass-2 family cells 85 / 0 / 0.0 h; (d) rest of pass 1 3497 / 7128 / 2.0 h; workers 60 (60 R); load 112.79; todo counts refreshed {"": 10, "_p2": 11} min ago
 - (wall 01:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
 2026-11-19T01:58:14Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+
+[S2 hourly 02:02Z] server 2: workers 12/cap 12, cell-months last hour: server-2 657, all 949; idle 0 min; cost ~$304 (56.0 h x $5.44).
+- 2026-11-19T02:03:18Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
