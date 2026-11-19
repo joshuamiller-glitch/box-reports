@@ -1,10 +1,10 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 19:25Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 19:35Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 5406 set-months/h (HEALTH.md at 19:25Z); layer queue (tag NYL, quota 5) landed 702 set-months in the last hour, 3119 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 11521, landed 5983, remaining 5502; hours at the HEALTH rate (whole fleet) 1.0 h; at the measured NYL rate 8 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 5500 set-months/h (HEALTH.md at 19:35Z); layer queue (tag NYL, quota 5) landed 626 set-months in the last hour, 2956 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 11521, landed 6083, remaining 5402; hours at the HEALTH rate (whole fleet) 1.0 h; at the measured NYL rate 9 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
@@ -20,14 +20,14 @@ Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byt
 | L01811caaxK7 | 906 | 906 |
 | L21f079b6xK7 | 623 | 432 |
 | L4d206c8cxA7 | 432 | 6 |
-| Ldcdb0b6exA7 | 348 | 206 |
-| L86781ac0xA7 | 348 | 33 |
+| Ldcdb0b6exA7 | 348 | 282 |
+| L86781ac0xA7 | 348 | 46 |
 | Lc4e74264xA7 | 348 | 13 |
-| L7ea48296xA7 | 348 | 15 |
+| L7ea48296xA7 | 348 | 18 |
 | L548972b6xA7 | 348 | 6 |
-| Lb44a3e99xK7 | 348 | 19 |
+| Lb44a3e99xK7 | 348 | 25 |
 | L678ebaddxK7 | 348 | 4 |
-| L6c84f416xK7 | 348 | 6 |
+| L6c84f416xK7 | 348 | 8 |
 | L641a7c4dxK7 | 348 | 0 |
 
 ## D8 gates per candidate: ENGINE rule B (order 1122Z)
@@ -206,6 +206,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L05222ff9xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | M15f14debxA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L411f8593xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
+| L32db3e8bxA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L0b1d7882xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | Lb7ac1fa5xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | Mc817d9e3xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
@@ -339,6 +340,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | M05ab6fe0xA7 | Asia | A7 | long | TL3_ASI_M05ab6fe0_RA7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | Mc817d9e3xA7 | Asia | A7 | long | TL3_ASI_Mc817d9e3_RA7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L0a809c2exA7 | Asia | A7 | both | TL3_ASI_L0a809c2e_RA7 | scored | 72 | 2026-11-19 13:55Z | 6 | 3 |
+| L32db3e8bxA7 | Asia | A7 | both | TL3_ASI_L32db3e8b_RA7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L17ce266fxA7 | Asia | A7 | both | TL3_ASI_L17ce266f_RA7 | scored | 72 | 2026-11-19 16:25Z | 6 | 3 |
 | L5d9e7166xA7 | Asia | A7 | both | TL3_ASI_L5d9e7166_RA7 | scored | 72 | 2026-11-19 12:55Z | 6 | 3 |
 | L05222ff9xA7 | Asia | A7 | both | TL3_ASI_L05222ff9_RA7 | scored | 72 | 2026-11-19 13:23Z | 7 | 5 |
@@ -577,6 +579,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | M05ab6fe0xA7 | Asia | A7 | long | W-ASIA list: pick REPLACE, pooled engine persistence 0.54 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
 | Mc817d9e3xA7 | Asia | A7 | long | W-ASIA list: pick REPLACE, pooled engine persistence 0.38 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
 | L0a809c2exA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.56 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L32db3e8bxA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.46 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
 | L17ce266fxA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.51 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
 | L5d9e7166xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.51 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
 | L05222ff9xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.51 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
