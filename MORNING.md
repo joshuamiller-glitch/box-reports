@@ -7500,3 +7500,6 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 - 08:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
 - 08:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
 - (wall 08:34Z) W-PM status: load1 86.52, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795077209; P5 page done, P8 grid np_m15_x10_y15 2898
+- 08:35Z W-ASIA LEAD NOTE (auto, every 30 min; page NEW_BOOK_BEATS_LIVE_ASIA.md refreshed 08:35Z): ladder stages {'out': 64, 'B': 26, 'A': 1800} of 1890 cells; Asia cells with engine rows 212, REPLACE verdicts finished 100, beat a live Asia book on L6M+L3M 3 (looser NY rule 11); Asia set-months landed 1 h 2082 / 3 h 5716; Asia lines pending 30850 (+~58860 still to be appended as cells pass stage A); fleet 2148 sm/h, engine queue 129085 lines. DATES (engine only, before exit run): Asia at the measured Asia rate 2082/h = 43 h => Nov 21 03:40Z; Asia+NY AM at the fleet rate = 87 h => Nov 23 00:05Z. D8_CANDIDATES Asia rows listed 2606.
+- (wall 08:34Z) W-TL2b T2 page refreshed: autopilot/DS3_TOOLS_T2_P3.md
+- (wall 08:38Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 81.60 83.69 81.45, epoch 1795077481

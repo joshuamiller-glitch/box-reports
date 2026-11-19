@@ -1,8 +1,8 @@
-# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-19 08:08Z
+# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-19 08:38Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer add / swap one book in today's stack, not the rebuilt stack.** WP10 and XA3 stay leads on that basis.
 
-Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 4715.
+Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 4761.
 
 ## What acts on a new book in these runs (plain words; full list NEW_BOOK_LAYER_FACTS.md)
 - ON the new book: the live DAY-DONE rule (engine: scr_hooks gate "conj" = the stack has >= 22 closes today AND the day is <= -2R = -2,400 base = -4,200 live; it applies to every book incl. the new one and skipped 334 of ~800 signals of NA1 in 202610), one position at a time, the book day caps (loss 4,800 $ / profit 12,000 $ default; a 120-pt stop = 2,400 $ at 1 base lot, 4,800 $ at 2 live lots = one stop trips it), the book give-back lock, measured slippage, the stack rule.
@@ -46,7 +46,7 @@ Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract
 | Y2023 | +43592 | +44609 (339, -1017) | +44046 (352, -454) | +45942 (356, -2350) |
 
 ## R5 ladder (engine staged; SCREEN RANK, NOT YET CALIBRATED: the whole-search null is the judge)
-Cells seeded in rank order from /mnt/l2/l2vast/_nye/ladder_cells.json (NY AM by R3 p6 then p_all; NY PM family-bests of the bare rule, R3 not yet run for NY PM). Stage A = last 6 + 3 months as ADD and as replacement of the weakest live book of the session (K7), 12 set-months per cell; B = prior years for rows not negative; C = 30 date-shift controls for rows still alive; D = layer programme in clock order. Built so far: 7285 cells ({'A': 7285}); set-months still queued: 99506. Everything is vs TODAY's stack, provisional until Asia and London are decided.
+Cells seeded in rank order from /mnt/l2/l2vast/_nye/ladder_cells.json (NY AM by R3 p6 then p_all; NY PM family-bests of the bare rule, R3 not yet run for NY PM). Stage A = last 6 + 3 months as ADD and as replacement of the weakest live book of the session (K7), 12 set-months per cell; B = prior years for rows not negative; C = 30 date-shift controls for rows still alive; D = layer programme in clock order. Built so far: 7285 cells ({'A': 7285}); set-months still queued: 97680. Everything is vs TODAY's stack, provisional until Asia and London are decided.
 
 ## XA3 phase 3a (own layers; vs today's stack, provisional until Asia and London are decided)
 Identity TL3_NYL_XA3_ID1-9 PASS. Fit stage F1 (72 settings x last 6 months) landed; scored on autopilot/NEW_BOOK_LAYER_FIT_XA3.md (ulcer first, vs the ADD row and vs JL3); stage F2 (top 2 settings per layer with ulcer better and >= 80% of trades, prior years 2023-2026-04) queued; joint stage after F2.
@@ -463,6 +463,7 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | -360 / -629 | +295 | +2030 / +3553 | -436 | c=1.00: -360 / +295 / +2030 | 596 | +0.066 | +1.456 | +0.30 / +0.24 / +0.12 | ok |
 |  | ADD | L3M | -1109 / -1941 | +3906 | +1945 / +3404 | +5826 | c=1.00: -1109 / +3906 / +1945 | 133 | +0.152 | +1.554 | +0.26 / +0.08 / +0.20 | ok |
 |  | ADD | L6M | -448 / -785 | -2420 | +1312 / +2295 | +5375 | c=1.00: -448 / -2420 / +1312 | 248 | +0.121 | +1.115 | +0.11 / +0.07 / +0.07 | ok |
+|  | ADD | Y2025 | +834 / +1459 | -4033 | -235 / -412 | -8032 | c=1.00: +834 / -4033 / -235 | 495 | +0.023 | +0.215 | +0.08 / +0.10 / +0.12 | ok |
 |  | ADD | L3M | -1067 / -1868 | +195 | +621 / +1087 | +6421 | c=1.00: -1067 / +195 / +621 | 65 | +0.133 | +0.666 | +0.14 / -0.16 / +0.02 | ok |
 |  | ADD | L6M | -353 / -618 | -3261 | +882 / +1543 | +5375 | c=1.00: -353 / -3261 / +882 | 141 | +0.197 | +1.031 | +0.07 / -0.06 / +0.07 | ok |
 |  | ADD | L3M | +484 / +847 | -2904 | +754 / +1319 | +1428 | c=1.00: +484 / -2904 / +754 | 60 | +0.168 | +0.778 | -0.05 / +0.20 / +0.01 | ok |
@@ -786,6 +787,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | L59b66d32 | RK7 | L6M | +859 / +1503 | -3730 | +2515 / +4402 | -1417 | c=0.61: +827 / -3425 / +1644 | 146 | +0.207 | +1.117 | -0.06 / -0.08 / -0.00 | ok |
 | L59b66d32 | ADD | L3M | -1124 / -1967 | -585 | +403 / +705 | +5291 | c=0.61: -772 / -354 / +55 | 63 | +0.092 | +0.446 | -0.07 / -0.13 / +0.05 | ok |
 | L59b66d32 | ADD | L6M | -503 / -880 | -3141 | +1686 / +2951 | +5291 | c=0.61: -382 / -354 / +853 | 145 | +0.199 | +1.069 | -0.07 / -0.08 / -0.02 | ok |
+| L59b66d32 | ADD | Y2023 | +1526 / +2670 | -3883 | +95 / +167 | -3271 | c=0.61: +234 / -2026 / +77 | 230 | +0.004 | +0.023 | +0.06 / +0.09 / +0.03 | ok |
+| L59b66d32 | ADD | Y2024 | -2770 / -4847 | -2130 | -41 / -71 | +8495 | c=0.61: -1787 / -1291 / -59 | 297 | +0.004 | +0.024 | -0.07 / -0.01 / +0.06 | ok |
 | L59b66d32 | ADD | Y2025 | -6110 / -10692 | +1909 | +1116 / +1953 | +4892 | c=0.61: -4084 / +1527 / +672 | 279 | +0.108 | +0.570 | +0.08 / -0.04 / +0.03 | ok |
 | L63700f14 | RK7 | L3M | +1601 / +2803 | -3390 | +1088 / +1904 | -4065 | c=1.00: +1601 / -3390 / +1088 | 92 | +0.016 | +0.112 | -0.07 / -0.00 / -0.08 | ok |
 | L63700f14 | RK7 | L6M | +1022 / +1788 | -3390 | +1365 / +2389 | -4065 | c=1.00: +1022 / -3390 / +1365 | 193 | +0.079 | +0.566 | -0.04 / -0.05 / -0.08 | ok |
