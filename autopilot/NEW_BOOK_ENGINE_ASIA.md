@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-19 02:30Z
+# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-19 03:00Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'.** Asia is decided FIRST in clock order (Asia -> London -> NY AM -> NY PM).
 
@@ -46,45 +46,60 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 ## B. Asia candidates in the engine (vs JL3 = today stack, base lots; every cell picked as best-of-many on the same L6M; drawdown first; NO LABEL without 30 controls + the selection-corrected test)
 | cell | bar | trigger | stop/tgt pts | set | window | d stack ulcer x1 / x1.75 | d worst wk x1 | d maxDD x1 | d mean $/wk x1 / x1.75 | date-shift controls landed |
 |---|---|---|---|---|---|---|---|---|---|---|
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | L6M | +1848 / +3233 | -3618 | -7491 | +94 / +165 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | L3M | +2518 / +4407 | -3618 | -7491 | -1543 / -2699 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | Y2025 | +137844 / +241227 | -472224 | -505329 | -9473 / -16578 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | Y2024 | -3381 / -5916 | +4756 | +9616 | +508 / +888 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | Y2023 | +176 / +308 | -2619 | -2292 | +330 / +578 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ALL | L6M | +19144 / +33501 | -16187 | -39731 | -17429 / -30501 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ALL | L3M | +16926 / +29621 | -11311 | -35520 | -13432 / -23506 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | L6M | +305 / +533 | +994 | -4630 | +1155 / +2022 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | L3M | +833 / +1457 | +994 | -4630 | +1518 / +2656 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | Y2025 | +139310 / +243792 | -474538 | -510946 | -9728 / -17024 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | Y2024 | +313 / +548 | +4296 | +750 | -494 / -865 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | Y2023 | +484 / +847 | -925 | -3151 | +255 / +446 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | L6M | +749 / +1311 | +5294 | +1145 | -616 / -1078 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | L3M | +207 / +363 | +5294 | +2337 | +103 / +180 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | Y2025 | +140798 / +246397 | -477030 | -512074 | -10168 / -17793 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | Y2024 | +2542 / +4448 | -8662 | -2138 | -834 / -1460 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | Y2023 | +2730 / +4777 | -1100 | -5268 | -843 / -1475 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | L6M | +52 / +91 | +4257 | +5021 | -3048 / -5333 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | L3M | -62 / -108 | +4257 | +5021 | -4144 / -7252 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | Y2025 | +135115 / +236451 | -476759 | -495484 | -10287 / -18002 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | Y2024 | +189 / +332 | -2777 | +10933 | -353 / -618 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | Y2023 | -701 / -1227 | -3908 | +109 | +255 / +446 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RP7 | L6M | +4010 / +7018 | +2224 | -13061 | -8581 / -15017 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RP7 | L3M | +5960 / +10430 | +2224 | -13061 | -7889 / -13805 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RU7 | L6M | +959 / +1678 | +3121 | -3371 | -1391 / -2434 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RU7 | L3M | +428 / +749 | +3121 | -1753 | -2724 / -4767 | 27 |
-| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RU7 | Y2023 | +3081 / +5391 | -3501 | -9172 | -43 / -76 | 27 |
-| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | L6M | +250 / +438 | -42 | +1261 | +387 / +677 | 1 |
-| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | L3M | +491 / +859 | +2623 | +1261 | +369 / +645 | 1 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | L6M | +1848 / +3233 | -3618 | -7491 | +94 / +165 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | L3M | +2518 / +4407 | -3618 | -7491 | -1543 / -2699 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | Y2025 | +137844 / +241227 | -472224 | -505329 | -9473 / -16578 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | Y2024 | -3381 / -5916 | +4756 | +9616 | +508 / +888 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ADD | Y2023 | +176 / +308 | -2619 | -2292 | +330 / +578 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ALL | L6M | +19144 / +33501 | -16187 | -39731 | -17429 / -30501 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_ALL | L3M | +16926 / +29621 | -11311 | -35520 | -13432 / -23506 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | L6M | +305 / +533 | +994 | -4630 | +1155 / +2022 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | L3M | +833 / +1457 | +994 | -4630 | +1518 / +2656 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | Y2025 | +139310 / +243792 | -474538 | -510946 | -9728 / -17024 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | Y2024 | +313 / +548 | +4296 | +750 | -494 / -865 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RA7 | Y2023 | +484 / +847 | -925 | -3151 | +255 / +446 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | L6M | +749 / +1311 | +5294 | +1145 | -616 / -1078 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | L3M | +207 / +363 | +5294 | +2337 | +103 / +180 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | Y2025 | +140798 / +246397 | -477030 | -512074 | -10168 / -17793 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | Y2024 | +2542 / +4448 | -8662 | -2138 | -834 / -1460 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RH7 | Y2023 | +2730 / +4777 | -1100 | -5268 | -843 / -1475 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | L6M | +52 / +91 | +4257 | +5021 | -3048 / -5333 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | L3M | -62 / -108 | +4257 | +5021 | -4144 / -7252 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | Y2025 | +135115 / +236451 | -476759 | -495484 | -10287 / -18002 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | Y2024 | +189 / +332 | -2777 | +10933 | -353 / -618 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RK7 | Y2023 | -701 / -1227 | -3908 | +109 | +255 / +446 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RP7 | L6M | +4010 / +7018 | +2224 | -13061 | -8581 / -15017 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RP7 | L3M | +5960 / +10430 | +2224 | -13061 | -7889 / -13805 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RP7 | Y2023 | +7902 / +13829 | -6222 | -15529 | -319 / -558 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RU7 | L6M | +959 / +1678 | +3121 | -3371 | -1391 / -2434 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RU7 | L3M | +428 / +749 | +3121 | -1753 | -2724 / -4767 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RU7 | Y2025 | +138098 / +241671 | -466391 | -509461 | -10321 / -18062 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RU7 | Y2024 | -1996 / -3492 | -422 | -6742 | +188 / +330 | 30 |
+| AB1 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB1_RU7 | Y2023 | +3081 / +5391 | -3501 | -9172 | -43 / -76 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | L6M | +250 / +438 | -42 | +1261 | +387 / +677 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | L3M | +491 / +859 | +2623 | +1261 | +369 / +645 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | Y2025 | +135018 / +236281 | -472169 | -498187 | -9543 / -16700 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | Y2024 | -1912 / -3346 | +3185 | +4230 | +389 / +681 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | Y2023 | -2181 / -3817 | -1619 | -180 | +469 / +821 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RH7 | L3M | +243 / +425 | -3414 | -424 | -914 / -1599 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RP7 | L3M | +9814 / +17175 | -1109 | -19758 | -8871 / -15524 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L6M | +2055 / +3597 | -21205 | -10544 | -287 / -503 | 0 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L3M | -940 / -1645 | +3685 | +6881 | +542 / +949 | 0 |
-| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | L6M | -434 / -759 | -9949 | +3150 | +1 / +2 | 0 |
-| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | L3M | -1849 / -3236 | +5283 | +7619 | +1732 / +3032 | 0 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ALL | L6M | +26967 / +47192 | -30872 | -64604 | -17894 / -31314 | 0 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ALL | L3M | +29632 / +51856 | -30872 | -61111 | -15655 / -27396 | 0 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RH7 | L3M | +993 / +1738 | -7969 | -3883 | -1815 / -3177 | 0 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RK7 | L3M | +464 / +812 | -4741 | +4277 | -4674 / -8180 | 0 |
+| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | L6M | -434 / -759 | -9949 | +3150 | +1 / +2 | 29 |
+| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | L3M | -1849 / -3236 | +5283 | +7619 | +1732 / +3032 | 29 |
+| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | Y2025 | +136746 / +239305 | -468631 | -500893 | -9230 / -16152 | 29 |
+| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | Y2024 | -3678 / -6436 | +2771 | +5868 | +646 / +1130 | 29 |
+| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | Y2023 | -473 / -827 | -485 | -3167 | +544 / +952 | 29 |
 | AB5 | dlt_45 | momentum_willr.break_native {"len": 21, "lvl": 30} | 60.0/60.0 | AB5_ADD | L6M | +1641 / +2871 | -5672 | -2194 | -1079 / -1888 | 0 |
 | AB5 | dlt_45 | momentum_willr.break_native {"len": 21, "lvl": 30} | 60.0/60.0 | AB5_ADD | L3M | +2408 / +4214 | -1552 | -2194 | -1040 / -1819 | 0 |
 | AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | L6M | +335 / +586 | -3583 | -631 | +1217 / +2131 | 0 |
 | AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | L3M | +511 / +895 | -3583 | -631 | -702 / -1228 | 0 |
-| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | L6M | +2304 / +4032 | -9683 | -9855 | -584 / -1023 | 0 |
-| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | L3M | +2644 / +4626 | -9343 | -9855 | -469 / -820 | 0 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | L6M | +2304 / +4032 | -9683 | -9855 | -584 / -1023 | 3 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | L3M | +2644 / +4626 | -9343 | -9855 | -469 / -820 | 3 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | L6M | +1498 / +2621 | -1026 | -9588 | -927 / -1622 | 0 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | L3M | +1563 / +2736 | -1026 | -9588 | -2352 / -4116 | 0 |
 

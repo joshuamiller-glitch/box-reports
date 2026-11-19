@@ -7220,3 +7220,9 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 2026-11-19T02:56:55Z W-GRIDA 2026-11-19T02:56Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 677 / 208 / 0.3 h; (b) pass-1 level modules 915 / 253 / 0.3 h; (c) pass-2 family cells 55 / 0 / 0.0 h; (d) rest of pass 1 1326 / 7128 / 5.4 h; workers 60 (59 R       1 S); load 97.79; todo counts refreshed {"": 25, "_p2": 25} min ago
 - (wall 02:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
 2026-11-19T02:58:14Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 03:02Z WATCHDOG fired: E
+- 03:03Z W-GRIDOPS (Frankfurt grid-pause test): AFTER (grid resumed) (02:53-03:03 UTC): engine set-months 57 in 10 min with ~37 busy engine procs => 9.2 per proc-hour (342.0 per hour fleet-of-A); cpu at start [user 96 sys 4 idle 0 iowait 0 168.97] at end [user 97 sys 3 idle 0 iowait 0 210.70]
+- 03:03Z W-GRIDOPS (Frankfurt grid-pause test): SUMMARY: engine per proc: before 1.49, paused 1.70, after 1.54 set-months per proc per 10 min. Pausing the grid changed the per-proc rate by only 12%: the cause is not grid CPU (check cold month caches / disk / R3 load).
+- 2026-11-19T03:04:24Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+
+[S2 hourly 03:04Z] server 2: workers 12/cap 12, cell-months last hour: server-2 871, all 1136; idle 0 min; cost ~$310 (57.0 h x $5.44).
