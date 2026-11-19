@@ -1,27 +1,27 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 09:00Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 09:05Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
-**Counts:** Asia cells with any engine row 234; cells with a finished REPLACE verdict (L6M+L3M landed) 141; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 6 (under the looser NY rule 14); ADD rows finished 229.
+**Counts:** Asia cells with any engine row 239; cells with a finished REPLACE verdict (L6M+L3M landed) 168; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 7 (under the looser NY rule 15); ADD rows finished 230.
 
 | live Asia book replaced | cells finished | beat it | pending |
 |---|---|---|---|
 | K7 | 51 | 0 | 4 |
 | P7 | 45 | 0 | 3 |
-| A7 | 141 | 6 | 22 |
+| A7 | 168 | 7 | 28 |
 | H7 | 49 | 0 | 3 |
 | U7 | 49 | 0 | 2 |
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 2104, last 3 h 6079; Asia queue lines pending (not DONE): 30343.
+Asia set-months landed: last 1 h 2129, last 3 h 6167; Asia queue lines pending (not DONE): 32733.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position 4, _nye/pending_l 11, _nye/pending_w , _lon 12 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > ASI > NYL > NYR > NYF > FR > NYE > NYW > LON > ME
-- box1 running engine sets by tag: 32 TL3_NYW_      12 TL3_ASI_      10 TL3_LON_
-- server2 running engine sets by tag: 55 TL3_ASI_
-- A running engine sets by tag: 200 TL3_ASI_
-- B running engine sets by tag: 198 TL3_ASI_
+- box1 running engine sets by tag: 26 TL3_NYW_      12 TL3_LON_      10 TL3_ASI_
+- server2 running engine sets by tag: 50 TL3_ASI_
+- A running engine sets by tag: 198 TL3_ASI_
+- B running engine sets by tag: 184 TL3_ASI_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
@@ -40,10 +40,11 @@ Asia set-months landed: last 1 h 2104, last 3 h 6079; Asia queue lines pending (
 | Lcb276f27 tm120 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / long | no (L6M du +269 dm +872 | L3M du +546 dm +19) | not run | not run | yes (L6M du -1146 dm +1567 | L3M du -811 dm +1085) | not run | not run | K7:0,P7:0,A7:0,H7:0,U7:0 | 0 of 30 |
 | L5c9e11b3 vol_750 / momentum_mvote.v3of5 {"scale": 0.25, "thr": 0.25} / plain60/60 / long | no (L6M du -815 dm +2152 | L3M du -1706 dm +3570 RED Y2025) | no (L6M du +1530 dm -2252 | L3M du +2684 dm -3703) | no (L6M du +2680 dm -9625 | L3M du +2168 dm -6262) | yes (L6M du -603 dm +1062 | L3M du -1151 dm +3460 RED Y2025) | no (L6M du -451 dm +87 | L3M du -636 dm +2865 RED Y2025,Y2023) | no (L6M du -169 dm -472 | L3M du -651 dm +1123) | K7:0,P7:0,A7:3,H7:3,U7:0 | 0 of 30 |
 | Ledfbf4d2 vol_350 / bands_bollinger.break_native {"clk": 20, "k": 1.5} / plain60/60 / long | no (L6M du -813 dm +880 | L3M du -949 dm +64 RED Y2025) | no (L6M du -567 dm -1956 | L3M du -296 dm -3836) | no (L6M du +3368 dm -10349 | L3M du +3215 dm -7631) | yes (L6M du -459 dm +384 | L3M du -548 dm +1331 RED Y2025) | no (L6M du -541 dm -839 | L3M du -443 dm -582) | no (L6M du -421 dm -1230 | L3M du -860 dm -2636) | K7:0,P7:0,A7:3,H7:0,U7:0 | 0 of 30 |
+| Lf77e374b tm240 / bands_donchian.break {"n": 10, "buf": 0.0} / plain60/60 / long | no (L6M du +1118 dm +533 | L3M du +373 dm -278) | not run | not run | yes (L6M du -403 dm +1440 | L3M du -202 dm +2270) | not run | not run | K7:0,P7:0,A7:0,H7:0,U7:0 | 0 of 30 |
 | L0b1d7882 tm30 / bands_vwap.break {"minbars": 10, "k": 1.0} / plain60/60 / long | no (L6M du +782 dm +300 | L3M du +39 dm +724) | not run | not run | yes (L6M du -65 dm +395 | L3M du -152 dm +1541) | not run | not run | K7:0,P7:0,A7:0,H7:0,U7:0 | 0 of 30 |
 
 ## D8 gate (orders 0213Z, 0228Z)
-Nothing enters D8 without the EXIT RUN (68 recipes) on its own entries. Candidates are appended to autopilot/D8_CANDIDATES.txt (append-only, session Asia). Engine cost after the exit screen for the 6 Asia cell(s) that beat a live book today: about 10338 set-months (prior years + 30 controls + layers/exit rows ~1,723 per candidate).
+Nothing enters D8 without the EXIT RUN (68 recipes) on its own entries. Candidates are appended to autopilot/D8_CANDIDATES.txt (append-only, session Asia). Engine cost after the exit screen for the 7 Asia cell(s) that beat a live book today: about 12061 set-months (prior years + 30 controls + layers/exit rows ~1,723 per candidate).
 
 All other cells: see /mnt/l2/l2vast/_asi_lad/beats_rows.csv (verdict per live book: no / pending). Asia ladder state: `python3 code/th_asia/asia_ladder.py status`.
 
