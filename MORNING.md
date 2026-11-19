@@ -7331,3 +7331,5 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 2026-11-19T05:28:20Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 05:32Z WATCHDOG fired: G
 - (wall 05:34Z) W-PM status: load1 67.71, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795066352; P5 page done, P8 grid np_m15_x10_y15 2898
+- 2026-11-19T05:37:33Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (wall 05:37Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 73.79 72.55 72.43, epoch 1795066668
