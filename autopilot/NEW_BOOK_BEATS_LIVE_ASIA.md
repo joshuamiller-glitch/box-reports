@@ -1,18 +1,18 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 12:29Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 12:30Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
-**Counts:** Asia cells with any engine row 757; cells with a finished REPLACE verdict (L6M+L3M landed) 608; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 15 (under the looser NY rule 50); ADD rows finished 748.
+**Counts:** Asia cells with any engine row 757; cells with a finished REPLACE verdict (L6M+L3M landed) 609; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 15 (under the looser NY rule 50); ADD rows finished 749.
 
 | live Asia book replaced | cells finished | beat it | pending |
 |---|---|---|---|
 | K7 | 72 | 0 | 4 |
 | P7 | 65 | 0 | 4 |
-| A7 | 608 | 15 | 8 |
+| A7 | 609 | 15 | 7 |
 | H7 | 69 | 0 | 3 |
 | U7 | 69 | 0 | 2 |
 
-**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 378 tested; 517 cells with rows), long-only 1 (of 230 tested; 240 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
+**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 379 tested; 517 cells with rows), long-only 1 (of 230 tested; 240 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
 
 ## Beating cells: both-side vs long-only (M) vs short-only side by side (best by the D8 rule is the candidate; a long-only book that beats the both-side book replaces it)
 | cell | variant | live book | L6M d ulcer | L6M d $/wk | L6M d worst wk | L6M d maxDD | L3M d ulcer | L3M d $/wk | L3M d worst wk | L3M d maxDD | Asia rule |
@@ -91,44 +91,44 @@ Gate A pass 5, Gate B pass 0 among the both-side beaters listed (see MORNING.md 
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 **NOTE (2025 REPLACE rows are an ENGINE ARTEFACT, not an A7 effect; W-ASIA 11:3xZ):** in the 2025 window ALL new-book sets (ADD rows too, not only REPLACE-A7) carry ONE MF1 trade on 2025-11-28 with gross -506,325 on 1 lot (exit_ns 2025-11-28 07:00:01Z: an exit at a time with no usable print, price ~0); 157 of the 184 Asia set-months landed for 202511 contain it, JL3 itself has none. It makes the 2025 worst week ~-$510k vs -$39k and gives the identical +410% ulcer / +550% max DD / +1,219% worst week across cells. Real 2025 stack: A7 earned +$49,829 in the Asia session in 2025 (304 trades), K7 +35,095, H7 +33,248, P7 +176,090, U7 +16,540 in JL3 (all five live books exist in the 2025 stack; JL3 is the SAME stack definition as today, run on 2025 data). The EX-ARTEFACT column removes the artefact trade(s) (gross < -$100k) and keeps everything else as run; it is a diagnostic, NOT a delivered number - the engine owners must fix the exit (events file exit_ts / price) and the sets be re-run. 2023/2024 are unaffected by the artefact.
 
-| Lda55d973 vol_750 | both-side | A7 | 2023 | +1 | +10 | -3 | -7 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.561 |
-| Lda55d973 vol_750 | both-side | A7 | 2024 | +3 | -1 | -14 | +16 | AMBER | AMBER (diag) | RED |  |  |  |
+| Lda55d973 vol_750 | both-side | A7 | 2023 | +1 | +10 | -3 | -7 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.561 |
+| Lda55d973 vol_750 | both-side | A7 | 2024 | +3 | -1 | -14 | +16 | AMBER | AMBER (as run, no artefact) | RED |  |  |  |
 | Lda55d973 vol_750 | both-side | A7 | 2025 | +13 | +24 | +7 | +4 | RED | AMBER (F) | RED |  |  |  |
-| La5b5d03a time_m_2 | both-side | A7 | 2023 | +30 | +37 | +3 | -40 | RED | RED (diag) | RED | RED / RED |  | 0.573 |
-| La5b5d03a time_m_2 | both-side | A7 | 2024 | +1 | +2 | -20 | +4 | GREEN | GREEN (diag) | RED |  |  |  |
+| La5b5d03a time_m_2 | both-side | A7 | 2023 | +30 | +37 | +3 | -40 | RED | RED (as run, no artefact) | RED | RED / RED |  | 0.573 |
+| La5b5d03a time_m_2 | both-side | A7 | 2024 | +1 | +2 | -20 | +4 | GREEN | GREEN (as run, no artefact) | RED |  |  |  |
 | La5b5d03a time_m_2 | both-side | A7 | 2025 | -14 | -3 | -10 | -2 | GREEN | GREEN (F) | RED |  |  |  |
-| Lcb276f27 tm120 | both-side | A7 | 2023 | +30 | +37 | +3 | -41 | RED | RED (diag) | ok | RED / RED |  | 0.573 |
-| Lcb276f27 tm120 | both-side | A7 | 2024 | +2 | +4 | -20 | +4 | GREEN | GREEN (diag) | ok |  |  |  |
+| Lcb276f27 tm120 | both-side | A7 | 2023 | +30 | +37 | +3 | -41 | RED | RED (as run, no artefact) | ok | RED / RED |  | 0.573 |
+| Lcb276f27 tm120 | both-side | A7 | 2024 | +2 | +4 | -20 | +4 | GREEN | GREEN (as run, no artefact) | ok |  |  |  |
 | Lcb276f27 tm120 | both-side | A7 | 2025 | -15 | -3 | -10 | -2 | GREEN | GREEN (F) | RED |  |  |  |
-| L1edb9fab tm300 | both-side | A7 | 2023 | -4 | -2 | +5 | -19 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.500 |
-| L1edb9fab tm300 | both-side | A7 | 2024 | -5 | -8 | -17 | +4 | GREEN | GREEN (diag) | RED |  |  |  |
+| L1edb9fab tm300 | both-side | A7 | 2023 | -4 | -2 | +5 | -19 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.500 |
+| L1edb9fab tm300 | both-side | A7 | 2024 | -5 | -8 | -17 | +4 | GREEN | GREEN (as run, no artefact) | RED |  |  |  |
 | L1edb9fab tm300 | both-side | A7 | 2025 | +3 | +6 | +5 | +7 | RED | GREEN (F) | RED |  |  |  |
-| L0a809c2e kagi_40 | both-side | A7 | 2023 | -13 | -7 | -4 | -35 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.549 |
-| L0a809c2e kagi_40 | both-side | A7 | 2024 | +21 | -2 | -14 | +20 | AMBER | AMBER (diag) | RED |  |  |  |
+| L0a809c2e kagi_40 | both-side | A7 | 2023 | -13 | -7 | -4 | -35 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.549 |
+| L0a809c2e kagi_40 | both-side | A7 | 2024 | +21 | -2 | -14 | +20 | AMBER | AMBER (as run, no artefact) | RED |  |  |  |
 | L0a809c2e kagi_40 | both-side | A7 | 2025 | +6 | +7 | -2 | +4 | RED | GREEN (F) | RED |  |  |  |
-| L17ce266f tm240 | both-side | A7 | 2023 | +5 | +10 | -2 | -17 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.622 |
-| L17ce266f tm240 | both-side | A7 | 2024 | +8 | -3 | -14 | +16 | AMBER | AMBER (diag) | RED |  |  |  |
+| L17ce266f tm240 | both-side | A7 | 2023 | +5 | +10 | -2 | -17 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.622 |
+| L17ce266f tm240 | both-side | A7 | 2024 | +8 | -3 | -14 | +16 | AMBER | AMBER (as run, no artefact) | RED |  |  |  |
 | L17ce266f tm240 | both-side | A7 | 2025 | -0 | -1 | +9 | +10 | RED | GREEN (F) | RED |  |  |  |
-| L5d9e7166 tm240 | both-side | A7 | 2023 | +5 | +10 | -2 | -17 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.622 |
-| L5d9e7166 tm240 | both-side | A7 | 2024 | +8 | -3 | -14 | +16 | AMBER | AMBER (diag) | RED |  |  |  |
+| L5d9e7166 tm240 | both-side | A7 | 2023 | +5 | +10 | -2 | -17 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.622 |
+| L5d9e7166 tm240 | both-side | A7 | 2024 | +8 | -3 | -14 | +16 | AMBER | AMBER (as run, no artefact) | RED |  |  |  |
 | L5d9e7166 tm240 | both-side | A7 | 2025 | -0 | -1 | +9 | +10 | RED | GREEN (F) | RED |  |  |  |
-| L05222ff9 time_m_4 | both-side | A7 | 2023 | +5 | +10 | -2 | -17 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.598 |
-| L05222ff9 time_m_4 | both-side | A7 | 2024 | +8 | -4 | -14 | +17 | AMBER | AMBER (diag) | RED |  |  |  |
+| L05222ff9 time_m_4 | both-side | A7 | 2023 | +5 | +10 | -2 | -17 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.598 |
+| L05222ff9 time_m_4 | both-side | A7 | 2024 | +8 | -4 | -14 | +17 | AMBER | AMBER (as run, no artefact) | RED |  |  |  |
 | L05222ff9 time_m_4 | both-side | A7 | 2025 | -0 | -1 | +9 | +9 | RED | GREEN (F) | RED |  |  |  |
-| L7c368a4f time_m_5 | both-side | A7 | 2023 | -5 | -2 | +4 | -19 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.537 |
-| L7c368a4f time_m_5 | both-side | A7 | 2024 | -6 | -8 | -17 | +1 | GREEN | GREEN (diag) | RED |  |  |  |
+| L7c368a4f time_m_5 | both-side | A7 | 2023 | -5 | -2 | +4 | -19 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.537 |
+| L7c368a4f time_m_5 | both-side | A7 | 2024 | -6 | -8 | -17 | +1 | GREEN | GREEN (as run, no artefact) | RED |  |  |  |
 | L7c368a4f time_m_5 | both-side | A7 | 2025 | +4 | +5 | +5 | +9 | RED | GREEN (F) | RED |  |  |  |
-| L5c9e11b3 vol_750 | both-side | A7 | 2023 | -1 | +1 | +1 | -31 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.622 |
-| L5c9e11b3 vol_750 | both-side | A7 | 2024 | +5 | +1 | -13 | +7 | GREEN | GREEN (diag) | RED |  |  |  |
+| L5c9e11b3 vol_750 | both-side | A7 | 2023 | -1 | +1 | +1 | -31 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.622 |
+| L5c9e11b3 vol_750 | both-side | A7 | 2024 | +5 | +1 | -13 | +7 | GREEN | GREEN (as run, no artefact) | RED |  |  |  |
 | L5c9e11b3 vol_750 | both-side | A7 | 2025 | +7 | +17 | +2 | -4 | RED | AMBER (F) | RED |  |  |  |
-| Ledfbf4d2 vol_350 | both-side | A7 | 2023 | +1 | +7 | -3 | -21 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.622 |
-| Ledfbf4d2 vol_350 | both-side | A7 | 2024 | -1 | -4 | -11 | +6 | GREEN | GREEN (diag) | RED |  |  |  |
+| Ledfbf4d2 vol_350 | both-side | A7 | 2023 | +1 | +7 | -3 | -21 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.622 |
+| Ledfbf4d2 vol_350 | both-side | A7 | 2024 | -1 | -4 | -11 | +6 | GREEN | GREEN (as run, no artefact) | RED |  |  |  |
 | Ledfbf4d2 vol_350 | both-side | A7 | 2025 | +11 | +14 | +7 | +9 | RED | GREEN (F) | RED |  |  |  |
-| Lf77e374b tm240 | both-side | A7 | 2023 | +13 | +18 | -4 | -4 | AMBER | AMBER (diag) | RED | RED / no RED, all 3 years |  | 0.512 |
-| Lf77e374b tm240 | both-side | A7 | 2024 | +4 | -6 | -11 | +20 | AMBER | AMBER (diag) | RED |  |  |  |
+| Lf77e374b tm240 | both-side | A7 | 2023 | +13 | +18 | -4 | -4 | AMBER | AMBER (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.512 |
+| Lf77e374b tm240 | both-side | A7 | 2024 | +4 | -6 | -11 | +20 | AMBER | AMBER (as run, no artefact) | RED |  |  |  |
 | Lf77e374b tm240 | both-side | A7 | 2025 | +5 | +7 | +1 | +16 | RED | AMBER (F) | RED |  |  |  |
-| L0b1d7882 tm30 | both-side | A7 | 2023 | -10 | -6 | -0 | -21 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.488 |
-| L0b1d7882 tm30 | both-side | A7 | 2024 | +4 | -13 | -9 | +21 | AMBER | AMBER (diag) | RED |  |  |  |
+| L0b1d7882 tm30 | both-side | A7 | 2023 | -10 | -6 | -0 | -21 | GREEN | GREEN (as run, no artefact) | RED | RED / no RED, all 3 years |  | 0.488 |
+| L0b1d7882 tm30 | both-side | A7 | 2024 | +4 | -13 | -9 | +21 | AMBER | AMBER (as run, no artefact) | RED |  |  |  |
 | L0b1d7882 tm30 | both-side | A7 | 2025 | +4 | -2 | +7 | +15 | RED | GREEN (F) | RED |  |  |  |
 **Prior years against ALL live Asia books and ADD (where the A7-removal effect is absent or different): both-side beaters, rule B colours as run / ex-artefact, landed years only (pending = not run).**
 
@@ -180,15 +180,15 @@ Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed hav
 
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 1984, last 3 h 6913; Asia queue lines pending (not DONE): 52600.
+Asia set-months landed: last 1 h 1927, last 3 h 6878; Asia queue lines pending (not DONE): 52596.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position 6, _nye/pending_l 13, _nye/pending_w , _lon 14 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > EXE > ASI > NYL > NYR > NYF > FR > NYE > NYW > LON
-- box1 running engine sets by tag: 25 TL3_NYL_      12 TL3_LON_       9 TL3_NYE_       5 TL3_NYW_       3 TL3_ASI_
-- server2 running engine sets by tag: 54 TL3_NYL_
-- A running engine sets by tag: 202 TL3_NYL_
-- B running engine sets by tag: 192 TL3_NYL_
+- box1 running engine sets by tag: 25 TL3_NYL_      12 TL3_LON_       9 TL3_NYE_       7 TL3_ASI_       4 TL3_NYW_
+- server2 running engine sets by tag: 42 TL3_NYL_
+- A running engine sets by tag: 186 TL3_NYL_
+- B running engine sets by tag: 175 TL3_NYL_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |

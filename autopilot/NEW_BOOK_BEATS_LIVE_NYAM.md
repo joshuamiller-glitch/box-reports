@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 12:15Z
+# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 12:30Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY AM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7, P7, M7, H7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYAM.csv.
 
@@ -94,8 +94,8 @@
 | L3701b464 | long-only REPLACE K7 | 2024 | pending | pending | pending | pending | pending | pending | n/a |
 | L3701b464 | long-only REPLACE K7 | 2025 | pending | pending | pending | pending | pending | pending | n/a |
 | L3701b464 | long-only ADD | 2023 | pending | pending | pending | pending | pending | pending | n/a |
-| L3701b464 | long-only ADD | 2024 | pending | pending | pending | pending | pending | pending | n/a |
-| L3701b464 | long-only ADD | 2025 | pending | pending | pending | pending | pending | pending | n/a |
+| L3701b464 | long-only ADD | 2024 | -6% | +3% | -6% | -17% | GREEN | 0.73 | see shortlist |
+| L3701b464 | long-only ADD | 2025 | +5% | +12% | +25% | -1% | AMBER | 0.62 | see shortlist |
 | L3701b464 | short-only REPLACE K7 | 2023 | pending | pending | pending | pending | pending | pending | n/a |
 | L3701b464 | short-only REPLACE K7 | 2024 | pending | pending | pending | pending | pending | pending | n/a |
 | L3701b464 | short-only REPLACE K7 | 2025 | pending | pending | pending | pending | pending | pending | n/a |
@@ -137,7 +137,7 @@
 - L3701b464 both sides REPLACE K7: pending (no prior-year rows yet)
 - L3701b464 both sides ADD: pending (no prior-year rows yet)
 - L3701b464 long-only REPLACE K7: pending (no prior-year rows yet)
-- L3701b464 long-only ADD: pending (no prior-year rows yet)
+- L3701b464 long-only ADD: no RED year (2 of 3 years run)
 - L3701b464 short-only REPLACE K7: pending (no prior-year rows yet)
 - L3701b464 short-only ADD: pending (no prior-year rows yet)
 - L6a25b155 both sides REPLACE K7: no RED year
