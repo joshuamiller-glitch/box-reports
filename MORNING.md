@@ -7129,3 +7129,12 @@ W-LIVEREF 01:30Z: runner th_liveref/lr_run.py works (K7 test ok); 7 books x 1000
 2026-11-19T01:30:53Z W-NT hourly: NT set-months landed 698 (rate 0/h since last line); identity 4/4 landed (target 04:35Z); K7 L6M cells landed 0 (target table 06:00Z; first.txt 1 lines; controls K7+M7 target 12:00Z, pf.txt 50 lines built); page autopilot/DS3_NEAR_TARGET.md; closest to live: see page section 2
 - 2026-11-19T01:32:44Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
 - (wall 01:34Z) W-PM status: load1 78.92, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795052053; P5 page done, P8 grid np_m15_x10_y15 2898
+- 01:36Z W-EXITYIELD LEAD NOTE: 150-pair read reached (154 pairs). Section a per session (real vs null; cells = (pair, param, mode, session) on the coarse pass-1 coverage; null = mean of 2 random-entry draws):
+RECOMMENDATION: FULL RUN of all 68 recipes: new passers are 3.0x rarer in the null (null/real NEW = 0.33) and 6 of 7 families contribute.
+| scope | share of simulated trades | core-hours, all 68 recipes | core-hours, best 20 recipes | hours on the pool (262 core-eq) |
+|---|---|---|---|---|
+| NY AM + Asia only | 54% | 8,861 | 4,199 | 34 |
+| all four sessions | 100% | 16,313 | 7,731 | 62 |
+(session shares: Asia 12%, London 15%, NY AM 43%, NY PM 31% of simulated trades; the sessions are post-hoc axes of one simulation, so a session-only run saves only the signals outside those sessions.)
+- 2026-11-19T01:37Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- (wall 01:37Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 77.20 77.48 77.91, epoch 1795052249
