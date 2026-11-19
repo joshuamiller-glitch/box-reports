@@ -1,2 +1,2 @@
-# ASIA_SELFCHECK (W-ASIA; cron :08/:38; last run 2026-11-19T21:38:02Z)
-Cells in state: 3197; lines needed but not queued/DONE/parked and re-queued: A 0, a2 0, B 3, C 0; lines with no set file (not queued): 0
+# ASIA_SELFCHECK (W-ASIA; cron :08/:38; last run 2026-11-19T22:08:02Z)
+Cells in state: 3197; lines needed but not queued/DONE/parked and re-queued: A 0, a2 0, B 2, C 0; lines with no set file (not queued): 0
