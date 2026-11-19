@@ -1,8 +1,8 @@
-# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-19 21:58:01Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-19 22:07:51Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 20 distinct cells scored (0 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 0 live-book rows; L6M $/wk > 0: 13; L6M and L3M > 0: 10; labels {'WEAK-BUT-POSITIVE': 10, 'BEST-AVAILABLE-NOT-PROVEN': 7, 'LEAD': 3}. Job errors: 0. Run 574 s.
+**Counts:** 20 distinct cells scored (0 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 0 live-book rows; L6M $/wk > 0: 13; L6M and L3M > 0: 10; labels {'WEAK-BUT-POSITIVE': 10, 'BEST-AVAILABLE-NOT-PROVEN': 7, 'LEAD': 3}. Job errors: 0. Run 373 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -94,6 +94,9 @@ Bars per hour = mean over every London session (02:00-08:30, 6.5 h ET) in 2026-0
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 
 (live rows are JL3 own trades normalised to 1 lot; as-run base-lot numbers are in the CSV-side table below.)
+
+| live book | L6M $/wk at 1 lot | L6M $/wk as run (base lots) | L3M $/wk as run | L6M ulcer as run | avg lots L6M |
+|---|---|---|---|---|---|
 
 ## Top 50 London cells by own-merit SCORE (live rows appear in the live table above with their rank in the same pool)
 
