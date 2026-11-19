@@ -11,5 +11,5 @@ W-NIGHT2 (fork of lead) | guard.py/health.py/agents_live.py, alert G, HEALTH liv
 asia crons (W-ASIA, lead-reviewed 0620Z): asia_note.py :05/:35 (asked for by the lead), reorder_pending.py :10/:25/:40/:55 (ladder lines ahead of older lines; locked, atomic, multiset-checked; backup deletion removed by lead).
 # required 30-min MORNING.md cron lines (agent_line_cron.py): W-NYENG (added 09:56Z, cron */30)
 W-EXITENG (exit-recipe engine families, builder; started 09:57Z) | owns D8_EXIT_ENGINE_SUPPORT build, D8_EXIT_ENGINE_RESULTS.md | yes (exit run) | running | cron status line from its state file
-W-LAYERS (automatic layer-set builder for D8 candidates; started 09:57Z) | owns code/th_layers, TL3_NYL layer programme for beats-live cells | yes | running | cron every 30 min
+W-LAYERS (automatic layer-set builder for D8 candidates; started 09:57Z) | owns code/th_layers, TL3_NYL layer programme for beats-live cells | yes | cron-owned (built 10:0xZ; layer_cron.py :25/:55) | cron every 30 min
 W-NYENG update 09:57Z: cron ny_note.py :20/:50 now writes its line

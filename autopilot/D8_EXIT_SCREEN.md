@@ -1,4 +1,4 @@
-# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 09:45Z
+# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 10:00Z
 Research only. Screen = points per lot (base lots), 68 recipes (7 families) on the candidate cell's OWN entries, run on real entries and on 2 random-entry draws (same count / side mix). Pick rule (PREREG_D8EXIT.md sha in DECISIONS.md): eligible = L6M>0, L3M>0, trades L6M>=20, no prior year (2023-25) >30% worse; best = lowest ulcer then highest L6M. A cell BEATS-NULL when its best eligible recipe L6M exceeds the best eligible recipe of BOTH null draws (2 draws = screen only; finalists get more draws). Data week index 189 (as EXIT_YIELD). Fixed reference = best fixed bracket of the cell from pass-1 (p1real).
 Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. Until a family is built, a recipe of that family cannot be the best TESTED exit in the D8 spec (screen result stands).
 
@@ -7,9 +7,9 @@ Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. 
 | session | candidate cells | screened | pending | with an eligible exit (real) | BEATS-NULL | beat fixed ref too | ETA |
 |---|---|---|---|---|---|---|---|
 | Asia | 1875 | 1875 | 0 | 393 | 352 | 296 | done |
-| NY AM | 4557 | 3330 | 1227 | 802 | 705 | 554 | about 1.6 h after the sessions above (fleet 746 cells/h) |
+| NY AM | 4557 | 3430 | 1127 | 821 | 724 | 569 | about 1.6 h after the sessions above (fleet 725 cells/h) |
 | London | 0 | 0 | 0 | 0 | 0 | 0 | done |
-| NY PM | 396 | 118 | 278 | 8 | 8 | 3 | about 2.0 h after the sessions above (fleet 746 cells/h) |
+| NY PM | 396 | 122 | 274 | 8 | 8 | 3 | about 1.9 h after the sessions above (fleet 725 cells/h) |
 
 Asia and London candidates appear here when W-LONENG's engine rows land in D8_CANDIDATES (0 now = none listed yet, not "none exist").
 
@@ -322,19 +322,19 @@ Asia and London candidates appear here when W-LONENG's engine rows land in D8_CA
 
 | family | cells where it is the best eligible exit (real) | same on null (mean of 2 draws) |
 |---|---|---|
-| market target | 383 | 98.0 |
+| market target | 389 | 100.0 |
 | order flow | 0 | 0.5 |
-| staged | 163 | 29.5 |
-| stop-and-reverse | 43 | 6.0 |
+| staged | 162 | 29.0 |
+| stop-and-reverse | 44 | 6.0 |
 | structure stop | 41 | 5.0 |
-| time / behaviour | 182 | 51.0 |
-| trailing | 391 | 116.5 |
+| time / behaviour | 187 | 52.5 |
+| trailing | 399 | 119.5 |
 
-Screened cells with an eligible exit: real 1203 of 5323 (23%), null 306.5 of 5323 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
+Screened cells with an eligible exit: real 1222 of 5427 (23%), null 312.5 of 5427 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
 
 ## c2. BEATS-LIVE set (order 0740Z item 3): D8 candidates that already beat a live book in the exact engine - screened FIRST (sorted to the front of every host list; any worker takes them before the rank order)
 
-Set size 23 cells (NY AM 4, Asia 19); screened 23, pending 0. Fleet rate last hour 534 cells/h (all cells); the set needs 0 cells, so a newly listed beats-live cell is screened within about 21 min of the list refresh (cron 15 min) once a worker is free. Date the whole set is screened: DONE (2026-11-19 09:45Z).
+Set size 23 cells (NY AM 4, Asia 19); screened 23, pending 0. Fleet rate last hour 458 cells/h (all cells); the set needs 0 cells, so a newly listed beats-live cell is screened within about 21 min of the list refresh (cron 15 min) once a worker is free. Date the whole set is screened: DONE (2026-11-19 10:00Z).
 | cell id | session | cell | best eligible exit (real) | L6M | ulcer | fixed ref | null a / b best eligible L6M | beats nulls |
 |---|---|---|---|---|---|---|---|---|
 | L03a14486 | Asia | Asia/vsess_30/trig_bands_atrchan/break_ema/{"n": 20, "atr": 14, "k": 1.5}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | plain60/60 +80 | - / - | no |
@@ -371,7 +371,7 @@ Set size 23 cells (NY AM 4, Asia 19); screened 23, pending 0. Fleet rate last ho
 | box 1 | 0 | - | memory guard (MemAvail > 40 GB) |
 
 
-Measured: 3557 groups finished, 5920 cells, mean 239 s per cell (3 tags: real + 2 null) per worker.
+Measured: 3650 groups finished, 6049 cells, mean 242 s per cell (3 tags: real + 2 null) per worker.
 
 ## e. STAGE 1 work list for this pipeline stage (order 0228Z), hours on the current fleet, 02:33Z
 | item | size | core-hours (measured) | workers now | wall hours at today's workers | wall hours if every A+B thread (256) |
