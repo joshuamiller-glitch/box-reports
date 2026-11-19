@@ -1,4 +1,4 @@
-# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 23:15Z
+# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 23:30Z
 Research only. Screen = points per lot (base lots), 68 recipes (7 families) on the candidate cell's OWN entries, run on real entries and on 2 random-entry draws (same count / side mix). Pick rule (PREREG_D8EXIT.md sha in DECISIONS.md): eligible = L6M>0, L3M>0, trades L6M>=20, no prior year (2023-25) >30% worse; best = lowest ulcer then highest L6M. A cell BEATS-NULL when its best eligible recipe L6M exceeds the best eligible recipe of BOTH null draws (2 draws = screen only; finalists get more draws). Data week index 189 (as EXIT_YIELD). Fixed reference = best fixed bracket of the cell from pass-1 (p1real).
 Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. Until a family is built, a recipe of that family cannot be the best TESTED exit in the D8 spec (screen result stands).
 
@@ -6,8 +6,8 @@ Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. 
 
 | session | candidate cells | screened | pending | with an eligible exit (real) | BEATS-NULL | beat fixed ref too | ETA |
 |---|---|---|---|---|---|---|---|
-| Asia | 2164 | 2158 | 6 | 407 | 366 | 310 | about 0.1 h after the sessions above (fleet 53 cells/h) |
-| NY AM | 4656 | 4651 | 5 | 1130 | 1002 | 800 | about 0.2 h after the sessions above (fleet 53 cells/h) |
+| Asia | 2164 | 2164 | 0 | 407 | 366 | 310 | done |
+| NY AM | 4656 | 4653 | 3 | 1130 | 1002 | 800 | about 0.1 h after the sessions above (fleet 53 cells/h) |
 | London | 0 | 0 | 0 | 0 | 0 | 0 | done |
 | NY PM | 396 | 396 | 0 | 48 | 45 | 27 | done |
 
@@ -330,11 +330,11 @@ Asia and London candidates appear here when W-LONENG's engine rows land in D8_CA
 | time / behaviour | 244 | 66.5 |
 | trailing | 538 | 159.0 |
 
-Screened cells with an eligible exit: real 1585 of 7205 (22%), null 406.0 of 7205 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
+Screened cells with an eligible exit: real 1585 of 7213 (22%), null 406.0 of 7213 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
 
 ## c2. BEATS-LIVE set (orders 0740Z item 3 and 1014Z): D8 candidates that beat a live book in the EXACT ENGINE - screened FIRST (front of every host list). Both-side engine winners are VALID: the engine ran them as both-side books, so the BOTH-SIDE screen row below is the one that describes the engine book ("both-side, engine-tested"); the long-only / short-only rows are the one-sided variants (earlier screen results kept; engine M sets / LO sets pending). Same entries as the engine run for each row.
 
-Set size 206 cells (NY AM 51, Asia 142). Screened rows: both-side 181, long-only 142, short-only 182 (of 206 each). Fleet rate last hour 61 cells/h; the 3 rows of a cell run together (one simulation), so a newly listed beats-live cell is screened within about 20 min of the list refresh. Date the whole set is screened on all three variants: not yet (variant rows still running).
+Set size 206 cells (NY AM 51, Asia 142). Screened rows: both-side 185, long-only 142, short-only 186 (of 206 each). Fleet rate last hour 48 cells/h; the 3 rows of a cell run together (one simulation), so a newly listed beats-live cell is screened within about 20 min of the list refresh. Date the whole set is screened on all three variants: not yet (variant rows still running).
 REPLACE-ONLY (order 1407Z): a candidate is a REPLACE yes row (D8_CANDIDATES yes rows, beats_NYAM / beats_rows replace rows, the Asia page yes rows, replace_extra.txt); ADD-only rows are not candidates; cells screened earlier that are no longer REPLACE candidates drop out of this table (their rows stay in sections a / b). The exit screen is a RANKING only: it ranks recipes by the recent rule (drawdown first) on points; the engine (W-EXITENG) judges. Fixed reference = the cell's own fixed bracket on the same entries (points per lot, L6M; from the D8 pass-2 run, "n/a" until that run has landed for the cell).
 
 | cell id | session | variant | cell | fixed bracket ref (own: L6M / ulcer) | #1 recipe: L6M / L3M / ulcer | #2 | #3 | screen gain of #1 over the fixed bracket (pts, L6M) | null a / b best eligible L6M | beats nulls |
@@ -474,9 +474,9 @@ REPLACE-ONLY (order 1407Z): a candidate is a REPLACE yes row (D8_CANDIDATES yes 
 | L65a26c02 | Asia | both (both-side, engine-tested) | Asia/cusum_28/trig_momentum_mvote/v4of5/{"scale": 0.25, "thr": 0.25}/plain60/60/both | plain60/60 +2039 / u 522 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L65a26c02 | Asia | long-only (engine M set pending) | Asia/cusum_28/trig_momentum_mvote/v4of5/{"scale": 0.25, "thr": 0.25}/plain60/60/long | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L65a26c02 | Asia | short-only (engine M set pending) | Asia/cusum_28/trig_momentum_mvote/v4of5/{"scale": 0.25, "thr": 0.25}/plain60/60/short | plain60/60 +1949 / u 531 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
-| L65e8f330 |  | both (both-side, engine-tested) | not screened yet | | | | | | | |
+| L65e8f330 | Asia | both (both-side, engine-tested) | Asia/dchg_10/trig_levels_vwap/break_native/{"n": 3, "k": 0.5}/asym15u/30u/both | asym15u/30u +323 / u 544 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L65e8f330 | Asia | long-only (engine M set pending) | Asia/dchg_10/trig_levels_vwap/break_native/{"n": 3, "k": 0.5}/asym15u/30u/long | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
-| L65e8f330 |  | short-only (engine M set pending) | not screened yet | | | | | | | |
+| L65e8f330 | Asia | short-only (engine M set pending) | Asia/dchg_10/trig_levels_vwap/break_native/{"n": 3, "k": 0.5}/asym15u/30u/short | asym15u/30u +88 / u 816 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L6f0b4896 |  | both (both-side, engine-tested) | not screened yet | | | | | | | |
 | L6f0b4896 | Asia | long-only (engine M set pending) | Asia/tm240/trig_momentum_squeeze/fire_slope/{"len": 14, "wd": 1.0}/asym10u/20u/long | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L6f0b4896 |  | short-only (engine M set pending) | not screened yet | | | | | | | |
@@ -546,9 +546,9 @@ REPLACE-ONLY (order 1407Z): a candidate is a REPLACE yes row (D8_CANDIDATES yes 
 | Lbf4492a6 | Asia | both (both-side, engine-tested) | Asia/vol_2600/trig_trend_hma_turn/turn_native/{"len": 60, "width": 0.08}/plain60/60/both | plain60/60 +1228 / u 357 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Lbf4492a6 | Asia | long-only (engine M set pending) | Asia/vol_2600/trig_trend_hma_turn/turn_native/{"len": 60, "width": 0.08}/plain60/60/long | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Lbf4492a6 | Asia | short-only (engine M set pending) | Asia/vol_2600/trig_trend_hma_turn/turn_native/{"len": 60, "width": 0.08}/plain60/60/short | plain60/60 +1206 / u 353 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
-| Lc0cdd252 |  | both (both-side, engine-tested) | not screened yet | | | | | | | |
+| Lc0cdd252 | Asia | both (both-side, engine-tested) | Asia/time_m_13/trig_levels_fib5/break_native/{"n": 3, "k": 0.5}/plain60/60/both | plain60/60 +1419 / u 504 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Lc0cdd252 | Asia | long-only (engine M set pending) | Asia/time_m_13/trig_levels_fib5/break_native/{"n": 3, "k": 0.5}/plain60/60/long | n/a yet | stop=('swing', 4) trail=('chand', 3.0) (trailing): +397 / +567 / u 260 | stop=('swing', 8) trail=('chand', 3.0) (trailing): +360 / +548 / u 261 | - | n/a yet | +113 / - | yes |
-| Lc0cdd252 |  | short-only (engine M set pending) | not screened yet | | | | | | | |
+| Lc0cdd252 | Asia | short-only (engine M set pending) | Asia/time_m_13/trig_levels_fib5/break_native/{"n": 3, "k": 0.5}/plain60/60/short | plain60/60 +1250 / u 731 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Lc3f8b171 | Asia | both (both-side, engine-tested) | Asia/urenko_28/trig_trend_linreg/thresh_native/{"len": 10, "width": 1.0}/plain60/60/both | plain60/60 +1668 / u 880 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Lc3f8b171 | Asia | long-only (engine M set pending) | Asia/urenko_28/trig_trend_linreg/thresh_native/{"len": 10, "width": 1.0}/plain60/60/long | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Lc3f8b171 | Asia | short-only (engine M set pending) | Asia/urenko_28/trig_trend_linreg/thresh_native/{"len": 10, "width": 1.0}/plain60/60/short | plain60/60 +1529 / u 1623 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
@@ -594,9 +594,9 @@ REPLACE-ONLY (order 1407Z): a candidate is a REPLACE yes row (D8_CANDIDATES yes 
 | Ldddaf334 | Asia | both (both-side, engine-tested) | Asia/tm1200/trig_book_ofi/norm_fade/{"L": 50, "z": 1.0}/sym15u/both | sym15u +1065 / u 1092 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Ldddaf334 | Asia | long-only (engine M set pending) | Asia/tm1200/trig_book_ofi/norm_fade/{"L": 50, "z": 1.0}/sym15u/long | n/a yet | clock=('0825', '0955', '1155') stop=('vol', 1.5) (time / behaviour): +482 / +673 / u 310 | stop=('vol', 1.5) trail=('chand', 2.0) (trailing): +330 / +462 / u 414 | stop=('vol', 1.5) trail=('chand', 3.0) (trailing): +60 / +524 / u 467 | n/a yet | - / +281 | yes |
 | Ldddaf334 | Asia | short-only (engine M set pending) | Asia/tm1200/trig_book_ofi/norm_fade/{"L": 50, "z": 1.0}/sym15u/short | sym15u +904 / u 1997 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
-| Ldddfeb22 |  | both (both-side, engine-tested) | not screened yet | | | | | | | |
+| Ldddfeb22 | Asia | both (both-side, engine-tested) | Asia/vol_500/trig_levels_vwap/break/{"n": 2, "k": 0.5}/plain60/60/both | plain60/60 +1102 / u 331 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Ldddfeb22 | Asia | long-only (engine M set pending) | Asia/vol_500/trig_levels_vwap/break/{"n": 2, "k": 0.5}/plain60/60/long | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
-| Ldddfeb22 |  | short-only (engine M set pending) | not screened yet | | | | | | | |
+| Ldddfeb22 | Asia | short-only (engine M set pending) | Asia/vol_500/trig_levels_vwap/break/{"n": 2, "k": 0.5}/plain60/60/short | plain60/60 +1082 / u 256 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Ldfbf31b5 | Asia | both (both-side, engine-tested) | Asia/mrenko_20/trig_momentum_stoch/zone_break/{"len": 9, "lvl": 90}/plain60/60/both | plain60/60 +1788 / u 498 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | +11 / - | no |
 | Ldfbf31b5 | Asia | long-only (engine M set pending) | Asia/mrenko_20/trig_momentum_stoch/zone_break/{"len": 9, "lvl": 90}/plain60/60/long | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Ldfbf31b5 | Asia | short-only (engine M set pending) | Asia/mrenko_20/trig_momentum_stoch/zone_break/{"len": 9, "lvl": 90}/plain60/60/short | plain60/60 +1740 / u 675 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
@@ -861,9 +861,9 @@ REPLACE-ONLY (order 1407Z): a candidate is a REPLACE yes row (D8_CANDIDATES yes 
 | L77a763af | NY AM | both (both-side, engine-tested) | NYAM/trend_20/trig_levels_profile_va/break_native/{"n": 1, "k": 0.0}/sym15u/both | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L77a763af | NY AM | long-only (engine M set pending) | NYAM/trend_20/trig_levels_profile_va/break_native/{"n": 1, "k": 0.0}/sym15u/long | n/a yet | stop=('vol', 2.5) trail=('chand', 3.0) (trailing): +25 / +709 / u 673 | stage=([1.0], [0.5], True) stop=('swing', 4) target=('R', 3.0) trail=('chand', 3.0) (staged): +88 / +502 / u 677 | - | n/a yet | - / - | yes |
 | L77a763af | NY AM | short-only (engine M set pending) | NYAM/trend_20/trig_levels_profile_va/break_native/{"n": 1, "k": 0.0}/sym15u/short | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
-| L7b2166a5 | NY AM | both (both-side, engine-tested) | not screened yet | | | | | | | |
+| L7b2166a5 | NY AM | both (both-side, engine-tested) | NYAM/vsess_200/trig_structure_level/round_break/{"grid": 100, "buf": 0.0}/sym8u/both | sym8u -1148 / u 2001 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L7b2166a5 | NY AM | long-only (engine M set pending) | NYAM/vsess_200/trig_structure_level/round_break/{"grid": 100, "buf": 0.0}/sym8u/long | n/a yet | stop=('vol', 1.5) target=('R', 2.0) (market target): +141 / +1260 / u 1393 | - | - | n/a yet | - / - | yes |
-| L7b2166a5 | NY AM | short-only (engine M set pending) | not screened yet | | | | | | | |
+| L7b2166a5 | NY AM | short-only (engine M set pending) | NYAM/vsess_200/trig_structure_level/round_break/{"grid": 100, "buf": 0.0}/sym8u/short | sym8u -1439 / u 1407 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L8320d626 | NY AM | both (both-side, engine-tested) | NYAM/tm20/trig_momentum_squeeze/fire_slope/{"len": 20, "wd": 1.5}/sym15u/both | sym15u -54 / u 825 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L8320d626 | NY AM | long-only (engine M set pending) | NYAM/tm20/trig_momentum_squeeze/fire_slope/{"len": 20, "wd": 1.5}/sym15u/long | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L8320d626 | NY AM | short-only (engine M set pending) | NYAM/tm20/trig_momentum_squeeze/fire_slope/{"len": 20, "wd": 1.5}/sym15u/short | sym15u -339 / u 748 | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
@@ -1011,7 +1011,7 @@ Reading: the both-side screen rows describe the same entries the engine traded; 
 | box 1 | 0 | - | memory guard (MemAvail > 40 GB) |
 
 
-Measured: 5055 groups finished, 8003 cells, mean 285 s per cell (3 tags: real + 2 null) per worker.
+Measured: 5060 groups finished, 8011 cells, mean 285 s per cell (3 tags: real + 2 null) per worker.
 
 ## e. STAGE 1 work list for this pipeline stage (order 0228Z), hours on the current fleet, 02:33Z
 | item | size | core-hours (measured) | workers now | wall hours at today's workers | wall hours if every A+B thread (256) |

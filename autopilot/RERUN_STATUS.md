@@ -1,17 +1,17 @@
-# RERUN TABLE 23:30Z: universe 3402 | landed 3261 | running 133 | pending 8 | LOST-suspect 6
+# RERUN TABLE 23:35Z: universe 3570 | landed 3488 | running 74 | pending 8 | LOST-suspect 1
 
 LOST-suspect (re-added to pending_rerun.txt):
-TL3_ASI_Le2c8f026_RA7 202605 local
-TL3_ASI_Le2c8f026_RA7 202606 local
-TL3_ASI_Le2c8f026_RA7 202607 local
-TL3_ASI_Le2c8f026_RA7 202608 local
-TL3_ASI_Le2c8f026_RA7 202609 local
-TL3_ASI_M44872147_RA7 202609 local
+TL3_ASI_Mc02f379a_RA7 202610 local
 
-SIG CHECK all landed: sig-not-current/no-lease 34, run<60s 0; sample30: sig current 28/30, run time min/median/max 88/175/289 s
+SIG CHECK all landed: sig-not-current/no-lease 44, run<60s 0; sample30: sig current 29/30, run time min/median/max 93/163/244 s
 TL3_ASI_Mac97d189_RA7 202608 lease-sig-not-current
 TL3_ASI_Mac97d189_RA7 202609 lease-sig-not-current
 TL3_ASI_Mac97d189_RA7 202610 lease-sig-not-current
+TL3_ASI_Le2c8f026_RA7 202605 lease-sig-not-current
+TL3_ASI_Le2c8f026_RA7 202606 lease-sig-not-current
+TL3_ASI_Le2c8f026_RA7 202607 lease-sig-not-current
+TL3_ASI_Le2c8f026_RA7 202608 lease-sig-not-current
+TL3_ASI_Le2c8f026_RA7 202609 lease-sig-not-current
 TL3_ASI_Le2c8f026_RA7 202610 lease-sig-not-current
 TL3_ASI_M29388e71_RA7 202605 lease-sig-not-current
 TL3_ASI_M29388e71_RA7 202606 lease-sig-not-current
@@ -43,3 +43,8 @@ TL3_ASI_Me04aa798_RA7 202610 lease-sig-not-current
 TL3_ASI_Med328272_RA7 202605 lease-sig-not-current
 TL3_ASI_Med328272_RA7 202606 lease-sig-not-current
 TL3_ASI_Med328272_RA7 202607 lease-sig-not-current
+TL3_ASI_M44872147_RA7 202605 lease-sig-not-current
+TL3_ASI_M44872147_RA7 202606 lease-sig-not-current
+TL3_ASI_M44872147_RA7 202607 lease-sig-not-current
+TL3_ASI_M44872147_RA7 202608 lease-sig-not-current
+TL3_ASI_M44872147_RA7 202609 lease-sig-not-current
