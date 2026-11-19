@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 14:00Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 14:07Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
@@ -179,145 +179,103 @@ Gate A pass 5, Gate B pass 0 among the both-side beaters listed (see MORNING.md 
 
 Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed have a RED year, 0 none; FIXED (F sets where landed, else diag) 2 RED, 11 none. Rows without any landed engine prior year are not listed (pending).
 
-## THREE STACKS side by side: today / REPLACE / ADD, per Asia candidate (order 1324Z); pick rule below
-**Sign convention:** values are stack levels (ulcer index in $, max DD and worst week in $ (negative = loss), mean $/week), base lots, $4.84 RT; 2025 uses the capped F sets (202511 from the F set; where the F set is not landed the artefact trades are dropped = diag). Lower ulcer and a shallower (less negative) max DD / worst week = better; higher $/wk = better. REPLACE = new book ON and the beaten live book's Asia entries OFF; ADD = new book ON, live books unchanged.
-**PICK RULE (Josh, order 1324Z):** REPLACE is the default. ADD only when BOTH (a) the whole stack is better with ADD than with REPLACE - drawdown first (ulcer lower) then dollars ($/wk not lower), L6M primary with L3M beside (ulcer not higher), and the ADD row has no RED prior year under rule B - AND (b) removing the live book from the ADD stack (= the REPLACE stack) is WORSE (ulcer higher) in BOTH L6M and L3M, i.e. the live book contributes. An ADD row that beats today's stack but has no REPLACE row beating it is judged by (a) and (b), not dropped. Pass list (below): recent months (L6M and L3M beat today under the Asia rule) + no RED prior year (rule B, fixed 2025) + engine persistence pooled >= 0.58.
+## THREE STACKS side by side: today / REPLACE (candidate) / ADD (reference, not a candidate) - order 1407Z REPLACE ONLY
+**Sign convention:** stack levels (ulcer index in $, max DD and worst week in $ (negative = loss), mean $/week), base lots, $4.84 RT; 2025 uses the capped F sets. Lower ulcer, shallower (less negative) max DD / worst week and higher $/wk = better. **REPLACE = new book ON and the beaten live Asia book (A7 / K7 / P7 / H7 / U7) OFF - the ONLY kind of candidate (Josh, 1407Z: no add-ons).** The ADD column is a REFERENCE (reference, not a candidate): an ADD yes row alone is never a candidate.
+**CANDIDATE RULE:** a REPLACE row beats today's stack on L6M with L3M (drawdown first, then dollars; Asia rule), no RED prior year (rule B, engine, same-year stack vs today's, 2025 capped F sets), engine persistence >= 0.58 on the REPLACE row (pooled, non-overlapping 2-week blocks), then 30 date-shift controls, layers, exit run.
 
-| cell | window | ulcer today / REPLACE / ADD | max DD today / REPLACE / ADD | worst week today / REPLACE / ADD | $/wk today / REPLACE / ADD | stack |
+| cell | window | ulcer today / REPLACE / ADD (reference) | max DD today / REPLACE / ADD | worst week today / REPLACE / ADD | $/wk today / REPLACE / ADD | stack |
 |---|---|---|---|---|---|---|
-| Lda55d973 vol_750 (both-side, vs A7) | L6M | 9416 / 8195 / 7745 | -31109 / -29500 / -22647 | -15728 / -14097 / -14127 | 18755 / 19666 / 21015 |  |
-| Lda55d973 vol_750 (both-side, vs A7) | L3M | 11035 / 9619 / 8770 | -31109 / -29500 / -22647 | -15728 / -14097 / -9140 | 16098 / 18241 / 18064 |  |
-| Lda55d973 vol_750 (both-side, vs A7) | Y2023 | 18991 / 19175 / 19096 | -41848 / -45906 / -44288 | -17538 / -16947 / -19057 | 1797 / 1921 / 1922 |  |
-| Lda55d973 vol_750 (both-side, vs A7) | Y2024 | 28814 / 29702 / 25627 | -72026 / -71193 / -62728 | -37355 / -32036 / -32439 | 4549 / 3834 / 4923 |  |
-| Lda55d973 vol_750 (both-side, vs A7) | Y2025 | 33556 / 37946 / 35725 | -91441 / -113113 / -113679 | -38896 / -41753 / -44336 | 6846 / 6585 / 7285 | F |
-| La5b5d03a time_m_2 (both-side, vs A7) | L6M | 9416 / 8219 / 9639 | -31109 / -29679 / -31748 | -15728 / -12219 / -21575 | 18755 / 20302 / 19240 |  |
-| La5b5d03a time_m_2 (both-side, vs A7) | L3M | 11035 / 10143 / 11498 | -31109 / -29679 / -31748 | -15728 / -12219 / -15732 | 16098 / 17137 / 16048 |  |
-| La5b5d03a time_m_2 (both-side, vs A7) | Y2023 | 18991 / 24777 / 26951 | -41848 / -57457 / -58490 | -17538 / -18118 / -17960 | 1797 / 2512 / 2356 |  |
-| La5b5d03a time_m_2 (both-side, vs A7) | Y2024 | 28814 / 29111 / 28438 | -72026 / -73724 / -72100 | -37355 / -29759 / -30869 | 4549 / 4388 / 5328 |  |
-| La5b5d03a time_m_2 (both-side, vs A7) | Y2025 | 33556 / 28847 / 31307 | -91441 / -88307 / -87217 | -38896 / -34886 / -35196 | 6846 / 6955 / 7487 | F |
-| Lcb276f27 tm120 (both-side, vs A7) | L6M | 9416 / 8270 / 9685 | -31109 / -29694 / -31768 | -15728 / -12257 / -21585 | 18755 / 20322 / 19627 |  |
-| Lcb276f27 tm120 (both-side, vs A7) | L3M | 11035 / 10225 / 11581 | -31109 / -29694 / -31768 | -15728 / -12257 / -15742 | 16098 / 17183 / 16117 |  |
-| Lcb276f27 tm120 (both-side, vs A7) | Y2023 | 18991 / 24695 / 26845 | -41848 / -57137 / -58140 | -17538 / -18118 / -17990 | 1797 / 2531 / 2376 |  |
-| Lcb276f27 tm120 (both-side, vs A7) | Y2024 | 28814 / 29396 / 28746 | -72026 / -74814 / -73190 | -37355 / -29989 / -30974 | 4549 / 4377 / 5352 |  |
-| Lcb276f27 tm120 (both-side, vs A7) | Y2025 | 33556 / 28618 / 31058 | -91441 / -88282 / -87157 | -38896 / -34881 / -35191 | 6846 / 6971 / 7544 | F |
-| L1edb9fab tm300 (both-side, vs A7) | L6M | 9416 / 9274 / 10163 | -31109 / -31011 / -37086 | -15728 / -15264 / -16662 | 18755 / 20362 / 20609 |  |
-| L1edb9fab tm300 (both-side, vs A7) | L3M | 11035 / 9783 / 10624 | -31109 / -25803 / -25041 | -15728 / -13525 / -11246 | 16098 / 19182 / 17304 |  |
-| L1edb9fab tm300 (both-side, vs A7) | Y2023 | 18991 / 18137 / 18881 | -41848 / -40902 / -43977 | -17538 / -18327 / -18506 | 1797 / 2139 / 1999 |  |
-| L1edb9fab tm300 (both-side, vs A7) | Y2024 | 28814 / 27362 / 24465 | -72026 / -66000 / -59332 | -37355 / -30929 / -32855 | 4549 / 4367 / 5381 |  |
-| L1edb9fab tm300 (both-side, vs A7) | Y2025 | 33556 / 34416 / 34798 | -91441 / -96476 / -105421 | -38896 / -40930 / -40400 | 6846 / 6338 / 6879 | F |
-| L0a809c2e kagi_40 (both-side, vs A7) | L6M | 9416 / 8627 / 9370 | -31109 / -26693 / -31595 | -15728 / -15409 / -25014 | 18755 / 19157 / 20194 |  |
-| L0a809c2e kagi_40 (both-side, vs A7) | L3M | 11035 / 9538 / 9436 | -31109 / -26272 / -26449 | -15728 / -15409 / -13124 | 16098 / 17127 / 17396 |  |
-| L0a809c2e kagi_40 (both-side, vs A7) | Y2023 | 19004 / 16501 / 17070 | -41848 / -38958 / -42033 | -17538 / -16807 / -17907 | 1797 / 2430 / 2317 |  |
-| L0a809c2e kagi_40 (both-side, vs A7) | Y2024 | 28814 / 34848 / 29153 | -72026 / -70796 / -64528 | -37355 / -32010 / -35542 | 4549 / 3639 / 4650 |  |
-| L0a809c2e kagi_40 (both-side, vs A7) | Y2025 | 33556 / 35493 / 36896 | -91441 / -97750 / -107172 | -38896 / -38128 / -38482 | 6846 / 6555 / 7059 | F |
-| L17ce266f tm240 (both-side, vs A7) | L6M | 9416 / 9011 / 9901 | -31109 / -29981 / -31550 | -15728 / -15374 / -31550 | 18755 / 19414 / 19798 |  |
-| L17ce266f tm240 (both-side, vs A7) | L3M | 11035 / 10916 / 10148 | -31109 / -29981 / -25424 | -15728 / -15374 / -16179 | 16098 / 17780 / 17530 |  |
-| L17ce266f tm240 (both-side, vs A7) | Y2023 | 18991 / 19886 / 20586 | -41848 / -46162 / -49237 | -17538 / -17187 / -20012 | 1797 / 2101 / 1941 |  |
-| L17ce266f tm240 (both-side, vs A7) | Y2024 | 28814 / 31087 / 25259 | -72026 / -69545 / -60607 | -37355 / -32291 / -34218 | 4549 / 3817 / 4989 |  |
-| L17ce266f tm240 (both-side, vs A7) | Y2025 | 33556 / 33519 / 37319 | -91441 / -90338 / -107192 | -38896 / -42502 / -44906 | 6846 / 6171 / 6271 | F |
-| L5d9e7166 tm240 (both-side, vs A7) | L6M | 9416 / 9011 / 9901 | -31109 / -29981 / -31550 | -15728 / -15374 / -31550 | 18755 / 19414 / 19798 |  |
-| L5d9e7166 tm240 (both-side, vs A7) | L3M | 11035 / 10916 / 10148 | -31109 / -29981 / -25424 | -15728 / -15374 / -16179 | 16098 / 17780 / 17530 |  |
-| L5d9e7166 tm240 (both-side, vs A7) | Y2023 | 18991 / 19886 / 20586 | -41848 / -46162 / -49237 | -17538 / -17187 / -20012 | 1797 / 2101 / 1941 |  |
-| L5d9e7166 tm240 (both-side, vs A7) | Y2024 | 28814 / 31087 / 25259 | -72026 / -69545 / -60607 | -37355 / -32291 / -34218 | 4549 / 3817 / 4989 |  |
-| L5d9e7166 tm240 (both-side, vs A7) | Y2025 | 33556 / 33519 / 37319 | -91441 / -90338 / -107192 | -38896 / -42502 / -44906 | 6846 / 6171 / 6271 | F |
-| L05222ff9 time_m_4 (both-side, vs A7) | L6M | 9416 / 9021 / 9913 | -31109 / -29986 / -31545 | -15728 / -15374 / -31545 | 18755 / 18840 / 19219 |  |
-| L05222ff9 time_m_4 (both-side, vs A7) | L3M | 11035 / 10913 / 10151 | -31109 / -29986 / -25429 | -15728 / -15374 / -16179 | 16098 / 17775 / 17511 |  |
-| L05222ff9 time_m_4 (both-side, vs A7) | Y2023 | 18991 / 19866 / 20567 | -41848 / -46132 / -49207 | -17538 / -17182 / -20022 | 1797 / 2103 / 1943 |  |
-| L05222ff9 time_m_4 (both-side, vs A7) | Y2024 | 28814 / 31076 / 25264 | -72026 / -69490 / -60612 | -37355 / -32286 / -34213 | 4549 / 3790 / 4927 |  |
-| L05222ff9 time_m_4 (both-side, vs A7) | Y2025 | 33556 / 33399 / 37156 | -91441 / -90193 / -107052 | -38896 / -42472 / -44876 | 6846 / 6224 / 6326 | F |
-| L63ff9ae8 time_m_4 (both-side, vs A7) | L6M | 9416 / 9021 / 9913 | -31109 / -29986 / -31545 | -15728 / -15374 / -31545 | 18755 / 18840 / 19219 |  |
-| L63ff9ae8 time_m_4 (both-side, vs A7) | L3M | 11035 / 10913 / 10151 | -31109 / -29986 / -25429 | -15728 / -15374 / -16179 | 16098 / 17775 / 17511 |  |
-| L7c368a4f time_m_5 (both-side, vs A7) | L6M | 9416 / 9218 / 10098 | -31109 / -29299 / -36110 | -15728 / -15264 / -16662 | 18755 / 20565 / 20774 |  |
-| L7c368a4f time_m_5 (both-side, vs A7) | L3M | 11035 / 9775 / 10581 | -31109 / -25798 / -25056 | -15728 / -13500 / -11241 | 16098 / 19297 / 17339 |  |
-| L7c368a4f time_m_5 (both-side, vs A7) | Y2023 | 18991 / 18122 / 18878 | -41848 / -40922 / -43997 | -17538 / -18322 / -18511 | 1797 / 2139 / 1999 |  |
-| L7c368a4f time_m_5 (both-side, vs A7) | Y2024 | 28814 / 27024 / 24468 | -72026 / -66110 / -59717 | -37355 / -30909 / -32835 | 4549 / 4483 / 5415 |  |
-| L7c368a4f time_m_5 (both-side, vs A7) | Y2025 | 33556 / 34826 / 35124 | -91441 / -95951 / -105616 | -38896 / -40970 / -40440 | 6846 / 6203 / 6782 | F |
-| L5c9e11b3 vol_750 (both-side, vs A7) | L6M | 9416 / 8813 / 8601 | -31109 / -26328 / -27858 | -15728 / -12439 / -15772 | 18755 / 19817 / 20907 |  |
-| L5c9e11b3 vol_750 (both-side, vs A7) | L3M | 11035 / 9884 / 9329 | -31109 / -26328 / -24369 | -15728 / -12439 / -12241 | 16098 / 19559 / 19669 |  |
-| L5c9e11b3 vol_750 (both-side, vs A7) | Y2023 | 18991 / 18750 / 19212 | -41848 / -42077 / -45152 | -17538 / -17707 / -18947 | 1797 / 2352 / 2228 |  |
-| L5c9e11b3 vol_750 (both-side, vs A7) | Y2024 | 28814 / 30111 / 24611 | -72026 / -72566 / -62720 | -37355 / -32622 / -34549 | 4549 / 4220 / 5342 |  |
-| L5c9e11b3 vol_750 (both-side, vs A7) | Y2025 | 33556 / 35843 / 35608 | -91441 / -106894 / -113510 | -38896 / -39636 / -42066 | 6846 / 7130 / 7770 | F |
-| Ledfbf4d2 vol_350 (both-side, vs A7) | L6M | 9416 / 8957 / 8603 | -31109 / -30080 / -26839 | -15728 / -11323 / -17813 | 18755 / 19139 / 19635 |  |
-| Ledfbf4d2 vol_350 (both-side, vs A7) | L3M | 11035 / 10487 / 10086 | -31109 / -30080 / -26839 | -15728 / -11323 / -9580 | 16098 / 17429 / 16163 |  |
-| Ledfbf4d2 vol_350 (both-side, vs A7) | Y2023 | 18991 / 19189 / 19096 | -41848 / -44944 / -47700 | -17538 / -17087 / -17617 | 1797 / 2176 / 2291 |  |
-| Ledfbf4d2 vol_350 (both-side, vs A7) | Y2024 | 28814 / 28653 / 23857 | -72026 / -69473 / -58554 | -37355 / -33229 / -35156 | 4549 / 4294 / 5293 |  |
-| Ledfbf4d2 vol_350 (both-side, vs A7) | Y2025 | 33556 / 37173 / 36640 | -91441 / -104424 / -110691 | -38896 / -41671 / -44101 | 6846 / 6245 / 6674 | F |
-| M15f14deb tm120 (long-only, vs A7) | L6M | 9416 / 8936 / 9941 | -31109 / -29376 / -30873 | -15728 / -15225 / -15183 | 18755 / 19032 / 19379 |  |
-| M15f14deb tm120 (long-only, vs A7) | L3M | 11035 / 10859 / 11593 | -31109 / -29376 / -28061 | -15728 / -15225 / -13868 | 16098 / 16488 / 16181 |  |
-| M15f14deb tm120 (long-only, vs A7) | Y2023 | 18991 / pending / 16479 | -41848 / pending / -38718 | -17538 / pending / -17477 | 1797 / pending / 1867 |  |
-| M15f14deb tm120 (long-only, vs A7) | Y2024 | 28814 / pending / 25640 | -72026 / pending / -67869 | -37355 / pending / -35040 | 4549 / pending / 5074 |  |
-| M15f14deb tm120 (long-only, vs A7) | Y2025 | 33556 / pending / 38109 | -91441 / pending / -105011 | -38896 / pending / -41871 | 6846 / pending / 6661 | F |
-| M41ef5c77 time_m_7 (long-only, vs A7) | L6M | 9416 / 9540 / 9269 | -31109 / -34822 / -30510 | -15728 / -22915 / -14171 | 18755 / 17861 / 19035 |  |
-| M41ef5c77 time_m_7 (long-only, vs A7) | L3M | 11035 / 11534 / 10660 | -31109 / -34822 / -30510 | -15728 / -22915 / -13338 | 16098 / 15973 / 16195 |  |
-| M41ef5c77 time_m_7 (long-only, vs A7) | Y2023 | 18958 / pending / 17691 | -41848 / pending / -41859 | -17538 / pending / -18442 | 1797 / pending / 2013 |  |
-| M41ef5c77 time_m_7 (long-only, vs A7) | Y2024 | 28814 / pending / 27078 | -72026 / pending / -68838 | -37355 / pending / -37833 | 4549 / pending / 4805 |  |
-| M41ef5c77 time_m_7 (long-only, vs A7) | Y2025 | 33572 / pending / 36308 | -91441 / pending / -102773 | -38896 / pending / -40554 | 6846 / pending / 6553 | F |
-| Lf77e374b tm240 (both-side, vs A7) | L6M | 9416 / 9014 / 10535 | -31109 / -29381 / -36037 | -15728 / -15612 / -15101 | 18755 / 20195 / 19289 |  |
-| Lf77e374b tm240 (both-side, vs A7) | L3M | 11035 / 10833 / 11408 | -31109 / -29381 / -28600 | -15728 / -15612 / -15101 | 16098 / 18368 / 15821 |  |
-| Lf77e374b tm240 (both-side, vs A7) | Y2023 | 18991 / 21481 / 22332 | -41848 / -49287 / -49606 | -17538 / -16922 / -18221 | 1797 / 1864 / 1700 |  |
-| Lf77e374b tm240 (both-side, vs A7) | Y2024 | 28814 / 30058 / 25689 | -72026 / -68000 / -62279 | -37355 / -33073 / -34617 | 4549 / 3650 / 4853 |  |
-| Lf77e374b tm240 (both-side, vs A7) | Y2025 | 33556 / 35122 / 36470 | -91441 / -98122 / -110008 | -38896 / -39091 / -38679 | 6846 / 5733 / 6045 | F |
-| Mdcdb0b6e cdr_100 (long-only, vs A7) | L6M | 9416 / 9049 / 8987 | -31109 / -30562 / -25794 | -15728 / -15835 / -14772 | 18755 / 18950 / 20482 |  |
-| Mdcdb0b6e cdr_100 (long-only, vs A7) | L3M | 11035 / 11389 / 10801 | -31109 / -30562 / -25794 | -15728 / -15835 / -12789 | 16098 / 16444 / 17421 |  |
-| Mdcdb0b6e cdr_100 (long-only, vs A7) | Y2023 | 19039 / 16462 / 17269 | -41848 / -38655 / -40553 | -17538 / -18397 / -18102 | 1797 / 2250 / 2082 |  |
-| Mdcdb0b6e cdr_100 (long-only, vs A7) | Y2024 | 28856 / 29759 / 25248 | -72026 / -72918 / -65228 | -37355 / -35099 / -33829 | 4549 / 4121 / 5296 |  |
-| Mdcdb0b6e cdr_100 (long-only, vs A7) | Y2025 | 33556 / 34332 / 35301 | -91441 / -94115 / -104054 | -38896 / -37752 / -40151 | 6846 / 6717 / 7125 | F |
-| L0b1d7882 tm30 (both-side, vs A7) | L6M | 9416 / 9351 / 10198 | -31109 / -30206 / -36661 | -15728 / -14867 / -16848 | 18755 / 19150 / 19055 |  |
-| L0b1d7882 tm30 (both-side, vs A7) | L3M | 11035 / 10883 / 11074 | -31109 / -30206 / -27479 | -15728 / -14867 / -13046 | 16098 / 17640 / 16823 |  |
-| L0b1d7882 tm30 (both-side, vs A7) | Y2023 | 18991 / 17138 / 17729 | -41848 / -39476 / -39506 | -17538 / -17472 / -17947 | 1797 / 2172 / 2018 |  |
-| L0b1d7882 tm30 (both-side, vs A7) | Y2024 | 28814 / 30043 / 24602 | -72026 / -62531 / -58008 | -37355 / -34134 / -35899 | 4549 / 3574 / 4733 |  |
-| L0b1d7882 tm30 (both-side, vs A7) | Y2025 | 33556 / 35011 / 35301 | -91441 / -89401 / -99605 | -38896 / -41705 / -44544 | 6846 / 5839 / 6689 | F |
-| L4d206c8c dlt_70 (both-side, vs A7) | L6M | 9416 / 9253 / 8884 | -31109 / -33047 / -26462 | -15728 / -13559 / -14405 | 18755 / 19589 / 20047 |  |
-| L4d206c8c dlt_70 (both-side, vs A7) | L3M | 11035 / 10781 / 9773 | -31109 / -33047 / -26462 | -15728 / -13559 / -10474 | 16098 / 16762 / 17242 |  |
-| L4d206c8c dlt_70 (both-side, vs A7) | Y2023 | 18956 / 21695 / 21238 | -41848 / -50697 / -48897 | -17538 / -16987 / -18926 | 1797 / 1866 / 1925 |  |
-| L4d206c8c dlt_70 (both-side, vs A7) | Y2024 | 28856 / 31776 / 28153 | -72026 / -70895 / -67956 | -37355 / -34389 / -39984 | 4549 / 4099 / 5243 |  |
-| L4d206c8c dlt_70 (both-side, vs A7) | Y2025 | 33572 / 31209 / 30834 | -91441 / -87746 / -94394 | -38896 / -36557 / -38761 | 6846 / 6816 / 7490 | F |
-| Mac4916e6 tm180 (long-only, vs A7) | L6M | 9416 / 9359 / 9214 | -31109 / -40118 / -29771 | -15728 / -26951 / -13984 | 18755 / 17888 / 19483 |  |
-| Mac4916e6 tm180 (long-only, vs A7) | L3M | 11035 / 11633 / 10563 | -31109 / -40118 / -27108 | -15728 / -26951 / -13106 | 16098 / 15117 / 16718 |  |
-| M98c7ae1d time_m_3 (long-only, vs A7) | L6M | 9416 / 9513 / 9303 | -31109 / -40072 / -29766 | -15728 / -26934 / -13984 | 18755 / 17802 / 19391 |  |
-| M98c7ae1d time_m_3 (long-only, vs A7) | L3M | 11035 / 11886 / 10723 | -31109 / -40072 / -27840 | -15728 / -26934 / -13878 | 16098 / 15045 / 16671 |  |
-| M98c7ae1d time_m_3 (long-only, vs A7) | Y2023 | 19039 / pending / 18392 | -41848 / pending / -40734 | -17538 / pending / -18291 | 1797 / pending / 1764 |  |
-| M98c7ae1d time_m_3 (long-only, vs A7) | Y2024 | 28814 / pending / 25647 | -72026 / pending / -68147 | -37355 / pending / -36617 | 4549 / pending / 5187 |  |
-| M98c7ae1d time_m_3 (long-only, vs A7) | Y2025 | 33556 / pending / 31962 | -91441 / pending / -91291 | -38896 / pending / -37691 | 6846 / pending / 6905 | F |
-| L34e2c5ab lbrk_3_40 (both-side, vs A7) | L6M | 9416 / 9487 / 9038 | -31109 / -32666 / -27838 | -15728 / -23209 / -13336 | 18755 / 17445 / 18858 |  |
-| L34e2c5ab lbrk_3_40 (both-side, vs A7) | L3M | 11035 / 11224 / 10823 | -31109 / -32666 / -27838 | -15728 / -23209 / -13336 | 16098 / 16504 / 16709 |  |
-| L34e2c5ab lbrk_3_40 (both-side, vs A7) | Y2023 | 18922 / pending / 17884 | -41848 / pending / -40871 | -17538 / pending / -17538 | 1797 / pending / 2025 |  |
-| L34e2c5ab lbrk_3_40 (both-side, vs A7) | Y2024 | 28856 / pending / 29544 | -72026 / pending / -66032 | -37355 / pending / -32330 | 4549 / pending / 4510 |  |
-| L34e2c5ab lbrk_3_40 (both-side, vs A7) | Y2025 | 33556 / pending / 29781 | -91441 / pending / -82330 | -38896 / pending / -37536 | 6846 / pending / 7354 | F |
-| Lb5e883f6 vol_500 (both-side, vs A7) | L6M | 9416 / 10042 / 9270 | -31109 / -30813 / -25863 | -15728 / -16663 / -13971 | 18755 / 18648 / 19520 |  |
-| Lb5e883f6 vol_500 (both-side, vs A7) | L3M | 11035 / 12175 / 10629 | -31109 / -30813 / -24411 | -15728 / -16663 / -12759 | 16098 / 16808 / 17344 |  |
-| Lb5e883f6 vol_500 (both-side, vs A7) | Y2023 | 18991 / pending / 17524 | -41848 / pending / -40733 | -17538 / pending / -17457 | 1797 / pending / 2565 |  |
-| Lb5e883f6 vol_500 (both-side, vs A7) | Y2024 | 28814 / pending / 27189 | -72026 / pending / -66749 | -37355 / pending / -37234 | 4549 / pending / 4922 |  |
-| Lb5e883f6 vol_500 (both-side, vs A7) | Y2025 | 33556 / pending / 35242 | -91441 / pending / -108909 | -38896 / pending / -43081 | 6846 / pending / 7123 | F |
+| Lda55d973 vol_750 (both-side, REPLACE A7) | L6M | 9416 / 8195 / 7745 | -31109 / -29500 / -22647 | -15728 / -14097 / -14127 | 18755 / 19666 / 21015 |  |
+| Lda55d973 vol_750 (both-side, REPLACE A7) | L3M | 11035 / 9619 / 8770 | -31109 / -29500 / -22647 | -15728 / -14097 / -9140 | 16098 / 18241 / 18064 |  |
+| Lda55d973 vol_750 (both-side, REPLACE A7) | Y2023 | 18991 / 19175 / 19096 | -41848 / -45906 / -44288 | -17538 / -16947 / -19057 | 1797 / 1921 / 1922 |  |
+| Lda55d973 vol_750 (both-side, REPLACE A7) | Y2024 | 28814 / 29702 / 25627 | -72026 / -71193 / -62728 | -37355 / -32036 / -32439 | 4549 / 3834 / 4923 |  |
+| Lda55d973 vol_750 (both-side, REPLACE A7) | Y2025 | 33556 / 37946 / 35725 | -91441 / -113113 / -113679 | -38896 / -41753 / -44336 | 6846 / 6585 / 7285 | F |
+| La5b5d03a time_m_2 (both-side, REPLACE A7) | L6M | 9416 / 8219 / 9639 | -31109 / -29679 / -31748 | -15728 / -12219 / -21575 | 18755 / 20302 / 19240 |  |
+| La5b5d03a time_m_2 (both-side, REPLACE A7) | L3M | 11035 / 10143 / 11498 | -31109 / -29679 / -31748 | -15728 / -12219 / -15732 | 16098 / 17137 / 16048 |  |
+| La5b5d03a time_m_2 (both-side, REPLACE A7) | Y2023 | 18991 / 24777 / 26951 | -41848 / -57457 / -58490 | -17538 / -18118 / -17960 | 1797 / 2512 / 2356 |  |
+| La5b5d03a time_m_2 (both-side, REPLACE A7) | Y2024 | 28814 / 29111 / 28438 | -72026 / -73724 / -72100 | -37355 / -29759 / -30869 | 4549 / 4388 / 5328 |  |
+| La5b5d03a time_m_2 (both-side, REPLACE A7) | Y2025 | 33556 / 28847 / 31307 | -91441 / -88307 / -87217 | -38896 / -34886 / -35196 | 6846 / 6955 / 7487 | F |
+| Lcb276f27 tm120 (both-side, REPLACE A7) | L6M | 9416 / 8270 / 9685 | -31109 / -29694 / -31768 | -15728 / -12257 / -21585 | 18755 / 20322 / 19627 |  |
+| Lcb276f27 tm120 (both-side, REPLACE A7) | L3M | 11035 / 10225 / 11581 | -31109 / -29694 / -31768 | -15728 / -12257 / -15742 | 16098 / 17183 / 16117 |  |
+| Lcb276f27 tm120 (both-side, REPLACE A7) | Y2023 | 18991 / 24695 / 26845 | -41848 / -57137 / -58140 | -17538 / -18118 / -17990 | 1797 / 2531 / 2376 |  |
+| Lcb276f27 tm120 (both-side, REPLACE A7) | Y2024 | 28814 / 29396 / 28746 | -72026 / -74814 / -73190 | -37355 / -29989 / -30974 | 4549 / 4377 / 5352 |  |
+| Lcb276f27 tm120 (both-side, REPLACE A7) | Y2025 | 33556 / 28618 / 31058 | -91441 / -88282 / -87157 | -38896 / -34881 / -35191 | 6846 / 6971 / 7544 | F |
+| L1edb9fab tm300 (both-side, REPLACE A7) | L6M | 9416 / 9274 / 10163 | -31109 / -31011 / -37086 | -15728 / -15264 / -16662 | 18755 / 20362 / 20609 |  |
+| L1edb9fab tm300 (both-side, REPLACE A7) | L3M | 11035 / 9783 / 10624 | -31109 / -25803 / -25041 | -15728 / -13525 / -11246 | 16098 / 19182 / 17304 |  |
+| L1edb9fab tm300 (both-side, REPLACE A7) | Y2023 | 18991 / 18137 / 18881 | -41848 / -40902 / -43977 | -17538 / -18327 / -18506 | 1797 / 2139 / 1999 |  |
+| L1edb9fab tm300 (both-side, REPLACE A7) | Y2024 | 28814 / 27362 / 24465 | -72026 / -66000 / -59332 | -37355 / -30929 / -32855 | 4549 / 4367 / 5381 |  |
+| L1edb9fab tm300 (both-side, REPLACE A7) | Y2025 | 33556 / 34416 / 34798 | -91441 / -96476 / -105421 | -38896 / -40930 / -40400 | 6846 / 6338 / 6879 | F |
+| L0a809c2e kagi_40 (both-side, REPLACE A7) | L6M | 9416 / 8627 / 9370 | -31109 / -26693 / -31595 | -15728 / -15409 / -25014 | 18755 / 19157 / 20194 |  |
+| L0a809c2e kagi_40 (both-side, REPLACE A7) | L3M | 11035 / 9538 / 9436 | -31109 / -26272 / -26449 | -15728 / -15409 / -13124 | 16098 / 17127 / 17396 |  |
+| L0a809c2e kagi_40 (both-side, REPLACE A7) | Y2023 | 19004 / 16501 / 17070 | -41848 / -38958 / -42033 | -17538 / -16807 / -17907 | 1797 / 2430 / 2317 |  |
+| L0a809c2e kagi_40 (both-side, REPLACE A7) | Y2024 | 28814 / 34848 / 29153 | -72026 / -70796 / -64528 | -37355 / -32010 / -35542 | 4549 / 3639 / 4650 |  |
+| L0a809c2e kagi_40 (both-side, REPLACE A7) | Y2025 | 33556 / 35493 / 36896 | -91441 / -97750 / -107172 | -38896 / -38128 / -38482 | 6846 / 6555 / 7059 | F |
+| L17ce266f tm240 (both-side, REPLACE A7) | L6M | 9416 / 9011 / 9901 | -31109 / -29981 / -31550 | -15728 / -15374 / -31550 | 18755 / 19414 / 19798 |  |
+| L17ce266f tm240 (both-side, REPLACE A7) | L3M | 11035 / 10916 / 10148 | -31109 / -29981 / -25424 | -15728 / -15374 / -16179 | 16098 / 17780 / 17530 |  |
+| L17ce266f tm240 (both-side, REPLACE A7) | Y2023 | 18991 / 19886 / 20586 | -41848 / -46162 / -49237 | -17538 / -17187 / -20012 | 1797 / 2101 / 1941 |  |
+| L17ce266f tm240 (both-side, REPLACE A7) | Y2024 | 28814 / 31087 / 25259 | -72026 / -69545 / -60607 | -37355 / -32291 / -34218 | 4549 / 3817 / 4989 |  |
+| L17ce266f tm240 (both-side, REPLACE A7) | Y2025 | 33556 / 33519 / 37319 | -91441 / -90338 / -107192 | -38896 / -42502 / -44906 | 6846 / 6171 / 6271 | F |
+| L5d9e7166 tm240 (both-side, REPLACE A7) | L6M | 9416 / 9011 / 9901 | -31109 / -29981 / -31550 | -15728 / -15374 / -31550 | 18755 / 19414 / 19798 |  |
+| L5d9e7166 tm240 (both-side, REPLACE A7) | L3M | 11035 / 10916 / 10148 | -31109 / -29981 / -25424 | -15728 / -15374 / -16179 | 16098 / 17780 / 17530 |  |
+| L5d9e7166 tm240 (both-side, REPLACE A7) | Y2023 | 18991 / 19886 / 20586 | -41848 / -46162 / -49237 | -17538 / -17187 / -20012 | 1797 / 2101 / 1941 |  |
+| L5d9e7166 tm240 (both-side, REPLACE A7) | Y2024 | 28814 / 31087 / 25259 | -72026 / -69545 / -60607 | -37355 / -32291 / -34218 | 4549 / 3817 / 4989 |  |
+| L5d9e7166 tm240 (both-side, REPLACE A7) | Y2025 | 33556 / 33519 / 37319 | -91441 / -90338 / -107192 | -38896 / -42502 / -44906 | 6846 / 6171 / 6271 | F |
+| L05222ff9 time_m_4 (both-side, REPLACE A7) | L6M | 9416 / 9021 / 9913 | -31109 / -29986 / -31545 | -15728 / -15374 / -31545 | 18755 / 18840 / 19219 |  |
+| L05222ff9 time_m_4 (both-side, REPLACE A7) | L3M | 11035 / 10913 / 10151 | -31109 / -29986 / -25429 | -15728 / -15374 / -16179 | 16098 / 17775 / 17511 |  |
+| L05222ff9 time_m_4 (both-side, REPLACE A7) | Y2023 | 18991 / 19866 / 20567 | -41848 / -46132 / -49207 | -17538 / -17182 / -20022 | 1797 / 2103 / 1943 |  |
+| L05222ff9 time_m_4 (both-side, REPLACE A7) | Y2024 | 28814 / 31076 / 25264 | -72026 / -69490 / -60612 | -37355 / -32286 / -34213 | 4549 / 3790 / 4927 |  |
+| L05222ff9 time_m_4 (both-side, REPLACE A7) | Y2025 | 33556 / 33399 / 37156 | -91441 / -90193 / -107052 | -38896 / -42472 / -44876 | 6846 / 6224 / 6326 | F |
+| L63ff9ae8 time_m_4 (both-side, REPLACE A7) | L6M | 9416 / 9021 / 9913 | -31109 / -29986 / -31545 | -15728 / -15374 / -31545 | 18755 / 18840 / 19219 |  |
+| L63ff9ae8 time_m_4 (both-side, REPLACE A7) | L3M | 11035 / 10913 / 10151 | -31109 / -29986 / -25429 | -15728 / -15374 / -16179 | 16098 / 17775 / 17511 |  |
+| L7c368a4f time_m_5 (both-side, REPLACE A7) | L6M | 9416 / 9218 / 10098 | -31109 / -29299 / -36110 | -15728 / -15264 / -16662 | 18755 / 20565 / 20774 |  |
+| L7c368a4f time_m_5 (both-side, REPLACE A7) | L3M | 11035 / 9775 / 10581 | -31109 / -25798 / -25056 | -15728 / -13500 / -11241 | 16098 / 19297 / 17339 |  |
+| L7c368a4f time_m_5 (both-side, REPLACE A7) | Y2023 | 18991 / 18122 / 18878 | -41848 / -40922 / -43997 | -17538 / -18322 / -18511 | 1797 / 2139 / 1999 |  |
+| L7c368a4f time_m_5 (both-side, REPLACE A7) | Y2024 | 28814 / 27024 / 24468 | -72026 / -66110 / -59717 | -37355 / -30909 / -32835 | 4549 / 4483 / 5415 |  |
+| L7c368a4f time_m_5 (both-side, REPLACE A7) | Y2025 | 33556 / 34826 / 35124 | -91441 / -95951 / -105616 | -38896 / -40970 / -40440 | 6846 / 6203 / 6782 | F |
+| L5c9e11b3 vol_750 (both-side, REPLACE A7) | L6M | 9416 / 8813 / 8601 | -31109 / -26328 / -27858 | -15728 / -12439 / -15772 | 18755 / 19817 / 20907 |  |
+| L5c9e11b3 vol_750 (both-side, REPLACE A7) | L3M | 11035 / 9884 / 9329 | -31109 / -26328 / -24369 | -15728 / -12439 / -12241 | 16098 / 19559 / 19669 |  |
+| L5c9e11b3 vol_750 (both-side, REPLACE A7) | Y2023 | 18991 / 18750 / 19212 | -41848 / -42077 / -45152 | -17538 / -17707 / -18947 | 1797 / 2352 / 2228 |  |
+| L5c9e11b3 vol_750 (both-side, REPLACE A7) | Y2024 | 28814 / 30111 / 24611 | -72026 / -72566 / -62720 | -37355 / -32622 / -34549 | 4549 / 4220 / 5342 |  |
+| L5c9e11b3 vol_750 (both-side, REPLACE A7) | Y2025 | 33556 / 35843 / 35608 | -91441 / -106894 / -113510 | -38896 / -39636 / -42066 | 6846 / 7130 / 7770 | F |
+| Ledfbf4d2 vol_350 (both-side, REPLACE A7) | L6M | 9416 / 8957 / 8603 | -31109 / -30080 / -26839 | -15728 / -11323 / -17813 | 18755 / 19139 / 19635 |  |
+| Ledfbf4d2 vol_350 (both-side, REPLACE A7) | L3M | 11035 / 10487 / 10086 | -31109 / -30080 / -26839 | -15728 / -11323 / -9580 | 16098 / 17429 / 16163 |  |
+| Ledfbf4d2 vol_350 (both-side, REPLACE A7) | Y2023 | 18991 / 19189 / 19096 | -41848 / -44944 / -47700 | -17538 / -17087 / -17617 | 1797 / 2176 / 2291 |  |
+| Ledfbf4d2 vol_350 (both-side, REPLACE A7) | Y2024 | 28814 / 28653 / 23857 | -72026 / -69473 / -58554 | -37355 / -33229 / -35156 | 4549 / 4294 / 5293 |  |
+| Ledfbf4d2 vol_350 (both-side, REPLACE A7) | Y2025 | 33556 / 37173 / 36640 | -91441 / -104424 / -110691 | -38896 / -41671 / -44101 | 6846 / 6245 / 6674 | F |
+| M15f14deb tm120 (long-only, REPLACE A7) | L6M | 9416 / 8936 / 9941 | -31109 / -29376 / -30873 | -15728 / -15225 / -15183 | 18755 / 19032 / 19379 |  |
+| M15f14deb tm120 (long-only, REPLACE A7) | L3M | 11035 / 10859 / 11593 | -31109 / -29376 / -28061 | -15728 / -15225 / -13868 | 16098 / 16488 / 16181 |  |
+| Lf77e374b tm240 (both-side, REPLACE A7) | L6M | 9416 / 9014 / 10535 | -31109 / -29381 / -36037 | -15728 / -15612 / -15101 | 18755 / 20195 / 19289 |  |
+| Lf77e374b tm240 (both-side, REPLACE A7) | L3M | 11035 / 10833 / 11408 | -31109 / -29381 / -28600 | -15728 / -15612 / -15101 | 16098 / 18368 / 15821 |  |
+| Lf77e374b tm240 (both-side, REPLACE A7) | Y2023 | 18991 / 21481 / 22332 | -41848 / -49287 / -49606 | -17538 / -16922 / -18221 | 1797 / 1864 / 1700 |  |
+| Lf77e374b tm240 (both-side, REPLACE A7) | Y2024 | 28814 / 30058 / 25689 | -72026 / -68000 / -62279 | -37355 / -33073 / -34617 | 4549 / 3650 / 4853 |  |
+| Lf77e374b tm240 (both-side, REPLACE A7) | Y2025 | 33556 / 35122 / 36470 | -91441 / -98122 / -110008 | -38896 / -39091 / -38679 | 6846 / 5733 / 6045 | F |
+| L0b1d7882 tm30 (both-side, REPLACE A7) | L6M | 9416 / 9351 / 10198 | -31109 / -30206 / -36661 | -15728 / -14867 / -16848 | 18755 / 19150 / 19055 |  |
+| L0b1d7882 tm30 (both-side, REPLACE A7) | L3M | 11035 / 10883 / 11074 | -31109 / -30206 / -27479 | -15728 / -14867 / -13046 | 16098 / 17640 / 16823 |  |
+| L0b1d7882 tm30 (both-side, REPLACE A7) | Y2023 | 18991 / 17138 / 17729 | -41848 / -39476 / -39506 | -17538 / -17472 / -17947 | 1797 / 2172 / 2018 |  |
+| L0b1d7882 tm30 (both-side, REPLACE A7) | Y2024 | 28814 / 30043 / 24602 | -72026 / -62531 / -58008 | -37355 / -34134 / -35899 | 4549 / 3574 / 4733 |  |
+| L0b1d7882 tm30 (both-side, REPLACE A7) | Y2025 | 33556 / 35011 / 35301 | -91441 / -89401 / -99605 | -38896 / -41705 / -44544 | 6846 / 5839 / 6689 | F |
 
-## PICK and PASS LIST (Asia candidates; recent months + no RED prior year + engine persistence >= 0.58)
+## REPLACE PASS LIST (provisional): REPLACE row beats today on L6M+L3M + no RED prior year (rule B) + engine persistence >= 0.58
 
-| cell | stream | beats today (REPLACE / ADD) | (a) ADD better than REPLACE | (b) REPLACE worse than ADD in L6M and L3M | PICK | pick row prior years (rule B, F-fixed 2025) | engine persistence pooled (>= 0.58) | PASS so far | still needs |
-|---|---|---|---|---|---|---|---|---|---|
-| Lda55d973 vol_750 | both-side | yes / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 AMBER | 0.62 (93) PASS | PASS (3 prior years landed) | layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
-| La5b5d03a time_m_2 | both-side | yes / no | no | no | REPLACE | 2023 RED / 2024 GREEN / 2025 GREEN | 0.52 (93) fail | fail | - |
-| Lcb276f27 tm120 | both-side | yes / no | no | no | REPLACE | 2023 RED / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
-| L1edb9fab tm300 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
-| L0a809c2e kagi_40 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.56 (93) fail | fail | - |
-| L17ce266f tm240 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.51 (93) fail | fail | - |
-| L5d9e7166 tm240 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.51 (93) fail | fail | - |
-| L05222ff9 time_m_4 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.51 (93) fail | fail | - |
-| L63ff9ae8 time_m_4 | both-side | yes / no | no | no | REPLACE | pending | 0.54 (13) fail | fail | - |
-| L7c368a4f time_m_5 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
-| L5c9e11b3 vol_750 | both-side | yes / no | yes | yes | REPLACE | 2023 GREEN / 2024 GREEN / 2025 AMBER | 0.58 (93) PASS | PASS (3 prior years landed) | 30 controls (16 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
-| Ledfbf4d2 vol_350 | both-side | yes / no | yes | yes | REPLACE | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
-| M15f14deb tm120 | long-only | yes / no | no | no | REPLACE | pending | 0.51 (67) fail | fail | - |
-| M41ef5c77 time_m_7 | long-only | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.58 (93) PASS | PASS (3 prior years landed) | 30 controls (0 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
-| Lf77e374b tm240 | both-side | yes / no | no | no | REPLACE | 2023 AMBER / 2024 AMBER / 2025 AMBER | 0.48 (93) fail | fail | - |
-| Mdcdb0b6e cdr_100 | long-only | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.65 (93) PASS | PASS (3 prior years landed) | 30 controls (0 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
-| L0b1d7882 tm30 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.46 (93) fail | fail | - |
-| L4d206c8c dlt_70 | both-side | no / yes | yes | yes | ADD | 2023 AMBER / 2024 GREEN / 2025 GREEN | 0.61 (93) PASS | PASS (3 prior years landed) | 30 controls (0 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
-| Mac4916e6 tm180 | long-only | no / yes | yes | yes | ADD | pending | 0.54 (13) fail | fail | - |
-| M98c7ae1d time_m_3 | long-only | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.66 (93) PASS | PASS (3 prior years landed) | 30 controls (1 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
-| L34e2c5ab lbrk_3_40 | both-side | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.63 (93) PASS | PASS (3 prior years landed) | 30 controls (0 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
-| Lb5e883f6 vol_500 | both-side | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 AMBER | 0.66 (93) PASS | PASS (3 prior years landed) | 30 controls (19 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
+| cell | stream | live book REPLACED | L6M / L3M beats today | prior years rule B (F-fixed 2025) | engine persistence pooled (>= 0.58) | PASS so far | still needs |
+|---|---|---|---|---|---|---|---|
+| Lda55d973 vol_750 | both-side | A7 | yes / yes | 2023 GREEN / 2024 AMBER / 2025 AMBER | 0.52 (93) fail | fail | - |
+| La5b5d03a time_m_2 | both-side | A7 | yes / yes | 2023 RED / 2024 GREEN / 2025 GREEN | 0.52 (93) fail | fail | - |
+| Lcb276f27 tm120 | both-side | A7 | yes / yes | 2023 RED / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
+| L1edb9fab tm300 | both-side | A7 | yes / yes | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
+| L0a809c2e kagi_40 | both-side | A7 | yes / yes | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.56 (93) fail | fail | - |
+| L17ce266f tm240 | both-side | A7 | yes / yes | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.51 (93) fail | fail | - |
+| L5d9e7166 tm240 | both-side | A7 | yes / yes | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.51 (93) fail | fail | - |
+| L05222ff9 time_m_4 | both-side | A7 | yes / yes | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.51 (93) fail | fail | - |
+| L63ff9ae8 time_m_4 | both-side | A7 | yes / yes | pending | 0.54 (13) fail | fail | - |
+| L7c368a4f time_m_5 | both-side | A7 | yes / yes | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
+| L5c9e11b3 vol_750 | both-side | A7 | yes / yes | 2023 GREEN / 2024 GREEN / 2025 AMBER | 0.58 (93) PASS | PASS (3 prior years landed) | 30 controls of the REPLACE set; layers (W-LAYERS); exit run (D8_EXIT_SCREEN.md) |
+| Ledfbf4d2 vol_350 | both-side | A7 | yes / yes | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
+| M15f14deb tm120 | long-only | A7 | yes / yes | pending | 0.51 (67) fail | fail | - |
+| Lf77e374b tm240 | both-side | A7 | yes / yes | 2023 AMBER / 2024 AMBER / 2025 AMBER | 0.48 (93) fail | fail | - |
+| L0b1d7882 tm30 | both-side | A7 | yes / yes | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.46 (93) fail | fail | - |
 
-**Asia pass list so far: 8 candidate rows** (Lda55d973 both-side ADD, L5c9e11b3 both-side REPLACE, M41ef5c77 long-only ADD, Mdcdb0b6e long-only ADD, L4d206c8c both-side ADD, M98c7ae1d long-only ADD, L34e2c5ab both-side ADD, Lb5e883f6 both-side ADD). A candidate that passes on all of recent months, no RED prior year and persistence >= 0.58 still needs the 30 date-shift controls, layers and the exit run before it can enter D8 (see the table; dates in MORNING.md).
+**Asia REPLACE pass list so far: 1 candidate rows** (L5c9e11b3 both-side REPLACE A7). A REPLACE candidate that passes recent months, no RED prior year (rule B) and engine persistence >= 0.58 still needs the 30 date-shift controls of its REPLACE set, layers and the exit run before D8 (dates in MORNING.md).
 
 ## Twin cells (identical event stream; results shown are the canonical's, labelled; NOT counted again)
 
@@ -395,21 +353,21 @@ Rate now: Asia landed last hour 645 set-months/h (box-1 tree view; see MORNING.m
 
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 687, last 3 h 4337; Asia queue lines pending (not DONE): 62905.
+Asia set-months landed: last 1 h 935, last 3 h 4300; Asia queue lines pending (not DONE): 62706.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position 5, _nye/pending_l 13, _nye/pending_w , _lon 14 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > EXE > ASI > NYL > NYR > NYF > FR > NYE > NYW > LON
-- box1 running engine sets by tag: 28 TL3_NYL_      13 TL3_ASI_      12 TL3_NYW_       7 TL3_LON_
+- box1 running engine sets by tag: 20 TL3_NYL_      18 TL3_NYW_      13 TL3_ASI_       6 TL3_LON_
 - server2 running engine sets by tag: 54 TL3_ASI_
-- A running engine sets by tag: 222 TL3_ASI_
-- B running engine sets by tag: 198 TL3_ASI_
+- A running engine sets by tag: 194 TL3_ASI_       6 TL3_NYL_
+- B running engine sets by tag: 170 TL3_NYL_      14 TL3_ASI_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
 |---|---|---|---|---|---|---|---|
 | AB6 trb_240 / levels_fib15.break_native {"n": 3, "k": 0.5} / plain60/60 / both | no (L6M du +335 dm +1217 | L3M du +511 dm -702) | no (L6M du +2242 dm -2808 | L3M du +3964 dm -6870) | not run | no (L6M du +49 dm +370 | L3M du +377 dm -199) | no (L6M du -296 dm -526 | L3M du -327 dm -1249) | no (L6M du -1396 dm -146 | L3M du -2236 dm -914) | 0 of 30 |
-| Lda55d973 vol_750 / momentum_stoch.zone_break_native {"len": 9, "lvl": 80} / plain60/60 / both (both sides, engine-tested; screen mode long) | yes (L6M du -1672 dm +2260 | L3M du -2265 dm +1965 RED Y2025) | no (L6M du +360 dm -2813 | L3M du +724 dm -4895) | no (L6M du +1702 dm -8194 | L3M du +2043 dm -6482) | yes (L6M du -1222 dm +911 | L3M du -1416 dm +2143 RED Y2025) | no (L6M du -99 dm -268 | L3M du -1462 dm +1191) | no (L6M du -1348 dm -66 | L3M du -1355 dm -1789) | 43 of 30 |
+| Lda55d973 vol_750 / momentum_stoch.zone_break_native {"len": 9, "lvl": 80} / plain60/60 / both (both sides, engine-tested; screen mode long) | yes (L6M du -1672 dm +2260 | L3M du -2265 dm +1965 RED Y2025) | no (L6M du +360 dm -2813 | L3M du +724 dm -4895) | no (L6M du +1702 dm -8194 | L3M du +2043 dm -6482) | yes (L6M du -1222 dm +911 | L3M du -1416 dm +2143 RED Y2025) | no (L6M du -99 dm -268 | L3M du -1462 dm +1191) | no (L6M du -1348 dm -66 | L3M du -1355 dm -1789) | 55 of 30 |
 | La5b5d03a time_m_2 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +222 dm +485 | L3M du +463 dm -51 RED Y2023) | no (L6M du +926 dm -2686 | L3M du +2289 dm -5618) | no (L6M du +3399 dm -9027 | L3M du +3705 dm -6504) | yes (L6M du -1197 dm +1547 | L3M du -892 dm +1038 RED Y2023) | no (L6M du +1058 dm -152 | L3M du -311 dm -616) | no (L6M du +99 dm -575 | L3M du -1062 dm -419) | 0 of 30 |
 | Lcb276f27 tm120 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +269 dm +872 | L3M du +546 dm +19 RED Y2023) | no (L6M du +985 dm -2570 | L3M du +2381 dm -5549) | no (L6M du +3438 dm -8996 | L3M du +3770 dm -6434) | yes (L6M du -1146 dm +1567 | L3M du -811 dm +1085 RED Y2023) | no (L6M du +1110 dm -122 | L3M du -214 dm -547) | no (L6M du +134 dm -550 | L3M du -996 dm -348) | 0 of 30 |
 | M718570f8 time_m_4 / momentum_squeeze.fire_slope {"len": 14, "wd": 1.0} / asym10u/20u / long-only | no (L6M du +180 dm +165 | L3M du -1464 dm +1300) | not run | not run | no (L6M du -1097 dm +263 | L3M du -1081 dm +975) | not run | not run | 0 of 30 |
@@ -417,12 +375,12 @@ Asia set-months landed: last 1 h 687, last 3 h 4337; Asia queue lines pending (n
 ## Cells that beat a live Asia book (Asia rule, yes), drawdown first
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | prior years run | controls |
 |---|---|---|---|---|---|---|---|---|
-| Lda55d973 vol_750 / momentum_stoch.zone_break_native {"len": 9, "lvl": 80} / plain60/60 / both (both sides, engine-tested; screen mode long) | yes (L6M du -1672 dm +2260 | L3M du -2265 dm +1965 RED Y2025) | no (L6M du +360 dm -2813 | L3M du +724 dm -4895) | no (L6M du +1702 dm -8194 | L3M du +2043 dm -6482) | yes (L6M du -1222 dm +911 | L3M du -1416 dm +2143 RED Y2025) | no (L6M du -99 dm -268 | L3M du -1462 dm +1191) | no (L6M du -1348 dm -66 | L3M du -1355 dm -1789) | K7:0,P7:0,A7:3,H7:0,U7:0 | 43 of 30 |
+| Lda55d973 vol_750 / momentum_stoch.zone_break_native {"len": 9, "lvl": 80} / plain60/60 / both (both sides, engine-tested; screen mode long) | yes (L6M du -1672 dm +2260 | L3M du -2265 dm +1965 RED Y2025) | no (L6M du +360 dm -2813 | L3M du +724 dm -4895) | no (L6M du +1702 dm -8194 | L3M du +2043 dm -6482) | yes (L6M du -1222 dm +911 | L3M du -1416 dm +2143 RED Y2025) | no (L6M du -99 dm -268 | L3M du -1462 dm +1191) | no (L6M du -1348 dm -66 | L3M du -1355 dm -1789) | K7:0,P7:0,A7:3,H7:0,U7:0 | 55 of 30 |
 | La5b5d03a time_m_2 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +222 dm +485 | L3M du +463 dm -51 RED Y2023) | no (L6M du +926 dm -2686 | L3M du +2289 dm -5618) | no (L6M du +3399 dm -9027 | L3M du +3705 dm -6504) | yes (L6M du -1197 dm +1547 | L3M du -892 dm +1038 RED Y2023) | no (L6M du +1058 dm -152 | L3M du -311 dm -616) | no (L6M du +99 dm -575 | L3M du -1062 dm -419) | K7:0,P7:0,A7:3,H7:0,U7:0 | 0 of 30 |
 | Lcb276f27 tm120 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +269 dm +872 | L3M du +546 dm +19 RED Y2023) | no (L6M du +985 dm -2570 | L3M du +2381 dm -5549) | no (L6M du +3438 dm -8996 | L3M du +3770 dm -6434) | yes (L6M du -1146 dm +1567 | L3M du -811 dm +1085 RED Y2023) | no (L6M du +1110 dm -122 | L3M du -214 dm -547) | no (L6M du +134 dm -550 | L3M du -996 dm -348) | K7:0,P7:0,A7:3,H7:0,U7:0 | 0 of 30 |
 | L0a809c2e kagi_40 / trend_ma_t3.price_native {"len": 13, "width": 0.25} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du -47 dm +1439 | L3M du -1599 dm +1297 RED Y2025) | no (L6M du -464 dm -2469 | L3M du -671 dm -4382) | no (L6M du +3556 dm -9315 | L3M du +3509 dm -8084) | yes (L6M du -789 dm +402 | L3M du -1498 dm +1029 RED Y2025) | no (L6M du -554 dm -71 | L3M du -1326 dm +708) | no (L6M du -84 dm -1395 | L3M du -2134 dm -968) | K7:0,P7:0,A7:3,H7:0,U7:0 | 0 of 30 |
 | L7c368a4f time_m_5 / pullback_ema.depth {"len": 10, "w": 0.5} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du +682 dm +2019 | L3M du -454 dm +1240 RED Y2025) | no (L6M du -649 dm -1287 | L3M du -1529 dm -2786) | no (L6M du +2892 dm -7177 | L3M du +3173 dm -4564) | yes (L6M du -199 dm +1810 | L3M du -1260 dm +3199 RED Y2025) | no (L6M du +334 dm +628 | L3M du -711 dm +811 RED Y2025,Y2023) | no (L6M du +52 dm +184 | L3M du -2119 dm +569 RED Y2025) | K7:0,P7:0,A7:3,H7:3,U7:3 | 0 of 30 |
-| L5c9e11b3 vol_750 / momentum_mvote.v3of5 {"scale": 0.25, "thr": 0.25} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du -815 dm +2152 | L3M du -1706 dm +3570 RED Y2025) | no (L6M du +1530 dm -2252 | L3M du +2684 dm -3703) | no (L6M du +2680 dm -9625 | L3M du +2168 dm -6262) | yes (L6M du -603 dm +1062 | L3M du -1151 dm +3460 RED Y2025) | no (L6M du -451 dm +87 | L3M du -636 dm +2865 RED Y2025,Y2023) | no (L6M du -169 dm -472 | L3M du -651 dm +1123) | K7:0,P7:0,A7:3,H7:3,U7:0 | 16 of 30 |
+| L5c9e11b3 vol_750 / momentum_mvote.v3of5 {"scale": 0.25, "thr": 0.25} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du -815 dm +2152 | L3M du -1706 dm +3570 RED Y2025) | no (L6M du +1530 dm -2252 | L3M du +2684 dm -3703) | no (L6M du +2680 dm -9625 | L3M du +2168 dm -6262) | yes (L6M du -603 dm +1062 | L3M du -1151 dm +3460 RED Y2025) | no (L6M du -451 dm +87 | L3M du -636 dm +2865 RED Y2025,Y2023) | no (L6M du -169 dm -472 | L3M du -651 dm +1123) | K7:0,P7:0,A7:3,H7:3,U7:0 | 31 of 30 |
 | L1edb9fab tm300 / pullback_ema.depth {"len": 10, "w": 0.5} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du +747 dm +1854 | L3M du -411 dm +1205 RED Y2025) | no (L6M du -584 dm -1527 | L3M du -1448 dm -2924) | no (L6M du +3214 dm -7331 | L3M du +3583 dm -4483) | yes (L6M du -142 dm +1606 | L3M du -1252 dm +3083 RED Y2025) | no (L6M du +391 dm +413 | L3M du -685 dm +692 RED Y2025,Y2023) | no (L6M du +246 dm +17 | L3M du -1893 dm +426 RED Y2025) | K7:0,P7:0,A7:3,H7:3,U7:3 | 0 of 30 |
 | Ledfbf4d2 vol_350 / bands_bollinger.break_native {"clk": 20, "k": 1.5} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du -813 dm +880 | L3M du -949 dm +64 RED Y2025) | no (L6M du -567 dm -1956 | L3M du -296 dm -3836) | no (L6M du +3368 dm -10349 | L3M du +3215 dm -7631) | yes (L6M du -459 dm +384 | L3M du -548 dm +1331 RED Y2025) | no (L6M du -541 dm -839 | L3M du -443 dm -582) | no (L6M du -421 dm -1230 | L3M du -860 dm -2636) | K7:0,P7:0,A7:3,H7:0,U7:0 | 0 of 30 |
 | M15f14deb tm120 / momentum_mvote.v4of5 {"scale": 0.25, "thr": 0.25} / plain60/60 / long-only | no (L6M du +524 dm +624 | L3M du +558 dm +83 RED Y2025) | no (L6M du +1100 dm -3442 | L3M du +2476 dm -5291) | no (L6M du +6705 dm -10031 | L3M du +9565 dm -8755) | yes (L6M du -480 dm +276 | L3M du -176 dm +390) | no (L6M du -505 dm -645 | L3M du +68 dm -958) | no (L6M du -318 dm -866 | L3M du -713 dm -952) | K7:0,P7:0,A7:0,H7:0,U7:0 | 0 of 30 |

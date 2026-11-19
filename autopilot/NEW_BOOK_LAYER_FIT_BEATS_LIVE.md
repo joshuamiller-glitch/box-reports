@@ -1,14 +1,14 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 13:55Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 14:10Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 2970 set-months/h (HEALTH.md at 13:55Z); layer queue (tag NYL, quota 36) landed 2812 set-months in the last hour, 5884 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 15045, landed 5881, remaining 9128; hours at the HEALTH rate (whole fleet) 3.1 h; at the measured NYL rate 3 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 2574 set-months/h (HEALTH.md at 14:05Z); layer queue (tag NYL, quota 36) landed 1960 set-months in the last hour, 5896 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 16395, landed 5891, remaining 10468; hours at the HEALTH rate (whole fleet) 4.1 h; at the measured NYL rate 5 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
-| Lda55d973xA7 | 432 | 432 |
+| Lda55d973xA7 | 918 | 432 |
 | L5c9e11b3xA7 | 795 | 788 |
 | La5b5d03axA7 | 432 | 0 |
 | Ledfbf4d2xA7 | 746 | 740 |
@@ -25,19 +25,21 @@ Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byt
 | L6a25b155xK7 | 561 | 561 |
 | L01811caaxK7 | 906 | 906 |
 | L0f097450xK7 | 432 | 0 |
-| L3701b464xK7 | 432 | 87 |
+| L3701b464xK7 | 432 | 97 |
 | M15f14debxA7 | 432 | 406 |
-| L01811caa | 432 | 0 |
-| L6a25b155 | 432 | 0 |
-| L0f097450 | 432 | 0 |
-| Lda55d973 | 432 | 0 |
-| M41ef5c77 | 432 | 0 |
-| Mdcdb0b6e | 432 | 0 |
-| L4d206c8c | 432 | 0 |
-| Mac4916e6 | 432 | 0 |
-| M98c7ae1d | 432 | 0 |
-| L34e2c5ab | 432 | 0 |
-| Lb5e883f6 | 432 | 0 |
+| L21f079b6xK7 | 432 | 0 |
+| Lf967df3bxK7 | 432 | 0 |
+| Lbbb39855xK7 | 432 | 0 |
+| L0bd23639xK7 | 432 | 0 |
+| L77a763afxK7 | 432 | 0 |
+| Le728b0a3xK7 | 432 | 0 |
+| M41ef5c77xA7 | 432 | 0 |
+| Mdcdb0b6exA7 | 432 | 0 |
+| L4d206c8cxA7 | 432 | 0 |
+| Mac4916e6xA7 | 432 | 0 |
+| M98c7ae1dxA7 | 432 | 0 |
+| L34e2c5abxA7 | 432 | 0 |
+| Lb5e883f6xA7 | 432 | 0 |
 
 ## D8 gates per candidate: ENGINE rule B (order 1122Z)
 Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME prior year. Sign convention: every percentage is "% WORSE than today's stack" (positive = worse): stack ulcer higher, max DD deeper, worst week lower, mean $/wk lower; negative = better. RED if any > 30%, AMBER 15-30%, else GREEN; persistence = share of 2-week windows where the new stack is not below today's (engine weekly difference). Until a candidate has engine prior years its tier is PENDING (never fail); the screen rule A (bare stream) is shown only as a note and orders the queue. Gate (order 1324Z, Josh): L6M + L3M beat (the candidate rows) + no RED prior year (rule B) + ENGINE persistence >= 0.58 (share of 2-week windows where the new stack is not worse than today's); persistence not yet published = PENDING, never fail (W-LAYERS' own pooled prior-year value is shown as provisional and is not used to fail). Tier -1/FIRST = coordinator-ordered first tier, 0 = gate pass, 2 = pending, 3 = rule-B RED / persistence fail / duplicate stream; Asia before NY inside a tier.
@@ -46,36 +48,49 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 |---|---|---|---|---|---|---|
 | L01811caaxK7 | FIRST | FIRST (coordinator order 1156Z, position 1) | GATE PASS: 3 prior years none RED (AMBER 2023), engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.577 | -21% / +10% / +19% / -20% AMBER | -14% / -4% / +6% / -12% GREEN | -12% / -10% / -12% / -7% GREEN | 0.58 |
 | L6a25b155xK7 | FIRST | FIRST (coordinator order 1156Z, position 2) | GATE PASS: 3 prior years none RED, engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.577 | -4% / +13% / +5% / -25% GREEN | +10% / -3% / -3% / -14% GREEN | +3% / +3% / +0% / -7% GREEN | 0.58 |
-| L01811caa | FIRST | FIRST (coordinator order 1156Z, position 3) | GATE PASS: 3 prior years none RED, engine persistence 0.600 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.60 (ADD base); W-LAYERS 2023-25-only 0.676 | -15% / -2% / +7% / -39% GREEN | -12% / -1% / +3% / -10% GREEN | -17% / -16% / -2% / -14% GREEN | 0.68 |
-| L6a25b155 | FIRST | FIRST (coordinator order 1156Z, position 4) | GATE PASS: 3 prior years none RED, engine persistence 0.650 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.65 (ADD base); W-LAYERS 2023-25-only 0.648 | -18% / +3% / -8% / -42% GREEN | +12% / -0% / -7% / -16% GREEN | -6% / +0% / +11% / -17% GREEN | 0.65 |
-| Lda55d973 | FIRST | FIRST (coordinator order 1349Z, position 5) | W-ASIA PASS LIST: pass (pick ADD, pooled engine persistence 0.62 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.62 |
-| L34e2c5ab | FIRST | FIRST (coordinator order 1349Z, position 6) | W-ASIA PASS LIST: pass (pick ADD, pooled engine persistence 0.63 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.63 |
-| Lb5e883f6 | FIRST | FIRST (coordinator order 1349Z, position 7) | W-ASIA PASS LIST: pass (pick ADD, pooled engine persistence 0.66 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.66 |
-| L4d206c8c | FIRST | FIRST (coordinator order 1349Z, position 8) | W-ASIA PASS LIST: pass (pick ADD, pooled engine persistence 0.61 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.61 |
-| M98c7ae1d | FIRST | FIRST (coordinator order 1349Z, position 9) | W-ASIA PASS LIST: pass (pick ADD, pooled engine persistence 0.66 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.66 |
-| Mdcdb0b6e | FIRST | FIRST (coordinator order 1349Z, position 10) | W-ASIA PASS LIST: pass (pick ADD, pooled engine persistence 0.65 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.65 |
-| L5c9e11b3xA7 | FIRST | FIRST (coordinator order 1349Z, position 11) | W-ASIA PASS LIST: pass (pick REPLACE, pooled engine persistence 0.58 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.58 |
-| M41ef5c77 | FIRST | FIRST (coordinator order 1349Z, position 12) | W-ASIA PASS LIST: pass (pick ADD, pooled engine persistence 0.58 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.58 |
-| L0f097450 | 0 | GATE PASS: 3 prior years none RED, engine persistence 0.580 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.58 (ADD base); W-LAYERS 2023-25-only 0.592 | -12% / +10% / +12% / -23% GREEN | -3% / -9% / -6% / -14% GREEN | -22% / -20% / -13% / -10% GREEN | 0.59 |
+| L5c9e11b3xA7 | FIRST | FIRST (coordinator order 1349Z, position 3) | W-ASIA PASS LIST: pass (pick REPLACE, pooled engine persistence 0.58 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.58 |
+| L21f079b6xK7 | 2 | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
+| Lf967df3bxK7 | 2 | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
+| Lbbb39855xK7 | 2 | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
+| L0bd23639xK7 | 2 | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
+| L77a763afxK7 | 2 | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
+| Le728b0a3xK7 | 2 | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
 | L0a809c2exA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.56 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.56 |
 | L63ff9ae8xA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.54 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.54 |
-| Mac4916e6 | 3 | W-ASIA PASS LIST: fail (pick ADD, pooled engine persistence 0.54 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.54 |
 | Lcb276f27xA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.53 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.53 |
 | L1edb9fabxA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.53 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.53 |
 | L7c368a4fxA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.53 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.53 |
 | Ledfbf4d2xA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.53 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.53 |
+| Lda55d973xA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.52 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.52 |
 | La5b5d03axA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.52 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.52 |
 | L17ce266fxA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.51 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.51 |
 | L5d9e7166xA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.51 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.51 |
 | L05222ff9xA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.51 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.51 |
-| M15f14debxA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.49 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.49 |
+| M15f14debxA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.51 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.51 |
 | Lf77e374bxA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.48 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.48 |
 | L0b1d7882xA7 | 3 | W-ASIA PASS LIST: fail (pick REPLACE, pooled engine persistence 0.46 < 0.58 or RED year): demoted, queued after the Asia ladder | n/a | n/a | n/a | 0.46 |
 | L0f097450xK7 | 3 | B FAIL: RED in 2023 | W-NYENG pooled 43-month engine persistence 0.55 (REPLACE base); W-LAYERS 2023-25-only 0.606 | -9% / +9% / +31% / +7% RED | -7% / -14% / +2% / -13% GREEN | -17% / -18% / -20% / +2% GREEN | 0.61 |
-| Lda55d973xA7 | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
 | L3701b464xK7 | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
 | L0f097450xK7LO | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
 | L3701b464xK7LO | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
+| M41ef5c77xA7 | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
+| Mdcdb0b6exA7 | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
+| L4d206c8cxA7 | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
+| Mac4916e6xA7 | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
+| M98c7ae1dxA7 | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
+| L34e2c5abxA7 | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
+| Lb5e883f6xA7 | 3 | not in the current candidate list (superseded / demoted): queued after the Asia ladder | n/a | n/a | n/a | n/a |
+| L01811caa | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| L6a25b155 | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| L0f097450 | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| Lda55d973 | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| M41ef5c77 | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| Mdcdb0b6e | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| L4d206c8c | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| Mac4916e6 | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| M98c7ae1d | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| L34e2c5ab | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
+| Lb5e883f6 | 9 | ADD-base programme PARKED (REPLACE ONLY, order 1407Z): lines moved to _layers/pending_parked_add.txt, not in QUEUES.txt; landed ADD results untouched | n/a | n/a | n/a | n/a |
 
 ## Identity (inert hook = base row, trade for trade)
 - Asia: PASS 9/9 inert sets equal to TL3_ASI_Lda55d973_RA7 on 202610,202608 trade for trade
@@ -86,7 +101,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 ## Candidates
 | label | session | replaced book | variant | layer base set (REPLACE = default; ADD only when the three-row rule picks it) | stage | fit sets | L6M scored | top-2 prior-year sets | joint sets |
 |---|---|---|---|---|---|---|---|---|---|
-| Lda55d973 | Asia | ADD | both | TL3_ASI_Lda55d973_ADD | fit queued | 72 | - | 0 | 0 |
+| Lda55d973xA7 | Asia | A7 | both | TL3_ASI_Lda55d973_RA7 | scored | 72 | 2026-11-19 14:07Z | 12 | 7 |
 | La5b5d03axA7 | Asia | A7 | both | TL3_ASI_La5b5d03a_RA7 | fit queued | 72 | - | 0 | 0 |
 | Lcb276f27xA7 | Asia | A7 | both | TL3_ASI_Lcb276f27_RA7 | fit queued | 72 | - | 0 | 0 |
 | L1edb9fabxA7 | Asia | A7 | both | TL3_ASI_L1edb9fab_RA7 | fit queued | 72 | - | 0 | 0 |
@@ -99,51 +114,56 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L5c9e11b3xA7 | Asia | A7 | both | TL3_ASI_L5c9e11b3_RA7 | scored | 72 | 2026-11-19 12:55Z | 9 | 5 |
 | Ledfbf4d2xA7 | Asia | A7 | both | TL3_ASI_Ledfbf4d2_RA7 | scored | 72 | 2026-11-19 13:05Z | 8 | 3 |
 | M15f14debxA7 | Asia | A7 | long | TL3_ASI_M15f14deb_RA7 | fit queued | 72 | - | 0 | 0 |
-| M41ef5c77 | Asia | ADD | long | TL3_ASI_M41ef5c77_ADD | fit queued | 72 | - | 0 | 0 |
 | Lf77e374bxA7 | Asia | A7 | both | TL3_ASI_Lf77e374b_RA7 | fit queued | 72 | - | 0 | 0 |
-| Mdcdb0b6e | Asia | ADD | long | TL3_ASI_Mdcdb0b6e_ADD | fit queued | 72 | - | 0 | 0 |
 | L0b1d7882xA7 | Asia | A7 | both | TL3_ASI_L0b1d7882_RA7 | fit queued | 72 | - | 0 | 0 |
-| L4d206c8c | Asia | ADD | both | TL3_ASI_L4d206c8c_ADD | fit queued | 72 | - | 0 | 0 |
-| Mac4916e6 | Asia | ADD | long | TL3_ASI_Mac4916e6_ADD | fit queued | 72 | - | 0 | 0 |
-| M98c7ae1d | Asia | ADD | long | TL3_ASI_M98c7ae1d_ADD | fit queued | 72 | - | 0 | 0 |
-| L34e2c5ab | Asia | ADD | both | TL3_ASI_L34e2c5ab_ADD | fit queued | 72 | - | 0 | 0 |
-| Lb5e883f6 | Asia | ADD | both | TL3_ASI_Lb5e883f6_ADD | fit queued | 72 | - | 0 | 0 |
-| L01811caa | NYAM | ADD | ADD | TL3_NYW_L01811caa_ADD | fit queued | 72 | - | 0 | 0 |
-| L6a25b155 | NYAM | ADD | ADD | TL3_NYW_L6a25b155_ADD | fit queued | 72 | - | 0 | 0 |
-| L0f097450 | NYAM | ADD | ADD | TL3_NYW_L0f097450_ADD | fit queued | 72 | - | 0 | 0 |
 | L6a25b155xK7 | NYAM | K7 | both | TL3_NYE_L6a25b155_RK7 | scored | 72 | 2026-11-19 12:55Z | 3 | 3 |
 | L01811caaxK7 | NYAM | K7 | both | TL3_NYE_L01811caa_RK7 | scored | 72 | 2026-11-19 12:45Z | 12 | 5 |
 | L0f097450xK7 | NYAM | K7 | both | TL3_NYE_L0f097450_RK7 | fit queued | 72 | - | 0 | 0 |
+| L21f079b6xK7 | NYAM | K7 | both | TL3_NYE_L21f079b6_RK7 | fit queued | 72 | - | 0 | 0 |
+| Lf967df3bxK7 | NYAM | K7 | both | TL3_NYE_Lf967df3b_RK7 | fit queued | 72 | - | 0 | 0 |
+| Lbbb39855xK7 | NYAM | K7 | both | TL3_NYE_Lbbb39855_RK7 | fit queued | 72 | - | 0 | 0 |
+| L0bd23639xK7 | NYAM | K7 | both | TL3_NYE_L0bd23639_RK7 | fit queued | 72 | - | 0 | 0 |
+| L77a763afxK7 | NYAM | K7 | both | TL3_NYE_L77a763af_RK7 | fit queued | 72 | - | 0 | 0 |
+| Le728b0a3xK7 | NYAM | K7 | both | TL3_NYE_Le728b0a3_RK7 | fit queued | 72 | - | 0 | 0 |
 
 ## Variant notes (order 1014Z: every yes row counts, the engine is the judge)
 | label | session | book | variant | note |
 |---|---|---|---|---|
-| Lda55d973 | Asia | ADD | both | W-ASIA pick list: ADD, pooled engine persistence 0.62, PASS |
-| La5b5d03axA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.52, fail |
-| Lcb276f27xA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.53, fail |
-| L1edb9fabxA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.53, fail |
-| L0a809c2exA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.56, fail |
-| L17ce266fxA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.51, fail |
-| L5d9e7166xA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.51, fail |
-| L05222ff9xA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.51, fail |
-| L63ff9ae8xA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.54, fail |
-| L7c368a4fxA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.53, fail |
-| L5c9e11b3xA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.58, PASS |
-| Ledfbf4d2xA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.53, fail |
-| M15f14debxA7 | Asia | A7 | long | W-ASIA pick list: REPLACE, pooled engine persistence 0.49, fail |
-| M41ef5c77 | Asia | ADD | long | W-ASIA pick list: ADD, pooled engine persistence 0.58, PASS |
-| Lf77e374bxA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.48, fail |
-| Mdcdb0b6e | Asia | ADD | long | W-ASIA pick list: ADD, pooled engine persistence 0.65, PASS |
-| L0b1d7882xA7 | Asia | A7 | both | W-ASIA pick list: REPLACE, pooled engine persistence 0.46, fail |
-| L4d206c8c | Asia | ADD | both | W-ASIA pick list: ADD, pooled engine persistence 0.61, PASS |
-| Mac4916e6 | Asia | ADD | long | W-ASIA pick list: ADD, pooled engine persistence 0.54, fail |
-| M98c7ae1d | Asia | ADD | long | W-ASIA pick list: ADD, pooled engine persistence 0.66, PASS |
-| L34e2c5ab | Asia | ADD | both | W-ASIA pick list: ADD, pooled engine persistence 0.63, PASS |
-| Lb5e883f6 | Asia | ADD | both | W-ASIA pick list: ADD, pooled engine persistence 0.66, PASS |
-| L01811caa | NYAM | ADD | ADD | ADD base: W-NYENG rule pick (ADD beats REPLACE on L6M+L3M, none RED) |
-| L6a25b155 | NYAM | ADD | ADD | ADD base: W-NYENG rule pick (ADD beats REPLACE on L6M+L3M, none RED) |
-| L0f097450 | NYAM | ADD | ADD | ADD base: W-NYENG rule pick (ADD beats REPLACE on L6M+L3M, none RED) |
+| Lda55d973xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.52 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| La5b5d03axA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.52 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| Lcb276f27xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.53 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L1edb9fabxA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.53 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L0a809c2exA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.56 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L17ce266fxA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.51 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L5d9e7166xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.51 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L05222ff9xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.51 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L63ff9ae8xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.54 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L7c368a4fxA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.53 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L5c9e11b3xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.58 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| Ledfbf4d2xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.53 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| M15f14debxA7 | Asia | A7 | long | W-ASIA list: pick REPLACE, pooled engine persistence 0.51 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| Lf77e374bxA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.48 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L0b1d7882xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.46 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
 | L0f097450xK7 | NYAM | K7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) [twin of L3701b464 here: same stream, one programme] |
+| L21f079b6xK7 | NYAM | K7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
+| Lf967df3bxK7 | NYAM | K7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
+| Lbbb39855xK7 | NYAM | K7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
+| L0bd23639xK7 | NYAM | K7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
+| L77a763afxK7 | NYAM | K7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
+| Le728b0a3xK7 | NYAM | K7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
+
+## Lda55d973xA7 (Asia, replaces A7; base TL3_ASI_Lda55d973_RA7)
+| layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| BO | post-stop same-side blackout 30 min | -43 | +1060 | +2162 | +306 | 0.98 | -473 / +405 | n/a | n/a | n/a |
+| CP | own day loss cap 1 stops ($1200 base), profit cap 12,000 | -416 | -1201 | +4785 | -562 | 0.76 | -1240 / +523 | n/a | n/a | n/a |
+| CU | loss cut when unrealised <= -60 pts (1.0 x stop) | +0 | +0 | +0 | +0 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| CX | context cut (fresh) at -48 pts | +846 | -4863 | -500 | -272 | 1.02 | +1386 / -408 | n/a | n/a | n/a |
+| DD | DAY-DONE: stack >= 22 closes and day <= -1800 base (1.5R) | -69 | +0 | +0 | +53 | 1.00 | -103 / +156 | n/a | n/a | n/a |
+| FR | W-FASTR pick: own day cap loss $2400, profit 9000 | -247 | +0 | +3475 | -416 | 0.92 | -609 / +408 | n/a | n/a | n/a |
+| LK | lock at 65% -> stop to entry+20 pts | -335 | -28 | +1684 | -1203 | 1.17 | -344 / -2685 | n/a | n/a | n/a |
+| NT | no new entries 1830-1900 ET | -508 | +3162 | +6741 | +167 | 0.98 | -833 / +382 | n/a | n/a | n/a |
+| TK | take at 65% of target after 15 s without a new extreme | -160 | +472 | +3544 | -308 | 1.19 | +224 / -1750 | n/a | n/a | n/a |
 
 ## L0a809c2exA7 (Asia, replaces A7; base TL3_ASI_L0a809c2e_RA7)
 | layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
