@@ -7485,3 +7485,7 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 - 08:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 2129 (real 396), pass 2 367 (total results 2496); todo pass 1 2315 (ETA 1.1 h at this rate), pass 2 21314 (ETA 58.1 h); server 2 load 207.18:116.94 109.94:227.81 206.22:206.06, grid workers 162 (154 computing), engine workers 429; error stubs 5182. Page autopilot/SEARCH_STATUS.md.
 08:07Z W-LA: LA cell-months done 867, jobs outstanding 52, chains 10; auto-expansions launched: 207 (cumulative new sets)
 - (08:07Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label LEAD (controls 10/30 valid: cannot be CONFIRMED), identity {'202610': 'PASS (691 vs 691 trades, 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, 41239.76 vs 41239.76)'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
+- 2026-11-19T08:10Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 149 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
+- 2026-11-19T08:10:49Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (wall 08:10Z) W-MD hourly: page DS3_REBUILD_S3_ENV.md W-MD sections refreshed; MBO older-day features 973 extracted (finished workers 3 of 3); engine state: identity True real evaluated ['H7_TUW10', 'H7_SUWBE', 'K7_TUWN10'] controls done []
+- 2026-11-19 08:14Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
