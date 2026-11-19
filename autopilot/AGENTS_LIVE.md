@@ -8,3 +8,4 @@ W-SHORT (a4b931c164d0337bb) | R3, calibration by family, staleness knock-on | ye
 W-NIGHT (id not in lead list) | guard.py, health.py, wd_levels | yes | gone (replaced by W-NIGHT2 04:41Z; crons keep running) | crons guard/health/wd continue
 W-LONENG | gone (replaced by W-ASIA); crons lon_cron.sh/asia_cron.sh/lx_cron.sh keep running | no | gone |
 W-NIGHT2 (fork of lead) | guard.py/health.py/agents_live.py, alert G, HEALTH live-agent section | yes | finished 04:4xZ | guard/health crons (th_night); agent only edits
+asia crons (W-ASIA, lead-reviewed 0620Z): asia_note.py :05/:35 (asked for by the lead), reorder_pending.py :10/:25/:40/:55 (ladder lines ahead of older lines; locked, atomic, multiset-checked; backup deletion removed by lead).
