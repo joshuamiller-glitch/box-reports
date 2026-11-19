@@ -1,4 +1,4 @@
-# NEW_BOOK_LAYER_FIT_XA3 - own fitted layers of the new book on the exact engine (W-NYENG phase 3a), refreshed 2026-11-19 00:31Z
+# NEW_BOOK_LAYER_FIT_XA3 - own fitted layers of the new book on the exact engine (W-NYENG phase 3a), refreshed 2026-11-19 01:01Z
 
 **All rows are vs TODAY's stack (JL3, today's DAY-DONE) and vs the cell's own ADD row; provisional until Asia and London are decided.** Each layer setting is fitted on the trailing 6 months (3 months beside) one layer at a time; 'off' = the ADD row (reference only, every live layer stays ON). Engine base lots, $4.84 RT proxy. Columns: stack ulcer change vs ADD (negative = better), worst week change, max DD change, mean $/week change (all WITH setting minus the ADD row), then the same ulcer / mean vs JL3, the new book's own ulcer x ADD and trades x ADD (a setting must keep trades >= 80 percent). Selection: every setting is the best of a grid on the same window; prior years / 2-week roll / 30 layered controls still to run. Identity: TL3_NYL_XA3_ID1-9 PASS (autopilot NEW_BOOK_LAYER_PLAN.md).
 
@@ -21,8 +21,8 @@
 ## L2 profit lock
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XA3_LK6 | lock at 65% -> stop to entry+20 pts | -393 | -1123 | +2760 | +188 | 1.15 | 0.53 | -641 / +150 | +2949 / -367 | n/a | n/a | -655 | ulcer better |
-| XA3_LK3 | lock at 50% -> stop to entry+20 pts | -365 | +677 | +2648 | -464 | 1.27 | 1.16 | -766 / -25 | +7085 / -1023 | n/a | n/a | -627 | ulcer better |
+| XA3_LK6 | lock at 65% -> stop to entry+20 pts | -393 | -1123 | +2760 | +188 | 1.15 | 0.53 | -641 / +150 | +2949 / -367 | +3091 / -801 | n/a | -655 | ulcer better |
+| XA3_LK3 | lock at 50% -> stop to entry+20 pts | -365 | +677 | +2648 | -464 | 1.27 | 1.16 | -766 / -25 | +7085 / -1023 | +3425 / -1046 | n/a | -627 | ulcer better |
 | XA3_LK2 | lock at 50% -> stop to entry+10 pts | -295 | +642 | +1868 | -541 | 1.20 | 1.11 | -663 / +151 | n/a | n/a | n/a | -557 | ulcer better |
 | XA3_LK5 | lock at 65% -> stop to entry+10 pts | -246 | -1878 | +1810 | +36 | 1.14 | 0.68 | -413 / -117 | n/a | n/a | n/a | -508 | ulcer better |
 | XA3_LK9 | lock at 80% -> stop to entry+20 pts | -155 | -2330 | +755 | -136 | 1.08 | 0.71 | -308 / +44 | n/a | n/a | n/a | -417 | ulcer better |
@@ -34,7 +34,7 @@
 ## L3 loss cut (flat)
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XA3_CU2 | loss cut when unrealised <= -36 pts (0.6 x stop) | -15 | -2830 | -574 | -447 | 1.22 | 1.12 | -62 / -528 | +3893 / -641 | n/a | n/a | -277 | ulcer better |
+| XA3_CU2 | loss cut when unrealised <= -36 pts (0.6 x stop) | -15 | -2830 | -574 | -447 | 1.22 | 1.12 | -62 / -528 | +3893 / -641 | +1209 / -637 | n/a | -277 | ulcer better |
 | XA3_CU4 | loss cut when unrealised <= -60 pts (1.0 x stop) | +0 | +0 | +0 | +0 | 1.00 | 1.00 | +0 / +0 | n/a | n/a | n/a | -262 | ulcer worse |
 | XA3_CU3 | loss cut when unrealised <= -48 pts (0.8 x stop) | +12 | +619 | +817 | -557 | 1.06 | 1.24 | -190 / +69 | n/a | n/a | n/a | -250 | ulcer worse |
 | XA3_CU1 | loss cut when unrealised <= -24 pts (0.4 x stop) | +928 | -8519 | -5662 | -1444 | 1.39 | 1.94 | +1487 / -1717 | n/a | n/a | n/a | +666 | ulcer worse |
@@ -42,7 +42,7 @@
 ## L4 context cut
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XA3_CX2 | context cut (fresh) at -36 pts | -61 | +297 | +110 | +249 | 1.02 | 0.97 | -68 / +183 | +573 / -180 | n/a | n/a | -323 | ulcer better |
+| XA3_CX2 | context cut (fresh) at -36 pts | -61 | +297 | +110 | +249 | 1.02 | 0.97 | -68 / +183 | +573 / -180 | +324 / +17 | n/a | -323 | ulcer better |
 | XA3_CX3 | context cut (fresh) at -48 pts | +23 | +137 | -458 | +128 | 1.02 | 1.01 | +70 / +56 | n/a | n/a | n/a | -239 | ulcer worse |
 | XA3_CX1 | context cut (fresh) at -24 pts | +893 | -5968 | -5615 | +32 | 1.02 | 1.18 | +1548 / -332 | n/a | n/a | n/a | +631 | ulcer worse |
 
@@ -57,7 +57,7 @@
 ## L6 post-stop blackout
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XA3_BO2 | post-stop same-side blackout 30 min | -92 | +0 | -6 | -910 | 0.81 | 1.28 | -92 / -428 | +1721 / -408 | n/a | n/a | -354 | ulcer better |
+| XA3_BO2 | post-stop same-side blackout 30 min | -92 | +0 | -6 | -910 | 0.81 | 1.28 | -92 / -428 | +1721 / -408 | +394 / +28 | n/a | -354 | ulcer better |
 | XA3_BO3 | post-stop same-side blackout 60 min | -72 | +886 | +410 | -895 | 0.74 | 1.15 | -88 / -543 | n/a | n/a | n/a | -334 | trades<80% |
 | XA3_BO1 | post-stop same-side blackout 15 min | +162 | +0 | -1200 | -765 | 0.90 | 1.14 | +334 / -313 | n/a | n/a | n/a | -100 | ulcer worse |
 
@@ -65,8 +65,8 @@
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | XA3_NT2 | no new entries 1000-1030 ET | -140 | +865 | -411 | -424 | 0.79 | 0.86 | +10 / -815 | n/a | n/a | n/a | -402 | trades<80% |
-| XA3_NT5 | no new entries 1130-1200 ET | -60 | +740 | +464 | +98 | 0.94 | 0.91 | -111 / +173 | +27 / -51 | n/a | n/a | -322 | ulcer better |
-| XA3_NT4 | no new entries 1100-1130 ET | -28 | +1135 | +255 | -317 | 0.96 | 0.87 | -99 / -383 | -851 / -192 | n/a | n/a | -290 | ulcer better |
+| XA3_NT5 | no new entries 1130-1200 ET | -60 | +740 | +464 | +98 | 0.94 | 0.91 | -111 / +173 | +27 / -51 | +2 / +25 | n/a | -322 | ulcer better |
+| XA3_NT4 | no new entries 1100-1130 ET | -28 | +1135 | +255 | -317 | 0.96 | 0.87 | -99 / -383 | -851 / -192 | -623 / +85 | n/a | -290 | ulcer better |
 | XA3_NT3 | no new entries 1030-1100 ET | -23 | -1479 | +372 | -667 | 0.89 | 1.42 | -75 / -433 | n/a | n/a | n/a | -285 | ulcer better |
 | XA3_NT1 | no new entries 0930-1000 ET | +68 | +2009 | +9 | -407 | 0.63 | 1.14 | +60 / +43 | n/a | n/a | n/a | -194 | trades<80% |
 
@@ -96,7 +96,7 @@
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | XA3_FR9 | W-FASTR pick: scratch: after -45 exit at -5 | -413 | -289 | +1104 | +687 | 1.07 | 0.64 | -740 / +1602 | +984 / -386 | +903 / -123 | -183 / +21 | -675 | ulcer better |
-| XA3_FR6 | W-FASTR pick: lock 80% -> +30 | -339 | -258 | +2928 | -77 | 1.07 | 0.74 | -678 / +323 | +1050 / -267 | n/a | n/a | -601 | ulcer better |
+| XA3_FR6 | W-FASTR pick: lock 80% -> +30 | -339 | -258 | +2928 | -77 | 1.07 | 0.74 | -678 / +323 | +1050 / -267 | +2489 / -523 | n/a | -601 | ulcer better |
 | XA3_FR7 | W-FASTR pick: no-follow-through: < +10 pts after 20 min | -233 | +605 | +557 | +34 | 1.08 | 1.20 | -453 / +29 | n/a | n/a | n/a | -495 | ulcer better |
 | XA3_FR10 | W-FASTR pick: own day cap loss $2400, profit 6000 | -176 | +0 | +1195 | +155 | 0.93 | 0.78 | -354 / +130 | n/a | n/a | n/a | -438 | ulcer better |
 | XA3_FR12 | W-FASTR pick: own day cap loss $2400, profit 12000 | -176 | +0 | +1195 | +73 | 0.94 | 0.85 | -354 / +81 | n/a | n/a | n/a | -438 | ulcer better |

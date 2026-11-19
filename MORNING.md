@@ -7100,3 +7100,6 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 2026-11-19T00:56:48Z W-GRIDA 2026-11-19T00:56Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 512 / 396 / 0.8 h; (b) pass-1 level modules 159 / 804 / 5.1 h; (c) pass-2 family cells 348 / 0 / 0.0 h; (d) rest of pass 1 7201 / 7149 / 1.0 h; workers 60 (60 R); load 103.47; todo counts refreshed {"": 6, "_p2": 5} min ago
 - (wall 00:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
 2026-11-19T00:58:13Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+
+[S2 hourly 01:01Z] server 2: workers 12/cap 12, cell-months last hour: server-2 672, all 981; idle 0 min; cost ~$299 (54.9 h x $5.44).
+- 2026-11-19T01:01:53Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
